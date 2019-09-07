@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 80f2b686e9802a93b0cf32420ccaef3e8877727c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738892"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759550"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Bitmap-Grundlagen in SkiaSharp
 
@@ -68,7 +68,6 @@ HttpClient httpClient = new HttpClient();
 Bei Verwendung `HttpClient` mit iOS und Android-Anwendungen, sollten Sie Projekteigenschaften festlegen, wie beschrieben in den Dokumenten auf  **[Transport Layer Security (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** .
 
 Da es am einfachsten, Sie zu verwenden, ist die `await` -Operator mit `HttpClient`, der Code kann nicht ausgeführt werden, der `BasicBitmapsPage` Konstruktor. Stattdessen ist er Teil der `OnAppearing` außer Kraft setzen. Hier die URL verweist auf einen Bereich auf der Xamarin-Website mit einige Beispiel-Bitmaps. Ein Paket auf der Website ermöglicht das Anfügen von einer Spezifikation für die größenanpassung der Bitmap in eine bestimmte Breite:
-
 
 ```csharp
 protected override async void OnAppearing()

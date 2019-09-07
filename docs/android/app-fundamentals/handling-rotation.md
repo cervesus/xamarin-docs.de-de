@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 394feda6f5a13855be1d1166dc22bb2a5c890d26
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 98acabec7132730304bf5e8b81e99f2727b6d50e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887774"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755570"
 ---
 # <a name="handling-rotation"></a>Verarbeiten der Drehung
 
 _In diesem Thema wird beschrieben, wie Änderungen an der Geräte Orientierung in xamarin. Android behandelt werden. Es wird erläutert, wie Sie mit dem Android-Ressourcensystem zum automatischen Laden von Ressourcen für eine bestimmte Geräte Orientierung und zum programmgesteuerten behandeln von Richtungsänderungen arbeiten._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -29,7 +28,6 @@ In diesem Leitfaden werden die folgenden Themen zur Orientierung erläutert:
 
 - Programmgesteuerte **layoutdrehung** &ndash; Gewusst wie: Programm gesteuertes Hinzufügen von Steuerelementen und Gewusst wie: Manuelles behandeln von Orientierungsänderungen.
 
-
 ## <a name="handling-rotation-declaratively-with-layouts"></a>Deklarative Behandlung der Drehung mit Layouts
 
 Wenn Sie Dateien in Ordner einschließen, die den Benennungs Konventionen folgen, lädt Android automatisch die entsprechenden Dateien, wenn sich die Ausrichtung ändert.
@@ -38,7 +36,6 @@ Dies umfasst die Unterstützung für:
 - *Layoutressourcen* &ndash; Angeben, welche Layoutdateien für jede Ausrichtung aufgeblasen werden.
 
 - *Drawable-Ressourcen* &ndash; Angeben, welche drawables für jede Ausrichtung geladen werden.
-
 
 ### <a name="layout-resources"></a>Layoutressourcen
 
@@ -65,7 +62,6 @@ Dieses Projekt erstellt eine einzelne Datei " **Main. axml** " im Ordner " **Res
 Wenn das Gerät in Querformat gedreht wird, wird die- `OnCreate` Methode der Aktivität erneut aufgerufen, und die gleiche " **Main. axml** "-Datei wird aufgeblasen, wie im folgenden Screenshot zu sehen:
 
 [![Gleicher Bildschirm, aber in Querformat](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
-
 
 #### <a name="orientation-specific-layouts"></a>Orientierungs spezifische Layouts
 
@@ -103,7 +99,6 @@ Wenn Sie diesen Code ausführen und das Gerät vom Hochformat in das Querformat 
 
 [![Hochformat-und Querformat-Screenshots Drucken des hoch Modus](handling-rotation-images/02.png)](handling-rotation-images/02.png#lightbox)
 
-
 ### <a name="drawable-resources"></a>Drawable-Ressourcen
 
 Während der Rotation behandelt Android drawable-Ressourcen ähnlich wie layoutressourcen. In diesem Fall ruft das System die drawables aus den Ordnern **Resources/drawable** bzw. **Resources/drawable-Land** ab.
@@ -123,11 +118,9 @@ Nehmen wir weiter an, dass eine andere Version von " **Monkey. png** " unter " *
 
 [![Andere Version von "Monkey. png" im hoch-und Querformat](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
 
-
 ## <a name="handling-rotation-programmatically"></a>Programm gesteuertes behandeln der Rotation
 
 Manchmal werden Layouts im Code definiert. Dies kann aus verschiedenen Gründen geschehen, wie z. b. technische Einschränkungen, Entwickler Präferenz usw. Wenn Sie Steuerelemente Programm gesteuert hinzufügen, muss eine Anwendung die Geräte Ausrichtung manuell berücksichtigen. diese wird automatisch bei der Verwendung von XML-Ressourcen behandelt.
-
 
 ### <a name="adding-controls-in-code"></a>Hinzufügen von Steuerelementen im Code
 
@@ -172,7 +165,6 @@ protected override void OnCreate (Bundle bundle)
 Mit `RelativeLayout` diesem Code wird eine Instanz einer-Klasse erstellt und `LayoutParameters` die-Eigenschaft festgelegt. Die `LayoutParams` -Klasse ist die Art und Weise, wie Steuerelemente auf wiederverwendbare Weise positioniert werden. Nachdem eine Instanz eines Layouts erstellt wurde, können Steuerelemente erstellt und hinzugefügt werden. Steuerelemente haben `LayoutParameters`auch, wie `TextView` z. b. in diesem Beispiel. Nachdem der `TextView` erstellt wurde, wird er `RelativeLayout` dem hinzugefügt und der `RelativeLayout` als `TextView` Inhaltsansicht festgelegt, sodass die Anwendung wie folgt anzeigt:
 
 [![Schaltfläche "Inkrement Counter" im hoch-und Querformat](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
-
 
 ### <a name="detecting-orientation-in-code"></a>Erkennen der Ausrichtung im Code
 
@@ -219,7 +211,6 @@ protected override void OnCreate (Bundle bundle)
 `TextView` Mit diesem Code wird festgelegt, dass 100 Pixel von oben links auf dem Bildschirm positioniert werden. dabei wird automatisch eine Animation zum neuen Layout durchlaufen, wie hier gezeigt:
 
 [![Der Ansichts Zustand wird im hoch-und Querformat beibehalten.](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
-
 
 ### <a name="preventing-activity-restart"></a>Verhindern von Neustart der Aktivität
 
@@ -284,13 +275,11 @@ Hier werden `TextView's` die Layoutparameter sowohl für Querformat als auch fü
 
 Wenn Sie die Anwendung ausführen, lädt Android die Änderungen an der Benutzeroberfläche, während die Geräte Drehung erfolgt, und startet die Aktivität nicht neu.
 
-
 ## <a name="preventing-activity-restart-for-declarative-layouts"></a>Verhindern des Neustarts von Aktivitäten für deklarative Layouts
 
 Aktivitäts Neustarts, die durch die Geräte Drehung verursacht werden, können auch verhindert werden, wenn das Layout in XML definiert wird. Beispielsweise können wir diesen Ansatz verwenden, wenn wir einen Aktivitäts Neustart verhindern möchten (aus Leistungsgründen), und wir müssen keine neuen Ressourcen für verschiedene Ausrichtungen laden.
 
 Zu diesem Zweck befolgen wir das gleiche Verfahren wie bei einem programmatischen Layout. Legen Sie `ConfigurationChanges` einfach `ActivityAttribute`in fest, wie in der `CodeLayoutActivity` vorherigen Version. Sämtlicher Code, der für die Ausrichtung der Ausrichtung ausgeführt werden muss, kann in der `OnConfigurationChanged` -Methode wieder implementiert werden.
-
 
 ## <a name="maintaining-state-during-orientation-changes"></a>Beibehalten des Zustands bei der Ausrichtung von Änderungen
 
@@ -298,12 +287,9 @@ Unabhängig davon, ob die Rotation deklarativ oder Programm gesteuert verarbeite
 
 Weitere Informationen zum Beibehalten des Zustands in Android finden Sie im Handbuch zum [Aktivitäts Lebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md) .
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde beschrieben, wie die integrierten Funktionen von Android für die Rotation verwendet werden. Zunächst wurde erläutert, wie das Android-Ressourcensystem zum Erstellen von Richtungs fähigen Anwendungen verwendet wird. Anschließend haben Sie erfahren, wie Sie Steuerelemente im Code hinzufügen und wie Sie die Ausrichtung von Änderungen manuell behandeln können.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

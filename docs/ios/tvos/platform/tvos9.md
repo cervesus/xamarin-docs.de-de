@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 2da3e919ec792297f26670c43275bb0c54040835
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290723"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769121"
 ---
 # <a name="introduction-to-tvos-9"></a>Einführung in tvOS 9
 
@@ -175,11 +175,6 @@ Das obere Regal Bild kann entweder als einzelne statische `.png` Datei oder `.ls
 Anstatt ein statisches Top-Regal Bild anzuzeigen, kann es eine dynamische Zeile oder Fokussier Bare Elemente oder einen dynamischen Satz von scrollbanner enthalten. Beide dynamischen Stile ermöglichen es Ihnen, den von der APP bereitgestellten Inhalt hervorzuheben oder zu den am häufigsten verwendeten Features zu springen.
 
 Weitere Informationen finden Sie in der Dokumentation [Arbeiten mit Symbolen und Images](~/ios/tvos/app-fundamentals/icons-images.md) und in der [tvservices-frameworkreferenz](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) von Apple, um weitere Informationen zum Hinzufügen einer Top-Regal-Erweiterung zu Ihrer APP zu erhalten, um dynamische Top-Shelf-Inhalte bereitzustellen
-
-
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

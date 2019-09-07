@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: de63a0f3f6564671a50594c66b55ed095329c95c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 51f88dba25ca2b4f7e33bb8b5c813c43a214c062
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887625"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764850"
 ---
 # <a name="xamarinandroid-ratingbar"></a>Xamarin. Android-ratingleiste
 
 Eine ratingleiste ist ein UI-Widget, das eine Bewertung von einem bis fünf Sternen anzeigt. Der Benutzer kann eine Bewertung auswählen, indem er einen Stern in diesem Abschnitt tippen. Sie erstellen ein Widget, mit dem der Benutzer mit dem [`RatingBar`](xref:Android.Widget.RatingBar) Widget eine Bewertung bereitstellen kann.
 
 ![Beispiel für eine ratingleiste](ratingbar-images/01-ratingbar.png)
-
 
 ## <a name="creating-a-ratingbar"></a>Erstellen einer ratingleiste
 
@@ -50,4 +49,3 @@ Eine ratingleiste ist ein UI-Widget, das eine Bewertung von einem bis fünf Ster
     Dadurch wird das [`RatingBar`](xref:Android.Widget.RatingBar) widget aus dem Layout mit [`FindViewById`](xref:Android.App.Activity.FindViewById*) aufgezeichnet. Anschließend wird eine Ereignismethode festgelegt und dann die Aktion definiert, die durchgeführt werden soll, wenn der Benutzer eine Bewertung festlegt. In diesem Fall wird eine einfache [`Toast`](xref:Android.Widget.Toast) Meldung mit der neuen Bewertung angezeigt.
 
 3. Führen Sie die Anwendung aus.
-

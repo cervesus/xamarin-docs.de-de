@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 7b34e7658ad38f80cffa22d99eea42901a905a38
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227929"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767615"
 ---
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
@@ -405,8 +405,6 @@ Wenn Eigenschaften für die Elemente selbst während der Laufzeit ändern, sollt
 ## <a name="summary"></a>Zusammenfassung
 
 Datenbindungen bieten einen leistungsfähigen Mechanismus zum Verknüpfen von Eigenschaften, die zwischen zwei Objekten innerhalb einer Seite oder zwischen visuellen Objekten und dem zugrunde liegenden Daten. Doch bei der Arbeit mit Datenquellen gestartet, beginnt ein Architekturmuster für gängige Anwendung als eine nützliche Paradigma eingebunden. Dies wird im behandelt [Teil 5. Von Datenbindungen zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

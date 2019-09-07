@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 8f7dd6f0a2e6db2580982a877cab2137cf28fab2
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 9266d8c4e1723adfb7e5e55dce7ede6d47f6f116
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508700"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755480"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Broadcast Empfänger in xamarin. Android
 
@@ -62,7 +62,7 @@ public class SampleReceiver : BroadcastReceiver
 ```
 
 Wenn xamarin. Android die Klasse kompiliert, wird auch das androidmanifest mit den erforderlichen Metadaten aktualisiert, um den Empfänger zu registrieren. Bei einem statisch registrierten Broadcast Empfänger muss das `Enabled` ordnungsgemäß auf `true`festgelegt werden. andernfalls kann Android keine Instanz des Empfängers erstellen.
- 
+
 Die `Exported` -Eigenschaft steuert, ob der Broadcast Empfänger Nachrichten von außerhalb der Anwendung empfangen kann. Wenn die Eigenschaft nicht explizit festgelegt wird, wird der Standardwert der Eigenschaft von Android bestimmt, basierend auf, wenn dem Broadcast Empfänger beabsichtigte Filter zugeordnet sind. Wenn mindestens ein Intent-Filter für den Broadcast Empfänger vorhanden ist, geht `Exported` `true`Android davon aus, dass die-Eigenschaft den Wert hat. Wenn dem Broadcast Empfänger keine Intent-Filter zugeordnet sind, wird von Android angenommen, dass der Wert ist `false`. 
 
 Die `OnReceive` -Methode empfängt einen Verweis auf `Intent` den, der an den Broadcast Empfänger gesendet wurde. Dies ermöglicht es dem Absender der Absicht, Werte an den Broadcast Empfänger zu übergeben.

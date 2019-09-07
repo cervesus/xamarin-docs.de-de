@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87037c8c3797c7c305ce2689172bda1babbc26bd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 52da0cfcab56c0acd339f4f0a0f2456a66d002a8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291719"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769480"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Suche mit webmarkup in xamarin. IOS
 
@@ -202,8 +202,6 @@ Schließlich würde der folgende HTML-Code eine Aktion hinzufügen, um Anweisung
 ```
 
 Weitere Informationen finden Sie auf der [App Search-Entwickler Website](https://developer.apple.com/ios/search/)von Apple.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

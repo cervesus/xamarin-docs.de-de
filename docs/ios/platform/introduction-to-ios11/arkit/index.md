@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 9e6b5c763d620bf5ef17e4fdb613d4bed9c00279
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b05991be60e34cad6b7bfc5af15fe521e1ff6dd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290915"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752601"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Einführung in Arkit in xamarin. IOS
 
@@ -36,7 +36,6 @@ Für den Einstieg in die erweiterte Realität durchlaufen die folgenden Anweisun
 Assets sollten mit der **scenekitasset** -Buildaktion dem Projekt hinzugefügt werden.
 
 ![Scenekit-Assets in einem Projekt](images/scene-assets.png)
-
 
 ### <a name="2-configure-the-view"></a>2. Konfigurieren der Ansicht
 
@@ -109,7 +108,6 @@ SceneView.Session.Pause();
 Der obige Code ergibt eine einfache Arkit-Anwendung. Komplexere Beispiele erwarten, dass der Ansichts Controller, der die erweiterte Reality- `IARSCNViewDelegate`Sitzung gehostet, implementieren und zusätzliche Methoden implementiert werden.
 
 Arkit bietet viele anspruchsvollere Features, wie z. b. Oberflächen Überwachung und Benutzerinteraktion. Ein Beispiel für die Kombination der Arkit-Überwachung mit urhusharp finden Sie in der [urhusharp-Demo](urhosharp.md) .
-
 
 ## <a name="related-links"></a>Verwandte Links
 

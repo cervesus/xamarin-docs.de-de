@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 96dbb60b8754223203394745bc86af2297cb5ff3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa2e287775e6669bd8bdf2728d9c676c451af69b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278540"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753297"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Kontakte und contactsui in xamarin. IOS
 
@@ -31,9 +31,6 @@ Die beiden neuen Frameworks enthalten die folgenden Funktionen:
 
 > [!IMPORTANT]
 > Die vorhandenen `AddressBook` - `AddressBookUI` und-Frameworks, die von IOS 8 (und früher) verwendet werden, sind in ios 9 veraltet und sollten `Contacts` so `ContactsUI` bald wie möglich durch die neuen Frameworks und für jede vorhandene xamarin. IOS-App ersetzt werden. Neue apps sollten für die neuen Frameworks geschrieben werden.
-
-
-
 
 In den folgenden Abschnitten werden diese neuen Frameworks erläutert und erläutert, wie Sie in einer xamarin. IOS-App implementiert werden.
 
@@ -359,7 +356,6 @@ PresentViewController(view, true, null);
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie Sie in einer xamarin. IOS-Anwendung mit dem Contact-und Contact-Frameworks arbeiten. Zuerst wurden die unterschiedlichen Typen von Objekten behandelt, die das Kontakt Framework bereitstellt, und es wird erläutert, wie Sie Sie zum Erstellen neuer oder vorhandener Kontakte verwenden können. Außerdem wurde das Framework zum Kontaktieren der Benutzeroberfläche zum Auswählen vorhandener Kontakte und zum Anzeigen von Kontaktinformationen untersucht.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

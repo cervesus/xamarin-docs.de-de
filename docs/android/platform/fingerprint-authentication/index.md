@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: a58242e89033d6cd2652495f9466379f63f498f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119521"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761237"
 ---
 # <a name="fingerprint-authentication"></a>Fingerabdruckauthentifizierung
 
 _In diesem Handbuch wird erläutert, wie Sie die Fingerabdruckauthentifizierung, die in Android 6,0 eingeführt wurde, in eine xamarin. Android-Anwendung einfügen._
-
 
 ## <a name="fingerprint-authentication-overview"></a>Übersicht über Fingerabdruckauthentifizierung
 
@@ -51,11 +50,6 @@ In dieser Anleitung wird erläutert, wie Sie `FingerprintManager` die APIs verwe
 Die Fingerabdruckauthentifizierung erfordert Android 6,0 (API-Ebene 23) oder höher und ein Gerät mit einem Fingerabdruckscanner. 
 
 Für jeden Benutzer, der authentifiziert werden soll, muss bereits ein Fingerabdruck für das Gerät registriert sein. Dies umfasst das Einrichten einer Bildschirmsperre, die ein Kennwort, eine PIN, ein wischen-Muster oder eine Gesichtserkennung verwendet. Es ist möglich, einige der Fingerabdruck Authentifizierungsfunktionen in einem Android-Emulator zu simulieren.  Weitere Informationen zu diesen beiden Themen finden Sie im Abschnitt zum [Anmelden eines Fingerabdrucks](enrolling-fingerprint.md) . 
-
-
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

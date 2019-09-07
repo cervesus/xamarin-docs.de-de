@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 46db28dab32f14fa476b9fbb42b788feb669aa74
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3a0737a5a28ced1ec55246d0586d4cfe28363f3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291867"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753454"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Einführung in 3D-Fingereingabe in xamarin. IOS
 
@@ -66,9 +66,6 @@ Die `MaximumPossibleForce` -Eigenschaft gibt den höchstmöglichen Wert für `Fo
 
 > [!IMPORTANT]
 > Änderungen bei der Belastung bewirken, `TouchesMoved` dass das Ereignis ausgelöst wird, auch wenn sich die X/Y-Koordinaten nicht geändert haben. Aufgrund dieser Änderung des Verhaltens sollten ihre IOS-apps darauf vorbereitet sein, dass `TouchesMoved` das Ereignis häufiger aufgerufen wird und die X/Y-Koordinaten mit dem letzten `TouchesMoved` Aufruf übereinstimmen.
-
-
-
 
 Weitere Informationen finden Sie in der touchcanvas [von Apple: Die effiziente und effektive](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/) Verwendung der Beispiel-APP und der [uitouch-Klassenreferenz](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)mithilfe von uitouch.
 
@@ -210,7 +207,6 @@ Wie bereits erwähnt, können Sie sich schnell Aktionen wie die Kontextmenüs vo
 
 [![](3d-touch-images/quickactions01.png "Beispiel für ein schnelles Aktionsmenü")](3d-touch-images/quickactions01.png#lightbox)
 
-
 ### <a name="defining-static-quick-actions"></a>Definieren statischer schneller Aktionen
 
 Wenn eine oder mehrere der für Ihre APP erforderlichen schnellen Aktionen statisch sind und nicht geändert werden müssen, können Sie Sie in der `Info.plist` Datei der app definieren. Bearbeiten Sie diese Datei in einem externen Editor, und fügen Sie die folgenden Schlüssel hinzu:
@@ -282,10 +278,6 @@ Hier definieren wir zwei statische Elemente für schnelle Aktionen mit den folge
 
 > [!IMPORTANT]
 > Auf die in der `Info.plist` Datei festgelegten Quick Action-Verknüpfungs Elemente kann nicht mit der `Application.ShortcutItems` -Eigenschaft zugegriffen werden. Sie werden nur an den `HandleShortcutItem` -Ereignishandler übermittelt.
-
-
-
-
 
 ### <a name="identifying-quick-action-items"></a>Erkennen von schnellen Aktions Elementen
 
@@ -387,7 +379,6 @@ Als nächstes überschreiben wir `OnActivated` die-Methode und übergeben ein be
 
 Wenn Ihre APP bereits ausgeführt wurde, wird die `PerformActionForShortcutItem` -Methode aufgerufen, um das Element für die schnelle Aktion zu verarbeiten. Daher müssen wir die Methode überschreiben und hier auch die- `HandleShortcutItem` Methode aufrufen.
 
-
 ### <a name="creating-dynamic-quick-action-items"></a>Erstellen dynamischer schneller Aktions Elemente
 
 Neben der Definition statischer schneller Aktions Elemente in der `Info.plist` Datei der App können Sie dynamische schnelle Aktionen erstellen. Wenn Sie zwei neue dynamische schnelle Aktionen definieren möchten, `AppDelegate.cs` bearbeiten Sie die Datei erneut `FinishedLaunching` , und ändern Sie die Methode so, dass Sie wie folgt aussieht:
@@ -446,8 +437,6 @@ Wenn Sie diese Funktion aktiv haben, können Sie auf der Trackpad-Seite von Mac 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die neuen 3D-Fingereingabe-APIs eingeführt, die in ios 9 für iPhone 6S und iPhone 6S Plus zur Verfügung gestellt wurden. Es wurde das Hinzufügen von Druck Sensitivität zu einer APP abgedeckt. Verwenden von Peek und Pop, um schnell in-app-Informationen aus dem aktuellen Kontext ohne Navigation anzuzeigen. und verwenden Sie schnelle Aktionen, um Verknüpfungen zu den am häufigsten verwendeten Features Ihrer APP bereitzustellen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 049f01d47d303f07edd57c659361d9a123993ede
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288652"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761983"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App Store-Genehmigungen
 
@@ -39,7 +39,6 @@ Wenn Sie Anwendungen in Ihrer Organisation testen oder ein Betaprogramm mit exte
 
 - **Verteilung** – Verwaltung des Bereitstellungs Prozesses (insbesondere für IOS-Geräte) und erhalten aktualisierter Versionen der Software an die Tester.
 - **Feedback** – Sammeln von Informationen zur Anwendungs Verwendung und ausführliche Informationen zu eventuell auftretenden Fehlern.
-
 
 Es gibt eine Reihe von Diensten, mit denen Sie diese Probleme beheben können, indem Sie eine Infrastruktur bereitstellen, die in Ihre Anwendung integriert ist, um die Nutzung und die Fehler zu erfassen und zu melden. Außerdem können Sie den Bereitstellungs Prozess optimieren, um Tester und deren Geräte zu registrieren und zu verwalten. .
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ac1ded56137cf85ec5852358f75240176dbc7671
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 35c35e702b7f992e0661630783edd4f00abce5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286795"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767376"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Arbeiten mit Eigenschaften Listen in xamarin. IOS
 
@@ -32,7 +32,6 @@ Jeder Bereich steuert verschiedene Eigenschaften, wie unten beschrieben:
 - **Advanced Panel** (erweiterter Bereich): im erweiterten Bereich können Unterstützte Dokumenttypen, utis und URL-Typen angegeben werden.
 - **Quell Panel** : der Quellbereich steuert weniger allgemeine Eigenschaften sowie benutzerdefinierte Eigenschaften für die Anwendung.
 
-
 In den nächsten drei Abschnitten werden die Features der einzelnen Panels ausführlicher untersucht.
 
 ## <a name="application-panel"></a>Anwendungs Panel
@@ -46,11 +45,9 @@ Visual Studio für Mac verfügt über eine grafische Benutzeroberfläche zum `In
 1. Symbole und Startbildschirme
 1. Karten und hintergrundmodi
 
-
 Diese werden in den nächsten Abschnitten ausführlicher beschrieben.
 
  <a name="iOS_Application_Target" />
-
 
 ### <a name="ios-application-target"></a>IOS-Anwendungs Ziel
 
@@ -77,13 +74,9 @@ Der Abschnitt "Status leisten- **Stile** " ist eine grafische Benutzeroberfläch
 
  <a name="Icons" />
 
-
 ### <a name="icons-launch-images-and-itunes-artwork"></a>Symbole, Start Bilder und iTunes-Grafiken
 
 Informationen zum Verwenden von Symbolen, Bildern und Grafiken in der Datei "Info. plist" finden Sie im Handbuch [Working with Images (Arbeiten mit Images](~/ios/app-fundamentals/images-icons/index.md) ).
-
-
-
 
 ### <a name="maps-integration-and-background-modes"></a>Zuordnungen von Integrations-und hintergrundmodi
 
@@ -104,7 +97,6 @@ Der Bereich erweitert steuert die Dokumenttypen und URL-Schemas, die von der Anw
  [![](property-lists-images/image34.png "Erweiterter Bereich")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
-
 
 ## <a name="document-types"></a>Dokumenttypen
 
@@ -127,8 +119,6 @@ Weitere Informationen zur Verwendung von benutzerdefinierten utis finden Sie unt
 Ein URL-Schema Name (auch als Protokoll bezeichnet) ist der erste Teil der URL. Beispielsweise `http://` sind und `https://` allgemeine URL-Schemas. Sie haben die Möglichkeit, ein benutzerdefiniertes URL-Schema für Ihre Anwendung zu erstellen. Benutzerdefinierte URL-Schemas werden für die Kommunikation und das Senden von Daten mit anderen Anwendungen verwendet. Der folgende Screenshot veranschaulicht das Erstellen eines neuen benutzerdefinierten URL `monkeys://`-Schemas namens:
 
  [![](property-lists-images/url.png "Benutzerdefinierte URLs")](property-lists-images/url.png#lightbox)
-
-
 
 Weitere Informationen zum Implementieren von benutzerdefinierten URL-Schemas finden Sie im [Abschnitt Implementieren von benutzerdefinierten URL-Schemas](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html) in Apple in diesem Handbuch.
 
@@ -153,7 +143,6 @@ Weitere Informationen zu optionalen Eigenschaften finden Sie in den Links zu den
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde gezeigt, wie Sie mit den grafischen und erweiterten plist-Editoren gängige App-Konfigurationen bearbeiten sowie Symbole und Start Bilder angeben. Außerdem wurde das `Entitlements.plist` zum Hinzufügen und Verwalten von App-Funktionen eingeführt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

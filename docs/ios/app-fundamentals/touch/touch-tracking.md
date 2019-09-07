@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 00fa1a65d2a73220675d8142e70ac904a93e3042
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eca8a1bdc3c60ae4dbaabf022a9dbe91f7e30402
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281971"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767038"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>Multitouch-Finger Verfolgung in xamarin. IOS
 
@@ -41,7 +41,6 @@ class FingerPaintPolyline
 ```
 
 Jede Polylinie hat eine Farbe, eine Strichbreite und ein IOS-Grafik [`CGPath`](xref:CoreGraphics.CGPath) Objekt, um beim Zeichnen mehrere Punkte der Linie zu sammeln und zu Renderern.
-
 
 Der Rest des unten gezeigten Codes ist in einer Ableitung mit dem `UIView` Namen `FingerPaintCanvasView`enthalten. Diese Klasse verwaltet ein Wörterbuch von Objekten des `FingerPaintPolyline` Typs, wenn Sie aktiv von einem oder mehreren Fingern gezeichnet werden:
 
@@ -187,8 +186,6 @@ Diese Verarbeitung ermöglicht es dem [fingerpaint](https://docs.microsoft.com/s
 [![](touch-tracking-images/image01.png "Nachverfolgen von einzelnen Fingern und Zeichnen der Ergebnisse auf dem Bildschirm")](touch-tracking-images/image01.png#lightbox)
 
 Sie haben nun gesehen, wie Sie einzelne Finger auf dem Bildschirm nachverfolgen und voneinander unterscheiden können.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

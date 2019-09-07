@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 68ba09ce74f161c728f0a58276a0b0d98fec7d8c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281289"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767778"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>proaktive watchos-Vorschläge in xamarin
 
 _In diesem Artikel wird gezeigt, wie Sie proaktive Vorschläge in einer watchos 3-App verwenden, um Engagement zu fördern, indem Sie dem Benutzer das proaktive Anzeigen von hilfreichen Informationen für den Benutzer ermöglichen._
 
-
 Neu bei watchos 3: proaktive Vorschläge stellen News-Möglichkeiten zur Verfügung, damit Benutzer mit einer xamarin. IOS-app in Kontakt treten, indem Sie den Benutzern proaktiv hilfreiche Informationen zu den richtigen Zeiten präsentieren.
-
 
 ## <a name="about-proactive-suggestions"></a>Informationen zu proaktiven Vorschlägen
 
@@ -300,7 +298,6 @@ In diesem Abschnitt wird erläutert, wie Sie Orts Vorschläge direkt aus einer R
 
 Wenn die APP mit einem MapKit `MKDirectionsRequest` -Objekt gestartet wird, sollte Sie automatisch damit beginnen, den Benutzer zum angeforderten Speicherort zu bringen, oder eine Benutzeroberfläche bereitstellen, die es dem Benutzer ermöglicht, mit der Einführung von Anweisungen zu beginnen. Beispiel:
 
-
 ```csharp
 using System;
 using Foundation;
@@ -362,7 +359,6 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden proaktive Vorschläge behandelt, und es wurde gezeigt, wie der Entwickler diese zum Steuern von Datenverkehr an eine xamarin. IOS-App für watchos verwenden kann. Es wurden die Schritte zum Implementieren von proaktiven Vorschlägen und zur Verwendung von Verwendungs Richtlinien behandelt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

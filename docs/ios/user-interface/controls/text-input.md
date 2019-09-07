@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: ef9067f3a0694c66d21d6614277e8543aebbc299
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f47ebdd8c1ba220229c6e652af99e8fa3ae2960
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279340"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768814"
 ---
 # <a name="text-input-in-xamarinios"></a>Text Eingabe in xamarin. IOS
 
@@ -27,7 +27,6 @@ Die folgenden Screenshots zeigen die Symbole für diese Steuerelemente, die sich
 Nachdem Sie das Outlet benannt und die storyboarddatei gespeichert haben, wird Visual Studio für Mac die `.designer.cs` partielle Klasse aktualisieren, und Sie können Code hinzufügen C# , der auf das Steuerelement verweist, auf die Klassendatei. Jedes Steuerelement verfügt über eigene eindeutige Eigenschaften und Ereignisse, auf die im C# Code zugegriffen werden kann.
 
  <a name="UITextField" />
-
 
 ## <a name="uitextfield"></a>UITextField
 
@@ -46,7 +45,6 @@ Diese Steuerelemente werden im folgenden erläutert:
 - Darstellung **– steuert** den Stil der Tastatur und ist entweder dunkel oder hell.
 - **Return Key** – ändern Sie die Bezeichnung in der Rückgabetaste, um besser widerzuspiegeln, welche Aktion durchgeführt wird. Zu den unterstützten Werten zählen go, Join, Next, Route, done und Search.
 - **Secure** – gibt an, ob die Eingabe maskiert wird (z. b. für eine Kenn Wort Eingabe).
-
 
 Wenn ein UITextField mit `textfield1` dem Namen einem Bildschirm mit dem Designer hinzugefügt wurde, können Sie seine Eigenschaften in C# wie folgt festlegen oder ändern:
 
@@ -72,7 +70,6 @@ View.Add(textfield1);
 
  <a name="UITextView" />
 
-
 ## <a name="uitextview"></a>UITextView
 
 Das `UITextView` -Steuerelement kann verwendet werden, um schreibgeschützten Text anzuzeigen oder mehrzeilige Texteingaben zu akzeptieren. Es verfügt über viele der gleichen Optionen wie die `UITextField` (z. b. Groß-/Kleinschreibung, Korrektur usw.).
@@ -84,7 +81,6 @@ Zu den spezifischen Eigenschaften gehören:
 - **Verhalten** – gibt an, ob der Text bearbeitbar oder schreibgeschützt ist.
 - **Erkennung** – erkennt und konvertiert die ertierten Daten in klickbare Elemente, wie z. b. Telefonnummern, die einen Aufruf auslöst, Adressen, die zu Verknüpfungen zu Zuordnungen werden, URLs, die in Safari geöffnet werden, oder Datums-und Uhrzeitangaben, die im Kalender
 
-
 Wenn eine uitextview einem Bildschirm mit dem Designer hinzugefügt wurde, können Sie die Eigenschaften wie folgt festlegen oder ändern:
 
 ```csharp
@@ -92,8 +88,6 @@ textview1.Text = "Lorem ipsum..."; // lots of text can go here
 textview1.Editable = true;
 textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorType.Link;
 ```
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

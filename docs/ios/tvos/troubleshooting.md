@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 3fb479321686e4b956fc6ffee90dd5b0b2c16d9c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f54edead87459282ccd6a44225269542fad9d0e4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291182"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769107"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Problembehandlung bei mit xamarin erstellten tvos-apps
 
@@ -146,7 +146,6 @@ Spiele Controller können verwendet werden, um das Spiel zu verbessern und ein G
 
 Wenn Sie eine xamarin. tvos-App mit Game Controller-Unterstützung für den Apple TV App Store übermitteln und eine Fehlermeldung mit dem folgenden Code erhalten:
 
-
 _Wir haben ein oder mehrere Probleme mit Ihrer aktuellen Übermittlung für "App-Name" erkannt. Ihre Übermittlung war erfolgreich, aber Sie möchten möglicherweise die folgenden Probleme bei der nächsten Übermittlung beheben:_
 
 _Ungültiges Bündel – eine APP, die Spiele Controller unterstützt, muss auch das Apple TV-Remote unterstützen._
@@ -200,8 +199,6 @@ Zum folgenden Pfad:
 Beachten Sie, dass die Profil Nummer im Pfad der Profil Nummer der PCL entsprechen muss.
 
 Wenn diese Datei vorhanden ist, sollten Sie in der Lage sein, die PCL-Datei erfolgreich dem xamarin. tvos-Projekt hinzuzufügen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

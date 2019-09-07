@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: be353c6274dcf69946740e2d195b9e4d64208313
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 24d86c54ea4b346e1c165b28c6b62f5a98390d64
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121575"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760140"
 ---
 # <a name="adding-ios-specific-formatting"></a>Hinzufügen einer IOS-spezifischen Formatierung
 
@@ -118,8 +118,6 @@ Diese beiden Bildschirmaufzeichnungen zeigen das Standard `UISwitch` Steuereleme
 ### <a name="other-controls"></a>Andere Steuerelemente
 
 Viele IOS-Benutzeroberflächen-Steuerelemente können mithilfe der [ `UIAppearance` -API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)ihre Standardfarben und andere Attribute festlegen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

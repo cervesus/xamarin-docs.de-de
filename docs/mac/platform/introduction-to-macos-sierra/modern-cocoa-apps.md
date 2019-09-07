@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 04bcf1012800ef2883fef80580bcec869bd8e5a3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4be5670829b2b8c1a5a73f564b4c031b6a26bd54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291469"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769861"
 ---
 # <a name="building-modern-macos-apps"></a>Erstellen moderner macOS-Apps
 
@@ -951,8 +951,6 @@ Apple verfügt über mehrere benutzerorientierte Features in macOS Sierra, die e
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden mehrere Tipps, Features und Techniken behandelt, die ein Entwickler zum Erstellen einer modernen macOS-app in xamarin. Mac verwenden kann.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

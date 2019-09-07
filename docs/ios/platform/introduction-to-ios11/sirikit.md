@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: d4fab992121ad6a2b272012f7249df5ed8427513
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286741"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752384"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>Updates für Sirikit in ios 11
 
@@ -210,7 +210,6 @@ Wenn die alternativen APP-Namen festgelegt sind, funktionieren die folgenden Aus
 - "Erstellen einer lebensmittelliste mit Äpfeln, Bananen und Birnen in _monkeynotes_"
 - "Task WWDC in _monkeytodo_hinzufügen"
 
-
 ## <a name="troubleshooting"></a>Problembehandlung
 
 Einige Fehler, die bei der Ausführung des Beispiels auftreten können, oder zum Hinzufügen von Sirikit zu ihren eigenen Anwendungen:
@@ -225,7 +224,6 @@ _Die ausgelöste Ziel-C-Ausnahme.  Name: NSInternalInconsistencyException Grund:
   [![Projektoptionen mit ordnungsgemäßer Festlegung von Berechtigungen](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
 - (für die Geräte Bereitstellung) Für die APP-ID ist das Sirikit aktiviert und das Bereitstellungs Profil heruntergeladen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: b53799f4b1c8d9299ab23191f6a702c2ec0983fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1cf22f070864492e14e1865c1cbbf8cf32e0df29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285766"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753911"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek
 
@@ -56,15 +56,11 @@ In diesem Artikel wird davon ausgegangen, dass Sie mit Xcode und der Programmier
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-
 Wie bereits erwähnt, verwenden wir Xcode-Befehlszeilen Tools (insbesondere `make` und `lipo`) in dieser exemplarischen Vorgehensweise. Der `make` Befehl ist ein sehr häufiges UNIX-Hilfsprogramm, das die Kompilierung ausführbarer Programme und Bibliotheken mithilfe eines _Makefile_ automatisiert, das angibt, wie das Programm erstellt werden soll. Der `lipo` Befehl ist ein OS X-Befehlszeilen-Hilfsprogramm zum Erstellen von Dateien mit mehreren Architekturen. `.a` es werden mehrere Dateien zu einer Datei zusammengefasst, die von allen Hardwarearchitekturen verwendet werden kann.
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 Wie bereits erwähnt, verwenden wir die Xcode-Befehlszeilen Tools auf dem **Mac** -buildhost `make` ( `lipo`insbesondere und) in dieser exemplarischen Vorgehensweise. Der `make` -Befehl ist ein sehr häufiges UNIX-Hilfsprogramm, das die Kompilierung von ausführbaren Programmen und Bibliotheken mithilfe eines _Makefile_ -para gramms automatisiert, das angibt, wie das Programm erstellt werden soll. Der `lipo` Befehl ist ein OS X-Befehlszeilen-Hilfsprogramm zum Erstellen von Dateien mit mehreren Architekturen. `.a` es werden mehrere Dateien zu einer Datei zusammengefasst, die von allen Hardwarearchitekturen verwendet werden kann.
-
 
 -----
 
@@ -272,9 +268,7 @@ Die Projekt Mappe wird erstellt, und es werden zwei Standard Dateien eingeschlos
 
 ![](walkthrough-images/bind03.png "Die Lösungs Struktur im Projektmappen-Explorer")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. Starten Sie Visual Studio.
 
@@ -336,7 +330,6 @@ Gehen Sie folgendermaßen vor, um die Bibliothek hinzuzufügen:
 
 Wenn die Datei " **. a** " dem Projekt hinzugefügt wird, legt xamarin. IOS automatisch den Buildvorgang der Datei auf **objcbindingnativelibrary**fest und erstellt eine spezielle Datei `libInfColorPickerSDK.linkwith.cs` **mit dem** Namen.
 
-
 Diese Datei enthält das `LinkWith` Attribut, das xamarin. IOS anweist, wie die soeben hinzugefügte statische Bibliothek behandelt werden soll. Der Inhalt dieser Datei wird im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
@@ -347,7 +340,6 @@ using ObjCRuntime;
 
 Das `LinkWith` -Attribut identifiziert die statische Bibliothek für das Projekt und einige wichtige Linker-Flags.
 
-
 Als nächstes müssen wir die API-Definitionen für das infcolorpicker-Projekt erstellen. Im Rahmen dieser exemplarischen Vorgehensweise verwenden wir das Ziel "Sharpie", um die Datei " **ApiDefinition.cs**" zu generieren.
 
 <a name="Using_Objective_Sharpie"/>
@@ -356,15 +348,11 @@ Als nächstes müssen wir die API-Definitionen für das infcolorpicker-Projekt e
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-
 Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das beim Erstellen der Definitionen helfen kann, die erforderlich sind, um eine Ziel-C C#-Bibliothek von Drittanbietern an zu binden. In diesem Abschnitt verwenden wir den Ziel-Sharpie, um die anfängliche **ApiDefinition.cs** für das infcolorpicker-Projekt zu erstellen.
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 Ziel-Sharpie ist ein von xamarin bereitgestelltes Befehlszeilen Tool, das beim Erstellen der Definitionen helfen kann, die erforderlich sind, um eine Ziel-C C#-Bibliothek von Drittanbietern an zu binden. In diesem Abschnitt verwenden wir den Ziel-Sharpie auf dem **Mac-buildhost** , um die anfängliche **ApiDefinition.cs** für das infcolorpicker-Projekt zu erstellen.
-
 
 -----
 
@@ -466,17 +454,13 @@ Und die **InfColorPicker.enums.cs** -und **InfColorPicker.cs** -Dateien werden i
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-
 Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der **Datei InfColorPicker.cs** , und fügen Sie ihn in die Datei **ApiDefinition.cs** ein. `namespace ...` ersetzen Sie dabei den vorhandenen Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei (indem Sie die `using` Anweisungen überschreiben. intakt):
 
 ![](walkthrough-images/os07.png "Die infcolorpickercontrollerdelegatdatei")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der Datei **InfColorPicker.cs** (auf dem **Mac-buildhost**), und fügen Sie ihn in die Datei ApiDefinition.cs `namespace ...` ein. ersetzen Sie dabei den vorhandenen Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei ( die `using` Anweisungen bleiben unverändert).
-
 
 -----
 
@@ -503,17 +487,13 @@ Sie können auch feststellen, dass der Ziel-Sharpie die Bindung mit `[Verify]` A
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-
 An diesem Punkt sollte das Bindungs Projekt abgeschlossen und bereit für die Erstellung sein. Erstellen wir nun das Bindungs Projekt, und stellen Sie sicher, dass keine Fehler aufgetreten sind:
 
 [Erstellen Sie das Bindungs Projekt, und stellen Sie sicher, dass keine Fehler vorliegen.](walkthrough-images/os12.png)
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 An diesem Punkt sollte das Bindungs Projekt abgeschlossen und bereit für die Erstellung sein. Erstellen wir nun das Bindungs Projekt, und stellen Sie sicher, dass keine Fehler aufgetreten sind.
-
 
 -----
 
@@ -702,7 +682,6 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
 ```
 
 **ViewDidLoad aktualisieren** : Wir müssen ändern `ViewDidLoad` , damit der soeben erstellte Ereignishandler verwendet wird. Bearbeiten `ViewController` und ändern `ViewDidLoad` Sie den folgenden Code Ausschnitt:
-
 
 ```csharp
 public override void ViewDidLoad ()

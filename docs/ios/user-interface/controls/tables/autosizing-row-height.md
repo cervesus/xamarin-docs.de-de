@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 00c2284a12d17e0dcd5a89cb0c39c1064665c6d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03d79c93821737afb1f8e1946ebb3b6380d7a527
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288443"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768433"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>Automatische Größenanpassung der Zeilenhöhe in xamarin. IOS
 
@@ -108,7 +108,6 @@ Diese Schätzung muss nicht exakt sein, sondern nur eine grobe Schätzung der du
 Wenn dieser Code vorhanden ist, wird beim Ausführen der APP jede Zeile verkleinert und basierend auf der Höhe der letzten Bezeichnung im Zellen Prototyp vergrößert. Beispiel:
 
 [![](autosizing-row-height-images/table07.png "Eine Beispiel Tabelle wird ausgeführt.")](autosizing-row-height-images/table07.png#lightbox)
-
 
 ## <a name="related-links"></a>Verwandte Links
 

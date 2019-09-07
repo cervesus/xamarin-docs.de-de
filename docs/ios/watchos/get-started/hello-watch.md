@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293144"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768691"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchos – Exemplarische Vorgehensweise
 
@@ -42,7 +42,6 @@ Sie sollten ihre Watch-APP jetzt ausführen können, aber da die storyboarddatei
 
 Doppelklicken Sie in ihrer Watch-App auf das Interface. Storyboard, um den xamarin IOS-Designer zu starten (wenn Sie sich auf einem Mac befinden, können Sie auch mit der rechten Maustaste klicken und **mit > Xcode-Interface Builder öffnen**).
 
-
 1. Stellen Sie sicher, dass die Bereiche **Toolbox** und **Eigenschaften** sichtbar sind.
 1. Klicken Sie, um den Schnittstellen Controller auszuwählen.
 1. Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf **interfakecontroller** und **Hi Watch**fest.
@@ -62,7 +61,6 @@ Doppelklicken Sie in ihrer Watch-App auf das Interface. Storyboard, um es mit de
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf interfakecontroller und Hi Watch fest.")
 
 -----
-
 
 Erstellen Sie die Benutzeroberfläche:
 
@@ -154,7 +152,6 @@ Wenn der Simulator gestartet wird, klicken Sie auf die Schaltfläche, um die Bez
 Herzlichen Glückwunsch! Sie haben eine Watch-App!
 
 ![](hello-watch-images/running.png "Die im Simulator laufende App")
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: b195e63bcc88c4d1c659216f99ab698773f73e9e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86fac9dd0c2f9281a0c828ace68fbf77679dce5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656809"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759843"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>Benutzerdefinierte Animationen in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _Die Animation-Klasse ist der Baustein von alle Xamarin.Forms-Animationen, mit der Erweiterungsmethoden in der ViewExtensions-Klasse, die ein oder mehrere Animation-Objekte erstellen. In diesem Artikel wird veranschaulicht, wie die Animation-Klasse erstellt und Abbrechen von Animationen, mehrere Animationen zu synchronisieren, und erstellen benutzerdefinierte Animationen, das Animieren von Eigenschaften, die durch die vorhandenen Methoden für die Animation animiert werden nicht wird._
-
 
 Eine Reihe von Parametern angegeben werden, beim Erstellen einer `Animation` -Objekts, einschließlich der Start- und enduhrzeitwerten der zu animierenden Eigenschaft und einen Rückruf, der der Wert der Eigenschaft geändert wird. Ein `Animation` Objekt kann auch eine Auflistung der untergeordneten Animationen, die ausgeführt und synchronisiert werden kann verwalten. Weitere Informationen finden Sie unter [untergeordneten Animationen](#child).
 
@@ -180,7 +179,6 @@ In diesem Codebeispiel wird die `ColorTo` Methode erstellt eine Animation die [ 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel veranschaulicht, wie Sie mit der [ `Animation` ](xref:Xamarin.Forms.Animation) Klasse erstellen und Abbrechen von Animationen, mehrere Animationen zu synchronisieren, und erstellen benutzerdefinierte Animationen, das Animieren von Eigenschaften, die von der vorhandenen Animation animiert werden nicht -Methoden. Die `Animation` -Klasse ist der Baustein von alle Xamarin.Forms-Animationen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

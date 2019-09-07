@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: 2e4fa5f1fb96077b0237dbeac9074006e761bc09
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 63c8cb285c51d7c10e2109c9d0b7cffbd0fb0898
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655307"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770333"
 ---
 # <a name="layout-options-in-xamarinforms"></a>Layoutoptionen in Xamarin.Forms
 
@@ -155,8 +155,6 @@ Jede [ `Label` ](xref:Xamarin.Forms.Label) belegt die gleiche Menge an Speicherp
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel erläutert die Auswirkungen, die jeweils [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) Struktur-Wert aufweist, auf die Ausrichtung und die Erweiterung einer Ansicht, relativ zum übergeordneten Element. Die `Start`, `Center`, `End`, und `Fill` Felder verwendet, um die Ansicht die Ausrichtung innerhalb des Layouts des übergeordneten, definieren und die `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, und `FillAndExpand` Felder werden verwendet, um zu definieren Die Voreinstellung für die Ausrichtung, und bestimmen, ob die Sicht mehr Speicherplatz belegt wird falls verfügbar, in einem [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

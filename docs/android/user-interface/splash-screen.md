@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: 4d8f467b4dcc5e6c4628ed7afa43779cc48b7ef5
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b05ab7ee835a97f13af618332baec7a5ebf404ec
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522190"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764088"
 ---
 # <a name="splash-screen"></a>Begrüßungsbildschirm
 
 _Eine Android-App nimmt einige Zeit in Betrieb, insbesondere wenn die APP zum ersten Mal auf einem Gerät gestartet wird. Ein Begrüßungsbildschirm kann den Startstatus für den Benutzer oder das Branding anzeigen._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -33,20 +32,17 @@ In diesem Leitfaden wird eine Technik zum Implementieren eines Begrüßungs Bild
 
 [![Beispielbild des xamarin-Logos, gefolgt vom APP-Bildschirm](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-
 ## <a name="requirements"></a>Anforderungen
 
 In dieser Anleitung wird davon ausgegangen, dass die Anwendung auf Android-API-Ebene 15 (Android 4.0.3) oder höher abzielt. Die Anwendung muss außerdem über die nuget-Pakete **xamarin. Android. Support. v4** und **xamarin. Android. Support. V7. AppCompat** verfügen, die dem Projekt hinzugefügt werden.
 
 Sämtlicher Code und XML in diesem Handbuch finden Sie möglicherweise im [SplashScreen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen) -Beispiel Projekt für dieses Handbuch.
 
-
 ## <a name="implementing-a-splash-screen"></a>Implementieren eines Begrüßungs Bildschirms
 
 Die schnellste Möglichkeit zum Rendering und zum Anzeigen des Begrüßungs Bildschirms ist das Erstellen eines benutzerdefinierten Designs und das Anwenden auf eine Aktivität, die den Begrüßungsbildschirm anzeigt. Wenn die Aktivität gerendert wird, wird das Design geladen, und die drawable-Ressource (auf die durch das Design verwiesen wird) wird auf den Hintergrund der Aktivität angewendet. Bei dieser Vorgehensweise entfällt die Notwendigkeit, eine Layoutdatei zu erstellen.
 
 Der Begrüßungsbildschirm wird als Aktivität implementiert, die das Marken drawable-Element anzeigt, sämtliche Initialisierungen ausführt und alle Aufgaben startet. Nachdem die APP gestartet wurde, startet die Aktivität des Begrüßungs Bildschirms die Hauptaktivität und entfernt sich selbst aus dem Anwendungs-Back-Stack.
-
 
 ### <a name="creating-a-drawable-for-the-splash-screen"></a>Erstellen eines drawable-Element für den Begrüßungsbildschirm
 
@@ -73,7 +69,6 @@ Dadurch `layer-list` wird das Begrüßungs Bild **Splash. png** in den von der `
 
 Nachdem der Begrüßungsbildschirm drawable erstellt wurde, besteht der nächste Schritt im Erstellen eines Designs für den Begrüßungsbildschirm.
 
-
 ### <a name="implementing-a-theme"></a>Implementieren eines Designs
 
 Um ein benutzerdefiniertes Design für die Aktivität des Begrüßungs Bildschirms zu erstellen, bearbeiten Sie die Datei **Values/Styles. XML** , oder `style` fügen Sie Sie hinzu, und erstellen Sie ein neues-Element für den Begrüßungsbildschirm. Ein Beispiel für die Datei " **values. XML** " wird unten mit `style` dem Namen " **mytheme. Splash**" angezeigt:
@@ -95,7 +90,6 @@ Um ein benutzerdefiniertes Design für die Aktivität des Begrüßungs Bildschir
 ```
 
 **Mytheme. Splash** ist sehr sparsam &ndash; und deklariert den Hintergrund des Fensters, entfernt die Titelleiste explizit aus dem Fenster und deklariert, dass es sich um einen voll Bildschirm handelt. Wenn Sie einen Begrüßungsbildschirm erstellen möchten, der die Benutzeroberfläche der APP emuliert, bevor die Aktivität das erste Layout auffüllt, können Sie `windowContentOverlay` `windowBackground` anstelle von in der Format Definition verwenden. In diesem Fall müssen Sie auch das drawable-Element von **splash_screen. XML** so ändern, dass es eine Emulation ihrer Benutzeroberfläche anzeigt.
-
 
 ### <a name="create-a-splash-activity"></a>Erstellen einer Begrüßungs Aktivität
 
@@ -217,14 +211,11 @@ Zum Hinzufügen eines Begrüßungs Bildschirms für den Querformat führen Sie d
 
     [![Drehung des Begrüßungs Bildschirms in den Querformat](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
-
 Beachten Sie, dass die Verwendung eines Begrüßungs Bildschirms im Querformat nicht immer eine nahtlose Umgebung bereitstellt. Standardmäßig wird die APP von Android im Hochformat gestartet und in den Querformat versetzt, auch wenn sich das Gerät bereits im Querformat befindet. Wenn die APP gestartet wird, während sich das Gerät im Querformat befindet, stellt das Gerät den Begrüßungsbildschirm für Hochformat kurz her und animiert dann die Drehung vom Hochformat auf den Begrüßungsbildschirm des quer Bildes. Leider findet dieser erste Querformat Übergang statt, auch wenn `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` in den Flags der Begrüßungs Aktivität angegeben ist. Die beste Möglichkeit, diese Einschränkung zu umgehen, besteht darin, ein einzelnes Begrüßungsbildschirm Bild zu erstellen, das im hoch-und Querformat ordnungsgemäß gerendert wird.
-
 
 ## <a name="summary"></a>Zusammenfassung
 
 In dieser Anleitung wurde eine Möglichkeit zum Implementieren eines Begrüßungs Bildschirms in einer xamarin. Android-Anwendung erörtert. Dies gilt insbesondere für das Anwenden eines benutzerdefinierten Designs auf die Start Aktivität.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

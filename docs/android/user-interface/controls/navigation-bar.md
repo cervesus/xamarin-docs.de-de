@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 3bb2b47623c03d335ae1edc4bf87881622823ea1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: cf57142f0896b42c5c8ba726db723527e0e61452
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522919"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762387"
 ---
 # <a name="xamarinandroid-navigation-bar"></a>Xamarin. Android-Navigationsleiste
 
@@ -25,7 +25,6 @@ Es sind mehrere neue Flags verfügbar, die die Sichtbarkeit der Navigationsleist
 - `SystemUiFlagVisible`&ndash; Macht die Navigationsleiste sichtbar. 
 - `SystemUiFlagLowProfile`&ndash; Gibt die Steuerelemente in der Navigationsleiste aus. 
 - `SystemUiFlagHideNavigation`&ndash; Blendet die Navigationsleiste aus. 
-
 
 Diese Flags können auf jede Sicht in der Ansichts Hierarchie angewendet werden, `SystemUiVisibility` indem die-Eigenschaft festgelegt wird. Wenn diese Eigenschaft in mehreren Ansichten festgelegt ist, werden Sie vom System mit einer OR-Operation kombiniert und angewendet, solange das Fenster, in dem die Flags festgelegt sind, den Fokus erhält. Wenn Sie eine Ansicht entfernen, werden alle festgelegten Flags ebenfalls entfernt.
 
@@ -64,8 +63,6 @@ tv.SystemUiVisibilityChange +=
         tv.Text = String.Format ("Visibility = {0}", e.Visibility);
   };
 ```
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

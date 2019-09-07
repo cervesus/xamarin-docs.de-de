@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: cae0196fc29944ba8ae87fe43d256da090942f3a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 919eff45e11f60db51109904269addeec1038558
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286119"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752876"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Verwenden von Kern Grafiken und Kern Animationen in xamarin. IOS
 
@@ -25,7 +25,6 @@ Der folgende Screenshot zeigt die abgeschlossene Anwendung:
 Bevor wir beginnen, laden wir das *graphicsdemo* -Beispiel herunter, das diese Anleitung begleitet. Sie können [hier](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation) heruntergeladen werden und befinden sich im Verzeichnis **graphicswalkthrough** . Starten Sie das Projekt mit dem Namen **GraphicsDemo_starter** , indem Sie darauf doppelklicken `DemoView` , und öffnen Sie die-Klasse.
 
 ## <a name="drawing-a-path"></a>Zeichnen eines Pfads
-
 
 1. Fügen `DemoView` Sie in `CGPath` der-Klasse eine Variable hinzu, und instanziieren Sie Sie im Konstruktor. Außerdem deklarieren `CGPoint` Sie zwei `initialPoint` Variablen `latestPoint`, und, die wir verwenden werden, um den Berührungspunkt zu erfassen, von dem aus der Pfad erstellt wird:
 
@@ -179,7 +178,6 @@ Nun, da wir den Code implementiert haben, um Benutzern das Zeichnen des Pfads zu
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir ein Beispiel durchlaufen, in dem Grafiken und Animations Konzepte miteinander verknüpft wurden. Zuerst haben wir gezeigt, wie Kern Grafiken verwendet werden, um einen Pfad in `UIView` einer als Reaktion auf den Benutzer Kontakt zu zeichnen. Anschließend haben wir gezeigt, wie Sie mit der Core-Animation ein Bild an diesen Pfad weitergeben können.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

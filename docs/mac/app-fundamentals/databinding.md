@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: ab5355459f12c8b3cb7fa5f262f015bfd64d3e08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290163"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770005"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Datenbindung und Schlüssel-Wert-Codierung in xamarin. Mac
 
@@ -888,7 +888,6 @@ Diese Zeile teilt uns mit, dass der `Title` Schlüssel für das Objekt, an das w
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die Arbeit mit Datenbindung und Schlüssel-Wert-Codierung in einer xamarin. Mac-Anwendung ausführlich erläutert. Zuerst wurde das verfügbar machen einer C# Klasse für "Ziel-C" mithilfe von Key-Value Coding (KVC) und Key-Value-Beobachtungen (KVO) untersucht. Im nächsten Schritt wurde gezeigt, wie eine KVO-kompatible Klasse verwendet und Daten an Benutzeroberflächen Elemente in der Interface Builder von Xcode gebunden werden. Zum Schluss zeigte er eine komplexe Datenbindung mithilfe von **Array Controllern** und Struktur **Controllern**.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

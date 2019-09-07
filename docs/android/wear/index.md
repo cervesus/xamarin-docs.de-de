@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: 13a9a02984828781cc6402e982a4b5151c077c52
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5768a8fb402304d399e619ddb111aea24d975daf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648328"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758334"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -42,8 +42,6 @@ Erläutert, wie Sie Ihre Android Wear-App auf einem Android Wear-Gerät oder im 
 
 Die Android-Entwickler Website bietet ausführliche Informationen zu Key Wear-APIs, wie z. b. [Wearable Activity](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html), [Intents](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html), [Authentifizierung](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html), [Komplikationen](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html), [Komplikationen Rendering](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html), [Benachrichtigungen](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html), [ Sichten](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)und [watchface](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html).
 
-
-
 ## <a name="samples"></a>Proben
 
 Eine Reihe von [Beispielen](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear) finden Sie unter Verwendung von Android Wear (oder direkt zu [GitHub](https://github.com/xamarin/monodroid-samples/tree/master/wear)).
@@ -57,7 +55,6 @@ Eine Reihe von [Beispielen](https://docs.microsoft.com/samples/browse/?products=
 |[GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)|GridViewPager implementiert das 2D-Navigationsmuster, bei dem der Benutzer vertikal und dann horizontal zum Navigieren durch Optionen und Inhalte bewegt wird.|![Screenshot von GridViewPager](images/gridviewpager.png)|
 |[WatchFace](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchface)|Watchface ist ein benutzerdefiniertes Überwachungs Gesicht, das Stunden-, Minuten-und zweite Hände im analogen Stil ist. In diesem Beispiel wird veranschaulicht, wie ein Watch-Gesichts Dienst erstellt wird, der die aktuelle Uhrzeit zeichnet und Umgebungs Modus-und Sichtbarkeits Änderungs Ereignisse behandelt. Sie enthält einen Broadcast Empfänger, der auf Zeit Zonen Änderungen lauscht und die Uhrzeit automatisch entsprechend aktualisiert.|![Screenshot von watchface](images/gridviewpager.png)|
 
-
 ## <a name="videos"></a>Videos
 
 Sehen Sie sich diese Video Links an, in denen xamarin. Android mit Wear-Unterstützung erläutert wird:
@@ -67,7 +64,6 @@ Sehen Sie sich diese Video Links an, in denen xamarin. Android mit Wear-Unterst�
 |[Android L und vieles mehr](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; In der Android L Developer Preview wurden zahlreiche neue APIs vorgestellt, die Entwickler nutzen können, einschließlich Material Design, Benachrichtigungen und neuen Animationen, um nur einige zu nennen.|![Screenshot der Präsentation](images/video-android-l.png)|
 |[C#in meiner Augen Ansicht: Google Glass und Android Wear](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; Wearable Computing könnte wie etwas von der Zukunft (oder eine Inspektor-Gadget-Episode) erscheinen, aber viele Leute sind heute bereits in der Zukunft. C#Entwickler kennen dies und verfügen bereits über die Tools und Fähigkeiten, mit denen sich die Leistung von webaugeräten (von weiterentwickelt 2014) zunutze machen lassen.|![Screenshot der Präsentation](images/video-eyes-ears.png)|
 |[Neues in xamarin. Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L, Android Wear, Android TV, Android Auto, Material Design und Art. Was bedeutet das für Sie als xamarin-Entwickler? von Evolve 2014.|![Screenshot der Präsentation](Images/video-whats-new.png)|
-
 
 <!--
 

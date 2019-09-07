@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: aa478636b4ab94ab000fd98860646bfa300e9fab
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 50b26e1b37000df3e6cd96c8a3cd2f424dd4f1f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291313"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752664"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Erwerben nicht nutzbarer Produkte in xamarin. IOS
 
@@ -21,47 +21,30 @@ Nicht nutzbare Produkte sind vom Kunden "Besitzer". Es wird davon ausgegangen, d
 ## <a name="non-consumable-products-sample"></a>Beispiel für nicht nutzbare Produkte
 
 Der [inapppurchasesample-Code](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit) enthält ein Projekt mit dem Namen " *nicht Verbrauchsgüter*". Das Codebeispiel veranschaulicht, wie nicht nutzbare Produkte mithilfe von Foto Filtern als Beispiel implementiert werden. Nachdem Sie einen Filter gekauft haben, können Sie ihn immer wieder auf das Foto anwenden. Sie müssen ihn nie erneut erwerben.   
-   
-   
-   
- Der Kaufvorgang wird in dieser Reihe von Screenshots angezeigt – die Schaltfläche " **kaufen** " wird zur Funktions Aktivierungs Schaltfläche:   
-   
-   
-   
+
+Der Kaufvorgang wird in dieser Reihe von Screenshots angezeigt – die Schaltfläche " **kaufen** " wird zur Funktions Aktivierungs Schaltfläche:   
+
  [![](purchasing-non-consumable-products-images/image34.png "Der Kaufvorgang wird in dieser Reihe von Screenshots gezeigt.")](purchasing-non-consumable-products-images/image34.png#lightbox)   
-   
-   
-   
- Der Kaufvorgang ist identisch mit einem nutzbaren Produkt. der Hauptunterschied besteht darin, wie der Kauf im Anwendungscode nachverfolgt wird. In diesem Beispiel ist die Schaltfläche "kaufen" nur verfügbar, wenn das Produkt nicht bereits gekauft wurde. andernfalls aktiviert die Schaltfläche die Funktion selbst.   
-   
-   
-   
+
+Der Kaufvorgang ist identisch mit einem nutzbaren Produkt. der Hauptunterschied besteht darin, wie der Kauf im Anwendungscode nachverfolgt wird. In diesem Beispiel ist die Schaltfläche "kaufen" nur verfügbar, wenn das Produkt nicht bereits gekauft wurde. andernfalls aktiviert die Schaltfläche die Funktion selbst.   
 
 Das folgende Diagramm zeigt die Interaktionen zwischen Klassen und dem App Store-Server, um einen nicht nutzbaren Produktkauf durchzuführen:   
-   
-   
-   
+
  [![](purchasing-non-consumable-products-images/image35.png "Interaktionen zwischen Klassen und dem App Store-Server, um einen nicht nutzbaren Produkt Einkauf auszuführen")](purchasing-non-consumable-products-images/image35.png#lightbox)   
-   
-   
-   
- Der Hauptunterschied zum nutzbaren Beispiel besteht darin, dass nach Abschluss des Kaufs die Benutzeroberfläche aktualisiert wird, um einen erneuten Einkauf zu verhindern. In diesem Beispiel aktualisiert die Benachrichtigung einer erfolgreichen Transaktion die Benutzeroberfläche, sodass die Schaltfläche " **kaufen** " in eine Schaltfläche konvertiert wird, die das Feature selbst aktiviert.
+
+Der Hauptunterschied zum nutzbaren Beispiel besteht darin, dass nach Abschluss des Kaufs die Benutzeroberfläche aktualisiert wird, um einen erneuten Einkauf zu verhindern. In diesem Beispiel aktualisiert die Benachrichtigung einer erfolgreichen Transaktion die Benutzeroberfläche, sodass die Schaltfläche " **kaufen** " in eine Schaltfläche konvertiert wird, die das Feature selbst aktiviert.
 
 ## <a name="re-purchasing-non-consumable-products"></a>Erneutes kaufen nicht nutzbarer Produkte
 
 Der Code sollte eine Kauf Schaltfläche normalerweise ausblenden oder wiederholen, sobald das Produkt erfolgreich gekauft wurde, um zu verhindern, dass der Benutzer versucht, das Produkt erneut zu kaufen. Die Beispielanwendung bewirkt, dass die Schaltfläche " **kaufen** " in die Schaltfläche geändert wird, mit der der Beispiel Fotofilter funktioniert.   
-   
-   
-   
- Es gibt Situationen, in denen eine Anwendung nicht erkennen kann, ob bereits ein nicht nutzbares Produkt gekauft wurde:
+
+Es gibt Situationen, in denen eine Anwendung nicht erkennen kann, ob bereits ein nicht nutzbares Produkt gekauft wurde:
 
 - Wenn eine Anwendung auf einem Gerät gelöscht und erneut installiert wird, werden alle Kauf Datensätze entfernt (es sei denn, der Benutzer führt eine Sicherungs Wiederherstellung durch). 
 - , Wenn der Benutzer die Anwendung auf zwei (oder mehr) Geräten installiert hat und einen Einkauf auf einem der Geräte durchführt. Die anderen Geräte zeigen weiterhin das Produkt an, das für den Kauf zur Verfügung steht. 
 - Wenn ein Kunde versucht, ein nicht verwendbar bares Produkt in diesen Fällen erneut zu erwerben, wird das Produkt vom App Store ohne Aufpreis erneut untersucht. Die Benutzeroberfläche wird anfänglich angezeigt, um einen Kauf auszuführen (z. b. wird eine Bestätigungs Warnung angezeigt, und die Apple-ID ist erforderlich). dem Benutzer wird jedoch eine Meldung angezeigt, in der er darüber informiert wird, dass das Produkt bereits gekauft wurde.  
-   
-   
-   
- Der Codepfad in diesem Szenario ist genau mit einem regulären Kauf identisch. die einzigen Unterschiede sind:
+
+Der Codepfad in diesem Szenario ist genau mit einem regulären Kauf identisch. die einzigen Unterschiede sind:
 
 - Der Benutzer wird für das Produkt nicht erneut in Rechnung gestellt.
 - Das `SKPaymentTransaction` an die Anwendung über gegebene-Objekt verfügt `OriginalTransaction` über eine-Eigenschaft, die auf die Transaktion verweist, die beim anfänglichen Erwerb des Produkts generiert wurde. 

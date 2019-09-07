@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 367f0b6a44482762f8609eb959e154c942ff14f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291822"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768487"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>XIb-Code Generierung in xamarin. IOS
 
@@ -72,7 +72,6 @@ Designer Klassen enthalten partielle Methoden, die allen Aktionen entsprechen, d
 
 1. Wenn Sie den `partial` Klassen Text des nicht-Designer-Klassen Teils eingeben, bietet Visual Studio für Mac die automatische Vervollständigung der Signaturen aller nicht implementierten partiellen Methoden.
 2. Die partiellen Methoden Signaturen verfügen über ein angewendetes Attribut, das Sie für die Ziel-C-Welt verfügbar macht, sodass Sie als die entsprechende Aktion behandelt werden können.
-
 
 Wenn Sie möchten, können Sie die partielle-Methode ignorieren und die-Aktion implementieren, indem Sie das-Attribut auf eine andere Methode anwenden oder das Attribut auf eine Basisklasse durchlaufen lassen.
 

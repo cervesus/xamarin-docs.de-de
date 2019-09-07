@@ -7,12 +7,12 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 846b7fa3c905b208771a110a013283bd77214b72
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c0b60a5064bbcf605f66a7b9dcce5da1f84a015
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511698"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770900"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Zusammenfassung der Kapitel 28. Position und Karten
 
@@ -234,8 +234,6 @@ Das Programm stellt auch die Anzahl der Pins, die basierend auf den Speicherort 
 Die [ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps) Assembly enthält auch eine [ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder) -Klasse mit einem [ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) Methode, die konvertiert eine Textadresse in 0 (null) oder mehr mögliche geografischen Positionen und eine andere Methode [ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) , der in die andere Richtung konvertiert.
 
 Die [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml) Datei und [GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs) Code-Behind-Datei führen Sie diese Funktion vor.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

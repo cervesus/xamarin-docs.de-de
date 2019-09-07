@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 14. Absolutes layout
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 14. Absolutes layout'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 14. Absolutes layout'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c489bf244396cf180ed8e1272308048a14b67300
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334415"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771132"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Zusammenfassung der Kapitel 14. Absolutes layout
 
@@ -98,8 +98,6 @@ Die [ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples
 [![Dreifacher Screenshot Punktmatrix Uhr](images/ch14fg08-small.png "Punktmatrix Uhr")](images/ch14fg08-large.png#lightbox "Punktmatrix-Uhr")
 
 Die [ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) Programm erstellt eine Animation zwei `Label` Objekte horizontal und vertikal über den Bildschirm zu springen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

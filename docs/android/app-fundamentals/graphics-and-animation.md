@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 0a9921706acc4da076e98b1c42c0624c7f56e62f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ea713b2b56f18c435f3ec676b42d0aa4802abc6a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521192"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755433"
 ---
 # <a name="android-graphics-and-animation"></a>Android-Grafiken und-Animationen
 
@@ -43,11 +43,9 @@ Zusätzlich zu diesen 2D-Grafiktechniken bietet Android auch mehrere verschieden
 
 - **Eigenschafts Animationen** In Android 3,0 wurde ein neuer Satz von Animations-APIs eingeführt, die als *Eigenschafts Animationen*bezeichnet werden. &ndash; Diese neue API hat ein erweiterbares und flexibles System eingeführt, das zum Animieren der Eigenschaften eines beliebigen Objekts verwendet werden kann, nicht nur zum Anzeigen von Objekten. Dank dieser Flexibilität können Animationen in unterschiedlichen Klassen gekapselt werden, um die Code Freigabe zu vereinfachen.
 
-
 Die Anzeige von Animationen eignet sich besser für Anwendungen, die ältere Pre-Android 3,0-APIs (API-Ebene 11) unterstützen müssen. Andernfalls sollten Anwendungen die neueren Eigenschaften der Animations-API aus den oben erwähnten Gründen verwenden.
 
 Alle diese Frameworks sind geeignete Optionen, aber wenn möglich, sollten Sie den Eigenschafts Animationen bevorzugen, da es sich um eine flexiblere API handelt, mit der Sie arbeiten können. Eigenschafts Animationen ermöglichen das Kapseln von Animations Logik in unterschiedlichen Klassen, die die Code Freigabe vereinfachen und die Code Verwaltung vereinfachen.
-
 
 ## <a name="accessibility"></a>Zugriff
 
@@ -58,8 +56,6 @@ Apps sind in diesen Situationen besser verwendbar, wenn Sie mit Barrierefreiheit
 
 Weitere Informationen zur Verwendung von Android-Barrierefreiheits-APIs finden Sie im [Handbuch zur Barrierefreiheit von Google](https://developer.android.com/guide/topics/ui/accessibility/) .
 
-
-
 ## <a name="2d-graphics"></a>2D-Grafiken
 
 Drawable-Ressourcen sind eine beliebte Technik in Android-Anwendungen. Wie bei anderen Ressourcen sind drawable-Ressourcen deklarativ &ndash; , Sie sind in XML-Dateien definiert. Dieser Ansatz ermöglicht eine saubere Trennung von Code von Ressourcen. Dies kann die Entwicklung und Wartung vereinfachen, da es nicht erforderlich ist, Code zu ändern, um die Grafiken in einer Android-Anwendung zu aktualisieren oder zu ändern. Obwohl drawable-Ressourcen für viele einfache und gängige grafische Anforderungen nützlich sind, fehlen Ihnen die Leistungsfähigkeit und Kontrolle der Canvas-API.
@@ -67,7 +63,6 @@ Drawable-Ressourcen sind eine beliebte Technik in Android-Anwendungen. Wie bei a
 Die andere Technik, die das [Canvas](xref:Android.Graphics.Canvas) -Objekt verwendet, ähnelt anderen herkömmlichen API-Frameworks, wie z. b. System. Drawing oder der Kern Zeichnung von IOS. Die Verwendung des Canvas-Objekts bietet die größte Kontrolle über die Erstellung von 2D-Grafiken. Dies ist für Situationen geeignet, in denen eine drawable-Ressource nicht funktioniert oder die Arbeit schwierig ist. Beispielsweise kann es erforderlich sein, ein benutzerdefiniertes Schieberegler-Steuerelement zu zeichnen, dessen Darstellung sich auf der Grundlage der auf dem Wert des Schiebereglers bezogenen Berechnungen ändert.
 
 Betrachten wir zuerst drawable-Ressourcen. Sie sind einfacher und behandeln die gängigsten benutzerdefinierten Zeichnungs Fälle.
-
 
 ### <a name="drawable-resources"></a>Drawable-Ressourcen
 
@@ -148,7 +143,6 @@ Um zu sehen, wie dies aussehen würde, führen Sie das *animationsdemo* -Projekt
 
 Weitere Informationen zu den XML-Elementen und zur Syntax von drawable-Ressourcen finden Sie in [der Google-Dokumentation](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape).
 
-
 ### <a name="using-the-canvas-drawing-api"></a>Verwenden der Canvas-Zeichnungs-API
 
 Drawables sind leistungsstark, haben aber ihre Einschränkungen. Bestimmte Dinge sind entweder nicht möglich oder sehr komplex (z. b. das Anwenden eines Filters auf ein Bild, das von einer Kamera auf dem Gerät übernommen wurde). Es wäre sehr schwierig, die Red-Eye-Reduzierung mithilfe einer drawable-Ressource anzuwenden.
@@ -209,7 +203,6 @@ Dieser Code oben erstellt zunächst eine rote und ein grünes Farb Objekt. Er f�
 
 ![Bildschirm mit roten Paint-und grünen Paint-Objekten](graphics-and-animation-images/image3.png)
 
-
 ## <a name="animation"></a>Animation
 
 Benutzer wie die Anwendungen, die in Ihre Anwendungen verschoben werden. Animationen sind eine gute Möglichkeit, um die Benutzer Leistung einer Anwendung zu verbessern und Sie zu unterstützen. Die besten Animationen sind diejenigen, die Benutzern nicht angezeigt werden, da Sie sich in natürlicher Form fühlen. Android bietet die folgenden drei APIs für Animationen:
@@ -221,7 +214,6 @@ Benutzer wie die Anwendungen, die in Ihre Anwendungen verschoben werden. Animati
 - **Drawable-Animation** &ndash; Dies ist eine spezielle drawable-Ressource, mit der ein sehr einfacher Animationseffekt auf Layouts angewendet wird.
 
 Im Allgemeinen ist die Eigenschafts Animation das bevorzugte System, das verwendet werden kann, da Sie flexibler ist und mehr Features bietet.
-
 
 ### <a name="view-animations"></a>Animationen anzeigen
 
@@ -249,7 +241,6 @@ Es ist möglich, die Änderungs Rate in einer Animation mithilfe eines *interpol
 - `BounceInterpolator`&ndash; die Änderung springt am Ende.
 
 - `LinearInterpolator`&ndash; die Änderungs Rate ist konstant.
-
 
 Der folgende XML-Code zeigt ein Beispiel für eine Animations Datei, die einige dieser Elemente kombiniert:
 
@@ -308,7 +299,6 @@ myImage.StartAnimation(myAnimation);
 
 Nachdem wir nun über ein grundlegendes Verständnis der Funktionsweise von Ansichts Animationen verfügen, können Sie zu Eigenschafts Animationen wechseln.
 
-
 ### <a name="property-animations"></a>Eigenschafts Animationen
 
 Eigenschaftanimatoren sind eine neue API, die in Android 3,0 eingeführt wurde.
@@ -321,7 +311,6 @@ Alle Eigenschafts Animationen werden von Instanzen der [Animator](xref:Android.A
 - [Objectanimator](xref:Android.Animation.ObjectAnimator) Bei dieser Klasse handelt es sich um eine Unterklasse von `ValueAnimator`. &ndash; Es soll den Prozess der Animation von Objekten vereinfachen, indem ein Zielobjekt und eine zu Aktualisier Ende Eigenschaft akzeptiert werden.
 
 - [Animationset](xref:Android.Animation.AnimatorSet) &ndash; Diese Klasse ist für die Orchestrierung zuständig, wie Animationen in Beziehung zueinander ausgeführt werden. Animationen können gleichzeitig, sequenziell oder mit einer festgelegten Verzögerung zwischen Ihnen ausgeführt werden.
-
 
 *Evaluatoren* sind spezielle Klassen, die von Animatoren verwendet werden, um die neuen Werte während einer Animation zu berechnen. Android bietet standardmäßig die folgenden Evaluatoren:
 
@@ -385,7 +374,6 @@ animator.Start();
 
 Wie Sie im vorherigen Code Ausschnitt sehen können, kann den `ObjectAnimator` Code, der zum Animieren eines Objekts erforderlich ist, verringern und vereinfachen.
 
-
 ### <a name="drawable-animations"></a>Drawable-Animationen
 
 Die abschließende Animations-API ist die drawable Animation API. Drawable-Animationen laden eine Reihe von drawable-Ressourcen nacheinander und zeigen Sie nacheinander an, ähnlich wie bei einer Flip-IT-Karikatur.
@@ -429,12 +417,9 @@ protected override void OnCreate(Bundle bundle)
 
 An dieser Stelle haben wir die Grundlagen der in einer Android-Anwendung verfügbaren Animations-APIs behandelt.
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden viele neue Konzepte und APIs vorgestellt, mit denen Sie einer Android-Anwendung einige Grafiken hinzufügen können. Zuerst wurden die verschiedenen 2D-Grafik-APIs erläutert und veranschaulicht, wie Android Anwendungen mithilfe eines Canvas-Objekts direkt auf den Bildschirm zeichnen kann. Wir haben auch einige alternative Techniken gesehen, mit denen Grafiken deklarativ mithilfe von XML-Dateien erstellt werden können. Anschließend haben wir uns mit den alten und neuen APIs zum Erstellen von Animationen in Android vertraut gemacht.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e934dd0f35b7c734228d637fe646d0e2c20e9dad
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522544"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758626"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Auffüllen einer xamarin. Android-ListView mit Daten
 
@@ -37,7 +37,6 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-
 ### <a name="handling-row-clicks"></a>Behandeln von Zeilen Klicks
 
 In der `ListView` Regel kann ein Benutzer auch eine Zeile berühren, um Aktionen auszuführen (z. b. das Abspielen eines Titels oder das Aufrufen eines Kontakts oder das Anzeigen eines anderen Bildschirms). Um auf Benutzer zu `ListActivity` reagieren, muss in &ndash; `OnListItemClick` &ndash; wie folgt eine weitere Methode implementiert werden:
@@ -55,7 +54,6 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 Nun kann der Benutzer eine Zeile berühren, und `Toast` es wird eine Warnung angezeigt:
 
 [![Screenshot von Toast, der angezeigt wird, wenn eine Zeile berührt wird](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
-
 
 ## <a name="implementing-a-listadapter"></a>Implementieren eines listadapter
 
@@ -102,7 +100,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-
 ### <a name="using-a-custom-adapter"></a>Verwenden eines benutzerdefinierten Adapters
 
 Die Verwendung des benutzerdefinierten Adapters ähnelt dem integrierten `ArrayAdapter`, wobei eine `context` und die `string[]` der anzuzeigenden Werte übergeben werden:
@@ -112,7 +109,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 ```
 
 Da in diesem Beispiel dasselbe Zeilen Layout verwendet wird`SimpleListItem1`(), sieht die resultierende Anwendung mit dem vorherigen Beispiel identisch aus.
-
 
 ### <a name="row-view-re-use"></a>Erneute Verwendung der Zeilen Ansicht
 
@@ -137,7 +133,6 @@ Benutzerdefinierte Adapter Implementierungen sollten das `convertView` Objekt im
 
 Einige `CursorAdapter`Adapter Implementierungen (z. b.) verfügen nicht über eine `GetView` -Methode, sondern `BindView` erfordern zwei `NewView` verschiedene Methoden, die die erneute Verwendung von Zeilen erzwingen, indem `GetView` die Zuständigkeiten von in zwei Bereiche aufgeteilt werden. anzuwenden. Ein `CursorAdapter` Beispiel finden Sie weiter unten in diesem Dokument.
 
-
 ## <a name="enabling-fast-scrolling"></a>Aktivieren von schnellem Scrollen
 
 Das schnelle Scrollen unterstützt den Benutzer beim Durchführen eines Bildlaufs durch lange Listen, indem ein zusätzliches "handle" bereitgestellt wird, das als Bild Lauf Leiste fungiert, um direkt auf einen Teil der Liste zuzugreifen. Dieser Screenshot zeigt das fast-scrollhandle:
@@ -149,7 +144,6 @@ Das schnelle scrollhandle wird so einfach wie das Festlegen der `FastScrollEnabl
 ```csharp
 ListView.FastScrollEnabled = true;
 ```
-
 
 ### <a name="adding-a-section-index"></a>Hinzufügen eines Abschnitts Indexes
 
@@ -164,7 +158,6 @@ Zum Implementieren `ISectionIndexer` von müssen Sie drei Methoden zu einem Adap
 - **Getpositionforsection** &ndash; Gibt die erste Zeilen Position für einen angegebenen Abschnitts Index zurück.
 
 - **Getsectionforposition** &ndash; Gibt den Abschnitts Index zurück, der für eine bestimmte Zeile angezeigt werden soll.
-
 
 Die Beispiel `SectionIndex/HomeScreenAdapter.cs` Datei implementiert diese Methoden und zusätzlichen Code im Konstruktor. Der-Konstruktor erstellt den Abschnitts Index, indem er jede Zeile durchläuft und das erste Zeichen des Titels extrahiert (die Elemente müssen bereits sortiert sein, damit dies funktioniert).
 
@@ -213,8 +206,6 @@ public int GetSectionForPosition(int position)
 
 Ihre Abschnitts Index Titel müssen nicht 1:1 ihren eigentlichen Abschnitten zuordnen. Aus diesem Grund ist `GetPositionForSection` die-Methode vorhanden.
 `GetPositionForSection`bietet Ihnen die Möglichkeit, alle Indizes in ihrer Indexliste allen Abschnitten in der Listenansicht zuzuordnen. Angenommen, Sie haben ein "z" in Ihrem Index, Sie verfügen jedoch möglicherweise nicht über einen Tabellen Abschnitt für jeden Buchstaben. anstatt "z" zu 26 zuzuordnen, kann er beispielsweise 25 oder 24 oder den Abschnitts Index "z" zuordnen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 05/25/2017
-ms.openlocfilehash: 3a2ba8f56604dcf42604c2cb653931d0397a0d82
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 24ddd71fe1468edc70ec4d487dc2cb2dbd4da1b6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287734"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769811"
 ---
 # <a name="how-xamarinmac-works"></a>Funktionsweise von Xamarin.Mac
 
@@ -160,4 +160,3 @@ Im folgenden finden Sie einige Ausführlichere Erläuterungen zur internen Funkt
 - [Grundlagen der Grundlagen](~/ios/app-fundamentals/threading.md)
 - [Delegaten, Protokolle und Ereignisse](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [Zu`newrefcount`](~/ios/internals/newrefcount.md)
-

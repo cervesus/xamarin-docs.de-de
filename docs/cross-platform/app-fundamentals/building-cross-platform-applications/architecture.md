@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 7657985ce14633140adb0e63a9817ddd0e48841d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e1b1a98bf06bbd03b382f0b7263e6965d4efad15
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284571"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762107"
 ---
 # <a name="part-2---architecture"></a>Teil 2: Architektur
 
@@ -21,11 +21,9 @@ Ein wichtiger Grund für die Erstellung plattformübergreifender Apps ist das Er
 - **Trennung von Zuständigkeiten** – stellen Sie sicher, dass jede Komponente (sowohl auf Architektur-als auch auf Klassenebene) einen klaren und klar definierten Zweck hat. Jede Komponente sollte nur die definierten Aufgaben ausführen und diese Funktionalität über eine API verfügbar machen, auf die die anderen Klassen, die Sie verwenden müssen, zugreifen können.
 - **Polymorphie** – das Programmieren in eine Schnittstelle (oder eine abstrakte Klasse), die mehrere Implementierungen unterstützt, bedeutet, dass der Kerncode plattformübergreifend geschrieben und freigegeben werden kann, während er weiterhin mit plattformspezifischen Features interagiert
 
-
 Das natürliche Ergebnis ist eine Anwendung, die nach realen oder abstrakten Entitäten mit separaten logischen Ebenen modelliert wird. Durch die Trennung von Code in Ebenen werden Anwendungen leichter zu verstehen, zu testen und zu warten. Es wird empfohlen, den Code in jeder Schicht physisch voneinander zu trennen (entweder in Verzeichnissen oder sogar separaten Projekten für sehr große Anwendungen) und logisch getrennt (mit Namespaces).
 
  <a name="Typical_Application_Layers" />
-
 
 ## <a name="typical-application-layers"></a>Typische Anwendungsschichten
 
@@ -38,11 +36,9 @@ In diesem Dokument und den Fallstudien verweisen wir auf die folgenden sechs Anw
 - **Anwendungsschicht** – Code, der in der Regel plattformspezifisch ist (in der Regel nicht plattformübergreifend freigegeben) oder Code, der spezifisch für die Anwendung ist (nicht allgemein wiederverwendbar) Ein guter Test, ob Code in die Anwendungsschicht und die UI-Schicht platziert werden soll, ist (a), um zu bestimmen, ob die Klasse über tatsächliche Anzeige Steuerelemente oder (b), ob Sie von mehreren Bildschirmen oder Geräten gemeinsam genutzt werden kann (z. b. iPhone und iPad).
 - **Benutzeroberflächen Ebene** – die Benutzer seitige Ebene, enthält Bildschirme, Widgets und die Controller, die Sie verwalten.
 
-
 Eine Anwendung darf nicht unbedingt alle Ebenen enthalten – beispielsweise ist die Dienst Zugriffs Schicht nicht in einer Anwendung vorhanden, die nicht auf Netzwerkressourcen zugreift. Eine sehr einfache Anwendung kann die Datenschicht und die Datenzugriffs Ebene zusammenführen, da die Vorgänge äußerst einfach sind.
 
  <a name="Common_Mobile_Software_Patterns" />
-
 
 ## <a name="common-mobile-software-patterns"></a>Gängige Mobile Software Muster
 
@@ -54,6 +50,5 @@ Muster sind eine bewährte Methode, um wiederkehrende Lösungen für häufige Pr
 - **Singleton** – das Singleton-Muster stellt eine Methode bereit, mit der nur eine einzelne Instanz eines bestimmten Objekts vorhanden sein kann. Wenn Sie beispielsweise sqlite in mobilen Anwendungen verwenden, benötigen Sie nur eine Instanz der Datenbank. Die Verwendung des Singleton-Musters ist eine einfache Möglichkeit, dies sicherzustellen.
 - **Anbieter** – ein Muster, das von Microsoft (wohl vergleichbar mit der Strategie oder grundlegender Abhängigkeitsinjektion) geprägt ist, um die Wiederverwendung von Code für Silverlight-, WPF-und WinForms-Anwendungen zu fördern. Gemeinsam verwendeter Code kann für eine Schnittstelle oder eine abstrakte Klasse geschrieben werden, und plattformspezifische konkrete Implementierungen werden bei der Verwendung des Codes geschrieben und weitergegeben.
 - **Async** – nicht zu verwechseln mit dem Async-Schlüsselwort, wird das asynchrone Muster verwendet, wenn Arbeitsaufgaben mit langer Laufzeit ausgeführt werden müssen, ohne die Benutzeroberfläche oder die aktuelle Verarbeitung zu halten. In der einfachsten Form beschreibt das Async-Muster einfach, dass Aufgaben mit langer Ausführungszeit in einem anderen Thread (oder einer ähnlichen Thread Abstraktion, z. b. einer Aufgabe) gestartet werden sollen, während der aktuelle Thread weiterhin verarbeitet und auf eine Antwort vom Hintergrundprozess lauscht. , und aktualisiert dann die Benutzeroberfläche, wenn Daten und oder Status zurückgegeben werden.
-
 
 Jedes der Muster wird ausführlicher untersucht, da die praktische Verwendung in den Fallstudien veranschaulicht wird. Wikipedia bietet ausführlichere Beschreibungen der Muster [MVVM](https://en.wikipedia.org/wiki/Model–view–viewmodel), [MVC](https://en.wikipedia.org/wiki/Model–view–controller), [Fassaden](https://en.wikipedia.org/wiki/Facade_pattern), [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern), [Strategie](https://en.wikipedia.org/wiki/Strategy_pattern) und [Anbieter](https://en.wikipedia.org/wiki/Provider_model) (und in der Regel [Entwurfsmuster](https://en.wikipedia.org/wiki/Design_Patterns) ).

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: aabbbb706d4b6fcd022e30f726696b5d4f46167f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f15d586a0ca209fec088fc48ca975efae4ab8fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279514"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768364"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Arbeiten mit Zeilen Aktionen in xamarin. IOS
 
@@ -26,7 +26,6 @@ IOS bietet zwei Möglichkeiten zum Ausführen von Aktionen für eine Tabelle `UI
 
 Die `UITableViewRowAction` -Klasse wird verwendet, um eine Aktion zu definieren, die ausgeführt wird, wenn der Benutzer in einer Zeile in einer Tabellenansicht horizontal nach links bewegt.
 Wenn Sie z. b. eine Tabelle bearbeiten, wird die Schaltfläche **Löschen** standardmäßig in einer Zeile nach links angezeigt. Indem mehrere Instanzen der `UITableViewRowAction` Klasse an einen `UITableView`angefügt werden, können mehrere benutzerdefinierte Aktionen definiert werden, jeweils mit eigenem Text, Formatierung und Verhalten.
-
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
@@ -43,7 +42,6 @@ Diese werden in den folgenden Abschnitten ausführlicher erläutert.
 `UITableViewController`(und auch `UITableViewSource` und `UITableViewDelegate`) enthalten zwei Methoden: `GetLeadingSwipeActionsConfiguration` und `GetTrailingSwipeActionsConfiguration`, die zum Implementieren eines Satzes von Schwenk Aktionen für eine Tabellen Ansichts Zeile verwendet werden. Die führende wischen-Aktion verweist auf einen Schwenk von der linken Seite des Bildschirms in einer Sprache von links nach rechts und von der rechten Seite des Bildschirms in einer Sprache von rechts nach links.
 
 Das folgende Beispiel (aus dem [tableswipeer Actions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) -Beispiel) veranschaulicht die Implementierung der führenden wischen-Konfiguration. Aus den kontextbezogenen Aktionen werden zwei Aktionen erstellt, die nach [folgend](#create-uicontextualaction)erläutert werden. Diese Aktionen werden dann an eine neu initialisierte [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)weitergegeben, die als Rückgabewert verwendet wird.
-
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -180,8 +178,6 @@ Wenn der obige Code ausgeführt wird und der Benutzer in einer Tabellenzeile nac
 [![](row-action-images/action01.png "Die angezeigte Schaltfläche \"Hi\" anstelle der Schaltfläche \"Löschen\"")](row-action-images/action01.png#lightbox)
 
 Wenn der Benutzer auf die Schaltfläche " `Hello World!` Hi" tippt, wird in Visual Studio für Mac oder Visual Studio in die Konsole geschrieben, wenn die Anwendung im Debugmodus ausgeführt wird.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

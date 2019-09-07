@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 2a62ff12869f886e63fc5c78050e9870431e58bb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 34a77f15391a0f4e10c1902046d8bd37806c14ec
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280616"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765279"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 neue Features (Übersicht)
 
@@ -337,4 +337,3 @@ Die C# Sprache wird weiterentwickelt, um Entwicklern eine höhere Produktivität
 ## <a name="related-links"></a>Verwandte Links
 
 - [Neue sprach Features in C# 6](https://github.com/dotnet/roslyn/wiki/New-Language-Features-in-C%23-6)
-

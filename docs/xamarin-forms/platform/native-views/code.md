@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: e2d3a3590e8006c745d28026f3a359350f7ce940
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: a759569f9faf7c8e13768a68b203a8221d3b31cb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621078"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770716"
 ---
 # <a name="native-views-in-c"></a>Native Ansichten in C\#
 
@@ -319,7 +319,6 @@ Diese Methode verwendet die Breite von bereitgestellten der `CustomControl.Arran
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wird erläutert, wie eine Xamarin.Forms-Layout mit c# erstellte native Ansichten hinzugefügt, und wie Sie das Layout der benutzerdefinierte Ansichten, korrigieren Sie die Messung API-Nutzung außer Kraft zu setzen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

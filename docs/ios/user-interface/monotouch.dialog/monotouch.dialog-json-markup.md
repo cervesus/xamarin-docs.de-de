@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 5fc5e6c1df911963ab765f5d49016eace8e2733f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d9174e9b2d6c056c94b405033a25eeb787c92f9f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284146"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768769"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog-JSON-Markup
 
@@ -91,7 +91,6 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="Root_Element_Syntax" />
 
-
 ## <a name="root-element-syntax"></a>Root-Element Syntax
 
 Das root-Element enthält die folgenden Werte:
@@ -99,11 +98,9 @@ Das root-Element enthält die folgenden Werte:
 - `title`
 - `sections` (optional)
 
-
 Das root-Element kann in einem Abschnitt als Element zum Erstellen eines geschachtelten Controllers angezeigt werden. In diesem Fall muss die zusätzliche Eigenschaft `"type"` auf festgelegt werden.`"root"`
 
  <a name="url" />
-
 
 ### <a name="url"></a>url
 
@@ -111,13 +108,11 @@ Wenn die-Eigenschaft festgelegt ist und der Benutzer auf dieses rootelements tip
 
  <a name="group" />
 
-
 ### <a name="group"></a>Gruppe
 
 Wenn festgelegt, wird der GroupName für das Stamm Element festgelegt. Gruppennamen werden verwendet, um eine Zusammenfassung auszuwählen, die als Wert des Stamm Elements aus einem der im-Element gruppierten Elemente angezeigt wird. Dies ist entweder der Wert eines Kontrollkästchens oder der Wert eines Options Felds.
 
  <a name="radioselected" />
-
 
 ### <a name="radioselected"></a>Radio ausgewählt
 
@@ -125,13 +120,11 @@ Identifiziert das Optionsfeld, das in den in der Liste enthaltenen Elementen aus
 
  <a name="title" />
 
-
 ### <a name="title"></a>title
 
 Wenn vorhanden, ist dies der Titel, der für das rootelor verwendet wird.
 
  <a name="type" />
-
 
 ### <a name="type"></a>Typ
 
@@ -139,13 +132,11 @@ Muss auf festgelegt `"root"` werden, wenn dies in einem Abschnitt angezeigt wird
 
  <a name="sections" />
 
-
 ### <a name="sections"></a>Abschnitte
 
 Dabei handelt es sich um ein JSON-Array mit einzelnen Abschnitten.
 
  <a name="Section_Syntax" />
-
 
 ## <a name="section-syntax"></a>Abschnitts Syntax
 
@@ -155,9 +146,7 @@ Der-Abschnitt enthält:
 - `footer` (optional)
 - `elements`-Array
 
-
  <a name="header" />
-
 
 ### <a name="header"></a>header
 
@@ -165,13 +154,11 @@ Falls vorhanden, wird der Header Text als Beschriftung des Abschnitts angezeigt.
 
  <a name="footer" />
 
-
 ### <a name="footer"></a>Fußzeile
 
 Falls vorhanden, wird der Fußzeile unten im Abschnitt angezeigt.
 
  <a name="elements" />
-
 
 ### <a name="elements"></a>Elemente
 
@@ -182,11 +169,9 @@ Einige der-Elemente haben einige gemeinsame Eigenschaften `"caption"` wie `"valu
 - `entry`Zeilen (regulär oder Kennwort)
 - `boolean`Werte (mithilfe von Switches oder Bildern)
 
-
 Zeichen folgen Elemente können als Schaltflächen verwendet werden, indem eine Methode bereitgestellt wird, die aufgerufen wird, wenn der Benutzer entweder auf die Zelle oder das Zubehör tippt,
 
  <a name="Rendering_Elements" />
-
 
 ## <a name="rendering-elements"></a>Rendern von Elementen
 
@@ -230,7 +215,6 @@ Renderingelemente können zwei Zeichen folgen gleichzeitig anzeigen, eine ist di
 
  <a name="accessory" />
 
-
 ### <a name="accessory"></a>Zubehör
 
 Bestimmt die Art von Zubehör, das in Ihrem Rendering-Element angezeigt werden soll. mögliche Werte:
@@ -239,11 +223,9 @@ Bestimmt die Art von Zubehör, das in Ihrem Rendering-Element angezeigt werden s
 - `detail-disclosure`
 - `disclosure-indicator`
 
-
 Wenn der Wert nicht vorhanden ist, wird kein Zubehör angezeigt.
 
  <a name="background" />
-
 
 ### <a name="background"></a>Hintergrund
 
@@ -251,20 +233,17 @@ Die Background-Eigenschaft legt die Hintergrundfarbe für die Zelle fest. Der We
 
  <a name="caption" />
 
-
 ### <a name="caption"></a>unter
 
 Die Haupt Zeichenfolge, die im Rendering-Element angezeigt werden soll. Die Schriftart und die Farbe können durch Festlegen der `"textcolor"` Eigenschaften und `"font"` angepasst werden. Der Renderingstil wird von `"style"` der-Eigenschaft bestimmt.
 
  <a name="color_and_detailcolor" />
 
-
 ### <a name="color-and-detailcolor"></a>Farbe und detailcolor
 
 Die Farbe, die für den Haupttext oder den detaillierten Text verwendet werden soll.
 
  <a name="detailfont_and_font" />
-
 
 ### <a name="detailfont-and-font"></a>detailschriftart und Schriftart
 
@@ -274,9 +253,7 @@ Die folgenden Schriftart Spezifikationen sind gültig:
 - Helvetica
 - "Helvetica-14"
 
-
  <a name="linebreak" />
-
 
 ### <a name="linebreak"></a>linebreak
 
@@ -289,11 +266,9 @@ Bestimmt, wie Linien untergliedert werden. Mögliche Werte sind:
 - `tail-truncation`
 - `word-wrap`
 
-
 Sowohl `character-wrap` als `word-wrap` auch können mit der `"lines"` -Eigenschaft auf 0 (null) festgelegt werden, um das renderingelement in ein mehrzeilige Element umzuwandeln.
 
  <a name="ontap_and_onaccessorytap" />
-
 
 ### <a name="ontap-and-onaccessorytap"></a>ONTAP und onaccessorytap
 
@@ -316,13 +291,11 @@ class Foo {
 
  <a name="lines" />
 
-
 ### <a name="lines"></a>Linien
 
 Wenn dieser Wert auf 0 (null) festgelegt ist, wird die automatische Größe des Elements abhängig vom Inhalt der enthaltenen Zeichen folgen festgelegt. Damit dies funktioniert, müssen Sie auch die `"linebreak"` -Eigenschaft auf `"character-wrap"` oder `"word-wrap"`festlegen.
 
  <a name="style" />
-
 
 ### <a name="style"></a>style
 
@@ -334,9 +307,7 @@ Mögliche Werte sind:
 - `"value2"`
 - `"subtitle"`: Text mit einem Untertitel.
 
-
  <a name="subtitle" />
-
 
 ### <a name="subtitle"></a>Titel
 
@@ -345,20 +316,17 @@ Dies erfolgt mit einem einzelnen Eintrag.
 
  <a name="textcolor" />
 
-
 ### <a name="textcolor"></a>TextColor
 
 Die Farbe, die für den Text verwendet werden soll.
 
  <a name="value" />
 
-
 ### <a name="value"></a>Wert
 
 Der sekundäre Wert, der im Rendering-Element angezeigt werden soll. Das Layout dieser wird von der `"style"` -Einstellung beeinflusst. Die Schriftart und die Farbe können durch Festlegen `"detailfont"` von und `"detailcolor"`angepasst werden.
 
  <a name="Boolean_Elements" />
-
 
 ## <a name="boolean-elements"></a>Boolesche Elemente
 
@@ -382,13 +350,11 @@ Boolesche Elemente müssen den Typ auf `"bool"`festlegen, können ein `"caption"
 
  <a name="type" />
 
-
 ### <a name="type"></a>Typ
 
 Der Typ kann entweder `"boolean"` auf oder `"checkbox"`festgelegt werden. Wenn boolescher Wert festgelegt ist, wird ein UISlider-oder-Bild `"on"` verwendet `"off"` (wenn sowohl als auch festgelegt sind). Wenn dieses Kontrollkästchen aktiviert ist, wird ein Kontrollkästchen verwendet. Die `"group"` -Eigenschaft kann verwendet werden, um ein boolesches Element als zu einer bestimmten Gruppe gehörend zu markieren. Dies ist nützlich, wenn der enthaltende Stamm auch `"group"` über eine-Eigenschaft verfügt, da der Stamm die Ergebnisse mit der Anzahl aller booleschen Werte (oder Kontrollkästchen) zusammenfasst, die zur gleichen Gruppe gehören.
 
  <a name="Entry_Elements" />
-
 
 ## <a name="entry-elements"></a>Einstiegs Elemente
 
@@ -423,13 +389,11 @@ Sie verwenden Eintrags Elemente, um dem Benutzer die Eingabe von Daten zu ermög
 
  <a name="autocorrect" />
 
-
 ### <a name="autocorrect"></a>AutoKorrektur
 
 Bestimmt den für den Eintrag zu verwendenden automatischen Korrektur Stil. Mögliche Werte sind "true" oder "false" ( `"yes"` oder `"no"`die Zeichen folgen und).
 
  <a name="capitalization" />
-
 
 ### <a name="capitalization"></a>Groß-/Kleinschreibung
 
@@ -440,16 +404,13 @@ Der für den Eintrag zu verwendende groß Schriftstil. Mögliche Werte sind:
 - `sentences`
 - `words`
 
-
  <a name="caption" />
-
 
 ### <a name="caption"></a>unter
 
 Die Beschriftung, die für den Eintrag verwendet werden soll.
 
  <a name="keyboard" />
-
 
 ### <a name="keyboard"></a>Tastatur
 
@@ -465,16 +426,13 @@ Der für die Dateneingabe zu verwendende Tastatur-Typ. Mögliche Werte sind:
 - `twitter`
 - `url`
 
-
  <a name="placeholder" />
-
 
 ### <a name="placeholder"></a>Platzhalter
 
 Der Hinweis Text, der angezeigt wird, wenn der Eintrag einen leeren Wert aufweist.
 
  <a name="return-key" />
-
 
 ### <a name="return-key"></a>Return-Key
 
@@ -492,9 +450,7 @@ Die Bezeichnung, die für die Rückgabetaste verwendet wird. Mögliche Werte sin
 - `send`
 - `yahoo`
 
-
  <a name="value" />
-
 
 ### <a name="value"></a>Wert
 
@@ -502,14 +458,12 @@ Der Anfangswert für den Eintrag.
 
  <a name="Radio_Elements" />
 
-
 ## <a name="radio-elements"></a>Radio-Elemente
 
 Radio-Elemente haben `"radio"`den-Typ. Das Element, das ausgewählt wird, wird von `radioselected` der-Eigenschaft auf dem enthaltenden root-Element ausgewählt.
 Wenn ein Wert für die `"group"` Eigenschaft festgelegt ist, gehört dieses Optionsfeld außerdem zu dieser Gruppe.
 
  <a name="Date_and_Time_Elements" />
-
 
 ## <a name="date-and-time-elements"></a>Datums-und Uhrzeit Elemente
 
@@ -535,7 +489,6 @@ Die Elementtypen `"datetime"` `"date"` und`"time"` werden verwendet, um Datumsan
 ```
 
  <a name="Html/Web_Element" />
-
 
 ## <a name="htmlweb-element"></a>HTML/Web-Element
 

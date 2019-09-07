@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 7edbe96a6c32b4ebd4fc788e7361cddbae40601a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9c793f4d5f0cda5bff2dedef5e4e5e5bdfca69e5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529196"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770805"
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
@@ -312,7 +312,7 @@ Es ist nicht zu erwarten, dass zwischengespeicherte Daten immer mit den ursprün
 
 Wenn zwischengespeicherte Daten ablaufen, sollten Sie aus dem Cache entfernt werden, und die APP muss die Daten aus dem ursprünglichen Datenspeicher abrufen und wieder im Cache platzieren.
 
-Es ist auch möglich, dass ein Cache aufgefüllt wird, wenn Daten für einen zu langen Zeitraum beibehalten werden. Daher sind Anforderungen zum Hinzufügen neuer Elemente zum Cache möglicherweise erforderlich, um einige Elemente in einem Prozess zu entfernen, der als Entfernungs Vorgang bezeichnet wird. Cache Dienste entfernen in der Regel Daten auf der Grundlage der zuletzt verwendeten Daten. Es gibt jedoch noch weitere Entfernungs Richtlinien, einschließlich der zuletzt verwendeten, der zuletzt verwendeten und der First-in-First-out. Weitere Informationen finden Sie unter [Leitfaden](/azure/architecture/best-practices/caching/)zum Zwischenspeichern.
+Es ist auch möglich, dass ein Cache aufgefüllt wird, wenn Daten für einen zu langen Zeitraum beibehalten werden. Daher sind Anforderungen zum Hinzufügen neuer Elemente zum Cache möglicherweise erforderlich, um einige Elemente in einem Prozess zu entfernen, der als Entfernungs Vorgang bezeichnet *wird.* Cache Dienste entfernen in der Regel Daten auf der Grundlage der zuletzt verwendeten Daten. Es gibt jedoch noch weitere Entfernungs Richtlinien, einschließlich der zuletzt verwendeten, der zuletzt verwendeten und der First-in-First-out. Weitere Informationen finden Sie unter [Leitfaden](/azure/architecture/best-practices/caching/)zum Zwischenspeichern.
 
 <a name="caching_images" />
 
@@ -411,7 +411,6 @@ Viele moderne webbasierte Lösungen nutzen Webdienste, die von Webservern gehost
 Die Leistung einer APP kann durch das Zwischenspeichern von Daten, auf die häufig zugegriffen wird, in der Nähe der app in fast Storage verbessert werden. Apps können das Zwischenspeichern mit Zwischenspeicherung mit dem Cache--Muster implementieren. Dieses Muster bestimmt, ob sich das Element derzeit im Cache befindet. Wenn sich das Element nicht im Cache befindet, wird es aus dem Datenspeicher gelesen und dem Cache hinzugefügt.
 
 Bei der Kommunikation mit Web-APIs müssen Apps bei vorübergehenden Fehlern empfindlich sein. Vorübergehende Fehler umfassen den vorübergehenden Verlust der Netzwerk Konnektivität mit Diensten, die vorübergehende Nichtverfügbarkeit eines Diensts oder Timeouts, die auftreten, wenn ein Dienst ausgelastet ist. Diese Fehler werden häufig selbst korrigiert, und wenn die Aktion nach einer angemessenen Verzögerung wiederholt wird, ist es wahrscheinlich, dass Sie erfolgreich ausgeführt wird. Daher sollten apps alle Versuche, auf eine Web-API zuzugreifen, in Code einschließen, der einen Mechanismus zur Behandlung vorübergehender Fehler implementiert.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

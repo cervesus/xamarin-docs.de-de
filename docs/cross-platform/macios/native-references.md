@@ -6,19 +6,19 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: de34dcdd194bd3777214d23fded7e5f42ec5141c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad7a98b92c34cf956e50ebc7a6cec73580f8f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287540"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765501"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>Native Verweise in Ios-, Mac-und Bindungs Projekten
 
 _Native Verweise bieten Ihnen die Möglichkeit, ein natives Framework in ein xamarin. IOS-oder xamarin. Mac-Projekt oder ein Bindungs Projekt einzubetten._
 
 Seit IOS 8,0 ist es möglich, ein eingebettetes Framework für die gemeinsame Nutzung von Code zwischen App-Erweiterungen und der Haupt-app in Xcode zu erstellen. Mithilfe des systemeigenen Referenz Features können diese eingebetteten Frameworks (erstellt mit Xcode) in xamarin. IOS genutzt werden.
- 
+
 > [!IMPORTANT]
 > Es ist nicht möglich, eingebettete Frameworks von einem beliebigen xamarin. IOS-oder xamarin. Mac-Projekt zu erstellen. Native Verweise ermöglichen nur die Nutzung vorhandener nativer Frameworks (Ziel-C).
 
@@ -98,4 +98,3 @@ Apps, die keine Erweiterungen und Apps für IOS als Ziel haben
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie Sie ein natives Framework in eine xamarin. IOS-oder xamarin. Mac-Anwendung einbetten.
-

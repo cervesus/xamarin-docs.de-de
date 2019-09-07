@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18ce7eb4dcd68596027f739579fd5a4b70497829
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292234"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772708"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Standard Steuerelemente in xamarin. Mac
 
@@ -215,7 +215,6 @@ Wählen Sie den Typ der zu erstellenden Übersetzung aus, und geben Sie dem **Ou
 
 [![](standard-controls-images/edit13.png "Konfigurieren des Outlets oder der Aktion")](standard-controls-images/edit13.png#lightbox)
 
-
 Weitere Informationen zum Arbeiten mit **Outlets** und **Aktionen**finden Sie im Abschnitt [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) in unserer [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) Dokumentation.
 
 <a name="Synchronizing_Changes_with_Xcode" />
@@ -324,7 +323,6 @@ Wenn die app ausgeführt wird und das Fenster mit der Schaltfläche Key und foku
 AppKit bietet verschiedene Arten von Kontrollkästchen und Optionsfeld Gruppen, die in Ihrem Design der Benutzeroberfläche verwendet werden können. Weitere Informationen finden Sie im Abschnitt " [Schalt](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) Flächen" in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
 [![](standard-controls-images/buttons02.png "Ein Beispiel für die verfügbaren CheckBox-Typen")](standard-controls-images/buttons02.png#lightbox)
-
 
 Kontrollkästchen und Options Felder (die über **Outlets**verfügbar gemacht werden) haben einen Zustand (z. b. ein-und **ausschalten**). der Status `State` kann mit der `NSCellStateValue` -Eigenschaft **für** die-Enum überprüft oder festgelegt werden. Zum Beispiel:
 
@@ -637,7 +635,6 @@ Durch die Verwendung von Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken
 Key-Value Coding (KVC) ist ein Mechanismus für den indirekten Zugriff auf die Eigenschaften eines Objekts, indem Schlüssel (speziell formatierte Zeichen folgen) verwendet werden, um Eigenschaften zu identifizieren, anstatt über Instanzvariablen oder Zugriffsmethoden (`get/set`) auf Sie zuzugreifen. Durch die Implementierung von Schlüssel-Wert-Codierungs kompatiblen Accessoren in ihrer xamarin. Mac-Anwendung erhalten Sie Zugriff auf andere macOS-Features, wie z. b. Key-Value-Beobachtungen (KVO), Datenbindung, Kerndaten, Cocoa-Bindungen und scriptbarkeit.
 
 Weitere Informationen finden Sie im Abschnitt [einfache Datenbindung](~/mac/app-fundamentals/databinding.md#Simple_Data_Binding) in unserer Datenbindung und in der Dokumentation zum [Schlüssel-Wert-codieren](~/mac/app-fundamentals/databinding.md) .
-
 
 <a name="Summary" />
 

@@ -1,37 +1,37 @@
 ---
-title: Konfigurationsmanagement (Configuration Management)
-description: In diesem Kapitel wird erläutert, wie die mobile app von eShopOnContainers konfigurationsverwaltung zum Bereitstellen von Anwendungseinstellungen und benutzereinstellungen implementiert.
+title: Konfigurationsverwaltung
+description: In diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App die Konfigurations Verwaltung implementiert, um App-Einstellungen und Benutzereinstellungen bereitzustellen.
 ms.prod: xamarin
 ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 6f32d8f328232bdfc644da57bdb3201c60010063
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cc83a18cd8c391c6228cf9d813ecf8bca795caba
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381899"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760297"
 ---
-# <a name="configuration-management"></a>Konfigurationsmanagement (Configuration Management)
+# <a name="configuration-management"></a>Konfigurationsverwaltung
 
-Einstellungen können Sie die Trennung von Daten, die das Verhalten einer App aus dem Code, konfiguriert das Verhalten geändert werden, ohne die app neu zu erstellen. Es gibt zwei Arten von Einstellungen: app-Einstellungen und benutzereinstellungen.
+Einstellungen ermöglichen die Trennung von Daten, die das Verhalten einer App aus dem Code konfigurieren, sodass das Verhalten geändert werden kann, ohne die APP neu zu erstellen. Es gibt zwei Arten von Einstellungen: App-Einstellungen und Benutzereinstellungen.
 
-App-Einstellungen sind Daten, die eine app erstellt und verwaltet. Sie können Daten wie feste Webdienst-Endpunkte, API-Schlüssel und des Laufzeitstatus, enthalten. App-Einstellungen sind auf das Vorhandensein der app gebunden, und es sind nur sinnvoll, diese app.
+App-Einstellungen sind Daten, die von einer App erstellt und verwaltet werden. Es können Daten wie z. b. fixierte Webdienst-Endpunkte, API-Schlüssel und der Lauf Zeit Status enthalten. App-Einstellungen sind an das vorhanden sein der APP gebunden und sind nur für diese APP sinnvoll.
 
-Benutzereinstellungen werden die anpassbaren Einstellungen einer App, die Auswirkungen auf das Verhalten der app und häufig erneute Anpassung ist nicht erforderlich. Beispielsweise kann eine app den Benutzer angeben, wo Sie die Daten abgerufen werden sollen, und wie auf dem Bildschirm angezeigt ermöglichen.
+Benutzereinstellungen sind die anpassbaren Einstellungen einer APP, die sich auf das Verhalten der APP auswirken und keine häufige erneute Anpassung erfordern. Beispielsweise kann eine APP den Benutzer angeben, wo Daten abgerufen werden sollen und wie Sie auf dem Bildschirm angezeigt werden soll.
 
-Xamarin.Forms umfasst einen persistenten Wörterbuch, das zum Speichern von für Einstellungsdaten verwendet werden kann. Dieses Wörterbuch kann zugegriffen werden, mithilfe der [ `Application.Current.Properties` ](xref:Xamarin.Forms.Application.Properties) -Eigenschaft, und alle Daten, die in den es versetzt werden wird gespeichert, wenn die app in den Ruhezustand wechselt und wiederhergestellt, sobald die app fortgesetzt wird, oder dem erneuten Beginn. Darüber hinaus die [ `Application` ](xref:Xamarin.Forms.Application) -Klasse verfügt auch über eine [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync) -Methode, können eine app, damit die Einstellungen gespeichert, wenn erforderlich. Weitere Informationen zu diesem Wörterbuch, finden Sie unter [Wörterbuch "Properties"](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary).
+Xamarin. Forms enthält ein dauerhaftes Wörterbuch, das zum Speichern von Einstellungsdaten verwendet werden kann. Auf dieses Wörterbuch kann mithilfe der [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) -Eigenschaft zugegriffen werden, und alle darin enthaltenen Daten werden gespeichert, wenn die app in den Standbymodus wechselt, und werden wieder hergestellt, wenn die APP fortgesetzt oder neu gestartet wird. Außerdem verfügt die [`Application`](xref:Xamarin.Forms.Application) -Klasse auch über eine [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) -Methode, die es einer App ermöglicht, Ihre Einstellungen bei Bedarf zu speichern. Weitere Informationen zu diesem Wörterbuch finden Sie unter [Eigenschaften Wörterbuch](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary).
 
-Speichern von Daten, die mit dem permanenten Xamarin.Forms-Wörterbuch ein Nachteil ist, dass es nicht einfach an Daten gebunden ist. Aus diesem Grund verwendet die "eshoponcontainers" mobile app die Xam.Plugins.Settings Bibliothek, [NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/). Diese Bibliothek bietet einen konsistenten, typsicher und plattformübergreifenden Ansatz für beibehalten und Abrufen von app und benutzereinstellungen, bei der Verwendung der einheitlichen Verwaltung von jeder Plattform bereitgestellt werden. Darüber hinaus ist es einfach, die Datenbindung zu verwenden, den Zugriff auf für Einstellungsdaten, die von der Bibliothek verfügbar gemacht werden.
+Ein Nachteil beim Speichern von Daten mithilfe des permanenten Wörterbuchs xamarin. Forms besteht darin, dass es nicht einfach an Daten gebunden ist. Daher verwendet das eshoponcontainers-Mobile App die XAM. Plugins. Settings-Bibliothek, die über [nuget](https://www.nuget.org/packages/Xam.Plugins.Settings/)verfügbar ist. Diese Bibliothek bietet eine konsistente, typsichere und plattformübergreifende Methode zum beibehalten und Abrufen von App-und Benutzereinstellungen, während die von den einzelnen Plattformen bereitgestellte Native Einstellungs Verwaltung verwendet wird. Außerdem ist es einfach, die Datenbindung zu verwenden, um auf Einstellungsdaten zuzugreifen, die von der Bibliothek verfügbar gemacht werden.
 
 > [!NOTE]
-> Während die Bibliothek Xam.Plugin.Settings sowohl app als auch benutzereinstellungen speichern kann, ist es keinen Unterschied zwischen den beiden.
+> Obwohl in der XAM. plugin. Settings-Bibliothek sowohl App-als auch Benutzereinstellungen gespeichert werden können, wird nicht zwischen den beiden unterschieden.
 
-## <a name="creating-a-settings-class"></a>Erstellen eine Settings-Klasse
+## <a name="creating-a-settings-class"></a>Erstellen einer Einstellungs Klasse
 
-Wenn Sie die Xam.Plugins.Settings-Bibliothek verwenden zu können, eine einzelne statische Klasse sollte erstellt werden, enthält die app und benutzereinstellungen, die von der app erforderlich sind. Das folgende Codebeispiel zeigt die Settings-Klasse in der mobilen app für "eshoponcontainers":
+Wenn Sie die XAM. Plugins. Settings-Bibliothek verwenden, sollte eine einzelne statische Klasse erstellt werden, die die APP-und Benutzereinstellungen enthält, die für die APP erforderlich sind. Das folgende Codebeispiel zeigt die Settings-Klasse im eshoponcontainers-Mobile App:
 
 ```csharp
 public static class Settings  
@@ -47,14 +47,14 @@ public static class Settings
 }
 ```
 
-Einstellungen gelesen und geschrieben werden können, die `ISettings` -API, die von der Xam.Plugins.Settings-Bibliothek bereitgestellt wird. Diese Bibliothek enthält, die verwendet werden kann, den Zugriff auf die API Singleton `CrossSettings.Current`, und der app-Settings-Klasse sollte diesem Singleton über verfügbar zu machen eine `ISettings` Eigenschaft.
+Einstellungen können über die `ISettings` API gelesen und geschrieben werden, die von der XAM. Plugins. Settings-Bibliothek bereitgestellt wird. Diese Bibliothek stellt einen Singleton bereit, der für den Zugriff auf die API `CrossSettings.Current`verwendet werden kann, und die Einstellungs Klasse einer APP sollte diesen Singleton `ISettings` über eine-Eigenschaft verfügbar machen.
 
 > [!NOTE]
-> Using-Direktiven für die Namespaces Plugin.Settings und Plugin.Settings.Abstractions sollten auf eine Klasse hinzugefügt werden, die Zugriff auf die Bibliothekstypen Xam.Plugins.Settings erforderlich sind.
+> Using-Direktiven für die "Plugin. Settings"-und "Plugin. Settings. Abstractions"-Namespaces sollten einer Klasse hinzugefügt werden, die Zugriff auf die XAM. Plugins. Settings-Bibliothekstypen benötigt.
 
 ## <a name="adding-a-setting"></a>Hinzufügen einer Einstellung
 
-Jede Einstellung besteht aus einem Schlüssel, einen Standardwert und eine Eigenschaft. Das folgende Codebeispiel zeigt alle drei Elemente für eine benutzereinstellung, die die base-URL für den online-Dienste, die die "eshoponcontainers" mobile app eine darstellt Verbindung mit herstellt:
+Jede Einstellung besteht aus einem Schlüssel, einem Standardwert und einer Eigenschaft. Das folgende Codebeispiel zeigt alle drei Elemente für eine Benutzereinstellung, die die Basis-URL für die Onlinedienste darstellt, mit der die eshoponcontainers-Mobile App eine Verbindung herstellt:
 
 ```csharp
 public static class Settings  
@@ -78,11 +78,11 @@ public static class Settings
 }
 ```
 
-Der Schlüssel ist immer eine const-Zeichenfolge, die den Schlüssel definiert wird, wird Sie mit dem Standardwert für die Einstellung des erforderlichen Typs statischen schreibgeschützten Wert. Bereitstellung eines Standardwerts wird sichergestellt, dass ein gültiger Wert ist verfügbar, wenn es sich bei eine Festlegung-Einstellung abgerufen wird.
+Der Schlüssel ist immer eine Konstante Zeichenfolge, die den Schlüsselnamen definiert. der Standardwert für die Einstellung ist ein statischer Schreib geschützter Wert des erforderlichen Typs. Durch die Angabe eines Standardwerts wird sichergestellt, dass ein gültiger Wert verfügbar ist, wenn eine nicht festgelegte Einstellung abgerufen wird.
 
-Die `UrlBase` statische Eigenschaft mithilfe von zwei Methoden der `ISettings` API zum Lesen oder schreiben den Wert der Einstellung. Die `ISettings.GetValueOrDefault` Methode dient zum Abrufen der Wert einer Einstellung von Plattform-spezifischen Speicher. Wenn kein Wert für die Einstellung definiert ist, wird stattdessen der Standardwert abgerufen. Auf ähnliche Weise die `ISettings.AddOrUpdateValue` Methode wird verwendet, um der Wert einer Einstellung in den plattformspezifischen Speicher beizubehalten.
+Die `UrlBase` statische Eigenschaft verwendet zwei Methoden aus der `ISettings` API, um den Einstellungs Wert zu lesen oder zu schreiben. Die `ISettings.GetValueOrDefault` -Methode wird verwendet, um den Wert einer Einstellung aus dem plattformspezifischen Speicher abzurufen. Wenn kein Wert für die Einstellung definiert ist, wird stattdessen der Standardwert abgerufen. Ebenso wird die `ISettings.AddOrUpdateValue` -Methode verwendet, um den Wert einer Einstellung in einem plattformspezifischen Speicher beizubehalten.
 
-Sondern definieren, die einen Standardwert innerhalb der `Settings` -Klasse, die `UrlBaseDefault` Zeichenfolge erhält ihren Wert aus der `GlobalSetting` Klasse. Das folgende Codebeispiel zeigt die `BaseEndpoint` Eigenschaft und `UpdateEndpoint` Methode in dieser Klasse:
+Anstatt einen Standardwert in der `Settings` -Klasse zu definieren, erhält die `UrlBaseDefault` Zeichenfolge ihren Wert `GlobalSetting` aus der-Klasse. Das folgende Codebeispiel zeigt die `BaseEndpoint` -Eigenschaft `UpdateEndpoint` und die-Methode in dieser Klasse:
 
 ```csharp
 public class GlobalSetting  
@@ -115,25 +115,25 @@ public class GlobalSetting
 }
 ```
 
-Jedes Mal die `BaseEndpoint` Eigenschaft festgelegt ist, die `UpdateEndpoint` Methode wird aufgerufen. Diese Methode wird aktualisiert, eine Reihe von Eigenschaften, die alle basieren auf der `UrlBase` benutzereinstellung, die von bereitgestellte der `Settings` -Klasse, die verschiedene Endpunkte darstellen, die mit die mobilen app für "eshoponcontainers" verbindet.
+Jedes Mal, `BaseEndpoint` wenn die-Eigenschaft fest `UpdateEndpoint` gelegt wird, wird die-Methode aufgerufen. Diese Methode aktualisiert eine Reihe von Eigenschaften, die alle auf der `UrlBase` Benutzereinstellung basieren, die von der `Settings` -Klasse bereitgestellt wird, die verschiedene Endpunkte darstellt, mit denen die eshoponcontainers-Mobile App eine Verbindung herstellt.
 
-## <a name="data-binding-to-user-settings"></a>Datenbindung an den Benutzereinstellungen
+## <a name="data-binding-to-user-settings"></a>Datenbindung an Benutzereinstellungen
 
-In der mobilen Anwendung "eshoponcontainers" die `SettingsView` stellt zwei benutzereinstellungen zur Verfügung. Diese Einstellungen ermöglichen die Konfiguration gibt an, ob die app Daten von Microservices abrufen soll, die als Docker-Container bereitgestellt werden, oder gibt an, ob die app Daten von pseudodienste abrufen soll, die keine Internetverbindung erforderlich ist. Wenn Sie zum Abrufen von Daten aus Microservices in Containern auswählen, muss eine Basis-Endpunkt-URL für die Microservices angegeben werden. Abbildung 7 – 1 zeigt die `SettingsView` Wenn der Benutzer zum Abrufen von Daten aus Microservices in Containern ausgewählt wurde.
+Im Mobile App eshoponcontainers werden `SettingsView` von zwei Benutzereinstellungen verfügbar gemacht. Mit diesen Einstellungen können Sie konfigurieren, ob die APP Daten von als docker-Container bereitgestellten als docker-Container abrufen soll oder ob die APP Daten von mockdiensten abrufen soll, die keine Internetverbindung benötigen. Beim Abrufen von Daten aus containerisierten microservices muss eine Basis Endpunkt-URL für die microservices angegeben werden. In Abbildung 7-1 wird `SettingsView` der angezeigt, wenn der Benutzer das Abrufen von Daten aus containerisierten microservices ausgewählt hat.
 
-![](configuration-management-images/settings-endpoint.png "Benutzereinstellungen, die von der mobilen app von eShopOnContainers verfügbar gemacht werden")
+![](configuration-management-images/settings-endpoint.png "Benutzereinstellungen, die von der eshoponcontainers-Mobile App verfügbar gemacht werden")
 
-**Abbildung 7-1**: Benutzereinstellungen, die von der mobilen app von eShopOnContainers verfügbar gemacht werden
+**Abbildung 7-1**: Benutzereinstellungen, die von der eshoponcontainers-Mobile App verfügbar gemacht werden
 
-Die Datenbindung kann verwendet werden, zum Abrufen und Festlegen von Einstellungen, die verfügbar gemacht werden, indem die `Settings` Klasse. Dies erfolgt durch die Steuerelemente auf die Ansicht-Bindung an Eigenschaften, die Eigenschaften im wiederum Zugriff auf die `Settings` -Klasse, und das Auslösen einer Eigenschaft geändert Benachrichtigung auf, wenn der Einstellungswert geändert hat. Informationen wie die "eshoponcontainers" mobile app Ansicht erstellt Modelle und ordnet diese zu Ansichten finden Sie [automatisch ein Ansichtsmodell mit einem View Model-Locator erstellen](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
+Die Datenbindung kann zum Abrufen und Festlegen von Einstellungen verwendet werden, `Settings` die von der-Klasse verfügbar gemacht werden. Dies wird durch Steuerelemente auf der Ansichts Bindung erreicht, um Modell Eigenschaften anzuzeigen, die wiederum auf `Settings` Eigenschaften in der-Klasse zugreifen, und das Aufrufen einer Benachrichtigung über geänderte Eigenschaften, wenn sich der Einstellungs Wert geändert hat. Informationen dazu, wie die eshoponcontainers-Mobile App Ansichts Modelle erstellt und diese Ansichten zuordnet, finden Sie unter [Automatisches Erstellen eines Ansichts Modells mit einem Ansichts Modell-Locator](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
 
-Das folgende Codebeispiel zeigt die [ `Entry` ](xref:Xamarin.Forms.Entry) -Steuerelement aus der `SettingsView` , in dem der Benutzer zur Eingabe einer grundlegenden Endpunkt-URL für die Microservices in Containern:
+Das folgende Codebeispiel zeigt das [`Entry`](xref:Xamarin.Forms.Entry) -Steuerelement `SettingsView` aus, das es dem Benutzer ermöglicht, eine Basis-Endpunkt-URL für die containerisierten microservices einzugeben:
 
 ```xaml
 <Entry Text="{Binding Endpoint, Mode=TwoWay}" />
 ```
 
-Dies [ `Entry` ](xref:Xamarin.Forms.Entry) -Steuerelement gebunden wird, die `Endpoint` Eigenschaft der `SettingsViewModel` Klasse, wobei eine bidirektionale Bindung. Das folgende Codebeispiel zeigt die Endpunkt-Eigenschaft:
+Dieses [`Entry`](xref:Xamarin.Forms.Entry) Steuerelement wird mithilfe `Endpoint` einer bidirektionalen Bindung an die-Eigenschaft der `SettingsViewModel` -Klasse gebunden. Im folgenden Codebeispiel wird die Endpoint-Eigenschaft veranschaulicht:
 
 ```csharp
 public string Endpoint  
@@ -153,7 +153,7 @@ public string Endpoint
 }
 ```
 
-Wenn die `Endpoint` -Eigenschaftensatz der `UpdateEndpoint` -Methode aufgerufen wird, vorausgesetzt, dass der angegebene Wert gültig ist, und die Eigenschaft geändert wird die Benachrichtigung ausgelöst. Die `UpdateEndpoint`-Methode wird in folgendem Codebeispiel veranschaulicht:
+Wenn die `Endpoint` -Eigenschaft festgelegt `UpdateEndpoint` ist, wird die-Methode aufgerufen, vorausgesetzt, dass der angegebene Wert gültig ist und die Benachrichtigung über eine geänderte Eigenschaft ausgelöst wird. Die `UpdateEndpoint`-Methode wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 private void UpdateEndpoint(string endpoint)  
@@ -162,9 +162,9 @@ private void UpdateEndpoint(string endpoint)
 }
 ```
 
-Diese Methode aktualisiert die `UrlBase` -Eigenschaft in der `Settings` -Klasse mit den grundlegenden Endpunkt-URL-Wert vom Benutzer eingegeben werden, wodurch sie in plattformspezifische Speicher beibehalten werden.
+Diese Methode aktualisiert die `UrlBase` -Eigenschaft in `Settings` der-Klasse mit dem vom Benutzer eingegebenen Wert der Basis Endpunkt-URL, wodurch Sie im plattformspezifischen Speicher beibehalten wird.
 
-Wenn die `SettingsView` navigiert wird, die `InitializeAsync` -Methode in der die `SettingsViewModel` Klasse ausgeführt wird. Im folgenden Codebeispiel wird diese Methode veranschaulicht:
+Wenn auf `SettingsView` die navigiert wird, wird `InitializeAsync` die-Methode `SettingsViewModel` in der-Klasse ausgeführt. Im folgenden Codebeispiel wird diese Methode veranschaulicht:
 
 ```csharp
 public override Task InitializeAsync(object navigationData)  
@@ -175,18 +175,17 @@ public override Task InitializeAsync(object navigationData)
 }
 ```
 
-Der Methode wird die `Endpoint` Eigenschaft auf den Wert der `UrlBase` -Eigenschaft in der `Settings` Klasse. Zugreifen auf die `UrlBase` -Eigenschaft bewirkt, dass die Xam.Plugins.Settings-Bibliothek, um den Einstellungswert aus plattformspezifischen Storage abrufen. Informationen darüber, wie die `InitializeAsync` Methode aufgerufen wird, finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
+Mit der-Methode `Endpoint` wird die-Eigenschaft auf den `UrlBase` Wert der- `Settings` Eigenschaft in der-Klasse festgelegt. Der Zugriff `UrlBase` auf die-Eigenschaft bewirkt, dass die XAM. Plugins. Settings-Bibliothek den Einstellungs Wert aus dem plattformspezifischen Speicher abruft. Informationen dazu, wie die `InitializeAsync` -Methode aufgerufen wird, finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
 
-Dieser Mechanismus wird sichergestellt, dass wenn ein Benutzer zum Anzeigen navigiert, benutzereinstellungen aus plattformspezifischen Speicher abgerufen und mithilfe von Datenbindung angezeigt. Klicken Sie dann, wenn der Benutzer die Einstellungswerte ändert, wird sichergestellt Datenbindung, dass sie sofort wieder in den plattformspezifischen-Speicher gespeichert werden.
+Mit diesem Mechanismus wird sichergestellt, dass Benutzereinstellungen immer dann, wenn ein Benutzer zur einstellungenansicht navigiert, aus dem plattformspezifischen Speicher abgerufen und über die Datenbindung angezeigt werden. Wenn der Benutzer dann die Einstellungs Werte ändert, stellt die Datenbindung sicher, dass Sie sofort im plattformspezifischen Speicher beibehalten werden.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Einstellungen können Sie die Trennung von Daten, die das Verhalten einer App aus dem Code, konfiguriert das Verhalten geändert werden, ohne die app neu zu erstellen. App-Einstellungen sind Daten, die eine app erstellt und verwaltet und benutzereinstellungen sind die anpassbare Einstellungen einer App, die Auswirkungen auf das Verhalten der app und häufig erneute Anpassung ist nicht erforderlich.
+Einstellungen ermöglichen die Trennung von Daten, die das Verhalten einer App aus dem Code konfigurieren, sodass das Verhalten geändert werden kann, ohne die APP neu zu erstellen. App-Einstellungen sind Daten, die von einer App erstellt und verwaltet werden, und Benutzereinstellungen sind die anpassbaren Einstellungen einer APP, die sich auf das Verhalten der APP auswirken und keine häufige erneute Anpassung erfordern.
 
-Die Xam.Plugins.Settings-Bibliothek bietet eine konsistente, typsicher, plattformübergreifenden Ansatz für beibehalten und Abrufen von app und benutzereinstellungen und die Datenbindung kann verwendet werden, um die Einstellungen, die erstellt werden, mit der Bibliothek zugreifen.
-
+Die XAM. Plugins. Settings-Bibliothek bietet eine konsistente, typsichere und plattformübergreifende Methode zum beibehalten und Abrufen von App-und Benutzereinstellungen, und die Datenbindung kann verwendet werden, um auf die mit der Bibliothek erstellten Einstellungen zuzugreifen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [E-Book (2Mb PDF-Datei) herunterladen](https://aka.ms/xamarinpatternsebook)
-- ["eshoponcontainers" (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
+- [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290116"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766537"
 ---
 # <a name="systemdata-in-xamarinios"></a>System. Data in xamarin. IOS
 
@@ -110,7 +110,6 @@ class Demo {
 > [!IMPORTANT]
 > Wie im obigen Codebeispiel erwähnt, empfiehlt es sich, Zeichen folgen in SQL-Befehle einzubetten, da der Code für die [SQL-Injektion](https://en.wikipedia.org/wiki/SQL_injection)anfällig ist.
 
-
 ### <a name="using-command-parameters"></a>Verwenden von CommandParameter-Eigenschaften
 
 Der folgende Code zeigt, wie Befehlsparameter verwendet werden, um den von Benutzern eingegebenen textsicher in die Datenbank einzufügen (auch wenn der Text spezielle SQL-Zeichen wie Single-Apostroph enthält):
@@ -149,7 +148,6 @@ Die in " **System. Data. dll** " fehlenden Funktionen bestehen aus folgendem:
 - [System.Data.Odbc](xref:System.Data.Odbc)
 - Die `System.EnterpriseServices.dll` Abhängigkeit wurde aus `System.Data.dll` entfernt, was zum Entfernen der Methode [SqlConnection. endlistdistributedtransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) führte.
 
-
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono. Data. sqlite
@@ -170,4 +168,3 @@ Die häufigsten Probleme stehen im Zusammenhang mit Datenbankschema Abfragen, z.
 ## <a name="data-binding"></a>Datenbindung
 
 Die Datenbindung wird zurzeit nicht unterstützt.
-

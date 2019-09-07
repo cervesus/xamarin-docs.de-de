@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: a0719dce3b7f5484168dc5679237b01286f5de78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6aa5eede658f13a36220398f92192eefa2473bab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286759"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768594"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Schnell Interaktions Techniken für watchos 3 in xamarin
 
@@ -98,7 +98,7 @@ Apple empfiehlt Folgendes bei der Arbeit mit Gesten Erkennungs Programmen in wat
 - Einige Gesten haben Vorrang vor anderen Gesten Typen, z. b.:
   - Scrollen
   - Force Touch
- 
+
 ### <a name="digital-crown-rotation"></a>Digital Crown Drehung
 
 Wenn Sie Digital Crown Unterstützung in ihren watchos 3-apps implementieren, kann ein Entwickler eine bessere Navigations Geschwindigkeit und Genauigkeits Interaktionen für Ihre Benutzer bereitstellen.
@@ -169,7 +169,6 @@ Apple hat es dem Entwickler ausgelassen, um zu bestimmen, wie die rotationszähl
 Das Zeichen (`+/-`) des rotierenden Deltas gibt die Richtung an, in der der Benutzer den Digital Crown schaltet:
 
 [![](quick-interaction-techniques-images/quick03.png "Das Vorzeichen des rotationdeltas gibt die Richtung an, in der der Benutzer den Digital Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
-
 
 Wenn der Benutzer einen Bildlauf nach oben durchführt, gibt watchkit positive Delta-Elemente zurück. Wenn Sie den Bildlauf nach unten durchführen, werden negative Delta-Elemente zurückgegeben, unabhängig davon, in welcher Richtung der Benutzer die Überwachung durchführt.
 

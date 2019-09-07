@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d988be9163c0a6e12735425a139c03d9641fa95c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656785"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772762"
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
@@ -225,7 +225,6 @@ Beachten Sie Folgendes:
 
 - `outerStack` wird angepasst, um das Image und die Steuerelemente als horizontalen oder vertikalen Stapel je nach Ausrichtung, den verfügbaren Platz optimal nutzen zu präsentieren.
 
-
 ### <a name="absolutelayout"></a>Von "AbsoluteLayout"
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt:
@@ -277,7 +276,6 @@ Beachten Sie Folgendes:
 
 - Aufgrund der Art und Weise, die die Seite angeordnet wurden, besteht keine Notwendigkeit für prozeduralen Code Reaktionsfähigkeit Einführung zur Verfügung.
 - Die `ScrollView` wird verwendet, um die Bezeichnung auch, wenn kleiner als die Summe der feste Höhe der Schaltflächen und das Bild der Höhe des Bildschirms ist sichtbar sein können.
-
 
 ### <a name="relativelayout"></a>RelativeLayout
 
@@ -471,7 +469,6 @@ protected override void OnSizeAllocated (double width, double height){
 Beachten Sie Folgendes:
 
 - Aufgrund der Art und Weise, die die Seite angeordnet wurden, besteht eine Methode zum Ändern der Raster-Platzierung der Steuerelemente zur Verfügung.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

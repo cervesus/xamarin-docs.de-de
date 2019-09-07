@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 21. Transformiert
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 21. Transformiert'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 21. Transformiert'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 40c091d0c5042d172108709f89774e41e9339d4b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513017"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760580"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Zusammenfassung der Kapitel 21. Transformiert
 
@@ -122,8 +122,6 @@ Die `AnchorX` Eigenschaft wirkt sich auf `RotationY` , nicht jedoch `RotationX`.
 Impliziert durch die Xamarin.Forms 3D-Koordinatensystem ist für Linkshänder. Wenn Sie zeigen die Zeigefinger von Ihrem linken in Richtung der zunehmenden X-Koordinaten (nach rechts) und dem mittleren Finger in Richtung der zunehmenden Y-Koordinaten (unten), klicken Sie dann Ihre Thumb-Steuerelement zeigt in Richtung der Z-Koordinaten (außerhalb des Bildschirms) zunimmt.
 
 Auch wenn Sie Ihre linken Ziehpunkt in Richtung der ansteigenden Werten, zeigen gibt an für eine der drei Achsen, klicken Sie dann die Kurve der Finger die Richtung der Drehung für positive Drehen von Winkel.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

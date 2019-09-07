@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4df67221c367386cddd485fcd1853523d77158e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 89756d5b897b39dd0cf45074474189a4a0a8ada8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290683"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769989"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>tvos-Benutzeroberflächen Stile in xamarin
 
@@ -101,9 +101,6 @@ Außerdem verfügen Merkmals Auflistungen in tvos 10 über die folgenden Feature
 
 > [!IMPORTANT]
 > Die frühe Vorschauversion von xamarin. tvos für tvos 10 wird `UIUserInterfaceStyle` `UITraitCollection` noch nicht vollständig unterstützt. Die vollständige Unterstützung wird in einer zukünftigen Version hinzugefügt.
-
-
-
 
 <a name="Customizing-Appearance-Based-on-Theme" />
 
@@ -209,8 +206,6 @@ Außerdem verfügt der tvos-Simulator jetzt über eine Tastenkombination, die es
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die hellen und dunklen UI-Designs behandelt, die Apple tvos 10 hinzugefügt hat, und wie diese in einer xamarin. tvos-App implementiert werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

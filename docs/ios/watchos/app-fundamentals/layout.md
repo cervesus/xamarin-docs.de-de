@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 5272921cade2b9dadd24a4c917e6251ac591e178
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292323"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768748"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>Arbeiten mit WatchOS Layout in Xamarin
 
@@ -34,7 +34,6 @@ Der wichtigste Punkt ist: treffen Sie Ihre Benutzeroberfläche lesbar und auf ei
 
 - Verwenden der [ `Menu` Steuerelement](~/ios/watchos/user-interface/menu.md) zu machen, die weniger häufig verwendete Funktionen, Ihr app-Design klaren und präzisen zu halten.
 
-
 ## <a name="implementation"></a>Implementierung
 
 Sehen Sie sich Kit umfasst die folgenden Steuerelemente, damit Sie attraktive sehen Sie sich app-Layouts erstellen können:
@@ -55,7 +54,6 @@ Wenn die Größe festgelegt ist, um **relativ zum Container** können Sie angebe
 
 ![](layout-images/button-attributes.png "Geben Sie proportionaler Wert und eine Offset-Anpassung")
 
-
 ### <a name="group"></a>Gruppieren
 
 `WKInterfaceGroup` ist ein einfaches Layout-Container, der konfiguriert werden kann, um die Aufrufliste vertikal oder horizontal steuert. Es enthält Abstand zwischen den Steuerelementen in der Standardeinstellung, aber Sie können den Abstand (und die Abstände) ändern, der **Attribute** Inspector.
@@ -65,7 +63,6 @@ Wenn die Größe festgelegt ist, um **relativ zum Container** können Sie angebe
 Gruppen können selbst werden Größe und relativ zu den Steuerelementen zu positioniert, und Servergruppen können geschachtelt sein, um komplexe Layouts zu erstellen.
 
 ![](layout-images/group-scene.png "Gruppen können geschachtelt werden, um komplexe Layouts zu erstellen.")
-
 
 ### <a name="separator"></a>Trennzeichen
 
@@ -79,8 +76,6 @@ Beachten Sie die blauen und grünen Trennzeichen, die nicht die gesamte Breite d
 
 Kein Layout wäre vollständig ohne die `Label`, `Image`, `Button`, `Switch`, `Slider`, `Map`, und [andere Steuerelemente](~/ios/watchos/user-interface/index.md).
 Diese können in Ihre Layouts mit positioniert werden **Gruppen** oder die Position und Größe auf jedes Steuerelement.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1aa4e6dcf5137d12647fb2a5531218839b6db9a1
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 6f3df1c7c4664f4138e0f399419ac95e15231916
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225797"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757518"
 ---
 # <a name="kitkat-features"></a>Kitkat-Features
 
@@ -29,7 +29,6 @@ Android 4,4 (API-Ebene 19), auch bekannt als "Kitkat", wurde in spätem 2013 ver
 - [Hardware](#hardware) Schalten Sie jede app in eine NFC-Karte mit NFC-Host basierter Karten Emulation ein, `SensorManager` und führen Sie Hochleistungs Sensoren mit aus. &ndash;
 
 - [Entwicklertools](#developer_tools) &ndash; Screencast Anwendungen in Aktion mit dem Android Debug Bridge Client, verfügbar als Teil der Android SDK.
-
 
 Dieser Leitfaden enthält Anleitungen zum Migrieren einer vorhandenen xamarin. Android-Anwendung zu KitKat sowie eine allgemeine Übersicht über KitKat für xamarin. Android-Entwickler.
 
@@ -248,10 +247,8 @@ Der folgende Screenshot veranschaulicht die Szene hinter der Animation:
 
 [![Screenshot der APP nach Abschluss der Animation](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
-
 > [!NOTE]
 > In der Android-Übergangs Bibliothek gibt es einen [bekannten Fehler](https://code.google.com/p/android/issues/detail?id=62450) , der bewirkt, `GetSceneForLayout` dass Szenen, die mithilfe von erstellt wurden, unterbrechen, wenn ein Benutzer das zweite Mal durch eine Aktivität navigiert. Eine Java-Problem Umgehung wird [hier](http://www.doubleencore.com/2013/11/new-transitions-framework/)beschrieben.
-
 
 ##### <a name="custom-transitions-in-scenes"></a>Benutzerdefinierte Übergänge in Kulissen
 
@@ -289,7 +286,6 @@ Kitkat bietet Ihnen mehr Kontrolle über das Design Ihrer APP mit optionalen Sta
 - `windowTranslucentNavigation`: Wenn diese Einstellung auf true festgelegt ist, wird die untere Navigationsleiste durchsichtig.
 
 - `fitsSystemWindows`-Durch das Festlegen der oberen oder unteren Leiste auf "transcluent" wird der Inhalt unter den transparenten Benutzeroberflächen Elementen standardmäßig verschoben. Das Festlegen dieser Eigenschaft `true` auf ist eine einfache Methode, um zu verhindern, dass Inhalte mit den Benutzeroberflächen Elementen der überlappenden System überlappend
-
 
 Der folgende Code definiert ein Design mit dem durchlässigem Status und Navigationsleisten:
 
@@ -405,11 +401,8 @@ Die meisten Geräte, die mit KitKat ausgeliefert werden, Laden automatisch Googl
 
 [![Screenshot des Bildschirms "Druckeinstellungen"](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
-
 > [!NOTE]
 > Obwohl die Druck-APIs standardmäßig für die Verwendung mit Google Cloud Print eingerichtet sind, können Entwickler mit Android weiterhin Druck Inhalte mithilfe der neuen APIs vorbereiten und Sie an andere Anwendungen senden, um den Druck zu verarbeiten.
-
-
 
 #### <a name="printing-html-content"></a>Drucken von HTML-Inhalten
 
@@ -425,7 +418,6 @@ Die Option Drucken wird in der Regel im [Menü Optionen](https://developer.andro
 Das Menü Optionen ermöglicht Benutzern das Ausführen von Aktionen für eine Aktivität. Sie befindet sich in der rechten oberen Ecke des Bildschirms und sieht wie folgt aus:
 
 [![Beispiel-Screenshot des Menü Elements "Drucken", das in der oberen rechten Ecke des Bildschirms angezeigt wird](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
-
 
 Weitere Menü Elemente können im *Menü*Verzeichnis unter " *Ressourcen*" definiert werden. Der folgende Code definiert ein Beispiel Menü Element mit dem Namen " [Print](xref:Android.Print.PrintManager)":
 
@@ -541,7 +533,6 @@ HCE muss im Hintergrund ausgeführt werden können, und Sie muss gestartet werde
 
 - *Ondeaktiviert* : `HostAdpuService` wird deaktiviert, wenn der HCE-Dienst nicht mehr mit dem NFC-Reader kommuniziert.
 
-
 Ein HCE-Dienst muss auch mit dem Manifest der Anwendung registriert und mit den entsprechenden Berechtigungen, dem beabsichtigten Filter und den entsprechenden Metadaten versehen werden. Der folgende Code ist ein Beispiel für eine `HostApduService` , die mit dem- `Service` Attribut für das Android-Manifest registriert ist (Weitere Informationen zu Attributen finden Sie im Handbuch xamarin [Working with Android Manifest](~/android/platform/android-manifest.md) ):
 
 ```csharp
@@ -645,10 +636,8 @@ protected override void OnPause()
 
 Durch einen Neustart des Geräts wird die Anzahl der Schritte auf 0 zurückgesetzt. Ihre APP erfordert zusätzlichen Code, um sicherzustellen, dass Sie eine genaue Anzahl für die Anwendung meldet, unabhängig von anderen Anwendungen, die den Sensor oder den Status des Geräts verwenden.
 
-
 > [!NOTE]
 > Während die API für die Schritt Erkennung und-Zählung mit KitKat ausgeliefert wird, sind nicht alle Telefone mit dem Sensor ausgerüstet. Sie können überprüfen, ob der Sensor verfügbar ist `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`, indem Sie ausführen, oder überprüfen, `GetDefaultSensor` ob `null`der zurückgegebene Wert von ist.
-
 
 <a name="developer_tools" />
 
@@ -673,7 +662,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 Sie können Ihr Video auf Ihrem Gerät finden, und es wird im Katalog angezeigt, wenn die Aufzeichnung fertiggestellt ist.
 
-
 ## <a name="other-kitkat-additions"></a>Weitere KitKat-Ergänzungen
 
 Zusätzlich zu den oben beschriebenen Änderungen ermöglicht KitKat Folgendes:
@@ -692,7 +680,7 @@ Zusätzlich zu den oben beschriebenen Änderungen ermöglicht KitKat Folgendes:
 - *Lesen dynamisch ändernder Text* : Teile der Benutzeroberfläche, die dynamisch aktualisiert werden, mit neuem Text als "Live Bereiche" mit dem neuen[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
   -Attribut, sodass der neue Text automatisch im Barrierefreiheits Modus gelesen wird.
 
-- *Verbessern* Sie die Audiodarstellung: machen Sie Ihre Spuren mit der[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
+- *Verbessern Sie die Audiodarstellung* : machen Sie Ihre Spuren mit der[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
   , ermitteln Sie die Spitzen und RMS eines Audiodatenstroms mit dem[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
   und erhalten Informationen aus einem [Audiozeit Stempel](xref:Android.Media.AudioTimestamp) , um die audiovideosynchronisierung zu unterstützen.
 
@@ -705,11 +693,9 @@ Zusätzlich zu den oben beschriebenen Änderungen ermöglicht KitKat Folgendes:
 
 Weitere Informationen zu den oben genannten API-Änderungen finden Sie in der Übersicht über Google [Android 4,4-APIs](https://developer.android.com/about/versions/android-4.4.html) .
 
-
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden einige der neuen APIs vorgestellt, die in Android 4,4 (API-Ebene 19) verfügbar sind, sowie bewährte Methoden beim Übergang einer Anwendung in KitKat. Es wurden Änderungen an den APIs erläutert, die sich auf die Benutzer Darstellung auswirken, einschließlich des *Übergangs-Frameworks* und neuer Optionen für das Design. Im nächsten Schritt wurden das *Speicherzugriffs Framework* und `DocumentsProvider` die Klasse sowie die neuen *Druck-APIs*eingeführt. Sie untersuchte *NFC-Host basierte Karten Emulation* und die Arbeit mit Hochleistungs *Sensoren*, einschließlich zwei neuer Sensoren für die Nachverfolgung der Schritte des Benutzers. Schließlich haben wir demonstriert, wie Sie Echt Zeit Demos von Anwendungen mit *Bildschirmaufzeichnung*erfassen und eine ausführliche Liste der Änderungen und Ergänzungen der KitKat-API bereitstellen.
-
+In diesem Artikel wurden einige der neuen APIs vorgestellt, die in Android 4,4 (API-Ebene 19) verfügbar sind, sowie bewährte Methoden beim Übergang einer Anwendung in KitKat. Es wurden Änderungen an den APIs erläutert, die sich auf die Benutzer Darstellung auswirken, einschließlich des *Übergangs-Frameworks* und neuer *Optionen für das*Design. Im nächsten Schritt wurden das *Speicherzugriffs Framework* und `DocumentsProvider` die Klasse sowie die neuen *Druck-APIs*eingeführt. Sie untersuchte *NFC-Host basierte Karten Emulation* und die Arbeit mit Hochleistungs *Sensoren*, einschließlich zwei neuer Sensoren für die Nachverfolgung der Schritte des Benutzers. Schließlich haben wir demonstriert, wie Sie Echt Zeit Demos von Anwendungen mit *Bildschirmaufzeichnung*erfassen und eine ausführliche Liste der Änderungen und Ergänzungen der KitKat-API bereitstellen.
 
 ## <a name="related-links"></a>Verwandte Links
 

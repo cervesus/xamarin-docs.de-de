@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: eb20c73ab66af5ca07bf2efb31d631d9fa9776dc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 335c385b5be77736f0e19852eb71f2a2329eb9a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287044"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768263"
 ---
 # <a name="layout-options-in-xamarinios"></a>Layoutoptionen in xamarin. IOS
 
@@ -40,7 +40,6 @@ textfield1.Frame = new RectangleF(15, 277, 79, 27);
 textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
 ```
 
-
 Um die Einstellungen für die automatische Größenanpassung zu testen, aktivieren Sie in den Optionen des Projekts verschiedene **Unterstützte Geräte Ausrichtungen** :
 
  [![](layout-options-images/image43a.png "Einstellungen für automatische Größenanpassung")](layout-options-images/image43a.png#lightbox)
@@ -53,7 +52,6 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin;
 ```
 
-
 Wir können die Steuerelemente auch mithilfe des Designers anpassen. Wenn Sie die unten gezeigten Strukturen auswählen, wird das Bild rechtsbündig ausgerichtet, ohne am unteren Rand der Ansicht abgeschnitten zu werden:
 
  [![](layout-options-images/autoresize.png "Autorotierung")](layout-options-images/autoresize.png#lightbox)
@@ -63,10 +61,6 @@ Diese Screenshots zeigen, wie sich die Größe der Steuerelemente ändert, wenn 
  [![](layout-options-images/image44a.png "Autorotierung")](layout-options-images/image44a.png#lightbox)
 
 Beachten Sie, dass die Textansicht und das Textfeld gestreckt werden, um die gleichen linken und rechten Ränder aufgrund `FlexibleWidth` der-Einstellung beizubehalten. Das Bild hat den oberen und den linken Rand flexibel, d. h., er behält den unteren und rechten Rand bei – behält das Bild beim Drehen des Bildschirms bei. Komplexe Layouts erfordern in der Regel eine Kombination dieser Einstellungen auf jedem sichtbaren Steuerelement, um die Benutzeroberfläche konsistent zu halten und zu verhindern, dass sich Steuerelemente überlappen, wenn sich die Begrenzungen der Ansicht ändern (aufgrund der Drehung oder eines anderen Ereignisses zur Änderungs Änderung).
-
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

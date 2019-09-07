@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2017
-ms.openlocfilehash: 799e117e3a4cb6e3071680da90e6432f389c6682
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2857033c5cd69e9696d2ce82feaf8212300da2c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642557"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764814"
 ---
 # <a name="xamarinandroid-textureview"></a>Xamarin. Android textureview
 
@@ -70,8 +70,6 @@ Der obige Code erstellt eine `TextureView` `TextureView`-Instanz in der- `OnCrea
 [![Beispiel für die APP, die auf einem Gerät ausgeführt wird und ein Bild anzeigt](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
 Um das zu `TextureView`verwenden, muss die Hardwarebeschleunigung aktiviert werden. diese wird standardmäßig auf API-Ebene 14 fest. Da in diesem Beispiel die Kamera verwendet wird, müssen die `android.permission.CAMERA` -Berechtigung und `android.hardware.camera` die-Funktion in der Datei " **androidmanifest. XML**" festgelegt werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 15. Die interaktive Schnittstelle
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 15. Die interaktive Schnittstelle'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 15. Die interaktive Schnittstelle'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1c30f87b9173d2ca4de0b2d91ad13145031e9b0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335299"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760763"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Zusammenfassung der Kapitel 15. Die interaktive Schnittstelle
 
@@ -26,10 +26,10 @@ Xamarin.Forms enthält 20 instanziiert werden von abgeleiteten Klassen `View` , 
 
 - `Label`: [**Kapitel 2. Aufbau einer app**](chapter02.md)
 - `BoxView`: [**Kapitel 3. Scrollen im Stapel**](chapter03.md)
-- `Button`: [**Kapitel 6. Schaltflächenklicks**](chapter06.md)
+- `Button`: [**Kapitel 6: Schaltflächenklicks**](chapter06.md)
 - `Image`: [**Kapitel 13. Bitmaps**](chapter13.md)
 - `ActivityIndicator`: [**Kapitel 13. Bitmaps**](chapter13.md)
-- `ProgressBar`: [**Kapitel 14. Von "AbsoluteLayout"**](chapter14.md)
+- `ProgressBar`: [**Kapitel 14. Von "AbsoluteLayout"** ](chapter14.md)
 
 Die acht Ansichten in diesem Kapitel ermöglichen effektiv den Benutzer für die Interaktion mit .NET Grunddatentypen:
 
@@ -49,7 +49,7 @@ Die verbleibenden sechs Ansichten werden in den folgenden Kapiteln erläutert:
 - `ListView`: [**Kapitel 19. Auflistungsansichten**](chapter19.md)
 - `TableView`: [**Kapitel 19. Auflistungsansichten**](chapter19.md)
 - `Map`: [**Kapitel 28. Position und Karten**](chapter28.md)
-- `OpenGLView`: Nicht abgedeckt, die in diesem Buch (und keine Unterstützung für Windows-Plattformen)
+- `OpenGLView`: Nicht abgedeckt in diesem Buch (und keine Unterstützung für Windows-Plattformen)
 
 ## <a name="slider-and-stepper"></a>Schieberegler und zugeordnetem
 
@@ -94,7 +94,7 @@ Die [ `Stepper` ](xref:Xamarin.Forms.Stepper) definiert die gleichen Eigenschaft
 
 - [`Increment`](xref:Xamarin.Forms.Stepper.Increment) Der Typ `double`, initialisiert auf 1
 
-Visuell die `Stepper` besteht aus zwei Schaltflächen, die mit der Bezeichnung **&ndash;** und **+**. Drücken Sie **&ndash;** verringert `Value` von `Increment` auf ein Minimum von `Minimum`. Drücken Sie **+** erhöht `Value` von `Increment` auf ein Maximum von `Maximum`.
+Visuell die `Stepper` besteht aus zwei Schaltflächen, die mit der Bezeichnung **&ndash;** und **+** . Drücken Sie **&ndash;** verringert `Value` von `Increment` auf ein Minimum von `Minimum`. Drücken Sie **+** erhöht `Value` von `Increment` auf ein Maximum von `Maximum`.
 
 Dies wird veranschaulicht, durch die [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) Beispiel.
 
@@ -238,8 +238,6 @@ Die [ **DaysBetweenDates** ](https://github.com/xamarin/xamarin-forms-book-sampl
 Die [ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) Programm veranschaulicht, wie die `TimePicker` eine Zeit für einen Timer angeben. Das Programm funktioniert nur, wenn Sie es im Vordergrund beibehalten.
 
 **SetTimer** auch veranschaulicht, wie mit der [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) -Methode der `Page` um ein Feld für die Warnmeldung anzuzeigen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

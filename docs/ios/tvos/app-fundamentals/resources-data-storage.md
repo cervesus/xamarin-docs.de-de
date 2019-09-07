@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: e9c27233e0905435e14505195b7b0e4d3283790b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b50ba09488f1f052f3e41302a42c691089727ff
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283826"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769651"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvos-Ressourcen und-Datenspeicherung in xamarin
 
@@ -36,9 +36,6 @@ Folglich kann Ihre APP nicht darauf zurückgreifen, dass zuvor heruntergeladene 
 
 > [!IMPORTANT]
 > Obwohl Sie die Möglichkeit haben, andere Ressourcen und Ressourcen nach Bedarf herunterzuladen, warnt Apple davor, den gesamten Speicherplatz im Cache Ihrer APP zu nutzen, da dies zu unvorhersehbaren Ergebnissen führen kann.
-
-
-
 
 <a name="Managing-Resources" />
 
@@ -75,16 +72,11 @@ Sie verwenden Xcode, um Bündel verwandter Inhalte (z. b. alle Assets für Game 
 > [!IMPORTANT]
 > Achten Sie darauf, das richtige Gleichgewicht zwischen der Häufigkeit, mit der die APP Bedarfs gesteuerte Ressourcen herunterladen muss, und der Größe der einzelnen Downloads zu treffen. Der Benutzer kann mit Ihrer APP frustriert werden, wenn das Spiel ständig unterbrochen wird, um neue Inhalte herunterzuladen, oder wenn ein einzelner Download zu viel Zeit in Anspruch nimmt.
 
-
-
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die Größen-, Ressourcen-und Datenspeicher Einschränkungen beschrieben, die für eine xamarin. tvos-app durch das tvos-System festgelegt wurden. Es stehen Optionen zur Verfügung, um diese Einschränkungen zu umgehen und Vorschläge für eine gute Benutzerumgebung für Ihre APP zu erstellen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: a012d8f166a287dfde4247a2df6d1e82091d9d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad0200d083f7b190184f631de51483f4f651d17
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290460"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769756"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von lokalen Benachrichtigungen in xamarin. IOS
 
@@ -24,7 +24,6 @@ _In diesem Abschnitt wird erläutert, wie lokale Benachrichtigungen in einer xam
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
 Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktion angezeigt werden. Diese Anwendung verfügt über eine einzelne Schaltfläche. Wenn Sie auf die Schaltfläche klicken, wird eine lokale Benachrichtigung erstellt. Nachdem der angegebene Zeitraum abgelaufen ist, wird die Benachrichtigung angezeigt.
-
 
 1. Erstellen Sie in Visual Studio für Mac eine neue Einzelansicht-IOS-Lösung, `Notifications`und rufen Sie Sie auf.
 1. Öffnen Sie `Main.storyboard` die Datei, und ziehen Sie eine Schaltfläche auf die Ansicht. Benennen Sie die Schaltflächen **Schaltfläche**, und geben Sie Ihr den Titel **Benachrichtigung hinzufügen**. Sie können auch einige [Einschränkungen](~/ios/user-interface/designer/designer-auto-layout.md) für die Schaltfläche an diesem Punkt festlegen: 
@@ -88,7 +87,6 @@ Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktio
 
 1. Der Fall, in dem die Benachrichtigung aufgrund einer lokalen Benachrichtigung gestartet wurde, muss behandelt werden. Bearbeiten Sie die `FinishedLaunching` -Methode `AppDelegate` in der, um den folgenden Code Ausschnitt einzuschließen:
 
-
     ```csharp
     // check for a notification
 
@@ -119,7 +117,6 @@ Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktio
 ## <a name="summary"></a>Zusammenfassung
 
 In dieser exemplarischen Vorgehensweise wurde gezeigt, wie die verschiedenen APIs zum Erstellen und Veröffentlichen von Benachrichtigungen in ios verwendet werden. Außerdem wurde veranschaulicht, wie Sie das Anwendungssymbol mit einem Badge aktualisieren, um dem Benutzer einige anwendungsspezifische Feedback zu geben.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

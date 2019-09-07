@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ee2c54f2369682571520370e09d6d39c2cd86fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 31c3c629686d6c7be03b95d7bfe0740599228bbd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290589"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769396"
 ---
 # <a name="push-notifications-in-ios"></a>Pushbenachrichtigungen in ios
 
@@ -35,7 +35,6 @@ Für die Pushbenachrichtigung müssen die folgenden Regeln beachtet werden, die 
 - **256 Byte-Nachrichten Limit** : die gesamte Nachrichtengröße der Benachrichtigung darf nicht mehr als 256 Byte betragen.
 - **Keine bestätigungsbestätigung** -APNs stellt dem Absender keine Benachrichtigung bereit, dass eine Nachricht ihn an den beabsichtigten Empfänger gerichtet hat. Wenn das Gerät nicht erreichbar ist und mehrere sequenzielle Benachrichtigungen gesendet werden, gehen alle Benachrichtigungen außer den letzten Benachrichtigungen verloren. Nur die aktuelle Benachrichtigung wird an das Gerät übermittelt.
 - **Jede Anwendung erfordert ein sicheres Zertifikat** : die Kommunikation mit APNs muss über SSL erfolgen.
-
 
 ## <a name="creating-and-using-certificates"></a>Erstellen und Verwenden von Zertifikaten
 
@@ -174,7 +173,6 @@ Außerdem wird ein neuer `timestamp` JSON-Datenschlüssel im Antworttext angezei
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Abschnitt werden die wichtigsten Konzepte in Bezug auf Pushbenachrichtigungen in ios vorgestellt. Es wurde die Rolle des Apple Push Notification Gateway-Diensts (APNs) erläutert. Anschließend wurde die Erstellung und Verwendung der Sicherheitszertifikate abgedeckt, die für APNs unverzichtbar sind. Schließlich wurde in diesem Dokument erläutert, wie Anwendungsserver die *Feedback Dienste* verwenden können, um das Nachverfolgen abgelaufener Geräte Token zu beenden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

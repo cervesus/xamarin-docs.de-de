@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 32deee1ea1e47438f4f671ac3ccaa09f4218a88b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290738"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769181"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -364,8 +364,6 @@ Weitere Informationen zum Implementieren von Game Controller-Unterstützung find
 ## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel behandelt den neuen Siri-Remote Computer, der im Lieferumfang von Apple TV, touchoberflächen Gesten und Siri-Remote Schaltflächen enthalten ist. Im nächsten Schritt wird die Arbeit mit Gesten und Storyboards, Gesten und Code und Low-Level-Ereignissen behandelt. Abschließend wird erläutert, wie Sie mit Spiel Controllern arbeiten.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

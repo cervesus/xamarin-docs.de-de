@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 9cd93a94361c11ecaa454a804e58180a33ec08fe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290939"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766855"
 ---
 # <a name="using-data-in-an-ios-app"></a>Verwenden von Daten in einer IOS-App
 
@@ -37,7 +37,6 @@ Das Beispiel enthält eine Reihe von Lesevorgängen:
 
 - Lesen der Liste
 - Lesen einzelner Datensätze
-
 
 Die beiden Methoden in der `StockDatabase` -Klasse sind:
 
@@ -77,8 +76,6 @@ public int SaveStock (Stock item)
 }
 ```
 
-
-
 Echte Anwendungen erfordern in der Regel eine gewisse Überprüfung (z. b. erforderliche Felder, minimale Längen oder andere Geschäftsregeln).
 Gute plattformübergreifende Anwendungen implementieren so viel von der Überprüfung logisch wie möglich in frei gegebenem Code, wobei Validierungs Fehler an die Benutzeroberfläche weitergeleitet werden, sodass Sie entsprechend den Funktionen der Plattform angezeigt werden.
 
@@ -104,7 +101,6 @@ Sie können dies problemlos in Ihrer mobilen Anwendung erreichen, indem Sie eine
 - **SQLite Manager Firefox Extension** – funktioniert unter Mac und Windows und erzeugt Dateien, die mit IOS und Android kompatibel sind.
 - **Befehlszeile** – Weitere Informationen finden Sie unter [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
-
 Wenn Sie eine Datenbankdatei für die Verteilung mit Ihrer APP erstellen, achten Sie darauf, dass Tabellen und Spalten benannt werden, um sicherzustellen, dass Sie mit den Anforderungen Ihres Codes identisch sind. Dies gilt insbesondere, C# Wenn Sie sqlite.NET verwenden, der davon ausgeht, dass die Namen der Klassen und Eigenschaften entsprechen oder die zugeordneten benutzerdefinierten Attribute).
 
 Fügen Sie für IOS die SQLite-Datei in Ihre Anwendung ein, und stellen Sie **sicher, dass Sie mit Buildaktion gekennzeichnet ist: Inhalt**. Platzieren Sie den Code in `FinishedLaunching` , um die Datei in ein beschreibbares Verzeichnis zu kopieren, *bevor* Sie Daten Methoden abrufen. Mit dem folgenden Code wird eine vorhandene Datenbank mit dem Namen **Data. sqlite**kopiert, sofern diese nicht bereits vorhanden ist.
@@ -120,7 +116,6 @@ if (!File.Exists (Database.DatabaseFilePath))
 ```
 
 Jeglicher Datenzugriffs Code (ob ADO.net oder using sqlite.net), der nach Abschluss dieses Vorgangs ausgeführt wird, hat Zugriff auf die vorab aufgefüllten Daten.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

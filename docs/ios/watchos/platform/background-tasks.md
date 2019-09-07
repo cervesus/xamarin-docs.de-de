@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2017
-ms.openlocfilehash: b01fbbe813b778d3c2e1cabeba620ed48a46ecac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e0336e65532c4487e3ec8c1984b132544b5b547
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287157"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768661"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchos-Hintergrundaufgaben in xamarin
 
@@ -109,7 +109,6 @@ Bei `WKApplicationRefreshBackgroundTask` handelt es sich um eine generische Aufg
 
 Innerhalb der Laufzeit der Aufgabe kann die APP jede Art lokaler Verarbeitung durchführen, z. b. eine komplikationszeitachse aktualisieren oder einige `NSUrlSession`erforderliche Daten mit einem abrufen.
 
-
 <a name="WKURLSessionRefreshBackgroundTask" />
 
 ### <a name="wkurlsessionrefreshbackgroundtask"></a>WKURLSessionRefreshBackgroundTask
@@ -142,9 +141,6 @@ Wenn die APP den `WKSnapshotRefreshBackgroundTask` Vorgang als abgeschlossen mar
 
 > [!IMPORTANT]
 > Es ist wichtig, dass Sie immer `WKSnapshotRefreshBackgroundTask` eine planen, nachdem die APP neue Daten empfangen und die Benutzeroberfläche aktualisiert hat, oder wenn der Benutzer die geänderten Informationen nicht sieht.
-
-
-
 
 Wenn der Benutzer außerdem eine Benachrichtigung von der APP erhält und ihn tippt, um die app in den Vordergrund zu bringen, muss die Momentaufnahme auf dem neuesten Stand sein, da Sie auch als Startbildschirm fungiert:
 
@@ -700,8 +696,6 @@ Apple hat folgende Vorschläge:
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die Verbesserungen erläutert, die Apple an watchos vorgenommen hat, und wie Sie verwendet werden können, um eine Watch-App auf dem neuesten Stand zu halten. Zuerst wurde die neue Hintergrundaufgabe behandelt, die Apple in watchos 3 hinzugefügt hat. Anschließend wurde der API-Lebenszyklus des Hintergrunds behandelt, und es wird erläutert, wie Hintergrundaufgaben in einer xamarin watchos-App implementiert werden. Schließlich haben Sie erfahren, wie die Planung funktioniert und einige bewährte Methoden erhalten.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: d23b29b7e49c210dc44163e41735fa96b55d12f2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ec1cb6fcce320ed5ea9154b42d0a5361940c1015
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526314"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755013"
 ---
 # <a name="android-resources"></a>Android-Ressourcen
 
 _In diesem Artikel wird das Konzept der Android-Ressourcen in xamarin. Android vorgestellt, und es wird beschrieben, wie Sie verwendet werden. Es wird erläutert, wie Ressourcen in Ihrer Android-Anwendung zur Unterstützung der Lokalisierung von Anwendungen und mehrerer Geräte mit unterschiedlichen Bildschirmgrößen und dichten verwendet werden._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -40,20 +39,20 @@ Wenn ein neues xamarin. Android-Projekt gestartet wird, wird ein spezielles Verz
 ![Ordner und Inhalt von Ressourcen](images/resources-folder-vs.png)
 
 In der obigen Abbildung werden die Anwendungs Ressourcen nach ihrem Typ in diesen Unterverzeichnissen organisiert: Bilder werden in das **drawable** -Verzeichnis geleitet. Sichten werden im **layoutunterverzeichnis** usw. angezeigt.
- 
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![Ordner und Inhalt von Ressourcen](images/resources-folder-xs.png)
 
 In der obigen Abbildung werden die Anwendungs Ressourcen nach ihrem Typ in diesen Unterverzeichnissen organisiert: Bilder werden in das **MipMap** -Verzeichnis geleitet. Sichten werden im **layoutunterverzeichnis** usw. angezeigt.
- 
+
 -----
 
 Es gibt zwei Möglichkeiten, auf diese Ressourcen in einer xamarin. Android-Anwendung zuzugreifen: *Programm* gesteuert in Code und *deklarativ* in XML mithilfe einer speziellen XML-Syntax.
 
 Diese Ressourcen werden als *Standard Ressourcen* bezeichnet und werden von allen Geräten verwendet, es sei denn, es wird eine spezifischere Übereinstimmung angegeben. Darüber hinaus kann jeder Ressourcentyp optional *Alternative Ressourcen* aufweisen, die von Android für bestimmte Geräte verwendet werden können. So können z. b. Ressourcen bereitgestellt werden, um das Gebiets Schema des Benutzers, die Bildschirmgröße oder die Größe des Geräts um 90 Grad von Hochformat in Querformat usw. zu richten. In jedem dieser Fälle lädt Android die Ressourcen, die von der Anwendung verwendet werden können, ohne zusätzlichen Codierungsaufwand durch den Entwickler.
 
-Alternative Ressourcen werden angegeben, indem eine kurze Zeichenfolge, dieals Qualifizierer bezeichnet wird, am Ende des Verzeichnisses mit einem bestimmten Typ von Ressourcen hinzugefügt wird.
+Alternative Ressourcen werden angegeben, indem eine kurze Zeichenfolge, die als *Qualifizierer*bezeichnet wird, am Ende des Verzeichnisses mit einem bestimmten Typ von Ressourcen hinzugefügt wird.
 
 Beispielsweise geben **Ressourcen/drawable-de** die Images für Geräte an, die auf ein deutsches Gebiets Schema festgelegt sind, während **Ressourcen/drawable-fr** Bilder für Geräte enthalten, die auf ein Französisch Gebiets Schema festgelegt sind. Ein Beispiel für die Bereitstellung alternativer Ressourcen finden Sie in der folgenden Abbildung, in der dieselbe Anwendung mit nur dem Gebiets Schema des Geräts ausgeführt wird, das sich ändert:
 
@@ -66,7 +65,6 @@ Dieser Artikel bietet einen umfassenden Einblick in die Verwendung von Ressource
 - **Gerätespezifische Konfigurationen** &ndash; Unterstützung der verschiedenen Bildschirmauflösungen und dichten in einer Anwendung.
 
 - **Lokalisierung** &ndash; Zum Verwenden von Ressourcen zur Unterstützung der verschiedenen Regionen kann eine Anwendung verwendet werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

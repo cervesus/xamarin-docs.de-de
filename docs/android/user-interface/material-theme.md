@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: fca8ee02fc48979db1d29716374ba300a0e8bbbf
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: aa84c13c51e459f93ee9e122a410cb957c390261
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522367"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758383"
 ---
 # <a name="material-theme"></a>Materialdesign
 
@@ -36,7 +36,6 @@ Sie können ein einzelnes Design für eine gesamte App verwenden, oder Sie könn
 
 Da das Material Design nur unter Android 5,0 und höher unterstützt wird, können Sie es (oder ein benutzerdefiniertes Design, das aus dem Material Design abgeleitet ist) nicht verwenden, um die APP für die Ausführung unter früheren Versionen von Android zu verwenden. Allerdings können Sie Ihre APP so konfigurieren, dass Sie das Material Design auf Android 5,0-Geräten verwendet, und auf ein früheres Design zurückgreifen, wenn es unter älteren Versionen von Android ausgeführt wird (Weitere Informationen finden Sie im Abschnitt zur [Kompatibilität](#compatibility) in diesem Artikel).
 
-
 ## <a name="requirements"></a>Anforderungen
 
 Folgendes ist erforderlich, um die neuen Android 5,0-Material Design Features in xamarin-basierten apps zu verwenden:
@@ -49,11 +48,9 @@ Folgendes ist erforderlich, um die neuen Android 5,0-Material Design Features in
 
 Informationen zum Konfigurieren eines Android 5,0-App-Projekts finden Sie unter [Einrichten eines Android 5,0-Projekts](~/android/platform/lollipop.md).
 
-
 ## <a name="using-the-built-in-themes"></a>Verwenden der integrierten Designs
 
 Die einfachste Möglichkeit, das Material Design zu verwenden, besteht darin, Ihre APP für die Verwendung eines integrierten Designs ohne Anpassung zu konfigurieren. Wenn Sie kein Design explizit konfigurieren möchten, wird die App standardmäßig auf `Theme.Material` (das dunkle Design) fest. Wenn Ihre APP nur über eine Aktivität verfügt, können Sie ein Design auf der Aktivitäts Ebene konfigurieren. Wenn Ihre APP mehrere Aktivitäten umfasst, können Sie ein Design auf Anwendungsebene so konfigurieren, dass das gleiche Design für alle Aktivitäten verwendet wird, oder Sie können verschiedene Designs verschiedenen Aktivitäten zuweisen. In den folgenden Abschnitten wird erläutert, wie Designs auf App-Ebene und auf Aktivitäts Ebene konfiguriert werden.
-
 
 ### <a name="theming-an-application"></a>Design einer Anwendung
 
@@ -80,7 +77,6 @@ Alternativ können Sie das Anwendungs `Theme` Attribut in **AssemblyInfo.cs** (o
 ```
 
 Wenn das Anwendungsdesign auf festgelegt `@android:style/Theme.Material.Light`ist, wird jede Aktivität in *myapp* mithilfe `Theme.Material.Light`von angezeigt.
-
 
 ### <a name="theming-an-activity"></a>Design einer Aktivität
 
@@ -120,7 +116,6 @@ Diese Bildschirmbereiche werden im folgenden Diagramm bezeichnet:
 [![Diagramm der Attribute und der zugehörigen Bildschirmbereiche](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 Standardmäßig `statusBarColor` ist auf den `colorPrimaryDark`Wert festgelegt. Sie können auf `statusBarColor` eine voll Tonfarbe festlegen, oder Sie können Sie auf `@android:color/transparent` festlegen, um die Statusleiste transparent zu gestalten. Die Navigationsleiste kann auch durch Festlegen `navigationBarColor` von auf `@android:color/transparent`transparent gemacht werden.
-
 
 ### <a name="creating-a-custom-app-theme"></a>Erstellen eines benutzerdefinierten App-Designs
 
@@ -220,7 +215,6 @@ Der folgende Screenshot zeigt ein Beispiel für den Standard `CardView` Wert (au
 
 In diesem Beispiel wird der Benutzer `CardView` definierte mit der Hintergrundfarbe `my_blue` und einem 18dp-Eckradius angezeigt.
 
-
 ## <a name="compatibility"></a>Kompatibilität
 
 Führen Sie die folgenden Schritte aus, um Ihre APP so zu formatieren, dass Sie das Material Design unter Android 5,0 verwendet, aber automatisch auf eine abwärts kompatible Formatvorlage für ältere Android-Versionen zurückgreift:
@@ -269,8 +263,6 @@ Weitere Informationen zur Design Kompatibilität mit älteren Android-Versionen 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das neue Design Design der Benutzeroberfläche vorgestellt, das in Android 5,0 (Lollipop) enthalten ist. Es wurden die drei integrierten Material Design-Varianten beschrieben, die Sie verwenden können, um Ihre APP zu formatieren. es wurde erläutert, wie Sie ein benutzerdefiniertes Design zum Branding Ihrer APP erstellen, und es wurde ein Beispiel für das Design einer einzelnen Ansicht bereitgestellt. Schließlich wurde in diesem Artikel erläutert, wie Sie das Material Design in Ihrer APP verwenden und gleichzeitig die Kompatibilität mit älteren Versionen von Android aufrechterhalten.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

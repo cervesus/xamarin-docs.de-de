@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: d0d5452c2b79fb674e473efd50aaf587d64c4544
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18d33dfcef109fd29f32969b9bdd15b8a2dc475a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290251"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764053"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Startbildschirme für xamarin. IOS-apps
 
@@ -131,7 +131,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
     - Um eine storyboarddatei zu bearbeiten, benötigt Visual Studio eine aktive Verbindung mit einem Mac-buildhost. Weitere Informationen finden Sie im Leitfaden zum [Herstellen einer Verbindung mit dem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) .
 
 7. Wählen Sie ein Gerät und eine Ausrichtung aus, um eine Vorschau des Storyboards für den Startbildschirm im IOS-Designer anzuzeigen. Öffnen Sie den Bereich Geräteauswahl auf der unteren Symbolleiste **, und wählen**Sie **iPhone 4S** und Hochformat aus: 
- 
+
     ![Die Geräteauswahl-Symbolleiste](launch-screens-images/launch07-vs.png)
 
     - Beachten Sie, dass beim Auswählen eines Geräts und einer Ausrichtung nur die Vorschau des Entwurfs durch den IOS-Designer geändert wird. Unabhängig von der hier getroffenen Auswahl werden neu hinzugefügte Einschränkungen auf alle Geräte und Ausrichtungen angewendet, es sei denn, die Schaltfläche zum **Bearbeiten von Merkmalen** wurde verwendet, um anderweitig anzugeben. 
@@ -196,7 +196,6 @@ Wenn Sie eine vorhandene App für die Verwendung von Storyboards für die Startb
 Doppelklicken Sie dann auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie zur Bearbeitung zu öffnen. Wählen Sie unter **Startbildschirm**die neue storyboarddatei aus, die oben erstellt wurde.
 
 ![](launch-screens-images/storyboard09.png "Wählen Sie die oben erstellte neue storyboarddatei aus.")
-
 
 Gehen Sie folgendermaßen vor, um das neue Storyboard als Startbildschirm zu verwenden:
 

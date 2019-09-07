@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: bf9b630613dcc5c25dac96cad71e54022ead1812
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3c4fa085c9fdf17cdc256d9710c23911bb60d584
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649601"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770643"
 ---
 # <a name="native-views-in-xaml"></a>Native Ansichten in XAML
 
@@ -486,7 +486,6 @@ Die `MySpinner` -Klasse macht `ItemsSource` und `SelectedObject` Eigenschaften, 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde veranschaulicht, wie native Ansichten in Xamarin.Forms XAML-Dateien nutzen. Eigenschaften und Ereignishandler für native Ansichten festgelegt werden können, und sie können mit Xamarin.Forms-Ansichten interagieren.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

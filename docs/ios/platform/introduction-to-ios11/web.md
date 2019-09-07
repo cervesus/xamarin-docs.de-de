@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/12/2017
-ms.openlocfilehash: b90673559d0b8a3728898b7d8dbc3207bb22520b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6068dd148bfc3c2a778ca34753374bcecccb55d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280083"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752218"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>Änderungen an WebKit und Safari in ios 11
 
@@ -43,7 +43,6 @@ sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.C
 
 Dieser Wert kann geändert werden, `SFSafariViewController` während präsentiert wird.
 
-
 Abhängig von dem Inhalt, der in einem Safari-Ansichts Controller angezeigt wird, kann es erforderlich sein, sicherzustellen, dass die Menüleisten nicht reduziert werden, wenn der Benutzer einen Bildlauf ausführt. Dies wird aktiviert, indem die neue `BarCollapsedEnabled` Eigenschaft auf `false`festgelegt wird:
 
 ```csharp
@@ -58,7 +57,6 @@ var sfViewController = new SFSafariViewController(url, config);
 Außerdem hat Apple im Safari View Controller in ios 11 Updates für den Datenschutz durchgeführt. Das Durchsuchen von Daten, wie z. b. Cookies und lokaler Speicher, ist nun nur auf App-Basis und nicht in allen Instanzen von Safari View Controller vorhanden. Dadurch wird die Benutzer Browseraktivität innerhalb Ihrer APP privat.
 
 Zusätzliche Funktionen wie Drag & Drop-Unterstützung für URLs und unter `window.open()` Stützung für wurden `SFSafariViewController` in ios 11 ebenfalls hinzugefügt. Weitere Informationen zu diesen neuen Features finden Sie in [der Dokumentation zu sfsafariviewcontroller von Apple](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor).
-
 
 ## <a name="webkit"></a>WebKit
 
@@ -106,4 +104,3 @@ config.SetUrlSchemeHandler(new MyHandler(), "xamarin-asset");
 webView = new WKWebView (View.Frame, config);
 webView.LoadRequest (new NSUrlRequest("xamarin-asset://xamarin.com"));
 ```
-

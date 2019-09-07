@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227954"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772805"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
@@ -448,8 +448,6 @@ Sie können. Es ist Ihre Seite aus, und XAML ist nur ein Tool, um seinen Inhalt 
 ## <a name="summary"></a>Zusammenfassung
 
 Mit dieser Einführung haben Sie gelernt, wie eine XAML-Datei und Codedatei in eine Klassendefinition beitragen, und wie die Dateien für XAML und Code interagieren. XAML gibt jedoch auch eine eigene eindeutige syntaktischen Funktionen, die sie auf eine sehr flexible Weise verwendet werden können. Sie können beginnen, untersuchen diese in [Teil 2. Essential XAML Syntax](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md).
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

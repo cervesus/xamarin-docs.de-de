@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ec4b99fd1c8ec28f6b4bbb30695613da6c40d60c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8bb517eaa549567ae92695fbad300d055f42771f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288948"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769049"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit tvos-Seiten Steuerelementen in xamarin
 
@@ -35,7 +35,6 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
 
@@ -49,9 +48,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
     [![](page-controls-images/page04.png "Benennen des Steuer Elements")](page-controls-images/page04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
@@ -65,7 +62,6 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 
     [![](page-controls-images/page04-vs.png "Benennen des Steuer Elements")](page-controls-images/page04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
-
 
 -----
 
@@ -167,8 +163,6 @@ Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit der Seitensteuerung in einer xamarin. tvos-App behandelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

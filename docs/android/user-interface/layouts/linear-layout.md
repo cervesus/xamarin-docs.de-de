@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: 3171a89678e88a924198c3921d197c0f0378d29b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14e9b352a309de94a374b52141e3fd61715d8f75
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522627"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764383"
 ---
 # <a name="xamarinandroid-linearlayout"></a>Xamarin. Android LinearLayout
 
@@ -128,7 +128,6 @@ Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 
 Beachten Sie, wie die XML-Attribute jedes Verhalten der Ansicht definieren. Experimentieren Sie mit unterschiedlichen Werten `android:layout_weight` für, um zu sehen, wie die Bildschirm-Real Anlage basierend auf der Gewichtung der einzelnen Elemente verteilt wird. Weitere Informationen zur Vorgehensweise finden Sie im Dokument [Allgemeine Layoutobjekte](https://developer.android.com/guide/topics/ui/declaring-layout.html) .[`LinearLayout`](xref:Android.Widget.LinearLayout)
 behandelt das `android:layout_weight` -Attribut.
-
 
 ## <a name="references"></a>Verweise
 

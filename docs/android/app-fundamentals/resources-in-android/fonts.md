@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/09/2018
-ms.openlocfilehash: 1d0341af35d3c580141c5bfc76e9f170cd7ff4c5
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 4d91ba7b71f2eb61d003700269675c785cbfb0c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119105"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755043"
 ---
 # <a name="fonts"></a>Schriftarten
 
@@ -63,7 +63,7 @@ In diesem Leitfaden wird zunächst erläutert, wie Schriftarten als Android-Ress
 Das Verpacken einer Schriftart in ein Android-APK stellt sicher, dass Sie für die Anwendung immer verfügbar ist. Eine Schriftart Datei (eine-Datei). TTF oder a. Die OTF-Datei) wird einer xamarin. Android-Anwendung wie jede andere Ressource hinzugefügt, indem Dateien in ein Unterverzeichnis im Ordner " **Resources** " eines xamarin. Android-Projekts kopiert werden. Schriftarten Ressourcen werden in einem Unterverzeichnis der **Schriftart** des **Ressourcen** Ordners des Projekts gespeichert.
 
 > [!NOTE]
-> Die Schriftarten sollten die Buildaktion " **androidresource** " aufweisen, oder Sie werden nicht in das endgültige APK gepackt. Die Buildaktion sollte automatisch von der IDE festgelegt werden.
+> Die Schriftarten sollten die **Buildaktion** " **androidresource** " aufweisen, oder Sie werden nicht in das endgültige APK gepackt. Die Buildaktion sollte automatisch von der IDE festgelegt werden.
 
 Wenn viele ähnliche Schriftart Dateien vorhanden sind (z. b. die gleiche Schriftart mit unterschiedlichen Gewichtungen oder Stilen), ist es möglich, Sie in eine Schriftfamilie zu gruppieren.
 
@@ -278,7 +278,6 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
     {
         // just an empty delegate to avoid null reference exceptions.  
     };
-
 
     public void DownloadFonts(Context context)
     {

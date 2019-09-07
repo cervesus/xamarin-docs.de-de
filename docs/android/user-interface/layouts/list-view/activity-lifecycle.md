@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 7c6e395a353dcfd737ad244df9d169edc5b08f1c
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1c093d3d67ace3b0f9186fca8226d4ef631d9af0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510308"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762304"
 ---
 # <a name="xamarinandroid-listview-and-the-activity-lifecycle"></a>Xamarin. Android ListView und der Aktivitäts Lebenszyklus
 
@@ -24,7 +24,6 @@ Wenn sich Ihre Daten jedoch häufig ändern oder viel Arbeitsspeicher belegen, k
 
 Wenn der Adapter Ressourcen wie Arbeitsspeicher oder einen verwalteten Cursor verwendet, denken Sie daran, diese Ressourcen in der ergänzenden Methode an die Stelle, an der Sie instanziiert wurden, freizugeben (z. b. in erstellte `OnStart` Objekte können in `OnStop`gelöscht werden.)
 
-
 ## <a name="configuration-changes"></a>Konfigurationsänderungen
 
 Beachten Sie, dass Konfigurationsänderungen &ndash; , insbesondere Bildschirmdrehung und Tastatur Sichtbarkeit &ndash; , dazu führen können, dass die aktuelle Aktivität zerstört und neu erstellt wird (es sei denn, Sie geben andernfalls mit dem `ConfigurationChanges` -Attribut). Dies bedeutet, dass unter normalen Bedingungen das Drehen eines Geräts dazu führt `ListView` , `Adapter` dass und neu erstellt werden. (sofern Sie keinen Code in `OnPause` und `OnResume`geschrieben haben), gehen die Scrollposition und die Zeilenauswahl Zustände verloren.
@@ -36,4 +35,3 @@ Durch das folgende Attribut wird verhindert, dass eine Aktivität aufgrund von K
 ```
 
 Die Aktivität sollte dann über `OnConfigurationChanged` schreiben, um auf diese Änderungen entsprechend zu reagieren. Weitere Informationen zum Behandeln von Konfigurationsänderungen finden Sie in der Dokumentation.
-

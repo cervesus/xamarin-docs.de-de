@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 4301022ae665498eaf90ca1e1786afbd6d19094a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: fa35f6fe2388484875180594f18041947963ef7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198391"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763965"
 ---
 # <a name="packaging-wear-apps"></a>Verpacken von Wear-apps
 
@@ -47,7 +47,6 @@ Ab xamarin Android 5,0 wird Ihre Wear-App automatisch als Ressource in ihrer han
 
 -----
 
-
 Beachten Sie, dass ein **XA5211** -Fehler ausgegeben wird, wenn der Paketname der Wear-APP nicht mit dem Paketnamen der Handschrift-App identisch ist. Beispiel:
 
 ```shell
@@ -74,8 +73,7 @@ Die Assembly, die das Projekt der Wear-App generiert, wird nicht als Assemblyver
     </ProjectReference>
     ```
 
-- Fügt dem Handheld-Projekt die Wear-App als rohressource hinzu. 
-
+- Fügt dem Handheld-Projekt die Wear-App als **rohressource** hinzu. 
 
 ## <a name="manual-packaging"></a>Manuelle Paket Erstellung
 
@@ -105,4 +103,3 @@ Sie können Android Wear-apps in xamarin. Android vor Version 5,0 schreiben, abe
     ```
 
 Weitere Informationen finden Sie auch in den [manuellen packging-Anweisungen](https://developer.android.com/training/wearables/apps/packaging.html#PackageManually)der Android Developer-Website.
-

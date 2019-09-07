@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 92f028a632a32392a349c06c0b7ab8e15b308b9f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ef3d25974f61bb1ac763831ab9a1f6b62d11abbe
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279523"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769676"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>Konfigurieren Ihrer tvOS-App in iTunes Connect
 
 _Dieser Artikel bietet einen ergänzenden Leitfaden zu IOS Konfigurieren ihrer app in iTunes Connect für die tvos-spezifischen Konfigurationen._
-
 
 Zusätzlich zu den Konfigurationen und Einstellungen, die Sie durch Befolgen der IOS-Anleitung zum [Konfigurieren ihrer app in iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) durchführen müssen, werden in diesem Dokument die spezifischen Konfigurationen erläutert, die erforderlich sind, um eine xamarin. tvos-app in der Apple TV-App freizugeben. Speicher.
 
@@ -78,8 +77,6 @@ Wenn Sie Ihre xamarin. tvos-App zur Überprüfung an den Apple TV App Store übe
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde eine Übersicht über die in iTunes Connect erforderliche tvos-spezifische Einstellung zum Freigeben einer tvos-App im Apple TV App Store angegeben.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

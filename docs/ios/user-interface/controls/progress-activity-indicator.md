@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
-ms.openlocfilehash: 62dadffbc4b8a5629969203938e4fa0130971664
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a2197a1ff9c37546fd97eb5a2459764ec05d4412
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283344"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768919"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Status-und Aktivitätsindikatoren in xamarin. IOS
 
@@ -46,7 +46,6 @@ Verwenden Sie `StartAnimating()` die `StopAnimating()` -und-Methoden, um die Akt
 
 Legen Sie `HidesWhenStopped` die- `true` Eigenschaft auf fest, damit der Aktivitäts `StopAnimating()` Indikator ausgeblendet wird, nachdem aufgerufen wurde. Diese ist standardmäßig `true` auf festgelegt. An jedem Punkt können Sie sehen, ob der Aktivitätsindikator seine spinanimation durch Überprüfen der `IsAnimating` -Eigenschaft ausgeführt wird. 
 
-
 ### <a name="managing-activity-indicator-appearances"></a>Verwalten von Aktivitätsindikator Auftritten
 
 Die `UIActivityIndicatorViewStyle` -Enumeration kann als Parameter übergeben werden, wenn der Aktivitätsindikator instanziiert wird. Sie können dies verwenden, um den visuellen Stil auf `Gray`, `White`oder `WhiteLarge`festzulegen, z. b.:
@@ -77,7 +76,6 @@ Wenn Sie den IOS-Designer verwenden, können Sie der Benutzeroberfläche auch ei
 Die folgenden Eigenschaften können im eigenschaftenpad angepasst werden:
 
 ![Eigenschaftenpad](progress-activity-indicator-images/progress-indicator3.png)
-
 
 ### <a name="managing-progress-bar-behavior"></a>Verwalten des Statusanzeige Verhaltens
 
@@ -110,6 +108,3 @@ progressBar = new UIProgressView(UIProgressViewStyle.Default)
                 TrackTintColor = UIColor.Magenta
             }; 
 ```
-
-
-

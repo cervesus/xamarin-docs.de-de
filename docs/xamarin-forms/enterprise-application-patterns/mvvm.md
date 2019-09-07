@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 2bd704b17f5aff1b4d3f2da1813d1eb19ef29e59
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: d6c9b74c9abc1a2c493c31699b52969a7d129429
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620682"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760201"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>Model-View-ViewModel-Muster
 
@@ -363,7 +363,6 @@ Weitere Informationen zu Verhalten finden Sie unter [Verhalten](~/xamarin-forms/
 Das Model-View-ViewModel (MVVM)-Muster hilft bei der ordnungsgemäßen Trennung der Geschäfts-und Präsentationslogik einer Anwendung von der Benutzeroberfläche (User Interface, UI). Wenn Sie eine saubere Trennung zwischen Anwendungslogik und Benutzeroberfläche gewährleisten, können Sie zahlreiche Entwicklungsprobleme beheben und eine Anwendung leichter testen, warten und entwickeln. Sie kann auch die Möglichkeiten zur Wiederverwendung von Code erheblich verbessern und ermöglicht Entwicklern und UI-Designern, bei der Entwicklung ihrer jeweiligen Teile einer APP leichter zusammenzuarbeiten.
 
 Mithilfe des MVVM-Musters werden die Benutzeroberfläche der APP und die zugrunde liegende Präsentations-und Geschäftslogik in drei separate Klassen unterteilt: die Sicht, die die Benutzeroberfläche und die Benutzeroberflächen Logik kapselt. das Ansichts Modell, das Darstellungs Logik und Zustand kapselt. und das Modell, das die Geschäftslogik und die Daten der APP kapselt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

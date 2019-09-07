@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: d9d90e371199c8587d61199240523cf0a23f5efd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 45fe5c783e737fb913730082841e0dfafc555684
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013273"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755134"
 ---
 # <a name="application-localization-and-string-resources"></a>Anwendungslokalisierung und Zeichenfolgenressourcen
 
-Anwendungslokalisierung umfasst das Bereitstellen alternativer Ressourcen zur Ausrichtung auf eine bestimmte Region oder ein Gebietsschema. Beispielsweise können Sie Zeichenfolgen in einer lokalisierten Sprache für verschiedene Länder angeben, oder Sie möglicherweise ändern, Farben oder Layout mit bestimmte Kulturen übereinstimmen. Android lädt und verwenden Sie die Ressourcen, die für das Gerät, Gebietsschema geeignet, zur Laufzeit ohne Änderungen an den Quellcode.
+Die Anwendungs Lokalisierung dient zum Bereitstellen alternativer Ressourcen für eine bestimmte Region oder ein bestimmtes Gebiets Schema. Beispielsweise können Sie lokalisierte sprach Zeichenfolgen für verschiedene Länder bereitstellen, oder Sie können die Farben oder das Layout ändern, um bestimmte Kulturen abzugleichen. Android lädt und verwendet die Ressourcen, die für das Gebiets Schema des Geräts zur Laufzeit ohne Änderungen am Quellcode geeignet sind.
 
-Z. B. die folgende Abbildung zeigt der gleichen Anwendung in drei verschiedenen Geräten Gebietsschemas, aber jede Schaltfläche angezeigte Text bezieht sich auf das Gebietsschema, das auf jedem Gerät festgelegt ist:
+Die folgende Abbildung zeigt beispielsweise die gleiche Anwendung, die in drei verschiedenen Geräte Gebiets Schemas ausgeführt wird. der in jeder Schaltfläche angezeigte Text ist jedoch spezifisch für das Gebiets Schema, auf das jedes Gerät festgelegt ist:
 
-[![Beispiele für drei verschiedene Gebietsschemas](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
+[![Beispiele für drei verschiedene Gebiets Schemas](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
 
-In diesem Beispiel wird der Inhalt einer Datei Layout **Main.axml** sieht etwa folgendermaßen aus:
+In diesem Beispiel sieht der Inhalt der Layoutdatei **Main. axml** etwa wie folgt aus:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -39,25 +39,23 @@ android:text="@string/hello"
 </LinearLayout>
 ```
 
-Im obigen Beispiel wurde die Zeichenfolge für die Schaltfläche mit den von den Ressourcen durch die Bereitstellung der Ressourcen-ID für die Zeichenfolge geladen:
+Im obigen Beispiel wurde die Zeichenfolge für die Schaltfläche aus den Ressourcen geladen, indem die Ressourcen-ID für die Zeichenfolge bereitgestellt wird:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Ressourcenzeichenfolgen für drei Sprachen](application-localization-images/02-resource-strings-vs.png)
- 
+![Ressourcen Zeichenfolgen für drei Sprachen](application-localization-images/02-resource-strings-vs.png)
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![Ressourcenzeichenfolgen für drei Sprachen](application-localization-images/02-resource-strings-xs.png)
- 
+![Ressourcen Zeichenfolgen für drei Sprachen](application-localization-images/02-resource-strings-xs.png)
+
 -----
- 
+
 ## <a name="localizing-android-apps"></a>Lokalisieren von Android-Apps
 
-Lesen der [Einführung in die Lokalisierung](~/cross-platform/app-fundamentals/localization.md) für Tipps und Anleitungen zum Lokalisieren von mobilen apps.
+Tipps und Anleitungen zum Lokalisieren von mobilen apps finden Sie unter [Einführung in die Lokalisierung](~/cross-platform/app-fundamentals/localization.md) .
 
-Die [Lokalisieren von Android-Apps](~/android/app-fundamentals/localization.md) Anleitung enthält genauere Beispiele zum Übersetzen von Zeichenfolgen und Bilder, die mithilfe von Xamarin.Android zu lokalisieren.
-
-
+Im Leitfaden zum [Lokalisieren von Android-Apps](~/android/app-fundamentals/localization.md) finden Sie spezifischere Beispiele zum Übersetzen von Zeichen folgen und Lokalisieren von Bildern mithilfe von xamarin. Android.
 
 ## <a name="related-links"></a>Verwandte Links
 

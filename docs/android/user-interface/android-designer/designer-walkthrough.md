@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 71784e18b9becf9851ad9ed9d4730a82d0ff94f7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a4867ef779e55d16ef49b2f8ad0dc5bd0ec7024f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523653"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761454"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Verwenden von xamarin. Android Designer
 
 _Dieser Artikel ist eine exemplarische Vorgehensweise der xamarin. Android Designer. Es wird veranschaulicht, wie eine Benutzeroberfläche für eine kleine Farb Browser-App erstellt wird. Diese Benutzeroberfläche wird vollständig im Designer erstellt._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -33,7 +32,6 @@ In diesem Artikel wird veranschaulicht, wie Sie xamarin. Android Designer verwen
 
 Das Ziel dieser exemplarischen Vorgehensweise besteht darin, die Android Designer zum Erstellen einer Benutzeroberfläche für eine Beispiel-Farb Browser-APP zu verwenden. Die Farb Browser-APP zeigt eine Liste mit Farben, Ihren Namen und ihren RGB-Werten an. Sie erfahren, wie Sie Widgets zum **Designoberfläche** hinzufügen und wie Sie diese Widgets visuell aufstellen. Anschließend erfahren Sie, wie Sie Widgets interaktiv auf dem **Designoberfläche** oder im **Eigenschaften** Bereich des Designers ändern. Schließlich sehen Sie, wie der Entwurf aussieht, wenn die APP auf einem Gerät oder Emulator ausgeführt wird.
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ### <a name="creating-a-new-project"></a>Erstellen eines neuen Projekts
@@ -46,7 +44,6 @@ Benennen Sie die neue APP **designerwalkthrough** , und klicken Sie auf **OK**.
 Wählen Sie im Dialogfeld **neue Android-App** **leere App** aus, und klicken Sie auf **OK**:
 
 [![Auswählen der Vorlage für eine leere Android-App](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
-
 
 ### <a name="adding-a-layout"></a>Hinzufügen eines Layouts
 
@@ -100,7 +97,6 @@ An diesem Punkt sollte die Designer Oberfläche dem folgenden Screenshot ähneln
 
 Wenn sich die `textView` beiden Widgets `linearLayout1`nicht in befinden, können Sie Sie in `linearLayout1` der **Dokument** Gliederung auf ziehen und positionieren, damit Sie wie im vorherigen Screenshot (Einzug unter `linearLayout1`) angezeigt werden.
 
-
 ### <a name="arranging-the-user-interface"></a>Anordnen der Benutzeroberfläche
 
 Der nächste Schritt besteht darin, die Benutzeroberfläche so zu `ImageView` ändern, dass Sie auf der linken `TextView` Seite angezeigt wird, wobei die beiden `ImageView`Widgets rechts neben gestapelt sind.
@@ -136,7 +132,7 @@ Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der B
 
 [![Höhe und Breite festlegen](designer-walkthrough-images/vs/18b-set-height-width-sml.png)](designer-walkthrough-images/vs/18b-set-height-width.png#lightbox)
 
-Geben Sie `padding` im Bereich "Eigenschaften" in das Suchfeld ein, `10dp` undgeben Sie für die Auffüll Zeichen ein. Diese `minHeight`Einstellungen und`padding`Einstellungen fügen den`ImageView` Leerraum um alle Seiten des hinzu und verlängern ihn vertikal. `minWidth` Beachten Sie, dass sich die Layout-XML ändert, wenn Sie diese Werte eingeben:
+Geben Sie `padding` im Bereich "Eigenschaften" in das Suchfeld ein, `10dp` und geben **Sie für die**Auffüll Zeichen ein. Diese `minHeight`Einstellungen und`padding`Einstellungen fügen den`ImageView` Leerraum um alle Seiten des hinzu und verlängern ihn vertikal. `minWidth` Beachten Sie, dass sich die Layout-XML ändert, wenn Sie diese Werte eingeben:
 
 [![Auffüllen festlegen](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
@@ -283,8 +279,6 @@ Erstellen Sie die Anwendung, und führen Sie sie aus. Der folgende Screenshot ze
 
 [![Abschließender Screenshot](designer-walkthrough-images/vs/25-final-screenshot-sml.png)](designer-walkthrough-images/vs/25-final-screenshot.png#lightbox)
 
-
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ### <a name="creating-a-new-project"></a>Erstellen eines neuen Projekts
@@ -305,7 +299,7 @@ Klicken Sie im nächsten Dialogfeld auf **Erstellen**.
 
 Der nächste Schritt besteht darin, ein **LinearLayout** zu erstellen, das die Elemente der Benutzeroberfläche enthält.
 
-Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Ressourcen/Layout** im lösungspad, und wählen Sie **> neue Datei hinzufügen...** aus. Wählen Sie im Dialogfeld **neue Datei** die Option **Android-> Layout**aus. Benennen Sie die Datei **list_item** , und klicken Sie auf **neu**:
+Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Ressourcen/Layout** im **lösungspad** , und wählen Sie **> neue Datei hinzufügen...** aus. Wählen Sie im Dialogfeld **neue Datei** die Option **Android-> Layout**aus. Benennen Sie die Datei **list_item** , und klicken Sie auf **neu**:
 
 [![Neues Layout](designer-walkthrough-images/xs/03-new-layout-m75-sml.png)](designer-walkthrough-images/xs/03-new-layout-m75.png#lightbox)
 
@@ -352,7 +346,6 @@ Fügen Sie als nächstes `Text (Small)` ein Widget unterhalb `Text (Large)` des 
 
 Wenn sich die `textView` beiden Widgets `linearLayout1`nicht in befinden, können Sie Sie in `linearLayout1` der **Dokument** Gliederung auf ziehen und positionieren, damit Sie wie im vorherigen Screenshot (eingerückt unter `linearLayout1`) angezeigt werden.
 
-
 ### <a name="arranging-the-user-interface"></a>Anordnen der Benutzeroberfläche
 
 Der nächste Schritt besteht darin, die Benutzeroberfläche so zu `ImageView` ändern, dass Sie auf der linken `TextView` Seite angezeigt wird, wobei die beiden `ImageView`Widgets rechts neben gestapelt sind.
@@ -376,7 +369,6 @@ Wenn Sie erneut auf das Dreieck `Width` klicken, `match_parent`wird die Einstell
 Wenn der `LinearLayout` Stamm ausgewählt ist, kehren Sie zur Registerkarte **Eigenschaften** zurück, und klicken Sie auf **Widget**. Ändern Sie `Orientation` die Einstellung `horizontal` in, wie unten gezeigt. An diesem Punkt sollte die **Designoberfläche** dem folgenden Screenshot ähneln. Beachten Sie, `TextView` dass die Widgets nach rechts `ImageView`von verschoben wurden:
 
 [![Horizontale Ausrichtung auswählen](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
-
 
 ### <a name="modifying-the-spacing"></a>Ändern des Abstands
 
@@ -528,7 +520,6 @@ Erstellen Sie die Anwendung, und führen Sie sie aus. Der folgende Screenshot ze
 [![Abschließender Screenshot](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
 
 -----
-
 
 ## <a name="summary"></a>Zusammenfassung
 

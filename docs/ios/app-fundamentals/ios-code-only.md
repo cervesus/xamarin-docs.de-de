@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: d1464ca3accf53a9362d00e279ff9e158d7e34d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b829cf3f440b1c94c5232d258c86b6ea4b0f181
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281633"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767516"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Erstellen von Benutzeroberflächen im Code in Xamarin.iOS für iOS
 
@@ -59,16 +59,13 @@ Die leere Projektvorlage fügt 4 Dateien dem Projekt hinzu:
 1. **Datei "Info.plist"** -eigenschaftenlistendatei an, die Anwendungskonfigurationsinformationen enthält.
 1. **"Entitlements.plist"** – eigenschaftenlistendatei an, das Informationen zu den Funktionen und die Berechtigungen der Anwendung enthält.
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS-Vorlagen
 
-
 Visual Studio für Mac bietet keine leere Vorlage. Alle Vorlagen verfügen über Storyboard-Unterstützung, die empfiehlt Apple als vorrangigen Weg zum Erstellen einer Benutzeroberflächenautomatisierungs. Allerdings ist es möglich, die die Benutzeroberfläche vollständig im Code erstellen.
 
 Die folgenden Schritte führen Sie durch das Storyboard aus einer Anwendung zu entfernen:
-
 
 1. Verwenden Sie die Einzelansicht-App-Vorlage, um ein neues iOS-Projekt zu erstellen:
 

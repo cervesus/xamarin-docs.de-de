@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90ef335bd3683028d5f9951cdf2ca341158209b9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9960167e2f71531e5ffeaecac94aede5d5ea3340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284212"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768893"
 ---
 # <a name="editing-tables-with-xamarinios"></a>Bearbeiten von Tabellen mit xamarin. IOS
 
@@ -30,7 +30,6 @@ Es gibt drei Methoden Überschreibungen, die die Schwenkbewegung beeinflussen, u
 - **Commiteditingstyle** – die Tabellen Quelle erkennt, wenn diese Methode überschrieben wird, und aktiviert automatisch die Bewegung zum Löschen. Die-Implementierung der Methode sollte `DeleteRows` für den `UITableView` -Befehl auslösen, damit die Zellen ausgeblendet werden, und auch die zugrunde liegenden Daten aus dem Modell (z. b. ein Array, ein Wörterbuch oder eine Datenbank) entfernt werden. 
 - **Caneditrow** – wenn commiteditingstyle überschrieben wird, wird davon ausgegangen, dass alle Zeilen bearbeitbar sind. Wenn diese Methode implementiert ist und false zurückgibt (für bestimmte Zeilen oder für alle Zeilen), ist die Bewegung zum Löschen in dieser Zelle nicht verfügbar. 
 - **Titlefordeleteconfirmation** – gibt optional den Text für die Schaltfläche " **Löschen** " an. Wenn diese Methode nicht implementiert wird, lautet der Schaltflächen Text "Delete". 
-
 
 Diese Methoden werden in der `TableSource` -Klasse folgendermaßen implementiert:
 
@@ -61,7 +60,6 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 In diesem Beispiel `UITableViewSource` wurde aktualisiert, sodass ein `List<TableItem>` (anstelle eines Zeichen folgen Arrays) als Datenquelle verwendet wird, da es das Hinzufügen und Löschen von Elementen aus der Auflistung unterstützt.
 
-
 ## <a name="edit-mode"></a>Bearbeitungsmodus
 
 Wenn sich eine Tabelle im Bearbeitungsmodus befindet, wird dem Benutzer ein rotes "beenden"-Widget für jede Zeile angezeigt, in dem eine Schaltfläche "Löschen" angezeigt wird. In der Tabelle wird auch ein Handle-Symbol angezeigt, um anzugeben, dass die Zeile gezogen werden kann, um die Reihenfolge zu ändern.
@@ -75,7 +73,6 @@ Es gibt eine Reihe von unterschiedlichen Methoden `UITableViewSource` , die sich
 - **Canmoverow** – gibt true zurück, um das Verschieben von ' handle ' oder false zu aktivieren, um das Verschieben zu verhindern. 
 - **Editingstyleforrow** – wenn sich die Tabelle im Bearbeitungsmodus befindet, bestimmt der Rückgabewert dieser Methode, ob die Zelle das rote Lösch Symbol oder das grüne Symbol "hinzufügen" anzeigt. Gibt `UITableViewCellEditingStyle.None` zurück, wenn die Zeile nicht bearbeitet werden darf. 
 - " **–"** Wird aufgerufen, wenn eine Zeile verschoben wird, sodass die zugrunde liegende Datenstruktur so geändert werden kann, dass Sie den in der Tabelle angezeigten Daten entspricht. 
-
 
 Die Implementierung für die ersten drei Methoden ist relativ unkompliziert – es sei denn, Sie möchten zum `indexPath` Ändern des Verhaltens bestimmter Zeilen verwenden, sondern nur die Rückgabewerte für die gesamte Tabelle hart codieren.
 
@@ -128,7 +125,6 @@ und wenn der Benutzer die Bearbeitung abgeschlossen hat, sollte die Schaltfläch
 table.SetEditing (false, true);
 ```
 
-
 ## <a name="row-insertion-editing-style"></a>Bearbeitungs Stil für Zeilen Einfügung
 
 Das Einfügen von Zeilen innerhalb der Tabelle ist eine ungewöhnliche Benutzeroberfläche – das Hauptbeispiel in den standardmäßigen IOS-Apps ist der Bildschirm zum **Bearbeiten von Kontakten** . Dieser Screenshot zeigt, wie die Funktion zum Einfügen von Zeilen funktioniert – im Bearbeitungsmodus gibt es eine zusätzliche Zeile, die (wenn geklickt) zusätzliche Zeilen in die Daten einfügt. Wenn die Bearbeitung beendet ist, wird die temporäre Zeile **(neue Zeile hinzufügen)** entfernt.
@@ -141,12 +137,10 @@ Es gibt eine Reihe von unterschiedlichen Methoden `UITableViewSource` , die sich
 - **Customizemuvetarget** – während der Benutzer eine Zelle verschiebt, kann der Rückgabewert aus dieser optionalen Methode den gewählten Speicherort überschreiben. Dies bedeutet, dass Sie verhindern können, dass Sie die Zelle an bestimmten Positionen ablegen – z. b. in diesem Beispiel, das verhindert, dass Zeilen nach der **(neuen)** Zeile verschoben werden. 
 - **Canmoverow** – gibt true zurück, um das Verschieben von ' handle ' oder false zu aktivieren, um das Verschieben zu verhindern. In diesem Beispiel hat die letzte Zeile das Verschieben von ' handle ' ausgeblendet, da es nur als einfügeschaltfläche verwendet werden soll. 
 
-
 Außerdem fügen wir zwei benutzerdefinierte Methoden zum Hinzufügen der Zeile "Einfügen" hinzu und entfernen Sie dann erneut, wenn Sie nicht mehr benötigt werden. Sie werden über **die Schaltflächen** " **Bearbeiten** " und "ausführen" aufgerufen:
 
 - **Willbegintableedit** – wenn die **Bearbeitungs** Schaltfläche berührt ist `SetEditing` , ruft Sie auf, um die Tabelle in den Bearbeitungsmodus zu versetzen. Dadurch wird die Methode "willbegintableediting" ausgelöst, in der die Zeile **(Add New)** am Ende der Tabelle angezeigt wird, die als "Einfügen"-Schaltfläche fungiert. 
 - **Didfinishtableedit** – wenn die done-Schaltfläche `SetEditing` berührt ist, wird erneut aufgerufen, um den Bearbeitungsmodus zu deaktivieren. Im Beispielcode wird die Zeile **(neue Zeile hinzufügen)** aus der Tabelle entfernt, wenn die Bearbeitung nicht mehr erforderlich ist. 
-
 
 Diese Methoden Überschreibungen sind in der Beispieldatei **tableeditmodeadd/Code/tablesource. cs**implementiert:
 
@@ -219,7 +213,6 @@ edit = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (s,e)=>{
 ```
 
 Dieses UI-Muster für die Zeilen Einfügung wird nicht häufig verwendet, Sie können jedoch `UITableView.BeginUpdates` auch `EndUpdates` die-Methode und die-Methode verwenden, um das Einfügen oder Entfernen von Zellen in einer beliebigen Tabelle zu animieren. Die Regel für die Verwendung dieser Methoden besteht darin, dass der Unterschied `RowsInSection` des Werts `BeginUpdates` , `EndUpdates` der von zwischen den aufrufen und zurückgegeben wird, mit der Anzahl `InsertRows` der `DeleteRows` Zellen, die der-Methode und der-Methode hinzugefügt/ Wenn die zugrunde liegende Datenquelle nicht so geändert wird, dass Sie den Einfügungen/Löschungen der Tabellenansicht entspricht, tritt ein Fehler auf.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: af7dbad29c156964f154053dac00255b1b32e4ff
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6940e07c51dbc19615454e0c51188152db22c63f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289091"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767211"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Bilder und Symbole in xamarin. IOS
 
@@ -33,7 +33,6 @@ Es gibt mehrere Möglichkeiten, wie Image-Assets in einer IOS-App verwendet werd
 
 Beim Erstellen von Image Assets für eine IOS-APP und an mehreren Stellen, an denen diese Assets verwendet werden, müssen mehrere Aspekte berücksichtigt werden. Jede dieser Elemente wirkt sich nicht nur darauf aus, wie viele Bild Ressourcen erforderlich sind, sondern wie diese Assets erstellt werden. In den folgenden Themen werden die Typen von Images behandelt, die erforderlich sind, wie diese Assets im Paket der Anwendung enthalten sind und wie die Abbild Ressourcen genutzt werden, um die erforderliche Funktionalität bereitzustellen:
 
-
 ## <a name="displaying-an-imageiosapp-fundamentalsimages-iconsdisplaying-an-imagemd"></a>[Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md)
 
 In diesem Artikel wird beschrieben, wie Sie ein Image-Asset in eine xamarin. IOS-App einschließen C# und dieses Bild entweder mithilfe von Code oder durch Zuweisen zu einem Steuerelement im IOS-Designer anzeigen.
@@ -51,7 +50,6 @@ Apple hat eine Reihe von Erweiterungen zu IOS 10,3 hinzugefügt, die es einer AP
 - `AlternateIconName`-Gibt den Namen des alternativen Symbols zurück, das derzeit `null` ausgewählt ist, oder, wenn das primäre Symbol verwendet wird.
 - `SetAlternameIconName`-Verwenden Sie diese Methode, um das Symbol der APP auf das angegebene Alternative Symbol zu wechseln.
 
-
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[Startbildschirme](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 In diesem Artikel wird die Verwendung eines besonderen Storyboard-Typs zum Bereitstellen eines universellen Startbildschirms für jede IOS-Gerätegröße und-Auflösung behandelt.
@@ -59,8 +57,6 @@ In diesem Artikel wird die Verwendung eines besonderen Storyboard-Typs zum Berei
 ## <a name="custom-document-typesiosapp-fundamentalsimages-iconscustom-document-typesmd"></a>[Benutzerdefinierte Dokumenttypen](~/ios/app-fundamentals/images-icons/custom-document-types.md)
 
 In diesem Artikel wird das einschließen und Verwalten eines Image Assets in einer xamarin. IOS-App behandelt, die als benutzerdefiniertes Dokumenttyp Symbol verwendet werden soll.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

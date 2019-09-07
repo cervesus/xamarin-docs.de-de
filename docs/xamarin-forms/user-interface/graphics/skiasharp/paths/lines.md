@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: ed423a19eabd9c7f1d91457cc1834f28d62b2121
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cc62ca4656a845a261c56424aa1ea1331c994994
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647302"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759215"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
@@ -237,7 +237,6 @@ Wenn Sie stattdessen verwenden `SKPointMode.Lines`auf dem Android-Bildschirm in 
 Der UWP-Screenshot zeigt das Ergebnis der `SKPointMode.Polygon` Wert. Wird eine Linie zwischen den aufeinander folgenden Punkten im Array, aber wenn Sie sehr genau hinsehen, sehen Sie, dass diese Zeilen nicht verbunden sind. Jede dieser separaten Zeilen beginnt und endet mit dem angegebenen Linienende. Bei Auswahl der `Round` Großbuchstaben, scheinen die Zeilen verbunden sein, aber sie eigentlich nicht verbunden sind.
 
 Ist ein entscheidender Aspekt für die Arbeit mit Grafikpfade, ob Zeilen oder nicht verbunden sind.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

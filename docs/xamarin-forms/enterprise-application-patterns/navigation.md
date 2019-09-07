@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3ca06ae6fb26fce87f14b9cdb34a700ef49655e1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0f523c7149366cff85164f26f3f47b87801002cb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528387"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770764"
 ---
 # <a name="enterprise-app-navigation"></a>Navigation in der Unternehmens Anwendung
 
@@ -305,7 +305,6 @@ Eine APP muss möglicherweise während eines Navigations Vorgangs mit dem Benutz
 Xamarin. Forms bietet Unterstützung für die Seitennavigation, die in der Regel durch die Interaktion des Benutzers mit der Benutzeroberfläche oder von der APP selbst infolge interner, Logik gesteuerte Zustandsänderungen resultiert. Allerdings kann die Navigation in apps, die das MVVM-Muster verwenden, komplex sein.
 
 In diesem Kapitel wurde `NavigationService` eine-Klasse vorgestellt, die verwendet wird, um die Ansicht Model-First-Navigation von Ansichts Modellen auszuführen. Das Platzieren der Navigations Logik in Ansichts Modellklassen bedeutet, dass die Logik durch automatisierte Tests ausgeführt werden kann. Außerdem kann das Ansichts Modell eine Logik zum Steuern der Navigation implementieren, um sicherzustellen, dass bestimmte Geschäftsregeln erzwungen werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

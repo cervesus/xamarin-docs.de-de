@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 35de496d0684473fe3f6bc4ebadddc471b6b0cfe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ac50c665955f9bf234c46b3d4082fb628b61a33d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292894"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770029"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin. Mac-Fehlermeldungen (MMP)
 
@@ -616,7 +616,7 @@ Eine mögliche Problem Umgehung besteht darin, die `register-protocols` Optimier
 <a name="MM8026" />
 
 #### <a name="mm8026--is-not-supported-when-the-dynamic-registrar-has-been-linked-away"></a>MM8026: * wird nicht unterstützt, wenn die dynamische Registrierungsstelle entfernt wurde.
- 
+
 Dies weist normalerweise auf einen Fehler in xamarin. Mac hin, da die dynamische Registrierungsstelle bei Bedarf nicht verknüpft werden sollte. Bitte melden Sie einen Fehler [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)unter.
- 
+
 Es ist möglich, den Linker zu zwingen, die dynamische Registrierungsstelle beizubehalten `--optimize=-remove-dynamic-registrar` , indem Sie den zusätzlichen MMP-Argumenten in den Mac-Buildoptionen des Projekts hinzufügen.

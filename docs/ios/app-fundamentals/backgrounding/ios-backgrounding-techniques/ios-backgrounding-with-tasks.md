@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d001c39b2111785911d678bdeb2e83d761fba11
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7596f79119f28997cbcda6e7057e682edfd760b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287001"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756360"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS-Hintergrundverarbeitung mit Aufgaben
 
@@ -23,7 +23,6 @@ Hintergrundaufgaben können in drei Kategorien unterteilt werden:
 1. Im **Hintergrund sichere Aufgaben** , die an beliebiger Stelle in der Anwendung aufgerufen werden, wenn Sie eine Aufgabe haben, die nicht unterbrochen werden soll, wenn die Anwendung in den Hintergrund gelangt
 1. **Didenterbackground-Tasks** , die während `DidEnterBackground` der Anwendungslebenszyklus-Methode aufgerufen werden, um die Bereinigung und Zustands Speicherung zu unterstützen.
 1. **Hintergrund Übertragungen (IOS 7** und höher): eine besondere Art von Hintergrundaufgabe für die Durchführung von Netzwerkübertragungen unter IOS 7. Im Gegensatz zu regulären Aufgaben haben Hintergrund Übertragungen keine vorab festgelegte Zeitbeschränkung.
-
 
 Hintergrund sichere Aufgaben und `DidEnterBackground` Aufgaben sind auf IOS 6 und IOS 7 sicher, mit einigen geringfügigen Unterschieden. Sehen wir uns diese zwei Arten von Aufgaben genauer an.
 
@@ -47,7 +46,6 @@ Der Registrierungsprozess verknüpft eine Aufgabe mit einem eindeutigen Bezeichn
 > [!IMPORTANT]
 > Hintergrund sichere Aufgaben können abhängig von den Anforderungen der Anwendung entweder im Hauptthread oder in einem Hintergrund Thread ausgeführt werden.
 
-
 ## <a name="performing-tasks-during-didenterbackground"></a>Ausführen von Aufgaben während didenterbackground
 
 Wenn Sie eine Aufgabe mit langer Ausführungszeit verwenden, kann die Registrierung verwendet werden, um Aufgaben zu starten, während eine Anwendung im Hintergrund abgelegt wird. IOS stellt in der appdelegatklasse eine Ereignis Methode `DidEnterBackground` namens zur Verfügung, die zum Speichern des Anwendungs Zustands, zum Speichern von Benutzerdaten und zum Verschlüsseln von sensiblen Inhalten verwendet werden kann, bevor eine Anwendung in den Hintergrund wechselt. Eine Anwendung hat ungefähr fünf Sekunden Zeit, um von dieser Methode zurückzukehren, oder Sie wird beendet. Daher können Bereinigungs Tasks, die möglicherweise mehr als fünf Sekunden dauern, innerhalb der `DidEnterBackground` -Methode aufgerufen werden. Diese Tasks müssen in einem separaten Thread aufgerufen werden.
@@ -68,7 +66,6 @@ Wir beginnen mit dem über `DidEnterBackground` `BeginBackgroundTask` Schreiben 
 
 > [!IMPORTANT]
 > IOS verwendet einen [Watchdog-Mechanismus](https://developer.apple.com/library/ios/qa/qa1693/_index.html) , um sicherzustellen, dass die Benutzeroberfläche einer Anwendung weiterhin reaktionsfähig ist. Eine Anwendung, die zu viel Zeit in `DidEnterBackground` verbringt, reagiert in der Benutzeroberfläche nicht mehr. Das Auslösen von Aufgaben, die im Hintergrund ausgeführt `DidEnterBackground` werden können, ermöglicht eine rechtzeitige Rückgabe, sodass die Benutzeroberfläche reaktionsfähig bleibt und verhindert, dass der Watchdog die Anwendung beendet.
-
 
 ## <a name="handling-background-task-time-limits"></a>Behandeln von Zeit Limits für Hintergrundaufgaben
 
@@ -133,7 +130,6 @@ Das Rückgrat von Hintergrund Übertragungen in ios 7 ist die neue `NSURLSession
 1. Übertragen von Inhalten durch Netzwerk-und Geräte Unterbrechungen.
 1. Hochladen und Herunterladen großer Dateien ( *Hintergrund Übertragungs Dienst* ).
 
-
 Werfen wir einen genaueren Blick darauf, wie dies funktioniert.
 
 ### <a name="nsurlsession-api"></a>Nsurlsession-API
@@ -157,7 +153,6 @@ else {
 > [!IMPORTANT]
 > Vermeiden Sie Aufrufe zur Aktualisierung der Benutzeroberfläche aus dem Hintergrund in ios 6-Kompatibilitäts Code, da IOS 6 keine Aktualisierungen der Hintergrund Benutzeroberfläche unterstützt und die Anwendung beendet wird.
 
-
 Die `NSURLSession` API umfasst einen umfangreichen Satz von Features zur Handhabung der Authentifizierung, zum Verwalten von fehlgeschlagenen Übertragungen und zum Client seitigen melden, aber nicht serverseitiger Fehler. Er hilft dabei, die Unterbrechungen in der in ios 7 eingeführten Task Laufzeit zu überbrücken und bietet zudem Unterstützung für die schnelle und zuverlässige Übertragung großer Dateien. Im nächsten Abschnitt wird dieses zweite Feature untersucht.
 
 ### <a name="background-transfer-service"></a>Hintergrund Übertragungs Dienst
@@ -167,4 +162,3 @@ Vor IOS 7 war das Hochladen oder Herunterladen von Dateien im Hintergrund unzuve
 Über den Hintergrund Übertragungs Dienst initiierte Übertragungen werden vom Betriebssystem verwaltet und stellen APIs bereit, um Authentifizierung und Fehler zu behandeln. Da die Übertragungen nicht durch ein beliebiges Zeit Limit gebunden sind, können Sie zum Hochladen oder Herunterladen großer Dateien, zum automatischen Aktualisieren von Inhalten im Hintergrund und vieles mehr verwendet werden. Ausführliche Informationen zum Implementieren des Dienstanbieter finden Sie in der exemplarischen Vorgehensweise zur [Hintergrund Übertragung](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md) .
 
 Der Hintergrund Übertragungs Dienst wird häufig mit dem Abrufen im Hintergrund oder Remote Benachrichtigungen gekoppelt, damit Anwendungen Inhalte im Hintergrund aktualisieren können. In den nächsten beiden Abschnitten wird das Konzept der Registrierung ganzer Anwendungen eingeführt, um Sie sowohl auf IOS 6 als auch auf IOS 7 im Hintergrund auszuführen.
-

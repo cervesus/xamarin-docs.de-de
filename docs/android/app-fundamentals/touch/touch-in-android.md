@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 0619dd9a81c40633c7c61f23ef9e8f3ef92c2e6a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: e9810eed3affb15f581b95aec1aff9ae560ff63c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197623"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754756"
 ---
 # <a name="touch-in-android"></a>Toucheingabe in Android
 
@@ -22,15 +22,13 @@ ms.locfileid: "70197623"
 - Ein Satz von Achsen Werten, die die Position von `MotionEvent` und anderen Verschiebungs Eigenschaften beschreiben, z. b. wo die Fingereingabe stattfindet, wann die Fingereingabe stattfindet und wie viel Druck verwendet wurde.
    Die Achsen Werte können sich je nach Gerät unterscheiden, sodass nicht alle Achsen Werte in der vorherigen Liste beschrieben werden.
 
-
 Das `MotionEvent` -Objekt wird an eine entsprechende Methode in einer Anwendung übermittelt. Es gibt drei Möglichkeiten für eine xamarin. Android-Anwendung, auf ein Berührungs Ereignis zu reagieren:
 
 - *Zuweisen eines Ereignis Handlers `View.Touch` zu* : `Android.Views.View` die Klasse verfügt `EventHandler<View.TouchEventArgs>` über eine, der Anwendungen einen Handler zuweisen können. Dies ist das typische .net-Verhalten.
 
 - *Implementieren`View.IOnTouchListener`* : Instanzen dieser Schnittstelle können mithilfe der-Sicht einem Ansichts Objekt zugewiesen werden. `SetOnListener`anzuwenden. Dies ist funktional äquivalent zum Zuweisen eines Ereignis Handlers zum `View.Touch` -Ereignis. Wenn eine gemeinsame oder gemeinsam genutzte Logik vorhanden ist, die viele verschiedene Sichten ggf. benötigen, ist es effizienter, eine Klasse zu erstellen und diese Methode zu implementieren, als jede Ansicht als eigenen Ereignishandler zuzuweisen.
 
-- *`View.OnTouchEvent` Überschreibungs* -alle Sichten in der Android `Android.Views.View`-Unterklasse. Wenn eine Ansicht berührt wird, ruft Android den `OnTouchEvent` auf und übergibt ihm ein `MotionEvent` -Objekt als Parameter.
-
+- *Überschreibungs `View.OnTouchEvent`*  -alle Sichten in der Android `Android.Views.View`-Unterklasse. Wenn eine Ansicht berührt wird, ruft Android den `OnTouchEvent` auf und übergibt ihm ein `MotionEvent` -Objekt als Parameter.
 
 > [!NOTE]
 > Nicht alle Android-Geräte unterstützen Touchscreens. 
@@ -78,7 +76,6 @@ Diese Schnittstelle stellt sechs Methoden für die verschiedenen Gesten bereit:
 - *Onshowpress* : wird aufgerufen, nachdem ein ondown-Ereignis aufgetreten ist und kein Move-oder up-Ereignis ausgeführt wurde.
 
 - *Onsingletapup* : wird aufgerufen, wenn eine einzelne Tap auftritt.
-
 
 In vielen Fällen sind Anwendungen möglicherweise nur an einer Teilmenge von Gesten interessiert. In diesem Fall sollten Anwendungen die Klasse gesturedetector. simpleongesturelistener erweitern und die Methoden überschreiben, die den Ereignissen entsprechen, an denen Sie interessiert sind.
 
@@ -164,8 +161,6 @@ private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayV
 ```
 
 Dabei sollten Sie sich mit der Verwendung von toucheingaben und Gesten in einer xamarin. Android-Anwendung vertraut machen. Wir fahren nun mit einer exemplarischen Vorgehensweise fort und zeigen alle Konzepte in einer funktionierenden Beispielanwendung an.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

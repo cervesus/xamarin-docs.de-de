@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 76733d4efd4ce292da2781c97aef963fb68e3974
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ab72034d7b565a31c59d997f03844b6c8c959785
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287874"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768179"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Arbeiten mit dem UI-Thread in xamarin. IOS
 
@@ -40,7 +40,6 @@ Beim Debuggen von xamarin. IOS-Anwendungen wird ein Fehler ausgelöst, wenn der 
 
  <a name="Background_Thread_Example" />
 
-
 ## <a name="background-thread-example"></a>Beispiel für Hintergrund Thread
 
 Im folgenden Beispiel wird versucht, mithilfe eines einfachen Threads von einem Hintergrund Thread `UILabel`aus auf ein Benutzeroberflächen Steuerelement (a) zuzugreifen:
@@ -64,7 +63,6 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 Sie müssen dies nicht für die restlichen Beispiele in diesem Dokument verwenden, aber es ist ein wichtiges Konzept, wenn Ihre APP Netzwerk Anforderungen stellt, das Benachrichtigungs Center oder andere Methoden verwendet, die einen Abschluss Handler erfordern, der auf einem anderen ausgeführt wird. Aden.
 
  <a name="Async_Await_Example" />
-
 
 ## <a name="asyncawait-example"></a>Beispiel für Async/Erwartung
 
@@ -92,7 +90,6 @@ async partial void button2_TouchUpInside (UIButton sender)
 ```
 
 Wenn eine asynchrone Methode von einem Hintergrund Thread (nicht dem Hauptbenutzer Oberflächen-Thread) `InvokeOnMainThread` aufgerufen wird, ist dennoch erforderlich.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

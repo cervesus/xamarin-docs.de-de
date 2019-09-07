@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: adabf66e008dc2f49d7787d62ebad8aadf263ac7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ec63162a21333d0ff831ded1ab17a3d8bb0efaa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290571"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769374"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Erweiterte Benutzer Benachrichtigungen in xamarin. IOS
 
@@ -360,7 +360,6 @@ UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 
 Um eine vorhandene Benachrichtigung zu aktualisieren, erstellen Sie einfach eine neue Benachrichtigung mit den gewünschten Parametern (z. b. einer neuen auslöserzeit), und fügen Sie Sie dem System mit dem gleichen Anforderungs Bezeichner wie die Benachrichtigung hinzu, die geändert werden muss. Beispiel:
 
-
 ```csharp
 using UserNotifications;
 ...
@@ -664,8 +663,6 @@ namespace myApp {
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden alle Möglichkeiten beschrieben, wie Benutzer Benachrichtigungen durch IOS 10 erweitert wurden. Es wurde das neue Benutzer Benachrichtigungs Framework vorgestellt und erläutert, wie es in einer xamarin. IOS-APP oder-App-Erweiterung verwendet wird.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

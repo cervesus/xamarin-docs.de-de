@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: a937de27fc032b0d88dfdf717339b47e0df8e58d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e8ffe337e1f5c74bc348b9600a466f1232f40b0b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644633"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758835"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin. Android-Bearbeitungs Text
 
@@ -35,7 +35,7 @@ In diesem Abschnitt verwenden Sie das [EDITTEXT](xref:Android.Widget.EditText) -
 </LinearLayout>
 ```
 
-In diesem Codebeispiel wird das `EditText` - `android:imeOptions` Attribut auf `actionGo`festgelegt. Mit dieser Einstellung wird die Standardaktion done in die [go](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) -Aktion geändert, sodass der `KeyPress` Eingabe Handler [durch](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) Tippen auf die **EINGABETASTE ausgelöst** wird.
+In diesem Codebeispiel wird das `EditText` - `android:imeOptions` Attribut auf `actionGo`festgelegt. Mit dieser Einstellung wird die Standardaktion done in die [go](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) -Aktion geändert, **sodass der** `KeyPress` Eingabe Handler [durch](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) Tippen auf die EINGABETASTE ausgelöst wird.
 (In der `actionGo` Regel wird verwendet, damit die **Eingabe** Taste den Benutzer zum Ziel einer URL, die eingegeben wird, verwendet.)
 
 Fügen Sie den folgenden Code am Ende der [OnCreate](xref:Android.App.Activity.OnCreate*) -Methode in **MainActivity.cs**ein, um Benutzer Texteingaben zu behandeln:
@@ -65,7 +65,6 @@ Führen Sie die Anwendung aus, und geben Sie Text in das Textfeld ein. Wenn Sie 
 [![Beispiele für das Eingeben von Text in EDITTEXT](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
 *Teile dieser Seite sind Änderungen, die auf der erstellten Arbeit und* [*vom Android Open Source-Projekt gemeinsam*](http://code.google.com/policies.html) verwendet *und werden gemäß den Begriffen verwendet, die im* [*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/) *. Dieses Tutorial basiert auf dem* Android-Lernprogramm für [*Formular Inhalte*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
-
 
 ## <a name="related-links"></a>Verwandte Links
 

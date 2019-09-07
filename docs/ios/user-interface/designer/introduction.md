@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: f37905f483ad31d05276383718a3295d4a288f28
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285867"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768936"
 ---
 # <a name="ios-designer-basics"></a>IOS Designer-Grundlagen
 
@@ -194,7 +194,7 @@ Der IOS-Designer hat sechs primäre Abschnitte:
 Wenn Sie einer Schnittstelle ein Steuerelement hinzufügen möchten, ziehen Sie es aus der **Toolbox** , und legen Sie es auf der Entwurfs Oberfläche ab. Beim Hinzufügen oder Positionieren eines Steuer Elements werden durch vertikale und horizontale Richtlinien häufig verwendete Layoutpositionen hervorgehoben, wie z. b. vertikale Mitte, horizontale Mitte und Ränder:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
- 
+
 ![Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen] . (introduction-images/9-layoutguides-vsmac.png "Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen") .
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -220,7 +220,7 @@ Ein Kontextmenü ist sowohl auf der Entwurfs Oberfläche als auch in der **Dokum
 ### <a name="constraints-toolbar"></a>Einschränkungs Symbolleiste
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
- 
+
 [![Die Symbolleiste] "Configuration Manager" (introduction-images/11-constraintstoolbar-vsmac.png "Die Einschränkungs Symbolleiste")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -316,7 +316,7 @@ Wenn [Größenklassen](~/ios/user-interface/storyboards/unified-storyboards.md#s
 Die Entwurfs Oberfläche unterstützt das Zoomen über mehrere Steuerelemente:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
- 
+
 ![Die Zoom Steuerelemente in der unteren Symbolleiste](introduction-images/16-zoomcontrols-vsmac.png "Die Zoom Steuerelemente in der unteren Symbolleiste")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)

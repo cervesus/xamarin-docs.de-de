@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: aa99d50295e214b7926d0655ea434c851b3ba099
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bd3adf5d01be0cdb709c752e1ace131b8b3e8d83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286319"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752257"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Visuelle Entwurfs Updates in ios 11
 
@@ -113,11 +113,9 @@ IOS 11 hat die Funktionalität von Zeilen Aktionen erweitert. `UISwipeActionsCon
 
 Tabellen Sichten unterstützen Drag & Drop in ios 11. Weitere Informationen finden Sie im [Drag & Drop-](~/ios/platform/introduction-to-ios11/drag-and-drop.md#uitableview) Handbuch.
 
-
 ## <a name="related-links"></a>Verwandte Links
 
 - [Neuerungen in ios 11 (Apple)](https://developer.apple.com/ios/)
 - [Aktualisierte App Store-Produktseite (Apple)](https://developer.apple.com/app-store/product-page/)
 - [Entwerfen für iPhone X (Apple) (Video)](https://developer.apple.com/videos/play/fall2017/801/)
 - [Aktualisieren Ihrer APP für IOS 11 (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/204/)
-

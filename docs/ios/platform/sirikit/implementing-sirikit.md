@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 5c891943d0d23c24169a6d226a10f83964c9257a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290639"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769786"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implementieren von Sirikit in xamarin. IOS
 
@@ -50,7 +50,6 @@ Dazu gehören:
 3. **App** : stellt benutzerspezifische vokabare für die APP bereit, um Siri bei der Arbeit mit Ihnen zu unterstützen. 
 
 Alle diese Elemente und die Schritte, die Sie in die APP einschließen, werden in den folgenden Abschnitten ausführlich beschrieben.
-
 
 ## <a name="preparing-the-app"></a>Vorbereiten der APP
 
@@ -156,7 +155,6 @@ Wenn Sie sich für die Erstellung einer separaten Intent-Erweiterung für jede A
 Um die Auswahl zwischen den beiden Optionen zu erleichtern, prüfen Sie, ob eine der Intents auf natürliche Weise zueinander gehört. Beispielsweise kann eine APP, die Audio-und Videoaufrufe durchgeführt hat, beide Intents in einer einzigen Intent-Erweiterung einschließen, da Sie ähnliche Aufgaben verarbeiten und die meisten Wiederverwendbarkeit von Code bereitstellen kann.
 
 Erstellen Sie eine neue Intent-Erweiterung in der Projekt Mappe der APP, die Sie in der Projekt Mappe der App enthalten.
-
 
 ### <a name="setting-the-required-entitlements"></a>Festlegen der erforderlichen Berechtigungen
 
@@ -266,7 +264,6 @@ Bearbeiten Sie die `Info.plist` Datei der APP, und `NSSiriUsageDescription` füg
 
 Ruft die `RequestSiriAuthorization` -Methode `INPreferences` der-Klasse auf, wenn die APP zum ersten Mal gestartet wird. Bearbeiten Sie `AppDelegate.cs` die-Klasse, `FinishedLaunching` und legen Sie die-Methode wie folgt an:
 
-
 ```csharp
 using Intents;
 ...
@@ -288,7 +285,6 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
             break;
         }
     });
-
 
     return true;
 }
@@ -684,7 +680,6 @@ Wenn die APP optional erfordert, dass der Benutzer beim Gerät angemeldet ist, u
 
 -----
 
-
 Eine umfassende Liste der verfügbaren Intent-Domänen finden Sie in der Referenz zu den [beabsichtigten Domänen](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)von Apple.
 
 ### <a name="configuring-the-main-class"></a>Konfigurieren der Hauptklasse
@@ -743,7 +738,6 @@ Im Fall der monkeychat-Beispiel-App benötigt die Intent-Erweiterung mindestens 
 Darüber hinaus erfordert monkeychat Inhalt für den Nachrichtentext. Wenn der Benutzer dies nicht angegeben hat, muss Siri den Benutzer zur Eingabe des Inhalts auffordern.
 
 Die Intent-Erweiterung muss jeden dieser Fälle ordnungsgemäß behandeln.
-
 
 ```csharp
 [Export ("resolveRecipientsForSearchForMessages:withCompletion:")]
@@ -810,7 +804,6 @@ Weitere Informationen finden Sie in [der Referenz zum Bestätigen der Stufe](~/i
 ### <a name="processing-the-intent"></a>Verarbeiten der Absicht
 
 Dies ist der Punkt, an dem die beabsichtigte Erweiterung die Aufgabe tatsächlich durchführt, um die Anforderung des Benutzers zu erfüllen und die Ergebnisse zurück an Siri zu übergeben, damit der Benutzer informiert werden kann.
-
 
 ```csharp
 public void HandleSendMessage (INSendMessageIntent intent, Action<INSendMessageIntentResponse> completion)
@@ -1064,9 +1057,6 @@ Apple schlägt vor, dass der Entwickler beim Entwerfen und Implementieren der In
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde "Sirikit" erläutert, und es wurde gezeigt, wie es den xamarin. IOS-apps hinzugefügt werden kann, um Dienste bereitzustellen, auf die der Benutzer mit Siri und der Maps-APP auf einem IOS-Gerät zugreifen kann.
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

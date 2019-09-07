@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 3. Details zu text
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 3. Details zu text'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 3. Details zu text'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e37175240825c0fed350589649469c99f1bbf69a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334659"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771227"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Zusammenfassung der Kapitel 3. Details zu text
 
@@ -28,7 +28,7 @@ Bei der [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) und [
 
 Wenn die `HorizontalOptions` und `VerticalOptions` Eigenschaften nicht auf Werte festgelegt sind `LayoutOptions.Fill`, wird die Größe des der `Label` unterliegt den speicherplatzanforderungen, die zum Rendern von Text, bis die Größe, die für der Container zur Verfügung der `Label`. Die `Label` gilt als *uneingeschränkte* und legt seine eigene Größe fest.
 
-(Hinweis: Die Begriffe *eingeschränkte* und *uneingeschränkte* möglicherweise nicht intuitiv, eine uneingeschränkte Sicht im Allgemeinen kleiner als eine eingeschränkte Ansicht ist. Darüber hinaus werden diese Begriffe nicht durchgängig in der ersten Kapitel des Buchs verwendet.)
+(Hinweis: Die Begriffe " *eingeschränkt* " und " *uneingeschränkt* " sind möglicherweise kontraintuitiv, da eine nicht eingeschränkte Ansicht in der Regel kleiner als eine eingeschränkte Ansicht ist. Darüber hinaus werden diese Begriffe nicht durchgängig in der ersten Kapitel des Buchs verwendet.)
 
 Eine Ansicht z. B. eine `Label` in einer Dimension beschränkt und im anderen uneingeschränkt werden kann. Ein `Label` wird nur auf mehrere Zeilen Text umbrochen, wenn es horizontal beschränkt ist.
 
@@ -99,9 +99,9 @@ Schließlich definieren Sie zwei statische schreibgeschützte Eigenschaften beso
 
 `Color.Default` Dient zum Erzwingen der Plattform Farbschema aus, und hat daher eine andere Bedeutung in unterschiedlichen Kontexten auf verschiedenen Plattformen. Sind standardmäßig die Farbschemas für die Plattform aus:
 
-- iOS: Dunkel Text auf einem hellen Hintergrund
-- Android: Helles Text auf dunklem Hintergrund (im Buch) "oder" dunkel Text auf einem hellen Hintergrund (für Material Design über AppCompat in die **master** Branch von beispielcoderepository)
-- UWP: Dunkel Text auf einem hellen Hintergrund
+- iOS: Dunkler Text auf einem hellen Hintergrund
+- Android: Heller Text in einem dunklen Hintergrund (im Buch) oder dunkler Text auf einem hellen Hintergrund (für Material Design über AppCompat im **masterb** Ranch des beispielcoderepositorys)
+- UWP Dunkler Text auf einem hellen Hintergrund
 
 Die `Color.Accent` führt eine plattformspezifische (und manchmal Benutzer ausgewählt werden können) Farbe, die auf einem dunkle oder helle Hintergrund angezeigt wird.
 
@@ -134,8 +134,6 @@ Die [ **VariableFormattedText** ](https://github.com/xamarin/xamarin-forms-book-
 [![Dreifacher Screenshot der Variable formatierten Absatz](images/ch03fg06-small.png "Variable formatierten Text der Strukturknotenbezeichnung")](images/ch03fg06-large.png#lightbox "Variable formatierten Text der Strukturknotenbezeichnung")
 
 Die [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) Programm verwendet eine einzelne `Label` und `FormattedString` Objekt zum Anzeigen aller dem benannten Schriftgrade für jede Plattform.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

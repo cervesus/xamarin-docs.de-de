@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa50ae16b69436936f0a7a8a5cf0aeaa54dfedfb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290859"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765671"
 ---
 # <a name="objective-sharpie-release-history"></a>Ziel-Sharpie-releaseverlauf
 
@@ -142,4 +142,3 @@ Kleinere Fehlerbehebungen.
 [Download v 1.1.1](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.1.pkg)
 
 1.1.1 war das erste Haupt Release nach 1,5 Jahren interner Verwendung und Entwicklung bei xamarin nach der ersten Vorschau von Ziel-Sharpie im April 2013. Diese Version ist die erste, die allgemein als stabil eingestuft und für eine Vielzahl von nativen Bibliotheken verwendet werden kann, die ein neues clang-Back-End enthalten.
-

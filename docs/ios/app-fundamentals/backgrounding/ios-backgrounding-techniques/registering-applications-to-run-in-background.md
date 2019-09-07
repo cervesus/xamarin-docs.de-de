@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290611"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757690"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Registrieren von xamarin. IOS-apps, die im Hintergrund ausgeführt werden sollen
 
@@ -31,7 +31,6 @@ Registrierte Apps können in verschiedene Kategorien unterteilt werden:
 - **Standort** : Anwendungen, die GPS-oder Netzwerk Speicherort Daten verwenden, können Standort Aktualisierungen im Hintergrund senden und empfangen.
 - **Fetch (IOS 7** und höher): eine Anwendung, die für das Abrufen von Hintergrund Berechtigungen registriert ist, kann in regelmäßigen Abständen einen Anbieter auf neue Inhalte überprüfen. dabei wird dem Benutzer der aktualisierte Inhalt angezeigt, wenn er zur Anwendung zurückkehrt.
 - **Remote Benachrichtigungen (IOS 7** und höher): Anwendungen können sich für den Empfang von Benachrichtigungen von einem Anbieter registrieren und die Benachrichtigung verwenden, um ein Update zu starten, bevor der Benutzer die Anwendung öffnet. Benachrichtigungen können in Form von Pushbenachrichtigungen erfolgen, oder Sie können die Anwendung im Hintergrund aktivieren.
-
 
 Anwendungen können durch Festlegen der Eigenschaft **erforderliche hintergrundmodi** in der Datei " *Info. plist*" der Anwendung registriert werden. Eine Anwendung kann in beliebig vielen Kategorien registriert werden:
 

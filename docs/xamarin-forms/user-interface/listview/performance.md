@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f92a338b58dfb82ff5d442ed856e246f4a8a5a8f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761853"
 ---
 # <a name="listview-performance"></a>ListView-Leistung
 
@@ -181,7 +181,6 @@ Es gibt viele Techniken zum Verbessern der Leistung einer `ListView`:
 `AbsoluteLayout` hat das Potenzial, Layouts, ohne ein einzelnes Measure-Aufruf durchführen. Dies macht es für die Leistung sehr leistungsstark. Wenn `AbsoluteLayout` nicht verwendet haben, sollten Sie [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout). Wenn `RelativeLayout`, die direkte Übergabe der Einschränkungen werden wesentlich schneller als mit dem API-Ausdruck. Der Grund ist der API-Ausdruck verwendet die JIT-Kompilierung, und unter iOS die Struktur besitzt interpretiert werden soll, das langsamer ist. Der Ausdruck API eignet sich für Seitenlayouts, in denen nur erforderlich, es auf das anfängliche Layout sowie die Drehung, aber im `ListView`, bei der Ausführung im Bildlauf, ständig es beeinträchtigt die Leistung.
 
 Erstellen eines benutzerdefinierten Renderers für eine [ `ListView` ](xref:Xamarin.Forms.ListView) oder deren Zellen erreicht werden, indem die Auswirkungen der layoutberechnungen mit bildlaufleistung. Weitere Informationen finden Sie unter [Anpassen einer ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) und [Anpassen einer ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

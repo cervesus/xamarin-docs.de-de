@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 6a5c06d64a06d8b1a7bcbf32e99905494cd06180
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: b750dd4eebb4e181e3a1d3a33c6505bb58b3848b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225491"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757084"
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
-
 
 ## <a name="getting-diagnostic-information"></a>Diagnoseinformationen werden erhalten.
 
@@ -25,7 +24,6 @@ Dazu gehören:
 1. Diagnose MSBuild-Ausgabe.
 2. Geräte Bereitstellungs Protokolle.
 3. Android-Debug-Protokoll Ausgabe.
-
 
 <a name="Diagnostic_MSBuild_Output" />
 
@@ -42,7 +40,6 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio
 5. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
 6. Die Diagnoseausgabe ist im Ausgabebereich sichtbar.
 
-
 So aktivieren Sie die MSBuild-Diagnoseausgabe in Visual Studio für Mac/OS X:
 
 1. Klicken Sie auf **Visual Studio für Mac > Einstellungen...**
@@ -53,9 +50,6 @@ So aktivieren Sie die MSBuild-Diagnoseausgabe in Visual Studio für Mac/OS X:
 6. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
 7. Die Diagnoseausgabe wird im Fehler-Pad angezeigt (**Anzeigen von > Pads > Fehlern** ), indem Sie auf die Schaltfläche Ausgabe erstellen klicken.
 
-
-
-
 ## <a name="device-deployment-logs"></a>Geräte Bereitstellungs Protokolle
 
 So aktivieren Sie die Protokollierung der Geräte Bereitstellung in Visual Studio:
@@ -65,14 +59,10 @@ So aktivieren Sie die Protokollierung der Geräte Bereitstellung in Visual Studi
 3. Aktivieren Sie im rechten Bereich das Kontrollkästchen [X] **Erweiterung Debugprotokollierung (schreibt "monodroid. log" in den Desktop)** .
 4. Protokollmeldungen werden in die Datei "monodroid. log" auf dem Desktop geschrieben.
 
-
 Von Visual Studio für Mac werden immer Geräte Bereitstellungs Protokolle geschrieben. Die Suche ist etwas schwieriger. eine *androidutils* -Protokolldatei wird für jeden Tag und die Uhrzeit der Bereitstellung erstellt, z. b.: **Androidtools-2012-10 -24 _12-35 -45. log**.
 
 - Unter Windows werden Protokolldateien in `%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`geschrieben.
 - Unter OS X werden Protokolldateien in `$HOME/Library/Logs/XamarinStudio-{VERSION}`geschrieben.
-
-
-
 
 ## <a name="android-debug-log-output"></a>Android-Debug-Protokoll Ausgabe
 
@@ -84,8 +74,6 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 ```
 
 System Eigenschaften werden während des Prozess Starts gelesen und müssen daher entweder vor dem Starten der Anwendung festgelegt werden, oder die Anwendung muss neu gestartet werden, nachdem die Systemeigenschaften geändert wurden.
-
-
 
 ### <a name="xamarinandroid-system-properties"></a>Xamarin.Android-Systemeigenschaften
 
@@ -146,7 +134,6 @@ Dieser Fehler tritt aufgrund einer Inkompatibilität mit Visual Studio auf.
 
 Wählen Sie das richtige System. valuetuple-nuget aus, das Ihrer Visual Studio 2017-Installation entspricht.
 
-
 ## <a name="gc-messages"></a>GC-Nachrichten
 
 Die Nachrichten von GC-Komponenten können angezeigt werden, indem die Debug. Mono. Log-System Eigenschaft auf einen Wert festgelegt wird, der GC enthält.
@@ -176,8 +163,6 @@ In der `GC_BRIDGE` Meldung ist `num-objects` die Anzahl von Bridge Objekten, die
 In der `GC_MINOR` - `GC_MAJOR` und der `total` -Nachricht ist die Zeitspanne, in der die Welt angehalten wird (es werden keine Threads `bridge` ausgeführt), während die Zeitspanne ist, die der Verarbeitungs Code der Bridge benötigt (der die Java-VM verarbeitet). Die Welt wird *nicht* angehalten, während die Bridge Verarbeitung stattfindet.
 
  *Im allgemeinen*gilt: je größer der Wert `num_hash_entries`von ist, desto mehr Zeit `bridge` werden die Auflistungen benötigt, und `total` desto größer ist die Zeit, die für das Sammeln aufgewendet wird.
-
-
 
 ## <a name="global-reference-messages"></a>Globale Verweis Nachrichten
 
@@ -219,7 +204,6 @@ Es gibt vier Nachrichten, die Folgen:
 - Globale Verweis Zerstörung: Hierbei handelt es sich um die Zeilen, die mit " *-g* " beginnen, und es kann eine Stapel Überwachung für den Codepfad zur Freigabe des globalen Verweises bereitgestellt werden. Wenn der GC die Gref freigibt, wird keine Stapel Überwachung bereitgestellt.
 - Schwache globale Verweis Erstellung: Hierbei handelt es sich um die Zeilen, die mit *+ w +* beginnen.
 - Schwache globale verweiszerstörung: Hierbei handelt es sich um Zeilen, die mit *-w-* beginnen.
-
 
 In allen Nachrichten ist der *grefc* -Wert die Anzahl der globalen Verweise, die xamarin. Android erstellt hat, während der *grefwc* -Wert die Anzahl der schwachen globalen Verweise ist, die xamarin. Android erstellt hat. Der *handle* *-oder obj-handle-* Wert ist der Wert des jni-Handles, und das */* Zeichen nach ' ' ist der Typ des Handle-Werts: */L* for local Reference, */G* for Global References und */W* for Weak Global References.
 
@@ -268,13 +252,9 @@ Sie können sowohl die Gref-als auch die Wref-Anzahl Abfragen `JniRuntime` , ind
 
 `Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount`-Schwacher Verweis Zähler
 
-
-
 ## <a name="android-debug-logs"></a>Android-Debugprotokolle
 
 Die [Android-Debugprotokolle](~/android/deploy-test/debugging/android-debug-log.md) können zusätzlichen Kontext in Bezug auf Laufzeitfehler enthalten, die angezeigt werden.
-
-
 
 ## <a name="floating-point-performance-is-terrible"></a>Die Gleit Komma Leistung ist schrecklich!
 
@@ -290,16 +270,12 @@ Releasebuilds enthalten nur die Option ABIS, die auf der Registerkarte Projektei
 
 Wenn Ihre APP eine angemessene Gleit Komma Leistung (z. b. Spiele) erfordert, sollten Sie die *ARMEABI-v7a* ABI aktivieren. Möglicherweise möchten Sie nur die " *ARMEABI-v7a* Runtime" unterstützen. Dies bedeutet jedoch, dass ältere Geräte, die nur *ARMEABI* unterstützen, Ihre APP nicht ausführen können.
 
-
-
 ## <a name="could-not-locate-android-sdk"></a>Android SDK wurde nicht gefunden.
 
 In Google sind 2 Downloads für die Android SDK für Windows verfügbar.
 Wenn Sie das exe-Installationsprogramm auswählen, werden die Registrierungsschlüssel geschrieben, die xamarin. Android angeben, wo es installiert wurde. Wenn Sie die ZIP-Datei auswählen und Sie selbst entpacken, weiß xamarin. Android nicht, wo nach dem SDK gesucht werden soll. Sie können xamarin. Android angeben, wo sich das SDK in Visual Studio befindet, indem Sie zu Extras **> Optionen > xamarin > Android-Einstellungen**wechseln:
 
 [![Android SDK Speicherort in den xamarin Android-Einstellungen](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
-
-
 
 ## <a name="ide-does-not-display-target-device"></a>IDE zeigt das Zielgerät nicht an
 
@@ -320,15 +296,13 @@ adb start-server
 
 Die Version von " **ADB Start-Server** " kann durch die Ausführung von HTC synchronisiert werden. Wenn der **ADB-Befehl Start-Server** nicht ausdruckt, auf welchem Port er gestartet wird, beenden Sie die HTC-Synchronisierungs Software, und versuchen Sie, den ADB-Server neu zu starten.
 
-
 ## <a name="the-specified-task-executable-keytool-could-not-be-run"></a>Die angegebene ausführbare Task Datei "keytool" konnte nicht ausgeführt werden.
 
 Dies bedeutet, dass ihr Pfad nicht das Verzeichnis enthält, in dem sich das Verzeichnis "bin" des Java SDK befindet. Überprüfen Sie, ob Sie diese Schritte im [Installations](~/android/get-started/installation/index.md) Handbuch befolgt haben.
 
-
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>"monodroid. exe" oder "aresgen. exe" wurde mit dem Code 1 beendet.
 
-Um dieses Problem zu beheben, navigieren Sie zu Visual Studio, und ändern Sie den ausführlichkeits Grad von MSBuild. Wählen Sie hierzu Folgendes aus: **Tools > Optionen > Projekt und Projekt** Mappen **> Erstellen** und **Ausführen > MSBuild** -Projektbuildausgabe Ausführlichkeit, und legen Sie diesen Wert auf **Normal**fest.
+Um dieses Problem zu beheben, navigieren Sie zu Visual Studio, und ändern Sie den ausführlichkeits Grad von MSBuild. Wählen Sie hierzu Folgendes aus: **Tools > Optionen > Projekt und Projekt** Mappen **> Erstellen** und **Ausführen > MSBuild-Projektbuildausgabe Ausführlichkeit** , und legen Sie diesen Wert auf **Normal**fest.
 
 Erstellen Sie neu, und überprüfen Sie den Ausgabebereich von Visual Studio, der den vollständigen Fehler enthalten sollte.
 
@@ -341,7 +315,6 @@ emulator -partition-size 512 -avd MonoDroid
 ```
 
 Stellen Sie sicher, dass Sie den richtigen simulatornamen verwenden, also [den Namen, den Sie beim Konfigurieren des Simulators verwendet](~/android/get-started/installation/windows.md#device)haben.
-
 
 ## <a name="install_failed_invalid_apk-when-installing-a-package"></a>Bei der Installation\_eines Pakets ist ein\_UngültigesAPK installiert.\_
 
@@ -357,9 +330,6 @@ Android-Paketnamen *müssen* einen Zeitraum (" *.* ") enthalten. Bearbeiten Sie 
   - Navigieren Sie zum Abschnitt Build/Android-Anwendung.
   - Ändern Sie das Feld Paketname so, dass es ein "." enthält.
 
-
-
-
 ## <a name="install_failed_missing_shared_library-when-installing-a-package"></a>Fehler beim Installieren\_von\_\_fehlenden freigegebenen Bibliotheken beim Installieren eines Pakets\_
 
 Eine "freigegebene Bibliothek" in diesem Kontext ist *keine* Native freigegebene Bibliotheksdatei (*libfoo.so*). Es handelt sich vielmehr um eine Bibliothek, die separat auf dem Zielgerät installiert werden muss, z. b. Google Maps.
@@ -370,8 +340,6 @@ Um zu ermitteln, welche freigegebenen Bibliotheken erforderlich sind, zeigen Sie
 Datei "**androidmanifest. XML** " an (z. **b.\\obj Debuggen\\Android\\androidmanifest. XML**) und suchen nach dem `<uses-library/>` -Elemente. `<uses-library/>`Elemente können manuell in den **Eigenschaften\\der Datei "androidmanifest. XML** " des Projekts und über das [benutzerdefinierte Attribut "sereslibraryattribute](xref:Android.App.UsesLibraryAttribute)" hinzugefügt werden.
 
 Wenn Sie z. b. einen Assemblyverweis auf *Mono. Android. GoogleMaps. dll* hinzufügen, wird implizit ein für die frei `<uses-library/>` gegebene Google Maps-Bibliothek hinzugefügt.
-
-
 
 ## <a name="install_failed_update_incompatible-when-installing-a-package"></a>Nicht kompatiblesUpdate\_beim Installieren eines Pakets\_\_
 
@@ -387,7 +355,6 @@ Stellen Sie sich daher Folgendes Szenario vor:
 2. Sie ändern den Signatur Schlüssel, z. b. so, dass er als releaseapp verwendet wird (oder weil Ihnen der standardmäßige debugsignaturschlüssel nicht gefällt).
 3. Sie installieren ihre APP, ohne Sie zuerst zu entfernen, z. b. Debuggen > Starten ohne Debuggen in Visual Studio
 
-
 Wenn dies geschieht, schlägt die Paketinstallation mit dem Fehler\_"\_Fehler\_bei der Installation fehlgeschlagen" fehl, da sich der Paketname nicht geändert hat, während der Signatur Schlüssel nicht geändert wurde Das [Android-Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md) enthält auch eine Meldung ähnlich der folgenden:
 
 ```shell
@@ -395,7 +362,6 @@ E/PackageManager(  146): Package [PackageName] signatures do not match the previ
 ```
 
 Entfernen Sie die Anwendung vor der erneuten Installation vollständig von Ihrem Gerät, um diesen Fehler zu beheben.
-
 
 ## <a name="install_failed_uid_changed-when-installing-a-package"></a>Fehler beim Installieren\_der\_UID bei der Installation eines Pakets.\_
 
@@ -418,8 +384,6 @@ $ adb uninstall @PACKAGE_NAME@
 ```
 
 **nicht verwenden** , da dadurch Anwendungsdaten erhalten bleiben und somit die in Konflikt stehende UID auf dem Zielgerät beibehalten wird. `adb uninstall -k`
-
-
 
 ## <a name="release-apps-fail-to-launch-on-device"></a>Release-Apps können auf dem Gerät nicht gestartet werden.
 
@@ -467,7 +431,6 @@ Starten Sie Visual Studio neu, oder führen Sie Visual Studio für Mac erneut au
 
 Xamarin. Android 4. x lässt die ordnungsgemäße Ausführung von generischen generischen Typen nicht ordnungsgemäß aus. Verwenden Sie beispielsweise den folgenden C\# -Code mit [simpleexpandablelistadapter](xref:Android.Widget.SimpleExpandableListAdapter):
 
-
 ```csharp
 // BAD CODE; DO NOT USE
 var groupData = new List<IDictionary<string, object>> () {
@@ -496,7 +459,6 @@ mAdapter = new SimpleExpandableListAdapter (
         new int[] { Android.Resource.Id.Text1, Android.Resource.Id.Text2 }
 );
 ```
-
 
 Das Problem besteht darin, dass xamarin. Android fälschlicherweise die generischen generischen Typen marsheitet. Das `List<IDictionary<string, object>>` wird an eine [java. lang. arrraylist](xref:Java.Util.ArrayList)gemarshallt, aber das `ArrayList` -Objekt `mono.android.runtime.JavaObject` enthält-Instanzen (die `Dictionary<string, object>` auf die-Instanzen verweisen) anstelle von etwas, das " [java. util. map](xref:Java.Util.IMap)" implementiert. Dies führt zu folgender Ausnahme:
 
@@ -547,7 +509,6 @@ using (var groupData = new JavaList<IDictionary<string, object>> ()) {
 
 [Dies wird in einer zukünftigen Version korrigiert](https://bugzilla.xamarin.com/show_bug.cgi?id=5401).
 
-
 ## <a name="unexpected-nullreferenceexceptions"></a>Unerwartete NullReferenceExceptions
 
 Gelegentlich gibt das [Android-Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md) NullReferenceExceptions &ldquo;an, das&rdquo; nicht vorkommen kann, oder aus Mono für Android-Lauf Zeit Code in Kürze vor dem Ausführen der APP:
@@ -577,7 +538,6 @@ Um zu ermitteln, ob dies der Fall ist, überprüfen Sie das Android-Debugprotoko
 ```shell
 E/dalvikvm(  123): VM aborting
 ```
-
 
 ## <a name="abort-due-to-global-reference-exhaustion"></a>Abbrechen aufgrund der globalen Verweis Erschöpfung
 
@@ -661,13 +621,11 @@ E/dalvikvm(  602): Excessive JNI global references (2001)
 E/dalvikvm(  602): VM aborting
 ```
 
-
 Im obigen Beispiel (das übrigens von [Fehler 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)stammt) liegt das Problem darin, dass zu viele Android. Graphics. Point-Instanzen erstellt werden. eine Liste der Fehlerbehebungen für diesen speziellen Fehler finden Sie in [Kommentar \#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2) .
 
 In der Regel besteht eine sinnvolle Lösung darin, herauszufinden, welcher Typ zu viele &ndash; Instanzen hat Android. Graphics zugeordnet. zeigen Sie &ndash; in der obigen Dumpdatei nach, wo Sie im Quellcode erstellt werden, und löschen Sie Sie entsprechend (damit Ihre Die Java-Objekt Lebensdauer wurde verkürzt.) Dies ist nicht immer angebracht (\#685215 ist multithreaded, sodass die triviale Lösung den Löschvorgang vermeidet), aber es ist das erste zu berücksichtigende.
 
 Sie können die [Gref-Protokollierung](~/android/troubleshooting/index.md) aktivieren, um festzustellen, wann Grefs erstellt werden und wie viele vorhanden sind.
-
 
 ## <a name="abort-due-to-jni-type-mismatch"></a>Abbruch aufgrund von jni-Typen Konflikt
 
@@ -693,7 +651,6 @@ Um C\# Dynamic in Ihrer Anwendung oder Bibliothek zu verwenden, müssen Sie dem 
   - Denken Sie daran, dass dynamischer Code immer Kosten hat. Wenn Sie effizienten Code benötigen, sollten Sie die Verwendung von dynamischem Code in Erwägung gezogen.
 
 - In der ersten Vorschau wurden diese Assemblys ausgeschlossen, es sei denn, die Typen in den einzelnen Assemblys werden explizit vom Anwendungscode verwendet. Im folgenden finden Sie eine Problem Umgehung:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
-
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>Mit AOT + llvm-abstürzen auf x86-Geräten erstellter Projekte
 

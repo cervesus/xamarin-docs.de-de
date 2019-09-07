@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 876379a1d515517054d9e0fa2657e8bc10dc749f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888520"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759544"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in SkiaSharp
 
@@ -157,7 +157,6 @@ Ein `SKPaint` Objekt ist nicht viel mehr als eine Auflistung von Grafiken, die E
 Obwohl die Breite des Kreis Gliederung als 25 Pixel &mdash; oder ein Viertel des Radius des Kreises &mdash; angegeben ist, scheint es dünner zu sein, und es gibt einen guten Grund dafür: Die Hälfte der Linienbreite wird durch den blauen Kreis verdeckt. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
 
 Im folgenden Beispiel in der [Integrieren von Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) Artikel veranschaulicht dies visuell.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

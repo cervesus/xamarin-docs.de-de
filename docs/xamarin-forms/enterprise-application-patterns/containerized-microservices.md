@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 07bb1f7024f3518e0e547563d1bd611b2a37d474
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529164"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760390"
 ---
 # <a name="containerized-microservices"></a>Containermicroservices
 
@@ -149,7 +149,6 @@ Weitere Informationen zur Ereignisbus Implementierung finden [Sie unter .net-mik
 Microservices bieten einen Ansatz für die Anwendungsentwicklung und-Bereitstellung, der sich auf die Flexibilität, Skalierbarkeit und Zuverlässigkeit von modernen cloudanwendungen eignet. Einer der Hauptvorteile von-Webdiensten besteht darin, dass Sie unabhängig voneinander horizontal hochskaliert werden können. Dies bedeutet, dass ein spezifischer Funktionsbereich skaliert werden kann, der eine höhere Verarbeitungsleistung oder Netzwerkbandbreite erfordert, um die Nachfrage zu unterstützen, ohne dass Bereiche von die Anwendung, für die kein erhöhter Bedarf auftritt.
 
 Ein Container ist eine isolierte, Ressourcen gesteuerte und tragbare Betriebsumgebung, in der eine Anwendung ausgeführt werden kann, ohne die Ressourcen anderer Container oder den Host zu berühren. Unternehmen nehmen bei der Implementierung von auf einem Dienst basierenden Anwendungen immer mehr Container in Betrieb, und docker wurde zur Standardcontainer Implementierung, die von den meisten Softwareplattformen und cloudanbietern übernommen wurde.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

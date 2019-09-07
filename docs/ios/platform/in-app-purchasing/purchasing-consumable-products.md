@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: c23515c7fc7a3fef836cba76ec30279c94150da2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f48f84c704fa8ce20ce24dfbfaca2df23a8494eb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281534"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752720"
 ---
 # <a name="purchasing-consumable-products-in-xamarinios"></a>Erwerben von nutzbaren Produkten in xamarin. IOS
 
@@ -41,24 +41,14 @@ Es gibt eine andere Art von Workflow – vom *Server übermittelte Produkte* –
 ## <a name="consumable-products-example"></a>Beispiel für consumier Bare Produkte
 
 Der [inapppurchasesample-Code](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit) enthält ein Projekt mit dem Namen " *Verbrauchsgüter* ", das eine einfache "in-Game"-Währung (als "affgutguthaben" bezeichnet) implementiert. Das Beispiel zeigt, wie zwei in-App-Produkte implementiert werden, um dem Benutzer zu ermöglichen, so viele "affengutschriften" wie gewünscht zu erwerben – in einer realen Anwendung wäre es auch möglich, diese zu verbringen.   
-   
-   
-   
- Die Anwendung wird in diesen Screenshots angezeigt – jeder Kauf fügt dem Benutzer Saldo weitere "affengutschriften" hinzu:   
-   
-   
-   
- [![Durch jeden Kauf werden dem Benutzer Guthaben weitere affengutschriften hinzugefügt.](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
-   
-   
-   
- Die Interaktionen zwischen benutzerdefinierten Klassen, storekit und App Store sehen wie folgt aus:   
-   
-   
-   
- [![Interaktionen zwischen benutzerdefinierten Klassen, storekit und App Store](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
-&nbsp;
+Die Anwendung wird in diesen Screenshots angezeigt – jeder Kauf fügt dem Benutzer Saldo weitere "affengutschriften" hinzu:   
+
+ [![Durch jeden Kauf werden dem Benutzer Guthaben weitere affengutschriften hinzugefügt.](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
+
+Die Interaktionen zwischen benutzerdefinierten Klassen, storekit und App Store sehen wie folgt aus:   
+
+ [![Interaktionen zwischen benutzerdefinierten Klassen, storekit und App Store](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 ### <a name="viewcontroller-methods"></a>ViewController-Methoden
 
@@ -69,10 +59,8 @@ NSObject succeededObserver, failedObserver;
 ```
 
 Der Konstruktor erstellt `SKProductsRequestDelegate` auch die Unterklasse ( `InAppPurchaseManager`), die wiederum den `SKPaymentTransactionObserver` ( `CustomPaymentObserver`) erstellt und registriert.   
-   
-   
-   
- Der erste Teil der Verarbeitung einer in-App-Kauftransaktion besteht darin, den Schaltflächen Druck zu verarbeiten, wenn der Benutzer etwas kaufen möchte, wie im folgenden Code aus der Beispielanwendung gezeigt:
+
+Der erste Teil der Verarbeitung einer in-App-Kauftransaktion besteht darin, den Schaltflächen Druck zu verarbeiten, wenn der Benutzer etwas kaufen möchte, wie im folgenden Code aus der Beispielanwendung gezeigt:
 
 ```csharp
 buy5Button.TouchUpInside += (sender, e) => {
@@ -83,9 +71,7 @@ buy10Button.TouchUpInside += (sender, e) => {
 };
 ```
 
-   
-   
- Der zweite Teil der Benutzeroberfläche ist die Verarbeitung der Benachrichtigung, dass die Transaktion erfolgreich war, in diesem Fall durch Aktualisieren des angezeigten Ausgleichs:
+Der zweite Teil der Benutzeroberfläche ist die Verarbeitung der Benachrichtigung, dass die Transaktion erfolgreich war, in diesem Fall durch Aktualisieren des angezeigten Ausgleichs:
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
@@ -118,10 +104,8 @@ public void PurchaseProduct(string appStoreProductId)
 ```
 
 Das Hinzufügen der Zahlung zur Warteschlange ist ein asynchroner Vorgang. Die Anwendung erhält die Kontrolle, während storekit die Transaktion verarbeitet und an die Server von Apple sendet. An dieser Stelle prüft IOS, ob der Benutzer am App Store angemeldet ist, und fordert ihn ggf. zur Eingabe einer Apple-ID und eines Kennworts auf.   
-   
-   
-   
- Wenn sich der Benutzer erfolgreich mit dem App Store authentifiziert und der Transaktion zustimmt, empfängt `SKPaymentTransactionObserver` die storekit-Antwort und ruft die folgende Methode auf, um die Transaktion zu erfüllen und Sie abzuschließen.
+
+Wenn sich der Benutzer erfolgreich mit dem App Store authentifiziert und der Transaktion zustimmt, empfängt `SKPaymentTransactionObserver` die storekit-Antwort und ruft die folgende Methode auf, um die Transaktion zu erfüllen und Sie abzuschließen.
 
 ```csharp
 public void CompleteTransaction (SKPaymentTransaction transaction)
@@ -250,10 +234,8 @@ Da eine Netzwerkverbindung auf mobilen Geräten flüchtig sein kann, möchten An
 ### <a name="purchase-transactions"></a>Transaktionen kaufen
 
 Die storekit-Zahlungs Warteschlange speichert und weiterleiten Kauf Anforderungen, wenn dies möglich ist, sodass die Auswirkung eines Netzwerkausfalls in Abhängigkeit davon variiert, wann das Netzwerk während des Kaufvorgangs fehlgeschlagen ist.   
-   
-   
-   
- Wenn während einer Transaktion ein Fehler auftritt, wird für `SKPaymentTransactionObserver` die Unterklasse `CustomPaymentObserver`() die `UpdatedTransactions` -Methode aufgerufen, und `SKPaymentTransaction` die-Klasse befindet sich im fehlerhaften Zustand.
+
+Wenn während einer Transaktion ein Fehler auftritt, wird für `SKPaymentTransactionObserver` die Unterklasse `CustomPaymentObserver`() die `UpdatedTransactions` -Methode aufgerufen, und `SKPaymentTransaction` die-Klasse befindet sich im fehlerhaften Zustand.
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -307,14 +289,10 @@ Applications may detect and respond to specific error codes, or handle them in t
 ## <a name="handling-restrictions"></a>Behandeln von Einschränkungen
 
 Mit den **Einstellungen > Feature "allgemeine > Einschränkungen** " von IOS können Benutzer bestimmte Features Ihres Geräts sperren.   
-   
-   
-   
- Sie können Abfragen, ob der Benutzer über die `SKPaymentQueue.CanMakePayments` -Methode in-App-Käufe tätigen darf. Wenn false zurückgegeben wird, kann der Benutzer nicht auf den in-App-Einkauf zugreifen. Storekit zeigt dem Benutzer automatisch eine Fehlermeldung an, wenn versucht wird, einen Kauf auszuführen. Durch die Überprüfung dieses Werts kann die Anwendung stattdessen die Kauf Schaltflächen ausblenden oder andere Aktionen ausführen, um den Benutzer zu unterstützen.   
-   
-   
-   
- In der `InAppPurchaseManager.cs` Datei umschließt die `CanMakePayments` Methode die storekit-Funktion wie folgt:
+
+Sie können Abfragen, ob der Benutzer über die `SKPaymentQueue.CanMakePayments` -Methode in-App-Käufe tätigen darf. Wenn false zurückgegeben wird, kann der Benutzer nicht auf den in-App-Einkauf zugreifen. Storekit zeigt dem Benutzer automatisch eine Fehlermeldung an, wenn versucht wird, einen Kauf auszuführen. Durch die Überprüfung dieses Werts kann die Anwendung stattdessen die Kauf Schaltflächen ausblenden oder andere Aktionen ausführen, um den Benutzer zu unterstützen.   
+
+In der `InAppPurchaseManager.cs` Datei umschließt die `CanMakePayments` Methode die storekit-Funktion wie folgt:
 
 ```csharp
 public bool CanMakePayments()
@@ -324,14 +302,10 @@ public bool CanMakePayments()
 ```
 
 Um diese Methode zu testen, verwenden Sie das Feature " **Einschränkungen** " von IOS, um **in-App-Käufe**zu deaktivieren:   
-   
-   
-   
+
  [![Verwenden des Features "Einschränkungen" von IOS zum Deaktivieren von in-App-Käufen](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
-   
-   
-   
- Dieser Beispielcode von `ConsumableViewController` reagiert auf `CanMakePayments` die Rückgabe von false, indem der **Deaktivierte AppStore** -Text auf den Schaltflächen deaktiviert angezeigt wird
+
+Dieser Beispielcode von `ConsumableViewController` reagiert auf `CanMakePayments` die Rückgabe von false, indem der **Deaktivierte AppStore** -Text auf den Schaltflächen deaktiviert angezeigt wird
 
 ```csharp
 // only if we can make payments, request the prices
@@ -348,21 +322,11 @@ if (iap.CanMakePayments()) {
 ```
 
 Die Anwendung sieht wie folgt aus, wenn die Funktion **in-App-Käufe** eingeschränkt ist – die Schaltflächen für den Einkauf sind deaktiviert.   
-   
-   
-   
+
  [![Die Anwendung sieht wie folgt aus, wenn das Feature in-App-Käufe eingeschränkt ist und die Schaltflächen "kaufen" deaktiviert sind.](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
-   
-   
-   
 
 Produktinformationen können weiterhin angefordert werden, `CanMakePayments` Wenn false ist, sodass die APP weiterhin Preise abrufen und anzeigen kann. Das heißt, wenn wir die `CanMakePayments` Überprüfung aus dem Code entfernt haben, sind die Kauf Schaltflächen weiterhin aktiv. Wenn jedoch ein Kauf Versuch unternommen wird, wird dem Benutzer eine Meldung angezeigt, dass **in-App-Einkäufe nicht zulässig sind** (von storekit generiert, wenn die Zahlungs Warteschlange Zugriff):   
-   
-   
-   
- [![In-App-Käufe sind nicht zulässig.](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
-   
-   
-   
- Reale Anwendungen können einen anderen Ansatz für die Handhabung der Einschränkung treffen, z. b. das Ausblenden der Schaltflächen ganz und möglicherweise eine ausführlichere Meldung als die Warnung, die storekit automatisch anzeigt.
 
+ [![In-App-Käufe sind nicht zulässig.](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+
+Reale Anwendungen können einen anderen Ansatz für die Handhabung der Einschränkung treffen, z. b. das Ausblenden der Schaltflächen ganz und möglicherweise eine ausführlichere Meldung als die Warnung, die storekit automatisch anzeigt.

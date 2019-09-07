@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2a0c21f5a985e7a0bbe5b2afac1520280a0bd5e8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9596ff34352337d892fc22df5651b2f78f8c33f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522130"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762158"
 ---
 # <a name="debug-on-a-wear-device"></a>Debuggen Sie auf einem Wear-Gerät
 
 _In diesem Artikel wird erläutert, wie eine xamarin. Android-Wear-Anwendung auf einem Wear-Gerät debuggt wird._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -29,7 +28,7 @@ Führen Sie die folgenden Schritte aus, um das Debugging auf dem Android Wear-Ge
 
 1. Öffnen Sie das Menü " **Einstellungen** " auf dem Android Wear-Gerät.
 
-2. Scrollen Sie zum unteren Rand des Menüs, undTippen Sie auf Info.
+2. Scrollen Sie zum unteren Rand des Menüs, und **Tippen Sie**auf Info.
 
 3. Tippen Sie auf die Buildnummer 7 Mal.
 
@@ -37,11 +36,9 @@ Führen Sie die folgenden Schritte aus, um das Debugging auf dem Android Wear-Ge
 
 5. Vergewissern Sie sich, dass **ADB-Debugging** aktiviert ist.
 
-
 ## <a name="debugging-over-usb"></a>Debuggen über USB
 
 Wenn Ihr Wear-Gerät über einen USB-Anschluss verfügt, können Sie das Wear-Gerät mit Ihrem Computer verbinden, es darauf bereitstellen und die APP so ausführen/Debuggen, wie Sie ein Android-Telefon verwenden (Weitere Informationen finden Sie unter [Debuggen auf einem Gerät](~/android/deploy-test/debugging/debug-on-device.md)).
-
 
 ## <a name="debugging-over-bluetooth"></a>Debuggen über Bluetooth
 
@@ -121,7 +118,6 @@ Löschen Sie den Screenshot auf dem Gerät, indem Sie den folgenden Befehl einge
 adb -s 127.0.0.1:4444 shell rm /sdcard/DCIM/screencap.png
 ```
 
-
 ### <a name="uninstalling-an-app"></a>Deinstallieren einer APP
 
 Sie können eine APP über das Wear-Gerät deinstallieren, indem Sie den folgenden Befehl eingeben:
@@ -138,7 +134,6 @@ adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
 
 Weitere Informationen zum Debuggen von Android Wear-Geräten über Bluetooth finden Sie unter [Debuggen über Bluetooth](https://developer.android.com/training/wearables/apps/bt-debugging.html).
 
-
 ## <a name="debugging-a-wear-app-with-a-companion-phone-app"></a>Debuggen einer Wear-App mit einer begleitenden Phone-App
 
 Android Wear-apps sind mit einer begleitenden Android Phone-App für die Verteilung auf Google Play verpackt (Weitere Informationen finden Sie unter [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md)Erstellung). Allerdings entwickeln Sie die Wear-APP und die zugehörige Begleit-App weiterhin separat. Wenn Sie Ihre APP über das Google Play Store freigeben, wird die Wear-App mit der begleitenden App verpackt und nach Möglichkeit automatisch installiert.
@@ -153,7 +148,6 @@ So debuggen Sie die Wear-App mit einer begleitenden App:
 
 4. Ausführen und Debuggen der Wear-App auf dem Gerät.
 
- 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie Sie ein Android Wear-Gerät für das Debuggen von Visual Studio über Bluetooth und das Debuggen einer Wear-App mit einer begleitenden Phone-App konfigurieren. Außerdem wurden gängige Debug-Tipps zum Debuggen einer Wear-App über Bluetooth bereitgestellt.

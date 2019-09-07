@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 065c68ce6fbe816e503ace0ab42b3e86aa6916a7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a0ca1aa42d9173abbc86a38ae26b14bfb4865a58
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522830"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764609"
 ---
 # <a name="toolbar"></a>Symbolleiste
 
 _Die Symbolleiste ist eine Aktionsleisten Komponente, die mehr Flexibilität bietet als die Standard Aktionsleiste: Sie kann an beliebiger Stelle in der APP platziert werden, die Größe kann geändert werden, und Sie kann ein Farbschema verwenden, das sich vom Design der APP unterscheidet. Außerdem kann jeder App-Bildschirm über mehrere Symbolleisten verfügen._
 
- 
 ## <a name="overview"></a>Übersicht
 
 Ein wichtiges Entwurfs Element einer Android-Aktivität ist eine *Aktionsleiste*. Die Aktionsleiste ist die Benutzeroberflächen Komponente, die für Navigation, Suche, Menüs und Branding in einer Android-App verwendet wird. In Android-Versionen vor Android 5,0 Lollipop war die Aktionsleiste (auch als *App-Leiste*bezeichnet) die empfohlene Komponente zum Bereitstellen dieser Funktionalität. 
@@ -69,15 +68,10 @@ In diesem Handbuch werden die am häufigsten verwendeten `Toolbar` Szenarien beh
 
 - Verwenden der Bibliothek für die **Android-Unterstützungs Bibliothek V7 AppCompat** (im weiteren Verlauf dieses Handbuchs als *AppCompat* bezeichnet `Toolbar` ) zur Bereitstellung in früheren Versionen von Android. 
 
- 
- 
 ## <a name="requirements"></a>Anforderungen
 
 `Toolbar`ist unter Android 5,0 Lollipop (API 21) und höher verfügbar. Wenn Sie auf Android-Releases vor Android 5,0 abzielen, verwenden Sie die [Android-Unterstützungs Bibliothek V7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/), die `Toolbar` abwärts kompatible Unterstützung in einem nuget-Paket bereitstellt. 
 [Symbolleisten Kompatibilität](~/android/user-interface/controls/tool-bar/toolbar-compatibility.md) erläutert, wie diese Bibliothek verwendet wird. 
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 76a66b4dbde65a3fc44d3490e0147ff66b088466
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ff29b51cec6f612f4dac497e75eddba4dbd4c1e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525965"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754468"
 ---
 # <a name="using-adonet-with-android"></a>Verwenden von ADO.net mit Android
 
@@ -30,7 +30,6 @@ Wenn Sie Access SQLite über ADO.NET verwenden möchten, `System.Data` müssen `
 ![Android-Verweise in Visual Studio für Mac](using-adonet-images/image5.png "Android-Verweise in Visual Studio für Mac") 
 
 -----
-
 
 Klicken Sie mit der rechten Maustaste auf **Verweise > Verweise bearbeiten...** , und wählen Sie dann die erforderlichen Assemblys.
 
@@ -151,7 +150,6 @@ Da SQLite das Ausführen beliebiger SQL-Befehle für die Daten zulässt, können
 
 - **ExecuteScalar** &ndash; Ruft einen einzelnen Wert (z. b. ein Aggregat) ab.
 
-
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
 `INSERT`die Anweisungen, `DELETE` und geben die Anzahl der betroffenen Zeilen zurück. `UPDATE` Alle anderen SQL-Anweisungen geben-1 zurück.
@@ -199,7 +197,6 @@ Die `ExecuteReader`-Methode gibt ein `SqliteDataReader`-Objekt zurück. Neben de
 
 - **HasRows** &ndash; Gibt an, ob Zeilen zurückgegeben wurden.
 
-
 ### <a name="executescalar"></a>EXECUTESCALAR
 
 Verwenden Sie dies `SELECT` für-Anweisungen, die einen einzelnen Wert zurückgeben (z. b. ein Aggregat).
@@ -212,8 +209,6 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 Der `ExecuteScalar` Rückgabetyp der `object` Methode ist &ndash; , dass Sie das Ergebnis in Abhängigkeit von der Datenbankabfrage umwandeln müssen. Das Ergebnis kann eine ganze Zahl aus einer `COUNT` Abfrage oder eine Zeichenfolge aus einer einzelnen `SELECT` Spalten Abfrage sein. Beachten Sie, dass sich dies von `Execute` anderen Methoden unterscheidet, die ein Reader-Objekt oder eine Anzahl der betroffenen Zeilen zurückgeben.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

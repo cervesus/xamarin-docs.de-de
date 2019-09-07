@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 960b4eb058209547c65a3b438bed541c3ade257c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8719d521fe512f348aade0a3d43d2f0b0d3bf0ec
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521267"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755628"
 ---
 # <a name="android-audio"></a>Android-Audiodatei
 
 _Das Android-Betriebssystem bietet umfassende Unterstützung für Multimedia und umfasst sowohl Audioinformationen als auch Videos. Dieser Leitfaden konzentriert sich auf das Audiomaterial in Android und deckt das Abspielen und Aufzeichnen von Audiodaten mithilfe der integrierten Audioplayer-und Recorder-Klassen sowie der Low-Level-audioapi ab. Außerdem wird die Arbeit mit Audioereignissen behandelt, die von anderen Anwendungen gesendet werden, damit Entwickler gut verhaltene Anwendungen entwickeln können._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -33,7 +32,6 @@ Android bietet umfassende Unterstützung für Multimedia. In diesem Artikel wird
 
 4. **Arbeiten mit Low-Level-Audiodaten** Wiedergabe von Audiodaten mithilfe der `AudioTrack` -Klasse durch direktes Schreiben in Speicherpuffer. &ndash; Aufzeichnen von Audiodaten `AudioRecord` mithilfe der-Klasse und Lesen von Speicher Puffern.
 
-
 ## <a name="requirements"></a>Anforderungen
 
 Diese Anleitung erfordert Android 2,0 (API-Ebene 5) oder höher. Beachten Sie, dass das Debuggen von Audiodaten auf Android auf einem Gerät erfolgen muss.
@@ -42,14 +40,10 @@ Es ist erforderlich, die `RECORD_AUDIO` Berechtigungen in " **androidmanifest. X
 
 ![Der Abschnitt "erforderliche Berechtigungen" des Android\_-Manifests mit aktiviertem Datensatz](android-audio-images/image01.png)
 
-
-
 ## <a name="playing-audio-with-the-mediaplayer-class"></a>Wiedergabe von Audiodaten mit der Media Player-Klasse
 
 Die einfachste Möglichkeit zur Wiedergabe von Audiodaten in Android ist die integrierte [Media Player](xref:Android.Media.MediaPlayer) -Klasse.
 `MediaPlayer`kann entweder lokale Dateien oder Remote Dateien wiedergeben, indem der Dateipfad übergeben wird. Ist jedoch `MediaPlayer` sehr Zustands sensibel, und der Aufruf einer der Methoden im falschen Zustand bewirkt, dass eine Ausnahme ausgelöst wird. Es ist wichtig, mit `MediaPlayer` in der unten beschriebenen Reihenfolge zu interagieren, um Fehler zu vermeiden.
-
-
 
 ### <a name="initializing-and-playing"></a>Initialisieren und wiedergeben
 
@@ -62,7 +56,6 @@ Das Abspielen von `MediaPlayer` Audiodaten mit erfordert die folgende Sequenz:
 1. Ruft die [Prepare](xref:Android.Media.MediaPlayer.Prepare) -Methode auf, um den Player zu initialisieren.
 
 1. Ruft die [Start](xref:Android.Media.MediaPlayer.Start) -Methode auf, um die Audiowiedergabe zu starten.
-
 
 Das folgende Codebeispiel veranschaulicht diese Verwendung:
 
@@ -80,7 +73,6 @@ public void StartPlayer(String  filePath)
   }
 }
 ```
-
 
 ### <a name="suspending-and-resuming-playback"></a>Anhalten und Fortsetzen der Wiedergabe
 
@@ -109,12 +101,9 @@ Wenn der Spieler nicht mehr benötigt wird, müssen die Ressourcen freigegeben w
 player.Release();
 ```
 
-
-
 ## <a name="using-the-mediarecorder-class-to-record-audio"></a>Verwenden der mediarecorder-Klasse zum Aufzeichnen von Audiodaten
 
 Die logische Konsequenz `MediaPlayer` für zum Aufzeichnen von Audiodaten in Android ist die [mediarecorder](xref:Android.Media.MediaRecorder) -Klasse. Wie bei `MediaPlayer`ist die Zustands sensitiv und durchlaufen mehrere Zustände, um den Punkt zu erreichen, an dem die Aufzeichnung beginnen kann. Um Audiodaten aufzuzeichnen, muss die `RECORD_AUDIO` Berechtigung festgelegt werden. Anweisungen zum Festlegen von Anwendungs Berechtigungen finden Sie unter [Arbeiten mit "androidmanifest. XML](~/android/platform/android-manifest.md)".
-
 
 ### <a name="initializing-and-recording"></a>Initialisieren und aufzeichnen
 
@@ -133,7 +122,6 @@ Zum Aufzeichnen von Audiodaten mit `MediaRecorder` müssen die folgenden Schritt
 6. Ruft die [Prepare](xref:Android.Media.MediaRecorder.Prepare) -Methode auf, um die Aufzeichnung zu initialisieren.
 
 7. Ruft die [Start](xref:Android.Media.MediaRecorder.Start) Methode auf, um die Aufzeichnung zu starten.
-
 
 Diese Sequenz wird im folgenden Codebeispiel veranschaulicht:
 
@@ -164,7 +152,6 @@ void RecordAudio (String filePath)
 }
 ```
 
-
 ### <a name="stopping-recording"></a>Aufzeichnen wird beendet
 
 Um die Aufzeichnung zu verhindern, müssen `Stop` Sie die- `MediaRecorder`Methode auf dem-
@@ -172,8 +159,6 @@ Um die Aufzeichnung zu verhindern, müssen `Stop` Sie die- `MediaRecorder`Method
 ```csharp
 recorder.Stop();
 ```
-
-
 
 ### <a name="cleaning-up"></a>Bereinigen
 
@@ -189,16 +174,11 @@ Wenn `MediaRecorder` nicht mehr benötigt wird, müssen die zugehörigen Ressour
 recorder.Release();
 ```
 
-
 ## <a name="managing-audio-notifications"></a>Verwalten von Audiobenachrichtigungen
-
-
 
 ### <a name="the-audiomanager-class"></a>Die Audiomanager-Klasse
 
 Die [Audiomanager](xref:Android.Media.AudioManager) -Klasse bietet Zugriff auf Audiobenachrichtigungen, mit denen Anwendungen erkennen können, wann Audioereignisse auftreten. Dieser Dienst bietet auch Zugriff auf andere Audiofeatures, wie z. b. die Steuerung von Volumes und ruftmodus. `AudioManager` Ermöglicht es einer Anwendung, Audiobenachrichtigungen zu verarbeiten, um die Audiowiedergabe zu steuern.
-
-
 
 ### <a name="managing-audio-focus"></a>Verwalten des audiofokus
 
@@ -212,8 +192,6 @@ Der audiofokus kann sofort gewährt werden oder anfänglich verweigert und spät
 
 Weitere Informationen zum audiofokus finden Sie unter [Verwalten des audiofokus](https://developer.android.com/training/managing-audio/audio-focus.html).
 
-
-
 #### <a name="registering-the-callback-for-audio-focus"></a>Registrieren des Rückrufs für den audiofokus
 
 Das Registrieren `FocusChangeListener` des Rückrufs `IOnAudioChangeListener` aus ist ein wichtiger Bestandteil der Beschaffung und Freigabe des audiofokus. Dies liegt daran, dass die Gewährung des audiofokus bis zu einem späteren Zeitpunkt verzögert werden kann. Eine Anwendung kann z. b. die Wiedergabe von Musik anfordern, während ein Telefonanruf ausgeführt wird. Der audiofokus wird erst nach Abschluss des Telefonanrufs erteilt.
@@ -221,8 +199,6 @@ Das Registrieren `FocusChangeListener` des Rückrufs `IOnAudioChangeListener` au
 Aus diesem Grund wird das Rückruf Objekt als Parameter `GetAudioFocus` `AudioManager`an die-Methode von übergeben, und es handelt sich um diesen-Rückruf, der den Rückruf registriert. Wenn der audiofokus anfänglich verweigert, aber später gewährt wird, wird die Anwendung `OnAudioFocusChange` durch Aufrufen von für den Rückruf informiert. Die gleiche Methode wird verwendet, um der Anwendung mitzuteilen, dass der audiofokus entfernt wird.
 
 Wenn die Anwendung die Audioressourcen nicht mehr verwendet, ruft Sie die `AbandonFocus` -Methode `AudioManager`von auf und übergibt erneut den Rückruf. Dadurch wird der Rückruf aufgehoben, und die Audioressourcen werden freigegeben, sodass andere Anwendungen den audiofokus erhalten können.
-
-
 
 #### <a name="requesting-audio-focus"></a>Anfordern des audiofokus
 
@@ -237,7 +213,6 @@ Die erforderlichen Schritte zum Anfordern der Audioressourcen des Geräts lauten
 4. Wenn die Anforderung erteilt wird, wird `playMusic` die-Methode sofort aufgerufen, und die Audiowiedergabe beginnt wieder.
 
 5. Wenn die Anforderung verweigert wird, wird keine weitere Aktion durchgeführt. In diesem Fall wird das Audioformat nur dann wiedergegeben, wenn die Anforderung zu einem späteren Zeitpunkt erteilt wird.
-
 
 Das folgende Codebeispiel zeigt die folgenden Schritte:
 
@@ -257,11 +232,9 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 }
 ```
 
-
 #### <a name="releasing-audio-focus"></a>Freigeben des audiofokus
 
 Wenn die Wiedergabe des Titels beendet ist, wird `AbandonFocus` die- `AudioManager` Methode für aufgerufen. Dadurch kann eine andere Anwendung die Audioressourcen des Geräts erhalten. Andere Anwendungen erhalten eine Benachrichtigung über diese audiofokus Änderung, wenn Sie Ihre eigenen Listener registriert haben.
-
 
 ## <a name="low-level-audio-api"></a>Low-Level-audioapi
 
@@ -273,11 +246,9 @@ Die Low-Level-audioapis bieten eine bessere Kontrolle über das Abspielen und Au
 
 3. Audiostreaming.
 
-
 ### <a name="audiotrack-class"></a>Audiotrack-Klasse
 
 Die [Audiotrack](xref:Android.Media.AudioTrack) -Klasse verwendet die Low-Level-Audio-APIs für die Aufzeichnung und ist die Entsprechung der `MediaPlayer` -Klasse auf niedriger Ebene.
-
 
 #### <a name="initializing-and-playing"></a>Initialisieren und wiedergeben
 
@@ -294,7 +265,6 @@ Zum Abspielen von Audiodaten muss eine neue `AudioTrack` Instanz von instanziier
 5. Puffergröße &ndash; in Bytes.
 
 6. Puffer Modus &ndash; -Streaming oder statisch.
-
 
 Nach der Erstellung wird die [Play](xref:Android.Media.AudioTrack.Play) - `AudioTrack` Methode von aufgerufen, um die Wiedergabe zu starten. Wenn Sie den Audiopuffer in `AudioTrack` schreiben, wird die Wiedergabe gestartet:
 
@@ -320,7 +290,6 @@ void PlayAudioTrack(byte[] audioBuffer)
 }
 ```
 
-
 #### <a name="pausing-and-stopping-the-playback"></a>Anhalten und Beenden der Wiedergabe
 
 Halten Sie die [Pause](xref:Android.Media.AudioTrack.Pause)-Methode an, um die Wiedergabe anzuhalten:
@@ -335,7 +304,6 @@ Durch Aufrufen der Methode " [Beenden](xref:Android.Media.AudioTrack.Stop) " wir
 audioTrack.Stop();
 ```
 
-
 #### <a name="cleanup"></a>Bereinigung
 
 Wenn `AudioTrack` nicht mehr benötigt wird, müssen die zugehörigen Ressourcen durch Aufrufen von [Release](xref:Android.Media.AudioTrack.Release) freigegeben werden:
@@ -344,11 +312,9 @@ Wenn `AudioTrack` nicht mehr benötigt wird, müssen die zugehörigen Ressourcen
 audioTrack.Release();
 ```
 
-
 ### <a name="the-audiorecord-class"></a>Die audiorecord-Klasse
 
 Die [audiorecord](xref:Android.Media.AudioRecord) -Klasse ist die Entsprechung von `AudioTrack` auf der Aufzeichnungs Seite. Ebenso `AudioTrack`werden Speicherpuffer direkt anstelle von Dateien und URIs verwendet. Hierfür ist es erforderlich `RECORD_AUDIO` , dass die Berechtigung im Manifest festgelegt wird.
-
 
 #### <a name="initializing-and-recording"></a>Initialisieren und aufzeichnen
 
@@ -365,7 +331,6 @@ Der erste Schritt besteht darin, ein neues [audiorecord](xref:Android.Media.Audi
 5. 8- &ndash; Bit-oder 16-Bit-Codierung im Audioformat.
 
 6. Puffergröße in Bytes
-
 
 Nachdem der `AudioRecord` erstellt wurde, wird seine [StartRecording](xref:Android.Media.AudioRecord.StartRecording) -Methode aufgerufen. Jetzt kann die Aufzeichnung begonnen werden. Liest `AudioRecord` kontinuierlich den Audiopuffer für die Eingabe und schreibt diese Eingabe in eine Audiodatei.
 
@@ -400,7 +365,6 @@ void RecordAudio()
 }
 ```
 
-
 #### <a name="stopping-the-recording"></a>Beenden der Aufzeichnung
 
 Durch Aufrufen der Methode " [Beenden](xref:Android.Media.AudioRecord.Stop) " wird die Aufzeichnung beendet:
@@ -408,7 +372,6 @@ Durch Aufrufen der Methode " [Beenden](xref:Android.Media.AudioRecord.Stop) " wi
 ```csharp
 audRecorder.Stop();
 ```
-
 
 #### <a name="cleanup"></a>Bereinigung
 
@@ -418,11 +381,9 @@ Wenn das `AudioRecord` Objekt nicht mehr benötigt wird, gibt der Aufruf seiner 
 audRecorder.Release();
 ```
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 Das Android-Betriebssystem bietet ein leistungsfähiges Framework zum Abspielen, aufzeichnen und Verwalten von Audiodaten. In diesem Artikel wurde beschrieben, wie Sie Audiodaten mit den Klassen und `MediaPlayer` `MediaRecorder` auf hoher Ebene abspielen und aufzeichnen. Als nächstes wurde untersucht, wie Audiobenachrichtigungen verwendet werden, um die Audioressourcen des Geräts für verschiedene Anwendungen freizugeben. Schließlich wurde die Wiedergabe und Aufzeichnung von Audiodaten mithilfe der Low-Level-APIs behandelt, die direkt mit Speicher Puffern über eine Schnittstelle verfügen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

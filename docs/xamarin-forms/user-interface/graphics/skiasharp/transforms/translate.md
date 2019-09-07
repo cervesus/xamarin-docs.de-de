@@ -7,12 +7,12 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b4fae33f7de8c6022b2298c462ea510ec8ed623f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6e108852b2978903fb74686ad60cf419bbe4e3c0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657197"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772966"
 ---
 # <a name="the-translate-transform"></a>Die Verschiebungstransformation
 
@@ -302,7 +302,6 @@ Die `PaintSurface` Ereignishandler ruft die `Translate` Methode zweimal, um in d
 [![](translate-images/hendecagramanimation-small.png "Dreifacher Screenshot der Seite Hendecagram Animation")](translate-images/hendecagramanimation-large.png#lightbox "dreifachen Screenshot der Seite Hendecagram-Animation")
 
 Beachten Sie, dass das Sternsymbol dieselbe Ausrichtung verwaltet, wie sie in der Mitte der Seite basiert. Es werden nicht alle drehen. Dies ist ein Auftrag für eine Rotationstransformation.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

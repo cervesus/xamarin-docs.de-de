@@ -7,15 +7,14 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: c75db8bd29b7a57c46610abdd5e4024938fc9e1b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fec6cef22ddbc47aca0027aa026e0524b38bec4e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280329"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768064"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>Arbeiten mit watchos-App-Gruppen in xamarin
-
 
 Durch eine App-Gruppe können unterschiedliche Anwendungen (oder eine Anwendung und ihre Erweiterungen) auf einen freigegebenen Dateispeicherort zugreifen. App-Gruppen können für folgende Daten verwendet werden:
 
@@ -39,14 +38,11 @@ Aktivieren Sie auch das Bereitstellungs Profil, **Aktivieren Sie App-Gruppen** i
 
 [![](app-groups-images/entitlements-sml.png "Plist konfigurieren und die ID eingeben")](app-groups-images/entitlements.png#lightbox)
 
-
 ### <a name="deployment"></a>Bereitstellung
 
 Stellen Sie sicher, dass Sie die APP-Gruppe in der [Bereitstellungs Bereitstellung](~/ios/watchos/deploy-test/index.md#App_Groups) richtig konfigurieren.
 
-
 Weitere Informationen finden Sie unter den [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Dokumentation.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

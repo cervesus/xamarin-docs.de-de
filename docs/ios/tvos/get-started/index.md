@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 0e8e8a119d619faee25a44b0462df4ac08e909b2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ebdbbfd0e8195f35755cb849129452fe40f82950
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291603"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769170"
 ---
 # <a name="getting-started-with-tvos-in-xamarin"></a>Einstieg in tvos in xamarin
 
@@ -25,7 +25,6 @@ Zum Erstellen von tvos-apps mit xamarin installieren Sie die neueste stabile Ver
 ## <a name="hello-tvos-quick-start-guideiostvosget-startedhello-tvosmd"></a>[Hello, tvOS – Kurzanleitung](~/ios/tvos/get-started/hello-tvos.md)
 
 Dieser Artikel bietet einen schnellen Einstieg in die Entwicklung von Apps für tvos durch das Erstellen einer einfachen "Hello, tvos"-App. Es behandelt die Grundlagen der tvos-Geräte Bereitstellung, der Schnittstellen Erstellung, der Codierung für tvos und der Tests sowohl im tvos-Simulator als auch auf der echten tvos-Hardware.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

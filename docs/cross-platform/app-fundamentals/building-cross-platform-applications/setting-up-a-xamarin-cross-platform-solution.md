@@ -6,30 +6,26 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: f8b8f13f323f404554ca73c3e75c23713e0fbe35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288848"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758141"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Teil 3: Einrichten einer plattformübergreifenden xamarin-Lösung
 
 Unabhängig davon, welche Plattformen verwendet werden, verwenden xamarin-Projekte das gleiche projektmappendateiformat (das Visual Studio **. sln** -Dateiformat). Lösungen können in Entwicklungsumgebungen gemeinsam genutzt werden, auch wenn einzelne Projekte nicht geladen werden können (z. b. ein Windows-Projekt in Visual Studio für Mac).
 
-
-
 Beim Erstellen einer neuen plattformübergreifenden Anwendung besteht der erste Schritt darin, eine leere Projekt Mappe zu erstellen. In diesem Abschnitt wird erläutert, was als nächstes geschieht: Einrichten der Projekte zum Entwickeln von plattformübergreifenden mobilen apps.
 
  <a name="Sharing_Code" />
-
 
 ## <a name="sharing-code"></a>Freigeben von Code
 
 Im Dokument [Code Freigabe Optionen](~/cross-platform/app-fundamentals/code-sharing.md) finden Sie eine ausführliche Beschreibung der Implementierung der Code Freigabe auf verschiedenen Plattformen.
 
  <a name="Shared_Asset_Projects" />
-
 
 ### <a name="shared-projects"></a>Freigegebene Projekte
 
@@ -39,7 +35,6 @@ Mit dieser Methode können Sie denselben Code für verschiedene Platt Form Proje
 
  <a name="Portable_Class_Libraries" />
 
-
 ### <a name="portable-class-libraries-pcl"></a>Portable Klassenbibliotheken
 
 In der Vergangenheit wurde eine .net-Projektdatei (und die resultierende Assembly) auf eine bestimmte Framework-Version ausgerichtet. Dadurch wird verhindert, dass das Projekt oder die Assembly von anderen Frameworks gemeinsam verwendet wird.
@@ -48,17 +43,13 @@ Eine portable Klassenbibliothek (Portable Class Library, PCL) ist ein spezieller
 
 Weitere Informationen zur Unterstützung von xamarin finden Sie [Unterstützung für Portable Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md) . Befolgen Sie hierzu die Anweisungen, um zu erfahren, wie das [taskyportable-Beispiel](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable) funktioniert.
 
-
 ### <a name="net-standard"></a>.NET-Standard
 
 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) Projekte wurden in 2016 eingeführt und stellen eine einfache Möglichkeit dar, Code plattformübergreifend freizugeben und Assemblys zu erstellen, die auf Windows-, xamarin-Plattformen (Ios, Android, Mac) und Linux verwendet werden können.
 
 .NET Standard Bibliotheken können wie pcls erstellt und verwendet werden, mit dem Unterschied, dass die in jeder Version verfügbaren APIs (von 1,0 bis 1,6) leichter erkannt werden und jede Version abwärts kompatibel mit niedrigeren Versionsnummern ist.
 
-
-
  <a name="Populating_the_Solution" />
-
 
 ## <a name="populating-the-solution"></a>Auffüllen der Lösung
 
@@ -68,9 +59,7 @@ Der xamarin-Ansatz besteht darin, Code in zwei Projekttypen zu gruppieren:
 - **Kernprojekt** – schreiben Sie wiederverwendbaren Code an einem Ort, der für verschiedene Plattformen freigegeben werden kann. Verwenden Sie die Prinzipien der Kapselung, um die Implementierungsdetails möglichst auszublenden.
 - **Plattformspezifische Anwendungsprojekte** – verwenden Sie den wiederverwendbaren Code mit möglichst geringem Kopplung. Plattformspezifische Features werden auf dieser Ebene hinzugefügt, die auf Komponenten basiert, die im Kernprojekt verfügbar gemacht werden.
 
-
  <a name="Core_Project" />
-
 
 ### <a name="core-project"></a>Core-Projekt
 
@@ -83,9 +72,7 @@ Freigegebene Projekte sollten so viele Funktionen wie möglich implementieren, d
 - **Dienst Zugriffsebene** – eine optionale Ebene zur Bereitstellung von Clouddiensten für die Anwendung. Enthält Code, der auf Remote Netzwerkressourcen zugreift (Webdienste, Image Downloads usw.) und möglicherweise das Zwischenspeichern der Ergebnisse.
 - **Geschäfts Schicht** – Definition der Modellklassen und der Fassaden-oder Manager-Klassen, die Funktionen für die plattformspezifischen Anwendungen verfügbar machen.
 
-
  <a name="Platform-Specific_Application_Projects" />
-
 
 ### <a name="platform-specific-application-projects"></a>Plattformspezifische Anwendungsprojekte
 
@@ -96,9 +83,7 @@ Die plattformspezifischen Projekte sollten Folgendes implementieren:
 - **Anwendungsschicht** – plattformspezifische Funktionalität und Bindung/Konvertierung zwischen den Geschäfts Schicht Objekten und der Benutzeroberfläche.
 - **Benutzeroberflächen Ebene** – Bildschirme, Benutzeroberflächen-Steuerelemente, Darstellung der Validierungs Logik.
 
-
 <a name="Example" />
-
 
 ### <a name="example"></a>Beispiel
 
@@ -110,9 +95,7 @@ Dieser Screenshot zeigt eine projektmappeneinrichtung mit den Projekten Shared C
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Das freigegebene Projekt enthält Code, der sich auf die einzelnen Architektur Ebenen bezieht (Geschäfts-, Dienst-, Daten-und Datenzugriffs Code).")
 
-
  <a name="Project_References" />
-
 
 ## <a name="project-references"></a>Projektverweise
 
@@ -123,16 +106,13 @@ Die Anwendung projiziert jedes freigegebene Verweis Projekt und enthält den Cod
 
 ![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Die Anwendung projiziert, jeden Verweis freigegebenes Projekt") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "die Anwendung projiziert, jeden Verweis freigegebenen Projekts")
 
-
 Bestimmte Beispiele dafür, wie Projekte strukturiert werden sollten, sind in den Fallstudien angegeben.
 
  <a name="Adding_Files" />
 
-
 ## <a name="adding-files"></a>Hinzufügen von Dateien
 
  <a name="Build_Action" />
-
 
 ### <a name="build-action"></a>Buildvorgang
 
@@ -145,11 +125,9 @@ Es ist wichtig, die richtige Build-Aktion für bestimmte Dateitypen festzulegen.
 - **XAML-Dateien in Windows-Projekten** – Buildaktion: Seite
 - **Xamarin. Forms-XAML-Dateien** – Buildaktion: EmbeddedResource
 
-
 Der Dateityp wird in der Regel von der IDE erkannt und die richtige Buildaktion vorgeschlagen.
 
  <a name="Case_Sensitivity" />
-
 
 ### <a name="case-sensitivity"></a>Groß- und Kleinschreibung
 

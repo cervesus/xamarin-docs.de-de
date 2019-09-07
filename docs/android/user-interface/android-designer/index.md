@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 94f5dd206fb4794d1cdd71792418a2b4a2278c80
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 176037db501c2577775bdfb817fea01f16a02242
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523143"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761642"
 ---
 # <a name="xamarinandroid-designer"></a>Xamarin. Android Designer
 
 _In diesem Artikel werden die Funktionen von xamarin. Android Designer beschrieben. Es werden die Grundlagen des Designers erläutert, die veranschaulichen, wie der Designer zum visuellen Anordnen von Widgets und Bearbeiten von Eigenschaften verwendet wird. Außerdem wird veranschaulicht, wie der-Designer verwendet wird, um mit Benutzeroberflächen und Ressourcen über verschiedene Konfigurationen hinweg zu arbeiten, wie z. b. Designs, Sprachen und Geräte Konfigurationen, und wie Sie für alternative Ansichten wie z. b. Querformat und Hochformat entwerfen._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -36,8 +35,6 @@ In diesem Artikel werden die zahlreichen Features von xamarin. Android Designer 
 8. Behandeln von Konflikten, die beim Arbeiten mit alternativen Sichten auftreten können. 
 9. Verwenden von Material Entwurfs Tools zum Erstellen von Material Design-kompatiblen apps
 
-
-
 ## <a name="sections"></a>Abschnitte
 
  [Verwenden von Android Designer](~/android/user-interface/android-designer/designer-walkthrough.md)
@@ -50,14 +47,10 @@ In diesem Artikel werden die zahlreichen Features von xamarin. Android Designer 
 
  [Material Design-Features](~/android/user-interface/android-designer/material-design-features.md)
 
-
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde der Funktions Satz von xamarin. Android Designer erläutert.
 Es wurde gezeigt, wie Sie mit dem Designer loslegen und seine verschiedenen Teile erläutern. Es wurde beschrieben, wie Sie ein Layout laden sowie Widgets hinzufügen und ändern, indem Sie sowohl die **Designer Oberfläche** als auch die **Quell** Ansicht verwenden. Außerdem wurde erläutert, wie Sie mit verschiedenen Ressourcen und Geräte Konfigurationen arbeiten. Schließlich wurde untersucht, wie der Designer zum Entwickeln von Benutzeroberflächen verwendet werden kann, die speziell für alternative Sichten erstellt wurden, z. b. Querformat und Hochformat, und wie Konflikte gelöst werden können, die zwischen diesen Ansichten auftreten können.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: d85c199f6243fc49c1ca924bbd60cfef48b6d91f
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 190e38e525288dbc2b7f6bd9e785c723c80c6271
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120006"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762229"
 ---
 # <a name="setup-and-installation"></a>Setup und Installation
 
@@ -45,7 +45,6 @@ Nachdem Sie xamarin. Android installiert haben, führen Sie die folgenden Schrit
 
 Diese Schritte werden in den folgenden Abschnitten beschrieben.
 
-
 ### <a name="install-android-sdk-and-tools"></a>Installieren von Android SDK und Tools 
 
 Starten Sie den **Android SDK-Manager**: 
@@ -59,7 +58,6 @@ Starten Sie den **Android SDK-Manager**:
 ![Starten des Android SDK-Managers in Visual Studio für Mac](installation-images/xs/sdk-menu.png)
 
 -----
-
 
 Stellen Sie sicher, dass Sie die folgenden Android SDK und Tools installiert haben:
 
@@ -79,11 +77,9 @@ Wenn Sie nicht über das aktuellste SDK und die neuesten Tools verfügen, laden 
 
 -----
 
-
 ## <a name="configuration"></a>Konfiguration
 
 Bevor Sie den Test Ihrer APP verwenden können, müssen Sie einen Android-Wear-Emulator oder ein tatsächliches Android Wear-Gerät konfigurieren. 
-
 
 ### <a name="android-wear-emulator"></a>Android-Wear-Emulator
 
@@ -101,16 +97,13 @@ Bevor Sie einen Android-Wear-Emulator verwenden können, müssen Sie ein Android
 
 Weitere Informationen zum Einrichten eines Android-Wear-Emulators finden Sie unter [Debuggen von Android Wear in einem Emulator](~/android/wear/deploy-test/debug-on-emulator.md).
 
-
 ### <a name="android-wear-device"></a>Android Wear-Gerät
 
 Wenn Sie über ein Android Wear-Gerät wie z. b. eine Android Wear-Smartwatch verfügen, können Sie die APP auf diesem Gerät Debuggen, anstatt einen Emulator zu verwenden. Informationen zum Entwickeln mit einem Wear-Gerät finden Sie unter [Debuggen auf einem Wear-Gerät](~/android/wear/deploy-test/debug-on-device.md).
 
-
 ## <a name="create-your-first-android-wear-app"></a>Erstellen Ihrer ersten Android Wear-App
 
 Befolgen Sie die Anweisungen [Hello, Wear,](~/android/wear/get-started/hello-wear.md) um Ihre erste Watch-APP zu erstellen.
-
 
 ## <a name="packaging-your-app"></a>Verpacken der APP
 
@@ -119,7 +112,6 @@ Android Wear-Anwendungen werden immer mit einer begleitenden Android Phone-App v
 Wenn Sie Ihre Android Wear-Anwendung als Verweis auf Ihre Haupt-Android-Anwendung hinzufügen, wird davon ausgegangen, dass es sich um ein Android Wear-Projekt handelt, und es werden alle notwendigen XML-und Metadaten für Sie generiert. Außerdem wird überprüft, ob die Paket-und Versionsnummern stimmen, sodass Sie Ihre apps problemlos an Google Play senden können. 
 
 Weitere Informationen zum Verpacken von Wear-apps finden Sie unter [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md)Erstellung.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

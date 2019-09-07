@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: a43a2ed4498be76a99ab4b6b54d3048f2f80af5c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 107fcd39a64ef1d7758d211ab47a07e1ece52f4e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887654"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757236"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>Wie kann ich die Android-Unterstützungsbibliotheken, die für die Xamarin.Android.Support-Pakete erforderlich sind, manuell installieren?
 
@@ -127,7 +127,6 @@ Die Versionsnummer für das Unterverzeichnis (in diesem Beispiel**23.4.0.0** ) s
 
 -----
 
-
 ## <a name="additional-references"></a>Weitere Verweise
 
 - [Fehler 43245](https://bugzilla.xamarin.com/show_bug.cgi?id=43245) – ungenau "der Download ist fehlgeschlagen. Laden Sie {0} es herunter, und fügen {1} Sie es in das Verzeichnis ein. " und "Bitte installieren Sie das Paket{0}: '", das im SDK-Installer verfügbar ist "Fehlermeldungen im Zusammenhang mit xamarin. Android. Support-Paketen
@@ -137,4 +136,3 @@ Die Versionsnummer für das Unterverzeichnis (in diesem Beispiel**23.4.0.0** ) s
 In diesem Dokument wird das aktuelle Verhalten im August 2016 erläutert. Das in diesem Dokument beschriebene Verfahren ist nicht Teil der stabilen Testsuite für xamarin, sodass es in Zukunft unterbrechen kann.
 
 Weitere Unterstützung erhalten Sie bei der Kontaktaufnahme mit uns, oder wenn das Problem weiterhin besteht, auch nachdem Sie die oben genannten Informationen genutzt haben, finden Sie [unter welche Supportoptionen für xamarin verfügbar sind?](~/cross-platform/troubleshooting/support-options.md) Informationen zu Kontaktoptionen, Vorschlägen und wie Sie bei Bedarf einen neuen Fehler melden. .
-

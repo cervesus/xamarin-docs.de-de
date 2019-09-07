@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 638840bafd43961cdce6ebe0fa2fb6cbe8b33e16
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 960be485f6997ed8c861d47181fa89397cff9c0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291522"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753147"
 ---
 # <a name="eventkit-in-xamarinios"></a>Eventkit in xamarin. IOS
 
@@ -24,7 +24,6 @@ In dieser Anleitung wird Folgendes behandelt:
 
 - **Eventkit-Grundlagen** – dadurch werden die grundlegenden Teile von eventkit über die wichtigsten Klassen eingeführt, und es wird ein Verständnis ihrer Verwendung bereitstellt. Dieser Abschnitt muss gelesen werden, bevor der nächste Teil des Dokuments angegangen wird. 
 - **Allgemeine Aufgaben** – der Abschnitt "allgemeine Aufgaben" soll eine kurze Referenz zum Ausführen allgemeiner Aufgaben sein, z. b.: Auflisten von Kalendern, erstellen, speichern und Abrufen von Kalender Ereignissen und-Erinnerungen sowie die Verwendung der integrierten Controller zum Erstellen und Ändern von Kalender Ereignissen. Dieser Abschnitt muss nicht vorab gelesen werden, da er als Referenz für bestimmte Aufgaben dienen soll. 
-
 
 Alle Aufgaben in diesem Handbuch sind in der begleitenden Beispielanwendung verfügbar:
 
@@ -376,7 +375,6 @@ App.Current.EventStore.FetchReminders (
 ## <a name="summary"></a>Zusammenfassung
 
 Dieses Dokument hat eine Übersicht über die wichtigsten Bestandteile des eventkit-Frameworks und eine Reihe der gängigsten Aufgaben erhalten. Das eventkit-Framework ist jedoch sehr groß und leistungsstark und umfasst Features, die hier nicht vorgestellt wurden, wie z. b. Batch Updates, das Konfigurieren von Alarmen, das Konfigurieren von Wiederholungs Ereignissen, das registrieren und lauschen auf Änderungen in der Kalender Datenbank. Festlegen von geozäunen und mehr.  Weitere Informationen finden Sie im [Programmier Handbuch für Kalender und Erinnerungen](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)von Apple.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

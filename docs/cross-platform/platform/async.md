@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90c391f79d7aa0ffdee0072c84cbdba0c504d551
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b88d6c33671f36d2d4106f45a267322320639c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280630"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765326"
 ---
 # <a name="async-support-overview"></a>Async Support Overview (Übersicht über die asynchrone Unterstützung)
 
@@ -124,7 +124,6 @@ Beachten Sie die folgenden Punkte:
 - Der Rückgabetyp ist `Task<int>` , sodass der Aufruf `int` Code auf den Wert zugreifen kann, der in dieser Methode berechnet wird.
 - Die Return-Anweisung `return exampleInt;` ist ein ganzzahliges Objekt – die Tatsache, dass die `Task<int>` Methode zurückgibt, ist Teil der Verbesserungen der Sprache.
 
-
 ### <a name="calling-an-async-method-1"></a>Aufrufen einer Async-Methode 1
 
 Dieser Click-Ereignishandler für die Schaltfläche befindet sich in der Android-Beispielanwendung, um die oben beschriebene Methode aufzurufen:
@@ -153,7 +152,6 @@ Notizen:
 - Der Code wartet auf die sizetask-Variable.  *Dies* ist der Speicherort, an dem die Methode angehalten und die Steuerung an den aufrufenden Code zurückgegeben wird, bis die asynchrone Aufgabe in einem eigenen Thread abgeschlossen ist.
 - Die Ausführung wird *nicht* angehalten, wenn die Aufgabe in der ersten Zeile der-Methode erstellt wird, trotz der Aufgabe, die dort erstellt wird. Das Erwartungs Wort erwartet gibt den Speicherort an, an dem die Ausführung angehalten wird.
 - Wenn die asynchrone Aufgabe abgeschlossen ist, wird "intresult" festgelegt, und die Ausführung wird im ursprünglichen Thread von der Warteschlange fortgesetzt.
-
 
 ### <a name="calling-an-async-method-2"></a>Aufrufen einer Async-Methode 2
 
@@ -185,14 +183,11 @@ Einige wichtige Punkte:
 - Der Code `await` für die `DownloadHomepage` Methode wird direkt für eine Zuweisung zu einer Variablen ( `intResult` ) im Gegensatz zum vorherigen Beispiel verwendet, bei dem `Task<int>` eine zwischen Variable verwendet wurde, um auf die Aufgabe zu verweisen.  *Dies* ist der Speicherort, an den die Steuerung an den Aufrufer zurückgegeben wird, bis die asynchrone Methode in einem anderen Thread abgeschlossen wurde.
 - Wenn die asynchrone Methode abgeschlossen und zurückgegeben wird, wird die Ausführung `await` bei der fortgesetzt, was bedeutet, dass das ganz Zahl Ergebnis zurückgegeben und dann in einem UI-Widget gerendert
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 Die Verwendung von "Async" und "warten" vereinfacht den Code, der erforderlich ist, um Vorgänge mit langer Ausführungsdauer für Hintergrundthreads zu erzeugen, ohne den Außerdem erleichtern Sie den Zugriff auf die Ergebnisse, wenn die Aufgabe abgeschlossen ist.
 
 Dieses Dokument enthält eine Übersicht über die neuen sprach Schlüsselwörter und Beispiele für xamarin. IOS und xamarin. Android.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 19998f685955ce118ffe37e7624fd43b082ab994
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0d5cde38c9bb9ef4771ec17ef34ebf7e1b8cf74c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644419"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755514"
 ---
 # <a name="local-notifications-on-android"></a>Lokale Benachrichtigungen unter Android
 
@@ -30,9 +30,9 @@ Um Details zu der Benachrichtigung zu erhalten, kann der Benutzer die Benachrich
 
 Für Android-Benachrichtigungen werden zwei Arten von Layouts verwendet:
 
--   ***Basis Layout*** &ndash; ein kompaktes, festes Präsentationsformat.
+- ***Basis Layout*** &ndash; ein kompaktes, festes Präsentationsformat.
 
--   ***Erweitertes Layout*** &ndash; ein Darstellungsformat, das auf eine größere Größe erweitert werden kann, um weitere Informationen anzuzeigen.
+- ***Erweitertes Layout*** &ndash; ein Darstellungsformat, das auf eine größere Größe erweitert werden kann, um weitere Informationen anzuzeigen.
 
 Die einzelnen Layouttypen (und deren Erstellung) werden in den folgenden Abschnitten erläutert.
 
@@ -43,13 +43,13 @@ Die einzelnen Layouttypen (und deren Erstellung) werden in den folgenden Abschni
 
 Alle Android-Benachrichtigungen basieren auf dem basislayoutformat, das mindestens die folgenden Elemente enthält:
 
-1.  Ein *Benachrichtigungssymbol*, das die ursprüngliche APP darstellt, oder der Benachrichtigungstyp, wenn die APP verschiedene Benachrichtigungs Typen unterstützt.
+1. Ein *Benachrichtigungssymbol*, das die ursprüngliche APP darstellt, oder der Benachrichtigungstyp, wenn die APP verschiedene Benachrichtigungs Typen unterstützt.
 
-2.  Der Benachrichtigungs *Titel*oder der Name des Absenders, wenn es sich bei der Benachrichtigung um eine persönliche Nachricht handelt.
+2. Der Benachrichtigungs *Titel*oder der Name des Absenders, wenn es sich bei der Benachrichtigung um eine persönliche Nachricht handelt.
 
-3.  Die Benachrichtigungs Meldung.
+3. Die Benachrichtigungs Meldung.
 
-4.  Ein *Zeitstempel*.
+4. Ein *Zeitstempel*.
 
 Diese Elemente werden wie in der folgenden Abbildung dargestellt angezeigt:
 
@@ -75,15 +75,14 @@ Heads-up-Benachrichtigungen ermöglichen es der Benutzeroberfläche des Systems,
 
 Android bietet Unterstützung für Benachrichtigungs Metadaten, sodass Benachrichtigungen Intelligent sortiert und angezeigt werden können. Benachrichtigungs Metadaten Steuern auch, wie Benachrichtigungen auf dem Sperrbildschirm und im Heads-up-Format angezeigt werden. Anwendungen können die folgenden Typen von Benachrichtigungs Metadaten festlegen:
 
--   **Priorität** &ndash; Die Prioritätsstufe bestimmt, wie und wann Benachrichtigungen angezeigt werden. Beispielsweise werden in Android 5,0 Benachrichtigungen mit hoher Priorität als Heads-up-Benachrichtigungen angezeigt.
+- **Priorität** &ndash; Die Prioritätsstufe bestimmt, wie und wann Benachrichtigungen angezeigt werden. Beispielsweise werden in Android 5,0 Benachrichtigungen mit hoher Priorität als Heads-up-Benachrichtigungen angezeigt.
 
--   **Sichtbarkeit** &ndash; Gibt an, wie viel Benachrichtigungs Inhalt angezeigt werden soll, wenn die Benachrichtigung auf dem Sperrbildschirm angezeigt wird.
+- **Sichtbarkeit** &ndash; Gibt an, wie viel Benachrichtigungs Inhalt angezeigt werden soll, wenn die Benachrichtigung auf dem Sperrbildschirm angezeigt wird.
 
--   **Kategorie** Informiert das System darüber, wie die Benachrichtigung in verschiedenen Fällen behandelt werden soll, z. b. wenn sich das Gerät im Modus " *nicht stören* " befindet. &ndash;
+- **Kategorie** Informiert das System darüber, wie die Benachrichtigung in verschiedenen Fällen behandelt werden soll, z. b. wenn sich das Gerät im Modus " *nicht stören* " befindet. &ndash;
 
 > [!NOTE]
 > **Sichtbarkeit** und **Kategorie** wurden in Android 5,0 eingeführt und sind in früheren Versionen von Android nicht verfügbar. Ab Android 8,0 werden [Benachrichtigungs Kanäle](#notif-chan) verwendet, um zu steuern, wie Benachrichtigungen für den Benutzer angezeigt werden.
-
 
 ### <a name="expanded-layouts"></a>Erweiterte Layouts
 
@@ -97,11 +96,11 @@ Wenn diese Benachrichtigung erweitert wird, wird die gesamte Meldung angezeigt:
 
 Android unterstützt drei erweiterte Layoutstile für Benachrichtigungen mit nur einem Ereignis:
 
--   ***Big Text*** &ndash; Im Modus "vertraglich" wird ein Auszug der ersten Zeile der Nachricht angezeigt, gefolgt von zwei Zeiträumen. Im erweiterten Modus zeigt die gesamte Meldung an (wie im obigen Beispiel gezeigt).
+- ***Big Text*** &ndash; Im Modus "vertraglich" wird ein Auszug der ersten Zeile der Nachricht angezeigt, gefolgt von zwei Zeiträumen. Im erweiterten Modus zeigt die gesamte Meldung an (wie im obigen Beispiel gezeigt).
 
--   ***Posteingang*** &ndash; Im Modus "vertraglich" wird die Anzahl der neuen Nachrichten angezeigt. Im erweiterten Modus wird die erste e-Mail-Nachricht oder eine Liste der Nachrichten im Posteingang angezeigt.
+- ***Posteingang*** &ndash; Im Modus "vertraglich" wird die Anzahl der neuen Nachrichten angezeigt. Im erweiterten Modus wird die erste e-Mail-Nachricht oder eine Liste der Nachrichten im Posteingang angezeigt.
 
--   ***Bild*** &ndash; Im Modus "vertraglich" wird nur der Meldungs Text angezeigt. Im erweiterten Modus zeigt den Text und ein Bild an.
+- ***Bild*** &ndash; Im Modus "vertraglich" wird nur der Meldungs Text angezeigt. Im erweiterten Modus zeigt den Text und ein Bild an.
 
 [Über die grundlegende Benachrichtigung hinaus](#beyond-the-basic-notification) (weiter unten in diesem Artikel) wird erläutert, wie *Big Text*-, *Posteingang*-und *Bild* Benachrichtigungen erstellt werden.
 
@@ -121,15 +120,15 @@ Jede dieser Kategorien entspricht einem Benachrichtigungs Kanal. Die YouTube-App
 
 In diesem Bildschirm kann der Benutzer das Verhalten des Kanals zum **herunterladen** von Benachrichtigungen wie folgt ändern:
 
--   Legen Sie die Wichtigkeits Stufe auf " **dringend**", " **hoch**", " **Mittel**" oder " **niedrig**" fest, um die Ebene der Sound-und visuelle Unterbrechung
+- Legen Sie die Wichtigkeits Stufe auf " **dringend**", " **hoch**", " **Mittel**" oder " **niedrig**" fest, um die Ebene der Sound-und visuelle Unterbrechung
 
--   Aktivieren oder deaktivieren Sie den Benachrichtigungs Punkt.
+- Aktivieren oder deaktivieren Sie den Benachrichtigungs Punkt.
 
--   Aktivieren oder deaktivieren Sie die blinkende Beleuchtung.
+- Aktivieren oder deaktivieren Sie die blinkende Beleuchtung.
 
--   Anzeigen oder Ausblenden von Benachrichtigungen auf dem Sperrbildschirm
+- Anzeigen oder Ausblenden von Benachrichtigungen auf dem Sperrbildschirm
 
--   Überschreiben **Sie** die Einstellung nicht stören.
+- Überschreiben **Sie** die Einstellung nicht stören.
 
 Der Kanal für **Allgemeine Benachrichtigungen** weist ähnliche Einstellungen auf:
 
@@ -144,19 +143,19 @@ Um eine Benachrichtigung in Android zu erstellen, verwenden Sie die [notificatio
 
 `NotificationCompat.Builder`bietet Methoden zum Festlegen der verschiedenen Optionen in einer Benachrichtigung, z. b.:
 
--   Der Inhalt, einschließlich Titel, Nachrichtentext und Benachrichtigungssymbol.
+- Der Inhalt, einschließlich Titel, Nachrichtentext und Benachrichtigungssymbol.
 
--   Der Stil der Benachrichtigung, z. b. *Big Text* *,* Eingangsbox oder *Bildstil* .
+- Der Stil der Benachrichtigung, z. b. *Big Text*, Eingangsbox oder *Bildstil* .
 
--   Die Priorität der Benachrichtigung: minimal, niedrig, Standard, hoch oder Maximum. Unter Android 8,0 und höher wird die Priorität über einen [_Benachrichtigungs Kanal_](#notification-channels)festgelegt.
+- Die Priorität der Benachrichtigung: minimal, niedrig, Standard, hoch oder Maximum. Unter Android 8,0 und höher wird die Priorität über einen [_Benachrichtigungs Kanal_](#notification-channels)festgelegt.
 
--   Die Sichtbarkeit der Benachrichtigung auf dem Sperrbildschirm: öffentlich, privat oder Geheimnis.
+- Die Sichtbarkeit der Benachrichtigung auf dem Sperrbildschirm: öffentlich, privat oder Geheimnis.
 
--   Kategorieinformationen, die Android beim klassifizieren und Filtern der Benachrichtigung unterstützen.
+- Kategorieinformationen, die Android beim klassifizieren und Filtern der Benachrichtigung unterstützen.
 
--   Eine optionale Absicht, die eine Aktivität angibt, die beim Tippen der Benachrichtigung gestartet werden soll.
+- Eine optionale Absicht, die eine Aktivität angibt, die beim Tippen der Benachrichtigung gestartet werden soll.
 
--   Die ID des Benachrichtigungs Kanals, auf dem die Benachrichtigung veröffentlicht wird (Android 8,0 und höher).
+- Die ID des Benachrichtigungs Kanals, auf dem die Benachrichtigung veröffentlicht wird (Android 8,0 und höher).
 
 Nachdem Sie diese Optionen im Generator festgelegt haben, generieren Sie ein Benachrichtigungs Objekt, das die Einstellungen enthält. Zum Veröffentlichen der Benachrichtigung übergeben Sie dieses Benachrichtigungs Objekt an den *Benachrichtigungs-Manager*. Android stellt die [notificationmanager](xref:Android.App.NotificationManager) -Klasse zur Verfügung, die für das Veröffentlichen von Benachrichtigungen und das Anzeigen der Benachrichtigungen für den Benutzer zuständig ist. Ein Verweis auf diese Klasse kann aus jedem Kontext abgerufen werden, z. b. einer Aktivität oder einem Dienst.
 
@@ -200,21 +199,21 @@ Der Benachrichtigungs Kanal sollte jedes Mal erstellt werden, wenn die Aktivitä
 
 Führen Sie die folgenden Schritte aus, um eine Benachrichtigung in Android zu generieren:
 
-1.  Instanziieren Sie `NotificationCompat.Builder` ein-Objekt.
+1. Instanziieren Sie `NotificationCompat.Builder` ein-Objekt.
 
-2.  Ruft verschiedene Methoden für das `NotificationCompat.Builder` -Objekt auf, um Benachrichtigungs Optionen festzulegen.
+2. Ruft verschiedene Methoden für das `NotificationCompat.Builder` -Objekt auf, um Benachrichtigungs Optionen festzulegen.
 
-3.  Ruft die [Build](xref:Android.App.Notification.Builder.Build) -Methode des `NotificationCompat.Builder` -Objekts auf, um ein Benachrichtigungs Objekt zu instanziieren.
+3. Ruft die [Build](xref:Android.App.Notification.Builder.Build) -Methode des `NotificationCompat.Builder` -Objekts auf, um ein Benachrichtigungs Objekt zu instanziieren.
 
-4.  Ruft die [Benachrichtigungs Methode des](xref:Android.App.NotificationManager.Notify*) Benachrichtigungs-Managers auf, um die Benachrichtigung zu veröffentlichen.
+4. Ruft die [Benachrichtigungs Methode des](xref:Android.App.NotificationManager.Notify*) Benachrichtigungs-Managers auf, um die Benachrichtigung zu veröffentlichen.
 
 Sie müssen mindestens die folgenden Informationen für jede Benachrichtigung angeben:
 
--   Ein kleines Symbol (24x24 DP in Größe)
+- Ein kleines Symbol (24x24 DP in Größe)
 
--   Ein Kurztitel
+- Ein Kurztitel
 
--   Der Text der Benachrichtigung.
+- Der Text der Benachrichtigung.
 
 Im folgenden Codebeispiel wird veranschaulicht, wie `NotificationCompat.Builder` verwendet wird, um eine grundlegende Benachrichtigung zu generieren. Beachten Sie `NotificationCompat.Builder` , dass Methoden das [Verketten](https://en.wikipedia.org/wiki/Method_chaining)von Methoden unterstützen, d. h. jede Methode gibt das Generator Objekt zurück, sodass Sie das Ergebnis des letzten Methoden Aufrufs verwenden können, um den nächsten Methodenaufruf aufzurufen:
 
@@ -321,14 +320,13 @@ Der Text der vorherigen Benachrichtigung wird nur dann &ndash; wieder verwendet,
 
 Eine Benachrichtigung bleibt sichtbar, bis eines von drei Dingen geschieht:
 
--   Der Benutzer lehnt die Benachrichtigung ab (oder tippt auf *Alle löschen*).
+- Der Benutzer lehnt die Benachrichtigung ab (oder tippt auf *Alle löschen*).
 
--   Die Anwendung ruft an `NotificationManager.Cancel`und übergibt dabei die eindeutige Benachrichtigungs-ID, die beim Veröffentlichen der Benachrichtigung zugewiesen wurde.
+- Die Anwendung ruft an `NotificationManager.Cancel`und übergibt dabei die eindeutige Benachrichtigungs-ID, die beim Veröffentlichen der Benachrichtigung zugewiesen wurde.
 
--   Die Anwendung ruft `NotificationManager.CancelAll`auf.
+- Die Anwendung ruft `NotificationManager.CancelAll`auf.
 
 Weitere Informationen zum Aktualisieren von Android-Benachrichtigungen finden Sie unter [Ändern einer Benachrichtigung](https://developer.android.com/training/notify-user/managing.html#Updating).
-
 
 ### <a name="starting-an-activity-from-a-notification"></a>Starten einer Aktivität über eine Benachrichtigung
 
@@ -501,7 +499,7 @@ In diesem Beispiel werden der Meldungs Text und der Zusammenfassungs Text im `Bi
 
 ### <a name="image-style"></a>Bildstil
 
-Der *Bildstil* (auch als *großer Bildstil* bezeichnet) ist ein erweitertes Benachrichtigungs Format, das Sie verwenden können, um ein Bild im Text einer Benachrichtigung anzuzeigen. Beispielsweise kann eine Bildschirm-APP oder eine Foto-APP den *Bild* Benachrichtigungs Stil verwenden, um dem Benutzer eine Benachrichtigung über das zuletzt erfasste Bild bereitzustellen. Beachten Sie, dass die maximale Höhe der Abbild Benachrichtigung 256 &ndash; ist, dass DP Android die Größe des Bilds in die Größenbeschränkung der maximalen Höhe innerhalb der Grenzen des verfügbaren Arbeitsspeichers einfügt.
+Der *Bildstil* (auch als *großer Bildstil* bezeichnet) ist ein erweitertes Benachrichtigungs Format, das Sie verwenden können, um ein Bild im Text einer Benachrichtigung anzuzeigen. Beispielsweise kann eine Bildschirm-APP oder eine Foto-APP den *Bild* Benachrichtigungs Stil verwenden, um dem Benutzer eine Benachrichtigung über das zuletzt erfasste Bild bereitzustellen. Beachten Sie, dass die maximale Höhe der *Abbild* Benachrichtigung 256 &ndash; ist, dass DP Android die Größe des Bilds in die Größenbeschränkung der maximalen Höhe innerhalb der Grenzen des verfügbaren Arbeitsspeichers einfügt.
 
 Wie alle erweiterten layoutbenachrichtigungen werden *Bild* Benachrichtigungen zuerst in einem kompakten Format angezeigt, das einen Auszug aus dem zugehörigen Meldungs Text anzeigt:
 
@@ -564,7 +562,7 @@ Weitere Informationen zum Laden und Decodieren von großen Bitmap-Bildern finden
 
 ### <a name="inbox-style"></a>Posteingangs Stil
 
-Das Eingangsbox *Format ist* eine erweiterte Layoutvorlage, die zum Anzeigen von separaten Textzeilen (z. b. eine Zusammenfassung der e-Mail-Eingangsbox) im Text Die Format Benachrichtigung für den *Posteingang* wird zuerst in einem kompakten Format angezeigt:
+Das Eingangsbox Format ist eine erweiterte Layoutvorlage *, die zum* Anzeigen von separaten Textzeilen (z. b. eine Zusammenfassung der e-Mail-Eingangsbox) im Text Die Format Benachrichtigung für den *Posteingang* wird zuerst in einem kompakten Format angezeigt:
 
 ![Beispiel Benachrichtigung über Compact Inbox](local-notifications-images/20-inbox-compact.png)
 
@@ -572,7 +570,7 @@ Wenn der Benutzer die Benachrichtigung abzieht, wird er erweitert, um eine e-Mai
 
 ![Beispiel für erweiterte Posteingangs Benachrichtigung](local-notifications-images/21-inbox-expanded.png)
 
-Um eine Posteingangs Benachrichtigung zu erstellen, instanziieren `NotificationCompat.Builder` Sie ein-Objekt wie zuvor, und fügen Sie dem `NotificationCompat.Builder`ein [inboxstyle](xref:Android.App.Notification.InboxStyle) -Objekt hinzu. Im Folgenden ein Beispiel:
+Um eine *Posteingangs* Benachrichtigung zu erstellen, instanziieren `NotificationCompat.Builder` Sie ein-Objekt wie zuvor, und fügen Sie dem `NotificationCompat.Builder`ein [inboxstyle](xref:Android.App.Notification.InboxStyle) -Objekt hinzu. Im Folgenden ein Beispiel:
 
 ```csharp
 // Instantiate the Inbox style:
@@ -592,9 +590,9 @@ inboxStyle.SetSummaryText ("+2 more");
 builder.SetStyle (inboxStyle);
 ```
 
-Um dem Benachrichtigungs Text neue Textzeilen hinzuzufügen, müssen Sie die [AddLine](xref:Android.App.Notification.InboxStyle.AddLine*) -Methode `InboxStyle` des-Objekts (die maximale Höhe der *Posteingang* Benachrichtigung ist 256 DP) aufzurufen. Beachten Sie, *dass der* Eingangsbox Stil im Gegensatz zum *groß Text* Stil einzelne Textzeilen im Benachrichtigungs Text unterstützt.
+Um dem Benachrichtigungs Text neue Textzeilen hinzuzufügen, müssen Sie die [AddLine](xref:Android.App.Notification.InboxStyle.AddLine*) -Methode `InboxStyle` des-Objekts (die maximale Höhe der *Posteingang* Benachrichtigung ist 256 DP) aufzurufen. Beachten Sie, dass der Eingangsbox Stil im Gegensatz zum *groß Text* *Stil einzelne* Textzeilen im Benachrichtigungs Text unterstützt.
 
-Sie können auch den *Posteingangs* Stil für jede Benachrichtigung verwenden, die einzelne Textzeilen in einem erweiterten Format anzeigen muss. Beispielsweise *kann der Benachrichtigungs* Stil für die Eingangsbox verwendet werden, um mehrere ausstehende &ndash; Benachrichtigungen in einer Zusammenfassungs Benachrichtigung zu kombinieren. Sie können eine einzelne *Posteingang* -Benachrichtigungs Benachrichtigung mit neuen Benachrichtigungs Inhalt [Aktualisieren Aktualisieren einer obigen Benachrichtigung](#updating-a-notification) ), anstatt einen kontinuierlichen Stream neuer, größtenteils ähnlicher Benachrichtigungen zu generieren.
+Sie können auch den *Posteingangs* Stil für jede Benachrichtigung verwenden, die einzelne Textzeilen in einem erweiterten Format anzeigen muss. Beispielsweise kann der Benachrichtigungs Stil für die Eingangsbox verwendet werden, um mehrere ausstehende &ndash; Benachrichtigungen in einer Zusammenfassungs Benachrichtigung zu kombinieren. Sie können eine einzelne *Posteingang* *-Benachrichtigungs* Benachrichtigung mit neuen Benachrichtigungs Inhalt [Aktualisieren Aktualisieren einer obigen Benachrichtigung](#updating-a-notification) ), anstatt einen kontinuierlichen Stream neuer, größtenteils ähnlicher Benachrichtigungen zu generieren.
 
 ## <a name="configuring-metadata"></a>Konfigurieren von Metadaten
 
@@ -604,22 +602,22 @@ Sie können auch den *Posteingangs* Stil für jede Benachrichtigung verwenden, d
 
 Apps, die unter Android 7,1 und niedriger ausgeführt werden, müssen die Priorität direkt auf die Benachrichtigung festlegen. Die Prioritäts Einstellung einer Benachrichtigung bestimmt zwei Ergebnisse, wenn die Benachrichtigung veröffentlicht wird:
 
--   Gibt an, wo die Benachrichtigung in Bezug auf andere Benachrichtigungen angezeigt wird.
+- Gibt an, wo die Benachrichtigung in Bezug auf andere Benachrichtigungen angezeigt wird.
     Beispielsweise werden Benachrichtigungen mit hoher Priorität in der Benachrichtigungsleiste oberhalb der Benachrichtigungen mit niedrigerer Priorität angezeigt, unabhängig davon, wann die einzelnen Benachrichtigungen veröffentlicht wurden.
 
--   Gibt an, ob die Benachrichtigung im Heads-up-Benachrichtigungs Format (Android 5,0 und höher) angezeigt wird. Nur Warnungen für *hohe* und *Maximale* Priorität werden als Heads-up-Benachrichtigungen angezeigt.
+- Gibt an, ob die Benachrichtigung im Heads-up-Benachrichtigungs Format (Android 5,0 und höher) angezeigt wird. Nur Warnungen für *hohe* und *Maximale* Priorität werden als Heads-up-Benachrichtigungen angezeigt.
 
 Xamarin. Android definiert die folgenden Enumerationen zum Festlegen der Benachrichtigungs Priorität:
 
--   `NotificationPriority.Max`&ndash; Benachrichtigt den Benutzer auf eine dringende oder eine kritische Bedingung (z. b. einen eingehenden oder ein-und ausschalten oder eine Notfall Warnung). Auf Geräten mit Android 5,0 und höher werden Benachrichtigungen mit maximaler Priorität im Heads-up-Format angezeigt.
+- `NotificationPriority.Max`&ndash; Benachrichtigt den Benutzer auf eine dringende oder eine kritische Bedingung (z. b. einen eingehenden oder ein-und ausschalten oder eine Notfall Warnung). Auf Geräten mit Android 5,0 und höher werden Benachrichtigungen mit maximaler Priorität im Heads-up-Format angezeigt.
 
--   `NotificationPriority.High`&ndash; Informiert den Benutzer über wichtige Ereignisse (z. b. wichtige e-Mails oder die Ankunft von Echt Zeit Chat Nachrichten). Auf Geräten mit Android 5,0 und höher werden Benachrichtigungen mit hoher Priorität im Heads-up-Format angezeigt.
+- `NotificationPriority.High`&ndash; Informiert den Benutzer über wichtige Ereignisse (z. b. wichtige e-Mails oder die Ankunft von Echt Zeit Chat Nachrichten). Auf Geräten mit Android 5,0 und höher werden Benachrichtigungen mit hoher Priorität im Heads-up-Format angezeigt.
 
--   `NotificationPriority.Default`&ndash; Benachrichtigt den Benutzer über Bedingungen mit einer mittleren Wichtigkeit.
+- `NotificationPriority.Default`&ndash; Benachrichtigt den Benutzer über Bedingungen mit einer mittleren Wichtigkeit.
 
--   `NotificationPriority.Low`&ndash; Für nicht dringende Informationen, über die der Benutzer informiert werden muss (z. b. Software Update Erinnerungen oder Updates von sozialen Netzwerken).
+- `NotificationPriority.Low`&ndash; Für nicht dringende Informationen, über die der Benutzer informiert werden muss (z. b. Software Update Erinnerungen oder Updates von sozialen Netzwerken).
 
--   `NotificationPriority.Min`&ndash; Hintergrundinformationen, die der Benutzer nur beim Anzeigen von Benachrichtigungen bemerkt (z. b. Speicherort-oder Wetterinformationen).
+- `NotificationPriority.Min`&ndash; Hintergrundinformationen, die der Benutzer nur beim Anzeigen von Benachrichtigungen bemerkt (z. b. Speicherort-oder Wetterinformationen).
 
 Um die Priorität einer Benachrichtigung festzulegen, müssen Sie die [SetPriority](xref:Android.App.Notification.Builder.SetPriority*) -Methode `NotificationCompat.Builder` des-Objekts aufrufen, indem Sie die Prioritätsstufe übergeben. Beispiel:
 
@@ -649,11 +647,11 @@ Da es sich bei der Benachrichtigung für den Tag um eine Benachrichtigung mit ni
 Ab Android 5,0 ist die *Sichtbarkeits* Einstellung verfügbar, um zu steuern, wie viel Benachrichtigungs Inhalt auf dem sicheren Sperrbildschirm angezeigt wird.
 Xamarin. Android definiert die folgenden Enumerationen zum Festlegen der Sichtbarkeit von Benachrichtigungen:
 
--   `NotificationVisibility.Public`&ndash; Der vollständige Inhalt der Benachrichtigung wird auf dem Bildschirm sichere Sperre angezeigt.
+- `NotificationVisibility.Public`&ndash; Der vollständige Inhalt der Benachrichtigung wird auf dem Bildschirm sichere Sperre angezeigt.
 
--   `NotificationVisibility.Private`&ndash; Auf dem sicheren Sperrbildschirm werden nur wichtige Informationen angezeigt (z. b. das Benachrichtigungssymbol und der Name der APP, von der das Symbol gepostet wurde), die restlichen Details der Benachrichtigung werden jedoch ausgeblendet. Alle Benachrichtigungen werden Standard `NotificationVisibility.Private`mäßig auf eingestellt.
+- `NotificationVisibility.Private`&ndash; Auf dem sicheren Sperrbildschirm werden nur wichtige Informationen angezeigt (z. b. das Benachrichtigungssymbol und der Name der APP, von der das Symbol gepostet wurde), die restlichen Details der Benachrichtigung werden jedoch ausgeblendet. Alle Benachrichtigungen werden Standard `NotificationVisibility.Private`mäßig auf eingestellt.
 
--   `NotificationVisibility.Secret`&ndash; Auf dem sicheren Sperrbildschirm wird nichts angezeigt, nicht sogar das Benachrichtigungssymbol. Der Benachrichtigungs Inhalt ist erst verfügbar, nachdem der Benutzer das Gerät entsperrt hat.
+- `NotificationVisibility.Secret`&ndash; Auf dem sicheren Sperrbildschirm wird nichts angezeigt, nicht sogar das Benachrichtigungssymbol. Der Benachrichtigungs Inhalt ist erst verfügbar, nachdem der Benutzer das Gerät entsperrt hat.
 
 Um die Sichtbarkeit einer Benachrichtigung festzulegen, wird die `SetVisibility` -Methode `NotificationCompat.Builder` des-Objekts von apps aufgerufen, und die Sichtbarkeits Einstellung wird übergeben. Beispielsweise wird mit `SetVisibility` dem folgenden Befehl die Benachrichtigung `Private`erstellt:
 
@@ -671,33 +669,33 @@ In diesem Beispiel ist **notificationslab** der Name der ursprünglichen app. Di
 
 Ab Android 5,0 sind vordefinierte Kategorien für das Anordnen und Filtern von Benachrichtigungen verfügbar. Xamarin. Android stellt die folgenden Enumerationen für diese Kategorien bereit:
 
--   `Notification.CategoryCall`&ndash; Eingehender Telefonanruf.
+- `Notification.CategoryCall`&ndash; Eingehender Telefonanruf.
 
--   `Notification.CategoryMessage`&ndash; Eingehende Textnachricht.
+- `Notification.CategoryMessage`&ndash; Eingehende Textnachricht.
 
--   `Notification.CategoryAlarm`&ndash; Eine Alarmbedingung oder ein Timer-Ablauf.
+- `Notification.CategoryAlarm`&ndash; Eine Alarmbedingung oder ein Timer-Ablauf.
 
--   `Notification.CategoryEmail`&ndash; Eingehende e-Mail-Nachricht
+- `Notification.CategoryEmail`&ndash; Eingehende e-Mail-Nachricht
 
--   `Notification.CategoryEvent`&ndash; Ein Kalenderereignis.
+- `Notification.CategoryEvent`&ndash; Ein Kalenderereignis.
 
--   `Notification.CategoryPromo`&ndash; Eine Werbe Meldung oder eine Werbung.
+- `Notification.CategoryPromo`&ndash; Eine Werbe Meldung oder eine Werbung.
 
--   `Notification.CategoryProgress`&ndash; Der Fortschritt eines Hintergrund Vorgangs.
+- `Notification.CategoryProgress`&ndash; Der Fortschritt eines Hintergrund Vorgangs.
 
--   `Notification.CategorySocial`&ndash; Aktualisierung des sozialen Netzwerks.
+- `Notification.CategorySocial`&ndash; Aktualisierung des sozialen Netzwerks.
 
--   `Notification.CategoryError`&ndash; Fehler bei einem Hintergrund Vorgang oder Authentifizierungs Vorgang.
+- `Notification.CategoryError`&ndash; Fehler bei einem Hintergrund Vorgang oder Authentifizierungs Vorgang.
 
--   `Notification.CategoryTransport`&ndash; Update der Medienwiedergabe.
+- `Notification.CategoryTransport`&ndash; Update der Medienwiedergabe.
 
--   `Notification.CategorySystem`&ndash; Reserviert für die Verwendung durch das System (System-oder Gerätestatus).
+- `Notification.CategorySystem`&ndash; Reserviert für die Verwendung durch das System (System-oder Gerätestatus).
 
--   `Notification.CategoryService`&ndash; Gibt an, dass ein Hintergrunddienst ausgeführt wird.
+- `Notification.CategoryService`&ndash; Gibt an, dass ein Hintergrunddienst ausgeführt wird.
 
--   `Notification.CategoryRecommendation`&ndash; Eine Empfehlungs Nachricht, die sich auf die aktuell laufende App bezieht.
+- `Notification.CategoryRecommendation`&ndash; Eine Empfehlungs Nachricht, die sich auf die aktuell laufende App bezieht.
 
--   `Notification.CategoryStatus`&ndash; Informationen zum Gerät.
+- `Notification.CategoryStatus`&ndash; Informationen zum Gerät.
 
 Wenn Benachrichtigungen sortiert werden, hat die Priorität der Benachrichtigung Vorrang vor der Einstellung ihrer Kategorie. Beispielsweise wird eine Benachrichtigung mit hoher Priorität als Heads-up angezeigt, auch wenn Sie zur `Promo` Kategorie gehört. Um die Kategorie einer Benachrichtigung festzulegen, wird die `SetCategory` -Methode `NotificationCompat.Builder` des-Objekts aufgerufen, und die-Kategorieeinstellung wird übergeben. Beispiel:
 
@@ -752,7 +750,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie lokale Benachrichtigungen in Android erstellt werden. Es wurde beschrieben, wie eine Benachrichtigung erstellt wurde, und es wurde `NotificationCompat.Builder` erläutert, wie zum Erstellen von Benachrichtigungen verwendet wird, wie Benachrichtigungen in großen Symbolen, in *Big Text* *-,* *Bild* -und Eingangsbox Formaten und Einstellungen für Benachrichtigungs Metadaten festgelegt werden. Beispiele: Priorität, Sichtbarkeit und Kategorie sowie das Starten einer Aktivität aus einer Benachrichtigung. Außerdem wurde in diesem Artikel beschrieben, wie diese Benachrichtigungseinstellungen mit den neuen Köpfen, dem Sperrbildschirm und den in Android 5,0 eingeführten Features *nicht gestört* werden. Schließlich haben Sie erfahren, wie Sie `NotificationCompat.Builder` verwenden, um die Benachrichtigungs Kompatibilität mit früheren Versionen von Android aufrechtzuerhalten.
+In diesem Artikel wurde erläutert, wie lokale Benachrichtigungen in Android erstellt werden. Es wurde beschrieben, wie eine Benachrichtigung erstellt wurde, und es wurde `NotificationCompat.Builder` erläutert, wie zum Erstellen von Benachrichtigungen verwendet wird, wie Benachrichtigungen in großen Symbolen, in Big Text *-,* *Bild* -und Eingangsbox Formaten und Einstellungen für Benachrichtigungs Metadaten festgelegt werden. Beispiele: Priorität, Sichtbarkeit und Kategorie sowie das Starten einer Aktivität aus einer Benachrichtigung. Außerdem wurde in diesem Artikel beschrieben, wie diese Benachrichtigungseinstellungen mit den neuen Köpfen, dem Sperrbildschirm und den in Android 5,0 eingeführten Features *nicht gestört* werden. Schließlich haben Sie erfahren, wie Sie `NotificationCompat.Builder` verwenden, um die Benachrichtigungs Kompatibilität mit früheren Versionen von Android aufrechtzuerhalten.
 
 Richtlinien zum Entwerfen von Benachrichtigungen für Android finden Sie unter [Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 

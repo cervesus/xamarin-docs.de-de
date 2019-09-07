@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b15b39460b40bc2c9f993b3b0d9bca3275ac7644
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d391c57c2c63cd4e371bd97ba455962aa053f9ed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286802"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767350"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Alternative App-Symbole in xamarin. IOS
 
@@ -169,8 +169,6 @@ Wenn der Benutzer wieder zum primären Symbol wechselt, wird eine Warnung wie di
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Hinzufügen alternativer App-Symbole zu einem xamarin. IOS-Projekt und deren Verwendung in der APP behandelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

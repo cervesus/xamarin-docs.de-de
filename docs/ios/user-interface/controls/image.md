@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 191d037d12d27e2c6ab475467853023f440c71d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291365"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768987"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Anzeigen von Bildern mit xamarin. IOS
 
@@ -50,7 +50,6 @@ Dateien, die im **Ressourcen** Verzeichnis abgelegt werden, werden von reguläre
 
 - Speichern der in den Eigenschaften der Anwendung konfigurierten Images, z. b. der standardmäßigen Start Abbilder und Anwendungs Symbole.
 - Speichern von anderen Bildern und Dateien getrennt vom Code, sodass Sie einfacher zu verwalten sind (Unterverzeichnisse bleiben erhalten, wenn der Inhalt des Ressourcen Verzeichnisses kopiert wird).
-
 
 Das **Ressourcen** Verzeichnis ist besonders nützlich in einem Bibliotheksprojekt, da der Code davon ausgehen kann, dass diese Bilder in den Stamm der konsumierenden Anwendung kopiert werden, sodass freigegebene Codebibliotheken, die Bild-, Sound-, Video-, XML-oder andere Dateien.
 

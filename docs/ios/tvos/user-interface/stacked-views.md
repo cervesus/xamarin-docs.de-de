@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: a48e7bd780783a7b33008a5d86011f5497b042d5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 194f1a260adc49083a8d4365a310447acbcc96f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287972"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769022"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Arbeiten mit gestapelten Ansichten von tvos in xamarin
 
@@ -74,9 +74,6 @@ Wenn die `BaselineRelativeArrangement` -Eigenschaft `true`auf festgelegt ist, we
 
 > [!IMPORTANT]
 > Die Baseline-Ausrichtung funktioniert nicht bei gestreckten oder komprimierten untergeordneten Ansichts Größen, da die Baseline an die falsche Position berechnet wird. Stellen Sie bei der Baseline-Ausrichtung sicher, dass die **Höhe** der unter Ansicht mit der **Höhe**der intrinsischen Inhaltsansicht übereinstimmt.
-
-
-
 
 <a name="Common-Stack-View-Uses" />
 
@@ -309,8 +306,6 @@ Viele der Eigenschaften der Stapel Ansicht können mithilfe von Größenklassen 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit der gestapelten Ansicht in einer xamarin. tvos-App behandelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

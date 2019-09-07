@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 25. Seitenvarianten
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 25. Seitenvarianten'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 25. Seitenvarianten'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db6c329c029f52180fe508f277a1cf4834ab493a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b86f2d7216a6344b14fc4d8c538ea68871eda5ae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331810"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760533"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Zusammenfassung der Kapitel 25. Seitenvarianten
 
@@ -111,8 +111,6 @@ Die [ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/t
 Die [ **MultiTabbedColor** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors) -Beispiel verwendet die [ `NamedColor` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek. Die [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml) legt die `DataTemplate` Eigenschaft `TabbedPage` in eine visuelle Struktur, beginnend mit `ContentPage` , enthält die Bindung an Eigenschaften des `NamedColor` (einschließlich einer Bindung an die `Title` Eigenschaft).
 
 Dies ist jedoch problematisch für iOS. Nur einige der Elemente angezeigt werden können, und es ist keine gute Möglichkeit, diese Symbole geben.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

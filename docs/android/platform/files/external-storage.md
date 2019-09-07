@@ -1,136 +1,133 @@
 ---
-title: Dateizugriff auf externen speichern, die mit Xamarin.Android
-description: Diesem Leitfaden wird Zugriff auf Dateien auf externen speichern, die in Xamarin.Android erläutert werden.
+title: Dateizugriff auf externen Speicher mit xamarin. Android
+description: In diesem Leitfaden wird der Dateizugriff auf externen Speicher in xamarin. Android erörtert.
 ms.prod: xamarin
 ms.assetid: 40da10b2-a207-4f9c-a2dd-165d9b662f33
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e30f726cfb783fc47bc09f7590a523eb0e487105
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953223"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756520"
 ---
-# <a name="external-storage"></a>Externen Speicher
+# <a name="external-storage"></a>Externer Speicher
 
-Externer Speicher bezieht sich auf Dateispeicher, der nicht auf den internen Speicher und nicht ausschließlich für die app, die verantwortlich für die Datei ist zugänglich. Der primäre Zweck von externen Speicher ist, geben Sie einen Ort zum Speichern von Dateien, die von den apps gemeinsam verwendet werden sollen, oder sind zu groß für den internen Speicher.
+Externer Speicher bezieht sich auf Dateispeicher, der sich nicht im internen Speicher befindet und nicht ausschließlich für die APP zugänglich ist, die für die Datei verantwortlich ist. Der primäre Zweck von externem Speicher ist die Bereitstellung von Dateien, die für die gemeinsame Nutzung von apps verwendet werden sollen oder die zu groß für den internen Speicher sind.
 
-In der Vergangenheit gesehen, externe Speicher bezeichnet wird, auf einer Datenträgerpartition auf Wechselmedien wie SD-Karten (auch bekannt als wurde _tragbares Speichergerät_). Diese Unterscheidung ist nicht mehr so relevant wie Android-Geräte entwickelt haben, und viele Android-Geräte nicht mehr Speicherplatz auf Wechselmedien unterstützen. Stattdessen werden einige Geräte einige ihrer internen nicht flüchtigen Speicher welche Android zum Ausführen der gleichen Funktion Wechselmedien zugeordnet. Dies bezeichnet man als _emulierten_ Speicher und ist weiterhin externen Speicher sein. Alternativ können Sie möglicherweise einige Android-Geräte über mehrere externen Speicher-Partitionen verfügen. Z. B. Android Tablet (zusätzlich zu seinen internen Speicher) möglicherweise emulierte Speicher haben und eine oder mehrere Slots für SD-Karten. Alle diese Partitionen werden von Android als externen Speicher behandelt.
+In der Vergangenheit hat externer Speicher auf Wechselmedien wie z. b. eine SD-Karte (auch als _portabler Speicher_bezeichnet) eine Datenträger Partition bezeichnet. Dieser Unterschied ist nicht mehr so relevant, wie sich Android-Geräte entwickelt haben, und viele Android-Geräte unterstützen keine Wechselmedien mehr. Stattdessen weisen einige Geräte Ihren internen, nicht flüchtigen Speicher zu, der Android die gleichen Funktions Wechselmedien ausführt. Dies wird als _emulierten_ Speicher bezeichnet und wird weiterhin als externer Speicher betrachtet. Alternativ können einige Android-Geräte über mehrere externe Speicher Partitionen verfügen. Beispielsweise verfügt ein Android-Tablet (zusätzlich zum internen Speicher) möglicherweise über emulierten Speicher und einen oder mehrere Slots für eine SD-Karte. Alle diese Partitionen werden von Android als externer Speicher behandelt.
 
-Auf Geräten, die mehrere Benutzer haben, wird jeder Benutzer über ein dediziertes Verzeichnis für die Partition primären externen Speicher für ihren externen Speicher verfügen. Apps, die als ein Benutzer haben keinen Zugriff auf Dateien von einem anderen Benutzer auf dem Gerät. Die Dateien für alle Benutzer sind weiterhin Welt lesbar und Welt beschreibbare; Allerdings Android wird Sandbox jedes Benutzerprofil von den anderen.
+Auf Geräten mit mehreren Benutzern erhält jeder Benutzer ein dediziertes Verzeichnis auf der primären externen Speicher Partition für den externen Speicher. Apps, die als ein Benutzer ausgeführt werden, haben keinen Zugriff auf Dateien von einem anderen Benutzer auf dem Gerät. Die Dateien für alle Benutzer sind nach wie vor weltweit lesbar und weltweit beschreibbar. Allerdings werden von Android alle Benutzerprofile von den anderen Benutzern in der Sandbox angezeigt.
 
-Lesen und Schreiben in Dateien ist fast identisch in Xamarin.Android, wie an eine beliebige andere .NET-Anwendung. Die Xamarin.Android-app bestimmt den Pfad zur Datei, die bearbeitet wird, klicken Sie dann verwendet standard .NET Ausdrücke für den Dateizugriff. Da die eigentlichen Pfade in den internen und externen Speicher nach Gerät variieren und von Android-Version auf Android-Version wird nicht durch hartcodierung der Pfad zu den Dateien empfohlen. Stattdessen stellt Xamarin.Android die native Android-APIs, mit deren Hilfe wird, um zu bestimmen, den Pfad zu Dateien im internen und externen Speicher.
+Das Lesen und Schreiben in Dateien ist nahezu identisch mit xamarin. Android, wie es bei jeder anderen .NET-Anwendung der Fall ist. Die xamarin. Android-App bestimmt den Pfad zu der Datei, die bearbeitet wird, und verwendet dann die standardmäßige .net-Ausdrücke für den Dateizugriff. Da sich die tatsächlichen Pfade zum internen und externen Speicher von Gerät zu Gerät oder von Android-Version zu Android-Version unterscheiden können, empfiehlt es sich nicht, den Pfad zu den Dateien hart zu codieren. Stattdessen stellt xamarin. Android die nativen Android-APIs zur Verfügung, die bei der Ermittlung des Pfads zu Dateien im internen und externen Speicher helfen.
 
-Dieses Handbuch wird erläutert, die Konzepte und -APIs in Android, die in einem externen Speicher spezifisch sind.
+In diesem Handbuch werden die Konzepte und APIs in Android erläutert, die für den externen Speicher spezifisch sind.
 
-## <a name="public-and-private-files-on-external-storage"></a>Dateien mit öffentlichen und privaten auf externen Speichern
+## <a name="public-and-private-files-on-external-storage"></a>Öffentliche und private Dateien im externen Speicher
 
-Es gibt zwei verschiedene Arten von Dateien, die eine app auf dem externen Speicher beibehalten kann:
+Es gibt zwei verschiedene Typen von Dateien, die eine APP im externen Speicher aufbewahren kann:
 
-* **Private** Dateien &ndash; Private Dateien sind Dateien, die für Ihre Anwendung (sind aber immer noch Welt lesbar und Schreibberechtigung) spezifisch sind. Android erwartet, dass private Dateien in einem bestimmten Verzeichnis auf dem externen Speicher gespeichert werden. Auch wenn die Dateien "private" aufgerufen werden, sind immer noch sichtbar und von anderen apps auf dem Gerät zugegriffen werden kann, sie sind keine speziellen Schutz Android verfügbaren.
+* **Private** Dateien &ndash; private Dateien sind Dateien, die für Ihre Anwendung spezifisch sind (aber immer noch weltweit lesbar und weltweit beschreibbar sind). Android erwartet, dass private Dateien in einem bestimmten Verzeichnis im externen Speicher gespeichert werden. Obwohl die Dateien als "Privat" bezeichnet werden, sind Sie weiterhin sichtbar und können von anderen apps auf dem Gerät zugänglich gemacht werden. Sie bieten keinen besonderen Schutz durch Android.
 
-* **Öffentliche** Dateien &ndash; Hierbei handelt es sich um Dateien, die nicht spezifisch für die Anwendung angesehen, und ohne Bedenken freigegeben werden sollen.
+* **Öffentliche** Dateien &ndash; : Hierbei handelt es sich um Dateien, die nicht als spezifisch für die Anwendung angesehen werden und für die freigegeben werden sollen.
 
-Die Unterschiede zwischen diesen Dateien dient in erster Linie. Private Dateien sind privat, in dem Sinne, die sie gelten als Teil der Anwendung während der Öffentliche Dateien andere Dateien sind, die im externen Speicher vorhanden. Android bietet zwei verschiedene APIs für die Auflösung die Pfade für private und Öffentliche Dateien, aber andernfalls werden die gleichen .NET APIs verwendet, um Lese- und Schreibberechtigungen für diese Dateien. Dies sind die gleichen APIs, die im Abschnitt erläutert werden, auf [lesen und Schreiben von](~/android/platform/files/index.md#reading-or-writing-to-files-on-internal-storage).
+Die Unterschiede zwischen diesen Dateien sind primär konzeptionell. Private Dateien sind in dem Sinne privat, dass Sie als Teil der Anwendung angesehen werden, und öffentliche Dateien sind andere Dateien, die im externen Speicher vorhanden sind. Android bietet zwei verschiedene APIs zum Auflösen der Pfade zu privaten und öffentlichen Dateien. andernfalls werden dieselben .NET-APIs zum Lesen und Schreiben in diese Dateien verwendet. Dabei handelt es sich um dieselben APIs, die im Abschnitt zum [Lesen und schreiben](~/android/platform/files/index.md#reading-or-writing-to-files-on-internal-storage)erläutert werden.
 
-### <a name="private-external-files"></a>Private externen Dateien
+### <a name="private-external-files"></a>Private externe Dateien
 
-Private externe Dateien gelten spezifisch für eine Anwendung (ähnlich wie interne Dateien) werden jedoch im externen Speicher für eine beliebige Anzahl von Gründen (z. B. zu groß für die interne Speicherung) aufbewahrt werden. Ähnlich wie interne Dateien, werden diese Dateien gelöscht, wenn die app vom Benutzer deinstalliert wird.
+Private externe Dateien gelten als spezifisch für eine Anwendung (ähnlich wie bei internen Dateien), werden jedoch aus verschiedenen Gründen in externem Speicher aufbewahrt (z. b. zu groß für den internen Speicher). Ähnlich wie bei internen Dateien werden diese Dateien gelöscht, wenn die APP vom Benutzer deinstalliert wird.
 
-Der primäre Speicherort für private externe Dateien durch Aufrufen der Methode gefunden wird `Android.Content.Context.GetExternalFilesDir(string type)`. Diese Methode gibt eine `Java.IO.File` -Objekt, das private externen Speicher-Verzeichnis für die app darstellt. Übergeben von `null` an diese Methode gibt den Pfad zum Speicher-Verzeichnis des Benutzers für die Anwendung zurück. Als Beispiel für eine Anwendung durch den Namen des Pakets `com.companyname.app`, das Verzeichnis "Root" der privaten externe Dateien wäre:
+Der primäre Speicherort für private externe Dateien wird durch Aufrufen der- `Android.Content.Context.GetExternalFilesDir(string type)`Methode gefunden. Diese Methode gibt ein `Java.IO.File` -Objekt zurück, das das private externe Speicher Verzeichnis für die APP darstellt. Wenn `null` Sie an diese Methode übergeben, wird der Pfad zum Speicher Verzeichnis des Benutzers für die Anwendung zurückgegeben. Als Beispiel für eine Anwendung mit dem Paketnamen `com.companyname.app`lautet das Verzeichnis "root" der privaten externen Dateien wie folgt:
 
 ```bash
 /storage/emulated/0/Android/data/com.companyname.app/files/
 ```
 
-In diesem Dokument wird das Storage-Verzeichnis für Dateien mit privaten auf externen speichern wie finden Sie unter _PRIVATE\_externe\_STORAGE_.
+In diesem Dokument wird das Speicher Verzeichnis für private Dateien im externen Speicher als _\_privater externer\_Speicher_bezeichnet.
 
-
-Der Parameter für `GetExternalFilesDir()` ist eine Zeichenfolge, der angibt, ein _Anwendungsverzeichnis_. Dies ist ein Verzeichnis, das einen standardmäßigen Speicherort für die logische Anordnung von Dateien bereitstellen. Die Zeichenfolgenwerte sind verfügbar, über die Konstanten für die `Android.OS.Environment` Klasse:
+Der-Parameter `GetExternalFilesDir()` für ist eine Zeichenfolge, die ein _Anwendungsverzeichnis_angibt. Hierbei handelt es sich um ein Verzeichnis, das einen Standard Speicherort für eine logische Organisation von Dateien bereitstellen soll. Die Zeichen folgen Werte sind über Konstanten in der `Android.OS.Environment` -Klasse verfügbar:
 
 | `Android.OS.Environment` | Verzeichnis |
 |-|-|
-| DirectoryAlarms | **_PRIVATE\_externe\_STORAGE_  /Alarme** |
-| DirectoryDcim | **_PRIVATE\_EXTERNE\_STORAGE_/DCIM** |
-| DirectoryDownloads | **_PRIVATE\_externe\_STORAGE_  /herunterladen** |
-| DirectoryDocuments | **_PRIVATE\_externe\_STORAGE_  /Dokumente** |
-| DirectoryMovies | **_PRIVATE\_externe\_STORAGE_/Movies** |
-| DirectoryMusic | **_PRIVATE\_externe\_STORAGE_/Music** |
-| DirectoryNotifications | **_PRIVATE\_externe\_STORAGE_  /Notifications** |
-| DirectoryPodcasts | **_PRIVATE\_externe\_STORAGE_/Podcasts** |
-| DirectoryRingtones | **_PRIVATE\_externe\_STORAGE_/Ringtones** |
-| DirectoryPictures | **_PRIVATE\_externe\_STORAGE_  /Pictures** |
+| DirectoryAlarms | **_Privater\_externer\_Speicher_/Alarms** |
+| DirectoryDcim | **_PRIVATER\_EXTERNER\_SPEICHER_/DCIM** |
+| DirectoryDownloads | **_Privater\_externer\_Speicher_/Download** |
+| Directoriydocuments | **_Privater\_externer\_Speicher_/Documents** |
+| Directoren | **_Privater\_externer\_Speicher_/Movies** |
+| Directoren | **_Privater\_externer\_Speicher_/Music** |
+| Directoren | **_Privater\_externer\_Speicher_/Notifications** |
+| DirectoryPodcasts | **_Privater\_externer\_Speicher_/Podcasts** |
+| Directoriyringtones | **_Privater\_externer\_Speicher_/Ringtones** |
+| Directoren | **_Privater\_externer\_Speicher_/Pictures** |
 
-Für Geräte, die über mehrere Partitionen von externen Speicher verfügen, wird jeder Partition ein Verzeichnis sein, die für die private Dateien vorgesehen ist. Die Methode `Android.Content.Context.GetExternalFilesDirs(string type)` gibt ein Array von `Java.IO.Files`. Jedes Objekt wird ein privates anwendungsspezifischen Verzeichnis darstellen auf alle freigegebenen/externen Speichergeräten, in dem die Anwendung die Dateien platzieren kann, die es besitzt.
+Bei Geräten, die über mehrere externe Speicher Partitionen verfügen, verfügt jede Partition über ein Verzeichnis, das für private Dateien vorgesehen ist. Die- `Android.Content.Context.GetExternalFilesDirs(string type)` Methode gibt ein Array von `Java.IO.Files`zurück. Jedes-Objekt stellt ein privates anwendungsspezifisches Verzeichnis auf allen freigegebenen/externen Speichergeräten dar, auf denen die Anwendung die Dateien platzieren kann, die es besitzt.
 
 > [!IMPORTANT]
-> Der genaue Pfad für die private Exteral Speicherverzeichnis kann vom Gerät zu Gerät und zwischen Versionen von Android variieren. Aus diesem Grund apps müssen nicht hart codieren Sie den Pfad zu diesem Verzeichnis, und verwenden Sie stattdessen die Xamarin.Android-APIs, wie z. B. `Android.Content.Context.GetExternalFilesDir()`.
+> Der genaue Pfad zum privaten externen Speicher Verzeichnis kann von Gerät zu Gerät und zwischen Android-Versionen variieren. Aus diesem Grund dürfen apps den Pfad zu diesem Verzeichnis nicht hart codieren und stattdessen die xamarin. Android-APIs verwenden, z `Android.Content.Context.GetExternalFilesDir()`. b.
 
 ### <a name="public-external-files"></a>Öffentliche externe Dateien
 
-Öffentliche Dateien sind Dateien, die auf externen speichern, vorhanden sind, die nicht im Verzeichnis gespeichert werden, die Android für Dateien mit privaten zuordnet. Öffentliche Dateien werden nicht gelöscht werden, wenn die app deinstalliert wird. Android-apps müssen Berechtigung erteilt werden, bevor sie Lese- oder Schreibzugriff auf alle öffentlichen Dateien. Es ist möglich, dass Öffentliche Dateien an einer beliebigen Stelle in externen Speicher vorhanden ist, aber gemäß der Konvention erwartet Android Öffentliche Dateien in das Verzeichnis identifiziert, die durch die Eigenschaft vorhanden sein `Android.OS.Environment.ExternalStorageDirectory`. Diese Eigenschaft gibt eine `Java.IO.File` -Objekt, das Verzeichnis der primären externen Speicher darstellt. Als Beispiel `Android.OS.Environment.ExternalStorageDirectory` bezieht sich möglicherweise auf das folgende Verzeichnis:
+Öffentliche Dateien sind Dateien, die in externem Speicher vorhanden sind und nicht in dem Verzeichnis gespeichert sind, das von Android für private Dateien zugewiesen wird. Öffentliche Dateien werden nicht gelöscht, wenn die APP deinstalliert wird. Android-Apps muss eine Berechtigung erteilt werden, bevor öffentliche Dateien gelesen oder geschrieben werden können. Öffentliche Dateien können an beliebiger Stelle im externen Speicher vorhanden sein, aber gemäß der Konvention erwartet Android, dass öffentliche Dateien im Verzeichnis vorhanden sind, das `Android.OS.Environment.ExternalStorageDirectory`durch die-Eigenschaft identifiziert wird. Diese Eigenschaft gibt ein `Java.IO.File` -Objekt zurück, das das primäre externe Speicher Verzeichnis darstellt. Beispielsweise `Android.OS.Environment.ExternalStorageDirectory` kann auf das folgende Verzeichnis verweisen:
 
 ```bash
 /storage/emulated/0/
 ```
 
-In diesem Dokument wird das Storage-Verzeichnis für Öffentliche Dateien, die auf externen speichern wie finden Sie unter _öffentliche\_externe\_STORAGE_.
+In diesem Dokument wird das Speicher Verzeichnis für öffentliche Dateien im externen Speicher als _\_öffentlicher externer\_Speicher_bezeichnet.
 
+Android unterstützt auch das Konzept von Anwendungs Verzeichnissen _im\_öffentlichen\_externen Speicher_. Diese Verzeichnisse entsprechen genau den Anwendungs Verzeichnissen für `_PRIVATE\_EXTERNAL\_STORAGE_` und werden in der Tabelle im vorherigen Abschnitt beschrieben. Die- `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` Methode gibt ein `Java.IO.File` -Objekt zurück, das einem öffentlichen Anwendungsverzeichnis entspricht. Der `directoryType` -Parameter ist ein erforderlicher Parameter und `null`kann nicht sein.
 
-Android unterstützt auch das Konzept von Verzeichnissen auf _öffentliche\_externe\_STORAGE_. Diese Verzeichnisse sind identisch mit den Verzeichnissen für `_PRIVATE\_EXTERNAL\_STORAGE_` und werden in der Tabelle im vorherigen Abschnitt beschrieben. Die Methode `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` gibt eine `Java.IO.File` -Objekt, das in ein Verzeichnis für die public-Anwendung zu entsprechen. Die `directoryType` Parameter ist ein obligatorischer Parameter und kann nicht `null`.
-
-Zum Beispiel der Aufruf `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` gibt eine Zeichenfolge, die ähneln wird:
+Wenn Sie beispielsweise `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` aufrufen, wird eine Zeichenfolge zurückgegeben, die folgendem ähnelt:
 
 ```bash
 /storage/emulated/0/Documents
 ```
 
 > [!IMPORTANT]
-> Der genaue Pfad zum Verzeichnis öffentlichen externen Speicher kann vom Gerät zu Gerät und zwischen den Versionen von Android variieren. Aus diesem Grund apps müssen nicht hart codieren Sie den Pfad zu diesem Verzeichnis, und verwenden Sie stattdessen die Xamarin.Android-APIs, wie z. B. `Android.OS.Environment.ExternalStorageDirectory`.
+> Der exakte Pfad zum öffentlichen externen Speicher Verzeichnis kann von Gerät zu Gerät und zwischen Android-Versionen variieren. Aus diesem Grund dürfen apps den Pfad zu diesem Verzeichnis nicht hart codieren und stattdessen die xamarin. Android-APIs verwenden, z `Android.OS.Environment.ExternalStorageDirectory`. b.
 
 ## <a name="working-with-external-storage"></a>Arbeiten mit externem Speicher
 
-Sobald eine Xamarin.Android-app den vollständigen Pfad zu einer Datei abgerufen wurde, sollte von den standardmäßigen .NET APIs für das Erstellen, lesen, schreiben oder Löschen von Dateien nutzen. Dies maximiert die Menge der cross-Platform kompatibel Code für eine app. Jedoch vor dem Versuch, den Zugriff auf eine Datei muss eine Xamarin.Android-app sicherstellen, dass es möglich, den Zugriff auf diese Datei ist.
+Nachdem eine xamarin. Android-App den vollständigen Pfad zu einer Datei abgerufen hat, sollte Sie eine der standardmäßigen .NET-APIs zum Erstellen, lesen, schreiben oder Löschen von Dateien nutzen. Dadurch wird die Menge des plattformübergreifenden kompatiblen Codes für eine APP maximiert. Bevor Sie jedoch versuchen, auf eine Datei zuzugreifen, muss eine xamarin. Android-App sicherstellen, dass es möglich ist, auf diese Datei zuzugreifen.
 
-1. **Überprüfen Sie die externen Speicher** &ndash; je nach Art der externe Speicher, es ist möglich, dass es nicht bereitgestellt werden kann und von der app verwendet werden kann. Alle apps sollten den Status des dem externen Speicher überprüfen, bevor Sie versuchen ihn anzuwenden.
-2. **Führen Sie eine Berechtigung laufzeitüberprüfung** &ndash; ein Android-app muss Berechtigung vom Benutzer anfordern, um externen Speicher zuzugreifen. Dies bedeutet, dass eine Laufzeit, die berechtigungsanforderung vor dem Zugriff auf Dateien ausgeführt werden soll. Das Handbuch [Berechtigungen In Xamarin.Android](~/android/app-fundamentals/permissions.md) enthält weitere Informationen zu Android-Berechtigungen.
+1. **Externen Speicher überprüfen** &ndash; Abhängig von der Art des externen Speichers ist es möglich, dass es möglicherweise nicht von der APP bereitgestellt und verwendet werden kann. Alle apps sollten den Status des externen Speichers überprüfen, bevor Sie versuchen, ihn zu verwenden.
+2. **Ausführen einer Lauf Zeit Berechtigungsüberprüfung** &ndash; Eine Android-App muss eine Berechtigung vom Benutzer anfordern, um auf externen Speicher zuzugreifen. Dies bedeutet, dass eine Laufzeit-Berechtigungs Anforderung vor jedem Dateizugriff ausgeführt werden soll. Die Berechtigungen des Handbuchs [in xamarin. Android](~/android/app-fundamentals/permissions.md) enthalten weitere Details zu den Android-Berechtigungen.
 
-Diese beiden Aufgaben werden unten erläutert.
+Diese beiden Aufgaben werden im folgenden erläutert.
 
-### <a name="verifying-that-external-storage-is-available"></a>Überprüfen, ob externer Speicher verfügbar ist.
+### <a name="verifying-that-external-storage-is-available"></a>Es wird überprüft, ob externer Speicher verfügbar ist.
 
-Der erste Schritt vor dem Schreiben in einen externen Speicher ist, überprüfen Sie, dass es sich um gelesen oder geschrieben wird. Die `Android.OS.Environment.ExternalStorageState` Eigenschaft enthält eine Zeichenfolge, die den Zustand der dem externen Speicher bezeichnet. Diese Eigenschaft gibt eine Zeichenfolge zurück, die den Zustand darstellt. Diese Tabelle ist eine Liste mit den `ExternalStorageState` Werte, die von zurückgegeben werden können `Environment.ExternalStorageState`:
+Der erste Schritt vor dem Schreiben in den externen Speicher besteht darin, zu überprüfen, ob er lesbar oder schreibbar ist. Die `Android.OS.Environment.ExternalStorageState` -Eigenschaft enthält eine Zeichenfolge, die den Zustand des externen Speichers identifiziert. Diese Eigenschaft gibt eine Zeichenfolge zurück, die den Zustand darstellt. Diese Tabelle ist eine Liste der `ExternalStorageState` Werte, die von `Environment.ExternalStorageState`zurückgegeben werden können:
 
-| ExternalStorageState | Beschreibung  |
+| Externalstoragestate | Beschreibung  |
 |----------------------|---|
-| MediaBadRemoval      | Das Medium wurde plötzlich entfernt, ohne ordnungsgemäß aufgehoben wird. |
-| MediaChecking        | Das Medium vorhanden ist, aber gerade von einem Datenträger überprüfen.  |
-| MediaEjecting        | Medium wird zurzeit aufgehoben und ausgeworfen wird.  |
-| MediaMounted         | Medien kann wird bereitgestellt und gelesen oder geschrieben werden.  |
-| MediaMountedReadOnly | Medium wird bereitgestellt, jedoch kann nur aus gelesen werden. |
-| MediaNofs            | Medien vorhanden ist, aber enthält kein Dateisystem für Android geeignet ist. |
-| MediaRemoved         | Kein Medium vorhanden ist. |
-| MediaShared          | Medien ist vorhanden, aber es ist nicht bereitgestellt. Es wird über USB mit einem anderen Gerät freigegeben wird.|
-| MediaUnknown         | Der Status der Medien wird von Android nicht erkannt. |
-| MediaUnmountable     | Das Medium vorhanden ist, aber es kann nicht von Android bereitgestellt werden. |
-| MediaUnmounted       | Das Medium vorhanden ist, aber es ist nicht bereitgestellt. |
+| "-Adremoval"      | Das Medium wurde plötzlich entfernt, ohne ordnungsgemäß bereitgestellt zu werden. |
+| Mediachecking        | Das Medium ist vorhanden, wird jedoch auf einem Datenträger überprüft.  |
+| Mediaeinjektion        | Die Bereitstellung des Mediums wird aufgehoben, und der Vorgang wird aufgehoben.  |
+| Medilag         | Medien werden eingebunden und können gelesen oder geschrieben werden.  |
+| Medider tedreadonly | Medien werden bereitgestellt, Sie können jedoch nur aus gelesen werden. |
+| Medianofs            | Es ist ein Medium vorhanden, aber es enthält kein Dateisystem, das für Android geeignet ist. |
+| Mediarebewegt         | Es ist kein Medium vorhanden. |
+| Mediased          | Medien sind vorhanden, jedoch nicht eingebunden. Sie wird über USB mit einem anderen Gerät freigegeben.|
+| Mediaunknown         | Der Status des Mediums wird von Android nicht erkannt. |
+| Mediauntierbar     | Das Medium ist vorhanden, kann aber nicht von Android bereitgestellt werden. |
+| Mediauneingebunden       | Das Medium ist vorhanden, aber nicht eingebunden. |
 
-
-Die meisten Android-apps müssen nur zum Überprüfen, ob die externer Speicher bereitgestellt wird. Der folgende Codeausschnitt zeigt, wie stellen Sie sicher, dass externe Speicher für Lesezugriff oder Lese-/ Schreibzugriff eingebunden wird:
+Bei den meisten Android-Apps muss nur überprüft werden, ob externer Speicher bereitgestellt wird. Der folgende Code Ausschnitt zeigt, wie Sie überprüfen, ob externer Speicher für schreibgeschützten Zugriff oder Lese-/Schreibzugriff bereitgestellt wird:
 
 ```csharp
 bool isReadonly = Environment.MediaMountedReadOnly.Equals(Environment.ExternalStorageState);
 bool isWriteable = Environment.MediaMounted.Equals(Environment.ExternalStorageState);
 ```
 
-## <a name="external-storage-permissions"></a>Externen Speicher-Berechtigungen
+## <a name="external-storage-permissions"></a>Externe Speicher Berechtigungen
 
-Android berücksichtigt beim Zugriff auf externe Speicher werden eine _gefährliche Berechtigungen_, die in der Regel muss der Benutzer die Zustimmung zum Zugriff auf die Ressource zu gewähren. Der Benutzer kann diese Berechtigung jederzeit widerrufen.  Dies bedeutet, dass eine Laufzeit, die berechtigungsanforderung vor dem Zugriff auf Dateien ausgeführt werden soll. Apps werden automatisch gewährt die Berechtigungen zum Lesen und Schreiben ihren eigenen privaten Dateien. Es ist möglich, dass apps zum Lesen und Schreiben von privaten Dateien, die an andere apps nach Ihrer gehören [Berechtigung](~/android/app-fundamentals/permissions.md) durch den Benutzer.
+Android betrachtet den Zugriff auf externen Speicher als _gefährliche Berechtigung_, was normalerweise erfordert, dass der Benutzer seine Berechtigung zum Zugriff auf die Ressource gewährt. Der Benutzer kann diese Berechtigung jederzeit widerrufen.  Dies bedeutet, dass eine Laufzeit-Berechtigungs Anforderung vor jedem Dateizugriff ausgeführt werden soll. Apps werden automatisch Berechtigungen zum Lesen und Schreiben Ihrer eigenen privaten Dateien erteilt. Apps können die privaten Dateien, die anderen apps angehören, lesen und schreiben, nachdem Ihnen die Berechtigung vom Benutzer [erteilt](~/android/app-fundamentals/permissions.md) wurde.
 
-Alle Android-apps müssen deklarieren Sie eine der beiden Berechtigungen für den externen Speicher in den **"androidmanifest.xml"** . Identifizieren Sie die Berechtigungen, eine der beiden folgenden `uses-permission` Elemente hinzugefügt werden müssen **"androidmanifest.xml"**:
+Alle Android-Apps müssen eine der beiden Berechtigungen für den externen Speicher in der Datei " **androidmanifest. XML** " deklarieren. Zum Identifizieren der Berechtigungen muss eines der beiden `uses-permission` folgenden Elemente zu " **androidmanifest. XML**" hinzugefügt werden:
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -138,31 +135,31 @@ Alle Android-apps müssen deklarieren Sie eine der beiden Berechtigungen für de
 ```
 
 > [!NOTE]
-> Wenn der Benutzer erteilt `WRITE_EXTERNAL_STORAGE`, klicken Sie dann `READ_EXTERNAL_STORAGE` ist auch implizit erteilt. Es ist nicht erforderlich, um beide Berechtigungen in **"androidmanifest.xml"**.
+> Wenn der Benutzer die `WRITE_EXTERNAL_STORAGE`-Berechtigung `READ_EXTERNAL_STORAGE` erteilt, wird auch implizit eine Zuweisung gewährt. Es ist nicht erforderlich, beide Berechtigungen in " **androidmanifest. XML**" anzufordern.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** Registerkarte die **Projektmappeneigenschaften**:
+Die Berechtigungen können auch über die Registerkarte **Android-Manifest** der Projektmappeneigenschaften hinzugefügt werden:
 
-![Projektmappen-Explorer - erforderlichen Berechtigungen für Visual Studio](./images/required-permissions.w157.png)
+![Projektmappen-Explorer erforderliche Berechtigungen für Visual Studio](./images/required-permissions.w157.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Die Berechtigungen können auch hinzugefügt werden, mithilfe der **Android-Manifest** auf der Registerkarte die **Lösung Pad "Eigenschaften"**:
+Die Berechtigungen können auch über die Registerkarte **Android-Manifest** im projektmappeneigenschaftenpad hinzugefügt werden:
 
-[![Projektmappenpad - erforderlichen Berechtigungen für Visual Studio für Mac](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![Lösungspad erforderliche Berechtigungen für Visual Studio für Mac](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 
-Im Allgemeinen müssen alle problematischen Berechtigungen vom Benutzer genehmigt werden. Die Berechtigungen für den externen Speicher sind eine Anomalie, es gibt jedoch Ausnahmen von dieser Regel, abhängig von der Version von Android, die die app ausgeführt wird:
+Im Allgemeinen müssen alle gefährlichen Berechtigungen vom Benutzer genehmigt werden. Die Berechtigungen für den externen Speicher sind in Abhängigkeit von der Android-Version, auf der die app ausgeführt wird, mit Ausnahmen zu dieser Regel zu tun:
 
-![Flussdiagramm der externen Speicher berechtigungsüberprüfungen](./images/external-permission-check-flowchart.png)
+![Flussdiagramm der externen Speicher Berechtigungs Überprüfungen](./images/external-permission-check-flowchart.png)
 
-Weitere Informationen zu berechtigungsanforderungen für die Common Language Runtime ausführen, finden Sie in der Anleitung [Berechtigungen In Xamarin.Android](~/android/app-fundamentals/permissions.md). Die **Monodroid-Sample** [LocalFiles](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles) auch zeigt eine Möglichkeit der Common Language Runtime-berechtigungsüberprüfungen durchführen.
+Weitere Informationen zum Ausführen von Lauf Zeit Berechtigungsanforderungen finden Sie in der Anleitung unter " [Berechtigungen" in xamarin. Android](~/android/app-fundamentals/permissions.md). Das **monodroid-Sample** [LocalFiles](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles) zeigt auch eine Möglichkeit, Lauf Zeit Berechtigungs Überprüfungen durchzuführen.
 
-#### <a name="granting-and-revoking-permissions-with-adb"></a>Erteilen und Entziehen von Berechtigungen mit ADB
+#### <a name="granting-and-revoking-permissions-with-adb"></a>Erteilen und widerrufen von Berechtigungen mit ADB
 
-Beim Entwickeln einer Android-Apps, ist es möglicherweise notwendig, erteilen und Widerrufen von Berechtigungen für die verschiedenen berechtigungsüberprüfungen für die Common Language Runtime bei Workflows zu testen. Es ist möglich, klicken Sie dazu an der Eingabeaufforderung, die ADB verwenden. Die folgenden Befehlszeile Codeausschnitte veranschaulichen, wie zum gewähren oder widerrufen Berechtigungen mithilfe von ADB für eine Android-app, deren Paketname ist **com.companyname.app**:
+Im Verlauf der Entwicklung einer Android-App ist es möglicherweise erforderlich, Berechtigungen zum Testen der verschiedenen mit Lauf Zeit Berechtigungs Überprüfungen beteiligten Arbeitsabläufe zu erteilen und aufzuheben. Dies ist in der Eingabeaufforderung mit ADB möglich. Die folgenden Befehlszeilen Ausschnitte veranschaulichen das erteilen oder widerrufen von Berechtigungen mit ADB für eine Android-App, deren Paketname **com. CompanyName. app**lautet:
 
 ```bash
 $ adb shell pm grant com.companyname.app android.permission.WRITE_EXTERNAL_STORAGE
@@ -172,7 +169,7 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>Löschen von Dateien
 
-Standardmäßige c#-APIs werden, zum Löschen einer Datei aus dem externen Speicher, z. B. verwendet kann [ `System.IO.File.Delete` ](xref:System.IO.File.Delete*). Es ist auch möglich, die Java-APIs auf Kosten der Codeportabilität verwenden. Zum Beispiel:
+Jede der Standard C# -APIs kann verwendet werden, um eine Datei aus einem externen Speicher zu löschen [`System.IO.File.Delete`](xref:System.IO.File.Delete*), z. b. Es ist auch möglich, die Java-APIs auf Kosten der Codeportabilität zu verwenden. Zum Beispiel:
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");
@@ -180,5 +177,5 @@ System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/file
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Lokale Dateien von Xamarin.Android-Beispiel auf **Monodroid-Beispiele**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
-* [Permissions In Xamarin.Android](~/android/app-fundamentals/permissions.md)
+* [Beispiel für lokale xamarin. Android-Dateien unter **monodroid-Samples**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
+* [Berechtigungen in xamarin. Android](~/android/app-fundamentals/permissions.md)

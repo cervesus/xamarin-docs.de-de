@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 97aa8c321362ebccc954a79f99b7bc69b5a0ad63
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 453da8c1b943591c331950ecb433bf0055faf85d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657065"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770362"
 ---
 # <a name="layout-compression"></a>Layoutkomprimierung
 
@@ -117,7 +117,6 @@ Die beispielanwendung enthält eine Seite aus einer echten Anwendung extrahiert.
 ## <a name="summary"></a>Zusammenfassung
 
 Layoutkomprimierung werden bestimmte Layouts aus der visuellen Struktur Versuch zur Verbesserung der Leistung beim Rendern der Seite entfernt. Der daraus resultierende Leistungsvorteil variiert je nach Komplexität einer Seite, der Version des verwendeten Betriebssystems und des Geräts, auf dem die Anwendung ausgeführt wird. Die größten Leistungssteigerungen werden jedoch bei älteren Geräten zu verzeichnen sein.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

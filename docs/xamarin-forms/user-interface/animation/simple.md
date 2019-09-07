@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d3046479282ef1535677f6712e487ab80bbf9d1b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71972f13f991bc5ad3ddf3c1c631fa7413290204
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656792"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759907"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Einfache Animationen in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _Die ViewExtensions-Klasse enthält Erweiterungsmethoden, die verwendet werden können, um einfache Animationen zu erstellen. In diesem Artikel veranschaulicht das Erstellen und Abbrechen von Animationen mithilfe der ViewExtensions-Klasse._
-
 
 Die [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) -Klasse bietet die folgenden Erweiterungsmethoden, die verwendet werden können, um einfache Animationen zu erstellen:
 
@@ -229,7 +228,6 @@ Dies wird sofort abzubrechen, alle Animationen, die derzeit ausgeführt werden, 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel gezeigt werden, erstellen und Abbrechen von Animationen mit der [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) Klasse. Diese Klasse stellt die Erweiterungsmethoden, die verwendet werden können, um einfache Animationen erstellen, die drehen, skalieren, übersetzen und fade [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Instanzen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

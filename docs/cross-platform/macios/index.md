@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b6ac960770320ed100e8b082cabf8240efed070b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10ab9b379344ab6c514eba84f1ef3fd9c7400b73
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290833"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765538"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple-Plattform (IOS und Mac)
 
@@ -31,7 +31,6 @@ Der Unified API für IOS-und Mac-Projekte verwendet die gleichen Namespaces für
 > **Das klassische Profil ist veraltet:** Wenn neue Plattformen in xamarin. IOS hinzugefügt werden, beginnen wir damit, Features aus dem klassischen Profil ("MonoTouch. dll") allmählich als veraltet zu kennzeichnen. Beispielsweise wurde die Option nicht-NRC (New-Ref-count) entfernt. NRC wurde immer für alle vereinheitlichten Anwendungen aktiviert (d. h. nicht-NRC war nie eine Option) und hat keine bekannten Probleme. In zukünftigen Versionen wird die Option zum Verwenden von Boehm als Garbage Collector entfernt. Dies war auch eine Option, die für einheitliche Anwendungen nicht verfügbar war. Das vollständige Entfernen der klassischen Unterstützung ist für Fall 2016 mit der Veröffentlichung von xamarin. IOS 10,0 geplant.
 
 Die ursprüngliche (nicht vereinheitlichte) xamarin. IOS-und xamarin. Mac-APIs haben die Code Freigabe erschwert, da Native Frame `MonoTouch.` Works `MonoMac.` entweder-oder-Namespace Präfixe enthielt.  Wir haben einige leere Namespaces bereitgestellt, die es Entwicklern ermöglichen, `using` Code gemeinsam zu nutzen, indem Sie Anweisungen hinzufügen, die sowohl auf monomac-als auch auf MonoTouch-Namespaces in derselben Datei verweisen. Dies war jedoch etwas hässlich. Die Classic API sollte nur in Legacy-Apps verwendet werden, die intern verteilt werden (es wird ein Upgrade auf die Unified API empfohlen).
-
 
 ### <a name="updating-from-classic-to-the-unified-api"></a>Aktualisieren von der klassischen zum Unified API
 

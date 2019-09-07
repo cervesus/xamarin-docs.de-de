@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2794a1d23cd7c1eab9cf4e94eaa805ad2b8bca61
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5429f260399602b7ef15e8263bc74cb8ae940f4f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119128"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754889"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausführen von Android-Diensten in Remote Prozessen
 
@@ -83,7 +83,7 @@ Um einen Dienst als eigenen Prozess auszuführen, `Process` `ServiceAttribute` m
 
 Die Art des Prozesses, in dem der Dienst ausgeführt wird, hängt vom Wert `Process` der-Eigenschaft ab. Android identifiziert drei verschiedene Arten von Prozessen:
 
-- **Privater Prozess** &ndash; Ein privater Prozess ist ein Dienst, der nur für die Anwendung verfügbar ist, von der er gestartet wurde. Um einen Prozess als privat zu identifizieren, muss der Name mit einem Semikolon (Semikolon) beginnen. Der Dienst, der im vorherigen Code Ausschnitt und Screenshot dargestellt wurde, ist ein privater Prozess. Der folgende Code Ausschnitt ist ein Beispiel für `ServiceAttribute`:
+- **Privater Prozess** &ndash; Ein privater Prozess ist ein Dienst, der nur für die Anwendung verfügbar ist, von der er gestartet wurde. Um einen Prozess als privat zu identifizieren, muss der Name **mit einem** Semikolon (Semikolon) beginnen. Der Dienst, der im vorherigen Code Ausschnitt und Screenshot dargestellt wurde, ist ein privater Prozess. Der folgende Code Ausschnitt ist ein Beispiel für `ServiceAttribute`:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -312,7 +312,6 @@ msg.Data = serviceParameters;
 messenger.Send(msg);
 ```
 
-
 > [!NOTE]
 > Im Allgemeinen sollte ein `Message` keine Nutzlast aufweisen, die größer als 1 MB ist. Die Größenbeschränkung kann je nach Version von Android und auf allen proprietären Änderungen, die der Hersteller möglicherweise an der Implementierung des Android Open Source-Projekts (aosp) vorgenommen hat, das mit dem Gerät gebündelt ist, variieren.
 
@@ -475,7 +474,6 @@ Anschließend muss die Datei " **androidmanifest. XML** " des Client-APK diese n
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Leitfaden wurde erläutert, wie Sie einen Android-Dienst in einem Remote Prozess ausführen. Die Unterschiede zwischen einem lokalen und einem Remote Dienst wurden zusammen mit einigen Gründen erläutert, warum ein Remote Dienst für die Stabilität und Leistung einer Android-App hilfreich sein kann. Nachdem erläutert wurde, wie ein Remote Dienst implementiert wird und wie ein Client mit dem Dienst kommunizieren kann, wurde in diesem Handbuch eine Möglichkeit bereitgestellt, den Zugriff auf den Dienst nur von autorisierten Clients aus einzuschränken.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

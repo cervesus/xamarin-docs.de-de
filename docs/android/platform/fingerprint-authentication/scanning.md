@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/23/2016
-ms.openlocfilehash: 15afd5b1812e0423097e889cd8c2558ca01a8074
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 4ead912b55790caf3e2e1f22e149f5682e6bb697
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119743"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761218"
 ---
 # <a name="scanning-for-fingerprints"></a>Suchen nach Fingerabdrücken
 
@@ -48,7 +48,7 @@ protected void FingerPrintAuthenticationExample()
 
 Im folgenden werden die einzelnen Parameter in der `Authenticate` -Methode ausführlicher erläutert:
 
-- Der erste Parameter ist ein Kryptografieobjekt, mit dem der Fingerabdruckscanner die Ergebnisse eines Fingerabdruck Scans authentifizieren kann. Dieses Objekt kann sein `null`. in diesem Fall muss die Anwendung blind darauf vertrauen, dass die Fingerabdruck Ergebnisse nicht manipuliert wurden. Es wird empfohlen, dass `CryptoObject` eine instanziiert und für den `FingerprintManager` anstelle von NULL bereitgestellt wird. Beim [Erstellen eines kryptobject](~/android/platform/fingerprint-authentication/creating-a-cryptoobject.md) wird ausführlich erläutert, wie ein `CryptoObject` auf Grundlage eines `Cipher`instanziiert wird.
+- Der erste Parameter ist ein _Kryptografieobjekt_ , mit dem der Fingerabdruckscanner die Ergebnisse eines Fingerabdruck Scans authentifizieren kann. Dieses Objekt kann sein `null`. in diesem Fall muss die Anwendung blind darauf vertrauen, dass die Fingerabdruck Ergebnisse nicht manipuliert wurden. Es wird empfohlen, dass `CryptoObject` eine instanziiert und für den `FingerprintManager` anstelle von NULL bereitgestellt wird. Beim [Erstellen eines kryptobject](~/android/platform/fingerprint-authentication/creating-a-cryptoobject.md) wird ausführlich erläutert, wie ein `CryptoObject` auf Grundlage eines `Cipher`instanziiert wird.
 - Der zweite Parameter ist immer 0 (null). Die Android-Dokumentation identifiziert dies als Satz von Flags und ist höchstwahrscheinlich für die zukünftige Verwendung reserviert. 
 - Der dritte Parameter ist `cancellationSignal` ein Objekt, das zum Ausschalten des Fingerabdruckscanners und Abbrechen der aktuellen Anforderung verwendet wird. Dabei handelt es sich um ein [Android cancellationsignal](https://developer.android.com/reference/android/os/CancellationSignal.html)und nicht um einen Typ aus .NET Framework.
 - Der vierte Parameter ist obligatorisch und eine Klasse, die die `AuthenticationCallback` abstrakte Klasse Unterklassen unterteilt. Methoden für diese Klasse werden aufgerufen, um Clients zu signalisieren, wenn `FingerprintManager` abgeschlossen ist und was die Ergebnisse sind. Da das `AuthenticationCallback`Implementieren von viel zu verstehen ist, wird es im [eigenen Abschnitt](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md)behandelt.
@@ -59,9 +59,6 @@ Im folgenden werden die einzelnen Parameter in der `Authenticate` -Methode ausf�
 Möglicherweise ist es erforderlich, dass der Benutzer (oder die Anwendung) die Fingerabdruck Überprüfung nach dem initiieren abbricht. Rufen Sie in diesem Fall die [`IsCancelled`](https://developer.android.com/reference/android/os/CancellationSignal.html#isCanceled()) -Methode für [`CancellationSignal`](https://developer.android.com/reference/android/os/CancellationSignal.html) den auf, der `FingerprintManager.Authenticate` für bereitgestellt wurde, als er aufgerufen wurde, um den Fingerabdruck Scan zu starten.
 
 Nachdem wir nun die `Authenticate` -Methode kennengelernt haben, betrachten wir einige der wichtigeren Parameter ausführlicher. Zuerst wird die [Reaktion auf Authentifizierungs Rückrufe](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md)erläutert, in denen erläutert wird, wie die [fingerprintmanager. authenticationcallback](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)-Klasse unterteilt werden kann, sodass eine Android-Anwendung auf die vom Fingerabdruckscanner bereitgestellten Ergebnisse reagieren kann.
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

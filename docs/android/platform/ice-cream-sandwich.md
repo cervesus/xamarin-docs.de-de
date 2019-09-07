@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: f8d9841deff485a67919aea9fede75044541ba5f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8cbb7c9c3da92b1ea5140e6f85accf53dab0bf80
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524196"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761461"
 ---
 # <a name="ice-cream-sandwich-features"></a>Ice Cream Sandwich-Features
 
@@ -27,7 +27,6 @@ Die Android-Betriebs System Version 4,0 (API-Ebene 14) stellt eine größere Fun
 - **Neue Daten-APIs** – es gibt neuen Zugriff auf Daten, die zuvor nicht offiziell zugänglich waren, wie z. b. Kalenderdaten und das Benutzerprofil des Geräte Besitzers. 
 - **App-Datenfreigabe** – das Freigeben von Daten zwischen Anwendungen und Geräten ist jetzt einfacher als je zuvor über `ShareActionProvider` Technologien wie das, was das Erstellen einer Freigabe Aktion aus einer Aktionsleiste und *Android-Beam* für *Near Field erleichtert. Kommunikation (NFC)* , wodurch es zu einem Snap-in ist, Daten auf mehreren Geräten in unmittelbarer Nähe zueinander zu teilen. 
 
-
 In diesem Artikel untersuchen wir diese Features und andere Änderungen, die an der Android 4,0-API vorgenommen wurden. Außerdem wird erläutert, wie Sie die einzelnen Features mit xamarin. Android verwenden.
 
 ## <a name="user-interface-features"></a>Benutzeroberflächen Funktionen
@@ -38,7 +37,6 @@ Eine Reihe von neuen Technologien für die Benutzeroberfläche ist mit Android 4
 - **[Switchwidget](~/android/user-interface/controls/switch.md)** – ermöglicht das Umschalten zwischen ein-oder ausschalten. 
 - **[Textureview](~/android/user-interface/controls/texture-view.md)** – aktiviert Video-und OpenGL-Inhalte in einer Ansicht. 
 - **[Navigationsleiste](~/android/user-interface/controls/navigation-bar.md)** – enthält virtuelle Schaltflächen für "Back", "Home" und "Multitasking". 
-
 
 Außerdem wurden andere Elemente der Benutzeroberfläche verbessert, wie z. `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`b. die, die nun einfacher zu bearbeiten ist, und Registerkarten, die eine präziere Darstellung aufweisen.
 
@@ -59,8 +57,6 @@ ICS unterstützt die Entwicklung mit einem x86-Emulator noch nicht. x86-Emulator
 
 Dieser Artikel behandelt eine Reihe von neuen Technologien, die nun mit Android 4 verfügbar sind. Wir haben neue Features für die Benutzeroberfläche, wie z. b. *GridLayout*, *PopupMenu*und *Switch* -Widget, geprüft. Wir haben auch einige der neuen Unterstützung für die Steuerung der Systembenutzer Oberfläche und die Verwendung von *textureview*behandelt. Anschließend haben wir eine Reihe von neuen Technologien für die gemeinsame Nutzung erläutert. Wir haben erläutert, wie Sie mit *Android-Beam* Informationen auf allen Geräten freigeben können, die *NFC*verwenden, die neue *Kalender-API*besprochen und die Verwendung des integrierten *shareaktionsanbieters*gezeigt haben.
 Schließlich wurde untersucht, wie der *contactscontract* -Anbieter verwendet wird, um auf Benutzerprofil Daten zuzugreifen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

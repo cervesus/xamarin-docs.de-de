@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: f1fc484931ba7a574ac660b4856f20b1cb1e08a3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 57e6ed2c01e382d7daee2933ac49c8282199a3fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119587"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758861"
 ---
 # <a name="responding-to-authentication-callbacks"></a>Reagieren auf Authentifizierungsrückrufe
 
@@ -24,7 +24,6 @@ Der Fingerabdruckscanner wird im Hintergrund in seinem eigenen Thread ausgeführ
 
 Wenn beim `CryptoObject` aufrufen `Authenticate`von ein verwendet wurde, wird empfohlen, in `Cipher.DoFinal` `OnAuthenticationSuccessful`aufzurufen.
 `DoFinal`löst eine Ausnahme aus, wenn die Verschlüsselung manipuliert oder nicht ordnungsgemäß initialisiert wurde. Dies deutet darauf hin, dass das Ergebnis des Fingerabdruckscanners außerhalb der Anwendung manipuliert wurde.
-
 
 > [!NOTE]
 > Es wird empfohlen, die Rückruf Klasse relativ gering zu halten und die anwendungsspezifische Logik freizugeben. Die Rückrufe sollten als "Verkehrs Cop" zwischen der Android-Anwendung und den Ergebnissen des Fingerabdruckscanners fungieren.
@@ -103,55 +102,29 @@ Beachten Sie `OnAuthenticationError` , dass aufgerufen wird, wenn der Fingerabdr
 
 Eine Liste und Beschreibung der Fehlercodes und Hilfe Codes finden Sie in der Android SDK- [Dokumentation](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD) für die fingerprintmanager-Klasse. Xamarin. Android stellt diese Werte mit der `Android.Hardware.Fingerprints.FingerprintState` Enumeration dar:
 
-
 - **`AcquiredGood`** &ndash; (Wert 0) das abgerufene Image war gut.
-
 
 - **`AcquiredImagerDirty`** &ndash; (Wert 3) das Fingerabdruck Bild war aufgrund von verdächtigem oder erkanntem Schmutz auf dem Sensor zu laut. Es ist z. b. sinnvoll, dies nach der `AcquiredInsufficient` Erkennung mehrerer oder der tatsächlichen Erkennung von Schmutz auf dem Sensor (bei hängen von Pixel, swaths usw.) zurückzugeben. Es wird erwartet, dass der Benutzer Maßnahmen zum Bereinigen des Sensors übernimmt, wenn dieser zurückgegeben wird.
 
-
 - **`AcquiredInsufficient`** (Wert 2) das Fingerabdruck Bild konnte aufgrund einer erkannten Bedingung (d. h. der trockenen Skin) oder eines möglicherweise modifizierten Sensors nicht verarbeitet werden (siehe `AcquiredImagerDirty`. &ndash;
-
-
 
 - **`AcquiredPartial`** &ndash; (Wert 1) Es wurde nur ein partielles Fingerabdruck Image erkannt. Während der Registrierung sollte der Benutzer informiert werden, was zum Beheben dieses Problems geschehen muss, z. b., &ldquo;um den Sensor zu beheben.&rdquo;
 
-
-
 - **`AcquiredTooFast`** &ndash; (Wert 5) das Fingerabdruck Bild war aufgrund von schnell Bewegung unvollständig. Dies ist in erster Linie für lineare Array Sensoren geeignet, kann jedoch auch auftreten, wenn der Finger während des Erwerbs verschoben wurde. Der Benutzer sollte aufgefordert werden, den Finger langsamer (linear) zu bewegen oder den Finger länger auf dem Sensor zu belassen.
-
-
-
 
 - **`AcquiredToSlow`** &ndash; (Wert 4) das Fingerabdruck Bild konnte aufgrund mangelnder Bewegung nicht gelesen werden. Dies ist am besten für lineare Array Sensoren geeignet, die eine Schwenkbewegung erfordern.
 
-
-
 - **`ErrorCanceled`** &ndash; (Wert 5) der Vorgang wurde abgebrochen, da der Fingerabdrucksensor nicht verfügbar ist. Dies kann z. b. der Fall sein, wenn der Benutzer gewechselt wird, das Gerät gesperrt ist, oder ein anderer ausstehender Vorgang Dies verhindert oder deaktiviert.
-
-
 
 - **`ErrorHwUnavailable`** &ndash; (Wert 1) die Hardware ist nicht verfügbar. Versuchen Sie es später erneut.
 
-
-
-
 - **`ErrorLockout`** &ndash; (Wert 7) der Vorgang wurde abgebrochen, da die API aufgrund zu vieler Versuche gesperrt ist.
-
-
-
 
 - **`ErrorNoSpace`** &ndash; (Wert 4) Fehlerzustand, der für Vorgänge wie die Registrierung zurückgegeben wurde. der Vorgang kann nicht abgeschlossen werden, da nicht genügend Speicherplatz vorhanden ist, um den Vorgang abzuschließen.
 
-
-
 - **`ErrorTimeout`** &ndash; (Wert 3) Fehlerzustand, der zurückgegeben wird, wenn die aktuelle Anforderung zu lang ausgeführt wurde. Dies soll verhindern, dass Programme unbegrenzt auf den Fingerabdrucksensor warten. Das Timeout ist Platt Form-und Sensor spezifisch, liegt jedoch im Allgemeinen bei ungefähr 30 Sekunden.
 
-
-
 - **`ErrorUnableToProcess`** &ndash; (Wert 2) Fehlerzustand, der zurückgegeben wird, wenn der Sensor das aktuelle Bild nicht verarbeiten konnte.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

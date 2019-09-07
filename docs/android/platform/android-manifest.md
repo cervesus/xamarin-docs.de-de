@@ -6,20 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 1aaacae8cebed2396661a28c189af44c25238e7b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: f1cc2f4685354687390866c0922a802591c7c054
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887841"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757708"
 ---
 # <a name="working-with-the-android-manifest"></a>Arbeiten mit dem Android-Manifest
 
 " **Androidmanifest. XML** " ist eine leistungsfähige Datei auf der Android-Plattform, die es Ihnen ermöglicht, die Funktionalität und die Anforderungen Ihrer Anwendung für Android zu beschreiben. Es ist jedoch nicht einfach, damit zu arbeiten. Mit xamarin. Android können Sie diese Schwierigkeit minimieren, indem Sie Ihren Klassen benutzerdefinierte Attribute hinzufügen, die dann zum automatischen Generieren des Manifests für Sie verwendet werden. Unser Ziel ist, dass 99% unserer Benutzer niemals " **androidmanifest. XML**" manuell ändern müssen. 
 
 " **Androidmanifest. XML** " wird als Teil des Buildprozesses generiert, und der in " **Properties/androidmanifest. XML** " gefundene XML-Code wird mit XML zusammengeführt, das aus benutzerdefinierten Attributen generiert wird. Die sich ergebende zusammengeführte Datei " **androidmanifest. XML** " befindet sich im **obj** -Unterverzeichnis. Er befindet sich beispielsweise bei " **obj/Debug/Android/androidmanifest. XML** " für Debugbuilds. Der Zusammenführungsprozess ist trivial: er verwendet benutzerdefinierte Attribute innerhalb des Codes, um XML-Elemente zu generieren, und *fügt* diese Elemente in **androidmanifest. XML**ein. 
-
-
 
 ## <a name="the-basics"></a>Die Grundlagen
 
@@ -55,8 +53,6 @@ Dieses Beispiel bewirkt, dass das folgende XML-Fragment zu " **androidmanifest. 
 
 Das `[Activity]` Attribut hat keine Auswirkung auf `abstract` die Typen. `abstract` Typen werden ignoriert.
 
-
-
 ### <a name="activity-name"></a>Name der Aktivität
 
 Ab xamarin. Android 5,1 basiert der Typname einer Aktivität auf der md5sum des durch die Assembly qualifizierten Namens des exportierten Typs. Dadurch kann derselbe voll qualifizierte Name von zwei verschiedenen Assemblys bereitgestellt werden, und es wird kein Paketfehler ausgegeben. (Vor xamarin. Android 5,1 wurde der Standardtyp Name der Aktivität aus dem Namespace "Kleinbuchstaben" und dem Klassennamen erstellt.) 
@@ -78,7 +74,6 @@ In diesem Beispiel wird das folgende XML-Fragment erzeugt:
 
 *Hinweis*: Sie sollten die- `Name` Eigenschaft nur aus Gründen der Abwärtskompatibilität verwenden, da die Typsuche zur Laufzeit durch eine solche Umbenennung verlangsamt werden kann. Wenn Sie über Legacy Code verfügen, der erwartet, dass der standardtypname der Aktivität auf dem Namespace mit Kleinbuchstaben und dem Klassennamen basiert, finden Sie unter [Android Callable Wrapper Naming](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming) Tipps zur Beibehaltung der Kompatibilität. 
 
-
 ### <a name="activity-title-bar"></a>Aktivitäts Titelleiste
 
 Android übergibt Ihrer Anwendung standardmäßig eine Titelleiste, wenn Sie ausgeführt wird. Der Wert, der für diesen [`/manifest/application/activity/@android:label`](https://developer.android.com/guide/topics/manifest/activity-element.html#label)verwendet wird, ist. In den meisten Fällen unterscheidet sich dieser Wert vom Namen Ihrer Klasse. Um die Bezeichnung Ihrer APP auf der Titelleiste anzugeben, verwenden Sie [`Label`](xref:Android.App.ActivityAttribute.Label) die-Eigenschaft.
@@ -97,7 +92,6 @@ In diesem Beispiel wird das folgende XML-Fragment erzeugt:
 <activity android:label="Awesome Demo App" 
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
-
 
 ### <a name="launchable-from-application-chooser"></a>Startbare über die Anwendungs Auswahl
 
@@ -122,8 +116,6 @@ In diesem Beispiel wird das folgende XML-Fragment erzeugt:
 </activity>
 ```
 
-
-
 ### <a name="activity-icon"></a>Aktivitäts Symbol
 
 Standardmäßig wird Ihrer Aktivität das Standard Start Programmsymbol zugewiesen, das vom System bereitgestellt wird. Wenn Sie ein benutzerdefiniertes Symbol verwenden möchten, fügen Sie zuerst die **PNG** **-Datei Ressourcen/drawable**hinzu, legen Sie die Buildaktion auf [`Icon`](xref:Android.App.ActivityAttribute.Icon) **androidresource**fest, und geben Sie dann mithilfe der-Eigenschaft das zu verwendende Symbol an Beispiel: 
@@ -147,7 +139,6 @@ In diesem Beispiel wird das folgende XML-Fragment erzeugt:
 </activity>
 ```
 
-
 ### <a name="permissions"></a>Berechtigungen
 
 Wenn Sie dem Android-Manifest Berechtigungen hinzufügen (wie unter [Hinzufügen von Berechtigungen zu einem Android-Manifest](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)beschrieben), werden diese Berechtigungen in " **Properties/androidmanifest. XML**" aufgezeichnet. Wenn Sie z. b. die `INTERNET` -Berechtigung festlegen, wird " **Properties/androidmanifest. XML**" Folgendes Element hinzugefügt: 
@@ -167,11 +158,7 @@ Wenn Sie z. b. die generierte Manifest-Datei unter " **obj/Debug/Android/android
 
 In der releasebuildversion des Manifests (bei **obj/Debug/Android/androidmanifest. XML**) werden diese Berechtigungen *nicht* automatisch konfiguriert. Wenn Sie feststellen, dass der Wechsel zu einem Releasebuild bewirkt, dass Ihre APP eine im Debugbuild verfügbare Berechtigung verliert, vergewissern Sie sich, dass Sie diese Berechtigung explizit in den **erforderlichen Berechtigungs** Einstellungen für Ihre APP festgelegt haben (siehe **Build > Android Anwendung** in Visual Studio für Mac; Weitere Informationen finden Sie unter **Eigenschaften > Android-Manifest** in Visual Studio). 
 
-
-
-
 ## <a name="advanced-features"></a>Erweiterte Funktionen
-
 
 ### <a name="intent-actions-and-features"></a>Beabsichtigte Aktionen und Features
 
@@ -206,7 +193,6 @@ In diesem Beispiel wird das folgende XML-Fragment erzeugt:
 </activity>
 ```
 
-
 ### <a name="application-element"></a>Application-Element
 
 Das Android-Manifest bietet auch eine Möglichkeit, Eigenschaften für die gesamte Anwendung zu deklarieren. Dies erfolgt über das `<application>` -Element und sein Pendant, das benutzerdefinierte [Anwendungs](xref:Android.App.ApplicationAttribute) Attribut. Beachten Sie, dass es sich hierbei um Anwendungs weite (assemblyweite) Einstellungen anstelle von Aktivitäts Einstellungen handelt. In der Regel deklarieren `<application>` Sie Eigenschaften für die gesamte Anwendung und überschreiben diese Einstellungen (bei Bedarf) auf Aktivitäts Basis. 
@@ -234,8 +220,6 @@ Das `Application` -Element ist nicht die einzige Möglichkeit, `<application>` A
 
 Es gibt viele Anwendungs weite Attribute, die Sie im- `<application>` Element konfigurieren können. Weitere Informationen zu diesen Einstellungen finden Sie im Abschnitt " [öffentliche Eigenschaften](xref:Android.App.ApplicationAttribute) " von " [applicationattribute](xref:Android.App.ApplicationAttribute)". 
 
-
-
 ## <a name="list-of-custom-attributes"></a>Liste der benutzerdefinierten Attribute
 
 - [Android. app. activityattribute](xref:Android.App.ActivityAttribute) : Generiert ein [/Manifest/Application/Activity](https://developer.android.com/guide/topics/manifest/activity-element.html) XML-Fragment. 
@@ -252,4 +236,3 @@ Es gibt viele Anwendungs weite Attribute, die Sie im- `<application>` Element ko
 - [Android. Content. broadcastreceiverattribute](xref:Android.Content.BroadcastReceiverAttribute) : Generiert ein [/Manifest/Application/Receiver](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML-Fragment. 
 - [Android. Content. contentproviderattribute](xref:Android.Content.ContentProviderAttribute) : Generiert ein [/Manifest/Application/Provider](https://developer.android.com/guide/topics/manifest/provider-element.html) XML-Fragment. 
 - [Android. Content. granturipermissionattribute](xref:Android.Content.GrantUriPermissionAttribute) : Generiert ein [/Manifest/Application/Provider/Grant-URI-Permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML-Fragment.
-

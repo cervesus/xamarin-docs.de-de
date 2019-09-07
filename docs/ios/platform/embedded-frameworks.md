@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 6287dca8660c1147455beb22304b7f8637ac7fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba3be4fea9999698c5a81faf5b07bec99fb1aa46
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292776"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753243"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Eingebettete Frameworks in xamarin. IOS
 
@@ -74,4 +74,3 @@ Dieses Verhalten kann vom App-Entwickler überschrieben werden, indem Folgendes 
 - `--mono:framework`: Verknüpft mit der Mono-Laufzeit als Framework.
 
 Ein Szenario für die Verknüpfung mit der Mono-Laufzeit als Framework auch für apps ohne Erweiterungen besteht darin, die Größe der ausführbaren Datei zu verringern, um alle Größen Einschränkungen zu überwinden, die Apple für die ausführbare Datei erzwingt Zur Referenz addiert die Mono-Laufzeit ungefähr 1,7 MB pro Architektur (ab xamarin. IOS 8,12, aber die variiert zwischen Releases und sogar zwischen Apps). Das Mono-Framework addiert ungefähr 2,3 MB pro Architektur. Dies bedeutet, dass für eine einzelne Architektur-App ohne Erweiterungen die APP-Verknüpfung mit der Mono-Laufzeit als Framework verringert und die ausführbare Datei um ~ 1.7 MB verkleinert wird. in einer größeren App mit einer Größe von ca. 0,6 MB.
-

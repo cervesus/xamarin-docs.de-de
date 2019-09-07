@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 66d7ae722281d9034cb4cdf1501662a7de396c2d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228012"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770250"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms-Textformate
 
@@ -144,7 +144,6 @@ Aktiviert:
 ![Geräte Stile mit aktiviertem Zugriff](styles-images/post-access.png)
 
 Um Zugriff zu gewährleisten, stellen Sie sicher, dass die integrierte Formatvorlagen, die als Grundlage für alle textbezogenen Formatvorlagen in Ihrer app verwendet werden, und Sie konsistent Formatvorlagen verwenden. Finden Sie unter [Stile](~/xamarin-forms/user-interface/styles/index.md) ausführliche Informationen zum Erweitern von und Arbeiten mit Stilen im Allgemeinen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

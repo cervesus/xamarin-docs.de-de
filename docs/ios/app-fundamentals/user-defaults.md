@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 6ff697964cbc057b4a3f905394d147d7c132d79b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4db5718394c3835861f3dfa8b99a4bac70e26981
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281954"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767005"
 ---
 # <a name="working-with-user-defaults-in-xamarinios"></a>Arbeiten mit Benutzer Standardwerten in xamarin. IOS
 
 _In diesem Artikel wird die Verwendung von nsuserdefault zum Speichern von Standardeinstellungen in einer xamarin. IOS-APP oder-Erweiterung behandelt._
-
 
 Mit `NSUserDefaults` der-Klasse können IOS-apps und-Erweiterungen Programm gesteuert mit dem systemweiten Standardsystem interagieren. Mithilfe des Standardsystems kann der Benutzer das Verhalten oder das Formatieren einer APP so konfigurieren, dass die Einstellungen (basierend auf dem Entwurf der APP) erfüllt werden. Beispielsweise zur Darstellung von Daten in Metriken im Vergleich zu kaiserlichen Messungen oder zum Auswählen eines bestimmten UI-Designs.
 
@@ -129,14 +128,11 @@ plist.SetBool(useHeader, "UseHeader");
 > [!IMPORTANT]
 > Wenn Ihre APP zum ersten Mal `NSUserDefaults` ausgeführt wird, liest die Schlüssel und Werte aus der Datenbank mit den Benutzer Standardwerten der APP und speichert Sie im Arbeitsspeicher zwischen, um zu vermeiden, dass die Datenbank bei jedem erforderlichen Wert geöffnet und gelesen wird.
 
-
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die `NSUserDefaults` -Klasse behandelt und erläutert, wie Sie verwendet werden kann, um eine Reihe von Optionen bereitzustellen, mit denen der Endbenutzer ihre xamarin. IOS-App konfigurieren kann. Darüber hinaus wird die Verwendung von App-Gruppen für die Kommunikation zwischen einer Erweiterung und der übergeordneten APP oder zwischen apps in einer Gruppe abgedeckt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

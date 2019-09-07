@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 23. Trigger und Verhaltensweisen
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 23. Trigger und Verhaltensweisen'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 23. Trigger und Verhaltensweisen'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: ddbb96836fa1aa9611701bd7d645d9e85ad28027
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8a1274a8447f49ce39f9c92703bbaec9e875b9e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61332093"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760592"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Zusammenfassung der Kapitel 23. Trigger und Verhaltensweisen
 
@@ -183,8 +183,6 @@ Die [ **TraditionalRadios** ](https://github.com/xamarin/xamarin-forms-book-samp
 Das letzte Beispiel [ **MultiColorSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/MultiColorSliders) können Sie zwischen drei verschiedenen Farbauswahl-Ansichten mithilfe von Optionsfeldern wechseln. Die drei Ansichten ein-und Abmelden verwenden eine [ `FadeEnableAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/FadeEnableAction.cs) in die [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek.
 
 Die Anwendung reagiert auch auf Änderungen in Ausrichtung zwischen Hoch- und Querformat mit einer [ `GridOrientationBehavior` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/GridOrientationBehavior.cs) in die **Xamarin.FormsBook.Toolkit** Bibliothek.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

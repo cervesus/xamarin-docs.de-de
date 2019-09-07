@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 1b3c1af480db2c5642ef0b16aed795d2bb43290f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292395"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752016"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
@@ -49,7 +49,7 @@ Mit homekit können Drittanbieter-apps und Siri Zubehör erkennen und ihrer eige
 Das folgende Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör:
 
 ![](introduction-to-ios8-images/image1.png "Dieses Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör.")
- 
+
 Um mit homekit zu beginnen, müssen Entwickler sicherstellen, dass für das Bereitstellungs Profil der homekit-Dienst ausgewählt ist. Apple hat Entwicklern auch ein homekit-Simulator-Add-in für Xcode bereitgestellt. Diese finden Sie im [Apple Developer Center](https://developer.apple.com/downloads/index.action)unter `Hardware IO Tools for Xcode`. 
 
 Weitere Informationen finden Sie in unserem [homekit](~/ios/platform/homekit.md) -Handbuch.
@@ -71,7 +71,7 @@ Der erste Schritt beim Erstellen einer APP-Erweiterung besteht darin, den richti
 Navigieren Sie im Dialogfeld **Neues Projekt** **C#**  > zu **IOS** > -**Unified API** > **Erweiterungen**, wie im folgenden Screenshot veranschaulicht:
 
 ![](introduction-to-ios8-images/image2.png "Erstellen einer neuen Erweiterung")
- 
+
 Das Dialogfeld "Neues Projekt" enthält sieben neue Projektvorlagen zum Erstellen von App-Erweiterungen, die im folgenden erläutert werden. Beachten Sie, dass viele der Erweiterungen sich auf andere neue APIs in ios beziehen, wie z. b. die Dokument Auswahl:
 
 - **Aktion** – Hiermit können Entwickler eindeutige benutzerdefinierte Aktions Schaltflächen erstellen, die es Benutzern ermöglichen, bestimmte Aufgaben auszuführen.
@@ -122,7 +122,7 @@ Jedes Gerät wird in der vertikalen und der horizontalen Achse durch eine Size-K
 Wenn die beiden Konzepte gleichzeitig verwendet werden, ist das Ergebnis ein 2 x 2-Raster, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können, wie in der folgenden Abbildung dargestellt:
 
 ![](introduction-to-ios8-images/image3.png "Ein Diagramm, das das 2 x 2-Raster darstellt, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können")
- 
+
 Weitere Informationen zu Größenklassen finden Sie unter [Introduction to Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md).
 
 ## <a name="photo-kit"></a>Fotokit
@@ -163,8 +163,6 @@ Mit allen in ios 8 vorgenommenen Verbesserungen sind einige APIs veraltet. Einig
 
 ## <a name="summary"></a>Zusammenfassung
 In diesem Artikel wurden einige der neuen Features behandelt, die von Apple in ios 8 eingeführt wurden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

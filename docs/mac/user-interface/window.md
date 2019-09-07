@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b6b370ebbcad04dfe829379685a3a9c5a6b5662b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df623efcc1da617ac6b700b42d3ac058dea817ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291536"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772643"
 ---
 # <a name="windows-in-xamarinmac"></a>Fenster in xamarin. Mac
 
@@ -747,7 +747,6 @@ Im **Attribut Inspektor**verfügen Sie über die folgenden Optionen, die für Pa
 - **Stil** : Hiermit können Sie den Stil des Panels anpassen: Der reguläre Bereich (sieht wie ein Standardfenster aus), das Hilfsprogramm (verfügt über eine kleinere Titelleiste), das HUD-Panel (ist durchlässig und die Titelleiste ist Teil des Hintergrunds).
 - **Nicht aktivieren** : legt fest, dass im Panel zum Schlüssel Fenster wird.
 - **Modales Dokument** : Wenn es sich um ein modales Dokument handelt, wird der Bereich nur über das Fenster der Anwendung bewegt, andernfalls schwebt er über alle Fenster.
-
 
 Gehen Sie folgendermaßen vor, um einen neuen Bereich hinzuzufügen:
 

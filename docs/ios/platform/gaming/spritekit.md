@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: dfda8b1ec3e7cfbdec3fe313d305d78422487f08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d2466de4891c289f4686c37bc9fe73c24a5a48ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289317"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753064"
 ---
 # <a name="spritekit-in-xamarinios"></a>Spritekit in xamarin. IOS
 
@@ -26,7 +26,7 @@ Spritekit enthält eine 2D-, starre Body-Physik-API. Jedes Sprite verfügt über
 Spritekit unterstützt jetzt das Ableiten des Physik Texts eines Sprite aus seiner Textur. Dadurch wird die Implementierung von Kollisionen, die natürlicher aussehen, vereinfacht.
 
 Beachten Sie z. b. im folgenden Konflikt, wie sich der Banane und der Affe beinahe auf der Oberfläche jedes Bilds Konflikten:
- 
+
 ![](spritekit-images/image13.png "Die Banane und der Affe kollidieren fast auf der Oberfläche jedes Bilds.")
 
 Spritekit ermöglicht das Erstellen eines solchen Physik Texts mit einer einzelnen Codezeile. Nennen `SKPhysicsBody.Create` Sie einfach mit der Textur und der Größe: Sprite. Physicsbody = skphysicsbody. Create (Sprite. Textur, Sprite. Größe);
@@ -44,7 +44,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 Durch die Optimierung des Alpha Schwellenwerts, wie dies der Fall ist, wird der vorherige Konflikt so optimiert, dass der Affe bei einem Konflikt mit der Banane überschritten wird:
 
 ![](spritekit-images/image14.png "Der Affe wird bei einem Konflikt mit der Banane überschritten.")
- 
+
 ## <a name="physics-fields"></a>Physik-Felder
 
 Eine weitere hervor artige Ergänzung zu spritekit ist die neue Unterstützung für Physik-Felder. Diese ermöglichen es Ihnen, Elemente wie z. b. die Felder "Vortex", "Radiale Schwerkraft" und "Spring Fields" hinzuzufügen.
@@ -86,7 +86,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 Dies bewirkt, dass die Bananen wie eine Spring um den Feld Knoten laufen:
 
 ![](spritekit-images/image15.png "Die Bananen laufen wie eine Spring um den Feld Knoten.")
- 
+
 ## <a name="radial-gravity-field"></a>Radiales Schweregrad Feld
 
 Das Hinzufügen eines anderen Felds ist ähnlich. Mit dem folgenden Code wird beispielsweise ein radiales Schwerpunkt Feld erstellt:

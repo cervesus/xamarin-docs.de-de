@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/03/2018
-ms.openlocfilehash: 7c98686a1aa99e250b3fd1d0fcc6ae64d625a11f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e6c5f6e19599624899f74b99dcaaae734d098b3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522406"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764196"
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -33,7 +33,6 @@ Viele apps müssen Auflistungen desselben Typs anzeigen (z. b. Nachrichten, Kont
 
 In diesem Handbuch wird erläutert, `RecyclerView` wie Sie in xamarin. Android-Anwendungen verwenden. es wird `RecyclerView` erläutert, wie Sie das Paket zu Ihrem xamarin. Android- `RecyclerView` Projekt hinzufügen, und es wird beschrieben, wie Funktionen in einer typischen Anwendung verwendet werden. Echte Codebeispiele werden bereitgestellt, um Ihnen zu zeigen `RecyclerView` , wie Sie in Ihre Anwendung integrieren, wie Sie die Element Ansicht implementieren und wie `RecyclerView` Sie aktualisiert werden, wenn sich die zugrunde liegenden Daten ändern. In dieser Anleitung wird davon ausgegangen, dass Sie mit der xamarin. Android-Entwicklung vertraut sind.
 
-
 ### <a name="requirements"></a>Anforderungen
 
 Obwohl `RecyclerView` häufig mit Android 5,0 Lollipop verknüpft ist, wird es als Support Bibliothek &ndash; `RecyclerView` für apps angeboten, die auf API Level 7 (Android 2,1) und höher ausgerichtet sind. Folgendes ist erforderlich, um in `RecyclerView` xamarin-basierten Anwendungen zu verwenden:
@@ -41,7 +40,6 @@ Obwohl `RecyclerView` häufig mit Android 5,0 Lollipop verknüpft ist, wird es a
 - **Xamarin. Android** &ndash; xamarin. Android 4,20 oder höher muss entweder mit Visual Studio oder mit Visual Studio für Mac installiert und konfiguriert werden.
 
 - Das App-Projekt muss das **xamarin. Android. Support. V7. recyclerview** -Paket enthalten. Weitere Informationen zum Installieren von nuget-Paketen finden [Sie unter Exemplarische Vorgehensweise: Einschließen eines nuget-Projekts in](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)Ihr Projekt.
-
 
 ### <a name="overview"></a>Übersicht
 
@@ -60,7 +58,6 @@ Obwohl `RecyclerView` häufig mit Android 5,0 Lollipop verknüpft ist, wird es a
 
 - `RecyclerView`enthält integrierte Animationen für das Hinzufügen und Entfernen von Elementen. `ListView`Animationen erfordern einen zusätzlichen Aufwand für den App-Entwickler.
 
-
 ### <a name="sections"></a>Abschnitte
 
 #### <a name="recyclerview-parts-and-functionalityandroiduser-interfacelayoutsrecycler-viewparts-and-functionalitymd"></a>[Recyclerview-Teile und-Funktionalität](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
@@ -76,13 +73,11 @@ Dieses Thema baut auf den Informationen in den [teilen und Funktionen von recycl
 
 In diesem Thema wird der Beispiel-APP, die in [einem grundlegenden recyclerview-Beispiel](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) dargestellt wird, zusätzlicher Code hinzugefügt, um `RecyclerView` zu veranschaulichen, wie Elemente mit Klick Ereignissen behandelt und wann die zugrunde liegende Datenquelle geändert wird
 
-
 ### <a name="summary"></a>Zusammenfassung
 
 In diesem Leitfaden wurde das `RecyclerView` Android-Widget vorgestellt. es wurde erläutert `RecyclerView` , wie die Unterstützungs Bibliothek zu xamarin. Android `RecyclerView` -Projekten hinzugefügt wird, wie Ansichten wieder verwendet werden, wie das Ansichts Inhaber-Muster für Effizienz und wie die verschiedenen Hilfsklassen, die zusammen `RecyclerView` arbeiten, um Auflistungen anzuzeigen. Es wurde ein Beispielcode bereitgestellt `RecyclerView` , um zu veranschaulichen, wie in eine Anwendung integriert ist `RecyclerView`. es wurde erläutert, wie Sie die Layoutrichtlinie anpassen können, indem Sie in verschiedene LayoutManager eingebunden werden, und es wurde beschrieben, wie Sie Click-Ereignisse `RecyclerView`von Datenquellen Änderungen.
 
 Weitere Informationen zu `RecyclerView`finden Sie in der " [recyclerview"-Klassenreferenz](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

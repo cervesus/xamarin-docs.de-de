@@ -7,18 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 0049d69caabce545b2813dbd2b3905fe96f28fed
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f3e56ab90d5205318539994bae7f4db153bb163
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292728"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768091"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit dem WatchOS übergeordnete Anwendung in Xamarin
 
 > [!IMPORTANT]
 > Zugreifen auf die übergeordnete Anwendung nur mit den folgenden Beispielen funktioniert auf Watch-apps für WatchOS 1.
-
 
 Es gibt verschiedene Möglichkeiten für die Kommunikation zwischen der Watch-app und dem iOS-app, der sie mit gebündelt wird:
 
@@ -30,7 +29,6 @@ Es gibt verschiedene Möglichkeiten für die Kommunikation zwischen der Watch-ap
 
 Die übergeordnete-App wird manchmal auch als der Container-App bezeichnet.
 
-
 <a name="code" />
 
 ## <a name="run-code"></a>Ausführen von Code
@@ -39,8 +37,6 @@ Kommunikation zwischen eine Watch-Erweiterung und der übergeordneten iPhone-app
 Die Watch-Erweiterung kann anfordern, dass die übergeordnete iOS-app können Sie einige Verarbeitungsschritte auf seinen Namen mithilfe der `OpenParentApplication` Methode.
 
 Dies ist besonders nützlich für lang andauernde Aufgaben (einschließlich netzwerkanforderungen): nur das übergeordnete iOS-app nutzen kann, der hintergrundverarbeitung um führen diese Aufgaben aus, und speichern die abgerufenen Daten an einem Speicherort auf der Watch-Erweiterung zugreifen kann.
-
-
 
 ### <a name="watch-kit-app-extension"></a>Sehen Sie sich App-Erweiterung für Kit
 
@@ -57,12 +53,10 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 });
 ```
 
-
 ### <a name="ios-app"></a>iOS-App
 
 Alle Aufrufe eine Watch-app-Erweiterung über der iPhone-app weitergeleitet `HandleWatchKitExtensionRequest` Methode.
 Wenn diese Methode müssen Abfragen nutzen Sie unterschiedliche Anforderungen in der Watch-app die `userInfo` Wörterbuch, um zu bestimmen, wie die Anforderung zu verarbeiten.
-
 
 ```csharp
 [Register ("AppDelegate")]
@@ -81,7 +75,6 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 }
 ```
-
 
 <a name="storage" />
 
@@ -142,8 +135,6 @@ wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 ```
 
 Herunterladen der C# Version [WormHoleSharp](https://github.com/Clancey/WormHoleSharp).
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

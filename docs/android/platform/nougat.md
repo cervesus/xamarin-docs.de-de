@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 2abc4b9b39fa90e525c3562a27ffd5d8c67f0078
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 128982abdee7a0fea8df79f7b7b9ecd6a290775a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523797"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761259"
 ---
 # <a name="nougat-features"></a>Nougat-Features
 
 _Beginnen Sie mit der Verwendung von xamarin. Android zum Entwickeln von Apps für Android-Nougat._
 
 Dieser Artikel enthält eine Übersicht über die in Android-Nougat eingeführten Features, erläutert, wie xamarin. Android für die Entwicklung von Android-Nougat vorbereitet wird, und bietet Links zu Beispielanwendungen, die veranschaulichen, wie Sie die Funktionen von Android-Nougat in Xamarin. Android-Apps.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -42,7 +41,6 @@ Außerdem bietet Android Nougat viele weitere Verbesserungen, die für App-Entwi
 
 In diesem Artikel wird erläutert, wie Sie mit der Entwicklung von apps mit Android-Nougat beginnen, um die neuen Features zu testen und die Migration oder Funktions Arbeit für die neue Android-Nougat-Plattform zu planen.
 
-
 ## <a name="requirements"></a>Anforderungen
 
 Folgendes ist erforderlich, um die neuen Android-Funktionen von Nougat in xamarin-basierten apps zu verwenden:
@@ -60,8 +58,6 @@ Folgendes ist erforderlich, um die neuen Android-Funktionen von Nougat in xamari
 
 Beachten Sie, dass apps mit xamarin C6SR4 oder höher neu erstellt werden müssen, damit Sie zuverlässig mit Android-Nougat funktionieren. Da Android-Nougat nur mit [NDK-bereitgestellten nativen Bibliotheken](https://developer.android.com/about/versions/nougat/android-7.0-changes.html)verknüpfen kann, können vorhandene apps, die Bibliotheken wie **Mono. Data. sqlite. dll** verwenden, bei Ausführung unter Android-Nougat abstürzen, wenn Sie nicht ordnungsgemäß neu erstellt werden.
 
-
-
 ## <a name="getting-started"></a>Erste Schritte
 
 Um mit der Verwendung von Android Nougat mit xamarin. Android zu beginnen, müssen Sie die neuesten Tools und SDK-Pakete herunterladen und installieren, bevor Sie ein Android-Nougat-Projekt erstellen können:
@@ -76,12 +72,9 @@ Um mit der Verwendung von Android Nougat mit xamarin. Android zu beginnen, müss
 
 Jeder dieser Schritte wird in den folgenden Abschnitten erläutert:
 
-
 ### <a name="install-xamarin-updates"></a>Installieren von xamarin-Updates
 
 Um xamarin-Unterstützung für Android-Nougat hinzuzufügen, ändern Sie den Update Kanal in Visual Studio, oder Visual Studio für Mac in den stabilen Channel, und wenden Sie die neuesten Updates an. Wenn Sie auch Funktionen benötigen, die derzeit nur im Alpha-oder Beta-Kanal verfügbar sind, können Sie zum Alpha-oder Beta-Kanal wechseln (die Alpha-und Beta-Kanäle bieten auch Unterstützung für Android 7. x). Informationen zum Ändern des Updates (Releases) finden Sie unter [Ändern des Updates-Kanals](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel).
-
-
 
 ### <a name="install-the-android-sdk"></a>Installieren des Android SDK
 
@@ -105,19 +98,14 @@ Zum Erstellen eines Projekts mit xamarin Android 7,0 müssen Sie zunächst den A
 
     Um diese Einstellung in Visual Studio anzuzeigen, klicken Sie auf Extras **> Optionen > xamarin > Android-Einstellungen**. Klicken Sie in Visual Studio für Mac auf **Einstellungen > Projekte > SDK-Speicherorte > Android**.
 
-
-
 ### <a name="start-a-xamarinandroid-project"></a>Starten eines xamarin. Android-Projekts
 
 Erstellen Sie ein neues xamarin. Android-Projekt. Wenn Sie mit der Android-Entwicklung mit xamarin noch nicht vertraut sind, finden Sie unter [Hello, Android](~/android/get-started/hello-android/index.md) Weitere Informationen zum Erstellen von xamarin. Android-Projekten.
 
 Wenn Sie ein Android-Projekt erstellen, müssen Sie die Versions Einstellungen so konfigurieren, dass Sie Android 7,0 oder höher als Ziel haben. Wenn Sie z. b. Ihr Projekt für Android 7,0 als Ziel festlegen möchten, müssen Sie die Android-API-Ziel Ebene Ihres Projekts auf **Android 7,0 (API 24-Nougat)** konfigurieren. Es wird empfohlen, dass Sie die zielframeworkebene auf API 24 oder höher festlegen. Weitere Informationen zum Konfigurieren von Android-API-Ebenen finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
-
 > [!NOTE]
 > Derzeit müssen Sie die **Android-Mindestversion** auf **Android 7,0 (API 24-Nougat)** festlegen, um Ihre APP auf Android-Nougat-Geräten oder-Emulatoren bereitzustellen.
-
-
 
 ### <a name="configure-an-emulator-or-device"></a>Konfigurieren eines Emulators oder Geräts
 
@@ -135,13 +123,9 @@ Wenn Sie ein physisches Gerät (z. b. ein Nexus 5x, 6 oder 9) verwenden, können
 
 Beachten Sie, dass Nexus 5-Geräte nicht von Android-Nougat unterstützt werden.
 
-
-
 ## <a name="new-features"></a>Neue Funktionen
 
 Android-Nougat führt eine Reihe von neuen Features und Funktionen ein, z. b. Unterstützung für mehrere Fenster, Benachrichtigungs Erweiterungen und Daten Ersparnis. In den folgenden Abschnitten werden diese Features hervorgehoben, und es werden Links bereitgestellt, die Ihnen bei der Verwendung in Ihrer APP helfen.
-
-
 
 ### <a name="multi-window-mode"></a>Modus für mehrere Fenster
 
@@ -164,12 +148,9 @@ Die Beispiel-app " [multiwindowplayground](https://docs.microsoft.com/samples/xa
 
 Weitere Informationen zum Modus für mehrere Fenster finden Sie [unter Unterstützung mehrerer Fenster](https://developer.android.com/guide/topics/ui/multi-window.html).
 
-
-
 ### <a name="enhanced-notifications"></a>Erweiterte Benachrichtigungen
 
 Android-Nougat führt ein überarbeitete Benachrichtigungssystem ein. Es verfügt über ein neues Feature für direkte Antworten, das es Benutzern ermöglicht, schnell auf Benachrichtigungen für eingehende Textnachrichten in der Benachrichtigungs-UI zu antworten. Ab Android 7,0 können Benachrichtigungs Meldungen als einzelne Gruppe gebündelt werden, wenn mehr als eine Nachricht empfangen wird. Entwickler können auch Benachrichtigungs Ansichten anpassen, System Dekorationen in Benachrichtigungen nutzen und neue Benachrichtigungs Vorlagen nutzen, wenn Sie Benachrichtigungen erstellen.
-
 
 #### <a name="direct-reply"></a>Direkte Antwort
 
@@ -212,7 +193,6 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
 
 Die Beispiel-App für den C# [Messaging Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) enthält Code, der veranschaulicht, wie `RemoteInput` Benachrichtigungen mit einem-Objekt erweitert werden. Weitere Informationen zum Hinzufügen von Inline Antwort Aktionen zu Ihrer APP für Android 7,0 oder höher finden Sie im Thema Android Response [to Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct) .
 
-
 #### <a name="bundled-notifications"></a>Gebündelte Benachrichtigungen
 
 Android-Nougat kann Benachrichtigungs Meldungen gruppieren (z. b. nach Nachrichtenthema) und die Gruppe anstelle jeder separaten Nachricht anzeigen.
@@ -222,20 +202,15 @@ Diese *gebündelte Benachrichtigungs* Funktion ermöglicht es Benutzern, eine Gr
 
 Um gebündelte Benachrichtigungen zu unterstützen, kann Ihre APP die [Builder. SetGroup](xref:Android.App.Notification.Builder.SetGroup*) -Methode verwenden, um ähnliche Benachrichtigungen zu bündeln. Weitere Informationen zu gebündelten Benachrichtigungs Gruppen in Android N finden Sie im Thema Android- [Bundle-Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#bundle) .
 
-
 #### <a name="custom-views"></a>Benutzerdefinierte Ansichten
 
 Mit Android-Nougat können Sie benutzerdefinierte Benachrichtigungs Ansichten mit System Benachrichtigungs Headern, Aktionen und erweiterbaren Layouts erstellen. Weitere Informationen zu benutzerdefinierten Benachrichtigungs Ansichten in Android-Nougat finden Sie im Thema Android- [Benachrichtigungs Erweiterungen](https://developer.android.com/about/versions/nougat/android-7.0.html#notification_enhancements) .
-
-
 
 ### <a name="data-saver"></a>Daten Ersparnis
 
 Ab Android-Nougat können Benutzer eine neue *Daten Schoner* Einstellung aktivieren, mit der die Verwendung von Hintergrunddaten blockiert wird. Diese Einstellung signalisiert Ihrer APP außerdem, möglichst weniger Daten im Vordergrund zu verwenden. Der [connectivitymanager](xref:Android.Net.ConnectivityManager) wurde in Android-Nougat erweitert, sodass Ihre APP überprüfen kann, ob der Benutzer den Daten Schoner aktiviert hat, damit Ihre APP die Datennutzung einschränken kann, wenn der Daten Schoner aktiviert ist.
 
 Weitere Informationen zum neuen Datenspeicher Feature in Android Nougat finden Sie im Thema Android- [Optimierungs Netzwerk-Datenverwendung](https://developer.android.com/training/basics/network-ops/data-saver.html) .
-
-
 
 ### <a name="app-shortcuts"></a>App-Verknüpfungen
 
@@ -247,7 +222,6 @@ Wenn Sie die Presse freigeben, wird das Menü beibehalten:
 
 Diese Funktion ist nur auf API-Ebene 25 oder höher verfügbar.
 Weitere Informationen zur Funktion "neue APP-Verknüpfungen" in Android 7,1 finden Sie im Thema Android- [App](https://developer.android.com/guide/topics/ui/shortcuts.html) -Verknüpfungen.
-
 
 ### <a name="sample-code"></a>Beispielcode
 
@@ -263,11 +237,9 @@ Es stehen mehrere xamarin. Android-Beispiele zur Verfügung, die Ihnen zeigen, w
 
 - [Direkter Start](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot) Veranschaulicht das Speichern von Daten in einem Geräte verschlüsselten Speicher, der immer verfügbar ist, wenn das Gerät vor und nach der Eingabe von Benutzer Anmelde Informationen (PIN/Muster/Kennwort) gestartet wird.
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde Android-Nougat vorgestellt und erläutert, wie die neuesten Tools und Pakete für die xamarin. Android-Entwicklung auf Android-Nougat installiert und konfiguriert werden. Außerdem bietet es eine Übersicht über die wichtigsten Features, die in Android-Nougat verfügbar sind, und enthält Links zu Beispielen, die Ihnen den Einstieg in das Erstellen von Apps für Android-Nougat erleichtern.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

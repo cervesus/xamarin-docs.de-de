@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4e488f43f966ca8efd58de4d2bb8f16997d1322e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bf6853ef94ff0be5382bab02192070a20884c31e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290956"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769686"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Erweiterte Message-App-Erweiterungen in xamarin. IOS
 
 _In diesem Artikel werden erweiterte Techniken zum Arbeiten mit Message-App-Erweiterungen in einer xamarin. IOS-Projekt Mappe erläutert, die in die Nachrichten-APP integriert wird und dem Benutzer neue Funktionen präsentiert._
-
 
 Neu bei IOS 10. eine Erweiterung der Nachrichten-APP wird in die **Nachrichten** -app integriert und stellt dem Benutzer neue Funktionen zur Anwendung. Die Erweiterung kann Text, Aufkleber, Mediendateien und interaktive Nachrichten senden.
 
@@ -55,7 +54,6 @@ Interaktive Nachrichten zeigen eine benutzerdefinierte Nachrichten Blase an und 
 Der empfangende Benutzer kann auf eine interaktive Nachricht antworten, indem er auf die Meldungs Blase im Nachrichten Verlauf tippt, um die erstellte App-Erweiterung zu laden. Die Erweiterung wird voll Bildschirm gestartet und ermöglicht dem Benutzer das Verfassen einer Antwort und das Zurücksenden an den ursprünglichen Benutzer.
 
 [![](advanced-message-app-extensions-images/interactive02.png "Die Vollbild-Erweiterung wurde gestartet.")](advanced-message-app-extensions-images/interactive02.png#lightbox)
-
 
 Die folgenden Themen werden im folgenden ausführlich behandelt:
 
@@ -427,7 +425,6 @@ using Foundation;
 using Messages;
 using UIKit;
 
-
 namespace MessageExtension
 {
     public partial class MessagesViewController : MSMessagesAppViewController
@@ -605,7 +602,6 @@ Sie werden in einem Fall Back Format als zwei separate Nachrichten übermittelt:
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden erweiterte Techniken zum Arbeiten mit Message-App-Erweiterungen in einer xamarin. IOS-Lösung vorgestellt, die in die **Nachrichten** -app integriert werden und dem Benutzer neue Funktionen zur Verfügung stellen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

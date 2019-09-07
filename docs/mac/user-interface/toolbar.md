@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: de0db40fb678bf88a18c6be42d89644d41583b99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd2490bfad880d128f5eaeebd4aac58ad3a4d8fa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280106"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772722"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Symbolleisten in xamarin. Mac
 
@@ -357,7 +357,6 @@ Führen Sie die Anwendung aus, und beachten Sie, dass das **Papierkorb** Element
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die Arbeit mit Symbolleisten und Symbolleisten Elementen in einer xamarin. Mac-Anwendung ausführlich erläutert. Es wurde beschrieben, wie Symbolleisten in der Interface Builder von Xcode erstellt und verwaltet werden, wie einige UI-Steuerelemente automatisch mit Symbolleisten Elementen arbeiten, wie C# Sie mit Symbolleisten im Code arbeiten und wie Sie Symbolleisten Elemente aktivieren und deaktivieren.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

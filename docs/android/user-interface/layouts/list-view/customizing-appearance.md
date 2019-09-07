@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: a2487fd0f7d90b70ec0dc1fb1978ca06a3108822
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2787e814d330bf8262ba05e38c7827211e07fd72
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522619"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764258"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Anpassen der Darstellung eines ListView-Steuermoduls mit xamarin. Android
 
 Das Aussehen einer ListView wird durch das Layout der Zeilen vorgegeben, die angezeigt werden. Um die `ListView`Darstellung eines zu ändern, verwenden Sie ein anderes Zeilen Layout.
-
 
 ## <a name="built-in-row-views"></a>Integrierte Zeilen Sichten
 
@@ -82,8 +81,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 
 Die Eigenschaften für die Gruppenansicht und die untergeordnete Ansicht können dann festgelegt werden, indem Sie `Text1` auf `Text2` die Standard-und Steuerelement Bezeichner verweisen, wie oben gezeigt. Der simpleexpandablelistitem-Bildschirmfoto (siehe oben) enthält ein Beispiel für eine einzeilige Gruppenansicht (SimpleExpandableListItem1) und eine untergeordnete zweizeilige Ansicht (SimpleExpandableListItem2). Alternativ kann die Gruppenansicht für zwei Zeilen (SimpleExpandableListItem2) konfiguriert werden, und die untergeordnete Ansicht kann für eine Zeile (SimpleExpandableListItem1) konfiguriert werden, oder sowohl die Gruppenansicht als auch die untergeordnete Ansicht können die gleiche Anzahl von Zeilen aufweisen. 
 
-
-
 ## <a name="accessories"></a>Bad
 
 Für Zeilen können Zubehör rechts neben der Ansicht hinzugefügt werden, um den Auswahl Status anzugeben:
@@ -105,7 +102,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 ```
 
 Der `ListView` selbst unterstützt verschiedene Auswahl Modi, unabhängig davon, welches Zubehör angezeigt wird. Um Verwirrung zu vermeiden, `Single` verwenden Sie den `SingleChoice` Auswahlmodus mit `Checked` Zubehör `Multiple` und den- `MultipleChoice` oder-Modus mit dem-Stil. Der Auswahlmodus wird von der `ChoiceMode` -Eigenschaft `ListView`des gesteuert.
-
 
 ### <a name="handling-api-level"></a>Behandeln von API-Ebenen
 
@@ -129,7 +125,6 @@ lv.ChoiceMode = 1; // Single
 //lv.ChoiceMode = 3; // MultipleModal
 */
 ```
-
 
 ### <a name="selecting-items-programmatically"></a>Programm gesteuertes auswählen von Elementen
 
@@ -157,7 +152,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-
 ## <a name="creating-custom-row-layouts"></a>Erstellen von benutzerdefinierten Zeilen Layouts
 
 Die vier integrierten Zeilen Sichten sind sehr einfach. Um komplexere Layouts (z. b. eine Liste von e-Mails, Tweets oder Kontaktinformationen) anzuzeigen, ist eine benutzerdefinierte Ansicht erforderlich. Benutzerdefinierte Ansichten werden im Allgemeinen als axml-Dateien im Verzeichnis " **Resources/Layout** " deklariert und dann mithilfe ihrer Ressourcen-ID von einem benutzerdefinierten Adapter geladen. Die Sicht kann eine beliebige Anzahl von Anzeige Klassen (z. b. Text views, imageviews und andere Steuerelemente) mit benutzerdefinierten Farben, Schriftarten und Layout enthalten.
@@ -176,9 +170,7 @@ Dieses Beispiel unterscheidet sich in vielerlei Hinsicht von den vorherigen Beis
 
 - `ItemClick`muss anders deklariert werden (ein Ereignishandler ist an angefügt, `ListView.ItemClick` anstelle `OnListItemClick` eines über `ListActivity`schreibenden in).
 
-
 Diese Änderungen werden im folgenden ausführlich erläutert, beginnend mit dem Erstellen der Aktivitätsansicht und der benutzerdefinierten Zeilen Ansicht und dem anschließenden abdecken der Änderungen am Adapter und der Aktivität, um Sie zu erstellen.
-
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>Hinzufügen eines ListView zu einem Aktivitäts Layout
 
@@ -209,7 +201,6 @@ Da `HomeScreen` nicht mehr von `ListActivity` ihm erbt, verfügt keine Standarda
 ```
 
 Der Vorteil der Verwendung eines `Activity` mit einem benutzerdefinierten Layout (anstelle `ListActivity`eines) liegt darin, dass es möglich ist, dem Bildschirm zusätzliche Steuerelemente hinzuzufügen `TextView` , z. b. die Überschrift in diesem Beispiel.
-
 
 ### <a name="creating-a-custom-row-layout"></a>Erstellen eines benutzerdefinierten Zeilen Layouts
 
@@ -256,7 +247,6 @@ Eine weitere axml-Layoutdatei ist erforderlich, um das benutzerdefinierte Layout
 
 Während ein benutzerdefiniertes Zeilen Layout viele verschiedene Steuerelemente enthalten kann, kann die Bild Laufleistung von komplexen Entwürfen und der Verwendung von Bildern beeinflusst werden (insbesondere, wenn Sie über das Netzwerk geladen werden müssen). Weitere Informationen zur Behandlung von Leistungsproblemen beim Scrollen finden Sie im Google-Artikel.
 
-
 ### <a name="referencing-a-custom-row-view"></a>Verweisen auf eine benutzerdefinierte Zeilen Ansicht
 
 Die Implementierung des benutzerdefinierten Adapter Beispiels finden Sie `HomeScreenAdapter.cs`unter. Bei der Schlüsselmethode `GetView` wird das benutzerdefinierte axml mithilfe der Ressourcen-ID `Resource.Layout.CustomView`geladen, und anschließend werden Eigenschaften für jedes der Steuerelemente in der Ansicht festgelegt, bevor Sie zurückgegeben werden. Die gesamte Adapter Klasse wird angezeigt:
@@ -297,7 +287,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>Verweisen auf die benutzerdefinierte ListView in der Aktivität
 
 Da die `HomeScreen` -Klasse nun von `Activity`erbt, `ListView` wird in der-Klasse ein-Feld deklariert, das einen Verweis auf das in axml deklarierte Steuerelement enthalten soll:
@@ -331,8 +320,6 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 Der resultierende Bildschirm sieht wie folgt aus:
 
 [![Screenshot der resultierenden customrowview](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
-
-
 
 ### <a name="customizing-the-row-selector-color"></a>Anpassen der Zeilenauswahl Farbe
 
@@ -374,13 +361,9 @@ Eine ausgewählte Zeile und die entsprechende `Toast` Meldung sehen nun wie folg
 
 [![Eine ausgewählte Zeile in Orange mit Popup Meldung mit dem Namen der ausgewählten Zeile](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
-
-
 ### <a name="preventing-flickering-on-custom-layouts"></a>Verhindern von Flimmern bei benutzerdefinierten Layouts
 
 Android versucht, die Leistung `ListView` beim Scrollen zu verbessern, indem Layoutinformationen zwischengespeichert werden. Wenn Sie über lange Bildläufe mit Daten verfügen, sollten Sie auch `android:cacheColorHint` die-Eigenschaft `ListView` für die-Deklaration in der axml-Definition der Aktivität (auf denselben Farbwert wie für den Hintergrund des benutzerdefinierten Zeilen Layouts) festlegen. Wenn Sie diesen Hinweis nicht einschließen, kann dies zu einem "Flimmern" führen, wenn der Benutzer durch eine Liste mit benutzerdefinierten Zeilen Hintergrundfarben Scrollen würde.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

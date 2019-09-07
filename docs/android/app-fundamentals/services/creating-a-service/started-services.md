@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 9f3ac33df34f5046fad6d392a6b7edf8a9a7f23f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1b7bed0fc6dba1d9f80524ac3429b7fdcb751ab9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644137"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755070"
 ---
 # <a name="started-services-with-xamarinandroid"></a>Dienste mit xamarin. Android gestartet
 
@@ -42,12 +42,12 @@ Der erste Parameter ist ein `Intent` Objekt, das die Metadaten zu der auszuführ
 
 - `StartCommandFlag.Redelivery`Dies bedeutet, dass eine erneute Übermittlung eines vorherigen `Intent` ist.`Intent` &ndash; Dieser Wert wird bereitgestellt, wenn der Dienst `StartCommandResult.RedeliverIntent` zurückgekehrt ist, aber angehalten wurde, bevor er ordnungsgemäß heruntergefahren werden konnte.
 -`StartCommandFlag.Retry`Dieser Wert wird empfangen, wenn beim `OnStartCommand` vorherigen Versuch ein Fehler aufgetreten ist und Android versucht, den Dienst erneut mit der gleichen Absicht wie der vorherige fehlgeschlagene Versuch zu starten. &dash;
- 
+
 Der dritte Parameter ist schließlich ein ganzzahliger Wert, der für die Anwendung, die die Anforderung identifiziert, eindeutig ist. Es ist möglich, dass mehrere Aufrufer dasselbe Dienst Objekt aufrufen können. Dieser Wert wird verwendet, um eine Anforderung zu verknüpfen, um einen Dienst mit einer bestimmten Anforderung zum Starten eines dienstandens zu unterbinden. Dies wird im Abschnitt zum [Beenden des Dienstanbieter](#Stopping_the_Service)ausführlicher erläutert. 
 
 Der Wert `StartCommandResult` wird vom Dienst als Vorschlag an Android zurückgegeben, was geschehen soll, wenn der Dienst aufgrund von Ressourceneinschränkungen abgebrochen wird. Es gibt drei mögliche Werte für `StartCommandResult`:
 
-- **[Startcommandresult.](xref:Android.App.StartCommandResult.NotSticky)** &ndash; notkurzwert dieser Wert gibt an, dass der von ihm beendete Dienst nicht neu gestartet werden muss. Betrachten Sie als Beispiel einen Dienst, der Miniaturansichten für einen Katalog in einer APP generiert. Wenn der Dienst abgebrochen wird, ist es nicht entscheidend, die Miniatur &ndash; Ansicht sofort neu zu erstellen, wenn die Miniaturansicht das nächste Mal ausgeführt wird.
+- **[Startcommandresult. notkurzwert](xref:Android.App.StartCommandResult.NotSticky)** &ndash; dieser Wert gibt an, dass der von ihm beendete Dienst nicht neu gestartet werden muss. Betrachten Sie als Beispiel einen Dienst, der Miniaturansichten für einen Katalog in einer APP generiert. Wenn der Dienst abgebrochen wird, ist es nicht entscheidend, die Miniatur &ndash; Ansicht sofort neu zu erstellen, wenn die Miniaturansicht das nächste Mal ausgeführt wird.
 - **[Startcommandresult.](xref:Android.App.StartCommandResult.Sticky)** &ndash; Kurznotiz: Hiermit wird Android aufgefordert, den Dienst neu zu starten, aber nicht die letzte Absicht, die den Dienst gestartet hat. Wenn keine zu behandelnden Intents vorhanden sind, wird für den `null` Intent-Parameter ein bereitgestellt. Ein Beispiel hierfür könnte eine Music Player-App sein. der Dienst wird neu gestartet, um Musik wiederzugeben, aber der letzte Song wird wiedergegeben.
 - **[StartCommandResult.RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; Dieser Wert weist Android an, den Dienst neu zu starten und den letzten erneut bereitzustellen`Intent`. Ein Beispiel hierfür ist ein Dienst, der eine Datendatei für eine APP herunterlädt. Wenn der Dienst abgebrochen wird, muss die Datendatei noch heruntergeladen werden. Wenn der `StartCommandResult.RedeliverIntent`Dienst von Android zurückgegeben wird, wird er auch als Absicht (mit der URL der herunter zuladenden Datei) für den Dienst bereitgestellt. Dadurch kann der Download entweder neu gestartet oder fortgesetzt werden (abhängig von der exakten Implementierung des Codes).
 
@@ -55,7 +55,7 @@ Der vierte Wert für `StartCommandResult` &ndash; `StartCommandResult.Continuati
 
 Die wichtigsten Lebenszyklus Ereignisse eines gestarteten Dienstanbieter werden in diesem Diagramm dargestellt: 
 
-![Ein Diagramm, das die Reihenfolge anzeigt, in der die Lebenszyklus Methoden aufgerufen werden] (started-services-images/started-service-01.png "Ein Diagramm, das die Reihenfolge anzeigt, in der die Lebenszyklus Methoden aufgerufen werden.")
+![Ein Diagramm, das die Reihenfolge anzeigt, in der die Lebenszyklus Methoden aufgerufen werden](started-services-images/started-service-01.png "Ein Diagramm, das die Reihenfolge anzeigt, in der die Lebenszyklus Methoden aufgerufen werden.")
 
 <a name="Stopping_the_Service" />
 

@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: d6cb1e407740fa4c182639a77e3725baec4286ac
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 046c392709f2c94664120e9fac3f4198e9f50dbf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119846"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756602"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
 _C#Code in xamarin. Android ruft Java-Bibliotheken über Bindungen auf, bei denen es sich um einen Mechanismus handelt, der die in Java Native Interface (JNI) angegebenen Low-Level-Details abstrahiert. Xamarin. Android stellt ein Tool bereit, das diese Bindungen generiert. Mit diesem Tool kann der Entwickler steuern, wie eine Bindung mithilfe von Metadaten erstellt wird, die Prozeduren wie das Ändern von Namespaces und das Umbenennen von Membern ermöglicht. In diesem Dokument wird erläutert, wie Metadaten funktionieren, fasst die von Metadaten unterstützten Attribute zusammen und erläutert, wie Bindungsprobleme durch Ändern dieser Metadaten gelöst werden._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -73,7 +72,6 @@ Die Datei " **Metadata. XML** " ist der größte Import dieser Dateien, da Sie a
 
 Fahren Sie mit fort, um **Metadata. XML** ausführlicher zu erörtern.
 
-
 ## <a name="metadataxml-transform-file"></a>Metadatendatei "Metadata. xml"
 
 Wie bereits gelernt, wird die Datei " **Metadata. XML** " vom Bindungs Generator verwendet, um die Erstellung der bindungsassembly zu beeinflussen.
@@ -111,8 +109,6 @@ Im folgenden sind einige der gängigsten XPath-Elemente für die Java-APIs aufge
 
 - `parameter`&ndash; Identifizieren Sie einen Parameter für eine Methode. e.g.`/parameter[@name='p0']`
 
-
-
 ### <a name="adding-types"></a>Hinzufügen von Typen
 
 Das `add-node` -Element teilt dem xamarin. Android-Bindungs Projekt mit, dass " **API. XML**" eine neue Wrapper Klasse hinzugefügt wird. Der folgende Code Ausschnitt leitet z. b. den Bindungs Generator an die Erstellung einer Klasse mit einem Konstruktor und einem einzelnen Feld weiter:
@@ -125,7 +121,6 @@ Das `add-node` -Element teilt dem xamarin. Android-Bindungs Projekt mit, dass " 
     </class>
 </add-node>
 ```
-
 
 ### <a name="removing-types"></a>Entfernen von Typen
 
@@ -180,7 +175,7 @@ NavigationManager.2DSignNextManueverEventArgs
 ```
 
 Dies ist kein gültiger C# Klassenname. Um dieses Problem zu beheben, muss der Bindungs Autor das `argsType` -Attribut verwenden und einen C# gültigen Namen für `EventArgs` die Unterklasse angeben:
- 
+
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
     interface[@name='NavigationManager.Listener']/
@@ -188,20 +183,18 @@ Dies ist kein gültiger C# Klassenname. Um dieses Problem zu beheben, muss der B
     name="argsType">NavigationManager.TwoDSignNextManueverEventArgs</attr>
 ```
 
- 
-
 ## <a name="supported-attributes"></a>Unterstützte Attribute
 
 In den folgenden Abschnitten werden einige der Attribute zum Transformieren von Java-APIs beschrieben.
 
 ### <a name="argstype"></a>argsType
 
-Dieses Attribut wird in Setter-Methoden eingefügt, um `EventArg` die Unterklasse zu benennen, die zur Unterstützung von Java-Listenern generiert wird. Dies wird weiter unten im Abschnitt Umbenennen von [EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes) weiter unten in diesem Handbuch ausführlich beschrieben.
+Dieses Attribut wird in Setter-Methoden eingefügt, um `EventArg` die Unterklasse zu benennen, die zur Unterstützung von Java-Listenern generiert wird. Dies wird weiter unten im Abschnitt [Umbenennen von EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes) weiter unten in diesem Handbuch ausführlich beschrieben.
 
 ### <a name="eventname"></a>eventName
 
 Gibt einen Namen für ein Ereignis an. Wenn der Wert leer ist, wird die Ereignis Generierung verhindert.
-Dies wird im Abschnitttitel Umbenennen von [EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes)ausführlicher beschrieben.
+Dies wird im Abschnitttitel [Umbenennen von EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes)ausführlicher beschrieben.
 
 ### <a name="managedname"></a>managedName
 
@@ -339,12 +332,9 @@ Wenn alle diese Änderungen vorhanden sind, können Sie den folgenden Code in xa
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie xamarin. Android Metadaten verwendet, um eine API-Definition aus dem *Google* *aosp-Format*zu transformieren. Nach dem abdecken der Änderungen, die mithilfe von *Metadata. XML*möglich sind, wurden die Einschränkungen beim Umbenennen von Membern sowie die Liste der unterstützten XML-Attribute untersucht, die beschreiben, wann die einzelnen Attribute verwendet werden sollen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

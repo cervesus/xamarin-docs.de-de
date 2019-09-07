@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: c0a35414cce6ff9981ad7825c8158a2f6f707585
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cb7e8aaca13405aedd422288421d497653ddbfe8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119493"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761202"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase Job Dispatcher
 
 _In diesem Handbuch wird erläutert, wie Sie Hintergrund arbeiten mithilfe der Firebase-Auftrags Verteiler Bibliothek von Google planen._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -66,7 +65,6 @@ Fügen Sie zunächst das [nuget-Paket xamarin. Firebase. jobdispatcher](https://
 
 Nachdem Sie die Firebase-Auftrags Verteiler Bibliothek hinzugefügt haben `JobService` , erstellen Sie eine-Klasse, und planen Sie die Ausführung `FirebaseJobDispatcher`mit einer Instanz von.
 
-
 ### <a name="creating-a-jobservice"></a>Erstellen eines Jobservice
 
 Alle Aufgaben, die von der Firebase-Auftrags Verteiler Bibliothek durchgeführt werden, müssen in einem Typ `Firebase.JobDispatcher.JobService` ausgeführt werden, der die abstrakte-Klasse erweitert. Das Erstellen `JobService` einer ähnelt sehr der Erstellung eines `Service` mit dem Android-Framework: 
@@ -108,7 +106,7 @@ public class DemoJob : JobService
 ### <a name="creating-a-firebasejobdispatcher"></a>Erstellen eines firebasejobdispatcher-
 
 Bevor eine Arbeit geplant werden kann, muss ein `Firebase.JobDispatcher.FirebaseJobDispatcher` -Objekt erstellt werden. Der `FirebaseJobDispatcher` ist für die Planung einer `JobService`verantwortlich. Der folgende Code Ausschnitt ist eine Möglichkeit, eine Instanz von `FirebaseJobDispatcher`zu erstellen: 
- 
+
  ```csharp
 // This is the "Java" way to create a FirebaseJobDispatcher object
 IDriver driver = new GooglePlayDriver(context);
@@ -163,7 +161,7 @@ Der Wert, der `FirebaseJobDispatcher.Schedule` von zurückgegeben wird, ist eine
 - `FirebaseJobDispatcher.ScheduleResultNoDriverAvailable`Ein ungültiger `IDriver` wurde verwendet, `IDriver` oder der war nicht verfügbar. &ndash; 
 - `FirebaseJobDispatcher.ScheduleResultUnsupportedTrigger`&ndash; Der`Trigger` wurde nicht unterstützt.
 - `FirebaseJobDispatcher.ScheduleResultBadService`&ndash; Der Dienst ist nicht ordnungsgemäß konfiguriert oder nicht verfügbar.
- 
+
 ### <a name="configuring-a-job"></a>Konfigurieren eines Auftrags
 
 Es ist möglich, einen Auftrag anzupassen. Beispiele für die Anpassung eines Auftrags:
@@ -243,7 +241,7 @@ Der Standard `JobTrigger` Wert für einen Auftrag wird durch den- `Trigger.Now`W
 #### <a name="setting-a-retrystrategy"></a>Festlegen einer Wiederholungs Strategie
 
 `Firebase.JobDispatcher.RetryStrategy` Wird verwendet, um anzugeben, wie lange ein Gerät verwendet werden soll, bevor versucht wird, einen fehlgeschlagenen Auftrag erneut auszuführen. Eine `RetryStrategy` verfügt über eine _Richtlinie_, mit der definiert wird, welcher Zeit Basis Algorithmus zum erneuten Planen des fehlerhaften Auftrags verwendet wird, und ein Ausführungs Fenster, das ein Fenster angibt, in dem der Auftrag geplant werden soll. Dieses _neuplanungs Fenster_ wird durch zwei Werte definiert. Der erste Wert ist die Anzahl der Sekunden, die gewartet wird, bevor der Auftrag neu geplant wird (der _anfängliche Backoff_ -Wert), und die zweite Zahl ist die maximale Anzahl von Sekunden, bevor der Auftrag ausgeführt werden muss (der _Maximale Backoff_ -Wert). 
- 
+
 Die zwei Arten von Wiederholungs Richtlinien werden durch diese int-Werte identifiziert:
 
 - `RetryStrategy.RetryPolicyExponential`Eine _exponentielle Backoff_ -Richtlinie erhöht den anfänglichen Backoff-Wert exponentiell nach jedem Fehler. &ndash; Wenn ein Auftrag zum ersten Mal fehlschlägt, wartet die Bibliothek das _initial-Intervall, das vor der erneuten Planung &ndash; des Auftrags Beispiels 30 Sekunden angegeben wird. Wenn der Auftrag zum zweiten Mal fehlschlägt, wartet die Bibliothek mindestens 60 Sekunden, bevor versucht wird, den Auftrag auszuführen. Nach dem dritten fehlgeschlagenen Versuch wartet die Bibliothek 120 Sekunden usw. Der Standard `RetryStrategy` Wert für die Firebase-Auftrags Verteiler Bibliothek wird durch das `RetryStrategy.DefaultExponential` -Objekt dargestellt. Er verfügt über einen anfänglichen Backoff von 30 Sekunden und einen maximalen Backoff von 3600 Sekunden.
@@ -286,7 +284,6 @@ Beide Methoden geben einen ganzzahligen Wert zurück:
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Leitfaden wurde erläutert, wie der Firebase-Auftrags Verteiler verwendet wird, um im Hintergrund arbeiten Intelligent auszuführen. Es wurde erläutert, wie `JobService` die auszuführenden Aufgaben als und `FirebaseJobDispatcher` verwendet werden, um die Arbeit zu planen, die Kriterien mit einem `JobTrigger` anzugeben und zu bestimmen, wie Fehler mit einem `RetryStrategy`behandelt werden sollen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

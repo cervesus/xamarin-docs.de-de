@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 9629d775b45951279178dffa3600e7cd5073dd38
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290626"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766120"
 ---
 # <a name="apple-account-management"></a>Apple-Kontoverwaltung
 
@@ -55,7 +55,7 @@ Sie müssen über ein Apple-Entwicklerkonto verfügen, um diese Funktion verwend
     ![FastLane-Dialogfeld.](apple-account-management-images/image2.png)
 
 3. Geben Sie Ihre Apple ID und Ihr Kennwort ein, und klicken Sie auf die Schaltfläche **Anmelden** Dadurch werden Ihre Anmelde Informationen in der sicheren Schlüsselkette auf diesem Computer gespeichert. [Fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) wird zur sicheren Verarbeitung Ihrer Anmelde Informationen verwendet und übergibt sie an das Apple-Entwickler Portal.
- 
+
 4. Wählen Sie im Warnungs Dialogfeld **immer zulassen** aus, damit Visual Studio Ihre Anmelde Informationen verwenden kann:
 
     ![Dialogfeld "Warnung immer zulassen"](apple-account-management-images/image4.png)
@@ -81,13 +81,12 @@ Sie müssen über ein Apple-Entwicklerkonto verfügen, um diese Funktion verwend
     ![Benutzername und Kennwort](apple-account-management-images/prov1a.png)
 
 1. Nachdem Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie Ihre Apple-ID und alle Teams, zu denen Ihre Apple-ID gehört.
- 
+
 1. Wählen Sie ein beliebiges Team aus, und klicken Sie **auf Details anzeigen.** Schaltfläche. Dadurch wird eine Liste aller Signierungs Identitäten und Bereitstellungs Profile angezeigt, die auf Ihrem Computer installiert sind:
 
     ![Benutzername und Kennwort](apple-account-management-images/prov2.png)
 
 -----
-
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>Verwalten von Signierungs Identitäten und Bereitstellungs Profilen
 

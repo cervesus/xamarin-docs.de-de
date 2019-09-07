@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 58e57f9406642a3bb0ff108bffa89d77c3f2cebb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a4d6144ad48b9e2f263137fb2474bc9eb278d93f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291383"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768971"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen im iOS-Designer
 
@@ -28,13 +28,11 @@ Ein `UITableView` mit prototypinhalt dient in der Regel zur Anzeige einer Liste 
 
  <a name="Static_Content" />
 
-
 ## <a name="static-content"></a>Statischer Inhalt
 
 `UITableView`bei s mit statischem Inhalt können Tabellen direkt auf der Entwurfs Oberfläche entworfen werden. Zellen können in die Tabelle gezogen und angepasst werden, indem Eigenschaften geändert und Steuerelemente hinzugefügt werden.
 
  <a name="Creating_a_Storyboard-driven_app" />
-
 
 ## <a name="creating-a-storyboard-driven-app"></a>Erstellen einer Storyboard-gesteuerten App
 
@@ -62,7 +60,6 @@ Das Storyboard wird in drei Schritten bearbeitet:
 - Erstellen Sie dann die Benutzeroberfläche, indem Sie Objekte per Drag & Drop auf Ihre Ansicht ziehen.
 - Fügen Sie schließlich der Ansicht die erforderliche UIKit-Klasse hinzu, und geben Sie verschiedenen Steuerelementen einen Namen, damit auf Sie im Code verwiesen werden kann.
 
-
 Nachdem das Storyboard vollständig ist, kann Code hinzugefügt werden, damit alles funktioniert.
 
 <a name="Layout_The_View_Controllers" />
@@ -85,7 +82,6 @@ Die erste Änderung am Storyboard besteht darin, die vorhandene Detail Ansicht z
 
 7. Ändern Sie den neuen " **uitableviewcontroller** " in **"Content": Statische Zellen**. 
 
-
 8. Für den neuen uitableviewcontroller müssen der Klassenname und der Bezeichner festgelegt sein. Wählen Sie den Ansichts Controller aus, und geben Sie _taskdetailviewcontroller_ für die- **Klasse** im **Eigenschaftenpad** ein `TaskDetailViewController.cs` – Hierdurch wird eine neue Datei in der Lösungspad erstellt. Geben Sie die **storyboardid** wie im folgenden Beispiel gezeigt als _Detail_ein. Diese wird später verwendet, um diese Ansicht in C# Code zu laden:  
 
     [![Festlegen der Storyboard-ID](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
@@ -93,8 +89,6 @@ Die erste Änderung am Storyboard besteht darin, die vorhandene Detail Ansicht z
 9. Die Storyboard-Entwurfs Oberfläche sollte nun wie folgt aussehen (der Titel des Navigations Elements des root View Controller wurde in "Chore Board" geändert):
 
     [![Entwurfs Oberfläche](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
-
-
 
 <a name="Create_the_UI" />
 
@@ -118,7 +112,6 @@ Führen Sie folgende Schritte aus:
 - Wählen Sie **in der Eigenschaftenpad unter leisten- **Schaltflächen Element** Bezeichner aus: Fügen** Sie hinzu (um eine *+* Schaltfläche mit Pluszeichen zu erstellen). 
 - Geben Sie einen Namen ein, damit er zu einem späteren Zeitpunkt im Code identifiziert werden kann. Beachten Sie, dass Sie dem stammansichts Controller einen Klassennamen (z. b. **itemviewcontroller**) geben müssen, damit Sie den Namen des leisten-Schaltflächen Elements festlegen können.
 
-
 #### <a name="taskdetail-view-controller"></a>Taskdetail-Ansichts Controller
 
 Die Detail Ansicht erfordert viel mehr Arbeit. Tabellen Ansichts Zellen müssen auf die Ansicht gezogen und dann mit Bezeichnungen, Text Ansichten und Schaltflächen aufgefüllt werden. Der folgende Screenshot zeigt die fertige Benutzeroberfläche mit zwei Abschnitten. Ein Abschnitt enthält drei Zellen, drei Bezeichnungen, zwei Textfelder und einen Switch, während der zweite Abschnitt eine Zelle mit zwei Schaltflächen aufweist:
@@ -136,7 +129,6 @@ Wählen Sie die Tabellenansicht aus, und öffnen Sie das **Eigenschafts Pad**. A
 
 Wählen Sie den oberen Abschnitt aus, und ändern Sie unter **Eigenschaften > Tabellen Ansichts Abschnitt** **Zeilen** ändern in _3_, wie unten dargestellt:
 
-
  [![Festlegen des obersten Abschnitts auf drei Zeilen](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 Öffnen Sie für jede Zelle die **Eigenschaftenpad** , und legen Sie Folgendes fest:
@@ -144,7 +136,6 @@ Wählen Sie den oberen Abschnitt aus, und ändern Sie unter **Eigenschaften > Ta
 - **Stil**:  _Benutzerdefiniert_
 - **Bezeichner**: Wählen Sie einen eindeutigen Bezeichner für jede Zelle aus (z. b. "_Title_", "_Notizen_", "_done_").
 - Ziehen Sie die erforderlichen Steuerelemente, um das im Screenshot gezeigte Layout (" **UILabel**", " **UITextField** " und " **uiswitch** " in den richtigen Zellen zu platzieren, und legen Sie die Bezeichnungen entsprechend fest. Titel, Notizen und Done).
-
 
 Legen Sie im zweiten Abschnitt **Zeilen** auf _1_ fest, und ziehen Sie den unteren Zieh Punkt der Zelle, um ihn zu vergrößern.
 
@@ -165,7 +156,6 @@ Beim Erstellen des Storyboards sind einige abschließende Schritte erforderlich.
 - **Uiswitch** : _Doneswitch_
 - **UIButton löschen** : _DeleteButton_
 - **UIButton speichern** : _SaveButton_
-
 
 <a name="Adding_Code" />
 
@@ -350,8 +340,6 @@ Das Beispiel veranschaulicht Folgendes:
 - Erstellen einer Tabelle mit statischem Inhalt zum Erstellen eines Eingabeformulars. Dies umfasste das Ändern des Tabellen Stils und das Hinzufügen von Abschnitten, Zellen und UI-Steuerelementen. 
 - Erstellen eines abgs und Überschreiben der `PrepareForSegue` -Methode, um die Ziel Ansicht aller erforderlichen Parameter zu benachrichtigen. 
 - Die storyboardsichten werden direkt mit `Storyboard.InstantiateViewController` der-Methode geladen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

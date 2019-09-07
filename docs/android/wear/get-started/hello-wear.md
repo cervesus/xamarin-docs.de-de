@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: 056ab7a9fe4bcb7f07a9a7cd7c841a3d9f7574b6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4c3c0e51348d2435ce5042485b214e6e5fe159b2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648027"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758424"
 ---
 # <a name="hello-wear"></a>Hello, Wear
 
@@ -38,7 +38,6 @@ Erstellen Sie eine neue **Android Wear-Anwendung**:
 
 -----
 
-
 Diese Vorlage enthält automatisch das nuget (und die Abhängigkeiten) der **xamarin Android-Wearable-Bibliothek** , sodass Sie auf Wear-spezifische Widgets zugreifen können. Wenn die Vorlage "Wear" nicht angezeigt wird, überprüfen Sie die [Installations-und Setup](~/android/wear/get-started/installation.md) Anleitung, um zu überprüfen, ob Sie eine unterstützte Android SDK installiert haben. 
 
 ### <a name="2-choose-the-correct-target-framework"></a>2. Wählen Sie das richtige **Ziel Framework** aus.
@@ -58,7 +57,6 @@ Stellen Sie sicher, dass das Ziel Framework auf **Android 5,0 (Lollipop)** oder 
 -----
 
 Weitere Informationen zum Festlegen des Ziel-Frameworks finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
-
 
 ### <a name="3-edit-the-mainaxml-layout"></a>3. Bearbeiten des **Main. axml** -Layouts
 
@@ -137,7 +135,6 @@ Wenn Sie nicht über ein Android Wear-Gerät wie z. b. Android Wear Smartwatch v
 
 Wenn Sie über ein Android Wear-Gerät wie z. b. eine Android Wear-Smartwatch verfügen, können Sie die APP auf dem Gerät ausführen, anstatt einen Emulator zu verwenden. Weitere Informationen zum Debuggen auf einem Wear-Gerät finden Sie unter [Debuggen auf einem Wear-Gerät](~/android/wear/deploy-test/debug-on-device.md).
 
-
 ### <a name="6-run-the-android-wear-app"></a>6. Ausführen der Android Wear-App
 
 Das Android Wear-Gerät sollte im Pulldownmenü des Geräts angezeigt werden. Stellen Sie sicher, dass Sie das richtige Android Wear-Gerät oder AVD auswählen, bevor Sie das Debugging starten. Nachdem Sie das Gerät ausgewählt haben, klicken Sie auf die Schaltfläche Wiedergabe, um die APP auf dem Emulator oder Gerät bereitzustellen.
@@ -152,7 +149,7 @@ Das Android Wear-Gerät sollte im Pulldownmenü des Geräts angezeigt werden. St
 
 -----
 
-Möglicherweise wird eine **Meldung (** oder ein anderer Bildschirm mit Interstitial) an erster Stelle angezeigt: 
+Möglicherweise wird eine **Meldung (oder ein anderer** Bildschirm mit Interstitial) an erster Stelle angezeigt: 
 
 ![Der Überwachungs Emulator zeigt nur eine Minute...](hello-wear-images/please-wait.png)
 
@@ -166,13 +163,11 @@ Tippen **Sie auf den Klick!** auf der Vorderseite des Wear-Geräts, und sehen Si
 
 [![Screenshot der Wear-App nach 3 Klicks](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
-
 ## <a name="next-steps"></a>Nächste Schritte
 
 Sehen Sie sich die [Wear-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear) einschließlich Android Wear-apps mit Begleit telefonapps an.
 
 Wenn Sie zur Verteilung Ihrer APP bereit sind, finden Sie weitere Informationen unter [Arbeiten mit der Paket](~/android/wear/deploy-test/packaging.md)Erstellung.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: b846d034c31069c02e3c97fba0ac0d68e6df2e23
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 66bea7d2a9660018c7cec9b7bafeadafd5029ed9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292523"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769426"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in xamarin. IOS
 
@@ -128,9 +128,6 @@ Gehen Sie folgendermaßen `NSSpeechRecognitionUsageDescription` vor, um `Info.pl
 
 > [!IMPORTANT]
 > Wenn Sie keinen der oben genannten `Info.plist` Schlüssel (`NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription`) bereitstellen, kann dies dazu führen, dass die APP ohne Warnung fehlschlägt, wenn Sie versuchen, auf die Spracherkennung oder das Mikrofon für liveaudiodaten zuzugreifen.
-
-
-
 
 ### <a name="requesting-authorization"></a>Anfordern der Autorisierung
 
@@ -398,8 +395,6 @@ Apple hat den folgenden Vorschlag, um transparent zu sein und den Datenschutz de
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die neue Speech-API vorgestellt und gezeigt, wie Sie Sie in einer xamarin. IOS-App implementieren, um fortlaufende Spracherkennung und transcriwriter (aus Live-oder aufgezeichneten Audiodatenströmen) in Text zu unterstützen. 
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

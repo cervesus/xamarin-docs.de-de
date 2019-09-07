@@ -7,31 +7,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
-ms.openlocfilehash: 65f7c6d8a573501ffec4aa1b8eaf28ff1e6479e8
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: c175c533e437736849eac6be1f4a90a783123812
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864226"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757152"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>Meine Android-Datei „Resource.designer.cs“ wird nicht aktualisiert
 
 > [!NOTE]
-> In Xamarin Studio 5.1.4 und höheren Versionen hat dieses Problem behoben wurde. Jedoch, wenn das Problem in Visual Studio für Mac auftritt, melden Sie bitte eine [neuer Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) erstellen Sie mit der Ihre vollständige versionsverwaltung Informationen "und" vollständig "Protokollausgabe.
+> Dieses Problem wurde in Xamarin Studio 5.1.4 und höheren Versionen behoben. Wenn das Problem jedoch in Visual Studio für Mac auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen Buildprotokollierung.
 
-Ein Fehler in xamarin.Studio die Datei 5.1 beschädigt zuvor CSPROJ-Dateien teilweise oder vollständig löschen Sie den XML-Code in die CSPROJ-Datei. Dies würde dazu führen, dass wichtige Teile des Android-Buildsystem (z. B. Aktualisieren der Android Resource.designer.cs) fehlschlägt. Zum Zeitpunkt der 5.1.4 stabile Version am 15. Juli, dieses Problem wurde behoben. aber in vielen Fällen muss die Datei wie unten beschrieben manuell behoben werden.
+Ein Fehler in xamarin. Studio 5,1 zuvor beschädigte csproj-Dateien, indem der XML-Code in der CSPROJ-Datei teilweise oder vollständig gelöscht wurde. Dies würde dazu führen, dass wichtige Teile des Android-Buildsystems (z. b. das Aktualisieren des Android-Resource.Designer.cs) fehlschlagen. Ab dem 15. Juli wurde dieser Fehler korrigiert. in vielen Fällen muss die Projektdatei jedoch manuell repariert werden, wie unten beschrieben.
 
+## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>Zwei mögliche Ansätze zum Beheben der Projektdatei
 
-## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>Zwei mögliche Ansätze kennen, um die Projektdatei wird korrigiert.
+**Beides**
 
-**Entweder:**
-
-1. Ein völlig neues Projekt für die Xamarin.Android-Anwendung erstellen, legen die Projekteigenschaften entsprechend das alte Projekt, und fügen Sie alle Ihre Ressourcen hinzu, Quelldateien usw., die in das Projekt zurück.
+1. Erstellen Sie ein neues xamarin. Android-Anwendungsprojekt, legen Sie alle Projekteigenschaften so fest, dass Sie mit dem alten Projekt identisch sind, und fügen Sie alle Ihre Ressourcen, Quelldateien usw. wieder in das Projekt ein.
 
    **ODER**
 
-2. Erstellen Sie eine Sicherungskopie der CSPROJ-Datei für das ursprüngliche Projekt in einem Text-Editor öffnen Sie, und anschließend wieder in die fehlenden Elemente aus einer sauber generierten CSPROJ-Datei hinzufügen.
+2. Erstellen Sie eine Sicherungskopie der CSPROJ-Datei Ihres ursprünglichen Projekts, öffnen Sie Sie in einem Text-Editor, und fügen Sie die fehlenden Elemente aus einer ordnungsgemäß generierten CSPROJ-Datei zurück.
 
-### <a name="if-this-does-not-solve-the-problem"></a>Wenn dies das Problem nicht behoben wird
+### <a name="if-this-does-not-solve-the-problem"></a>Wenn das Problem hierdurch nicht behoben wird
 
-Nach dem Experimentieren mit diesen Elementen, können Sie bitte beachten Sie, nachdem die Elemente wieder hinzugefügt, und das Projekt neu erstellt, die Datei "Resource.designer.cs" wird aktualisiert, müssen dann aber möglicherweise immer noch zu schließen und erneut öffnen die Projektmappe rufen Sie die Vervollständigung von Code zur Erkennung von die neuen Typen in Resource.designer.cs enthalten sind. 
+Nachdem Sie diese Elemente ausprobiert haben, werden Sie möglicherweise bemerken, dass die Resource.Designer.cs-Datei nach dem Hinzufügen der Elemente und der Neuerstellung des Projekts aktualisiert wird. Sie müssen die Projekt Mappe jedoch trotzdem schließen und erneut öffnen, um die Codevervollständigung zu erkennen. die neuen Typen, die in Resource.Designer.cs enthalten sind. 

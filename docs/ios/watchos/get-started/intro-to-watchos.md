@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 59d02db9fa2787e93ad88e4b6f37e0fef50572a5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df1177d55510571da3369d298bd05aa9bd0734a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293115"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767930"
 ---
 # <a name="introduction-to-watchos"></a>Einführung in watchOS
 
@@ -102,7 +102,6 @@ Wenn Sie mit der größeren Umgebung starten, kann zentral Herunterskalieren zu 
 
 Erfahren Sie mehr über [arbeiten mit Bildschirmen](~/ios/watchos/app-fundamentals/screen-sizes.md).
 
-
 ## <a name="limitations-of-watchos"></a>Einschränkungen für watchOS
 
 Es gibt einige Einschränkungen der WatchOS beim Entwickeln von apps für WatchOS berücksichtigen:
@@ -119,7 +118,6 @@ Einige andere bekannten Einschränkungen / häufig gestellte Fragen:
 
 - Die APIs, mit die die Apple Watch iTunes auf dem verbundenen Telefon steuern können, sind privat.
 
-
 ## <a name="further-reading"></a>Weiterführende Themen
 
 Testen Sie die Dokumentation von Apple aus:
@@ -129,7 +127,6 @@ Testen Sie die Dokumentation von Apple aus:
 - [Sehen Sie sich Kit-Programmierhandbuch](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/DesigningaWatchKitApp.html)
 
 - [Richtlinien für die interaktive Benutzeroberfläche von Apple Watch](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/index.html#//apple_ref/doc/uid/TP40014992-CH3-SW1)
-
 
 ## <a name="related-links"></a>Verwandte Links
 

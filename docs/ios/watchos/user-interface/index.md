@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/19/2016
-ms.openlocfilehash: cebacf6d845affe017e289fe4522a3b7c76d2942
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7ac96bce706d42d4334004e62762ff21231f0162
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291783"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766867"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>Steuerelemente der watchos-Benutzeroberfläche in xamarin
 
@@ -39,7 +39,6 @@ Die programmgesteuerten Namen aller Steuerelemente haben das Präfix `WKInterfac
 |Texteingabe|Verwenden `PresentTextInputController` Sie und `WKTextInputMode` die-Enumeration.<br />[Text Eingabe Dokumentation](~/ios/watchos/user-interface/text-input.md)<br />[Katalog Code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
 |Digital Crown|Der Digital Crown kann verwendet werden, um eine Auswahl zu steuern, oder die Drehung kann im Code nachverfolgt werden.<br />[Katalog Code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
 |Gesten|Es gibt vier Arten von Gestenerkennung, die einer Szene hinzugefügt werden können: Tippen, Schwenken, Schwenken und longpress.<br />[Katalog Code](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
-
 
 ## <a name="related-links"></a>Verwandte Links
 

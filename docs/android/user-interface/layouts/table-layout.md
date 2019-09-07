@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 1c477f030dc69394ba601b31d71a772f5037af48
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0e09bf2364df9b672a9612829eaa7a8ba343b0e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522296"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758396"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin. Android tablelayout
 
@@ -123,8 +123,6 @@ Die [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)-Methode l
 Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 
 [![Screenshot der tablelayout-APP, die mehrere Tabellenzeilen anzeigt](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
-
-
 
 ## <a name="references"></a>Verweise
 

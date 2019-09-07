@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 161fda52002e8bb757db23c9b2a20a6befd132f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5afb87eb3f84e00427072ef6c4e2c19b46de0186
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289340"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766584"
 ---
 # <a name="backgrounding-in-xamarinios"></a>Backerden in xamarin. IOS
 
@@ -35,8 +35,6 @@ In diesem Handbuch und den dazugehörigen exemplarischen Vorgehensweisen erfahre
 ## <a name="summary"></a>Zusammenfassung
 
 In dieser Anleitung haben wir die verschiedenen Methoden zum Durchführen der Hintergrundverarbeitung in ios eingeführt. Wir haben den IOS-Anwendungs Status behandelt und untersucht, welche Rollen Rückstellung im Lebenszyklus der IOS-Anwendung spielt. Außerdem haben wir gelernt, wie Sie einzelne Aufgaben oder gesamte Anwendungen registrieren können, um Sie im Hintergrund in IOS zu betreiben. Schließlich haben wir unser Verständnis von backerden unter IOS verstärkt, indem wir Anwendungen entwickeln, die Aktualisierungen im Hintergrund ausführen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

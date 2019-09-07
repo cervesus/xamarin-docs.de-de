@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 4568b204989c3ebb89ba4441232a100678657e28
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 97542c50041bfe24a3ad9494443ed8a4df85f113
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280653"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752230"
 ---
 # <a name="ios-7-user-interface-overview"></a>Übersicht über die iOS 7-Benutzeroberfläche
 
@@ -69,7 +69,7 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 Dies erzeugt eine Standard Warnungs Ansicht, in der die unter Ansicht ignoriert wird, wie unten dargestellt:
 
  ![](ios7-ui-images/alert.png "Beispiel für UIAlertView")
- 
+
  Hinweis: UIAlertView wurde in ios 8 als veraltet markiert. Anzeigen des Warnungs [Controllers](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller) für die Verwendung einer Warnungs Ansicht in ios 8 und höher.
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
@@ -253,7 +253,6 @@ Die Tönungs-Farbe kann auch auf Bilder angewendet werden, wenn `RenderingMode` 
 
 > [!IMPORTANT]
 > Die tint-Farbe kann nicht `UIAppearance`mit festgelegt werden.
-
 
 ### <a name="dynamic-type"></a>Dynamischer Typ
 

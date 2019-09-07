@@ -6,22 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: ef73b8e1cf9747c9ba426894f37aab620ac0095f
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 550883de571951bb05f0634632fd6b7688e1ab8c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119156"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755281"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Berechtigungen in xamarin. Android
-
 
 ## <a name="overview"></a>Übersicht
 
 Android-Anwendungen werden in einem eigenen Sandkasten ausgeführt und haben aus Sicherheitsgründen keinen Zugriff auf bestimmte Systemressourcen oder Hardware auf dem Gerät. Der Benutzer muss der APP explizit Berechtigungen erteilen, bevor diese Ressourcen verwendet werden können. Beispielsweise kann eine Anwendung nicht auf das GPS auf einem Gerät zugreifen, ohne dass der Benutzer explizit berechtigt ist. Android löst eine `Java.Lang.SecurityException` aus, wenn eine APP versucht, ohne Berechtigung auf eine geschützte Ressource zuzugreifen.
 
 Berechtigungen werden vom Anwendungsentwickler in der Datei " **androidmanifest. XML** " deklariert, wenn die APP entwickelt wird. Android verfügt über zwei unterschiedliche Workflows zum Abrufen der Zustimmung des Benutzers für diese Berechtigungen:
- 
+
 - Für apps, die auf Android 5,1 (API-Ebene 22) oder niedriger abzielen, erfolgte die Berechtigungs Anforderung, als die APP installiert wurde. Wenn der Benutzer die Berechtigungen nicht erteilt hat, würde die APP nicht installiert werden. Nachdem die APP installiert wurde, gibt es keine Möglichkeit, die Berechtigungen aufzuheben, außer indem Sie die APP deinstallieren.
 - Ab Android 6,0 (API-Ebene 23) haben Benutzer mehr Kontrolle über Berechtigungen erhalten. Sie können Berechtigungen erteilen oder widerrufen, solange die APP auf dem Gerät installiert ist. Dieser Screenshot zeigt die Berechtigungseinstellungen für die Google Contacts-app. Sie listet die verschiedenen Berechtigungen auf und ermöglicht dem Benutzer das Aktivieren oder Deaktivieren von Berechtigungen:
 
@@ -47,17 +46,14 @@ Die Android-Unterstützungs Bibliothek unterstützt einige der neuen APIs für B
 
 In diesem Dokument wird erläutert, wie Sie einer xamarin. Android-Anwendung Berechtigungen hinzufügen und wie apps, die auf Android 6,0 (API-Ebene 23) oder höher abzielen, eine Lauf Zeit Berechtigungsüberprüfung ausführen sollten.
 
-
 > [!NOTE]
 > Es ist möglich, dass die Berechtigungen für Hardware sich darauf auswirken können, wie die APP nach Google Play gefiltert wird. Wenn die APP z. b. eine Berechtigung für die Kamera erfordert, zeigt Google Play die APP nicht in der Google Play Store auf einem Gerät an, auf dem keine Kamera installiert ist.
-
 
 <a name="requirements" />
 
 ## <a name="requirements"></a>Anforderungen
 
 Es wird dringend empfohlen, dass xamarin. Android-Projekte das nuget-Paket [xamarin. Android. Support. compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) enthalten. Mit diesem Paket werden Berechtigungs spezifische APIs für ältere Versionen von Android backportieren. dabei wird eine gemeinsame Schnittstelle bereitgestellt, ohne dass die Android-Version, auf der die app ausgeführt wird, ständig überprüft werden muss.
-
 
 ## <a name="requesting-system-permissions"></a>Anfordern von System Berechtigungen
 
@@ -67,7 +63,6 @@ Apps, die auf Android 6,0 oder höher ausgerichtet sind, können nicht davon aus
 
 > [!NOTE]
 > Anwendungen sollten nur die Berechtigungen anfordern, die Sie benötigen.
-
 
 ### <a name="declaring-permissions-in-the-manifest"></a>Deklarieren von Berechtigungen im Manifest
 
@@ -115,7 +110,6 @@ Es ist möglich, die Berechtigungen mithilfe der in Visual Studio für Mac integ
 Xamarin. Android fügt bei der Buildzeit automatisch einige Berechtigungen zum Debuggen von Builds hinzu. Dadurch wird das Debuggen der Anwendung vereinfacht. Vor allem sind `INTERNET` zwei relevante Berechtigungen und `READ_EXTERNAL_STORAGE`. Diese automatisch festgelegten Berechtigungen werden in der Liste **erforderliche Berechtigungen** nicht als aktiviert angezeigt. Releasebuilds verwenden jedoch nur die Berechtigungen, die explizit in der Liste **erforderliche Berechtigungen** festgelegt sind. 
 
 Für apps, die auf Android 5.1 (API-Ebene 22) oder niedriger abzielen, müssen Sie nichts weiter tun. Apps, die unter Android 6,0 (API 23 Level 23) oder höher ausgeführt werden, sollten mit dem nächsten Abschnitt zum Ausführen von Berechtigungs Prüfungen zur Laufzeit fortfahren. 
-
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Lauf Zeit Berechtigungs Prüfungen in Android 6,0
 
@@ -209,11 +203,9 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Leitfaden wurde erläutert, wie Sie Berechtigungen auf einem Android-Gerät hinzufügen und überprüfen. Die Unterschiede in der Funktionsweise von Berechtigungen zwischen alten Android-Apps (API-Ebene < 23) und neuen Android-Apps (API-Ebene > 22). Es wurde erläutert, wie Lauf Zeit Berechtigungs Überprüfungen in Android 6,0 ausgeführt werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

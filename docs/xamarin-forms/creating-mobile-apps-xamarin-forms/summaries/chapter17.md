@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 17. Optimieren des Rasters
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 17. Optimieren des Rasters'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 17. Optimieren des Rasters'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333739"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760624"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Zusammenfassung der Kapitel 17. Optimieren des Rasters
 
@@ -101,8 +101,6 @@ Die [ **KeypadGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tre
 Die `Grid` können die Struktur eines Programms auf Richtungswechsel reagiert. Die [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders) Beispiel wird veranschaulicht, eine Technik, die eine zweite Zeile eines Telefons Hochformat und die zweite Spalte oder einem Telefon Querformat ein Element bewegt.
 
 Initialisiert das Programm `Slider` Elemente auf einen Bereich von 0 bis 255 und datenbindungen verwendet, um den Wert der Schieberegler im Hexadezimalformat anzuzeigen. Da die `Slider` Werte sind Gleitkomma-, und der Formatierungszeichenfolge für hexadezimale nur mit ganzen Zahlen funktioniert, .NET eine [ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek bietet.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

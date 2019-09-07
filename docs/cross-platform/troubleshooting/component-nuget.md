@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 7feec9f2fa136b96d81a54e4b2650918c53b5832
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d40555c70072a4c057739b39cc24a4f885f2dc9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281595"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765295"
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualisieren von Komponenten verweisen auf nuget
 
@@ -141,7 +141,6 @@ Das nuget-Paket wird weiterhin im Knoten **Pakete** aufgeführt, und Ihre APP wi
 
 ![Nuget-Paket aktualisieren](component-nuget-images/nuget-update-sml.png)
 
-
 <a name="replace" />
 
 ## <a name="components-with-nuget-replacements"></a>Komponenten mit nuget-Ersetzungen
@@ -201,7 +200,6 @@ Dies bedeutet, dass die Komponente nicht heruntergeladen und installiert wird, w
 - Untersuchen Sie alternative nuget-Pakete, oder suchen Sie den Quellcode, wenn es sich um eine Open Source-Komponente handelt.
 
 Viele Komponentenhersteller arbeiten noch an der Migration zu nuget, und andere (einschließlich kommerziell verfügbarer Produkte) untersuchen möglicherweise Alternative Übermittlungs Optionen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 - [Liste der gängigen xamarin-Plug-ins und-Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md)

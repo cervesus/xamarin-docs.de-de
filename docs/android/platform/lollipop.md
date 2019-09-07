@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7cc7eeabebbfbcd4b264202235307638b88842d8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a14ac0be141a473855dd2e9e19a57fd2d01649bb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761936"
 ---
 # <a name="lollipop-features"></a>Lollipop-Features
 
@@ -40,7 +40,6 @@ Zusätzlich zu den Verbesserungen der Benutzeroberfläche, die über das Materia
 
 - **Neue APIs** &ndash; Android 5,0 fügt neue APIs für die Unterstützung mehrerer Netzwerke, eine verbesserte Bluetooth-Konnektivität, eine einfachere Speicherverwaltung und eine flexiblere Steuerung von Multimedia-Playern und Kamera Geräten hinzu. Ein neues Auftrags Planungs Feature ist zum asynchronen Ausführen von Aufgaben zu geplanten Zeiten verfügbar. Mit dieser Funktion können Sie die Akku Lebensdauer verbessern, indem Sie z. b. Aufgaben planen, die durchgeführt werden, wenn das Gerät angeschlossen und berechnet wird.
 
-
 ## <a name="requirements"></a>Anforderungen
 
 Folgendes ist erforderlich, um die neuen Android 5,0-Features in xamarin-basierten apps zu verwenden:
@@ -52,7 +51,6 @@ Folgendes ist erforderlich, um die neuen Android 5,0-Features in xamarin-basiert
 - **Java Developer Kit** Xamarin. Android erfordert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher, wenn Sie für API-Ebene 24 oder höher entwickeln (JDK 1,8 unterstützt auch API-Ebenen vor 24, einschließlich Lollipop). &ndash; Die 64-Bit-Version von JDK 1,8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder den Formular-Previewer verwenden.
 
 Sie können weiterhin [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie speziell für API-Ebene 23 oder früher entwickeln.
-
 
 ## <a name="setting-up-an-android-50-project"></a>Einrichten eines Android 5,0-Projekts
 
@@ -101,7 +99,6 @@ Android 5,0 verwendet die neue Android-Runtime (Art) als Standardlaufzeit anstel
 
 Vorhandene apps sollten ohne Änderung in der Art &ndash; funktionieren, außer für apps, die die für die vorherige Dalvik-Laufzeit eindeutigen Verfahren ausnutzen, die möglicherweise nicht in der Kunst funktionieren. Weitere Informationen zu diesen Änderungen finden Sie unter [Überprüfen des App-Verhaltens auf der Android-Laufzeit (Art)](https://developer.android.com/guide/practices/verifying-apps-art.html).
 
-
 ### <a name="notification-changes"></a>Benachrichtigungs Änderungen
 
 Die Benachrichtigungen wurden in Android 5,0 erheblich geändert:
@@ -142,11 +139,9 @@ Das Material Design enthält drei integrierte Varianten, die Sie in Ihrer APP ve
 
 Weitere Informationen zur Verwendung von Material Design Features in xamarin. Android-Apps finden Sie unter [Material Theme (Material](~/android/user-interface/material-theme.md)Design).
 
-
 ## <a name="animations"></a>Animationen
 
 Android 5,0 bietet touchfeedback-Animationen, Aktivitäts Übergangs Animationen und Ansichts Zustands Übergangs-Animationen, um die Verwendung von App-Schnittstellen intuitiver zu gestalten. Android 5,0-Apps können auch die Anzeige *Effekt* -Animationen verwenden, um Sichten auszublenden oder anzuzeigen. Mithilfe der *gekrümmten Bewegungs* Einstellungen können Sie konfigurieren, wie schnell oder langsam Animationen gerendert werden.
-
 
 ### <a name="touch-feedback-animations"></a>Touchfeedback-Animationen
 
@@ -157,7 +152,6 @@ Touchfeedback-Animationen bieten Benutzern visuelles Feedback, wenn eine Ansicht
 Der erste Berührungs Kontakt mit der Schaltfläche wird im ersten Bild auf der linken Seite angezeigt, während die verbleibende Sequenz (von links nach rechts) veranschaulicht, wie sich der Ripple-Effekt auf den Rand der Schaltfläche ausbreitet. Wenn die Ripple-Animation endet, wird die Ansicht wieder in die ursprüngliche Darstellung zurückgegeben. Die standardmäßige Ripple-Animation findet in einem Bruchteil einer Sekunde statt, aber die Länge der Animation kann länger oder kürzer angepasst werden.
 
 Weitere Informationen zu touchfeedback-Animationen in Android 5,0 finden Sie unter [Anpassen des touchfeedbacks](https://developer.android.com/training/material/animations.html#Touch).
-
 
 ### <a name="activity-transition-animations"></a>Aktivitäts Übergangs Animationen
 
@@ -207,7 +201,6 @@ Freigegebene Element Übergänge unterstützen mehrere Animations Typen, z. b.:
 
 Weitere Informationen zu Aktivitäts Übergangs Animationen in Android 5,0 finden Sie unter [Anpassen von Aktivitäts Übergängen](https://developer.android.com/training/material/animations.html#Transitions).
 
-
 ### <a name="view-state-transition-animations"></a>Anzeigen von Zustands Übergangs Animationen
 
 Android 5,0 ermöglicht das Ausführen von Animationen, wenn sich der Zustand einer Ansicht ändert. Sie können Ansichts Zustandsübergänge animieren, indem Sie eine der folgenden Methoden verwenden:
@@ -217,7 +210,6 @@ Android 5,0 ermöglicht das Ausführen von Animationen, wenn sich der Zustand ei
 - Definieren von Animations Funktionen, die ausgeführt werden, wenn sich der Zustand einer Ansicht ändert. Mit der `StateListAnimator` neuen-Klasse können Sie einen Animator definieren, der ausgeführt wird, wenn sich der Zustand einer Ansicht ändert.
 
 Weitere Informationen über Ansichts Zustandsübergänge-Animationen in Android 5,0 finden Sie unter [Animieren von Ansichts Zustandsänderungen](https://developer.android.com/training/material/animations.html#ViewState).
-
 
 ### <a name="reveal-effect"></a>Effekt aufdecken
 
@@ -233,7 +225,6 @@ Das Anzeigen von Animationen kann rückgängig gemacht werden. Das heißt, der c
 
 Weitere Informationen zu den Auswirkungen von Android 5,0 in finden Sie unter [Verwenden des auszeige Effekts](https://developer.android.com/training/material/animations.html#Reveal).
 
-
 ### <a name="curved-motion"></a>Gekrümmte Bewegung
 
 Zusätzlich zu diesen Animations Features bietet Android 5,0 auch neue APIs, mit denen Sie die Zeit-und Bewegungs Kurven von Animationen angeben können. Android 5,0 verwendet diese Kurven, um temporale und räumliche Verschiebungen während Animationen zu interpolieren. In Android 5,0 sind drei Kurven definiert:
@@ -245,7 +236,6 @@ Zusätzlich zu diesen Animations Features bietet Android 5,0 auch neue APIs, mit
 - **Die\_langsamelineare\_Ausgabe in beginnt mit einer Spitzengeschwindigkeit und verlangsamt langsam bis zum Ende der Animation.\_** &ndash;
 
 Sie können die neue `PathInterpolator` Klasse verwenden, um anzugeben, wie die Bewegungs interpolung stattfindet. `PathInterpolator`ist ein interpolators, der Animations Pfade gemäß den angegebenen Kontrollpunkten und Bewegungs Kurven durchläuft. Weitere Informationen zum Angeben von gekrümmten Bewegungs Einstellungen in Android 5,0 finden Sie unter [Verwenden von gekrümmter Bewegung](https://developer.android.com/training/material/animations.html#CurvedMotion).
-
 
 ## <a name="view-shadows--elevation"></a>Schatten & Erhöhung anzeigen
 
@@ -259,7 +249,6 @@ Anzeige Schatten Einstellungen können statisch sein (wie oben gezeigt), oder Si
 
 Weitere Informationen zu Anzeige Schatten in Android 5,0 finden Sie unter [Definieren von Schatten-und clippingansichten](https://developer.android.com/training/material/shadows-clipping.html).
 
-
 ## <a name="color-features"></a>Farb Features
 
 Android 5,0 bietet zwei neue Features zum Verwalten von Farben in apps:
@@ -267,7 +256,6 @@ Android 5,0 bietet zwei neue Features zum Verwalten von Farben in apps:
 - Mithilfe von *drawable-Farben* können Sie die Farben von Bild Objekten durch Ändern eines Layoutattributs ändern.
 
 - Mit der hervor *ragenden Farb Extraktion* können Sie das Farbschema Ihrer APP dynamisch anpassen, sodass Sie mit der Farbpalette eines angezeigten Bilds koordiniert wird.
-
 
 ### <a name="drawable-tinting"></a>Drawable-Tinting
 
@@ -282,7 +270,6 @@ Dieses Logo wird über einem blauen Zirkel Hintergrund angezeigt, wie in den fol
 ![Beispiele für das obige Logo mit unterschiedlichen Tönungs-Einstellungen](lollipop-images/drawable-tinting.png)
 
 Weitere Informationen zu drawable Farben in Android 5,0 finden Sie unter [drawable Farben](https://developer.android.com/training/material/drawables.html#DrawableTint).
-
 
 ### <a name="prominent-color-extraction"></a>Bedeutende Farb Extraktion
 
@@ -308,7 +295,6 @@ In den obigen Screenshots wird die Aktionsleiste auf die extrahierte Farbe "lebe
 
 Weitere Informationen zur Farb Extraktion in Android 5,0 finden Sie unter [Extrahieren von markanten Farben aus einem Bild](https://developer.android.com/training/material/drawables.html#ColorExtract).
 
-
 ## <a name="new-ui-widgets"></a>Neue UI-Widgets
 
 In Android 5,0 werden zwei neue UI-Widgets eingeführt:
@@ -322,7 +308,6 @@ Beide Widgets enthalten die Unterstützung für Material Design Features. beispi
 [![Screenshots von mit "recyclerview" erstellten apps](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 Der Screenshot auf der linken Seite ist ein Beispiel `RecyclerView` für die Verwendung in einer e-Mail-APP, und der Screenshot auf der rechten `CardView` Seite ist ein Beispiel für die Verwendung in einer Reise Reservierungs-app.
-
 
 ### <a name="recyclerview"></a>RecyclerView
 
@@ -342,7 +327,6 @@ Die folgenden Screenshots veranschaulichen einen `RecyclerView` , der 100 Elemen
 
 Weitere Informationen zu `RecyclerView`finden Sie unter [recyclerview](~/android/user-interface/layouts/recycler-view/index.md).
 
-
 ### <a name="cardview"></a>CardView
 
 `CardView`ist eine einfache Ansicht, die eine Gleit Komma Zahl mit abgerundeten Ecken simuliert. Da `CardView` über integrierte Sicht Schatten verfügt, bietet es eine einfache Möglichkeit, der APP visuelle Tiefe hinzuzufügen. Die folgenden Screenshots zeigen drei textorientierte Beispiele für `CardView`:
@@ -352,7 +336,6 @@ Weitere Informationen zu `RecyclerView`finden Sie unter [recyclerview](~/android
 Jede der Karten im obigen Beispiel enthält eine `TextView`; die Hintergrundfarbe wird über das `cardBackgroundColor` -Attribut festgelegt.
 
 Weitere Informationen zu `CardView`finden Sie unter [CardView](~/android/user-interface/controls/card-view.md).
-
 
 ## <a name="enhanced-notifications"></a>Erweiterte Benachrichtigungen
 
@@ -389,7 +372,6 @@ In Android 5,0 können Sie Benachrichtigungs Metadaten bereitstellen, um die int
 Benachrichtigungs Kategorien werden verwendet, um zu filtern, welche Benachrichtigungen angezeigt werden können, wenn sich das Gerät im Modus " *nicht stören* " befindet.
 
 Ausführliche Informationen zum Erstellen und starten von Benachrichtigungen mit den neuesten Android 5,0-Features finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
-
 
 ## <a name="new-apis"></a>Neue APIs
 
@@ -485,8 +467,6 @@ Dieser Artikel bietet einen Überblick über wichtige neue Features in Android 5
 
 Wenn Sie mit der xamarin Android-Entwicklung noch nicht vertraut sind, lesen Sie [Setup und Installation](~/android/get-started/installation/index.md) , um Ihnen den Einstieg in xamarin. Android zu erleichtern.
 [Hello, Android](~/android/get-started/hello-android/index.md) ist eine ausgezeichnete Einführung, um zu erfahren, wie Sie Android-Projekte erstellen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,106 +1,83 @@
 ---
-title: Grundlagen der Xamarin.Android-Anwendung
-description: Konzepte der Core-Anwendung
+title: Grundlagen der xamarin. Android-Anwendung
+description: Grundlegende Anwendungskonzepte
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3ed616340dbb6dd64d85998d84e340ec381f6b54
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: af7ba83b9026a91028f4ffa9894d564d5ff13eb8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864086"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755304"
 ---
-# <a name="xamarinandroid-application-fundamentals"></a>Grundlagen der Xamarin.Android-Anwendung
+# <a name="xamarinandroid-application-fundamentals"></a>Grundlagen der xamarin. Android-Anwendung
 
-Dieser Abschnitt enthält eine Anleitung für einige der häufiger Aufgaben der Dinge oder Konzepte, denen Entwickler bei der Entwicklung von Android-Anwendungen berücksichtigen müssen.
+Dieser Abschnitt enthält eine Anleitung für einige der gängigeren Aufgaben oder Konzepte, die Entwickler bei der Entwicklung von Android-Anwendungen kennen müssen.
 
 ## <a name="accessibilityandroidapp-fundamentalsaccessibilitymd"></a>[Barrierefreiheit](~/android/app-fundamentals/accessibility.md)
 
-Diese Seite beschreibt, wie die Android Eingabehilfen-APIs zum Erstellen von apps, die gemäß der [Checkliste für die Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md).
+Auf dieser Seite wird beschrieben, wie Sie die Android-Barrierefreiheits-APIs zum Erstellen von apps entsprechend der [Eincheck Checkliste](~/cross-platform/app-fundamentals/accessibility.md)verwenden.
 
-## <a name="understanding-android-api-levelsandroidapp-fundamentalsandroid-api-levelsmd"></a>[Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md)
+## <a name="understanding-android-api-levelsandroidapp-fundamentalsandroid-api-levelsmd"></a>[Informationen zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md)
 
-Dieser Anleitung wird beschrieben, wie Android-API-Ebenen zum Verwalten von app-Kompatibilität für verschiedene Versionen von Android verwendet, und es wird erläutert, wie Xamarin.Android-projekteinstellungen zum Bereitstellen dieser API-Ebenen in Ihrer app zu konfigurieren. Darüber hinaus dieser Anleitung wird erläutert, wie Common Language Runtime-Code schreiben, der mit unterschiedlichen API behandelt, und es bietet eine Liste der alle Android-API-Ebenen, Versionsnummern (z. B. Android 8.0), Android-Code-Namen (z. B. Oreo) und Build-Versionscodes.
-
-
+In diesem Leitfaden wird beschrieben, wie Android API-Ebenen zum Verwalten der APP-Kompatibilität in verschiedenen Versionen von Android verwendet. Außerdem wird erläutert, wie Sie xamarin. Android-Projekteinstellungen für die Bereitstellung dieser API-Ebenen in ihrer App konfigurieren. Außerdem wird in diesem Handbuch erläutert, wie Sie Lauf Zeit Code schreiben, der mit verschiedenen API-Ebenen umgeht, und eine Referenzliste aller Android-API-Ebenen, Versionsnummern (z. b. Android 8,0), Android-Code Namen (z. b. Oreo) und buildversionscodes bereitstellen.
 
 ## <a name="resources-in-androidandroidapp-fundamentalsresources-in-androidindexmd"></a>[Ressourcen in Android](~/android/app-fundamentals/resources-in-android/index.md)
 
-Dieser Artikel führt das Konzept der Android-Ressourcen in Xamarin.Android und Dokumente ihrer Verwendung. Es wird beschrieben, wie Ressourcen in Ihrer Android-Anwendung verwenden, um anwendungslokalisierung und mehrere Geräte aus unterschiedlichen Bildschirmgrößen und dichten zu unterstützen.
-
-
-
+In diesem Artikel wird das Konzept der Android-Ressourcen in xamarin. Android vorgestellt und erläutert, wie Sie verwendet werden. Es wird erläutert, wie Ressourcen in Ihrer Android-Anwendung zur Unterstützung der Lokalisierung von Anwendungen und mehrerer Geräte mit unterschiedlichen Bildschirmgrößen und dichten verwendet werden.
 
 ## <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
 
-Aktivitäten sind ein wesentlicher Baustein von Android-Anwendungen, und sie können in einer Reihe von anderen Zuständen vorhanden sein. Der aktivitätslebenszyklus beginnt mit der Instanziierung und endet mit Zerstörung und viele Status in der Zwischenzeit enthält. Wenn eine Aktivität den Status ändert, wird die entsprechende Lebenszyklus-Event-Methode aufgerufen, die Aktivität der bevorstehenden statusänderung zu benachrichtigen und zum Ausführen von Code zur Anpassung an diese Änderung ermöglicht. In diesem Artikel werden die Aktivitäten des Lebenszyklus untersucht und erläutert, die Verantwortung, dass eine Aktivität während dieser Zustandsänderungen als Teil einer Anwendung kaum und zuverlässige verfügt.
+Aktivitäten sind ein grundlegender Baustein von Android-Anwendungen und können in einer Reihe unterschiedlicher Zustände vorhanden sein. Der Aktivitäts Lebenszyklus beginnt mit der Instanziierung und endet mit der Zerstörung und umfasst viele Zustände dazwischen. Wenn sich der Zustand einer Aktivität ändert, wird die entsprechende Lifecycle-Ereignismethode aufgerufen, die die Aktivität der bevorstehenden Zustandsänderung benachrichtigt und die Ausführung von Code für die Anpassung an diese Änderung zulässt. In diesem Artikel wird der Lebenszyklus von Aktivitäten untersucht, und es wird erläutert, wie sich eine Aktivität bei den einzelnen Zustandsänderungen als Teil einer gut verhaltenen, zuverlässigen Anwendung verhält.
 
 ## <a name="localizationandroidapp-fundamentalslocalizationmd"></a>[Lokalisierung](~/android/app-fundamentals/localization.md)
 
-In diesem Artikel wird erläutert, wie eine xamarin.Android-Anwendung in andere Sprachen zu lokalisieren, indem Sie Übersetzen von Zeichenfolgen und alternative Images bereitstellen.
+In diesem Artikel wird erläutert, wie Sie xamarin. Android in andere Sprachen lokalisieren, indem Sie Zeichen folgen übersetzen und alternative Bilder bereitstellen.
 
 ## <a name="servicesandroidapp-fundamentalsservicesindexmd"></a>[Dienste](~/android/app-fundamentals/services/index.md)
 
-Dieser Artikel behandelt die Android-Dienste, die Android-Komponenten sind, mit die Arbeit im Hintergrund ausgeführt werden können. Es wird erläutert, die verschiedenen Szenarien, denen für Dienste geeignet sind, und zeigt, wie sie implementiert sowohl für die Durchführung von lang andauernden Hintergrundaufgaben sowie, bieten eine Schnittstelle für Remoteprozeduraufrufe.
+Dieser Artikel behandelt Android-Dienste, bei denen es sich um Android-Komponenten handelt, die das erledigen von Aufgaben im Hintergrund ermöglichen. Es werden die verschiedenen Szenarios erläutert, für die Dienste geeignet sind, und es wird gezeigt, wie Sie sowohl zum Ausführen von Hintergrundaufgaben mit langer Laufzeit als auch zur Bereitstellung einer Schnittstelle für Remote Prozedur Aufrufe implementiert werden.
 
 ## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[Broadcast Receiver](~/android/app-fundamentals/broadcast-receivers.md)
 
-Dieses Handbuch beschrieben, wie zum Erstellen und Verwenden der übertragungsempfänger, ein Android-Komponente, die auf eine systemweite Broadcasts in Xamarin.Android reagiert.
-
-
+In diesem Leitfaden wird beschrieben, wie Broadcast Empfänger, eine Android-Komponente, die auf systemweite Übertragungen antwortet, in xamarin. Android erstellt und verwendet werden.
 
 ## <a name="permissionsandroidapp-fundamentalspermissionsmd"></a>[Berechtigungen](~/android/app-fundamentals/permissions.md)
 
-Sie können die Tools zur Unterstützung in Visual Studio für Mac oder Visual Studio integriert verwenden, erstellen und Hinzufügen von Berechtigungen auf das Android-Manifest. Dieses Dokument beschreibt die Vorgehensweise beim Hinzufügen von Berechtigungen in Visual Studio und Xamarin Studio.
-
-
+Zum Erstellen und Hinzufügen von Berechtigungen für das Android-Manifest können Sie die Unterstützung von Tools verwenden, die in Visual Studio für Mac oder Visual Studio integriert ist. In diesem Dokument wird beschrieben, wie Sie Berechtigungen in Visual Studio hinzufügen und Xamarin Studio.
 
 ## <a name="graphics-and-animationandroidapp-fundamentalsgraphics-and-animationmd"></a>[Grafiken und Animationen](~/android/app-fundamentals/graphics-and-animation.md)
 
-Android bietet ein sehr umfangreichen und verschiedenartigen-Framework für die Unterstützung von Direct2D-Grafiken und Animationen. Dieses Dokument führt dieser Frameworks und erläutert, wie benutzerdefinierte Grafiken und Animationen erstellen und zu deren Verwendung in einer Xamarin.Android-Anwendung.
-
+Android bietet ein sehr umfangreiches und vielfältiges Framework für die Unterstützung von 2D-Grafiken und-Animationen. In diesem Dokument werden diese Frameworks vorgestellt und erläutert, wie benutzerdefinierte Grafiken und Animationen erstellt und in einer xamarin. Android-Anwendung verwendet werden.
 
 ## <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[CPU-Architekturen](~/android/app-fundamentals/cpu-architectures.md)
 
-Xamarin.Android unterstützt mehrere CPU-Architekturen, einschließlich 32-Bit und 64-Bit-Geräten. In diesem Artikel wird erläutert, wie Sie eine app eine oder mehrere Android unterstützte CPU-Architekturen abzielen.
-
-
-
+Xamarin. Android unterstützt verschiedene CPU-Architekturen, einschließlich 32-Bit-und 64-Bit-Geräten. In diesem Artikel wird erläutert, wie Sie eine APP für eine oder mehrere mit Android unterstützte CPU-Architekturen ausrichten.
 
 ## <a name="handling-rotationandroidapp-fundamentalshandling-rotationmd"></a>[Verarbeiten der Drehung](~/android/app-fundamentals/handling-rotation.md)
 
-Dieser Artikel beschreibt, wie Änderungen an Device-Ausrichtung in Xamarin.Android behandelt wird. Es wird beschrieben, wie mit dem Android-Ressourcen-System, um Ressourcen für ein bestimmtes geräteausrichtung auch automatisch zu laden, wie an die programmgesteuerte Behandlung der Ausrichtung Änderungen funktioniert. Klicken Sie dann es werden Verfahren beschrieben Zustand beibehalten, wenn ein Gerät gedreht wird.
-
-
+In diesem Artikel wird beschrieben, wie Änderungen an der Geräte Orientierung in xamarin. Android behandelt werden. Es wird erläutert, wie Sie mit dem Android-Ressourcensystem zum automatischen Laden von Ressourcen für eine bestimmte Geräte Orientierung und zum programmgesteuerten behandeln von Richtungsänderungen arbeiten. Anschließend werden Techniken zum Verwalten des Zustands beim Drehen eines Geräts beschrieben.
 
 ## <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android Audio](~/android/app-fundamentals/android-audio.md)
 
-Android-Betriebssystems bietet umfangreiche Unterstützung für Multimedia, umfasst, Audio und Video verwendet wird. Dieser Leitfaden konzentriert sich auf Audiodaten in Android und deckt wiedergeben und Aufzeichnen von Audio mithilfe der integrierten Audioplayer und Recorder Klassen als auch die Low-Level-audio-API. Hierin sind auch arbeiten mit Audio-Ereignissen, die von anderen Anwendungen übertragen werden, damit Entwickler kaum Anwendungen erstellen können.
-
-
-
+Das Android-Betriebssystem bietet umfassende Unterstützung für Multimedia und umfasst sowohl Audioinformationen als auch Videos. Dieser Leitfaden konzentriert sich auf das Audiomaterial in Android und deckt das Abspielen und Aufzeichnen von Audiodaten mithilfe der integrierten Audioplayer-und Recorder-Klassen sowie der Low-Level-audioapi ab. Außerdem wird die Arbeit mit Audioereignissen behandelt, die von anderen Anwendungen gesendet werden, damit Entwickler gut verhaltene Anwendungen entwickeln können.
 
 ## <a name="notificationsandroidapp-fundamentalsnotificationsindexmd"></a>[Benachrichtigungen](~/android/app-fundamentals/notifications/index.md)
 
-In diesem Abschnitt wird erläutert, wie lokale und remote-Benachrichtigungen in Xamarin.Android implementiert wird. Es wird beschrieben, die von einer Android-benachrichtigungs UI-Elemente und behandelt die API des mit dem Erstellen und Anzeigen einer Benachrichtigung beteiligt. Von remotebenachrichtigungen werden sowohl Google Cloud Messaging und Firebase Cloud Messaging erläutert. Schrittweise exemplarische Vorgehensweisen und Codebeispiele sind enthalten.
-
-
+In diesem Abschnitt wird erläutert, wie lokale Benachrichtigungen und Remote Benachrichtigungen in xamarin. Android implementiert werden. Darin werden die verschiedenen Benutzeroberflächen Elemente einer Android-Benachrichtigung beschrieben. Außerdem wird erläutert, welche API zum Erstellen und Anzeigen einer Benachrichtigung beteiligt ist. Für Remote Benachrichtigungen werden sowohl Google Cloud Messaging als auch Firebase Cloud Messaging erläutert. Ausführliche Exemplarische Vorgehensweisen und Codebeispiele sind enthalten.
 
 ## <a name="touchandroidapp-fundamentalstouchindexmd"></a>[Toucheingabe](~/android/app-fundamentals/touch/index.md)
 
-In diesem Abschnitt wird erläutert, dass die Konzepte und die Details der Implementierung von touch-Gesten auf Android. Touch-APIs eingeführt und beschrieben, gefolgt von einer Untersuchung der Bewegung Erkennungen.
-
-
+In diesem Abschnitt werden die Konzepte und Details zur Implementierung von Touchgesten unter Android erläutert. Touchapis werden eingeführt und erläutert, gefolgt von einer Untersuchung von Gesten erkenungen.
 
 ## <a name="httpclient-stack-and-ssltlsandroidapp-fundamentalshttp-stackmd"></a>[HttpClient-Stapel und SSL/TLS](~/android/app-fundamentals/http-stack.md)
 
-Dieser Abschnitt erläutert die HttpClient-Stapel und SSL/TLS-Implementierung Selektoren für Android. Diese Einstellungen bestimmen die "HttpClient" und SSL/TLS-Implementierung, die von den Xamarin.Android-apps verwendet werden.
+In diesem Abschnitt werden die HttpClient-Stapel-und SSL/TLS-Implementierungs Auswahl für Android erläutert. Diese Einstellungen bestimmen die HttpClient-und SSL/TLS-Implementierung, die von xamarin. Android-Apps verwendet wird.
 
+## <a name="writing-responsive-applicationswriting-responsive-appsmd"></a>[Schreiben von reaktionsfähigen Anwendungen](writing-responsive-apps.md)
 
-## <a name="writing-responsive-applicationswriting-responsive-appsmd"></a>[Schreiben von-reaktionsschneller Anwendungen](writing-responsive-apps.md)
-
-Dieser Artikel beschreibt, wie Sie threading verwenden, um einer Xamarin.Android-Anwendung reaktionsfähig zu halten, durch das Verschieben von lang andauernden Aufgaben in einem Hintergrundthread.
+In diesem Artikel wird erläutert, wie Sie mithilfe von Threading eine xamarin. Android-Anwendung auf reaktionsfähig halten, indem Sie Aufgaben mit langer Ausführungszeit in einen Hintergrund Thread verschieben.

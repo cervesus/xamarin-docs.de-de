@@ -7,12 +7,12 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 133d7ffdeafdced3f909c21cf08f2241666015fa
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1daf4822dd7debe98aabd58d42cb6ed29f95b90d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228256"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759360"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Schneiden mit Pfaden und Regionen
 
@@ -56,7 +56,6 @@ public class MonkeyThroughKeyholePage : ContentPage
 ```
 
 Obwohl die `keyholePath` Objekt beschreibt den Umriss einer Keyhole, die Koordinaten sind beliebig und widerspiegeln, was praktisch war, wenn die Pfaddaten gedacht war. Aus diesem Grund die `PaintSurface` Handler Ruft die Begrenzungen des diesen Pfad und Aufrufe `Translate` und `Scale` , den Pfad in der Mitte des Bildschirms zu verschieben und fast so groß sein wie der Bildschirm zu machen:
-
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -510,7 +509,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 Sehen sie nicht wirklich wie ein vier – Leaf Clover, aber es ist ein Bild an, die andernfalls schwer ohne Clipping gerendert werden kann:
 
 [![Dreifacher Screenshot der vier Blatt-Clover-Seite](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
-
 
 ## <a name="related-links"></a>Verwandte Links
 

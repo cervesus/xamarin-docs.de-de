@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e129a8c37e6b8780a57636730c072b230354b8b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288374"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758110"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Übersicht über die plattformübergreifenden Anwendungen
 
@@ -45,11 +45,9 @@ Um die Wiederverwendung von Code zu erhöhen, können Sie plattformübergreifend
 1. [Nuget-Pakete](https://nuget.org) , die mit xamarin-Projekten kompatibel sind, z. b. [JSON.net](https://www.nuget.org/packages/Newtonsoft.Json/)
 1. Verwenden von .NET Framework-Features für Netzwerke, Webdienste, e/a und mehr.
 
-
 Einige dieser Komponenten werden in der *Tasky* -Fallstudie implementiert.
 
  <a name="Separate_Reusable_Code_into_a_Core_Library" />
-
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>Trennen von wiederverwendbarem Code in eine Kernbibliothek
 
@@ -58,7 +56,6 @@ Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihr
  ![](overview-images/layers2.png "Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihrer Anwendungsarchitektur und das anschließende Verschieben von Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Kernbibliothek sind, befolgen, können Sie die Code Freigabe plattformübergreifend maximieren.")
 
  <a name="Case_Studies" />
-
 
 ## <a name="case-studies"></a>Fallstudien
 

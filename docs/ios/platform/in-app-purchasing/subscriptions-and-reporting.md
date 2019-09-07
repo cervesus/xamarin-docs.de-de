@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 7f455d2164573d68db0a9c764f2b2cef5cc6d739
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284039"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752675"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements und Berichterstellung in xamarin. IOS
 
@@ -28,7 +28,6 @@ Wichtige Unterschiede zwischen nicht erneuerten Abonnements und anderen Produktt
 - Implementierungs Übersicht
 - Abonnements, die nicht erneuert werden, sollten normalerweise mit dem vom Server übermittelten Workflow implementiert und wie z. b. nutzbare Produkte verwaltet werden 
 
-
 ## <a name="about-free-subscriptions"></a>Informationen zu kostenlosen Abonnements
 
 Mit kostenlosen Abonnements können Entwickler kostenlose Inhalte in NewsStand-apps einfügen (Sie können nicht in nicht-News-Kiosk-Apps verwendet werden). Nachdem ein kostenloses Abonnement gestartet wurde, ist es auf allen Geräten des Benutzers verfügbar. Kostenlose Abonnements laufen nie ab. Sie enden nur, wenn die Anwendung deinstalliert wird.
@@ -36,7 +35,6 @@ Mit kostenlosen Abonnements können Entwickler kostenlose Inhalte in NewsStand-a
 ### <a name="implementation-overview"></a>Implementierungs Übersicht
 
 Kostenlose Abonnements Verhalten sich ähnlich wie Abonnements mit automatischer verfügbaren Abonnements. Die Anwendung muss über ein kostenloses Abonnement Produkt verfügen, das für "Purchase" in iTunes Connect verfügbar ist. Beim Erwerb durch den Benutzer sollte der Erwerb eines kostenlosen Abonnements wie ein Produkt mit automatischer Produktnutzung überprüft werden. Kostenlose Abonnement Transaktionen können wieder hergestellt werden.
-
 
 ## <a name="about-auto-renewable-subscriptions"></a>Informationen zu automatischen Abonnements
 
@@ -53,7 +51,7 @@ Der gemeinsame geheime Schlüssel in-App-Käufe muss in der JSON-Anforderung ver
 Wählen Sie auf der iTunes Connect-Startseite **meine apps**aus:   
    
  [![](subscriptions-and-reporting-images/image2.png "„My Apps“ (Meine Apps) auswählen")](subscriptions-and-reporting-images/image2.png#lightbox)  
- 
+
 Wählen Sie eine Anwendung aus, und klicken Sie auf die Registerkarte **in-App-Käufe** :
 
 [![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf die Registerkarte in-App-Käufe.")](subscriptions-and-reporting-images/image6.png#lightbox)
@@ -63,10 +61,8 @@ Wählen Sie am unteren Rand der Seite die Option **zum Anzeigen oder Generieren 
  [![](subscriptions-and-reporting-images/image40.png "Auswählen eines gemeinsamen geheimen Schlüssels anzeigen oder generieren")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "Generieren eines gemeinsamen geheimen Schlüssels")](subscriptions-and-reporting-images/image41.png#lightbox)   
-   
-   
-   
- Um den gemeinsamen geheimen Schlüssel zu verwenden, fügen Sie ihn in die JSON-Nutzlast ein, die an die Apple-Server gesendet wird, wenn Sie eine in-App-Kaufbestätigung für ein automatisch verlängertes Abonnement überprüfen, wie hier:
+
+Um den gemeinsamen geheimen Schlüssel zu verwenden, fügen Sie ihn in die JSON-Nutzlast ein, die an die Apple-Server gesendet wird, wenn Sie eine in-App-Kaufbestätigung für ein automatisch verlängertes Abonnement überprüfen, wie hier:
 
 ```csharp
 {
@@ -95,10 +91,8 @@ Wenn der Status 0 (null) lautet, ist das Abonnement weiterhin gültig, und die a
 #### <a name="restoring-auto-renewable-subscriptions"></a>Wiederherstellen automatisch verlänger Abonnements
 
 Sie erhalten mehrere Transaktionen – die ursprüngliche Kauftransaktion und eine separate Transaktion für jeden Zeitraum, für den das Abonnement erneuert wurde. Sie müssen die Startdatums Angaben und-Bedingungen nachverfolgen, um die Gültigkeitsdauer zu verstehen.   
-   
-   
-   
- Das skpaymenttransaction-Objekt schließt den Abonnement Begriff nicht ein – Sie sollten für jeden Begriff eine andere Produkt-ID verwenden und Code schreiben, der den Abonnementzeitraum vom Kauf Datum der Transaktion extrapolieren kann.
+
+Das skpaymenttransaction-Objekt schließt den Abonnement Begriff nicht ein – Sie sollten für jeden Begriff eine andere Produkt-ID verwenden und Code schreiben, der den Abonnementzeitraum vom Kauf Datum der Transaktion extrapolieren kann.
 
 #### <a name="testing-auto-renewal"></a>Testen der automatischen Verlängerung
 

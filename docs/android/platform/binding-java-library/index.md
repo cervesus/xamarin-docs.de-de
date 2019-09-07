@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: b795a53fc78adee19e1e2d1c57c9c4344aa4281b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: e829c953278d8edeb697d27da8e3707ee1c91784
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119645"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757586"
 ---
 # <a name="binding-a-java-library"></a>Binden einer Java-Bibliothek
 
@@ -65,7 +65,6 @@ Dann fügen Sie die folgende `using` Anweisung am Anfang der C# Quelldateien ein
 using Com.Company.Package;
 ```
 
-
 Beim Binden einer vorhandenen Android-Bibliothek müssen folgende Punkte berücksichtigt werden:
 
 - **Gibt es externe Abhängigkeiten für die Bibliothek?** &ndash;Alle Java-Abhängigkeiten, die für die Android-Bibliothek erforderlich sind, müssen im xamarin. Android-Projekt als **referencejar** oder als **embeddedreferencejar**enthalten sein. Alle systemeigenen Assemblys müssen dem Bindungs Projekt als **embeddednativelibrary**hinzugefügt werden.  
@@ -74,10 +73,9 @@ Beim Binden einer vorhandenen Android-Bibliothek müssen folgende Punkte berück
 
 - **Welche Version des JDK wurde verwendet, um die Bibliothek zu kompilieren?** &ndash;Bindungs Fehler können auftreten, wenn die Android-Bibliothek mit einer anderen Version von JDK erstellt wurde, als von xamarin. Android verwendet wird. Wenn möglich, kompilieren Sie die Android-Bibliothek mit derselben Version des JDK neu, das von Ihrer Installation von xamarin. Android verwendet wird.
 
-
 ## <a name="build-actions"></a>Buildvorgänge
 
-Wenn Sie eine Bindungs Bibliothek erstellen, legen Sie Buildaktionen für die **jar** -Datei oder fest. AAR-Dateien, die Sie in Ihr Bindungs Bibliotheks &ndash; Projekt integrieren jede Buildaktion bestimmt, wie die **jar** -Datei oder. Die Aar-Datei wird in Ihre Bindungs Bibliothek eingebettet (oder von ihr referenziert). In der folgenden Liste sind diese Buildaktionen zusammengefasst:
+Wenn Sie eine Bindungs Bibliothek erstellen, legen Sie *Buildaktionen* für die **jar** -Datei oder fest. AAR-Dateien, die Sie in Ihr Bindungs Bibliotheks &ndash; Projekt integrieren jede Buildaktion bestimmt, wie die **jar** -Datei oder. Die Aar-Datei wird in Ihre Bindungs Bibliothek eingebettet (oder von ihr referenziert). In der folgenden Liste sind diese Buildaktionen zusammengefasst:
 
 - `EmbeddedJar`Bettet die jar-in die resultierende Bindungs Bibliotheks-DLL als eingebettete Ressource ein. &ndash; Dies ist die einfachste und am häufigsten verwendete Buildaktion. Verwenden Sie diese Option, wenn Sie möchten, dass die **jar** -Datei automatisch in Bytecode kompiliert und in die Bindungs Bibliothek gepackt wird.
 
@@ -121,11 +119,9 @@ Der xamarin. Android-Bindungs Generator ändert einige Java-Ausdrücke und-Muste
 
 - _Listener/Listenerschnittstellen_ in Java sind _Ereignisse_ in .net. Die Parameter der Methoden in den Rückruf Schnittstellen werden durch eine `EventArgs` Unterklasse dargestellt.
 
-- Eine _statische_ , in Java erbt Klasse ist eine in .net erbt.
+- Eine statische, in Java _erbt Klasse_ ist eine in .net _erbt_ .
 
 - Eine _innere Klasse_ in Java ist eine geschachtelte _Klasse_ mit einem Instanzkonstruktor in C#.
-
-
 
 ## <a name="binding-scenarios"></a>Bindungs Szenarien
 
@@ -140,7 +136,6 @@ Die folgenden Bindungs szenariohandbücher können Ihnen helfen, eine Java-Bibli
 - [Anpassen von Bindungen](~/android/platform/binding-java-library/customizing-bindings/index.md) erläutert, wie manuelle Änderungen an der Bindung vorgenommen werden, um Buildfehler aufzulösen und die resultierende API so zu strukturieren,C#dass Sie eher "-like" ist.
 
 - [Problem](~/android/platform/binding-java-library/troubleshooting-bindings.md) Behandlung bei Bindungen werden häufige Bindungs Fehler Szenarios aufgelistet, mögliche Ursachen erläutert und Vorschläge zum Beheben dieser Fehler angezeigt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

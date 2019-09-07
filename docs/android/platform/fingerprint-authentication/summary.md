@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 08738a751fd630c6a413b1c7393f8007f5c97060
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d406b492e2f55604daf8a1c6b4be32f23b63f54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643544"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761230"
 ---
 # <a name="fingerprint-authentication-guidance"></a>Leitfaden für Fingerabdruckauthentifizierung
 
@@ -34,8 +34,6 @@ Die Fingerabdruckauthentifizierung ist eine hervorragend Möglichkeit, eine xama
 Zuerst haben wir die Fingerabdruck-API selbst `FingerprintManager` , ( `FingerprintManagerCompat`und) erläutert. Wir haben untersucht `FingerprintManager.AuthenticationCallbacks` , wie die abstrakte Klasse von einer Anwendung erweitert und als Vermittler zwischen der Fingerabdruck Hardware und der Anwendung verwendet werden muss. Anschließend wird erläutert, wie die Integrität der Fingerabdruckscanner-Ergebnisse mithilfe eines Java `Cipher` -Objekts überprüft wird. Schließlich haben wir uns beim Testen etwas mit der Vorgehensweise zum Registrieren eines Fingerabdrucks auf einem Gerät und dem Verwenden von ADB zum Simulieren eines Fingerabdrucks auf einem Emulator mit **ADB** bedendert. 
 
 Wenn Sie dies nicht bereits getan haben, sollten Sie sich die [Beispielanwendung](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide) ansehen, die dieser Anleitung folgt. Das Beispiel für den [Fingerabdruck Dialogfeld](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog) wurde von Java zu xamarin. Android portiert und bietet ein weiteres Beispiel zum Hinzufügen der Fingerabdruckauthentifizierung zu einer Android-Anwendung.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

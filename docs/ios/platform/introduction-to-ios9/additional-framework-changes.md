@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 706efdd9cb39db63ab0c7b9cd4404b7b84f4c14b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cb16ad3889453f866f3dc9e66f5bcc8860bd094a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292405"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751981"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Weitere Änderungen an IOS 9-Frameworks
 
@@ -55,9 +55,6 @@ Das neue _cloudkit-Webdienst_ -Framework bietet eine JavaScript-Bibliothek (clou
 
 > [!IMPORTANT]
 > Bevor Sie mithilfe von cloudkit js auf Inhalte einer cloudkit-Datenbank zugreifen, diese präsentieren oder aktualisieren können, müssen Sie zuvor das Schema der Datenbank definiert haben.
-
-
-
 
 Weitere Informationen finden Sie in den folgenden Dokumenten:
 
@@ -261,8 +258,6 @@ Um dieses Problem zu beheben, verwenden Sie die Klassen automatisch Layout und G
 ### <a name="new-uitextinputassistantitem-class"></a>Neue uitextinputassistantitem-Klasse
 
 Verwenden Sie die `UITextInputAssistantItem` neue Klasse für das Layout von Balken Schaltflächen Gruppen in einer Verknüpfungs _Leiste_. Die Verknüpfungs Leiste ist ein neuer Bereich, der in der Bildschirmtastatur verfügbar ist, um Tipp Verknüpfungen bereitzustellen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

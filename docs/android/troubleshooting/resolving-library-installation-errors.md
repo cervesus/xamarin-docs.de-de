@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2018
-ms.openlocfilehash: d3face5db37e22fe7acceaa975c3327bb02b78ab
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8107a26e090aa920d71146d5f2af8b8365697d6b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523332"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757208"
 ---
 # <a name="resolving-library-installation-errors"></a>Beheben von Bibliotheksinstallationsfehlern
 
@@ -23,8 +23,6 @@ _In einigen Fällen erhalten Sie möglicherweise Fehler bei der Installation von
 
 Beim Erstellen eines xamarin. Android-App-Projekts erhalten Sie möglicherweise Buildfehler, wenn Visual Studio oder Visual Studio für Mac versuchen, Abhängigkeits Bibliotheken herunterzuladen und zu installieren. Viele dieser Fehler werden durch Netzwerkkonnektivitätsprobleme, Datei Beschädigungen oder Versions Probleme verursacht. In dieser Anleitung werden die am häufigsten auftretenden Installationsfehler für die Unterstützungs Bibliothek beschrieben, und es werden die Schritte zum Umgehen dieser Probleme und zum erneuten aufbauen des App-Projekts beschrieben. 
 
- 
- 
 ## <a name="errors-while-downloading-m2repository"></a>Fehler beim Herunterladen von m2Repository
 
 Möglicherweise werden **m2repository** -Fehler angezeigt, wenn Sie auf ein nuget-Paket der Android-Unterstützungs Bibliotheken oder Google Play Dienste verweisen. Die Fehlermeldung sieht etwa wie die folgende aus:
@@ -34,8 +32,6 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 ```
 
 Dieses Beispiel gilt für **Android\_m2repository\_R16**, aber möglicherweise wird die gleiche Fehlermeldung für eine andere Version angezeigt, z. b. **\_Android m2repository\_R18** oder **Android\_ . m2repository\_R25**. 
-
-
 
 ### <a name="automatic-recovery-from-m2repository-errors"></a>Automatische Wiederherstellung nach m2repository-Fehlern 
 
@@ -60,8 +56,6 @@ Häufig kann dieses Problem behoben werden, indem die problematische Bibliothek 
 4. Wenn Sie das &ndash; Projekt neu erstellen, bewirkt dies, dass der Buildprozess die fehlende Bibliothek erneut herunterlädt.
 
 In den meisten Fällen wird der Buildfehler durch diese Schritte gelöst, und Sie können den Vorgang fortsetzen. Wenn durch das Löschen dieser Bibliothek der Buildfehler nicht behoben wird, müssen Sie die Datei **Android\_m2repository\_r_nn_. zip** manuell herunterladen und installieren, wie im nächsten Abschnitt beschrieben. 
-
-
 
 ### <a name="manually-downloading-m2repository"></a>Manuelles Herunterladen m2repository
 
@@ -119,9 +113,7 @@ Wenn Sie die oben beschriebenen automatischen Wiederherstellungsschritte verwend
 
     [![Beispiel für das "R16. zip"-Repository, das in 0595e577d19d31708195a83087881ee6. ZIP umbenannt wird](resolving-library-installation-errors-images/03-md5-rename-vs.png)](resolving-library-installation-errors-images/03-md5-rename-vs.png#lightbox)
 
-
 Wenn der Buildfehler durch diesen Vorgang nicht behoben wird, müssen Sie die **Datei\_Android\_m2repository r_nn_. zip** manuell herunterladen, die ZIP-Datei entpacken und ihren Inhalt installieren, wie im nächsten Abschnitt beschrieben. 
-
 
 ### <a name="manually-downloading-and-installing-m2repository-files"></a>Manuelles Herunterladen und Installieren von m2repository-Dateien
 
@@ -166,8 +158,6 @@ Führen Sie die folgenden Schritte aus, um **m2repository** herunterzuladen und 
     Entzippen Sie unter macOS die **. Aar** -Datei mithilfe des **Entzippen Sie** -Befehls im Terminal (z. b. **Entzippen Sie File. Aar**).
 
 An diesem Punkt haben Sie die fehlenden Komponenten manuell installiert, und das Projekt sollte ohne Fehler erstellt werden. Wenn dies nicht der Wert ist, vergewissern Sie sich, dass Sie die **m2repository** **. zip** -Archiv Version heruntergeladen haben, die exakt der Version in der Fehlermeldung entspricht, und überprüfen Sie, ob Sie Ihren Inhalt an den richtigen Speicherorten installiert haben, wie in den obigen Schritten beschrieben 
-
-
 
 ## <a name="summary"></a>Zusammenfassung 
 

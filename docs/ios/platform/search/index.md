@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: eb88f7c1de12eee59ea4c2a271079e6b96c29b09
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286603"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769489"
 ---
 # <a name="search-apis-in-xamarinios"></a>APIs in xamarin. IOS suchen
 
@@ -89,8 +89,6 @@ Weitere Informationen finden Sie in unserem Leitfaden für [proaktive Vorschläg
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die neuen Such-API-Features behandelt, die IOS 9 für xamarin. IOS-apps bereitstellt. Es wurden die Methoden [nsuseractivity](nsuseractivity.md), [Core Spotlight](corespotlight.md) und [Web Markup](web-markup.md) für die Indizierung von Inhalten behandelt. Es wurde eine kurze Erläuterung dazu verwendet, wann ein bestimmter suchansatz verwendet werden sollte und welche Arten von Inhalten indiziert werden sollen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

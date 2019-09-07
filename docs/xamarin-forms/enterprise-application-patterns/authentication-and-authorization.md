@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 45008e127286d14ef62c5212976bfd3a8aac651f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 667de4d579f43558d9a811c386e355433f526077
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529177"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760462"
 ---
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
@@ -477,7 +477,6 @@ Weitere Informationen zur Verwendung von Webanforderungen durch das eshoponconta
 Es gibt viele Ansätze für die Integration von Authentifizierung und Autorisierung in eine xamarin. Forms-APP, die mit einer ASP.NET MVC-Webanwendung kommuniziert. Der eshoponcontainers-Mobile App führt die Authentifizierung und Autorisierung mit einem containerisierten Identitäts-microservice aus, der "identityserver 4" verwendet. Identityserver ist ein OpenID Connect-und OAuth 2,0-Open-Source-Framework für ASP.net Core, die in ASP.net Core Identity integriert ist, um bearertokenauthentifizierung auszuführen.
 
 Der Mobile App fordert Sicherheits Token von identityserver an, entweder zum Authentifizieren eines Benutzers oder zum Zugreifen auf eine Ressource. Beim Zugriff auf eine Ressource muss ein Zugriffs Token in die Anforderung an APIs eingeschlossen werden, die eine Autorisierung erfordern. Die Middleware von identityserver überprüft eingehende Zugriffs Token, um sicherzustellen, dass Sie von einem vertrauenswürdigen Aussteller gesendet werden, und dass Sie für die Verwendung mit der API, die Sie empfängt, gültig sind.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

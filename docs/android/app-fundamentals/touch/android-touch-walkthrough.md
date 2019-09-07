@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/09/2018
-ms.openlocfilehash: d9c8fb7e1045d35fa23c85c689cb0e1f9461d8dd
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fc3fb6e7c3391092b33ce1d162a60ce6528e0ab0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225812"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754856"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>Exemplarische Vorgehensweise: Verwenden von Touchscreen in Android
 
@@ -65,10 +65,9 @@ Jedes Mal, wenn der Benutzer `ImageView`das berührt `Touch` , wird das-Ereignis
 
 [![Screenshot der Aktivität mit Berührungs Beginn](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-Solange der Benutzer die `ImageView`berührt, wird der Finger Abdruck in der `TextView`angezeigt. Wenn der Benutzer das `ImageView`nicht mehr berührt, wird der Nachrichten **Berührungs Ende** im `TextView`angezeigt, wie im folgenden Screenshot gezeigt:
+Solange der Benutzer die `ImageView` **berührt, wird** der Fingerabdruck in der `TextView`angezeigt. Wenn der Benutzer das `ImageView`nicht mehr berührt, wird der Nachrichten **Berührungs Ende** im `TextView`angezeigt, wie im folgenden Screenshot gezeigt:
 
 [![Screenshot der Aktivität mit Berührungs enden](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
-
 
 ## <a name="gesture-recognizer-activity"></a>Gesten Erkennungs Aktivität
 
@@ -352,7 +351,6 @@ Im Rahmen dieser exemplarischen Vorgehensweise wurde die Gesten Bibliothek berei
   [![Scribble auf dem Bildschirm, ursprüngliches Bild wird angezeigt](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
 Sie haben nun ein Verständnis für die Integration von toucheingaben und Gesten in eine Android-Anwendung mithilfe von xamarin. Android.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

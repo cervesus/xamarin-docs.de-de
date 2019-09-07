@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 052d81ccaefe123eb375ddcd92bee0b1f2a395e2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290317"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770298"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing einer xamarin. Mac-app
 
@@ -562,8 +562,6 @@ Wenn Sie eine neue Sandkasten Version einer xamarin. Mac-Anwendung freigeben, di
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Sand Boxing einer xamarin. Mac-Anwendung ausführlich erläutert. Zuerst haben wir eine einfache xamarin. Mac-app erstellt, um die Grundlagen der APP-Sandbox anzuzeigen. Als nächstes haben wir gezeigt, wie Sandbox Verletzungen aufgelöst werden. Anschließend haben wir uns eingehend mit dem App-Sandkasten beschäftigt. Schließlich haben wir uns mit dem Entwerfen einer xamarin. Mac-app für die APP Sandbox beschäftigt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

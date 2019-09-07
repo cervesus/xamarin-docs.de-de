@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/07/2017
-ms.openlocfilehash: aa1dd0b503dd59a89f526fef53d7d7756a3883de
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 869e2e5c3b074c928f3c49ca87c1c1801154df91
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291113"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769979"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Arbeiten mit tvos-Schaltflächen in xamarin
 
@@ -63,7 +63,6 @@ Die einfachste Möglichkeit, mit Schaltflächen in einer xamarin. tvos-APP zu ar
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Schaltfläche** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab: 
 
@@ -82,7 +81,6 @@ Die einfachste Möglichkeit, mit Schaltflächen in einer xamarin. tvos-APP zu ar
     [![](buttons-images/storyboard05.png "Der Code-Editor")](buttons-images/storyboard05.png#lightbox)
 1. Speichern Sie die Änderungen an allen Dateien.
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
@@ -97,10 +95,7 @@ Die einfachste Möglichkeit, mit Schaltflächen in einer xamarin. tvos-APP zu ar
     [![](buttons-images/storyboard03vs.png "Registerkarte \"Ereignisse\"")](buttons-images/storyboard03vs.png#lightbox)
 1. Speichern Sie die Änderungen an allen Dateien.
 
-
-
 Bearbeiten Sie die Ansichts Controller `ViewController.cs`Datei (Beispieldatei), und fügen Sie den folgenden Code hinzu, um die ausgewählte Schaltfläche zu behandeln:
-
 
 ```
 
@@ -128,9 +123,6 @@ Solange die-Eigenschaft einer Schalt `Enabled` Fläche ist `true` und Sie nicht 
 
 > [!IMPORTANT]
 > Obwohl es möglich ist, bei der Erstellung eines `TouchUpInside` **Ereignis Handlers**Aktionen wie einem `UIButton` im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Beim Erstellen von **Aktionen** für tvos-Benutzeroberflächen Elemente sollte immer der Standard **Aktionstyp** verwendet werden.
-
-
-
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
@@ -189,9 +181,6 @@ View.AddSubview (button);
 
 > [!IMPORTANT]
 > Obwohl es möglich ist, Aktionen wie `TouchUpInside` zu einem `UIButton`zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten immer Ereignisse wie z. b. **allevents** oder **primaryaktionauslösen**verwenden.
-
-
-
 
 <a name="Styling-a-Button" />
 
@@ -262,8 +251,6 @@ Verwenden Sie `TintColor` die-Eigenschaft, um ein farbtint festzulegen, das sowo
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit Schaltflächen in einer xamarin. tvos-App behandelt. Es wurde gezeigt, wie mit Schaltflächen im IOS-Designer gearbeitet wird und wie Schalt C# Flächen im Code erstellt werden. Schließlich haben Sie erfahren, wie Sie den Titel einer Schaltfläche ändern und den Stil und die Darstellung ändern können.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

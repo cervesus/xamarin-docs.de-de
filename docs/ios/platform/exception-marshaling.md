@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/05/2017
-ms.openlocfilehash: a5dea7358e48ebb1961c1fa3253ad096d041c0cf
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 936c5b91a27fed1c00f3cf0c61d0184d5532c25a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279697"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753088"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Ausnahme Marshalling in xamarin. IOS
 
@@ -330,7 +330,6 @@ Mit `disable` der Option wird die Abfang Funktion _größtenteils_ deaktiviert, 
 Bei dem Versuch, Ziel-C- `objc_msgSend` Ausnahmen abzufangen, werden nur P/Aufrufe an die-Funktions Familie abgefangen. Dies bedeutet, dass ein P/Aufrufen einer anderen C-Funktion, die dann alle Ziel-c-Ausnahmen auslöst, weiterhin das alte und nicht definierte Verhalten findet (Dies wird in Zukunft möglicherweise verbessert).
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
-
 
 ## <a name="related-links"></a>Verwandte Links
 

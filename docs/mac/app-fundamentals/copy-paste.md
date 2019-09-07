@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 42ac6c9c729498ad4b70e1e209d63c1ec2e11f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291219"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769935"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Kopieren und Einfügen in xamarin. Mac
 
@@ -603,7 +603,7 @@ namespace MacCopyPaste
 Auch hier wird das aktuelle und das oberste Fenster angezeigt `ImageDocument` , um zu überprüfen, ob die erforderlichen Bilddaten vorhanden sind. Anschließend verwenden wir die `MenuWillHighlightItem` -Methode, um jedes Element auf der Grundlage dieses Zustands zu aktivieren oder zu deaktivieren.
 
 Bearbeiten Sie die Datei **AppDelegate.cs** , und `DidFinishLaunching` führen Sie die folgende Methode aus:
- 
+
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
 {
@@ -1275,8 +1275,6 @@ if (ok) {
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie Sie mit dem Zwischenablage in einer xamarin. Mac-Anwendung arbeiten, um Kopier-und Einfügevorgänge zu unterstützen. Zuerst wurde ein einfaches Beispiel eingeführt, mit dem Sie sich mit standardmäßigen pasteboards-Vorgängen vertraut machen können. Als nächstes wurde das Zwischenablage ausführlich erläutert, und es wird erläutert, wie Daten daraus gelesen und geschrieben werden. Schließlich wurde die Verwendung eines benutzerdefinierten Datentyps zum unterstützen des Kopierens und Einfügevorgangs komplexer Datentypen in einer APP behandelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

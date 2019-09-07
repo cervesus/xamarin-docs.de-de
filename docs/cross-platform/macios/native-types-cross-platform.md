@@ -6,17 +6,16 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: conceptdev
 ms.author: crdun
 ms.date: 04/07/2016
-ms.openlocfilehash: dde5b2429622c967fa4419700ce8fe9860afbb10
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 273b7f2eb40f1fa8495e0a0e8e18fa947241f389
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290847"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765413"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Arbeiten mit nativen Typen in plattformübergreifenden Apps
 
 _In diesem Artikel wird beschrieben, wie Sie die neuen systemeigenen IOS-Unified API Typen (NINT, nuint, nfloat) in einer plattformübergreifenden Anwendung verwenden, bei der Code für nicht-IOS-Geräte (z. b. Android-oder Windows Phone-Betriebssysteme)_
-
 
 Die systemeigenen Typen 64-Typen funktionieren mit den IOS-und Mac-APIs. Wenn Sie gemeinsam genutzten Code schreiben, der auch unter Android oder Windows ausgeführt wird, müssen Sie die Konvertierung einheitlicher Typen in reguläre .NET-Typen, die Sie freigeben können, verwalten.
 
@@ -211,7 +210,6 @@ Beachten Sie, dass hier die `CalculateArea` -Methode so geändert wurde, dass `n
 
 Wenn der Code auf einem nicht Unified API Gerät kompiliert und ausgeführt wird, ordnet `using nfloat = global::System.Single;` die einem `nfloat` `Single` zu, das implizit in eine `float` konvertiert, sodass die Anwendung `CalculateArea` die Methode ohne Änderungs.
 
-
 #### <a name="using-type-conversions-in-the-front-end-app"></a>Verwenden von Typkonvertierungen in der Front-End-App
 
 Wenn Ihre Front-End-Anwendungen nur eine Handvoll Aufrufe an die freigegebene Code Bibliothek ausführen, könnte eine andere Lösung darin bestehen, die Bibliothek unverändert zu lassen und beim Aufrufen der vorhandenen Routine eine Typumwandlung in die xamarin. IOS-oder xamarin. Mac-Anwendung vorzunehmen. Beispiel:
@@ -228,7 +226,6 @@ Wenn die konsumierende Anwendung Hunderte von Aufrufen der freigegebenen Code Bi
 
 Basierend auf der Architektur unserer Anwendung können wir möglicherweise eine oder mehrere der oben genannten Lösungen verwenden, um systemeigene Datentypen (falls erforderlich) in unserem plattformübergreifenden Code zu unterstützen.
 
-
 ## <a name="xamarinforms-applications"></a>Xamarin. Forms-Anwendungen
 
 Folgendes ist erforderlich, um xamarin. Forms für plattformübergreifende Benutzeroberflächen zu verwenden, die auch für eine Unified API Anwendung freigegeben werden:
@@ -243,8 +240,6 @@ Weitere Informationen finden Sie in unserer Dokumentation zum [Aktualisieren vor
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir gesehen, wann die systemeigenen Datentypen in einer Unified API Anwendung verwendet werden, und ihre Implikationen sind plattformübergreifend. Wir haben verschiedene Lösungen vorgestellt, die in Situationen verwendet werden können, in denen die neuen systemeigenen Datentypen in plattformübergreifenden Bibliotheken verwendet werden müssen. Außerdem haben wir eine kurze Anleitung zur Unterstützung einheitlicher APIs in xamarin. Forms-plattformübergreifenden Anwendungen gesehen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

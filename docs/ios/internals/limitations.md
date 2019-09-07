@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/09/2018
-ms.openlocfilehash: 1d6f4dc20a32810bb218ce3aa2281fa1355a584d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 83c71ebf844102a7d3a16969868f187237fb0d04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291901"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753329"
 ---
 # <a name="limitations-of-xamarinios"></a>Einschränkungen von xamarin. IOS
 
@@ -21,7 +21,6 @@ Da Anwendungen, die xamarin. IOS verwenden, in statischen Code kompiliert werden
 Dies sind die xamarin. IOS-Einschränkungen im Vergleich zu Desktop Mono:
 
  <a name="Limited_Generics_Support" />
-
 
 ## <a name="limited-generics-support"></a>Eingeschränkte Generika Unterstützung
 
@@ -32,7 +31,6 @@ Die [vollständige AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot
 Zu den häufigsten Problemen, die Entwickler ausführen können, gehören:
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
-
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Generische Unterklassen von NSObjects sind beschränkt.
 
@@ -47,9 +45,7 @@ class Foo<T> : UIView {
 > [!NOTE]
 > Generische Unterklassen von NSObjects sind zwar möglich, es gibt jedoch einige Einschränkungen. Weitere Informationen finden Sie [in den generischen Unterklassen des NSObject](~/ios/internals/api-design/nsobject-generics.md) -Dokuments.
 
-
  <a name="No_Dynamic_Code_Generation" />
-
 
 ## <a name="no-dynamic-code-generation"></a>Keine dynamische Code Generierung
 
@@ -60,10 +56,7 @@ Da der IOS-Kernel verhindert, dass eine Anwendung Code dynamisch generiert, unte
 - Keine Unterstützung für die dynamische Erstellung von Typen ("No Type. GetType" ("MyType ' 1")), obwohl das Nachschlagen vorhandener Typen (Type. GetType ("System. String") beispielsweise problemlos funktioniert).
 - Umgekehrte Rückrufe müssen zur Kompilierzeit bei der Laufzeit registriert werden.
 
-
-
  <a name="System.Reflection.Emit" />
-
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
@@ -72,7 +65,6 @@ Das Fehlen von System. Reflection. Ausgabe **bedeutet,** dass kein Code funktion
 - Die Dynamic Language Runtime.
 - Alle Sprachen, die auf der Dynamic Language Runtime erstellt wurden.
 - Der TransparentProxy von Remoting oder alles andere, das dazu führen würde, dass die Laufzeit Code dynamisch generiert.
-
 
   > [!IMPORTANT]
   > **Reflektion** nicht verwechseln. Ausgabe mit **Reflektion**. "Reflection. Ausgabe" geht über die dynamische Generierung von Code und die Kompilierung des Codes in nativem Code aus. Aufgrund der Einschränkungen bei IOS (keine JIT-Kompilierung) wird dies nicht unterstützt.
@@ -94,7 +86,6 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
  <a name="Reverse_Callbacks" />
 
-
 ### <a name="reverse-callbacks"></a>Umgekehrte Rückrufe
 
 In Standard-Mono ist es möglich, C# Delegatinstanzen anstelle eines Funktions Zeigers an nicht verwalteten Code zu übergeben. Die Laufzeit wandelt diese Funktionszeiger in der Regel in einen kleinen Thunk um, der es nicht verwaltetem Code ermöglicht, den verwalteten Code wieder aufzurufen.
@@ -110,9 +101,7 @@ In Mono werden diese Bridges durch den Just-in-Time-Compiler implementiert. Wenn
 
 Der Remote Stapel ist in xamarin. IOS nicht verfügbar.
 
-
  <a name="Runtime_Disabled_Features" />
-
 
 ## <a name="runtime-disabled-features"></a>Funktionen zur Laufzeit deaktiviert
 
@@ -125,14 +114,10 @@ Die folgenden Features wurden in der IOS-Laufzeit von Mono deaktiviert:
 - Die JIT-Engine
 - Metadatenüberprüfung (da keine JIT vorhanden ist)
 
-
  <a name=".NET_API_Limitations" />
-
 
 ## <a name="net-api-limitations"></a>Einschränkungen der .NET-API
 
 Die bereitgestellte .NET-API ist eine Teilmenge des vollständigen Frameworks, da nicht alles in ios verfügbar ist. Eine [Liste der derzeit unterstützten](~/cross-platform/internals/available-assemblies.md)Assemblys finden Sie in den FAQ.
-
-
 
 Insbesondere das von xamarin. IOS verwendete API-Profil enthält nicht "System. Configuration", sodass es nicht möglich ist, externe XML-Dateien zu verwenden, um das Verhalten der Laufzeit zu konfigurieren.

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 9104d1c7c92ac9de9cb6ae44197b4f16851563bb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 651df247e3b5616a3baa38e85159c6a6d5247807
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287312"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768806"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierter Steuerelemente im iOS-Designer
 
@@ -26,7 +26,6 @@ In diesem Leitfaden wird davon ausgegangen, dass Sie sich mit den Inhalten vertr
 
 > [!IMPORTANT]
 > Ab xamarin. Studio 5,5 unterscheidet sich die Art und Weise, in der benutzerdefinierte Steuerelemente erstellt werden, geringfügig von früheren Versionen. Zum Erstellen eines benutzerdefinierten Steuer Elements ist `IComponent` entweder die-Schnittstelle erforderlich (mit den zugehörigen Implementierungs Methoden), oder die-Klasse kann `[DesignTimeVisible(true)]`mit kommentiert werden. Die letztere Methode wird in der folgenden exemplarischen Vorgehensweise verwendet.
-
 
 1. Erstellen Sie eine neue Projekt Mappe aus der **IOS-> app > Vorlage C# für die Einzelansicht-Anwendungs >** , benennen Sie Sie, und fahren Sie `ScratchTicket`mit dem Assistenten für neue Projekte fort
 
@@ -157,23 +156,19 @@ In diesem Leitfaden wird davon ausgegangen, dass Sie sich mit den Inhalten vertr
     }
     ```
 
-
 1. Fügen Sie `FillTexture.png`die `FillTexture2.png` Dateien `Monkey.png` , und (die über [GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)verfügbar sind) dem **Ressourcen** Ordner hinzu.
 
 1. Doppelklicken Sie auf `Main.storyboard` die Datei, um Sie im Designer zu öffnen:
 
     [![](ios-designable-controls-walkthrough-images/03new.png "Der IOS-Designer")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
-
 1. Ziehen Sie eine **Bildansicht** aus der **Toolbox** auf die Ansicht im Storyboard, und legen Sie Sie dort ab.
 
     [![](ios-designable-controls-walkthrough-images/04new.png "Eine Bildansicht, die dem Layout hinzugefügt wurde.")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
-
 1. Wählen Sie die **Bildansicht** aus, und ändern Sie `Monkey.png`deren **Bild** Eigenschaft in.
 
     [![](ios-designable-controls-walkthrough-images/05new.png "Festlegen der Bild Eigenschaft Image View auf Monkey. png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
-
 
 1. Bei der Verwendung von Größenklassen muss diese Bildansicht eingeschränkt werden. Klicken Sie zweimal auf das Bild, um es in den Einschränkungs Modus zu versetzen. Wir beschränken ihn auf den Mittelpunkt, indem wir auf das zentrierende Handle klicken und ihn sowohl vertikal als auch horizontal ausrichten:
 
@@ -183,16 +178,13 @@ In diesem Leitfaden wird davon ausgegangen, dass Sie sich mit den Inhalten vertr
 
     [![](ios-designable-controls-walkthrough-images/07new.png "Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
-
 1. Aktualisieren Sie den Frame basierend auf Einschränkungen, indem Sie auf der Symbolleiste auf die Schaltfläche Aktualisieren klicken:
 
     [![](ios-designable-controls-walkthrough-images/08new.png "Die Einschränkungs Symbolleiste")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
-
 1. Erstellen Sie als nächstes das Projekt, sodass die **Ticket Ansicht Scratch** unter **benutzerdefinierte Komponenten** in der Toolbox angezeigt wird:
 
     [![](ios-designable-controls-walkthrough-images/09new.png "Die Toolbox für benutzerdefinierte Komponenten")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
-
 
 1. Ziehen Sie eine **Scratch-Ticket Ansicht** per Drag & Drop, damit Sie über dem affenbild angezeigt wird. Passen Sie die Zieh Punkte so an, dass die Scratch-Ticket Ansicht den Affen vollständig abdeckt, wie unten dargestellt:
 
@@ -201,7 +193,6 @@ In diesem Leitfaden wird davon ausgegangen, dass Sie sich mit den Inhalten vertr
 1. Schränken Sie die Ansicht für das Scratch-Ticket auf die Bildansicht ein, indem Sie ein umgebenden Rechteck zeichnen, um beide Sichten auszuwählen. Wählen Sie die Optionen aus, um Sie auf die breiten-, Höhen-, Mittel-und Mittel-und Update Rahmen zu beschränken, wie unten dargestellt:
 
     [![](ios-designable-controls-walkthrough-images/11new.png "Zentrieren und Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
-
 
 1. Führen Sie die Anwendung aus, und deaktivieren Sie das Bild, um den Affen zu verdeutlichen.
 
@@ -272,8 +263,6 @@ Wenn ein `ExportAttribute` und ein `BrowsableAttribute` mit dem-Argument auf `tr
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir erläutert, wie Sie ein benutzerdefiniertes Steuerelement erstellen und es in einer IOS-Anwendung mit dem IOS-Designer nutzen. Wir haben gesehen, wie das Steuerelement erstellt und erstellt wird, um es für eine Anwendung in der **Toolbox**des Designers verfügbar zu machen. Außerdem wurde erläutert, wie das Steuerelement implementiert wird, sodass es sowohl zur Entwurfszeit als auch zur Laufzeit ordnungsgemäß gerendert wird, und wie benutzerdefinierte Steuerelement Eigenschaften im Designer verfügbar gemacht werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

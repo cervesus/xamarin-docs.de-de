@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 370fec5b9323187f6345d3e6bf9d3e38145cedff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eee338461593ad131f679d32cadf63fe3b1a4c40
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652780"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759348"
 ---
 # <a name="path-basics-in-skiasharp"></a>Grundlagen zu Pfaden in SkiaSharp
 
@@ -194,7 +194,6 @@ Hier wird das Programm ausgeführt wird:
 [![](paths-images/strokejoins-small.png "Dreifacher Screenshot der Seite verknüpft Stroke")](paths-images/strokejoins-large.png#lightbox "dreifachen Screenshot der Seite Stroke verknüpft")
 
 Die gehrungsverbindung besteht aus einem sharp Punkt, der die Zeilen, in dem eine Verbindung herstellen. Wenn zwei Zeilen in einem kleinen Winkel verbinden, kann die Gehrungsgrenze recht lang sind. Um übermäßig lange gehrungsverbindungen zu verhindern, wird die Länge der Gehrungsgrenze durch den Wert des beschränkt die [ `StrokeMiter` ](xref:SkiaSharp.SKPaint.StrokeMiter) Eigenschaft `SKPaint`. Eine gehrungsverbindung, die diese Länge überschreiten ist deaktiviert aufgeteilt, um eine abgeschrägte Verbindung werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

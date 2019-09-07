@@ -7,20 +7,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: e29432504f3b8554c387d277004d3cc779aade95
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 37e91070ea10defedbeebdbb06220fabbd2554fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524639"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756640"
 ---
 # <a name="customizing-bindings"></a>Anpassen von Bindungen
 
 _Sie können eine xamarin. Android-Bindung anpassen, indem Sie die Metadaten bearbeiten, mit denen der Bindungsprozess gesteuert wird. Diese manuellen Änderungen sind häufig erforderlich, um Buildfehler zu beheben und die resultierende API so zu strukturieren, dass Sie C#mit/.net. konsistent ist. Diese Leitfäden erläutern die Struktur dieser Metadaten, das Ändern der Metadaten und die Verwendung von Javadoc, um die Namen von Methoden Parametern wiederherzustellen._
 
-
 ## <a name="overview"></a>Übersicht
- 
+
 Xamarin. Android automatisiert einen Großteil des Bindungs Vorgangs. in einigen Fällen ist jedoch eine manuelle Änderung erforderlich, um die folgenden Probleme zu beheben:
 
 - Auflösen von Buildfehlern, die durch fehlende Typen, verborgene Typen, doppelte Namen, Probleme mit der Sichtbarkeit von Klassen und andere Situationen verursacht werden, die nicht durch die xamarin. Android-Tools aufgelöst werden können. 
@@ -33,7 +32,6 @@ Xamarin. Android automatisiert einen Großteil des Bindungs Vorgangs. in einigen
 
 Sie können einige oder alle dieser Änderungen vornehmen, indem Sie die Metadaten ändern, mit denen der Bindungsprozess gesteuert wird.
 
-
 ## <a name="guides"></a>Führungslinien
 
 Die folgenden Leitfäden beschreiben die Metadaten, die den Bindungsprozess steuern, und erläutern, wie diese Metadaten geändert werden, um diese Probleme zu beheben:
@@ -42,7 +40,3 @@ Die folgenden Leitfäden beschreiben die Metadaten, die den Bindungsprozess steu
     Darin werden die verschiedenen manuellen Schritte beschrieben, die manchmal zum Durchführen einer Java-Bindungs Bibliothek erforderlich sind, und es wird erläutert, wie Sie eine API, die von einer Bindung verfügbar gemacht wird, so strukturieren, dass Sie den .net-Entwurfs Richtlinien
 
 - In den [Benennungs Parametern mit Javadoc](~/android/platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md) wird erläutert, wie Parameternamen in einem Java-Bindungs Projekt mithilfe von Javadoc wieder hergestellt werden, das aus dem gebundenen Java-Projekt erstellt wurde
-
-
- 
-

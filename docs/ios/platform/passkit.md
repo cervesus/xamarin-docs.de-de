@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 8039482175465a67867f3c70f17518dee8b9500b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277868"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769579"
 ---
 # <a name="passkit-in-xamarinios"></a>Passkit in xamarin. IOS
 
@@ -74,7 +74,6 @@ Derzeit werden fünf unterstützte Typen unterstützt, die in der Wallet-app dur
 - **Store Card** – abgerundet, wie z. b. eine Kredit-oder Debitkarte.
 - **Coupon** – am oberen Rand.
 - **Generisch** – identisch mit der Speicherkarte, gerundet.
-
 
 Die fünf Pass Typen sind in diesem Screenshot dargestellt (in der folgenden Reihenfolge: Coupon, generisch, Store Card, Boarding Pass und Ereignis Ticket):
 
@@ -204,10 +203,8 @@ Pässe werden mit einem privaten Zertifikat signiert, das Sie im IOS-Bereitstell
 1. Verwenden Sie das Zertifikat, um `manifest.json` die Datei zu signieren, und schreiben Sie `signature` das Ergebnis in eine Datei namens.
 1. Packen Sie alles nach oben, und übergeben Sie der `.pkpass` resultierenden Datei eine Dateierweiterung.
 
-
 Da der private Schlüssel erforderlich ist, um den Durchlauf zu signieren, sollte dieser Vorgang nur auf einem sicheren Server durchgeführt werden, den Sie steuern. Verteilen Sie Ihre Schlüssel nicht zum Testen und Generieren von Durchläufen in einer Anwendung.
 
- 
 ## <a name="configuration-and-setup"></a>Konfiguration und Setup
 
 Dieser Abschnitt enthält Anweisungen, mit denen Sie Ihre Bereitstellungs Details einrichten und ihren ersten Durchlauf erstellen können.
@@ -229,7 +226,6 @@ Der erste Schritt besteht darin, eine Passtyp-ID für jeden unterstützten _Typ_
 
 2. Geben Sie eine **Beschreibung** (Name) und einen **Bezeichner** (eindeutige Zeichenfolge) für den Durchlauf an. Beachten Sie, dass alle Pass-Type-IDs mit `pass.` der Zeichenfolge beginnen müssen `pass.com.xamarin.coupon.banana` , die wir in diesem Beispiel verwenden: [![](passkit-images/register.png "Angeben einer Beschreibung und eines Bezeichners")](passkit-images/register.png#lightbox)
 
-
 3. Bestätigen Sie die Pass-ID durch Drücken der Schaltfläche **registrieren** .
 
 #### <a name="generate-a-certificate"></a>Generieren eines Zertifikats
@@ -242,13 +238,11 @@ Gehen Sie folgendermaßen vor, um ein neues Zertifikat für diese Passtyp-ID zu 
 
     [![](passkit-images/cert-dist.png "Wählen Sie Zertifikat erstellen.")](passkit-images/cert-dist.png#lightbox)
 
-
 2. Befolgen Sie die Schritte zum Erstellen einer Zertifikat Signier Anforderung (Certificate Signing Request, CSR).
   
 3. Klicken Sie im Entwickler Portal auf die Schaltfläche **weiter** , und laden Sie die CSR hoch, um Ihr Zertifikat zu generieren.
 
 4. Laden Sie das Zertifikat herunter, und doppelklicken Sie darauf, um es in ihrer Keychain zu installieren.
-
 
 Nachdem wir nun ein Zertifikat für diese Passtyp-ID erstellt haben, wird im nächsten Abschnitt beschrieben, wie ein Pass manuell erstellt wird.
 
@@ -264,7 +258,6 @@ Nachdem wir den Passtyp erstellt haben, können wir manuell einen Durchlauf zum 
 - Berechnen Sie SHA1-Hashes für jede Datei im Ordner, und schreiben Sie Sie in "Manifest. JSON".
 - Signieren Sie die Datei Manifest. JSON mit der heruntergeladenen Datei Certificate. P12.
 - Zippen Sie den Inhalt des Verzeichnisses, und benennen Sie ihn mit der Erweiterung. pkpass um
-
 
 Im [Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) für diesen Artikel sind einige Quelldateien vorhanden, die verwendet werden können, um einen Durchlauf zu generieren. Verwenden Sie die Dateien im `CouponBanana.raw` Verzeichnis des Verzeichnisses "kreateapassmanual". Die folgenden Dateien sind vorhanden:
 
@@ -338,7 +331,6 @@ Bei Kanal Anwendungen handelt es sich um zwischengeschaltete apps, die im Auftra
 - **Safari** – erkennt den Pass Content-Type, wenn auf einen Pass-URL-Link geklickt wird.
 - **Andere benutzerdefinierte apps** – jede APP, die Anlagen oder offene Links (Social Media-Clients, e-Mail-Reader usw.) empfängt.
 
-
 Dieser Screenshot zeigt, wie **e-Mail** in ios 6 eine Pass-Anlage erkennt und (wenn Sie berührt) Angebote zum **Hinzufügen zur Wallet hinzufügen** können.
 
  [![](passkit-images/image22.png "Dieser Screenshot zeigt, wie e-Mail in ios 6 eine Pass Anlage erkennt.")](passkit-images/image22.png#lightbox)
@@ -350,7 +342,6 @@ Wenn Sie eine App entwickeln, die möglicherweise ein Kanal für Durchgänge ist
 - **Dateierweiterung** -. pkpass
 - **MIME-Typ** -application/vnd. Apple. pkpass
 - **UTI** – com. Apple. pkpass
-
 
 Der grundlegende Vorgang einer Kanal Anwendung besteht darin, die Pass- `PKAddPassesViewController` Datei abzurufen und passkit aufzurufen, um dem Benutzer die Möglichkeit zu geben, den Pass der Geldbörse hinzuzufügen. Die Implementierung dieses Ansichts Controllers wird im nächsten Abschnitt zu begleitenden **Anwendungen**behandelt.
 
@@ -383,7 +374,6 @@ Doppelklicken Sie auf die Datei " **Berechtigungen. plist** " im Lösungspad, um
 Wählen Sie im Abschnitt Wallet die Option **Wallet aktivieren** aus.
 
 ![](passkit-images/image32.png "Wallet-Berechtigung aktivieren")
-
 
 Die Standardoption ist, dass Ihre APP alle Pass Typen zulässt. Es ist jedoch möglich, Ihre APP einzuschränken und nur eine Teilmenge von Team Pass Typen zuzulassen. Um dies zu aktivieren, wählen Sie die Option **Teilmenge von Team Pass Typen zulassen** aus, und geben Sie den passentyp Bezeichner der Teilmenge ein, die Sie zulassen möchten.
 

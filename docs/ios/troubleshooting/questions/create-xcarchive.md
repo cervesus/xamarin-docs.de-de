@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 6d35827b00a4ccc9bbe3e71444536425e4e1c3b1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1b078b8cb4d1129127997e9fabdd0b128e09c90f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288120"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769367"
 ---
 # <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>Ist es möglich, ein. xcarchive-Archiv aus Visual Studio zu erstellen?
 
@@ -39,4 +39,3 @@ Es ist jedoch erwähnenswert, dass Sie keine `.xcarchive` zum Übermitteln an de
 Tatsächlich können Sie sogar einfach das `.app` Paket (das mit einem App Store-Verteilungs Profil signiert ist) packen und diese `.zip` Datei an den App Store übermitteln.
 
 In beiden Fällen können Sie die Anwendungs Lade Anwendung verwenden, um die APP (anstelle von Xcode) zu übermitteln.
-

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ec93083ee3d99dbf748309b23248e982b793ce13
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524849"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756696"
 ---
 # <a name="architecture"></a>Architektur
 
@@ -28,26 +28,20 @@ Xamarin. Android-Entwickler greifen auf die verschiedenen Features im Betriebssy
 
 Weitere Informationen zur Kommunikation zwischen den Android-Klassen und den Android-Lauf Zeit Klassen finden Sie im [API-Entwurfs](~/android/internals/api-design.md) Dokument.
 
-
 ## <a name="application-packages"></a>Anwendungspakete
 
 Android-Anwendungspakete sind ZIP-Container mit der Dateierweiterung *. apk* . Xamarin. Android-Anwendungspakete verfügen über die gleiche Struktur und das gleiche Layout wie normale Android-Pakete mit den folgenden Ergänzungen:
 
-- Die Anwendungsassemblys (mit IL) werden im Assemblyordner unkomprimiert *gespeichert* . Beim Prozessstart in Releasebuilds wird die *APK* -Datei in den Prozess integriert, und die Assemblys werden aus dem Arbeitsspeicher geladen. Dies ermöglicht einen schnelleren App-Start, da Assemblys nicht vor der Ausführung extrahiert werden müssen.  
+- Die Anwendungsassemblys (mit IL) werden im Assemblyordner unkomprimiert *gespeichert* . Beim Prozessstart in Releasebuilds *wird die* *APK* -Datei in den Prozess integriert, und die Assemblys werden aus dem Arbeitsspeicher geladen. Dies ermöglicht einen schnelleren App-Start, da Assemblys nicht vor der Ausführung extrahiert werden müssen.  
 - *Hinweis*: Informationen zum Assemblyspeicherort, z [. b. Assembly. Location](xref:System.Reflection.Assembly.Location) und [Assembly. CodeBase](xref:System.Reflection.Assembly.CodeBase) , können in Releasebuilds *nicht darauf basieren* Sie sind nicht als eindeutige Dateisystem Einträge vorhanden, und Sie haben keinen verwendbaren Speicherort.
-
 
 - Native Bibliotheken, die die Mono-Laufzeit enthalten, sind in der *APK* -Datei vorhanden. Eine xamarin. Android-Anwendung muss systemeigene Bibliotheken für die gewünschten/Ziel-Android-Architekturen enthalten, z. b. *ARMEABI* , *ARMEABI-v7a* , *x86* . Xamarin. Android-Anwendungen können nur auf einer Plattform ausgeführt werden, wenn Sie die entsprechenden Laufzeitbibliotheken enthält.
 
-
 Xamarin. Android-Anwendungen enthalten auch *Android Callable Wrapper* , um Android das Aufrufen von verwaltetem Code zu ermöglichen.
-
-
 
 ## <a name="android-callable-wrappers"></a>Android Callable Wrapper
 
 - Bei **Android Callable Wrapper** handelt es sich um eine [jni](https://en.wikipedia.org/wiki/Java_Native_Interface) -Bridge, die immer dann verwendet wird, wenn die Android-Laufzeit verwalteten Code aufrufen muss. Bei Android Callable Wrapper können virtuelle Methoden überschrieben werden, und Java-Schnittstellen können implementiert werden. Weitere Informationen finden Sie in der [Übersicht über die Java-Integration](~/android/platform/java-integration/index.md) .
-
 
 <a name="Managed_Callable_Wrappers" />
 
@@ -64,15 +58,12 @@ Globale Verweise können explizit freigegeben werden, indem " [java. lang. Objec
 
 Beim Verwerfen von verwalteten Aufruf baren Wrappern muss sorgfältig vorgegangen werden, wenn die Instanz versehentlich zwischen Threads freigegeben werden kann, da die verwerfen der Instanz sich auf Verweise von anderen Threads auswirkt. Für maximale Sicherheit nur `Dispose()` für Instanzen, die über `new` oder von Methoden zugeordnet wurden, denen Sie *wissen* , dass Sie immer neue Instanzen zuordnen, nicht zwischengespeicherte Instanzen, die eine versehentliche instanzfreigabe verursachen können. Threads.
 
-
-
 ## <a name="managed-callable-wrapper-subclasses"></a>Verwaltete Aufruf Bare Wrapper-Unterklassen
 
-Verwaltete Aufruf Bare Wrapper-Unterklassen sind, wo die "interessante" anwendungsspezifische Logik möglicherweise Live ist. Hierzu gehören benutzerdefinierte [Android. app. Activity](xref:Android.App.Activity) -Unterklassen (z. b. der [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) -Typ in der Standard Projektvorlage). (Insbesondere alle *java. lang. Object* -Unterklassen, die kein Benutzer definiertes [Register Attribute](xref:Android.Runtime.RegisterAttribute) -Attribut oder [RegisterAttribute enthalten. donotgenerateacw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) ist *false*. Dies ist die Standardeinstellung.)
+Verwaltete Aufruf Bare Wrapper-Unterklassen sind, wo die "interessante" anwendungsspezifische Logik möglicherweise Live ist. Hierzu gehören benutzerdefinierte [Android. app. Activity](xref:Android.App.Activity) -Unterklassen (z. b. der [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) -Typ in der Standard Projektvorlage). (Insbesondere alle *java. lang. Object* -Unterklassen, *die kein Benutzer* definiertes [Register Attribute](xref:Android.Runtime.RegisterAttribute) -Attribut oder [RegisterAttribute enthalten. donotgenerateacw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) ist *false*. Dies ist die Standardeinstellung.)
 
 Wie verwaltete Callable Wrapper enthalten auch verwaltete Aufruf Bare Wrapper-Unterklassen einen globalen Verweis, auf den über die [java. lang. Object. handle](xref:Java.Lang.Object.Handle) -Eigenschaft zugegriffen werden kann. Ebenso wie bei verwalteten Callable Wrappern können globale Verweise explizit freigegeben werden, indem [java. lang. Object. verwerfen ()](xref:Java.Lang.Object.Dispose)aufgerufen wird.
-Anders als verwaltete Callable Wrapper sollten Sie vor dem Freigeben solcher Instanzen *sehr sorgfältig* Vorgehen, da die Zuordnungder Instanz die Zuordnung zwischen der Java-Instanz (einer Instanz eines Android Callable Wrapper) und der verwalteten lichen.
-
+Anders als verwaltete Callable Wrapper sollten Sie vor dem Freigeben solcher Instanzen *sehr sorgfältig* Vorgehen *, da die*Zuordnung der Instanz die Zuordnung zwischen der Java-Instanz (einer Instanz eines Android Callable Wrapper) und der verwalteten lichen.
 
 ### <a name="java-activation"></a>Java-Aktivierung
 
@@ -171,8 +162,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 ```
 
 Verwerfen *()* von verwalteten Aufruf baren Wrapper-Unterklassen, wenn Sie wissen, dass das Java-Objekt nicht mehr verwendet wird, oder wenn die Unterklasse keine Instanzdaten enthält und ein-Konstruktor *(IntPtr, jnitorownership)* bereitgestellt wurde.
-
-
 
 ## <a name="application-startup"></a>Anwendungsstart
 

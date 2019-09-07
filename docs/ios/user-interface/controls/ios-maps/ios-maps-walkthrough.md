@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 94ab5ca9fa34487457b93758dfac0ab514e702c8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2091e710352b25167b740e409955787ffec99e1c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286289"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768965"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Anmerkungen und Überlagerungen in xamarin. IOS
 
@@ -25,7 +25,6 @@ Den vollständigen Code finden Sie im [Beispiel zu Maps](https://docs.microsoft.
 Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm einen relevanten Namen. Wir beginnen mit dem Hinzufügen von Code zum Ansichts Controller, um MapView anzuzeigen, und erstellen dann neue Klassen für den mapdelegaten und die benutzerdefinierten Anmerkungen. Führenden Sie dazu die folgenden Schritte aus:
 
 ## <a name="viewcontroller"></a>ViewController
-
 
 1. Fügen Sie die folgenden Namespaces `ViewController`hinzu:
 
@@ -110,9 +109,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
     `Maps Walkthrough Docs Sample`
 
-
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs – eine Klasse für benutzerdefinierte Anmerkungen
-
 
 1. Wir verwenden eine benutzerdefinierte Klasse für die Anmerkung, die aufgerufen `ConferenceAnnotation`wird. Fügen Sie dem Projekt die folgende Klasse hinzu:
 
@@ -180,7 +177,6 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
     ```
 
 Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `MapDelegate` Klasse implementieren, um das Erstellen der Anmerkung und der Überlagerungs Sichten zu verarbeiten.
-
 
 ## <a name="mapdelegate"></a>MapDelegate
 
@@ -287,7 +283,6 @@ Führen Sie die Anwendung aus. Wir verfügen jetzt über eine interaktive Karte 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir uns mit dem Hinzufügen einer Anmerkung zu einer Zuordnung und dem Hinzufügen einer Überlagerung für ein bestimmtes Polygon beschäftigt. Wir haben außerdem gezeigt, wie Sie der Anmerkung die Berührungs Unterstützung hinzufügen, um ein Bild über eine Karte zu animieren.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

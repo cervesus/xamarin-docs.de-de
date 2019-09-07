@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: f9fbb53c2948c58b5f5ee1cd0589318a578c0f45
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ab42e190f5348de13610955f1175eb01531a280a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526042"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754543"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
@@ -51,7 +51,6 @@ FCM verwendet die folgenden Anmelde Informationen, um den App-Server und die Cli
 
 In den folgenden Abschnitten wird erläutert, wie diese Anmelde Informationen verwendet werden, wenn die Kommunikation zwischen Client-apps und App-Servern über den-
 
-
 <a name="registration" />
 
 ### <a name="registration-with-fcm"></a>Registrierung bei "ficm"
@@ -69,8 +68,6 @@ Eine Client-App muss zuerst bei der Verwendung von "ficm" registriert werden, be
 Der App-Server speichert das Registrierungs Token für die nachfolgende Kommunikation mit der Client-App zwischen. Der App-Server kann eine Bestätigung zurück an die Client-App senden, um anzugeben, dass das Registrierungs Token empfangen wurde. Nachdem dieser Handshake stattfindet, kann die Client-App Nachrichten von dem App-Server empfangen (oder Nachrichten an ihn senden). Die Client-App erhält möglicherweise ein neues Registrierungs Token, wenn das alte Token kompromittiert wurde (Weitere Informationen finden Sie unter [Remote Benachrichtigungen mit](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md) dem Code, um zu erfahren, wie eine APP registrierungstokenaktualisierungen empfängt).
 
 Wenn die Client-App keine Nachrichten mehr vom App-Server empfangen will, kann Sie eine Anforderung an den App-Server senden, um das Registrierungs Token zu löschen. Wenn die Client-App auf einem Gerät deinstalliert wird, erkennt FCM dies und benachrichtigt den App-Server automatisch, das Registrierungs Token zu löschen.
-
-
 
 ### <a name="downstream-messaging"></a>Downstream-Messaging
 
@@ -108,7 +105,6 @@ Die folgenden Schritte werden im Thema Messaging verwendet (nachdem die Client-A
 
 Weitere Informationen zu Firebase Topic Messaging finden Sie im Google- [Thema Messaging unter Android](https://firebase.google.com/docs/cloud-messaging/android/topic-messaging).
 
-
 <a name="setup_fcm" />
 
 ## <a name="setting-up-firebase-cloud-messaging"></a>Einrichten von Firebase Cloud Messaging
@@ -145,8 +141,6 @@ Bevor Sie in Ihrer APP-Dienst-Dienste verwenden können, müssen Sie über die [
 
 Ein ausführliches Beispiel zum Hinzufügen von " **Google-Services. JSON** " zu einem App-Projekt zum Empfangen von FCM-pushbenachrichtigungsnachrichten unter Android finden Sie unter [Remote Benachrichtigungen mit FCM](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
-
-
 ## <a name="for-further-reading"></a>Weitere Informationen
 
 - Das [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) von Google bietet einen Überblick über die wichtigsten Funktionen von Firebase Cloud Messaging, eine Erläuterung der Funktionsweise sowie Anweisungen zum Setup.
@@ -160,7 +154,6 @@ Ein ausführliches Beispiel zum Hinzufügen von " **Google-Services. JSON** " zu
 ## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel bietet eine Übersicht über Firebase Cloud Messaging (SCM). Es wurden die verschiedenen Anmelde Informationen erläutert, die zum Identifizieren und Autorisieren von Messaging zwischen App-Servern und Client-Apps verwendet werden. Es wurden die Szenarien für Registrierung und downstreammessaging veranschaulicht, und es werden die Schritte zum Registrieren Ihrer APP bei FCM für die Verwendung von FCM-Diensten erläutert.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

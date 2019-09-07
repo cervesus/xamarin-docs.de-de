@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7e3f871d9d5992429c6f6619b2f5ff7059558045
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 69d5222bb6c50870d0c42bea6ff71236e3d1580c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525959"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754565"
 ---
 # <a name="introduction"></a>Einführung
 
@@ -38,7 +38,6 @@ Die Verwendung einer SQL-Datenbank in Ihrem Mobile App bietet eine Reihe von Vor
 - Entwickler mit vorhandenen Daten Bank Kenntnissen können Ihr Wissen nutzen, um den Daten Bank-und Datenzugriffs Code zu entwerfen.
 - Das Datenmodell aus der Serverkomponente einer verbundenen Anwendung kann in der mobilen Anwendung (ganz oder teilweise) wieder verwendet werden.
 
-
 ## <a name="sqlite-database-engine"></a>SQLite-Datenbank-Engine
 
 SQLite ist eine Open-Source-Datenbank-Engine, die von Google für Ihre Mobile Plattform übernommen wurde. Das SQLite-Datenbankmodul ist in beide Betriebssysteme integriert, sodass Entwickler es nicht mehr nutzen können. SQLite eignet sich gut für die plattformübergreifende Mobile Entwicklung:
@@ -48,13 +47,11 @@ SQLite ist eine Open-Source-Datenbank-Engine, die von Google für Ihre Mobile Pl
 - Das Dateiformat ist plattformübergreifend einfach zu verwenden: ob 32-oder 64-Bit-Systeme und Big-oder Little-Endian-Systeme.
 - Es implementiert den größten Teil des SQL92-Standards.
 
-
 Da SQLite so konzipiert ist, dass es klein und schnell ist, gibt es einige Einschränkungen bei der Verwendung:
 
 - Einige äußere joinsyntax wird nicht unterstützt.
 - Es werden nur Tabellen umbenennen und AddColumn unterstützt. Sie können keine anderen Änderungen am Schema vornehmen.
 - Sichten sind schreibgeschützt.
-
 
 Weitere Informationen zu SQLite finden Sie in der Website [sqlite.org](http://SQLite.org) alle Informationen, die Sie benötigen, um SQLite mit xamarin zu verwenden, sind in diesem Dokument und den zugehörigen Beispielen enthalten. Die SQLite-Datenbank-Engine wurde seit Android 2 in Android unterstützt.
 Obwohl es in diesem Kapitel nicht behandelt wird, steht SQLite auch für Windows Phone-und Windows-Anwendungen zur Verfügung.
@@ -63,7 +60,6 @@ Obwohl es in diesem Kapitel nicht behandelt wird, steht SQLite auch für Windows
 
 SQLite kann auch auf Windows-Plattformen verwendet werden, auch wenn diese Plattformen in diesem Dokument nicht behandelt werden.
 Weitere Informationen finden Sie in den Fallstudien [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) und [Tasky pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) und im [Blog von Tim Heuer](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

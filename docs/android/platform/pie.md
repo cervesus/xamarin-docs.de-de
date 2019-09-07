@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: d4d7379e1d4d2dd605331b30d692df299f5f5c13
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6475cd0f27e41321902b57dd28f59bfb250e0c8f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523663"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757464"
 ---
 # <a name="android-pie-features"></a>Android-Kreis Features
 
@@ -81,15 +81,12 @@ Erstellen Sie ein neues xamarin. Android-Projekt. Wenn Sie mit der Android-Entwi
 
 Wenn Sie ein Android-Projekt erstellen, müssen Sie die Versions Einstellungen so konfigurieren, dass Sie Android 9,0 oder höher als Ziel haben. Wenn Sie z. b. Ihr Projekt für Android-Kreis als Ziel festlegen möchten, müssen Sie die Android-API-Ziel Ebene Ihres Projekts auf **Android 9,0** (API 28) konfigurieren. Es wird empfohlen, dass Sie auch die zielframeworkebene auf API 28 oder höher festlegen. Weitere Informationen zum Konfigurieren von Android-API-Ebenen finden Sie unter [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md).
 
-
 ### <a name="configure-a-device-or-emulator"></a>Konfigurieren eines Geräts oder Emulators
 
 Wenn Sie ein physisches Gerät, z. b. einen Nexus oder ein Pixel, verwenden, können Sie Ihr Gerät mit dem Android-Kreis aktualisieren, indem Sie die Anweisungen unter [Factory-Images für Nexus-und Pixel-Geräte](https://developers.google.com/android/images)befolgen.
 
 Wenn Sie einen Emulator verwenden, erstellen Sie ein virtuelles Gerät für API-Ebene 28, und wählen Sie ein x86-basiertes Abbild aus. Informationen zur Verwendung der Android Device Manager zum Erstellen und Verwalten von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit dem Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
 Weitere Informationen zum Verwenden des Android-Emulators zum Testen und Debuggen finden Sie unter [Debugging auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
-
-
 
 ## <a name="new-features"></a>Neue Funktionen
 
@@ -102,7 +99,6 @@ Mit dem Android-Kreis wird eine Reihe neuer Features eingeführt. Einige dieser 
 - **Innen Positionierung** &ndash; Platt Form Unterstützung für das WLAN-Roundtrip-Zeitprotokoll, das es Apps ermöglicht, WiFi-Geräte für die Navigation in den Einstellungen von innen zu verwenden.
 
 - **Unterstützung für mehrere Kameras** &ndash; Bietet die Möglichkeit, gleichzeitig von mehreren physischen Kameras aus auf Streams zuzugreifen (z. b. Dual-Front-und Dual-Back-Kameras).
-
 
 In den folgenden Abschnitten werden diese Features hervorgehoben und kurze Codebeispiele bereitgestellt, die Ihnen bei der Verwendung in Ihrer APP helfen.
 
@@ -138,8 +134,6 @@ Beachten Sie, dass der weiße Hintergrund der APP nicht in den Bereich für die 
 Wenn Sie ausführlichere Informationen zum Ausschneide Bereich auf dem Gerät benötigen, können Sie die neue [displaycutout](https://developer.android.com/reference/android/view/DisplayCutout.html) -Klasse verwenden. `DisplayCutout`stellt den Bereich der Anzeige dar, der nicht zum Anzeigen von Inhalt verwendet werden kann. Sie können diese Informationen verwenden, um den Speicherort und die Form des Ausschneide Bereichs abzurufen, sodass Ihre APP nicht versucht, Inhalt in diesem nicht Funktionsbereich anzuzeigen.
 
 Weitere Informationen zu den neuen Ausschneide Features in Android P finden Sie [unter Unterstützung der Ausschneide](https://developer.android.com/about/versions/pie/android-9.0#cutout)Funktion.
-
-
 
 ### <a name="notifications-enhancements"></a>Benachrichtigungs Erweiterungen
 
@@ -206,7 +200,6 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie ein Bild in eine Android-Kre
 
 Weitere Informationen zum Erstellen von Benachrichtigungen finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
 
-
 ### <a name="indoor-positioning"></a>Innen Positionierung
 
 Android-Kreis bietet Unterstützung für IEEE 802.11 MC (auch bekannt als _WiFi Round-Trip-Time_ oder _WiFi RTT_). Dadurch können Apps die Entfernung zu einem oder mehreren WLAN-Zugriffs Punkten erkennen. Mithilfe dieser Informationen ist es möglich, dass Ihre APP die *innen Positionierung* mit einer Genauigkeit von bis zu zwei Metern nutzt. Auf Android-Geräten, die Hardwareunterstützung für IEEE 801.11 MC bereitstellen, kann Ihre APP Navigations Features wie z. b. die standortbasierte Steuerung von intelligenten Geräten oder eine Reihe von Anweisungen in einem Store anbieten:
@@ -214,7 +207,6 @@ Android-Kreis bietet Unterstützung für IEEE 802.11 MC (auch bekannt als _WiFi 
 [![Beispiel für die Navigation im Innenbereich mithilfe von WiFi RTT](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 Die neue [wifirttmanager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager) -Klasse und mehrere Hilfsklassen bieten die Mittel zum Messen der Entfernung zu WLAN-Geräten. Weitere Informationen zu den in Android P eingeführten APIs für die innen Positionierung finden Sie unter [Android .net. WiFi. RTT](https://developer.android.com/reference/android/net/wifi/rtt/package-summary).
-
 
 ### <a name="multi-camera-support"></a>Unterstützung für mehrere Kameras
 
@@ -224,7 +216,6 @@ Um festzustellen, ob das Gerät eine logische Multikamera unterstützt, können 
 Der Android-Kreis umfasst auch eine neue [SessionConfiguration](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html) -Klasse, die verwendet werden kann, um Verzögerungen während der ersten Erfassung zu verringern und das Starten und Starten des Kameradaten Stroms zu vermeiden.
 
 Weitere Informationen zur Unterstützung mehrerer Kameras in Android P finden Sie [unter Unterstützung mehrerer Kameras und Kamera Updates](https://developer.android.com/about/versions/pie/android-9.0#camera).
-
 
 ### <a name="other-features"></a>Weitere Funktionen
 
@@ -240,7 +231,6 @@ Außerdem unterstützt Android-Kreis eine Reihe weiterer neuer Features:
 
 Weitere Informationen zu den neuesten Android-Kreis Features finden Sie unter [Android 9 Features und APIs](https://developer.android.com/about/versions/pie/android-9.0).
 
-
 ## <a name="behavior-changes"></a>Verhaltensänderungen
 
 Wenn die Android-Ziel Version auf API-Ebene 28 festgelegt ist, gibt es mehrere Platt Formänderungen, die sich auf das Verhalten Ihrer APP auswirken können, auch wenn Sie die oben beschriebenen neuen Features nicht implementieren. Die folgende Liste stellt eine kurze Zusammenfassung dieser Änderungen dar:
@@ -253,17 +243,14 @@ Wenn die Android-Ziel Version auf API-Ebene 28 festgelegt ist, gibt es mehrere P
 
 Weitere Informationen zu Verhaltensänderungen für apps, die auf Android P abzielen, finden Sie unter [Verhaltensänderungen](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps).
 
-
 ## <a name="sample-code"></a>Beispielcode
 
 [Androidpminidemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo) ist eine xamarin. Android-Beispiel-App für Android, die veranschaulicht, wie die Anzeige Ausschneide Modi festgelegt werden, `Person` wie die neue Klasse verwendet wird und wie eine Benachrichtigung gesendet wird, die ein Bild enthält.
-
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde Android-Kreis vorgestellt und erläutert, wie die neuesten Tools und Pakete für die xamarin. Android-Entwicklung mit dem Android-Kreis installiert und konfiguriert werden. Er bietet einen Überblick über die wichtigsten Features, die in Android-Kreis verfügbar sind, mit Beispiel Quellcode für einige dieser Features.
 Es enthält Links zu API-Dokumentation und Android-Entwickler Themen, die Ihnen den Einstieg in das Erstellen von Apps für Android-Kreis erleichtern. Außerdem wurden die wichtigsten Änderungen am Android-Kreis Verhalten hervorgehoben, die sich auf vorhandene apps auswirken können.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

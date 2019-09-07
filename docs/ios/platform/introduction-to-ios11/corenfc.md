@@ -7,12 +7,12 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: 6da32e22fbdb3b5b7d96d7ee93c2f25bba84cd78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7a9d359842dde916fc14ffea5ec6e3f453dfee0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286627"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752429"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Kern-NFC in xamarin. IOS
 
@@ -141,7 +141,6 @@ Die Parameter für den `NFCNdefReaderSession` Konstruktor lauten wie folgt:
 - `queue`– Die Warteschlange, für die die Rückrufe verarbeitet werden. Dies kann sein `null`. in diesem Fall sollten Sie sicherstellen, `DispatchQueue.MainQueue` dass beim Aktualisieren von Steuerelementen der Benutzeroberfläche verwendet wird (wie im Beispiel gezeigt).
 - `invalidateAfterFirstRead`– Gibt an `false` ,dassdieÜberprüfungnachdererstenerfolgreichenÜberprüfungbeendetwird,wenndieÜberprüfungfortgesetztwirdundmehrereErgebnissezurückgegebenwerden,bisdieÜberprüfungabgebrochenoderdasTimeout`true`von 60 Sekunden erreicht
 
-
 ### <a name="3-cancel-the-scanning-session"></a>3. Abbrechen der Scan Sitzung
 
 Der Benutzer kann die Scan Sitzung über eine vom System bereitgestellte Schaltfläche in der Benutzeroberfläche Abbrechen:
@@ -159,7 +158,6 @@ In beiden Fällen wird die- `DidInvalidate` Methode des Delegaten aufgerufen.
 ## <a name="summary"></a>Zusammenfassung
 
 Corenfc ermöglicht der APP das Lesen von Daten aus NFC-Tags. Es unterstützt das Lesen einer Vielzahl von tagformaten (ndef-Typen 1 bis 5), unterstützt jedoch weder das Schreiben noch das formatieren.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

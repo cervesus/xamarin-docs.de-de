@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 31602b14179691d13d8058c90cf20a6f7f667124
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f8dcda63c97c15367157b6a6cb857c0bfef79a27
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522823"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764589"
 ---
 # <a name="toolbar-compatibility"></a>Kompatibilität von Symbolleisten
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -34,14 +33,11 @@ So ändern Sie eine APP für die Verwendung der AppCompat-Version der Symbolleis
 
 Jeder dieser Schritte wird in den folgenden Abschnitten ausführlich erläutert.
 
-
-
 ## <a name="set-the-minimum-and-target-android-version"></a>Festlegen der minimal-und Android-Ziel Version
 
 Das Ziel Framework der APP muss auf API-Ebene 21 oder höher festgelegt werden, oder die APP wird nicht ordnungsgemäß bereitgestellt. Wenn während der Bereitstellung der APP ein Fehler wie **kein Ressourcen Bezeichner für das Attribut "tilemudex" in Paket "Android" gefunden** wird, liegt dies daran, dass das Ziel Framework nicht auf **Android 5,0 (API-Ebene 21-Lollipop)** oder höher festgelegt ist. 
 
 Legen Sie die zielframeworkebene auf API-Ebene 21 oder höher fest, und legen Sie die Projekteinstellungen der Android-API-Ebene auf die Android-Mindestversion fest, die von der APP Weitere Informationen zum Festlegen von Android-API-Ebenen finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md). `ToolbarFun` Im Beispiel ist die Android-Mindestversion auf KitKat (API-Ebene 4,4) festgelegt. 
-
 
 ## <a name="install-the-appcompat-nuget-package"></a>Installieren des AppCompat-nuget-Pakets
 
@@ -51,11 +47,9 @@ Fügen Sie als nächstes dem Projekt das Paket mit der [Android-Unterstützungs 
 
 Wenn diese nuget-Version installiert ist, werden auch einige andere nuget-Pakete installiert, sofern Sie noch nicht vorhanden sind (z. b. **xamarin. Android. Support. animiert. Vector. drawable**, **xamarin. Android. Support. v4**) und  **Xamarin. Android. Support. Vector. drawable**). Weitere Informationen zum Installieren von nuget-Paketen finden [Sie unter Exemplarische Vorgehensweise: Einschließen eines nuget-Projekts in](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)Ihr Projekt. 
 
-
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>Verwenden eines AppCompat-Designs und einer Symbolleiste
 
 Die AppCompat-Bibliothek enthält mehrere `Theme.AppCompat` Themen, die auf jeder von der AppCompat-Bibliothek unterstützten Android-Version verwendet werden können. Das `ToolbarFun` Beispiel-App-Design wird `Theme.Material.Light.DarkActionBar`von abgeleitet, das auf Android-Versionen vor Lollipop nicht verfügbar ist. Daher muss angepasst werden, damit die AppCompat-Entsprechung für dieses `Theme.AppCompat.Light.DarkActionBar`Design verwendet wird. `ToolbarFun` Da `Toolbar` auch in Versionen von Android älter als Lollipop nicht verfügbar ist, müssen wir die AppCompat-Version von `Toolbar`verwenden. Daher müssen Layouts anstelle von `android.support.v7.widget.Toolbar` `Toolbar`verwendet werden. 
-
 
 ### <a name="update-layouts"></a>Update Layouts
 
@@ -86,7 +80,6 @@ Bearbeiten Sie **Resources/Layout/Toolbar. XML** , und ersetzen Sie den Inhalt d
 
 Beachten Sie, `?attr` dass den Werten kein `android:` Präfix mehr vorangestellt wird ( `?` denken Sie daran, dass die Notation auf eine Ressource im aktuellen Design verweist). Wenn `?android:attr` Sie hier immer noch verwendet werden, würde Android auf den Attribut Wert von der derzeit laufenden Plattform und nicht aus der AppCompat-Bibliothek verweisen. Da in diesem Beispiel das `actionBarSize` von der AppCompat-Bibliothek definierte verwendet `android:` wird, wird das Präfix gelöscht. &ndash; `android:theme` `ThemeOverlay.AppCompat.Dark.ActionBar` `ThemeOverlay.Material.Dark.ActionBar`Entsprechend wird in `@style` geändert, sodass das-Attribut in der AppCompat-Bibliothek auf ein Design festgelegt wird. das Design wird hier anstelle von verwendet. `@android:style` 
 
-
 ### <a name="update-the-style"></a>Aktualisieren des Stils
 
 Bearbeiten Sie **Resources/Values/Styles. XML** , und ersetzen Sie den Inhalt durch den folgenden XML-Code: 
@@ -105,8 +98,6 @@ Bearbeiten Sie **Resources/Values/Styles. XML** , und ersetzen Sie den Inhalt du
 ```
 
 Die Elementnamen und das übergeordnete Design in diesem Beispiel sind nicht mehr mit `android:` dem Präfix versehen, da wir die AppCompat-Bibliothek verwenden. Außerdem wird das übergeordnete Design in die AppCompat-Version von `Light.DarkActionBar`geändert. 
-
-
 
 ### <a name="update-menus"></a>Menüs aktualisieren
 
@@ -173,7 +164,6 @@ Bearbeiten Sie auch **Resources/Menu/edit_menus. XML** , und ersetzen Sie den In
 
 Wie bietet dieser Namespace Switch Unterstützung für das `showAsAction` -Attribut in Android-Versionen vor API-Ebene 11? Das benutzerdefinierte `showAsAction` Attribut und alle möglichen Werte sind in der App enthalten, wenn der AppCompat-nuget installiert ist. 
 
-
 ## <a name="subclass-appcompatactivity"></a>Unterklasse appcompatactivity
 
 Der letzte Schritt in der Konvertierung besteht darin, `MainActivity` so zu ändern, dass es sich um `AppCompactActivity`eine Unterklasse von handelt. Bearbeiten Sie **MainActivity.cs** , und fügen `using` Sie die folgenden Anweisungen hinzu: 
@@ -203,9 +193,6 @@ Erstellen Sie die APP, und führen Sie Sie auf einem Pre-Lollipop-Gerät oder An
 [![Vollständiger Screenshot der APP, die auf einem KitKat-Gerät ausgeführt wird. beide Symbolleisten werden angezeigt.](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 Wenn die AppCompat-Bibliothek verwendet wird, müssen Designs nicht basierend auf der Android-Version &ndash; gewechselt werden. die AppCompat-Bibliothek ermöglicht es, eine konsistente Benutzer Darstellung für alle unterstützten Android-Versionen bereitzustellen. 
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

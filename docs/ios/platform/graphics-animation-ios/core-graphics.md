@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 72c233dc492fe1c93546121bc9103e666c2127ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65ccbe397093833e3af58d1165bc1dad8287ba5d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286265"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752942"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Kern Grafiken in xamarin. IOS
 
@@ -28,7 +28,6 @@ Kern Grafiken unterstützen das Zeichnen in einer Reihe von Szenarien, einschlie
 - [Zeichnen von Bildern im Arbeitsspeicher oder auf dem Bildschirm](#Drawing_Images_and_Text).
 - Erstellen und zeichnen in eine PDF-Datei.
 - Lesen und Zeichnen einer vorhandenen PDF-Datei.
-
 
 ## <a name="geometric-space"></a>Geometrischer Raum
 
@@ -276,7 +275,6 @@ Zusätzlich zum Zeichnen in den Grafik Kontext einer Ansicht unterstützt die Ke
 - Das Bild wird aus dem Kontext abgeraten.
 - Der Kontext wird entfernt.
 
-
 Anders als `Draw` bei der-Methode, in der der Kontext von der Sicht bereitgestellt wird, erstellen Sie in diesem Fall den Kontext auf zwei Arten:
 
 1. Durch Aufrufen `UIGraphics.BeginImageContext` von ( `BeginImageContextWithOptions`oder)
@@ -422,7 +420,6 @@ UIGraphics.EndPDFContent ();
 ```
 
 Der resultierende Text wird in die PDF-Datei gezeichnet, die dann in einem `NSData` enthalten ist, das gespeichert, hochgeladen, per e-Mail versendet werden kann, usw.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

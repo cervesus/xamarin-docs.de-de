@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 8ab832028d4474bbb3c34805b245638695eae75e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2578272dcd38399f23f2aac67503ea4e1b09a027
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291123"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769074"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Arbeiten mit tvos-Warnungen in xamarin
 
@@ -361,14 +361,11 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 #endregion
 ```
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde beschrieben `UIAlertController` , wie eine Warnmeldung für den Benutzer in xamarin. tvos angezeigt wird. Zuerst wurde gezeigt, wie Sie eine einfache Warnung anzeigen und Schaltflächen hinzufügen. Im nächsten Schritt wurde gezeigt, wie Text Felder zu einer Warnung hinzugefügt werden. Schließlich haben Sie erfahren, wie Sie eine Hilfsklasse verwenden, um die Menge an wiederholtem Code zu reduzieren, der zum Anzeigen einer Warnung erforderlich ist.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

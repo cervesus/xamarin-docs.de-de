@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: a3adbf18e18e4f2a42ed3c89162455040a9fe699
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bde76891b4b01800384ee0579e3fbe14987c5420
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282686"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768384"
 ---
 # <a name="stack-views-in-xamarinios"></a>Stapel Ansichten in xamarin. IOS
 
@@ -270,8 +270,6 @@ Viele der Eigenschaften der Stapel Ansicht können mithilfe von Größenklassen 
 
 In diesem Artikel wurde das neue `UIStackView` Steuerelement (IOS 9) behandelt, um eine Reihe von unter Ansichten entweder in einem horizontal oder vertikal angeordneten Stapel in einer xamarin. IOS-APP zu verwalten.
 Es wurde ein einfaches Beispiel für die Verwendung von Stapel Ansichten verwendet, um eine Benutzeroberfläche zu erstellen, und mit einer ausführlicheren Betrachtung der Stapel Ansichten und ihrer Eigenschaften und Features.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

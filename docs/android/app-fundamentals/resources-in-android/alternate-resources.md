@@ -6,32 +6,31 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 05c3816d0cc01beb3ed99994788b58e5f187171a
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 3f1e2ef06fb439f4b3ef290b1a7f80856b126a8d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225779"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755196"
 ---
 # <a name="alternate-resources"></a>Alternative Ressourcen
 
 Alternative Ressourcen sind Ressourcen, die auf ein bestimmtes Gerät oder eine Laufzeitkonfiguration abzielen, z. b. die aktuelle Sprache, bestimmte Bildschirmgröße oder Pixeldichte. Wenn Android eine Ressource finden kann, die für ein bestimmtes Gerät oder eine bestimmte Konfiguration spezifischer ist als die Standardressource, wird stattdessen diese Ressource verwendet. Wenn keine Alternative Ressource gefunden wird, die mit der aktuellen Konfiguration übereinstimmt, werden die Standard Ressourcen geladen. Wie Android entscheidet, welche Ressourcen von einer Anwendung verwendet werden, wird im Abschnitt Ressourcen Speicherort ausführlicher behandelt.
 
-Alternative Ressourcen sind entsprechend dem Ressourcentyp, wie Standard Ressourcen, als Unterverzeichnis im Ressourcen Ordner angeordnet. Der Name des alternativen Unterverzeichnisses der Ressource hat folgendes Format: _ResourceType_--Qualifizierer
+Alternative Ressourcen sind entsprechend dem Ressourcentyp, wie Standard Ressourcen, als Unterverzeichnis im Ressourcen Ordner angeordnet. Der Name des alternativen Unterverzeichnisses der Ressource hat folgendes Format: _ResourceType_--_Qualifizierer_
 
-Der Qualifizierer ist ein Name, der eine bestimmte Gerätekonfiguration identifiziert.
+Der *Qualifizierer* ist ein Name, der eine bestimmte Gerätekonfiguration identifiziert.
 Es können mehrere Qualifizierer in einem Namen vorhanden sein, die jeweils durch einen Bindestrich getrennt sind. Der folgende Screenshot zeigt z. b. ein einfaches Projekt mit alternativen Ressourcen für verschiedene Konfigurationen, z. b. Gebiets Schema, Bildschirm Dichte, Bildschirmgröße und Ausrichtung:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Alternative Ressourcen](alternate-resources-images/alternate-resources-vs.png)
- 
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![Alternative Ressourcen](alternate-resources-images/alternate-resources-xs.png)
- 
+
 -----
- 
 
 Die folgenden Regeln gelten für das Hinzufügen von Qualifizierern zu einem Ressourcentyp:
 
@@ -103,7 +102,6 @@ Die möglichen Qualifizierer sind unten aufgeführt:
 
   - `12key`&ndash; Es ist eine Hardware Tastatur mit 12 Schlüsseln vorhanden.
 
-
 - **Verfügbarkeit von Navigations Schlüsseln** &ndash; Für den Fall, dass die Navigation mit dem 5-Wege-oder d-Pad (direktionaler Pad) verfügbar ist Dies kann sich während der Lebensdauer der Anwendung ändern. Dabei sind folgende Werte möglich:
 
   - `navexposed`&ndash; die Navigationsschlüssel sind für den Benutzer verfügbar.
@@ -122,9 +120,7 @@ Die möglichen Qualifizierer sind unten aufgeführt:
 
 - **Platt Form Version (API-Ebene)** Die API-Ebene, die vom Gerät im Format v*N*unterstützt wird, wobei N für die API-Ebene steht, die Ziel ist. &ndash; Beispielsweise wird für v11 ein Gerät auf API Level 11 (Android 3,0) als Ziel verwendet.
 
-
 Ausführlichere Informationen zu Ressourcen Qualifizierern finden Sie unter [Bereitstellen von Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html) auf der Android-Entwickler Website.
-
 
 ## <a name="how-android-determines-what-resources-to-use"></a>Bestimmen der zu verwendenden Ressourcen durch Android
 

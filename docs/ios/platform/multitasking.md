@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f38200e8274a36783ac7bd1aec4b695036f83e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280160"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769636"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking für iPad in xamarin. IOS
 
@@ -40,7 +40,6 @@ In diesem Artikel werden die Schritte beschrieben, die erforderlich sind, um sic
 > [!VIDEO https://youtube.com/embed/GctYAozoLr8]
 
 **Multitasking für iPad-Video**
-
 
 <a name="Multitasking-QuickStart" />
 
@@ -251,8 +250,6 @@ Um die PIP-Videowiedergabe zu abonnieren, führen Sie in Ihrer APP die folgenden
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die Schritte erläutert, die erforderlich sind, um sicherzustellen, dass eine xamarin. IOS-app ausgeführt wird und sich in der neuen Multitasking-Funktion von IOS 9 korrekt verhält. Außerdem wurde das Opt-out-Multitasking für apps abgedeckt, bei denen es sich nicht um eine gute geeignete Funktion handelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

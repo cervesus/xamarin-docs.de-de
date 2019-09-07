@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: c684efe9bcb292869eb25b36067fcaa42b546a04
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 65c8466e2649c6d48cf5651f25d14c073dbcf5e3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525922"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754428"
 ---
 # <a name="using-sqlitenet-with-android"></a>Verwenden von SQLite.net mit Android
 
@@ -61,7 +61,6 @@ Sobald die SQLite.NET-Bibliothek verfügbar ist, führen Sie die folgenden drei 
 ## <a name="basic-data-access-sample"></a>Beispiel für den grundlegenden Datenzugriff
 
 Der *DataAccess_Basic* -Beispielcode für dieses Dokument sieht wie folgt aus, wenn er unter Android ausgeführt wird. Im Code wird veranschaulicht, wie einfache sqlite.net-Vorgänge durchgeführt und die Ergebnisse in als Text im Hauptfenster der Anwendung angezeigt werden.
-
 
 **Android**
 
@@ -140,7 +139,6 @@ Allgemeine Attribute, die Sie auf die Klassen anwenden können, um zu steuern, w
 
 - **[Eindeutig]** &ndash; Stellt sicher, dass die Werte in der zugrunde liegenden Daten Bank Spalte eindeutig sind.
 
-
 Die meisten dieser Attribute sind optional, SQLite verwendet Standardwerte für Tabellen-und Spaltennamen. Sie sollten immer einen ganzzahligen Primärschlüssel angeben, damit Auswahl-und Lösch Abfragen für Ihre Daten effizient ausgeführt werden können.
 
 ## <a name="more-complex-queries"></a>Komplexere Abfragen
@@ -158,7 +156,6 @@ Die folgenden Methoden für `SQLiteConnection` können verwendet werden, um ande
 - **Abfrage&lt;T&gt;Ausführeneiner SQL-** Abfrage,dieeineReihevonZeilenzurückgibt(als-Objekte).&ndash;
 
 - **Ausführen** von Verwenden Sie diese Methode (und `Query`nicht), wenn Sie keine Zeilen von der SQL-Anweisung (z. b. Insert-, Update-und DELETE-Anweisungen) erwarten. &ndash;
-
 
 ### <a name="getting-an-object-by-the-primary-key"></a>Ein Objekt wird durch den Primärschlüssel erhalten.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 22c3217eec1b2e531ad4534fc1cb35a701a06e34
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a9d239140cee9eb600414a1bfb0733c9af6488bc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524088"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761428"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Java-Integration mit xamarin. Android
 
@@ -38,12 +38,9 @@ Die zweite Methode, die jni verwendet, funktioniert auf sehr niedriger Ebene, bi
 
 Das dritte Verfahren unterscheidet sich grundlegend von den vorherigen beiden: Portieren des Codes von C#Java auf. Das Portieren von Code von einer Sprache in eine andere kann ein sehr aufwändiger Prozess sein, aber es ist möglich, diesen Aufwand mit der Hilfe eines Tools namens " *Sharpen*" zu verringern. Sharpen ist ein Open Source-Tool, das ein Java-toC# -Converter-Tool ist. 
 
-
-
 ## <a name="summary"></a>Zusammenfassung
 
 Dieses Dokument bietet einen Überblick über die verschiedenen Methoden, mit denen Bibliotheken aus Java in einer xamarin. Android-Anwendung wieder verwendet werden können. Es wurden die Konzepte von Bindungen und verwalteten Callable Wrapper vorgestellt, und es wurden die Optionen zum Portieren von C#Java-Code in erläutert. 
-
 
 ## <a name="related-links"></a>Verwandte Links
 

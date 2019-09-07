@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 492682b1f7647201f15678a5162281e0a7a916d6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 577bc7af34c463aec65148bd97dc5dd49262d699
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280093"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767085"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Touchereignisse und Gesten in xamarin. IOS
 
@@ -41,7 +41,6 @@ Es gibt drei Berührungs Phasen, die auftreten, wenn der Benutzer den Bildschirm
 - `TouchesBegan`– Dies wird aufgerufen, wenn der Bildschirm zum ersten Mal berührt wird.
 - `TouchesMoved`– Dies wird aufgerufen, wenn sich die Position der Fingereingabe ändert, während der Benutzer die Finger auf dem Bildschirm verrutscht.
 - `TouchesEnded`oder `TouchesCancelled` –`TouchesEnded` wird aufgerufen, wenn die Finger des Benutzers vom Bildschirm entfernt werden.  `TouchesCancelled`wird aufgerufen, wenn IOS den Touch-Vorgang abbricht – beispielsweise, wenn ein Benutzer seinen Finger von einer Schaltfläche bewegt, um eine Taste abzubrechen.
-
 
 Berührungs Ereignisse Reisen rekursiv durch den Stapel von UIViews, um zu überprüfen, ob sich das Berührungs Ereignis innerhalb der Grenzen eines Ansichts Objekts befindet. Dies wird häufig als _Treffer Test_bezeichnet. Sie werden zuerst `UIView` auf der obersten Ebene oder `UIViewController` aufgerufen und dann in der Ansichts Hierarchie `UIView` unter `UIViewControllers` und unter Ihnen aufgerufen.
 
@@ -126,7 +125,6 @@ Xamarin. IOS stellt die- `UIGestureRecognizer` Klasse als Basisklasse für die f
 - *Uirotationgesturerecognizer* – Drehen von zwei Fingern in einer Bewegung im Uhrzeigersinn oder gegen den Uhrzeigersinn.
 - *Uilongpressgesturerecognizer* – drücken und halten, manchmal auch als Long-Press oder Long-Click bezeichnet.
 
-
 Das grundlegende Muster für die Verwendung eines Gesten Erkennungs Moduls lautet wie folgt:
 
 1. **Instanziieren Sie die Gestenerkennung** – zuerst instanziieren Sie eine `UIGestureRecognizer` Unterklasse. Das Objekt, das instanziiert wird, wird durch eine Sicht verknüpft, und die Garbage Collection wird durchgeführt, wenn die Sicht verworfen wird. Es ist nicht erforderlich, diese Sicht als Variable auf Klassenebene zu erstellen.
@@ -152,7 +150,6 @@ Gesten können als einer von zwei Typen zusammengefasst werden:
 1. *Diskret* – diese Gesten werden nur ausgelöst, wenn Sie zum ersten Mal erkannt werden.
 1. *Kontinuierlich* – diese Gesten werden weiterhin ausgelöst, solange Sie erkannt werden.
 
-
 Gesten Erkennungs Tools sind in einem der folgenden Zustände vorhanden:
 
 - *Möglich* – Dies ist der anfängliche Status aller Gesten Erkennungs Modul. Dies ist der Standardwert der State-Eigenschaft.
@@ -162,7 +159,6 @@ Gesten Erkennungs Tools sind in einem der folgenden Zustände vorhanden:
 - *Erkannt* – der Status wird festgelegt, wenn die Gestenerkennung mit einem Satz von Berührungen übereinstimmt, und der Abonnent informiert, dass die Geste abgeschlossen wurde.
 - *Beendet* – Dies ist ein Alias für den erkannten Zustand.
 - Fehler – wenn die Gestenerkennung nicht mehr mit den Berührungen identisch ist, die Sie überwacht, wird der Status in *"failed"* geändert.
-
 
 Xamarin. IOS stellt diese Werte in der `UIGestureRecognizerState` -Enumeration dar.
 
@@ -178,7 +174,6 @@ Es ist auch möglich, eine Geste in IOS zu deaktivieren. Es gibt zwei delegateig
 
 1. *Rechdreceivetouch* – dieser Delegat wird aufgerufen, unmittelbar bevor die Gestenerkennung an ein Touch-Ereignis geleitet wird, und bietet die Möglichkeit, die Berührungen zu untersuchen und zu entscheiden, welche Berührungen von der Gestenerkennung behandelt werden.
 1. *Schulter* – Dies wird aufgerufen, wenn eine Erkennung versucht, den Zustand von einem möglichen in einen anderen Zustand zu ändern. Wenn Sie false zurückgeben, erzwingen Sie, dass der Status der Gestenerkennung in "failed" geändert wird.
-
 
 Sie können diese Methoden mit einem stark typisierten `UIGestureRecognizerDelegate`, einem schwachen Delegaten oder einer Bindung über die Ereignishandlersyntax überschreiben, wie im folgenden Code Ausschnitt veranschaulicht:
 
@@ -199,6 +194,5 @@ Obwohl IOS einige Standard Gesten Erkennungs Tools bereitstellt, kann es erforde
 1. Unterklasse `UIGestureRecognizer` .
 1. Überschreiben Sie die entsprechenden Berührungs Ereignis Methoden.
 1. Blasen Sie den Erkennungs Status mithilfe der "State"-Eigenschaft der Basisklasse.
-
 
 Ein praktisches Beispiel hierfür finden Sie unter Exemplarische Vorgehensweise: [Verwenden von Touchscreen in ios](ios-touch-walkthrough.md) .

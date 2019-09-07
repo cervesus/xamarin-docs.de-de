@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 7455e9b8f8e164dd5733b44db4aaac8a93133a05
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 87d99c62f20e6cfd23605d1917a577ac0d95038f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121599"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772460"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Layout für Tablet-und Desktop-Apps
 
@@ -61,13 +61,11 @@ Apps, die auf Windows-Tablets und-Desktops ausgeführt werden, können neben dem
 
 [Beispiel für Windows-Split Screen ![(tablet-images/splitscreen-sml.png " ")]] (tablet-images/splitscreen.png#lightbox "Beispiel für Windows-Split Screen")
 
-
 <a name="optimize" />
 
 ## <a name="optimizing-for-tablet-and-desktop"></a>Optimieren von Tablet und Desktop
 
 Sie können Ihre xamarin. Forms-Benutzeroberfläche anpassen, je nachdem, ob ein Telefon oder Tablet/Desktop-Gerät verwendet wird. Dies bedeutet, dass Sie die Benutzer Funktionen für Geräte mit großen Bildschirmen (z. b. Tablets und Desktop Computern) optimieren können.
-
 
 ### <a name="deviceidiom"></a>"Device.Idiom"
 
@@ -89,8 +87,6 @@ Diese Vorgehensweise kann erweitert werden, um bedeutende Änderungen an den ein
 Der [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) eignet sich ideal für größere Bildschirme, insbesondere auf dem iPad, auf [`UISplitViewController`](xref:UIKit.UISplitViewController) dem es verwendet, um eine native IOS-Darstellung bereitzustellen.
 
 Lesen Sie [diesen xamarin-Blogbeitrag](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/) , um zu erfahren, wie Sie Ihre Benutzeroberfläche so anpassen können, dass Telefone ein Layout verwenden und größere Bild `MasterDetailPage`Schirme andere (mit) verwenden können.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

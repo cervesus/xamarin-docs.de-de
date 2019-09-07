@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 8cf2eaf381b0e9f87b5d91bccb6f4aa86dc68e4d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efd120e785e55bfa3806cd193bd5f155f35a5e18
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292840"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767725"
 ---
 # <a name="watchos-troubleshooting"></a>Problembehandlung bei watchos
 
@@ -80,14 +80,12 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
 4. Das Symbolbild sollte nun die Validierungs Überprüfungen von Apple bestehen.
 
-
 <a name="add" />
 
 ## <a name="manually-adding-interface-controller-files"></a>Manuelles Hinzufügen von Schnittstellen Controller Dateien
 
 > [!IMPORTANT]
 > Die watchkit-Unterstützung von xamarin umfasst das Entwerfen von Watch-Storyboards im IOS-Designer (sowohl in Visual Studio für Mac als auch in Visual Studio), für die die unten aufgeführten Schritte nicht erforderlich sind. Geben Sie einem Schnittstellen Controller einfach einen Klassennamen im Visual Studio für Mac Properties-Pad, C# und die Code Dateien werden automatisch erstellt.
-
 
 *Wenn* Sie Xcode-Interface Builder verwenden, führen Sie die folgenden Schritte aus, um neue Schnittstellen Controller für Ihre Watch-APP zu erstellen und die Synchronisierung mit Xcode zu aktivieren C#, damit die Outlets und Aktionen in verfügbar sind:
 
@@ -210,14 +208,12 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
 Sie können jetzt auf C#das-Steuerelement verweisen (oder die-Aktion implementieren).
 
-
 <a name="command_line" />
 
 ## <a name="launching-the-watch-app-from-the-command-line"></a>Starten der Überwachungs-App über die Befehlszeile
 
 > [!IMPORTANT]
 > Sie können die Watch-App standardmäßig im normalen APP-Modus starten und auch auf einen **Blick** oder **Benachrichtigungs** Modi mithilfe von [benutzerdefinierten Ausführungs Parametern](~/ios/watchos/get-started/installation.md#custommodes) in Visual Studio für Mac und Visual Studio.
-
 
 Sie können auch die Befehlszeile verwenden, um den IOS-Simulator zu steuern. Das Befehlszeilen Tool, das zum Starten von Watch-Apps verwendet wird, ist **mberührungs**.
 
@@ -243,7 +239,6 @@ Beispiel:
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-
 ## <a name="notification-mode"></a>Benachrichtigungs Modus
 
 Zum Testen des [ **Benachrichtigungs** Modus](~/ios/watchos/platform/notifications.md)der APP legen Sie `watchlaunchmode` den- `Notification` Parameter auf fest, und geben Sie einen Pfad zu einer JSON-Datei an, die eine Test Benachrichtigungs Nutzlast enthält.
@@ -255,7 +250,6 @@ Fügen Sie z. b. die folgenden Argumente zum mtouchscreen-Befehl hinzu:
 ```bash
 --watchlaunchmode=Notification --watchnotificationpayload=/path/to/file.json
 ```
-
 
 ## <a name="other-arguments"></a>Weitere Argumente
 
@@ -296,8 +290,6 @@ Beispiel:
 ```bash
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

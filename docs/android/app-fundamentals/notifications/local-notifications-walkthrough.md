@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 61dedca1b89237bdd4669a63173b1c6e4fde072b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: caef124228ab4ec4356b10c0559d2abe33d1531f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644307"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755276"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>Exemplarische Vorgehensweise: Verwenden von lokalen Benachrichtigungen in xamarin. Android
 
 _In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie lokale Benachrichtigungen in xamarin. Android-Anwendungen verwendet werden. Es veranschaulicht die Grundlagen der Erstellung und Veröffentlichung einer lokalen Benachrichtigung. Wenn der Benutzer im Benachrichtigungsbereich auf die Benachrichtigung klickt, startet er eine zweite Aktivität._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -35,7 +34,6 @@ Die folgenden Screenshots veranschaulichen einige Beispiele für diese Anwendung
 Erstellen Sie zunächst ein neues Android-Projekt mithilfe der Android- **App** -Vorlage. Wir nennen dieses Projekt **localnotification**. (Wenn Sie mit dem Erstellen von xamarin. Android-Projekten nicht vertraut sind, finden Sie weitere Informationen unter [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).)
 
 Bearbeiten Sie die Ressourcen Datei **Values/Strings. XML** so, dass Sie zwei zusätzliche Zeichen folgen Ressourcen enthält, die beim Erstellen des Benachrichtigungs Kanals verwendet werden:
-
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -104,7 +102,6 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-
 ### <a name="define-the-notification-id"></a>Festlegen der Benachrichtigungs-ID
 
 Wir benötigen eine eindeutige ID für unsere Benachrichtigungs-und Benachrichtigungs Kanäle. Bearbeiten Sie **MainActivity.cs** , `MainActivity` und fügen Sie der-Klasse die folgende statische Instanzvariable hinzu:
@@ -117,7 +114,7 @@ internal static readonly string COUNT_KEY = "count";
 
 ### <a name="add-code-to-generate-the-notification"></a>Hinzufügen von Code zum Generieren der Benachrichtigung
 
-Als nächstes müssen wir einen neuen Ereignishandler für das Schalt `Click` Flächen Ereignis erstellen. Fügen Sie die folgende Methode `MainActivity`zu hinzu:
+Als nächstes müssen wir einen neuen Ereignishandler für das Schalt `Click` Flächen Ereignis erstellen. Fügen Sie `MainActivity` zur folgenden Methode hinzu:
 
 ```csharp
 void ButtonOnClick(object sender, EventArgs eventArgs)
@@ -173,7 +170,6 @@ protected override void OnCreate(Bundle bundle)
     button.Click += ButtonOnClick;
 }
 ```
-
 
 ### <a name="create-a-second-activity"></a>Erstellen Sie eine zweite Aktivität.
 
@@ -231,11 +227,9 @@ Außerdem muss ein Ressourcen Layout für **secondactivity**erstellt werden. Fü
 </LinearLayout>
 ```
 
-
 ### <a name="add-a-notification-icon"></a>Benachrichtigungssymbol hinzufügen
 
 Fügen Sie abschließend ein kleines Symbol hinzu, das im Benachrichtigungsbereich angezeigt wird, wenn die Benachrichtigung gestartet wird. Sie können [dieses Symbol](local-notifications-walkthrough-images/ic-stat-button-click.png) in Ihr Projekt kopieren oder ein eigenes benutzerdefiniertes Symbol erstellen. Benennen Sie die Symbol **Datei\_IC\_stat\_Button Click. png** , und kopieren Sie Sie in den Ordner **Resources/drawable** . Denken Sie daran, **> vorhandenes Element hinzufügen...** zu verwenden, um diese Symbol Datei in das Projekt einzuschließen.
-
 
 ### <a name="run-the-application"></a>Ausführen der Anwendung
 
@@ -257,11 +251,9 @@ Wenn Sie auf die Benachrichtigung klicken, sollte Sie verschwinden, und die ande
 
 Herzlichen Glückwunsch! An diesem Punkt haben Sie die exemplarische Vorgehensweise für die lokale Android-Benachrichtigung abgeschlossen, und Sie haben ein funktionierendes Beispiel, auf das Sie verweisen können. Es gibt noch viel mehr zu Benachrichtigungen, als wir hier gezeigt haben. Wenn Sie weitere Informationen benötigen, sehen Sie sich [die Google-Dokumentation zu Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)an.
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 Diese exemplarische Vorgehens `NotificationCompat.Builder` Weise wird zum Erstellen und Anzeigen von Benachrichtigungen verwendet. Es wurde ein einfaches Beispiel gezeigt, wie Sie eine zweite Aktivität als Reaktion auf die Benutzerinteraktion mit der Benachrichtigung starten und die Übertragung von Daten von der ersten Aktivität zur zweiten Aktivität veranschaulichen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

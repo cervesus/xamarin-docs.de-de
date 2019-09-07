@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: eda75041add4b5fc9f7998f426aab42ed2618c4b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8ebc52936dfdcb6b5262424eba5652de0b8908e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508812"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755596"
 ---
 # <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 
@@ -29,12 +29,11 @@ Es ist äußerst wichtig, dass der Anwendungsentwickler die Anforderungen der ei
 
 In diesem Kapitel wird der Aktivitäts Lebenszyklus ausführlich erläutert, einschließlich:
 
--  Aktivitäts Zustände
--  Lebenszyklusmethoden
--  Beibehalten des Zustands einer Anwendung
+- Aktivitäts Zustände
+- Lebenszyklusmethoden
+- Beibehalten des Zustands einer Anwendung
 
-
-Dieser Abschnitt enthält [auch eine](~/android/app-fundamentals/activity-lifecycle/saving-state.md) Exemplarische Vorgehensweise, die praktische Beispiele für die effiziente Speicherung des Zustands während des Aktivitäts Lebenszyklus bereitstellt. Am Ende dieses Kapitels sollten Sie einen Einblick in den Aktivitäts Lebenszyklus und seine Unterstützung in einer Android-Anwendung haben.
+Dieser Abschnitt enthält auch eine exemplarische Vorgehensweise, die praktische Beispiele [für die effiziente](~/android/app-fundamentals/activity-lifecycle/saving-state.md) Speicherung des Zustands während des Aktivitäts Lebenszyklus bereitstellt. Am Ende dieses Kapitels sollten Sie einen Einblick in den Aktivitäts Lebenszyklus und seine Unterstützung in einer Android-Anwendung haben.
 
 ## <a name="activity-lifecycle"></a>Aktivitätslebenszyklus
 
@@ -48,15 +47,14 @@ Das Android-Betriebssystem unterscheidet Aktivitäten basierend auf deren Status
 
 Diese Zustände können wie folgt in vier Hauptgruppen unterteilt werden:
 
-1.  *Aktiv oder wird ausgeführt* &ndash; Aktivitäten werden als aktiv betrachtet oder ausgeführt, wenn Sie sich im Vordergrund befinden, auch bekannt als oberster Rand des Aktivitäts Stapels. Dies wird als die höchste Prioritäts Aktivität in Android angesehen und wird daher nur von dem Betriebssystem in Extremsituationen abgebrochen, z. b. wenn die Aktivität versucht, mehr Speicher zu verwenden, als auf dem Gerät verfügbar ist, da dies dazu führen könnte, dass die Benutzeroberfläche nicht mehr reagiert.
+1. *Aktiv oder wird ausgeführt* &ndash; Aktivitäten werden als aktiv betrachtet oder ausgeführt, wenn Sie sich im Vordergrund befinden, auch bekannt als oberster Rand des Aktivitäts Stapels. Dies wird als die höchste Prioritäts Aktivität in Android angesehen und wird daher nur von dem Betriebssystem in Extremsituationen abgebrochen, z. b. wenn die Aktivität versucht, mehr Speicher zu verwenden, als auf dem Gerät verfügbar ist, da dies dazu führen könnte, dass die Benutzeroberfläche nicht mehr reagiert.
 
-1.  *Angeh* alten &ndash; Wenn das Gerät in den Standbymodus wechselt oder eine Aktivität weiterhin sichtbar ist, aber teilweise durch eine neue, nicht vollständige oder transparente Aktivität ausgeblendet ist, wird die Aktivität als angehalten betrachtet. Angehaltene Aktivitäten sind immer noch aktiv, d. h., Sie behalten alle Zustands-und Element Informationen bei und bleiben an den Fenster-Manager angefügt. Dies wird als die zweite Aktivität mit der höchsten Priorität in Android angesehen und wird daher nur vom Betriebssystem abgebrochen, wenn durch das Beenden dieser Aktivität die Ressourcenanforderungen erfüllt werden, die erforderlich sind, um die aktive/aktive Aktivität stabil und reaktionsfähig zu halten.
+1. *Angeh* alten &ndash; Wenn das Gerät in den Standbymodus wechselt oder eine Aktivität weiterhin sichtbar ist, aber teilweise durch eine neue, nicht vollständige oder transparente Aktivität ausgeblendet ist, wird die Aktivität als angehalten betrachtet. Angehaltene Aktivitäten sind immer noch aktiv, d. h., Sie behalten alle Zustands-und Element Informationen bei und bleiben an den Fenster-Manager angefügt. Dies wird als die zweite Aktivität mit der höchsten Priorität in Android angesehen und wird daher nur vom Betriebssystem abgebrochen, wenn durch das Beenden dieser Aktivität die Ressourcenanforderungen erfüllt werden, die erforderlich sind, um die aktive/aktive Aktivität stabil und reaktionsfähig zu halten.
 
-1.  *Beendet/Rück basiert* &ndash; Aktivitäten, die von einer anderen Aktivität vollständig verdeckt werden, werden als beendet oder im Hintergrund betrachtet.
+1. *Beendet/Rück basiert* &ndash; Aktivitäten, die von einer anderen Aktivität vollständig verdeckt werden, werden als beendet oder im Hintergrund betrachtet.
     Bei beendeten Aktivitäten wird weiterhin versucht, ihre Zustands-und Element Informationen so lange wie möglich beizubehalten, aber beendete Aktivitäten werden als niedrigste Priorität der drei Zustände angesehen, sodass das Betriebssystem zuerst Aktivitäten in diesem Zustand abbricht, um die Ressource zu erfüllen. Anforderungen von Aktivitäten mit höherer Priorität.
 
-1.  *Neu gestartet* &ndash; Es ist möglich, dass eine Aktivität, die sich an einem beliebigen Ort befindet, im Lebenszyklus angehalten wird, damit Sie von Android aus dem Arbeitsspeicher entfernt wird. Wenn der Benutzer zur Aktivität zurück navigiert, muss er neu gestartet, im zuvor gespeicherten Zustand wieder hergestellt und dann dem Benutzer angezeigt werden.
-
+1. *Neu gestartet* &ndash; Es ist möglich, dass eine Aktivität, die sich an einem beliebigen Ort befindet, im Lebenszyklus angehalten wird, damit Sie von Android aus dem Arbeitsspeicher entfernt wird. Wenn der Benutzer zur Aktivität zurück navigiert, muss er neu gestartet, im zuvor gespeicherten Zustand wieder hergestellt und dann dem Benutzer angezeigt werden.
 
 ### <a name="activity-re-creation-in-response-to-configuration-changes"></a>Neuerstellung von Aktivitäten als Reaktion auf Konfigurationsänderungen
 
@@ -116,12 +114,11 @@ Nach `OnCreate` Abschluss des Vorgangs wird von Android `OnStart`aufgerufen.
 Das System ruft [onresume](xref:Android.App.Activity.OnResume) auf, wenn die Aktivität bereit ist, mit dem Benutzer zu interagieren.
 Aktivitäten sollten diese Methode überschreiben, um folgende Aufgaben auszuführen:
 
--  Hochskalieren von Frameraten (eine gängige Aufgabe bei der Entwicklung von spielen)
--  Starten von Animationen
--  Lauschen auf GPS-Updates
--  Anzeigen von relevanten Warnungen oder Dialogfeldern
--  Externe Ereignishandler verknüpfen
-
+- Hochskalieren von Frameraten (eine gängige Aufgabe bei der Entwicklung von spielen)
+- Starten von Animationen
+- Lauschen auf GPS-Updates
+- Anzeigen von relevanten Warnungen oder Dialogfeldern
+- Externe Ereignishandler verknüpfen
 
 Der folgende Code Ausschnitt zeigt beispielsweise, wie die Kamera initialisiert wird:
 
@@ -143,15 +140,15 @@ public void OnResume()
 
 [OnPause](xref:Android.App.Activity.OnPause) wird aufgerufen, wenn das System im Begriff ist, die Aktivität in den Hintergrund zu versetzen, oder wenn die Aktivität teilweise verdeckt wird. Aktivitäten sollten diese Methode überschreiben, wenn Folgendes erforderlich ist:
 
--   Nicht gespeicherte Änderungen an persistenten Daten übertragen
+- Nicht gespeicherte Änderungen an persistenten Daten übertragen
 
--   Andere Objekte, die Ressourcen verbrauchen, zerstören oder bereinigen
+- Andere Objekte, die Ressourcen verbrauchen, zerstören oder bereinigen
 
--   Fortsetzen von Frameraten und Anhalten von Animationen
+- Fortsetzen von Frameraten und Anhalten von Animationen
 
--   Aufheben der Registrierung externer Ereignishandler oder Benachrichtigungs Handler (d. h. solche, die an einen Dienst gebunden sind). Dies muss erreicht werden, um Arbeitsspeicher Verluste zu verhindern.
+- Aufheben der Registrierung externer Ereignishandler oder Benachrichtigungs Handler (d. h. solche, die an einen Dienst gebunden sind). Dies muss erreicht werden, um Arbeitsspeicher Verluste zu verhindern.
 
--   Ebenso müssen, wenn die Aktivität Dialogfelder oder Warnungen angezeigt hat, mit der `.Dismiss()` -Methode bereinigt werden.
+- Ebenso müssen, wenn die Aktivität Dialogfelder oder Warnungen angezeigt hat, mit der `.Dismiss()` -Methode bereinigt werden.
 
 Der folgende Code Ausschnitt gibt beispielsweise die Kamera frei, da Sie von der Aktivität nicht verwendet werden kann, während Sie angehalten wurde:
 
@@ -171,18 +168,16 @@ public void OnPause()
 
 Es gibt zwei mögliche Lebenszyklus Methoden, die nach `OnPause`aufgerufen werden:
 
-1.  `OnResume`wird aufgerufen, wenn die Aktivität wieder in den Vordergrund gesetzt werden soll.
-1.  `OnStop`wird aufgerufen, wenn die Aktivität im Hintergrund platziert wird.
-
+1. `OnResume`wird aufgerufen, wenn die Aktivität wieder in den Vordergrund gesetzt werden soll.
+1. `OnStop`wird aufgerufen, wenn die Aktivität im Hintergrund platziert wird.
 
 #### <a name="onstop"></a>OnStop
 
 [Onstopps](xref:Android.App.Activity.OnStop) wird aufgerufen, wenn die Aktivität für den Benutzer nicht mehr sichtbar ist. Dies geschieht, wenn eine der folgenden Aktionen auftritt:
 
--  Eine neue Aktivität wird gestartet und deckt diese Aktivität ab.
--  Eine vorhandene Aktivität wird in den Vordergrund gestellt.
--  Die Aktivität wird zerstört.
-
+- Eine neue Aktivität wird gestartet und deckt diese Aktivität ab.
+- Eine vorhandene Aktivität wird in den Vordergrund gestellt.
+- Die Aktivität wird zerstört.
 
 `OnStop`kann nicht immer in Situationen mit geringem Arbeitsspeicher aufgerufen werden, z. b. wenn Android für Ressourcen verhungert wird und den Hintergrund der Aktivität nicht ordnungsgemäß durchläuft. Aus diesem Grund sollten Sie sich nicht darauf verlassen `OnStop` , dass aufgerufen wird, wenn eine Aktivität für die Zerstörung vorbereitet wird. Die nächsten Lebenszyklus Methoden, die nach diesem `OnDestroy` Vorgang aufgerufen werden können, sind, wenn die Aktivität entfernt wird, oder `OnRestart` wenn die Aktivität zurückgeht, um mit dem Benutzer zu interagieren.
 
@@ -325,27 +320,25 @@ Diese Methode bietet eine gewisse Flexibilität, wenn der Zustand wieder hergest
 
 Ein Beispiel für das Speichern des Zustands mithilfe `Bundle`von finden Sie unter Exemplarische Vorgehensweise [: Speichern des Aktivitäts Zustands](saving-state.md).
 
-
 #### <a name="bundle-limitations"></a>Bündel Einschränkungen
 
 Obwohl `OnSaveInstanceState` es einfach ist, vorübergehende Daten zu speichern, gelten einige Einschränkungen:
 
--   Sie wird nicht in allen Fällen aufgerufen. Beispielsweise führt das Drücken der  `OnSaveInstanceState` **Startseite** oder zurück zum Beenden einer Aktivität nicht dazu, dass aufgerufen wird.
+- Sie wird nicht in allen Fällen aufgerufen. Beispielsweise führt das Drücken der `OnSaveInstanceState` **Startseite** oder zurück zum Beenden einer Aktivität nicht dazu, dass aufgerufen wird.
 
--   Das an über gegebene `OnSaveInstanceState` Bündel ist nicht für große Objekte (z. b. Bilder) konzipiert. Im Fall von großen Objekten ist das Speichern des Objekts aus [onretainnonconfigurationinstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance) vorzuziehen, wie unten erläutert.
+- Das an über gegebene `OnSaveInstanceState` Bündel ist nicht für große Objekte (z. b. Bilder) konzipiert. Im Fall von großen Objekten ist das Speichern des Objekts aus [onretainnonconfigurationinstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance) vorzuziehen, wie unten erläutert.
 
--   Daten, die mithilfe des Pakets gespeichert wurden, werden serialisiert. Dies kann zu Verzögerungen führen.
+- Daten, die mithilfe des Pakets gespeichert wurden, werden serialisiert. Dies kann zu Verzögerungen führen.
 
 Der Bündel Status ist für einfache Daten nützlich, die nicht viel Arbeitsspeicher verwenden, wohingegen *nicht-Konfigurations-Instanzdaten* für komplexere Daten oder Daten, die aufwendig abgerufen werden können, wie z. b. von einem Webdienst-oder einer komplizierten Datenbankabfrage, nützlich sind. Nicht konfigurationsinstanzdaten werden bei Bedarf in einem Objekt gespeichert. Im nächsten Abschnitt `OnRetainNonConfigurationInstance` wird die Beibehaltung komplexer Datentypen durch Konfigurationsänderungen erläutert.
-
 
 ### <a name="persisting-complex-data"></a>Beibehalten komplexer Daten
 
 Zusätzlich zum Beibehalten von Daten im Paket unterstützt Android auch das Speichern von Daten durch Überschreiben von [onretainnonconfigurationinstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance) und Zurückgeben einer `Java.Lang.Object` Instanz von, die die Daten enthält, die persistent gespeichert werden sollen. Die Verwendung `OnRetainNonConfigurationInstance` von zum Speichern des Zustands hat zwei Hauptvorteile:
 
--   Das von `OnRetainNonConfigurationInstance` zurückgegebene-Objekt ist gut mit größeren, komplexeren Datentypen verfügbar, da der Arbeitsspeicher dieses Objekt beibehält.
+- Das von `OnRetainNonConfigurationInstance` zurückgegebene-Objekt ist gut mit größeren, komplexeren Datentypen verfügbar, da der Arbeitsspeicher dieses Objekt beibehält.
 
--   Die `OnRetainNonConfigurationInstance` -Methode wird bei Bedarf und nur bei Bedarf aufgerufen. Dies ist wirtschaftlicher als die Verwendung eines manuellen Caches.
+- Die `OnRetainNonConfigurationInstance` -Methode wird bei Bedarf und nur bei Bedarf aufgerufen. Dies ist wirtschaftlicher als die Verwendung eines manuellen Caches.
 
 Die `OnRetainNonConfigurationInstance` Verwendung von eignet sich für Szenarien, in denen es aufwendig ist, die Daten mehrmals abzurufen, z. b. in Webdienst aufrufen. Sehen Sie sich beispielsweise den folgenden Code an, der Twitter durchsucht:
 
@@ -477,7 +470,6 @@ In diesem Abschnitt haben wir gelernt, wie Sie einfache Zustandsdaten mit dem `B
 ## <a name="summary"></a>Zusammenfassung
 
 Der Android-Aktivitäts Lebenszyklus bietet ein leistungsfähiges Framework für die Zustands Verwaltung von Aktivitäten in einer Anwendung, aber es kann schwierig sein, zu verstehen und zu implementieren. In diesem Kapitel wurden die verschiedenen Zustände vorgestellt, die eine Aktivität während ihrer Lebensdauer durchlaufen kann, sowie die Lebenszyklus Methoden, die diesen Zuständen zugeordnet sind. Als nächstes wurde eine Anleitung bereitgestellt, welche Art von Logik für jede dieser Methoden ausgeführt werden sollte.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

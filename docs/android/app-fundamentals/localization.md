@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 15f5705fcf625d7c9aa6901cc919cea399f252e9
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 08d12a58b4a0d8a8f757df965bd9dfb73f1639b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197701"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755374"
 ---
 # <a name="android-localization"></a>Android-Lokalisierung
 
@@ -81,7 +81,7 @@ Die meisten Entwickler sind bereits mit der Verwendung von **dpi** -Suffixen im 
 ![Screenshot der Ordner "Resources/drawable" und "Resources/values" für mehrere Kultur Bezeichner](localization-images/resources.png)
 
 > [!NOTE]
-> Wenn eine Sprache `es` der obersten Ebene angegeben wird, sind nur zwei Zeichen erforderlich. Wenn Sie jedoch ein vollständiges Gebiets Schema angeben, benötigt das Verzeichnisnamen Format einen Bindestrich und einen Kleinbuchstaben, um die beiden Teile voneinander zu trennen, z. **b. pt-RBR** oder  **ZH-RCN**. Vergleichen Sie dies mit dem im Code zurückgegebenen Wert, der einen Unterstrich aufweist (z. b. `pt_BR`) angezeigt wird. Beide unterscheiden sich von dem Wert, der `CultureInfo` von der .NET-Klasse verwendet wird, der nur einen Bindestrich aufweist (z. b. `pt-BR`) angezeigt wird. Beachten Sie diese Unterschiede, wenn Sie über xamarin-Plattformen arbeiten.
+> Wenn eine Sprache `es` der obersten Ebene angegeben wird, sind nur zwei Zeichen erforderlich. Wenn Sie jedoch ein vollständiges Gebiets Schema angeben, benötigt das Verzeichnisnamen Format einen Bindestrich und einen **Kleinbuchstaben,** um die beiden Teile voneinander zu trennen, z. **b. pt-RBR** oder  **ZH-RCN**. Vergleichen Sie dies mit dem im Code zurückgegebenen Wert, der einen Unterstrich aufweist (z. b. `pt_BR`) angezeigt wird. Beide unterscheiden sich von dem Wert, der `CultureInfo` von der .NET-Klasse verwendet wird, der nur einen Bindestrich aufweist (z. b. `pt-BR`) angezeigt wird. Beachten Sie diese Unterschiede, wenn Sie über xamarin-Plattformen arbeiten.
 
 #### <a name="stringsxml-file-format"></a>Strings. XML-Dateiformat
 
@@ -202,7 +202,6 @@ In diesem Screenshot werden vier Bilder im **drawable** -Verzeichnis gespeichert
 
 ![Screenshot mehrerer drawable-Ordner, die jeweils eine oder mehrere lokalisierte PNG-Dateien enthalten](localization-images/drawable.png)
 
-
 #### <a name="other-resource-types"></a>Andere Ressourcentypen
 
 Sie können auch andere Arten alternativer, sprachspezifischer Ressourcen bereitstellen, einschließlich Layouts, Animationen und Rohdatendateien. Dies bedeutet, dass Sie ein bestimmtes Bildschirmlayout für eine oder mehrere Zielsprachen bereitstellen können, z. b. Wenn Sie ein Layout speziell für Deutsch erstellen, das sehr lange Text Bezeichnungen zulässt.
@@ -210,7 +209,6 @@ Sie können auch andere Arten alternativer, sprachspezifischer Ressourcen bereit
 Android 4,2 hat Unterstützung für [Sprachen von rechts nach links (RTL)](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) eingeführt, wenn Sie `android:supportsRtl="true"`die Anwendungs Einstellung festlegen. Der Ressourcen Qualifizierer `"ldrtl"` kann in einen Verzeichnisnamen eingefügt werden, um benutzerdefinierte Layouts zu enthalten, die für die RTL-Anzeige entworfen wurden.
 
 Weitere Informationen zur Benennung und zum Fallback von Ressourcen Verzeichnissen finden Sie in der Android-Dokumentation zum [Bereitstellen alternativer Ressourcen](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
-
 
 ### <a name="app-name"></a>App-Name
 
@@ -256,12 +254,9 @@ Um auf einem Gerät zu testen, ändern Sie die Sprache in der App " **Einstellun
 > [!TIP]
 > Notieren Sie sich die Symbole und den Speicherort der Menü Elemente, damit Sie die Sprache auf die ursprüngliche Einstellung zurücksetzen können.
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel werden die Grundlagen der Lokalisierung von Android-Anwendungen mithilfe der integrierten Ressourcen Behandlung behandelt. Weitere Informationen zu i18n und l10n für IOS-, Android-und plattformübergreifende Apps (einschließlich xamarin. Forms) finden Sie in [diesem plattformübergreifenden Leitfaden](~/cross-platform/app-fundamentals/localization.md).
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 366932e32443a7284f15f51a7a9a437d4b177438
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 730359824ec5a51a53261fbfc9519ac8560a77f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286241"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753076"
 ---
 # <a name="core-animation-in-xamarinios"></a>Core-Animation in xamarin. IOS
 
@@ -44,7 +44,6 @@ In diesem Abschnitt werden UIKit-Animations Features erläutert, einschließlich
 - Übergänge zwischen Sichten
 - Eigenschaften Animation anzeigen
 
-
 ### <a name="view-controller-transitions"></a>Übergänge von Ansichtscontrollern
 
  `UIViewController`bietet integrierte Unterstützung für den Übergang zwischen Sicht Controllern über die `PresentViewController` -Methode. Wenn Sie `PresentViewController`verwenden, kann der Übergang zum zweiten Controller optional animiert werden.
@@ -62,7 +61,6 @@ In diesem Fall wird `PartialCurl` eine Animation verwendet, obwohl mehrere ander
 - `CoverVertical`– Wird vom unteren Bildschirmrand nach oben verschoben.
 - `CrossDissolve`– Die alte Ansicht wird ausgeblendet, & die neue Ansicht ausgeblendet wird.
 - `FlipHorizontal`-Ein horizontaler, von rechts nach links. Bei einer Kündigung wird der Übergang von links nach rechts zurück geflippt.
-
 
 Um den Übergang zu animieren, `true` übergeben Sie als zweites Argument `PresentViewController`an:
 
@@ -106,7 +104,6 @@ UIKit unterstützt eine Vielzahl von Eigenschaften für die `UIView` -Klasse kos
 - Alpha
 - Transformation
 - Farbe
-
 
 Diese Animationen werden implizit durch Angeben von Eigenschafts Änderungen `NSAction` in einem an die statische `UIView.Animate` Methode übergebenen Delegaten ausgeführt. Mit dem folgenden Code wird beispielsweise der Mittelpunkt eines `UIImageView`animiert:
 
@@ -233,7 +230,7 @@ Dieser Code ändert den `Position` der Ebene durch Erstellen eines Pfads, der da
 Die folgenden Screenshots zeigen die Ebene mit dem Bild, das die Animation durch den angegebenen Pfad enthält:
 
  ![](core-animation-images/12-explicit-animation.png "Dieser Screenshot zeigt die Ebene mit dem Bild, das die Animation durch den angegebenen Pfad enthält.")
- 
+
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir uns mit den Animations Funktionen befasst, die über die *wichtigsten Animations* Frameworks bereitgestellt werden. Wir haben die Kern Animation untersucht, die zeigt, wie Sie Animationen in UIKit unterstützt, und wie Sie direkt für das Animations Steuerelement auf niedrigerer Ebene verwendet werden kann.

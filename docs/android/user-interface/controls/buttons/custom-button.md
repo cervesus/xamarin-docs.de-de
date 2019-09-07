@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ecb745f2f50b5aa0e22e331a4def0be9d8f86aa5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4504045eb1692d95ee1e981bbec3da3a45699db3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510395"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758933"
 ---
 # <a name="custom-button"></a>Benutzerdefinierte Schaltfläche
 
@@ -35,7 +35,6 @@ Erstellen Sie eine neue Datei im **Ressourcen/drawable-** Verzeichnis mit dem Na
 ```
 
 Dadurch wird eine einzelne drawable-Ressource definiert, die Ihr Bild basierend auf dem aktuellen Zustand der Schaltfläche ändert. Der erste `<item>` definiert **android_pressed. png** als Bild, wenn die Schaltfläche gedrückt wird (Sie wurde aktiviert); die zweite `<item>` definiert **android_focused. png** als Bild, wenn die Schaltfläche fokussiert ist (wenn die Schaltfläche mit trackballunterstützung oder direktionalem Pad hervorgehoben); Das dritte `<item>` definiert **android_normal. png** als Bild für den normalen Zustand (wenn weder gedrückt noch fokussiert). Diese XML-Datei stellt nun eine einzelne drawable-Ressource dar. Wenn [`Button`](xref:Android.Widget.Button) Sie von einem für den Hintergrund referenziert wird, ändert sich das angezeigte Bild basierend auf diesen drei Zuständen.
-
 
 > [!NOTE]
 > Die Reihenfolge `<item>` der Elemente ist wichtig. Wenn auf diese drawable verwiesen wird, `<item>`werden die e in der Reihenfolge durchlaufen, um zu bestimmen, welche für den aktuellen Schaltflächen Zustand geeignet ist.
@@ -68,7 +67,6 @@ button.Click += (o, e) => {
 Dadurch wird der [`Button`](xref:Android.Widget.Button) aus dem Layout erfasst, und anschließend [`Toast`](xref:Android.Widget.Toast) wird eine Meldung hinzugefügt, [`Button`](xref:Android.Widget.Button) die angezeigt wird, wenn auf das geklickt wird.
 
 Führen Sie nun die Anwendung aus.
-
 
 *Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der*
 [*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden.

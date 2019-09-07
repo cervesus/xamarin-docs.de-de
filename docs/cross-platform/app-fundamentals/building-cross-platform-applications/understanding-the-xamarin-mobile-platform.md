@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 5398d99a64e7f6b75c8b9e418da252852aff1322
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: af2b8cd39d5fb1b0ce6c12f7d6ad87e245b9a594
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288675"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761971"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>Teil 1 – Grundlegendes zur xamarin Mobile-Plattform
 
@@ -36,7 +36,6 @@ Die C# Quelle wird auf jeder Plattform auf sehr unterschiedliche Weise in eine n
 - **Android** – C# wird in IL kompiliert und mit monovm und jitteten gepackt. Nicht verwendete Klassen im Framework werden während des Verknüpfens entfernt. Die Anwendung wird parallel mit Java/Art ausgeführt (Android-Laufzeit) und interagiert mit den systemeigenen Typen über jni (siehe [Einschränkungen für xamarin. Android](~/android/internals/limitations.md) ).
 - **Windows** – C# wird in IL kompiliert und von der integrierten Laufzeit ausgeführt und erfordert keine xamarin-Tools. Das Entwerfen von Windows-Anwendungen nach der Anleitung von xamarin vereinfacht die erneute Verwendung des Codes unter IOS und Android.
   Beachten Sie, dass die universelle Windows-Plattform auch über eine **.net Native** -Option verfügt, die sich ähnlich verhält wie die AOT-Kompilierung von xamarin. IOS.
-
 
 In der linkerdokumentation für [xamarin. IOS](~/ios/deploy-test/linker.md) und [xamarin. Android](~/android/deploy-test/linker.md) finden Sie weitere Informationen zu diesem Teil des Kompilierungsprozesses.
 

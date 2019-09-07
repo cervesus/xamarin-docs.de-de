@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6711a16ba0035190d10687ef821831559c07b797
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 45205859a55974414ee865b2141d2bb127e85bcc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289839"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763141"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Verwenden von SQLite.net mit xamarin. IOS
 
@@ -136,7 +136,6 @@ Allgemeine Attribute, die Sie auf die Klassen anwenden können, um zu steuern, w
 - **[Ignore]** – bewirkt, dass SQLite.net diese Eigenschaft ignoriert. Dies ist besonders nützlich für Eigenschaften, die einen Typ haben, der nicht in der Datenbank gespeichert werden kann, oder für Eigenschaften, die Sammlungen modellieren, die nicht automatisch aufgelöst werden können, SQLite.
 - **[Eindeutig]** – stellt sicher, dass die Werte in der zugrunde liegenden Daten Bank Spalte eindeutig sind.
 
-
 Die meisten dieser Attribute sind optional, SQLite verwendet Standardwerte für Tabellen-und Spaltennamen. Sie sollten immer einen ganzzahligen Primärschlüssel angeben, damit Auswahl-und Lösch Abfragen für Ihre Daten effizient ausgeführt werden können.
 
 ## <a name="more-complex-queries"></a>Komplexere Abfragen
@@ -149,7 +148,6 @@ Die folgenden Methoden für `SQLiteConnection` können verwendet werden, um ande
 - **Delete** – löscht ein Objekt mithilfe seines Primärschlüssels.
 - **Query\<T >** : führt eine SQL-Abfrage aus, die eine Reihe von Zeilen (als-Objekte) zurückgibt.
 - **Execute** – verwenden Sie diese Methode (und `Query` nicht), wenn Sie keine Zeilen von der SQL-Anweisung (z. b. Insert-, Update-und DELETE-Anweisungen) erwarten.
-
 
 ### <a name="getting-an-object-by-the-primary-key"></a>Ein Objekt wird durch den Primärschlüssel erhalten.
 

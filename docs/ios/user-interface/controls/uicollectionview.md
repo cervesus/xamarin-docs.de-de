@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: ae909827df5cc8f4ed5192d88ad067a5e69ce5d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 29483ca184786f8f0d2a7d0d9345608542d30e61
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282865"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768855"
 ---
 # <a name="collection-views-in-xamarinios"></a>Auflistungs Ansichten in xamarin. IOS
 
@@ -43,7 +43,6 @@ Die `UICollectionViewCell` -Klasse verfügt für jede dieser Sichten über die f
 - `ContentView`– Diese Ansicht enthält den Inhalt, der in der Zelle dargestellt wird. Sie wird in der obersten z-Reihenfolge auf dem Bildschirm gerendert.
 - `SelectedBackgroundView`–-Zellen verfügen über integrierte Unterstützung für die Auswahl. Diese Ansicht wird verwendet, um zu kennzeichnen, dass eine Zelle ausgewählt ist. Sie wird direkt unterhalb `ContentView` von gerendert, wenn eine Zelle ausgewählt wird.
 - `BackgroundView`– Zellen können auch einen Hintergrund anzeigen, der von `BackgroundView` dargestellt wird. Diese Ansicht wird unterhalb `SelectedBackgroundView` von gerendert.
-
 
 Wenn Sie die `ContentView` Einstellung so festlegen, dass Sie kleiner `BackgroundView` als `SelectedBackgroundView`und ist `BackgroundView` , kann verwendet werden, um den Inhalt visuell zu gestalten `SelectedBackgroundView` , während der angezeigt wird, wenn eine Zelle ausgewählt wird, wie unten dargestellt:
 
@@ -85,7 +84,6 @@ public class AnimalCell : UICollectionViewCell
 
  <a name="Supplementary_Views" />
 
-
 ## <a name="supplementary-views"></a>Ergänzende Ansichten
 
 Ergänzende Sichten sind Sichten, die Informationen darstellen, die den einzelnen Abschnitten `UICollectionView`eines zugeordnet sind. Wie Zellen sind ergänzende Sichten Daten gesteuert. Wenn Zellen die Elementdaten aus einer Datenquelle darstellen, stellen ergänzende Sichten die Abschnitts Daten dar, z. b. die Buch Kategorien in einem Buch Regal oder das Genre der Musik in einer Musikbibliothek.
@@ -117,7 +115,6 @@ Sie können an einer beliebigen Stelle in der Sammlungsansicht positioniert werd
 
  <a name="Decoration_Views" />
 
-
 ## <a name="decoration-views"></a>Dekorations Ansichten
 
 Dekorations Ansichten sind reine visuelle Ansichten, die in einem `UICollectionView`angezeigt werden können. Im Gegensatz zu Zellen und ergänzenden Ansichten sind Sie nicht Daten gesteuert. Sie werden immer in der Unterklasse eines Layouts erstellt und können anschließend als Layout des Inhalts geändert werden. So kann z. b. eine-anfügeansicht verwendet werden, um eine Hintergrund Ansicht anzuzeigen, `UICollectionView`die mit dem Inhalt im scrollt, wie unten dargestellt:
@@ -136,7 +133,6 @@ Dekorations Ansichten sind reine visuelle Ansichten, die in einem `UICollectionV
     }
   }
  ```
-
 
 ## <a name="data-source"></a>Datenquelle
 
@@ -188,7 +184,6 @@ In diesem Fall erstellt IOS durch das `AnimalCell` Registrieren der-Klasse inter
 
  <a name="Delegate" />
 
-
 ### <a name="delegate"></a>delegate
 
 Die `UICollectionView` -Klasse verwendet einen Delegaten `UICollectionViewDelegate` vom Typ, um die `UICollectionView`Interaktion mit Inhalt in zu unterstützen. Dies ermöglicht Folgendes:
@@ -197,11 +192,9 @@ Die `UICollectionView` -Klasse verwendet einen Delegaten `UICollectionViewDelega
 - **Zellen Hervorhebung** – bestimmt, ob eine Zelle gerade berührt wird.
 - **Zellen Menüs** – Menü, das als Reaktion auf eine lange Press Bewegung für eine Zelle angezeigt wird.
 
-
 Wie bei der Datenquelle ist die `UICollectionViewController` standardmäßig so konfiguriert, `UICollectionView`dass Sie der-Delegat ist.
 
  <a name="Cell_HighLighting" />
-
 
 #### <a name="cell-highlighting"></a>Zellen Hervorhebung
 
@@ -227,7 +220,6 @@ public override void ItemUnhighlighted (UICollectionView collectionView, NSIndex
 
  <a name="Disabling_Selection" />
 
-
 #### <a name="disabling-selection"></a>Auswahl deaktivieren
 
 Die Auswahl ist in `UICollectionView`standardmäßig aktiviert. Um die Auswahl zu deaktivieren `ShouldHighlightItem` , überschreiben Sie, und geben Sie false zurück
@@ -245,7 +237,6 @@ Wenn die Hervorhebung deaktiviert ist, wird der Vorgang der Auswahl einer Zelle 
 
  <a name="Cell_Menus" />
 
-
 #### <a name="cell-menus"></a>Zellen Menüs
 
 Jede Zelle in einem `UICollectionView` kann ein Menü zeigen, das Ausschneiden, kopieren und einfügen ermöglicht, optional unterstützt zu werden. So erstellen Sie ein Bearbeitungs Menü in einer Zelle:
@@ -254,13 +245,11 @@ Jede Zelle in einem `UICollectionView` kann ein Menü zeigen, das Ausschneiden, 
 1. Über `CanPerformAction` schreiben Sie, und geben Sie für jede Aktion, die vom Element ausgeführt werden kann, true zurück, wobei es sich um Ausschneiden, kopieren oder Einfügen handelt.
 1. Über `PerformAction` schreiben, um den Vorgang zum Bearbeiten, Kopieren von Einfügevorgang auszuführen
 
-
 Der folgende Screenshot zeigt das Menü, wenn eine Zelle lange gedrückt ist:
 
  [![](uicollectionview-images/04a-menu.png "Dieser Screenshot zeigt das Menü an, wenn eine Zelle lang gedrückt ist.")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
-
 
 ## <a name="layout"></a>Layout
 
@@ -269,7 +258,6 @@ Mithilfe des Layoutsystems kann eine Anwendung Layouts unterstützen, wie z. b. 
 
  <a name="Layout_Basics" />
 
-
 ### <a name="layout-basics"></a>Grundlagen des Layouts
 
 Layouts in einem `UICollectionView` werden in einer Klasse definiert, die von `UICollectionViewLayout`erbt. Die layoutimplementierung ist für das Erstellen der Layoutattribute für jedes Element `UICollectionView`in der verantwortlich. Es gibt zwei Möglichkeiten, ein Layout zu erstellen:
@@ -277,9 +265,7 @@ Layouts in einem `UICollectionView` werden in einer Klasse definiert, die von `U
 - Verwenden Sie die integrierte `UICollectionViewFlowLayout` .
 - Stellen Sie ein benutzerdefiniertes Layout bereit `UICollectionViewLayout` , indem Sie von erben.
 
-
  <a name="Flow_Layout" />
-
 
 ### <a name="flow-layout"></a>Flusslayout
 
@@ -289,13 +275,11 @@ So verwenden Sie ein Fluss Layout:
 
 - Erstellen Sie eine Instanz `UICollectionViewFlowLayout` von:
 
-
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
 - Übergeben Sie die-Instanz an den Konstruktor `UICollectionView` von:
-
 
 ```csharp
 simpleCollectionViewController = new SimpleCollectionViewController (layout);
@@ -306,7 +290,6 @@ Das ist alles, was zum Layoutinhalt in einem Raster benötigt wird. Wenn sich di
  [![](uicollectionview-images/05-layout-orientation.png "Beispiel für die Ausrichtung von Änderungen")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
-
 
 #### <a name="section-inset"></a>Abschnitts INSET
 
@@ -323,7 +306,6 @@ Dies führt zu einem Abstand um den Abschnitt, wie unten dargestellt:
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
-
 #### <a name="subclassing-uicollectionviewflowlayout"></a>Subclassinguicollectionviewflowlayout
 
 In der Edition zur `UICollectionViewFlowLayout` direkten Verwendung kann Sie auch untergeordnet werden, um das Layout von Inhalten an einer Zeile weiter anzupassen. Dies kann z. b. verwendet werden, um ein Layout zu erstellen, das die Zellen nicht in ein Raster packt, sondern stattdessen eine einzelne Zeile mit einem horizontalen scrolleffekt erstellt, wie unten dargestellt:
@@ -336,7 +318,6 @@ Um dies durch Unterklassen `UICollectionViewFlowLayout` zu implementieren, ist F
 - Überschreiben von true `UICollectionView` ,sodassdasLayoutderZellen,wennsichdieGrenzenderÄnderungenändern,neuberechnetwird.`ShouldInvalidateLayoutForBoundsChange` Dies wird in diesem Fall verwendet, um sicherzustellen, dass der Code für die Transformation, die auf die zentriste Zelle angewendet wird, beim Scrollen angewendet wird.
 - Überschreiben `UICollectionView` , um die mittelste Zelle in den Mittelpunkt der zu setzen, während der Bildlauf angehalten wird. `TargetContentOffset`
 - Überschreiben, um ein- `UICollectionViewLayoutAttributes` Array zurückzugeben. `LayoutAttributesForElementsInRect` Jede `UICollectionViewLayoutAttribute` enthält Informationen zum Layout des jeweiligen Elements, `Size` einschließlich der `Center` `ZIndex` Eigenschaften, und `Transform3D` .
-
 
 Der folgende Code zeigt eine solche Implementierung:
 
@@ -409,7 +390,6 @@ namespace SimpleCollectionView
 
  <a name="Custom_Layout" />
 
-
 ### <a name="custom-layout"></a>Benutzerdefiniertes Layout
 
 Zusätzlich zur Verwendung `UICollectionViewFlowLayout`von können Layouts auch vollständig angepasst werden, indem direkt von `UICollectionViewLayout`geerbt wird.
@@ -420,16 +400,13 @@ Folgende Schlüsselmethoden müssen überschrieben werden:
 - `CollectionViewContentSize`– Gibt die Größe des Bereichs zurück, der zum Anzeigen von Inhalten verwendet wird.
 - `LayoutAttributesForElementsInRect`– Wie das oben gezeigte uicollectionviewflowlayout-Beispiel, wird diese Methode zum Bereitstellen von Informationen für `UICollectionView` das Layout der einzelnen Elemente verwendet. Anders als bei der `UICollectionViewFlowLayout` Erstellung eines benutzerdefinierten Layouts können Sie jedoch die Elemente positionieren, die Sie auswählen.
 
-
 Beispielsweise kann derselbe Inhalt in einem zirkulären Layout wie unten gezeigt dargestellt werden:
 
  [![](uicollectionview-images/08-circle-layout.png "Ein kreisförmiges benutzerdefiniertes Layout, wie hier gezeigt")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 Der leistungsstarke Vorteil von Layouts besteht darin, dass Sie zum Ändern des Raster ähnlichen Layouts in ein horizontales scrolllayout und anschließende anschließende zu diesem zirkulären Layout nur die Layoutklasse ändern müssen, die für die `UICollectionView` geändert wird. Nichts in der `UICollectionView`, der Delegat oder der Datenquellen Code ändert sich überhaupt.
 
-
 ## <a name="changes-in-ios-9"></a>Änderungen in ios 9
-
 
 In ios 9 unterstützt die Auflistungs Ansicht (`UICollectionView`) jetzt die Neuanordnung von Elementen im Standardfeld, indem eine neue Standard Gestenerkennung und mehrere neue unterstützende Methoden hinzugefügt werden.
 
@@ -1045,7 +1022,6 @@ namespace CollectionView
       var end = unionRects.Count;
       List<UICollectionViewLayoutAttributes> attrs = new List<UICollectionViewLayoutAttributes> ();
 
-
       for (int i = 0; i < end; i++) {
         if (rect.IntersectsWith(unionRects[i])) {
           begin = i * (int)unionSize;
@@ -1235,7 +1211,6 @@ Die folgenden Änderungen oder Ergänzungen wurden an der `UICollectionViewContr
 - `GetTargetContentOffset`– Wird verwendet, um den Offset eines angegebenen Auflistungs Ansichts Elements zu erhalten.
 - `GetTargetIndexPathForMove`– Ruft den `indexPath` eines bestimmten Elements für einen Zieh Vorgang ab.
 - `MoveItem`– Verschiebt die Reihenfolge eines bestimmten Elements in der Liste.
-
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 

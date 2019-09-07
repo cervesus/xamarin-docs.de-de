@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 3e5ce4496b4a2deb86bb2b7dd6d36e5e9b3f446c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f914a158135d34b59fa3d1b95972c988a44dd36b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287578"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765984"
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
@@ -181,7 +181,6 @@ client.GetAsync<CustomersResponse>("",
 
 > [!IMPORTANT]
 > Tools wie servicestack und restsharp erleichtern das Aufrufen und Nutzen von Rest-Diensten. manchmal ist es jedoch nicht trivial, XML oder JSON zu verwenden, das nicht den standardserialisierungskonventionen von _DataContract_ entspricht. Rufen Sie ggf. die Anforderung auf, und behandeln Sie die geeignete Serialisierung explizit mithilfe der nachstehend beschriebenen servicestack. Text-Bibliothek.
-
 
 <a name="Options_for_consuming_RESTful_data" />
 

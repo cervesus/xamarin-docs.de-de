@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 9ca14ff360fb3f1d7fdc8df277a93b0d30c4394c
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: d65e8fabff88489571bba9d03379ff605a6ed0fe
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119695"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757729"
 ---
 # <a name="app-linking-in-android"></a>App-Verknüpfung in Android
 
@@ -191,7 +191,6 @@ Es können zwei Tests durchgeführt werden, um sicherzustellen, dass die beabsic
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Leitfaden wurde erläutert, wie die APP-Verknüpfung in Android 6,0 funktioniert. Anschließend wird erläutert, wie eine Android 6,0-Anwendung konfiguriert wird, um App-Links zu unterstützen und darauf zu reagieren. Außerdem wurde erläutert, wie App-Verknüpfungen in einer Android-Anwendung getestet werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

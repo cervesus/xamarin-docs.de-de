@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 005f858408ec4d10563e3d945cadb0f1af65a407
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd9d93572ac10622345b1dff4145b737baf8aaae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292983"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769016"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Registerkartenleisten und Registerkartenleisten-Controller in Xamarin.iOS
 
@@ -28,7 +28,6 @@ Die `UITabBarController` unterstützt im Registerkartenformat Anwendungsentwickl
 
 - So können mehrere Controller hinzugefügt werden.
 - Bereitstellen einer Benutzeroberfläche mit Registerkarten, über die `UITabBar` -Klasse, damit der Benutzer zwischen Controllern und ihre Ansichten wechseln kann. 
-
 
 Controller werden hinzugefügt, um die `UITabBarController` über seine `ViewControllers` Eigenschaft, die eine `UIViewController` Array. Die `UITabBarController` selbst kümmert sich um den entsprechenden Controller laden und präsentieren die Ansicht auf Grundlage der ausgewählten Registerkarte.
 
@@ -46,7 +45,6 @@ Obwohl es bereits eine Anwendungsvorlage im Registerkartenformat in Visual Studi
 
  <a name="Creating_the_Application" />
 
-
 ### <a name="creating-the-application"></a>Erstellen der Anwendung
 
 Wir erstellen zunächst eine neue Anwendung.
@@ -56,8 +54,6 @@ Wählen Sie die **Datei > Neu > Projektmappe** Menüelement in Visual Studio fü
 [![](creating-tabbed-applications-images/newsolution1.png "Wählen Sie die leere Projektvorlage")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
 [![](creating-tabbed-applications-images/newsolution2.png "Nennen Sie das Projekt TabbedApplication")](creating-tabbed-applications-images/newsolution2.png#lightbox)
-
-
 
 ### <a name="adding-the-uitabbarcontroller"></a>Hinzufügen der UITabBarController
 
@@ -72,7 +68,6 @@ Zum Implementieren der `UITabBarController` müssen wir die folgenden Aktionen a
 1. Legen Sie die Basisklasse der `TabController` zu `UITabBarController` . 
 1. Erstellen Sie `UIViewController` Instanzen hinzugefügt der `TabController` . 
 1. Hinzufügen der `UIViewController` Instanzen, um ein Array zugewiesen der `ViewControllers` Eigenschaft der `TabController` . 
-
 
 Fügen Sie den folgenden Code der `TabController` Klasse folgendermaßen erreichen:
 
@@ -146,13 +141,11 @@ Wenn wir die Anwendung jetzt ausführen der `UITabBarController` lädt mit der e
 
  <a name="Modifying_TabBarItems" />
 
-
 ### <a name="modifying-tabbaritems"></a>TabBarItems ändern
 
 Nun, wir eine laufende Anwendung Registerkarte haben, ändern wir die `TabBarItem` so ändern Sie das Bild und Text, der angezeigt wird, als auch einen Badge auf eine der Registerkarten hinzufügen.
 
  <a name="Setting_a_System_Item" />
-
 
 #### <a name="setting-a-system-item"></a>Ein System-Element festlegen
 
@@ -167,7 +160,6 @@ Beim Erstellen der `UITabBarItem` mithilfe einer `UITabBarSystemItem`, den Titel
  ![](creating-tabbed-applications-images/04a-tabimage.png "Die erste Registerkarte mit einem Sternsymbol")
 
  <a name="Setting_the_Title_and_Image" />
-
 
 #### <a name="setting-the-title-and-image"></a>Legen Sie den Titel und Image
 
@@ -201,7 +193,6 @@ Wenn die Anwendung nun ausgeführt wird, zeigt die zweite Registerkarte unserer 
 
  <a name="Setting_the_Badge_Value" />
 
-
 #### <a name="setting-the-badge-value"></a>Festlegen des Werts Badge
 
 Eine Registerkarte kann auch einen Badge anzeigen. Fügen Sie z.B. Code aus, um einen Badge auf der dritten Registerkarte die folgende Zeile hinzu:
@@ -222,13 +213,11 @@ tab3.TabBarItem.BadgeValue = null;
 
  <a name="Tabs_in_Non-RootViewController_Scenarios" />
 
-
 ## <a name="tabs-in-non-rootviewcontroller-scenarios"></a>Registerkarten in nicht-RootViewController-Szenarien
 
 Im obigen Beispiel haben wir arbeiten mit einem `UITabBarController` Wenn es sich um die `RootViewController` des Fensters. In diesem Beispiel untersuchen wir mit einem `UITabBarController` wird er nicht die `RootViewController` und verwenden Sie Storyboards anzeigen, wie diese erstellt wird.
 
  <a name="Initial_Screen_Example" />
-
 
 ### <a name="initial-screen-example"></a>Startbildschirm-Beispiel
 
@@ -237,7 +226,6 @@ In diesem Szenario wird auf dem Startbildschirm von einem Controller, der nicht 
 [![](creating-tabbed-applications-images/inital-screen-application.png "Dieser Screenshot zeigt den anwendungsfluss")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 Beginnen Sie eine neue Anwendung für dieses Beispiel an. In diesem Fall verwenden wir die **iPhone > App > leeres Projekt (C#)** Vorlage diesmal das Projekt `InitialScreenDemo`.
-
 
 In diesem Beispiel benötigen wir ein Storyboard aus, um unsere View-Controller zu speichern. So fügen Sie ein Storyboard hinzu:
 
@@ -251,7 +239,6 @@ Wir nennen das neue Storyboard **MainStoryboard** , wie unten gezeigt:
 
 Es gibt einige wichtige Schritte beachten Sie beim Hinzufügen eines Storyboards in eine zuvor nicht-Storyboard-Datei, die beschrieben werden die [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md) Guide. Diese lauten wie folgt:
 
- 
 1. Fügen Sie den Namen Ihres Storyboards, um die **Hauptschnittstelle** Teil der `Info.plist`:
 
     [![](creating-tabbed-applications-images/project-options.png "Legen Sie die Hauptkomponente der Benutzeroberfläche auf MainStoryboard")](creating-tabbed-applications-images/project-options.png#lightbox)
@@ -276,7 +263,6 @@ Visual Studio für Mac generiert automatisch die Klassen und Designer-Dateien er
 
  <a name="Creating_the_UI" />
 
-
 #### <a name="creating-the-ui"></a>Erstellen der Benutzeroberfläche
 
 Als Nächstes erstellen eine einfache Benutzeroberfläche für jede ViewControllers Ansichten, wir mit dem Xamarin.IOS-Designer.
@@ -285,7 +271,6 @@ Wir möchten, ziehen eine `Label` und `Button` auf ViewController1 aus der **Too
 
 - **Bezeichnung** : `Text` = **Einseitig**
 - **Schaltfläche** : `Title` = **Benutzer nimmt einige anfängliche Aktionen vor**
-
 
 Wir steuern die Sichtbarkeit der Schaltfläche in einem `TouchUpInside` -Ereignis, und wir müssen in der CodeBehind darauf verweisen. Wir identifizieren sie mit der **Namen** `aButton` in das Pad "Eigenschaften", wie im folgenden Screenshot dargestellt:
 
@@ -329,7 +314,7 @@ Löschen Sie diese neue Ansicht-Controller, indem die schwarze Leiste am unteren
 In unserem Storyboards können wir Segues verwenden, um die Übergänge zwischen den TabBarController und unsere View-Controller zu verarbeiten. Nach dem Arbeiten mit die anfängliche Ansicht, möchten wir sie in der dem Benutzer angezeigten TabBarController laden. Richten wir dies im Designer.
 
 **Strg + Klick** und **Drag** über die Schaltfläche, um die TabBarController. In der Maustaste oben wird ein Kontextmenü angezeigt. Eine modale Segue verwendet werden soll. 
- 
+
 Unsere Registerkarten, einrichten **Strg + Klick** aus der TabBarController aller unserer View-Controller in der Reihenfolge von einer bis zu drei, und wählen Sie die Beziehung **Registerkarte** aus dem Kontextmenü aus, wie unten gezeigt:
 
 [![](creating-tabbed-applications-images/context-menu.png "Wählen Sie die Registerkarte \"-Beziehung")](creating-tabbed-applications-images/context-menu.png#lightbox)
@@ -366,7 +351,6 @@ Wenn die Anwendung ausgeführt wird und der Benutzer die Schaltfläche auf dem e
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel erläutert, wie Sie verwenden eine `UITabBarController` in einer Anwendung. Wir durchgearbeitet Laden Sie die Controller in jede Registerkarte sowie Festlegen von Eigenschaften auf Registerkarten solche Titel, Bild und Badge. Wir dann untersucht, mit Storyboards, das Laden einer `UITabBarController` zur Laufzeit, wenn es nicht die `RootViewController` des Fensters.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

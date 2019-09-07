@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 8b1b82a1707a4aa58ef1e3dadbaeb79ada1ad6a1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291871"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753346"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Neues Verweis zählungs System in xamarin. IOS
 
@@ -46,10 +46,8 @@ Beachten Sie, dass diese Optionen in neueren Versionen von Visual Studio für Ma
 
  Die neue Verweis Zähl Erweiterung ist für die Unified API erforderlich und sollte standardmäßig aktiviert sein. Bei älteren Versionen Ihrer IDE ist dieser Wert möglicherweise nicht automatisch aktiviert, und Sie müssen möglicherweise selbst eine Prüfung durchgeführt haben.
 
-
 > [!IMPORTANT]
 > Eine frühere Version dieses Features ist seit MonoTouch 5,2 verfügbar, war aber nur für **Sgen** als experimentelle Vorschau verfügbar. Diese neue, erweiterte Version ist jetzt auch für den **Boehm** -Garbage Collector verfügbar.
-
 
 In der Vergangenheit gab es zwei Arten von Objekten, die von xamarin. IOS verwaltet werden: solche, die lediglich ein Wrapper um ein natives Objekt (Peer-Objekte) waren, und diejenigen, die neue Funktionen (abgeleitete Objekte) erweitert oder integriert haben (in der Regel durch die Beibehaltung des zusätzlichen Speicher internen Zustands). Bisher war es möglich, ein Peer Objekt mit dem Zustand zu vergrößern (z. b. durch C# Hinzufügen eines-Ereignis Handlers), aber das Objekt kann nicht referenziert und dann gesammelt werden. Dies kann später zu einem Absturz führen (z. b. wenn die Ziel-C-Laufzeit wieder in das verwaltete Objekt aufgerufen wurde).
 

@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: ccad60f749732ae2d0bf8e9852859b13af3a629e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f9f45976d0d7db42be18fede2f21825a385bea4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284919"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765350"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Erstellen von HTML-Ansichten mithilfe von Razor-Vorlagen
 
@@ -198,7 +198,6 @@ In diesem Abschnitt wurden die Features der webansichts-Steuerelemente für Andr
 - Die Möglichkeit, Navigationsanforderungen im C# Code abzufangen,
 - Die Möglichkeit zum Abrufen von JavaScript C# aus dem Code.
 
-
 Im nächsten Abschnitt wird Razor vorgestellt, mit dem Sie das HTML-Format für Hybrid-apps ganz einfach erstellen können.
 
 ## <a name="what-is-razor"></a>Was ist Razor?
@@ -235,7 +234,6 @@ Beachten Sie die folgenden Unterschiede zu einer regulären HTML-Datei:
 - Die IDE generiert automatisch eine partielle Klasse für Vorlagen (Dateien mit der Erweiterung **. cshtml** ). Sie können diesen Code zwar anzeigen, aber nicht bearbeiten.
  ![Razorview. cshtml](images/image6_125x34.png) die partielle Klasse trägt den Namen razorview, um dem Namen der Datei. cshtml-Vorlage zu entsprechen. Dieser Name wird verwendet, um auf die Vorlage im C# Code zu verweisen.
 - `@using`Anweisungen können auch am Anfang einer Razor-Vorlage eingefügt werden, um zusätzliche Namespaces einzuschließen.
-
 
 Die endgültige HTML-Ausgabe kann dann mit folgendem C# Code generiert werden. Beachten Sie, dass das Modell als Zeichenfolge "Hallo Welt" angegeben wird, die in die Ausgabe der gerenderten Vorlage eingebunden wird.
 
@@ -379,8 +377,6 @@ In diesem Abschnitt wird erläutert, wie Sie Ihre eigene Hybrid Anwendung mithil
 - **IOS-> app > WebView-Anwendung**
 - **ASP.NET-MVC-Projekt**
 
-
-
 Das **neue** projektmappenfenster sieht für iPhone-und Android-Projekte wie folgt aus: die Lösungs Beschreibung auf der rechten Seite hebt die Unterstützung für die Razor-Vorlagen-Engine hervor.
 
  ![Erstellen von iPhone-und Android-Lösungen](images/image13_1139x959.png)
@@ -399,7 +395,6 @@ Wichtige Teile der Lösung sind:
 - Razor. cshtml-Vorlagen Dateien wie **razorview. cshtml** .
 - Modellklassen, auf die in den Razor-Vorlagen verwiesen wird, z. b. **ExampleModel.cs** .
 - Die plattformspezifische Klasse, die die Webansicht erstellt und die Vorlage rendert, `MainActivity` z. b. `iPhoneHybridViewController` unter Android und unter IOS.
-
 
 Im folgenden Abschnitt wird erläutert, wie die Projekte funktionieren.
 
@@ -494,7 +489,6 @@ Das [razortodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - **Razortodo** : vollständig HTML-gesteuerte App mithilfe von Razor-Vorlagen.
 - **Razornativetodo** : verwendet Native Listenansicht-Steuerelemente für IOS und Android, aber zeigt den Bearbeitungs Bildschirm mit HTML und Razor an.
 
-
 Diese xamarin-Apps können unter IOS und Android ausgeführt werden und verwenden Portable Klassenbibliotheken (pcls), um gemeinsamen Code wie die Datenbank-und Modellklassen gemeinsam zu nutzen. Razor **. cshtml** -Vorlagen können auch in der PCL enthalten sein, sodass Sie problemlos plattformübergreifend freigegeben werden können.
 
 Beide Beispiel-Apps enthalten Twitter-Freigabe-und Text-zu-Sprache-APIs von der systemeigenen Plattform und veranschaulichen, dass Hybrid Anwendungen mit xamarin weiterhin Zugriff auf alle zugrunde liegenden Funktionen aus HTML-Razor-Vorlagen gesteuerten Ansichten haben.
@@ -507,7 +501,6 @@ Die **razornativetodo** -App verwendet eine HTML-Razor-Vorlage für die Bearbeit
 
 - Leistung: die systemeigenen scrollsteuerelemente verwenden die Virtualisierung, um einen schnellen, reibungslosen Bildlauf auch mit sehr langen Listen von Daten sicherzustellen.
 - Native Benutzeroberfläche: plattformspezifische Benutzeroberflächen Elemente sind einfach zu aktivieren, wie z. b. die Unterstützung für schnelles Scrollen in IOS und Android.
-
 
 Ein wichtiger Vorteil beim Aufbau von Hybrid-apps mit xamarin besteht darin, dass Sie mit einer vollständig HTML-gesteuerten Benutzeroberfläche (wie dem ersten Beispiel) beginnen und dann bei Bedarf plattformspezifische Funktionen hinzufügen können (wie im zweiten Beispiel gezeigt). Die systemeigenen Listen Bildschirme und HTML-Razor-Bearbeitungsbildschirme unter IOS und Android sind unten dargestellt.
 

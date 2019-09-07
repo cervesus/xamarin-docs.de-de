@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: fb00bf4a817ad8188d5a127b23b4a910dd4f23a7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b55cffc19eec5ae95a0a0aba8053bdaaa49e7747
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524130"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761479"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Android Callable Wrapper für xamarin. Android
 
@@ -20,8 +20,6 @@ Android Callable Wrapper (acws) sind immer dann erforderlich, wenn die Android-L
 *Jedes Mal* Android-Code muss eine `virtual` -oder-Schnittstellen Methode ausführen, `overridden` die in verwaltetem Code implementiert oder implementiert wird. xamarin. Android muss einen Java-Proxy bereitstellen, damit diese Methode an den entsprechenden verwalteten Typ weitergeleitet wird. Diese Java-Proxy Typen sind Java-Code, der über die gleiche Basisklasse und Java-Schnittstellen Liste wie der verwaltete Typ verfügt. dabei werden dieselben Konstruktoren implementiert, und es werden alle überschriebenen Basisklassen-und Schnittstellen Methoden deklariert. 
 
 Aufrufbare Android-Wrapper werden während des [Buildprozesses](~/android/deploy-test/building-apps/build-process.md) vom Programm **monodroid.exe** generiert: Sie werden für alle Typen generiert, die (direkt oder indirekt) [Java.Lang.Object](xref:Java.Lang.Object) erben. 
-
-
 
 ## <a name="android-callable-wrapper-naming"></a>Benennung von Android Callable Wrapper
 
@@ -40,7 +38,7 @@ java.lang.ClassNotFoundException: Didn't find class "com.company.app.MainActivit
 on path: DexPathList[[zip file "/data/app/com.company.App-1.apk"] ...
 ```
 
-Wenn Sie den Zugriff auf Typen nach Namen benötigen, können Sie einen Namen für diesen Typ in einer Attribut Deklaration deklarieren. Hier ist beispielsweise der Code, der eine Aktivität mit dem voll qualifizierten Namen `My.ActivityType`deklariert:
+Wenn Sie den Zugriff auf Typen nach *Namen benötigen, können Sie einen* Namen für diesen Typ in einer Attribut Deklaration deklarieren. Hier ist beispielsweise der Code, der eine Aktivität mit dem voll qualifizierten Namen `My.ActivityType`deklariert:
 
 ```csharp
 namespace My {
@@ -72,8 +70,6 @@ Nachdem diese Eigenschafts Einstellung hinzugefügt `my.ActivityType` wurde, kö
 
 Die md5sum-basierte ACW-Benennung wurde in xamarin. Android 5,0 eingeführt. Weitere Informationen zur Attribut Benennung finden Sie unter [RegisterAttribute](xref:Android.Runtime.RegisterAttribute). 
 
-
-
 ## <a name="implementing-interfaces"></a>Implementieren von Schnittstellen
 
 Es gibt Zeiten, in denen Sie möglicherweise eine Android-Schnittstelle implementieren müssen, z. b. [Android. Content. icomponentcallbacks](xref:Android.Content.IComponentCallbacks). Da alle Android-Klassen und-Schnittstellen die [Android. Runtime. ijavaobject](xref:Android.Runtime.IJavaObject) -Schnittstelle erweitern, wird die Frage `IJavaObject`gestellt: wie implementieren wir? 
@@ -94,7 +90,6 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
     }
 }
 ```
-
 
 ## <a name="implementation-details"></a>Implementierungsdetails
 

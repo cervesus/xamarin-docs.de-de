@@ -6,12 +6,12 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 8bdef9bff975365172a4c215b21cbb07a37e8492
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1f2fce14f1839e3d9aff4c68dc0dffc0e8059e6c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227724"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766814"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>Zeichnen von 3D-Grafiken mit Vertices in monogame
 
@@ -117,7 +117,6 @@ Nachdem wir nun die Positionen für die Geometrie definiert haben, können wir u
 
 Zuerst müssen wir eine `BasicEffect` -Instanz definieren, die Parameter für das Rendering enthält, wie z. b. Position und Beleuchtung. Fügen Sie zu diesem Zweck der `BasicEffect` `Game1` Klasse unten ein Member hinzu, in `floorVerts` dem das Feld definiert ist:
 
-
 ```csharp
 ...
 VertexPositionTexture[] floorVerts;
@@ -168,7 +167,6 @@ void DrawGround()
 
     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
         fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
-
 
     foreach (var pass in effect.CurrentTechnique.Passes)
     {
@@ -246,7 +244,6 @@ Texture2D checkerboardTexture;
 
 Ändern `Game1.LoadContent` Sie wie folgt:
 
-
 ```csharp
 protected override void LoadContent()
 {
@@ -306,7 +303,6 @@ void DrawGround()
 
 Schließlich müssen wir die `Game1.Initialize` -Methode ändern, um auch Texturkoordinaten auf unseren Scheitel Punkten zuzuweisen:
 
-
 ```csharp
 protected override void Initialize ()
 {
@@ -349,7 +345,6 @@ Normalisierte Texturkoordinaten ermöglichen die Größe der Textur, ohne Code n
 
 Wir können die Texturkoordinaten Zuweisung ändern, um eine einzelne Variable für die Anzahl der Wiederholungen zu verwenden:
 
-
 ```csharp
 protected override void Initialize ()
 {
@@ -382,7 +377,6 @@ protected override void Initialize ()
 Dies führt dazu, dass sich die Textur 20 Mal wiederholt:
 
 ![](part2-images/image10.png "Dadurch wird die Textur 20-Mal wiederholt.")
-
 
 ## <a name="rendering-vertices-with-models"></a>Rendern von Vertices mit Modellen
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 9ca50171e43ef98e5b4e5fbd7bd236f74d35da8f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ae6a4fb45eb53c514c888d671780a5ceaeba6624
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286766"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768608"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>WatchOS-Benachrichtigungen in Xamarin
 
@@ -34,7 +34,6 @@ Nachdem Sie den Controller angepasst haben, kann er wie im folgenden Beispiel au
 
 ![](notifications-images/notifications-segue.png "Die Eigenschaften der Benachrichtigungen")
 
-
 Es gibt zwei Arten von Benachrichtigungen:
 
 - Nicht **Bild** lauffähierbare statische Ansicht, die vom System definiert wird.
@@ -46,7 +45,6 @@ Es gibt zwei Arten von Benachrichtigungen:
 Die kurze aussehen Benutzeroberfläche besteht aus nur das Symbol der app, app-Namen und die Benachrichtigung Titelzeichenfolge.
 
 Wenn der Benutzer die Benachrichtigung nicht ignoriert wird, wechselt das System automatisch eine Benachrichtigung lang aussehen, die Informationen bereitstellt.
-
 
 ### <a name="long-look-notification-controller"></a>Sehen Sie lange Benachrichtigungscontrollers aus
 
@@ -63,7 +61,6 @@ Die statische Ansicht sollte einfach und schnell in angezeigt.
 Die dynamische Ansicht kann weitere Daten anzeigen und Bereitstellen von interaktiver gestalten.
 
 ![](notifications-images/notification-dynamic.png "Die dynamische Ansicht")
-
 
 ## <a name="generating-notifications"></a>Generieren von Benachrichtigungen
 
@@ -146,8 +143,6 @@ In der [Watch Kit Katalog](https://docs.microsoft.com/samples/xamarin/ios-sample
         "customKey": "Use this file to define a testing payload for your notifications. The aps dictionary specifies the category, alert text and title. The WatchKit Simulator Actions array can provide info for one or more action buttons in addition to the standard Dismiss button. Any other top level keys are custom payload. If you have multiple such JSON files in your project, you'll be able to choose between them in when selecting to debug the notification interface of your Watch App."
     }
 ```
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

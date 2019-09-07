@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 531d0b2b6141cc0e1f4014f1d3422af3c6f8643a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 136efbd936bc39563c419a87ed48f6fc5436efa9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291980"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768548"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Generische Unterklassen von NSObject in xamarin. IOS
 
@@ -220,4 +220,3 @@ class Generic<T> : NSObject where T : NSObject
 ## <a name="performance"></a>Leistung
 
 Die statische Registrierungsstelle kann einen exportierten Member bei der Buildzeit nicht in einem generischen Typ auflösen, da er in der Regel zur Laufzeit gesucht werden muss. Dies bedeutet, dass das Aufrufen einer solchen Methode von Ziel-C etwas langsamer ist als das Aufrufen von Membern aus nicht generischen Klassen.
-

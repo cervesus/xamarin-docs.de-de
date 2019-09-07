@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f46b60a0567a5486a5c22a6ff36561e976d07b47
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246653cee7917141ddd0f911a7c4d1b21f945360
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292905"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751978"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9-Kompatibilität
 
@@ -32,13 +32,10 @@ Wenn Sie Ihre xamarin-Installation auf die neueste stabile channelversion aktual
 
 _Auch wenn Sie nicht beabsichtigen, Ihre APP mit den IOS 9-Features sofort zu aktualisieren, empfiehlt es sich, mit der aktuellen Version von xamarin neu zu erstellen und erneut an den App Store zu übermitteln_.
 
-
-
 Dadurch wird sichergestellt, dass Ihre APP nach dem Upgrade der Kunden auf IOS 9 ausgeführt wird.
 Sie können IOS 8 weiterhin unterstützen: die Neuerstellung mit der neuesten Version wirkt sich nicht auf die Anwendungs Zielversion aus.
 
 Wenn Sie beim Testen vorhandener apps auf IOS 9 weitere Probleme haben, lesen Sie den Abschnitt [Verbesserung der Kompatibilität](#compat) weiter unten.
-
 
 ### <a name="updating-with-visual-studio"></a>Aktualisieren mit Visual Studio
 
@@ -50,7 +47,6 @@ Sie müssen **nicht** auf neue Versionen von Komponenten oder nugets warten, die
 Diese Probleme wurden einfach behoben, indem Sie Ihre APP mit der neuesten stabilen Version von xamarin. IOS neu erstellen.
 
 Ebenso sind Komponenten Anbieter und nuget-Autoren **nicht** verpflichtet, neue Builds zu übermitteln, um die beiden oben genannten Probleme zu beheben. Wenn jedoch eine Komponente oder nuget Ansichten aus `UICollectionView` **XIb** -Dateien verwendet oder lädt, ist *möglicherweise* ein Update erforderlich, um die unten erwähnten Kompatibilitätsprobleme mit IOS 9 zu beheben.
-
 
 <a name="compat" />
 
@@ -74,8 +70,6 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 Verwandte Beispiele: [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb), [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
-
-
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView kann beim Laden einer Ansicht aus einem XIb/NIB nicht mit dem Programmierer Initialisierung
 
 **Weshalb** Der `initWithCoder:` Konstruktor wird aufgerufen, wenn eine Ansicht aus einer Interface Builder XIb-Datei geladen wird. Wenn dieser Konstruktor nicht exportiert wird, kann nicht verwalteter Code unsere verwaltete Version von ihm nicht abrufen. Früher (z. b. in ios 8) wurde `IntPtr` der Konstruktor aufgerufen, um die Ansicht zu initialisieren.
@@ -92,7 +86,6 @@ public YourClassName (NSCoder coder) : base (coder)
 
 Verwandte Stichprobe: [Video](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-
 ### <a name="dyld-message-no-cache-image-with-name"></a>Dyld-Meldung: kein Cache Image mit dem Namen...
 
 Möglicherweise kommt es zu einem Absturz mit den folgenden Informationen im Protokoll:
@@ -105,8 +98,6 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 **Weshalb** Dies ist ein Fehler im nativen Linker von Apple, der auftritt, wenn Sie ein privates Framework öffentlich machen (javascriptcore wurde in ios 7 öffentlich gemacht, bevor es ein privates Framework war), und das Bereitstellungs Ziel der APP für eine IOS-Version gilt, als das Framework Privat war. In diesem Fall wird der Linker von Apple mit der privaten Version des Frameworks anstelle der öffentlichen Version verknüpft.
 
 **Zusetzen** Dies wird für IOS 9 behandelt, aber es gibt eine einfache Problem Umgehung, die Sie in der Zwischenzeit selbst anwenden können. (in diesem Fall können Sie IOS 7 testen.) Andere Frameworks weisen möglicherweise ähnliche Probleme auf, z. b. weil das WebKit-Framework in ios 8 öffentlich gemacht wurde (und das Ziel IOS 7 ist dieser Fehler. Sie sollten IOS 8 als Ziel verwenden, um webkit in Ihrer APP zu verwenden).
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

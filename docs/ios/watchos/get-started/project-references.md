@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 72a1fe3541eb4ece67dd137ebcd33f8e81ae9553
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dcadb5146df39aa4887e28b65078acc9454f3d34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292266"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767983"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchos-Projekt Verweise in xamarin
 
@@ -32,12 +32,9 @@ Zeigen Sie die Verweise durch Doppelklicken auf die Knoten Verweise für jedes P
 
   ![](project-references-images/catalog-reference2.png "App-Referenz für iPhone-App")
 
-
 - Die **Watch-App-Erweiterung** verweist nicht auf eines der anderen Projekte.
 
   ![](project-references-images/catalog-reference3.png "Watch-App-Erweiterung verweist nicht auf andere Projekte")
-
-
 
 ## <a name="bundle-identifiers"></a>Bündel Bezeichner
 
@@ -76,4 +73,3 @@ Die aktuelle **Überwachungs-Betriebssystem** Version ist 8,2, daher sollte das 
 ![](project-references-images/infoplist-watchapp.png "Die Datei \"Watch Info. plist\"")
 
 Das Bereitstellungs Ziel für die Watch-App kann sich von der Watch-Erweiterung und der IOS-App unterscheiden.
-

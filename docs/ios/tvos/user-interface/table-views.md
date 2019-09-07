@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 28dfdbd7837f87d003e5b949ea3f7421613997f7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10f065d6e7b1cacb217cb510c57707662a196664
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288303"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768568"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit tvos-Tabellen Ansichten in xamarin
 
@@ -952,8 +952,6 @@ Da tvos auf IOS basiert, sind Tabellen Sichten und Tabellen Ansichts Controller 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit Tabellen Sichten in einer xamarin. tvos-App behandelt. Und bietet ein Beispiel für das Arbeiten mit einer Tabellenansicht in einer geteilten Ansicht, bei der es sich um die typische Verwendung einer Tabellenansicht in einer tvos-App handelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

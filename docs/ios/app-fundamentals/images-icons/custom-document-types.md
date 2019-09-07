@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2017
-ms.openlocfilehash: 683587e4857ede20096be731b3cfa3b88b3a668d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 25b4e5a564c8dabf4cb44881c25e0a10ade47350
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282520"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767743"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Benutzerdefinierte Dokument Symbole in xamarin. IOS
 
@@ -30,7 +30,7 @@ Symbole können für verschiedene Größen bereitgestellt werden, die für die v
 Um diese Werte in Visual Studio für Mac zuzuweisen, verwenden Sie den Abschnitt **Dokumenttypen** auf der `Info.plist` Registerkarte Erweitert im Editor, um den Dokumenttyp hinzuzufügen und Bildsymbole zuzuweisen. Hier sehen Sie beispielsweise einen Screenshot, der die Registrierung für die PDF-Unterstützung anzeigt:
 
  [![](custom-document-types-images/18.png "Der Abschnitt \"Dokumenttypen\" auf der Registerkarte \"Erweitert\" im Editor \"Info. plist\"")](custom-document-types-images/18.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Um diese Werte in Visual Studio zuzuweisen, verwenden Sie den Abschnitt **Dokumenttypen** auf der Registerkarte Erweitert `Info.plist`auf der Registerkarte Erweitert:
@@ -43,9 +43,7 @@ Klicken Sie auf die Schaltfläche **Dokumenttyp hinzufügen** , und füllen Sie 
 
 -----
 
-
 Weitere Informationen zu Dokumenttypen finden Sie unter Referenz zu den [einheitlichen Typbezeichner](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) von Apple und in den [Programmierthemen zur Dokument Interaktion für IOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,19 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 10fc13124a1c97cc7534d8cf14b7717b2ddc4fa1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba86567213fe76847459df3df9b4450881e0651e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291038"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769230"
 ---
 # <a name="ipa-file-is-0-bytes"></a>IPA-Datei hat 0 Byte
 
 > [!IMPORTANT]
 > Dieses Problem wurde in den letzten Versionen von xamarin gelöst. Wenn das Problem jedoch in der aktuellen Version der Software auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen buildprotokolleausgabe.
-
-
 
 In früheren Versionen von xamarin gab es einige bekannte Probleme, die dazu führen konnten, dass die IPA-Datei unter Windows 0 Bytes groß war. 
 

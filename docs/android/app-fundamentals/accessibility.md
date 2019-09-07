@@ -6,18 +6,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: f32f32e56ff4869c003b142f9ad67b0e54cfa353
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197692"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755680"
 ---
 # <a name="accessibility-on-android"></a>Barrierefreiheit unter Android
 
 Auf dieser Seite wird beschrieben, wie Sie die Android-Barrierefreiheits-APIs zum Erstellen von apps entsprechend der [Eincheck Checkliste](~/cross-platform/app-fundamentals/accessibility.md)verwenden.
-Weitere Plattform-APIs finden Sie unter [IOS-Barrierefreiheit](~/ios/app-fundamentals/accessibility.md) und [OS X](~/mac/app-fundamentals/accessibility.md) -Barrierefreiheits Seiten.
-
+Weitere Plattform-APIs finden Sie unter [IOS-Barrierefreiheit](~/ios/app-fundamentals/accessibility.md) und [OS X-Barrierefreiheits](~/mac/app-fundamentals/accessibility.md) Seiten.
 
 ## <a name="describing-ui-elements"></a>Beschreiben von UI-Elementen
 
@@ -66,7 +65,6 @@ Verwenden Sie in XML-Layoutdateien das `android:hint` -Attribut:
     android:id="@+id/someText"
     android:hint="Enter some text" />
 ```
-
 
 ### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor verknüpft Eingabefelder mit Bezeichnungen
 
@@ -131,7 +129,6 @@ Legen Sie in Layout-XML `android:focusable` -Dateien das Attribut fest:
 
 Sie können auch die Reihenfolge der nach `nextFocusDown`richten `nextFocusLeft`mit `nextFocusRight`den `nextFocusUp` Attributen,,, Steuern, die normalerweise im Layout axml festgelegt sind. Verwenden Sie diese Attribute, um sicherzustellen, dass der Benutzer einfach durch die Steuerelemente auf dem Bildschirm navigieren kann.
 
-
 ## <a name="accessibility-and-localization"></a>Barrierefreiheit und Lokalisierung
 
 In den obigen Beispielen werden der Hinweis und die Inhaltsbeschreibung direkt auf den Anzeige Wert festgelegt. Es ist vorzuziehen, Werte in einer **Strings. XML** -Datei zu verwenden, wie z. b.:
@@ -171,13 +168,11 @@ In LayoutXml-Barrierefreiheits `contentDescription` Attributen wie `hint` und k�
 
 Der Vorteil der Speicherung von Text in einer separaten Datei besteht darin, dass mehrere Sprachübersetzungen der Datei in Ihrer APP bereitgestellt werden können. Weitere Informationen zum Hinzufügen lokalisierter Zeichen folgen Dateien zu einem Anwendungsprojekt finden Sie im [Leitfaden zur Android-Lokalisierung](~/android/app-fundamentals/localization.md) .
 
-
 ## <a name="testing-accessibility"></a>Testen der Barrierefreiheit
 
 Führen Sie [die folgenden Schritte](https://developer.android.com/training/accessibility/testing.html#how-to) aus, um talkbacks zu aktivieren und per Fingerabdruck zu untersuchen, um den Zugriff auf Android
 
 Möglicherweise müssen Sie [Talkback](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) von Google Play installieren, wenn es nicht in den **Einstellungen > Barrierefreiheit**angezeigt wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

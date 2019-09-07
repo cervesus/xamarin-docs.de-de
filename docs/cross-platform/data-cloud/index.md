@@ -6,12 +6,12 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: conceptdev
 ms.author: crdun
 ms.date: 10/09/2017
-ms.openlocfilehash: 0979a0b65cc3d5b4944dadaf67aaa14cf1b3cf73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 11a98b61d958e2e0d0fb226ba4eb05c458b5bbf2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287598"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766102"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure und xamarin
 
@@ -40,7 +40,6 @@ Die apps können dann auf weitere Dienste wie Office 365 zugreifen.
 Die Web-API von Microsoft macht eine Rest-ähnliche Schnittstelle verfügbar, die problemlos von xamarin-Anwendungen genutzt werden kann.
 Sie können problemlos eine [Azure-Website](https://trywebsites.azurewebsites.net/) einrichten und eine WebAPI-basierte App zum Herstellen einer Verbindung mit xamarin-Apps erstellen.
 
-
 ### <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[Einführung in Webdienste](~/cross-platform/data-cloud/web-services/index.md)
 
 In diesem Tutorial wird erläutert, wie Sie Rest-, WCF-und SOAP-Webdienst Technologien mit mobilen xamarin-Anwendungen integrieren. Es werden verschiedene Dienst Implementierungen untersucht, verfügbare Tools und Bibliotheken für die Integration ausgewertet und Beispiel Muster zum Verarbeiten von Dienst Daten bereitgestellt. Schließlich bietet es einen grundlegenden Überblick über die Erstellung eines Rest-Webdiensts für die Verwendung mit einer mobilen xamarin-Anwendung.
@@ -56,7 +55,6 @@ Zusätzlich zu den [Dokumentations Beispielen](https://github.com/xamarin/mobile
 
 - [eShop](https://github.com/dotnet-architecture/eShopOnContainers) – Beispiel für die [Architektur Reihe](https://www.microsoft.com/net/learn/architecture) von eBooks.
 - [Mydriving](https://azure.microsoft.com/campaigns/mydriving/) – Azure + IOT-Beispiel von Build 2016.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

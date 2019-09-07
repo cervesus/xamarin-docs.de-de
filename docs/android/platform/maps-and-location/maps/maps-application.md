@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: b436ea4f5d8c70f0ca641bea72d1230fc07c5086
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b950326eb5a124d5040caa0044309630a2a53d38
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523785"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761675"
 ---
 # <a name="launching-the-maps-application"></a>Starten der Maps-Anwendung
 
@@ -21,7 +21,6 @@ Die einfachste Methode zum Arbeiten mit Maps in xamarin. Android besteht darin, 
 [![Screenshot der integrierten Google Maps-APP](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 Wenn Sie die Maps-Anwendung verwenden, ist die Zuordnung nicht Teil Ihrer Anwendung. Stattdessen startet die Anwendung die Maps-Anwendung und lädt die Karte extern. Im nächsten Abschnitt wird erläutert, wie mit xamarin. Android Zuordnungen wie oben beschrieben gestartet werden.
-
 
 ## <a name="creating-the-intent"></a>Erstellen der Absicht
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 Dieser Code ist alles, was zum Starten der im vorherigen Screenshot gezeigten Karte erforderlich ist. Zusätzlich zur Angabe von breiten-und Längengrad unterstützt das URI-Schema für Maps verschiedene andere Optionen.
 
-
 ## <a name="geo-uri-scheme"></a>Geografisches URI-Schema
 
 Der obige Code hat das geografieschema verwendet, um einen URI zu erstellen. Dieses URI-Schema unterstützt verschiedene Formate, wie unten aufgeführt:
@@ -48,15 +46,11 @@ Der obige Code hat das geografieschema verwendet, um einen URI zu erstellen. Die
 
 - `geo:0,0?q=business+near+city`&ndash; Öffnet die Maps-Anwendung und zeigt die mit Anmerkungen versehene Suchergebnisse an. 
 
-
 Die Versionen des URIs, die eine Abfrage ausführen (d. h. die Adresse der Straße oder die Suchbegriffe), verwenden den Geocoder-Dienst von Google, um den Speicherort abzurufen, der dann auf der Karte angezeigt wird. Der URI `geo:0,0?q=coop+Cambridge` führt z. b. zu der unten gezeigten Karte:
 
 [![Beispiel Bildschirm, das Google Maps mit einem Suchbegriff anzeigt](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
-
-
 Weitere Informationen zu den URI-Schemas finden Sie unter [Show a Location on a map](https://developer.android.com/guide/components/intents-common.html#Maps).
-
 
 ## <a name="street-view"></a>Straße
 
@@ -92,6 +86,5 @@ Wie Sie sehen können, werden mehrere Parameter unterstützt, wie unten aufgefü
 - `zoom`&ndash; Zoom Multiplikator für das Straßen Ansichts Panorama, wobei 1,0 = normaler Zoom Wert, 2,0 = zoomt 2x, 3,0 = Zoommodus 4X usw.
 
 - `mz`&ndash; Der Zuordnungs Zoomfaktor, der verwendet wird, wenn die Maps-Anwendung aus der Ansicht "Straße" geht.
-
 
 Das Arbeiten mit der integrierten Maps-Anwendung oder der Straßenansicht ist eine einfache Möglichkeit, um Unterstützung für die Zuordnung schnell hinzuzufügen. Allerdings bietet die Android Maps-API eine präzisere Steuerung der Zuordnungs Funktionen.

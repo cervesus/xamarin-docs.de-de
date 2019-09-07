@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529226"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760564"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung in Xamarin.Forms
 
@@ -118,7 +118,6 @@ Für dieses Problem bei freigegebenen Projekten gibt es zwei Lösungsansätze:
 - **Synchronisieren des Projekts:** Bearbeiten Sie die Projekteigenschaften für jede Plattform, damit diese den **gleichen** Assemblynamen und den Standardnamespace verwenden. Dieser Wert kann dann als Präfix für die Ressourcen-IDs von eingebetteten Dateien im freigegebenen Projekt hartcodiert werden.
 - **#if-Compilerdirektiven:** Verwenden Sie Compilerdirektiven, um das richtige Präfix für die Ressourcen-ID festzulegen, und verwenden Sie diesen Wert, um die richtige Ressourcen-ID dynamisch zu erstellen.
 
-
 Im Folgenden finden Sie den Code für den zweiten Lösungsansatz. Compilerdirektiven werden verwendet, um das hartcodierte Ressourcenpräfix auszuwählen (das normalerweise dem Standardnamespace für das verweisende Projekt entspricht). Anschließend wird die `resourcePrefix`-Variable verwendet, um eine gültige Ressourcen-ID zu erstellen, indem diese mit dem Dateinamen der eingebetteten Ressource verkettet wird.
 
 ```csharp
@@ -169,4 +168,3 @@ In diesem Artikel wurden einfache Dateivorgänge für das Speichern und Laden vo
 - [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
 - [Working with the File System in Xamarin.iOS (Arbeiten mit dem Dateisystem in Xamarin.iOS)](~/ios/app-fundamentals/file-system.md)
-

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: e8277ff92c2ac1891c60b8da385a904af1bd299d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a1f2016af3bcac338f47b7315a26fe50ae76fee7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526296"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755086"
 ---
 # <a name="default-resources"></a>Standardressourcen
 
@@ -35,7 +35,7 @@ Eine komplette Liste der Ressourcentypen finden Sie unten:
 
 - **drawable** &ndash; Drawable-Ressourcen sind ein allgemeines Konzept für Grafiken, die in die Anwendung kompiliert werden können und auf die dann über API-Aufrufe zugegriffen wird oder auf die von anderen XML-Ressourcen verwiesen wird.
    Einige Beispiele für drawables sind Bitmapdateien (PNG, GIF, JPG), spezielle Bitmaps, die in der Größe geändert werden, die als [neun-Patches](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), Zustands Listen, generische, in XML definierte Formen usw. bezeichnet werden.
- 
+
 - **Layout** &ndash; XML-Dateien, die ein Benutzeroberflächen Layout beschreiben, z. b. eine Aktivität oder eine Zeile in einer Liste.
 
 - **Menü** XML-Dateien, die Anwendungs Menüs beschreiben, z. b. *options Menüs*, *Kontextmenüs*und *Untermenüs.* &ndash; Ein Beispiel für Menüs finden Sie in der [Popup-Menü Demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) oder im Beispiel für [Standard Steuerelemente](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
@@ -45,7 +45,6 @@ Eine komplette Liste der Ressourcentypen finden Sie unten:
 - **Werte** &ndash; XML-Dateien, die einfache Werte enthalten. Eine XML-Datei im Werte Verzeichnis definiert nicht eine einzelne Ressource, sondern kann stattdessen mehrere Ressourcen definieren. Eine XML-Datei kann z. b. eine Liste von Zeichen folgen Werten enthalten, während eine andere XML-Datei eine Liste der Farbwerte enthalten kann.
 
 - XML&ndash; -XML-Dateien, die in der Funktion mit den .NET-Konfigurationsdateien vergleichbar sind. Dabei handelt es sich um beliebige XML-Daten, die zur Laufzeit von der Anwendung gelesen werden können.
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

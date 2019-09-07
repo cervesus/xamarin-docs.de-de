@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 52c4f6b45a44eaa9df253e9d049d1016de4a6e30
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: ef94c90cec11c374b24ddfb159674adb468e72de
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199353"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765793"
 ---
 # <a name="binding-types-reference-guide"></a>Bindungs Typen-Referenzhandbuch
 
@@ -52,7 +52,6 @@ interface UITextField : UITextInput {
 ```
 
 Sie können viele andere Aspekte der Codegenerierung steuern, indem Sie andere Attribute auf die Schnittstelle anwenden und das [`[BaseType]`](#BaseTypeAttribute) Attribut konfigurieren.
-
 
 ### <a name="generating-events"></a>Ereignisse werden erzeugt
 
@@ -207,7 +206,6 @@ public interface UIAccelerometer {
 public interface UIAccelerometerDelegate {
 }
 ```
-
 
 #### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
 
@@ -538,7 +536,6 @@ Anschließend wird Folgendes in der `UIImagePickerController` -Klasse verfügbar
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
 ```
 
-
 ### <a name="eventnameattribute"></a>Eventnameattribute
 
 Dieses Attribut wird verwendet, um dem Generator das Ändern des Namens eines Ereignisses oder einer Eigenschaft zu ermöglichen, das in der Klasse generiert wird. Manchmal ist es hilfreich, wenn der Name der Modellklassen Methode für die Modell Klasse sinnvoll ist, aber in der Ursprungs Klasse als Ereignis oder Eigenschaft seltsam aussehen würde.
@@ -706,11 +703,9 @@ interface Robot : SpeakProtocol {
 }
 ```
 
-
 ## <a name="member-definitions"></a>Element Definitionen
 
 Die Attribute in diesem Abschnitt werden auf einzelne Member eines Typs angewendet: Eigenschaften und Methoden Deklarationen.
-
 
 ### <a name="alignattribute"></a>Alignattribute
 
@@ -724,7 +719,6 @@ public interface GLKBaseEffect {
     Vector4 ConstantColor { [Align (16)] get; set;  }
 }
 ```
-
 
 ### <a name="appearanceattribute"></a>AppearanceAttribute
 
@@ -1163,7 +1157,6 @@ Anstatt direkt aufzurufen `objc_msgSend` , durchläuft der Aufruf ein benutzerde
 
 Zurzeit werden nur `objc_msgSend` einige wenige Signaturen unterstützt. (Sie werden feststellen, ob eine Signatur nicht unterstützt wird, wenn das Native Verknüpfen einer APP, die die Bindung verwendet, mit einem fehlenden monotouch_ *_objc_msgSend* -Symbol fehlschlägt, aber es können weitere bei der Anforderung hinzugefügt werden.
 
-
 ### <a name="newattribute"></a>"Netwattribute"
 
 Dieses Attribut wird auf Methoden und Eigenschaften angewendet, damit der Generator vor der `new` Deklaration das Schlüsselwort generiert.
@@ -1405,7 +1398,6 @@ NSObject GetAndRetainObject ();
 
 Außerdem wird dieses Attribut an den generierten Code weitergegeben, sodass die xamarin. IOS-Laufzeit weiß, dass das Objekt bei der Rückgabe von "Ziel-C" aus einer solchen Funktion beibehalten werden muss.
 
-
 ### <a name="sealedattribute"></a>SealedAttribute
 
 Weist den Generator an, die generierte Methode als versiegelt zu markieren. Wenn dieses Attribut nicht angegeben wird, wird standardmäßig eine virtuelle Methode generiert (entweder eine virtuelle Methode, eine abstrakte Methode oder eine außer Kraft setzung, je nachdem, wie andere Attribute verwendet werden).
@@ -1415,7 +1407,6 @@ Weist den Generator an, die generierte Methode als versiegelt zu markieren. Wenn
 ### <a name="staticattribute"></a>Staticetribute
 
 Wenn das `[Static]` Attribut auf eine Methode oder Eigenschaft angewendet wird, generiert dies eine statische Methode oder Eigenschaft. Wenn dieses Attribut nicht angegeben wird, erzeugt der Generator eine Instanzmethode oder-Eigenschaft.
-
 
 ### <a name="transientattribute"></a>Transientattribute
 
@@ -1634,7 +1625,6 @@ public class RetainAttribute {
 }
 ```
 
-
 ### <a name="retainlistattribute"></a>Retainlistatutribute
 
 Weist den Generator an, einen verwalteten Verweis auf den-Parameter beizubehalten oder einen internen Verweis auf den-Parameter zu entfernen. Hiermit werden Objekte, auf die verwiesen wird, beibehalten.
@@ -1651,7 +1641,6 @@ Wenn der Wert von `doAdd` true ist, wird der Parameter hinzugefügt. `__mt_{0}_v
 
 Ein Beispiel finden Sie unter [Foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) und [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
-
 ### <a name="transientattribute"></a>Transientattribute
 
 Dieses Attribut wird auf Parameter angewendet und wird nur beim Übergang von "Ziel-C" zu C#"" verwendet.  Während dieser Übergänge werden die verschiedenen Ziel- `NSObject` C-Parameter in eine verwaltete Darstellung des Objekts umschließt.
@@ -1665,7 +1654,6 @@ Mit diesem Attribut wird der Laufzeit mitgeteilt, dass das Objekt nach Möglichk
 Die Regel ist einfach: Wenn die Laufzeit eine neue verwaltete Darstellung aus dem systemeigenen Objekt erstellen musste, dann wird am Ende der Funktion die Beibehaltungs Dauer für das Native Objekt gelöscht, und die Handle-Eigenschaft des verwalteten Objekts wird gelöscht.   Dies bedeutet Folgendes: Wenn Sie einen Verweis auf das verwaltete Objekt beibehalten haben, wird dieser Verweis unbrauchbar (beim Aufrufen von Methoden wird eine Ausnahme ausgelöst).
 
 Wenn das bestandene Objekt nicht erstellt wurde oder bereits eine ausstehende verwaltete Darstellung des Objekts vorhanden ist, wird die erzwungene Freigabe nicht durchgeführt. 
-
 
 ## <a name="property-attributes"></a>Eigenschafts Attribute
 

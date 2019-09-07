@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 6eb942c0276bda28cb4be14fb31cdf820b9ccd5e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e81504b3411674c8f8f92bf9018d617dd1c4bc4c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291359"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768902"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Anpassen der Darstellung einer Tabelle in xamarin. IOS
 
@@ -26,7 +26,6 @@ Es gibt vier integrierte Stile:
 - Unter **Titel** – unter `UIImageView` stützt einen Untertitel und.
 - **Value1** – rechtsbündig ausgerichtete Untertitel `UIImageView`unterstützt.
 - **Value2** – Titel ist rechtsbündig ausgerichtet, und Untertitel ist linksbündig (aber kein Bild).
-
 
 Diese Screenshots zeigen, wie die einzelnen Stile angezeigt werden:
 
@@ -57,7 +56,6 @@ Zellen können das folgende Zubehör auf der rechten Seite der Ansicht hinzugef�
 - **Detailbutton** – antwortet unabhängig vom Rest der Zelle und ermöglicht es, eine andere Funktion zum Berühren der Zelle selbst auszuführen (z. b. das Öffnen eines Popups oder eines neuen Fensters, das nicht Teil `UINavigationController` eines Stapels ist).
 - " **Disclosure sureindicator** " – wird normalerweise verwendet, um anzugeben, dass durch Berühren der Zelle eine andere Ansicht geöffnet wird
 - **Detaildisclosure surebutton** – eine Kombination aus `DetailButton` und `DisclosureIndicator`.
-
 
 Dies sieht wie folgt aus:
 
@@ -128,7 +126,6 @@ Die benutzerdefinierte Cell-Klasse besteht nur aus drei Methoden:
 - **Updatecell** – eine Methode `UITableView.GetCell` , mit der die Eigenschaften der Zelle festgelegt werden können.
 - **Layoutsubviews** – legen Sie den Speicherort der UI-Steuerelemente fest. In dem Beispiel hat jede Zelle das gleiche Layout, aber eine komplexere Zelle (insbesondere diejenigen mit unterschiedlichen Größen) benötigt je nach angezeigter Inhalte möglicherweise unterschiedliche Layoutpositionen.
 
-
 Der gesamte Beispielcode in **cellcustomtable > CustomVegeCell.cs** folgt:
 
 ```csharp
@@ -184,8 +181,6 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
     return cell;
 }
 ```
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

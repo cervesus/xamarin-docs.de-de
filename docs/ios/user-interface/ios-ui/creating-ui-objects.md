@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: a153c6115605ca2a58df233186fa45d200d8b99f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c1e7d6cbb2598f64a331257c9b14ecfa119193f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287293"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768794"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Erstellen von Benutzeroberflächen Objekten in xamarin. IOS
 
@@ -43,11 +43,11 @@ Doppelklicken Sie auf eine storyboarddatei, um mit dem Erstellen Ihrer Benutzero
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
  [![](creating-ui-objects-images/image2b.png "Toolbox-Pad")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  [![](creating-ui-objects-images/image2b-vs.png "Toolbox-Pad-visuelle STUIO")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 -----
 
 Wenn ein Steuerelement auf der Entwurfs Oberfläche ausgewählt wird, werden die Attribute für das Steuerelement **Eigenschaftenpad** angezeigt. Das **Widget > Identity > Name** -Feld, das im folgenden Screenshot aufgefüllt wird, wird als Name des *Ausgabenamens* verwendet. Auf diese Weise können Sie auf das Steuerelement C#in verweisen:
@@ -65,7 +65,7 @@ Um ein Storyboard in Xcode zu öffnen, klicken Sie mit der rechten Maustaste, um
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
  [![](creating-ui-objects-images/imagexcode.png "Storyboard-Kontextmenü-Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](creating-ui-objects-images/imagexcode-vs.png "Storyboard-Kontextmenü-Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
@@ -168,8 +168,6 @@ Diese Elemente der partiellen Klasse ermöglichen dem Code das verweisen auf die
 Die `designer.cs` Datei sollte nicht manuell bearbeitet werden – die IDE (Visual Studio für Mac oder Visual Studio) ist dafür verantwortlich, Sie mit dem Storyboard zu synchronisieren.
 
 Wenn Benutzeroberflächen Objekte Programm gesteuert zu einem `View` oder `ViewController`hinzugefügt werden, instanziieren und verwalten Sie die Objekt Verweise selbst. Daher ist keine Designer-Datei erforderlich.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

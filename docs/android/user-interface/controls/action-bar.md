@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 4a0d0e46147a37da4787224e797d403ab7b1097e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f472f19429f21c659e28ba1c7a8d2670e22ea6a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643045"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758958"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Aktionsleiste für xamarin. Android
 
 Wenn Sie `TabActivity`verwenden, hat der Code zum Erstellen der Registerkarten Symbole keine Auswirkung, wenn Sie für das Android 4,0-Framework ausgeführt werden. Obwohl es funktionell funktioniert, wie es in Android-Versionen vor 2,3 funktioniert hat, `TabActivity` ist die Klasse selbst in 4,0 veraltet. Es wurde eine neue Methode zum Erstellen einer Schnittstelle mit Registerkarten eingeführt, die die Aktionsleiste verwendet, die wir als nächstes erörtern werden.
-
 
 ## <a name="action-bar-tabs"></a>Registerkarten Aktionsleiste
 
@@ -56,7 +55,6 @@ class SampleTabFragment: Fragment
             view.FindViewById<TextView> (Resource.Id.sampleTextView);            
         sampleTextView.Text = "sample fragment text";
 
-
         return view;
     }
 }
@@ -79,11 +77,9 @@ this.ActionBar.AddTab (tab);
 
 Das komplette Beispiel finden Sie im Projekt *hellotabsics* im Beispielcode für dieses Dokument.
 
-
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
 Mit `ShareActionProvider` der-Klasse kann eine Freigabe Aktion aus einer Aktionsleiste durchgeführt werden. Es übernimmt das Erstellen einer Aktions Ansicht mit einer Liste von apps, die eine Freigabe Absicht verarbeiten können, und speichert einen Verlauf der zuvor verwendeten Anwendungen für den einfachen Zugriff auf diese Anwendungen später aus dem Aktionsleiste. Dies ermöglicht Anwendungen die gemeinsame Nutzung von Daten über eine Benutzer Darstellung, die in Android konsistent ist.
-
 
 ### <a name="image-sharing-example"></a>Beispiel für eine Bildfreigabe
 
@@ -91,11 +87,9 @@ Nachstehend sehen Sie beispielsweise einen Screenshot einer Aktionsleiste mit ei
 
 [![Screenshot des Symbols für die Messaging Anwendung im Aktionsleiste](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
-
 Wenn der Benutzer im Aktionsleiste auf das Element klickt, wird die Messaging-APP, die das freigegebene Image enthält, wie unten dargestellt gestartet:
 
 [![Screenshot der Messaging-APP, die das affbild anzeigt](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
-
 
 ### <a name="specifying-the-action-provider-class"></a>Angeben der Aktions Anbieter Klasse
 
@@ -110,7 +104,6 @@ Um das `ShareActionProvider`zu verwenden, legen `android:actionProviderClass` Si
       android:actionProviderClass="android.widget.ShareActionProvider" />
 </menu>
 ```
-
 
 ### <a name="inflating-the-menu"></a>Auffüllen des Menüs
 
@@ -128,7 +121,6 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 }
 ```
 
-
 ### <a name="creating-the-intent"></a>Erstellen der Absicht
 
 Der `ShareActionProvider` verwendet die Absicht, die an die `SetShareIntent` -Methode im obigen Code weitergeleitet wird, um die entsprechende-Aktivität zu starten. In diesem Fall erstellen wir eine Absicht, ein Image zu senden, indem wir den folgenden Code verwenden:
@@ -145,8 +137,6 @@ Intent CreateIntent ()
 ```
 
 Das Image im obigen Codebeispiel ist als Medienobjekt mit der Anwendung enthalten und an einen öffentlich zugänglichen Speicherort kopiert, wenn die Aktivität erstellt wird, sodass andere Anwendungen, wie z. b. die Messaging-APP, darauf zugreifen können. Der Beispielcode für diesen Artikel enthält die vollständige Quelle dieses Beispiels, die seine Verwendung veranschaulicht.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

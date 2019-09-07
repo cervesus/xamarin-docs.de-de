@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: b0f6647ff92c8d8d0b8d2769c85aa24572d1464e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efe3f2d4c79dc6e5e2a7f13408de52e05006e10a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285743"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752278"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Vision Framework in xamarin. IOS
 
@@ -102,7 +102,6 @@ Sehen Sie sich die Quelle des Beispiels für die exakte CoreGraphics [-](https:/
 
 Die Rechteck Erkennung ist oft nur der erste Schritt in einer Kette von Vorgängen, z. b. mit [diesem coremlvision-Beispiel](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), bei dem die Rechtecke an ein coreml-Modell zum Analysieren von handschriftlichen Ziffern übermittelt werden.
 
-
 <a name="faces" />
 
 ## <a name="face-detection"></a>Gesichtserkennung
@@ -175,7 +174,6 @@ Sehen Sie sich die Quelle des Beispiels für die exakte CoreGraphics [-](https:/
 ### <a name="5-further-processing"></a>5. Weitere Verarbeitung
 
 Das Vision-Framework bietet zusätzliche Funktionen zum Erkennen von Gesichtsmerkmalen, wie z. b. Augen und Mund. Verwenden Sie `VNDetectFaceLandmarksRequest` den-Typ, der `VNFaceObservation` Ergebnisse wie in Schritt 3 weiter oben zurückgibt, `VNFaceLandmark` jedoch mit zusätzlichen Daten.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

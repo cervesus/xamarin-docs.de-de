@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: 5446f8e7bbdf2a5f625852bb61637be392bc6bc2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 897daef3aba1166018a0ac796e9c7956c5f0c711
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761889"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Änderungen an den Tools von Android SDK
 
@@ -65,7 +65,6 @@ Sie können Ihre **Android SDK Tools** Version herabstufen, indem Sie eine früh
 ### <a name="using-the-old-gui"></a>Verwenden der alten GUI
 
 Sie können die ursprüngliche GUI weiterhin verwenden, indem Sie das **Android** -Programm in Ihrem **Tool** Ordner ausführen, sofern Sie **Android SDK Tools** Version **25.2.5** oder niedriger verwenden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

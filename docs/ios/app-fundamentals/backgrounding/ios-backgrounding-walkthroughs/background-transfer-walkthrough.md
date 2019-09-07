@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3e27cffa9e2605c3697536f226fe87fbbf1bfbbd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 47a07959bcfabc0980ccb90f2ae7a489e5e71223
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286877"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756233"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Hintergrund Übertragung und nsurlsession in xamarin. IOS
 
@@ -56,12 +56,10 @@ Eine `NSUrlSessionDelegate` stellt die folgenden grundlegenden Methoden zum Übe
 - *Didreceivechallenge* : wird aufgerufen, um Anmelde Informationen anzufordern, wenn eine Autorisierung erforderlich ist.
 - *Didbecomeinvalidwitherror* : wird aufgerufen, `NSURLSession` wenn das ungültig wird.
 
-
 Hintergrund Sitzungen erfordern speziellere Delegaten, abhängig von den Tasks, die ausgeführt werden. Hintergrund Sitzungen sind auf zwei Arten von Aufgaben beschränkt:
 
 - *Aufgaben hochladen* : Aufgaben des Typs `NSUrlSessionUploadTask` verwenden den `NSUrlSessionTaskDelegate` , der von `NSUrlSessionDelegate` erbt. Dieser Delegat stellt zusätzliche Methoden zum Nachverfolgen des uploadfortschritts, zum Verarbeiten der HTTP-Umleitung usw.
 - `NSUrlSessionDownloadDelegate` *Tasks herunterladen* : `NSUrlSessionTaskDelegate` verwenden Sie den, der von erbt. `NSUrlSessionDownloadTask` Dieser Delegat stellt alle Methoden zum Hochladen von Aufgaben sowie Download spezifische Methoden bereit, um den Download Fortschritt zu verfolgen und zu ermitteln, wann eine Download Aufgabe fortgesetzt oder abgeschlossen wurde.
-
 
 Der folgende Code definiert einen Task, der zum Herunterladen eines Bilds aus einer URL verwendet werden kann. Wir beginnen mit der Aufgabe, indem `CreateDownloadTask` wir in unserer Hintergrund Sitzung aufrufen und die URL-Anforderung übergeben:
 
@@ -96,7 +94,6 @@ Die Sitzungs delegatapi bietet ein breites Toolkit für die Interaktion mit Aufg
 
 > [!IMPORTANT]
 > Hintergrund Sitzungen werden in einem Hintergrund Thread gestartet, sodass alle Aufrufe zur Aktualisierung der Benutzeroberfläche explizit im UI-Thread ausgeführt werden müssen, `InvokeOnMainThread` indem aufgerufen wird, um das Beenden der app durch IOS zu vermeiden. 
-
 
 ## <a name="handling-transfer-completion"></a>Verarbeiten der Übertragungs Vervollständigung
 
@@ -141,8 +138,6 @@ public override void DidFinishEventsForBackgroundSession (NSUrlSession session) 
 ```
 
 In dieser exemplarischen Vorgehensweise haben wir die grundlegenden Schritte zur Implementierung des Background Transfer Service in ios 7 behandelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

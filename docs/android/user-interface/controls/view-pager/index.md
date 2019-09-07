@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: eca0f82fd967c28bffc8f20bcc9e2ec6bb3ba737
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: d42940c466dbde7c8528d31f395e3f86e39d7c1d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227703"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762364"
 ---
 # <a name="viewpager"></a>ViewPager
 
 _Viewpager ist ein Layoutmanager, mit dem Sie die Gestural-Navigation implementieren können. Die Gestural-Navigation ermöglicht dem Benutzer das Schwenken von Links und rechts zum Durchlaufen von Datenseiten. In diesem Handbuch wird erläutert, wie die Gestural-Navigation mit viewpager mit und ohne Fragmente implementiert wird. Außerdem wird beschrieben, wie Seiten Indikatoren mithilfe von PagerTitleStrip und PagerTabStrip hinzugefügt werden._
 
- 
 ## <a name="overview"></a>Übersicht
 
 Ein häufiges Szenario bei der APP-Entwicklung ist die Notwendigkeit, Benutzern eine gesturale Navigation zwischen gleich geordneten Ansichten bereitzustellen. Bei dieser Vorgehensweise wird der Benutzer nach links oder rechts zum Zugriff auf Inhaltsseiten (z. b. in einem Setup-Assistenten oder einer Folien Anzeige). Sie können diese wischen-Ansichten mithilfe des Widgets `ViewPager` erstellen, das in der [Android-Unterstützungs Bibliothek V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verfügbar ist. Bei `ViewPager` handelt es sich um ein layoutwidget, das aus mehreren untergeordneten Sichten besteht, wobei jede untergeordnete Ansicht eine Seite im Layout darstellt: 
@@ -36,12 +35,10 @@ In diesem Leitfaden werden beide Ansätze veranschaulicht:
 
 - In [viewpager mit Fragmenten](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)wird eine etwas komplexere app " [Flash cardpager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager) " entwickelt, um zu veranschaulichen, `ViewPager` wie `Fragment`mit s verwendet wird, um eine APP zu erstellen, die mathematische Probleme als Flash Karten darstellt und auf Benutzereingaben antwortet. 
 
-
 ## <a name="requirements"></a>Anforderungen
 
 Um in `ViewPager` Ihrem App-Projekt zu verwenden, müssen Sie das [Android-Unterstützungs Bibliothek-V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) -Paket installieren. Weitere Informationen zum Installieren von nuget-Paketen finden [Sie unter Exemplarische Vorgehensweise: Einschließen eines nuget-Projekts in](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)Ihr Projekt. 
 
- 
 ## <a name="architecture"></a>Architektur
 
 Zum Implementieren der Gestural-Navigation mit `ViewPager`werden drei Komponenten verwendet:
@@ -52,14 +49,11 @@ Zum Implementieren der Gestural-Navigation mit `ViewPager`werden drei Komponente
 
 Jede dieser Komponenten wird im folgenden zusammengefasst.
 
-
-
 ### <a name="viewpager"></a>ViewPager
 
 `ViewPager`ist ein Layoutmanager, der jeweils eine `View`Auflistung von s anzeigt. Seine Aufgabe besteht darin, die Schwenkbewegung des Benutzers zu erkennen und nach Bedarf zur nächsten oder vorherigen Ansicht zu navigieren. Der folgende Screenshot zeigt z. b. `ViewPager` einen, der den Übergang von einem Bild zum nächsten als Reaktion auf eine Benutzer Geste ermöglicht: 
 
 [![Schließung der treepager-APP, die einen Übergang zwischen Sichten anzeigt](images/02-transition-sml.png)](images/02-transition.png#lightbox)
-
 
 ### <a name="adapter"></a>Adapter
 
@@ -68,8 +62,6 @@ Jede dieser Komponenten wird im folgenden zusammengefasst.
 [![Diagramm, das veranschaulicht, wie der Adapter Bilder und Namen mit dem viewpager verbindet](images/03-adapter-sml.png)](images/03-adapter.png#lightbox)
 
 In diesem speziellen Beispiel wird jede `View` aus einem Struktur Image und einem Struktur Namen erstellt, bevor Sie an das `ViewPager`-Feld übermittelt wird. 
-
-
 
 ### <a name="pager-indicator"></a>Pager-Indikator
 
@@ -80,8 +72,6 @@ Es gibt zwei Sichten, die diese Navigationsinformationen für Sie liefern könne
 [![Screenshots der treepager-App mit PagerTitleStrip und PagerTabStrip](images/04-comparison-sml.png)](images/04-comparison.png#lightbox)
 
 In dieser Anleitung `ViewPager`wird veranschaulicht, wie Sie App-Komponenten übertragen, Adaptern und Kennzahlen und diese zur Unterstützung der Gestural-Navigation integrieren. 
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

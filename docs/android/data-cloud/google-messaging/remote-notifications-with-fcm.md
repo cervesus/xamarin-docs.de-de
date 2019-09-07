@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: a7276b6a3269c012ad57e13510b6479266c43209
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c76b22c84851c8952dc4e9181966632cf6e38041
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119795"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754681"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Remote Benachrichtigungen mit Firebase Cloud Messaging
 
@@ -35,7 +35,6 @@ Die folgenden Themenbereiche werden untersucht:
 In dieser exemplarischen Vorgehensweise fügen Sie dem **fcmclient** inkrementelle Funktionen hinzu und führen Sie auf einem Gerät oder Emulator aus, um zu verstehen, wie es mit FCM interagiert. Sie verwenden die Protokollierung, um Live-App-Transaktionen mit FCM-Servern zu Zeugen, und Sie beobachten, wie Benachrichtigungen von FCM-Nachrichten generiert werden, die Sie in die Benutzeroberfläche der Firebase-Konsolen Benachrichtigungen eingeben.
 
 ## <a name="requirements"></a>Anforderungen
-
 
 Es ist hilfreich, sich mit den [verschiedenen Arten von Nachrichten](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages) vertraut zu machen, die von Firebase Cloud Messaging gesendet werden können. Die Nutzlast der Nachricht bestimmt, wie die Nachricht von einer Client-App empfangen und verarbeitet wird.
 
@@ -169,7 +168,7 @@ Der nächste Schritt besteht darin, die Datei " **Google-Services. JSON** " dem 
 
 3. Wählen Sie im Fenster **Projektmappen-Explorer** die Option **Google-Services. JSON** aus.
 
-4. Legen Sie im Bereich **Eigenschaften** die Buildaktion auf **googleservicesjson**fest:
+4. Legen Sie im Bereich **Eigenschaften** die **Buildaktion** auf **googleservicesjson**fest:
 
     [![Festlegen der Buildaktion auf googleservicesjson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
@@ -184,14 +183,13 @@ Der nächste Schritt besteht darin, die Datei " **Google-Services. JSON** " dem 
 
 3. Klicken Sie mit der rechten Maustaste auf **Google-Services. JSON**.
 
-4. Legen Sie die Buildaktion auf **googleservicesjson**fest:
+4. Legen Sie die **Buildaktion** auf **googleservicesjson**fest:
 
     [![Festlegen der Buildaktion auf googleservicesjson](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
 
 -----
 
 Wenn " **Google-Services. JSON** " zum Projekt hinzugefügt wird (und die **googleservicesjson** -Buildaktion festgelegt ist), extrahiert der Buildprozess die Client-ID und den [API-Schlüssel](./firebase-cloud-messaging.md#fcm-in-action-api-key) und fügt diese Anmelde Informationen dann dem zusammengeführten/generierten  **"Androidmanifest. XML** " befindet sich in " **obj/Debug/Android/androidmanifest. XML**". Bei diesem Mergeprozess werden automatisch alle Berechtigungen und anderen FCM-Elemente hinzugefügt, die für die Verbindung mit FCM-Servern erforderlich sind.
-
 
 ## <a name="check-for-google-play-services-and-create-a-notification-channel"></a>Überprüfen auf Google Play Services und Erstellen eines Benachrichtigungs Kanals
 
@@ -218,7 +216,6 @@ Zuerst wird ein erstes Layout für die Benutzeroberfläche der App erstellt. Bea
 
 Diese `TextView` wird verwendet, um Meldungen anzuzeigen, die angeben, ob Google Play Services installiert ist. Speichern Sie die Änderungen in " **Main. axml**".
 
-
 Bearbeiten Sie **MainActivity.cs** , `MainActivity` und fügen Sie der-Klasse die folgenden-Instanzvariablen hinzu:
 
 ```csharp
@@ -233,7 +230,6 @@ public class MainActivity : AppCompatActivity
 ```
 
 Die Variablen `CHANNEL_ID` und `NOTIFICATION_ID` werden in der-Methode verwendet [`CreateNotificationChannel`](#create-notification-channel-code) , die `MainActivity` später in dieser exemplarischen Vorgehensweise hinzugefügt wird.
-
 
 Im folgenden Beispiel überprüft die `OnCreate` -Methode, ob Google Play Services verfügbar ist, bevor die APP versucht, FCM-Dienste zu verwenden.
 Fügen Sie der- `MainActivity` Klasse die folgende Methode hinzu:
@@ -310,7 +306,6 @@ protected override void OnCreate (Bundle bundle)
 
 Wenn Sie dieses Ergebnis nicht erhalten, vergewissern Sie sich, dass das Google Play Services APK auf Ihrem Gerät installiert ist (Weitere Informationen finden Sie unter [einrichten Google Play Services](https://developers.google.com/android/guides/setup)).
 Vergewissern Sie sich außerdem, dass Sie das **xamarin. Google. Play. Services. Base** -Paket zum **fcmclient** -Projekt hinzugefügt haben, wie bereits erläutert.
-
 
 ## <a name="add-the-instance-id-receiver"></a>Instanz-ID-Empfänger hinzufügen
 
@@ -463,7 +458,6 @@ if (Intent.Extras != null)
 
 Das Start Programm der `Intent` APP wird ausgelöst, wenn der Benutzer `Intent` auf seine Benachrichtigungs Meldung tippt, sodass dieser Code alle zugehörigen Daten im in das Ausgabefenster protokolliert. Wenn ein anderes `Intent` ausgelöst werden muss, muss `click_action` das Feld der Benachrichtigungs Meldung `Intent` auf dieses `Intent` festgelegt werden (das Start Programm wird verwendet `click_action` , wenn kein angegeben ist).
 
-
 ## <a name="background-notifications"></a>Hintergrund Benachrichtigungen
 
 Erstellen Sie die app " **f** ", und führen Sie Sie aus. Die Schaltfläche **Protokoll Token** wird angezeigt:
@@ -488,7 +482,7 @@ Melden Sie sich bei der [Firebase-Konsole](https://console.firebase.google.com)a
 
 [![Schaltfläche "erste Nachricht senden"](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png#lightbox)
 
-Geben Sie auf der Seite **Nachricht verfassen** den Nachrichtentext ein, und wählen Sie **einzelnes Gerät**aus. Kopieren Sie das Instanz-ID-Token aus dem IDE-Ausgabefenster, und fügen Sie es in das Feld "BCM- **Registrierungs Token** " der Firebase-Konsole:
+Geben Sie auf der Seite **Nachricht verfassen** den Nachrichtentext ein, und wählen Sie **einzelnes Gerät**aus. Kopieren Sie das Instanz-ID-Token aus dem IDE-Ausgabefenster, und fügen Sie es in das Feld " **BCM-Registrierungs Token** " der Firebase-Konsole:
 
 [![Dialogfeld Nachricht verfassen](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png#lightbox)
 
@@ -511,7 +505,6 @@ Tippen Sie auf das Benachrichtigungssymbol, um die **fcmclient** -APP zu starten
 
 In diesem Beispiel wird der **from** -Schlüssel auf die Firebase-Projekt Nummer der APP (in diesem Beispiel `41590732`) festgelegt, und **collapse_key** wird auf den zugehörigen Paketnamen (**com. xamarin. fcmexample**) festgelegt.
 Wenn Sie keine Meldung erhalten, löschen Sie die Anwendung " **f** " auf dem Gerät (oder dem Emulator), und wiederholen Sie die obigen Schritte.
-
 
 > [!NOTE]
 > Wenn Sie das Schließen der APP erzwingen, wird die Übermittlung von Benachrichtigungen durch den ficm beendet. Android verhindert, dass Hintergrunddienst Übertragungen versehentlich oder unnötig Komponenten von beendeten Anwendungen starten. (Weitere Informationen zu diesem Verhalten finden Sie unter [Starten von Steuerelementen](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)für beendete Anwendungen.) Aus diesem Grund ist es erforderlich, die APP jedes Mal manuell zu deinstallieren, wenn Sie Sie ausführen, und Sie aus &ndash; einer Debugsitzung zu entfernen. dadurch erzwingt FCM, dass ein neues Token generiert wird, damit Nachrichten weiterhin empfangen werden.
@@ -559,7 +552,7 @@ subscribeButton.Click += delegate {
 };
 ```
 
-Mit diesem Code wird die Schaltfläche " **Abonnieren von Benachrichtigungen** " im Layout angezeigt, und dem Code, der `FirebaseMessaging.Instance.SubscribeToTopic`aufruft, wird der Click-Handlerzugewiesen. Wenn der Benutzer auf die Schaltfläche **abonnieren** tippt, abonniert die APP das _Nachrichten_ Thema. Im folgenden Abschnitt wird eine Nachricht zu einem _Nachrichten_ Thema von der Firebase-Konsolen Benachrichtigungs-GUI gesendet.
+Mit diesem Code wird die Schaltfläche " **Abonnieren von Benachrichtigungen** " im Layout angezeigt, und dem Code, der `FirebaseMessaging.Instance.SubscribeToTopic`aufruft, wird der Click-Handler _zugewiesen._ Wenn der Benutzer auf die Schaltfläche **abonnieren** tippt, abonniert die APP das _Nachrichten_ Thema. Im folgenden Abschnitt wird eine Nachricht zu einem _Nachrichten_ Thema von der Firebase-Konsolen Benachrichtigungs-GUI gesendet.
 
 ### <a name="send-a-topic-message"></a>Themen Nachricht senden
 
@@ -648,7 +641,6 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 > [!NOTE]
 > Wenn Sie in Haltepunkte festlegen `FirebaseMessagingService`, kann die Debugsitzung diese Haltepunkte aufgrund der Art und Weise, in der die Nachrichten von SMS übermittelt werden, nicht erreichen.
 
-
 ### <a name="send-another-message"></a>Eine andere Nachricht senden
 
 Deinstallieren Sie die APP, erstellen Sie Sie erneut, und führen Sie die folgenden Schritte aus, um eine weitere Nachricht zu senden:
@@ -657,7 +649,7 @@ Deinstallieren Sie die APP, erstellen Sie Sie erneut, und führen Sie die folgen
 
 2. Geben Sie auf der Seite **Nachricht verfassen** den Nachrichtentext ein, und wählen Sie **einzelnes Gerät**aus.
 
-3. Kopieren Sie die Tokenzeichenfolge aus dem Fenster der IDE-Ausgabe, und fügen Sie Sie in das Feld "BCM- **Registrierungs Token** " der Firebase-Konsole ein
+3. Kopieren Sie die Tokenzeichenfolge aus dem Fenster der IDE-Ausgabe, und fügen Sie Sie in das Feld " **BCM-Registrierungs Token** " der Firebase-Konsole ein
 
 4. Stellen Sie sicher, dass die APP im Vordergrund ausgeführt wird, und klicken Sie dann in der Firebase-Konsole auf **Nachricht senden** :
 
@@ -668,7 +660,6 @@ Deinstallieren Sie die APP, erstellen Sie Sie erneut, und führen Sie die folgen
 6. Die eingehende Nachricht wird im Fenster IDE-Ausgabe protokolliert:
 
     [![Im Ausgabefenster gedruckter Nachrichtentext](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
-
 
 ### <a name="add-a-local-notification-sender"></a>Hinzufügen eines lokalen Benachrichtigungs Absenders
 
@@ -745,7 +736,7 @@ Deinstallieren Sie die APP, erstellen Sie Sie erneut, und führen Sie dann die f
 
 2. Geben Sie auf der Seite **Nachricht verfassen** den Nachrichtentext ein, und wählen Sie **einzelnes Gerät**aus.
 
-3. Kopieren Sie die Tokenzeichenfolge aus dem Fenster der IDE-Ausgabe, und fügen Sie Sie in das Feld "BCM- **Registrierungs Token** " der Firebase-Konsole ein
+3. Kopieren Sie die Tokenzeichenfolge aus dem Fenster der IDE-Ausgabe, und fügen Sie Sie in das Feld " **BCM-Registrierungs Token** " der Firebase-Konsole ein
 
 4. Stellen Sie sicher, dass die APP im Vordergrund ausgeführt wird, und klicken Sie dann in der Firebase-Konsole auf **Nachricht senden** :
 
@@ -759,10 +750,9 @@ Wenn Sie die Benachrichtigung öffnen, sollte die letzte Meldung angezeigt werde
 
 [![Vordergrund-Benachrichtigung mit Vordergrund Symbol](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
 
-
 ## <a name="disconnecting-from-fcm"></a>Trennen der Verbindung mit dem "f"
 
-Um das Abonnement eines Themas aufzuheben, rufen Sie die [unabonnementfromtopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29) -Methode für die [firebasemess Aging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging) -Klasse auf. Wenn Sie z. b. das Abonnement abonnieren möchten, das zuvor abonniert wurde, könnte dem Layout eine Schaltfläche " **Abmelden** " mit dem folgenden Handlercode hinzugefügt werden:
+Um das Abonnement eines Themas aufzuheben, rufen Sie die [unabonnementfromtopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29) -Methode für die [firebasemess Aging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging) -Klasse auf. Wenn Sie z. b _. das Abonnement_ abonnieren möchten, das zuvor abonniert wurde, könnte dem Layout eine Schaltfläche " **Abmelden** " mit dem folgenden Handlercode hinzugefügt werden:
 
 ```csharp
 var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
@@ -779,7 +769,6 @@ FirebaseInstanceId.Instance.DeleteInstanceId();
 ```
 
 Dieser Methoden aufzurufen löscht die Instanz-ID und die zugehörigen Daten. Folglich wird das regelmäßige Senden von FCM-Daten an das Gerät angehalten.
-
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
@@ -799,7 +788,6 @@ Dies ist ein bekanntes Problem, das Sie umgehen können, indem Sie die Lösung b
 ## <a name="summary"></a>Zusammenfassung
 
 In dieser exemplarischen Vorgehensweise werden die Schritte zum Implementieren von Firebase Cloud Messaging-Remote Benachrichtigungen in einer xamarin. Android-Anwendung beschrieben. Es wurde beschrieben, wie die für die FCM-Kommunikation erforderlichen erforderlichen Pakete installiert werden, und es wurde erläutert, wie das Android-Manifest für den Zugriff auf FCM-Server konfiguriert wird. Es wurde Beispielcode bereitgestellt, der veranschaulicht, wie Google Play Services vorhanden ist. Es wurde gezeigt, wie Sie einen Instanz-ID-Listenerdienst implementieren, der mit FCM für ein Registrierungs Token aushandiert. Außerdem wurde erläutert, wie dieser Code Hintergrund Benachrichtigungen erstellt, während die APP sich im Hintergrund befindet. Es wurde erläutert, wie Topic-Meldungen abonniert werden, und es wurde eine Beispiel Implementierung eines nachrichtenlistener-Dienstanbieter bereitgestellt, der zum empfangen und Anzeigen von Remote Benachrichtigungen verwendet wird, während die APP im Vordergrund ausgeführt wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

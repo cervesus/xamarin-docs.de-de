@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2019
-ms.openlocfilehash: 16e805488969aadb0d0b8aa5c892248b7fa403c9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 59047b8564db6415ea3c47d7dcb72b5d0c66d1dd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521204"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755589"
 ---
 # <a name="cpu-architectures"></a>CPU-Architekturen
 
@@ -22,7 +22,6 @@ _Xamarin. Android unterstützt verschiedene CPU-Architekturen, einschließlich 3
 
 Wenn Sie Ihre APP für die Veröffentlichung vorbereiten, müssen Sie angeben, welche Platt Form-CPU-Architekturen von ihrer App unterstützt werden. Ein einzelnes APK kann Computercode enthalten, der mehrere unterschiedliche Architekturen unterstützt. Jede Sammlung von Architektur spezifischem Code ist einer *Anwendungs Binärdatei Schnittstelle* (ABI) zugeordnet. Jede ABI definiert, wie der Computercode zur Laufzeit mit Android interagieren soll.
 Weitere Informationen zur Funktionsweise finden Sie unter [Multi-Core Devices &amp; xamarin. Android](~/android/deploy-test/multicore-devices.md).
-
 
 ## <a name="how-to-specify-supported-architectures"></a>Angeben von unterstützten Architekturen
 
@@ -36,14 +35,13 @@ Klicken Sie in Visual Studio mit der rechten Maustaste unter dem **Projektmappen
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-In der Regel wählen Sie explizit eine Architektur (oder Architekturen) aus, wenn Ihre APP für die **Freigabe**konfiguriert ist. Wenn Ihre APP für das **Debuggen**konfiguriert ist, werden die **Bereitstellungs** Optionen **Shared mono runtime** und fast Assembly verwenden aktiviert, um eine explizite Architektur Auswahl zu verhindern.
+In der Regel wählen Sie explizit eine Architektur (oder Architekturen) aus, wenn Ihre APP für die **Freigabe**konfiguriert ist. Wenn Ihre APP für das **Debuggen**konfiguriert ist, werden die Bereitstellungs Optionen **Shared mono runtime** und **fast Assembly** verwenden aktiviert, um eine explizite Architektur Auswahl zu verhindern.
 
-Suchen Sie in Visual Studio für Mac das Projekt im lösungspad, klicken Sie auf das Zahnrad Symbol neben dem Projekt, und wählen Sie **Optionen**aus. Klicken Sie im Dialogfeld **Projektoptionen** auf **Android-Build**. Klicken Sie auf die Registerkarte **Allgemein** , und vergewissern Sie sich, dass frei **gegebene Mono-Laufzeit verwenden** deaktiviert ist (durch das Ausschalten können Sie explizit auswählen, welche ABIS unterstützt werden). Klicken Sie auf die Registerkarte **erweitert** , und überprüfen Sie unter **unterstützte ABIS**den ABIS für die Architekturen, die Sie unterstützen möchten:
+Suchen Sie in Visual Studio für Mac das Projekt im **lösungspad** , klicken Sie auf das Zahnrad Symbol neben dem Projekt, und wählen Sie **Optionen**aus. Klicken Sie im Dialogfeld **Projektoptionen** auf **Android-Build**. Klicken Sie auf die Registerkarte **Allgemein** , und vergewissern Sie sich, dass frei **gegebene Mono-Laufzeit verwenden** deaktiviert ist (durch das Ausschalten können Sie explizit auswählen, welche ABIS unterstützt werden). Klicken Sie auf die Registerkarte **erweitert** , und überprüfen Sie unter **unterstützte ABIS**den ABIS für die Architekturen, die Sie unterstützen möchten:
 
 [![Auswählen von ARMEABI und ARMEABI-v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
 -----
-
 
 Xamarin.Android unterstützt die folgenden Architekturen:
 

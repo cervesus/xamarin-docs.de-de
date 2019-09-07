@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 80f332e45d6c46ad49543923e85cbb2eceadb378
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228089"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767598"
 ---
 # <a name="passing-arguments-in-xaml"></a>Übergeben von Argumenten in XAML
 
@@ -168,7 +168,6 @@ Die [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) -Klasse ist eine generisch
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wird gezeigt, mithilfe der XAML-Attribute, die verwendet werden können, um Argumente an nicht standardmäßige Konstruktoren, die zum Aufrufen der Factorymethoden, und geben Sie ein generisches Argument übergeben.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

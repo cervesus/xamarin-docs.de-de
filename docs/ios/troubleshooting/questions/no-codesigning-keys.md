@@ -7,28 +7,25 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 9d589af6249063add3dc9b085463fde9edd8e449
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: aa2f52be4e485fb55a949a0327161bd1c301334c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278439"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769715"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>Warum schlägt mein iOS-Build fehl mit: Keine gültigen iPhone-Codesignaturschlüssel in Keychain gefunden?
 
 ## <a name="cause-of-the-error"></a>Fehlerursache
 Diese Fehlermeldung tritt auf, wenn das betreffende Projekt nach gültigen Code Signatur Anmelde Informationen sucht, diese jedoch nicht finden kann. Code Signierung ist für Tests und bereit Stellungen auf physischen IOS-Geräten erforderlich. ebenso wie Ad-hoc-& App Store-Builds. 
 
-
 ### <a name="provisioning-devices"></a>Bereitstellen von Geräten
 Wenn Sie noch kein IOS-Gerät bereitgestellt haben, werden Sie im folgenden Leitfaden durch den vollständigen Schritt-für-Schritt-Vorgang geleitet: [Handbuch zur Geräte Bereitstellung](~/ios/get-started/installation/device-provisioning/index.md)
-
 
 ## <a name="bug-when-using-ios-simulator"></a>Fehler bei Verwendung des IOS-Simulators
 
 > [!NOTE]
 > Dieses Problem wurde in den neuesten Versionen von xamarin für Visual Studio behoben. Wenn das Problem jedoch in der aktuellen Version der Software auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen buildprotokolleausgabe.
-
 
 In xamarin. Visual Studio 3,11 ist ein Fehler aufgetreten, der bewirkt hat, dass das IOS-Projekt in einer xamarin. Forms-Vorlage die Codesign-Berechtigungen. plist zu simulatorbuilds hinzugefügt hat. effektive Blockierung von Tests mithilfe des Simulators.
 

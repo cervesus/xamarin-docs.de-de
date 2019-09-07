@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/28/2016
-ms.openlocfilehash: 75180152c3ed7056102038b9019f8017183c17ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 16e6d66cd41ead7a4d234cf45bb73e53e41aa5eb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279947"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769569"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>Verweisen auf Native Bibliotheken in xamarin. IOS
 
@@ -56,7 +56,6 @@ lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a lib
 
 Dadurch wird `libMyLibrary.a` eine universelle (FAT) Bibliothek erstellt, die für alle IOS-Entwicklungsziele geeignet ist.
 
-
 ### <a name="missing-required-architecture-i386"></a>Erforderliche Architektur i386 fehlt.
 
 Wenn Sie eine `does not implement methodSignatureForSelector` -oder `does not implement doesNotRecognizeSelector` -Nachricht in der Lauf Zeit Ausgabe erhalten, wenn Sie versuchen, eine Ziel-C-Bibliothek im IOS-Simulator zu verwenden, wurde die Bibliothek wahrscheinlich nicht für die i386-Architektur kompiliert (siehe [Building Universal Native ](#building_native)Abschnitt "Bibliotheken" oben).
@@ -80,7 +79,6 @@ Wenn Sie die Bibliothek "libmylibrary. a", die Sie aus dem Internet erhalten hab
 - Verschieben der Bibliothek in Ihr Projekt
 - Konfigurieren von xamarin. IOS zum Verknüpfen der Bibliothek
 - Greifen Sie auf die Methoden aus der Bibliothek zu.
-
 
 Um **die Bibliothek in das Projekt**zu übertragen, wählen Sie das Projekt aus dem Projektmappen-Explorer aus, und drücken Sie **Command + Option + a**. Navigieren Sie zur Datei libmylibrary. a, und fügen Sie Sie dem Projekt hinzu. Wenn Sie dazu aufgefordert werden, geben Sie Visual Studio für Mac oder Visual Studio an, um Sie in das Projekt zu kopieren. Suchen Sie nach dem Hinzufügen des Projekts die Datei libfoo. a, klicken Sie mit der rechten Maustaste darauf, und legen Sie die **Buildaktion** auf **keine**fest.
 
@@ -113,7 +111,6 @@ Es gibt zwei Arten von nativen Bibliotheken, die unter IOS verfügbar sind:
 - Freigegebene Bibliotheken, die Teil des Betriebssystems sind.
 
 - Statische Bibliotheken, die Sie mit Ihrer Anwendung ausgeliefert haben.
-
 
 Für den Zugriff auf Methoden, die in einer dieser beiden definiert sind, verwenden Sie die [Funktion "-P/aufrufen" von Mono](https://www.mono-project.com/docs/advanced/pinvoke/) , bei der es sich um dieselbe Technologie handelt, die Sie in .NET verwenden würden.
 
@@ -174,4 +171,3 @@ public static extern double AnimalLibraryVersion();
 Da Sie nur statische Bibliotheken unter IOS verwenden können, gibt es keine externe freigegebene Bibliothek, mit der eine Verknüpfung hergestellt werden kann. Daher muss der path-Parameter im DllImport `__Internal` -Attribut den besonderen Namen verwenden (Beachten Sie die doppelten Unterstriche am Anfang des Namens), im Gegensatz zu der Pfadname.
 
 Dadurch wird DllImport gezwungen, das Symbol der Methode zu suchen, auf die Sie im aktuellen Programm verweisen, anstatt zu versuchen, Sie aus einer freigegebenen Bibliothek zu laden.
-

@@ -5,12 +5,12 @@ description: Visual Studio für Mac können zum Erstellen und integrieren von Pl
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
-ms.openlocfilehash: a6c5e172fa9fe41e210f332d351adc307d0c7df3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 685d4f5de197c6b3664d63306fa206bea17409e1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648191"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766362"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Verwenden von CC++ /Bibliotheken mit xamarin
 
@@ -33,7 +33,7 @@ Letztendlich muss der Code auf allen Zielplattformen kompiliert und erfolgreich 
 ## <a name="high-level-approach"></a>Allgemeiner Ansatz
 
 Die folgende Abbildung stellt den vierstufigen Ansatz dar, der zum Transformieren vonC++ C/Quellcode in eine plattformübergreifende xamarin-Bibliothek verwendet wird, die über nuget freigegeben und dann in einer xamarin. Forms-App verwendet wird.
- 
+
 ![Allgemeiner Ansatz für die Verwendung von C/C++ mit xamarin](images/cpp-steps.jpg)
 
 Die vier Phasen lauten:
@@ -77,7 +77,7 @@ Das Quellcoderepository enthält eine [Liste weiterer](https://github.com/xamari
 
 Die angegebenen Schritte gelten speziell für **Visual Studio für Mac**, aber die Struktur funktioniert auch in **Visual Studio 2017** .
 
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Um die folgenden Schritte durchführen zu können, benötigt der Entwickler Folgendes:
 
@@ -158,7 +158,7 @@ Diese Phase erfordert die [vorkompilierten Bibliotheken](https://github.com/xama
 11. Doppelklicken Sie in **Projektmappen-Explorer**auf das Projekt **mathfuncs. Standard** .
 12. Navigieren Sie zu **Main settings**, und aktualisieren Sie dann den **Standard Namespace** auf **mathfuncs**.
 13. Navigieren Sie zu den **Ausgabe** Einstellungen, und aktualisieren Sie den Assemblynamen in **mathfuncs**.
-14. Navigieren Sie zu den Compilereinstellungen, ändern Sie die **Konfiguration** in **Release**, legen Sie **Debuginformationen** auf **Symbole** fest, und klicken Sie auf **OK**.
+14. Navigieren Sie zu den **Compilereinstellungen** , ändern Sie die **Konfiguration** in **Release**, legen Sie **Debuginformationen** auf **Symbole** fest, und klicken Sie auf **OK**.
 15. DELETE **Class1.cs/Getting** wurde aus dem Projekt gestartet (sofern eines von Ihnen als Teil der Vorlage enthalten ist).
 16. **Klicken Sie** auf den Ordner "Projekt **Abhängigkeiten/Verweise** ", und klicken Sie dann auf **Verweise bearbeiten**.
 17. Wählen Sie **mathfuncs. Shared** auf der Registerkarte **Projekte** aus, und klicken Sie dann auf **OK**.
@@ -169,7 +169,7 @@ Diese Phase erfordert die [vorkompilierten Bibliotheken](https://github.com/xama
     | MathFuncs.Android | Klassenbibliothek       | Android-> Bibliothek      |
     | MathFuncs.iOS     | Bindungs Bibliothek     | IOS-> Bibliothek          |
 
-19. Doppelklicken Sie in **Projektmappen-Explorer**auf das Projekt **mathfuncs. Android** , und navigieren Sie dann zu den Compilereinstellungen.
+19. Doppelklicken Sie in **Projektmappen-Explorer**auf das Projekt **mathfuncs. Android** , und navigieren Sie dann zu den **Compilereinstellungen** .
 
 20. Wenn Sie die **Konfiguration** auf **Debuggen**festgelegt haben, bearbeiten Sie **Symbole** zum Einschließen von **Android**.
 
@@ -426,7 +426,7 @@ Nachdem der Wrapper nun fertig ist, erstellen Sie eine MyMathFuncs-Klasse, die d
     }
     ```
 
-5. Implementieren Sie die iverwerfbare Schnittstelle mithilfe des folgenden Codes:
+5. Implementieren Sie die **iverwerfbare** Schnittstelle mithilfe des folgenden Codes:
 
     ```csharp
     public class MyMathFuncs : IDisposable
@@ -477,7 +477,7 @@ Nachdem der Wrapper nun fertig ist, erstellen Sie eine MyMathFuncs-Klasse, die d
 
 Um die Bibliothek über nuget Verpacken und verteilen zu können, benötigt die Lösung eine **nuspec** -Datei. Dadurch wird bestimmt, welche der resultierenden Assemblys für die einzelnen unterstützten Plattformen eingeschlossen werden.
 
-1. **Klicken** Sie auf die Projekt Mappe " **mathfuncs**", und wählen Sie dann im Menü **Hinzufügen** die Option Projektmappenordner **Hinzufügen** **aus.**
+1. **Klicken** Sie auf die Projekt Mappe " **mathfuncs**", und **Wählen Sie dann**im Menü **Hinzufügen** die Option **Projektmappenordner hinzufügen** aus.
 2. **Klicken Sie** mit der Maustaste auf den Ordner **SolutionItems** , und wählen Sie dann im Menü **Hinzufügen** die Option **neue Datei...** aus.
 3. Wählen Sie im Fenster **neue Datei** die Option **leere XML-Datei** aus, nennen Sie Sie **mathfuncs. nuspec** , und klicken Sie dann auf **neu**.
 4. Aktualisieren Sie **mathfuncs. nuspec** mit den grundlegenden Paket Metadaten, die für den **nuget** -Consumer angezeigt werden sollen. Beispiel:
@@ -586,7 +586,7 @@ Die einfachste Form eines nuget-Feeds ist ein lokales Verzeichnis:
 
 ### <a name="creating-the-package"></a>Erstellen des Pakets
 
-1. Legen Sie die Buildkonfiguration auf **Release**fest, und führen Sie einen Build mit dem **Befehl + B**aus.
+1. Legen Sie die **Buildkonfiguration** auf **Release**fest, und führen Sie einen Build mit dem **Befehl + B**aus.
 2. Öffnen Sie das **Terminal** , und wechseln Sie in den Ordner, der die **nuspec** -Datei enthält.
 3. Führen Sie im **Terminal**den Befehl **nuget Pack** aus, und geben Sie dabei die **nuspec** -Datei, die **Version** (z. b. 1.0.0) und **OutputDirectory** mit dem im [vorherigen Schritt](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)erstellten Ordner an, **d. h. local-nuget-Feed**. Beispiel:
 
@@ -663,7 +663,7 @@ Wiederholen Sie die folgenden Schritte für jedes Projekt (**mathfuncsapp**, **m
 
 Nun, mit einem Verweis auf das **mathfuncs** -Paket in jedem der Projekte, sind die Funktionen für den C# Code verfügbar.
 
-1. Öffnen Sie **MainPage.XAML.cs** aus dem Common **xamarin. Forms**-Projekt **mathfuncsapp** (auf das von **mathfuncsapp. Android** und **mathfuncsapp. IOS**verwiesen wird).
+1. Öffnen **Sie MainPage.XAML.cs** aus dem Common **xamarin. Forms**-Projekt **mathfuncsapp** (auf das von **mathfuncsapp. Android** und **mathfuncsapp. IOS**verwiesen wird).
 2. Fügen Sie **using** -Anweisungen für " **System. Diagnostics** " und " **mathfuncs** " am Anfang der Datei hinzu:
 
     ```csharp

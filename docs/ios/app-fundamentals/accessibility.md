@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
-ms.openlocfilehash: 4a04f0ed4cbb336e331528c3d8265efb31388328
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289518"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766753"
 ---
 # <a name="accessibility-on-ios"></a>Barrierefreiheit unter IOS
 
@@ -74,7 +74,6 @@ UIAccessibility.PostNotification (
     someControl);  // someControl gets focus
 ```
 
-
 ## <a name="accessibility-and-localization"></a>Barrierefreiheit und Lokalisierung
 
 Barrierefreiheits Eigenschaften wie die Bezeichnung und der Hinweis können genau wie andere Text in der Benutzeroberfläche lokalisiert werden.
@@ -122,7 +121,6 @@ Der Bildschirm **Barrierefreiheit** enthält auch Einstellungen für Zoom, Textg
 
 Befolgen Sie diese [VoiceOver-Anweisungen](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) , um die Barrierefreiheit auf IOS-Geräten zu testen.
 
-
 ## <a name="simulator-testing"></a>Simulatortests
 
 Wenn Sie im Simulator testen, steht Ihnen der **Barrierefreiheits Inspektor** zur Verfügung, um zu überprüfen, ob Barrierefreiheits Eigenschaften und Ereignisse richtig konfiguriert sind. Aktivieren Sie den Inspektor in der App " **Einstellungen** ", indem Sie zu **Allgemein > Barrierefreiheit > Barrierefreiheits Inspektor**navigieren:
@@ -135,8 +133,6 @@ Im folgenden finden Sie ein Beispiel für die Ausgabe, wenn eine Tabellen Ansich
 ![](accessibility-images/tableview-a11y-sml.png "Verwenden des Zugriffs Inspektors")
 
 Während der Inspektor sichtbar ist, verwenden Sie das Symbol "X" in der oberen linken Ecke, um das Overlay vorübergehend anzuzeigen und auszublenden und Barrierefreiheits Einstellungen zu aktivieren/deaktivieren.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

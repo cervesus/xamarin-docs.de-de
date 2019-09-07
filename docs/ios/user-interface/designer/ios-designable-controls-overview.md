@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e934059f5428780ea19917068503b58961ac5673
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51afbdf79248af6f76426dd0e0c862e506a0a22f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284182"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768783"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Benutzerdefinierte Steuerelemente im Xamarin Designer für IOS
 
@@ -41,7 +41,6 @@ Eine Eigenschaft, die von einem benutzerdefinierten Steuerelement deklariert wir
 1. Die-Eigenschaft verfügt über ein [Export Attribute-Attribut](xref:Foundation.ExportAttribute) , und ein [BrowsableAttribute-Attribut](xref:System.ComponentModel.BrowsableAttribute) ist auf true festgelegt.
 1. Der Eigenschaftentyp ist ein numerischer Typ, Enumerationstyp, String, bool, [SizeF](xref:System.Drawing.SizeF), [uicolor](xref:UIKit.UIColor)oder [uiimage](xref:UIKit.UIImage). Diese Liste der unterstützten Typen kann in Zukunft erweitert werden.
 
-
 Die-Eigenschaft kann auch mit einem [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) versehen werden, um die Bezeichnung anzugeben, die im Eigenschaften Panel für die Eigenschaft angezeigt wird.
 
 ## <a name="initialization"></a>Initialisierung
@@ -49,7 +48,6 @@ Die-Eigenschaft kann auch mit einem [DisplayNameAttribute](xref:System.Component
 Für `UIViewController` Unterklassen sollten Sie die [viewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code verwenden, der von Sichten abhängt, die Sie im Designer erstellt haben.
 
 Für `UIView` und andere `NSObject` Unterklassen ist die [awakeFromNib](xref:Foundation.NSObject.AwakeFromNib) -Methode der empfohlene Ort, um die Initialisierung des benutzerdefinierten Steuer Elements auszuführen, nachdem es aus der Layoutdatei geladen wurde. Dies liegt daran, dass benutzerdefinierte Eigenschaften, die im Eigenschaften Panel festgelegt sind, nicht festgelegt werden, wenn der Konstruktor des Steuer Elements ausgeführt `AwakeFromNib` wird, aber vor dem Aufrufen von festgelegt wird:
-
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -131,7 +129,6 @@ Die `CustomView` Komponente macht eine `Counter` Eigenschaft verfügbar, die vom
 - Die `AwakeFromNib` -Methode wird ausgeführt, und es wird ein-Rückruf an `Initialize` die-Methode der Komponente vorgenommen.
 - Innerhalb `Initialize` des Werts `Counter` der-Eigenschaft wird auf 0 (null) zurückgesetzt.
 
-
 Um die obige Situation zu beheben, initialisieren Sie `Counter` entweder die-Eigenschaft an anderer Stelle (z. b. im Konstruktor der `AwakeFromNib` Komponente), `Initialize` oder überschreiben Sie die-Methode nicht, und wenden Sie an, wenn die Komponente keine weitere Initialisierung außerhalb der wird derzeit von seinen Konstruktoren verarbeitet.
 
 ## <a name="design-mode"></a>Entwurfs Modus
@@ -140,7 +137,6 @@ Auf der Entwurfs Oberfläche muss ein benutzerdefiniertes Steuerelement einige E
 
 - App-Bündel Ressourcen sind im Entwurfs Modus nicht verfügbar. Bilder sind verfügbar, wenn Sie über [uiimage-Methoden](xref:UIKit.UIImage) geladen werden.
 - Asynchrone Vorgänge, z. b. Webanforderungen, sollten nicht im Entwurfs Modus ausgeführt werden. Die Entwurfs Oberfläche unterstützt keine Animation oder andere asynchrone Aktualisierungen der Benutzeroberfläche des Steuer Elements.
-
 
 Ein benutzerdefiniertes Steuerelement kann [IComponent](xref:System.ComponentModel.IComponent) implementieren und die [designMode](xref:System.ComponentModel.ISite.DesignMode) -Eigenschaft verwenden, um zu überprüfen, ob es sich auf der Entwurfs Oberfläche befindet. In diesem Beispiel wird die Bezeichnung "Entwurfs Modus" auf der Entwurfs Oberfläche und "Runtime" zur Laufzeit angezeigt:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: d78363bf7d38f19a14f689c2825ea9c9934653e4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 022602c50386017b178672e20e3e352345feec0b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280253"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767206"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von "berühren" in xamarin. IOS
 
@@ -35,11 +35,9 @@ Befolgen Sie die nachfolgenden Anweisungen, um dem Storyboard Code hinzuzufügen
 
 In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie die folgenden Schritte aus, um den Code hinzuzufügen, der zum Implementieren von Berührungs Ereignissen
 
-
 1. Öffnen Sie das Projekt **Touch_Start**. Führen Sie zuerst das Projekt aus, um sicherzustellen, dass alles okay ist, und tippen Sie **auf die Schalt** Fläche mit den Es sollte ein Bildschirm angezeigt werden, der dem folgenden ähnelt (obwohl keine der Schaltflächen funktioniert):
 
     [![](ios-touch-walkthrough-images/image4.png "Beispiel-App mit nicht funktionierenden Schaltflächen ausführen")](ios-touch-walkthrough-images/image4.png#lightbox)
-
 
 1. Bearbeiten Sie die Datei **TouchViewController.cs** , und fügen Sie der-Klasse `TouchViewController`die folgenden beiden Instanzvariablen hinzu:
 
@@ -49,7 +47,6 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
     private bool touchStartedInside;
     #endregion
     ```
-
 
 1. Implementieren Sie `TouchesBegan` die-Methode, wie im folgenden Code gezeigt:
 
@@ -172,7 +169,6 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
     [![](ios-touch-walkthrough-images/image4.png "Der Bildschirm zum Starten der APP")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "Der Bildschirm, nachdem der Benutzer eine Schaltfläche gezogen hat")](ios-touch-walkthrough-images/image5.png#lightbox)
- 
 
 <a name="Gesture_Recognizer_Samples" />
 
@@ -189,7 +185,6 @@ Wenn Sie den Code für das [Start Beispiel](https://docs.microsoft.com/samples/x
  [![](ios-touch-walkthrough-images/image6.png "Klicken auf die Schaltfläche \"Gesten Erkennungs Beispiele\" zeigt diesen Bildschirm an")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 Führen Sie die folgenden Schritte aus, um Gesten Erkennungs Tools zu implementieren:
-
 
 1. Bearbeiten Sie die Datei **GestureViewController.cs** , und fügen Sie die folgende Instanzvariable hinzu:
 
@@ -248,7 +243,6 @@ Beachten Sie, dass wir der Geste in Form der Methode `HandleDrag` ein Ziel zuwei
 
     Der obige Code überprüft zuerst den Status der Gestenerkennung und verschiebt dann das Bild um den Bildschirm. Wenn dieser Code vorhanden ist, kann der Controller jetzt das Ziehen eines Bilds auf dem Bildschirm unterstützen.
 
-
 1. Fügen Sie `UITapGestureRecognizer` einen hinzu, der das Bild ändert, das in doubletouchimage angezeigt wird. Fügen Sie dem `GestureViewController` Controller die folgende Methode hinzu:
 
     ```csharp
@@ -304,13 +298,10 @@ Beachten Sie, dass wir der Geste in Form der Methode `HandleDrag` ein Ziel zuwei
 
     Beachten Sie auch, dass der Wert von `originalImageFrame`initialisiert wird.
 
-
 1. Führen Sie die Anwendung aus, und interagieren Sie mit den beiden Bildern.
 Der folgende Screenshot zeigt ein Beispiel für diese Interaktionen:
     
     [![](ios-touch-walkthrough-images/image7.png "Dieser Screenshot zeigt eine Drag-Interaktion.")](ios-touch-walkthrough-images/image7.png#lightbox)
-
-
 
 <a name="Custom_Gesture_Recognizer"/>
 
@@ -321,7 +312,6 @@ In diesem Abschnitt werden die Konzepte aus den vorherigen Abschnitten zum Erste
  [![](ios-touch-walkthrough-images/image8.png "Die APP erkennt, wenn der Benutzer ein \"V\" auf dem Bildschirm zeichnet.")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Führen Sie die folgenden Schritte aus, um eine benutzerdefinierte Gestenerkennung zu erstellen:
-
 
 1. Fügen Sie dem Projekt eine neue Klasse mit `CheckmarkGestureRecognizer`dem Namen hinzu, und sehen Sie, wie der folgende Code aussieht:
 
@@ -441,8 +431,6 @@ Führen Sie die folgenden Schritte aus, um eine benutzerdefinierte Gestenerkennu
     Die Reset-Methode wird aufgerufen, `State` wenn die-Eigenschaft `Recognized` entweder `Ended`in oder geändert wird. Dies ist der Zeitpunkt, an dem alle internen Status in der benutzerdefinierten Gestenerkennung zurückgesetzt werden.
 Nun kann die Klasse bei der nächsten Interaktion des Benutzers mit der Anwendung neu gestartet werden, und Sie können versuchen, die Geste zu erkennen.
 
-
-
 1. Nachdem Sie nun eine benutzerdefinierte Gestenerkennung (`CheckmarkGestureRecognizer`) definiert haben, bearbeiten Sie die Datei **CustomGestureViewController.cs** , und fügen Sie die folgenden beiden Instanzvariablen hinzu:
 
     ```csharp
@@ -499,11 +487,7 @@ Nun kann die Klasse bei der nächsten Interaktion des Benutzers mit der Anwendun
     
     [![](ios-touch-walkthrough-images/image10.png "Die Schaltfläche ist deaktiviert")](ios-touch-walkthrough-images/image10.png#lightbox)
 
-
-
 In den obigen drei Abschnitten wurden verschiedene Möglichkeiten zur Reaktion auf touchereignisse in ios aufgezeigt: Verwenden von touchereignissen, integrierten Gesten Erkennungs Programmen oder mit einer benutzerdefinierten Gestenerkennung.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

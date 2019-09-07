@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 14fb3740f558b006d507ff6875fd2cfc81a04298
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: fee63906d30f68d397b60a465a87bd96d4106d14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119732"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757431"
 ---
 # <a name="an-introduction-to-renderscript"></a>Eine Einführung in RenderScript
 
@@ -44,7 +44,7 @@ Es gibt drei wichtige Konzepte für die Verwendung von renderscripts in einer An
 
 1. **Ein Kontext** &ndash; Eine verwaltete API, die von der Android SDK bereitgestellt wird, die Ressourcen für RenderScript zuordnet, und ermöglicht der Android-App das übergeben und empfangen von Daten aus dem RenderScript.
 
-2. **Ein _computekernel_**  Dies wird auch als kernkernel oder _Kernel_bezeichnet. Dies ist eine Routine, die die Arbeit erledigt. &ndash; Der Kernel ähnelt einer C-Funktion. Dabei handelt es sich um eine parallelisierbare Routine, die über alle Daten im zugeordneten Arbeitsspeicher ausgeführt wird.
+2. **Ein _computekernel_**  Dies wird auch als _kernkernel_ oder Kernel bezeichnet. Dies ist eine Routine, die die Arbeit erledigt. &ndash; Der Kernel ähnelt einer C-Funktion. Dabei handelt es sich um eine parallelisierbare Routine, die über alle Daten im zugeordneten Arbeitsspeicher ausgeführt wird.
 
 3. **Zugewiesener Arbeitsspeicher** &ndash; Daten werden über eine _[Zuordnung](xref:Android.Renderscripts.Allocation)_ an den und aus einem Kernel übermittelt. Ein Kernel kann über eine Eingabe und/oder eine Ausgabe Zuordnung verfügen.
 
@@ -63,7 +63,6 @@ Die RenderScript-Engine führt eine Lauf Zeit Überprüfung durch, um sicherzust
 
 Alle RenderScript-Kernel werden von einem Typ umschließt, der ein Nachfolger von ist.[`Android.Renderscripts.Script`](xref:Android.Renderscripts.Script)
 -Klasse. Die `Script` -Klasse wird verwendet, um Parameter für ein RenderScript festzulegen, `Allocations`den entsprechenden festzulegen und das RenderScript auszuführen. Der Android SDK enthält `Script` zwei Unterklassen:
-
 
 - **`Android.Renderscripts.ScriptIntrinsic`** Einige der gängigeren RenderScript-Aufgaben werden in der Android SDK gebündelt und können von einer Unterklasse der [scriptintrinsic](xref:Android.Renderscripts.ScriptIntrinsic) -Klasse aufgerufen werden. &ndash; Es ist nicht erforderlich, dass ein Entwickler zusätzliche Schritte durchführt, um diese Skripts in Ihrer Anwendung zu verwenden, da Sie bereits bereitgestellt wurden.
 
@@ -109,7 +108,7 @@ Ausführliche Informationen zu den einzelnen systeminternen Skripts finden Sie i
 
 Im folgenden werden die grundlegenden Schritte zum Verwenden von RenderScript in einer Android-Anwendung beschrieben.
 
-**Erstellen eines RenderScript** -Kontexts &ndash; Das[`Renderscript`](xref:Android.Renderscripts.RenderScript)
+**Erstellen eines RenderScript-Kontexts** &ndash; Das[`Renderscript`](xref:Android.Renderscripts.RenderScript)
 die Klasse ist ein verwalteter Wrapper um den RenderScript-Kontext und steuert die Initialisierung, Ressourcenverwaltung und Bereinigung. Das RenderScript-Objekt wird mithilfe der `RenderScript.Create` Factorymethode erstellt, die einen Android-Kontext (z. b. eine Aktivität) als Parameter annimmt. Die folgende Codezeile veranschaulicht, wie der RenderScript-Kontext initialisiert wird:
 
 ```csharp
@@ -153,8 +152,6 @@ Vielleicht möchten Sie das [Bild mit der RenderScript](https://github.com/xamar
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Handbuch wurde RenderScript eingeführt und erläutert, wie Sie es in einer xamarin. Android-Anwendung verwenden. Es wurde kurz erläutert, was RenderScript ist und wie es in einer Android-Anwendung funktioniert. Es wurden einige der Hauptkomponenten in RenderScript und der Unterschied zwischen _Benutzer_ Skripts und _INSTRINC_-Skripts beschrieben. Schließlich wurden in diesem Handbuch die Schritte zur Verwendung eines intrinsischen Skripts in einer xamarin. Android-Anwendung erläutert.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

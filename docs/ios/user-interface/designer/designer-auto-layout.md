@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: f931397f50b6b7aece099efb775a6dda560bf0eb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280004"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768412"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin Designer für IOS
 
@@ -47,7 +47,6 @@ Die Standardkonfiguration für den IOS-Designer hat den Einschränkungs Modus ak
 
     ![](designer-auto-layout-images/image01.png "Das Kontrollkästchen \"AutoLayout verwenden\" im Eigenschaften Panel")
 
-
 Standardmäßig werden keine Einschränkungen auf der-Oberfläche erstellt oder sichtbar. Stattdessen werden Sie zum Zeitpunkt der Kompilierung automatisch aus den Frame Informationen abgeleitet. Zum Hinzufügen von Einschränkungen müssen wir ein Element auf der Entwurfs Oberfläche auswählen und Einschränkungen hinzufügen. Dazu können Sie die Einschränkungs **Symbolleiste**verwenden.
 
 ## <a name="constraints-toolbar"></a>Einschränkungs Symbolleiste
@@ -63,7 +62,6 @@ Die Einschränkungs Symbolleiste wurde aktualisiert und besteht nun aus zwei Hau
 - **Schaltfläche "Einschränkungen aktualisieren":** Es ist wichtig zu beachten, dass die Änderungen abhängig davon, ob Sie sich im Bearbeitungsmodus für Einschränkungen befinden, geändert werden.
   - Im Einschränkungs Bearbeitungsmodus passt diese Schaltfläche die Einschränkungen so an, dass Sie dem Element Rahmen entsprechen.
   - Im Frame Bearbeitungsmodus passt diese Schaltfläche den Element Rahmen an die Position an, die die Einschränkungen definieren.
-
 
 ## <a name="surface-based-constraint-editing"></a>Bearbeitung von Oberflächen basierter Einschränkung
 
@@ -87,8 +85,6 @@ Beachten Sie die drei gestrichelten grünen Linien für die anderen beiden Schal
 
 > [!IMPORTANT]
 > Layouthandbücher sind spezielle Einschränkungs Ziele, die es uns ermöglichen, obere und untere Einschränkungen zu erstellen, die das vorhanden sein von System leisten, z. b. Status leisten oder Symbolleisten, berücksichtigen. Einer der Haupt Verwendungsmöglichkeiten besteht darin, dass eine APP zwischen IOS 6 und IOS 7 kompatibel ist, da in der neuesten Version die Container Ansicht unter der Statusleiste angezeigt wird. Weitere Informationen finden Sie in der [Apple-Dokumentation](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
-
-
 
 In den nächsten drei Abschnitten wird die Arbeit mit verschiedenen Einschränkungs Typen eingeführt.
 
@@ -129,7 +125,6 @@ Bei der Verwendung von Einschränkungen können verschiedene Arten von Problemen
 - **Widersprüchliche Einschränkungen** – Dies ist der Fall, wenn mehrere Einschränkungen erzwingen, dass das Element in Konflikt stehende Werte für ein Attribut aufweist und die Einschränkungs-Engine diese nicht abstimmen kann.
 - **Unter beschränkte Elemente** – die Eigenschaften eines Elements (Location + size) müssen vollständig durch den Satz von Einschränkungen und systeminternen Größen abgedeckt werden, damit die Einschränkungen gültig sind. Wenn diese Werte mehrdeutig sind, wird das Element als nicht eingeschränkt bezeichnet.
 - **Frame-fehllacement** – Dies tritt auf, wenn ein Element Rahmen und sein Satz von Einschränkungen zwei verschiedene resultierende Rechtecke definieren.
-
 
 In diesem Abschnitt werden die drei oben aufgeführten Probleme erläutert, und es wird erläutert, wie Sie behandelt werden.
 

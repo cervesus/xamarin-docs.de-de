@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ac23ae6fe094b8049ac1b3460d327716e4ece
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291676"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766807"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchos-Menü Steuerelement (Force Touch) in xamarin
 
@@ -28,7 +28,6 @@ Das Watch-Kit bietet eine Force Touch Geste, mit der ein Menü ausgelöst wird, 
 Force-Berührungen werden keinem bestimmten Element auf dem Bildschirm zugeordnet. an einen Schnittstellen Controller kann nur ein Menü angefügt werden, und es wird unabhängig davon angezeigt, wo der Force Touch auf dem Bildschirm angezeigt wird.
 
 Zwischen einer und vier Menü Optionen können angezeigt werden.
-
 
 ## <a name="adding-a-menu"></a>Hinzufügen eines Menüs
 
@@ -56,7 +55,6 @@ partial void MenuItemTapped ()
 Ähnlich wie Registerkarten Bilder in ios erfordern Menü Element Bilder ein undurchsichtiges Muster mit einem Alphakanal, mit dem der Hintergrund durch angezeigt werden kann.
 
 Für eine optimale Leistung sollten Sie die für das Menü verwendeten Images dem App-Projekt überwachen (nicht das App-Erweiterungsprojekt) hinzufügen.
-
 
 ## <a name="changing-the-menu-items"></a>Ändern der Menü Elemente
 
@@ -90,8 +88,6 @@ void MenuItemTapped ()
 Die `ClearAllMenuItems` -Methode kann aufgerufen werden, um alle *Programm gesteuert hinzugefügten* Menü Elemente zu entfernen.
 
 Im Storyboard konfigurierte Menü Elemente können nicht gelöscht werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: d409787661491a6922434a12157c494851644412
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d180345c36531b58c13eebbd97dc4f7555b8f13c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291632"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768872"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Auffüllen einer Tabelle mit Daten in xamarin. IOS
 
@@ -25,7 +25,6 @@ In dieser Anleitung wird Folgendes behandelt:
 - Hinzufügen eines Indexes
 - Hinzufügen von Kopf-und Fußzeilen
 
-
 <a name="Subclassing_UITableViewSource" />
 
 ## <a name="subclassing-uitableviewsource"></a>Subclassinguitableviewsource
@@ -36,7 +35,6 @@ Zum Erstellen von Daten in einer Tabelle sind nur zwei obligatorische Methoden e
 
 - **Rowsinsection** – gibt [`nint`](~/cross-platform/macios/nativetypes.md) die Anzahl der Daten Zeilen an, die in der Tabelle angezeigt werden sollen.
 - **Getcell** – gibt eine `UITableCellView` mit Daten für den entsprechenden Zeilen Index zurück, der an die-Methode übermittelt wird.
-
 
 Die basierbaren Beispieldatei **TableSource.cs** verfügt über die einfachste mögliche Implementierung `UITableViewSource`von. Im folgenden Code Ausschnitt sehen Sie, dass Sie ein Array von Zeichen folgen akzeptiert, die in der Tabelle angezeigt werden, und einen Standard Zellstil zurückgibt, der jede Zeichenfolge enthält:
 
@@ -139,13 +137,9 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-
 Nun kann der Benutzer eine Zeile berühren, und es wird eine Warnung angezeigt:
 
-
-
  [![](populating-a-table-with-data-images/image4.png "Die ausgewählte Zeile \"Warnung\"")](populating-a-table-with-data-images/image4.png#lightbox)
-
 
 ## <a name="cell-reuse"></a>Wiederverwendung von Zellen
 
@@ -246,7 +240,6 @@ Die `UITableViewSource` Unterklasse benötigt dann die folgenden Methoden, die f
 - **Rowsinsection** – gibt die Anzahl der Zeilen in einem angegebenen Abschnitt zurück.
 - **Sectionindextiteln** – gibt das Array von Zeichen folgen zurück, das zum Anzeigen des Indexes verwendet wird. Der Beispielcode gibt ein Array von Buchstaben zurück.
 
-
 Die aktualisierten Methoden in der Beispieldatei **basictableindex/tablesource. cs** sehen wie folgt aus:
 
 ```csharp
@@ -266,7 +259,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 Indizes werden im Allgemeinen nur mit dem einfachen Tabellen Stil verwendet.
 
-
 <a name="Adding_Headers_and_Footers" />
 
 ## <a name="adding-headers-and-footers"></a>Hinzufügen von Kopf-und Fußzeilen
@@ -280,7 +272,6 @@ Zum Anzeigen von Kopf-und Fußzeilen benötigt die `UITableViewSource` Unterklas
 
 - **Titleforheader** – gibt den Text zurück, der als Header verwendet werden soll.
 - **Titleforfooter** – gibt den Text zurück, der als Fußzeile verwendet werden soll.
-
 
 Die aktualisierten Methoden in der Beispieldatei **basictableheaderfooter/Code/tablesource. cs** sehen wie folgt aus:
 
@@ -296,7 +287,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 ```
 
 Sie können die Darstellung der Kopf-und Fußzeile mit einem Ansichts Objekt weiter anpassen, indem `GetViewForHeader` Sie `GetViewForFooter` die-Methode und `UITableViewSource`die-Methode überschreibt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

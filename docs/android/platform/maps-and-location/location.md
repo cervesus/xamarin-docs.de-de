@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 8366796af47e8915bf0bd9ba680e6144e1cfaebc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61532eb1e31db6a862275180394b2b5ba9b05f8e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280608"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761719"
 ---
 # <a name="location-services-on-android"></a>Location Services unter Android
 
@@ -75,11 +75,10 @@ else
 
 Apps müssen für das Szenario tolerant sein, in dem der Benutzer keine Berechtigungen erteilt (oder die Berechtigung widerrufen hat) und eine Möglichkeit hat, diese Situation ordnungsgemäß zu behandeln. Weitere Informationen zum Implementieren von Lauf Zeit Berechtigungs Überprüfungen in xamarin. Android finden Sie im [Berechtigungs Handbuch](~/android/app-fundamentals/permissions.md) .
 
-
 ## <a name="using-the-fused-location-provider"></a>Verwenden des Anbieters für die Zwischenspeicher Orte
 
 Der Anbieter für die standortübergreifende Bereitstellung ist die bevorzugte Methode für Android-Anwendungen, um Standort Updates vom Gerät zu empfangen, da der Anbieter für den Standort während der Laufzeit effizient ausgewählt wird, um die optimalen Standortinformationen auf Akku-effiziente Weise bereitzustellen. Beispielsweise erhält ein Benutzer, der die Umgebung durchläuft, den besten Ort, der sich mit GPS ausliest. Wenn der Benutzer dann in den einzelnen Bereichen wechselt, in denen GPS schlecht funktioniert (wenn überhaupt), wechselt der Anbieter für den zusammen gezierten Standort möglicherweise automatisch zu WiFi, was besser im Inneren funktioniert.
- 
+
 Die Anbieter-API für den Fused-Speicherort bietet eine Vielzahl anderer Tools, mit denen standortabhängige Anwendungen wie Geofencing und Aktivitäts Überwachung unterstützt werden können. In diesem Abschnitt befassen wir uns mit den Grundlagen der Einrichtung `LocationClient`von, der Einrichtung von Anbietern und der Beschaffung des Benutzer Standorts.
 
 Der Anbieter für den Fused-Speicherort ist Teil [Google Play Services](https://developer.android.com/google/play-services/index.html).

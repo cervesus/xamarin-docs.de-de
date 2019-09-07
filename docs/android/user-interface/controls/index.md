@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 31f6c0dd0d4f5452ebc2cbde0cc44cd9c47eeb9a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e3f6524f03612ee39c537f482b1db916ecf08a23
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510321"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759102"
 ---
 # <a name="xamarinandroid-controls-widgets"></a>Xamarin. Android-Steuerelemente (Widgets)
 
@@ -24,20 +24,17 @@ Xamarin. Android macht alle von Android bereitgestellten nativen Benutzeroberfl�
 
 ![Beispiel für eine Aktionsleiste](images/action-bar.png)
 
-
 ## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[Automatische Vervollständigung](~/android/user-interface/controls/auto-complete.md)
 
 `AutoCompleteTextView`ein bearbeitbares Text Ansichts Element, das die Vervollständigungs Vorschläge automatisch anzeigt, während der Benutzer die Eingabe durchläuft. Die Liste der Vorschläge wird in einem Dropdown Menü angezeigt, in dem der Benutzer ein Element auswählen kann, um den Inhalt des Bearbeitungs Felds durch zu ersetzen.
 
 ![Beispiel für Auto Vervollständigen](images/auto-complete.png)
 
-
 ## <a name="buttonsandroiduser-interfacecontrolsbuttonsindexmd"></a>[Schaltflächen](~/android/user-interface/controls/buttons/index.md)
 
 Schaltflächen sind UI-Elemente, auf die der Benutzer tippt, um eine Aktion auszuführen.
 
 ![Beispiel Schaltflächen](images/buttons.png)
-
 
 ## <a name="calendarandroiduser-interfacecontrolscalendarmd"></a>[Kalender](~/android/user-interface/controls/calendar.md)
 
@@ -46,13 +43,11 @@ Die `Calendar` -Klasse wird verwendet, um eine bestimmte Instanz zeitlich (einen
 
 ![Beispiel Kalender](images/calendar.png)
 
-
 ## <a name="cardviewandroiduser-interfacecontrolscard-viewmd"></a>[CardView](~/android/user-interface/controls/card-view.md)
 
 `CardView`ist eine Benutzeroberflächen Komponente, die Text-und Bildinhalte in Sichten darstellt, die Karten ähneln. `CardView`wird als `FrameLayout` Widget mit abgerundeten Ecken und einem Schatten implementiert. In der Regel `CardView` wird ein-Element verwendet, um ein einzelnes Zeilen `ListView` Element `GridView` in einer-oder-Ansichts Gruppe darzustellen.
 
 ![Beispiel Kartenansicht](images/cardview.png)
-
 
 ## <a name="edit-textandroiduser-interfacecontrolsedit-textmd"></a>[Text bearbeiten](~/android/user-interface/controls/edit-text.md)
 
@@ -60,13 +55,11 @@ Die `Calendar` -Klasse wird verwendet, um eine bestimmte Instanz zeitlich (einen
 
 ![Beispiel für Bearbeitungs Text](images/edit-text.png)
 
-
 ## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Katalog](~/android/user-interface/controls/gallery.md)
 
 `Gallery`ist ein layoutwidget, das verwendet wird, um Elemente in einer horizontalen Bildlauf-Liste anzuzeigen. die aktuelle Auswahl wird in der Mitte der Ansicht positioniert.
 
 ![Beispiel Katalog](images/gallery.png)
-
 
 ## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[Navigationsleiste](~/android/user-interface/controls/navigation-bar.md)
 
@@ -74,13 +67,11 @@ Die *Navigationsleiste* stellt Navigations Steuerelemente auf Geräten bereit, d
 
 ![Beispiel-Navigationsleiste](images/navigation-bar.png)
 
-
 ## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Auswahl](~/android/user-interface/controls/pickers/index.md)
 
 *Picker* sind Elemente der Benutzeroberfläche, die es dem Benutzer ermöglichen, ein Datum oder eine Uhrzeit mithilfe von Dialogfeldern auszuwählen, die von Android bereitgestellt werden.
 
 ![Beispiel Auswahl](images/picker.png)
-
 
 ## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Popupmenü](~/android/user-interface/controls/popup-menu.md)
 
@@ -88,13 +79,11 @@ Die *Navigationsleiste* stellt Navigations Steuerelemente auf Geräten bereit, d
 
 ![Beispielpopup-Menü](images/popup-menu.png)
 
-
 ## <a name="ratingbarandroiduser-interfacecontrolsratingbarmd"></a>[Ratingleiste](~/android/user-interface/controls/ratingbar.md)
 
 Ein `RatingBar` ist ein Benutzeroberflächen Element, das eine Bewertung in Sternen anzeigt.
 
 ![Beispiel für eine ratingleiste](ratingbar-images/01-ratingbar.png)
-
 
 ## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Drehfeld](~/android/user-interface/controls/spinner.md)
 
@@ -102,13 +91,11 @@ Ein `RatingBar` ist ein Benutzeroberflächen Element, das eine Bewertung in Ster
 
 ![Beispiel Spinner](images/spinner.png)
 
-
 ## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Schalter](~/android/user-interface/controls/switch.md)
 
 `Switch`ist ein Benutzeroberflächen Element, das es einem Benutzer ermöglicht, zwischen zwei Zuständen umzuschalten, z. b. ein-oder ausschalten. Der `Switch` Standardwert ist off.
 
 ![Beispiel Wechsel](images/switch.png)
-
 
 ## <a name="textureviewandroiduser-interfacecontrolstexture-viewmd"></a>[TextureView](~/android/user-interface/controls/texture-view.md)
 
@@ -116,13 +103,11 @@ Ein `RatingBar` ist ein Benutzeroberflächen Element, das eine Bewertung in Ster
 
 ![Beispiel für eine Textur Ansicht](images/texture-view.png)
 
-
 ## <a name="toolbarandroiduser-interfacecontrolstool-barindexmd"></a>[ToolBar](~/android/user-interface/controls/tool-bar/index.md)
 
 Das `Toolbar` Widget (eingeführt in Android 5,0 Lollipop) kann sich als Generalisierung der Aktionsleisten Schnittstelle &ndash; vorstellen, die die Aktionsleiste ersetzen soll. Der `Toolbar` kann an beliebiger Stelle in einem App-Layout verwendet werden, und er ist viel anpassbarer als eine Aktionsleiste.
 
 ![Beispiel Symbolleiste](images/toolbar.png)
-
 
 ## <a name="viewpagerandroiduser-interfacecontrolsview-pagerindexmd"></a>[ViewPager](~/android/user-interface/controls/view-pager/index.md) 
 
@@ -130,10 +115,8 @@ Der `ViewPager` ist ein Layoutmanager, mit dem der Benutzer nach links und recht
 
 ![Beispiel für "viewpager"](images/viewpager.png)
 
-
 ## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[WebView](~/android/user-interface/controls/web-view.md)
 
 `WebView`ist ein Benutzeroberflächen Element, mit dem Sie ein eigenes Fenster zum Anzeigen von Webseiten erstellen können (oder sogar einen kompletten Browser entwickeln).
 
 ![Beispiel für Webansicht](images/web-view.png)
-

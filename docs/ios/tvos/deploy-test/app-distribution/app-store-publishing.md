@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4dface536504b0a79d376ab0979443a5ed19e901
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282715"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769248"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Veröffentlichen im Apple TV App Store
 
@@ -24,7 +24,6 @@ Der Vorgang zum Übermitteln einer Anwendung an den Apple TV App Store umfasst F
 2. Erstellen eines *Verteilungsbereitstellungsprofils*
 3. Verwenden Sie dieses Profil, um Ihre APP zu erstellen.
 4. Übermitteln Ihrer APP über *iTunes Connect*.
-
 
 In diesem Artikel werden alle erforderlichen Schritte zum Bereitstellen, erstellen und Übermitteln einer APP für die Verteilung von Apple TV App Store behandelt.
 
@@ -39,7 +38,6 @@ Beachten Sie bei der Übermittlung einer App Folgendes:
 
 1. Stellen Sie sicher, dass die Beschreibung der APP mit der in der APP enthaltenen Funktionalität übereinstimmt.
 2. Stellen Sie sicher, dass die App bei normaler Nutzung nicht abstürzt. Dies schließt die Verwendung auf jedem von Ihnen unterstützten Apple TV-Gerät ein.
-
 
 Apple unterhält außerdem eine Liste der Tipps für die Übermittlung von Apple TV App Store. Diese Tipps finden Sie unter [Distributing on the App Store](https://developer.apple.com/appstore/resources/submission/tips.html) (Verteilen im App Store).
 
@@ -121,7 +119,6 @@ Führen Sie für die Bereitstellung die folgenden Schritte mithilfe des webbasie
 
 Eine ausführliche Anleitung finden Sie unter [Creating a Distribution Profile](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#creatingprofile) (Erstellen eines Verteilungsprofils) und [Selecting a Distribution Profile in a Xamarin.iOS Project](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile) (Auswählen eines Verteilungsprofils in einem Xamarin.iOS-Projekt). Beide Dokumente sind zwar für IOS spezifisch, aber die gleiche Technik wird für tvos-Apps verwendet.
 
-
 <a name="Setting_the_Build_Configuration_for_your_Application" />
 
 ### <a name="setting-the-build-configuration-for-your-application"></a>Festlegen der Buildkonfiguration für die Anwendung
@@ -137,7 +134,6 @@ Führen Sie folgende Schritte aus:
 5. Außerdem erforderte Apple, dass tvos-apps Bitcode verwenden. Fügen Sie erneut unter der **Releasekonfiguration** dem Feld `--bitcode=asmonly` **zusätzliches mberührungs-Argument** hinzu.
 6. Aktivieren Sie das Kontrollkästchen **PNG-Bilddateien für IOS optimieren** , da dies dazu beiträgt, die erstellbare Größe Ihrer APP weiter zu verringern.
 7. Das Debuggen sollte *nicht* aktiviert werden, da dadurch der Build unnötig vergrößert wird.
-
 
 <a name="Building_and_Submitting_the_Distributable" />
 
@@ -189,7 +185,6 @@ Nachdem Ihr Verteilungsbuild erstellt und archiviert wurde, können Sie nun Ihre
 
 Nach Abschluss des Verteilungsbuilds können Sie Ihre iOS-Anwendung nun zur Überprüfung und Freigabe im App Store an Apple übermitteln.
 
-
 Der Archivierungs Workflow in Visual Studio für Mac öffnet das Anwendungs Lade Modul automatisch, sobald Sie `.ipa`Folgendes gespeichert haben:
 
 1. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
@@ -225,7 +220,6 @@ Wenn Sie Probleme beim Einreichen Ihrer xamarin. tvos-APP an den Apple TV App St
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde eine Schritt-für-Schritt-Anleitung zum Konfigurieren, entwickeln und Übermitteln einer APP für die Apple TV App Store-Veröffentlichung vorgestellt. Zuerst wird die Vorgehensweise zum Erstellen und Installieren eines Verteilungsbereitstellungsprofils erklärt. Im nächsten Schritt wird erläutert, wie Sie mit Visual Studio für Mac einen verteilungsbuild erstellen. Schließlich haben Sie erfahren, wie Sie iTunes Connect und das Xcode Archive-Tool verwenden, um eine Anwendung an den Apple TV App Store zu übermitteln.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

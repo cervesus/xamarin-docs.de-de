@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 8ecc0cf0ed1fe77f55044d44ecdfc43d6cb6b448
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b7dfeee92020be2fb40cfdfc5eb1b97d065b97e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289105"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758177"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -44,7 +44,6 @@ Beim Entwerfen und entwickeln einer Anwendung sind möglicherweise bereits hart 
 - Sortieren von Daten.
 
 Unabhängig davon, auf welchen mobilen Plattformen Ihre APP diese Tipps als Ziel hat, können Sie eine hochwertige Lokalisierte app erstellen.
-
 
 ## <a name="design-considerations"></a>Entwurfsüberlegungen
 
@@ -85,7 +84,6 @@ Einige Ressourcen sind jedoch für die Lokalisierung von Bedeutung, wie z. b.:
 - Symbole – einige Ikonographie können Kultur spezifisch sein, und Sie können die Verwendung Ihrer APP vereinfachen, indem Sie die Bilder lokalisieren, um das lokale Verständnis widerzuspiegeln.
 - Farben – einige Kulturen verstehen Farben anders – Rot bedeutet möglicherweise eine Warnung in einer Region, aber ein gutes Glück in einer anderen Region. Informieren Sie sich beim Entwerfen Ihrer APP mit systemeigenen Referenten, um zu bestimmen, ob Sie einen Mechanismus zum Lokalisieren von Farben aufbauen sollten.
 
-
 ### <a name="videos-and-sound"></a>Videos und Sound
 
 Videos und Sound sind besondere Herausforderungen bei der Lokalisierung einer Anwendung, denn während es relativ einfach ist, Zeichen folgen zu übersetzen, kann das Aufzeichnen mehrerer VoiceOver-Spuren oder Videoclips sowohl aufwendig als auch schwierig sein.
@@ -93,7 +91,6 @@ Videos und Sound sind besondere Herausforderungen bei der Lokalisierung einer An
 Mehrere Kopien von Video-und Audiodateien können auch die Größe Ihrer Anwendung erheblich erhöhen (insbesondere, wenn Sie eine Lokalisierung in eine große Anzahl von Sprachen haben oder viele Mediendateien haben). Sie können in Erwägung gezogen, dass Sie nur die erforderlichen Sprachressourcen herunterladen, nachdem der Benutzer die APP installiert hat. Dies kann jedoch auch zu einem schlechten Benutzer Verhalten in langsamen Netzwerken führen.
 
 Es gibt oftmals mehrere Möglichkeiten, Lokalisierungs Probleme zu lösen – das wichtigste dabei ist, Sie vorab in Erwägung zu ziehen und sicherzustellen, dass Ihre Anwendung darauf ausgelegt ist.
-
 
 ### <a name="dates-times-numbers-and-currency"></a>Datumsangaben, Uhrzeiten, Zahlen und Währungen
 
@@ -144,7 +141,6 @@ Stellen Sie sicher, dass Sie Ihren Suchalgorithmus mit mehreren Sprachen schreib
 - Wort Stamm Erkennung – Wenn die Suche erstellt wurde, um nach ähnlichen Wörtern zu suchen, sind diese Optimierungen für alle Sprachen konzipiert, die Sie unterstützen?
 - Sortieren – stellen Sie sicher, dass die Ergebnisse ordnungsgemäß sortiert sind (siehe oben).
 
-
 ### <a name="data-from-external-sources"></a>Daten aus externen Quellen
 
 Viele Anwendungen laden Daten aus externen Quellen herunter, von Twitter-und RSS-Feeds bis hin zu Wetter-, Nachrichten-oder Aktienkursen. Wenn Sie dies für einen Benutzer anzeigen, müssen Sie in Erwägung gezogen werden, dass Sie einen Bildschirm mit nicht relevanten oder unlesbaren Informationen anzeigen.
@@ -157,7 +153,6 @@ Es gibt einige Strategien, die Sie verwenden können, um sicherzustellen, dass I
 
 Dies kann sich auch auf externe Links zu Audiospuren oder Videos auswirken – wenn Sie Ihre Anwendung entwerfen, planen Sie die Beschaffung von übersetzten Inhalten, oder stellen Sie sicher, dass Benutzer von der Benutzeroberfläche ausreichend informiert werden, wenn Inhalte nicht in ihren Kurse.
 
-
 ### <a name="dont-over-translate"></a>Nicht übersetzen
 
 Einige Zeichen folgen in Ihrer APP müssen möglicherweise nicht übersetzt werden, oder Sie benötigen zumindest eine besondere Aufmerksamkeit durch den Übersetzer. Beispiele hierfür sind:
@@ -169,20 +164,15 @@ Einige Zeichen folgen in Ihrer APP müssen möglicherweise nicht übersetzt werd
 
 Stellen Sie abschließend sicher, dass Sie ausführliche Anweisungen für den Translator einschließen, wenn bestimmte Zeichen folgen eine besondere Behandlung erfordern.
 
-
 ### <a name="formatted-text"></a>Formatierter Text
 
 In der Regel ein Problem mit Mobile Apps, weil Zeichen folgen in der Regel nicht umfangreich formatiert Wenn jedoch Rich-Text (z. b. Fett Formatierung oder kursiv Formatierung) in Ihrer APP erforderlich ist, stellen Sie sicher, dass der Konvertierer die Formatierung eingibt, die Zeichen folgen Dateien den Wert ordnungsgemäß speichern und ordnungsgemäß formatieren, bevor Sie dem Benutzer angezeigt werden (d. h. nicht versehentlich die Formatierungscodes selbst werden dem Benutzer angezeigt.)
-
-
 
 ## <a name="translation-tips"></a>Übersetzungstipps
 
 Das Übersetzen der von einer Anwendung verwendeten Zeichen folgen wird als Teil des Lokalisierungsprozesses betrachtet. In der Regel wird diese Aufgabe an einen Übersetzungsdienst ausgelagert und von mehrsprachigen Mitarbeitern durchgeführt, die Ihre Anwendung oder Ihr Unternehmen nicht kennen.
 
 Die folgenden Tipps helfen Ihnen, Zeichen folgen zu entwickeln, die einfacher zu übersetzen sind, und damit die Qualität ihrer lokalisierten apps zu verbessern.
-
-
 
 ### <a name="localize-complete-strings-not-words"></a>Lokalisieren von kompletten Zeichen folgen, nicht von Wörtern
 
@@ -208,7 +198,6 @@ versuchen Sie dann, den richtigen Ausdruck im Code mithilfe der Zeichen folgen V
 
 **Dies wird** nicht empfohlen, da es nicht notwendigerweise für alle Sprachen funktioniert und es für den Übersetzer schwierig ist, den Kontext jedes kurzen Segments zu verstehen. Dies führt auch dazu, dass übersetzte Zeichen folgen wieder verwendet werden, die später Probleme verursachen können, wenn Sie in unterschiedlichen Kontexten verwendet werden (und dann aktualisiert werden).
 
-
 ### <a name="allow-for-parameter-re-ordering"></a>Neuanordnung von Parametern zulassen
 
 Einige Programmiersprachen erfordern zusätzliche Syntax, um die Reihenfolge der Parameter in einer Zeichenfolge anzugeben. .NET unterstützt jedoch bereits das Konzept nummerierter Platzhalter.
@@ -227,7 +216,6 @@ kann wie folgt übersetzt werden (wobei Position und Reihenfolge der Platzhalter
 
 und die Token werden als der Konvertierer bestimmt. Stellen Sie sicher, dass die einzelnen Platzhalter beim Senden der Zeichenfolge an einen Konvertierer eine Erläuterung enthalten.
 
-
 ### <a name="use-multiple-strings-for-cardinality"></a>Verwenden mehrerer Zeichen folgen für die Kardinalität
 
 Vermeiden Sie Zeichen `"You have {0} message/s."` Folgen wie die Verwendung bestimmter Zeichen folgen für jeden Zustand, um eine bessere Benutzer Leistung zu bieten:
@@ -242,7 +230,6 @@ Vermeiden Sie Zeichen `"You have {0} message/s."` Folgen wie die Verwendung best
 ```
 
 Sie müssen Code in ihrer app schreiben, um die angezeigte Zahl auszuwerten und die entsprechende Zeichenfolge auszuwählen. Einige Plattformen (einschließlich IOS und Android) verfügen über integrierte Funktionen, die automatisch die beste Plural Zeichenfolge basierend auf den Voreinstellungen für die aktuelle Sprache/das aktuelle Gebiets Schema auswählen.
-
 
 ### <a name="allowing-for-gender"></a>Zulassen von Geschlecht
 
@@ -294,7 +281,6 @@ Es gibt auch professionelle Übersetzungsdienste, die ihre Zeichen folgen an Ihr
 
 Einer der bekanntesten Dienste ist [Lionbridge](http://www.lionbridge.com/). Die meisten professionellen Dienste unterstützen alle gängigen Dateitypen, einschließlich Zeichen folgen, XML, resx und Pot/po.
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden einige der Konzepte vorgestellt, mit denen Sie sich vertraut machen sollten, bevor Sie Ihre APP internationalisieren und dann Ihre Ressourcen lokalisieren. Außerdem wird erläutert, wie Sie die Spracheinstellungen für die einzelnen Plattformen ändern.
@@ -306,8 +292,6 @@ Lesen Sie weiterhin technische Details zu der Plattform, an der Sie interessiert
 - [Xamarin. Forms](~/xamarin-forms/app-fundamentals/localization/index.md) plattformübergreifende Lokalisierung mithilfe von RESX-Dateien.
 - Native [xamarin. IOS](~/ios/app-fundamentals/localization/index.md) -Platt Form Lokalisierung.
 - Native [xamarin. Android](~/android/app-fundamentals/localization.md) -Platt Form Lokalisierung.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

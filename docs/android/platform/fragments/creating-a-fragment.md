@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 1948c700827f1cc235de5857cde9a2a149af8412
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f7dd62af7cfa37f136b4c72c7c34907ad8ebf36f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524367"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761192"
 ---
 # <a name="creating-a-fragment"></a>Erstellen eines Fragments
 
@@ -25,7 +25,6 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 ```
 
 Der obige Code vergrößert die Ansicht `Resource.Layout.Example_Fragment`und fügt Sie dem `ViewGroup` Container als untergeordnete Ansicht hinzu.
-
 
 > [!NOTE]
 > Fragmentunterklassen müssen über einen öffentlichen Standardkonstruktor ohne Argument verfügen.
@@ -102,14 +101,12 @@ oder
 <fragment class="Com.Example.DetailsFragment" android:id="@+id/fragment_content" android:layout_width="match_parent" android:layout_height="match_parent" />
 ```
 
-
 ## <a name="fragment-lifecycle"></a>Fragmentlebens Zyklus
 
 Fragmente haben einen eigenen Lebenszyklus, der von dem [Lebenszyklus der hostingaktivität](~/android/app-fundamentals/activity-lifecycle/index.md)einigermaßen unabhängig ist, aber dennoch beeinträchtigt ist.
 Wenn z. b. eine Aktivität angehalten wird, werden alle zugehörigen Fragmente angehalten. Das folgende Diagramm zeigt den Lebenszyklus des Fragments.
 
 [![Flussdiagramm zur Veranschaulichung des fragmentlebens Zyklus](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
-
 
 ### <a name="fragment-creation-lifecycle-methods"></a>Lebenszyklus Methoden der Fragmenterstellung
 
@@ -132,7 +129,6 @@ Die nachstehende Liste zeigt den Fluss der verschiedenen Rückrufe während des 
 
 - **`OnResume()`** &ndash; Dies ist die letzte Methode, die aufgerufen wird, bevor der Benutzer mit dem Fragment interagieren kann. Ein Beispiel für die Art von Code, der in dieser Methode ausgeführt werden sollte, ist das Aktivieren der Features eines Geräts, mit dem der Benutzer interagieren kann, z. b. die Kamera, die der Standort Dienst durchführt. Dienste wie diese können jedoch zu einem übermäßigen Akku Ausgleich führen, und eine Anwendung sollte die Verwendung minimieren, um die Akku Lebensdauer beizubehalten.
 
-
 ### <a name="fragment-destruction-lifecycle-methods"></a>Lebenszyklus Methoden der fragmentzerstörung
 
 In der nächsten Liste werden die Lebenszyklus Methoden erläutert, die aufgerufen werden, wenn ein Fragment zerstört wird:
@@ -147,11 +143,9 @@ In der nächsten Liste werden die Lebenszyklus Methoden erläutert, die aufgeruf
 
 - **`OnDetach()`** &ndash; Diese Methode wird aufgerufen, kurz bevor das Fragment nicht mehr der-Aktivität zugeordnet ist. Die Ansichts Hierarchie des Fragments ist nicht mehr vorhanden, und alle vom Fragment verwendeten Ressourcen sollten zu diesem Zeitpunkt freigegeben werden.
 
-
 ### <a name="using-setretaininstance"></a>Verwenden von "abtretaininstance"
 
 Es ist möglich, dass ein Fragment angibt, dass es nicht vollständig zerstört werden soll, wenn die Aktivität neu erstellt wird. Die `Fragment` -Klasse stellt für `SetRetainInstance` diesen Zweck die-Methode bereit. Wenn `true` an diese Methode weitergegeben wird, wird beim Neustart der Aktivität die gleiche Instanz des Fragments verwendet. Wenn dies der Fall ist, werden alle Rückruf Methoden aufgerufen, außer `OnCreate` die `OnDestroy` -und-Lebenszyklus Rückrufe. Dieser Prozess wird im oben gezeigten Lebenszyklus Diagramm (durch die grünen gepunkteten Linien) veranschaulicht.
-
 
 ## <a name="fragment-state-management"></a>Fragmentstatusverwaltung
 
@@ -189,7 +183,6 @@ Das Überschreiben `current_choice` isteingeeigneterMechanismuszumSpeichernvorü
 
 Da dem `EditText` -Steuerelement `id` eine zugewiesen ist, speichert das Fragment die Daten automatisch im Widget `OnSaveInstanceState` , wenn aufgerufen wird.
 
-
 ### <a name="bundle-limitations"></a>Bündel Einschränkungen
 
 Obwohl die `OnSaveInstanceState` Verwendung von das Speichern vorübergehender Daten vereinfacht, gelten für die Verwendung dieser Methode einige Einschränkungen:
@@ -197,7 +190,6 @@ Obwohl die `OnSaveInstanceState` Verwendung von das Speichern vorübergehender D
 - Wenn das Fragment nicht zum BackStack hinzugefügt wird, wird der zugehörige Zustand nicht wieder hergestellt, wenn der Benutzer auf die Schaltfläche " **zurück** " drückt.
 
 - Wenn das Paket verwendet wird, um Daten zu speichern, werden diese Daten serialisiert. Dies kann zu Verzögerungen bei der Verarbeitung führen.
-
 
 ## <a name="contributing-to-the-menu"></a>Mitwirkender zum Menü
 

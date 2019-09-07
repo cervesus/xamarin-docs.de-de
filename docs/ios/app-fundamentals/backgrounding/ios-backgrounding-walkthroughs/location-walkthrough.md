@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: b95f60676a1c58463fc6e384ea3738122a1c76fe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f4708b56b8cf8a243785816440c63b743059cf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286816"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756274"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Exemplarische Vorgehensweise: Hintergrund Speicherort in xamarin. IOS
 
@@ -21,7 +21,6 @@ In diesem Beispiel erstellen wir eine IOS-Location-Anwendung, die Informationen 
 In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erläutert, darunter das Registrieren einer App als Hintergrund erforderliche Anwendung, das Anhalten von Aktualisierungen der Benutzeroberfläche, wenn die APP sich `WillEnterBackground` im `WillEnterForeground` Hintergrund befindet, und das Arbeiten mit den Methoden und `AppDelegate` . .
 
 ## <a name="application-set-up"></a>Anwendungs Einrichtung
-
 
 1. Erstellen Sie zunächst eine neue **IOS-> app > Single View ApplicationC#()** . Nennen Sie ihn _Location_ , und stellen Sie sicher, dass sowohl iPad als auch iPhone ausgewählt wurden.
 
@@ -84,7 +83,6 @@ In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erl
 1. Fügen Sie einen `NSLocationAlwaysUsageDescription` Schlüssel `NSLocationWhenInUseUsageDescription` oder eine Zeichenfolge hinzu, die dem Benutzer in der Warnung angezeigt wird, die den Zugriff auf Standortdaten anfordert.
 
 1. IOS 9 erfordert, dass bei `AllowsBackgroundLocationUpdates` Verwendung von " **Info. plist** " `UIBackgroundModes` der Schlüssel mit `location`dem Wert enthält. Wenn Sie Schritt 2 dieser exemplarischen Vorgehensweise abgeschlossen haben, sollte diese bereits in der Datei "Info. plist" vorhanden sein.
-
 
 1. Erstellen Sie `LocationManager` in der-Klasse eine Methode `StartLocationUpdates` mit dem Namen mit dem folgenden Code. Dieser Code zeigt, wie Sie mit dem `CLLocationManager`empfangen von Speicherort Updates von beginnen:
 
@@ -202,7 +200,6 @@ public override void ViewDidLoad ()
 }
 ```
 
-
 Wenn die Anwendung ausgeführt wird, sollte Sie nun etwa wie folgt aussehen:
 
 [![](location-walkthrough-images/image5.png "Ein Beispiel für eine APP-Laufzeit")](location-walkthrough-images/image5.png#lightbox)
@@ -278,7 +275,6 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 Nun wird die Benutzeroberfläche aktualisiert, wenn die Anwendung zum ersten Mal gestartet wird, und die Aktualisierung fortsetzen, sobald die APP wieder im Vordergrund steht.
 
 In dieser exemplarischen Vorgehensweise haben wir eine gut verhaltene, Hintergrund fähige IOS-Anwendung erstellt, die Standortdaten sowohl auf dem Bildschirm als auch im Anwendungs Ausgabefenster ausgibt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

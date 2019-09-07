@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/11/2016
-ms.openlocfilehash: 09275517a1d081073ab471d1e8c993dc232a4385
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 240b3c1547231ebbea568f4d5d10407ec560390b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292441"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763398"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Cloudkit in xamarin. IOS
 
@@ -48,7 +48,6 @@ Cloudkit unterstützt sowohl strukturierte als auch Massendaten. Es ist in der L
 
 Zum Zeitpunkt der Erstellung dieses Artikels stellt Apple das cloudkit anfänglich kostenlos mit einem hohen Grenzwert für die Bandbreite und die Speicherkapazität bereit. Bei größeren Projekten oder Anwendungen mit einer großen Benutzerbasis deutet Apple darauf hin, dass eine preisgünstige Preisskala bereitgestellt wird.
 
-
 ## <a name="enabling-cloudkit-in-a-xamarin-application"></a>Aktivieren von cloudkit in einer xamarin-Anwendung
 
 Bevor eine xamarin-Anwendung das cloudkit-Framework verwenden kann, muss die Anwendung ordnungsgemäß bereitgestellt werden, wie in den Handbüchern [Arbeiten mit Funktionen](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) und [Arbeiten mit Berechtigungen](~/ios/deploy-test/provisioning/entitlements.md) beschrieben.
@@ -67,7 +66,6 @@ Bevor eine xamarin-Anwendung das cloudkit-Framework verwenden kann, muss die Anw
 7. Stellen Sie sicher, dass der **ubiquity-Container** für die Anwendung vorhanden ist (wie oben erstellt). Beispiel: `iCloud.com.your-company.CloudKitAtlas`
 8. Speichern Sie die Änderungen in der Datei.
 
-
 Wenn diese Einstellungen vorhanden sind, kann die Anwendung jetzt auf die cloudkit-Framework-APIs zugreifen.
 
 ## <a name="cloudkit-api-overview"></a>Übersicht über die cloudkit-API
@@ -82,7 +80,6 @@ Vor der Implementierung von cloudkit in einer xamarin IOS-Anwendung werden in di
 6. **Verweis** – stellen Beziehungen zwischen übergeordneten und untergeordneten Datensätzen in einer bestimmten Datenbank bereit.
 7. **Assets** – ermöglichen das Hochladen von Dateien mit großen, unstrukturierten Daten in die icloud und die Zuordnung zu einem bestimmten Datensatz.
 
-
 ### <a name="containers"></a>Container
 
 Eine bestimmte Anwendung, die auf einem IOS-Gerät ausgeführt wird, wird immer neben anderen Anwendungen und Diensten auf diesem Gerät ausgeführt. Auf dem Client Gerät wird die Anwendung in irgendeiner Weise mit einem Silo oder einem Sandkasten versehen. In einigen Fällen handelt es sich hierbei um eine Literale Sandbox, und in anderen Fällen wird die Anwendung einfach in Ihrem eigenen Speicherbereich ausgeführt.
@@ -92,7 +89,6 @@ Das Konzept, eine Client Anwendung und deren Ausführung von anderen Clients get
 1. **Sicherheit** – eine Anwendung kann sich nicht auf andere Client-Apps oder das Betriebssystem selbst stören.
 1. **Stabilität** – wenn die Client Anwendung abstürzt, können andere apps des Betriebssystems nicht mehr übernommen werden.
 1. **Datenschutz** – jede Client Anwendung hat eingeschränkten Zugriff auf die persönlichen Informationen, die auf dem Gerät gespeichert sind.
-
 
 Cloudkit wurde entworfen, um die gleichen Vorteile wie die oben aufgeführten zu bieten, und wendet Sie auf die Verwendung cloudbasierter Informationen an:
 
@@ -179,7 +175,6 @@ Wie bereits erwähnt, `CKRecords` können Sie Schlüssel-Wert-Paare einschließe
 1. `CKReferences`
 1. `CKAssets`
 
-
 Zusätzlich zu den einzelnen Werttypen kann ein Datensatz ein homogenes Array von einem der oben aufgeführten Typen enthalten.
 
 Der folgende Code kann verwendet werden, um einen neuen Datensatz zu erstellen und in einer-Datenbank zu speichern:
@@ -215,7 +210,6 @@ Daten Satz Bezeichner werden als Tupel dargestellt, das sowohl den vom Client be
 - Sie werden von der Client Anwendung erstellt.
 - Sie sind vollständig normalisiert und stellen den jeweiligen Speicherort des Datensatzes dar.
 - Durch Zuweisen der eindeutigen ID eines Datensatzes in einer fremd Datenbank zum Daten Satz Namen können Sie lokale Datenbanken, die nicht in cloudkit gespeichert sind, überbrücken.
-
 
 Wenn Entwickler neue Datensätze erstellen, können Sie einen Daten Satz Bezeichner übergeben. Wenn kein Daten Satz Bezeichner angegeben wird, wird automatisch eine UUID erstellt und dem Datensatz zugewiesen.
 
@@ -285,13 +279,11 @@ Apple bietet zwei verschiedene API-Sätze für das Arbeiten mit cloudkit:
 - **Operational API** – bietet alle einzelnen Features von cloudkit. Für komplexere Anwendungen bietet diese API eine fein abgestimmte Kontrolle über cloudkit.
 - Praktische **API** – bietet eine allgemeine, vorkonfigurierte Teilmenge der cloudkit-Features. Es stellt eine bequeme, einfache Zugriffs Lösung für die cloudkit-Funktionalität in eine IOS-Anwendung bereit.
 
-
 Die praktische API ist in der Regel die beste Wahl für die meisten IOS-Anwendungen, und Apple empfiehlt, damit zu beginnen. Im restlichen Teil dieses Abschnitts werden die folgenden Themen zur einfacheren API behandelt:
 
 - Speichern eines Datensatzes.
 - Abrufen eines Datensatzes.
 - Aktualisieren eines Datensatzes.
-
 
 ### <a name="common-setup-code"></a>Allgemeiner Setup Code
 
@@ -394,7 +386,6 @@ Im obigen Code sind drei Punkte zu beachten:
 1. Der-Rückruf ist asynchron und stellt eine Rückruf Routine bereit, wenn der-Befehl abgeschlossen wird, entweder mit Erfolg oder Fehler. Wenn der-Befehl fehlschlägt, wird eine Fehlermeldung bereitgestellt.
 1. Cloudkit bietet keine lokale Speicherung/Persistenz. Es handelt sich hierbei nur um ein Übertragungsmedium. Wenn also eine Anforderung zum Speichern eines Datensatzes gestellt wird, wird er sofort an die icloud-Server gesendet.
 
-
 > [!NOTE]
 > Aufgrund der "verlustfreien" Art der Kommunikation mobiler Netzwerke, bei der Verbindungen ständig gelöscht oder unterbrochen werden, muss der Entwickler bei der Arbeit mit cloudkit die Fehlerbehandlung durchführen.
 
@@ -458,7 +449,6 @@ Je beliebter eine Anwendung ist, desto mehr Daten in der Datenbank und desto wen
 - **Client Sichten können sich ändern** – da jeder Benutzer über unterschiedliche Einstellungen verfügt, kann sich der Slice der angezeigten Daten von Benutzer zu Benutzer ändern, und die individuelle Ansicht eines beliebigen Slice des Benutzers kann abweichen.
 - **Der Client verwendet Abfragen, um den Standpunkt zu fokussieren** – mit Abfragen kann der Benutzer eine kleine Teilmenge eines größeren Datasets anzeigen, das in der Cloud vorhanden ist.
 
-
 ### <a name="queries"></a>Abfragen
 
 Wie bereits erwähnt, ermöglichen Abfragen dem Entwickler, eine kleine Teilmenge des größeren Datasets auszuwählen, das in der Cloud vorhanden ist. Abfragen werden im cloudkit-Framework über die `CKQuery` -Klasse verfügbar gemacht.
@@ -468,7 +458,6 @@ Eine Abfrage kombiniert drei verschiedene Dinge: einen Daten Satz Typen `RecordT
 #### <a name="supported-predicates"></a>Unterstützte Prädikate
 
 Cloudkit unterstützt die folgenden Typen `NSPredicates` von beim Arbeiten mit Abfragen:
-
 
 1. Übereinstimmende Datensätze, bei denen der Name gleich einem in einer Variablen gespeicherten Wert ist:
 
@@ -506,8 +495,6 @@ Cloudkit unterstützt die folgenden Typen `NSPredicates` von beim Arbeiten mit A
     ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-
-
 
 #### <a name="creating-queries"></a>Erstellen von Abfragen
 
@@ -551,7 +538,6 @@ Die Möglichkeit, Abfragen zu übernehmen, besteht darin, dass es sich um Umfrag
 - Sie sind für den Netzwerk Datenverkehr schlecht.
 - Sie sind für den Benutzer nicht sichtbar, da die Informationen darauf beschränkt sind, wie oft die Anwendung die Datenbank abfragt. Benutzer erwarten heute Pushbenachrichtigungen, wenn sich etwas ändert.
 
-
 ### <a name="subscriptions"></a>Abonnements
 
 Beim Umgang mit großen, größtenteils statischen Datasets sollte die Abfrage nicht auf dem Client Gerät ausgeführt werden, sondern auf dem-Server im Auftrag des Clients. Die Abfrage sollte im Hintergrund ausgeführt werden und nach jedem einzelnen Datensatz gespeichert werden, unabhängig davon, ob das aktuelle Gerät oder ein anderes Gerät dieselbe Datenbank berührt.
@@ -576,7 +562,6 @@ Das obige Diagramm zeigt den typischen Abonnement Prozess wie folgt:
 3. Ein zweites Gerät erstellt einen neuen Datensatz und speichert diesen Datensatz in der Datenbank.
 4. Die Datenbank durchsucht die Liste der Abonnements, um festzustellen, ob der neue Datensatz mit einer ihrer Bedingungen übereinstimmt.
 5. Wenn eine Entsprechung gefunden wird, wird die Pushbenachrichtigung an das Gerät gesendet, das das Abonnement mit Informationen zu dem Datensatz registriert hat, durch den der Trigger ausgelöst wurde.
-
 
 Wenn dieses Wissen vorhanden ist, sehen wir uns das Erstellen von Abonnements in einer xamarin IOS 8-Anwendung an.
 
@@ -662,7 +647,6 @@ Cloudkit bietet den Entwicklern die folgenden Benutzerinformationen:
 - **Metadaten** – die Möglichkeit, Informationen zu Benutzern zu speichern und abzurufen.
 - **Datenschutz** – alle Informationen werden in einem Datenschutz Bewusstsein behandelt. Wenn der Benutzer nicht zugestimmt hat, wird nichts verfügbar gemacht.
 - Ermittlung **– bietet** Benutzern die Möglichkeit, Ihre Freunde zu ermitteln, die dieselbe Anwendung verwenden.
-
 
 Als nächstes sehen wir uns diese Themen ausführlich an.
 
@@ -755,12 +739,10 @@ Es gibt drei verschiedene Arten von Eingaben, die für die Benutzer Ermittlung v
 - **E-Mail-Adresse des Benutzers** – der Benutzer kann eine e-Mail-Adresse angeben, die für die Ermittlung verwendet werden kann.
 - **Kontaktbuch** – das Adressbuch des Benutzers kann verwendet werden, um Benutzer der Anwendung zu ermitteln, die dieselbe e-Mail-Adresse wie in Ihren Kontakten angegeben haben.
 
-
 Von der Benutzer Ermittlung werden die folgenden Informationen zurückgegeben:
 
 - **Benutzerdaten Satz-ID** : die eindeutige ID eines Benutzers in der öffentlichen Datenbank.
 - **Vor-und Nachname** : wird in der öffentlichen Datenbank gespeichert.
-
 
 Diese Informationen werden nur für Benutzer zurückgegeben, die die Ermittlung ausgewählt haben.
 
@@ -812,7 +794,6 @@ Vor dem Bereitstellen der Anwendung kann der Entwickler das Schema und die Daten
 
 > [!NOTE]
 > Der IOS-Simulator funktioniert nur mit der **Entwicklungsumgebung**. Wenn der Entwickler bereit ist, eine Anwendung in einer **Produktionsumgebung**zu testen, ist ein physisches IOS-Gerät erforderlich.
-
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>Versenden einer cloudkit-fähigen App
 
@@ -873,7 +854,6 @@ Die folgenden Anwendungsfälle helfen dem Entwickler bei der Entscheidung, wann 
 - **icloud Drive** – basiert auf den vorhandenen icloud Documents-APIs und bietet eine einfache API, um unstrukturierte Daten aus dem Dateisystem zu synchronisieren. Es bietet einen vollständigen Offline Cache auf Mac OS X und eignet sich hervorragend für Dokument zentrierte Anwendungen.
 - **icloud Core Data** – ermöglicht das Replizieren von Daten zwischen allen Geräten des Benutzers. Bei den Daten handelt es sich um Einzelbenutzer und eignet sich hervorragend, um private, strukturierte Daten synchron zu halten.
 - **Cloudkit** – stellt öffentliche Daten sowohl strukturiert als auch Massen bereit und ist in der Lage, sowohl großes Dataset als auch große unstrukturierte Dateien zu verarbeiten. Die ist an das icloud-Konto des Benutzers gebunden und ermöglicht eine Client gesteuerte Datenübertragung.
-
 
 Wenn Sie diese Anwendungsfälle beachten, sollte der Entwickler die richtige icloud-Technologie auswählen, um die aktuelle erforderliche Anwendungs Funktionalität bereitzustellen und eine gute Skalierbarkeit für zukünftiges Wachstum bereitzustellen.
 

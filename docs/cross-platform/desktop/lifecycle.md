@@ -5,12 +5,12 @@ description: In diesem Dokument werden die Ähnlichkeiten und Unterschiede zwisc
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 8c009c079842a6a110212693a56489ca2ad5d263
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d1c207672baf37c91d39fca1d9f628d85971577
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290379"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765909"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF im Vergleich zu Lebenszyklus der Xamarin.Forms-App
 
@@ -87,7 +87,6 @@ Xamarin. Forms ist hauptsächlich auf Mobile Szenarios ausgerichtet. Daher werde
 |Suspend/verlorener Fokus|Window.OnDeactivated|Page. onsleep|
 |Aktivierter/Fokus|Window.OnActivated|Page. onresume|
 |Closed|Window. OnClosing + Window. OnClosed|n/v|
-
 
 Beide unterstützen auch das Ausblenden/Anzeigen von untergeordneten Steuerelementen. in WPF ist es eine `IsVisible` Eigenschaft mit drei Zuständen (sichtbar, ausgeblendet und reduziert). In xamarin. Forms ist Sie nur durch die `IsVisible` -Eigenschaft sichtbar oder ausgeblendet.
 

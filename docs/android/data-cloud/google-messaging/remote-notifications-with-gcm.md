@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: fd34532e647f0595ed8afa5ef7ad044b84b7d918
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 813bb59cf11f35f69620c30e8ba12281df08df75
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525794"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754505"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Remote Benachrichtigungen mit Google Cloud Messaging
 
@@ -176,7 +176,6 @@ public bool IsPlayServicesAvailable ()
 
 Dieser Code überprüft das Gerät, um festzustellen, ob das Google Play Services APK installiert ist. Wenn Sie nicht installiert ist, wird eine Meldung im Meldungs Bereich angezeigt, in der der Benutzer angewiesen wird, ein APK vom Google Play Store herunterzuladen (oder in den Systemeinstellungen des Geräts zu aktivieren). Da diese Überprüfung beim Starten der Client-app ausgeführt werden soll, fügen Sie am Ende von `OnCreate`einen-Aufrufvorgang für diese Methode hinzu. 
 
-
 Ersetzen Sie als nächstes `OnCreate` die-Methode durch den folgenden Code:
 
 ```csharp
@@ -214,7 +213,6 @@ Bevor die APP Remote Benachrichtigungen vom App-Server empfangen kann, muss Sie 
 Nachdem wir dies `IntentService`implementiert haben, testen wir es, um festzustellen, ob wir ein Registrierungs Token aus GCM zurückerhalten.
 
 Fügen Sie eine neue Datei mit dem Namen **RegistrationIntentService.cs** hinzu, und ersetzen Sie den Vorlagen Code durch Folgendes:
-
 
 ```csharp
 using System;
@@ -314,7 +312,6 @@ public RegistrationIntentService() : base ("RegistrationIntentService") { }
 
 Die Kernfunktionalität von `RegistrationIntentService` befindet sich in `OnHandleIntent` der-Methode. Sehen wir uns diesen Code an, um zu erfahren, wie die APP mit GCM registriert wird.
 
-
 ##### <a name="request-a-registration-token"></a>Anfordern eines Registrierungs Tokens
 
 `OnHandleIntent`Ruft zuerst die [InstanceID. GetToken-](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;) Methode von Google auf, um ein Registrierungs Token von GCM anzufordern. Wir wrappen diesen Code in `lock` einer, um zu verhindern, dass mehrere Registrierungs Intents `lock` gleich &ndash; zeitig ausgeführt werden. Dadurch wird sichergestellt, dass diese Intents sequenziell verarbeitet werden. Wenn ein Registrierungs Token nicht erhalten werden kann, wird eine Ausnahme ausgelöst, und es wird ein Fehler protokolliert. Wenn die Registrierung erfolgreich ist `token` , wird auf das Registrierungs Token festgelegt, das wir von GCM erhalten haben: 
@@ -350,7 +347,6 @@ void SendRegistrationToAppServer (string token)
 
 In einigen Fällen benötigt der App-Server das Registrierungs Token des Benutzers nicht. in diesem Fall kann diese Methode ausgelassen werden. Wenn ein Registrierungs Token an den App-Server gesendet wird `SendRegistrationToAppServer` , muss einen booleschen Wert aufbewahren, um anzugeben, ob das Token an den Server gesendet wurde. Wenn dieser boolesche Wert false ist `SendRegistrationToAppServer` , sendet das Token an den APP &ndash; -Server, andernfalls wurde das Token bereits in einem vorherigen-Befehl an den App-Server gesendet. 
 
-
 ##### <a name="subscribe-to-the-notification-topic"></a>Abonnieren des Benachrichtigungs Themas
 
 Als nächstes nennen wir unsere `Subscribe` Methode, um dem GCM mitzuteilen, dass ein Benachrichtigungs Thema abonniert werden soll. In `Subscribe`wird die API " [gcmpubsub. Subscribe](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) " aufgerufen, um die Client-App für alle `/topics/global`Nachrichten unter zu abonnieren:
@@ -366,7 +362,6 @@ void Subscribe (string token)
 Der App-Server muss Benachrichtigungs Meldungen `/topics/global` an senden, wenn diese empfangen werden. Beachten Sie, dass der Name `/topics` des Themas unter beliebig sein kann, solange der App-Server und die Client-App Diese Namen akzeptieren. (Hier haben wir den Namen `global` gewählt, um anzugeben, dass wir Nachrichten für alle vom App-Server unterstützten Themen empfangen möchten.) 
 
 Weitere Informationen zu GCM Topic Messaging auf der Serverseite finden Sie unter Google es [Send Messaging to topics](https://developers.google.com/cloud-messaging/topic-messaging). 
-
 
 #### <a name="implement-an-instance-id-listener-service"></a>Implementieren Sie einen Instanz-ID-Listenerdienst
 
@@ -401,7 +396,6 @@ Kommentieren Sie mit `InstanceIdListenerService` dem folgenden Attribut, um anzu
 
 Die `OnTokenRefresh` -Methode in unserem Dienst startet `RegistrationIntentService` den, sodass er das neue Registrierungs Token abfangen kann.
 
-
 #### <a name="test-registration-with-gcm"></a>Test Registrierung bei GCM
 
 Wir erstellen die APP vollständig neu und führen Sie aus. Wenn Sie erfolgreich ein Registrierungs Token von GCM erhalten haben, sollte das Registrierungs Token im Fenster Ausgabe angezeigt werden. Beispiel: 
@@ -417,11 +411,9 @@ I/RegistrationIntentService( 1934): GCM Registration Token: f8LdveCvXig:APA91bFI
 
 Der Code, den wir bisher implementiert haben, ist nur "Setup"-Code. Es prüft, ob Google Play Services installiert ist, und verhandelt mit GCM und dem App-Server, um die Client-App für den Empfang von Remote Benachrichtigungen vorzubereiten. Wir haben jedoch noch Code implementiert, der nachgeschaltete Benachrichtigungs Meldungen empfängt und verarbeitet. Zu diesem Zweck muss ein *GCM-Listenerdienst*implementiert werden. Dieser Dienst empfängt Thema Nachrichten vom App-Server und sendet diese lokal als Benachrichtigungen. Nachdem wir diesen Dienst implementiert haben, erstellen wir ein Testprogramm zum Senden von Nachrichten an GCM, damit wir sehen können, ob die Implementierung ordnungsgemäß funktioniert. 
 
-
 #### <a name="add-a-notification-icon"></a>Benachrichtigungssymbol hinzufügen
 
 Fügen Sie zunächst ein kleines Symbol hinzu, das im Benachrichtigungsbereich angezeigt wird, wenn unsere Benachrichtigung gestartet wird. Sie können [dieses Symbol](remote-notifications-with-gcm-images/ic-stat-ic-notification.png) in Ihr Projekt kopieren oder ein eigenes benutzerdefiniertes Symbol erstellen. Wir nennen die Symbol Datei " **ic_stat_button_click. png** " und kopieren Sie in den Ordner " **Resources/drawable** ". Denken Sie daran, **> vorhandenes Element hinzufügen...** zu verwenden, um diese Symbol Datei in das Projekt einzuschließen.
-
 
 #### <a name="implement-a-gcm-listener-service"></a>Implementieren eines GCM-listenerdienstanbieter
 
@@ -487,7 +479,6 @@ SendNotification (message);
 Die `SendNotification` -Methode`Notification.Builder` verwendet, um die Benachrichtigung zu erstellen, und verwendet dann, umdieBenachrichtigungzustarten.`NotificationManager` Dadurch wird die Remote Benachrichtigungs Meldung in eine lokale Benachrichtigung konvertiert, damit Sie dem Benutzer angezeigt wird.
 Weitere Informationen zur Verwendung von `Notification.Builder` und `NotificationManager`finden Sie unter [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md).
 
-
 #### <a name="declare-the-receiver-in-the-manifest"></a>Deklarieren des Empfängers im Manifest
 
 Vor dem empfangen von Nachrichten aus GCM müssen wir den GCM-Listener im Android-Manifest deklarieren. Bearbeiten Sie " **androidmanifest. XML** ", und `<application>` ersetzen Sie den Abschnitt durch den folgenden XML-Code: 
@@ -519,11 +510,9 @@ Sehen wir uns an, was die einzelnen Einstellungen in dieser XML-Datei sind:
 
 Alternativ können Sie diese Attribute `GcmListenerService` ergänzen, anstatt Sie in XML anzugeben. hier geben wir Sie in " **androidmanifest. XML** " an, damit die Codebeispiele leichter befolgt werden können. 
 
-
 ### <a name="create-a-message-sender-to-test-the-app"></a>Erstellen eines Nachrichten Absenders zum Testen der APP
 
 Fügen Sie der Projekt C# Mappe ein Desktop Konsolen Anwendungsprojekt hinzu, und nennen Sie es " **messagesender**". Wir verwenden diese Konsolenanwendung zum Simulieren eines Anwendungs Servers &ndash; , der über GCM Benachrichtigungs Meldungen an **ClientApp** sendet. 
-
 
 #### <a name="add-the-jsonnet-package"></a>Hinzufügen des JSON.net-Pakets
 
@@ -533,11 +522,9 @@ Suchen Sie nach dem **JSON.net** -Paket, und installieren Sie es im Projekt:
 
 [![Installieren des JSON.net-Pakets](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
-
 #### <a name="add-a-reference-to-systemnethttp"></a>Hinzufügen eines Verweises auf System .net. http
 
 Wir müssen auch einen Verweis auf `System.Net.Http` hinzufügen, damit wir ein `HttpClient` -Objekt zum Senden der Testnachricht an GCM instanziieren können. Klicken Sie im Projekt **messagesender** mit der rechten Maustaste auf **Verweise > fügen Sie einen Verweis hinzu** , und Scrollen Sie nach unten, bis **System .net. http**angezeigt wird. Stellen Sie ein Häkchen neben **System .net. http** ein, und klicken Sie auf **OK**. 
-
 
 #### <a name="implement-code-that-sends-a-test-message"></a>Implementieren von Code, der eine Test Nachricht sendet
 
@@ -612,8 +599,6 @@ Dieser Test-App-Server sendet die folgende JSON-formatierte Nachricht an GCM:
 
 GCM leitet diese Nachricht ihrerseits an Ihre Client-App weiter. Erstellen Sie nun **messagesender** , und öffnen Sie ein Konsolenfenster, in dem wir es über die Befehlszeile ausführen können.
 
-
-
 ### <a name="try-it"></a>Probieren Sie es aus!
 
 Nun können wir unsere Client-App testen. Wenn Sie einen Emulator verwenden oder wenn Ihr Gerät mit GCM über Wi-Fi kommuniziert, müssen Sie die folgenden TCP-Ports in der Firewall öffnen, damit GCM-Nachrichten durchgeführt werden können: 5228, 5229 und 5230.
@@ -658,11 +643,9 @@ Herzlichen Glückwunsch, Ihre APP hat ihre erste Remote Benachrichtigung erhalte
 
 Beachten Sie, dass GCM-Nachrichten nicht mehr empfangen werden, wenn die APP erzwungen wird. Zum Fortsetzen von Benachrichtigungen nach einem Erzwingen der Beendigung muss die APP manuell neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Launch Controls on beendete Applications](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und this [Stack Overflow Post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
 
- 
 ## <a name="summary"></a>Zusammenfassung
 
 In dieser exemplarischen Vorgehensweise werden die Schritte zum Implementieren von Remote Benachrichtigungen in einer xamarin. Android-Anwendung beschrieben. Es wurde beschrieben, wie Sie zusätzliche Pakete installieren, die für die GCM-Kommunikation benötigt werden, und wie Sie App-Berechtigungen für den Zugriff auf GCM-Server konfigurieren. Es wurde ein Beispielcode bereitgestellt, der veranschaulicht, wie Sie das vorhanden sein von Google Play Services überprüfen, wie Sie einen Dienst für die Registrierungs Absicht und einen Instanz-ID-Listenerdienst implementieren, der mit GCM für ein Registrierungs Token verhandelt und wie ein GCM-Listener implementiert wird. Dienst, der Remote Benachrichtigungs Meldungen empfängt und verarbeitet. Schließlich haben wir ein Befehlszeilen-Testprogramm implementiert, mit dem Test Benachrichtigungen über GCM an unsere Client-App gesendet werden. 
-
 
 ## <a name="related-links"></a>Verwandte Links
 

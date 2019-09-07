@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3bcf52d33ebfaba6117a2089419673e0152cbe88
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289124"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769911"
 ---
 # <a name="databases-in-xamarinmac"></a>Datenbanken in xamarin. Mac
 
@@ -2221,8 +2221,6 @@ Zuerst erhalten wir Zugriff auf unsere sqlite.net-Datenbank, die Sie erstellen u
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die Arbeit mit der Datenbindung und der Schlüssel-Wert-Codierung mit SQLite-Datenbanken in einer xamarin. Mac-Anwendung ausführlich erläutert. Zuerst wurde das verfügbar machen einer C# Klasse für "Ziel-C" mithilfe von Key-Value Coding (KVC) und Key-Value-Beobachtungen (KVO) untersucht. Im nächsten Schritt wurde gezeigt, wie eine KVO-kompatible Klasse verwendet und Daten an Benutzeroberflächen Elemente in der Interface Builder von Xcode gebunden werden. Der Artikel behandelt auch das Arbeiten mit SQLite-Daten über den sqlite.net ORM und das Anzeigen dieser Daten in einer Tabellenansicht.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

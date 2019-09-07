@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: 3ab7a923dabd6b98c509870abaa51b12fb63c8d2
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4566ee5d203b5d098133aebe2c32dbaec712e17a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510122"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764210"
 ---
 # <a name="xamarinandroid-listview-parts-and-functionality"></a>Xamarin. Android ListView-Teile und-Funktionen
 
@@ -31,26 +31,21 @@ In diesen Screenshots wird ein `ListView` einfaches Steuerelement verwendet, um 
 
 Die Elemente, die eine `ListView` bilden, werden im folgenden ausführlicher beschrieben:
 
-
 ## <a name="rows"></a>Zeilen
 
 Jede Zeile verfügt über eine `View`eigene Zeile. Die Sicht kann entweder eine der in `Android.Resources`definierten integrierten Sichten oder eine benutzerdefinierte Ansicht sein. Für jede Zeile kann dasselbe Ansichts Layout verwendet werden, oder Sie können unterschiedlich sein. In diesem Dokument finden Sie Beispiele für die Verwendung integrierter Layouts und andere, die erläutern, wie Sie benutzerdefinierte Layouts definieren.
-
 
 ## <a name="adapter"></a>Adapter
 
 Das `ListView` -Steuerelement `Adapter` erfordert, dass das `View` formatierte für jede Zeile bereitstellt. Android verfügt über integrierte Adapter und Ansichten, die verwendet werden können, oder es können benutzerdefinierte Klassen erstellt werden.
 
-
 ## <a name="fast-scrolling"></a>Schnelles Scrollen
 
 Wenn eine `ListView` viele Zeilen mit Daten enthält, kann ein schnell Bildlauf aktiviert werden, um dem Benutzer zu helfen, zu einem beliebigen Teil der Liste zu navigieren. Die schnell Bildlauf-Scrollleiste kann optional aktiviert (und in API-Ebene 11 und höher angepasst werden).
 
-
 ## <a name="section-index"></a>Abschnitts Index
 
 Beim Scrollen durch lange Listen bietet der optionale Abschnitts Index dem Benutzer Feedback zu dem Teil der Liste, den er gerade anzeigen wird. Dies ist nur für lange Listen geeignet, in der Regel in Verbindung mit dem schnellen scrollen.
-
 
 ## <a name="classes-overview"></a>Übersicht über Klassen
 
@@ -71,4 +66,3 @@ Der Zweck der einzelnen Klassen wird im folgenden beschrieben:
 - **CursorAdapter** &ndash; Verwenden`CursorAdapter` Sie oder`SimpleCursorAdapter` , um Daten auf der Grundlage einer SQLite-Abfrage anzuzeigen.
 
 Dieses Dokument enthält einfache Beispiele, in denen `ArrayAdapter` ein und komplexere Beispiele verwendet werden, die benutzerdefinierte Implementierungen `BaseAdapter` von `CursorAdapter`oder erfordern.
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 60bf25d7d88a1772e8b742a336a5faaebdf964fa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1a91b92cc3e82bad02d630dde8ced1d1ba63e3fd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290811"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768478"
 ---
 # <a name="maps-in-xamarinios"></a>Zuordnungen in xamarin. IOS
 
@@ -52,7 +52,6 @@ Der folgende Screenshot zeigt die verschiedenen verfügbaren Karten Stile:
 
 - Zoomen über eine Pinsel Bewegung
 - Schwenken über eine schwenken-Geste
-
 
 Diese Funktionen können aktiviert oder deaktiviert werden, indem einfach die `ZoomEnabled` - `ScrollEnabled` Eigenschaft und die `MKMapView` -Eigenschaft der-Instanz festgelegt werden, wobei der Standardwert für beide "true" ist. Wenn Sie z. b. eine statische Karte anzeigen möchten, legen Sie einfach die entsprechenden Eigenschaften auf false fest:
 
@@ -100,7 +99,6 @@ Eine Anmerkung selbst besteht aus zwei Teilen:
 
 - Das `MKAnnotation` -Objekt, das Modelldaten zur Anmerkung enthält, z. b. den Titel und den Speicherort der Anmerkung.
 - Der `MKAnnotationView` , der das anzuzeigende Bild und optional eine Legende enthält, die angezeigt wird, wenn der Benutzer auf die Anmerkung tippt.
-
 
 Das Map-Kit verwendet das IOS-Delegierungs Muster, um Anmerkungen zu einer Zuordnung `Delegate` hinzuzufügen, `MKMapView` wobei die-Eigenschaft des `MKMapViewDelegate`auf eine Instanz von festgelegt ist. Es handelt sich um die Implementierung dieses Delegaten, die für `MKAnnotationView` die Rückgabe von für eine Anmerkung zuständig ist.
 
@@ -183,7 +181,6 @@ Eine andere Möglichkeit zur ebenengrafik auf einer Karte ist die Verwendung von
 - Polylines: wird häufig angezeigt, wenn eine Route angezeigt wird.
 - Kreise: wird verwendet, um einen kreisförmigen Bereich einer Karte hervorzuheben.
 
-
 Darüber hinaus können benutzerdefinierte Überlagerungen erstellt werden, um beliebige Geometrien mit granulartem, angepassten Zeichencode anzuzeigen. Beispielsweise wäre das Wetterradar ein guter Kandidat für eine benutzerdefinierte Überlagerung.
 
 #### <a name="adding-an-overlay"></a>Hinzufügen einer Überlagerung
@@ -192,7 +189,6 @@ Darüber hinaus können benutzerdefinierte Überlagerungen erstellt werden, um b
 
 - Erstellen eines Modell Objekts für das Overlay und Hinzufügen des `MKMapView` Objekts zum.
 - Erstellen einer Ansicht für die Überlagerung in `MKMapViewDelegate` .
-
 
 Das Modell für die Überlagerung kann eine `MKShape` beliebige Unterklasse sein. Xamarin. IOS enthält `MKShape` Unterklassen für Polygone, Polylinien und Kreise über die `MKPolygon`Klassen, `MKPolyline` und `MKCircle` .
 
@@ -231,7 +227,6 @@ Um eine lokale Suche auszuführen, muss eine Anwendung die folgenden Schritte au
 1. Erstellen Sie `MKLocalSearch` ein-Objekt `MKLocalSearchRequest` aus der.
 1. Ruft die `Start` -Methode für `MKLocalSearch` das-Objekt auf.
 1. Rufen Sie `MKLocalSearchResponse` das-Objekt in einem Rückruf ab.
-
 
 Die lokale Such-API selbst stellt keine Benutzeroberfläche bereit. Es ist nicht einmal erforderlich, eine Karte zu verwenden. Um jedoch eine praktische Verwendung der lokalen Suche zu ermöglichen, muss eine Anwendung eine bestimmte Möglichkeit bieten, eine Suchabfrage anzugeben und Ergebnisse anzuzeigen. Da die Ergebnisse auch Speicherort Daten enthalten, ist es häufig sinnvoll, Sie auf einer Karte anzuzeigen.
 
@@ -279,8 +274,6 @@ Wir sehen uns nun an, wie Sie `searchResultsController` `searchResultsUpdater` u
 Dies führt dazu, dass eine Suchleiste über der Karte angezeigt wird, wie unten dargestellt:
 
  ![](images/07-searchbar.png "Eine Suchleiste, die über der Karte angezeigt wird.")
-
-
 
 ### <a name="displaying-the-search-results"></a>Anzeigen der Suchergebnisse
 
@@ -351,7 +344,6 @@ public class SearchResultsViewController : UITableViewController
             }
         });
 
-
     }
 }
 ```
@@ -382,7 +374,6 @@ public void Search (string forSearchString)
         }
     });
 
-
 }
 ```
 
@@ -406,8 +397,6 @@ Die obige Implementierung fügt der Karte eine Anmerkung hinzu, wenn ein Element
 
 > [!IMPORTANT]
 > `UISearchController`wurde in ios 8 implementiert. Wenn Sie Geräte vor diesem Zeitpunkt unterstützen möchten, müssen Sie verwenden `UISearchDisplayController`.
-
-
 
 ## <a name="summary"></a>Zusammenfassung
 

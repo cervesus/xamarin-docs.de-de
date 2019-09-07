@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: f326a2ef449b7c807be150a002a4afc600d9908d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f635e6e20a4cec9b8cc735bc733b678263cd024a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652706"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759180"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
@@ -120,7 +120,6 @@ Das Ergebnis ist die Abkürzung ein *arithmetische Spirale* , da die Abweichung 
 [![](polylines-images/archimedeanspiral-small.png "Dreifacher Screenshot der Seite Archimedean Spirale")](polylines-images/archimedeanspiral-large.png#lightbox "dreifachen Screenshot der Seite Archimedean Spirale")
 
 Beachten Sie, dass die `SKPath` wird erstellt, einem `using` Block. Dies `SKPath` belegt mehr Arbeitsspeicher als die `SKPath` Objekte in der vorherigen Programme, die deutet auf eine `using` Block ist besser geeignet ist, nicht verwalteten Ressourcen freizugeben.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 49e0de909e2255d850211e51596efdaa43f293ae
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 0a82c84b334cbfcf3ab978b5ebd0e256bcd64815
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509371"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755059"
 ---
 # <a name="creating-resources-for-varying-screens"></a>Erstellen von Ressourcen für unterschiedliche Bildschirme
 
 Android selbst kann auf vielen verschiedenen Geräten ausgeführt werden, die jeweils über eine Vielzahl von Auflösungen, Bildschirmgrößen und Bildschirm dichten verfügen. Android führt die Skalierung und die Größe der Größe aus, damit Ihre Anwendung auf diesen Geräten funktioniert. Dies kann jedoch zu einer nicht optimalen Benutzer Leistung führen. Beispielsweise können Bilder unscharf angezeigt werden, oder Sie können in einer Ansicht erwartungsgemäß positioniert werden.
-
 
 ## <a name="concepts"></a>Konzepte
 
@@ -38,7 +37,6 @@ Beachten Sie, dass die ersten drei dieser Konzepte zusammenhängen &ndash; , um 
 
 Zur Unterstützung dieser Komplexität bevorzugt das Android-Framework die Verwendung von *Dichte unabhängigen Pixeln (DP)* für Bildschirmlayouts. Durch die Verwendung von Dichte unabhängigen Pixeln werden dem Benutzer Benutzeroberflächen Elemente angezeigt, die dieselbe physische Größe auf Bildschirmen mit unterschiedlichen dichten aufweisen.
 
-
 ## <a name="supporting-various-screen-sizes-and-densities"></a>Unterstützung verschiedener Bildschirmgrößen und dichten
 
 Android erledigt den größten Teil der Arbeit, um die Layouts für jede Bildschirm Konfiguration ordnungsgemäß zu erzeugen. Es gibt jedoch einige Aktionen, die durchgeführt werden können, um das System zu unterstützen.
@@ -46,7 +44,6 @@ Android erledigt den größten Teil der Arbeit, um die Layouts für jede Bildsch
 In den meisten Fällen ist die Verwendung von Dichte unabhängigen Pixeln anstelle der eigentlichen Pixel in Layouts ausreichend, um die Unabhängigkeit der Dichte sicherzustellen.
 Android skaliert die drawables zur Laufzeit in die entsprechende Größe.
 Die Skalierung kann jedoch dazu führen, dass Bitmaps unscharf angezeigt werden. Um dieses Problem zu umgehen, stellen Sie alternative Ressourcen für die unterschiedlichen dichten bereit. Beim Entwerfen von Geräten für mehrere Auflösungen und Bildschirm dichten kann es einfacher sein, mit der höheren Auflösung oder Dichte von Bildern zu beginnen und dann nach unten zu skalieren.
-
 
 ### <a name="declare-the-supported-screen-size"></a>Unterstützte Bildschirmgröße deklarieren
 
@@ -87,7 +84,6 @@ Bearbeiten Sie " **androidmanifest. XML** " so, dass [Unterstützung für Bildsc
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>Bereitstellen alternativer Layouts für verschiedene Bildschirmgrößen
 
-
 Durch alternative Layouts können Sie eine Ansicht für eine spezielle Bildschirmgröße anpassen, um die Positionierung oder Größe der Komponenten der Komponenten Benutzeroberfläche zu ändern.
 
 Beginnend mit API-Ebene 13 (Android 3,2), werden die Bildschirmgrößen zugunsten der Verwendung des SW*N*-DP-Qualifizierers als veraltet markiert. Dieser neue Qualifizierer deklariert den Umfang des Speicherplatzes, den ein bestimmtes Layout benötigt. Es wird empfohlen, dass Anwendungen, die unter Android 3,2 oder höher ausgeführt werden sollen, diese neueren Qualifizierer verwenden sollten.
@@ -103,7 +99,6 @@ Wenn ein Layout z. b. eine mindestens 700 DP-Breite des Bildschirms erfordert, w
 ![Layoutordner für 700 DP-Bildschirmbreite](resources-for-varying-screens-images/03-layout-sw700dp-xs.png)
 
 -----
-
 
 Im folgenden finden Sie eine Reihe von Zahlen für verschiedene Geräte:
 
@@ -150,8 +145,6 @@ Für Anwendungen, die sich über die alten und die neuen API-Ebenen erstrecken, 
 
 -----
 
-
-
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>Unterschiedliche Bitmaps für verschiedene Bildschirm dichten bereitstellen
 
 Obwohl Android Bitmaps nach Bedarf für ein Gerät skaliert, werden die Bitmaps selbst möglicherweise nicht elegant zentral hoch-oder herunterskaliert: Sie werden möglicherweise unscharf oder verschwommen. Das Bereitstellen von Bitmaps, die für die Bildschirm Dichte geeignet sind, verringert dieses Problem.
@@ -164,7 +157,6 @@ Vergleichen Sie dies mit einem Layout, das mit Dichte spezifischen Ressourcen en
 
 ![Screenshots mit Dichte spezifischen Ressourcen](resources-for-varying-screens-images/07-density-specific-resources.png)
 
-
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>Erstellen von unterschiedlichen Dichte Ressourcen mit Android Asset Studio
 
 Die Erstellung dieser Bitmaps verschiedener dichten kann etwas mühsam sein. Google hat daher ein Online Dienstprogramm erstellt, das einige der mit der Erstellung dieser Bitmaps verbundenen Elemente reduzieren kann, die als [**Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/)bezeichnet werden.
@@ -172,7 +164,6 @@ Die Erstellung dieser Bitmaps verschiedener dichten kann etwas mühsam sein. Goo
 [![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 Diese Website unterstützt Sie beim Erstellen von Bitmaps, die auf die vier gängigen Bildschirm dichten abzielen, indem ein Bild bereitgestellt wird. In Android Asset Studio werden dann die Bitmaps mit einigen Anpassungen erstellt und dann als ZIP-Datei heruntergeladen.
-
 
 ## <a name="tips-for-multiple-screens"></a>Tipps für mehrere Bildschirme
 
@@ -183,12 +174,11 @@ Android wird auf einer verwirrenden Anzahl von Geräten ausgeführt, und die Kom
 - **Verwenden Sie DPS anstelle von Pixel** -Pixel, wenn sich die Bildschirm Dichte ändert. Die Pixelwerte werden nicht hart codiert. Vermeiden Sie Pixel anstelle von DP (Dichte unabhängige Pixel).
 
 - **Vermeiden** Sie [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) 
-  Wenn  möglich ,&ndash; ist Sie auf API-Ebene 3 (Android 1,5) veraltet und führt zu spröden Layouts. Er sollte nicht verwendet werden. Versuchen Sie stattdessen, flexiblere layoutwidgets wie [**LinearLayout**](xref:Android.Widget.LinearLayout), [**relativelayout**](xref:Android.Widget.RelativeLayout)oder das neue [**GridLayout**](xref:Android.Widget.GridLayout)zu verwenden.
+  Wenn möglich ,&ndash; ist Sie auf API-Ebene 3 (Android 1,5) veraltet und führt zu spröden Layouts. Er sollte nicht verwendet werden. Versuchen Sie stattdessen, flexiblere layoutwidgets wie [**LinearLayout**](xref:Android.Widget.LinearLayout), [**relativelayout**](xref:Android.Widget.RelativeLayout)oder das neue [**GridLayout**](xref:Android.Widget.GridLayout)zu verwenden.
 
-- **Wählen Sie eine Layoutausrichtung als Standard** aus.    Anstatt z. b. die alternativen Ressourcen Layout-Land und layoutport bereitzustellen, platzieren Sie die Ressourcen für das Layout und die Ressourcen für das Hochformat in den layoutport. &ndash;
+- **Wählen Sie eine Layoutausrichtung als Standard** aus.Anstatt z. b. die alternativen Ressourcen Layout-Land und layoutport bereitzustellen, platzieren Sie die Ressourcen für das Layout und die Ressourcen für das Hochformat in den layoutport. &ndash;
 
 - **Verwenden von layoutpara Metern für Höhe und Breite** : beim Definieren von Benutzeroberflächen Elementen in einer XML-Layoutdatei hat eine Android-Anwendung mit den **wrap_content** -und **fill_parent** -Werten einen größeren Erfolg sicherzustellen, dass eine ordnungsgemäße Darstellung auf verschiedenen Geräten stattfindet. Verwenden von Pixel-oder Dichte unabhängigen Einheiten. Diese Dimensions Werte bewirken, dass Android Bitmapressourcen nach Bedarf skaliert. Aus demselben Grund sind Dichte unabhängige Einheiten am besten reserviert, wenn Sie die Ränder und die Auffüll Zeichen von Benutzeroberflächen Elementen angeben.
-
 
 ## <a name="testing-multiple-screens"></a>Testen mehrerer Bildschirme
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: 1df10c4b8eaa30ce417feb2abae7f52b2494edf6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c248949024d0e13a24863368e88aa559fa496806
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526369"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755244"
 ---
 # <a name="android-resource-basics"></a>Grundlagen zu Android-Ressourcen
 
@@ -20,11 +20,11 @@ Fast alle Android-Anwendungen enthalten eine Art von Ressource, zumindest besitz
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Ressourcendateien](android-resource-basics-images/01-resource-files-vs.png)
- 
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![Ressourcendateien](android-resource-basics-images/01-resource-files-xs.png)
- 
+
 -----
 
 Die fünf Dateien, die die Standardressourcen ausmachen, wurden im Ordner "Resources" (Ressourcen) erstellt:
@@ -39,7 +39,6 @@ Die fünf Dateien, die die Standardressourcen ausmachen, wurden im Ordner "Resou
 
 - Resource.Designer.cs&ndash; diese Datei wird automatisch von xamarin. Android generiert und verwaltet und enthält die einzelnen Ressourcen zugewiesenen eindeutigen IDs. Dies ist sehr ähnlich und mit der Datei "R. Java" identisch, die eine in Java geschriebene Android-Anwendung hätte. Sie wird automatisch von xamarin. Android-Tools erstellt und wird von Zeit zu Zeit neu generiert.
 
-
 ## <a name="creating-and-accessing-resources"></a>Erstellen von Ressourcen und Zugreifen auf Ressourcen
 
 Das Erstellen von Ressourcen ist so einfach wie das Hinzufügen von Dateien zum Verzeichnis für den fraglichen Ressourcentyp. Der nachfolgende Screenshot zeigt, dass einem Projekt Zeichen folgen Ressourcen für deutsche Gebiets Schemas hinzugefügt wurden. Beim Hinzufügen von " **Strings. XML** " zur Datei wurde die Buildaktion von den xamarin. Android-Tools automatisch auf " **androidresource** " festgelegt:
@@ -47,20 +46,18 @@ Das Erstellen von Ressourcen ist so einfach wie das Hinzufügen von Dateien zum 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Buildaktion für "Strings. xml" auf "androidresource" festgelegt](android-resource-basics-images/02-build-action-vs.png)
- 
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ![Buildaktion für "Strings. xml" auf "androidresource" festgelegt](android-resource-basics-images/02-build-action-xs.png)
- 
+
 -----
- 
 
 So können die Ressourcen von den Xamarin.Android-Tools ordnungsgemäß kompiliert und in die APK-Datei eingebettet werden. Falls aus irgendeinem Grund der **Buildvorgang** nicht auf **Android-Ressourcen** festgelegt ist, dann werden die Dateien aus dem APK ausgeschlossen, und jeder Versuch, die Ressource zu laden oder auf diese zuzugreifen, führt zu einem Laufzeitfehler oder zum Absturz der Anwendung.
 
 Auch wenn Android für Ressourcenelemente nur Kleinbuchstaben für Dateinamen unterstützt, ist Xamarin.Android etwas nachsichtiger. Xamarin.Android unterstützt Dateinamen, die jeweils in Groß- und Kleinbuchstaben geschrieben sind. Für Bildnamen gilt die Verwendung von Kleinbuchstaben mit Unterstrichen als Trennzeichen (z. B. **my\_image\_name.png**). Beachten Sie, dass Ressourcennamen nicht verarbeitet werden können, wenn Bindestriche oder Leerzeichen als Trennzeichen verwendet werden.
 
 Sobald Ressourcen zu einem Projekt hinzugefügt wurden, gibt es zwei Möglichkeiten, diese in einer Anwendung zu verwenden &ndash; programmgesteuert (im Code) oder aus XML-Dateien.
-
 
 ## <a name="referencing-resources-programmatically"></a>Programm gesteuertes verweisen auf Ressourcen
 
@@ -105,7 +102,6 @@ Wenn Sie Programm gesteuert auf Ressourcen verweisen (im Code), können Sie übe
 - **ResourceType** &ndash; Dies ist der geschachtelte Ressourcentyp, der sich innerhalb der oben beschriebenen Ressourcen Klasse befindet.
 
 - **Ressourcen Name** &ndash; Dies ist der Dateiname der Ressource (ohne Erweiterung) oder der Wert des Attributs Android: Name für Ressourcen, die sich in einem XML-Element befinden.
-
 
 ## <a name="referencing-resources-from-xml"></a>Verweisen auf Ressourcen aus XML
 

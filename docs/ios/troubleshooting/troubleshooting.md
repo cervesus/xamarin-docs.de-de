@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: a888c29a6409fc803b8a0d06bcc6f8a668e64f5e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e6a1b6f4d35a6b8774901ed5a505b5333511c848
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292057"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769697"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für xamarin. IOS 
 
@@ -26,7 +26,6 @@ Dieser Fehler tritt aufgrund einer Inkompatibilität mit Visual Studio auf.
 - **Visual Studio 2017 Update 2** (Version 15,2 oder höher) ist nur mit dem **System. valuetuple-nuget-4.3.1** oder höher kompatibel.
 
 Wählen Sie das richtige System. valuetuple-nuget aus, das Ihrer Visual Studio 2017-Installation entspricht.
-
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>Empfangene Fehlermeldung "Fehler beim Abrufen der Update Informationen"
 
@@ -143,7 +142,6 @@ Dies geschieht, wenn Sie alle folgenden Aktionen ausführen:
 1. Verwenden von Mac OS X Leopard (10,5)
 1. Führen Sie die APP im Simulator aus.
 
-
 Das Problem ist, dass Mono das Betriebssystem X `libsqlite3.dylib`und nicht die `libsqlite3.dylib` Datei "iphonesimulator" aufnimmt. Ihre APP *funktioniert* auf dem Gerät, aber nicht auf dem Simulator.
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Fehler bei der Bereitstellung auf dem Gerät mit System. Exception: Aminviceingestallapplication hat 3892346901 zurückgegeben.
@@ -209,8 +207,6 @@ Dieses Problem ist sehr selten und extrem schwer zu reproduzieren. es ist normal
 1. Deaktivieren Sie "Balken Synchronisierung" mit dem Entwickler Tool "Quartz Debug" (das Sie mithilfe von Spotlight suchen können), und überprüfen Sie, ob die Leistung des Quell-Editors in normaler Weise wieder hergestellt wird.
 1. Wiederholen Sie den Schritt (1), bei dem die Balken Synchronisierung deaktiviert ist.
 1. Wenn der Editor seit mehr als wenigen Sekunden nicht mehr verfügbar ist, versuchen Sie, "killall-quit [Visual Studio für Mac]" in einem Terminal auszuführen, während es nicht reagiert. Es ist möglicherweise schwierig, den Kill-Befehl zu warten, während der Editor nicht reagiert, aber es ist von entscheidender Bedeutung, da der Befehl Mono erzwingt, Stapel Überwachungen aller Threads in das MD-Protokoll zu schreiben, mit dem wir ermitteln können, in welchem Zustand sich die Threads befinden, während der XS-Dienst nicht reagiert.
-
-
 
 Fügen Sie die XS-Protokolle, **~/Library/Logs/XamarinStudio-{Version}/IDE-{Timestamp}.log**, **androidtools-{Timestamp}. log**und **Components-{Timestamp}. log** (in älteren Versionen von XS/monodevelop, Just send **~/Library/Logs /MonoDevelop-(3.0 | 2.8 | 2.6)/monodevelop.log**).
 
@@ -293,7 +289,6 @@ Beim Hochladen einer APP auf Ihr Gerät erhalten Sie möglicherweise die Fehlerm
 Die aktuelle Version von xamarin. IOS und Visual Studio für Mac schlägt fehl, wenn der Projektname oder das Verzeichnis, in dem die Projekt Mappe oder das Projekt gespeichert ist, Leerzeichen enthält.
 Gehen Sie wie folgt vor, um das Problem zu beheben:
 
-
 - Stellen Sie sicher, dass weder das Projekt noch das Verzeichnis, in dem es gespeichert ist, ein Leerzeichen enthält.
 - Stellen Sie sicher, dass der Projekt Name im Projekt "Haupteinstellungen" keine Leerzeichen enthält.
 
@@ -324,11 +319,9 @@ Führen Sie folgende Schritte aus:
 
 Diese Ausnahme wird durch eine der folgenden drei Punkte verursacht:
 
-
 1. Sie haben einen Selektor für die Ziel-C-Laufzeit bereitgestellt, ohne das entsprechende [Export]-Attribut auf eine Methode anzuwenden.
 1. Sie haben das vollständige verknüpfen aktiviert und das Attribut [preserve] nicht auf die [Export] Ed-Methode angewendet.
 1. Sie haben das [Export]-Attribut auf eine private Methode in einem geerbten Typ angewendet.
-
 
 ## <a name="mainwindowxibdesignercs-file-is-not-updated"></a>Die MainWindow.XIb.Designer.cs-Datei wird nicht aktualisiert.
 
@@ -414,7 +407,6 @@ Wenn Sie versuchen, die Software zu aktualisieren, und diese Fehlermeldung angez
 Dieses Problem kann sich in mehreren Formularen manifestieren und führt nicht immer zu einem konsistenten Fehler. Wenn die Anwendung eine XIb-Datei enthält, stellen Sie sicher, dass die **Buildaktion** auf der XIb-Datei auf **interfacedefinition**festgelegt ist. Dies ist die Standard-Buildaktion für. xisb.
 
 Um die Buildaktion zu überprüfen, klicken Sie mit der rechten Maustaste auf die XIb-Datei, **und wählen Sie**die Option
-
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: c631ca73d69ea630592920a32804512f89d5baaf
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0fb63c650e73bce5a08b204f942f0c19583e4899
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529076"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770687"
 ---
 # <a name="unit-testing-enterprise-apps"></a>Komponententests für Unternehmens-apps
 
@@ -225,7 +225,6 @@ Bei einem Komponenten Test wird eine kleine Einheit der APP benötigt, in der Re
 Das Verhalten eines zu testenden Objekts kann isoliert werden, indem abhängige Objekte durch Mock-Objekte ersetzt werden, die das Verhalten der abhängigen Objekte simulieren. Dadurch wird die Ausführung von Komponententests ermöglicht, ohne dass Ressourcen wie z. b. Webdienste oder Datenbanken erforderlich sind.
 
 Das Testen von Modellen und Anzeigen von Modellen von MVVM-Anwendungen ist identisch mit dem Testen anderer Klassen, und es können dieselben Tools und Techniken verwendet werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 4. Scrollen im Stapel
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 4. Scrollen im Stapel'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 4. Scrollen im Stapel'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 66e4f52e87a4398dd2e09d2d128f43de9a71a665
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334600"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760842"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Zusammenfassung der Kapitel 4. Scrollen im Stapel
 
@@ -110,8 +110,6 @@ Einfügen einer `StackLayout` in eine `ScrollView` ist häufig, aber eben eine `
 Der Trick besteht darin, geben Sie die `ScrollView` untergeordnetes Element des der `StackLayout` eine `VerticalOptions` -Einstellung `FillAndExpand`. Dies wird veranschaulicht, der [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) Beispiel.
 
 Die **BlackCat** Beispiel zeigt auch zum Definieren und die Anwendung zugreifen, die in der freigegebenen Bibliothek eingebettet sind. Dies kann auch mit freigegebenen Asset-Projekten (SAPs) erreicht werden, aber der Prozess ist ein wenig komplizierter, als die [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) veranschaulicht.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

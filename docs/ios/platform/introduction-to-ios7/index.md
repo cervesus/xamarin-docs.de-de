@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69f43df64ccf7de75b00e1a0b3f6e2ececc5bbb3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292017"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752062"
 ---
 # <a name="introduction-to-ios-7"></a>Einführung in iOS 7
 
@@ -30,7 +30,6 @@ IOS 7 erweitert die Animations Unterstützung in UIKit und ermöglicht Anwendung
 
 - `springWithDampingRatio`– Ein Wert zwischen 0 und 1, bei dem die Schwingung für einen kleineren Wert zunimmt.
 - `initialSpringVelocity`– Die anfängliche Spring Velocity als Prozentsatz des gesamten Animations Abstands pro Sekunde.
-
 
 Der folgende Code erzeugt eine Spring Effect-Struktur, wenn sich der Mittelpunkt der Bildansicht ändert:
 
@@ -104,13 +103,11 @@ Es gibt mehrere verschiedene primitive Verhalten, um komplexe Interaktionen zu i
 - `UIPushBehavior`– Wendet Force auf ein dynamisches Element an.
 - `UISnapBehavior`– Ermöglicht einem dynamischen Element das Andocken an einer Position mit einem Spring Effekt.
 
-
 Obwohl viele primitive vorhanden sind, ist der allgemeine Prozess zum Hinzufügen von Physik-basierten Interaktionen zu einer Ansicht mithilfe von UIKit Dynamics zwischen Verhalten konsistent:
 
 1. Erstellen Sie einen dynamischen Animator.
 1. Erstellungs Verhalten (en).
 1. Fügen Sie dem dynamischen Animator Verhalten hinzu.
-
 
 ### <a name="dynamics-example"></a>Dynamics-Beispiel
 
@@ -233,7 +230,6 @@ IOS 7 ändert sich, wann und wie Hintergrundarbeit durchgeführt wird. Durch den
 - Hintergrund Abruf – ermöglicht Anwendungen, Inhalte im Hintergrund in regelmäßigen Abständen zu aktualisieren.
 - Remote Benachrichtigungen: Hiermit können Anwendungen Inhalte aktualisieren, wenn Sie eine Pushbenachrichtigung erhalten. Die Benachrichtigungen können entweder unbeaufsichtigt sein oder ein Banner auf dem Sperrbildschirm anzeigen.
 - Background Transfer Service – ermöglicht das Hochladen und Herunterladen von Daten, z. b. große Dateien, ohne festes Zeit Limit.
-
 
 Weitere Informationen zu den neuen Multitasking-Funktionen finden Sie in den IOS-Abschnitten des xamarin- [backerden-Handbuchs](~/ios/app-fundamentals/backgrounding/index.md).
 

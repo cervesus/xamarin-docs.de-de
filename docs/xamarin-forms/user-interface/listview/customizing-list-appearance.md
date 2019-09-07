@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 1355f65a192cf8f7f119a2ee77f334c115650578
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: fc0664ff32e63af5d0c80f69ff69f4992ad0c708
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121638"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770307"
 ---
 # <a name="customizing-listview-appearance"></a>Anpassen der Darstellung der ListView
 
@@ -294,12 +294,10 @@ XAML:
 
 ![](customizing-list-appearance-images/height-custom.png "ListView mit feste Zeilenhöhe")
 
-
 ### <a name="uneven-rows"></a>Ungleiche Zeilen
 
 Wenn Sie einzelne Zeilen anhand unterschiedlicher Höhe haben möchten, legen Sie die `HasUnevenRows` Eigenschaft `true`.
 Beachten Sie, dass die Zeilenhöhe manuell festgelegt werden, sobald keine `HasUnevenRows` festgelegt wurde `true`, da die Höhe von Xamarin.Forms automatisch berechnet werden.
-
 
 C#:
 
@@ -337,8 +335,6 @@ Die `OnImageTapped` Ereignishandler wird ausgeführt, als Reaktion auf eine [ `I
 ![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView mit Common Language Runtime-Zeile Größenänderung")
 
 Beachten Sie, dass ist es sehr wahrscheinlich, dass eine Verringerung der Leistung aus, wenn dieses Feature übermäßig beansprucht wird.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 
