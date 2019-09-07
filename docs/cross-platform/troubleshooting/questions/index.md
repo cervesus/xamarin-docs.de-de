@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 3b940199a1384540bcc9f7134dabf8b69ac3767e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285012"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765113"
 ---
 # <a name="general-frequently-asked-questions"></a>Allgemeine häufig gestellte Fragen
 
@@ -42,7 +42,6 @@ Es gab mehrere Google Play Services Komponenten und nuget-Pakete, aber um Entwic
 ### <a name="where-are-the-components-stored-on-my-machinecomponent-storagemd"></a>[Wo werden die Komponenten auf meinem Computer gespeichert?](component-storage.md)
 Jedes Mal, wenn Sie eine xamarin-Komponente in einem App-Projekt installieren, wird Sie an den beiden in diesem Handbuch aufgeführten Speicherorten platziert.
 
-
 ## <a name="troubleshooting"></a>Problembehandlung
 ### <a name="where-can-i-find-my-version-information-and-logsversion-logsmd"></a>[Wo finde ich meine Versionsinformationen und Protokolle?](version-logs.md)
 In dieser Anleitung wird erläutert, wo Sie die meisten Diagnoseinformationen finden, die für die Problembehandlung bei xamarin-Problemen verwendet werden können.
@@ -55,4 +54,3 @@ Jenkins ist eine Open-Source-CI-Suite. Aufgrund dieser zahlreichen Probleme, die
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[Welche Projekteinstellungen sind für den Debugger erforderlich?](debugger-settings.md)
 Damit der Debugger erwartungsgemäß funktioniert (Haltepunkte erreichen, Debugprotokolle anzeigen usw.), müssen die Entwickler Instrumentation und die Anzeige der Debuginformationen aktiviert werden. In dieser Anleitung wird erläutert, wie Sie diese Einstellungen suchen und aktivieren.
-

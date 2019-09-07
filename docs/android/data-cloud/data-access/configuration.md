@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: f12efdbc0d5bf43a7515603a67fedd180cd87587
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5ebafa70239305210da631c3e9c34278f83b272b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649653"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754666"
 ---
 # <a name="configuration"></a>Konfiguration
 
-Verwendung von SQLite in Ihre Xamarin.Android-Anwendung müssen Sie den richtigen Speicherort für die Datenbankdatei zu bestimmen.
+Um sqlite in ihrer xamarin. Android-Anwendung zu verwenden, müssen Sie den richtigen Datei Speicherort für die Datenbankdatei festlegen.
 
-## <a name="database-file-path"></a>Pfad der Datenbankdatei
+## <a name="database-file-path"></a>Datenbankdatei Pfad
 
-Bevor Sie Daten in einer SQLite-Datenbank speichern können, müssen Sie eine Datenbankdatei erstellen. Diese muss immer erstellt werden, unabhängig von der verwendeten Datenzugriffsmethode. Der Speicherort unterscheidet sich lediglich je nach Zielplattform. Für Android können "Environment"-Klasse Sie zum Erstellen eines gültigen Pfads an, wie im folgenden Codeausschnitt gezeigt:
+Bevor Sie Daten in einer SQLite-Datenbank speichern können, müssen Sie eine Datenbankdatei erstellen. Diese muss immer erstellt werden, unabhängig von der verwendeten Datenzugriffsmethode. Der Speicherort unterscheidet sich lediglich je nach Zielplattform. Für Android können Sie die Umgebungs Klasse verwenden, um einen gültigen Pfad zu erstellen, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,7 +28,7 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Bei der Speicherung und dem Pfad der Datenbankdatei gibt es noch weitere Dinge zu betrachten. Beispielsweise können unter Android Sie auswählen, ob internen oder externen Speicher verwenden.
+Bei der Speicherung und dem Pfad der Datenbankdatei gibt es noch weitere Dinge zu betrachten. Unter Android können Sie z. b. auswählen, ob interner oder externer Speicher verwendet werden soll.
 
 Bei plattformübergreifendenden Anwendungen können Sie eine Compileranweisung verwenden, um je nach Plattform den richtigen Pfad zu verwenden:
 
@@ -46,7 +46,7 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Hinweise zur Verwendung von im Dateisystems in Android, finden Sie in der [Dateien durchsuchen](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) Anleitung. Der Artikel [Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) enthält weitere Informationen über die Verwendung von Compilerdirektiven für plattformübergreifenden Code.
+Hinweise zur Verwendung des Dateisystems in Android finden Sie in der Anleitung zum [Durchsuchen von Dateien](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) . Der Artikel [Erstellen von plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) enthält weitere Informationen über die Verwendung von Compilerdirektiven für plattformübergreifenden Code.
 
 ## <a name="threading"></a>Threading
 
@@ -62,12 +62,11 @@ lock (locker){
 }
 ```
 
-Jeglicher Datenbankzugriff (Lesevorgänge, Schreibvorgänge, Updates usw.) sollten mit die gleiche Sperre eingeschlossen werden. Vermeiden Sie eine Deadlocksituation, indem Sie sicherstellen, dass die Arbeit in der Sperre-Klausel einfach gehalten ist. Methoden in der Sperre sollten nicht auf andere Methoden zugreifen, die jeweils andere Sperren einrichten.
-
+Der gesamte Datenbankzugriff (Lese-, Schreib-, Update-usw.) sollte mit derselben Sperre umschließt werden. Vermeiden Sie eine Deadlocksituation, indem Sie sicherstellen, dass die Arbeit in der Sperre-Klausel einfach gehalten ist. Methoden in der Sperre sollten nicht auf andere Methoden zugreifen, die jeweils andere Sperren einrichten.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess-erweitert (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Rezepte für Android-Daten](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)
+- [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android-Daten Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Xamarin. Forms-Datenzugriff](~/xamarin-forms/data-cloud/data/databases.md)

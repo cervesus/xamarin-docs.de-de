@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 7e8230af1e9d4eef43b4142834afc0e90973c768
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eb944b062f75ceec8ca8dbe22cde64b0fdd15625
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288668"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752956"
 ---
 # <a name="healthkit-in-xamarinios"></a>Healthkit in xamarin. IOS
 
@@ -43,9 +43,6 @@ Folgende Schritte sind erforderlich, um die in diesem Artikel beschriebenen Schr
 > [!IMPORTANT]
 > Health Kit wurde in ios 8 eingeführt. Derzeit ist das Health Kit im IOS-Simulator nicht verfügbar, und das Debuggen erfordert eine Verbindung mit einem physischen IOS-Gerät.
 
-
-
-
 ## <a name="creating-and-provisioning-a-health-kit-app"></a>Erstellen und Bereitstellen einer Health Kit-App
 Bevor eine xamarin IOS 8-Anwendung die healthkit-API verwenden kann, muss sie ordnungsgemäß konfiguriert und bereitgestellt werden. In diesem Abschnitt werden die erforderlichen Schritte zum ordnungsgemäßen Einrichten der xamarin-Anwendung behandelt.
 
@@ -66,16 +63,14 @@ Weitere Informationen zur Bereitstellung einer IOS-App finden Sie im Artikel zur
 Die Erstellung einer expliziten **App-ID** und eines geeigneten **Bereitstellungs Profils** erfolgt im [IOS dev Center](https://developer.apple.com/devcenter/ios/index.action)von Apple. 
 
 Ihre aktuellen **App-IDs** sind im Abschnitt [Zertifikate, Bezeichner & profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) des dev Centers aufgeführt. Häufig werden in dieser Liste die **ID** -Werte `*`von angezeigt, die angeben, dass der**Name** der **App-ID** - mit einer beliebigen Anzahl von Suffixen verwendet werden kann. Solche Platzhalter- *App-IDs* können nicht mit Health Kit verwendet werden.
- 
-Um eine explizite **App-ID**zu erstellen, **+** klicken Sie auf die Schaltfläche in der oberen rechten Ecke, um zur Seite **IOS-APP-ID registrieren** zu gelangen:
 
+Um eine explizite **App-ID**zu erstellen, **+** klicken Sie auf die Schaltfläche in der oberen rechten Ecke, um zur Seite **IOS-APP-ID registrieren** zu gelangen:
 
 [![](healthkit-images/image02.png "Registrieren einer APP im Apple-Entwickler Portal")](healthkit-images/image02.png#lightbox)
 
 Verwenden Sie nach dem Erstellen einer APP-Beschreibung den Abschnitt **explizite APP-ID** , um eine ID für Ihre Anwendung zu erstellen. Aktivieren Sie im Abschnitt " **App Services** " im Abschnitt **Dienste aktivieren** den **integritätskit** .
 
 Wenn Sie dies abgeschlossen haben, klicken Sie auf die Schaltfläche **weiter** , um die **App-ID** in Ihrem Konto zu registrieren. Sie werden auf die Seite **Zertifikate, Bezeichner und Profile** zurückgeführt. Klicken Sie auf **Bereitstellungs profile** , um zur Liste Ihrer aktuellen Bereitstellungs Profile zu gelangen, und klicken **+** Sie auf die Schaltfläche in der oberen rechten Ecke, um zur Seite **IOS-Bereitstellungs Profil hinzufügen** zu gelangen. Wählen Sie die Option **IOS App Development** aus, und klicken Sie auf **weiter** , um zur Seite **App-ID auswählen** zu gelangen. Wählen Sie hier die explizite **App-ID** aus, die Sie zuvor angegeben haben:
-
 
 [![](healthkit-images/image03.png "Auswählen der expliziten APP-ID")](healthkit-images/image03.png#lightbox)
 
@@ -171,7 +166,6 @@ Da Integritäts Informationen äußerst sensibel sind, sollten App-Entwickler ih
 ### <a name="permissions-walkthrough"></a>Durchgängige Berechtigungen
 
 Öffnen Sie die `AppDelegate.cs` Datei in Ihrem von Health Kit bereitgestellten Projekt. Beachten Sie die- `HealthKit`Anweisung, die verwendet; am Anfang der Datei.
-
 
 Der folgende Code bezieht sich auf Health Kit-Berechtigungen:
 
@@ -410,11 +404,9 @@ Fügen Sie ein ordnungsgemäß bereitgestelltes IOS 8-Entwicklungs Gerät an Ihr
 
 Wenn Sie davon ausgehen, dass die bereit Stellungen ordnungsgemäß eingerichtet wurden, wird die Anwendung gestartet. Wenn die Methode erreicht `OnActivated` wird, fordert Sie die Integritäts-Kit-Autorisierung an. Wenn das Betriebssystem das erste Mal erreicht hat, wird dem Benutzer das folgende Dialogfeld angezeigt:
 
-
 [![](healthkit-images/image12.png "Dem Benutzer wird dieses Dialogfeld angezeigt.")](healthkit-images/image12.png#lightbox)
 
 Aktivieren Sie Ihre APP, um Herzfrequenz Daten zu aktualisieren, und Ihre APP wird erneut angezeigt. Der `ReactToHealthCarePermissions` Rückruf wird asynchron aktiviert. Dies bewirkt, dass `HeartRateModel’s` die `Enabled` -Eigenschaft geändert wird. Dadurch wird `EnabledChanged` das-Ereignis ausgelöst, wodurch `HKPermissionsViewController.OnEnabledChanged()` der Ereignishandler ausgeführt wird, wodurch die `StoreData` Schaltfläche aktiviert wird. Das folgende Diagramm zeigt die Sequenz:
-
 
 [![](healthkit-images/image13.png "Dieses Diagramm zeigt die Abfolge von Ereignissen.")](healthkit-images/image13.png#lightbox)
 

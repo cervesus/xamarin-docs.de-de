@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 93e6797f2b00df32b8d3ae361f40fd487b7adac3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647726"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758318"
 ---
 # <a name="working-with-screen-sizes"></a>Arbeiten mit Bildschirmgrößen
 
@@ -45,13 +45,11 @@ Die Projekt Mappe enthält verschiedene Layouts für jeden Stil, der zur Laufzei
 
 ![Unter Ressourcen/Layout angezeigte Dateien](screen-sizes-images/solution.png)
 
-
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
 Anstatt für jeden Bildschirmtyp verschiedene Layouts zu erstellen, können Sie auch eine einzelne Ansicht erstellen, die sich auf rechteckige oder Runde Bildschirme anpasst.
 
 In diesem [Google-Beispiel](https://developer.android.com/training/wearables/ui/layouts.html#same-layout) wird gezeigt, `BoxInsetLayout` wie die verwendet wird, um dasselbe Layout sowohl auf rechteckigen als auch auf dem Bildschirm zu verwenden
-
 
 ## <a name="wear-ui-designer"></a>Benutzeroberflächen-Designer
 
@@ -66,7 +64,6 @@ Die Entwurfs Oberfläche im rechteckigen Stil wird hier angezeigt:
 Die Entwurfs Oberfläche im runden Stil wird hier angezeigt:
 
 ![Entwurfs Oberfläche im runden Stil](screen-sizes-images/design-round.png)
-
 
 ## <a name="wear-simulator"></a>Wear-Simulator
 
@@ -85,4 +82,3 @@ Dies wird für einen roundscreen wie folgt dargestellt:
 ## <a name="video"></a>Video
 
 [Vollbild-Apps für Android Wear](https://www.youtube.com/watch?v=naf_WbtFAlY) von [Developers.Google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw).
-

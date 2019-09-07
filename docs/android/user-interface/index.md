@@ -1,45 +1,44 @@
 ---
-title: Erstellen der Benutzeroberfläche, die mit Xamarin.Android
-description: Erstellen von Benutzeroberflächen für Xamarin.Android-Apps
+title: Erstellen einer Benutzeroberfläche mit xamarin. Android
+description: Erstellen von Benutzeroberflächen für xamarin. Android-Apps
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: af94fa5b771d875a17d203a429484acfa1082b17
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 405fb0e30881ee64514d3984842ac820d5663382
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61309924"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764488"
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
-Den folgenden Abschnitten werden die verschiedenen Tools und Bausteine, die zum Erstellen von Benutzeroberflächen in Xamarin.Android-apps verwendet werden.
+In den folgenden Abschnitten werden die verschiedenen Tools und Bausteine erläutert, die zum Erstellen von Benutzeroberflächen in xamarin. Android-Apps verwendet werden.
 
 ## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android Designer](~/android/user-interface/android-designer/index.md)
 
-In diesem Abschnitt wird erläutert, wie Android Designer visuell entwerfen Sie Steuerelemente, und Bearbeiten von Eigenschaften verwendet wird. Außerdem wird erläutert, wie Sie mithilfe des Designers arbeiten mit Benutzeroberflächen und-Ressourcen in verschiedenen Konfigurationen, z.B. Designs, Sprachen und Gerätekonfigurationen, sowie zum Entwurf alternativer Ansichten wie quer- und Hochformat.
+In diesem Abschnitt wird erläutert, wie die Android Designer verwendet wird, um Steuerelemente visuell anzuordnen und Eigenschaften zu bearbeiten. Außerdem wird erläutert, wie der Designer verwendet wird, um mit Benutzeroberflächen und Ressourcen über verschiedene Konfigurationen hinweg zu arbeiten, wie z. b. Designs, Sprachen und Geräte Konfigurationen. Außerdem wird erläutert, wie Sie für alternative Ansichten wie Landscape und Hochformat entwerfen.
 
 ## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[Materialdesign](~/android/user-interface/material-theme.md)
 
-*Materialdesign* ist das Format der Benutzer-Schnittstelle, die das Aussehen und Verhalten von Ansichten und Aktivitäten in Android bestimmt. Material Design ist in Android, integriert, damit sie vom System Benutzeroberfläche sowie von Anwendungen verwendet wird. Dieses Handbuch führt Sie Material Design-Prinzipien und erläutert, wie Design einer app mithilfe von integrierten Material Designs oder ein benutzerdefiniertes Design.
+*Material* Design ist der Benutzeroberflächen Stil, der das Aussehen und das Aussehen von Ansichten und Aktivitäten in Android bestimmt. Das Material Design ist in Android integriert, sodass es von der Benutzeroberfläche des Systems sowie von Anwendungen verwendet wird. In diesem Handbuch werden Material Entwurfs Prinzipien vorgestellt und erläutert, wie Sie eine App mithilfe integrierter Material Designs oder eines benutzerdefinierten Designs gestalten können.
 
 ## <a name="user-profileandroiduser-interfaceuser-profilemd"></a>[Benutzerprofil](~/android/user-interface/user-profile.md)
 
-Dieses Handbuch wird erläutert, wie das persönliche Profil für den Besitzer eines Geräts, einschließlich Kontaktdaten wie z. B. Name und Phone-Anzahl der Eigentümer des Geräts zugreifen.
+In diesem Handbuch wird erläutert, wie Sie auf das persönliche Profil für den Besitzer eines Geräts zugreifen, einschließlich der Kontaktdaten, wie z. b. den Namen und die Telefonnummer des Geräte Besitzers.
 
 ## <a name="splash-screenandroiduser-interfacesplash-screenmd"></a>[Begrüßungsbildschirm](~/android/user-interface/splash-screen.md)
 
-Eine Android-app dauert einige Zeit, zu starten, insbesondere, wenn die app zunächst auf einem Gerät gestartet wird. Anzeige eines Begrüßungsbildschirms möglicherweise Start angezeigt wird ausgeführt, für den Benutzer einrichten. Dieses Handbuch erklärt, wie Sie einen Begrüßungsbildschirm für Ihre app zu erstellen.
+Eine Android-App nimmt einige Zeit in Betrieb, insbesondere wenn die APP zum ersten Mal auf einem Gerät gestartet wird. Ein Begrüßungsbildschirm zeigt möglicherweise den Startstatus für den Benutzer an. In diesem Handbuch wird erläutert, wie Sie einen Begrüßungsbildschirm für Ihre APP erstellen.
 
 ## <a name="layoutsandroiduser-interfacelayoutsindexmd"></a>[Layouts](~/android/user-interface/layouts/index.md)
 
 Layouts werden verwendet, um die visuelle Struktur für eine Benutzeroberfläche zu definieren.
-Layouts, wie z. B. `ListView` und `RecyclerView` sind die grundlegenden Bausteine von Android-Anwendungen. In der Regel ein Layout verwendet eine `Adapter` als eine Verbindung aus dem Layout und die zugrunde liegenden Daten zu fungieren, die zum Auffüllen der Elemente in das Layout verwendet wird. In diesem Abschnitt wird erläutert, wie z. B. Verwenden von Layouts `LinearLayout`, `RelativeLayout`, `TableLayout`, `RecyclerView`, und `GridView`.
+Layouts wie `ListView` und `RecyclerView` sind die grundlegendsten Bausteine von Android-Anwendungen. In der Regel verwendet ein Layout einen `Adapter` als Brücke zwischen dem Layout und den zugrunde liegenden Daten, die verwendet werden, um Datenelemente im Layout aufzufüllen. In diesem Abschnitt wird `LinearLayout`erläutert, wie Layouts wie, `RelativeLayout`, `TableLayout`, `RecyclerView`und `GridView`verwendet werden.
 
 ## <a name="controlsandroiduser-interfacecontrolsindexmd"></a>[Steuerelemente](~/android/user-interface/controls/index.md)
 
-Android-Steuerelemente (so genannte *Widgets*) sind die Elemente der Benutzeroberfläche, mit denen Sie eine Benutzeroberfläche erstellen. In diesem Abschnitt wird erläutert, wie Sie Steuerelemente wie Schaltflächen, Symbolleisten, Datum/Uhrzeit-dateiöffnungs-, Kalender, Drehfelder, Switches, Popupmenüs, Ansicht Pager und Webansichten verwenden.
-
+Android-Steuerelemente (auch als *Widgets*bezeichnet) sind die Benutzeroberflächen Elemente, die Sie verwenden, um eine Benutzeroberfläche zu erstellen. In diesem Abschnitt wird erläutert, wie Steuerelemente wie Schaltflächen, Symbolleisten, Datums-/Uhrzeit-Picker, Kalender, Spinner, Switches, Popup Menüs, Ansichts-Pagler und Webansichten verwendet werden.

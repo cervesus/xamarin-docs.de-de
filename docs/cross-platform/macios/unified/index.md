@@ -1,47 +1,46 @@
 ---
-title: Einheitliche API für Xamarin.iOS- und Xamarin.Mac
-description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, die Xamarin Unified API zu beschreiben. Verknüpfter Inhalt enthält eine Übersicht über die Unified API und erläutert, wie vorhandene Projekte zu migrieren.
+title: Unified API für xamarin. IOS und xamarin. Mac
+description: Dieses Dokument ist mit verschiedenen Handbüchern verknüpft, in denen die Unified API von xamarin beschrieben wird. Verknüpfter Inhalt bietet einen Überblick über die Unified API und erläutert, wie vorhandene Projekte migriert werden.
 ms.prod: xamarin
 ms.assetid: 14311617-1BC2-42CC-AF3F-9F97733EE2D0
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: ce027eacbfb47299cb1c627b530caae4a14c4ba0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 858f0c67b8c36f6cb2669086efec5f6ac1b4ddcb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199661"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765322"
 ---
-# <a name="unified-api-for-xamarinios-and-xamarinmac"></a>Einheitliche API für Xamarin.iOS- und Xamarin.Mac
+# <a name="unified-api-for-xamarinios-and-xamarinmac"></a>Unified API für xamarin. IOS und xamarin. Mac
 
-Xamarin Unified-API können sie zum Freigeben von Code zwischen Mac und iOS und Unterstützung der 32- und 64-Bit-Anwendungen mit der gleichen Binärdatei. Die Unified API ist standardmäßig in neuen Xamarin.iOS- und Xamarin.Mac-Projekten verwendet.
+Die Unified API von xamarin ermöglicht die gemeinsame Nutzung von Code zwischen Mac und IOS sowie die Unterstützung von 32-und 64-Bit-Anwendungen mit derselben Binärdatei. Der Unified API wird standardmäßig in neuen xamarin. IOS-und xamarin. Mac-Projekten verwendet.
 
 ## <a name="overviewoverviewmd"></a>[Übersicht](overview.md)
 
-Eine Beschreibung der Xamarin Unified API, die Funktionen und die Änderungen, die zusammen mit seiner Verwendung werden
+Eine Beschreibung der Unified API von xamarin, seiner Features und der Änderungen, die zusammen mit der Verwendung erfolgen
 
 ## <a name="update-existing-appsupdating-appsmd"></a>[Aktualisieren von vorhandenen Apps](updating-apps.md)
 
-Allgemeine Informationen zum Aktualisieren von vorhandenen apps von der klassischen API, die Unified API
+Allgemeine Informationen zum Aktualisieren vorhandener apps aus dem Classic API auf die Unified API
 
-## <a name="updating-existing-ios-appsupdating-ios-appsmd"></a>[Aktualisieren von vorhandenen iOS-Apps](updating-ios-apps.md)
+## <a name="updating-existing-ios-appsupdating-ios-appsmd"></a>[Aktualisieren vorhandener IOS-apps](updating-ios-apps.md)
 
-Informationen zum Aktualisieren von vorhandenen iOS-apps von der klassischen API, die Unified API
+Informationen zum Aktualisieren vorhandener IOS-Apps aus dem Classic API auf die Unified API
 
-## <a name="updating-existing-mac-appsupdating-mac-appsmd"></a>[Aktualisieren von vorhandenen Mac-Apps](updating-mac-apps.md)
+## <a name="updating-existing-mac-appsupdating-mac-appsmd"></a>[Aktualisieren vorhandener Mac-apps](updating-mac-apps.md)
 
-Informationen zum Aktualisieren von vorhandenen Mac-apps von der klassischen API, die Unified API
+Informationen zum Aktualisieren vorhandener Mac-Apps aus dem Classic API auf die Unified API
 
 ## <a name="update-existing-xamarinforms-appsupdating-xamarin-forms-appsmd"></a>[Aktualisieren von vorhandenen Xamarin.Forms-Apps](updating-xamarin-forms-apps.md)
 
-Informationen zum Aktualisieren von vorhandenen Xamarin.Forms-apps von der klassischen API, die Unified API
+Informationen zum Aktualisieren vorhandener xamarin. Forms-apps von der Classic API auf die Unified API
 
 ## <a name="migrating-a-binding-to-the-unified-apiupdate-bindingmd"></a>[Migrieren einer Bindung zu Unified API](update-binding.md)
 
-Eine Beschreibung dafür, wie ein Projekt mit Xamarin.iOS oder Xamarin.Mac Bindung von der klassischen API der Unified API migrieren
+Eine Beschreibung der Migration eines xamarin. IOS-oder xamarin. Mac-Bindungs Projekts vom Classic API zum Unified API
 
 ## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[Tipps zum Aktualisieren von Code für Unified API](updating-tips.md)
 
-Verschiedene Tipps, die beim Aktualisieren der Unified API hilfreich sein können
-
+Verschiedene Tipps, die beim Aktualisieren auf die Unified API hilfreich sein können

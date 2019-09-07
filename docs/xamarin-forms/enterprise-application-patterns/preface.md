@@ -1,47 +1,46 @@
 ---
-title: Ihm etwas voranzustellen, für die Anwendungsentwicklung für Unternehmen
-description: Dieses Kapitel enthält ein Präfix zu Mustern von Unternehmensanwendungen mit Xamarin.Forms.
+title: Voranstellen der Entwicklung von Unternehmensanwendungen
+description: Dieses Kapitel enthält einen Präfix für Unternehmens Anwendungs Muster mithilfe von xamarin. Forms.
 ms.prod: xamarin
 ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 82f1455ff5e5ac06b50664e1d4d533d4964b7a0e
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 4ce04ec5216872cb56424e8847eec357a5b3ac0e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831127"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770745"
 ---
-# <a name="preface-to-enterprise-app-development"></a>Ihm etwas voranzustellen, für die Anwendungsentwicklung für Unternehmen
+# <a name="preface-to-enterprise-app-development"></a>Voranstellen der Entwicklung von Unternehmensanwendungen
 
-Dieses e-Book enthält Anleitungen zum Erstellen von plattformübergreifenden-Unternehmens-apps mit Xamarin.Forms. Xamarin.Forms ist eine plattformübergreifende Benutzeroberflächen-Toolkit, mit dem Entwickler, um ganz einfach native Benutzeroberflächenlayouts erstellen, die Plattformen, einschließlich iOS, Android und die universelle Windows-Plattform (UWP) gemeinsam verwendet werden können. Es bietet eine umfassende Lösung für Unternehmen und Mitarbeitern (B2E), Business-to-Business (B2B) und Business-to Consumer (B2C)-apps bietet die Möglichkeit, Code auf allen Zielplattformen freigeben und gleichzeitig die Gesamtbetriebskosten (TCO) senken.
+Dieses e-Book bietet Anleitungen zum entwickeln plattformübergreifender Unternehmens-apps mit xamarin. Forms. Xamarin. Forms ist ein plattformübergreifendes Toolkit für die Benutzeroberfläche, mit dem Entwickler problemlos Native Benutzeroberflächen Layouts erstellen können, die plattformübergreifend freigegeben werden können, einschließlich IOS, Android und der universelle Windows-Plattform (UWP). Es bietet eine umfassende Lösung für Business-to-Employee-(B2E), Business-to-Business-(B2B) und Business-to-Consumer (B2C)-apps, die die Möglichkeit bieten, Code auf allen Zielplattformen gemeinsam zu nutzen und die Gesamtbetriebskosten zu senken.
 
-Das Handbuch enthält Anleitungen zur Architektur für die Entwicklung von anpassbaren, verwaltbaren und testbaren Xamarin.Forms-Unternehmens-apps. Anleitungen zum Implementieren von MVVM, Abhängigkeitsinjektion, Navigation, Validierung und konfigurationsverwaltung und losen Kopplung gleichzeitig enthalten. Darüber hinaus besteht auch Anleitungen zum Durchführen der Authentifizierung und Autorisierung mit Identity Server, den Zugriff auf Daten aus Microservices in Containern und Komponententests.
+Das Handbuch enthält Informationen zur Architektur für die Entwicklung anpassbarer, verwaltbarer und testbarer xamarin. Forms-Unternehmens-apps. Anleitungen zum Implementieren von MVVM, Abhängigkeitsinjektion, Navigation, Validierung und Konfigurations Verwaltung bei gleichzeitiger Beibehaltung der losen Kopplung. Außerdem gibt es Anleitungen zum Durchführen von Authentifizierung und Autorisierung mit identityserver, zum Zugreifen auf Daten aus containerisierten microservices und Unittests.
 
-Die Anleitung enthält Quellcode für die ["eshoponcontainers" mobile app](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Mobile), und der Quellcode für die ["eshoponcontainers" verweisen auf die app](https://github.com/dotnet-architecture/eShopOnContainers). Die eShopOnContainers-mobile-app ist eine plattformübergreifende Unternehmens-app, die entwickelt wurden, verwenden Xamarin.Forms, mit dem eine mit einer Reihe von Microservices in Containern bezeichnet Verbindung, da eShopOnContainers app zu verweisen. Allerdings kann die eShopOnContainers-mobile-app konfiguriert werden, um Daten aus mock-Dienste für diejenigen zu nutzen, um zu vermeiden, die Microservices in Containern bereitstellen möchten.
+Das Handbuch enthält den Quellcode für die [eshoponcontainers-Mobile App](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Mobile)und den Quellcode für die [eshoponcontainers-Referenz-App](https://github.com/dotnet-architecture/eShopOnContainers). Der eshoponcontainers-Mobile App ist eine plattformübergreifende Unternehmens-APP, die mit xamarin. Forms entwickelt wurde und die eine Verbindung mit einer Reihe von microservices in Containern herstellt, die als eshoponcontainers-Referenz-App bezeichnet werden. Allerdings können die eshoponcontainers-Mobile APP so konfiguriert werden, dass Sie Daten von Pseudo Diensten für diejenigen verwendet, die die Bereitstellung der in Containern enthaltenen microservices vermeiden möchten.
 
-## <a name="whats-left-out-of-this-guides-scope"></a>Nun muss nur noch außerhalb des gültigen Bereichs von dieser Anleitung
+## <a name="whats-left-out-of-this-guides-scope"></a>Der Umfang dieses Handbuchs ist ausgelassen.
 
-Dieses Handbuch ist für Leser gedacht, die bereits mit Xamarin.Forms vertraut sind. Eine ausführliche Einführung in Xamarin.Forms finden Sie unter den [Xamarin.Forms Dokumentation](~/xamarin-forms/index.yml), und [Erstellen mobiler Apps mit Xamarin.Forms](https://aka.ms/xamebook).
+Dieses Handbuch richtet sich an Leser, die bereits mit xamarin. Forms vertraut sind. Eine ausführliche Einführung in xamarin. Forms finden Sie in der [Dokumentation zu xamarin. Forms](~/xamarin-forms/index.yml)und [Erstellen von Mobile Apps mit xamarin. Forms](https://aka.ms/xamebook).
 
-Das Handbuch ist eine Ergänzung zu [.NET Microservices: Architektur für .NET-containeranwendungen](https://aka.ms/microservicesebook), die Entwicklung und Bereitstellung von Microservices in Containern im Mittelpunkt. Anderen Handbüchern interessante [entwerfen und entwickeln moderner Webanwendungen mit ASP.NET Core und Microsoft Azure](https://aka.ms/WebAppEbook), [Containerized Docker-Anwendungslebenszyklus mit Microsoft Platform and Tools](https://aka.ms/dockerlifecycleebook), und [Microsoft-Plattform und Tools für die Entwicklung mobiler Apps](https://aka.ms/MobAppDev/StndPDF).
+Das Handbuch ist eine Ergänzung [zu .net-mikrodiensten: Architektur für .NET-Container Anwendungen](https://aka.ms/microservicesebook)mit Schwerpunkt auf der Entwicklung und Bereitstellung von microservices in Containern. Andere Anleitungen, die Sie lesen sollten, sind das Entwerfen [und entwickeln moderner Webanwendungen mit ASP.net Core und Microsoft Azure](https://aka.ms/WebAppEbook), der [containerisierte docker-Anwendungslebenszyklus mit Microsoft-Plattform und-Tools](https://aka.ms/dockerlifecycleebook)und der [Microsoft-Plattform und Tools für die Entwicklung mobiler apps](https://aka.ms/MobAppDev/StndPDF).
 
-## <a name="who-should-use-this-guide"></a>Wer sollte dieses Handbuch verwenden
+## <a name="who-should-use-this-guide"></a>Verwendung dieses Handbuchs
 
-Die Zielgruppe für dieses Handbuch ist in erster Linie Entwickler und Architekten, die Informationen zum Entwerfen und implementieren plattformübergreifende Unternehmens-apps, die Xamarin.Forms verwenden möchten.
+Die Zielgruppe für dieses Handbuch ist hauptsächlich Entwickler und Architekten, die erfahren möchten, wie Sie plattformübergreifende Enterprise-Apps mithilfe von xamarin. Forms entwickeln und implementieren.
 
-Eine zweite Zielgruppe sind technische Entscheidungsträger, die eine Übersicht über die Architektur und Technologie bei Ihrer Entscheidung Methode für die Auswahl für die Entwicklung von plattformübergreifenden Enterprise-Apps mit Xamarin.Forms erhalten sollen.
+Bei einer sekundären Zielgruppe handelt es sich um technische Entscheidungsträger, die eine Architektur und Technologie Übersicht erhalten möchten, bevor Sie entscheiden, welchen Ansatz Sie für die plattformübergreifende Entwicklung von Unternehmens-apps mit xamarin. Forms treffen möchten.
 
-## <a name="how-to-use-this-guide"></a>Gewusst wie: Verwenden Sie dieses Handbuch
+## <a name="how-to-use-this-guide"></a>Verwendung dieses Handbuchs
 
-Dieser Leitfaden konzentriert sich auf das Erstellen von plattformübergreifenden-Unternehmens-apps mit Xamarin.Forms. Daher sollten sie in ihrer Gesamtheit, geben Sie eine Grundlage für solche apps und ihrer technischen Überlegungen zu verstehen gelesen werden. Die Anleitung zusammen mit der Beispiel-app dienen auch als Punkt oder die Referenz für das Erstellen einer neuen Unternehmens-app. Verwenden Sie die zugeordneten Beispiel-app als Vorlage für die neue app, und erfahren, wie Sie ein app-Komponenten zu organisieren. Klicken Sie dann, finden Sie es in dieser Anleitung finden Sie Anleitungen zur Architektur zurück.
+Dieser Leitfaden konzentriert sich auf das entwickeln plattformübergreifender Unternehmens-apps mit xamarin. Forms. Daher sollte Sie vollständig gelesen werden, um eine Grundlage für das Verständnis solcher apps und ihrer technischen Aspekte zu bieten. Das Handbuch kann zusammen mit seiner Beispiel-APP auch als Ausgangspunkt oder Verweis zum Erstellen einer neuen Unternehmens-App dienen. Verwenden Sie die zugehörige Beispiel-App als Vorlage für die neue APP, oder um zu erfahren, wie die Komponenten Komponenten einer APP organisiert werden. Weitere Informationen zur Architektur finden Sie in diesem Handbuch.
 
-Dieses Handbuch für Teammitglieder, um sicherzustellen, dass ein allgemeines Verständnis der plattformübergreifende Unternehmens-app-Entwicklung mit Xamarin.Forms weiterleiten können. Wenn alle Beteiligten arbeiten einen Standardsatz an Terminologie und die zugrunde liegenden Prinzipien wird Sie eine konsistente Anwendung von Architekturmustern und-Praktiken sichergestellt.
-
+Sie können diese Anleitung an Teammitglieder weiterleiten, um ein gängiges Verständnis der plattformübergreifenden Entwicklung von Unternehmens-Apps mithilfe von xamarin. Forms zu gewährleisten. Wenn alle von einem gemeinsamen Satz von Terminologien und zugrunde liegenden Prinzipien aus arbeiten, wird eine konsistente Anwendung von Architekturmustern und-Praktiken sichergestellt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [E-Book (2Mb PDF-Datei) herunterladen](https://aka.ms/xamarinpatternsebook)
-- ["eshoponcontainers" (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
+- [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 799dd40caae0323b71cae2c6715bf8cd16f78356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df19dcf542bd3a62a696c0d7d533b4e14390336e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283981"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768999"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Arbeiten mit tvos-Registerkarten leisten-Controllern in xamarin
 
@@ -121,7 +121,6 @@ Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-
 
 Verwenden Sie `Items` die-Eigenschaft `UITabBar` des, um auf die `UITabBarItems` Auflistung der-Objekte zuzugreifen, die als NULL (0) indiziertes Array enthalten sind. Die `SelectedItem` -Eigenschaft gibt die aktuell ausgewählte Registerkarte (Kategorie) `UITabBarItem`als zurück.
 
-
 <a name="Working-with-Tab-Bar-Items" />
 
 ## <a name="working-with-tab-bar-items"></a>Arbeiten mit Registerkarten Elementen
@@ -144,9 +143,6 @@ Verwenden `UITabBarItem` Sie `Title` die-Eigenschaft des, um den Titel und `Imag
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit dem Tabstopp leisten Controller in einer xamarin. tvos-App behandelt.
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

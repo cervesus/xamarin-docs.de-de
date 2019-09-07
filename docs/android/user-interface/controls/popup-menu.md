@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 9b3e4177d6be5854e80952d091aa78787d9645bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8a808e6ea49338de5b6bd1618fc2227e6cf5f0b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644927"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764889"
 ---
 # <a name="xamarinandroid-popup-menu"></a>Xamarin. Android-Popup Menü
 
 Der [PopupMenu](xref:Android.Widget.PopupMenu) (auch als Kontext _Menü_bezeichnet) ist ein Menü, das mit einer bestimmten Ansicht verankert ist. Im folgenden Beispiel enthält eine einzelne-Aktivität eine Schaltfläche. Wenn der Benutzer auf die Schaltfläche tippt, wird ein Popupmenü mit drei Elementen angezeigt:
 
 [![Beispiel für eine APP mit einer Schaltfläche und einem Popupmenü mit drei Elementen](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
-
 
 ## <a name="creating-a-popup-menu"></a>Erstellen eines Popup Menüs
 
@@ -57,7 +56,6 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-
 ## <a name="handling-menu-events"></a>Behandeln von Menü Ereignissen
 
 Wenn der Benutzer ein Menü Element auswählt, wird das [MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) -Click-Ereignis ausgelöst, und das Menü wird verworfen. Wenn Sie auf eine beliebige Stelle außerhalb des Menüs tippen, wird Sie einfach verworfen In beiden Fällen wird das [dismissvent](xref:Android.Widget.PopupMenu.Dismiss) -Ereignis ausgelöst, wenn das Menü verworfen wird. Der folgende Code fügt Ereignishandler für das-Ereignis `MenuItemClick` und `DismissEvent` das-Ereignis hinzu:
@@ -77,8 +75,6 @@ showPopupMenu.Click += (s, arg) => {
     menu.Show ();
 };
 ```
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

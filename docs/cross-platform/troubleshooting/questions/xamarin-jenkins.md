@@ -7,12 +7,12 @@ ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 4f09f4ca97dcf50891aa0a0415e47d474297c411
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a8dc27574dc9959cc375a98fc0d7a18aac8bd6b7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282768"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756966"
 ---
 # <a name="why-isnt-jenkins-supported-by-microsoft"></a>Warum wird Jenkins von Microsoft nicht unterstützt?
 
@@ -36,13 +36,10 @@ Die Fehlermeldung für dieses Problem sieht etwa folgendermaßen aus:
 
 Die Optionen zum Festlegen des SDK-Speicher Orts können je nach ausgewähltem Jenkins-Android-Plug-in variieren, das Sie verwenden. ein guter Ausgangspunkt für die Festlegung finden Sie im Plug-in-Handbuch. Beispiel: Das [Android-Emulator-Plug](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration) -in sucht automatisch nach dem SDK, wenn es nicht gefunden werden kann. der Speicherort kann auch über die Jenkins-Systemkonfigurations Seite für dieses Plug-in festgelegt werden. 
 
-
 ## <a name="deprecated-errors"></a>Veraltete Fehler
 
 > [!IMPORTANT]
 > Dieses Problem wurde in den letzten Versionen von xamarin gelöst. Wenn das Problem jedoch in der aktuellen Version der Software auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen buildprotokolleausgabe.
-
-
 
 ### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins meldet eine ungültige xamarin-Lizenz.
 Die Fehlermeldungen für dieses Problem lauten in der Regel wie folgt.

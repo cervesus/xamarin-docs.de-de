@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2017
-ms.openlocfilehash: 4c23caade91a1a46d6b2b9bb2425a5bdead40030
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f53108460c4e0799ab6c4078d8bb26788b0bf6e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289230"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752543"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Verwenden von Arkit mit urhusharp in xamarin. IOS
 
@@ -114,14 +114,12 @@ Die einfachste Möglichkeit hierfür ist das Einfügen eines `RenderPathCommand`
 
 Wir haben jedoch zwei Probleme, um diese beiden Welten miteinander zu kombinieren:
 
-
 1. In ios müssen GPU-Texturen eine Auflösung von zwei Möglichkeiten aufweisen, aber die Rahmen, die wir von der Kamera erhalten, haben keine Auflösung, die eine Potenz von zwei ist, z. b.: 1.280 x 720.
 2. Die Frames werden im [YUV](https://en.wikipedia.org/wiki/YUV) -Format codiert und durch zwei Bilder dargestellt: "Luma" und "Chroma".
 
 Die YUV-Frames sind in zwei unterschiedlichen Auflösungen enthalten.  ein 1.280 x 720-Bild, das die Beleuchtung darstellt (im Grunde ein graues Skalierungs Bild) und wesentlich kleiner 640 x 360 für die Chrominanz-Komponente:
 
 ![Bild zum Kombinieren von Y-und UV-Komponenten](urhosharp-images/image3.png)
-
 
 Zum Zeichnen eines vollständig farbigen Bilds mithilfe von OpenGL müssen wir einen kleinen Shader schreiben, der die Leuchtkraft (Y-Komponente) und Chrominanz (UV-Flächen) aus den Textur Slots übernimmt.  In urhusharp haben Sie den Namen "sdiffmap" und "schnormalmap" und konvertieren Sie in das RGB-Format:
 
@@ -165,7 +163,6 @@ CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
 Wir verwenden `-row.Z` , weil Arkit ein rechts händiges Koordinatensystem verwendet.
-
 
 ### <a name="plane-detection"></a>Ebenenerkennung
 
@@ -217,7 +214,6 @@ Urhusharp wird [unter allen wichtigen Betriebssystemen](~/graphics-games/urhosha
 Hololens ist eine der aufregendsten Plattformen, auf denen Sie ausgeführt wird.   Dies bedeutet, dass Sie problemlos zwischen IOS und hololens wechseln können, um mit urhusharp beeindruckende Anwendungen mit erweiterbarer Realität zu erstellen.
 
 Die muantdemo-Quelle finden Sie unter [GitHub.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo).
-
 
 ## <a name="related-links"></a>Verwandte Links
 

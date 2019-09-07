@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285208"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752000"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
@@ -67,7 +67,6 @@ Diese neuen, objektorientierten Frameworks stellen Folgendes bereit:
 
 Weitere Informationen finden Sie in unserer Benutzeroberflächen Dokumentation zu [Kontakten und Kontakten](~/ios/platform/contacts.md) .
 
-
 ## <a name="new-search-apis"></a>Neue Such-APIs
 
 Die Suche wurde in ios 9 erweitert und bietet hervorragend neue Möglichkeiten für den Zugriff auf Informationen in ihrer xamarin. IOS-app. Mithilfe der neuen Such-APIs können Sie den Inhalt Ihrer APP über Spotlight-und Safari-Suchergebnisse, Übergabe und Siri-Erinnerungen und Vorschläge durchsuchbar machen. Dadurch können Benutzer schnell auf Aktivitäten und Informationen innerhalb ihrer App zugreifen.
@@ -83,7 +82,6 @@ Das Stapel Ansicht-Steuerelement ([uistackview](xref:UIKit.UIStackView) nutzt di
 Mithilfe des Stapel Ansicht-Steuer Elements wird die Menge an Arbeit, die für das Layout einer Benutzeroberfläche erforderlich ist, erheblich reduziert. Das Layout aller untergeordneten Sichten, die an eine Stapel Ansicht angefügt sind, wird automatisch auf der Grundlage von vom Entwickler definierten Eigenschaften wie Achse, Verteilung, Ausrichtung und Abstand verwaltet.
 
 Weitere Informationen finden Sie [in der Einführung in die Stack View](~/ios/user-interface/controls/uistackview.md) -Dokumentation.
-
 
 ## <a name="collection-view-changes"></a>Änderungen der Sammlungsansicht
 
@@ -145,7 +143,6 @@ In ios 9 hat Apple die Keychain erweitert, um einen neuen Verschlüsselungs Schl
 
 Weitere Informationen finden Sie [in unserer Einführung in die Berührungs-ID](~/ios/platform/touchid.md) -Dokumentation.
 
-
 ## <a name="right-to-left-language-support"></a>Sprachunterstützung von rechts nach links
 
 In ios 9 hat Apple die Darstellung einer geflickten Benutzeroberfläche einfacher als je zuvor durch Bereitstellen der vollständigen Unterstützung von rechts-nach-links-Sprachen bereitgestellt. Hierzu gehören folgende Elemente:
@@ -155,8 +152,6 @@ In ios 9 hat Apple die Darstellung einer geflickten Benutzeroberfläche einfache
 - Die Möglichkeit zum programmgesteuerten Kippen eines Bilds mithilfe der [flipsforrighttoleftlayoutdirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection) -Eigenschaft der [uiimage](xref:UIKit.UIImage) -Klasse.
 
 Weitere Informationen finden Sie in der Dokumentation von Apple, die von [rechts nach Links unterstützt](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17) wird.
-
-
 
 ## <a name="additional-framework-changes"></a>Weitere frameworkänderungen
 
@@ -205,8 +200,6 @@ Sehen Sie sich auch die IOS-Abschnitte dieser Beispiele an (Begleit Mac OS X Ver
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

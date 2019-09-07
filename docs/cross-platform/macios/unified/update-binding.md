@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: dcee5c6d5324be11f424739a20ba673817553e36
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: da877cc10829c4067596263b2a3676413103282d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287378"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765422"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrieren einer Bindung zu Unified API
 
@@ -134,7 +134,6 @@ Wenn alle Codeänderungen vorhanden sind, müssen wir das Bindungs Projekt ände
 
 Als letzten Schritt zum Aktualisieren des Bindungs Projekts für die Verwendung der Unified APIs muss entweder der `MakeFile` geändert werden, der zum Erstellen des Projekts oder des xamarin-Projekt Typs verwendet wird (wenn die Bindung aus Visual Studio für Mac) und das anweisen von _bberühren_ an BIND für die vereinheitlichten APIs anstelle der klassischen APIs.
 
-
 ### <a name="updating-a-makefile"></a>Aktualisieren eines Makefile
 
 Wenn wir ein Makefile verwenden, um das Bindungs Projekt in xamarin zu erstellen. DLL, wir müssen die `--new-style` Befehlszeilenoption einschließen und anstelle von `btouch`aufruft `btouch-native` .
@@ -149,7 +148,6 @@ PROJECT_ROOT=XMBindingLibrarySample
 PROJECT=$(PROJECT_ROOT)/XMBindingLibrarySample.xcodeproj
 TARGET=XMBindingLibrarySample
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch
-
 
 all: XMBindingLibrary.dll
 
@@ -214,8 +212,6 @@ Wenn alle diese Änderungen vorhanden sind, können Sie die neue 64-Bit-Version 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir die Änderungen erläutert, die an einem vorhandenen xamarin-Bindungs Projekt vorgenommen werden müssen, um die neuen Unified APIs und 64 Bit-Geräte zu unterstützen, sowie die Schritte, die erforderlich sind, um die neue, mit 64 Bit kompatible Version einer API zu erstellen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

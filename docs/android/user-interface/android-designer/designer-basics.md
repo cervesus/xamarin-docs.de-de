@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
-ms.openlocfilehash: ebe8f483e501c4e34295a889f0d9ae06df8ba1d9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523699"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761405"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Grundlagen von xamarin. Android Designer
 
 _In diesem Thema werden die Funktionen von xamarin. Android Designer vorgestellt, es wird erläutert, wie der-Designer gestartet, die Designoberfläche beschrieben wird und wie der Eigenschaften Bereich zum Bearbeiten von widgeeigenschaften verwendet wird._
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -50,7 +49,7 @@ Wenn Sie ein Layout im Designer bearbeiten, verwenden Sie die folgenden Funktion
 
 - **Quellen** Bereich Stellt eine Ansicht der zugrunde liegenden XML-Quelle bereit, die dem auf dem Designoberfläche dargestellten Entwurf entspricht. &ndash;
 
-- **Designer-Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, **Versions**-, Design-, Layoutkonfiguration und Aktionsleiste Einstellungen. Die **Designer-Symbolleiste** enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
+- **Designer-Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, Versions **-, Design-,** Layoutkonfiguration und Aktionsleiste Einstellungen. Die **Designer-Symbolleiste** enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
 
 - **Toolbox** Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können. &ndash;
 
@@ -82,7 +81,7 @@ Die **Symbolleiste des Designers** bietet Zugriff auf die folgenden Features:
 
 - Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
 
-- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder *quer*Format. &ndash;
+- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder Querformat. &ndash;
 
 - **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
 
@@ -112,7 +111,6 @@ Wenn Sie in diesem Beispiel mit der rechten `TextView` Maustaste auf einen klick
 
 - **Lösch**-, **Kopier**-und **Ausschneide** &ndash; Vorgänge, die für den rechts `TextView`Klick angewendet werden.
 
-
 ### <a name="zoom-controls"></a>Zoom Steuerelemente
 
 Der **Designoberfläche** unterstützt das Zoomen über mehrere Steuerelemente, wie hier gezeigt:
@@ -141,18 +139,18 @@ Im mittleren Bereich zwischen dem **Entwurfs** -und dem **Quell** Bereich gibt e
 
 Diese Schaltflächen gehen wie folgt vor:
 
-- **Entwurf** Diese oberste Schaltfläche, **Entwurf**, wählt den Entwurfs Bereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** aktiviert, und die **Symbolleiste Text-Editor** wird nicht angezeigt. Wenn auf die Schaltfläche "reduzieren" geklickt wird (siehe unten), wird der **Entwurfs** Bereich allein ohne den **Quell** Bereich dargestellt.
+- **Entwurf** Diese oberste Schaltfläche, **Entwurf**, wählt den Entwurfs Bereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** aktiviert, und die **Symbolleiste Text-Editor** wird nicht angezeigt. Wenn auf **die Schalt** Fläche "reduzieren" geklickt wird (siehe unten), wird der **Entwurfs** Bereich allein ohne den **Quell** Bereich dargestellt.
 
 - Bereiche **austauschen** Diese Schaltfläche (die zwei gegensätzlichen Pfeilen ähnelt) tauscht den Entwurfs-und den Quellbereich aus, sodass sich der Quellbereich auf der linken Seite befindet und sich der Entwurfs Bereich auf der rechten Seite befindet. &ndash; Wenn Sie erneut auf die Schaltfläche klicken, werden diese Bereiche zurück an Ihre ursprünglichen Speicherorte
 
-- **Quelle** Diese Schaltfläche (die zwei entgegengesetzten spitzen Klammern ähnelt) wählt den Quellbereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** deaktiviert und die **Symbolleiste Text-Editor** am oberen Rand von Visual Studio angezeigt. Wenn auf die Schaltfläche "reduzieren" geklickt wird (siehe unten), wird durch Klicken auf die Schaltfläche " **Quelle** " anstelle des **Entwurfs** Bereichs der **Quell** Bereich angezeigt.
+- **Quelle** Diese Schaltfläche (die zwei entgegengesetzten spitzen Klammern ähnelt) wählt den Quellbereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** deaktiviert und die **Symbolleiste Text-Editor** am oberen Rand von Visual Studio angezeigt. Wenn auf die **Schaltfläche "** reduzieren" geklickt wird (siehe unten), wird durch Klicken auf die Schaltfläche " **Quelle** " anstelle des **Entwurfs** Bereichs der **Quell** Bereich angezeigt.
 
 - **Vertikale Teilung** Diese Schaltfläche (die einem vertikalen Balken ähnelt) zeigt den **Entwurfs** -und den Quellbereich nebeneinander an. &ndash; Dies ist die Standardanordnung.
 
-- **Horizontale Aufteilung** Diese Schaltfläche (die einem horizontalen Balken ähnelt) zeigt den **Entwurfs** Bereich oberhalb des Quell Bereichs an. &ndash; Sie können auf Auslagerungs Bereiche klicken, um den **Quell** Bereich über dem **Entwurfs** Bereich zu platzieren.
+- **Horizontale Aufteilung** Diese Schaltfläche (die einem horizontalen Balken ähnelt) zeigt den **Entwurfs** Bereich oberhalb des Quell Bereichs an. &ndash; Sie **können auf** Auslagerungs Bereiche klicken, um den **Quell** Bereich über dem **Entwurfs** Bereich zu platzieren.
 
 - Bereich zuklappen Diese Schaltfläche (die zwei nach rechts zeigenden spitzen Klammern ähnelt) "reduziert" die Dual-Pane-Anzeige von **Design** und Quelle in eine einzelne Ansicht eines dieser Bereiche. &ndash;
-    Diese Schaltfläche wird zur Erweiterungsbereich-Schaltfläche (ähnlich zwei nach links zeigenden spitzen Klammern), auf die geklickt werden kann, um die Ansicht wieder in den Dual-Pane-Anzeigemodus (**Entwurf** und **Quelle**) zurückzukehren.
+    Diese Schaltfläche wird **zur Erweiterungsbereich-Schaltfläche** (ähnlich zwei nach links zeigenden spitzen Klammern), auf die geklickt werden kann, um die Ansicht wieder in den Dual-Pane-Anzeigemodus (**Entwurf** und **Quelle**) zurückzukehren.
 
 Beim Klicken auf das **Fenster** "reduzieren" wird nur der **Entwurfs** Bereich angezeigt. Sie können jedoch auf die **Quell** Schaltfläche klicken, um stattdessen nur den **Quell** Bereich anzuzeigen. Klicken Sie erneut auf die Schaltfläche **Entwurf** , um zum **Entwurfs** Bereich zurückzukehren.
 
@@ -165,7 +163,6 @@ Der **Quell** Bereich zeigt die XML-Quelle an, die dem auf dem **Designoberfläc
 An der XML-Quelle vorgenommene Änderungen werden sofort auf der **Designoberfläche**gerendert. Änderungen am **Designoberfläche** bewirken, dass die im **Quell** Bereich angezeigte XML-Quelle entsprechend aktualisiert wird. Wenn Sie im Bereich **Quelle** Änderungen an XML vornehmen, stehen die Funktionen für die automatische Vervollständigung und IntelliSense zur Verfügung, um die XML-basierte Benutzeroberflächen Entwicklung zu beschleunigen, wie im folgenden erläutert.
 
 Um die Navigation bei langen XML-Dateien zu vereinfachen, unterstützt der **Quell** Bereich die Bild Lauf Leiste von Visual Studio (wie auf der rechten Seite des vorherigen Screenshots gezeigt). Weitere Informationen zur Scrollleiste finden Sie unter Gewusst [wie: Verfolgen von Code durch Anpassen der Scrollleiste](https://msdn.microsoft.com/library/dn237345.aspx).
-
 
 ### <a name="autocompletion"></a>Automatische Vervollständigung
 
@@ -183,8 +180,6 @@ Nachdem Sie ein neues Attribut für ein Widget eingegeben und damit begonnen hab
 
 Am unteren Rand dieses Popups befinden sich zwei Schaltflächen (wie in rot im obigen Screenshot dargestellt). Wenn Sie auf der linken Seite auf die Schaltfläche **Projektressourcen** klicken, wird die Liste auf Ressourcen beschränkt, die Teil des App-Projekts sind. durch Klicken auf die Schaltfläche Frameworkressourcen auf der rechten Seite wird die Liste so eingeschränkt, dass im Framework verfügbare Ressourcen
 Diese Schaltflächen werden ein-oder ausgeschaltet: Sie können erneut darauf klicken, um die von den einzelnen bereitgestellten Filter Aktionen zu deaktivieren.
-
-
 
 ## <a name="properties-pane"></a>Eigenschaften Bereich
 
@@ -216,7 +211,6 @@ Aus dieser Liste können Sie eine Text Ressource auswählen, die für dieses Wid
 [![Ressourcen Auswahllisten-Symbol Ressource für eine ImageView](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 Wenn Sie auf das leere Quadrat rechts neben der `Src` -Eigenschaft klicken, wird das Dialogfeld **Ressource auswählen** mit einer Liste von Ressourcen geöffnet, die von den Farben (wie oben gezeigt) bis zu drawables reichen.
-
 
 ### <a name="boolean-property-references"></a>Boolesche Eigenschafts Verweise
 
@@ -276,7 +270,6 @@ Nicht alle Container ermöglichen das `Size` Bearbeiten eines Widgets. Beachten 
 
 ![Keine Handles zur Größenänderung](designer-basics-images/vs/20-no-resize-handles.png)
 
-
 ## <a name="document-outline"></a>Dokumentgliederung
 
 Die **Dokument** Gliederung zeigt die widgehierarchie des Layouts an.
@@ -287,9 +280,6 @@ Im folgenden Beispiel wird das enthaltende `LinearLayout` Widget ausgewählt:
 Der Umriss des ausgewählten Widgets (in diesem Fall a `LinearLayout`) wird auch auf dem **Designoberfläche**hervorgehoben. Das ausgewählte Widget in der Dokument Gliederung bleibt mit seinem Pendant auf dem **Designoberfläche**synchron. Dies ist hilfreich bei der Auswahl von Ansichts Gruppen, die auf dem **Designoberfläche**nicht immer einfach ausgewählt werden können.
 
 Die **Dokument** Gliederung unterstützt das Kopieren und einfügen, oder Sie können Drag & Drop verwenden. Drag & Drop wird von der **Dokument** Gliederung zum **Designoberfläche** sowie vom **Designoberfläche** bis zur **Dokument**Gliederung unterstützt. Wenn Sie mit der rechten Maustaste auf ein Element in der **Dokument** Gliederung klicken, wird auch das Kontextmenü für das Element angezeigt (das gleiche Kontextmenü, das angezeigt wird, wenn Sie im **Designoberfläche**mit der rechten Maustaste auf dasselbe Widget klicken).
-
-
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -320,7 +310,7 @@ Wenn Sie ein Layout im Designer bearbeiten, verwenden Sie die folgenden Funktion
 
 - **Designoberfläche** &ndash; Ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten.
 
-- **Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, **Versions**-, Design-, Layoutkonfiguration und Aktionsleiste Einstellungen. Die Symbolleiste enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
+- **Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, Versions **-, Design-,** Layoutkonfiguration und Aktionsleiste Einstellungen. Die Symbolleiste enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
 
 - **Toolbox** &ndash; Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können.
 
@@ -344,7 +334,7 @@ Die Symbolleiste ermöglicht den Zugriff auf die folgenden Features:
 
 - Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
 
-- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder *quer*Format. &ndash;
+- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder Querformat. &ndash;
 
 - **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
 
@@ -404,7 +394,7 @@ Beachten Sie, dass die ausgewählte Zoomeinstellung die Benutzeroberfläche der 
 
 ## <a name="property-pad"></a>Eigenschaftenpad
 
-Der Designer unterstützt die Bearbeitung von widgeeigenschaftenüber das eigenschaftenpad. Die im eigenschaftenpad aufgelisteten Eigenschaften ändern sich je nach ausgewähltem Widget in der Designer Oberfläche. Wenn im vorherigen Beispiel ausgewählt ist, werden die Eigenschaften für dieses `Button` Widget angezeigt: `Button`
+Der Designer unterstützt die Bearbeitung von widgeeigenschaften über das **eigenschaftenpad**. Die im eigenschaftenpad aufgelisteten Eigenschaften ändern sich je nach ausgewähltem Widget in der Designer Oberfläche. Wenn im vorherigen Beispiel ausgewählt ist, werden die Eigenschaften für dieses `Button` Widget angezeigt: `Button`
 
 [![Screenshot des Eigenschaften Pads](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
@@ -445,7 +435,6 @@ Das nächste Beispiel veranschaulicht die Ressourcen Auswahl für die `Src` -Eig
 *Boolesche* Eigenschaften werden normalerweise als Kontrollkästchen im eigenschaftenpad angezeigt. Wenn eine `Boolean` Eigenschaft Ressourcen Verweise unterstützt, wird ein kleines Kontrollkästchen neben der-Eigenschaft angezeigt. Ein aktiviertes Kontroll `true` Kästchen bedeutet, dass ein `false`leeres Feld angezeigt wird. Sie können auch direkt einen Wert eingeben, z `true` . `false`b. oder. Wenn Sie mit der Maus auf die Eingabe zeigen, wird ein kleines Textfeld Symbol angezeigt. Sie können darauf klicken, wenn Sie den Wert manuell eingeben möchten.
 
 [![Beispiel für das Festlegen von booleschen Eigenschaften](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
-
 
 ## <a name="grouped-properties"></a>Gruppierte Eigenschaften
 

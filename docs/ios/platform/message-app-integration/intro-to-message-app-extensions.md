@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 1d6edb9107c3d6ae04c91ebcf874fb92a7f911b3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca782e57964adadd85412030db2247f0de690a6b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280041"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769667"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Grundlagen der Nachrichten-APP-Erweiterung in xamarin. IOS
 
@@ -337,7 +337,6 @@ namespace MonkeyStickers
         public override void ViewDidLoad ()
         {
             base.ViewDidLoad ();
-
 
             // Create new browser and configure it
             BrowserViewController = new StickerBrowserViewController (MSStickerSize.Regular);
@@ -707,8 +706,6 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 ## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel behandelt eine Erweiterung der Nachrichten-APP in einer xamarin. IOS-Projekt Mappe, die in die **Nachrichten** -app integriert wird und dem Benutzer neue Funktionen präsentiert. Es wird die Verwendung der Erweiterung zum Senden von Text, Aufkleber, Mediendateien und interaktiven Nachrichten behandelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

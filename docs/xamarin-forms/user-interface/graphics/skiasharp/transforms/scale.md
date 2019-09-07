@@ -7,12 +7,12 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1adade4e66a6df504ba7c8ac3ff1f668c014fe93
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649287"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770449"
 ---
 # <a name="the-scale-transform"></a>Die Skalierungstransformation
 
@@ -342,7 +342,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 Der Code zeigt auch das Sternsymbol 10 weitere Male, berücksichtigen jedes Mal, verringern die Skalierung von 10 % und progressiv die Farbe von Rot zu Blau zu ändern:
 
 [![](scale-images/isotropicscaling-small.png "Dreifacher Screenshot der Seite Kugelstrahler Skalierung")](scale-images/isotropicscaling-large.png#lightbox "dreifachen Screenshot der Seite Kugelstrahler Skalierung")
-
 
 ## <a name="related-links"></a>Verwandte Links
 

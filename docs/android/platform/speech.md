@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: 2a6de91772b1b6135a5b3567f691b8cd3522a924
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 14cce06399b804ba8fd982a40347fb3146b281c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643259"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757416"
 ---
 # <a name="android-speech"></a>Android-Sprache
 
@@ -206,7 +206,6 @@ Beispielsweise kann der Benutzer Französisch auswählen und auf das Download Sy
 
 Die Installation dieser Daten erfolgt automatisch, nachdem der Download abgeschlossen wurde.
 
-
 ### <a name="step-5---the-ioninitlistener"></a>Schritt 5: der ioninitlistener
 
 Damit eine Aktivität den Text in Sprache konvertieren kann, muss die Schnittstellen Methode `OnInit` implementiert werden (Dies ist der zweite Parameter, der für die Instanziierung `TextToSpeech` der-Klasse angegeben wird). Dadurch wird der Listener initialisiert und das Ergebnis getestet.
@@ -229,8 +228,6 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 ## <a name="summary"></a>Zusammenfassung
 
 In dieser Anleitung haben wir uns mit den Grundlagen der Umwandlung von Text in Sprache und Sprache in Text sowie mit möglichen Methoden zum Einschließen von Text in Ihre eigenen apps beschäftigt. Obwohl Sie nicht jeden bestimmten Fall abdecken, sollten Sie nun ein grundlegendes Verständnis der Interpretation von Sprache, der Installation neuer Sprachen und der Erhöhung der Inklusivität Ihrer apps haben.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

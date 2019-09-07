@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: cf3a3f6638547acf8d22854b6d8a32622c304932
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 07a61eb9d0c16f82d6c367cefc9e3050ca8dfc25
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280866"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768832"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in xamarin. IOS
 
@@ -31,7 +31,6 @@ Geräte werden von Größenklassen in vertikalen und horizontalen Achsen definie
 - **Regulär** – Dies ist entweder für eine große Bildschirmgröße (z. b. ein iPad) oder eine Mini Anwendung, die den Eindruck einer großen Größe (z. b.`UIScrollView`
 - **Compact** – Dies gilt für kleinere Geräte (z. b. ein iPhone). Diese Größe berücksichtigt die Ausrichtung des Geräts.
 
-
 Wenn die beiden Konzepte gleichzeitig verwendet werden, ist das Ergebnis ein 2 x 2-Raster, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können, wie in der folgenden Abbildung dargestellt:
 
  [![](unified-storyboards-images/sizeclassgrid.png "Ein 2 x 2-Raster, das die verschiedenen möglichen Größen definiert, die in regulären und kompakten Ausrichtungen verwendet werden können")](unified-storyboards-images/sizeclassgrid.png#lightbox)
@@ -43,7 +42,6 @@ Der Entwickler kann einen Ansichts Controller erstellen, der eine der vier Mögl
 Das iPad verfügt aufgrund der Größe über eine **reguläre** Klassengröße für beide Ausrichtungen.
 
  [![](unified-storyboards-images/image1.png "iPad size-Klassen")](unified-storyboards-images/image1.png#lightbox)
-
 
 ### <a name="iphone-size-classes"></a>iPhone size-Klassen
 
@@ -97,7 +95,6 @@ Merkmals Umgebungen sind eine neue Schnittstelle in ios 8 und können eine Merkm
 - Anzeigen von Controllern ( `UIViewController` ).
 - Sichten ( `UIView` ).
 - Präsentations Controller ( `UIPresentationController` ).
-
 
 Der Entwickler verwendet die von einer Merkmals Umgebung zurückgegebene Merkmals Auflistung, um zu bestimmen, wie eine Benutzeroberfläche angelegt werden soll.
 
@@ -234,14 +231,12 @@ Sehen wir uns nun genauer an, was geschieht, wenn ein Split View Controller von 
 - Standardmäßig verwendet der Split View Controller den primären Ansichts Controller als Ansicht, nachdem der Reduzierungs Vorgang aufgetreten ist. Der Entwickler kann dieses Verhalten überschreiben, indem `GetPrimaryViewControllerForCollapsingSplitViewController` er die `UISplitViewControllerDelegate` -Methode von überschreibt und einen beliebigen Ansichts Controller bereitstellt, der im reduzierten Zustand angezeigt werden soll.
 - Der sekundäre Ansichts Controller muss mit dem primären Ansichts Controller zusammengeführt werden. Der Entwickler muss in der Regel keine Aktion für diesen Schritt durchführen. der Split View Controller umfasst die automatische Verarbeitung dieser Phase basierend auf dem Hardware Gerät. Es gibt jedoch möglicherweise einige Sonderfälle, in denen der Entwickler mit dieser Änderung interagieren möchte. Durch Aufrufen `CollapseSecondViewController` der-Methode `UISplitViewControllerDelegate` von kann der Master Ansichts Controller angezeigt werden, wenn der Reduzierungs Vorgang statt der Detailansicht auftritt.
 
-
 ### <a name="expanding-the-split-view-controller"></a>Erweitern des Split View-Controllers
 
 Sehen wir uns nun genauer an, was geschieht, wenn ein Split View Controller von einem reduzierten Zustand aus erweitert wird. Noch einmal müssen zwei Schritte ausgeführt werden:
 
 - Definieren Sie zunächst den neuen primären Ansichts Controller. Standardmäßig verwendet der Split View Controller automatisch den primären Ansichts Controller aus der reduzierten Ansicht. Der Entwickler kann dieses Verhalten überschreiben, indem er `GetPrimaryViewControllerForExpandingSplitViewController` die-Methode `UISplitViewControllerDelegate` von verwendet.
 - Nachdem der primäre Ansichts Controller ausgewählt wurde, muss der sekundäre Ansichts Controller neu erstellt werden. Der Split View Controller schließt die automatische Verarbeitung dieser Phase basierend auf dem Hardware Gerät ein. Der Entwickler kann dieses Verhalten überschreiben, indem `SeparateSecondaryViewController` er die- `UISplitViewControllerDelegate` Methode von aufrufen.
-
 
 In einem Split View Controller spielt der primäre Ansichts Controller eine Rolle beim Erweitern und reduzieren der Sichten, indem die `CollapseSecondViewController` -Methode und die- `SeparateSecondaryViewController` Methode von `UISplitViewControllerDelegate`implementiert werden. `UINavigationController`implementiert diese Methoden, um den sekundären Ansichts Controller automatisch per Push zu übermitteln.
 
@@ -253,7 +248,6 @@ Dies führte zu einer sehr engen Kopplung zwischen dem Navigations Controller un
 
 - `ShowViewController`– Passt sich an, um den neuen Ansichts Controller auf der Grundlage seiner Umgebung anzuzeigen. Beispielsweise wird in einem `UINavigationController` die neue Ansicht einfach auf den Stapel übertragen. In einem Split View-Controller wird der neue Ansichts Controller auf der linken Seite angezeigt, und zwar im neuen primären Ansichts Controller. Wenn kein Container Ansichts Controller vorhanden ist, wird die neue Ansicht als modaler Ansichts Controller angezeigt.
 - `ShowDetailViewController`– Funktioniert ähnlich wie `ShowViewController`, wird jedoch auf einem geteilten Ansichts Controller implementiert, um die Detailansicht durch den neuen Ansichts Controller zu ersetzen, der weitergegeben wird. Wenn der Split View Controller (wie in einer iPhone-Anwendung angezeigt) reduziert wird, wird der-Befehl an die `ShowViewController` -Methode umgeleitet, und die neue Ansicht wird als primärer Ansichts Controller angezeigt. Wenn kein Container Ansichts Controller vorhanden ist, wird die neue Ansicht als modaler Ansichts Controller angezeigt.
-
 
 Diese Methoden funktionieren, indem Sie am Blatt Ansichts Controller beginnen und die Ansichts Hierarchie durchlaufen, bis Sie den richtigen Container Ansichts Controller finden, der die Anzeige der neuen Ansicht behandelt.
 
@@ -269,7 +263,6 @@ Diese Methode durchläuft die Hierarchie Kette, bis der richtige Container Ansic
 
 1. Wenn eine `ShowViewController` Methode aufgerufen wird, ist der erste Ansichts Controller in der Kette, der diese Methode implementiert, der Navigations Controller und wird daher als übergeordnetes Element der neuen Ansicht verwendet.
 1. Wenn stattdessen `ShowDetailViewController` eine Methode aufgerufen wurde, ist der Split View Controller der erste Ansichts Controller, um ihn zu implementieren, sodass er als übergeordnetes Element verwendet wird.
-
 
 Die `GetTargetForAction` -Methode sucht mithilfe eines Ansichts Controllers, der eine bestimmte Aktion implementiert, und fragt diesen Ansichts Controller ab, wenn er diese Aktion empfangen möchte. Da diese Methode öffentlich ist, können Entwickler ihre eigenen benutzerdefinierten Methoden erstellen, die genau wie die integrierten `ShowViewController` - `ShowDetailViewController` und-Methoden funktionieren.
 
@@ -690,7 +683,6 @@ Die Startbildschirm Datei wird als Begrüßungsbildschirm angezeigt, während ei
 Durch die Umgestaltung der neuen iPhone 6-und iPhone 6-und-Geräte (und der bevorstehenden Apple Watch) mit allen vorhandenen iPhone-und iPad-Geräten stellt dies ein großes Array von unterschiedlichen Größen `Default.png` , Ausrichtungen und Auflösungen von Image Ressourcen für das Startbildschirm dar, das erstellt und verwaltet werden. Darüber hinaus können diese Dateien recht groß sein und das lieferbare Anwendungs Bündel "Bloat", wodurch die erforderliche Zeit für das Herunterladen der Anwendung aus dem iTunes App Store erhöht wird (möglicherweise, damit Sie nicht mehr über ein Mobilfunknetz geliefert werden kann). und erhöhen Sie die Menge an Speicherplatz, die auf dem Gerät des Endbenutzers benötigt wird.
 
 Neu bei IOS 8: Entwickler können eine einzelne atomarische `.xib` Datei in Xcode erstellen, die Auto Layout-und Größenklassen verwendet, um einen *dynamischen Startbildschirm* zu erstellen, der für jedes Gerät, jede Auflösung und jede Ausrichtung funktioniert. Dadurch wird nicht nur der Arbeitsaufwand reduziert, den der Entwickler benötigt, um alle erforderlichen Image Ressourcen zu erstellen und zu verwalten, sondern die Größe des installierten Pakets der Anwendung erheblich reduziert.
-
 
 Dynamische Startbildschirme haben folgende Einschränkungen und Überlegungen:
 

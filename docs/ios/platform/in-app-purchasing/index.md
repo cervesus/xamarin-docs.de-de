@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 63530595d9892ed99b7eace3d248e1bc0d0b37d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f0cc04896b5c6e9b620b24c84d5c9d2a09b9cf4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288404"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752640"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>In-App-Käufe in xamarin. IOS
 
@@ -55,7 +55,6 @@ In diesem Artikel wurde das Konzept des in-App-Einkaufs eingeführt, und es wurd
 - **Store Kit** – Erläuterung der Klassen, die zum Erstellen von in-App-Kauf Features verwendet werden.
 - **Codieren Ihrer APP für den Einkauf** – Beispiele für das Erstellen von in-App-Käufen in einer xamarin. IOS-app.
 - **Bericht** Erstellung – Übersicht über die über iTunes Connect verfügbaren Statistiken.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

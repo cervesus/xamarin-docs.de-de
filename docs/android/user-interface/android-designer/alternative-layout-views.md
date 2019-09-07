@@ -1,235 +1,227 @@
 ---
 title: Alternative Layoutansichten
-description: In diesem Thema wird erläutert, wie Layouts mit versionsverwaltung durch das sein können mithilfe von ressourcenqualifizierer. Beispielsweise kann gibt es sein eine Version eines Layouts, die nur verwendet wird, wenn das Gerät im Querformatmodus ausgeführt wird und eine Layoutversion, die nur für den Hochformatmodus ausgeführt wird.
+description: In diesem Thema wird erläutert, wie Layouts mithilfe von Ressourcen Qualifizierern versioniert werden können. Es kann z. b. eine Version eines Layouts geben, die nur verwendet wird, wenn sich das Gerät im Querformat befindet, und eine Layoutversion, die nur für den Hochformat Modus gilt.
 ms.prod: xamarin
 ms.assetid: 5EBF51FC-9048-F0CF-624A-D8782A91C1FD
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 03b80d3fb1ed7c8db108f86b3b3923c20e1d908f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c872baa99496352a1934d10356a1001b309aa63e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61089817"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757404"
 ---
 # <a name="alternative-layout-views"></a>Alternative Layoutansichten
 
-_In diesem Thema wird erläutert, wie Version Layouts können Sie mit ressourcenqualifizierer. Erstellen z. B. eine Version eines Layouts, die nur verwendet wird, wenn das Gerät im Querformatmodus ausgeführt wird und eine Layoutversion, die nur für den Hochformatmodus ausgeführt wird._
+_In diesem Thema wird erläutert, wie Layouts mithilfe von Ressourcen Qualifizierern versionslayouts durch Beispielsweise das Erstellen einer Version eines Layouts, die nur verwendet wird, wenn sich das Gerät im Querformat befindet, und eine Layoutversion, die nur für den Hochformat Modus gilt._
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="creating-alternative-layouts"></a>Alternative Layouts erstellen
+## <a name="creating-alternative-layouts"></a>Erstellen alternativer Layouts
 
-Beim Klicken auf die **Alternative Layoutansicht** Symbol (auf der linken Seite des **Gerät**), ein Vorschaufenster wird geöffnet, um die Liste der alternative Layouts, die in Ihrem Projekt verfügbar. Wenn es keine alternative Layouts sind, das **Standard** Ansicht angezeigt: 
+Wenn Sie auf das Symbol für die **Alternative Layoutansicht** (auf der linken Seite des **Geräts**) klicken, wird ein Vorschaubereich geöffnet, in dem die im Projekt verfügbaren Alternativen Layouts aufgeführt werden. Wenn keine alternativen Layouts vorhanden sind, wird die **Standard** Ansicht angezeigt: 
 
-[![Alternative Ansicht Layoutbereich](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "Ansichtsbereich alternative Layouts")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
+[![Alternativer layoutansichts] Bereich (alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "Alternativer layoutansichts") Bereich](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
-Beim Klicken auf das grüne Pluszeichen neben **neue Version**, **Layoutvariation erstellen** Dialogfeld wird geöffnet, sodass Sie die ressourcenqualifizierer für diese layoutvariation auswählen können: 
+Wenn Sie auf das grüne Pluszeichen neben **neue Version**klicken, wird das Dialogfeld **layoutvariation erstellen** geöffnet, in dem Sie die Ressourcen Qualifizierer für diese layoutvariation auswählen können: 
 
-[![Layoutvariation erstellen](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "layoutvariation erstellen")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
+[![Layoutvariation erstellen](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "Layoutvariation erstellen")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
-Im folgenden Beispiel die ressourcenqualifizierer für **Bildschirmausrichtung** nastaven NA hodnotu **Querformat**, und die **Bildschirmgröße** geändert wird, um **groß**. Dies erstellt eine neue Layoutversion mit dem Namen **große Flächen**:
+Im folgenden Beispiel wird der Ressourcen Qualifizierer für die **Bildschirm Ausrichtung** auf **Landscape**festgelegt, und die **Bildschirmgröße** wird in **groß**geändert. Dadurch wird eine neue Layoutversion mit dem Namen **Large-Land**erstellt:
 
-[![Groß – Land Variation](alternative-layout-views-images/vs/03-large-land-sml.png "Large-Land-Variante")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
+[![Groß Land Variation](alternative-layout-views-images/vs/03-large-land-sml.png "Groß Land Variation")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
-Beachten Sie, dass die Auswirkungen der Auswahl der Ressource Qualifizierer wird im Vorschaufenster auf der linken Seite angezeigt. Auf **hinzufügen** alternative Layout erstellt und wechselt den Designer auf das Layout. Die **Alternative Layoutansicht** Vorschaufenster gibt an, welches Layout in den Designer über einen kleinen Pfeil geladen wird, wie im folgenden Screenshot gezeigt: 
+Beachten Sie, dass im Vorschaubereich auf der linken Seite die Auswirkungen der Auswahl des Ressourcen Qualifizierers angezeigt werden. Wenn **Sie auf Hinzufügen** klicken, wird das alternative Layout erstellt und der Designer auf dieses Layout umgestellt. Der Kontext Bereich der **Alternativen Layoutansicht** gibt an, welches Layout in den Designer über einen kleinen rechten Zeiger geladen wird, wie im folgenden Screenshot zu sehen: 
 
-[![Anzeige für das geladene](alternative-layout-views-images/vs/04-new-layout-sml.png "den Indikator für geladen")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
+[![Geladener layoutindikator](alternative-layout-views-images/vs/04-new-layout-sml.png "Geladener layoutindikator")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
+## <a name="editing-alternative-layouts"></a>Bearbeiten alternativer Layouts
 
-## <a name="editing-alternative-layouts"></a>Bearbeiten die alternative layouts
+Wenn Sie alternative Layouts erstellen, ist es häufig wünschenswert, eine einzelne Änderung vorzunehmen, die für alle verzweigten Versionen eines Layouts gilt. Beispielsweise können Sie den Schaltflächen Text in allen Layouts in Gelb ändern. Wenn Sie über eine große Anzahl von Layouts verfügen und eine einzelne Änderung an alle Versionen weitergeben müssen, kann die Wartung schnell zu umständlich und fehleranfällig werden.
 
-Wenn Sie alternative Layouts erstellen, ist es oft wünschenswert, eine einzelne Änderung vornehmen, die für alle abgeänderte Versionen eines Layouts gilt. Beispielsweise empfiehlt es sich um den Text der Schaltfläche in Gelb in allen Layouts zu ändern. Wenn Sie eine große Anzahl von Layouts und Sie eine einzelne Änderung für alle Versionen weitergegeben werden müssen, kann die Wartung schnell mühsam und fehleranfällig werden.
+Um die Wartung mehrerer Layoutversionen zu vereinfachen, stellt der Designer einen **Multi-Edit-** Modus bereit, der die Änderungen auf ein oder mehrere Layouts überträgt. Wenn mehr als ein Layout vorhanden ist, wird das **mehrfach Bearbeitungs** Symbol angezeigt: 
 
-Um die Wartung mehrerer Layout-Versionen zu vereinfachen, die der Designer bietet eine **mit mehreren bearbeiten** Modus, in dem die Änderungen über einen oder mehrere Layouts hinweg verteilt. Wenn mehr als ein Layout vorhanden ist, wird die **mit mehreren bearbeiten** Symbol wird angezeigt: 
+[![Symbol für mehrfach Bearbeitung](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "Symbol für mehrfach Bearbeitung")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
-[![Symbol "mit mehreren bearbeiten"](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "mit mehreren bearbeiten-Symbol")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
+Wenn Sie auf das **mehrfach Bearbeitungs** Symbol klicken, werden Zeilen angezeigt, die darauf hinweisen, dass die Layouts verknüpft sind (wie unten dargestellt). Das heißt, wenn Sie eine Änderung an einem Layout vornehmen, wird diese Änderung an alle verknüpften Layouts weitergegeben. Sie können die Verknüpfung aller Layouts aufheben, indem Sie auf das im folgenden Screenshot angekreiste Symbol klicken: 
 
-Beim Klicken auf die **mit mehreren bearbeiten** Symbol Linien angezeigt werden, die angeben, dass die Layouts (siehe unten) verknüpft sind, d. h. Wenn Sie eine Änderung an einem Layout vornehmen, diese Änderung wird weitergegeben auf alle verknüpften Layouts. Sie können die Verknüpfung aller Layouts aufheben, indem Sie auf der angegeben wird, im folgenden Screenshot eingekreist: 
+[![Verknüpfung aller Layouts] aufheben (alternative-layout-views-images/vs/06-multi-linked-sml.png "Verknüpfung aller Layouts") aufheben](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
-[![Verknüpfung aller Layouts aufheben](alternative-layout-views-images/vs/06-multi-linked-sml.png "Verknüpfung aller Layouts aufheben")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
+Wenn Sie über mehr als zwei Layouts verfügen, können Sie die Bearbeitungs Schaltfläche auf der linken Seite der Layoutvorschau selektiv umschalten, um zu bestimmen, welche Layouts miteinander verknüpft sind. Wenn Sie z. b. eine einzelne Änderung vornehmen möchten, die an den ersten und den letzten drei Layouts weitergegeben wird, können Sie zuerst die Verknüpfung des mittleren Layouts aufheben, wie hier gezeigt: 
 
-Wenn Sie mehr als zwei Layouts haben, können Sie selektiv Umschalten der Schaltfläche "Bearbeiten" auf der linken Seite jedes Layout-Preview, um zu bestimmen, welche Layouts miteinander verknüpft sind. Beispielsweise sollten Sie eine einzelne Änderung vornehmen, die verteilt auf das erste und letzte von drei Layouts, würden Sie zuerst die mittlere Layout aufheben, wie hier gezeigt: 
+[![Verknüpfung des mittleren Layouts] aufheben (alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "Verknüpfung des mittleren Layouts") aufheben](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
 
-[![Unlink mittleren Layout](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "mittleren Layout Verknüpfung aufheben")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
+In diesem Beispiel wird eine Änderung am **Standard** -oder **Long** -Layout an das andere Layout, aber nicht an das **große** Layout weitergegeben.
 
-In diesem Beispiel einer Änderung auf die **Standard** oder **lange** Layout wird weitergegeben werden, auf das Layout von anderen aber nicht für die **große Flächen** Layout.
+### <a name="multi-edit-example"></a>Beispiel für mehrere Bearbeitungsarbeiten 
 
-### <a name="multi-edit-example"></a>Beispiel für die Multi-Bearbeitung 
+Wenn Sie eine Änderung an einem Layout vornehmen, wird diese Änderung im Allgemeinen an alle anderen verknüpften Layouts weitergegeben. Wenn Sie z. b. `TextView` ein neues Widget zum **Standard** Layout hinzufügen und die Text `Portrait` Zeichenfolge in ändern, wird die gleiche Änderung an allen verknüpften Layouts vorgenommen. So sieht es im **Standard** Layout aus: 
 
-Wenn Sie eine Änderung an einem Layout vornehmen, wird dieselbe Änderung in der Regel auf alle anderen verknüpften Layouts weitergegeben. Z. B. Hinzufügen eines neuen `TextView` Widget aus, das die **Standard** Layout und ändern den Text von string in `Portrait` bewirkt, dass die gleiche Änderung an alle verknüpften Layouts vorgenommen werden. Sieht wie es der **Standard** Layout: 
+[![TextView hinzufügen](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView hinzufügen")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
 
-[![Hinzufügen der TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "TextView hinzufügen")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
- 
-Die `TextView` wird ebenfalls hinzugefügt der **große Flächen** Layout anzeigen, da es verknüpft ist die **Standard** Layout: 
+Der `TextView` wird auch der **großen** Layoutansicht hinzugefügt, da er mit dem **Standard** Layout verknüpft ist: 
 
-[![Querformat TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "TextView-Landschaft")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
- 
-Aber was geschieht, wenn Sie eine Änderung vornehmen, die nur ein Layout lokal ist (d. h. nicht sollen die Änderungen an die anderen Layouts weitergegeben werden)? Zu diesem Zweck müssen Sie das Layout Verknüpfung aufheben, das Sie möchten, ändern, bevor Sie diese zu ändern, wie unten beschrieben. 
+[![Querformat TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "Querformat TextView")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
 
-### <a name="making-local-changes"></a>Lokale Änderungen 
+Was geschieht jedoch, wenn Sie eine Änderung vornehmen möchten, die nur ein Layout hat (d. h., Sie möchten nicht, dass die Änderung an eines der anderen Layouts weitergegeben wird)? Zu diesem Zweck müssen Sie die Verknüpfung des Layouts aufheben, das Sie ändern möchten, bevor Sie es ändern, wie im nächsten Abschnitt erläutert. 
 
-Angenommen, Sie möchten beide Layouts, damit die hinzugefügte `TextView`, aber wir möchten auch ändern, die Textzeichenfolge in die **große Flächen** Layout `Landscape` statt `Portrait`. Wenn wir diese Änderung vornehmen **große Flächen** während beide Layouts verknüpft sind, wird die Änderung übermitteln, an die **Standard** Layout. Aus diesem Grund müssen wir zuerst die beiden Layouts aufheben, bevor wir die Änderung vorgenommen werden. Wir ändern, wenn den Text in **große Flächen** zu `Landscape`, der Designer kennzeichnet diese Änderung mit einem roten Rahmen um anzugeben, dass die Änderung lokal auf die **große Flächen** Layout und *nicht* weitergegeben, die an die **Standard** Layout: 
+### <a name="making-local-changes"></a>Vornehmen von lokalen Änderungen 
 
-[![Lokale Änderung](alternative-layout-views-images/vs/10-local-change-sml.png "lokalen Änderung")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
- 
-Beim Klicken auf die **Standard** Layout an, die `TextView` Textzeichenfolge nastaven NA hodnotu weiterhin `Portrait`. 
+Angenommen, beide Layouts müssen über die hinzugefügt `TextView`werden, aber wir möchten auch die Text Zeichenfolge im `Portrait`Layout des `Landscape` **großen Lands** in ändern, anstatt. Wenn wir diese Änderung an einem **großen Land** vornehmen, während beide Layouts verknüpft sind, wird die Änderung an das **Standard** Layout zurückgegeben. Daher müssen Sie zuerst die Verknüpfung der beiden Layouts aufheben, bevor die Änderung vorgenommen wird. Wenn wir den Text in **Large-Land** `Landscape`in ändern, markiert der Designer diese Änderung mit einem roten Rahmen, um anzugeben, dass die Änderung für das Layout des **großen Lands** lokal ist und *nicht* an das **Standard** Layout zurückgegeben wird: 
+
+[![Lokale Änderung](alternative-layout-views-images/vs/10-local-change-sml.png "Lokale Änderung")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
+
+Wenn Sie auf das **Standard** Layout klicken, um es anzuzeigen `TextView` , wird die Text Zeichenfolge immer noch auf `Portrait`festgelegt. 
 
 ## <a name="handling-conflicts"></a>Behandeln von Konflikten 
 
-Wenn Sie sich entscheiden, so ändern Sie die Farbe des Texts in der **Standard** Layout in Grün, sehen Sie ein Warnsymbol in der verknüpften Layout angezeigt werden. Durch Klicken auf das Layout wird das Layout, um den Konflikt anzuzeigen. Das Widget, das den Konflikt verursacht hat, wird mit einem roten Rahmen hervorgehoben, und die folgende Meldung angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
+Wenn Sie festlegen, dass die Farbe des Texts im **Standard** Layout in Grün geändert werden soll, wird im verknüpften Layout ein Warnsymbol angezeigt. Durch Klicken auf dieses Layout wird das Layout geöffnet, um den Konflikt zu verdeutlichen. Das Widget, das den Konflikt verursacht hat, wird durch einen roten Rahmen hervorgehoben, und die folgende Meldung wird angezeigt: *Aktuelle Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
 
-[![In Konflikt stehende Änderung](alternative-layout-views-images/vs/11-conflicting-change-sml.png "in Konflikt stehende Änderung")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
- 
-Ein *Konfliktursache* wird auf der rechten Seite des Widgets zur Erläuterung des Konflikts angezeigt: 
+[![Widersprüchliche Änderung](alternative-layout-views-images/vs/11-conflicting-change-sml.png "Widersprüchliche Änderung")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
 
-[![Warnung-linkkonflikt](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
+Auf der rechten Seite des Widgets wird ein *Konfliktfeld* angezeigt, um den Konflikt zu erläutern: 
 
-Der Konflikt-Feld zeigt die Liste der Eigenschaften, die geändert wurden, und ihre Werte aufgeführt. Auf **Konflikt ignorieren** gilt die Eigenschaftenänderung nur für dieses Widget. Auf **übernehmen** gilt die Eigenschaftenänderung für dieses Widget auch über das Widget Entsprechung in der verknüpften **Standard** Layout. Wenn alle eigenschaftsänderungen angewendet werden, wird der Konflikt automatisch verworfen. 
+[![Konfliktwarnung](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
-### <a name="view-group-conflicts"></a>Die Gruppe Konflikte anzeigen 
+Das Feld Konflikt zeigt die Liste der Eigenschaften an, die sich geändert haben, und listet deren Werte auf. Durch Klicken auf **Konflikt ignorieren** wird die Eigenschafts Änderung nur auf dieses Widget angewendet. Wenn Sie auf **anwenden** klicken, wird die Eigenschafts Änderung auf dieses Widget sowie auf das Pendant-Widget im verknüpften **Standard** Layout angewendet. Wenn alle Eigenschafts Änderungen angewendet werden, wird der Konflikt automatisch verworfen. 
 
-Eigenschaftenänderungen sind nicht die einzige Quelle für Konflikte. Beim Einfügen oder Entfernen von Widgets, können Konflikte erkannt werden. Z. B., wenn die **große Flächen** Layout von aufgehoben wird die **Standard** Layout und die `TextView` in die **große Flächen** Layout ist Drag & Drop über die `Button`, der Designer kennzeichnet das Widget "verschoben", um den Konflikt anzugeben:
+### <a name="view-group-conflicts"></a>Gruppen Konflikte anzeigen 
 
-[![Anzeigen von Gruppe-Konflikt](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "Gruppe Konflikt anzeigen")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
- 
-Allerdings besteht kein Marker auf der `Button`. Obwohl die Position des der `Button` geändert hat, die `Button` zeigt keine angewendeten Änderungen, die für spezifisch sind die **große Flächen** Konfiguration. 
+Eigenschafts Änderungen sind nicht die einzige Quelle von Konflikten. Beim Einfügen oder Entfernen von Widgets können Konflikte erkannt werden. Wenn z. b. das Layout des **großen Lands** vom **Standard** Layout entfernt wird und `TextView` im Layout des **großen Lands** über das `Button`gezogen und abgelegt wird, kennzeichnet der Designer das verschobene Widget, um anzugeben, dass Konflikts
 
-Wenn eine `CheckBox` hinzugefügt wird die **Standard** Layout mit Ausrichtung von einem anderen Konflikt wird generiert und ein Warnsymbol wird angezeigt, über die **große Flächen** Layout: 
+[![Gruppen Konflikt anzeigen](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "Gruppen Konflikt anzeigen")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
+
+Es gibt jedoch keinen Marker auf dem `Button`. Obwohl sich die Position des `Button` geändert hat `Button` , zeigt keine angewendeten Änderungen an, die spezifisch für die **große** Konfiguration sind. 
+
+Wenn eine `CheckBox` dem **Standard** Layout hinzugefügt wird, wird ein weiterer Konflikt generiert, und ein Warnsymbol wird über das Layout des **großen Lands** angezeigt: 
 
 [![Kontrollkästchen-Konflikt](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "Kontrollkästchen-Konflikt")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
- 
-Klicken auf die **große Flächen** Layout zeigt den Konflikt. Folgende Meldung wird angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*: 
 
-[![ALT-Layout-Konflikt](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt Layout-Konflikt")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
+Wenn Sie auf das **große** Layout klicken, wird der Konflikt angezeigt. Folgende Meldung wird angezeigt: *Aktuelle Änderungen haben Konflikte in diesem alternativen Layout verursacht*: 
 
-Darüber hinaus wird der Konflikt-Feld die folgende Meldung angezeigt:
+[![Alt-layoutkonflikt](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt-layoutkonflikt")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
 
-[![Konfliktmeldung](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
+Außerdem wird im Konfliktfeld die folgende Meldung angezeigt:
 
-Hinzufügen der `CheckBox` verursacht einen Konflikt, da die **große Flächen** Layout wurde in der `LinearLayout` , die Sie enthält. In diesem Fall das Feld Konflikt zeigt jedoch das Widget, das soeben eingefügt wurde die **Standard** Layout (die `CheckBox`).
+[![Konflikt Meldung](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
-Wenn Sie auf **Konflikt ignorieren**, der Designer löst den Konflikt, können das Widget angezeigt wird, klicken Sie im Konflikt, Drag & Drop in das Layout, in dem das Widget nicht vorhanden ist (in diesem Fall die **große Flächen**  Layout): 
+Durch das Hinzufügen von wird ein Konflikt `LinearLayout` verursacht,dadasLayoutdesgroßenLandsÄnderungeninderenthält,inderesenthaltenist.`CheckBox` In diesem Fall wird im Feld Konflikt jedoch das Widget angezeigt, das soeben in das **Standard** Layout ( `CheckBox`) eingefügt wurde.
 
-[![Gruppe Konflikt aufgelöst](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "Gruppe Konflikt behoben")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
+Wenn Sie auf **Konflikt ignorieren**klicken, löst der Designer den Konflikt auf, sodass das im Feld Konflikt angezeigte Widget gezogen und in das Layout abgelegt werden kann, in dem das Widget fehlt (in diesem Fall das Layout für **groß Land** ): 
 
-Wie im vorherigen Beispiel mit der `Button`, `CheckBox` besitzt keine Marker Rot ändern, da nur die `LinearLayout` umfasst Änderungen, die in angewendet wurden die **große Flächen** Layout.
+[![Aufgelöster Gruppen Konflikt](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "Aufgelöster Gruppen Konflikt")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
 
-
+Wie im vorherigen `Button`Beispiel mit dem ersichtlich ist `CheckBox` , verfügt nicht über einen roten Änderungs Marker, da nur die `LinearLayout` Änderungen aufweisen, die im Layout des **großen Lands** angewendet wurden.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="creating-alternative-layouts"></a>Alternative Layouts erstellen
+## <a name="creating-alternative-layouts"></a>Erstellen alternativer Layouts
 
-Beim Klicken auf die **Alternative Layoutansicht** Symbol (auf der linken Seite des **Gerät**), ein Vorschaufenster wird geöffnet, um die Liste der alternative Layouts, die in Ihrem Projekt verfügbar. Wenn es keine alternative Layouts sind, das **Standard** Ansicht angezeigt: 
+Wenn Sie auf das Symbol für die **Alternative Layoutansicht** (auf der linken Seite des **Geräts**) klicken, wird ein Vorschaubereich geöffnet, in dem die im Projekt verfügbaren Alternativen Layouts aufgeführt werden. Wenn keine alternativen Layouts vorhanden sind, wird die **Standard** Ansicht angezeigt: 
 
-[![Alternative Ansicht Layoutbereich](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
+[![Alternativer layoutansichts Bereich](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
 
-Beim Klicken auf das grüne Pluszeichen neben **neue Version**, **Layoutvariation erstellen** Dialogfeld wird geöffnet, sodass Sie die ressourcenqualifizierer für diese layoutvariation auswählen können: 
+Wenn Sie auf das grüne Pluszeichen neben **neue Version**klicken, wird das Dialogfeld **layoutvariation erstellen** geöffnet, in dem Sie die Ressourcen Qualifizierer für diese layoutvariation auswählen können: 
 
 [![Layoutvariation erstellen](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
 
-Im folgenden Beispiel die ressourcenqualifizierer für **Bildschirmausrichtung** nastaven NA hodnotu **Querformat**, und die **Bildschirmgröße** geändert wird, um **groß**. Dies erstellt eine neue Layoutversion mit dem Namen **große Flächen**:
+Im folgenden Beispiel wird der Ressourcen Qualifizierer für die **Bildschirm Ausrichtung** auf **Landscape**festgelegt, und die **Bildschirmgröße** wird in **groß**geändert. Dadurch wird eine neue Layoutversion mit dem Namen **Large-Land**erstellt:
 
-[![Groß – Land-Variante](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
+[![Groß Land Variation](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
 
-Beachten Sie, dass die Auswirkungen der Auswahl der Ressource Qualifizierer wird im Vorschaufenster auf der linken Seite angezeigt. Auf **hinzufügen** alternative Layout erstellt und wechselt den Designer auf das Layout. Die **Alternative Layoutansicht** Vorschaufenster gibt an, welches Layout in den Designer über einen kleinen Pfeil geladen wird, wie im folgenden Screenshot gezeigt: 
+Beachten Sie, dass im Vorschaubereich auf der linken Seite die Auswirkungen der Auswahl des Ressourcen Qualifizierers angezeigt werden. Wenn **Sie auf Hinzufügen** klicken, wird das alternative Layout erstellt und der Designer auf dieses Layout umgestellt. Der Kontext Bereich der **Alternativen Layoutansicht** gibt an, welches Layout in den Designer über einen kleinen rechten Zeiger geladen wird, wie im folgenden Screenshot zu sehen: 
 
-[![Indikator für geladen](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
+[![Geladener layoutindikator](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
 
-## <a name="editing-alternative-layouts"></a>Bearbeiten die alternative layouts
+## <a name="editing-alternative-layouts"></a>Bearbeiten alternativer Layouts
 
-Wenn Sie alternative Layouts erstellen, ist es oft wünschenswert, eine einzelne Änderung vornehmen, die für alle abgeänderte Versionen eines Layouts gilt. Beispielsweise empfiehlt es sich um den Text der Schaltfläche in Gelb in allen Layouts zu ändern. Wenn Sie eine große Anzahl von Layouts und Sie eine einzelne Änderung für alle Versionen weitergegeben werden müssen, kann die Wartung schnell mühsam und fehleranfällig werden.
+Wenn Sie alternative Layouts erstellen, ist es häufig wünschenswert, eine einzelne Änderung vorzunehmen, die für alle verzweigten Versionen eines Layouts gilt. Beispielsweise können Sie den Schaltflächen Text in allen Layouts in Gelb ändern. Wenn Sie über eine große Anzahl von Layouts verfügen und eine einzelne Änderung an alle Versionen weitergeben müssen, kann die Wartung schnell zu umständlich und fehleranfällig werden.
 
-Um die Wartung mehrerer Layout-Versionen zu vereinfachen, die der Designer bietet eine **mit mehreren bearbeiten** Modus, in dem die Änderungen über einen oder mehrere Layouts hinweg verteilt. Wenn mehr als ein Layout vorhanden ist, wird die **mit mehreren bearbeiten** Symbol wird angezeigt: 
+Um die Wartung mehrerer Layoutversionen zu vereinfachen, stellt der Designer einen **Multi-Edit-** Modus bereit, der die Änderungen auf ein oder mehrere Layouts überträgt. Wenn mehr als ein Layout vorhanden ist, wird das **mehrfach Bearbeitungs** Symbol angezeigt: 
 
-[![Symbol "mit mehreren bearbeiten"](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
+[![Symbol für mehrfach Bearbeitung](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
 
-Beim Klicken auf die **mit mehreren bearbeiten** Symbol Linien angezeigt werden, die angeben, dass die Layouts (siehe unten) verknüpft sind, d. h. Wenn Sie eine Änderung an einem Layout vornehmen, diese Änderung wird weitergegeben auf alle verknüpften Layouts. Sie können die Verknüpfung aller Layouts aufheben, indem Sie auf der angegeben wird, im folgenden Screenshot eingekreist: 
+Wenn Sie auf das **mehrfach Bearbeitungs** Symbol klicken, werden Zeilen angezeigt, die darauf hinweisen, dass die Layouts verknüpft sind (wie unten dargestellt). Das heißt, wenn Sie eine Änderung an einem Layout vornehmen, wird diese Änderung an alle verknüpften Layouts weitergegeben. Sie können die Verknüpfung aller Layouts aufheben, indem Sie auf das im folgenden Screenshot angekreiste Symbol klicken: 
 
 [![Verknüpfung aller Layouts aufheben](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
 
-Wenn Sie mehr als zwei Layouts haben, können Sie selektiv Umschalten der Schaltfläche "Bearbeiten" auf der linken Seite jedes Layout-Preview, um zu bestimmen, welche Layouts miteinander verknüpft sind. Beispielsweise sollten Sie eine einzelne Änderung vornehmen, die verteilt auf das erste und letzte von drei Layouts, würden Sie zuerst die mittlere Layout aufheben, wie hier gezeigt: 
+Wenn Sie über mehr als zwei Layouts verfügen, können Sie die Bearbeitungs Schaltfläche auf der linken Seite der Layoutvorschau selektiv umschalten, um zu bestimmen, welche Layouts miteinander verknüpft sind. Wenn Sie z. b. eine einzelne Änderung vornehmen möchten, die an den ersten und den letzten drei Layouts weitergegeben wird, können Sie zuerst die Verknüpfung des mittleren Layouts aufheben, wie hier gezeigt: 
 
 [![Verknüpfung des mittleren Layouts aufheben](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
 
-In diesem Beispiel einer Änderung auf die **Standard** oder **lange** Layout wird weitergegeben werden, andere Layout aber nicht für die **große Flächen** Layout. 
+In diesem Beispiel wird eine Änderung am **Standard** -oder **Long** -Layout an das andere Layout, aber nicht an das **große** Layout weitergegeben. 
 
-### <a name="multi-edit-example"></a>Beispiel für die Multi-Bearbeitung 
+### <a name="multi-edit-example"></a>Beispiel für mehrere Bearbeitungsarbeiten 
 
-Wenn Sie eine Änderung an einem Layout vornehmen, wird dieselbe Änderung in der Regel auf alle anderen verknüpften Layouts weitergegeben. Z. B. Hinzufügen eines neuen `TextView` Widget aus, das die **Standard** Layout und ändern den Text von string in `Portrait` bewirkt, dass die gleiche Änderung an alle verknüpften Layouts vorgenommen werden. Sieht wie es der **Standard** Layout: 
+Wenn Sie eine Änderung an einem Layout vornehmen, wird diese Änderung im Allgemeinen an alle anderen verknüpften Layouts weitergegeben. Wenn Sie z. b. `TextView` ein neues Widget zum **Standard** Layout hinzufügen und die Text `Portrait` Zeichenfolge in ändern, wird die gleiche Änderung an allen verknüpften Layouts vorgenommen. So sieht es im **Standard** Layout aus: 
 
 [![TextView hinzufügen](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
 
-Die `TextView` wird ebenfalls hinzugefügt der **große Flächen** Layout anzeigen, da es verknüpft ist die **Standard** Layout: 
+Der `TextView` wird auch der **großen** Layoutansicht hinzugefügt, da er mit dem **Standard** Layout verknüpft ist: 
 
 [![Querformat TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
- 
-Aber was geschieht, wenn Sie eine Änderung vornehmen, die nur ein Layout lokal ist (d. h. nicht sollen die Änderungen an die anderen Layouts weitergegeben werden)? Zu diesem Zweck müssen Sie das Layout Verknüpfung aufheben, das Sie möchten, ändern, bevor Sie diese zu ändern, wie unten beschrieben. 
 
-### <a name="making-local-changes"></a>Lokale Änderungen 
+Was geschieht jedoch, wenn Sie eine Änderung vornehmen möchten, die nur ein Layout hat (d. h., Sie möchten nicht, dass die Änderung an eines der anderen Layouts weitergegeben wird)? Zu diesem Zweck müssen Sie die Verknüpfung des Layouts aufheben, das Sie ändern möchten, bevor Sie es ändern, wie im nächsten Abschnitt erläutert. 
 
-Angenommen, Sie möchten beide Layouts, damit die hinzugefügte `TextView`, aber wir möchten auch ändern, die Textzeichenfolge in die **große Flächen** Layout `Landscape` statt `Portrait`. Wenn wir diese Änderung vornehmen **große Flächen** während beide Layouts verknüpft sind, wird die Änderung übermitteln, an die **Standard** Layout. Aus diesem Grund müssen wir zuerst die beiden Layouts aufheben, bevor wir die Änderung vorgenommen werden. Wir ändern, wenn den Text in **große Flächen** zu `Landscape`, der Designer kennzeichnet diese Änderung mit einem roten Rahmen um anzugeben, dass die Änderung lokal auf die **große Flächen** Layout und *nicht* weitergegeben, die an die **Standard** Layout: 
+### <a name="making-local-changes"></a>Vornehmen von lokalen Änderungen 
+
+Angenommen, beide Layouts müssen über die hinzugefügt `TextView`werden, aber wir möchten auch die Text Zeichenfolge im `Portrait`Layout des `Landscape` **großen Lands** in ändern, anstatt. Wenn wir diese Änderung an einem **großen Land** vornehmen, während beide Layouts verknüpft sind, wird die Änderung an das **Standard** Layout zurückgegeben. Daher müssen Sie zuerst die Verknüpfung der beiden Layouts aufheben, bevor die Änderung vorgenommen wird. Wenn wir den Text in **Large-Land** `Landscape`in ändern, markiert der Designer diese Änderung mit einem roten Rahmen, um anzugeben, dass die Änderung für das Layout des **großen Lands** lokal ist und *nicht* an das **Standard** Layout zurückgegeben wird: 
 
 [![Lokale Änderung](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
 
-Beim Klicken auf die **Standard** Layout an, die `TextView` Textzeichenfolge nastaven NA hodnotu weiterhin `Portrait`. 
+Wenn Sie auf das **Standard** Layout klicken, um es anzuzeigen `TextView` , wird die Text Zeichenfolge immer noch auf `Portrait`festgelegt. 
 
 ## <a name="handling-conflicts"></a>Behandeln von Konflikten 
 
-Wenn Sie sich entscheiden, so ändern Sie die Farbe des Texts in der **Standard** Layout in Grün, sehen Sie ein Warnsymbol in der verknüpften Layout angezeigt werden. Durch Klicken auf das Layout wird das Layout, um den Konflikt anzuzeigen. Das Widget, das den Konflikt verursacht hat, wird mit einem roten Rahmen hervorgehoben, und die folgende Meldung angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
+Wenn Sie festlegen, dass die Farbe des Texts im **Standard** Layout in Grün geändert werden soll, wird im verknüpften Layout ein Warnsymbol angezeigt. Durch Klicken auf dieses Layout wird das Layout geöffnet, um den Konflikt zu verdeutlichen. Das Widget, das den Konflikt verursacht hat, wird durch einen roten Rahmen hervorgehoben, und die folgende Meldung wird angezeigt: *Aktuelle Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
 
-[![In Konflikt stehende Änderung](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
+[![Widersprüchliche Änderung](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
 
-Ein *Konfliktursache* wird auf der rechten Seite des Widgets zur Erläuterung des Konflikts angezeigt: 
+Auf der rechten Seite des Widgets wird ein *Konfliktfeld* angezeigt, um den Konflikt zu erläutern: 
 
-[![Warnung-linkkonflikt](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
+[![Konfliktwarnung](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
-Der Konflikt-Feld zeigt die Liste der Eigenschaften, die geändert wurden, und ihre Werte aufgeführt. Auf **Konflikt ignorieren** gilt die Eigenschaftenänderung nur für dieses Widget. Auf **übernehmen** gilt die Eigenschaftenänderung für dieses Widget auch über das Widget Entsprechung in der verknüpften **Standard** Layout. Wenn alle eigenschaftsänderungen angewendet werden, wird der Konflikt automatisch verworfen. 
+Das Feld Konflikt zeigt die Liste der Eigenschaften an, die sich geändert haben, und listet deren Werte auf. Durch Klicken auf **Konflikt ignorieren** wird die Eigenschafts Änderung nur auf dieses Widget angewendet. Wenn Sie auf **anwenden** klicken, wird die Eigenschafts Änderung auf dieses Widget sowie auf das Pendant-Widget im verknüpften **Standard** Layout angewendet. Wenn alle Eigenschafts Änderungen angewendet werden, wird der Konflikt automatisch verworfen. 
 
-### <a name="view-group-conflicts"></a>Die Gruppe Konflikte anzeigen 
+### <a name="view-group-conflicts"></a>Gruppen Konflikte anzeigen 
 
-Eigenschaftenänderungen sind nicht die einzige Quelle für Konflikte. Beim Einfügen oder Entfernen von Widgets, können Konflikte erkannt werden. Z. B., wenn die **große Flächen** Layout von aufgehoben wird die **Standard** Layout und die `TextView` in die **große Flächen** Layout ist Drag & Drop über die `Button`, der Designer kennzeichnet das Widget "verschoben", um den Konflikt anzugeben:
+Eigenschafts Änderungen sind nicht die einzige Quelle von Konflikten. Beim Einfügen oder Entfernen von Widgets können Konflikte erkannt werden. Wenn z. b. das Layout des **großen Lands** vom **Standard** Layout entfernt wird und `TextView` im Layout des **großen Lands** über das `Button`gezogen und abgelegt wird, kennzeichnet der Designer das verschobene Widget, um anzugeben, dass Konflikts
 
-[![Die Gruppe Konflikt anzeigen](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
- 
-Allerdings besteht kein Marker auf der `Button`. Obwohl die Position des der `Button` geändert hat, die `Button` zeigt keine angewendeten Änderungen, die für spezifisch sind die **große Flächen** Konfiguration. 
+[![Gruppen Konflikt anzeigen](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
 
-Wenn eine `CheckBox` hinzugefügt wird die **Standard** Layout mit Ausrichtung von einem anderen Konflikt wird generiert und ein Warnsymbol wird angezeigt, über die **große Flächen** Layout: 
+Es gibt jedoch keinen Marker auf dem `Button`. Obwohl sich die Position des `Button` geändert hat `Button` , zeigt keine angewendeten Änderungen an, die spezifisch für die **große** Konfiguration sind. 
+
+Wenn eine `CheckBox` dem **Standard** Layout hinzugefügt wird, wird ein weiterer Konflikt generiert, und ein Warnsymbol wird über das Layout des **großen Lands** angezeigt: 
 
 [![Kontrollkästchen-Konflikt](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
- 
-Klicken auf die **große Flächen** Layout zeigt den Konflikt. Folgende Meldung wird angezeigt: *Kürzlich vorgenommene Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
 
-[![ALT-Layout-Konflikt](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
- 
-Darüber hinaus wird der Konflikt-Feld die folgende Meldung angezeigt:
+Wenn Sie auf das **große** Layout klicken, wird der Konflikt angezeigt. Folgende Meldung wird angezeigt: *Aktuelle Änderungen haben Konflikte in diesem alternativen Layout verursacht*. 
 
-[![Konfliktmeldung](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
+[![Alt-layoutkonflikt](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
 
-Hinzufügen der `CheckBox` verursacht einen Konflikt, da die **große Flächen** Layout wurde in der `LinearLayout` , die Sie enthält. In diesem Fall das Feld Konflikt zeigt jedoch das Widget, das soeben eingefügt wurde die **Standard** Layout (die `CheckBox`).
+Außerdem wird im Konfliktfeld die folgende Meldung angezeigt:
 
-Wenn Sie auf **Konflikt ignorieren**, der Designer löst den Konflikt, können das Widget angezeigt wird, klicken Sie im Konflikt, Drag & Drop in das Layout, in dem das Widget nicht vorhanden ist (in diesem Fall die **große Flächen**  Layout): 
+[![Konflikt Meldung](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
-[![Gruppe Konflikt behoben](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
- 
-Wie im vorherigen Beispiel mit der `Button`, `CheckBox` besitzt keine Marker Rot ändern, da nur die `LinearLayout` umfasst Änderungen, die in angewendet wurden die **große Flächen** Layout.
+Durch das Hinzufügen von wird ein Konflikt `LinearLayout` verursacht,dadasLayoutdesgroßenLandsÄnderungeninderenthält,inderesenthaltenist.`CheckBox` In diesem Fall wird im Feld Konflikt jedoch das Widget angezeigt, das soeben in das **Standard** Layout ( `CheckBox`) eingefügt wurde.
 
+Wenn Sie auf **Konflikt ignorieren**klicken, löst der Designer den Konflikt auf, sodass das im Feld Konflikt angezeigte Widget gezogen und in das Layout abgelegt werden kann, in dem das Widget fehlt (in diesem Fall das Layout für **groß Land** ): 
+
+[![Aufgelöster Gruppen Konflikt](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
+
+Wie im vorherigen `Button`Beispiel mit dem ersichtlich ist `CheckBox` , verfügt nicht über einen roten Änderungs Marker, da nur die `LinearLayout` Änderungen aufweisen, die im Layout des **großen Lands** angewendet wurden.
 
 -----
 
+### <a name="conflict-persistence"></a>Konflikt Persistenz
 
-### <a name="conflict-persistence"></a>Konflikt-Persistenz
-
-Konflikte werden als XML-Kommentare, in der Layoutdatei beibehalten, wie hier gezeigt:
+Konflikte werden in der Layoutdatei als XML-Kommentare persistent gespeichert, wie hier gezeigt:
 
 ```xml
 <!-- Widget Inserted Conflict | id:__root__ | @+id/checkBox1 -->
 ```
 
-Wenn ein Projekt geschlossen und erneut geöffnet wird, alle Konflikte weiterhin müssen es &ndash; auch diejenigen, die wurden ignoriert.
-
-
-
+Wenn ein Projekt geschlossen und erneut geöffnet wird, sind alle Konflikte immer noch vorhanden &ndash; , selbst wenn ein Projekt geschlossen und wieder geöffnet wurde.

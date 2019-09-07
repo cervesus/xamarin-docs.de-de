@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 9347a801c939fd715101253c6953eeec840af47d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fc76a642c27b7a2c7f3483911be596f8d6cdd1ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288588"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752859"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Grundlagen und Konfiguration von in-App-Käufen in xamarin. IOS
 
@@ -26,7 +26,6 @@ Zum Bereitstellen von in-App-Käufen mithilfe des App Store sind folgende Einric
 - **IOS-Bereitstellungs Portal** – Erstellen eines Bündel Bezeichners und Aktivieren des App Store-Zugriffs für Ihre APP.
 - **Store-Kit** – Hinzufügen von Code zu Ihrer APP, um Produkte anzuzeigen, Produkte zu kaufen und Transaktionen wiederherzustellen.
 - **Benutzerdefinierter Code** – um Käufe von Kunden zu verfolgen und die Produkte oder Dienste bereitzustellen, die Sie gekauft haben. Möglicherweise müssen Sie auch einen serverseitigen Prozess implementieren, um Bestätigungen zu überprüfen, wenn Ihre Produkte aus Inhalten bestehen, die von einem Server heruntergeladen wurden (z. b. Bücher und Magazine
-
 
 Es gibt zwei Store-Kit "Serverumgebungen":
 
@@ -54,7 +53,6 @@ Diese drei Schritte sollten ausgeführt werden, bevor Sie Code schreiben:
 - **IOS-Bereitstellungs Portal** – stellen Sie sicher, dass Ihre APP über eine gültige APP-ID (kein Platzhalter mit einem Sternchen *) verfügt und dass der APP-Einkauf aktiviert ist.
 - **iTunes Connect-Anwendungs Verwaltung** – fügen Sie Produkte zu Ihrer Anwendung hinzu.
 
-
 ### <a name="apple-developer-account"></a>Apple-Entwicklerkonto
 
 Zum Erstellen und Verteilen von kostenlosen Apps ist in [iTunes Connect](https://itunesconnect.apple.com)sehr wenig Konfiguration erforderlich. Wenn Sie jedoch kostenpflichtige Apps oder in-App-Käufe verkaufen möchten, müssen Sie Apple Informationen zu Bank-und Steuerinformationen bereitstellen. Klicken Sie im hier gezeigten Hauptmenü auf **Verträge, Steuern und Banken** :
@@ -70,7 +68,6 @@ Sie sind nicht in der Lage, storekit-Funktionen zu testen, bis Sie einen Vertrag
 ### <a name="ios-provisioning-portal"></a>iOS-Bereitstellungsportal
 
 Neue Anwendungen werden im **IOS-Bereitstellungs Portal**im Abschnitt **App-IDs** eingerichtet. Um eine neue APP-ID zu erstellen, wechseln Sie zum [Member Center im IOS-Bereitstellungs Portal](https://developer.apple.com/membercenter/index.action), navigieren Sie im Portal zum Abschnitt **Zertifikate, Bezeichner und Profile** , und klicken **Sie unter** IOS- *apps*auf Bezeichner. Klicken Sie dann oben rechts auf "+", um eine neue APP-ID zu generieren.
-
 
 Das Formular zum Erstellen neuer **App-IDs** .
 
@@ -114,7 +111,6 @@ Der Vorgang zum Hinzufügen neuer Produkte umfasst zwei Schritte:
 
 Die Felder, die für die einzelnen in-App-Produkte erforderlich sind, werden im folgenden beschrieben:
 
-
 ### <a name="reference-name"></a>Verweisname
 
 Der Verweis Name wird den Benutzern nicht angezeigt. Sie ist für die interne Verwendung vorgesehen und wird nur in iTunes Connect angezeigt.
@@ -148,7 +144,6 @@ Es gibt fünf Arten von in-App-Kauf Produkten, die Sie anbieten können:
 1. **Kostenloses Abonnement** – kann nur in newsstandfähigen apps angeboten werden und ermöglicht dem Kunden den Zugriff auf Abonnement Inhalte auf allen Geräten. Kostenlose Abonnements laufen nie ab.
 1. **Nicht erneuerndes Abonnement** – sollte verwendet werden, um zeitlich begrenzten Zugriff auf statische Inhalte, z. b. den Zugriff eines Monats auf ein Foto Archiv, zu verkaufen.
 
-
  *In diesem Dokument werden zurzeit nur die ersten beiden Produkttypen (verwendbar und nicht verwendbar) behandelt.*
 
  <a name="Price_Tiers" />
@@ -176,10 +171,8 @@ Apple hat zwar eine spezielle kostenlose Abonnement Option für NewsStand-apps b
 In iTunes Connect können Sie einen anderen Namen und Beschreibungstext für eine beliebige Anzahl unterstützter Sprachen eingeben. Jede Sprache kann über ein Popup in hinzugefügt/bearbeitet werden:
 
  [![](in-app-purchase-basics-and-configuration-images/image12.png "Jede Sprache kann über ein Popup in hinzugefügt/bearbeitet werden.")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
-   
-   
-   
- Wenn Sie in Ihrer APP Produktinformationen anzeigen, steht Ihnen der lokalisierte Text zur Verfügung, der über storekit angezeigt werden kann. Die Währungs Anzeige muss ebenfalls lokalisiert werden, um die korrekte Symbol-und dezimal Formatierung anzuzeigen – diese Formatierung wird später im Dokument behandelt.
+
+Wenn Sie in Ihrer APP Produktinformationen anzeigen, steht Ihnen der lokalisierte Text zur Verfügung, der über storekit angezeigt werden kann. Die Währungs Anzeige muss ebenfalls lokalisiert werden, um die korrekte Symbol-und dezimal Formatierung anzuzeigen – diese Formatierung wird später im Dokument behandelt.
 
 ### <a name="app-store-review"></a>App Store-Review
 
@@ -188,10 +181,8 @@ Identisch mit apps – alle Produkte werden von Apple überprüft, bevor Sie in 
 Beim ersten übermitteln einer APP mit aktiviertem in-App-Einkauf (unabhängig davon, ob es sich um eine neue App handelt oder die Funktionalität zu einer vorhandenen hinzugefügt wurde) müssen Sie auch einige Produkte auswählen, die Sie mit der APP übermitteln möchten. Im iTunes Connect-Portal werden Sie dazu aufgefordert, dies zu tun, wie in diesem Screenshot gezeigt:
 
  [![](in-app-purchase-basics-and-configuration-images/image13.png "Im iTunes Connect-Portal werden Sie aufgefordert, einige Produkte ebenfalls zu übermitteln.")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
-   
-   
-   
- Die Anwendung und die in-App-Käufe werden gleichzeitig überprüft, sodass Sie alle gleichzeitig genehmigt werden (sodass die APP ohne genehmigte Produkte nicht in den Store wechselt!).
+
+Die Anwendung und die in-App-Käufe werden gleichzeitig überprüft, sodass Sie alle gleichzeitig genehmigt werden (sodass die APP ohne genehmigte Produkte nicht in den Store wechselt!).
 
 Nachdem Ihre erste Version mit in-App-Kauf Funktion genehmigt wurde, können Sie weitere Produkte hinzufügen und Sie jederzeit zur Überprüfung einreichen. Sie können auch eine neue Version mit bestimmten in-App-Kauf Produkten übermitteln, indem Sie die Seite mit den **Versions Details** verwenden, die von der Eingabeaufforderung vorgeschlagen wird.
 

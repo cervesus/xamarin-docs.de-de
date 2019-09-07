@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d59a295961c25ecfcc99bb54fdc188c957cf3ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b0cece7f553d0169c311e6614428ed37c5c77813
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291957"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768533"
 ---
 # <a name="ios-app-architecture"></a>IOS-App-Architektur
 
@@ -93,7 +93,6 @@ Das erforderliche `[Export]` Attribut enthält eine Zeichenfolge, bei der es sic
 
 In xamarin. IOS werden zwei Arten von Registrierungsstellen verwendet – dynamisch und statisch:
 
-
 - **Dynamische** Registrierungsstellen – die dynamische Registrierungsstelle führt die Registrierung aller Typen in der Assembly zur Laufzeit durch. Dies erfolgt mithilfe von Funktionen, die von [der Runtime-API von Ziel-C](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)bereitgestellt werden. Die dynamische Registrierungsstelle hat daher einen langsameren Start, aber eine schnellere Buildzeit. Dies ist der Standardwert für den IOS-Simulator. Native Funktionen (normalerweise in C), die als "Trampolines" bezeichnet werden, werden als Methoden Implementierungen verwendet, wenn die dynamischen Registrare verwendet werden. Sie variieren zwischen verschiedenen Architekturen.
 
 - **Statische Registrierungs** stellen – die statische Registrierungsstelle generiert den Ziel-C-Code während des Builds, der dann in eine statische Bibliothek kompiliert und mit der ausführbaren Datei verknüpft wird. Dies ermöglicht einen schnelleren Start, dauert aber während der Buildzeit länger. Diese wird standardmäßig für gerätebuilds verwendet. Die statische Registrierungsstelle kann auch mit dem IOS-Simulator verwendet werden `--registrar:static` , indem `mtouch` Sie als Attribut in den Buildoptionen des Projekts übergeben, wie unten dargestellt:
@@ -114,7 +113,6 @@ Abhängig vom Projekttyp erfolgt Folgendes:
 Alle diese Startsequenz wird in eine statische Bibliothek kompiliert, die dann mit der endgültigen ausführbaren Datei verknüpft wird, damit Ihre APP weiß, wie Sie von Grund auf loslegen kann.
 
 An dieser Stelle wurde die APP gestartet, Mono wird ausgeführt, wir sind in verwaltetem Code und wissen, wie Sie systemeigenen Code aufrufen und zurückgerufen werden. Als nächstes müssen wir tatsächlich Steuerelemente hinzufügen und die APP interaktiv gestalten.
-
 
 ## <a name="generator"></a>Generator
 
@@ -165,7 +163,6 @@ Auf hoher Ebene wird dies erreicht, indem die folgenden Aufgaben ausgeführt wer
 - Wenn die Verknüpfung aktiviert ist, führen Sie den verwalteten Linker aus, um die Assemblys zu optimieren, indem Sie nicht verwendete Teile auslagern
 - AOT-Kompilierung.
 - Erstellen Sie eine systemeigene ausführbare Datei, die eine Reihe von statischen Bibliotheken (jeweils eine für jede Assembly) ausgibt, die mit der nativen ausführbaren Datei verknüpft sind, sodass die native ausführbare Datei aus dem Start Programmcode, dem Registrierungscode (wenn statisch) und allen Ausgaben aus dem AOT besteht. Versionen
-
 
 Ausführlichere Informationen zum Linker und seiner Verwendung finden Sie im [Linker](~/ios/deploy-test/linker.md) -Handbuch.
 

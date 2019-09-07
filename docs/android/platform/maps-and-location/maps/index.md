@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: e36a8e25c5924ac82356c0f1c3110d1596f81cbf
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 194f82757b0b4cb5e148e06d4303dc0d22afb9b3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523885"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761708"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Verwenden von Google Maps und Location mit xamarin. Android
 
@@ -28,7 +28,6 @@ Mapping-Technologien sind eine universelle Ergänzung für mobile Geräte. Deskt
 
 Die Themen in diesem Abschnitt behandeln eine Vielzahl von Karten Features.
 Zuerst wird erläutert, wie die integrierte Maps-Anwendung von Android genutzt wird und wie eine Panoramaansicht eines Orts angezeigt wird. Anschließend wird erläutert, wie Sie mit der Maps-API Zuordnungs Features direkt in eine Anwendung integrieren. Außerdem wird erläutert, wie Sie die Position und Anzeige einer Karte Steuern und grafische Überlagerungen hinzufügen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

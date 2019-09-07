@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 0b11f5c290f07debb61d511bdd27ad1a7ad0b0b0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 54f036b2a845b7d2f6603b6b9f54472ad2af8bcd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526085"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754717"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Toucheingabe und Gesten in xamarin. Android
 
@@ -39,8 +39,6 @@ Diese Anleitung folgt einem ähnlichen Format für jedes Betriebssystem: zuerst 
 ## <a name="summary"></a>Zusammenfassung
 
 In dieser Anleitung haben wir die Berührungs Unterstützung in Android untersucht. Bei beiden Betriebssystemen haben wir gelernt, wie Sie die Fingereingabe aktivieren und auf die Berührungs Ereignisse reagieren. Als nächstes haben wir die Gesten und einige der Gesten erkentungen kennengelernt, die von Android und IOS bereitgestellt werden, um einige der gängigeren Szenarien zu bewältigen. Wir haben untersucht, wie benutzerdefinierte Gesten erstellt und in Anwendungen implementiert werden. In einer exemplarischen Vorgehensweise wurden die Konzepte und APIs für jedes Betriebssystem in Aktion veranschaulicht, und Sie haben auch gesehen, wie Sie einzelne Finger nachverfolgen können.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

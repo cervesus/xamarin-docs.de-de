@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: cfa82ccec8149acfc7ddd69bff2f68e0e11894d1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbe1b374b97f64e0c28b2f89ca9f6d510511b74d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282427"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768843"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Einführung in MonoTouch. Dialog für xamarin. IOS
 
@@ -57,7 +57,6 @@ UV. D vereinfacht dies, indem der gesamte Code in einer generischen API für die
 - **Low-Level-Element-API** – die *Elements-API* basiert auf der Erstellung einer hierarchalen Struktur von Elementen, die Bildschirme und deren Komponenten darstellen. Die Elements-API bietet Entwicklern die flexibelste Flexibilität und Kontrolle bei der Erstellung von Benutzeroberflächen. Außerdem bietet die Elements-API erweiterte Unterstützung für deklarative Definitionen über JSON, was sowohl eine unglaublich schnelle Deklaration als auch die dynamische Generierung von Benutzeroberflächen von einem Server ermöglicht. 
 - **Allgemeine Reflektions-API** – auch bekannt als die *Bindung* *API* , in die Klassen mit Benutzeroberflächen-Hinweise, und klicken Sie dann masterziel versehen sind D erstellt Bildschirme, die auf der Grundlage der Objekte automatisch und stellt eine Bindung zwischen dem, was angezeigt (und optional bearbeitet) auf dem Bildschirm, und die zugrunde liegende Objekt sichern. Im obigen Beispiel wird die Verwendung der Reflection-API veranschaulicht. Diese API bietet nicht die differenzierte Steuerung, die die Elements-API leistet, aber Sie verringert die Komplexität noch weiter, indem die Element Hierarchie auf der Grundlage von Klassen Attributen automatisch aufgebaut wird. 
 
-
 UV. D ist mit einem großen Satz integrierter Benutzeroberflächen Elemente für die Bildschirm Erstellung verpackt, aber auch die Notwendigkeit für angepasste Elemente und erweiterte Bildschirmlayouts wird erkannt. Daher ist die Erweiterbarkeit eine erste Klasse, die in der API integriert ist. Entwickler können die vorhandenen Elemente erweitern oder neue erstellen und dann nahtlos integrieren.
 
 Außerdem wird Mt. D verfügt über eine Reihe von gängigen IOS-UX-Features, wie z. b. "Pull-to-refresh"-Unterstützung, Asynchrones Laden von Bildern und Suchunterstützung.
@@ -82,7 +81,6 @@ UV. D erstellt Bildschirme mit den folgenden vier Teilen:
 - **RootElement**
 - **Bereich**
 - **Element**
-
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
@@ -249,7 +247,6 @@ Es wird mit drei Werten initialisiert:
 - Platzhalter Text (Hierbei handelt es sich um den ausgegrauten Text, der einen Hinweis für den Benutzer bereitstellt). 
 - Der Wert des Texts.
 
-
 Der Platzhalter und der Wert können NULL sein. Die Beschriftung ist jedoch erforderlich.
 
 Der Zugriff auf die Value-Eigenschaft kann an einem beliebigen Punkt abgerufen werden `EntryElement`.
@@ -260,7 +257,6 @@ Außerdem kann `KeyboardType` die-Eigenschaft zum Zeitpunkt der Erstellung auf d
 - Phone
 - Url
 - E-Mail
-
 
 ### <a name="boolean-element"></a>Boolesches Element
 
@@ -427,7 +423,6 @@ Durch das suchen wird der Inhalt der Ansicht als Benutzer Typen geändert. Es du
 - `FinishSearch`
 - `PerformFilter`
 
-
 Das System ist erweiterbar, sodass Sie dieses Verhalten bei Bedarf ändern können.
 
 ### <a name="background-image-loading"></a>Laden des Hintergrund Bilds
@@ -575,7 +570,6 @@ Wie Sie den Benutzer über einen Fehler benachrichtigen, ist anwendungsspezifisc
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden viele Informationen zu MonoTouch. Dialog behandelt. Es wurden die Grundlagen der Verwendung von MT erläutert. D funktioniert und deckt die verschiedenen Komponenten ab, die MT umfassen. D. Außerdem wurde das umfangreiche Array von Elementen und Tabellen Anpassungen gezeigt, die von MT unterstützt werden. D und erläutert, wie Mt. D kann mit benutzerdefinierten Elementen erweitert werden. Außerdem wurde die JSON-Unterstützung in Mt erläutert. D, der das dynamische Erstellen von Elementen aus JSON ermöglicht.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

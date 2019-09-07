@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 95d4194e0ed1a1da435a233e40a74f506c49b539
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: e2bfc64626d658cbcb22ba5f2ebd1f1ff069ec19
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119876"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757762"
 ---
 # <a name="android-job-scheduler"></a>Android-Auftragsplaner
 
 _In dieser Anleitung wird erläutert, wie Sie Hintergrund arbeiten mithilfe der Android-Auftrags Planer-API planen, die auf Android-Geräten mit Android 5,0 (API-Ebene 21) und höher verfügbar ist._
-
 
 ## <a name="overview"></a>Übersicht 
 
@@ -78,7 +77,6 @@ Alle Aufgaben, die von der Android-Auftrags Planer-Bibliothek ausgeführt werden
 4. Überschreiben `OnStartJob` Sie die-Methode, und fügen Sie den Code zum Ausführen der Arbeit hinzu. Diese Methode wird von Android auf dem Haupt Thread der Anwendung aufgerufen, um den Auftrag auszuführen. Die Arbeit dauert länger, bis ein paar Millisekunden in einem Thread ausgeführt werden, um eine Blockierung der Anwendung zu vermeiden.
 5. Wenn die Arbeit erledigt ist, muss `JobService` die die `JobFinished` -Methode aufruft. Diese Methode `JobService` teilt dem mit, `JobScheduler` dass die Arbeit erledigt ist. Wenn Sie nicht `JobFinished` aufrufen, führt dies `JobService` dazu, dass nicht benötigte Anforderungen auf das Gerät gestellt werden, sodass die Akku Lebensdauer verkürzt wird. 
 6. Es empfiehlt sich, auch die `OnStopJob` -Methode zu überschreiben. Diese Methode wird von Android aufgerufen, wenn der Auftrag beendet wird, bevor er abgeschlossen ist, und bietet `JobService` die Möglichkeit, sämtliche Ressourcen ordnungsgemäß zu löschen. Diese Methode sollte zurück `true` geben, wenn es erforderlich ist, den Auftrag neu zu `false` planen, oder, wenn es nicht wünschenswert ist, den Auftrag erneut auszuführen.
-   
 
 Der folgende Code ist ein Beispiel für die einfachste `JobService` für eine Anwendung, wobei die TPL zum asynchronen Ausführen einiger Aufgaben verwendet wird:
 
@@ -115,7 +113,6 @@ Xamarin. Android-Anwendungen instanziieren `JobService` keine direkt, sondern ü
 
 - **JobID** Dies ist ein `int` -Wert, der verwendet wird, um einen Auftrag `JobScheduler`für die zu identifizieren. &ndash; Durch die erneute Verwendung dieses Werts werden alle vorhandenen Aufträge aktualisiert. Der Wert muss für die Anwendung eindeutig sein. 
 - **Jobservice** Dieser Parameter ist ein `ComponentName` , der den Typ explizit identifiziert, `JobScheduler` den der zum Ausführen eines Auftrags verwenden soll. &ndash; 
-  
 
 Diese Erweiterungsmethode veranschaulicht, wie eine `JobInfo.Builder` mit einem Android `Context`erstellt wird, z. b. eine-Aktivität:
 
@@ -138,7 +135,6 @@ var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 
 Ein leistungsfähiges Feature des Android-Auftrags Planers ist die Möglichkeit, zu steuern, wann ein Auftrag ausgeführt wird oder unter welchen Bedingungen ein Auftrag ausgeführt werden kann. In der folgenden Tabelle werden einige der Methoden für `JobInfo.Builder` beschrieben, mit denen eine APP beeinflussen kann, wann ein Auftrag ausgeführt werden kann:  
 
-
 |  Methode | Beschreibung   |
 |---|---|
 | `SetMinimumLatency`  | Gibt an, dass eine Verzögerung (in Millisekunden) vor dem Ausführen eines Auftrags festgestellt werden soll. |
@@ -149,7 +145,6 @@ Ein leistungsfähiges Feature des Android-Auftrags Planers ist die Möglichkeit,
 | `SetDeviceIdle` | Der Auftrag wird ausgeführt, wenn das Gerät ausgelastet ist. |
 | `SetPeriodic` | Gibt an, dass der Auftrag regelmäßig ausgeführt werden soll. |
 | `SetPersisted` | Der Auftrag sollte über Geräte Neustarts hinweg durchgesetzt werden. | 
-
 
 Bietet eine Anleitung dazu, wie `JobScheduler` lange gewartet werden soll, bevor versucht wird, einen Auftrag erneut auszuführen. `SetBackoffCriteria` Es gibt zwei Teile der Backoff-Kriterien: eine Verzögerung in Millisekunden (Standardwert von 30 Sekunden) und den Rückgabetyp, der verwendet werden soll (manchmal auch als _Backoff-Richtlinie_ oder _Wiederholungs Richtlinie_bezeichnet). Die beiden Richtlinien werden in der `Android.App.Job.BackoffPolicy` -Aufzählung gekapselt:
 
@@ -206,7 +201,7 @@ else
     snackBar.Show();
 }
 ```
- 
+
 ### <a name="cancelling-a-job"></a>Abbrechen eines Auftrags
 
 Es ist möglich, alle geplanten Aufträge oder nur einen einzelnen Auftrag mit der `JobsScheduler.CancelAll()` -Methode oder der `JobScheduler.Cancel(jobId)` -Methode abzubrechen:

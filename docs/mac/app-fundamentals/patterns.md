@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 06/17/2016
-ms.openlocfilehash: 188bc8a04b62c97e9d6f80669fe50da1bf4d9340
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289552"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770164"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Allgemeine Muster und Idiome in xamarin. Mac
 
@@ -54,8 +54,6 @@ Weitere Informationen zum Arbeiten mit Tabellen Sichten in einer xamarin. Mac-An
 Protokolle in Ziel-C können mit Schnittstellen in C#verglichen werden, und in vielen Fällen werden Sie in ähnlichen Situationen verwendet. Beispielsweise werden `NSTableView` im obigen Beispiel sowohl der Delegat als auch die Datenquelle tatsächlich protokolliert. Xamarin. Mac macht diese als Basisklassen mit virtuellen Methoden verfügbar, die Sie außer Kraft setzen können. Der Hauptunterschied zwischen C# Schnittstellen und Ziel-C-Protokollen besteht darin, dass einige Methoden in einem Protokoll optional für die Implementierung von optional sein können. Sie müssen sich die Dokumentation und/oder Definition einer API ansehen, um zu bestimmen, was optional ist.
 
 Weitere Informationen finden Sie in unserer Dokumentation zu Delegaten [, Protokollen und Ereignissen](~/ios/app-fundamentals/delegates-protocols-and-events.md) .
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

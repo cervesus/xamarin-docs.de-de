@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2af4bc3bd4dc6ae47f573c58c84aad54f41d42cd
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: e92669d9938b9fe48a1a589e0465acd03f129716
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980820"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759893"
 ---
 # <a name="datapages-controls-reference"></a>Verweis auf DataPages-Steuerelemente
 
@@ -67,7 +67,6 @@ Das `HeroImage` -Steuerelement verfügt über vier Eigenschaften:
 
 ![](controls-images/heroimage-light-ios.png "HeroImage-Steuerelement für iOS") ![](controls-images/heroimage-dark-ios.png "HeroImage-Steuerelement für iOS")
 
-
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
@@ -101,7 +100,6 @@ Diese Screenshots zeigen die `ListItem` auf IOS-und Android-Plattformen, die sow
 **iOS**
 
 ![](controls-images/listitem-light-ios.png "ListItem-Steuerelement für iOS") ![](controls-images/listitem-dark-ios.png "ListItem-Steuerelement für iOS")
-
 
 ## <a name="custom-control-example"></a>Beispiel für einen benutzerdefinierten
 
@@ -307,7 +305,6 @@ Das visuelle Design des benutzerdefinierten Steuer Elements wird mithilfe der ob
       VerticalOptions="End"
       Style="{ StaticResource CardViewTextStyle }"
     />
-
 
     <!-- CARDVIEW DETAIL -->
     <Label

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 145c616cc0af8156f10b9db1d3fa36264cecd18b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284331"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768876"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in xamarin. IOS
 
@@ -21,7 +21,6 @@ In diesem Handbuch wird erläutert, worum es sich bei einem Storyboard handelt, 
 Bevor das Storyboard-Dateiformat von Apple als visuelle Darstellung der Benutzeroberfläche einer IOS-Anwendung eingeführt wurde, haben Entwickler XIb-Dateien für jeden Ansichts Controller erstellt und die Navigation zwischen den einzelnen Ansichten manuell programmiert.  Mithilfe eines Storyboards können Entwickler sowohl Ansichts Controller als auch die Navigation zwischen Ihnen auf einer Entwurfs Oberfläche definieren und die WYSIWYG-Bearbeitung der Benutzeroberfläche der Anwendung ermöglichen.
 
 Ein Storyboard kann mit dem xamarin IOS-Designer erstellt, geöffnet und bearbeitet werden. In dieser Anleitung wird auch erläutert, wie Sie den Designer verwenden, um Ihre Storyboards zu C# erstellen, während Sie zum Programmieren der Navigation verwenden.
-
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -77,7 +76,7 @@ Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer 
 ### <a name="adaptive-segue-types"></a>Adaptive Enumerationstypen
 
  IOS 8 hat [Größenklassen](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) eingeführt, damit eine IOS-storyboarddatei mit allen verfügbaren Bildschirmgrößen funktioniert, sodass Entwickler eine Benutzeroberfläche für alle IOS-Geräte erstellen können. Standardmäßig werden in allen neuen xamarin. IOS-Anwendungen Größenklassen verwendet. Informationen zur Verwendung von Größenklassen aus einem älteren Projekt finden Sie im Handbuch [Introduction to Unified Storyboards (Einführung in Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) ). 
- 
+
 Jede Anwendung, die Größenklassen verwendet, verwendet auch die neuen [*adaptiven Segues*](~/ios/user-interface/storyboards/unified-storyboards.md). Beachten Sie bei der Verwendung von Größenklassen, dass wir nicht direkt angeben, ob wir ein iPhone oder iPad verwenden. Anders ausgedrückt: Wir erstellen eine Benutzeroberfläche, die immer gleich aussieht, unabhängig davon, wie viel tatsächlich Sie verwendet werden muss. Adaptive Kalender arbeiten daran, die Umgebung zu beurteilen und zu bestimmen, wie Inhalte am besten präsentiert werden. Die adaptiven-Sekunden sind unten dargestellt: 
 
 [![](images/adaptivesegue.png "Die Dropdown Liste \"Adaptive Sekunden\"")](images/adaptivesegue.png#lightbox)
@@ -92,7 +91,6 @@ Jede Anwendung, die Größenklassen verwendet, verwendet auch die neuen [*adapti
 ### <a name="transferring-data-with-segues"></a>Übertragen von Daten mit einem anderen
 
 Die Vorteile einer-Tabelle enden nicht mit Übergängen. Sie können auch verwendet werden, um die Übertragung von Daten zwischen Ansichts Controllern zu verwalten. Dies wird erreicht, indem die `PrepareForSegue` -Methode auf dem anfänglichen Ansichts Controller überschrieben und die Daten selbst verarbeitet werden. Wenn der segue ausgelöst wird – z. b. durch Drücken der Schaltfläche –, ruft die Anwendung diese Methode auf und bietet die Möglichkeit, den neuen Ansichts Controller *vor* der Navigation vorzubereiten. Der folgende Code aus dem [phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) -Beispiel veranschaulicht dies: 
-
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, 
@@ -252,7 +250,6 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-
 Beim Erstellen eines Storyboards mithilfe des Designers fügt die IDE automatisch das Attribut [[Register]](xref:Foundation.RegisterAttribute) am Anfang der `designer.cs` Klasse hinzu und übergibt einen Zeichen folgen Bezeichner, der mit der im vorherigen Schritt angegebenen Storyboard-ID identisch ist. Dadurch wird der C# mit der relevanten Szene im Storyboard verknüpft.
 
 An einem beliebigen Punkt möchten Sie möglicherweise eine vorhandene Klasse hinzufügen, die **nicht** im Designer erstellt wurde. In diesem Fall würden Sie diese Klasse wie gewohnt registrieren:
@@ -340,7 +337,6 @@ Bevor wir beginnen, befolgen Sie die obigen Schritte 1 – 8. In den folgenden S
 3. Klicken Sie auf den Namen, und legen Sie ihm den *Bezeichner* `SegueToPink`:
 
     [![](images/namesegue.png "Klicken Sie auf den Namen \"*\", und versehen Sie ihn mit dem Bezeichner \"".")](images/namesegue.png#lightbox)  
-    
 
 4. Fügen Sie schließlich der- `MainViewController` Klasse die folgende "dendperformabgue"-Methode hinzu:
 
@@ -489,8 +485,6 @@ Wenn die app ausgeführt wird und der Benutzer auf das Benutzeroberflächen Elem
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wird das Konzept von Storyboards vorgestellt und erläutert, wie Sie bei der Entwicklung von IOS-Anwendungen von Nutzen sein können. Darin werden Szenen, Ansichts Controller, Ansichten und Sicht Hierarchien erläutert, und es wird erläutert, wie Szenen mit unterschiedlichen Arten von Enumerationstypen verknüpft werden  Außerdem wird beschrieben, wie Sie Ansichts Controller manuell aus einem Storyboard instanziieren und bedingte Listen erstellen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

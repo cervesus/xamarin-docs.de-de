@@ -6,20 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4d9bf7b7a43c7c258bc60e9dfea1626e5c304b03
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9fb5c696e830710e6ad99140477eedcbfe0e8823
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522875"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764688"
 ---
 # <a name="adding-a-second-toolbar"></a>Hinzufügen einer zweiten Symbolleiste
-
 
 ## <a name="overview"></a>Übersicht 
 
 Der `Toolbar` kann die Aktionsleiste &ndash; , die mehrmals in einer Aktivität verwendet werden kann, nicht ersetzen, Sie kann an beliebiger Stelle auf dem Bildschirm angepasst werden und kann so konfiguriert werden, dass Sie nur eine partielle Breite des Bildschirms umfasst. In den folgenden Beispielen wird veranschaulicht, wie ein `Toolbar` zweites erstellt und am unteren Bildschirmrand platziert wird. Hierdurch werden die Menü Elemente **Kopieren**, **Ausschneiden**und **Einfügen** implementiert.`Toolbar` 
-
 
 ## <a name="define-the-second-toolbar"></a>Definieren der zweiten Symbolleiste 
 
@@ -78,8 +76,6 @@ Dadurch wird der unteren Symbolleiste eine dunkle Bernsteinfarbe angezeigt. Beim
 
 [![Screenshot der APP mit gelber zweiter Symbolleiste am unteren Bildschirmrand](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
-
- 
 ## <a name="add-edit-menu-items"></a>Bearbeitungs Menü Elemente hinzufügen 
 
 In diesem Abschnitt wird erläutert, wie Sie Menü Elemente bearbeiten unten `Toolbar`hinzufügen. 
@@ -95,8 +91,6 @@ So fügen Sie einem sekundären `Toolbar`Menü Elemente hinzu:
 4. Implementieren Sie einen Click- `OnCreate` Handler in für die neuen Menü Elemente. 
 
 In den folgenden Abschnitten wird dieser Prozess ausführlich veranschaulicht: Die Menü Elemente **Ausschneiden**, **Kopieren**und **Einfügen** werden am unteren Rand `Toolbar`hinzugefügt. 
-
-
 
 ### <a name="define-the-edit-menu-resource"></a>Definieren der Menü Ressource "Bearbeiten"
 
@@ -125,8 +119,6 @@ Erstellen Sie im Unterverzeichnis **Ressourcen/Menü** eine neue XML-Datei mit d
 
 Dieser XML-Code erstellt die Menü Elemente **Ausschneiden**, **Kopieren**und **Einfügen** (mithilfe von Symbolen, die `mipmap-` zu den Ordnern hinzugefügt wurden, um [den Aktionsleiste zu ersetzen](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
-
-
 ### <a name="inflate-the-menus"></a>Die Menüs erhöhen
 
 Fügen Sie am Ende `OnCreate` der-Methode in **MainActivity.cs**die folgenden Codezeilen hinzu: 
@@ -154,8 +146,6 @@ Wenn Sie auf eine der beiden Symbolleisten tippen, werden die resultierenden Ele
 
 [![Screenshots von Popups zum Speichern, kopieren und Einfügen von Menü Elementen, die getippt werden](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
-
-
 ## <a name="the-up-button"></a>Die Schaltfläche nach oben 
 
 Die meisten Android-Apps basieren auf der Schaltfläche **zurück** für die APP-Navigation. durch Drücken der Schaltfläche " **zurück** " wird der Benutzer zum vorherigen Bildschirm.
@@ -170,7 +160,7 @@ ActionBar.SetDisplayHomeAsUpEnabled (true);
 ActionBar.SetHomeButtonEnabled (true);
 ```
 
-Das Codebeispiel für die [Unterstützung von V7-Symbolleiste](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar) zeigt die Schaltfläche **up** in Aktion In diesem Beispiel (das die im folgenden beschriebene AppCompat-Bibliothek verwendet) wird eine zweite-Aktivität implementiert, die die Symbolleisten-Schaltfläche für die hierarchische Navigation zurück zur vorherigen Aktivität verwendet. In diesem Beispiel aktiviert die `DetailActivity` Start Schaltfläche die Schaltfläche nach **oben** , `SupportActionBar` indem die folgenden Methodenaufrufe durchführen: 
+Das Codebeispiel für die [Unterstützung von V7-Symbolleiste](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar) zeigt die Schaltfläche **up** in Aktion In diesem Beispiel (das die im folgenden beschriebene AppCompat-Bibliothek verwendet) wird eine zweite-Aktivität implementiert, die **die Symbolleisten** -Schaltfläche für die hierarchische Navigation zurück zur vorherigen Aktivität verwendet. In diesem Beispiel aktiviert die `DetailActivity` Start Schaltfläche die Schaltfläche nach **oben** , `SupportActionBar` indem die folgenden Methodenaufrufe durchführen: 
 
 ```csharp
 SetSupportActionBar (toolbar);
@@ -184,8 +174,6 @@ Wenn der Benutzer `MainActivity` von zu `DetailActivity`navigiert, zeigt `Detail
 [![Screenshot: Beispiel für einen Pfeil nach links in der Symbolleiste](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
 Wenn **Sie** auf diese Schaltfläche klicken, wird die `MainActivity`APP zu zurückgegeben. Wenn Sie in einer komplexeren App mit mehreren Ebenen der Hierarchie auf diese Schaltfläche tippen, wird der Benutzer auf die nächsthöhere Ebene der APP und nicht auf den vorherigen Bildschirm zurückgegeben. 
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

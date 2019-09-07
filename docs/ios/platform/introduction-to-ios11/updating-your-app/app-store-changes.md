@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: fa44ba260a62a6e0bd036c08c62371734b38d82d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286586"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752330"
 ---
 # <a name="app-store-changes-in-ios-11"></a>App Store-Änderungen in ios 11
 
@@ -33,7 +33,6 @@ Der neu gestaltete App Store umfasst die folgenden Abschnitte:
 Store-Symbole (oder Marketing Symbole) werden nicht mehr in iTunes Connect verwaltet und müssen stattdessen in der APP-Binärdatei als Ressourcen [Katalog](~/ios/app-fundamentals/images-icons/app-icons.md) enthalten sein, ähnlich wie App-Symbole. Ein 1024 x 1024-speichersymbol im PNG-Format muss in einen Asset-Katalog eingeschlossen werden, damit IOS 11-apps erfolgreich übermittelt werden können.
 
 Durch die APP-Verdünnung wird sichergestellt, dass der zusätzliche Ressourcen Katalog die APP-Größe nicht erhöht.
-
 
 ## <a name="in-app-purchases-promoted-in-the-app-store"></a>In-App-Käufe höher gestuft im App Store
 
@@ -96,7 +95,6 @@ Stufenweise Releases sind in iTunes Connect aktiviert. Klicken Sie in der Rand L
 ![Option, die in Phasen Release für automatische Updates angezeigt wird](app-store-changes-images/image6.png)
 
 Ihr Update steht sofort auf der Registerkarte Updates des App Stores zum Download zur Verfügung. Phasen Releases sind nur für Benutzer verfügbar, die automatische Downloads ausgewählt haben.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

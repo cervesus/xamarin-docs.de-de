@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 6cb001a42f0cc98d0054523dffa0772b29188d73
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a56405aaed84be5015e5d58ef9a13ba8e270ea58
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523824"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757535"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Abrufen eines API-Schlüssels für Google Maps
 
@@ -23,7 +23,6 @@ Das Abrufen eines Maps-API v2-Schlüssels umfasst die folgenden Schritte:
 1. Rufen Sie den SHA-1-Fingerabdruck des Keystores ab, der zum Signieren der Anwendung verwendet wird.
 2. Erstellen Sie ein Projekt in der Google APIs-Konsole.
 3. Abrufen des API-Schlüssels.
-
 
 ## <a name="obtaining-your-signing-key-fingerprint"></a>Abrufen des Fingerabdrucks des Signatur Schlüssels
 
@@ -52,7 +51,6 @@ Durch das Ausführen des Befehls `keytool` über das JDK erhalten Sie Informatio
 
 -----
 
-
 Führen Sie keytool mit dem folgenden Befehl aus (mithilfe der oben gezeigten Dateipfade):
 
 ```shell
@@ -76,7 +74,6 @@ keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ And
 ```
 
 -----
-
 
 ### <a name="production-keys"></a>Produktions Schlüssel
 
@@ -118,7 +115,7 @@ Nachdem Sie den SHA-1-Fingerabdruck des Signatur-Keystores abgerufen haben, müs
 
    [![Neues Projekt mit dem Namen "xamarinmapsdemo"](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
-3. Nach einer Minute oder so wird das Projekt erstellt, und Sie gelangen zur Dashboardseite des Projekts. Klicken Sie dort auf **APIs und Dienste aktivieren**:
+3. Nach einer Minute oder so wird das Projekt erstellt, und Sie gelangen zur **Dashboardseite** des Projekts. Klicken Sie dort auf **APIs und Dienste aktivieren**:
 
    [![Klicken auf Google Maps Android-API im Abschnitt "Library"](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
