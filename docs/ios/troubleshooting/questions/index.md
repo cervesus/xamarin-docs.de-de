@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 57908027c6e9215504f410c0f9c989d6fbe3adad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a8549e03c96a5e21f7a235064ebd72fc671cf2b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290507"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769279"
 ---
 # <a name="ios-frequently-asked-questions"></a>häufig gestellte Fragen zu IOS
 
@@ -35,7 +35,6 @@ In dieser Anleitung erfahren Sie, wie Sie "Info. plist" Bearbeiten, um den Benut
 
 ### <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logssymbolicate-ios-crashmd"></a>[Wo finde ich die DSYM-Datei zum Ersetzen der iOS-Absturzprotokolle durch Symbole?](symbolicate-ios-crash.md)
 In dieser Anleitung werden die grundlegenden Schritte zum symbolisieren von IOS-Absturz Protokollen beschrieben, die bei der Diagnose von Abstürzen helfen. Außerdem gibt es Links zu weiteren Ressourcen für erweiterte Methoden zur symbolischen Vorgehensweisen & Informationen zum Interpretieren von IOS-Absturz Protokollen.
-
 
 ### <a name="how-do-i-set-mono-runtime-environment-variables-for-ios-projects-in-xamarin-studioxs-mono-runtimemd"></a>[Wie richte ich Mono-Runtime-Umgebungsvariablen für iOS-Projekte in Xamarin Studio ein?](xs-mono-runtime.md)
 Wenn Sie Lauf Zeit Umgebungsvariablen für Mono festlegen müssen, können Sie auf den **Projektoptionen > >** Seite "Allgemein" ausführen festgelegt werden.
@@ -61,7 +60,6 @@ Ab xamarin 4 ist es nun möglich, eine `.xcarchive` aus Windows zu erstellen, in
 ### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[Warum schlägt meine App-Übermittlung wie folgt fehl: "Disallowed paths ( "iTunesMetadata.plist" ) found at ..." (Nicht zulässige Pfade ( "iTunesMetadata.plist" ) unter...)](itunesmetadata-disallowed-paths.md)
 Dieser Fehler ist das Ergebnis einer Änderung im App Store-Überprüfungsprozess von Apple. Dieser spezifische Fehler ist _nicht_ mit der bestimmten Version von xamarin verknüpft, die Sie installiert haben, sodass das Downgrade _nicht_ unterstützt wird. In dieser Anleitung finden Sie Links zu weiteren Informationen zum Beheben des Problems.
 
-
 ## <a name="diagnosing-specific-error-messages"></a>Diagnostizieren bestimmter Fehlermeldungen
 
 ### <a name="ios-designer-error-with-registerserviceporterror-registerserviceportmd"></a>[iOS-Designer-Fehler mit RegisterServicePort](error-registerserviceport.md)
@@ -83,8 +81,6 @@ Dieses Problem tritt auf, wenn für 32-Bit-Architekturen, wie z. b. ARMv7, eine 
 
 > [!IMPORTANT]
 > Die folgenden Artikel gelten für Probleme, die in neueren Versionen von xamarin behoben wurden. Wenn das Problem jedoch in der aktuellen Version der Software auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen buildprotokolleausgabe.
-
-
 
 ### <a name="ipa-file-is-0-bytesipa-zero-bytesmd"></a>[IPA-Datei hat 0 Byte](ipa-zero-bytes.md)
 In früheren Versionen von xamarin gab es einige bekannte Probleme, die dazu führen konnten, dass die IPA-Datei unter Windows 0 Bytes groß war.

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d1e5602643ba5578c4bc2a26e6db2d9f49033469
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2bed40c3ac2853a5f99c2b487e909164e12e676d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291693"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766953"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchos-Tabellen Steuerelemente in xamarin
 
@@ -39,9 +39,6 @@ Um die- **Klasse** für den Zeilen Controller festzulegen, wählen Sie die Zeile
 
 Nachdem die-Klasse für den Controller der Zeile festgelegt wurde, erstellt die IDE eine C# entsprechende-Datei im Projekt. Ziehen Sie Steuerelemente (z. b. Bezeichnungen) auf die Zeile, und geben Sie Ihnen Namen, damit Sie im Code auf Sie verweisen können.
 
-
-
-
 ## <a name="create-and-populate-rows"></a>Erstellen und Auffüllen von Zeilen
 
 `SetNumberOfRows`erstellt die Zeilen Controller Klassen für jede Zeile unter Verwendung `Identifier` von, um die richtige auszuwählen. Wenn Sie Ihren Zeilen Controller als Benutzer `Identifier`definiert angegeben haben, ändern Sie den **Standard** Wert im Code Ausschnitt unten in den Bezeichner, den Sie verwendet haben. Die `RowController` *für jede Zeile* wird erstellt, `SetNumberOfRows` wenn aufgerufen wird und die Tabelle angezeigt wird.
@@ -65,7 +62,6 @@ for (var i = 0; i < rows.Count; i++) {
 
 > [!IMPORTANT]
 > Durch die Verwendung `SetNumberOfRows` von und anschließendes durchlaufen vonwirddiegesamteTabelleandieÜberwachunggesendet.`GetRowController` Wenn Sie in nachfolgenden Sichten der Tabelle bestimmte Zeilen hinzufügen oder entfernen müssen, verwenden `InsertRowsAt` Sie `RemoveRowsAt` und, um die Leistung zu verbessern.
-
 
 ## <a name="respond-to-taps"></a>Auf tippen reagieren
 
@@ -142,7 +138,6 @@ for (var i = 0; i < rows.Count; i++) {
 }
 ```
 
-
 ## <a name="vertical-detail-paging"></a>Paging für vertikale Details
 
 watchos 3 hat ein neues Feature für Tabellen eingeführt: die Möglichkeit, einen Bildlauf durch die Detailseiten im Zusammenhang mit den einzelnen Zeilen durchführen zu können, ohne zur Tabelle zurückkehren und eine andere Zeile auswählen zu müssen. Die Detailbildschirm können durch Schwenken nach oben oder unten oder mithilfe des Digital Crown durch ein-oder heruntergefahren werden.
@@ -210,8 +205,6 @@ namespace WatchTables.OnWatchExtension
 ```
 
 Auf die hier deklarierten Outlets und Aktionen kann im Code verwiesen werden. die **Designer.cs** -Datei sollte jedoch nicht direkt bearbeitet werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: fd94cd7a6d37e7fa00489e788f232842b319e5d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6008663276151ef9512e4a370252da6861fa1b19
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292671"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769441"
 ---
 # <a name="social-framework-in-xamarinios"></a>Social Framework in xamarin. IOS
 
@@ -58,7 +58,6 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 - `SetInitialText`– Fügt den Anfangstext hinzu, der im Tweet angezeigt werden soll.
 - `AddUrl`– Fügt dem Tweet eine URL hinzu.
 - `AddImage`– Fügt dem Tweet ein Bild hinzu.
-
 
 Nach der Initialisierung zeigt `PresentVIewController` der Aufruf der `SLComposeViewController`von erstellten Ansicht an. Der Benutzer kann dann optional den Tweet bearbeiten und senden oder den Sendevorgang abbrechen. In beiden Fällen sollte der Controller in der `CompletionHandler`verworfen werden, wo das Ergebnis auch geprüft werden kann, um festzustellen, ob der Tweet gesendet oder abgebrochen wurde, wie unten dargestellt:
 
@@ -473,7 +472,6 @@ Wenn Sie diese Option nicht festlegen (oder einen ungültigen Schlüssel verwend
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde gezeigt, wie das Social Framework für die Interaktion mit Twitter und Facebook verwendet werden kann. Es wurde gezeigt, wo Konten für jedes soziale Netzwerk in den Geräteeinstellungen konfiguriert werden müssen. Außerdem wurde erläutert, wie verwendet `SLComposeViewController` wird, um eine einheitliche Ansicht für die Bereitstellung in sozialen Netzwerken darzustellen. Außerdem wurde die-Klasse `SLRequest` untersucht, die zum Abrufen der API eines sozialen Netzwerks verwendet wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

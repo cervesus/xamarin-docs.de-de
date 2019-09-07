@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 758134b0c5171e46c47ff6fd8071b13a44d5789b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b341ee5ee72c3a89ab14161862896585ed498fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291613"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772691"
 ---
 # <a name="table-views-in-xamarinmac"></a>Tabellen Ansichten in xamarin. Mac
 
@@ -407,7 +407,6 @@ Wenn Sie dem Benutzer die Auswahl einer einzelnen Zeile gestatten möchten, dopp
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-
 Bearbeiten Sie anschließend die `ProductTableDelegate.cs` Datei, und fügen Sie die folgende Methode hinzu:
 
 ```csharp
@@ -435,7 +434,6 @@ Wenn Sie zulassen möchten, dass der Benutzer mehrere Zeilen auswählt, doppelkl
 [![](table-view-images/select02.png "Der Attribut Inspektor")](table-view-images/select02.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
-
 
 Bearbeiten Sie anschließend die `ProductTableDelegate.cs` Datei, und fügen Sie die folgende Methode hinzu:
 

@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 013e169770fa2e52f89915d1b74c7292a049f87e
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c5702780b6a0f0732d846a2cd4226aec5e49fc21
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197819"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766825"
 ---
 # <a name="using-the-model-class"></a>Verwenden der Model-Klasse
 
@@ -38,7 +38,6 @@ Wir müssen zuerst ein Spiel Projekt mit dem Namen MonoGame3D einrichten. Weiter
 Bevor Sie fortfahren, sollten Sie überprüfen, ob das Projekt ordnungsgemäß geöffnet und bereitgestellt wird. Nach der Bereitstellung sollte ein leerer blauer Bildschirm angezeigt werden:
 
 ![Leerer blauer Spielbildschirm](part1-images/image2.png)
-
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>Einschließen der xnsb im Spiel Projekt
 
@@ -210,7 +209,6 @@ Wir sehen, dass die Kamera noch weiter bewegt wurde, was dazu `Model` führt, da
 ## <a name="rendering-multiple-models"></a>Rendern von mehreren Modellen
 
 Wie bereits erwähnt, kann ein `Model` einzelner mehrmals gezeichnet werden. Um dies zu vereinfachen, verschieben wir den `Model` Zeichnungs Code in eine eigene Methode, die die gewünschte `Model` Position als Parameter annimmt. Nach Abschluss des Vorgangs `Draw` sehen `DrawModel` unsere-und-Methoden wie folgt aus:
-
 
 ```csharp
 protected override void Draw(GameTime gameTime)

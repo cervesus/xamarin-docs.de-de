@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 8c4050f439f3499289063c286afd255241bf0343
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6e2e4cd854e60f6147104b6b1361d0ab7b234370
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521453"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755805"
 ---
 # <a name="understanding-android-api-levels"></a>Android API-Ebenen
 
 _Xamarin. Android verfügt über mehrere Einstellungen der Android-API-Ebene, mit denen die Kompatibilität Ihrer APP mit mehreren Versionen von Android bestimmt wird. In diesem Handbuch wird erläutert, was diese Einstellungen bedeuten, wie Sie konfiguriert werden und welche Auswirkungen Sie zur Laufzeit auf Ihre APP haben._
-
 
 ## <a name="quick-start"></a>Schnellstart
 
@@ -67,15 +66,11 @@ Die folgende Konfiguration unterstützt z. b. Android-Versionen, so früh wie AP
 
 -----
 
-
 Wenn Ihre APP mehrere Android-Versionen unterstützt, muss Ihr Code Laufzeitüberprüfungen enthalten, um sicherzustellen, dass Ihre APP mit der Android-Mindestversion funktioniert (Weitere Informationen finden Sie weiter unten unter [Lauf Zeit Prüfungen für Android-Versionen](#runtimechecks) ). Wenn Sie eine Bibliothek nutzen oder erstellen, finden Sie unter [API-Ebenen und-Bibliotheken](#libraries) unten bewährte Methoden für die Konfiguration von API-Ebenen-Einstellungen für Bibliotheken.
-
-
 
 ## <a name="android-versions-and-api-levels"></a>Android-Versionen und API-Ebenen
 
 Wenn die Android-Plattform weiterentwickelt wird und neue Android-Versionen veröffentlicht werden, wird jeder Android-Version ein eindeutiger ganzzahliger Bezeichner ( *API-Ebene*) zugewiesen. Daher entspricht jede Android-Version einer einzelnen Android-API-Ebene. Da Benutzer apps sowohl auf älteren als auch in den neuesten Versionen von Android installieren, müssen reale Android-Apps für die Verwendung mit mehreren Android-API-Ebenen entworfen werden.
-
 
 ### <a name="android-versions"></a>Android-Versionen
 
@@ -93,7 +88,6 @@ Außerdem definiert xamarin. Android buildversionscodes, die den derzeit bekannt
 
 Wie diese Tabelle zeigt, werden neue Android-Versionen häufig &ndash; häufig mehr als eine Version pro Jahr veröffentlicht. Folglich umfasst das Universum von Android-Geräten, die Ihre APP möglicherweise ausführen, eine Vielzahl von älteren und neueren Android-Versionen. Wie können Sie sicherstellen, dass Ihre APP in so vielen verschiedenen Versionen von Android konsistent und zuverlässig ausgeführt wird? Die API-Ebenen von Android können Sie bei der Verwaltung dieses Problems unterstützen.
 
-
 ### <a name="android-api-levels"></a>Android-API-Ebenen
 
 Jedes Android-Gerät wird auf genau *einer* API &ndash; -Ebene ausgeführt. diese API-Ebene ist für jede Version der Android-Plattform garantiert eindeutig. Die API-Ebene identifiziert exakt die Version des API-Satzes, in der Ihre APP aufgerufen werden kann. Es identifiziert die Kombination von manifeselementen, Berechtigungen usw., die Sie als Entwickler codieren. Das Android-System mit API-Ebenen unterstützt Android bei der Ermittlung, ob eine Anwendung mit einem Android-System Abbild kompatibel ist, bevor die Anwendung auf einem Gerät installiert wird.
@@ -106,11 +100,9 @@ Wenn eine Anwendung erstellt wird, enthält Sie die folgenden API-Ebeneninformat
 
 Diese Einstellungen werden verwendet, um sicherzustellen, dass die erforderliche Funktionalität zum ordnungsgemäßen Ausführen der APP auf dem Android-Gerät zur Installationszeit verfügbar ist. Andernfalls wird die Ausführung der APP auf diesem Gerät blockiert. Wenn die API-Ebene eines Android-Geräts beispielsweise niedriger ist als die API-Ebene, die Sie für Ihre APP angeben, hindert das Android-Gerät den Benutzer daran, Ihre APP zu installieren.
 
-
 ## <a name="project-api-level-settings"></a>Einstellungen der Projekt-API-Ebene
 
 In den folgenden Abschnitten wird erläutert, wie Sie den SDK-Manager verwenden, um Ihre Entwicklungsumgebung für die API-Ebenen vorzubereiten, auf die Sie abzielen möchten, gefolgt von detaillierten Erläuterungen zum Konfigurieren des *Ziel Frameworks*, der *Android-Mindestversion*und  *Ziel* Einstellungen für Android-Version in xamarin. Android.
-
 
 ### <a name="android-sdk-platforms"></a>Android SDK Plattformen
 
@@ -144,7 +136,6 @@ Legen Sie das Ziel Framework fest, indem Sie im Dropdown Menü auf der rechten S
 
 -----
 
-
 <a name="minimum" />
 
 ### <a name="minimum-android-version"></a>Android-Mindestversion
@@ -153,7 +144,6 @@ Die *Android-Mindestversion* (auch bekannt `minSdkVersion`als) ist die älteste 
 
 Obwohl Ihre APP auf diesem Platt Formbereich erfolgreich erstellt und installiert werden kann, ist dies nicht gewährleistet, dass Sie auf allen diesen Plattformen erfolgreich *ausgeführt* werden kann. Wenn Ihre APP beispielsweise auf **Android 5,0 (Lollipop)** installiert ist und Ihr Code eine API aufruft, die nur in **Android 7,1 (Nougat)** und neuer verfügbar ist, erhält Ihre APP einen Laufzeitfehler und kann möglicherweise abstürzen. Daher muss der Code zur Laufzeit &ndash; &ndash; sicherstellen, dass nur die APIs aufgerufen werden, die von dem Android-Gerät unterstützt werden, auf dem es ausgeführt wird. Anders ausgedrückt: der Code muss explizite Laufzeitüberprüfungen enthalten, um sicherzustellen, dass Ihre APP neuere APIs nur auf Geräten verwendet, die zur Unterstützung der Anwendungen aktuell genug sind.
 [Lauf Zeit Prüfungen für Android-Versionen](#runtimechecks)weiter unten in diesem Handbuch wird erläutert, wie Sie diese Laufzeitüberprüfungen zu Ihrem Code hinzufügen.
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -173,7 +163,6 @@ Wenn Sie das Dropdown Menü rechts von mindestens der **Android-Version**verwend
 Wenn Sie die **Option &ndash; Ziel Framework-Version automatisch verwenden**auswählen, entspricht die Android-Mindestversion der Ziel Framework-Einstellung.
 
 -----
-
 
 <a name="target" />
 
@@ -206,7 +195,6 @@ Im Allgemeinen sollte die Android-Zielversion durch die Android-Mindestversion u
 **Android-Mindestversion < = Ziel-Android-Version < = Ziel Framework**
 
 Weitere Informationen zu SDK-Ebenen finden Sie in der Dokumentation zum Android Developer [verwendet-SDK](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) .
-
 
 <a name="runtimechecks" />
 
@@ -269,11 +257,9 @@ Die Android-Mindestversion und die Android-Zielversion sind nicht verfügbar, da
 
 Diese bewährten Methoden werden empfohlen, um die Situation zu vermeiden, in der eine Bibliothek versucht, eine API aufzurufen, die zur Laufzeit nicht verfügbar ist (was dazu führen kann, dass die APP abstürzen kann). Wenn Sie ein Bibliotheks Entwickler sind, sollten Sie die Verwendung von API-aufrufen auf eine kleine und gut festgelegte Teilmenge der gesamten API-Oberfläche einschränken. Auf diese Weise können Sie sicherstellen, dass Ihre Bibliothek sicher in einer breiteren Palette von Android-Versionen verwendet werden kann.
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Leitfaden wurde erläutert, wie Android-API-Ebenen verwendet werden, um die APP-Kompatibilität in verschiedenen Versionen von Android zu verwalten Es wurden ausführliche Schritte zum Konfigurieren des xamarin. Android- *Ziel Frameworks*, der *Android-Mindestversion*und der Projekteinstellungen für *Android-Ziel Versionen* bereitgestellt. Es wurden Anweisungen zum Verwenden des Android SDK-Managers zum Installieren von SDK-Paketen bereitgestellt. Beispiele für das Schreiben von Code für die Bearbeitung verschiedener API-Ebenen zur Laufzeit sowie das Verwalten von API-Ebenen beim Erstellen oder Verarbeiten von Android-Bibliotheken. Außerdem wurde eine umfassende Liste bereitgestellt, die API-Ebenen mit Android-Versionsnummern (z. b. Android 4,4), Android-Versionsnamen (z. b. KitKat) und xamarin. Android-buildversionscodes verknüpft.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

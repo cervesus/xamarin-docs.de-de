@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b5d1ddc4cf3a6817851d22aba920abb29d9f746f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644801"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767648"
 ---
 # <a name="attached-properties"></a>Angefügte Eigenschaften
 
@@ -141,7 +141,6 @@ Wenn Sie eine angefügte Eigenschaft zu erstellen, gibt es eine Reihe von option
 ## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel enthält eine Einführung in angefügte Eigenschaften und veranschaulicht, wie das Erstellen und nutzen diese. Eine angefügte Eigenschaft ist eine besondere Art von bindbare Eigenschaft, die in einer Klasse, aber mit anderen Objekten verbunden und erkennbaren in XAML definiert wird, als Attribute, die eine Klasse und einen Eigenschaftsnamen, die durch einen Punkt getrennt enthalten.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

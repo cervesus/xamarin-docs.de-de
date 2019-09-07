@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 314b341b7cfb40c62a5d6469ca22d2889f5a8057
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9714d78419754413ae5f1d0e5015a418fa8ab884
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291756"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769562"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Suchen mit nsuseractivity in xamarin. IOS
 
@@ -165,8 +165,6 @@ Durch die Einführung der APP `NSUserActivity` -Suche über in Ihrer APP erhalte
 - **Handoff** : da bei der APP-Suche Inhalt, Navigation und/oder Features mithilfe desselben Mechanismus wie Handoff (`NSUserActivity`) verfügbar gemacht werden, können Sie den Benutzern Ihrer APP leicht gestatten, eine Aktivität auf einem Gerät zu starten und auf einem anderen Gerät fortzufahren.
 - **Siri-Vorschläge** : zusammen mit den standardvorschlägen, die Siri-Vorschläge normalerweise vornimmt, können die aktiven Benutzer aus Ihrer APP automatisch vorgeschlagen werden.
 - **Siri-intelligente Erinnerungen** : Benutzer können Siri bitten, Sie an Aktivitäten aus Ihrer APP zu erinnern.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

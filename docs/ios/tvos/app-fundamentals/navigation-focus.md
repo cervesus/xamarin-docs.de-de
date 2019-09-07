@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: fdf675e37bec07ef03576313befbaa9309ab9349
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b84150c8fdca04a9b21c28d126d221d2a9bc5a3f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291575"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769254"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Arbeiten mit der tvos-Navigation und dem Fokus in xamarin
 
 _In diesem Artikel wird das Konzept des Fokus behandelt und erläutert, wie es verwendet wird, um die Navigation in einer xamarin. tvos-App darzustellen und zu verarbeiten._
-
 
 In diesem Artikel wird das Konzept des [Fokus](#Focus-and-Selection) behandelt und erläutert, wie es verwendet wird, um die [Navigation](#Navigation) in einer xamarin. tvos-App-Benutzeroberfläche zu verarbeiten. Wir untersuchen, wie die integrierten tvos-Navigations Steuerelemente Fokus, Hervorhebung und Auswahl verwenden, um die Navigation in der Benutzeroberfläche der xamarin. tvos-App bereitzustellen.
 
@@ -125,9 +124,6 @@ Um anzufordern, dass die Fokus-Engine den Fokus wieder `PreferredFocusedView` au
 > [!IMPORTANT]
 > Der `SetNeedsUpdateFocus` Aufruf von hat nur Auswirkungen, wenn der Ansichts Controller, für den er aufgerufen wird, die Ansicht enthält, die gerade den Fokus besitzt.
 
-
-
-
 <a name="Working-with-Focus-Guides" />
 
 ### <a name="working-with-focus-guides"></a>Arbeiten mit Fokus Handbüchern
@@ -139,7 +135,7 @@ Es kann jedoch vorkommen, dass es aufgrund der Grundbedürfnisse des UI-Entwurfs
 Betrachten Sie das folgende Benutzeroberflächen Layout für ein Beispiel:
 
  [![](navigation-focus-images/guide01.png "Beispiel für das Arbeiten mit Fokus Handbüchern")](navigation-focus-images/guide01.png#lightbox)
- 
+
 Da die Schaltfläche " **Weitere Informationen** " nicht auf ein horizontales und Vertikales Raster mit der Schaltfläche " **kaufen** " fällt, ist der Benutzer nicht darauf zugreifen können. Dies kann jedoch problemlos mithilfe eines _Schwerpunkt Handbuchs_ korrigiert werden, um Bewegungs Hinweise für die Fokus-Engine bereitzustellen. 
 
 Ein Fokus Leit Faden`UIFocusGuide`() macht einen nicht sichtbaren Bereich der Ansicht als fokussierbar für die Fokus-Engine verfügbar, sodass der Fokus in eine andere Ansicht umgeleitet werden kann.
@@ -277,9 +273,6 @@ Wenn diese Eigenschaft auf `true`festgelegt ist, erhält die Bildansicht automat
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Konzept des Fokus behandelt und erläutert, wie es für die Navigation in der Benutzeroberfläche einer xamarin. tvos-App verwendet wird. Es wird untersucht, wie die integrierten tvos-Navigations Steuerelemente Fokus, Hervorhebung und Auswahl verwenden, um die Navigation bereitzustellen. Im nächsten Schritt wird erläutert, wie der Fokus mit unterschiedlichen und geschichteten Bildern verwendet werden kann, um visuelle Hinweise für den aktuellen Navigations Zustand für den Endbenutzer bereitzustellen. Schließlich wurde die Unterstützung der Arbeit mit dem Fokus, dem Fokus auf Aktualisierungen, dem Fokus auf Auflistungen und dem Aktivieren von "Parser
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

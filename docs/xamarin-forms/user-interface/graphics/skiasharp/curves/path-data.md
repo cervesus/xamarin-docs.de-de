@@ -7,12 +7,12 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: a645ef4ed55c8b4c78bad94865777088f62f1175
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 467863dba2f5757e0590ccf64927ae2af292f285
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647396"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770571"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in SkiaSharp
 
@@ -428,7 +428,6 @@ public class PrettyAnalogClockPage : ContentPage
 Eine Besonderheit des zweiten Zeigers, jedoch erfolgt mit. Da die Uhr aktualisiert wird alle 16 Millisekunden, die `Millisecond` Eigenschaft der `DateTime` Wert kann möglicherweise verwendet werden, um einen Sweep zweite Seite anstelle eines animieren, die in einzelne Sprünge verschiebt von Sekunde zu Sekunde. Dieser Code, nicht jedoch die Bewegung auf smooth sein. Stattdessen wird der Xamarin.Forms [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) und [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) Animation Beschleunigungsfunktionen für eine andere Art von Verschiebung. Diese Beschleunigungsfunktionen dazu führen, dass der zweite Zeiger zum Verschieben in eine wird ruckartiger Weise &mdash; zurückzusetzen ein kleines, bevor es verschoben, und klicken Sie dann leicht zu schießen das Ziel, einen Effekt, leider nicht in diese statischen Screenshots reproduzieren:
 
 [![](path-data-images/prettyanalogclock-small.png "Dreifacher Screenshot der Seite ziemlich analogen Uhr")](path-data-images/prettyanalogclock-large.png#lightbox "dreifachen Screenshot der Seite ziemlich analogen Uhr")
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: 364775ae8e8874d87022b5e45bd23ea29e82382d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df91699e0880bfae780b69f4b30be6667e8d64d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292426"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763107"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Verwenden von icloud mit xamarin. IOS
 
@@ -63,7 +63,6 @@ Aktivieren und aktivieren Sie die Option **Dokumente & Daten** .
 - **Sie müssen ein Gerät zum Testen von icloud verwenden** . es funktioniert nicht im Simulator.
 Tatsächlich benötigen Sie tatsächlich zwei oder mehr Geräte, die alle mit derselben Apple-ID angemeldet sind, um die icloud in Aktion zu sehen.
 
-
 ## <a name="key-value-storage"></a>Schlüssel-Wert-Speicher
 
 Der Schlüssel-Wert-Speicher ist für kleine Datenmengen vorgesehen, die ein Benutzer auf Geräten beibehalten kann, z. b. auf der letzten Seite, die in einem Buch oder Magazin angezeigt wird. Der Schlüssel-Wert-Speicher sollte nicht zum Sichern von Daten verwendet werden.
@@ -81,8 +80,6 @@ Bei der Verwendung von Schlüssel-Wert-Speicher sind einige Einschränkungen zu 
 Das **icloudkeyvalue** -Beispiel veranschaulicht, wie es funktioniert. Der Beispielcode erstellt einen Schlüssel mit dem Namen für jedes Gerät: Sie können diesen Schlüssel auf einem Gerät festlegen und beobachten, wie der Wert an andere Personen weitergegeben wird. Außerdem wird ein Schlüssel mit dem Namen "Shared" erstellt, der auf jedem Gerät bearbeitet werden kann. Wenn Sie auf vielen Geräten gleichzeitig bearbeiten, entscheidet icloud, welcher Wert "WINS" (mit einem Zeitstempel für die Änderung) und weitergegeben wird.
 
 Dieser Screenshot zeigt das verwendete Beispiel. Wenn Änderungs Benachrichtigungen von icloud empfangen werden, werden Sie in der Bild Lauf Textansicht am unteren Bildschirmrand gedruckt und in den Eingabefeldern aktualisiert.
-
-
 
  [![](introduction-to-icloud-images/icloud-kv-arrows.png "Der Nachrichtenfluss zwischen Geräten")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
@@ -406,8 +403,6 @@ Benutzer können icloud-Dokumente im Verzeichnis " **Dokumente** " des "ubiquity
 
  [![](introduction-to-icloud-images/icloudstorage.png "Verwalten von icloud-Dokumenten Workflow")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
-
-
 Benutzer erhalten auch andere Warnungen, wenn Sie versuchen, eine icloud-fähige Anwendung von Ihrem Gerät zu entfernen, um Sie über den Status von icloud-Dokumenten in Bezug auf diese Anwendung zu informieren.
 
  [![](introduction-to-icloud-images/icloud-delete1.png "Beispiel Dialogfeld, wenn der Benutzer versucht, eine icloud-fähige Anwendung von seinem Gerät zu entfernen")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
@@ -430,8 +425,6 @@ In diesem Artikel wurde das neue icloud-Feature eingeführt, das in ios 5 enthal
 Mit dem Beispiel für den Schlüssel-Wert-Speicher wurde veranschaulicht, wie icloud verwendet werden kann, um eine kleine Menge von Daten zu speichern, die der Art der Speicherung von nsuserpreferences ähneln. Im uidocument-Beispiel wurde gezeigt, wie komplexere Daten auf mehreren Geräten über icloud gespeichert und synchronisiert werden können.
 
 Schließlich wurde eine kurze Erläuterung dazu hinzugefügt, wie sich das Hinzufügen der icloud-Sicherung auf den Anwendungs Entwurf auswirken sollte.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

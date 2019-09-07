@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 2e0bb4fc0468f938e7a4403513fe101db2282561
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d5a227f4acdba319eefc91b4991dead5a036eb9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286991"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756330"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>Aktualisieren einer xamarin. IOS-App im Hintergrund
 
@@ -22,7 +22,6 @@ Die Hintergrund Aktualisierung ist der Vorgang, bei dem eine Anwendung, die ange
 1. *Abrufen im Hintergrund (IOS 7* und höher): ein Temporaler Ansatz zum Aktualisieren von *nicht kritischen* Inhalten, die *häufig* aktualisiert werden.
 1. *Remote Benachrichtigungen (IOS 7* und höher): Anwendungen, die Pushbenachrichtigungen empfangen, können die Benachrichtigungen verwenden, um Aktualisierungen von Hintergrund Inhalten zu initiieren. Diese Methode kann verwendet werden, um mit *wichtigen, zeitsensiblen* Inhalten zu aktualisieren, die *sporadisch* aktualisiert werden.
 
-
 In den folgenden Abschnitten werden die Grundlagen dieser Optionen behandelt.
 
 ## <a name="region-monitoring-and-significant-location-changes"></a>Regions Überwachung und bedeutende Standortänderungen
@@ -31,7 +30,6 @@ IOS bietet zwei standortabhängige APIs mit Hintergrund Funktionen:
 
 1. Die *Regions Überwachung* ist der Prozess der Einrichtung von Bereichen mit Grenzen und dem Reaktivieren des Geräts, wenn der Benutzer eine Region betritt oder verlässt. Bereiche sind zirkulär und können eine unterschiedliche Größe aufweisen. Wenn der Benutzer eine Regions Grenze überschreitet, wird das Gerät aktiviert, um das Ereignis zu verarbeiten, normalerweise durch Auslösen einer Benachrichtigung oder Auslösen einer Aufgabe. Die Regions Überwachung erfordert GPS und erhöht die Akku-und Datennutzung.
 1. Der *bedeutende Standort Änderungs Dienst* ist eine einfachere, energiesparende Option, die für Geräte mit Mobil Funk Radios verfügbar ist. Eine Anwendung, die auf bedeutende Änderungen am Standort lauscht, wird benachrichtigt, wenn das Gerät Zellen Türme wechselt. Dieser Dienst kann verwendet werden, um eine angehaltene oder beendete Anwendung zu aktivieren, und bietet die Möglichkeit, im Hintergrund nach neuen Inhalten zu suchen. Hintergrund Aktivitäten sind auf ungefähr 10 Sekunden beschränkt, es sei denn, Sie sind mit einer [Hintergrundaufgabe](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md) gekoppelt.
-
 
 Eine Anwendung benötigt nicht den Speicherort `UIBackgroundMode` , um diese Standort abhängigen APIs zu verwenden. Da IOS die Typen von Tasks, die ausgeführt werden können, wenn das Gerät durch Änderungen am Speicherort des Benutzers reaktiviert wird, nicht nachverfolgt, stellen diese APIs eine Problem Umgehung zum Aktualisieren von Inhalten im Hintergrund unter IOS 6 dar. *Beachten Sie, dass das Auslösen von Hintergrund Aktualisierungen mit standortbasierten APIs auf Geräte Ressourcen zurückgreifen wird und Benutzer möglicherweise verwirren, die nicht verstehen, warum eine Anwendung Zugriff auf ihren Speicherort benötigt*. Verwenden Sie bei der Implementierung von Regions Überwachung oder wichtigen Orts Änderungen für die Hintergrundverarbeitung in Anwendungen, die nicht bereits die Location-APIs verwenden, die Diskretion.
 
@@ -76,12 +74,10 @@ Wenn Sie die Inhalts Aktualisierung abgeschlossen haben, wird das Betriebssystem
 1. `UIBackgroundFetchResult.NoData`: Wird aufgerufen, wenn das Abrufen für neuen Inhalt durchlaufen wurde, aber kein Inhalt verfügbar ist.
 1. `UIBackgroundFetchResult.Failed`-Nützlich für die Fehlerbehandlung. Dies wird aufgerufen, wenn der Abruf Vorgang nicht durchlaufen werden konnte.
 
-
 Anwendungen, die im Hintergrund abrufen, können Aufrufe ausführen, um die Benutzeroberfläche aus dem Hintergrund zu aktualisieren. Wenn der Benutzer die APP öffnet, ist die Benutzeroberfläche auf dem neuesten Stand und zeigt neue Inhalte an. Dadurch wird auch die APP-switchermomentaufnahme der Anwendung aktualisiert, sodass der Benutzer sehen kann, wann die Anwendung neuen Inhalt hat.
 
 > [!IMPORTANT]
 > Nachdem `PerformFetch` aufgerufen wurde, hat die Anwendung ungefähr 30 Sekunden Zeit, den Download neuer Inhalte zu starten und den Vervollständigungs Handler-Block aufzurufen. Wenn dies zu lange dauert, wird die APP beendet. Verwenden Sie beim Herunterladen von Medien oder anderen großen Dateien das Abrufen von Hintergrunddaten mit dem _Hintergrund Übertragungs Dienst_ .
-
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
@@ -91,13 +87,11 @@ Im obigen Beispielcode legen wir fest, wie oft neue Inhalte abgerufen werden sol
 1. `BackgroundFetchIntervalMinimum`: Lassen Sie das System entscheiden, wie oft basierend auf den Benutzer Mustern, der Akku Lebensdauer, der Datennutzung und den Anforderungen anderer Anwendungen abgerufen werden sollen.
 1. `BackgroundFetchIntervalCustom`Wenn Sie wissen, wie oft der Inhalt einer Anwendung aktualisiert wird, können Sie nach jedem Abruf Vorgang ein "standbyintervall" angeben, in dem die Anwendung daran gehindert wird, neue Inhalte abzurufen. Sobald das Intervall aktiv ist, bestimmt das System, wann Inhalt abgerufen werden soll.
 
-
 Sowohl `BackgroundFetchIntervalMinimum` als `BackgroundFetchIntervalCustom` auch verlassen sich auf das System, um Abruf Vorgänge zu planen. Dieses Intervall ist dynamisch, und die Anpassung an die Anforderungen des Geräts und die Gewohnheiten der einzelnen Benutzer. Wenn ein Benutzer beispielsweise jeden Morgen eine Anwendung prüft und jede Stunde eine andere Prüfung durchführt, stellt IOS sicher, dass der Inhalt für beide Benutzer jedes Mal auf dem neuesten Stand ist, wenn Sie die Anwendung öffnen.
 
 Der Hintergrund Abruf sollte für Anwendungen verwendet werden, die häufig mit nicht kritischem Inhalt aktualisiert werden. Bei Anwendungen mit wichtigen Updates sollten Remote Benachrichtigungen verwendet werden. Remote Benachrichtigungen basieren auf dem Abrufen des Hintergrunds und verwenden denselben Vervollständigungs Handler. Wir werden uns weiter mit Remote Benachrichtigungen beschäftigen.
 
  <a name="remote_notifications" />
-
 
 ## <a name="remote-notifications-ios-7-and-greater"></a>Remote Benachrichtigungen (IOS 7 und höher)
 
@@ -135,7 +129,6 @@ Remote Benachrichtigungen sollten für seltene Updates mit Inhalten verwendet we
 > [!IMPORTANT]
 > Da der Aktualisierungsmechanismus in Remote Benachrichtigungen auf dem Abruf im Hintergrund basiert, muss die Anwendung den Download neuer Inhalte starten und den Beendigungs Handlerblock innerhalb von 30 Sekunden nach dem Empfang der Benachrichtigung aufzurufen, oder die Anwendung wird von IOS beendet. Es empfiehlt sich, Remote Benachrichtigungen mit dem _Hintergrund Übertragungs Dienst_ zu koppeln, wenn Medien oder andere große Dateien im Hintergrund heruntergeladen werden.
 
-
 ### <a name="silent-remote-notifications"></a>Automatische Remote Benachrichtigungen
 
 Remote Benachrichtigungen sind eine einfache Möglichkeit, Anwendungen über Updates zu benachrichtigen und neue Inhalte abzurufen. es gibt jedoch Fälle, in denen wir den Benutzer nicht benachrichtigen müssen, dass sich etwas geändert hat. Wenn ein Benutzer beispielsweise eine Datei für die Synchronisierung ausstellt, müssen wir Sie nicht jedes Mal Benachrichtigen, wenn die Datei aktualisiert wird. Die Datei Synchronisierung ist kein überraschendes Ereignis, und es ist nicht erforderlich, dass die Benutzer sofortige Aufmerksamkeit erhalten. Benutzer erwarten nur, dass die Datei auf dem neuesten Stand ist, wenn Sie Sie öffnen.
@@ -158,7 +151,6 @@ Allerdings lassen APNs automatische Benachrichtigungen zusammen mit einer normal
 
 > [!IMPORTANT]
 > Apple ermutigt Entwickler, automatische Pushbenachrichtigungen zu senden, wenn die Anwendung dies erfordert, und ermöglicht es dem APNs, ihre Übermittlung zu planen.
-
 
 In diesem Abschnitt haben wir die verschiedenen Optionen zum Aktualisieren von Inhalten im Hintergrund behandelt, um Aufgaben auszuführen, die nicht in eine im Hintergrund erforderliche Kategorie passen. Sehen wir uns nun einige dieser APIs in Aktion an.
 

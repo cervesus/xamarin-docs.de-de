@@ -1,45 +1,45 @@
 ---
 title: Ränder und Abstände
-description: Der Rand und Abstand Eigenschaften steuern Layout-Verhalten, wenn ein Element in der Benutzeroberfläche gerendert wird. Dieser Artikel veranschaulicht den Unterschied zwischen den zwei Eigenschaften, und wie diese festgelegt.
+description: Die Eigenschaften Margin und Padding steuern das Layoutverhalten, wenn ein Element in der Benutzeroberfläche gerendert wird. In diesem Artikel wird der Unterschied zwischen den beiden Eigenschaften und deren Festlegung veranschaulicht.
 ms.prod: xamarin
 ms.assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 595e673c59d23a45cbaf923a0d58faff2000c296
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 66ac81631466131cf1ef44dde39aa768d31b65a1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370942"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772490"
 ---
 # <a name="margin-and-padding"></a>Ränder und Abstände
 
-_Der Rand und Abstand Eigenschaften steuern Layout-Verhalten, wenn ein Element in der Benutzeroberfläche gerendert wird. Dieser Artikel veranschaulicht den Unterschied zwischen den zwei Eigenschaften, und wie diese festgelegt._
+_Die Eigenschaften Margin und Padding steuern das Layoutverhalten, wenn ein Element in der Benutzeroberfläche gerendert wird. In diesem Artikel wird der Unterschied zwischen den beiden Eigenschaften und deren Festlegung veranschaulicht._
 
 ## <a name="overview"></a>Übersicht
 
-Ränder und Abstände werden die dazugehörigen Konzepte sind:
+Margin und Auffüllung sind Verwandte Layoutkonzepte:
 
-- Die [ `Margin` ](xref:Xamarin.Forms.View.Margin) Eigenschaft repräsentiert die Entfernung zwischen einem Element und die angrenzenden Elemente, und wird verwendet, um die Position des Elements Rendering und die Renderingposition seiner Nachbarn zu steuern. `Margin` Werte können angegeben werden, auf [Layout](~/xamarin-forms/user-interface/controls/layouts.md) und [Ansicht](~/xamarin-forms/user-interface/controls/views.md) Klassen.
-- Die [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Eigenschaft, der den Abstand zwischen einem Element und seine untergeordneten Elemente darstellt, und wird verwendet, um das Steuerelement von der eigene Inhalt zu trennen. `Padding` Werte können angegeben werden, auf [Layout](~/xamarin-forms/user-interface/controls/layouts.md) Klassen.
+- Die [`Margin`](xref:Xamarin.Forms.View.Margin) -Eigenschaft stellt den Abstand zwischen einem Element und seinen angrenzenden Elementen dar und wird verwendet, um die Renderingposition des Elements und die Renderingposition seiner Nachbarn zu steuern. `Margin`Werte können für [Layout](~/xamarin-forms/user-interface/controls/layouts.md) -und [Ansichts](~/xamarin-forms/user-interface/controls/views.md) Klassen angegeben werden.
+- Die [`Padding`](xref:Xamarin.Forms.Layout.Padding) -Eigenschaft stellt den Abstand zwischen einem Element und seinen untergeordneten Elementen dar und wird verwendet, um das Steuerelement von seinem eigenen Inhalt zu trennen. `Padding`Werte können für [layoutklassen](~/xamarin-forms/user-interface/controls/layouts.md) angegeben werden.
 
 Das folgende Diagramm veranschaulicht die beiden Konzepte:
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Seitenränder und Textabstand Konzepte")](margin-and-padding-images/margins-and-padding.png#lightbox "Seitenränder und Textabstand-Konzepte")
+[Konzepte von Rändern und Padding ![(margin-and-padding-images/margins-and-padding-sml.png " ")]] (margin-and-padding-images/margins-and-padding.png#lightbox "Konzepte von Rändern und Padding")
 
-Beachten Sie, dass [ `Margin` ](xref:Xamarin.Forms.View.Margin) Werte sind additiv. Wenn zwei benachbarte Elemente einen Rand von 20 Pixel angeben, wird der Abstand zwischen den Elementen aus diesem Grund 40 Pixel sein. Ränder und Abstände darüber hinaus sind additiv, wenn beide angewendet werden, da die Entfernung zwischen einem Element und alle Inhalte stehen den Rand und Abstand,.
+Beachten Sie [`Margin`](xref:Xamarin.Forms.View.Margin) , dass die Werte Additiv sind. Wenn also zwei angrenzende Elemente einen Rand von 20 Pixeln angeben, beträgt der Abstand zwischen den Elementen 40 Pixel. Außerdem sind Margin und Auffüllung Additiv, wenn beide angewendet werden, da der Abstand zwischen einem Element und einem beliebigen Inhalt der Rand plus Auffüllung ist.
 
-## <a name="specifying-a-thickness"></a>Eine Breite angeben
+## <a name="specifying-a-thickness"></a>Angeben einer Stärke
 
-Die [ `Margin` ](xref:Xamarin.Forms.View.Margin) und [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Eigenschaften sind beide vom Typ [ `Thickness` ](xref:Xamarin.Forms.Thickness). Es gibt drei Möglichkeiten beim Erstellen einer `Thickness` Struktur:
+Die [`Margin`](xref:Xamarin.Forms.View.Margin) - [`Padding`](xref:Xamarin.Forms.Layout.Padding) Eigenschaft und die-Eigenschaft [`Thickness`](xref:Xamarin.Forms.Thickness)sind beide vom Typ. Es gibt drei Möglichkeiten, eine `Thickness` Struktur zu erstellen:
 
-- Erstellen Sie eine [ `Thickness` ](xref:Xamarin.Forms.Thickness) Struktur, die von einem einzelnen einheitlichen Wert definiert. Der single-Wert wird auf die Links, oben, rechten und Unterseite des Elements angewendet.
-- Erstellen Sie eine [ `Thickness` ](xref:Xamarin.Forms.Thickness) Struktur, die durch die horizontalen und vertikalen Werte definiert. Der horizontale Wert gilt symmetrisch auf der linken und rechten Seite des Elements mit den vertikalen Wert symmetrisch auf die untere und obere Seite des Elements angewendet wird.
-- Erstellen Sie eine [ `Thickness` ](xref:Xamarin.Forms.Thickness) Struktur definiert anhand von vier unterschiedlichen Werte, die auf die Links, oben, rechten und Unterseite des Elements angewendet werden.
+- Erstellen Sie [`Thickness`](xref:Xamarin.Forms.Thickness) eine Struktur, die durch einen einzelnen einheitlichen Wert definiert wird. Der einzelne Wert wird auf die linke, obere, Rechte und untere Seite des Elements angewendet.
+- Erstellen Sie [`Thickness`](xref:Xamarin.Forms.Thickness) eine Struktur, die durch horizontale und vertikale Werte definiert wird. Der horizontale Wert wird symmetrisch auf die linke und die Rechte Seite des Elements angewendet, wobei der vertikale Wert symmetrisch auf die obere und untere Seite des Elements angewendet wird.
+- Erstellen Sie [`Thickness`](xref:Xamarin.Forms.Thickness) eine Struktur, die durch vier unterschiedliche Werte definiert wird, die auf die linke, obere, Rechte und untere Seite des Elements angewendet werden.
 
-Im folgende XAML-Codebeispiel zeigt alle drei Möglichkeiten:
+Das folgende XAML-Codebeispiel zeigt alle drei Möglichkeiten:
 
 ```xaml
 <StackLayout Padding="0,20,0,0">
@@ -63,15 +63,14 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> `Thickness` Werte können negativ sein, die in der Regel schneidet oder overdraws des Inhalts.
+> `Thickness`Werte können negativ sein, was in der Regel den Inhalt schneidet oder überschreibt.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel veranschaulicht den Unterschied zwischen der [ `Margin` ](xref:Xamarin.Forms.View.Margin) und [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Eigenschaften und deren Festlegung. Die Eigenschaften steuern die Layout-Verhalten, wenn ein Element in der Benutzeroberfläche gerendert wird.
-
+In diesem Artikel wurde der Unterschied [`Margin`](xref:Xamarin.Forms.View.Margin) zwischen [`Padding`](xref:Xamarin.Forms.Layout.Padding) den Eigenschaften und erläutert und erläutert, wie Sie festgelegt werden. Die Eigenschaften steuern das Layoutverhalten, wenn ein Element in der Benutzeroberfläche gerendert wird.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Rand](xref:Xamarin.Forms.View.Margin)
-- [Padding](xref:Xamarin.Forms.Layout.Padding)
+- [V](xref:Xamarin.Forms.View.Margin)
+- [Auffüllung](xref:Xamarin.Forms.Layout.Padding)
 - [Stärke](xref:Xamarin.Forms.Thickness)

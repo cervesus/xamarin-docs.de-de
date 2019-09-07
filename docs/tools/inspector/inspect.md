@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2ce4b0366e85580b6d9d816bd91f9ced93997b63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2ccf6966e85eddaa10b5651e1b0b48dec9203b28
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291489"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772200"
 ---
 # <a name="inspecting-live-applications"></a>Überprüfen von Live-Anwendungen
 
@@ -52,4 +52,3 @@ Die visuelle echt Zeitstruktur ist ebenfalls sehr nützlich. Stellt die aktuelle
 - Die Eigenschaften Raster Bearbeitung ist für Mac nicht verfügbar, und unter Windows ist auf einige Datentypen beschränkt. Verwenden Sie die repl für eine leistungsfähigere Bearbeitung.
 - Solange das Inspektor-Add-in und das Inspector in Ihrer IDE installiert und aktiviert ist, wird bei jedem Start im Debugmodus Code in Ihre APP eingefügt. Wenn Sie ein seltsames Verhalten in Ihrer APP feststellen, versuchen Sie, das inspektoradd-in-Add-in zu deaktivieren oder zu deinstallieren, den Neustart der IDE zu starten und den Vorgang erneut auszuführen. Und bitte [melden Sie uns, um](~/tools/inspector/install.md#reporting-bugs) uns zu informieren.
 - Wenn das Überprüfen eines UI-Elements bewirkt, dass es sich auf trotzdem ändert, [informieren Sie uns](~/tools/inspector/install.md#reporting-bugs), da dies möglicherweise auf einen Fehler hinweist.
-

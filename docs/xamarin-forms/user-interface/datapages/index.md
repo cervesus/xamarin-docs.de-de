@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 9dc34f412549c4be6099b373ddae7cbd2e8d21c8
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 1dc62066b71842e1d3b07495912fa35a549c0f1e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980769"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759685"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin. Forms-DataPages
 
@@ -45,7 +45,6 @@ Die Vorschau bietet einige vorgefertigte Datenquellen, die für die Verwendung z
 
 Ein Beispiel für die Verwendung von finden Sie `JsonDataSource`im [Leitfaden zu](get-started.md) den ersten Schritten.
 
-
 ### <a name="pages--controls"></a>Seiten & Steuerelementen
 
 Die folgenden Seiten und Steuerelemente sind enthalten, um eine einfache Bindung an die angegebenen Datenquellen zu ermöglichen:
@@ -59,8 +58,6 @@ Die folgenden Seiten und Steuerelemente sind enthalten, um eine einfache Bindung
 * **ListItem** – eine vorgefertigte Ansicht mit einem Layout, das den nativen IOS-und Android-Listenelementen ähnelt.
 
 Beispiele finden Sie in der [Referenz zu DataPages](controls.md) -Steuerelementen.
-
-
 
 ### <a name="under-the-hood"></a>Im Hintergrund
 

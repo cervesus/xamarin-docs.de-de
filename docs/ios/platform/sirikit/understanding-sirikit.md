@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 797bc4199b79944c7b2b6e9c939e2584bb21246a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3b99e4485bfb621b32fa001a49d75038b2072775
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292566"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769465"
 ---
 # <a name="understanding-sirikit-concepts"></a>Grundlegendes zu SiriKit-Konzepten
 
 _In diesem Artikel werden die wichtigsten Konzepte behandelt, die für die Arbeit mit dem Sirikit in einer xamarin. IOS-App erforderlich sind._
-
 
 Mit dem neuen IOS 10 ermöglicht das Sirikit einer xamarin. IOS-APP das Bereitstellen von Diensten, auf die der Benutzer mithilfe von Siri und der Maps-APP auf einem IOS-Gerät zugreifen kann. Diese Funktionalität wird in einer oder mehreren App-Erweiterungen mithilfe der neuen **Intents** und **Intents-Benutzer** Oberflächen-Frameworks bereitgestellt.
 
@@ -461,9 +460,6 @@ Möchten Sie, dass die Konversationen mit Siri (im Auftrag der APP) fließend, n
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die wesentlichen Konzepte erläutert, die für die Verwendung von Sirikit erforderlich sind, und es wird gezeigt, dass es mit den xamarin. IOS-apps interagieren kann, um Dienste bereitzustellen, auf die der Benutzer mithilfe von Siri und der Maps-APP auf einem IOS
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,18 +1,18 @@
 ---
 title: Zusammenfassung der Kapitel 5. Umgang mit Größen
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 5. Umgang mit Größen'
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 5. Umgang mit Größen'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: fd6694de756938ff564bed0923427fe62153116a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c082bdb10732e42b37511cf050e50f46990a5b5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334396"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771142"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Zusammenfassung der Kapitel 5. Umgang mit Größen
 
@@ -80,15 +80,13 @@ Die [ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples
 
 ## <a name="accessibility-issues"></a>Probleme mit der Barrierefreiheit
 
-Die **EstimatedFontSize** Programm und die **FitToSizeClock** Programm beide enthalten einen geringfügigen Fehler: Wenn der Benutzer die Einstellungen für die Barrierefreiheit des Telefons auf Android oder Windows 10 Mobile ändert, kann das Programm nicht mehr schätzen, wie groß der Text gerendert wird basierend auf der Größe der Schriftart. Die [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) Beispiel veranschaulicht das Problem.
+Das **estimatedfontsize** -Programm und das **fitdesizeclock** -Programm enthalten beide einen geringfügigen Fehler: Wenn der Benutzer die Barrierefreiheits Einstellungen für Android oder Windows 10 Mobile des Telefons ändert, kann das Programm nicht mehr schätzen, wie groß der Text basierend auf dem Schrift Grad gerendert wird. Die [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) Beispiel veranschaulicht das Problem.
 
 ## <a name="empirically-fitting-text"></a>Empirisch Einpassen von text
 
 Eine weitere Möglichkeit zum Anpassen von Text, der ein Rechteck ist empirisch berechnet die Größe der gerenderten Text und nach oben oder unten anpassen. Das Programm in den Aufrufen Buch [ `GetSizeRequest` ](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) auf ein visuelles Element auf die gewünschte Größe des Elements zu erhalten. Methode ist veraltet und Programme sollten stattdessen Aufrufen [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)).
 
 Für eine `Label`, das erste Argument muss die Breite des Containers (damit können Wrapping), während das zweite Argument sollte festgelegt werden, `Double.PositiveInfinity` , wenn die Höhe uneingeschränkt festgelegt. Die [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) Beispiel wird diese Technik veranschaulicht.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

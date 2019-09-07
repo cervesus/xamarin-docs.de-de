@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 44ba9188a059cc28c7b4d89143cef1921a0b1701
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 2c290ac7d66147342087342bda5e5a19b4e6e6f7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978483"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763622"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Teil 2 – Implementieren von walkinggame
 
@@ -124,7 +124,7 @@ Bisher haben wir Code zum Rendering eines einzelnen Sprite auf dem Bildschirm hi
 
 ### <a name="what-is-an-entity"></a>Was ist eine Entität?
 
-Ein gängiges Muster für das Organisieren von Spiel Code besteht darin, eine neue Klasse für jeden Game-Entitätstyp zu erstellen. Eine Entität in der Spieleentwicklung ist ein Objekt, das einige der folgenden Eigenschaften enthalten kann (nicht alle sind erforderlich):
+Ein gängiges Muster für das Organisieren von Spiel Code besteht darin, eine neue Klasse für jeden Game- *Entitätstyp* zu erstellen. Eine Entität in der Spieleentwicklung ist ein Objekt, das einige der folgenden Eigenschaften enthalten kann (nicht alle sind erforderlich):
 
 - Ein visuelles Element, z. b. ein Sprite-, Text-oder 3D-Modell
 - Physik oder jedes Frame Verhalten, z. b. ein Einheiten Patroll für einen Set-Pfad oder ein Spieler Zeichen, das auf die Eingabe reagiert
@@ -150,7 +150,6 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input.Touch;
-
 
 namespace WalkingGame
 {
@@ -255,7 +254,6 @@ Beachten Sie, dass die `LoadContent` Methode trotz ihres Namens nicht die einzig
 
 Schließlich können wir die Draw-Methode wie folgt ändern:
 
-
 ```csharp
 protected override void Draw(GameTime gameTime)
 {
@@ -312,7 +310,6 @@ Die `Animation` -Klasse `List<AnimationFrame>` enthält sowie die Logik, um zu w
 
 Klicken Sie zum `Animation` hinzufügen der Klasse mit der rechten Maustaste auf das freigegebene Projekt " **walkinggame** ", und klicken Sie auf **Hinzufügen > neue Datei...** . Geben Sie die namens **Animation** ein, und klicken Sie auf die Schaltfläche **neu** Wir ändern die `Animation.cs` Datei, sodass Sie den folgenden Code enthält:
 
-
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -355,7 +352,6 @@ namespace WalkingGame
         {
             double secondsIntoAnimation = 
                 timeIntoAnimation.TotalSeconds + gameTime.ElapsedGameTime.TotalSeconds;
-
 
             double remainder = secondsIntoAnimation % Duration.TotalSeconds;
 
@@ -461,7 +457,6 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 ```
 
 Wie bereits erwähnt, müssen wir für Zeit `Animation.Update` basierte Animationen zum Abspielen aufzurufen. Wir müssen auch das `currentAnimation`zuweisen. Vorerst weisen wir den `currentAnimation` zu `walkDown`, aber wir werden diesen Code später ersetzen, wenn wir unsere Verschiebungs Logik implementieren. Wir fügen die `Update` - `CharacterEntity` Methode wie folgt hinzu:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -661,7 +656,6 @@ public void Update(GameTime gameTime)
 
     this.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds;
     this.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
 
     if (velocity != Vector2.Zero)
     {

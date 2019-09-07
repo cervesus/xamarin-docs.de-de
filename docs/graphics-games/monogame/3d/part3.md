@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c44e6b76751096d817727df759ecbeca5bd5a8f3
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 2f5e66ae58f471be62839de17fe4edd12ccef457
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680995"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764001"
 ---
 # <a name="3d-coordinates-in-monogame"></a>3D-Koordinaten in monogame
 
@@ -34,13 +34,11 @@ Sobald der Vorgang abgeschlossen ist, verfügen wir über ein Projekt mit einem 
 
 ![](part3-images/image1.gif "Sobald der Vorgang abgeschlossen ist, enthält die APP ein Projekt mit einem Roboter, der in einem Kreis bewegt wird, und eine Kamera, die per Fingereingabe gesteuert werden kann.")
 
-
 ## <a name="creating-a-project"></a>Erstellen eines Projekts
 
 Diese exemplarische Vorgehensweise konzentriert sich auf das Verschieben von Objekten in 3D-Raum. Wir beginnen mit dem Projekt zum Rendern von Modellen und Vertex-Arrays [, die hier zu finden sind](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/). Nach dem herunterladen entzippen und öffnen Sie das Projekt, um sicherzustellen, dass es ausgeführt wird. es sollte Folgendes angezeigt werden:
 
 ![](part3-images/image2.png "Nach dem herunterladen entzippen und öffnen Sie das Projekt, um sicherzustellen, dass es ausgeführt wird und diese Ansicht angezeigt werden soll.")
-
 
 ## <a name="creating-a-robot-entity"></a>Erstellen einer Roboter Entität
 
@@ -94,7 +92,6 @@ namespace MonoGame3D
 
                     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
                         fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
-
 
                 }
 

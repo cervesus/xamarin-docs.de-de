@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: d6440518149a4fab8e9667a2a41d3df818e2a879
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 7b465391958a6e862bfed9fde8d9da1fdd52bee5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120523"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759754"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Verwenden von CocosSharp in Xamarin.Forms
 
@@ -94,7 +94,6 @@ CocosSharp kann in jedem Xamarin.Forms-Container gehostet werden. In diesem Beis
 
 Richten Sie zuerst die Seite also es enthält eine `Grid` und zwei `Button` Instanzen:
 
-
 ```csharp
 public class HomePage : ContentPage
 {
@@ -147,7 +146,6 @@ Unter iOS die `HomePage` wird wie in der folgenden Abbildung dargestellt angezei
 
 Die `CocosSharpView` Klasse dient zum Einbetten von CocosSharp in einer Xamarin.Forms-app. Da `CocosSharpView` erbt von der [Xamarin.Forms.View](xref:Xamarin.Forms.View) -Klasse, können Sie z. B. innerhalb von Layout-Containern verwendet werden und es bietet eine vertraute Schnittstelle für das Layout [Xamarin.Forms.Grid](xref:Xamarin.Forms.Grid). Fügen Sie einen neuen `CocosSharpView` auf das Projekt nach Abschluss der `CreateTopHalf` Methode:
 
-
 ```csharp
 void CreateTopHalf(Grid grid)
 {
@@ -165,7 +163,6 @@ void CreateTopHalf(Grid grid)
 ```
 
 CocosSharp-Initialisierung erfolgt nicht sofort, also ein Ereignis zu registrieren, für die Ausführung der `CocosSharpView` ist die Erstellung abgeschlossen. Führen Sie dies in der `HandleViewCreated` Methode:
-
 
 ```csharp
 void HandleViewCreated (object sender, EventArgs e)
@@ -203,7 +200,6 @@ Nur ein `CCScene` gleichzeitig aktiv sein können. Die meisten Spiele verwenden 
 
 Zunächst die `GameScene` Klasse wird nahezu leer sein – wir gerade erstellen, um den Verweis im erfüllen `HomePage`. Fügen Sie eine neue Klasse zu Ihrem .NET Standard Library-Projekt mit dem Namen `GameScene`. Es sollten erben von der `CCScene` -Klasse wie folgt:
 
-
 ```csharp
 public class GameScene : CCScene
 {
@@ -215,7 +211,6 @@ public class GameScene : CCScene
 ```
 
 Nun, dass `GameScene` wird definiert, können wir zurück zu `HomePage` und fügen Sie ein Feld hinzu:
-
 
 ```csharp
 // Keep the GameScene at class scope
@@ -234,7 +229,6 @@ Wir können nun unser Projekt zu kompilieren und ausführen, um mit CocosSharp f
 Die app verfügt derzeit über eine ausgeführte Instanz der CocosSharp-Engine, eine leere Anzeige `CCScene`. Als Nächstes fügen wir ein visuelles Objekt: ein Kreis. Die `CCDrawNode` Klasse kann verwendet werden, um eine Vielzahl von geometrischen Formen, zeichnen wie in der [Zeichnung Geometrie mit CCDrawNode](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/ccdrawnode.md).
 
 Hinzufügen eines Kreises auf unsere `GameScene` Klasse, und instanziiere es im Konstruktor ein, wie im folgenden Code gezeigt:
-
 
 ```csharp
 public class GameScene : CCScene
@@ -262,7 +256,6 @@ Die app nun ausführen, zeigt einen Kreis auf der linken Seite des Anzeigebereic
 
 ![](cocossharp-images/image6.png "Kreis in GameScene")
 
-
 #### <a name="understanding-designresolution"></a>Grundlegendes zu DesignResolution
 
 Nun, dass ein visuelles CocosSharp-Objekt angezeigt wird, können wir untersuchen die `DesignResolution` Eigenschaft.
@@ -287,7 +280,6 @@ Unsere einfache app verwendet die `CCDrawNode` Klasse, um einen Kreis zu zeichne
 
 CocosSharp visuelle Elemente (z. B. `CCDrawNode`) erben die `CCNode` Klasse. `CCNode` enthält zwei Eigenschaften, die verwendet werden können, um ein Objekt relativ zu seinem übergeordneten positionieren: `PositionX` und `PositionY`. Unser Code verwendet diese beiden Eigenschaften derzeit um den Mittelpunkt des Kreises, zu positionieren, wie im folgenden Codeausschnitt gezeigt:
 
-
 ```csharp
 circle.PositionX = 20;
 circle.PositionY = 50;
@@ -296,7 +288,6 @@ circle.PositionY = 50;
 Es ist wichtig zu beachten, dass CocosSharp-Objekte von expliziten Positionswerten, im Gegensatz zu den meisten Xamarin.Forms-Ansichten können positioniert sind, die automatisch entsprechend das Verhalten ihrer übergeordneten Layout-Steuerelemente positioniert werden.
 
 Wir fügen Code aus, um dem Benutzer ermöglichen, klicken Sie auf eines der zwei Schaltflächen, verschieben Sie den Kreis nach links oder rechts um 10 Einheiten (nicht in Pixel, da der Kreis im einheitsraum CocosSharp zeichnet). Zunächst erstellen wir zwei öffentliche Methoden in der `GameScene` Klasse:
-
 
 ```csharp
 public void MoveCircleLeft()
@@ -311,7 +302,6 @@ public void MoveCircleRight()
 ```
 
 Als Nächstes müssen wir die beiden Schaltflächen in Handler hinzufügen `HomePage` auf Mausklicks reagiert. Wenn Sie fertig sind, unsere `CreateBottomHalf` Methode den folgenden Code enthält:
-
 
 ```csharp
 void CreateBottomHalf(Grid grid)

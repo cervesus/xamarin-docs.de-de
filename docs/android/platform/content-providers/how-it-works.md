@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8fb0b5136cc75463fc35ced2336e0ea321e8aecd
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9d8710b3b88b59871b88a1d42ec4f4bb3e515ff5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524421"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756503"
 ---
 # <a name="how-content-providers-work"></a>Funktionsweise von Inhaltsanbietern
 
@@ -23,12 +23,9 @@ Es gibt zwei Klassen, die an `ContentProvider` einer Interaktion beteiligt sind:
 
 Ein Inhaltsanbieter wird normalerweise von einer SQLite-Datenbank unterstützt, aber die API bedeutet, dass der verarbeitende Code keine Informationen über den zugrunde liegenden SQL-Code benötigt. Abfragen werden über einen URI durchgeführt, indem Konstanten verwendet werden, um auf Spaltennamen zu verweisen (um Abhängigkeiten von der zugrunde `ICursor` liegenden Datenstruktur zu verringern), und eine wird zurückgegeben, damit der verarbeitende Code durchlaufen werden kann.
 
-
 ## <a name="consuming-a-contentprovider"></a>Verwenden eines Contentprovider
 
 `ContentProviders`machen Sie Ihre Funktionen über einen URI verfügbar, der in der Datei " **androidmanifest. XML** " der Anwendung registriert ist, die die Daten veröffentlicht. Es gibt eine Konvention, bei der der URI und die Datenspalten, die verfügbar gemacht werden, als Konstanten verfügbar sein müssen, um die Bindung an die Daten zu vereinfachen. `ContentProviders` Alle integrierten Android-Klassen bieten Hilfsklassen mit Konstanten, die [`Android.Providers`](xref:Android.Provider) auf die Datenstruktur im-Namespace verweisen.
-
-
 
 ### <a name="built-in-providers"></a>Integrierte Anbieter
 
@@ -47,8 +44,6 @@ Android bietet Zugriff auf eine Vielzahl von System-und Benutzerdaten mithilfe `
 - *Benutzerwörterbuch* &ndash; Inhalt des benutzerdefinierten Wörterbuchs, das für die Eingabe von Vorhersage Text verwendet wird.
 
 - *Voicemail* &ndash; Verlauf von Voicemailnachrichten.
-
-
 
 ## <a name="classes-overview"></a>Übersicht über Klassen
 
@@ -79,4 +74,3 @@ Die `ContentProvider` API ermöglicht es Consumern, eine Vielzahl von Vorgängen
 - Löschen von Datensätzen.
 
 Dieses Dokument enthält ein Beispiel, in dem ein vom System `ContentProvider`bereitgestelltes verwendet wird, sowie ein einfaches Schreib geschütztes Beispiel, in `ContentProvider`dem ein benutzerdefiniertes implementiert wird.
-

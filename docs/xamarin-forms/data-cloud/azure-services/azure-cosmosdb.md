@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: dd325fbdf9d2619df94077eed74f9e6c61796a26
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a18572b0f28cb8d6c699d0bbd062bdb067471a34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651408"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770880"
 ---
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>Verwenden einer Azure Cosmos DB-dokumentdatenbank in xamarin. Forms
 
@@ -226,7 +226,6 @@ Die `DeleteDatabaseAsync` Methode gibt eine `Uri` Argument, das die zu löschend
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie die Azure Cosmos DB .NET Standard-Clientbibliothek verwenden, um ein Azure Cosmos DB-dokumentdatenbank in einer Xamarin.Forms-Anwendung zu integrieren. Eine Azure Cosmos DB-dokumentdatenbank ist eine NoSQL-Datenbank, die Zugriff mit geringer Latenz für JSON-Dokumenten, bietet einen schnelle, hoch verfügbare, skalierbare Datenbankdienst für Anwendungen, die eine nahtlose Skalierung und globale Replikation erfordern bereitstellt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

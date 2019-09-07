@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 750cf801d8ae9dfe63f9b2259d4a3f6a386a4404
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6ae10e73c3f41226560beb8cf8c50608fc6adf3f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523239"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762620"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Ressourcen Qualifizierer und Visualisierungs Optionen
 
 _In diesem Thema wird erläutert, wie Sie Ressourcen definieren, die nur verwendet werden, wenn einige Qualifiziererwerte abgeglichen werden. Ein einfaches Beispiel ist eine sprach qualifizierte Zeichen folgen Ressource. Eine Zeichen folgen Ressource kann als Standard definiert werden, wobei andere alternative Ressourcen für die Verwendung in weiteren Sprachen definiert werden. Alle Ressourcentypen können qualifiziert werden, einschließlich des Layouts._
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -55,7 +54,6 @@ Beachten Sie Folgendes: Wenn Sie eine neue Sprache hinzufügen, aber keine neuen
 
 Wenn Sie auf den Pulldownmenü des **UI-Modus** klicken, wird eine Liste der Modi angezeigt, wie z. b. **Normal**, **Car Dock**, **Desk Dock**, **TV**, **Appliance**und **Watch**:
 
-
 [![Menü für UI-Modus](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
 Unterhalb dieser Liste befinden sich die Nacht Modi **nicht Nacht** und **Nacht**, gefolgt von den layoutdirections von **Links nach rechts** und von **rechts nach links** (Weitere Informationen zu den Optionen von **Links nach rechts** und von **Rechts** nach Links finden [Sie unter LayoutDirection](xref:Android.Util.LayoutDirection)).
@@ -79,11 +77,11 @@ Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit b
 
 ## <a name="themes"></a>Designs
 
-Das Dropdown Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
+Das **Dropdown** Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
 
 [![Weitere Themenliste](resource-qualifiers-images/vs/15-theme-menu-sml.png "Weitere Themenliste")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
-Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im Design Dialogfeld auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt in das Dropdown Menü "Design" eingefügt:
+Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im **Design Dialogfeld** auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt **in das** Dropdown Menü "Design" eingefügt:
 
 Das ![helle Design ist jetzt verfügbar] . Das (resource-qualifiers-images/vs/16-light-theme.png "helle Design ist jetzt verfügbar") .
 
@@ -98,8 +96,6 @@ Die Zielframeworkversion kann in den Projekteinstellungen unter **Eigenschaften 
 Der Satz von Widgets, der in der Toolbox verfügbar ist, wird von der Ziel Framework-Version des Projekts bestimmt. Dies gilt auch für die im **Eigenschaften Fenster**verfügbaren Eigenschaften. Die Liste der verfügbaren Widgets wird *nicht* durch den Wert bestimmt, der in der **Versions** Auswahl der Symbolleiste ausgewählt ist. Wenn Sie z. b. die Zielversion des Projekts auf Android 4,4 festgelegt haben, können Sie in der Symbolleiste der Versions Auswahl weiterhin Android 6,0 auswählen, um zu sehen, wie das Projekt in Android 6,0 aussieht, Sie können jedoch keine Widgets hinzufügen, &ndash; die für Android 6,0 spezifisch sind.  Sie sind weiterhin auf die Widgets beschränkt, die in Android 4,4 verfügbar sind.
 
 Weitere Informationen zu Ressourcentypen finden Sie unter [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md).
-
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -144,7 +140,6 @@ Unterhalb dieser Liste befinden sich die Nacht Modi **nicht Nacht** und **Nacht*
 Weitere Informationen zu den Android-Benutzeroberflächen Modi finden Sie unter [uimodemanager](xref:Android.App.UiModeManager).
 Informationen zu den Optionen von **Links nach rechts** und von **rechts nach links** finden Sie unter [LayoutDirection](xref:Android.Util.LayoutDirection).
 
-
 ## <a name="action-bar-settings"></a>Aktionsleiste Einstellungen
 
 Das Symbol Aktionsleisten- **Einstellungen** ist links neben dem Pinselsymbol (Design-Editor) verfügbar:
@@ -161,11 +156,11 @@ Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit b
 
 ## <a name="themes"></a>Designs
 
-Das Dropdown Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
+Das **Dropdown** Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
 
 [![Weitere Themenliste](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
-Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im Design Dialogfeld auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt in das Dropdown Menü "Design" eingefügt:
+Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im **Design Dialogfeld** auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt **in das** Dropdown Menü "Design" eingefügt:
 
 [![Das helle Design ist jetzt verfügbar.](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
@@ -177,7 +172,7 @@ Die Android- **Versions** Auswahl legt die Android-Version fest, die zum Renderi
 
 Die Zielframeworkversion kann in den Projekteinstellungen im Abschnitt **Projektoptionen > Build > Allgemein** festgelegt werden. Weitere Informationen zur Ziel Framework-Version finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
-Der Satz von Widgets, der in der Toolbox verfügbar ist, wird von der Ziel Framework-Version des Projekts bestimmt. Dies gilt auch für die im eigenschaftenpadverfügbaren Eigenschaften. Die Liste der verfügbaren Widgets wird *nicht* durch den Wert bestimmt, der in der **Versions** Auswahl der Symbolleiste ausgewählt ist. Wenn Sie z. b. die Zielversion des Projekts auf Android 4,4 festgelegt haben, können Sie in der Symbolleiste der Versions Auswahl weiterhin Android 6,0 auswählen, um zu sehen, wie das Projekt in Android 6,0 aussieht, Sie können jedoch keine Widgets hinzufügen, &ndash; die für Android 6,0 spezifisch sind.  Sie sind weiterhin auf die Widgets beschränkt, die in Android 4,4 verfügbar sind.
+Der Satz von Widgets, der in der Toolbox verfügbar ist, wird von der Ziel Framework-Version des Projekts bestimmt. Dies gilt auch für die im **eigenschaftenpad**verfügbaren Eigenschaften. Die Liste der verfügbaren Widgets wird *nicht* durch den Wert bestimmt, der in der **Versions** Auswahl der Symbolleiste ausgewählt ist. Wenn Sie z. b. die Zielversion des Projekts auf Android 4,4 festgelegt haben, können Sie in der Symbolleiste der Versions Auswahl weiterhin Android 6,0 auswählen, um zu sehen, wie das Projekt in Android 6,0 aussieht, Sie können jedoch keine Widgets hinzufügen, &ndash; die für Android 6,0 spezifisch sind.  Sie sind weiterhin auf die Widgets beschränkt, die in Android 4,4 verfügbar sind.
 
 Weitere Informationen zu Ressourcentypen finden Sie unter [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md).
 

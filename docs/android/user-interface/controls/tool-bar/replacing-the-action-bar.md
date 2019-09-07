@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: d59acaec36c63c62fe934f145d06bfbb78d11f6c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: df6a479123dfc0fa2e5a47c9210a4bdf24d066e1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522856"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762462"
 ---
 # <a name="replacing-the-action-bar"></a>Ersetzen der Aktionsleiste
 
@@ -33,15 +33,11 @@ So ersetzen Sie die Standard Aktionsleiste einer APP durch `Toolbar`:
 
 In den folgenden Abschnitten wird dieser Prozess ausführlich erläutert. Eine einfache APP wird erstellt, und die Aktionsleiste wird durch eine angepasste `Toolbar`ersetzt. 
 
-
-
 ## <a name="start-an-app-project"></a>Starten eines App-Projekts
 
 Erstellen Sie ein neues Android-Projekt mit dem Namen **toolbarfun** (Weitere Informationen zum Erstellen eines neuen Android-Projekts finden Sie [unter Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ). Nachdem dieses Projekt erstellt wurde, legen Sie die Ziel-und mindestens Android-API-Ebenen auf **Android 5,0 (API-Ebene 21-Lollipop)** oder höher fest. Weitere Informationen zum Festlegen von Android-Versions Ebenen finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md). Wenn die App erstellt und ausgeführt wird, wird die Standard Aktionsleiste angezeigt, wie im folgenden Screenshot zu sehen:
 
 [![Screenshot der Standard Aktionsleiste](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
-
-
 
 ## <a name="create-a-custom-theme"></a>Erstellen eines benutzerdefinierten Designs
 
@@ -71,7 +67,7 @@ Der Standard `ActionBar` Wert muss deaktiviert sein, damit die benutzerdefiniert
 ```
 
 Für die Hintergrundfarbe `colorPrimary` der Symbolleiste wird eine olivgrüne Einstellung verwendet: 
- 
+
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
@@ -86,11 +82,9 @@ Bearbeiten Sie " **Properties"/"androidmanifest. XML** ", und `<application>` f�
 
 Weitere Informationen zum Anwenden eines benutzerdefinierten Designs auf eine App finden [Sie unter Verwenden von benutzerdefinierten](~/android/user-interface/material-theme.md#customtheme)Designs. 
 
-
-
 ## <a name="define-a-toolbar-layout"></a>Definieren eines Toolbar-Layouts
 
-Erstellen Sie im **Ressourcen-** /Layout-Verzeichnis eine neue Datei mit dem Namen **Toolbar. XML**. Ersetzen Sie den Inhalt durch den folgenden XML-Code: 
+Erstellen Sie im **Ressourcen-/Layout-Verzeichnis** eine neue Datei mit dem Namen **Toolbar. XML**. Ersetzen Sie den Inhalt durch den folgenden XML-Code: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -123,8 +117,6 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 
 Diese Einstellung wird verwendet, damit Menü Elemente mit der dunkleren Hintergrundfarbe im Gegensatz zueinander stehen.
 
-
-
 ## <a name="include-the-toolbar-layout"></a>Symbolleisten Layout einschließen
 
 Bearbeiten Sie die Layoutdatei **Resources/Layout/Main. axml** , und ersetzen Sie deren Inhalt durch den folgenden XML-Code:
@@ -141,8 +133,6 @@ Bearbeiten Sie die Layoutdatei **Resources/Layout/Main. axml** , und ersetzen Si
 ```
 
 Dieses Layout schließt den `Toolbar` in " **Toolbar. XML** " definierten ein `RelativeLayout` und verwendet einen, `Toolbar` um anzugeben, dass der oben auf der Benutzeroberfläche (oberhalb der Schaltfläche) platziert werden soll. 
-
-
 
 ## <a name="find-and-activate-the-toolbar"></a>Suchen und Aktivieren der Symbolleiste
 
@@ -168,7 +158,6 @@ Beachten Sie, `Toolbar` dass der unabhängig von dem `Theme.Material.Light.DarkA
 
 Wenn beim Ausführen der App eine Ausnahme auftritt, lesen Sie den Abschnitt zur [Problem](#troubleshooting) Behandlung weiter unten.
 
- 
 ## <a name="add-menu-items"></a>Menü Elemente hinzufügen 
 
 In diesem Abschnitt werden die `Toolbar`Menüs hinzugefügt. Der obere rechte Bereich des `ToolBar` ist für Menü Elemente &ndash; reserviert. jedes Menü Element (auch als *Aktions Element*bezeichnet) kann eine Aktion innerhalb der aktuellen Aktivität ausführen oder eine Aktion im Namen der gesamten app ausführen. 
@@ -185,12 +174,9 @@ So fügen Sie Menüs `Toolbar`hinzu:
 
 In den folgenden Abschnitten wird dieser Prozess ausführlich veranschaulicht, indem die Menü Elemente **Bearbeiten** und **Speichern** der `Toolbar`angepassten hinzugefügt werden. 
 
-
-
 ### <a name="install-menu-icons"></a>Menü Symbole installieren
 
 Wenn Sie mit `ToolbarFun` der Beispiel-App fortfahren, fügen Sie dem App-Projekt Menü Symbole hinzu. Laden [Sie Symbolleisten Symbole](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)herunter, entzippen Sie Sie, und kopieren Sie den Inhalt der extrahierten *MipMap-* Ordner in das Projekt *MipMap-* Folders unter **toolbarfun/Resources** , und schließen Sie jede hinzugefügte Symbol Datei in das Projekt ein.
-
 
 ### <a name="define-a-menu-resource"></a>Definieren einer Menü Ressource
 
@@ -226,7 +212,6 @@ Dieser XML-Code erstellt drei Menü Elemente:
 
 Die `showAsAction` Attribute der Menü Elemente **Bearbeiten** und **Speichern** werden auf diese Einstellung `ifRoom` festgelegt, &ndash; sodass diese Menü Elemente in der `Toolbar` angezeigt werden, wenn ausreichend Platz vorhanden ist, um angezeigt zu werden. Das Menü Element "Einstellungen `showAsAction` " `never` legt fest &ndash; , dass das Menü " **Einstellungen** " im *Überlauf* Menü angezeigt wird (drei vertikale Punkte). 
 
-
 ### <a name="implement-oncreateoptionsmenu"></a>Onkreateoptionsmenu implementieren
 
 Fügen Sie **MainActivity.cs**die folgende Methode hinzu:
@@ -240,8 +225,6 @@ public override bool OnCreateOptionsMenu(IMenu menu)
 ```
 
 Android Ruft die `OnCreateOptionsMenu` -Methode auf, sodass die APP die Menü Ressource für eine Aktivität angeben kann. In dieser Methode wird die **top_menus. XML** -Ressource in den bestandenen `menu`übertragen. Dieser Code bewirkt, dass die neuen Menü Elemente **Bearbeiten**, **Speichern**und **Einstellungen** in der `Toolbar`angezeigt werden. 
-
-
 
 ### <a name="implement-onoptionsitemselected"></a>Implementieren von onoptionsitemselected
 
@@ -271,7 +254,6 @@ Wenn ein Benutzer auf das Überlauf Menü tippt, wird das Menü Element " **Eins
 [![Screenshot des Menü Elements "Einstellungen", das im Menü "Überlauf" angezeigt wird](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
 
 Weitere Informationen zu Android-Menüs finden Sie im Thema Android Developer- [Menüs](https://developer.android.com/guide/topics/ui/menus.html) . 
- 
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
@@ -286,7 +268,6 @@ Wenn die APP nicht ordnungsgemäß für die Verwendung eines benutzerdefinierten
 Außerdem kann eine Fehlermeldung wie die folgende generiert werden: _Java. lang. IllegalStateException: Diese Aktivität hat bereits eine Aktionsleiste, die vom Fenster Dekor bereitgestellt wird._ 
 
 Um diesen Fehler zu beheben, stellen Sie `android:theme` sicher, dass das-Attribut für das `<application>` benutzerdefinierte Design zu (in " **Properties/androidmanifest. XML**") hinzugefügt wird, wie zuvor in [Anwenden des benutzerdefinierten](#apply-the-custom-theme)Designs beschrieben. Außerdem kann dieser Fehler dadurch verursacht werden, dass das `Toolbar` Layout oder das benutzerdefinierte Design nicht ordnungsgemäß konfiguriert ist.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

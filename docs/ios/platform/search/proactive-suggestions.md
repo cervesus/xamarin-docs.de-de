@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ecc31fa6aab9e2be1c33f16d2f424b397f4a9a73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b79f64f154dbd7dde623d13385f111d3d5a5d3f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291727"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769547"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Einführung in proaktives vorschlagen in xamarin. IOS
 
@@ -534,7 +534,6 @@ In diesem Abschnitt wird erläutert, wie Sie Orts Vorschläge direkt aus einer R
 
 Wenn die APP mit einem MapKit `MKDirectionsRequest` -Objekt gestartet wird, sollte Sie automatisch damit beginnen, den Benutzer zum angeforderten Speicherort zu bringen, oder eine Benutzeroberfläche bereitstellen, die es dem Benutzer ermöglicht, mit der Einführung von Anweisungen zu beginnen. Beispiel:
 
-
 ```csharp
 using System;
 using Foundation;
@@ -607,7 +606,6 @@ Für apps, die Medien verarbeiten, unterstützt IOS die folgenden Verhaltensweis
   - Nach dem Eintreffen zu Hause oder bei der Arbeit. 
 
 Wenn Sie einen einfachen API-Befehl in ios 10 einschließen, kann der Entwickler für die Benutzer der Medien-App eine ansprechkräftere Sperrbildschirm Darstellung erstellen. Durch die Verwendung `MPPlayableContentManager` der-Klasse zum Verwalten der Medienwiedergabe werden die vollständigen mediensteuer Elemente (wie die von der Music-App dargestellten) auf dem Sperrbildschirm für die App angezeigt.
-
 
 ```csharp
 using System;
@@ -682,8 +680,6 @@ namespace MonkeyPlayer
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden proaktive Vorschläge behandelt, und es wurde gezeigt, wie der Entwickler diese zum Steuern von Datenverkehr an die xamarin. IOS-App verwenden kann. Es wurden die Schritte zum Implementieren von proaktiven Vorschlägen und zur Verwendung von Verwendungs Richtlinien behandelt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

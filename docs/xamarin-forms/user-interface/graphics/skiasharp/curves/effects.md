@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: f43c4dac1811a54ee0ceeb70e2b2b1835a5ca030
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 82755a6a87ec0a47c10aac7078beeab6e14c218d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228245"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759385"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp-Effekten Pfad
 
@@ -943,7 +943,6 @@ Sie können diesbezüglich Pfad verwenden, für die Kontur zuweisen, oder fülle
 
 Das letzte Argument ist ein Ausgangswert verwendet, um die pseudozufällige Sequenz, die verwendet werden, für den Effekt zu generieren. Die Auswirkungen der Jitter sieht ein wenig anders für verschiedene Ausgangswerte. Das Argument hat den Standardwert 0 (null), was bedeutet, dass die Auswirkungen identisch ist, wenn Sie das Programm ausführen. Wenn Sie unterschiedliche Jitter möchten, wenn der Bildschirm aktualisiert wird, können Sie den Ausgangswert festlegen, auf die `Millisecond` Eigenschaft eine `DataTime.Now` Wert (z. B.).
 
-
 Die **Jitter experimentieren** Seite ermöglicht Ihnen das Experimentieren mit verschiedenen Werten in der Kontur Zuweisen eines Rechtecks:
 
 [![Dreifacher Screenshot der jitterexperiment-Seite](effects-images/jitterexperiment-small.png)](effects-images/jitterexperiment-large.png#lightbox)
@@ -1412,8 +1411,6 @@ Wenn Sie bereits festgestellt haben die, die schraffurlinien nicht genau mit dem
 [![Dreifacher Screenshot der schraffurschraffurseite](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
 Nun, da Sie pfadeffekte, reichen von einfachen Punkte und Striche seltsame Kombinationen aus gesehen haben, verwenden Sie Ihre Vorstellungskraft, und sehen Sie, was Sie erstellen können.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

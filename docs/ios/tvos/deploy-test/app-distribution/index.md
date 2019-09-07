@@ -7,23 +7,20 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0ea96eb3808daeb9f8764695d1b4b3d432727ff2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f47d4228fc1d3ec1b3b428b917f3c774103577d7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292480"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769190"
 ---
 # <a name="tvos-app-distribution-overview"></a>Übersicht über tvos-App-Verteilung
 
 _Dieses Dokument enthält eine Übersicht über die Verteilungs Techniken, die für die xamarin. tvos-app verfügbar sind, und dient als Zeiger auf ausführlichere Dokumente zu diesem Thema._
 
-
 Nachdem Sie Ihre xamarin. tvos-app entwickelt haben, besteht der nächste Schritt im Lebenszyklus der Softwareentwicklung darin, Ihre APP an Benutzer zu verteilen, wie im folgenden hervorgehobenen Abschnitt der Abbildung dargestellt:
 
-
 [![Übersicht über den Lebenszyklus der Softwareentwicklung](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
-
 
 Apple bietet die folgenden Möglichkeiten, um eine tvos-APP zu verteilen, die von xamarin. tvos unterstützt wird:
 
@@ -83,8 +80,6 @@ Weitere Informationen zum Einrichten und zur internen Verteilung ihrer App finde
 ## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel stellt einen kurzen Überblick über die Verteilungsmechanismen bereit, die für xamarin. tvos-apps verfügbar sind. Dabei wurden der Apple TV App Store, die Ad-hoc-Bereitstellung und die interne Bereitstellung eingeführt, und es wurden Links zu ausführlicheren Informationen bereitgestellt.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

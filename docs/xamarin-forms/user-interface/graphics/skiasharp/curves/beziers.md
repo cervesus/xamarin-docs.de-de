@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1cf061f2ff27720ad78567bc26f00d99c5456f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228270"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759419"
 ---
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
@@ -552,7 +552,6 @@ Wie Sie sehen können, besteht keine visuellen Unterschied zwischen der `ConicTo
 Aber legen Sie den Winkel um 180 Grad und der Mathematik fehlschlägt.
 
 Es ist in diesem Fall unglücklich, `ConicTo` negative Gewichtungen nicht unterstützt, da in der Theorie (basierend auf den parametrischen Formeln) der Kreis mit einem anderen Aufruf abgeschlossen werden kann `ConicTo` mit denselben Punkten, aber einen negativen Wert der Gewichtung. Dies würde ermöglichen, erstellen einen gesamten Kreis mit nur zwei `ConicTo` Kurven basierend auf einen beliebigen Winkel zwischen (aber nicht einschließlich) Null Grad und 180 Grad.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

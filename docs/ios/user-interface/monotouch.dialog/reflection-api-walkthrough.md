@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 27f025d80b3259da32581811ae6c900358a07e4e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7acd43597d033b4c6daac59016a9bdf41ade6f68
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278512"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768142"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Erstellen einer xamarin. IOS-Anwendung mit der Reflection-API
 
@@ -29,7 +29,6 @@ Die Verwendung der reflektionserapi ist so einfach wie die folgenden:
 1. Erstellen einer mit MT ergänzten Klasse D-Attribute.
 1. Erstellen einer `BindingContext` -Instanz, indem Sie eine Instanz der obigen Klasse übergibt. 
 1. Erstellen eines `DialogViewController` -und übergeben des `BindingContext’s` `RootElement` . 
-
 
 Sehen wir uns ein Beispiel an, um die Verwendung der reflektionsszenarios zu veranschaulichen. In diesem Beispiel erstellen wir einen einfachen Dateneingabe-Bildschirm, wie unten dargestellt:
 
@@ -138,11 +137,9 @@ Wenn die Zeile ausgewählt wird, navigiert die Anwendung zu einem neuen Bildschi
 
  <a name="Summary" />
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde eine exemplarische Vorgehensweise zur reflektionsinapi vorgestellt. Wir haben gezeigt, wie Sie einer Klasse Attribute hinzufügen, um zu steuern, was angezeigt wird. Wir haben auch erläutert, wie Sie `BindingContext` eine verwenden, um Daten aus einer Klasse an die erstellte Element Hierarchie zu binden, und wie Sie MT verwenden. D mit einem `UINavigationController`.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

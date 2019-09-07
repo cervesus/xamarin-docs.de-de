@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 5f67ec30ce04993701634387f7c2023a0f92004f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1e0632eb921b25fef40b8f0483ab80d62c9e1235
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522350"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762195"
 ---
 # <a name="tabbed-layouts"></a>Layouts im Registerkartenformat
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -29,8 +28,6 @@ Registerkarten sind aufgrund ihrer Einfachheit und Benutzerfreundlichkeit ein g�
 - **Symbolleiste** ist eine neuere und flexiblere Aktionsleisten Komponente, die ersetzt `ActionBar`. &ndash; `Toolbar` `Toolbar`ist in Android 5,0 Lollipop oder höher verfügbar und auch für ältere Android-Versionen über das nuget-Paket der [Android-Unterstützungs Bibliothek V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) verfügbar. 
     `Toolbar`ist derzeit die empfohlene Aktionsleisten Komponente zur Verwendung in Android-Apps.
     Weitere Informationen finden Sie unter [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md). 
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

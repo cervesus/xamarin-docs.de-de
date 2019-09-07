@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 47055ca61e0be9b5b54e8f5ff23719b64f1101cd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 969d7fc78af9dd10f7ad57f58a6f4f619d0a201a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291709"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769459"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Verbesserungen bei der Suche und dem Startbildschirm Widget in ios 10
 
@@ -191,8 +191,6 @@ Zusätzlich zum Festlegen der angeforderten Größe für jeden Zustand (reduzier
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die Verbesserungen erläutert, die Apple in ios 10 am Widget-System vorgenommen hat, und es wurde gezeigt, wie Sie in xamarin. IOS implementiert werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

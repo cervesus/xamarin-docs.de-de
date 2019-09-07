@@ -1,75 +1,73 @@
 ---
 title: Registrieren eines Fingerabdrucks
-description: 'Gewusst wie: Festlegen eine bildschirmsperren einrichten und registrieren ein Fingerabdrucks auf einem Android-Gerät oder Emulator.'
+description: Einrichten einer Bildschirmsperre und Registrieren eines Fingerabdrucks auf einem Android-Gerät oder-Emulator.
 ms.prod: xamarin
 ms.assetid: 52092F63-00EE-4F8B-A49F-65C9CCBA7EF2
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 18903a7d8f6c4033dc3ac7c4c0187a247d023bc1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f52be16a81f3c8047997e1f4a88e13f6b940db14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61027011"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756416"
 ---
 # <a name="enrolling-a-fingerprint"></a>Registrieren eines Fingerabdrucks
 
-## <a name="enrolling-a-fingerprint-overview"></a>Eine Übersicht über die per Fingerabdruck registrieren
+## <a name="enrolling-a-fingerprint-overview"></a>Umschließen eines Fingerabdruck (Übersicht)
 
-Es ist nur möglich, dass eine Android-Anwendung Authentifizierung per Fingerabdruck zu nutzen, wenn das Gerät bereits mit der Authentifizierung per Fingerabdruck konfiguriert wurde. Diesem Leitfaden wird zum Registrieren eines Fingerabdrucks auf einem Android-Gerät oder Emulator erläutert werden. Emulatoren müssen sich nicht auf die tatsächliche Hardware einen Fingerabdruck-Scan ausführen, aber es ist möglich, einen Fingerabdruck-Scan mithilfe von Android Debug Bridge (siehe unten) zu simulieren.  Dieses Handbuch wird beschrieben, wie Bildschirmsperre auf einem Android-Gerät zu aktivieren und zum Registrieren eines Fingerabdrucks für die Authentifizierung.
+Eine Android-Anwendung kann die Fingerabdruckauthentifizierung nur nutzen, wenn das Gerät bereits mit Fingerabdruckauthentifizierung konfiguriert wurde. In dieser Anleitung wird erläutert, wie Sie einen Fingerabdruck auf einem Android-Gerät oder-Emulator registrieren. Emulatoren verfügen nicht über die tatsächliche Hardware zum Durchführen eines Fingerabdruck Scans, aber es ist möglich, eine Fingerabdruck Überprüfung mithilfe der Android Debug Bridge (unten beschrieben) zu simulieren.  In dieser Anleitung wird erläutert, wie Sie die Bildschirmsperre auf einem Android-Gerät aktivieren und einen Fingerabdruck für die Authentifizierung registrieren.
 
 ## <a name="requirements"></a>Anforderungen
 
-Um einen Fingerabdruck registrieren zu können, müssen Sie ein Android-Gerät oder einen Emulator mit API-Ebene 23 (Android 6.0) verfügen.
+Zum Registrieren eines Fingerabdrucks müssen Sie über ein Android-Gerät oder einen Emulator verfügen, auf dem API-Ebene 23 (Android 6,0) ausgeführt wird.
 
-Die Verwendung von der Android Debug Bridge (ADB) ist es erforderlich, mit der Befehlszeile aus, und die **Adb** ausführbare Datei muss im Pfad des Ihrer Bash, PowerShell oder Command Prompt-Umgebung.
+Die Verwendung des Android Debug Bridge (ADB) erfordert Vertrautheit mit der Eingabeaufforderung, und die ausführbare **ADB** -Datei muss sich im Pfad Ihrer bash-, PowerShell-oder Eingabe Aufforderungs Umgebung befinden.
 
-## <a name="configuring-a-screen-lock-and-enrolling-a-fingerprint"></a>Konfigurieren einen Bildschirmsperren, und Registrieren eines Fingerabdrucks 
+## <a name="configuring-a-screen-lock-and-enrolling-a-fingerprint"></a>Konfigurieren einer Bildschirmsperre und Anmelden eines Fingerabdrucks 
 
-Um eine bildschirmsperren einzurichten, führen Sie die folgenden Schritte aus:
+Führen Sie die folgenden Schritte aus, um eine Bildschirmsperre einzurichten:
 
-1. Wechseln Sie zu **Einstellungen > Sicherheit**, und wählen Sie **Sperrbildschirm**:
+1. Wechseln Sie zu **Einstellungen > Sicherheit**, und wählen Sie **Bildschirmsperre**:
 
-    ![Speicherort der Auswahl der Bildschirm Sperren auf dem Bildschirm Sicherheit](enrolling-fingerprint-images/testing-01.png)
+    ![Speicherort der Bildschirm Sperr Auswahl auf dem Bildschirm "Sicherheit"](enrolling-fingerprint-images/testing-01.png)
 
-2. Im nächste Bildschirm, der angezeigt wird können Sie auswählen und konfigurieren Sie eine der Bildschirm sperren Sicherheitsmethoden: 
+2. Der nächste Bildschirm, der angezeigt wird, ermöglicht Ihnen, eine der Sicherheitsmethoden für die Bildschirmsperre auszuwählen und zu konfigurieren: 
 
-    ![Wählen Sie Wischen, Muster, PIN oder Kennwort](enrolling-fingerprint-images/testing-02.png)
+    ![Wählen Sie swipe, Muster, PIN oder Kennwort aus.](enrolling-fingerprint-images/testing-02.png)
 
-   Wählen Sie aus, und führen Sie eine der Methoden zur Verfügung Bildschirm sperren.
+   Wählen Sie eine der verfügbaren Bildschirm Sperr Methoden aus, und vervollständigen Sie Sie.
 
-3. Sobald die Screenlock konfiguriert ist, zurück zu den **Einstellungen > Sicherheit** Seite und wählen Sie **Fingerabdruck**:
+3. Nachdem die screenlock konfiguriert wurde, kehren Sie zur Seite **Einstellungen > Sicherheit** zurück, und wählen Sie **Fingerabdruck**:
 
-    ![Speicherort der Fingerabdruck Auswahl auf dem Bildschirm Sicherheit](enrolling-fingerprint-images/testing-03.png)
+    ![Speicherort der Fingerabdruck Auswahl auf dem Bildschirm "Sicherheit"](enrolling-fingerprint-images/testing-03.png)
 
-4. Von dort aus die Schritte zum Hinzufügen eines Fingerabdrucks an das Gerät:
+4. Befolgen Sie dort die Sequenz, um dem Gerät einen Fingerabdruck hinzuzufügen:
 
-    [![Sequenz von Screenshots für das Hinzufügen eines Fingerabdrucks an das Gerät](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
+    [![Sequenz von Screenshots zum Hinzufügen eines Fingerabdrucks zum Gerät](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
 
-5. Im abschließenden Bildschirm werden Sie aufgefordert, Ihren Finger auf des fingerabdruckscanners platzieren: 
+5. Auf dem letzten Bildschirm werden Sie aufgefordert, den Fingerabdruckscanner zu platzieren: 
 
-    ![Bildschirm mit der Sie aufgefordert werden, fügen Ihren Finger auf dem sensor](enrolling-fingerprint-images/testing-05.png)
+    ![Bildschirm, der Sie auffordert, den Finger auf den Sensor zu legen](enrolling-fingerprint-images/testing-05.png)
 
-    Wenn Sie ein Android-Gerät verwenden, führen Sie den Prozess durch berühren einen Finger auf die Überprüfung. 
-    
-    
-### <a name="simulating-a-fingerprint-scan-on-the-emulator"></a>Simulieren einen Fingerabdruck-Scan auf dem Emulator
+    Wenn Sie ein Android-Gerät verwenden, schließen Sie den Prozess ab, indem Sie einen Finger an den Scanner berühren. 
 
-Auf einem Android-Emulator ist es möglich, eine Überprüfung per Fingerabdruck zu simulieren, indem Sie mithilfe von Android Debug Bridge. Klicken Sie auf OS X-Start eine Terminalsitzung auf Windows starten Sie eine Eingabeaufforderung oder eine Powershell-Sitzung, und führen `adb`:
+### <a name="simulating-a-fingerprint-scan-on-the-emulator"></a>Simulieren eines Fingerabdruck Scans im Emulator
+
+Auf einem Android-Emulator ist es möglich, eine Fingerabdruck Überprüfung mithilfe des Android Debug Bridge zu simulieren. Starten Sie unter OS X eine Terminal Sitzung, und starten Sie unter Windows eine Eingabeaufforderung oder eine PowerShell `adb`-Sitzung, und führen Sie Folgendes aus:
 
 ```shell
 $ adb -e emu finger touch 1
 ```
 
-Der Wert des **1** ist die _Finger\_Id_ für den Finger, die "gescannt wurde". Es ist eine eindeutige ganze Zahl, die Sie für jeden virtuellen Fingerabdruck zuweisen. In der Zukunft verwendet werden, wenn Sie die app ausgeführt wird können führen Sie dieses gleiche ADB Befehl jedes Mal, wenn den Emulator fordert Sie für einen Fingerabdruck, können Sie Ausführen der `adb` Befehl aus, und übergeben sie die _Finger\_Id_ zum Simulieren der Fingerprint-Überprüfung .
+Der Wert **1** ist die _Finger\_-ID_ für den Finger, der "gescannt" war. Dabei handelt es sich um eine eindeutige Ganzzahl, die Sie für jeden virtuellen Fingerabdruck zuweisen. Wenn die app ausgeführt wird, können Sie den gleichen ADB-Befehl jedes Mal ausführen, wenn der Emulator Sie zur Eingabe eines Fingerabdrucks auffordert. `adb` Sie können den Befehl ausführen und die _Finger\_-ID_ übergeben, um den Fingerabdruck Scan zu simulieren.
 
-Nach Abschluss die Überprüfung per Fingerabdruck benachrichtigt Android Sie, dass der Fingerabdruck hinzugefügt wurde:  
+Nachdem die Überprüfung des Fingerabdrucks abgeschlossen ist, werden Sie von Android benachrichtigt, dass der Fingerabdruck hinzugefügt wurde:  
 
-![Bildschirm mit Fingerabdruck hinzugefügt!](enrolling-fingerprint-images/testing-06.png)
+![Bildschirm mit hinzugefügter Fingerabdruck](enrolling-fingerprint-images/testing-06.png)
 
 ## <a name="summary"></a>Zusammenfassung 
 
-Dieses Handbuch erläutert, wie Sie einen bildschirmsperren einrichten, und registrieren einen Fingerabdruck, die auf einem Android-Gerät oder im Android-Emulator. 
-
+In dieser Anleitung wurde beschrieben, wie Sie eine Bildschirmsperre einrichten und einen Fingerabdruck auf einem Android-Gerät oder in einem Android-Emulator registrieren. 

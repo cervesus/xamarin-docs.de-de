@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 27eb5679bbc4825ab2bf0e1990b00d97ab207619
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292434"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770991"
 ---
 # <a name="menus-in-xamarinmac"></a>Menüs in xamarin. Mac
 
@@ -1071,7 +1071,6 @@ Sie können pulldownlisten genau wie Popup Schaltflächen erstellen und mit dies
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die Arbeit mit Menüs und Menü Elementen in einer xamarin. Mac-Anwendung ausführlich erläutert. Zuerst haben wir die Menüleiste der Anwendung untersucht. Anschließend haben wir uns mit dem Erstellen von Kontextmenüs beschäftigt. als nächstes haben wir Status leisten Menüs und benutzerdefinierte Andock Menüs überprüft. Schließlich haben wir Popup Menüs und pulldownlisten behandelt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

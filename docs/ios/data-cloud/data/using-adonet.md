@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3526ee254a3986e1ff59288adeb95a49129b8b60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a9df85a405bc086f86dae73fea615581bf9d28d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290970"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767391"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Verwenden von ADO.net mit xamarin. IOS
 
@@ -37,7 +37,6 @@ Klicken Sie mit der rechten Maustaste auf **Verweise > Verweise bearbeiten...** 
 ## <a name="about-monodatasqlite"></a>Informationen zu Mono. Data. sqlite
 
 Wir verwenden die `Mono.Data.Sqlite.SqliteConnection` -Klasse zum Erstellen einer leeren Datenbankdatei und zum Instanziieren `SqliteCommand` von Objekten, die zum Ausführen von SQL-Anweisungen für die Datenbank verwendet werden können.
-
 
 1. **Erstellen einer leeren Datenbank** : Ruft die `CreateFile` -Methode mit einem gültigen (IE. beschreibbaren) Dateipfad auf. Sie sollten überprüfen, ob die Datei bereits vorhanden ist, bevor Sie diese Methode aufrufen. andernfalls wird eine neue (leere) Datenbank oberhalb der alten erstellt, und die Daten in der alten Datei gehen verloren:
 
@@ -153,7 +152,6 @@ Da SQLite das Ausführen beliebiger SQL-Befehle für die Daten ermöglicht, kön
 - **ExecuteReader** – wird verwendet, wenn eine Auflistung von Zeilen als `SqlDataReader` zurückgegeben werden soll.
 - **ExecuteScalar** – Ruft einen einzelnen Wert (z. b. ein Aggregat) ab.
 
-
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
 INSERT-, Update-und DELETE-Anweisungen geben die Anzahl der betroffenen Zeilen zurück. Alle anderen SQL-Anweisungen geben-1 zurück.
@@ -199,7 +197,6 @@ Die ExecuteReader-Methode gibt ein sqlitedatareader-Objekt zurück. Neben der im
 - **Rowsafffiziert** – Anzahl der von der Abfrage betroffenen Zeilen.
 - **HasRows** – gibt an, ob Zeilen zurückgegeben wurden.
 
-
 ### <a name="executescalar"></a>EXECUTESCALAR
 
 Verwenden Sie diese Option für SELECT-Anweisungen, die einen einzelnen Wert zurückgeben (z. b. ein Aggregat).
@@ -212,7 +209,6 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 Der `ExecuteScalar` Rückgabetyp der `object` Methode ist – Sie sollten das Ergebnis in Abhängigkeit von der Datenbankabfrage umwandeln. Das Ergebnis kann eine ganze Zahl aus einer count-Abfrage oder eine Zeichenfolge aus einer einzelnen Spalte SELECT-Abfrage sein. Beachten Sie, dass sich dies von anderen Execute-Methoden unterscheidet, die ein Reader-Objekt oder eine Anzahl der betroffenen Zeilen zurückgeben.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 367f44104b0d6049b8d65ab6e3b3f38c703cdb3f
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: aa43513154499a39c27f5ad35fce9584ce7827f8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198711"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763529"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>Erstellen eines monogame-UWP-Projekts
 
@@ -56,7 +56,6 @@ Nachdem Visual Studio die Erstellung der Vorlage abgeschlossen hat, können wir 
 ![](uwp-images/image3.png "Nachdem Visual Studio die Erstellung der Vorlage abgeschlossen hat, führen Sie Sie aus, um das leere Projekt zu sehen.")
 
 Die Zahlen in den Ecken stellen Diagnoseinformationen bereit. Diese Informationen können entfernt werden, indem Sie den Code `App.xaml.cs` im `DEBUG` -Block in der `OnLaunched` -Methode löschen:
-
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
