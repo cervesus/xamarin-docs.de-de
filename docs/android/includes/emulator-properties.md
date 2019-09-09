@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c81cc7ff176ab4863498a03169a2c6a3711a0ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b505f4a4f7a8f50a6044d01a327eef76a7b1ce3b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525094"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758044"
 ---
 |Eigenschaft|BESCHREIBUNG|Optionen|
 |--- |--- |--- |
@@ -65,4 +65,3 @@ ms.locfileid: "69525094"
 |`skin.name`|**Name der Skin** &ndash; Der Name für die Skin eines Android-Emulators. Bei einer Skin handelt es sich um eine Sammlung von Dateien, die die visuellen Elemente und Steuerelemente der Anzeige eines Emulators definiert. Sie beschreibt, wie das Fenster des virtuellen Android-Geräts auf Ihrem Entwicklungscomputer angezeigt wird. Eine Skin beschreibt die Bildschirmgröße, die Schaltflächen und das gesamte Design, hat jedoch keine Auswirkungen auf die Ausführung Ihrer App.||
 |`skin.path`|**Pfad zur Skin** &ndash; Der Pfad zum Verzeichnis, der die Skindateien des Emulators enthält, die in skin.name angegeben werden. Dieses Verzeichnis enthält die Layoutdateien „hardware.ini“ sowie Bilddateien für die angezeigten Elemente der Skin.||
 |`skin.dynamic`|**Skindynamik** &ndash; Gibt an, ob die Skin dynamisch ist oder nicht. Bei der Skin des Emulators handelt es sich um eine dynamische Skin, wenn der Emulator eine Skin einer bestimmten Größe erstellen soll, die auf einer angegebenen Breite und Höhe basiert.|Nein|
-

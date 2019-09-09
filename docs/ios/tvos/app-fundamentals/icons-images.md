@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f3a0525a42a59edfe08e5b478bf6af801008ef05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7eca637e546324f9282aedcac48dacffa72bf246
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277853"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769274"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit tvos-Symbolen und-Bildern in xamarin
 
@@ -79,9 +79,6 @@ Geschichtete Bilder enthalten zwei (2) bis fünf (5) separate Ebenen, die kombin
 > [!IMPORTANT]
 > Für die Symbole Ihrer APP sind geschichtete Bilder erforderlich und für andere [Fokussier Bare Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (z. b. das Top-Regal Bild) optional. Apple schlägt jedoch vor, dass Sie für jedes Bild, das in Ihrer APP den Fokus erhält, geschichtete Bilder verwenden können.
 
-
-
-
 Apple gibt die folgenden Vorschläge zum Entwerfen Ihrer geschichteten Images an:
 
 - **Legen Sie die Hintergrund Ebene undurchsichtig** fest: Ihre Hintergrund Ebene (Schicht 1) **muss** nicht transparent sein, oder Sie erhalten eine Fehlermeldung, wenn Sie versuchen, das geschichtete Bild in Apple TV zu verwenden. Alle anderen Ebenen können mehrere Ebenen der Transparenz enthalten, um den 3D-Effekt zu verbessern.
@@ -145,9 +142,6 @@ Jede APP muss sowohl eine kleine als auch eine große Version des App-Symbols be
 
 > [!IMPORTANT]
 > Ihre APP-Symbole müssen als **geschichtete Bilder**bereitgestellt werden. Weitere Informationen finden Sie im Abschnitt überlappende [Images](#Layered-Images) .
-
-
-
 
 Apple bietet die folgenden Vorschläge zum Erstellen Ihrer APP-Symbole:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 07bf50bdee9243141d1f266a88f82770d9503969
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529102"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760227"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmensanwendungen
 
@@ -163,7 +163,6 @@ Die Platt Form Projekte enthalten Effekt Implementierungen, benutzerdefinierte r
 Die plattformübergreifenden Mobile App Entwicklungs Tools und-Plattformen von xamarin bieten eine umfassende Lösung für Mobile B2E-, B2B-und B2C-Client-apps, die die Möglichkeit bieten, Code auf allen Zielplattformen (Ios, Android und Windows) gemeinsam zu nutzen und zu helfen, die Gesamtbetriebskosten. Apps können Ihre Benutzeroberfläche und ihren App-Logik Code freigeben und gleichzeitig das Aussehen und Gefühl der nativen Plattform beibehalten.
 
 Entwickler von Unternehmens-apps stellen verschiedene Herausforderungen dar, die die Architektur der APP während der Entwicklung ändern können. Daher ist es wichtig, eine APP zu erstellen, damit Sie im Laufe der Zeit geändert oder erweitert werden kann. Der Entwurf für diese Anpassbarkeit kann schwierig sein, aber es umfasst in der Regel die Partitionierung einer APP in diskrete, lose gekoppelte Komponenten, die problemlos in eine APP integriert werden können.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

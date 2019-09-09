@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 13b19d60569884f244f2ea9c79aaa6989838d0d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290711"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770044"
 ---
 # <a name="xamarinmac-extension-support"></a>Unterstützung für Xamarin.Mac-Erweiterungen
 
@@ -45,7 +45,6 @@ Die folgenden Tipps können bei der Arbeit mit Erweiterungen in xamarin. Mac hil
     [![](extensions-images/extension02.png "Das System Protokoll")](extensions-images/extension02.png#lightbox)
 - Wie bereits erwähnt, wird das Ausführen der Erweiterungs Host Anwendung beim System registriert. Löschen des Anwendungspakets mit der Aufhebung der Registrierung. 
 - Wenn die "Stray"-Versionen der Erweiterungen einer APP registriert sind, verwenden Sie den folgenden Befehl, um Sie zu suchen (sodass Sie gelöscht werden können):`plugin kit -mv`
-
 
 <a name="Walkthrough-and-Sample-App" />
 

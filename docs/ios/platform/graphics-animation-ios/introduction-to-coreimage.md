@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a537926ab28bc355af5c5c4993ccff4a736b15aa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ffaa6553830a64589818c991e8f729ff7232e367
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288576"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752835"
 ---
 # <a name="core-image-in-xamarinios"></a>Core-Image in xamarin. IOS
 
@@ -25,7 +25,6 @@ Dieses Dokument enthält einfache Beispiele für:
 - Gesichtserkennung.
 - Anwenden von Filtern auf ein Bild
 - Auflisten der verfügbaren Filter.
-
 
 Diese Beispiele sollen Ihnen beim Einstieg in Ihre xamarin. IOS-Anwendungen helfen.
 
@@ -55,7 +54,6 @@ Das featurearray wird mit `CIFaceFeature` -Objekten aufgefüllt (sofern irgendwe
 - Mundposition – die Koordinaten des Mundes für dieses Gesicht.
 - Lefteyeposition – die Koordinaten des linken Auges für dieses Gesicht.
 - Rechtschaffyeposition – die Koordinaten des rechten Auges für dieses Gesicht.
-
 
 Die Koordinaten für alle diese Eigenschaften haben den Ursprung unten links – im Gegensatz zu UIKit, bei dem die linke obere Seite als Ursprung verwendet wird. Wenn Sie die Koordinaten in `CIFaceFeature` verwenden, sollten Sie Sie "Kippen". Diese sehr grundlegende benutzerdefinierte Bildansicht in coreimage\coreimageviewcontroller.cs veranschaulicht, wie Sie "Gesicht Indikator"-Dreiecke im Bild `FlipForBottomOrigin` zeichnen (Beachten Sie die-Methode):
 

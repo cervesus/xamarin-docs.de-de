@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: c9980dff866a176d4a4a1f1f6bc1bd8c92bd7097
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8fcedd4f7dca4527b37c6b83fbd205014cffcaaf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280210"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769131"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Arbeiten mit tvos-Auflistungs Ansichten in xamarin
 
@@ -96,7 +96,6 @@ Führen Sie die folgenden Schritte aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-    
 1. Starten Sie eine neue **tvos-App für die Einzelansicht** in Visual Studio für Mac.
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie im IOS-Designer.
 1. Fügen Sie der vorhandenen Ansicht eine Bildansicht, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie Sie so, dass Sie wie folgt aussieht: 
@@ -132,11 +131,9 @@ Führen Sie die folgenden Schritte aus:
 
     [![](collection-views-images/collection11.png "Legen Sie die Identität auf citycell fest.")](collection-views-images/collection11.png#lightbox)
 1. Speichern Sie die Änderungen.
-    
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
 1. Starten Sie eine neue **tvos-App für die Einzelansicht** in Visual Studio.
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie im IOS-Designer.
 1. Fügen Sie der vorhandenen Ansicht eine Bildansicht, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie Sie so, dass Sie wie folgt aussieht: 
@@ -170,7 +167,6 @@ Führen Sie die folgenden Schritte aus:
 
     [![](collection-views-images/collection11vs.png "Legen Sie die Identität auf citycell fest.")](collection-views-images/collection11vs.png#lightbox)
 1. Speichern Sie die Änderungen.
-    
 
 -----
 
@@ -286,7 +282,6 @@ CityView.AdjustsImageWhenAncestorFocused = true;
 ```
 
 Weitere Informationen zur Navigation und zum Fokus finden Sie in der Dokumentation [Arbeiten mit Navigation und Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri-Remote-und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) .
-
 
 <a name="The-Collection-View-Data-Provider" />
 
@@ -469,7 +464,6 @@ Dadurch wird die-Eigenschaft definiert und die Standard Stadt festgelegt, die an
 ### <a name="the-collection-view-delegate"></a>Der Sammlungs Ansichts Delegat
 
 Fügen Sie dem Projekt als `CityViewDelegate` nächstes eine neue Klasse hinzu, und machen Sie Sie wie folgt:
-
 
 ```csharp
 using System;
@@ -684,7 +678,6 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 Wir legen die Transparenz des vorherigen Elements fest, das den Fokus auf NULL (0) verliert, und die Transparenz des nächsten Elements erhält den Fokus auf 100%. Diese Umstellung wird ebenfalls animiert.
 
-
 ## <a name="configuring-the-collection-view-controller"></a>Konfigurieren des Sammlungs Ansichts Controllers
 
 Nun müssen wir die endgültige Konfiguration in der Sammlungsansicht durchführen und dem Controller die Festlegung der von uns definierten Eigenschaft gestatten, damit die Sammlungsansicht geschlossen werden kann, nachdem der Benutzer eine Auswahl getroffen hat.
@@ -824,14 +817,11 @@ Eines der wichtigsten Features der Verwendung einer Auflistungs Ansicht ist die 
 
 Kürzlich zu den Sammlungs Ansichten für IOS 9 hinzugefügt wurde die Möglichkeit, die Neuanordnung von Elementen in der Auflistung zu ermöglichen. Da tvos 9 eine Teilmenge von IOS 9 ist, erfolgt dies auf dieselbe Weise. Weitere Informationen finden Sie im Dokument " [Änderungen der Sammlungsansicht](~/ios/user-interface/controls/uicollectionview.md) ".
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit Sammlungs Ansichten in einer xamarin. tvos-App behandelt. Zuerst wurden alle Elemente erläutert, die die Auflistungs Ansicht bilden. Im nächsten Schritt wurde gezeigt, wie eine Auflistungs Ansicht mithilfe eines Storyboards entworfen und implementiert wird. Schließlich finden Sie Links zu Informationen über das Erstellen von benutzerdefinierten Layouts und Neuanordnen von Elementen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

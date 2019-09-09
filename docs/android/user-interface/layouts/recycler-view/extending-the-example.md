@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: ea3bfccd9133f6bb4cdf2e2a72bd20a307fb80d1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2fc2eabb26a9635b569cc6d3a51195fb554ca950
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522495"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758596"
 ---
 # <a name="extending-the-recyclerview-example"></a>Erweitern des recyclerview-Beispiels
 
-
 Die grundlegende APP, die in [einem grundlegenden recyclerview](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) -Beispiel &ndash; beschrieben wird, führt einfach nur einen Bildlauf durch und zeigt eine fixierte Liste von Fotoelementen an, um das Durchsuchen In realen Anwendungen erwarten Benutzer, dass Sie mit der APP interagieren können, indem Sie auf Elemente in der Anzeige tippen. Außerdem kann sich die zugrunde liegende Datenquelle ändern (oder von der APP geändert werden), und der Inhalt der Anzeige muss mit diesen Änderungen konsistent bleiben. In den folgenden Abschnitten erfahren Sie, wie Sie Elemente mit Klick Ereignissen behandeln und aktualisieren `RecyclerView` , wenn sich die zugrunde liegende Datenquelle ändert.
-
 
 ### <a name="handling-item-click-events"></a>Behandeln von Element Klick Ereignissen
 
@@ -164,7 +162,6 @@ Wenn nun die **zufällige Pick** -Taste getippt wird `RecyclerView` , aktualisie
 [![Erster Screenshot vor dem austauschen, zweiter Screenshot nach dem Austausch](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 Selbstverständlich `NotifyDataSetChanged` hätte aufgerufen werden können, statt die beiden `NotifyItemChanged`Aufrufe von vorzunehmen, `RecyclerView` aber dies würde dazu führen, dass die gesamte Auflistung aktualisiert wird, obwohl nur zwei Elemente in der Auflistung geändert wurden. Der `NotifyItemChanged` Aufruf von ist wesentlich effizienter als `NotifyDataSetChanged`das Aufrufen von.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

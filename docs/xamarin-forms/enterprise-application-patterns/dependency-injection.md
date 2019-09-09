@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 6cbcd6612323acc8619004d56fff82461e005e9e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 72ffa4508f2c8f050f505313a28ce8278f2570b4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529134"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760265"
 ---
 # <a name="dependency-injection"></a>Dependency Injection
 
@@ -20,7 +20,7 @@ In der Regel wird ein Klassenkonstruktor aufgerufen, wenn ein Objekt instanziier
 
 Durch die Angabe von Abhängigkeiten als Schnittstellentypen ermöglicht die Abhängigkeitsinjektion das Entkoppeln der konkreten Typen aus dem Code, der von diesen Typen abhängig ist. Im Allgemeinen wird ein Container verwendet, der eine Liste von Registrierungen und Zuordnungen Zwischenschnitt stellen und abstrakten Typen sowie die konkreten Typen enthält, die diese Typen implementieren oder erweitern.
 
-Es gibt auch andere Arten von Abhängigkeitsinjektion, wie z. b. Einschleusung von *Eigenschaften*und *Methodenaufrufe*, aber Sie sind seltener sichtbar. Daher konzentriert sich dieses Kapitel ausschließlich auf die Durchführung der Konstruktorinjektion mit einem Abhängigkeits Injection-Container.
+Es gibt auch andere Arten von Abhängigkeitsinjektion, wie z. b. *Einschleusung von Eigenschaften*und *Methodenaufrufe*, aber Sie sind seltener sichtbar. Daher konzentriert sich dieses Kapitel ausschließlich auf die Durchführung der Konstruktorinjektion mit einem Abhängigkeits Injection-Container.
 
 <a name="introduction_to_dependency_injection" />
 
@@ -197,7 +197,6 @@ Autofac umfasst zusätzliche Instanzbereiche. Weitere Informationen finden Sie u
 Die Abhängigkeitsinjektion ermöglicht das Entkoppeln von konkreten Typen aus dem Code, der von diesen Typen abhängig ist. In der Regel wird ein Container verwendet, der eine Liste von Registrierungen und Zuordnungen Zwischenschnitt stellen und abstrakten Typen enthält, sowie die konkreten Typen, die diese Typen implementieren oder erweitern.
 
 Autofac vereinfacht das entwickeln lose gekoppelter apps und bietet alle Features, die häufig in Abhängigkeits einschleusungs Containern gefunden werden, einschließlich Methoden zum Registrieren von Typzuordnungen und Objektinstanzen, zum Auflösen von Objekten, zum Verwalten von Objekt Lebensdauern und einfügen. abhängige Objekte in Konstruktoren von Objekten, die Sie auflöst.
-
 
 ## <a name="related-links"></a>Verwandte Links
 
