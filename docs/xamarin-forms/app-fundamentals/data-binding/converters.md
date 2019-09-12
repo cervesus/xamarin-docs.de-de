@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 34b449aa358874f06a495ec52578dcca2dd13767
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654728"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771611"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Bindungswertkonverter für Xamarin.Forms
 
@@ -51,7 +51,7 @@ Die `ConvertBack`-Methode wird aufgerufen, wenn Daten vom Ziel zur Quelle in `Tw
 
 Wenn in der Datenbindung auch eine `StringFormat`-Einstellung enthalten ist, wird der Wertkonverter aufgerufen, bevor das Ergebnis als Zeichenfolge formatiert wird.
 
-Die Seite **Enable Buttons** (Aktivieren von Schaltflächen) im Beispiel [**Data Binding Demos (Demos für die Datenbindung)** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) veranschaulicht, wie dieser Wertkonverter in einer Datenbindung verwendet wird. Der Konstruktor `IntToBoolConverter` wird im Ressourcenverzeichnis der Seite instanziiert. Anschließend wird mit einer `StaticResource`-Markuperweiterung auf diesen verwiesen, um die Eigenschaft `Converter` in zwei Datenbindungen festzulegen. Es ist üblich, dass Datenkonverter zwischen mehreren Datenbindungen auf der Seite gemeinsam genutzt werden:
+Die Seite **Enable Buttons** (Aktivieren von Schaltflächen) im Beispiel [**Data Binding Demos (Demos für die Datenbindung)**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) veranschaulicht, wie dieser Wertkonverter in einer Datenbindung verwendet wird. Der Konstruktor `IntToBoolConverter` wird im Ressourcenverzeichnis der Seite instanziiert. Anschließend wird mit einer `StaticResource`-Markuperweiterung auf diesen verwiesen, um die Eigenschaft `Converter` in zwei Datenbindungen festzulegen. Es ist üblich, dass Datenkonverter zwischen mehreren Datenbindungen auf der Seite gemeinsam genutzt werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +463,6 @@ Die Werte der Eigenschaften `Red` und `Green` werden mit einer `Binding`-Markupe
 So sieht das Ergebnis aus:
 
 [![RGB-Farbselektor](converters-images/rgbcolorselector-small.png "RGB-Farbselektor")](converters-images/rgbcolorselector-large.png#lightbox "RGB-Farbselektor")
-
 
 ## <a name="related-links"></a>Verwandte Links
 

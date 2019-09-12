@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 437db399d1a8cafb19dbc57d7f2ea4141900d8db
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9b2cb44dff7712953454a9add71f092956e3c759
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292362"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762773"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Verwenden von mtouch zum Bündeln von Xamarin.iOS-Apps
 
@@ -49,7 +49,6 @@ Es gibt drei Möglichkeiten, Ihren Code mit dem `mtouch`-Befehl zu kompilieren:
 - Kompilieren für die Gerätebereitstellung
 - Bereitstellen Ihrer ausführbaren Datei auf dem Gerät
 
-
 ### <a name="building-for-the-simulator"></a>Entwickeln für den Simulator
 
 Wenn Sie beginnen, ist das gebräuchlichste Szenario das Testen der Anwendung im Simulator, Sie werden also `mtouch -sim` verwenden, um den Code in ein Simulatorpaket zu kompilieren. Das sieht folgendermaßen aus:
@@ -70,9 +69,7 @@ In diesem Fall verwenden wir das Zertifikat „iPhone Developer: Miguel de Icaza
 
  <a name="Running_your_Application" />
 
-
 ## <a name="running-your-application"></a>Ausführen Ihrer Anwendung
-
 
 ### <a name="launching-on-the-simulator"></a>Starten auf dem Simulator
 
@@ -95,8 +92,6 @@ PID: 98460
 Press enter to terminate the application
 ```
 
-
-
 Es wird dringend empfohlen, dass Sie auch ein Protokoll der Standardausgabe- und Standardfehlerdateien speichern, das Ihnen beim Debuggen hilft. Die Ausgabe von `Console.WriteLine` an `stdout` übergeben, und die Ausgabe von `Console.Error.WriteLine` sowie jede andere Laufzeitfehlermeldung wird an `stderr` übergeben.
 
 Verwenden Sie dazu die Flags `--stdout` und `--stderr`:
@@ -106,7 +101,6 @@ Verwenden Sie dazu die Flags `--stdout` und `--stderr`:
 ```
 
 Wenn Ihre Anwendung fehlschlägt, werden Ihnen die Ausgabe und der Fehler angezeigt, damit Sie das Problem ermitteln können.
-
 
 ### <a name="deploying-to-a-device"></a>Bereitstellen auf einem Gerät
 
@@ -125,8 +119,6 @@ Diese Schritte werden in der Regel von Visual Studio für Mac ausgeführt.
 ## <a name="reference"></a>Referenz
 
 Auf der Seite [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) im Leitfaden finden Sie Informationen zu den anderen Befehlszeilenoptionen.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

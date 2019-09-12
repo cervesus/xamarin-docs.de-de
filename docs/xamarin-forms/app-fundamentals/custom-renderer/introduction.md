@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 2b2b5726f4ca28ae37f027a700abdd688aa0b1d7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108430"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771885"
 ---
 # <a name="introduction-to-custom-renderers"></a>Einführung in benutzerdefinierte Renderer
 
@@ -92,7 +92,6 @@ Dadurch wird ein Verweis auf den Typ `ClassInPCL` erstellt, der angibt, dass er 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden benutzerdefinierte Renderer vorgestellt, und Sie haben erfahren, wie Sie einen benutzerdefinierten Renderer erstellen können. Benutzerdefinierte Renderer sind eine praktische Methode zum Anpassen der Darstellung und des Verhaltens von Xamarin.Forms-Steuerelementen. Sie können für geringfügige Formatierungsänderungen oder für umfangreiche, plattformspezifische Anpassungen des Layouts und Verhaltens verwendet werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

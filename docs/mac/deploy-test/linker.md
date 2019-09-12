@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 00d5d5cf9cda38fbfc09fcfe8b4dcb56d00dee5b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b538df5e8e615f8594bd38cb13d9b45b0961dac
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291423"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770126"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac-Linkeroptionen
 
@@ -53,7 +53,6 @@ Um zur Linkerkonfiguration für ein Xamarin.Mac-Projekt zu wechseln, führen Sie
 
 4. Die Plattformverknüpfung für Full-Zielframeworks wird erst in einem späteren Update zur IDE hinzugefügt. Fügen Sie bis dahin stattdessen den **zusätzlichen mmp-Argumenten** `--linkplatform` hinzu.
 5. Klicken Sie auf **OK**, um die Änderungen zu speichern.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

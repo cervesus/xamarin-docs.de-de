@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f0d51d9aa5cde17498124b74cc35011a6d942fae
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 230fe0f168b5718c2bc91cff6dbdc078b0e6834d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284845"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765930"
 ---
 # <a name="custom-linker-configuration"></a>Benutzerdefinierte Linkerkonfiguration
 
@@ -26,7 +26,6 @@ Sobald Sie über diese Linkerbeschreibungsdatei verfügen, fügen Sie sie Ihrem 
 
 - **Für Android:** Legen Sie den **Buildvorgang** auf **LinkDescription** fest.
 - **Für iOS:** Legen Sie den **Buildvorgang** auf **LinkDescription** fest.
-
 
 Im folgenden Beispiel wird gezeigt, wie die XML-Datei aussieht:
 
@@ -60,8 +59,6 @@ Beachten Sie, dass die Setter- und/oder Gettermethodennamen verwendet werden mü
 Der zweite Abschnitt für `My.Own.Assembly.dll` stellt sicher, dass der `Foo`-Typ alle seine Felder (d.h. das `preserve="fields"`-Attribut) und alle seine Konstruktoren (d.h. alle Methoden mit dem Namen `.ctor` in IL) beibehält. Der `Bar`-Typ behält spezifische Signaturen (keine Namen) für einen Konstruktor (der einen einzelnen Zeichenfolgenparameter akzeptiert) und für das spezifische Zeichenfolgenfeld `_blah` bei.
 Der `My.Own.Namespace`-Namespace behält alle Typen bei, die er enthält.
 Jeder Typ, dessen vollständiger Name (der Namespace inbegriffen) mit dem Platzhaltermuster „My.Other\*“ übereinstimmt, behält alle seine Felder und Methoden bei. Das Platzhalterzeichen `*` kann mehrere Male im „type fullname“-Muster verwendet werden.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

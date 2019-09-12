@@ -6,18 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 3852e2a1460cb5659cf5a00dcc17fb9a6e9c26a8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525300"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756070"
 ---
 # <a name="manually-uploading-the-apk"></a>Manuelles Hochladen des APKs
 
-
 Beim erstmaligen Einreichen eines APKs bei Google Play (oder bei Verwendung einer frühen Xamarin.Android-Version) muss das APK manuell mithilfe der [Google Play Developer Console](https://play.google.com/apps/publish) hochgeladen werden. In dieser Anleitung werden die hierfür notwendigen Schritte beschrieben. 
-
 
 ## <a name="google-play-developer-console"></a>Google Play Developer Console
 
@@ -54,13 +52,11 @@ Weitere Informationen zum Testen von Apps finden Sie in der Google-Anleitung [Al
 
 Nachdem das APK hochgeladen wurde, wird es als Entwurf gespeichert. Es kann erst veröffentlicht werden, wenn weitere Angaben auf Google Play bereitgestellt werden. Diese werden im Folgenden beschrieben.
 
-
 ## <a name="store-listing"></a>Store-Eintrag
 
 Klicken Sie in der **Google Play Developer Console** auf **Store-Eintrag**. Hierdurch können Sie Informationen eingeben, die auf Google Play potenziellen Benutzern der Anwendung angezeigt werden: 
 
 [![Dialogfeld „Store-Eintrag“](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
-
 
 ### <a name="graphics-assets"></a>Grafische Elemente
 
@@ -70,7 +66,6 @@ Scrollen Sie auf der Seite **Store-Eintrag** nach unten zum Abschnitt **Grafisch
 
 In diesem Abschnitt können Sie alle vorbereiteten Werbeelemente hochladen. Während dieses Vorgangs erhalten Sie Hinweise zu erforderlichen Werbeelementen und dem benötigten Format dieser Elemente.
 
-
 ### <a name="categorization"></a>Kategorisierung
 
 Nach dem Abschnitt **Grafische Elemente** wird der Abschnitt **Kategorisierung** angezeigt. Wählen Sie hier den Anwendungstyp und die Kategorie aus:
@@ -79,7 +74,6 @@ Nach dem Abschnitt **Grafische Elemente** wird der Abschnitt **Kategorisierung**
 
 Die Einstufung des Inhalts wird im übernächsten Abschnitt beschrieben.
 
-
 ### <a name="contact-details"></a>Kontaktdaten
 
 Im letzten Abschnitt der Seite geht es um **Kontaktdaten**. Hier werden die Kontaktdaten des Anwendungsentwicklers erfasst:
@@ -87,7 +81,6 @@ Im letzten Abschnitt der Seite geht es um **Kontaktdaten**. Hier werden die Kont
 [![Abschnitt „Kontaktdaten“](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
 Sie können wie im Screenshot oben gezeigt im Abschnitt **Datenschutzerklärung** eine URL angeben, die auf die Datenschutzrichtlinie der App verweist.
-
 
 ## <a name="content-rating"></a>Einstufung des Inhalts
 
@@ -111,7 +104,6 @@ Im Folgenden werden die vier Stufen des Einstufungssystems von Google Play aufge
 
 Die Elemente in der Liste „Stufe 2 - Mittel“ sind subjektiv. Es ist daher möglich, dass eine Richtlinie, die auf den ersten Blick eine Einstufung von Inhalten in Stufe 2 verlangt, letztlich doch „Stufe 1 - Hoch“ als Einstufung fordert. 
 
-
 ## <a name="pricing-amp-distribution"></a>Preisgestaltung &amp; Vertrieb
 
 Klicken Sie in der **Google Play Developer Console** auf **Preisgestaltung und Vertrieb**. Legen Sie auf dieser Seite einen Preis fest, wenn die App kostenpflichtig ist.
@@ -122,13 +114,11 @@ Vor der Veröffentlichung einer kostenpflichtigen App müssen Sie ein Händlerko
 
 [![ Dialogfeld „Preisgestaltung und Vertrieb“](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
 
-
 ### <a name="manage-countries"></a>Länder verwalten
 
 Im nächsten Abschnitt, **Länder verwalten**, können Sie einstellen, in welchen Ländern eine App verteilt werden kann:
 
 [![Dialogfeld „Länder verwalten“](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
-
 
 ### <a name="other-information"></a>Sonstige Informationen
 
@@ -137,7 +127,6 @@ Scrollen Sie weiter nach unten, um anzugeben, ob die App Werbung enthält. Im Ab
 [![Enthält Abschnitt „Ads“ (Werbung)](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
 Nach diesem Abschnitt werden Ihnen zusätzliche Optionen angezeigt. Hierbei können Sie z.B. die Option **Designed for Families** auswählen oder die App über Google Play for Education verteilen.
-
 
 ### <a name="consent"></a>Einverständniserklärung
 
@@ -148,8 +137,6 @@ Die Angaben in diesem Abschnitt sind obligatorisch. Mit diesen bestätigen Sie, 
 
 Bei der Veröffentlichung einer Xamarin.Android-App gibt es noch viele weitere Aspekte, die in dieser Anleitung nicht behandelt werden können.
 Weitere Informationen zum Veröffentlichen einer App auf Google Play finden Sie unter [Willkommen in der Google Play Console-Hilfe](https://support.google.com/googleplay/android-developer#topic=3450769).
-
-
 
 ## <a name="google-play-filters"></a>Google Play-Filter
 

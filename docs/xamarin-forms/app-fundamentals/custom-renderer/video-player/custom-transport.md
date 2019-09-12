@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650639"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771829"
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte Transportsteuerelemente für Videos
 
@@ -656,7 +656,6 @@ Unter Android und auf der UWP sieht die Schaltfläche **Wiedergabe** jedoch ande
 [![Benutzerdefinierte Transportsteuerelemente während der Pause](custom-transport-images/customtransportpaused-small.png "Benutzerdefinierte Transportsteuerelemente während der Pause")](custom-transport-images/customtransportpaused-large.png#lightbox "Benutzerdefinierte Transportsteuerelemente während der Pause")
 
 In einer Produktionsanwendung sollten Sie Ihre eigenen Bitmap-Bilder für die Schaltflächen benutzen, damit diese visuell einheitlich sind.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

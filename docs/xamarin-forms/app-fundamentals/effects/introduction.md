@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 8fae741f308a8269facef5ca84d34adb48868aec
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486009"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771463"
 ---
 # <a name="introduction-to-effects"></a>Einführung in Effekte
 
@@ -58,7 +58,6 @@ Jede plattformspezifische `PlatformEffect`-Klasse macht die folgenden Methoden v
 - [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached): Diese Methode wird aufgerufen, wenn ein Effekt von einem Xamarin.Forms-Steuerelement getrennt wird. In einer überschriebenen Version dieser Methode werden, in den einzelnen plattformspezifischen Effect-Klassen, sämtliche Effekte bereinigt, z. B. durch die Aufhebung der Registrierung eines Ereignishandlers.
 
 Darüber hinaus macht die `PlatformEffect`-Klasse die [`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs))-Methode verfügbar, die auch überschrieben werden kann. Diese Methode wird aufgerufen, wenn eine Eigenschaft des Elements geändert wurde. Auf Änderungen am Xamarin.Forms-Steuerelement in bindbaren Eigenschaften muss in einer überschriebenen Version dieser Methode in den einzelnen plattformspezifischen Effect-Klassen reagiert werden. Eine geänderte Eigenschaft sollte immer überprüft werden, da die Möglichkeit besteht, dass diese Überschreibung häufig aufgerufen wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

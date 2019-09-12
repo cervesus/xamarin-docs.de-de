@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: 2deee2bd7fa07f562bee02409d1a7a19cdac0be9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650853"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772004"
 ---
 # <a name="customizing-an-entry"></a>Anpassen eines Eintrags
 
@@ -212,7 +212,6 @@ Der Aufruf der `OnElementChanged`-Methode der Basisklasse instanziiert ein `Text
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Xamarin.Forms-Steuerelement [`Entry`](xref:Xamarin.Forms.Entry) erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können. Benutzerdefinierte Renderer sind eine praktische Methode zum Anpassen der Darstellung von Xamarin.Forms-Steuerelementen. Sie können für geringfügige Formatierungsänderungen oder für umfangreiche, plattformspezifische Anpassungen des Layouts und Verhaltens verwendet werden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,22 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6d391bd804e1c59d06d78dd7cffe3f11f9276468
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525782"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754638"
 ---
 # <a name="application-package-size"></a>Anwendungspaketgröße
 
 _In diesem Artikel werden die Bestandteile eines Xamarin.Android-Anwendungspakets sowie die zugehörigen Strategien untersucht, die für die effiziente Paketbereitstellung während der Debug- und Releasephasen bei der Entwicklung verwendet werden können._
 
-
 ## <a name="overview"></a>Übersicht
 
 Xamarin.Android verwendet eine Vielzahl von Mechanismen, um die Paketgröße zu minimieren und gleichzeitig einen effizienten Debug- und Releasebereitstellungsprozess aufrechtzuerhalten. In diesem Artikel befassen wir uns mit dem Workflow zur Release- und Debugbereitstellung von Xamarin.Android und wie die Xamarin.Android-Plattform sicherstellt, dass wir kleine Anwendungspakete erstellen und veröffentlichen.
-
 
 ## <a name="release-packages"></a>Releasepakete
 
@@ -41,7 +39,6 @@ Wie wir sehen, wird dadurch ein erheblicher Teil der BCL entfernt, der nicht ver
 ![Paketgröße von „ApiDemo“ nach Anwenden des Linkers](app-package-size-images/api-demo-package-size-after-linker.png)
 
 Wie hier gezeigt, wird Ihr Anwendungspaket in der Regel ca. 2,9 MB größer sein als Ihre Anwendung und deren Abhängigkeiten.
-
 
 ## <a name="debug-packages"></a>Debugpakete
 
@@ -75,11 +72,9 @@ Gehen Sie zum Aktivieren von *Schnelle Assemblybereitstellung* folgendermaßen v
 
 4. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern und das Dialogfeld „Projektoptionen“ zu schließen.
 
-
 Wenn die Anwendung das nächste Mal zum Debuggen erstellt wird, werden die Assemblys direkt auf dem Gerät installiert (sofern noch nicht vorhanden), und ein kleineres Anwendungspaket (das die Assemblys nicht enthält) wird auf dem Gerät installiert. Dies verkürzt die Zeit, die benötigt wird, um Änderungen an der Anwendung zum Testen in Betrieb zu nehmen.
 
 Nachdem wir die lange erste Bereitstellung von Shared Runtime und Shared Platform hinter uns gebracht haben, können wir jedes Mal, wenn wir eine Änderung an der Anwendung vornehmen, die neue Version schnell und mühelos bereitstellen, sodass wir über einen schnellen Änderungs-/Bereitstellungs-/Ausführungszyklus verfügen.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

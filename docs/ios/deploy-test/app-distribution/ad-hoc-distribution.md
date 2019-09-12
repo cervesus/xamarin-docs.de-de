@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 35596d5231f7e485cf8217e35a5641277dcab11d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca524e9ff3c1d3c938905093f55a6482ea085963
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285600"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763210"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad-Hoc-Verteilung für Xamarin.iOS-Apps
 
@@ -44,7 +44,6 @@ Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines
 <a name="createcertificate" />
 
 ## <a name="create-a-distribution-certificate"></a>Erstellen eines Verteilungszertifikats
-
 
 1. Navigieren Sie zum Abschnitt *Certificates, Identifiers & Profiles* (Zertifikate, Bezeichner & Profile) im Developer Member Center von Apple.
 2. Wählen Sie unter *Certificates* (Zertifikate) die Option **Production** (Produktion) aus.
@@ -79,7 +78,6 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences�
 
 ### <a name="create-an-app-id"></a>Erstellen einer App-ID
 Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich, um die Anwendung zu identifizieren, die an das Gerät des Benutzers verteilt wird. Wenn Sie die App-ID noch nicht erstellt haben, führen Sie die folgenden Schritte aus:
-
 
 1. Navigieren Sie im [Apple Developer Center](https://developer.apple.com/account/overview.action) zum Abschnitt *Certificate, Identifiers and Profiles* (Zertifikate, Bezeichner und Profile). Wählen Sie unter **Identifiers** (Bezeichner) **App IDs** (App-IDs) aus.
 2. Klicken Sie auf die Schaltfläche **+** , und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
@@ -179,7 +177,6 @@ Weitere Informationen zum Erstellen einer IPA-Datei finden Sie im Leitfaden [IPA
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die Ad-hoc-Verteilungsmechanismen erläutert, die für das Testen von Xamarin.iOS-Anwendungen erforderlich sind.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

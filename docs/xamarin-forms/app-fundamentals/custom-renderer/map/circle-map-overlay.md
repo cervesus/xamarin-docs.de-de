@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: db666fc6a547e3fa089475ba5912774c1af3be0d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650748"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771909"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Hervorheben eines kreisförmigen Bereiches auf einer Karte
 
@@ -305,7 +305,6 @@ Diese Methode führt die folgenden Vorgänge durch, vorausgesetzt der benutzerde
 - Der Kreis wird durch Instanziieren eines `MapPolygon`-Objekts erstellt. Die `MapPolygon`-Klasse wird zum Anzeigen einer Multipunktform auf der Karte verwendet, indem deren `Path`-Eigenschaft auf ein `Geopath`-Objekt festgelegt wird, das die Koordinaten der Form enthält.
 - Der Kreis wird auf der Karte durch Hinzufügen zur Sammlung `MapControl.MapElements` gerendert.
 
-
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)
 {
@@ -331,7 +330,6 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde beschrieben, wie Sie einer Karte eine kreisförmige Überlagerung hinzufügen, um einen kreisförmigen Bereich auf der Karte hervorzuheben.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

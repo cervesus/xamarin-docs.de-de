@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 1163f264fc54a461d8d95854524439589cdc81f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 399f411acd497b9d55ca81f670556430fe5f5503
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646986"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771289"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Erstellen eines Xamarin.Forms-DataTemplate-Objekts
 
@@ -288,7 +288,6 @@ Das [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Objekt wird dem [`Resource
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde beschrieben, wie Sie Datenvorlagen auf unterschiedliche Weisen erstellen können: inline, über einen benutzerdefinierten Typ oder in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)-Objekt. Eine Inlinevorlage sollte verwendet werden, wenn keine Notwendigkeit besteht, die Datenvorlage woanders erneut zu verwenden. Alternativ kann eine Datenvorlage erneut verwendet werden, indem sie als benutzerdefinierter Typ oder als Ressource auf Steuerelementebene, Seitenebene oder Anwendungsebene definiert wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

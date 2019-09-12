@@ -6,19 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c6559db8cc2e3e18ec48dd85ea2d68455336bdd8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119810"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755964"
 ---
 # <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
 Obwohl es eine Reihe von App-Märkten für das Vertreiben von Anwendungen gibt, ist Google Play bei Weitem der weltweit größte und am häufigsten besuchte Store für Android-Apps. Google Play bietet eine einzelne Plattform zum Verteilen, für die Ankündigung, den Verkauf und die Analyse der Verkäufe einer Android-Anwendung.
 
 Dieser Abschnitt behandelt Themen, die für Google Play spezifisch sind, z.B. die Registrierung, um ein Herausgeber zu werden, das Sammeln von Assets, um Google Play zu helfen, Ihre Anwendungen zu bewerben und anzukündigen, Richtlinien zur Bewertung Ihrer Anwendung in Google Play und Verwenden von Filtern zum Einschränken der Entwicklung einer Anwendungen für bestimmte Geräte.
-
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -29,8 +28,6 @@ Alle Anwendungen müssen mit einem kryptografischen Schlüssel signiert sein, de
 Die maximale Größe eines über Google Play veröffentlichten Android-Anwendungspakets beträgt 100 MB. Wenn eine Anwendung diese Größe überschreitet, erlaubt Google Play, dass zusätzliche Objekte über *APK-Erweiterungsdateien* geliefert werden dürfen. Android-Erweiterungsdateien erlauben dem Android-Anwendungspaket zwei zusätzliche Dateien, und jede dieser Datei darf eine Größe von bis zu 2 GB besitzen. Google Play hostet und verteilt diese Dateien kostenlos. Erweiterungsdateien werden in einem anderen Abschnitt erläutert.
 
 Google Play ist nicht global verfügbar. Einige Standorte werden für die Verteilung von Anwendungen möglicherweise nicht unterstützt.
-
-
 
 ## <a name="becoming-a-publisher"></a>So werden Sie ein Herausgeber
 
@@ -43,20 +40,15 @@ Um Anwendungen in Google Play zu veröffentlichen, müssen Sie über ein Herausg
 1. Bestätigen sie die Überprüfung via E-Mail.
 1. Nachdem das Konto erstellt wurde, können Sie Anwendungen mit Google Play veröffentlichen.
 
-
 Google Play unterstützt nicht alle Länder der Welt. Die neueste Liste der unterstützten Länder finden Sie unter folgenden Links:
 
 1. [Unterstützte Registrierungsstandorte für Entwickler &amp; Händler](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Dies ist eine Liste aller Länder, in denen sich Entwickler als Händler registrieren können und bezahlte Anwendungen verkaufen können.
 
 1. [Unterstützte Bereitstellungsstandorte für Google Play-Nutzer](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Dies ist eine Liste aller Länder, in denen Anwendungen verteilt werden dürfen.
 
-
-
 ### <a name="preparing-promotional-assets"></a>Vorbereiten von Werbeobjekten
 
 Um eine Anwendung in Google Play effektiv hochzustufen und zu bewerben, erlaubt Google Entwicklern Werbeobjekte wie Screenshots, Grafiken und Videos zu übermitteln. Google Play verwendet diese Objekte dann, um die Anwendung zu bewerben und höher zu stufen.
-
-
 
 #### <a name="launcher-icons"></a>Startprogrammsymbole
 
@@ -66,7 +58,6 @@ Ein *Startprogrammsymbol* ist eine Grafik, die eine Anwendung darstellt. Jedes S
 - **mdpi** (160dpi) &ndash; 48 x 48 px
 - **hdpi** (240dpi) &ndash; 72 x 72 px
 - **xhdpi** (320dpi) &ndash; 96 x 96 px
-
 
 Startprogrammsymbole sind das Erste, das Benutzer für Anwendungen in Google Play sehen, seien Sie also besonders sorgfältig, damit Startprogrammsymbole visuell ansprechend und aussagekräftig sind.
 
@@ -78,8 +69,6 @@ Tipps für Startprogrammsymbole:
 
 1. **Verwenden Sie einen Alphakanal**&ndash; Symbole sollten vom Alphakanal Gebrauch machen und keine Bilder im Vollbildformat sein.
 
-
-
 #### <a name="high-resolution-application-icons"></a>Hochauflösende Anwendungssymbole
 
 Anwendungen in Google Play erfordern eine hochwertige Version des Anwendungssymbols. Diese wird nur von Google Play verwendet und ersetzt nicht das Startprogrammsymbol der Anwendung. Die Spezifikationen für das Symbol mit hoher Auflösung sind Folgende:
@@ -90,8 +79,6 @@ Anwendungen in Google Play erfordern eine hochwertige Version des Anwendungssymb
 
 Das [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) ist ein hilfreiches Tool zum Erstellen passender Startprogrammsymbole und des hochauflösenden Anwendungssymbols.
 
-
-
 #### <a name="screen-shots"></a>Screenshots
 
 Google Play erfordert mindestens zwei und maximal acht Screenshots für eine Anwendung. Diese werden auf der Detailseite der Anwendung in Google Play angezeigt.
@@ -101,16 +88,12 @@ Die Spezifikationen für Screenshots sind Folgende:
 1. 24-Bit-PNG oder JPG ohne Alphakanal
 1. 320 x 480 (B x H) oder 480 x 800 (B x H) oder 480 x 854 (B x H). Bilder im Querformat werden zugeschnitten.
 
-
-
 #### <a name="promotional-graphic"></a>Werbegrafik
 
 Die ist ein optionales Bild, das von Google Play verwendet wird:
 
 1. Es handelt sich um ein 24-Bit-PNG oder JPG mit den Maßen 180 x 120 (B x H) ohne Alphakanal.
 1. Werbegrafik ohne Kunstrahmen.
-
-
 
 #### <a name="feature-graphic"></a>Funktionsgrafik
 
@@ -120,13 +103,9 @@ Wird vom Funktionsabschnitt von Google Play verwendet. Dies Grafik kann allein u
 1. Alle wichtigen Inhalte sollten sich innerhalb eines Rahmens von 924 x 500 befinden. Pixel außerhalb dieses Rahmens werden möglicherweise für stilistische Zwecke zugeschnitten.
 1. Diese Grafik kann womöglich zentral herunterskaliert werden: Verwenden Sie viel Text, und halten Sie Grafiken einfach.
 
-
-
 #### <a name="video-link"></a>Videoverknüpfungen
 
 Hierbei handelt es sich um eine URL zu einem YouTube-Video, das die Anwendung veranschaulichen soll. Das Video sollte 30 Sekunden bis zu 2 Minuten lang sein und die Highlights Ihrer Anwendung darstellen.
-
-
 
 ### <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
@@ -151,7 +130,7 @@ Wählen Sie im Dialogfeld **Signierungsidentität** die unter [Creating a New Ce
 
 [![Dialogfeld „Signierungsidentität“](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
-Klicken Sie im Dialogfeld **Google Play-Konten** auf die Schaltfläche **+** , um ein neues Google Play-Konto hinzuzufügen:
+Klicken Sie im Dialogfeld **Google Play-Konten** auf die Schaltfläche **+**, um ein neues Google Play-Konto hinzuzufügen:
 
 [![Dialogfeld „Google Play-Konten“](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 
@@ -185,7 +164,6 @@ Im Dialogfeld **Google Play API-Konto** müssen Sie die _Client-ID_ sowie den _g
 Im nächsten Abschnitt wird erläutert, wie ein neues Google API-Projekt erstellt und die erforderliche _Client-ID_ sowie der _geheime Clientschlüssel_ generiert werden.
 
 -----
-
 
 #### <a name="create-a-google-api-project"></a>Erstellen eines Google API-Projekts
 
@@ -224,7 +202,6 @@ Klicken Sie auf **Speichern**, um die Änderungen zu speichern. Dadurch kehren S
 
 Diese JSON-Datei enthält die Client-iD und den geheimen Clientschlüssel, den Sie ausschneiden und in das Dialogfeld **Signieren und verteilen** im nächsten Schritt einfügen können.
 
-
 #### <a name="register-google-api-access"></a>Google-API-Zugriff registrieren
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -240,7 +217,7 @@ Klicken Sie auf **Zulassen**, um die App zu autorisieren:
 
 #### <a name="publish"></a>Veröffentlichen
 
-Nachdem Sie auf **Zulassen** geklickt haben, meldet der Browser _Empfangener Überprüfungscode. Wird geschlossen..._ , und die App wird der Liste der Google Play-Konten in Visual Studio hinzugefügt. Klicken Sie im Dialogfeld **Google Play-Konten** auf **Weiter**:
+Nachdem Sie auf **Zulassen** geklickt haben, meldet der Browser _Empfangener Überprüfungscode. Wird geschlossen..._, und die App wird der Liste der Google Play-Konten in Visual Studio hinzugefügt. Klicken Sie im Dialogfeld **Google Play-Konten** auf **Weiter**:
 
 [![Zu den Google Play-Konten hinzugefügtes Konto](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
@@ -269,7 +246,6 @@ Als Nächstes zeigt der **Archiv-Manager** den Uploadfortschritt an.
 Wenn der Upload abgeschlossen ist, wird der Abschlussstatus in der linken unteren Ecke von Visual Studio angezeigt:
 
 [![Benachrichtigung für den Abschluss der Veröffentlichung des Projekts](images/vs/11-published-sml.png)](images/vs/11-published.png#lightbox)
-
 
 ### <a name="troubleshooting"></a>Problembehandlung
 

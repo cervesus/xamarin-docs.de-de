@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9454d1b7144bc41c0a4510314a59dd90971fbbc6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 84a35389276fed031f6bea116c1e4f37a63469a7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285534"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769874"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Veröffentlichen von Xamarin.Mac-Apps im Mac App Store
 
@@ -25,7 +25,6 @@ Xamarin.Mac-Apps können auf zwei unterschiedliche Arten verteilt werden:
 
 In diesem Dokument wird erläutert, wie Sie mit Visual Studio für Mac und Xcode ein Apple-Entwicklerkonto einrichten und ein Xamarin.Mac-Projekt für jeden Bereitstellungstyp konfigurieren.
 
-
 ## <a name="mac-developer-program"></a>Mac-Entwicklerprogramm
 
 Wenn Sie dem [Mac-Entwicklerprogramm](https://developer.apple.com/devcenter/mac/) beitreten, hat der Entwickler die Wahl, ob er einen Beitritt als Einzelperson oder als Unternehmen wünscht. Dies wird im folgenden Screenshot gezeigt:
@@ -37,36 +36,29 @@ Wählen Sie den richtigen Registrierungstyp für Ihre Situation aus.
 > [!NOTE]
 > Die hier vorgenommene Auswahl hat Auswirkungen auf die Darstellung einiger Bildschirmanzeigen bei der Konfiguration eines Entwicklerkontos. Die Beschreibungen und Screenshots in diesem Dokument erfolgen aus der Perspektive eines Entwicklerkontos für eine **Einzelperson**. In einem **Unternehmen** sind einige Optionen nur für Benutzer mit der Rolle **Teamadministrator** verfügbar.
 
-
 ### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[Zertifikate und Bezeichner](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
 
 Dieser Leitfaden enthält Informationen zum Erstellen der notwendigen Zertifikate und Bezeichner, die für das Veröffentlichen einer Xamarin.Mac-App benötigt werden.
-
 
 ### <a name="create-provisioning-profilemacdeploy-testpublishing-to-the-app-storeprofilesmd"></a>[Erstellen eines Bereitstellungsprofils](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
 
 Dieser Leitfaden enthält Informationen zum Erstellen der erforderlichen Bereitstellungsprofile, die für das Veröffentlichen einer Xamarin.Mac-App benötigt werden.
 
-
 ### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac-App-Konfiguration](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
 
 Dieser Leitfaden enthält Informationen zum Konfigurieren einer Xamarin.Mac-App für die Veröffentlichung.
-
 
 ### <a name="sign-with-developer-idmacdeploy-testpublishing-to-the-app-storesigningmd"></a>[Signieren mit einer Entwickler-ID](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
 
 Dieser Leitfaden enthält Informationen zur Signierung einer Xamarin.Mac-App mit einer Entwickler-ID für die Veröffentlichung.
 
-
 ### <a name="bundle-for-mac-app-storemacdeploy-testpublishing-to-the-app-storebundlingmd"></a>[Bündeln für den Mac App Store](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
 
 Dieser Leitfaden enthält Informationen zum Bündeln einer Xamarin.Mac-App für die Veröffentlichung im Mac App Store.
 
-
 ### <a name="upload-to-mac-app-storemacdeploy-testpublishing-to-the-app-storeuploadingmd"></a>[Hochladen in den Mac App Store](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
 
 Dieser Leitfaden enthält Informationen zum Hochladen einer Xamarin.Mac-App für die Veröffentlichung im Mac App Store.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

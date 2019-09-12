@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 959b2091e88adde5bb3f64c2cdb5d5b0748aa0be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650821"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771932"
 ---
 # <a name="customizing-a-listview"></a>Anpassen einer ListView
 
@@ -563,7 +563,6 @@ Die Methode füllt das native `ListView`-Steuerelement erneut mit den geänderte
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer erstellen, der plattformspezifische Listensteuerelemente und natives Zellenlayout kapselt, sodass die Kontrolle über die Leistung nativer Listensteuerelemente erhöht wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

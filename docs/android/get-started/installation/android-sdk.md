@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 54b57097c7742cb5c09f97b40c68c72b6f9c3bf1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: da0a441be9cd07af456b1600155151e48d44162c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525107"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758062"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
 
@@ -50,7 +50,6 @@ Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das aut
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.
 
- 
 ## <a name="sdk-manager"></a>SDK-Manager 
 
 Klicken Sie auf **Extras > Android > Android SDK-Manager**, um den SDK-Manager in Visual Studio zu starten:
@@ -62,7 +61,6 @@ Der Android SDK-Manager wird im Fenster **Android SDKs und Tools** geöffnet. Au
 [![Screenshot vom Android SDK-Manager mit geöffneter Registerkarte „Plattformen“](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 Das Fenster **Android SDKs und Tools** wird in den folgenden Abschnitten ausführlicher beschrieben.
-
 
 ### <a name="android-sdk-location"></a>Speicherort von Android SDK
 
@@ -78,12 +76,10 @@ Klicken Sie auf die Schaltfläche mit den Auslassungszeichen (&hellip;) rechts n
 
 Wenn Sie dann auf **OK** klicken, verwaltet der SDK-Manager die von Ihnen ausgewählte Installation von Android SDK am angegebenen Speicherort.
 
-
 ### <a name="tools-tab"></a>Registerkarte „Extras“
 
 Die Registerkarte **Tools** zeigt eine Liste von _Tools_ und _Extras_. Auf dieser Registerkarte können Sie Tools, Plattformtools und Buildtools von Android SDK installieren.
 Darüber hinaus können Sie Android-Emulator, den LLDB (Low-Level-Debugger), das NDK, die HAXM-Beschleunigung und Google Play-Bibliotheken installieren.
-
 
 Laden Sie zum Beispiel das Google Android-Emulator-Paket herunter, indem Sie auf das Kontrollkästchen neben **Android-Emulator** und dann auf **Änderungen anwenden** klicken:
 
@@ -127,7 +123,6 @@ Wenn das Google-Repository ausgewählt wird, werden möglicherweise weitere Pake
 
 Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktivieren möchten, klicken Sie auf **Microsoft (empfohlen)** . Dadurch wird die Standardliste mit den Paketen und Tools wiederhergestellt.
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
@@ -146,11 +141,11 @@ Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das aut
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.
- 
+
 ## <a name="sdk-manager"></a>SDK-Manager 
 
 Klicken Sie in Visual Studio für Mac auf **Extras > SDK-Manager**, um den SDK-Manager zu starten:
- 
+
 [![Ort des Menüelements „Android SDK-Manager“](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 Der **Android SDK-Manager** wird im **Fenster „Einstellungen“** geöffnet, das die drei Registerkarten **Plattformen**, **Tools** und **Speicherorte** enthält:
@@ -158,7 +153,6 @@ Der **Android SDK-Manager** wird im **Fenster „Einstellungen“** geöffnet, d
 [![Screenshot vom Android SDK-Manager mit geöffneter Registerkarte „Plattformen“](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
 
 Die Registerkarten im Android SDK-Manager werden in den folgenden Abschnitten beschrieben.
-
 
 ### <a name="locations-tab"></a>Registerkarte „Speicherorte“
 
@@ -186,7 +180,6 @@ Möglicherweise wird ein Dialogfeld mit der folgenden Meldung angezeigt: _The fo
 [![Fenster „Zustimmung zur Lizenz“](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
 Klicken Sie auf **Akzeptieren**, wenn Sie den Geschäftsbedingungen zustimmen. Am unteren Rand des Fensters gibt eine Statusleiste den Fortschritt des Downloads und der Installation an. Nach Abschluss der Installation zeigt die Registerkarte **Tools** an, dass die ausgewählten Tools und Extras installiert wurden.
-
 
 ### <a name="platforms-tab"></a>Registerkarte „Plattformen“
 
@@ -222,11 +215,9 @@ Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktiviere
 
 -----
 
- 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Handbuch wurde erklärt, wie Sie den Xamarin Android SDK-Manager in Visual Studio und Visual Studio für Mac installieren und verwenden.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 54a1f32d4e2102654a6111dc1fb27bc1ba9aabcc
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119118"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761000"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -77,7 +77,6 @@ Wenn stark typisierte Verweise auf Zeichenfolgen erstellt werden, gelten sie sta
 
 Wählen Sie die **AppResources.resx**-Datei aus, und rufen Sie das **Eigenschaftenpad** ab, um zu prüfen, an welcher Stelle das Buildtool konfiguriert ist. Auf dem folgenden Screenshot sehen Sie das **benutzerdefinierte Tool ResXFileCodeGenerator**.
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-internal-sml.png "Eigenschaftenfenster für AppResources.Resx")](text-images/vs-resx-internal.png#lightbox)
@@ -90,7 +89,6 @@ Wählen Sie die **AppResources.resx**-Datei aus, und rufen Sie das **Eigenschaft
 
 Wenn die stark typisierten Zeichenfolgeneigenschaften `public` sein sollen, müssen Sie die Konfiguration manuell auf das **benutzerdefinierte Tool PublicResXFileCodeGenerator** festlegen, wie es im folgenden Screenshot gezeigt ist:
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-public-sml.png "Eigenschaftenfenster für AppResources.Resx")](text-images/vs-resx-public.png#lightbox)
@@ -98,7 +96,6 @@ Wenn die stark typisierten Zeichenfolgeneigenschaften `public` sein sollen, müs
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 [![](text-images/xs-resx-internal-sml.png "Eigenschaftenpad für AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
-
 
 [![](text-images/xs-resx-public-sml.png "Eigenschaftenpad für AppResources.Resx")](text-images/xs-resx-public.png#lightbox)
 

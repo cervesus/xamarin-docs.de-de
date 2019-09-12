@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8e6f37fb607f4b0bc0ddfd41ad86dfe7ecbc03df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 28e424f4946d05798b9ba309891845d9eab998b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650527"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771809"
 ---
 # <a name="implementing-a-video-player"></a>Implementieren eines Videoplayers
 
@@ -65,10 +65,6 @@ Obwohl Videoplayer auf jeder Plattform eigene Transportsteuerelemente in Form vo
 ## <a name="custom-video-positioningcustom-positioningmd"></a>[Benutzerdefinierte Videopositionierung](custom-positioning.md)
 
 Jeder Videoplayer der Plattform verfügt über einen Positionierungsbalken, der den Fortschritt des Videos anzeigt und Ihnen so ermöglicht, weiter nach vorne oder zurück zu einer bestimmten Position zu springen. In diesem Artikel wird gezeigt, wie Sie diesen Positionierungsbalken mit einem benutzerdefinierten Steuerelement ersetzen können.
-
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

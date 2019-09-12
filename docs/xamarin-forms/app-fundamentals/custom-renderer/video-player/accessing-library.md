@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 219f6498dc1349d32c8f0b247a187df75f2a523a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650698"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771854"
 ---
 # <a name="accessing-the-devices-video-library"></a>Zugreifen auf die Videobibliothek des Geräts
 
@@ -22,7 +22,7 @@ Bei den meisten modernen mobilen Geräte und Desktop-Computern ist es möglich, 
 
 ## <a name="the-photo-picker-dependency-service"></a>Der Fotoauswahl-Abhängigkeitsdienst
 
-Alle Plattformen umfassen eine Funktion, die dem Benutzer die Auswahl eines Fotos oder Videos aus der Bildbibliothek des Geräts ermöglicht. Der erste Schritt zum Abspielen eines Videos aus der Bildbibliothek des Geräts ist die Erstellung eines Abhängigkeitsdiensts, der die Bildauswahl auf jeder Plattform aufruft. Der unten beschriebene Abhängigkeitsdienst ist dem im Artikel [**Picking a Photo from the Picture Library (Auswählen von Fotos aus der Bildbibliothek)** ](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md) definierten sehr ähnlich. Die Videoauswahl gibt statt eines `Stream`-Objekts jedoch einen Dateinamen zurück.
+Alle Plattformen umfassen eine Funktion, die dem Benutzer die Auswahl eines Fotos oder Videos aus der Bildbibliothek des Geräts ermöglicht. Der erste Schritt zum Abspielen eines Videos aus der Bildbibliothek des Geräts ist die Erstellung eines Abhängigkeitsdiensts, der die Bildauswahl auf jeder Plattform aufruft. Der unten beschriebene Abhängigkeitsdienst ist dem im Artikel [**Picking a Photo from the Picture Library (Auswählen von Fotos aus der Bildbibliothek)**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md) definierten sehr ähnlich. Die Videoauswahl gibt statt eines `Stream`-Objekts jedoch einen Dateinamen zurück.
 
 Das .NET Standard-Bibliotheksprojekt definiert eine Schnittstelle mit dem Namen `IVideoPicker` für den Abhängigkeitsdienst:
 
@@ -146,7 +146,7 @@ namespace VideoPlayerDemos.Droid
 }
 ```
 
-Die `OnCreate`-Methode in der `MainActivity`-Klasse speichert eine eigene Instanz in der statischen `Current`-Eigenschaft. Dies ermöglicht die Implementierung der `IVideoPicker`-Schnittstelle, damit die `MainActivity`-Instanz die **Select Video (Video auswählen)** -Auswahl startet:
+Die `OnCreate`-Methode in der `MainActivity`-Klasse speichert eine eigene Instanz in der statischen `Current`-Eigenschaft. Dies ermöglicht die Implementierung der `IVideoPicker`-Schnittstelle, damit die `MainActivity`-Instanz die **Select Video (Video auswählen)**-Auswahl startet:
 
 ```csharp
 using System;
@@ -385,8 +385,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 Auf allen Plattformen wird das Videos fast unmittelbar nach dem Festlegen der Videoquelle abgespielt, da die Datei bereits auf dem Gerät vorhanden ist und nicht erst heruntergeladen werden muss.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

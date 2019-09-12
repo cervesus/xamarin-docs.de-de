@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289889"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763066"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -94,7 +94,6 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Einstellungen
 
 Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich, um die Anwendung zu identifizieren, die Sie an das Gerät des Benutzers verteilen. Wenn Sie diese noch nicht erstellt haben, führen Sie die folgenden Schritte aus:
 
-
 1. Navigieren Sie im [Apple Developer Center](https://developer.apple.com/account/overview.action) zum Abschnitt *Certificate, Identifiers and Profiles* (Zertifikate, Bezeichner und Profile). Wählen Sie unter **Identifiers** (Bezeichner) **App IDs** (App-IDs) aus.
 2. Klicken Sie auf die Schaltfläche **+** , und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
 3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt sein und kann nicht geändert werden. Wählen Sie entweder eine explizite oder eine Platzhalter-App-ID aus, und geben Sie eine Bundle-ID in einem umgekehrten DNS-Format ein, wie beispielsweise: **Explizit**: com.[Domaenenname].[App-Name] **Platzhalter**:com.[Domaenenname].*
@@ -150,13 +149,11 @@ Ihre Anwendung kann mithilfe einer Vielzahl verschiedener Methoden sicher vertei
 
 Um Ihre Anwendung auf eine der folgenden Weisen zu verteilen, müssen Sie, wie im nächsten Abschnitt erläutert wird, zuerst eine IPA-Datei erstellen.
 
-
 ### <a name="creating-an-ipa-for-in-house-deployment"></a>Erstellen einer IPA für die interne Bereitstellung
 
 Nach der Bereitstellung können Anwendungen in eine Datei namens *IPA* verpackt werden. Dies ist eine ZIP-Datei, die die Anwendung zusammen mit zusätzlichen Metadaten und Symbolen enthält. IPA wird verwendet, um eine Anwendung lokal in iTunes hinzuzufügen, sodass sie direkt auf einem Gerät synchronisiert werden kann, das im Bereitstellungsprofil enthalten ist.
 
 Weitere Informationen zum Erstellen einer IPA finden Sie im Leitfaden [IPA-Support](~/ios/deploy-test/app-distribution/ipa-support.md).
-
 
 ## <a name="summary"></a>Zusammenfassung
 

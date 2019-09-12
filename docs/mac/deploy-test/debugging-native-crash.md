@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: bb33d9f85dfc1215e91caa20fab3800645e13111
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7340df1d65768363f39c6f080a5d50e2ac250400
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282184"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769882"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Debuggen eines nativen Absturzes in einer Xamarin.Mac-App
 
@@ -251,4 +251,3 @@ Sie dürfen niemals zulassen, dass eine C#-Ausnahme einen Escapevorgang für ver
 Ohne sich allzu sehr mit den technischen Gründen zu verzetteln, ist die Einrichtung der Infrastruktur zum Abfangen von Ausnahmen bei verwaltetem Code an jeder verwalteten/nativen Grenze aufwändig und es gibt _viele_ Übergänge, die in vielen gemeinsamen Vorgängen vorkommen. Viele Vorgänge, insbesondere solche, die mit dem UI-Thread zu tun haben, müssen schnell beendet werden, weil sonst Ihre Anwendung ins Stocken gerät und unakzeptable Leistungsmerkmale aufweist. Viele dieser Rückrufe machen sehr einfache Dinge, die selten die Möglichkeit des Auslösens von Ausnahmen bieten, weshalb dieser Mehraufwand in diesen Fällen sowohl teuer als auch unnötig wäre.
 
 Deshalb richten wir diese Try/-Catch-Anweisungen nicht für Sie ein. Für Stellen, an denen Ihr Code wichtige Aufgaben erledigt (was über die Rückgabe boolescher Werte oder einfache Berechnungen hinausgeht), können Sie versuchen, selbst mit Try/Catch-Blöcken zu arbeiten. 
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289790"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771268"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Einführung in Xamarin.Forms-Steuerelementvorlagen
 
@@ -51,7 +51,6 @@ Die Entscheidung, wo Sie eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemp
 - Eine auf Anwendungsebene definierte [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Instanz können Sie für alle Seiten der Anwendung nutzen.
 
 Steuerelementvorlagen, die weiter unten in der Hierarchie der Ansichten angeordnet sind, haben Vorrang vor denjenigen, die sich weiter oben befinden. So hat z. B. eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse namens `DarkTheme`, die auf Seitenebene definiert ist, Vorrang gegenüber einer identisch benannten Vorlage auf Anwendungsebene. Deshalb sollte eine Steuerelementvorlage, mit der ein Design auf jede Seite einer Anwendung angewendet werden soll, auf Anwendungsebene definiert sein.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

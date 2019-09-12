@@ -7,17 +7,16 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6a4ea3950b9657e4e04c6465cc0a64ac3c1d266c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2a5f8f6f2feda1ab27c874d8281483e9e26f0855
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291558"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770140"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Anwendungssymbol für Xamarin.Mac-Apps
 
 _In diesem Artikel wird beschrieben, wie Sie die für das Anwendungssymbol einer Xamarin.Mac-Anwendung erforderlichen Bilder erstellen, wie Sie diese Bilder in eine ICNS-Datei bündeln, und wie Sie das Symbol zu dem Xamarin.Mac-Projekt hinzufügen._
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -27,11 +26,9 @@ Ein aussagekräftiges Symbol sollte den Hauptzweck der Xamarin.Mac-App darstelle
 
 ![Der AppIcons.appiconset-Editor](app-icon-images/intro01.png "Der AppIcons.appiconset-Editor")
 
-
 ## <a name="application-icon"></a>Anwendungssymbol
 
 Ein aussagekräftiges Symbol sollte den Hauptzweck einer Xamarin.Mac-App darstellen und auf Funktionen hindeuten, die ein Benutzer von der Anwendung erwarten kann. Für jede macOS-App muss das Symbol in mehreren Größen verfügbar sein, in denen es in der Suchleiste, im Dock, im Launchpad und an anderen Stellen auf dem Computer angezeigt wird.
-
 
 ## <a name="designing-the-icon"></a>Entwerfen des Symbols
 
@@ -48,7 +45,6 @@ Apple gibt folgende Tipps zum Entwerfen von Anwendungssymbolen:
 - Verwenden Sie in Ihren Symbolen keine Replikate von Apple-Symbolen.
 
 Lesen Sie die Abschnitte [App Icon Gallery (Galerie der Anwendungssymbole)](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Gallery.html#//apple_ref/doc/uid/20000957-CH88-SW1) und [Designing App Icons (Entwerfen von Anwendungssymbolen)](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Designing.html#//apple_ref/doc/uid/20000957-CH87-SW1) in den [OS X Human Interface Guidelines (Eingaberichtlinien für OS X)](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) von Apple, bevor Sie ein Anwendungssymbol für eine Xamarin.Mac-App entwerfen.
-
 
 ## <a name="required-image-sizes-and-filenames"></a>Erforderliche Bildgrößen und Dateinamen
 
@@ -76,7 +72,6 @@ Um sicherzustellen, dass das Symbol überall, wo es der Benutzer sehen kann, gut
 
 Weitere Informationen finden Sie unter [Provide High-Resolution Versions of All App Graphics Resources (Erstellen von Versionen in hoher Auflösung für alle Grafikressourcen einer App)](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html#//apple_ref/doc/uid/TP40012302-CH7-SW3) in der Apple-Dokumentation.
 
-
 ## <a name="packaging-the-icon-resources"></a>Packen der Symbolressourcen
 
 Nachdem Sie das Symbol entworfen und mit den erforderlichen Dateigrößen und -namen gespeichert haben, können Sie die Dateien mithilfe von Visual Studio für Mac ganz einfach den Bildressourcen zur Verwendung mit Xamarin.Mac zuweisen.
@@ -90,7 +85,6 @@ Führen Sie folgende Schritte aus:
 
     [![Auswählen eines Symbolbilds](app-icon-images/intro02.png "Selecting an icon image")](app-icon-images/intro02-large.png#lightbox)
 3. Speichern Sie die Änderungen.
-
 
 ## <a name="using-the-icon"></a>Verwenden des Symbols
 
@@ -108,11 +102,9 @@ Wenn die App ausgeführt wird, wird das neue Symbol im Dock angezeigt:
 
 ![Beispiel eines App-Symbols im macOS-Dock](app-icon-images/icon04.png "An example of an app icon in the macOS dock")
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die Arbeit mit zum Erstellen von App-Symbolen für macOS benötigten Bildern und das Komprimieren von Symbolen, einschließlich Symbolen in einem Xamarin.Mac-Projekt, detailliert beschrieben.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

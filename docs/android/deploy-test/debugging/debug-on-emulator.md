@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 133550bab03c4d2e3826ea59cf231ac3d85f29cc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 761b1a8b2c3fd97ca3f1560b79b042e0fd89da92
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525652"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754185"
 ---
 # <a name="debugging-on-the-android-emulator"></a>Debuggen auf dem Android-Emulator
 
@@ -21,7 +21,6 @@ _In diesem Leitfaden erfahren Sie, wie Sie ein virtuelles Gerät im Android-Emul
 ## <a name="overview"></a>Übersicht
 
 Der Android-Emulator wird zusammen mit der Workload **Mobile-Entwicklung mit .NET** installiert und kann mit vielen verschiedenen Konfigurationen verwendet werden, wodurch sich unterschiedliche Android-Geräte simulieren lassen. Jede dieser Konfigurationen wird als _virtuelles Gerät_ erstellt. In diesem Leitfaden erfahren Sie, wie Sie den Emulator in Visual Studio starten und die App auf einem virtuellen Gerät ausführen. Informationen zum Konfigurieren des Android-Emulators und Erstellen von neuen virtuellen Geräten finden Sie unter [Android Emulator Setup (Einrichten des Android-Emulators)](~/android/get-started/installation/android-emulator/index.md).
-
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Verwenden eines vorkonfigurierten virtuellen Geräts
 
@@ -65,7 +64,6 @@ Visual Studio für Mac enthält vorkonfigurierte virtuelle Geräte, die im Dropd
 ## <a name="editing-virtual-devices"></a>Bearbeiten virtueller Geräte
 
 Sie müssen [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) verwenden, um virtuelle Geräte zu bearbeiten (oder neue zu erstellen).
-
 
 <a name="launching" />
 
@@ -113,11 +111,9 @@ Aufeinanderfolgende Startvorgänge von virtuellen Geräten sind deutlich schnell
 
 ![Ladezustand beim Neustart](debug-on-emulator-images/loading-state.png)
 
-
 ## <a name="troubleshooting"></a>Problembehandlung
 
 Tipps und Hinweise zur Umgehung häufiger Emulatorprobleme finden Sie unter [Android Emulator Troubleshooting (Android-Emulator-Problembehandlung](~/android/get-started/installation/android-emulator/troubleshooting.md).
-
 
 ## <a name="summary"></a>Zusammenfassung
 

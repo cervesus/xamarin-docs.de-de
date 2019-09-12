@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 94a10213f8ae42d6e8f3407b18051021d92be5bc
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 5fda0b78a80a25d122fbc58ef61fbeab22a547a0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978563"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771347"
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen über Effekte
 
@@ -52,7 +52,7 @@ Aus diesem Grund implementiert der in diesem Artikel beschriebene Touchverfolgun
 
 ## <a name="the-touch-tracking-effect-api"></a>Die API für den Touchverfolgungseffekt
 
-Die [**Touch Tracking Effect Demos (Demos zum Touchverfolgungseffekt)** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) umfassen die Klassen (und eine Enumeration), die die umfassende Touchverfolgung implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen mit dem Wort `Touch`. Das **TouchTrackingEffectDemos**-Projekt für eine .NET Standard-Bibliothek umfasst die `TouchActionType`-Enumeration für den Touchereignistyp:
+Die [**Touch Tracking Effect Demos (Demos zum Touchverfolgungseffekt)**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) umfassen die Klassen (und eine Enumeration), die die umfassende Touchverfolgung implementieren. Diese Typen gehören zum Namespace `TouchTracking` und beginnen mit dem Wort `Touch`. Das **TouchTrackingEffectDemos**-Projekt für eine .NET Standard-Bibliothek umfasst die `TouchActionType`-Enumeration für den Touchereignistyp:
 
 ```csharp
 public enum TouchActionType
@@ -803,7 +803,6 @@ Wenn Sie Ihren Finger über die Tasten gleiten lassen, sehen Sie anhand der mini
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie Sie Ereignisse in einem Effekt auslösen können und wie Sie einen Effekt schreiben und verwenden können, der eine umfassende Multitouchverarbeitung implementiert.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

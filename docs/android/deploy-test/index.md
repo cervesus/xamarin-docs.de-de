@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 86447c2338b8dd43e37170fa547883e47cbf6b4c
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: ff2b481fda34bc7a75c88c72a5e30f00c4b70d9d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754012"
 ---
 # <a name="deployment-and-testing"></a>Bereitstellung und Testen
 
 Dieser Abschnitt umfasst Leitfäden, in denen erklärt wird, wie Sie eine Anwendung testen, ihre Leistung optimieren, sie auf die Veröffentlichung vorbereiten, sie mit einem Zertifikat signieren und in einem App Store veröffentlichen.
-
 
 ## <a name="application-package-sizesapp-package-sizemd"></a>[Application Package Sizes (Anwendungspaketgrößen)](app-package-size.md)
 
@@ -62,7 +61,6 @@ Es gibt viele Techniken zum Verbessern der Leistung von Anwendungen, die mit Xam
 ## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[Profiling Android Apps (Profilerstellung für Android-Apps)](~/android/deploy-test/profiling.md)
 
 In diesem Leitfaden wird erklärt, wie Profilerstellungstools zum Untersuchen der Leistung und Arbeitsspeicherauslastung einer Android-App verwendet werden.
-
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)](~/android/deploy-test/release-prep/index.md)
 

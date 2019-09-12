@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 5a6f950ec7c9af0422beeb2d1af2be602fcaf947
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9ef13816dc1bc11eab0105ec223c2ef98366e4e5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113806"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754004"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Installieren von Xamarin.Android als System-App
 
@@ -54,12 +54,9 @@ Die folgenden Schritte beschreiben, wie eine Xamarin.Android-App als System-App 
 
 4. **Kopieren der APK-Datei nach /system/app** &ndash; Der letzte Schritt ist, die APK-Datei in den **/system/app**-Ordner auf dem ROM zu kopieren.
 
-
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Leitfaden wurden die Unterschiede zwischen einer _System-App_ und einer _Benutzer-App_ erläutert, und es wurde erklärt, wie eine Xamarin.Android-Anwendung als System-App installiert werden kann.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

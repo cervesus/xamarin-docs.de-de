@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: c7b31e05a5b9d75559fae14f467312f5abc8fe94
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a261d1fc86fac16cf48575616359b083daebf47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289812"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756544"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Übersicht über die Xamarin.iOS-App-Verteilung
 
@@ -20,9 +20,7 @@ _Dieser Artikel bietet eine Übersicht über Verteilungstechniken, die für Xama
 
 Nach der Entwicklung der Xamarin.iOS-App ist der nächste Schritt im Lebenszyklus der Softwareentwicklung die Verteilung der App an Benutzer. Dieser Vorgang wird im folgenden Diagramm abgebildet:
 
-
 [![](images/publishingdiagram.png "Nachdem die iOS-App entwickelt wurde, muss die App im nächsten Schritt an die Benutzer verteilt werden. Dies zeigt der markierte Bereich im Diagramm")](images/publishingdiagram.png#lightbox)
-
 
 Apple bietet zum Verteilen einer iOS-Anwendung mehrere Möglichkeiten, die von Xamarin.iOS unterstützt werden:
 

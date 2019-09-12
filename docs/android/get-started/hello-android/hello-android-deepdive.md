@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 2595ff23dcc0688c141f943d4ea61e13c970b7aa
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509576"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756722"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: Ausführliche Erläuterungen
 
@@ -116,7 +116,6 @@ Diese Elemente werden in der folgenden Tabelle zusammengefasst:
 - **drawable**: Die Verzeichnisse „drawable“ enthalten [drawable resources (zeichenbare Ressourcen)](https://developer.android.com/guide/topics/resources/drawable-resource.html) wie Bilder und Bitmaps.
 
 - **mipmap** &ndash; Das mipmap-Verzeichnis enthält zeichenbare Dateien für verschiedene Dichten von Startprogrammsymbolen. In der Standardvorlage enthält das Verzeichnis „drawable“ die Anwendungssymboldatei, **Icon.png**.
-
 
 ::: zone pivot="windows"
 

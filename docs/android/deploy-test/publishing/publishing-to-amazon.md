@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 430f4fedc8e988c89826e3ae023fc25b7b798727
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 818b6afef395b081768f8bdd6538d5a8ecbad178
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525337"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753740"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Veröffentlichen im Amazon App Store
 
@@ -20,7 +20,6 @@ Mit dem Verteilungsprogramm für mobile Apps von Amazon können Entwickler mobil
 [![Amazon Appstore-Bildschirm](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon schränkt die Größe von APKs nicht ein. Wenn ein APK jedoch größer als 30 MB ist, wird FTP statt des Amazon Mobile App-Distributionsportals zur Verteilung verwendet.
-
 
 ## <a name="submitting-apps-binary-info"></a>Übermitteln von Apps: Binäre Informationen
 
@@ -31,8 +30,6 @@ Das Verfahren zum Übermitteln von Anwendungen an den Amazon Appstore entspricht
 - **Screenshots**: Bei Amazon sind mindestens drei und maximal 10 Screenshots erforderlich. Die Screenshots müssen 1024 x 600 Pixel oder 800 x 480 Pixel aufweisen. Es sind sowohl PNG- als auch JPG-Formate zulässig.
 - **Werbebild**: Es kann optional ein Werbebild übermittelt werden, damit eine Anwendung bei Werbeplatzierungen z.B. auf der Startseite vorgestellt werden kann. Dabei muss es sich um eine PNG- oder eine JPG-Datei im Querformat mit 1024 x 500 Pixeln handeln. Animationen sind nicht zulässig.
 - Es können Updates auf fünf Videos bereitgestellt werden.
-
-
 
 ## <a name="approval-process"></a>Genehmigungsprozess
 

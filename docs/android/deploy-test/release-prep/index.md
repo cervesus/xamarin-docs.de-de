@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b3e34022af4e83b172b7ae7cedfb13e95e92beba
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119630"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756116"
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -92,7 +92,6 @@ Diese Werte können über den Bereich **Erstellen > Android-Anwendung** der **Pr
 ## <a name="shrink-the-apk"></a>Verkleinern der APK
 
 Xamarin.Android-APKs können durch eine Kombination des Linkers Xamarin.Android zum Entfernen von unnötigem *verwalteten* Code sowie des Tools *ProGuard* aus dem Android SDK zum Entfernen von nicht verwendetem *Java-Bytecode* verkleinert werden. Vom Erstellungsprozess wird zuerst der Linker Xamarin.Android zum Optimieren der App auf Ebene des verwalteten Codes (C#) und anschließend ProGuard (sofern aktiviert) zum Optimieren der APK auf Java-Bytecode-Ebene verwendet.
-
 
 ### <a name="configure-the-linker"></a>Konfigurieren des Linkers
 
@@ -229,7 +228,6 @@ Um die Option **AOT-Kompilierung** ausführen zu können, müssen Sie mindestens
 
 Der _LLVM-Optimierungscompiler_ erstellt kürzeren und schneller kompilierbaren Code und konvertiert AOT-kompatible Assemblys in nativen Code. Dies führt jedoch zu erhöhten Buildzeiten. Der LLVM-Compiler ist standardmäßig deaktiviert. Um den LLVM-Compiler nutzen zu können, muss zunächst auf der Seite [Verpackungseigenschaften](#Set_Packaging_Properties) die Option **AOT-Kompilierung** aktiviert werden.
 
-
 > [!NOTE]
 > Für die Option **LLVM-Optimierungscompiler** ist eine Enterprise-Lizenz erforderlich.  
 
@@ -364,7 +362,6 @@ In diesem Beispiel wird im **Archiv-Manager** nur eine archivierte Anwendung auf
 Hier können Sie den Vertriebskanal auswählen:
 
 - **Ad-Hoc** &ndash; Es wird ein signiertes APK auf dem Datenträger gespeichert, damit es auf Android-Geräte quergeladen werden kann. Fahren Sie mit dem Artikel [Signing the App Package (Signieren des App-Pakets)](~/android/deploy-test/signing/index.md) fort, um zu erfahren, wie eine Android-Signierungsidentität und ein neues Signaturzertifikat für Android-Anwendungen erstellt und eine &ldquo;Ad-Hoc&rdquo;-Version der App auf dem Datenträger veröffentlicht werden kann. Dies ist eine gute Möglichkeit, ein APK für Testzwecke zu erstellen.
-
 
 - **Google Play**: veröffentlicht ein signiertes APK bei Google Play.
     Fahren Sie mit dem Artikel [Publishing to Google Play (Veröffentlichen in Google Play)](~/android/deploy-test/publishing/publishing-to-google-play/index.md) fort, um zu erfahren, wie Sie ein APK im Google Play Store signieren und veröffentlichen können.

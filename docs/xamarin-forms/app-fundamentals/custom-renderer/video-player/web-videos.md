@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 9beff615c39fc34b5a58a93d309bb20543cad77f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 107b2a970041c70bb021b03dd98f8c91eaea8d34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650415"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771761"
 ---
 # <a name="playing-a-web-video"></a>Wiedergeben eines Webvideos
 
@@ -518,10 +518,6 @@ Sie können die explizite URL in der Datei **PlayWebVideo.xaml** durch eine `Sta
 ```
 
 Alternativ können Sie die `Source`-Eigenschaft einer Videodatei wie im nächsten Artikel ([Binding Video Sources to the Player (Binden von Videoquellen an den Player)](source-bindings.md)) beschrieben in einem `ListView`-Element festlegen.
-
-
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

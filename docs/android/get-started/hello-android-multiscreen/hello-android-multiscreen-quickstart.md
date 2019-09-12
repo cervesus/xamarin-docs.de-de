@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: aab10d434461521825fd633369ffa3c6331e905b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d1a4d73242e9701ff9ffcfc58791986bca89a095
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643967"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755850"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen): Schnellstart
 
@@ -78,7 +78,7 @@ Wenn Sie auf der Designoberfläche auf die Schaltfläche **Übersetzungsverlauf*
 
 ### <a name="creating-the-second-activity"></a>Erstellen der zweiten Aktivität
 
-Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neues Element…** :
+Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neues Element…**:
 
 [![Hinzufügen einer neuen Datei](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
@@ -216,14 +216,13 @@ Der Schaltflächentext für **Übersetzungsverlauf** sollte aktualisiert werden,
 
 [![Schaltfläche mit übernommenem neuen Zeichenfolgenwert](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
 
-
 Klicken Sie auf der Designoberfläche die Schaltfläche **Übersetzungsverlauf** an, öffnen Sie die Registerkarte **Verhalten** im **Eigenschaftenpad**, und deaktivieren Sie die Schaltfläche mit einem Doppelklick auf das Kontrollkästchen **Aktiviert**. Dadurch wird die Schaltfläche in der Designoberfläche dunkler:
 
 [![Deaktivieren der Schaltfläche „Übersetzungsverlauf“](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>Erstellen der zweiten Aktivität
 
-Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Lösungspad** auf das graue Zahnradsymbol neben dem Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neue Datei...** :
+Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Lösungspad** auf das graue Zahnradsymbol neben dem Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neue Datei...**:
 
 Klicken Sie im Dialogfeld **Neue Datei** auf **Android > Aktivität**, nennen Sie die Aktivität `TranslationHistoryActivity`, und klicken Sie anschließend auf **Hinzufügen**.
 

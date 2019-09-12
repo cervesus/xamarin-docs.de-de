@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 129ba01a41f9e5f58802c4d4da65d1662a103adc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281183"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770120"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Bündeln für den Mac App Store
 
@@ -42,7 +42,6 @@ Stellen Sie vor dem Erstellen der App sicher, dass Sie die Konfiguration **Relea
 Wenn die Anwendung erstellt wurde, kann der Entwickler mit der rechten Maustaste auf das Projekt klicken und **Open Containing Folder** (enthaltenen Ordner öffnen) auswählen, um die Paketdatei (im Verzeichnis `bin/x86/AppStore` wie im Beispiel unten) zu finden.  Diese Paketdatei beinhaltet einen Installer für die App, der an Apple zur Aufnahme in den Mac App Store übermittelt werden kann.
 
  ![Auswählen des Buildpakets im Finder](bundling-images/image64.png "Selecting the build package in Finder")
-
 
 ## <a name="related-links"></a>Verwandte Links
 

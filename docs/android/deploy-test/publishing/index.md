@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b5f09413379de13aaf12e8113e8deb0f3c2bf0c3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525461"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753807"
 ---
 # <a name="publishing-an-application"></a>Veröffentlichen einer Anwendung
 
 Wenn Sie eine praktische App erstellt haben, will diese auch benutzt werden. In diesem Abschnitt werden die Schritte erläutert, die mit der öffentlichen Verteilung einer App über verschiedene Kanäle einhergehen, die mit Xamarin.Android erstellt wurde. Zu diesen Kanälen zählen z.B. E-Mails, ein privater Webserver, Google Play oder der Amazon Appstore.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -36,7 +35,6 @@ Wie Sie im oben stehenden Diagramm erkennen können, unterscheidet sich die Vorb
 - **Über eine E-Mail**: Benutzer können eine Xamarin.Android-Anwendung über Ihre E-Mail installieren. Die Anwendung wird installiert, wenn der Anhang mit einem Android-Gerät geöffnet wird.
 - **Über einen Marketplace**: Es gibt mehrere Anwendungsmarketplaces, die der Verteilung dienen, wie z.B. [Google Play](http://play.google.com/) oder der [Amazon Appstore für Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
 
-
 Ein etablierten Marketplace ist die am häufigsten gewählte Methode zur Verteilung einer Anwendung, da so die weiteste Reichweite und die höchstmögliche Kontrolle über die Verteilung erreicht wird. Die Veröffentlichung einer Anwendung auf einem Marketplace geht jedoch mit einem Mehraufwand einher.
 
 Eine Xamarin.Android-Anwendung kann gleichzeitig über mehrere Kanäle verteilt werden. Eine Anwendung kann beispielsweise in Google Play und dem Amazon Appstore für Android veröffentlicht sowie über einen Webserver heruntergeladen werden.
@@ -51,7 +49,6 @@ Google Play ist einer der umfassendsten und beliebtesten Marketplaces für Andro
 [![Screenshot von Google Play](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 In diesem Abschnitt wurde gezeigt, wie die Anwendung in einem Store wie Google Play zusammen mit passenden Werbematerialien hochgeladen werden kann. Es wurden allgemeine Informationen zu APK-Erweiterungsdateien und eine Übersicht über deren Funktionsweise zur Verfügung gestellt. Außerdem wurden die Google-Lizenzierungsdienste beschrieben. Zum Schluss wurden alternative Verteilungsmethoden wie u.a. die Verwendung eines HTTP-Webservers, die einfache Verteilung per E-Mail und der Amazon App Store für Android dargestellt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

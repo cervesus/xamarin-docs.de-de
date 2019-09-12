@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ef3ba27b9056e1de92aabb87f86416b2985d6e1d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525708"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754224"
 ---
 # <a name="android-debug-log"></a>Android-Debugprotokoll
 
@@ -29,7 +29,6 @@ Das **Debugprotokolltool** bietet die Möglichkeit, während des Debuggens einer
 > Das **Debugprotokolltool** funktioniert nicht mit dem Xamarin Live Player.
 
 Das **Debugprotokoll** zeigt keine Protokollmeldungen an, die generiert werden, während die App eigenständig auf dem Gerät ausgeführt wird (z.B. während es von Visual Studio getrennt ist).
-
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Zugreifen auf das Debugprotokoll von Visual Studio
 
@@ -60,13 +59,11 @@ Der folgende Screenshot veranschaulicht die verschiedenen Teile des **Debugtoolf
 
 - **Suchfeld** &ndash; Geben Sie Suchzeichenfolgen in dieses Feld ein, um nach einer Teilmenge von Protokolleinträgen zu filtern.
 
-
 Wenn das **Debugprotokoll**-Toolfenster angezeigt wird, verwenden Sie das Pulldownmenü des Geräts, um das Android-Gerät auszuwählen, das überwacht werden soll.
 
 [![Position der Geräteauswahl](android-debug-log-images/vswin-02-devices-combo-sml.png)](android-debug-log-images/vswin-02-devices-combo.png#lightbox)
 
 Nachdem Sie das Gerät ausgewählt haben, fügt das **Geräteprotokoll** automatisch Protokolleinträge aus einer ausgeführten App hinzu. Diese Protokolleinträge werden in der Tabelle für Protokolleinträge angezeigt. Wenn Sie zwischen Geräten wechseln, wird die Geräteprotokollierung abgebrochen und erneut gestartet. Beachten Sie, dass ein Android-Projekt geladen werden muss, bevor Geräte in der Geräteauswahl angezeigt werden. Wenn das Gerät nicht in der Geräteauswahl angezeigt wird, sollten Sie überprüfen, ob es im Geräte-Dropdownmenü von Visual Studio neben der Schaltfläche **Start** verfügbar ist.
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -104,7 +101,6 @@ Nachdem Sie das Gerät ausgewählt haben, fügt das **Geräteprotokoll** automat
 
 -----
 
-
 ## <a name="accessing-from-the-command-line"></a>Zugreifen über die Befehlszeile
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -129,11 +125,9 @@ $ ./adb logcat
 
 -----
 
-
 Wenn mehrere Geräte angefügt sind, muss das Gerät explizit identifiziert werden. Beispiel: **adb -d logcat** zeigt das Protokoll des einzigen angefügten physischen Geräts an, während **adb -e logcat** das Protokoll des einzigen ausgeführten Emulators anzeigt.
 
 Weitere Befehle können gefunden werden, indem **adb** eingegeben wird oder die Hilfemeldungen durchgelesen werden.
-
 
 ## <a name="writing-to-the-debug-log"></a>Schreiben in das Debugprotokoll
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 9c6edddd70fa7a74a72857a94dbed613b5b0d66d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7d442d14589b35632bce2b6caec09235138ec585
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657148"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771626"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Die Befehlsschnittstelle in Xamarin.Forms
 
@@ -338,7 +338,6 @@ Die `Command`-Klasse implementiert nicht nur die `ICommand`-Schnittstelle, sonde
 Wenn die `execute`-Methode von `NewCommand` `RefreshCanExecutes` aufruft, erhält die `NewCommand`-Eigenschaft einen Aufruf von `ChangeCanExecute`, und `Button` ruft die `canExecute`-Methode auf, die nun `false` zurückgibt, da die `IsEditing`-Eigenschaft nun den Wert `true` aufweist.
 
 Der `PropertyChanged`-Handler für das neue `PersonViewModel`-Objekt ruft die `ChangeCanExecute`-Methode von `SubmitCommand` auf. Hier sehen Sie, wie diese Befehlseigenschaft implementiert wird:
-
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged

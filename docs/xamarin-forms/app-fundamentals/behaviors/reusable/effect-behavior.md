@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 38ecd765b1c6bc81054b2c42426b6c15bb99b9d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ca03dce3bd39664a07b7bf56d22d7c2e000e931f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650986"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771995"
 ---
 # <a name="reusable-effectbehavior"></a>Wiederverwendbare EffectBehavior-Klasse
 
@@ -164,7 +164,6 @@ Der Vorteil dieses Verhaltens zum Hinzufügen und Entfernen von Effekten bei Ste
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde veranschaulicht, wie einem Steuerelement mithilfe eines Verhaltens ein Effekt hinzugefügt werden kann. Die `EffectBehavior`-Klasse ist ein wiederverwendbares benutzerdefiniertes Xamarin.Forms-Verhalten, das einem Steuerelement eine [`Effect`](xref:Xamarin.Forms.Effect)-Instanz anfügt, wenn das Verhalten dem Steuerelement angefügt wird, und sie entfernt die `Effect`-Klasse, wenn das Verhalten vom Steuerelement abgetrennt wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

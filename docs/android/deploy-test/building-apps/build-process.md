@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 84910bd499aa6894d86778a9bc4eb1467f063134
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: c331747677ee56f87458f51ef36a9bb2034beab1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225740"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754259"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -44,7 +44,6 @@ Die *schnelle Bereitstellung* arbeitet mit der Shared Runtime zusammen, um die G
 Es ist bekannt, dass die schnelle Bereitstellung auf Geräten fehlschlägt, die die Synchronisierung von `adb` mit dem Verzeichnis `/data/data/@PACKAGE_NAME@/files/.__override__` blockieren.
 
 Die schnelle Bereitstellung ist standardmäßig aktiviert und kann in Debugbuilds deaktiviert werden, indem die `$(EmbedAssembliesIntoApk)`-Eigenschaft auf `True` festgelegt wird.
-
 
 ## <a name="msbuild-projects"></a>MSBuild-Projekte
 
@@ -128,7 +127,6 @@ Installationseigenschaften steuern das Verhalten der `Install`- und `Uninstall`-
   # Use `/Library/Frameworks/Mono.framework/Commands/msbuild` on OS X
   MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
   ```
-
 
 ### <a name="packaging-properties"></a>Paketeigenschaften
 
@@ -526,10 +524,9 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   - **Other:** Andere Codierungen werden einbezogen, z.B. *Kyrillisch (Windows)* \[CP1251\], *Baltisch (Windows)* \[iso-8859-4, CP1257\], *Vietnamesisch (Windows)* \[CP1258\], *Kyrillisch (KOI8-R)* \[koi8-r, CP1251\], *Ukrainisch (KOI8-U)* \[koi8-u, CP1251\], *Baltisch (ISO)* \[iso-8859-4, CP1257\], *Kyrillisch (ISO)* \[iso-8859-5, CP1251\], *ISCII Devanagari* \[x-iscii-de, CP57002\], *ISCII Bangla* \[x-iscii-be, CP57003\], *ISCII Tamil* \[x-iscii-ta, CP57004\], *ISCII Telugu* \[x-iscii-te, CP57005\], *ISCII Assamesisch* \[x-iscii-as, CP57006\], *ISCII Odia* \[x-iscii-or, CP57007\], *ISCII Kannada* \[x-iscii-ka, CP57008\], *ISCII Malayalam* \[x-iscii-ma, CP57009\], *ISCII Gujarati* \[x-iscii-gu, CP57010\], *ISCII Punjabi* \[x-iscii-pa, CP57011\] und *Thailändisch (Windows)* \[CP874\].
 
-  - **Rare:** Seltene Codierungen werden einbezogen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\] *, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
+  - **Rare:** Seltene Codierungen werden einbezogen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\]*, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
 
   - **West:** Westliche Codierungen werden einbezogen, z.B. *Westeuropäisch (Mac)* \[macintosh, CP10000\], *Isländisch (Mac)* \[x-mac-icelandic, CP10079\], *Zentraleuropäisch (Windows)* \[iso-8859-2, CP1250\], *Westeuropäisch (Windows)* \[iso-8859-1, CP1252\], *Griechisch (Windows)* \[iso-8859-7, CP1253\], *Zentraleuropäisch (ISO)* \[iso-8859-2, CP28592\], *Lateinisch 3 (ISO)* \[iso-8859-3, CP28593\], *Griechisch (ISO)* \[iso-8859-7, CP28597\], *Lateinisch 9 (ISO)* \[iso-8859-15, CP28605\], *OEM USA* \[CP437\], *Westeuropäisch (DOS)* \[CP850\], *Portugiesisch (DOS)* \[CP860\], *Isländisch (DOS)* \[CP861\], *Französisch, Kanada (DOS)* \[CP863\] und *Nordisch (DOS)* \[CP865\].
-
 
   ```xml
   <MandroidI18n>West</MandroidI18n>
@@ -548,7 +545,6 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
 - **AndroidClassParser** &ndash; Eine Zeichenfolgeneigenschaft, die steuert, wie `.jar`-Dateien analysiert werden. Mögliche Werte:
 
   - **class-parse:** `class-parse.exe` wird verwendet, um Java-Bytecode direkt (ohne Unterstützung durch eine JVM) zu analysieren. Dieser Wert ist experimentell.
-
 
   - **jar2xml:** `jar2xml.jar` wird verwendet, um Java-Reflektion zu verwenden, um Typen und Member aus einer `.jar`-Datei zu extrahieren.
 
@@ -579,7 +575,6 @@ Die folgenden MSBuild-Eigenschaften werden mit [Bindungsprojekten](~/android/pla
     - `jmethodID`-Zwischenspeicherung von durch Java aufrufbare Wrapperkonstruktoren für verwaltete Unterklassen.
 
     Der Standardwert ist `XAJavaInterop1`sein.
-
 
 ### <a name="resource-properties"></a>Ressourceneigenschaften
 
@@ -639,11 +634,11 @@ Standardmäßig generiert das Signaturziel bei Bedarf einen neuen Debugsignaturs
 
 - **AndroidSigningKeyAlias** &ndash; Gibt den Alias für den Schlüssel im Keystore an. Dies ist der Wert **keytool -alias**, der beim Erstellen des Keystore verwendet wird.
 
-- **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)** .
+- **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)**.
 
 - **AndroidSigningKeyStore** &ndash; Gibt den Dateinamen der von `keytool` erstellten Keystoredatei an. Dies entspricht dem Wert, der der Option **keytool -keystore** zur Verfügung gestellt wird.
 
-- **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:** .
+- **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:**.
 
 Betrachten Sie zum Beispiel den folgenden `keytool`-Aufruf:
 
@@ -680,13 +675,11 @@ Um den oben generierten Keystore zu verwenden, verwenden Sie die Eigenschaftengr
 
 *Buildaktionen* werden [auf Dateien](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items) im Projekt angewendet und steuern, wie die Datei verarbeitet wird.
 
-
 ### <a name="androidaarlibrary"></a>AndroidAarLibrary
 
 Die Buildaktion von `AndroidAarLibrary` sollte verwendet werden, um direkt auf AAR-Dateien zu verweisen. Diese Buildaktion wird am häufigsten von Xamarin-Komponenten verwendet. Sie wird insbesondere verwendet, um Verweise auf AAR-Dateien einzuschließen, die erforderlich sind, damit Google Play und andere Dienste funktionieren.
 
 Dateien mit dieser Buildaktion werden ähnlich behandelt wie die eingebetteten Ressourcen in Bibliotheksprojekten. Die AAR-Datei wird in das Zwischenverzeichnis extrahiert. Danach werden Objekte, Ressourcen und JAR-Dateien in die entsprechenden Elementgruppen eingefügt.
-
 
 ### <a name="androidboundlayout"></a>AndroidBoundLayout
 
@@ -696,7 +689,6 @@ Gibt an, dass für die Layoutdatei CodeBehind generiert werden soll, falls die E
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
 ```
 
-
 <a name="AndroidEnvironment" />
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
@@ -704,28 +696,23 @@ Gibt an, dass für die Layoutdatei CodeBehind generiert werden soll, falls die E
 Dateien mit einer Buildaktion von `AndroidEnvironment` werden verwendet, um [Umgebungsvariablen und Systemeigenschaften während des Prozessstarts zu initialisieren](~/android/deploy-test/environment.md).
 Die Buildaktion `AndroidEnvironment` kann auf mehrere Dateien angewendet werden. Diese werden in keiner bestimmten Reihenfolge ausgewertet (geben Sie daher nicht die gleiche Umgebungsvariable oder Systemeigenschaft in mehreren Dateien an).
 
-
 ### <a name="androidfragmenttype"></a>AndroidFragmentType
 
 Gibt den standardmäßig vollqualifizierten Typ an, der für alle `<fragment>`-Layoutelemente bei der Generierung des Layoutbindungscodes verwendet wird. Standardmäßig wird der Standard-Android-`Android.App.Fragment`-Typ verwendet.
-
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 Dateien mit einer Buildaktion von `AndroidJavaLibrary` sind Java-Archive (`.jar`-Dateien), die im endgültigen Android-Paket enthalten sein werden.
 
-
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 Dateien mit einer Buildaktion von `AndroidJavaSource` sind Java-Quellcode, der im endgültigen Android-Paket enthalten sein wird.
-
 
 ### <a name="androidlintconfig"></a>AndroidLintConfig
 
 Die Buildaktion „AndroidLintConfig“ sollte in Verbindung mit der `AndroidLintEnabled`-Buildeigenschaft verwendet werden. Dateien mit dieser Buildaktion werden zusammengeführt und an die Android-`lint`-Tools übergeben. Es sollten XML-Dateien sein, die Informationen darüber enthalten, welche Tests aktiviert bzw. deaktiviert werden sollen.
 
 Weitere Details finden Sie in der [Lint-Dokumentation](https://developer.android.com/studio/write/lint).
-
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -738,7 +725,6 @@ Beachten Sie Folgendes: Da Android mehrere ABIs (Application Binary Interfaces) 
 
 Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nativen Bibliothek verwendet, um die ABI anzugeben, die die Bibliothek als Ziel verwendet. Wenn Sie dem Build also `lib/armeabi-v7a/libfoo.so` hinzufügen, wird die ABI als `armeabi-v7a` „ermittelt“.
 
-
 #### <a name="item-attribute-name"></a>Elementattributname
 
 **Abi** &ndash; Gibt die ABI der nativen Bibliothek an.
@@ -750,7 +736,6 @@ Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nati
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
-
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -789,18 +774,15 @@ Fortgeschrittene Benutzer wünschen sich vielleicht, dass verschiedene Ressource
 </ItemGroup>
 ```
 
-
 ### <a name="content"></a>Inhalt
 
 Die normale `Content`-Buildaktion wird nicht unterstützt (da wir noch nicht herausgefunden haben, wie wir sie ohne einen möglicherweise kostspieligen ersten Ausführungsschritt unterstützen können).
 
 Ab Xamarin.Android 5.1 führt der Versuch, die `@(Content)`-Buildaktion zu verwenden, zu einer `XA0101`-Warnung.
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 Dateien mit einer *LinkDescription*-Buildaktion werden verwendet, um das [Verhalten des Linkers zu steuern](~/cross-platform/deploy-test/linker.md).
-
 
 <a name="ProguardConfiguration" />
 
@@ -809,7 +791,6 @@ Dateien mit einer *LinkDescription*-Buildaktion werden verwendet, um das [Verhal
 Dateien mit einer *ProguardConfiguration*-Buildaktion enthalten Optionen, mit denen das Verhalten von `proguard` gesteuert werden kann. Weitere Informationen zu dieser Buildaktion finden Sie unter [ProGuard](~/android/deploy-test/release-prep/proguard.md).
 
 Diese Dateien wird ignoriert, wenn die MSBuild-Eigenschaft `$(EnableProguard)` nicht den Wert `True` aufweist.
-
 
 ## <a name="target-definitions"></a>Zieldefinitionen
 

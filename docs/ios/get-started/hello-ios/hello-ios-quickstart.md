@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 45eda150b0cff9462cfe5f09be4b04ea64ec391d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5508636905acbb513aec4c6e065e9296293310d3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284563"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768676"
 ---
 # <a name="hello-ios--quickstart"></a>Schnellstart: Hallo, iOS
 
@@ -60,11 +60,11 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 
     ![](hello-ios-quickstart-images/image2new.png "Der Startbildschirm")
 
-    Klicken Sie auf dem Startbildschirm auf **Neues Projekt...** , um eine neue Xamarin.iOS-Projektmappe zu erstellen:
+    Klicken Sie auf dem Startbildschirm auf **Neues Projekt...**, um eine neue Xamarin.iOS-Projektmappe zu erstellen:
 
     ![](hello-ios-quickstart-images/image3new.png "iOS-Lösung")
 
-2. Im **Dialogfeld „Neue Projektmappe“** , wählen Sie die Vorlage **iOS > App > Single View Application** (iOS > App > Einzelansicht) aus, um sicherzustellen, dass C# ausgewählt ist. Klicken Sie auf **Weiter**:
+2. Im **Dialogfeld „Neue Projektmappe“**, wählen Sie die Vorlage **iOS > App > Single View Application** (iOS > App > Einzelansicht) aus, um sicherzustellen, dass C# ausgewählt ist. Klicken Sie auf **Weiter**:
 
     ![](hello-ios-quickstart-images/image4new.png "Einzelansicht-App wählen")
 
@@ -329,7 +329,6 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 
     ![](hello-ios-quickstart-images/vs-image14.png "Passen Sie die Breite so an, dass die Schaltfläche, das Textfeld und die Bezeichnung gleich breit sind")
 
-
 1. Nachdem Sie die **Schaltfläche** auf der Entwurfsoberfläche ausgewählt haben, ändern Sie die **Name**-Eigenschaft im **Identitäts**-Teil der **Eigenschaften** in `TranslateButton`. Ändern Sie die **Titel**-Eigenschaft in „Übersetzen“:
 
     ![](hello-ios-quickstart-images/vs-image15.png "Ändern Sie die Eigenschaft „Titel“ in „Übersetzen“")
@@ -424,7 +423,6 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie eine Anwendung 
 1. Doppelklicken Sie auf **ViewController.cs** im **Projektmappen-Explorer**, um ihn zu öffnen, damit den Handles-Interaktionen mit den Schaltflächen eine Logik hinzugefügt werden kann:
 
     ![](hello-ios-quickstart-images/vs-image20.png "Logik zum Behandeln von Interaktionen mit den Schaltflächen hinzugefügt")
-
 
 1. Verknüpfen Sie zunächst die `TranslateButton`. Wählen Sie in der **ViewController**-Klasse die `ViewDidLoad`-Methode aus. Fügen Sie den folgenden Schaltflächencode in `ViewDidLoad` unter dem `base.ViewDidLoad()`-Aufruf hinzu:
 

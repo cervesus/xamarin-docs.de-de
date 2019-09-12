@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: f31fd699aad95ff785ff887b2a2a8b6f2601ad7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290186"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765945"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
@@ -173,7 +173,6 @@ Das `handler`-Feld enthält den Verweis auf die anonyme Methode und dient zum Ab
 
 Mit der verzögerten Initialisierung kann die Erstellung eines Objekts bis zu seiner ersten Verwendung hinausgezögert werden. Diese Methode wird vorwiegend zur Steigerung der Leistung, der Vermeidung von Berechnungen und der Verringerung von Speicheranforderungen verwendet.
 
-
 Für Objekte mit hohen Erstellungskosten kann die verzögerte Initialisierung in diesen beiden Szenarios verwendet werden:
 
 - Wenn die Anwendung das Objekt möglicherweise nicht verwendet
@@ -246,8 +245,6 @@ Lang andauernde Vorgänge sollten auch einen Abbruch unterstützen. Es ist z.B. 
 
 > [!IMPORTANT]
 > Die `CancellationTokenSource`-Klasse implementiert die `IDisposable`-Schnittstelle. Die `CancellationTokenSource.Dispose`-Methode wird daher aufgerufen, sobald die `CancellationTokenSource`-Instanz abgeschlossen wurde.
-
-
 
 Weitere Informationen finden Sie unter [Async Support Overview (Übersicht über die asynchrone Unterstützung)](~/cross-platform/platform/async.md).
 

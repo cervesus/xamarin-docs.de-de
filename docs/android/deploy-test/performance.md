@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d7d6bf128d3814917633bdd69e3c9c54c8d6a20c
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 88e1acecdc96af596a0151bbd3f64dc4547d4cce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197504"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753819"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android-Leistung
 
@@ -34,7 +34,6 @@ Es gibt viele Techniken zum Verbessern der Leistung und der wahrnehmbaren Leistu
 - [Löschen von nicht verwendeten Bildressourcen](#disposeimages)
 - [Vermeiden der arithmetischen Gleitkommaoperatoren](#avoidfloats)
 - [Schließen von Dialogfeldern](#dismissdialogs)
-
 
 > [!NOTE]
 > Bevor Sie diesen Artikel lesen, sollten Sie zuerst den Artikel [Cross-Platform Performance (Plattformübergreifende Leistung)](~/cross-platform/deploy-test/memory-perf-best-practices.md) lesen, der nicht-plattformspezifische Methoden zur Verbesserung der Arbeitsspeicherauslastung und Leistung von Anwendungen beschreibt, die mit der Xamarin-Plattform erstellt wurden.
@@ -246,7 +245,6 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 Weitere Informationen zum Freigeben von Ressourcen, die gelöscht werden können, finden Sie unter [Freigeben von IDisposable-Ressourcen](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).  
 
-
 <a name="avoidfloats" />
 
 ## <a name="avoid-floating-point-arithmetic"></a>Vermeiden der arithmetischen Gleitkommaoperatoren
@@ -265,7 +263,6 @@ Rufen Sie bei Verwendung der [`ProgressDialog`](xref:Android.App.ProgressDialog)
 ## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel hat viele Techniken zum Verbessern der Leistung von Anwendungen, die mit Xamarin.Android erstellt wurden, beschrieben und erläutert. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

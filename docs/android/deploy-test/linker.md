@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e5f494c2f41500b660bf333e7c63f0120536f52a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525418"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753845"
 ---
 # <a name="linking-on-android"></a>Verknüpfung unter Android
 
@@ -25,8 +25,6 @@ Wie z.B. das [Hallo, Android](https://docs.microsoft.com/samples/xamarin/monodro
 |Release mit Verknüpfung:|4,2 MB|2,9 MB|
 
 Die Verknüpfung führt zu einem Paket, das 30 % der Größe des (nicht verknüpften) Originalpakets in 1.2.0 und 18 % der Größe des nicht verknüpften Pakets in 4.0.1 entspricht.
-
-
 
 ## <a name="control"></a>Steuerelement
 
@@ -50,7 +48,6 @@ public class MyActivity {
 }
 ```
 
-
 ### <a name="linker-behavior"></a>Linkerverhalten
 
 Der primäre Mechanismus für die Steuerung des Linkers ist das Dropdownmenü **Linkerverhalten** (*Verknüpfen* in Visual Studio) im Dialogfeld **Projektoptionen**. Es gibt drei Optionen:
@@ -58,7 +55,6 @@ Der primäre Mechanismus für die Steuerung des Linkers ist das Dropdownmenü **
 1. **Nicht verknüpfen** (*Keine* in Visual Studio)
 1. **SDK-Assemblys verknüpfen** (*nur SDK-Assemblys*)
 1. **Alle Assemblys verknüpfen** (*SDK- und Benutzerassemblys*)
-
 
 Die Option **Nicht verknüpfen** deaktiviert den Linker. Für die Größe der Anwendung „Release ohne Verknüpfen“ oben wurde dieses Verhalten verwendet. Dies ist für die Problembehandlung von Laufzeitfehlern nützlich, um zu sehen, ob der Linker dafür verantwortlich ist. Diese Einstellung wird in der Regel nicht für Produktionsbuilds empfohlen.
 
@@ -86,7 +82,6 @@ E/mono    (17755):   at LinkerScratch2.Activity1.OnCreate (Android.OS.Bundle bun
 E/mono    (17755):   at Android.App.Activity.n_OnCreate_Landroid_os_Bundle_ (IntPtr jnienv, IntPtr native__this, IntPtr native_savedInstanceState) [0x00000] in <filename unknown>:0
 E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-ca83a5d7a124 (intptr,intptr,intptr)
 ```
-
 
 ### <a name="preserving-code"></a>Beibehalten von Code
 
@@ -149,8 +144,6 @@ namespace Android.Runtime
 
 In den obigen Beispielen wird das Attribut `Preserve` im Namespace `Android.Runtime` deklariert. Sie können das Attribut `Preserve` aber in einem beliebigen Namespace verwenden, weil der Linker das Attribut anhand des Typnamens nachschlägt.
 
-
-
 ### <a name="falseflag"></a>falseflag
 
 Wenn das Attribut [Preserve] nicht verwendet werden kann, ist es oft sinnvoll, einen Codeblock bereitzustellen, sodass der Linker davon ausgeht, dass der Typ verwendet wird, und verhindert, dass der Codeblock zur Laufzeit ausgeführt wird. Gehen Sie folgendermaßen vor, um diese Methode zu nutzen:
@@ -173,8 +166,6 @@ class MyActivity {
 }
 ```
 
-
-
 ### <a name="linkskip"></a>linkskip
 
 Es ist möglich, anzugeben, dass mehrere vom Benutzer bereitgestellte Assemblys gar nicht verknüpft werden sollen, während gleichzeitig erlaubt wird, dass andere Benutzerassemblys mit dem *Link SDK Assemblies*-Verhalten (SDK-Assemblys verknüpfen) übersprungen werden, indem die [MSBuild-Eigenschaft „AndroidLinkSkip“](~/android/deploy-test/building-apps/build-process.md) verwendet wird:
@@ -185,14 +176,11 @@ Es ist möglich, anzugeben, dass mehrere vom Benutzer bereitgestellte Assemblys 
 </PropertyGroup>
 ```
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 Der [`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md)
 **Buildvorgang** kann für Dateien verwendet werden, die eine [benutzerdefinierte Linkerkonfigurationsdatei](~/cross-platform/deploy-test/linker.md) enthalten können.
 hinzu. Benutzerdefinierte Linkerkonfigurationsdateien können zum Beibehalten von `internal`- oder `private`-Membern erforderlich sein, die beibehalten werden müssen.
-
-
 
 ### <a name="custom-attributes"></a>Benutzerdefinierte Attribute
 
@@ -207,7 +195,6 @@ Wenn eine Assembly verknüpft wird, werden die nachstehenden benutzerdefinierten
 - System.MonoTODOAttribute
 - System.Xml.MonoFIXAttribute
 
-
 Wenn eine Assembly verknüpft wird, werden die nachstehenden benutzerdefinierten Attributtypen aus allen Membern in Releasebuilds entfernt:
 
 - System.Diagnostics.DebuggableAttribute
@@ -219,7 +206,6 @@ Wenn eine Assembly verknüpft wird, werden die nachstehenden benutzerdefinierten
 - System.Diagnostics.DebuggerStepThroughAttribute
 - System.Diagnostics.DebuggerTypeProxyAttribute
 - System.Diagnostics.DebuggerVisualizerAttribute
-
 
 ## <a name="related-links"></a>Verwandte Links
 

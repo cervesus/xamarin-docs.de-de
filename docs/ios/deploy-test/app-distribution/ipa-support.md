@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 58621701d832660b125d7589762cc033811eb69b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9982f9102166aa6892be0819615f329a65fffbb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281846"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756425"
 ---
 # <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
 
@@ -66,7 +66,6 @@ Bevor Sie mit dem Erstellen einer IPA-Datei für eine plattformübergreifende L�
 
 Um eine IPA-Datei erstellen zu können, müssen Sie ein _Archiv_ eines Releasebuilds der Anwendung erstellen. Dieses Archiv enthält die App und deren identifizierenden Informationen.
 
-
 1. Wählen Sie in Visual Studio für Mac die Konfiguration **Release | Gerät** aus:  !
 
     ![](ipa-support-images/buildxs01new.png "Wählen Sie „Release | Gerätekonfiguration“")
@@ -79,7 +78,6 @@ Um eine IPA-Datei erstellen zu können, müssen Sie ein _Archiv_ eines Releasebu
 
     ![](ipa-support-images/buildxs03new.png "Die Ansicht „Archive“ wird angezeigt")
 
-
 ### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen Ihrer App
 
 Beim Erstellen Ihrer Anwendung für das Archiv wird automatisch die **Archivansicht** geöffnet. Darin werden alle archivierten Projekte nach Projektmappe gruppiert angezeigt. Standardmäßig wird in dieser Ansicht nur die aktuelle geöffnete Projektmappe angezeigt. Klicken Sie auf **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen.
@@ -89,7 +87,6 @@ Es wird empfohlen, Archive beizubehalten, die den Kunden bereitgestellt wurden (
 Beachten Sie, dass für Builds, die nicht über den App Store laufen, die **iTunesMetadata.plist**-Datei und die iTunes-Grafiken automatisch in Ihre IPA-Datei einbezogen werden, wenn Sie im Archiv vorhanden sind.
 
 Gehen Sie folgendermaßen vor, um Ihre App für die Verteilung zu signieren und vorzubereiten:
-
 
 1. Klicken Sie wie unten dargestellt auf die Schaltfläche **Signieren und verteilen...** :
 
@@ -111,11 +108,9 @@ Gehen Sie folgendermaßen vor, um Ihre App für die Verteilung zu signieren und 
 
     ![](ipa-support-images/distribute04.png "Speichern Sie IPA-Datei auf dem Computer")
 
-
 ### <a name="building-via-the-command-line-on-mac"></a>Erstellen über die Befehlszeile (auf einem Mac)
 
 In einigen Fällen, wie z.B. in einer CI-Umgebung, ist es möglicherweise notwendig, die IPA-Datei über die Befehlszeile zu erstellen. Führenden Sie dazu die folgenden Schritte aus:
-
 
 1. Achten Sie darauf, dass **Projektoptionen > iOS IPA-Optionen > Include iTunesArtwork images** (iTunesArtwork-Bilder einbeziehen) und **Ad-hoc-/Enterprise-Paket erstellen (IPA)** aktiviert sind:
 
@@ -251,7 +246,6 @@ Der Benutzer kann jetzt iTunes mit seinem Gerät synchronisieren, um die neue iO
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel werden die Vorbereitungen besprochen, die nötig sind, um eine Xamarin.iOS-Anwendung auf einen Build außerhalb des App Stores vorzubereiten. Es wurde gezeigt, wie Sie ein IPA-Paket erstellen, und wie Sie die entstehende iOS-Anwendung auf einem iOS-Gerät eines Benutzers zu Testzwecken und für die interne Verteilung installieren.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

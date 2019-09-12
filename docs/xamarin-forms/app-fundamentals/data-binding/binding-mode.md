@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 20a6dab34f290c6e5f170d861183dabbfe382970
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1991be6961cbc296501a1df92fe3c89dda01d190
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650222"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771693"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms-Bindungsmodus
 
@@ -680,7 +680,6 @@ Der iOS-Screenshot auf der linken Seite zeigt das Programm bei der ersten Ausfü
 Der andere Screenshot zeigt die geänderten Einstellungen. Denken Sie daran, das Programm auf dem ausgeführten Gerät oder Emulator in den Energiesparmodus zu versetzen oder es zu beenden, wenn Sie mit dieser Seite experimentieren. Wenn Sie das Programm über den Visual Studio-Debugger beenden, wird die `OnSleep`-Überschreibung in der `App`-Klasse nicht aufgerufen.
 
 Im nächsten Artikel erfahren Sie, wie Sie die [**Zeichenfolgenformatierung**](string-formatting.md) von Datenbindungen festlegen, die auf der `Text`-Eigenschaft des `Label` festgelegt sind.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 290c90820bad2d213f8f3a978437a55f7ca6069e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c26d912a4684f6ddbee46ae953ce5cf1a3db67bd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285793"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762719"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Einführung in fastlane für iOS
 
@@ -80,18 +80,15 @@ Der Inhalt dieser Anleitung kann als Ausgangspunkt für die Hilfe bei der App-Ve
 
 8. Führen Sie erneut `which fastlane` aus, um sicherzustellen, dass der Pfad wie folgt aussieht: `/Users/[user]/.fastlane/bin`.
 
-
 ## <a name="updating-fastlane"></a>Aktualisieren von fastlane
 
 Fastlane ist ein sehr aktives Open Source-Projekt, das regelmäßig neue Versionen veröffentlicht. Sobald eine neue Version von fastlane verfügbar ist, werden Sie beim Ausführen eines beliebigen fastlane-Befehls zu Folgendem aufgefordert:
 
 [![](images/fastlane-image0.png "Eingabeaufforderung für fastlane-Update")](images/fastlane-image0.png#lightbox)
 
-
 Laden Sie [hier](https://download.fastlane.tools) das neueste Paket herunter, um auf eine neue Version von fastlane zu aktualisieren. Doppelklicken Sie zum Ausführen auf das Installationspaket:
 
 [![](images/fastlane-image0a.png "Installationspaket ausführen")](images/fastlane-image0a.png#lightbox)
-
 
 ## <a name="contents"></a>Inhalt
 

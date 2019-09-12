@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d5408894a9eda6b782f1f790ed8f1d0bb138a2f3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120158"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756920"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Akku
 
@@ -161,7 +161,6 @@ public class EnergySaverTest
 ```
 
 Wenn sich der Energiesparstatus auf `On` ändert, sollte die Anwendung die Hintergrundverarbeitung deaktivieren. Wenn der Status auf `Unknown` oder `Off` wechselt, kann die Anwendung die Hintergrundverarbeitung wieder aufnehmen.
-
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 

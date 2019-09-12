@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d32b2a20fee6b2bb007ee620e0ae4203e950bb98
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6cada2c7426cc50723321d77e21852a92fe64d63
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112458"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755795"
 ---
 # <a name="finding-your-keystores-signature"></a>Ermitteln Ihrer Keystoresignatur
 
@@ -59,13 +59,11 @@ Certificate fingerprints:
          Version: 3
 ```
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Machen Sie die Xamarin-Datei **debug.keystore** ausfindig, die zum Signieren der App verwendet wir. Standardmäßig befindet sich der Keystore, der zum Signieren von Debugversionen einer Xamarin.Android-Anwendung verwendet wird, an folgendem Speicherort:
 
 **~/.local/share/Xamarin/Mono for Android/debug.keystore**
-
 
 Durch das Ausführen des Befehls **keytool** über das JDK erhalten Sie Informationen zu einem Keystore. Dieses Tool befindet sich normalerweise an folgendem Speicherort:
 
@@ -126,7 +124,6 @@ Wenn Sie beispielsweise die Schritte in [Erstellen eines neuen Zertifikats](~/an
 
 Weitere Informationen zum Signieren einer Xamarin.Android-Anwendung finden Sie unter [Signing the Android Application Package (Signieren des Android-Anwendungspakets)](~/android/deploy-test/signing/index.md).
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Wenn der Visual Studio für Mac-Assistent **Signieren und Verteilen...** zum Signieren Ihrer App verwendet wird, befindet sich der entstandene Keystore an folgendem Speicherort:
@@ -138,6 +135,5 @@ Wenn Sie beispielsweise die Schritte in [Erstellen eines neuen Zertifikats](~/an
 **~/Bibliothek/Developer/Xamarin/Keystore/chimp/chimp.keystore**
 
 Weitere Informationen zum Signieren einer Xamarin.Android-Anwendung finden Sie unter [Signing the Android Application Package (Signieren des Android-Anwendungspakets)](~/android/deploy-test/signing/index.md).
-
 
 -----

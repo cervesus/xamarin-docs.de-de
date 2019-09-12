@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 14d4f5de500c8e8ced6cbeb67019f9152ed63df3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118916"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751919"
 ---
 # <a name="contributing"></a>Beitragen
 
@@ -32,10 +32,8 @@ Sie können auf jeder Seite auf **Bearbeiten** klicken und die GitHub-Website ve
 
 6. Nachdem das Feedback angewendet und die Änderung als in Ordnung eingestuft wurde, führen die Verwalter Ihren PR ein. Die Änderungen werden kurz darauf auf docs.microsoft.com angezeigt.
 
-
 > [!NOTE]
 > Wenn sich Ihr PR auf ein vorhandenes Problem bezieht, fügen Sie der Commit-Nachricht oder PR-Beschreibung das Schlüsselwort `Fixes #Issue_Number` hinzu, damit das Problem automatisch geschlossen werden kann, wenn der PR eingebunden wird. Weitere Informationen finden Sie unter [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/) (Schließen von Tickets mithilfe von Commit-Nachrichten).
-
 
 ### <a name="big-changes-or-new-content"></a>Umfangreiche Änderungen oder neue Inhalte
 
@@ -80,5 +78,3 @@ Es folgt eine kurze Liste mit Anleitungsregeln, die Sie beachten sollten, wenn S
 
 > [!NOTE]
 > Sie stellen möglicherweise fest, dass sich derzeit einige der Themen nicht nach allen hier und im [Styleguide](contributing-guidelines/template.md) definierten Richtlinien richten. Wir arbeiten daran, auf der gesamten Website Konsistenz zu erzielen. 
-
-

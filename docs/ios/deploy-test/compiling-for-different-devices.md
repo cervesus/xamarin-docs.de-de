@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: e24f450c16e144b313d5f8e3da0221fccdaa145b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd6fac2434c5205acfec10e4830dc72ea42aa340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285416"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756159"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Kompilieren für verschiedene Geräte in Xamarin.iOS
 
 Die Buildeigenschaften Ihrer ausführbaren Datei können Sie auf der Eigenschaftenseite **iOS-Build** des Projekts konfigurieren. Sie finden diese, indem Sie mit der rechten Maustaste auf den Projektnamen klicken und in Visual Studio für Mac zu **Optionen > iOS-Build** und in Visual Studio zu **Eigenschaften** navigieren:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-
 
 [![](compiling-for-different-devices-images/image1.png "Eigenschaftenseite „iOS-Build“ des Projekts")](compiling-for-different-devices-images/image1.png#lightbox) 
 
@@ -35,7 +34,6 @@ Zusätzlich zu den Konfigurationsoptionen, die auf der Benutzeroberfläche verf�
 
  <a name="SDK_Options" />
 
-
 ## <a name="sdk-options"></a>SDK-Optionen
 
 Mit Visual Studio für Mac können Sie zwei wichtige Eigenschaften des SDK konfigurieren: die iOS SDK-Version, die für die Erstellung Ihrer Software verwendet wird, und das Bereitstellungsziel (bzw. die mindestens erforderliche iOS-Version).
@@ -48,13 +46,11 @@ Im Allgemeinen stellt die Xamarin.iOS-API alle Methoden zur Verfügung, die in d
 
  <a name="Linking" />
 
-
 ## <a name="linking"></a>Verknüpfen
 
 Sehen Sie sich unsere gesonderte Seite zum [Linker](~/ios/deploy-test/linker.md) an, um mehr darüber zu erfahren, wie der Linker Ihnen hilft, die Größe Ihrer ausführbaren Dateien zu reduzieren, und um herauszufinden, wie Sie diese effektiv nutzen können.
 
  <a name="Code_Generation_Engine" />
-
 
 ## <a name="code-generation-engine"></a>Codegenerierungsengine
 
@@ -71,7 +67,6 @@ Sie können diese in Visual Studio für Mac oder Visual Studio über „iOS-Buil
 [![](compiling-for-different-devices-images/image2a.png "Aktivieren von LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
-
 
 ## <a name="architecture-support"></a>Architekturunterstützung
 
@@ -114,13 +109,11 @@ Beachten Sie, dass alle Builds, die an den App Store übermittelt werden, 64-Bit
 
  <a name="ARM_Thumb_Support" />
 
-
 ### <a name="arm-thumb-2-support"></a>ARM Thumb-2-Unterstützung
 
 Thumb ist ein kompakterer Befehlssatz, der von ARM-Prozessoren verwendet wird. Indem Sie die Thumb-Unterstützung aktivieren, können Sie die Größe Ihrer ausführbaren Datei reduzieren, jedoch auf Kosten langsamerer Ausführungszeiten. Thumb wird unter ARMv7 und ARMv7s unterstützt.
 
  <a name="Conditional_framwork_useage" />
-
 
 ## <a name="conditional-framework-usage"></a>Bedingte Frameworknutzung
 
@@ -131,13 +124,9 @@ Gehen Sie dazu folgendermaßen vor:
 - Öffnen Sie **Projektoptionen**, und navigieren Sie zum Bereich **iOS-Build**.
 - Fügen Sie `'-gcc_flags "-weak_framework iAd"'` zu **Zusätzliche Optionen** für jede Konfiguration hinzu, für die Sie eine schwache Verknüpfung wünschen:
 
-
 [![](compiling-for-different-devices-images/image3.png "Zusätzliche Optionen")](compiling-for-different-devices-images/image3.png#lightbox)
 
-
 Zusätzlich dazu müssen Sie Ihre Verwendung der Typen davor schützen, unter älteren Versionen von iOS ausgeführt zu werden, in denen sie möglicherweise nicht vorhanden sind. Es gibt mehrere Methoden, um dies zu erreichen, von denen eine die Analyse von `UIDevice.CurrentDevice.SystemVersion` ist.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 

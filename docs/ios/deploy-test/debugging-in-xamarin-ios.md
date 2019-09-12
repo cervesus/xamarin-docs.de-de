@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a307641b466eae680c8eb43c1b8fff7623195cde
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8a1a110bf1ff021c3280e19dea777180d71dba1a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283091"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763360"
 ---
 # <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
 
 _Zum Debuggen von Xamarin.iOS-Anwendungen kann der integrierte Debugger in Visual Studio für Mac oder Visual Studio verwendet werden._
 
 Verwenden Sie die native Debugunterstützung von Visual Studio für Mac zum Debuggen von C#-Code und Code anderer verwalteter Sprachen, und verwenden Sie [LLDB](http://lldb.llvm.org/tutorial.html), wenn Sie C-, C++- oder Objective-C-Code debuggen müssen, den Sie möglicherweise mit Ihrem Xamarin.iOS-Projekt verknüpfen.
-
 
 > [!NOTE]
 > Beim Kompilieren von Anwendungen im Debugmodus generiert Xamarin.iOS langsamere und viel größere Anwendungen, da jede Codezeile instrumentiert werden muss. Stellen Sie vor der Freigabe sicher, dass Sie einen Releasebuild ausführen.
@@ -49,13 +48,13 @@ Sie können sich alle festgelegten Haltepunkte in Ihrem Code anzeigen lassen, in
 [![](debugging-in-xamarin-ios-images/image0a.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Wenn das Pad für Haltepunkte nicht automatisch angezeigt wird, können Sie es sichtbar machen, indem Sie Folgendes auswählen: _Ansicht > Debuggen > Fenster > Haltepunkte_
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/image0.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Wenn das Pad für Haltepunkte nicht automatisch angezeigt wird, können Sie es sichtbar machen, indem Sie folgendes auswählen: _Debuggen > Fenster > Haltepunkte_
- 
+
 -----
 
 Bevor Sie das Debuggen einer Anwendung beginnen, stellen Sie immer sicher, dass die Konfiguration auf **Debuggen** festgelegt wurde. Dies enthält einen hilfreichen Satz von Tools zum Unterstützen des Debugvorgangs, z.B. Haltepunkte, Datenschnellansichten und eine Anzeige der Aufrufliste:
@@ -85,8 +84,6 @@ Wählen Sie zum Starten des Debuggens das Zielgerät oder Ähnliches in Ihrer ID
 
 -----
 
-
-
 Stellen Sie Ihre Anwendung dann bereit, indem Sie auf die Schaltfläche **Wiedergabe** klicken.
 
 Wenn Sie einen Haltepunkt erreichen, wird der Code gelb hervorgehoben:
@@ -105,7 +102,6 @@ Sie können auch Regeln festlegen, durch die die Umstände bestimmt werden, unte
 
 Greifen Sie auf das **Fenster für Haltepunkteigenschaften** zu, um einen bedingten Haltepunkt festzulegen. Dazu gibt es zwei Möglichkeiten:
 
-
 - Um einen neuen bedingten Haltepunkt hinzuzufügen, klicken Sie mit der rechten Maustaste links der Zeilennummer des Codes, an der Sie einen Haltepunkt setzen möchten, auf den Rand des Editors, und wählen Sie „Neuer Haltepunkt“:
 
   [![](debugging-in-xamarin-ios-images/image4.png "„Neuer Haltepunkt“ auswählen")](debugging-in-xamarin-ios-images/image4.png#lightbox)
@@ -113,7 +109,6 @@ Greifen Sie auf das **Fenster für Haltepunkteigenschaften** zu, um einen beding
 - Klicken Sie mit der rechten Maustaste auf den Haltepunkt, und klicken Sie auf **Haltepunkteigenschaften**, oder wählen Sie im **Pad für Haltepunkte** die unten dargestellte Schaltfläche „Einstellungen“ aus, um eine Bedingung zu einem bestehenden Haltepunkt hinzuzufügen.
 
   [![](debugging-in-xamarin-ios-images/image5.png "Das Pad „Haltepunkte“")](debugging-in-xamarin-ios-images/image5.png#lightbox)
-
 
 Anschließend können Sie die Bedingung eingeben, unter der der Haltepunkt auftreten soll:
 
@@ -199,7 +194,6 @@ Dieser Soft-Debugger erfordert ein kooperatives Debugschema bei der Ausführung 
 
 <a name="Accessing_the_Console" />
 
-
 ## <a name="accessing-the-console"></a>Zugreifen auf die Konsole
 
 Es werden Absturzprotokolle und die Ausgabe der Console-Klasse an die iPhone-Konsole gesendet. Sie können mit Xcode auf diese Konsole zugreifen. Verwenden Sie den „Organisator“, und wählen Sie Ihr Gerät aus.
@@ -212,7 +206,6 @@ Für Visual Studio-Benutzer stehen einige Protokolle im Ausgabefenster zur Verf�
 
 <a name="Debugging_Mono's_Class_Libraries" />
 
-
 ## <a name="debugging-monos-class-libraries"></a>Debuggen der Mono-Klassenbibliotheken
 
 Xamarin.iOS enthält den Quellcode für die Mono-Klassenbibliotheken, die Sie verwenden können, um in einem einzigen Schritt vom Debugger zu einer Überprüfung der Vorgänge im Hintergrund zu gelangen.
@@ -220,7 +213,6 @@ Xamarin.iOS enthält den Quellcode für die Mono-Klassenbibliotheken, die Sie ve
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 Da dieses Feature während des Debuggens mehr Arbeitsspeicher benötigt, ist es standardmäßig deaktiviert.
-
 
 Um dieses Feature zu aktivieren, stellen Sie sicher, dass die Option **Nur Projektcode debuggen, keinen Einzelschritt in Frameworkcode ausführen** im Menü _Visual Studio für Mac > Einstellungen > Debugger_ deaktiviert ist, wie unten gezeigt:
 
@@ -235,7 +227,6 @@ Sie müssen zum Debuggen von Klassenbibliotheken in Visual Studio **Nur eigenen 
 -----
 
 Sobald Sie dies tun, können Sie Ihre Anwendung und einen Einzelschritt in beliebigen Mono Core-Klassenbibliotheken starten.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -5,12 +5,12 @@ ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: aab0857381d6805503824d89bf47e9d4a6f3ab79
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5f26edf9515be79660574de0ae621daab3d1ea7d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120125"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756913"
 ---
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials: Farbkonverter
 
@@ -56,28 +56,25 @@ Es gibt verschiedene andere Erweiterungsmethoden, einschließlich:
 - WithSaturation
 - WithLuminosity
 
-
 ## <a name="using-platform-extensions"></a>Verwenden von Plattformerweiterungen
 
 Außerdem können Sie System.Drawing.Color in die plattformspezifische Farbstruktur konvertieren. Diese Methoden können nur über die iOS-, Android- und UWP-Projekte aufgerufen werden.
 
 ```csharp
 var system = System.Drawing.Color.FromArgb(255, 52, 152, 219);
- 
+
 // Extension to convert to Android.Graphics.Color, UIKit.UIColor, or Windows.UI.Color
 var platform = system.ToPlatformColor();
 ```
 
-
 ```csharp
 var platform = new Android.Graphics.Color(52, 152, 219, 255);
- 
+
 // Back to System.Drawing.Color
 var system = platform.ToSystemColor();
 ```
 
 Die Methode `ToSystemColor` ist für Android.Graphics.Color, UIKit.UIColor und Windows.UI.Color zulässig.
-
 
 ## <a name="api"></a>API
 

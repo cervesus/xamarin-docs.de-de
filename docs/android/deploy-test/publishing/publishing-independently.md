@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d324d1faa045dcfbb2b3e6dcc3000a67b5f9e10
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: bd505e97ce4fcca2197f6c7da2de8411931900ab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525380"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753778"
 ---
 # <a name="publishing-independently"></a>Unabhängiges Veröffentlichen
 
@@ -29,18 +29,14 @@ Eine Reihe von Lizenzen steht für die Entwicklung, Bereitstellung und Verteilun
 
 Besuchen Sie [visualstudio.com](https://visualstudio.microsoft.com/xamarin/), um sich die Community-Edition herunterzuladen oder mehr über den Erwerb der Professional- und Enterprise-Editionen zu erfahren.
 
-
 ## <a name="allow-installation-from-unknown-sources"></a>Installieren von Anwendungen aus unbekannten Quellen zulassen
 
 Standardmäßig können Android-Benutzer nur Anwendungen von Google Play herunterladen und installieren. Damit ein Benutzer Anwendungen auch aus anderen Quellen als dem Marketplace herunterladen kann, muss dieser die Einstellung *Unbekannte Quellen* auf einem Gerät aktivieren, bevor eine Anwendung installiert wird. Diese Einstellung befindet sich wie im folgenden Diagramm dargestellt unter **Einstellungen > Sicherheit**:
 
 [![Bildschirm „Einstellungen > Sicherheit“](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
-
 > [!IMPORTANT]
 > Einige Netzwerkanbieter verhindern unabhängig von der Einstellung die Installation von Anwendungen aus unbekannten Quellen.
-
-
 
 ## <a name="publishing-by-e-mail"></a>Veröffentlichen per E-Mail
 
@@ -50,18 +46,16 @@ Durch das Anfügen des Release-APKs an eine E-Mail können Sie eine Anwendung sc
 
 Obwohl die Verteilung per E-Mail einfach ist, stehen wenige Schutzmaßnahmen gegen Softwarepiraterie oder die nicht gestattete Verteilung bereit. Diese Art der Verteilung eignet sich daher am besten für Situationen, in denen nur wenige Personen die Anwendung per E-Mail erhalten. Die Personen müssen als vertrauenswürdig gelten und dürfen die Anwendung nicht verteilen.
 
-
 ## <a name="publishing-by-web"></a>Veröffentlichen per Web
 
 Sie können eine Anwendung auch über einen Webserver verteilen. Hierzu müssen Sie die Anwendung auf den Webserver hochladen und den Benutzern anschließend einen Downloadlink zur Verfügung stellen. Wenn ein Android-Gerät einen Link abruft und die Anwendung herunterlädt, wird diese automatisch installiert, sobald der Download abgeschlossen ist.
-
 
 ## <a name="manually-installing-an-apk"></a>Manuelles Installieren eines APKs
 
 Die manuelle Installation ist die dritte Option zur Installation von Anwendungen. Gehen Sie wie folgt vor, um eine manuelle Installation durchzuführen:
 
 1. **Verteilen Sie eine Kopie des APKs an Benutzer**: Diese Kopie kann beispielsweise über eine CD oder einen USB-Speicherstick verteilt werden.
-1. **Der Benutzer installiert die Anwendung auf einem Android-Gerät**: Verwenden Sie das Befehlszeilentool *Android Debug Bridge* (**adb**). **adb** ist ein vielseitiges Befehlszeilentool, das die Kommunikation mit einer Emulatorinstanz oder einem Android-Gerät ermöglicht. Das Android SDK beinhaltet das Tool **adb**. Es befindet sich im Verzeichnis **\<sdk>/platform-tools/** .
+1. **Der Benutzer installiert die Anwendung auf einem Android-Gerät**: Verwenden Sie das Befehlszeilentool *Android Debug Bridge* (**adb**). **adb** ist ein vielseitiges Befehlszeilentool, das die Kommunikation mit einer Emulatorinstanz oder einem Android-Gerät ermöglicht. Das Android SDK beinhaltet das Tool **adb**. Es befindet sich im Verzeichnis **\<sdk>/platform-tools/**.
 
 Das Android-Gerät muss mit einem USB-Kabel mit dem Computer verbunden sein.
 Für Windows-Computer sind möglicherweise zusätzliche USB-Treiber vom Smartphonehersteller erforderlich, damit das Gerät von **adb** erkannt wird. Auf Installationsanweisungen für diese zusätzlichen USB-Treiber kann in diesem nicht eingegangen werden.

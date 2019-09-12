@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: a1906d8c5c001c2328a0dbdce58f92092454e2c0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7a4312120ce69493074f28fb3e202f437d3e69e8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525081"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758040"
 ---
 # <a name="editing-android-virtual-device-properties"></a>Bearbeiten der Eigenschaften von virtuellen Android-Geräten
 
@@ -75,4 +75,3 @@ In der folgenden Tabellen werden die Eigenschaften näher erläutert, die in den
 [!include[](~/android/includes/emulator-properties.md)]
 
 Weitere Informationen zu diesen Eigenschaften finden Sie unter [Hardwareprofileigenschaften](https://developer.android.com/studio/run/managing-avds.html#hpproperties).
-

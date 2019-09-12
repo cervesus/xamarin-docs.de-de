@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 684820a646527b382b1dbb936b9256fd4457803e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e9a17bff9bd0a23d59faf7602544b25c7ec05a86
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651901"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771254"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Erstellen einer Xamarin.Forms-DataTemplateSelector-Klasse
 
@@ -133,7 +133,6 @@ Die `PersonDataTemplateSelector`-Instanz legt ihre `ValidTemplate`- und `Invalid
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde veranschaulicht, wie eine [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)-Klasse erstellt und genutzt wird. Eine `DataTemplateSelector`-Klasse kann verwendet werden, um eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse zur Laufzeit auszuwählen, basierend auf dem Wert der datengebundenen Eigenschaft. Dadurch können mehrere `DataTemplate`-Instanzen auf den gleichen Objekttyp angewendet werden, um die Darstellung bestimmter Objekte anzupassen.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

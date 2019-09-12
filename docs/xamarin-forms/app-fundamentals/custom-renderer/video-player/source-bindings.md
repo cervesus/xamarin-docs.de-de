@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3dfdb83f99e7b15866abcc4980473ddf075dff69
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650454"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771771"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Binden von Videoquellen an den Player
 
@@ -138,7 +138,6 @@ Die `ListView`-Klasse in der Datei **BindToVideoPlayer.xaml** enthält ein Array
 Die `Source`-Eigenschaft von `VideoPlayer` wird an `ListView` gebunden. Die `Path`-Klasse der Bindung wird als `SelectedItem.VideoSource` bestimmt, ein zusammengesetzter Pfad aus zwei Eigenschaften: `SelectedItem` ist eine Eigenschaft von `ListView`. Das ausgewählte Element ist vom Typ `VideoInfo`, der eine `VideoSource`-Eigenschaft aufweist.
 
 Wie bei der ersten Seite **Auswählen des Webvideos** ist anfänglich kein Element aus `ListView` ausgewählt, sodass Sie eines der Videos auswählen müssen, damit es abgespielt wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

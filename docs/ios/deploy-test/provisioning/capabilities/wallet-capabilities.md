@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 8afe9e703d357c246ec46756a87a7337859d5888
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1844136bb62930341cf00ec871fdd2ff8ff8fe1f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287029"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762738"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Wallet-Funktionen in Xamarin.iOS
 
@@ -54,13 +54,12 @@ Diese App-ID kann jetzt zum Generieren oder erneuten Generieren eines neuen Bere
 
 ![Verwenden der neu erstellten App-ID zum Erstellen eines Bereitstellungsprofils](wallet-capabilities-images/image20.png)
 
-
 Weitere Informationen zur Verwendung von Wallet finden Sie im folgenden Leitfaden:
 
 * [Introduction to PassKit](~/ios/platform/passkit.md) (Einführung in PassKit)
- 
+
 ## <a name="next-steps"></a>Nächste Schritte
- 
+
 In der folgenden Liste werden mögliche weitere Schritte aufgeführt:
 
 * Verwenden des Framework-Namespaces in Ihrer App

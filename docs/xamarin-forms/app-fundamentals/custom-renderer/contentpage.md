@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 73d57c632cfcd36bd7f38865c39acb7fecb55e3e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650920"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772022"
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage
 
@@ -253,7 +253,6 @@ Bei der Implementierung eines benutzerdefinierten Renderers, der von `PageRender
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können. Ein `ContentPage`-Element ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

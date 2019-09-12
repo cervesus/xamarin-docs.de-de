@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2017
-ms.openlocfilehash: 5cf57a42092535363071acffe993cd38a91b9805
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 05034989c60868f8bff8164da7da90a7ff8788a3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290991"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763215"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -70,7 +70,6 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences�
 
 3. Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamprivilegien generiert, oder Sie müssen warten, bis ein Team-Agent oder Administrator diese genehmigt:  [![](images/generated.png "Die Signieridentität wird generiert und ein Dialogfeld angezeigt")](images/generated.png#lightbox)
 
-
 <a name="creatingprofile" />
 
 ## <a name="creating-a-distribution-profile"></a>Erstellen eines Verteilungsprofils
@@ -81,7 +80,6 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences�
 
 Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich, um die Anwendung zu identifizieren, die Sie an das Gerät des Benutzers verteilen. Wenn Sie die App-ID noch nicht erstellt haben, führen Sie die folgenden Schritte aus:
 
-
 1. Navigieren Sie im [Apple Developer Center](https://developer.apple.com/account/overview.action) zum Abschnitt *Certificate, Identifiers and Profiles* (Zertifikate, Bezeichner und Profile). Wählen Sie unter **Identifiers** (Bezeichner) **App IDs** (App-IDs) aus.
 2. Klicken Sie auf die Schaltfläche **+** , und geben Sie einen **Namen** ein, der Sie im Portal identifiziert.
 3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt sein und kann nicht geändert werden. Wählen Sie entweder eine explizite oder eine Platzhalter-App-ID aus, und geben Sie eine Bundle-ID in einem umgekehrten DNS-Format ein, wie beispielsweise:
@@ -89,7 +87,6 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
     - **Platzhalter**: com.[Domänenname].*
 4. Wählen Sie die [App-Dienste](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) aus, die die Anwendung benötigt.
 5. Klicken Sie auf die Schaltfläche **Weiter**, und folgen Sie der Anleitung auf dem Bildschirm, um die neue App-ID zu erstellen.
-
 
 ### <a name="creating-a-provisioning-profile"></a>Erstellen eines Bereitstellungsprofils
 
@@ -120,7 +117,6 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
     [![](images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](images/distribute06.png#lightbox)
 
 7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

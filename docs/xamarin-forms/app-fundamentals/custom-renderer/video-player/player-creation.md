@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650490"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771784"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer
 
@@ -155,7 +155,6 @@ Ab Xamarin.Forms 2.5 sollten Android-Renderer einen Konstruktor in ein `Context`
 
 Durch die Überschreibung `OnElementChanged` wird sowohl die `VideoView` als auch das `RelativeLayout` überschrieben und die Layoutparameter für die `VideoView` festgelegt, damit diese im `RelativeLayout` zentriert wird.
 
-
 ```csharp
 namespace FormsVideoLibrary.Droid
 {
@@ -284,7 +283,6 @@ Die beiden Ereignishandler werden im `Dispose`-Ereignis für den Renderer getren
 Alle den Plattformen hinzugefügten Videoplayer unterstützen mehrere Standardsteuerelemente für den Transport, die Schaltflächen zum Wiedergeben und Pausieren sowie eine Leiste umfassen, auf der angezeigt wird, an welcher Stelle des Videos man sich derzeit befindet bzw. über die man an eine beliebigen Stelle wechseln kann.
 
 Die `VideoPlayer`-Klasse definiert eine Eigenschaft mit dem Namen `AreTransportControlsEnabled` und legt den Standardwert auf `true` fest:
-
 
 ```csharp
 namespace FormsVideoLibrary
@@ -463,7 +461,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 Damit das Video abgespielt werden kann, wird eine weitere Eigenschaft benötigt. Dies ist die wichtige `Source`-Eigenschaft, die auf eine Videodatei verweist. Im nächsten Artikel ([Playing a Web Video (Wiedergeben eines Webvideos)](web-videos.md)) wird beschrieben, wie die `Source`-Eigenschaft implementiert wird.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

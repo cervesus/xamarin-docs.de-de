@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 0972b7c6fa686f40ca548f8267f8e514e9244f05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3fd3ec0207ac3ae1e5fcaa7d11d91247cd73666d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286136"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762907"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>iCloud-Funktionen in Xamarin.iOS
 
@@ -92,7 +92,7 @@ Führen Sie folgende Schritte aus, um eine neue App-ID zu erstellen und dieser e
     ![Bildschirm „Container auswählen“](icloud-capabilities-images/image34.png)
 
 10. Bestätigen Sie die Zuweisungen des Containers, und klicken Sie auf **Assign** (Zuweisen).
- 
+
 Diese App-ID kann jetzt zum Generieren oder erneuten Generieren eines neuen Bereitstellungsprofils verwendet werden (siehe die Erläuterung in der Anleitung [Arbeiten mit Funktionen](~/ios/deploy-test/provisioning/capabilities/index.md)). 
 
 Weitere Informationen zur Verwendung von iCloud finden Sie im folgenden Leitfaden:
@@ -102,7 +102,7 @@ Weitere Informationen zur Verwendung von iCloud finden Sie im folgenden Leitfade
 * [Einführung in die Dokumentauswahl](~/ios/platform/document-picker.md)
 
 ## <a name="next-steps"></a>Nächste Schritte
- 
+
 In der folgenden Liste werden mögliche weitere Schritte aufgeführt:
 
 * Verwenden des Framework-Namespaces in Ihrer App

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: cd29e284c45bfe59633dde924e27d8022e8416ba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645925"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760824"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms-modale Seiten
 
@@ -257,7 +257,6 @@ Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Navigieren zu modalen Seiten veranschaulicht. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde.
-
 
 ## <a name="related-links"></a>Verwandte Links
 

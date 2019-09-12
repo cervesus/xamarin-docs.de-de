@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b9658aa0a4222fb9d257299ea3c6fd69016abdb4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ca27b0ba0f9e434809250a78047f3bd503f80b50
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646748"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771641"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
 
@@ -162,8 +162,6 @@ Als Typ der `Content`-Eigenschaft wird jetzt `Xamarin.Forms.StackLayout` angezei
 Während Xamarin.Forms den Bindungspfad verarbeitet, wird für jedes Objekt im Pfad ein `PropertyChanged`-Handler installiert, der die Schnittstelle `INotifyPropertyChanged` implementiert. Beispiel: Die endgültige Bindung reagiert auf eine Änderung im ersten `Label`-Element, da sich die Eigenschaft `Text` ändert.
 
 Wenn eine Eigenschaft im Bindungspfad `INotifyPropertyChanged` nicht implementiert, werden sämtliche an dieser Eigenschaft vorgenommenen Änderungen ignoriert. Durch einige Änderungen könnte der Bindungspfad vollständig ungültig gemacht werden. Daher sollten Sie dieses Verfahren nur dann anwenden, wenn die Zeichenfolge der Eigenschaften und untergeordneten Eigenschaften niemals ungültig wird.
-
-
 
 ## <a name="related-links"></a>Verwandte Links
 
