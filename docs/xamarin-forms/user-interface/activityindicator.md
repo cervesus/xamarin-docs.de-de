@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/10/2019
-ms.openlocfilehash: de93927728271e9f0d9d2ef850b70eeeee249c84
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: 0694439f5e363399e0442c9883426c0f0bf5d989
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658115"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887429"
 ---
 # <a name="xamarinforms-activityindicator"></a>Xamarin. Forms-activityindicator
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
-Das xamarin. Forms[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) -Steuerelement zeigt eine Animation an, die anzeigt, dass die Anwendung mit einer langwierigen Aktivität beschäftigt ist. Anders als [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)der gibt `ActivityIndicator` den Fortschritt an. Der `ActivityIndicator` erbt von [`View`](xref:Xamarin.Forms.View).
+Das xamarin. Forms [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) -Steuerelement zeigt eine Animation an, die anzeigt, dass die Anwendung mit einer langwierigen Aktivität beschäftigt ist. Anders als [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)der gibt `ActivityIndicator` den Fortschritt an. Der `ActivityIndicator` erbt von [`View`](xref:Xamarin.Forms.View).
 
 Die folgenden Screenshots zeigen ein `ActivityIndicator` Steuerelement unter IOS und Android:
 

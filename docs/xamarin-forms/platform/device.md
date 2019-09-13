@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: eb1358f039cc5d5a200f929fcc7dfa71ca863d2a
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 77cc414cd9b15f99f95d4a54f7af5ce6f028c41a
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121314"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887445"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms-Device-Klasse
 
@@ -114,7 +114,7 @@ Sie können auch die `OnIdiom` Markuperweiterung in XAML verwendet werden kann, 
 Die [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Wert Ruft eine [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) Enumerationswert, der die aktuelle flussrichtung, der vom Gerät verwendeten darstellt. Die Leserichtung ist die Richtung, in der Benutzeroberflächenelemente auf der Seite vom Auge wahrgenommen werden. Diese Enumerationswerte lauten:
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 In XAML die [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Wert abgerufen werden kann, mit der `x:Static` Markuperweiterung:
@@ -191,11 +191,11 @@ Die `Device` -Klasse enthält die `static` folgenden Methoden, die für die Inte
 | Methode | Argumente | Rückgabewert | Zweck |
 |---|---|---|---|
 | `BeginInvokeOnMainThread` | `Action` | `void` | Ruft eine `Action` im Haupt Thread auf und wartet nicht darauf, dass Sie beendet wird. |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Ruft eine `Func<T>` auf dem Haupt Thread auf und wartet darauf, dass Sie fertiggestellt wird. |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | Ruft eine `Action` im Haupt Thread auf und wartet darauf, dass Sie fertiggestellt wird. |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Ruft eine `Func<Task<T>>` auf dem Haupt Thread auf und wartet darauf, dass Sie fertiggestellt wird. |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Ruft eine `Func<Task>` auf dem Haupt Thread auf und wartet darauf, dass Sie fertiggestellt wird. |
-| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | Gibt den `SynchronizationContext` für den Haupt Thread zurück. |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Ruft `Func<T>` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | Ruft `Action` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Ruft `Func<Task<T>>` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Ruft `Func<Task>` auf dem Hauptthread auf, und wartet auf den Abschluss |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | Gibt `SynchronizationContext` für den Hauptthread zurück |
 
 Der folgende Code zeigt ein Beispiel für die Verwendung `BeginInvokeOnMainThread` der-Methode:
 

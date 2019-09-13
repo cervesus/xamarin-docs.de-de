@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 5889859543deaecccb72740fccbc2b3343a8297f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292124"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753769"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
@@ -30,7 +30,7 @@ Das Feature „Mit Mac koppeln“ ermöglicht den folgenden Entwicklungsworkflow
 
 - Visual Studio 2019 stellt eine Netzwerkverbindung mit einem Mac-Buildhost her und verwendet die Buildtools auf diesem Computer, um die iOS-App zu kompilieren und zu signieren.
 
-- Auf dem Mac muss keine eigenständige Anwendung ausgeführt werden, da Visual Studio 2017 über eine sichere SSH-Verbindung die Mac-Builds aufruft.
+- Auf dem Mac muss keine separate Anwendung ausgeführt werden, da Visual Studio 2019 die Mac-Builds über eine sichere SSH-Verbindung aufruft.
 
 - Visual Studio 2019 wird unmittelbar über Änderungen informiert. Wenn beispielsweise ein iOS-Gerät an den Mac angeschlossen oder ein Gerät im Netzwerk verfügbar wird, wird die iOS-Symbolleiste sofort aktualisiert.
 
