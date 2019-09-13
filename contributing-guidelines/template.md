@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 50bcdcc23d1291071a6045544faad9388755116b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 69682372e2b1ac84db2c6464ac3b05a58645a9e3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225463"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753561"
 ---
 # <a name="metadata-and-markdown-template"></a>Metadaten und Markdownvorlage
 
@@ -71,8 +71,6 @@ Dateinamen verwenden die folgenden Regeln:
 - Keine kurzen Worte wie a, and, the, in, or usw. sind erlaubt.
 - Muss in Markdown geschrieben werden und die Dateierweiterung .md verwenden.
 - Halten Sie Dateinamen einigermaßen kurz. Sie sind Teil der URL für Ihre Artikel.
-
-
 
 ## <a name="headings"></a>Kopfzeilen
 
@@ -158,7 +156,6 @@ Wenn die UID die Sonderzeichen \` und \# enthält, muss der UID-Wert als %60 und
 1. Geordnete
 1. Liste
 
-
 #### <a name="ordered-list-with-an-embedded-list"></a>Geordnete Liste mit einer eingebetteten Liste
 
 1. Hier
@@ -170,7 +167,6 @@ Wenn die UID die Sonderzeichen \` und \# enthält, muss der UID-Wert als %60 und
 1. geordnete
 1. Liste
 
-
 ### <a name="unordered-lists"></a>Ungeordnete Listen
 
 - Dies
@@ -178,7 +174,6 @@ Wenn die UID die Sonderzeichen \` und \# enthält, muss der UID-Wert als %60 und
 - eine
 - Aufzählungs-
 - Liste
-
 
 ##### <a name="unordered-list-with-an-embedded-list"></a>Ungeordnete Liste mit einer eingebetteten Liste
 
@@ -193,7 +188,6 @@ Wenn die UID die Sonderzeichen \` und \# enthält, muss der UID-Wert als %60 und
     1. Frau Weiß
 - Listen
 
-
 ## <a name="horizontal-rule"></a>Horizontale Regel
 
 ---
@@ -207,7 +201,6 @@ Wenn die UID die Sonderzeichen \` und \# enthält, muss der UID-Wert als %60 und
 | col 1 ist der Standard | linksbündig     |    $1 |
 
 Sie können ein [Markdowntool zum Generieren von Tabellen](http://www.tablesgenerator.com/markdown_tables) verwenden, um diese einfacher zu erstellen.
-
 
 ### <a name="inline-code-blocks-with-language-identifier"></a>Inlinecodeblöcke mit Sprachen-ID
 
