@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: b8a7353ee67ee0686ad97428222c69dd095ee83a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290426"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985960"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. IOS-Fehler
 
@@ -854,7 +854,7 @@ Zum Erstellen der Anwendung muss xamarin. IOS mit Systembibliotheken verknüpft 
 
 Die empfohlene Vorgehensweise zum Beheben dieses Fehlers besteht darin, Xcode zu aktualisieren, um das erforderliche SDK zu erhalten. Wenn Sie mehrere Versionen von Xcode installiert haben oder einen Xcode an einem nicht standardmäßigen Speicherort verwenden möchten, stellen Sie sicher, dass Sie den korrekten Xcode-Speicherort in den Einstellungen Ihrer IDE festlegen.
 
-Sie können auch den verwalteten [Linker](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/linker) zum Entfernen nicht verwendeter APIs aktivieren, einschließlich (in den meisten Fällen) der neuen, die die angegebene Bibliothek erfordern. Dies funktioniert jedoch nicht, wenn Ihr Projekt APIs erfordert, die in einem neueren SDK eingeführt werden, als das, das Ihr Xcode bereitstellt.
+Sie können auch den verwalteten [Linker](https://docs.microsoft.com/xamarin/ios/deploy-test/linker) zum Entfernen nicht verwendeter APIs aktivieren, einschließlich (in den meisten Fällen) der neuen, die die angegebene Bibliothek erfordern. Dies funktioniert jedoch nicht, wenn Ihr Projekt APIs erfordert, die in einem neueren SDK eingeführt werden, als das, das Ihr Xcode bereitstellt.
 
 Verwenden Sie als letzte Lösung eine ältere Version von xamarin. IOS, bei der diese neuen SDOs während des Buildprozesses nicht vorhanden sein müssen.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a2f637677620f9bfb2bd26a5af55fb9fb56a7af9
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768412"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985703"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin Designer für IOS
 
@@ -63,9 +63,23 @@ Die Einschränkungs Symbolleiste wurde aktualisiert und besteht nun aus zwei Hau
   - Im Einschränkungs Bearbeitungsmodus passt diese Schaltfläche die Einschränkungen so an, dass Sie dem Element Rahmen entsprechen.
   - Im Frame Bearbeitungsmodus passt diese Schaltfläche den Element Rahmen an die Position an, die die Einschränkungen definieren.
 
+## <a name="constraints-editing-popover"></a>Einschränkungen bei der Bearbeitung von popover
+
+Mit dem Editor für Einschränkungs-Editor können Sie mehrere Einschränkungen gleichzeitig für eine ausgewählte Ansicht hinzufügen und aktualisieren. Wir können mehrere Abstände, Seitenverhältnis und Ausrichtungs Einschränkungen erstellen, wie z. b. das Ausrichten einer Ansicht an den linken Rand zweier Ansichten.
+
+Zum Bearbeiten von Einschränkungen für die ausgewählte Ansicht klicken Sie auf das Auslassungs Zeichen, um das ![popover "popover: Einschränkungs Bearbeitung" anzuzeigen.](designer-auto-layout-images/constraints-popup.png)
+
+Beim Öffnen des popover "Einschränkungen" werden alle vordefinierten Einschränkungen für die Sicht angezeigt. Wir können alle Abstands Einschränkungen festlegen, indem wir **alle Seiten** aus dem Kombinations Feld in der oberen rechten Ecke auswählen und **Alle löschen** auswählen, um Sie zu entfernen. 
+
+Der Wert von **W** legt Width fest, und **H** legt die Height-Einschränkung fest. Wenn Sie das **Seitenverhältnis**überprüfen, werden die Höhe und Breite der Ansichten auf unterschiedlichen Bildschirmgrößen gesteuert, die Breite der Ansicht wird als Zähler für die Ration und die Höhe als Nenner verwendet.
+
+![Einschränkungs Abstände](designer-auto-layout-images/constraints-spacing.png)
+
+Vier Kombinations Felder für Abstands Einschränkungen listet die benachbarten Sichten auf, um die Einschränkung zu verankern.
+
 ## <a name="surface-based-constraint-editing"></a>Bearbeitung von Oberflächen basierter Einschränkung
 
-Im vorherigen Abschnitt haben wir gelernt, mithilfe der Einschränkungs Symbolleiste Standard Einschränkungen hinzuzufügen und Einschränkungen zu entfernen. Für eine präzisere Einschränkungs Bearbeitung können wir direkt auf der Entwurfs Oberfläche mit Einschränkungen interagieren. In diesem Abschnitt werden die Grundlagen der oberflächenbasierten Einschränkungs Bearbeitung erläutert, einschließlich der Steuerelemente für PIN-Abstände, Ablage Bereiche und der Arbeit mit unterschiedlichen Einschränkungs Typen.
+Für eine präzisere Einschränkungs Bearbeitung können wir direkt auf der Entwurfs Oberfläche mit Einschränkungen interagieren. In diesem Abschnitt werden die Grundlagen der oberflächenbasierten Einschränkungs Bearbeitung erläutert, einschließlich der Steuerelemente für PIN-Abstände, Ablage Bereiche und der Arbeit mit unterschiedlichen Einschränkungs Typen.
 
 ### <a name="creating-constraints"></a>Erstellen von Einschränkungen
 
