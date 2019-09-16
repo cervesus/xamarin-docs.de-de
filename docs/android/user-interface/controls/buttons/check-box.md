@@ -44,6 +44,6 @@ Dadurch wird das [`CheckBox`](xref:Android.Widget.CheckBox) -Element aus dem Lay
 Führen Sie es aus.
 
 > [!TIP]
-> Wenn Sie den Zustand selbst ändern müssen (z. b. beim Laden eines [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)gespeicherten Objekts) [`Checked`](xref:Android.Widget.CompoundButton.Checked) , verwenden Sie [`Toggle()`](xref:Android.Widget.CompoundButton.Toggle) den Eigenschaften Setter oder die-Methode.
+> Wenn Sie den Zustand selbst ändern müssen (z. B. beim Laden einer gespeicherten [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)-Klasse), verwenden Sie den Setter der [`Checked`](xref:Android.Widget.CompoundButton.Checked)-Eigenschaft oder die [`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)-Methode.
 
 *Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den Begriffen verwendet werden, die im* folgenden Abschnitt beschrieben werden. [*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/).
