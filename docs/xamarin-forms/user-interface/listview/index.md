@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/04/2019
-ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9d7dd98b98c7722d6fcdcb49c10e326732fa9f0b
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770231"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70997981"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms-ListView
 
@@ -36,6 +36,7 @@ Eine `ListView` eignet sich am besten für Sammlungen, die aus einem einzelnen D
 Weitere Informationen zum Binden von Daten an eine `ListView` -Instanz finden Sie unter [ListView-Datenquellen](~/xamarin-forms/user-interface/listview/data-and-databinding.md).
 
 ## <a name="components"></a>Komponenten
+
 Das `ListView` -Steuerelement verfügt über eine Reihe von Komponenten, die für die systemeigene Funktionalität der einzelnen Plattformen verfügbar sind. Diese Komponenten werden in den folgenden Abschnitten definiert.
 
 ### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[Kopf-und Fußzeilen](customizing-list-appearance.md#headers-and-footers)
@@ -55,7 +56,7 @@ Datenelemente in einem `ListView` werden als Zellen bezeichnet. Jede Zelle entsp
 - [Integrierte Zellen](customizing-cell-appearance.md#built-in-cells), wie z `TextCell` . b. und `ImageCell`, entsprechen systemeigenen Steuerelementen und sind besonders leistungsfähig.
   - Eine [`TextCell`](customizing-cell-appearance.md#textcell) zeigt eine Text Zeichenfolge an, optional mit Detail Text. Detail-Text wird als eine zweite Zeile in einer kleineren Schriftart mit einer Farbe für Akzente gerendert.
   - Ein [`ImageCell`](customizing-cell-appearance.md#imagecell) zeigt ein Bild mit Text an. Wird als `TextCell` mit einem Bild auf der linken Seite angezeigt.
-- [Benutzerdefinierte Zellen](customizing-cell-appearance.md#customcells) werden verwendet, um komplexe Daten darzustellen. Beispielsweise könnte eine benutzerdefinierte Zelle verwendet werden, um eine Liste von Liedern zu präsentieren, die das Album und den Künstler enthält.
+- [Benutzerdefinierte Zellen](customizing-cell-appearance.md#custom-cells) werden verwendet, um komplexe Daten darzustellen. Beispielsweise könnte eine benutzerdefinierte Zelle verwendet werden, um eine Liste von Liedern zu präsentieren, die das Album und den Künstler enthält.
 
 Der folgende Screenshot zeigt ein `ListView` -Element mit ImageCell-Elementen:
 
@@ -64,11 +65,12 @@ ImageCell- [Elemente in einem ListView-ImageCell-Element in einem ListView-Eleme
 Weitere Informationen zum Anpassen von Zellen in einem `ListView`finden Sie unter [Anpassen der ListView-Zellen](customizing-cell-appearance.md)Darstellung.
 
 ## <a name="functionality"></a>Funktionalität
+
 Die `ListView` -Klasse unterstützt eine Reihe von Interaktions Stilen.
 
 - Mit [Pull-to-refresh](interactivity.md#pull-to-refresh) kann der Benutzer den `ListView` Inhalt nach unten ziehen, um ihn zu aktualisieren.
 - [Kontext Aktionen](interactivity.md#context-actions) ermöglichen es dem Entwickler, benutzerdefinierte Aktionen für einzelne Listenelemente anzugeben. Beispielsweise können Sie implementieren Wischen-to-Action unter iOS oder lang Sie Aktionen für Android auf.
-- Die [Auswahl](interactivity.md#selectiontaps) ermöglicht dem Entwickler das Anfügen von Funktionen an Auswahl-und Auswahl Ereignisse für Listenelemente.
+- Die [Auswahl](interactivity.md#selection-and-taps) ermöglicht dem Entwickler das Anfügen von Funktionen an Auswahl-und Auswahl Ereignisse für Listenelemente.
 
 Der folgende Screenshot zeigt eine `ListView` mit Kontext Aktionen:
 

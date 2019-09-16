@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 9855255464b32b99d78d7a1cdb24acce22d01648
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: aa968562470a1e3405bf68be7eb0294273970386
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654759"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998028"
 ---
 # <a name="listview-data-sources"></a>ListView-Datenquellen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
-Ein [ `ListView` ](xref:Xamarin.Forms.ListView) wird für die Anzeige von Listen mit Daten verwendet. Wir lernen, zum Auffüllen einer ListView mit Daten, und wie für das ausgewählte Element gebunden werden kann.
+Xamarin. Forms [`ListView`](xref:Xamarin.Forms.ListView) wird zum Anzeigen von Listen mit Daten verwendet. In diesem Artikel wird erläutert, wie ein `ListView` mit Daten aufgefüllt wird und wie Daten an das ausgewählte Element gebunden werden.
 
 ## <a name="itemssource"></a>ItemsSource
 
@@ -62,7 +62,7 @@ listView.ItemsSource = new string[]
 
 ![](data-and-databinding-images/itemssource-simple.png "Anzeigen von ListView-Liste von Zeichenfolgen")
 
-Der oben beschriebene Ansatz füllt die `ListView` mit einer Liste von Zeichenfolgen. In der Standardeinstellung `ListView` ruft `ToString` und zeigt das Ergebnis in eine `TextCell` für jede Zeile. Um anzupassen, wie Daten angezeigt werden, finden Sie unter [Zellendarstellung](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
+Diese Vorgehensweise füllt den `ListView` mit einer Liste von Zeichen folgen auf. In der Standardeinstellung `ListView` ruft `ToString` und zeigt das Ergebnis in eine `TextCell` für jede Zeile. Um anzupassen, wie Daten angezeigt werden, finden Sie unter [Zellendarstellung](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
 Da `ItemsSource` gesendet wurde in ein Array, der Inhalt wird nicht aktualisiert werden, als die zugrunde liegenden Liste oder Array ändern. Wenn die ListView automatisch aktualisiert werden, wie Elemente hinzugefügt, entfernt und in der zugrunde liegenden Liste geändert werden sollen, müssen Sie verwenden eine `ObservableCollection`. [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) wird definiert, `System.Collections.ObjectModel` und ist wie `List`, außer dass sie benachrichtigt, kann `ListView` von Änderungen:
 
@@ -74,16 +74,16 @@ listView.ItemsSource = employees;
 employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 ```
 
-<a name="Data_Binding" />
-
 ## <a name="data-binding"></a>Datenbindung
-Datenbindung ist der "Glue", die die Eigenschaften eines Benutzerobjekts-Schnittstelle an den Eigenschaften des einige CLR-Objekt, z. B. eine Klasse in Ihrem ViewModel gebunden wird. Die Datenbindung ist hilfreich, da die Entwicklung von Benutzeroberflächen vereinfacht durch Ersetzen eine Menge Standardcode langweilig.
 
-Die Datenbindung funktioniert durch das Synchronisieren von Objekten wie deren gebundenen Werte zu ändern. Statt-Ereignishandlern für schreiben, jedes Mal, wenn der Wert eines Steuerelements ändert, müssen Sie die Bindung herzustellen und Bindung in Ihrem ViewModel zu aktivieren.
+Die Datenbindung ist der "Klebstoff", der die Eigenschaften eines Benutzeroberflächen Objekts an die Eigenschaften eines CLR-Objekts bindet, z. b. eine Klasse in "ViewModel". Die Datenbindung ist hilfreich, da die Entwicklung von Benutzeroberflächen vereinfacht durch Ersetzen eine Menge Standardcode langweilig.
+
+Die Datenbindung funktioniert durch das Synchronisieren von Objekten wie deren gebundenen Werte zu ändern. Anstatt Ereignishandler für jedes Mal schreiben zu müssen, wenn sich der Wert eines Steuer Elements ändert, können Sie die Bindung einrichten und die Bindung in "ViewModel" aktivieren.
 
 Weitere Informationen zur Datenbindung finden Sie unter [Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) die ist der vierte Teil von der [Xamarin.Forms XAML Basics-Artikelreihe](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ### <a name="binding-cells"></a>Binden von Zellen
+
 Eigenschaften von Zellen (und untergeordnete Elemente von Zellen) gebunden werden können, um Eigenschaften von Objekten in der `ItemsSource`. Beispielsweise kann ein `ListView` verwendet werden, um eine Liste von Mitarbeitern darzustellen.
 
 Die Employee-Klasse:
@@ -95,7 +95,7 @@ public class Employee
 }
 ```
 
-Eine `ObservableCollection<Employee>` wird erstellt und `ListView`als `ItemsSource`festgelegt:
+Ein `ObservableCollection<Employee>` wird erstellt `ListView` ,`ItemsSource`als festgelegt, und die Liste wird mit Daten aufgefüllt:
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -103,26 +103,21 @@ public ObservableCollection<Employee> Employees { get { return employees; }}
 
 public EmployeeListPage()
 {
-  //defined in XAML to follow
-  EmployeeView.ItemsSource = employees;
-  ...
+    EmployeeView.ItemsSource = employees;
+
+    // ObservableCollection allows items to be added after ItemsSource
+    // is set and the UI will react to changes
+    employees.Add(new Employee{ DisplayName="Rob Finnerty"});
+    employees.Add(new Employee{ DisplayName="Bill Wrestler"});
+    employees.Add(new Employee{ DisplayName="Dr. Geri-Beth Hooper"});
+    employees.Add(new Employee{ DisplayName="Dr. Keith Joyce-Purdy"});
+    employees.Add(new Employee{ DisplayName="Sheri Spruce"});
+    employees.Add(new Employee{ DisplayName="Burt Indybrick"});
 }
 ```
 
-Die Liste wird mit Daten aufgefüllt:
-
-```csharp
-public EmployeeListPage()
-{
-  ...
-  employees.Add(new Employee{ DisplayName="Rob Finnerty"});
-  employees.Add(new Employee{ DisplayName="Bill Wrestler"});
-  employees.Add(new Employee{ DisplayName="Dr. Geri-Beth Hooper"});
-  employees.Add(new Employee{ DisplayName="Dr. Keith Joyce-Purdy"});
-  employees.Add(new Employee{ DisplayName="Sheri Spruce"});
-  employees.Add(new Employee{ DisplayName="Burt Indybrick"});
-}
-```
+> [!WARNING]
+> `ObservableCollection`ist nicht Thread sicher. Das ändern `ObservableCollection` einer bewirkt, dass UI-Aktualisierungen in demselben Thread durchgeführt werden, der die Änderungen durchgeführt hat. Wenn der Thread nicht der primäre UI-Thread ist, wird eine Ausnahme ausgelöst.
 
 Der folgende Codeausschnitt zeigt ein `ListView` an eine Liste von Mitarbeitern gebunden:
 
@@ -154,13 +149,13 @@ Häufig möchten Sie binden an das ausgewählte Element eine `ListView`, sondern
 
 ```xaml
 <ListView x:Name="listView"
- SelectedItem="{Binding Source={x:Reference SomeLabel},
- Path=Text}">
+          SelectedItem="{Binding Source={x:Reference SomeLabel},
+          Path=Text}">
  …
 </ListView>
 ```
 
-Vorausgesetzt, `listView`des `ItemsSource` ist eine Liste von Zeichenfolgen, `SomeLabel` hat die Texteigenschaft gebunden, die `SelectedItem`.
+Wenn `listView`es `ItemsSource` sich um eine Liste von Zeichen `SomeLabel` folgen handelt, `Text` wird die-Eigenschaft `SelectedItem`an die gebunden.
 
 ## <a name="related-links"></a>Verwandte Links
 
