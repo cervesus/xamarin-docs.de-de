@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b750dd4eebb4e181e3a1d3a33c6505bb58b3848b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a80410ecc3557f00755ebb60ab48781740fa928d
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757084"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021151"
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
 
@@ -83,15 +83,17 @@ Xamarin. Android unterstützt die folgenden Systemeigenschaften:
 
 - *debug.mono.env*: Eine Pipe-getrennte *|* Liste von Umgebungsvariablen, die beim Starten der Anwendung exportiert werden sollen, *bevor* Mono initialisiert wurde. Dies ermöglicht das Festlegen von Umgebungsvariablen, die Mono-Protokollierung steuern.
 
-  - *Hinweis:* Da der Wert ' *|* ' getrennt ist, muss der Wert über eine zusätzliche Ebene von Anführungszeichen verfügen, da der \` \`ADB-Shellbefehl eine Reihe von Anführungszeichen entfernt.
+  > [!NOTE]
+  > Da der Wert ' *|* ' getrennt ist, muss der Wert über eine zusätzliche Ebene von Anführungszeichen verfügen, da der \` \`ADB-Shellbefehl eine Reihe von Anführungszeichen entfernt.
 
-  - *Hinweis:* Android-System Eigenschaftswerte dürfen nicht länger als 92 Zeichen sein.
+  > [!NOTE]
+  > Android-System Eigenschaftswerte dürfen nicht länger als 92 Zeichen sein.
 
-  - Beispiel:
+  Beispiel:
 
-    ```
-    adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
-    ```
+  ```
+  adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+  ```
 
 - *debug.mono.log*: Eine durch Trennzeichen getrennte (" *,* ") Liste von Komponenten, die zusätzliche Nachrichten in das Android-Debugprotokoll Drucken sollten. Standardmäßig ist nichts festgelegt. Zu den Komponenten gehören:
 
@@ -100,7 +102,8 @@ Xamarin. Android unterstützt die folgenden Systemeigenschaften:
   - *gref*: Drucken (schwache, globale) Verweis Zuordnungs-und Zuordnungs Zuordnungs Nachrichten.
   - *lref*: Drucken von lokalen Verweis Zuordnungs-und-Zuordnungs Nachrichten.
 
-  *Hinweis*: Diese sind *sehr* ausführlich. Aktivieren Sie diese Option nur, wenn dies wirklich erforderlich ist.
+  > [!NOTE]
+  > Diese sind *sehr* ausführlich. Aktivieren Sie diese Option nur, wenn dies wirklich erforderlich ist.
 
 - *debug.mono.trace*: Ermöglicht das Festlegen der [Mono-Trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` -Einstellung.
 
@@ -176,7 +179,8 @@ Xamarin. Android verwendet globale Android-Verweise, um Zuordnungen zwischen Jav
 
 Leider erlauben Android-Emulatoren nur, dass gleichzeitig 2000 globale Verweise vorhanden sind. Hardware hat eine viel höhere Grenze von 52000 globalen verweisen. Der untere Grenzwert kann problematisch sein, wenn Sie Anwendungen im Emulator ausführen, sodass Sie wissen, *woher* die Instanz stammt, sehr nützlich sein kann.
 
- *Hinweis*: der globale Verweis Zähler ist intern für xamarin. Android und kann keine globalen Verweise enthalten, die von anderen in den Prozess geladenen nativen Bibliotheken übernommen werden. Verwenden Sie den globalen Verweis Zähler als Schätzung.
+> [!NOTE]
+> Der globale Verweis Zähler ist intern für xamarin. Android und kann keine globalen Verweise enthalten, die von anderen in den Prozess geladenen nativen Bibliotheken übernommen werden. Verwenden Sie den globalen Verweis Zähler als Schätzung.
 
 ```shell
 I/monodroid-gref(12405): +g+ grefc 108 gwrefc 0 obj-handle 0x40517468/L -> new-handle 0x40517468/L from    at Java.Lang.Object.RegisterInstance(IJavaObject instance, IntPtr value, JniHandleOwnership transfer)

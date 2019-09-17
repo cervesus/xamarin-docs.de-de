@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: ae4cccc900396c7ebd6e737160e38c5e9dcdc74e
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: a8ea06d81fcc79a24f155a1562818daea3ba982a
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70986165"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021399"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Anmelden mit Apple in xamarin. IOS
 
@@ -25,10 +25,11 @@ In diesem Dokument wird erläutert, wie Sie die Anmeldung mit Apple zu IOS 13-An
 ## <a name="requirements"></a>Anforderungen
 
 Für dieses Feature ist Folgendes erforderlich:
+
 * IOS 13
 * Xamarin. IOS 12,99
-* Visual Studio 2019 oder Visual Studio 2019 für Mac mit Xcode 11-Unterstützung. 
- 
+* Visual Studio 2019 oder Visual Studio 2019 für Mac mit Xcode 11-Unterstützung.
+
 Weitere Informationen finden Sie unter " [Get Started](get-started.md) ".
 
 ## <a name="apple-developer-setup"></a>Apple-Entwickler-Setup
@@ -218,7 +219,7 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde die Anmeldung mit Apple für IOS beschrieben. 
+In diesem Artikel wurde die Anmeldung mit Apple für IOS beschrieben.
 
 ## <a name="related-links"></a>Verwandte Links
 
