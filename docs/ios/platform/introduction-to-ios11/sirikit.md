@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27adc8aa2ed0fec09fe38b9ea31834ea6e75f845
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752384"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033084"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>Updates für Sirikit in ios 11
 
@@ -147,6 +147,7 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 Die Klasse muss von Erben `INExtension`, und da das Beispiel die Verarbeitung von Listen und Notizen behandelt, wird auch implementiert. `IINNotebookDomainHandling`
 
 > [!NOTE]
+>
 > - In .net gibt es eine Konvention für Schnittstellen, denen ein Haupt `I`-und xamarin-Präfix vorangestellt wird, wenn Protokolle vom IOS SDK gebunden werden.
 > - Xamarin behält auch Typnamen von IOS bei, und Apple verwendet die ersten beiden Zeichen in Typnamen, um das Framework widerzuspiegeln, zu dem ein Typ gehört.
 > - Für das `Intents` Framework verfügen Typen über `IN*` ein Präfix (z. b. `INExtension`), aber dies sind _keine_ Schnittstellen.

@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 75177daa2f8bd1faa271940713ff8543db3b97c0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cc27b3162c03f0292d3910f86fac9ed89b117f6f
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287388"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033322"
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified API
 
@@ -19,6 +19,7 @@ Die Unified API von xamarin ermöglicht die gemeinsame Nutzung von Code zwischen
 
 > [!IMPORTANT]
 > Das xamarin-Classic API, das dem Unified API vorangestellt ist, ist veraltet. 
+>
 > - Die letzte Version von xamarin. IOS zur Unterstützung der Classic API ("MonoTouch. dll") war xamarin. IOS 9,10.
 > - Xamarin. Mac unterstützt zwar weiterhin die Classic API, wird jedoch nicht mehr aktualisiert. Da sie veraltet ist, sollten Entwickler ihre Anwendungen in die Unified API verschieben.
 

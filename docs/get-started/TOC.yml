@@ -37,7 +37,7 @@
           href: quickstarts/styling.md
         - name: Vertiefung
           href: quickstarts/deepdive.md
-    - name: Lernprogramme
+    - name: Tutorials
       href: tutorials/index.yml
       expanded: true
       items:
@@ -45,7 +45,7 @@
           href: tutorials/stacklayout/index.yml
         - name: Bezeichnung
           href: tutorials/label/index.yml
-        - name: Taste
+        - name: Schaltfläche
           href: tutorials/button/index.yml
         - name: Texteintrag
           href: tutorials/entry/index.yml
@@ -63,7 +63,7 @@
           href: tutorials/app-lifecycle/index.yml
         - name: Lokale Datenbank
           href: tutorials/local-database/index.yml
-        - name: WEB SERVICES
+        - name: Webdienste
           href: tutorials/web-service/index.yml
     - name: Informationen zu Xamarin
       expanded: true
@@ -76,8 +76,6 @@
           href: ~/cross-platform/desktop/index.md
         - name: Java-Entwickler
           href: ~/android/get-started/java-developers.md
-        - name: Swift-Entwickler
-          href: ~/ios/get-started/objective-c-developers/index.md
         - name: Objective-C-Entwickler
           href: ~/ios/get-started/objective-c-developers/index.md
         - name: Azure

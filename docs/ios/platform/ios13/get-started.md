@@ -1,47 +1,47 @@
 ---
-title: Erste Schritte mit iOS 13, iPadOS 13, 13-TvOS und WatchOS 6
-description: Dieses Dokument beschreibt, wie Sie bis zu iOS-Build 13, iPadOS 13, TvOS 13 und WatchOS 6-apps mit Xamarin zu erhalten. Es wird erläutert, wie Xcode 11 herunterladen und Aktualisieren von Visual Studio für Mac.
+title: Beginnen Sie mit IOS 13, ipados 13, tvos 13 und watchos 6
+description: In diesem Dokument wird beschrieben, wie Sie das Einrichten von IOS 13-, ipados 13-, tvos 13-und watchos 6-apps mit xamarin einrichten. Darin wird erläutert, wie Sie Xcode 11 herunterladen und Visual Studio für Mac aktualisieren.
 ms.prod: xamarin
 ms.assetid: 97414545-85D2-433C-9246-63B6763F488A
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: 554cddf5717401f912cab38c78a6af17659a0cf7
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 9dc6f234c4bc14c3644d953eef0d2e0f397436e5
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558685"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033074"
 ---
-# <a name="get-started-with-ios-13"></a>Erste Schritte mit iOS 13
+# <a name="get-started-with-ios-13"></a>Einstieg in ios 13
 
 ![Feature der Vorschauversion](~/media/shared/preview.png)
 
-In diesem Dokument wird beschrieben, wie mit dem Erstellen von Xamarin-apps, die mit Xcode 11, veröffentlichten APIs für iOS 13 aufgerufen wird. Mithilfe der Vorschau ist MacOS 10.14.4 (Mojave) oder höher.
+In diesem Dokument wird beschrieben, wie Sie mit dem Entwickeln von xamarin-apps beginnen, die mit Xcode 11 (IOS 13) veröffentlichte APIs aufzurufen. Die Verwendung der Vorschau erfordert macOS-10.14.4 (mujave) oder eine neuere Version.
 
 ## <a name="download-and-install"></a>Herunterladen und installieren
 
-1. **Installieren Sie Xcode 11 Beta** – registrierten Apple-Entwickler können herunterladen und Installieren der neuesten Version von Xcode 11 Beta aus der [Apple Developer Portal](https://developer.apple.com/download/) oder **App Store**.
+1. **Installieren von Xcode 11 Beta** – registrierte Apple-Entwickler können die neueste Version von Xcode 11 Beta aus dem Apple- [Entwickler Portal](https://developer.apple.com/download/) oder dem **App Store**herunterladen und installieren.
 
-2. **Führen Sie die Xcode-11-Betaversion** – führen Sie Xcode 11 vor dem Aktualisieren und Ausführen von Visual Studio für Mac, während sie einige installiert wird, Xamarin-tools erfordert.
+2. **Ausführen von Xcode 11 Beta** – Ausführen von Xcode 11 vor dem Aktualisieren und Ausführen von Visual Studio für Mac, da einige von xamarin erforderliche Tools installiert werden.
 
-3. Wählen Sie in Visual Studio für Mac **Visual Studio > nach Updates suchen...** , wählen die **Xcode 11 Previews** channel, und installieren Sie die verfügbaren Updates.
+3. Wählen Sie in Visual Studio für Mac **Visual Studio > nach Updates suchen... aus**, wählen Sie den **Xcode 11-Vorschau** Kanal aus, und installieren Sie die verfügbaren Updates. Wenn dieser Kanal nicht angezeigt wird, stellen Sie sicher, dass Sie bei Ihrem Konto über **Visual Studio > Konto**angemeldet sind....
 
-4. Wählen Sie in Visual Studio für Mac **Visual Studio > Einstellungen > Projekte > SDK-Speicherorte > Apple** , und wählen Sie **Xcode-beta.app**.
+4. Wählen Sie in Visual Studio für Mac **Visual Studio > Einstellungen > Projekte > SDK-Speicherorte > Apple** aus, und wählen Sie **Xcode-Beta. app**aus.
 
-5. (Optional) Wenn diese Vorschauversion mithilfe bewerten _Xcode 11 Beta 3_, müssen Sie aktivieren, verknüpfen. Mit der rechten Maustaste in des Projekts, navigieren Sie zu **Optionen > iOS-Build > linkerverhalten** und legen Sie den Wert der Linker Verhalten **Link nur Framework-SDKs**. Diese problemumgehung kann nicht in einer kommenden Vorschau erforderlich werden.
+5. Optionale Wenn Sie diese Vorschau mithilfe von _Xcode 11 Beta 3_evaluieren, müssen Sie die Verknüpfung aktivieren. Klicken Sie mit der rechten Maustaste auf das Projekt, navigieren Sie zu **Optionen > IOS-Build > linkerverhalten** , und legen Sie den Wert des **linkerverhaltens auf nur frameworksdi** Diese Problem Umgehung wird in einer zukünftigen Vorschau nicht benötigt.
 
-6. (Optional) **IOS 13 auf iOS-Geräten installieren** – für den Test des Geräts von apps, die APIs verwendet, die mit Xcode 11, registrierten Apple verwenden, Entwickler können [herunterladen](https://developer.apple.com/download) und das Betriebssystem auf ihren Geräten installieren. Da iOS in der Betaversion ist, achten Sie auf dem primären Gerät installieren.
+6. Optionale **Installieren von IOS 13 auf Ihren IOS-Geräten** – für Gerätetests von apps, die mit Xcode 11 eingeführte APIs verwenden, können registrierte Apple-Entwickler das Betriebssystem auf Ihren Geräten [herunterladen](https://developer.apple.com/download) und installieren. Da sich IOS in der Beta Version befindet, achten Sie darauf, die Installation auf Ihrem primären Gerät durchzuführen.
 
    > [!TIP]
-   > Auch wenn Ihre app keine neuen APIs nicht verwendet, achten Sie darauf, dass Sie mit den neuesten Xcode-11-SDKs zu erstellen und testen, um sicherzustellen, dass alles wie erwartet funktioniert. Wenn eine app keine neuen APIs nicht aufruft, können Sie mit diesen neuen SDKs neu kompilieren und Testen auf Geräten, die noch nicht auf das neue Betriebssystem aktualisiert wurden.
+   > Auch wenn Ihre APP keine neuen APIs verwendet, stellen Sie sicher, dass Sie mit den neuesten Xcode 11-sdys erstellt werden, und testen Sie Sie, um sicherzustellen, dass alles wie erwartet funktioniert. Wenn eine APP keine neuen APIs aufruft, können Sie Sie mit diesen neuen sdchen neu kompilieren und auf Geräten testen, für die noch kein Upgrade auf das neue Betriebssystem durchgeführt wurde.
    >
-   > Bevor Sie von Apple, um Ihre Xamarin-apps zu testen. aktualisieren Ihre Geräte, auf das neueste Betriebssystem veröffentlicht werden, achten Sie darauf, dass Sie zu:
+   > Bevor Sie Ihre Geräte auf die neuesten Betriebssystemversionen von Apple aktualisieren, um Ihre xamarin-apps zu testen, stellen Sie Folgendes sicher:
    >
-   > - Lesen [Apple – Anmerkungen zu dieser](https://developer.apple.com/download/) für das Aktualisieren des Betriebssystems.
+   > - Lesen Sie die Anmerkungen zu dieser [Version](https://developer.apple.com/download/) für die Betriebssystemupdates.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xcode herunterladen](https://developer.apple.com/download/)
-- [Anmerkungen zur Version von Xamarin.iOS-Vorschau](/xamarin/ios/release-notes/12/12.99)
+- [XCode herunterladen](https://developer.apple.com/download/)
+- [Anmerkungen zu dieser Version von xamarin. IOS Preview](/xamarin/ios/release-notes/12/12.99)
