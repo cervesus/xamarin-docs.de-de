@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c33db7de63a585cb6fb47aa1145aa724c9eb790f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a537bdaf2015dd7d179545cb7587934818e960d7
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037476"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71004146"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -43,7 +43,7 @@ ms.locfileid: "61037476"
 
     Legen Sie Breakpoints in den beiden Ereignishandlern fest, und tippen Sie auf Elemente in der [`ListView`](xref:Xamarin.Forms.ListView). Beachten Sie, dass das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis nur ausgelöst wird, wenn ein neues Element in der [`ListView`](xref:Xamarin.Forms.ListView) ausgewählt wird, während das [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)-Ereignis bei jedem Antippen eines Elements ausgelöst wird.
 
-    Weitere Informationen zur Elementauswahl und Datenabzweigungen finden Sie unter [Auswahl & Datenabzweigungen](~/xamarin-forms/user-interface/listview/interactivity.md#selection--taps) im Artikel [ListView-Interaktivität](~/xamarin-forms/user-interface/listview/interactivity.md).
+    Weitere Informationen zur Elementauswahl und Datenabzweigungen finden Sie unter [Auswahl & Datenabzweigungen](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps) im Artikel [ListView-Interaktivität](~/xamarin-forms/user-interface/listview/interactivity.md).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -82,4 +82,4 @@ ms.locfileid: "61037476"
 
     Legen Sie Breakpoints in den beiden Ereignishandlern fest, und tippen Sie auf Elemente in der [`ListView`](xref:Xamarin.Forms.ListView). Beachten Sie, dass das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis nur ausgelöst wird, wenn ein neues Element in der [`ListView`](xref:Xamarin.Forms.ListView) ausgewählt wird, während das [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)-Ereignis bei jedem Antippen eines Elements ausgelöst wird.
 
-    Weitere Informationen zur Elementauswahl und Datenabzweigungen finden Sie unter [Auswahl & Datenabzweigungen](~/xamarin-forms/user-interface/listview/interactivity.md#selection--taps) im Artikel [ListView-Interaktivität](~/xamarin-forms/user-interface/listview/interactivity.md).
+    Weitere Informationen zur Elementauswahl und Datenabzweigungen finden Sie unter [Auswahl und Datenabzweigungen](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and).
