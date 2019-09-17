@@ -1,52 +1,51 @@
 ---
-title: Erstellen von Bindungen mit objektive Sharpie
-description: Dieser Abschnitt enthält eine Einführung in die Ziel-Sharpie, Xamarin Befehlszeilentool verwendet, um den Prozess zum Erstellen einer Bindung an ein Objective-C-Bibliothek automatisieren
+title: Erstellen von Bindungen mit dem Ziel-Sharpie
+description: Dieser Abschnitt enthält eine Einführung in das-Befehlszeilen Tool von Target Sharpie, xamarin, das verwendet wird, um den Prozess der Erstellung einer Bindung an eine Ziel-C-Bibliothek zu automatisieren.
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: c298d3dc772929a123b6b65b0efe929f023a6563
-ms.sourcegitcommit: 7dbfac5f68c55f40dd726aa1b03cff62082fe711
+ms.openlocfilehash: d5b9fa1edc09b831dbc69ab092dfb5270942e67a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866356"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765710"
 ---
-# <a name="creating-bindings-with-objective-sharpie"></a>Erstellen von Bindungen mit objektive Sharpie
+# <a name="creating-bindings-with-objective-sharpie"></a>Erstellen von Bindungen mit dem Ziel-Sharpie
 
-_Dieser Abschnitt enthält eine Einführung in die Ziel-Sharpie, Xamarin Befehlszeilentool verwendet, um den Prozess zum Erstellen einer Bindung an ein Objective-C-Bibliothek automatisieren_
+_Dieser Abschnitt enthält eine Einführung in das-Befehlszeilen Tool von Target Sharpie, xamarin, das verwendet wird, um den Prozess der Erstellung einer Bindung an eine Ziel-C-Bibliothek zu automatisieren._
 
-- [Übersicht über die](#overview) & [Verlauf](#history)
+- [Übersicht](#overview) & [Verlauf](#history)
 - [Erste Schritte](get-started.md)
 - [Tools und Befehle](tools.md)
 - [Features](platform/index.md)
 - [Beispiele](examples/index.md)
-- [Vollständige Exemplarische Vorgehensweise](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Exemplarische Vorgehensweise vervollständigen](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Releaseverlauf](releases.md)
 
 ## <a name="overview"></a>Übersicht
 
-Objektive Sharpie ist ein Befehlszeilentool können Sie das erste Element des eine Bindung zu starten.
-Es funktioniert, indem Sie die Analyse der Headerdateien zuordnen die öffentliche API in einer nativen Bibliothek die [Bindungsdefinition](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) (ein Prozess, die zuvor manuell durchgeführt wurde).
+Ziel-Sharpie ist ein Befehlszeilen Tool, mit dem der erste Durchlauf einer Bindung Bootstrap wird.
+Dies funktioniert durch das Überprüfen der Header Dateien einer nativen Bibliothek, um die öffentliche API der [Bindungs Definition](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) zuzuordnen (ein Prozess, der zuvor manuell abgeschlossen wurde).
 
-Objektive Sharpie verwendet Clang-Analyse-Headerdateien, damit die Bindung so genau und umfassend wie möglich ist. Dies kann erheblich reduzieren, Zeit und Mühe, die es dauert, um eine Bindung für die Qualität zu erzeugen.
+Der Ziel-Sharpie verwendet clang-Analyse Header Dateien, sodass die Bindung so genau und gründlich wie möglich ist. Dies kann die Zeit und den Aufwand für die Erstellung einer Qualitäts Bindung erheblich verkürzen.
 
 > [!IMPORTANT]
-> Objektive Sharpie ist ein Tool für erfahrene Xamarin-Entwickler mit Kenntnissen von Objective-C (und durch Erweiterung, C). Bevor Sie versuchen, binden Sie eine Objective-C-Bibliothek sollten Sie wissen, wie Sie die native Bibliothek erstellen, auf der Befehlszeile aus (und ein gutes Verständnis der Funktionsweise der nativen Bibliothek) verfügen.
+> Ziel-Sharpie ist ein Tool für erfahrene xamarin-Entwickler mit erweiterten Kenntnissen von Target-C (und der Erweiterung C). Bevor Sie versuchen, eine Ziel-C-Bibliothek zu binden, sollten Sie fundierte Kenntnisse darüber haben, wie Sie die native Bibliothek in der Befehlszeile erstellen (und ein gutes Verständnis der Funktionsweise der systemeigenen Bibliothek).
 
 ## <a name="history"></a>Versionsgeschichte
 
-Wir haben wurden weiterentwickelt und die Ziel-Sharpie intern bei Xamarin für die letzten drei Jahre. Als Beweis der Leistungsfähigkeit von Ziel Sharpie APIs in Xamarin.iOS- und Xamarin.Mac eingeführt wurden, da iOS 8, Mac OS X 10.10 unterstützt, und WatchOS 2.0 wurden komplett mit Ziel Sharpie Bootstrapping durchgeführt. Xamarin basiert stark auf Ziel Sharpie intern für die Erstellung eigener Produkte.
+Wir haben den Ziel-sharkreis in den letzten drei Jahren intern in xamarin entwickelt und verwendet. Als Beweis für die Leistungsfähigkeit von Target Sharpie wurden APIs, die in xamarin. IOS und xamarin. Mac seit IOS 8, Mac OS X 10,10 und watchos 2,0 eingeführt wurden, mit dem Ziel-Sharpie vollständig Bootstrap. Xamarin basiert intern auf dem Ziel Sharpie, um seine eigenen Produkte zu entwickeln.
 
-Ziel-Sharpie ist jedoch ein sehr fortschrittlichen Tool, das erfordert erweiterte Kenntnisse der Objective-C und C, wie Sie mit dem Clang-Compiler in der Befehlszeile und in der Regel wie systemeigene Bibliotheken zusammengestellt werden. Aufgrund dieser selten, wir sind der Ansicht, dass durch eine grafische Benutzeroberfläche Assistent legt fest, die falschen Erwartungen und daher Ziel Sharpie ist derzeit nur als ein Befehlszeilentool zur Verfügung.
+Bei Ziel-Sharpie handelt es sich jedoch um ein sehr erweitertes Tool, das erweiterte Kenntnisse von "target-c" und "c" erfordert, die Verwendung des clang-Compilers in der Befehlszeile und im Allgemeinen, wie systemeigene Bibliotheken gemeinsam eingesetzt werden. Aufgrund dieser hohen Obergrenze haben wir festgestellt, dass ein GUI-Assistent die falschen Erwartungen festlegt, und daher ist das Ziel "Sharpie" derzeit nur als Befehlszeilen Tool verfügbar.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Objektive Sharpie-download](https://aka.ms/objective-sharpie)
-- [Exemplarische Vorgehensweise: Binden eine Objective-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Ziel-Sharpie-Download](https://aka.ms/objective-sharpie)
+- [Exemplarische Vorgehensweise: Binden einer Ziel-C-Bibliothek](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [Informationen zu](~/cross-platform/macios/binding/overview.md)
-- [Bindung Typen – Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
+- [Bindungs Details](~/cross-platform/macios/binding/overview.md)
+- [Bindungs Typen-Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Xamarin für Objective-C-Entwickler](~/ios/get-started/objective-c-developers/index.md)
-

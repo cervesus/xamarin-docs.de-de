@@ -1,104 +1,100 @@
 ---
-title: .NET für Android einbetten
+title: .Net-Einbettung unter Android
 ms.prod: xamarin
 ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/15/2018
-ms.openlocfilehash: 6917267896cff796af4e5cff095720eaeccc7652
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1369d5cd901207618128da8b0111e488eae7b83e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61215533"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772217"
 ---
-# <a name="net-embedding-on-android"></a>.NET für Android einbetten
+# <a name="net-embedding-on-android"></a>.Net-Einbettung unter Android
 
-In einigen Fällen können Sie eine Bibliothek für .NET von Xamarin zu einem vorhandenen systemeigenen Android-Projekt hinzufügen möchten. Zu diesem Zweck können Sie die [Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/) Tool, um Ihre .NET Bibliothek in eine systemeigene Bibliothek zu verwandeln, die in eine native Java-basierte Android-app integriert werden können.
+In einigen Fällen möchten Sie möglicherweise eine xamarin .NET-Bibliothek zu einem vorhandenen nativen Android-Projekt hinzufügen. Zu diesem Zweck können Sie das Tool [embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/) verwenden, um die .NET-Bibliothek in eine native Bibliothek umzuwandeln, die in eine native Java-basierte Android-App integriert werden kann.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="xamarinandroid-requirements"></a>Xamarin.Android-Anforderungen
+## <a name="xamarinandroid-requirements"></a>Xamarin. Android-Anforderungen
 
-Für Xamarin.Android zum Einbetten von .NET arbeiten benötigen Sie Folgendes:
+Damit xamarin. Android mit der .net-Einbettung funktioniert, benötigen Sie Folgendes:
 
--   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) or later must be installed.
+- **Xamarin. Android** &ndash; [xamarin. Android 7,5](https://visualstudio.microsoft.com/xamarin/) oder höher muss installiert sein.
 
--   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/) or later must be installed.
+- **Android Studio** [Android Studio 3. x](https://developer.android.com/studio/) oder höher muss installiert sein. &ndash;
 
--   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
+- **Java Developer Kit:** &ndash;   [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
 
+## <a name="using-embeddinator-4000"></a>Verwenden von embeddinator-4000
 
-## <a name="using-embeddinator-4000"></a>Verwenden von Embeddinator-4000
+Führen Sie die folgenden Schritte aus, um eine .NET-Bibliothek in einem nativen Android-Projekt zu verwenden:
 
-Um eine .NET Bibliothek in ein systemeigenes Android-Projekt nutzen zu können, verwenden Sie die folgenden Schritte aus:
+1. Erstellen Sie C# ein Android-Bibliotheksprojekt.
 
-1.  Erstellen Sie eine C# Android-Bibliotheksprojekt.
+2. Installieren Sie [embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/).
 
-2.  Installieren Sie [Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/).
-
-3.  Suchen Sie **Embeddinator-4000.exe** und Hinzufügen zu Ihrem **Pfad**. Zum Beispiel:
+3. Suchen Sie **Embeddinator-4000. exe** , und fügen Sie es dem **Pfad**hinzu. Beispiel:
 
     ```cmd
     set PATH=%PATH%;C:\Users\USERNAME\.nuget\packages\embeddinator-4000\0.4.0\tools
     ```
 
-4.  Führen Sie auf die Bibliotheksassembly Embeddinator-4000. Zum Beispiel:
+4. Führen Sie embeddinator-4000 für die Bibliotheksassembly aus. Beispiel:
 
     ```cmd
     Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
     ```
 
-5.  Verwenden Sie die generierte AAR-Datei in einem Java-Projekt in Android Studio.
-
+5. Verwenden Sie die generierte Aar-Datei in einem Java-Projekt in Android Studio.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="xamarinandroid-requirements"></a>Xamarin.Android-Anforderungen
+## <a name="xamarinandroid-requirements"></a>Xamarin. Android-Anforderungen
 
-Für Xamarin.Android zum Einbetten von .NET arbeiten benötigen Sie Folgendes:
+Damit xamarin. Android mit der .net-Einbettung funktioniert, benötigen Sie Folgendes:
 
--   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) or later must be installed.
+- **Xamarin. Android** &ndash; [xamarin. Android 7,5](https://visualstudio.microsoft.com/xamarin/) oder höher muss installiert sein.
 
--   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/) or later must be installed.
+- **Android Studio** [Android Studio 3. x](https://developer.android.com/studio/) oder höher muss installiert sein. &ndash;
 
--   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
+- **Java Developer Kit:** &ndash;   [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher muss installiert sein.
 
--   **Mono** &ndash; [Mono 5.0](https://www.mono-project.com/download/) oder höher muss installiert sein (Mono wird mit Visual Studio für Mac installiert).
+- **Mono:** &ndash;   [Mono 5.0](https://www.mono-project.com/download/) oder höher muss installiert sein (Mono wird mit Visual Studio für Mac installiert).
 
+## <a name="using-embeddinator-4000"></a>Verwenden von embeddinator-4000
 
-## <a name="using-embeddinator-4000"></a>Verwenden von Embeddinator-4000
+Führen Sie die folgenden Schritte aus, um eine .NET-Bibliothek in einem nativen Android-Projekt zu verwenden:
 
-Um eine .NET Bibliothek in ein systemeigenes Android-Projekt nutzen zu können, verwenden Sie die folgenden Schritte aus:
+1. Erstellen Sie C# ein Android-Bibliotheksprojekt.
 
-1.  Erstellen Sie eine C# Android-Bibliotheksprojekt.
+2. Installieren Sie [embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/).
 
-2.  Installieren Sie [Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/).
-
-3.  Suchen Sie **Embeddinator-4000.exe** und fügen **mono** zu Ihrem Pfad. Zum Beispiel:
+3. Suchen Sie **Embeddinator-4000. exe** , und fügen Sie **Mono** zu Ihrem Pfad hinzu. Beispiel:
 
     ```bash
     export TOOLS=~/.nuget/packages/embeddinator-4000/0.4.0/tools
     export PATH=$PATH:/Library/Frameworks/Mono.framework/Commands
     ```
 
-4.  Führen Sie auf die Bibliotheksassembly Embeddinator-4000. Zum Beispiel:
+4. Führen Sie embeddinator-4000 für die Bibliotheksassembly aus. Beispiel:
 
     ```bash
     mono $TOOLS/Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
     ```
 
-5.  Verwenden Sie die generierte AAR-Datei in einem Java-Projekt in Android Studio.
+5. Verwenden Sie die generierte Aar-Datei in einem Java-Projekt in Android Studio.
 
 -----
 
-Nutzung und über die Befehlszeile Optionen werden beschrieben, der [Embeddinator-4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c) Dokumentation.
+Verwendungs-und Befehlszeilenoptionen werden in der Dokumentation zu [embeddinator-4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c) beschrieben.
 
+## <a name="callbacks"></a>Rückrufe
 
-## <a name="callbacks"></a>Callbacks
-
-Erfahren Sie mehr über [Aufrufe zwischen C# und Java](callbacks.md).
+Erfahren Sie, wie Sie [Aufrufe zwischen C# und Java tätigen](callbacks.md).
 
 ## <a name="samples"></a>Proben
 
-* [Wetter-Beispiel-app](https://github.com/jamesmontemagno/embeddinator-weather)
+- [Beispiel-App für Wetter](https://github.com/jamesmontemagno/embeddinator-weather)
