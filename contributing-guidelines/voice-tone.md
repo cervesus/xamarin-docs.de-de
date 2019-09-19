@@ -1,7 +1,16 @@
+---
+ms.openlocfilehash: 4d045c0025effae4f5e4cd30e03f8776be0c1270
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105752"
+---
 # <a name="voice-and-tone-guidelines"></a>Richtlinien zu Sprache und Schreibstil
 
 Entwickler lesen Ihre Dokumentation, um Xamarin kennenzulernen und bei der täglichen Arbeit zu verwenden.
 Ziel ist es, eine sinnvolle Dokumentation zu erstellen, die den Leser bei seiner Arbeit unterstützt. Hierbei helfen unsere Richtlinien. Unsere Stilvorgaben enthalten vier Empfehlungen:
+
 - [Verwenden Sie einen umgangssprachlichen Ton](#use-a-conversational-tone)
 - [Schreiben Sie in zweiter Person](#write-in-2nd-person)
 - [Verwenden Sie Aktivkonstruktionen](#use-active-voice)

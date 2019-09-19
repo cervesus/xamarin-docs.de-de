@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 69682372e2b1ac84db2c6464ac3b05a58645a9e3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8374e90ea6d460a0e0c22763db023654c3008b32
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753561"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105747"
 ---
 # <a name="metadata-and-markdown-template"></a>Metadaten und Markdownvorlage
 
@@ -65,6 +65,7 @@ Markdown verwendet Sonderzeichen wie z.B. \*, \`, und \# für die Formatierung. 
 ## <a name="file-name"></a>Dateiname
 
 Dateinamen verwenden die folgenden Regeln:
+
 - Es sollten nur Kleinbuchstaben, Zahlen und Bindestriche enthalten sein.
 - Keine Leer- oder Interpunktionszeichen. Verwenden Sie die Bindestriche zum Trennen von Wörtern und Zahlen im Dateinamen.
 - Verwenden Sie genaue Aktionsverben wie „entwickeln“, „kaufen“, „erstellen“ oder „beheben“. Keine auf „-ing“ endenden Worte dürfen verwendet werden.
@@ -75,6 +76,7 @@ Dateinamen verwenden die folgenden Regeln:
 ## <a name="headings"></a>Kopfzeilen
 
 Verwenden Sie die übliche Groß-/Kleinschreibung. Folgendes sollte immer groß geschrieben werden:
+
 - Das erste Wort eines Headers
 - Das erste Wort nach einem Doppelpunkt in einem Titel oder einer Überschrift (z.B. „Vorgehensweise: Sortieren eines Arrays“).
 
@@ -131,6 +133,7 @@ Das Buildsystem verfügt über einige Erweiterungen, die es ermöglichen, auf .N
 Wenn auf eine API verlinkt wird, können Sie deren eindeutigen Bezeichner (UID) verwenden, der automatisch aus dem Quellcode generiert wird.
 
 Sie können eine der folgenden Syntaxen verwenden:
+
 1. Markdownlink: `[link_text](xref:UID)`
 2. Automatischer Link: `<xref:UID>`
 3. Kurzform: `@UID`
@@ -143,6 +146,7 @@ Weitere Informationen zur Verwendung dieser Notation finden Sie unter [Using cro
 > Im Moment gibt es keine einfache Möglichkeit, nach den UIDs zu suchen. Die beste Möglichkeit, nach der UID für eine API zu suchen, ist, im folgenden Repository zu suchen: [docascode/coreapi](https://github.com/docascode/coreapi). Wir arbeiten daran, in Zukunft über ein besseres System zu verfügen.
 
 Wenn die UID die Sonderzeichen \` und \# enthält, muss der UID-Wert als %60 und %23 entsprechend HTML-codiert werden, wie in den folgenden Beispielen:
+
 - Beispiel: @System.Threading.Tasks.Task\`1 wird zu `@System.Threading.Tasks.Task%601`
 - Beispiel: @System.Exception\#ctor wird zu `@System.Exception.%23ctor`
 

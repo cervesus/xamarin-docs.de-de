@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 51e802b1e142955fb3988432f9d9c7393f2ee0ea
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5d299112da87207f7486247e0ed6f00c35a35fe5
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292334"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106044"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
 
@@ -21,6 +21,7 @@ Ein App-Entwickler muss eine App gemeinsam mit Screenshots, einer Beschreibung, 
 In diesem Leitfaden werden die Schritte zur Vorbereitung einer App für die Veröffentlichung im App Store und zum Übermitteln der App an Apple zur Überprüfung beschrieben. Folgende Aspekte werden besprochen:
 
 > [!div class="checklist"]
+>
 > - Befolgen der Richtlinien für die Überprüfung im App Store
 > - Einrichten einer App-ID und Berechtigungen
 > - Bereitstellen eines Symbols für den App Store und von App-Symbolen
@@ -316,12 +317,11 @@ Die neue Eigenschaft kann auf unterschiedliche Weise verwendet werden. Für eine
        <MtouchFloat32>true</MtouchFloat32>
        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
        <MtouchLink>SdkOnly</MtouchLink>
-       <MtouchArch>;ARMv7, ARM64</MtouchArch>
+       <MtouchArch>ARMv7, ARM64</MtouchArch>
        <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
        <MtouchTlsProvider>Default</MtouchTlsProvider>
-       <PlatformTarget>x86&</PlatformTarget>
        <BuildIpa>true</BuildIpa>
-       <IpaPackageDir>$(OutputPath</IpaPackageDir>
+       <IpaPackageDir>$(OutputPath)</IpaPackageDir>
     </PropertyGroup>
     ```
 
