@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 666632ce879440fd05269e86ed05c2813a2d96af
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: ff3a0477c6b8a2bf30693ff05a4a992ad053d2b9
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277242"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107246"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
 
@@ -14,6 +14,7 @@ Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolg
 In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 > [!div class="checklist"]
+>
 > - Erstellen eines Xamarin.Forms-[`Label`](xref:Xamarin.Forms.Label)-Elements in XAML
 > - Ändern der Darstellung eines `Label`-Elements
 > - Darstellen von Text in einem einzelnen `Label`-Element, das über mehrere Formate verfügt

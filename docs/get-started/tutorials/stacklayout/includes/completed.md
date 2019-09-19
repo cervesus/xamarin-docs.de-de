@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 92c0dd4b2b2afc03347af8508fe9a56fc9fd152e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ae5962de05190ad914c86ceb0a9b52edb72232dc
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669652"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107249"
 ---
 Glückwunsch, Sie haben das Tutorial erfolgreich abgeschlossen und Folgendes gelernt:
 
 > [!div class="checklist"]
+>
 > - Erstellen eines Xamarin.Forms-[`StackLayout`](xref:Xamarin.Forms.StackLayout)-Elements in XAML
 > - Angeben der Ausrichtung des `StackLayout`-Elements
 > - Steuern der Ausrichtung und Erweiterung der untergeordneten Ansicht innerhalb des `StackLayout`-Elements

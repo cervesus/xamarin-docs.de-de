@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 736b4242549e76ad42d87616ca23759e5f421845
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b01ea403fde614bc06e616c3b1e30bfd8ed10a0f
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669662"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107242"
 ---
 Glückwunsch, Sie haben das Tutorial erfolgreich abgeschlossen und Folgendes gelernt:
 
 > [!div class="checklist"]
+>
 > - Erstellen eines Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Elements in XAML
 > - Füllen des `ListView`-Elements mit Daten
 > - Reagieren auf ausgewählte `ListView`-Elemente
