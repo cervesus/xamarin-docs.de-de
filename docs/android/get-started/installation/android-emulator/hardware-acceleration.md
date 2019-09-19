@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: add9c602f4c04f1d95db4cee578fdadf0b41cf33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758003"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105910"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -22,19 +22,27 @@ _In diesem Artikel wird erläutert, wie Sie die Features für die Hardwarebeschl
 Visual Studio erleichtert es Entwicklern, ihre Xamarin.Android-Anwendungen mithilfe des Android-Emulators zu testen und zu debuggen, wenn kein Android-Gerät verfügbar oder dessen Verwendung unpraktisch ist.
 Der Android-Emulator ist jedoch zu langsam, wenn keine Hardwarebeschleunigung auf dem verwendeten Computer verfügbar ist. Sie können die Leistung des Android-Emulators erheblich steigern, indem Sie spezielle Images für virtuelle x86-Geräte gemeinsam mit den Virtualisierungsfeatures Ihres Computers verwenden.
 
+| Szenario    | HAXM        | WHPX       | Hypervisor.Framework |
+| ----------- | ----------- | -----------| ----------- |
+| Sie verfügen über einen Intel-Prozessor | X | X | X |
+| Sie verfügen über einen AMD-Prozessor   |   | X |   |
+| Sie möchten Hyper-V unterstützen |   | X |   |
+| Sie möchten geschachtelte Virtualisierung unterstützen |   | Eingeschränkt |   |
+| Sie möchten Technologien wie Docker verwenden  |   | X | X |
+
 ::: zone pivot="windows"
 
 ## <a name="accelerating-android-emulators-on-windows"></a>Beschleunigen des Android-Emulators unter Windows
 
 Ihnen stehen die folgenden Virtualisierungstechnologien zum Beschleunigen des Android-Emulators zur Verfügung:
 
-1. **Microsoft Hyper-V und die Hypervisor-Plattform**
+1. **Microsoft Hyper-V und die Windows Hypervisor-Plattform (WHPX)** .
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) ist ein Virtualisierungsfeature von Windows, mit dem virtualisierte Computersysteme auf einem physischen Hostcomputer ausgeführt werden können.
 
 2. **Intel Hardware Accelerated Execution Manager (HAXM)**
    Bei HAXM handelt es sich um eine Virtualisierungs-Engine für Computer mit Intel-CPUs.
 
-Für optimale Leistung wird empfohlen, Hyper-V zum Beschleunigen des Android-Emulators zu verwenden. Wenn Hyper-V nicht für Ihren Computer verfügbar ist, können Sie HAXM verwenden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
+Für die beste Benutzererfahrung unter Windows empfiehlt es sich, HAXM zum Beschleunigen des Android-Emulators zu verwenden. Wenn HAXM auf Ihrem Computer nicht verfügbar ist, kann die Windows Hypervisor-Plattform (WHPX) verwendet werden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
 
 - Die Hardwarebeschleunigung ist verfügbar und auf Ihrem Entwicklungscomputer aktiviert.
 
@@ -158,7 +166,7 @@ Ihnen stehen die folgenden Virtualisierungstechnologien zum Beschleunigen des An
 2. **Intel Hardware Accelerated Execution Manager (HAXM)**
    Bei [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) handelt es sich um eine Virtualisierungs-Engine für Computer mit Intel-CPUs.
 
-Für optimale Leistung wird empfohlen, dass Sie das Hypervisor-Framework zum Beschleunigen des Android-Emulators verwenden. Wenn das Hypervisor-Framework auf Ihrem Mac nicht verfügbar ist, können Sie HAXM verwenden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
+Es empfiehlt sich, das Hypervisor-Framework zum Beschleunigen des Android-Emulators zu verwenden. Wenn das Hypervisor-Framework auf Ihrem Mac nicht verfügbar ist, können Sie HAXM verwenden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
 
 - Die Hardwarebeschleunigung ist verfügbar und auf dem Entwicklungscomputer aktiviert.
 
@@ -180,7 +188,7 @@ Ihr Mac muss die folgenden Kriterien erfüllen, damit der Android-Emulator mit d
 
 - Die CPU Ihres Macs muss das Hypervisor-Framework unterstützen können.
 
-Wenn Ihr Mac die Kriterien erfüllt, verwendet der Android-Emulator automatisch das Hypervisor-Framework für die Beschleunigung (auch wenn HAXM installiert ist). Wenn Sie sich nicht sicher sind, ob das Hypervisor-Framework auf Ihrem Mac unterstützt wird, finden Sie Möglichkeiten zur Überprüfung der Hypervisor-Unterstützung im Handbuch zur [Problembehandlung](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues).
+Wenn Ihr Mac die Kriterien erfüllt, verwendet der Android-Emulator automatisch das Hypervisor-Framework für die Beschleunigung. Wenn Sie sich nicht sicher sind, ob das Hypervisor-Framework auf Ihrem Mac unterstützt wird, finden Sie Möglichkeiten zur Überprüfung der Hypervisor-Unterstützung im Handbuch zur [Problembehandlung](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues).
 
 Wenn Ihr Mac das Hypervisor-Framework nicht unterstützt, können Sie HAXM zur Beschleunigung des Android-Emulators verwenden (wird im Folgenden beschrieben).
 
