@@ -5,12 +5,12 @@ description: Dieses Dokument vergleicht und vergleicht WPF mit xamarin. Forms. E
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: d23b449382183b0385eac38c0b9205e48dbe0a34
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290412"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106032"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu Xamarin. Forms: Ähnlichkeiten & Unterschiede
 
@@ -65,6 +65,7 @@ Eines der wichtigsten Konzepte, die übertragen werden, ist eine Daten Bindungs 
 ### <a name="defining-bindable-properties"></a>Definieren von bindbare Eigenschaften
 
 Die Definition für eine bindbare Eigenschaft in xamarin. Forms ist identisch mit WPF:
+
 1. Das-Objekt muss von `BindableObject`abgeleitet werden.
 2. Es muss ein öffentliches statisches Feld vom Typ `BindableProperty` deklariert sein, um den Sicherungs Speicher Schlüssel für die Eigenschaft zu definieren.
 3. Es sollte ein Eigenschafts Wrapper für öffentliche Instanzen vorhanden `GetValue` sein `SetValue` , der und verwendet, um den Eigenschafts Wert abzurufen und zu ändern.

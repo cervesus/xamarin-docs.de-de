@@ -6,12 +6,12 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: conceptdev
 ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 66b99e0da574c50df32afedb1dd6dc9de315b347
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9c97e871791b633c65e9d374edfe446874567e9
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278466"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106102"
 ---
 # <a name="getting-started-with-objective-c"></a>Die ersten Schritte mit Ziel-C
 
@@ -28,6 +28,7 @@ Um die .net-Einbettung mit Ziel-C zu verwenden, benötigen Sie einen Mac, auf de
 Sie können [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/) installieren, um den C# Code zu bearbeiten und zu kompilieren.
 
 > [!NOTE]
+>
 > - Frühere Versionen von macOS, Xcode und Mono funktionieren _möglicherweise_ , sind jedoch nicht getestet und werden nicht unterstützt.
 > - Die Code Generierung kann unter Windows ausgeführt werden, es ist jedoch nur möglich, Sie auf einem Mac-Computer zu kompilieren, auf dem Xcode installiert ist.
 

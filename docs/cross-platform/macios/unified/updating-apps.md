@@ -6,17 +6,18 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 3379b9672b344e8e424f95e273683f4c5e241b71
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280798"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106058"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Aktualisieren vorhandener apps auf die Unified API
 
 > [!IMPORTANT]
 > Das xamarin-Classic API, das dem Unified API vorangestellt ist, ist veraltet.
+>
 > - Die letzte Version von xamarin. IOS zur Unterstützung der Classic API ("MonoTouch. dll") war xamarin. IOS 9,10.
 > - Xamarin. Mac unterstützt zwar weiterhin die Classic API, wird jedoch nicht mehr aktualisiert. Da sie veraltet ist, sollten Entwickler ihre Anwendungen in die Unified API verschieben.
 

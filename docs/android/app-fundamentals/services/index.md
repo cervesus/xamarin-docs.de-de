@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 7123d7d491bb32a8a506b308cac5ecb6458a1add
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 042878fa8d30acb55de68f63e3491aacb5dbdfb5
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754870"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105873"
 ---
 # <a name="creating-android-services"></a>Erstellen von Android-Diensten
 
@@ -66,6 +66,7 @@ Ab Android 8,0 (API-Ebene 26) ist eine Android-Anwendung nicht mehr in der Lage,
 * Eine andere APP befindet sich im Vordergrund und verwendet Komponenten aus einer APP, die sich andernfalls im Hintergrund befinden würden. Dies ist beispielsweise der Fall, wenn die Anwendung a, die sich im Vordergrund befindet, an einen von Anwendung b bereitgestellten Dienst gebunden ist. Anwendung b würde dann auch im Vordergrund berücksichtigt werden und nicht von Android für die Verwendung im Hintergrund beendet werden.
 
 Es gibt einige Situationen, in denen Android, auch wenn eine APP im Hintergrund ist, die APP reaktivieren und diese Einschränkungen für einige Minuten lockern können, sodass die APP einige Arbeit erledigen kann:
+
 * Von der APP wird eine Firebase-Cloud-Nachricht mit hoher Priorität empfangen.
 * Die App empfängt eine Broadcast-app. 
 * Die Anwendung empfängt und führt als `PendingIntent` Antwort auf eine Benachrichtigung aus.

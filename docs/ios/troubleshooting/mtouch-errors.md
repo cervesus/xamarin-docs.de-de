@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: e001f22759ac70bbf81a10bf5e56790497dab767
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985960"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105979"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. IOS-Fehler
 
@@ -1598,6 +1598,7 @@ Die Stammassembly konnte nicht geladen werden. Überprüfen Sie, ob der Pfad in 
 Beim Versuch, generierten Bindungs Code zu optimieren, ist ein unerwartetes Problem aufgetreten. Das Element, das das Problem verursacht, wird in der Fehlermeldung benannt. Um dieses Problem zu beheben, muss die Assembly mit dem Namen (oder mit dem Typ oder der Methode mit dem Namen) in einem neuen Problem auf [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) zusammen mit einem vollständigen Buildprotokoll mit aktivierter Ausführlichkeit (d. h. `-v -v -v -v` in den **zusätzlichen maddress-Argumenten**) bereitgestellt werden.
 
 Die letzte Ziffer `x` lautet:
+
 - `0`für einen Assemblynamen;
 - `1`für einen Typnamen;
 - `3`für einen Methodennamen;

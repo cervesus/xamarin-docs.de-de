@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 24ab8f4b988277cbbf1162a08e5641332a58bd81
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 19cc24c3937921f4f4d95584e1cd656c37b4155f
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228161"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105966"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms-Bezeichnung
 
@@ -230,6 +230,7 @@ Die folgenden Screenshots zeigen das Ergebnis der Einstellung der `FormattedStri
 Die vertikale Gesamthöhe des eine [ `Label` ](xref:Xamarin.Forms.Label) und [ `Span` ](xref:Xamarin.Forms.Span) kann angepasst werden, durch Festlegen der [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight) Eigenschaft oder [ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) zu einem `double` Wert. Unter iOS und Android werden diese Werte Multiplikatoren, der die ursprüngliche Zeilenhöhe, und auf die universelle Windows-Plattform (UWP) die `Label.LineHeight` -Eigenschaftswert ist ein Faktor der Schriftgrad.
 
 > [!NOTE]
+>
 > - Unter iOS die [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight) und [ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) Eigenschaften Ändern der Zeilenhöhe von Text, der in einer einzelnen Zeile passt und Text, der auf mehrere Zeilen umbrochen wird.
 > - Unter Android die [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight) und [ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) Eigenschaften nur ändern, die Zeilenhöhe des Texts, die auf mehrere Zeilen umbrochen wird.
 > - Auf UWP die [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight) eigenschaftenänderungen die Zeilenhöhe des Texts, die auf mehrere Zeilen umbrochen wird und die [ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) Eigenschaft hat keine Auswirkungen.
