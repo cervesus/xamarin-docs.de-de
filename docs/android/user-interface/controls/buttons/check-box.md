@@ -15,7 +15,7 @@ ms.locfileid: "70985673"
 ---
 # <a name="checkbox"></a>CheckBox
 
-In diesem Abschnitt erstellen Sie ein Kontrollkästchen für die Auswahl von Elementen mithilfe des [`CheckBox`](xref:Android.Widget.CheckBox) Widgets. Wenn das Kontrollkästchen aktiviert ist, gibt eine Popupmeldung den aktuellen Zustand an.
+In diesem Abschnitt erstellen Sie ein Kontrollkästchen für die Auswahl von Elementen mithilfe des [`CheckBox`](xref:Android.Widget.CheckBox) Widget verwenden. Wenn das Kontrollkästchen aktiviert ist, gibt eine Popupmeldung den aktuellen Zustand an.
 
 Öffnen Sie die Datei **Resources/Layout/Main. axml**, und fügen Sie das [`CheckBox`](xref:Android.Widget.CheckBox)-Element (innerhalb des [`LinearLayout`](xref:Android.Widget.LinearLayout)-Elements) hinzu:
 
