@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 80e338319e4eeddcb3df287f86bcf89397d423f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754043"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021175"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android-Umgebung
 
@@ -93,10 +93,11 @@ Dabei handelt es sich um eine Zeichenfolge mit Trennzeichen (`,`), die einen der
 - `assembly`: `.apk` und Assemblyanalysemeldungen werden ausgegeben.
 - `gc`: Meldungen, die mit GC in Verbindung stehen, werden ausgegeben.
 - `gref`: Meldungen zu globalen JNI-Verweisen werden ausgegeben.
-- `lref`: Meldungen zu lokalen JNI-Verweisen werden ausgegeben.  
-    *Hinweis:* Dadurch wird eine *große Anzahl von Einträgen* in `adb logcat` erstellt.  
-    In Xamarin.Android 5.1 wird dadurch auch eine `.__override__/lrefs.txt`-Datei erstellt, die *sehr groß* werden kann.  
-    Vermeiden Sie dies.
+- `lref`: Meldungen zu lokalen JNI-Verweisen werden ausgegeben.
+  > [!NOTE]
+  > Dadurch wird eine *große Anzahl von Einträgen* in `adb logcat` erstellt.
+  > In Xamarin.Android 5.1 wird dadurch auch eine `.__override__/lrefs.txt`-Datei erstellt, die *sehr groß* werden kann.
+  > Vermeiden Sie dies.
 - `timing`: Informationen zur zeitlichen Steuerung von Methoden werden ausgegeben. Dadurch werden auch die Dateien `.__override__/methods.txt` und `.__override__/counters.txt` erstellt.
 
 ### `debug.mono.max_grefc`
