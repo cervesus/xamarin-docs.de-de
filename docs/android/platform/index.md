@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 40fa2d93b7fd756c284727566e8043f5084bd483
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
+ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757488"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71119230"
 ---
 # <a name="platform-features"></a>Plattformfeatures
 
@@ -41,6 +41,10 @@ In Android 3,0 wurden Fragmente eingeführt, die zeigen, wie flexiblere Entwürf
 ## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
 
 In dieser Anleitung wird erläutert, wie Android 6,0 _App-Verknüpfungen_unterstützt, eine Technik, mit der Mobile Apps auf URLs auf Websites reagieren können. Darin wird erläutert, wie Sie App-Verknüpfungen in einer Android 6,0-Anwendung implementieren und wie Sie eine Website so konfigurieren, dass den Mobile App Berechtigungen zum Behandeln von App-Links für die Domäne erteilt werden.
+
+## <a name="android-10androidplatformandroid-10md"></a>[Android 10](~/android/platform/android-10.md)
+
+Dieser Artikel bietet einen Überblick über die neuen Features in Android 10, erläutert, wie xamarin. Android für Android 10 entwickelt wird, und bietet Links zu Beispielanwendungen, die veranschaulichen, wie Android Oreo-Funktionen in xamarin. Android-Apps verwendet werden.
 
 ## <a name="android-9-pieandroidplatformpiemd"></a>[Android 9-Kreis](~/android/platform/pie.md)
 
