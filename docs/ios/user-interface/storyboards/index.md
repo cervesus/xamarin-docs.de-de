@@ -68,7 +68,7 @@ Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer 
 - **Anzeigen/pushen** – ein Push-Ziel fügt dem Navigations Stapel den Ansichts Controller hinzu. Dabei wird davon ausgegangen, dass der Ansichts Controller, von dem der Push stammt, Teil desselben Navigations Controllers wie der Ansichts Controller ist, der dem Stapel hinzugefügt wird. Dies geschieht genauso wie `pushViewController` , und wird im Allgemeinen verwendet, wenn zwischen den Daten auf den Bildschirmen eine Beziehung besteht. Die Verwendung von Push-abgue bietet Ihnen den Luxus, eine Navigationsleiste mit einer Schaltfläche "zurück" und einem Titel zu jeder Ansicht auf dem Stapel hinzuzufügen, sodass drilldownnavigation durch die Ansichts Hierarchie ermöglicht wird.
 - **Modal** – ein modaler segue erstellt eine Beziehung zwischen zwei beliebigen Ansichts Controllern in Ihrem Projekt, wobei die Option eines animierten Übergangs angezeigt wird. Der untergeordnete Ansichts Controller verwirft den übergeordneten Ansichts Controller in der Ansicht vollständig. Im Gegensatz zu einem Push-abgue, der eine Schaltfläche "zurück" für uns hinzufügt. Wenn die Verwendung eines modalen `DismissViewController` seegue verwendet werden muss, um zum vorherigen Ansichts Controller zurückzukehren.
 - **Benutzer** definiert – alle benutzerdefinierten Klassen können als Unterklasse von `UIStoryboardSegue`erstellt werden.
-- Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
+- Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
 - **Sourbstbston** – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
 
     [![](images/sourcelesssegue.png "Ein Quellen loser-Eintrag")](images/sourcelesssegue.png#lightbox)
@@ -336,7 +336,7 @@ Bevor wir beginnen, befolgen Sie die obigen Schritte 1 – 8. In den folgenden S
 
 3. Klicken Sie auf den Namen, und legen Sie ihm den *Bezeichner* `SegueToPink`:
 
-    [![](images/namesegue.png "Klicken Sie auf den Namen \"*\", und versehen Sie ihn mit dem Bezeichner \"".")](images/namesegue.png#lightbox)  
+    [![](images/namesegue.png "Klicken Sie auf den Namen \"*\", und versehen Sie ihn mit dem Bezeichner")](images/namesegue.png#lightbox)  
 
 4. Fügen Sie schließlich der- `MainViewController` Klasse die folgende "dendperformabgue"-Methode hinzu:
 

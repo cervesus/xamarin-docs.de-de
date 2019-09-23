@@ -619,7 +619,7 @@ Weitere Informationen zu Größenklassen und deren Auswirkungen auf das Layout v
 
 ### <a name="adaptive-segue-types"></a>Adaptive Enumerationstypen
 
-Wenn der Entwickler bereits Storyboards verwendet hat, werden Sie mit den vorhandenen segue-Typen **Push**, **Modal** und **popover**vertraut sein. Wenn Größenklassen für eine einheitliche storyboarddatei aktiviert werden, werden die folgenden adaptiven * Typen (die der oben beschriebenen neuen View Controller-API entsprechen) verfügbar gemacht: **Anzeigen** und **Anzeigen von Details**.
+Wenn der Entwickler bereits Storyboards verwendet hat, werden Sie mit den vorhandenen segue-Typen **Push**, **Modal** und **popover**vertraut sein. Wenn Größenklassen für eine einheitliche storyboarddatei aktiviert werden, werden die folgenden adaptiven Typen (die der oben beschriebenen neuen View Controller-API entsprechen) verfügbar gemacht: **Anzeigen** und **Anzeigen von Details**.
 
 > [!IMPORTANT]
 > Wenn Größenklassen aktiviert sind, werden alle vorhandenen-Enumerationstypen in die neuen Typen konvertiert.
