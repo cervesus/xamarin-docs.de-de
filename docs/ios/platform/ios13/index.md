@@ -6,17 +6,15 @@ ms.assetid: AB486B2F-6E3B-4E0B-ABB8-58F5804D56D2
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
-ms.date: 07/01/2019
-ms.openlocfilehash: b8a5e8f42c44287a1d60f43784c3e42a9e7fc0ff
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.date: 09/20/2019
+ms.openlocfilehash: b68bb7b3a46be4df3c86af44f646d2dd1eaa6b6f
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70997974"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206337"
 ---
 # <a name="introduction-to-ios-13"></a>Einführung in iOS 13
-
-![Feature der Vorschauversion](~/media/shared/preview.png)
 
 Befolgen Sie diese [Anweisungen](~/ios/platform/ios13/get-started.md) , um zu beginnen.
 
@@ -24,27 +22,13 @@ Befolgen Sie diese [Anweisungen](~/ios/platform/ios13/get-started.md) , um zu be
 
 IOS 13 führt einen neuen dunklen Modus ein, der Entwicklern die Möglichkeit bietet, Ihre apps problemlos zu unterbinden. Mit neuen Tools können Sie Ihre apps gleichzeitig mit einem hellen und einem dunklen Design entwerfen.
 
-## <a name="sign-in-with-applesign-inmd"></a>[Mit Apple anmelden](sign-in.md)
+## <a name="sign-in-with-applesign-inmd"></a>[Anmelden mit Apple](sign-in.md)
 
 IOS 13 bietet neue Funktionen für die Anmeldung bei Apps mithilfe der Anmeldung bei Apple-Geräten, sodass Sie mehr Vertrauen haben, dass Ihre persönlichen Daten nicht in irgendeiner Weise gestohlen oder gesammelt werden, indem Sie die Vorteile von 2FA und einen eingeschränkten Satz von bereitgestellten Informationen.
 
-## <a name="augmented-reality"></a>Erweiterte Realität
+## <a name="multiple-windows-for-ipadmulti-window-ipadmd"></a>[Mehrere Fenster für iPad](multi-window-ipad.md)
 
-Die erweiterte Realität in ios 13 verfügt jetzt über weitere Features, einschließlich einer neuen "People oksion"-Funktion, die es den aren Inhalten der App ermöglicht, das vorhanden sein von Menschen zu berücksichtigen und diese entsprechend zu verschieben.
-
-## <a name="siri"></a>Siri
-
-Siri wurde erweitert, um die Handhabung von Audioinhalten und eine bessere Handhabung von Verknüpfungen über die APP Verknüpfungen zu ermöglichen.
-
-## <a name="machine-learning"></a>Machine Learning
-
-Core ml 3 ermöglicht das einfache trainieren von ml-Modellen mithilfe der Hardwarefunktionen Ihrer Geräte.
-
-## <a name="ipados"></a>iPadOS
-
-ipados ist eine Erweiterung von IOS, die speziell mit dem iPad erstellt wurde.
-
-Mit ipados können Sie den Apple-Stift mithilfe von "pcilkit" mit neuen Gesten besser nutzen, die Verwendung mehrerer Fenster zulassen und verschiedene Inhalte zwischen apps per Drag & Drop verschieben. mit ipados können apps auch systemweite Schriftarten bereitstellen.
+iPad-Apps können nun mehrere Fenster verwenden, die aus einer Vielzahl von Interaktionen erstellt wurden.
 
 ## <a name="related-links"></a>Verwandte Links
 

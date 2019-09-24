@@ -7,16 +7,14 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: c46da6b4ed877cc85f98e6ef0ab2b9a28d811723
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: c1f75f4872d787e261ab6bbac3624e31538c6ff0
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70986123"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206540"
 ---
 # <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Einrichten der Anmeldung mit Apple für xamarin. Forms
-
-![Diese API befindet sich derzeit in der Vorschau Phase.](~/media/shared/preview.png)
 
 In dieser Anleitung werden die Schritte beschrieben, die zum Einrichten Ihrer plattformübergreifenden Anwendungen erforderlich sind, um die erweiterte Anmeldung mit Apple zu nutzen. Während das Apple-Setup direkt im Apple-Entwickler Portal ausgeführt wird, sind zusätzliche Schritte erforderlich, um eine sichere Beziehung zwischen Android und Apple herzustellen. 
 

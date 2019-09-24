@@ -7,30 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: a8ea06d81fcc79a24f155a1562818daea3ba982a
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 5c5191a6a7490ec0301bdea7b7f5aa2217b80c96
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021399"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206364"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Anmelden mit Apple in xamarin. IOS
-
-![Diese API befindet sich derzeit in der Vorschau Phase.](~/media/shared/preview.png)
 
 Die Anmeldung mit Apple ist ein neuer Dienst, der Identitätsschutz für Benutzer von Authentifizierungsdiensten von Drittanbietern bereitstellt. Ab IOS 13 erfordert Apple, dass jede neue APP, die Authentifizierungsdienste von Drittanbietern verwendet, auch die Anmeldung bei Apple bereitstellen sollte. Vorhandene apps, die aktualisiert werden, müssen sich bis zum 2020 nicht mehr mit Apple anmelden.
 
 In diesem Dokument wird erläutert, wie Sie die Anmeldung mit Apple zu IOS 13-Anwendungen hinzufügen können.
-
-## <a name="requirements"></a>Anforderungen
-
-Für dieses Feature ist Folgendes erforderlich:
-
-* IOS 13
-* Xamarin. IOS 12,99
-* Visual Studio 2019 oder Visual Studio 2019 für Mac mit Xcode 11-Unterstützung.
-
-Weitere Informationen finden Sie unter " [Get Started](get-started.md) ".
 
 ## <a name="apple-developer-setup"></a>Apple-Entwickler-Setup
 

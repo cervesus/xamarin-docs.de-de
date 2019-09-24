@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: d88832dd4fd69019f9905fb779c5572ba9a689eb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281021"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206303"
 ---
 # <a name="ios-platform-features-overview"></a>Übersicht über IOS-Platt Form Features
 
@@ -22,7 +22,7 @@ Auf dieser Seite werden die aktuellen IOS-Releases aufgeführt und einige der Ap
 
 |  |  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Einführung in ios 13 Preview](~/ios/platform/ios13/index.md) | In diesem Dokument wird xamarin. IOS 13 Preview beschrieben.|
+| [Einführung in ios 13](~/ios/platform/ios13/index.md) | In diesem Dokument wird xamarin. IOS 13 beschrieben.|
 | [Einführung in iOS 12](~/ios/platform/introduction-to-ios12/index.md) | In diesem Dokument werden die IOS 12-Funktionen beschrieben, die zum Entwickeln von xamarin. IOS-Anwendungen verfügbar sind.|
 | [Einführung in iOS 11](~/ios/platform/introduction-to-ios11/index.md) | In diesem Dokument werden die neuen und aktualisierten Features in ios 11 und Xcode 9 beschrieben, z. b. Arkit, Core ml, Core NFC, Drag & Drop, MapKit, PDFKit, Sirikit und Vision. Es enthält Links zu Anleitungen, in denen beschrieben wird, wie diese Funktionen mit xamarin. IOS verwendet werden. |
 | [Einführung in iOS 10](~/ios/platform/introduction-to-ios10/index.md) | IOS 10 umfasst mehrere neue APIs und Dienste, mit denen Sie Apps mit neuen Features und Funktionen entwickeln können. IOS 10 verfügt über neue Funktionen, wie z. b. das Erweitern von Karten, Nachrichten, Telefon und Siri. In diesem Abschnitt wird erläutert, wie Sie diese Features in einer xamarin. IOS-App nutzen können. |

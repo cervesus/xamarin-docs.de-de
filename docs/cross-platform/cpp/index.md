@@ -5,12 +5,12 @@ description: Visual Studio für Mac können zum Erstellen und integrieren von Pl
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
-ms.openlocfilehash: 685d4f5de197c6b3664d63306fa206bea17409e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a10d63e8ed152fae3c9e87cbae7bacb25a0d019c
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766362"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206376"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Verwenden von CC++ /Bibliotheken mit xamarin
 
@@ -132,7 +132,7 @@ Dabei handelt es sich um Wrapper Funktionen, die auf der [xamarin](https://visua
 
 ## <a name="wrapping-the-native-library-stage-2"></a>Umwickeln der nativen Bibliothek (Phase 2)
 
-Diese Phase erfordert die [vorkompilierten Bibliotheken](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts) , die im [vorherigen Abschnitt](##creating-the-native-libraries-stage-1)beschrieben wurden.
+Diese Phase erfordert die [vorkompilierten Bibliotheken](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts) , die im [vorherigen Abschnitt](#creating-the-native-libraries-stage-1)beschrieben wurden.
 
 ### <a name="creating-the-visual-studio-solution"></a>Erstellen der Visual Studio-Projekt Mappe
 

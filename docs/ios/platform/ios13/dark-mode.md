@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/28/2019
-ms.openlocfilehash: d21afcc7d7b130528e9cceac47840acd49b91f59
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be487ab839e2fb4d21b85719a56dc34303317a5f
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129972"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206386"
 ---
 # <a name="dark-mode-in-xamarinios"></a>Dunkler Modus in xamarin. IOS
-
-![Diese API befindet sich derzeit in der Vorschau Phase.](~/media/shared/preview.png)
 
 Der dunkle Modus ist eine systemweite Option für helle und dunkle Designs. IOS-Benutzer können jetzt das Design auswählen oder es IOS gestatten, die Darstellung basierend auf der Umgebung und der Tageszeit dynamisch zu ändern.
 

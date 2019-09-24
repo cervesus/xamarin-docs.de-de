@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2019
-ms.openlocfilehash: e03990a74ac8477b56b109e26a97b05ad13dba53
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 9a12163b0300a8d523632ad38e1b66a8c44b7aaf
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198450"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206319"
 ---
 # <a name="troubleshooting-tips-for-ios-13-and-xamarinios"></a>Tipps zur Problembehandlung für IOS 13 und xamarin. IOS
-
-![Feature der Vorschauversion](~/media/shared/preview.png)
 
 ## <a name="updating-to-xcode-11-stops-the-simulator-from-launching"></a>Beim Aktualisieren auf Xcode 11 wird der Simulator beendet.
 
