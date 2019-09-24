@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9442116bf053768fe22d123d1c7e3d146f9b2834
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292576"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198506"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Erstellen eines benutzerdefinierten Layouts in xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin.Forms definiert vier Klassen für Layout – StackLayout, die von "AbsoluteLayout", RelativeLayout und Raster, und jedes seiner untergeordneten Elemente auf andere Weise angeordnet. Allerdings ist es manchmal notwendig, mit einem Layout, die nicht von Xamarin.Forms bereitgestelltes Seiteninhalt zu organisieren. In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layout-Klasse schreiben, und veranschaulicht eine Ausrichtung keine Unterscheidung nach Kanatyp WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen._
+_Xamarin. Forms definiert fünf layoutklassen – Stacklayout, AbsoluteLayout, relativelayout, Grid und flexlayout, und jede ordnet die untergeordneten Elemente auf andere Weise an. Allerdings ist es manchmal notwendig, mit einem Layout, die nicht von Xamarin.Forms bereitgestelltes Seiteninhalt zu organisieren. In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layout-Klasse schreiben, und veranschaulicht eine Ausrichtung keine Unterscheidung nach Kanatyp WrapLayout-Klasse, die ordnet seine untergeordneten Elemente horizontal über die Seite, und klicken Sie dann dient als Wrapper für die Anzeige von nachfolgenden untergeordneten Elemente auf zusätzliche Zeilen._
 
 In Xamarin.Forms alle Layout Klassen leiten sich von der [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) -Klasse und beschränken Sie den generischen Typ um [ `View` ](xref:Xamarin.Forms.View) und seine abgeleiteten Typen. Im Gegenzug die `Layout<T>` Klasse leitet sich von der [ `Layout` ](xref:Xamarin.Forms.Layout) -Klasse, die den Mechanismus für die Positionierung und größenanpassung untergeordnete Elemente bereitstellt.
 
@@ -427,7 +427,7 @@ Die Anzahl der Spalten in jeder Zeile hängt davon ab, die Größe des Fotos, di
 
 - [WrapLayout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [Benutzerdefinierte Layouts](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
-- [Erstellen von benutzerdefinierten Layouts in Xamarin.Forms (video)](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
+- [Erstellen von benutzerdefinierten Layouts in Xamarin.Forms (video)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
 - [Layout\<T >](xref:Xamarin.Forms.Layout`1)
 - [Layout](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

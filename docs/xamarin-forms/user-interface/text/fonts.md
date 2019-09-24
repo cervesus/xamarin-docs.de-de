@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/28/2019
-ms.openlocfilehash: c18c4e63831a03cbe28accfe10f4c7da31130803
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b2918dde7524a02aa318164933063a5546db031a
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529307"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198477"
 ---
 # <a name="fonts-in-xamarinforms"></a>Schriftarten in Xamarin.Forms
 
@@ -28,7 +28,7 @@ Verwenden Sie die drei schriftartbezogene Eigenschaften aller Steuerelemente, di
 
 - **FontFamily** &ndash; der `string` Schriftartname.
 - **FontSize** &ndash; den Schriftgrad nach einem `double`.
-- **FontAttributes** &ndash; eine Zeichenfolge, die Angabe von Formatinformationen wie *Kursiv* und **fett** (mithilfe der `FontAttributes` Aufzählung in C#).
+- **FontAttributes** &ndash; eine Zeichenfolge, die Angabe von Formatinformationen wie *Kursiv* und **fett** (mithilfe der `FontAttributes` Aufzählung in c#).
 
 Dieser Code zeigt, wie erstellen Sie eine Bezeichnung, und geben Sie den Schriftgrad und die Gewichtung angezeigt wird:
 
@@ -155,7 +155,7 @@ Die für jede Plattform erforderlichen Schritte werden unten beschrieben. Wenn S
 ### <a name="ios"></a>iOS
 
 Es ist möglich, zeigen eine benutzerdefinierte Schriftart, indem zunächst sichergestellt, dass es geladen wird, und verweisen auf diese Namen in der Xamarin.Forms `Font` Methoden.
-Befolgen Sie die Anweisungen in [in diesem Blogbeitrag](https://blog.xamarin.com/custom-fonts-in-ios/):
+Befolgen Sie die Anweisungen in [in diesem Blogbeitrag](https://devblogs.microsoft.com/xamarin/custom-fonts-in-ios/):
 
 1. Fügen Sie die Schriftart Datei **mit der Buildaktion hinzu: Bundleresource**, und
 2. Update der **"Info.plist"** Datei (**von Anwendung bereitgestellte Schriftarten**, oder `UIAppFonts`Schlüssel), klicken Sie dann
@@ -240,7 +240,7 @@ Das folgende XAML-Beispiel zeigt ein einzelnes Schriftart Symbol, das von [`Imag
 </Image>
 ```
 
-Dieser Code zeigt ein Xbox-Symbol von der ionicons-Schriftfamilie in einer [`Image`](xref:Xamarin.Forms.Image) Ansicht an. Beachten Sie, dass das Unicode-Zeichen für dieses `\uf30c`Symbol in XAML mit Escapezeichen versehen werden muss und `&#xf30c;`daher zu wird. Der entsprechende C#-Code ist:
+Dieser Code zeigt ein Xbox-Symbol von der ionicons-Schriftfamilie in einer [`Image`](xref:Xamarin.Forms.Image) Ansicht an. Beachten Sie, dass das Unicode-Zeichen für dieses `\uf30c`Symbol in XAML mit Escapezeichen versehen werden muss und `&#xf30c;`daher zu wird. Der entsprechende C#-Code lautet:
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };

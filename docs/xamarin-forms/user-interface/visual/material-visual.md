@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 6c529c8df7ef1e4372285a157f489941d795d7f6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b735541d51321231775b025745e68c54552697d3
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655219"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198497"
 ---
 # <a name="xamarinforms-material-visual"></a>Visuelles xamarin. Forms-Material
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 [Material Design](https://material.io) ist ein von Google erstelltes Entwurfssystem, das die Größe, die Farbe, den Abstand und andere Aspekte der Anzeige und des Verhaltens von Ansichten und Layouts festlegt.
 
@@ -53,18 +53,18 @@ Funktionell unterscheiden sich die Material-Renderer nicht auf die Standard-Rend
 
 Nachdem Sie das [xamarin. Forms. Visual. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) -nuget-Paket installiert haben, müssen die Material-Renderer in jedem Platt Form Projekt initialisiert werden.
 
-Unter IOS sollte dies in **AppDelegate.cs** erfolgen, indem die `FormsMaterial.Init` -Methode *nach* der `Xamarin.Forms.Forms.Init` -Methode aufgerufen wird:
+Unter IOS sollte dies in **AppDelegate.cs** erfolgen, indem die `Xamarin.Forms.FormsMaterial.Init` -Methode *nach* der `Xamarin.Forms.Forms.Init` -Methode aufgerufen wird:
 
 ```csharp
 global::Xamarin.Forms.Forms.Init();
-FormsMaterial.Init();
+global::Xamarin.Forms.FormsMaterial.Init();
 ```
 
-Unter Android sollte dies in **MainActivity.cs** erfolgen, indem die `FormsMaterial.Init` -Methode *nach* der `Xamarin.Forms.Forms.Init` -Methode aufgerufen wird:
+Unter Android sollte dies in **MainActivity.cs** erfolgen, indem die `Xamarin.Forms.FormsMaterial.Init` -Methode *nach* der `Xamarin.Forms.Forms.Init` -Methode aufgerufen wird:
 
 ```csharp
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-FormsMaterial.Init(this, savedInstanceState);
+global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 ```
 
 ## <a name="consume-material-renderers"></a>Nutzbare Renderer verbrauchen
@@ -78,7 +78,7 @@ Anwendungen können die Material-Renderer verwenden, indem Sie die [`VisualEleme
 </ContentPage>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 ContentPage contentPage = new ContentPage();

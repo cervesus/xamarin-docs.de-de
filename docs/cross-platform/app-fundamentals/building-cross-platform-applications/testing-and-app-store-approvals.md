@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761983"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198431"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App Store-Genehmigungen
 
@@ -100,7 +100,7 @@ Die folgende Liste ist ein guter Ausgangspunkt für das Überprüfen von Edge-F�
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>Richtlinien sind mehr als nur ein Leitfaden.
 
-Apple ist so bekannt, dass es strikt an der Einhaltung der Richtlinien für die Benutzeroberfläche liegt, da eine der wichtigsten Stärken ihrer Plattform die Konsistenz (und die wahrgenommene Nutzbarkeit) ist. Microsoft hat bei Windows-Anwendungen, die die Benutzeroberfläche im Metro-Stil implementieren, einen ähnlichen Ansatz gewählt. Der Genehmigungsprozess für beide Plattformen bedeutet, dass Ihre APP für die Einhaltung der relevanten Entwurfs Philosophie ausgewertet wird.
+Apple ist so bekannt, dass es strikt an der Einhaltung der Richtlinien für die Benutzeroberfläche liegt, da eine der wichtigsten Stärken ihrer Plattform die Konsistenz (und die wahrgenommene Nutzbarkeit) ist. Microsoft hat bei Windows-Anwendungen, die das [fließende Entwurfs System](https://microsoft.com/design/fluent)implementieren, einen ähnlichen Ansatz gewählt. Der Genehmigungsprozess für beide Plattformen bedeutet, dass Ihre APP für die Einhaltung der relevanten Entwurfs Philosophie ausgewertet wird.
 
 Das heißt nicht, dass Innovationen in der Benutzeroberfläche nicht unterstützt oder empfohlen werden, aber es gibt bestimmte Dinge, die Sie einfach nicht tun müssen, oder Ihre APP wird abgelehnt.
 

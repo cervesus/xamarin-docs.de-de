@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: f264f210a9228fd213f0c041abb5b26023c796f4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1d9a65ab34cb0c02368f53679d38f1d07ec1f257
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753269"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198556"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Apple Pay in xamarin. IOS
 
@@ -43,8 +43,7 @@ Mit Apple Pay gibt Apple an, dass [es den Benutzern](https://developer.apple.com
 
 ## <a name="using-a-payment-processor-platform"></a>Verwenden einer Payment Processor-Plattform
 
-Einer der grundlegenden Bestandteile von Apple Pay ist die Verarbeitung von Zahlungen. Obwohl es möglich ist, dies selbst zu tun, erfordert es bedeutende Kenntnisse der Kryptografie.
-- wie im [Leitfaden zur Zahlungs Verarbeitung](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)von Apple ausführlich erläutert.
+Einer der grundlegenden Bestandteile von Apple Pay ist die Verarbeitung von Zahlungen. Obwohl es möglich ist, dies selbst zu tun, erfordert es bedeutende Kenntnisse der Kryptografie, wie im Leitfaden zur [Zahlungs Verarbeitung](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)von Apple ausführlich beschrieben.
 Zahlungs Verarbeitungs Plattformen hingegen verarbeiten diese Vorgänge für Sie, sodass Sie sich auf das Entwickeln Ihrer APP konzentrieren können.
 
 Es gibt zwei Optionen:

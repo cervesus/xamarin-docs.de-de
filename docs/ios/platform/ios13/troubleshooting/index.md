@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2019
-ms.openlocfilehash: d2a2146a0b7345475e2eb93d52fb02387c833224
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: e03990a74ac8477b56b109e26a97b05ad13dba53
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200049"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198450"
 ---
 # <a name="troubleshooting-tips-for-ios-13-and-xamarinios"></a>Tipps zur Problembehandlung für IOS 13 und xamarin. IOS
 
@@ -32,6 +32,7 @@ Bis eine [Korrektur](https://github.com/xamarin/xamarin-macios/issues/6216)vorli
 
 > [!NOTE]
 > Diese Schritte setzen voraus, dass Sie über zwei Xcode-Anwendungen verfügen:
+>
 > - **Xcode11-Beta1. app** – die Beta Version, die nicht mit Simulatoren und Visual Studio für Mac funktioniert.
 > - **Xcode102. app** – eine stabile Version von Xcode 10. Sie können auch " **Xcode. app**" genannt werden.
 >
