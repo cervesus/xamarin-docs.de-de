@@ -9,8 +9,6 @@
         - name: Requirements (Anforderungen)
           displayName: System requirements
           href: get-started/requirements.md
-        - name: Was ist Xamarin?
-          href: get-started/introduction-to-mobile-development.md
         - name: Lebenszyklus der Entwicklung mobiler Software
           href: get-started/introduction-to-mobile-sdlc.md
         - name: 'Exemplarische Vorgehensweise: Erstellung einer plattformübergreifenden App'
