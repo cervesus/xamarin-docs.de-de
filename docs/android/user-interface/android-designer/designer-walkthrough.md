@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: a4867ef779e55d16ef49b2f8ad0dc5bd0ec7024f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f696e8159d929bf41596c4dc9498e682e361f412
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761454"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249984"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Verwenden von xamarin. Android Designer
 
@@ -31,6 +31,8 @@ In diesem Artikel wird veranschaulicht, wie Sie xamarin. Android Designer verwen
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
 Das Ziel dieser exemplarischen Vorgehensweise besteht darin, die Android Designer zum Erstellen einer Benutzeroberfläche für eine Beispiel-Farb Browser-APP zu verwenden. Die Farb Browser-APP zeigt eine Liste mit Farben, Ihren Namen und ihren RGB-Werten an. Sie erfahren, wie Sie Widgets zum **Designoberfläche** hinzufügen und wie Sie diese Widgets visuell aufstellen. Anschließend erfahren Sie, wie Sie Widgets interaktiv auf dem **Designoberfläche** oder im **Eigenschaften** Bereich des Designers ändern. Schließlich sehen Sie, wie der Entwurf aussieht, wenn die APP auf einem Gerät oder Emulator ausgeführt wird.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

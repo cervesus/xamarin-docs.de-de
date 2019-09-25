@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: 4c3c0e51348d2435ce5042485b214e6e5fe159b2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ce82f10fdb8159d2007d490747329c1a3b5aeecd
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758424"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250073"
 ---
 # <a name="hello-wear"></a>Hello, Wear
 
@@ -27,6 +27,8 @@ Führen Sie die folgenden Schritte aus, um Ihre erste xamarin. Android Wear-APP 
 ### <a name="1-create-a-new-android-project"></a>1. Erstellen eines neuen Android-Projekts
 
 Erstellen Sie eine neue **Android Wear-Anwendung**:
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

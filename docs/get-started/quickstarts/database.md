@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: ff07af00e1e647255ac56318c0685552823f510c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653507"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249683"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Speichern von Daten in einer lokalen sqlite.net-Datenbank
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
@@ -27,10 +27,10 @@ In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
 In der Schnellstartanleitung erfahren Sie, wie Sie Daten in einer lokalen sqlite.net-Datenbank speichern. Die fertige Anwendung wird unten gezeigt:
 
-Seite "Notizen" [ ![(database-images/screenshots1-sml.png " ")]] (database-images/screenshots1.png#lightbox "Seite \"Notizen") " Notiz der Seite "Anmerkung der(database-images/screenshots2.png#lightbox "") [Einstiegs ![(database-images/screenshots2-sml.png " ")]Seite"] 
+[![](database-images/screenshots1-sml.png "")](database-images/screenshots1.png#lightbox "Seite "Notizen"")
+[Notiz![](database-images/screenshots2-sml.png "") der Seite "Notizen"](database-images/screenshots2.png#lightbox "Seite "Hinweis Eintrag"")
 
-
-### <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschlossen haben, bevor Sie diesen Schnellstart durchführen. Alternativ können Sie das [vorherige Schnellstart Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/) herunterladen und als Ausgangspunkt für diesen Schnellstart verwenden.
 

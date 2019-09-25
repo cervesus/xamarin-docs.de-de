@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768936"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250143"
 ---
 # <a name="ios-designer-basics"></a>IOS Designer-Grundlagen
 
@@ -35,6 +35,8 @@ In diesem Abschnitt wird beschrieben, wie der IOS-Designer das Erstellen einer B
 Der IOS-Designer ermöglicht es Entwicklern, die Benutzeroberfläche einer Anwendung visuell zu entwerfen. Wie im Leitfaden [Introduction to Storyboards (Einführung in Storyboards](~/ios/user-interface/storyboards/index.md) ) erläutert, beschreibt ein Storyboard die Bildschirme (Ansichts Controller), aus denen eine APP besteht, die Schnittstellen Elemente (Ansichten), die auf diesen Ansichts Controllern platziert werden, und den gesamten Navigations Fluss der app. 
 
 Ein Ansichts Controller besteht aus zwei Teilen: einer visuellen Darstellung im IOS-Designer und C# einer zugeordneten Klasse:
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

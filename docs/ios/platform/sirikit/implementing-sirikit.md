@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27bf22403c9411d300e67bfdaef4aa4dfe74f6e0
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769786"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250181"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implementieren von Sirikit in xamarin. IOS
 
@@ -66,6 +66,8 @@ Durch das Verschieben dieses allgemeinen Codes in ein frei gegebenes Projekt, da
 Im Fall der Beispiel-App monkeychat werden die Datenmodelle und der Verarbeitungs Code, z. b. Netzwerk-und Datenbankzugriff, in eine native Bibliothek verschoben.
 
 Führen Sie folgende Schritte aus:
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

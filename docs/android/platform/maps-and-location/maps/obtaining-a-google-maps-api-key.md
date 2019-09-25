@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: a56405aaed84be5015e5d58ef9a13ba8e270ea58
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3868b2a35894cdcd7a11c626268307338744ecb4
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757535"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250050"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Abrufen eines API-Schlüssels für Google Maps
 
@@ -28,6 +28,8 @@ Das Abrufen eines Maps-API v2-Schlüssels umfasst die folgenden Schritte:
 
 Um einen Maps-API-Schlüssel von Google anzufordern, müssen Sie den SHA-1-Fingerabdruck des Keystores kennen, der zum Signieren der Anwendung verwendet wird.
 In der Regel bedeutet dies, dass Sie den SHA-1-Fingerabdruck für den Debug-keystore und dann den SHA-1-Fingerabdruck für den Keystore bestimmen müssen, der zum Signieren Ihrer Anwendung für die Veröffentlichung verwendet wird.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

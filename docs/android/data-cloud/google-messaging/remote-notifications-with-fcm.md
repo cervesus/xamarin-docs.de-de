@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: c76b22c84851c8952dc4e9181966632cf6e38041
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ece503ee305fc1319e766ee5ad52ad86cee122bc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754681"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249941"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Remote Benachrichtigungen mit Firebase Cloud Messaging
 
@@ -51,6 +51,8 @@ Nachdem die neue App erstellt wurde, besteht der nächste Schritt darin, den Pak
 ### <a name="set-the-package-name"></a>Festlegen des Paket namens
 
 In [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)haben Sie einen Paketnamen für die APP mit aktiviertem SCM angegeben. Dieser Paketname dient auch als [*Anwendungs-ID*](./firebase-cloud-messaging.md#fcm-in-action-app-id) , die dem [API-Schlüssel](firebase-cloud-messaging.md#fcm-in-action-api-key)zugeordnet ist. Konfigurieren Sie die APP für die Verwendung dieses Paket namens:
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: d4a3ba0ae860f2e6b42fc4cf349ec1bc8e83979e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 96d2fe0b03ad7067d6fece072742ea2796224f8b
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527077"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250123"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
@@ -73,7 +73,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Die folgenden Screenshots zeigen das Ergebnis ein lokales Image auf jeder Plattform anzuzeigen:
 
-[![Lokale "ImageSource"](images-images/local-sml.png "Beispiel-Anwendung in ein lokales Image")](images-images/local.png#lightbox "Beispielanwendung, die ein lokales Image anzeigen")
+[![Lokale ImageSource](images-images/local-sml.png "Beispielanwendung, die ein lokales Image anzeigt")](images-images/local.png#lightbox "Beispielanwendung, die ein lokales Image anzeigt")
 
 Zur Erhöhung der Flexibilität der `Device.RuntimePlatform` Eigenschaft kann auf eine andere Bilddatei oder den Pfad für einige oder alle Plattformen verwendet werden, wie in diesem Codebeispiel wird dargestellt:
 
@@ -94,7 +94,7 @@ Vor iOS 9, Retina-Versionen des Images platziert werden konnte, der **Ressourcen
 
 Bilder mit Android alternativen Auflösung platziert werden soll, im [speziell benannte Verzeichnisse](https://developer.android.com/guide/practices/screens_support.html) im Android-Projekt, wie im folgenden Screenshot gezeigt:
 
-[![Android mehrere Auflösung Imagespeicherort](images-images/xs-highdpisolution-sml.png "Android mehrere Auflösung Imagespeicherort")](images-images/xs-highdpisolution.png#lightbox "Android mehrere Auflösung Imagespeicherort")
+[![Android-Image Speicherort mit mehreren Auflösungen](images-images/xs-highdpisolution-sml.png "Android-Image Speicherort mit mehreren Auflösungen")](images-images/xs-highdpisolution.png#lightbox "Android-Image Speicherort mit mehreren Auflösungen")
 
 UWP-Bilddateinamen [können mit dem Suffix werden `.scale-xxx` vor der Dateierweiterung](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), wobei `xxx` ist der Prozentsatz der Skalierung auf das Medienobjekt angewendet wurde, z. B. **myimage.scale-200.png**. Images können im Code oder XAML, ohne den Scale-Modifizierer, z. B. nur dann verwiesen werden **myimage.png**. Die Plattform wird die nächste geeignete Objektskalierung basierend auf der Anzeige des aktuellen DPI ausgewählt.
 
@@ -115,6 +115,8 @@ Einige Steuerelemente verfügen über Eigenschaften, die ein Bild, wie z. B. ang
 Eingebettete Bilder werden auch mit einer Anwendung (z. B. lokalen Images) geliefert, aber anstatt eine Kopie des Abbilds in jeder Anwendung Dateistruktur das Image-Datei in der Assembly als Ressource eingebettet ist. Dieses Verfahren zum Verteilen von Abbildern wird empfohlen, wenn die identische Images auf jeder Plattform verwendet werden, und eignet sich insbesondere für das Erstellen von Komponenten, wie das Bild mit dem Code im Paket enthalten ist.
 
 Maustaste, um ein Bild in einem Projekt einbetten, um neue Elemente hinzufügen, und wählen Sie die Bild/s, die Sie hinzufügen möchten. Standardmäßig hat **das Image eine Buildaktion: None**; diese muss auf **Buildaktion festgelegt werden: EmbeddedResource** festgelegt sein.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -154,7 +156,7 @@ Zurzeit besteht keine implizite Konvertierung für die Ressourcen-IDs. Sie müss
 
 Die folgenden Screenshots zeigen das Ergebnis ein eingebettetes Bild auf jeder Plattform anzuzeigen:
 
-[![ResourceImageSource](images-images/resource-sml.png "Beispielanwendung Anzeigen eines eingebetteten Bilds")](images-images/resource.png#lightbox "Beispielanwendung, die ein eingebettetes Bild anzeigen")
+[![Resourceimagesource](images-images/resource-sml.png "Beispielanwendung, die ein eingebettetes Bild anzeigt")](images-images/resource.png#lightbox "Beispielanwendung, die ein eingebettetes Bild anzeigt")
 
 ### <a name="using-xaml"></a>Mithilfe von XAML
 
@@ -260,7 +262,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Die folgenden Screenshots zeigen das Ergebnis zum Anzeigen von remotebilds auf jeder Plattform:
 
-[![Herunterladen von "ImageSource"](images-images/download-sml.png "Beispielanwendung ein heruntergeladenes Image anzeigen")](images-images/download.png#lightbox "Beispielanwendung ein heruntergeladenes Image anzeigen")
+[![ImageSource heruntergeladen](images-images/download-sml.png "Beispielanwendung, die ein heruntergeladenes Image anzeigt")](images-images/download.png#lightbox "Beispielanwendung, die ein heruntergeladenes Image anzeigt")
 
 ### <a name="downloaded-image-caching"></a>Heruntergeladene Bild Zwischenspeichern
 

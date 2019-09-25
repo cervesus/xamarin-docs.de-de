@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 0a82c84b334cbfcf3ab978b5ebd0e256bcd64815
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6db927409e07b97ef5b7b1e7f54b6bcbdc60e115
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755059"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249660"
 ---
 # <a name="creating-resources-for-varying-screens"></a>Erstellen von Ressourcen für unterschiedliche Bildschirme
 
@@ -50,6 +50,8 @@ Die Skalierung kann jedoch dazu führen, dass Bitmaps unscharf angezeigt werden.
 Das Deklarieren der Bildschirmgröße stellt sicher, dass nur unterstützte Geräte die Anwendung herunterladen können. Dies wird erreicht, indem das [unterstützte-Screens-](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) Element in der Datei " **androidmanifest. XML** " festgelegt wird. Dieses Element wird verwendet, um anzugeben, welche Bildschirmgrößen von der Anwendung unterstützt werden. Ein angegebener Bildschirm wird als unterstützt betrachtet, wenn die Anwendung seine Layouts ordnungsgemäß auf den Füll Bildschirm platzieren kann. Wenn Sie dieses Manifest-Element verwenden, wird die Anwendung nicht in [*Google Play*](https://play.google.com/) für Geräte angezeigt, die die Bildschirm Spezifikationen nicht erfüllen. Die Anwendung wird jedoch weiterhin auf Geräten mit nicht unterstützten Bildschirmen ausgeführt, aber die Layouts erscheinen möglicherweise unscharf und pixelweise.
 
 Unterstützte Bildschirmnamen werden in der Datei " **properites/androidmanifest. XML** " der Lösung deklariert:
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

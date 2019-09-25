@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 798dd1b5df2ea05eb428c9465e996d606c22009b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281211"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249786"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Fallstudie für die plattformübergreifende App: Tasky
 
@@ -475,7 +475,7 @@ Die resultierenden Anwendungen sehen auf jeder Plattform wie folgt aus:
 
  <a name="iOS" />
 
-#### <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 Die Anwendung verwendet das Design der IOS-Standard-Benutzeroberfläche, z. b. die Schaltfläche "hinzufügen", die auf der Navigationsleiste positioniert ist, und das integrierte **Pluszeichen (+)** . Außerdem wird das Standard `UINavigationController` Verhalten der Schaltfläche "zurück" verwendet, und in der Tabelle wird "Swipe-to-Delete" unterstützt.
 
@@ -483,7 +483,7 @@ Die Anwendung verwendet das Design der IOS-Standard-Benutzeroberfläche, z. b. d
 
  <a name="Android" />
 
-#### <a name="android"></a>Android
+### <a name="android"></a>Android
 
 Die Android-App verwendet integrierte Steuerelemente, einschließlich des integrierten Layouts für Zeilen, für die ein "Tick" angezeigt wird. Das Hardware-/systembackverhalten wird zusätzlich zu einer auf dem Bildschirm zurück basierenden Schaltfläche unterstützt.
 
@@ -491,7 +491,7 @@ Die Android-App verwendet integrierte Steuerelemente, einschließlich des integr
 
  <a name="Windows_Phone" />
 
-#### <a name="windows-phone"></a>Windows Phone
+### <a name="windows-phone"></a>Windows Phone
 
 Die Windows Phone-App verwendet das Standardlayout und füllt die APP-Leiste am unteren Bildschirmrand anstelle einer Navigationsleiste im oberen Bereich auf.
 

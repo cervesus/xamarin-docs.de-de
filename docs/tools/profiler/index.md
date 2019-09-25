@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: conceptdev
 ms.author: crdun
 ms.date: 06/03/2018
-ms.openlocfilehash: 745c59ad50f0e8ad50a8ec56549d99b7b5e72228
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b567985fcfd9e133587c5c285e17d21465fda659
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772479"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250081"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -50,6 +50,8 @@ Die Profilerstellung ist für alle Arten der Entwicklung hilfreich, aber Sie ist
 ## <a name="xamarin-profiler"></a>Xamarin Profiler
 
 Der Xamarin Profiler stellt Entwicklern eine Möglichkeit zum Erstellen von Profilen für Anwendungen in Visual Studio für Mac oder Visual Studio zur Verfügung. Der Profiler sammelt und zeigt Informationen über die APP an, die dann vom Entwickler verwendet werden können, um das Verhalten der Anwendung zu analysieren. Es gibt verschiedene Möglichkeiten zum Erstellen eines Profils für eine Anwendung mit dem Xamarin Profiler, nämlich Speicher Profilerstellung und statistische Stichprobe. Diese werden über die Zuordnungen und Zeit Profil Erstellungs Instrumente durchgeführt.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
