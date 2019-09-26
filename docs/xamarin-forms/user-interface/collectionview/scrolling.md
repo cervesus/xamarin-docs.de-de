@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/13/2019
 ms.openlocfilehash: 303266f44664f7f57aeaf36869a3a06c8eb91870
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69888647"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin. Forms CollectionView-Bildlauf
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert zwei [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden, die Elemente in der Ansicht scrollen. Eine der-über Ladungen führt einen Bildlauf für das Element am angegebenen Index durch, während der andere das angegebene Element in die Ansicht verschiebt. Beide über Ladungen verfügen über zusätzliche Argumente, die angegeben werden können, um die genaue Position des Elements nach dem Abschluss des Bildlaufs anzugeben, und ob der Bild Lauf animiert werden soll.
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert ein [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) -Ereignis, das ausgelöst wird, wenn [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) eine der-Methoden aufgerufen wird. Das [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) Objekt, das das `ScrollToRequested` Ereignis begleitet, verfügt über viele `IsAnimated`Eigenschaften, `Item`einschließlich, `ScrollToPosition` `Index`, und. Diese Eigenschaften werden von den Argumenten festgelegt, die `ScrollTo` in den Methoden aufrufen angegeben werden.
 
-Außerdem definiert ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) `Scrolled` -Ereignis, das ausgelöst wird, um anzugeben, dass der Bildlauf ausgeführt wurde. Das `ItemsViewScrolledEventArgs` Objekt, das das `Scrolled` Ereignis begleitet, verfügt über zahlreiche Eigenschaften. Weitere Informationen finden Sie unter [erkennen](#detect-scrolling)von scrollläufen.
+Außerdem definiert ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) `Scrolled` -Ereignis, das ausgelöst wird, um anzugeben, dass der Bildlauf ausgeführt wurde. Das `ItemsViewScrolledEventArgs` Objekt, das das `Scrolled` Ereignis begleitet, verfügt über zahlreiche Eigenschaften. Weitere Informationen finden Sie unter [Erkennen von scrollläufen](#detect-scrolling).
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert auch eine `ItemsUpdatingScrollMode` -Eigenschaft, die das Scrollverhalten von `CollectionView` darstellt, wenn der neue Elemente hinzugefügt werden. Weitere Informationen zu dieser Eigenschaft finden Sie unter [Steuern der Scrollposition, wenn neue Elemente hinzugefügt werden](#control-scroll-position-when-new-items-are-added).
 
@@ -42,7 +42,7 @@ Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Bildlaufs g
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -115,12 +115,12 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 
 Dieser Beispielcode führt zu einem minimalen Bildlauf, der erforderlich ist, um das Element in die Ansicht zu scrollen:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht angezeigt wird, in der vertikalen Liste von IOS und Android](scrolling-images/scrolltoposition-makevisible.png "CollectionView mit") einem] Auflistungs Element (scrolling-images/scrolltoposition-makevisible-large.png#lightbox "Vertikale Auflistung von CollectionView mit") Rollup-Element
+[![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht unter IOS und Android angezeigt wird](scrolling-images/scrolltoposition-makevisible.png "Vertikale Auflistung von CollectionView mit") Rollup-Element](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "Vertikale Auflistung von CollectionView mit Rollup-Element")
 
 > [!NOTE]
 > Der [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) -Member wird standardmäßig verwendet, wenn `position` das-Argument beim Aufrufen der `ScrollTo` -Methode nicht angegeben wird.
 
-### <a name="start"></a>Beginn
+### <a name="start"></a>Starten
 
 Der [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) Member gibt an, dass für das Element ein Rollup zum Anfang der Ansicht ausgeführt werden soll:
 
@@ -130,7 +130,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 Dieser Beispielcode führt dazu, dass das Element zum Anfang der Ansicht gescrollt wird:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht angezeigt wird, in der vertikalen Liste von IOS und Android](scrolling-images/scrolltoposition-start.png "CollectionView mit") einem] Auflistungs Element (scrolling-images/scrolltoposition-start-large.png#lightbox "Vertikale Auflistung von CollectionView mit") Rollup-Element
+[![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht unter IOS und Android angezeigt wird](scrolling-images/scrolltoposition-start.png "Vertikale Auflistung von CollectionView mit") Rollup-Element](scrolling-images/scrolltoposition-start-large.png#lightbox "Vertikale Auflistung von CollectionView mit Rollup-Element")
 
 ### <a name="center"></a>Center
 
@@ -142,7 +142,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 Dieser Beispielcode führt dazu, dass das Element in den Mittelpunkt der Ansicht gescrollt wird:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht angezeigt wird, in der vertikalen Liste von IOS und Android](scrolling-images/scrolltoposition-center.png "CollectionView mit") einem] Auflistungs Element (scrolling-images/scrolltoposition-center-large.png#lightbox "Vertikale Auflistung von CollectionView mit") Rollup-Element
+[![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht unter IOS und Android angezeigt wird](scrolling-images/scrolltoposition-center.png "Vertikale Auflistung von CollectionView mit") Rollup-Element](scrolling-images/scrolltoposition-center-large.png#lightbox "Vertikale Auflistung von CollectionView mit Rollup-Element")
 
 ### <a name="end"></a>Ende
 
@@ -154,7 +154,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 Dieser Beispielcode führt dazu, dass das Element zum Ende der Ansicht gescrollt wird:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht angezeigt wird, in der vertikalen Liste von IOS und Android](scrolling-images/scrolltoposition-end.png "CollectionView mit") einem] Auflistungs Element (scrolling-images/scrolltoposition-end-large.png#lightbox "Vertikale Auflistung von CollectionView mit") Rollup-Element
+[![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht unter IOS und Android angezeigt wird](scrolling-images/scrolltoposition-end.png "Vertikale Auflistung von CollectionView mit") Rollup-Element](scrolling-images/scrolltoposition-end-large.png#lightbox "Vertikale Auflistung von CollectionView mit Rollup-Element")
 
 ## <a name="disable-scroll-animation"></a>Scrollanimation deaktivieren
 
@@ -180,7 +180,7 @@ Der Standardwert `ItemsUpdatingScrollMode` der-Eigenschaft ist `KeepItemsInView`
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -211,7 +211,7 @@ Die [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) -Enumeration definiert
 
 Standardmäßig ist die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) -Eigenschaft auf `SnapPointsType.None`festgelegt, wodurch sichergestellt wird, dass der Bildlauf Elemente nicht ausstellt, wie in den folgenden Screenshots gezeigt:
 
-[ ![Screenshot einer Auflistungs Ansicht (vertikal) ohne Andockpunkte in IOS und Android](scrolling-images/snappoints-none.png "CollectionView vertikale Liste ohne") ] Andockpunkte (scrolling-images/snappoints-none-large.png#lightbox "Auflistungs Ansicht (vertikal) ohne") Andockpunkte
+[![Screenshot einer Auflistungs Ansicht (vertikal) ohne Andockpunkte unter IOS und Android](scrolling-images/snappoints-none.png "Auflistungs Ansicht (vertikal) ohne") Andockpunkte](scrolling-images/snappoints-none-large.png#lightbox "Auflistungs Ansicht (vertikal) ohne Andockpunkte")
 
 ### <a name="snap-points-alignment"></a>Ausrichtung der Andockpunkte
 
@@ -220,7 +220,7 @@ Die [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) -Enumeration
 > [!IMPORTANT]
 > Der Wert [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) der-Eigenschaft wird nur berücksichtigt, wenn [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) die-Eigenschaft auf `Mandatory`oder `MandatorySingle`festgelegt ist.
 
-#### <a name="start"></a>Beginn
+#### <a name="start"></a>Starten
 
 Der `SnapPointsAlignment.Start` -Member gibt an, dass die Ausrichtungs Punkte am führenden Rand der Elemente ausgerichtet werden.
 
@@ -245,7 +245,7 @@ Standardmäßig ist die [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.S
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -264,7 +264,7 @@ CollectionView collectionView = new CollectionView
 
 Wenn ein Benutzer einen Bildlauf initiiert, wird das oberste Element am oberen Rand der Ansicht ausgerichtet:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit Start-Snap Points, on IOS und Android](scrolling-images/snappoints-start.png "CollectionView Vertical list with Start Snap Points") ] (scrolling-images/snappoints-start-large.png#lightbox "Vertikale CollectionView-Liste mit Start-Snap Points")
+[![Screenshot einer vertikalen CollectionView-Liste mit Start-Snap Points unter IOS und Android](scrolling-images/snappoints-start.png "Vertikale CollectionView-Liste mit Start-Snap Points")](scrolling-images/snappoints-start-large.png#lightbox "Vertikale CollectionView-Liste mit Start-Snap Points")
 
 #### <a name="center"></a>Center
 
@@ -289,7 +289,7 @@ Der `SnapPointsAlignment.Center` Member gibt an, dass die Punkte am Mittelpunkt 
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -308,7 +308,7 @@ CollectionView collectionView = new CollectionView
 
 Wenn ein Benutzer einen Bildlauf initiiert, wird das oberste Element am oberen Rand der Ansicht zentriert ausgerichtet:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit Center-Snap-Points in IOS und Android](scrolling-images/snappoints-center.png "CollectionView vertikale Liste mit Center-Snap-Points") ] (scrolling-images/snappoints-center-large.png#lightbox "Vertikale CollectionView-Liste mit Center-Snap-Points")
+[![Screenshot einer vertikalen CollectionView-Liste mit Center-Snap-Points unter IOS und Android](scrolling-images/snappoints-center.png "Vertikale CollectionView-Liste mit Center-Snap-Points")](scrolling-images/snappoints-center-large.png#lightbox "Vertikale CollectionView-Liste mit Center-Snap-Points")
 
 #### <a name="end"></a>Ende
 
@@ -333,7 +333,7 @@ Der `SnapPointsAlignment.End` Member gibt an, dass die Ausrichtungs Punkte am na
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -352,7 +352,7 @@ CollectionView collectionView = new CollectionView
 
 Wenn ein Benutzer einen Bildlauf initiiert, wird das untere Element am unteren Rand der Ansicht ausgerichtet:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit endausrichtungs Punkten in IOS und Android](scrolling-images/snappoints-end.png "CollectionView vertikal Liste mit Endpunkten") ] (scrolling-images/snappoints-end-large.png#lightbox "Vertikale Auflistung von CollectionView mit Endpunkten")
+[![Screenshot einer vertikalen CollectionView-Liste mit endausrichtungs Punkten unter IOS und Android](scrolling-images/snappoints-end.png "Vertikale Auflistung von CollectionView mit Endpunkten")](scrolling-images/snappoints-end-large.png#lightbox "Vertikale Auflistung von CollectionView mit Endpunkten")
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/21/2018
 ms.openlocfilehash: d76b5eefcaf0edeb12f128c60e9b8fffff8bcf3b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68644712"
 ---
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>Benutzerdefinierte XAML-Namespace Schemas in xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
 Auf Typen in einer Bibliothek kann in XAML verwiesen werden, indem ein XAML-Namespace für die Bibliothek deklariert wird, wobei die Namespace Deklaration den CLR-Namespace Namen (Common Language Runtime) und einen Assemblynamen angibt:
 

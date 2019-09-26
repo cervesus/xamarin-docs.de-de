@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 24276dce97e4935ba41d7012cf6a9aa8fa2658a8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68651375"
 ---
 # <a name="cell-background-color-on-ios"></a>Zellen Hintergrundfarbe unter IOS
@@ -41,7 +41,7 @@ Mit diesem IOS-plattformspezifischen wird die Standard Hintergrund [`Cell`](xref
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -56,7 +56,7 @@ Die `ListView.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unt
 
 Das Ergebnis ist, dass die Hintergrundfarbe in [`Cell`](xref:Xamarin.Forms.Cell) einem auf einen bestimmten [`Color`](xref:Xamarin.Forms.Color)festgelegt werden kann:
 
-[ ![Screenshot der Header Zellen der blaugrün-Gruppe in der IOS]-(cell-background-color-images/group-header-cell-color.png "ListView mit blaugrün-Gruppen Header Zellen") ] (cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Header Zellen der Gruppe \"Blaugrün") "
+[![Screenshot der Header Zellen der Teal-Gruppe unter IOS](cell-background-color-images/group-header-cell-color.png "ListView mit Header Zellen der Gruppe \"Blaugrün") "](cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Header Zellen der Gruppe "Blaugrün"")
 
 ## <a name="related-links"></a>Verwandte Links
 

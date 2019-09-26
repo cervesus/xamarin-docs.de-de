@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
 ms.openlocfilehash: f78ca9d2cf7a9e57b81c5d923c64b36a7982c4b0
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739148"
 ---
 # <a name="xamarinforms-checkbox"></a>Xamarin. Forms (Kontrollkästchen)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
 Xamarin. Forms `CheckBox` ist ein Typ von Schaltfläche, der entweder aktiviert oder leer sein kann. Wenn ein Kontrollkästchen aktiviert ist, gilt es als aktiviert. Wenn ein Kontrollkästchen leer ist, wird es als deaktiviert angesehen.
 
@@ -108,7 +108,7 @@ In diesem Beispiel [`Label`](xref:Xamarin.Forms.Label) verwendet einen Bindungs 
 
 In den folgenden Screenshots zeigt der IOS-Screenshot die [`Label`](xref:Xamarin.Forms.Label) Formatierung, wenn `CheckBox` der leer ist, während der Android-Screenshot `Label` die Formatierung anzeigt `CheckBox` , wenn das aktiviert ist:
 
-[ ![Screenshot des Kontrollkästchens "Daten gebunden", Kontrollkästchen für IOS und Android-](checkbox-images/checkbox-databinding.png "Daten gebunden") ] (checkbox-images/checkbox-databinding-large.png#lightbox "Kontrollkästchen für Daten gebunden")
+[![Screenshot des Kontrollkästchens "Daten gebunden" unter IOS und Android](checkbox-images/checkbox-databinding.png "Kontrollkästchen für Daten gebunden")](checkbox-images/checkbox-databinding-large.png#lightbox "Kontrollkästchen für Daten gebunden")
 
 Weitere Informationen zu Triggern finden Sie unter [xamarin. Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
 

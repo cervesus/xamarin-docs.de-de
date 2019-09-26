@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: a824c892d21df9264b772bed09a4aef893f3b949
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68647908"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Bindbare Layouts in xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
 Bindbare Layouts ermöglichen es allen layoutklassen, die [`Layout<T>`](xref:Xamarin.Forms.Layout`1) von der-Klasse abgeleitet sind, den Inhalt durch Binden an eine Auflistung von Elementen zu generieren. die Möglichkeit, die Darstellung der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)einzelnen Elemente mit einem festzulegen. Bindbare Layouts werden von der `BindableLayout` -Klasse bereitgestellt, die die folgenden angefügten Eigenschaften verfügbar macht:
 
@@ -44,7 +44,7 @@ Ein bindbares Layout wird mit Daten aufgefüllt, indem die `ItemsSource` zugehö
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 IEnumerable<string> items = ...;
@@ -74,7 +74,7 @@ Die Darstellung der einzelnen Elemente im bindbaren Layout kann definiert werden
 </StackLayout>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 DataTemplate circleImageTemplate = ...;
@@ -99,7 +99,7 @@ Die Darstellung der einzelnen Elemente im bindbaren Layout kann zur Laufzeit bas
             ... />
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 DataTemplateSelector dataTemplateSelector = new TechItemTemplateSelector { ... };

@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: d72c428bb4b8c88365180c5c3c50b107eed2b21d
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68978445"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>Teil 1 – Erstellen eines plattformübergreifenden monogame
@@ -32,7 +32,7 @@ Nach Abschluss des Vorgangs verfügt das Projekt über die richtige Struktur zum
 >
 > Der Abschnitt **Spielentwicklung** sollte dann im **Add-in-Manager**angezeigt werden.
 
-Um das monogame-Add-in für Visual Studio für Mac zu aktivieren, wählen Sie **Visual Studio für Mac** > **Add-in-Manager...** aus. Für Visual Studio 2019 unter Windows Wählen Sie > Extras**Add-in-Manager...** aus. Wählen Sie die Registerkarte Katalog aus, erweitern Sie die Kategorie **Game Development** , wählen Sie **monogame AddIn**aus, und klicken Sie dann auf **installieren...** :
+Um das monogame-Add-in für Visual Studio für Mac zu aktivieren, wählen Sie **Visual Studio für Mac** > **Add-in-Manager...** aus. Für Visual Studio 2019 unter **Windows Wählen Sie** > Extras**Add-in-Manager...** aus. Wählen Sie **die Registerkarte** Katalog aus, erweitern Sie die Kategorie **Game Development** , wählen Sie **monogame AddIn**aus, und klicken Sie dann auf **installieren...** :
 
 ![Visual Studio für Mac Extensions Gallery auswählen von monogame](part1-images/image2.png)
 

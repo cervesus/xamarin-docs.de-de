@@ -1,74 +1,74 @@
 ---
-title: Einführung in die von UrhoSharp
-description: Dieses Dokument beschreibt die grundlegende Struktur einer von UrhoSharp-Anwendung und die Links zu verschiedenen Anleitungen und Beispielanwendungen, die Verwendung von UrhoSharp veranschaulicht.
+title: Einführung in urhusharp
+description: Dieses Dokument beschreibt die grundlegende Struktur einer urhusharp-Anwendung und Links zu verschiedenen Handbüchern und Beispielanwendungen, die die Verwendung von urhusharp veranschaulichen.
 ms.prod: xamarin
 ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "67832546"
 ---
-# <a name="introduction-to-urhosharp"></a>Einführung in die von UrhoSharp
+# <a name="introduction-to-urhosharp"></a>Einführung in urhusharp
 
-![Von UrhoSharp-logo](introduction-images/urhosharp-icon.png)
+![Urhusharp-Logo](introduction-images/urhosharp-icon.png)
 
-Von UrhoSharp ist eine leistungsfähige 3D Spiel-Engine für Entwickler, Xamarin und .NET.  Dabei handelt es sich ähnlich wie im Geiste Apple SceneKit und SpriteKit Physik enthalten, Navigation, Netzwerke und vieles mehr zwar trotzdem plattformübergreifend wird.
+Urhusharp ist eine leistungsstarke 3D-Spiel-Engine für xamarin-und .NET-Entwickler.  Es ähnelt dem von Apple scenekit und spritekit und umfasst auch die Physik, Navigation, Netzwerke und vieles mehr.
 
-Es ist eine .NET an der [Urho3D](http://urho3d.github.io/) -engine und ermöglicht es Entwicklern, plattformübergreifenden Code zu schreiben, die auf Android, iOS abzielen können, Windows und Mac mit der gleichen Codebasis und Systeme OpenGL and Direct3D und rendern können.
+Es handelt sich um eine .net-Bindung an das [Urho3D](http://urho3d.github.io/) -Modul und ermöglicht Entwicklern das Schreiben von Platt Form übergreifendem Code, der auf Android, Ios, Windows und Mac mit der gleichen Codebasis abzielen und sowohl für OpenGL-als auch Direct3D-Systeme gerenden werden kann
 
-Von UrhoSharp ist eine Spiele-Engine mit einer Vielzahl von Funktionen zur Verfügung, das Feld an:
+Urhusharp ist eine Spiel-Engine mit vielen Funktionen, die im folgenden aufgeführt sind:
 
-- Leistungsstarke 3D Grafikrendering
-- Physiksimulation (mithilfe der Aufzählungszeichen-Bibliothek)
-- Behandlung von Szene
-- Async/await-Unterstützung
-- Benutzerfreundliche Aktionen API
-- 2D Integration in 3D-Szenen
-- Schriftart-Rendering mit FreeType
-- Client- und Netzwerkfunktionen
-- Importieren Sie eine Vielzahl von Ressourcen (mit Ressourcen-Bibliothek öffnen)
-- Navigation Mesh und Pathfinding (mit neu gefasst/Umleitung)
-- Konvexe Hülle-Generierung für die Erkennung von objektkollisionen jedoch (mithilfe von StanHull)
-- Audiowiedergabe (mit **Libvorbis**)
+- Leistungsstarkes 3D-Grafik Rendering
+- Physik-Simulation (mithilfe der Bullet-Bibliothek)
+- Szenen Behandlung
+- Unterstützung für warten/Async
+- API für benutzerfreundliche Aktionen
+- 2D-Integration in 3D-Szenen
+- Schriftart Rendering mit FreeType
+- Client-und Servernetzwerk Funktionen
+- Importieren einer breiten Palette von Assets (mit Open Assets Library)
+- Navigations Gitter und pathsuche (mithilfe von umleiten/umleiten)
+- Zusammenstellung der konnevexen Hülle für die Konflikterkennung (mithilfe von stanhull)
+- Audiowiedergabe (mit **libvorbis**)
 
 ## <a name="get-started"></a>Erste Schritte
 
-Von UrhoSharp wird als bequem verteilt eine [NuGet-Paket](https://www.nuget.org/) und es kann hinzugefügt werden, um Ihre C# oder F# Projekten, Windows, Mac, Android oder iOS ausgerichtet, sind.  NuGet enthält sowohl die Bibliotheken benötigt, um das Programm auszuführen, als auch die grundlegende Ressourcen (CoreData), die von der Engine verwendet.
+Urhusharp ist bequem als [nuget-Paket](https://www.nuget.org/) verteilt und kann zu Ihren C# -oder F# -Projekten hinzugefügt werden, die auf Windows, Mac, Android oder IOS ausgerichtet sind.  Das nuget enthält sowohl die Bibliotheken, die zum Ausführen des Programms erforderlich sind, als auch die grundlegenden Ressourcen (CoreData), die von der Engine verwendet werden.
 
-### <a name="urho-as-a-portable-class-library"></a>Urho als Portable Klassenbibliothek
+### <a name="urho-as-a-portable-class-library"></a>Urho als portable Klassenbibliothek
 
-Das Paket Urho kann entweder aus einem plattformspezifische Projekt oder ein Projekt "Portable Klassenbibliothek", in denen Sie Ihren gesamten Code auf allen Plattformen wiederverwenden können genutzt werden.  Dies bedeutet, dass alles, was Sie auf jeder Plattform durchzuführen hätten schreiben Ihre bestimmten Einstiegspunkt für die Plattform, und klicken Sie dann den freigegebenen spielcode Übertragung der Steuerung.
+Das Urho-Paket kann entweder von einem plattformspezifischen Projekt oder von einem Projekt für eine portable Klassenbibliothek genutzt werden, sodass Sie den gesamten Code auf allen Plattformen wieder verwenden können.  Dies bedeutet, dass Sie für jede Plattform lediglich den plattformspezifischen Einstiegspunkt schreiben und dann die Steuerung an den freigegebenen Spiel Code übertragen müssen.
 
 ### <a name="samples"></a>Proben
 
-Sie können einen Eindruck von den Funktionen der Urho abrufen, öffnen Sie in Visual Studio für Mac oder Visual Studio die Projektmappe aus:
+Sie erhalten einen Vorgeschmack auf die Funktionen von Urho, indem Sie entweder in Visual Studio für Mac oder Visual Studio die Beispiel Projekt Mappe öffnen:
 
 [https://github.com/xamarin/urho-samples](https://github.com/xamarin/urho-samples)
 
-Die Standardprojektmappe enthält Projekte für Android, iOS, Windows und Mac.  Wir haben diese Projektmappe so strukturiert, dass wir eine kleine Plattform bestimmte Startprogramm haben, und alle spielcode und Beispielcode befindet sich in einer portablen Klassenbibliothek, zeigen, wie zum Maximieren der Wiederverwendung von Code auf allen Plattformen.
+Die Standardlösung enthält Projekte für Android, Ios, Windows und Mac.  Wir haben diese Lösung strukturiert, damit wir ein kleines plattformspezifisches Start Programm haben. der gesamte Beispielcode und der Spiel Code befinden sich in einer portablen Klassenbibliothek und veranschaulichen, wie Sie die Wiederverwendung von Code auf allen Plattformen maximieren können.
 
-Wenden Sie sich an den [Urho und Ihre Plattform](~/graphics-games/urhosharp/platform/index.md) Weitere Informationen zum Erstellen Ihrer eigenen Lösungen.
+Weitere Informationen zum Erstellen eigener Lösungen finden Sie auf der Seite [Urho und ihrer Plattform](~/graphics-games/urhosharp/platform/index.md) .
 
-Da alle Beispiele einen gemeinsamen Satz von Elementen der Benutzeroberfläche gemeinsam nutzen, haben die Beispiele in dieser Datei die grundlegende Einrichtung abstrahiert:
+Da alle Beispiele einen gemeinsamen Satz von Benutzeroberflächen Elementen aufweisen, haben die Beispiele die grundlegende Einrichtung in dieser Datei abstrahiert:
 
 [https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/Core/Sample.cs](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/Core/Sample.cs)
 
-Dies stellt eine Beispiel-Basisklasse, die einige grundlegende Tastenanschläge behandelt und Berührungsereignisse, Setups eine Kamera, enthält die grundlegenden Elemente der Benutzeroberfläche, und dies können jedes Beispiel auf die spezielle Funktionalität zu konzentrieren, die präsentiert wird, werden.
+Dies stellt eine Beispiel Basisklasse bereit, die einige grundlegende Tastatur Anschläge und Berührungs Ereignisse behandelt, eine Kamera einrichtet, grundlegende Elemente der Benutzeroberfläche bereitstellt. so kann sich jedes Beispiel auf die jeweilige Funktionalität konzentrieren, die angezeigt wird.
 
-Das folgende Beispiel zeigt, wie die Engine folgendermaßen ist:
+Das folgende Beispiel zeigt, was die Engine ausführen kann:
 
-- [Samply spielen](https://github.com/xamarin/urho-samples/tree/master/SamplyGame) einen einfachen Klon des ShootySkies.
+- [Samply Game](https://github.com/xamarin/urho-samples/tree/master/SamplyGame) ein einfacher Klon von shootyskies.
 
-Während es sich bei den anderen Beispielen einzelne Eigenschaften für jedes Sample wird.
+Die anderen Beispiele zeigen die einzelnen Eigenschaften der einzelnen Beispiele.
 
 ## <a name="basic-structure"></a>Grundlegende Struktur
 
-Ihr Spiel sollte die Unterklasse der `Application` -Klasse, dies ist, in dem Sie Ihr Spiel einrichten, werden (auf der `Setup` Methode), und starten Sie Ihr Spiel (in der `Start` Methode).  Klicken Sie dann erstellen Sie Ihre Haupt-Benutzeroberfläche.  Wir werden durch einen kleinen Teil führen, die die APIs für das Einrichten einer 3D-Szene, einige Elemente der Benutzeroberfläche und ein einfaches Verhalten an diese angefügt wird.
+Ihr Spiel sollte die `Application` Klasse Unterklassen, wo Sie das Spiel einrichten (bei der `Setup` -Methode) und das Spiel starten (in der `Start` -Methode).  Anschließend erstellen Sie die Hauptbenutzer Oberfläche.  Wir werden ein kleines Beispiel durchgehen, das die APIs zum Einrichten einer 3D-Szene, einige Benutzeroberflächen Elemente und das Anfügen eines einfachen Verhaltens an die APIs zeigt.
 
 ```csharp
 class MySample : Application {
@@ -125,21 +125,21 @@ class MySample : Application {
 }
 ```
 
-Wenn Sie diese Anwendung ausführen, werden Sie rasch feststellen, dass die Laufzeit zu beschweren ist Ihre Ressourcen sind nicht vorhanden.  Was Sie tun müssen ist eine Hierarchie in Ihrem Projekt zu erstellen, die mit den Namen des speziellen Verzeichnisses "Daten" beginnt und in dieser, würde man die Medienobjekte, die Sie in Ihrem Programm verweisen.  Sie müssen dann festlegen, in den Elementeigenschaften für jedes Medienobjekt die "in Ausgabeverzeichnis kopieren", "Kopieren wenn neuer" werden, die Stellen Sie sicher, dass Ihre Daten vorhanden sind.
+Wenn Sie diese Anwendung ausführen, werden Sie schnell feststellen, dass die Laufzeit nicht mehr vorhanden ist.  Sie müssen in Ihrem Projekt eine Hierarchie erstellen, die mit dem speziellen Verzeichnisnamen "Data" beginnt. in diesem Fall würden Sie die Ressourcen, auf die Sie verweisen, in Ihrem Programm platzieren.  Anschließend müssen Sie in den Element Eigenschaften für jedes Asset den Wert "in Ausgabeverzeichnis kopieren" in "kopieren, wenn neuer" festlegen, um sicherzustellen, dass Ihre Daten vorhanden sind.
 
-Lassen Sie uns erklären Sie, was hier passiert.
+Wir erläutern, was hier passiert.
 
-Zum Starten der Anwendung rufen Sie die Engine Initialisierungsfunktion, gefolgt von erstellen eine neue Instanz der Anwendungsklasse wie folgt:
+Zum Starten der Anwendung rufen Sie die Initialisierungsfunktion der Engine auf, gefolgt von der Erstellung einer neuen Instanz Ihrer Anwendungsklasse, wie folgt:
 
 ```csharp
 new MySample().Run();
 ```
 
-Die Laufzeit ruft die `Setup` und `Start` Methoden.  Wenn Sie außer Kraft setzen `Setup` können Sie die Engine-Parameter (nicht mehr anzeigen in diesem Beispiel) konfigurieren.
+Die Laufzeit ruft die- `Setup` Methode `Start` und die-Methode für Sie auf.  Wenn Sie über `Setup` schreiben, können Sie die Engine-Parameter konfigurieren (in diesem Beispiel nicht anzeigen).
 
-Sie müssen überschreiben `Start` wie damit Ihr Spiel gestartet wird.  Bei dieser Methode Sie laden Sie Ihre Assets, verbinden Sie Ereignishandler, Ihrer Szene einrichten und starten alle Aktionen, die Sie wünschen.  In diesem Beispiel erstellen wir sowohl ein wenig der Benutzeroberfläche des Benutzers sowie das Einrichten einer 3D-Szene angezeigt.
+Sie müssen über `Start` schreiben, da dadurch das Spiel gestartet wird.  In dieser Methode laden Sie Ihre Assets, verbinden Ereignishandler, richten ihre Szene ein und starten alle gewünschten Aktionen.  In unserem Beispiel erstellen wir sowohl eine Benutzeroberfläche, die dem Benutzer angezeigt wird, als auch eine 3D-Szene.
 
-Der folgende Codeabschnitt verwendet das Framework für UI ein Textelement zu erstellen, und fügen Sie es Ihrer Anwendung hinzu:
+Im folgenden Code Abschnitt wird das UI-Framework verwendet, um ein Textelement zu erstellen und es der Anwendung hinzuzufügen:
 
 ```csharp
 // UI text
@@ -156,36 +156,36 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-Das UI-Framework gibt es eine sehr einfache Benutzeroberfläche für die im Spiel bereitstellen, und dies erfolgt durch das Hinzufügen neuer Knoten, die `UI.Root` Knoten.
+Das UI-Framework ist vorhanden, um eine sehr einfache, in-Game-Benutzeroberfläche bereitzustellen, und es funktioniert, `UI.Root` indem dem Knoten neue Knoten hinzugefügt werden.
 
-Der zweite Teil unserer Beispiel-Setups die main-Szene.  Dies umfasst eine Reihe von Schritten, die Erstellung einer 3D-Szene, erstellen ein 3D-Objekt Feld auf dem Bildschirm hinzufügen, ein Licht, eine Kamera und einen Viewport aus.  Diese werden in Abschnitt ausführlicher besprochen [Szene, Knoten, Komponenten und Kameras](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras).
+Der zweite Teil des Beispiels ist die zentrale Szene.  Dies umfasst eine Reihe von Schritten, das Erstellen einer 3D-Szene, das Erstellen eines 3D-Felds im Bildschirm, das Hinzufügen eines Lichts, eine Kamera und einen Viewport.  Diese werden im Abschnitt [Szene, Knoten, Komponenten und Kameras](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)ausführlicher erläutert.
 
-Der dritte Teil des in diesem Beispiel wird eine Reihe von Aktionen ausgelöst.  Aktionen sind Anleitungen, die ein bestimmtes Effekts zu beschreiben, und sie nach der Erstellung von einem Knoten bei Bedarf ausgeführt werden können, durch den Aufruf der `RunActionAsync` Methode für eine `Node`.
+Der dritte Teil des Beispiels löst eine Reihe von Aktionen aus.  Aktionen sind Rezepte, die einen bestimmten Effekt beschreiben. Nachdem Sie erstellt wurden, können Sie von einem Knoten bei Bedarf ausgeführt werden `RunActionAsync` , indem die `Node`-Methode für einen aufgerufen wird.
 
-Die erste Aktion wird das Feld mit einen Sprungeffekt skaliert, und das zweite Argument wird das Feld immer:
+Mit der ersten Aktion wird das Feld mit einem Sprung Effekt skaliert, und das zweite Feld dreht das Feld immer wieder:
 
 ```csharp
 await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-Die oben zeigt, wie die erste Aktion, die wir erstellen eine `ScaleTo` Aktion, dies ist lediglich ein Rezept, der angibt, dass für eine Sekunde auf den Wert einer Eigenschaft "Skalierung" eines Knotens skaliert werden soll.  Dadurch wird wiederum um eine Aktion Migrationstoolkit umschlossen der `EaseBounceOut` Aktion.  Die Ads Aktionen verzerren die lineare Ausführung einer Aktion, und wenden Sie einen Effekt, in diesem Fall bietet den springenden-Out-Effekt.
-Unserer könnte also folgendermaßen geschrieben werden:
+Im obigen Beispiel wird gezeigt, wie die erste Aktion, die `ScaleTo` wir erstellen, eine Aktion ist. dabei handelt es sich lediglich um ein Rezept, das angibt, dass Sie die Skalierung für eine Sekunde auf den Wert einer Skalierungs Eigenschaft eines Knotens durchführen möchten  Diese Aktion wird wiederum um eine Beschleunigungs Aktion, die `EaseBounceOut` Aktion, umschlossen.  Die Beschleunigungs Aktionen verzerren die lineare Ausführung einer Aktion und wenden einen Effekt an. in diesem Fall stellt Sie den Bouncing-out-Effekt bereit.
+Unser Rezept könnte also wie folgt geschrieben werden:
 
 ```csharp
 var recipe = new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1));
 ```
 
-Nachdem das Rezept erstellt wurde, führen wir das Rezept:
+Nachdem das Rezept erstellt wurde, führen wir das Rezept aus:
 
 ```csharp
 await boxNode.RunActionsAsync (recipe)
 ```
 
-Der "await" gibt an, dass die sollten mit der Ausführung nach dieser Zeile fortgesetzt, wenn die Aktion abgeschlossen ist.  Nach Abschluss der Aktion lösen wir die zweite Animation.
+Der Erwartungswert gibt an, dass die Ausführung nach dieser Zeile fortsetzen soll, wenn die Aktion abgeschlossen ist.  Nachdem die Aktion abgeschlossen ist, wird die zweite Animation auslöst.
 
-Die [Verwenden von UrhoSharp](~/graphics-games/urhosharp/using.md) Dokument werden erläuterungen zu ausführlicher Urho und wie Sie Ihren Code zum Erstellen eines Spiels zu strukturieren.
+Das Dokument " [using urhusharp](~/graphics-games/urhosharp/using.md) " untersucht ausführlicher die Konzepte hinter Urho und erläutert, wie Sie Ihren Code für die Erstellung eines Spiels strukturieren.
 
 ## <a name="copyrights"></a>Urheberrechte
 
-Diese Dokumentation enthält die ursprünglichen Inhalte von Xamarin Inc., aber sehr häufig in der open-Source-Dokumentation für das Projekt Urho3D zeichnet und enthält Screenshots aus dem Projekt Cocos2D.
+Diese Dokumentation enthält Originalinhalte von xamarin Inc, zeichnet sich jedoch in der Open-Source-Dokumentation für das Urho3D-Projekt aus und enthält Screenshots aus dem Cocos2D-Projekt.

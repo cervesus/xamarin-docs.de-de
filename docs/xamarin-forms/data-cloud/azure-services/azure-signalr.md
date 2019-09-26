@@ -7,15 +7,15 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
 ms.openlocfilehash: a4d0f5c5ceefcfe9a36a5fcf10c6fb4937c1db90
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739213"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>Azure signalr Service mit xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
 
 ASP.net Core signalr ist ein Anwendungsmodell, das das Hinzufügen von Echtzeitkommunikation zu Anwendungen vereinfacht. Der Azure signalr Service ermöglicht eine schnelle Entwicklung und Bereitstellung skalierbarer signalr-Anwendungen. Azure Functions sind kurzlebige und Server lose Code Methoden, die kombiniert werden können, um ereignisgesteuerte, skalierbare Anwendungen zu bilden.
 
@@ -130,7 +130,7 @@ Nachdem Sie sich bei Ihrem Microsoft-Konto angemeldet haben, können Sie Ihre Az
 
 ![Eine Azure Functions-App im Visual Studio 2019-Veröffentlichungs Dialogfeld](azure-signalr-images/vs-app-selection.png "Azure Functions-App im Visual Studio 2019-Veröffentlichungs Dialogfeld")
 
-Nachdem Sie eine Azure Functions app-Instanz ausgewählt haben, werden die Website-URL, die Konfiguration und andere Informationen über die Ziel Azure Functions-App angezeigt. Wählen Sie **Azure App Service Einstellungen bearbeiten** aus, und geben Sie die Verbindungs Zeichenfolge im Feld **Remote** ein. Die Verbindungs Zeichenfolge wird von den Aushandlungs-und **Talk** -Funktionen verwendet, um eine Verbindung mit dem Azure signalr-Dienst herzustellen, und ist im Abschnitt " **Schlüssel** " des Azure signalr-Dienstanbieter im Azure-Portal verfügbar Weitere Informationen zur Verbindungs Zeichenfolge finden Sie unter [Erstellen eines Azure signalr-Dienstanbieter](#create-an-azure-signalr-service).
+Nachdem Sie eine Azure Functions app-Instanz ausgewählt haben, werden die Website-URL, die Konfiguration und andere Informationen über die Ziel Azure Functions-App angezeigt. Wählen Sie **Azure App Service Einstellungen bearbeiten** aus, und geben Sie die Verbindungs Zeichenfolge im Feld **Remote** ein. Die Verbindungs Zeichenfolge wird von den **Aushandlungs** -und **Talk** -Funktionen verwendet, um eine Verbindung mit dem Azure signalr-Dienst herzustellen, und ist im Abschnitt " **Schlüssel** " des Azure signalr-Dienstanbieter im Azure-Portal verfügbar Weitere Informationen zur Verbindungs Zeichenfolge finden Sie unter [Erstellen eines Azure signalr-Dienstanbieter](#create-an-azure-signalr-service).
 
 Nachdem Sie die Verbindungs Zeichenfolge eingegeben haben, können Sie auf **veröffentlichen** klicken, um die Funktionen für die Azure Functions-App bereitzustellen. Nach Abschluss des Vorgangs werden die Funktionen in der Azure Functions-App im Azure-Portal aufgelistet. Der folgende Screenshot zeigt die veröffentlichten Funktionen in der Azure-Portal:
 
@@ -189,7 +189,7 @@ public async Task SendMessageAsync(string username, string message)
 }
 ```
 
-Die `ConnectAsync` -Methode in `SignalRService` der-Klasse führt eine HTTP Get- Anforderung an die Aushandlungs Funktion aus, die in der Azure Functions App gehostet wird. Die **Aushandlungs** Funktion gibt JSON zurück, das in eine Instanz der `NegotiateInfo` -Klasse deserialisiert wird. Nachdem das `NegotiateInfo` Objekt abgerufen wurde, wird es verwendet, um sich direkt beim Azure signalr-Dienst mithilfe einer Instanz `HubConnection` der-Klasse zu registrieren.
+Die `ConnectAsync` -Methode in `SignalRService` der-Klasse führt eine HTTP GET-Anforderung an die **Aushandlungs** Funktion aus, die in der Azure Functions App gehostet wird. Die **Aushandlungs** Funktion gibt JSON zurück, das in eine Instanz der `NegotiateInfo` -Klasse deserialisiert wird. Nachdem das `NegotiateInfo` Objekt abgerufen wurde, wird es verwendet, um sich direkt beim Azure signalr-Dienst mithilfe einer Instanz `HubConnection` der-Klasse zu registrieren.
 
 ASP.net Core signalr überträgt eingehende Daten von der geöffneten Verbindung in Nachrichten und ermöglicht Entwicklern das Definieren von Nachrichten Typen und das Binden von Ereignis Handlern an eingehende Nachrichten nach Typ. Die `ConnectAsync` -Methode registriert einen Ereignishandler für den Nachrichten Namen, der in der **Constants.cs** -Datei der Beispielanwendung definiert ist. diese ist standardmäßig "newMessage".
 

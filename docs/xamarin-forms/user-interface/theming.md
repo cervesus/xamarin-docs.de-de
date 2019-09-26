@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2019
 ms.openlocfilehash: 3e0f508a9c980c02681f1be581846f9f2f25e2d0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69529278"
 ---
 # <a name="theming-a-xamarinforms-application"></a>Design einer xamarin. Forms-Anwendung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
 Xamarin. Forms-Anwendungen können mithilfe der `DynamicResource` Markup Erweiterung dynamisch zur Laufzeit auf Stiländerungen reagieren. Diese Markup Erweiterung ähnelt der `StaticResource` Markup Erweiterung, da beide eine Wörterbuch Taste verwenden, um einen Wert aus einer [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)abzurufen. Obwohl die `StaticResource` Markup Erweiterung eine einzelne Wörterbuchsuche ausführt, behält die `DynamicResource` Markup Erweiterung einen Link zum Wörterbuch Schlüssel bei. Wenn der Wert, der dem Schlüssel zugeordnet ist, ersetzt wird, wird die Änderung daher auf [`VisualElement`](xref:Xamarin.Forms.VisualElement)das angewendet. Dies ermöglicht die Implementierung von Lauf Zeit Designs in xamarin. Forms-Anwendungen.
 
@@ -29,7 +29,7 @@ Der Prozess der Implementierung von Lauf Zeit Designs in einer xamarin. Forms-An
 
 Die folgenden Screenshots zeigen Design Seiten, bei denen die IOS-Anwendung ein helles Design und die Android-Anwendung mit einem dunklen Design verwendet:
 
-[![Screenshot der Hauptseite einer APP mit einem Thema unter IOS und Android] (theming-images/main-page-both-themes.png "Hauptseite der App \"Thema") ] " (theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App \"Thema") " Screenshot der Detailseite einer Designs-App auf der Seite mit der Seite " [ ![IOS-und Android-]Details"(theming-images/detail-page-both-themes.png "der APP")-]Detailseite "Thema" für App(theming-images/detail-page-both-themes-large.png#lightbox "") 
+[![Screenshot der Hauptseite einer APP mit einem Thema unter IOS und Android] (theming-images/main-page-both-themes.png "Hauptseite der App \"Thema") ](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App "Thema"") " Screenshot der [ ![Detailseite einer Designs-App auf der IOS-und Android-](theming-images/detail-page-both-themes.png "Detailseite der APP mit dem Thema \"Thema") ](theming-images/detail-page-both-themes-large.png#lightbox "Detail Seite der APP mit Design") " 
 
 
 ## <a name="define-themes"></a>Definieren von Designs

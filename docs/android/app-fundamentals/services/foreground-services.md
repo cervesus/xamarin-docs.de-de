@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
 ms.openlocfilehash: 6f3427641ba4ace3b640fcc970fd33f55087a9c8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68644114"
 ---
 # <a name="foreground-services"></a>Vordergrunddienste
@@ -86,7 +86,7 @@ Dieser Screenshot zeigt die erweiterte Benachrichtigung in der Benachrichtigungs
 
 ![Das Bild zeigt die erweiterte Benachrichtigung] . (foreground-services-images/foreground-services-02.png "Das Bild zeigt die erweiterte Benachrichtigung.")
 
-Weitere Informationen zu Benachrichtigungen finden Sie im [Android](~/android/app-fundamentals/notifications/index.md) -Benachrichtigungs Handbuch im Abschnitt [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md) .
+Weitere Informationen zu Benachrichtigungen finden Sie im [Android-Benachrichtigungs](~/android/app-fundamentals/notifications/index.md) Handbuch im Abschnitt [lokale Benachrichtigungen](~/android/app-fundamentals/notifications/local-notifications.md) .
 
 ## <a name="unregistering-as-a-foreground-service"></a>Aufheben der Registrierung als Vordergrund Dienst
 

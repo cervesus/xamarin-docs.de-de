@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69887906"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
@@ -143,7 +143,7 @@ Im letzte Beispiel zeigt die `Device.RuntimePlatform` Wert. Die `Environment.New
 
 So sieht das Beispiel ausgeführt:
 
-[![X: Static-Demo](consuming-images/staticdemo-small.png "X: Static-Demo")](consuming-images/staticdemo-large.png#lightbox "X: Static-Demo")
+[![x:statische Demo](consuming-images/staticdemo-small.png "x:statische Demo")](consuming-images/staticdemo-large.png#lightbox "x:statische Demo")
 
 <a name="reference" />
 
@@ -185,9 +185,9 @@ Die **X: Reference-Demo** Seite zeigt zwei Verwendungen von `x:Reference` mit da
 </ContentPage>
 ```
 
-Beide `x:Reference` Ausdrücke verwenden, die gekürzte Version des der `ReferenceExtension` Klassennamen, und Entfernen der `Name=` Teil des Ausdrucks. Im ersten Beispiel das `x:Reference` Markuperweiterung eingebettet ist, der `Binding` Markuperweiterung. Beachten Sie, dass die `Source` und `StringFormat` Einstellungen werden durch Kommas getrennt. Hier wird das Programm ausgeführt wird:
+Beide `x:Reference` Ausdrücke verwenden, die gekürzte Version des der `ReferenceExtension` Klassennamen, und Entfernen der `Name=` Teil des Ausdrucks. Im ersten Beispiel das `x:Reference` Markuperweiterung eingebettet ist, der `Binding` Markuperweiterung. Beachten Sie, dass die `Source` und `StringFormat` Einstellungen werden durch Kommas getrennt. Dies ist das Programm, das ausgeführt wird:
 
-[![X: Reference-Demo](consuming-images/referencedemo-small.png "X: Reference-Demo")](consuming-images/referencedemo-large.png#lightbox "X: Reference-Demo")
+[![x:verweisdemo](consuming-images/referencedemo-small.png "x:verweisdemo")](consuming-images/referencedemo-large.png#lightbox "x:verweisdemo")
 
 <a name="type" />
 
@@ -242,7 +242,7 @@ Dies ist wie das Navigationsmenü im `MainPage` in die **Markuperweiterungen** P
 
 Hier ist die öffnendes-Hauptseite in **Markuperweiterungen**:
 
-[![Main Seite](consuming-images/mainpage-small.png "Main Seite")](consuming-images/mainpage-large.png#lightbox "Main Seite")
+[![Hauptseite](consuming-images/mainpage-small.png "Hauptseite")](consuming-images/mainpage-large.png#lightbox "Hauptseite")
 
 Jede `CommandParameter` -Eigenschaftensatz auf eine `x:Type` Markuperweiterung, die auf eine der anderen Seiten verweist. Die `Command` Eigenschaft gebunden ist, auf eine Eigenschaft mit dem Namen `NavigateCommand`. Diese Eigenschaft wird definiert, der `MainPage` Code-Behind-Datei:
 
@@ -325,7 +325,7 @@ public partial class TypeDemoPage : ContentPage
 
 Die Methode, ausgeführt, wenn eine `Button` gedrückt wird erstellt eine neue Instanz des Arguments, legt die `VerticalOptions` -Eigenschaft und fügt es der `StackLayout`. Die drei `Button` Elemente teilen sich die Seite klicken Sie dann mit dynamisch erstellten Ansichten:
 
-[![X: Type-Demo](consuming-images/typedemo-small.png "X: Type-Demo")](consuming-images/typedemo-large.png#lightbox "X: Type-Demo")
+[![x:TypDEMO](consuming-images/typedemo-small.png "x:TypDEMO")](consuming-images/typedemo-large.png#lightbox "x:TypDEMO")
 
 <a name="array" />
 
@@ -382,7 +382,7 @@ Die **X: Array-Demo** Seite zeigt, wie `x:Array` Elemente hinzufügen einer `Lis
 
 Die `ViewCell` erstellt ein einfaches `BoxView` für jeden Eintrag Farbe:
 
-[![X: Array-Demo](consuming-images/arraydemo-small.png "X: Array-Demo")](consuming-images/arraydemo-large.png#lightbox "X: Array-Demo")
+[![x:Array-Demo](consuming-images/arraydemo-small.png "x:Array-Demo")](consuming-images/arraydemo-large.png#lightbox "x:Array-Demo")
 
 Es gibt mehrere Möglichkeiten, geben Sie die einzelnen `Color` Elemente in diesem Array. Sie können eine `x:Static` Markuperweiterung:
 
@@ -453,9 +453,9 @@ Die **X: Null-Demo** Seite veranschaulicht ein Szenario bei `x:Null` kann zweckm
 
 Und Sie, die für eine der ermittelt der `Label` Elemente sollen alle Einstellungen der Eigenschaften in den impliziten `Style` mit Ausnahme von der `FontFamily`, die als Standardwert verwendet werden sollen. Sie definieren eine andere `Style` für diesen Zweck jedoch ein einfacherer Ansatz besteht darin, legen Sie die `FontFamily` Eigenschaft des entsprechenden `Label` zu `x:Null`, wie in der Mitte `Label`.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![X: Null-Demo](consuming-images/nulldemo-small.png "X: Null-Demo")](consuming-images/nulldemo-large.png#lightbox "X: Null-Demo")
+[![x:NULL-Demo](consuming-images/nulldemo-small.png "x:NULL-Demo")](consuming-images/nulldemo-large.png#lightbox "x:NULL-Demo")
 
 Beachten Sie, dass diese vier von der `Label` Elemente haben eine Serifenschriftart jedoch das Center `Label` hat die Standard-Schriftart sans-Serif.
 
@@ -497,9 +497,9 @@ Die **OnPlatform-Demo** Seite zeigt, wie die `OnPlatform` Markuperweiterung:
 
 In diesem Beispiel alle drei `OnPlatform` Ausdrücke verwenden, die Kurzform der `OnPlatformExtension` Klassenname. Die drei `OnPlatform` Markup Extensions Satz der [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften der [ `BoxView` ](xref:Xamarin.Forms.BoxView) auf iOS-, Android- und UWP unterschiedliche Werte. Markuperweiterungen geben auch Standardwerte für diese Eigenschaften auf den Plattformen, die angegeben sind, sodass die `Default=` Teil des Ausdrucks. Beachten Sie, dass die Markup-Erweiterungseigenschaften, die festgelegt werden, die durch Kommas getrennt werden.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![OnPlatform-Demo](consuming-images/onplatformdemo-small.png "OnPlatform-Demo")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform-Demo")
+[![Onplatform-Demo](consuming-images/onplatformdemo-small.png "Onplatform-Demo")](consuming-images/onplatformdemo-large.png#lightbox "Onplatform-Demo")
 
 <a name="onidiom" />
 
@@ -535,9 +535,9 @@ Die **OnIdiom Demo** Seite zeigt, wie die `OnIdiom` Markuperweiterung:
 
 In diesem Beispiel alle drei `OnIdiom` Ausdrücke verwenden, die Kurzform der `OnIdiomExtension` Klassenname. Die drei `OnIdiom` Markup Extensions Satz der [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) Eigenschaften der [ `BoxView` ](xref:Xamarin.Forms.BoxView) auf unterschiedliche Werte auf das Telefon, Tablet und desktop-Ausdrücke. Markuperweiterungen geben auch Standardwerte für diese Eigenschaften für die Ausdrücke, die angegeben sind, sodass die `Default=` Teil des Ausdrucks. Beachten Sie, dass die Markup-Erweiterungseigenschaften, die festgelegt werden, die durch Kommas getrennt werden.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![OnIdiom Demo](consuming-images/onidiomdemo-small.png "OnIdiom Demo")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom-Demo")
+[![Onidiom-Demo](consuming-images/onidiomdemo-small.png "Onidiom-Demo")](consuming-images/onidiomdemo-large.png#lightbox "Onidiom-Demo")
 
 ## <a name="datatemplate-markup-extension"></a>DataTemplate-Markup Erweiterung
 
@@ -583,9 +583,9 @@ Die Seite " **fontimage Demo** " zeigt die Verwendung `FontImage` der Markup Erw
 
 In diesem Beispiel wird die abgekürzte Version `FontImageExtension` des Klassen namens verwendet, um ein Xbox-Symbol aus der Schriftfamilie "ionicons" in [`Image`](xref:Xamarin.Forms.Image)einer anzuzeigen. Der Ausdruck verwendet auch die `OnPlatform` Markup Erweiterung, um unter `FontFamily` schiedliche Eigenschaftswerte unter IOS und Android anzugeben. Außerdem wird der `Glyph=` Teil des Ausdrucks gelöscht, und die festgelegten Markup Erweiterungs Eigenschaften werden durch Kommas getrennt. Beachten Sie, dass das Unicode-Zeichen für das `\uf30c`Symbol in XAML mit Escapezeichen versehen werden muss und `&#xf30c;`daher zu wird.
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-Screenshot der fontimage- [ ![Markup Erweiterung](consuming-images/fontimagedemo.png "fontimage-Demo") ] (consuming-images/fontimagedemo-large.png#lightbox "Fontimage-Demo")
+[![Screenshot der fontimage-Markup Erweiterung](consuming-images/fontimagedemo.png "Fontimage-Demo")](consuming-images/fontimagedemo-large.png#lightbox "Fontimage-Demo")
 
 Informationen zum Anzeigen von Schriftart Symbolen durch Angeben der Schriftart Symbol Daten in einem `FontImageSource` -Objekt finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons).
 

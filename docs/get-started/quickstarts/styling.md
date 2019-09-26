@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70756755"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Stil einer plattformübergreifenden xamarin. Forms-Anwendung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
 In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
@@ -26,8 +26,8 @@ In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
 In der Schnellstartanleitung erfahren Sie, wie Sie eine plattformübergreifende xamarin. Forms-Anwendung mit XAML-Stilen formatieren. Die fertige Anwendung wird unten gezeigt:
 
-Seite "Notizen" [ ![(styling-images/screenshots1-sml.png " ")]] (styling-images/screenshots1.png#lightbox "Seite \"Notizen") " Notiz der Seite "Anmerkung der Einstiegs(styling-images/screenshots2.png#lightbox "Seite\"") [ ![(styling-images/screenshots2-sml.png " ")]] 
-
+[![](styling-images/screenshots1-sml.png "")](styling-images/screenshots1.png#lightbox "Seite "Notizen"")
+[Notiz![](styling-images/screenshots2-sml.png "") der Seite "Notizen"](styling-images/screenshots2.png#lightbox "Seite "Hinweis Eintrag"")
 
 ### <a name="prerequisites"></a>Erforderliche Komponenten
 

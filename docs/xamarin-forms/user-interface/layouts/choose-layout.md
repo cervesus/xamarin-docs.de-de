@@ -8,21 +8,21 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
 ms.openlocfilehash: 161da8948f356fef997a411855598bc99d2f49b7
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69893997"
 ---
 # <a name="choose-a-xamarinforms-layout"></a>Auswählen eines xamarin. Forms-Layouts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Mit xamarin. Forms-layoutklassen können Sie UI-Steuerelemente in Ihrer Anwendung anordnen und gruppieren. Wenn Sie eine Layoutklasse auswählen, müssen Sie wissen, wie das Layout seine untergeordneten Elemente positioniert und wie das Layout seine untergeordneten Elemente ändert. Außerdem kann es erforderlich sein, Layouts zu schachteln, um das gewünschte Layout zu erstellen.
 
 Die folgende Abbildung zeigt typische Layouts, die mit den xamarin. Forms-Haupt layoutklassen erreicht werden können:
 
-[ ![Die hauptlayoutklassen in xamarin. Forms](images/layouts.png "xamarin. Forms-layoutklassen") ] (images/layouts-large.png#lightbox "Xamarin. Forms-layoutklassen")
+[![Die hauptlayoutklassen in xamarin. Forms](images/layouts.png "Xamarin. Forms-layoutklassen")](images/layouts-large.png#lightbox "Xamarin. Forms-layoutklassen")
 
 ## <a name="stacklayout"></a>StackLayout
 

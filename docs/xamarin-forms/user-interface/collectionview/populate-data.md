@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/13/2019
 ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69888550"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. Forms CollectionView-Daten
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert die folgenden Eigenschaften, die die anzuzeigenden Daten und ihre Darstellung definieren:
 
@@ -55,7 +55,7 @@ Ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) wird mit Daten aufgef�
 > [!NOTE]
 > Bedenken Sie, dass Sie für das Element `x:Array` ein `Type`-Attribute benötigen, das die Elementtypen im Array angibt.
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -76,7 +76,7 @@ collectionView.ItemsSource = new string[]
 
 Standardmäßig [`CollectionView`](xref:Xamarin.Forms.CollectionView) zeigt Elemente in einer vertikalen Liste an, wie in den folgenden Screenshots gezeigt:
 
-[ ![Screenshot von CollectionView mit Textelementen, auf IOS-und Android-](populate-data-images/text.png "Textelementen in einer CollectionView") ] (populate-data-images/text-large.png#lightbox "Text Elemente in einer CollectionView")
+[![Screenshot von CollectionView mit Textelementen unter IOS und Android](populate-data-images/text.png "Text Elemente in einer CollectionView")](populate-data-images/text-large.png#lightbox "Text Elemente in einer CollectionView")
 
 Weitere Informationen zum Ändern des [`CollectionView`](xref:Xamarin.Forms.CollectionView) Layouts finden Sie unter [Angeben eines Layouts](layout.md). Informationen dazu, wie die Darstellung der einzelnen Elemente in der `CollectionView`definiert wird, finden Sie unter Definieren der [Element](#define-item-appearance)Darstellung.
 
@@ -88,7 +88,7 @@ Weitere Informationen zum Ändern des [`CollectionView`](xref:Xamarin.Forms.Coll
 <CollectionView ItemsSource="{Binding Monkeys}" />
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -139,7 +139,7 @@ Die Darstellung der einzelnen Elemente in der [`CollectionView`](xref:Xamarin.Fo
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -186,7 +186,7 @@ public class Monkey
 
 Die folgenden Screenshots zeigen das Ergebnis der Vorlagen Darstellung der einzelnen Elemente in der Liste:
 
-[ ![Screenshot von CollectionView, in dem jedes Element auf Vorlagen basiert, auf IOS-und Android-]Vorlagen(populate-data-images/datatemplate.png "Elementen in einer CollectionView") ] (populate-data-images/datatemplate-large.png#lightbox "Auf Vorlagen basierende Elemente in einer CollectionView")
+[![Screenshot von CollectionView, in dem jedes Element auf IOS und Android Vorlagen basiert ist](populate-data-images/datatemplate.png "Auf Vorlagen basierende Elemente in einer CollectionView")](populate-data-images/datatemplate-large.png#lightbox "Auf Vorlagen basierende Elemente in einer CollectionView")
 
 Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
@@ -216,7 +216,7 @@ Die Darstellung der einzelnen Elemente in der [`CollectionView`](xref:Xamarin.Fo
 </ContentPage>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -243,7 +243,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 Die `MonkeyDataTemplateSelector` -Klasse `AmericanMonkey` definiert `OtherMonkey` die Eigenschaften und [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die auf unterschiedliche Datenvorlagen festgelegt sind. Die `OnSelectTemplate` außer Kraft Setzung `AmericanMonkey` gibt die Vorlage zurück, die den affennamen und den Speicherort in Teal anzeigt, wenn der affenname "America" enthält. Wenn der affenname nicht "America" enthält, `OnSelectTemplate` gibt die über `OtherMonkey` Schreibung die Vorlage zurück, die den affennamen und den Speicherort in Silber anzeigt:
 
-[ ![Screenshot der Auswahl von "CollectionView-Lauf Zeitelement Vorlage" unter IOS-und Android-Runtime-](populate-data-images/datatemplateselector.png "Element Vorlagen Auswahl in einer CollectionView") ] (populate-data-images/datatemplateselector-large.png#lightbox "Auswahl der Lauf Zeitelement Vorlage in einer CollectionView")
+[![Screenshot der Auswahl von "CollectionView-Lauf Zeitelement Vorlage" unter IOS und Android](populate-data-images/datatemplateselector.png "Auswahl der Lauf Zeitelement Vorlage in einer CollectionView")](populate-data-images/datatemplateselector-large.png#lightbox "Auswahl der Lauf Zeitelement Vorlage in einer CollectionView")
 
 Weitere Informationen zu Datenvorlagen-Selektoren finden Sie unter [Erstellen eines xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 
@@ -277,7 +277,7 @@ Das folgende XAML-Beispiel zeigt [`CollectionView`](xref:Xamarin.Forms.Collectio
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView

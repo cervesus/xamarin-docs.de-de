@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: f40737799f63c6e0c61fcc6f4f59584222a49d6d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68648324"
 ---
 # <a name="listview-group-header-style-on-ios"></a>ListView-Gruppen Header Stil unter IOS
@@ -31,7 +31,7 @@ Mit diesem IOS-plattformspezifischen [`ListView`](xref:Xamarin.Forms.ListView) S
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -50,7 +50,7 @@ Außerdem kann die `ListView.GetGroupHeaderStyle` -Methode verwendet werden, um 
 
 Das Ergebnis ist, dass ein `GroupHeaderStyle` angegebener Wert auf [`ListView`](xref:Xamarin.Forms.ListView)den angewendet wird, der steuert, ob die Header Zellen beim Scrollen schweben:
 
-[ ![Screenshot der nicht Gleit Komma-und nicht Gleit Komma-ListView-Header Zellen in ios]-(listview-group-header-style-images/group-header-styles.png "ListView mit Gleit Komma-und nicht-Gleit Komma Zellen") ] (listview-group-header-style-images/group-header-styles-large.png#lightbox "ListView mit Gleit Komma-und nicht-Gleit Komma Zellen")
+[![Screenshot von Gleit Komma-und nicht unverankerten ListView-Header Zellen unter IOS](listview-group-header-style-images/group-header-styles.png "ListView mit Gleit Komma-und nicht-Gleit Komma Zellen")](listview-group-header-style-images/group-header-styles-large.png#lightbox "ListView mit Gleit Komma-und nicht-Gleit Komma Zellen")
 
 ## <a name="related-links"></a>Verwandte Links
 

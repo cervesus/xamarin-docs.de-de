@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9c793f4d5f0cda5bff2dedef5e4e5e5bdfca69e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770805"
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
@@ -53,7 +53,7 @@ Die `CatalogService` -Klasse wird verwendet, um den Datenabruf Vorgang aus dem C
 
 In Abbildung 10-1 wird die Interaktion von Klassen veranschaulicht, die Katalogdaten aus dem Katalog-mikrodienst zum `CatalogView`Anzeigen von lesen.
 
-[Abrufen von Daten aus dem Katalog-mikroservice ![(accessing-remote-data-images/catalogdata.png " ")]] (accessing-remote-data-images/catalogdata-large.png#lightbox "Abrufen von Daten aus dem Katalog-mikroservice")
+[![](accessing-remote-data-images/catalogdata.png "Abrufen von Daten aus dem Katalog-mikroservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Abrufen von Daten aus dem Katalog-mikroservice")
 
 **Abbildung 10-1**: Abrufen von Daten aus dem Katalog-mikroservice
 
@@ -158,7 +158,7 @@ Die `BasketService` -Klasse wird verwendet, um den Datenabruf und den Update Pro
 
 In Abbildung 10-2 wird die Interaktion von Klassen gezeigt, die die von der `BasketView`angezeigten Korb Daten an den Warenkorb-microservice senden.
 
-[Senden von Daten an den Warenkorb-microservice ![(accessing-remote-data-images/basketdata.png " ")]] (accessing-remote-data-images/basketdata-large.png#lightbox "Senden von Daten an den Warenkorb-microservice")
+[![](accessing-remote-data-images/basketdata.png "Senden von Daten an den Warenkorb-microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Senden von Daten an den Warenkorb-microservice")
 
 **Abbildung 10-2**: Senden von Daten an den Warenkorb-microservice
 

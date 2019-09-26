@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2019
 ms.openlocfilehash: f08146d4439ff1fc22edea71ab1cbb337f64c037
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68984392"
 ---
 # <a name="xamarinforms-controls-class-hierarchy"></a>Xamarin. Forms-Steuerelement-Klassenhierarchie
@@ -22,7 +22,7 @@ Diese Typen können in Seiten, Layouts, Sichten und Zellen aufgeteilt werden. Ei
 
 Das folgende Klassendiagramm zeigt die Hierarchie von Typen, die normalerweise verwendet werden, um eine Benutzeroberfläche in xamarin. Forms zu erstellen:
 
-[ ![Xamarin. Forms-Steuerelemente Klassen]Diagramm(class-hierarchy-images/class-diagram.png "xamarin. Forms-Steuerelemente Klassendiagramm") ] (class-hierarchy-images/class-diagram-large.png#lightbox "Klassendiagramm für xamarin. Forms") -Steuerelemente
+[![Klassendiagramm für xamarin. Forms] -Steuerelemente (class-hierarchy-images/class-diagram.png "Klassendiagramm für xamarin. Forms") -Steuerelemente](class-hierarchy-images/class-diagram-large.png#lightbox "Klassendiagramm für xamarin. Forms-Steuerelemente")
 
 > [!NOTE]
 > Eine hochauflösende Version des Klassendiagramms kann [hier](class-hierarchy-images/class-diagram-high-resolution.png)heruntergeladen werden. Beachten Sie jedoch, dass im Diagramm derzeit nicht die `CarouselView` Typen und `CollectionView` angezeigt werden. Diese werden hinzugefügt, wenn die Steuerelemente nicht mehr in der Vorschau angezeigt werden. Außerdem zeigt das Diagramm nur einen einzigen shelltyp an.

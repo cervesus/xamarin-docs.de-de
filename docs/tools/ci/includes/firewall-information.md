@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: d46968f9c53314abe561e7f4871cfbf6e07b7002
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "61047606"
 ---
-## <a name="firewall-configuration"></a>Konfiguration der Firewall
+## <a name="firewall-configuration"></a>Firewallkonfiguration
 
-In der Reihenfolge für Tests an Xamarin Test Cloud übermittelt werden muss der Computer, übermitteln die Tests mit den Test Cloud-Servern kommunizieren. Firewalls müssen konfiguriert werden, zum Zulassen des Netzwerkverkehrs zu und von den Servern am **testcloud.xamarin.com** an Port 80 und 443. Dieser Endpunkt wird von DNS verwaltet, und die IP-Adresse sind vorbehalten. 
+Damit Tests an Xamarin Test Cloud übermittelt werden können, muss der Computer, der die Tests sendet, mit den Test Cloud Servern kommunizieren können. Firewalls müssen konfiguriert werden, um Netzwerk Datenverkehr zu und von den Servern unter **testcloud.xamarin.com** an den Ports 80 und 443 zuzulassen. Dieser Endpunkt wird von DNS verwaltet, und die IP-Adresse kann geändert werden. 
 
-In einigen Situationen muss einen Test (oder ein Gerät, das Ausführen des Tests) mit Webservern, die durch eine Firewall geschützt, kommunizieren. In diesem Szenario muss die Firewall zum Zulassen von Datenverkehr von den folgenden IP-Adressen konfiguriert werden:
+In einigen Situationen muss ein Test (oder ein Gerät, auf dem der Test ausgeführt wird) mit Webservern kommunizieren, die durch eine Firewall geschützt sind. In diesem Szenario muss die Firewall so konfiguriert werden, dass Sie Datenverkehr von den folgenden IP-Adressen zulässt:
 
 * **195.249.159.238**
 * **195.249.159.239**

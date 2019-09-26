@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: f1a3e8bb8959588e64339f70268370440f356be9
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68738974"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin. Forms CollectionView-Auswahl
 
 ![](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert die folgenden Eigenschaften, die die Elementauswahl Steuern:
 
@@ -55,7 +55,7 @@ Das folgende XAML-Beispiel zeigt [`CollectionView`](xref:Xamarin.Forms.Collectio
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -82,7 +82,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 Die folgenden Screenshots zeigen die Auswahl einzelner Elemente in [`CollectionView`](xref:Xamarin.Forms.CollectionView)einem:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit einzelner Auswahl, unter IOS und Android](selection-images/single-selection.png "CollectionView vertikal Liste mit einzelner Auswahl") ] (selection-images/single-selection-large.png#lightbox "Vertikale CollectionView-Liste mit einzelner Auswahl")
+[![Screenshot einer vertikalen CollectionView-Liste mit einmaliger Auswahl unter IOS und Android](selection-images/single-selection.png "Vertikale CollectionView-Liste mit einzelner Auswahl")](selection-images/single-selection-large.png#lightbox "Vertikale CollectionView-Liste mit einzelner Auswahl")
 
 ## <a name="multiple-selection"></a>Mehrfachauswahl
 
@@ -98,7 +98,7 @@ Das folgende XAML-Beispiel zeigt [`CollectionView`](xref:Xamarin.Forms.Collectio
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -125,7 +125,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 Die folgenden Screenshots zeigen die Auswahl mehrerer Elemente in [`CollectionView`](xref:Xamarin.Forms.CollectionView)einem:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit Mehrfachauswahl unter IOS und Android](selection-images/multiple-selection.png "CollectionView vertikal Liste mit Mehrfachauswahl") ] (selection-images/multiple-selection-large.png#lightbox "Vertikale Auflistung von CollectionView mit Mehrfachauswahl")
+[![Screenshot einer vertikalen CollectionView-Liste mit Mehrfachauswahl unter IOS und Android](selection-images/multiple-selection.png "Vertikale Auflistung von CollectionView mit Mehrfachauswahl")](selection-images/multiple-selection-large.png#lightbox "Vertikale Auflistung von CollectionView mit Mehrfachauswahl")
 
 ## <a name="single-pre-selection"></a>Einzelne vorab Auswahl
 
@@ -139,7 +139,7 @@ Wenn die [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -188,7 +188,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 Wenn [`CollectionView`](xref:Xamarin.Forms.CollectionView) angezeigt wird, ist das vierte Element in der Liste daher vorab ausgewählt:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit einzelner Vorauswahl, in der vertikalen Liste der IOS-und Android-](selection-images/single-pre-selection.png "CollectionView mit einer einzelnen vorab Auswahl") ] (selection-images/single-pre-selection-large.png#lightbox "Vertikale CollectionView-Liste mit einzelner Vorauswahl")
+[![Screenshot einer vertikalen CollectionView-Liste mit einer einzelnen vorab Auswahl unter IOS und Android](selection-images/single-pre-selection.png "Vertikale CollectionView-Liste mit einzelner Vorauswahl")](selection-images/single-pre-selection-large.png#lightbox "Vertikale CollectionView-Liste mit einzelner Vorauswahl")
 
 ## <a name="multiple-pre-selection"></a>Mehrfache vorab Auswahl
 
@@ -203,7 +203,7 @@ Wenn die [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)
 </CollectionView>
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -256,7 +256,7 @@ namespace CollectionViewDemos.ViewModels
 
 Wenn [`CollectionView`](xref:Xamarin.Forms.CollectionView) angezeigt wird, sind die zweiten, vierten und fünften Elemente in der Liste vorab ausgewählt:
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit mehreren vorauswahlrechten in IOS und Android](selection-images/multiple-pre-selection.png "CollectionView vertikale Liste mit mehreren vorab Auswahl") ] (selection-images/multiple-pre-selection-large.png#lightbox "Vertikale Auflistung von CollectionView mit mehreren vorab Auswahl")
+[![Screenshot einer vertikalen CollectionView-Liste mit mehreren vorab Auswahl unter IOS und Android](selection-images/multiple-pre-selection.png "Vertikale Auflistung von CollectionView mit mehreren vorab Auswahl")](selection-images/multiple-pre-selection-large.png#lightbox "Vertikale Auflistung von CollectionView mit mehreren vorab Auswahl")
 
 ## <a name="clearing-selections"></a>Löschen der Auswahl
 
@@ -305,7 +305,7 @@ Die [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) - [`Se
 
 In diesem Beispiel wird der [`Style.TargetType`](xref:Xamarin.Forms.Style.TargetType) -Eigenschafts Wert auf `Grid` festgelegt, da [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) das Stamm Element von [`Grid`](xref:Xamarin.Forms.Grid)ein ist. Der `Selected` [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) `LightSkyBlue`gibt an, dass bei Auswahl eines Elements in der der des Elements auf festgelegt wird: [`VisualState`](xref:Xamarin.Forms.VisualState)
 
-[ ![Screenshot einer vertikalen CollectionView-Liste mit einer benutzerdefinierten Auswahl Farbe, in der vertikalen Liste der IOS-und Android-](selection-images/single-selection-color.png "CollectionView mit einer benutzerdefinierten Auswahl Farbe") ] (selection-images/single-selection-color-large.png#lightbox "Auflistungs Ansicht (vertikal) mit einer benutzerdefinierten Auswahl Farbe")
+[![Screenshot einer vertikalen CollectionView-Liste mit einer benutzerdefinierten Auswahl Farbe unter IOS und Android](selection-images/single-selection-color.png "Auflistungs Ansicht (vertikal) mit einer benutzerdefinierten Auswahl Farbe")](selection-images/single-selection-color-large.png#lightbox "Auflistungs Ansicht (vertikal) mit einer benutzerdefinierten Auswahl Farbe")
 
 Weitere Informationen zu visuellen Zuständen finden Sie unter [xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
@@ -318,7 +318,7 @@ Weitere Informationen zu visuellen Zuständen finden Sie unter [xamarin. Forms V
                 SelectionMode="None" />
 ```
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 CollectionView collectionView = new CollectionView

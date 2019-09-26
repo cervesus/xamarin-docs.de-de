@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68652310"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Einführung in xamarin. Forms und Azure Cognitive Services
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services umfasst einen Satz von APIs, SDKs und Diensten für Entwickler, um ihre Anwendungen intelligenter zu machen, durch das Hinzufügen von Features wie gesichtserkennung, Spracherkennung und sprachverständnis. Dieser Artikel enthält eine Einführung in die beispielanwendung, die zeigt, wie Sie einige der Microsoft Cognitive Services-APIs aufrufen._
 

@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 9ce02b4c6412eab1f4b1003b262573c59940286c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68653797"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Ausführen der Navigation in einer mehrseitigen xamarin. Forms-Anwendung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
 In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
@@ -28,10 +28,10 @@ In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
 In der Schnellstartanleitung erfahren Sie, wie Sie eine plattformübergreifende xamarin. Forms-Anwendung mit einer einzelnen Seite aktivieren, in der Sie einen einzelnen Hinweis in einer mehrseitigen Anwendung speichern können, um mehrere Notizen speichern zu können. Die fertige Anwendung wird unten gezeigt:
 
-Seite "Notizen" [ ![(multi-page-images/screenshots1-sml.png " ")]] (multi-page-images/screenshots1.png#lightbox "Seite \"Notizen") " Notiz der Seite "Anmerkung der(multi-page-images/screenshots2.png#lightbox "") [Einstiegs ![(multi-page-images/screenshots2-sml.png " ")]Seite"] 
+[![](multi-page-images/screenshots1-sml.png "")](multi-page-images/screenshots1.png#lightbox "Seite "Notizen"")
+[Notiz![](multi-page-images/screenshots2-sml.png "") der Seite "Notizen"](multi-page-images/screenshots2.png#lightbox "Seite "Hinweis Eintrag"")
 
-
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlossen haben, bevor Sie diesen Schnellstart durchführen. Alternativ können Sie das [vorherige Schnellstart Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/) herunterladen und als Ausgangspunkt für diesen Schnellstart verwenden.
 
@@ -55,7 +55,7 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
     ![](multi-page-images/vs/add-new-models-file.png "Neue Datei hinzufügen")
 
-5. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **visuelle C# Elemente > Klasse**aus, benennen Sie die **neue Datei,** und klicken Sie auf die Schaltfläche **Hinzufügen** :
+5. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **visuelle C# Elemente > Klasse**aus, **benennen Sie die neue Datei,** und klicken Sie auf die Schaltfläche **Hinzufügen** :
 
     ![](multi-page-images/vs/add-note-class.png "Note-Klasse hinzufügen")
 
@@ -338,7 +338,7 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
     ![](multi-page-images/vsmac/add-new-models-file.png "Neue Datei hinzufügen")
 
-5. Klicken Sie im Dialogfeld **neue Datei** auf **Allgemein > leere Klasse**, benennen Sie die **neue Datei,** und klicken Sie auf die Schaltfläche **neu** :
+5. Klicken Sie im Dialogfeld **neue Datei** auf **Allgemein > leere Klasse**, **benennen Sie die neue Datei,** und klicken Sie auf die Schaltfläche **neu** :
 
     ![](multi-page-images/vsmac/add-note-class.png "Note-Klasse hinzufügen")
 

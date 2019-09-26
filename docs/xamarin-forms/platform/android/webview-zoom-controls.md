@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
 ms.openlocfilehash: 2142882add91d613263d11fa4c1e6d7ad142c7c7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68656002"
 ---
 # <a name="webview-zoom-on-android"></a>WebView-Zoom unter Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Mit dieser Android-plattformspezifischen Funktion können Sie einen ""-Zoom und ein [`WebView`](xref:Xamarin.Forms.WebView)Zoom Steuerelement für einen aktivieren. Sie wird in XAML verwendet, indem die `WebView.EnableZoomControls` Bindungs `WebView.DisplayZoomControls` fähigen Eigenschaften und auf `boolean` -Werte festgelegt werden:
 
@@ -47,7 +47,7 @@ Die `WebView.On<Android>` Methode gibt an, dass diese plattformspezifischen nur 
 
 Das Ergebnis ist, dass die Option "verkleinern" in "Zoom" [`WebView`](xref:Xamarin.Forms.WebView)aktiviert werden kann, und Zoom Steuerelemente können `WebView`überlagert werden:
 
-[ ![Screenshot der zoomten WebView unter Android](webview-zoom-controls-images/webview-zoom.png "Zoom WebView") ] Vergrößern der (webview-zoom-controls-images/webview-zoom-large.png#lightbox "WebView")
+[![Screenshot der zoomten WebView unter Android] Vergrößern der (webview-zoom-controls-images/webview-zoom.png "WebView")](webview-zoom-controls-images/webview-zoom-large.png#lightbox "Vergrößern der WebView")
 
 > [!IMPORTANT]
 > Zoom Steuerelemente müssen sowohl aktiviert als auch angezeigt werden, über die entsprechenden bindbaren Eigenschaften oder Methoden, die überlagert [`WebView`](xref:Xamarin.Forms.WebView)werden.

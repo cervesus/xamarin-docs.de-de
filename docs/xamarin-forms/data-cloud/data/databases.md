@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
 ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739176"
 ---
 # <a name="xamarinforms-local-databases"></a>Lokale Datenbanken von Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 _Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Datenbank-Engine. Dadurch ist es möglich, Objekte in freigegebenem Code zu laden und zu speichern. In diesem Artikel wird beschrieben, wie Xamarin.Forms-Apps Daten mithilfe von SQLite.Net in eine lokale SQLite-Datenbank lesen und schreiben können._
 
@@ -26,7 +26,7 @@ Xamarin.Forms-Apps können das Paket [SQLite.NET PCL NuGet](https://www.nuget.or
 
 Bei der zugehörigen [Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) handelt es sich um eine einfache App für To-do-Listen. Auf den folgenden Screenshots wird veranschaulicht, wie das Beispiel auf jeder Plattform angezeigt wird:
 
-[![Screenshots der Xamarin.Forms-Beispieldatenbank](databases-images/todo-list-sml.png "Screenshots der ersten Seite von TodoList")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite von TodoList") [![Screenshots der Xamarin.Forms-Beispieldatenbank](databases-images/todo-list-sml.png "Screenshots der ersten Seite von TodoList")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite von TodoList")
+[![Xamarin. Forms-Daten Bank Beispiel-Screenshots](databases-images/todo-list-sml.png "Screenshots der ersten Seite") ](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste") auf der Liste [ ![Xamarin. Forms-Daten Bank Beispiel Screenshots]für(databases-images/todo-list-sml.png "erste Seiten Screenshots") ](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste")
 
 <a name="Using_SQLite_with_PCL" />
 

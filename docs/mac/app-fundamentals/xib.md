@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770352"
 ---
 # <a name="xib-files-in-xamarinmac"></a>XIb-Dateien in xamarin. Mac
@@ -557,7 +557,7 @@ Verwenden Sie den folgenden Code, um eine neue Ansicht anzuzeigen:
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-Dadurch wird eine neue Instanz des Ansichts Controllers für die neue Ansicht erstellt, deren Typ festgelegt wird (wie durch die dem Projekt hinzugefügte Enumeration angegeben), und `DisplaySubview` die der Klasse des Fensters hinzugefügte Methode wird verwendet, um die Ansicht tatsächlich anzuzeigen. Zum Beispiel:
+Dadurch wird eine neue Instanz des Ansichts Controllers für die neue Ansicht erstellt, deren Typ festgelegt wird (wie durch die dem Projekt hinzugefügte Enumeration angegeben), und `DisplaySubview` die der Klasse des Fensters hinzugefügte Methode wird verwendet, um die Ansicht tatsächlich anzuzeigen. Beispiel:
 
 [![Ausführen der Beispiel-App](xib-images/view04.png "Ausführen der Beispiel-App")](xib-images/view04-large.png#lightbox)
 

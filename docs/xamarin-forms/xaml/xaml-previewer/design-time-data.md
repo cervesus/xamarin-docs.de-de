@@ -8,10 +8,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69887854"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
@@ -48,7 +48,7 @@ Sie können mit `d:` jedem-Attribut für ein xamarin. Forms-Steuerelement verwen
 
 [![Entwerfen von Zeit Daten mit einem Schalt] Flächen-Steuerelement (xaml-previewer-images/designtimedata-controls-sm.png "Entwerfen von Zeit Daten mit einem Schalt") Flächen-Steuerelement](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
-In diesem Beispiel wird die Schaltfläche nur zur Entwurfszeit angezeigt. Verwenden Sie diese Methode, um einen Platzhalter für ein benutzerdefiniertes Steuerelement zu platzieren, [das nicht von der XAML-Vorschau unterstützt wird](render-custom-controls.md).
+In diesem Beispiel wird die Schaltfläche nur zur Entwurfszeit angezeigt. Verwenden Sie diese Methode, um einen Platzhalter für ein [benutzerdefiniertes Steuerelement zu platzieren, das nicht von der XAML-Vorschau unterstützt wird](render-custom-controls.md).
 
 ## <a name="preview-images-at-design-time"></a>Anzeigen von Vorschaubildern zur Entwurfszeit
 

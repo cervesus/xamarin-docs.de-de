@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70769935"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Kopieren und Einfügen in xamarin. Mac
@@ -541,7 +541,7 @@ Für jedes Menü Element wird das aktuelle, oberste Schlüssel Fenster angezeigt
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-Von dort aus wird die `ImageDocument` Klasseninstanz dieses Fensters aufgerufen, um die Kopier-und Einfügeaktionen zu verarbeiten. Zum Beispiel: 
+Von dort aus wird die `ImageDocument` Klasseninstanz dieses Fensters aufgerufen, um die Kopier-und Einfügeaktionen zu verarbeiten. Beispiel: 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -703,7 +703,7 @@ Verwenden Sie `ChangeCount` die `ClearContents` -Methode und `NSPasteboard` die-
 
 Sie führen einen Kopiervorgang durch, indem Sie zuerst auf ein pasteboard zugreifen, vorhandene Inhalte löschen und so viele Darstellungen der Daten schreiben, wie dies für das pasteboard erforderlich ist.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 // Get the standard pasteboard
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-Die-Klasse muss auch mit der `Register` -Direktive für "Ziel-C" verfügbar gemacht werden, und Sie muss alle erforderlichen Eigenschaften oder Methoden mit `Export`verfügbar machen. Zum Beispiel:
+Die-Klasse muss auch mit der `Register` -Direktive für "Ziel-C" verfügbar gemacht werden, und Sie muss alle erforderlichen Eigenschaften oder Methoden mit `Export`verfügbar machen. Beispiel:
 
 ```csharp
 [Export("name")]

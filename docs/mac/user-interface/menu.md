@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770991"
 ---
 # <a name="menus-in-xamarinmac"></a>Menüs in xamarin. Mac
@@ -226,7 +226,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 Obwohl Ihre APP `NSDocuments`nicht verwendet, verwenden Sie trotzdem das `SharedDocumentController` `NSDocumentController` , um das Menü " **zuletzt geöffnet** " zu verwalten, `NSUrl` indem Sie eine mit dem Speicherort der `NoteNewRecentDocumentURL` Datei an die-Methode von senden.
 
-Als nächstes müssen Sie die `OpenFile` -Methode des App-Delegaten überschreiben, um eine beliebige Datei zu öffnen, die der Benutzer aus dem Menü " **zuletzt geöffnet** " auswählt. Zum Beispiel:
+Als nächstes müssen Sie die `OpenFile` -Methode des App-Delegaten überschreiben, um eine beliebige Datei zu öffnen, die der Benutzer aus dem Menü " **zuletzt geöffnet** " auswählt. Beispiel:
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -425,7 +425,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 Ebenso wie die integrierten **ersten Response** -Aktionen, die mit Standardmenü Elementen vorverdrahtet werden, können Sie neue, benutzerdefinierte Aktionen erstellen und Sie an Menü Elemente in Interface Builder übertragen.
 
-Definieren Sie zunächst eine benutzerdefinierte Aktion auf einem der Fenster Controller Ihrer APP. Zum Beispiel:
+Definieren Sie zunächst eine benutzerdefinierte Aktion auf einem der Fenster Controller Ihrer APP. Beispiel:
 
 ```csharp
 [Action("defineKeyword:")]

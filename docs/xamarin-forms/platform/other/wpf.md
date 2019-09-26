@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
 ms.openlocfilehash: 8fcad4799cd53892106b3e221cff0dfbc737e10d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70760039"
 ---
 # <a name="wpf-platform-setup"></a>Einrichten der WPF-Plattform
@@ -149,6 +149,6 @@ Sie können die anfängliche Größe des Fensters in der WPF-Datei **MainWindow.
 Title="BoxViewClock" Height="450" Width="800"
 ```
 
-## <a name="issues"></a>Issues
+## <a name="issues"></a>Probleme
 
 Dies ist eine Vorschauversion, daher sollten Sie davon ausgehen, dass nicht alles in der Produktion bereit ist. Nicht alle nuget-Pakete für xamarin. Forms sind für WPF bereit, und einige Features funktionieren möglicherweise nicht vollständig.

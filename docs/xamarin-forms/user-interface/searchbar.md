@@ -8,19 +8,19 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
 ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69658028"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms-Suchleiste
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das verwendet wird, um eine Suche zu initiieren. Das `SearchBar` -Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit Ergebnissen, die in `ListView`einer angezeigt werden:
 
-[ ![Screenshot von Searchbar unter IOS und Android](searchbar-images/device-searchbars-cropped.png "Searchbar unter IOS und Android") ] (searchbar-images/device-searchbars.png#lightbox "Searchbar unter IOS und Android")
+[![Bildschirm Abbildung von Searchbar unter IOS und Android](searchbar-images/device-searchbars-cropped.png "Searchbar unter IOS und Android")](searchbar-images/device-searchbars.png#lightbox "Searchbar unter IOS und Android")
 
 Die `SearchBar` -Klasse definiert die folgenden Eigenschaften:
 
@@ -82,7 +82,7 @@ SearchBar searchBar = new SearchBar
 
 Der folgende Screenshot zeigt das resultierende `SearchBar` Steuerelement:
 
-[ ![Screenshot der angepassten Suchleiste auf IOS-und Android-](searchbar-images/device-searchbars-styled-cropped.png "Suchleiste unter IOS und Android") ] (searchbar-images/device-searchbars-styled.png#lightbox "Angepasste Suchleiste unter IOS und Android")
+[![Screenshot der angepassten Suchleiste unter IOS und Android](searchbar-images/device-searchbars-styled-cropped.png "Angepasste Suchleiste unter IOS und Android")](searchbar-images/device-searchbars-styled.png#lightbox "Angepasste Suchleiste unter IOS und Android")
 
 ## <a name="perform-a-search-with-event-handlers"></a>Ausführen einer Suche mit Ereignis Handlern
 

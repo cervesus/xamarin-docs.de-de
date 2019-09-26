@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70760227"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmensanwendungen
@@ -89,7 +89,7 @@ Weitere Informationen zur Implementierung der Back-End-Dienste finden [Sie unter
 
 Dieser Leitfaden konzentriert sich auf das entwickeln plattformübergreifender Unternehmens-apps mit xamarin. Forms und verwendet die Mobile App eshoponcontainers als Beispiel. Abbildung 1-2 zeigt die Seiten aus den eshoponcontainers-Mobile App, die die zuvor beschriebenen Funktionen bereitstellen.
 
-Der Mobile App "eshoponcontainers" [ ![(introduction-images/screenshots.png " ")]] (introduction-images/screenshots-large.png#lightbox "Der Mobile App \"eshoponcontainers") "
+[![](introduction-images/screenshots.png "Der Mobile App \"eshoponcontainers\"")](introduction-images/screenshots-large.png#lightbox "Der Mobile App "eshoponcontainers"")
 
 **Abbildung 1-2**: Der Mobile App "eshoponcontainers"
 

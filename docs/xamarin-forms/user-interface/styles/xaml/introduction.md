@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
 ms.openlocfilehash: 35f8dad3590c07ceb3c93aa735b8c02d75098498
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70228174"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Einführung in xamarin. Forms-Stile
@@ -82,7 +82,7 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-Jede [`Label`](xref:Xamarin.Forms.Label) Instanz verfügt über identische Eigenschaftswerte zum Steuern der Darstellung des Texts, der `Label`von angezeigt wird. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
+Jede [`Label`](xref:Xamarin.Forms.Label) Instanz verfügt über identische Eigenschaftswerte zum Steuern der Darstellung des Texts, der `Label`von angezeigt wird. Dies ergibt die in den folgenden Screenshots gezeigte Darstellung:
 
 [![Darstellung der Bezeichnung ohne Stile](introduction-images/no-styles.png)](introduction-images/no-styles-large.png#lightbox)
 

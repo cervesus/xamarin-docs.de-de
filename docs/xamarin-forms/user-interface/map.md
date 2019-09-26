@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 242673efb38931eb678432a28f24db0ad9b8cb7d
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70228221"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms-Karte
@@ -25,7 +25,7 @@ Nach der Konfiguration, die `Map` funktionieren genauso wie alle anderen Xamarin
 
 Wurde das Map-Steuerelement verwendet die [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps) Beispiel unten dargestellt ist.
 
- [![Karten in diesem Beispiel MobileCRM](map-images/maps-zoom-sml.png "Steuerelement Beispiel")](map-images/maps-zoom.png#lightbox "Map-Steuerelement-Beispiel")
+ [![Karten im mobilecrm-Beispiel](map-images/maps-zoom-sml.png "Kartensteuerelement Beispiel")](map-images/maps-zoom.png#lightbox "Kartensteuerelement Beispiel")
 
 Map-Funktionalität kann weiter verbessert werden, indem Sie erstellen eine [zuordnen benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
@@ -201,7 +201,7 @@ slider.ValueChanged += (sender, e) =>
 };
 ```
 
-[![Karten mit Zoom](map-images/maps-zoom-sml.png "Map-Steuerelement Zoom")](map-images/maps-zoom.png#lightbox "Zoom-Map-Steuerelement")
+[Zuordnungen ![mit Zoom](map-images/maps-zoom-sml.png "Kartensteuerelement Zoom")](map-images/maps-zoom.png#lightbox "Kartensteuerelement Zoom")
 
 Außerdem verfügt die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse über eine `MoveToLastRegionOnLayoutChange` Eigenschaft vom Typ `bool`, die durch eine bindbare Eigenschaft unterstützt wird. Standardmäßig ist `true`diese Eigenschaft. Dies bedeutet, dass der angezeigte Zuordnungs Bereich beim Auftreten einer Layoutänderung von seinem aktuellen Bereich in den zuvor festgelegten Bereich wechselt, z. b. bei der Geräte Rotation. Wenn diese Eigenschaft auf `false`festgelegt ist, bleibt der angezeigte Kartenbereich zentriert, wenn eine Layoutänderung auftritt. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
 
@@ -324,7 +324,7 @@ Die Darstellung der einzelnen Elemente in der `IEnumerable` Auflistung wird durc
 
 Die folgenden Screenshots zeigen [`Map`](xref:Xamarin.Forms.Maps.Map) , wie eine Auflistung mit Datenbindung [`Pin`](xref:Xamarin.Forms.Maps.Pin) angezeigt wird:
 
-[ ![Screenshot der Karte mit Daten gebundenen Pins, auf IOS-und Android-](map-images/pins-itemssource.png "Karten mit Daten gebundenen Pins") ] Zuordnung (map-images/pins-itemssource-large.png#lightbox "mit Daten gebundenen Pins")
+[![Screenshot der Karte mit Daten gebundenen Pins unter IOS und Android] Zuordnung (map-images/pins-itemssource.png "mit Daten gebundenen Pins")](map-images/pins-itemssource-large.png#lightbox "Zuordnung mit Daten gebundenen Pins")
 
 ### <a name="choose-item-appearance-at-runtime"></a>Auswählen der Element Darstellung zur Laufzeit
 

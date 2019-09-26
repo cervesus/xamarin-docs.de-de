@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68655009"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Erstellen einer einseitigen xamarin. Forms-Anwendung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
@@ -177,7 +177,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
     ![](single-page-images/vs/ios-start.png "iOS-Symbolleiste in Visual Studio")
 
-    Hinweise im IOS-Simulator [ ![(single-page-images/vs/notes-ios.png " ")]] (single-page-images/vs/notes-ios-large.png#lightbox "Hinweise im IOS-Simulator")
+    [![](single-page-images/vs/notes-ios.png "Hinweise im IOS-Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Hinweise im IOS-Simulator")
 
     Geben Sie eine Notiz ein, und drücken Sie auf die Schaltfläche **Speichern**.
 
@@ -327,7 +327,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
     ![](single-page-images/vs/ios-start.png "iOS-Symbolleiste in Visual Studio")
 
-    Hinweise im IOS-Simulator [ ![(single-page-images/vs/notes-ios.png " ")]] (single-page-images/vs/notes-ios-large.png#lightbox "Hinweise im IOS-Simulator")
+    [![](single-page-images/vs/notes-ios.png "Hinweise im IOS-Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Hinweise im IOS-Simulator")
 
     Geben Sie eine Notiz ein, und drücken Sie auf die Schaltfläche **Speichern**.
 
@@ -468,7 +468,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
       ![](single-page-images/vsmac/start.png "Symbolleiste in Visual Studio für Mac")
 
-      Hinweise im IOS-Simulator [ ![(single-page-images/vsmac/notes-ios.png " ")]] (single-page-images/vsmac/notes-ios-large.png#lightbox "Hinweise im IOS-Simulator")
+      [![](single-page-images/vsmac/notes-ios.png "Hinweise im IOS-Simulator")](single-page-images/vsmac/notes-ios-large.png#lightbox "Hinweise im IOS-Simulator")
 
     Geben Sie eine Notiz ein, und drücken Sie auf die Schaltfläche **Speichern**.
 

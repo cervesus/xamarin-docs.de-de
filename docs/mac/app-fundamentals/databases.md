@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70769911"
 ---
 # <a name="databases-in-xamarinmac"></a>Datenbanken in xamarin. Mac
@@ -1403,7 +1403,7 @@ In diesem Beispiel erstellen wir eine neue `NSComboBoxDataSource` , die Kombinat
 
 - `Conn`: Ruft eine Verbindung mit der SQLite-Datenbank ab oder legt Sie fest.
 - `TableName`: Ruft den Tabellennamen ab oder legt ihn fest.
-- `IDField`: Ruft das Feld ab, das die eindeutige ID für die angegebene Tabelle bereitstellt, oder legt dieses fest. Der Standardwert ist `ID`.
+- `IDField`: Ruft das Feld ab, das die eindeutige ID für die angegebene Tabelle bereitstellt, oder legt dieses fest. Der Standardwert ist `ID`sein.
 - `DisplayField`: Ruft das Feld ab, das in der Dropdown Liste angezeigt wird, oder legt dieses fest.
 - `RecordCount`-Ruft die Anzahl der Datensätze in der angegebenen Tabelle ab.
 

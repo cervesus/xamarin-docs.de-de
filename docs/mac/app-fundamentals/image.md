@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
 ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770324"
 ---
 # <a name="images-in-xamarinmac"></a>Bilder in xamarin. Mac
@@ -243,7 +243,7 @@ MyIcon.Image = ImageTintedWithColor (MyIcon.Image, NSColor.Red);
 
 ## <a name="using-images-with-table-views"></a>Verwenden von Bildern mit Tabellen Sichten
 
-Wenn Sie ein Bild als Teil der Zelle in einem `NSTableView`einschließen möchten, müssen Sie ändern, wie die Daten von der- `NSTableViewDelegate's` `GetViewForItem` Methode der Tabellen Sicht zurückgegeben werden, `NSTableCellView` um anstelle der typischen `NSTextField`zu verwenden. Zum Beispiel:
+Wenn Sie ein Bild als Teil der Zelle in einem `NSTableView`einschließen möchten, müssen Sie ändern, wie die Daten von der- `NSTableViewDelegate's` `GetViewForItem` Methode der Tabellen Sicht zurückgegeben werden, `NSTableCellView` um anstelle der typischen `NSTextField`zu verwenden. Beispiel:
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -341,7 +341,7 @@ Weitere Informationen zum Arbeiten mit Tabellen Sichten finden Sie in der Dokume
 
 ## <a name="using-images-with-outline-views"></a>Verwenden von Bildern mit Gliederungs Ansichten
 
-Wenn Sie ein Bild als Teil der Zelle in einem `NSOutlineView`einschließen möchten, müssen Sie ändern, wie die Daten von der- `NSTableViewDelegate's` `GetView` Methode der Gliederungs Ansicht zurückgegeben `NSTableCellView` werden, um anstelle `NSTextField`der typischen zu verwenden. Zum Beispiel:
+Wenn Sie ein Bild als Teil der Zelle in einem `NSOutlineView`einschließen möchten, müssen Sie ändern, wie die Daten von der- `NSTableViewDelegate's` `GetView` Methode der Gliederungs Ansicht zurückgegeben `NSTableCellView` werden, um anstelle `NSTextField`der typischen zu verwenden. Beispiel:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {

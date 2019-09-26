@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770005"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Datenbindung und Schlüssel-Wert-Codierung in xamarin. Mac
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 Zuerst registriert das `[Register("PersonModel")]` Attribut die Klasse und macht Sie für "Ziel-C" verfügbar. Anschließend muss die-Klasse von `NSObject` (oder einer Unterklasse, die von `NSObject`erbt) erben, sodass mehrere Basis Methoden hinzugefügt werden, die der-Klasse die KVC-Konformität ermöglichen. Als nächstes macht `[Export("Name")]` das-Attribut `Name` die-Eigenschaft verfügbar und definiert den Schlüsselwert, der später verwendet wird, um über KVC-und KVO-Techniken auf die-Eigenschaft zuzugreifen.
 
-Schließlich muss der-Accessor Änderungen an seinem Wert in `WillChangeValue` -und `DidChangeValue` -Methoden aufrufen umschließen, um `Export` den Schlüsselwert zu ändern, der für den Wert der Eigenschaft erforderlich ist.  Zum Beispiel:
+Schließlich muss der-Accessor Änderungen an seinem Wert in `WillChangeValue` -und `DidChangeValue` -Methoden aufrufen umschließen, um `Export` den Schlüsselwert zu ändern, der für den Wert der Eigenschaft erforderlich ist.  Beispiel:
 
 ```csharp
 set {
@@ -159,7 +159,7 @@ Würde den Wert der `Name` -Eigenschaft in `Jane Doe`ändern.
 
 ### <a name="observing-value-changes"></a>Beobachten von Wertänderungen
 
-Mithilfe von Key-Value-Beobachtungen (KVO) können Sie einen Beobachter an einen bestimmten Schlüssel einer KVC-kompatiblen Klasse anfügen und jederzeit benachrichtigt werden, wenn der Wert für diesen Schlüssel geändert wird (entweder mithilfe von KVC-Techniken oder direkt C# Zugriff auf die angegebene Eigenschaft im Code). Zum Beispiel:
+Mithilfe von Key-Value-Beobachtungen (KVO) können Sie einen Beobachter an einen bestimmten Schlüssel einer KVC-kompatiblen Klasse anfügen und jederzeit benachrichtigt werden, wenn der Wert für diesen Schlüssel geändert wird (entweder mithilfe von KVC-Techniken oder direkt C# Zugriff auf die angegebene Eigenschaft im Code). Beispiel:
 
 ```csharp
 // Watch for the name value changing
