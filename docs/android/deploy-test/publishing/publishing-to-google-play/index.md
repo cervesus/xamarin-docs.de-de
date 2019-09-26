@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: c6559db8cc2e3e18ec48dd85ea2d68455336bdd8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 656b74bce10d30ddd463486c5103d65c6ba5eb97
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755964"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250010"
 ---
 # <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
@@ -109,6 +109,8 @@ Hierbei handelt es sich um eine URL zu einem YouTube-Video, das die Anwendung ve
 
 ### <a name="publishing-to-google-play"></a>Veröffentlichung in Google Play
 
+<!-- markdownlint-disable MD001 -->
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 In Xamarin.Android 7.0 wird ein integrierter Workflow für die Veröffentlichung von Apps in Google Play von Visual Studio eingeführt. Wen Sie eine Version von Xamarin.Android vor Version 7.0 verwenden, müssen Sie Ihr Android-Anwendungspaket manuell über die Google Play Developer-Konsole hochladen. Es muss auch mindestens ein APK bereits hochgeladen sein, bevor Sie den integrierten Workflow verwenden können. Wenn Sie Ihr erstes Android-Anwendungspaket noch nicht hochgeladen haben, müssen Sie dies manuell tun. Weitere Informationen finden Sie unter [Manually Uploading the APK (Manuelles Hochladen des Android-Anwendungspakets)](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md).
@@ -130,7 +132,7 @@ Wählen Sie im Dialogfeld **Signierungsidentität** die unter [Creating a New Ce
 
 [![Dialogfeld „Signierungsidentität“](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
-Klicken Sie im Dialogfeld **Google Play-Konten** auf die Schaltfläche **+**, um ein neues Google Play-Konto hinzuzufügen:
+Klicken Sie im Dialogfeld **Google Play-Konten** auf die Schaltfläche **+** , um ein neues Google Play-Konto hinzuzufügen:
 
 [![Dialogfeld „Google Play-Konten“](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 
@@ -217,7 +219,7 @@ Klicken Sie auf **Zulassen**, um die App zu autorisieren:
 
 #### <a name="publish"></a>Veröffentlichen
 
-Nachdem Sie auf **Zulassen** geklickt haben, meldet der Browser _Empfangener Überprüfungscode. Wird geschlossen..._, und die App wird der Liste der Google Play-Konten in Visual Studio hinzugefügt. Klicken Sie im Dialogfeld **Google Play-Konten** auf **Weiter**:
+Nachdem Sie auf **Zulassen** geklickt haben, meldet der Browser _Empfangener Überprüfungscode. Wird geschlossen..._ , und die App wird der Liste der Google Play-Konten in Visual Studio hinzugefügt. Klicken Sie im Dialogfeld **Google Play-Konten** auf **Weiter**:
 
 [![Zu den Google Play-Konten hinzugefügtes Konto](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 

@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 60dcbd6f59e622fe5a1272bd2d61540b03e510e4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 682fc5c2241ab3177b12f46dd31d264a4f58b951
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758430"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250093"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Verwalten virtueller Geräte mit Android Device Manager
 
@@ -362,6 +362,8 @@ Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 ## <a name="troubleshooting"></a>Problembehandlung
 
 In den folgenden Abschnitten wird erläutert, wie Sie Probleme diagnostizieren und umgehen, die auftreten können, wenn Sie den Android Device Manager zum Konfigurieren virtueller Geräte verwenden.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

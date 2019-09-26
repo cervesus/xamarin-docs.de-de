@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9296fa60a454fe83f9ec9b383067576b67e5f037
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753769"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198547"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
@@ -163,6 +163,7 @@ Wenn ein bestimmter Mac nicht im Dialogfeld **Mit Mac koppeln** aufgeführt wird
 [Ab Version 15.6 von Visual Studio 2019](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) wird durch das Feature „Mit Mac koppeln“ automatisch eine Software für ein Mac bereitgestellt, die zum Erstellen von Xamarin.iOS-Anwendungen erforderlich ist: Diese umfasst Mono, Xamarin.iOS (das Softwareframework, nicht die IDE Visual Studio für Mac) und verschiedene Tools im Zusammenhang mit Xcode (nicht jedoch Xcode selbst).
 
 > [!IMPORTANT]
+>
 > - Xcode kann nicht durch das Feature „Mit Mac koppeln“ installiert werden. Sie müssen die IDE daher manuell auf dem Mac-Buildhost installieren. Xcode ist für die Entwicklung mit Xamarin.iOS erforderlich.
 > - Für die automatische Bereitstellung eines Macs muss die Remoteanmeldung auf dem Mac aktiviert sein. Außerdem muss ein Windows-Computer über ein Netzwerk auf den Mac zugreifen können. Weitere Informationen finden Sie unter [Aktivieren der Remoteanmeldung auf dem Mac](#enable-remote-login-on-the-mac).
 > - Für die automatische Mac-Bereitstellung sind 3 GB freier Speicherplatz auf dem Mac erforderlich, um Xamarin.iOS zu installieren.
@@ -185,6 +186,7 @@ Das Feature „Mit Mac koppeln“ führt auf dem Mac für Xamarin.iOS ein Upgrad
 
 > [!IMPORTANT]
 > Auf dem Mac findet keine Herabstufung einer Alpha- oder Betaversion von Xamarin.iOS zu einer stabilen Version statt. Wenn Sie Visual Studio für Mac installiert haben, müssen Sie Ihren [Releasekanal](https://docs.microsoft.com/visualstudio/mac/update) wie folgt konfigurieren:
+>
 > - Wählen Sie bei Verwendung von Visual Studio 2019 den Updatekanal **Stabil** in Visual Studio für Mac aus.
 > - Wählen Sie bei Verwendung der Vorschauversion von Visual Studio 2019 den Updatekanal **Alpha** in Visual Studio für Mac aus.
 

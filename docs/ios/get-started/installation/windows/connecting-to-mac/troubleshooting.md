@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 41a5a30cdd5017046415f1d678abf1d44e83e678
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ae8095ed0ef0ba8d0bfaf8295832bbef006d1627
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753672"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198531"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
@@ -33,12 +33,13 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
 > [!IMPORTANT]
 > Diese Schritte zur Problembehandlung sind in erster Linie für Probleme gedacht, die während der ersten Einrichtung auf einem neuen System auftreten.  Wenn Sie die Verbindung zuvor erfolgreich in einer bestimmten Umgebung genutzt haben und diese plötzlich oder zeitweilig nicht mehr funktioniert, können Sie (in den meisten Fällen) direkt mit der Überprüfung, ob eine der folgenden Methoden hilfreich ist, fortfahren: 
+>
 > - Beenden Sie die verbliebenen Prozesse, wie unten unter [Fehler aufgrund von vorhandenen Buildprozessen](#errors) beschrieben wird. 
 > - Deaktivieren Sie die Agents, wie unter [Deaktivieren der Broker-, IDB-, Build- und Designer-Agents](#clearing) beschrieben, und verwenden Sie dann eine LAN-Internetverbindung, und stellen Sie eine Verbindung direkt über die IP-Adresse her wie unter [Es konnte keine Verbindung mit MacBuildHost.local hergestellt werden. Versuchen Sie es erneut.](#tryagain) beschrieben.  
 > Wenn keine dieser Maßnahmen das Problem lösen kann, befolgen Sie die Anweisungen in [Schritt 9](#stepnine), um einen neuen Fehlerbericht einzureichen.
 
 1. Überprüfen Sie, dass Sie kompatible Xamarin.iOS-Versionen auf Ihrem Mac installiert haben. Um dies mit Visual Studio 2017 durchzuführen, stellen Sie sicher, dass Sie sich im **stabilen** Verteilungskanal in Visual Studio für Mac befinden. Stellen Sie in Visual Studio 2015 und früher sicher, dass Sie sich auf beiden IDEs auf dem gleichen Vertriebskanal befinden.
-    - Wechseln Sie in Visual Studio für Mac zu **Visual Studio für Mac > Nach Updates suchen...**, um den **Updatekanal** anzuzeigen oder zu ändern.
+    - Wechseln Sie in Visual Studio für Mac zu **Visual Studio für Mac > Nach Updates suchen...** , um den **Updatekanal** anzuzeigen oder zu ändern.
     - Überprüfen Sie in Visual Studio 2015 und früher den Verteilungskanal unter **Extras > Optionen > Xamarin > Andere**.
 
 2. Stellen Sie sicher, dass die **Remoteanmeldung** auf dem Mac aktiviert ist. Legen Sie den Zugriff für **Nur diese Benutzer** fest, und stellen Sie sicher, dass Ihr Mac-Benutzer in der Liste oder Gruppe inbegriffen ist:
@@ -101,7 +102,7 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
     - Die Einstellungen der OS X-Firewall verhindern die Verbindung. Achten Sie darauf, dass Sie Schritt 3 erneut überprüfen.
 
-        Gelegentlich kann die Konfiguration pro App für die OS X-Firewall auch in einem ungültigen Zustand enden, wenn die in den Systemeinstellungen angezeigten Einstellungen nicht das tatsächliche Verhalten widerspiegeln. Wenn Sie die Konfigurationsdatei (**/Library/Preferences/com.apple.alf.plist**) löschen und den Computer neu starten, kann dies das Standardverhalten Ihres Computers wiederherstellen. Eine Möglichkeit zum Löschen der Datei ist, **/Library/Preferences** unter **Gehe zu &gt; Gehe zu Ordner** im Finder einzugeben und dann die Datei **com.apple.alf.plist** in den Papierkorb zu verschieben.
+        Gelegentlich kann die Konfiguration pro App für die OS X-Firewall auch in einem ungültigen Zustand enden, wenn die in den Systemeinstellungen angezeigten Einstellungen nicht das tatsächliche Verhalten widerspiegeln. Wenn Sie die Konfigurationsdatei ( **/Library/Preferences/com.apple.alf.plist**) löschen und den Computer neu starten, kann dies das Standardverhalten Ihres Computers wiederherstellen. Eine Möglichkeit zum Löschen der Datei ist, **/Library/Preferences** unter **Gehe zu &gt; Gehe zu Ordner** im Finder einzugeben und dann die Datei **com.apple.alf.plist** in den Papierkorb zu verschieben.
 
     - Die Firewall-Einstellungen von einem der Router zwischen dem Macintosh- und dem Windows-Computer blockiert die Verbindung.
 
@@ -132,7 +133,7 @@ Bekannte Ursachen:
 
 #### <a name="trying-to-connect-never-completes"></a>„Es wird versucht, eine Verbindung herzustellen...“ wird nicht abgeschlossen
 
-- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**: Dieses Problem kann bei Xamarin 4.1 auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen &gt; Benutzer &amp; Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. (Ab Xamarin 4.2 führt dieses Szenario stattdessen zur Fehlermeldung „Verbindung konnte nicht hergestellt werden“.) **Problemumgehung:** Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
+- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** : Dieses Problem kann bei Xamarin 4.1 auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen &gt; Benutzer &amp; Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. (Ab Xamarin 4.2 führt dieses Szenario stattdessen zur Fehlermeldung „Verbindung konnte nicht hergestellt werden“.) **Problemumgehung:** Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
 
 <a name="tryagain" />
 
@@ -144,11 +145,11 @@ Gemeldete Ursachen:
 
 - **Fehler**: Einigen Benutzern wurde dieser Fehler bei einem Verbindungsversuch mit dem Buildhost durch Doppelklicken auf den Namen des Mac-Computers im Verbindungsdialogfeld angezeigt. **Mögliche Problemumgehung**: [Fügen Sie den Mac manuell hinzu](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac), indem Sie die IP-Adresse verwenden.
 
-- **Fehler [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)**: Einigen Benutzern wurde dieser Fehler angezeigt, wenn sie eine drahtlose Netzwerkverbindung zwischen dem Mac-Buildhost und Windows verwendet haben. **Mögliche Problemumgehung**: Verschieben Sie beide Computer in eine verkabelte Netzwerkverbindung.
+- **Fehler [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** : Einigen Benutzern wurde dieser Fehler angezeigt, wenn sie eine drahtlose Netzwerkverbindung zwischen dem Mac-Buildhost und Windows verwendet haben. **Mögliche Problemumgehung**: Verschieben Sie beide Computer in eine verkabelte Netzwerkverbindung.
 
-- **Fehler [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)**: Diese Meldung wird bei Xamarin 4.0 angezeigt, wenn die **$HOME/.bashrc**-Datei auf dem Mac einen Fehler enthält. (Ab Xamarin 4.1 wirken sich Fehler in der **BASHRC**-Datei nicht mehr auf den Verbindungsprozess aus.) **Problemumgehung**: Verschieben Sie die **BASHRC**-Datei an einen Sicherungsspeicherort (oder löschen Sie sie, wenn Sie wissen, dass Sie sie nicht benötigen).
+- **Fehler [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** : Diese Meldung wird bei Xamarin 4.0 angezeigt, wenn die **$HOME/.bashrc**-Datei auf dem Mac einen Fehler enthält. (Ab Xamarin 4.1 wirken sich Fehler in der **BASHRC**-Datei nicht mehr auf den Verbindungsprozess aus.) **Problemumgehung**: Verschieben Sie die **BASHRC**-Datei an einen Sicherungsspeicherort (oder löschen Sie sie, wenn Sie wissen, dass Sie sie nicht benötigen).
 
-- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**: Dieser Fehler kann auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen > Benutzer und Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. **Problemumgehung:** Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
+- **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** : Dieser Fehler kann auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen > Benutzer und Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. **Problemumgehung:** Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
 
 - **Einschränkung**: Dieser Fehler kann auftreten, wenn der Mac-Buildhost mit einem Router verbunden ist, der keinen Internetzugriff hat (oder wenn der Mac einen DNS-Server verwendet, bei dem ein Timeout auftritt, wenn nach der Reverse-DNS-Suche des Windows-Computers gefragt wird). Visual Studio benötigt zum Abrufen des SSH-Fingerabdrucks ungefähr 30 Sekunden und kann möglicherweise keine Verbindung herstellen.
 
@@ -329,7 +330,7 @@ Starten Sie Xcode auf dem Mac, und stellen Sie sicher, dass Ihr Apple-Entwickler
 
 Gemeldete Ursachen:
 
-- **Erweiterung [#36118](https://bugzilla.xamarin.com/show_bug.cgi?id=36118)**: Dieser Fehler kann erfolgreiche Builds verhindern, wenn Visual Studio eine IPv6-Adresse für die Verbindung mit dem Buildhost verwendet. (Die Buildhostverbindung unterstützt noch keine IPv6-Adressen.)
+- **Erweiterung [#36118](https://bugzilla.xamarin.com/show_bug.cgi?id=36118)** : Dieser Fehler kann erfolgreiche Builds verhindern, wenn Visual Studio eine IPv6-Adresse für die Verbindung mit dem Buildhost verwendet. (Die Buildhostverbindung unterstützt noch keine IPv6-Adressen.)
 
 ### <a name="xamarinios-visual-studio-plugin-fails-to-load-after-reinstallation-of-betaalpha-channel"></a>Das Xamarin.iOS Visual Studio-Plug-In kann nach der erneuten Installation des Beta/Alpha-Kanals nicht geladen werden.
 

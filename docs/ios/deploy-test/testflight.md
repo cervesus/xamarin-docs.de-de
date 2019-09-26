@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 43dce7fe6d2a4a976879b1f583711d767dcacc7c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8267c49302a755dcc433345b6a53aa9f2e2c71e6
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756210"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250175"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
 
@@ -90,6 +90,8 @@ Das Formular sollte genau die gleichen Informationen in der„Info.plist“-Date
 Sobald der iTunes Connect-Eintrag erstellt wurde, können Sie neue Builds hochladen. Denken Sie daran, dass Builds die neue Beta-Berechtigung enthalten müssen.
 
 Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) in der IDE, dann [Senden Sie Ihre App an Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) über den Application Loader oder die Archivierungsfunktion in Xcode.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

@@ -1,5 +1,6 @@
 # [Xamarin.Forms](index.yml)
 ## [Erste Schritte](~/get-started/index.yml)
+### [Was ist Xamarin.Forms?](~/get-started/what-is-xamarin-forms.md)
 ### [Anforderungen](~/get-started/requirements.md)
 ### [Installation](~/get-started/installation/index.md)
 ### [Erstellen Ihrer ersten App](~/get-started/first-app/index.md)
