@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 1cb4080be2bcb421db1e9db08a18b49ad95c4fb7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 40cfa7925f1617486a83134dd94626a0f11e80f3
+ms.sourcegitcommit: 709072506f0bb6abc1d6046ec15f6bf66b282d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765302"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71344613"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Consultingpartner stehen für mobile Lösungen zertifiziert
 
@@ -525,7 +525,7 @@ _Aufgelistet nach dem primären Standort, Bereitstellen viele Partner Dienste, �
 
 | Partner | Speicherorte | Beschreibung |
 | --- | --- | --- |
-|[Enlighten Entwürfe](https://www.enlighten.co.nz)|Auckland, Neuseeland|Enlighten vorhanden ist, schalten Sie außergewöhnlich entworfene und innovative und Customer Technology Solutions auf der ganzen Welt. Sie verwenden Microsoft-Technologien zum Erstellen einer Anwendung in C# für iOS-, Android- und Windows|
+|[Enlighten Entwürfe](https://www.enlighten.co.nz)|Auckland, Neuseeland|Enlighten vorhanden ist, schalten Sie außergewöhnlich entworfene und innovative und Customer Technology Solutions auf der ganzen Welt. Sie verwenden Microsoft-Technologien zum Erstellen einer Anwendung in c# für iOS-, Android- und Windows|
 |[Hydrogen Apps Ltd](http://www.hydrogenapps.com)|Auckland, Neuseeland|Durch die Nutzung über zehn Jahre Erfahrung, die erfolgreiche Lieferung von umfangreichen Plattformen auf der ganzen Welt, bietet der Hydrogen die tagtäglich bei der ausstehenden softwarebereitstellung auf neue apps, die Mobilität und die Entwicklung von Spielen|
 |[Magnetismus Lösungen Ltd](https://www.magnetismsolutions.com/)|Auckland, Neuseeland, Christchurch, Neuseeland|Wir machen eine starten jeder CRM-Implementierung, die wir bereitstellen, unseren Kunden. Wenn mehr als 1500 davon wurde erfolgreich gestartet werden, sind wir sehr stolz auf unsere verschiedenen und Breiten Portfolio reichen. Unserer Erfahrung bei der Implementierung von CRM International bedeutet, dass wir auch platziert werden, um Ihre CRM-Lösung bereitzustellen. |
 |[Zebra anwendungsdomänenübergreifenden Zugriff](http://zebracrossing.co.nz/)|Taranaki, Neuseeland|Wir nutzen die Technologie für Business-Innovationen. Arbeiten Sie mit Person wird, Sie überwachen, erfahren Sie, Ihre Ziele und bereitzustellen, benötigen Sie.|
@@ -605,6 +605,7 @@ _Aufgelistet nach dem primären Standort, Bereitstellen viele Partner Dienste, �
 | Partner | Speicherorte | Beschreibung |
 | --- | --- | --- |
 |[DevsDNA](http://www.devsdna.com)|Sevilla, Spanien|Am DevsDNA wir eine weitere Möglichkeit der Geschäftstätigkeit der Meinung sind, und erstellen kann Software. Leider verfügt nicht über unsere heutige Gesellschaft, Transparenz, Ethik, Prinzipien und einen moralische Kompass.|
+|[Itequia](https://itequia.com)|Barcelona, Spanien|Itequia entwickelt moderne Web-, Mobile und benutzerdefinierte Softwareanwendungen. Wir haben mehr als 10 Jahre Erfahrung bei der Arbeit mit führenden großen und mittelständischen Unternehmen, dem Aufbau von wichtigsten Internet Websites, Echtzeitanwendungen, häufig verwendeten mobilen apps, kritischen Prozessen und Automatisierungs Portalen, unter vielen anderen Softwarelösungen.|
 |[KutirTech](http://www.kutirtech.com)|Mailand, Spanien  |Seit über 13 Jahren haben wir erstellen und Unterstützung von Web- und mobilanwendungen für große und kleine Unternehmen wurden. Wir ständig untersuchen und experimentieren Sie mit der besten Klasse Tools und Technologien und schalten Sie die richtige Kombination von Tools und Fähigkeiten im Umgang mit unseren Enterprise-Kunden Erfolg haben.|
 |[Pasiona S.L Consulting](http://www.pasiona.com)|Barcelona, Spanien|Es wurden im 2007 unter der Voraussetzung gegründet, überwachen und sich an den Dialog mit Kunden ist die beste Möglichkeit, eine innovative technologische Lösungen bieten, die auf ihre individuellen Anforderungen zugeschnitten sind. Das ist unsere Mission und unsere Lebensnerv besteht. Wir sind einem Unternehmen, das bei der Entwicklung von angepasster Lösungen für jedes Unternehmen, da jeder Client anders ist und eine eindeutige und exklusive Behandlung erfordert spezialisiert. Wir sind bestrebt, Innovationen, qualitativ hochwertige arbeiten, fortlaufenden Schulungen und der Wert von der menschlichen TeaRegional Premier|
 |[TalentoMobile](http://www.talentomobile.com/)|Spanien |Wir sind digitale digitale Ureinwohner. Ihre Geschäftsprozesse und die Verbindung mit Ihren Kunden mit unseren Lösungen und Produkten reicht.|
