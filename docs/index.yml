@@ -1,0 +1,233 @@
+### YamlMime:Hub
+title: Xamarin-Dokumentation
+summary: Xamarin ermöglicht es Ihnen, native Apps für Android, iOS und MacOS mithilfe von .NET-Code und plattformspezifischen Benutzeroberflächen zu erstellen. Mit Xamarin.Forms können Sie native Apps mit freigegebenem Benutzeroberflächencode erstellen, der in C# oder in XAML geschrieben ist.
+brand: xamarin
+metadata:
+  title: Xamarin-Dokumentation
+  description: Xamarin ermöglicht es Ihnen, native Apps für Android, iOS und MacOS mithilfe von .NET-Code und plattformspezifischen Benutzeroberflächen zu erstellen. Mit Xamarin.Forms können Sie native Apps mit freigegebenem Benutzeroberflächencode erstellen, der in C# oder in XAML geschrieben ist.
+  ms.topic: hub-page
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 09/26/2019
+  ms.openlocfilehash: c0509abcaaa10263c3f0c4c3d19fd765ded521e1
+  ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71326195"
+highlightedContent:
+  items:
+  - title: Setup und Installation
+    itemType: download
+    url: ~/get-started/installation/index.md
+  - title: Was ist Xamarin?
+    itemType: overview
+    url: ~/get-started/what-is-xamarin.md
+  - title: Neuerungen in der Xamarin-Dokumentation
+    itemType: get-started
+    url: ~/whats-new/index.yml
+  - title: Verbessern Ihrer Kenntnisse bei der mobilen Entwicklung
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?roles=developer&products=xamarin
+productDirectory:
+  items:
+  - title: Xamarin.Forms (plattformübergreifend)
+    imageSrc: https://docs.microsoft.com/media/logos/logo_xamarin.svg
+    links:
+    - url: ~/get-started/what-is-xamarin-forms.md
+      text: Was ist Xamarin.Forms?
+    - url: ~/get-started/index.yml
+      text: Erstellen einer Android-App und iOS-App
+    - url: ~/xamarin-forms/xaml/index.yml
+      text: Xamarin.Forms (XAML)
+    - url: ~/xamarin-forms/index.yml
+      text: Plattformdokumentation
+  - title: Android
+    imageSrc: https://docs.microsoft.com/media/logos/logo_android.svg
+    links:
+    - url: ~/android/get-started/hello-android/hello-android-quickstart.md
+      text: Erstellen einer Android-App
+    - url: ~/android/platform/android-10.md
+      text: Android 10
+    - url: ~/android/index.yml
+      text: Plattformdokumentation
+  - title: iOS
+    imageSrc: https://docs.microsoft.com/media/common/i_web-apps.svg
+    links:
+    - url: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
+      text: Erstellen einer iOS-App
+    - url: ~/ios/platform/ios13/index.md
+      text: iOS 13
+    - url: ~/ios/index.yml
+      text: Plattformdokumentation
+  - title: Mac
+    imageSrc: https://docs.microsoft.com/media/common/i_xplat-code.svg
+    links:
+    - url: ~/mac/get-started/hello-mac.md
+      text: Erstellen einer Mac-App
+    - url: ~/mac/index.yml
+      text: Plattformdokumentation
+conceptualContent:
+  title: Erste Schritte mit Xamarin.Forms
+  summary: Erstellen Sie mithilfe von C# und .NET in Visual Studio unter Windows und macOS eine plattformübergreifende App für Android und iOS.
+  items:
+  - title: Erstellen Ihrer ersten App
+    links:
+    - text: Datei > Neu
+      url: ~/get-started/quickstarts/single-page.md
+      itemType: get-started
+    - text: Hinzufügen eines Navigationselements
+      url: ~/get-started/quickstarts/multi-page.md
+      itemType: get-started
+    - text: Hinzufügen einer Datenbank
+      url: ~/get-started/quickstarts/database.md
+      itemType: get-started
+    - text: Formatieren der App
+      url: ~/get-started/quickstarts/styling.md
+      itemType: get-started
+    footerLink:
+      url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started
+      text: Finden eines Beispiels
+  - title: Tutorials
+    links:
+    - text: Stapellayout
+      url: ~/get-started/tutorials/stacklayout/index.yml
+      itemType: tutorial
+    - text: Bezeichnungen
+      url: ~/get-started/tutorials/label/index.yml
+      itemType: tutorial
+    - text: Schaltflächen
+      url: ~/get-started/tutorials/button/index.yml
+      itemType: tutorial
+    - text: Bilder
+      url: ~/get-started/tutorials/image/index.yml
+      itemType: tutorial
+    footerLink:
+      url: ~/get-started/tutorials/index.yml
+      text: Mehr Informationen
+  - title: Nutzen vorhandener Kenntnisse
+    links:
+    - text: .NET-Desktopentwicklung (UWP, WPF, Windows Forms)
+      itemType: overview
+      url: ~/cross-platform/desktop/index.md
+    - text: Android und Java
+      itemType: overview
+      url: ~/android/get-started/java-developers.md
+    - text: iOS und Objective-C
+      itemType: overview
+      url: ~/ios/get-started/objective-c-developers/index.md
+    - text: Anleitung zur weiteren Entwicklung
+      itemType: get-started
+      url: ~/cross-platform/index.yml
+additionalContent:
+  sections:
+  - title: Allgemeine Xamarin.Forms-Aufgaben
+    summary: Wichtige Konzepte zum Erstellen von Android- und iOS-Apps mit Xamarin.Forms
+    items:
+    - title: Informationen zum App-Lebenszyklus
+      summary: Starten von Apps und Verschieben von Apps in den Hintergrund
+      url: ~/xamarin-forms/app-fundamentals/app-lifecycle.md
+    - title: Anzeigen einer Datenliste
+      summary: Verwenden von ListView zum Scrollen durch und Auswählen von Daten
+      url: ~/xamarin-forms/user-interface/listview/index.md
+    - title: Verwenden von XAML und der Datenbindung
+      summary: Verwenden von MVVM-Mustern zum Anzeigen von Daten auf der Benutzeroberfläche
+      url: ~/xamarin-forms/xaml/xaml-basics/index.md
+    - title: Verfügbar machen von plattformspezifischen Features
+      summary: Verwenden von spezifischen Android- und iOS-Features in Xamarin.Forms-Apps
+      url: ~/xamarin-forms/platform/index.yml
+    - title: Xamarin.Essentials
+      summary: Plattformübergreifende APIs für allgemeine Gerätefunktionen
+      url: ~/essentials/platform-feature-support.md
+    - title: Zugreifen auf einen REST-Webdienst
+      summary: Geben Sie Code mit Versionskontrolltechnologien wie Git und TFVC frei.
+      url: ~/xamarin-forms/data-cloud/web-services/rest.md
+    - title: Bereitstellen für Android- und iOS-Geräte
+      summary: Hochladen auf Testgeräte und in App Stores
+      url: ~/xamarin-forms/deploy-test/index.yml
+    - title: Rendern von SkiaSharp-Graphiken
+      summary: Rendern von Plattformübergreifenden 2D-Vektorgrafiken
+      url: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
+  - title: Mobile Entwicklertools
+    items:
+    - title: iOS-Simulator für Windows
+      summary: Interagieren Sie mit dem iOS-Simulator mit Visual Studio unter Windows.
+      url: ~/tools/ios-simulator/index.md
+    - title: Profiler
+      summary: Identifizieren und beheben Sie Leistungsprobleme.
+      url: ~/tools/profiler/index.md
+    - title: Einbetten von .NET
+      summary: Ermöglicht es, dass der vorhandene .NET-Code von anderen Programmiersprachen verwendet werden kann.
+      url: ~/tools/dotnet-embedding/index.md
+    - title: MonoGame
+      summary: Erstellen Sie Desktop-, mobile und Konsolenspiele mit C#.
+      url: ~/graphics-games/monogame/introduction/index.md
+  - title: Übersicht über Xamarin-Plattformen
+    items:
+    - title: Xamarin.Forms (plattformübergreifend)
+      links:
+      - text: App-Grundlagen
+        url: ~/xamarin-forms/app-fundamentals/index.yml
+      - text: Benutzeroberfläche
+        url: ~/xamarin-forms/user-interface/index.yml
+      - text: Xamarin.Forms (XAML)
+        url: ~/xamarin-forms/xaml/index.yml
+      - text: Plattformfeatures
+        url: ~/xamarin-forms/platform/index.yml
+      - text: Azure Cloud Services
+        url: ~/xamarin-forms/data-cloud/index.yml
+      - text: Bereitstellung und Testen
+        url: ~/xamarin-forms/deploy-test/index.yml
+      - text: Weiterführende Konzepte und Interna
+        url: ~/xamarin-forms/internals/index.yml
+      - text: Proben
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms
+    - title: Android
+      links:
+      - text: App-Grundlagen
+        url: ~/android/app-fundamentals/index.md
+      - text: Benutzeroberfläche
+        url: ~/android/user-interface/index.md
+      - text: Plattformfeatures
+        url: ~/android/platform/index.md
+      - text: Azure Cloud Services
+        url: ~/android/data-cloud/index.md
+      - text: Bereitstellung und Testen
+        url: ~/android/deploy-test/index.md
+      - text: Weiterführende Konzepte und Interna
+        url: ~/android/internals/index.md
+      - text: Proben
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android
+    - title: iOS
+      links:
+      - text: App-Grundlagen
+        url: ~/android/app-fundamentals/index.md
+      - text: Benutzeroberfläche
+        url: ~/android/user-interface/index.md
+      - text: Plattformfeatures
+        url: ~/android/platform/index.md
+      - text: Azure Cloud Services
+        url: ~/android/data-cloud/index.md
+      - text: Bereitstellung und Testen
+        url: ~/android/deploy-test/index.md
+      - text: Weiterführende Konzepte und Interna
+        url: ~/android/internals/index.md
+      - text: Proben
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS
+    - title: Mac
+      links:
+      - text: App-Grundlagen
+        url: ~/android/app-fundamentals/index.md
+      - text: Benutzeroberfläche
+        url: ~/android/user-interface/index.md
+      - text: Plattformfeatures
+        url: ~/android/platform/index.md
+      - text: Azure Cloud Services
+        url: ~/android/data-cloud/index.md
+      - text: Bereitstellung und Testen
+        url: ~/android/deploy-test/index.md
+      - text: Weiterführende Konzepte und Interna
+        url: ~/android/internals/index.md
+      - text: Proben
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac
+  footer: '[Blogs](https://devblogs.microsoft.com/xamarin/) - [Twitter](https://twitter.com/xamarinhq) - [Stack Overflow](https://stackoverflow.com/questions/tagged/xamarin) - [Developer Community](https://developercommunity.visualstudio.com/spaces/8/index.html)'
