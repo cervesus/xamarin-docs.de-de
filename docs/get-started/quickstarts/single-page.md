@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "68655009"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679984"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Erstellen einer einseitigen xamarin. Forms-Anwendung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 In dieser Schnellstartanleitung erfahren Sie Folgendes:
 
@@ -46,7 +46,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
     ![](single-page-images/vs/new-solution-2019.png "Neues Projekt")
 
-2. Wählen Sie im Fenster **Neues Projekt erstellen** in der Dropdown-Dropdown-Datei den **Projekttyp** die Option **Mobil** aus, wählen Sie die Vorlage **Mobile App (xamarin. Forms** ) aus, und klicken Sie auf **weiter** :
+2. Wählen Sie im Fenster **Neues Projekt erstellen** in der Dropdown-Dropdown-Dropdown- **Datei die Option** **Mobil** aus, wählen Sie die Vorlage **Mobile App (xamarin. Forms)** aus, und klicken Sie auf die Schaltfläche **weiter**
 
     ![](single-page-images/vs/new-project-2019.png "Plattformübergreifende Projektvorlagen")
 
