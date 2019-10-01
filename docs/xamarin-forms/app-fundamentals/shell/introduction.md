@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
 ms.openlocfilehash: dd1dc9b679a46dc082de1fe9b3c5f10b6757c0d8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739279"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Einführung in die Xamarin.Forms-Shell
@@ -38,18 +38,18 @@ Die Shell bietet eine Benutzeroberfläche mit zahlreichen Optionen für die Navi
 
 Die Auswahl eines Flyoutelements führt zu der unteren Registerkarte, die das ausgewählte Element darstellt und anzeigt:
 
-[![Screenshot der unteren Registerkarten der Shell, unter iOS und Android](introduction-images/monkeys.png "untere Registerkarten der Shell")](introduction-images/monkeys-large.png#lightbox "untere Registerkarten der Shell")
+[![Screenshot der unteren Registerkarten der Shell, unter iOS und Android](introduction-images/monkeys.png "untere Registerkarten der Shell")](introduction-images/monkeys-large.png#lightbox "Untere Registerkarten der Shell")
 
 > [!NOTE]
 > Wenn der Flyout nicht geöffnet ist, kann die untere Registerkartenleiste als oberste Ebene der Navigation in der Anwendung betrachtet werden.
 
 Jede Registerkarte zeigt eine [`ContentPage`](xref:Xamarin.Forms.ContentPage) an. Wenn eine untere Registerkarte mehr als eine Seite enthält, sind die Seiten jedoch über die obere Registerkartenleiste navigierbar:
 
-[![Screenshot der oberen Registerkarten der Shell unter iOS und Android](introduction-images/cats.png "obere Registerkarten der Shell")](introduction-images/cats-large.png#lightbox "obere Registerkarten der Shell")
+[![Screenshot der oberen Registerkarten der Shell, unter iOS und Android](introduction-images/cats.png "obere Registerkarten der Shell")](introduction-images/cats-large.png#lightbox "Obere Registerkarten der Shell")
 
 Innerhalb jeder Registerkarte kann zu zusätzlichen [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekten navigiert werden:
 
-[![Screenshot der Shell-Seitennavigation unter iOS and Android](introduction-images/cat-details.png "Shell-App-Navigation")](introduction-images/cat-details-large.png#lightbox "Shell-App-Navigation")
+[![Screenshot der Shell-Seitennavigation unter iOS und Android](introduction-images/cat-details.png "Shell-App-Navigation")](introduction-images/cat-details-large.png#lightbox "Shell-App-Navigation")
 
 ## <a name="related-links"></a>Verwandte Links
 

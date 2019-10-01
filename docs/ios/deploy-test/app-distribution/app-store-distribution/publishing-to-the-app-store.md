@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 5d299112da87207f7486247e0ed6f00c35a35fe5
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 9f9504890b12f6a3d8046e98ce537cc0d742f2ed
+ms.sourcegitcommit: 159f250ae7535fca7ab3bc4dc7395dc4cc2af93f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106044"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71278138"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
 
@@ -180,50 +180,27 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
     ![Buildkonfiguration und Auswahl der Plattform](publishing-to-the-app-store-images/chooseConfig-m157.png "Build configuration and platform selection")
 
 2. Wählen Sie aus dem **Build**-Menü die Option **Archive for Publishing** (Für Veröffentlichung archivieren):
-3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt:
+3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt. Klicken Sie auf **Signieren und verteilen...** , um den Veröffentlichungs-Assistenten zu öffnen.
 
-    ![Ansicht „Archive“](publishing-to-the-app-store-images/archives-m157.png "Archives view")
+
+    ![Screenshot der Schaltfläche „Signieren und verteilen“ in der Ansicht „Archive“](publishing-to-the-app-store-images/archives-mac.png "Screenshot der Schaltfläche „Signieren und verteilen“ in der Ansicht „Archive“")
 
     > [!NOTE]
     > Standardmäßig zeigt die Ansicht **Archive** nur die Archive für die geöffnete Projektmappe an. Aktivieren Sie das Kontrollkästchen **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen. Es empfiehlt sich, alle Archive beizubehalten, damit die darin enthaltenen Debuginformationen verwendet werden können, um Absturzberichte bei Bedarf durch Symbole zu ersetzen.
 
-4. Klicken Sie auf **Signieren und verteilen...** , um den Veröffentlichungs-Assistenten zu öffnen.
-5. Wählen Sie als Verteilungskanal den **App Store** aus. Klicken Sie auf **Weiter**.
+4. Wählen Sie als Verteilungskanal den **App Store** aus. Klicken Sie auf **Weiter**.
 
-    ![Auswahl des Verteilungskanals](publishing-to-the-app-store-images/distChannel-m157.png "Distribution channel selection")
+5. Wählen Sie **Upload** als Ziel aus. Klicken Sie auf **Weiter**.
 
 6. Wählen Sie im Fenster **Bereitstellungsprofil** Ihrer Signierungsidentität, App und Ihr Bereitstellungsprofil aus. Klicken Sie auf **Weiter**.
 
-    ![Auswahl des Bereitstellungsprofils](publishing-to-the-app-store-images/provProfileSelect-m157.png "Provisioning profile selection")
+    ![Screenshot der Assistentenseite für das Bereitstellungsprofil, die eine gültige Signierungsidentität, App und Auswahl des Bereitstellungsprofils zeigt](publishing-to-the-app-store-images/provProfileSelect-mac.png "Screenshot der Assistentenseite für das Bereitstellungsprofil, auf der eine gültige Signierungsidentität, App und Auswahl des Bereitstellungsprofils ausgewählt ist")
 
-7. Überprüfen Sie die Details Ihres Pakets, und klicken Sie zum Speichern einer IPA-Datei für Ihre App auf **Veröffentlichen**:
+7. Wählen Sie im Fenster **App Store Connect information** (Informationen zu App Store Connect) im Menü einen Apple ID-Benutzernamen aus, und geben Sie [ein App-spezifisches Kennwort](https://support.apple.com/ht204397) ein. Klicken Sie auf **Weiter**.
 
-    ![Überprüfung der App-Details](publishing-to-the-app-store-images/publish-m157.png "App detail verification")
+    ![Screenshot der Assistentenseite von App Store Connect information (Informationen zu App Store Connect) mit einem ausgewählten Apple ID-Benutzernamen](publishing-to-the-app-store-images/connectInfo-mac.png "Screenshot der Assistentenseite von App Store Connect information (Informationen zu App Store Connect) mit einem ausgewählten Apple ID-Benutzernamen")
 
-8. Sobald die IPA-Datei gespeichert wurde, kann Ihre App in iTunes Connect hochgeladen werden.
-
-    ![Bereit zur Übermittlung](publishing-to-the-app-store-images/readyToGo-m157.png "Ready for submission")
-
-9. Klicken Sie auf **Anwendungsladeprogramm öffnen**, und melden Sie sich an (Sie müssen ein [App-spezifisches Kennwort](https://support.apple.com/ht204397) für Ihre Apple-ID erstellen).
-
-    > [!NOTE]
-    > Weitere Informationen zu diesem Tool finden Sie in der [Apple-Dokumentation zu Application Loader](https://help.apple.com/itc/apploader/#/apdS673accdb).
-
-10. Wählen Sie **Ihre App übermitteln** aus, und klicken Sie auf die Schaltfläche **Auswählen**:
-
-    ![Auswahl von „Deliver Your App“ (App übermitteln)](publishing-to-the-app-store-images/publishvs01.png "Select Deliver Your App")
-
-11. Wählen Sie die zuvor erstellte IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
-12. Die Datei wird durch den Application Loader überprüft:
-
-    ![Der Validierungsbildschirm](publishing-to-the-app-store-images/publishvs02.png "The validation screen")
-
-13. Klicken Sie auf die Schaltfläche **Weiter**. Die Anwendung wird nun für den App Store überprüft:
-
-    ![Validierung im App Store](publishing-to-the-app-store-images/publishvs03.png "Validating against the App Store")
-
-14. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
-15. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
+8. Überprüfen Sie die Details Ihres Pakets, und klicken Sie auf **Veröffentlichen**. Nachdem Sie einen Speicherort für die IPA-Datei ausgewählt haben, wird Ihre App vom Assistenten in App Store Connect hochgeladen.
 
     > [!NOTE]
     > Es ist möglich, dass Apple Apps ablehnt, bei denen **iTunesMetadata.plist** in der IPA-Datei enthalten ist, wodurch es zu einem Fehler wie dem folgenden kommen kann:

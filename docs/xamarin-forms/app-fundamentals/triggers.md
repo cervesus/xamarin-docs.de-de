@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 31dfcc26121b0683db476b0c4be9a420efe5b66f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771234"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198568"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -144,7 +144,7 @@ Eine Implementierung einer Triggeraktion sollte folgende Aktionen durchführen:
 
 - Die `Invoke`-Methode überschreiben. Diese wird immer dann aufgerufen, wenn die Triggerbedingungen erfüllt werden.
 
-- Eigenschaften optional zur Verfügung stellen, die im XAML-Code festgelegt werden können, wenn der Trigger deklariert wird (z.B. `Anchor`, `Scale` und `Length` im folgenden Beispiel).
+- Eigenschaften optional zur Verfügung stellen, die im XAML-Code festgelegt werden können, wenn der Trigger deklariert wird. Ein Beispiel hierfür finden Sie in der `VisualElementPopTriggerAction`-Klasse in der begleitenden Beispielanwendung.
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -158,7 +158,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-Die von der Triggeraktion zur Verfügung gestellten Eigenschaften können wie folgt in der XAML-Deklaration festgelegt werden:
+Der Ereignistrigger kann dann von XAML verwendet werden:
 
 ```xaml
 <EventTrigger Event="TextChanged">

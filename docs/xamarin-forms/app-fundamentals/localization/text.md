@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b17a1177abafe4e605263664038842863302ac3b
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761000"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249687"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -76,6 +76,8 @@ In der Projektmappenstruktur werden die Dateien miteinander verknüpft. Die RESX
 Wenn stark typisierte Verweise auf Zeichenfolgen erstellt werden, gelten sie standardmäßig für die Assembly als `internal`. Dies liegt daran, dass das Standardbuildtool für RESX-Dateien die **.designer.cs**-Datei zusammen mit `internal`-Eigenschaften erstellt.
 
 Wählen Sie die **AppResources.resx**-Datei aus, und rufen Sie das **Eigenschaftenpad** ab, um zu prüfen, an welcher Stelle das Buildtool konfiguriert ist. Auf dem folgenden Screenshot sehen Sie das **benutzerdefinierte Tool ResXFileCodeGenerator**.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
