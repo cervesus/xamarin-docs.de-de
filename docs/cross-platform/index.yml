@@ -27,12 +27,12 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: Anforderungen
+            text: Requirements (Anforderungen)
             href: ~/cross-platform/get-started/requirements.md
           - image:
               src: ~/media/icons/i_desktop-phone.svg
             text: Xamarin.Forms
-            href: ~/get-started/quickstarts/index.md
+            href: ~/get-started/quickstarts/index.yml
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
             text: Android
@@ -57,17 +57,17 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/cross-platform/get-started/index.md
             title: Erstellen von mobilen Apps
-          - href: ~/cross-platform/platform
+          - href: ~/cross-platform/platform/index.md
             html: 'Xamarin unterstützt C#, F# und das Razor-Vorlagenmodul.'
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/cross-platform/platform
+              href: ~/cross-platform/platform/index.md
             title: Sprachenunterstützung
-          - href: ~/cross-platform/app-fundamentals/
+          - href: ~/cross-platform/app-fundamentals/index.md
             html: 'Alles, was Sie wissen müssen, um Apps zu erstellen.'
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/cross-platform/app-fundamentals/
+              href: ~/cross-platform/app-fundamentals/index.md
             title: Freigeben von Code
           - href: ~/cross-platform/deploy-test/performance.md
             html: Richtlinien für App-Leistung und Sicherheit.
@@ -75,15 +75,15 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
               href: ~/cross-platform/deploy-test/performance.md
             title: Leistung und Sicherheit
-          - href: ~/cross-platform/deploy-test/
+          - href: ~/cross-platform/deploy-test/index.md
             html: Tipps für Debuggen und Bereitstellung.
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/cross-platform/deploy-test/
+              href: ~/cross-platform/deploy-test/index.md
             title: Bereitstellung und Debuggen
-          - href: ~/cross-platform/desktop/
+          - href: ~/cross-platform/desktop/index.md
             html: 'Leitfaden für .NET-Desktopentwickler, die am Erstellen mobiler Apps interessiert sind.'
             image:
               src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-              href: ~/cross-platform/desktop/
+              href: ~/cross-platform/desktop/index.md
             title: Desktopentwickler

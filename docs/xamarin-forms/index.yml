@@ -115,4 +115,4 @@ sections:
           - title: Proben
             html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms">Xamarin.Forms Samples (Beispiele für Xamarin.Forms)</a></p>'
           - title: Bücher
-            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">E-Book über das Erstellen mobiler Apps</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">E-Book zu Mustern von Unternehmensanwendungen</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">SkiaSharp-Grafiken in Xamarin.Forms-E-Book</a></p>
+            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">E-Book über das Erstellen mobiler Apps</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns/index.md">E-Book zu Mustern von Unternehmensanwendungen</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">SkiaSharp-Grafiken in Xamarin.Forms-E-Book</a></p>
