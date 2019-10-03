@@ -40,7 +40,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
 1. Starten Sie Visual Studio, und öffnen Sie die Lösung Notes.
 
-2. Wählen Sie in **Projektmappen-Explorer**das Projekt **Notes** aus, klicken Sie mit der rechten Maustaste, und wählen Sie **nuget-Pakete verwalten...** aus:
+2. Wählen Sie in **Projektmappen-Explorer** das Projekt **Notes** aus, klicken Sie mit der rechten Maustaste, und wählen Sie **nuget-Pakete verwalten...** aus:
 
     ![](database-images/vs/add-nuget-packages.png "Hinzufügen von NuGet-Paketen")    
 
@@ -58,7 +58,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
     Mit diesem Paket können Datenbankvorgänge in der Anwendung verwendet werden.
 
-4. Öffnen Sie in **Projektmappen-Explorer**im Projekt " **Notizen** " **Note.cs** im Ordner " **Models** ", und ersetzen Sie den vorhandenen Code durch den folgenden Code:
+4. Öffnen Sie in **Projektmappen-Explorer** im Projekt " **Notizen** " **Note.cs** im Ordner " **Models** ", und ersetzen Sie den vorhandenen Code durch den folgenden Code:
 
     ```csharp
     using System;
@@ -293,18 +293,18 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
     }
     ```
 
-    Diese Klasse definiert ein `Note` Modell, das Daten zu jeder Notiz in der Anwendung speichert. Die `ID` -Eigenschaft ist mit `PrimaryKey` dem `AutoIncrement` -Attribut und dem- `Note` Attribut gekennzeichnet, um sicherzustellen, dass jede Instanz in der SQLite.net-Datenbank eine eindeutige ID hat, die von SQLite.net
+    Diese Klasse definiert ein `Note` Modell, das Daten zu jeder Notiz in der Anwendung speichert. Die `ID` -Eigenschaft ist mit `PrimaryKey` dem `AutoIncrement` -Attribut und dem- `Note` Attribut gekennzeichnet, um sicherzustellen, dass jede Instanz in der SQLite.net-Datenbank eine eindeutige ID hat, die von SQLite.net.
 
-    Speichern Sie die Änderungen an **Note.cs** , indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S**drücken), und schließen Sie die Datei.
+    Speichern Sie die Änderungen an **Note.cs**, indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S** drücken), und schließen Sie die Datei.
 
     > [!WARNING]
     > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in den nachfolgenden Schritten korrigiert werden.
 
-5. Fügen Sie im **Lösungspad**dem **Notes** -Projekt einen neuen Ordner mit dem Namen " **Data** " hinzu.
+5. Fügen Sie im **Lösungspad** dem **Notes** -Projekt einen neuen Ordner mit dem Namen " **Data** " hinzu.
 
-6. Fügen Sie im **Lösungspad**im Projekt **Notes** dem Ordner **Data** eine neue Klasse mit dem Namen **notedatabase** hinzu.
+6. Fügen Sie im **Lösungspad** im Projekt **Notes** dem Ordner **Data** eine neue Klasse mit dem Namen **notedatabase** hinzu.
 
-7. Ersetzen Sie in **NoteDatabase.cs**den vorhandenen Code durch den folgenden Code:
+7. Ersetzen Sie in **NoteDatabase.cs** den vorhandenen Code durch den folgenden Code:
 
     ```csharp
     using System.Collections.Generic;
@@ -358,12 +358,12 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
     Diese Klasse enthält Code zum Erstellen der Datenbank, zum Lesen von Daten, zum Schreiben von Daten in die Datenbank und zum Löschen von Daten aus der Datenbank. Im Code werden asynchrone SQLite.NET-APIs verwendet, mit denen Datenbankvorgänge in Hintergrundthreads verschoben werden. Außerdem akzeptiert der `NoteDatabase`-Konstruktor den Pfad der Datenbankdatei als Argument. Dieser Pfad wird von der `App` -Klasse im nächsten Schritt bereitgestellt.
 
-    Speichern Sie die Änderungen an **NoteDatabase.cs** , indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S**drücken), und schließen Sie die Datei.
+    Speichern Sie die Änderungen an **NoteDatabase.cs**, indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S** drücken), und schließen Sie die Datei.
 
     > [!WARNING]
     > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in den nachfolgenden Schritten korrigiert werden.
 
-8. Doppelklicken Sie im **Lösungspad**im Projekt **Notes** auf **app.XAML.cs** , um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+8. Doppelklicken Sie im **Lösungspad** im Projekt **Notes** auf **app.XAML.cs**, um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```csharp
     using System;
@@ -420,7 +420,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
     > [!WARNING]
     > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in den nachfolgenden Schritten korrigiert werden.
 
-9. Doppelklicken Sie im **Lösungspad**im Projekt **Notes** auf **NotesPage.XAML.cs** , um es zu öffnen. Ersetzen Sie anschließend `OnAppearing` die-Methode durch den folgenden Code:
+9. Doppelklicken Sie im **Lösungspad** im Projekt **Notes** auf **NotesPage.XAML.cs**, um es zu öffnen. Ersetzen Sie anschließend `OnAppearing` die-Methode durch den folgenden Code:
 
     ```csharp
     protected override async void OnAppearing()
@@ -433,12 +433,12 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
     Dieser Code füllt den [`ListView`](xref:Xamarin.Forms.ListView) mit allen in der Datenbank gespeicherten Notizen auf.
 
-    Speichern Sie die Änderungen an **NotesPage.XAML.cs** , indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S**drücken), und schließen Sie die Datei.
+    Speichern Sie die Änderungen an **NotesPage.XAML.cs** , indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S** drücken), und schließen Sie die Datei.
 
     > [!WARNING]
     > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in den nachfolgenden Schritten korrigiert werden.
 
-10. Doppelklicken Sie im **Lösungspad**auf **NoteEntryPage.XAML.cs** , um es zu öffnen. Ersetzen Sie anschließend `OnSaveButtonClicked` die `OnDeleteButtonClicked` -Methode und die-Methode durch den folgenden Code:
+10. Doppelklicken Sie im **Lösungspad** auf **NoteEntryPage.XAML.cs**, um es zu öffnen. Ersetzen Sie anschließend `OnSaveButtonClicked` die `OnDeleteButtonClicked` -Methode und die-Methode durch den folgenden Code:
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -459,11 +459,11 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
       Speichert eine `Note` -Instanz, die einen einzelnen Hinweis darstellt, in der [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der Seite. `NoteEntryPage` Wenn der `OnSaveButtonClicked` Ereignishandler ausgeführt wird, wird `Note` die Instanz in der Datenbank gespeichert, und die Anwendung navigiert zurück zur vorherigen Seite. Wenn der `OnDeleteButtonClicked` Ereignishandler ausgeführt wird, wird `Note` die Instanz aus der Datenbank gelöscht, und die Anwendung navigiert zurück zur vorherigen Seite.
 
-      Speichern Sie die Änderungen an **NoteEntryPage.XAML.cs** , indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S**drücken), und schließen Sie die Datei.
+      Speichern Sie die Änderungen an **NoteEntryPage.XAML.cs**, indem Sie **Datei > Speichern** auswählen (oder indem Sie  **&#8984; + S** drücken), und schließen Sie die Datei.
 
 11. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie es aus. Weitere Informationen finden Sie unter Erste Schritte mit [der Schnellstartanleitung](single-page.md#building-the-quickstart).
 
-    Klicken Sie auf der **Seite NotesPage** auf die **+** Schaltfläche, um zur **noteentrypage** zu navigieren, und geben Sie einen Hinweis ein. Nach dem Speichern des Hinweises wird die Anwendung zurück zur **NotesPage**navigiert.
+    Klicken Sie auf der **Seite NotesPage** auf die **+** Schaltfläche, um zur **noteentrypage** zu navigieren, und geben Sie einen Hinweis ein. Nach dem Speichern des Hinweises wird die Anwendung zurück zur **NotesPage** navigiert.
 
     Geben Sie eine Anzahl von Notizen unterschiedlicher Länge ein, um das Verhalten der Anwendung zu beobachten.
 
