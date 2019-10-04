@@ -16,17 +16,17 @@ ms.locfileid: "70754543"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
-_Firebase Cloud Messaging (SCM) ist ein Dienst, der das Messaging zwischen mobilen apps und Server Anwendungen ermöglicht. Dieser Artikel bietet einen Überblick über die Funktionsweise von FCM und erläutert, wie Sie Google-Dienste so konfigurieren, dass Ihre APP FCM verwenden kann._
+_Firebase Cloud Messaging (SCM) ist ein Dienst, der das Messaging zwischen mobilen Apps und Server Anwendungen ermöglicht. Dieser Artikel bietet einen Überblick über die Funktionsweise von FCM und erläutert, wie Sie Google-Dienste so konfigurieren, dass Ihre App FCM verwenden kann._
 
 [![Firebase Cloud Messaging Hero-Image](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
-Dieses Thema enthält eine allgemeine Übersicht über die Weiterleitung von Nachrichten zwischen Ihrer xamarin. Android-App und einem App-Server durch Firebase Cloud Messaging. Außerdem erhalten Sie eine Schritt-für-Schritt-Anleitung zum Abrufen von Anmelde Informationen, damit Ihre APP die Dienst Prinzipal Namen verwenden kann.
+Dieses Thema enthält eine allgemeine Übersicht über die Weiterleitung von Nachrichten zwischen Ihrer Xamarin Android-App und einem App-Server durch Firebase Cloud Messaging. Außerdem erhalten Sie eine Schritt-für-Schritt-Anleitung zum Abrufen von Anmelde Informationen, damit Ihre App die Dienst Prinzipal Namen verwenden kann.
 
 ## <a name="overview"></a>Übersicht
 
-Firebase Cloud Messaging (SCM) ist ein plattformübergreifender Dienst, der das senden, weiterleiten und Einreihen von Nachrichten zwischen Server Anwendungen und mobilen Client-apps verarbeitet. FCM ist der Nachfolger von Google Cloud Messaging (GCM) und basiert auf Google Play Services.
+Firebase Cloud Messaging (SCM) ist ein plattformübergreifender Dienst, der das Senden, Weiterleiten und Einreihen von Nachrichten zwischen Server Anwendungen und mobilen Client-Apps verarbeitet. FCM ist der Nachfolger von Google Cloud Messaging (GCM) und basiert auf Google Play Services.
 
-Wie im folgenden Diagramm dargestellt, fungiert der als Vermittler zwischen Nachrichtensendern und-Clients. Bei einer *Client-App* handelt es sich um eine auf einem Gerät ausgeführte, auf einem Gerät ausgeführte app. Der *App-Server* (der von Ihnen oder Ihrem Unternehmen bereitgestellt wird) ist der Server mit aktiviertem Server, mit dem Ihre Client-App über den ficm kommuniziert. Anders als GCM ermöglicht FCM es Ihnen, Nachrichten direkt über die Firebase-Konsolen Benachrichtigungs-GUI an Client-apps zu senden:
+Wie im folgenden Diagramm dargestellt, fungiert der als Vermittler zwischen Nachrichtensendern und-Clients. Bei einer *Client-App* handelt es sich um eine auf einem Gerät ausgeführte App. Der *App-Server* (der von Ihnen oder Ihrem Unternehmen bereitgestellt wird) ist der Server mit aktiviertem Server, mit dem Ihre Client-App über den ficm kommuniziert. Anders als GCM ermöglicht FCM es Ihnen, Nachrichten direkt über die Firebase-Konsolen Benachrichtigungs-GUI an Client-apps zu senden:
 
 [![Der Dateiserver befindet sich zwischen der Client-App und einem App-Server.](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
@@ -34,7 +34,7 @@ Mithilfe von FCM können App-Server Nachrichten an ein einzelnes Gerät, an eine
 
 ## <a name="fcm-in-action"></a>Firebase Cloud Messaging in Aktion
 
-Wenn eine downstreamnachricht von einem App-Server an eine Client-App gesendet wird, sendet der App-Server die Nachricht an einen *FCM-Verbindungs Server* , der von Google bereitgestellt wird. der FCM-Verbindungs Server leitet die Nachricht seinerseits an ein Gerät weiter, auf dem die Client-app ausgeführt wird. Nachrichten können über HTTP oder [XMPP](https://developers.google.com/cloud-messaging/ccs) (erweiterbares Messaging und Anwesenheits Protokoll) gesendet werden. Da Client-apps nicht immer verbunden sind oder ausgeführt werden, werden vom FCM-Verbindungs Server Nachrichten in die Warteschlange eingereiht und gespeichert, und Sie werden an Client-apps gesendet, wenn Sie wieder eine Verbindung herstellen Ebenso fügt FCM upstreamnachrichten aus der Client-App an den App-Server in die Warteschlange ein, wenn der App-Server nicht verfügbar ist. Weitere Informationen zu den Server-Verbindungs Servern finden Sie unter [Informationen zu Firebase Cloud Messaging Server](https://firebase.google.com/docs/cloud-messaging/server).
+Wenn eine downstreamnachricht von einem App-Server an eine Client-App gesendet wird, sendet der App-Server die Nachricht an einen *FCM-Verbindungs Server*, der von Google bereitgestellt wird. Der FCM-Verbindungs Server leitet die Nachricht seinerseits an ein Gerät weiter, auf dem die Client-app ausgeführt wird. Nachrichten können über HTTP oder [XMPP](https://developers.google.com/cloud-messaging/ccs) (erweiterbares Messaging und Anwesenheits Protokoll) gesendet werden. Da Client-apps nicht immer verbunden sind oder ausgeführt werden, werden vom FCM-Verbindungs Server Nachrichten in die Warteschlange eingereiht und gespeichert, und Sie werden an Client-apps gesendet, wenn Sie wieder eine Verbindung herstellen Ebenso fügt FCM upstreamnachrichten aus der Client-App an den App-Server in die Warteschlange ein, wenn der App-Server nicht verfügbar ist. Weitere Informationen zu den Server-Verbindungs Servern finden Sie unter [Informationen zu Firebase Cloud Messaging Server](https://firebase.google.com/docs/cloud-messaging/server).
 
 FCM verwendet die folgenden Anmelde Informationen, um den App-Server und die Client-App zu identifizieren, und verwendet diese Anmelde Informationen, um Nachrichten Transaktionen über den FCM zu autorisieren:
 
