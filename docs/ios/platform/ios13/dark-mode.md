@@ -26,7 +26,7 @@ Der dunkle Modus erfordert IOS 13 und Xcode 11, xamarin. IOS 12,99 und Visual St
 
 ## <a name="turning-on-dark-mode"></a>Aktivieren des dunklen Modus
 
-Apple stellt ein Entwickler Menü in IOS 13 bereit, um zwischen dunklen und hellen Modi zu wechseln. Öffnen Sie im IOS 13-Simulator die **Einstellungen** , und wählen Sie den Abschnitt **Entwickler** aus, und Scrollen Sie zum Schalter **dunkle** Darstellung. Die Änderung wird in der gesamten Simulatorumgebung reflektiert:
+Apple stellt ein Entwicklermenü in iOS 13 bereit, um zwischen dunklen und hellen Modi zu wechseln. Öffnen Sie im iOS 13-Simulator die **Einstellungen** , und wählen Sie den Abschnitt **Entwickler** aus, und scrollen Sie zum Schalter **dunkle** Darstellung. Die Änderung wird in der gesamten Simulatorumgebung reflektiert:
 
 ![Aktivieren des dunklen Modus](dark-mode-images/LightAndDark_DeveloperSetting.png)
 
@@ -34,11 +34,11 @@ Apple stellt ein Entwickler Menü in IOS 13 bereit, um zwischen dunklen und hell
 
 Der Asset-Katalog in Visual Studio unterstützt jetzt optionale Bilder und Farben für jeden Darstellungs Modus: Universell, dunkel und hell. Wenn Sie Ihre Bilder und Farben auf diese Weise definieren, wählt IOS automatisch das passende Bild und die gewünschte Farbe aus.
 
-Öffnen Sie die Datei **Assets. xcassets** in Ihrem IOS-Projekt, und fügen Sie einen neuen Bildssatz hinzu. Beachten Sie, dass Sie universelle, dunkle und helle Bilder in jeder der Ziel-Auflösungen angeben können. Im folgenden Screenshot wird ein Bild für dunkel und hell mit dem Namen "Microsoftlogo" angezeigt:
+Öffnen Sie die Datei **Assets.xcassets** in Ihrem iOS-Projekt, und fügen Sie einen neuen Bildsatz hinzu. Beachten Sie, dass Sie universelle, dunkle und helle Bilder in jeder der Zielauflösungen angeben können. Im folgenden Screenshot wird ein Bild für dunkel und hell mit dem Namen "MicrosoftLogo" angezeigt:
 
 ![Assets für helle und dunkle Modi](dark-mode-images/LightAndDark_AssetCatalog2.png)
 
-**Assets. xcassets** enthalten auch Einträge für **BackgroundColor** und **Titlecolor**, bei denen es sich um Farb-Definitionen handelt. Diese Farben sind jetzt nach Namen verfügbar, die in der gesamten Anwendung verwendet werden. Die **BackgroundColor** wurde dem Hintergrund der Ansicht und die **Titlecolor** der Bezeichnung zugewiesen, wie in diesem Screenshot gezeigt:
+Die Datei **Assets.xcassets** enthält auch Einträge für **BackgroundColor** und **Titlecolor**, bei denen es sich um Farbdefinitionen handelt. Diese Farben sind jetzt nach Namen verfügbar, die in der gesamten Anwendung verwendet werden. **BackgroundColor** wurde dem Hintergrund der Ansicht und **Titlecolor** der Bezeichnung zugewiesen, wie in diesem Screenshot gezeigt:
 
 ![Assets für helle und dunkle Modi](dark-mode-images/LightAndDark_01.png)
 
