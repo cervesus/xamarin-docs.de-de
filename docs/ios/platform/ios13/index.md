@@ -20,7 +20,7 @@ Befolgen Sie diese [Anweisungen](~/ios/platform/ios13/get-started.md) , um zu be
 
 ## <a name="dark-modedark-modemd"></a>[Dunkler Modus](dark-mode.md)
 
-IOS 13 führt einen neuen dunklen Modus ein, der Entwicklern die Möglichkeit bietet, Ihre apps problemlos zu unterbinden. Mit neuen Tools können Sie Ihre apps gleichzeitig mit einem hellen und einem dunklen Design entwerfen.
+iOS 13 führt einen neuen dunklen Modus ein, der Entwicklern die Möglichkeit bietet, Ihre Apps problemlos zu unterbinden. Mit neuen Tools können Sie Ihre Apps gleichzeitig mit einem hellen und einem dunklen Design entwerfen.
 
 ## <a name="sign-in-with-applesign-inmd"></a>[Anmelden mit Apple](sign-in.md)
 
