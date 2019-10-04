@@ -40,7 +40,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
 1. Starten Sie Visual Studio, und öffnen Sie die Lösung Notes.
 
-2. Wählen Sie in **Projektmappen-Explorer** das Projekt **Notes** aus, klicken Sie mit der rechten Maustaste, und wählen Sie **nuget-Pakete verwalten...** aus:
+2. Wählen Sie im **Projektmappen-Explorer** das Projekt **Notes** aus, klicken Sie mit der rechten Maustaste, und wählen Sie **nuget-Pakete verwalten...** aus:
 
     ![](database-images/vs/add-nuget-packages.png "Hinzufügen von NuGet-Paketen")    
 
@@ -58,7 +58,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
     Mit diesem Paket können Datenbankvorgänge in der Anwendung verwendet werden.
 
-4. Öffnen Sie in **Projektmappen-Explorer** im Projekt " **Notizen** " **Note.cs** im Ordner " **Models** ", und ersetzen Sie den vorhandenen Code durch den folgenden Code:
+4. Öffnen Sie im**Projektmappen-Explorer** im Projekt " **Notizen** " **Note.cs** im Ordner " **Models** ", und ersetzen Sie den vorhandenen Code durch den folgenden Code:
 
     ```csharp
     using System;
@@ -420,7 +420,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
     > [!WARNING]
     > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in den nachfolgenden Schritten korrigiert werden.
 
-9. Doppelklicken Sie im **Lösungspad** im Projekt **Notes** auf **NotesPage.XAML.cs**, um es zu öffnen. Ersetzen Sie anschließend `OnAppearing` die-Methode durch den folgenden Code:
+9. Doppelklicken Sie im **Lösungspad** im Projekt **Notes** auf **NotesPage.XAML.cs**, um es zu öffnen. Ersetzen Sie anschließend die `OnAppearing`-Methode durch den folgenden Code:
 
     ```csharp
     protected override async void OnAppearing()
@@ -438,7 +438,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
     > [!WARNING]
     > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in den nachfolgenden Schritten korrigiert werden.
 
-10. Doppelklicken Sie im **Lösungspad** auf **NoteEntryPage.XAML.cs**, um es zu öffnen. Ersetzen Sie anschließend `OnSaveButtonClicked` die `OnDeleteButtonClicked` -Methode und die-Methode durch den folgenden Code:
+10. Doppelklicken Sie im **Lösungspad** auf **NoteEntryPage.XAML.cs**, um es zu öffnen. Ersetzen Sie anschließend die Methoden`OnSaveButtonClicked` und `OnDeleteButtonClicked` durch den folgenden Code:
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
