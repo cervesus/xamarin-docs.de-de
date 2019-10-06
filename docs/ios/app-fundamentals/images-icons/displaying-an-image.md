@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/24/2018
-ms.openlocfilehash: 8e06b03e0acb129f1eb0c3c793d0b4a05c11ce2b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eaef454de77387ea2a6732fa00797a6a4f0e3cd1
+ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282374"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71975883"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Anzeigen eines Bilds in xamarin. IOS
 
@@ -32,7 +32,7 @@ Gehen Sie folgendermaßen vor, um eine neue Abbild Gruppe zu erstellen und Ihr B
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Assets.xcassets` Datei, um Sie zur Bearbeitung zu öffnen:
+1. Doppelklicken Sie im **Projektmappen-Explorer**auf die Datei `Assets.xcassets`, um Sie zur Bearbeitung zu öffnen:
 
     ![](displaying-an-image-images/imageset01.png "Die Assets. xcassets im Projektmappen-Explorer")
 2. Klicken Sie mit der rechten Maustaste auf die **Liste Assets** , und wählen Sie **neue Bildmenge**aus:
@@ -75,18 +75,18 @@ Gehen Sie folgendermaßen vor, um einen Bildsatz umzubenennen:
 
 -----
 
-Wenn Sie einen **Bildsatz** im Code verwenden, verweisen Sie ihn anhand des namens `FromBundle` , indem Sie `UIImage` die-Methode der-Klasse aufrufen. Beispiel:
+Wenn Sie einen **Bildsatz** im Code verwenden, verweisen Sie ihn anhand des Namens, indem Sie die `FromBundle`-Methode der `UIImage`-Klasse aufrufen. Beispiel:
 
 ```csharp
 MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> Wenn die einem Bild Satz zugewiesenen Bilder nicht ordnungsgemäß angezeigt werden, stellen Sie sicher, dass der richtige Dateiname mit `FromBundle` der-Methode verwendet wird (die **Bildmenge** und nicht der Name des übergeordneten **Objekt Katalogs** ). Bei PNG-Bildern kann `.png` die Erweiterung weggelassen werden. Bei anderen Bildformaten ist die Erweiterung erforderlich (z. b. `PurpleMonkey.jpg`) angezeigt wird.
+> Wenn die einem Bildsatz zugewiesenen Bilder nicht ordnungsgemäß angezeigt werden, stellen Sie sicher, dass der richtige Dateiname mit der `FromBundle`-Methode verwendet wird (die **Bildmenge** und nicht der Name des übergeordneten Ressourcen **Katalogs** ). Bei PNG-Bildern kann die Erweiterung "`.png`" ausgelassen werden. Bei anderen Bildformaten ist die Erweiterung erforderlich (z. b. `PurpleMonkey.jpg`).
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>Verwenden von Vektorbildern in Asset-Katalogen
 
-Ab IOS 8 wurde eine spezielle **Vektor** Klasse zu **Bild Sätzen** hinzugefügt, die es dem Entwickler ermöglichen, ein **PDF-** formatiertes Vektorbild in die Kassette einzubeziehen, anstatt einzelne Bitmapdateien in den verschiedenen Auflösungen einzubeziehen. Stellen Sie mit dieser Methode eine einzelne Vektor Datei für die `@1x` Auflösung (formatiert als Vektor-PDF-Datei) `@2x` bereit `@3x` , und die-und-Versionen der Datei werden zur Kompilierzeit generiert und in das Paket der Anwendung eingeschlossen.
+Ab IOS 8 wurde eine spezielle **Vektor** Klasse zu **Bild Sätzen** hinzugefügt, die es dem Entwickler ermöglichen, ein **PDF-** formatiertes Vektorbild in die Kassette einzubeziehen, anstatt einzelne Bitmapdateien in den verschiedenen Auflösungen einzubeziehen. Stellen Sie mit dieser Methode eine einzelne Vektor Datei für die `@1x`-Auflösung (formatiert als Vektor-PDF-Datei) bereit, und die `@2x`-und `@3x`-Versionen der Datei werden zur Kompilierzeit generiert und in das Paket der Anwendung eingeschlossen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -98,11 +98,11 @@ Ab IOS 8 wurde eine spezielle **Vektor** Klasse zu **Bild Sätzen** hinzugefügt
 
 -----
 
-Wenn der Entwickler z. b. eine `MonkeyIcon.pdf` Datei als Vektor für einen Asset-Katalog mit einer Auflösung von 150px x 150px enthält, sind die folgenden bitmapassets in die abschließende App Bundle eingeschlossen, als Sie kompiliert wurde:
+Wenn der Entwickler z. b. eine `MonkeyIcon.pdf`-Datei als Vektor für einen Asset-Katalog mit einer Auflösung von 150px x 150px enthält, werden die folgenden bitmapassets in die endgültige App Bundle eingefügt, als Sie kompiliert wurde:
 
 - `MonkeyIcon@1x.png`-150px x 150px Auflösung.
 - `MonkeyIcon@2x.png`-300 px x 300 px Auflösung.
-- `MonkeyIcon@3x.png`-450 px x 450 px Auflösung.
+- Auflösung von `MonkeyIcon@3x.png`-450px x 450 px.
 
 Bei der Verwendung von PDF-Vektorbildern in Asset-Katalogen sollten folgende Aspekte berücksichtigt werden:
 
@@ -155,24 +155,24 @@ if (MyIcon.Image != null) {
 }
 ```
 
-Da die `RenderMode` -Eigenschaft `UIImage` eines schreibgeschützt ist, verwenden Sie `ImageWithRenderingMode` die-Methode, um eine neue Instanz des Bilds mit der gewünschten rendermoduseinstellung zu erstellen.
+Da die `RenderMode`-Eigenschaft einer `UIImage` schreibgeschützt ist, verwenden Sie die `ImageWithRenderingMode`-Methode, um eine neue Instanz des Bilds mit der gewünschten rendermoduseinstellung zu erstellen.
 
-Es gibt drei mögliche Einstellungen für `UIImage.RenderMode` über die `UIImageRenderingMode` -Aufzählung:
+Es gibt drei mögliche Einstellungen für `UIImage.RenderMode` über die `UIImageRenderingMode`-Aufzählung:
 
-- `AlwaysOriginal`: Erzwingt, dass das Bild ohne Änderungen als ursprüngliche Quell Bilddatei gerendert wird.
-- `AlwaysTemplate`-Erzwingt, dass das Bild als Vorlagen Bild gerendert wird, indem die Pixel mit `Tint` der angegebenen Farbe eingefärbt werden.
-- `Automatic`: Rendert das Bild entweder als Vorlage oder als ursprüngliches, das auf der Umgebung basiert, in der es verwendet wird. Wenn das Bild beispielsweise `UIToolBar`in einem `UITabBar` , `UINavigationBar`oder `UISegmentControl` verwendet wird, wird es als Vorlage behandelt.
+- `AlwaysOriginal`: erzwingt, dass das Bild ohne Änderungen als ursprüngliche Quell Abbild Datei gerendert wird.
+- `AlwaysTemplate`: erzwingt, dass das Bild als Vorlagen Bild gerendert wird, indem die Pixel mit der angegebenen `Tint`-Farbe hervorgehoben werden.
+- `Automatic`: rendert das Bild entweder als Vorlage oder als ursprüngliches, das auf der Umgebung basiert, in der es verwendet wird. Wenn das Bild beispielsweise in einem `UIToolBar`, `UINavigationBar`, `UITabBar` oder `UISegmentControl` verwendet wird, wird es als Vorlage behandelt.
 
 ## <a name="adding-new-assets-collections"></a>Neue Ressourcen Sammlungen werden hinzugefügt
 
-Beim Arbeiten mit Bildern in Ressourcen Katalogen kann es vorkommen, dass eine neue Sammlung erforderlich ist, anstatt alle Images der APP der `Assets.xcassets` Auflistung hinzuzufügen. Beispielsweise beim Entwerfen von bedarfsgesteuerten Ressourcen.
+Beim Arbeiten mit Bildern in Ressourcen Katalogen kann es vorkommen, dass eine neue Sammlung erforderlich ist, anstatt alle Images der APP der `Assets.xcassets`-Auflistung hinzuzufügen. Beispielsweise beim Entwerfen von bedarfsgesteuerten Ressourcen.
 
 So fügen Sie dem Projekt einen neuen Ressourcen Katalog hinzu:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen** , und wählen Sie**neue Datei** **Hinzufügen** > ... aus.
-2. Wählen Sie **IOS** > **Asset Catalog**aus, geben Sie einen **Namen** für die Sammlung ein, und klicken Sie auf die Schaltfläche **neu**
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen** , und wählen Sie  > **neue Datei** **Hinzufügen**... aus.
+2. Wählen Sie **IOS** > **Asset Catalog**aus, geben Sie einen **Namen** für die Sammlung ein, und klicken Sie auf die Schaltfläche **neu** :
 
     ![](displaying-an-image-images/asset01.png "Erstellen eines neuen Ressourcen Katalogs")
 
@@ -185,29 +185,29 @@ So fügen Sie dem Projekt einen neuen Ressourcen Katalog hinzu:
 
 -----
 
-Von hier aus kann die Auflistung genauso wie die Standard `Assets.xcassets` mäßige Sammlung, die automatisch im Projekt enthalten ist, bearbeitet werden.
+Von hier aus kann die Auflistung genauso wie die standardmäßige `Assets.xcassets`-Auflistung bearbeitet werden, die automatisch im Projekt enthalten ist.
 
 ## <a name="using-images-with-controls"></a>Verwenden von Bildern mit Steuerelementen
 
-Zusätzlich zur Verwendung von Images zur Unterstützung einer App verwendet IOS auch Bilder mit App-Steuerelement Typen wie z. b. Registerkarten, Symbolleisten, Navigationsleisten, Tabellen und Schaltflächen. Eine einfache Möglichkeit, ein Bild auf einem-Steuerelement anzuzeigen, besteht darin `UIImage` , der-Eigenschaft des `Image` -Steuer Elements eine-Instanz zuzuweisen.
+Zusätzlich zur Verwendung von Images zur Unterstützung einer App verwendet IOS auch Bilder mit App-Steuerelement Typen wie z. b. Registerkarten, Symbolleisten, Navigationsleisten, Tabellen und Schaltflächen. Eine einfache Möglichkeit, ein Bild auf einem-Steuerelement anzuzeigen, ist das Zuweisen einer `UIImage`-Instanz zur `Image`-Eigenschaft des Steuer Elements.
 
 ### <a name="frombundle"></a>Frombundle
 
-Der `FromBundle` Methodenaufrufe ist ein synchroner (blockierender) Befehl, der über eine integrierte Anzahl von Abbild Lade-und-Verwaltungsfunktionen verfügt, wie z. b. Caching-Unterstützung und automatische Behandlung von Bilddateien für verschiedene Auflösungen.
+Der `FromBundle`-Methodenaufrufe ist ein synchroner (blockierender) Befehl, der über eine Reihe von integrierten Funktionen zum Laden und Verwalten von Bildern verfügt, wie z. b. Caching-Unterstützung und automatische Behandlung von Bilddateien für verschiedene Auflösungen.
 
-Im folgenden Beispiel wird gezeigt, wie das Image eines `UITabBarItem` auf einem `UITabBar`festgelegt wird:
-
-```csharp
-TabBarItem.Image = UIImage.FromBundle ("MyImage");
-```
-
-Angenommen, `MyImage` es handelt sich um den Namen eines imageassets, das einem oben genannten Ressourcen Katalog hinzugefügt wird. Geben Sie beim Arbeiten mit dem Asset-Katalog Abbild einfach den Namen des Bilds an, das in der `FromBundle` -Methode für **PNG** -formatierte Images
+Im folgenden Beispiel wird gezeigt, wie das Image eines `UITabBarItem` für ein `UITabBar` festgelegt wird:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-Fügen Sie die Erweiterung für ein beliebiges anderes Bildformat in den Namen ein. Beispiel:
+Angenommen, `MyImage` ist der Name eines imageassets, das einem oben genannten Ressourcen Katalog hinzugefügt wurde. Beim Arbeiten mit Asset-Katalog Images geben Sie einfach den Namen des Bilds an, das in der `FromBundle`-Methode für **PNG** -formatierte Bilder festgelegt ist
+
+```csharp
+TabBarItem.Image = UIImage.FromBundle ("MyImage");
+```
+
+Fügen Sie die Erweiterung für ein beliebiges anderes Bildformat in den Namen ein. Zum Beispiel:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
@@ -217,7 +217,7 @@ Weitere Informationen zu Symbolen und Bildern finden Sie in der Apple-Dokumentat
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>Anzeigen eines Bilds in einem Storyboard
 
-Nachdem ein Image einem xamarin. IOS-Projekt mit einem Asset-Katalog hinzugefügt wurde, kann es problemlos `UIImageView` in einem Storyboard mithilfe von im IOS-Designer angezeigt werden. Wenn z. b. das folgende bildasset hinzugefügt wurde:
+Nachdem ein Image einem xamarin. IOS-Projekt mit einem Asset-Katalog hinzugefügt wurde, kann es problemlos in einem Storyboard mithilfe eines `UIImageView` im IOS-Designer angezeigt werden. Wenn z. b. das folgende bildasset hinzugefügt wurde:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -225,7 +225,7 @@ Nachdem ein Image einem xamarin. IOS-Projekt mit einem Asset-Katalog hinzugefüg
 
 Gehen Sie folgendermaßen vor, um die Datei auf einem Storyboard anzuzeigen:
 
-1. Doppelklicken Sie auf `Main.storyboard` die Datei im **Projektmappen-Explorer** , um Sie im IOS-Designer zur Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die Datei `Main.storyboard` im **Projektmappen-Explorer** , um Sie im IOS-Designer zur Bearbeitung zu öffnen.
 2. Wählen Sie eine **Bildansicht** aus der **Toolbox**aus:
 
      ![](displaying-an-image-images/display02.png "Wählen Sie eine Bildansicht aus der Toolbox aus.")
@@ -248,7 +248,7 @@ Gehen Sie folgendermaßen vor, um die Datei auf einem Storyboard anzuzeigen:
 
 Gehen Sie folgendermaßen vor, um die Datei auf einem Storyboard anzuzeigen:
 
-1. Doppelklicken Sie auf `Main.storyboard` die Datei im **Projektmappen-Explorer** , um Sie im IOS-Designer zur Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die Datei `Main.storyboard` im **Projektmappen-Explorer** , um Sie im IOS-Designer zur Bearbeitung zu öffnen.
 2. Wählen Sie eine **Bildansicht** aus der **Toolbox**aus:
 
      ![](displaying-an-image-images/display02vs.png "Wählen Sie eine Bildansicht aus der Toolbox aus.")
@@ -285,7 +285,7 @@ imageView.Image = UIImage.FromBundle ("Kemah");
 View.AddSubview (imageView);
 ```
 
-Dieser Code erstellt einen neuen `UIImageView` und gibt ihm eine anfängliche Größe und Position. Anschließend wird das Bild aus einem Image-Asset geladen, das dem Projekt hinzugefügt `UIImageView` wurde, und `UIView` dem übergeordneten Element hinzugefügt, um es anzuzeigen.
+Dieser Code erstellt einen neuen `UIImageView` und gibt ihm eine anfängliche Größe und Position. Anschließend wird das Bild aus einem Image-Asset geladen, das dem Projekt hinzugefügt wurde, und der `UIImageView` wird dem übergeordneten `UIView` hinzugefügt, um es anzuzeigen.
 
 ## <a name="related-links"></a>Verwandte Links
 
