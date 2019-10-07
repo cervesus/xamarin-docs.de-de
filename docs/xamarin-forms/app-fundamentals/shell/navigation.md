@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
+ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888973"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674567"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation in der Xamarin.Forms-Shell
 
@@ -302,7 +302,7 @@ Die `BackButtonBehavior`-Klasse definiert die folgenden Eigenschaften, die die D
 
 - `Command` vom Typ `ICommand`: Wird ausgeführt, wenn die Zurück-Schaltfläche gedrückt wird.
 - `CommandParameter` vom Typ `object`: der Parameter, der an `Command` übergeben wird.
-- `IconOveride` vom Typ [`ImageSource`](xref:Xamarin.Forms.ImageSource): das Symbol für die Zurück-Schaltfläche.
+- `IconOverride` vom Typ [`ImageSource`](xref:Xamarin.Forms.ImageSource): das Symbol für die Zurück-Schaltfläche.
 - `IsEnabled` vom Typ `boolean`: Gibt an, ob die Zurück-Schaltfläche aktiviert ist. Der Standardwert ist `true`sein.
 - `TextOverride` vom Typ `string`: der Text für die Zurück-Schaltfläche.
 
