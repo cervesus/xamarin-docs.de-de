@@ -58,7 +58,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
     Mit diesem Paket können Datenbankvorgänge in der Anwendung verwendet werden.
 
-4. Öffnen Sie in **Projektmappen-Explorer**im Projekt " **Notizen** " **Note.cs** im Ordner " **Models** ", und ersetzen Sie den vorhandenen Code durch den folgenden Code:
+4. Öffnen Sie im**Projektmappen-Explorer** im Projekt " **Notizen** " **Note.cs** im Ordner " **Models** ", und ersetzen Sie den vorhandenen Code durch den folgenden Code:
 
     ```csharp
     using System;
@@ -300,9 +300,9 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
     > [!WARNING]
     > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in den nachfolgenden Schritten korrigiert werden.
 
-5. Fügen Sie im **Lösungspad**dem **Notes** -Projekt einen neuen Ordner mit dem Namen " **Data** " hinzu.
+5. Fügen Sie im **Lösungspad** dem **Notes** -Projekt einen neuen Ordner mit dem Namen " **Data** " hinzu.
 
-6. Fügen Sie im **Lösungspad**im Projekt **Notes** dem Ordner **Data** eine neue Klasse mit dem Namen **notedatabase** hinzu.
+6. Fügen Sie im **Lösungspad** im Projekt **Notes** dem Ordner **Data** eine neue Klasse mit dem Namen **notedatabase** hinzu.
 
 7. Ersetzen Sie in **NoteDatabase.cs** den vorhandenen Code durch den folgenden Code:
 

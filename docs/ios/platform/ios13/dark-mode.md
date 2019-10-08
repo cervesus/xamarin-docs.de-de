@@ -34,7 +34,7 @@ Apple stellt ein Entwicklermenü in iOS 13 bereit, um zwischen dunklen und helle
 
 Der Asset-Katalog in Visual Studio unterstützt jetzt optionale Bilder und Farben für jeden Darstellungs Modus: Universell, dunkel und hell. Wenn Sie Ihre Bilder und Farben auf diese Weise definieren, wählt IOS automatisch das passende Bild und die gewünschte Farbe aus.
 
-Öffnen Sie die Datei **Assets. xcassets** in Ihrem IOS-Projekt, und fügen Sie einen neuen bildratz hinzu. Beachten Sie, dass Sie universelle, dunkle und helle Bilder in jeder der Ziel Auflösungen angeben können. Im folgenden Screenshot wird ein Bild für dunkel und für das Licht mit dem Namen "Microsoftlogo" angezeigt:
+Öffnen Sie die Datei **Assets.xcassets** in Ihrem iOS-Projekt, und fügen Sie einen neuen Bildsatz hinzu. Beachten Sie, dass Sie universelle, dunkle und helle Bilder in jeder der Zielauflösungen angeben können. Im folgenden Screenshot wird ein Bild für dunkel und hell mit dem Namen "MicrosoftLogo" angezeigt:
 
 ![Assets für helle und dunkle Modi](dark-mode-images/LightAndDark_AssetCatalog2.png)
 
