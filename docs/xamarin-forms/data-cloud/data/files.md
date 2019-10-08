@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fb3bbda3caee9fdbd490aaea7e119baf470eedd1
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760564"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997166"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung in Xamarin.Forms
 
@@ -58,7 +58,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 Diese Vorgänge werden in der Beispiel-App veranschaulicht, die eine Seite enthält, die Text speichert und lädt:
 
-[![Text speichern und Laden](files-images/saveandload-sml.png "Dateien in der App speichern und laden")](files-images/saveandload.png#lightbox "Dateien in der App speichern und laden")
+[![Speichern und Laden von Text]speichern und Laden von(files-images/saveandload-sml.png "Dateien in der APP")](files-images/saveandload.png#lightbox "Speichern und Laden von Dateien in der APP")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
@@ -68,34 +68,35 @@ Wenn Sie eine Datei in eine **.NET Standard**-Assembly einbetten möchten, müss
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Buildaktion auf „EmbeddedResource“ festlegen](files-images/vs-embeddedresource-sml.png "Buildaktion auf „EmbeddedResource“ festlegen")](files-images/vs-embeddedresource.png#lightbox "Buildaktion auf „EmbeddedResource“ festlegen")
+[Einstellungen für ![eingebettetes ressourcenbuild werden konfiguriert](files-images/vs-embeddedresource-sml.png "EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Festlegen von EmbeddedResource BuildAction")
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![In PCL eingebettete Textdatei, Buildaktion auf „EmbeddedResource“ festlegen](files-images/xs-embeddedresource-sml.png "Buildaktion auf „EmbeddedResource“ festlegen")](files-images/xs-embeddedresource.png#lightbox "Buildaktion auf „EmbeddedResource“ festlegen")
+[![Textdatei eingebettet in die .NET-Standardbibliothek, Konfigurieren der eingebetteten ressourcenbuild-Aktions](files-images/xs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Festlegen von EmbeddedResource BuildAction")
 
 -----
 
-`GetManifestResourceStream` wird verwendet, um über die **Ressourcen-ID** auf die eingebettete Datei zuzugreifen. Die Ressourcen-ID entspricht standardmäßig dem Dateinamen mit dem vorangestellten Standardnamespace für das Projekt, in das die Datei eingebettet ist. In diesem Fall ist die Assembly **WorkingWithFiles** und der Dateiname **PCLTextResource.txt**, die Ressourcen-ID entspricht also `WorkingWithFiles.PCLTextResource.txt`.
+`GetManifestResourceStream` wird verwendet, um über die **Ressourcen-ID** auf die eingebettete Datei zuzugreifen. Standardmäßig ist die Ressourcen-ID der Dateiname, dem der Standard Namespace für das Projekt vorangestellt ist, in das Sie eingebettet ist. in diesem Fall ist die Assembly **workingwithfiles** , und der Dateiname ist **libtextresource. txt**, sodass die Ressourcen-ID `WorkingWithFiles.LibTextResource.txt` ist.
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibTextResource.txt");
 string text = "";
-using (var reader = new System.IO.StreamReader (stream)) {
+using (var reader = new System.IO.StreamReader (stream))
+{  
     text = reader.ReadToEnd ();
 }
 ```
 
 Die `text`-Variable kann anschließend verwendet werden, um den Text darzustellen. Sie können Sie jedoch auch im Code verwenden. Dieser Screenshot der [Beispiel-App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles) veranschaulicht den Text, der in einem `Label`-Steuerelement gerendert wird.
 
- [![In PCL eingebettete Textdatei](files-images/pcltext-sml.png "In PCL eingebettete Textdatei in der App")](files-images/pcltext.png#lightbox "In PCL eingebettete Textdatei in der App")
+ [![Textdatei eingebettet in]die eingebettete Textdatei der .NET-Standardbibliothek(files-images/pcltext-sml.png "in .NET Standard in der APP angezeigter Bibliothek")](files-images/pcltext.png#lightbox "Eingebettete Textdatei in .NET Standard in der APP angezeigter Bibliothek")
 
 Das Laden und Deserialisieren einer XML-Datei ist genauso einfach. Der folgende Code veranschaulicht, wie eine XML-Datei aus einer Ressource geladen und deserialisiert wird und anschließend an ein `ListView`-Element gebunden wird, um angezeigt zu werden. Die XML-Datei enthält ein Array von `Monkey`-Objekten (die Klasse wird im Beispielcode definiert).
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
     var serializer = new XmlSerializer(typeof(List<Monkey>));
@@ -105,7 +106,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [![In PCL eingebettete XML-Datei, die in ListView angezeigt wird](files-images/pclxml-sml.png "In PCL eingebettete XML-Datei, die in ListView angezeigt wird")](files-images/pclxml.png#lightbox "In PCL eingebettete XML-Datei, die in ListView angezeigt wird")
+ [In der ![.NET-Standardbibliothek eingebettete XML-Datei, in ListView](files-images/pclxml-sml.png "Embedded XML file in der in ListView angezeigten .NET-Standardbibliothek") angezeigt.](files-images/pclxml.png#lightbox "In ListView angezeigte eingebettete XML-Datei in der .NET-Standardbibliothek")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -139,9 +140,9 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>Organisieren von Ressourcen
 
-In den oben genannten Beispielen wird davon ausgegangen, dass die Datei in das Stammverzeichnis des Projekts für die .NET Standard-Bibliothek eingebettet ist. In diesem Fall weist die Ressourcen-ID die Form **Namespace.Dateiname.Erweiterung** auf, z.B. `WorkingWithFiles.PCLTextResource.txt` oder `WorkingWithFiles.iOS.SharedTextResource.txt`.
+In den oben genannten Beispielen wird davon ausgegangen, dass die Datei in das Stammverzeichnis des Projekts für die .NET Standard-Bibliothek eingebettet ist. In diesem Fall weist die Ressourcen-ID die Form **Namespace.Dateiname.Erweiterung** auf, z.B. `WorkingWithFiles.LibTextResource.txt` oder `WorkingWithFiles.iOS.SharedTextResource.txt`.
 
-Es ist möglich, eingebettete Ressourcen in Ordnern zu organisieren. Wenn eine eingebettete Ressource in einem Ordner gespeichert wird, wird der Ordnername Teil der Ressourcen-ID (durch Punkte getrennt). Das Format der Ressourcen-ID entspricht dann **Namespace.Ordner.Dateiname.Erweiterung**. Wenn Sie die Dateien, die in der Beispiel-App verwendet werden, im Ordner **MyFolder** speichern würden, wären `WorkingWithFiles.MyFolder.PCLTextResource.txt` und `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt` die entsprechenden Ressourcen-IDs.
+Es ist möglich, eingebettete Ressourcen in Ordnern zu organisieren. Wenn eine eingebettete Ressource in einem Ordner gespeichert wird, wird der Ordnername Teil der Ressourcen-ID (durch Punkte getrennt). Das Format der Ressourcen-ID entspricht dann **Namespace.Ordner.Dateiname.Erweiterung**. Wenn Sie die Dateien, die in der Beispiel-App verwendet werden, im Ordner **MyFolder** speichern würden, wären `WorkingWithFiles.MyFolder.LibTextResource.txt` und `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt` die entsprechenden Ressourcen-IDs.
 
 <a name="Debugging_Embedded_Resources" />
 

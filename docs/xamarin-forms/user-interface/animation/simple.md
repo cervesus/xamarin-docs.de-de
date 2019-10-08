@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 71972f13f991bc5ad3ddf3c1c631fa7413290204
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 26068973fd91d5229b7e2108f5df46ae4476ef74
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759907"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997197"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Einfache Animationen in Xamarin.Forms
 
@@ -23,7 +23,7 @@ _Die ViewExtensions-Klasse enthält Erweiterungsmethoden, die verwendet werden k
 Die [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) -Klasse bietet die folgenden Erweiterungsmethoden, die verwendet werden können, um einfache Animationen zu erstellen:
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing)) Animiert die [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) und [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) Eigenschaften eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement).
-- [`ScaleTo`](xref:Xamarin.Forms.VisualElement.Scale) Animiert die [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaft eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement).
+- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) Animiert die [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaft eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement).
 - [`RelScaleTo`](xref:Xamarin.Forms.ViewExtensions.RelScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) gilt eine animierte stufenweisen Erhöhung oder Verringerung um die [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaft eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement).
 - [`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) Animiert die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) Eigenschaft eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement).
 - [`RelRotateTo`](xref:Xamarin.Forms.ViewExtensions.RelRotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) gilt eine animierte stufenweisen Erhöhung oder Verringerung um die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) Eigenschaft eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement).
@@ -79,13 +79,13 @@ Die folgenden Screenshots zeigen die relative Drehung auf jeder Plattform ausgef
 
 ### <a name="scaling"></a>Skalieren
 
-Das folgende Codebeispiel veranschaulicht die Verwendung der [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale) Methode zum Animieren der [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaft eine [ `Image` ](xref:Xamarin.Forms.Image):
+Das folgende Codebeispiel veranschaulicht die Verwendung der [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) Methode zum Animieren der [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaft eine [ `Image` ](xref:Xamarin.Forms.Image):
 
 ```csharp
 await image.ScaleTo (2, 2000);
 ```
 
-Dieser Code erstellt eine Animation die [ `Image` ](xref:Xamarin.Forms.Image) Instanz durch den Umstieg auf die doppelte Größe über 2 Sekunden (2000 Millisekunden). Die [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale) Methode ruft die aktuelle [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaftswert (Standardwert 1) für den Beginn der Animation und skaliert von diesem Wert, der als erstes Argument (2). Dies wirkt sich die Größe des Bilds erweitern, um das Doppelte der Größe.
+Dieser Code erstellt eine Animation die [ `Image` ](xref:Xamarin.Forms.Image) Instanz durch den Umstieg auf die doppelte Größe über 2 Sekunden (2000 Millisekunden). Die [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) Methode ruft die aktuelle [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaftswert (Standardwert 1) für den Beginn der Animation und skaliert von diesem Wert, der als erstes Argument (2). Dies wirkt sich die Größe des Bilds erweitern, um das Doppelte der Größe.
 
 Die folgenden Screenshots zeigen die Skalierung auf jeder Plattform ausgeführt:
 
@@ -106,7 +106,7 @@ Dieser Code erstellt eine Animation die [ `Image` ](xref:Xamarin.Forms.Image) In
 
 ### <a name="scaling-and-rotation-with-anchors"></a>Skalierung und Drehung mit Ankern
 
-Die [ `AnchorX` ](xref:Xamarin.Forms.VisualElement.AnchorX) und [ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY) Eigenschaften legen Sie den Mittelpunkt der Skalierung oder Drehung, für die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) und [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaften. Aus diesem Grund, deren Werte auch Auswirkungen auf die [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) und [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale) Methoden.
+Die [ `AnchorX` ](xref:Xamarin.Forms.VisualElement.AnchorX) und [ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY) Eigenschaften legen Sie den Mittelpunkt der Skalierung oder Drehung, für die [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) und [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaften. Aus diesem Grund, deren Werte auch Auswirkungen auf die [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) und [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) Methoden.
 
 Erhält ein [ `Image` ](xref:Xamarin.Forms.Image) in der Mitte eines Layouts platziert wurde, wird im folgenden Codebeispiel wird veranschaulicht, drehen das Bild, um den Mittelpunkt des Layouts durch Festlegen seiner [ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY) Eigenschaft:
 
@@ -179,7 +179,7 @@ await image.ScaleTo (2, 2000);
 await image.ScaleTo (1, 2000);
 ```
 
-In diesem Beispiel die [ `Image` ](xref:Xamarin.Forms.Image) skaliert wird, und gleichzeitig gedreht 4 Sekunden (4000 in Millisekunden). Die Skalierung der `Image` verwendet zwei aufeinanderfolgende Animationen, die zur gleichen Zeit wie die Drehung auftreten. Die [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) Methode ausgeführt wird, ohne eine `await` Operator und gibt sofort zurück, mit dem ersten [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale) Animation dann ab. Die `await` Operator auf der ersten `ScaleTo` Methodenaufruf wird verzögert, die zweite `ScaleTo` Aufruf bis der ersten Methode `ScaleTo` Methodenaufruf abgeschlossen wurde. An diesem Punkt die `RotateTo` Animation ist die Hälfte der Weise abgeschlossen und die `Image` um 180 Grad gedreht werden. In den letzten 2 Sekunden (2000 Millisekunden) die zweite `ScaleTo` Animation und `RotateTo` Animation beide abgeschlossen.
+In diesem Beispiel die [ `Image` ](xref:Xamarin.Forms.Image) skaliert wird, und gleichzeitig gedreht 4 Sekunden (4000 in Millisekunden). Die Skalierung der `Image` verwendet zwei aufeinanderfolgende Animationen, die zur gleichen Zeit wie die Drehung auftreten. Die [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) Methode ausgeführt wird, ohne eine `await` Operator und gibt sofort zurück, mit dem ersten [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) Animation dann ab. Die `await` Operator auf der ersten `ScaleTo` Methodenaufruf wird verzögert, die zweite `ScaleTo` Aufruf bis der ersten Methode `ScaleTo` Methodenaufruf abgeschlossen wurde. An diesem Punkt die `RotateTo` Animation ist die Hälfte der Weise abgeschlossen und die `Image` um 180 Grad gedreht werden. In den letzten 2 Sekunden (2000 Millisekunden) die zweite `ScaleTo` Animation und `RotateTo` Animation beide abgeschlossen.
 
 ### <a name="running-multiple-asynchronous-methods-concurrently"></a>Mehrere asynchrone Methoden gleichzeitig ausgeführt werden
 
@@ -194,7 +194,7 @@ await Task.WhenAny<bool>
 await image.ScaleTo (1, 2000);
 ```
 
-In diesem Beispiel die `Task.WhenAny` Methodenaufruf enthält zwei Aufgaben. Die erste Aufgabe dreht das Bild 4 Sekunden (4000 in Millisekunden), und der zweite Task skaliert das Bild mehr als 2 Sekunden (2000 Millisekunden). Wenn der zweite Task abgeschlossen ist, die `Task.WhenAny` Methodenaufruf abgeschlossen ist. Allerdings, obwohl die [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) Methode wird weiterhin ausgeführt, die zweite [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale) Methode beginnen kann.
+In diesem Beispiel die `Task.WhenAny` Methodenaufruf enthält zwei Aufgaben. Die erste Aufgabe dreht das Bild 4 Sekunden (4000 in Millisekunden), und der zweite Task skaliert das Bild mehr als 2 Sekunden (2000 Millisekunden). Wenn der zweite Task abgeschlossen ist, die `Task.WhenAny` Methodenaufruf abgeschlossen ist. Allerdings, obwohl die [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) Methode wird weiterhin ausgeführt, die zweite [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) Methode beginnen kann.
 
 Die `Task.WhenAll` Methode abgeschlossen wird, wenn alle Methoden in einer Auflistung abgeschlossen haben, wie im folgenden Codebeispiel gezeigt:
 

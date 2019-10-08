@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 291547f7d0fa77edf77b29762576494de0b1abb4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cdd68def895fea362d9ad3147e3d622471d73a63
+ms.sourcegitcommit: 4ff181101d76f048b949c9613b2c72cf02618f8b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757814"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71994891"
 ---
 # <a name="binding-an-aar"></a>Binden einer AAR-Datei
 
@@ -35,7 +35,7 @@ In dieser Anleitung werden die Grundlagen der Erstellung einer Bindungs Biblioth
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
-Wir erstellen eine Bindungs Bibliothek für ein Beispiel für eine Android-Archivdatei, die in Android Studio, [Textanalyzer. Aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true), erstellt wurde. Dafür. AAR enthält eine `TextCounter` Klasse mit statischen Methoden, die die Anzahl der Vokale und Konsonanten in einer Zeichenfolge zählen. Außerdem enthält **Textanalyzer. Aar** eine Bildressource, mit der die Zählergebnisse angezeigt werden können.
+Wir erstellen eine Bindungs Bibliothek für ein Beispiel für eine Android-Archivdatei, die in Android Studio, [Textanalyzer. Aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true), erstellt wurde. Dafür. AAR enthält eine `TextCounter`-Klasse mit statischen Methoden, die die Anzahl der Vokale und Konsonanten in einer Zeichenfolge zählen. Außerdem enthält **Textanalyzer. Aar** eine Bildressource, mit der die Zählergebnisse angezeigt werden können.
 
 Wir verwenden die folgenden Schritte, um eine Bindungs Bibliothek aus der zu erstellen. AAR-Datei:
 
@@ -51,7 +51,7 @@ Wir verwenden die folgenden Schritte, um eine Bindungs Bibliothek aus der zu ers
 
 Nachdem wir die Bindungs Bibliothek erstellt haben, entwickeln wir eine kleine Android-App, die den Benutzer zur Eingabe einer Text Zeichenfolge auffordert. AAR-Methoden, um den Text zu analysieren, ruft das Bild aus ab. Aar und zeigt die Ergebnisse zusammen mit dem Bild an.
 
-Die Beispiel-App greift auf `TextCounter` die-Klasse von **Textanalyzer. Aar**zu:
+Die Beispiel-App greift auf die `TextCounter`-Klasse von **Textanalyzer. Aar**zu:
 
 ```java
 package com.xamarin.textcounter;
@@ -68,7 +68,7 @@ public class TextCounter
 
 Außerdem wird in dieser Beispiel-App eine Bildressource abgerufen und angezeigt, die in **Textanalyzer. Aar**verpackt ist:
 
-[![Xamarin-affabbild](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
+[![xamarin-affabbild](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
 Diese Bildressource befindet sich in " **Textanalyzer. Aar**" in " **Res/drawable/Monkey. png** ".
 
@@ -78,7 +78,7 @@ Bevor Sie mit den folgenden Schritten beginnen, laden Sie die Beispieldatei " [T
 
 1. Erstellen Sie ein neues Bindungs Bibliotheksprojekt, das mit der Vorlage Android-Bindungs Bibliothek beginnt. Sie können entweder Visual Studio für Mac oder Visual Studio verwenden (die folgenden Screenshots zeigen Visual Studio, aber Visual Studio für Mac ist sehr ähnlich). Nennen Sie die Projekt Mappe " **aarbinding**":
 
-    [![Erstellen eines Projekts für die Projekt Erstellung](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
+    [![Create-Projekt "aarbindungen"](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
 
 2. Die Vorlage **enthält einen jar** -Ordner, in dem Sie Ihre hinzufügen. Aar (s) zum Bindungs Bibliotheksprojekt. Klicken Sie mit der rechten Maustaste auf den Ordner **Jars** , und wählen Sie dann **> vorhandenes Element**
 
@@ -86,21 +86,21 @@ Bevor Sie mit den folgenden Schritten beginnen, laden Sie die Beispieldatei " [T
 
 3. Navigieren Sie zur zuvor heruntergeladenen Datei **Textanalyzer. Aar** , wählen Sie Sie aus, und klicken Sie auf **Hinzufügen**:
 
-    [![Hinzufügen von textanalayzer. Aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
+    [![fügen Sie textanalayzer. Aar hinzu.](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 4. Vergewissern Sie sich, dass die Datei **Textanalyzer. Aar** dem Projekt erfolgreich hinzugefügt wurde:
 
     [![Die Datei "Textanalyzer. Aar" wurde hinzugefügt.](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
-5. Legen Sie die Buildaktion für **Textanalyzer. Aar** auf `LibraryProjectZip`fest. Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Textanalyzer. Aar** , um die Buildaktion festzulegen. In Visual Studio kann die Buildaktion im Bereich " **Eigenschaften** " festgelegt werden:
+5. Legen Sie die Buildaktion für **Textanalyzer. Aar** auf `LibraryProjectZip` fest. Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Textanalyzer. Aar** , um die Buildaktion festzulegen. In Visual Studio kann die Buildaktion im Bereich " **Eigenschaften** " festgelegt werden:
 
-    [![Die Buildaktion "Textanalyzer. Aar" wird auf libraryprojectzip festgelegt.](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
+    [![setting the Textanalyzer. Aar Build Action to libraryprojectzip](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
 6. Öffnen Sie die Projekteigenschaften, um das *Ziel Framework*zu konfigurieren. , Wenn die. AAR verwendet alle Android-APIs, legen Sie das Ziel Framework auf die API-Ebene fest, auf der das. AAR erwartet. (Weitere Informationen zur Ziel Framework-Einstellung und den Android-API-Ebenen im Allgemeinen finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).)
 
     Legen Sie die Ziel-API-Ebene für Ihre Bindungs Bibliothek fest. In diesem Beispiel können Sie die neueste Plattform-API-Ebene (API-Ebene 23) verwenden, da der **Textanalyzer** nicht von Android-APIs abhängig ist:
 
-    [![Festlegen der Zielebene auf API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
+    [![festlegen der Zielebene auf API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
 7. Erstellen Sie die Bindungs Bibliothek. Das Bindungs Bibliotheksprojekt sollte erfolgreich erstellt werden und eine Ausgabe erstellen. DLL an folgendem Speicherort: **' Aarbinding/bin/Debug/'**
 
@@ -114,25 +114,25 @@ Bevor Sie mit den folgenden Schritten beginnen, laden Sie die Beispieldatei " [T
 
 2. Klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** des Projekts **bindingtest** , und wählen Sie **Verweis hinzufügen...** aus:
 
-    [![Klicken auf Verweis hinzufügen](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
+    [![ Klicken Sie auf Verweis hinzufügen.](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
 
 3. Wählen Sie das zuvor erstellte Projekt **aarbinding** aus, und klicken Sie auf **OK**:
 
-    [![Überprüfen des Aar-Bindungs Projekts](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
+    [![Das Aar-Bindungs Projekt überprüfen](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
 4. Öffnen Sie den Knoten **Verweise** des Projekts **bindingtest** , um zu überprüfen, ob **der Verweis auf** die verweisende Datei vorhanden ist:
 
-    [![' Aarbinding ' ist unter ' Verweise ' aufgeführt](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
+    [![aarbinding ist unter "Verweise" aufgeführt.](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
-Wenn Sie den Inhalt des Bindungs Bibliotheks Projekts anzeigen möchten, können Sie auf den Verweis doppelklicken, um ihn im **Objektkatalog**zu öffnen. Sie können den zugeordneten Inhalt des `Com.Xamarin.Textcounter` Namespaces sehen (zugeordnet vom Java `com.xamarin.textanalyzezr` -Paket), und Sie können die Member der `TextCounter` Klasse anzeigen:
+Wenn Sie den Inhalt des Bindungs Bibliotheks Projekts anzeigen möchten, können Sie auf den Verweis doppelklicken, um ihn im **Objektkatalog**zu öffnen. Sie können den zugeordneten Inhalt des `Com.Xamarin.Textcounter`-Namespace sehen (zugeordnet aus dem Java-`com.xamarin.textanalyzezr`-Paket), und Sie können die Member der `TextCounter`-Klasse anzeigen:
 
 [![Anzeigen der Objektkatalog](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
 
-Der obige Screenshot zeigt die zwei `TextAnalyzer` Methoden, die von der Beispiel-APP `NumConsonants` aufgerufen werden: (die die `numConsonants` zugrunde liegende Java- `NumVowels` Methode umschließt) und ( `numVowels` die die zugrunde liegende Java-Methode umschließt).
+Der obige Screenshot hebt die zwei `TextAnalyzer`-Methoden hervor, die von der Beispiel-app aufgerufen werden: `NumConsonants` (das die zugrunde liegende Java `numConsonants`-Methode umschließt) und `NumVowels` (das die zugrunde liegende Java `numVowels`-Methode umschließt).
 
 ### <a name="accessing-aar-types"></a>Den. AAR-Typen
 
-Nachdem Sie einen Verweis auf die-app hinzugefügt haben, der auf die Bindungs Bibliothek verweist, können Sie in auf Java-Typen zugreifen. AAR wie Sie auf Typen C# zugreifen würden (Dank der C# Wrapper). C#App-Code kann `TextAnalyzer` Methoden wie im folgenden Beispiel gezeigt aufzurufen:
+Nachdem Sie einen Verweis auf die-app hinzugefügt haben, der auf die Bindungs Bibliothek verweist, können Sie in auf Java-Typen zugreifen. AAR wie Sie auf Typen C# zugreifen würden (Dank der C# Wrapper). C#App-Code kann `TextAnalyzer`-Methoden wie im folgenden Beispiel gezeigt aufgerufen werden:
 
 ```csharp
 using Com.Xamarin.Textcounter;
@@ -141,16 +141,16 @@ int numVowels = TextCounter.NumVowels (myText);
 int numConsonants = TextCounter.NumConsonants (myText);
 ```
 
-Im obigen Beispiel rufen wir statische Methoden in der `TextCounter` -Klasse auf. Sie können jedoch auch Klassen instanziieren und Instanzmethoden aufzurufen. Beispielsweise, wenn Ihre. AAR umschließt eine Klasse `Employee` mit dem Namen, die `buildFullName`über die Instanzmethode verfügt `MyClass` . Sie können Sie wie folgt instanziieren und verwenden:
+Im obigen Beispiel rufen wir statische Methoden in der `TextCounter`-Klasse auf. Sie können jedoch auch Klassen instanziieren und Instanzmethoden aufzurufen. Beispielsweise, wenn Ihre. AAR umschließt eine Klasse mit dem Namen "`Employee`", die die Instanzmethode `buildFullName` aufweist. Sie können `MyClass` instanziieren und verwenden, wie hier zu sehen ist:
 
 ```csharp
 var employee = new Com.MyCompany.MyProject.Employee();
 var name = employee.BuildFullName ();
 ```
 
-Mit den folgenden Schritten wird der app Code hinzugefügt, sodass der Benutzer zur Eingabe von Text `TextCounter` aufgefordert wird, der zum Analysieren des Texts verwendet und die Ergebnisse angezeigt werden.
+Mit den folgenden Schritten wird der app Code hinzugefügt, sodass der Benutzer zur Eingabe von Text aufgefordert wird, `TextCounter` verwendet wird, um den Text zu analysieren, und dann die Ergebnisse anzeigt.
 
-Ersetzen Sie das **bindingtest** -Layout (**Main. axml**) durch den folgenden XML-Code. Dieses Layout verfügt über `EditText` eine für Texteingabe und zwei Schaltflächen zum Initiieren von Vokal und Konsonanten Anzahlen:
+Ersetzen Sie das **bindingtest** -Layout (**Main. axml**) durch den folgenden XML-Code. Dieses Layout verfügt über eine `EditText` für Texteingabe und zwei Schaltflächen zum Initiieren von Vokal-und Konsonanten Anzahlen:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -188,7 +188,7 @@ Ersetzen Sie das **bindingtest** -Layout (**Main. axml**) durch den folgenden XM
 </LinearLayout>
 ```
 
-Ersetzen Sie den Inhalt von **MainActivity.cs** durch den folgenden Code. Wie in diesem Beispiel gezeigt, werden von den Schaltflächen-Ereignis `TextCounter` Handlern umschließende Methoden aufgerufen, die sich in befinden. Aar und verwenden Sie zum Anzeigen der Ergebnisse die Ergebnisse. Beachten Sie `using` die-Anweisung für den Namespace der gebundenen Bibliothek (in diesem `Com.Xamarin.Textcounter`Fall):
+Ersetzen Sie den Inhalt von **MainActivity.cs** durch den folgenden Code. Wie in diesem Beispiel gezeigt, werden von den Schaltflächen-Ereignis Handlern umschließende `TextCounter`-Methoden aufgerufen, die sich in befinden. Aar und verwenden Sie zum Anzeigen der Ergebnisse die Ergebnisse. Beachten Sie die `using`-Anweisung für den Namespace der gebundenen Bibliothek (in diesem Fall `Com.Xamarin.Textcounter`):
 
 ```csharp
 using System;
@@ -246,9 +246,9 @@ namespace BindingTest
 }
 ```
 
-Kompilieren Sie das Projekt **bindingtest** , und führen Sie es aus. Die APP wird gestartet und zeigt den Screenshot auf der linken Seite an `EditText` (der wird mit einem Text initialisiert, Sie können ihn aber tippen, um ihn zu ändern). Wenn Sie auf **Anzahl Vokale**tippen, zeigt ein Toast die Anzahl von Vokalen an, die auf der rechten Seite angezeigt werden:
+Kompilieren Sie das Projekt **bindingtest** , und führen Sie es aus. Die APP wird gestartet und zeigt den Screenshot auf der linken Seite an (der `EditText` wird mit Text initialisiert, Sie können ihn aber tippen, um ihn zu ändern). Wenn Sie auf **Anzahl Vokale**tippen, zeigt ein Toast die Anzahl von Vokalen an, die auf der rechten Seite angezeigt werden:
 
-[![Screenshots aus dem Ausführen von bindingtest](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
+[![ Screenshots aus dem Ausführen von bindingtest](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
 Tippen Sie auf die Schaltfläche **Zähler Konsonanten** . Außerdem können Sie die Textzeile ändern und erneut auf diese Schaltflächen tippen, um eine andere Anzahl von Vokal-und Konsonanten zu testen.
 
@@ -256,13 +256,13 @@ Tippen Sie auf die Schaltfläche **Zähler Konsonanten** . Außerdem können Sie
 
 Die xamarin-Tools werden die **R** -Daten aus der zusammengeführt. Sie werden in die **Ressourcen** Klasse Ihrer APP eingeteilt. Daher können Sie auf zugreifen. AAR-Ressourcen aus dem Layout (und Code Behind) auf die gleiche Weise wie Sie auf Ressourcen zugreifen, die sich im **Ressourcen** Pfad Ihres Projekts befinden.
 
-Für den Zugriff auf eine Bildressource verwenden Sie den **Resource. drawable** -Namen für das Bild, das in der verpackt ist. Aar. Beispielsweise können Sie in der auf " **Image. png** " verweisen. AAR-Datei `@drawable/image`mit:
+Für den Zugriff auf eine Bildressource verwenden Sie den **Resource. drawable** -Namen für das Bild, das in der verpackt ist. Aar. Beispielsweise können Sie in der auf " **Image. png** " verweisen. AAR-Datei mit `@drawable/image`:
 
 ```xml
 <ImageView android:src="@drawable/image" ... />
 ```
 
-Sie können auch auf Ressourcen Layouts zugreifen, die sich in befinden. Aar. Zu diesem Zweck verwenden Sie den **Resource. Layout** -Namen für das Layout, das in der verpackt ist. Aar. Beispiel:
+Sie können auch auf Ressourcen Layouts zugreifen, die sich in befinden. Aar. Zu diesem Zweck verwenden Sie den **Resource. Layout** -Namen für das Layout, das in der verpackt ist. Aar. Zum Beispiel:
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
@@ -270,7 +270,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 Das **Textanalyzer. Aar** -Beispiel enthält eine Bilddatei, die sich in " **Res/drawable/Monkey. png**" befindet. Wir greifen auf diese Bildressource zu und verwenden Sie in unserer Beispiel-App:
 
-Bearbeiten Sie das **bindingtest** -Layout (**Main. axml**), `ImageView` und fügen Sie am Ende `LinearLayout` des Containers ein hinzu. Dadurch `ImageView` wird das Bild angezeigt, **@drawable/monkey** das sich unter befindet. dieses Bild wird aus dem Ressourcenabschnitt von **Textanalyzer. Aar**geladen:
+Bearbeiten Sie das **bindingtest** -Layout (**Main. axml**), und fügen Sie am Ende des `LinearLayout`-Containers eine `ImageView` hinzu. Dieses `ImageView` zeigt das Bild an **\@drawable/Monkey**; Dieses Bild wird aus dem Ressourcenabschnitt von **Textanalyzer. Aar**geladen:
 
 ```xml
     ...
@@ -284,9 +284,9 @@ Bearbeiten Sie das **bindingtest** -Layout (**Main. axml**), `ImageView` und fü
 </LinearLayout>
 ```
 
-Kompilieren Sie das Projekt **bindingtest** , und führen Sie es aus. Die APP wird gestartet und zeigt den Screenshot auf der linken &ndash; Seite an, wenn Sie auf **Anzahl Konsonanten**tippen. die Ergebnisse werden wie auf der rechten Seite angezeigt:
+Kompilieren Sie das Projekt **bindingtest** , und führen Sie es aus. Die APP wird gestartet und zeigt den Screenshot auf der linken Seite an &ndash; Wenn Sie auf **Anzahl Konsonanten**tippen, werden die Ergebnisse wie auf der rechten Seite angezeigt:
 
-[![Bindingtest zeigt die Anzahl der Konsonanten an](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
+[![bindingtest zeigt die Anzahl der Konsonanten an](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 Herzlichen Glückwunsch! Sie haben erfolgreich eine Java-Bibliothek gebunden. Aar!
 
