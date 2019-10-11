@@ -200,6 +200,7 @@
 ### [ProgressBar](user-interface/progressbar.md)
 ### [SearchBar](user-interface/searchbar.md)
 ### [Schieberegler](user-interface/slider.md)
+### [Begrüßungsbildschirm](user-interface/splashscreen.md)
 ### [Stepper](user-interface/stepper.md)
 ### [Stile](user-interface/styles/index.md)
 #### [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](user-interface/styles/xaml/index.md)

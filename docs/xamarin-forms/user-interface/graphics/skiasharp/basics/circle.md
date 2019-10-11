@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a3eca2036b0e4c2722e034e48ad4ca3054343a89
+ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759544"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72032584"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in SkiaSharp
 
@@ -26,7 +26,7 @@ Die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamar
 
 ![](circle-images/circleexample.png "Ein blauer Kreis rot umrandet")
 
-Die [ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page-Klasse leitet sich von `ContentPage` und enthält zwei `using` Direktiven für die SkiaSharp-Namespaces:
+Die [ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page-Klasse leitet sich von `ContentPage` und enthält zwei `using` Direktiven für die SkiaSharp-Namespaces:
 
 ```csharp
 using SkiaSharp;
@@ -143,7 +143,7 @@ Dieses Mal die `DrawCircle` Aufruf füllt den Kreis, der mithilfe der neuen Eige
 
 So sieht das Programm ausgeführt wird, unter iOS, Android und die universelle Windows-Plattform aus:
 
-[![](circle-images/simplecircle-small.png "Dreifacher Screenshot der Seite einfachen Kreises")](circle-images/simplecircle-large.png#lightbox "dreifachen Screenshot der Seite einfachen Kreises")
+[![](circle-images/simplecircle-small.png "Dreifacher Screenshot der einfachen kreisseite")](circle-images/simplecircle-large.png#lightbox "Dreifacher Screenshot der einfachen kreisseite")
 
 Wenn das Programm selbst ausführen, können Sie aktivieren das Telefon oder den Simulator auf die Seite, um festzustellen, wie die Abbildung neu gezeichnet wird. Jedes Mal neu gezeichnet wird, die Grafik muss die `PaintSurface` -Ereignishandler erneut aufgerufen wird.
 
@@ -154,7 +154,7 @@ Ein `SKPaint` Objekt ist nicht viel mehr als eine Auflistung von Grafiken, die E
 > [!NOTE]
 > Die `SKPaint` -Klasse definiert ein [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) in das Rendern von Grafiken Antialiasing zu aktivieren. Anti-Aliasing im Allgemeinen führt visuell weichere Kanten, sollten Sie wahrscheinlich zum Festlegen dieser Eigenschaft auf `true` in den meisten Ihrer `SKPaint` Objekte. Der Einfachheit halber, diese Eigenschaft ist _nicht_ in den meisten die Beispielseiten festgelegt.
 
-Obwohl die Breite des Kreis Gliederung als 25 Pixel &mdash; oder ein Viertel des Radius des Kreises &mdash; angegeben ist, scheint es dünner zu sein, und es gibt einen guten Grund dafür: Die Hälfte der Linienbreite wird durch den blauen Kreis verdeckt. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
+Obwohl die Breite des Kreis Gliederung als 25 Pixel festgelegt ist &mdash; oder ein Viertel des Radius des Kreises &mdash; scheint es dünner zu sein, und es gibt einen guten Grund dafür: Die Hälfte der Linienbreite wird durch den blauen Kreis verdeckt. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
 
 Im folgenden Beispiel in der [Integrieren von Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) Artikel veranschaulicht dies visuell.
 

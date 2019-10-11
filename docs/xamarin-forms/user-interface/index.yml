@@ -145,6 +145,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: slider.md
             title: Slider
+          - href: splashscreen.md
+            html: Informationen zum Erstellen von Begrüßungsbildschirmen für Xamarin.Forms-Anwendungen
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: splashscreen.md
+            title: Begrüßungsbildschirm
           - href: stepper.md
             html: 'Informationen darüber, wie einem Benutzer ermöglicht wird, einen numerischen Wert aus mehreren Werten mit dem Stepper-Steuerelement auszuwählen'
             image:

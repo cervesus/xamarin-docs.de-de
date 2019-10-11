@@ -156,7 +156,7 @@ Optional können Sie die `ShouldPerformSegue` -Methode überschreiben und Steuer
 
 ### <a name="creating-custom-segues"></a>Erstellen von benutzerdefinierten.
 
-Es kann vorkommen, dass Ihre APP einen "*"-Typ erfordert, der nicht von den in macOS definierten Build-in-Standpunkten bereitgestellt wird. Wenn dies der Fall ist, können Sie einen benutzerdefinierten segue erstellen, der in der Interface Builder von Xcode zugewiesen werden kann, wenn Sie die Benutzeroberfläche der APP anordnen.
+Es kann vorkommen, dass Ihre APP einen -Typ erfordert, der nicht von den in macOS definierten Build-in-Standpunkten bereitgestellt wird. Wenn dies der Fall ist, können Sie einen benutzerdefinierten segue erstellen, der in der Interface Builder von Xcode zugewiesen werden kann, wenn Sie die Benutzeroberfläche der APP anordnen.
 
 Um z. b. einen neuen segue-Typ zu erstellen, der den aktuellen Ansichts Controller innerhalb eines Fensters ersetzt (anstatt die zielszene in einem neuen Fenster zu öffnen), können wir den folgenden Code verwenden:
 
