@@ -253,7 +253,7 @@
 #### [Farbe für Eingabecursor](platform/ios/entry-cursor-color.md)
 #### [Schriftgrad für Einträge](platform/ios/entry-font-size.md)
 #### [Formatting](platform/ios/formatting.md)
-#### [iPad: Präsentationsformat für modale Seiten](platform/ios/ipad-page-presentation-style.md)
+#### [Präsentationsformat für modale Seiten](platform/ios/page-presentation-style.md)
 #### [Große Seitentitel](platform/ios/page-large-title.md)
 #### [ListView-Gruppenkopfformat](platform/ios/listview-group-header-style.md)
 #### [ListView-Zeilenanimationen](platform/ios/listview-row-animations.md)
