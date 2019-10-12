@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec44e32c3eb0d0d436a497ddb14c86af1de8d703
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769579"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273161"
 ---
 # <a name="passkit-in-xamarinios"></a>Passkit in xamarin. IOS
 
@@ -56,7 +56,7 @@ Alle Teil des Ökosystems verfügen über eine eindeutig definierte Rolle:
 - **Wallet** – die integrierte IOS-APP von Apple, die Pass-Stores speichert und anzeigt. Dies ist die einzige Stelle, an der Pass-Through zur Verwendung in der realen Welt gerendert werden (d. h., der Barcode wird zusammen mit allen lokalisierten Daten im Durchlauf angezeigt).
 - **Begleitende apps** – IOS 6-apps, die von den Pass Anbietern erstellt werden, um die Funktionalität der von Ihnen bereitzustellen, z. b. das Hinzufügen eines Werts zu einer Geschäfts Karte, das Ändern des Arbeitsplatzes bei einem boardingdurchlauf oder einer anderen Geschäfts spezifischen Funktion Begleit-apps sind nicht erforderlich, damit ein Pass nützlich ist.
 - **Der Server** – ein sicherer Server, auf dem Durchgänge generiert und für die Verteilung signiert werden kann. Ihre begleitende App kann eine Verbindung mit Ihrem Server herstellen, um neue Pass-oder Anforderungs Updates für vorhandene Pass-ins zu generieren. Sie können optional die Webdienst-API implementieren, die von Wallet zum Aktualisieren von Durchläufen aufgerufen wird.
-- **APNs-Server** – der Server hat die Möglichkeit, Wallet über Updates an einen Pass auf einem bestimmten Gerät mithilfe von APNs zu benachrichtigen. Pushen Sie eine Benachrichtigung an Wallet, um Details zur Änderung an Ihren Server zu wenden. Begleit Anwendungen müssen keine APNs für dieses Feature implementieren (Sie können auf `PKPassLibraryDidChangeNotification` lauschen).
+- **APNs-Server** – der Server hat die Möglichkeit, Wallet über Updates an einen Pass auf einem bestimmten Gerät mithilfe von APNs zu benachrichtigen. Pushen Sie eine Benachrichtigung an Wallet, um Details zur Änderung an Ihren Server zu wenden. Begleit Anwendungen müssen für dieses Feature keine APNs implementieren (Sie können die `PKPassLibraryDidChangeNotification` lauschen).
 - **Kanal-apps** – Anwendungen, die keine direkte Bearbeitung (wie begleitende Apps) ausführen, jedoch das Hilfsprogramm verbessern können, indem Sie "Pass" erkennen und zulassen, dass Sie in Wallet eingefügt werden. E-Mail-Clients, Netzwerke für soziale Netzwerke und andere Datenaggregations-Apps können alle Anlagen oder Verknüpfungen zu Durchläufen haben.
 
 Das gesamte Ökosystem sieht Komplex aus. es ist also erwähnenswert, dass einige Komponenten optional sind und viel einfachere passkit-Implementierungen möglich sind.
@@ -85,7 +85,7 @@ Eine Pass Datei ist tatsächlich ein ZIP-Archiv mit der Erweiterung **. pkpass**
 
 - " **Pass. JSON** " – erforderlich. Enthält alle Informationen für den Durchlauf.
 - **Manifest. JSON** – erforderlich. Enthält SHA1-Hashes für jede Datei im Durchlauf außer der Signatur Datei und dieser Datei (Manifest. Json).
-- **Signatur** – erforderlich. Wird erstellt, indem `manifest.json` die Datei mit dem Zertifikat signiert wird, das im IOS-Bereitstellungs Portal generiert wurde.
+- **Signatur** – erforderlich. Wird erstellt, indem die `manifest.json`-Datei mit dem Zertifikat signiert wird, das im IOS-Bereitstellungs Portal generiert wurde.
 - **Logo. png** – optional.
 - **Background. png** – optional.
 - **Icon. png** – optional.
@@ -101,11 +101,11 @@ JSON ist das Format, da Pass-in der Regel auf einem Server erstellt werden – d
 
 - **teamidentifier** – Hiermit werden alle von Ihnen an Ihr App Store-Konto generierten weitergeleitet. Dieser Wert ist im IOS-Bereitstellungs Portal sichtbar.
 - **passtypeidentifier** – registrieren Sie sich im Bereitstellungs Portal, um Pass-by-Gruppen zu gruppieren (wenn Sie mehr als einen Typ entwickeln). Beispielsweise könnte ein Coffee Store einen Pass-Card-Passtyp erstellen, damit Ihre Kunden Treue Gutschriften erhalten können, aber auch einen separaten Coupon passentyp zum Erstellen und Verteilen von Rabattcoupons. Der gleiche Kaffeehandel hält sogar Live Musikereignisse und gibt Ereignis Ticket Pass für diese aus.
-- **serialNumber** – eine eindeutige Zeichenfolge in `passTypeidentifier` diesem. Der Wert ist für Wallet nicht transparent, aber wichtig für die Nachverfolgung spezifischer Durchgänge bei der Kommunikation mit dem Server.
+- **serialNumber** – eine eindeutige Zeichenfolge innerhalb dieses `passTypeidentifier`. Der Wert ist für Wallet nicht transparent, aber wichtig für die Nachverfolgung spezifischer Durchgänge bei der Kommunikation mit dem Server.
 
 Es gibt eine große Anzahl von anderen JSON-Schlüsseln in jedem Durchlauf, ein Beispiel, das unten dargestellt wird:
 
-``` 
+```
 {
    "passTypeIdentifier":"com.xamarin.passkitdoc.banana",  //Type Identifier (iOS Provisioning Portal)
    "formatVersion":1,                                     //Always 1 (for now)
@@ -192,16 +192,16 @@ Kann über Push oder über die passkit-API aktualisiert werden, damit das Datum/
 
 ### <a name="localization"></a>Lokalisierung
 
-Das Übersetzen eines Pass-Through in mehrere Sprachen ähnelt dem Lokalisieren einer IOS-Anwendung – erstellen Sie sprach `.lproj` spezifische Verzeichnisse mit der Erweiterung, und platzieren Sie die lokalisierten Elemente in. Text Übersetzungen sollten in eine `pass.strings` Datei eingegeben werden, während lokalisierte Bilder den gleichen Namen wie das Image aufweisen, das Sie im Durchlauf Stamm ersetzen.
+Das Übersetzen eines Pass-Through in mehrere Sprachen ähnelt dem Lokalisieren einer IOS-Anwendung – erstellen Sie sprachspezifische Verzeichnisse mit der Erweiterung "`.lproj`", und platzieren Sie die lokalisierten Elemente in. Text Übersetzungen sollten in eine `pass.strings`-Datei eingegeben werden, während lokalisierte Bilder den gleichen Namen wie das Image aufweisen, das Sie im Durchlauf Stamm ersetzen.
 
 ## <a name="security"></a>Sicherheit
 
 Pässe werden mit einem privaten Zertifikat signiert, das Sie im IOS-Bereitstellungs Portal generieren. Die Schritte zum Signieren des bestanden lauten wie folgt:
 
-1. Berechnen Sie einen SHA1-Hash für jede Datei im Pass-Verzeichnis (schließen Sie `manifest.json` weder `signature` die-Datei noch die-Datei ein, die in dieser Phase überhaupt nicht vorhanden sein sollte).
-1. Schreiben `manifest.json` Sie als JSON-Schlüssel-Wert-Liste jedes Datei namens mit dem Hashwert.
-1. Verwenden Sie das Zertifikat, um `manifest.json` die Datei zu signieren, und schreiben Sie `signature` das Ergebnis in eine Datei namens.
-1. Packen Sie alles nach oben, und übergeben Sie der `.pkpass` resultierenden Datei eine Dateierweiterung.
+1. Berechnen Sie einen SHA1-Hash für jede Datei im Pass-Verzeichnis (schließen Sie die Datei `manifest.json` oder `signature` nicht ein, die nicht auf der gleichen Stufe vorhanden sein sollte).
+1. Schreiben Sie `manifest.json` als JSON-Schlüssel-Wert-Liste jedes Datei namens mit dem Hashwert.
+1. Verwenden Sie das Zertifikat zum Signieren der Datei `manifest.json`, und schreiben Sie das Ergebnis in eine Datei mit dem Namen `signature`.
+1. Packen Sie alles nach oben, und übergeben Sie der resultierenden Datei eine Dateierweiterung `.pkpass`.
 
 Da der private Schlüssel erforderlich ist, um den Durchlauf zu signieren, sollte dieser Vorgang nur auf einem sicheren Server durchgeführt werden, den Sie steuern. Verteilen Sie Ihre Schlüssel nicht zum Testen und Generieren von Durchläufen in einer Anwendung.
 
@@ -222,9 +222,9 @@ Gehen Sie folgendermaßen vor, um eine Passtyp-ID zu erstellen.
 
 Der erste Schritt besteht darin, eine Passtyp-ID für jeden unterstützten _Typ_ von Durchlauf einzurichten. Die Pass-ID (oder der verlauftyp Bezeichner) erstellt einen eindeutigen Bezeichner für den Durchlauf. Wir verwenden diese ID, um den Pass mit Ihrem Entwicklerkonto mithilfe eines Zertifikats zu verknüpfen.
 
-1. Navigieren Sie im [IOS-Bereitstellungs Portal im Abschnitt Zertifikate, Bezeichner und Profile](https://developer.apple.com/account/overview.action)zu **Identifizierer** , und wählen Sie **Passtyp-IDs** aus. Wählen Sie dann **+** die Schaltfläche aus, um einen neuen Passtyp zu erstellen: [![](passkit-images/passid.png "Neuen Passtyp erstellen")](passkit-images/passid.png#lightbox)
+1. Navigieren Sie im [IOS-Bereitstellungs Portal im Abschnitt Zertifikate, Bezeichner und Profile](https://developer.apple.com/account/overview.action)zu **Identifizierer** , und wählen Sie **Passtyp-IDs** aus. Wählen Sie dann die Schaltfläche **+** aus, um einen neuen Passtyp zu erstellen: [![](passkit-images/passid.png "Neuen Passtyp erstellen")](passkit-images/passid.png#lightbox)
 
-2. Geben Sie eine **Beschreibung** (Name) und einen **Bezeichner** (eindeutige Zeichenfolge) für den Durchlauf an. Beachten Sie, dass alle Pass-Type-IDs mit `pass.` der Zeichenfolge beginnen müssen `pass.com.xamarin.coupon.banana` , die wir in diesem Beispiel verwenden: [![](passkit-images/register.png "Angeben einer Beschreibung und eines Bezeichners")](passkit-images/register.png#lightbox)
+2. Geben Sie eine **Beschreibung** (Name) und einen **Bezeichner** (eindeutige Zeichenfolge) für den Durchlauf an. Beachten Sie, dass alle Pass-Type-IDs mit der Zeichenfolge beginnen müssen `pass.` in diesem Beispiel verwenden wir `pass.com.xamarin.coupon.banana`: [![](passkit-images/register.png "Angeben einer Beschreibung und eines Bezeichners")](passkit-images/register.png#lightbox)
 
 3. Bestätigen Sie die Pass-ID durch Drücken der Schaltfläche **registrieren** .
 
@@ -259,20 +259,20 @@ Nachdem wir den Passtyp erstellt haben, können wir manuell einen Durchlauf zum 
 - Signieren Sie die Datei Manifest. JSON mit der heruntergeladenen Datei Certificate. P12.
 - Zippen Sie den Inhalt des Verzeichnisses, und benennen Sie ihn mit der Erweiterung. pkpass um
 
-Im [Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) für diesen Artikel sind einige Quelldateien vorhanden, die verwendet werden können, um einen Durchlauf zu generieren. Verwenden Sie die Dateien im `CouponBanana.raw` Verzeichnis des Verzeichnisses "kreateapassmanual". Die folgenden Dateien sind vorhanden:
+Im [Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) für diesen Artikel sind einige Quelldateien vorhanden, die verwendet werden können, um einen Durchlauf zu generieren. Verwenden Sie die Dateien im Verzeichnis `CouponBanana.raw` des Verzeichnisses "kreateapassmanual". Die folgenden Dateien sind vorhanden:
 
  [![](passkit-images/image18.png "Diese Dateien sind vorhanden.")](passkit-images/image18.png#lightbox)
 
-Öffnen Sie "Pass. JSON", und bearbeiten Sie die JSON. Sie müssen mindestens den `passTypeIdentifier` und entsprechend Ihrem Apple- `teamIdentifer` Entwicklerkonto aktualisieren.
+Öffnen Sie "Pass. JSON", und bearbeiten Sie die JSON. Sie müssen mindestens die `passTypeIdentifier` und `teamIdentifer` aktualisieren, damit Sie Ihrem Apple-Entwicklerkonto entsprechen.
 
-```csharp
+```json
 "passTypeIdentifier" : "pass.com.xamarin.coupon.banana",
 "teamIdentifier" : "?????????",
 ```
 
-Anschließend müssen Sie die Hashes für jede Datei berechnen und die `manifest.json` Datei erstellen. Dies sieht in etwa wie folgt aus:
+Anschließend müssen Sie die Hashes für jede Datei berechnen und die `manifest.json`-Datei erstellen. Dies sieht in etwa wie folgt aus:
 
-```csharp
+```json
 {
   "icon@2x.png" : "30806547dcc6ee084a90210e2dc042d5d7d92a41",
   "icon.png" : "87e9ffb203beb2cce5de76113f8e9503aeab6ecc",
@@ -286,15 +286,15 @@ Als nächstes muss eine Signatur für diese Datei mit dem Zertifikat (P12-Datei)
 
 #### <a name="signing-on-a-mac"></a>Signieren auf einem Mac
 
-Laden Sie die **Support Materialien für Wallet-Seed** von der Apple- [Download](https://developer.apple.com/downloads/index.action?name=Passbook) Website herunter. Verwenden Sie `signpass` das Tool, um den Ordner in einen Durchlauf umzuwandeln (Dadurch werden auch die SHA1-Hashwerte berechnet und die Ausgabe in eine pkpass-Datei gezippt).
+Laden Sie die **Support Materialien für Wallet-Seed** von der Apple- [Download](https://developer.apple.com/downloads/index.action?name=Passbook) Website herunter. Verwenden Sie das Tool "`signpass`", um den Ordner in einen Durchlauf umzuwandeln (Dadurch werden auch die SHA1-Hashwerte berechnet und die Ausgabe in eine pkpass-Datei gezippt).
 
 #### <a name="testing"></a>Test
 
-Wenn Sie die Ausgabe dieser Tools untersuchen (indem Sie den Dateinamen auf. zip festlegen und ihn dann öffnen), werden die folgenden Dateien angezeigt (Beachten Sie das Hinzufügen `manifest.json` der Dateien und `signature` ):
+Wenn Sie die Ausgabe dieser Tools untersuchen (indem Sie den Dateinamen auf. zip festlegen und ihn dann öffnen), werden die folgenden Dateien angezeigt (Beachten Sie, dass die Dateien `manifest.json` und `signature` hinzugefügt werden):
 
  [![](passkit-images/image19.png "Überprüfen der Ausgabe dieser Tools")](passkit-images/image19.png#lightbox)
 
-Nachdem Sie die Datei signiert, gezippt und umbenannt haben (z. b. zu `BananaCoupon.pkpass`) Sie können Sie in den Simulator ziehen, um Sie zu testen, oder per e-Mail an sich selbst, um Sie auf einem echten Gerät abzurufen. Sie sollten einen Bildschirm sehen, um den Durchlauf **hinzuzufügen** , wie folgt:
+Nachdem Sie die Datei signiert, gezippt und umbenannt haben (z. b. zum `BananaCoupon.pkpass`) können Sie ihn in den Simulator ziehen, um ihn zu testen, oder ihn per e-Mail an sich selbst senden, um ihn auf einem echten Gerät abzurufen. Sie sollten einen Bildschirm sehen, um den Durchlauf **hinzuzufügen** , wie folgt:
 
  [![](passkit-images/image20.png "Hinzufügen des Pass-Bildschirms")](passkit-images/image20.png#lightbox)
 
@@ -321,7 +321,7 @@ Pässe können auf folgende Weise zu Wallet hinzugefügt werden:
 
 - **Kanal-apps** – diese werden nicht direkt übermittelt, Sie laden einfach Pass Dateien und stellen dem Benutzer die Möglichkeit, Sie der Wallet hinzuzufügen. 
 
-- **Begleit Anwendungen** – diese werden von Anbietern geschrieben, um Pass-und-Funktionen zu verteilen und zusätzliche Funktionen zum Durchsuchen oder bearbeiten zu bieten. Xamarin. IOS-Anwendungen verfügen über vollständigen Zugriff auf die passkit-API zum Erstellen und Bearbeiten von Durchläufen. Durch Pass können dann mithilfe von der `PKAddPassesViewController`Wallet hinzugefügt werden. Dieser Vorgang wird im Abschnitt " **begleitende Anwendungen** " dieses Dokuments ausführlicher beschrieben.
+- **Begleit Anwendungen** – diese werden von Anbietern geschrieben, um Pass-und-Funktionen zu verteilen und zusätzliche Funktionen zum Durchsuchen oder bearbeiten zu bieten. Xamarin. IOS-Anwendungen verfügen über vollständigen Zugriff auf die passkit-API zum Erstellen und Bearbeiten von Durchläufen. Mithilfe des `PKAddPassesViewController` können dann Pass-ins hinzugefügt werden. Dieser Vorgang wird im Abschnitt " **begleitende Anwendungen** " dieses Dokuments ausführlicher beschrieben.
 
 ### <a name="conduit-applications"></a>Kanalanwendungen
 
@@ -343,7 +343,7 @@ Wenn Sie eine App entwickeln, die möglicherweise ein Kanal für Durchgänge ist
 - **MIME-Typ** -application/vnd. Apple. pkpass
 - **UTI** – com. Apple. pkpass
 
-Der grundlegende Vorgang einer Kanal Anwendung besteht darin, die Pass- `PKAddPassesViewController` Datei abzurufen und passkit aufzurufen, um dem Benutzer die Möglichkeit zu geben, den Pass der Geldbörse hinzuzufügen. Die Implementierung dieses Ansichts Controllers wird im nächsten Abschnitt zu begleitenden **Anwendungen**behandelt.
+Der grundlegende Vorgang einer Kanal Anwendung besteht darin, die Pass-Datei abzurufen und die passkit-`PKAddPassesViewController` aufzurufen, um dem Benutzer die Möglichkeit zu geben, den Pass der Geldbörse hinzuzufügen. Die Implementierung dieses Ansichts Controllers wird im nächsten Abschnitt zu begleitenden **Anwendungen**behandelt.
 
 Leitungs Anwendungen müssen nicht auf die gleiche Weise für eine bestimmte Passtyp-ID bereitgestellt werden wie begleitende Anwendungen.
 
@@ -381,7 +381,7 @@ Die Standardoption ist, dass Ihre APP alle Pass Typen zulässt. Es ist jedoch m�
 
 Doppelklicken Sie auf die Datei " **Berechtigungen. plist** ", um die XML-Quelldatei zu öffnen.
 
-Um die Wallet-Berechtigung hinzuzufügen, legen Sie `Passbook Identifiers` die-Eigenschaft in der Dropdown Liste auf fest, wodurch der **Typ** `Array`automatisch festgelegt wird. Legen Sie dann den Zeichen folgen Wert `$(TeamIdentifierPrefix)*`auf fest:
+Um die Wallet-Berechtigung hinzuzufügen, legen Sie die- **Eigenschaft** in der Dropdown Liste auf `Passbook Identifiers` fest, wodurch automatisch der **Typ** `Array` festgelegt wird. Legen Sie dann den Zeichen folgen **Wert** auf `$(TeamIdentifierPrefix)*` fest:
 
 ![](passkit-images/image33.png "Wallet-Berechtigung aktivieren")
 
@@ -395,15 +395,15 @@ Hierbei entspricht `pass.$(CFBundleIdentifier)` der Pass-ID, die [zuvor](~/ios/p
 
 ### <a name="debugging"></a>Debuggen
 
-Wenn bei der Bereitstellung der Anwendung Probleme auftreten, überprüfen Sie, ob Sie das richtige **Bereitstellungs Profil** verwenden und ob in den `Entitlements.plist` **iPhone Bundle-Signierungs** Optionen als **benutzerdefinierte** Berechtigungsdatei ausgewählt ist.
+Wenn bei der Bereitstellung der Anwendung Probleme auftreten, überprüfen Sie, ob Sie das richtige **Bereitstellungs Profil** verwenden und dass die `Entitlements.plist` in den **iPhone Bundle-Signierungs** Optionen als **benutzerdefinierte** Berechtigungsdatei ausgewählt ist.
 
 Wenn bei der Bereitstellung dieser Fehler auftritt:
 
-```csharp
+```
 Installation failed: Your code signing/provisioning profiles are not correctly configured (error: 0xe8008016)
 ```
 
-dann ist `pass-type-identifiers` das Berechtigungs Array falsch (oder stimmt nicht mit dem **Bereitstellungs Profil**). Überprüfen Sie, ob die Passtyp-IDs und Ihre Team-ID korrekt sind.
+Das Array für die `pass-type-identifiers`-Berechtigungen ist falsch (oder entspricht nicht dem **Bereitstellungs Profil**). Überprüfen Sie, ob die Passtyp-IDs und Ihre Team-ID korrekt sind.
 
 ## <a name="classes"></a>Klassen
 
@@ -472,7 +472,7 @@ Diese Zeichenfolge wird im [Beispiel](https://docs.microsoft.com/samples/xamarin
 
  [![](passkit-images/image30.png "Die von Coupon ausgewählte Warnung im Beispiel")](passkit-images/image30.png#lightbox)
 
-Sie können auch die `LocalizedValueForFieldKey()` -Methode verwenden, um Daten aus Feldern in den von Ihnen entworfenen Vorgängen abzurufen (da Sie wissen, welche Felder vorhanden sein sollten). Der Beispielcode zeigt dies nicht.
+Sie können auch die `LocalizedValueForFieldKey()`-Methode verwenden, um Daten aus Feldern in den von Ihnen entworfenen Vorgängen abzurufen (da Sie wissen, welche Felder vorhanden sein sollten). Der Beispielcode zeigt dies nicht.
 
 ### <a name="loading-a-pass-from-a-file"></a>Laden einer Datei aus einer Datei
 
@@ -509,17 +509,17 @@ Pkpass ist nicht änderbar, sodass Sie keine Pass-Objekte in Ihrem Code aktualis
 
 Die Erstellung der Dateierstellung muss auf einem Server erfolgen, da Pass mit einem Zertifikat signiert werden muss, das Privat und sicher gehalten werden muss.
 
-Nachdem eine aktualisierte Pass Datei generiert wurde, verwenden Sie die `Replace` -Methode, um die alten Daten auf dem Gerät zu überschreiben.
+Nachdem eine aktualisierte Pass Datei generiert wurde, verwenden Sie die `Replace`-Methode, um die alten Daten auf dem Gerät zu überschreiben.
 
 ### <a name="display-a-pass-for-scanning"></a>Einen Durchlauf zum Scannen anzeigen
 
-Wie bereits erwähnt, kann nur Wallet einen Durchlauf zum Scannen anzeigen. Ein Durchlauf kann mithilfe der `OpenUrl` -Methode wie folgt angezeigt werden:
+Wie bereits erwähnt, kann nur Wallet einen Durchlauf zum Scannen anzeigen. Ein Durchlauf kann mit der `OpenUrl`-Methode wie folgt angezeigt werden:
 
  `UIApplication.SharedApplication.OpenUrl (p.PassUrl);`
 
 ### <a name="receiving-notifications-of-changes"></a>Empfangen von Benachrichtigungen über Änderungen
 
-Anwendungen können mithilfe `PKPassLibraryDidChangeNotification`von Änderungen an der Pass Bibliothek überwachen. Änderungen können dadurch verursacht werden, dass Benachrichtigungen im Hintergrund aktualisiert werden. Daher empfiehlt es sich, Sie in Ihrer APP zu überwachen.
+Anwendungen können mit dem `PKPassLibraryDidChangeNotification` auf Änderungen an der Pass Bibliothek lauschen. Änderungen können dadurch verursacht werden, dass Benachrichtigungen im Hintergrund aktualisiert werden. Daher empfiehlt es sich, Sie in Ihrer APP zu überwachen.
 
 ```csharp
 noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidChangeNotification, (not) => {

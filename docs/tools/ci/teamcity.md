@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "70293140"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273129"
 ---
 # <a name="using-team-city-with-xamarin"></a>Verwenden von Team City mit xamarin
 
@@ -61,7 +61,7 @@ Ein wichtiger Schritt beim Konfigurieren eines Buildservers ist die Installation
 3. **Xcode** – Xcode ist erforderlich, um IOS-Anwendungen zu kompilieren und zu signieren.
 4. **Xcode-Befehlszeilen Tools** – Dies wird in Schritt 1 des Abschnitts "Installation" des Handbuchs " [Aktualisieren von Ruby mit rbenv](https://github.com/calabash/calabash-ios/wiki) " beschrieben.
 5. **Signieren von Identitäts & Bereitstellungs Profilen** – importieren Sie die Zertifikate und das Bereitstellungs Profil über Xcode. Weitere Informationen finden Sie im Apple-Handbuch zum [Exportieren von Signierungs Identitäten und Bereitstellungs Profilen](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) .
-6. **Android-Keystores** – kopieren Sie die erforderlichen Android-Keystores in ein Verzeichnis, auf das der TeamCity-Benutzer `~/Documents/keystores/MyAndroidApp1`Zugriff hat, d. h.
+6. **Android-Keystores** – kopieren Sie die erforderlichen Android-Keystores in ein Verzeichnis, auf das der TeamCity-Benutzer Zugriff hat, d. h. `~/Documents/keystores/MyAndroidApp1`.
 7. **Calabash** – Dies ist ein optionaler Schritt, wenn in Ihrer Anwendung Tests mit Calabash geschrieben wurden. Weitere Informationen finden Sie im Handbuch [Installieren von Calabash on OS X Mavericks](https://github.com/calabash/calabash-ios/wiki) und im Leitfaden zum [Aktualisieren von Ruby mit rbenv](https://github.com/calabash/calabash-ios/wiki) .
 
 Im folgenden Diagramm werden alle folgenden Komponenten veranschaulicht:
@@ -134,7 +134,7 @@ Beachten Sie, dass zum Kompilieren der xamarin Android-Anwendung **xbuild** das 
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>Übermitteln von xamarin. uitests an Test Cloud
 
-Uitests werden mithilfe der `test-cloud.exe` Anwendung übermittelt, wie im folgenden Code Ausschnitt gezeigt:
+Uitests werden mithilfe der `test-cloud.exe`-Anwendung übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
@@ -142,11 +142,11 @@ test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <de
 
 Beim Ausführen des Tests werden die Testergebnisse in Form einer XML-Datei im nunit-Stil " **Report. XML**" zurückgegeben. TeamCity zeigt die Informationen im Buildprotokoll an.
 
-Weitere Informationen zum Übermitteln von uitests an Test Cloud finden Sie in diesem Handbuch zum [Vorbereiten von xamarin. uitests für den Upload](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/).
+Weitere Informationen zum Übermitteln von uitests an Test Cloud finden Sie unter [Vorbereiten von xamarin. Android-Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) oder [Vorbereiten von xamarin. IOS-apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest).
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>Übermitteln von Calabash-Tests an Test Cloud
 
-Calabash-Tests werden mit dem `test-cloud` gem-Code übermittelt, wie im folgenden Code Ausschnitt gezeigt:
+Calabash-Tests werden mit dem `test-cloud`-gem-Wert übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
@@ -167,35 +167,35 @@ Sobald TeamCity installiert ist und Visual Studio für Mac das Projekt erstellen
 
 1. Gestartet durch Anmelden bei TeamCity über den Webbrowser. Navigieren Sie zum Stamm Projekt:
 
-    ![Navigieren Sie zum Stamm Projekt] . (teamcity-images/image2.png "Navigieren Sie zum Stamm Projekt") . Erstellen Sie unterhalb des Stamm Projekts ein neues Unterprojekt:
+    ![Navigieren Sie zum]Stamm Projekt, und(teamcity-images/image2.png "Navigieren Sie zum") Stamm Projekt unterhalb des Stamm Projekts, und erstellen Sie ein neues Unterprojekt:
 
-    ![Navigieren Sie zum Stamm Projekt unterhalb des Stamm Projekts, und erstellen Sie ein neues Unterprojekt] . (teamcity-images/image3.png "Navigieren Sie zum Stamm Projekt unterhalb des Stamm Projekts, und erstellen Sie ein neues Unterprojekt") .
+    ![Navigieren Sie zum Stamm Projekt unterhalb des Stamm Projekts, erstellen Sie ein neues Unterprojekt],(teamcity-images/image3.png "Navigieren Sie zum Stamm Projekt unterhalb des Stamm Projekts, und erstellen Sie ein neues Unterprojekt") .
 2. Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration hinzu:
 
-    ![Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration hinzu] . (teamcity-images/image5.png "Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration hinzu") .
+    ![Nachdem das untergeordnete Projekt erstellt wurde, fügen Sie eine neue Buildkonfiguration hinzu](teamcity-images/image5.png ", sobald das untergeordnete Projekt erstellt wurde, und fügen Sie eine neue Buildkonfiguration hinzu") .
 3. Fügen Sie ein VCS-Projekt an die Buildkonfiguration an. Dies erfolgt über den Bildschirm zum Festlegen der Versionskontrolle:
 
-    ![Dies erfolgt über den Bildschirm zum Festlegen der Versionskontrolle] . (teamcity-images/image6.png "Dies erfolgt über den Bildschirm zum Festlegen der Versionskontrolle") .
+    ![Dies erfolgt über den Bildschirm zum Festlegen der Versionskontrolle].(teamcity-images/image6.png "Dies erfolgt über den Bildschirm für die Versions Kontroll Einstellung") .
 
     Wenn kein VCS-Projekt erstellt wurde, haben Sie die Möglichkeit, eine Datei auf der neuen VCS-Stamm Seite zu erstellen, wie unten gezeigt:
 
-    ![Wenn kein VCS-Projekt erstellt wurde, haben Sie die Möglichkeit, eine Datei auf der neuen VCS-Stamm Seite zu erstellen] . (teamcity-images/image7.png "Wenn kein VCS-Projekt erstellt wurde, haben Sie die Möglichkeit, eine Datei auf der neuen VCS-Stamm Seite zu erstellen") .
+    ![Wenn kein VCS-Projekt erstellt wurde, haben Sie die Möglichkeit, einen auf der neuen VCS-Stamm Seite zu erstellen],(teamcity-images/image7.png "Wenn kein VCS-Projekt erstellt wurde. Sie haben die Möglichkeit, einen auf der neuen VCS-Stamm Seite zu erstellen") .
 
     Nachdem der VCS-Stamm angefügt wurde, wird das Projekt von TeamCity ausgecheckt, und es wird versucht, die Buildschritte automatisch zu erkennen. Wenn Sie mit TeamCity vertraut sind, können Sie einen der erkannten Buildschritte auswählen. Die erkannten Buildschritte können momentan ignoriert werden.
 
 4. Konfigurieren Sie als nächstes einen buildauslösers. Dadurch wird ein Build in die Warteschlange eingereiht, wenn bestimmte Bedingungen erfüllt sind, z. b. Wenn ein Benutzer einen Commit für das Repository ausführt. Der folgende Screenshot zeigt das Hinzufügen eines buildauslösers:
 
-    ![Dieser Screenshot zeigt das Hinzufügen eines buildauslösers] . (teamcity-images/image8.png "Dieser Screenshot zeigt das Hinzufügen eines buildauslösers") . Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie im folgenden Screenshot:
+    ![Dieser Screenshot zeigt, wie Sie einen]Buildvorgang hinzufügen.(teamcity-images/image8.png "dieser Screenshot zeigt das Hinzufügen eines buildauslösers") . ein Beispiel für das Konfigurieren eines buildauslösers finden Sie im folgenden Screenshot:
 
-    ![Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot] . (teamcity-images/image9.png "Ein Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot") .
+    Ein ![Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot].(teamcity-images/image9.png "ein Beispiel für das Konfigurieren eines buildauslösers finden Sie in diesem Screenshot") .
 
 5. Im vorherigen Abschnitt parameteriup the Build Script wurde empfohlen, einige Werte als Umgebungsvariablen zu speichern. Diese Variablen können der Buildkonfiguration über den Parameter-Bildschirm hinzugefügt werden. Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID hinzu, wie im folgenden Screenshot zu sehen:
 
-    ![Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID hinzu] . (teamcity-images/image11.png "Fügen Sie die Variablen für den Test Cloud-API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID hinzu") .
+    ![Fügen Sie die Variablen für den Test Cloud API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID]hinzu.(teamcity-images/image11.png "fügen Sie die Variablen für den Test Cloud API-Schlüssel, die IOS-Geräte-ID und die Android-Geräte-ID")
 
 6. Der letzte Schritt besteht darin, einen Buildschritt hinzuzufügen, der das Buildskript aufruft, um die Anwendung zu kompilieren und die Anwendung in die Warteschlange Test Cloud. Der folgende Screenshot zeigt ein Beispiel für einen Buildschritt, der zum Erstellen einer Anwendung eine "rakefile" verwendet:
 
-    ![Dieser Screenshot ist ein Beispiel für einen Buildschritt, der zum Erstellen einer Anwendung eine "rakefile" verwendet] . (teamcity-images/image12.png "Dieser Screenshot ist ein Beispiel für einen Buildschritt, der zum Erstellen einer Anwendung eine \"rakefile\" verwendet") .
+    ![Dieser Screenshot ist ein Beispiel für einen Buildschritt, bei dem eine "rakefile" zum Erstellen einer Anwendung verwendet](teamcity-images/image12.png "wird. Dieser Screenshot ist ein Beispiel für einen Buildschritt, der zum Erstellen einer Anwendung eine \"rakefile\" verwendet")
 
 7. An diesem Punkt ist die Buildkonfiguration fertiggestellt. Es empfiehlt sich, einen Build zu initiieren, um zu bestätigen, dass das Projekt ordnungsgemäß konfiguriert ist. Eine gute Möglichkeit hierfür ist das Ausführen eines Commit für eine kleine, unbedeutende Änderung am Repository. TeamCity sollte den Commit erkennen und einen Build starten.
 
@@ -209,5 +209,6 @@ Dann haben wir erläutert, wie Sie ein Projekt in TeamCity erstellen, das jedes 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Vorbereiten von xamarin. uitests angewendeter-Upload](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [Vorbereiten von xamarin. Android-Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
+- [Vorbereiten von xamarin. IOS-apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
 - [Installieren und Konfigurieren von TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
