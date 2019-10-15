@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 2a47876b7b53cf557014c772333e651146afe53f
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 020b8208dfbfd7594d152a7b6e32f7e41f974c2f
+ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106011"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303257"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>XAML-Hot-Upload für xamarin. Forms (Vorschau)
 
@@ -35,9 +35,9 @@ Xamarin.Forms | 4,1 oder höher
 
 Für die Verwendung von XAML Hot Neuladen ist keine zusätzliche Installation oder Einrichtung erforderlich. Es ist in Visual Studio integriert und kann in den IDE-Einstellungen aktiviert werden. Nach der Aktivierung können Sie mit der Verwendung von XAML Hot Neuladen beginnen, indem Sie Ihre APP auf einem Emulator, Simulator oder einem physischen Gerät Debuggen. Derzeit funktioniert das Laden von XAML-Hot nur beim Debuggen unter IOS oder Android.
 
-**Unter Windows** > kann das aktive XAML-Neuladen aktiviert werden, indem Sie das Kontrollkästchen **xamarin Hot** Neuladen aktivieren unter Extras**Optionen** > **xamarin** > **Hot Upload**aktivieren.
+Unter Windows kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Extras @no__t-** 2**Optionen** > **xamarin** > **Hot Upload**aktiviert werden.
 
-Auf einem Mac kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Visual Studio** > **Preferences** > **projects** > **xamarin Hot Upload**aktiviert werden.
+Auf einem Mac kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Visual Studio** > -**Einstellungen** > -**Projekte** > **xamarin Hot Upload**aktiviert werden.
 
 ## <a name="resilient-reloading"></a>Resilientes erneutes Laden
 
@@ -46,9 +46,9 @@ Wenn Sie eine Änderung vornehmen, dass das Laden von XAML-Hot nicht erneut gela
 ## <a name="known-limitations"></a>Bekannte Einschränkungen
 
 - Sie können während einer XAML-Sitzung zum aktiven erneuten Laden keine Dateien oder nuget-Pakete hinzufügen, entfernen oder umbenennen. Wenn Sie eine Datei oder ein nuget-Paket hinzufügen oder entfernen, erstellen Sie Ihre APP erneut, und stellen Sie Sie erneut bereit.
-- Legen Sie den Linker auf " **None** " fest, um eine optimale Leistung zu erzielen Die Einstellung **Link SDK only** funktioniert meistens, kann jedoch in bestimmten Fällen fehlschlagen.
+- Legen Sie den Linker auf **keine Verknüpfung** fest, um eine optimale Leistung zu erzielen. Die Einstellung **Link SDK only** funktioniert meistens, kann jedoch in bestimmten Fällen fehlschlagen.
 - Das Debuggen auf einem physischen iPhone erfordert, dass der Interpreter XAML-Hot-Neuladen verwendet. Fügen Sie **--Interpreter** zum Feld **zusätzliche mberührungs-Argumente** in ihren IOS-Buildeinstellungen hinzu, um XAML Hot Neuladen zu verwenden.
-- Alle Verweise, die durch Zuweisen eines Steuer Elements zu einem anderen Feld oder `x:Name` einer Eigenschaft mithilfe ihres Werts erstellt werden, werden nicht erneut geladen.
+- Alle Verweise, @no__t die durch Zuweisen eines Steuer Elements zu einem anderen Feld oder einer Eigenschaft erstellt werden
 - Das Aktualisieren der visuellen Hierarchie Ihrer Shell-Anwendung in **appshell. XAML** kann Probleme beim Verwalten des Zustands der Anwendung verursachen. Erstellen Sie die APP neu, damit Sie erneut geladen wird.
 - Beim erneuten Laden von XAML C# kann Code nicht neu geladen werden, einschließlich Ereignis Handlern, benutzerdefinierte Steuerelemente, Seitencode Behind und zusätzliche Klassen.
 
@@ -65,4 +65,4 @@ Wenn Sie Teil der privaten Vorschau sind, wird die XAML-Erweiterung zum erneuten
 - Wenn beim Speichern der XAML-Datei nichts passiert, stellen Sie sicher, dass das heiße laden in der IDE aktiviert ist.
 - Wenn Sie auf einem physischen iPhone Debuggen und Ihre APP nicht mehr reagiert, überprüfen Sie, ob der Interpreter aktiviert ist. Um dies zu aktivieren, fügen Sie **--Interpreter** in den IOS-Buildeinstellungen zum Feld **zusätzliches mberührungs-Argument** hinzu.
 
-Um einen Fehler zu melden, verwenden Sie **das Feedback** > -Tool im Menü " **Hilfe** > **Feedback** > senden" unter Windows und**das Menü "** **Problem melden** " auf einem Mac.
+Um einen Fehler zu melden, verwenden Sie das Feedback Tool in der **Hilfe** > **Feedback senden** >  Menü "**Problem melden** " unter Windows, und die **Hilfe** > **melden Sie ein Problem** Menü auf einem Mac.
