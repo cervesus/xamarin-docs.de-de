@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198568"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997156"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -278,7 +278,12 @@ Im unteren Teil der Bildschirme bleibt die Schaltfläche **Login** (Anmelden) in
 
 Das Hinzufügen der `EnterActions`- und `ExitActions`-Sammlungen und das Festlegen von `TriggerAction<T>`-Implementierungen stellt eine weitere Möglichkeit zum Implementieren von Änderungen, wenn ein Trigger ausgelöst wird.
 
-Sie können die *beiden* Eigenschaften `EnterActions` und `ExitActions` sowie `Setter` in einem Trigger angeben. Achten Sie jedoch darauf, dass `Setter` sofort aufgerufen werden (sie warten nicht auf den Abschluss von `EnterAction` oder `ExitAction`). Alternativ können Sie alles im Code ausführen, anstatt `Setter` überhaupt zu verwenden.
+Die [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions)-Sammlung wird verwendet, um ein `IList` von [`TriggerAction`](xref:Xamarin.Forms.TriggerAction)-Objekten zu definieren, die aufgerufen werden, wenn die Triggerbedingung erfüllt ist. Die [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions)-Sammlung wird verwendet, um ein `IList` von `TriggerAction`-Objekten zu definieren, die aufgerufen werden, wenn die Triggerbedingung nicht mehr erfüllt ist.
+
+> [!NOTE]
+> Die in den Sammlungen `EnterActions` und `ExitActions` definierten Objekte [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) werden von der Klasse [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) ignoriert.    
+
+Sie können die *beiden* Eigenschaften `EnterActions` und `ExitActions` sowie `Setter`-Elemente in einem Trigger angeben. Achten Sie jedoch darauf, dass die `Setter`-Elemente sofort aufgerufen werden (sie warten nicht auf den Abschluss von `EnterAction` oder `ExitAction`). Alternativ können Sie alles im Code ausführen, anstatt `Setter` überhaupt zu verwenden.
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -292,7 +297,7 @@ Sie können die *beiden* Eigenschaften `EnterActions` und `ExitActions` sowie `S
             <Trigger.ExitActions>
                 <local:FadeTriggerAction StartsFrom="1" />
             </Trigger.ExitActions>
-                        <!-- You can use both Enter/Exit and Setter together if required -->
+            <!-- You can use both Enter/Exit and Setter together if required -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -327,8 +332,6 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
-
-Hinweis: `EnterActions` und `ExitActions` werden bei **Ereignistriggern** ignoriert.
 
 ## <a name="related-links"></a>Verwandte Links
 

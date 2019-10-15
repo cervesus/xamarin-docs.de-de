@@ -6,19 +6,21 @@ ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2019
-ms.openlocfilehash: a4d246419c7449c2395759cf5a8b04469e7a2309
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
+ms.date: 10/08/2019
+ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
+ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68821010"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170964"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 Das Veröffentlichen-Abonnieren-Muster ist ein Messagingmuster, bei dem Herausgeber Nachrichten senden, ohne über Kenntnisse zu Empfängern zu verfügen, die als Abonnenten bezeichnet werden. Auf ähnliche Weise lauschen Abonnenten auf bestimmte Nachrichten, ohne dass sie über Kenntnisse zu Herausgebern verfügen.
+
+Ereignisse in .NET implementieren das Veröffentlichen-Abonnieren-Muster und sind der einfachste und unkomplizierteste Ansatz für eine Kommunikationsschicht zwischen Komponenten, wenn keine lose Kopplung erforderlich ist, wie beispielsweise ein Steuerelement und die Seite, die es enthält. Die Lebensdauer von Herausgeber und Abonnent sind jedoch durch Objektverweise miteinander gekoppelt, und der Abonnententyp muss einen Verweis auf den Herausgebertypen haben. Dies kann zu Problemen bei der Speicherverwaltung führen, insbesondere wenn es kurzlebige Objekte gibt, die ein Ereignis eines statischen oder langlebigen Objekts abonnieren. Wenn der Ereignishandler nicht entfernt wird, bleibt der Abonnent durch den Verweis darauf im Herausgeber erhalten, was die Garbage Collection des Abonnenten verhindert oder verzögert.
 
 Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Herausgebern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, und trägt dazu bei, Abhängigkeiten zwischen ihnen zu verringern.
 

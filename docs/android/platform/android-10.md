@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: 293fc8e3f8965e3109a0a549897dd23c34c46917
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
-ms.translationtype: HT
+ms.openlocfilehash: df9fa43d2071d273104edafbe6b880a97afb3f96
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198461"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273136"
 ---
 # <a name="android-10-with-xamarin"></a>Android 10 mit xamarin
 
@@ -78,7 +78,7 @@ Wenn Sie ein Android-Projekt erstellen, müssen Sie die Versions Einstellungen s
 
 ### <a name="configure-a-device-or-emulator"></a>Konfigurieren eines Geräts oder Emulators
 
-Wenn Sie ein physisches Gerät, z. b. ein Pixel, verwenden, können Sie das Android 10-Update herunter `System` laden, indem Sie in den  >   >  `System update` `Check for update` Einstellungen Ihres Telefons zu navigieren. Wenn Sie Ihr Gerät blinken möchten, finden Sie die Anweisungen unter blinken eines [factoryimages](https://developers.google.com/android/ota) oder eines [OTA-Images](https://developers.google.com/android/ota) auf Ihrem Gerät.
+Wenn Sie ein physisches Gerät, z. b. ein Pixel, verwenden, können Sie das Android 10-Update herunterladen, indem Sie in den Einstellungen Ihres Telefons zum `System` @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 wechseln. Wenn Sie Ihr Gerät blinken möchten, finden Sie die Anweisungen unter blinken eines [factoryimages](https://developers.google.com/android/images) oder eines [OTA-Images](https://developers.google.com/android/ota) auf Ihrem Gerät.
 
 Wenn Sie einen Emulator verwenden, erstellen Sie ein virtuelles Gerät für API-Ebene 29, und wählen Sie ein x86-basiertes Abbild aus. Informationen zur Verwendung der Android Device Manager zum Erstellen und Verwalten von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit dem Android Device Manager.](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-emulator/device-manager) Weitere Informationen zum Verwenden der Android-Emulator zum Testen und Debuggen finden Sie unter [Debugging auf der Android-Emulator.](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/debugging/debug-on-emulator)
 
@@ -88,11 +88,11 @@ Android 10 bietet eine Reihe von neuen Features. Einige dieser neuen Features si
 
 ## <a name="enhance-your-app-with-android-10-features-and-apis"></a>Optimieren Sie Ihre APP mit Android 10-Features und-APIs
 
-Wenn Sie fertig sind, können Sie sich mit Android 10 vertraut machen und erfahren mehr über die [neuen Features und APIs](https://developer.android.com/preview/api-overview.html) , die Sie verwenden können. Im folgenden finden Sie einige der wichtigsten Features, mit denen Sie beginnen können.
+Wenn Sie fertig sind, können Sie sich mit Android 10 vertraut machen und sich über die [neuen Features und APIs](https://developer.android.com/preview/api-overview.html) informieren, die Sie verwenden können. Im folgenden finden Sie einige der wichtigsten Features, mit denen Sie beginnen können.
 
 Diese Features werden für jede APP empfohlen:
 
-- **Dunkles Design:**  sorgen Sie für Benutzer, die ein systemweites dunkles Design aktivieren, indem Sie ein [dunkles](https://developer.android.com/preview/features/darktheme)Design hinzufügen oder die Option " [dunkel](https://developer.android.com/preview/features/darktheme#force_dark)" aktivieren.
+- **Dunkles Design:**  Sorgen Sie für Benutzer, die ein systemweites dunkles Design aktivieren, indem Sie ein [dunkles](https://developer.android.com/preview/features/darktheme)Design  or Aktivieren von " [dunkel](https://developer.android.com/preview/features/darktheme#force_dark)" aktivieren.
 
 ![Dunkles Design](~/android/platform/android-10-images/darktheme.png)
 
@@ -100,17 +100,17 @@ Diese Features werden für jede APP empfohlen:
 
 ![Gesten Navigation](~/android/platform/android-10-images/gesturenavigation.png)
 
-- **Optimieren Sie für foldables:**  sorgen Sie für eine nahtlose, Edge-zu-Edge-Umgebung auf heutigen innovativen Geräten, indem Sie die [Optimierung für foldables](https://developer.android.com/preview/features/foldables)durchführen.
+- **Optimieren Sie für foldables:**  Sorgen Sie für eine nahtlose Edge-to-Edge-Umgebung auf heutigen innovativen Geräten, indem Sie die [Optimierung für foldables](https://developer.android.com/preview/features/foldables)durchführen.
 
 ![Reduzierbar](~/android/platform/android-10-images/foldable.png)
 
 Diese Features werden empfohlen, wenn Sie für Ihre APP relevant sind:
 
-- **Interaktiver Benachrichtigungen:**  Wenn Ihre Benachrichtigungen Meldungen enthalten, aktivieren Sie [vorgeschlagene Antworten und Aktionen in Benachrichtigungen](https://developer.android.com/preview/features#smart-suggestions) , um Benutzer zu unterbinden und Sofortmaßnahmen ergreifen zu können.
-- **Bessere Biometrie:**  Wenn Sie die biometrische Authentifizierung verwenden, können Sie zu [biometricprompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)wechseln. Dies ist die bevorzugte Methode zur Unterstützung der Fingerabdruckauthentifizierung auf modernen Geräten.
-- **Erweiterte Aufzeichnung:**  aktivieren Sie die Erfassung von [Audiowiedergabe](https://developer.android.com/preview/features/playback-capture), um die Untertitel-oder Spiel Aufzeichnung zu unterstützen. Dies ist eine großartige Möglichkeit, mehr Benutzer zu erreichen und Ihre APP zugänglicher zu machen.
-- **Bessere Codecs:**  probieren Sie für Media-apps [AV1](https://en.wikipedia.org/wiki/AV1) for Video Streaming and [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) for High Dynamic Range Video aus. Für Sprach-und Musikstreaming können Sie die [Opus](http://opus-codec.org/) -Codierung verwenden, und für Musiker ist eine [native MIDI-API](https://developer.android.com/preview/features/midi) verfügbar.
-- **Bessere Netzwerk-APIs:**  Wenn Ihre APP IOT-Geräte über Wi-Fi verwaltet, testen Sie die neuen [Netzwerkverbindungs-APIs](https://developer.android.com/preview/features#peer2peer) für Funktionen wie das konfigurieren, herunterladen oder drucken.
+- **Weitere interaktive Benachrichtigungen:**  Wenn Ihre Benachrichtigungen Meldungen enthalten, aktivieren Sie [vorgeschlagene Antworten und Aktionen in Benachrichtigungen](https://developer.android.com/preview/features#smart-suggestions) to einbinden von Benutzern, sodass Sie Sofortmaßnahmen ergreifen können.
+- **Bessere Biometrik:**  Wenn Sie die biometrische Authentifizierung verwenden, wechseln Sie zu " [biometricprompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)", die bevorzugte Methode zur Unterstützung der Fingerabdruckauthentifizierung auf modernen Geräten.
+- Erweiterte **Aufzeichnung:**  Um Untertitel-oder Spiel Aufzeichnung zu unterstützen, aktivieren Sie die [Erfassung von Audiowiedergabe](https://developer.android.com/preview/features/playback-capture). Dies ist eine großartige Möglichkeit, mehr Benutzer zu erreichen und Ihre APP zugänglicher zu machen.
+- **Bessere Codecs:**  Für Media apps, Try [AV1](https://en.wikipedia.org/wiki/AV1) For Video Streaming und [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) for High Dynamic Range Video. Für Sprach-und Musikstreaming können Sie die [Opus](http://opus-codec.org/) -Codierung verwenden, und für Musiker ist eine native  - [API](https://developer.android.com/preview/features/midi)verfügbar.
+- **Bessere Netzwerk-APIs:**  Wenn Ihre APP IOT-Geräte über Wi-Fi verwaltet, testen Sie die neuen [Netzwerkverbindungs-APIs](https://developer.android.com/preview/features#peer2peer) For-Funktionen wie konfigurieren, herunterladen oder drucken.
 
 Dies sind nur einige der vielen neuen Features und APIs in Android 10. Um alle anzuzeigen, besuchen Sie die [Android 10-Website für Entwickler](https://developer.android.com/about/versions/10/highlights).
 
@@ -121,7 +121,7 @@ Wenn die Android-Ziel Version auf API-Ebene 29 festgelegt ist, gibt es mehrere P
 - [Um die APP-Stabilität und Kompatibilität zu gewährleisten, schränkt die Android-Plattform nun nicht-SDK-Schnittstellen ein, die Ihre APP in Android 10 verwenden kann](https://developer.android.com/about/versions/10/behavior-changes-10#non-sdk-restrictions)
 - [Shared Memory hat sich geändert](https://developer.android.com/about/versions/10/behavior-changes-10#shared-memory).
 - [Android Runtime & AOT-Richtigkeit](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat).
-- [Berechtigungen für Vollbild Intents müssen angefordert `USE_FULL_SCREEN_INTENT` ](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)werden.
+- Die [Berechtigungen für Vollbild Intents müssen `USE_FULL_SCREEN_INTENT` anfordern](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents).
 - [Unterstützung für foldables](https://developer.android.com/about/versions/10/behavior-changes-10#foldables).
 
 ## <a name="summary"></a>Zusammenfassung

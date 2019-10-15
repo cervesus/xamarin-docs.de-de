@@ -1,18 +1,18 @@
 ---
 title: Barrierefreiheit der Tastatur
-description: Anstatt die Standardreihenfolge der Tabs zu verwenden, ist es manchmal notwendig, die Barrierefreiheit Ihrer Benutzeroberfläche zu optimieren, indem Sie die Standardreihenfolge für Tabs mithilfe einer Kombination der Eigenschaften „TabIndex“ und „IsTapStop“ angeben.
+description: Anstatt die Standardreihenfolge der Registerkarten zu verwenden, ist es manchmal notwendig, die Barrierefreiheit Ihrer Benutzeroberfläche zu optimieren, indem Sie die Reihenfolge der Registerkarten mit einer Kombination aus den Eigenschaften TabIndex und IsTabStop angeben.
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: ba29e57008bfea420562d88ab1612c09f4460e85
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651059"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997111"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Barrierefreiheit der Tastatur in Xamarin.Forms
 
@@ -121,11 +121,11 @@ Die Aktivierreihenfolge hier ist spaltenbasiert. Deshalb wird durch Drücken der
 
 Zusätzlich zum Festlegen der Aktivierreihenfolge von Steuerelementen kann es notwendig sein, Steuerelemente aus der Aktivierreihenfolge auszuschließen. Ein Weg, dies zu erreichen, ist das Festlegen der [`IsEnabled`](xref:Xamarin.Forms.VisualElement)-Eigenschaft der Steuerelemente auf `false`, da deaktivierte Steuerelemente aus der Aktivierreihenfolge ausgeschlossen werden.
 
-Trotzdem kann es notwendig sein, Steuerelemente aus der Aktivierreihenfolge auszuschließen, obwohl sie nicht deaktiviert sind. Dies kann mit der `VisualElement.IsTapStop`-Eigenschaft erreicht werden, die angibt, ob ein [`VisualElement`](xref:Xamarin.Forms.VisualElement) in der Tabstoppnavigation eingeschlossen ist. Der Standardwert ist `true`, und wenn er `false` ist, wird das Steuerelement von der Infrastruktur der Tabstoppnavigation ignoriert, unabhängig davon, ob ein `TabIndex` festgelegt ist.
+Trotzdem kann es notwendig sein, Steuerelemente aus der Aktivierreihenfolge auszuschließen, obwohl sie nicht deaktiviert sind. Dies kann mit der `VisualElement.IsTabStop`-Eigenschaft erreicht werden, die angibt, ob ein [`VisualElement`](xref:Xamarin.Forms.VisualElement) in der Tabstoppnavigation eingeschlossen ist. Der Standardwert ist `true`, und wenn er `false` ist, wird das Steuerelement von der Infrastruktur der Tabstoppnavigation ignoriert, unabhängig davon, ob ein `TabIndex` festgelegt ist.
 
 ## <a name="supported-controls"></a>Unterstützte Steuerelemente
 
-Die `TabIndex`- und `IsTapStop`-Eigenschaften werden bei den folgenden Steuerelementen unterstützt, welche Tastatureingaben auf einer oder mehreren Plattformen akzeptieren:
+Die `TabIndex`- und `IsTabStop`-Eigenschaften werden bei den folgenden Steuerelementen unterstützt, welche Tastatureingaben auf einer oder mehreren Plattformen akzeptieren:
 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`DatePicker`](xref:Xamarin.Forms.DatePicker)

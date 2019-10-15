@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 71e509d87dc2a2947821084aea5668055f6f4678
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 335fb03cd190752d488f047bdf22f67d72f30c2e
+ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771496"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72032563"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Auswählen eines Fotos aus der Bildbibliothek
 
@@ -85,7 +85,7 @@ Die `GetImageStreamAsync`-Methode erstellt ein `UIImagePickerController`-Element
 
 An dieser Stelle muss die `GetImageStreamAsync`-Methode ein `Task<Stream>`-Objekt an den Code zurückgeben, der sie aufruft. Dieser Task ist erst abgeschlossen, wenn der Benutzer die Interaktion mit der Fotobibliothek beendet hat und einer der Ereignishandler aufgerufen wird. Für solche Situationen ist die [`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx)-Klasse unverzichtbar. Die Klasse stellt ein `Task`-Objekt vom richtigen generischen Typ für die Rückgabe aus der `GetImageStreamAsync`-Methode zur Verfügung. Später kann der Klasse dann signalisiert werden, wenn der Task abgeschlossen ist.
 
-Der Ereignishandler `FinishedPickingMedia` wird aufgerufen, wenn der Benutzer ein Bild ausgewählt hat. Der Handler stellt jedoch ein `UIImage`-Objekt bereit und das `Task`-Element muss ein `Stream`-Objekt von .NET zurückgeben. Dies geschieht in zwei Schritten: Das `UIImage`-Objekt wird zunächst in eine JPEG-Datei in einem Speicher konvertiert, der sich in einem `NSData`-Objekt befindet. Dann wird das `NSData`-Objekt in ein `Stream`-Objekt von .NET umgewandelt. Ein Aufruf der `SetResult`-Methode des `TaskCompletionSource`-Objekts schließt den Task durch die Bereitstellung des `Stream`-Objekts ab:
+Der Ereignishandler `FinishedPickingMedia` wird aufgerufen, wenn der Benutzer ein Bild ausgewählt hat. Der Handler stellt jedoch ein `UIImage`-Objekt bereit und das `Task`-Element muss ein `Stream`-Objekt von .NET zurückgeben. Dies geschieht in zwei Schritten: Das `UIImage`-Objekt wird zunächst in eine PNG- oder JPEG-Datei in einem Speicher konvertiert, der sich in einem `NSData`-Objekt befindet. Danach wird das `NSData`-Objekt in ein `Stream`-Objekt von .NET konvertiert. Ein Aufruf der `SetResult`-Methode des `TaskCompletionSource`-Objekts schließt den Task durch die Bereitstellung des `Stream`-Objekts ab:
 
 ```csharp
 namespace DependencyServiceDemos.iOS
@@ -102,7 +102,15 @@ namespace DependencyServiceDemos.iOS
             if (image != null)
             {
                 // Convert UIImage to .NET Stream object
-                NSData data = image.AsJPEG(1);
+                NSData data;
+                if (args.ReferenceUrl.PathExtension.Equals("PNG") || args.ReferenceUrl.PathExtension.Equals("png"))
+                {
+                    data = image.AsPNG();
+                }
+                else
+                {
+                    data = image.AsJPEG(1);
+                }
                 Stream stream = data.AsStream();
 
                 UnregisterEventHandlers();
