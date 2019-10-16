@@ -101,6 +101,7 @@
 #### [Zusammendrücken](app-fundamentals/gestures/pinch.md)
 #### [Schwenken](app-fundamentals/gestures/pan.md)
 #### [Wischen](app-fundamentals/gestures/swipe.md)
+### [Lokale Benachrichtigungen](app-fundamentals/local-notifications.md)
 ### [Lokalisierung](app-fundamentals/localization/index.md)
 #### [Zeichenfolgen- und Imagelokalisierung](app-fundamentals/localization/text.md)
 #### [Lokalisierung von rechts nach links](app-fundamentals/localization/right-to-left.md)
