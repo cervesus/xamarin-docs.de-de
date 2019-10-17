@@ -79,6 +79,12 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_form.svg'
               href: gestures/index.md
             title: Gesten
+          - href: local-notifications.md
+            html: Informationen zum Senden und Empfangen lokaler Benachrichtigungen in Xamarin.Forms
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_push-notification.svg'
+              href: local-notifications.md
+            title: Lokale Benachrichtigungen
           - href: localization/index.md
             html: 'Hier erfahren Sie, wie Sie mehrsprachige Anwendungen mit Xamarin.Forms entwickeln können.'
             image:
