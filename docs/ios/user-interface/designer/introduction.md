@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
 ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71250143"
 ---
 # <a name="ios-designer-basics"></a>IOS Designer-Grundlagen
@@ -42,13 +42,13 @@ Ein Ansichts Controller besteht aus zwei Teilen: einer visuellen Darstellung im 
 
 [![Einen Ansichts Controller im IOS-Designer](introduction-images/1-storyboardwithviewcontroller-vsmac.png "Einen Ansichts Controller im IOS-Designer")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
 
-[![Der Code für einen Ansichts Controller] . (introduction-images/2-viewcontrollercode-vsmac.png "Der Code für einen Ansichts Controller") .](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
+[![Der Code für einen Ansichts Controller.](introduction-images/2-viewcontrollercode-vsmac.png "Der Code für einen Ansichts Controller.")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![Einen Ansichts Controller im IOS-Designer](introduction-images/1-storyboardwithviewcontroller-vs.png "Einen Ansichts Controller im IOS-Designer")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
 
-[![Der Code für einen Ansichts Controller] . (introduction-images/2-viewcontrollercode-vs.png "Der Code für einen Ansichts Controller") .](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
+[![Der Code für einen Ansichts Controller.](introduction-images/2-viewcontrollercode-vs.png "Der Code für einen Ansichts Controller.")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
 
 -----
 
@@ -86,19 +86,19 @@ Nachdem die Schaltfläche nun über einen Namen verfügt, können Sie im Code da
 
 Im **Lösungspad**wird durch Navigieren zu **ViewController.cs** und durch Klicken auf den Offenlegungs Indikator angezeigt, dass die `ViewController` Klassendefinition des Ansichts Controllers zwei Dateien umfasst, die jeweils eine [partielle Klassen](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition enthalten:
 
-[![Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+[![Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Im **Projektmappen-Explorer**wird durch Navigieren zu **ViewController.cs** und durch Klicken auf den Offenlegungs Indikator angezeigt, dass die `ViewController` Klassendefinition des Ansichts Controllers zwei Dateien umfasst, die jeweils eine [partielle Klasse](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) enthalten. Definition
+Im **Projektmappen-Explorer**wird durch Navigieren zu **ViewController.cs** und durch Klicken auf den Offenlegungs Indikator angezeigt, dass die `ViewController` Klassendefinition des Ansichts Controllers zwei Dateien umfasst, die jeweils eine [partielle Klassen](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition enthalten:
 
-[![Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+[![Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
-- **ViewController.cs** sollte mit benutzerdefiniertem Code aufgefüllt werden, `ViewController` der mit der-Klasse verknüpft ist. In dieser Datei kann die `ViewController` Klasse auf verschiedene IOS-Ansichts Controller-Lebenszyklus Methoden reagieren, die Benutzeroberfläche anpassen und auf Benutzereingaben, wie z. b. Schaltflächen tippen, reagieren.
+- **ViewController.cs** sollte mit benutzerdefiniertem Code aufgefüllt werden, der mit der `ViewController`-Klasse verknüpft ist. In dieser Datei kann die `ViewController`-Klasse auf verschiedene IOS-Ansichts Controller-Lebenszyklus Methoden reagieren, die Benutzeroberfläche anpassen und auf Benutzereingaben, wie z. b. Schaltflächen tippen, reagieren.
 
-- **ViewController.Designer.cs** ist eine generierte Datei, die vom IOS-Designer erstellt wurde, um die visuell erstellte Schnittstelle dem Code zuzuordnen. Da Änderungen an dieser Datei überschrieben werden, sollte Sie nicht geändert werden. Mithilfe von Eigenschafts Deklarationen in dieser Datei **kann der**Code `ViewController` in der-Klasse auf die im IOS-Designer eingerichteten Steuerelemente zugreifen. Öffnen **ViewController.Designer.cs** zeigt den folgenden Code:
+- **ViewController.Designer.cs** ist eine generierte Datei, die vom IOS-Designer erstellt wurde, um die visuell erstellte Schnittstelle dem Code zuzuordnen. Da Änderungen an dieser Datei überschrieben werden, sollte Sie nicht geändert werden. Eigenschafts Deklarationen in dieser Datei ermöglichen es dem Code in der `ViewController`-Klasse **, über die**im IOS-Designer eingerichteten Steuerelemente auf die Steuerelemente zuzugreifen. Öffnen **ViewController.Designer.cs** zeigt den folgenden Code:
 
 ```csharp
 namespace Designer
@@ -121,7 +121,7 @@ namespace Designer
 }
 ```
 
-Die `SubmitButton` Eigenschaften Deklaration verbindet die `ViewController` gesamte Klasse, nicht nur die **ViewController.Designer.cs** -Datei – mit der im Storyboard definierten Schaltfläche. Da **ViewController.cs** einen Teil der `ViewController` Klasse definiert, hat Sie Zugriff auf `SubmitButton`.
+Die `SubmitButton`-Eigenschafts Deklaration verbindet die gesamte `ViewController`-Klasse, nicht nur die **ViewController.Designer.cs** -Datei – mit der im Storyboard definierten Schaltfläche. Da **ViewController.cs** einen Teil der `ViewController`-Klasse definiert, hat er Zugriff auf `SubmitButton`.
 
 Der folgende Screenshot zeigt, dass IntelliSense jetzt den `SubmitButton` Verweis in **ViewController.cs**erkennt:
 
@@ -197,11 +197,11 @@ Wenn Sie einer Schnittstelle ein Steuerelement hinzufügen möchten, ziehen Sie 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen] . (introduction-images/9-layoutguides-vsmac.png "Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen") .
+![Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen.](introduction-images/9-layoutguides-vsmac.png "Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen.")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen] . (introduction-images/9-layoutguides-vs.png "Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen") .
+![Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen.](introduction-images/9-layoutguides-vs.png "Auf der Entwurfs Oberfläche markieren Richtlinien häufig verwendete Layoutpositionen.")
 
 -----
 
@@ -223,11 +223,11 @@ Ein Kontextmenü ist sowohl auf der Entwurfs Oberfläche als auch in der **Dokum
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Die Symbolleiste] "Configuration Manager" (introduction-images/11-constraintstoolbar-vsmac.png "Die Einschränkungs Symbolleiste")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
+[![Die Symbolleiste "Configuration Manager"](introduction-images/11-constraintstoolbar-vsmac.png "Die Einschränkungs Symbolleiste")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Die Symbolleiste] "Configuration Manager" (introduction-images/11-constraintstoolbar-vs.png "Die Einschränkungs Symbolleiste")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
+[![Die Symbolleiste "Configuration Manager"](introduction-images/11-constraintstoolbar-vs.png "Die Einschränkungs Symbolleiste")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
 
 -----
 
@@ -241,11 +241,11 @@ In früheren Versionen des IOS-Designers wurde durch Klicken auf eine bereits au
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![Schaltfläche "Frame Bearbeitungsmodus] " (introduction-images/12a-frameeditingmode-vsmac.png "Schaltfläche \"Frame Bearbeitungsmodus") "
+![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vsmac.png "Schaltfläche "Frame Bearbeitungsmodus"")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Schaltfläche "Frame Bearbeitungsmodus] " (introduction-images/12a-frameeditingmode-vs.png "Schaltfläche \"Frame Bearbeitungsmodus") "
+![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vs.png "Schaltfläche "Frame Bearbeitungsmodus"")
 
 -----
 
@@ -253,11 +253,11 @@ In früheren Versionen des IOS-Designers wurde durch Klicken auf eine bereits au
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![Schaltfläche] für Einschränkungs Bearbeitungsmodus (introduction-images/12b-constrainteditingmode-vsmac.png "Schaltfläche") für Einschränkungs Bearbeitungsmodus
+![Schaltfläche für Einschränkungs Bearbeitungsmodus](introduction-images/12b-constrainteditingmode-vsmac.png "Schaltfläche für Einschränkungs Bearbeitungsmodus")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Schaltfläche] für Einschränkungs Bearbeitungsmodus (introduction-images/12b-constrainteditingmode-vs.png "Schaltfläche") für Einschränkungs Bearbeitungsmodus
+![Schaltfläche für Einschränkungs Bearbeitungsmodus](introduction-images/12b-constrainteditingmode-vs.png "Schaltfläche für Einschränkungs Bearbeitungsmodus")
 
 -----
 
@@ -274,11 +274,11 @@ Die untere Symbolleiste bietet eine Möglichkeit, das Gerät, die Ausrichtung un
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird] . (introduction-images/13-bottomtoolbar-vsmac.png "Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird") .](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
+[![Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird.](introduction-images/13-bottomtoolbar-vsmac.png "Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird.")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird] . (introduction-images/13-bottomtoolbar-vs.png "Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird") .](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
+[![Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird.](introduction-images/13-bottomtoolbar-vs.png "Die untere Symbolleiste, die zum Auswählen eines Geräts und der Ausrichtung für die Entwurfs Oberfläche verwendet wird.")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
 
 -----
 
@@ -300,16 +300,16 @@ Beachten Sie, dass beim Auswählen eines Geräts und einer Ausrichtung nur die V
 
 Wenn [Größenklassen](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) [aktiviert](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)sind, wird die Schaltfläche zum **Bearbeiten von Merkmalen** in der erweiterten unteren Symbolleiste angezeigt.  Wenn Sie auf die Schaltfläche " **Merkmale bearbeiten** " klicken, werden Optionen zum Erstellen einer Schnittstellen Variation basierend auf der Größenklasse angezeigt, die vom ausgewählten Gerät und der ausgewählten Ausrichtung Betrachten Sie die folgenden Beispiele:
 
-- Wenn **iPhone SE** / -Hochformat ausgewählt**ist, stellt**das popover Optionen zum Erstellen einer Schnittstellen Variation für die Klasse Compact Width, Regular Height size bereit. 
-- Wenn **iPad pro 9,7 "**  / **Landscape** / **Full Screen** " ausgewählt ist, stellt das popover Optionen zum Erstellen einer Schnittstellen Variation für die reguläre Breite, reguläre Height size-Klasse bereit.
+- Wenn **iPhone SE**  /  Hochformat ausgewählt**ist, stellt**das popover Optionen zum Erstellen einer Schnittstellen Variation für die Klasse Compact Width, Regular Height size bereit. 
+- Wenn **iPad pro 9,7 "**  / **Landscape**  / **Vollbild** ausgewählt ist, stellt das popover Optionen zum Erstellen einer Schnittstellen Variation für die reguläre Breite, reguläre Height size-Klasse bereit.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird] . (introduction-images/15-edittraitsbutton-vsmac.png "Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird") .](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
+[![Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird.](introduction-images/15-edittraitsbutton-vsmac.png "Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird.")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird] . (introduction-images/15-edittraitsbutton-vs.png "Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird") .](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
+[![Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird.](introduction-images/15-edittraitsbutton-vs.png "Die untere Symbolleiste, die zur Variation einer Schnittstelle nach Größenklasse verwendet wird.")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
 
 -----
 
@@ -342,7 +342,7 @@ Diese Steuerelemente passen den Zoomfaktor auf der Entwurfs Oberfläche an. Sie 
 
 Verwenden Sie die **Eigenschaftenpad** , um die Identität, die visuellen Stile, die Barrierefreiheit und das Verhalten eines Steuer Elements zu bearbeiten. Der folgende Screenshot veranschaulicht die **Eigenschaftenpad** Optionen für eine Schaltfläche:
 
-[![Die Eigenschaftenpad für eine Schaltfläche] . (introduction-images/17-buttonpropertiespad-vsmac.png "Die Eigenschaftenpad für eine Schaltfläche") .](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
+[![Die Eigenschaftenpad für eine Schaltfläche.](introduction-images/17-buttonpropertiespad-vsmac.png "Die Eigenschaftenpad für eine Schaltfläche.")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
 #### <a name="properties-pad-sections"></a>Eigenschaftenpad Abschnitte
 
 Die **Eigenschaftenpad** enthält drei Abschnitte:
@@ -408,13 +408,13 @@ Viele Eigenschaften im **Eigenschaften Fenster** zeigen keinen Wert oder einen S
 
 Zum Angeben von benutzerdefinierten Ereignis Handlern für verschiedene Ereignisse verwenden Sie die Registerkarte **Ereignisse** der **Eigenschaftenpad**. Im folgenden Screenshot behandelt eine `HandleClick` Methode z. b. den Fingerabdruck der Schaltfläche **innerhalb** des Ereignisses:
 
-[![Der Eigenschaftenpad, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist] . (introduction-images/19-buttonpropertiespadevents-vsmac.png "Der Eigenschaftenpad, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist") .](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
+[![Der Eigenschaftenpad, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.](introduction-images/19-buttonpropertiespadevents-vsmac.png "Der Eigenschaftenpad, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Zum Angeben von benutzerdefinierten Ereignis Handlern für verschiedene Ereignisse verwenden Sie die Registerkarte **Ereignisse** des **Fensters Eigenschaften**. Im folgenden Screenshot behandelt eine `HandleClick` Methode z. b. den Fingerabdruck der Schaltfläche **innerhalb** des Ereignisses:
 
-[![Das Eigenschaften Fenster, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist] . (introduction-images/19-buttonpropertieswindowevents-vs.png "Das Eigenschaften Fenster, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist") .](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
+[![Das Eigenschaften Fenster, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.](introduction-images/19-buttonpropertieswindowevents-vs.png "Das Eigenschaften Fenster, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
@@ -422,13 +422,13 @@ Nachdem ein Ereignishandler angegeben wurde, muss der entsprechenden Ansichts Co
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Eine unbekannte Selektor-Ausnahme] . (introduction-images/20-unrecognizedselector-vsmac.png "Eine unbekannte Selektor-Ausnahme") .](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
+[![Eine unbekannte Selektor-Ausnahme.](introduction-images/20-unrecognizedselector-vsmac.png "Eine unbekannte Selektor-Ausnahme.")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
 Beachten Sie, dass der IOS-Designer nach dem Angeben eines Ereignis Handlers im **Eigenschaftenpad**sofort die entsprechende Codedatei öffnet und das Angebot zum Einfügen der Methoden Deklaration bereitstellt. 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Eine unbekannte Selektor-Ausnahme] . (introduction-images/20-unrecognizedselector-vs.png "Eine unbekannte Selektor-Ausnahme") .](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
+[![Eine unbekannte Selektor-Ausnahme.](introduction-images/20-unrecognizedselector-vs.png "Eine unbekannte Selektor-Ausnahme.")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
 -----
 
@@ -440,11 +440,11 @@ Der IOS-Designer kann auch die Hierarchie von Steuerelementen einer Schnittstell
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Die Dokument] Gliederung (introduction-images/21-buttonoutlineview-vsmac.png "Die Dokument") Gliederung](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
+[![Die Dokument Gliederung](introduction-images/21-buttonoutlineview-vsmac.png "Die Dokument Gliederung")](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Die Dokument] Gliederung (introduction-images/21-buttonoutlineview-vs.png "Die Dokument") Gliederung](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
+[![Die Dokument Gliederung](introduction-images/21-buttonoutlineview-vs.png "Die Dokument Gliederung")](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
 
 -----
 

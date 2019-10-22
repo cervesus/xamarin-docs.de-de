@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
 ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "72273114"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Layout für Tablet-und Desktop-Apps
 
 Xamarin. Forms unterstützt alle auf den unterstützten Plattformen verfügbaren Gerätetypen. zusätzlich zu den Smartphones können apps auch auf folgenden Plattformen ausgeführt werden:
 
-- iPads,
+- iPads
 - Android-Tablets,
 - Windows-Tablets und Desktop Computer (auf denen Windows 10 ausgeführt wird).
 
@@ -42,7 +42,7 @@ Um eine angenehme Start Funktion zu gewährleisten und sicherzustellen, dass die
 Vor IOS 9 haben alle apps auf dem Gerät den voll Bildschirm übernommen, aber einige iPads können jetzt [Multitasking mit geteiltem Bildschirm](~/ios/platform/multitasking.md)durchführen.
 Dies bedeutet, dass Ihre APP auf der Seite des Bildschirms nur eine schlanke Spalte, 50% der Bildschirmbreite oder den gesamten Bildschirm aufnehmen könnte.
 
-[![](tablet-images/ipad-sml.png "Beispiel für den iPad-Split")](tablet-images/ipad.png#lightbox "Beispiel für den iPad-Split")
+[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
 
 Die Funktion "Split-Screen" bedeutet, dass Sie Ihre APP so entwerfen müssen, dass Sie mit weniger als 320 Pixel Breite oder mit einer Breite von höchstens 1366 Pixel funktioniert.
 
@@ -59,7 +59,7 @@ Zur Unterstützung von Tablets und Desktop Computern, auf denen Windows ausgefü
 
 Apps, die auf Windows-Tablets und-Desktops ausgeführt werden, können neben dem Vollbildmodus auch in beliebige Dimensionen geändert werden.
 
-[![](tablet-images/splitscreen-sml.png "Beispiel für Windows-Split Screen")](tablet-images/splitscreen.png#lightbox "Beispiel für Windows-Split Screen")
+[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
 <a name="optimize" />
 
@@ -67,9 +67,9 @@ Apps, die auf Windows-Tablets und-Desktops ausgeführt werden, können neben dem
 
 Sie können Ihre xamarin. Forms-Benutzeroberfläche anpassen, je nachdem, ob ein Telefon oder Tablet/Desktop-Gerät verwendet wird. Dies bedeutet, dass Sie die Benutzer Funktionen für Geräte mit großen Bildschirmen (z. b. Tablets und Desktop Computern) optimieren können.
 
-### <a name="deviceidiom"></a>"Device.Idiom"
+### <a name="deviceidiom"></a>Device. Idiom
 
-Sie können die [`Device`-](~/xamarin-forms/platform/device.md) Klasse verwenden, um das Verhalten Ihrer APP oder Benutzeroberfläche zu ändern. Mit der `Device.Idiom`-Enumeration können Sie
+Sie können die [`Device`](~/xamarin-forms/platform/device.md) -Klasse verwenden, um das Verhalten Ihrer APP oder Benutzeroberfläche zu ändern. Mithilfe der `Device.Idiom` Enumeration können Sie
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -84,7 +84,7 @@ Diese Vorgehensweise kann erweitert werden, um bedeutende Änderungen an den ein
 
 ### <a name="leveraging-masterdetailpage"></a>Nutzen von masterdetailpage
 
-Der [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) eignet sich ideal für größere Bildschirme, insbesondere auf dem iPad, auf dem das [`UISplitViewController`](xref:UIKit.UISplitViewController) zum Bereitstellen einer nativen IOS-Darstellung verwendet wird.
+Der [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ist ideal für größere Bildschirme, insbesondere auf dem iPad, auf dem die [`UISplitViewController`](xref:UIKit.UISplitViewController) verwendet wird, um eine native IOS-Darstellung bereitzustellen.
 
 Lesen Sie [diesen xamarin-Blogbeitrag](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) , um zu erfahren, wie Sie Ihre Benutzeroberfläche so anpassen können, dass Telefone ein Layout verwenden und größere Bildschirme einen anderen verwenden können (mit dem `MasterDetailPage`).
 

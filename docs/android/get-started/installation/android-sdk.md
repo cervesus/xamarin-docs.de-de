@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: da0a441be9cd07af456b1600155151e48d44162c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9bdc7b57cee74a91cc3abf69a216ea9913482c94
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758062"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273149"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
 
@@ -45,7 +45,7 @@ Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das aut
 
 - Sie können weiterhin [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
-- Wenn Sie Visual Studio 15.8, Vorschauversion 5 oder höher, verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
+- Wenn Sie Visual Studio 15.8, Vorschauversion 5 oder höher verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) anstelle von JDK 8 testen.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.
@@ -137,7 +137,7 @@ Der Xamarin Android SDK Manager benötigt auch das Java Development Kit (das aut
 
 - Sie können weiterhin [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) verwenden, wenn Sie spezifisch für API-Ebene 23 oder früher entwickeln.
 
-- Wenn Sie Visual Studio für Mac 7.7 oder höher verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) (derzeit in der Vorschauversion) anstelle von JDK 8 testen.
+- Wenn Sie Visual Studio für Mac 7.7 oder höher verwenden, können Sie auch die [Mobile OpenJDK-Distribution von Microsoft ](openjdk.md) anstelle von JDK 8 testen.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.

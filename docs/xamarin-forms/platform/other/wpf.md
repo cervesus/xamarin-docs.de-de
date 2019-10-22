@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
 ms.openlocfilehash: 38d9b42b3a29ea46d05a1d1cc4e38641d2445786
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71997175"
 ---
 # <a name="wpf-platform-setup"></a>Einrichten der WPF-Plattform
@@ -42,13 +42,13 @@ Befolgen Sie diese Anweisungen zum Hinzufügen einer WPF-App, die auf den Deskto
 
 3. Geben Sie einen Namen für das Projekt mit einer **WPF** -Erweiterung ein, z. b. **boxviewclock. WPF**. Klicken Sie auf die Schaltfläche **Durchsuchen** , wählen Sie den Ordner **boxviewclock** aus, und drücken **Sie Ordner auswählen**. Dadurch wird das WPF-Projekt in dasselbe Verzeichnis wie die anderen Projekte in der Projekt Mappe eingefügt.
 
-    ![Hinzufügen eines]neuen WPF-Projekts(wpf-images/add-new-project.png "Hinzufügen eines neuen WPF-Projekts")
+    ![Neues WPF-Projekt hinzufügen](wpf-images/add-new-project.png "Neues WPF-Projekt hinzufügen")
 
     Klicken Sie auf OK, um das Projekt zu erstellen.
 
 4. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das neue Projekt **boxviewclock. WPF** , und wählen Sie **nuget-Pakete verwalten**aus. Wählen Sie die Registerkarte **Durchsuchen** aus, aktivieren Sie das Kontrollkästchen **Vorabversion einschließen** , und suchen Sie nach **xamarin. Forms**.
 
-    ![Nuget-Paket auswählen](wpf-images/select-nuget-package.png "Wählen Sie das nuget-Paket") aus.
+    ![Nuget-Paket auswählen](wpf-images/select-nuget-package.png "Nuget-Paket auswählen")
 
     Wählen Sie das Paket aus, und klicken Sie auf die Schaltfläche **Installieren**
 
@@ -56,11 +56,11 @@ Befolgen Sie diese Anweisungen zum Hinzufügen einer WPF-App, die auf den Deskto
 
 6. Klicken Sie mit der rechten Maustaste **Projektmappen-Explorer** auf den Projektmappennamen, und wählen Sie **nuget-Pakete für**Projekt Mappe verwalten Wählen Sie die Registerkarte **Aktualisieren** und das **xamarin. Forms** -Paket aus. Wählen Sie alle Projekte aus, und aktualisieren Sie Sie auf dieselbe xamarin. Forms-Version:
 
-    Aktualisieren Sie das ![nuget-Paket]aktualisieren Sie(wpf-images/update-nuget-package.png "das nuget-Paket") .
+    ![Aktualisieren Sie das nuget-Paket.](wpf-images/update-nuget-package.png "Aktualisieren Sie das nuget-Paket.")
 
 7. Klicken Sie im WPF-Projekt mit der rechten Maustaste auf **Verweise**. Wählen Sie im Dialogfeld **Verweis-Manager** die Option **Projekte** auf der linken Seite aus, und aktivieren Sie das Kontrollkästchen neben dem **boxviewclock** -Projekt:
 
-    ![Verweis auf das]freigegebene Projekt Verweis auf(wpf-images/reference-shared-project.png "das freigegebene Projekt")
+    ![Verweisen auf das freigegebene Projekt](wpf-images/reference-shared-project.png "Verweisen auf das freigegebene Projekt")
 
 8. Bearbeiten Sie die Datei " **MainWindow. XAML** " des WPF-Projekts. Fügen Sie im `Window`-Tag eine XML-Namespace Deklaration für die **xamarin. Forms. Platform. WPF** -Assembly und den Namespace hinzu:
 
@@ -68,7 +68,7 @@ Befolgen Sie diese Anweisungen zum Hinzufügen einer WPF-App, die auf den Deskto
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    Ändern Sie nun das `Window`-Tag in `wpf:FormsApplicationPage`. Ändern Sie die Einstellung `Title` in den Namen der Anwendung, z. b. **boxviewclock**. Die abgeschlossene XAML-Datei sollte wie folgt aussehen:
+    Ändern Sie nun das `Window`-Tag in `wpf:FormsApplicationPage`. Ändern Sie die `Title` Einstellung in den Namen der Anwendung, z. b. **boxviewclock**. Die abgeschlossene XAML-Datei sollte wie folgt aussehen:
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
@@ -86,14 +86,14 @@ Befolgen Sie diese Anweisungen zum Hinzufügen einer WPF-App, die auf den Deskto
     </wpf:FormsApplicationPage>
     ```
 
-9. Bearbeiten Sie die Datei **MainWindow.XAML.cs** des WPF-Projekts. Fügen Sie zwei neue `using`-Direktiven hinzu:
+9. Bearbeiten Sie die Datei **MainWindow.XAML.cs** des WPF-Projekts. Fügen Sie zwei neue `using` Direktiven hinzu:
 
     ```csharp
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.WPF;
     ```
 
-    Ändern Sie die Basisklasse von `MainWindow` von `Window` in `FormsApplicationPage`. Fügen Sie nach dem `InitializeComponent`-Aufrufes die folgenden beiden-Anweisungen hinzu:
+    Ändern Sie die Basisklasse von `MainWindow` von `Window` in `FormsApplicationPage`. Fügen Sie nach dem `InitializeComponent`-Befehl die folgenden beiden-Anweisungen hinzu:
 
     ```csharp
     Forms.Init();
@@ -123,15 +123,15 @@ Befolgen Sie diese Anweisungen zum Hinzufügen einer WPF-App, die auf den Deskto
 
 10. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das WPF-Projekt, und wählen Sie **als Startprojekt festlegen**aus. Drücken Sie F5, um das Programm mit dem Visual Studio-Debugger auf dem Windows-Desktop auszuführen:
 
-    ![WPF boxview Uhr](wpf-images/wpf-boxviewclock.png "WPF boxview-Uhr" )
+    ![WPF-boxview-Uhr](wpf-images/wpf-boxviewclock.png "WPF-boxview-Uhr" )
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 ### <a name="platform-specifics"></a>Plattformeigenschaften
 
-Die Plattform, auf der Ihre xamarin. Forms-Anwendung ausgeführt wird, können Sie entweder über Code oder XAML ermitteln. Dies ermöglicht es Ihnen, die Programm Merkmale zu ändern, wenn Sie auf WPF ausgeführt werden. Vergleichen Sie im Code den Wert von `Device.RuntimePlatform` mit der Konstante "`Device.WPF`" (die der Zeichenfolge "WPF" entspricht). Wenn eine Entsprechung vorliegt, wird die Anwendung auf WPF ausgeführt.
+Die Plattform, auf der Ihre xamarin. Forms-Anwendung ausgeführt wird, können Sie entweder über Code oder XAML ermitteln. Dies ermöglicht es Ihnen, die Programm Merkmale zu ändern, wenn Sie auf WPF ausgeführt werden. Vergleichen Sie im Code den Wert `Device.RuntimePlatform` mit der `Device.WPF` Konstante (die der Zeichenfolge "WPF" entspricht). Wenn eine Entsprechung vorliegt, wird die Anwendung auf WPF ausgeführt.
 
-In XAML können Sie das `OnPlatform`-Tag verwenden, um einen spezifischen Eigenschafts Wert für die Plattform auszuwählen:
+In XAML können Sie das `OnPlatform`-Tag verwenden, um einen für die Plattform spezifischen Eigenschafts Wert auszuwählen:
 
 ```xaml
 <Button.TextColor>

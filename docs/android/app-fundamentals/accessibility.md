@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70755680"
 ---
 # <a name="accessibility-on-android"></a>Barrierefreiheit unter Android
@@ -34,7 +34,7 @@ saveButton.ContentDescription = "Save data";
 
 **Axml-Layout**
 
-Verwenden Sie in XML- `android:contentDescription` Layouts das-Attribut:
+Verwenden Sie in XML-Layouts das `android:contentDescription`-Attribut:
 
 ```xml
 <ImageButton
@@ -45,12 +45,12 @@ Verwenden Sie in XML- `android:contentDescription` Layouts das-Attribut:
 
 ### <a name="use-hint-for-textview"></a>Use Hint für TextView
 
-Verwenden `EditText` Sie `TextView` für-und-Steuerelemente für `Hint` die Dateneingabe die-Eigenschaft, um eine Beschreibung der erwarteten Eingabe `ContentDescription`anzugeben (anstelle von).
+Verwenden Sie für `EditText`-und `TextView`-Steuerelemente für die Dateneingabe die `Hint`-Eigenschaft, um eine Beschreibung der erwarteten Eingabe anzugeben (anstatt `ContentDescription`).
 Wenn Text eingegeben wurde, wird der Text selbst "Read" anstelle des Hinweises.
 
 **C#**
 
-Legen Sie `Hint` die-Eigenschaft im Code fest:
+Legen Sie die `Hint`-Eigenschaft im Code fest:
 
 ```csharp
 someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
@@ -58,7 +58,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **Axml-Layout**
 
-Verwenden Sie in XML-Layoutdateien das `android:hint` -Attribut:
+Verwenden Sie in XML-Layoutdateien das `android:hint`-Attribut:
 
 ```xml
 <EditText
@@ -68,11 +68,11 @@ Verwenden Sie in XML-Layoutdateien das `android:hint` -Attribut:
 
 ### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor verknüpft Eingabefelder mit Bezeichnungen
 
-Verwenden Sie die `LabelFor` -Eigenschaft, um einem Dateneingabe-Steuerelement eine Bezeichnung zuzuordnen.
+Um eine Bezeichnung einem Dateneingabe-Steuerelement zuzuordnen, verwenden Sie die `LabelFor`-Eigenschaft, um
 
 **C#**
 
-Legen C#Sie in für `LabelFor` die-Eigenschaft die Ressourcen-ID des Steuer Elements fest, das von diesem Inhalt beschrieben wird (in der Regel wird diese Eigenschaft für eine Bezeichnung festgelegt und verweist auf ein anderes Eingabe Steuerelement):
+Legen C#Sie in für die `LabelFor`-Eigenschaft die Ressourcen-ID des Steuer Elements fest, das von diesem Inhalt beschrieben wird (in der Regel wird diese Eigenschaft für eine Bezeichnung festgelegt und verweist auf ein anderes Eingabe Steuerelement):
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -82,7 +82,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **Axml-Layout**
 
-Verwenden Sie in Layout XML `android:labelFor` die-Eigenschaft, um auf einen anderen Steuerelement Bezeichner zu verweisen
+Verwenden Sie im Layout-XML die `android:labelFor`-Eigenschaft, um auf den Bezeichner eines anderen Steuer Elements
 
 ```xml
 <TextView
@@ -96,9 +96,9 @@ Verwenden Sie in Layout XML `android:labelFor` die-Eigenschaft, um auf einen and
 
 ### <a name="announce-for-accessibility"></a>Ankündigen für Barrierefreiheit
 
-Verwenden Sie `AnnounceForAccessibility` die-Methode für ein beliebiges Ansicht-Steuerelement, um Benutzern bei aktivierter Barrierefreiheit ein Ereignis oder eine Statusänderung mitzuteilen. Diese Methode ist für die meisten Vorgänge nicht erforderlich, bei denen die integrierte-Erzählung ein ausreichendes Feedback bereitstellt, aber verwendet werden sollte, wenn zusätzliche Informationen für den Benutzer hilfreich sind.
+Verwenden Sie die `AnnounceForAccessibility`-Methode für ein beliebiges Ansicht-Steuerelement, um Benutzern bei aktivierter Barrierefreiheit ein Ereignis oder eine Statusänderung mitzuteilen. Diese Methode ist für die meisten Vorgänge nicht erforderlich, bei denen die integrierte-Erzählung ein ausreichendes Feedback bereitstellt, aber verwendet werden sollte, wenn zusätzliche Informationen für den Benutzer hilfreich sind.
 
-Der folgende Code zeigt ein einfaches Beispiel für `AnnounceForAccessibility`den Aufruf von:
+Der folgende Code zeigt ein einfaches Beispiel für das Aufrufen von `AnnounceForAccessibility`:
 
 ```csharp
 button.Click += delegate {
@@ -109,11 +109,11 @@ button.Click += delegate {
 
 ## <a name="changing-focus-settings"></a>Ändern der Fokuseinstellungen
 
-Barrierefreie Navigation basiert darauf, dass Steuerelemente den Fokus haben, um dem Benutzer zu helfen, die verfügbaren Vorgänge zu verstehen. Android stellt eine `Focusable` Eigenschaft bereit, die Steuerelemente so markieren kann, dass Sie den Fokus während der Navigation erhalten.
+Barrierefreie Navigation basiert darauf, dass Steuerelemente den Fokus haben, um dem Benutzer zu helfen, die verfügbaren Vorgänge zu verstehen. Android stellt eine `Focusable`-Eigenschaft bereit, die Steuerelemente so markieren kann, dass Sie den Fokus während der Navigation erhalten.
 
 **C#**
 
-Um zu verhindern C#, dass ein Steuerelement den Fokus erhält `Focusable` , legen `false`Sie die-Eigenschaft auf fest:
+Um zu verhindern C#, dass ein Steuerelement den Fokus erhält, legen Sie die `Focusable`-Eigenschaft auf `false` fest:
 
 ```csharp
 label.Focusable = false;
@@ -121,13 +121,13 @@ label.Focusable = false;
 
 **Axml-Layout**
 
-Legen Sie in Layout-XML `android:focusable` -Dateien das Attribut fest:
+Legen Sie in Layout-XML-Dateien das `android:focusable`-Attribut fest:
 
 ```xml
 <android:focusable="false" />
 ```
 
-Sie können auch die Reihenfolge der nach `nextFocusDown`richten `nextFocusLeft`mit `nextFocusRight`den `nextFocusUp` Attributen,,, Steuern, die normalerweise im Layout axml festgelegt sind. Verwenden Sie diese Attribute, um sicherzustellen, dass der Benutzer einfach durch die Steuerelemente auf dem Bildschirm navigieren kann.
+Sie können auch die Reihenfolge der Nachrichten mit dem `nextFocusDown`, `nextFocusLeft` `nextFocusRight`, `nextFocusUp` Attributen steuern, die in der Regel im Layout axml festgelegt sind. Verwenden Sie diese Attribute, um sicherzustellen, dass der Benutzer einfach durch die Steuerelemente auf dem Bildschirm navigieren kann.
 
 ## <a name="accessibility-and-localization"></a>Barrierefreiheit und Lokalisierung
 
@@ -145,7 +145,7 @@ Die Verwendung von Text aus einer Zeichen folgen Datei ist C# unten in und in de
 
 **C#**
 
-Suchen Sie anstelle von Zeichenfolgenliteralen im Code übersetzte Werte aus Strings `Resources.GetText`-Dateien mit:
+Suchen Sie anstelle von Zeichenfolgenliteralen im Code übersetzte Werte aus Strings-Dateien mit `Resources.GetText`:
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
@@ -154,7 +154,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 **AXML**
 
-In LayoutXml-Barrierefreiheits `contentDescription` Attributen wie `hint` und können auf einen Zeichen folgen Bezeichner festgelegt werden:
+In LayoutXml-Barrierefreiheits Attributen wie `hint` und `contentDescription` können auf einen Zeichen folgen Bezeichner festgelegt werden:
 
 ```xml
 <TextView

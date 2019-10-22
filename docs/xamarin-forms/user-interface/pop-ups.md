@@ -1,36 +1,34 @@
 ---
 title: Popup anzeigen
-description: 'Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel wird die Verwendung der APIs für Warnungen und Aktions Blätter zum Anzeigen von Dialogfeldern veranschaulicht, die Benutzer zu einfachen Fragen auffordern und Benutzer durch Aufgaben leiten.'
+description: Xamarin. Forms bietet drei Popup ähnliche Benutzeroberflächen Elemente – eine Warnung, ein Aktions Blatt und eine Eingabeaufforderung. In diesem Artikel wird die Verwendung von Warnungen, Aktions Blättern und Eingabe Aufforderungs-APIs zum Anzeigen von Dialogfeldern veranschaulicht, die Benutzer zu einfachen Fragen auffordern, Benutzer durch Aufgaben leiten und Eingabe Aufforderungen anzeigen.
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 3b6b2ea2d497c9fdce2c323c7f7a793a4186aa4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 09/25/2019
+ms.openlocfilehash: ddf0b96295f7153803db65a1fd741cc5df473730
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656110"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697092"
 ---
 # <a name="display-pop-ups"></a>Popup anzeigen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-_Xamarin.Forms bietet zwei Benutzeroberflächenelemente, die Popupelementen ähneln: eine Warnung und ein Aktionsblatt. In diesem Artikel wird die Verwendung der APIs für Warnungen und Aktions Blätter zum Anzeigen von Dialogfeldern veranschaulicht, die Benutzer zu einfachen Fragen auffordern und Benutzer durch Aufgaben leiten._
-
-Eine Warnung anzuzeigen oder einen Benutzer zu einer Auswahl aufzufordern, ist eine gängige Benutzeroberflächenaufgabe. Xamarin.Forms verfügt über zwei Methoden für die [`Page`](xref:Xamarin.Forms.Page)-Klasse für die Interaktion mit dem Benutzer über ein Popupelement: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) und [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*). Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
+Wenn Sie eine Warnung anzeigen, einen Benutzer auffordern, eine Auswahl zu treffen oder eine Eingabeaufforderung anzuzeigen, ist dies eine gängige UI-Aufgabe. Xamarin. Forms verfügt über drei Methoden für die [`Page`](xref:Xamarin.Forms.Page) -Klasse für die Interaktion mit dem Benutzer über ein Popup Fenster: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*), [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)und `DisplayPromptAsync`. Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
 
 ## <a name="display-an-alert"></a>Anzeigen einer Warnung
 
 Alle von Xamarin.Forms unterstützten Plattformen verfügen über ein modales Popupelement, um dem Benutzer eine Warnung anzuzeigen oder einfache Fragen zu stellen. Verwenden Sie die Methode [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) auf einem beliebigen [`Page`](xref:Xamarin.Forms.Page)-Element, um solche Warnungen in Xamarin.Forms anzuzeigen. Mit der folgenden Codezeile wird dem Benutzer eine einfache Meldung angezeigt:
 
 ```csharp
-DisplayAlert ("Alert", "You have been alerted", "OK");
+await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "Warnungsdialogfeld mit einer Schaltfläche")
+![](pop-ups-images/alert.png "Alert Dialog with One Button")
 
 In diesem Beispiel werden keine Informationen des Benutzers erfasst. Die Warnung wird modal angezeigt und geschlossen, sobald der Benutzer erneut mit der Anwendung interagiert.
 
@@ -44,7 +42,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayAlert](pop-ups-images/alert2-sml.png "Warnungsdialogfeld mit zwei Schaltflächen")](pop-ups-images/alert2.png#lightbox "Alert Dialog with Two Buttons")
+[![Display Alert](pop-ups-images/alert2-sml.png "Warn Dialogfeld mit zwei Schaltflächen")](pop-ups-images/alert2.png#lightbox "Warn Dialogfeld mit zwei Schaltflächen")
 
 ## <a name="guide-users-through-tasks"></a>Benutzer durch Aufgaben leiten
 
@@ -60,7 +58,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![](pop-ups-images/action.png "ActionSheet-Dialogfeld")
+![](pop-ups-images/action.png "ActionSheet Dialog")
 
 Die Schaltfläche `destroy` wird anders als die anderen gerendert. Sie kann den Wert `null` aufweisen oder als dritter Zeichenfolgenparameter festgelegt werden. Im folgenden Beispiel wird die `destroy`-Schaltfläche verwendet:
 
@@ -72,7 +70,45 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "Aktionsblatt-Dialogfeld mit Destroy-Schaltfläche")](pop-ups-images/action2.png#lightbox "Action Sheet Dialog with Destroy Button")
+[![Displayaktionsheet](pop-ups-images/action2-sml.png "Dialog Feld mit der Schaltfläche "zerstören"")](pop-ups-images/action2.png#lightbox "Dialog Feld mit der Schaltfläche "zerstören"")
+
+## <a name="display-a-prompt"></a>Anzeigen einer Eingabeaufforderung
+
+Um eine Aufforderung anzuzeigen, müssen Sie die `DisplayPromptAsync` in einem beliebigen [`Page`](xref:Xamarin.Forms.Page)aufrufen und dabei einen Titel und eine Nachricht als `string` Argumente übergeben:
+
+```csharp
+string result = await DisplayPromptAsync("Question 1", "What's your name?");
+```
+
+Die Eingabeaufforderung wird modisch angezeigt:
+
+[![Screenshot einer modalen Eingabeaufforderung unter IOS und Android](pop-ups-images/simple-prompt.png "Modale Eingabeaufforderung")](pop-ups-images/simple-prompt-large.png#lightbox "Modale Eingabeaufforderung")
+
+Wenn die Schaltfläche OK abgetippt wird, wird die eingegebene Antwort als `string` zurückgegeben. Wenn die Schaltfläche Abbrechen angetippt wird, wird `null` zurückgegeben.
+
+Die vollständige Argumentliste für die `DisplayPromptAsync`-Methode lautet:
+
+- `title` vom Typ `string` ist der Titel, der in der Eingabeaufforderung angezeigt werden soll.
+- `message` vom Typ `string` ist die Meldung, die in der Eingabeaufforderung angezeigt werden soll.
+- `accept` vom Typ `string` ist der Text für die Accept-Schaltfläche. Dies ist ein optionales Argument, dessen Standardwert OK ist.
+- `cancel` vom Typ "`string`" ist der Text für die Schaltfläche "Abbrechen". Dies ist ein optionales Argument, dessen Standardwert "Cancel" lautet.
+- `placeholder` vom Typ `string` ist der Platzhalter Text, der in der Eingabeaufforderung angezeigt werden soll. Dies ist ein optionales Argument, dessen Standardwert `null` ist.
+- `maxLength` vom Typ `int` ist die maximale Länge der Benutzer Antwort. Dies ist ein optionales Argument, dessen Standardwert-1 ist.
+- `keyboard` vom Typ `Keyboard` ist der Tastatur Typ, der für die Benutzer Antwort verwendet werden soll. Dies ist ein optionales Argument, dessen Standardwert `Keyboard.Default` ist.
+
+Das folgende Beispiel zeigt das Festlegen einiger optionaler Argumente:
+
+```csharp
+string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
+}
+```
+
+Dieser Code schränkt die Anzahl von Zeichen ein, die in 2 eingegeben werden können, und zeigt die numerische Tastatur für die Benutzereingabe an:
+
+[![Screenshot einer modalen Eingabeaufforderung unter IOS und Android](pop-ups-images/keyboard-prompt.png "Modale Eingabeaufforderung")](pop-ups-images/keyboard-prompt-large.png#lightbox "Modale Eingabeaufforderung")
+
+> [!NOTE]
+> Die `DisplayPromptAsync`-Methode ist derzeit nur unter IOS und Android implementiert.
 
 ## <a name="related-links"></a>Verwandte Links
 

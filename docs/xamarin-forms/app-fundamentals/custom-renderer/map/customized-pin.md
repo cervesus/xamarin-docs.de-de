@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 8df5b373fccdef93a8ffbc66fd53a94378f47a6e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650835"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424849"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartenstecknadel
 
@@ -24,7 +24,7 @@ Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jed
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`Map`](xref:Xamarin.Forms.Maps.Map)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](customized-pin-images/map-classes.png "Beziehungen zwischen dem Kartensteuerelement und den nativen Steuerelementen, die dieses implementieren")
+![](customized-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
 
 Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`Map`](xref:Xamarin.Forms.Maps.Map)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
@@ -142,11 +142,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](customized-pin-images/solution-structure.png "Projektzuständigkeiten beim benutzerdefinierten CustomMap-Renderer")
+![](customized-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
 
 Das Steuerelement `CustomMap` wird von plattformspezifischen Rendererklassen gerendert, die von der `MapRenderer`-Klasse für jede Plattform abgeleitet werden. Das führt dazu, dass jedes `CustomMap`-Steuerelement mit plattformspezifischen Steuerelementen gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](customized-pin-images/screenshots.png "CustomMap auf jeder Plattform")
+![](customized-pin-images/screenshots.png "CustomMap on each Platform")
 
 Die `MapRenderer`-Klasse stellt die `OnElementChanged`-Methode zur Verfügung, die bei der Erstellung der benutzerdefinierten Xamarin.Forms-Karte aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CustomMap`-Instanz.
 
@@ -179,7 +179,7 @@ In den folgenden Abschnitten wird die Implementierung jeder plattformspezifische
 
 Auf den folgenden Screenshots ist die Karte vor und nach der Anpassung zu sehen:
 
-![](customized-pin-images/map-layout-ios.png "Kartensteuerelement vor und nach der Anpassung")
+![](customized-pin-images/map-layout-ios.png "Map Control Before and After Customization")
 
 Unter iOS wird die Stecknadel als *Anmerkung* bezeichnet und kann entweder aus einem benutzerdefinierten Bild oder aus einer systemdefinierten Stecknadel in verschiedenen Farben erstellt werden. Anmerkungen können optional eine *Legende* anzeigen. Diese wird angezeigt, wenn der Benutzer eine Anmerkung auswählt. Die Legende zeigt die `Label`- und `Address`-Eigenschaften der `Pin`-Instanz mit optionalen zusätzlichen Ansichten auf der linken oder rechten Seite an. Auf dem obigen Screenshot wird auf der linken Seite zusätzlich das Bild eines Affen angezeigt, während auf der rechten Seite eine *Informationsschaltfläche* angezeigt wird.
 
@@ -352,7 +352,7 @@ Weitere Informationen zum Anpassen von einer `MKMapView`-Instanz finden Sie unte
 
 Auf den folgenden Screenshots ist die Karte vor und nach der Anpassung zu sehen:
 
-![](customized-pin-images/map-layout-android.png "Kartensteuerelement vor und nach der Anpassung")
+![](customized-pin-images/map-layout-android.png "Map Control Before and After Customization")
 
 Unter Android wird die Stecknadel als *Markierung* bezeichnet und kann entweder aus einem benutzerdefinierten Bild oder aus einer systemdefinierten Markierung in verschiedenen Farben erstellt werden. Markierungen können ein *Infofenster* anzeigen, wenn der Benutzer darauf tippt. Das Infofenster zeigt die `Label`- und `Address`-Eigenschaften der `Pin`-Instanz an und kann auch auf andere Inhalte angepasst werden. Es kann jedoch nur ein Infofenster gleichzeitig angezeigt werden.
 
@@ -383,7 +383,6 @@ namespace CustomRenderer.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 customPins = formsMap.CustomPins;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -399,7 +398,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wurde, ruft die Methode `OnElementChanged` die Methode `MapView.GetMapAsync` auf, die die zugrundeliegende `GoogleMap`-Klasse abruft, die an die Ansicht gebunden ist. Sobald die `GoogleMap`-Instanz verfügbar ist, wird die `OnMapReady`-Überschreibung aufgerufen. Diese Methode registriert einen Ereignishandler für das `InfoWindowClick`-Ereignis, das ausgelöst wird, wenn [auf das Infofenster geklickt wird](#Clicking_on_the_Info_Window). Das Abonnement für das Ereignis wird nur gekündigt, wenn das Element, dem der Renderer angefügt ist, sich ändert. Die `OnMapReady`-Überschreibung ruft außerdem die `SetInfoWindowAdapter`-Methode auf, um festzulegen, dass die `CustomMapRenderer`-Klasseninstanz die Methoden bereitstellt, die zur Anpassung des Infofensters erforderlich sind.
+Die `OnElementChanged`-Methode ruft die Liste benutzerdefinierter Stecknadeln vom Steuerelement ab, sofern der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist. Sobald die `GoogleMap`-Instanz verfügbar ist, wird die `OnMapReady`-Überschreibung aufgerufen. Diese Methode registriert einen Ereignishandler für das `InfoWindowClick`-Ereignis, das ausgelöst wird, wenn [auf das Infofenster geklickt wird](#Clicking_on_the_Info_Window). Das Abonnement für das Ereignis wird nur gekündigt, wenn das Element, dem der Renderer angefügt ist, sich ändert. Die `OnMapReady`-Überschreibung ruft außerdem die `SetInfoWindowAdapter`-Methode auf, um festzulegen, dass die `CustomMapRenderer`-Klasseninstanz die Methoden bereitstellt, die zur Anpassung des Infofensters erforderlich sind.
 
 Die `CustomMapRenderer`-Klasse implementiert die `GoogleMap.IInfoWindowAdapter`-Schnittstelle, um [das Infofenster anzupassen](#Customizing_the_Info_Window). Diese Schnittstelle gibt an, dass folgende Methoden implementiert werden müssen:
 
@@ -511,7 +510,7 @@ Weitere Informationen zum Anpassen von einer `MapView`-Instanz finden Sie unter 
 
 Auf den folgenden Screenshots ist die Karte vor und nach der Anpassung zu sehen:
 
-![](customized-pin-images/map-layout-uwp.png "Kartensteuerelement vor und nach der Anpassung")
+![](customized-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
 
 Auf der Universellen Windows-Plattform wird die Stecknadel als *Kartensymbol* bezeichnet und kann aus einem benutzerdefinierten Bild oder einem systemdefinierten Standardbild erstellt werden. Ein Kartensymbol kann eine `UserControl`-Klasse anzeigen, wenn der Benutzer darauf tippt. Die `UserControl`-Klasse kann sämtliche Inhalte darstellen, einschließlich den `Label`- und `Address`-Eigenschaften der `Pin`-Instanz.
 

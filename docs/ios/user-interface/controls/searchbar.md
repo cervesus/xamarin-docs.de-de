@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
 ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70283350"
 ---
 # <a name="search-bars-in-xamarinios"></a>Suchleisten in xamarin. IOS
@@ -57,7 +57,7 @@ Festlegen von Eigenschaften auf der Suchleiste:
 
 ![Eigenschaften der Suchleiste](searchbar-images/image6.png)
 
-Gibt das `SearchButtonClicked` -Ereignis aus, wenn die Such Schaltfläche gedrückt wird. Dadurch wird Ihre Suchlogik aufgerufen:
+Gibt das `SearchButtonClicked`-Ereignis aus, wenn die Such Schaltfläche gedrückt wird. Dadurch wird Ihre Suchlogik aufgerufen:
 
 ```csharp
 searchBar.SearchButtonClicked += (sender, e) => {
@@ -88,7 +88,7 @@ Diese Eigenschaften werden im folgenden erläutert:
   - Zeigt die Schaltfläche "Suchergebnisse/Lesezeichen" – zeigt ein Suchergebnis oder Lesezeichen Symbol auf der Suchleiste an
   - Zeigt die Schaltfläche "Abbrechen" – ermöglicht Benutzern das Beenden der Suchfunktion. Es wird empfohlen, diese Option auszuwählen.
   - Zeigt die Bereichs Leiste an – dadurch können Benutzer den Umfang Ihrer Suche einschränken. Wenn Sie z. b. in der Music-App suchen, kann der Benutzer auswählen, ob Apple Music oder seine Bibliothek nach einem bestimmten Song oder einer bestimmten Künstlerin durchsucht werden soll. Zum Anzeigen verschiedener Optionen fügen Sie der Eigenschaft **scopebartiteln** ein Array von Titeln hinzu.
-  ![Titel des Suchleisten Bereichs](searchbar-images/image4.png)
+  ![Search leisten Bereichs Titel ](searchbar-images/image4.png)
 
 - **Text Verhalten** – diese Optionen werden verwendet, um zu adressieren, wie die Benutzereingabe bei der Eingabe formatiert wird. Durch die Groß-/Kleinschreibung wird der Anfang jedes Worts oder Satzes oder jedes Zeichen als Großbuchstabe festgelegt. Korrektur-und Rechtschreibprüfung, bei der der Benutzer zur Eingabe von empfohlenen rechtschreibweisen bei der Eingabe aufgefordert wird.
 - **Tastatur** – steuert den Tastatur Stil, der für die Eingabe angezeigt wird, und damit die auf der Tastatur verfügbaren Tasten. Dies schließt das Zahlen Pad, den telefonpad, die e-Mail, die URL und andere Optionen ein.

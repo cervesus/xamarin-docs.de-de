@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766855"
 ---
 # <a name="using-data-in-an-ios-app"></a>Verwenden von Daten in einer IOS-App
@@ -20,13 +20,13 @@ Das **DataAccess_Adv** -Beispiel zeigt eine funktionierende Anwendung, die die D
 
 Nachdem Sie einige Daten hinzugefügt haben, sehen die Anwendungs Bildschirme in ios wie folgt aus:
 
- ![](using-data-in-an-app-images/image9.png "IOS-Beispielliste")
+ ![](using-data-in-an-app-images/image9.png "iOS sample list")
 
- ![](using-data-in-an-app-images/image10.png "IOS-Beispiel Details")
+ ![](using-data-in-an-app-images/image10.png "iOS sample detail")
 
 Das IOS-Projekt wird unten angezeigt – der in diesem Abschnitt gezeigte Code ist im **ORM** -Verzeichnis enthalten:
 
- ![](using-data-in-an-app-images/image13.png "IOS-Projektstruktur")
+ ![](using-data-in-an-app-images/image13.png "iOS project tree")
 
 Der Native UI-Code für die viewcontrollers in ios ist für dieses Dokument nicht verfügbar.
 Weitere Informationen zu den UI-Steuerelementen finden Sie im Handbuch [IOS Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md) .
@@ -38,7 +38,7 @@ Das Beispiel enthält eine Reihe von Lesevorgängen:
 - Lesen der Liste
 - Lesen einzelner Datensätze
 
-Die beiden Methoden in der `StockDatabase` -Klasse sind:
+Die beiden Methoden in der `StockDatabase`-Klasse lauten wie folgt:
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -59,7 +59,7 @@ IOS rendert die Daten anders als `UITableView`.
 
 ## <a name="create-and-update"></a>Erstellen und aktualisieren
 
-Um den Anwendungscode zu vereinfachen, wird eine einzelne Save-Methode bereitgestellt, die einen INSERT-oder Update-Vorgang durchführt, je nachdem, ob PrimaryKey festgelegt wurde. Da die `Id` -Eigenschaft mit einem `[PrimaryKey]` -Attribut gekennzeichnet ist, sollten Sie Sie nicht im Code festlegen.
+Um den Anwendungscode zu vereinfachen, wird eine einzelne Save-Methode bereitgestellt, die einen INSERT-oder Update-Vorgang durchführt, je nachdem, ob PrimaryKey festgelegt wurde. Da die `Id`-Eigenschaft mit einem `[PrimaryKey]`-Attribut gekennzeichnet ist, sollten Sie Sie nicht im Code festlegen.
 Diese Methode erkennt, ob der Wert zuvor gespeichert wurde (durch Überprüfen der Primärschlüssel Eigenschaft), und fügt das Objekt entsprechend ein:
 
 ```csharp
@@ -81,8 +81,8 @@ Gute plattformübergreifende Anwendungen implementieren so viel von der Überpr�
 
 ## <a name="delete"></a>Löschen
 
-Im Gegensatz `Insert` zu `Update` den-und `Delete<T>` -Methoden kann die-Methode nur den Primärschlüssel Wert anstelle `Stock` eines Complete-Objekts akzeptieren.
-In diesem Beispiel wird `Stock` ein-Objekt an die-Methode weitergegeben, aber nur die ID-Eigenschaft `Delete<T>` wird an die-Methode weitergegeben.
+Im Gegensatz zu den Methoden `Insert` und `Update` kann die `Delete<T>`-Methode nur den Primärschlüssel Wert anstelle eines kompletten `Stock` Objekts akzeptieren.
+In diesem Beispiel wird ein `Stock` Objekt an die-Methode weitergegeben, aber nur die ID-Eigenschaft wird an die `Delete<T>`-Methode weitergegeben.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -103,7 +103,7 @@ Sie können dies problemlos in Ihrer mobilen Anwendung erreichen, indem Sie eine
 
 Wenn Sie eine Datenbankdatei für die Verteilung mit Ihrer APP erstellen, achten Sie darauf, dass Tabellen und Spalten benannt werden, um sicherzustellen, dass Sie mit den Anforderungen Ihres Codes identisch sind. Dies gilt insbesondere, C# Wenn Sie sqlite.NET verwenden, der davon ausgeht, dass die Namen der Klassen und Eigenschaften entsprechen oder die zugeordneten benutzerdefinierten Attribute).
 
-Fügen Sie für IOS die SQLite-Datei in Ihre Anwendung ein, und stellen Sie **sicher, dass Sie mit Buildaktion gekennzeichnet ist: Inhalt**. Platzieren Sie den Code in `FinishedLaunching` , um die Datei in ein beschreibbares Verzeichnis zu kopieren, *bevor* Sie Daten Methoden abrufen. Mit dem folgenden Code wird eine vorhandene Datenbank mit dem Namen **Data. sqlite**kopiert, sofern diese nicht bereits vorhanden ist.
+Fügen Sie für IOS die SQLite-Datei in Ihre Anwendung ein, und stellen Sie sicher, dass Sie mit **Buildaktion: Content**gekennzeichnet ist. Platzieren Sie den Code in der `FinishedLaunching`, um die Datei in ein beschreibbares Verzeichnis zu kopieren, *bevor* Sie Daten Methoden aufzurufen. Mit dem folgenden Code wird eine vorhandene Datenbank mit dem Namen **Data. sqlite**kopiert, sofern diese nicht bereits vorhanden ist.
 
 ```csharp
 // Copy the database across (if it doesn't exist)

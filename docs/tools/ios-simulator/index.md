@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2019
 ms.openlocfilehash: 3067493315c62c46f44fb94aa61a919e1449080b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70289706"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>iOS-Remotesimulator für Windows
@@ -34,7 +34,7 @@ Die Symbolleiste am oberen Rand des simulatorfensters enthält eine Reihe nützl
 
 - **Startseite** – simuliert die Start Schaltfläche auf einem IOS-Gerät.
 - **Lock** – sperrt den Simulator (Schwenk zum Entsperren).
-- **Screenshot** – speichert einen Screenshot des Simulators (gespeichert im **pictures\xamarin\ios-\\Simulator**).
+- **Screenshot** – speichert einen Screenshot des Simulators (gespeichert in **pictures\xamarin\ios Simulator \\** ).
 - [**Einstellungen**](#settings) – zeigt Tastatur, Speicherort und andere Einstellungen an.
 - [**Weitere Optionen**](#other-options) – führt verschiedene simulatoroptionen aus, z. b. Drehung, Shake Gesten und touchid.
 
@@ -52,7 +52,7 @@ Mit diesen Einstellungen können Sie die Hardware Tastatur aktivieren, einen Spe
 
 Die Schaltfläche mit den Auslassungs Punkten der Symbolleiste zeigt andere Optionen an, z. b. Drehung, Shake Gesten und Neustarts. Diese Optionen können als Liste angezeigt werden, indem Sie mit der rechten Maustaste auf eine beliebige Stelle im Fenster des Simulators klicken:
 
-[![zusätzliche Einstellungen] für den IOS-Simulator (images/more-sml.png "zusätzliche Einstellungen") für den IOS-Simulator](images/more.png#lightbox)
+[![zusätzliche Einstellungen für den IOS-Simulator](images/more-sml.png "zusätzliche Einstellungen für den IOS-Simulator")](images/more.png#lightbox)
 
 ## <a name="touchscreen-support"></a>Touchscreen-Unterstützung
 

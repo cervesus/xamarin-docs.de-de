@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70760227"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmensanwendungen
@@ -62,7 +62,7 @@ Dieses Handbuch enthält eine Beispielanwendung, eshoponcontainers, einen Online
 
 In Abbildung 1-1 wird eine allgemeine Übersicht über die Architektur der Beispielanwendung bereitstellt.
 
-![](introduction-images/architecture.png "Allgemeine eshoponcontainers-Architektur")
+![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
 
 **Abbildung 1-1**: eshoponcontainers-Architektur auf hoher Ebene
 
@@ -83,15 +83,15 @@ Die Beispielanwendung enthält die folgenden Back-End-Dienste:
 
 Diese Back-End-Dienste werden als-Dienste mit ASP.net Core MVC implementiert und als eindeutige Container innerhalb eines einzelnen docker-Hosts bereitgestellt. Gemeinsam werden diese Back-End-Dienste als eshoponcontainers-Verweis Anwendung bezeichnet. Client-apps kommunizieren über eine Rest (Representational State Transfer)-Webschnittstelle mit den Back-End-Diensten. Weitere Informationen zu microservices und docker finden Sie unter [microservices in Containern](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md).
 
-Weitere Informationen zur Implementierung der Back-End-Dienste finden [Sie unter .NET-Dienste: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
+Weitere Informationen zur Implementierung der Back-End-Dienste finden Sie unter [.net-microservices: Architektur für .NET-Container Anwendungen](https://aka.ms/microservicesebook).
 
 ### <a name="mobile-app"></a>Mobile App
 
 Dieser Leitfaden konzentriert sich auf das entwickeln plattformübergreifender Unternehmens-apps mit xamarin. Forms und verwendet die Mobile App eshoponcontainers als Beispiel. Abbildung 1-2 zeigt die Seiten aus den eshoponcontainers-Mobile App, die die zuvor beschriebenen Funktionen bereitstellen.
 
-[![](introduction-images/screenshots.png "Der Mobile App \"eshoponcontainers\"")](introduction-images/screenshots-large.png#lightbox "Der Mobile App "eshoponcontainers"")
+[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
 
-**Abbildung 1-2**: Der Mobile App "eshoponcontainers"
+**Abbildung 1-2**: die eshoponcontainers-Mobile App
 
 Der Mobile App nutzt die Back-End-Dienste, die von der eshoponcontainers-Referenz Anwendung bereitgestellt werden Sie kann jedoch so konfiguriert werden, dass Sie Daten von mockdiensten für diejenigen nutzt, die die Bereitstellung der Back-End-Dienste vermeiden möchten.
 
@@ -102,7 +102,7 @@ Die eshoponcontainers-Mobile App führt die folgenden xamarin. Forms-Funktionen 
 - Bindungen
 - Konver
 - Stile
-- Animationen
+- Animations
 - Befehle
 - Verhalten
 - Trigger
@@ -121,14 +121,14 @@ Die eshoponcontainers-Mobile App Lösung organisiert den Quellcode und andere Re
 
 |Projekt|Beschreibung|
 |--- |--- |
-|eShopOnContainers.Core|Dieses Projekt ist das Projekt der portablen Klassenbibliothek (Portable Class Library, PCL), das den freigegebenen und den freigegebenen Benutzeroberflächen|
-|eShopOnContainers.Droid|Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für die Android-App.|
-|eShopOnContainers.iOS|Dieses Projekt enthält IOS-spezifischen Code und ist der Einstiegspunkt für die IOS-app.|
-|eShopOnContainers.UWP|Dieses Projekt enthält universelle Windows-Plattform (UWP) spezifischen Code und ist der Einstiegspunkt für die Windows-app.|
-|eShopOnContainers.TestRunner.Droid|Dieses Projekt ist der Android-Test Runner für das Projekt eshoponcontainers. Unittests.|
-|eShopOnContainers.TestRunner.iOS|Dieses Projekt ist der IOS-Test Runner für das Projekt eshoponcontainers. Unittests.|
-|eShopOnContainers.TestRunner.Windows|Dieses Projekt ist der universelle Windows-Plattform Test Runner für das Projekt eshoponcontainers. Unittests.|
-|eShopOnContainers.UnitTests|Dieses Projekt enthält Komponententests für das Projekt eshoponcontainers. Core.|
+|eshoponcontainers. Core|Dieses Projekt ist das Projekt der portablen Klassenbibliothek (Portable Class Library, PCL), das den freigegebenen und den freigegebenen Benutzeroberflächen|
+|eshoponcontainers. Droid|Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für die Android-App.|
+|eshoponcontainers. IOS|Dieses Projekt enthält IOS-spezifischen Code und ist der Einstiegspunkt für die IOS-app.|
+|eshoponcontainers. UWP|Dieses Projekt enthält universelle Windows-Plattform (UWP) spezifischen Code und ist der Einstiegspunkt für die Windows-app.|
+|eshoponcontainers. testrauunner. Droid|Dieses Projekt ist der Android-Test Runner für das Projekt eshoponcontainers. Unittests.|
+|eshoponcontainers. testrauunner. IOS|Dieses Projekt ist der IOS-Test Runner für das Projekt eshoponcontainers. Unittests.|
+|eshoponcontainers. testrauunner. Windows|Dieses Projekt ist der universelle Windows-Plattform Test Runner für das Projekt eshoponcontainers. Unittests.|
+|eshoponcontainers. Unittests|Dieses Projekt enthält Komponententests für das Projekt eshoponcontainers. Core.|
 
 Die Klassen aus dem eshoponcontainers-Mobile App können in jeder xamarin. Forms-App mit geringfügigen oder gar keinen Änderungen wieder verwendet werden.
 
@@ -138,18 +138,18 @@ Das PCL-Projekt "eshoponcontainers. Core" enthält die folgenden Ordner:
 
 |Ordner|Beschreibung|
 |--- |--- |
-|Animationen|Enthält Klassen, die die Verwendung von Animationen in XAML ermöglichen.|
+|Animations|Enthält Klassen, die die Verwendung von Animationen in XAML ermöglichen.|
 |Verhalten|Enthält Verhalten, die für Ansichts Klassen verfügbar gemacht werden.|
 |Steuerelemente|Enthält von der APP verwendete benutzerdefinierte Steuerelemente.|
 |Konver|Enthält Wert Konverter, die benutzerdefinierte Logik auf eine Bindung anwenden.|
-|Effekte|Enthält die `EntryLineColorEffect` -Klasse, die verwendet wird, um die Rahmenfarbe bestimmter `Entry` Steuerelemente zu ändern.|
-|Ausnahmen|Enthält die Benutzer `ServiceAuthenticationException`definierten.|
-|Erweiterungen|Enthält Erweiterungs Methoden für die `VisualElement` - `IEnumerable` Klasse und die-Klasse.|
+|Effekte|Enthält die `EntryLineColorEffect` Klasse, die verwendet wird, um die Rahmenfarbe bestimmter `Entry` Steuerelemente zu ändern.|
+|Ausnahmen|Enthält die benutzerdefinierten `ServiceAuthenticationException`.|
+|Erweiterungen|Enthält Erweiterungs Methoden für die Klassen `VisualElement` und `IEnumerable`.|
 |Hospiz|Enthält Hilfsklassen für die app.|
 |Modelle|Enthält die Modellklassen für die app.|
 |Eigenschaften|Enthält `AssemblyInfo.cs`, eine .net-assemblymetadatendatei.|
 |Dienste|Enthält Schnittstellen und Klassen, mit denen Dienste implementiert werden, die für die APP bereitgestellt werden.|
-|Trigger|Enthält den `BeginAnimation` -Aufruf, mit dem eine Animation in XAML aufgerufen wird.|
+|Trigger|Enthält den `BeginAnimation`-auslösen, der verwendet wird, um eine Animation in XAML aufzurufen.|
 |Validierungen|Enthält Klassen, die zum Validieren von Dateneingaben beteiligt sind.|
 |ViewModels|Enthält die Anwendungslogik, die für Seiten verfügbar gemacht wird.|
 |Ansichten|Enthält die Seiten für die app.|

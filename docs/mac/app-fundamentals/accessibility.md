@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 087dcdc7024026e6a3ed3a05baca3b2648053cc8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769951"
 ---
 # <a name="accessibility-on-macos"></a>Barrierefreiheit unter macOS
@@ -23,7 +23,7 @@ Um zu verstehen, wie die Barrierefreiheits-APIs in macOS funktionieren (früher 
 
 ## <a name="describing-ui-elements"></a>Beschreiben von UI-Elementen
 
-AppKit verwendet das `NSAccessibility` -Protokoll, um APIs verfügbar zu machen, mit denen die Benutzeroberfläche zugänglich gemacht werden kann. Dies schließt ein Standardverhalten ein, das versucht, sinnvolle Werte für Barrierefreiheits Eigenschaften festzulegen, z `AccessibilityLabel`. b. das Festlegen einer Schaltfläche. Die Bezeichnung ist in der Regel ein einzelnes Wort oder ein kurzer Ausdruck, der das Steuerelement oder die Ansicht beschreibt.
+AppKit verwendet das `NSAccessibility`-Protokoll, um APIs verfügbar zu machen, mit denen die Benutzeroberfläche zugänglich gemacht werden kann. Dies schließt ein Standardverhalten ein, das versucht, sinnvolle Werte für Barrierefreiheits Eigenschaften festzulegen, z. b. das Festlegen der `AccessibilityLabel` einer Schaltfläche. Die Bezeichnung ist in der Regel ein einzelnes Wort oder ein kurzer Ausdruck, der das Steuerelement oder die Ansicht beschreibt.
 
 ### <a name="storyboard-files"></a>Storyboarddateien
 
@@ -55,10 +55,10 @@ Diese Methode kann dann wie gezeigt im Code verwendet werden:
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-Die `AccessibilityHelp` -Eigenschaft ist eine Erläuterung der Funktionsweise des Steuer Elements oder der Ansicht und sollte nur hinzugefügt werden, wenn die Bezeichnung möglicherweise keine ausreichenden Informationen bereitstellt. Der Hilfetext sollte weiterhin so kurz wie möglich gehalten werden, z. b. "löscht das Dokument".
+Die `AccessibilityHelp`-Eigenschaft ist eine Erläuterung der Funktionsweise des Steuer Elements oder der Ansicht und sollte nur dann hinzugefügt werden, wenn die Bezeichnung möglicherweise keine ausreichenden Informationen bereitstellt. Der Hilfetext sollte weiterhin so kurz wie möglich gehalten werden, z. b. "löscht das Dokument".
 
 Einige Elemente der Benutzeroberfläche sind für den zugänglichen Zugriff nicht relevant (z. b. eine Bezeichnung neben einer Eingabe, die über eine eigene Barrierefreiheits Bezeichnung und Hilfe verfügt).
-Legen Sie in diesen Fällen `AccessibilityElement = false` so fest, dass diese Steuerelemente oder Ansichten von Sprachausgaben oder anderen Eingabe Hilfen übersprungen werden.
+Legen Sie in diesen Fällen `AccessibilityElement = false` fest, damit diese Steuerelemente oder Ansichten von Sprachausgaben oder anderen Eingabe Hilfen übersprungen werden.
 
 Apple bietet [Richtlinien für Barrierefreiheit](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html) , in denen die bewährten Methoden für Eingabe Hilfen und Hilfe Text erläutert werden.
 
@@ -76,7 +76,7 @@ Beim ersten Start benötigt der **Zugriffs Steuerungs Inspektor** die Berechtigu
 
 Entsperren Sie den Bildschirm "Einstellungen" (falls erforderlich, in der linken unteren Ecke), und klicken Sie auf den **Barrierefreiheits Inspektor**:
 
-![Bildschirm "Einstellungen" zum Aktivieren der Zugriffs] Taste (accessibility-images/accessibility-inspector-2.png "Bildschirm \"Einstellungen\" zum Aktivieren der Zugriffs") Taste
+![Bildschirm "Einstellungen" zum Aktivieren der Zugriffstaste](accessibility-images/accessibility-inspector-2.png "Bildschirm "Einstellungen" zum Aktivieren der Zugriffstaste")
 
 Nach der Aktivierung wird der Inspektor als ein unverankertes Fenster angezeigt, das auf dem Bildschirm verschoben werden kann. Der folgende Screenshot zeigt den Inspektor, der neben einer Mac-Beispiel-app ausgeführt wird. Wenn der Cursor über das Fenster bewegt wird, zeigt der Inspektor alle zugänglichen Eigenschaften der einzelnen Steuerelemente an:
 

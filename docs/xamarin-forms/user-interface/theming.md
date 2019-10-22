@@ -8,33 +8,33 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2019
 ms.openlocfilehash: 3e0f508a9c980c02681f1be581846f9f2f25e2d0
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "69529278"
 ---
 # <a name="theming-a-xamarinforms-application"></a>Design einer xamarin. Forms-Anwendung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
-Xamarin. Forms-Anwendungen können mithilfe der `DynamicResource` Markup Erweiterung dynamisch zur Laufzeit auf Stiländerungen reagieren. Diese Markup Erweiterung ähnelt der `StaticResource` Markup Erweiterung, da beide eine Wörterbuch Taste verwenden, um einen Wert aus einer [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)abzurufen. Obwohl die `StaticResource` Markup Erweiterung eine einzelne Wörterbuchsuche ausführt, behält die `DynamicResource` Markup Erweiterung einen Link zum Wörterbuch Schlüssel bei. Wenn der Wert, der dem Schlüssel zugeordnet ist, ersetzt wird, wird die Änderung daher auf [`VisualElement`](xref:Xamarin.Forms.VisualElement)das angewendet. Dies ermöglicht die Implementierung von Lauf Zeit Designs in xamarin. Forms-Anwendungen.
+Xamarin. Forms-Anwendungen können mit der `DynamicResource` Markup Erweiterung dynamisch auf Formatänderungen reagieren, die zur Laufzeit dynamisch verwendet werden. Diese Markup Erweiterung ähnelt der `StaticResource` Markup Erweiterung, da beide eine Wörterbuch Taste verwenden, um einen Wert aus einer [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)abzurufen. Obwohl die `StaticResource` Markup Erweiterung eine einzelne Wörterbuchsuche ausführt, behält die `DynamicResource` Markup Erweiterung einen Link zum Wörterbuch Schlüssel bei. Wenn also der Wert, der dem Schlüssel zugeordnet ist, ersetzt wird, wird die Änderung auf die [`VisualElement`](xref:Xamarin.Forms.VisualElement)angewendet. Dies ermöglicht die Implementierung von Lauf Zeit Designs in xamarin. Forms-Anwendungen.
 
 Der Prozess der Implementierung von Lauf Zeit Designs in einer xamarin. Forms-Anwendung lautet wie folgt:
 
-1. Definieren Sie die Ressourcen für jedes Design in [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)einer.
-1. Nutzen Sie Design Ressourcen in der Anwendung mit der `DynamicResource` Markup Erweiterung.
+1. Definieren Sie die Ressourcen für jedes Design in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary).
+1. Verwenden Sie Design Ressourcen in der Anwendung, indem Sie die `DynamicResource` Markup Erweiterung verwenden.
 1. Legen Sie ein Standarddesign in der **app. XAML** -Datei der Anwendung fest.
 1. Fügen Sie Code hinzu, um ein Design zur Laufzeit zu laden.
 
 Die folgenden Screenshots zeigen Design Seiten, bei denen die IOS-Anwendung ein helles Design und die Android-Anwendung mit einem dunklen Design verwendet:
 
-[![Screenshot der Hauptseite einer APP mit einem Thema unter IOS und Android] (theming-images/main-page-both-themes.png "Hauptseite der App \"Thema") ](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App "Thema"") " Screenshot der [ ![Detailseite einer Designs-App auf der IOS-und Android-](theming-images/detail-page-both-themes.png "Detailseite der APP mit dem Thema \"Thema") ](theming-images/detail-page-both-themes-large.png#lightbox "Detail Seite der APP mit Design") " 
-
+[![Screenshot der Hauptseite einer Designs-app unter IOS und Android](theming-images/main-page-both-themes.png "Hauptseite der App "Thema"")](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App "Thema"") 
+[![Screenshot der Detailseite einer Designs-app unter IOS und Android](theming-images/detail-page-both-themes.png "Detail Seite der APP mit Design")](theming-images/detail-page-both-themes-large.png#lightbox "Detail Seite der APP mit Design")
 
 ## <a name="define-themes"></a>Definieren von Designs
 
-Ein Design wird als Auflistung von Ressourcen Objekten definiert, die in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)gespeichert sind.
+Ein Design wird als Auflistung von Ressourcen Objekten definiert, die in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)gespeichert werden.
 
 Das folgende Beispiel zeigt die `LightTheme` aus der Beispielanwendung:
 
@@ -70,14 +70,14 @@ Das folgende Beispiel zeigt die `DarkTheme` aus der Beispielanwendung:
 </ResourceDictionary>
 ```
 
-Jede [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `ResourceDictionary` enthält [`Color`](xref:Xamarin.Forms.Color) Ressourcen, die ihre jeweiligen Designs definieren, wobei jeweils identische Schlüsselwerte verwendet werden. Weitere Informationen zu Ressourcenwörterbüchern, finden Sie unter [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md).
+Jede [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) enthält [`Color`](xref:Xamarin.Forms.Color) Ressourcen, die ihre jeweiligen Designs definieren, wobei jede `ResourceDictionary` identische Schlüsselwerte verwendet. Weitere Informationen zu Ressourcen Wörterbüchern finden Sie unter [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md).
 
 > [!IMPORTANT]
-> Eine Code Behind-Datei ist für jeden `ResourceDictionary`erforderlich, der die `InitializeComponent` -Methode aufruft. Dies ist erforderlich, damit ein CLR-Objekt, das das ausgewählte Design darstellt, zur Laufzeit erstellt werden kann.
+> Für jede `ResourceDictionary`, die die `InitializeComponent`-Methode aufruft, ist eine Code Behind-Datei erforderlich. Dies ist erforderlich, damit ein CLR-Objekt, das das ausgewählte Design darstellt, zur Laufzeit erstellt werden kann.
 
 ## <a name="set-a-default-theme"></a>Festlegen eines Standarddesigns
 
-Eine Anwendung erfordert ein Standarddesign, sodass Steuerelemente Werte für die Ressourcen aufweisen, die Sie nutzen. Ein Standarddesign kann festgelegt werden, indem das [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) Design in die Anwendungsebene `ResourceDictionary` zusammengeführt wird, die in **app. XAML**definiert ist:
+Eine Anwendung erfordert ein Standarddesign, sodass Steuerelemente Werte für die Ressourcen aufweisen, die Sie nutzen. Ein Standarddesign kann festgelegt werden, indem die [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) des Designs in den `ResourceDictionary` auf Anwendungsebene zusammengeführt wird, der in " **app. XAML**" definiert ist:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -174,20 +174,20 @@ Diese Stile werden dann von Seiten genutzt:
 </ContentPage>
 ```
 
-Wenn eine Design Ressource direkt genutzt wird, sollte Sie mit der `DynamicResource` Markup Erweiterung genutzt werden. Wenn jedoch ein Stil verwendet wird, der `DynamicResource` die Markup Erweiterung verwendet, sollte er mit der `StaticResource` Markup Erweiterung verwendet werden.
+Wenn eine Design Ressource direkt genutzt wird, sollte Sie mit der `DynamicResource` Markup Erweiterung genutzt werden. Wenn jedoch ein Stil verwendet wird, der die `DynamicResource` Markup Erweiterung verwendet, sollte er mit der `StaticResource` Markup Erweiterung verwendet werden.
 
-Weitere Informationen zum Formatieren finden Sie unter Formatieren von [xamarin. Forms-Apps mithilfe von XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md). Weitere Informationen `DynamicResource` zur Markup Erweiterung finden Sie unter [dynamische Stile in xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md).
+Weitere Informationen zum Formatieren finden Sie unter Formatieren von [xamarin. Forms-Apps mithilfe von XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md). Weitere Informationen zur `DynamicResource` Markup Erweiterung finden Sie unter [dynamische Stile in xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md).
 
 ## <a name="load-a-theme-at-runtime"></a>Ein Design zur Laufzeit laden
 
 Wenn ein Design zur Laufzeit ausgewählt wird, sollte die Anwendung Folgendes ausführen:
 
-1. Entfernen Sie das aktuelle Design aus der Anwendung. Dies wird erreicht, indem die [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) -Eigenschaft der auf Anwendungsebene [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)gelöscht wird.
-2. Ausgewähltes Designladen. Dies wird erreicht, indem der `MergedDictionaries` -Eigenschaft der auf Anwendungsebene `ResourceDictionary`eine Instanz des ausgewählten Designs hinzugefügt wird.
+1. Entfernen Sie das aktuelle Design aus der Anwendung. Dies wird erreicht, indem die [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) -Eigenschaft der [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Anwendungsebene gelöscht wird.
+2. Ausgewähltes Designladen. Dies wird erreicht, indem der `MergedDictionaries`-Eigenschaft der `ResourceDictionary` auf Anwendungsebene eine Instanz des ausgewählten Designs hinzugefügt wird.
 
-Alle [`VisualElement`](xref:Xamarin.Forms.VisualElement) Objekte, die Eigenschaften mit der `DynamicResource` Markup Erweiterung festlegen, wenden dann die neuen Designwerte an. Dies liegt daran, `DynamicResource` dass die Markup Erweiterung einen Link zu Wörterbuch Schlüsseln beibehält. Wenn also die den Schlüsseln zugeordneten Werte ersetzt werden, werden die Änderungen auf die `VisualElement` Objekte angewendet.
+Alle [`VisualElement`](xref:Xamarin.Forms.VisualElement) Objekte, die Eigenschaften mit der `DynamicResource` Markup Erweiterung festlegen, wenden dann die neuen Designwerte an. Dies tritt auf, weil die `DynamicResource` Markup Erweiterung einen Link zu Wörterbuch Schlüsseln beibehält. Wenn also die den Schlüsseln zugeordneten Werte ersetzt werden, werden die Änderungen auf die `VisualElement` Objekte angewendet.
 
-In der Beispielanwendung wird ein Design über eine modale Seite ausgewählt, die eine [`Picker`](xref:Xamarin.Forms.Picker)enthält. Der folgende Code zeigt die `OnPickerSelectionChanged` -Methode, die ausgeführt wird, wenn sich das ausgewählte Design ändert:
+In der Beispielanwendung wird ein Design über eine modale Seite ausgewählt, die eine [`Picker`](xref:Xamarin.Forms.Picker)enthält. Der folgende Code zeigt die `OnPickerSelectionChanged`-Methode, die ausgeführt wird, wenn sich das ausgewählte Design ändert:
 
 ```csharp
 void OnPickerSelectionChanged(object sender, EventArgs e)

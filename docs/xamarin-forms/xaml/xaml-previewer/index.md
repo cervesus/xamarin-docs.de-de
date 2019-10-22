@@ -9,10 +9,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68757273"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>XAML-Vorschau für xamarin. Forms
@@ -52,7 +52,7 @@ Sie können ändern, ob der Bildschirm vertikal oder horizontal aufgeteilt wird,
 
 Die Schaltfläche **Vorschau** wird im Editor angezeigt, wenn Sie eine XAML-Seite öffnen. Zeigen Sie die Vorschau an oder blenden Sie Sie aus, indem Sie die Schaltflächen " **Vorschau** " oder " **Teilen** " unten links in jedem XAML-Dokument Fenster drücken:
 
-[![Xamarin. Forms-Previewer aktiviert mit der Schaltfläche "Vorschau" oder "teilen"](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+[![Xamarin. Forms Previewer aktiviert mit der Schaltfläche "Vorschau" oder "teilen"](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
 
 > [!NOTE]
 > In älteren Versionen von Visual Studio für Mac befand sich die Schaltfläche **Vorschau** in der oberen rechten Ecke des Fensters.
@@ -64,7 +64,7 @@ Die Schaltfläche **Vorschau** wird im Editor angezeigt, wenn Sie eine XAML-Seit
 Die Optionen am oberen Rand des Vorschau Bereichs lauten wie folgt:
 
 * **Android** – zeigt die Android-Version des Bildschirms an
-* **IOS** – zeigt die IOS-Version des Bildschirms*an (Hinweis: Wenn Sie Visual Studio unter Windows verwenden, müssen Sie mit [einem Mac gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md) sein, um diesen Modus*zu verwenden.)
+* **IOS** – zeigt die IOS-Version des Bildschirms an (*Hinweis: Wenn Sie Visual Studio unter Windows verwenden, müssen Sie mit [einem Mac gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md) sein, um diesen Modus zu verwenden*).
 * **Geräte** -Dropdown Liste von Android-oder IOS-Geräten, einschließlich Auflösung und Bildschirmgröße
 * Hochformat **(Symbol)** – verwendet die Hochformat Ausrichtung für die Vorschau.
 * **Querformat (Symbol)** – verwendet die quer Ausrichtung für die Vorschau.
@@ -95,10 +95,10 @@ Diese Eigenschaft ist nützlich, wenn Sie eine Bibliothek in Ihrem Seitenkonstru
 
 * Es kann einige Zeit dauern, bis der Previewer startet. Sie sehen, dass "Rendering initialisiert" ist, bis er bereit ist.
 * Schließen Sie die XAML-Datei, und öffnen Sie Sie erneut.
-* Stellen Sie `App` sicher, dass die Klasse über einen Parameter losen Konstruktor verfügt.
+* Stellen Sie sicher, dass die `App`-Klasse über einen Parameter losen Konstruktor verfügt.
 * Überprüfen Sie die xamarin. Forms-Version. Sie muss mindestens xamarin. Forms 3,6 sein. Sie können ein Update auf die neueste Version von xamarin. Forms über nuget ausführen.
 * Überprüfen der JDK-Installation: Android erfordert mindestens [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-* Versuchen Sie, alle initialisierten Klassen im C# Code der Seite in zu `if (!DesignMode.IsDesignModeEnabled)`umwickeln.
+* Versuchen Sie, alle initialisierten Klassen im C# Code Behind der Seite in `if (!DesignMode.IsDesignModeEnabled)` zu umwickeln.
 
 ### <a name="custom-controls-arent-rendering"></a>Benutzerdefinierte Steuerelemente nicht Rendering
 

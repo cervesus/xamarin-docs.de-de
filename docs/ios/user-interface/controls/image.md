@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70768987"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Anzeigen von Bildern mit xamarin. IOS
@@ -26,7 +26,7 @@ Visual Studio für Mac unterstützt auch ein spezielles Verzeichnis namens " **R
 
 Dieser Screenshot zeigt die buildaktions Optionen **, die angezeigt** werden, wenn mit der rechten Maustaste auf eine Datei geklickt wird:
 
- [![](image-images/image30a.png "Menü \"Build Action\"")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "Build Action menu")](image-images/image30a.png#lightbox)
 
 Visual Studio für Mac wählt in der Regel die richtige **Buildaktion** automatisch aus, aber Sie sollten diese Einstellungen beachten, insbesondere, wenn Sie Dateien in Ihrem Projekt verschieben.
 
@@ -34,15 +34,15 @@ Visual Studio für Mac wählt in der Regel die richtige **Buildaktion** automati
 
 Wenn Sie dem Projekt eine Bilddatei hinzufügen möchten, klicken Sie zunächst mit der rechten Maustaste auf das Projekt, und wählen Sie **Dateien hinzufügen** aus.
 
- [![](image-images/image31a.png "Dateien hinzufügen... stehen")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "Add Files... menu")](image-images/image31a.png#lightbox)
 
 Wählen Sie das Bild (oder die Bilder) aus, das Sie in das Standarddatei Dialogfeld einschließen möchten. Die Standardbuildaktion für Images lautet **bundleresource** – überschreiben Sie diesen Wert nur, wenn Sie einen bestimmten Grund haben.
 
- [![](image-images/image32a.png "Dialogfeld Dateien hinzufügen")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Add Files dialog")](image-images/image32a.png#lightbox)
 
 Das Bild wird dem Projekt hinzugefügt und kann im Code geladen und angezeigt werden. Dieser Screenshot zeigt ein Bild, das einem IOS-Anwendungsprojekt hinzugefügt wurde:
 
- [![](image-images/image33a.png "Bild im Projekt")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "Image in project")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Was ist das Ressourcenverzeichnis?
 

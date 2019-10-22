@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770044"
 ---
 # <a name="xamarinmac-extension-support"></a>Unterstützung für Xamarin.Mac-Erweiterungen
@@ -38,13 +38,13 @@ Im folgenden finden Sie die Einschränkungen und bekannten Probleme, die beim En
 
 Die folgenden Tipps können bei der Arbeit mit Erweiterungen in xamarin. Mac hilfreich sein:
 
-- Da xamarin. Mac derzeit keine debuggingerweiterungen unterstützt, hängt die debuggingweise hauptsächlich von der Ausführung und `printf` ähnlichen Anweisungen ab. Erweiterungen werden jedoch in einem Sandkasten Prozess ausgeführt und `Console.WriteLine` funktionieren daher nicht wie in anderen xamarin. Mac-Anwendungen. Wenn Sie [ `NSLog` direkt](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554) aufrufen, werden Debugmeldungen in das System Protokoll ausgegeben.
-- Alle nicht abgefangenen Ausnahmen abstürzen den Erweiterungsprozess, sodass nur eine kleine Menge nützlicher Informationen im **System Protokoll**bereitgestellt wird. Das umlösen von problematischer Code in einem `try/catch` (Ausnahme-) Block, der vor dem erneuten Auslösen liegt, `NSLog`kann nützlich sein.
-- Der Zugriff auf das **System Protokoll** kann über die **Konsolen** -app unter **Anwendungs** > **Dienstprogramme**erfolgen:
+- Da xamarin. Mac derzeit keine debuggingerweiterungen unterstützt, hängt die debuggingweise hauptsächlich von der Ausführung und `printf` like-Anweisungen ab. Erweiterungen werden jedoch in einem Sandkasten Prozess ausgeführt, sodass `Console.WriteLine` nicht wie in anderen xamarin. Mac-Anwendungen agieren. Wenn Sie [`NSLog` direkt](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554) aufrufen, werden Debugmeldungen in das System Protokoll ausgegeben.
+- Alle nicht abgefangenen Ausnahmen abstürzen den Erweiterungsprozess, sodass nur eine kleine Menge nützlicher Informationen im **System Protokoll**bereitgestellt wird. Das Packen von problematischen Code in einem `try/catch`-Block (Ausnahme), der vor dem erneuten Auslösen `NSLog` ist, kann nützlich sein.
+- Der Zugriff auf das **System Protokoll** kann über die **Konsolen** -app unter **Anwendungen**  > -**Hilfsprogramme**erfolgen:
 
-    [![](extensions-images/extension02.png "Das System Protokoll")](extensions-images/extension02.png#lightbox)
+    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
 - Wie bereits erwähnt, wird das Ausführen der Erweiterungs Host Anwendung beim System registriert. Löschen des Anwendungspakets mit der Aufhebung der Registrierung. 
-- Wenn die "Stray"-Versionen der Erweiterungen einer APP registriert sind, verwenden Sie den folgenden Befehl, um Sie zu suchen (sodass Sie gelöscht werden können):`plugin kit -mv`
+- Wenn die "Stray"-Versionen der Erweiterungen einer APP registriert sind, verwenden Sie den folgenden Befehl, um Sie zu suchen (sodass Sie gelöscht werden können): `plugin kit -mv`
 
 <a name="Walkthrough-and-Sample-App" />
 
@@ -63,5 +63,5 @@ In diesem Artikel wurde die Arbeit mit Erweiterungen in einer xamarin. Mac-app d
 ## <a name="related-links"></a>Verwandte Links
 
 - [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
-- [ExtensionSamples](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)
+- [Extensionsamples](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)
 - [macOS-Eingaberichtlinien](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

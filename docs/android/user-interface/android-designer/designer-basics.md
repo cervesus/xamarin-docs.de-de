@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
 ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70761405"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Grundlagen von xamarin. Android Designer
@@ -24,11 +24,11 @@ _In diesem Thema werden die Funktionen von xamarin. Android Designer vorgestellt
 
 Der Designer wird automatisch gestartet, wenn ein Layout erstellt wird, oder er kann durch Doppelklicken auf eine vorhandene Layoutdatei gestartet werden. Wenn Sie z. b. im Ordner **Resources > Layout** auf **activity_main. axml** doppelklicken, wird der Designer wie in diesem Screenshot gezeigt geladen:
 
-[![Bildschirm "Designer" in Visual Studio](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
+[Bildschirm "![Designer" in Visual Studio](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 Ebenso können Sie ein neues Layout hinzufügen, indem Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **layoutordner** klicken und **> Neues Element hinzufügen auswählen. > Android-Layout**:
 
-[![Dialogfeld Neues Element hinzufügen](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
+[Dialogfeld "Neues Element ![Add"](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 Dadurch wird eine neue **axml** -Layoutdatei erstellt und in den Designer geladen.
 
@@ -41,27 +41,27 @@ Dadurch wird eine neue **axml** -Layoutdatei erstellt und in den Designer gelade
 
 Der Designer besteht aus mehreren Abschnitten, die die verschiedenen Features unterstützen, wie im folgenden Screenshot zu sehen:
 
-[![Diagramm der Designer Bereiche](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
+[![Diagram von Designer Bereichen](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 Wenn Sie ein Layout im Designer bearbeiten, verwenden Sie die folgenden Funktionen, um den Entwurf zu erstellen und zu strukturieren:
 
-- **Designoberfläche** &ndash; Ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten. Der **Designoberfläche** wird im **Entwurfs** Bereich angezeigt (mit der **Designer-Symbolleiste** ).
+- **Designoberfläche** &ndash; ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten. Der **Designoberfläche** wird im **Entwurfs** Bereich angezeigt (mit der **Designer-Symbolleiste** ).
 
-- **Quellen** Bereich Stellt eine Ansicht der zugrunde liegenden XML-Quelle bereit, die dem auf dem Designoberfläche dargestellten Entwurf entspricht. &ndash;
+- Der **Quell** Bereich &ndash; stellt eine Ansicht der zugrunde liegenden XML-Quelle bereit, die dem auf dem **Designoberfläche**dargestellten Entwurf entspricht.
 
-- **Designer-Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, Versions **-, Design-,** Layoutkonfiguration und Aktionsleiste Einstellungen. Die **Designer-Symbolleiste** enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
+- **Designer-Symbolleiste** &ndash; eine Liste der Selektoren anzeigt: **Geräte**-, **Versions** **-, Design-,** Layoutkonfiguration und Aktionsleiste Einstellungen. Die **Designer-Symbolleiste** enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
 
-- **Toolbox** Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können. &ndash;
+- **Toolbox** &ndash; enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf die **Designoberfläche**verschieben können.
 
-- **Eigenschaften Fenster** &ndash; Listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
+- **Eigenschaften Fenster** &ndash; listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
 
-- **Dokument** Gliederung &ndash; Zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es auf dem **Designoberfläche**ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements im **Eigenschaften** Fenster geladen.
+- **Dokument** Gliederung &ndash; zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es auf dem **Designoberfläche**ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements im **Eigenschaften** Fenster geladen.
 
 ## <a name="design-surface"></a>Entwurfsoberfläche
 
-Der Designer ermöglicht das ziehen und Ablegen von Widgets aus der Toolbox auf die **Designoberfläche**. Wenn Sie im Designer mit Widgets interagieren (indem Sie entweder neue Widgets hinzufügen oder vorhandene neu positionieren), werden vertikale und horizontale Linien angezeigt, um die verfügbaren Einfügepunkte zu markieren. Im folgenden Beispiel wird ein neues `Button` Widget in den **Designoberfläche**gezogen:
+Der Designer ermöglicht das ziehen und Ablegen von Widgets aus der Toolbox auf die **Designoberfläche**. Wenn Sie im Designer mit Widgets interagieren (indem Sie entweder neue Widgets hinzufügen oder vorhandene neu positionieren), werden vertikale und horizontale Linien angezeigt, um die verfügbaren Einfügepunkte zu markieren. Im folgenden Beispiel wird ein neues `Button`-Widget in den **Designoberfläche**gezogen:
 
-[![Beispiel für Einfügevorgänge auf Designoberfläche](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
+[![Example einfügelinien in Designoberfläche](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 Außerdem können Widgets kopiert werden: Sie können das Widget mithilfe von kopieren und Einfügen kopieren, oder Sie können ein vorhandenes Widget per Drag & amp; Drop beim Drücken der <kbd>STRG</kbd> -Taste ablegen.
 
@@ -69,27 +69,27 @@ Außerdem können Widgets kopiert werden: Sie können das Widget mithilfe von ko
 
 Die **Designer-Symbolleiste** (oberhalb der **Designoberfläche**) zeigt konfigurationsselektoren und Tool Menüs an:
 
-[![Diagramm der Designer-Symbolleiste](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
+[![Diagram der Designer-Symbolleiste](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 Die **Symbolleiste des Designers** bietet Zugriff auf die folgenden Features:
 
-- **Alternativer layoutselektor** &ndash; Ermöglicht die Auswahl aus unterschiedlichen Layoutversionen.
+- **Alternativer layoutselektor** &ndash; ermöglicht Ihnen die Auswahl aus unterschiedlichen Layoutversionen.
 
-- **Geräteauswahl** &ndash; Definiert einen Satz von Qualifizierern (z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit), die einem bestimmten Gerät zugeordnet sind. Sie können auch neue Geräte hinzufügen und löschen.
+- Die **Geräteauswahl** &ndash; definiert eine Gruppe von Qualifizierern (z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit), die einem bestimmten Gerät zugeordnet sind. Sie können auch neue Geräte hinzufügen und löschen.
 
-- **Android-Versions Auswahl** &ndash; Die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
+- Die **Android-Versions Auswahl** &ndash; die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
 
-- Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
+- Design **Auswahl** &ndash; das Design der Benutzeroberfläche für das Layout auswählt.
 
-- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder Querformat. &ndash;
+- **Konfigurations Auswahl** &ndash; wählt die Gerätekonfiguration aus, z. b. hoch *Format oder* *quer*Format.
 
-- **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
+- **Ressourcen qualifiziereroptionen** &ndash; öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von *Sprache*, *Benutzeroberflächen Modus*, *Nachtmodus*und Optionen für den *roundscreen anzeigt* .
 
-- **Aktionsleiste Einstellungen** &ndash; Konfiguriert die Aktionsleiste Einstellungen für das Layout.
+- **Aktionsleiste Einstellungen** &ndash; konfiguriert die Aktionsleiste Einstellungen für das Layout.
 
-- Design- **Editor** Öffnet den Design-Editor, der es Ihnen ermöglicht, Elemente des ausgewählten Designs anzupassen. &ndash;
+- Der Design- **Editor** &ndash; öffnet den Design- *Editor*, sodass Sie Elemente des ausgewählten Designs anpassen können.
 
-- **Material Entwurfs Raster** Aktiviert oder deaktiviert das *Material Entwurfs Raster.* &ndash; Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
+- **Material Design Grid** &ndash; aktiviert oder deaktiviert das *Material Design Grid*. Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
 
 Diese Features werden in den folgenden Themen ausführlicher erläutert:
 
@@ -103,31 +103,31 @@ Diese Features werden in den folgenden Themen ausführlicher erläutert:
 
 Ein Kontextmenü ist sowohl in der **Designoberfläche** als auch in der **Dokument**Gliederung verfügbar. Dieses Menü zeigt Befehle an, die für das ausgewählte Widget und den zugehörigen Container verfügbar sind, sodass Sie Vorgänge für Container leichter ausführen können (die nicht immer einfach auf dem **Designoberfläche**ausgewählt werden können). Im folgenden finden Sie ein Beispiel für ein Kontextmenü:
 
-[![Beispiel Kontextmenü, wenn Sie mit der rechten Maustaste auf den Designoberfläche](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
+[![Example Kontextmenü, wenn Sie mit der rechten Maustaste auf die Designoberfläche](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
-Wenn Sie in diesem Beispiel mit der rechten `TextView` Maustaste auf einen klicken, wird ein Kontextmenü geöffnet, das mehrere Optionen enthält:
+Wenn Sie in diesem Beispiel mit der rechten Maustaste auf eine `TextView` klicken, wird ein Kontextmenü geöffnet, das mehrere Optionen enthält:
 
-- **LinearLayout** Öffnet ein Untermenü, das das `LinearLayout` übergeordnete Element `TextView`von bearbeitet. &ndash;
+- **LinearLayout** &ndash; öffnet ein Untermenü zum Bearbeiten des `LinearLayout` übergeordneten Elements des `TextView`.
 
-- **Lösch**-, **Kopier**-und **Ausschneide** &ndash; Vorgänge, die für den rechts `TextView`Klick angewendet werden.
+- **Löschen**, **Kopieren**und **Ausschneiden** &ndash; Vorgänge, die für den `TextView` mit Rechtsklick gelten.
 
 ### <a name="zoom-controls"></a>Zoom Steuerelemente
 
 Der **Designoberfläche** unterstützt das Zoomen über mehrere Steuerelemente, wie hier gezeigt:
 
-[![Diagramm der Designoberfläche Zoom Steuerelemente](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
+[![Diagram der Designoberfläche Zoom Steuerelemente](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 Diese Steuerelemente erleichtern es, bestimmte Bereiche der Benutzeroberfläche im Designer anzuzeigen:
 
-- **Container markieren** Hebt die Container auf dem Designoberfläche auf, sodass Sie leichter zu finden sind, während Sie zoomen und verkleinern. &ndash;
+- **Markieren Sie Container** , &ndash; die Container auf dem **Designoberfläche** hervorgehoben werden, damit Sie leichter zu finden sind, während Sie zoomen und verkleinern.
 
-- **Normale Größe** &ndash; Rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
+- **Normal Größe** &ndash; rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
 
-- **An Fenster anpassen** &ndash; Legt die Zoomstufe fest, sodass das gesamte Layout auf dem Designoberfläche sichtbar ist.
+- **An Fenster anpassen** &ndash; legt die Zoomstufe so fest, dass das gesamte Layout auf dem Designoberfläche sichtbar ist.
 
-- **Vergrößern** &ndash; Zoomt inkrementell mit jedem Klick, vergrößert das Layout.
+- **Vergrößern** Sie die &ndash; zoomungen inkrementell mit jedem Klick, und vergrößern Sie das Layout.
 
-- Verkleinern &ndash; Zoomen Sie mit jedem Klick inkrementell, damit das Layout auf dem Designoberfläche kleiner wird.
+- **Vergrößern** Sie &ndash; bei jedem Klick inkrementell Zoomen, damit das Layout auf der Designoberfläche kleiner erscheint.
 
 Beachten Sie, dass die ausgewählte Zoomeinstellung die Benutzeroberfläche der Anwendung zur Laufzeit nicht beeinträchtigt.
 
@@ -135,21 +135,21 @@ Beachten Sie, dass die ausgewählte Zoomeinstellung die Benutzeroberfläche der 
 
 Im mittleren Bereich zwischen dem **Entwurfs** -und dem **Quell** Bereich gibt es mehrere Schaltflächen, mit denen die Anzeige von **Entwurfs** -und **Quell** Bereichen geändert wird:
 
-[![Anzeige Schaltflächen der Bereichs Anzeige](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
+[Anzeige der Schaltflächen für die ![Pane](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
 
 Diese Schaltflächen gehen wie folgt vor:
 
-- **Entwurf** Diese oberste Schaltfläche, **Entwurf**, wählt den Entwurfs Bereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** aktiviert, und die **Symbolleiste Text-Editor** wird nicht angezeigt. Wenn auf **die Schalt** Fläche "reduzieren" geklickt wird (siehe unten), wird der **Entwurfs** Bereich allein ohne den **Quell** Bereich dargestellt.
+- **Design** &ndash; diese oberste Schaltfläche, **Entwurf**, wählt den **Entwurfs** Bereich aus. Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** aktiviert, und die **Symbolleiste Text-Editor** wird nicht angezeigt. Wenn auf **die Schalt** Fläche "reduzieren" geklickt wird (siehe unten), wird der **Entwurfs** Bereich allein ohne den **Quell** Bereich dargestellt.
 
-- Bereiche **austauschen** Diese Schaltfläche (die zwei gegensätzlichen Pfeilen ähnelt) tauscht den Entwurfs-und den Quellbereich aus, sodass sich der Quellbereich auf der linken Seite befindet und sich der Entwurfs Bereich auf der rechten Seite befindet. &ndash; Wenn Sie erneut auf die Schaltfläche klicken, werden diese Bereiche zurück an Ihre ursprünglichen Speicherorte
+- Bereiche **austauschen** &ndash; diese Schaltfläche (die zwei gegensätzlichen Pfeilen ähnelt) tauscht den **Entwurfs** -und den **Quell** Bereich aus, sodass sich der **Quell** Bereich auf der linken Seite befindet und sich der **Entwurfs** Bereich auf der rechten Seite befindet. Wenn Sie erneut auf die Schaltfläche klicken, werden diese Bereiche zurück an Ihre ursprünglichen Speicherorte
 
-- **Quelle** Diese Schaltfläche (die zwei entgegengesetzten spitzen Klammern ähnelt) wählt den Quellbereich aus. &ndash; Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** deaktiviert und die **Symbolleiste Text-Editor** am oberen Rand von Visual Studio angezeigt. Wenn auf die **Schaltfläche "** reduzieren" geklickt wird (siehe unten), wird durch Klicken auf die Schaltfläche " **Quelle** " anstelle des **Entwurfs** Bereichs der **Quell** Bereich angezeigt.
+- **Quelle** &ndash; diese Schaltfläche (die zwei entgegengesetzten spitzen Klammern ähnelt) wählt den **Quell** Bereich aus. Wenn Sie auf diese Schaltfläche klicken, werden die Bereiche **Toolbox** und **Eigenschaften** deaktiviert und die **Symbolleiste Text-Editor** am oberen Rand von Visual Studio angezeigt. Wenn auf die **Schaltfläche "** reduzieren" geklickt wird (siehe unten), wird durch Klicken auf die Schaltfläche " **Quelle** " anstelle des **Entwurfs** Bereichs der **Quell** Bereich angezeigt.
 
-- **Vertikale Teilung** Diese Schaltfläche (die einem vertikalen Balken ähnelt) zeigt den **Entwurfs** -und den Quellbereich nebeneinander an. &ndash; Dies ist die Standardanordnung.
+- **Vertikale Aufteilung** &ndash; diese Schaltfläche (die einem vertikalen Balken ähnelt) zeigt den **Entwurfs** -und den **Quell** Bereich nebeneinander an. Dies ist die Standardanordnung.
 
-- **Horizontale Aufteilung** Diese Schaltfläche (die einem horizontalen Balken ähnelt) zeigt den **Entwurfs** Bereich oberhalb des Quell Bereichs an. &ndash; Sie **können auf** Auslagerungs Bereiche klicken, um den **Quell** Bereich über dem **Entwurfs** Bereich zu platzieren.
+- **Horizontale Aufteilung** &ndash; diese Schaltfläche (die einem horizontalen Balken ähnelt) zeigt den **Entwurfs** Bereich oberhalb des **Quell** Bereichs an. Sie **können auf** Auslagerungs Bereiche klicken, um den **Quell** Bereich über dem **Entwurfs** Bereich zu platzieren.
 
-- Bereich zuklappen Diese Schaltfläche (die zwei nach rechts zeigenden spitzen Klammern ähnelt) "reduziert" die Dual-Pane-Anzeige von **Design** und Quelle in eine einzelne Ansicht eines dieser Bereiche. &ndash;
+- Bereich zuklappen **&ndash; diese** Schaltfläche (die zwei nach rechts zeigenden spitzen Klammern ähnelt) "reduziert" die Dual-Pane-Anzeige des **Entwurfs** und der **Quelle** in einer einzigen Ansicht eines dieser Bereiche.
     Diese Schaltfläche wird **zur Erweiterungsbereich-Schaltfläche** (ähnlich zwei nach links zeigenden spitzen Klammern), auf die geklickt werden kann, um die Ansicht wieder in den Dual-Pane-Anzeigemodus (**Entwurf** und **Quelle**) zurückzukehren.
 
 Beim Klicken auf das **Fenster** "reduzieren" wird nur der **Entwurfs** Bereich angezeigt. Sie können jedoch auf die **Quell** Schaltfläche klicken, um stattdessen nur den **Quell** Bereich anzuzeigen. Klicken Sie erneut auf die Schaltfläche **Entwurf** , um zum **Entwurfs** Bereich zurückzukehren.
@@ -158,7 +158,7 @@ Beim Klicken auf das **Fenster** "reduzieren" wird nur der **Entwurfs** Bereich 
 
 Der **Quell** Bereich zeigt die XML-Quelle an, die dem auf dem **Designoberfläche**gezeigten Entwurf zugrunde liegt. Da beide Sichten gleichzeitig verfügbar sind, ist es möglich, einen Entwurf der Benutzeroberfläche zu erstellen, indem Sie zwischen einer visuellen Darstellung des Entwurfs und der zugrunde liegenden XML-Quelle für das Design hin-und herwechseln:
 
-[![Beispiel-XML-Quelle im Bereich "Quelle"](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
+[![Example XML-Quelle im Quellbereich](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
 
 An der XML-Quelle vorgenommene Änderungen werden sofort auf der **Designoberfläche**gerendert. Änderungen am **Designoberfläche** bewirken, dass die im **Quell** Bereich angezeigte XML-Quelle entsprechend aktualisiert wird. Wenn Sie im Bereich **Quelle** Änderungen an XML vornehmen, stehen die Funktionen für die automatische Vervollständigung und IntelliSense zur Verfügung, um die XML-basierte Benutzeroberflächen Entwicklung zu beschleunigen, wie im folgenden erläutert.
 
@@ -166,9 +166,9 @@ Um die Navigation bei langen XML-Dateien zu vereinfachen, unterstützt der **Que
 
 ### <a name="autocompletion"></a>Automatische Vervollständigung
 
-Wenn Sie beginnen, den Namen eines Attributs für ein Widget einzugeben, können Sie <kbd>STRG + LEERTASTE</kbd> drücken, um eine Liste der möglichen Vervollständigungen anzuzeigen. Nachdem Sie z. b `android:lay` . im folgenden Beispiel eingegeben haben (gefolgt von <kbd>STRG + LEERTASTE</kbd>), wird die folgende Liste angezeigt:
+Wenn Sie beginnen, den Namen eines Attributs für ein Widget einzugeben, können Sie <kbd>STRG + LEERTASTE</kbd> drücken, um eine Liste der möglichen Vervollständigungen anzuzeigen. Wenn Sie z. b. im folgenden Beispiel `android:lay` eingeben (gefolgt von <kbd>STRG + LEERTASTE</kbd>), wird die folgende Liste angezeigt:
 
-[![Automatische Vervollständigung des Layoutattributs](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
+[![Autocompletion des Layoutattributs](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
 
 Drücken <kbd>Sie die Eingabe</kbd> Taste, um den ersten aufgeführten Abschluss zu akzeptieren, oder verwenden Sie die Pfeiltasten, um zum gewünschten Abschluss zu scrollen, und drücken <kbd>Sie die Eingabe</kbd> Alternativ können Sie mit der Maus einen Bildlauf zu durchführen und auf den gewünschten Abschluss klicken.
 
@@ -176,7 +176,7 @@ Drücken <kbd>Sie die Eingabe</kbd> Taste, um den ersten aufgeführten Abschluss
 
 Nachdem Sie ein neues Attribut für ein Widget eingegeben und damit begonnen haben, ihm einen Wert zuzuweisen, wird IntelliSense nach dem Eingeben eines auslöserzeichens angezeigt und stellt eine Liste gültiger Werte bereit, die für dieses Attribut verwendet werden sollen. Wenn beispielsweise das erste doppelte Anführungszeichen für `android:layout_width` im folgenden Beispiel eingegeben wird, wird eine automatische Vervollständigungs Auswahl angezeigt, um die Liste der gültigen Optionen für diese Breite bereitzustellen:
 
-[![IntelliSense-Beispiel für Layoutbreite](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
+[![IntelliSense Beispiel für Layoutbreite](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
 
 Am unteren Rand dieses Popups befinden sich zwei Schaltflächen (wie in rot im obigen Screenshot dargestellt). Wenn Sie auf der linken Seite auf die Schaltfläche **Projektressourcen** klicken, wird die Liste auf Ressourcen beschränkt, die Teil des App-Projekts sind. durch Klicken auf die Schaltfläche Frameworkressourcen auf der rechten Seite wird die Liste so eingeschränkt, dass im Framework verfügbare Ressourcen
 Diese Schaltflächen werden ein-oder ausgeschaltet: Sie können erneut darauf klicken, um die von den einzelnen bereitgestellten Filter Aktionen zu deaktivieren.
@@ -196,25 +196,25 @@ Im Fenster **Eigenschaften** werden nur Werte angezeigt, die für das ausgewähl
 
 ### <a name="referencing-resources"></a>Verweisen auf Ressourcen
 
-Einige Eigenschaften können auf Ressourcen verweisen, die in anderen Dateien als der Datei "Layout **. axml** " definiert sind. Die häufigsten Fälle dieses Typs sind `string` -und- `drawable` Ressourcen. Verweise können jedoch auch für andere Ressourcen, z `Boolean` . b. Werte und Dimensionen, verwendet werden. Wenn eine Eigenschaft Ressourcen Verweise unterstützt, wird neben dem Text Eintrag für die Eigenschaft ein Durchsuchen-Symbol (ein quadratisches Symbol) angezeigt. Diese Schaltfläche öffnet eine Ressourcen Auswahl, wenn darauf geklickt wird.
+Einige Eigenschaften können auf Ressourcen verweisen, die in anderen Dateien als der Datei "Layout **. axml** " definiert sind. Die häufigsten Fälle dieses Typs sind `string` und `drawable` Ressourcen. Verweise können jedoch auch für andere Ressourcen verwendet werden, z. b. `Boolean` Werte und Dimensionen. Wenn eine Eigenschaft Ressourcen Verweise unterstützt, wird neben dem Text Eintrag für die Eigenschaft ein Durchsuchen-Symbol (ein quadratisches Symbol) angezeigt. Diese Schaltfläche öffnet eine Ressourcen Auswahl, wenn darauf geklickt wird.
 
-Der folgende Screenshot zeigt z. b. die verfügbaren Optionen, wenn Sie im Fenster **Eigenschaften** rechts neben dem Textfeld auf `Text` das Feld mit dem Textfeld klicken:
+Der folgende Screenshot zeigt z. b. die verfügbaren Optionen, wenn Sie im Fenster **Eigenschaften** auf das `Text` Feld mit dem Textfeld rechts neben dem Textfeld klicken:
 
-[![Beispiel für eine Liste von Textoptionen](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
+[![Example Liste der Textoptionen](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
 
 Wenn auf " **Ressource...** " geklickt wird, wird das Dialogfeld " **Ressource auswählen** " angezeigt:
 
-[![Screenshot der Beispiel Ressourcen mit mehreren aufgelisteten Ressourcen](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
+[Screenshot der ![Example Ressourcen mit mehreren aufgelisteten Ressourcen](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
 
-Aus dieser Liste können Sie eine Text Ressource auswählen, die für dieses Widget verwendet werden soll, anstatt den Text im Bereich " **Eigenschaften** " hart zu codieren. Das nächste Beispiel veranschaulicht die Ressourcen Auswahl für die `Src` -Eigenschaft `ImageView`eines:
+Aus dieser Liste können Sie eine Text Ressource auswählen, die für dieses Widget verwendet werden soll, anstatt den Text im Bereich " **Eigenschaften** " hart zu codieren. Im nächsten Beispiel wird die Ressourcen Auswahl für die `Src`-Eigenschaft eines `ImageView` veranschaulicht:
 
-[![Ressourcen Auswahllisten-Symbol Ressource für eine ImageView](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
+[Symbol Ressource für ![Resource Auswahlliste für eine ImageView](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
-Wenn Sie auf das leere Quadrat rechts neben der `Src` -Eigenschaft klicken, wird das Dialogfeld **Ressource auswählen** mit einer Liste von Ressourcen geöffnet, die von den Farben (wie oben gezeigt) bis zu drawables reichen.
+Wenn Sie auf das leere Quadrat rechts neben der Eigenschaft `Src` klicken, wird das Dialogfeld **Ressource auswählen** mit einer Liste von Ressourcen geöffnet, die von den Farben (wie oben gezeigt) bis zu drawables reichen.
 
 ### <a name="boolean-property-references"></a>Boolesche Eigenschafts Verweise
 
-*Boolesche* Eigenschaften werden normalerweise als Häkchen neben einer Eigenschaft im Eigenschaftenfenster ausgewählt. Sie können einen `true` -Wert `false` oder einen-Wert festlegen, indem Sie dieses Kontrollkästchen aktivieren oder deaktivieren, oder Sie können einen Eigenschafts Verweis auswählen, indem Sie auf das dunkel gefüllte Quadrat rechts neben der Eigenschaft klicken. Im folgenden Beispiel wird Text in alle Caps geändert, indem Sie auf den booleschen Eigenschafts Verweis **Text alle Caps** zeigt, der `TextView`dem ausgewählten zugeordnet ist:
+*Boolesche* Eigenschaften werden normalerweise als Häkchen neben einer Eigenschaft im Eigenschaftenfenster ausgewählt. Sie können einen `true` oder `false` Wert festlegen, indem Sie dieses Kontrollkästchen aktivieren oder deaktivieren, oder Sie können einen Eigenschafts Verweis auswählen, indem Sie auf das dunkel gefüllte Quadrat rechts neben der Eigenschaft klicken. Im folgenden Beispiel wird Text in alle Caps geändert, indem Sie auf den booleschen Eigenschafts Verweis **Text alle Caps** zeigt, der dem ausgewählten `TextView` zugeordnet ist:
 
 ![Beispiel für das Festlegen von booleschen Eigenschaften](designer-basics-images/vs/11-boolean.png)
 
@@ -224,23 +224,23 @@ Der Android Designer unterstützt das direkte Bearbeiten bestimmter Eigenschafte
 
 ### <a name="text"></a>Text
 
-Die Texteigenschaften einiger widgets (z `Button` . b. und `TextView`) können direkt auf der **Designoberfläche**bearbeitet werden. Wenn Sie auf ein Widget doppelklicken, wird es in den Bearbeitungsmodus versetzt, wie unten dargestellt:
+Die Texteigenschaften einiger widgets (z. b. `Button` und `TextView`) können direkt auf dem **Designoberfläche**bearbeitet werden. Wenn Sie auf ein Widget doppelklicken, wird es in den Bearbeitungsmodus versetzt, wie unten dargestellt:
 
 ![Text Ressource für die Hello-Zeichenfolge](designer-basics-images/vs/12-text-resource.png "Text Ressource")
 
-Sie können einen neuen Textwert eingeben, oder Sie können eine neue Ressourcen Zeichenfolge eingeben. Im folgenden Beispiel wird die `@string/hello` Ressource durch den folgenden `CLICK THIS BUTTON`Text ersetzt:
+Sie können einen neuen Textwert eingeben, oder Sie können eine neue Ressourcen Zeichenfolge eingeben. Im folgenden Beispiel wird die `@string/hello` Ressource durch den Text ersetzt, `CLICK THIS BUTTON`:
 
 ![UMSCHALT + Eingabe, um Text automatisch mit einer neuen Ressource zu verknüpfen](designer-basics-images/vs/13-shift-enter-resource.png)
 
-Diese Änderung wird in der- `text` Eigenschaft des Widgets gespeichert. der Wert, der der `@string/hello` Ressource zugewiesen ist, wird nicht geändert.
-Wenn Sie in einer neuen Text Zeichenfolge einen Schlüssel<kbd>eingeben</kbd> , können Sie die <kbd>UMSCHALT</kbd> +
-Taste drücken, um den eingegebenen Text automatisch mit einer neuen Ressource zu verknüpfen.
+Diese Änderung wird in der `text`-Eigenschaft des Widgets gespeichert. der Wert, der der `@string/hello` Ressource zugewiesen ist, wird nicht geändert.
+Wenn Sie in einer neuen Text Zeichenfolge eine Taste drücken, können Sie <kbd>UMSCHALT</kbd>  +
+<kbd>Eingabe</kbd> Taste drücken, um den eingegebenen Text automatisch mit einer neuen Ressource zu verknüpfen.
 
 ### <a name="margin"></a>Rand
 
 Wenn Sie ein Widget auswählen, zeigt der Designer Handles an, die es Ihnen ermöglichen, die Größe oder den Rand des Widgets interaktiv zu ändern. Wenn Sie auf das Widget klicken, während es ausgewählt ist, wechseln Sie in den Modus für die Rand Bearbeitung und den Größen Bearbeitungsmodus.
 
-Wenn Sie zum ersten Mal auf ein Widget klicken, werden Rand Zieh Punkte angezeigt. Wenn Sie die Maus zu einem der Handles bewegen, zeigt der Designer die Eigenschaft an, die das Handle ändert (wie unten für die `layout_marginLeft` -Eigenschaft gezeigt):
+Wenn Sie zum ersten Mal auf ein Widget klicken, werden Rand Zieh Punkte angezeigt. Wenn Sie die Maus zu einem der Handles bewegen, zeigt der Designer die Eigenschaft an, die das Handle ändert (wie unten für die `layout_marginLeft`-Eigenschaft gezeigt):
 
 ![Screenshot, der Rand Handles im Designer anzeigt](designer-basics-images/vs/15-margin-handles.png)
 
@@ -250,23 +250,23 @@ Wenn bereits ein Rand festgelegt wurde, werden gepunktete Linien angezeigt, die 
 
 ### <a name="size"></a>Größe
 
-Wie bereits erwähnt, können Sie in den Größen Bearbeitungsmodus wechseln, indem Sie auf ein Widget klicken, während es bereits ausgewählt ist. Klicken Sie auf das dreieckige handle, um die Größe für die `wrap_content`festgelegte Dimension auf festzulegen:
+Wie bereits erwähnt, können Sie in den Größen Bearbeitungsmodus wechseln, indem Sie auf ein Widget klicken, während es bereits ausgewählt ist. Klicken Sie auf das dreieckige handle, um die Größe für die festgelegte Dimension auf `wrap_content` festzulegen:
 
 ![Packen von Inhalten und Ändern der Größe von Handles](designer-basics-images/vs/17-wrap-content.png)
 
 Durch Klicken auf den Umbruch **Inhalts** Handle wird das Widget in dieser Dimension verkleinert, sodass es nicht größer als notwendig ist, um den eingeschlossenen Inhalt zu umschließen. In diesem Beispiel verkleinert sich der Schaltflächen Text horizontal, wie im folgenden Screenshot gezeigt.
 
-Wenn der Size-Wert auf **Inhalt**umschließen festgelegt ist, zeigt der Designer ein dreieckiges Handle an, das in umgekehrter Richtung zum Ändern der Größe auf `match_parent`zeigt:
+Wenn der Size-Wert auf **Inhalt**umschließen festgelegt ist, zeigt der Designer einen dreieckigen Handle an, der in der entgegengesetzten Richtung zum Ändern der Größe in `match_parent` zeigt:
 
 ![Übergeordnetes handle vergleichen](designer-basics-images/vs/18-match-parent.png)
 
 Durch Klicken auf das über **geordnete** Übereinstimmungs Handle wird die Größe in dieser Dimension wieder hergestellt, sodass Sie mit dem übergeordneten Widget identisch ist.
 
-Außerdem können Sie den Zirkel Größen Zieh Punkt (wie in den obigen Screenshots gezeigt) ziehen, um die Größe des Widgets auf einen `dp` beliebigen Wert zu ändern. Wenn Sie dies tun, werden sowohl **Inhalt** einschließen als auch über **geordnete Handles vergleichen** für diese Dimension angezeigt:
+Außerdem können Sie den Zirkel Größen Zieh Punkt (wie in den obigen Screenshots gezeigt) ziehen, um die Größe des Widgets an einen beliebigen `dp` Wert zu ändern. Wenn Sie dies tun, werden sowohl **Inhalt** einschließen als auch über **geordnete Handles vergleichen** für diese Dimension angezeigt:
 
 ![Zirkuläre Größen Zieh Punkte](designer-basics-images/vs/19-resize-dp.png)
 
-Nicht alle Container ermöglichen das `Size` Bearbeiten eines Widgets. Beachten Sie z. b., dass im folgenden Screenshot `LinearLayout` mit den ausgewählten Handles die Handles zur Größenänderung nicht angezeigt werden:
+Nicht alle Container ermöglichen das Bearbeiten der `Size` eines Widgets. Beachten Sie z. b., dass im folgenden Screenshot mit dem ausgewählten `LinearLayout` die Handles zur Größenänderung nicht angezeigt werden:
 
 ![Keine Handles zur Größenänderung](designer-basics-images/vs/20-no-resize-handles.png)
 
@@ -277,7 +277,7 @@ Im folgenden Beispiel wird das enthaltende `LinearLayout` Widget ausgewählt:
 
 ![Dokument Gliederungs Beispiel](designer-basics-images/vs/21-document-outline.png)
 
-Der Umriss des ausgewählten Widgets (in diesem Fall a `LinearLayout`) wird auch auf dem **Designoberfläche**hervorgehoben. Das ausgewählte Widget in der Dokument Gliederung bleibt mit seinem Pendant auf dem **Designoberfläche**synchron. Dies ist hilfreich bei der Auswahl von Ansichts Gruppen, die auf dem **Designoberfläche**nicht immer einfach ausgewählt werden können.
+Die Gliederung des ausgewählten Widgets (in diesem Fall einer `LinearLayout`) wird auch auf der **Designoberfläche**hervorgehoben. Das ausgewählte Widget in der Dokument Gliederung bleibt mit seinem Pendant auf dem **Designoberfläche**synchron. Dies ist hilfreich bei der Auswahl von Ansichts Gruppen, die auf dem **Designoberfläche**nicht immer einfach ausgewählt werden können.
 
 Die **Dokument** Gliederung unterstützt das Kopieren und einfügen, oder Sie können Drag & Drop verwenden. Drag & Drop wird von der **Dokument** Gliederung zum **Designoberfläche** sowie vom **Designoberfläche** bis zur **Dokument**Gliederung unterstützt. Wenn Sie mit der rechten Maustaste auf ein Element in der **Dokument** Gliederung klicken, wird auch das Kontextmenü für das Element angezeigt (das gleiche Kontextmenü, das angezeigt wird, wenn Sie im **Designoberfläche**mit der rechten Maustaste auf dasselbe Widget klicken).
 
@@ -287,11 +287,11 @@ Die **Dokument** Gliederung unterstützt das Kopieren und einfügen, oder Sie k�
 
 Der Designer wird automatisch gestartet, wenn ein Layout erstellt wird, oder er kann durch Doppelklicken auf eine vorhandene axml-Datei gestartet werden. Wenn Sie z. b. im Ordner **Ressourcen > layoutordner** auf **Main. axml** doppelklicken, wird der Designer wie unten dargestellt geladen:
 
-[![Bildschirm "Designer" in Visual Studio für Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
+[![Designer Bildschirm in Visual Studio für Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 Ebenso können Sie ein neues Layout hinzufügen, indem Sie im **Lösungspad** mit der rechten Maustaste auf den **layoutordner** klicken und **> neue Datei hinzufügen > Android-> Layout**auswählen:
 
-[![Dialogfeld zum Hinzufügen neuer Dateien](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
+[Dialogfeld "neue Datei ![Add"](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 Dadurch wird eine neue axml-Datei erstellt und auf die Designoberfläche geladen.
 
@@ -304,45 +304,45 @@ Dadurch wird eine neue axml-Datei erstellt und auf die Designoberfläche geladen
 
 Der Designer besteht aus mehreren Abschnitten, die die verschiedenen Features unterstützen, wie im folgenden Screenshot zu sehen:
 
-[![Diagramm der Designer Bereiche](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
+[![Diagram von Designer Bereichen](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 Wenn Sie ein Layout im Designer bearbeiten, verwenden Sie die folgenden Funktionen, um den Entwurf zu erstellen und zu strukturieren:
 
-- **Designoberfläche** &ndash; Ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten.
+- **Designoberfläche** &ndash; ermöglicht die visuelle Erstellung der Benutzeroberfläche, indem Sie eine bearbeitbare Darstellung der Darstellung des Layouts auf dem Gerät erhalten.
 
-- **Symbolleiste** &ndash; Zeigt eine Liste von Selektoren an: **Geräte**-, Versions **-, Design-,** Layoutkonfiguration und Aktionsleiste Einstellungen. Die Symbolleiste enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
+- In der **Symbolleiste** &ndash; eine Liste der Selektoren angezeigt: **Geräte**-, **Versions** **-, Design**-, Layoutkonfiguration und Aktionsleiste Einstellungen. Die Symbolleiste enthält auch Symbole zum Starten des Design-Editors und zum Aktivieren des Material Design-Rasters.
 
-- **Toolbox** &ndash; Enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf den Designoberfläche verschieben können.
+- **Toolbox** &ndash; enthält eine Liste von Widgets und Layouts, die Sie per Drag & amp; Drop auf die Designoberfläche verschieben können.
 
-- **Eigenschaftenpad** &ndash; Listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
+- Eigenschaften- **Pad** &ndash; listet die Eigenschaften des ausgewählten Widgets zum Anzeigen und Bearbeiten auf.
 
-- **Dokument** Gliederung &ndash; Zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es im Designer ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements in das Eigenschafts Pad geladen.
+- **Dokument** Gliederung &ndash; zeigt die Struktur der Widgets an, aus denen das Layout besteht. Sie können auf ein Element in der Struktur klicken, damit es im Designer ausgewählt wird. Wenn Sie auf ein Element in der Struktur klicken, werden auch die Eigenschaften des Elements in das Eigenschafts Pad geladen.
 
-## <a name="toolbar"></a>Symbolleiste
+## <a name="toolbar"></a>ToolBar
 
 Die Symbolleiste (oberhalb der Designoberfläche) zeigt konfigurationsselektoren und Tool Menüs an:
 
-[![Diagramm der Designer-Symbolleiste](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
+[![Diagram der Designer-Symbolleiste](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 Die Symbolleiste ermöglicht den Zugriff auf die folgenden Features:
 
-- **Alternativer layoutselektor** &ndash; Ermöglicht die Auswahl aus unterschiedlichen Layoutversionen.
+- **Alternativer layoutselektor** &ndash; ermöglicht Ihnen die Auswahl aus unterschiedlichen Layoutversionen.
 
-- **Geräteauswahl** &ndash; Definiert einen Satz von Qualifizierern, die einem bestimmten Gerät zugeordnet sind, z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit. Sie können auch neue Geräte hinzufügen und löschen.
+- Die **Geräteauswahl** &ndash; definiert eine Gruppe von Qualifizierern, die einem bestimmten Gerät zugeordnet sind, z. b. Bildschirmgröße, Auflösung und Tastatur Verfügbarkeit. Sie können auch neue Geräte hinzufügen und löschen.
 
-- **Android-Versions Auswahl** &ndash; Die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
+- Die **Android-Versions Auswahl** &ndash; die Android-Version, auf die das Layout abzielt. Der Designer wird das Layout entsprechend der ausgewählten Android-Version Rendering.
 
-- Design **Auswahl** &ndash; Wählt das Design der Benutzeroberfläche für das Layout aus.
+- Design **Auswahl** &ndash; das Design der Benutzeroberfläche für das Layout auswählt.
 
-- **Konfigurations Auswahl** Wählt die Gerätekonfiguration aus, z. b. Hochformat oder Querformat. &ndash;
+- **Konfigurations Auswahl** &ndash; wählt die Gerätekonfiguration aus, z. b. hoch *Format oder* *quer*Format.
 
-- **Ressourcen qualifiziereroptionen** Öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von Sprache, UI-Modus, Nachtmodus und Optionen für den runden Bildschirmrand darstellt. &ndash;
+- **Ressourcen qualifiziereroptionen** &ndash; öffnet ein Dialogfeld, das Dropdown Menüs für die Auswahl von *Sprache*, *Benutzeroberflächen Modus*, *Nachtmodus*und Optionen für den *roundscreen anzeigt* .
 
-- **Aktionsleiste Einstellungen** &ndash; Konfiguriert die Aktionsleiste Einstellungen für das Layout.
+- **Aktionsleiste Einstellungen** &ndash; konfiguriert die Aktionsleiste Einstellungen für das Layout.
 
-- Design- **Editor** Öffnet den Design-Editor, der es Ihnen ermöglicht, Elemente des ausgewählten Designs anzupassen. &ndash;
+- Der Design- **Editor** &ndash; öffnet den Design- *Editor*, sodass Sie Elemente des ausgewählten Designs anpassen können.
 
-- **Material Entwurfs Raster** Aktiviert oder deaktiviert das *Material Entwurfs Raster.* &ndash; Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
+- **Material Design Grid** &ndash; aktiviert oder deaktiviert das *Material Design Grid*. Das Dropdown Menü Element neben dem Material Design-Raster öffnet ein Dialogfeld, in dem Sie das Raster anpassen können.
 
 Diese Features werden in den folgenden Themen ausführlicher erläutert:
 
@@ -354,9 +354,9 @@ Diese Features werden in den folgenden Themen ausführlicher erläutert:
 
 ## <a name="design-surface"></a>Entwurfsoberfläche
 
-Der Designer ermöglicht das ziehen und Ablegen von Widgets aus der Toolbox auf die Designoberfläche. Wenn Sie im Designer mit Widgets interagieren (indem Sie entweder neue Widgets hinzufügen oder vorhandene neu positionieren), werden vertikale und horizontale Linien angezeigt, um die verfügbaren Einfügepunkte zu markieren. Im folgenden Beispiel wird ein neues `Button` Widget in den Designoberfläche gezogen:
+Der Designer ermöglicht das ziehen und Ablegen von Widgets aus der Toolbox auf die Designoberfläche. Wenn Sie im Designer mit Widgets interagieren (indem Sie entweder neue Widgets hinzufügen oder vorhandene neu positionieren), werden vertikale und horizontale Linien angezeigt, um die verfügbaren Einfügepunkte zu markieren. Im folgenden Beispiel wird ein neues `Button`-Widget in den Designoberfläche gezogen:
 
-[![Beispiel für Einfügevorgänge auf Designoberfläche](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
+[![Example einfügelinien in Designoberfläche](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 Außerdem können Widgets kopiert werden: Sie können das Widget mithilfe von kopieren und Einfügen kopieren, oder Sie können ein vorhandenes Widget per Drag & amp; Drop beim Drücken der <kbd>STRG</kbd> -Taste ablegen.
 
@@ -364,53 +364,53 @@ Außerdem können Widgets kopiert werden: Sie können das Widget mithilfe von ko
 
 Ein Kontextmenü ist sowohl in der Designoberfläche als auch in der Dokument Gliederung verfügbar. Dieses Menü zeigt Befehle an, die für das ausgewählte Widget und den zugehörigen Container verfügbar sind, sodass Sie Vorgänge für Container leichter ausführen können (die nicht immer einfach auf dem Designoberfläche ausgewählt werden können). Im folgenden finden Sie ein Beispiel für ein Kontextmenü:
 
-[![Beispiel Kontextmenü, wenn Sie mit der rechten Maustaste auf den Designoberfläche](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
+[![Example Kontextmenü, wenn Sie mit der rechten Maustaste auf die Designoberfläche](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
-Wenn Sie in diesem Beispiel mit der rechten `Button` Maustaste auf einen klicken, wird ein Kontextmenü geöffnet, das mehrere Optionen enthält:
+Wenn Sie in diesem Beispiel mit der rechten Maustaste auf eine `Button` klicken, wird ein Kontextmenü geöffnet, das mehrere Optionen enthält:
 
-- **LinearLayout** Öffnet ein Untermenü, das das `LinearLayout` übergeordnete Element `Button`von bearbeitet. &ndash;
+- **LinearLayout** &ndash; öffnet ein Untermenü zum Bearbeiten des `LinearLayout` übergeordneten Elements des `Button`.
 
-- **Ausschneide**-, **Kopier**-und **Lösch** &ndash; Vorgänge, die für den rechts `Button`Klick angewendet werden.
+- **Ausschneide**-, **Kopier**-und **Lösch** Vorgänge &ndash; Vorgänge, die für den Rechtsklick `Button` gelten.
 
 ### <a name="zoom-controls"></a>Zoom Steuerelemente
 
 Der Designoberfläche unterstützt das Zoomen über mehrere Steuerelemente, wie hier gezeigt:
 
-[![Diagramm der Designoberfläche Zoom Steuerelemente](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
+[![Diagram der Designoberfläche Zoom Steuerelemente](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 Diese Steuerelemente erleichtern es, bestimmte Bereiche der Benutzeroberfläche im Designer anzuzeigen:
 
-- **Container markieren** &ndash; Hebt die Container auf dem Designoberfläche auf, sodass Sie leichter zu finden sind, während Sie zoomen und verkleinern.
+- **Markieren Sie Container** , &ndash; die Container auf dem Designoberfläche hervorgehoben werden, damit Sie leichter zu finden sind, während Sie zoomen und verkleinern.
 
-- **Normale Größe** &ndash; Rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
+- **Normal Größe** &ndash; rendert das layoutpixel für Pixel, damit Sie sehen können, wie das Layout die Auflösung des ausgewählten Geräts ansieht.
 
-- **An Fenster anpassen** &ndash; Legt die Zoomstufe fest, sodass das gesamte Layout auf dem Designoberfläche sichtbar ist.
+- **An Fenster anpassen** &ndash; legt die Zoomstufe so fest, dass das gesamte Layout auf dem Designoberfläche sichtbar ist.
 
-- **Vergrößern** &ndash; Zoomt inkrementell mit jedem Klick, vergrößert das Layout.
+- **Vergrößern** Sie die &ndash; zoomungen inkrementell mit jedem Klick, und vergrößern Sie das Layout.
 
-- Verkleinern &ndash; Zoomen Sie mit jedem Klick inkrementell, damit das Layout auf dem Designoberfläche kleiner wird.
+- **Vergrößern** Sie &ndash; bei jedem Klick inkrementell Zoomen, damit das Layout auf der Designoberfläche kleiner erscheint.
 
 Beachten Sie, dass die ausgewählte Zoomeinstellung die Benutzeroberfläche der Anwendung zur Laufzeit nicht beeinträchtigt.
 
 ## <a name="property-pad"></a>Eigenschaftenpad
 
-Der Designer unterstützt die Bearbeitung von widgeeigenschaften über das **eigenschaftenpad**. Die im eigenschaftenpad aufgelisteten Eigenschaften ändern sich je nach ausgewähltem Widget in der Designer Oberfläche. Wenn im vorherigen Beispiel ausgewählt ist, werden die Eigenschaften für dieses `Button` Widget angezeigt: `Button`
+Der Designer unterstützt die Bearbeitung von widgeeigenschaften über das **eigenschaftenpad**. Die im eigenschaftenpad aufgelisteten Eigenschaften ändern sich je nach ausgewähltem Widget in der Designer Oberfläche. Wenn die `Button` im vorherigen Beispiel ausgewählt ist, werden die Eigenschaften für dieses `Button` Widget angezeigt:
 
 [![Screenshot des Eigenschaften Pads](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 ## <a name="property-pad-sections"></a>Eigenschaften-Pad-Abschnitte
 
-Das eigenschaftenpad ist in verschiedene Abschnitte aufgeteilt, in denen &ndash; ähnliche Eigenschaften gruppiert werden. Dadurch können Sie die gewünschten Eigenschaften leichter finden:
+Das eigenschaftenpad ist in verschiedene Abschnitte unterteilt, in denen ähnliche Eigenschaften gruppiert werden &ndash; dadurch wird das Auffinden der gewünschten Eigenschaften vereinfacht:
 
-- **Widget** Haupteigenschaften des Widgets, `id`z. b. `visibility`, `text`, usw. &ndash; Die Eigenschaften zum Verwalten des widgeinhalts werden in der Regel hier abgelegt.
+- Das **Widget** &ndash; Haupteigenschaften des Widgets, z. b. `id`, `visibility`, `text` usw. Die Eigenschaften zum Verwalten des widgeinhalts werden in der Regel hier abgelegt.
 
-- **Stil** Eigenschaften, die die visuelle Darstellung des Widgets ändern, `font`z. b `text color`. `background`,, usw. &ndash;
+- **Stil** &ndash; Eigenschaften, die die visuelle Darstellung des Widgets ändern, z. b. `font`, `text color`, `background` usw.
 
-- **Layout** &ndash; Eigenschaften, die den Speicherort und die Größe des Widgets festlegen.
+- **Layout** &ndash; Eigenschaften, mit denen die Position und die Größe des Widgets festgelegt werden.
 
-- **Scrollen** &ndash; Scrolleigenschaften.
+- **Scrollen** Sie &ndash; scrolleigenschaften.
 
-- **Verhalten** &ndash; Flags, die festlegen, wie das Widget verhält.
+- Das **Verhalten** &ndash; Flags, die festlegen, wie das Widget verhält.
 
 ### <a name="default-values"></a>Standardwerte
 
@@ -418,29 +418,29 @@ Die Eigenschaften der meisten Widgets sind im **eigenschaftenpad** leer, da ihre
 
 ### <a name="referencing-resources"></a>Verweisen auf Ressourcen
 
-Einige Eigenschaften können auf Ressourcen verweisen, die in anderen Dateien als der Datei "Layout **. axml** " definiert sind. Die häufigsten Fälle dieses Typs sind `string` -und- `drawable` Ressourcen. Verweise können jedoch auch für andere Ressourcen, z `Boolean` . b. Werte und Dimensionen, verwendet werden.
-Wenn eine Eigenschaft Ressourcen Verweise unterstützt, wird neben dem Text Eintrag für die &hellip;Eigenschaft ein Durchsuchen-Symbol (Auslassungs Punkte) angezeigt.
+Einige Eigenschaften können auf Ressourcen verweisen, die in anderen Dateien als der Datei "Layout **. axml** " definiert sind. Die häufigsten Fälle dieses Typs sind `string` und `drawable` Ressourcen. Verweise können jedoch auch für andere Ressourcen verwendet werden, z. b. `Boolean` Werte und Dimensionen.
+Wenn eine Eigenschaft Ressourcen Verweise unterstützt, wird neben dem Text Eintrag für die Eigenschaft ein Durchsuchen-Symbol (Auslassungs Punkte, &hellip;) angezeigt.
 Wenn Sie auf diese Schaltfläche klicken, wird eine Ressourcen Auswahl geöffnet.
 
-Der folgende Screenshot zeigt z. b. die verfügbaren Ressourcen beim Klicken auf die Auslassungs Punkte rechts neben dem Textfeld `Button` für ein Widget im **Eigenschaften**Bereich:
+Der folgende Screenshot zeigt z. b. die Ressourcen, die verfügbar sind, wenn Sie auf die Auslassungs Punkte rechts neben dem Textfeld für ein `Button`-Widget im **eigenschaftenpad**klicken:
 
-[![Screenshot der Beispiel Ressourcen mit zwei aufgeführten Ressourcen](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
+[Screenshot der ![Example Ressourcen mit zwei aufgelisteten Ressourcen](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
-Das nächste Beispiel veranschaulicht die Ressourcen Auswahl für die `Src` -Eigenschaft `ImageView`eines:
+Im nächsten Beispiel wird die Ressourcen Auswahl für die `Src`-Eigenschaft eines `ImageView` veranschaulicht:
 
-[![Ressourcen Auswahllisten-Symbol Ressource für eine ImageView](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
+[Symbol Ressource für ![Resource Auswahlliste für eine ImageView](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 ### <a name="boolean-property-references"></a>Boolesche Eigenschafts Verweise
 
-*Boolesche* Eigenschaften werden normalerweise als Kontrollkästchen im eigenschaftenpad angezeigt. Wenn eine `Boolean` Eigenschaft Ressourcen Verweise unterstützt, wird ein kleines Kontrollkästchen neben der-Eigenschaft angezeigt. Ein aktiviertes Kontroll `true` Kästchen bedeutet, dass ein `false`leeres Feld angezeigt wird. Sie können auch direkt einen Wert eingeben, z `true` . `false`b. oder. Wenn Sie mit der Maus auf die Eingabe zeigen, wird ein kleines Textfeld Symbol angezeigt. Sie können darauf klicken, wenn Sie den Wert manuell eingeben möchten.
+*Boolesche* Eigenschaften werden normalerweise als Kontrollkästchen im eigenschaftenpad angezeigt. Wenn eine `Boolean`-Eigenschaft Ressourcen Verweise unterstützt, wird ein kleines Kontrollkästchen neben der-Eigenschaft angezeigt. Ein aktiviertes Kontrollkästchen bedeutet `true` und ein leeres Feld bedeutet `false`. Sie können auch direkt einen Wert eingeben, z. b. `true` oder `false`. Wenn Sie mit der Maus auf die Eingabe zeigen, wird ein kleines Textfeld Symbol angezeigt. Sie können darauf klicken, wenn Sie den Wert manuell eingeben möchten.
 
-[![Beispiel für das Festlegen von booleschen Eigenschaften](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
+[![Example der Festlegung von booleschen Eigenschaften](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
 ## <a name="grouped-properties"></a>Gruppierte Eigenschaften
 
-Einige Widgets verfügen über mehrwertige Eigenschaften, die gruppiert werden (z `Padding`. b.). Diese Eigenschaftswerte werden im **eigenschaftenpad** in einer einzelnen, erweiterbaren Zeile aufgelistet. Einige dieser Eigenschaften können direkt in der gruppierten Zeile bearbeitet werden, z. b `Padding` . die unten gezeigte-Eigenschaft:
+Einige Widgets verfügen über mehrwertige Eigenschaften, die gruppiert werden (z. b. `Padding`). Diese Eigenschaftswerte werden im **eigenschaftenpad** in einer einzelnen, erweiterbaren Zeile aufgelistet. Einige dieser Eigenschaften können direkt in der gruppierten Zeile bearbeitet werden, wie z. b. der unten gezeigten `Padding`-Eigenschaft:
 
-[![Beispiel Einstellungen für die Padding-Eigenschaft](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
+[![Example Einstellungen für die Padding-Eigenschaft](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 ## <a name="editing-properties-inline"></a>Inline Bearbeitung von Eigenschaften
 
@@ -448,60 +448,60 @@ Der Android Designer unterstützt das direkte Bearbeiten bestimmter Eigenschafte
 
 ### <a name="text"></a>Text
 
-Die Texteigenschaften einiger widgets (z `Button` . b. und `TextView`) können direkt auf der Designoberfläche bearbeitet werden. Wenn Sie auf ein Widget doppelklicken, wird es in den Bearbeitungsmodus versetzt, wie unten dargestellt:
+Die Texteigenschaften einiger widgets (z. b. `Button` und `TextView`) können direkt auf dem Designoberfläche bearbeitet werden. Wenn Sie auf ein Widget doppelklicken, wird es in den Bearbeitungsmodus versetzt, wie unten dargestellt:
 
-[![Text Ressource für die Hello-Zeichenfolge](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
+[![Text-Ressource für die Hello-Zeichenfolge](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
-Sie können einen neuen Textwert eingeben, oder Sie können eine neue Ressourcen Zeichenfolge eingeben. Im folgenden Beispiel wird die `@string/hello` Ressource durch den folgenden `CLICK THIS BUTTON`Text ersetzt:
+Sie können einen neuen Textwert eingeben, oder Sie können eine neue Ressourcen Zeichenfolge eingeben. Im folgenden Beispiel wird die `@string/hello` Ressource durch den Text ersetzt, `CLICK THIS BUTTON`:
 
-[![UMSCHALT + Eingabe, um Text automatisch mit einer neuen Ressource zu verknüpfen](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
+[![Shift + EINGABETASTE, um Text automatisch mit einer neuen Ressource zu verknüpfen.](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
-Diese Änderung wird in der- `text` Eigenschaft des Widgets gespeichert. der Wert, der der `@string/hello` Ressource zugewiesen ist, wird nicht geändert.
-Wenn Sie in einer neuen Text Zeichenfolge einen Schlüssel<kbd>eingeben</kbd> , können Sie die <kbd>UMSCHALT</kbd> +
-Taste drücken, um den eingegebenen Text automatisch mit einer neuen Ressource zu verknüpfen.
+Diese Änderung wird in der `text`-Eigenschaft des Widgets gespeichert. der Wert, der der `@string/hello` Ressource zugewiesen ist, wird nicht geändert.
+Wenn Sie in einer neuen Text Zeichenfolge eine Taste drücken, können Sie <kbd>UMSCHALT</kbd>  +
+<kbd>Eingabe</kbd> Taste drücken, um den eingegebenen Text automatisch mit einer neuen Ressource zu verknüpfen.
 
 ### <a name="margin"></a>Rand
 
 Wenn Sie ein Widget auswählen, zeigt der Designer Handles an, die es Ihnen ermöglichen, die Größe oder den Rand des Widgets interaktiv zu ändern. Wenn Sie auf das Widget klicken, während es ausgewählt ist, wechseln Sie in den Modus für die Rand Bearbeitung und den Größen Bearbeitungsmodus.
 
-Wenn Sie zum ersten Mal auf ein Widget klicken, werden Rand Zieh Punkte angezeigt. Wenn Sie die Maus zu einem der Handles bewegen, zeigt der Designer die Eigenschaft an, die das Handle ändert (wie unten für die `layout_marginLeft` -Eigenschaft gezeigt):
+Wenn Sie zum ersten Mal auf ein Widget klicken, werden Rand Zieh Punkte angezeigt. Wenn Sie die Maus zu einem der Handles bewegen, zeigt der Designer die Eigenschaft an, die das Handle ändert (wie unten für die `layout_marginLeft`-Eigenschaft gezeigt):
 
-[![Screenshot, der Rand Handles im Designer anzeigt](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
+[![Screenshot, die Rand Handles im Designer anzeigt](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 Wenn bereits ein Rand festgelegt wurde, werden gepunktete Linien angezeigt, die den Platz angeben, den der Rand einnimmt:
 
-[![Beispiel für gepunktete Linien, die Platz um eine Schaltfläche markieren](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
+[![Example von gepunkteten Linien, die Platz um eine Schaltfläche markieren](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 ### <a name="size"></a>Größe
 
-Wie bereits erwähnt, können Sie in den Größen Bearbeitungsmodus wechseln, indem Sie auf ein Widget klicken, während es bereits ausgewählt ist. Klicken Sie auf das dreieckige handle, um die Größe für die `wrap_content`festgelegte Dimension auf festzulegen:
+Wie bereits erwähnt, können Sie in den Größen Bearbeitungsmodus wechseln, indem Sie auf ein Widget klicken, während es bereits ausgewählt ist. Klicken Sie auf das dreieckige handle, um die Größe für die festgelegte Dimension auf `wrap_content` festzulegen:
 
-[![Packen von Inhalten und Ändern der Größe von Handles](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
+[![Wrap Inhalt und Handles zur Größenänderung](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 Wenn Sie auf das **Wrap-Inhalts** Handle klicken, wird das Widget in dieser Dimension verkleinert, sodass nicht größer als notwendig ist, um den eingeschlossenen Inhalt zu umschließen. In diesem Beispiel verkleinert sich der Schaltflächen Text horizontal, wie im folgenden Screenshot gezeigt.
 
-Wenn der Size-Wert auf **Inhalt**umschließen festgelegt ist, zeigt der Designer ein dreieckiges Handle an, das in umgekehrter Richtung zum Ändern der Größe auf `match_parent`zeigt:
+Wenn der Size-Wert auf **Inhalt**umschließen festgelegt ist, zeigt der Designer einen dreieckigen Handle an, der in der entgegengesetzten Richtung zum Ändern der Größe in `match_parent` zeigt:
 
-[![Übergeordnetes handle vergleichen](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
+[übergeordnetes handle ![Match](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 Durch Klicken auf das über **geordnete** Übereinstimmungs Handle wird die Größe in dieser Dimension wieder hergestellt, sodass Sie mit dem übergeordneten Widget identisch ist.
 
-Außerdem können Sie den Zirkel Größen Zieh Punkt (wie in den obigen Screenshots gezeigt) ziehen, um die Größe des Widgets auf einen `dp` beliebigen Wert zu ändern. Wenn Sie dies tun, werden sowohl **Inhalt** einschließen als auch über **geordnete Handles vergleichen** für diese Dimension angezeigt:
+Außerdem können Sie den Zirkel Größen Zieh Punkt (wie in den obigen Screenshots gezeigt) ziehen, um die Größe des Widgets an einen beliebigen `dp` Wert zu ändern. Wenn Sie dies tun, werden sowohl **Inhalt** einschließen als auch über **geordnete Handles vergleichen** für diese Dimension angezeigt:
 
-[![Zirkuläre Größen Zieh Punkte](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
+[![Circular Handles zur Größenänderung](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
-Nicht alle Container ermöglichen das `Size` Bearbeiten eines Widgets. Beachten Sie z. b., dass im folgenden Screenshot `LinearLayout` mit den ausgewählten Handles die Handles zur Größenänderung nicht angezeigt werden:
+Nicht alle Container ermöglichen das Bearbeiten der `Size` eines Widgets. Beachten Sie z. b., dass im folgenden Screenshot mit dem ausgewählten `LinearLayout` die Handles zur Größenänderung nicht angezeigt werden:
 
-[![Keine Handles zur Größenänderung](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
+[![No Handles zur Größenänderung](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 ## <a name="document-outline"></a>Dokumentgliederung
 
 Die **Dokument** Gliederung zeigt die widgehierarchie des Layouts an.
 Im folgenden Beispiel wird das enthaltende `LinearLayout` Widget ausgewählt:
 
-[![Dokument Gliederung](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
+[![Document Gliederung](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
-Der Umriss des ausgewählten Widgets (in diesem Fall a `LinearLayout`) wird auch auf dem Designoberfläche hervorgehoben. Das ausgewählte Widget in der Dokument Gliederung bleibt mit seinem Pendant auf dem Designoberfläche synchron. Dies ist hilfreich bei der Auswahl von Ansichts Gruppen, die auf dem Designoberfläche nicht immer einfach ausgewählt werden können.
+Die Gliederung des ausgewählten Widgets (in diesem Fall einer `LinearLayout`) wird auch auf der Designoberfläche hervorgehoben. Das ausgewählte Widget in der Dokument Gliederung bleibt mit seinem Pendant auf dem Designoberfläche synchron. Dies ist hilfreich bei der Auswahl von Ansichts Gruppen, die auf dem Designoberfläche nicht immer einfach ausgewählt werden können.
 
 Die Dokument Gliederung unterstützt das Kopieren und einfügen, oder Sie können Drag & Drop verwenden. Drag & Drop wird von der Dokument Gliederung zum Designoberfläche sowie vom Designoberfläche bis zur Dokument Gliederung unterstützt. Wenn Sie mit der rechten Maustaste auf ein Element in der Dokument Gliederung klicken, wird auch das Kontextmenü für das Element angezeigt (das gleiche Kontextmenü, das angezeigt wird, wenn Sie im Designoberfläche mit der rechten Maustaste auf dasselbe Widget klicken).
 

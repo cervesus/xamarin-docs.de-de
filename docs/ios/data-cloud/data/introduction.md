@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70767021"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Einführung in die Datenspeicherung in xamarin. IOS-apps
 
 ## <a name="when-to-use-a-database"></a>Verwendung einer Datenbank
 
-Während sich die Speicher-und Verarbeitungsfunktionen mobiler Geräte erhöhen, liegen Smartphones und Tablets weiterhin hinter den gegen &amp; Stücken ihrer Desktop-Laptops. Aus diesem Grund lohnt es sich, die Datenspeicher Architektur für Ihre APP zu planen, anstatt nur davon auszugehen, dass eine Datenbank immer die richtige Antwort ist. Es gibt eine Reihe verschiedener Optionen, die unterschiedliche Anforderungen erfüllen, wie z. b.:
+Während sich die Speicher-und Verarbeitungsfunktionen mobiler Geräte erhöhen, hinken Telefone und Tablets weiterhin hinter den Desktop-&amp; Laptop-Gegenstücke. Aus diesem Grund lohnt es sich, die Datenspeicher Architektur für Ihre APP zu planen, anstatt nur davon auszugehen, dass eine Datenbank immer die richtige Antwort ist. Es gibt eine Reihe verschiedener Optionen, die unterschiedliche Anforderungen erfüllen, wie z. b.:
 
 - **Einstellungen** – IOS bietet einen integrierten Mechanismus zum Speichern einfacher Schlüssel-Wert-Paare von Daten. Wenn Sie einfache Benutzereinstellungen oder kleine Datenelemente (z. b. Personalisierungs Informationen) speichern, verwenden Sie die systemeigenen Features der Plattform zum Speichern dieser Art von Informationen. Für IOS können Sie die icloud-Synchronisierung für diese Daten auch für die Sicherung und Synchronisierung für Benutzer mit mehreren Geräten nutzen.
 - **Text Dateien** – Benutzereingaben oder Caches heruntergeladener Inhalte (z. b. HTML) kann direkt auf dem Dateisystem gespeichert werden. Verwenden Sie eine geeignete Datei Benennungs Konvention, um die Dateien zu organisieren und Daten zu suchen.

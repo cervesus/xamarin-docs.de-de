@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "67832546"
 ---
 # <a name="introduction-to-urhosharp"></a>Einführung in urhusharp
@@ -68,7 +68,7 @@ Die anderen Beispiele zeigen die einzelnen Eigenschaften der einzelnen Beispiele
 
 ## <a name="basic-structure"></a>Grundlegende Struktur
 
-Ihr Spiel sollte die `Application` Klasse Unterklassen, wo Sie das Spiel einrichten (bei der `Setup` -Methode) und das Spiel starten (in der `Start` -Methode).  Anschließend erstellen Sie die Hauptbenutzer Oberfläche.  Wir werden ein kleines Beispiel durchgehen, das die APIs zum Einrichten einer 3D-Szene, einige Benutzeroberflächen Elemente und das Anfügen eines einfachen Verhaltens an die APIs zeigt.
+Ihr Spiel sollte die `Application` Klasse Unterklassen, wo Sie das Spiel einrichten (bei der `Setup`-Methode) und das Spiel starten (in der `Start`-Methode).  Anschließend erstellen Sie die Hauptbenutzer Oberfläche.  Wir werden ein kleines Beispiel durchgehen, das die APIs zum Einrichten einer 3D-Szene, einige Benutzeroberflächen Elemente und das Anfügen eines einfachen Verhaltens an die APIs zeigt.
 
 ```csharp
 class MySample : Application {
@@ -135,9 +135,9 @@ Zum Starten der Anwendung rufen Sie die Initialisierungsfunktion der Engine auf,
 new MySample().Run();
 ```
 
-Die Laufzeit ruft die- `Setup` Methode `Start` und die-Methode für Sie auf.  Wenn Sie über `Setup` schreiben, können Sie die Engine-Parameter konfigurieren (in diesem Beispiel nicht anzeigen).
+Die Laufzeit ruft die `Setup`-und `Start` Methoden für Sie auf.  Wenn Sie `Setup` überschreiben, können Sie die Engine-Parameter konfigurieren (in diesem Beispiel nicht angezeigt).
 
-Sie müssen über `Start` schreiben, da dadurch das Spiel gestartet wird.  In dieser Methode laden Sie Ihre Assets, verbinden Ereignishandler, richten ihre Szene ein und starten alle gewünschten Aktionen.  In unserem Beispiel erstellen wir sowohl eine Benutzeroberfläche, die dem Benutzer angezeigt wird, als auch eine 3D-Szene.
+Sie müssen `Start` überschreiben, da dadurch das Spiel gestartet wird.  In dieser Methode laden Sie Ihre Assets, verbinden Ereignishandler, richten ihre Szene ein und starten alle gewünschten Aktionen.  In unserem Beispiel erstellen wir sowohl eine Benutzeroberfläche, die dem Benutzer angezeigt wird, als auch eine 3D-Szene.
 
 Im folgenden Code Abschnitt wird das UI-Framework verwendet, um ein Textelement zu erstellen und es der Anwendung hinzuzufügen:
 
@@ -156,11 +156,11 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-Das UI-Framework ist vorhanden, um eine sehr einfache, in-Game-Benutzeroberfläche bereitzustellen, und es funktioniert, `UI.Root` indem dem Knoten neue Knoten hinzugefügt werden.
+Das UI-Framework ist vorhanden, um eine sehr einfache Benutzeroberfläche im Spiel zu bieten, und es funktioniert, indem dem Knoten "`UI.Root`" neue Knoten hinzugefügt werden.
 
 Der zweite Teil des Beispiels ist die zentrale Szene.  Dies umfasst eine Reihe von Schritten, das Erstellen einer 3D-Szene, das Erstellen eines 3D-Felds im Bildschirm, das Hinzufügen eines Lichts, eine Kamera und einen Viewport.  Diese werden im Abschnitt [Szene, Knoten, Komponenten und Kameras](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)ausführlicher erläutert.
 
-Der dritte Teil des Beispiels löst eine Reihe von Aktionen aus.  Aktionen sind Rezepte, die einen bestimmten Effekt beschreiben. Nachdem Sie erstellt wurden, können Sie von einem Knoten bei Bedarf ausgeführt werden `RunActionAsync` , indem die `Node`-Methode für einen aufgerufen wird.
+Der dritte Teil des Beispiels löst eine Reihe von Aktionen aus.  Aktionen sind Rezepte, die einen bestimmten Effekt beschreiben. Nachdem Sie erstellt wurden, können Sie von einem Knoten bei Bedarf ausgeführt werden, indem Sie die `RunActionAsync`-Methode für eine `Node` aufrufen.
 
 Mit der ersten Aktion wird das Feld mit einem Sprung Effekt skaliert, und das zweite Feld dreht das Feld immer wieder:
 
@@ -169,7 +169,7 @@ await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-Im obigen Beispiel wird gezeigt, wie die erste Aktion, die `ScaleTo` wir erstellen, eine Aktion ist. dabei handelt es sich lediglich um ein Rezept, das angibt, dass Sie die Skalierung für eine Sekunde auf den Wert einer Skalierungs Eigenschaft eines Knotens durchführen möchten  Diese Aktion wird wiederum um eine Beschleunigungs Aktion, die `EaseBounceOut` Aktion, umschlossen.  Die Beschleunigungs Aktionen verzerren die lineare Ausführung einer Aktion und wenden einen Effekt an. in diesem Fall stellt Sie den Bouncing-out-Effekt bereit.
+Im obigen Beispiel wird gezeigt, wie die erste Aktion, die wir erstellen, eine `ScaleTo` Aktion ist. dabei handelt es sich lediglich um ein Rezept, das angibt, dass Sie die Skalierung für eine Sekunde auf den Wert einer Skalierungs Eigenschaft eines Knotens durchführen möchten.  Diese Aktion wird wiederum um eine Beschleunigungs Aktion, die `EaseBounceOut` Aktion umschlossen.  Die Beschleunigungs Aktionen verzerren die lineare Ausführung einer Aktion und wenden einen Effekt an. in diesem Fall stellt Sie den Bouncing-out-Effekt bereit.
 Unser Rezept könnte also wie folgt geschrieben werden:
 
 ```csharp

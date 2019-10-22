@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ecc4686e9966de7a184730589c44a951e4daddb2
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771909"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424862"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Hervorheben eines kreisförmigen Bereiches auf einer Karte
 
@@ -229,7 +229,6 @@ namespace MapOverlay.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 circle = formsMap.Circle;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -250,7 +249,7 @@ namespace MapOverlay.Droid
 }
 ```
 
-Dann ruft die Methode `OnElementChanged` die Methode `MapView.GetMapAsync` auf, die die zugrunde liegende `GoogleMap`-Klasse abruft, die an die Ansicht gebunden ist, sofern der benutzerdefinierte Renderer einem neuen Xamarin.Forms-Element angefügt wurde. Sobald die `GoogleMap`-Instanz verfügbar ist, wird die `OnMapReady`-Methode aufgerufen, wobei der Kreis durch Instanziieren eines `CircleOptions`-Objekts erstellt wird, das die Mitte und den Radius des Kreises (in Metern) bestimmt. Der Kreis wird anschließend durch Aufrufen der Methode `NativeMap.AddCircle` der Karte hinzugefügt.
+Die `OnElementChanged`-Methode ruft die benutzerdefinierten Kreisdaten ab, sofern der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist. Sobald die `GoogleMap`-Instanz verfügbar ist, wird die `OnMapReady`-Methode aufgerufen, wobei der Kreis durch Instanziieren eines `CircleOptions`-Objekts erstellt wird, das die Mitte und den Radius des Kreises (in Metern) bestimmt. Der Kreis wird anschließend durch Aufrufen der Methode `NativeMap.AddCircle` der Karte hinzugefügt.
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Erstellen des benutzerdefinierten Renderers auf der Universellen Windows-Plattform
 

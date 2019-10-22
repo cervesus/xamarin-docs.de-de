@@ -8,15 +8,15 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
-ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/14/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "72303244"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
 
-_einige Layouts sind nur schwer zu visualisieren. Verwenden Sie diese Tipps, um die Vorschau der datenintensiven Seiten im XAML-Previewer optimal zu nutzen._
+_Einige Layouts sind schwierig zu visualisieren, ohne dass Daten vorliegen. Verwenden Sie diese Tipps, um die Vorschau der datenintensiven Seiten im XAML-Previewer optimal zu nutzen._
 
 ## <a name="design-time-data-basics"></a>Grundlagen zur Entwurfszeit Daten
 
@@ -36,17 +36,17 @@ Beispielsweise können Sie Text zu einer Bezeichnung hinzufügen, die normalerwe
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![Entwerfen von Zeit Daten mit Text in einem]Bezeichnungs(xaml-previewer-images/designtimedata-label-sm.png "Entwurfszeit Daten mit Text a Label")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![Entwerfen von Zeit Daten mit Text in einer Bezeichnung](xaml-previewer-images/designtimedata-label-sm.png "Entwerfen von Zeit Daten mit Text Bezeichnung")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
 In diesem Beispiel zeigt der XAML-Previewer ohne `d:Text` nichts für die Bezeichnung an. Stattdessen wird "Name!" angezeigt. Dabei enthält die Bezeichnung echte Daten zur Laufzeit.
 
-Sie können `d:` mit einem beliebigen Attribut für ein xamarin. Forms-Steuerelement verwenden, wie z. b. Farben, Schriftgrößen und Abstände. Sie können Sie sogar dem Steuerelement selbst hinzufügen:
+Sie können `d:` mit jedem beliebigen Attribut für ein xamarin. Forms-Steuerelement verwenden, wie z. b. Farben, Schriftgrößen und Abstände. Sie können Sie sogar dem Steuerelement selbst hinzufügen:
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![Entwerfen von Zeit Daten mit einem Schaltflächen Steuer]Element(xaml-previewer-images/designtimedata-controls-sm.png "Entwurfszeit Daten mit einem Schalt") Flächen-Steuerelement](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![Entwerfen von Zeit Daten mit einem Schaltflächen-Steuerelement](xaml-previewer-images/designtimedata-controls-sm.png "Entwerfen von Zeit Daten mit einem Schaltflächen-Steuerelement")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 In diesem Beispiel wird die Schaltfläche nur zur Entwurfszeit angezeigt. Verwenden Sie diese Methode, um einen Platzhalter für ein [benutzerdefiniertes Steuerelement zu platzieren, das nicht von der XAML-Vorschau unterstützt wird](render-custom-controls.md).
 
@@ -58,7 +58,7 @@ Sie können eine Entwurfszeit Quelle für Bilder festlegen, die an die Seite geb
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 
-[![Entwerfen von Zeit Daten mit Bildern](xaml-previewer-images/designtimedata-image-sm.png "Entwurfszeit Daten mit iamges")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![Entwerfen von Zeit Daten mit Bildern](xaml-previewer-images/designtimedata-image-sm.png "Entwerfen von Zeit Daten mit iamges")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Entwurfszeit Daten für ListViews
 
@@ -84,11 +84,11 @@ ListViews sind eine beliebte Methode zum Anzeigen von Daten in einem Mobile App.
 </StackLayout>
 ```
 
-[![Entwerfen von Zeit Daten mit ListView]-(xaml-previewer-images/designtimedata-itemssource-sm.png "Entwurfszeit Daten mit einer ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![Entwerfen von Zeit Daten mit einer ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "Entwerfen von Zeit Daten mit einer ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
 In diesem Beispiel wird eine ListView mit drei textcells in der XAML-Vorschau angezeigt. Sie können `x:String` in ein vorhandenes Datenmodell in Ihrem Projekt ändern.
 
-Sie können auch ein Array von Datenobjekten erstellen. Beispielsweise können öffentliche Eigenschaften eines `Monkey`-Datenobjekts als Entwurfszeit Daten erstellt werden:
+Sie können auch ein Array von Datenobjekten erstellen. Beispielsweise können öffentliche Eigenschaften eines `Monkey` Datenobjekts als Entwurfszeit Daten erstellt werden:
 
 ```csharp
 namespace Monkeys.Models
@@ -129,7 +129,7 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 Der Vorteil besteht darin, dass Sie eine Bindung an das tatsächliche Modell herstellen können, das Sie verwenden möchten.
 
-## <a name="alternative-hardcode-a-static-viewmodel"></a>Alternative Hardcodieren eines statischen ViewModel
+## <a name="alternative-hardcode-a-static-viewmodel"></a>Alternative: Hardcodieren eines statischen ViewModel
 
 Wenn Sie keine Entwurfszeit Daten zu einzelnen Steuerelementen hinzufügen möchten, können Sie einen Mock-Datenspeicher einrichten, der an die Seite gebunden werden soll. Im Blogbeitrag von James Montemagno finden Sie Informationen zum [Hinzufügen von Entwurfszeit Daten](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/) , um zu erfahren, wie Sie eine Bindung an ein statisches ViewModel in XAML erstellen.
 

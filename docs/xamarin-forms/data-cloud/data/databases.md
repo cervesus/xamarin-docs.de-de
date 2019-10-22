@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
 ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68739176"
 ---
 # <a name="xamarinforms-local-databases"></a>Lokale Datenbanken von Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
-_Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Datenbank-Engine. Dadurch ist es möglich, Objekte in freigegebenem Code zu laden und zu speichern. In diesem Artikel wird beschrieben, wie Xamarin.Forms-Apps Daten mithilfe von SQLite.Net in eine lokale SQLite-Datenbank lesen und schreiben können._
+_Xamarin. Forms unterstützt datenbankgesteuerte Anwendungen, die die SQLite-Datenbank-Engine verwenden. Dadurch können Objekte in frei gegebenem Code geladen und gespeichert werden. In diesem Artikel wird beschrieben, wie xamarin. Forms-Anwendungen mithilfe von SQLite.NET Daten in einer lokalen SQLite-Datenbank lesen und schreiben können._
 
 ## <a name="overview"></a>Übersicht
 
@@ -26,7 +26,7 @@ Xamarin.Forms-Apps können das Paket [SQLite.NET PCL NuGet](https://www.nuget.or
 
 Bei der zugehörigen [Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) handelt es sich um eine einfache App für To-do-Listen. Auf den folgenden Screenshots wird veranschaulicht, wie das Beispiel auf jeder Plattform angezeigt wird:
 
-[![Xamarin. Forms-Daten Bank Beispiel-Screenshots](databases-images/todo-list-sml.png "Screenshots der ersten Seite") ](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste") auf der Liste [ ![Xamarin. Forms-Daten Bank Beispiel Screenshots]für(databases-images/todo-list-sml.png "erste Seiten Screenshots") ](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste")
+[![Xamarin. Forms Database example screenshots](databases-images/todo-list-sml.png "Screenshots der ersten Seite auf der Liste")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste") [ ![xamarin. Forms Database example screenshots](databases-images/todo-list-sml.png "Screenshots der ersten Seite auf der Liste")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste")
 
 <a name="Using_SQLite_with_PCL" />
 
@@ -34,7 +34,7 @@ Bei der zugehörigen [Beispielanwendung](https://docs.microsoft.com/samples/xama
 
 Verwenden Sie zum Hinzufügen des SQLite-Support zu einer .NET Standard-Bibliothek von Xamarin.Forms die Suchfunktion von NuGet, um **sqlite-net-pcl** zu finden und das neueste Paket zu installieren:
 
-![Hinzufügen des Pakets von NuGet SQLite.NET PCL](databases-images/vs2017-sqlite-pcl-nuget.png "Hinzufügen des Pakets von NuGet SQLite.NET PCL")
+![Hinzufügen von nuget sqlite.net PCL-Paket](databases-images/vs2017-sqlite-pcl-nuget.png "Hinzufügen von nuget sqlite.net PCL-Paket")
 
 Es gibt mehrere NuGet-Pakete mit ähnlichen Namen. Das richtige Paket verfügt über folgende Attribute:
 

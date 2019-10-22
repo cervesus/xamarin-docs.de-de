@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
 ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70758515"
 ---
 # <a name="creating-a-watch-face"></a>Erstellen eines Zifferblatts
@@ -29,7 +29,7 @@ Nachdem dieses digitale Überwachungs Gesicht entwickelt und getestet wurde, wir
 
 [![Analog ansehen](creating-a-watchface-images/02-example-watchface.png "Beispiel Bildschirm Abbildung der abschließenden Seite mit der analogen Uhr")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
-Überwachen der Gesichts Dienste werden gebündelt und als Teil einer Wear 1,0-App installiert. In den folgenden Beispielen enthält `MainActivity` nur den Code aus der APP-Vorlage "Wear 1,0", sodass der Watch-Dienst verpackt und im Rahmen der APP auf der Smartwatch bereitgestellt werden kann. Tatsächlich dient diese APP ausschließlich als Vehikel, um den Überwachungsdienst in das Wear 1,0-Gerät (oder den Emulator) zu laden und zu Debuggen und zu testen.
+Überwachen der Gesichts Dienste werden gebündelt und als Teil einer Wear 1,0-App installiert. In den folgenden Beispielen enthält `MainActivity` nichts mehr als den Code aus der APP-Vorlage "Wear 1,0", sodass der Watch-Dienst verpackt und als Teil der APP auf der Smartwatch bereitgestellt werden kann. Tatsächlich dient diese APP ausschließlich als Vehikel, um den Überwachungsdienst in das Wear 1,0-Gerät (oder den Emulator) zu laden und zu Debuggen und zu testen.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -47,23 +47,23 @@ Erstellen Sie ein neues Android Wear 1,0-Projekt namens **watchface** (Weitere I
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-vs-sml.png "Wählen Sie im Dialogfeld \"Neues Projekt\" die Option App")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
+[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-vs-sml.png "Wählen Sie im Dialogfeld "Neues Projekt" die Option App")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-xs-sml.png "Wählen Sie im Dialogfeld \"Neues Projekt\" die Option App")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
+[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-xs-sml.png "Wählen Sie im Dialogfeld "Neues Projekt" die Option App")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
-Legen Sie für `com.xamarin.watchface`den Paketnamen Folgendes fest:
+Legen Sie den Paketnamen auf `com.xamarin.watchface` fest:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Einstellung für Paketname](creating-a-watchface-images/04-package-name-vs.png "Legen Sie den Paketnamen auf com. xamarin. watchface fest") .](creating-a-watchface-images/04-package-name-vs.png#lightbox)
+[![Einstellung für Paketname](creating-a-watchface-images/04-package-name-vs.png "Legen Sie den Paketnamen auf com. xamarin. watchface fest.")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Einstellung für Paketname](creating-a-watchface-images/04-package-name-xs.png "Legen Sie den Paketnamen auf com. xamarin. watchface fest") .](creating-a-watchface-images/04-package-name-xs.png#lightbox)
+[![Einstellung für Paketname](creating-a-watchface-images/04-package-name-xs.png "Legen Sie den Paketnamen auf com. xamarin. watchface fest.")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
 
 -----
 
@@ -82,7 +82,7 @@ Aktivieren Sie außerdem die Berechtigungen **Internet** und **wakelock** :
 
 -----
 
-Als Nächstes laden Sie die Vorschauversion herunter [. png](creating-a-watchface-images/preview.png) &ndash; wird Sie später in dieser exemplarischen Vorgehensweise dem Ordner " **drawables** " hinzugefügt.
+Laden Sie als nächstes die Datei [Preview. png](creating-a-watchface-images/preview.png) herunter &ndash; die später in dieser exemplarischen Vorgehensweise dem Ordner **drawables** hinzugefügt wird.
 
 ## <a name="add-the-xamarinandroid-wear-package"></a>Hinzufügen des xamarin. Android-Wear-Pakets
 
@@ -110,32 +110,32 @@ Erstellen und Ausführen der APP auf einem Wear-Gerät oder-Emulator (Weitere In
 
 An diesem Punkt verfügt die grundlegende Wear-APP nicht über die Funktion zum Überwachen von Gesichtspunkten, da Sie noch keine Überwachungsdienst Implementierung bereitstellt. Dieser Dienst wird als nächstes hinzugefügt.
 
-## <a name="canvaswatchfaceservice"></a>CanvasWatchFaceService
+## <a name="canvaswatchfaceservice"></a>Canvaswatchfakeservice
 
-Android Wear implementiert Überwachungs Gesichter über die `CanvasWatchFaceService` -Klasse. `CanvasWatchFaceService`wird von `WatchFaceService`abgeleitet, das wiederum von `WallpaperService` abgeleitet wird, wie im folgenden Diagramm dargestellt:
+Android Wear implementiert Watch-Gesichter über die `CanvasWatchFaceService`-Klasse. `CanvasWatchFaceService` wird von `WatchFaceService` abgeleitet, die selbst von `WallpaperService` abgeleitet ist, wie in der folgenden Abbildung dargestellt:
 
 [![Vererbungs Diagramm](creating-a-watchface-images/09-inheritance-diagram-sml.png "Canvaswatchfakeservice-Vererbungs Diagramm")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
-`CanvasWatchFaceService`schließt ein `CanvasWatchFaceService.Engine`-Objekt ein, das ein `CanvasWatchFaceService.Engine` -Objekt instanziiert, das die eigentliche Arbeit des Zeichnens der Überwachungs Fläche übernimmt. `CanvasWatchFaceService.Engine`wird von `WallpaperService.Engine` abgeleitet, wie im obigen Diagramm gezeigt.
+`CanvasWatchFaceService` enthält eine `CanvasWatchFaceService.Engine`, Sie instanziiert ein `CanvasWatchFaceService.Engine` Objekt, das die eigentliche Arbeit des Zeichnens der Überwachungs Fläche übernimmt. `CanvasWatchFaceService.Engine` wird von `WallpaperService.Engine` abgeleitet, wie in der obigen Abbildung dargestellt.
 
-Nicht in diesem Diagramm dargestellt, ist `Canvas` ein `CanvasWatchFaceService` , das &ndash; zum `Canvas` Zeichnen der über die `OnDraw` -Methode, wie unten beschriebenen Methode, verwendet wird.
+Das in diesem Diagramm nicht gezeigte `Canvas` ist eine, die `CanvasWatchFaceService` zum Zeichnen der Überwachungs Fläche verwendet, &ndash; dieser `Canvas` wie unten beschrieben über die `OnDraw`-Methode weitergegeben wird.
 
 In den folgenden Abschnitten wird ein benutzerdefinierter Überwachungs Gesichts Dienst erstellt, indem die folgenden Schritte ausgeführt werden:
 
-1. Definieren Sie eine Klasse `MyWatchFaceService` mit dem Namen, `CanvasWatchFaceService`die von abgeleitet ist.
+1. Definieren Sie eine Klasse mit dem Namen `MyWatchFaceService`, die von `CanvasWatchFaceService` abgeleitet ist.
 
-2. Erstellen `MyWatchFaceService`Sie in eine geschachtelte Klasse `MyWatchFaceEngine` mit dem Namen, `CanvasWatchFaceService.Engine`die von abgeleitet ist.
+2. Erstellen Sie innerhalb `MyWatchFaceService` eine geschachtelte Klasse mit dem Namen `MyWatchFaceEngine`, die von `CanvasWatchFaceService.Engine` abgeleitet ist.
 
-3. Implementieren `MyWatchFaceService`Sie in eine `CreateEngine` Methode, die diese instanziiert `MyWatchFaceEngine` und zurückgibt.
+3. Implementieren Sie in `MyWatchFaceService` eine `CreateEngine` Methode, die `MyWatchFaceEngine` instanziiert und zurückgibt.
 
-4. Implementieren `MyWatchFaceEngine`Sie in die `OnCreate` -Methode, um den Stil der Überwachungsseite zu erstellen und alle anderen Initialisierungs Aufgaben auszuführen.
+4. Implementieren Sie in `MyWatchFaceEngine` die `OnCreate`-Methode, um den Stil der überwachenden Seite zu erstellen und alle anderen Initialisierungs Aufgaben auszuführen.
 
-5. Implementieren Sie `OnDraw` die- `MyWatchFaceEngine`Methode von. Diese Methode wird immer dann aufgerufen, wenn die Überwachungs Fläche neu gezeichnet werden muss (d. h. *ungültig*). `OnDraw`ist die Methode zum Zeichnen (und Neuzeichnen) von Elementen, wie z. b. Stunde, Minute und Sekunde.
+5. Implementieren Sie die `OnDraw`-Methode von `MyWatchFaceEngine`. Diese Methode wird immer dann aufgerufen, wenn die Überwachungs Fläche neu gezeichnet werden muss (d. h. *ungültig*). `OnDraw` ist die Methode zum Zeichnen (und Neuzeichnen) von Überwachungs Elementen, wie z. b. Stunde, Minute und Sekunde.
 
-6. Implementieren Sie `OnTimeTick` die- `MyWatchFaceEngine`Methode von.
-    `OnTimeTick`wird mindestens einmal pro Minute (sowohl im Ambient-als auch im interaktiven Modus) oder nach dem Ändern des Datums bzw. der Uhrzeit aufgerufen.
+6. Implementieren Sie die `OnTimeTick`-Methode von `MyWatchFaceEngine`.
+    `OnTimeTick` wird mindestens einmal pro Minute (sowohl im Ambient-als auch im interaktiven Modus) oder nach dem Ändern des Datums bzw. der Uhrzeit aufgerufen.
 
-Weitere Informationen zu `CanvasWatchFaceService`finden Sie in der Android [canvaswatchfakeservice](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) -API-Dokumentation.
+Weitere Informationen zu `CanvasWatchFaceService` finden Sie in der Android [canvaswatchfakeservice](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) -API-Dokumentation.
 Ebenso erläutert [canvaswatchfakeservice. Engine](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine.html) die tatsächliche Implementierung der Watch-Seite.
 
 ### <a name="add-the-canvaswatchfaceservice"></a>Hinzufügen von canvaswatchfakeservice
@@ -180,19 +180,19 @@ namespace WatchFace
 }
 ```
 
-`MyWatchFaceService`(abgeleitet von `CanvasWatchFaceService`) ist das Hauptprogramm der Uhr. `MyWatchFaceService`implementiert nur eine Methode, `OnCreateEngine`, die ein `MyWatchFaceEngine` -Objekt instanziiert und zurück`MyWatchFaceEngine` gibt (wird `CanvasWatchFaceService.Engine`von abgeleitet). Das instanziierte `MyWatchFaceEngine` -Objekt muss `WallpaperService.Engine`als zurückgegeben werden. Das kapselnde `MyWatchFaceService` Objekt wird an den Konstruktor übergeben.
+`MyWatchFaceService` (abgeleitet von `CanvasWatchFaceService`) ist das Hauptprogramm der Uhr. `MyWatchFaceService` implementiert nur eine Methode, `OnCreateEngine`, die ein `MyWatchFaceEngine` Objekt instanziiert und zurückgibt (`MyWatchFaceEngine` wird von `CanvasWatchFaceService.Engine` abgeleitet). Das instanziierte `MyWatchFaceEngine` Objekt muss als `WallpaperService.Engine` zurückgegeben werden. Das kapselnde `MyWatchFaceService` Objekt wird an den-Konstruktor übergeben.
 
-`MyWatchFaceEngine`ist die tatsächliche "Watch Gesicht &ndash; "-Implementierung, die den Code enthält, der das Überwachungs Gesicht zeichnet. Außerdem werden Systemereignisse wie Bildschirm Änderungen (Ambient/Interactive-Modi, Bildschirm ausschalten usw.) behandelt.
+`MyWatchFaceEngine` ist die tatsächliche Implementierung der Überwachungs Ansicht &ndash; Sie den Code enthält, der das Überwachungs Gesicht zeichnet. Außerdem werden Systemereignisse wie Bildschirm Änderungen (Ambient/Interactive-Modi, Bildschirm ausschalten usw.) behandelt.
 
 ### <a name="implement-the-engine-oncreate-method"></a>Implementieren der OnCreate-Methode der Engine
 
-Die `OnCreate` -Methode initialisiert das Watch-Gesicht. Fügen Sie das folgende Feld `MyWatchFaceEngine`hinzu:
+Die `OnCreate`-Methode initialisiert das Watch-Gesicht. Fügen Sie `MyWatchFaceEngine` das folgende Feld hinzu:
 
 ```csharp
 Paint hoursPaint;
 ```
 
-Dieses `Paint` Objekt wird verwendet, um die aktuelle Uhrzeit auf dem Überwachungs Gesicht zu zeichnen. Fügen Sie als nächstes die folgende Methode `MyWatchFaceEngine`zu hinzu:
+Dieses `Paint` Objekt wird verwendet, um die aktuelle Uhrzeit auf dem Überwachungs Gesicht zu zeichnen. Fügen Sie als nächstes `MyWatchFaceEngine` die folgende Methode hinzu:
 
 ```csharp
 public override void OnCreate(ISurfaceHolder holder)
@@ -211,23 +211,23 @@ public override void OnCreate(ISurfaceHolder holder)
 }
 ```
 
-`OnCreate`wird kurz nach `MyWatchFaceEngine` dem Start von aufgerufen. Er richtet den `WatchFaceStyle` (der steuert, wie das Wear-Gerät mit dem Benutzer interagiert) ein und instanziiert das `Paint` Objekt, das zum Anzeigen der Uhrzeit verwendet wird.
+`OnCreate` wird kurz nach dem Start `MyWatchFaceEngine` aufgerufen. Er richtet die `WatchFaceStyle` ein (die steuert, wie das Wear-Gerät mit dem Benutzer interagiert) und instanziiert das `Paint` Objekt, das zum Anzeigen der Uhrzeit verwendet wird.
 
-Der-Befehl führt folgende Aktionen aus: `SetWatchFaceStyle`
+Der `SetWatchFaceStyle`-Aufrufe führt folgende Aktionen aus:
 
-1. Legt den Peek- `PeekModeShort` *Modus* auf fest. Dies bewirkt, dass Benachrichtigungen in der Anzeige als kleine "Peek"-Karten angezeigt werden.
+1. Legt den *PEEK-Modus* auf `PeekModeShort` fest, wodurch Benachrichtigungen in der Anzeige als kleine "Peek"-Karten angezeigt werden.
 
-2. Legt die Hintergrund Sichtbarkeit `Interruptive`auf fest. Dadurch wird der Hintergrund einer Peek-Karte nur kurz angezeigt, wenn Sie eine destruktiv Benachrichtigung darstellt.
+2. Legt die Sichtbarkeit des Hintergrunds auf `Interruptive` fest, was bewirkt, dass der Hintergrund einer Peek-Karte nur kurz angezeigt wird, wenn Sie eine destruktiv Benachrichtigung darstellt.
 
 3. Deaktiviert das Zeichnen der Standard-Benutzeroberflächen Zeit auf dem ansichtgesicht, damit das benutzerdefinierte Überwachungs Gesicht stattdessen die Zeit anzeigen kann.
 
 Weitere Informationen zu diesen und anderen Optionen für das Überwachen von Optionen finden Sie in der API-Dokumentation zu Android [watchfakestyle. Builder](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) .
 
-Nachdem `SetWatchFaceStyle` abgeschlossen ist `OnCreate` , instanziiert `Paint` das-`hoursPaint`Objekt () und legt seine Farbe auf weiß und seine Textgröße auf 48 Pixel fest ([TEXTSIZE](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29) muss in Pixel angegeben werden).
+Nachdem `SetWatchFaceStyle` abgeschlossen ist, instanziiert `OnCreate` das `Paint` Objekt (`hoursPaint`) und legt seine Farbe auf weiß und seine Textgröße auf 48 Pixel fest ([TEXTSIZE](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29) muss in Pixel angegeben werden).
 
 ### <a name="implement-the-engine-ondraw-method"></a>Implementieren der OnDraw-Methode der Engine
 
-Die `OnDraw` -Methode ist vielleicht die `CanvasWatchFaceService.Engine` wichtigste &ndash; Methode. Sie ist die Methode, die tatsächlich Überwachungs Elemente wie Ziffern und Takt Gesicht zeichnet.
+Die `OnDraw`-Methode ist vielleicht die wichtigste `CanvasWatchFaceService.Engine` Methode &ndash; Sie ist die Methode, die tatsächlich Überwachungs Elemente wie Ziffern und Takt Gesicht zeichnet.
 Im folgenden Beispiel wird eine Zeit Zeichenfolge auf dem Überwachungs Gesicht gezeichnet.
 Fügen Sie `MyWatchFaceEngine` zur folgenden Methode hinzu:
 
@@ -241,13 +241,13 @@ public override void OnDraw (Canvas canvas, Rect frame)
 }
 ```
 
-Wenn Android aufruft `OnDraw`, übergibt es eine `Canvas` -Instanz und die Begrenzungen, in denen das Gesicht gezeichnet werden kann. Im obigen Codebeispiel wird verwendet `DateTime` , um die aktuelle Zeit in Stunden und Minuten (im 12-Stunden-Format) zu berechnen. Die resultierende Zeit Zeichenfolge wird mithilfe der `Canvas.DrawText` -Methode auf der Canvas gezeichnet. Die Zeichenfolge wird 70 Pixel vom linken Rand und 80 Pixel vom oberen Rand aus angezeigt.
+Wenn Android `OnDraw` aufruft, übergibt es eine `Canvas` Instanz und die Begrenzungen, in denen das Gesicht gezeichnet werden kann. Im obigen Codebeispiel wird `DateTime` verwendet, um die aktuelle Zeit in Stunden und Minuten (im 12-Stunden-Format) zu berechnen. Die resultierende Zeit Zeichenfolge wird mithilfe der `Canvas.DrawText`-Methode auf der Canvas gezeichnet. Die Zeichenfolge wird 70 Pixel vom linken Rand und 80 Pixel vom oberen Rand aus angezeigt.
 
-Weitere Informationen `OnDraw` zur-Methode finden Sie in der Android [OnDraw](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine#ondraw) -API-Dokumentation.
+Weitere Informationen zur `OnDraw`-Methode finden Sie in der Dokumentation zur Android [OnDraw](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine#ondraw) -API.
 
 ### <a name="implement-the-engine-ontimetick-method"></a>Implementieren der ontimetick-Methode der Engine
 
-Android ruft in Regel `OnTimeTick` mäßigen Abständen die-Methode auf, um die von der Uhr angezeigte Zeit zu aktualisieren. Sie wird mindestens einmal pro Minute (sowohl im Ambient-als auch im interaktiven Modus) oder bei einer Änderung von Datum/Uhrzeit oder Zeitzone aufgerufen. Fügen Sie `MyWatchFaceEngine` zur folgenden Methode hinzu:
+Android ruft in regelmäßigen Abständen die `OnTimeTick` Methode auf, um die Zeit zu aktualisieren, die von der Uhr angezeigt wird Sie wird mindestens einmal pro Minute (sowohl im Ambient-als auch im interaktiven Modus) oder bei einer Änderung von Datum/Uhrzeit oder Zeitzone aufgerufen. Fügen Sie `MyWatchFaceEngine` zur folgenden Methode hinzu:
 
 ```csharp
 public override void OnTimeTick()
@@ -256,13 +256,13 @@ public override void OnTimeTick()
 }
 ```
 
-Diese Implementierung von `OnTimeTick` ruft `Invalidate`einfach auf. Die `Invalidate` -Methode `OnDraw` plant, das Watch-Gesicht neu zu zeichnen.
+Diese Implementierung von `OnTimeTick` einfach `Invalidate` aufruft. Die `Invalidate`-Methode plant `OnDraw`, das Überwachungs Gesicht neu zu zeichnen.
 
-Weitere Informationen `OnTimeTick` zur-Methode finden Sie in der Dokumentation zur Android [ontimetick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) -API.
+Weitere Informationen zur `OnTimeTick`-Methode finden Sie in der Dokumentation zur Android [ontimetick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) -API.
 
 ## <a name="register-the-canvaswatchfaceservice"></a>Registrieren von canvaswatchfakeservice
 
-`MyWatchFaceService`muss in der Datei " **androidmanifest. XML** " der zugeordneten Wear-App registriert werden. Fügen Sie zu diesem Zweck dem- `<application>` Abschnitt den folgenden XML-Code hinzu:
+`MyWatchFaceService` muss in der Datei " **androidmanifest. XML** " der zugeordneten Wear-App registriert werden. Fügen Sie zu diesem Zweck dem `<application>` Abschnitt den folgenden XML-Code hinzu:
 
 ```xml
 <service
@@ -286,15 +286,15 @@ Weitere Informationen `OnTimeTick` zur-Methode finden Sie in der Dokumentation z
 
 Dieser XML-Code führt folgende Schritte aus:
 
-1. Legt die `android.permission.BIND_WALLPAPER` Berechtigung fest. Mit dieser Berechtigung erhält der Überwachungsdienst die Berechtigung, das System Hintergrundbild auf dem Gerät zu ändern. Beachten Sie, dass diese Berechtigung im `<service>` -Abschnitt und nicht im äußeren `<application>` Abschnitt festgelegt werden muss.
+1. Legt die `android.permission.BIND_WALLPAPER` Berechtigung fest. Mit dieser Berechtigung erhält der Überwachungsdienst die Berechtigung, das System Hintergrundbild auf dem Gerät zu ändern. Beachten Sie, dass diese Berechtigung im `<service>` Abschnitt anstatt im äußeren `<application>` Abschnitt festgelegt werden muss.
 
-2. Definiert eine `watch_face` Ressource. Diese Ressource ist eine kurze XML-Datei, die `wallpaper` eine Ressource deklariert (diese Datei wird im nächsten Abschnitt erstellt).
+2. Definiert eine `watch_face` Ressource. Diese Ressource ist eine kurze XML-Datei, die eine `wallpaper` Ressource deklariert (diese Datei wird im nächsten Abschnitt erstellt).
 
-3. Deklariert ein drawable-Bild `preview` namens, das auf dem Auswahlbildschirm der Überwachungs Auswahl angezeigt wird.
+3. Deklariert ein drawable-Image mit dem Namen `preview`, das auf dem Auswahlbildschirm der Überwachungs Auswahl angezeigt wird.
 
-4. Enthält einen `intent-filter` , mit dem Android erkennen `MyWatchFaceService` kann, dass ein Überwachungs Gesicht anzeigt.
+4. Enthält eine `intent-filter`, um Android zu informieren, dass `MyWatchFaceService` ein Watch-Gesicht anzeigt.
 
-Damit wird der Code für das einfache `WatchFace` Beispiel vervollständigt. Der nächste Schritt besteht darin, die erforderlichen Ressourcen hinzuzufügen.
+Damit wird der Code für das grundlegende `WatchFace` Beispiel vervollständigt. Der nächste Schritt besteht darin, die erforderlichen Ressourcen hinzuzufügen.
 
 ## <a name="add-resource-files"></a>Ressourcen Dateien hinzufügen
 
@@ -309,18 +309,18 @@ Legen Sie die Buildaktion dieser Datei auf " **androidresource**" fest:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Buildaktion](creating-a-watchface-images/10-android-resource-vs.png "Buildaktion auf \"androidresource\" festlegen")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
+[![Buildaktion](creating-a-watchface-images/10-android-resource-vs.png "Buildaktion auf "androidresource" festlegen")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Buildaktion](creating-a-watchface-images/10-android-resource-xs.png "Buildaktion auf \"androidresource\" festlegen")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
+[![Buildaktion](creating-a-watchface-images/10-android-resource-xs.png "Buildaktion auf "androidresource" festlegen")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 
 Diese Ressourcen Datei definiert ein einfaches `wallpaper` Element, das für die Überwachung verwendet wird.
 
 Wenn Sie dies noch nicht getan haben, laden Sie [Preview. png](creating-a-watchface-images/preview.png)herunter.
-Installieren Sie Sie unter " **Resources/drawable/Preview. png**". Stellen Sie sicher, dass Sie diese Datei `WatchFace` dem Projekt hinzufügen. Dieses Vorschaubild wird dem Benutzer in der überwachenden Gesichts Auswahl auf dem Wear-Gerät angezeigt. Zum Erstellen eines Vorschau Bilds für Ihr eigenes Watch-Gesicht können Sie einen Screenshot der Uhr sehen, während er ausgeführt wird. (Weitere Informationen zum erhalten von Screenshots von Wear-Geräten finden [Sie unter Screenshot](~/android/wear/deploy-test/debug-on-device.md#screenshots)).
+Installieren Sie Sie unter " **Resources/drawable/Preview. png**". Stellen Sie sicher, dass Sie diese Datei dem `WatchFace`-Projekt hinzufügen. Dieses Vorschaubild wird dem Benutzer in der überwachenden Gesichts Auswahl auf dem Wear-Gerät angezeigt. Zum Erstellen eines Vorschau Bilds für Ihr eigenes Watch-Gesicht können Sie einen Screenshot der Uhr sehen, während er ausgeführt wird. (Weitere Informationen zum erhalten von Screenshots von Wear-Geräten finden [Sie unter Screenshot](~/android/wear/deploy-test/debug-on-device.md#screenshots)).
 
 ## <a name="try-it"></a>Versuch es!
 
@@ -334,7 +334,7 @@ Erstellen Sie die APP und stellen Sie Sie auf dem Wear-Gerät bereit. Der Bildsc
 
 4. Wählen Sie die Ansicht **xamarin Sample** Watch (auf der rechten Seite angezeigt):
 
-    [![Watchface] -Auswahl (creating-a-watchface-images/11-watchface-picker.png "Zum Suchen nach xamarin Sample Watch Gesicht schwenken")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
+    [![Watchface-Auswahl](creating-a-watchface-images/11-watchface-picker.png "Zum Suchen nach xamarin Sample Watch Gesicht schwenken")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
 5. Tippen Sie auf die Ansicht **xamarin Sample** Watch, um Sie auszuwählen.
 
@@ -342,14 +342,14 @@ Dadurch wird die Watch-Oberfläche des Wear-Geräts so geändert, dass der bishe
 
 [![Digitales Überwachungs Gesicht](creating-a-watchface-images/12-digital-watchface.png "Benutzerdefinierte digitale Überwachung auf dem Wear-Gerät")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
-Dabei handelt es sich um eine relativ grobe Überwachung, da die APP-Implementierung so minimal ist (z. b. enthält Sie keinen Hintergrund, und `Paint` es werden keine Anti-Alias-Methoden aufgerufen, um die Darstellung zu verbessern).
+Dabei handelt es sich um eine relativ grobe Überwachung, da die APP-Implementierung minimal ist (z. b. enthält Sie keinen Hintergrund, und Sie ruft keine `Paint` Anti-Alias-Methoden auf, um die Darstellung zu verbessern).
 Es implementiert jedoch die Bare-Fisch-Funktionalität, die zum Erstellen eines benutzerdefinierten Überwachungs Gesichts benötigt wird.
 
 Im nächsten Abschnitt wird dieses Überwachungs Gesicht auf eine anspruchsvollere Implementierung aktualisiert.
 
 ## <a name="upgrading-the-watch-face"></a>Aktualisieren der Überwachungsseite
 
-Im weiteren Verlauf dieser exemplarischen Vorgehensweise `MyWatchFaceService` wird ein Upgrade von durchgeführt, um eine Überwachung im analogen Stil anzuzeigen, und Sie wird erweitert, um weitere Funktionen zu unterstützen. Die folgenden Funktionen werden hinzugefügt, um das aktualisierte Überwachungs Gesicht zu erstellen:
+Im restlichen Teil dieser exemplarischen Vorgehensweise wird `MyWatchFaceService` aktualisiert, um eine Überwachungs Fläche im Analog Format anzuzeigen, und Sie wird erweitert, um weitere Funktionen zu unterstützen. Die folgenden Funktionen werden hinzugefügt, um das aktualisierte Überwachungs Gesicht zu erstellen:
 
 1. Gibt die Uhrzeit mit der analogen Stunde, Minute und zweiten Handzeichen an.
 
@@ -361,7 +361,7 @@ Im weiteren Verlauf dieser exemplarischen Vorgehensweise `MyWatchFaceService` wi
 
 5. Die Zeit, zu der eine Zeit Zonen Änderung stattfindet, wird von automatisch aktualisiert.
 
-Bevor Sie die unten aufgeführten Codeänderungen implementieren, laden Sie [drawable. zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true)herunter, entpacken Sie Sie, und verschieben Sie die entzippten PNG-Dateien in **Ressourcen/drawable** (überschreiben Sie die vorherige **Vorschau. png**). Fügen Sie dem `WatchFace` Projekt die neuen PNG-Dateien hinzu.
+Bevor Sie die unten aufgeführten Codeänderungen implementieren, laden Sie [drawable. zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true)herunter, entpacken Sie Sie, und verschieben Sie die entzippten PNG-Dateien in **Ressourcen/drawable** (überschreiben Sie die vorherige **Vorschau. png**). Fügen Sie die neuen PNG-Dateien dem `WatchFace`-Projekt hinzu.
 
 ### <a name="update-engine-features"></a>Features der Update-Engine
 
@@ -375,11 +375,11 @@ Mit der aktualisierten **OnCreate** -Methode wird der Stil der Überwachungsseit
 
 1. Legt das Hintergrundbild auf die **xamarin_background** -Ressource fest, die sich in " **Resources/drawable-hdpi/xamarin_background. png**" befindet.
 
-2. Initialisiert `Paint` -Objekte zum Zeichnen der Stunde, der Minute und der zweiten Seite.
+2. Initialisiert `Paint`-Objekte zum Zeichnen der Stunde, der Minute und der zweiten Seite.
 
-3. Initialisiert ein `Paint` -Objekt zum Zeichnen der Stunden Ticks um den Rand der Uhr.
+3. Initialisiert ein `Paint` Objekt zum Zeichnen der Stunden Ticks um den Rand der Uhr.
 
-4. Erstellt einen Timer, der die `Invalidate` Methode (Redraw) aufruft, damit die zweite Seite jede Sekunde neu gezeichnet wird. Beachten Sie, dass dieser Zeitgeber `OnTimeTick` erforderlich `Invalidate` ist, weil nur einmal pro Minute aufgerufen wird.
+4. Erstellt einen Timer, der die `Invalidate` (Redraw)-Methode aufruft, damit die zweite Seite jede Sekunde neu gezeichnet wird. Beachten Sie, dass dieser Timer notwendig ist, da `OnTimeTick` Anrufe nur einmal pro Minute `Invalidate`.
 
 Dieses Beispiel enthält nur ein **xamarin_background. png** -Bild. Möglicherweise möchten Sie jedoch ein anderes Hintergrundbild für jede Bildschirm Dichte erstellen, die Ihr benutzerdefiniertes Überwachungs Gesicht unterstützt.
 
@@ -387,7 +387,7 @@ Dieses Beispiel enthält nur ein **xamarin_background. png** -Bild. Möglicherwe
 
 Die aktualisierte **OnDraw** -Methode zeichnet mit den folgenden Schritten eine Überwachung mit dem Analog-Stil:
 
-1. Ruft die aktuelle Zeit ab, die jetzt in einem `time` -Objekt verwaltet wird.
+1. Ruft die aktuelle Zeit ab, die nun in einem `time` Objekt verwaltet wird.
 
 2. Bestimmt die Begrenzungen der Zeichen Oberfläche und deren Mitte.
 
@@ -399,27 +399,27 @@ Die aktualisierte **OnDraw** -Methode zeichnet mit den folgenden Schritten eine 
 
 6. Zeichnet jede Hand auf der überwachenden Oberfläche. Beachten Sie, dass die zweite Hand nicht gezeichnet wird, wenn sich die Überwachung im Umgebungs Modus befindet.
 
-#### <a name="onpropertieschanged"></a>OnPropertiesChanged
+#### <a name="onpropertieschanged"></a>Onpropertieschge
 
-Diese Methode wird aufgerufen, um `MyWatchFaceEngine` über die Eigenschaften des Wear-Geräts (z. b. den Low-Bit-Umgebungs Modus und den Burn-in-Schutz) zu informieren. In `MyWatchFaceEngine`prüft diese Methode nur den Modus mit geringem Bit-Ambient (im unteren Umgebungs Modus unterstützt der Bildschirm weniger Bits für jede Farbe).
+Diese Methode wird aufgerufen, um `MyWatchFaceEngine` über die Eigenschaften des Wear-Geräts (z. b. den Low-Bit-Umgebungs Modus und den Burn-in-Schutz) zu informieren. In `MyWatchFaceEngine` prüft diese Methode nur den Modus mit geringem Bit-Ambient (im unteren Umgebungs Modus unterstützt der Bildschirm weniger Bits für jede Farbe).
 
 Weitere Informationen zu dieser Methode finden Sie in der Dokumentation zur Android [onpropertieschge](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onPropertiesChanged%28android.os.Bundle%29) -API.
 
-#### <a name="onambientmodechanged"></a>OnAmbientModeChanged
+#### <a name="onambientmodechanged"></a>Onambientmodechanged
 
-Diese Methode wird aufgerufen, wenn das Wear-Gerät in den Umgebungs Modus wechselt oder Sie verlässt. In der `MyWatchFaceEngine` -Implementierung deaktiviert das Watch-Gesicht das Antialiasing, wenn es sich im Umgebungs Modus befindet.
+Diese Methode wird aufgerufen, wenn das Wear-Gerät in den Umgebungs Modus wechselt oder Sie verlässt. In der `MyWatchFaceEngine`-Implementierung deaktiviert das Überwachungs Gesicht das Antialiasing, wenn es sich im Umgebungs Modus befindet.
 
 Weitere Informationen zu dieser Methode finden Sie in der API-Dokumentation zu Android [onambientmodechanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onAmbientModeChanged%28boolean%29) .
 
-#### <a name="onvisibilitychanged"></a>OnVisibilityChanged
+#### <a name="onvisibilitychanged"></a>Onvisibilitychanged
 
-Diese Methode wird immer dann aufgerufen, wenn die Überwachung sichtbar oder ausgeblendet wird. In `MyWatchFaceEngine`registriert diese Methode den Zeit Zonen Empfänger (unten beschrieben) gemäß dem Sichtbarkeits Zustand und hebt die Registrierung auf.
+Diese Methode wird immer dann aufgerufen, wenn die Überwachung sichtbar oder ausgeblendet wird. In `MyWatchFaceEngine` registriert diese Methode den Zeit Zonen Empfänger (unten beschrieben) gemäß dem Sichtbarkeits Zustand und hebt die Registrierung auf.
 
 Weitere Informationen zu dieser Methode finden Sie in der Android [onvisibilitychanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onVisibilityChanged%28boolean%29) -API-Dokumentation.
 
 ### <a name="time-zone-feature"></a>Zeit Zonen Feature
 
-Die neue **MyWatchFaceService.cs** enthält auch Funktionen zum Aktualisieren der aktuellen Zeit, wenn sich die Zeitzone ändert (z. b. während der Übertragung zwischen Zeitzonen). In der Nähe des Endes von **MyWatchFaceService.cs**wird eine Zeit `BroadcastReceiver` Zonen Änderung definiert, die Zielobjekte mit Zeit Zonen Änderung behandelt:
+Die neue **MyWatchFaceService.cs** enthält auch Funktionen zum Aktualisieren der aktuellen Zeit, wenn sich die Zeitzone ändert (z. b. während der Übertragung zwischen Zeitzonen). Am Ende der **MyWatchFaceService.cs**wird ein Zeit Zonen Änderungs `BroadcastReceiver` definiert, der die für die Zeit Zonen Änderung vorgesehenen Intent-Objekte behandelt:
 
 ```csharp
 public class TimeZoneReceiver: BroadcastReceiver
@@ -433,10 +433,10 @@ public class TimeZoneReceiver: BroadcastReceiver
 }
 ```
 
-Die `RegisterTimezoneReceiver` - `UnregisterTimezoneReceiver` Methode und die-Methode `OnVisibilityChanged` werden von der-Methode aufgerufen.
-`UnregisterTimezoneReceiver`wird aufgerufen, wenn der Sichtbarkeits Zustand der Überwachungs Fläche in ausgeblendet geändert wird. Wenn das Überwachungs Gesicht wieder sichtbar ist, `RegisterTimezoneReceiver` wird aufgerufen (siehe die `OnVisibilityChanged` -Methode).
+Die Methoden `RegisterTimezoneReceiver` und `UnregisterTimezoneReceiver` werden von der `OnVisibilityChanged`-Methode aufgerufen.
+`UnregisterTimezoneReceiver` wird aufgerufen, wenn der Sichtbarkeits Zustand der Überwachungs Fläche in ausgeblendet geändert wird. Wenn das Überwachungs Gesicht wieder sichtbar ist, wird `RegisterTimezoneReceiver` aufgerufen (siehe `OnVisibilityChanged`-Methode).
 
-Die Engine `RegisterTimezoneReceiver` - `Receive` Methode deklariert einen Handler für das Ereignis dieses Zeit Zonen Empfängers. dieser Handler aktualisiert `time` das Objekt mit der neuen Zeit, wenn eine Zeitzone überschritten wird:
+Die Engine `RegisterTimezoneReceiver`-Methode deklariert einen Handler für das `Receive` Ereignis dieses Zeit Zonen Empfängers. Dieser Handler aktualisiert das `time` Objekt mit dem neuen Zeitpunkt, wenn eine Zeitzone überschritten wird:
 
 ```csharp
 timeZoneReceiver = new TimeZoneReceiver ();
@@ -453,7 +453,7 @@ IntentFilter filter = new IntentFilter(Intent.ActionTimezoneChanged);
 Application.Context.RegisterReceiver (timeZoneReceiver, filter);
 ```
 
-Die `UnregisterTimezoneReceiver` Registrierung des Zeit Zonen Empfängers wird von der-Methode aufgehoben:
+Durch die `UnregisterTimezoneReceiver`-Methode wird die Registrierung des Zeit Zonen Empfängers aufgehoben:
 
 ```csharp
 Application.Context.UnregisterReceiver (timeZoneReceiver);
@@ -469,10 +469,10 @@ In diesem Screenshot wird die zweite Seite einmal pro Sekunde verschoben. Wenn S
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser exemplarischen Vorgehensweise wurde ein benutzerdefiniertes Android Wear 1,0 watchface implementiert und getestet. Die `CanvasWatchFaceService` Klassen `CanvasWatchFaceService.Engine` und wurden eingeführt, und die wesentlichen Methoden der Engine-Klasse wurden implementiert, um ein einfaches digitales Überwachungs Gesicht zu erstellen. Diese Implementierung wurde mit mehr Funktionalität aktualisiert, um eine analoge Überwachungs Fläche zu erstellen, und es wurden zusätzliche Methoden implementiert, um Änderungen an der Sichtbarkeit, dem Umgebungs Modus und den Unterschieden in den Geräteeigenschaften zu verarbeiten. Schließlich wurde ein Zeit Zonen Broadcast-Empfänger implementiert, sodass die Überwachung automatisch den Zeitpunkt aktualisiert, zu dem eine Zeitzone überschritten wird.
+In dieser exemplarischen Vorgehensweise wurde ein benutzerdefiniertes Android Wear 1,0 watchface implementiert und getestet. Die Klassen `CanvasWatchFaceService` und `CanvasWatchFaceService.Engine` wurden eingeführt, und die wesentlichen Methoden der Engine-Klasse wurden implementiert, um ein einfaches digitales Überwachungs Gesicht zu erstellen. Diese Implementierung wurde mit mehr Funktionalität aktualisiert, um eine analoge Überwachungs Fläche zu erstellen, und es wurden zusätzliche Methoden implementiert, um Änderungen an der Sichtbarkeit, dem Umgebungs Modus und den Unterschieden in den Geräteeigenschaften zu verarbeiten. Schließlich wurde ein Zeit Zonen Broadcast-Empfänger implementiert, sodass die Überwachung automatisch den Zeitpunkt aktualisiert, zu dem eine Zeitzone überschritten wird.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Erstellen von Überwachungs Flächen](https://developer.android.com/training/wearables/watch-faces/index.html)
 - [Watchface-Beispiel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchface)
-- [WatchFaceService.Engine](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html)
+- [Watchfakeservice. Engine](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html)
