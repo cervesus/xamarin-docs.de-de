@@ -8,22 +8,22 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766807"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchos-Menü Steuerelement (Force Touch) in xamarin
 
 Das Watch-Kit bietet eine Force Touch Geste, mit der ein Menü ausgelöst wird, wenn es auf einem Bildschirm für die Überwachung
 
-![](menu-images/menu.png "Apple Watch, das ein Menü anzeigt")
+![](menu-images/menu.png "Apple Watch showing a menu")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="responding-to-force-touch"></a>Reagieren auf Force Touch
 
-`Menu` Wenn ein für einen Schnittstellen Controller implementiert wurde, wird das Menü angezeigt, wenn ein Benutzer einen Force Touch. Wenn kein Menü implementiert wurde, wird der Bildschirm kurz animiert, sodass keine weitere Aktion durchgeführt wird.
+Wenn ein `Menu` für einen Schnittstellen Controller implementiert wurde, wird das Menü angezeigt, wenn ein Benutzer eine Force Touch ausführt. Wenn kein Menü implementiert wurde, wird der Bildschirm kurz animiert, sodass keine weitere Aktion durchgeführt wird.
 
 Force-Berührungen werden keinem bestimmten Element auf dem Bildschirm zugeordnet. an einen Schnittstellen Controller kann nur ein Menü angefügt werden, und es wird unabhängig davon angezeigt, wo der Force Touch auf dem Bildschirm angezeigt wird.
 
@@ -31,9 +31,9 @@ Zwischen einer und vier Menü Optionen können angezeigt werden.
 
 ## <a name="adding-a-menu"></a>Hinzufügen eines Menüs
 
-Ein `Menu` muss einem `InterfaceController` auf dem Storyboard zur Entwurfszeit hinzugefügt werden. Wenn ein Menü Steuerelement auf einen Schnittstellen Controller gezogen wird, gibt es keinen visuellen Hinweis auf die Storyboard-Vorschau. das **Menü** wird jedoch im **Dokument** Gliederungs Fenster angezeigt:
+Einer `InterfaceController` auf dem Storyboard muss zur Entwurfszeit ein `Menu` hinzugefügt werden. Wenn ein Menü Steuerelement auf einen Schnittstellen Controller gezogen wird, gibt es keinen visuellen Hinweis auf die Storyboard-Vorschau. das **Menü** wird jedoch im **Dokument** Gliederungs Fenster angezeigt:
 
-![](menu-images/menu-action.png "Bearbeiten eines Menüs zur Entwurfszeit")
+![](menu-images/menu-action.png "Editing a menu at design time")
 
 Dem Menü Steuerelement können bis zu vier Menü Elemente hinzugefügt werden. Sie können im **eigenschaftenpad** konfiguriert werden. Die folgenden Attribute können festgelegt werden:
 
@@ -41,7 +41,7 @@ Dem Menü Steuerelement können bis zu vier Menü Elemente hinzugefügt werden. 
 - Benutzerdefiniertes Image oder
 - Ein System Abbild: Accept, Add, Block, ablehnen, Info, Maybe, more, stumm, Pause, Play, Repeat, Resume, Share, shuffle, Speaker, Papierkorb.
 
-Erstellen Sie `Action` einen, indem Sie im **eigenschaftenpad** den Abschnitt **Ereignisse** auswählen und den Namen für die Aktionsmethode eingeben. Im Code wird eine partielle Methode erstellt, die wie folgt in der Schnittstellen Controller Klasse implementiert werden kann:
+Erstellen Sie einen `Action`, indem Sie im **eigenschaftenpad** den Abschnitt **Ereignisse** auswählen und den Namen für die Aktionsmethode eingeben. Im Code wird eine partielle Methode erstellt, die wie folgt in der Schnittstellen Controller Klasse implementiert werden kann:
 
 ```csharp
 partial void MenuItemTapped ()
@@ -66,14 +66,14 @@ Menu items added the storyboard can be shown and hidden programmatically.
 
 ### <a name="adding-at-runtime"></a>Hinzufügen zur Laufzeit
 
-Sie können nicht bewirken `Menu` , dass ein einem Schnittstellen Controller zur Laufzeit hinzugefügt wird, obwohl die `MenuItem`Auflistung von s Programm gesteuert geändert werden *kann* .
-Verwenden Sie `AddMenuItem` die-Methode wie folgt:
+Sie können nicht bewirken, dass ein `Menu` einem Schnittstellen Controller zur Laufzeit hinzugefügt wird, obwohl die Auflistung von `MenuItem`s Programm gesteuert geändert werden *kann* .
+Verwenden Sie die `AddMenuItem`-Methode wie im folgenden gezeigt:
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-Die xamarin. IOS Watch-Kit-API erfordert `selector` derzeit eine `AdMenuItem` für die-Methode, die wie folgt deklariert werden sollte:
+Die xamarin. IOS Watch-Kit-API erfordert zurzeit eine `selector` für die `AdMenuItem`-Methode, die wie folgt deklariert werden sollte:
 
 ```csharp
 [Export("tapped")]
@@ -85,11 +85,11 @@ void MenuItemTapped ()
 
 ### <a name="removing-at-runtime"></a>Entfernen zur Laufzeit
 
-Die `ClearAllMenuItems` -Methode kann aufgerufen werden, um alle *Programm gesteuert hinzugefügten* Menü Elemente zu entfernen.
+Die `ClearAllMenuItems`-Methode kann aufgerufen werden, um alle *Programm gesteuert hinzugefügten* Menü Elemente zu entfernen.
 
 Im Storyboard konfigurierte Menü Elemente können nicht gelöscht werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WatchKitCatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Menü Dokumentation von Apple](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)

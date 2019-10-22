@@ -8,24 +8,24 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/17/2018
 ms.openlocfilehash: d130d28b6cf0f15dab3a743a9a3fba144b75a67d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70289437"
 ---
 # <a name="application-lifecycle-demo-for-xamarinios"></a>Demo zum Anwendungslebenszyklus für xamarin. IOS
 
-In diesem Artikel und [Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo) werden die vier Anwendungs Zustände in IOS und die Rolle `AppDelegate` der Methoden zum Benachrichtigen der Anwendung von, wenn sich die Zustände ändern, veranschaulicht. Die Anwendung druckt Updates an der Konsole, wenn sich der Status der app ändert:
+Dieser Artikel und [Beispielcode](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo) veranschaulichen die vier Anwendungs Zustände in IOS und die Rolle der `AppDelegate` Methoden in der Benachrichtigung der Anwendung, wann Statusänderungen vorgenommen werden. Die Anwendung druckt Updates an der Konsole, wenn sich der Status der app ändert:
 
-[![](application-lifecycle-demo-images/image3-sml.png "Die Beispiel-App")](application-lifecycle-demo-images/image3.png#lightbox)
+[![](application-lifecycle-demo-images/image3-sml.png "The sample app")](application-lifecycle-demo-images/image3.png#lightbox)
 
-[![](application-lifecycle-demo-images/image4.png "Die APP druckt Updates an der Konsole, wenn der Status der APP geändert wird.")](application-lifecycle-demo-images/image4.png#lightbox)
+[![](application-lifecycle-demo-images/image4.png "The app will print updates to the console whenever the app changes state")](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
 1. Öffnen Sie das **Lebenszyklus** Projekt in der Projekt Mappe " **lifecycledemo** ".
-1. Öffnen Sie die `AppDelegate` -Klasse. Die Protokollierung wurde den Lifecycle-Methoden hinzugefügt, um anzugeben, wann die Anwendung den Zustand geändert hat:
+1. Öffnen Sie die `AppDelegate`-Klasse. Die Protokollierung wurde den Lifecycle-Methoden hinzugefügt, um anzugeben, wann die Anwendung den Zustand geändert hat:
 
     ```csharp
     public override void OnActivated(UIApplication application)
@@ -51,11 +51,11 @@ In diesem Artikel und [Beispielcode](https://docs.microsoft.com/samples/xamarin/
     }
     ```
 
-1. Starten Sie die Anwendung im Simulator oder auf dem Gerät. `OnActivated`wird aufgerufen, wenn die APP gestartet wird. Die Anwendung befindet sich nun im _aktiven_ Zustand.
-1. Drücken Sie auf dem Simulator oder auf dem Gerät die Start Schaltfläche, um die Anwendung in den Hintergrund zu bringen. `OnResignActivation`und `DidEnterBackground` werden aufgerufen, wenn die APP von `Active` in `Inactive` den und in den `Backgrounded` -Zustand übergeht. Da kein Anwendungscode für die Ausführung im Hintergrund festgelegt ist, wird die Anwendung im Arbeitsspeicher als angeh _alten betrachtet._
-1. Navigieren Sie zurück zur APP, um Sie wieder in den Vordergrund zu bringen. `WillEnterForeground`und `OnActivated` werden beide aufgerufen:
+1. Starten Sie die Anwendung im Simulator oder auf dem Gerät. `OnActivated` wird aufgerufen, wenn die APP gestartet wird. Die Anwendung befindet sich nun im _aktiven_ Zustand.
+1. Drücken Sie auf dem Simulator oder auf dem Gerät die Start Schaltfläche, um die Anwendung in den Hintergrund zu bringen. `OnResignActivation` und `DidEnterBackground` werden aufgerufen, wenn die APP von `Active` in `Inactive` und in den Zustand `Backgrounded` übergeht. Da kein Anwendungscode für die Ausführung im Hintergrund festgelegt ist, wird die Anwendung im Arbeitsspeicher als angeh _alten betrachtet._
+1. Navigieren Sie zurück zur APP, um Sie wieder in den Vordergrund zu bringen. `WillEnterForeground` und `OnActivated` werden beide aufgerufen:
 
-    ![](application-lifecycle-demo-images/image4.png "In der Konsole gedruckte Zustandsänderungen")
+    ![](application-lifecycle-demo-images/image4.png "State changes printed to the console")
 
     Die folgende Codezeile im Ansichts Controller wird ausgeführt, wenn die Anwendung den Vordergrund aus dem Hintergrund eingegeben hat und den auf dem Bildschirm angezeigten Text ändert:
 
@@ -67,13 +67,13 @@ In diesem Artikel und [Beispielcode](https://docs.microsoft.com/samples/xamarin/
 
 1. Klicken Sie auf die **Start** Schaltfläche, um die Anwendung in den Hintergrund zu versetzen. Doppel Tippen Sie dann auf die **Start** Schaltfläche, um den Anwendungs Umschalter zu aktivieren. Wischen Sie auf dem iPhone X vom unteren Bildschirmrand nach oben:
 
-    [![Anwendungs] Umschaltung (application-lifecycle-demo-images/app-switcher-sml.png "Anwendungs") Umschaltung](application-lifecycle-demo-images/app-switcher.png#lightbox)
+    [![Anwendungs Umschaltung](application-lifecycle-demo-images/app-switcher-sml.png "Anwendungs Umschaltung")](application-lifecycle-demo-images/app-switcher.png#lightbox)
   
 1. Suchen Sie die Anwendung im App-Switcher, und ziehen Sie Sie nach oben, um Sie zu entfernen (unter IOS 11, Long drücken Sie, bis die roten Symbole in der Ecke angezeigt werden):
 
     [![Zum Entfernen einer laufenden app schwenken](application-lifecycle-demo-images/app-switcher-swipe-sml.png "Zum Entfernen einer laufenden app schwenken")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
 
-IOS beendet die Anwendung. Beachten Sie `WillTerminate` , dass nicht aufgerufen wird, da die _Anwendung bereits im_ Hintergrund angehalten wurde.
+IOS beendet die Anwendung. Beachten Sie, dass `WillTerminate` nicht aufgerufen wird, da die _Anwendung bereits im_ Hintergrund angehalten wurde.
 
 ## <a name="related-links"></a>Verwandte Links
 

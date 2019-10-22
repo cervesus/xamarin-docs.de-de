@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70291402"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Arbeiten mit tvos-Status Indikatoren in xamarin
@@ -77,8 +77,8 @@ Die einfachste Möglichkeit, mit einer Statusanzeige in einer xamarin. tvos-APP 
 
 2. Ziehen Sie einen **Aktivitätsindikator** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 
 
-    ![Einen Aktivitätsindikator](progress-indicators-images/activity01-vs.png
-    "für einen Aktivitätsindikator")
+    ![Ein Aktivitätsindikator](progress-indicators-images/activity01-vs.png
+    "Ein Aktivitätsindikator")
 
 3. Auf der Registerkarte **Widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Aktivitäts Indikators anpassen, z. b. den **Stil**, das **Verhalten**und den **Namen**: 
 
@@ -106,7 +106,7 @@ Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-
 
 Wie bereits erwähnt, sollten Aktivitätsindikatoren angezeigt werden, wenn Ihre APP einen langen Prozess der unbestimmten Länge aufweist.
 
-An jedem Punkt können Sie sehen, ob ein Aktivitätsindikator animiert wird, indem Sie die `IsAnimating` zugehörige-Eigenschaft überprüfen. Wenn die `HidesWhenStopped` -Eigenschaft `true`ist, wird der Aktivitätsindikator automatisch ausgeblendet, wenn die Animation angehalten wird.
+Sie können jederzeit überprüfen, ob ein Aktivitätsindikator animiert wird, indem Sie die `IsAnimating`-Eigenschaft überprüfen. Wenn die `HidesWhenStopped`-Eigenschaft `true` ist, wird der Aktivitätsindikator automatisch ausgeblendet, wenn die Animation angehalten wird.
 
 Sie können den folgenden Code verwenden, um die Animation zu starten: 
 
@@ -127,7 +127,7 @@ ActivityIndicator.StopAnimating();
 
 Eine Statusanzeige sollte immer dann verwendet werden, wenn Ihre APP eine lange Ausführungs Aufgabe einer bekannten Dauer ausführt. 
 
-Die `Progress` -Eigenschaft wird verwendet, um den Umfang der Aufgabe festzulegen, die von 0% auf 100% (0,0 bis 1,0) abgeschlossen wurde. Verwenden Sie `ProgressTintColor` die-Eigenschaft, um die Farbe der abgeschlossenen Amount-Leiste `TrackTintColor` festzulegen, und die-Eigenschaft, um die Hintergrundfarbe (nicht abgeschlossene Menge) festzulegen.
+Die `Progress`-Eigenschaft wird verwendet, um den Umfang der Aufgabe festzulegen, die von 0% auf 100% (0,0 bis 1,0) abgeschlossen wurde. Verwenden Sie die `ProgressTintColor`-Eigenschaft, um die Farbe der Leiste Amount abgeschlossen und die `TrackTintColor`-Eigenschaft festzulegen, um die Hintergrundfarbe (nicht abgeschlossene Menge) festzulegen.
 
 ## <a name="summary"></a>Zusammenfassung
 

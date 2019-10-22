@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769935"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Kopieren und Einfügen in xamarin. Mac
@@ -31,7 +31,7 @@ In diesem Artikel werden die beiden Hauptmethoden zur Verwendung des "Zwischenab
 
 In diesem Artikel werden die Grundlagen der Arbeit mit dem Zwischenablage in einer xamarin. Mac-Anwendung zur Unterstützung von Kopier-und Einfügevorgängen behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Dieser Artikel.
 
-Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden das-Attribut `Register` und `Export` das-Attribut erläutert, mit C# denen die Klassen an gesendet werden. Ziel-C-Objekte und UI-Elemente.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-c](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die `Register` und `Export` Attribute erläutert, die zum Verknüpfen der C# Klassen mit "Ziel-c" verwendet werden. Objekte und UI-Elemente.
 
 ## <a name="getting-started-with-the-pasteboard"></a>Ersten Einstieg in das Zwischenablage
 
@@ -48,22 +48,22 @@ Zuerst erstellen wir eine neue Dokument basierte xamarin. Mac-app, für die wir 
 Führen Sie folgende Schritte aus:
 
 1. Starten Sie Visual Studio für Mac, und klicken Sie auf den Link **Neues Projekt...** .
-2. Wählen Sie **Mac** > **App** > **Cocoa App**aus, und klicken Sie dann auf die Schaltfläche **weiter** : 
+2. Wählen Sie **Mac**  > **App**  > **Cocoa App**aus, und klicken Sie dann auf die Schaltfläche **weiter** : 
 
     [![Erstellen eines neuen Cocoa-App-Projekts](copy-paste-images/sample01.png "Erstellen eines neuen Cocoa-App-Projekts")](copy-paste-images/sample01-large.png#lightbox)
-3. Geben `MacCopyPaste` Sie als **Projektnamen** ein, und behalten Sie den Standardwert bei. Klicken Sie auf Weiter: 
+3. Geben Sie `MacCopyPaste` für den **Projektnamen** ein, und behalten Sie alles andere als Standard. Klicken Sie auf Weiter: 
 
     [![Festlegen des Projekt namens](copy-paste-images/sample01a.png "Festlegen des Projekt namens")](copy-paste-images/sample01a-large.png#lightbox)
 
 4. Klicken Sie auf die Schaltfläche **Erstellen** : 
 
-    [![Die neuen Projekteinstellungen werden bestätigt] . (copy-paste-images/sample02.png "Die neuen Projekteinstellungen werden bestätigt") .](copy-paste-images/sample02-large.png#lightbox)
+    [![Die neuen Projekteinstellungen werden bestätigt.](copy-paste-images/sample02.png "Die neuen Projekteinstellungen werden bestätigt.")](copy-paste-images/sample02-large.png#lightbox)
 
 ### <a name="add-an-nsdocument"></a>Hinzufügen eines NSDocument
 
-Als Nächstes fügen wir eine `NSDocument` benutzerdefinierte Klasse hinzu, die als Hintergrund Speicher für die Benutzeroberfläche der Anwendung fungiert. Sie enthält eine einzelne Bildansicht und weiß, wie ein Bild aus der Ansicht in das Standard-Zwischenablage kopiert wird und wie ein Bild aus dem Standard-Zwischenablage übernommen und in der Bildansicht angezeigt wird.
+Als Nächstes fügen wir benutzerdefinierte `NSDocument` Klasse hinzu, die als Hintergrund Speicher für die Benutzeroberfläche der Anwendung fungiert. Sie enthält eine einzelne Bildansicht und weiß, wie ein Bild aus der Ansicht in das Standard-Zwischenablage kopiert wird und wie ein Bild aus dem Standard-Zwischenablage übernommen und in der Bildansicht angezeigt wird.
 
-Klicken Sie mit der rechten Maustaste auf das xamarin. Mac-Projekt im **Lösungspad** , und wählen Sie**neue Datei** **Hinzufügen** > aus.
+Klicken Sie mit der rechten Maustaste auf das xamarin. Mac-Projekt im **Lösungspad** , und wählen Sie  > **neue Datei** **Hinzufügen** aus.
 
 ![Hinzufügen eines NSDocument zum Projekt](copy-paste-images/sample03.png "Hinzufügen eines NSDocument zum Projekt")
 
@@ -174,7 +174,7 @@ namespace MacCopyPaste
 
 Werfen wir einen Blick auf den folgenden Code.
 
-Der folgende Code stellt eine-Eigenschaft bereit, um zu testen, ob Bilddaten auf dem Standard-pasteboard vorhanden sind. Wenn `true` ein Bild verfügbar `false`ist, wird else zurückgegeben:
+Der folgende Code stellt eine-Eigenschaft bereit, um zu testen, ob Bilddaten auf dem Standard-pasteboard vorhanden sind. Wenn ein Bild verfügbar ist, wird `true` else `false` zurückgegeben:
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -397,7 +397,7 @@ namespace MacCopyPaste
 
 Sehen wir uns diesen Code im folgenden ausführlich an.
 
-Zuerst machen wir eine Instanz der `ImageDocument` -Klasse verfügbar, die wir oben erstellt haben:
+Zuerst machen wir eine Instanz der `ImageDocument`-Klasse verfügbar, die wir oben erstellt haben:
 
 ```csharp
 private ImageDocument _document;
@@ -414,7 +414,7 @@ public ImageDocument Document {
 }
 ```
 
-Mithilfe `Export`von, `WillChangeValue` und `DidChangeValue`haben wir die-Eigenschaft `Document` so eingerichtet, dass die Schlüssel-Wert-Codierung und Datenbindung in Xcode zulässig ist.
+Mit `Export`, `WillChangeValue` und `DidChangeValue` haben wir die `Document`-Eigenschaft eingerichtet, um die Schlüssel-Wert-Codierung und Datenbindung in Xcode zuzulassen.
 
 Wir machen auch das Image aus dem Image verfügbar, das wir unserer Benutzeroberfläche in Xcode mit der folgenden Eigenschaft hinzugefügt haben:
 
@@ -433,7 +433,7 @@ public NSImage Image {
 }
 ```
 
-Wenn das Hauptfenster geladen und angezeigt wird, erstellen wir eine Instanz der `ImageDocument` Klasse und fügen das Bild der Benutzeroberfläche mit folgendem Code an die Benutzeroberfläche an:
+Wenn das Hauptfenster geladen und angezeigt wird, erstellen wir eine Instanz unserer `ImageDocument`-Klasse und fügen das Bild der Benutzeroberfläche mit dem folgenden Code an die Benutzeroberfläche an:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -448,7 +448,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-Als Reaktion darauf, dass der Benutzer auf die Symbolleisten Elemente kopieren und Einfügen klickt, wird die Instanz der `ImageDocument` -Klasse aufgerufen, um die eigentliche Arbeit zu erledigen:
+Als Reaktion darauf, dass der Benutzer auf die Symbolleisten Elemente kopieren und Einfügen klickt, wird die Instanz der `ImageDocument`-Klasse aufgerufen, um die eigentliche Arbeit zu erledigen:
 
 ```csharp
 partial void CopyImage (NSObject sender) {
@@ -535,13 +535,13 @@ void PasteImage (NSObject sender)
 }
 ```
 
-Für jedes Menü Element wird das aktuelle, oberste Schlüssel Fenster angezeigt und in `ImageWindow` die Klasse umgewandelt:
+Für jedes Menü Element wird das aktuelle, oberste Schlüssel Fenster angezeigt und in die `ImageWindow` Klasse umgewandelt:
 
 ```csharp
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-Von dort aus wird die `ImageDocument` Klasseninstanz dieses Fensters aufgerufen, um die Kopier-und Einfügeaktionen zu verarbeiten. Beispiel: 
+Von dort aus wird die `ImageDocument`-Klasseninstanz dieses Fensters aufgerufen, um die Kopier-und Einfügeaktionen zu verarbeiten. Beispiel: 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -600,9 +600,9 @@ namespace MacCopyPaste
 }
 ```
 
-Auch hier wird das aktuelle und das oberste Fenster angezeigt `ImageDocument` , um zu überprüfen, ob die erforderlichen Bilddaten vorhanden sind. Anschließend verwenden wir die `MenuWillHighlightItem` -Methode, um jedes Element auf der Grundlage dieses Zustands zu aktivieren oder zu deaktivieren.
+Auch hier wird das aktuelle, oberste Fenster und die `ImageDocument` Klasseninstanz verwendet, um zu überprüfen, ob die erforderlichen Bilddaten vorhanden sind. Anschließend verwenden wir die `MenuWillHighlightItem`-Methode, um jedes Element auf der Grundlage dieses Zustands zu aktivieren oder zu deaktivieren.
 
-Bearbeiten Sie die Datei **AppDelegate.cs** , und `DidFinishLaunching` führen Sie die folgende Methode aus:
+Bearbeiten Sie die Datei **AppDelegate.cs** , und führen Sie die `DidFinishLaunching`-Methode wie folgt aus:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -613,11 +613,11 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-Zunächst deaktivieren wir die automatische Aktivierung und Deaktivierung von Menü Elementen im Menü Bearbeiten. Als Nächstes fügen wir eine Instanz der `EditMenuDelegate` -Klasse an, die wir oben erstellt haben.
+Zunächst deaktivieren wir die automatische Aktivierung und Deaktivierung von Menü Elementen im Menü Bearbeiten. Als Nächstes fügen wir eine Instanz der `EditMenuDelegate`-Klasse an, die wir oben erstellt haben.
 
 Weitere Informationen finden Sie in unserer [Menüs](~/mac/user-interface/menu.md) -Dokumentation.
 
-### <a name="testing-the-app"></a>Testen der App
+### <a name="testing-the-app"></a>Testen der APP
 
 Nachdem alles vorhanden ist, können wir die Anwendung testen. Erstellen Sie die APP, und führen Sie Sie aus, und die Hauptschnittstelle wird angezeigt:
 
@@ -625,7 +625,7 @@ Nachdem alles vorhanden ist, können wir die Anwendung testen. Erstellen Sie die
 
 Wenn Sie das Menü Bearbeiten öffnen, beachten Sie, dass **Ausschneiden**, **Kopieren** und **Einfügen** deaktiviert ist, weil es im Bild-oder Standard-pasteboard kein Bild gibt:
 
-![Öffnen des Menüs "Bearbeiten] " (copy-paste-images/run02.png "Öffnen des Menüs \"Bearbeiten") "
+![Öffnen des Menüs "Bearbeiten"](copy-paste-images/run02.png "Öffnen des Menüs "Bearbeiten"")
 
 Wenn Sie dem Bild ein Bild hinzufügen und das Menü Bearbeiten erneut öffnen, werden die Elemente nun aktiviert:
 
@@ -643,7 +643,7 @@ In macOS (früher als OS X bezeichnet) unterstützt das Zwischenablage (`NSPaste
 
 ### <a name="what-is-a-pasteboard"></a>Was ist ein pasteboard?
 
-Die `NSPasteboard` -Klasse stellt einen standardisierten Mechanismus zum Austauschen von Informationen zwischen Anwendungen oder innerhalb einer bestimmten app bereit. Die Hauptfunktion eines pasteboards ist die Verarbeitung von Kopier-und Einfügevorgängen:
+Die `NSPasteboard`-Klasse stellt einen standardisierten Mechanismus zum Austauschen von Informationen zwischen Anwendungen oder innerhalb einer bestimmten app bereit. Die Hauptfunktion eines pasteboards ist die Verarbeitung von Kopier-und Einfügevorgängen:
 
 1. Wenn der Benutzer ein Element in einer App auswählt und das **Ausschneide** -oder **Kopier** Menü Element verwendet, werden eine oder mehrere Darstellungen des ausgewählten Elements auf dem pasteboard platziert.
 2. Wenn der Benutzer das Menü Element **Einfügen** (innerhalb derselben oder einer anderen APP) verwendet, wird die Version der Daten, die Sie verarbeiten kann, aus dem Zwischenablage kopiert und der app hinzugefügt.
@@ -659,15 +659,15 @@ In ihrer einfachsten Form werden mithilfe von "pasteboards" Daten innerhalb eine
 
 Ein Zwischenablage kann öffentlich oder privat sein und kann für eine Vielzahl von Zwecken innerhalb einer Anwendung oder zwischen mehreren Apps verwendet werden. macOS bietet mehrere Standard-pasteboards, von denen jede über eine bestimmte, klar definierte Verwendung verfügt:
 
-- `NSGeneralPboard`: Das Standard-Zwischenablage für Ausschneide- **,** **Kopier** -und **Einfügevorgänge**.
-- `NSRulerPboard`-Unterstützt **Ausschneide**- **,** **Kopier** -und Einfügevorgänge für **Line**
-- `NSFontPboard`-Unterstützt Ausschneide- **,** **Kopier** - `NSFont` und **Einfügevorgänge**für Objekte
-- `NSFindPboard`: Unterstützt anwendungsspezifische Such Bereiche, die Suchtext gemeinsam verwenden können.
-- `NSDragPboard`-Unterstützt **Drag & Drop** -Vorgänge.
+- `NSGeneralPboard`: das Standard-Zwischenablage für Ausschneide- **,** **Kopier** -und **Einfügevorgänge**.
+- `NSRulerPboard`: unterstützt **Ausschneide**-, **Kopier** -und Einfügevorgänge für **Lineale**
+- `NSFontPboard`: unterstützt **Ausschneide**-, **Kopier** -und Einfügevorgänge **für** `NSFont` Objekte.
+- `NSFindPboard`: unterstützt anwendungsspezifische Such Bereiche, die Suchtext gemeinsam verwenden können.
+- `NSDragPboard`: unterstützt **Drag & Drop** -Vorgänge.
 
-In den meisten Fällen verwenden Sie eines der vom System definierten pasteboards. Es kann jedoch Situationen geben, in denen Sie Ihre eigenen pasteboards erstellen müssen. In diesen Fällen können Sie die `FromName (string name)` -Methode `NSPasteboard` der-Klasse verwenden, um ein benutzerdefiniertes "Zwischenablage" mit dem angegebenen Namen zu erstellen.
+In den meisten Fällen verwenden Sie eines der vom System definierten pasteboards. Es kann jedoch Situationen geben, in denen Sie Ihre eigenen pasteboards erstellen müssen. In diesen Fällen können Sie die `FromName (string name)`-Methode der `NSPasteboard`-Klasse verwenden, um ein benutzerdefiniertes "Zwischenablage" mit dem angegebenen Namen zu erstellen.
 
-Optional können Sie die `CreateWithUniqueName` -Methode `NSPasteboard` der-Klasse aufzurufen, um ein eindeutig benanntes "pasteboard" zu erstellen.
+Optional können Sie die `CreateWithUniqueName`-Methode der `NSPasteboard`-Klasse aufzurufen, um ein eindeutig benanntes "pasteboard" zu erstellen.
 
 ### <a name="pasteboard-items"></a>PasteBoard-Elemente
 
@@ -691,13 +691,13 @@ Im Allgemeinen sollten Sie so viele Darstellungen der zu kopierenden Daten berei
 
 In dieser Situation können Sie die erste Datendarstellung auf dem Zwischenablage platzieren, und die empfangende App kann eine andere Darstellung anfordern, die direkt vor dem Einfügevorgang direkt generiert werden kann.
 
-Wenn Sie das ursprüngliche Element im pasteboard platzieren, geben Sie an, dass eine oder mehrere der anderen verfügbaren Darstellungen von einem Objekt bereitgestellt werden, das der `NSPasteboardItemDataProvider` -Schnittstelle entspricht. Diese Objekte bieten die zusätzlichen Darstellungen nach Bedarf, die von der empfangenden App angefordert werden.
+Wenn Sie das ursprüngliche Element in das Steuerelement einfügen, geben Sie an, dass eine oder mehrere der anderen verfügbaren Darstellungen von einem Objekt bereitgestellt werden, das der `NSPasteboardItemDataProvider`-Schnittstelle entspricht. Diese Objekte bieten die zusätzlichen Darstellungen nach Bedarf, die von der empfangenden App angefordert werden.
 
 ### <a name="change-count"></a>Änderungs Anzahl
 
 Jedes Zwischenablage behält eine _Änderungs Anzahl_ bei, die jedes Mal erhöht wird, wenn ein neuer Besitzer deklariert wird. Eine APP kann ermitteln, ob sich der Inhalt des pasteboards seit der letzten untersuchten Änderung geändert hat, indem der Wert der Änderungs Anzahl überprüft wird.
 
-Verwenden Sie `ChangeCount` die `ClearContents` -Methode und `NSPasteboard` die-Methode der-Klasse, um die Änderungs Anzahl eines bestimmten pasteboards zu ändern.
+Verwenden Sie die Methoden `ChangeCount` und `ClearContents` der `NSPasteboard`-Klasse, um die Änderungs Anzahl eines bestimmten pasteboards zu ändern.
 
 ## <a name="copying-data-to-a-pasteboard"></a>Kopieren von Daten in ein Zwischenablage
 
@@ -716,9 +716,9 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new NSImage[] {image});
 ```
 
-In der Regel schreiben Sie einfach auf das allgemeine "pasteboard", wie im obigen Beispiel gezeigt. Alle Objekte, die Sie an die `WriteObjects` -Methode senden, *müssen* mit der `INSPasteboardWriting` -Schnittstelle übereinstimmen. Mehrere integrierte Klassen (z `NSString`. b., `NSURL` `NSColor` `NSImage`,,, `NSAttributedString`und `NSPasteboardItem`) entsprechen automatisch dieser Schnittstelle.
+In der Regel schreiben Sie einfach auf das allgemeine "pasteboard", wie im obigen Beispiel gezeigt. Alle Objekte, die Sie an die `WriteObjects`-Methode senden, *müssen* mit der `INSPasteboardWriting`-Schnittstelle übereinstimmen. Mehrere integrierte Klassen (z. b. `NSString`, `NSImage`, `NSURL`, `NSColor`, `NSAttributedString` und `NSPasteboardItem`) entsprechen automatisch dieser Schnittstelle.
 
-Wenn Sie eine benutzerdefinierte Datenklasse in das Zwischenablage schreiben, muss Sie der `INSPasteboardWriting` -Schnittstelle entsprechen oder in eine Instanz `NSPasteboardItem` der-Klasse umgeschrieben werden (siehe Abschnitt " [benutzerdefinierte Datentypen](#Custom_Data_Types) " unten).
+Wenn Sie eine benutzerdefinierte Datenklasse in das Zwischenablage schreiben, muss Sie der `INSPasteboardWriting`-Schnittstelle entsprechen oder in eine Instanz der `NSPasteboardItem`-Klasse umgeschrieben werden (siehe Abschnitt " [benutzerdefinierte Datentypen](#Custom_Data_Types) " unten).
 
 ## <a name="reading-data-from-a-pasteboard"></a>Lesen von Daten aus einem Zwischenablage
 
@@ -726,14 +726,14 @@ Wie bereits erwähnt, können zum Maximieren des Potenzials von Daten zwischen a
 
 ### <a name="simple-paste-operation"></a>Einfacher Einfügevorgang
 
-Mithilfe der `ReadObjectsForClasses` -Methode lesen Sie Daten aus dem-Steuer Board. Es sind zwei Parameter erforderlich:
+Mit der `ReadObjectsForClasses`-Methode werden Daten aus dem Zwischenablage gelesen. Es sind zwei Parameter erforderlich:
 
-1. Ein Array von `NSObject` Typen auf Basis von Klassen, die Sie aus dem pasteboard lesen möchten. Sie sollten dies zuerst mit dem gewünschten Datentyp sortieren, wobei alle verbleibenden Typen in absteigender Reihenfolge angegeben werden.
+1. Ein Array von `NSObject` basierten Klassentypen, die Sie aus dem pasteboard lesen möchten. Sie sollten dies zuerst mit dem gewünschten Datentyp sortieren, wobei alle verbleibenden Typen in absteigender Reihenfolge angegeben werden.
 2. Ein Wörterbuch, das zusätzliche Einschränkungen (z. b. die Beschränkung auf bestimmte URL-Inhaltstypen) oder ein leeres Wörterbuch enthält, wenn keine weiteren Einschränkungen erforderlich sind.
 
 Die-Methode gibt ein Array von Elementen zurück, die die von uns über gebenden Kriterien erfüllen und daher höchstens die gleiche Anzahl von Datentypen enthalten, die angefordert werden. Es ist auch möglich, dass keiner der angeforderten Typen vorhanden ist und ein leeres Array zurückgegeben wird.
 
-Mit dem folgenden Code wird beispielsweise überprüft, ob eine `NSImage` im allgemeinen "Zwischenablage" vorhanden ist, und Sie wird in einem Bild angezeigt, wenn dies der Fall ist:
+Beispielsweise prüft der folgende Code, ob eine `NSImage` im allgemeinen "Zwischenablage" vorhanden ist, und zeigt Sie in einem Bild an, wenn dies der Fall ist:
 
 ```csharp
 [Export("PasteImage:")]
@@ -767,8 +767,8 @@ public void PasteImage(NSObject sender) {
 
 Basierend auf dem Typ der zu erstellenden xamarin. Mac-Anwendung kann Sie mehrere Darstellungen der eingefügten Daten verarbeiten. In dieser Situation gibt es zwei Szenarien zum Abrufen von Daten aus dem pasteboard:
 
-1. Erstellen Sie einen einzelnen-Befehl `ReadObjectsForClasses` an die-Methode, und stellen Sie ein Array aller Darstellungen bereit, die Sie wünschen (in der bevorzugten Reihenfolge).
-2. Nehmen Sie mehrere Aufrufe an `ReadObjectsForClasses` die-Methode an, die jedes Mal ein anderes Array von Typen anfordern.
+1. Erstellen Sie einen einzigen aufrufswert für die `ReadObjectsForClasses`-Methode, und stellen Sie ein Array aller Darstellungen bereit, die Sie wünschen (in der bevorzugten Reihenfolge).
+2. Führen Sie mehrere Aufrufe an die `ReadObjectsForClasses`-Methode aus, die jedes Mal ein anderes Array von Typen anfordert.
 
 Weitere Informationen zum Abrufen von Daten aus einem pasteboard finden Sie im obigen Abschnitt **Simple** -Einfügevorgang.
 
@@ -776,9 +776,9 @@ Weitere Informationen zum Abrufen von Daten aus einem pasteboard finden Sie im o
 
 Es kann vorkommen, dass Sie überprüfen möchten, ob ein "Zwischenablage" eine bestimmte Datendarstellung enthält, ohne die Daten tatsächlich aus dem Steuerelement zu lesen (z. b. Wenn Sie das Menü Element **Einfügen** nur dann aktivieren, wenn gültige Daten vorhanden sind).
 
-Ruft die `CanReadObjectForClasses` -Methode des pasteboards auf, um festzustellen, ob Sie einen angegebenen Typ enthält.
+Ruft die `CanReadObjectForClasses`-Methode des pasteboards auf, um zu überprüfen, ob Sie einen angegebenen Typ enthält.
 
-Mit dem folgenden Code wird beispielsweise bestimmt, ob das allgemeine-Zwischenablage eine `NSImage` -Instanz enthält:
+Mit dem folgenden Code wird beispielsweise bestimmt, ob das allgemeine "Zwischenablage" eine `NSImage` Instanz enthält:
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -795,7 +795,7 @@ public bool ImageAvailableOnPasteboard {
 
 ### <a name="reading-urls-from-the-pasteboard"></a>Lesen von URLs aus dem Zwischenablage
 
-Basierend auf der Funktion einer bestimmten xamarin. Mac-app ist es möglicherweise erforderlich, URLs von einem pasteboard zu lesen, aber nur, wenn Sie einen bestimmten Satz von Kriterien erfüllen (z. b. das verweisen auf Dateien oder URLs eines bestimmten Datentyps). In dieser Situation können Sie zusätzliche Suchkriterien mit dem zweiten Parameter der `CanReadObjectForClasses` -Methode oder `ReadObjectsForClasses` der-Methode angeben.
+Basierend auf der Funktion einer bestimmten xamarin. Mac-app ist es möglicherweise erforderlich, URLs von einem pasteboard zu lesen, aber nur, wenn Sie einen bestimmten Satz von Kriterien erfüllen (z. b. das verweisen auf Dateien oder URLs eines bestimmten Datentyps). In dieser Situation können Sie zusätzliche Suchkriterien mit dem zweiten Parameter der `CanReadObjectForClasses`-oder `ReadObjectsForClasses`-Methode angeben.
 
 <a name="Custom_Data_Types" />
 
@@ -803,7 +803,7 @@ Basierend auf der Funktion einer bestimmten xamarin. Mac-app ist es möglicherwe
 
 Es gibt Zeiten, in denen Sie Ihre eigenen benutzerdefinierten Typen aus einer xamarin. Mac-app im Zwischenablage speichern müssen. Beispielsweise eine Vector Drawing-APP, die dem Benutzer das Kopieren und Einfügen von Zeichnungsobjekten ermöglicht.
 
-In dieser Situation müssen Sie die benutzerdefinierte Datenklasse so entwerfen, dass `NSObject` Sie von erbt und einigen wenigen Schnittstellen entspricht `INSPasteboardWriting` (`INSCoding`und `INSPasteboardReading`). Optional können Sie einen `NSPasteboardItem` verwenden, um die zu kopierenden oder einzufügenden Daten zu kapseln.
+In dieser Situation müssen Sie die benutzerdefinierte Datenklasse so entwerfen, dass Sie von `NSObject` erbt und einigen Schnittstellen (`INSCoding`, `INSPasteboardWriting` und `INSPasteboardReading`) entspricht. Optional können Sie eine `NSPasteboardItem` verwenden, um die zu kopierenden oder einzufügenden Daten zu kapseln.
 
 Beide Optionen werden im folgenden ausführlich beschrieben.
 
@@ -929,7 +929,7 @@ In den folgenden Abschnitten wird diese Klasse ausführlich erläutert.
 
 #### <a name="inheritance-and-interfaces"></a>Vererbung und Schnittstellen
 
-Bevor eine benutzerdefinierte Datenklasse in ein "pasteboard" geschrieben oder daraus gelesen werden kann, muss Sie `INSPastebaordWriting` den `INSPasteboardReading` -und-Schnittstellen entsprechen. Außerdem muss Sie von `NSObject` erben und auch der `INSCoding` -Schnittstelle entsprechen:
+Bevor eine benutzerdefinierte Datenklasse in ein "pasteboard" geschrieben oder daraus gelesen werden kann, muss Sie den `INSPastebaordWriting`-und `INSPasteboardReading` Schnittstellen entsprechen. Außerdem muss Sie von `NSObject` erben und auch der `INSCoding` Schnittstelle entsprechen:
 
 ```csharp
 [Register("ImageInfo")]
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-Die-Klasse muss auch mit der `Register` -Direktive für "Ziel-C" verfügbar gemacht werden, und Sie muss alle erforderlichen Eigenschaften oder Methoden mit `Export`verfügbar machen. Beispiel:
+Die Klasse muss auch mit der `Register`-Direktive für "Ziel-C" verfügbar gemacht werden, und Sie muss alle erforderlichen Eigenschaften oder Methoden mit `Export` verfügbar machen. Beispiel:
 
 ```csharp
 [Export("name")]
@@ -949,7 +949,7 @@ public string ImageType { get; set; }
 
 Wir stellen die beiden Datenfelder bereit, die diese Klasse enthalten wird: den Namen des Bilds und den Typ (JPG, PNG usw.). 
 
-Weitere Informationen finden Sie im Abschnitt "verfügbar machen von [ C# Klassen/Methoden zu Ziel-C](~/mac/internals/how-it-works.md) " der Dokumentation zu [xamarin. Mac Internals.](~/mac/internals/how-it-works.md) darin `Export` werden die Attribute und erläutert, C# die zum Verknüpfen der `Register` Klassen verwendet werden. Ziel-C-Objekte und UI-Elemente.
+Weitere Informationen finden Sie im Abschnitt verfügbar machen von [ C# Klassen/Methoden zu Ziel-c](~/mac/internals/how-it-works.md) der Dokumentation zu [xamarin. Mac Internals.](~/mac/internals/how-it-works.md) darin werden die `Register`-und `Export` Attribute erläutert, die C# zum Verknüpfen der Klassen mit Ziel-c verwendet werden. Objekte und UI-Elemente.
 
 #### <a name="constructors"></a>Konstruktoren
 
@@ -974,15 +974,15 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-Zuerst machen wir den _leeren_ Konstruktor unter der Standardmethode "Ziel-C" `init`von verfügbar.
+Zuerst machen wir den _leeren_ Konstruktor unter der Standardmethode "Ziel-C" `init` verfügbar.
 
-Als nächstes machen wir einen `NSCoding` kompatiblen Konstruktor verfügbar, der verwendet wird, um eine neue Instanz des Objekts aus dem Zwischenablage zu erstellen, wenn Sie unter den exportierten Namen von `initWithCoder`einfügen.
+Als Nächstes stellen wir einen `NSCoding` kompatiblen Konstruktor zur Verfügung, der verwendet wird, um eine neue Instanz des Objekts aus dem Zwischenablage zu erstellen, wenn Sie unter dem exportierten Namen `initWithCoder` eingefügt werden.
 
-Dieser Konstruktor nimmt einen `NSCoder` (wie von einem `NSKeyedArchiver` erstellt, wenn er in das-Steuerelement geschrieben wird), extrahiert die gekoppelten Schlüssel-Wert-Daten und speichert Sie in den Eigenschaften Feldern der Datenklasse.
+Dieser Konstruktor nimmt eine `NSCoder` (wie von einem `NSKeyedArchiver` erstellt, wenn er in das pasteboard geschrieben wird), extrahiert die Daten aus dem Schlüssel/Wert-Paar und speichert Sie in den Eigenschaften Feldern der Datenklasse.
 
 #### <a name="writing-to-the-pasteboard"></a>Schreiben in das Zwischenablage
 
-Durch die Konformität mit `INSPasteboardWriting` der-Schnittstelle müssen wir zwei Methoden und optional eine dritte Methode verfügbar machen, damit die Klasse in das pasteboard geschrieben werden kann.
+Durch die Konformität mit der `INSPasteboardWriting`-Schnittstelle müssen wir zwei Methoden und optional eine dritte Methode verfügbar machen, damit die Klasse in das pasteboard geschrieben werden kann.
 
 Zuerst müssen wir dem Zwischenablage mitteilen, auf welche Datentyp Darstellungen die benutzerdefinierte Klasse geschrieben werden kann:
 
@@ -996,7 +996,7 @@ public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard) 
 
 Jede Darstellung wird über einen URI (Uniform Type Identifier) identifiziert, bei dem es sich nicht mehr um eine einfache Zeichenfolge handelt, die den Typ der dargestellten Daten eindeutig identifiziert (Weitere Informationen finden Sie in der [Übersicht über die Uniform Type Identifiers](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) von Apple). Dokumentation).
 
-Für unser benutzerdefiniertes Format erstellen wir unseren eigenen Bezeichner: "com. xamarin. Image-Info" (Beachten Sie, dass sich in umgekehrter Schreibweise wie ein App-Bezeichner befindet). Unsere Klasse ist auch in der Lage, eine Standard Zeichenfolge in das`public.text`Zwischenablage () zu schreiben. 
+Für unser benutzerdefiniertes Format erstellen wir unseren eigenen Bezeichner: "com. xamarin. Image-Info" (Beachten Sie, dass sich in umgekehrter Schreibweise wie ein App-Bezeichner befindet). Unsere Klasse ist auch in der Lage, eine Standard Zeichenfolge in das Zwischenablage (`public.text`) zu schreiben. 
 
 Als nächstes müssen wir das Objekt im angeforderten Format erstellen, das tatsächlich in das pasteboard geschrieben wird:
 
@@ -1017,7 +1017,7 @@ public virtual NSObject GetPasteboardPropertyListForType (string type) {
 }
 ```
 
-Für den `public.text` -Typ wird ein einfaches, formatiertes `NSString` -Objekt zurückgegeben. Für den Benutzer `com.xamarin.image-info` definierten Typ verwenden wir eine `NSKeyedArchiver` und die `NSCoder` -Schnittstelle, um die benutzerdefinierte Datenklasse in ein gekoppeltes Schlüssel-Wert-Archiv zu codieren. Wir müssen die folgende Methode implementieren, damit die Codierung tatsächlich behandelt wird:
+Für den `public.text`-Typ wird ein einfaches, formatiertes `NSString`-Objekt zurückgegeben. Für den benutzerdefinierten `com.xamarin.image-info` Typ verwenden wir eine `NSKeyedArchiver` und die `NSCoder`-Schnittstelle, um die benutzerdefinierte Datenklasse in ein gekoppeltes Schlüssel-Wert-Archiv zu codieren. Wir müssen die folgende Methode implementieren, damit die Codierung tatsächlich behandelt wird:
 
 ```csharp
 [Export ("encodeWithCoder:")]
@@ -1040,7 +1040,7 @@ public virtual NSPasteboardWritingOptions GetWritingOptionsForType (string type,
 }
 ```
 
-Derzeit ist nur `WritingPromised` die-Option verfügbar und sollte verwendet werden, wenn ein bestimmter Typ nur eine Zusage erhält, die eigentlich nicht in das pasteboard geschrieben wurde. Weitere Informationen finden Sie weiter oben im Abschnitt " [versprochene Daten](#Promised_Data) ".
+Zurzeit ist nur die `WritingPromised`-Option verfügbar und sollte verwendet werden, wenn ein bestimmter Typ nur eine Zusage hat und tatsächlich nicht in das pasteboard geschrieben wird. Weitere Informationen finden Sie weiter oben im Abschnitt " [versprochene Daten](#Promised_Data) ".
 
 Wenn diese Methoden vorhanden sind, kann der folgende Code verwendet werden, um die benutzerdefinierte Klasse in das pasteboard zu schreiben:
 
@@ -1057,7 +1057,7 @@ pasteboard.WriteObjects (new ImageInfo[] { Info });
 
 #### <a name="reading-from-the-pasteboard"></a>Lesen aus dem Zwischenablage
 
-Durch die Konformität mit `INSPasteboardReading` der-Schnittstelle müssen wir drei Methoden verfügbar machen, damit die benutzerdefinierte Datenklasse aus dem pasteboard gelesen werden kann.
+Durch die Konformität mit der `INSPasteboardReading`-Schnittstelle müssen wir drei Methoden verfügbar machen, damit die benutzerdefinierte Datenklasse aus dem pasteboard gelesen werden kann.
 
 Zuerst müssen wir dem Zwischenablage mitteilen, welche Datentyp Darstellungen die benutzerdefinierte Klasse aus der Zwischenablage lesen kann:
 
@@ -1090,7 +1090,7 @@ public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, 
 }
 ```
 
-Für den `com.xamarin.image-info` -Typ weisen wir das Zwischenablage an, das Schlüssel-Wert-Paar, das wir `NSKeyedArchiver` mit erstellt haben, zu decodieren, wenn die Klasse durch Aufrufen des `initWithCoder:` Konstruktors, den wir der Klasse hinzugefügt haben, in das Zwischenablage geschrieben wurde.
+Für den `com.xamarin.image-info` Typ weisen wir das Zwischenablage an, das Schlüssel-Wert-Paar zu decodieren, das mit dem `NSKeyedArchiver` erstellt wurde, als die Klasse in das Zwischenablage geschrieben wurde, indem der `initWithCoder:`-Konstruktor aufgerufen wurde, den wir der Klasse hinzugefügt haben.
 
 Schließlich müssen wir die folgende Methode hinzufügen, um die anderen UTI-Daten Darstellungen aus dem pasteboard zu lesen:
 
@@ -1131,13 +1131,13 @@ if (ok) {
 
 ### <a name="using-a-nspasteboarditem"></a>Verwenden eines nspasteboarditem
 
-Es kann vorkommen, dass Sie benutzerdefinierte Elemente in das Zwischenablage schreiben müssen, die die Erstellung einer benutzerdefinierten Klasse nicht garantieren, oder wenn Sie Daten in einem gemeinsamen Format bereitstellen möchten, nur nach Bedarf. In diesen Fällen können Sie einen `NSPasteboardItem`verwenden.
+Es kann vorkommen, dass Sie benutzerdefinierte Elemente in das Zwischenablage schreiben müssen, die die Erstellung einer benutzerdefinierten Klasse nicht garantieren, oder wenn Sie Daten in einem gemeinsamen Format bereitstellen möchten, nur nach Bedarf. In diesen Situationen können Sie eine `NSPasteboardItem` verwenden.
 
-Ein `NSPasteboardItem` ermöglicht eine differenzierte Steuerung der Daten, die in das-Steuerelement geschrieben werden, und ist für den temporären Zugriff vorgesehen. es sollte verworfen werden, nachdem es in das-Steuerelement geschrieben wurde.
+Eine `NSPasteboardItem` ermöglicht eine differenzierte Steuerung der Daten, die in das-Steuerelement geschrieben werden, und ist für den temporären Zugriff vorgesehen. Sie sollte verworfen werden, nachdem Sie in das-Steuerelement geschrieben wurden.
 
 #### <a name="writing-data"></a>Schreiben von Daten
 
-Um benutzerdefinierte Daten in einen `NSPasteboardItem` zu schreiben, müssen Sie ein benutzerdefiniertes `NSPasteboardItemDataProvider`bereitstellen. Fügen Sie dem Projekt eine neue Klasse hinzu, und nennen Sie Sie **ImageInfoDataProvider.cs**. Bearbeiten Sie die Datei, und führen Sie Sie wie folgt aus:
+Wenn Sie benutzerdefinierte Daten in einen `NSPasteboardItem` schreiben möchten, müssen Sie eine benutzerdefinierte `NSPasteboardItemDataProvider` bereitstellen. Fügen Sie dem Projekt eine neue Klasse hinzu, und nennen Sie Sie **ImageInfoDataProvider.cs**. Bearbeiten Sie die Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -1200,9 +1200,9 @@ namespace MacCopyPaste
 }
 ```
 
-Wie bei der benutzerdefinierten Datenklasse, müssen wir die-Direktive `Register` und `Export` die-Direktive verwenden, um Sie für "Ziel-C" verfügbar zu machen. Die Klasse muss von `NSPasteboardItemDataProvider` erben und die-Methode und die `FinishedWithDataProvider` - `ProvideDataForType` Methode implementieren.
+Wie bei der benutzerdefinierten Datenklasse, müssen wir die `Register`-und `Export` Direktiven verwenden, um Sie für "Ziel-C" verfügbar zu machen. Die Klasse muss von `NSPasteboardItemDataProvider` erben und muss die Methoden `FinishedWithDataProvider` und `ProvideDataForType` implementieren.
 
-Verwenden Sie `ProvideDataForType` die-Methode, um die Daten bereitzustellen, die `NSPasteboardItem` in den wie folgt umschließt werden:
+Verwenden Sie die `ProvideDataForType`-Methode, um die Daten, die in die `NSPasteboardItem` umschließt werden, wie folgt anzugeben:
 
 ```csharp
 [Export ("pasteboard:item:provideDataForType:")]

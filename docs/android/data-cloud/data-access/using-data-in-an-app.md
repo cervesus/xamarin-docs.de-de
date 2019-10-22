@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
 ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70754458"
 ---
 # <a name="using-data-in-an-app"></a>Verwenden von Daten in einer App
@@ -23,9 +23,9 @@ Nachdem Sie einige Daten hinzugefügt haben, sehen die Anwendungs Bildschirme au
 
 ![Android-Beispiel Details](using-data-in-an-app-images/image12.png "Android-Beispiel Details")
 
-Das Android-Projekt wird unterhalb &ndash; des in diesem Abschnitt gezeigten Codes angezeigt, der im **ORM** -Verzeichnis enthalten ist:
+Das Android-Projekt wird unten dargestellt, &ndash; der in diesem Abschnitt gezeigte Code im **ORM** -Verzeichnis enthalten ist:
 
-![Android-Projekt] Struktur (using-data-in-an-app-images/image14.png "Android-Projekt") Struktur
+![Android-Projektstruktur](using-data-in-an-app-images/image14.png "Android-Projektstruktur")
 
 Der Native UI-Code für die Aktivitäten in Android ist für dieses Dokument nicht verfügbar. Weitere Informationen zu den UI-Steuerelementen finden Sie im Handbuch zu den [Android-Listenansichten und-Adaptern](~/android/user-interface/layouts/list-view/index.md) .
 
@@ -36,7 +36,7 @@ Das Beispiel enthält eine Reihe von Lesevorgängen:
 - Lesen der Liste
 - Lesen einzelner Datensätze
 
-Die beiden Methoden in der `StockDatabase` -Klasse sind:
+Die beiden Methoden in der `StockDatabase`-Klasse lauten wie folgt:
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -57,7 +57,7 @@ Android rendert die Daten als `ListView`.
 
 ## <a name="create-and-update"></a>Erstellen und aktualisieren
 
-Um den Anwendungscode zu vereinfachen, wird eine einzelne Save-Methode bereitgestellt, die einen INSERT-oder Update-Vorgang durchführt, je nachdem, ob PrimaryKey festgelegt wurde. Da die `Id` -Eigenschaft mit einem `[PrimaryKey]` -Attribut gekennzeichnet ist, sollten Sie Sie nicht im Code festlegen. Diese Methode erkennt, ob der Wert zuvor gespeichert wurde (durch Überprüfen der Primärschlüssel Eigenschaft), und fügt das Objekt entsprechend ein:
+Um den Anwendungscode zu vereinfachen, wird eine einzelne Save-Methode bereitgestellt, die einen INSERT-oder Update-Vorgang durchführt, je nachdem, ob PrimaryKey festgelegt wurde. Da die `Id`-Eigenschaft mit einem `[PrimaryKey]`-Attribut gekennzeichnet ist, sollten Sie Sie nicht im Code festlegen. Diese Methode erkennt, ob der Wert zuvor gespeichert wurde (durch Überprüfen der Primärschlüssel Eigenschaft), und fügt das Objekt entsprechend ein:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -77,7 +77,7 @@ Echte Anwendungen erfordern in der Regel eine gewisse Überprüfung (z. b. erfor
 
 ## <a name="delete"></a>Löschen
 
-Im Gegensatz `Insert` zu `Update` den-und `Delete<T>` -Methoden kann die-Methode nur den Primärschlüssel Wert anstelle `Stock` eines Complete-Objekts akzeptieren. In diesem Beispiel wird `Stock` ein-Objekt an die-Methode weitergegeben, aber nur die ID-Eigenschaft `Delete<T>` wird an die-Methode weitergegeben.
+Im Gegensatz zu den Methoden `Insert` und `Update` kann die `Delete<T>`-Methode nur den Primärschlüssel Wert anstelle eines kompletten `Stock` Objekts akzeptieren. In diesem Beispiel wird ein `Stock` Objekt an die-Methode weitergegeben, aber nur die ID-Eigenschaft wird an die `Delete<T>`-Methode weitergegeben.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -92,13 +92,13 @@ public int DeleteStock(Stock stock)
 
 Einige Anwendungen werden mit einer Datenbank ausgeliefert, die bereits mit Daten aufgefüllt wurde. Sie können dies problemlos in Ihrer mobilen Anwendung erreichen, indem Sie eine vorhandene SQLite-Datenbankdatei mit Ihrer APP versenden und in ein beschreibbares Verzeichnis kopieren, bevor Sie darauf zugreifen. Da SQLite ein Standarddatei Format ist, das auf vielen Plattformen verwendet wird, stehen eine Reihe von Tools zum Erstellen einer SQLite-Datenbankdatei zur Verfügung:
 
-- **SQLite Manager Firefox-Erweiterung** &ndash; Funktioniert unter Mac und Windows und erzeugt Dateien, die mit IOS und Android kompatibel sind.
+- Der **SQLite-Manager Firefox-Erweiterungs** &ndash; funktioniert unter Mac und Windows und erzeugt Dateien, die mit IOS und Android kompatibel sind.
 
-- **Befehlszeile** Siehe [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) . &ndash;
+- @No__t_1 **Befehlszeile** finden Sie unter [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
 Wenn Sie eine Datenbankdatei für die Verteilung mit Ihrer APP erstellen, achten Sie darauf, dass Tabellen und Spalten benannt werden, um sicherzustellen, dass Sie mit den Anforderungen Ihres Codes identisch sind. Dies gilt insbesondere, C# Wenn Sie sqlite.NET verwenden, der davon ausgeht, dass die Namen der Klassen und Eigenschaften entsprechen oder die zugeordneten benutzerdefinierten Attribute).
 
-Um sicherzustellen, dass Code vor anderen in Ihrer Android-App ausgeführt wird, können Sie ihn in der ersten zu ladenden Aktivität platzieren, oder `Application` Sie können eine Unterklasse erstellen, die vor Aktivitäten geladen wird. Der folgende Code zeigt eine `Application` Unterklasse, die eine vorhandene Datenbankdatei **Data. sqlite** aus dem Verzeichnis **/Resources/RAW/** kopiert.
+Um sicherzustellen, dass Code vor anderen in Ihrer Android-App ausgeführt wird, können Sie ihn in der ersten zu ladenden Aktivität platzieren, oder Sie können eine `Application` Unterklasse erstellen, die vor Aktivitäten geladen wird. Der folgende Code zeigt eine `Application` Unterklasse, die eine vorhandene Datenbankdatei **Data. sqlite** aus dem Verzeichnis **/Resources/RAW/** kopiert.
 
 ```csharp
 [Application]

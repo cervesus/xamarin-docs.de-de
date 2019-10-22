@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
 ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "64749930"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>Beispiele für plattformunabhängige skiasharp-Beispiele
@@ -22,7 +22,7 @@ Skiasharp stellt eine umfangreiche und leistungsstarke 2D-Grafik-API bereit, die
 
 Die Bibliothek ist derzeit als plattformübergreifendes [nuget-Paket](https://www.nuget.org/packages/SkiaSharp)verfügbar. Sie können Sie dem Projekt hinzufügen, indem Sie den nuget-Verweis hinzufügen.
 
-Zum Zeichnen erstellt der Code einen `SkCanvas` , der die Oberfläche beschreibt, in der die Zeichnungsvorgänge stattfinden.
+Um dies zu zeichnen, erstellt der Code eine `SkCanvas` die die Oberfläche beschreibt, in der die Zeichnungsvorgänge stattfinden.
 
 ## <a name="obtaining-an-skcanvas"></a>Abrufen einer skcanvas
 
@@ -36,9 +36,9 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>Zeichnen in skcanvas
 
-Der `SKCanvas` verwendet ein Zeichen Modell, das in der gleichen Form wie andere Zeichnungsmodelle verwendet wird, mit denen Sie möglicherweise vertraut sind. es verwendet Farben mit einem optionalen Transparenz Kanal und kann Linien, Arcs, Text und Bilder zeichnen.
+Der `SKCanvas` verwendet ein Zeichen Modell ähnlich wie andere Zeichnungsmodelle, mit denen Sie möglicherweise vertraut sind. es verwendet Farben mit einem optionalen Transparenz Kanal und kann Linien, Arcs, Text und Bilder zeichnen.
 
-Im folgenden finden Sie nur einige der vielen unterschiedlichen Dinge, die mit skiasharp möglich sind.  In den folgenden Beispielen ist die `canvas` Variable vom Typ skcanvas.
+Im folgenden finden Sie nur einige der vielen unterschiedlichen Dinge, die mit skiasharp möglich sind.  In den Beispielen unterhalb der Variablen `canvas` den Typ skcanvas haben.
 
 ### <a name="drawing-xamagon"></a>Zeichnen von xamagon
 

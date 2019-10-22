@@ -7,25 +7,25 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/22/2018
 ms.openlocfilehash: 5539bab417c5efc0064cd1753cb74c7524463ee5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70765919"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>Aktualisieren von Unified xamarin. Mac-Anwendungen auf 64-Bit
 
 Ab dem 2018 erfordert Apple, dass neue [Mac-App Store-Übermittlungen das 64-Bit-Ziel](https://developer.apple.com/news/?id=06282017a)haben. Apps, die bereits im Mac App Store verfügbar sind, müssen bis zum 2018. Juni auf das 64-Bit-Ziel aktualisiert werden.
 
-Die neue xamarin. Mac-Projektvorlage erstellt standardmäßig 64-Bit-Anwendungen, sodass alle zuletzt erstellten Apps bereits 64 Bit-kompatibel sind und keine Änderungen erfordern. > 
+Mit der **Datei**  > **neuen** xamarin. Mac-Projektvorlage werden standardmäßig 64-Bit-Anwendungen erstellt, sodass alle zuletzt erstellten Apps bereits 64 Bit-kompatibel sind und keine Änderungen erfordern.
 
 ## <a name="targeting-64-bit"></a>Zielversion 64-Bit
 
 1. Öffnen Sie das Fenster " **Projektoptionen** " für Ihre xamarin. Mac-app:
 
-   ![Das Kontextmenü für das Projekt] . (mac-64-bit-images/1-contextual_menu-vsmac.png "Das Kontextmenü für das Projekt") .
+   ![Das Kontextmenü für das Projekt.](mac-64-bit-images/1-contextual_menu-vsmac.png "Das Kontextmenü für das Projekt.")
 
-2. Wählen Sie **Mac Build** , und legen Sie **unterstützte Architekturen** auf **\_x86 64**fest:
+2. Wählen Sie **Mac Build** aus, und legen Sie **unterstützte Architekturen** auf **x86 \_64**
 
    [![Festlegen der unterstützten Architekturen auf x86_64](mac-64-bit-images/2-project_options-vsmac.png "Festlegen der unterstützten Architekturen auf x86_64")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
 
@@ -46,7 +46,7 @@ file was built for i386 which is not the architecture being linked (x86_64):
 PATH/ThirdPartyLibrary.framework/ThirdPartyLibrary 
 ```
 
-Dieser Fehler kann zur Laufzeit durch `dlopen` die Rückgabe `IntPtr.Zero` anstelle eines erwarteten Handles befolgt werden.
+Dieser Fehler kann während der Laufzeit auftreten, indem `dlopen` `IntPtr.Zero` anstelle eines erwarteten Handles zurückgibt.
 
 #### <a name="example-error-resulting-from-a-statically-linked-third-party-dependency-that-does-not-target-64-bit"></a>Beispiel Fehler, der sich aus einer statisch verknüpften Drittanbieter-Abhängigkeit ergibt, die nicht 64-Bit als Ziel hat:
 
