@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
 ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766753"
 ---
 # <a name="accessibility-on-ios"></a>Barrierefreiheit unter IOS
@@ -21,15 +21,15 @@ Weitere Plattform-APIs finden Sie auf der Seite zu den Barrierefreiheits Seiten 
 
 ## <a name="describing-ui-elements"></a>Beschreiben von UI-Elementen
 
-IOS stellt die `AccessibilityLabel` - `AccessibilityHint` und-Eigenschaften für Entwickler bereit, um beschreibenden Text hinzuzufügen, der vom VoiceOver-Bildschirm Reader verwendet werden kann, um den Zugriff auf die Steuerelemente zu erleichtern Steuerelemente können auch mit einem oder mehreren Merkmalen gekennzeichnet werden, die zusätzlichen Kontext in zugänglichen Modi bereitstellen.
+IOS stellt die `AccessibilityLabel`-und `AccessibilityHint` Eigenschaften für Entwickler bereit, um beschreibenden Text hinzuzufügen, der von VoiceOver-Bildschirmlesern verwendet werden kann, um den Zugriff auf die Steuerelemente zu erleichtern. Steuerelemente können auch mit einem oder mehreren Merkmalen gekennzeichnet werden, die zusätzlichen Kontext in zugänglichen Modi bereitstellen.
 
-Einige Steuerelemente müssen möglicherweise nicht zugänglich sein (z. b. eine Bezeichnung in einer Texteingabe oder ein Bild, das rein dekorativ `IsAccessibilityElement` ist) – das wird bereitgestellt, um die Barrierefreiheit in diesen Fällen zu deaktivieren.
+Einige Steuerelemente müssen möglicherweise nicht zugänglich sein (z. b. eine Bezeichnung in einer Texteingabe oder ein Bild, das rein dekorativ ist) – das `IsAccessibilityElement` wird bereitgestellt, um die Barrierefreiheit in diesen Fällen zu deaktivieren.
 
 **UI-Designer**
 
 Die **Eigenschaftenpad** enthält einen Abschnitt zur Barrierefreiheit, mit dem diese Einstellungen bearbeitet werden können, wenn ein Steuerelement im IOS-Benutzeroberflächen-Designer ausgewählt wird:
 
-![](accessibility-images/ios-designer-sml.png "Barrierefreiheits Einstellungen")
+![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
 
 **C#**
 
@@ -44,7 +44,7 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>Was ist accessibilityidentifier?
 
-Wird `AccessibilityIdentifier` verwendet, um einen eindeutigen Schlüssel festzulegen, der zum Verweisen auf Benutzeroberflächen Elemente über die UIAutomation-API verwendet werden kann.
+Der `AccessibilityIdentifier` wird zum Festlegen eines eindeutigen Schlüssels verwendet, der verwendet werden kann, um über die UIAutomation-API auf Benutzeroberflächen Elemente zu verweisen.
 
 Der Wert von `AccessibilityIdentifier` wird niemals gesprochen oder für den Benutzer angezeigt.
 
@@ -52,7 +52,7 @@ Der Wert von `AccessibilityIdentifier` wird niemals gesprochen oder für den Ben
 
 ## <a name="postnotification"></a>Postnotification
 
-Mit `UIAccessibility.PostNotification` der-Methode können Ereignisse außerhalb der direkten Interaktion an den Benutzer ausgelöst werden (z. b. Wenn Sie mit einem bestimmten Steuerelement interagieren).
+Mit der `UIAccessibility.PostNotification`-Methode können Ereignisse außerhalb der direkten Interaktion an den Benutzer ausgelöst werden (z. b. bei der Interaktion mit einem bestimmten Steuerelement).
 
 ### <a name="announcement"></a>Ankündigung
 
@@ -64,9 +64,9 @@ UIAccessibility.PostNotification (
     new NSString(@"Item was saved"));
 ```
 
-### <a name="layoutchanged"></a>LayoutChanged
+### <a name="layoutchanged"></a>Layoutchanged
 
-Die `LayoutChanged` Ankündigung wird verwendet, wenn das Bildschirmlayout:
+Die `LayoutChanged` Ankündigung wird verwendet, wenn das Bildschirmlayout verwendet wird:
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -78,9 +78,9 @@ UIAccessibility.PostNotification (
 
 Barrierefreiheits Eigenschaften wie die Bezeichnung und der Hinweis können genau wie andere Text in der Benutzeroberfläche lokalisiert werden.
 
-**MainStoryboard.strings**
+**Mainstoryboard. Strings**
 
-Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Übersetzungen für Barrierefreiheits Eigenschaften auf die gleiche Weise wie andere Eigenschaften bereitstellen. Im folgenden Beispiel verfügt ein `UITextField` über eine Lokalisierungs- **ID** von `Pqa-aa-ury` und zwei Barrierefreiheits Eigenschaften, die auf Spanisch festgelegt werden:
+Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Übersetzungen für Barrierefreiheits Eigenschaften auf die gleiche Weise wie andere Eigenschaften bereitstellen. Im folgenden Beispiel verfügt ein `UITextField` über eine **Lokalisierungs-ID** `Pqa-aa-ury` und zwei Barrierefreiheits Eigenschaften, die auf Spanisch festgelegt werden:
 
 ```csharp
 /* Accessibility */
@@ -90,7 +90,7 @@ Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Üb
 
 Diese Datei befindet sich im Verzeichnis " **es. lproj** " für spanische Inhalte.
 
-**Localizable.strings**
+**Lokalisierbare Zeichen folgen**
 
 Alternativ können die Übersetzungen der **lokalisierbaren Strings** -Datei im lokalisierten Inhaltsverzeichnis hinzugefügt werden (z. b. **es. lproj** für Spanisch):
 
@@ -100,7 +100,7 @@ Alternativ können die Übersetzungen der **lokalisierbaren Strings** -Datei im 
 "Provide more information" = "escriba más información";
 ```
 
-Diese Übersetzungen können in C# über die `LocalizedString` -Methode verwendet werden:
+Diese Übersetzungen können in C# über die `LocalizedString`-Methode verwendet werden:
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -115,7 +115,7 @@ Weitere Informationen zum Lokalisieren von Inhalten finden Sie im [IOS-Lokalisie
 
 VoiceOver ist in der App " **Einstellungen** " aktiviert, indem Sie zu **Allgemein > Barrierefreiheits > VoiceOver**navigieren:
 
-![](accessibility-images/settings-sml.png "Festlegen der Sprech Rate")
+![](accessibility-images/settings-sml.png "Setting the speaking rate")
 
 Der Bildschirm **Barrierefreiheit** enthält auch Einstellungen für Zoom, Textgröße, Farbe & Kontrast Optionen, Spracheinstellungen und andere Konfigurationsoptionen.
 
@@ -125,12 +125,12 @@ Befolgen Sie diese [VoiceOver-Anweisungen](https://developer.apple.com/library/i
 
 Wenn Sie im Simulator testen, steht Ihnen der **Barrierefreiheits Inspektor** zur Verfügung, um zu überprüfen, ob Barrierefreiheits Eigenschaften und Ereignisse richtig konfiguriert sind. Aktivieren Sie den Inspektor in der App " **Einstellungen** ", indem Sie zu **Allgemein > Barrierefreiheit > Barrierefreiheits Inspektor**navigieren:
 
-![](accessibility-images/settings-inspector-sml.png "Zugriffs Inspektor aktivieren")
+![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
 
 Nach der Aktivierung zeigt das Inspektor-Fenster jederzeit auf den IOS-Bildschirm.
 Im folgenden finden Sie ein Beispiel für die Ausgabe, wenn eine Tabellen Ansichts Zeile ausgewählt ist – beachten Sie, dass die **Bezeichnung** einen Satz enthält, der den Inhalt der Zeile und auch "Done" enthält (d. h. der Tick ist sichtbar):
 
-![](accessibility-images/tableview-a11y-sml.png "Verwenden des Zugriffs Inspektors")
+![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
 
 Während der Inspektor sichtbar ist, verwenden Sie das Symbol "X" in der oberen linken Ecke, um das Overlay vorübergehend anzuzeigen und auszublenden und Barrierefreiheits Einstellungen zu aktivieren/deaktivieren.
 

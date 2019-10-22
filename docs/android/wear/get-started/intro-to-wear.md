@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70758497"
 ---
 # <a name="introduction-to-android-wear"></a>Einführung in Android Wear
@@ -36,7 +36,7 @@ Die erste Version von Android Wear konzentriert sich hauptsächlich auf die Erwe
 
 #### <a name="wearable-notifications"></a>Wearable-Benachrichtigungen
 
-Die einfachste Möglichkeit zur Unterstützung von Android Wear besteht darin, die gemeinsame Nutzung von Benachrichtigungen zwischen dem Hand Held und dem tragbaren-Gerät zu nutzen. Mithilfe der Unterstützung der V4-Benachrichtigungs `WearableExtender` -API und der-Klasse (in der [xamarin Android-Unterstützungs Bibliothek](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verfügbar) können Sie auf die systemeigenen Features der Plattform tippen, wie z. b. Post fach Karten oder Spracheingaben. Das Beispiel " [recipeer Assistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant) " enthält Beispielcode, der veranschaulicht, wie eine Liste von Benachrichtigungen an ein Android Wear-Gerät gesendet wird. 
+Die einfachste Möglichkeit zur Unterstützung von Android Wear besteht darin, die gemeinsame Nutzung von Benachrichtigungen zwischen dem Hand Held und dem tragbaren-Gerät zu nutzen. Mithilfe der Unterstützung der V4-Benachrichtigungs-API und der `WearableExtender`-Klasse (in der [xamarin Android-Unterstützungs Bibliothek](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verfügbar) können Sie auf die systemeigenen Features der Plattform tippen, wie z. b. Post fach Karten oder Spracheingaben. Das Beispiel " [recipeer Assistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant) " enthält Beispielcode, der veranschaulicht, wie eine Liste von Benachrichtigungen an ein Android Wear-Gerät gesendet wird. 
 
 #### <a name="companion-applications"></a>Begleit Anwendungen
 
@@ -44,11 +44,11 @@ Eine andere Strategie besteht darin, eine komplette Anwendung zu erstellen, die 
 
 ### <a name="user-interface"></a>Benutzeroberfläche
 
-Das primäre Navigationsmuster für Wear ist eine vertikale Reihe von Karten. Jeder dieser Karten können Aktionen zugeordnet werden, die in derselben Zeile angeordnet werden. Diese `GridViewPager` Funktion wird von der-Klasse bereitstellt. Sie entspricht dem gleichen `ListView`Adapterkonzept wie. Normalerweise ordnen Sie `GridViewPager` den mit `FragmentGridPagerAdaptor` einem ( `GridPagerAdaptor`oder) zu, mit dem Sie jede Zeilen-und Spalten `Fragment`Zelle als darstellen können: 
+Das primäre Navigationsmuster für Wear ist eine vertikale Reihe von Karten. Jeder dieser Karten können Aktionen zugeordnet werden, die in derselben Zeile angeordnet werden. Die `GridViewPager`-Klasse stellt diese Funktionalität bereit. Sie entspricht dem gleichen Adapterkonzept wie `ListView`. In der Regel ordnen Sie die `GridViewPager` einem `FragmentGridPagerAdaptor` (oder `GridPagerAdaptor`) zu, mit dem Sie jede Zeilen-und Spalten Zelle als `Fragment` darstellen können: 
 
 [![Wear-Navigation](intro-to-wear-images/2d-picker-sml.png "Wear-Navigation")](intro-to-wear-images/2d-picker.png#lightbox)
 
-Wear verwendet auch Aktions Schaltflächen, die aus einem großen farbigen Kreis mit kleinen Beschreibungstext darunter stehen (wie oben gezeigt).  Das [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager) -Beispiel veranschaulicht die Verwendung `GridViewPager` von `GridPagerAdapter` und in einer Wear-app.
+Wear verwendet auch Aktions Schaltflächen, die aus einem großen farbigen Kreis mit kleinen Beschreibungstext darunter stehen (wie oben gezeigt).  Das [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager) -Beispiel veranschaulicht die Verwendung von `GridViewPager` und `GridPagerAdapter` in einer Wear-app.
 
 Android Wear 2,0 fügt der Benutzeroberfläche "Wear" eine Navigations-, Aktions-und Inline Aktions Schaltfläche hinzu. Weitere Informationen zu Android Wear 2,0-Benutzeroberflächen Elementen finden Sie im Thema Android- [Anatomie](https://www.google.com/design/spec-wear/system-overview/anatomy.html) . 
 
@@ -56,15 +56,15 @@ Android Wear 2,0 fügt der Benutzeroberfläche "Wear" eine Navigations-, Aktions
 
 Android Wear bietet zwei verschiedene Kommunikations-APIs, um die Kommunikation zwischen tragbaren apps und begleitenden Handheld-apps zu vereinfachen: 
 
-**Daten-API** &ndash; Diese API ähnelt einem synchronisierten Datenspeicher zwischen dem tragbaren-Gerät und dem Handheld-Gerät. Android übernimmt die Weitergabe von Änderungen zwischen tragbaren und Hand Held, wenn dies optimal ist. Wenn die tragbaren außerhalb des Bereichs liegt, wird die Synchronisierung für einen späteren Zeitpunkt in die Warteschlange eingereiht. Der Haupteinstiegspunkt für diese API ist `WearableClass.DataApi`. Weitere Informationen zu dieser API finden Sie im Thema Android- [Synchronisierungs Datenelemente](https://developer.android.com/training/wearables/data-layer/data-items.html) . 
+**Data API** -&ndash; diese API ähnelt einem synchronisierten Datenspeicher zwischen dem webaugerät und dem Hand Held Gerät. Android übernimmt die Weitergabe von Änderungen zwischen tragbaren und Hand Held, wenn dies optimal ist. Wenn die tragbaren außerhalb des Bereichs liegt, wird die Synchronisierung für einen späteren Zeitpunkt in die Warteschlange eingereiht. Der Haupteinstiegspunkt für diese API ist `WearableClass.DataApi`. Weitere Informationen zu dieser API finden Sie im Thema Android- [Synchronisierungs Datenelemente](https://developer.android.com/training/wearables/data-layer/data-items.html) . 
 
-**Message-API** &ndash; Diese API ermöglicht es Ihnen, einen Kommunikations Pfad auf niedrigerer Ebene zu verwenden: eine kleine Nutzlast wird unidirektional gesendet, ohne dass eine Synchronisierung zwischen den Handheld-und den tragbaren-apps erfolgt.
+**Message-API** -&ndash; diese API ermöglicht es Ihnen, einen Kommunikations Pfad auf niedrigerer Ebene zu verwenden: eine kleine Nutzlast wird unidirektional gesendet, ohne dass eine Synchronisierung zwischen den Handheld-und den tragbaren-apps erfolgt.
 Der Haupteinstiegspunkt für diese API ist `WearableClass.MessageApi`.
 Weitere Informationen zu dieser API finden Sie im Thema Android [Send and empfansnachrichten](https://developer.android.com/training/wearables/data-layer/messages.html) .
 
-Sie können auch Rückrufe zum Empfangen dieser Nachrichten über jede API-listenerschnittstelle registrieren oder einen Dienst in der APP implementieren, der von `WearableListenerService`abgeleitet wird.
+Sie können auch Rückrufe zum Empfangen dieser Nachrichten über jede API-listenerschnittstelle registrieren oder einen Dienst in der APP implementieren, der von `WearableListenerService` abgeleitet ist.
 Dieser Dienst wird automatisch von Android Wear instanziiert.
-Das [findmyphone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample) -Beispiel veranschaulicht, wie ein `WearableListenerService`implementiert wird.
+Das [findmyphone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample) -Beispiel veranschaulicht, wie ein `WearableListenerService` implementiert wird.
 
 ### <a name="deployment"></a>Bereitstellung
 
@@ -102,7 +102,7 @@ Dieses nuget-Paket enthält Bindungen für die Android-Unterstützung für Weara
 
 Zusätzlich zu **xamarin. Android. Wear**empfiehlt es sich, die **xamarin. googleplayservices. Wearable** -nuget zu installieren: 
 
-[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "Install the Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
+[![Xamarin. googleplayservices. Wearable](intro-to-wear-images/gpsw-nuget-sml.png "Installieren des xamarin. googleplayservices. Wearable-nuget")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
 ### <a name="key-features-of-wear-20"></a>Wichtige Features von Wear 2,0
 
@@ -126,11 +126,11 @@ Weitere Informationen zu diesen beiden neuen interaktiven Schub Zeugen finden Si
 
 #### <a name="curved-layouts"></a>Kurven Layouts 
 
-Mit "Wear 2,0" werden neue Features zum Anzeigen von Kurven Layouts auf runwear-Geräten eingeführt. Die neue `WearableRecyclerView` Klasse ist speziell für die Anzeige einer Liste vertikaler Elemente in Runden anzeigen optimiert: 
+Mit "Wear 2,0" werden neue Features zum Anzeigen von Kurven Layouts auf runwear-Geräten eingeführt. Insbesondere die neue `WearableRecyclerView`-Klasse ist für die Anzeige einer Liste vertikaler Elemente in Runden anzeigen optimiert: 
 
 ![Beispiel für Kurven Layout](intro-to-wear-images/curved-layout.png "Beispiel für Kurven Layout")
 
-`WearableRecyclerView`erweitert die `RecyclerView` -Klasse zur Unterstützung von gekrümmten Layouts und Zirkel Bildlauf Weitere Informationen finden Sie in der Android [wearablerecyclerview](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) -API-Dokumentation. 
+`WearableRecyclerView` erweitert die `RecyclerView`-Klasse zur Unterstützung von gekrümmten Layouts und zirkulären Bildlauf Weitere Informationen finden Sie in der Android [wearablerecyclerview](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) -API-Dokumentation. 
 
 #### <a name="standalone-apps"></a>Eigenständige apps 
 
@@ -138,7 +138,7 @@ Android Wear 2,0-Apps können unabhängig von Handheld-Apps verwendet werden. Di
 
 #### <a name="wrist-gestures"></a>Handgelenk Gesten 
 
-Handgesten ermöglichen es Benutzern, mit Ihrer APP zu interagieren, ohne den Touchscreen &ndash; zu verwenden, mit dem Benutzer auf die APP mit einer einzigen Hand Antworten können. Zwei Handgesten werden unterstützt: 
+Handgesten ermöglichen es Benutzern, mit Ihrer APP zu interagieren, ohne den Touchscreen zu verwenden, &ndash; Benutzer auf die APP mit einer einzigen Hand reagieren können. Zwei Handgesten werden unterstützt: 
 
 - Handgelenk ausgeflicke
 - Handgelenk im Handumdrehen
