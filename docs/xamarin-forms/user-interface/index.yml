@@ -115,11 +115,11 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: listview/index.md
             title: ListView
-          - href: map.md
+          - href: map/index.md
             html: 'Informationen zur Verwendung des Kartensteuerelements (Map), einschließlich der erforderlichen Plattformkonfiguration und zum Auffüllen der Karte mit Pins'
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: map.md
+              href: map/index.md
             title: Karten
           - href: menuitem.md
             html: 'Erfahren Sie, wie Sie die MenuItem-Klasse verwenden, um Elemente dem Kontextmenü der ListView-Zellen hinzuzufügen.'

@@ -200,6 +200,7 @@
 #### [Initialisierung und Konfiguration](user-interface/map/index.md)
 #### [Pins](user-interface/map/pins.md)
 #### [Polygone und Polylinien](user-interface/map/polygons.md)
+#### [Geocodierung](user-interface/map/geocoder.md)
 ### [MenuItem](user-interface/menuitem.md)
 ### [Auswahl](user-interface/picker/index.md)
 #### [Festlegen der ItemsSource-Eigenschaft einer Auswahl](user-interface/picker/populating-itemssource.md)
