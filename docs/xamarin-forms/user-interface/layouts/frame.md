@@ -8,36 +8,36 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/06/2019
 ms.openlocfilehash: 619b29a9d65594b1badd805c3361fe1a174d7174
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "69976503"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin. Forms-Frame
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
 Die xamarin. Forms [`Frame`](xref:Xamarin.Forms.Frame) -Klasse ist ein Layout, das verwendet wird, um eine Ansicht mit einem Rahmen zu umschließen, der mit Farbe, Schatten und anderen Optionen konfiguriert werden kann. Frames werden häufig zum Erstellen von Begrenzungen um Steuerelemente verwendet, Sie können jedoch auch verwendet werden, um komplexere Benutzeroberflächen zu erstellen. Weitere Informationen finden Sie unter [Erweiterte Frame Verwendung](#advanced-frame-usage).
 
 Der folgende Screenshot zeigt `Frame` Steuerelemente unter IOS und Android:
 
-Frame Beispiele für Frame Beispiele [für IOS und Android unter IOS und Android ![](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "")
+[![ "Frame Beispiele unter IOS und Android"](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "Frame Beispiele unter IOS und Android")
 
-Die `Frame` -Klasse definiert die folgenden Eigenschaften:
+Die `Frame`-Klasse definiert die folgenden Eigenschaften:
 
-* [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)ein `Color` -Wert, der die Farbe `Frame` des Rahmens bestimmt.
-* [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)ein `float` -Wert, der den gerundeten Radius der Ecke bestimmt.
-* [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)ein `bool` Wert, der bestimmt, ob der Frame einen Schlag Schatten aufweist.
+* [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) ist ein `Color` Wert, der die Farbe des `Frame` Rahmens bestimmt.
+* [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius) ist ein `float` Wert, der den gerundeten Radius der Ecke bestimmt.
+* [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) ist ein `bool` Wert, der bestimmt, ob der Frame einen Schlag Schatten aufweist.
 
-Diese Eigenschaften werden von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. dies `Frame` bedeutet, dass das Ziel von Daten Bindungen sein kann.
+Diese Eigenschaften werden [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. Dies bedeutet, dass die `Frame` das Ziel von Daten Bindungen sein kann.
 
 > [!NOTE]
-> Das `HasShadow` Eigenschafts Verhalten ist plattformabhängig. Der Standardwert ist `true` auf allen Plattformen. Bei UWP werden jedoch keine Schlag Schatten gerendert. Schlag Schatten werden sowohl für Android als auch für IOS gerendert, aber Drop Shadows on IOS sind dunkler und belegen mehr Platz.
+> Das Verhalten der `HasShadow` Eigenschaft ist plattformabhängig. Der Standardwert ist auf allen Plattformen `true`. Bei UWP werden jedoch keine Schlag Schatten gerendert. Schlag Schatten werden sowohl für Android als auch für IOS gerendert, aber Drop Shadows on IOS sind dunkler und belegen mehr Platz.
 
 ## <a name="create-a-frame"></a>Frame erstellen
 
-Eine `Frame` kann in XAML instanziiert werden. Das Standard `Frame` --Objekt verfügt über einen weißen Hintergrund, einen Ablage Schatten und keinen Rahmen. Ein `Frame` -Objekt umschließt normalerweise ein anderes Steuerelement. Das folgende Beispiel zeigt ein Standard `Frame` mäßiges umwickeln eines `Label` -Objekts:
+Eine `Frame` kann in XAML instanziiert werden. Der Standard `Frame`-Objekt verfügt über einen weißen Hintergrund, einen Ablage Schatten und keinen Rahmen. Ein `Frame` Objekt umschließt in der Regel ein anderes Steuerelement Das folgende Beispiel zeigt eine Standard `Frame` Wrapping eines `Label` Objekts:
 
 ```xaml
 <Frame>
@@ -45,7 +45,7 @@ Eine `Frame` kann in XAML instanziiert werden. Das Standard `Frame` --Objekt ver
 </Frame>
 ```
 
-Ein `Frame` kann auch im Code erstellt werden:
+Eine `Frame` kann auch im Code erstellt werden:
 
 ```csharp
 Frame defaultFrame = new Frame
@@ -54,7 +54,7 @@ Frame defaultFrame = new Frame
 };
 ```
 
-`Frame`Objekte können mit abgerundeten Ecken, farbigen Rahmen und Schlag Schatten durch Festlegen von Eigenschaften im XAML angepasst werden. Das folgende Beispiel zeigt ein angepasstes `Frame` Objekt:
+`Frame` Objekte können mit abgerundeten Ecken, farbigen Rahmen und Schlag Schatten durch Festlegen von Eigenschaften im XAML angepasst werden. Das folgende Beispiel zeigt ein angepasstes `Frame` Objekt:
 
 ```xaml
 <Frame BorderColor="Orange"
@@ -78,15 +78,15 @@ Frame frame = new Frame
 
 ## <a name="advanced-frame-usage"></a>Erweiterte Frame Verwendung
 
-Die `Frame` Klasse erbt von `ContentView`, d. h., Sie `View` kann jeden Objekttyp enthalten, einschließlich `Layout` -Objekten. Diese Fähigkeit ermöglicht die `Frame` Verwendung von, um komplexe UI-Objekte, z. b. Karten, zu erstellen.
+Die `Frame`-Klasse erbt von `ContentView`, d. h., Sie kann jeden beliebigen Typ von `View` Objekt enthalten, einschließlich `Layout`-Objekten. Diese Möglichkeit ermöglicht die Verwendung der `Frame`, um komplexe UI-Objekte, z. b. Karten, zu erstellen.
 
 ### <a name="create-a-card-with-a-frame"></a>Erstellen einer Karte mit einem Frame
 
-Die Kombi `Frame` Nation eines- `Layout` Objekts mit einem- `StackLayout` Objekt, wie z. b. einem-Objekt, ermöglicht die Erstellung einer komplexeren Der folgende Screenshot zeigt eine Beispiel Karte, die mit einem `Frame` -Objekt erstellt wurde:
+Die Kombination eines `Frame` Objekts mit einem `Layout`-Objekt, z. b. einem `StackLayout`-Objekt, ermöglicht die Erstellung einer komplexeren Benutzeroberfläche. Der folgende Screenshot zeigt eine Beispiel Karte, die mit einem `Frame` Objekt erstellt wurde:
 
-["Screenshot einer Karte, die mit einem Frame erstellt wurde" Screenshot einer Karte, die mit einem Frame erstellt wurde ![](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "")
+[![ "Screenshot einer Karte, die mit einem Frame erstellt wurde"](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "Screenshot einer mit einem Frame erstellten Karte")
 
-Der folgende XAML-Code zeigt, wie Sie mit der `Frame` -Klasse eine Karte erstellen:
+Der folgende XAML-Code zeigt, wie Sie mit der `Frame`-Klasse eine Karte erstellen:
 
 ```xaml
 <Frame BorderColor="Gray"
@@ -139,9 +139,9 @@ Frame cardFrame = new Frame
 
 ### <a name="round-elements"></a>Round-Elemente
 
-Die `CornerRadius` -Eigenschaft `Frame` des-Steuer Elements kann zum Erstellen eines Kreis Bilds verwendet werden. Der folgende Screenshot zeigt ein Beispiel für ein Rundungs Bild, das mit `Frame` einem-Objekt erstellt wurde:
+Die `CornerRadius`-Eigenschaft des `Frame` Steuer Elements kann zum Erstellen eines Kreis Bilds verwendet werden. Der folgende Screenshot zeigt ein Beispiel für ein Rundungs Bild, das mit einem `Frame` Objekt erstellt wurde:
 
-["Screenshot eines Kreis Bilds, das mit einem Frame erstellt wurde" Screenshot eines Kreis Bilds, das mit einem Frame erstellt wurde ![](frame-images/circle-image-cropped.png)](frame-images/frame-full.png#lightbox "")
+[![ "Screenshot eines mit einem Frame erstellten Kreis Bilds"](frame-images/circle-image-cropped.png)](frame-images/frame-full.png#lightbox "Screenshot eines mit einem Frame erstellten Kreis Bilds")
 
 Der folgende XAML-Code zeigt, wie ein Kreis Bild in XAML erstellt wird:
 
@@ -189,7 +189,7 @@ Frame circleImageFrame = new Frame
 Das Image " **Outdoor. jpg** " muss jedem Platt Form Projekt hinzugefügt werden, und wie dies erreicht wird, hängt von der Plattform ab. Weitere Informationen finden Sie unter [Images in xamarin. Forms](~/xamarin-forms/user-interface/images.md).
 
 > [!NOTE]
-> Abgerundete Ecken Verhalten sich über Plattformen hinweg etwas anders. Der `Image` Wert des `Margin` -Objekts sollte der Hälfte der Differenz zwischen der Bildbreite und der übergeordneten Rahmenbreite liegen und sollte negativ sein, um das Bild gleich `Frame` mäßig innerhalb des Objekts zentrieren zu können. Die angeforderten Breite und Höhe werden jedoch nicht garantiert, sodass die `Margin`Eigenschaften, `HeightRequest` und `WidthRequest` möglicherweise basierend auf der Bildgröße und anderen Layoutoptionen geändert werden müssen.
+> Abgerundete Ecken Verhalten sich über Plattformen hinweg etwas anders. Die `Margin` des `Image` Objekts sollte die Hälfte der Differenz zwischen der Bildbreite und der übergeordneten Rahmenbreite sein und sollte negativ sein, um das Bild gleichmäßig innerhalb des `Frame` Objekts zentrieren zu können. Die angeforderten Breite und Höhe werden jedoch nicht garantiert, sodass die Eigenschaften `Margin`, `HeightRequest` und `WidthRequest` möglicherweise basierend auf der Bildgröße und anderen Layoutoptionen geändert werden müssen.
 
 ## <a name="related-links"></a>Verwandte Links
 
