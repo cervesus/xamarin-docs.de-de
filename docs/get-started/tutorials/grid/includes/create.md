@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 807f0b7b2969d9f1039beb1a7ec7d535be5c84dc
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: b1a041f1a2baae9b06de023f6eae9c6598b80061
+ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277249"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678720"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -33,7 +33,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Label`](xref:Xamarin.Forms.Label)-Element in einem [`Grid`](xref:Xamarin.Forms.Grid) enthält. `Grid` positioniert die untergeordneten Ansichten standardmäßig an einem einzelnen Ort. Daher sollte ein `Grid`-Element, das mehrere untergeordnete Elemente enthält, Spalten und Zeilen angeben. Dies wird in der nächsten Übung behandelt. Darüber hinaus gibt die [`Margin`](xref:Xamarin.Forms.View.Margin)-Eigenschaft die Renderingposition der `Grid`-Klasse innerhalb von [`ContentPage`](xref:Xamarin.Forms.ContentPage) an.
 
     > [!NOTE]
-    > Neben der [`Margin`](xref:Xamarin.Forms.View.Margin)-Eigenschaft kann die [`Padding`](xref:Xamarin.Forms.Layout.Padding)-Eigenschaft auch auf eine [`Grid`](xref:Xamarin.Forms.Grid)-Klasse festgelegt werden. Der Eigenschaftswert [`Padding`](xref:Xamarin.Forms.Layout.Padding) legt den Abstand zwischen den Ansichten im `Grid`-Element fest. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+    > Neben der [`Margin`](xref:Xamarin.Forms.View.Margin)-Eigenschaft kann die [`Padding`](xref:Xamarin.Forms.Layout.Padding)-Eigenschaft auch auf eine [`Grid`](xref:Xamarin.Forms.Grid)-Klasse festgelegt werden. Der Eigenschaftswert [`Padding`](xref:Xamarin.Forms.Layout.Padding) gibt die Entfernung zwischen den Begrenzungen von `Grid` und dessen untergeordnetem Element an. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
@@ -70,7 +70,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!NOTE]
     > Neben der [`Margin`](xref:Xamarin.Forms.View.Margin)-Eigenschaft kann die [`Padding`](xref:Xamarin.Forms.Layout.Padding)-Eigenschaft auch auf eine [`Grid`](xref:Xamarin.Forms.Grid)-Klasse festgelegt werden. Der Eigenschaftswert [`Padding`](xref:Xamarin.Forms.Layout.Padding) legt den Abstand zwischen den Ansichten im `Grid`-Element fest. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
     [![Screenshot einer Bezeichnung in einem Raster unter iOS und Android](../images/create-grid.png "Raster mit einer Bezeichnung")](../images/create-grid-large.png#lightbox "Raster mit einer Bezeichnungs")
 

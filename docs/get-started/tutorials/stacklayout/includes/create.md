@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ea10a3cc4eca0708d1de1aee68bed74c960cbc2
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 80688c0796a112bcb444a15cd96a6b176b8c16e0
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67559996"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72715235"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -15,7 +15,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **StackLayoutTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/quickstarts/deepdive.md#anatomy-of-a-xamarinforms-application) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/quickstarts/deepdive.md).
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **StackLayoutTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -39,7 +39,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: untergeordnete Ansichten in einem StackLayout, unter iOS und Android](../images/create-stacklayout.png "StackLayout mit Bezeichnungsinstanzen")](../images/create-stacklayout-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen")
+    [![Screenshot der untergeordneten Ansichten in einem StackLayout-Element unter iOS und Android](../images/create-stacklayout.png "StackLayout, das Bezeichnungsinstanzen enthält")](../images/create-stacklayout-large.png#lightbox "StackLayout, das Bezeichnungsinstanzen enthält")
 
     Weitere Informationen zur [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse finden Sie unter [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 
@@ -74,9 +74,9 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!NOTE]
     > Neben der [`Margin`](xref:Xamarin.Forms.View.Margin)-Eigenschaft können auch die Eigenschaften [`Padding`](xref:Xamarin.Forms.Layout.Padding) und [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) auf eine [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse festgelegt werden. Der [`Padding`](xref:Xamarin.Forms.Layout.Padding)-Eigenschaftswert gibt den Abstand zwischen Ansichten in der `StackLayout`-Klasse an, und der [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)-Eigenschaftswert gibt den Abstand zwischen den einzelnen untergeordneten Elementen in der `StackLayout`-Klasse an. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: untergeordnete Ansichten in einem StackLayout, unter iOS und Android](../images/create-stacklayout.png "StackLayout mit Bezeichnungsinstanzen")](../images/create-stacklayout-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen")
+    [![Screenshot der untergeordneten Ansichten in einem StackLayout-Element unter iOS und Android](../images/create-stacklayout.png "StackLayout, das Bezeichnungsinstanzen enthält")](../images/create-stacklayout-large.png#lightbox "StackLayout, das Bezeichnungsinstanzen enthält")
 
     Weitere Informationen zur [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse finden Sie unter [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 

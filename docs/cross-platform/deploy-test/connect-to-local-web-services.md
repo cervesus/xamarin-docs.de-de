@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: a29cc650d9aa3976b6fd7aaaa82e233317684335
-ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
+ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
+ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72426562"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72526817"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Herstellen einer Verbindung mit lokalen Webdiensten aus iOS-Simulatoren und Android-Emulatoren
 
@@ -27,7 +27,7 @@ Mobile Anwendungen, die im iOS-Simulator oder Android-Emulator ausgeführt werde
 Bei einer Anwendung, die im iOS-Simulator oder Android-Emulator ausgeführt wird sind jedoch zusätzliche Arbeiten notwendig, damit diese lokale Webdienste nutzen kann, die über HTTPS verfügbar gemacht werden. Für dieses Szenario gehen Sie wie folgt vor:
 
 1. Erstellen Sie ein selbstsigniertes Entwicklungszertifikat auf Ihrem Computer. Weitere Informationen finden Sie unter [Erstellen eines Entwicklungszertifikats](#create-a-development-certificate).
-1. Konfigurieren Sie Ihr Projekt so, dass es den verwalteten `HttpClient`-Netzwerkstapel für Ihren Debugbuild verwendet. Weitere Informationen finden Sie unter [Konfigurieren Ihres Projekts](#configure-your-project).
+1. Konfigurieren Sie Ihr Projekt so, dass es den entsprechenden `HttpClient`-Netzwerkstapel für Ihren Debugbuild verwendet. Weitere Informationen finden Sie unter [Konfigurieren Ihres Projekts](#configure-your-project).
 1. Geben Sie die Adresse Ihres lokalen Computers an. Weitere Informationen finden Sie unter [Angeben der Adresse des lokalen Computers](#specify-the-local-machine-address).
 1. Umgehen Sie die Sicherheitsüberprüfung des lokalen Entwicklungszertifikats. Weitere Informationen finden Sie unter [Umgehen der Zertifikatsicherheitsüberprüfung](#bypass-the-certificate-security-check).
 
@@ -66,7 +66,7 @@ Wenn jedoch eine Anwendung für Entwicklertests eine Verbindung mit einem sicher
 
 ### <a name="android"></a>Android
 
-Xamarin-Anwendungen, die unter Android ausgeführt werden, können den verwalteten Netzwerkstapel `HttpClientHandler` verwenden oder den nativen Netzwerkstapel `AndroidClientHandler`. Standardmäßig verwenden neue Android-Plattformprojekte den Netzwerkstapel `AndroidClientHandler`, um TLS 1.2 zu unterstützen, und verwenden native APIs für eine bessere Leistung und eine kleinere ausführbare Datei. Weitere Informationen zu Android-Netzwerkstapeln finden Sie unter [HttpClient-Stapel und SSL/TLS-Implementierungsselektor für Android](~/android/app-fundamentals/http-stack.md).
+Xamarin-Anwendungen, die unter Android ausgeführt werden, können den verwalteten Netzwerkstapel `HttpClient` verwenden oder den nativen Netzwerkstapel `AndroidClientHandler`. Standardmäßig verwenden neue Android-Plattformprojekte den Netzwerkstapel `AndroidClientHandler`, um TLS 1.2 zu unterstützen, und verwenden native APIs für eine bessere Leistung und eine kleinere ausführbare Datei. Weitere Informationen zu Android-Netzwerkstapeln finden Sie unter [HttpClient-Stapel und SSL/TLS-Implementierungsselektor für Android](~/android/app-fundamentals/http-stack.md).
 
 ## <a name="specify-the-local-machine-address"></a>Angeben der Adresse des lokalen Computers
 

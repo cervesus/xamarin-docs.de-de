@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ec74a049adaa72010bf0566691e4d1f066058d4a
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 9d78f0e9bf3b8d6d227f76b2729be849e5cdd3a6
+ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277245"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678719"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,11 +31,11 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Label`](xref:Xamarin.Forms.Label)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Mit der [`Label.Text`](xref:Xamarin.Forms.Button.Text)-Eigenschaft wird festgelegt, dass der Text angezeigt wird. Mit der [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft wird angegeben, dass der Text horizontal und zentriert ausgerichtet wird.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Label`](xref:Xamarin.Forms.Label)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Mit der [`Label.Text`](xref:Xamarin.Forms.Button.Text)-Eigenschaft wird festgelegt, dass der Text angezeigt wird. Mit der [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft wird angegeben, dass der `Label` horizontal und zentriert ausgerichtet wird.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: zentrierte Beschriftung unter iOS und Android](../images/create-label.png "Zentrierte Beschriftung")](../images/create-label-large.png#lightbox "Zentrierte Beschriftung")
+    [![Screenshot einer zentrierten Bezeichnung unter iOS und Android](../images/create-label.png "Eine zentrierte Bezeichnung")](../images/create-label-large.png#lightbox "Eine zentrierte Bezeichnung")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -66,4 +66,4 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
 
 1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: zentrierte Beschriftung unter iOS und Android](../images/create-label.png "Zentrierte Beschriftung")](../images/create-label-large.png#lightbox "Zentrierte Beschriftung")
+    [![Screenshot einer zentrierten Bezeichnung unter iOS und Android](../images/create-label.png "Eine zentrierte Bezeichnung")](../images/create-label-large.png#lightbox "Eine zentrierte Bezeichnung")

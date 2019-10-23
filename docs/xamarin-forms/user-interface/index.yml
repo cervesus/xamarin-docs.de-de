@@ -43,6 +43,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: button.md
             title: Schaltfläche
+          - href: carouselview/index.md
+            html: 'Erfahren Sie, wie Sie CarouselView zum Darstellen von Daten in einem linearen Karusselllayout verwenden.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: collectionview/index.md
+            title: CarouselView
           - href: checkbox.md
             html: Informationen zur Festlegung eines booleschen Werts mithilfe von CheckBox
             image:
@@ -74,7 +80,7 @@ sections:
               href: datepicker.md
             title: DatePicker
           - href: pop-ups.md
-            html: 'Informationen zum Anzeigen von Dialogfeldern, die einfache Fragen an Benutzer stellen und diese durch Aufgaben führen'
+            html: 'Informationen zum Anzeigen von Dialogfeldern, die einfache Fragen an Benutzer stellen, diese durch Aufgaben führen und Aufforderungen anzeigen.'
             image:
               src: ~/media/icons/i_user-interface.svg
               href: pop-ups.md
@@ -133,6 +139,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: progressbar.md
             title: ProgressBar
+          - href: refreshview.md
+            html: 'Erfahren Sie, wie Sie RefreshView verwenden, um Pull zum Aktualisieren der Funktionen für scrollbaren Inhalt bereitzustellen.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: refreshview.md
+            title: RefreshView
           - href: searchbar.md
             html: Informationen zum Initiieren einer Suche mithilfe des SearchBar-Steuerelements
             image:
