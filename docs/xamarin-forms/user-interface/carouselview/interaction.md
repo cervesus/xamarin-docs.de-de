@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: d020cf809369596076d67b68bdd6b3319e629f1e
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: HT
+ms.openlocfilehash: fd85876b38c21c7ff1ea85d7a61c1449395d56f5
+ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697818"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749787"
 ---
 # <a name="xamarinforms-carouselview-interaction"></a>Xamarin. Forms carouselview-Interaktion
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert die folgenden Eigenschaften, die die Benutzerinteraktion steuern:
 
@@ -273,4 +273,4 @@ Standardmäßig ermöglicht [`CarouselView`](xref:Xamarin.Forms.CarouselView) Be
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Carouselview (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/)
+- [Carouselview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
