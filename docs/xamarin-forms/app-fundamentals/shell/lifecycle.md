@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/25/2019
-ms.openlocfilehash: c008cc29d2ceae073459766597040af653329d71
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2ed51763b5866c15e91d88a6a1a58c7285fb5973
+ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69893956"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749769"
 ---
 # <a name="xamarinforms-shell-lifecycle"></a>Lebenszyklus der Xamarin.Forms-Shell
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein `Appearing`-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein `Disappearing`-Ereignis wird ausgelöst, wenn eine Seite im Begriff ist, nicht mehr auf dem Bildschirm angezeigt zu werden. Diese Ereignisse werden an Seiten weitergegeben und können durch Überschreiben der [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)- oder [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing)-Methoden auf der Seite verarbeitet werden.
 
@@ -39,6 +39,6 @@ Weitere Informationen zur modalen Navigation finden Sie unter [Modale Xamarin.Fo
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xaminals (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Lebenszyklus der Xamarin.Forms-App](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
 - [Modale Xamarin.Forms-Seiten](~/xamarin-forms/app-fundamentals/navigation/modal.md)

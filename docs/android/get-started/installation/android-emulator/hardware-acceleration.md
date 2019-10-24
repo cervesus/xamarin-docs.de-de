@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 6060f7c7e31c52a122c5ccb7a7e7be8dfe58051a
+ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105910"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810538"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -57,7 +57,6 @@ Weitere Informationen zum Starten und Debuggen von Apps mit dem Android-Emulator
 
 ## <a name="accelerating-with-hyper-v"></a>Beschleunigen mit Hyper-V
 
-Hyper-V ist die empfohlene Option zum Beschleunigen des Android-Emulators.
 Lesen Sie den folgenden Abschnitt, um sicherzustellen, dass Ihr Computer Hyper-V unterstützt, bevor Sie Hyper-V aktivieren.
 
 ### <a name="verifying-support-for-hyper-v"></a>Überprüfen der Unterstützung für Hyper-V

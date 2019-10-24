@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
-ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.openlocfilehash: 98def647c38f69ec4f942a06e2187841c4e04459
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72424849"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697168"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartenstecknadel
 
@@ -35,7 +35,7 @@ Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu
 Die Elemente werden im Folgenden erläutert, um einen `CustomMap`-Renderer zu implementieren, der eine native Karte mit einer benutzerdefinierten Stecknadel und eine benutzerdefinierte Ansicht der Stecknadeldaten für jede Plattform anzeigt.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) muss vor der Verwendung initialisiert und konfiguriert werden. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) muss vor der Verwendung initialisiert und konfiguriert werden. Weitere Informationen finden Sie unter [`Maps Control`](~/xamarin-forms/user-interface/map/index.md).
 
 <a name="Creating_the_Custom_Map" />
 
@@ -654,7 +654,7 @@ Weitere Informationen zum Anpassen von einer `MapControl`-Instanz finden Sie auf
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Maps Control (Kartensteuerelement)](~/xamarin-forms/user-interface/map.md)
+- [Maps Control (Kartensteuerelement)](~/xamarin-forms/user-interface/map/index.md)
 - [Maps in Xamarin.iOS (Karten in Xamarin.iOS)](~/ios/user-interface/controls/ios-maps/index.md)
 - [Karten-API](~/android/platform/maps-and-location/maps/maps-api.md)
 - [Customized Pin (Benutzerdefinierte Stecknadel (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
