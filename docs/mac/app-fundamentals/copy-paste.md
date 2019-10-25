@@ -625,7 +625,7 @@ Nachdem alles vorhanden ist, können wir die Anwendung testen. Erstellen Sie die
 
 Wenn Sie das Menü Bearbeiten öffnen, beachten Sie, dass **Ausschneiden**, **Kopieren** und **Einfügen** deaktiviert ist, weil es im Bild-oder Standard-pasteboard kein Bild gibt:
 
-![Öffnen des Menüs "Bearbeiten"](copy-paste-images/run02.png "Öffnen des Menüs "Bearbeiten"")
+![Öffnen des Menüs Bearbeiten](copy-paste-images/run02.png "Öffnen des Menüs Bearbeiten")
 
 Wenn Sie dem Bild ein Bild hinzufügen und das Menü Bearbeiten erneut öffnen, werden die Elemente nun aktiviert:
 

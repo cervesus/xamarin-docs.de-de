@@ -163,11 +163,11 @@ namespace MacXib
 
 Nun wird das Hauptfenster der app in einer **XIb** -Datei definiert, die beim Hinzufügen eines Fenster Controllers automatisch im Projekt enthalten ist. Um den Windows-Entwurf zu bearbeiten, doppelklicken Sie im **Lösungspad**auf die Datei " **MainWindow. XIb** ":
 
-![Auswählen der Datei "MainWindow. XIb"](xib-images/edit01.png "Auswählen der Datei "MainWindow. XIb"")
+![Auswählen der Datei MainWindow. XIb](xib-images/edit01.png "Auswählen der Datei MainWindow. XIb")
 
 Dadurch wird das Fensterdesign in der Interface Builder von Xcode geöffnet:
 
-[![Bearbeiten der Datei "MainWindow. XIb"](xib-images/edit02.png "Bearbeiten der Datei "MainWindow. XIb"")](xib-images/edit02-large.png#lightbox)
+[![Bearbeiten der Datei MainWindow. XIb](xib-images/edit02.png "Bearbeiten der Datei MainWindow. XIb")](xib-images/edit02-large.png#lightbox)
 
 ### <a name="standard-window-workflow"></a>Standard Fenster Workflow
 

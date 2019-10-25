@@ -197,7 +197,7 @@ void OpenDialog (NSObject sender)
 
 Führen Sie die Anwendung jetzt aus, und öffnen Sie das Menü " **Datei** ": 
 
-![Menü "Datei"](menu-images/appmenu09.png "Menü "Datei"")
+![Menü Datei](menu-images/appmenu09.png "Menü Datei")
 
 Beachten Sie, dass das Menü Element **Öffnen** jetzt aktiviert ist. Wenn Sie diese Option auswählen, wird das Dialogfeld Öffnen angezeigt:
 
@@ -469,7 +469,7 @@ Doppelklicken Sie auf die Datei " **Main. Storyboard** " im **Lösungspad** , um
 
 Für unsere spezifische xamarin. Mac-Anwendung verwenden wir nicht das Standardmenü " **Ansicht** ", um es zu entfernen. Wählen Sie in der **Schnittstellen Hierarchie** das Menü Element **Ansicht** aus, das Teil der Hauptmenüleiste ist:
 
-![Auswählen des Menü Elements "Ansicht"](menu-images/maint02.png "Auswählen des Menü Elements "Ansicht"")
+![Auswählen des Menü Elements Ansicht](menu-images/maint02.png "Auswählen des Menü Elements Ansicht")
 
 Drücken Sie ENTF oder RÜCKTASTE, um das Menü zu löschen. Als nächstes verwenden wir nicht alle Elemente im Menü " **Format** " und möchten die Elemente, die wir verwenden, aus den Untermenüs verschieben. Wählen Sie in der **Schnittstellen Hierarchie** die folgenden Menü Elemente aus:
 
@@ -511,7 +511,7 @@ Führen Sie nun Folgendes aus, um das Menü zu erstellen:
     [![Bearbeiten des Menü namens](menu-images/maint12.png "Bearbeiten des Menü namens")](menu-images/maint12-large.png#lightbox)
 5. Benennen wir nun die drei Standard **Menü Elemente** "Address", "Date" und "Gruß" um: 
 
-    [![Das Menü "Ausdrücke"](menu-images/maint13.png "Das Menü "Ausdrücke"")](menu-images/maint13-large.png#lightbox)
+    [![Das Menü Ausdrücke](menu-images/maint13.png "Das Menü Ausdrücke")](menu-images/maint13-large.png#lightbox)
 6. Fügen Sie ein viertes **Menü Element** hinzu, indem Sie ein **Menü Element** aus dem **Bibliotheks Inspektor** ziehen und es "Signature" aufrufen: 
 
     [![Bearbeiten des Menü Element namens](menu-images/maint14.png "Bearbeiten des Menü Element namens")](menu-images/maint14-large.png#lightbox)
@@ -895,7 +895,7 @@ Kontextmenüs werden angezeigt, wenn der Benutzer mit der rechten Maustaste klic
 
 Wir bearbeiten nun die Datei " **Main. Storyboard** " in Xcode und fügen dem Design ein **Fenster** Fenster hinzu, legen die **Klasse** auf "nspanel" im **Identitäts Inspektor**fest, fügen dem Menü " **Fenster** " ein neues **Assistenten** Element hinzu und fügen es an den neuen Fenster mit der **Anzeige**"*":
 
-[![Festlegen des Typs "Typ"](menu-images/context01.png "Festlegen des Typs "Typ"")](menu-images/context01-large.png#lightbox)
+[![Festlegen des Typs Typ](menu-images/context01.png "Festlegen des Typs Typ")](menu-images/context01-large.png#lightbox)
 
 Führen Sie die folgenden Schritte aus:
 
@@ -910,10 +910,10 @@ Führen Sie die folgenden Schritte aus:
     [![Ziehen zum Erstellen einer Tabelle](menu-images/context04.png "Ziehen zum Erstellen einer Tabelle")](menu-images/context04-large.png#lightbox)
 4. Wählen Sie im Popup Dialogfeld die Option **Menü**: 
 
-    ![Festlegen des Typs "Typ"](menu-images/context05.png "Festlegen des Typs "Typ"")
+    ![Festlegen des Typs Typ](menu-images/context05.png "Festlegen des Typs Typ")
 5. Legen Sie aus dem **Identitäts Inspektor**die Klasse des Ansichts Controllers auf "panelviewcontroller" fest: 
 
-    [![Festlegen der Klasse "Klasse"](menu-images/context10.png "Festlegen der Klasse "Klasse"")](menu-images/context10-large.png#lightbox)
+    [![Festlegen der Klasse Klasse](menu-images/context10.png "Festlegen der Klasse Klasse")](menu-images/context10-large.png#lightbox)
 6. Wechseln Sie zurück zu Visual Studio für Mac synchronisieren, und kehren Sie dann zu Interface Builder zurück.
 7. Wechseln Sie zum **Assistenten-Editor** , und wählen Sie die Datei **panelviewcontroller. h** aus.
 8. Erstellen Sie eine Aktion für das **Dokument** Menü Element mit dem Namen `propertyDocument`: 
@@ -996,7 +996,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Wenn die Anwendung ausgeführt wird, wird das neue StatusBar-Element angezeigt. Wenn Sie im Menü ein Element auswählen, wird der Text in der Textansicht geändert: 
 
-![Das Menü "Statusleiste" wird ausgeführt](menu-images/statusbar01.png "Das Menü "Statusleiste" wird ausgeführt")
+![Das Menü Statusleiste wird ausgeführt](menu-images/statusbar01.png "Das Menü Statusleiste wird ausgeführt")
 
 Sehen wir uns nun die Erstellung benutzerdefinierter Dock Menü Elemente an.
 
@@ -1026,7 +1026,7 @@ Erstellen Sie ein benutzerdefiniertes Andock Menü für die Anwendung, indem Sie
 6. Speichern Sie die Änderungen, und wechseln Sie zurück zu Visual Studio für Mac, um mit Xcode zu synchronisieren.
 7. Doppelklicken Sie auf die **Info. plist** -Datei, um Sie zur Bearbeitung zu öffnen: 
 
-    [![Bearbeiten der Datei "Info. plist"](menu-images/dock07.png "Bearbeiten der Datei "Info. plist"")](menu-images/dock07-large.png#lightbox)
+    [![Bearbeiten der Datei Info. plist](menu-images/dock07.png "Bearbeiten der Datei Info. plist")](menu-images/dock07-large.png#lightbox)
 8. Klicken Sie unten auf dem Bildschirm auf die Registerkarte **Quelle** : 
 
     [![Auswählen der Quell Ansicht](menu-images/dock08.png "Auswählen der Quell Ansicht")](menu-images/dock08-large.png#lightbox)

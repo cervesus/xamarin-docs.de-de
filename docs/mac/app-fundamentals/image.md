@@ -115,7 +115,7 @@ Bevor Sie eine Bilddatei in ihrer xamarin. Mac-Anwendung (entweder im C# Code od
     [![Auswählen der hinzu zufügenden Dateien](image-images/add02.png "Auswählen der hinzu zufügenden Dateien")](image-images/add02-large.png#lightbox)
 3. Wenn sich die Dateien nicht bereits im **Ressourcen** Ordner befinden, werden Sie gefragt, ob Sie die Dateien **Kopieren**, **verschieben** oder **Verknüpfen** möchten. Wählen Sie alle aus, die Ihren Anforderungen entsprechen, in der Regel wird **kopiert**:
 
-    ![Auswählen der Aktion "hinzufügen"](image-images/add04.png "Auswählen der Aktion "hinzufügen"")
+    ![Auswählen der Aktion hinzufügen](image-images/add04.png "Auswählen der Aktion hinzufügen")
 4. Die neuen Dateien werden in das Projekt eingeschlossen und zur Verwendung gelesen: 
 
     ![Die neuen Bilddateien, die der Lösungspad hinzugefügt wurden.](image-images/add03.png "Die neuen Bilddateien, die der Lösungspad hinzugefügt wurden.")

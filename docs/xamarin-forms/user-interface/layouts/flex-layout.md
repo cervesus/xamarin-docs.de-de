@@ -186,7 +186,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 Hier ist das Programm, das ausgeführt wird, und progressiv von oben nach unten:
 
-[![Die Seite "Foto Wrapping"](flex-layout-images/PhotoWrapping.png "Die Seite "Foto Wrapping"")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
+[![Die Seite Foto Wrapping](flex-layout-images/PhotoWrapping.png "Die Seite Foto Wrapping")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
 ### <a name="page-layout-with-flexlayout"></a>Seitenlayout mit flexlayout
 
@@ -241,7 +241,7 @@ Die Seite " **Heiliges Grail-Layout** " des Beispiels " **[flexlayoutdemos](http
 
 Hier wird ausgeführt:
 
-[![Die Seite "Heiliges Grail-Layout"](flex-layout-images/HolyGrailLayout.png "Die Seite "Heiliges Grail-Layout"")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
+[![Die Seite Heiliges Grail-Layout](flex-layout-images/HolyGrailLayout.png "Die Seite Heiliges Grail-Layout")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
 Die Navigations-und Nebenbereiche werden mit einer `BoxView` auf der linken und rechten Seite gerendert.
 
@@ -263,7 +263,7 @@ In diesem Programm werden drei angefügte bindbare Eigenschaften veranschaulicht
 
 Die Seite **Katalog Elemente** im Beispiel " **[flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** " ähnelt [Beispiel 1 in Abschnitt 1,1 der Spezifikation "CSS-flexlayoutbox](http://www.w3.org/TR/css-flexbox-1/#overview) " mit der Ausnahme, dass Sie eine horizontal scrollbare Reihe von Bildern und Beschreibungen von drei Affen anzeigt. :
 
-[![Die Seite "Katalog Elemente"](flex-layout-images/CatalogItems.png "Die Seite "Katalog Elemente"")](flex-layout-images/CatalogItems-Large.png#lightbox)
+[![Die Seite Katalog Elemente](flex-layout-images/CatalogItems.png "Die Seite Katalog Elemente")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
 Jede der drei Affen ist eine `FlexLayout`, die in einem `Frame` enthalten ist, dem eine explizite Höhe und Breite zugewiesen ist, und der auch ein untergeordnetes Element eines größeren `FlexLayout` ist. In dieser XAML-Datei werden die meisten Eigenschaften der `FlexLayout` untergeordneten Elemente in Stilen angegeben, aber nur eines davon ist ein impliziter Stil:
 
@@ -388,7 +388,7 @@ Sie können mit den fünf verbleibenden bindbaren Eigenschaften experimentieren,
 
 Wenn das Programm gestartet wird, werden in fünf `Picker` Ansichten die Standardwerte dieser fünf `FlexLayout` Eigenschaften angezeigt. Der `FlexLayout` unten auf dem Bildschirm enthält drei untergeordnete Elemente:
 
-[![Die Experiment Seite: Standard](flex-layout-images/ExperimentDefault.png "Die Seite "Experiment"-Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![Die Experiment Seitenrichtung](flex-layout-images/ExperimentDefault.png "Die Seite "Experiment"-Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 Jede der `Label` Ansichten verfügt über einen grauen Hintergrund, der den Speicherplatz in der `FlexLayout` anzeigt, der `Label` zugeordnet ist. Der Hintergrund des `FlexLayout` selbst ist Alice Blue. Es belegt den gesamten unteren Bereich der Seite, mit Ausnahme eines kleinen Randes auf der linken und rechten Seite.
 
@@ -601,7 +601,7 @@ Die `Shrink`-Eigenschaft spielt eine Rolle, wenn die `Wrap`-Eigenschaft auf `NoW
 
 Die Seite " **Versuch verkleinern** " erstellt eine `FlexLayout` mit einer einzelnen Zeile mit fünf `Label` untergeordneten Elementen, die mehr Platz als die `FlexLayout` Breite benötigen. Der IOS-Screenshot auf der linken Seite zeigt alle `Label` Elemente mit den Standardwerten 1 an:
 
-[![Die Seite "Versuch verkleinern"](flex-layout-images/ShrinkExperiment.png "Die Seite "Versuch verkleinern"")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
+[![Die Seite Versuch verkleinern](flex-layout-images/ShrinkExperiment.png "Die Seite Versuch verkleinern")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
 Im Android-Screenshot wird der `Shrink` Wert für die zweite `Label` auf 0 festgelegt, und die `Label` wird in der vollständigen Breite angezeigt. Außerdem erhält der vierte `Label` einen `Shrink` Wert, der größer als 1 ist, und verkleinert. Der UWP-Bildschirm Abbildung zeigt, dass beide `Label` Elemente den `Shrink` Wert 0 erhalten, damit Sie in ihrer vollen Größe angezeigt werden können, falls dies möglich ist.
 

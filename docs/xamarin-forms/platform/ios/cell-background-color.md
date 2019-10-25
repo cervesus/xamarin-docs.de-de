@@ -56,7 +56,7 @@ Die `ListView.On<iOS>`-Methode gibt an, dass diese plattformspezifische nur unte
 
 Das Ergebnis ist, dass die Hintergrundfarbe in einer [`Cell`](xref:Xamarin.Forms.Cell) auf eine bestimmte [`Color`](xref:Xamarin.Forms.Color)festgelegt werden kann:
 
-[![Screenshot der Header Zellen der Teal-Gruppe unter IOS](cell-background-color-images/group-header-cell-color.png "ListView mit Header Zellen der Gruppe "Blaugrün"")](cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Header Zellen der Gruppe "Blaugrün"")
+[![ListView mit Header Zellen der Gruppe Blaugrün](cell-background-color-images/group-header-cell-color.png "ListView mit Header Zellen der Gruppe Blaugrün")](cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Header Zellen der Gruppe Blaugrün")
 
 ## <a name="related-links"></a>Verwandte Links
 

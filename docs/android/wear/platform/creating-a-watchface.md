@@ -47,11 +47,11 @@ Erstellen Sie ein neues Android Wear 1,0-Projekt namens **watchface** (Weitere I
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-vs-sml.png "Wählen Sie im Dialogfeld "Neues Projekt" die Option App")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
+[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-vs-sml.png "Wählen Sie im Dialogfeld Neues Projekt die Option App")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-xs-sml.png "Wählen Sie im Dialogfeld "Neues Projekt" die Option App")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
+[![Dialogfeld für neues Projekt](creating-a-watchface-images/03-wear-project-xs-sml.png "Wählen Sie im Dialogfeld Neues Projekt die Option App")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -309,11 +309,11 @@ Legen Sie die Buildaktion dieser Datei auf " **androidresource**" fest:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Buildaktion](creating-a-watchface-images/10-android-resource-vs.png "Buildaktion auf "androidresource" festlegen")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
+[![Buildaktion](creating-a-watchface-images/10-android-resource-vs.png "Buildaktion auf androidresource festlegen")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Buildaktion](creating-a-watchface-images/10-android-resource-xs.png "Buildaktion auf "androidresource" festlegen")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
+[![Buildaktion](creating-a-watchface-images/10-android-resource-xs.png "Buildaktion auf androidresource festlegen")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 

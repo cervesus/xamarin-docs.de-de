@@ -241,11 +241,11 @@ In früheren Versionen des IOS-Designers wurde durch Klicken auf eine bereits au
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vsmac.png "Schaltfläche "Frame Bearbeitungsmodus"")
+![Schaltfläche Frame Bearbeitungsmodus](introduction-images/12a-frameeditingmode-vsmac.png "Schaltfläche Frame Bearbeitungsmodus")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vs.png "Schaltfläche "Frame Bearbeitungsmodus"")
+![Schaltfläche Frame Bearbeitungsmodus](introduction-images/12a-frameeditingmode-vs.png "Schaltfläche Frame Bearbeitungsmodus")
 
 -----
 

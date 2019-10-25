@@ -29,7 +29,7 @@ Der Prozess der Implementierung von Lauf Zeit Designs in einer xamarin. Forms-An
 
 Die folgenden Screenshots zeigen Design Seiten, bei denen die IOS-Anwendung ein helles Design und die Android-Anwendung mit einem dunklen Design verwendet:
 
-[![Screenshot der Hauptseite einer Designs-app unter IOS und Android](theming-images/main-page-both-themes.png "Hauptseite der App "Thema"")](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App "Thema"") 
+[![Screenshot der Hauptseite einer Designs-app unter IOS und Android](theming-images/main-page-both-themes.png "Hauptseite der App Thema")](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App Thema") 
 [![Screenshot der Detailseite einer Designs-app unter IOS und Android](theming-images/detail-page-both-themes.png "Detail Seite der APP mit Design")](theming-images/detail-page-both-themes-large.png#lightbox "Detail Seite der APP mit Design")
 
 ## <a name="define-themes"></a>Definieren von Designs
