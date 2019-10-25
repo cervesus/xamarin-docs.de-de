@@ -22,7 +22,7 @@ Die xamarin. Forms [`Frame`](xref:Xamarin.Forms.Frame) -Klasse ist ein Layout, d
 
 Der folgende Screenshot zeigt `Frame` Steuerelemente unter IOS und Android:
 
-[![ "Frame Beispiele unter IOS und Android"](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "Frame Beispiele unter IOS und Android")
+[![Frame Beispiele unter IOS und Android](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "Frame Beispiele unter IOS und Android")
 
 Die `Frame`-Klasse definiert die folgenden Eigenschaften:
 
@@ -84,7 +84,7 @@ Die `Frame`-Klasse erbt von `ContentView`, d. h., Sie kann jeden beliebigen Typ 
 
 Die Kombination eines `Frame` Objekts mit einem `Layout`-Objekt, z. b. einem `StackLayout`-Objekt, ermöglicht die Erstellung einer komplexeren Benutzeroberfläche. Der folgende Screenshot zeigt eine Beispiel Karte, die mit einem `Frame` Objekt erstellt wurde:
 
-[![ "Screenshot einer Karte, die mit einem Frame erstellt wurde"](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "Screenshot einer mit einem Frame erstellten Karte")
+[![Screenshot einer Karte, die mit einem Frame erstellt wurde](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "Screenshot einer mit einem Frame erstellten Karte")
 
 Der folgende XAML-Code zeigt, wie Sie mit der `Frame`-Klasse eine Karte erstellen:
 
