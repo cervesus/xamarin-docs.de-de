@@ -1,18 +1,18 @@
 ---
 title: Visuelles xamarin. Forms-Material
-description: Xamarin. Forms Material Visual kann verwendet werden, um xamarin. Forms-Anwendungen zu erstellen, die unter IOS und Android identisch oder größtenteils identisch aussehen.
+description: Xamarin. Forms Material Visual kann verwendet werden, um xamarin. Forms-Anwendungen zu erstellen, die unter IOS und Android größtenteils identisch aussehen.
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/12/2019
-ms.openlocfilehash: b735541d51321231775b025745e68c54552697d3
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.date: 10/18/2019
+ms.openlocfilehash: b447bd255270eb87f6139ddacadb9d31348ab7d7
+ms.sourcegitcommit: db2cf1b54125499d5320636927484707810c8e27
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "71198497"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72850491"
 ---
 # <a name="xamarinforms-material-visual"></a>Visuelles xamarin. Forms-Material
 
@@ -20,36 +20,38 @@ ms.locfileid: "71198497"
 
 [Material Design](https://material.io) ist ein von Google erstelltes Entwurfssystem, das die Größe, die Farbe, den Abstand und andere Aspekte der Anzeige und des Verhaltens von Ansichten und Layouts festlegt.
 
-Das visuelle xamarin. Forms-Material kann verwendet werden, um Material Entwurfs Regeln auf xamarin. Forms-Anwendungen anzuwenden, um Anwendungen zu erstellen, die in IOS und Android identisch oder sehr identisch aussehen. Wenn die visuelle Visualisierung von Material aktiviert ist, übernehmen unterstützte Ansichten denselben Entwurf plattformübergreifend und sorgen für ein einheitliches Aussehen und Gefühl. Dies wird mit Material Renderer erreicht, die die Material Entwurfs Regeln anwenden.
+Das visuelle xamarin. Forms-Material kann verwendet werden, um Material Entwurfs Regeln auf xamarin. Forms-Anwendungen anzuwenden und Anwendungen zu erstellen, die unter IOS und Android größtenteils identisch aussehen. Wenn die visuelle Visualisierung von Material aktiviert ist, übernehmen unterstützte Ansichten denselben Entwurf plattformübergreifend und sorgen für ein einheitliches Aussehen und Gefühl.
+
+[visuelle Screenshots der![Materialien](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
 
 Der Prozess zum Aktivieren der visuellen xamarin. Forms-Materialisierungen in der Anwendung lautet wie folgt:
 
 1. Fügen Sie das nuget-Paket [xamarin. Forms. Visual. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) zu ihren IOS-und Android-Platt Form Projekten hinzu. Dieses nuget-Paket bietet optimierte Material Design-Renderer unter IOS und Android. Unter IOS stellt das Paket die transitiv Abhängigkeit zu [xamarin. IOS. materialcomponents](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents)bereit. Hierbei handelt es C# sich um eine Bindung an die [Material Komponenten von Google für IOS](https://material.io/develop/ios/). Unter Android stellt das Paket Buildziele bereit, um sicherzustellen, dass das TargetFramework ordnungsgemäß eingerichtet ist.
-1. Initialisieren Sie die Material-Renderer in jedem Platt Form Projekt. Weitere Informationen finden Sie unter [Initialisieren von materialrenderern](#initialize-material-renderers).
-1. Verwenden Sie die Material-Renderer `Material`, indem Sie die [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) -Eigenschaft auf alle Seiten festlegen, die die Material Entwurfs Regeln übernehmen sollen. Weitere Informationen finden Sie unter [nutzungsmaterialrenderer](#consume-material-renderers).
-1. optionale Anpassen der Material-Renderer. Weitere Informationen finden Sie unter [Anpassen von Material Renderer](#customize-material-renderers).
+1. Initialisieren der visuellen Material Visualisierung in den einzelnen Platt Form Projekten. Weitere Informationen finden Sie unter [Initialisieren der visuellen Material Visualisierung](#initialize-material-visual).
+1. Erstellen Sie visuelle Steuerelemente, indem Sie die [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) -Eigenschaft auf alle Seiten `Material` festlegen, die die Material Entwurfs Regeln übernehmen sollen. Weitere Informationen finden Sie unter [nutzungsmaterialrenderer](#apply-material-visual).
+1. optionale Anpassen von Material Steuerelementen. Weitere Informationen finden Sie unter [Anpassen von Material Steuerelementen](#customize-material-visual).
 
 > [!IMPORTANT]
-> Unter Android ist für die Material-Renderer mindestens eine Version von 5,0 (API 21) oder höher und ein TargetFramework der Version 9,0 (API 28) erforderlich. Außerdem erfordert Ihr Platt Form Projekt Android-Unterstützungs Bibliotheken 28.0.0 oder höher, und das Design muss von einem Material Components-Design erben oder weiterhin von einem AppCompat-Design erben. Weitere Informationen finden Sie unter [Getting Started with Material Components for Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md).
+> Unter Android erfordert die Material Visualisierung mindestens eine Version von 5,0 (API 21) oder höher und ein TargetFramework der Version 9,0 (API 28). Außerdem erfordert Ihr Platt Form Projekt Android-Unterstützungs Bibliotheken 28.0.0 oder höher, und das Design muss von einem Material Components-Design erben oder weiterhin von einem AppCompat-Design erben. Weitere Informationen finden Sie unter [Getting Started with Material Components for Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md).
 
-Material-Renderer sind zurzeit im [xamarin. Forms. Visual. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) -nuget-Paket für die folgenden Sichten enthalten:
+Material Visual unterstützt derzeit die folgenden Steuerelemente:
 
+- [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
 - [`Button`](xref:Xamarin.Forms.Button)
 - `CheckBox`
+- [`DatePicker`](xref:Xamarin.Forms.DatePicker)
+- [`Editor`](xref:Xamarin.Forms.Editor)
 - [`Entry`](xref:Xamarin.Forms.Entry)
 - [`Frame`](xref:Xamarin.Forms.Frame)
-- [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
-- [`DatePicker`](xref:Xamarin.Forms.DatePicker)
-- [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 - [`Picker`](xref:Xamarin.Forms.Picker)
-- [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
-- [`Editor`](xref:Xamarin.Forms.Editor)
+- [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
 - [`Slider`](xref:Xamarin.Forms.Slider)
 - [`Stepper`](xref:Xamarin.Forms.Stepper)
+- [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 
-Funktionell unterscheiden sich die materialrenderer nicht von den Standard Renderer.
+Material-Steuerelemente werden durch materialrenderer realisiert, die die Material Entwurfs Regeln anwenden. Funktionale, materialrenderer unterscheiden sich nicht von den Standard renderatoren. Weitere Informationen finden Sie unter [Anpassen der visuellen Material Visualisierung](#customize-material-visual).
 
-## <a name="initialize-material-renderers"></a>Material-Renderer initialisieren
+## <a name="initialize-material-visual"></a>Visuelle Material Visualisierung initialisieren
 
 Nachdem Sie das [xamarin. Forms. Visual. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) -nuget-Paket installiert haben, müssen die Material-Renderer in jedem Platt Form Projekt initialisiert werden.
 
@@ -67,9 +69,9 @@ global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 ```
 
-## <a name="consume-material-renderers"></a>Nutzbare Renderer verbrauchen
+## <a name="apply-material-visual"></a>Material visuelles Element anwenden
 
-Anwendungen können die Material-Renderer verwenden, indem Sie die [`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual) -Eigenschaft für eine Seite, ein Layout oder eine Ansicht auf `Material` festlegen:
+Anwendungen können das visuelle Material visuell aktivieren, indem Sie die [`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual) -Eigenschaft auf einer Seite, einem Layout oder einer Ansicht auf `Material`festlegen:
 
 ```xaml
 <ContentPage Visual="Material"
@@ -85,7 +87,7 @@ ContentPage contentPage = new ContentPage();
 contentPage.Visual = VisualMarker.Material;
 ```
 
-Die [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) -Eigenschaft kann auf jeden Typ festgelegt werden, der `IVisual` implementiert, wobei die [`VisualMarker`](xref:Xamarin.Forms.VisualMarker) -Klasse die folgenden `IVisual` Eigenschaften bereitstellt:
+Wenn Sie die `VisualElement.Visual`-Eigenschaft auf `Material` festlegen, wird Ihre Anwendung angewiesen, die visuellen Renderer für Material anstelle der Standard-Renderer zu verwenden. Die [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) -Eigenschaft kann auf jeden Typ festgelegt werden, der `IVisual`implementiert, wobei die [`VisualMarker`](xref:Xamarin.Forms.VisualMarker) -Klasse die folgenden `IVisual` Eigenschaften bereitstellt:
 
 - `Default` – gibt an, dass die Ansicht mit dem Standardrenderer renderrender.
 - `MatchParent` – gibt an, dass die Ansicht denselben Renderer wie das direkt übergeordnete Element verwenden soll.
@@ -107,9 +109,13 @@ Die wichtigsten sichtbaren Unterschiede zwischen den standardmäßigen renderato
 > [!NOTE]
 > Material Entwurfs Komponenten halten sich an die Richtlinien von Google. Demzufolge sind die Renderer für Material Entwürfe auf diese Größenanpassung und dieses Verhalten ausgerichtet. Wenn Sie eine bessere Kontrolle über Stile oder das Verhalten benötigen, können Sie dennoch eine eigene [Auswirkung](~/xamarin-forms/app-fundamentals/effects/index.md), ein [Verhalten](~/xamarin-forms/app-fundamentals/behaviors/index.md)oder einen [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) erstellen, um die benötigten Details zu erzielen.
 
-## <a name="customize-material-renderers"></a>Anpassen von Material Renderer
+## <a name="customize-material-visual"></a>Material Visualisierung anpassen
 
-Material-Renderer können mithilfe der folgenden Basisklassen optional angepasst werden, genau wie die standardrerenderer:
+Das Material Visual nuget-Paket ist eine Sammlung von Renderer, die die xamarin. Forms-Steuerelemente erkennen. Das Anpassen von visuellen Material Steuerelementen ist identisch mit der Anpassung von Standard Steuerelementen.
+
+Effekte sind das empfohlene Verfahren, wenn ein vorhandenes Steuerelement angepasst werden soll. Wenn ein visueller Renderer für Material vorhanden ist, ist es weniger Aufwand, das Steuerelement mit einem Effekt anzupassen, als es für die Unterklasse des Renderers gilt. Weitere Informationen zu den Auswirkungen finden Sie unter [xamarin. Forms-Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
+
+Benutzerdefinierte Renderer sind das empfohlene Verfahren, wenn kein materialrenderer vorhanden ist. Die folgenden rendererklassen sind in der visuellen Material Visualisierung enthalten:
 
 - `MaterialButtonRenderer`
 - `MaterialCheckBoxRenderer`
@@ -124,7 +130,7 @@ Material-Renderer können mithilfe der folgenden Basisklassen optional angepasst
 - `MaterialSliderRenderer`
 - `MaterialStepperRenderer`
 
-Der folgende Code zeigt ein Beispiel für die Anpassung der `MaterialProgressBarRenderer`-Klasse:
+Die Unterklassen für einen materialrenderer sind fast identisch mit nicht-Material-Renderern. Wenn Sie jedoch einen Renderer exportieren, der einen Material-Renderer Unterklassen ausführt, müssen Sie ein drittes Argument für das `ExportRenderer`-Attribut bereitstellen, das den `VisualMarker.MaterialVisual` Typ angibt:
 
 ```csharp
 using Xamarin.Forms.Material.Android;
@@ -134,7 +140,7 @@ namespace MyApp.Android
 {
     public class CustomMaterialProgressBarRenderer : MaterialProgressBarRenderer
     {
-        ...
+        //...
     }
 }
 ```
@@ -142,7 +148,7 @@ namespace MyApp.Android
 In diesem Beispiel gibt der `ExportRendererAttribute` an, dass die `CustomMaterialProgressBarRenderer` Klasse zum Rendering der [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) Ansicht verwendet wird, wobei der `IVisual` Typ als drittes Argument registriert wird.
 
 > [!NOTE]
-> Ein Renderer, der einen `IVisual` Typ angibt, wird als Teil seiner `ExportRendererAttribute` verwendet, um die ausgelieferten Ansichten anstelle des standardrenderers zu renderzieren. Beim rendererauswahlzeitpunkt wird die `Visual`-Eigenschaft der Sicht überprüft und in den rendererauswahlvorgang eingeschlossen.
+> Ein Renderer, der einen `IVisual` Typ angibt, wird als Teil seiner `ExportRendererAttribute`verwendet, um die ausgelieferten Ansichten anstelle des standardrenderers zu renderzieren. Beim rendererauswahlzeitpunkt wird die `Visual`-Eigenschaft der Sicht überprüft und in den rendererauswahlvorgang eingeschlossen.
 
 Weitere Informationen zu benutzerdefinierten renderatoren finden Sie unter [benutzerdefinierte Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
@@ -150,4 +156,5 @@ Weitere Informationen zu benutzerdefinierten renderatoren finden Sie unter [benu
 
 - [Visuelles Material (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 - [Erstellen eines visuellen xamarin. Forms-Renderers](create.md)
+- [Xamarin. Forms-Effekte](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Benutzerdefinierte Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
