@@ -388,7 +388,7 @@ Sie können mit den fünf verbleibenden bindbaren Eigenschaften experimentieren,
 
 Wenn das Programm gestartet wird, werden in fünf `Picker` Ansichten die Standardwerte dieser fünf `FlexLayout` Eigenschaften angezeigt. Der `FlexLayout` unten auf dem Bildschirm enthält drei untergeordnete Elemente:
 
-[![Die Experiment Seitenrichtung](flex-layout-images/ExperimentDefault.png "Die Seite "Experiment"-Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![Die Experiment Seitenrichtung](flex-layout-images/ExperimentDefault.png "Die Seite Experiment-Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 Jede der `Label` Ansichten verfügt über einen grauen Hintergrund, der den Speicherplatz in der `FlexLayout` anzeigt, der `Label` zugeordnet ist. Der Hintergrund des `FlexLayout` selbst ist Alice Blue. Es belegt den gesamten unteren Bereich der Seite, mit Ausnahme eines kleinen Randes auf der linken und rechten Seite.
 
