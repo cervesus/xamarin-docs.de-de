@@ -3,15 +3,15 @@ title: 'Teil 2: Architektur'
 description: In diesem Dokument werden Architekturmuster beschrieben, die zum entwickeln plattformübergreifender Anwendungen hilfreich sind. Es werden typische Anwendungsebenen (Datenschicht, Datenzugriffs Schicht usw.) und gängige Mobile Software Muster (MVVM, MVC usw.) erläutert.
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: e1b1a98bf06bbd03b382f0b7263e6965d4efad15
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 84a06e23ec7125892701762ab5bad7b86a8faf90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762107"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030267"
 ---
 # <a name="part-2---architecture"></a>Teil 2: Architektur
 
@@ -46,7 +46,7 @@ Muster sind eine bewährte Methode, um wiederkehrende Lösungen für häufige Pr
 
 - **Model, View, ViewModel (MVVM)** – das Model-View-ViewModel-Muster ist beliebt bei Frameworks, die Datenbindung unterstützen, z. b. xamarin. Forms. Sie wurde durch XAML-aktivierte sdche wie Windows Presentation Foundation (WPF) und Silverlight populär. Dabei fungiert ViewModel durch Datenbindung und Befehle als zwischen den Daten (Modell) und Benutzeroberfläche (Ansicht).
 - **Model, View, Controller (MVC)** – ein gängiges und häufig falsch verstandenes Muster, wird MVC am häufigsten beim Aufbau von Benutzeroberflächen verwendet und bietet eine Trennung zwischen der tatsächlichen Definition eines Bildschirm der Benutzeroberfläche (Ansicht), der dahinter liegenden Engine, die die Interaktion verarbeitet ( Controller) und die Daten, die Sie Auffüllen (Modell). Das Modell ist tatsächlich ein vollkommen optionales Element. Daher liegt der Kern des Verständnisses dieses Musters in der Ansicht und dem Controller. MVC ist ein beliebter Ansatz für IOS-Anwendungen.
-- **Business Fassaden** – auch als Manager-Muster bezeichnet, stellt einen vereinfachten Einstiegspunkt für komplexe Aufgaben bereit. Beispielsweise können Sie in einer Aufgaben nach Verfolgungs Anwendung über `TaskManager` eine-Klasse mit Methoden `GetAllTasks()` wie, `GetTask(taskID)` , `SaveTask (task)` usw. verfügen. Die `TaskManager` -Klasse stellt eine Fassade für die innere Funktionsweise des eigentlichen Speicherns/Abrufens von Aufgaben Objekten bereit.
+- **Business Fassaden** – auch als Manager-Muster bezeichnet, stellt einen vereinfachten Einstiegspunkt für komplexe Aufgaben bereit. Beispielsweise können Sie in einer Aufgaben nach Verfolgungs Anwendung über eine `TaskManager`-Klasse mit Methoden wie `GetAllTasks()`, `GetTask(taskID)`, `SaveTask (task)` usw. verfügen. Die `TaskManager`-Klasse stellt eine Fassade für die innere Abläufe dar, in denen Aufgaben Objekte tatsächlich gespeichert bzw. abgerufen werden.
 - **Singleton** – das Singleton-Muster stellt eine Methode bereit, mit der nur eine einzelne Instanz eines bestimmten Objekts vorhanden sein kann. Wenn Sie beispielsweise sqlite in mobilen Anwendungen verwenden, benötigen Sie nur eine Instanz der Datenbank. Die Verwendung des Singleton-Musters ist eine einfache Möglichkeit, dies sicherzustellen.
 - **Anbieter** – ein Muster, das von Microsoft (wohl vergleichbar mit der Strategie oder grundlegender Abhängigkeitsinjektion) geprägt ist, um die Wiederverwendung von Code für Silverlight-, WPF-und WinForms-Anwendungen zu fördern. Gemeinsam verwendeter Code kann für eine Schnittstelle oder eine abstrakte Klasse geschrieben werden, und plattformspezifische konkrete Implementierungen werden bei der Verwendung des Codes geschrieben und weitergegeben.
 - **Async** – nicht zu verwechseln mit dem Async-Schlüsselwort, wird das asynchrone Muster verwendet, wenn Arbeitsaufgaben mit langer Laufzeit ausgeführt werden müssen, ohne die Benutzeroberfläche oder die aktuelle Verarbeitung zu halten. In der einfachsten Form beschreibt das Async-Muster einfach, dass Aufgaben mit langer Ausführungszeit in einem anderen Thread (oder einer ähnlichen Thread Abstraktion, z. b. einer Aufgabe) gestartet werden sollen, während der aktuelle Thread weiterhin verarbeitet und auf eine Antwort vom Hintergrundprozess lauscht. , und aktualisiert dann die Benutzeroberfläche, wenn Daten und oder Status zurückgegeben werden.

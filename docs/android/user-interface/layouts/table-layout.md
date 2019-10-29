@@ -3,20 +3,20 @@ title: Xamarin. Android tablelayout
 ms.prod: xamarin
 ms.assetid: 0C7B9C95-5E5F-A069-BA37-984E49F7DCAD
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 0e09bf2364df9b672a9612829eaa7a8ba343b0e9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4175b1fa62b2bc0e4209d13934c2bdbdd1e2a085
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758396"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028750"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin. Android tablelayout
 
-[`TableLayout`](xref:Android.Widget.TableLayout)ist eine[`ViewGroup`](xref:Android.Views.ViewGroup)
-das untergeordnete Element anzeigt[`View`](xref:Android.Views.View)
+[`TableLayout`](xref:Android.Widget.TableLayout) ist ein [`ViewGroup`](xref:Android.Views.ViewGroup)
+, das untergeordnete [`View`](xref:Android.Views.View) anzeigt
 Elemente in Zeilen und Spalten.
 
 Starten Sie ein neues Projekt mit dem Namen **hellotablelayout**.
@@ -102,12 +102,12 @@ Starten Sie ein neues Projekt mit dem Namen **hellotablelayout**.
 </TableLayout>
 ```
 
-Beachten Sie, dass dies der Struktur einer HTML-Tabelle ähnelt. Die[`TableLayout`](xref:Android.Widget.TableLayout)
-das Element ist wie das `<table>` HTML-Element.[`TableRow`](xref:Android.Widget.TableRow)
-ist wie ein `<tr>` -Element, aber für die Zellen können Sie beliebige Arten von [`View`](xref:Android.Views.View) Elementen verwenden. In diesem Beispiel wird ein[`TextView`](xref:Android.Widget.TextView)
-wird für jede Zelle verwendet. Zwischen einigen Zeilen gibt es auch eine einfache [`View`](xref:Android.Views.View), die zum Zeichnen einer horizontalen Linie verwendet wird.
+Beachten Sie, dass dies der Struktur einer HTML-Tabelle ähnelt. Der [`TableLayout`](xref:Android.Widget.TableLayout)
+das Element ist wie das HTML-`<table>` Element. [`TableRow`](xref:Android.Widget.TableRow)
+ist wie ein `<tr>` Element; Allerdings können Sie für die Zellen eine beliebige Art [`View`](xref:Android.Views.View) Elements verwenden. In diesem Beispiel wird ein [`TextView`](xref:Android.Widget.TextView)
+wird für jede Zelle verwendet. Zwischen einigen Zeilen gibt es auch eine einfache [`View`](xref:Android.Views.View), die verwendet wird, um eine horizontale Linie zu zeichnen.
 
-Stellen Sie sicher, dass die **hellotablelayout** -Aktivität dieses Layout lädt.[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Stellen Sie sicher, dass die **hellotablelayout** -Aktivität dieses Layout in der [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 anzuwenden
 
 ```csharp
@@ -118,11 +118,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-Die [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)-Methode lädt die Layoutdatei für [`Activity`](xref:Android.App.Activity)das, das durch die Ressourcen &mdash; -ID `Resource.Layout.Main` angegeben wird, bezieht sich auf die Layoutdatei **Resources/Layout/Main. axml** .
+Die [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*))-Methode lädt die Layoutdatei für die [`Activity`](xref:Android.App.Activity), die durch die Ressourcen-ID angegeben ist &mdash; `Resource.Layout.Main` verweist auf die Layoutdatei **Resources/Layout/Main. axml** .
 
 Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 
-[![Screenshot der tablelayout-APP, die mehrere Tabellenzeilen anzeigt](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
+[![Beispiel-Screenshot der tablelayout-APP, die mehrere Tabellenzeilen anzeigt](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
 
 ## <a name="references"></a>Verweise
 
@@ -130,4 +130,4 @@ Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 - [`TableRow`](xref:Android.Widget.TableRow)
 - [`TextView`](xref:Android.Widget.TextView)
 
-_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._
+_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](https://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._

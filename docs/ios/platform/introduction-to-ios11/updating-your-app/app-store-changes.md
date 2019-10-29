@@ -4,15 +4,15 @@ description: In diesem Dokument werden Änderungen am App Store in ios 11 erläu
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752330"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032136"
 ---
 # <a name="app-store-changes-in-ios-11"></a>App Store-Änderungen in ios 11
 
@@ -50,7 +50,7 @@ Um Ihre in-App-Käufe zur herauf Stufung verfügbar zu machen, öffnen Sie Ihre 
 
 ![App Store-herauf Stufung im Abschnitt "iTune Connect"](app-store-changes-images/image4.png)
 
-Außerdem müssen Sie die `ShouldAddStorePayment` -Methode `SKPaymentTransactionObserver` dem Protokoll in Ihrer APP hinzufügen.
+Außerdem müssen Sie die `ShouldAddStorePayment`-Methode dem `SKPaymentTransactionObserver`-Protokoll in Ihrer APP hinzufügen.
 
 Weitere Informationen zu in-App-Kaufaktionen finden Sie unter Apple [promoten in-App-Käufe](https://developer.apple.com/app-store/promoting-in-app-purchases/) .
 

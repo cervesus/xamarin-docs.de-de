@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit dem Zwischenablage erläute
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 446006b89b82a1f5070a45d7e296e0563d74dbe4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769935"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032622"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Kopieren und Einfügen in xamarin. Mac
 
@@ -625,7 +625,7 @@ Nachdem alles vorhanden ist, können wir die Anwendung testen. Erstellen Sie die
 
 Wenn Sie das Menü Bearbeiten öffnen, beachten Sie, dass **Ausschneiden**, **Kopieren** und **Einfügen** deaktiviert ist, weil es im Bild-oder Standard-pasteboard kein Bild gibt:
 
-![Öffnen des Menüs Bearbeiten](copy-paste-images/run02.png "Öffnen des Menüs Bearbeiten")
+![Öffnen des Menüs "Bearbeiten"](copy-paste-images/run02.png "Öffnen des Menüs "Bearbeiten"")
 
 Wenn Sie dem Bild ein Bild hinzufügen und das Menü Bearbeiten erneut öffnen, werden die Elemente nun aktiviert:
 

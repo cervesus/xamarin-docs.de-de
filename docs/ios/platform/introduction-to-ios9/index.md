@@ -4,21 +4,21 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752000"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031780"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
 _In diesem Artikel werden alle neuen und geänderten APIs und Features vorgestellt, die in ios 9 für xamarin. IOS-Entwickler zur Verfügung stehen._
 
-![](images/ios9-sml.png "IOS 9-Logo")
+![](images/ios9-sml.png "The iOS 9 logo")
 
 Apple hat mehrere neue APIs und Dienste in ios 9 zusammen mit vielen Verbesserungen an vorhandenen Features hinzugefügt.
 
@@ -137,9 +137,9 @@ In ios 9 hat Apple die Keychain erweitert, um einen neuen Verschlüsselungs Schl
 
 - Eine neue Berührungs-ID-Einschränkung, die Keychain-Elemente für ungültig erklärt, wenn die Fingerabdruckdatenbank geändert wird.
 - Neue Einschränkungen, die das Erstellen von Access Control Listeneinträgen mit der Fingereingabe-ID oder Kennung ermöglichen.
-- Ein neuer Authentifizierungs Kontext, mit dem Sie die Authentifizierung unabhängig von `SecItem` den aufrufen aufrufen können.
+- Ein neuer Authentifizierungs Kontext, mit dem Sie die Authentifizierung unabhängig von `SecItem` aufrufen aufrufen können.
 - Access Control Listen Entropie (mit der Option "Anwendungs Kennwort") für die von der APP bereitgestellte Schlüsselbund Element-Verschlüsselung.
-- Unterstützung für das Erstellen und Verwenden von Schlüsseln innerhalb der sicheren Enclave `kSecAttrTokenIDSecureEnclave` (über das-Attribut).
+- Unterstützung für das Erstellen und Verwenden von Schlüsseln innerhalb der sicheren Enclave (über das `kSecAttrTokenIDSecureEnclave`-Attribut).
 
 Weitere Informationen finden Sie [in unserer Einführung in die Berührungs-ID](~/ios/platform/touchid.md) -Dokumentation.
 
@@ -177,8 +177,8 @@ Weitere Informationen finden Sie in unserer zusätzlichen Dokumentation zu [IOS 
 Apple hat die folgenden APIs und Funktionen in ios 9 als veraltet markiert:
 
 - **Adressbuch & Address Book UI** : Diese APIs wurden durch die Benutzeroberflächen-Frameworks Contact und Contact ersetzt. Weitere Informationen finden Sie in unserer Benutzeroberflächen Dokumentation zu [Kontakten und Kontakten](~/ios/platform/contacts.md) .
-- **Cbcentralmanager** : die `RetrievePeripherals` - `RetrieveConnectedPeripherals` Methode `CBCentralManager` und die-Methode der-Klasse wurden in ios 9 entfernt. Wenn Sie diese Methoden aufrufen, stürzt eine App ab, wenn ein Zubehör oder ein App-Start paarweise gekoppelt wird.
-- **Fetchallchanges** -der `FetchAllChanges` der `CKFetchRecordChangesOperation` Klasse wurde abgewertet und wird in ios 9 entfernt.
+- **Cbcentralmanager** : die `RetrievePeripherals`-und `RetrieveConnectedPeripherals` Methoden der `CBCentralManager`-Klasse wurden in ios 9 entfernt. Wenn Sie diese Methoden aufrufen, stürzt eine App ab, wenn ein Zubehör oder ein App-Start paarweise gekoppelt wird.
+- **Fetchallchanges** : der `FetchAllChanges` der `CKFetchRecordChangesOperation` Klasse wurde abgewertet und wird in ios 9 entfernt.
 - **Media Player** -das Media Player Framework ist in ios 9 veraltet. Verwenden Sie stattdessen avkit oder die AV Foundation-APIs.
 
 Eine umfassende Liste der spezifischen API-Abgrenzungen finden Sie in der Dokumentation zu den [IOS 9,0-API-Distributionen](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222) von Apple.
@@ -187,19 +187,19 @@ Eine umfassende Liste der spezifischen API-Abgrenzungen finden Sie in der Dokume
 
 Wir haben einige [IOS 9-spezifische Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9) für den Einstieg:
 
-- [AstroLayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
+- [Astrolayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
-- [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
+- [Metalperformanceshadershelloworld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
 - [Musik Bewegung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
-- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
-- [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
+- [Photoprogress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [Abbild Katalogisierung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
-- [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
+- ["Stickycorners"](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 Sehen Sie sich auch die IOS-Abschnitte dieser Beispiele an (Begleit Mac OS X Versionen kommen!):
 
-- [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
-- [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
+- [Agentscatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
+- [Metalkitessentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
 
 ## <a name="related-links"></a>Verwandte Links
 

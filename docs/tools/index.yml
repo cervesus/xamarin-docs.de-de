@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin-Tools
 metadata:
   description: 'Tools, die dabei helfen, Ihren Xamarin-Entwicklungsprozess zu verbessern.'
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 08/08/2018
   ms.topic: landing-page
 abstract:
@@ -14,7 +14,7 @@ abstract:
       - href: 'https://visualstudio.com/'
         text: Visual Studio
       - href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
-        text: Versionshinweise
+        text: Versionsinformationen
 sections:
   - title: Tools
     items:

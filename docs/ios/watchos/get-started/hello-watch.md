@@ -4,15 +4,15 @@ description: Dieses Dokument enthält eine exemplarische Vorgehensweise zum Aufb
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768691"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032774"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchos – Exemplarische Vorgehensweise
 
@@ -24,17 +24,17 @@ Nachdem Sie eine Lösung erstellt haben, die die Schritte unter [Setup und Insta
 
 Überprüfen Sie, ob Ihre [Verweise korrekt sind](~/ios/watchos/get-started/project-references.md): die übergeordnete app enthält einen Verweis auf die Erweiterung, und die Erweiterung enthält einen Verweis auf die Watch-app.
 
-Vergewissern Sie sich, dass die Bündel Bezeichner der \*. watchkitextension \*. watchkitapp-Konvention folgen und dass die Datei "Info. plist" der Erweiterung den **wkapp-Bundle-ID** -Wert für die Paket-ID Ihrer Watch-App festgelegt hat.
+Vergewissern Sie sich, dass Ihre Paket-IDs der \*. watchkitextension-\*. watchkitapp-Konvention entsprechen und dass die Datei "Info. plist" der Erweiterung den **wkapp-Bundle-ID** -Wert für die Paket-ID Ihrer Watch-App festgelegt hat.
 
 Sie sollten ihre Watch-APP jetzt ausführen können, aber da die storyboarddatei in der Watch-App leer ist, können Sie nicht sagen.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![](hello-watch-images/projectstructure.png "Der Projektmappen-Explorer")
+![](hello-watch-images/projectstructure.png "The Solution Explorer")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](hello-watch-images/vs-projectstructure.png "Der Projektmappen-Explorer")
+![](hello-watch-images/vs-projectstructure.png "The Solution Explorer")
 
 -----
 
@@ -47,7 +47,7 @@ Doppelklicken Sie in ihrer Watch-App auf das Interface. Storyboard, um den xamar
 1. Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf **interfakecontroller** und **Hi Watch**fest.
 1. Überprüfen, ob die **Klasse** auf **interfacecontroller** festgelegt ist
 
-    ![](hello-watch-images/interfacecontrollerattributes.png "Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf interfakecontroller und Hi Watch fest.")
+    ![](hello-watch-images/interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -58,7 +58,7 @@ Doppelklicken Sie in ihrer Watch-App auf das Interface. Storyboard, um es mit de
 1. Klicken Sie auf den Schnittstellen Controller. immer
 1. Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf **interfakecontroller** und **Hi Watch**fest.
 
-    ![](hello-watch-images/vs-interfacecontrollerattributes.png "Legen Sie den Bezeichner und den Titel des Schnittstellen Controllers auf interfakecontroller und Hi Watch fest.")
+    ![](hello-watch-images/vs-interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
 -----
 
@@ -70,24 +70,24 @@ Erstellen Sie die Benutzeroberfläche:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![](hello-watch-images/draganddrop.png "Legen Sie den Text und die Attribute der Steuerelemente wie dargestellt fest.")
+![](hello-watch-images/draganddrop.png "Set the text and attributes of the controls as shown")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](hello-watch-images/vs-draganddrop.png "Legen Sie den Text und die Attribute der Steuerelemente wie dargestellt fest.")
+![](hello-watch-images/vs-draganddrop.png "Set the text and attributes of the controls as shown")
 
 -----
 
-1. Legen Sie den **Namen** für jedes Steuerelement im **eigenschaftenpad** fest. In diesem Beispiel haben wir und `myButton` `myLabel`verwendet.
+1. Legen Sie den **Namen** für jedes Steuerelement im **eigenschaftenpad** fest. In diesem Beispiel haben wir `myButton` und `myLabel`verwendet.
 
 1. Wählen Sie die Schaltfläche auf dem Storyboard aus, und navigieren Sie zur **Ereignis** Liste des **eigenschaftenpad** .
 
-1. Erstellen Sie eine neue **Aktion** , `OnButtonPress` indem **Sie eingeben**und die EINGABETASTE drücken.
+1. Erstellen Sie eine neue **Aktion** , indem Sie `OnButtonPress` eingeben und die **Eingabe**Taste drücken.
   Die Aktion wird in der Liste angezeigt, und in C#wird automatisch eine partielle Methode erstellt.
 
-![](hello-watch-images/buttonaction.png "Die onbuttonpress-Aktion, die einer Schaltfläche hinzugefügt wurde")
+![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-Nachdem Sie das Storyboard gespeichert haben, wird die **InterfaceController.Designer.cs** mit den Steuerelement Namen und-Aktionen aktualisiert. Wenn Sie diese Datei nach der Aktualisierung öffnen, können Sie sehen, wie die `RegisterAttribute` dem Controller entspricht und wie UI-Steuerelemente mit C# den mit `OutletAttribute` und markierten Instanzvariablen übereinstimmen und wie Aktionen partiellen Methoden zugeordnet werden, die mit dem `ActionAttribute`:
+Nachdem Sie das Storyboard gespeichert haben, wird die **InterfaceController.Designer.cs** mit den Steuerelement Namen und-Aktionen aktualisiert. Wenn Sie diese Datei nach der Aktualisierung öffnen, können Sie sehen, wie die `RegisterAttribute` dem Controller entspricht, und wie UI-Steuerelemente C# den mit der`OutletAttribute`markierten Instanzvariablen entsprechen und wie Aktionen partiellen Methoden zugeordnet werden, die mit dem markiert sind`ActionAttribute`:
 
 ```csharp
 // WARNING
@@ -136,7 +136,7 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 }
 ```
 
-Dieser Code sollte Recht transparent sein: die Instanzvariable `clickCount` wird jedes Mal inkrementiert, wenn die-Funktion `OnButtonPress` aufgerufen wird. Der Text von `myLabel` wird geändert, um diese Anzahl widerzuspiegeln. `myLabel`natürlich ist der Name eines der Outlets, die Sie in Xcode erstellt haben. Die `partial` -Funktion ist die Implementierung der-Funktion, die dem Namen der von Ihnen angegebenen Aktion zugeordnet ist.
+Dieser Code sollte Recht transparent sein: die Instanzvariable `clickCount` wird jedes Mal erhöht, wenn die Funktion `OnButtonPress` aufgerufen wird. Der Text `myLabel` wird geändert, um diese Anzahl widerzuspiegeln. `myLabel`ist natürlich der Name eines der Outlets, die Sie in Xcode erstellt haben. Die `partial`-Funktion ist die Implementierung der-Funktion, die dem Namen der von Ihnen angegebenen Aktion zugeordnet ist.
 
 Wenn dies nicht bereits das Startprojekt ist,
 
@@ -146,15 +146,15 @@ Wenn dies nicht bereits das Startprojekt ist,
 
 1. Klicken Sie auf die Schaltfläche **Debuggen** , um einen Build-und simulatorstart
 
-    [![](hello-watch-images/readytodebug-sml.png "Die Visual Studio-Schnittstellen Elemente")](hello-watch-images/readytodebug.png#lightbox)
+    [![](hello-watch-images/readytodebug-sml.png "The Visual Studio interface elements")](hello-watch-images/readytodebug.png#lightbox)
 
 Wenn der Simulator gestartet wird, klicken Sie auf die Schaltfläche, um die Bezeichnung zu erhöhen.
 Herzlichen Glückwunsch! Sie haben eine Watch-App!
 
-![](hello-watch-images/running.png "Die im Simulator laufende App")
+![](hello-watch-images/running.png "The app running in the Simulator")
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Getting Started (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
-- [Setup und Installation](~/ios/watchos/get-started/installation.md)
-- [Erste Watch-App-video](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [Einrichtung und Installation](~/ios/watchos/get-started/installation.md)
+- [Video zur ersten Watch-App](https://blog.xamarin.com/your-first-watch-kit-app/)

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie eine Arkit-app in xama
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/01/2017
-ms.openlocfilehash: 7f53108460c4e0799ab6c4078d8bb26788b0bf6e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 67ee62fe18385f3a79f4afcb26299990f4666763
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752543"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032237"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Verwenden von Arkit mit urhusharp in xamarin. IOS
 
@@ -36,26 +36,26 @@ Wenn Sie auf diese Weise ein Objekt in den 3D-Bereich platzieren und der Benutze
 
 ### <a name="ios-application-launch"></a>IOS-Anwendungsstart
 
-Ihre IOS-Anwendung muss ihren 3D-Inhalt erstellen und starten. dazu erstellen Sie einen, der eine Unterklasse von `Urho.Application` implementiert, und geben den Setup Code an, indem Sie die `Start` -Methode überschreiben.  An dieser Stelle wird Ihre Szene mit Daten aufgefüllt, Ereignishandler werden eingerichtet usw.
+Ihre IOS-Anwendung muss ihren 3D-Inhalt erstellen und starten. dazu erstellen Sie eine, die eine Unterklasse des `Urho.Application` implementiert, und geben Ihren Setup Code an, indem Sie die `Start`-Methode überschreiben.  An dieser Stelle wird Ihre Szene mit Daten aufgefüllt, Ereignishandler werden eingerichtet usw.
 
-Wir haben eine `Urho.ArkitApp` -Klasse eingeführt, die `Urho.Application` Unterklassen und `Start` für Ihre-Methode die große Arbeit leistet.   Sie müssen lediglich Ihre vorhandene Urho-Anwendung verwenden, um die Basisklasse in den Typ `Urho.ArkitApp` zu ändern, und Sie haben eine Anwendung, die ihre Urho-Szene auf der ganzen Welt ausführen wird.
+Wir haben eine `Urho.ArkitApp` Klasse eingeführt, die Unterklassen `Urho.Application` und auf der `Start`-Methode die große Arbeit erledigt.   Sie müssen für Ihre vorhandene Urho-Anwendung lediglich die Basisklasse so ändern, dass Sie vom Typ `Urho.ArkitApp` ist, und Sie verfügen über eine Anwendung, die ihre Urho-Szene auf der ganzen Welt ausführen wird.
 
 ### <a name="the-arkitapp-class"></a>Die arkitapp-Klasse
 
 Diese Klasse bietet eine Reihe von praktischen Standardwerten, sowohl eine Szene mit einigen schlüsselobjekten als auch die Verarbeitung von Arkit-Ereignissen, die vom Betriebssystem bereitgestellt werden.
 
-Das Setup erfolgt in der `Start` virtuellen Methode.   Wenn Sie diese Methode für die-Unterklasse überschreiben, müssen Sie sicherstellen, dass Sie mit Ihrem über `base.Start()` geordneten Element verkettet werden, indem Sie Ihre eigene Implementierung verwenden.
+Das Setup findet in der virtuellen `Start`-Methode statt.   Wenn Sie diese Methode in der Unterklasse überschreiben, müssen Sie sicherstellen, dass Sie mithilfe von `base.Start()` in ihrer eigenen Implementierung mit ihrem übergeordneten Element verkettet werden.
 
-Die `Start` -Methode richtet die Szene, den Viewport, die Kamera und eine direktionale Beleuchtung ein und zeigt diese als öffentliche Eigenschaften an:
+Die `Start`-Methode richtet die Szene, den Viewport, die Kamera und eine direktionale Beleuchtung ein und zeigt diese als öffentliche Eigenschaften an:
 
-- ein `Scene` , der die Objekte enthalten soll.
-- eine direktionale `Light` mit Shadows und deren Position über die `LightNode` -Eigenschaft verfügbar ist.
-- ein `Camera` , dessen Komponenten aktualisiert werden, wenn Arkit ein Update für die Anwendung bereitstellt und
-- eine `ViewPort` , die die Ergebnisse anzeigt.
+- eine `Scene`, um die Objekte zu speichern.
+- eine direktionale `Light` mit Schatten und deren Speicherort über die Eigenschaft `LightNode` verfügbar ist.
+- eine `Camera`, deren Komponenten aktualisiert werden, wenn Arkit ein Update für die Anwendung bereitstellt und
+- eine `ViewPort` die die Ergebnisse anzeigt.
 
 ### <a name="your-code"></a>Ihr Code
 
-Anschließend müssen Sie die `ArkitApp` -Klasse Unterklassen und die `Start` -Methode überschreiben.   Die erste Aufgabe, die die Methode ausführen sollte, besteht darin, `ArkitApp.Start` durch Aufrufen `base.Start()`von eine Verkettung durchzuführen.  Anschließend können Sie eine beliebige der Eigenschaften einrichten, die von arkitapp eingerichtet werden, um die Objekte der Szene hinzuzufügen, die Lichter, Schatten oder Ereignisse anzupassen, die Sie behandeln möchten.
+Anschließend müssen Sie die `ArkitApp`-Klasse Unterklassen und die `Start`-Methode überschreiben.   Die erste Aufgabe, die Ihre Methode ausführen sollte, besteht darin, die `ArkitApp.Start` durch Aufrufen von `base.Start()`an die  Anschließend können Sie eine beliebige der Eigenschaften einrichten, die von arkitapp eingerichtet werden, um die Objekte der Szene hinzuzufügen, die Lichter, Schatten oder Ereignisse anzupassen, die Sie behandeln möchten.
 
 Das Arkit/urhusharp-Beispiel lädt ein animiertes Zeichen mit Texturen und spielt die Animation mit der folgenden Implementierung:
 
@@ -102,7 +102,7 @@ Die Arkit-API ist ziemlich einfach, Sie erstellen und konfigurieren ein [arsessi
 
 Wir werden die Bilder, die von der Kamera geliefert werden, mit unserem 3D-Inhalt zusammenstellen und die Kamera in urhusharp so anpassen, dass Sie den Chancen der Geräte Position und-Position entspricht.
 
-Das folgende Diagramm zeigt, was in der `ArkitApp` -Klasse geschieht:
+Das folgende Diagramm zeigt, was in der `ArkitApp`-Klasse geschieht:
 
 [![Diagramm der Klassen und Bildschirme in arkitapp](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
@@ -110,11 +110,11 @@ Das folgende Diagramm zeigt, was in der `ArkitApp` -Klasse geschieht:
 
 Die Idee ist einfach, das Video, das aus der Kamera stammt, mit unseren 3D-Grafiken zu kombinieren, um das kombinierte Bild zu schaffen.     Wir erhalten eine Reihe von aufgezeichneten Images nacheinander, und wir werden diese Eingabe mit der Urho-Szene mischen.
 
-Die einfachste Möglichkeit hierfür ist das Einfügen eines `RenderPathCommand` in den Haupt `RenderPath`-.  Dies ist ein Satz von Befehlen, die zum Zeichnen eines einzelnen Frames ausgeführt werden.  Mit diesem Befehl wird der Viewport mit jeder Textur aufgefüllt, die an ihn übergeben wird.    Dies wird für den ersten Frame festgelegt, der verarbeitet wird, und die tatsächliche Definition erfolgt in der Datei " **arrenderpath. XML** ", die zu diesem Zeitpunkt geladen wird.
+Die einfachste Möglichkeit hierfür ist, eine `RenderPathCommand` in die Haupt `RenderPath`einzufügen.  Dies ist ein Satz von Befehlen, die zum Zeichnen eines einzelnen Frames ausgeführt werden.  Mit diesem Befehl wird der Viewport mit jeder Textur aufgefüllt, die an ihn übergeben wird.    Dies wird für den ersten Frame festgelegt, der verarbeitet wird, und die tatsächliche Definition erfolgt in der Datei " **arrenderpath. XML** ", die zu diesem Zeitpunkt geladen wird.
 
 Wir haben jedoch zwei Probleme, um diese beiden Welten miteinander zu kombinieren:
 
-1. In ios müssen GPU-Texturen eine Auflösung von zwei Möglichkeiten aufweisen, aber die Rahmen, die wir von der Kamera erhalten, haben keine Auflösung, die eine Potenz von zwei ist, z. b.: 1.280 x 720.
+1. Unter IOS müssen GPU-Texturen eine Auflösung aufweisen, die eine Potenz von zwei ist, aber die Rahmen, die wir von der Kamera erhalten, haben keine Auflösung, die eine Potenz von zwei ist, z. b. 1280X720.
 2. Die Frames werden im [YUV](https://en.wikipedia.org/wiki/YUV) -Format codiert und durch zwei Bilder dargestellt: "Luma" und "Chroma".
 
 Die YUV-Frames sind in zwei unterschiedlichen Auflösungen enthalten.  ein 1.280 x 720-Bild, das die Beleuchtung darstellt (im Grunde ein graues Skalierungs Bild) und wesentlich kleiner 640 x 360 für die Chrominanz-Komponente:
@@ -151,7 +151,7 @@ Daher können Sie erfasste Bilder als Hintergrund darstellen und jede Szene übe
 
 ### <a name="adjusting-the-camera"></a>Anpassen der Kamera
 
-Die `ARFrame` Objekte enthalten auch die geschätzte Geräte Position.  Wir müssen jetzt den Spiel Kamera-arframe verschieben. vor dem Arkit war es keine große Sache, die Geräte Ausrichtung (Roll, Pitch und Yaw) zu verfolgen und ein angeheftete – Hologramm auf dem Video zu erzeugen. Wenn Sie Ihr Gerät verschieben, wird jedoch ein Bit-holograms-Wert zurückgesetzt.
+Die `ARFrame`-Objekte enthalten außerdem die geschätzte Geräte Position.  Wir müssen jetzt den Spiel Kamera-arframe verschieben. vor dem Arkit war es keine große Sache, die Geräte Ausrichtung (Roll, Pitch und Yaw) zu verfolgen und ein angeheftete – Hologramm auf dem Video zu erzeugen. Wenn Sie Ihr Gerät verschieben, wird jedoch ein Bit-holograms-Wert zurückgesetzt.
 
 Dies liegt daran, dass integrierte Sensoren, wie z. b. Gyroskop, nicht in der Lage sind, Bewegungen zu verfolgen, Sie können nur beschleunigt werden.  Arkit analysiert jeden Frame und extrahiert Merkmals Punkte, die nachverfolgt werden können, und kann somit eine exakte Transformationsmatrix mit Verschiebungs-und Drehungs Daten bereitstellen.
 
@@ -162,7 +162,7 @@ var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-Wir verwenden `-row.Z` , weil Arkit ein rechts händiges Koordinatensystem verwendet.
+Wir verwenden `-row.Z`, weil Arkit ein rechts händiges Koordinatensystem verwendet.
 
 ### <a name="plane-detection"></a>Ebenenerkennung
 

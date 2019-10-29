@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin.Android
 metadata:
   description: Xamarin.Android macht das komplette Android SDK für .NET-Entwickler verfügbar.
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/27/2018
   ms.topic: landing-page
   ms.technology: xamarin-android
@@ -15,7 +15,7 @@ abstract:
       - href: ~/android/samples/
         text: Android-Beispiele
       - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
-        text: Versionshinweise
+        text: Versionsinformationen
       - href: 'https://developers.google.com/'
         text: Entwicklerdokumentation von Google
       - href: /visualstudio/
@@ -30,7 +30,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: Setup
+            text: Einrichtung
             href: ~/android/get-started/installation/index.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
@@ -44,7 +44,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
             text: Android 10
             href: ~/android/platform/android-10.md
-  - title: Führungslinien
+  - title: Anleitungen
     items:
       - type: list
         style: cards
@@ -104,7 +104,7 @@ sections:
               src: ~/media/icons/i_android-wear.svg
               href: ~/android/wear/index.md
             title: Android Wear
-  - title: Referenz
+  - title: Verweis
     items:
       - type: list
         style: cards
@@ -113,6 +113,6 @@ sections:
           - title: API
             href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9'
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9">Android-API-Dokumentation</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">Basisklassenbibliothek</a></p>'
-          - title: Proben
+          - title: Beispiele
             href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
             html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android">Android-Beispiele</a></p>'

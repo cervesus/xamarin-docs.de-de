@@ -3,53 +3,53 @@ title: Android Gallery-Steuerelement
 ms.prod: xamarin
 ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 04fac4084328c0af962282dea7a31e3c00457bef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 93eb7f98da6f3fe06f288eae5823f7173e58585f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523003"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029242"
 ---
 # <a name="xamarinandroid-gallery-control"></a>Xamarin. Android-Katalog-Steuerelement
 
-[`Gallery`](xref:Android.Widget.Gallery)ein layoutwidget, das zum Anzeigen von Elementen in einer horizontalen Bildlauf Liste verwendet wird und die aktuelle Auswahl in der Mitte der Ansicht positioniert.
+[`Gallery`](xref:Android.Widget.Gallery) ist ein layoutwidget, das zum Anzeigen von Elementen in einer horizontalen Bildlauf Liste verwendet wird und die aktuelle Auswahl in der Mitte der Ansicht positioniert.
 
 > [!IMPORTANT]
 > Dieses Widget wurde in Android 4,1 (API-Ebene 16) als veraltet markiert. 
 
 In diesem Tutorial erstellen Sie einen Katalog mit Fotos und zeigen dann jedes Mal eine Popup Meldung an, wenn ein Galerie Element ausgewählt wird.
 
-Nachdem das `Main.axml` Layout für die Inhaltsansicht festgelegt wurde, `Gallery` wird das aus dem Layout mit [`FindViewById`](xref:Android.App.Activity.FindViewById*)aufgezeichnet.
-Die[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
-die Eigenschaft wird dann verwendet, um einen benutzerdefinierten `ImageAdapter`Adapter () als Quelle für alle Elemente festzulegen, die in der dallery angezeigt werden sollen. Die `ImageAdapter` wird im nächsten Schritt erstellt.
+Nachdem das `Main.axml` Layout für die Inhaltsansicht festgelegt wurde, wird das `Gallery` aus dem Layout mit [`FindViewById`](xref:Android.App.Activity.FindViewById*)aufgezeichnet.
+Der [`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
+die Eigenschaft wird dann verwendet, um einen benutzerdefinierten Adapter (`ImageAdapter`) als Quelle für alle Elemente festzulegen, die in der dallery angezeigt werden sollen. Der `ImageAdapter` wird im nächsten Schritt erstellt.
 
-Um etwas zu tun, wenn auf ein Element im Katalog geklickt wird, wird ein anonymer Delegat für das[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
-Ereignis. Sie zeigt ein[`Toast`](xref:Android.Widget.Toast)
+Wenn Sie auf ein Element im Katalog klicken, wird ein anonymer Delegat für den [`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+Ereignis. Es zeigt eine [`Toast`](xref:Android.Widget.Toast)
 Dadurch wird die Indexposition (null basiert) des ausgewählten Elements angezeigt (in einem realen Szenario könnte die Position verwendet werden, um für eine andere Aufgabe das Bild mit voller Größe zu erhalten).
 
 Erstens gibt es einige Member-Variablen, einschließlich eines Arrays von IDs, die auf die im drawable Resources-Verzeichnis gespeicherten Bilder (**Ressourcen/drawable**) verweisen.
 
-Der nächste Schritt ist der Klassenkonstruktor, in dem der[`Context`](xref:Android.Content.Context)
-für eine `ImageAdapter` -Instanz wird definiert und in einem lokalen Feld gespeichert.
-Anschließend werden einige der von [`BaseAdapter`](xref:Android.Widget.BaseAdapter)geerbten erforderlichen Methoden implementiert.
-Der Konstruktor und das[`Count`](xref:Android.Widget.BaseAdapter.Count)
-die Eigenschaft ist selbsterklärend. Gewohnt[`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
-sollte das tatsächliche-Objekt an der angegebenen Position im Adapter zurückgeben, wird jedoch in diesem Beispiel ignoriert. Dasselbe[`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
+Der nächste Schritt ist der Klassenkonstruktor, in dem der [`Context`](xref:Android.Content.Context)
+für eine `ImageAdapter` Instanz in einem lokalen Feld definiert und gespeichert.
+Anschließend werden einige erforderliche Methoden implementiert, die von [`BaseAdapter`](xref:Android.Widget.BaseAdapter)geerbt wurden.
+Der Konstruktor und der [`Count`](xref:Android.Widget.BaseAdapter.Count)
+die Eigenschaft ist selbsterklärend. Normalerweise [`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
+sollte das tatsächliche-Objekt an der angegebenen Position im Adapter zurückgeben, wird jedoch in diesem Beispiel ignoriert. Ebenso [`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
 sollte die Zeilen-ID des Elements zurückgeben, aber hier nicht erforderlich.
 
-Die-Methode übernimmt das Anwenden eines Bilds auf ein[`ImageView`](xref:Android.Widget.ImageView)
-Diese werden in das[`Gallery`](xref:Android.Widget.Gallery)
-In dieser Methode ist der Member[`Context`](xref:Android.Content.Context)
-wird verwendet, um einen neuen [`ImageView`](xref:Android.Widget.ImageView)zu erstellen.
-Die[`ImageView`](xref:Android.Widget.ImageView)
-wird vorbereitet, indem ein Image aus dem lokalen Array von drawable-Ressourcen angewendet wird, wobei das[`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)
-Höhe und Breite des Bilds, Festlegen der Skalierung auf das[`ImageView`](xref:Android.Widget.ImageView)
+Die-Methode übernimmt das Anwenden eines Bilds auf eine [`ImageView`](xref:Android.Widget.ImageView)
+Diese werden in den [`Gallery`](xref:Android.Widget.Gallery)
+In dieser Methode [`Context`](xref:Android.Content.Context)
+wird verwendet, um eine neue [`ImageView`](xref:Android.Widget.ImageView)zu erstellen.
+Der [`ImageView`](xref:Android.Widget.ImageView)
+wird vorbereitet, indem ein Image aus dem lokalen Array von drawable-Ressourcen angewendet wird, wobei die [`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)
+Höhe und Breite des Bilds, wobei die Skala auf den [`ImageView`](xref:Android.Widget.ImageView) angepasst wird.
 Dimensionen und schließlich das Festlegen des Hintergrunds für die Verwendung des im Konstruktor erworbenen anpassbaren-Attributs.
 
-Weitere [`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType) Bild Skalierungs Optionen finden Sie unter.
+Weitere Bild Skalierungs Optionen finden Sie unter [`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType) .
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
@@ -58,7 +58,7 @@ Starten Sie ein neues Projekt mit dem Namen *hellogallery*.
 [![Screenshot des neuen Android-Projekts im Dialogfeld "neue Projekt Mappe"](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
 Suchen Sie nach einigen Fotos, die Sie verwenden möchten, oder [Laden Sie diese Beispiel Images herunter](https://developer.android.com/shareables/sample_images.zip).
-Fügen Sie die Bilddateien dem **Ressourcen** -/Draw-Verzeichnis des Projekts hinzu. Legen Sie im Fenster **Eigenschaften** die Buildaktion für jede auf **androidresource**fest.
+Fügen Sie die Bilddateien dem Ressourcen- **/Draw-Verzeichnis** des Projekts hinzu. Legen Sie im Fenster **Eigenschaften** die Buildaktion für jede auf **androidresource**fest.
 
 Öffnen Sie **Resources/Layout/Main. axml** , und fügen Sie Folgendes ein:
 
@@ -71,7 +71,7 @@ Fügen Sie die Bilddateien dem **Ressourcen** -/Draw-Verzeichnis des Projekts hi
 />
 ```
 
-Öffnen `MainActivity.cs` Sie, und fügen Sie den folgenden Code für das[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Öffnen Sie `MainActivity.cs`, und fügen Sie den folgenden Code für das [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 anzuwenden
 
 ```csharp
@@ -92,7 +92,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Erstellen Sie eine neue Klasse `ImageAdapter` namens Unterklassen [`BaseAdapter`](xref:Android.Widget.BaseAdapter):
+Erstellen Sie eine neue Klasse mit dem Namen `ImageAdapter`, die Unterklassen [`BaseAdapter`](xref:Android.Widget.BaseAdapter):
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -152,4 +152,4 @@ Führen Sie die Anwendung aus. Dies sollte wie im folgenden Screenshot aussehen:
 - [`Gallery`](xref:Android.Widget.Gallery)
 - [`ImageView`](xref:Android.Widget.ImageView)
 
-_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._
+_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](https://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._

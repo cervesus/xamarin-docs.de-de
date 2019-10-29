@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 124E4953-4DFA-42B0-BCFC-3227508FE4A6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f54edead87459282ccd6a44225269542fad9d0e4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 11ac6289b7d2f278f534f5a65679754d212b5067
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769107"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030529"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Problembehandlung bei mit xamarin erstellten tvos-apps
 
@@ -25,12 +25,12 @@ _In diesem Artikel werden Probleme behandelt, die bei der Arbeit mit der tvos-Un
 
 Die aktuelle Version der tvos-Unterstützung von xamarin hat die folgenden bekannten Probleme:
 
-- **Mono-Framework** – Mono 4,3 Cryptography. ProtectedData kann Daten aus Mono 4,2 nicht entschlüsseln. Daher wird die Wiederherstellung von nuget-Paketen mit dem Fehler `Data unprotection failed` nicht ausgeführt, wenn eine geschützte nuget-Quelle konfiguriert wird.
+- **Mono-Framework** – Mono 4,3 Cryptography. ProtectedData kann Daten aus Mono 4,2 nicht entschlüsseln. Folglich können nuget-Pakete mit dem Fehler `Data unprotection failed` nicht wieder hergestellt werden, wenn eine geschützte nuget-Quelle konfiguriert wird.
   - Problem **Umgehung** – in Visual Studio für Mac müssen Sie alle nuget-Paketquellen, die die Kenn Wort Authentifizierung verwenden, zurück fügen, bevor Sie versuchen, die Pakete wiederherzustellen.
 - **Visual Studio für Mac w/ F# Add-in** – Fehler beim Erstellen einer F# Android-Vorlage unter Windows. Dies sollte weiterhin ordnungsgemäß auf dem Mac funktionieren.
-- **Xamarin. Mac** – Wenn Sie das vereinheitlichte xamarin. Mac-Vorlagen Projekt ausführen und das Ziel `Unsupported`Framework auf fest `Could not connect to the debugger` gelegt ist, wird das Popup möglicherweise angezeigt.
+- **Xamarin. Mac** – Wenn Sie das vereinheitlichte xamarin. Mac-Vorlagen Projekt ausführen und das Ziel Framework auf `Unsupported`festgelegt ist, werden die Popup `Could not connect to the debugger` möglicherweise angezeigt.
   - **Mögliche Problem Umgehung** – Herabstufen der Mono-Framework-Version, die in unserem stabilen Kanal verfügbar ist.
-- **Xamarin Visual Studio & xamarin. IOS** – bei der Bereitstellung von watchkit-Anwendungen in Visual `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` Studio wird der Fehler möglicherweise angezeigt.
+- **Xamarin Visual Studio & xamarin. IOS** – bei der Bereitstellung von watchkit-Anwendungen in Visual Studio kann der Fehler `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` angezeigt werden.
 
 Melden Sie alle Fehler, die Sie auf [GitHub](https://github.com/xamarin/xamarin-macios/issues/new)finden.
 
@@ -47,8 +47,8 @@ Gehen Sie folgendermaßen vor, um dieses Problem zu beheben:
 1. Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf die xamarin. tvos-Projektdatei im **Projektmappen-Explorer** , und wählen Sie **Optionen**aus.
 2. Wählen Sie **tvos Build** aus, und stellen Sie sicher, dass Sie die **Releasekonfiguration** : 
 
-    [![](troubleshooting-images/ts01.png "Tvos-Buildoptionen auswählen")](troubleshooting-images/ts01.png#lightbox)
-3. Fügen `--bitcode=asmonly` Sie dem Feld **zusätzliche mberührungs-Argumente** hinzu, und klicken Sie auf die Schaltfläche **OK** .
+    [![](troubleshooting-images/ts01.png "Select tvOS Build options")](troubleshooting-images/ts01.png#lightbox)
+3. Fügen Sie dem Feld **zusätzliche mberührungs-Argumente** `--bitcode=asmonly` hinzu, und klicken Sie auf die Schaltfläche **OK** .
 4. Erstellen Sie die app in der **Releasekonfiguration** neu.
 
 ### <a name="verifying-that-your-tvos-app-contains-bitcode"></a>Überprüfen, ob Ihre tvos-App Bitcode enthält
@@ -76,11 +76,11 @@ Section
  reserved2 0
 ```
 
-`addr`und `size` unterscheiden sich, aber andere Felder müssen identisch sein.
+`addr` und `size` unterscheiden sich, aber andere Felder müssen identisch sein.
 
-Sie müssen sicherstellen, dass alle von Ihnen verwendeten statischen (`.a`) Drittanbieter-Bibliotheken für tvos-Bibliotheken (nicht für IOS-Bibliotheken) erstellt wurden und dass Sie auch Bitcode Informationen enthalten.
+Sie müssen sicherstellen, dass alle von Ihnen verwendeten statischen (`.a`) Drittanbieterbibliotheken für tvos-Bibliotheken (nicht für IOS-Bibliotheken) erstellt wurden und dass Sie auch Bitcode Informationen enthalten.
 
-Für apps oder Bibliotheken, die gültigen Bitcode `size` enthalten, ist größer als 1. Es gibt einige Situationen, in denen eine Bibliothek über den Bitcode-Marker verfügen kann, aber keinen gültigen Bitcode enthalten kann. Beispiel:
+Bei Apps oder Bibliotheken, die gültige bitcodes enthalten, wird der `size` größer als 1 sein. Es gibt einige Situationen, in denen eine Bibliothek über den Bitcode-Marker verfügen kann, aber keinen gültigen Bitcode enthalten kann. Beispiel:
 
 **Ungültiger Bitcode**
 
@@ -102,7 +102,7 @@ $ otool -l -arch arm64 libDownloadableAgent-tvos.a |grep __bitcode -A 3
       size 0x0000000000045440
 ```
 
-Beachten Sie, dass `size` der Unterschied zwischen den beiden Bibliotheken im aufgeführten Beispiel oben ausgeführt wird. Die Bibliothek muss von einem Xcode-Archivierungs Build mit aktiviertem Bitcode (Xcode-Einstellung `ENABLE_BITCODE`) als Lösung für dieses Größen Problem generiert werden.
+Beachten Sie, dass der Unterschied in `size` zwischen den beiden Bibliotheken im aufgeführten Beispiel oben ausgeführt wird. Die Bibliothek muss von einem Xcode-Archivierungs Build mit aktiviertem Bitcode (Xcode-Einstellung `ENABLE_BITCODE`) als Lösung für dieses Größen Problem generiert werden.
 
 ### <a name="apps-that-only-contain-the-arm64-slice-must-also-have-arm64-in-the-list-of-uirequireddevicecapabilities-in-infoplist"></a>Apps, die nur den arm64 Slice enthalten, müssen in der Liste der uirequirements ddevicecapabiliin "Info. plist" auch "arm64" enthalten.
 
@@ -110,7 +110,7 @@ Wenn Sie eine APP an den Apple TV App Store zur Veröffentlichung übermitteln, 
 
 _"Apps, die nur den arm64 Slice enthalten, müssen in der Liste der uirequirements ddevicecapabiliin" Info. plist "auch" arm64 "enthalten._
 
-Wenn dies auftritt, bearbeiten `Info.plist` Sie die Datei, und stellen Sie sicher, dass Sie über die folgenden Schlüssel verfügt:
+Wenn dies der Fall ist, bearbeiten Sie die Datei `Info.plist`, und stellen Sie sicher, dass Sie die folgenden Schlüssel aufweist:
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -123,18 +123,18 @@ Kompilieren Sie Ihre APP erneut, und senden Sie Sie erneut an iTunes Connect.
 
 ### <a name="task-mtouch-execution----failed"></a>Task "mtouchscreen-Ausführung--Fehler"
 
-Wenn Sie eine Drittanbieter Bibliothek verwenden (z. b. monogame) und die Releasekompilierung mit einer langen Reihe von Fehlermeldungen beendet `Task "MTouch" execution -- FAILED`wurde, versuchen `-gcc_flags="-framework OpenAL"` Sie, Ihre **zusätzlichen Berührungs Argumente**hinzuzufügen:
+Wenn Sie eine Drittanbieter Bibliothek verwenden (z. b. monogame) und die Versions Kompilierung mit einer langen Reihe von Fehlermeldungen, die mit `Task "MTouch" execution -- FAILED`enden, fehlgeschlagen sind, fügen Sie Ihrem **zusätzlichen Berührungs Argument**`-gcc_flags="-framework OpenAL"` hinzu:
 
-[![](troubleshooting-images/mtouch01.png "Task-mtouchscreen-Ausführung")](troubleshooting-images/mtouch01.png#lightbox)
+[![](troubleshooting-images/mtouch01.png "Task MTouch execution")](troubleshooting-images/mtouch01.png#lightbox)
 
-Sie sollten auch in `--bitcode=asmonly` die **zusätzlichen Berührungs Argumente**einschließen, lassen Sie die **Linkeroptionen auf alle verknüpfen** und eine saubere Kompilierung ausführen.
+Sie sollten auch `--bitcode=asmonly` in die **zusätzlichen Berührungs Argumente**einschließen, die **Linkeroptionen auf alle verknüpfen** und eine saubere Kompilierung durchführen lassen.
 
 ### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS-90471-Fehler. Das große Symbol fehlt.
 
 Wenn Sie eine Meldung im Format "iTMS-90471 Error" erhalten. Das große Symbol fehlt "" beim Versuch, eine xamarin. tvos-App für die Veröffentlichung an den Apple TV App Store zu übermitteln, überprüfen Sie Folgendes:
 
-1. Stellen Sie sicher, dass Sie die großen Symbol Objekte in `Assets.car` die Datei eingefügt haben, die Sie mithilfe der [App](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons) -Symbol Dokumentation erstellt haben.
-2. Stellen Sie sicher, dass `Assets.car` Sie die Datei aus der Dokumentation zum [Arbeiten mit Symbolen und Bildern](~/ios/tvos/app-fundamentals/icons-images.md) in das endgültige Anwendungspaket eingefügt haben.
+1. Stellen Sie sicher, dass Sie die großen Symbol Objekte in Ihre `Assets.car` Datei eingeschlossen haben, die Sie mithilfe der [App](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons) -Symbol Dokumentation erstellt haben.
+2. Stellen Sie sicher, dass Sie die `Assets.car`-Datei aus der Dokumentation [Arbeiten mit Symbolen und Images](~/ios/tvos/app-fundamentals/icons-images.md) in ihrem abschließenden Anwendungspaket eingefügt haben.
 
 ### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>Ungültiges Bündel – eine APP, die Spiele Controller unterstützt, muss auch das Apple TV Remote unterstützen.
 
@@ -154,7 +154,7 @@ oder
 
 _Ungültiges Bündel – Apple TV-apps mit dem Gamecontroller-Framework müssen den gcsupportedgamecontrollers-Schlüssel in der "Info. plist" der App enthalten._
 
-Die Lösung besteht darin, die Unterstützung für die Siri`GCMicroGamepad`- `Info.plist` Remote Datei () zur Datei Ihrer APP hinzuzufügen. Das Micro Game Controller-Profil wurde von Apple hinzugefügt, um das Siri-Remote Ziel zu erreichen. Fügen Sie z. b. die folgenden Schlüssel ein:
+Die Lösung besteht darin, die Unterstützung für die Siri-Remote Datei (`GCMicroGamepad`) zur `Info.plist` Datei Ihrer APP hinzuzufügen. Das Micro Game Controller-Profil wurde von Apple hinzugefügt, um das Siri-Remote Ziel zu erreichen. Fügen Sie z. b. die folgenden Schlüssel ein:
 
 ```xml
 <key>GCSupportedGameControllers</key>  
@@ -183,7 +183,7 @@ Wenn Sie versuchen, eine portable Klassenbibliothek (PCL) in ein xamarin. tvos-P
 
 _Inkompatibles Ziel Framework:. Netportable, Version = v 4.5, Profile = Profile78_
 
-Um dieses Problem zu beheben, fügen Sie eine XML `Xamarin.TVOS.xml` -Datei mit dem Namen und folgendem Inhalt hinzu:
+Um dieses Problem zu beheben, fügen Sie eine XML-Datei mit dem Namen `Xamarin.TVOS.xml` mit folgendem Inhalt hinzu:
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

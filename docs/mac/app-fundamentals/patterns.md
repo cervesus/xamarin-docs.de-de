@@ -4,15 +4,15 @@ description: In diesem Dokument werden allgemeine Entwurfsmuster beschrieben, di
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/17/2016
-ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b508cc12f468e5b9dfef91718585f61bfd633816
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770164"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030060"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Allgemeine Muster und Idiome in xamarin. Mac
 
@@ -37,21 +37,21 @@ Weitere Informationen finden Sie hier:
 
 ## <a name="data-source--delegate--subclassing"></a>Datenquelle/Delegat/Unterklassen
 
-Ein weiteres sehr häufiges Muster in Cocoa ist das Bereitstellen von Daten für Benutzeroberflächen Elemente und das reagieren auf Benutzerinteraktionen. Beispielsweise müssen Sie die Daten für jede Zeile, eine Reihe von UI-Elementen, die diese Zeile darstellen, sowieeinigeVerhaltensweisenfürdieReaktionaufBenutzerinteraktionenundggf.einegewisseAnpassungbereitstellen.`NSTableView` Mit den Datenquellen-und delegatmustern können Sie die meisten Fälle verarbeiten, ohne dass Sie `NSTableView` selbst auf die Unterklassen zurückgreifen müssen.
+Ein weiteres sehr häufiges Muster in Cocoa ist das Bereitstellen von Daten für Benutzeroberflächen Elemente und das reagieren auf Benutzerinteraktionen. Wenn Sie `NSTableView` als Beispiel verwenden, müssen Sie die Daten für jede Zeile, eine Reihe von Elementen der Benutzeroberfläche, die diese Zeile darstellen, einige Verhaltensweisen für die Reaktion auf Benutzerinteraktionen und ggf. eine gewisse Anpassung bereitstellen. Mit den Datenquellen-und delegatmustern können Sie die meisten Fälle verarbeiten, ohne sich auf die Unterklassen `NSTableView` selbst zurückgreifen zu müssen.
 
-- Der `DataSource` -Eigenschaft wird eine Instanz einer benutzerdefinierten Unterklasse zugewiesen `NSTableViewDataSource` , von der aufgerufen wird, um die Tabelle mit Daten ( `GetRowCount` über `GetObjectValue`und) aufzufüllen.
+- Der `DataSource`-Eigenschaft wird eine Instanz einer benutzerdefinierten Unterklasse von zugewiesen `NSTableViewDataSource` die aufgerufen wird, um die Tabelle mit Daten (über `GetRowCount` und `GetObjectValue`) aufzufüllen.
 
-- Der `Delegate` -Eigenschaft wird eine Instanz einer benutzerdefinierten Unterklasse zugewiesen `NSTableViewDelegate` , von der die Ansicht für ein angegebenes Modell `GetViewForItem`Objekt (via) bereitgestellt und `DidClickTableColumn`UI `MouseDownInHeaderOfTableColumn`-Interaktionen (über, usw.) behandelt werden.
+- Der `Delegate`-Eigenschaft wird eine Instanz einer benutzerdefinierten Unterklasse von zugewiesen `NSTableViewDelegate` die die Ansicht für ein bestimmtes Modell Objekt (über `GetViewForItem`) bereitstellt und Interaktionen mit der Benutzeroberfläche verarbeitet (über `DidClickTableColumn`, `MouseDownInHeaderOfTableColumn`usw.).
 
 In einigen Fällen möchten Sie ein Steuerelement auf eine Weise anpassen, die über die im Delegaten oder der Datenquelle angegebenen Hooks hinausgeht, und Sie können die Ansicht direkt Unterklassen. Achten Sie jedoch darauf, dass Sie in vielen Fällen, in denen das Überschreiben von Standardverhalten erforderlich ist, das gesamte Verhalten selbst verarbeiten müssen. (beim Anpassen des Auswahl Verhaltens ist es möglicherweise erforderlich, dass Sie alle Auswahl Verhalten selbst implementieren.)
 
-In xamarin. IOS wurden einige APIs wie z `UITableView` . b. mit einer-Eigenschaft erweitert, die sowohl den-Delegaten als auch die Datenquelle (`UITableViewSource`) implementiert. Dadurch wird die allgemeine Einschränkung umgangen, dass eine einzelne C# Klasse nur eine Basisklasse aufweisen kann, und die Oberfläche von Protokollen wird über Basisklassen erstellt.
+In xamarin. IOS wurden einige APIs, z. b. `UITableView`, mit einer Eigenschaft erweitert, die sowohl den Delegaten als auch die Datenquelle (`UITableViewSource`) implementiert. Dadurch wird die allgemeine Einschränkung umgangen, dass eine einzelne C# Klasse nur eine Basisklasse aufweisen kann, und die Oberfläche von Protokollen wird über Basisklassen erstellt.
 
 Weitere Informationen zum Arbeiten mit Tabellen Sichten in einer xamarin. Mac-Anwendung finden Sie in der Dokumentation zur [Tabellenansicht](~/mac/user-interface/table-view.md) .
 
 ## <a name="protocols"></a>Protokolle
 
-Protokolle in Ziel-C können mit Schnittstellen in C#verglichen werden, und in vielen Fällen werden Sie in ähnlichen Situationen verwendet. Beispielsweise werden `NSTableView` im obigen Beispiel sowohl der Delegat als auch die Datenquelle tatsächlich protokolliert. Xamarin. Mac macht diese als Basisklassen mit virtuellen Methoden verfügbar, die Sie außer Kraft setzen können. Der Hauptunterschied zwischen C# Schnittstellen und Ziel-C-Protokollen besteht darin, dass einige Methoden in einem Protokoll optional für die Implementierung von optional sein können. Sie müssen sich die Dokumentation und/oder Definition einer API ansehen, um zu bestimmen, was optional ist.
+Protokolle in Ziel-C können mit Schnittstellen in C#verglichen werden, und in vielen Fällen werden Sie in ähnlichen Situationen verwendet. Beispielsweise handelt es sich bei dem obigen `NSTableView` Beispiel um den Delegaten und die Datenquelle. Xamarin. Mac macht diese als Basisklassen mit virtuellen Methoden verfügbar, die Sie außer Kraft setzen können. Der Hauptunterschied zwischen C# Schnittstellen und Ziel-C-Protokollen besteht darin, dass einige Methoden in einem Protokoll optional für die Implementierung von optional sein können. Sie müssen sich die Dokumentation und/oder Definition einer API ansehen, um zu bestimmen, was optional ist.
 
 Weitere Informationen finden Sie in unserer Dokumentation zu Delegaten [, Protokollen und Ereignissen](~/ios/app-fundamentals/delegates-protocols-and-events.md) .
 

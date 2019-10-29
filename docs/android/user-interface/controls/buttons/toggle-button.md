@@ -3,19 +3,19 @@ title: ToggleButton
 ms.prod: xamarin
 ms.assetid: 9ADA8FCF-63ED-897A-DD56-D7D86535A92C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 56372bb643cab545529d6a4a89c804471f3344bc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe444d255beb9c08b4b5bcf5de36a8740e503b55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762444"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029294"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
-In diesem Abschnitt erstellen Sie mithilfe des Widgets eine Schaltfläche, die speziell für das [`ToggleButton`](xref:Android.Widget.ToggleButton) Umschalten zwischen zwei Zuständen verwendet wird. Dieses Widget ist eine hervorragende Alternative zu Options Feldern, wenn Sie zwei einfache Zustände haben, die sich gegenseitig ausschließen (z. b. "on" und "Off"). Android 4,0 (API-Ebene 14) hat eine Alternative zu der UMSCHALT Fläche eingeführt, die [`Switch`](xref:Android.Widget.Switch)als bezeichnet wird.
+In diesem Abschnitt erstellen Sie eine Schaltfläche, die speziell für das Umschalten zwischen zwei Zuständen verwendet wird, indem Sie das [`ToggleButton`](xref:Android.Widget.ToggleButton) -Widget verwenden. Dieses Widget ist eine hervorragende Alternative zu Options Feldern, wenn Sie zwei einfache Zustände haben, die sich gegenseitig ausschließen (z. b. "on" und "Off"). Android 4,0 (API-Ebene 14) hat eine Alternative zu der UMSCHALT Fläche eingeführt, die als [`Switch`](xref:Android.Widget.Switch)bezeichnet wird.
 
 Ein Beispiel für eine **ToggleButton-Taste** kann im linken paar von Bildern angezeigt werden, während das Rechte paar von Bildern ein Beispiel für einen **Switch**darstellt:
 
@@ -23,9 +23,9 @@ Ein Beispiel für eine **ToggleButton-Taste** kann im linken paar von Bildern an
 
 Welches Steuerelement eine Anwendung verwendet, ist eine Frage des Stils. Beide Widgets sind funktionell gleichwertig.
 
-Öffnen Sie die Datei **Resources/Layout/Main. axml** , und [`ToggleButton`](xref:Android.Widget.ToggleButton) fügen Sie das- [`LinearLayout`](xref:Android.Widget.LinearLayout)Element (innerhalb der) hinzu:
+Öffnen Sie die Datei **Resources/Layout/Main. axml** , und fügen Sie das [`ToggleButton`](xref:Android.Widget.ToggleButton) -Element (innerhalb des [`LinearLayout`](xref:Android.Widget.LinearLayout)) hinzu:
 
-Um etwas zu tun, wenn der Status geändert wird, fügen Sie den folgenden Code am Ende der[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Fügen Sie den folgenden Code am Ende [`OnCreate()`](xref:Android.App.Activity.OnCreate*) der hinzu, um etwas zu tun, wenn der Status geändert wird.
 anzuwenden
 
 ```csharp
@@ -42,13 +42,13 @@ togglebutton.Click += (o, e) => {
 
 Dadurch wird das [`ToggleButton`](xref:Android.Widget.ToggleButton) -Element aus dem Layout erfasst und das Click-Ereignis behandelt, das die Aktion definiert, die beim Klicken auf die Schaltfläche ausgeführt werden soll. In diesem Beispiel überprüft die-Methode den neuen Status der Schaltfläche und zeigt dann eine [`Toast`](xref:Android.Widget.Toast) Meldung an, die den aktuellen Zustand angibt.
 
-Beachten Sie, [`ToggleButton`](xref:Android.Widget.ToggleButton) dass die die eigene Zustandsänderung zwischen aktivierten und nicht aktivierten behandelt, sodass Sie nur die Frage stellen, welche ist.
+Beachten Sie, dass die [`ToggleButton`](xref:Android.Widget.ToggleButton) die eigene Zustandsänderung zwischen überprüft und deaktiviert verarbeitet, sodass Sie nur die Frage stellen, ob Sie ist.
 
 Führen Sie die Anwendung aus.
 
 > [!TIP]
-> Wenn Sie den Zustand selbst ändern müssen (z. b. beim Laden eines [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)gespeicherten), verwenden Sie das[`Checked`](xref:Android.Widget.CompoundButton.Checked)
-> Eigenschaften Setter oder[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
+> Wenn Sie den Zustand selbst ändern müssen (z. b. beim Laden einer gespeicherten [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)), verwenden Sie die [`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> Eigenschaften Setter oder [`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > -Methode.
 
 ## <a name="related-links"></a>Verwandte Links

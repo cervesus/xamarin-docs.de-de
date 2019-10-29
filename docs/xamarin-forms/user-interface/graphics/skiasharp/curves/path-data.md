@@ -1,34 +1,34 @@
 ---
-title: SVG-Pfaddaten in SkiaSharp
-description: In diesem Artikel wird erläutert, wie SkiaSharp-Pfade, die Verwendung von Zeichenfolgen im Format Scalable Vector Graphics definiert, und dies mit Beispielcode veranschaulicht.
+title: SVG-Pfaddaten in skiasharp
+description: In diesem Artikel wird erläutert, wie Sie skiasharp-Pfade mithilfe von Text Zeichenfolgen im Format der skalierbaren Vektorgrafik definieren und dies mit Beispielcode veranschaulichen.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: 467863dba2f5757e0590ccf64927ae2af292f285
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 809bcd8288c4c4205b3110418aeae0e08bf21dd6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770571"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029463"
 ---
-# <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in SkiaSharp
+# <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in skiasharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Definieren Sie Pfade, die Verwendung von Zeichenfolgen im Format Scalable Vector Graphics_
+_Definieren von Pfaden mit Text Zeichenfolgen im Format der skalierbaren Vektorgrafiken_
 
-Die [ `SKPath` ](xref:SkiaSharp.SKPath) Klasse unterstützt die Definition der gesamte Pfad-Objekte von Textzeichenfolgen in einem Format hergestellt, indem die Scalable Vector Graphics (SVG)-Spezifikation. Sie werden später in diesem Artikel finden Sie unter wie Sie einen vollständigen Pfad, wie diese in einer Textzeichenfolge darstellen können:
+Die [`SKPath`](xref:SkiaSharp.SKPath) -Klasse unterstützt die Definition ganzer Pfad Objekte aus Text Zeichenfolgen in einem Format, das von der SVG-Spezifikation (Scalable Vector Graphics) festgelegt wird. Weiter unten in diesem Artikel erfahren Sie, wie Sie einen vollständigen Pfad, z. b. diesen, in einer Text Zeichenfolge darstellen können:
 
-![](path-data-images/pathdatasample.png "Ein Beispielpfad mit SVG-Pfaddaten definiert")
+![](path-data-images/pathdatasample.png "A sample path defined with SVG path data")
 
-SVG wird ein XML-basierte Grafiken, die Programmiersprache für Webseiten. Da SVG Pfade im Markup statt mit einer Reihe von Funktionsaufrufen definiert werden kann muss, enthält der SVG-standard eine äußerst präzise Möglichkeit zum Angeben einer gesamten Grafikpfad als Textzeichenfolge.
+SVG ist eine XML-basierte Grafik Programmiersprache für Webseiten. Da SVG zulassen muss, dass Pfade im Markup und nicht in einer Reihe von Funktionsaufrufen definiert werden, bietet der SVG-Standard eine sehr präzise Möglichkeit, einen gesamten Grafik Pfad als Text Zeichenfolge anzugeben.
 
-Innerhalb von SkiaSharp wird dieses Format als "SVG-Pfaddaten." bezeichnet. Das Format wird auch in XAML für Windows-basierten programmierumgebungen, einschließlich der Windows Presentation Foundation und der universellen Windows-Plattform, in denen es heißt unterstützt die [Pfadmarkupsyntax](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax) oder [verschieben und zeichnen-Befehle Syntax](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Sie können auch als ein Exchange-Format für Vektorgrafiken, insbesondere in textbasierten Dateien wie z. B. XML dienen.
+In skiasharp wird dieses Format als "SVG Path-Data" bezeichnet. Das Format wird auch in Windows XAML-basierten Programmierumgebungen unterstützt, einschließlich der Windows Presentation Foundation und der universelle Windows-Plattform, wo es als [Pfad Markup Syntax](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax) oder die Syntax für Verschiebe [-und Zeichnungs Befehle](/windows/uwp/xaml-platform/move-draw-commands-syntax/)bezeichnet wird. Sie kann auch als Austauschformat für Vektorgrafik Bilder dienen, insbesondere in textbasierten Dateien wie XML.
 
-Die [ `SKPath` ](xref:SkiaSharp.SKPath) -Klasse definiert zwei Methoden mit den Wörtern `SvgPathData` im Namen:
+Die [`SKPath`](xref:SkiaSharp.SKPath) -Klasse definiert zwei Methoden mit den Wörtern `SvgPathData` in ihren Namen:
 
 ```csharp
 public static SKPath ParseSvgPathData(string svgPath)
@@ -36,21 +36,21 @@ public static SKPath ParseSvgPathData(string svgPath)
 public string ToSvgPathData()
 ```
 
-Die statische [ `ParseSvgPathData` ](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) -Methode konvertiert eine Zeichenfolge, die eine `SKPath` Objekt während [ `ToSvgPathData` ](xref:SkiaSharp.SKPath.ToSvgPathData) konvertiert eine `SKPath` -Objekt in eine Zeichenfolge.
+Die statische [`ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) -Methode konvertiert eine Zeichenfolge in ein `SKPath` Objekt, während [`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData) ein `SKPath` Objekt in eine Zeichenfolge konvertiert.
 
-Hier ist eine SVG-Zeichenfolge für einen fünf Spitzen Stern, dessen Mitte sich an den Punkt (0, 0) mit einem Radius von 100:
+Hier ist eine SVG-Zeichenfolge für einen fünf-Spitzen-Stern, der am Punkt (0,0) mit einem Radius von 100 zentriert ist:
 
 ```
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
 ```
 
-Die Buchstaben sind Befehle, die erstellen ein `SKPath` Objekt: `M` gibt an eine `MoveTo` aufrufen, `L` ist `LineTo`, und `Z` ist `Close` zu eine Kontur zu schließen. Jedes Paar stellt eine X- und Y-Koordinate eines Punkts. Beachten Sie, dass die `L` Befehl gefolgt von mehreren Punkten, die durch Kommas getrennt. In einer Reihe von Koordinaten und Punkten, Kommas und Leerzeichen werden identisch behandelt. Einige Programmierer bevorzugen einzufügenden Kommas zwischen die X- und Y-Koordinaten und nicht zwischen den Punkten, aber durch Kommas oder Leerzeichen sind nur erforderlich, um Mehrdeutigkeiten zu vermeiden. Dies ist durchaus zulässig:
+Bei den Buchstaben handelt es sich um Befehle, die ein `SKPath` Objekt erstellen: `M` steht für einen `MoveTo`-Befehl, `L` `LineTo`ist, und `Z` `Close`, eine Kontur zu schließen. Jedes Zahlenpaar stellt eine X-und Y-Koordinate eines Punkts bereit. Beachten Sie, dass auf den `L`-Befehl mehrere Punkte folgen, die durch Kommas voneinander getrennt sind. In einer Reihe von Koordinaten und Punkten werden Kommas und Leerzeichen identisch behandelt. Einige Programmierer bevorzugen Kommas zwischen den X-und Y-Koordinaten anstatt zwischen den Punkten, aber Kommas oder Leerzeichen sind nur erforderlich, um Mehrdeutigkeit zu vermeiden. Dies ist vollkommen rechtmäßig:
 
 ```
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
 ```
 
-Die Syntax der SVG-Pfaddaten formal finden Sie unter [Abschnitt 8.3 der SVG-Spezifikation](http://www.w3.org/TR/SVG11/paths.html#PathData). Es folgt eine Zusammenfassung:
+Die Syntax der SVG-Pfaddaten ist in [Abschnitt 8,3 der SVG-Spezifikation](https://www.w3.org/TR/SVG11/paths.html#PathData)formal dokumentiert. Im folgenden finden Sie eine Zusammenfassung:
 
 ## <a name="moveto"></a>**MoveTo**
 
@@ -58,7 +58,7 @@ Die Syntax der SVG-Pfaddaten formal finden Sie unter [Abschnitt 8.3 der SVG-Spez
 M x y
 ```
 
-Eine neue Kontur im Pfad wird durch Festlegen der aktuellen Position gestartet. Pfaddaten sollten beginnen immer mit einem `M` Befehl.
+Dadurch wird eine neue Kontur im Pfad durch Festlegen der aktuellen Position begonnen. Pfaddaten sollten immer mit einem `M` Befehl beginnen.
 
 ## <a name="lineto"></a>**LineTo**
 
@@ -66,15 +66,15 @@ Eine neue Kontur im Pfad wird durch Festlegen der aktuellen Position gestartet. 
 L x y ...
 ```
 
-Dieser Befehl fügt eine gerade Linie (oder Zeilen) in den Pfad und legt die neue Position am Ende der letzten Zeile. Führen Sie die `L` Befehl mehrere Paare von *x* und *y* Koordinaten.
+Dieser Befehl fügt dem Pfad eine gerade Linie (oder Zeilen) hinzu und legt die neue aktuelle Position auf das Ende der letzten Zeile fest. Sie können dem `L`-Befehl mehrere Paare von *x* -und *y* -Koordinaten folgen.
 
-## <a name="horizontal-lineto"></a>**Horizontalen LineTo**
+## <a name="horizontal-lineto"></a>**Horizontal LineTo**
 
 ```
 H x ...
 ```
 
-Dieser Befehl fügt eine horizontale Linie auf den Pfad und legt die neue Position am Ende der Zeile. Führen Sie die `H` Befehl mit mehreren *x* Koordinaten, aber es nicht viel Sinn.
+Mit diesem Befehl wird dem Pfad eine horizontale Linie hinzugefügt, und die neue aktuelle Position wird auf das Ende der Zeile festgelegt. Sie können den `H`-Befehl mit mehreren *x* -Koordinaten befolgen, dies ist jedoch nicht sinnvoll.
 
 ## <a name="vertical-line"></a>**Vertikale Linie**
 
@@ -82,7 +82,7 @@ Dieser Befehl fügt eine horizontale Linie auf den Pfad und legt die neue Positi
 V y ...
 ```
 
-Dieser Befehl fügt eine vertikale Linie auf den Pfad und legt die neue Position am Ende der Zeile.
+Mit diesem Befehl wird dem Pfad eine vertikale Linie hinzugefügt, und die neue aktuelle Position wird auf das Ende der Zeile festgelegt.
 
 ## <a name="close"></a>**Schließen**
 
@@ -90,41 +90,41 @@ Dieser Befehl fügt eine vertikale Linie auf den Pfad und legt die neue Position
 Z
 ```
 
-Die `C` Befehl schließt die Kontur durch Hinzufügen einer geraden Linie von der aktuellen Position, an den Anfang der Kontur.
+Der `C`-Befehl schließt die Kontur durch Hinzufügen einer geraden Linie von der aktuellen Position zum Anfang der Kontur.
 
 ## <a name="arcto"></a>**ArcTo**
 
-Der Befehl zum Hinzufügen eines elliptischen Bogens an die Kontur ist bei weitem den komplexesten Befehl in der gesamten SVG-Pfaddaten Spezifikation. Es ist der einzige Befehl, in dem Zahlen etwas anderes als Koordinatenwerte darstellen können:
+Der Befehl zum Hinzufügen eines elliptischen Bogens zur Kontur ist der weitaus komplexere Befehl in der gesamten SVG-Pfad Daten Spezifikation. Dabei handelt es sich um den einzigen Befehl, bei dem Zahlen etwas anderes als Koordinaten Werte darstellen können:
 
 ```
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
-Die *Rx* und *Rage* Parameter sind die horizontalen und senkrechten RADIUS der Ellipse. Die *Drehwinkel* wird im Uhrzeigersinn in Grad.
+Die Parameter *RX* und *Ry* sind die horizontale und vertikale Radien der Ellipse. Der *Drehungs Winkel* liegt im Uhrzeigersinn in Grad.
 
-Legen Sie die *große-Arc-Flag* für den großen Bogen auf 1 oder 0 für den kleinen Bogen.
+Legen Sie für den großen Bogen das Arkus *Flag* auf 1 und für den kleinen Bogen den Wert auf 0 (null) fest.
 
-Legen Sie die *-Sweep-Flag* für auf 1 im Uhrzeigersinn und 0 für gegen den Uhrzeigersinn.
+Legen Sie das *Sweep-Flag* für den Uhrzeigersinn auf 1 und für gegen den Uhrzeigersinn auf 0 fest.
 
-Der Bogen gezeichnet wird, zu dem Punkt (*x*, *y*), wird die neue Position.
+Der Bogen wird bis zum Punkt (*x*, *y*) gezeichnet, der zur neuen aktuellen Position wird.
 
-## <a name="cubicto"></a>**CubicTo**
+## <a name="cubicto"></a>**Kubicto**
 
 ```
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-Dieser Befehl fügt eine kubische Bézierkurve aus der aktuellen Position bis (*X3*, *y3*), wird die neue Position. Die Punkte (*X1*, *y1*) und (*X2*, *y2*) Control-Punkte sind.
+Dieser Befehl fügt eine kubische Bézier-Kurve von der aktuellen Position zu (*X3*, *Y3*) hinzu, die zur neuen aktuellen Position wird. Die Punkte (*x1*, *Y1*) und (*x2*, *Y2*) sind Steuerungs Punkte.
 
-Mehrere Bézierkurven können angegeben werden, durch eine einzelne `C` Befehl. Die Anzahl der Punkte muss es sich um ein Vielfaches von 3 sein.
+Mehrere Bézier-Kurven können mit einem einzelnen `C` Befehl angegeben werden. Die Anzahl der Punkte muss ein Vielfaches von 3 sein.
 
-Es gibt auch ein Befehl für "smooth" Bézier:
+Es gibt auch einen "Smooth"-Befehl der Bézier-Kurve:
 
 ```
 S x2 y2 x3 y3 ...
 ```
 
-Mit diesem Befehl sollte einen normalen Bézier Befehl folgen, (obwohl dies nicht unbedingt erforderlich ist). Befehls Bézier smooth berechnet den ersten Kontrollpunkt, damit es als Reaktion auf den zweiten Kontrollpunkt, der die vorherige Bézier um deren gegenseitige Punkt ist. Diese drei Punkte sind daher kollineare, und die Verbindung zwischen den zwei Bézierkurven ist.
+Dieser Befehl sollte einem regulären Befehl von "Bézier" folgen (obwohl dies nicht zwingend erforderlich ist). Der Smooth Bézier-Befehl berechnet den ersten Kontrollpunkt so, dass es sich um eine Reflektion des zweiten Kontroll Punkts der vorherigen Bézier um den gegenseitigen Punkt handelt. Diese drei Punkte sind daher colinear, und die Verbindung zwischen den beiden Bézier-Kurven ist reibungslos.
 
 ## <a name="quadto"></a>**QuadTo**
 
@@ -132,25 +132,25 @@ Mit diesem Befehl sollte einen normalen Bézier Befehl folgen, (obwohl dies nich
 Q x1 y1 x2 y2 ...
 ```
 
-Für quadratische Bézierkurven muss die Anzahl der Punkte ein Vielfaches von 2 sein. Der Kontrollpunkt ist (*X1*, *y1*) und den Endpunkt (und die neue Position) ist (*X2*, *y2*)
+Bei quadratischen Bézier-Kurven muss die Anzahl der Punkte ein Vielfaches von 2 sein. Der Kontrollpunkt ist (*x1*, *Y1*), und der Endpunkt (und die neue aktuelle Position) ist (*x2*, *Y2*).
 
-Es gibt auch ein reibungslosen quadratischen Kurve-Befehl:
+Außerdem gibt es einen Smooth-Befehl mit quadratischer Kurve:
 
 ```
 T x2 y2 ...
 ```
 
-Der Kontrollpunkt, werden basierend auf den Kontrollpunkt der vorherigen quadratischen Kurve berechnet.
+Der Kontrollpunkt wird basierend auf dem Kontrollpunkt der vorherigen quadratischen Kurve berechnet.
 
-Alle diese Befehle sind auch in "relativer" Versionen verfügbar sind, in denen Koordinatenpunkte relativ zur aktuellen Position. Diese relativen Befehle beginnen mit Kleinbuchstaben, z. B. `c` statt `C` für die relative-Version des Befehls Bézier kubische.
+Alle diese Befehle sind auch in relativen Versionen verfügbar, in denen die Koordinaten Punkte relativ zur aktuellen Position sind. Diese relativen Befehle beginnen mit Kleinbuchstaben, z. b. `c` statt für die relative Version des kubizier-Befehls "kubisch" `C`.
 
-Dies ist das Ausmaß der SVG-Pfaddaten Definition. Es gibt keine Möglichkeit, die für die wiederholte Gruppen von Befehlen oder jeder Typ, der Berechnung ausführen. Befehle für `ConicTo` oder anderen Typen von Arc-Spezifikationen sind nicht verfügbar.
+Dies ist der Umfang der SVG-Pfad Datendefinition. Es gibt keine Möglichkeit zum Wiederholen von Gruppen von Befehlen oder zum Ausführen beliebiger Berechnungs Typen. Befehle für `ConicTo` oder die anderen Typen von Bogen Spezifikationen sind nicht verfügbar.
 
-Die statische [ `SKPath.ParseSvgPathData` ](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) Methode erwartet eine gültige Zeichenfolge der SVG-Befehle. Wenn Syntaxfehler erkannt wird, gibt die Methode `null`. Dies ist die einzige Fehleranzeige.
+Die statische [`SKPath.ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) -Methode erwartet eine gültige Zeichenfolge von SVG-Befehlen. Wenn ein Syntax Fehler erkannt wird, gibt die Methode `null`zurück. Dies ist die einzige Fehlermeldung.
 
-Die [ `ToSvgPathData` ](xref:SkiaSharp.SKPath.ToSvgPathData) Methode ist nützlich zum Abrufen von SVG-Pfaddaten aus einer vorhandenen `SKPath` Objekt in ein anderes Programm zu übertragen oder in einem Text-Datei-Format wie z. B. XML gespeichert. (Die `ToSvgPathData` Methode wird nicht im Beispielcode in diesem Artikel gezeigt.) Führen Sie *nicht* erwarten `ToSvgPathData` zum Zurückgeben einer Zeichenfolge entspricht genau der Methodenaufrufe, die den Pfad erstellt. Insbesondere erfahren Sie, dass Bögen, um mehrere konvertiert werden `QuadTo` Befehle aus, und das ist die Anzeige in den Path-Daten, die von zurückgegeben `ToSvgPathData`.
+Die [`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData) -Methode ist praktisch zum Abrufen von SVG-Pfaddaten von einem vorhandenen `SKPath`-Objekt für die Übertragung an ein anderes Programm oder zum Speichern in einem textbasierten Dateiformat, z. b. Xml. (Die `ToSvgPathData`-Methode wird im Beispielcode in diesem Artikel nicht veranschaulicht.) Es wird *nicht* erwartet, dass `ToSvgPathData` eine Zeichenfolge zurückgibt, die exakt den Methoden aufrufen entspricht, die den Pfad erstellt haben. Insbesondere werden Sie feststellen, dass Bögen in mehrere `QuadTo` Befehle konvertiert werden, und wie Sie in den Pfaddaten angezeigt werden, die von `ToSvgPathData`zurückgegeben werden.
 
-Die **Pfad Daten-Hello** Seite Spells sich das Wort "HELLO" Verwenden von SVG-Pfaddaten. Sowohl die `SKPath` und `SKPaint` werden Objekte als Felder in definiert die [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) Klasse:
+Auf der Seite "Hello" der **Pfad Daten** wird das Wort "Hello" mithilfe der SVG-Pfaddaten angezeigt. Sowohl das `SKPath`-als auch das `SKPaint`-Objekt werden als Felder in der [`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) -Klasse definiert:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -174,21 +174,21 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Der Pfad, definieren die Zeichenfolge beginnt in der oberen linken Ecke an dem Punkt (0, 0). Jeder Buchstabe beträgt 50 Einheiten, die Breite und Höhe von 100 Einheiten und durch eine andere 25 Einheiten Buchstaben getrennt sind, was bedeutet, dass der gesamte Pfad 350 Einheiten breit ist.
+Der Pfad, der die Text Zeichenfolge definiert, beginnt in der oberen linken Ecke am Punkt (0,0). Jeder Buchstabe ist 50 Einheiten breit und 100 Einheiten hoch, und Buchstaben sind durch andere 25 Einheiten getrennt, was bedeutet, dass der gesamte Pfad 350 Einheiten breit ist.
 
-Die "H", "Hallo" besteht drei einzeilige Konturen, während 'E' zwei verbundene kubische Bézierkurven ist. Beachten Sie, dass die `C` Befehl 6 Punkt folgt, und zwei der Control-Punkte der Y-Koordinaten des – 10 und 110, die sie außerhalb des Bereichs, der die Y-Koordinaten der anderen Buchstaben setzt verfügen. "L" ist, zwei verbundene Linien, während die ' O' wird eine Ellipse, die mit gerendert wird ein `A` Befehl.
+Das "H" von "Hello" besteht aus 3 1-zeiligen Kontur, während "E" zwei verbundene kubische Bézier-Kurven ist. Beachten Sie, dass der `C`-Befehl sechs Punkte folgt und zwei der Kontrollpunkte über Y-Koordinaten von – 10 und 110 verfügen, die diese außerhalb des Bereichs der Y-Koordinaten der anderen Buchstaben liegen. "L" ist zwei verbundene Zeilen, während "O" eine Ellipse ist, die mit einem `A` Befehl gerendert wird.
 
-Beachten Sie, dass die `M` -Befehl, der die letzte Kontur beginnt legt die Position fest, zu dem Punkt (350, 50), handelt es sich vertikalen Mitte des linken Seite von der "O'. Durch das erste Zahlen folgt die `A` Befehl, das die Ellipse hat einen horizontalen Radius des 25 und einem vertikalen Radius von 50. Der Endpunkt wird angegeben, durch die letzten paar der Zahlen in der `A` -Befehl, der den Punkt (300, 49,9) darstellt. Das ist absichtlich nur geringfügig von den Ausgangspunkt. Wenn der Endpunkt den Startpunkt auf gleich festgelegt ist, wird der Bogen nicht gerendert werden. Um eine vollständige Ellipse zu zeichnen, Sie müssen festlegen, den Endpunkt nahe an (aber nicht gleich) den Anfangspunkt, oder Sie müssen mindestens zwei verwenden `A` Befehle, die jeweils für einen Teil der vollständigen Ellipse.
+Beachten Sie, dass der `M`-Befehl, der die letzte Kontur beginnt, die Position auf den Punkt (350, 50) festlegt, der die vertikale Mitte der linken Seite von ' O ' ist. Wie durch die ersten Zahlen nach dem `A`-Befehl angegeben, hat die Ellipse einen horizontalen Radius von 25 und einen vertikalen Radius von 50. Der Endpunkt wird durch das letzte paar von Zahlen im `A`-Befehl angegeben, der den Punkt (300, 49,9) darstellt. Das ist absichtlich etwas anders als der Startpunkt. Wenn der Endpunkt gleich dem Startpunkt festgelegt ist, wird der Bogen nicht gerendert. Um eine komplette Ellipse zu zeichnen, müssen Sie den Endpunkt in der Nähe des Startpunkts (aber nicht gleich) festlegen, oder Sie müssen mindestens zwei `A` Befehle verwenden, die jeweils für einen Teil der gesamten Ellipse verwendet werden.
 
-Möglicherweise möchten fügen die folgende Anweisung in den Konstruktor der Seite, und legen einen Haltepunkt aus, um die resultierende Zeichenfolge zu überprüfen:
+Möglicherweise möchten Sie dem Konstruktor der Seite die folgende-Anweisung hinzufügen und dann einen Haltepunkt festlegen, um die resultierende Zeichenfolge zu überprüfen:
 
 ```csharp
 string str = helloPath.ToSvgPathData();
 ```
 
-Erfahren Sie, dass der Bogen durch eine lange Reihe von ersetzt wurde `Q` -Befehle für eine schrittweise Annäherung an den Bogen mit quadratischen Bézierkurven.
+Sie werden feststellen, dass der Bogen durch eine lange Reihe von `Q` Befehlen für eine schrittweise Näherung des Bogens mithilfe von quadratischen Bézier-Kurven ersetzt wurde.
 
-Die `PaintSurface` Handler Ruft die engen Begrenzungen des Pfads, der nicht die Kontrollpunkte für 'E' enthalten ist und ' O' Kurven. Die drei transformierungen die Mitte des Pfads zu verschieben, zu dem Punkt (0, 0), skalieren den Pfad zu die Größe der Leinwand (jedoch berücksichtigt auch die Strichbreite) und verschieben Sie die Mitte des Pfads in der Mitte der Canvas:
+Der `PaintSurface` Handler Ruft die Grenzen des Pfads ab, der die Steuerungs Punkte für die Kurven "E" und "O" nicht enthält. Die drei Transformationen verschieben den Mittelpunkt des Pfads an den Punkt (0,0), Skalieren den Pfad auf die Größe des Zeichen Bereichs (wobei auch die Strichbreite berücksichtigt wird) und verschieben dann den Mittelpunkt des Pfades in den Mittelpunkt der Canvas:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -217,11 +217,11 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Der Pfad füllt den Zeichenbereich, der bei der Anzeige im Querformat geeigneteren aussieht:
+Der Pfad füllt den Zeichenbereich, der beim Anzeigen im Querformat sinnvoller aussieht:
 
-[![](path-data-images/pathdatahello-small.png "Dreifacher Screenshot der Pfad Daten-Hello-Seite")](path-data-images/pathdatahello-large.png#lightbox "dreifachen Screenshot der Pfad Daten-Hello-Seite")
+[![](path-data-images/pathdatahello-small.png "Triple screenshot of the Path Data Hello page")](path-data-images/pathdatahello-large.png#lightbox "Triple screenshot of the Path Data Hello page")
 
-Die **Pfad Daten Cat** Seite ähnelt. Der Pfad und Paint-Objekte werden als Felder in definiert die [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) Klasse:
+Die Seite **path Data Cat** ist ähnlich. Die Pfad-und Zeichnungsobjekte sind beide als Felder in der [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) -Klasse definiert:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -255,11 +255,11 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Den Anfang eine Katze ist ein Kreis, und es wird hier gerendert, mit zwei `A` Befehle aus, von denen jeder ein Halbkreis zeichnet. Beide `A` Befehle für das Anfangselement horizontalen und senkrechten RADIUS von 100 zu definieren. Erste Bogen beginnt (240, 100) und endet mit (240, 300), wird den Startpunkt für den zweiten Bogen, der zur endet (240, 100).
+Der Anfang eines Cat ist ein Kreis, und hier wird er mit zwei `A` Befehlen gerendert, von denen jeder einen Halbkreis zeichnet. Beide `A` Befehle für die Kopfzeile definieren horizontales und vertikales Radien von 100. Der erste Bogen beginnt bei (240, 100) und endet bei (240, 300), der zum Startpunkt für den zweiten Bogen wird, der auf zurück endet (240, 100).
 
-Die beiden Augen werden ebenfalls gerendert, mit zwei `A` Befehle aus, und wie Sie mit der Katze Head, die zweite `A` -Befehl beendet am selben Punkt als Ausgangspunkt des ersten `A` Befehl. Aber diese Paare von `A` Befehle definieren Sie eine Ellipse. Die mit der einzelnen Bogen ist 40 Einheiten und des Radius 40 Einheiten, was bedeutet, dass diese Bögen nicht vollständige Semicircles sind.
+Die beiden Augen werden ebenfalls mit zwei `A` Befehlen gerendert, und wie bei der Kopfzeile der Katze endet der zweite `A` Befehl an demselben Punkt wie der erste `A` Befehl. Diese paar `A` Befehle definieren jedoch keine Ellipse. Der mit jedem Bogen ist 40 Einheiten, und der RADIUS ist auch 40 Einheiten, was bedeutet, dass diese Bögen keine vollen semikreise sind.
 
-Die `PaintSurface` Handler führt Sie ähnlich wie Transformationen, wie das vorherige Beispiel, jedoch legt eine einzelne `Scale` Faktor, der das Seitenverhältnis beibehalten, und geben Sie einen wenig Rand aus, damit der Katze Whisker Tippen Sie auf die Seiten des Bildschirms nicht:
+Der `PaintSurface` Handler führt ähnliche Transformationen wie das vorherige Beispiel aus, legt jedoch einen einzelnen `Scale` Faktor fest, um das Seitenverhältnis beizubehalten und einen kleinen Rand bereitzustellen, damit die whiskus der Cat nicht die Seiten des Bildschirms berühren:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -288,13 +288,13 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![](path-data-images/pathdatacat-small.png "Dreifacher Screenshot der Seite Pfad Daten Cat")](path-data-images/pathdatacat-large.png#lightbox "dreifachen Screenshot der Seite Pfad Daten Cat")
+[![](path-data-images/pathdatacat-small.png "Triple screenshot of the Path Data Cat page")](path-data-images/pathdatacat-large.png#lightbox "Triple screenshot of the Path Data Cat page")
 
-Normalerweise, wenn ein `SKPath` Objekt als ein Feld definiert ist, müssen der Pfadkonturen im Konstruktor oder einer anderen Methode definiert werden. Wenn SVG-Pfaddaten verwenden zu können, allerdings haben Sie gelernt, dass der Pfad vollständig in der Felddefinition angegeben werden kann.
+Wenn ein `SKPath` Objekt als Feld definiert ist, müssen die Konturen des Pfads normalerweise im Konstruktor oder einer anderen Methode definiert werden. Wenn Sie SVG-Pfaddaten verwenden, haben Sie jedoch gesehen, dass der Pfad vollständig in der Felddefinition angegeben werden kann.
 
-Die vorherige **hässlichen analogen Uhr** -Beispiel in der [ **der Rotate-Transformation** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) Artikel der Zeiger der Uhr als einfache Linien angezeigt. Die **ziemlich analogen Uhr** nachfolgende Programm ersetzt die Zeilen mit `SKPath` Objekte definiert, die als Felder in der [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) -Klasse zusammen mit `SKPaint` Objekte:
+Das frühere Beispiel für eine **hässliche analoge Uhr** im Artikel [**Drehen der Transformation**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) hat die Hände der Uhr als einfache Linien angezeigt. Das **Recht analoge Takt** Programm ersetzt diese Zeilen durch `SKPath` Objekte, die als Felder in der [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) -Klasse zusammen mit `SKPaint` Objekten definiert sind:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -332,9 +332,9 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Die Stunde und Minute Hände haben jetzt Bereiche eingeschlossen. Um diese praktische voneinander zu machen, werden sie mit einem schwarzen Rand und mit grauer Füllung gezeichnet, die `handStrokePaint` und `handFillPaint` Objekte.
+Die Stunden-und Minuten Zeitangabe haben nun eingeschlossene Bereiche. Um die Hände voneinander unterscheiden zu können, werden Sie sowohl mit einem schwarzen Umriss als auch mit grauem Füll Zeichen mit den Objekten `handStrokePaint` und `handFillPaint` gezeichnet.
 
-In den früheren **hässlichen analogen Uhr** Beispiel, das kleine Kreise, markiert die Stunden und Minuten wurden in einer Schleife gezeichnet. In diesem **ziemlich analogen Uhr** Beispiel ein ganz anderen Ansatz wird verwendet: die Markierungen Stunden und Minuten werden gepunkteten Linien gezeichnet, die mit der `minuteMarkPaint` und `hourMarkPaint` Objekte:
+Im vorherigen Beispiel für eine **hässliche analoge Uhr** wurden die kleinen Kreise, die die Stunden und Minuten markierten, in einer Schleife gezeichnet. In diesem Beispiel für eine **Recht analoge Uhr** wird ein völlig anderer Ansatz verwendet: die Zeichen für die Stunde und die Minute sind gepunktete Linien, die mit den `minuteMarkPaint`-und `hourMarkPaint` Objekten gezeichnet werden:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -361,11 +361,11 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Die [ **Punkte und Gedankenstriche** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Artikel wurde erläutert, wie Sie verwenden können die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) Methode, um eine gestrichelte Linie zu erstellen. Das erste Argument ist ein `float` -Array, das in der Regel über zwei-Elemente verfügt: Das erste Element ist die Länge der Bindestriche, und das zweite Element ist die Lücke zwischen den Bindestrichen. Wenn die `StrokeCap` -Eigenschaftensatz auf `SKStrokeCap.Round`, und klicken Sie dann die abgerundeten Enden des Strichs effektiv die Dash Länge durch die Strichbreite auf beiden Seiten des Strichs verlängern. Wenn das erste Arrayelement auf 0 erstellt daher eine gestrichelte Linie.
+Im Artikel [**Punkte und Bindestriche**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) wurde erläutert, wie Sie die [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash*) -Methode verwenden können, um eine gestrichelte Linie zu erstellen. Beim ersten Argument handelt es sich um ein `float` Array, das im Allgemeinen über zwei Elemente verfügt: das erste Element ist die Länge der Bindestriche, und das zweite Element ist die Lücke zwischen den Bindestrichen. Wenn die `StrokeCap`-Eigenschaft auf `SKStrokeCap.Round`festgelegt ist, wird die Strichlänge durch die gerundeten Enden des Bindestrichs effektiv um die Strichbreite auf beiden Seiten des Bindestrichs verlängert. Wenn Sie also das erste Array Element auf 0 festlegen, wird eine gepunktete Linie erstellt.
 
-Die Entfernung zwischen diesen Punkten wird durch das zweite Arrayelement bestimmt. Wie Sie diese in Kürze, zwei sehen werden `SKPaint` Objekte dienen zum Zeichnen der Kreise mit einem Radius von 90 Einheiten. Der Umfang dieser Kreises ist daher 180π, was bedeutet, dass die 60-Minuten-Markierungen jeder 3π Einheiten angezeigt werden müssen, dies ist der zweite Wert in der `float` im array `minuteMarkPaint`. Die 12-Stunden-Markierungen müssen angezeigt werden alle Einheiten 15π, dies ist der Wert in der zweiten `float` Array.
+Der Abstand zwischen diesen Punkten wird durch das zweite Array Element gesteuert. Wie Sie sehen werden, werden diese beiden `SKPaint` Objekte zum Zeichnen von Kreisen mit einem Radius von 90 Einheiten verwendet. Der Umfang dieses Kreises ist aus diesem Grund 180. Dies bedeutet, dass die 60-Minuten-Markierungen alle 3D-Einheiten enthalten müssen. Dies ist der zweite Wert im `float` Arrays in `minuteMarkPaint`. Die 12-Stunden-Markierungen müssen alle 15d-Einheiten angezeigt werden. Dies ist der Wert im zweiten `float` Arrays.
 
-Die `PrettyAnalogClockPage` Klasse wird ein Timer ungültig gemacht werden, die Oberfläche alle 16 Millisekunden ein, und die `PaintSurface` Handler wird aufgerufen, bei dieser Rate. Die früheren Definitionen der `SKPath` und `SKPaint` Objekte können für sehr sauberen Code Zeichnen:
+Mit der `PrettyAnalogClockPage`-Klasse wird ein Timer festgelegt, um die Oberfläche alle 16 Millisekunden für ungültig zu erklären, und der `PaintSurface` Handler wird an dieser Rate aufgerufen. Die früheren Definitionen der `SKPath` und `SKPaint` Objekte ermöglichen sehr sauberen Zeichnungs Code:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -425,11 +425,11 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Eine Besonderheit des zweiten Zeigers, jedoch erfolgt mit. Da die Uhr aktualisiert wird alle 16 Millisekunden, die `Millisecond` Eigenschaft der `DateTime` Wert kann möglicherweise verwendet werden, um einen Sweep zweite Seite anstelle eines animieren, die in einzelne Sprünge verschiebt von Sekunde zu Sekunde. Dieser Code, nicht jedoch die Bewegung auf smooth sein. Stattdessen wird der Xamarin.Forms [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) und [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) Animation Beschleunigungsfunktionen für eine andere Art von Verschiebung. Diese Beschleunigungsfunktionen dazu führen, dass der zweite Zeiger zum Verschieben in eine wird ruckartiger Weise &mdash; zurückzusetzen ein kleines, bevor es verschoben, und klicken Sie dann leicht zu schießen das Ziel, einen Effekt, leider nicht in diese statischen Screenshots reproduzieren:
+Mit der zweiten Hand wird jedoch etwas besonderes erreicht. Da die Uhr alle 16 Millisekunden aktualisiert wird, kann die `Millisecond`-Eigenschaft des `DateTime` Werts möglicherweise verwendet werden, um eine geleerte zweite Hand zu animieren, anstatt eine, die in diskrete Sprünge von Sekunde zu Sekunde verschoben wird. Dieser Code lässt jedoch nicht zu, dass die Bewegung reibungslos ist. Stattdessen werden die Funktionen xamarin. Forms [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) und [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) Animations Beschleunigung für eine andere Art von Bewegung verwendet. Diese Beschleunigungsfunktionen bewirken, dass die zweite Hand in eine jerkier-Weise verschoben wird, &mdash; ein wenig vor der Verschiebung wiederholt wird, und dann das Ziel leicht überspringt. Dies hat zur Folge, dass diese statischen Screenshots leider nicht reproduziert werden können:
 
-[![](path-data-images/prettyanalogclock-small.png "Dreifacher Screenshot der Seite ziemlich analogen Uhr")](path-data-images/prettyanalogclock-large.png#lightbox "dreifachen Screenshot der Seite ziemlich analogen Uhr")
+[![](path-data-images/prettyanalogclock-small.png "Triple screenshot of the Pretty Analog Clock page")](path-data-images/prettyanalogclock-large.png#lightbox "Triple screenshot of the Pretty Analog Clock page")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

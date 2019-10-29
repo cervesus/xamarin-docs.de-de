@@ -1,235 +1,235 @@
 ---
-title: Zusammenfassung der Kapitel 19. Auflistungsansichten
-description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 19. Auflistungsansichten'
+title: Zusammenfassung des Kapitels 19. Sammlungs Ansichten
+description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung von Kapitel 19. Sammlungs Ansichten'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: bad46bead106304713bae91a7bf752db8080760a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bffbd2dec4a8494723597ba6e0f0af69e57f3718
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760621"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032864"
 ---
-# <a name="summary-of-chapter-19-collection-views"></a>Zusammenfassung der Kapitel 19. Auflistungsansichten
+# <a name="summary-of-chapter-19-collection-views"></a>Zusammenfassung des Kapitels 19. Sammlungs Ansichten
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
-
-> [!NOTE] 
-> Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
-
-Xamarin.Forms definiert drei Ansichten, die Auflistungen verwalten und ihre Elemente anzuzeigen:
-
-- [`Picker`](xref:Xamarin.Forms.Picker) ist eine relativ kurze Liste von Zeichenfolge-Elementen, die dem Benutzer ermöglicht, eine auswählen
-- [`ListView`](xref:Xamarin.Forms.ListView) ist häufig eine lange Liste von Elementen in der Regel vom gleichen Typ und die Formatierung, damit auch der Benutzer eine auswählen
-- [`TableView`](xref:Xamarin.Forms.TableView) ist eine Sammlung von *Zellen* (in der Regel von unterschiedlichen Typen und Darstellungen) Daten anzeigen oder Verwalten von Benutzereingaben
-
-Es ist üblich für MVVM-Anwendungen verwenden die `ListView` eine auswählbare Auflistung von Objekten angezeigt.
-
-## <a name="program-options-with-picker"></a>Optionen für das Programm mit der Auswahl
-
-Die [ `Picker` ](xref:Xamarin.Forms.Picker) ist eine gute Wahl, wenn Sie dem Benutzer ermöglichen, wählen Sie eine Option aus einer relativ kurzen Liste der müssen `string` Elemente.
-
-### <a name="the-picker-and-event-handling"></a>Die Auswahl und die Behandlung von Ereignissen
-
-Die [ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) Beispiel veranschaulicht, wie von XAML zum Festlegen der `Picker` [ `Title` ](xref:Xamarin.Forms.Picker.Title) Eigenschaft und hinzufügen `string` Elemente, die die [ `Items` ](xref:Xamarin.Forms.Picker.Items) Auflistung. Wenn der Benutzer wählt die `Picker`, zeigt die Elemente in der `Items` Auflistung in einer Weise plattformabhängige.
-
-Die [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) Ereignis gibt an, wenn der Benutzer ein Element ausgewählt wurde. Der nullbasierte [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) Eigenschaft gibt dann das ausgewählte Element an. Wenn kein Element ausgewählt ist, `SelectedIndex` gleich &ndash;1.
-
-Sie können auch `SelectedIndex` initialisieren Sie das ausgewählte Element, aber es muss festgelegt werden, nachdem die `Items` Auflistung gefüllt wird. In XAML, dies bedeutet, dass Sie wahrscheinlich ein Eigenschaftenelement festzulegende verwenden `SelectedIndex`.
-
-### <a name="data-binding-the-picker"></a>Die Auswahl für die Datenbindung
-
-Die `SelectedIndex` Eigenschaft durch eine bindbare Eigenschaft unterstützt wird, aber `Items` nicht der Fall ist, also mit der Datenbindung mit einem `Picker` ist schwierig. Eine Lösung ist die Verwendung der `Picker` in Kombination mit einem [ `ObjectToIndexConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) wie in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek. Die [ **PickerBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) wird veranschaulicht, wie dies funktioniert.
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 
 > [!NOTE] 
-> Die Xamarin.Forms `Picker` enthält jetzt `ItemsSource` und `SelectedItem` Eigenschaften, die die Datenbindung zu unterstützen. Finden Sie unter [Auswahl](~/xamarin-forms/user-interface/picker/index.md).
+> Hinweise auf dieser Seite geben Bereiche an, in denen xamarin. Forms von dem im Buch dargestellten Material abweickte.
+
+Xamarin. Forms definiert drei Sichten, die Auflistungen verwalten und ihre Elemente anzeigen:
+
+- [`Picker`](xref:Xamarin.Forms.Picker) ist eine relativ kurze Liste von Zeichen folgen Elementen, die es dem Benutzer ermöglichen, einen auszuwählen.
+- [`ListView`](xref:Xamarin.Forms.ListView) ist häufig eine lange Liste von Elementen, die in der Regel denselben Typ und dieselbe Formatierung aufweisen, sodass der Benutzer auch eine Auswahl treffen kann.
+- [`TableView`](xref:Xamarin.Forms.TableView) ist eine Auflistung von *Zellen* (in der Regel verschiedene Typen und Erscheinungen) zum Anzeigen von Daten oder zum Verwalten von Benutzereingaben.
+
+Es kommt häufig vor, dass MVVM-Anwendungen den `ListView` verwenden, um eine auswählbare Auflistung von Objekten anzuzeigen.
+
+## <a name="program-options-with-picker"></a>Programmoptionen mit Auswahl
+
+Das [`Picker`](xref:Xamarin.Forms.Picker) ist eine gute Wahl, wenn Sie es dem Benutzer ermöglichen möchten, eine Option aus einer relativ kurzen Liste von `string` Elementen auszuwählen.
+
+### <a name="the-picker-and-event-handling"></a>Auswahl-und Ereignis Behandlung
+
+Das [**pickerdemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) -Beispiel veranschaulicht, wie Sie mit XAML die `Picker` [`Title`](xref:Xamarin.Forms.Picker.Title) -Eigenschaft festlegen und der [`Items`](xref:Xamarin.Forms.Picker.Items) Auflistung `string` Elemente hinzufügen. Wenn der Benutzer den `Picker`auswählt, werden die Elemente in der `Items` Auflistung plattformabhängig angezeigt.
+
+Das Ereignis [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) gibt an, wann der Benutzer ein Element ausgewählt hat. Die null basierte [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) Eigenschaft gibt dann das ausgewählte Element an. Wenn kein Element ausgewählt ist, entspricht `SelectedIndex` &ndash;1.
+
+Sie können auch `SelectedIndex` verwenden, um das ausgewählte Element zu initialisieren, es muss jedoch nach dem Ausfüllen der `Items` Auflistung festgelegt werden. In XAML bedeutet dies, dass Sie wahrscheinlich ein Property-Element verwenden, um `SelectedIndex`festzulegen.
+
+### <a name="data-binding-the-picker"></a>Datenbindung der Auswahl
+
+Die `SelectedIndex`-Eigenschaft wird durch eine bindbare Eigenschaft gestützt, aber `Items` ist nicht. Daher ist die Verwendung der Datenbindung mit einem `Picker` schwierig. Eine Lösung besteht darin, die `Picker` in Kombination mit einer [`ObjectToIndexConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) zu verwenden, z. b. in der [**xamarin. formsbook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) -Bibliothek. Die [**pickerbinding**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) veranschaulicht, wie dies funktioniert.
+
+> [!NOTE] 
+> Die xamarin. Forms-`Picker` enthält nun `ItemsSource` und `SelectedItem` Eigenschaften, die die Datenbindung unterstützen. Siehe [Auswahl](~/xamarin-forms/user-interface/picker/index.md).
 
 ## <a name="rendering-data-with-listview"></a>Rendern von Daten mit ListView
 
-Die [ `ListView` ](xref:Xamarin.Forms.ListView) ist die einzige abgeleitete Klasse [ `ItemsView<TVisual>` ](xref:Xamarin.Forms.ItemsView`1) von der geerbt der [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) und [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) Eigenschaften.
+Der- [`ListView`](xref:Xamarin.Forms.ListView) ist die einzige Klasse, die von [`ItemsView<TVisual>`](xref:Xamarin.Forms.ItemsView`1) abgeleitet wird, von dem Sie die Eigenschaften [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) und [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) erbt.
 
-`ItemsSource` ist vom Typ `IEnumerable` aber `null` in der Standardeinstellung und muss explizit initialisiert oder auf eine Auflistung (häufiger) festgelegt werden, bis eine Datenbindung. Die Elemente in dieser Auflistung können eines beliebigen Typs sein.
+`ItemsSource` ist vom Typ `IEnumerable` ist jedoch standardmäßig `null` und muss durch eine Datenbindung explizit initialisiert oder (häufiger) auf eine Auflistung festgelegt werden. Die Elemente in dieser Sammlung können von einem beliebigen Typ sein.
 
-`ListView` definiert eine [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) Eigenschaft, die entweder festgelegt wird, um eines der Elemente in der `ItemsSource` Auflistung oder `null` , wenn kein Element ausgewählt ist. `ListView` löst die [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) Ereignis aus, wenn ein neues Element ausgewählt ist.
+`ListView` eine [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) Eigenschaft definiert, die entweder auf eines der Elemente in der `ItemsSource` Auflistung festgelegt ist, oder `null`, wenn kein Element ausgewählt ist. `ListView` löst das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) -Ereignis aus, wenn ein neues Element ausgewählt wird.
 
-### <a name="collections-and-selections"></a>Sammlungen und Auswahl
+### <a name="collections-and-selections"></a>Sammlungen und Auswahlmöglichkeiten
 
-Die [ **ListViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewList) Beispiel füllt ein `ListView` mit 17 `Color` Werte in einer `List<Color>` Auflistung. Die Elemente können ausgewählt werden, sondern standardmäßig mit ihren unschöne angezeigt `ToString` Darstellungen. Beispiele in diesem Kapitel werden die zu beheben, die anzeigen, und legen Sie ihn nach Bedarf so attraktiv veranschaulicht.
+Das [**listviewlist**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewList) -Beispiel füllt eine `ListView` mit 17 `Color` Werten in einer `List<Color>` Auflistung. Die Elemente sind wählbar, werden jedoch standardmäßig mit ihren unattraktiven `ToString` Darstellungen angezeigt. In den folgenden Beispielen wird gezeigt, wie Sie die Anzeige beheben und Sie so attraktiv machen, wie Sie möchten.
 
-### <a name="the-row-separator"></a>Das Zeilentrennzeichen
+### <a name="the-row-separator"></a>Das Zeilen Trennzeichen
 
-Unter iOS und Android zeigt werden von eine dünne Linie Zeilen getrennt. Sie können steuern, mit der [ `SeparatorVisibility` ](xref:Xamarin.Forms.ListView.SeparatorVisibility) und [ `SeparatorColor` ](xref:Xamarin.Forms.ListView.SeparatorColor) Eigenschaften. `SeparatorVisibility` Eigenschaft ist vom Typ [ `SeparatorVisibility` ](xref:Xamarin.Forms.SeparatorVisibility), eine Enumeration mit zwei Membern:
+Bei IOS-und Android-anzeigen werden die Zeilen von einer dünnen Linie getrennt. Sie können dies mit den Eigenschaften [`SeparatorVisibility`](xref:Xamarin.Forms.ListView.SeparatorVisibility) und [`SeparatorColor`](xref:Xamarin.Forms.ListView.SeparatorColor) steuern. `SeparatorVisibility`-Eigenschaft ist vom Typ [`SeparatorVisibility`](xref:Xamarin.Forms.SeparatorVisibility), eine Enumeration mit zwei Membern:
 
 - [`Default`](xref:Xamarin.Forms.SeparatorVisibility.Default), die Standardeinstellung
 - [`None`](xref:Xamarin.Forms.SeparatorVisibility.None)
 
-### <a name="data-binding-the-selected-item"></a>Das ausgewählte Element binden von Daten
+### <a name="data-binding-the-selected-item"></a>Datenbindung für das ausgewählte Element
 
-Die `SelectedItem` Eigenschaft wird durch eine bindbare Eigenschaft und gesichert, sodass sie entweder die Quelle oder Ziel einer Bindung werden kann. Die standardmäßige `BindingMode` ist `OneWayToSource`, jedoch ist es im Allgemeinen das Ziel eine bidirektionale Datenbindung, insbesondere in MVVM-Szenarien. Die [ **ListViewArray** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewArray) veranschaulicht diese Art von Bindung.
+Die `SelectedItem`-Eigenschaft wird durch eine bindbare Eigenschaft gestützt, d. h., Sie kann entweder die Quelle oder das Ziel einer Datenbindung sein. Der Standard `BindingMode` ist `OneWayToSource`, aber im Allgemeinen ist es das Ziel einer bidirektionalen Datenbindung, insbesondere in MVVM-Szenarios. Das [**ListViewArray**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewArray) -Beispiel veranschaulicht diesen Bindungstyp.
 
-### <a name="the-observablecollection-difference"></a>Der Unterschied ObservableCollection
+### <a name="the-observablecollection-difference"></a>Der Unterschied von ObservableCollection
 
-Die [ **ListViewLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewLogger) Beispiel legt die `ItemsSource` Eigenschaft eine `ListView` auf eine `List<DateTime>` Auflistung und progressiv fügt dann ein neues `DateTime` Objekt, das der Auflistung jede Sekunde einen Timer verwendet.
+Mit dem [**listviewlogger**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewLogger) -Beispiel wird die `ItemsSource`-Eigenschaft eines `ListView` auf eine `List<DateTime>` Auflistung festgelegt, und anschließend wird mithilfe eines Zeit Gebers jede Sekunde ein neues `DateTime` Objekt der Auflistung hinzugefügt.
 
-Allerdings die `ListView` nicht automatisch aktualisiert werden, selbst da die `List<T>` Sammlung verfügt nicht über einen Benachrichtigungsmechanismus, um anzugeben, wenn Elemente hinzugefügt oder aus der Auflistung entfernt werden.
+Die `ListView` wird jedoch nicht automatisch aktualisiert, da die `List<T>` Auflistung keinen Benachrichtigungs Mechanismus hat, der angibt, wann Elemente der Auflistung hinzugefügt oder daraus entfernt werden.
 
-Eine viel bessere Klasse für die Verwendung in einem solchen Szenario ist [ `ObservableCollection<T>` ](xref:System.Collections.ObjectModel.ObservableCollection`1) definiert, der `System.Collections.ObjectModel` Namespace. Diese Klasse implementiert die [ `INotifyCollectionChanged` ](xref:System.Collections.Specialized.INotifyCollectionChanged) -Schnittstelle, und daher löst eine [ `CollectionChanged` ](xref:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged) Ereignis aus, wenn Elemente hinzugefügt oder entfernt aus der Auflistung oder ein, wenn sie ersetzt werden, oder innerhalb verschoben werden die Auflistung. Bei der `ListView` erkennt intern, die eine Klasse implementieren `INotifyCollectionChanged` festgelegt wurde die `ItemsSource` -Eigenschaft, fügt es einen Handler, der `CollectionChanged` Ereignis und die Anzeige aktualisiert, wenn die Auflistung geändert.
+Eine viel bessere Klasse, die in solchen Szenarien verwendet werden kann, ist [`ObservableCollection<T>`](xref:System.Collections.ObjectModel.ObservableCollection`1) im `System.Collections.ObjectModel`-Namespace definiert. Diese Klasse implementiert die [`INotifyCollectionChanged`](xref:System.Collections.Specialized.INotifyCollectionChanged) -Schnittstelle und löst folglich ein [`CollectionChanged`](xref:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged) -Ereignis aus, wenn Elemente der Auflistung hinzugefügt oder daraus entfernt werden oder wenn Sie in der Auflistung ersetzt oder verschoben werden. Wenn der `ListView` intern erkennt, dass eine Klasse, die `INotifyCollectionChanged` implementiert, auf seine `ItemsSource`-Eigenschaft festgelegt wurde, fügt er dem `CollectionChanged` Ereignis einen Handler an und aktualisiert seine Anzeige, wenn sich die Auflistung ändert.
 
-Die [ **ObservableLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ObservableLogger) Beispiel veranschaulicht die Verwendung von `ObservableCollection`.
+Das [**observablelogger**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ObservableLogger) -Beispiel veranschaulicht die Verwendung von `ObservableCollection`.
 
 ### <a name="templates-and-cells"></a>Vorlagen und Zellen
 
-Standardmäßig eine `ListView` Zeigt Elemente in der Auflistung, die mit der jedes Elements `ToString` Methode. Ein besserer Ansatz umfasst eine Vorlage zum Anzeigen von Elementen definieren.
+Standardmäßig zeigt ein `ListView` Elemente in der Auflistung mithilfe der `ToString` Methode jedes Elements an. Ein besserer Ansatz besteht darin, eine Vorlage zum Anzeigen der Elemente zu definieren.
 
-Mit diesem Feature experimentieren möchten, können Sie die [ `NamedColor` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek. Diese Klasse definiert eine statische `All` Eigenschaft vom Typ `IList<NamedColor>` , 141 enthält `NamedColor` Objekte, die öffentlichen Felder des für die `Color` Struktur.
+Um mit diesem Feature zu experimentieren, können Sie die [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) -Klasse in der [**xamarin. formsbook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) -Bibliothek verwenden. Diese Klasse definiert eine statische `All`-Eigenschaft vom Typ `IList<NamedColor>`, die 141 `NamedColor`-Objekte enthält, die den öffentlichen Feldern der `Color` Struktur entsprechen.
 
-Die [ **NaiveNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/NaiveNamedColorList) Beispiel legt die `ItemsSource` von einer `ListView` dieser `NamedColor.All` -Eigenschaft, aber nur die den vollqualifizierten Klassennamen der der `NamedColor` Objekte sind angezeigt.
+Das Beispiel " [**naivenamedcolorlist**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/NaiveNamedColorList) " legt die `ItemsSource` eines `ListView` auf diese `NamedColor.All` Eigenschaft fest, aber nur die voll qualifizierten Klassennamen der `NamedColor` Objekte werden angezeigt.
 
-`ListView` benötigt eine Vorlage zum Anzeigen dieser Elemente. Im Code können Sie festlegen der [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) von definierte Eigenschaft `ItemsView<TVisual>` auf eine [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) -Objekt unter Verwendung der [ `DataTemplate` Konstruktor](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Type)) , verweist auf eine Ableitung von der [ `Cell` ](xref:Xamarin.Forms.Cell) Klasse. `Cell` verfügt über fünf ableitungen aus:
+`ListView` benötigt eine Vorlage, um diese Elemente anzuzeigen. Im Code können Sie die [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) -Eigenschaft, die durch `ItemsView<TVisual>` definiert wird, mithilfe des [`DataTemplate`-Konstruktors](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Type)) , der auf eine Ableitung der [`Cell`](xref:Xamarin.Forms.Cell) -Klasse verweist, auf ein [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) -Objekt festlegen. `Cell` hat fünf Ableitungen:
 
-- [`TextCell`](xref:Xamarin.Forms.TextCell) &mdash; enthält zwei `Label` Ansichten (konzeptueller Sicht)
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell) &mdash; Fügt eine `Image` Ansicht `TextCell`
-- [`EntryCell`](xref:Xamarin.Forms.EntryCell) &mdash; enthält eine `Entry` mit Anzeigen einer `Label`
+- [`TextCell`](xref:Xamarin.Forms.TextCell) &mdash; enthält zwei `Label` Ansichten (konzeptionell).
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) &mdash; fügt eine `Image` Sicht hinzu `TextCell`
+- [`EntryCell`](xref:Xamarin.Forms.EntryCell) &mdash; enthält eine `Entry` Sicht mit einer `Label`
 - [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) &mdash; enthält eine `Switch` mit einer `Label`
-- [`ViewCell`](xref:Xamarin.Forms.ViewCell) &mdash; kann `View` (wahrscheinlich mit untergeordneten Elementen)
+- [`ViewCell`](xref:Xamarin.Forms.ViewCell) &mdash; kann eine beliebige `View` sein (wahrscheinlich mit untergeordneten Elementen).
 
-Rufen Sie anschließend [ `SetValue` ](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) und [ `SetBinding` ](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) auf die `DataTemplate` Objekt, das Zuordnen von Werten mit der `Cell` Eigenschaften oder Festlegen der datenbindungen, die auf die `Cell` Eigenschaften verweisen auf Eigenschaften der Elemente in der `ItemsSource` Auflistung. Dies wird veranschaulicht, der [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) Beispiel.
+Anschließend [`SetValue`](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) und [`SetBinding`](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) für das `DataTemplate` Objekt, um den `Cell` Eigenschaften Werte zuzuordnen, oder um Daten Bindungen in den `Cell` Eigenschaften festzulegen, die auf Eigenschaften der Elemente in der `ItemsSource` Auflistung verweisen. Dies wird im [**textcelllistcode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) -Beispiel veranschaulicht.
 
-Wie jedes Element, durch angezeigt wird die `ListView`, eine kleine visuelle Struktur aus der Vorlage erstellt wird und datenbindungen, die zwischen dem Element und die Eigenschaften der Elemente in dieser visuellen Struktur hergestellt werden. Sie erhalten einen Überblick über diesen Prozess durch die Installation von Handlern für die [ `ItemAppearing` ](xref:Xamarin.Forms.ListView.ItemAppearing) und [ `ItemDisappearing` ](xref:Xamarin.Forms.ListView.ItemDisappearing) Ereignisse der `ListView`, oder indem Sie eine Alternative [ `DataTemplate`Konstruktor](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object})) , verwendet eine Funktion, die jedes Mal aufgerufen wird, ein Element der visuellen Struktur erstellt werden muss.
+Wenn jedes Element vom `ListView`angezeigt wird, wird eine kleine visuelle Struktur aus der Vorlage erstellt, und Daten Bindungen werden zwischen dem Element und den Eigenschaften der Elemente in dieser visuellen Struktur erstellt. Sie können sich einen Überblick über diesen Prozess verschaffen, indem Sie Handler für die [`ItemAppearing`](xref:Xamarin.Forms.ListView.ItemAppearing) und [`ItemDisappearing`](xref:Xamarin.Forms.ListView.ItemDisappearing) Ereignisse der `ListView`und einen alternativen [`DataTemplate` Konstruktor](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object})) verwenden, der eine Funktion verwendet, die jedes Mal aufgerufen wird, wenn die visuelle Struktur eines Elements erstellt werden.
 
-Die [ **TextCellListXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListXaml) zeigt ein funktionell Programm vollständig in XAML. Ein `DataTemplate` Tag festgelegt ist, um die `ItemTemplate` Eigenschaft der `ListView`, und klicken Sie dann die `TextCell` nastaven NA hodnotu der `DataTemplate`. Bindung an Eigenschaften der Elemente in der Auflistung festgelegt sind, direkt auf die [ `Text` ](xref:Xamarin.Forms.TextCell.Text) und [ `Detail` ](xref:Xamarin.Forms.TextCell.Detail) Eigenschaften der `TextCell`.
+[**Textcelllistxaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListXaml) zeigt ein funktional identisches Programm vollständig in XAML. Ein `DataTemplate`-Tag wird auf die `ItemTemplate`-Eigenschaft der `ListView`festgelegt, und dann wird der `TextCell` auf den `DataTemplate`festgelegt. Bindungen an Eigenschaften der Elemente in der Auflistung werden direkt in den Eigenschaften [`Text`](xref:Xamarin.Forms.TextCell.Text) und [`Detail`](xref:Xamarin.Forms.TextCell.Detail) der `TextCell`festgelegt.
 
 ### <a name="custom-cells"></a>Benutzerdefinierte Zellen
 
-In XAML ist es möglich, festzulegen eine [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) auf die `DataTemplate` und definieren Sie dann eine benutzerdefinierte visuelle Struktur als die [ `View` ](xref:Xamarin.Forms.ViewCell.View) Eigenschaft `ViewCell`. (`View` ist die Content-Eigenschaft des `ViewCell` daher `ViewCell.View` Tags sind nicht erforderlich.) Die [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) Beispiel wird diese Technik veranschaulicht:
+In XAML ist es möglich, eine [`ViewCell`](xref:Xamarin.Forms.ViewCell) auf den `DataTemplate` festzulegen und dann eine benutzerdefinierte visuelle Struktur als [`View`](xref:Xamarin.Forms.ViewCell.View) -Eigenschaft der `ViewCell`zu definieren. (`View` ist die Content-Eigenschaft `ViewCell`, sodass die `ViewCell.View` Tags nicht erforderlich sind.) Das [**customnamedcolorlist**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) -Beispiel veranschaulicht dieses Verfahren:
 
-[![Dreifacher Screenshot der Liste von benutzerdefinierten benannte Farbe](images/ch19fg11-small.png "benutzerdefinierte benannte Farbenliste")](images/ch19fg11-large.png#lightbox "benutzerdefinierte benannte Farbenliste")
+[![Dreifacher Screenshot der Liste benutzerdefinierter benannter Farben](images/ch19fg11-small.png "Benutzerdefinierte benannte Farbliste")](images/ch19fg11-large.png#lightbox "Benutzerdefinierte benannte Farbliste")
 
-Die Bestimmung der Systemgröße für alle Plattformen kann knifflig sein. Die [ `RowHeight` ](xref:Xamarin.Forms.ListView.RowHeight) Eigenschaft ist nützlich, aber in einigen Fällen sollten Sie zum Verwenden der [ `HasUnevenRows` ](xref:Xamarin.Forms.ListView.HasUnevenRows) -Eigenschaft, die weniger effizient ist, aber erzwingt, dass die `ListView` , die Größe der Zeilen. Für iOS und Android müssen Sie eine dieser zwei Eigenschaften verwenden, um größenanpassung von entsprechenden Zeilen abzurufen.
+Das erzielen der Größenanpassung für alle Plattformen kann knifflig sein. Die [`RowHeight`](xref:Xamarin.Forms.ListView.RowHeight) -Eigenschaft ist nützlich, aber in einigen Fällen sollten Sie auf die [`HasUnevenRows`](xref:Xamarin.Forms.ListView.HasUnevenRows) -Eigenschaft zurückgreifen, die weniger effizient ist, aber die `ListView` die Größe der Zeilen erzwingt. Für IOS und Android müssen Sie eine dieser beiden Eigenschaften verwenden, um die richtige Zeilengröße zu erhalten.
 
-### <a name="grouping-the-listview-items"></a>Die ListView-Elemente zu gruppieren
+### <a name="grouping-the-listview-items"></a>Gruppieren der ListView-Elemente
 
-`ListView` unterstützt die Gruppierung von Elementen und zum Navigieren zwischen diesen Gruppen. Die `ItemsSource` -Eigenschaft muss auf eine Auflistung von Auflistungen festgelegt werden: Das-Objekt `ItemsSource` , das auf festgelegt `IEnumerable`ist, muss implementieren, und jedes Element in der `IEnumerable`Auflistung muss ebenfalls implementieren. Jede Gruppe sollte zwei Eigenschaften enthalten: eine textbeschreibung der Gruppe und eine drei Buchstaben bestehende Abkürzung.
+`ListView` unterstützt das Gruppieren von Elementen und Navigieren zwischen diesen Gruppen. Die `ItemsSource`-Eigenschaft muss auf eine Auflistung von Auflistungen festgelegt werden: das-Objekt, auf das `ItemsSource` festgelegt ist, muss `IEnumerable`implementieren, und jedes Element in der Auflistung muss ebenfalls `IEnumerable`implementieren. Jede Gruppe sollte zwei Eigenschaften enthalten: eine Textbeschreibung der Gruppe und eine aus drei Buchstaben bestehende Abkürzung.
 
-Die [ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek erstellt sieben Gruppen von `NamedColor` Objekte. Die [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) Beispiel veranschaulicht, wie diese Gruppen mit den [ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled) Eigenschaft `ListView` festgelegt `true`, und die [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) und [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) Eigenschaften gebunden, um Eigenschaften in jeder Gruppe.
+Die [`NamedColorGroup`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) -Klasse in der [**xamarin. formsbook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) -Bibliothek erstellt sieben Gruppen von `NamedColor` Objekten. Das [**colorgrouplist**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) -Beispiel zeigt, wie diese Gruppen verwendet werden, wenn die [`IsGroupingEnabled`](xref:Xamarin.Forms.ListView.IsGroupingEnabled) -Eigenschaft von `ListView` auf `true`festgelegt ist und die Eigenschaften [`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding) und [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) an die Eigenschaften in jeder Gruppe gebunden sind.
 
-### <a name="custom-group-headers"></a>Benutzerdefinierte Kopfzeilen
+### <a name="custom-group-headers"></a>Benutzerdefinierte Gruppen Kopfzeilen
 
-Es ist möglich, Erstellen von benutzerdefinierten Header für die `ListView` gruppiert nach und Ersetzen Sie dabei die `GroupDisplayBinding` Eigenschaft mit dem die [ `GroupHeaderTemplate` ](xref:Xamarin.Forms.ListView.GroupHeaderTemplate) definieren eine Vorlage für die Header.
+Es ist möglich, benutzerdefinierte Header für die `ListView` Gruppen zu erstellen, indem Sie die `GroupDisplayBinding`-Eigenschaft durch die [`GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate) ersetzen, die eine Vorlage für die Header definiert.
 
 ### <a name="listview-and-interactivity"></a>ListView und Interaktivität
 
-Eine Anwendung erhält in der Regel Interaktionen der Benutzer mit einer `ListView` -inhaltsobjektereignisse einen Handler, der die `ItemSelected` oder [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) Ereignis wird oder indem Sie eine Datenbindung für die `SelectedItem` Eigenschaft. Aber einige Zellentypen (`EntryCell` und `SwitchCell`) Benutzerinteraktion möglich ist, und es ist auch möglich, benutzerdefinierte Zellen, die selbst erstellen möchten, die mit dem Benutzer interagieren. Die [ **InteractiveListView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) erstellt 100 Instanzen von [ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) und ermöglicht dem Benutzer so ändern Sie jede Farbe, die mithilfe von drei `Slider` Elemente. Das Programm verwendet auch die [ `ColorToContrastColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) in die [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit).
+Im allgemeinen erhält eine Anwendung eine Benutzerinteraktion mit einer `ListView`, indem Sie einen Handler an das `ItemSelected` oder [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) Ereignis anfügt oder indem Sie eine Datenbindung für die `SelectedItem`-Eigenschaft festlegt. Einige Zelltypen (`EntryCell` und `SwitchCell`) ermöglichen eine Benutzerinteraktion, und es ist auch möglich, benutzerdefinierte Zellen zu erstellen, die selbst mit dem Benutzer interagieren. Die [**interactivelistview**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) erstellt 100 Instanzen von [`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) und ermöglicht es dem Benutzer, jede Farbe mithilfe eines Trios von `Slider` Elementen zu ändern. Das Programm nutzt auch die [`ColorToContrastColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) im [**xamarin. formsbook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit).
 
 ## <a name="listview-and-mvvm"></a>ListView und MVVM
 
-`ListView` spielt eine wichtige Rolle in MVVM-Szenarien. Wenn ein `IEnumerable` Auflistung in ein "ViewModel" vorhanden ist, häufig eine Datenbindung erfolgt eine `ListView`. Darüber hinaus die Elemente in der Auflistung häufig implementieren `INotifyPropertyChanged` an Eigenschaften in einer Vorlage gebunden werden soll.
+`ListView` spielt in MVVM-Szenarien eine große Rolle. Wenn eine `IEnumerable` Auflistung in einem ViewModel vorhanden ist, ist Sie häufig an eine `ListView`gebunden. Außerdem implementieren die Elemente in der Auflistung häufig `INotifyPropertyChanged`, um eine Bindung mit Eigenschaften in einer Vorlage herzustellen.
 
-### <a name="a-collection-of-viewmodels"></a>Eine Auflistung von ViewModels
+### <a name="a-collection-of-viewmodels"></a>Eine Auflistung von ViewModels.
 
-Um dies zu untersuchen der [ **SchoolOfFineArts** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) Bibliothek erstellt mehrere Klassen, die basierend auf einer [XML-Datendatei](http://xamarin.github.io/xamarin-forms-book-samples/SchoolOfFineArt/students.xml) und Bilder der fiktiven Schüler/Studenten an dieser fiktiven School.
+Um dies zu untersuchen, erstellt die [**schooloffinearts**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) -Bibliothek mehrere Klassen basierend auf einer [XML-Datendatei](https://xamarin.github.io/xamarin-forms-book-samples/SchoolOfFineArt/students.xml) und Images von fiktiven Schülern in dieser fiktiven Schule.
 
-Die [ `Student` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/Student.cs) Klasse leitet sich von [ `ViewModelBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/ViewModelBase.cs). Die [ `StudentBody` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/StudentBody.cs) Klasse ist eine Sammlung von `Student` Objekte und auch abgeleitet `ViewModelBase`. Die [ `SchoolViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/SchoolViewModel.cs) lädt die XML-Datei herunter, und assembliert Sie alle Objekte.
+Die [`Student`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/Student.cs) -Klasse wird von [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/ViewModelBase.cs)abgeleitet. Die [`StudentBody`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/StudentBody.cs) -Klasse ist eine Auflistung von `Student` Objekten und wird auch von `ViewModelBase`abgeleitet. Der [`SchoolViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/SchoolOfFineArt/SchoolOfFineArt/SchoolViewModel.cs) lädt die XML-Datei herunter und assembliert alle-Objekte.
 
-Die [ **StudentList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList) Programm verwendet eine `ImageCell` zum Anzeigen der Schüler/Studenten und ihre Images in einem `ListView`:
+Das [**studentList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList) -Programm verwendet eine `ImageCell`, um die Studenten und Ihre Images in einem `ListView`anzuzeigen:
 
-[![Dreifacher Screenshot der Liste der Studenten](images/ch19fg18-small.png "\"Student\" Liste")](images/ch19fg18-large.png#lightbox "\"Student\"-Liste")
+[![Dreifacher Screenshot der Liste "Student"](images/ch19fg18-small.png "Liste der Studenten")](images/ch19fg18-large.png#lightbox "Liste der Studenten")
 
-Die [ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) -Beispiel wird eine [ `Header` ](xref:Xamarin.Forms.ListView.Header) Eigenschaft jedoch nur unter Android erscheint.
+Das [**ListviewHeader**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) -Beispiel fügt eine [`Header`](xref:Xamarin.Forms.ListView.Header) -Eigenschaft hinzu, wird jedoch nur unter Android angezeigt.
 
-### <a name="selection-and-the-binding-context"></a>Auswahl und der Bindungskontext
+### <a name="selection-and-the-binding-context"></a>Auswahl und Bindungs Kontext
 
-Die [ **SelectedStudentDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/SelectedStudentDetail) Programmieren bindet die `BindingContext` von eine `StackLayout` auf die `SelectedItem` Eigenschaft der `ListView`. Dadurch wird die ausführliche Informationen zu den ausgewählten Studenten angezeigt.
+Das [**selectedstudentdetail**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/SelectedStudentDetail) -Programm bindet die `BindingContext` eines `StackLayout` an die `SelectedItem`-Eigenschaft der `ListView`. Dies ermöglicht es dem Programm, ausführliche Informationen über den ausgewählten Studenten anzuzeigen.
 
 ### <a name="context-menus"></a>Kontextmenüs
 
-Eine Zelle kann ein Kontextmenü definieren, die auf eine plattformspezifische Weise implementiert wird. Fügen Sie zum Erstellen dieses Menüs [ `MenuItem` ](xref:Xamarin.Forms.MenuItem) Objekte die [ `ContextActions` ](xref:Xamarin.Forms.Cell.ContextActions) Eigenschaft der `Cell`.
+In einer Zelle kann ein Kontextmenü definiert werden, das plattformspezifisch implementiert wird. Um dieses Menü zu erstellen, fügen Sie der [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) -Eigenschaft der `Cell`[`MenuItem`](xref:Xamarin.Forms.MenuItem) Objekte hinzu.
 
-`MenuItem` werden fünf Eigenschaften definiert:
+in `MenuItem` werden fünf Eigenschaften definiert:
 
-- [`Text`](xref:Xamarin.Forms.MenuItem.Text) Der Typ `string`
-- [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) Der Typ `FileImageSource`
-- [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive) Der Typ `bool`
-- [`Command`](xref:Xamarin.Forms.MenuItem.Command) Der Typ `ICommand`
-- [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) Der Typ `object`
+- [`Text`](xref:Xamarin.Forms.MenuItem.Text) vom Typ `string`
+- [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) vom Typ `FileImageSource`
+- [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive) vom Typ `bool`
+- [`Command`](xref:Xamarin.Forms.MenuItem.Command) vom Typ `ICommand`
+- [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) vom Typ `object`
 
-Die `Command` und `CommandParameter` Eigenschaften impliziert, dass das "ViewModel" für jedes Element Methoden zum Ausführen der gewünschten Menüs-Befehle enthält. In nicht-MVVM-Szenarien `MenuItem` definiert auch eine [ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked) Ereignis.
+Die Eigenschaften `Command` und `CommandParameter` implizieren, dass das ViewModel-Objekt für jedes Element Methoden zum Ausführen der gewünschten Menübefehle enthält. In Szenarios ohne MVVM definiert `MenuItem` auch ein [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) Ereignis.
 
-Die [ **CellContextMenu** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CellContextMenu) wird diese Technik veranschaulicht. Die `Command` Eigenschaft der einzelnen `MenuItem` gebunden ist, um eine Eigenschaft des Typs `ICommand` in die `Student` Klasse. Legen Sie die `IsDestructive` Eigenschaft `true` für eine `MenuItem` , entfernt oder löscht das ausgewählte Objekt.
+Das [**cellcontextmenu**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CellContextMenu) veranschaulicht dieses Verfahren. Die `Command`-Eigenschaft der einzelnen `MenuItem` ist an eine Eigenschaft vom Typ `ICommand` in der `Student`-Klasse gebunden. Legen Sie die `IsDestructive`-Eigenschaft auf `true` für einen `MenuItem` fest, der das ausgewählte Objekt entfernt oder löscht.
 
-### <a name="varying-the-visuals"></a>Variieren die visuellen Elemente
+### <a name="varying-the-visuals"></a>Variieren der visuellen Elemente
 
-Manchmal möchten Sie geringfügige abweichungen in den Visualisierungen der Elemente in der `ListView` anhand einer Eigenschaft. Z. B. wenn eine Student-Grade Point Average unterschreitet 2.0 die [ **ColorCodedStudents** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorCodedStudents) Beispiel werden diese Student Name in Rot angezeigt.
-Dies erfolgt durch die Verwendung eines Wertkonverters Bindung, [ `ThresholdToObjectConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ThresholdToObjectConverter.cs)in die [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek.
+Manchmal benötigen Sie geringfügige Variationen in den visuellen Elementen der Elemente in der `ListView` basierend auf einer Eigenschaft. Wenn beispielsweise der Wert für den Mittelpunkt eines Studenten unter 2,0 fällt, zeigt das [**colorcodedstudents**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorCodedStudents) -Beispiel den Namen des Studenten rot an.
+Dies wird durch die Verwendung eines Bindungs Wert Konverters ( [`ThresholdToObjectConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ThresholdToObjectConverter.cs)) in der [**xamarin. formsbook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) -Bibliothek erreicht.
 
-### <a name="refreshing-the-content"></a>Den Inhalt wird aktualisiert.
+### <a name="refreshing-the-content"></a>Aktualisieren des Inhalts
 
-Die `ListView` eine Geste für eine Dropdownmenü für das Aktualisieren von Daten unterstützt. Legen Sie das Programm muss die [ `IsPullToRefresh` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) Eigenschaft `true` um dies zu ermöglichen. Der `ListView` reagiert auf das Pulldownmenü Gesten durch Festlegen der [ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing) Eigenschaft `true`, und durch Auslösen der [ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing) Ereignis und (für MVVM-Szenarien) aufrufen die `Execute` -Methode der seine [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand) Eigenschaft.
+Der `ListView` unterstützt eine pulldownbewegung zum Aktualisieren seiner Daten. Das Programm muss die [`IsPullToRefresh`](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) -Eigenschaft auf `true` festlegen, um dies zu aktivieren. Der `ListView` antwortet auf die pulldownbewegung, indem seine [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) -Eigenschaft auf `true`festgelegt wird, und indem das [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) -Ereignis und (für MVVM-Szenarien) aufgerufen wird, um die `Execute`-Methode der [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) -Eigenschaft aufzurufenden.
 
-Code behandeln die `Refresh` Ereignis oder die `RefreshCommand` möglicherweise aktualisiert dann die angezeigten Daten durch die `ListView` und legt `IsRefreshing` an `false`.
+Code, der das `Refresh` Ereignis oder das `RefreshCommand` behandelt, aktualisiert möglicherweise die Daten, die vom `ListView` angezeigt werden, und legt `IsRefreshing` wieder auf `false`fest.
 
-Die [ **RSS-Feed** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/RssFeed) Beispiel zeigt die Verwendung einer [ `RssFeedViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/RssFeed/RssFeed/RssFeed/RssFeedViewModel.cs) implementiert `RefreshCommand` und `IsRefreshing` Eigenschaften für die Datenbindung.
+Das [**RSSFeed**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/RssFeed) -Beispiel veranschaulicht die Verwendung einer [`RssFeedViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/RssFeed/RssFeed/RssFeed/RssFeedViewModel.cs) , die `RefreshCommand` und `IsRefreshing` Eigenschaften für die Datenbindung implementiert.
 
-## <a name="the-tableview-and-its-intents"></a>Die TableView und seine Absichten
+## <a name="the-tableview-and-its-intents"></a>Die TableView und deren Intents
 
-Während der `ListView` zeigt in der Regel mehrere Instanzen des gleichen Typs, der [ `TableView` ](xref:Xamarin.Forms.TableView) konzentriert sich in der Regel auf das Bereitstellen einer Benutzeroberfläche für mehrere Eigenschaften verschiedener Typen. Jedes Element bezieht sich auf eine eigene [ `Cell` ](xref:Xamarin.Forms.Cell) Ableitung für die Eigenschaft anzeigen oder Bereitstellen einer Benutzeroberfläche.
+Während der `ListView` in der Regel mehrere Instanzen desselben Typs anzeigt, konzentriert sich der [`TableView`](xref:Xamarin.Forms.TableView) im Allgemeinen auf die Bereitstellung einer Benutzeroberfläche für mehrere Eigenschaften verschiedener Typen. Jedes Element ist mit einer eigenen [`Cell`](xref:Xamarin.Forms.Cell) Ableitung verknüpft, um die Eigenschaft anzuzeigen oder eine Benutzeroberfläche bereitzustellen.
 
 ### <a name="properties-and-hierarchies"></a>Eigenschaften und Hierarchien
 
 `TableView` definiert nur vier Eigenschaften:
 
-- [`Intent`](xref:Xamarin.Forms.TableView.Intent) Der Typ [ `TableIntent` ](xref:Xamarin.Forms.TableIntent), eine Enumeration
-- [`Root`](xref:Xamarin.Forms.TableView.Root) Der Typ [ `TableRoot` ](xref:Xamarin.Forms.TableRoot), die Content-Eigenschaft `TableView`
-- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) Der Typ `int`
-- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) Der Typ `bool`
+- [`Intent`](xref:Xamarin.Forms.TableView.Intent) vom Typ [`TableIntent`](xref:Xamarin.Forms.TableIntent), eine Enumeration
+- [`Root`](xref:Xamarin.Forms.TableView.Root) vom Typ [`TableRoot`](xref:Xamarin.Forms.TableRoot), die Content-Eigenschaft von `TableView`
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) vom Typ `int`
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) vom Typ `bool`
 
-Die `TableIntent` Enumeration gibt an, wie Sie verwenden möchten die `TableView`:
+Die `TableIntent`-Enumeration gibt an, wie Sie die `TableView`verwenden möchten:
 
 - [`Data`](xref:Xamarin.Forms.TableIntent.Data)
 - [`Form`](xref:Xamarin.Forms.TableIntent.Form)
 - [`Settings`](xref:Xamarin.Forms.TableIntent.Settings)
 - [`Menu`](xref:Xamarin.Forms.TableIntent.Menu)
 
-Diese Elemente auch vorschlagen, einige Verwendungsmöglichkeiten für die `TableView`.
+Diese Member empfehlen außerdem einige Verwendungsmöglichkeiten für die `TableView`.
 
-Verschiedene weitere Klassen sind beteiligt, bei der Definition einer Tabelle:
+Mehrere andere Klassen sind an der Definition einer Tabelle beteiligt:
 
-- [`TableSectionBase`](xref:Xamarin.Forms.TableSectionBase) ist eine abstrakte Klasse, die von abgeleitet `BindableObject` und definiert eine [ `Title` ](xref:Xamarin.Forms.TableSectionBase.Title) Eigenschaft
+- [`TableSectionBase`](xref:Xamarin.Forms.TableSectionBase) ist eine abstrakte Klasse, die von `BindableObject` abgeleitet ist und eine [`Title`](xref:Xamarin.Forms.TableSectionBase.Title) Eigenschaft definiert.
 
-- [`TableSectionBase<T>`](xref:Xamarin.Forms.TableSectionBase`1) ist eine abstrakte Klasse, die von abgeleitet `TableSectionBase` und implementiert `IList<T>` und `INotifyCollectionChanged`
+- [`TableSectionBase<T>`](xref:Xamarin.Forms.TableSectionBase`1) ist eine abstrakte Klasse, die von `TableSectionBase` abgeleitet ist und `IList<T>` und implementiert `INotifyCollectionChanged`
 
-- [`TableSection`](xref:Xamarin.Forms.TableSection) leitet sich von `TableSectionBase<Cell>`
+- [`TableSection`](xref:Xamarin.Forms.TableSection) wird von `TableSectionBase<Cell>` abgeleitet
 
-- [`TableRoot`](xref:Xamarin.Forms.TableRoot) leitet sich von `TableSectionBase<TableSection>`
+- [`TableRoot`](xref:Xamarin.Forms.TableRoot) wird von `TableSectionBase<TableSection>` abgeleitet
 
-Kurz gesagt, `TableView` verfügt über eine `Root` -Eigenschaft, die Sie, um festlegen eine `TableRoot` -Objekt, das eine Auflistung von `TableSection` Objekte, von denen jede eine Sammlung von ist `Cell` Objekte. Eine Tabelle enthält mehrere Abschnitte, und jeder Abschnitt enthält mehrere Zellen. Die Tabelle selbst kann einen Titel, und jeder Abschnitt kann einen Titel haben. Obwohl `TableView` nutzt `Cell` ableitungen handeln, es macht nicht nutzen `DataTemplate`.
+Kurz gesagt verfügt `TableView` über eine `Root`-Eigenschaft, die Sie auf ein `TableRoot` Objekt festlegen, das eine Auflistung von `TableSection` Objekten ist, von denen jede eine Auflistung von `Cell` Objekten ist. Eine Tabelle verfügt über mehrere Abschnitte, und jeder Abschnitt enthält mehrere Zellen. Die Tabelle selbst kann über einen Titel verfügen, und jeder Abschnitt kann einen Titel haben. Obwohl `TableView` `Cell` Ableitungen verwendet, wird `DataTemplate`nicht verwendet.
 
-### <a name="a-prosaic-form"></a>Ein prosaischen Formular
+### <a name="a-prosaic-form"></a>Ein Prosaisches Formular
 
-Die [ **EntryForm** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/EntryForm) Beispiel definiert eine [ `PersonalInformation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/EntryForm/EntryForm/EntryForm/PersonalInformation.cs) Ansichtsmodell, eine Instanz, die wird die `BindingContext` von der `TableView`. Jede `Cell` Ableitung in seine `TableSection` haben Bindungen auf Eigenschaften klicken Sie dann die `PersonalInformation` Klasse.
+Das [**entryform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/EntryForm) -Beispiel definiert ein [`PersonalInformation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/EntryForm/EntryForm/EntryForm/PersonalInformation.cs) Ansichts Modell, eine Instanz von, die zum `BindingContext` des `TableView`wird. Jede `Cell` Ableitung in Ihrem `TableSection` kann dann über Bindungen zu Eigenschaften der `PersonalInformation`-Klasse verfügen.
 
 ### <a name="custom-cells"></a>Benutzerdefinierte Zellen
 
-Die [ **ConditionalCells** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ConditionalCells) Beispiel baut auf **EntryForm**. Die [ `ProgrammerInformation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/EntryForm/EntryForm/EntryForm/PersonalInformation.cs) Klasse enthält eine boolesche Eigenschaft, die die Anwendbarkeit der zwei zusätzliche Eigenschaften bestimmt. Für diese zwei zusätzlichen Eigenschaften, die Anwendung verwendet eine benutzerdefinierte `PickerCell` basierend auf einer [PickerCell.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml) und [PickerCell.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml.cs) in die [  **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek.
+Das [**conditionalcells**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ConditionalCells) -Beispiel wird auf **entryform**erweitert. Die [`ProgrammerInformation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/EntryForm/EntryForm/EntryForm/PersonalInformation.cs) -Klasse enthält eine boolesche Eigenschaft, die die Anwendbarkeit von zwei zusätzlichen Eigenschaften steuert. Für diese beiden zusätzlichen Eigenschaften verwendet das Programm eine benutzerdefinierte `PickerCell`, die auf einer " [pickercell. XAML](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml) " und " [PickerCell.XAML.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml.cs) " in der Bibliothek " [**xamarin. formsbook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) " basiert.
 
-Obwohl die `IsEnabled` Eigenschaften der beiden `PickerCell` Elemente gebunden sind, um die boolesche Eigenschaft im `ProgrammerInformation`, dieses Verfahren scheint nicht funktioniert, das nächste Beispiel aufgefordert.
+Obwohl die `IsEnabled` Eigenschaften der beiden `PickerCell` Elemente an die boolesche Eigenschaft in `ProgrammerInformation`gebunden sind, scheint dieses Verfahren nicht zu funktionieren, wodurch das nächste Beispiel angefordert wird.
 
-### <a name="conditional-sections"></a>Bedingungsabschnitte
+### <a name="conditional-sections"></a>Bedingte Abschnitte
 
-Die [ **ConditionalSection** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ConditionalSection) Beispiel fügt die beiden Elemente, die von der Auswahl des Elements in einer separaten booleschen `TableSection`. Die Code-Behind-Datei wird entfernt, in diesem Abschnitt aus der `TableView` oder hinzugefügt, es wieder auf die boolesche Eigenschaft basiert.
+Im [**conditionalsection**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ConditionalSection) -Beispiel werden die beiden Elemente, die für die Auswahl des booleschen Elements bedingt sind, in einer separaten `TableSection`platziert. Durch die Code-Behind-Datei wird dieser Abschnitt aus dem `TableView` entfernt oder basierend auf der booleschen Eigenschaft wieder hinzugefügt.
 
-### <a name="a-tableview-menu"></a>Ein Menü TableView
+### <a name="a-tableview-menu"></a>Ein TableView-Menü
 
-Eine andere Verwendung von einem `TableView` ist ein Menü. Die [ **MenuCommands** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/MenuCommands) Beispiel zeigt ein Menü, das Sie ein wenig wechseln kann `BoxView` auf dem Bildschirm.
+Eine weitere Verwendung eines `TableView` ist ein Menü. Das [**MenuCommands**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/MenuCommands) -Beispiel veranschaulicht ein Menü, in dem Sie eine kleine `BoxView` um den Bildschirm verschieben können.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Kapitel 19 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf)
-- [Kapitel 19-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
+- [Kapitel 19 Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 - [Auswahl](~/xamarin-forms/user-interface/picker/index.md)
 - [ListView](~/xamarin-forms/user-interface/listview/index.md)
 - [TableView](~/xamarin-forms/user-interface/tableview.md)

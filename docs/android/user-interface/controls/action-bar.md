@@ -3,19 +3,19 @@ title: Aktionsleiste für xamarin. Android
 ms.prod: xamarin
 ms.assetid: 84A79F1F-9E73-4E3E-80FA-B72E5686900B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: f472f19429f21c659e28ba1c7a8d2670e22ea6a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b2b7c2cc87b37ae0e7397988e37df6b9b1e3aa10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758958"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029385"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Aktionsleiste für xamarin. Android
 
-Wenn Sie `TabActivity`verwenden, hat der Code zum Erstellen der Registerkarten Symbole keine Auswirkung, wenn Sie für das Android 4,0-Framework ausgeführt werden. Obwohl es funktionell funktioniert, wie es in Android-Versionen vor 2,3 funktioniert hat, `TabActivity` ist die Klasse selbst in 4,0 veraltet. Es wurde eine neue Methode zum Erstellen einer Schnittstelle mit Registerkarten eingeführt, die die Aktionsleiste verwendet, die wir als nächstes erörtern werden.
+Wenn Sie `TabActivity`verwenden, hat der Code zum Erstellen der Registerkarten Symbole keine Auswirkung, wenn Sie für das Android 4,0-Framework ausgeführt werden. Obwohl es funktionell funktioniert, wie es in Android-Versionen vor 2,3 der Fall war, wurde die `TabActivity` Klasse selbst in 4,0 als veraltet eingestuft. Es wurde eine neue Methode zum Erstellen einer Schnittstelle mit Registerkarten eingeführt, die die Aktionsleiste verwendet, die wir als nächstes erörtern werden.
 
 ## <a name="action-bar-tabs"></a>Registerkarten Aktionsleiste
 
@@ -24,13 +24,13 @@ Der folgende Screenshot zeigt ein Beispiel für eine solche Schnittstelle.
 
 [![Screenshot der APP, die in einem Emulator ausgeführt wird. Es werden zwei Registerkarten angezeigt.](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
-Um Registerkarten im Aktionsleiste zu erstellen, müssen Sie zuerst die `NavigationMode` zugehörige-Eigenschaft für die Unterstützung von Registerkarten festlegen. In Android 4 ist eine `ActionBar` -Eigenschaft für die Activity-Klasse verfügbar, die wir verwenden können, um `NavigationMode` wie folgt festzulegen:
+Um Registerkarten im Aktionsleiste zu erstellen, müssen Sie zuerst die `NavigationMode`-Eigenschaft für die Unterstützung von Registerkarten festlegen. In Android 4 ist eine `ActionBar`-Eigenschaft für die Activity-Klasse verfügbar, die wir verwenden können, um die `NavigationMode` wie folgt festzulegen:
 
 ```csharp
 this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 ```
 
-Sobald dies erfolgt ist, können Sie eine Registerkarte erstellen, indem `NewTab` Sie die-Methode für den Aktionsleiste aufrufen. Mit dieser Registerkarten Instanz können wir die `SetText` -Methode und `SetIcon` die-Methode aufrufen, um den Beschriftungs Text und das Symbol der Registerkarte festzulegen. diese Aufrufe werden in der Reihenfolge im unten gezeigten Code vorgenommen:
+Sobald dies erfolgt ist, können Sie eine Registerkarte erstellen, indem Sie die `NewTab`-Methode für die Aktionsleiste aufrufen. Mit dieser Registerkarten Instanz können wir die Methoden "`SetText`" und "`SetIcon`" zum Festlegen des Beschriftungs Texts und Symbols der Registerkarte aufzurufen. Diese Aufrufe werden in der Reihenfolge in dem unten gezeigten Code vorgenommen:
 
 ```csharp
 var tab = this.ActionBar.NewTab ();
@@ -38,7 +38,7 @@ tab.SetText (tabText);
 tab.SetIcon (Resource.Drawable.ic_tab_white);
 ```
 
-Bevor wir die Registerkarte hinzufügen können, müssen wir das `TabSelected` -Ereignis behandeln. In diesem Handler können wir den Inhalt für die Registerkarte erstellen. Aktionsleiste Registerkarten können mit *Fragmenten*verwendet werden, bei denen es sich um Klassen handelt, die einen Teil der Benutzeroberfläche in einer Aktivität darstellen. In diesem Beispiel enthält die fragmentansicht ein einzelnes `TextView`, das wir in unserer `Fragment` Unterklasse wie folgt Auffüllen:
+Bevor wir die Registerkarte hinzufügen können, müssen wir das `TabSelected`-Ereignis behandeln. In diesem Handler können wir den Inhalt für die Registerkarte erstellen. Aktionsleiste Registerkarten sind für die Arbeit mit *Fragmenten*konzipiert, bei denen es sich um Klassen handelt, die einen Teil der Benutzeroberfläche in einer Aktivität darstellen. In diesem Beispiel enthält die fragmentansicht einen einzelnen `TextView`, den wir in der `Fragment`-Unterklasse wie folgt erhöhen:
 
 ```csharp
 class SampleTabFragment: Fragment
@@ -60,7 +60,7 @@ class SampleTabFragment: Fragment
 }
 ```
 
-Das im `TabSelected` Ereignis weiter gegebene Ereignis Argument weist den Typ `TabEventArgs`auf, der eine `FragmentTransaction` Eigenschaft enthält, mit der wir das Fragment hinzufügen können, wie unten dargestellt:
+Das im `TabSelected` Ereignis weiter gegebene Ereignis Argument hat den Typ `TabEventArgs`, das eine `FragmentTransaction`-Eigenschaft enthält, mit der wir das Fragment hinzufügen können, wie unten dargestellt:
 
 ```csharp
 tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {             
@@ -69,7 +69,7 @@ tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {
 };
 ```
 
-Zum Schluss können Sie die Registerkarte dem Aktionsleiste hinzufügen, indem `AddTab` Sie die-Methode aufrufen, wie im folgenden Code gezeigt:
+Zum Schluss können Sie die Registerkarte dem Aktionsleiste hinzufügen, indem Sie die `AddTab`-Methode aufrufen, wie im folgenden Code gezeigt:
 
 ```csharp
 this.ActionBar.AddTab (tab);
@@ -77,15 +77,15 @@ this.ActionBar.AddTab (tab);
 
 Das komplette Beispiel finden Sie im Projekt *hellotabsics* im Beispielcode für dieses Dokument.
 
-## <a name="shareactionprovider"></a>ShareActionProvider
+## <a name="shareactionprovider"></a>Shareaktionbieter
 
-Mit `ShareActionProvider` der-Klasse kann eine Freigabe Aktion aus einer Aktionsleiste durchgeführt werden. Es übernimmt das Erstellen einer Aktions Ansicht mit einer Liste von apps, die eine Freigabe Absicht verarbeiten können, und speichert einen Verlauf der zuvor verwendeten Anwendungen für den einfachen Zugriff auf diese Anwendungen später aus dem Aktionsleiste. Dies ermöglicht Anwendungen die gemeinsame Nutzung von Daten über eine Benutzer Darstellung, die in Android konsistent ist.
+Die `ShareActionProvider`-Klasse ermöglicht das Ausführen einer Freigabe Aktion aus einer Aktionsleiste. Es übernimmt das Erstellen einer Aktions Ansicht mit einer Liste von apps, die eine Freigabe Absicht verarbeiten können, und speichert einen Verlauf der zuvor verwendeten Anwendungen für den einfachen Zugriff auf diese Anwendungen später aus dem Aktionsleiste. Dies ermöglicht Anwendungen die gemeinsame Nutzung von Daten über eine Benutzer Darstellung, die in Android konsistent ist.
 
 ### <a name="image-sharing-example"></a>Beispiel für eine Bildfreigabe
 
-Nachstehend sehen Sie beispielsweise einen Screenshot einer Aktionsleiste mit einem Menü Element für die Freigabe eines Bilds (aus dem [shareaktionprovider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo) -Beispiel entnommen). Wenn der Benutzer auf das Menü Element auf der Aktionsleiste tippt, lädt der shareaktionsanbieter die Anwendung, um eine Absicht zu verarbeiten, `ShareActionProvider`die dem zugeordnet ist. In diesem Beispiel wurde die Messaging Anwendung bereits verwendet, sodass Sie in der Aktionsleiste angezeigt wird.
+Nachstehend sehen Sie beispielsweise einen Screenshot einer Aktionsleiste mit einem Menü Element für die Freigabe eines Bilds (aus dem [shareaktionprovider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo) -Beispiel entnommen). Wenn der Benutzer auf das Menü Element auf der Aktionsleiste tippt, lädt der shareaktionsanbieter die Anwendung, um eine Absicht zu verarbeiten, die der `ShareActionProvider`zugeordnet ist. In diesem Beispiel wurde die Messaging Anwendung bereits verwendet, sodass Sie in der Aktionsleiste angezeigt wird.
 
-[![Screenshot des Symbols für die Messaging Anwendung im Aktionsleiste](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
+[![Screenshot des Messaging Anwendungs Symbols in der Aktionsleiste](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 Wenn der Benutzer im Aktionsleiste auf das Element klickt, wird die Messaging-APP, die das freigegebene Image enthält, wie unten dargestellt gestartet:
 
@@ -93,7 +93,7 @@ Wenn der Benutzer im Aktionsleiste auf das Element klickt, wird die Messaging-AP
 
 ### <a name="specifying-the-action-provider-class"></a>Angeben der Aktions Anbieter Klasse
 
-Um das `ShareActionProvider`zu verwenden, legen `android:actionProviderClass` Sie das-Attribut für ein Menü Element im XML-Code für das Menü der Aktionsleiste wie folgt fest:
+Um die `ShareActionProvider`zu verwenden, legen Sie das `android:actionProviderClass`-Attribut in einem Menü Element im XML-Format für das Aktionsleiste Menü wie folgt fest:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,7 +107,7 @@ Um das `ShareActionProvider`zu verwenden, legen `android:actionProviderClass` Si
 
 ### <a name="inflating-the-menu"></a>Auffüllen des Menüs
 
-Um das Menü zu erhöhen, überschreiben `OnCreateOptionsMenu` Sie in der Unterklasse Activity. Sobald ein Verweis auf das Menü vorhanden ist, können wir den `ShareActionProvider` von der `ActionProvider` `ShareActionProvider`-Eigenschaft des Menü Elements erhalten und dann die Absicht mit der setshareintent-Methode festlegen, wie unten dargestellt:
+Um das Menü zu erhöhen, überschreiben wir `OnCreateOptionsMenu` in der Aktivitäts Unterklasse. Sobald ein Verweis auf das Menü vorhanden ist, können wir die `ShareActionProvider` aus der `ActionProvider`-Eigenschaft des Menü Elements erhalten und dann mithilfe der setshareintent-Methode die Absicht des `ShareActionProvider`festlegen, wie unten dargestellt:
 
 ```csharp
 public override bool OnCreateOptionsMenu (IMenu menu)
@@ -123,7 +123,7 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 
 ### <a name="creating-the-intent"></a>Erstellen der Absicht
 
-Der `ShareActionProvider` verwendet die Absicht, die an die `SetShareIntent` -Methode im obigen Code weitergeleitet wird, um die entsprechende-Aktivität zu starten. In diesem Fall erstellen wir eine Absicht, ein Image zu senden, indem wir den folgenden Code verwenden:
+Der `ShareActionProvider` verwendet die Absicht, die an die `SetShareIntent`-Methode im obigen Code weitergeleitet wird, um die entsprechende Aktivität zu starten. In diesem Fall erstellen wir eine Absicht, ein Image zu senden, indem wir den folgenden Code verwenden:
 
 ```csharp
 Intent CreateIntent ()
@@ -142,5 +142,5 @@ Das Image im obigen Codebeispiel ist als Medienobjekt mit der Anwendung enthalte
 
 - [Hello Tabs ICS (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
 - [Shareaktionprovider-Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
-- [Einführung in Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Einführung in Ice Cream Sandwich](https://www.android.com/about/ice-cream-sandwich/)
 - [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)

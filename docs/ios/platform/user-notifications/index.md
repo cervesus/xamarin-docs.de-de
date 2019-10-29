@@ -4,15 +4,15 @@ description: Links zu Dokumenten, die das Framework für Benutzer Benachrichtigu
 ms.prod: xamarin
 ms.assetid: 223FCE25-A3E6-4255-BCFC-0E3136F4E987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/01/2016
-ms.openlocfilehash: b0a9714a1231ad9565a987460e5a378f3da8655a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 85bdace802e58725195d9124af70f396a533aaee
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290548"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031242"
 ---
 # <a name="user-notifications-framework-in-xamarinios"></a>Benutzer Benachrichtigungs Framework in xamarin. IOS
 
@@ -34,5 +34,5 @@ Dieser Artikel bietet einen tieferen Einblick in das neue Benutzer Benachrichtig
 
 - [IOS 10-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [User Notification Framework-Referenz](https://developer.apple.com/reference/usernotifications)
-- [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
+- [Usernotificationsui](https://developer.apple.com/reference/usernotificationsui)
 - [Leitfaden zur lokalen und Remote Benachrichtigungs Programmierung](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)

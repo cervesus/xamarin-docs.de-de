@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie in tvos-apps, die mit x
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4255891174b639022a45c45c22e0022cd0403f26
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769181"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030593"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -20,7 +20,7 @@ Benutzer Ihrer xamarin. tvos-App interagieren nicht direkt mit ihrer Schnittstel
 
 Wenn Ihre APP ein Spiel ist, können Sie optional auch Unterstützung für Drittanbieter erstellen, die für IOS- [Spiele Controller](#Bluetooth-Game-Controllers) (MFI) in ihrer App erstellt wurden.
 
-[![](remote-bluetooth-images/intro01.png "Bluetooth-Remote-und Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
+[![](remote-bluetooth-images/intro01.png "The Bluetooth Remote and Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Remote-Schaltflächen " [Siri](#The-Siri-Remote)", " [touchsurface](#Touch-Surface-Gestures) " und " [Siri](#Siri-Remote-Buttons) " beschrieben, und es wird gezeigt, wie Sie mit Ihnen über [Gesten und Storyboards](#Gestures-and-Storyboards), [Gesten und Code](#Gestures-and-Code) und eine [Ereignis Behandlung auf niedriger Ebene](#Low-Level-Event-Handling)arbeiten Schließlich wird die [Arbeit mit Spiel Controllern](#Working-with-Game-Controllers) in einer xamarin. tvos-App erläutert.
 
@@ -32,7 +32,7 @@ Die Hauptmethode, mit der Benutzer mit dem Apple TV und ihrer xamarin. tvos-App 
 
 Die Herausforderung als tvos-App-Entwickler besteht darin, eine schnelle, benutzerfreundliche und visuell überzeugende Benutzeroberfläche zu erstellen, die die Berührungs Oberfläche von Siri, den Beschleunigungsmesser, das Gyroskop und Schaltflächen nutzt.
 
-[![](remote-bluetooth-images/remote01.png "Die Siri-Remote")](remote-bluetooth-images/remote01.png#lightbox)
+[![](remote-bluetooth-images/remote01.png "The Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
 
 Der Siri-Remote Computer verfügt über folgende Features und erwartete Verwendungen in ihrer tvos-App:
 
@@ -85,17 +85,17 @@ Gehen Sie folgendermaßen vor, um eine Gestenerkennung hinzuzufügen:
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zum Bearbeiten des Schnittstellen-Designers.
 2. Ziehen Sie eine **Tap-Gestenerkennung** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab:
 
-    [![](remote-bluetooth-images/storyboard01.png "Eine Tap-Gestenerkennung")](remote-bluetooth-images/storyboard01.png#lightbox)
+    [![](remote-bluetooth-images/storyboard01.png "A Tap Gesture Recognizer")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. Aktivieren **Sie im** **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes:
 
-    [![](remote-bluetooth-images/storyboard02.png "Auswahl aktivieren")](remote-bluetooth-images/storyboard02.png#lightbox)
+    [![](remote-bluetooth-images/storyboard02.png "Check Select")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Select** bedeutet, dass die Geste auf den Benutzer reagiert, indem er auf die **Touchoberfläche** der Siri-Remote klickt. Sie haben auch die Möglichkeit, auf die Schaltflächen **Menü**, wieder **Gabe/Pause**, nach **oben**, **nach unten**, **Links** und **Rechts** zu antworten.
-5. Richten Sie als nächstes eine **Aktion** aus dem **Tap-Gesten Erkennungs** Modul ein, `TouchSurfaceClicked`und nennen Sie es:
+5. Richten Sie als nächstes eine **Aktion** aus der **Tap-Gestenerkennung** ein, und nennen Sie Sie `TouchSurfaceClicked`:
 
-    [![](remote-bluetooth-images/storyboard03.png "Eine Aktion aus der TAP-Gestenerkennung.")](remote-bluetooth-images/storyboard03.png#lightbox)
+    [![](remote-bluetooth-images/storyboard03.png "An Action from the Tap Gesture Recognizer")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück.
 
-Bearbeiten Sie die Ansichts Controller `FirstViewController.cs`Datei (Beispieldatei), und fügen Sie den folgenden Code hinzu, um die ausgelöste Bewegung zu behandeln:
+Bearbeiten Sie die Datei des Ansichts Controllers (z. b. `FirstViewController.cs`), und fügen Sie den folgenden Code hinzu, um die ausgelöste Bewegung
 
 ```csharp
 using System;
@@ -186,13 +186,13 @@ namespace tvRemote
 
 ## <a name="low-level-event-handling"></a>Ereignis Behandlung auf niedriger Ebene
 
-Wenn Sie einen benutzerdefinierten Typ erstellen, der `UIKit` auf in ihrer xamarin. tvos-App basiert `UIView`(z. b.), können Sie auch die Behandlung von Schaltflächen auf niedriger `UIPress` Ebene über Ereignisse bereitstellen.
+Wenn Sie einen benutzerdefinierten Typ erstellen, der auf `UIKit` in ihrer xamarin. tvos-App basiert (z. b. `UIView`), haben Sie auch die Möglichkeit, den Schaltflächen Druck auf niedriger Ebene über `UIPress`-Ereignisse bereitzustellen.
 
-Ein `UIPress` Ereignis besteht darin, `UITouch` das Ereignis für IOS zu optimieren, außer `UIPress` dass Informationen zu Schaltflächen auf der Siri-Remote Verbindung oder anderen angeschlossenen Bluetooth-Geräten (z. b. ein Spiele Controller) zurückgegeben werden. `UIPress`Ereignisse beschreiben die gedrückte Schaltfläche und ihren Zustand (gestartet, abgebrochen, geändert oder beendet).
+Ein `UIPress` Ereignis ist das tvos, was ein `UITouch` Ereignis für IOS ist, außer `UIPress` gibt Informationen zu Schaltflächen-drücken auf der Siri-Remote-oder anderen angeschlossenen Bluetooth-Geräte (wie z. b. ein Spiele Controller) zurück. `UIPress` Ereignisse beschreiben die gedrückte Schaltfläche und ihren Zustand (gestartet, abgebrochen, geändert oder beendet).
 
-Für analoge Schaltflächen auf Geräten wie Bluetooth Game Controllers `UIPress` gibt auch die Menge der auf die Schaltfläche angewendeten Force zurück. Die `Type` -Eigenschaft `UIPress` des-Ereignisses definiert, welche physische Schaltfläche den Zustand geändert hat, während die restlichen Eigenschaften die aufgetretene Änderung beschreiben.
+Bei analogen Schaltflächen auf Geräten wie Bluetooth-Spiel Controllern gibt `UIPress` auch die Menge der auf die Schaltfläche angewendeten Force zurück. Die `Type`-Eigenschaft des `UIPress` Ereignisses definiert, welche physische Schaltfläche den Zustand geändert hat, während die restlichen Eigenschaften die aufgetretene Änderung beschreiben.
 
-Der folgende Code zeigt ein Beispiel für die Behandlung von Ereignissen `UIPress` auf niedriger Ebene `UIView`für einen:
+Der folgende Code zeigt ein Beispiel für die Behandlung von `UIPress` Ereignissen auf niedriger Ebene für ein `UIView`:
 
 ```csharp
 using System;
@@ -263,7 +263,7 @@ namespace tvRemote
 }
 ```
 
-Wie bei `UITouch` Ereignissen sollten Sie alle vier implementieren, wenn Sie eine `UIPress` der Ereignis Überschreibungen implementieren müssen.
+Wie bei `UITouch` Ereignissen sollten Sie alle vier implementieren, wenn Sie eine der `UIPress` Ereignis Überschreibungen implementieren müssen.
 
 <a name="Bluetooth-Game-Controllers" />
 
@@ -271,7 +271,7 @@ Wie bei `UITouch` Ereignissen sollten Sie alle vier implementieren, wenn Sie ein
 
 Zusätzlich zu den standardmäßigen Siri-Remote Geräten, die mit dem Apple TV ausgeliefert werden, können Drittanbieter für IOS-Spiele Controller (MFI) mit dem Apple TV gekoppelt und zum Steuern ihrer xamarin. tvos-App verwendet werden.
 
-[![](remote-bluetooth-images/game01.png "Bluetooth-Spielcontroller")](remote-bluetooth-images/game01.png#lightbox)
+[![](remote-bluetooth-images/game01.png "Bluetooth Game Controllers")](remote-bluetooth-images/game01.png#lightbox)
 
 Spiele Controller können verwendet werden, um das Spiel zu verbessern und ein Gefühl für das Eintauchen in ein Spiel zu bieten. Sie können auch verwendet werden, um die standardmäßige Apple TV-Schnittstelle zu steuern, sodass die Verwendung nicht zwischen dem Remote-und dem Controller wechseln muss.
 
@@ -309,8 +309,8 @@ Wie oben bereits erwähnt, kann der Benutzer neben dem standardmäßigen Siri-Re
 
 Wenn Ihre APP auf niedriger Ebene Controller Eingaben benötigt, können Sie das [Spiele Controller-Framework](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276) von Apple verwenden, das die folgenden Änderungen für tvos hat:
 
-- Das Micro Game Controller profile (`GCMicroGamepad`) wurde hinzugefügt, um das Ziel von Siri als Ziel zu haben.
-- Die neue `GCEventViewController` Klasse kann verwendet werden, um Spiele Controller Ereignisse über Ihre APP weiterzuleiten. Weitere Informationen finden Sie weiter unten im Abschnitt [bestimmen der Spiele Controller Eingabe](#determining-game-controller-input) .
+- Das Micro Game Controller-Profil (`GCMicroGamepad`) wurde hinzugefügt, um die Siri-Remote Version als Ziel festzustellen.
+- Die neue `GCEventViewController`-Klasse kann verwendet werden, um Spiele Controller Ereignisse über Ihre APP weiterzuleiten. Weitere Informationen finden Sie weiter unten im Abschnitt [bestimmen der Spiele Controller Eingabe](#determining-game-controller-input) .
 
 <a name="Game-Controller-Support-Requirements" />
 
@@ -327,9 +327,9 @@ Apple hat mehrere spezielle Anforderungen, die erfüllt sein müssen, wenn Ihre 
 
 ### <a name="enabling-game-controller-support"></a>Aktivieren der Game Controller-Unterstützung
 
-Um die Spiele Controller Unterstützung in ihrer xamarin. tvos-APP zu aktivieren, Doppel `Info.plist` klicken Sie auf die Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen:
+Um die Spiele Controller Unterstützung in ihrer xamarin. tvos-APP zu aktivieren, doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen:
 
-[![](remote-bluetooth-images/game02.png "Der Info. plist-Editor")](remote-bluetooth-images/game02.png#lightbox)
+[![](remote-bluetooth-images/game02.png "The Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
 
 Platzieren Sie im Abschnitt **Game Controller** eine Prüfung, indem Sie **Game Controller aktivieren**, und überprüfen Sie dann alle Spiele Controller Typen, die von der App unterstützt werden.
 
@@ -337,7 +337,7 @@ Platzieren Sie im Abschnitt **Game Controller** eine Prüfung, indem Sie **Game 
 
 ### <a name="using-the-siri-remote-as-a-game-controller"></a>Verwenden von Siri Remote als Spiel Controller
 
-Die Siri-Remote Verbindung mit Apple TV kann als eingeschränkter Spiel Controller verwendet werden. Wie bei anderen Spiel Controllern wird es im Game Controller-Framework als `GCController` -Objekt angezeigt und unterstützt sowohl das `GCMicroGamepad` `GCMotion` -als auch das-Profil.
+Die Siri-Remote Verbindung mit Apple TV kann als eingeschränkter Spiel Controller verwendet werden. Wie bei anderen Spiel Controllern wird es im Game Controller-Framework als `GCController` Objekt angezeigt und unterstützt sowohl das `GCMotion` als auch das `GCMicroGamepad` Profile.
 
 Bei Verwendung als Spiel Controller hat die Siri-Remote die folgenden Eigenschaften:
 
@@ -351,11 +351,11 @@ Bei Verwendung als Spiel Controller hat die Siri-Remote die folgenden Eigenschaf
 
 ### <a name="determining-game-controller-input"></a>Bestimmen der Spiel Controller Eingabe
 
-Anders als bei IOS, bei dem Spiele Controller Ereignisse parallel mit Berührungs Ereignissen empfangen werden können, verarbeitet tvos alle Ereignisse auf niedriger Ebene, um `UIKit` Ereignisse auf hoher Ebene zu liefern. Daher müssen Sie, wenn Sie Zugriff auf die Low `UIKit`-Level-Spiele Controller Ereignisse benötigen, das Standardverhalten deaktivieren.
+Anders als bei IOS, bei dem Game Controller-Ereignisse parallel mit Berührungs Ereignissen empfangen werden können, verarbeitet tvos alle Ereignisse auf niedriger Ebene, um `UIKit` Ereignisse auf hoher Ebene zu liefern. Wenn Sie Zugriff auf die Low-Level-Spiele Controller Ereignisse benötigen, müssen Sie daher das Standardverhalten `UIKit`deaktivieren.
 
-Wenn Sie für tvos eine direkte Verarbeitung von Game Controller Eingaben durchführen möchten, müssen Sie `GCEventViewController` eine (oder eine Unterklasse) verwenden, um die Benutzeroberfläche des Spiels anzuzeigen. Wenn ein `GCEventViewController` der *erste Responder*ist, wird die Game Controller-Eingabe aufgezeichnet und über das Game Controller-Framework an Ihre APP übermittelt.
+Wenn Sie für tvos eine direkte Verarbeitung von Game Controller Eingaben durchführen möchten, müssen Sie eine `GCEventViewController` (oder eine Unterklasse) verwenden, um die Benutzeroberfläche des Spiels anzuzeigen. Wenn ein `GCEventViewController` der *erste Responder*ist, wird die Spiele Controller Eingabe aufgezeichnet und über das Game Controller-Framework an Ihre APP übermittelt.
 
-Sie können die- `UserInteractionEnabled` Eigenschaft `GCEventViewController` der-Klasse verwenden, um die Art und Weise zu ändern, wie Ereignisse verarbeitet und behandelt werden.
+Sie können die `UserInteractionEnabled`-Eigenschaft der `GCEventViewController`-Klasse verwenden, um die Art und Weise zu ändern, wie Ereignisse verarbeitet und behandelt werden.
 
 Weitere Informationen zum Implementieren von Game Controller-Unterstützung finden Sie im Abschnitt " [Arbeiten mit Spiel Controllern](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/WorkingwithGameControllers.html) von Apple" im Leitfaden zur [App-Programmierung für tvos](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/index.html) und [Game Controller Programming Guide](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html).
 

@@ -4,15 +4,15 @@ description: Dokumente, die die interne Funktionsweise von tvos in xamarin besch
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ffcf4d3a491cb6ad865da35d387782b7bd1fca01
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4712b7b75e735da047d7f44f7c6c47f42b9ad7a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283577"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030656"
 ---
 # <a name="tvos-in-xamarin-internals"></a>tvos in xamarin – Internals 
 
@@ -54,7 +54,7 @@ Gibt Hinweise und Informationen zu „mtouch.exe“, dem Befehlszeilentool, das 
 
 ### <a name="linking-native-librariesiosplatformnative-interopmd"></a>[Verknüpfen von nativen Bibliotheken](~/ios/platform/native-interop.md)
 
-Xamarin. IOS unterstützt das Verknüpfen mit nativen c-Bibliotheken und Ziel-C-Bibliotheken. In diesem Dokument wird erläutert, wie Sie Ihre nativen C-Bibliotheken mit Ihrem xamarin. IOS-Projekt verknüpfen. Informationen dazu, wie Sie für Ziel-c-Bibliotheken dasselbe tun,&nbsp; finden Sie im Dokument [Binden von Zielen-c-Typen](~/ios/platform/binding-objective-c/index.md)&nbsp;.
+Xamarin. IOS unterstützt das Verknüpfen mit nativen c-Bibliotheken und Ziel-C-Bibliotheken. In diesem Dokument wird erläutert, wie Sie Ihre nativen C-Bibliotheken mit Ihrem xamarin. IOS-Projekt verknüpfen. Informationen dazu, wie Sie für Ziel-c-Bibliotheken dasselbe tun, finden Sie im Dokument&nbsp; [Binding-c-Typen](~/ios/platform/binding-objective-c/index.md)&nbsp;.
 
 ## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Ziel-C-Selektoren](~/ios/internals/objective-c-selectors.md)
 

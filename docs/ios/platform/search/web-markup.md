@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie webbasierte Suchergebnisse
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 52da0cfcab56c0acd339f4f0a0f2456a66d002a8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3d5db2f060b59fc689bea99141342b0447ac8933
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769480"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031525"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Suche mit webmarkup in xamarin. IOS
 
@@ -20,12 +20,12 @@ Für apps, die den Zugriff auf Ihre Inhalte über eine Website ermöglichen (nic
 
 Wenn Ihre IOS-App bereits Mobile Deep Linking unterstützt und Ihre Website Deep-Links zu Inhalten in Ihrer APP präsentiert, indiziert Apple _applebot_ Web Crawler diesen Inhalt und fügt ihn automatisch dem cloudindex hinzu:
 
-[![](web-markup-images/webmarkup01.png "Übersicht über den cloudindex")](web-markup-images/webmarkup01.png#lightbox)
+[![](web-markup-images/webmarkup01.png "Cloud Index overview")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple zeigt diese Ergebnisse in Spotlight-Suche und Safari-Suchergebnissen an.
 Wenn der Benutzer auf eines dieser Ergebnisse tippt (und die APP installiert ist), werden Sie an den Inhalt in Ihrer APP weitergeleitet:
 
-[![](web-markup-images/webmarkup02.png "Deep Linking von einer Website in den Suchergebnissen")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "Deep linking from a website in search results")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Aktivieren der Webinhalts Indizierung
 
@@ -71,7 +71,7 @@ Sie können mithilfe einer Twitter-Karte Deep Links zum Inhalt Ihrer APP bereits
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-Weitere Informationen finden Sie in der Twitter-Dokumentation zum [Twitter-Karten Protokoll](http://dev.twitter.com/cards/mobile) von Twitter.
+Weitere Informationen finden Sie in der Twitter-Dokumentation zum [Twitter-Karten Protokoll](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) von Twitter.
 
 ## <a name="using-facebook-app-links"></a>Verwenden von Facebook-App-Links
 
@@ -83,11 +83,11 @@ Sie können mit einem Facebook-App-Link Deep Links zum Inhalt Ihrer APP bereitst
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-Weitere Informationen finden Sie in der Dokumentation der Facebook- [App-Links](http://applinks.org) .
+Weitere Informationen finden Sie in der Dokumentation der Facebook- [App-Links](https://developers.facebook.com/docs/applinks) .
 
 ## <a name="opening-deep-links"></a>Öffnen von Deep-Links
 
-Sie müssen Unterstützung für das Öffnen und Anzeigen von Deep-Links in ihrer xamarin. IOS-app hinzufügen. Bearbeiten Sie die Datei **AppDelegate.cs** , und `OpenURL` überschreiben Sie die Methode, um das benutzerdefinierte URL-Format zu verarbeiten Beispiel:
+Sie müssen Unterstützung für das Öffnen und Anzeigen von Deep-Links in ihrer xamarin. IOS-app hinzufügen. Bearbeiten Sie die Datei **AppDelegate.cs** , und überschreiben Sie die `OpenURL` Methode, um das benutzerdefinierte URL-Format zu verarbeiten Beispiel:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,7 +113,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-Im obigen Code suchen wir nach einer URL, die enthält `/appname` und den Wert von `query` (`123` in diesem Beispiel) an einen benutzerdefinierten Ansichts Controller in unserer App übergibt, um dem Benutzer den angeforderten Inhalt anzuzeigen.
+Im obigen Code suchen wir nach einer URL, die `/appname` enthält und den Wert `query` (`123` in diesem Beispiel) an einen benutzerdefinierten Ansichts Controller in unserer App übergibt, um dem Benutzer den angeforderten Inhalt anzuzeigen.
 
 ## <a name="providing-rich-results-with-structured-data"></a>Bereitstellen umfangreicher Ergebnisse mit strukturierten Daten
 
@@ -129,7 +129,7 @@ Eine Möglichkeit zum Bereitstellen von strukturiertem Daten Markup ist die Verw
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-Weitere Informationen finden Sie auf der [Open Graph](http://ogp.me) -Website.
+Weitere Informationen finden Sie auf der [Open Graph](https://ogp.me) -Website.
 
 Ein weiteres gängiges Format für strukturiertes Daten Markup ist das Format von Schema. org im Mikrodaten Format. Beispiel:
 
@@ -152,20 +152,20 @@ Die gleichen Informationen können im JSON-LD-Format von Schema. org dargestellt
 
 Im folgenden finden Sie ein Beispiel für Metadaten von Ihrer Website, die dem Endbenutzer umfangreiche Suchergebnisse bieten:
 
-[![](web-markup-images/deeplink01.png "Umfassende Suchergebnisse über strukturiertes Daten Markup")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "Rich search results via Structured Data Markup")](web-markup-images/deeplink01.png#lightbox)
 
 Apple unterstützt derzeit die folgenden Schema Typen von Schema.org:
 
-- AggregateRating
+- Aggregaterating
 - Imageobject
 - Interaktioncount
 - Angebote
-- Organization
+- Ordnung
 - Pricerange
 - Tions
 - SearchAction
 
-Weitere Informationen zu diesen Schema Typen finden Sie unter [Schema.org](http://schema.org).
+Weitere Informationen zu diesen Schema Typen finden Sie unter [Schema.org](https://schema.org).
 
 ## <a name="providing-actions-with-structured-data"></a>Bereitstellen von Aktionen mit strukturierten Daten
 
@@ -207,5 +207,5 @@ Weitere Informationen finden Sie auf der [App Search-Entwickler Website](https:/
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [IOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Programmier Handbuch für die APP-Suche](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

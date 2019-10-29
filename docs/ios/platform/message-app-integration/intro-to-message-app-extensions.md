@@ -4,15 +4,15 @@ description: In diesem Artikel wird gezeigt, wie Sie eine Erweiterung der Nachri
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 37f2942c97f7604fbd72a6dd38de518d3668ee9e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 51a89533390eb1be8c1f36e0121229fb5a942279
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250136"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031661"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Grundlagen der Nachrichten-APP-Erweiterung in xamarin. IOS
 
@@ -87,7 +87,7 @@ Damit ein Abbild in einem Aufkleber Pack enthalten ist, muss es die folgenden An
 - Images dürfen nicht kleiner als 100 x 100 Punkte oder größer als 206 x 206 Punkte sein.
 
 > [!IMPORTANT]
-> Aufkleber-Bilder sollten immer bei der `@3x` Auflösung im Pixel Bereich 300 x 300 bis 618 x 618 bereitgestellt werden. Das System generiert automatisch die `@2x` -und- `@1x` Versionen zur Laufzeit nach Bedarf.
+> Aufkleber-Bilder sollten immer bei der `@3x` Auflösung im Pixel Bereich 300 x 300 bis 618 x 618 bereitgestellt werden. Das System generiert automatisch die `@2x` und `@1x` Versionen zur Laufzeit nach Bedarf.
 
 Apple schlägt vor, die Aufkleber-Bild Ressourcen auf verschiedene farbige Hintergründe (z. b. weiß, schwarz, rot, gelb und mehrfarbig) und auf Fotos zu testen, um sicherzustellen, dass Sie in allen möglichen Situationen am besten aussehen.
 
@@ -121,15 +121,15 @@ Gehen Sie folgendermaßen vor, um eine benutzerdefinierte Aufkleber-Darstellung 
 
 1. Starten Sie Visual Studio für Mac.
 2. Öffnen Sie die Projekt Mappe, um eine Erweiterung der Nachrichten-APP hinzuzufügen.
-3. Wählen Sie **IOS** > **Extensions** > **IMESS Age Extension** aus, und klicken Sie auf die Schaltfläche **weiter** :
+3. Wählen Sie **IOS** - > **Erweiterungen** > **IMESS-Erweiterung** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
-    [![](intro-to-message-app-extensions-images/message01.png "IMESS Age-Erweiterung auswählen")](intro-to-message-app-extensions-images/message01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message01.png "Select iMessage Extension")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. Geben Sie einen **Namen** ein, und klicken Sie auf die Schaltfläche **weiter** :
 
-    [![](intro-to-message-app-extensions-images/message02.png "Eingeben eines Erweiterungs namens")](intro-to-message-app-extensions-images/message02.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message02.png "Enter an Extension Name")](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. Klicken Sie auf die Schaltfläche **Erstellen** , um die Erweiterung zu erstellen:
 
-    [![](intro-to-message-app-extensions-images/message03.png "Klicken Sie auf die Schaltfläche erstellen")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message03.png "Click the Create button")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -137,45 +137,45 @@ Gehen Sie folgendermaßen vor, um eine benutzerdefinierte Aufkleber-Darstellung 
 2. Öffnen Sie die Projekt Mappe, um eine nachrichtenapp-Erweiterung hinzuzufügen.
 3. Wählen Sie **IOS Extensions > IMESS Age Extension (IOS)** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
-    [![IMESS-Erweiterung auswählen (IOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+    [!["IMESS Age Extension" (IOS) auswählen](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
 4. Geben Sie einen **Namen** ein, und klicken Sie auf **OK** .
 
 -----
 
-Standardmäßig wird die `MessagesViewController.cs` Datei der Projekt Mappe hinzugefügt. Dies ist der Haupteinstiegspunkt in die Erweiterung und erbt von der `MSMessageAppViewController` -Klasse.
+Standardmäßig wird die `MessagesViewController.cs` Datei der Projekt Mappe hinzugefügt. Dies ist der Haupteinstiegspunkt in die Erweiterung und erbt von der `MSMessageAppViewController`-Klasse.
 
 Das Messages-Framework stellt Klassen bereit, mit denen dem Benutzer verfügbare Aufkleber angezeigt werden können:
 
-- `MSStickerBrowserViewController`-Steuert die Ansicht, in der die Aufkleber angezeigt werden. Außerdem entspricht Sie der `IMSStickerBrowserViewDataSource` -Schnittstelle, um die Anzahl der Aufkleber und den Aufkleber für einen gegebenen Browser Index zurückzugeben.
-- `MSStickerBrowserView`-Dies ist die Ansicht, in der die verfügbaren Aufkleber angezeigt werden.
-- `MSStickerSize`: Bestimmt die einzelnen Zellgrößen für das Raster der in der Browseransicht dargestellten Aufkleber.
+- `MSStickerBrowserViewController`: steuert die Ansicht, in der die Aufkleber angezeigt werden. Außerdem entspricht Sie der `IMSStickerBrowserViewDataSource`-Schnittstelle, um die Anzahl der Aufkleber und den Aufkleber für einen angegebenen Browser Index zurückzugeben.
+- `MSStickerBrowserView`: Dies ist die Ansicht, in der die verfügbaren Aufkleber angezeigt werden.
+- `MSStickerSize`: bestimmt die einzelnen Zellgrößen für das Raster der in der Browseransicht dargestellten Aufkleber.
 
 ### <a name="creating-a-custom-sticker-browser"></a>Erstellen eines benutzerdefinierten Aufkleber-Browsers
 
-Der Entwickler kann die Aufkleber-Darstellung für den Benutzer weiter anpassen, indem er einen benutzerdefinierten`MSMessageAppBrowserViewController`Aufkleber-Browser () in der Message-App-Erweiterung bereitstellt. Der benutzerdefinierte Aufkleber-Browser ändert, wie Aufkleber Benutzern angezeigt werden, wenn Sie einen Aufkleber auswählen, der in den Nachrichtenstrom eingeschlossen werden soll.
+Der Entwickler kann die Aufkleber-Darstellung für den Benutzer weiter anpassen, indem er einen benutzerdefinierten Aufkleber-Browser (`MSMessageAppBrowserViewController`) in der Erweiterung der Nachrichten-APP bereitstellt. Der benutzerdefinierte Aufkleber-Browser ändert, wie Aufkleber Benutzern angezeigt werden, wenn Sie einen Aufkleber auswählen, der in den Nachrichtenstrom eingeschlossen werden soll.
 
 Führen Sie folgende Schritte aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Klicken Sie im **Lösungspad**mit der rechten Maustaste auf den Projektnamen der Erweiterung, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.  >  **IOS |** AppleWatch > **Schnittstellen Controller**.
-2. Geben `StickerBrowserViewController` Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
+1. Klicken Sie im **Lösungspad**mit der rechten Maustaste auf den Projektnamen der Erweiterung, und wählen Sie > **neue Datei** **Hinzufügen** ... > **IOS | Apple Watch** > **Schnittstellen Controller**.
+2. Geben Sie `StickerBrowserViewController` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
 
-    [![](intro-to-message-app-extensions-images/browser01.png "Geben Sie stickerbrowserviewcontroller als Name ein.")](intro-to-message-app-extensions-images/browser01.png#lightbox)
-3. Öffnen Sie `StickerBrowserViewController.cs` die Datei zur Bearbeitung.
+    [![](intro-to-message-app-extensions-images/browser01.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+3. Öffnen Sie die `StickerBrowserViewController.cs` Datei zur Bearbeitung.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen der Erweiterung, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.  >  **IOS |** AppleWatch > **Schnittstellen Controller**.
-2. Geben `StickerBrowserViewController` Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
+1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen der Erweiterung, und wählen Sie > **neue Datei** **Hinzufügen** ... > **IOS | Apple Watch** > **Schnittstellen Controller**.
+2. Geben Sie `StickerBrowserViewController` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
 
-    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Geben Sie stickerbrowserviewcontroller als Name ein.")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
-3. Öffnen Sie `StickerBrowserViewController.cs` die Datei zur Bearbeitung.
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
+3. Öffnen Sie die `StickerBrowserViewController.cs` Datei zur Bearbeitung.
 
 -----
 
-Machen Sie Folgendes aussehen: `StickerBrowserViewController.cs`
+Legen Sie die `StickerBrowserViewController.cs` wie folgt aussehen:
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ Sehen Sie sich den obigen Code im Detail an. Er erstellt Speicher für die von d
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-Und überschreibt zwei Methoden der `MSStickerBrowserViewController` -Klasse, um Daten für den Browser aus diesem Datenspeicher bereitzustellen:
+Und überschreibt zwei Methoden der `MSStickerBrowserViewController`-Klasse, um Daten für den Browser aus diesem Datenspeicher bereitzustellen:
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -284,7 +284,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-Die `CreateSticker` -Methode ruft den Pfad eines imageassets aus dem Erweiterungspaket ab und verwendet diese zum Erstellen einer neuen Instanz `MSSticker` eines aus diesem Asset, das der Auflistung hinzugefügt wird:
+Die `CreateSticker`-Methode ruft den Pfad eines imageassets aus dem Erweiterungspaket ab und verwendet Sie, um eine neue Instanz einer `MSSticker` aus diesem Asset zu erstellen, die der Sammlung hinzugefügt wird:
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -311,9 +311,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-Die `LoadSticker` -Methode wird von `ViewDidLoad` aufgerufen, um einen Aufkleber aus dem benannten imageasset (enthalten im Paket der APP) zu erstellen und Sie der Auflistung der Aufkleber hinzuzufügen.
+Die `LoadSticker`-Methode wird von `ViewDidLoad` aufgerufen, um einen Aufkleber aus dem benannten imageasset (enthalten im Paket der APP) zu erstellen und Sie der Auflistung der Aufkleber hinzuzufügen.
 
-Bearbeiten Sie die `MessagesViewController.cs` Datei, und führen Sie Sie wie folgt aus, um den benutzerdefinierten Aufkleber-Browser zu implementieren:
+Um den benutzerdefinierten Aufkleber-Browser zu implementieren, bearbeiten Sie die Datei `MessagesViewController.cs`, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ Wenn Sie diesen Code detailliert betrachten, erstellt er Speicher für den benut
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-In der `ViewDidLoad` -Methode wird ein neuer Browser instanziiert und konfiguriert:
+In der `ViewDidLoad`-Methode wird ein neuer Browser instanziiert und konfiguriert:
 
 ```csharp
 // Create new browser and configure it
@@ -393,7 +393,7 @@ Mithilfe der oben genannten Methoden kann die Erweiterung eine Aufkleber-Auswahl
 
 Diese halte Ansicht kann zwischen diesen Modi entweder Programm gesteuert oder manuell vom Benutzer gewechselt werden.
 
-Sehen Sie sich das folgende Beispiel für die Handhabung des Schalters zwischen den beiden unterschiedlichen Ansichtsmodi an. Für jeden Zustand sind zwei verschiedene Ansichts Controller erforderlich. Der `StickerBrowserViewController` verarbeitet die **Compact** -Ansicht und sieht wie folgt aus:
+Sehen Sie sich das folgende Beispiel für die Handhabung des Schalters zwischen den beiden unterschiedlichen Ansichtsmodi an. Für jeden Zustand sind zwei verschiedene Ansichts Controller erforderlich. Die `StickerBrowserViewController` verarbeitet die **Compact** -Ansicht und sieht wie folgt aus:
 
 ```csharp
 using System;
@@ -494,7 +494,7 @@ namespace MessageExtension
 }
 ```
 
-Der `AddStickerViewController` verarbeitet die **Erweiterte** Aufkleber-Ansicht und sieht wie folgt aus:
+Die `AddStickerViewController` behandelt die **Erweiterte** Aufkleber-Ansicht und sieht wie folgt aus:
 
 ```csharp
 using System;
@@ -546,7 +546,7 @@ namespace MessageExtension
 }
 ```
 
-`MessageViewController` Implementiert diese Ansichts Controller zum Steuern des angeforderten Zustands:
+Der `MessageViewController` implementiert diese Ansichts Controller zum Steuern des angeforderten Zustands:
 
 ```csharp
 using System;
@@ -666,7 +666,7 @@ namespace MessageExtension
 }
 ```
 
-Wenn der Benutzer anfordert, der verfügbaren Sammlung einen neuen Aufkleber hinzuzufügen, `AddStickerViewController` wird ein neuer zum sichtbaren Controller gemacht und die Ansicht "Aufkleber" in die **Erweiterte** Ansicht:
+Wenn der Benutzer anfordert, der verfügbaren Sammlung einen neuen Aufkleber hinzuzufügen, wird ein neuer `AddStickerViewController` zum sichtbaren Controller gemacht, und die Ansicht "Aufkleber" wird in die **Erweiterte** Ansicht übertragen:
 
 ```csharp
 // Switch to expanded view mode
@@ -686,7 +686,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-Die `DidTransition` -Methode wird überschrieben, um den Wechsel zwischen den beiden Modi zu handhaben:
+Die `DidTransition`-Methode wird überschrieben, um den Wechsel zwischen den beiden Modi zu handhaben:
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)

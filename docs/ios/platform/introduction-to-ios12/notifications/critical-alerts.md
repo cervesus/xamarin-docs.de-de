@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie kritische Warnungen mit xa
 ms.prod: xamarin
 ms.assetid: 75742257-081D-44F4-B49E-FB807DF85262
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 54a214215f77b66f6a4b134dcb8d27b26c44fb6c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43b810b95e4da2927030617e68c0ade824a0beaa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291295"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031976"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>Kritische Warnungen in xamarin. IOS
 
@@ -28,8 +28,8 @@ Nachdem Sie diese Berechtigung von Apple erhalten haben, und befolgen Sie die zu
 
 Die Benachrichtigungs Autorisierungs Anforderung einer APP fordert den Benutzer auf, Benachrichtigungen zu einer APP zuzulassen oder zu unterbinden. Wenn die Benachrichtigungs Autorisierungs Anforderung zum Senden kritischer Warnungen aufgefordert wird, bietet die APP dem Benutzer auch die Möglichkeit, kritische Warnungen zu abonnieren.
 
-Der folgende Code fordert die Berechtigung zum Senden kritischer Warnungen und Standard Benachrichtigungen und-Sounds an, indem er die entsprechende[`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
-Werte für [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
+Der folgende Code fordert die Berechtigung zum Senden kritischer Warnungen und Standard Benachrichtigungen und-Sounds an, indem er die entsprechende [`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
+zu [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)Werte:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -45,11 +45,11 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ## <a name="local-critical-alerts"></a>Lokale kritische Warnungen
 
-Um eine lokale kritische Warnung zu senden, erstellen Sie eine[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-und legen Sie `Sound` die-Eigenschaft auf Folgendes fest:
+Um eine lokale kritische Warnung zu senden, erstellen Sie eine [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+und legen Sie die `Sound`-Eigenschaft auf Folgendes fest:
 
 - `UNNotificationSound.DefaultCriticalSound`, bei dem der standardmäßige kritische Benachrichtigungs Sound verwendet wird.
-- `UNNotificationSound.GetCriticalSound`ermöglicht es Ihnen, einen benutzerdefinierten Sound anzugeben, der mit Ihrer APP und einem Volume gebündelt ist.
+- `UNNotificationSound.GetCriticalSound`, mit dem Sie einen benutzerdefinierten Sound angeben können, der mit Ihrer APP und einem Volume gebündelt ist.
 
 Erstellen Sie dann eine `UNNotificationRequest` aus dem Benachrichtigungs Inhalt, und fügen Sie Sie dem Benachrichtigungs Center hinzu:
 

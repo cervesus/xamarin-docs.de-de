@@ -4,15 +4,15 @@ description: Dieses Dokument enthält eine Übersicht über neue und aktualisier
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f5028fe6ae7ee726ffd94d7908a089ce3bdcb385
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 94fea1786497d04602ea6cf06d875206cf69eb3e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287952"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030552"
 ---
 # <a name="introduction-to-tvos-12"></a>Einführung in tvOS 12
 
@@ -26,11 +26,11 @@ tvos 12 umfasst tvuikit, eine Reihe von APIs, die es tvos-Entwicklern ermöglich
 
 ## <a name="password-autofill"></a>Kenn Wort AutoFill
 
-Mit tvos 12 können sich Benutzer mit ihren IOS-Geräten bei einer tvos-App mit einer einzigen Tap anmelden. Dies wird durch eine Kombination von `UITextContentType` Verwendung zum Angeben von Benutzername-und Kenn Wort Feldern, zugeordneten Domänen, um eine Beziehung zwischen einer IOS-APP und einer tvos-App herzustellen, und bevorzugten Fokus Umgebungen ermöglicht, um ein Element auszuwählen, das nach einem Benutzer Fokus erhält. Gibt einen Benutzernamen und ein Kennwort an.
+Mit tvos 12 können sich Benutzer mit ihren IOS-Geräten bei einer tvos-App mit einer einzigen Tap anmelden. Dies wird durch eine Kombination aus `UITextContentType` Verwendung zum Angeben von Benutzername-und Kenn Wort Feldern, zugeordneten Domänen, um eine Beziehung zwischen einer IOS-APP und einer tvos-App herzustellen, und bevorzugten Fokus Umgebungen, um ein Element auszuwählen, das nach einem Benutzer den Fokus erhält. Gibt einen Benutzernamen und ein Kennwort an.
 
 ## <a name="focus-engine-enhancements"></a>Erweiterungen der Fokus-Engine
 
-tvos 12 ermöglicht die Interaktion mit der Fokus-Engine für alle apps, unabhängig davon, wie Sie gerendert werden. Durch die Interaktion eines Benutzers mit der Siri-Remote-Engine kann die Fokus-Engine mit jeder beliebigen App verwendet werden, um ein Element auszuwählen, mögliche Fokus Änderungen zu berücksichtigen und den Fokus natürlich zu aktualisieren. Dies wird in benutzerdefinierten Anwendungen über die Benutzeroberfläche von `IUIFocusItemContainer` UIKit `UIFocusMovementHint` , die- `IUIFocusItemScrollableContainer` Klasse, die-Schnittstelle und andere verwandte Klassen und Methoden aktiviert.
+tvos 12 ermöglicht die Interaktion mit der Fokus-Engine für alle apps, unabhängig davon, wie Sie gerendert werden. Durch die Interaktion eines Benutzers mit der Siri-Remote-Engine kann die Fokus-Engine mit jeder beliebigen App verwendet werden, um ein Element auszuwählen, mögliche Fokus Änderungen zu berücksichtigen und den Fokus natürlich zu aktualisieren. Dies ist in benutzerdefinierten Anwendungen über die `IUIFocusItemContainer`-Schnittstelle von UIKit, die `UIFocusMovementHint`-Klasse, die `IUIFocusItemScrollableContainer`-Schnittstelle und andere verwandte Klassen und Methoden aktiviert.
 
 ## <a name="vision-framework"></a>Vision Framework
 

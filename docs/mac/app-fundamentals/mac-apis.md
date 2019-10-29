@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie die Ziel-C-Selektoren 
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/02/2017
-ms.openlocfilehash: c7dfa87d2fa4e3e5b917029451a081640a552cce
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd427d13bb79fd31e1e814726aaaf61788ae10ec
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281005"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030076"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>macOS-APIs für xamarin. Mac-Entwickler
 
@@ -22,7 +22,7 @@ Für einen Großteil ihrer Zeit mit xamarin. Mac können Sie sich mit den zugrun
 
 ## <a name="reading-enough-objective-c-to-be-dangerous"></a>Lesen von ausreichendem Ziel-C als gefährlich
 
-In manchen Fällen ist es erforderlich, eine Definition oder einen Methodenaufrufe von "Ziel C" zu lesen und C# diese in die entsprechende Methode zu übersetzen. Werfen wir einen Blick auf die Definition einer Ziel-C-Funktion und unterteilen die Teile. Diese Methode (eine *Auswahl* in Ziel-C) finden Sie unter `NSTableView`:
+In manchen Fällen ist es erforderlich, eine Definition oder einen Methodenaufrufe von "Ziel C" zu lesen und C# diese in die entsprechende Methode zu übersetzen. Werfen wir einen Blick auf die Definition einer Ziel-C-Funktion und unterteilen die Teile. Diese Methode (eine *Auswahl* in Ziel-C) befindet sich auf `NSTableView`:
 
 ```objc
 - (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes atPoint:(NSPoint)mouseDownPoint
@@ -31,11 +31,11 @@ In manchen Fällen ist es erforderlich, eine Definition oder einen Methodenaufru
 Die Deklaration kann von links nach rechts gelesen werden:
 
 - Das `-` Präfix bedeutet, dass es sich um eine Instanzmethode (nicht statisch) handelt. + bedeutet, dass es sich um eine Klassenmethode (statisch) handelt.
-- `(BOOL)`der Rückgabetyp (bool C#in).
-- `canDragRowsWithIndexes`der erste Teil des Namens.
-- `(NSIndexSet *)rowIndexes`ist der erste Parameter und mit dem Typ. Der erste Parameter weist das folgende Format auf:`(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint`ist der zweite Parameter und sein Typ. Jeder Parameter nach dem ersten weist das folgende Format auf:`selectorPart:(Type) pararmName`
-- Der vollständige Name dieses Nachrichtenselektor lautet `canDragRowsWithIndexes:atPoint:`:. Beachten Sie, dass amEndewichtigist.`:`
+- `(BOOL)` ist der Rückgabetyp (bool in C#).
+- `canDragRowsWithIndexes` ist der erste Teil des Namens.
+- `(NSIndexSet *)rowIndexes` ist der erste Parameter und mit dem Typ. Der erste Parameter weist das folgende Format auf: `(Type) pararmName`
+- `atPoint:(NSPoint)mouseDownPoint` ist der zweite Parameter und sein Typ. Jeder Parameter nach dem ersten ist das folgende Format: `selectorPart:(Type) pararmName`
+- Der vollständige Name dieses Nachrichtenselektor lautet: `canDragRowsWithIndexes:atPoint:`. Beachten Sie den `:` am Ende, was wichtig ist.
 - Die tatsächliche xamarin. Mac C# -Bindung lautet:`bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
 Dieser Auswahl Aufruf kann auf die gleiche Weise gelesen werden:
@@ -44,26 +44,26 @@ Dieser Auswahl Aufruf kann auf die gleiche Weise gelesen werden:
 [v canDragRowsWithIndexes:set atPoint:point];
 ```
 
-- In der `v` `set` -Instanz wird `canDragRowsWithIndexes:atPoint` die Auswahl mit zwei Parametern ( `point`und) aufgerufen.
+- Bei der Instanz `v` wird die `canDragRowsWithIndexes:atPoint` Auswahl mit zwei Parametern aufgerufen, `set` und `point`.
 - In C#sieht der Methodenaufruf wie folgt aus:`x.CanDragRows (set, point);`
 
 <a name="finding_selector" />
 
 ## <a name="finding-the-c-member-for-a-given-selector"></a>Suchen des C# Members für eine bestimmte Auswahl
 
-Nachdem Sie den Ziel-C-Selektor gefunden haben, den Sie aufrufen müssen, ist der nächste Schritt das Mapping des C# entsprechenden Elements. Es gibt vier Ansätze, die Sie ausprobieren können (fort `NSTableView CanDragRows` fahren mit dem Beispiel):
+Nachdem Sie den Ziel-C-Selektor gefunden haben, den Sie aufrufen müssen, ist der nächste Schritt das Mapping des C# entsprechenden Elements. Es gibt vier Ansätze, die Sie ausprobieren können (Fortfahren mit dem `NSTableView CanDragRows` Beispiel):
 
-1. Verwenden Sie die Liste automatische Vervollständigung, um schnell nach einem beliebigen Namen zu suchen. Da wir wissen, dass es sich um `NSTableView` eine Instanz von handelt, können Sie Folgendes eingeben:
-
-    - `NSTableView x;`
-    - `x.`[STRG + LEERTASTE, wenn die Liste nicht angezeigt wird.)
-    - `CanDrag`eingehen
-    - Klicken Sie mit der rechten Maustaste auf die Methode, und gehen Sie zu Deklaration, um den `Export` assemblybrowser zu öffnen, in dem Sie das Attribut mit dem fraglichen
-
-2. Durchsuchen Sie die gesamte Klassen Bindung. Da wir wissen, dass es sich um `NSTableView` eine Instanz von handelt, können Sie Folgendes eingeben:
+1. Verwenden Sie die Liste automatische Vervollständigung, um schnell nach einem beliebigen Namen zu suchen. Da wir wissen, dass es sich um eine Instanz von handelt `NSTableView` können Sie Folgendes eingeben:
 
     - `NSTableView x;`
-    - Klicken Sie mit `NSTableView`der rechten Maustaste auf "Deklaration in Assembly Browser".
+    - `x.` [STRG + LEERTASTE, wenn die Liste nicht angezeigt wird).
+    - `CanDrag` [Eingabe]
+    - Klicken Sie mit der rechten Maustaste auf die Methode, und wechseln Sie zu Deklaration, um den assemblybrowser zu öffnen, in dem Sie das `Export` Attribut mit dem fraglichen
+
+2. Durchsuchen Sie die gesamte Klassen Bindung. Da wir wissen, dass es sich um eine Instanz von handelt `NSTableView` können Sie Folgendes eingeben:
+
+    - `NSTableView x;`
+    - Klicken Sie mit der rechten Maustaste auf `NSTableView`, gehen Sie zu Deklaration in Assembly
     - Nach dem fraglichen Selektor suchen
 
 3. Sie können die [xamarin. Mac-API Online-Dokumentation](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0) verwenden.

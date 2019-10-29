@@ -4,15 +4,15 @@ description: In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierung
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: a22eca56dcec46e11a67633a8403b57580ed0546
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769911"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032618"
 ---
 # <a name="databases-in-xamarinmac"></a>Datenbanken in xamarin. Mac
 
@@ -25,7 +25,7 @@ Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 In diesem Artikel werden zwei Möglichkeiten für den Zugriff auf SQLite-Daten behandelt:
 
 1. **Direkter Zugriff** : indem Sie direkt auf eine SQLite-Datenbank zugreifen, können wir Daten aus der Datenbank für Schlüssel-Wert-Codierung und Datenbindung mit Benutzeroberflächen Elementen verwenden, die in der Interface Builder von Xcode erstellt wurden. Durch die Verwendung von Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken in ihrer xamarin. Mac-Anwendung können Sie die Menge des Codes, den Sie schreiben und verwalten müssen, erheblich verringern, um Benutzeroberflächen Elemente aufzufüllen und mit Ihnen zu arbeiten. Außerdem profitieren Sie von der weiteren Entkopplung ihrer Sicherungsdaten (_Datenmodell_) von der Front-End-Benutzeroberfläche (_Model-View-Controller_). Dies führt zu einer einfacheren Wartung und einem flexibleren Anwendungs Entwurf.
-2. **Sqlite.net ORM** : mit dem Open-Source- [sqlite.net](http://www.sqlite.org) Object Relationship Manager (ORM) können wir die Menge an Code, der zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank benötigt wird, erheblich reduzieren. Diese Daten können dann verwendet werden, um ein Benutzeroberflächen Element (z. b. eine Tabellenansicht) aufzufüllen.
+2. **Sqlite.net ORM** : mit dem Open-Source- [sqlite.net](https://www.sqlite.org) Object Relationship Manager (ORM) können wir die Menge an Code, der zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank benötigt wird, erheblich reduzieren. Diese Daten können dann verwendet werden, um ein Benutzeroberflächen Element (z. b. eine Tabellenansicht) aufzufüllen.
 
 [![Ein Beispiel für die laufende App](databases-images/intro01.png "Ein Beispiel für die laufende App")](databases-images/intro01-large.png#lightbox)
 
@@ -476,7 +476,7 @@ public bool isManager {
 }
 ```
 
-Alle an den Eigenschaften **Name**, **Beruf** oder **IsManager** vorgenommenen Änderungen werden an die Datenbank gesendet, wenn die Daten zuvor gespeichert wurden (z. b. wenn die `_conn` Variable nicht `null` ist). Als nächstes sehen wir uns die Methoden an, die wir hinzugefügt haben, um Personen aus der Datenbank zu **Erstellen**, zu **Aktualisieren**, zu **Laden** und zu **Löschen** .
+Alle an den Eigenschaften **Name**, **Beruf** oder **IsManager** vorgenommenen Änderungen werden an die Datenbank gesendet, wenn die Daten zuvor gespeichert wurden (z. b. wenn die `_conn` Variable nicht `null`ist). Als nächstes sehen wir uns die Methoden an, die wir hinzugefügt haben, um Personen aus der Datenbank zu **Erstellen**, zu **Aktualisieren**, zu **Laden** und zu **Löschen** .
 
 #### <a name="create-a-new-record"></a>Neuen Datensatz erstellen
 
@@ -1010,7 +1010,7 @@ using (var command = _conn.CreateCommand ()) {
 _conn.Close ();
 ```
 
-Der einzige wirkliche Unterschied in der in SQL-Anweisung (die nur Manager-`command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"` lädt), funktioniert jedoch genauso wie der oben beschriebene Abschnitt.
+Der einzige wirkliche Unterschied in der in SQL-Anweisung (die nur Manager-`command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`lädt), funktioniert jedoch genauso wie der oben beschriebene Abschnitt.
 
 <a name="Databases-and-ComboBoxes" />
 
@@ -1910,7 +1910,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 ## <a name="sqlitenet-orm"></a>SQLite.net ORM
 
-Wie oben bereits erwähnt, können wir mithilfe des Open Source [sqlite.net](http://www.sqlite.org) Object Relationship Manager (ORM) die Menge des Codes, der zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank benötigt wird, erheblich reduzieren. Dies ist möglicherweise nicht die beste Route, die beim Binden von Daten aufgrund verschiedener Anforderungen erforderlich ist, bei denen die Schlüssel-Wert-Codierung und die Datenbindung für ein Objekt erfolgen.
+Wie oben bereits erwähnt, können wir mithilfe des Open Source [sqlite.net](https://www.sqlite.org) Object Relationship Manager (ORM) die Menge des Codes, der zum Lesen und Schreiben von Daten aus einer SQLite-Datenbank benötigt wird, erheblich reduzieren. Dies ist möglicherweise nicht die beste Route, die beim Binden von Daten aufgrund verschiedener Anforderungen erforderlich ist, bei denen die Schlüssel-Wert-Codierung und die Datenbindung für ein Objekt erfolgen.
 
 Gemäß der SQLite.NET-Website _ist "SQLite" eine Software Bibliothek, die ein eigenständiges, transaktionales SQL-Datenbankmodul (Server Loses, null) Konfigurationsmodul implementiert. SQLite ist die am weitesten verbreitete Datenbank-Engine auf der ganzen Welt. Der Quellcode für SQLite befindet sich in der öffentlichen Domäne. "_
 

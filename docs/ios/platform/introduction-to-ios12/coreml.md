@@ -4,15 +4,15 @@ description: In diesem Dokument werden die Updates für Core ml beschrieben, die
 ms.prod: xamarin
 ms.assetid: 408E752C-2C78-4B20-8B43-A6B89B7E6D1B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/15/2018
-ms.openlocfilehash: 7e22a095a51c2dca749cb1b17807a061d066d0c4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6245873385caa23e37d5499daa822fa0b699ac1e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290303"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032026"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>Core ml 2 in xamarin. IOS
 
@@ -20,7 +20,7 @@ Core ml ist eine Machine Learning-Technologie, die unter IOS, macOS, tvos und wa
 
 In IOS 12 umfasst Core ml eine Batch Processing-API. Diese API macht Core ml effizienter und bietet Leistungsverbesserungen in Szenarios, in denen ein Modell verwendet wird, um eine Sequenz von Vorhersagen zu erstellen.
 
-## <a name="sample-app-marshabitatcoremltimer"></a>Beispiel-App: MarsHabitatCoreMLTimer
+## <a name="sample-app-marshabitatcoremltimer"></a>Beispiel-App: marshabitatcoremltimer
 
 Um Batch Vorhersagen mit Core ml zu veranschaulichen, sehen Sie sich die [marshabitatcoremltimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer) -Beispiel-APP an. Dieses Beispiel verwendet ein Core ml-Modell, das trainiert wird, um die Kosten für das Aufbauen eines Lebensraums auf Mars basierend auf verschiedenen Eingaben vorherzusagen: die Anzahl der Sonnen Bereiche, die Anzahl von Gewächshäusern und die Anzahl der Hektar.
 
@@ -28,7 +28,7 @@ Die Code Ausschnitte in diesem Dokument stammen aus diesem Beispiel.
 
 ## <a name="generate-sample-data"></a>Generieren von Beispieldaten
 
-In `ViewController` `ViewDidLoad` ruft die`LoadMLModel`-Methode der Beispiel-App auf, die das enthaltene Core ml-Modell lädt:
+In `ViewController`Ruft die `ViewDidLoad`-Methode der Beispiel-App `LoadMLModel`auf, das das enthaltene Core ml-Modell lädt:
 
 ```csharp
 void LoadMLModel()
@@ -38,7 +38,7 @@ void LoadMLModel()
 }
 ```
 
-Dann erstellt die Beispiel-APP 100.000 `MarsHabitatPricerInput` -Objekte, die als Eingabe für sequenzielle Core ml-Vorhersagen verwendet werden. Für jedes generierte Beispiel wird ein zufälliger Wert für die Anzahl der Sonnen Bereiche, die Anzahl der Gewächshäuser und die Anzahl der Hektar festgelegt:
+Dann erstellt die Beispiel-APP 100.000 `MarsHabitatPricerInput`-Objekte, die als Eingabe für sequenzielle Core ml-Vorhersagen verwendet werden. Für jedes generierte Beispiel wird ein zufälliger Wert für die Anzahl der Sonnen Bereiche, die Anzahl der Gewächshäuser und die Anzahl der Hektar festgelegt:
 
 ```csharp
 async void CreateInputs(int num)
@@ -59,7 +59,7 @@ async void CreateInputs(int num)
 }
 ```
 
-Wenn Sie auf eine der drei Schaltflächen der APP tippen, werden zwei Sequenzen von vorher `for` sagen ausgeführt: eine mit einer Schleife und `GetPredictions` eine andere mit der neuen Batch-Methode, die in IOS 12 eingeführt wurde:
+Wenn Sie auf eine der drei Schaltflächen der APP tippen, werden zwei Sequenzen von Vorhersagen ausgeführt: eine mit einer `for` Schleife und eine andere mit der neuen Batch `GetPredictions` Methode, die in IOS 12 eingeführt wurde:
 
 ```csharp
 async void RunTest(int num)
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for-Schleife
 
-Die `for` Schleifen Version des Tests durchläuft die angegebene Anzahl von Eingaben, wobei für jeden aufgerufen [`GetPrediction`](xref:CoreML.MLModel.GetPrediction*) und das Ergebnis verworfen wird. Die Methode gibt an, wie lange es dauert, die Vorhersagen zu treffen:
+Die `for` Schleifen Version des Tests durchläuft die angegebene Anzahl von Eingaben, ruft [`GetPrediction`](xref:CoreML.MLModel.GetPrediction*) für jeden auf und gibt das Ergebnis aus. Die Methode gibt an, wie lange es dauert, die Vorhersagen zu treffen:
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -94,8 +94,8 @@ async Task FetchNonBatchResults(int num)
 
 ## <a name="getpredictions-new-batch-api"></a>Getvorhersagen (neue Batch-API)
 
-In der Batch Version des Tests wird ein `MLArrayBatchProvider` Objekt aus dem Eingabe Array erstellt (da es sich hierbei um einen erforderlichen Eingabe `GetPredictions` Parameter für die Methode handelt).[`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
-ein Objekt, das verhindert, dass Vorhersage Berechnungen auf die CPU beschränkt werden, `GetPredictions` und verwendet die API zum Abrufen der Vorhersagen, wobei das Ergebnis erneut verworfen wird:
+In der Batch Version des Tests wird ein `MLArrayBatchProvider` Objekt aus dem Eingabe Array erstellt (da es sich hierbei um einen erforderlichen Eingabeparameter für die `GetPredictions`-Methode handelt), erstellt eine [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
+ein Objekt, das verhindert, dass Vorhersage Berechnungen auf die CPU beschränkt werden, und verwendet die `GetPredictions`-API zum Abrufen der Vorhersagen, wobei das Ergebnis erneut verworfen wird:
 
 ```csharp
 async Task FetchBatchResults(int num)
@@ -118,7 +118,7 @@ async Task FetchBatchResults(int num)
 
 ## <a name="results"></a>Ergebnisse
 
-Sowohl auf dem Simulator als auch `GetPredictions` auf dem Gerät ist schneller abgeschlossen als die Schleifen basierten Core ml-Vorhersagen.
+Sowohl auf dem Simulator als auch auf dem Gerät wird `GetPredictions` schneller abgeschlossen als die Schleifen basierten Core ml-Vorhersagen.
 
 ## <a name="related-links"></a>Verwandte Links
 

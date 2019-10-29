@@ -4,23 +4,23 @@ description: In diesem Dokument wird beschrieben, wie Sie mit AVAudioPlayer in e
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: b4a5ead3e3c02fbdd2ae5486a6ac637defeb5abd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18043a88a129d48a1cad3b9ee15b6989d50ad126
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283304"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030045"
 ---
 # <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>Wiedergabe von Sound mit AVAudioPlayer in xamarin. Mac
 
 ## <a name="about-the-avaudioplayer"></a>Informationen zu AVAudioPlayer
 
-Die `AVAudioPlayer` -Klasse wird verwendet, um Audiodaten entweder aus dem Arbeitsspeicher oder aus einer Datei wiederzugeben. Apple empfiehlt die Verwendung dieser Klasse, um Audiodaten in der APP wiederzugeben, es sei denn, Sie verwenden das Netzwerk Streaming oder benötigen audioe/a mit niedriger Latenz.
+Die `AVAudioPlayer`-Klasse wird verwendet, um Audiodaten entweder aus dem Arbeitsspeicher oder aus einer Datei wiederzugeben. Apple empfiehlt die Verwendung dieser Klasse, um Audiodaten in der APP wiederzugeben, es sei denn, Sie verwenden das Netzwerk Streaming oder benötigen audioe/a mit niedriger Latenz.
 
-Mit der `AVAudioPlayer` -Klasse können Sie folgende Aufgaben ausführen:
+Mit der `AVAudioPlayer`-Klasse können Sie folgende Aufgaben ausführen:
 
 - Wiedergabe von Sounds beliebiger Dauer mit optionalen Schleifen.
 - Gleich Zeitangabe mehrerer Sounds mit optionaler Synchronisierung.
@@ -28,7 +28,7 @@ Mit der `AVAudioPlayer` -Klasse können Sie folgende Aufgaben ausführen:
 - Unterstützung von Features wie "schneller vorwärts" oder "Zurückspulen".
 - Abrufen von Messungs Daten auf Wiedergabe Ebene.
 
-`AVAudioPlayer`unterstützt Sounds in beliebigen Audioformaten, die von IOS, tvos und macOS bereitgestellt werden, z. b. AIF,. wav oder. MP3.
+`AVAudioPlayer` unterstützt Sounds in beliebigen Audioformaten, die von IOS, tvos und macOS bereitgestellt werden, wie z. b. AIF,. wav oder. MP3.
 
 ## <a name="playing-sounds-in-macos"></a>Abspielen von Sounds in macOS
 

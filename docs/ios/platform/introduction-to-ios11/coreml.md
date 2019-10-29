@@ -4,15 +4,15 @@ description: In diesem Dokument wird coreml beschrieben, das Machine Learning un
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 96ea328901beede663c9ed3d8d42979544b041ea
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4319d9ab07682795e8890779a65a0e2289f4501c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292646"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032213"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Einführung in coreml in xamarin. IOS
 
@@ -37,9 +37,9 @@ Fügen Sie dem **Ressourcen** Verzeichnis des Projekts ein coreml-Modell (eine D
 
 In den Eigenschaften der Modelldatei ist die **Buildaktion** auf **coremlmodel**festgelegt. Dies bedeutet, dass Sie beim Erstellen der Anwendung in eine **mlmodelc** -Datei kompiliert wird.
 
-### <a name="2-load-the-model"></a>2. Das des Modells
+### <a name="2-load-the-model"></a>2. Laden des Modells
 
-Laden Sie das Modell mithilfe `MLModel.Create` der statischen-Methode:
+Laden Sie das Modell mithilfe der statischen `MLModel.Create`-Methode:
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
@@ -48,9 +48,9 @@ model = MLModel.Create(assetPath, out NSError error1);
 
 ### <a name="3-set-the-parameters"></a>3. Festlegen der Parameter
 
-Modellparameter werden mithilfe einer Container Klasse, die implementiert `IMLFeatureProvider`, an ein-und ausgehenden.
+Modellparameter werden mithilfe einer Container Klasse, die `IMLFeatureProvider`implementiert, an ein-und ausgehenden.
 
-Funktions Anbieter Klassen Verhalten sich wie ein Wörterbuch von `MLFeatureValue`Zeichen folgen und e, wobei jeder Merkmals Wert eine einfache Zeichenfolge oder Zahl, ein Array oder eine Daten oder ein Pixel Puffer mit einem Bild sein könnte.
+Funktions Anbieter Klassen Verhalten sich wie ein Wörterbuch von Zeichen folgen-und `MLFeatureValue`s, wobei jeder Merkmals Wert eine einfache Zeichenfolge oder Zahl, ein Array oder eine Daten oder ein Pixel Puffer sein kann, der ein Bild enthält.
 
 Der Code für einen Einzelwert-Funktions Anbieter wird unten dargestellt:
 
@@ -67,11 +67,11 @@ public class MyInput : NSObject, IMLFeatureProvider
   }
 ```
 
-Mithilfe von Klassen wie diesem können Eingabeparameter auf eine Weise bereitgestellt werden, die von coreml verstanden wird. Die Namen der Features (z `myParam` . b. im Codebeispiel) müssen mit den Anforderungen des Modells identisch sein.
+Mithilfe von Klassen wie diesem können Eingabeparameter auf eine Weise bereitgestellt werden, die von coreml verstanden wird. Die Namen der Features (z. b. `myParam` im Codebeispiel) müssen mit den Anforderungen des Modells identisch sein.
 
 ### <a name="4-run-the-model"></a>4. Ausführen des Modells
 
-Die Verwendung des Modells erfordert, dass der Funktions Anbieter instanziiert und Parameter festgelegt wird, und `GetPrediction` dass die-Methode aufgerufen wird:
+Die Verwendung des Modells erfordert, dass der Funktions Anbieter instanziiert und Parameter festgelegt wird, und dass die `GetPrediction`-Methode aufgerufen wird:
 
 ```csharp
 var input = new MyInput {MyParam = 13};
@@ -80,7 +80,7 @@ var outFeatures = model.GetPrediction(inputFeatures, out NSError error2);
 
 ### <a name="5-extract-the-results"></a>5. Extrahieren der Ergebnisse
 
-Das Vorhersage `outFeatures` Ergebnis ist auch eine Instanz `IMLFeatureProvider`von. auf Ausgabewerte kann mithilfe `GetFeatureValue` von mit dem `theResult`Namen jedes Ausgabe Parameters (z. b.) zugegriffen werden, wie in diesem Beispiel:
+Das Vorhersage Ergebnis `outFeatures` ist auch eine Instanz von `IMLFeatureProvider`. auf Ausgabewerte kann mit `GetFeatureValue` mit dem Namen der einzelnen Ausgabeparameter (z. b. `theResult`) zugegriffen werden, wie in diesem Beispiel:
 
 ```csharp
 var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 6227020800
@@ -98,7 +98,7 @@ In den folgenden Schritten wird beschrieben, wie coreml und Vision zusammen im [
 
 ### <a name="1-create-a-vision-coreml-model"></a>1. Erstellen eines Vision-coreml-Modells
 
-Das coreml-Modell " _mnistclassifier_ " wird geladen und anschließend `VNCoreMLModel` in ein umschließt, wodurch das Modell für die Vision von Aufgaben verfügbar ist. Außerdem erstellt dieser Code zwei Anforderungs Anforderungen: zuerst zum Suchen von Rechtecke in einem Bild und dann zur Verarbeitung eines Rechtecks mit dem coreml-Modell:
+Das coreml-Modell " _mnistclassifier_ " wird geladen und anschließend in ein `VNCoreMLModel` umschließt, das das Modell für die Vision von Aufgaben bereitstellt. Außerdem erstellt dieser Code zwei Anforderungs Anforderungen: zuerst zum Suchen von Rechtecke in einem Bild und dann zur Verarbeitung eines Rechtecks mit dem coreml-Modell:
 
 ```csharp
 // Load the ML model
@@ -113,9 +113,9 @@ RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
-Die-Klasse muss die `HandleRectangles` -Methode und die- `HandleClassification` Methode für die Anforderungs Anforderungen implementieren, wie in den Schritten 3 und 4 unten gezeigt.
+Die-Klasse muss weiterhin die `HandleRectangles`-und `HandleClassification`-Methoden für die Anforderungs Anforderungen implementieren, wie in den Schritten 3 und 4 unten gezeigt.
 
-### <a name="2-start-the-vision-processing"></a>2. Starten der Bild Verarbeitungs Verarbeitung
+### <a name="2-start-the-vision-processing"></a>2. Starten der Maschinelles Verarbeitung
 
 Der folgende Code beginnt mit der Verarbeitung der Anforderung. Im **coremlvision** -Beispiel wird dieser Code ausgeführt, nachdem der Benutzer ein Bild ausgewählt hat:
 
@@ -127,13 +127,13 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Dieser Handler übergibt das `ciImage` an das Vision Framework `VNDetectRectanglesRequest` , das in Schritt 1 erstellt wurde.
+Dieser Handler übergibt die `ciImage` an das Vision Framework `VNDetectRectanglesRequest`, das in Schritt 1 erstellt wurde.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Verarbeiten der Ergebnisse der Maschinelles Verarbeitung
+### <a name="3-handle-the-results-of-vision-processing"></a>3. behandeln der Ergebnisse der Maschinelles Verarbeitung
 
-Sobald die Rechteck Erkennung vollständig ist, wird die `HandleRectangles` -Methode ausgeführt, die das Bild zum Extrahieren des ersten Rechtecks hochfährt, das Rechteck Bild in Graustufen konvertiert und es für die Klassifizierung an das coreml-Modell übergibt.
+Sobald die Rechteck Erkennung vollständig ist, wird die `HandleRectangles`-Methode ausgeführt, die das Bild zum Extrahieren des ersten Rechtecks hochfährt, das Rechteck Bild in Graustufen konvertiert und es für die Klassifizierung an das coreml-Modell übergibt.
 
-Der `request` an diese Methode übergebenen-Parameter enthält die Details der-Anforderungs Anforderung. bei `GetResults<VNRectangleObservation>()` Verwendung der-Methode wird eine Liste der Rechtecke im Bild zurückgegeben. Das erste Rechteck `observations[0]` wird extrahiert und an das coreml-Modell übermittelt:
+Der `request`-Parameter, der an diese Methode übergeben wird, enthält die Details der Anforderungs Anforderung. mit der `GetResults<VNRectangleObservation>()`-Methode wird eine Liste der Rechtecke im Bild zurückgegeben. Das erste Rechteck `observations[0]` extrahiert und an das coreml-Modell übermittelt:
 
 ```csharp
 void HandleRectangles(VNRequest request, NSError error) {
@@ -149,11 +149,11 @@ void HandleRectangles(VNRequest request, NSError error) {
 }
 ```
 
-Wurde in Schritt 1 initialisiert, um die `HandleClassification` im nächsten Schritt definierte-Methode zu verwenden. `ClassificationRequest`
+Der `ClassificationRequest` wurde in Schritt 1 initialisiert, um die im nächsten Schritt definierte `HandleClassification`-Methode zu verwenden.
 
-### <a name="4-handle-the-coreml"></a>4. Verarbeiten der coreml
+### <a name="4-handle-the-coreml"></a>4. behandeln der coreml
 
-Der `request` -Parameter, der an diese Methode übergeben wird, enthält die Details der coreml- `GetResults<VNClassificationObservation>()` Anforderung. bei Verwendung der-Methode wird eine Liste möglicher Ergebnisse nach Vertrauen (höchste Zuverlässigkeit zuerst) zurückgegeben:
+Der `request`-Parameter, der an diese Methode übergeben wird, enthält die Details der coreml-Anforderung. bei Verwendung der `GetResults<VNClassificationObservation>()`-Methode wird eine Liste möglicher Ergebnisse nach Vertrauen (höchste Zuverlässigkeit zuerst) zurückgegeben:
 
 ```csharp
 void HandleClassification(VNRequest request, NSError error){

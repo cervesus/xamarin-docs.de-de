@@ -4,15 +4,15 @@ description: In diesem Dokument wird die Breite und die Verwendung in einer xama
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a1f5301d0c5c0674e162b3d7689c83bbb4f6ae90
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e7240a271de1f0199c2c9fc045f5c95745eb98c5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290534"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031245"
 ---
 # <a name="wide-color-in-xamarinios"></a>Breite Farbe in xamarin. IOS
 
@@ -50,7 +50,7 @@ Folgendes wird angezeigt, wenn der Entwickler eine APP mit Asset-Katalogen an de
 
 - Wenn die APP für den Endbenutzer bereitgestellt wird, stellt die APP-slizierung sicher, dass nur die entsprechende Inhalts Variante an das Gerät des Benutzers übermittelt wird.
 - Auf Geräten, die keine Breite Farbe unterstützen, gibt es keine Nutz Last Kosten für die Einbeziehung von breit Farbinhalten, da diese nie an das Gerät ausgeliefert werden.
-- `NSImage`auf macOS Sierra (und höher) wird automatisch die beste Inhalts Darstellung für die Hardware Anzeige ausgewählt.
+- bei der `NSImage` auf macOS Sierra (und höher) wird automatisch die beste Inhalts Darstellung für die Hardware Anzeige ausgewählt.
 - Der angezeigte Inhalt wird automatisch aktualisiert, wenn oder die Merkmale der Hardware Anzeige der Geräte geändert werden.
 
 ### <a name="asset-catalog-storage"></a>Asset Catalog-Speicher
@@ -84,7 +84,7 @@ public UIImage DrawWideColorImage ()
     }
 ```
 
-Es gibt Probleme mit dem Standard Code, der behandelt werden muss, _bevor_ er zum Zeichnen eines breiten Farbbilds verwendet werden kann. Die `UIGraphics.BeginImageContext (size)` zum Starten der IOS-Image Zeichnung verwendete Methode weist die folgenden Einschränkungen auf:
+Es gibt Probleme mit dem Standard Code, der behandelt werden muss, _bevor_ er zum Zeichnen eines breiten Farbbilds verwendet werden kann. Die zum Starten der IOS-Image Zeichnung verwendete `UIGraphics.BeginImageContext (size)` Methode hat die folgenden Einschränkungen:
 
 - Es können keine Bild Kontexte mit mehr als 8 Bits pro Farbkanal erstellt werden.
 - Sie kann keine Farben im erweiterten Bereich der sRGB-Farbraum darstellen.
@@ -118,22 +118,22 @@ public UIImage DrawWideColorImage ()
 }
 ```
 
-Die neue `UIGraphicsImageRenderer` -Klasse erstellt einen neuen Bildkontext, der den erweiterten Bereich von sRGB-Farbraum verarbeiten kann und über die folgenden Funktionen verfügt:
+Die neue `UIGraphicsImageRenderer`-Klasse erstellt einen neuen Bildkontext, der den erweiterten Bereich von sRGB-Farbraum verarbeiten kann und über die folgenden Funktionen verfügt:
 
 - Der Standardwert ist vollständig Farben verwaltet.
 - Der erweiterte Bereich von sRGB-Farbraum wird standardmäßig unterstützt.
 - Basierend auf den Funktionen des IOS-Geräts, auf dem die app ausgeführt wird, entscheidet es intelligent, ob es im sRGB-oder erweiterten Bereich der sRGB-farbliche Größe renderert werden sollte.
 - Die Lebensdauer des Bild Kontexts (`CGContext`) wird vollständig und automatisch verwaltet, sodass sich der Entwickler nicht um das Aufrufen von BEGIN-und End-Kontext Befehlen kümmern muss.
-- Es ist mit der `UIGraphics.GetCurrentContext()` -Methode kompatibel.
+- Es ist mit der `UIGraphics.GetCurrentContext()`-Methode kompatibel.
 
-Die `CreateImage` -Methode `UIGraphicsImageRenderer` der-Klasse wird aufgerufen, um ein breit Farbbild zu erstellen und einen Vervollständigungs Handler mit dem Bildkontext zu übertragen, in den gezeichnet werden soll. Alle Zeichnungen werden innerhalb dieses Vervollständigungs Handlers wie folgt durchgeführt:
+Die `CreateImage`-Methode der `UIGraphicsImageRenderer`-Klasse wird aufgerufen, um ein breit Farbbild zu erstellen und einen Vervollständigungs Handler mit dem Bildkontext zu übertragen, in den gezeichnet werden soll. Alle Zeichnungen werden innerhalb dieses Vervollständigungs Handlers wie folgt durchgeführt:
 
-- Die `UIColor.FromDisplayP3` -Methode erstellt eine neue vollständig satte rote Farbe im großen Bereich, um P3-Farbraum anzuzeigen, und Sie wird verwendet, um die erste Hälfte des Rechtecks zu zeichnen. 
+- Die `UIColor.FromDisplayP3`-Methode erstellt eine neue vollständig satte rote Farbe im großen Bereich, um P3-Farbraum anzuzeigen, und Sie wird verwendet, um die erste Hälfte des Rechtecks zu zeichnen. 
 - Die zweite Hälfte des Rechtecks wird in der normalen sRGB vollständig satte rote Farbe für den Vergleich gezeichnet.
 
 ### <a name="drawing-wide-color-in-macos"></a>Zeichnen von breit Farben in macOS
 
-Die `NSImage` -Klasse wurde in macOS Sierra erweitert, um das Zeichnen von breit Farbbildern zu unterstützen. Beispiel:
+Die `NSImage`-Klasse wurde in macOS Sierra erweitert, um das Zeichnen von breit Farbbildern zu unterstützen. Beispiel:
 
 ```csharp
 var size = CGSize(250,250);
@@ -157,7 +157,7 @@ Um breite Farbbilder auf dem Bildschirm zu Rendering, funktioniert der Prozess �
 
 ### <a name="rendering-on-screen-in-ios"></a>Rendering auf dem Bildschirm in ios
 
-Wenn die APP ein Bild auf der Bildschirm Breite auf dem Bildschirm in ios Rendering muss, `Draw` überschreiben Sie `UIView` die-Methode des fraglichen, wie üblich. Beispiel:
+Wenn die APP ein Bild auf der Bildschirm Breite auf dem Bildschirm in ios Rendering muss, überschreiben Sie die `Draw`-Methode des fraglichen `UIView` wie üblich. Beispiel:
 
 ```csharp
 using System;
@@ -183,15 +183,15 @@ namespace MonkeyTalk
 }
 ```
 
-Da IOS 10 mit der `UIGraphicsImageRenderer` oben gezeigten Klasse ausgeführt wird, entscheidet es intelligent, ob es im sRGB-oder erweiterten Bereich sRGB-Farbraum renderingbasiert, abhängig von den Funktionen des IOS-Geräts, auf dem die app ausgeführt wird, wenn die `Draw` -Methode aufgerufen wird. Darüber hinaus wurde `UIImageView` die Farbverwaltung seit IOS 9,3 ebenfalls durchgeführt.
+Da IOS 10 mit der oben gezeigten `UIGraphicsImageRenderer`-Klasse ausgeführt wird, entscheidet es intelligent, ob es im sRGB-oder Extended Range sRGB-Farbraum renderingbasiert, abhängig von den Funktionen des IOS-Geräts, auf dem die app ausgeführt wird, wenn die `Draw`-Methode aufgerufen wird. Außerdem wurde die `UIImageView` seit IOS 9,3 farblich verwaltet.
 
-Wenn die APP wissen muss, wie das Rendering in `UIView` einem oder `UIViewController`ausgeführt wird, kann Sie `UITraitCollection` die neue `DisplayGamut` -Eigenschaft der-Klasse überprüfen. Bei diesem Wert handelt es `UIDisplayGamut` sich um eine Enumeration der folgenden:
+Wenn die APP wissen muss, wie das Rendering bei einem `UIView` oder `UIViewController`erfolgt, kann die neue `DisplayGamut`-Eigenschaft der `UITraitCollection`-Klasse überprüft werden. Dieser Wert ist eine `UIDisplayGamut` Enumeration der folgenden:
 
 - P3
 - SRGB
 - Nicht angegeben.
 
-Wenn die App steuern möchte, welcher Farbraum zum Zeichnen eines Bilds verwendet wird, kann eine neue `ContentsFormat` Eigenschaft `CALayer` von verwendet werden, um den gewünschten Farbraum anzugeben. Dieser Wert kann eine `CAContentsFormat` Enumeration der folgenden sein:
+Wenn die App steuern möchte, welcher Farbraum zum Zeichnen eines Bilds verwendet wird, kann eine neue `ContentsFormat`-Eigenschaft des `CALayer` verwendet werden, um den gewünschten Farbraum anzugeben. Dieser Wert kann eine `CAContentsFormat` Enumeration der folgenden sein:
 
 - Gray8Uint
 - Rgba16Float
@@ -199,7 +199,7 @@ Wenn die App steuern möchte, welcher Farbraum zum Zeichnen eines Bilds verwende
 
 ### <a name="rendering-on-screen-in-macos"></a>Rendering auf dem Bildschirm unter macOS
 
-Wenn die APP ein Bild auf der Bildschirm Breite auf dem Bildschirm in macOS Rendering muss, `DrawRect` überschreiben Sie `NSView` die-Methode des fraglichen, wie üblich. Beispiel:
+Wenn die APP ein Bild auf der Bildschirm Breite auf dem Bildschirm in macOS darstellen muss, überschreiben Sie die `DrawRect`-Methode des fraglichen `NSView` wie üblich. Beispiel:
 
 ```csharp
 using System;
@@ -226,10 +226,10 @@ namespace MonkeyTalkMac
 }
 ```
 
-Es wird auch hier Intelligent entschieden, ob es im sRGB-oder erweiterten sRGB-Farbraum renderingbasiert, basierend auf den Funktionen der Macintosh-Hardware, auf `DrawRect` der die app ausgeführt wird, wenn die-Methode aufgerufen wird.
+Es wird auch hier Intelligent entschieden, ob der sRGB-oder erweiterte sRGB-Farbraum basierend auf den Funktionen der Macintosh-Hardware, auf der die app ausgeführt wird, wenn die `DrawRect`-Methode aufgerufen wird, renderert werden soll.
 
-Wenn die App steuern möchte, welcher Farbraum zum Zeichnen eines Bilds verwendet wird, kann eine neue `DepthLimit` Eigenschaft `NSWindow` der-Klasse verwendet werden, um den gewünschten Farbraum anzugeben. Dieser Wert kann eine `NSWindowDepth` Enumeration der folgenden sein:
+Wenn die App steuern möchte, welcher Farbraum zum Zeichnen eines Bilds verwendet wird, kann eine neue `DepthLimit`-Eigenschaft der `NSWindow`-Klasse verwendet werden, um den gewünschten Farbraum anzugeben. Dieser Wert kann eine `NSWindowDepth` Enumeration der folgenden sein:
 
-- OneHundredTwentyEightBitRgb
-- SixtyfourBitRgb
-- TwentyfourBitRgb
+- Onehundredtwentyeightbitrgb
+- Sixtyfourbitrgb
+- Twentyfourbitrgb

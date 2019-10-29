@@ -4,15 +4,15 @@ description: Das Social Framework bietet eine einheitliche API für die Interakt
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 6008663276151ef9512e4a370252da6861fa1b19
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9c5714d5819831047d10d83b4de01fc826b9cc01
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769441"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031465"
 ---
 # <a name="social-framework-in-xamarinios"></a>Social Framework in xamarin. IOS
 
@@ -20,32 +20,29 @@ _Das Social Framework bietet eine einheitliche API für die Interaktion mit sozi
 
 Mit dem Social Framework können Anwendungen mit sozialen Netzwerken über eine einzige API interagieren, ohne die Authentifizierung verwalten zu müssen. Es enthält einen vom System bereitgestellten Ansichts Controller zum Verfassen von Beiträgen sowie eine Abstraktion, die die Verwendung der API eines sozialen Netzwerks über HTTP ermöglicht.
 
-> [!IMPORTANT]
-> Eine plattformübergreifende API zum Herstellen einer Verbindung mit verschiedenen sozialen Netzwerken finden Sie in der [xamarin. Social](http://components.xamarin.com/view/xamarin.social/) -Komponente im xamarin Component Store.
-
 ## <a name="connecting-to-twitter"></a>Herstellen einer Verbindung mit Twitter
 
 ### <a name="twitter-account-settings"></a>Twitter-Kontoeinstellungen
 
 Zum Herstellen einer Verbindung mit Twitter über das Social Framework muss ein Konto in den Geräteeinstellungen konfiguriert werden, wie unten dargestellt:
 
- [![](social-framework-images/twitter01.png "Twitter-Kontoeinstellungen")](social-framework-images/twitter01.png#lightbox)
+ [![](social-framework-images/twitter01.png "Twitter Account Settings")](social-framework-images/twitter01.png#lightbox)
 
 Nachdem ein Konto eingegeben und mit Twitter überprüft wurde, verwendet jede Anwendung auf dem Gerät, die die Social Framework-Klassen für den Zugriff auf Twitter verwendet, dieses Konto.
 
 ### <a name="sending-tweets"></a>Senden von Tweets
 
-Das Social Framework enthält einen Controller mit `SLComposeViewController` dem Namen, der eine vom System bereitgestellte Ansicht zum Bearbeiten und Senden eines tweets darstellt. Der folgende Screenshot zeigt ein Beispiel für diese Ansicht:
+Das Social Framework enthält einen Controller mit dem Namen `SLComposeViewController`, der eine vom System bereitgestellte Ansicht zum Bearbeiten und Senden eines tweets darstellt. Der folgende Screenshot zeigt ein Beispiel für diese Ansicht:
 
- [![](social-framework-images/twitter02.png "Dieser Screenshot zeigt ein Beispiel für den slcompoabviewcontroller.")](social-framework-images/twitter02.png#lightbox)
+ [![](social-framework-images/twitter02.png "This screenshot shows an example of the SLComposeViewController")](social-framework-images/twitter02.png#lightbox)
 
-Wenn Sie ein `SLComposeViewController` mit Twitter verwenden möchten, müssen Sie eine Instanz des Controllers erstellen, indem `FromService` Sie die `SLServiceType.Twitter` -Methode mit aufrufen, wie unten dargestellt:
+Um eine `SLComposeViewController` mit Twitter zu verwenden, muss eine Instanz des Controllers erstellt werden, indem die `FromService`-Methode mit `SLServiceType.Twitter` aufgerufen wird, wie unten dargestellt:
 
 ```csharp
 var slComposer = SLComposeViewController.FromService (SLServiceType.Twitter);
 ```
 
-Nachdem die `SLComposeViewController` Instanz zurückgegeben wurde, kann Sie verwendet werden, um eine Benutzeroberfläche zum Posten an Twitter bereitzustellen. Der erste Schritt besteht jedoch darin, die Verfügbarkeit des sozialen Netzwerks (in diesem Fall Twitter) zu überprüfen, indem `IsAvailable`Sie Folgendes aufrufen:
+Nachdem die `SLComposeViewController` Instanz zurückgegeben wurde, kann Sie verwendet werden, um eine Benutzeroberfläche zum Posten an Twitter zu präsentieren. Zuerst sollten Sie jedoch die Verfügbarkeit des sozialen Netzwerks überprüfen, in diesem Fall Twitter, indem Sie `IsAvailable`aufrufen:
 
 ```csharp
 if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
@@ -53,13 +50,13 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 }
 ```
 
- `SLComposeViewController`sendet einen Tweet niemals direkt ohne Benutzerinteraktion. Sie kann jedoch mit den folgenden Methoden initialisiert werden:
+ `SLComposeViewController` sendet einen Tweet niemals direkt ohne Benutzerinteraktion. Sie kann jedoch mit den folgenden Methoden initialisiert werden:
 
-- `SetInitialText`– Fügt den Anfangstext hinzu, der im Tweet angezeigt werden soll.
-- `AddUrl`– Fügt dem Tweet eine URL hinzu.
-- `AddImage`– Fügt dem Tweet ein Bild hinzu.
+- `SetInitialText` – fügt den Anfangstext hinzu, der im Tweet angezeigt werden soll.
+- `AddUrl` – fügt dem Tweet eine URL hinzu.
+- `AddImage` – fügt dem Tweet ein Bild hinzu.
 
-Nach der Initialisierung zeigt `PresentVIewController` der Aufruf der `SLComposeViewController`von erstellten Ansicht an. Der Benutzer kann dann optional den Tweet bearbeiten und senden oder den Sendevorgang abbrechen. In beiden Fällen sollte der Controller in der `CompletionHandler`verworfen werden, wo das Ergebnis auch geprüft werden kann, um festzustellen, ob der Tweet gesendet oder abgebrochen wurde, wie unten dargestellt:
+Nach der Initialisierung wird durch Aufrufen von `PresentVIewController` die vom `SLComposeViewController`erstellte Ansicht angezeigt. Der Benutzer kann dann optional den Tweet bearbeiten und senden oder den Sendevorgang abbrechen. In beiden Fällen sollte der Controller in der `CompletionHandler`verworfen werden, wo das Ergebnis auch geprüft werden kann, um festzustellen, ob der Tweet gesendet oder abgebrochen wurde, wie unten dargestellt:
 
 ```csharp
 slComposer.CompletionHandler += (result) => {
@@ -72,7 +69,7 @@ slComposer.CompletionHandler += (result) => {
 
 #### <a name="tweet-example"></a>Tweet-Beispiel
 
-Der folgende Code veranschaulicht die Verwendung `SLComposeViewController` von zum Darstellen einer Ansicht, die zum Senden eines tweets verwendet wird:
+Der folgende Code veranschaulicht die Verwendung des `SLComposeViewController` zum Anzeigen einer Ansicht, die zum Senden eines tweets verwendet wird:
 
 ```csharp
 using System;
@@ -137,7 +134,7 @@ namespace SocialFrameworkDemo
 
 ### <a name="calling-twitter-api"></a>Aufrufen der Twitter-API
 
-Das Social Framework bietet auch Unterstützung für die Durchführung von HTTP-Anforderungen an soziale Netzwerke. Er kapselt die Anforderung in einer `SLRequest` -Klasse, die verwendet wird, um die API eines bestimmten sozialen Netzwerks als Ziel festzustellen.
+Das Social Framework bietet auch Unterstützung für die Durchführung von HTTP-Anforderungen an soziale Netzwerke. Er kapselt die Anforderung in einer `SLRequest` Klasse, die verwendet wird, um die API eines bestimmten sozialen Netzwerks als Ziel festzustellen.
 
 Der folgende Code sendet z. b. eine Anforderung an Twitter, um die öffentliche Zeitachse zu erhalten (durch Erweiterung des oben genannten Codes):
 
@@ -252,7 +249,7 @@ var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?cou
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
 
-`?count=10` In diesem Beispiel werden die zurückgegebenen Ergebnisse auf die letzten zehn Einträge beschränkt, indem in die URL eingeschlossen wird. Schließlich fügt Sie die Anforderung an das Twitter-Konto an (das oben geladen wurde) und führt den Twitter-Rückruf aus, um die Daten abzurufen:
+In diesem Beispiel werden die zurückgegebenen Ergebnisse auf die letzten zehn Einträge beschränkt, indem `?count=10` in die URL eingeschlossen wird. Schließlich fügt Sie die Anforderung an das Twitter-Konto an (das oben geladen wurde) und führt den Twitter-Rückruf aus, um die Daten abzurufen:
 
 ```csharp
 // Request data
@@ -283,7 +280,7 @@ request.PerformRequest ((data, response, error) => {
 
 Wenn die Daten erfolgreich geladen wurden, werden die unformatierten JSON-Daten angezeigt (wie in der folgenden Beispielausgabe gezeigt):
 
-[![](social-framework-images/twitter03.png "Ein Beispiel für die unformatierte JSON-Datenanzeige")](social-framework-images/twitter03.png#lightbox)
+[![](social-framework-images/twitter03.png "An example of the raw JSON data display")](social-framework-images/twitter03.png#lightbox)
 
 In einer echten App können die JSON-Ergebnisse dann wie üblich analysiert werden, und die Ergebnisse werden dem Benutzer angezeigt. Weitere Informationen zum Analysieren von JSON finden Sie unter [Einführung in Webdienste](~/cross-platform/data-cloud/web-services/index.md) .
 
@@ -293,7 +290,7 @@ In einer echten App können die JSON-Ergebnisse dann wie üblich analysiert werd
 
 Das Herstellen einer Verbindung mit Facebook mit dem Social Framework ist fast identisch mit dem Prozess, der für Twitter oben verwendet wird. Ein Facebook-Benutzerkonto muss wie unten gezeigt in den Geräteeinstellungen konfiguriert werden:
 
-[![](social-framework-images/facebook01.png "Facebook-Kontoeinstellungen")](social-framework-images/facebook01.png#lightbox)
+[![](social-framework-images/facebook01.png "Facebook Account Settings")](social-framework-images/facebook01.png#lightbox)
 
 Nach der Konfiguration wird von jeder Anwendung auf dem Gerät, die das Social Framework verwendet, dieses Konto verwendet, um eine Verbindung mit Facebook herzustellen.
 
@@ -301,7 +298,7 @@ Nach der Konfiguration wird von jeder Anwendung auf dem Gerät, die das Social F
 
 Da das Social Framework eine einheitliche API ist, die für den Zugriff auf mehrere soziale Netzwerke konzipiert ist, bleibt der Code unabhängig vom verwendeten sozialen Netzwerk nahezu identisch.
 
-Beispielsweise `SLComposeViewController` kann genau wie im zuvor gezeigten Twitter-Beispiel verwendet werden. der einzige Unterschied besteht darin, zu den Facebook-spezifischen Einstellungen und Optionen zu wechseln. Beispiel:
+Beispielsweise kann der `SLComposeViewController` genau wie im zuvor gezeigten Twitter-Beispiel verwendet werden. der einzige Unterschied besteht darin, zu den Facebook-spezifischen Einstellungen und Optionen zu wechseln. Beispiel:
 
 ```csharp
 using System;
@@ -365,13 +362,13 @@ namespace SocialFrameworkDemo
 }
 ```
 
-Bei der Verwendung mit Facebook zeigt `SLComposeViewController` das eine Ansicht an, die fast identisch mit dem Twitter-Beispiel ist, das in diesem Fall **Facebook** als Titel anzeigt:
+Bei der Verwendung mit Facebook zeigt der `SLComposeViewController` eine Ansicht an, die fast identisch mit dem Twitter-Beispiel ist, und in diesem Fall **Facebook** als Titel anzeigt:
 
-[![](social-framework-images/facebook02.png "Die slcompoabviewcontroller-Anzeige")](social-framework-images/facebook02.png#lightbox)
+[![](social-framework-images/facebook02.png "The SLComposeViewController display")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>Aufrufen von Facebook Graph-API
 
-Ähnlich wie beim Twitter-Beispiel kann das- `SLRequest` Objekt des sozialen Frameworks mit der Graph-API von Facebook verwendet werden. Der folgende Code gibt z. b. Informationen aus der Graph-API über das xamarin-Konto zurück (durch Erweiterung des oben genannten Codes):
+Ähnlich wie beim Twitter-Beispiel kann das `SLRequest` Objekt des sozialen Frameworks mit der Graph-API von Facebook verwendet werden. Der folgende Code gibt z. b. Informationen aus der Graph-API über das xamarin-Konto zurück (durch Erweiterung des oben genannten Codes):
 
 ```csharp
 using Accounts;
@@ -471,7 +468,7 @@ Wenn Sie diese Option nicht festlegen (oder einen ungültigen Schlüssel verwend
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde gezeigt, wie das Social Framework für die Interaktion mit Twitter und Facebook verwendet werden kann. Es wurde gezeigt, wo Konten für jedes soziale Netzwerk in den Geräteeinstellungen konfiguriert werden müssen. Außerdem wurde erläutert, wie verwendet `SLComposeViewController` wird, um eine einheitliche Ansicht für die Bereitstellung in sozialen Netzwerken darzustellen. Außerdem wurde die-Klasse `SLRequest` untersucht, die zum Abrufen der API eines sozialen Netzwerks verwendet wird.
+In diesem Artikel wurde gezeigt, wie das Social Framework für die Interaktion mit Twitter und Facebook verwendet werden kann. Es wurde gezeigt, wo Konten für jedes soziale Netzwerk in den Geräteeinstellungen konfiguriert werden müssen. Außerdem wurde erläutert, wie Sie mithilfe des `SLComposeViewController` eine einheitliche Ansicht für die Bereitstellung in sozialen Netzwerken präsentieren. Darüber hinaus wurde die `SLRequest` Klasse untersucht, die zum Abrufen der API eines sozialen Netzwerks verwendet wird.
 
 ## <a name="related-links"></a>Verwandte Links
 

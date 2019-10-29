@@ -4,15 +4,15 @@ description: In diesem Dokument werden Änderungen erläutert, die an WebKit und
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/12/2017
-ms.openlocfilehash: 6068dd148bfc3c2a778ca34753374bcecccb55d9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ef9577aad756ae67ac9fed685d7e40faea33c316
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752218"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032049"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>Änderungen an WebKit und Safari in ios 11
 
@@ -20,9 +20,9 @@ IOS 11 führt eine neue Version des Safari-Webbrowsers – Safari 11,0 – ein, 
 
 ## <a name="safariservices"></a>Safariservices
 
-`SFSafariViewController`wurde in ios 9 als Option zum Anzeigen von Webinhalten oder Authentifizieren von Benutzern in Ihrer APP eingeführt. Weitere Informationen zu den Funktionen finden Sie im Handbuch für [Webansichten](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) .
+`SFSafariViewController` wurde in ios 9 als Option zum Anzeigen von Webinhalten oder Authentifizieren von Benutzern in Ihrer APP eingeführt. Weitere Informationen zu den Funktionen finden Sie im Handbuch für [Webansichten](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) .
 
-IOS 11 hat Stil Updates für den Safari-Ansichts Controller eingeführt, sodass Ihre Benutzer eine nahtlose Benutzer Darstellung zwischen einer APP und dem Web erhalten. Beispielsweise gibt das Entfernen der Adressleiste nun dem Safari-Ansichts Controller das Gefühl eines in-App-Browsers und nicht eines Mini Browsers. Sie können das Farbschema auch anpassen, um das Farbschema Ihrer APP anzupassen, indem Sie die `preferredBarTintColor` Eigenschaften und `PreferredControlTintColor` festlegen:
+IOS 11 hat Stil Updates für den Safari-Ansichts Controller eingeführt, sodass Ihre Benutzer eine nahtlose Benutzer Darstellung zwischen einer APP und dem Web erhalten. Beispielsweise gibt das Entfernen der Adressleiste nun dem Safari-Ansichts Controller das Gefühl eines in-App-Browsers und nicht eines Mini Browsers. Sie können das Farbschema auch anpassen, um das Farbschema Ihrer APP anzupassen, indem Sie die Eigenschaften "`preferredBarTintColor`" und "`PreferredControlTintColor`" festlegen:
 
 ```csharp
 sfViewController.PreferredControlTintColor = UIColor.White;
@@ -33,7 +33,7 @@ Der folgende Code Ausschnitt rendert die Balken in violett und weiß, wie in der
 
 ![Sfsafariviewcontroller-Balken in violett und weiß gerendert](web-images/image1.png)
 
-Die im Safari-Ansichts Controller dargestellte Schaltfläche verwerfen kann auch durch Festlegen `DismissButtonStyle` der-Eigenschaft `Done`auf `Close`, oder `Cancel`geändert werden:
+Die im Safari-Ansichts Controller dargestellte Schaltfläche verwerfen kann auch geändert werden, indem Sie die `DismissButtonStyle`-Eigenschaft entweder auf `Done`, `Close`oder `Cancel`festlegen:
 
 ```csharp
 sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.Close;
@@ -41,9 +41,9 @@ sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.C
 
 ![Schaltflächen Text verwerfen geändert](web-images/image2.png)
 
-Dieser Wert kann geändert werden, `SFSafariViewController` während präsentiert wird.
+Dieser Wert kann geändert werden, während `SFSafariViewController` angezeigt wird.
 
-Abhängig von dem Inhalt, der in einem Safari-Ansichts Controller angezeigt wird, kann es erforderlich sein, sicherzustellen, dass die Menüleisten nicht reduziert werden, wenn der Benutzer einen Bildlauf ausführt. Dies wird aktiviert, indem die neue `BarCollapsedEnabled` Eigenschaft auf `false`festgelegt wird:
+Abhängig von dem Inhalt, der in einem Safari-Ansichts Controller angezeigt wird, kann es erforderlich sein, sicherzustellen, dass die Menüleisten nicht reduziert werden, wenn der Benutzer einen Bildlauf ausführt. Dies wird durch Festlegen der neuen `BarCollapsedEnabled`-Eigenschaft auf `false`ermöglicht:
 
 ```csharp
 var config = new SFSafariViewControllerConfiguration();
@@ -56,23 +56,23 @@ var sfViewController = new SFSafariViewController(url, config);
 
 Außerdem hat Apple im Safari View Controller in ios 11 Updates für den Datenschutz durchgeführt. Das Durchsuchen von Daten, wie z. b. Cookies und lokaler Speicher, ist nun nur auf App-Basis und nicht in allen Instanzen von Safari View Controller vorhanden. Dadurch wird die Benutzer Browseraktivität innerhalb Ihrer APP privat.
 
-Zusätzliche Funktionen wie Drag & Drop-Unterstützung für URLs und unter `window.open()` Stützung für wurden `SFSafariViewController` in ios 11 ebenfalls hinzugefügt. Weitere Informationen zu diesen neuen Features finden Sie in [der Dokumentation zu sfsafariviewcontroller von Apple](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor).
+Zusätzliche Funktionen wie Drag & Drop-Unterstützung für URLs und Unterstützung für `window.open()` wurden ebenfalls `SFSafariViewController` in ios 11 hinzugefügt. Weitere Informationen zu diesen neuen Features finden Sie in [der Dokumentation zu sfsafariviewcontroller von Apple](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor).
 
 ## <a name="webkit"></a>WebKit
 
-`WKWebView`wurde als Teil von WebKit in ios 8 eingeführt, um dem Benutzer Webinhalte anzuzeigen. Es ist viel besser anpassbarer `SFSafariViewController`als, sodass Sie eine eigene Navigations-und Benutzeroberfläche erstellen können.
+`WKWebView` wurde als Teil von WebKit in ios 8 eingeführt, um dem Benutzer Webinhalte anzuzeigen. Es ist viel anpassbarer als `SFSafariViewController`, sodass Sie eine eigene Navigations-und Benutzeroberfläche erstellen können.
 
-Apple hat drei wesentliche Verbesserungen `WKWebView` für mit IOS 11 eingeführt: 
+Apple hat drei wesentliche Verbesserungen für `WKWebView` mit IOS 11 eingeführt: 
 
 - Die Fähigkeit zum Verwalten von Cookies
 - Inhalts Filterung
 - Laden von benutzerdefinierten Ressourcen. 
 
-Die Cookieverwaltung erfolgt über die [`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore) neue-Klasse, die es Ihnen ermöglicht, Cookies hinzuzufügen und zu löschen, alle in einer wkwebview gespeicherten Cookies zu erhalten und den Cookiespeicher für Änderungen zu beobachten.
+Die Cookieverwaltung erfolgt über die neue [`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore) -Klasse, die es Ihnen ermöglicht, Cookies hinzuzufügen und zu löschen, alle in einer wkwebview gespeicherten Cookies zu erhalten und den Cookiespeicher für Änderungen zu beobachten.
 
 Die Inhalts Filterung ermöglicht Ihnen die Verwaltung der Art von Inhalt, der dem Benutzer angezeigt wird, sodass Sie sicherstellen können, dass er sicher, familienfreundlich und ggf. nur für eine ausgewählte Benutzergruppe verfügbar ist. Dies wird durch die neue [`WKContentRuleList`](https://developer.apple.com/documentation/webkit/wkcontentrulelist) -Klasse implementiert, indem paar Trigger und Aktionen in JSON bereitgestellt werden. Weitere Informationen zu diesen Triggern und Aktionen finden Sie im Handbuch zu den [Inhalts Blockierungs Regeln](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html) von Apple.
 
-IOS 11 ermöglicht Ihnen jetzt das anpassen `WKWebView` von benutzerdefiniertem Laden von Ressourcen für Ihre Webinhalte. Dies wird über die `IWKUrlSchemeHandler` -Schnittstelle implementiert, mit der Sie URL-Schemas verarbeiten können, die nicht im Web-Kit einheitlich sind. Diese Schnittstelle verfügt über eine Start-und Stoppmethode, die implementiert werden muss:
+IOS 11 ermöglicht Ihnen jetzt das Anpassen `WKWebView` mit benutzerdefiniertem Laden von Ressourcen für Ihre Webinhalte. Dies wird über die `IWKUrlSchemeHandler`-Schnittstelle implementiert, mit der Sie URL-Schemas verarbeiten können, die nicht im Web-Kit einheitlich sind. Diese Schnittstelle verfügt über eine Start-und Stoppmethode, die implementiert werden muss:
 
 ```csharp
 public class MyHandler : NSObject, IWKUrlSchemeHandler {
@@ -95,7 +95,7 @@ public class MyHandler : NSObject, IWKUrlSchemeHandler {
 }
 ``` 
 
-Nachdem der Handler implementiert wurde, verwenden Sie ihn, um die `SetUrlSchemeHandler` -Eigenschaft `WKWebViewConfiguration`auf festzulegen. Laden Sie dann die URL eines etwas, das das benutzerdefinierte Schema verwendet:
+Nachdem der Handler implementiert wurde, verwenden Sie ihn, um die `SetUrlSchemeHandler`-Eigenschaft für die `WKWebViewConfiguration`festzulegen. Laden Sie dann die URL eines etwas, das das benutzerdefinierte Schema verwendet:
 
 ```csharp
 var config = new WKWebViewConfiguration();

@@ -3,15 +3,15 @@ title: Interaktive Arbeitsmappen
 description: In diesem Dokument wird beschrieben, wie Sie mit Xamarin Workbooks Live Dokumente C# erstellen, die Code zum Experimentieren, unterrichten, trainieren oder untersuchen enthalten.
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 7b3c356460d9427821843dc084b3f306c026ffa0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a6ca347c231d001cab521d7280a66b714b6a5aef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293085"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029565"
 ---
 # <a name="interactive-workbooks"></a>Interaktive Arbeitsmappen
 
@@ -27,13 +27,13 @@ Arbeitsmappen können gespeichert und später in der Anwendung geöffnet werden.
 
 Das Fenster Code Bearbeitung bietet Codevervollständigung, Syntax Farbgebung, Inline-Live Diagnose und mehrzeilige Anweisungs Unterstützung.
 
-[![](workbook-images/inspector-0.6.0-repl-small.png "Das Fenster Code Bearbeitung bietet Codevervollständigung, Syntax Farben, Inline-Live Diagnose und mehrzeilige Anweisungs Unterstützung.")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "The code editing window provides code completion, syntax coloring, inline live-diagnostics, and multi-line statement support")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
 Xamarin Workbooks werden in einer `.workbook` Datei gespeichert, bei der es sich um eine commonmark-Datei mit einigen Metadaten im oberen Bereich handelt (Weitere Informationen zum Speichern von Arbeitsmappen finden Sie unter [arbeitsmappendateitypen](#workbooks-files-types) ).
 
 ### <a name="nuget-package-support"></a>Unterstützung für nuget-Pakete
 
-Viele beliebte nuget-Pakete werden direkt in Xamarin Workbooks unterstützt. Sie können nach Paketen suchen, indem Sie zu **Datei > Paket hinzufügen**navigieren. Das Hinzufügen eines Pakets führt automatisch `#r` Anweisungen aus, die auf paketassemblys verweisen, sodass Sie Sie sofort verwenden können.
+Viele beliebte nuget-Pakete werden direkt in Xamarin Workbooks unterstützt. Sie können nach Paketen suchen, indem Sie zu **Datei > Paket hinzufügen**navigieren. Wenn Sie ein Paket hinzufügen, werden automatisch `#r` Anweisungen, die auf paketassemblys verweisen, angezeigt, sodass Sie Sie sofort verwenden können.
 
 Wenn Sie eine Arbeitsmappe mit Paket verweisen speichern, werden diese Verweise ebenfalls gespeichert. Wenn Sie die Arbeitsmappe für eine andere Person freigeben, werden die Pakete, auf die verwiesen wird, automatisch heruntergeladen.
 
@@ -45,7 +45,7 @@ Es gibt einige bekannte Einschränkungen bei der nuget-Paket Unterstützung in-A
 
 ### <a name="xamarinforms-support"></a>Xamarin. Forms-Unterstützung
 
-Wenn Sie in der-Arbeitsmappe auf das xamarin. Forms-nuget-Paket verweisen, wird die Hauptansicht der arbeitsmappenapp in xamarin. Forms-basiert geändert. Sie können über `Xamarin.Forms.Application.Current.MainPage`auf das zugreifen.
+Wenn Sie in der-Arbeitsmappe auf das xamarin. Forms-nuget-Paket verweisen, wird die Hauptansicht der arbeitsmappenapp in xamarin. Forms-basiert geändert. Sie können über `Xamarin.Forms.Application.Current.MainPage`darauf zugreifen.
 
 Die Registerkarte "View Inspector" bietet auch eine besondere Unterstützung für das Anzeigen der xamarin. Forms-Ansichts Hierarchie, damit Sie Ihre Layouts besser verstehen
 
@@ -53,7 +53,7 @@ Die Registerkarte "View Inspector" bietet auch eine besondere Unterstützung fü
 
 Sie können den Text um den Code umschließen, indem Sie den Rich-Text-Editor verwenden, wie unten dargestellt:
 
-![](workbook-images/inspector-0.6.2-editing.gif "Bearbeiten Sie den Text um den Code, indem Sie den integrierten Rich-Text-Editor verwenden.")
+![](workbook-images/inspector-0.6.2-editing.gif "Edit the text around the code using the built-in rich text editor")
 
 ### <a name="markdown-authoring"></a>Markdown-Erstellung
 
@@ -61,7 +61,7 @@ Arbeitsmappenautoren finden es manchmal einfacher, die commonmark-Quelle der Arb
 
 Beachten Sie, dass der commonmark-Text ggf. neu formatiert werden kann, wenn Sie die Arbeitsmappe im Arbeitsmappen-Client bearbeiten und speichern.
 
-Beachten Sie, dass wir aufgrund der commonmark-Erweiterung, die wir zum Aktivieren von YAML-Metadaten `---` in Arbeitsmappendateien verwenden, für diesen Zweck reserviert ist. Wenn Sie [Themen Umbrüche](http://spec.commonmark.org/0.27/#thematic-break) im Text erstellen möchten, sollten Sie stattdessen oder `***` `___` verwenden. Solche Unterbrechungen sollten in den Arbeitsmappen 1,2 und früher aufgrund eines Fehlers beim Speichern vermieden werden.
+Beachten Sie, dass wir aufgrund der commonmark-Erweiterung, die wir zum Aktivieren von YAML-Metadaten in Arbeitsmappendateien verwenden, `---` für diesen Zweck reserviert ist. Wenn Sie [Themen Umbrüche](https://spec.commonmark.org/0.27/#thematic-break) im Text erstellen möchten, sollten Sie stattdessen `***` oder `___` verwenden. Solche Unterbrechungen sollten in den Arbeitsmappen 1,2 und früher aufgrund eines Fehlers beim Speichern vermieden werden.
 
 ### <a name="improvements-in-workbooks-13"></a>Verbesserungen in Arbeitsmappen 1,3
 
@@ -80,7 +80,7 @@ Sie können auch eine Verknüpfung mit Headern im arbeitsmappendokument herstell
 1. Alle Zeichen außer alphanumerische Zeichen und Bindestriche werden entfernt.
 1. Alle Leerzeichen werden durch Bindestriche ersetzt.
 
-Dies bedeutet, dass ein Header wie "wichtiger Header" eine ID von `important-header` erhält und durch Einfügen eines Links zu `#important-header` in der Arbeitsmappe verknüpft werden kann.
+Dies bedeutet, dass ein Header wie "wichtiger Header" eine ID `important-header` erhält und mit verknüpft werden kann, indem ein Link zu `#important-header` in die Arbeitsmappe eingefügt wird.
 
 ## <a name="document-structure"></a>Dokumentstruktur
 
@@ -118,29 +118,29 @@ Umfassende und potenziell interaktive Darstellungen von Ergebnissen für eine Ze
 
 ### <a name="plain-files"></a>Einfache Dateien
 
-Standardmäßig wird eine Arbeitsmappe als nur-Text `.workbook` -Datei gespeichert, die commonmark-formatierten Text enthält.
+Standardmäßig speichert eine Arbeitsmappe als nur-Text-`.workbook` Datei, die commonmark-formatierten Text enthält.
 
 ### <a name="packages"></a>Pakete
 
-Ein arbeitsmappenpaket ist ein Verzeichnis, das mit der `.workbook` Erweiterung benannt wird.
+Ein arbeitsmappenpaket ist ein Verzeichnis, das mit der `.workbook`-Erweiterung benannt wird.
 Auf dem Macintosh-Finder und im Menü "Xamarin Workbooks öffnen" und "zuletzt verwendete Dateien" wird dieses Verzeichnis so erkannt, als wäre es eine Datei.
 
-Das Verzeichnis muss eine `index.workbook` -Datei enthalten, bei der es sich um die tatsächliche nur-Text-Arbeitsmappe handelt, die in Xamarin Workbooks geladen wird. Das Verzeichnis kann auch Ressourcen enthalten, die `index.workbook`für erforderlich sind, einschließlich Bilder oder andere Dateien.
+Das Verzeichnis muss eine `index.workbook` Datei enthalten, bei der es sich um die tatsächliche nur-Text-Arbeitsmappe handelt, die in Xamarin Workbooks geladen wird. Das Verzeichnis kann auch Ressourcen enthalten, die für `index.workbook`erforderlich sind, einschließlich Images oder anderen Dateien.
 
-Wenn eine nur- `.workbook` Text-Datei, die auf Ressourcen aus demselben Verzeichnis verweist, in Arbeitsmappen geöffnet wird 0.99.3 oder später, wenn Sie gespeichert wird, wird `.workbook` Sie in ein Paket konvertiert. Dies gilt sowohl für Mac als auch für Windows.
+Wenn eine nur-Text-`.workbook` Datei, die auf Ressourcen aus demselben Verzeichnis verweist, in Arbeitsmappen geöffnet wird 0.99.3 oder später, wenn Sie gespeichert wird, wird Sie in ein `.workbook` Paket konvertiert. Dies gilt sowohl für Mac als auch für Windows.
 
 > [!NOTE]
 > Windows-Benutzer öffnen die `package.workbook\index.workbook` Datei direkt, aber andernfalls verhält sich das Paket genauso wie auf dem Mac.
 
 ### <a name="archives"></a>Aufbewahrt
 
-Arbeitsmappenpakete, die Verzeichnisse sind, können problemlos über das Internet verteilt werden. Die Lösung ist arbeitsmappenarchive. Ein arbeitsmappenarchiv ist ein ZIP-komprimiertes arbeitsmappenpaket mit `.workbook` dem Namen mit der Erweiterung.
+Arbeitsmappenpakete, die Verzeichnisse sind, können problemlos über das Internet verteilt werden. Die Lösung ist arbeitsmappenarchive. Ein arbeitsmappenarchiv ist ein ZIP-komprimiertes arbeitsmappenpaket, das mit der Erweiterung `.workbook` benannt ist.
 
 Beim Speichern eines arbeitsmappenpakets in Arbeitsmappen 1,1 bietet das Dialogfeld Speichern stattdessen die Möglichkeit, stattdessen als Archiv zu speichern. Arbeitsmappen 1,0 verfügten über keine integrierte Methode zum Erstellen oder Speichern von Archiven.
 
 Beim Öffnen eines arbeitsmappenarchivs in Arbeitsmappen 1,0 wurde es transparent in ein arbeitsmappenpaket konvertiert, und die ZIP-Datei ging verloren. In den-Arbeitsmappen 1,1 bleibt die ZIP-Datei erhalten. Wenn der Benutzer das Archiv speichert, wird es durch eine neue ZIP-Datei ersetzt.
 
-Sie können ein arbeitsmappenarchiv manuell erstellen, indem Sie mit der rechten Maustaste auf ein arbeitsmappenpaket klicken und unter Mac **komprimieren** auswählen oder **an > komprimierten (gezippten) Ordner** unter Windows senden. Benennen Sie dann die ZIP-Datei mit `.workbook` einer Dateierweiterung um. Dies funktioniert nur bei arbeitsmappenpaketen, nicht bei reinen Arbeitsmappendateien.
+Sie können ein arbeitsmappenarchiv manuell erstellen, indem Sie mit der rechten Maustaste auf ein arbeitsmappenpaket klicken und unter Mac **komprimieren** auswählen oder **an > komprimierten (gezippten) Ordner** unter Windows senden. Benennen Sie die ZIP-Datei dann so um, dass Sie eine `.workbook` Dateierweiterung hat. Dies funktioniert nur bei arbeitsmappenpaketen, nicht bei reinen Arbeitsmappendateien.
 
 ## <a name="related-links"></a>Verwandte Links
 

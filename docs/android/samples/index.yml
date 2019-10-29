@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin.Android-Beispiele
 metadata:
   description: Xamarin.Android-Beispiel-Apps für mobile Entwickler.
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/30/2019
   ms.topic: sample
 abstract:
@@ -43,7 +43,7 @@ sections:
             image:
               src: images/fragments.png
               href: 'https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough/'
-            title: Fragmente
+            title: Fragments
           - href: 'https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint/'
             html: App zum farbigen Malen mit Fingern mithilfe der Nachverfolgung von Multitoucheingaben auf Android-Geräten.
             image:

@@ -4,15 +4,15 @@ description: Dieses Dokument ist mit Anleitungen verknüpft, die verschiedene Be
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: f1168378104fd40fa7de78297f1f683d0caa0afa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f5303cd63c6ff1433b56b3f47b67d3925b1d1e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283121"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032781"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>macOS-Benutzeroberflächen-Steuerelemente in xamarin. Mac
 
@@ -22,7 +22,7 @@ Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 Die unten aufgeführten Anleitungen zeigen ausführliche Informationen zum Arbeiten mit macOS-Benutzeroberflächen Elementen in einer xamarin. Mac-Anwendung. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Alle Artikel.
 
-Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen, da hier die `Register` Attribute und `Export` erläutert werden, mit denen Ihre C# Klassen übertragen werden. für Ziel-C-Objekte und UI-Elemente.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen, da hier die`Register`-und`Export`Attribute erläutert werden, mit denen die C# Klassen an gesendet werden. Ziel-C-Objekte und UI-Elemente.
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
@@ -66,7 +66,7 @@ In diesem Artikel wird die Arbeit mit Auflistungs Ansichten in einer xamarin. Ma
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[Erstellen benutzerdefinierter Steuerelemente](~/mac/user-interface/custom-controls.md)
 
-In diesem Artikel wird beschrieben, wie Sie benutzerdefinierte Steuerelemente der `NSControl`Benutzeroberfläche erstellen (indem Sie von erben), eine benutzerdefinierte Schnittstelle für das Steuerelement zeichnen und benutzerdefinierte Aktionen erstellen, die mit Xcode-Interface Builder verwendet werden können.
+In diesem Artikel wird beschrieben, wie Sie benutzerdefinierte Steuerelemente der Benutzeroberfläche erstellen (indem Sie von `NSControl`erben), eine benutzerdefinierte Schnittstelle für das Steuerelement zeichnen und benutzerdefinierte Aktionen erstellen, die mit Xcode-Interface Builder verwendet werden können.
 
 ## <a name="mac-samples-gallery"></a>Mac Samples Gallery
 

@@ -4,15 +4,15 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 34f332eb712f479f9f9565a3894212e3cdd5aaf6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769121"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030537"
 ---
 # <a name="introduction-to-tvos-9"></a>Einführung in tvOS 9
 
@@ -75,7 +75,7 @@ Das neue Apple TV verfügt über die folgenden Hardware Spezifikationen:
 
 ### <a name="siri-remote"></a>Siri (Remote)
 
-Basierend auf der Region wird der angegebene Apple TV-Remote Computer in einer der beiden folgenden Konfigurationen angezeigt: Siri Remote oder Apple TV Remote.
+Basierend auf der Region wird der angegebene Apple TV-Remote Computer in einer der folgenden Konfigurationen angezeigt: SIRI Remote oder Apple TV Remote.
 
 Der Siri-Remote Computer ist zurzeit in den folgenden Ländern verfügbar:
 
@@ -90,7 +90,7 @@ Der Siri-Remote Computer ist zurzeit in den folgenden Ländern verfügbar:
 
 Alle anderen Länder erhalten den Apple TV-Remote Computer, der die Siri-Schaltfläche durch eine Such Schaltfläche ersetzt, die den Standard Suchbildschirm mit Texteingaben für die Suche öffnet:
 
-[![](tvos9-images/remote02.png "Siri (Remote)")](tvos9-images/remote02.png#lightbox)
+[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
 
 Weitere Informationen finden Sie in unserer Dokumentation zu den [Remote-und Bluetooth-Controllern von Siri](~/ios/tvos/platform/remote-bluetooth.md) .
 
@@ -154,7 +154,7 @@ Weitere Informationen finden Sie in der Dokumentation [Arbeiten mit Navigation u
 
 Der Apple TV-Startbildschirm zeigt alle installierten apps an und bietet eine Möglichkeit, auf die Benutzereinstellungen zuzugreifen:
 
-[![](tvos9-images/home01.png "Der Startbildschirm")](tvos9-images/home01.png#lightbox)
+[![](tvos9-images/home01.png "The Home Screen")](tvos9-images/home01.png#lightbox)
 
 Der Benutzer navigiert ein Raster von App-Symbolen mithilfe von Touchgesten auf der Siri-Remote. dabei wird der Fokus verwendet, um eine APP auszuwählen und zu starten. Das App-Symbol ist die erste Möglichkeit, Ihren potenziellen Benutzern einen guten Eindruck zu verschaffen und den Zweck Ihrer APP auf einen Blick zu vermitteln.
 
@@ -168,9 +168,9 @@ Weitere Informationen finden Sie in der Dokumentation [Arbeiten mit Symbolen und
 
 Wenn der Benutzer die xamarin. tvos-app in der obersten Zeile des Apple TV-Startbildschirms abgelegt hat, wird ein großes hoch Regal Bild angezeigt, wenn die APP vom Benutzer ausgewählt wird. Dieses Bild sollte die Features Ihrer APP hervorheben oder direkte Links zu den Inhalten bereitstellen.
 
-[![](tvos9-images/topshelf01.png "Der obere Regal")](tvos9-images/topshelf01.png#lightbox)
+[![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
 
-Das obere Regal Bild kann entweder als einzelne statische `.png` Datei oder `.lsr` Datei bereitgestellt werden, oder es kann zur Laufzeit dynamisch als einzelne Zeile von Fokus baren Elementen erstellt werden.
+Das Top-Regal Bild kann entweder als einzelner statischer `.png` oder `.lsr` Datei bereitgestellt werden, oder es kann zur Laufzeit dynamisch als einzelne Zeile von Fokus baren Elementen erstellt werden.
 
 Anstatt ein statisches Top-Regal Bild anzuzeigen, kann es eine dynamische Zeile oder Fokussier Bare Elemente oder einen dynamischen Satz von scrollbanner enthalten. Beide dynamischen Stile ermöglichen es Ihnen, den von der APP bereitgestellten Inhalt hervorzuheben oder zu den am häufigsten verwendeten Features zu springen.
 

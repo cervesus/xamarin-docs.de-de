@@ -4,15 +4,15 @@ description: Dieses Dokument enthält eine Übersicht über die Verteilungs Tech
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f47d4228fc1d3ec1b3b428b917f3c774103577d7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d8c9d6fe36b457a000e96d1ad8990debad8ac915
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769190"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030750"
 ---
 # <a name="tvos-app-distribution-overview"></a>Übersicht über tvos-App-Verteilung
 
@@ -20,7 +20,7 @@ _Dieses Dokument enthält eine Übersicht über die Verteilungs Techniken, die f
 
 Nachdem Sie Ihre xamarin. tvos-app entwickelt haben, besteht der nächste Schritt im Lebenszyklus der Softwareentwicklung darin, Ihre APP an Benutzer zu verteilen, wie im folgenden hervorgehobenen Abschnitt der Abbildung dargestellt:
 
-[![Übersicht über den Lebenszyklus der Softwareentwicklung](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
+[Übersicht über den Lebenszyklus der Softwareentwicklung![](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 Apple bietet die folgenden Möglichkeiten, um eine tvos-APP zu verteilen, die von xamarin. tvos unterstützt wird:
 

@@ -1,36 +1,36 @@
 ---
 title: Drei Möglichkeiten, einen Bogen zu zeichnen
-description: In diesem Artikel wird erläutert, wie SkiaSharp verwenden, um Bögen auf drei verschiedene Arten zu definieren, und dies mit Beispielcode wird veranschaulicht.
+description: In diesem Artikel wird erläutert, wie Sie mit skiasharp Bögen auf drei verschiedene Arten definieren und dies mit Beispielcode veranschaulichen.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: ada7ce8fc9365ab4133ddf439353e97e640f39d6
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 56c2da48c596fa35dd1a7658a38eee23c939e2fd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228115"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029541"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen zu zeichnen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Erfahren Sie, wie SkiaSharp zu verwenden, um Bögen auf drei verschiedene Arten zu definieren._
+_Erfahren Sie, wie Sie skiasharp zum Definieren von Bögen auf drei verschiedene Arten verwenden können._
 
-Ein Bogen ist eine Kurve auf den Umfang einer Ellipse, z. B. die abgerundeten Teile dieses Infinity-Zeichen:
+Ein Bogen ist eine Kurve des Umfangs einer Ellipse, wie z. b. die abgerundeten Teile dieses unendlichen Zeichens:
 
 ![Unendlichkeitszeichen](arcs-images/arcsample.png)
 
-Trotz der Einfachheit dieser Definition, es gibt keine Möglichkeit, eine Bogen-Zeichnung-Funktion definiert, die jeden Anlass, erfüllt und daher keine Konsens Grafiksysteme die beste Möglichkeit, einen Bogen zu zeichnen. Aus diesem Grund die `SKPath` Klasse beschränkt sich nicht auf nur einen Ansatz.
+Trotz der Einfachheit dieser Definition gibt es keine Möglichkeit, eine Bogen Zeichnungs Funktion zu definieren, die alle Anforderungen erfüllt, und daher keinen Konsens zwischen den Grafiksystemen der besten Methode zum Zeichnen eines Bogens. Aus diesem Grund beschränkt sich die `SKPath`-Klasse nicht auf nur einen Ansatz.
 
-`SKPath` definiert eine [ `AddArc` ](xref:SkiaSharp.SKPath.AddArc*) -Methode, die fünf verschiedenen [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo*) Methoden und zwei relativ [ `RArcTo` ](xref:SkiaSharp.SKPath.RArcTo*) Methoden. Diese Methoden werden in drei Kategorien, die drei sehr Ansätze zur Angabe eines Bogens darstellt. Welche Sie verwenden hängt von der verfügbaren Informationen zu den Bogen mit Strichen und darüber, wie diese Bogen sich mit den anderen Grafiken einfügt, die Sie zeichnen definieren.
+`SKPath` definiert eine [`AddArc`](xref:SkiaSharp.SKPath.AddArc*) Methode, fünf verschiedene [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) Methoden und zwei relative [`RArcTo`](xref:SkiaSharp.SKPath.RArcTo*) Methoden. Diese Methoden werden in drei Kategorien unterteilt, die drei sehr unterschiedliche Ansätze zum Angeben eines Bogens darstellen. Welche Informationen Sie verwenden, hängt von den Informationen ab, die zum Definieren des Bogens verfügbar sind, und wie dieser Bogen in die anderen Grafiken passt, die Sie zeichnen.
 
 ## <a name="the-angle-arc"></a>Der Winkel Bogen
 
-Der Winkel Bogen Ansatz zum Zeichnen von Bögen erfordert die Angabe eines Rechtecks, das eine Ellipse umschließt. Der Bogen in der Umfang dieser Ellipse wird durch Winkel aus der Mitte der Ellipse angegeben, die den Anfang des Bogens und seine Länge angeben. Zwei verschiedene Installationsmethoden Winkel Bögen zu zeichnen. Dies sind die [ `AddArc` ](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single)) Methode und die [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKRect,System.Single,System.Single,System.Boolean)) Methode:
+Der Winkel Bogen Ansatz zum Zeichnen von Bögen erfordert, dass Sie ein Rechteck angeben, das eine Ellipse umschließt. Der Bogen im Umfang dieser Ellipse wird durch Winkel aus der Mitte der Ellipse angegeben, die den Anfang des Bogens und seine Länge angeben. Zwei verschiedene Methoden zeichnen Winkel Arcs. Dies sind die [`AddArc`](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single)) -Methode und die [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKRect,System.Single,System.Single,System.Boolean)) -Methode:
 
 ```csharp
 public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
@@ -38,45 +38,45 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Diese Methoden sind identisch mit den Methoden [`AddArc`](xref:Android.Graphics.Path.AddArc*) Android und`ArcTo`[] Xref: Android. Graphics. Path. ArcTo *). IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) Methode ähnelt aber auf Bögen auf den Umfang eines Kreises beschränkt ist, anstatt in eine Ellipse generalisiert.
+Diese Methoden sind identisch mit den Methoden Android [`AddArc`](xref:Android.Graphics.Path.AddArc*) und [`ArcTo`] Xref: Android. Graphics. Path. ArcTo *). Die IOS- [`AddArc`](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) -Methode ist ähnlich, aber auf Bögen im Umkreis eines Kreises beschränkt und nicht auf eine Ellipse verallgemeinert.
 
-Beide Methoden beginnen mit einem `SKRect` -Wert, der Speicherort und die Größe einer Ellipse definiert:
+Beide Methoden beginnen mit einem `SKRect` Wert, der sowohl den Speicherort als auch die Größe einer Ellipse definiert:
 
 ![Das Oval, das einen Winkel Bogen startet.](arcs-images/anglearcoval.png)
 
-Der Bogen ist ein Teil der Umfang dieser Ellipse.
+Der Bogen ist ein Teil des Umfangs dieser Ellipse.
 
-Die `startAngle` Argument ist, einen Winkel im Uhrzeigersinn in Grad relativ zu einer horizontalen Linie, die von der Mitte der Ellipse gezeichnet wird, auf der rechten Seite. Die `sweepAngle` Argument ist relativ zu den `startAngle`. Hier sind `startAngle` und `sweepAngle` bzw. Werte von 60 Grad und 100 Grad:
+Das `startAngle`-Argument ist ein Winkel im Uhrzeigersinn in Grad, der relativ zu einer horizontalen Linie ist, die von der Mitte der Ellipse nach rechts gezeichnet wird. Das `sweepAngle`-Argument ist relativ zum `startAngle`. Dies sind die `startAngle`-und `sweepAngle` Werte von 60 Grad bzw. 100 Grad:
 
 ![Die Winkel, die einen Winkel Bogen definieren.](arcs-images/anglearcangles.png)
 
-Der Startwinkel beginnt des Bogens. Der mittelpunktswinkel unterliegt längenbeschränkungen. Der Bogen wird in Rot hier gezeigt:
+Der Bogen beginnt am Anfang des Winkels. Die Länge wird durch den Mittelpunktswinkel gesteuert. Der Bogen wird hier rot dargestellt:
 
 ![Der hervorgehobene Winkel Bogen](arcs-images/anglearchighlight.png)
 
-Die Kurve, die hinzugefügt werden, um den Pfad mit der `AddArc` oder `ArcTo` Methode ist einfach, Teil der Ellipse Umfang:
+Die Kurve, die dem Pfad mit der `AddArc`-oder `ArcTo`-Methode hinzugefügt wurde, ist einfach ein Teil des Umfangs der Ellipse:
 
 ![Der Winkel Bogen allein](arcs-images/anglearc.png)
 
-Das `startAngle` - `sweepAngle` Argument oder das-Argument kann negativ sein: Der Bogen steht im Uhrzeigersinn für positive `sweepAngle` Werte von und gegen den Uhrzeigersinn für negative Werte.
+Die `startAngle`-oder `sweepAngle` Argumente können negativ sein: der Bogen steht im Uhrzeigersinn für positive Werte `sweepAngle` und gegen den Uhrzeigersinn für negative Werte.
 
-Allerdings `AddArc` ist *nicht* definieren eine geschlossene Kontur. Wenn Sie aufrufen `LineTo` nach `AddArc`, eine Zeile am Ende der Bogen gezeichnet wird, zu dem Punkt in der `LineTo` -Methode, und dasselbe gilt für `ArcTo`.
+In `AddArc` wird jedoch *keine* geschlossene Kontur definiert. Wenn Sie `LineTo` nach `AddArc`aufzurufen, wird eine Linie vom Ende des Bogens bis zum Punkt in der `LineTo`-Methode gezeichnet, und dasselbe gilt für `ArcTo`.
 
-`AddArc` automatisch startet eine neue Kontur und die ist funktionell gleichwertig mit einem Aufruf von `ArcTo` mit einem letzten Argument vom `true`:
+`AddArc` startet automatisch eine neue Kontur und ist funktional äquivalent zu einem `ArcTo` mit dem letzten Argument `true`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, true);
 ```
 
-Dass das letzte Argument aufgerufen wird, `forceMoveTo`, und es effektiv bewirkt, dass eine `MoveTo` rufen Sie am Anfang des Bogens. Beginnt eine neue Kontur. Ist dies nicht der Fall mit einem letzten Argument der `false`:
+Das letzte Argument wird `forceMoveTo`aufgerufen und bewirkt, dass es einen `MoveTo` Aufruf am Anfang des Bogens auslöst. Dadurch wird eine neue Kontur begonnen. Dies ist nicht der Fall mit dem letzten Argument von `false`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, false);
 ```
 
-Diese Version von `ArcTo` zeichnet eine Linie von der aktuellen Position, an den Anfang des Bogens. Dies bedeutet, dass das Kreissegment an einer beliebigen Stelle in der Mitte einer größeren Contour global sein kann.
+Diese Version von `ArcTo` zeichnet eine Linie von der aktuellen Position bis zum Anfang des Bogens. Dies bedeutet, dass der Bogen irgendwo in der Mitte einer größeren Kontur liegen kann.
 
-Die **Winkel Bogen** Seite können Sie zwei Schiebereglern Geben Sie die Start- und beim Aufräumen bearbeitete Winkel. Die XAML-Datei instanziiert zwei `Slider` Elemente und ein `SKCanvasView`. Die `PaintCanvas` Ereignishandler in der [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) Datei zeichnet, sowohl für die "-Oval" als auch für den Bogen mit zwei `SKPaint` Objekte als Felder definiert:
+Auf der Seite " **Winkel Bogen** " können Sie zwei Schieberegler verwenden, um die Start-und Sweep-Winkel anzugeben. Die XAML-Datei instanziiert zwei `Slider` Elemente und eine `SKCanvasView`. Der `PaintCanvas` Handler in der [**AngleArcPage.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) -Datei zeichnet sowohl das Oval als auch den Bogen mithilfe von zwei `SKPaint` Objekten, die als Felder definiert sind:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -101,19 +101,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Wie Sie sehen können, können sowohl den Startwinkel und den mittelpunktswinkel negative Werte annehmen:
+Wie Sie sehen können, können sowohl der Start Winkel als auch der Mittelpunktswinkel negative Werte annehmen:
 
-[![Dreifacher Screenshot der Seite "Winkel Bogen"](arcs-images/anglearc-small.png)](arcs-images/anglearc-large.png#lightbox)
+[![dreifacher Screenshot der Seite "Winkel Bogen"](arcs-images/anglearc-small.png)](arcs-images/anglearc-large.png#lightbox)
 
-Diese Vorgehensweise zum Erstellen von einen Bogen algorithmisch am einfachsten ist, und es ist einfach, die parametrischen Formeln abgeleitet werden, die den Bogen mit Strichen zu beschreiben. Kennen die Größe und Position des der Ellipse, die Start- und Sweep Winkel, kann die Start- und Endpunkt des Bogens berechnet werden mithilfe von einfachen trigonometrische:
+Diese Methode zum Erstellen eines Bogens ist algorithmisch, und es ist einfach, die parametrischen Gleichungen abzuleiten, die den Bogen beschreiben. Wenn Sie die Größe und Position der Ellipse und die Start-und Sweep-Winkel kennen, können die Start-und Endpunkte des Bogens mithilfe von einfachem Trigonometry berechnet werden:
 
 `x = oval.MidX + (oval.Width / 2) * cos(angle)`
 
 `y = oval.MidY + (oval.Height / 2) * sin(angle)`
 
-Die `angle` Wert lautet entweder `startAngle` oder `startAngle + sweepAngle`.
+Der `angle` Wert ist entweder `startAngle` oder `startAngle + sweepAngle`.
 
-Für Fälle, in dem Sie die angular-Länge des Bogens bekannt sein, z. B. für Draw-, um ein Kreisdiagramm, empfiehlt sich die Verwendung der beiden Winkel um einen Bogen zu definieren. Die **Kreisdiagramm explodiert** Seite veranschaulicht dies. Die [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Klasse verwendet eine interne Klasse, um einige erstellte Daten und die Farben zu definieren:
+Die Verwendung von zwei Winkeln zum Definieren eines Bogens eignet sich am besten für Fälle, in denen Sie die Angular-Länge des Bogens kennen, der gezeichnet werden soll, z. b. um ein Kreis Diagramm zu erstellen. Dies wird auf der Seite **explodiertes Kreis Diagramm** veranschaulicht. Die [`ExplodedPieChartPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) -Klasse verwendet eine interne Klasse zum Definieren von fabrizierten Daten und Farben:
 
 ```csharp
 class ChartData
@@ -142,7 +142,7 @@ ChartData[] chartData =
 
 ```
 
-Die `PaintSurface` Handler durchläuft die Elemente, berechnen Sie zuerst eine `totalValues` Anzahl. An diesem kann die Größe des Elements als der Anteil der gesamten bestimmen und zu konvertieren, einen Winkel:
+Der `PaintSurface` Handler durchläuft zuerst die Elemente, um eine `totalValues` Zahl zu berechnen. Dadurch kann die Größe jedes Elements als Bruchteil des Gesamtwerts ermittelt und in einen Winkel konvertiert werden:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -206,19 +206,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Ein neues `SKPath` -Objekt wird erstellt für jeden kreisslice angezeigt. Der Pfad besteht aus einer Zeile aus dem Center ein `ArcTo` den Bogen mit Strichen und eine neue Zeile zurück an die Center-Ergebnisse aus gezeichnet der `Close` aufrufen. Dieses Programm zeigt "explodierten" Kreissegmente durch Verschieben all aus dem Center 50 Pixel. Diese Aufgabe erfordert einen Vektor in Richtung der Mitte des der mittelpunktswinkel für jeden Slice:
+Ein neues `SKPath`-Objekt wird für jeden Kreis Slice erstellt. Der Pfad besteht aus einer Zeile aus der Mitte, einem `ArcTo` zum Zeichnen des Bogens, und eine weitere Zeile zurück zum Mittelpunkt ergibt sich aus dem `Close`-Befehl. Dieses Programm zeigt "explodierte" Kreis Scheiben an, indem Sie alle von der Mitte um 50 Pixel verschoben werden. Diese Aufgabe erfordert einen Vektor in der Richtung des Mittelpunkts des Sweep-Winkels für jeden Slice:
 
-[![Dreifacher Screenshot der Seite "explodiertes Kreis Diagramm"](arcs-images/explodedpiechart-small.png)](arcs-images/explodedpiechart-large.png#lightbox)
+[![dreifacher Screenshot der explodierten Kreis Diagramm Seite](arcs-images/explodedpiechart-small.png)](arcs-images/explodedpiechart-large.png#lightbox)
 
-Um anzuzeigen, ohne die "Auflösung" sieht es, einfach Auskommentieren der `Translate` aufrufen:
+Um zu sehen, wie es ohne die "Explosion" aussieht, kommentieren Sie einfach den `Translate`-Befehl aus:
 
-[![Dreifacher Screenshot der explodierten Kreis Diagramm Seite ohne die Explosion](arcs-images/explodedpiechartunexploded-small.png)](arcs-images/explodedpiechartunexploded-large.png#lightbox)
+[![dreifacher Screenshot der explodierten Kreis Diagramm Seite ohne die Explosion](arcs-images/explodedpiechartunexploded-small.png)](arcs-images/explodedpiechartunexploded-large.png#lightbox)
 
 ## <a name="the-tangent-arc"></a>Der Tangens Bogen
 
-Der zweite Typ des Bogens von unterstützten `SKPath` ist die *Tangens Bogen*, daraus, dass der Bogen der Umfang eines Kreises ist, der tangential zur zwei verbundene Linien.
+Der zweite Arkus Typ, der von `SKPath` unterstützt wird, ist der *Tangens Bogen*, der aufgerufen wird, da der Bogen der Umfang eines Kreises ist, der sich auf zwei verbundene Linien Tangens.
 
-Ein Tangens Bogen wird in einen Pfad hinzugefügt, mit einem Aufruf von der [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) Methode mit zwei `SKPoint` Parameter oder die [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) Überladung mit separaten `Single` Parameter für die Punkte:
+Einem Pfad wird ein Tangens Bogen mit einem aufzurufenden [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) -Methode mit zwei `SKPoint` Parametern oder der [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) -Überladung mit separaten `Single`-Parametern für die Punkte hinzugefügt:
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -226,43 +226,43 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-Dies `ArcTo` Methode ähnelt der PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (Seite 532)-Funktion und den iOS- [ `AddArcToPoint` ](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat)) Methode.
+Diese `ArcTo` Methode ähnelt der Funktion PostScript [`arct`](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (Page 532) und der IOS [`AddArcToPoint`](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat)) -Methode.
 
-Die `ArcTo` Methode umfasst die drei Punkte:
+Die `ArcTo`-Methode umfasst drei Punkte:
 
-- Die aktuelle zeigen die Kontur oder den Punkt (0, 0), wenn `MoveTo` nicht aufgerufen wurde
-- Das erste Argument der Punkt für die `ArcTo` aufgerufene Methode die *Ecke zeigen*
-- Das zweite Argument der Punkt für `ArcTo`Namens der *Zielpunkt*:
+- Der aktuelle Punkt der Kontur oder der Punkt (0, 0), wenn `MoveTo` nicht aufgerufen wurde.
+- Das erste Punkt Argument für die `ArcTo`-Methode, die als *Eckpunkt* bezeichnet wird.
+- Das zweite Punkt Argument, das als *Zielpunkt*bezeichnet wird, `ArcTo`:
 
 ![Drei Punkte, die einen Tangens Bogen beginnen](arcs-images/tangentarcthreepoints.png)
 
-Diese drei Punkte definieren zwei verbundene Linien:
+Mit diesen drei Punkten werden zwei verbundene Zeilen definiert:
 
 ![Zeilen, die die drei Punkte eines Tangens Bogens verbinden](arcs-images/tangentarcconnectinglines.png)
 
-Wenn die drei Punkte kollineare sind &mdash; , also wenn sie auf einer geraden Linie liegen &mdash; kein Bogen gezeichnet.
+Wenn die drei Punkte colinear sind &mdash; d. h., wenn Sie sich auf derselben geraden Linie befinden &mdash; wird kein Bogen gezeichnet.
 
-Die `ArcTo` -Methode enthält auch eine `radius` Parameter. Den Radius eines Kreises definiert:
+Die `ArcTo`-Methode enthält auch einen `radius`-Parameter. Hiermit wird der Radius eines Kreises definiert:
 
 ![Der Kreis eines Tangens Bogens.](arcs-images/tangentarccircle.png)
 
-Der Tangente Bogen ist nicht für eine Ellipse generalisiert werden.
+Der Tangens Bogen ist für eine Ellipse nicht generalisiert.
 
-Wenn die beiden Zeilen in einem beliebigen Winkel erfüllen, kann diese Kreis zwischen diesen Zeilen eingefügt werden, damit es tangential zur beide Zeilen ist:
+Wenn die beiden Zeilen in einem beliebigen Winkel übereinstimmen, kann dieser Kreis zwischen diesen Linien eingefügt werden, sodass er in beide Zeilen Tangens ist:
 
 ![Der Tangens Bogen Kreis zwischen den beiden Linien.](arcs-images/tangentarctangentcircle.png)
 
-Die Kurve, die die Kontur hinzugefügt wird, nicht touch entweder von der Punkte in der `ArcTo` Methode. Sie besteht aus einer geraden Linie vom aktuellen Punkt der ersten tangenspunkt und einen Bogen, der an den zweiten tangenspunkt, hier in Rot dargestellt:
+Die Kurve, die der Kontur hinzugefügt wird, berührt keines der Punkte, die in der `ArcTo`-Methode angegeben sind. Er besteht aus einer geraden Linie zwischen dem aktuellen Punkt und dem ersten Tangens Punkt und einem Bogen, der am zweiten Tangenten Punkt endet, der hier rot dargestellt wird:
 
 ![Der markierte Tangens Bogen zwischen den beiden Zeilen.](arcs-images/tangentarchighlight.png)
 
-Hier ist die endgültige gerade Linie und Bogen, der die Kontur hinzugefügt wird:
+Hier sehen Sie die abschließende gerade Linie und den Bogen, der der Kontur hinzugefügt wird:
 
 ![Der markierte Tangens Bogen zwischen den beiden Zeilen.](arcs-images/tangentarc.png)
 
-Die Kontur kann aus der zweiten tangenspunkt fortgesetzt werden.
+Die Kontur kann vom zweiten Tangenten Punkt aus fortgesetzt werden.
 
-Die **Tangens Bogen** Seite ermöglicht Ihnen das Experimentieren mit der Tangente Bogen. Dies ist die erste von mehreren Seiten, die abgeleitet [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), die definiert, ein paar praktische `SKPaint` Objekte und führt `TouchPoint` verarbeiten:
+Die Seite **Tangens Bogen** ermöglicht Ihnen das Experimentieren mit dem Tangens Bogen. Dies ist die erste von mehreren Seiten, die von [`InteractivePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs)abgeleitet werden, der einige praktische `SKPaint` Objekte definiert und `TouchPoint` Verarbeitung ausführt:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -312,7 +312,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-Die `TangentArcPage`-Klasse wird von `InteractivePage` abgeleitet. Der Konstruktor in der [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) Datei ist verantwortlich für das Instanziieren und Initialisieren der `touchPoints` Arrays und die Einstellung `baseCanvasView` (in `InteractivePage`) auf der `SKCanvasView` Objekt instanziiert wird, der [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) Datei:
+Die `TangentArcPage`-Klasse wird von `InteractivePage` abgeleitet. Der Konstruktor in der [**TangentArcPage.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) -Datei ist für das Instanziieren und Initialisieren des `touchPoints` Arrays und das Festlegen von `baseCanvasView` (in `InteractivePage`) auf das `SKCanvasView` Objekt zuständig, das in der [**tangentarcpage. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) -Datei instanziiert wird:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -348,7 +348,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-Die `PaintSurface` Ereignishandler verwendet die `ArcTo` Methode, um den Bogen mit Strichen zu zeichnen auf der Grundlage von Touch-Punkt und ein `Slider`, aber auch algorithmisch berechnet den Kreis, der der Winkel basiert:
+Der `PaintSurface` Handler verwendet die `ArcTo`-Methode, um den Bogen basierend auf den Berührungspunkten und einem `Slider`zu zeichnen, aber auch algorithmisch den Kreis berechnet, auf dem der Winkel basiert:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -414,13 +414,13 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-Hier ist die **Tangens Bogen** Seite ausgeführt wird:
+Hier ist die **Tangens Bogen** Seite, die ausgeführt wird:
 
-[![Dreifacher Screenshot der Tangens Bogen Seite](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
+[![dreifacher Screenshot der Tangens Bogen Seite](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
-Der Tangente Bogen ist ideal zum Erstellen der abgerundeten Ecken, z. B. ein abgerundetes Rechteck. Da `SKPath` enthält bereits eine `AddRoundedRect` -Methode, die **gerundet Siebeneck** Seite veranschaulicht, wie `ArcTo` zum Runden der Ecken eines Polygons Gleichseitiges. (Der Code ist für alle regulären Polygon generalisiert werden.)
+Der Tangens Bogen eignet sich ideal zum Erstellen von abgerundeten Ecken, z. b. ein abgerundetes Rechteck. Da `SKPath` bereits eine `AddRoundedRect`-Methode enthält, zeigt die **abgerundete heptagon** -Seite, wie `ArcTo` zum Runden der Ecken eines siebenseitigen Polygons verwendet werden kann. (Der Code ist für ein beliebiges reguläres Polygon generalisiert.)
 
-Die `PaintSurface` Handler die [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) Klasse enthält eine `for` Schleife, um den Koordinaten von den sieben Vertices für die Siebeneck und ein zweites zum Berechnen der dann der sieben Seiten aus diesen zu berechnen. Eckpunkte. Diese dann werden dann verwendet, um den Pfad zu erstellen:
+Der `PaintSurface` Handler der [`RoundedHeptagonPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) Klasse enthält eine `for` Schleife, um die Koordinaten der sieben Scheitel Punkte des heptagon zu berechnen, und eine zweite, um die Mittelpunkte der sieben Seiten aus diesen Scheitel Punkten zu berechnen. Diese Mittelpunkte werden dann verwendet, um den Pfad zu erstellen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -489,13 +489,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![Dreifacher Screenshot der gerundeten heptagon-Seite](arcs-images/roundedheptagon-small.png)](arcs-images/roundedheptagon-large.png#lightbox)
+[![dreifacher Screenshot der gerundeten heptagon-Seite](arcs-images/roundedheptagon-small.png)](arcs-images/roundedheptagon-large.png#lightbox)
 
-## <a name="the-elliptical-arc"></a>Elliptischen Bogens
+## <a name="the-elliptical-arc"></a>Der elliptische Bogen
 
-Elliptischen Bogens wurde auf einen Pfad mit einem Aufruf von der [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint)) -Methode, die zwei `SKPoint` Parameter oder die [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single)) -Überladung mit separaten X- und Y-Koordinaten:
+Der elliptische Bogen wird einem Pfad mit einem aufzurufenden [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint)) Methode mit zwei `SKPoint` Parametern oder der [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single)) -Überladung mit separaten X-und Y-Koordinaten hinzugefügt:
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -503,48 +503,48 @@ public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPath
 public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, Single x, Single y)
 ```
 
-Elliptischen Bogens ist konsistent mit der [elliptischen Bogens](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) in Scalable Vector Graphics (SVG) und die universelle Windows-Plattform enthalten [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) Klasse.
+Der elliptische Bogen ist mit dem [Ellipsen Bogen](https://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) konsistent, der in der universelle Windows-Plattform [`ArcSegment`](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) Klasse enthalten ist.
 
-Diese `ArcTo` zeichnen Methoden einen Bogen zwischen zwei Punkten, die dem aktuellen Punkt der Kontur sind, und der letzte Parameter, die `ArcTo` Methode (die `xy` Parameter oder die separaten `x` und `y` Parameter):
+Diese `ArcTo` Methoden zeichnen einen Bogen zwischen zwei Punkten (dem aktuellen Punkt der Kontur) und dem letzten Parameter der `ArcTo` Methode (dem `xy`-Parameter oder den separaten `x`-und `y`-Parametern):
 
 ![Die zwei Punkte, die einen elliptischen Bogen definiert haben](arcs-images/ellipticalarcpoints.png)
 
-Der erste Punktparameter für die `ArcTo` Methode (`r`, oder `rx` und `ry`) ist kein Punkt überhaupt aber stattdessen gibt die horizontalen und senkrechten RADIUS einer Ellipse;
+Der erste Punkt Parameter für die `ArcTo` Methode (`r`oder `rx` und `ry`) ist kein Punkt, sondern gibt den horizontalen und vertikalen Radien einer Ellipse an.
 
 ![Die Ellipse, die einen elliptischen Bogen definiert hat.](arcs-images/ellipticalarcellipse.png)
 
-Die `xAxisRotate` Parameter entspricht der Anzahl von Grad im Uhrzeigersinn um dieser Ellipse gedreht:
+Der `xAxisRotate`-Parameter ist die Anzahl der Uhrzeigersinn, um diese Ellipse zu drehen:
 
 ![Die gekippte Ellipse, die einen elliptischen Bogen definiert hat.](arcs-images/ellipticalarctiltedellipse.png)
 
-Wenn dieser Geneigter Ellipse dann so, dass es sich um die beiden Punkte berührt positioniert ist, sind die Punkte durch zwei unterschiedliche Bögen verbunden:
+Wenn diese schrägen Ellipse dann so positioniert wird, dass Sie die beiden Punkte berührt, werden die Punkte durch zwei verschiedene Arcs verbunden:
 
 ![Der erste Satz elliptischer Bögen](arcs-images/ellipticalarcellipse1.png)
 
-Diese beiden Bögen können auf zwei Arten unterschieden werden: Der obere Bogen ist größer als der untere Bogen, und wenn der Bogen von links nach rechts gezeichnet wird, wird der obere Bogen in einer Richtung im Uhrzeigersinn gezeichnet, während der untere Bogen in einer Richtung gegen den Uhrzeigersinn gezeichnet wird.
+Diese beiden Bögen können auf zwei Arten unterschieden werden: der obere Bogen ist größer als der untere Bogen, und wenn der Bogen von links nach rechts gezeichnet wird, wird der obere Bogen in einer Richtung im Uhrzeigersinn gezeichnet, während der untere Bogen gegen den Uhrzeigersinn gezeichnet wird.
 
-Es ist auch möglich, das die Ellipse zwischen den beiden Punkten auf andere Weise anpassen:
+Es ist auch möglich, die Ellipse zwischen den beiden Punkten auf eine andere Weise anzupassen:
 
 ![Der zweite Satz elliptischer Bögen](arcs-images/ellipticalarcellipse2.png)
 
-Jetzt ist gibt es ein kleiner Bogen im Vordergrund, das im Uhrzeigersinn gezeichnet wird, und eine größere Bogen im unteren Bereich, der gezeichnet wird gegen den Uhrzeigersinn.
+Nun gibt es einen kleineren Bogen im Uhrzeigersinn und einen größeren Bogen im unteren Bereich, der gegen den Uhrzeigersinn gezeichnet wird.
 
-Diese beiden Punkte können durch einen Bogen, der durch die Geneigter Ellipse insgesamt vier Arten definiert daher verbunden werden:
+Diese beiden Punkte können daher durch einen von der gekippten Ellipse definierten Bogen auf eine Gesamtzahl von vier Arten verbunden werden:
 
 ![Alle vier Ellipsen Bögen](arcs-images/ellipticalarccolors.png)
 
-Diese vier Bögen unterscheiden sich durch die vier Kombinationen von der [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize) und [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection) Enumeration Typargumente für die `ArcTo` Methode:
+Diese vier Bögen unterscheiden sich durch die vier Kombinationen der [`SKPathArcSize`](xref:SkiaSharp.SKPathArcSize) und [`SKPathDirection`](xref:SkiaSharp.SKPathDirection) Enumerationstyp Argumente für die `ArcTo`-Methode:
 
-- Red Skpatharcsize. Large und skpathdirection. Uhrzeigersinn
-- Grünbuchs Skpatharcsize. Small und skpathdirection. Uhrzeigersinn
-- blauen Skpatharcsize. Small und skpathdirection. gegen den Uhrzeigersinn
-- Magenta Skpatharcsize. Large und skpathdirection. gegen den Uhrzeigersinn
+- Rot: skpatharcsize. Large und skpathdirection. Uhrzeigersinn
+- Grün: skpatharcsize. Small und skpathdirection. Uhrzeigersinn
+- Blue: skpatharcsize. Small und skpathdirection. gegen den Uhrzeigersinn
+- Magenta: skpatharcsize. Large und skpathdirection. gegen den Uhrzeigersinn
 
-Geneigter Ellipse ist nicht groß genug für zwischen den beiden Punkten, und klicken Sie dann es gleichmäßig skaliert wird, bis es groß genug ist. Nur zwei eindeutige Bögen die beiden Punkte in diesem Fall eine Verbindung herstellen. Diese unterschieden werden können, mit der `SKPathDirection` Parameter.
+Wenn die gekippte Ellipse nicht groß genug ist, um zwischen den beiden Punkten zu passen, wird Sie einheitlich skaliert, bis Sie groß genug ist. Nur zwei eindeutige Bögen verbinden die beiden Punkte in diesem Fall. Diese können mit dem `SKPathDirection`-Parameter unterschieden werden.
 
-Obwohl dieser Ansatz für die Definition eines Bogens auf den ersten komplexen vorkommt, ist der einzige Ansatz, der ermöglicht, einen Bogen mit einer Ellipse gedreht definieren, und es ist häufig der einfachste Ansatz, wenn Sie andere Teile der Kontur Bögen integrieren möchten.
+Obwohl dieser Ansatz zum Definieren eines Bogen Sounds bei der ersten Begegnung Komplex ist, ist dies der einzige Ansatz, der das Definieren eines Bogens mit einer gedrehten Ellipse ermöglicht. Dies ist häufig der einfachste Ansatz, wenn Sie Bögen in andere Teile der Kontur integrieren müssen.
 
-Die **elliptischen Bogens** Seite können Sie interaktiv die beiden Punkte, und die Größe und Drehung der Ellipse festzulegen. Die `EllipticalArcPage` Klasse leitet sich von `InteractivePage`, und die `PaintSurface` Ereignishandler in der [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) Code-Behind-Datei, zeichnet die vier Bogen:
+Mithilfe der **Ellipsen Bogen** Seite können Sie die beiden Punkte sowie die Größe und Drehung der Ellipse interaktiv festlegen. Die `EllipticalArcPage`-Klasse wird von `InteractivePage`abgeleitet, und der `PaintSurface`-Handler in der [**EllipticalArcPage.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) -Code Behind-Datei zeichnet die vier Arcs:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -586,35 +586,35 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird ausgeführt:
 
-[![Dreifacher Screenshot der elliptischen Bogen Seite](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
+[![Triple-Bildschirm Abbildung der elliptischen Bogen Seite](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
 
-Die **Bogen unendlich** Seite elliptischen Bogens verwendet, um eine Anmeldung unendlich zu zeichnen. Die Vorzeichen unendlich basiert auf zwei Kreise mit Radien von 100 Einheiten von 100 Einheiten getrennt:
+Die Seite " **Arc Infinity** " verwendet den elliptischen Bogen, um ein Unendlichkeitszeichen zu zeichnen. Das Unendlichkeitszeichen basiert auf zwei Kreisen mit einem Radien von 100 Einheiten, die durch 100 Einheiten getrennt sind:
 
 ![Zwei Kreise](arcs-images/infinitycircles.png)
 
-Zwei überschreiten miteinander Linien sind Tangens auf beide Kreise:
+Zwei Zeilen, die einander überschreiten, sind Tangens beider Kreise:
 
 ![Zwei Kreise mit Tangenten Linien](arcs-images/infinitycircleslines.png)
 
-Die Vorzeichen unendlich ist eine Kombination von Teilen von diesen Gruppen und die beiden Zeilen. Um elliptischen Bogens verwenden, die die Vorzeichen Unendlich gezeichnet werden soll, müssen die Koordinaten, wo die beiden Zeilen Tangens auf die Kreise sind, ermittelt werden.
+Das Unendlichkeitszeichen ist eine Kombination aus Teilen dieser Kreise und den beiden Zeilen. Um den elliptischen Bogen zum Zeichnen des unendlichen Zeichens zu verwenden, müssen die Koordinaten, an denen die beiden Linien Tangens der Kreise sind, bestimmt werden.
 
-Erstellen Sie eine richtige Rechteck in einen der Kreise:
+Erstellen Sie ein rechtes Rechteck in einem der Kreise:
 
 ![Zwei Kreise mit Tangenten Linien und eingebettetem Kreis](arcs-images/infinitytriangle.png)
 
-Der Radius des Kreises ist 100 Einheiten und Hypotenuse des Dreiecks ist 150 Einheiten, daher ist der Winkel α den Arkussinus (Arkussinus) von 100 dividiert x 150 oder 41.8 Grad. Die Länge der anderen Seite des Dreiecks ist 150 Mal den Kosinus des 41.8 Grad oder 112, der auch von den Satz des Pythagoras berechnet werden kann.
+Der Radius des Kreises beträgt 100 Einheiten, und die Hypotenuse des Dreiecks ist 150 Einheiten, sodass der Winkel "α" der Arkus Sinus (umgekehrter Sinus) 100 dividiert durch 150 oder 41,8 Grad ist. Die Länge der anderen Seite des Dreiecks ist 150 mal der Kosinus von 41,8 Grad oder 112, der auch durch das Pythagorean-Theorem berechnet werden kann.
 
-Mithilfe dieser Informationen können dann die Koordinaten des Punkts Tangens berechnet werden:
+Die Koordinaten des Tangenten Punkts können dann anhand dieser Informationen berechnet werden:
 
 `x = 112·cos(41.8) = 83`
 
 `y = 112·sin(41.8) = 75`
 
-Die vier Tangentenpunkten sind alles, die was erforderlich ist, ein unendlich Vorzeichen zentriert auf den Punkt (0, 0) mit Kreis Radien 100 gezeichnet werden soll:
+Die vier Tangenten Punkte sind alles, was erforderlich ist, um ein Unendlichkeitszeichen zu zeichnen, das auf dem Punkt (0,0) mit Kreis Radien (100) zentriert ist:
 
 ![Zwei Kreise mit Tangenten Linien und Koordinaten](arcs-images/infinitycoordinates.png)
 
-Die `PaintSurface` Ereignishandler in der [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) Klasse positioniert die Infinity-Zeichen, damit die (0, 0) ist in der Mitte der Seite positioniert und skaliert den Pfad zu die Größe des Bildschirms:
+Der `PaintSurface` Handler in der [`ArcInfinityPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) -Klasse positioniert das Unendlichkeitszeichen, sodass sich der (0,0) Punkt in der Mitte der Seite befindet, und skaliert den Pfad auf die Bildschirmgröße:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -652,21 +652,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Der Code verwendet die `Bounds` Eigenschaft `SKPath` um die Abmessungen des Sinus unendlich für die Skalierung der Größe des Zeichenbereichs zu bestimmen:
+Im Code wird die `Bounds`-Eigenschaft von `SKPath` verwendet, um die Dimensionen des unendlichen Sinus zu bestimmen, um Sie auf die Größe der Canvas zu skalieren:
 
-[![Dreifacher Screenshot der Bogen unendlich Seite](arcs-images/arcinfinity-small.png)](arcs-images/arcinfinity-large.png#lightbox)
+[![Triple-Bildschirm Abbildung der Bogen unendlich Seite](arcs-images/arcinfinity-small.png)](arcs-images/arcinfinity-large.png#lightbox)
 
-Es erscheint das Ergebnis ein wenig klein ist, was darauf hindeutet, die die `Bounds` Eigenschaft `SKPath` meldet eine Größe, die größer als der Pfad.
+Das Ergebnis scheint etwas klein zu sein. Dies deutet darauf hin, dass die `Bounds`-Eigenschaft von `SKPath` eine größere Größe als der Pfad meldet.
 
-Intern erfolgt eine Skia Annäherung an den Bogen mit mehreren quadratischen Bézierkurven. Diese Kurven enthalten (wie Sie im nächsten Abschnitt sehen werden), muss der Control-Punkte, die steuern, wie die Kurve gezeichnet wird, jedoch sind nicht Teil der gerenderten Kurve. Die `Bounds` Eigenschaft enthält diese Kontrollpunkte.
+Intern gleicht die Skia den Bogen mithilfe mehrerer quadratischer Bézier-Kurven. Diese Kurven (wie Sie im nächsten Abschnitt sehen werden) enthalten Steuerungs Punkte, die bestimmen, wie die Kurve gezeichnet wird, aber nicht Teil der gerenderten Kurve ist. Die `Bounds`-Eigenschaft enthält diese Steuerungs Punkte.
 
-Um eine engere Wahl abzurufen, verwenden Sie die `TightBounds` -Eigenschaft, die die Control-Punkte ausschließt. Hier ist das Programm im Querformatmodus ausgeführt werden soll, und Verwenden der `TightBounds` Eigenschaft, um die Grenzen des Pfads zu erhalten:
+Um eine strengere Anpassung zu erzielen, verwenden Sie die `TightBounds`-Eigenschaft, die die Steuerpunkte ausschließt. Hier ist das Programm, das im Querformat ausgeführt wird, und das Verwenden der `TightBounds`-Eigenschaft zum Abrufen der Pfad Begrenzungen:
 
-[![Dreifacher Screenshot der Bogen unendlich Seite mit engen Begrenzungen](arcs-images/arcinfinitytightbounds-small.png)](arcs-images/arcinfinitytightbounds-large.png#lightbox)
+[![dreifacher Screenshot der Bogen unendlich Seite mit engen Begrenzungen](arcs-images/arcinfinitytightbounds-small.png)](arcs-images/arcinfinitytightbounds-large.png#lightbox)
 
-Auch die Verbindungen zwischen dem Bögen und gerade Linien mathematisch smooth sind, scheinen die Änderung von Bogen gerade etwas abrupten. Ein besseren Infinity-Zeichen werden im nächsten Artikel angezeigt, auf [ **drei Typen von Bézierkurven**](beziers.md).
+Obwohl die Verbindungen zwischen den Bögen und geraden Linien mathematisch glatt sind, kann die Änderung von Bogen in gerade Linie etwas abrupt erscheinen. Im nächsten Artikel zu [**drei Typen von Bézier-Kurven**](beziers.md)wird ein besseres Unendlichkeitszeichen dargestellt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

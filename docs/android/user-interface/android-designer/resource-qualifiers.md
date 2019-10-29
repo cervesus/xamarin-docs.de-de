@@ -4,15 +4,15 @@ description: In diesem Thema wird erläutert, wie Sie Ressourcen definieren, die
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 6ae10e73c3f41226560beb8cf8c50608fc6adf3f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: ccac795333dff52d35a66e8cd205c7b5bbd1bb2c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70762620"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029415"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Ressourcen Qualifizierer und Visualisierungs Optionen
 
@@ -24,7 +24,7 @@ _In diesem Thema wird erläutert, wie Sie Ressourcen definieren, die nur verwend
 
 Sie können auf **Ressourcen qualifiziereroptionen** zugreifen, indem Sie auf das Symbol mit den Auslassungs Punkten rechts neben der Schaltfläche **quer** Format klicken:
 
-[![Resource qualifiziereroptionen](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
+[Optionen für![Ressourcen Qualifizierer](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 Dieses Dialogfeld enthält Pulldownmenüs für die folgenden Ressourcen Qualifizierer:
 
@@ -38,7 +38,7 @@ Jedes dieser Pulldownmenüs öffnet neue Dialogfelder, in denen Sie Ressourcen Q
 
 Das Dropdown Menü **Sprache** listet nur die Sprachen auf, für die Ressourcen definiert sind (oder **alle Sprachen**, die Standardeinstellung). Es gibt jedoch auch eine Option zum **Hinzufügen von Sprachen/Regionen** , mit der Sie der Liste eine neue Sprache hinzufügen können:
 
-[![Add Sprache/Region](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
+[![Hinzufügen von Sprache/Region](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 Wenn Sie auf **Sprache/Region hinzufügen...** klicken, wird das Dialogfeld **Sprache auswählen** geöffnet, in dem Dropdown Listen mit den verfügbaren Sprachen und Regionen angezeigt werden:
 
@@ -54,7 +54,7 @@ Beachten Sie Folgendes: Wenn Sie eine neue Sprache hinzufügen, aber keine neuen
 
 Wenn Sie auf den Pulldownmenü des **UI-Modus** klicken, wird eine Liste der Modi angezeigt, wie z. b. **Normal**, **Car Dock**, **Desk Dock**, **TV**, **Appliance**und **Watch**:
 
-[Menü "![UI Modus"](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
+[Menü "![UI-Modus"](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
 Unterhalb dieser Liste befinden sich die Nacht Modi **nicht Nacht** und **Nacht**, gefolgt von den layoutdirections von **Links nach rechts** und von **rechts nach links** (Weitere Informationen zu den Optionen von **Links nach rechts** und von **Rechts** nach Links finden [Sie unter LayoutDirection](xref:Android.Util.LayoutDirection)).
 Die letzten Elemente im Dialogfeld **Ressourcen qualifiziereroptionen** sind die **runden Bildschirme** (für die Verwendung mit Android Wear) oder **nicht die Bildschirme**.
@@ -103,7 +103,7 @@ Weitere Informationen zu Ressourcentypen finden Sie unter [Android-Ressourcen](~
 
 Sie können auf **Ressourcen qualifiziereroptionen** zugreifen, indem Sie auf das Symbol mit den Auslassungs Punkten rechts neben der Schaltfläche **quer** Format klicken:
 
-[![Resource qualifiziereroptionen](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
+[Optionen für![Ressourcen Qualifizierer](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
 
 Dieses Dialogfeld enthält Pulldownmenüs für die folgenden Ressourcen Qualifizierer:
 
@@ -117,15 +117,15 @@ Jedes dieser Pulldownmenüs öffnet neue Dialogfelder, in denen Sie Ressourcen Q
 
 Das Dropdown Menü **Sprache** listet nur die Sprachen auf, für die Ressourcen definiert sind (oder **alle Sprachen**, die Standardeinstellung). Es gibt jedoch auch eine Option zum **Hinzufügen von Sprachen/Regionen** , mit der Sie der Liste eine neue Sprache hinzufügen können:
 
-[![Add Sprache/Region](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
+[![Hinzufügen von Sprache/Region](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
 
 Wenn Sie auf **Sprache/Region hinzufügen...** klicken, wird das Dialogfeld **Sprache auswählen** geöffnet, in dem Dropdown Listen mit den verfügbaren Sprachen und Regionen angezeigt werden:
 
-[![List von Sprachen](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
+[![Liste der Sprachen](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
 
 In diesem Beispiel haben wir **fr (Französisch)** für die Sprache **gewählt und (** Belgien) für den regionalen Dialekt Französisch gewählt. Beachten Sie, dass das Feld **Region** optional ist, da viele Sprachen ohne Rücksicht auf bestimmte Regionen angegeben werden können. Wenn das **sprach** -Pulldownmenü erneut geöffnet wird, wird die neu hinzugefügte Sprache/Regions Ressource angezeigt:
 
-[ausgewählte ![Language und Region](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
+[gewählte Sprache und Region![](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
 
 Beachten Sie Folgendes: Wenn Sie eine neue Sprache hinzufügen, aber keine neuen Ressourcen dafür erstellen, wird die hinzugefügte Sprache beim nächsten Öffnen des Projekts nicht mehr angezeigt.
 
@@ -133,7 +133,7 @@ Beachten Sie Folgendes: Wenn Sie eine neue Sprache hinzufügen, aber keine neuen
 
 Wenn Sie auf den Pulldownmenü des **UI-Modus** klicken, wird eine Liste der Modi angezeigt, wie z. b. **Normal**, **Car Dock**, **Desk Dock**, **TV**, **Appliance**und **Watch**:
 
-[Menü "![UI Modus"](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
+[Menü "![UI-Modus"](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
 
 Unterhalb dieser Liste befinden sich die Nacht Modi **nicht Nacht** und **Nacht**, gefolgt von den layoutrichtungen von **Links nach rechts** und von **rechts nach links**. Mit dem letzten paar von Optionen können Sie entweder **roundscreens** oder **rechteckige Bildschirme** auswählen (nützlich für Android Wear-Geräte).
 
@@ -144,7 +144,7 @@ Informationen zu den Optionen von **Links nach rechts** und von **rechts nach li
 
 Das Symbol Aktionsleisten- **Einstellungen** ist links neben dem Pinselsymbol (Design-Editor) verfügbar:
 
-[Einstellungen für ![Action Leiste](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
+[![Aktionsleiste Einstellungen](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
 
 Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit bietet, eine der drei Aktionsleiste Modi auszuwählen:
 
@@ -158,17 +158,17 @@ Mit diesem Symbol wird ein Dialogfeld-popover geöffnet, das eine Möglichkeit b
 
 Das **Dropdown** Menü "Design" zeigt alle im Projekt definierten Designs an. Wenn Sie **Weitere** Designs auswählen, wird ein Dialogfeld mit einer Liste aller im installierten Android SDK verfügbaren Themen geöffnet, wie unten dargestellt:
 
-[Liste der ![More Designs](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
+[Liste mit![weiteren Designs](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
 Wenn ein Design ausgewählt ist, wird der Designoberfläche aktualisiert, um die Auswirkung des neuen Designs anzuzeigen. Beachten Sie, dass diese Änderung nur dann dauerhaft gemacht wird, wenn im **Design Dialogfeld** auf die Schaltfläche **OK** geklickt wird. Nachdem ein Design ausgewählt wurde, wird es wie unten dargestellt **in das** Dropdown Menü "Design" eingefügt:
 
-[![Light Design ist jetzt verfügbar.](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
+[![Light-Design ist jetzt verfügbar.](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
 ## <a name="android-version"></a>Android-Version
 
 Die Android- **Versions** Auswahl legt die Android-Version fest, die zum Rendering des Layouts im Designer verwendet wird. Der Selektor zeigt alle Versionen an, die mit der Ziel Framework-Version des Projekts kompatibel sind:
 
-[![List von Android-Versionen](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
+[![Liste von Android-Versionen](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
 
 Die Zielframeworkversion kann in den Projekteinstellungen im Abschnitt **Projektoptionen > Build > Allgemein** festgelegt werden. Weitere Informationen zur Ziel Framework-Version finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 

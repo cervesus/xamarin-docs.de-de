@@ -1,6 +1,6 @@
 ---
-title: Xamarin Live neu laden (Vorschau)
-description: Finden Sie Änderungen an Ihrer XAML Live-, wiedergegeben werden, ohne dass eine andere kompilieren und bereitstellen.
+title: Xamarin Live Neuladen (Vorschau)
+description: Sehen Sie sich die Änderungen an Ihrem XAML-Code an, ohne dass eine Kompilierung und Bereitstellung erforderlich ist
 ms.prod: xamarin
 ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
@@ -8,51 +8,51 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9fb085313e994adc486833bb25e893659aa33b4b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384918"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032758"
 ---
-# <a name="xamarin-live-reload-preview"></a>Xamarin Live neu laden (Vorschau)
+# <a name="xamarin-live-reload-preview"></a>Xamarin Live Neuladen (Vorschau)
 
 > [!NOTE]
-> Die Vorschau von Xamarin Live Reload wurde beendet, und vielen Dank, dass alle für Ihr Feedback und Kommentare werden soll. Lesen Sie unsere [Roadmap](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap) für Visual Studio-2019 Weitere Informationen zum neuen Produktivitätsfeatures, die für Xamarin.Forms gearbeitet wird. Diese Erweiterung für Visual Studio 2017 bleibt verfügbar, aber es wird keine zukünftige Updates empfangen werden.
+> Die Vorschauversion von xamarin Live Neuladen wurde beendet, und wir möchten für alle Ihre Meinung und Ihre Kommentare danken. Lesen Sie unsere [Roadmap](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap) für Visual Studio 2019, um weitere Informationen zu neuen Produktivitäts Features zu erhalten, an denen wir für xamarin. Forms arbeiten. Diese Extension bleibt für Visual Studio 2017 verfügbar, empfängt aber keine zukünftigen Updates.
 
-Xamarin Live Reload ermöglicht es Ihnen, **nehmen Sie Änderungen an Ihrer XAML und finden Sie diese sofort live, ohne dass eine andere kompilieren und Bereitstellen von**. Alle Änderungen an Ihre XAML werden erneut bereitgestellt werden zu speichern und wiedergegeben werden, auf dem Zielcomputer bereitstellen.
+Mit xamarin Live Neuladen können Sie **Änderungen an Ihrem XAML-Code vornehmen und diese wiedergeben, ohne dass eine andere Kompilierung und Bereitstellung erforderlich ist**. Alle Änderungen, die an Ihrem XAML-Code vorgenommen wurden, werden bei der Speicherung erneut bereitgestellt und auf dem Bereitstellungs Ziel reflektiert.
 
 ## <a name="requirements"></a>Anforderungen
 
-* [Visual Studio 2017 Version 15.7 oder höher](https://visualstudio.microsoft.com/vs/) mit der **Mobile Entwicklung mit .NET** arbeitsauslastung.
-* [Xamarin.Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/).
+* [Visual Studio 2017 Version 15,7 oder höher](https://visualstudio.microsoft.com/vs/) mit der Arbeitsauslastung für die **Mobile-Entwicklung mit .net** .
+* [Xamarin. Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/).
 
 ## <a name="getting-started"></a>Erste Schritte
-### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installieren Sie Xamarin Live neu laden von Visual Studio Marketplace
+### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installieren Sie xamarin Live-Neuladen aus dem Visual Studio Marketplace
 
-Xamarin Live Reload wird über den Visual Studio Marketplace verteilt. Um die Erweiterung zu installieren, besuchen Sie die [Xamarin Live Reload-Seite in Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) -Website und klicken Sie auf **herunterladen**.
+Xamarin Live-Neuladen wird über das Visual Studio Marketplace verteilt. Um die Erweiterung zu installieren, besuchen Sie die [Seite xamarin Live Upload auf der Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) -Website, und klicken Sie auf **herunterladen**.
 
-Öffnen Sie die VSIX, die heruntergeladen wird, und klicken Sie auf **installieren**.
+Öffnen Sie die vsix-Datei, die heruntergeladen wurde, und klicken Sie auf **Installieren**.
 
-![Visual Studio-Installer Xamarin Live Reload-Bestätigung](images/LiveReloadVSIXInstall.png)
+![Visual Studio-Installer xamarin Live Reload-Bestätigung](images/LiveReloadVSIXInstall.png)
 
-Alternativ können Sie hierfür im Suchen der **Online** Registerkarte die **Erweiterungen und Updates** Dialogfeld in Visual Studio.
+Alternativ dazu können Sie im Dialogfeld " **Erweiterungen und Updates** " in Visual Studio auf der Registerkarte " **Online** " danach suchen.
 
-### <a name="2-configure-your-app-to-use-live-reload"></a>2. Konfigurieren Sie Ihrer app zur Verwendung von Live neu laden
+### <a name="2-configure-your-app-to-use-live-reload"></a>2. Konfigurieren der APP für die Verwendung von Live-Neuladen
 
-Hinzufügen von Live Reload zu vorhandenen mobile apps kann in drei Schritten erfolgen:
+Das Hinzufügen von Live Neuladen zu vorhandenen mobilen apps kann in drei Schritten ausgeführt werden:
 
-1. Stellen Sie sicher, alle Projekte werden aktualisiert, um verwenden [Xamarin.Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/) oder höher.
+1. Stellen Sie sicher, dass alle Projekte aktualisiert wurden, um [xamarin. Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/) oder höher zu verwenden.
 
-2. Hinzufügen der **Xamarin.LiveReload** NuGet-Paket:
+2. Fügen Sie das **xamarin. livereload** -nuget-Paket hinzu:
 
-    a. **.NET standard** – installieren Sie die **Xamarin.LiveReload** NuGet in die .NET Standard 2.0-Bibliothek. Dies muss nicht in Ihren Plattform-Projekten installiert werden. Sicherstellen, dass die **Paketquelle** nastaven NA hodnotu **alle**.
+    a. **.NET Standard** – installieren Sie den nuget-Code für **xamarin. livereload** in Ihrer .NET Standard 2,0-Bibliothek. Dies muss nicht in ihren Platt Form Projekten installiert werden. Stellen Sie sicher, dass die **Paketquelle** auf **alle**festgelegt ist.
     
-    b. **Freigegebene Projekte** – installieren Sie die **Xamarin.LiveReload** NuGet in alle Plattformprojekte (z. B. mit Android, iOS, UWP, usw.). Sicherstellen, dass die **Paketquelle** nastaven NA hodnotu **alle**.
+    b. Frei **gegebene Projekte** – installieren Sie den nuget-Code für **xamarin. livereload** in alle Platt Form Projekte (z. b. Android, Ios, UWP usw.). Stellen Sie sicher, dass die **Paketquelle** auf **alle**festgelegt ist.
 
-    [![Xamarin Live Reload NuGet mit NuGet-Paket-Manager hinzufügen](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
+    [![Hinzufügen von xamarin Live Neuladen nuget mit dem nuget-Paket-Manager](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
 
-3. Hinzufügen `LiveReload.Init();` an den Konstruktor in der `Application` Klasse, wie im folgenden Codeausschnitt gezeigt:
+3. Fügen Sie dem Konstruktor in der `Application`-Klasse `LiveReload.Init();` hinzu, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 public partial class App : Application
@@ -70,118 +70,118 @@ public partial class App : Application
 }
 ```
 
-### <a name="3-start-live-reloading"></a>3. Starten Sie live neu laden
+### <a name="3-start-live-reloading"></a>3. Starten des Live erneuten Ladens
 
-Kompilieren Sie und Bereitstellen Sie Ihrer Anwendung. Sobald die app bereitgestellt ist, öffnen Sie eine XAML-Datei, ein nehmen Sie Paar Änderungen vor und speichern Sie die Datei. Ihre Änderungen werden an das Bereitstellungsziel erneut bereitgestellt.
+Kompilieren und Bereitstellen der Anwendung. Nachdem die APP bereitgestellt wurde, öffnen Sie eine XAML-Datei, nehmen einige Änderungen vor und speichern die Datei. Die Änderungen werden auf dem Bereitstellungs Ziel erneut bereitgestellt.
 
 > [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
 
-Live neu laden, die mit Änderungen auf alle XAML-Dateien funktioniert. Änderungen an den C#- oder hinzufügen bzw. Entfernen von NuGet-Pakete müssen einen neuen Build und bereitstellen, um wirksam werden.
+Das Live-Neuladen funktioniert mit Änderungen an jeder beliebigen XAML-Datei. Für Änderungen C# an oder zum Hinzufügen/Entfernen von nuget-Paketen muss ein neuer Build und eine Bereitstellung wirksam werden.
 
 ## <a name="frequently-asked-questions"></a>Häufig gestellte Fragen (FAQs) 
-### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Ist Xamarin Live Reload für Mac in Visual Studio verfügbar? 
+### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Ist xamarin Live Neuladen auf Visual Studio für Mac verfügbar? 
 
-Preview-Version von Xamarin Live Reload ist Nein, nur für Visual Studio 2017 verfügbar.
+Nein, Vorschauversion von xamarin Live Reload ist nur für Visual Studio 2017 verfügbar.
 
-### <a name="does-this-work-with-all-libraries-such-as-prism"></a>Funktioniert dies mit der alle Bibliotheken verwenden, z. B. Prism? 
+### <a name="does-this-work-with-all-libraries-such-as-prism"></a>Funktioniert dies mit allen Bibliotheken, z. b. Prism? 
 
-Da es sich bei Ihrer app kompiliert wird, funktioniert Live Reload mit alle Bibliotheken verwenden, z. B. Prism und Bibliotheken der Drittanbieter-Steuerelement, z. B. Telerik, Infragistics, Syncfusion, ArcGIS, GrapeCity und anderen Herstellern Steuerelement aus.
+Da Ihre APP kompiliert ist, funktioniert Live Neuladen mit allen Bibliotheken, z. b. Prism, und Steuer Bibliotheken von Drittanbietern, wie z. b. Telerik, Infragistics, Syncfusion, ArcGIS, GrapeCity und anderen Steuerungs Anbietern.
 
-### <a name="what-changes-does-live-reload-redeploy"></a>Welche Änderungen bereitstellen Live Reload erneut? 
+### <a name="what-changes-does-live-reload-redeploy"></a>Welche Änderungen werden bei der erneuten Bereitstellung von Live Neuladen 
 
-Live neu laden gilt nur Änderungen an XAML oder CSS-Code. Wenn Sie eine C#-Datei ändern, wird eine Neukompilierung erforderlich sein. 
+Beim Live Neuladen werden nur Änderungen an XAML oder CSS angewendet. Wenn Sie Änderungen an einer C# Datei vornehmen, ist eine Neukompilierung erforderlich. 
 
 ### <a name="what-platforms-are-supported"></a>Welche Plattformen werden unterstützt? 
 
-Live neu laden funktioniert auf allen Plattformen, die von Xamarin.Forms, einschließlich Android, iOS und UWP unterstützt werden.
+Live Neuladen funktioniert auf allen Plattformen, die von xamarin. Forms unterstützt werden, einschließlich Android, IOS und UWP.
 
-### <a name="does-this-work-on-emulators-simulators-and-physical-devices"></a>Funktioniert dies auf Emulatoren und Simulatoren physische Geräte? 
+### <a name="does-this-work-on-emulators-simulators-and-physical-devices"></a>Funktioniert dies für Emulatoren, Simulatoren und physische Geräte? 
 
-Ja, funktioniert Live Reload mit allen gültigen Bereitstellungsziele, einschließlich Android-Emulatoren, iOS-Simulatoren und physische Geräte. Bereitstellung auf einem Gerät erfordert, dass das Gerät und der Computer im gleichen WLAN-Netzwerk.
+Ja, Live-Neuladen funktioniert mit allen gültigen Bereitstellungs Zielen, einschließlich Android-Emulatoren, IOS-Simulatoren und physischen Geräten. Für die Bereitstellung auf einem Gerät müssen sich das Gerät und der Computer im gleichen WLAN befinden.
 
 ### <a name="does-this-work-with-corporate-networks"></a>Funktioniert dies mit Unternehmensnetzwerken?
 
-Wenn Sie auf einem Android-Emulator oder auf iOS-Simulator Debuggen, verwendet Live Reload "localhost" Kommunikation. Wenn Sie auf einem Gerät bereitstellen möchten, müssen die Geräte und Computer im gleichen WLAN-Netzwerk sein. In Szenarien, in denen dies nicht möglich ist, können Sie [konfigurieren Sie Ihren eigenen Server Live Reload](#live-reload-server), dadurch werden Sie zum Live neu laden, unabhängig von Einstellungen für die Netzwerkkonnektivität.
+Wenn Sie einen Android-Emulator oder einen IOS-Simulator Debuggen, verwendet Live Neuladen localhost für die Kommunikation. Wenn Sie auf einem Gerät bereitstellen möchten, müssen sich das Gerät und der Computer im gleichen WLAN befinden. In Szenarios, in denen dies nicht möglich ist, können Sie einen [eigenen Live-Neuladen Server konfigurieren](#live-reload-server), mit dem Sie unabhängig von den Einstellungen für die Netzwerk Konnektivität ein Live Ladevorgang durchführen können.
 
-### <a name="does-it-require-debugging-the-app"></a>Ist es erforderlich, die app zu debuggen? 
+### <a name="does-it-require-debugging-the-app"></a>Muss die APP debuggt werden? 
 
-Nein. In der Tat können sogar starten Sie alle Ihre unterstützten Anwendungsziele (Android, iOS und UWP) auf eine beliebige Anzahl von Geräten und Simulatoren/Emulatoren, und sehen sie alle gleichzeitig zu aktualisieren. 
+Nein. Tatsächlich können Sie sogar alle Ihre unterstützten Anwendungs Ziele (Android, IOS und UWP) auf einer beliebigen Anzahl von Geräten oder Simulatoren bzw. Emulatoren starten und alle Updates gleichzeitig durch sehen. 
 
 ## <a name="limitations"></a>Einschränkungen
 
-* XAML nur das erneute Laden wird unterstützt.
-* Zustand der Benutzeroberfläche möglicherweise zwischen erneut bereitstellen, nicht verwaltet werden, es sei denn, mithilfe von MVVM.
+* Das erneute Laden von XAML wird nur unterstützt.
+* Der Benutzeroberflächen Zustand kann zwischen der erneuten Bereitstellung nicht beibehalten werden, es sei denn, Sie verwenden MVVM.
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-* Nur unterstützt in Visual Studio.
-* Verknüpfen von muss festgelegt werden, um **nicht verknüpfen** oder **Link nur Framework-SDKs** 
-* Erneutes Laden der gesamten app-Ressourcen (z. B. **"App.xaml"** oder freigegebenen Ressourcenverzeichnisse), app-Navigation wird zurückgesetzt. 
-* Erneutes Laden der ContentView derzeit erfordert die enthaltende Seite erneut zu laden.
-* Elemente, die AutomationId möglicherweise einen Fehler erneut laden.
-* Bearbeiten von XAML beim Debuggen von UWP einen Absturz zur Laufzeit verursachen. Problemumgehung: Verwendung **Starten ohne Debuggen (STRG + F5)** anstelle von **starten (F5) Debuggen**.
+* Wird nur in Visual Studio unterstützt.
+* Die Verknüpfung muss so festgelegt werden, dass **Framework-SDI** **nicht** verknüpft oder verknüpft werden. 
+* Beim erneuten Laden von App-weiten Ressourcen (z.b. **app. XAML** oder freigegebene Ressourcen Wörterbücher) wird die APP-Navigation zurückgesetzt. 
+* Zum erneuten Laden von contentview muss die enthaltende Seite erneut geladen werden.
+* Elemente, die AutomationId enthalten, können einen erneuten Ladefehler verursachen.
+* Das Bearbeiten von XAML beim Debuggen von UWP kann zu einem Lauf Zeit Absturz führen Problem Umgehung: Verwenden Sie " **Starten ohne Debugging" (STRG + F5)** anstelle von " **Debuggen starten" (F5)** .
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
 ### <a name="error-codes"></a>Fehlercodes
 
-* **XLR001**: *Das aktuelle Projekt verweist auf die "Xamarin.LiveReload" NuGet-Paket-Version [VERSION], aber die Xamarin Live Reload-Erweiterung erfordert Version [VERSION].*
+* **XLR001**: *das aktuelle Projekt verweist auf die xamarin. livereload-Version des nuget-Pakets "[Version]", aber die xamarin Live-Reaktivierungs Erweiterung erfordert Version "[Version]".*
 
-  Um eine schnelle Iteration und Weiterentwicklung von Live Reload-Funktion zu ermöglichen, müssen das Nuget-Paket und die Visual Studio-Erweiterung genau übereinstimmen. Aktualisieren Sie Ihr Nuget-Paket, auf die gleiche Version der Erweiterung, die Sie installiert haben.
+  Das nuget-Paket und die Visual Studio-Erweiterung müssen genau übereinstimmen, um die schnelle iterierung und Weiterentwicklung der Funktion zum erneuten Laden von Funktionen zu ermöglichen. Aktualisieren Sie das nuget-Paket auf dieselbe Version der Erweiterung, die Sie installiert haben.
 
-* **XLR002**: *Live neu laden erfordert mindestens die Eigenschaft "MqttHostname" Wenn Sie über die Befehlszeile zu erstellen. Alternativ festlegen Sie 'EnableLiveReload' auf 'False', um das Feature deaktivieren.*
+* **XLR002**: für *Live Neuladen ist mindestens die Eigenschaft "mqtthostname" erforderlich, wenn die Erstellung über die Befehlszeile durchführen wird. Legen Sie alternativ "enablelivereload" auf "false" fest, um die Funktion zu deaktivieren.*
 
-  Die Live Reload erforderlichen Eigenschaften sind nicht verfügbar, beim Erstellen von der Befehlszeile aus (oder in der continuous Integration) und muss daher explizit angegeben werden. 
+  Die Eigenschaften, die für das Live Neuladen erforderlich sind, sind nicht verfügbar, wenn Sie über die Befehlszeile (oder in Continuous Integration) einen Buildvorgang durchführen, und müssen daher explizit 
 
-* **XLR003**: *Live neu laden, die Nuget-Paket erfordert die Installation von Xamarin Live Reload Visual Studio-Erweiterung an.*
+* **XLR003**: *das nuget-Paket für Live Neuladen erfordert die Installation der xamarin Live Upload Visual Studio-Erweiterung.*
 
-  Es wurde versucht, ein Projekt erstellen, die auf das Nuget-Paket für Live neu laden, aber die Erweiterung für Visual ist nicht installiert.  
+  Es wurde versucht, ein Projekt zu erstellen, das auf das nuget-Paket zum Live Neuladen verweist, aber die visuelle Erweiterung ist nicht installiert  
 
-* *Ausnahme beim Laden von Assemblys: System.IO.FileNotFoundException: Could not load assembly 'Xamarin.Live.Reload, Version=0.3.27.0, Culture=neutral, PublicKeyToken='.*
+* *Ausnahme beim Laden von Assemblys: System. IO. File otfoundexception: die Assembly "xamarin. Live. Reload, Version = 0.3.27.0, Culture = neutral, PublicKeyToken =" konnte nicht geladen werden.*
 
-  Das Hostprojekt verwenden soll `PackageReference` anstelle von `packages.config`
+  Das Host Projekt sollte `PackageReference` anstelle von verwendet werden `packages.config`
 
-### <a name="app-doesnt-connect"></a>App verbunden nicht.
+### <a name="app-doesnt-connect"></a>App stellt keine Verbindung her
 
-Wenn die Anwendung wird erstellt, die Informationen aus **Tools > Optionen > Xamarin > Live Reload** (Host, Port und die Verschlüsselungsoption Schlüssel) werden in der app eingebettet, also bei `LiveReload.Init()` ausgeführt wird, keine Kopplung oder die Konfiguration ist erforderlich für die Verbindung hergestellt werden soll.
+Wenn die Anwendung erstellt wird, werden die Informationen aus **Tools > Optionen > xamarin > Live Neuladen** (Hostname, Port und Verschlüsselungsschlüssel) in die APP eingebettet, sodass beim Ausführen `LiveReload.Init()` keine Kopplung oder Konfiguration erforderlich ist, um die Verbindung zu sein.
 
-Als normale Netzwerkprobleme ("Firewall", "Gerät auf einem anderen Netzwerk") ist die Hauptgründe dafür, dass die app keine erfolgreiche IDE hergestellt, da es sich bei die Konfiguration von in Visual Studio unterscheidet. Mögliche Ursachen:
+Abgesehen von den normalen Netzwerkproblemen (Firewall, Gerät in einem anderen Netzwerk) ist der Hauptgrund, warum die APP möglicherweise nicht erfolgreich eine Verbindung mit der IDE herstellt, weil die Konfiguration von der Konfiguration in Visual Studio abweicht. Dies kann bei folgenden Aktionen vorkommen:
 
-* App wurde auf einem anderen Computer kompiliert.
-* App wurde kompiliert und bereitgestellt, die in einer anderen Visual Studio-Sitzung, und **Automatisches Generieren von Verschlüsselungsschlüsseln** ist aktiviert (Standard) **Tools > Optionen > Xamarin > Live Reload**.
-* Visual Studio-Einstellungen geändert wurden (d. h., den Port oder Verschlüsselung-Schlüssel), aber die app wurde nicht erstellt und erneut bereitgestellt werden.
+* Die APP wurde auf einem anderen Computer kompiliert.
+* Die APP wurde in einer anderen Visual Studio-Sitzung kompiliert und bereitgestellt, und die **Automatische Generierung von Verschlüsselungsschlüsseln** ist aktiviert (Standardeinstellung) in Extras **> Optionen > xamarin > Live Neuladen**.
+* Die Visual Studio-Einstellungen wurden geändert (d. h. Hostname, Port oder Verschlüsselungsschlüssel), aber die APP wurde nicht erneut erstellt und bereitgestellt.
 
-Diese Fälle, die alle gelöst werden, indem erstellen und Bereitstellen der app erneut.
+Diese Fälle werden alle gelöst, indem die APP neu aufgebaut und bereitgestellt wird.
 
-### <a name="uninstalling-preview-1"></a>Deinstallieren von Preview 1
+### <a name="uninstalling-preview-1"></a>Vorschauversion 1 wird deinstalliert.
 
-Wenn Sie eine ältere Vorschauversion und Problemen deinstallieren, gehen Sie wie folgt vor:
+Wenn Sie über eine ältere Vorschauversion verfügen und Probleme beim Deinstallieren auftreten, führen Sie die folgenden Schritte aus:
 
-1. Löschen Sie den Ordner **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Hinweis: Ersetzen Sie "Enterprise", durch die installierte Edition aus, und "Preview" mit "2017", wenn Sie installiert einen stabilen im Vergleich)
-2. Öffnen einer **Developer-Eingabeaufforderung** für die Visual Studio und führen Sie `devenv /updateconfiguration`. 
+1. Löschen Sie den Ordner " **c:\Programme (x86) \Microsoft Visual studio\preview\enterprise\common7\ide\extensions\xamarin\livereload** " (Hinweis: Ersetzen Sie "Enterprise" durch die installierte Edition, und "Preview" mit "2017", wenn Sie auf ein stabiles vs installiert haben).
+2. Öffnen Sie eine **Developer-Eingabeaufforderung** für Visual Studio, und führen Sie `devenv /updateconfiguration`aus. 
 
-## <a name="tips--tricks"></a>Tipps und Tricks
+## <a name="tips--tricks"></a>Tipps & Tricks
 
-* Solange die Live Reload-Einstellungen nicht ändern (einschließlich der Verschlüsselungsschlüssel verwendet, z. B. Wenn Sie wieder deaktivieren **Automatisches Generieren von Verschlüsselungsschlüsseln**) und Sie aus dem gleichen Computer erstellen, müssen Sie nicht zum Erstellen und Bereitstellen der app nach der Erstkonfiguration Stellen Sie bereit, es sei denn, Sie über Code oder Abhängigkeiten ändern. Sie können nur starten, erneut eine zuvor bereitgestellte app, und es stellt eine Verbindung her mit dem letzten Host verwendet wird.
+* Solange sich die Einstellungen für das aktive Neuladen nicht ändern (einschließlich der Verschlüsselungsschlüssel, z. b. Wenn Sie die **Automatische Generierung von Verschlüsselungsschlüsseln**deaktivieren) und Sie auf demselben Computer erstellen, müssen Sie die APP nach der erstmaligen Bereitstellung nicht erstellen und bereitstellen, es sei denn, Sie ändern Code oder Abhängigkeiten. Sie können eine zuvor bereitgestellte App einfach starten und eine Verbindung mit dem zuletzt verwendeten Host herstellen.
 
-* Es gibt keine Einschränkung für wie viele Geräte, die Sie mit der gleichen Visual Studio-Sitzung eine Verbindung herstellen können. Sie können die bereitstellen und starten Sie die app in so viele Geräte-Simulatoren, sofern nötig, um live Neuladen arbeiten für alle zur gleichen Zeit finden Sie unter.
+* Es gibt keine Beschränkung für die Anzahl der Geräte, die Sie mit derselben Visual Studio-Sitzung verbinden können. Sie können die app in beliebig vielen Geräten/Simulatoren bereitstellen und starten, um zu sehen, wie das Live reladen für alle gleichzeitig funktioniert.
 
-* Live neu laden wird nur neu den Benutzeroberflächenteil der app geladen, sondern nur *nicht* Ihre Seiten neu zu erstellen, die weder ersetzt es Ihrem Ansichtsmodell (oder den Bindungskontext). Dies bedeutet, dass die *gesamte* Anwendungszustand Neuladen, einschließlich der eingefügten Abhängigkeiten immer beibehalten.
+* Beim Neuladen wird nur der Benutzeroberflächen Teil der APP neu geladen. die Seiten werden jedoch *nicht* neu erstellt, weder das Ansichts Modell noch der Bindungs Kontext. Dies bedeutet, dass der *gesamte* App-Zustand immer über Reloads hinweg beibehalten wird, einschließlich der injizierten Abhängigkeiten.
 
-## <a name="live-reload-server"></a>Live neu laden-Server
+## <a name="live-reload-server"></a>Live neu laden des Servers
 
-In Szenarien, die eine Verbindung aus der ausgeführten app auf Ihrem Computer (durch Verwendung `localhost` oder `127.0.0.1` in **Tools > Optionen > Xamarin > Live Reload**) ist nicht möglich (z. B. Firewalls, verschiedenen Netzwerken) Sie können einen Remoteserver stattdessen konfigurieren, die die IDE und die app Herstellen einer Verbindung mit.
+In Szenarien, in denen eine Verbindung zwischen der laufenden app und Ihrem Computer (wie durch die Verwendung von `localhost` oder `127.0.0.1` in **Tools > Optionen > xamarin > Live Neuladen**) nicht möglich ist (d. h. Firewalls, unterschiedliche Netzwerke), können Sie einen Remote Server konfigurieren. Stattdessen werden sowohl die IDE als auch die APP mit zusammenhängt.
 
-Live neu laden, verwendet die Standarddatei [MQTT-Protokoll](http://mqtt.org/) zum Austauschen von Nachrichten und können daher kommunizieren mit [-Servern von Drittanbietern](https://github.com/mqtt/mqtt.github.io/wiki/servers). Es gibt sogar [öffentlichen Servern](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (auch bekannt als *Broker*) verfügbar, die Sie verwenden können. Live Reload mit getestet wurde `broker.hivemq.com` und `iot.eclipse.org` Hostnamen als auch von bereitgestellten Dienste [www.cloudmqtt.com](https://www.cloudmqtt.com) und [www.cloudamqp.com](https://www.cloudamqp.com). Sie können auch Ihre eigenen MQTT-Server in der Cloud bereitstellen, z. B. [HiveMQ in Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
+Live-Neuladen verwendet das standardmäßige [mqtt-Protokoll](https://mqtt.org/) zum Austauschen von Nachrichten und kann daher mit [Servern von Drittanbietern](https://github.com/mqtt/mqtt.github.io/wiki/servers)kommunizieren. Es stehen sogar [öffentliche Server](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (auch als *Broker*bezeichnet) zur Verfügung, die Sie verwenden können. Das Live Neuladen wurde mit `broker.hivemq.com`-und `iot.eclipse.org` Hostnamen sowie mit den von [www.cloudmqtt.com](https://www.cloudmqtt.com) und [www.cloudamqp.com](https://www.cloudamqp.com)bereitgestellten Diensten getestet. Sie können auch einen eigenen mqtt-Server in der Cloud bereitstellen, z. b. [hivemq in Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 
-Sie können einen beliebigen Port konfigurieren, aber es ist üblich, den Standardport für die 1883 für Remoteserver verwenden. Live Reload-Nachrichten verwenden die sichere End-to-End-AES symmetrische Verschlüsselung, daher ist es sicher ist, mit dem Remoteserver herstellen. Standardmäßig werden sowohl der Verschlüsselungsschlüssel und den Initialisierungsvektor (IV) für jede Visual Studio-Sitzung neu generiert.
+Sie können einen beliebigen Port konfigurieren, es ist jedoch üblich, den Standardport 1883 für Remote Server zu verwenden. Nachrichten nach dem Live erneuten Laden verwenden eine sichere End-to-End-AES-symmetrische Verschlüsselung, sodass es sicher ist, eine Verbindung mit Remote Servern herzustellen. Standardmäßig werden sowohl der Verschlüsselungsschlüssel als auch der Initialisierungs Vektor (IV) für jede Visual Studio-Sitzung neu generiert.
 
-Ist Sie möglicherweise die einfachste Möglichkeit zum Installieren der [Mosquitto](https://mosquitto.org) Server auf eine leere Ubuntu-VM in Azure:
+Wahrscheinlich ist es am einfachsten, [den Server mit dem Server auf einer](https://mosquitto.org) leeren Ubuntu-VM in Azure zu installieren:
 
 1. Erstellen einer neuen Ubuntu-Server-VM im Azure-Portal
-2. Fügen Sie eine neue Regel für eingehenden Port für 1883 (Standardport MQTT) in der Registerkarte "Netzwerke" hinzu.
-3. Öffnen der [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) (bash-Modus)
-4. Geben Sie `ssh [USERNAME]@[PUBLIC_IP]` mithilfe des Benutzernamens, die Sie in 1 ausgewählt haben) und die öffentliche IP-Adresse in Ihrem VM-Seite "Übersicht" angezeigt
-5. Führen Sie `sudo apt-get install mosquitto`, das Kennwort, das Sie ausgewählt, in 1 haben eingegeben)
+2. Hinzufügen einer neuen eingehenden Port Regel für 1883 (Standard-mqtt-Port) auf der Registerkarte "Netzwerke"
+3. Öffnen Sie die [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) (bash-Modus).
+4. Geben Sie `ssh [USERNAME]@[PUBLIC_IP]` mithilfe des Benutzernamens ein, den Sie in 1 ausgewählt haben) und die öffentliche IP-Adresse auf der Seite "Übersicht"
+5. Führen Sie `sudo apt-get install mosquitto`aus, und geben Sie das in 1 ausgewählte Kennwort ein.
 
-Jetzt können Sie diese IP-Adresse verwenden, für die Verbindung mit Ihrem eigenen MQTT-Server.
+Nun können Sie diese IP-Adresse verwenden, um eine Verbindung mit Ihrem eigenen mqtt-Server herzustellen.

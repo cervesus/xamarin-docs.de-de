@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie eine APP im Apple TV A
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 4dface536504b0a79d376ab0979443a5ed19e901
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f49fa08e5d9b2ad76fc069b415d6ea5b899b2bf7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769248"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030790"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Veröffentlichen im Apple TV App Store
 
@@ -80,7 +80,7 @@ Führen Sie die folgenden Schritte mithilfe des webbasierten iOS-Bereitstellungs
 3. Scrollen Sie zum unteren Rand des Bildschirms, und wählen Sie alle **App Services** aus, die von der xamarin. tvos-App benötigt werden.
 4. Klicken Sie auf die Schaltfläche **Weiter**, und folgen Sie den Anweisungen auf dem Bildschirm, um die neue App-ID zu erstellen.
 
-Zusätzlich zur Auswahl und Konfiguration der erforderlichen Anwendungsdienste beim Definieren Ihrer APP-ID müssen Sie auch die APP-ID und die Berechtigungen in Ihrem xamarin. tvos-Projekt konfigurieren, indem Sie `Info.plist` sowohl `Entitlements.plist` die-als auch die-Datei bearbeiten.
+Zusätzlich zur Auswahl und Konfiguration der erforderlichen Anwendungsdienste beim Definieren Ihrer APP-ID müssen Sie auch die APP-ID und die Berechtigungen in Ihrem xamarin. tvos-Projekt konfigurieren, indem Sie sowohl die `Info.plist` als auch die `Entitlements.plist` Dateien bearbeiten.
 
 Führen Sie die folgenden Schritte in Visual Studio für Mac aus:
 
@@ -110,7 +110,7 @@ tvos verwendet *Bereitstellungs profile* , um zu steuern, wie ein bestimmter anw
 Führen Sie für die Bereitstellung die folgenden Schritte mithilfe des webbasierten iOS-Bereitstellungsportals von Apple aus:
 
 1. Wählen Sie **Bereitstellung** > **Verteilung** aus.
-2. Klicken Sie **+** auf die Schaltfläche, und wählen Sie den Typ des Verteilungs Profils aus, das Sie als **Apple TV App Store**erstellen möchten.
+2. Klicken Sie auf die Schaltfläche **+** , und wählen Sie den Typ des Verteilungs Profils aus, das Sie als **Apple TV App Store**erstellen möchten.
 3. Wählen Sie aus der Dropdownliste die **App-ID** aus, für die Sie ein Verteilungsprofil erstellen möchten.
 4. Wählen Sie das zum Signieren der Anwendung erforderliche Zertifikat aus.
 5. Geben Sie einen **Namen** für das neue **Verteilungsprofil** ein, und generieren Sie das Profil.
@@ -128,10 +128,10 @@ Wenn Sie eine neue xamarin. tvos-app erstellen, werden standardmäßig _Buildkon
 Führen Sie folgende Schritte aus:
 
 1. Klicken Sie mit der rechten Maustaste auf den **Projektnamen** in den **Projektmappen-Explorer** -und Auswahl **Optionen** , um Sie zur Bearbeitung zu öffnen.
-2. Wenn Sie auf eine bestimmte Version von tvos abzielen, wählen Sie diese unter **tvos Build** > **IOS SDK-Version**aus. Legen Sie für die Vorschauversion der tvos-Unterstützung diesen Wert auf **default**fest.
+2. Wenn Sie auf eine bestimmte Version von tvos abzielen, wählen Sie Sie unter **tvos Build** > **IOS SDK-Version**aus. Legen Sie für die Vorschauversion der tvos-Unterstützung diesen Wert auf **default**fest.
 3. Durch die Verknüpfung wird die Gesamtgröße der verteilbaren App der APP reduziert, indem nicht verwendete Methoden, Eigenschaften, Klassen usw. entfernt werden. in den meisten Fällen sollte der Standardwert des **Link Framework SDK nur**überlassen werden. In einigen Situationen, z. b. bei der Verwendung bestimmter Bibliotheken von Drittanbietern, ist es möglicherweise gezwungen, diesen Wert so festzulegen, dass er **nicht verknüpft** wird, damit das benötigte Element nicht entfernt wird.
 4. Zum Versenden einer xamarin. tvos-App müssen Sie den llvm-Optimierungs Compiler verwenden. Stellen Sie sicher, dass das Kontrollkästchen **llvm-Optimierungs Compiler verwenden** unter der **Releasekonfiguration** aktiviert ist.
-5. Außerdem erforderte Apple, dass tvos-apps Bitcode verwenden. Fügen Sie erneut unter der **Releasekonfiguration** dem Feld `--bitcode=asmonly` **zusätzliches mberührungs-Argument** hinzu.
+5. Außerdem erforderte Apple, dass tvos-apps Bitcode verwenden. Fügen Sie unter der **Releasekonfiguration** `--bitcode=asmonly` dem Feld **zusätzliche mberührungs-Argumente** hinzu.
 6. Aktivieren Sie das Kontrollkästchen **PNG-Bilddateien für IOS optimieren** , da dies dazu beiträgt, die erstellbare Größe Ihrer APP weiter zu verringern.
 7. Das Debuggen sollte *nicht* aktiviert werden, da dadurch der Build unnötig vergrößert wird.
 
@@ -145,17 +145,17 @@ Wenn Sie Ihre xamarin. tvos-App ordnungsgemäß konfiguriert haben, können Sie 
 
 1. Wählen Sie in Visual Studio für Mac die Konfiguration **Release | Gerät** aus:
 
-    ![](app-store-publishing-images/buildxs01new.png "Auswählen der Releasekonfiguration")
+    ![](app-store-publishing-images/buildxs01new.png "Select the Release configuration")
 2. Wählen Sie aus dem **Build**-Menü die Option **Zur Veröffentlichung aktivieren**:
 
-    [![](app-store-publishing-images/buildxs02new.png "„Archive for Publishing“ (Für Veröffentlichung archivieren) auswählen")](app-store-publishing-images/buildxs02new.png#lightbox)
+    [![](app-store-publishing-images/buildxs02new.png "Select Archive for Publishing")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt:
 
-    [![](app-store-publishing-images/buildxs03new.png "Die Archivansicht")](app-store-publishing-images/buildxs03new.png#lightbox)
+    [![](app-store-publishing-images/buildxs03new.png "The Archives view")](app-store-publishing-images/buildxs03new.png#lightbox)
 
-### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen Ihrer App
+### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen der App
 
-Beim Erstellen Ihrer Anwendung für das Archiv wird automatisch die *Archiv-Ansicht* geöffnet. Darin werden alle archivierten Projekte nach Projektmappe gruppiert angezeigt. Standardmäßig wird in dieser Ansicht nur die aktuelle geöffnete Projektmappe angezeigt. Klicken Sie auf **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen.
+Beim Erstellen Ihrer Anwendung für das Archiv wird automatisch die *Archivansicht* geöffnet. Darin werden alle archivierten Projekte nach Projektmappe gruppiert angezeigt. Standardmäßig wird in dieser Ansicht nur die aktuelle geöffnete Projektmappe angezeigt. Klicken Sie auf **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen.
 
 Es wird empfohlen, Archive beizubehalten, die bei den Kunden bereitgestellt wurden (App Store- oder Unternehmensbereitstellungen). Dadurch können alle generierten Debuginformationen zu einem späteren Zeitpunkt symbolisiert werden.
 
@@ -163,19 +163,19 @@ Gehen Sie folgendermaßen vor, um Ihre App für die Verteilung zu signieren und 
 
 1. Wählen Sie das unten dargestellte **Vorzeichen und verteilen...** aus:
 
-    [![](app-store-publishing-images/buildxs04new.png ", Wählen Sie die Option für das Signieren und verteilen...")](app-store-publishing-images/buildxs04new.png#lightbox)
+    [![](app-store-publishing-images/buildxs04new.png ", Select theSign and Distribute...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. Dadurch wird der Veröffentlichungs-Assistent geöffnet. Wählen Sie den Verteilungskanal **App Store** aus, um ein Paket zu erstellen, und öffnen Sie den Application Loader:
 
-    [![](app-store-publishing-images/distribute01.png "Wählen Sie den Verteilungs Kanal für App Store aus.")](app-store-publishing-images/distribute01.png#lightbox)
+    [![](app-store-publishing-images/distribute01.png "Select the App Store distribution channel")](app-store-publishing-images/distribute01.png#lightbox)
 3. Wählen Sie auf dem Bildschirm "Bereitstellungs Profil" Ihre Signierungs Identität und das zugehörige Bereitstellungs Profil aus, oder signieren Sie mit einer anderen Identität erneut:
 
-    [![](app-store-publishing-images/distribute02.png "Signatur Identität und entsprechendes Bereitstellungs Profil auswählen")](app-store-publishing-images/distribute02.png#lightbox)
+    [![](app-store-publishing-images/distribute02.png "Select the signing identity and corresponding provisioning profile")](app-store-publishing-images/distribute02.png#lightbox)
 4. Überprüfen Sie die Details Ihres Pakets, und klicken Sie zum Speichern des `.ipa`-Pakets auf **Veröffentlichen**:
 
-    [![](app-store-publishing-images/distribute03.png "Überprüfen Sie die Details des Pakets.")](app-store-publishing-images/distribute03.png#lightbox)
+    [![](app-store-publishing-images/distribute03.png "Verify the details of the package")](app-store-publishing-images/distribute03.png#lightbox)
 5. Sobald die `.ipa` gespeichert wurde, kann Ihre App über den Application Loader in iTunes Connect hochgeladen werden:
 
-    [![](app-store-publishing-images/distribute04.png "Hochgeladen über das Anwendungs Lade Modul in iTunes Connect")](app-store-publishing-images/distribute04.png#lightbox)
+    [![](app-store-publishing-images/distribute04.png "Uploaded to iTunes Connect via the Application Loader")](app-store-publishing-images/distribute04.png#lightbox)
 
 Nachdem Ihr Verteilungsbuild erstellt und archiviert wurde, können Sie nun Ihre Anwendung an iTunes Connect übermitteln.
 
@@ -185,19 +185,19 @@ Nachdem Ihr Verteilungsbuild erstellt und archiviert wurde, können Sie nun Ihre
 
 Nach Abschluss des Verteilungsbuilds können Sie Ihre iOS-Anwendung nun zur Überprüfung und Freigabe im App Store an Apple übermitteln.
 
-Der Archivierungs Workflow in Visual Studio für Mac öffnet das Anwendungs Lade Modul automatisch, sobald Sie `.ipa`Folgendes gespeichert haben:
+Der Archivierungs Workflow in Visual Studio für Mac öffnet das Anwendungs Lade Modul automatisch, sobald Sie die `.ipa`gespeichert haben:
 
 1. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
 
-    [![](app-store-publishing-images/publishvs01.png "Wählen Sie „Ihre App übermitteln“ aus")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![](app-store-publishing-images/publishvs01.png "Select Deliver Your App")](app-store-publishing-images/publishvs01.png#lightbox)
 
 2. Wählen Sie die zuvor erstellte ZIP- oder IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
 3. Die Datei wird durch den Application Loader überprüft:
 
-    [![](app-store-publishing-images/publishvs02.png "Der Validierungs Bildschirm des Anwendungs Lade Moduls")](app-store-publishing-images/publishvs02.png#lightbox)
+    [![](app-store-publishing-images/publishvs02.png "The Application Loader validation screen")](app-store-publishing-images/publishvs02.png#lightbox)
 4. Klicken Sie auf die Schaltfläche *Weiter*. Die Anwendung wird nun für den App Store überprüft:
 
-    [![](app-store-publishing-images/publishvs03.png "Die Anwendung, die anhand des App Store überprüft wird.")](app-store-publishing-images/publishvs03.png#lightbox)
+    [![](app-store-publishing-images/publishvs03.png "The application being validated against the App Store")](app-store-publishing-images/publishvs03.png#lightbox)
 5. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
 6. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
 
@@ -207,7 +207,7 @@ Der Archivierungs Workflow in Visual Studio für Mac öffnet das Anwendungs Lade
 
 Wenn Sie sich bei iTunes Connect anmelden und Ihre APP aus der Liste der verfügbaren apps auswählen, sollte der Status in iTunes Connect nun anzeigen, dass er **auf die Überprüfung wartet** (während der Verarbeitung den **Upload** möglicherweise vorübergehend lesen):
 
-[![](app-store-publishing-images/image21.png "Der Status in iTunes Connect, der auf die Überprüfung wartet")](app-store-publishing-images/image21.png#lightbox)
+[![](app-store-publishing-images/image21.png "The status in iTunes Connect showing Waiting for Review")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 

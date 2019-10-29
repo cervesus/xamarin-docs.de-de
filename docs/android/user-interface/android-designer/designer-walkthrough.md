@@ -4,15 +4,15 @@ description: Dieser Artikel ist eine exemplarische Vorgehensweise der xamarin. A
 ms.prod: xamarin
 ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: f696e8159d929bf41596c4dc9498e682e361f412
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: df83bdfcc847b07754a349060c9be1613efd0b08
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249984"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029521"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Verwenden von xamarin. Android Designer
 
@@ -38,70 +38,70 @@ Das Ziel dieser exemplarischen Vorgehensweise besteht darin, die Android Designe
 
 ### <a name="creating-a-new-project"></a>Erstellen eines neuen Projekts
 
-Der erste Schritt besteht darin, ein neues xamarin. Android-Projekt zu erstellen. Starten Sie Visual Studio, klicken Sie auf **Neues Projekt...** , und wählen Sie die Vorlage **Visual\# C > Android > Android-App (xamarin)** aus.
+Der erste Schritt besteht darin, ein neues xamarin. Android-Projekt zu erstellen. Starten Sie Visual Studio, klicken Sie auf **Neues Projekt...** , und wählen Sie die Vorlage **Visual C\# > Android-> Android-App (xamarin)** aus.
 Benennen Sie die neue APP **designerwalkthrough** , und klicken Sie auf **OK**.
 
-[![Leere Android-App](designer-walkthrough-images/vs/01-android-app-w158-sml.png)](designer-walkthrough-images/vs/01-android-app-w158.png#lightbox)
+[leere Android-App![](designer-walkthrough-images/vs/01-android-app-w158-sml.png)](designer-walkthrough-images/vs/01-android-app-w158.png#lightbox)
 
 Wählen Sie im Dialogfeld **neue Android-App** **leere App** aus, und klicken Sie auf **OK**:
 
-[![Auswählen der Vorlage für eine leere Android-App](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
+[![auswählen der Vorlage für eine leere Android-App](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
 
 ### <a name="adding-a-layout"></a>Hinzufügen eines Layouts
 
 Der nächste Schritt besteht darin, ein **LinearLayout** zu erstellen, das die Elemente der Benutzeroberfläche enthält. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Ressourcen/Layout** , und wählen Sie **> Neues Element hinzufügen...** aus. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Android-Layout**aus. Benennen Sie die Datei **list_item** und klicken Sie auf **Hinzufügen**:
 
-[![Neues Layout](designer-walkthrough-images/vs/03-new-layout-w158-sml.png)](designer-walkthrough-images/vs/03-new-layout-w158.png#lightbox)
+[Neues Layout![](designer-walkthrough-images/vs/03-new-layout-w158-sml.png)](designer-walkthrough-images/vs/03-new-layout-w158.png#lightbox)
 
-Das neue **list_item** -Layout wird im-Designer angezeigt. Beachten Sie, dass zwei Bereiche &ndash; angezeigt werden: die *Designoberfläche* für die **list_item** ist im linken Bereich sichtbar, während die zugehörige XML-Quelle im rechten Bereich angezeigt wird. Sie können die Positionen der Bereiche **Designoberfläche** und **Quelle** austauschen, indem Sie auf das Symbol Bereiche **austauschen** klicken, das sich zwischen den beiden Bereichen befindet:
+Das neue **list_item** -Layout wird im-Designer angezeigt. Beachten Sie, dass zwei Bereiche angezeigt werden, &ndash; die *Designoberfläche* für das **list_item** im linken Bereich sichtbar ist, während die zugehörige XML-Quelle im rechten Bereich angezeigt wird. Sie können die Positionen der Bereiche **Designoberfläche** und **Quelle** austauschen, indem Sie auf das Symbol Bereiche **austauschen** klicken, das sich zwischen den beiden Bereichen befindet:
 
-[![Designer Ansicht](designer-walkthrough-images/vs/04-designer-view-w158-sml.png)](designer-walkthrough-images/vs/04-designer-view-w158.png#lightbox)
+[![-Designer-Ansicht](designer-walkthrough-images/vs/04-designer-view-w158-sml.png)](designer-walkthrough-images/vs/04-designer-view-w158.png#lightbox)
 
 Klicken Sie im Menü **Ansicht** auf **Weitere Fenster > Dokument** Gliederung, um die **Dokument**Gliederung zu öffnen. Die **Dokument** Gliederung zeigt, dass das Layout derzeit ein einzelnes **linearlayoutwidget** enthält:
 
-[![Dokument Gliederung](designer-walkthrough-images/vs/06-document-outline-w158-sml.png)](designer-walkthrough-images/vs/06-document-outline-w158.png#lightbox)
+[Dokument Gliederung![](designer-walkthrough-images/vs/06-document-outline-w158-sml.png)](designer-walkthrough-images/vs/06-document-outline-w158.png#lightbox)
 
-Der nächste Schritt besteht darin, die Benutzeroberfläche für die Farb Browser-app in `LinearLayout`diesem zu erstellen.
+Der nächste Schritt besteht darin, die Benutzeroberfläche für die Farb Browser-APP innerhalb dieses `LinearLayout`zu erstellen.
 
 ### <a name="creating-the-list-item-user-interface"></a>Erstellen der Benutzeroberfläche für das Listenelement
 
-Wenn der Bereich **Toolbox** nicht angezeigt wird, klicken Sie auf der linken Seite auf die Registerkarte **Toolbox** . Führen Sie in der **Toolbox**einen `ImageView`Bildlauf nach unten bis zum **Bild & Medien** Abschnitt durch, und Scrollen Sie nach unten, bis Sie Folgendes suchen:
+Wenn der Bereich **Toolbox** nicht angezeigt wird, klicken Sie auf der linken Seite auf die Registerkarte **Toolbox** . Führen Sie in der **Toolbox**einen Bildlauf nach unten bis zum **Bild & Medien** Abschnitt durch, und Scrollen Sie nach unten, bis Sie eine `ImageView`finden:
 
-[![ImageView suchen](designer-walkthrough-images/vs/07-locate-imageview-w158-sml.png)](designer-walkthrough-images/vs/07-locate-imageview-w158.png#lightbox)
+[![nach ImageView suchen](designer-walkthrough-images/vs/07-locate-imageview-w158-sml.png)](designer-walkthrough-images/vs/07-locate-imageview-w158.png#lightbox)
 
-Alternativ können Sie *ImageView* in die Suchleiste eingeben, um Folgendes zu `ImageView`finden:
+Alternativ können Sie *ImageView* in die Suchleiste eingeben, um die `ImageView`zu finden:
 
-[![ImageView-Suche](designer-walkthrough-images/vs/08-imageview-search-w158-sml.png)](designer-walkthrough-images/vs/08-imageview-search-w158.png#lightbox)
+[![der ImageView-Suche](designer-walkthrough-images/vs/08-imageview-search-w158-sml.png)](designer-walkthrough-images/vs/08-imageview-search-w158.png#lightbox)
 
-Ziehen Sie `ImageView` diese auf die Designoberfläche `ImageView` (Sie wird verwendet, um ein Farbmuster in der Farb Browser-App anzuzeigen):
+Ziehen Sie diese `ImageView` auf die Designoberfläche (diese `ImageView` wird verwendet, um ein Farbmuster in der Farb Browser-App anzuzeigen):
 
-[![ImageView in Canvas](designer-walkthrough-images/vs/09-imageview-on-canvas-w158-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas-w158.png#lightbox)
+[![von ImageView in Canvas](designer-walkthrough-images/vs/09-imageview-on-canvas-w158-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas-w158.png#lightbox)
 
-Ziehen Sie als nächstes `LinearLayout (Vertical)` ein Widget aus der **Toolbox** in den Designer. Beachten Sie, dass ein blauer Umriss die Grenzen des hinzu `LinearLayout`gefügten angibt. Die **Dokument** Gliederung zeigt, dass es sich um `LinearLayout`ein untergeordnetes `imageView1 (ImageView)`Element von handelt, das sich unter
+Ziehen Sie als nächstes ein `LinearLayout (Vertical)` widget aus der **Toolbox** in den Designer. Beachten Sie, dass ein blauer Umriss die Grenzen des hinzugefügten `LinearLayout`angibt. Die **Dokument** Gliederung zeigt, dass es sich um ein untergeordnetes Element von `LinearLayout`unter `imageView1 (ImageView)`handelt:
 
-[![Blauer Umriss](designer-walkthrough-images/vs/10-blue-outline-w158-sml.png)](designer-walkthrough-images/vs/10-blue-outline-w158.png#lightbox)
+[![blaue Gliederung](designer-walkthrough-images/vs/10-blue-outline-w158-sml.png)](designer-walkthrough-images/vs/10-blue-outline-w158.png#lightbox)
 
-Wenn Sie `ImageView` im Designer auswählen, wird der blaue Umriss zum `ImageView`umschließen von verschoben. Außerdem wird die Auswahl `imageView1 (ImageView)` in der **Dokument**Gliederung in verschoben:
+Wenn Sie die `ImageView` im Designer auswählen, wird der blaue Umriss zum Umschließen der `ImageView`verschoben. Außerdem wird die Auswahl auf `imageView1 (ImageView)` in der **Dokument**Gliederung verschoben:
 
-[![Auswählen von ImageView](designer-walkthrough-images/vs/11-select-imageview-w158-sml.png)](designer-walkthrough-images/vs/11-select-imageview-w158.png#lightbox)
+[![auswählen von "ImageView"](designer-walkthrough-images/vs/11-select-imageview-w158-sml.png)](designer-walkthrough-images/vs/11-select-imageview-w158.png#lightbox)
 
-Ziehen Sie als nächstes `Text (Large)` ein Widget aus der **Toolbox** in das neu hinzu `LinearLayout`gefügte. Beachten Sie, dass der Designer grüne Highlights verwendet, um anzugeben, wo das neue Widget eingefügt wird:
+Ziehen Sie als nächstes ein `Text (Large)` widget aus der **Toolbox** in das neu hinzugefügte `LinearLayout`. Beachten Sie, dass der Designer grüne Highlights verwendet, um anzugeben, wo das neue Widget eingefügt wird:
 
-[![Grüne Highlights](designer-walkthrough-images/vs/12-green-highlight-w158-sml.png)](designer-walkthrough-images/vs/12-green-highlight-w158.png#lightbox)
+[grüne Highlights![](designer-walkthrough-images/vs/12-green-highlight-w158-sml.png)](designer-walkthrough-images/vs/12-green-highlight-w158.png#lightbox)
 
-Fügen Sie als nächstes `Text (Small)` ein Widget unterhalb `Text (Large)` des Widgets hinzu:
+Fügen Sie als nächstes ein `Text (Small)`-Widget unterhalb des `Text (Large)` Widgets hinzu:
 
-[![Kleines textwidget hinzufügen](designer-walkthrough-images/vs/13-add-small-text-w158-sml.png)](designer-walkthrough-images/vs/13-add-small-text-w158.png#lightbox)
+[![kleines textwidget hinzufügen](designer-walkthrough-images/vs/13-add-small-text-w158-sml.png)](designer-walkthrough-images/vs/13-add-small-text-w158.png#lightbox)
 
 An diesem Punkt sollte die Designer Oberfläche dem folgenden Screenshot ähneln:
 
-[![Designer Layout](designer-walkthrough-images/vs/14-raw-layout-w158-sml.png)](designer-walkthrough-images/vs/14-raw-layout-w158.png#lightbox)
+[Layout des![Designers](designer-walkthrough-images/vs/14-raw-layout-w158-sml.png)](designer-walkthrough-images/vs/14-raw-layout-w158.png#lightbox)
 
-Wenn sich die `textView` beiden Widgets `linearLayout1`nicht in befinden, können Sie Sie in `linearLayout1` der **Dokument** Gliederung auf ziehen und positionieren, damit Sie wie im vorherigen Screenshot (Einzug unter `linearLayout1`) angezeigt werden.
+Wenn sich die beiden `textView` Widgets nicht in `linearLayout1`befinden, können Sie Sie auf `linearLayout1` in der **Dokument** Gliederung ziehen und positionieren, damit Sie wie im vorherigen Screenshot (eingerückt unter `linearLayout1`) angezeigt werden.
 
 ### <a name="arranging-the-user-interface"></a>Anordnen der Benutzeroberfläche
 
-Der nächste Schritt besteht darin, die Benutzeroberfläche so zu `ImageView` ändern, dass Sie auf der linken `TextView` Seite angezeigt wird, wobei die beiden `ImageView`Widgets rechts neben gestapelt sind.
+Der nächste Schritt besteht darin, die Benutzeroberfläche so zu ändern, dass die `ImageView` auf der linken Seite angezeigt wird, wobei die beiden `TextView` Widgets auf der rechten Seite des `ImageView`gestapelt sind.
 
 1. Wählen Sie das `ImageView`-Steuerelement aus.
 
@@ -111,67 +111,67 @@ Der nächste Schritt besteht darin, die Benutzeroberfläche so zu `ImageView` ä
 
 ![Wrap-Inhalt festlegen](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
-Eine andere Möglichkeit, die `Width` Einstellung zu ändern, besteht darin, auf das Dreieck auf der rechten Seite des Widgets zu klicken, um die Breite `wrap_content`der Einstellung auf Folgendes zu schalten:
+Eine andere Möglichkeit, die `Width` Einstellung zu ändern, besteht darin, auf das Dreieck auf der rechten Seite des Widgets zu klicken, um die Breite auf `wrap_content`zu ändern:
 
 ![Zum Festlegen der Breite ziehen](designer-walkthrough-images/vs/15b-width-arrow-w158.png)
 
-Wenn Sie erneut auf das Dreieck `Width` klicken, `match_parent`wird die Einstellung auf zurückgesetzt Navigieren Sie als nächstes zum Bereich **Dokument** Gliederung, und wählen `LinearLayout`Sie das Stammverzeichnis aus:
+Wenn Sie erneut auf das Dreieck klicken, wird die `Width` Einstellung `match_parent`. Navigieren Sie als nächstes zum Bereich **Dokument** Gliederung, und wählen Sie den Stamm `LinearLayout`aus:
 
-[![Root-LinearLayout auswählen](designer-walkthrough-images/vs/16-root-linearlayout-w158-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout-w158.png#lightbox)
+[!["root-LinearLayout" auswählen](designer-walkthrough-images/vs/16-root-linearlayout-w158-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout-w158.png#lightbox)
 
-Nachdem Sie den `LinearLayout` Stamm ausgewählt haben, kehren Sie zum Bereich **Eigenschaften** zurück, geben Sie die *Ausrichtung* in das Suchfeld ein, und suchen Sie nach der Einstellung **Ausrichtung** . **Ausrichtung** ändern in `horizontal`:
+Nachdem Sie die Stamm `LinearLayout` ausgewählt haben, kehren Sie zum Bereich **Eigenschaften** zurück, geben Sie die *Ausrichtung* in das Suchfeld ein, und suchen Sie nach der Einstellung **Ausrichtung** . Ändern Sie die **Ausrichtung** in `horizontal`:
 
 ![Horizontale Ausrichtung auswählen](designer-walkthrough-images/vs/17-horizontal-orientation-w158.png)
 
 An diesem Punkt sollte die Designer Oberfläche dem folgenden Screenshot ähneln.
-Beachten Sie, `TextView` dass die Widgets nach rechts `ImageView`von verschoben wurden:
+Beachten Sie, dass die `TextView` Widgets nach rechts vom `ImageView`verschoben wurden:
 
-[![Designer Layout](designer-walkthrough-images/vs/18-designer-layout-w158-sml.png)](designer-walkthrough-images/vs/18-designer-layout-w158.png#lightbox)
+[Layout des![Designers](designer-walkthrough-images/vs/18-designer-layout-w158-sml.png)](designer-walkthrough-images/vs/18-designer-layout-w158.png#lightbox)
 
 ### <a name="modifying-the-spacing"></a>Ändern des Abstands
 
-Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie `ImageView` auf der Entwurfs Oberfläche aus. Geben Sie `min` im Bereich "Eigenschaften" in das Suchfeld ein. Geben `70dp` Sie für **min height** und `50dp` für **minimale Breite**ein:
+Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie die `ImageView` auf der Entwurfs Oberfläche aus. Geben Sie im **Eigenschaften** Bereich `min` in das Suchfeld ein. Geben Sie `70dp` für die **Mindesthöhe** und `50dp` für die **minimale Breite**ein:
 
-[![Höhe und Breite festlegen](designer-walkthrough-images/vs/18b-set-height-width-sml.png)](designer-walkthrough-images/vs/18b-set-height-width.png#lightbox)
+[![Höhe und-Breite festlegen](designer-walkthrough-images/vs/18b-set-height-width-sml.png)](designer-walkthrough-images/vs/18b-set-height-width.png#lightbox)
 
-Geben Sie `padding` im Bereich "Eigenschaften" in das Suchfeld ein, `10dp` und geben **Sie für die**Auffüll Zeichen ein. Diese `minHeight`Einstellungen und`padding`Einstellungen fügen den`ImageView` Leerraum um alle Seiten des hinzu und verlängern ihn vertikal. `minWidth` Beachten Sie, dass sich die Layout-XML ändert, wenn Sie diese Werte eingeben:
+Geben Sie im **Eigenschaften** Bereich `padding` in das Suchfeld ein, und geben Sie `10dp` für die Auffüll Vorgänge **ein.** Mit diesen Einstellungen für `minHeight`, `minWidth` und `padding` werden alle Seiten der `ImageView` Auffüll Zeichen hinzugefügt und vertikal gestreckt. Beachten Sie, dass sich die Layout-XML ändert, wenn Sie diese Werte eingeben:
 
-[![Auffüllen festlegen](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
+[Auffüll![festlegen](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
 Die unteren, linken, rechten und oberen Leerraum Einstellungen können unabhängig voneinander festgelegt werden, indem Sie Werte in den Leerraum **unten**, den Abstand **Links**, den Leerraum **Rechts**und die oberen Felder der **oberen** Felder eingeben.
-Legen Sie z. b. das **linke** Feld für `5dp` die Auffüll Zeichen auf fest, und klicken Sie dann auf den **unteren Rand**, `10dp`das Auffüll **Recht**und die **oberen** Felder in die
+Legen Sie z. b. das **linke** Feld für die Auffüll Zeichen auf `5dp` fest, und legen Sie die Felder **unten**, Auffüll **Rechts**und Auffüllen der **oberen** Felder auf `10dp`fest:
 
-[![Benutzerdefinierte Auffüll Einstellungen](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
+[![benutzerdefinierte Auffüll Einstellungen](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
 
-Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `TextView` beiden Widgets enthält. Wählen Sie `linearLayout1`in der Dokument Gliederung aus. Geben Sie `margin` im Fenster Eigenschaften in das Suchfeld ein. Legen Sie den **layoutrand unten**, den **layoutrand Links**und `5dp`den **layoutrand oben** auf fest. **Layoutrand rechts** festlegen `0dp`auf:
+Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die beiden `TextView` Widgets enthält. Wählen Sie in der **Dokument**Gliederung `linearLayout1`aus. Geben Sie im Fenster **Eigenschaften** im Suchfeld `margin` ein. Legen Sie **layoutrand unten**, **layoutrand Links**und **layoutrand oben** auf `5dp`fest. Legen Sie **layoutrand rechts** auf `0dp`fest:
 
-[![Ränder festlegen](designer-walkthrough-images/vs/21-margins-w158-sml.png)](designer-walkthrough-images/vs/21-margins-w158.png#lightbox)
+[![festgelegte Ränder](designer-walkthrough-images/vs/21-margins-w158-sml.png)](designer-walkthrough-images/vs/21-margins-w158.png#lightbox)
 
 ### <a name="removing-the-default-image"></a>Entfernen des Standard Bilds
 
-`ImageView` Da zum Anzeigen von Farben (anstelle von Bildern) verwendet wird, besteht der nächste Schritt darin, die von der Vorlage hinzugefügte Standardbild Quelle zu entfernen.
+Da der `ImageView` zum Anzeigen von Farben (anstelle von Bildern) verwendet wird, besteht der nächste Schritt darin, die von der Vorlage hinzugefügte Standardbild Quelle zu entfernen.
 
-1. Wählen Sie auf der **Designer Oberfläche aus.** `ImageView`
+1. Wählen Sie die `ImageView` auf der **Designer Oberfläche**aus.
 
 2. Geben Sie im Suchfeld im Feld **Eigenschaften**den Wert *src* ein.
 
 3. Klicken Sie auf das kleine Quadrat rechts neben der Eigenschaften Einstellung **src** , und wählen Sie **Zurücksetzen**aus:
 
-[![Löschen der Einstellung von Image View src](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
+[![die Einstellung "Image View src" Löschen](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
-Dadurch wird `android:src="@android:drawable/ic_menu_gallery"` aus der XML `ImageView`-Quelldatei entfernt.
+Hierdurch werden `android:src="@android:drawable/ic_menu_gallery"` aus der Quell-XML für diese `ImageView`entfernt.
 
 ### <a name="adding-a-listview-container"></a>Hinzufügen eines ListView-Containers
 
-Nachdem das **list_item** -Layout definiert ist, ist der nächste Schritt das Hinzufügen `ListView` eines zum Hauptlayout. Diese `ListView` enthält eine Liste von **list_item**. 
+Nachdem das **list_item** -Layout definiert ist, besteht der nächste Schritt darin, dem Hauptlayout eine `ListView` hinzuzufügen. Diese `ListView` enthält eine Liste von **list_item**. 
 
-Öffnen Siein der Projektmappen-Explorer **Ressourcen/Layout/activity_main. axml**. Suchen Sie in der **Toolbox**das `ListView` Widget, und ziehen Sie es auf den **Designoberfläche**. Der `ListView` im Designer ist leer, außer für blaue Linien, die seinen Rahmen bei der Auswahl gliedern. Sie können die **Dokument** Gliederung anzeigen, um zu überprüfen, ob die **ListView** ordnungsgemäß hinzugefügt wurde:
+Öffnen Siein der Projektmappen-Explorer **Ressourcen/Layout/activity_main. axml**. Suchen Sie in der **Toolbox**das `ListView`-Widget, und ziehen Sie es auf den **Designoberfläche**. Der `ListView` im Designer ist leer, außer für blaue Linien, die den Rahmen bei der Auswahl gliedern. Sie können die **Dokument** Gliederung anzeigen, um zu überprüfen, ob die **ListView** ordnungsgemäß hinzugefügt wurde:
 
-[![Neue ListView](designer-walkthrough-images/vs/23-new-listview-w158-sml.png)](designer-walkthrough-images/vs/23-new-listview-w158.png#lightbox)
+[neue ListView![](designer-walkthrough-images/vs/23-new-listview-w158-sml.png)](designer-walkthrough-images/vs/23-new-listview-w158.png#lightbox)
 
-Standardmäßig `ListView` `@+id/listView1`erhält der den Wert. `Id`
-Wenn `listView1` in der **Dokument**Gliederung immer noch ausgewählt ist, öffnen Sie den Bereich **Eigenschaften** , klicken Sie auf **Anordnen nach**, und wählen Sie **Kategorie**aus.
-Öffnen Sie **Main**, suchen Sie die **ID** -Eigenschaft, und ändern `@+id/myListView`Sie Ihren Wert in:
+Standardmäßig wird dem `ListView` ein `Id` Wert von `@+id/listView1`zugewiesen.
+Wenn `listView1` in der **Dokument**Gliederung noch immer ausgewählt ist, öffnen Sie den Bereich **Eigenschaften** , klicken Sie auf **Anordnen nach**, und wählen Sie **Kategorie**aus.
+Öffnen Sie **Main**, suchen Sie die **ID** -Eigenschaft, und ändern Sie Ihren Wert in `@+id/myListView`:
 
 [![ID in myListView umbenennen](designer-walkthrough-images/vs/24-change-id-w158-sml.png)](designer-walkthrough-images/vs/24-change-id-w158.png#lightbox)
 
@@ -275,11 +275,11 @@ namespace DesignerWalkthrough
 
 ```
 
-In diesem Code wird ein `ListView` benutzerdefinierter Adapter zum Laden von Farbinformationen und zum Anzeigen dieser Daten in der soeben erstellten Benutzeroberfläche verwendet. Um dieses Beispiel kurz zu halten, sind die Farbinformationen in einer Liste hart codiert, der Adapter kann jedoch so geändert werden, dass er Farbinformationen aus einer Datenquelle extrahiert oder Sie im laufenden Betrieb berechnet. Weitere Informationen zu `ListView` Adaptern finden Sie unter [ListView](~/android/user-interface/layouts/list-view/index.md).
+In diesem Code wird ein benutzerdefinierter `ListView` Adapter zum Laden von Farbinformationen und zum Anzeigen dieser Daten in der soeben erstellten Benutzeroberfläche verwendet. Um dieses Beispiel kurz zu halten, sind die Farbinformationen in einer Liste hart codiert, der Adapter kann jedoch so geändert werden, dass er Farbinformationen aus einer Datenquelle extrahiert oder Sie im laufenden Betrieb berechnet. Weitere Informationen zu `ListView` Adaptern finden Sie unter [ListView](~/android/user-interface/layouts/list-view/index.md).
 
 Erstellen Sie die Anwendung, und führen Sie sie aus. Der folgende Screenshot zeigt ein Beispiel für die Anzeige der APP, wenn Sie auf einem Gerät ausgeführt wird:
 
-[![Abschließender Screenshot](designer-walkthrough-images/vs/25-final-screenshot-sml.png)](designer-walkthrough-images/vs/25-final-screenshot.png#lightbox)
+[![abschließende Bildschirm Abbildung](designer-walkthrough-images/vs/25-final-screenshot-sml.png)](designer-walkthrough-images/vs/25-final-screenshot.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -289,11 +289,11 @@ Der erste Schritt besteht darin, ein neues xamarin. Android-Projekt zu erstellen
 
 Starten Sie Visual Studio für Mac, und klicken Sie auf **Neues Projekt...** . Wählen Sie die Vorlage **Android-App** , und klicken Sie auf **weiter**:
 
-[![Leere Android-App](designer-walkthrough-images/xs/01-android-app-m75-sml.png)](designer-walkthrough-images/xs/01-android-app-m75.png#lightbox)
+[leere Android-App![](designer-walkthrough-images/xs/01-android-app-m75-sml.png)](designer-walkthrough-images/xs/01-android-app-m75.png#lightbox)
 
 Benennen Sie die neue APP **designerwalkthrough**. Wählen Sie unter **Zielplattformen**die Option **neueste und höchste** aus, und klicken Sie auf **weiter**:
 
-[![Name der APP](designer-walkthrough-images/xs/02-designer-walkthrough-m75-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough-m75.png#lightbox)
+[App mit![Namen](designer-walkthrough-images/xs/02-designer-walkthrough-m75-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough-m75.png#lightbox)
 
 Klicken Sie im nächsten Dialogfeld auf **Erstellen**.
 
@@ -303,117 +303,117 @@ Der nächste Schritt besteht darin, ein **LinearLayout** zu erstellen, das die E
 
 Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf **Ressourcen/Layout** im **lösungspad** , und wählen Sie **> neue Datei hinzufügen...** aus. Wählen Sie im Dialogfeld **neue Datei** die Option **Android-> Layout**aus. Benennen Sie die Datei **list_item** , und klicken Sie auf **neu**:
 
-[![Neues Layout](designer-walkthrough-images/xs/03-new-layout-m75-sml.png)](designer-walkthrough-images/xs/03-new-layout-m75.png#lightbox)
+[Neues Layout![](designer-walkthrough-images/xs/03-new-layout-m75-sml.png)](designer-walkthrough-images/xs/03-new-layout-m75.png#lightbox)
 
 Nachdem diese Datei hinzugefügt wurde, wird das neue **list_item** -Layout auf dem **Designoberfläche** angezeigt (wenn die Meldung angezeigt wird, *enthält dieses Projektressourcen, die nicht erfolgreich kompiliert wurden, was möglicherweise beeinträchtigt*ist, und klicken Sie auf **Erstellen > Alle erstellen** , um das Projekt zu erstellen):
 
-[![Designer Ansicht](designer-walkthrough-images/xs/04-designer-view-m75-sml.png)](designer-walkthrough-images/xs/04-designer-view-m75.png#lightbox)
+[![-Designer-Ansicht](designer-walkthrough-images/xs/04-designer-view-m75-sml.png)](designer-walkthrough-images/xs/04-designer-view-m75.png#lightbox)
 
 Klicken Sie unten im Designer auf die Registerkarte **Quelle** , um die XML-Quelle für dieses Layout anzuzeigen. Wenn Sie auf der rechten Seite auf die Registerkarte **Dokument** Gliederung klicken, wird angezeigt, dass das Layout derzeit ein einzelnes **linearlayoutwidget** enthält:
 
-[![Designer-XML](designer-walkthrough-images/xs/05-designer-xml-m75-sml.png)](designer-walkthrough-images/xs/05-designer-xml-m75.png#lightbox)
+[![-Designer-XML](designer-walkthrough-images/xs/05-designer-xml-m75-sml.png)](designer-walkthrough-images/xs/05-designer-xml-m75.png#lightbox)
 
 Der nächste Schritt besteht darin, die Benutzeroberfläche für die Farb Browser-APP zu erstellen.
 
 ### <a name="creating-the-list-item-user-interface"></a>Erstellen der Benutzeroberfläche für das Listenelement
 
-Klicken Sie unten auf dem Bildschirm auf die Registerkarte **Designer** , um zur **Oberfläche des Designers**zurückzukehren. Scrollen Sie im Bereich **Toolbox** auf der rechten Seite nach unten zum Abschnitt **Images & Medium** , und `ImageView`suchen Sie Folgendes:
+Klicken Sie unten auf dem Bildschirm auf die Registerkarte **Designer** , um zur **Oberfläche des Designers**zurückzukehren. Scrollen Sie im Bereich **Toolbox** auf der rechten Seite nach unten zum Abschnitt **Images & Medium** , und suchen Sie `ImageView`:
 
-[![ImageView suchen](designer-walkthrough-images/xs/06-locate-imageview-m75-sml.png)](designer-walkthrough-images/xs/06-locate-imageview-m75.png#lightbox)
+[![nach ImageView suchen](designer-walkthrough-images/xs/06-locate-imageview-m75-sml.png)](designer-walkthrough-images/xs/06-locate-imageview-m75.png#lightbox)
 
-Alternativ können Sie *ImageView* in die Suchleiste eingeben, um Folgendes zu `ImageView`finden:
+Alternativ können Sie *ImageView* in die Suchleiste eingeben, um die `ImageView`zu finden:
 
-[![ImageView-Suche](designer-walkthrough-images/xs/07-imageview-search-m75-sml.png)](designer-walkthrough-images/xs/07-imageview-search-m75.png#lightbox)
+[![der ImageView-Suche](designer-walkthrough-images/xs/07-imageview-search-m75-sml.png)](designer-walkthrough-images/xs/07-imageview-search-m75.png#lightbox)
 
-Ziehen Sie `ImageView` diese auf die `ImageView` Designoberfläche (Sie wird verwendet, um ein Farbmuster in der Farb Browser-App anzuzeigen):
+Ziehen Sie diese `ImageView` auf die **Designoberfläche** (diese `ImageView` wird verwendet, um ein Farbmuster in der Farb Browser-App anzuzeigen):
 
-[![ImageView in Canvas](designer-walkthrough-images/xs/08-imageview-on-canvas-m75-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas-m75.png#lightbox)
+[![von ImageView in Canvas](designer-walkthrough-images/xs/08-imageview-on-canvas-m75-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas-m75.png#lightbox)
 
-Ziehen Sie als nächstes `LinearLayout (Vertical)` ein Widget aus der **Toolbox** in die **Designoberfläche**. Beachten Sie, dass ein blauer Umriss die Grenzen des hinzu `LinearLayout`gefügten angibt. Die **Dokument** Gliederung zeigt, dass es sich um `LinearLayout`ein unter `imageView1 (ImageView)`geordnetes Element von handelt
+Ziehen Sie als nächstes ein `LinearLayout (Vertical)` widget aus der **Toolbox** in den **Designoberfläche**. Beachten Sie, dass ein blauer Umriss die Grenzen des hinzugefügten `LinearLayout`angibt. Die **Dokument** Gliederung zeigt, dass es sich um ein `imageView1 (ImageView)`untergeordnetes Element von `LinearLayout`handelt.
 
-[![Blauer Umriss](designer-walkthrough-images/xs/10-blue-outline-m75-sml.png)](designer-walkthrough-images/xs/10-blue-outline-m75.png#lightbox)
+[![blaue Gliederung](designer-walkthrough-images/xs/10-blue-outline-m75-sml.png)](designer-walkthrough-images/xs/10-blue-outline-m75.png#lightbox)
 
-Wenn Sie `ImageView` im Designer auswählen, wird der blaue Umriss zum `ImageView`umschließen von verschoben. Außerdem wird die Auswahl `imageView1 (ImageView)` in der **Dokument**Gliederung in verschoben:
+Wenn Sie die `ImageView` im Designer auswählen, wird der blaue Umriss zum Umschließen der `ImageView`verschoben. Außerdem wird die Auswahl auf `imageView1 (ImageView)` in der **Dokument**Gliederung verschoben:
 
-[![Auswählen von ImageView](designer-walkthrough-images/xs/11-select-imageview-m75-sml.png)](designer-walkthrough-images/xs/11-select-imageview-m75.png#lightbox)
+[![auswählen von "ImageView"](designer-walkthrough-images/xs/11-select-imageview-m75-sml.png)](designer-walkthrough-images/xs/11-select-imageview-m75.png#lightbox)
 
-Ziehen Sie als nächstes `Text (Large)` ein Widget aus der **Toolbox** in das neu hinzu `LinearLayout`gefügte. Beachten Sie, dass beim Ziehen mit der Maus auf die **Designoberfläche**die Position des neuen Widgets hervorgehoben wird.
-Das `Text (Large)` Widget sollte sich in `linearLayout1` befinden, wie hier gezeigt:
+Ziehen Sie als nächstes ein `Text (Large)` widget aus der **Toolbox** in das neu hinzugefügte `LinearLayout`. Beachten Sie, dass beim Ziehen mit der Maus auf die **Designoberfläche**die Position des neuen Widgets hervorgehoben wird.
+Das `Text (Large)`-Widget sollte sich in `linearLayout1` befinden, wie hier zu sehen:
 
 [![Ein großes Text-Widget hinzufügen](designer-walkthrough-images/xs/12-green-highlight-m75-sml.png)](designer-walkthrough-images/xs/12-green-highlight-m75.png#lightbox)
 
-Fügen Sie als nächstes `Text (Small)` ein Widget unterhalb `Text (Large)` des Widgets hinzu. An diesem Punkt sollte die **Designoberfläche** dem folgenden Screenshot ähneln:
+Fügen Sie als nächstes ein `Text (Small)`-Widget unterhalb des `Text (Large)` Widgets hinzu. An diesem Punkt sollte die **Designoberfläche** dem folgenden Screenshot ähneln:
 
-[![Kleines textwidget hinzufügen](designer-walkthrough-images/xs/13-add-small-text-m75-sml.png)](designer-walkthrough-images/xs/13-add-small-text-m75.png#lightbox)
+[![kleines textwidget hinzufügen](designer-walkthrough-images/xs/13-add-small-text-m75-sml.png)](designer-walkthrough-images/xs/13-add-small-text-m75.png#lightbox)
 
-Wenn sich die `textView` beiden Widgets `linearLayout1`nicht in befinden, können Sie Sie in `linearLayout1` der **Dokument** Gliederung auf ziehen und positionieren, damit Sie wie im vorherigen Screenshot (eingerückt unter `linearLayout1`) angezeigt werden.
+Wenn sich die beiden `textView` Widgets nicht in `linearLayout1`befinden, können Sie Sie auf `linearLayout1` in der **Dokument** Gliederung ziehen und positionieren, damit Sie wie im vorherigen Screenshot (eingerückt unter `linearLayout1`) angezeigt werden.
 
 ### <a name="arranging-the-user-interface"></a>Anordnen der Benutzeroberfläche
 
-Der nächste Schritt besteht darin, die Benutzeroberfläche so zu `ImageView` ändern, dass Sie auf der linken `TextView` Seite angezeigt wird, wobei die beiden `ImageView`Widgets rechts neben gestapelt sind.
+Der nächste Schritt besteht darin, die Benutzeroberfläche so zu ändern, dass die `ImageView` auf der linken Seite angezeigt wird, wobei die beiden `TextView` Widgets auf der rechten Seite des `ImageView`gestapelt sind.
 
-1. Klicken Sie bei ausgewähltemaufdieRegisterkarte`ImageView` Eigenschaften.
+1. Wenn die `ImageView` ausgewählt ist, klicken Sie auf die Registerkarte **Eigenschaften** .
 
 2. Klicken Sie direkt unterhalb der Registerkarte **Eigenschaften** auf **Layout**.
 
-3. Scrollen Sie nach unten zu **viewgroup** , `Width` und ändern `wrap_content`Sie die Einstellung in:
+3. Scrollen Sie nach unten zu **viewgroup** , und ändern Sie die Einstellung `Width` in `wrap_content`:
 
-[![Wrap-Inhalt festlegen](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
+[![Satz Umbruch Inhalt](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
-Eine andere Möglichkeit, die `Width` Einstellung zu ändern, besteht darin, auf das Dreieck auf der rechten Seite des Widgets zu klicken, um die Breite `wrap_content`der Einstellung auf Folgendes zu schalten:
+Eine andere Möglichkeit, die `Width` Einstellung zu ändern, besteht darin, auf das Dreieck auf der rechten Seite des Widgets zu klicken, um die Breite auf `wrap_content`zu ändern:
 
-[![Zum Festlegen der Breite ziehen](designer-walkthrough-images/xs/16-width-arrow-m75-sml.png)](designer-walkthrough-images/xs/16-width-arrow-m75.png#lightbox)
+[zum Festlegen der Breite![ziehen](designer-walkthrough-images/xs/16-width-arrow-m75-sml.png)](designer-walkthrough-images/xs/16-width-arrow-m75.png#lightbox)
 
-Wenn Sie erneut auf das Dreieck `Width` klicken, `match_parent`wird die Einstellung auf zurückgesetzt Navigieren Sie als nächstes zum Bereich **Dokument** Gliederung, und wählen `LinearLayout`Sie das Stammverzeichnis aus:
+Wenn Sie erneut auf das Dreieck klicken, wird die `Width` Einstellung `match_parent`. Navigieren Sie als nächstes zum Bereich **Dokument** Gliederung, und wählen Sie den Stamm `LinearLayout`aus:
 
-[![Root-LinearLayout auswählen](designer-walkthrough-images/xs/17-root-linearlayout-m75-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout-m75.png#lightbox)
+[!["root-LinearLayout" auswählen](designer-walkthrough-images/xs/17-root-linearlayout-m75-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout-m75.png#lightbox)
 
-Wenn der `LinearLayout` Stamm ausgewählt ist, kehren Sie zur Registerkarte **Eigenschaften** zurück, und klicken Sie auf **Widget**. Ändern Sie `Orientation` die Einstellung `horizontal` in, wie unten gezeigt. An diesem Punkt sollte die **Designoberfläche** dem folgenden Screenshot ähneln. Beachten Sie, `TextView` dass die Widgets nach rechts `ImageView`von verschoben wurden:
+Wenn die Stamm `LinearLayout` ausgewählt ist, kehren Sie zur Registerkarte **Eigenschaften** zurück, und klicken Sie auf **Widget**. Ändern Sie die `Orientation` Einstellung in `horizontal`, wie unten gezeigt. An diesem Punkt sollte die **Designoberfläche** dem folgenden Screenshot ähneln. Beachten Sie, dass die `TextView` Widgets nach rechts vom `ImageView`verschoben wurden:
 
-[![Horizontale Ausrichtung auswählen](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
+[horizontale Ausrichtung![auswählen](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
 
 ### <a name="modifying-the-spacing"></a>Ändern des Abstands
 
-Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie aus, undklickenSieunterEigenschaftenaufdieRegisterkarte`ImageView` **Layout** . `Min Width` Ändern Sie in `50dp`, `Min Height` und`Padding` in. `70dp` `10dp`
-Dadurch wird die `ImageView` Auffüll Richtung um alle Seiten der angewendet und vertikal gestreckt:
+Der nächste Schritt besteht darin, die Auffüll-und Rand Einstellungen in der Benutzeroberfläche zu ändern, um zwischen den Widgets mehr Platz zu schaffen. Wählen Sie die `ImageView` und klicken Sie unter **Eigenschaften**auf die Registerkarte **Layout** . Ändern Sie die `Min Width` in `50dp`, die `Min Height` in `70dp`und die `Padding` `10dp`.
+Dadurch wird die Auffüll Linie um alle Seiten des `ImageView` und eine vertikale Zeit Breite erhöht:
 
-[![Auffüllen festlegen](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
+[Auffüll![festlegen](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
 
-Die Einstellungen oben, rechts, unten und Links können unabhängig voneinander festgelegt werden, indem Sie Werte in die `Top`Felder `Right`, `Bottom`, und `Left` auffüllen. Legen Sie z. b `Left` . den Füll Wert `5dp` auf und `Top`die `Right`Füll Werte `Bottom` , und auf `10dp`fest. Beachten Sie, `Padding` dass sich die Einstellung in eine durch Trennzeichen getrennte Liste dieser Werte ändert:
+Die Einstellungen oben, rechts, unten und Links können unabhängig voneinander festgelegt werden, indem Sie Werte in die Felder `Top`, `Right`, `Bottom`und `Left` Auffüllen eingeben. Legen Sie z. b. den Wert für `Left` Füll Zeichen auf `5dp` und die Auffüll Werte `Top`, `Right`und `Bottom` auf `10dp`fest. Beachten Sie, dass sich die `Padding` Einstellung in eine durch Trennzeichen getrennte Liste dieser Werte ändert:
 
-[![Benutzerdefinierte Auffüll Einstellungen](designer-walkthrough-images/xs/21-custom-padding-m75-sml.png)](designer-walkthrough-images/xs/21-custom-padding-m75.png#lightbox)
+[![benutzerdefinierte Auffüll Einstellungen](designer-walkthrough-images/xs/21-custom-padding-m75-sml.png)](designer-walkthrough-images/xs/21-custom-padding-m75.png#lightbox)
 
-Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die `TextView` beiden Widgets enthält. Wählen Sie `linearLayout1`in der Dokument Gliederung aus. Wählen Sie im Bereich **Eigenschaften** die Registerkarte **Layout** aus. Scrollen Sie nach unten zum Abschnitt **viewgroup** , und `Left`legen `Top`Sie `Right`die Ränder `Bottom` ,, `5dp`und `5dp`auf `0dp`,, `5dp` bzw. fest:
+Passen Sie als nächstes die Position des `LinearLayout` Widgets an, das die beiden `TextView` Widgets enthält. Wählen Sie in der **Dokument**Gliederung `linearLayout1`aus. Wählen Sie im Bereich " **Eigenschaften** " die Registerkarte **Layout** aus. Scrollen Sie nach unten zum Abschnitt **viewgroup** , und legen Sie die `Left`-, `Top`-, `Right`-und `Bottom` Ränder auf `5dp`, `5dp`, `0dp`bzw. `5dp` fest. :
 
-[![Ränder festlegen](designer-walkthrough-images/xs/22-margins-m75-sml.png)](designer-walkthrough-images/xs/22-margins-m75.png#lightbox)
+[![festgelegte Ränder](designer-walkthrough-images/xs/22-margins-m75-sml.png)](designer-walkthrough-images/xs/22-margins-m75.png#lightbox)
 
 ### <a name="removing-the-default-image"></a>Entfernen des Standard Bilds
 
-`ImageView` Da zum Anzeigen von Farben (anstelle von Bildern) verwendet wird, besteht der nächste Schritt darin, die von der Vorlage hinzugefügte Standardbild Quelle zu entfernen.
+Da der `ImageView` zum Anzeigen von Farben (anstelle von Bildern) verwendet wird, besteht der nächste Schritt darin, die von der Vorlage hinzugefügte Standardbild Quelle zu entfernen.
 
 1. Wählen Sie das `ImageView`-Steuerelement aus.
 
 2. Klicken Sie unter **Eigenschaften**auf die Registerkarte **Widget** .
 
-3. Deaktivieren Sie `Src` die Einstellung, sodass Sie leer ist:
+3. Löschen Sie die `Src` Einstellung, sodass Sie leer ist:
 
-[![Löschen der Einstellung von Image View src](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
+[![die Einstellung "Image View src" Löschen](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 
-Dadurch wird `android:src="@android:drawable/ic_menu_gallery"` aus der XML `ImageView`-Quelldatei entfernt.
+Hierdurch werden `android:src="@android:drawable/ic_menu_gallery"` aus der Quell-XML für diese `ImageView`entfernt.
 
 ### <a name="adding-a-listview-container"></a>Hinzufügen eines ListView-Containers
 
-Nachdem das **list_item** -Layout definiert ist, ist der nächste Schritt das Hinzufügen `ListView` eines zum Hauptlayout. Diese `ListView` enthält eine Liste von **list_item**. 
+Nachdem das **list_item** -Layout definiert ist, besteht der nächste Schritt darin, dem Hauptlayout eine `ListView` hinzuzufügen. Diese `ListView` enthält eine Liste von **list_item**. 
 
 Öffnen Sie im **Projektmappen-Explorer** **Ressourcen/Layout/Main. axml**.
-Klicken Sie `Button` auf das Widget (sofern vorhanden), und löschen Sie es. Suchen Sie in der **Toolbox**das `ListView` Widget, und ziehen Sie es auf den **Designoberfläche**.
-Der `ListView` im Designer ist leer, außer für blaue Linien, die seinen Rahmen bei der Auswahl gliedern. Sie können die **Dokument** Gliederung anzeigen, um zu überprüfen, ob die **ListView** ordnungsgemäß hinzugefügt wurde:
+Klicken Sie auf das Widget `Button` (sofern vorhanden), und löschen Sie es. Suchen Sie in der **Toolbox**das `ListView`-Widget, und ziehen Sie es auf den **Designoberfläche**.
+Der `ListView` im Designer ist leer, außer für blaue Linien, die den Rahmen bei der Auswahl gliedern. Sie können die **Dokument** Gliederung anzeigen, um zu überprüfen, ob die **ListView** ordnungsgemäß hinzugefügt wurde:
 
-[![Neue ListView](designer-walkthrough-images/xs/24-new-listview-m75-sml.png)](designer-walkthrough-images/xs/24-new-listview-m75.png#lightbox)
+[neue ListView![](designer-walkthrough-images/xs/24-new-listview-m75-sml.png)](designer-walkthrough-images/xs/24-new-listview-m75.png#lightbox)
 
-Standardmäßig `ListView` `@+id/listView1`erhält der den Wert. `Id`
-Wenn `listView1` in der **Dokument**Gliederung immer noch ausgewählt ist, öffnen Sie den Bereich **Eigenschaften** , klicken Sie auf **Anordnen nach**, und wählen Sie **Kategorie**aus.
-Öffnen Sie **Main**, suchen Sie die **ID** -Eigenschaft, und ändern `@+id/myListView`Sie Ihren Wert in:
+Standardmäßig wird dem `ListView` ein `Id` Wert von `@+id/listView1`zugewiesen.
+Wenn `listView1` in der **Dokument**Gliederung noch immer ausgewählt ist, öffnen Sie den Bereich **Eigenschaften** , klicken Sie auf **Anordnen nach**, und wählen Sie **Kategorie**aus.
+Öffnen Sie **Main**, suchen Sie die **ID** -Eigenschaft, und ändern Sie Ihren Wert in `@+id/myListView`:
 
 [![ID in myListView umbenennen](designer-walkthrough-images/xs/25-change-id-m75-sml.png)](designer-walkthrough-images/xs/25-change-id-m75.png#lightbox)
 
@@ -515,11 +515,11 @@ namespace DesignerWalkthrough
 }
 ```
 
-In diesem Code wird ein `ListView` benutzerdefinierter Adapter zum Laden von Farbinformationen und zum Anzeigen dieser Daten in der soeben erstellten Benutzeroberfläche verwendet. Um dieses Beispiel kurz zu halten, sind die Farbinformationen in einer Liste hart codiert, der Adapter kann jedoch so geändert werden, dass er Farbinformationen aus einer Datenquelle extrahiert oder Sie im laufenden Betrieb berechnet. Weitere Informationen zu `ListView` Adaptern finden Sie unter [ListView](~/android/user-interface/layouts/list-view/index.md).
+In diesem Code wird ein benutzerdefinierter `ListView` Adapter zum Laden von Farbinformationen und zum Anzeigen dieser Daten in der soeben erstellten Benutzeroberfläche verwendet. Um dieses Beispiel kurz zu halten, sind die Farbinformationen in einer Liste hart codiert, der Adapter kann jedoch so geändert werden, dass er Farbinformationen aus einer Datenquelle extrahiert oder Sie im laufenden Betrieb berechnet. Weitere Informationen zu `ListView` Adaptern finden Sie unter [ListView](~/android/user-interface/layouts/list-view/index.md).
 
 Erstellen Sie die Anwendung, und führen Sie sie aus. Der folgende Screenshot zeigt ein Beispiel für die Anzeige der APP, wenn Sie auf einem Gerät ausgeführt wird:
 
-[![Abschließender Screenshot](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
+[![abschließende Bildschirm Abbildung](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
 
 -----
 

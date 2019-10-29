@@ -3,15 +3,15 @@ title: Barrierefreiheit in xamarin-apps
 description: Dieses Dokument enthält verschiedene Tipps für die Erstellung von zugänglichen apps. Sie enthält beispielsweise Empfehlungen zu großen Schriftarten, hohem Kontrast, selbst beschreibenden Schnittstellen und mehr.
 ms.prod: xamarin
 ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 55d531036336cdd6c3ac7efa1c5ba21b09a7be9e
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 23ef499005994c33586e1918ac3b2a9d28640d04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758139"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030281"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Barrierefreiheit in xamarin-apps
 
@@ -19,7 +19,7 @@ _Stellen Sie sicher, dass Ihre apps von der größtmöglichen Zielgruppe aus ver
 
 Barrierefreiheit bezieht sich auf das Konzept des Entwurfs von App-Benutzeroberflächen, die eine gute Betriebssystem Anzeige und Funktionen für die Eingabe Unterstützung aufweisen, wie z. b. große Typen, hohe Kontraste, Zoom, Bildschirm Lesevorgänge (Text-zu-Sprache), visuelle oder willkürliche Feedback Hinweise und Alternative Eingabemethoden.
 
-Desktop-und Mobile Plattformen wie IOS, Android und Windows bieten integrierte APIs, mit denen Entwickler barrierefreie Apps erstellen können, wie z. b. [Google Talkback](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) und [den VoiceOver von Apple](http://www.apple.com/accessibility/ios/voiceover/).
+Desktop-und Mobile Plattformen wie IOS, Android und Windows bieten integrierte APIs, mit denen Entwickler barrierefreie Apps erstellen können, wie z. b. [Google Talkback](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) und [den VoiceOver von Apple](https://www.apple.com/accessibility/ios/voiceover/).
 
 ## <a name="platform-specific-apis"></a>Plattformspezifische APIs
 
@@ -34,7 +34,7 @@ Um die Richtlinien in diesem Dokument zu implementieren, verwenden Sie die von d
 
 ## <a name="accessibility-checklist"></a>Zugriffs Prüfliste
 
-Befolgen Sie diese Tipps, um sicherzustellen, dass Ihre apps für die größtmögliche Zielgruppe zugänglich sind. Weitere Informationen finden Sie in der [Checkliste für Android-Barrierefreiheits Tests](https://developer.android.com/training/accessibility/testing.html) und [der Seite "Barrierefreiheit](http://www.apple.com/accessibility/) " von Apple.
+Befolgen Sie diese Tipps, um sicherzustellen, dass Ihre apps für die größtmögliche Zielgruppe zugänglich sind. Weitere Informationen finden Sie in der [Checkliste für Android-Barrierefreiheits Tests](https://developer.android.com/training/accessibility/testing.html) und [der Seite "Barrierefreiheit](https://www.apple.com/accessibility/) " von Apple.
 
 ### <a name="support-large-fonts-and-high-contrast"></a>Unterstützen von großen Schriftarten und hohem Kontrast
 

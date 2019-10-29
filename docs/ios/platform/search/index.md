@@ -4,15 +4,15 @@ description: In diesem Artikel wird die Verwendung der neuen App Search-APIs bes
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769489"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031566"
 ---
 # <a name="search-apis-in-xamarinios"></a>APIs in xamarin. IOS suchen
 
@@ -22,7 +22,7 @@ Die Suche wurde in ios 9 erweitert und bietet hervorragend neue Möglichkeiten f
 
 Außerdem vereinfachen die neuen Such-APIs das Integrieren der Suche in Ihre APP, ohne dass eine vorherige Such Implementierung möglich ist. Daher beansprucht Apple in der Regel einige Stunden, bis der Inhalt einer IOS 9-APP über die APP-Suche universell durchsuchbar ist.
 
-[![](images/intro01.png "Beispiel für IOS 9-APP-Inhalte, die universell mithilfe der APP-Suche durchsucht werden")](images/intro01.png#lightbox)
+[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
 
 Die APP-Suche besteht aus drei separaten APIs:
 
@@ -64,7 +64,7 @@ Apple bietet die folgenden Vorschläge, welche Inhalte und Aktionen für Such In
 Kernspotlight in ios 10 bietet verschiedene Verbesserungen bei der APP-Suche, wie z.b.:
 
 - **Crowdsource Deep-Link-Beliebtheit (mit differenziellen Datenschutz)** : bietet eine Möglichkeit zum herauf Stufen von Deep-verknüpften App-Inhalten in den Suchergebnissen.
-- **In-App-Suche** : Verwenden Sie `CSSearchQuery` die neue-Klasse, um in-App-Spotlight-Suchfunktionen wie die Funktionsweise der Mail-, Nachrichten-und Notes-apps bereitzustellen
+- **In-App-Suche** : Verwenden Sie die neue `CSSearchQuery`-Klasse, um eine in-App-Spotlight-Suchfunktion bereitzustellen, ähnlich der Funktionsweise von Mail-, Nachrichten-und Notizen
 - **Such Fortsetzung** : ermöglicht einem Benutzer das Starten einer Suche in Spotlight oder Safari, das Öffnen einer APP und das Fortsetzen der Suche.
 - **Visualisierung der Überprüfungs Ergebnisse** : das [Validierungs Tool der App Search-API](https://search.developer.apple.com/appsearch-validation-tool) von Apple zeigt nun eine visuelle Darstellung des Markups einer Website und die Deep-Verknüpfung bei der Vorbildung von Tests an.
 - **Nachrichten-APP-Image Freigabe** : ermöglicht beliebte in-App-Images, die für die Freigabe in Nachrichten (über eine Nachrichten-APP-Erweiterung) bereitgestellt werden, um Sie in Spotlight
@@ -94,5 +94,5 @@ In diesem Artikel wurden die neuen Such-API-Features behandelt, die IOS 9 für x
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [IOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Programmier Handbuch für die APP-Suche](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

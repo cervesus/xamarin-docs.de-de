@@ -4,15 +4,15 @@ description: In diesem Dokument wird die erweiterte Realität in ios 11 mit Arki
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: b05991be60e34cad6b7bfc5af15fe521e1ff6dd1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752601"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032245"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Einführung in Arkit in xamarin. IOS
 
@@ -39,7 +39,7 @@ Assets sollten mit der **scenekitasset** -Buildaktion dem Projekt hinzugefügt w
 
 ### <a name="2-configure-the-view"></a>2. Konfigurieren der Ansicht
 
-Laden Sie in der- `ViewDidLoad` Methode des Ansichts Controllers das Szene Objekt, `Scene` und legen Sie die-Eigenschaft für die Ansicht fest:
+Laden Sie in der `ViewDidLoad`-Methode des Ansichts Controllers das Szene Objekt, und legen Sie die `Scene`-Eigenschaft für die Ansicht fest:
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -51,7 +51,7 @@ var scene = SCNScene.FromFile("art.scnassets/ship");
 SceneView.Scene = scene;
 ```
 
-### <a name="3-optionally-implement-a-session-delegate"></a>3. Implementieren Sie optional einen Sitzungs Delegaten.
+### <a name="3-optionally-implement-a-session-delegate"></a>3. implementieren Sie optional einen Sitzungs Delegaten.
 
 Obwohl es für einfache Fälle nicht erforderlich ist, kann die Implementierung eines Sitzungs Delegaten hilfreich sein, um den Status der Arkit-Sitzung (und in realen Anwendungen, das Feedback für den Benutzer bereitzustellen) zu debuggen. Erstellen Sie mithilfe des folgenden Codes einen einfachen Delegaten:
 
@@ -66,16 +66,16 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-Weisen Sie den Delegaten in `ViewDidLoad` der-Methode zu:
+Weisen Sie den Delegaten in der `ViewDidLoad`-Methode zu:
 
 ```csharp
 // Track changes to the session
 SceneView.Session.Delegate = new SessionDelegate();
 ```
 
-### <a name="4-position-the-3d-model-in-the-world"></a>4. Positionieren des 3D-Modells in der Welt
+### <a name="4-position-the-3d-model-in-the-world"></a>4. Positionieren Sie das 3D-Modell weltweit.
 
-In `ViewWillAppear`wird mit dem folgenden Code eine Arkit-Sitzung eingerichtet und die Position des 3D-Modells in Bezug auf die Kamera des Geräts festgelegt:
+In `ViewWillAppear`wird mit dem folgenden Code eine Arkit-Sitzung eingerichtet und die Position des 3D-Modells im Verhältnis zur Kamera des Geräts festgelegt:
 
 ```csharp
 // Create a session configuration
@@ -97,7 +97,7 @@ Jedes Mal, wenn die Anwendung ausgeführt wird oder fortgesetzt wird, wird das 3
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. Anhalten der Sitzung für die erweiterte Realität
 
-Es empfiehlt sich, die Arkit-Sitzung anzuhalten, wenn der Ansichts Controller nicht sichtbar ist ( `ViewWillDisappear` in der-Methode:
+Es empfiehlt sich, die Arkit-Sitzung anzuhalten, wenn der Ansichts Controller nicht sichtbar ist (in der `ViewWillDisappear`-Methode:
 
 ```csharp
 SceneView.Session.Pause();
@@ -105,7 +105,7 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>Zusammenfassung
 
-Der obige Code ergibt eine einfache Arkit-Anwendung. Komplexere Beispiele erwarten, dass der Ansichts Controller, der die erweiterte Reality- `IARSCNViewDelegate`Sitzung gehostet, implementieren und zusätzliche Methoden implementiert werden.
+Der obige Code ergibt eine einfache Arkit-Anwendung. Komplexere Beispiele erwarten, dass der Ansichts Controller, der die erweiterte Reality-Sitzung gehostet, `IARSCNViewDelegate`implementiert, und es werden zusätzliche Methoden implementiert.
 
 Arkit bietet viele anspruchsvollere Features, wie z. b. Oberflächen Überwachung und Benutzerinteraktion. Ein Beispiel für die Kombination der Arkit-Überwachung mit urhusharp finden Sie in der [urhusharp-Demo](urhosharp.md) .
 

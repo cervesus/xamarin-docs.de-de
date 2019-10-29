@@ -1,23 +1,23 @@
 ---
-title: Erstellen der Benutzeroberfläche für Wear OS mit Xamarin.Android
-description: Erstellen von Benutzeroberflächen für Wear OS-Apps
+title: Erstellen einer Benutzeroberfläche für das Wear-Betriebssystem mit xamarin. androi
+description: Erstellen von Benutzeroberflächen für Wear-Betriebssystem-apps
 ms.prod: xamarin
 ms.assetid: 092A6E08-FB07-4AC2-A5BD-8A9D4E6268D8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 8dcf8868a91ab0dbfa78ff6c46de2d7fa5970ef8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 827926bad708b9d9647796b92a328dd8b3b9cf5c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762128"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030290"
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
-In den folgenden Abschnitten werden verschiedene Tools und Bausteine zur Erstellung von Wear OS-Apps vorgestellt.
+In den folgenden Abschnitten werden die verschiedenen Tools und Bausteine erläutert, die zum Erstellen von Benutzeroberflächen in Android Wear-Apps verwendet werden.
 
 ## <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[Steuerelemente](~/android/wear/user-interface/controls/index.md)
 
-Beschreibt Wear OS spezifische Steuerelemente und stellt Links zu Beispielen zur Nutzung von Steuerelementen bereit.
+Erläutert Android Wear-spezifische Steuerelemente und enthält Links zu Beispielen, die veranschaulichen, wie diese Steuerelemente verwendet werden.

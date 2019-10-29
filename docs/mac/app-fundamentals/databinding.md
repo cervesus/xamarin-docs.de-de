@@ -4,15 +4,15 @@ description: In diesem Artikel wird die Verwendung von Schlüssel-Wert-Codierung
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770005"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030218"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Datenbindung und Schlüssel-Wert-Codierung in xamarin. Mac
 
@@ -334,7 +334,7 @@ public NSArray People {
 Hier sind zwei Punkte zu beachten:
 
 1. Wir haben eine `NSMutableArray` anstelle eines Standard Arrays C# oder einer Standard Auflistung verwendet, da dies eine Voraussetzung für die Datenbindung an AppKit **-Steuer**Elemente wie **Tabellen Sichten**, Gliederungs **Sichten** und Auflistungen ist.
-2. Wir haben das Mitarbeiter Array offengelegt, indem wir es in eine `NSArray` für Daten Bindungs Zwecke umgewandelt C# und den von der Datenbindung erwarteten formatierten Namen `People` in einen Wert geändert haben, der von der Datenbindung erwartet wird, `personModelArray` in der Form **{class_name} Array** (Beachten Sie, dass das erste Zeichen Kleinbuchstaben).
+2. Wir haben das Mitarbeiter Array offengelegt, indem wir es in eine `NSArray` für Datenbindung umwandeln und C# seinen formatierten Namen,`People`, in einen von der Datenbindung erwarteten Wert`personModelArray`in der Form " **{class_name} Array** " geändert haben (Beachten Sie, dass das erste Zeichen in Kleinbuchstaben).
 
 Als nächstes müssen wir einige besondere öffentliche Methoden hinzufügen, um **Array Controller** und Struktur **Controller**zu unterstützen:
 

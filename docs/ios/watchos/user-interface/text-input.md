@@ -4,15 +4,15 @@ description: Dieses Dokument beschreibt die watchos-Texteingabe in xamarin. Es e
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a0e45c51ba5460da87b80f21d4e9e54c13deabde
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 156a31e37d14ce3e3cbe7173ae97b608e9d4c32e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766778"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032654"
 ---
 # <a name="working-with-watchos-text-input-in-xamarin"></a>Arbeiten mit watchos-Text Eingaben in xamarin
 
@@ -25,12 +25,12 @@ Der Apple Watch stellt keine Tastatur für Benutzer zum Eingeben von Text bereit
 
 Der Simulator unterstützt derzeit kein Diktat, aber Sie können die anderen Optionen des Texteingabe Controllers, wie z. b. Scribble, auch noch testen, wie hier gezeigt:
 
-![](text-input-images/textinput-sml.png "Testen der Scribble-Option")
+![](text-input-images/textinput-sml.png "Testing the scribble option")
 
 So akzeptieren Sie Texteingaben in einer Watch-App:
 
 1. Erstellen Sie ein Zeichen folgen Array mit vordefinierten Optionen.
-2. Aufrufen `PresentTextInputController` mit dem Array, unabhängig davon, ob Emoji zulässig ist oder nicht `Action` , und ein, das aufgerufen wird, wenn der Benutzer beendet ist.
+2. Aufrufen von `PresentTextInputController` mit dem Array, ob Emoji zulässig ist oder nicht, und eine `Action`, die aufgerufen wird, wenn der Benutzer fertig ist.
 3. Testen Sie in der Abschlussaktion das Eingabe Ergebnis, und führen Sie die entsprechende Aktion in der APP aus (möglicherweise wird der Textwert einer Bezeichnung festgelegt).
 
 Der folgende Code Ausschnitt stellt dem Benutzer drei vordefinierte Optionen zur Folge:
@@ -49,11 +49,11 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 });
 ```
 
-Die `WKTextInputMode` -Enumeration hat drei Werte:
+Die `WKTextInputMode`-Enumeration hat drei Werte:
 
 - Lin
 - Zuordnung
-- AllowAnimatedEmoji
+- "Zubei Zuweisung"
 
 ## <a name="plain"></a>Lin
 
@@ -63,9 +63,9 @@ Wenn der Klartext festgelegt ist, kann der Benutzer Folgendes auswählen:
 - Scribble oder
 - aus einer vordefinierten Liste, die von der Anwendung bereitstellt wird.
 
-[![](text-input-images/plain-scribble-sml.png "Diktat, Scribble oder eine vordefinierte Liste, die die APP bereitstellt")](text-input-images/plain-scribble.png#lightbox)
+[![](text-input-images/plain-scribble-sml.png "Dictation, Scribble, or from a pre-defined list that the app supplies")](text-input-images/plain-scribble.png#lightbox)
 
-Das Ergebnis wird immer als `NSObject` zurückgegeben, das in einen `string`umgewandelt werden kann.
+Das Ergebnis wird immer als `NSObject` zurückgegeben, das in eine `string`umgewandelt werden kann.
 
 ## <a name="emoji"></a>Emoji
 
@@ -76,14 +76,14 @@ Es gibt zwei Arten von emoji:
 
 Wenn der Benutzer ein Unicode-Emoji auswählt, wird er als Zeichenfolge zurückgegeben.
 
-Wenn ein animiertes Bild Emoji ausgewählt `result` ist, enthält der im Vervollständigungs Handler ein `NSData` Objekt, das das Emoji `UIImage`enthält.
+Wenn ein animiertes Bild Emoji ausgewählt ist, enthält der `result` im Abschluss Handler ein `NSData` Objekt, das den Emoji-`UIImage`enthält.
 
 ## <a name="accepting-dictation-only"></a>Nur akzeptieren von Diktat
 
 So nehmen Sie den Benutzer direkt auf den Bildschirm für die diktierung, ohne Vorschläge anzuzeigen (oder die Scribble-Option):
 
 - übergeben Sie ein leeres Array für die Vorschlagsliste, und
-- legen `WatchKit.WKTextInputMode.Plain`Sie fest.
+- Legen Sie `WatchKit.WKTextInputMode.Plain`fest.
 
 ```csharp
 PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (result) => {
@@ -98,7 +98,7 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 
 Wenn der Benutzer spricht, zeigt der Bildschirm überwachen den folgenden Bildschirm an, der den Text enthält (z. b. "This is a Test"):
 
-![](text-input-images/dictation.png "Wenn der Benutzer spricht, zeigt der Bildschirm \"überwachen\" den Text so an, wie er verstanden wurde.")
+![](text-input-images/dictation.png "When the user is speaking, the watch screen displays the text as it is understood")
 
 Wenn Sie auf die Schaltfläche " **done** " klicken, wird der Text zurückgegeben.
 

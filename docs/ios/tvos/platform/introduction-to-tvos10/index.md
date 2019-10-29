@@ -4,15 +4,15 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8c338f8a5b2f1d41b1ea0f61778a1c14eb84ce08
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 02fda984d65bb89ac3dc8a4ae5e15e2c61ec7d90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769157"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030612"
 ---
 # <a name="introduction-to-tvos-10"></a>Einführung in tvOS 10
 
@@ -38,7 +38,7 @@ Weitere Informationen finden Sie in der Dokumentation zur [neuen Benutzeroberfl�
 
 Apple hat eine Reihe von Verbesserungen an Sicherheit und Datenschutz in tvos 10 vorgenommen, die dem Entwickler dabei helfen, die Sicherheit seiner apps zu verbessern und den Datenschutz für den Endbenutzer zu gewährleisten.
 
-Folglich müssen apps, die auf watchos 3 (oder höher) ausgeführt werden, ihre Absicht, auf bestimmte Features oder Benutzerinformationen zuzugreifen, statisch deklarieren, indem Sie einen oder mehrere Daten `Info.plist` Schutz spezifische Schlüssel in Ihren Dateien eingeben, die dem Benutzer erklären, warum die APP Zugriff erhalten möchte.
+Folglich müssen apps, die auf watchos 3 (oder höher) ausgeführt werden, ihre Absicht, auf bestimmte Features oder Benutzerinformationen zuzugreifen, statisch deklarieren, indem Sie einen oder mehrere Datenschutz spezifische Schlüssel in den `Info.plist` Dateien eingeben, die dem Benutzer erklären, warum die APP Zugriff erhalten möchte.
 
 Da tvos 10 diese Änderungen mit IOS 10 gemeinsam nutzt, finden Sie weitere Informationen im Leitfaden zu den [Sicherheits-und Datenschutz Erweiterungen](~/ios/app-fundamentals/security-privacy.md) für IOS 10.
 
@@ -52,12 +52,12 @@ Neu in tvos 10, das Video Abonnenten-Konto Framework ermöglicht es apps, die au
 
 tvos 10 erweitert die Unterstützung für erweiterte Pixel Formate und große Farbbereiche im gesamten System, einschließlich Frameworks wie Kern Grafiken, Core-Bild, Metal und AVFoundation. Die Unterstützung für Geräte mit breit Farbanzeige wird weiter vereinfacht, indem dieses Verhalten im gesamten Grafik Stapel bereitgestellt wird.
 
-Außerdem wurde geändert, um in den neuen erweiterten sRGB-colorspace arbeiten zu können. Dadurch wird es einfacher, Farben in breit Farbgamuts zu kombinieren, ohne dass ein erheblicher Leistungsverlust auftritt. `UIKit`
+Außerdem wurde `UIKit` so geändert, dass Sie in den neuen erweiterten **sRGB** -colorspace funktioniert, sodass Farben in Wide Color-Gamuts ohne erheblichen Leistungsverlust einfacher gemischt werden können.
 
 Apple bietet bei der Arbeit mit breiten Farben die folgenden bewährten Methoden:
 
-- `UIColor`verwendet nun den sRGB-Farbraum und gibt keine Werte mehr in den `0.0` Bereich `1.0` bis an. Wenn die APP auf dem vorherigen Klammer Verhalten basiert, muss Sie für tvos 10 geändert werden.
-- Wenn die APP ein benutzerdefiniertes `UIImages`Rendering von ausführt, verwenden Sie die neue [uigraphicsimagerender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) -Klasse, um die Verwendung der Formate für erweiterte Bereiche oder Standard Bereiche anzugeben.
+- `UIColor` verwendet jetzt den sRGB-Farbraum und gibt keine Werte mehr an die `0.0` an `1.0` Bereich an. Wenn die APP auf dem vorherigen Klammer Verhalten basiert, muss Sie für tvos 10 geändert werden.
+- Wenn die APP ein benutzerdefiniertes Rendering von `UIImages`ausführt, verwenden Sie die neue [uigraphicsimagerender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) -Klasse, um die Verwendung der Formate für erweiterte Bereiche oder Standard Bereiche anzugeben.
 - Wenn Sie eine API auf niedriger Ebene, wie z. b. Kern Grafiken oder Metal, zum Bereitstellen der Bildverarbeitung verwenden, sollte die APP einen erweiterten Bereichs Farbraum und ein Pixel Format verwenden, das 16-Bit-Gleit Komma Werte unterstützt. Bei Bedarf muss die APP Farbkomponenten Werte manuell einspannen.
 - Haupt Grafiken, Kern Bild-und Metal-leistungshader bieten neue Methoden zum Wechseln zwischen den beiden Farbräumen.
 
@@ -69,10 +69,10 @@ Mehrere Frameworks, die unter IOS (und nicht in tvos) verfügbar waren, wurden f
 
 - Externalzubehör
 - HomeKit
-- MultipeerConnectivity
+- Multipeer-Konnektivität
 - Fotos
-- ReplayKit
-- UserNotification
+- Replaykit
+- Usernotification
 
 ## <a name="additional-framework-changes"></a>Weitere frameworkänderungen
 

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Near-Field-Kommunikations 
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: c7a9d359842dde916fc14ffea5ec6e3f453dfee0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752429"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032196"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Kern-NFC in xamarin. IOS
 
@@ -63,22 +63,22 @@ Ihre APP muss die Lesefunktion des **Near Field Communications-Tags** mit dem fo
 
 Erstellen Sie eine neue **App-ID** , und stellen Sie sicher, dass der NFC- **taglesedienst** getickt ist
 
-[![Entwickler Portal Seite "neue APP-ID" mit ausgewähltem NFC-Tag](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
+[![Entwickler Portal Seite "neue APP-ID" mit aktiviertem NFC-taglese Vorgang](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
 Sie sollten dann ein neues Bereitstellungs Profil für diese APP-ID erstellen, es dann herunterladen und auf Ihrem Entwicklungs-Mac installieren.
 
 ## <a name="reading-a-tag"></a>Lesen eines Tags
 
-Nachdem das Projekt konfiguriert wurde, fügen `using CoreNFC;` Sie am Anfang der Datei hinzu, und befolgen Sie diese drei Schritte, um NFC-Transponder Lesefunktionen zu implementieren:
+Fügen Sie nach der Konfiguration des Projekts `using CoreNFC;` am Anfang der Datei hinzu, und führen Sie die folgenden drei Schritte aus, um NFC-taglese Funktionen zu implementieren:
 
-### <a name="1-implement-infcndefreadersessiondelegate"></a>1. Umsetzt`INFCNdefReaderSessionDelegate`
+### <a name="1-implement-infcndefreadersessiondelegate"></a>1. implementieren Sie `INFCNdefReaderSessionDelegate`
 
 Die-Schnittstelle verfügt über zwei Methoden, die implementiert werden müssen:
 
-- `DidDetect`– Wird aufgerufen, wenn ein Transponder erfolgreich gelesen wurde.
-- `DidInvalidate`– Wird aufgerufen, wenn ein Fehler auftritt oder das 60-Sekunden-Timeout erreicht wird.
+- `DidDetect` – wird aufgerufen, wenn ein Transponder erfolgreich gelesen wurde.
+- `DidInvalidate` – wird aufgerufen, wenn ein Fehler auftritt oder das 60-Sekunden-Timeout erreicht wird.
 
-#### <a name="diddetect"></a>DidDetect
+#### <a name="diddetect"></a>Diddetect
 
 Im Beispielcode wird jede gescannte Nachricht einer Tabellenansicht hinzugefügt:
 
@@ -96,9 +96,9 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 }
 ```
 
-Diese Methode kann mehrmals aufgerufen werden (und es kann ein Array von Nachrichten übermittelt werden), wenn die Sitzung mehrere Transponder Lesevorgänge zulässt. Dies wird mit dem dritten Parameter der `Start` -Methode festgelegt (erläutert in [Schritt 2](#step2)).
+Diese Methode kann mehrmals aufgerufen werden (und es kann ein Array von Nachrichten übermittelt werden), wenn die Sitzung mehrere Transponder Lesevorgänge zulässt. Dies wird mit dem dritten Parameter der `Start`-Methode festgelegt (in [Schritt 2](#step2)erläutert).
 
-#### <a name="didinvalidate"></a>DidInvalidate
+#### <a name="didinvalidate"></a>Didinvalidate
 
 Die Invalidierung kann aus verschiedenen Gründen erfolgen:
 
@@ -125,7 +125,7 @@ Nachdem eine Sitzung ungültig gemacht wurde, muss ein neues Sitzungs Objekt ers
 
 <a name="step2" />
 
-### <a name="2-start-an-nfcndefreadersession"></a>2. Starten eines`NFCNdefReaderSession`
+### <a name="2-start-an-nfcndefreadersession"></a>2. Starten eines `NFCNdefReaderSession`
 
 Die Überprüfung sollte mit einer Benutzer Anforderung beginnen, z. b. einem Schaltflächen-Press.
 Mit dem folgenden Code wird eine Scan Sitzung erstellt und gestartet:
@@ -135,25 +135,25 @@ Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-Die Parameter für den `NFCNdefReaderSession` Konstruktor lauten wie folgt:
+Die Parameter für den `NFCNdefReaderSession`-Konstruktor lauten wie folgt:
 
-- `delegate`– Eine Implementierung von `INFCNdefReaderSessionDelegate`. Im Beispielcode wird der Delegat im Tabellen Ansichts Controller implementiert und daher `this` als Delegatparameter verwendet.
-- `queue`– Die Warteschlange, für die die Rückrufe verarbeitet werden. Dies kann sein `null`. in diesem Fall sollten Sie sicherstellen, `DispatchQueue.MainQueue` dass beim Aktualisieren von Steuerelementen der Benutzeroberfläche verwendet wird (wie im Beispiel gezeigt).
-- `invalidateAfterFirstRead`– Gibt an `false` ,dassdieÜberprüfungnachdererstenerfolgreichenÜberprüfungbeendetwird,wenndieÜberprüfungfortgesetztwirdundmehrereErgebnissezurückgegebenwerden,bisdieÜberprüfungabgebrochenoderdasTimeout`true`von 60 Sekunden erreicht
+- `delegate` – eine Implementierung von `INFCNdefReaderSessionDelegate`. Im Beispielcode wird der Delegat im Tabellen Ansichts Controller implementiert, weshalb `this` als Delegatparameter verwendet wird.
+- `queue` – die Warteschlange, für die die Rückrufe verarbeitet werden. Sie kann `null`werden. in diesem Fall müssen Sie die `DispatchQueue.MainQueue` verwenden, wenn Sie die Steuerelemente der Benutzeroberfläche aktualisieren (wie im Beispiel gezeigt).
+- `invalidateAfterFirstRead` – bei `true`wird die Überprüfung nach der ersten erfolgreichen Überprüfung beendet. Wenn `false` wird die Überprüfung fortgesetzt, und es werden mehrere Ergebnisse zurückgegeben, bis die Überprüfung abgebrochen oder das Timeout von 60 Sekunden erreicht
 
-### <a name="3-cancel-the-scanning-session"></a>3. Abbrechen der Scan Sitzung
+### <a name="3-cancel-the-scanning-session"></a>3. Abbrechen der Überprüfungs Sitzung
 
 Der Benutzer kann die Scan Sitzung über eine vom System bereitgestellte Schaltfläche in der Benutzeroberfläche Abbrechen:
 
 ![Schaltfläche "Abbrechen" beim Scannen](corenfc-images/scan-cancel-sml.png)
 
-Die APP kann den Scanprogramm gesteuert abbrechen, indem Sie `InvalidateSession` die-Methode aufrufen:
+Die APP kann den Scanprogramm gesteuert abbrechen, indem Sie die `InvalidateSession`-Methode aufrufen:
 
 ```csharp
 Session.InvalidateSession();
 ```
 
-In beiden Fällen wird die- `DidInvalidate` Methode des Delegaten aufgerufen.
+In beiden Fällen wird die `DidInvalidate`-Methode des Delegaten aufgerufen.
 
 ## <a name="summary"></a>Zusammenfassung
 

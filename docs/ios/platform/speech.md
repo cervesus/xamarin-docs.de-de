@@ -4,15 +4,15 @@ description: In diesem Artikel wird die neue Speech-API vorgestellt und gezeigt,
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 66bea7d2a9660018c7cec9b7bafeadafd5029ed9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 015be44f60dbf8cd2d70badd7c9edaf4e5a1d2a4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769426"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031458"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Spracherkennung in xamarin. IOS
 
@@ -33,13 +33,13 @@ Gemäß Apple hat die Spracherkennungs-API die folgenden Features und Vorteile:
 
 Die Spracherkennung wird in einer IOS-App implementiert, indem entweder Live oder vorab aufgezeichnete Audiodaten (in den von der API unterstützten Sprachen) abgerufen und an eine Spracherkennung übergeben werden, die eine klar Text Aufzeichnung der gesprochenen Wörter zurückgibt.
 
-[![](speech-images/speech01.png "Funktionsweise der Spracherkennung")](speech-images/speech01.png#lightbox)
+[![](speech-images/speech01.png "How Speech Recognition Works")](speech-images/speech01.png#lightbox)
 
 ### <a name="keyboard-dictation"></a>Tastatur Diktat
 
 Wenn die meisten Benutzer die Spracherkennung auf einem IOS-Gerät vorstellen, stellen Sie sich den integrierten Siri-sprach-Assistenten vor, der zusammen mit der Tastatur Diktat Erstellung in ios 5 mit dem iPhone 4S freigegeben wurde.
 
-Tastatur Diktat werden von jedem Interface-Element unterstützt, das textkit unterstützt `UITextField` ( `UITextArea`z. b. oder), und es wird durch den Benutzer aktiviert, indem er auf die Schaltfläche "Diktat" (direkt links neben der Leertaste) in der virtuellen IOS-Tastatur klickt.
+Die Tastatur Diktat wird von jedem Interface-Element unterstützt, das textkit unterstützt (z. b. `UITextField` oder `UITextArea`), und wird durch den Benutzer aktiviert, indem er auf die Schaltfläche "Diktat" (direkt links neben der Leertaste) in der virtuellen IOS-Tastatur klickt.
 
 Apple hat die folgende Tastatur Diktat Statistik veröffentlicht (seit 2011 erfasst):
 
@@ -72,62 +72,62 @@ Die Spracherkennungs-API liefert die Ergebnisse der aufrufenden App nahezu in Ec
 - Vertrauens Ebenen für die einzelnen Übersetzungen.
 - Informationen zur zeitlichen Steuerung.
 
-Wie bereits erwähnt, kann Audio für die Übersetzung entweder durch eine live Feed oder von aufgezeichnete Quelle und in über 50 Sprachen und Regionalsprachen von iOS 10 unterstützt bereitgestellt werden.
+Wie bereits erwähnt, kann Audioübertragung für die Übersetzung entweder durch einen LiveFeed oder von vorab aufgezeichneten Quellen und in allen mehr als 50 Sprachen und von IOS 10 unterstützten Dialekten bereitgestellt werden.
 
 Die Spracherkennungs-API kann auf allen IOS-Geräten verwendet werden, auf denen IOS 10 ausgeführt wird. in den meisten Fällen ist eine Live-Internetverbindung erforderlich, da der Großteil der Übersetzungen auf den Servern von Apple stattfindet. Das heißt, einige neuere IOS-Geräte unterstützen die Always on-Übersetzung für bestimmte Sprachen.
 
 Apple hat eine Verfügbarkeits-API enthalten, um zu bestimmen, ob eine bestimmte Sprache zum aktuellen Zeitpunkt für die Übersetzung verfügbar ist. Die APP sollte diese API verwenden, anstatt direkt auf die Internet Konnektivität zu testen.
 
-Wie oben im Abschnitt "Tastatur Diktat" erwähnt, erfordert die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf Apple-Servern über das Internet. daher _muss_ die APP die Berechtigung des Benutzers zum Durchführen der Erkennung anfordern, indem der `NSSpeechRecognitionUsageDescription` Schlüssel `SFSpeechRecognizer.RequestAuthorization` in der Datei und der Aufruf der-Methode. `Info.plist` 
+Wie oben im Abschnitt "Tastatur Diktat" erwähnt, erfordert die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf Apple-Servern über das Internet. daher _muss_ die APP die Berechtigung des Benutzers zum Durchführen der Erkennung anfordern, indem der `NSSpeechRecognitionUsageDescription`-Schlüssel in seiner `Info.plist` Datei und der Aufruf der `SFSpeechRecognizer.RequestAuthorization`-Methode. 
 
-Basierend auf der Quelle der Audiodaten, die für die Spracherkennung verwendet werden, sind möglicherweise `Info.plist` andere Änderungen an der Datei der APP erforderlich. Ausführliche Informationen finden Sie in unserer Dokumentation zu [Sicherheits-und Datenschutz Erweiterungen](~/ios/app-fundamentals/security-privacy.md) .
+Basierend auf der Quelle der Audiodaten, die für die Spracherkennung verwendet werden, sind möglicherweise andere Änderungen an der `Info.plist` Datei der APP erforderlich. Ausführliche Informationen finden Sie in unserer Dokumentation zu [Sicherheits-und Datenschutz Erweiterungen](~/ios/app-fundamentals/security-privacy.md) .
 
 ## <a name="adopting-speech-recognition-in-an-app"></a>Anwenden der Spracherkennung in einer APP
 
 Der Entwickler muss vier wichtige Schritte ausführen, um die Spracherkennung in einer IOS-APP zu übernehmen:
 
-- Geben Sie mithilfe des `Info.plist` `NSSpeechRecognitionUsageDescription` Schlüssels eine Verwendungs Beschreibung in der Datei der APP an. Eine Kamera-APP könnte z. b. die folgende Beschreibung enthalten: _"Dies ermöglicht es Ihnen, ein Foto zu nehmen, indem Sie das Wort" Käse "sagen._
-- Fordern Sie eine Autorisierung `SFSpeechRecognizer.RequestAuthorization` durch Aufrufen der-Methode an, um eine `NSSpeechRecognitionUsageDescription` Erläuterung (im obigen Schlüssel bereitgestellt) anzuzeigen, warum die APP sprach Erkennungs Zugriff auf den Benutzer in einem Dialogfeld wünscht, damit Sie akzeptiert oder abgelehnt werden kann.
+- Geben Sie mithilfe des `NSSpeechRecognitionUsageDescription` Schlüssels eine Verwendungs Beschreibung in der `Info.plist` Datei der APP an. Eine Kamera-APP könnte z. b. die folgende Beschreibung enthalten: _"Dies ermöglicht es Ihnen, ein Foto zu nehmen, indem Sie das Wort" Käse "sagen._
+- Fordern Sie die Autorisierung an, indem Sie die `SFSpeechRecognizer.RequestAuthorization`-Methode aufrufen, um eine Erklärung (im obigen `NSSpeechRecognitionUsageDescription` Schlüssel bereitzustellen) anzuzeigen, warum die APP sprach Erkennungs Zugriff auf den Benutzer in einem Dialogfeld wünscht, damit Sie akzeptiert oder abgelehnt werden kann.
 - Erstellen Sie eine sprach Erkennungs Anforderung:
-  - Verwenden Sie für vorab aufgezeichnete Audiodaten auf dem `SFSpeechURLRecognitionRequest` Datenträger die-Klasse.
-  - Verwenden Sie für liveaudiodaten (oder Audiodateien aus dem Arbeits `SFSPeechAudioBufferRecognitionRequest` Speicher) die-Klasse.
-- Übergeben Sie die sprach Erkennungs Anforderung an eine sprach Erkennungsfunktion`SFSpeechRecognizer`(), um die Erkennung zu beginnen. Die APP kann optional auf dem zurückgegebenen `SFSpeechRecognitionTask` enthalten, um die Erkennungsergebnisse zu überwachen und zu verfolgen.
+  - Verwenden Sie für vorab aufgezeichnete Audiodaten auf dem Datenträger die `SFSpeechURLRecognitionRequest`-Klasse.
+  - Verwenden Sie für liveaudiodaten (oder Audiodateien aus dem Arbeitsspeicher) die `SFSPeechAudioBufferRecognitionRequest`-Klasse.
+- Übergeben Sie die sprach Erkennungs Anforderung an eine sprach Erkennungsfunktion (`SFSpeechRecognizer`), um die Erkennung zu beginnen. Die APP kann optional auf dem zurückgegebenen `SFSpeechRecognitionTask` halten, um die Erkennungsergebnisse zu überwachen und zu verfolgen.
 
 Diese Schritte werden im folgenden ausführlich beschrieben.
 
 ### <a name="providing-a-usage-description"></a>Bereitstellen einer Nutzungs Beschreibung
 
-Gehen Sie folgendermaßen `NSSpeechRecognitionUsageDescription` vor, um `Info.plist` den erforderlichen Schlüssel in der Datei bereitzustellen:
+Gehen Sie folgendermaßen vor, um den erforderlichen `NSSpeechRecognitionUsageDescription` Schlüssel in der `Info.plist`-Datei bereitzustellen:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie auf `Info.plist` die Datei, um Sie zur Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die `Info.plist` Datei, um Sie zur Bearbeitung zu öffnen.
 2. Wechseln Sie zur **Quell** Ansicht: 
 
-    [![](speech-images/speech02.png "Die Quell Ansicht")](speech-images/speech02.png#lightbox)
-3. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
+    [![](speech-images/speech02.png "The Source view")](speech-images/speech02.png#lightbox)
+3. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**ein, `String` für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech03.png "Nssprachlos erkentionusagedescription wird hinzugefügt")](speech-images/speech03.png#lightbox)
-4. Wenn die APP die Live-Audioaufzeichnung verarbeitet, wird auch eine Beschreibung der Mikrofon Verwendung benötigt. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
+    [![](speech-images/speech03.png "Adding NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
+4. Wenn die APP die Live-Audioaufzeichnung verarbeitet, wird auch eine Beschreibung der Mikrofon Verwendung benötigt. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**ein, `String` für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech04.png "Hinzufügen von nsmikrophoneusagedescription")](speech-images/speech04.png#lightbox)
+    [![](speech-images/speech04.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
 5. Speichern Sie die Änderungen in der Datei.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie auf `Info.plist` die Datei, um Sie zur Bearbeitung zu öffnen.
-2. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
+1. Doppelklicken Sie auf die `Info.plist` Datei, um Sie zur Bearbeitung zu öffnen.
+2. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSSpeechRecognitionUsageDescription` für die **Eigenschaft**ein, `String` für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech03w.png "Nssprachlos erkentionusagedescription wird hinzugefügt")](speech-images/speech03w.png#lightbox)
-3. Wenn die APP die Live-Audioaufzeichnung verarbeitet, wird auch eine Beschreibung der Mikrofon Verwendung benötigt. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` als `String` - **Eigenschaft**für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
+    [![](speech-images/speech03w.png "Adding NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
+3. Wenn die APP die Live-Audioaufzeichnung verarbeitet, wird auch eine Beschreibung der Mikrofon Verwendung benötigt. Klicken Sie auf **neuen Eintrag hinzufügen**, geben Sie `NSMicrophoneUsageDescription` für die **Eigenschaft**ein, `String` für den **Typ** und eine **Verwendungs Beschreibung** als **Wert**ein. Beispiel: 
 
-    [![](speech-images/speech04w.png "Hinzufügen von nsmikrophoneusagedescription")](speech-images/speech04w.png#lightbox)
+    [![](speech-images/speech04w.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
 4. Speichern Sie die Änderungen in der Datei.
 
 -----
 
 > [!IMPORTANT]
-> Wenn Sie keinen der oben genannten `Info.plist` Schlüssel (`NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription`) bereitstellen, kann dies dazu führen, dass die APP ohne Warnung fehlschlägt, wenn Sie versuchen, auf die Spracherkennung oder das Mikrofon für liveaudiodaten zuzugreifen.
+> Wenn Sie einen der oben genannten `Info.plist` Schlüssel (`NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription`) nicht bereitstellen, kann dies dazu führen, dass die APP ohne Warnung fehlschlägt, wenn Sie versuchen, auf die Spracherkennung oder das Mikrofon für liveaudiodaten zuzugreifen.
 
 ### <a name="requesting-authorization"></a>Anfordern der Autorisierung
 
@@ -178,9 +178,9 @@ namespace MonkeyTalk
 }
 ```
 
-Die `RequestAuthorization` -Methode `SFSpeechRecognizer` der-Klasse fordert vom Benutzer die Berechtigung für den Zugriff auf die Spracherkennung mit dem Grund an, den `NSSpeechRecognitionUsageDescription` der Entwickler `Info.plist` im Schlüssel der Datei bereitgestellt hat.
+Die `RequestAuthorization`-Methode der `SFSpeechRecognizer`-Klasse fordert vom Benutzer die Berechtigung für den Zugriff auf die Spracherkennung mit dem Grund an, den der Entwickler im `NSSpeechRecognitionUsageDescription` Schlüssel der `Info.plist` Datei bereitgestellt hat.
 
-Ein `SFSpeechRecognizerAuthorizationStatus` Ergebnis wird an die Rückruf `RequestAuthorization` Routine der Methode zurückgegeben, die verwendet werden kann, um auf der Grundlage der Benutzer Berechtigung Aktionen auszuführen. 
+Ein `SFSpeechRecognizerAuthorizationStatus` Ergebnis wird an die Rückruf Routine der `RequestAuthorization` Methode zurückgegeben, die verwendet werden kann, um auf der Grundlage der Benutzer Berechtigung Aktionen auszuführen. 
 
 > [!IMPORTANT]
 > Apple schlägt vor, bis der Benutzer eine Aktion in der APP gestartet hat, die Spracherkennung erfordert, bevor Sie diese Berechtigung anfordern.
@@ -230,13 +230,13 @@ public void RecognizeFile (NSUrl url)
 }
 ```
 
-Wenn Sie diesen Code ausführlich betrachten, versucht er zunächst, eine Spracherkennung (`SFSpeechRecognizer`) zu erstellen. Wenn die Standardsprache für die Spracherkennung nicht unter `null` stützt wird, wird zurückgegeben, und die Funktionen werden beendet.
+Wenn Sie diesen Code ausführlich betrachten, versucht er zunächst, eine Spracherkennung (`SFSpeechRecognizer`) zu erstellen. Wenn die Standardsprache für die Spracherkennung nicht unterstützt wird, wird `null` zurückgegeben, und die Funktionen werden beendet.
 
-Wenn die Spracherkennung für die Standardsprache verfügbar ist, wird von der APP überprüft, ob Sie zurzeit für die Erkennung mithilfe der `Available` -Eigenschaft verfügbar ist. Beispielsweise ist die Erkennung möglicherweise nicht verfügbar, wenn das Gerät nicht über eine aktive Internetverbindung verfügt.
+Wenn die Spracherkennung für die Standardsprache verfügbar ist, wird von der APP überprüft, ob Sie zurzeit zur Erkennung verfügbar ist, indem die `Available`-Eigenschaft verwendet wird. Beispielsweise ist die Erkennung möglicherweise nicht verfügbar, wenn das Gerät nicht über eine aktive Internetverbindung verfügt.
 
 Eine `SFSpeechUrlRecognitionRequest` wird aus dem `NSUrl` Speicherort der vorab aufgezeichneten Datei auf dem IOS-Gerät erstellt und an die Spracherkennung übergeben, damit Sie mit einer Rückruf Routine verarbeitet werden kann.
 
-Wenn der Rückruf aufgerufen wird, ist ein `NSError` Fehler `null` aufgetreten, der behandelt werden muss. Da die Spracherkennung inkrementell erfolgt, kann die Rückruf Routine mehrmals aufgerufen werden, damit `SFSpeechRecognitionResult.Final` die-Eigenschaft überprüft wird, ob die Übersetzung abgeschlossen ist und die beste Version der Übersetzung geschrieben`BestTranscription`wird ().
+Wenn der Rückruf aufgerufen wird und die `NSError` nicht `null`, ist ein Fehler aufgetreten, der behandelt werden muss. Da die Spracherkennung inkrementell erfolgt, kann die Rückruf Routine mehrmals aufgerufen werden, sodass die `SFSpeechRecognitionResult.Final`-Eigenschaft überprüft, ob die Übersetzung abgeschlossen ist und die beste Version der Übersetzung geschrieben wird (`BestTranscription`).
 
 ### <a name="recognizing-live-speech"></a>Erkennen von Live Speech
 
@@ -317,7 +317,7 @@ private SFSpeechAudioBufferRecognitionRequest LiveSpeechRequest = new SFSpeechAu
 private SFSpeechRecognitionTask RecognitionTask;
 ```
 
-Es verwendet die AV Foundation zum Aufzeichnen von Audiodaten, die an `SFSpeechAudioBufferRecognitionRequest` einen zur Verarbeitung der Erkennungs Anforderung übermittelt werden:
+Es verwendet die AV Foundation zum Aufzeichnen von Audiodaten, die an einen `SFSpeechAudioBufferRecognitionRequest` zur Verarbeitung der Erkennungs Anforderung übermittelt werden:
 
 ```csharp
 var node = AudioEngine.InputNode;
@@ -343,7 +343,7 @@ if (error != null) {
 }
 ```
 
-Die Erkennungs Aufgabe wird gestartet, und ein Handle wird an die Erkennungs Aufgabe (`SFSpeechRecognitionTask`) beibehalten:
+Die Erkennungs Aufgabe wird gestartet, und ein Handle wird an die Erkennungs Aufgabe (`SFSpeechRecognitionTask`) aufbewahrt:
 
 ```csharp
 RecognitionTask = SpeechRecognizer.GetRecognitionTask (LiveSpeechRequest, (SFSpeechRecognitionResult result, NSError err) => {
@@ -367,10 +367,10 @@ AudioEngine.Stop ();
 RecognitionTask.Cancel ();
 ```
 
-Es ist wichtig, dass `RecognitionTask.Cancel` aufgerufen wird, wenn der Benutzer die Übersetzung abbricht, um sowohl Speicher als auch den Prozessor des Geräts freizugeben.
+Es ist wichtig, `RecognitionTask.Cancel` aufzurufen, wenn der Benutzer die Übersetzung abbricht, um sowohl Speicher als auch den Prozessor des Geräts freizugeben.
 
 > [!IMPORTANT]
-> Wenn Sie die `NSSpeechRecognitionUsageDescription` -oder `NSMicrophoneUsageDescription` `Info.plist` -Schlüssel nicht bereitstellen, kann dies dazu führen, dass die APP ohne Warnung fehlschlägt, wenn Sie versuchen,`var node = AudioEngine.InputNode;`auf die Spracherkennung oder das Mikrofon für Livedaten zuzugreifen Weitere Informationen finden Sie im obigen Abschnitt **Bereitstellen einer Verwendungs Beschreibung** .
+> Wenn Sie die `NSSpeechRecognitionUsageDescription` oder `NSMicrophoneUsageDescription` `Info.plist` Schlüssel nicht bereitstellen, kann dies dazu führen, dass die APP ohne Warnung fehlschlägt, wenn Sie versuchen, auf die Spracherkennung oder das Mikrofon für liveaudiodaten (`var node = AudioEngine.InputNode;`) zuzugreifen. Weitere Informationen finden Sie im obigen Abschnitt **Bereitstellen einer Verwendungs Beschreibung** .
 
 ## <a name="speech-recognition-limits"></a>Grenzen der Spracherkennung
 

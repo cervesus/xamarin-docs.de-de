@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: efd120e785e55bfa3806cd193bd5f155f35a5e18
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767725"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032731"
 ---
 # <a name="watchos-troubleshooting"></a>Problembehandlung bei watchos
 
@@ -40,14 +40,14 @@ Diese Seite enthält weitere Informationen und Problem Umgehungen für Probleme,
 
 - Wenn die **Info. plist** -Datei des Watch-Erweiterungsprojekts > die wkapp-Bundle-ID nicht ordnungsgemäß auf die **Paket-ID**der Watch-APP [festgelegt](~/ios/watchos/get-started/project-references.md) ist, kann der Debugger keine Verbindung herstellen, und Visual Studio für Mac wartet mit der Meldung "der *Debugger wird gewartet. Verbinden "* .
 
-- Debugging wird im **Benachrichtigungs** Modus unterstützt, kann jedoch unzuverlässig sein. Der Wiederholungsversuch funktioniert manchmal. Vergewissern Sie sich, dass die Datei " **Info. plist** `WKCompanionAppBundleIdentifier` " der Watch-APP so festgelegt ist, dass Sie mit der Bündel-ID der übergeordneten IOS-app (d. h. der auf dem iPhone ausgeführten)
+- Debugging wird im **Benachrichtigungs** Modus unterstützt, kann jedoch unzuverlässig sein. Der Wiederholungsversuch funktioniert manchmal. Vergewissern Sie sich, dass die **Info. plist** -`WKCompanionAppBundleIdentifier` der Watch-APP so festgelegt ist, dass Sie mit der Bündel-ID der übergeordneten IOS-/Container-app (d. h. der Anwendung auf dem iPhone)
 
 - der IOS-Designer zeigt keine EntryPoint-Pfeile für einen Blick oder Benachrichtigungs Schnittstellen Controller an.
 
 - Sie können einem Storyboard nicht zwei `WKNotificationControllers` hinzufügen.
-    Problemumgehung: Das `notificationCategory` -Element in der Storyboard-XML-Datei wird immer `id`mit dem gleichen eingefügt. Um dieses Problem zu umgehen, können Sie zwei (oder mehr) Benachrichtigungs Controller hinzufügen, die storyboarddatei in einem Text-Editor öffnen und `id` dann das Element manuell als eindeutig ändern.
+    Problem Umgehung: das `notificationCategory`-Element in der Storyboard-XML-Datei wird immer mit dem gleichen `id`eingefügt. Um dieses Problem zu umgehen, können Sie zwei (oder mehr) Benachrichtigungs Controller hinzufügen, die storyboarddatei in einem Text-Editor öffnen und dann das `id` Element manuell ändern, damit es eindeutig ist.
 
-    [![](troubleshooting-images/duplicate-id-sml.png "Öffnen Sie die storyboarddatei in einem Text-Editor, und ändern Sie das ID-Element manuell in eindeutig.")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - Wenn Sie versuchen, die APP zu starten, wird möglicherweise die Fehlermeldung "die Anwendung wurde nicht erstellt" angezeigt. Dies tritt nach einer **Bereinigung** auf, wenn das Startprojekt auf das Überwachungs Erweiterungsprojekt festgelegt ist.
     Die Lösung besteht darin, den **Build auszuwählen > alle neu zu erstellen** und dann die APP neu zu starten.
@@ -74,7 +74,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
 2. Das Dialogfeld, das angezeigt wird, enthält ein **Alpha** -Kontrollkästchen, wenn ein Alphakanal vorhanden ist.
 
-    ![](troubleshooting-images/remove-alpha-sml.png "Das Dialogfeld, das angezeigt wird, enthält ein Alpha-Kontrollkästchen, wenn ein Alphakanal vorhanden ist.")
+    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
 
 3. *Deaktivieren* Sie das Kontrollkästchen **Alpha** , und **Speichern** Sie die Datei am richtigen Speicherort.
 
@@ -91,15 +91,15 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
 1. Öffnen Sie das **Interface. Storyboard** der Watch-app in **Xcode Interface Builder**.
 
-    ![](troubleshooting-images/add-6.png "Öffnen des Storyboards in Xcode Interface Builder")
+    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
 
-2. Ziehen Sie ein `InterfaceController` neues auf das Storyboard:
+2. Ziehen Sie eine neue `InterfaceController` auf das Storyboard:
 
-    ![](troubleshooting-images/add-1.png "Ein interfakecontroller")
+    ![](troubleshooting-images/add-1.png "A InterfaceController")
 
 3. Nun können Sie Steuerelemente auf den Schnittstellen Controller ziehen (z. b. Bezeichnungen und Schaltflächen) Sie können jedoch noch keine Outlets oder Aktionen erstellen, da keine **h** -Header Datei vorhanden ist. Die folgenden Schritte bewirken, dass die erforderliche **. h** -Header Datei erstellt wird.
 
-    ![](troubleshooting-images/add-2.png "Eine Schaltfläche im Layout")
+    ![](troubleshooting-images/add-2.png "A button in the layout")
 
 4. Schließen Sie das Storyboard, und kehren Sie zu Visual Studio für Mac zurück. Erstellen Sie eine C# neue Datei **MyInterfaceController.cs** (oder einen beliebigen Namen) im **App-Erweiterungs** Projekt (nicht in der Watch-APP selbst, in der sich das Storyboard befindet). Fügen Sie den folgenden Code hinzu (Aktualisieren von Namespace, Klassenname und Konstruktorname):
 
@@ -137,7 +137,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
     }
     ```
 
-5. Erstellen Sie eine C# weitere neue Datei **MyInterfaceController.Designer.cs** im **App-Erweiterungs** Projekt, und fügen Sie den folgenden Code hinzu. Achten Sie darauf, dass Sie den Namespace, den Klassennamen `Register` und das Attribut aktualisieren:
+5. Erstellen Sie eine C# weitere neue Datei **MyInterfaceController.Designer.cs** im **App-Erweiterungs** Projekt, und fügen Sie den folgenden Code hinzu. Achten Sie darauf, dass Sie den Namespace, den Klassennamen und das `Register` Attribut aktualisieren:
 
     ```csharp
     using Foundation;
@@ -158,34 +158,34 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
     > [!TIP]
     > Sie können diese Datei (optional) zu einem untergeordneten Knoten der ersten Datei machen, indem Sie Sie auf C# die andere Datei in der Visual Studio für Mac Lösungspad ziehen. Diese wird dann wie folgt angezeigt:
 
-    ![](troubleshooting-images/add-5.png "Der lösungspad")
+    ![](troubleshooting-images/add-5.png "The Solution pad")
 
-6. Wählen Sie **Erstellen > alles erstellen** , damit die Xcode-Synchronisierung die neue Klasse ( `Register` über das-Attribut) erkennt, die wir verwendet haben.
+6. Wählen Sie **Erstellen > alles erstellen** , damit die Xcode-Synchronisierung die neue Klasse (über das `Register`-Attribut) erkennt, die wir verwendet haben.
 
 7. Öffnen Sie das Storyboard erneut, indem Sie mit der rechten Maustaste auf die storyboarddatei Watch APP und dann auf **Öffnen mit > Xcode Interface Builder**klicken:
 
-    ![](troubleshooting-images/add-6.png "Öffnen des Storyboards in Interface Builder")
+    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
 8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`
     Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdown Liste **Klasse:** angezeigt werden, und Sie können es von dort aus auswählen.
 
-    ![](troubleshooting-images/add-4.png "Festlegen einer benutzerdefinierten Klasse")
+    ![](troubleshooting-images/add-4.png "Setting a custom class")
 
 9. Wählen Sie in Xcode die Ansicht des **Assistenten-Editors** aus (das Symbol mit zwei überlappenden Kreisen), sodass Sie das Storyboard und den Code nebeneinander sehen können:
 
-    ![](troubleshooting-images/add-7.png "Das Symbolleisten Element des Assistenten-Editors")
+    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
 
     Wenn sich der Fokus im Code Bereich befindet, stellen Sie sicher, dass Sie die **. h** -Header Datei betrachten, und wenn Sie nicht mit der rechten Maustaste in die Breadcrumb-Leiste klicken und die richtige Datei auswählen (**myinterfakecontroller. h).**
 
-    ![](troubleshooting-images/add-8.png "Wählen Sie myinterfakecontroller aus.")
+    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
 
 10. Nun können Sie Outlets und Aktionen durch Drücken von **Strg + Drag** & amp; Drop aus dem Storyboard in die **. h** -Header Datei erstellen.
 
-    ![](troubleshooting-images/add-9.png "Erstellen von Outlets und Aktionen")
+    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
 
     Wenn Sie den Zieh Vorgang freigeben, werden Sie aufgefordert, auszuwählen, ob ein Outlet oder eine Aktion erstellt werden soll, und den Namen auszuwählen:
 
-    ![](troubleshooting-images/add-a.png "Das Outlet-und ein Action-Dialogfeld")
+    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
 
 11. Nachdem die storyboardänderungen gespeichert und Xcode geschlossen wurde, kehren Sie zu Visual Studio für Mac zurück. Die Header Dateiänderungen werden erkannt, und der **Designer.cs** -Datei wird automatisch Code hinzugefügt:
 
@@ -224,7 +224,7 @@ Im folgenden finden Sie ein vollständiges Beispiel (das im Terminal als einzeln
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-Der Parameter, den Sie aktualisieren müssen, um Ihre APP `launchsimwatch`widerzuspiegeln, lautet:
+Der Parameter, den Sie aktualisieren müssen, um Ihre APP widerzuspiegeln, ist `launchsimwatch`:
 
 ### <a name="--launchsimwatch"></a>--launchsimwatch
 
@@ -241,7 +241,7 @@ Beispiel:
 
 ## <a name="notification-mode"></a>Benachrichtigungs Modus
 
-Zum Testen des [ **Benachrichtigungs** Modus](~/ios/watchos/platform/notifications.md)der APP legen Sie `watchlaunchmode` den- `Notification` Parameter auf fest, und geben Sie einen Pfad zu einer JSON-Datei an, die eine Test Benachrichtigungs Nutzlast enthält.
+Legen Sie zum Testen des [ **Benachrichtigungs** Modus](~/ios/watchos/platform/notifications.md)der APP den `watchlaunchmode`-Parameter auf `Notification` fest, und geben Sie einen Pfad zu einer JSON-Datei an, die eine Test Benachrichtigungs Nutzlast enthält.
 
 Der Nutz Last Parameter ist für den Benachrichtigungs Modus *erforderlich* .
 
@@ -293,5 +293,5 @@ Beispiel:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WatchKitCatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [WatchTables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)
+- [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Watchtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)

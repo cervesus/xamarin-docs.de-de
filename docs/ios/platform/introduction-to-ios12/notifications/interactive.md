@@ -4,21 +4,21 @@ description: Mit IOS 12 ist es möglich, interaktive Benutzeroberflächen für l
 ms.prod: xamarin
 ms.assetid: E3562E1B-E0EF-4C99-9F51-59DE22AFDE46
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 572b369755e37f123fbfdf5850a635e7ada12a9b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e629cd8f481558991d02c7fb879502ebd54753bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291235"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031943"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Interaktive Benachrichtigungs Benutzeroberflächen in xamarin. IOS
 
 [Erweiterungen für Benachrichtigungs Inhalte](~/ios/platform/user-notifications/advanced-user-notifications.md), die in ios 10 eingeführt wurden, ermöglichen das Erstellen benutzerdefinierter Benutzeroberflächen für Benachrichtigungen. Ab IOS 12 können Benachrichtigungs Benutzerschnittstellen interaktive Elemente wie Schaltflächen und Schieberegler enthalten.
 
-## <a name="sample-app-redgreennotifications"></a>Beispiel-App: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Beispiel-App: redgreenbenachrichtigungen
 
 Die Beispiel-APP [redgreenbenachrichtigungen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) enthält eine Erweiterung für Benachrichtigungs Inhalte mit einer interaktiven Benutzeroberfläche.
 
@@ -59,14 +59,14 @@ In der Beispiel-app enthält die **Info. plist** -Datei im Projekt **redgreennot
 Beachten Sie die folgenden Features:
 
 - Das `UNNotificationExtensionCategory` Array gibt den Typ der Benachrichtigungs Kategorien an, die von der Inhalts Erweiterung behandelt werden.
-- Um interaktive Inhalte zu unterstützen, legt die Erweiterung für Benachrichtigungs `UNNotificationExtensionUserInteractionEnabled` Inhalte den `true`Schlüssel auf fest.
+- Um interaktive Inhalte zu unterstützen, legt die Erweiterung für Benachrichtigungs Inhalte den `UNNotificationExtensionUserInteractionEnabled` Schlüssel auf `true`fest.
 - Der `UNNotificationExtensionInitialContentSizeRatio` Schlüssel gibt das anfängliche height/width-Verhältnis für die Schnittstelle der Inhalts Erweiterung an.
 
 ## <a name="interactive-interface"></a>Interaktive Oberfläche
 
-**Maininterface. Storyboard**, das die Schnittstelle für eine Erweiterung für Benachrichtigungs Inhalte definiert, ist ein Standard-Storyboard, das einen einzelnen Ansichts Controller enthält. In der Beispiel-App weist der Ansichts Controller den `NotificationViewController`Typ auf und enthält eine Bildansicht, drei Schaltflächen und einen Schieberegler. Das Storyboard verknüpft diese Steuerelemente mit Handlern, die in **NotificationViewController.cs**definiert sind:
+**Maininterface. Storyboard**, das die Schnittstelle für eine Erweiterung für Benachrichtigungs Inhalte definiert, ist ein Standard-Storyboard, das einen einzelnen Ansichts Controller enthält. In der Beispiel-App weist der Ansichts Controller den Typ `NotificationViewController`auf und enthält eine Bildansicht, drei Schaltflächen und einen Schieberegler. Das Storyboard verknüpft diese Steuerelemente mit Handlern, die in **NotificationViewController.cs**definiert sind:
 
-- Mit dem Schaltflächen Handler **app starten** wird die `PerformNotificationDefaultAction` Aktions `ExtensionContext`Methode auf aufgerufen, die die APP startet:
+- Mit dem Schaltflächen Handler **app starten** wird die `PerformNotificationDefaultAction` Aktionsmethode auf `ExtensionContext`aufgerufen, der die APP startet:
 
     ```csharp
     partial void HandleLaunchAppButtonTap(UIButton sender)
@@ -75,7 +75,7 @@ Beachten Sie die folgenden Features:
     }
     ```
 
-    In der APP kann das Benutzer Benachrichtigungs Center `Delegate` (in der Beispiel-APP `AppDelegate`) auf die Interaktion in der `DidReceiveNotificationResponse` -Methode reagieren:
+    In der APP kann die `Delegate` des Benutzer Benachrichtigungs Centers (in der Beispiel-App `AppDelegate`) auf die Interaktion in der `DidReceiveNotificationResponse`-Methode reagieren:
 
     ```csharp
     [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -87,7 +87,7 @@ Beachten Sie die folgenden Features:
             // ...
     ```
 
-- Der Handler für das Verwerfen von `DismissNotificationContentExtension` **Benachrichtigungs** Schaltflächen Ruft auf auf `ExtensionContext`und schließt die Benachrichtigung:
+- Der Handler für das **Verwerfen von Benachrichtigungs** Schaltflächen ruft `DismissNotificationContentExtension` auf `ExtensionContext`auf, der die Benachrichtigung schließt:
 
     ```csharp
     partial void HandleDismissNotificationButtonTap(UIButton sender)

@@ -4,15 +4,15 @@ description: In diesem Artikel werden alle neuen und geänderten APIs und Featur
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 465c8df864669ad47acd47ae380574e247a0acd6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292866"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032228"
 ---
 # <a name="introduction-to-ios-10"></a>Einführung in iOS 10
 
@@ -30,11 +30,11 @@ Die echte Tone-Anzeige Technologie von Apple verwendet den Umgebungslichtsensor 
 
 Die folgenden Werte sind verfügbar:
 
-- `UIWhitePointAdaptivityStyleStandard`**Standard** -verwenden Sie die standardmäßige-weiß-Punkt-Adaptivität.
-- `UIWhitePointAdaptivityStyleReading`-Wird für Lese orientierte Apps verwendet.
-- `UIWhitePointAdaptivityStyleGame`-Wird für Spiele orientierte Apps verwendet.
-- `UIWhitePointAdaptivityStyleVideo`-Wird für Video orientierte Apps verwendet.
-- `UIWhitePointAdaptivityStylePhoto`-Wird für apps mit Fokus Fokus verwendet, bei denen die Farb Treue wichtiger als Umgebungs-weiß Punkt Anpassungen ist.
+- Standard **mäßig** verwenden Sie die standardmäßige-weiß Punkt-Adaptivität. `UIWhitePointAdaptivityStyleStandard`
+- `UIWhitePointAdaptivityStyleReading`, die für Lese orientierte Apps verwendet werden.
+- `UIWhitePointAdaptivityStyleGame` für Spiele orientierte Apps verwendet.
+- `UIWhitePointAdaptivityStyleVideo`, die für Video orientierte Apps verwendet werden.
+- `UIWhitePointAdaptivityStylePhoto`, die für fotografische Apps verwendet werden, bei denen die Farb Treue wichtiger ist als Umgebungs-weiß Punkt Anpassungen.
 
 ## <a name="app-extensions"></a>App-Erweiterungen
 
@@ -49,8 +49,8 @@ Apple hat mehrere neue APP-Erweiterungs Punkte in ios 10 bereitgestellt:
 
 Außerdem haben Erweiterungen von Drittanbieter-Tastatur-Apps die folgenden Erweiterungen:
 
-- Die neue `DocumentInputMode` -Eigenschaft `UITextDocumentProxy` der-Klasse kann die Eingabe Sprache eines Dokuments bestimmen und die Ausrichtung der Tastatur Erweiterung an diese Sprache ermöglichen.
-- Mit der `HandleInputModeList` neuen-Methode kann die Tastatur Erweiterung das Tastaturauswahl Menü des Systems als Reaktion auf die Kugel Taste, die getippt wird, anzeigen.
+- Die neue `DocumentInputMode`-Eigenschaft der `UITextDocumentProxy`-Klasse kann die Eingabe Sprache eines Dokuments bestimmen und die Ausrichtung der Tastatur Erweiterung an dieser Sprache ermöglichen.
+- Die neue `HandleInputModeList`-Methode ermöglicht der Tastatur Erweiterung, das Tastaturauswahl Menü des Systems als Reaktion auf die getippt Kugel Taste anzuzeigen.
 
 Weitere Informationen finden Sie in unserer [Einführung in Extensions](~/ios/platform/extensions.md), [Message App Integration](~/ios/platform/message-app-integration/index.md), [Introduction to proaktive Vorschläge](~/ios/platform/search/proactive-suggestions.md), [Introduction to Sirikit](~/ios/platform/sirikit/index.md), [Introduction to User Benachrichtigungen](~/ios/platform/user-notifications/index.md) und Apple [ Programmier Handbuch](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)für die APP-Erweiterung.
 
@@ -59,7 +59,7 @@ Weitere Informationen finden Sie in unserer [Einführung in Extensions](~/ios/pl
 Kernspotlight in ios 10 bietet verschiedene Verbesserungen bei der APP-Suche, wie z.b.:
 
 - **Crowdsource Deep-Link-Beliebtheit (mit differenziellen Datenschutz)** : bietet eine Möglichkeit zum herauf Stufen von Deep-verknüpften App-Inhalten in den Suchergebnissen.
-- **In-App-Suche** : Verwenden Sie `CSSearchQuery` die neue-Klasse, um in-App-Spotlight-Suchfunktionen wie die Funktionsweise der Mail-, Nachrichten-und Notes-apps bereitzustellen
+- **In-App-Suche** : Verwenden Sie die neue `CSSearchQuery`-Klasse, um eine in-App-Spotlight-Suchfunktion bereitzustellen, ähnlich der Funktionsweise von Mail-, Nachrichten-und Notizen
 - **Such Fortsetzung** : ermöglicht einem Benutzer das Starten einer Suche in Spotlight oder Safari, das Öffnen einer APP und das Fortsetzen der Suche.
 - **Visualisierung der Überprüfungs Ergebnisse** : das [Validierungs Tool der App Search-API](https://search.developer.apple.com/appsearch-validation-tool) von Apple zeigt nun eine visuelle Darstellung des Markups einer Website und die Deep-Verknüpfung bei der Vorbildung von Tests an.
 - **Nachrichten-APP-Image Freigabe** : ermöglicht beliebte in-App-Images, die für die Freigabe in Nachrichten (über eine Nachrichten-APP-Erweiterung) bereitgestellt werden, um Sie in Spotlight
@@ -72,7 +72,7 @@ Apple hat mehrere Verbesserungen an Apple Pay in ios 10 vorgenommen, mit denen d
 
 Mit IOS 10 wurden mehrere neue APIs hinzugefügt, die mit IOS und watchos funktionieren, um dynamische Zahlungs Netzwerke und eine neue Sandkasten Testumgebung zu unterstützen.
 
-Außerdem wurde das passkit-Framework erweitert, um Apple Pay außerhalb von `UIKit` und zu unterstützen, damit Kartenaussteller Ihre Karten innerhalb Ihrer Apps präsentieren können.
+Außerdem wurde das passkit-Framework erweitert, um Apple Pay außerhalb `UIKit` zu unterstützen, und damit Kartenaussteller Ihre Karten in ihren apps präsentieren können.
 
 Weitere Informationen finden Sie im Leitfaden zur [Apple Pay Erweiterungen](~/ios/platform/apple-pay.md) .
 
@@ -81,9 +81,9 @@ Weitere Informationen finden Sie im Leitfaden zur [Apple Pay Erweiterungen](~/io
 Apple hat eine Reihe von Erweiterungen zu IOS 10,3 hinzugefügt, die es einer APP ermöglichen, Ihr Symbol zu verwalten:
 
 - `ApplicationIconBadgeNumber`: Ruft das Badge des App-Symbols im Springboard ab oder legt es fest.
-- `SupportsAlternateIcons`: Wenn `true` die APP über eine alternative Gruppe von Symbolen verfügt.
-- `AlternateIconName`-Gibt den Namen des alternativen Symbols zurück, das derzeit `null` ausgewählt ist, oder, wenn das primäre Symbol verwendet wird.
-- `SetAlternameIconName`-Verwenden Sie diese Methode, um das Symbol der APP auf das angegebene Alternative Symbol zu wechseln.
+- `SupportsAlternateIcons`: Wenn `true` der APP ein alternativer Satz von Symbolen.
+- `AlternateIconName`: gibt den Namen des alternativen Symbols zurück, das derzeit ausgewählt ist, oder `null`, wenn das primäre Symbol verwendet wird.
+- `SetAlternameIconName`: Verwenden Sie diese Methode, um das Symbol der APP auf das angegebene Alternative Symbol zu wechseln.
 
 Weitere Informationen finden Sie in unserem Leitfaden für [Alternative App-Symbole](~/ios/app-fundamentals/images-icons/alternate-app-icons.md) .
 
@@ -112,7 +112,7 @@ Mit IOS 10 ermöglicht Apple allen Benutzern von großen Zeit Gebern und neuen O
 
 Auf iPhone 7 und iPhone 7 plus enthält Apple neue, willkürliche Antworten, die zusätzliche Möglichkeiten zur physischen Einbindung des Benutzers bereitstellen. Verwenden Sie die neuen Optionen für "taktiles Feedback", um die Aufmerksamkeit des Benutzers zu erhalten und seine Aktionen zu verstärken
 
-Mehrere integrierte Benutzeroberflächen Elemente bieten bereits haptisches Feedback wie z. b. Picker, Switches und Schieberegler. IOS 10 bietet nun die Möglichkeit, die Haptik mithilfe einer konkreten Unterklasse `UIFeedbackGenerator` der-Klasse Programm gesteuert zu initiieren.
+Mehrere integrierte Benutzeroberflächen Elemente bieten bereits haptisches Feedback wie z. b. Picker, Switches und Schieberegler. IOS 10 bietet nun die Möglichkeit, die Haptik mithilfe einer konkreten Unterklasse der `UIFeedbackGenerator` Klasse Programm gesteuert zu initiieren.
 
 Weitere Informationen finden Sie im Leitfaden zur [Bereitstellung von willkürlichen Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md) .
 
@@ -133,7 +133,7 @@ Weitere Informationen finden Sie im Leitfaden [Einführung in proaktives vorschl
 
 ## <a name="request-app-review"></a>Anfordern der App-Prüfung
 
-Neu bei IOS 10,3, mit `RequestReview()` der-Methode kann eine IOS-App den Benutzer auffordern, ihn zu bewerten oder zu überprüfen. Diese Methode kann zwar an jeder Stelle aufgerufen werden, an der Sie in der Benutzerfunktion sinnvoll ist, der Überprüfungsprozess wird jedoch von der App Store-Richtlinie gesteuert und behandelt. Folglich kann diese Methode eine Warnung anzeigen und nicht als Antwort auf eine Benutzeraktion aufgerufen werden, z. b. das Tippen auf eine Schaltfläche.
+Neu bei IOS 10,3, mit der `RequestReview()`-Methode kann eine IOS-App den Benutzer auffordern, ihn zu bewerten oder zu überprüfen. Diese Methode kann zwar an jeder Stelle aufgerufen werden, an der Sie in der Benutzerfunktion sinnvoll ist, der Überprüfungsprozess wird jedoch von der App Store-Richtlinie gesteuert und behandelt. Folglich kann diese Methode eine Warnung anzeigen und nicht als Antwort auf eine Benutzeraktion aufgerufen werden, z. b. das Tippen auf eine Schaltfläche.
 
 Weitere Informationen finden Sie in unserem Handbuch zum [anfordern von App-Überprüfungen](~/ios/platform/request-app-review.md) .
 
@@ -141,7 +141,7 @@ Weitere Informationen finden Sie in unserem Handbuch zum [anfordern von App-Übe
 
 Apple hat mehrere Verbesserungen hinsichtlich Sicherheit und Datenschutz in ios 10 vorgenommen, die dem Entwickler dabei helfen, die Sicherheit Ihrer apps zu verbessern und den Datenschutz für den Endbenutzer zu gewährleisten.
 
-Folglich müssen apps, die unter IOS 10 (oder höher) ausgeführt werden, ihre Absicht, auf bestimmte Features oder Benutzerinformationen zuzugreifen, statisch deklarieren, indem Sie einen oder mehrere Daten `Info.plist` Schutz spezifische Schlüssel in Ihren Dateien eingeben, die dem Benutzer erklären, warum die APP Zugriff erhalten möchte.
+Folglich müssen apps, die unter IOS 10 (oder höher) ausgeführt werden, ihre Absicht, auf bestimmte Features oder Benutzerinformationen zuzugreifen, statisch deklarieren, indem Sie einen oder mehrere Datenschutz spezifische Schlüssel in den `Info.plist` Dateien eingeben, die dem Benutzer erklären, warum die APP Zugriff erhalten möchte.
 
 Weitere Informationen finden Sie im Leitfaden zu den [Sicherheits-und Datenschutz Erweiterungen](~/ios/app-fundamentals/security-privacy.md) .
 
@@ -168,7 +168,7 @@ Weitere Informationen finden Sie im Leitfaden [Einführung in den Sirikit](~/ios
 
 IOS 10 enthält eine neue Sprach-API, die es der App ermöglicht, fortlaufende sprach Erkennungs-und transkrinungs Sprache (aus Live-oder aufgezeichneten Audiodatenströmen) in Text zu unterstützen.
 
-Da die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf Apple-Servern erfordert, _muss_ die APP die Berechtigung des Benutzers zum Durchführen der Erkennung `NSSpeechRecognitionUsageDescription` anfordern, indem `Info.plist` der Schlüssel in seine Datei eingeschlossen und der `SFSpeechRecognizer.RequestAutorization` -Methode.
+Da die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf den Servern von Apple erfordert, _muss_ die APP die Berechtigung des Benutzers zum Durchführen der Erkennung anfordern, indem der `NSSpeechRecognitionUsageDescription` Schlüssel in seine `Info.plist` Datei eingeschlossen und die `SFSpeechRecognizer.RequestAutorization` aufgerufen wird. anzuwenden.
 
 Weitere Informationen finden Sie in unserem Leitfaden [Einführung in die Spracherkennung](~/ios/platform/speech.md) .
 
@@ -194,9 +194,9 @@ Außerdem wurde [UIKit](xref:UIKit) so geändert, dass Sie in den neuen erweiter
 
 Apple bietet bei der Arbeit mit breiten Farben die folgenden bewährten Methoden:
 
-- [Uicolor](xref:UIKit.UIColor) verwendet nun den sRGB-Farbraum und gibt keine Werte mehr in den `0.0` Bereich `1.0` bis an. Wenn die APP auf dem vorherigen Verhalten der Klammer basiert, muss Sie für IOS 10 geändert werden.
-- Die Zeichnungs Umgebung wird für den sRGB-Farbraum konfiguriert, wenn eine `UIView` benutzerdefinierte Zeichnung auf einem iPad pro durchgeführt wird.
-- Wenn die APP ein benutzerdefiniertes `UIImages`Rendering von ausführt, verwenden Sie die neue [uigraphicsimagerender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) -Klasse, um die Verwendung der Formate für erweiterte Bereiche oder Standard Bereiche anzugeben.
+- [Uicolor](xref:UIKit.UIColor) verwendet nun den sRGB-Farbraum und gibt keine Werte mehr an die `0.0` an `1.0` Bereich an. Wenn die APP auf dem vorherigen Verhalten der Klammer basiert, muss Sie für IOS 10 geändert werden.
+- Die Zeichnungs Umgebung wird für den sRGB-Farbraum beim Ausführen benutzerdefinierter `UIView` zeichnen auf einem iPad pro konfiguriert.
+- Wenn die APP ein benutzerdefiniertes Rendering von `UIImages`ausführt, verwenden Sie die neue [uigraphicsimagerender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) -Klasse, um die Verwendung der Formate für erweiterte Bereiche oder Standard Bereiche anzugeben.
 - Wenn Sie eine API auf niedriger Ebene, wie z. b. Kern Grafiken oder Metal, zum Bereitstellen der Bildverarbeitung verwenden, sollte der Entwickler einen erweiterten Bereichs Farbraum und ein Pixel Format verwenden, der 16-Bit-Gleit Komma Werte unterstützt. Bei Bedarf muss der Entwickler die Farbkomponenten Werte manuell einspannen.
 - Haupt Grafiken, Kern Bild-und Metal-leistungshader bieten neue Methoden zum Wechseln zwischen den beiden Farbräumen.
 
@@ -218,14 +218,14 @@ Weitere Informationen finden Sie in unserem Handbuch zu [zusätzlichen Framework
 
 Die folgenden APIs wurden in ios 10 als veraltet markiert:
 
-- Die `CKDiscoverAllContactsOperation`Klassen `CKDiscoveredUserInfo` `CKFetchRecordChangesOperation` , undwurdenincloudkitfürIOS10alsveraltetmarkiert.`CKDiscoverUserInfosOperation` Verwenden Sie stattdessen die Klassen [ckdiscoveralluseridentitiesoperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation), [ckuseridentity](xref:CloudKit.CKUserIdentity) und [ckfetchrecordzonechangesoperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) (die die Daten Satz Freigabe unterstützen).
+- Die Klassen `CKDiscoverAllContactsOperation`, `CKDiscoveredUserInfo`, `CKDiscoverUserInfosOperation` und `CKFetchRecordChangesOperation` wurden in cloudkit für IOS 10 als veraltet markiert. Verwenden Sie stattdessen die Klassen [ckdiscoveralluseridentitiesoperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation), [ckuseridentity](xref:CloudKit.CKUserIdentity) und [ckfetchrecordzonechangesoperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) (die die Daten Satz Freigabe unterstützen).
 - Mehrere [ckabonnement](https://developer.apple.com/reference/cloudkit/cksubscription) -APIs (z. b. zonenbasierte und Abfrage basierte Abonnements) sind veraltet. Verwenden Sie stattdessen die [ckrecordzonesub-](xref:CloudKit.CKRecordZoneSubscription) und [ckqueryabonnement-](xref:CloudKit.CKQuerySubscription) APIs.
 - [Nspersistentstorecoordinator](xref:CoreData.NSPersistentStoreCoordinator) -Symbole in Bezug auf den universellen Inhalt wurden als veraltet markiert.
-- `ADBannerView`und verwandte Symbole in der [UIViewController](xref:UIKit.UIViewController) -Klasse sind veraltet. `ADInterstitialAd`
+- `ADBannerView`, `ADInterstitialAd` und verwandte Symbole in der [UIViewController](xref:UIKit.UIViewController) -Klasse sind veraltet.
 - [Skuniform](https://developer.apple.com/reference/spritekit/skuniform) -Symbole im Zusammenhang mit Gleit Komma Werten sind veraltet.
-- Die `UILocalNotification`Klassen `UIMutableUserNotificationAction`,, `UIMutableUserNotificationCategory`, `UIUserNotificationAction` undvonUIKit`UIUserNotificationSettings`sindveraltet. `UIUserNotificationCategory` Verwenden Sie stattdessen das [Benutzer Benachrichtigungs](#user-notifications) Framework.
-- Die `HandleActionForLocalNotification`watchkit `DidReceiveLocalNotification` - `DidReceiveRemoteNotification` Methoden, `HandleActionForRemoteNotification`und wurden als veraltet markiert. Verwenden Sie `HandleActionForNotification` stattdessen `DidReceiveNotification` die Methoden und.
-- Die `DidReceiveLocalNotification` - `DidReceiveRemoteNotification` Methode und die-Methode des [wkextensiondelegaten](https://developer.apple.com/reference/watchkit/wkextensiondelegate) sind veraltet. Erstellen Sie eine Instanz von [unusernotificationcenterdelegat](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate) , die die entsprechenden Methoden implementiert, und `Delegate` weisen Sie Sie der-Eigenschaft des [unusernotificationcenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter) -Objekts zu.
+- Die `UILocalNotification`-, `UIMutableUserNotificationAction`-, `UIMutableUserNotificationCategory`-, `UIUserNotificationAction`-, `UIUserNotificationCategory`-und `UIUserNotificationSettings`-Klassen von UIKit sind veraltet. Verwenden Sie stattdessen das [Benutzer Benachrichtigungs](#user-notifications) Framework.
+- Die `HandleActionForLocalNotification`-, `HandleActionForRemoteNotification`-, `DidReceiveLocalNotification`-und `DidReceiveRemoteNotification` watchkit-Methode sind veraltet. Verwenden Sie stattdessen die Methoden `HandleActionForNotification` und `DidReceiveNotification`.
+- Die Methoden `DidReceiveLocalNotification` und `DidReceiveRemoteNotification` von [wkextensiondelegaten](https://developer.apple.com/reference/watchkit/wkextensiondelegate) sind veraltet. Erstellen Sie eine Instanz von [unusernotificationcenterdelegat](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate) , die die entsprechenden Methoden implementiert, und weisen Sie Sie der `Delegate`-Eigenschaft des [unusernotificationcenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter) -Objekts zu.
 - Die **Game Center-App** wurde als veraltet markiert und von Ios entfernt. Wenn die APP GameKit verwendet, _muss_ Sie eine eigene Schnittstelle zum Anzeigen von GameKit-Features, z. b. Bestenlisten usw., enthalten.
 
 Eine komplette Liste der veralteten Anwendungen finden [Sie in der Dokumentation zu den IOS 9,3 to Ios 10,0 API-unterschieden](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html) von Apple.

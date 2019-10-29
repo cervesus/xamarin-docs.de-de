@@ -4,21 +4,21 @@ description: In diesem Artikel wird gezeigt, wie Sie eine Hilfsklasse verwenden,
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 57892689eeb5eef9747e19fa167b8598569f3cd1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4dddde8d4408df6a9b9d73c0a3efff62f563591a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769207"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030780"
 ---
 # <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Wiedergabe von Sound in tvos mit AVAudioPlayer in xamarin
 
 ## <a name="about-the-avaudioplayer"></a>Informationen zu AVAudioPlayer
 
-`AVAudioPlayer` Wird verwendet, um Audiodaten entweder aus dem Arbeitsspeicher oder aus einer Datei wiederzugeben. Apple empfiehlt die Verwendung dieser Klasse, um Audiodaten in der APP wiederzugeben, es sei denn, Sie verwenden das Netzwerk Streaming oder benötigen audioe/a mit niedriger Latenz.
+Der `AVAudioPlayer` wird verwendet, um Audiodaten aus dem Arbeitsspeicher oder aus einer Datei wiederzugeben. Apple empfiehlt die Verwendung dieser Klasse, um Audiodaten in der APP wiederzugeben, es sei denn, Sie verwenden das Netzwerk Streaming oder benötigen audioe/a mit niedriger Latenz.
 
 Mit dem `AVAudioPlayer` können Sie folgende Aufgaben ausführen:
 
@@ -28,7 +28,7 @@ Mit dem `AVAudioPlayer` können Sie folgende Aufgaben ausführen:
 - Unterstützung von Features wie "schneller vorwärts" oder "Zurückspulen".
 - Abrufen von Messungs Daten auf Wiedergabe Ebene.
 
-`AVAudioPlayer`unterstützt Sounds in beliebigen Audioformaten, die von IOS, tvos und OS X `.aif`bereit `.wav` gestellt `.mp3`werden, z. b. oder.
+`AVAudioPlayer` unterstützt Sounds in beliebigen Audioformaten, die von IOS, tvos und OS X bereitgestellt werden, z. b. `.aif`, `.wav` oder `.mp3`.
 
 ## <a name="playing-sounds-in-tvos"></a>Abspielen von Sounds in tvos
 

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie einrichten, um IOS 12-
 ms.prod: xamarin
 ms.assetid: 6C0F0133-1A5F-408B-8BCA-BDCA313A55C2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/19/2018
-ms.openlocfilehash: 480e7c1d5ff0aa7335b3f45d8e05f276bc5be208
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1db249a9e07f178461bcb052508d08f54ecea121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287013"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032022"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>Einstieg in IOS 12, tvos 12 und watchos 5
 
@@ -26,7 +26,7 @@ In diesem Dokument wird beschrieben, wie Sie mit dem Entwickeln von xamarin-apps
 
 3. **Update Visual Studio für Mac und Visual Studio 2017** – stellen Sie sicher, dass Sie über die neueste stabile Version von xamarin verfügen.
 
-4. _(optional)_ **Installieren von IOS 12 auf Ihren IOS-Geräten** –
+4. _(optional)_ **Installieren Sie IOS 12 auf Ihren IOS-Geräten** –
 
    Für Gerätetests von apps, die mit Xcode 10 eingeführte APIs verwenden, können registrierte Apple-Entwickler das Betriebssystem [herunterladen](https://developer.apple.com/download) und auf Ihren Geräten installieren.
 

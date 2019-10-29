@@ -4,23 +4,23 @@ description: In diesem Dokument wird beschrieben, wie Sie mit tvos-Warnungen in 
 ms.prod: xamarin
 ms.assetid: F969BB28-FF2C-4A7D-88CA-F8076AD48538
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 2578272dcd38399f23f2aac67503ea4e1b09a027
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 76a9af2a3d845ce3f93b02358901cda8d9d02294
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769074"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030519"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Arbeiten mit tvos-Warnungen in xamarin
 
 _In diesem Artikel wird das Arbeiten mit uialertcontroller erläutert, um dem Benutzer eine Warnmeldung in xamarin. tvos anzuzeigen._
 
-Wenn Sie den tvos-Benutzer aufmerksam machen oder die Berechtigung zum Ausführen einer destruktiven Aktion (z. b. zum Löschen einer Datei) anfordern müssen, können Sie eine Warnmeldung `UIAlertViewController`mit dem anzeigen:
+Wenn Sie den tvos-Benutzer aufmerksam machen oder die Berechtigung zum Ausführen einer destruktiven Aktion (z. b. Löschen einer Datei) anfordern müssen, können Sie eine Warnmeldung mit dem `UIAlertViewController`anzeigen:
 
-[![](alerts-images/alert01.png "Ein Beispiel für uialertviewcontroller")](alerts-images/alert01.png#lightbox)
+[![](alerts-images/alert01.png "An example UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 Wenn Sie eine Meldung hinzufügen, können Sie einer Warnung Schaltflächen und Textfelder hinzufügen, damit der Benutzer auf Aktionen Antworten und Feedback bereitstellen kann.
 
@@ -30,7 +30,7 @@ Wenn Sie eine Meldung hinzufügen, können Sie einer Warnung Schaltflächen und 
 
 Wie bereits erwähnt, werden Warnungen verwendet, um die Aufmerksamkeit des Benutzers zu erhalten und Sie über den Status Ihrer APP zu informieren oder Feedback anzufordern. Warnungen müssen einen Titel enthalten, Sie können optional eine Meldung und eine oder mehrere Schaltflächen oder Textfelder enthalten.
 
-[![](alerts-images/alert04.png "Beispiel für eine Warnung")](alerts-images/alert04.png#lightbox)
+[![](alerts-images/alert04.png "An example alert")](alerts-images/alert04.png#lightbox)
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit Warnungen:
 
@@ -55,13 +55,13 @@ Apple hat den folgenden Vorschlag zum Hinzufügen von Schaltflächen zu einer Wa
 
 - **Begrenzen auf zwei Schalt** Flächen: Wenn möglich, beschränken Sie die Warnung auf maximal zwei Schaltflächen. Mit einzelnen Schaltflächen Warnungen werden Informationen, aber keine Aktionen bereitgestellt. Zwei Schaltflächen Warnungen bieten eine einfache Ja/Nein-Aktion.
 - **Verwenden Sie prägnante, logische Schaltflächen Titel** -einfache ein bis zwei Word-Schaltflächen Titel, die die Funktionsweise der Schaltfläche am besten beschreiben. Weitere Informationen finden Sie in der Dokumentation [Arbeiten mit Schalt](~/ios/tvos/user-interface/buttons.md) Flächen.
-- Entfernen Sie **destruktive Schaltflächen eindeutig** : bei Schaltflächen, die eine destruktive Aktion ausführen (z. b `UIAlertActionStyle.Destructive` . das Löschen einer Datei), markieren Sie Sie deutlich
+- Sie können **destruktive Schaltflächen eindeutig markieren** : bei Schaltflächen, die eine zerstörerische Aktion ausführen (z. b. das Löschen einer Datei), werden diese mit dem `UIAlertActionStyle.Destructive` Stil
 
 <a name="Displaying-an-Alert" />
 
 ## <a name="displaying-an-alert"></a>Anzeigen einer Warnung
 
-Wenn Sie eine Warnung anzeigen möchten, erstellen Sie eine Instanz `UIAlertViewController` von, und konfigurieren Sie Sie, indem Sie Aktionen (Schaltflächen) hinzufügen und den Stil der Warnung auswählen. Im folgenden Code wird beispielsweise eine Warnung vom Typ "OK/Abbrechen" angezeigt:
+Um eine Warnung anzuzeigen, erstellen Sie eine Instanz des `UIAlertViewController` und konfigurieren Sie, indem Sie Aktionen (Schaltflächen) hinzufügen und den Stil der Warnung auswählen. Im folgenden Code wird beispielsweise eine Warnung vom Typ "OK/Abbrechen" angezeigt:
 
 ```csharp
 const string title = "A Short Title is Best";
@@ -103,13 +103,13 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 );
 ```
 
-Mit `UIAlertActionStyle` der-Enumeration können Sie den Stil der Schaltfläche auf einen der folgenden Werte festlegen:
+Mit der `UIAlertActionStyle`-Enumeration können Sie den Stil der Schaltfläche auf einen der folgenden Werte festlegen:
 
 - **Standard** -die Schaltfläche ist die Standard Schaltfläche, die ausgewählt wird, wenn die Warnung angezeigt wird.
 - **Abbrechen** : die Schaltfläche ist die Schaltfläche Abbrechen für die Warnung.
 - **Destruktiv** : hebt die Schaltfläche als zerstörerische Aktion hervor, z. b. beim Löschen einer Datei. Derzeit rendert tvos die destruktive Schaltfläche mit einem roten Hintergrund.
 
-Die `AddAction` `UIAlertViewController` -Methode fügt die angegebene Aktion dem hinzu, und `PresentViewController (alertController, true, null)` die-Methode zeigt dem Benutzer schließlich die angegebene Warnung an.
+Durch die `AddAction`-Methode wird die angegebene Aktion der `UIAlertViewController` hinzugefügt, und schließlich wird der Benutzer mit der `PresentViewController (alertController, true, null)`-Methode die angegebene Warnung angezeigt.
 
 <a name="Adding-Text-Fields" />
 
@@ -117,11 +117,11 @@ Die `AddAction` `UIAlertViewController` -Methode fügt die angegebene Aktion dem
 
 Zusätzlich zum Hinzufügen von Aktionen (Schaltflächen) zur Warnung können Sie der Warnung Text Felder hinzufügen, um dem Benutzer das Ausfüllen von Informationen wie Benutzer-IDs und Kenn Wörtern zu ermöglichen:
 
-[![](alerts-images/alert02.png "Textfeld in einer Warnung")](alerts-images/alert02.png#lightbox)
+[![](alerts-images/alert02.png "Text Field in an alert")](alerts-images/alert02.png#lightbox)
 
 Wenn der Benutzer das Textfeld auswählt, wird die Standardtastatur von tvos angezeigt, sodass Sie einen Wert für das Feld eingeben können:
 
-[![](alerts-images/alert03.png "Eingeben von Text")](alerts-images/alert03.png#lightbox)
+[![](alerts-images/alert03.png "Entering text")](alerts-images/alert03.png#lightbox)
 
 Der folgende Code zeigt eine OK/Cancel-Warnung mit einem einzelnen Textfeld für die Eingabe eines Werts an:
 
@@ -160,7 +160,7 @@ alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,(actionOK) 
 controller.PresentViewController(alert,true,null);
 ```
 
-Die `AddTextField` -Methode fügt der Warnung ein neues Textfeld hinzu, das Sie dann konfigurieren können, indem Sie Eigenschaften festlegen, wie z. b. den Platzhalter Text (der Text, der angezeigt wird, wenn das Feld leer ist), den Standard Textwert und den Typ der Tastatur. Beispiel:
+Die `AddTextField`-Methode fügt der Warnung ein neues Textfeld hinzu, das Sie dann konfigurieren können, indem Sie Eigenschaften festlegen, wie z. b. den Platzhalter Text (der Text, der angezeigt wird, wenn das Feld leer ist), den Standard Textwert und den Typ der Tastatur. Beispiel:
 
 ```csharp
 // Initialize field
@@ -192,7 +192,7 @@ Nachdem der Benutzer einen Wert in das Textfeld eingegeben hat, können wir die 
 
 ## <a name="alert-view-controller-helper-class"></a>Warnungs Ansicht Controller-Hilfsklasse
 
-Da die Anzeige einfacher, allgemeiner Typen von Warnungen `UIAlertViewController` mithilfe von etwas doppelten Code zur Folge haben kann, können Sie eine Hilfsklasse verwenden, um die Menge an wiederholtem Code zu verringern. Beispiel:
+Da die Anzeige einfacher, allgemeiner Typen von Warnungen mithilfe von `UIAlertViewController` zu einem doppelten Code führen kann, können Sie eine Hilfsklasse verwenden, um die Menge an wiederholtem Code zu verringern. Beispiel:
 
 ```csharp
 using System;
@@ -365,7 +365,7 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde beschrieben `UIAlertController` , wie eine Warnmeldung für den Benutzer in xamarin. tvos angezeigt wird. Zuerst wurde gezeigt, wie Sie eine einfache Warnung anzeigen und Schaltflächen hinzufügen. Im nächsten Schritt wurde gezeigt, wie Text Felder zu einer Warnung hinzugefügt werden. Schließlich haben Sie erfahren, wie Sie eine Hilfsklasse verwenden, um die Menge an wiederholtem Code zu reduzieren, der zum Anzeigen einer Warnung erforderlich ist.
+In diesem Artikel wurde die Arbeit mit `UIAlertController` behandelt, um dem Benutzer eine Warnmeldung in xamarin. tvos anzuzeigen. Zuerst wurde gezeigt, wie Sie eine einfache Warnung anzeigen und Schaltflächen hinzufügen. Im nächsten Schritt wurde gezeigt, wie Text Felder zu einer Warnung hinzugefügt werden. Schließlich haben Sie erfahren, wie Sie eine Hilfsklasse verwenden, um die Menge an wiederholtem Code zu reduzieren, der zum Anzeigen einer Warnung erforderlich ist.
 
 ## <a name="related-links"></a>Verwandte Links
 

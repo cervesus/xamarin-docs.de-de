@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie das IOS 11-Vision-Fram
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: efe3f2d4c79dc6e5e2a7f13408de52e05006e10a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b58e7b1fffed3253d9765401d52f16b751db134d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752278"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032073"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Vision Framework in xamarin. IOS
 
@@ -37,18 +37,18 @@ Die Rechteck Erkennung und-Gesichtserkennung werden unten ausführlicher erläut
 
 Das [Beispiel "visionrects](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles) " zeigt, wie ein Bild verarbeitet und die erkannten Rechtecke gezeichnet werden.
 
-### <a name="1-initialize-the-vision-request"></a>1. Anforderungs Anforderung initialisieren
+### <a name="1-initialize-the-vision-request"></a>1. Initialisieren Sie die Vision Request.
 
-Erstellen `ViewDidLoad`Sie in eine `VNDetectRectanglesRequest` , die auf `HandleRectangles` die Methode verweist, die am Ende jeder Anforderung aufgerufen wird:
+Erstellen Sie in `ViewDidLoad`eine `VNDetectRectanglesRequest`, die auf die `HandleRectangles`-Methode verweist, die am Ende jeder Anforderung aufgerufen wird:
 
-Die `MaximumObservations` -Eigenschaft sollte ebenfalls festgelegt werden. andernfalls wird Sie standardmäßig auf 1 festgelegt, und nur ein einzelnes Ergebnis wird zurückgegeben.
+Die `MaximumObservations`-Eigenschaft sollte ebenfalls festgelegt werden. andernfalls wird Sie standardmäßig auf 1 festgelegt, und nur ein einzelnes Ergebnis wird zurückgegeben.
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 RectangleRequest.MaximumObservations = 10;
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Starten der Bild Verarbeitungs Verarbeitung
+### <a name="2-start-the-vision-processing"></a>2. Starten der Maschinelles Verarbeitung
 
 Der folgende Code beginnt mit der Verarbeitung der Anforderung. Im Beispiel " **visionrects** " wird dieser Code ausgeführt, nachdem der Benutzer ein Bild ausgewählt hat:
 
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Dieser Handler übergibt das `ciImage` an das Vision Framework `VNDetectRectanglesRequest` , das in Schritt 1 erstellt wurde.
+Dieser Handler übergibt die `ciImage` an das Vision Framework `VNDetectRectanglesRequest`, das in Schritt 1 erstellt wurde.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Verarbeiten der Ergebnisse der Maschinelles Verarbeitung
+### <a name="3-handle-the-results-of-vision-processing"></a>3. behandeln der Ergebnisse der Maschinelles Verarbeitung
 
-Nachdem die Rechteck Erkennung fertiggestellt wurde, führt das Framework `HandleRectangles` die-Methode aus, eine Zusammenfassung, die unten dargestellt wird:
+Nachdem die Rechteck Erkennung fertiggestellt wurde, führt das Framework die `HandleRectangles`-Methode aus, eine Zusammenfassung, die unten dargestellt wird:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -88,7 +88,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Anzeigen der Ergebnisse
 
-Die `OverlayRectangles` -Methode im **visionrechgles** -Beispiel verfügt über drei Funktionen:
+Die `OverlayRectangles`-Methode im " **visionrechgles** "-Beispiel verfügt über drei Funktionen:
 
 - Rendern des Quell Bilds
 - Zeichnen eines Rechtecks, um anzugeben, wo jedes erkannt wurde, und
@@ -98,7 +98,7 @@ Sehen Sie sich die Quelle des Beispiels für die exakte CoreGraphics [-](https:/
 
 ![Foto mit drei Rechtecke erkannt](vision-images/found-rectangles-phone-sml.png)
 
-### <a name="5-further-processing"></a>5. Weitere Verarbeitung
+### <a name="5-further-processing"></a>5. weitere Verarbeitung
 
 Die Rechteck Erkennung ist oft nur der erste Schritt in einer Kette von Vorgängen, z. b. mit [diesem coremlvision-Beispiel](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), bei dem die Rechtecke an ein coreml-Modell zum Analysieren von handschriftlichen Ziffern übermittelt werden.
 
@@ -108,15 +108,15 @@ Die Rechteck Erkennung ist oft nur der erste Schritt in einer Kette von Vorgäng
 
 Das [Beispiel "visiongesichter](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces) " funktioniert ähnlich wie das Beispiel " **visionrechgles** " unter Verwendung einer anderen Vision Request-Klasse.
 
-### <a name="1-initialize-the-vision-request"></a>1. Anforderungs Anforderung initialisieren
+### <a name="1-initialize-the-vision-request"></a>1. Initialisieren Sie die Vision Request.
 
-Erstellen `ViewDidLoad`Sie in eine `VNDetectFaceRectanglesRequest` , die auf `HandleRectangles` die Methode verweist, die am Ende jeder Anforderung aufgerufen wird.
+Erstellen Sie in `ViewDidLoad`eine `VNDetectFaceRectanglesRequest`, die auf die `HandleRectangles`-Methode verweist, die am Ende jeder Anforderung aufgerufen wird.
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Starten der Bild Verarbeitungs Verarbeitung
+### <a name="2-start-the-vision-processing"></a>2. Starten der Maschinelles Verarbeitung
 
 Der folgende Code beginnt mit der Verarbeitung der Anforderung. Im Beispiel " **visiongesichter** " wird dieser Code ausgeführt, nachdem der Benutzer ein Bild ausgewählt hat:
 
@@ -128,11 +128,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Dieser Handler übergibt das `ciImage` an das Vision Framework `VNDetectFaceRectanglesRequest` , das in Schritt 1 erstellt wurde.
+Dieser Handler übergibt die `ciImage` an das Vision Framework `VNDetectFaceRectanglesRequest`, das in Schritt 1 erstellt wurde.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Verarbeiten der Ergebnisse der Maschinelles Verarbeitung
+### <a name="3-handle-the-results-of-vision-processing"></a>3. behandeln der Ergebnisse der Maschinelles Verarbeitung
 
-Sobald die Gesichtserkennung vollständig ist, führt der Handler `HandleRectangles` die Methode aus, die die Fehlerbehandlung ausführt und die Begrenzungen der erkannten Gesichter anzeigt, `OverlayRectangles` und ruft auf, um umschließende Rechtecke auf der ursprünglichen Abbildung zu zeichnen:
+Sobald die Gesichtserkennung vollständig ist, führt der Handler die `HandleRectangles` Methode aus, die die Fehlerbehandlung ausführt und die Begrenzungen der erkannten Gesichter anzeigt, und ruft den `OverlayRectangles` auf, um umschließende Rechtecke auf der ursprünglichen Abbildung zu zeichnen:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -161,7 +161,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Anzeigen der Ergebnisse
 
-Die `OverlayRectangles` -Methode im " **visionfaces** "-Beispiel verfügt über drei Funktionen:
+Die `OverlayRectangles`-Methode im " **visiongesichter** "-Beispiel verfügt über drei Funktionen:
 
 - Rendern des Quell Bilds
 - Zeichnen eines Rechtecks für jedes erkannte Gesicht, und
@@ -171,9 +171,9 @@ Sehen Sie sich die Quelle des Beispiels für die exakte CoreGraphics [-](https:/
 
 ![Foto mit zwei Gesichtern erkannt](vision-images/found-faces-phone-sml.png)
 
-### <a name="5-further-processing"></a>5. Weitere Verarbeitung
+### <a name="5-further-processing"></a>5. weitere Verarbeitung
 
-Das Vision-Framework bietet zusätzliche Funktionen zum Erkennen von Gesichtsmerkmalen, wie z. b. Augen und Mund. Verwenden Sie `VNDetectFaceLandmarksRequest` den-Typ, der `VNFaceObservation` Ergebnisse wie in Schritt 3 weiter oben zurückgibt, `VNFaceLandmark` jedoch mit zusätzlichen Daten.
+Das Vision-Framework bietet zusätzliche Funktionen zum Erkennen von Gesichtsmerkmalen, wie z. b. Augen und Mund. Verwenden Sie den `VNDetectFaceLandmarksRequest` Typ, der `VNFaceObservation` Ergebnisse zurückgibt, wie in Schritt 3 oben, jedoch mit zusätzlichen `VNFaceLandmark` Daten.
 
 ## <a name="related-links"></a>Verwandte Links
 

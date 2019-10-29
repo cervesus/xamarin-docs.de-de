@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 187befd88c115133a92aa90a711438e7754518d5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 75249966c6506bc33ea06c7cfa9c398bd7eb8045
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68648804"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029481"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin. Forms-flexlayout
 
@@ -21,7 +21,7 @@ ms.locfileid: "68648804"
 
 _Verwenden Sie das flexlayout zum Stapeln oder Umpacken einer Auflistung untergeordneter Ansichten._
 
-Die xamarin. Forms- [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) ist neu in xamarin. Forms Version 3,0. Es basiert auf dem flexiblen CSS- [Box-Layoutmodul](http://www.w3.org/TR/css-flexbox-1/), das auch als " _flexlayout_ " oder " _Flex-Box_" bezeichnet wird, da es viele flexible Optionen zum Anordnen von untergeordneten Elementen im Layout enthält.
+Die xamarin. Forms- [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) ist neu in xamarin. Forms Version 3,0. Es basiert auf dem flexiblen CSS- [Box-Layoutmodul](https://www.w3.org/TR/css-flexbox-1/), das auch als " _flexlayout_ " oder " _Flex-Box_" bezeichnet wird, da es viele flexible Optionen zum Anordnen von untergeordneten Elementen im Layout enthält.
 
 `FlexLayout` ähnelt der [`StackLayout`](~/xamarin-forms/user-interface/layouts/stack-layout.md) xamarin. Forms darin, dass die untergeordneten Elemente horizontal und vertikal in einem Stapel angeordnet werden können. Der `FlexLayout` kann jedoch auch seine untergeordneten Elemente umwickeln, wenn zu viele für eine einzelne Zeile oder eine einzelne Spalte vorhanden sind, und verfügt außerdem über viele Optionen für Ausrichtung, Ausrichtung und Anpassung an verschiedene Bildschirmgrößen.
 
@@ -186,11 +186,11 @@ public partial class PhotoWrappingPage : ContentPage
 
 Hier ist das Programm, das ausgeführt wird, und progressiv von oben nach unten:
 
-[![Die Seite Foto Wrapping](flex-layout-images/PhotoWrapping.png "Die Seite Foto Wrapping")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
+[![Die Seite "Foto Wrapping"](flex-layout-images/PhotoWrapping.png "Die Seite "Foto Wrapping"")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
 ### <a name="page-layout-with-flexlayout"></a>Seitenlayout mit flexlayout
 
-Im Webdesign gibt es ein Standardlayout, das als [_Heiliger Gral_](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) bezeichnet wird, da es sich um ein Layout-Format handelt, das sehr wünschenswert ist, aber häufig mit der Perfektion schwer zu erkennen ist. Das Layout besteht aus einem Header am oberen Rand der Seite und einer Fußzeile im unteren Bereich, die beide auf die vollständige Breite der Seite ausdehnen. Der Mittelpunkt der Seite ist der Hauptinhalt, häufig aber mit einem Spalten förmigen Menü links neben dem Inhalt und ergänzenden Informationen (manchmal auch als _neben_ Bereich bezeichnet) auf der rechten Seite. [Abschnitt 5.4.1 der flexiblen CSS-boxlayoutspezifikation](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) beschreibt, wie das Heilige Gral-Layout mit einem flexfeld realisiert werden kann.
+Im Webdesign gibt es ein Standardlayout, das als [_Heiliger Gral_](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) bezeichnet wird, da es sich um ein Layout-Format handelt, das sehr wünschenswert ist, aber häufig mit der Perfektion schwer zu erkennen ist. Das Layout besteht aus einem Header am oberen Rand der Seite und einer Fußzeile im unteren Bereich, die beide auf die vollständige Breite der Seite ausdehnen. Der Mittelpunkt der Seite ist der Hauptinhalt, häufig aber mit einem Spalten förmigen Menü links neben dem Inhalt und ergänzenden Informationen (manchmal auch als _neben_ Bereich bezeichnet) auf der rechten Seite. [Abschnitt 5.4.1 der flexiblen CSS-boxlayoutspezifikation](https://www.w3.org/TR/css-flexbox-1/#order-accessibility) beschreibt, wie das Heilige Gral-Layout mit einem flexfeld realisiert werden kann.
 
 Die Seite " **Heiliges Grail-Layout** " des Beispiels " **[flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** " zeigt eine einfache Implementierung dieses Layouts mithilfe eines `FlexLayout` das in einem anderen-Objekt eingebettet ist. Da diese Seite für ein Telefon im Hochformat konzipiert ist, sind die Bereiche Links und rechts vom Inhalts Bereich nur 50 Pixel breit:
 
@@ -241,7 +241,7 @@ Die Seite " **Heiliges Grail-Layout** " des Beispiels " **[flexlayoutdemos](http
 
 Hier wird ausgeführt:
 
-[![Die Seite Heiliges Grail-Layout](flex-layout-images/HolyGrailLayout.png "Die Seite Heiliges Grail-Layout")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
+[![Die Seite "Heiliges Grail-Layout"](flex-layout-images/HolyGrailLayout.png "Die Seite "Heiliges Grail-Layout"")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
 Die Navigations-und Nebenbereiche werden mit einer `BoxView` auf der linken und rechten Seite gerendert.
 
@@ -261,9 +261,9 @@ In diesem Programm werden drei angefügte bindbare Eigenschaften veranschaulicht
 
 ### <a name="catalog-items-with-flexlayout"></a>Katalog Elemente mit "flexlayout"
 
-Die Seite **Katalog Elemente** im Beispiel " **[flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** " ähnelt [Beispiel 1 in Abschnitt 1,1 der Spezifikation "CSS-flexlayoutbox](http://www.w3.org/TR/css-flexbox-1/#overview) " mit der Ausnahme, dass Sie eine horizontal scrollbare Reihe von Bildern und Beschreibungen von drei Affen anzeigt. :
+Die Seite **Katalog Elemente** im Beispiel " **[flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** " ähnelt [Beispiel 1 in Abschnitt 1,1 der Spezifikation "CSS-flexlayoutbox](https://www.w3.org//TR/css-flexbox-1/#overview) " mit der Ausnahme, dass Sie eine horizontal scrollbare Reihe von Bildern und Beschreibungen von drei Affen anzeigt. :
 
-[![Die Seite Katalog Elemente](flex-layout-images/CatalogItems.png "Die Seite Katalog Elemente")](flex-layout-images/CatalogItems-Large.png#lightbox)
+[![Die Seite "Katalog Elemente"](flex-layout-images/CatalogItems.png "Die Seite "Katalog Elemente"")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
 Jede der drei Affen ist eine `FlexLayout`, die in einem `Frame` enthalten ist, dem eine explizite Höhe und Breite zugewiesen ist, und der auch ein untergeordnetes Element eines größeren `FlexLayout` ist. In dieser XAML-Datei werden die meisten Eigenschaften der `FlexLayout` untergeordneten Elemente in Stilen angegeben, aber nur eines davon ist ein impliziter Stil:
 
@@ -388,7 +388,7 @@ Sie können mit den fünf verbleibenden bindbaren Eigenschaften experimentieren,
 
 Wenn das Programm gestartet wird, werden in fünf `Picker` Ansichten die Standardwerte dieser fünf `FlexLayout` Eigenschaften angezeigt. Der `FlexLayout` unten auf dem Bildschirm enthält drei untergeordnete Elemente:
 
-[![Die Experiment Seitenrichtung](flex-layout-images/ExperimentDefault.png "Die Seite Experiment-Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![Die Experiment Seite: Standard](flex-layout-images/ExperimentDefault.png "Die Seite "Experiment"-Standard")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 Jede der `Label` Ansichten verfügt über einen grauen Hintergrund, der den Speicherplatz in der `FlexLayout` anzeigt, der `Label` zugeordnet ist. Der Hintergrund des `FlexLayout` selbst ist Alice Blue. Es belegt den gesamten unteren Bereich der Seite, mit Ausnahme eines kleinen Randes auf der linken und rechten Seite.
 
@@ -575,7 +575,7 @@ Auf der Seite " **Basis Experiment** " des Beispiels " **[flexlayoutdemos](https
 
 [![Die Basis Experiment Seite](flex-layout-images/BasisExperiment.png "Die Basis Experiment Seite")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-Der IOS-Screenshot auf der linken Seite zeigt die beiden `Label` Elemente in geräteunabhängigen Einheiten in Höhe von Höhen. Im Android-Bildschirm wird angezeigt, dass Ihnen Höhen zugewiesen werden, die ein Bruchteil der Gesamthöhe des `FlexLayout` sind. Wenn die `Basis` auf 100% festgelegt ist, ist das untergeordnete Element die Höhe des `FlexLayout` und wird mit der nächsten Spalte Umbruch und die gesamte Höhe dieser Spalte belegen, wie der UWP-Bildschirmfoto zeigt: Sie wird angezeigt, als ob die fünf untergeordneten Elemente in einer Zeile angeordnet sind. , aber Sie sind tatsächlich in fünf Spalten angeordnet.
+Der IOS-Screenshot auf der linken Seite zeigt die beiden `Label` Elemente in geräteunabhängigen Einheiten in Höhe von Höhen. Im Android-Bildschirm wird angezeigt, dass Ihnen Höhen zugewiesen werden, die ein Bruchteil der Gesamthöhe des `FlexLayout` sind. Wenn die `Basis` auf 100% festgelegt ist, ist das untergeordnete Element die Höhe des `FlexLayout`und wird mit der nächsten Spalte Umbruch und die gesamte Höhe dieser Spalte belegen, wie der UWP-Bildschirmfoto zeigt: Sie wird angezeigt, als ob die fünf untergeordneten Elemente in einer Zeile angeordnet sind. , aber Sie sind tatsächlich in fünf Spalten angeordnet.
 
 ### <a name="the-grow-property"></a>Die Grow-Eigenschaft
 
@@ -601,7 +601,7 @@ Die `Shrink`-Eigenschaft spielt eine Rolle, wenn die `Wrap`-Eigenschaft auf `NoW
 
 Die Seite " **Versuch verkleinern** " erstellt eine `FlexLayout` mit einer einzelnen Zeile mit fünf `Label` untergeordneten Elementen, die mehr Platz als die `FlexLayout` Breite benötigen. Der IOS-Screenshot auf der linken Seite zeigt alle `Label` Elemente mit den Standardwerten 1 an:
 
-[![Die Seite Versuch verkleinern](flex-layout-images/ShrinkExperiment.png "Die Seite Versuch verkleinern")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
+[![Die Seite "Versuch verkleinern"](flex-layout-images/ShrinkExperiment.png "Die Seite "Versuch verkleinern"")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
 Im Android-Screenshot wird der `Shrink` Wert für die zweite `Label` auf 0 festgelegt, und die `Label` wird in der vollständigen Breite angezeigt. Außerdem erhält der vierte `Label` einen `Shrink` Wert, der größer als 1 ist, und verkleinert. Der UWP-Bildschirm Abbildung zeigt, dass beide `Label` Elemente den `Shrink` Wert 0 erhalten, damit Sie in ihrer vollen Größe angezeigt werden können, falls dies möglich ist.
 

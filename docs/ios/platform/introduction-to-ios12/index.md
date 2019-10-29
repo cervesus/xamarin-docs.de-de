@@ -4,15 +4,15 @@ description: Dieses Dokument enthält eine allgemeine Beschreibung einiger IOS 1
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/08/2018
-ms.openlocfilehash: b3f3db32e87d83ea4e076d439df3342e5ca2ed50
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 39d954626bc9e789446e7f1deac67e2e0fca51c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284640"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032005"
 ---
 # <a name="introduction-to-ios-12"></a>Einführung in iOS 12
 
@@ -56,7 +56,7 @@ IOS 12 erleichtert Benutzern und Entwicklern die Arbeit mit Kenn Wörtern:
 
 - Kenn Wort AutoFill und automatische sichere Kenn Wörter ermöglichen das automatische generieren, speichern und Verwenden von sicheren Kenn Wörtern in ios-Anwendungen, wenn Sie sich für anmelden und sich bei einer Anwendung anmelden.
 - Mithilfe der AutoFill-Methode für den Sicherheits Code können Sie SMS-basierte Authentifizierungscodes verwenden, ohne manuelle Ausschnitten und einfügevorgehensweisen bzw.
-- Mit `ASWebAuthenticationSession` der-Klasse wird der Prozess der Arbeit mit Verbund Authentifizierungsdiensten optimiert.
+- Die `ASWebAuthenticationSession`-Klasse optimiert den Prozess der Arbeit mit Verbund Authentifizierungsdiensten.
 - Autofill-Anmelde Informationsanbieter-Erweiterungen ermöglichen es, dass Kenn Wort Anwendungen von Drittanbietern Benutzernamen und Kenn Wörter für Anmelde Felder bereitstellen.
 
 ## <a name="healthkit-updates"></a>Healthkit-Updates
@@ -69,7 +69,7 @@ In IOS 12 unterstützen IMESS Age-apps Präsentations Kontexte, mit denen die ap
 
 ## <a name="network-framework"></a>Netzwerk Framework
 
-Netzwerk Framework, der Netzwerk Stapel, der `URLSession` den APIs zugrunde liegt, die häufig in ios-Anwendungen verwendet werden, ist nun als eigenständiges Framework verfügbar, sodass die Arbeit mit TCP, UDP, TLS, IPv4/IPv6 und mehr möglich ist.
+Netzwerk Framework, der Netzwerk Stapel, der den `URLSession` APIs zugrunde liegt, die häufig in ios-Anwendungen verwendet werden, ist nun als eigenständiges Framework verfügbar und vereinfacht die Arbeit mit TCP, UDP, TLS, IPv4/IPv6 usw.
 
 ## <a name="carplay"></a>Carplay
 
@@ -80,4 +80,4 @@ In IOS 12 können Drittanbieter-apps Zuordnungen und Turn-by-Turn-Navigationsanw
 Bei IOS 12 hat Apple Folgendes als veraltet markiert:
 
 - OpenGL es ist, [Entwickler](https://developer.apple.com/ios/whats-new/) bei der Übernahme von Metal zu unterstützen.
-- [`UIWebView`](xref:UIKit.UIWebView), [zugunsten von `WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
+- [`UIWebView`](xref:UIKit.UIWebView), [zugunsten `WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).

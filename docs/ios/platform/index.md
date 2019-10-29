@@ -4,15 +4,15 @@ description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, in dene
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206303"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032282"
 ---
 # <a name="ios-platform-features-overview"></a>Übersicht über IOS-Platt Form Features
 
@@ -41,7 +41,7 @@ Die neue callkit-API in ios 10 bietet eine Möglichkeit für VoIP-Apps, mit der 
 
 ## <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[Kontakte und ContactsUI](~/ios/platform/contacts.md)
 
-Mit der Einführung von IOS 9 hat Apple zwei neue Frameworks `Contacts` (und `ContactsUI`) veröffentlicht, die das vorhandene Adressbuch und die Benutzeroberflächen-Frameworks des Adressbuchs ersetzen, die von IOS 8 und früher verwendet werden.
+Mit der Einführung von IOS 9 hat Apple zwei neue Frameworks, `Contacts` und `ContactsUI`freigegeben, die das vorhandene Adressbuch und die Benutzeroberflächen-Frameworks der Adressbücher ersetzen, die von IOS 8 und früher verwendet werden.
 
 ## <a name="document-pickeriosplatformdocument-pickermd"></a>[Dokumentauswahl](~/ios/platform/document-picker.md)
 
@@ -49,11 +49,11 @@ Die Dokument Auswahl ermöglicht die gemeinsame Nutzung von Dokumenten zwischen 
 
 ## <a name="eventkitiosplatformeventkitmd"></a>[EventKit](~/ios/platform/eventkit.md)
 
-IOS verfügt über zwei integrierte Kalender bezogene Anwendungen: die Kalenderanwendung und die Erinnerungs Anwendung. Es ist einfach genug, um zu verstehen, wie Kalenderdaten von der Kalenderanwendung verwaltet werden, aber die Erinnerungs Anwendung ist weniger offensichtlich. Erinnerungen Datumsangaben fällig, wenn sie abgeschlossen sind, werden diese in Form von zugeordnet haben usw. Daher speichert IOS alle Kalenderdaten, unabhängig davon, ob es sich um Kalenderereignisse oder Erinnerungen handelt, an einem Ort, der als *Calendar Database*bezeichnet wird.
+IOS verfügt über zwei integrierte Kalender bezogene Anwendungen: die Kalenderanwendung und die Erinnerungs Anwendung. Es ist einfach genug, um zu verstehen, wie Kalenderdaten von der Kalenderanwendung verwaltet werden, aber die Erinnerungs Anwendung ist weniger offensichtlich. Erinnerungen können tatsächlich Datumsangaben zugeordnet werden, wenn Sie fällig sind, wenn Sie abgeschlossen sind usw. Daher speichert IOS alle Kalenderdaten, unabhängig davon, ob es sich um Kalenderereignisse oder Erinnerungen handelt, an einem Ort, der als *Calendar Database*bezeichnet wird.
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[IOS-Erweiterungen](~/ios/platform/extensions.md)
 
-Erweiterungen, wie in ios 8 eingeführt, sind spezialisiert `UIViewControllers` , die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer für die Durchführung spezieller Eingaben oder anderer Kontexte angefordert werden. wie das Bearbeiten eines Fotos, bei dem die Erweiterung spezielle Effektfilter bereitstellen kann.
+Erweiterungen, die in ios 8 eingeführt werden, sind spezialisierte `UIViewControllers`, die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert werden, um spezialisierte Eingaben oder andere Kontexte wie Bearbeiten eines Fotos, bei dem die Erweiterung spezielle Effektfilter bereitstellen kann.
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[Grafiken und Animationen in ios](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -85,7 +85,7 @@ Neu bei IOS 10. eine Erweiterung der Nachrichten-APP wird in die **Nachrichten**
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[Multitasking für iPad](~/ios/platform/multitasking.md)
 
-IOS 9 fügt eine Multitasking-Unterstützung für die gleich malige Ausführung von zwei apps auf einer bestimmten iPad-Hardware hinzu. Multitasking für iPad wird durch die folgenden Features unterstützt: Folie über, geteilte Ansicht & Bild im Bild.
+IOS 9 fügt eine Multitasking-Unterstützung für die gleich malige Ausführung von zwei apps auf einer bestimmten iPad-Hardware hinzu. Multitasking für iPad wird über die folgenden Funktionen unterstützt: Folie über, geteilte Ansicht & Bild im Bild.
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 
@@ -99,7 +99,7 @@ Photo Kit ist ein neues Framework, das es Anwendungen ermöglicht, die System Im
 
 ## <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[App-Überprüfung anfordern](~/ios/platform/request-app-review.md)
 
-Neu bei IOS 10,3, mit `RequestReview()` der-Methode kann eine IOS-App den Benutzer auffordern, ihn zu bewerten oder zu überprüfen. Wenn diese Methode in einer Versand-app aufgerufen wird, die der Benutzer aus dem App Store installiert hat, übernimmt IOS 10 den gesamten Bewertungs-und Überprüfungsprozess für den Entwickler. Da dieser Prozess von der App Store-Richtlinie gesteuert wird, wird möglicherweise eine Warnung angezeigt oder nicht angezeigt.
+Neu bei IOS 10,3, mit der `RequestReview()`-Methode kann eine IOS-App den Benutzer auffordern, ihn zu bewerten oder zu überprüfen. Wenn diese Methode in einer Versand-app aufgerufen wird, die der Benutzer aus dem App Store installiert hat, übernimmt IOS 10 den gesamten Bewertungs-und Überprüfungsprozess für den Entwickler. Da dieser Prozess von der App Store-Richtlinie gesteuert wird, wird möglicherweise eine Warnung angezeigt oder nicht angezeigt.
 
 ## <a name="search-apisiosplatformsearchindexmd"></a>[Such-APIs](~/ios/platform/search/index.md)
 

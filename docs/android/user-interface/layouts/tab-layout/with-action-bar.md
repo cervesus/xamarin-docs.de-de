@@ -4,15 +4,15 @@ description: In diesem Handbuch wird erläutert und erläutert, wie mit den Akti
 ms.prod: xamarin
 ms.assetid: B7E60AAF-BDA5-4305-9000-675F0438734D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: d37537f345a1532e38ab4d016cfbd5b26eae8b3a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 33afa963cba2e341f23326c6a7814f97f88b6870
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758535"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028774"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Layouts im Registerkarten Format mit der Aktionsleiste
 
@@ -22,7 +22,7 @@ _In diesem Handbuch wird erläutert und erläutert, wie mit den Aktionsleisten-A
 
 Die Aktionsleiste ist ein Android-UI-Muster, das verwendet wird, um eine konsistente Benutzeroberfläche für wichtige Features wie Registerkarten, Anwendungs Identität, Menüs und suchen bereitzustellen. In Android 3,0 (API-Ebene 11) hat Google die Aktionsleisten-APIs für die Android-Plattform eingeführt. Die Aktionsleisten-APIs führen Benutzeroberflächen Designs ein, um ein konsistentes Erscheinungsbild und eine konsistente Benutzeroberfläche bereitzustellen. In diesem Handbuch wird erläutert, wie Sie einer xamarin. Android-Anwendung Aktionsleiste Registerkarten hinzufügen. Außerdem wird erläutert, wie Sie die Android-Unterstützungs Bibliothek V7 zum rückportieren von Aktionsleisten-Registerkarten zu xamarin. Android-Anwendungen verwenden, die auf Android 2,1 für Android 2,3 abzielen. 
 
-Beachten Sie `Toolbar` , dass es sich bei um eine neuere und allgemeinere Aktionsleisten Komponente handelt `ActionBar` ,`Toolbar` die anstelle von verwendet `ActionBar`werden soll (wurde zum Ersetzen entworfen). Weitere Informationen finden Sie unter [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md). 
+Beachten Sie, dass `Toolbar` eine neuere und allgemeinere Aktionsleisten Komponente ist, die Sie anstelle von `ActionBar` verwenden sollten (`Toolbar` wurde entwickelt, um `ActionBar`zu ersetzen). Weitere Informationen finden Sie unter [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md). 
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -48,7 +48,7 @@ Jede Registerkarte in der Aktionsleiste sollte einem [*Fragment*](~/android/plat
 
 - **Ontabunselected** : Diese Methode wird aufgerufen, wenn der Benutzer eine andere Registerkarte auswählt. Dieser Rückruf wird zum Speichern des Zustands im angezeigten Fragment verwendet, bevor es verschwindet.
 
-Xamarin. Android umschließt `ActionBar.ITabListener` den mit Ereignissen für `ActionBar.Tab` die-Klasse. Anwendungen können einem oder mehreren dieser Ereignisse Ereignishandler zuweisen. Es gibt drei Ereignisse (eine für jede Methode in `ActionBar.ITabListener`), die von einer Aktionsleisten Registerkarte angezeigt wird: 
+Xamarin. Android umschließt die `ActionBar.ITabListener` mit Ereignissen für die `ActionBar.Tab`-Klasse. Anwendungen können einem oder mehreren dieser Ereignisse Ereignishandler zuweisen. Es gibt drei Ereignisse (eine für jede Methode in `ActionBar.ITabListener`), die von einer Aktionsleisten Registerkarte angezeigt wird: 
 
 - Tabselected
 - Tabreselected
@@ -60,18 +60,18 @@ Die Aktionsleiste ist für Android 3,0 (API-Ebene 11) und höher und für jede x
 
 Die folgenden Schritte veranschaulichen, wie Sie einer Android-Aktivität Aktionsleisten-Registerkarten hinzufügen: 
 
-1. In der `OnCreate` -Methode einer Aktivität &ndash; vor dem `NavigationMode` *Initialisieren von UI-Widgets* &ndash; muss eine Anwendung für die `ActionBar` auf `ActionBar.NavigationModeTabs` festlegen, wie im folgenden Code Ausschnitt gezeigt:
+1. In der `OnCreate`-Methode einer Aktivitäts &ndash; *vor dem Initialisieren von UI-Widgets* &ndash; muss eine Anwendung die `NavigationMode` für den `ActionBar` auf `ActionBar.NavigationModeTabs` festlegen, wie im folgenden Code Ausschnitt gezeigt:
 
    ```csharp
    ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
    SetContentView(Resource.Layout.Main);
    ```
 
-2. Erstellen Sie mithilfe `ActionBar.NewTab()`von eine neue Registerkarte.
+2. Erstellen Sie eine neue Registerkarte, indem Sie `ActionBar.NewTab()`verwenden.
 
-3. Weisen Sie Ereignishandler zu, oder geben `ActionBar.ITabListener` Sie eine benutzerdefinierte Implementierung an, die auf die Ereignisse reagiert, die ausgelöst werden, wenn der Benutzer mit den Registerkarten für die Aktionsleiste interagiert.
+3. Weisen Sie Ereignishandler zu, oder stellen Sie eine benutzerdefinierte `ActionBar.ITabListener` Implementierung bereit, die auf die Ereignisse antwortet, die ausgelöst werden, wenn der Benutzer mit den Registerkarten für die Aktionsleiste interagiert.
 
-4. Fügen Sie die Registerkarte hinzu, die im vorherigen Schritt `ActionBar`erstellt wurde.
+4. Fügen Sie die im vorherigen Schritt erstellte Registerkarte zum `ActionBar`hinzu.
 
 Der folgende Code ist ein Beispiel für die Verwendung dieser Schritte zum Hinzufügen von Registerkarten zu einer Anwendung, die Ereignishandler verwendet, um auf Zustandsänderungen zu reagieren: 
 
@@ -101,22 +101,22 @@ protected override void OnCreate(Bundle bundle)
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>Ereignishandler im Vergleich zu "Aktionsleiste. itablistener"
 
-Anwendungen sollten Ereignishandler und `ActionBar.ITabListener` für verschiedene Szenarios verwenden. Ereignishandler bieten eine bestimmte Menge syntaktischer Möglichkeiten. Sie speichern die Erstellung einer Klasse und die Implementierung `ActionBar.ITabListener`von. Dies hat &ndash; den Vorteil, dass xamarin. Android diese Transformation für Sie durchführt, indem eine Klasse erstellt und `ActionBar.ITabListener` für Sie implementiert wird. Dies ist in Ordnung, wenn eine Anwendung über eine begrenzte Anzahl von Registerkarten verfügt. 
+Anwendungen sollten Ereignishandler und `ActionBar.ITabListener` für verschiedene Szenarios verwenden. Ereignishandler bieten eine bestimmte Menge syntaktischer Möglichkeiten. Sie speichern Sie daran, dass Sie keine Klasse erstellen und `ActionBar.ITabListener`implementieren müssen. Dies hat den Vorteil, &ndash; xamarin. Android diese Transformation für Sie durchführt, indem eine Klasse erstellt und `ActionBar.ITabListener` für Sie implementiert wird. Dies ist in Ordnung, wenn eine Anwendung über eine begrenzte Anzahl von Registerkarten verfügt. 
 
-Beim Umgang mit vielen Registerkarten oder der gemeinsamen Nutzung allgemeiner Funktionen zwischen Aktionsleisten-Registerkarten kann es im Hinblick auf Arbeitsspeicher und Leistung effizienter sein, eine Benutzer `ActionBar.ITabListener`definierte Klasse zu erstellen, die implementiert und eine einzelne Instanz der Klasse freigibt. Dies reduziert die Anzahl der Gref-Anwendungen, die von einer xamarin. Android-Anwendung verwendet werden. 
+Beim Umgang mit vielen Registerkarten oder der gemeinsamen Nutzung allgemeiner Funktionen zwischen Aktionsleisten-Registerkarten kann es im Hinblick auf Arbeitsspeicher und Leistung effizienter sein, eine benutzerdefinierte Klasse zu erstellen, die `ActionBar.ITabListener`implementiert, und eine einzelne Instanz der Klasse gemeinsam zu nutzen. Dies reduziert die Anzahl der Gref-Anwendungen, die von einer xamarin. Android-Anwendung verwendet werden. 
 
 ### <a name="backwards-compatibility-for-older-devices"></a>Abwärtskompatibilität für ältere Geräte
 
 Die Registerkarten für die Aktionsleiste von [Android-Unterstützungs Bibliotheken V7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) an Android 2,1 (API-Ebene 7). Auf Registerkarten kann in einer xamarin. Android-Anwendung zugegriffen werden, nachdem diese Komponente dem Projekt hinzugefügt wurde.
 
-Um die Aktionsleiste zu verwenden, muss eine Aktivität unter `ActionBarActivity` Klasse sein und das AppCompat-Design verwenden, wie im folgenden Code Ausschnitt gezeigt:
+Um die Aktionsleiste zu verwenden, muss eine Aktivität `ActionBarActivity` Unterklassen und das AppCompat-Design verwenden, wie im folgenden Code Ausschnitt gezeigt:
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 public class MainActivity: ActionBarActivity
 ```
 
-Eine Aktivität kann einen Verweis auf Ihre Aktionsleiste aus der `ActionBarActivity.SupportingActionBar` -Eigenschaft abrufen. Der folgende Code Ausschnitt veranschaulicht ein Beispiel für das Einrichten der Aktionsleiste in einer Aktivität:
+Eine Aktivität kann einen Verweis auf Ihre Aktionsleiste aus der `ActionBarActivity.SupportingActionBar`-Eigenschaft abrufen. Der folgende Code Ausschnitt veranschaulicht ein Beispiel für das Einrichten der Aktionsleiste in einer Aktivität:
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat", MainLauncher = true, Icon = "@drawable/ic_launcher")]
@@ -162,7 +162,7 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Anleitung wurde erläutert, wie Sie eine Benutzeroberfläche im Registerkarten Format in einer xamarin. Android-Datei mithilfe der Aktionsleiste erstellen. Es wurde beschrieben, wie Sie der Aktionsleiste Registerkarten hinzufügen und wie eine Aktivität über die `ActionBar.ITabListener` -Schnittstelle mit Tabstopp Ereignissen interagieren kann. Wir haben auch gesehen, wie das Paket "Android Support Library V7 AppCompat" die Aktions Anzeige Registerkarten auf ältere Android-Versionen zurückportiert. 
+In dieser Anleitung wurde erläutert, wie Sie eine Benutzeroberfläche im Registerkarten Format in einer xamarin. Android-Datei mithilfe der Aktionsleiste erstellen. Es wurde beschrieben, wie Sie der Aktionsleiste Registerkarten hinzufügen und wie eine Aktivität über die `ActionBar.ITabListener`-Schnittstelle mit Tabstopp Ereignissen interagieren kann. Wir haben auch gesehen, wie das Paket "Android Support Library V7 AppCompat" die Aktions Anzeige Registerkarten auf ältere Android-Versionen zurückportiert. 
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -170,7 +170,7 @@ In dieser Anleitung wurde erläutert, wie Sie eine Benutzeroberfläche im Regist
 - [Symbolleiste](~/android/user-interface/controls/tool-bar/index.md)
 - [Fragmente](~/android/platform/fragments/index.md)
 - [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
-- [ActionBarActivity](https://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
+- [Aktionsactivity](https://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
 - [Aktionsleiste Muster](https://developer.android.com/design/patterns/actionbar.html)
 - [Android V7 AppCompat](https://developer.android.com/tools/support-library/features.html#v7-appcompat)
 - [Xamarin. Android-Unterstützungs Bibliothek V7 AppCompat nuget-Paket](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)

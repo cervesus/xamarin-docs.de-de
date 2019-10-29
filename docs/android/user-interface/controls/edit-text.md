@@ -4,21 +4,21 @@ description: Verwenden des EDITTEXT-Widgets, um Benutzereingaben zu akzeptieren.
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: e8ffe337e1f5c74bc348b9600a466f1232f40b0b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 62859e19c533d7b200833996b44a65cb275805c6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758835"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029251"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin. Android-Bearbeitungs Text
 
 In diesem Abschnitt verwenden Sie das [EDITTEXT](xref:Android.Widget.EditText) -Widget, um ein Textfeld für Benutzereingaben zu erstellen. Nachdem Text in das Feld eingegeben wurde, wird in der **Eingabe** Taste der Text in einer Popup Meldung angezeigt.
 
-Öffnen Sie **Resources/Layout/activity_main. axml** , und fügen Sie das [EDITTEXT](xref:Android.Widget.EditText) -Element einem enthaltenden Layout hinzu. Das folgende Beispiel **activity_main. axml** verfügt über `EditText` einen, der zu einem `LinearLayout`hinzugefügt wurde:
+Öffnen Sie **Resources/Layout/activity_main. axml** , und fügen Sie das [EDITTEXT](xref:Android.Widget.EditText) -Element einem enthaltenden Layout hinzu. Das folgende Beispiel **activity_main. axml** verfügt über eine `EditText`, die zu einem `LinearLayout`hinzugefügt wurde:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -35,8 +35,8 @@ In diesem Abschnitt verwenden Sie das [EDITTEXT](xref:Android.Widget.EditText) -
 </LinearLayout>
 ```
 
-In diesem Codebeispiel wird das `EditText` - `android:imeOptions` Attribut auf `actionGo`festgelegt. Mit dieser Einstellung wird die Standardaktion done in die [go](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) -Aktion geändert, **sodass der** `KeyPress` Eingabe Handler [durch](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) Tippen auf die EINGABETASTE ausgelöst wird.
-(In der `actionGo` Regel wird verwendet, damit die **Eingabe** Taste den Benutzer zum Ziel einer URL, die eingegeben wird, verwendet.)
+In diesem Codebeispiel wird das `EditText`-Attribut `android:imeOptions` auf `actionGo`festgelegt. Mit dieser Einstellung wird die Standard- [done](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) -Aktion in die [go](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) -Aktion geändert, sodass das Tippen auf die **EINGABETASTE den** `KeyPress` Eingabe Handlers auslöst.
+(In der Regel wird `actionGo` verwendet, damit die **Eingabe** Taste den Benutzer zum Ziel einer URL, die eingegeben wird, verwendet.)
 
 Fügen Sie den folgenden Code am Ende der [OnCreate](xref:Android.App.Activity.OnCreate*) -Methode in **MainActivity.cs**ein, um Benutzer Texteingaben zu behandeln:
 
@@ -52,20 +52,20 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 };
 ```
 
-Fügen Sie außerdem die folgende `using` Anweisung am Anfang von **MainActivity.cs** hinzu, wenn Sie nicht bereits vorhanden ist:
+Fügen Sie außerdem die folgende `using`-Anweisung am Anfang von **MainActivity.cs** hinzu, wenn Sie nicht bereits vorhanden ist:
 
 ```csharp
 using Android.Views;
 ```
 
-In diesem Codebeispiel wird das [EDITTEXT](xref:Android.Widget.EditText) -Element aus dem Layout vergrößert und ein [KeyPress](xref:Android.Views.View.KeyPress) -Handler hinzugefügt, der die Aktion definiert, die durchgeführt wird, wenn eine Taste gedrückt wird, während das Widget den Fokus besitzt. In diesem Fall wird die-Methode so definiert, dass **Sie die Eingabe** Taste (beim Tippen) abhört und dann [eine Popup](xref:Android.Widget.Toast) Meldung mit dem eingegebenen Text öffnet. Beachten Sie, dass die [behandelte](xref:Android.Views.View.KeyEventArgs.Handled) Eigenschaft immer `true` sein sollte, wenn das Ereignis behandelt wurde. Dies ist erforderlich, um zu verhindern, dass das Ereignis nach oben blindelt (was zu einem Wagen Rücklauf im Textfeld führen würde).
+In diesem Codebeispiel wird das [EDITTEXT](xref:Android.Widget.EditText) -Element aus dem Layout vergrößert und ein [KeyPress](xref:Android.Views.View.KeyPress) -Handler hinzugefügt, der die Aktion definiert, die durchgeführt wird, wenn eine Taste gedrückt wird, während das Widget den Fokus besitzt. In diesem Fall wird die-Methode so definiert, dass **Sie die Eingabe** Taste (beim Tippen) abhört und dann [eine Popup](xref:Android.Widget.Toast) Meldung mit dem eingegebenen Text öffnet. Beachten Sie, dass die [behandelte](xref:Android.Views.View.KeyEventArgs.Handled) Eigenschaft immer `true` werden sollte, wenn das Ereignis behandelt wurde. Dies ist erforderlich, um zu verhindern, dass das Ereignis nach oben blindelt (was zu einem Wagen Rücklauf im Textfeld führen würde).
 
 Führen Sie die Anwendung aus, und geben Sie Text in das Textfeld ein. Wenn Sie die **Eingabe** Taste drücken, wird der Toast wie auf der rechten Seite angezeigt:
 
 [![Beispiele für das Eingeben von Text in EDITTEXT](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*Teile dieser Seite sind Änderungen, die auf der erstellten Arbeit und* [*vom Android Open Source-Projekt gemeinsam*](http://code.google.com/policies.html) verwendet *und werden gemäß den Begriffen verwendet, die im* [*Creative Commons 2,5-Zuweisungs Lizenz*](http://creativecommons.org/licenses/by/2.5/) *. Dieses Tutorial basiert auf dem* Android-Lernprogramm für [*Formular Inhalte*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
+*Teile dieser Seite sind Änderungen, die auf* [*der vom Android Open Source-Projekt erstellten und freigegebenen*](https://code.google.com/policies.html) Arbeit basieren *und gemäß den in der* [*Creative Commons 2,5-Zuweisungs Lizenz*](https://creativecommons.org/licenses/by/2.5/) beschriebenen Begriffen verwendet werden *. Dieses Tutorial basiert auf dem* Android-Lernprogramm für [*Formular Inhalte*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)
+- [Edittextsample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)

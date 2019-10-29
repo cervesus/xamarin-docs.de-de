@@ -4,21 +4,21 @@ description: Mit IOS 12 kann eine Erweiterung für Benachrichtigungs Inhalte die
 ms.prod: xamarin
 ms.assetid: 6B34AD78-5117-42D0-B6E7-C8B4B453EAFF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 5be233e9b07069dc7c9842a3ddd00e7d46d9c22f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cb38d222cecd1a6c5bb65b0fb376888770dd0e49
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291276"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031958"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Schaltflächen für dynamische Benachrichtigungs Aktionen in xamarin. IOS
 
 In IOS 12 können Benachrichtigungen ihre zugeordneten Aktions Schaltflächen dynamisch hinzufügen, entfernen und aktualisieren. Diese Anpassung ermöglicht Benutzern das Bereitstellen von Aktionen, die für den Inhalt der Benachrichtigung direkt relevant sind, sowie die Interaktion des Benutzers.
 
-## <a name="sample-app-redgreennotifications"></a>Beispiel-App: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Beispiel-App: redgreenbenachrichtigungen
 
 Die Code Ausschnitte in dieser Anleitung stammen aus der [redgreennotification](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) -Beispiel-APP, die die Verwendung von xamarin. IOS zum Arbeiten mit Benachrichtigungs Aktions Schaltflächen in IOS 12 veranschaulicht.
 
@@ -32,12 +32,12 @@ Code Ausschnitte in dieser Anleitung stammen aus dieser Beispiel-app.
 Die Standard Aktions Schaltflächen werden von einer Benachrichtigungs Kategorie bestimmt.
 
 Erstellen und registrieren Sie Benachrichtigungs Kategorien, während eine Anwendung gestartet wird.
-In der Beispiel- [App](#sample-app-redgreennotifications) `FinishedLaunching` führt z. b. die `AppDelegate` -Methode von Folgendes aus:
+In der Beispiel- [App](#sample-app-redgreennotifications)führt die `FinishedLaunching`-Methode von `AppDelegate` die folgenden Schritte aus:
 
 - Definiert eine Kategorie für rote Benachrichtigungen und eine andere für grüne Benachrichtigungen.
-- Registriert diese Kategorien, indem aufgerufen wird.[`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
-Methode von`UNUserNotificationCenter`
-- Fügt eine einzelne[`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
+- Registriert diese Kategorien durch Aufrufen des [`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
+Methode der `UNUserNotificationCenter`
+- Fügt eine einzelne [`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 zu jeder Kategorie
 
 Der folgende Beispielcode zeigt, wie dies funktioniert:
@@ -74,14 +74,14 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Basierend auf diesem Code, jede Benachrichtigung, deren[`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
+Basierend auf diesem Code, jede Benachrichtigung, deren [`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
 der Wert "Red-Category" oder "Green-Category" zeigt standardmäßig die Schaltfläche " **20 ° drehen** " an.
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>In-App-Behandlung von Schaltflächen für Benachrichtigungs Aktionen
 
-`UNUserNotificationCenter`verfügt über `Delegate` eine-Eigenschaft [`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)vom Typ.
+`UNUserNotificationCenter` verfügt über eine `Delegate`-Eigenschaft vom Typ [`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
-In der Beispiel-APP `AppDelegate` legt sich selbst als Delegat des Benutzer Benachrichtigungs `FinishedLaunching`Centers in fest:
+In der Beispiel-APP wird `AppDelegate` sich selbst als Delegat des Benutzer Benachrichtigungs Centers in `FinishedLaunching`festlegen:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -95,7 +95,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-`AppDelegate` Dann implementiert[`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
+`AppDelegate` implementiert dann [`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
 So verarbeiten Sie Aktions Schaltflächen:
 
 ```csharp
@@ -125,23 +125,23 @@ Diese Implementierung von `DidReceiveNotificationResponse` behandelt nicht die A
 
 Eine Erweiterung für Benachrichtigungs Inhalte enthält einen Ansichts Controller, der die benutzerdefinierte Schnittstelle für eine Benachrichtigung definiert.
 
-Dieser Ansichts Controller kann die `GetNotificationActions` - `SetNotificationActions` Methode und die-Methode in der[`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
+Dieser Ansichts Controller kann die Methoden `GetNotificationActions` und `SetNotificationActions` für seine [`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
 Eigenschaft für den Zugriff auf und die Änderung der Aktions Schaltflächen der Benachrichtigung.
 
 In der Beispiel-app ändert der Ansichts Controller der Benachrichtigungs Inhalts Erweiterung die Aktions Schaltflächen nur bei der Reaktion auf eine bereits vorhandene Aktions Schaltfläche.
 
 > [!NOTE]
-> Eine Erweiterung für Benachrichtigungs Inhalte kann auf eine Aktions Schaltfläche in der Methode [`DidReceiveNotificationResponse`](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*) des Ansichts Controllers Antworten, die als Teil von [iunnotificationcontentextension](xref:UserNotificationsUI.IUNNotificationContentExtension)deklariert ist.
+> Eine Erweiterung für Benachrichtigungs Inhalte kann auf eine Aktions Schaltfläche in der [`DidReceiveNotificationResponse`](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*) -Methode des Ansichts Controllers Antworten, die als Teil von [iunnotificationcontentextension](xref:UserNotificationsUI.IUNNotificationContentExtension)deklariert ist.
 >
-> Obwohl es einen Namen mit der `DidReceiveNotificationResponse` [oben beschriebenen](#in-app-handling-of-notification-action-buttons)Methode hat, handelt es sich hierbei um eine andere Methode.
+> Obwohl Sie einen Namen mit der [oben beschriebenen](#in-app-handling-of-notification-action-buttons)`DidReceiveNotificationResponse` Methode freigibt, ist dies eine andere Methode.
 >
 > Nachdem eine Erweiterung für Benachrichtigungs Inhalte die Verarbeitung einer Schaltflächen Abzweigung abgeschlossen hat, kann Sie auswählen, ob die Hauptanwendung die gleiche Schaltflächen Abzweigung verarbeiten soll. Hierfür muss ein entsprechender Wert von [unnotificationcontentextensionresponanoption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption) an den Abschluss Handler übergeben werden:
 >
-> - `Dismiss`Gibt an, dass die Benachrichtigungs Schnittstelle verworfen werden soll, und dass die Haupt-APP die Schaltflächen Abzweigung nicht verarbeiten muss.
-> - `DismissAndForwardAction`Gibt an, dass die Benachrichtigungs Schnittstelle verworfen werden soll, und dass die Haupt-APP auch die Schaltflächen Abzweigung verarbeiten soll.
-> - `DoNotDismiss`Gibt an, dass die Benachrichtigungs Schnittstelle nicht verworfen werden soll, und dass die Haupt-APP die Schaltflächen Abzweigung nicht verarbeiten muss.
+> - `Dismiss` gibt an, dass die Benachrichtigungs Schnittstelle verworfen werden soll, und dass die Haupt-APP die Schaltflächen Abzweigung nicht verarbeiten muss.
+> - `DismissAndForwardAction` gibt an, dass die Benachrichtigungs Schnittstelle verworfen werden soll, und dass die Haupt-APP auch die Schaltflächen Abzweigung verarbeiten soll.
+> - `DoNotDismiss` gibt an, dass die Benachrichtigungs Schnittstelle nicht verworfen werden sollte und dass die Haupt-APP die Schaltflächen Abzweigung nicht verarbeiten muss.
 
-Die- `DidReceiveNotificationResponse` Methode der Inhalts Erweiterung bestimmt, welche Aktions Schaltfläche angetippt wurde, dreht das Bild in der-Schnittstelle der Benachrichtigung und zeigt eine Schaltfläche zum **Zurücksetzen** der Aktion an
+Die `DidReceiveNotificationResponse`-Methode der Inhalts Erweiterung bestimmt, welche Aktions Schaltfläche angetippt wurde, dreht das Bild in der Benutzeroberfläche der Benachrichtigung und zeigt eine Schaltfläche zum **Zurücksetzen** der Aktion an
 
 ```csharp
 [Export("didReceiveNotificationResponse:completionHandler:")]
@@ -184,7 +184,7 @@ public void DidReceiveNotificationResponse(UNNotificationResponse response, Acti
 }
 ```
 
-In diesem Fall übergibt `UNNotificationContentExtensionResponseOption.DoNotDismiss` die Methode an den Abschluss Handler. Dies bedeutet, dass die Benutzeroberfläche der Benachrichtigung geöffnet bleibt.
+In diesem Fall übergibt die-Methode `UNNotificationContentExtensionResponseOption.DoNotDismiss` an ihren Abschluss Handler. Dies bedeutet, dass die Benutzeroberfläche der Benachrichtigung geöffnet bleibt.
 
 ## <a name="related-links"></a>Verwandte Links
 

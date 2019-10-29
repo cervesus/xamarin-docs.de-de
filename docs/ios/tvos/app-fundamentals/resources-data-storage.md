@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie Ressourcen und persiste
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 4b50ba09488f1f052f3e41302a42c691089727ff
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d84752afd5579216272895f750522a8f38ece34a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769651"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030802"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvos-Ressourcen und-Datenspeicherung in xamarin
 
@@ -22,7 +22,7 @@ _In diesem Artikel wird das Arbeiten mit Ressourcen und der persistenten Datensp
 
 ## <a name="tvos-resource-limitations"></a>Einschränkungen der tvos-Ressourcen
 
-Anders als bei IOS-Geräten bietet das neue Apple TV einen extrem eingeschränkten permanenten, lokalen Speicher für tvos-Apps oder-Daten. Für sehr kleine Elemente (z. b. Benutzereinstellungen) hat ihre tvos-App weiterhin `NSUserDefaults` Zugriff auf mit einem [Grenzwert von Daten von 500 KB](https://forums.developer.apple.com/message/50696#50696). Wenn Ihre xamarin. tvos-App jedoch größere Mengen von Informationen beibehalten muss, muss Sie diese Daten aus [icloud](#iCloud-Data-Storage)speichern und abrufen.
+Anders als bei IOS-Geräten bietet das neue Apple TV einen extrem eingeschränkten permanenten, lokalen Speicher für tvos-Apps oder-Daten. Für sehr kleine Elemente (z. b. Benutzereinstellungen) hat ihre tvos-App weiterhin Zugriff auf `NSUserDefaults` mit einer [Beschränkung von Daten von 500 KB](https://forums.developer.apple.com/message/50696#50696). Wenn Ihre xamarin. tvos-App jedoch größere Mengen von Informationen beibehalten muss, muss Sie diese Daten aus [icloud](#iCloud-Data-Storage)speichern und abrufen.
 
 Außerdem schränkt tvos die Größe einer Apple TV-App auf 200 MB ein. Wenn Ihre APP Ressourcen erfordert, die diese Größe überschreiten, müssen Sie mit [bedarfsgesteuerten Ressourcen](#On-Demand-Resources) (bis zu zusätzlichen 2 GB) verpackt und geladen werden. Angesichts dieser Einschränkungen ist es wichtig, dass Sie das Herunterladen zusätzlicher Assets ordnungsgemäß durcharbeiten, um den Benutzern Ihrer APP die beste Leistung zu bieten. Weitere Informationen finden Sie [im Handbuch zu on-Demand-Ressourcen von](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)Apple.
 
