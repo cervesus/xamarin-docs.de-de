@@ -3,19 +3,19 @@ title: Fehlende Visual Studio-Erweiterungen nach der Installation
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 180db6789ab9cc665ad815b943013b117a562709
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6cd5acb529d617c72d8c9e1bd642a831f90b2e8c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757070"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013746"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>Fehlende Visual Studio-Erweiterungen nach der Installation
 
-## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>Fehlermeldung: Dieses Projekt ist mit der aktuellen Edition von Visual Studio nicht kompatibel.
+## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>Fehlermeldung: dieses Projekt ist mit der aktuellen Edition von Visual Studio nicht kompatibel.
 
 Stellen Sie sicher, dass Visual Studio 2017 (Community, Professional oder Enterprise) oder neuer installiert ist.
 
@@ -33,11 +33,11 @@ In bestimmten Situationen kann das xamarin-Installationsprogramm automatisch die
 
 4. Stellen Sie sicher, dass die Option **xamarin für Visual Studio 2013** auf Installieren festgelegt ist:
 
-    ![](missing-vs-extensions-images/installer.png "Aktivieren von xamarin für Visual Studio 2013-Installationsoption")
+    ![](missing-vs-extensions-images/installer.png "Enable Xamarin for Visual Studio 2013 installation option")
 
 5. Fahren Sie mit dem Rest des Installations-Assistenten fort.
 
-## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>Mögliche Korrektur 2: Bitten Sie Visual Studio, die Erweiterungen erneut einzurichten.
+## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>Mögliche Korrektur 2: bitten Sie Visual Studio, die Erweiterungen erneut einzurichten.
 
 1. Überprüfen Sie, ob die xamarin-Erweiterungen in den Visual Studio-Ordner Erweiterungen kopiert wurden:
 
@@ -45,13 +45,13 @@ In bestimmten Situationen kann das xamarin-Installationsprogramm automatisch die
 
     Wenn die Erweiterungen ordnungsgemäß installiert sind (für Version 3.1.228), befinden sich 60 Elemente im Ordner:
 
-    ![](missing-vs-extensions-images/folder.png "Liste der Ordnerinhalte \"Xamarin\3.1.228.0\" im Explorer")
+    ![](missing-vs-extensions-images/folder.png "List of 'Xamarin\3.1.228.0' folder contents in Explorer")
 
 2. Nachdem Sie sich vergewissert haben, dass dieser Ordner korrekt aussieht, teilen Sie Visual Studio mit, dass Sie die Erweiterungen erneut einrichten:
 
     `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /setup`
 
-## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>Mögliche Korrektur 3: Neuinstallation von xamarin testen
+## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>Mögliche Korrektur 3: Testen Sie die Neuinstallation von xamarin.
 
 1. Deinstallieren Sie in der Windows-Systemsteuerung eine der folgenden Elemente:
 
@@ -77,11 +77,11 @@ In bestimmten Situationen kann das xamarin-Installationsprogramm automatisch die
 
 5. Suchen Sie nach diesem Schlüssel:
 
-    _HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
+    _HKEY\_lokalen\_machine\software\wow6432node\microsoft\windows\currentversion\shareddlls_
 
 6. Suchen und löschen Sie alle Einträge, die diesem Muster entsprechen:
 
-    _\*C:\Programme\Microsoft Visual Studio 1\*. 0 \ Common7\IDE\Extensions\Xamarin_
+    _C:\Programme\*\Microsoft Visual Studio 1\*. 0 \ Common7\IDE\Extensions\Xamarin_
 
 7. Suchen Sie nach diesem Schlüssel:
 
@@ -89,13 +89,13 @@ In bestimmten Situationen kann das xamarin-Installationsprogramm automatisch die
 
 8. Löschen Sie alle Einträge, die zu Xamarin gehören könnten. Hier ist beispielsweise eine solche, die verwendet wird, um in älteren Versionen von xamarin Probleme zu verursachen:
 
-    _Mono.VisualStudio.Shell,1.0_
+    _Mono. VisualStudio. Shell, 1.0_
 
 9. Starten Sie den Computer neu.
 
 10. Installieren Sie die aktuelle stabile Version von xamarin von [VisualStudio.com](https://visualstudio.com/xamarin)neu.
 
-## <a name="possible-fix-4-repair-visual-studio-installation"></a>Mögliche Korrektur 4: Installation von Visual Studio reparieren
+## <a name="possible-fix-4-repair-visual-studio-installation"></a>Mögliche Korrektur 4: Reparieren der Visual Studio-Installation
 
 1. Öffnen Sie die Systemsteuerung " **Programme und Funktionen** " von Windows.
 

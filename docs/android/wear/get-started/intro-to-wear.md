@@ -4,15 +4,15 @@ description: Mit der Einführung des Android Wear von Google sind Sie nicht mehr
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 3b1d27b1489cb71d4bd1922c2de993567ddf36bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758497"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028620"
 ---
 # <a name="introduction-to-android-wear"></a>Einführung in Android Wear
 
@@ -152,17 +152,17 @@ Es gibt noch viele weitere Funktionen der Features 2,0, wie z. b. Inline Aktione
 Hier sind einige Beispiele für Geräte, auf denen Android Wear ausgeführt werden kann:
 
 - [Motorola 360](https://moto360.motorola.com/)
-- [LG G ansehen](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-- [LG G ansehen R](http://www.lg.com/us/smartwatch/g-watch-r)
-- [Samsung Zahnrad Live](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-- [Sony Smartwatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-- [ASUS-Überwachung](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+- [LG G ansehen](https://www.lg.com/us/smart-watches/lg-W100-g-watch)
+- [LG G ansehen R](https://www.lg.com/us/smartwatch/g-watch-r)
+- [Samsung Zahnrad Live](https://www.samsung.com/global/microsite/gear/gearlive_design.html)
+- [Sony Smartwatch 3](https://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+- [ASUS-Überwachung](https://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
 Sehen Sie sich die Google-Dokumentation zu Android Wear an:
 
-- [Informationen zu Android Wear](http://www.android.com/wear/)
+- [Informationen zu Android Wear](https://www.android.com/wear/)
 - [Android Wear-App-Entwurf](https://developer.android.com/design/wear/index.html)
 - [Android. Support. Wearable-Bibliothek](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 - [Android Wear 2,0](https://developer.android.com/wear/preview/index.html)

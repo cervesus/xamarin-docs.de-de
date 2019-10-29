@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: a5b6466b1d2489cced4b1e3205ef672b8f6a4da7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770661"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005454"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Hinzufügen von AppCompat und Material Design
 
@@ -25,19 +25,19 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 In diesen Anweisungen wird erläutert, wie Sie Ihre vorhandenen xamarin. Forms Android-Anwendungen aktualisieren, um die AppCompat-Bibliothek zu verwenden und Material Design in der Android-Version Ihrer xamarin. Forms-apps zu aktivieren.
 
-### <a name="1-update-xamarinforms"></a>1. Xamarin. Forms aktualisieren
+### <a name="1-update-xamarinforms"></a>1. Aktualisieren von xamarin. Forms
 
 Stellen Sie sicher, dass die Lösung xamarin. Forms 2,0 oder höher verwendet. Aktualisieren Sie das xamarin. Forms-nuget-Paket bei Bedarf auf 2,0.
 
-### <a name="2-check-android-version"></a>2. Android-Version überprüfen
+### <a name="2-check-android-version"></a>2. Überprüfen der Android-Version
 
 Stellen Sie sicher, dass das Ziel Framework des Android-Projekts Android 6,0 (Marshmallow) ist. Aktivieren Sie das **Android-Projekt > Optionen > Build > allgemeinen** Einstellungen, um sicherzustellen, dass das Corrent-Framework ausgewählt ist:
 
- ![](appcompat-images/target-android-6-sml.png "Allgemeine Android-Buildkonfiguration")
+ ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
 
-### <a name="3-add-new-themes-to-support-material-design"></a>3. Neue Designs zur Unterstützung von Material Design hinzufügen
+### <a name="3-add-new-themes-to-support-material-design"></a>3. Hinzufügen von neuen Designs zur Unterstützung von Material Design
 
-Erstellen Sie die folgenden drei Dateien in Ihrem Android-Projekt, und fügen Sie den folgenden Inhalt ein. Google stellt einen [Stil Leit Faden](http://www.google.com/design/spec/style/color.html#color-color-palette) und einen [Farbpalette-Generator](http://www.materialpalette.com/) bereit, um Sie bei der Auswahl eines alternativen Farbschemas für das angegebene zu unterstützen.
+Erstellen Sie die folgenden drei Dateien in Ihrem Android-Projekt, und fügen Sie den folgenden Inhalt ein. Google stellt einen [Stil Leit Faden](https://www.google.com/design/spec/style/color.html#color-color-palette) und einen [Farbpalette-Generator](https://www.materialpalette.com/) bereit, um Sie bei der Auswahl eines alternativen Farbschemas für das angegebene zu unterstützen.
 
 **Resources/Values/Colors. XML**
 
@@ -82,9 +82,9 @@ Im Ordner **Values-V21** muss ein zusätzlicher Stil enthalten sein, um bestimmt
 
 ### <a name="4-update-androidmanifestxml"></a>4. Aktualisieren von "androidmanifest. xml"
 
-Um sicherzustellen, dass diese neuen Design Informationen verwendet werden, legen Sie Design in der Datei **androidmanifest** fest, indem Sie hinzufügen `android:theme="@style/MyTheme"` (belassen Sie den Rest des XML-Codes unverändert).
+Um sicherzustellen, dass diese neuen Design Informationen verwendet werden, legen Sie "Design" in der Datei " **androidmanifest** " fest, indem Sie `android:theme="@style/MyTheme"` hinzufügen (belassen Sie den restlichen XML-Code unverändert).
 
-**Properties/AndroidManifest.xml**
+**Properties/androidmanifest. XML**
 
 ```xml
 ...
@@ -93,7 +93,7 @@ Um sicherzustellen, dass diese neuen Design Informationen verwendet werden, lege
 ...
 ```
 
-### <a name="5-provide-toolbar-and-tab-layouts"></a>5. Symbolleisten-und Registerkarten Layouts angeben
+### <a name="5-provide-toolbar-and-tab-layouts"></a>5. Bereitstellen von Symbolleisten-und Registerkarten Layouts
 
 Erstellen Sie die Dateien " **Tabbar. axml** " und " **Toolbar. axml** " im **Ressourcen-/Layout-Verzeichnis** , und fügen Sie Ihren Inhalt aus dem folgenden
 
@@ -113,7 +113,7 @@ Erstellen Sie die Dateien " **Tabbar. axml** " und " **Toolbar. axml** " im **Re
     app:tabMode="fixed" />
 ```
 
-Einige Eigenschaften für die Registerkarten wurden festgelegt, einschließlich der Schwerkraft der `fill` Registerkarte auf `fixed`und den Modus.
+Einige Eigenschaften für die Registerkarten wurden festgelegt, einschließlich der Schwerkraft der Registerkarte, um zu `fill` und `fixed`Modus.
 Wenn Sie über eine Vielzahl von Registerkarten verfügen, können Sie diese zu scrollfähig wechseln. Weitere Informationen finden Sie in der Dokumentation zu Android [TabLayout](https://developer.android.com/reference/android/support/design/widget/TabLayout.html) .
 
 **Ressourcen/Layout/Toolbar. axml**
@@ -135,9 +135,9 @@ Wenn Sie über eine Vielzahl von Registerkarten verfügen, können Sie diese zu 
 In diesen Dateien wird ein bestimmtes Design für die Symbolleiste erstellt, das für Ihre Anwendung variieren kann.
 Weitere Informationen finden Sie im Blogbeitrag der [Hello Toolbar](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/) .
 
-### <a name="6-update-the-mainactivity"></a>6. Aktualisieren Sie die`MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. Aktualisieren der `MainActivity`
 
-In vorhandenen xamarin. Forms-apps erbt die **MainActivity.cs** - `FormsApplicationActivity`Klasse von. Dies muss durch ersetzt `FormsAppCompatActivity` werden, um die neue Funktionalität zu aktivieren.
+In vorhandenen xamarin. Forms-apps erbt die **MainActivity.cs** -Klasse von `FormsApplicationActivity`. Dies muss durch `FormsAppCompatActivity` ersetzt werden, um die neue Funktionalität zu aktivieren.
 
 **MainActivity.cs**
 
@@ -145,7 +145,7 @@ In vorhandenen xamarin. Forms-apps erbt die **MainActivity.cs** - `FormsApplicat
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-Zum Schluss können Sie die neuen Layouts aus Schritt 5 in der `OnCreate` -Methode übertragen, wie hier gezeigt:
+Zum Schluss können Sie die neuen Layouts aus Schritt 5 in der `OnCreate`-Methode "verknüpfen", wie hier gezeigt:
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

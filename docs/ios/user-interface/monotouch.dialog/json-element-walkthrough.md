@@ -5,40 +5,40 @@ ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: conceptdev
-ms.author: crdun
-ms.openlocfilehash: c7deda17a7a4936f000fbfce285b3dc3932795e2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+author: davidortinau
+ms.author: daortin
+ms.openlocfilehash: ad2386d912dba28041c02c4fb4a8046d341a85ed
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292277"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002263"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Verwenden von JSON zum Erstellen einer Benutzeroberfläche in xamarin. IOS
 
 _MonoTouch. Dialog (Mt. D) bietet Unterstützung für die dynamische Generierung von Benutzeroberflächen über JSON-Daten. In diesem Tutorial wird erläutert, wie Sie ein jsonelement verwenden, um eine Benutzeroberfläche aus JSON zu erstellen, die entweder in einer Anwendung enthalten ist oder von einer Remote-URL geladen wird._
 
-UV. D unterstützt das Erstellen von in JSON deklarierten Benutzeroberflächen. Wenn Elemente mit JSON deklariert werden, Mt. D erstellt die zugeordneten Elemente automatisch für Sie. Der JSON-Code kann entweder aus einer lokalen Datei, einer `JsonObject` analysierten Instanz oder sogar aus einer Remote-URL geladen werden.
+UV. D unterstützt das Erstellen von in JSON deklarierten Benutzeroberflächen. Wenn Elemente mit JSON deklariert werden, Mt. D erstellt die zugeordneten Elemente automatisch für Sie. Der JSON-Code kann entweder aus einer lokalen Datei, einer analysierten `JsonObject` Instanz oder sogar aus einer Remote-URL geladen werden.
 
 UV. D unterstützt die vollständige Palette der Features, die in der Elements-API verfügbar sind, wenn JSON verwendet wird. Beispielsweise wird die Anwendung im folgenden Screenshot vollständig mit JSON deklariert:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Zum Beispiel die Anwendung in diesem Screenshot ist vollständig deklariert mithilfe von JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![](json-element-walkthrough-images/01-load-from-file.png "z. B. die Anwendung in diesem Screenshot ist vollständig mit deklariert JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "Beispielsweise ist die Anwendung in diesem Screenshot vollständig mit JSON deklariert.")](json-element-walkthrough-images/01-load-from-file.png#lightbox)[![](json-element-walkthrough-images/01-load-from-file.png "Beispielsweise ist die Anwendung in diesem Screenshot vollständig mit JSON deklariert.")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Sehen wir uns das Beispiel aus dem Tutorial zu den [Element-API](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) -exemplarischen Vorgehensweisen an, das zeigt, wie ein Task Detailbildschirm mithilfe von JSON hinzugefügt
 
 ## <a name="setting-up-mtd"></a>Einrichten von Mt. D
 
-UV. D wird mit xamarin. IOS verteilt. Um es zu verwenden, klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** eines xamarin. IOS-Projekts in Visual Studio 2017 oder Visual Studio für Mac, und fügen Sie einen Verweis auf die Assembly **MonoTouch. Dialog-1** hinzu. Fügen Sie dann `using MonoTouch.Dialog` ggf. Anweisungen im Quellcode hinzu.
+UV. D wird mit xamarin. IOS verteilt. Um es zu verwenden, klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** eines xamarin. IOS-Projekts in Visual Studio 2017 oder Visual Studio für Mac, und fügen Sie einen Verweis auf die Assembly **MonoTouch. Dialog-1** hinzu. Fügen Sie dann `using MonoTouch.Dialog`-Anweisungen in Ihrem Quellcode nach Bedarf hinzu.
 
 ## <a name="json-walkthrough"></a>Exemplarische Vorgehensweise für JSON
 
 Im Beispiel für diese exemplarische Vorgehensweise können Aufgaben erstellt werden. Wenn ein Task auf dem ersten Bildschirm ausgewählt wird, wird wie im folgenden dargestellt ein Detailbildschirm angezeigt:
 
- [![](json-element-walkthrough-images/03-task-list.png "Wenn ein Task auf dem ersten Bildschirm ausgewählt wird, wird ein Detailbildschirm angezeigt.")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![](json-element-walkthrough-images/03-task-list.png "When a task is selected on the first screen, a detail screen is presented as shown")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>Erstellen der JSON-Datei
 
-In diesem Beispiel laden wir den JSON-Code aus einer Datei im Projekt mit dem `task.json`Namen. UV. D erwartet, dass der JSON-Code einer Syntax entspricht, die die Elements-API widerspiegelt. Genau wie bei der Verwendung der Elements-API aus Code deklarieren wir bei der Verwendung von JSON Abschnitte. in diesen Abschnitten fügen wir Elemente hinzu. Um Abschnitte und Elemente in JSON zu deklarieren, werden die Zeichen folgen "Abschnitte" und "Elemente" als Schlüssel verwendet. Für jedes Element wird der zugeordnete Elementtyp mithilfe des `type` Schlüssels festgelegt. Jede andere Elements-Eigenschaft wird mit dem Eigenschaftsnamen als Schlüssel festgelegt.
+In diesem Beispiel laden wir den JSON-Code aus einer Datei im Projekt mit dem Namen `task.json`. UV. D erwartet, dass der JSON-Code einer Syntax entspricht, die die Elements-API widerspiegelt. Genau wie bei der Verwendung der Elements-API aus Code deklarieren wir bei der Verwendung von JSON Abschnitte. in diesen Abschnitten fügen wir Elemente hinzu. Um Abschnitte und Elemente in JSON zu deklarieren, werden die Zeichen folgen "Abschnitte" und "Elemente" als Schlüssel verwendet. Für jedes Element wird der zugeordnete Elementtyp mithilfe des `type` Schlüssels festgelegt. Jede andere Elements-Eigenschaft wird mit dem Eigenschaftsnamen als Schlüssel festgelegt.
 
 Der folgende JSON-Code beschreibt z. b. die Abschnitte und Elemente für die Aufgaben Details:
 
@@ -69,7 +69,7 @@ Beachten Sie, dass die oben genannte JSON-Datei eine ID für jedes Element enth�
 
 ## <a name="loading-the-json-in-code"></a>Laden des JSON-Codes in Code
 
-Nachdem der JSON-Code definiert wurde, müssen wir ihn in Mt laden. D mit der `JsonElement` -Klasse. Angenommen, eine Datei mit dem oben erstellten JSON-Code wurde dem Projekt mit dem Namen Sample. JSON hinzugefügt, und `JsonElement` es wurde eine Buildaktion von Content angegeben. das Laden von ist so einfach wie das Aufrufen der folgenden Codezeile:
+Nachdem der JSON-Code definiert wurde, müssen wir ihn in Mt laden. D mit der `JsonElement`-Klasse. Angenommen, eine Datei mit dem oben erstellten JSON-Code wurde dem Projekt mit dem Namen Sample. JSON hinzugefügt, und es wurde eine Buildaktion von Inhalt gegeben. das Laden der `JsonElement` ist so einfach wie das Aufrufen der folgenden Codezeile:
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
@@ -121,7 +121,7 @@ _addButton.Clicked += (sender, e) => {
 
 ## <a name="loading-json-from-a-url"></a>Laden von JSON aus einer URL
 
-UV. D unterstützt auch das dynamische Laden von JSON aus einer externen URL, indem die URL einfach an den Konstruktor von `JsonElement`übergeben wird. UV. D erweitert bei Bedarf die Hierarchie, die in der JSON-Datei deklariert wird, während Sie zwischen Bildschirmen navigieren. Betrachten Sie z. b. eine JSON-Datei, die sich im Stammverzeichnis des lokalen Webservers befindet:
+UV. D unterstützt auch das dynamische Laden von JSON aus einer externen URL, indem die URL einfach an den Konstruktor der `JsonElement`übergeben wird. UV. D erweitert bei Bedarf die Hierarchie, die in der JSON-Datei deklariert wird, während Sie zwischen Bildschirmen navigieren. Betrachten Sie z. b. eine JSON-Datei, die sich im Stammverzeichnis des lokalen Webservers befindet:
 
 ```json
 {
@@ -147,7 +147,7 @@ UV. D unterstützt auch das dynamische Laden von JSON aus einer externen URL, in
 }
 ```
 
-Wir können dies mit dem `JsonElement` wie im folgenden Code laden:
+Wir können dies mit dem `JsonElement` laden, wie im folgenden Code:
 
 ```csharp
 _rootElement = new RootElement ("Json Example") {
@@ -159,7 +159,7 @@ _rootElement = new RootElement ("Json Example") {
 
 Zur Laufzeit wird die Datei von MT abgerufen und analysiert. D, wenn der Benutzer zur zweiten Ansicht navigiert, wie im folgenden Screenshot zu sehen:
 
- [![](json-element-walkthrough-images/04-json-web-example.png "Die Datei wird von MT abgerufen und analysiert. D, wenn der Benutzer zur zweiten Ansicht navigiert")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
+ [![](json-element-walkthrough-images/04-json-web-example.png "The file will be retrieved and parsed by MT.D when the user navigates to the second view")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 

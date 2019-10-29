@@ -3,15 +3,15 @@ title: Apple-Kontoverwaltung
 description: In diesem Dokument wird beschrieben, wie die Features der Apple-Kontoverwaltung in Visual Studio für Mac und Visual Studio 2019 verwendet werden.
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 81f161442b33eee94f32c506947ed029fd40aadb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766120"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016345"
 ---
 # <a name="apple-account-management"></a>Apple-Kontoverwaltung
 
@@ -39,7 +39,7 @@ Sie müssen über ein Apple-Entwicklerkonto verfügen, um diese Funktion verwend
 
 - Stellen Sie sicher, dass Sie mit dem Internet verbunden sind. Der Grund hierfür ist, dass Fastlane direkt mit dem Apple Developer Portal kommuniziert.
 - Stellen Sie sicher, dass [Fastlane-Tools installiert](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)sind.
-- Stellen Sie sicher, dass die neuesten Fastlane [https://download.fastlane.tools](https://download.fastlane.tools)-Tools von vorhanden sind.
+- Stellen Sie sicher, dass Sie über [https://download.fastlane.tools](https://download.fastlane.tools)die neuesten Fastlane-Tools verfügen.
 - Bevor Sie beginnen, stellen Sie sicher, dass Sie alle Benutzer Lizenzverträge im [Entwickler Portal](https://developer.apple.com/account/)akzeptieren.
 
 ## <a name="adding-an-apple-developer-account"></a>Hinzufügen eines Apple-Entwickler Kontos
@@ -50,7 +50,7 @@ Sie müssen über ein Apple-Entwicklerkonto verfügen, um diese Funktion verwend
 
     ![Apple Developer-Konto Optionen](apple-account-management-images/image1.png)
 
-2. Drücken Sie die **+** Schaltfläche, um die Anmeldung im Dialogfeld angezeigt, wie unten dargestellt: 
+2. Klicken Sie auf die Schaltfläche **+** , um das Anmelde Dialogfeld anzuzeigen, wie unten dargestellt: 
 
     ![FastLane-Dialogfeld.](apple-account-management-images/image2.png)
 
@@ -132,7 +132,7 @@ Im Dialogfeld "Team Details" wird auch eine Liste aller Bereitstellungs Profile 
 
 -----
 
-## <a name="ios-bundle-signing"></a>iOS Bundle Signing
+## <a name="ios-bundle-signing"></a>IOS-Bündel Signierung
 
 Informationen zum Bereitstellen der APP auf einem Gerät finden Sie im Handbuch zur [Geräte Bereitstellung](~/ios/get-started/installation/device-provisioning/index.md) .
 
@@ -144,7 +144,7 @@ Dies ist zurzeit ein bekanntes Problem im Zusammenhang mit Fehler [#53906](https
 
 ### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>Wenn bei der Protokollierung Ihres Kontos Probleme auftreten, versuchen Sie Folgendes:
 
-- Öffnen Sie die Anwendung keychain, und wählen Sie Unterkategorie die Option Kenn *Wörter* Suchen Sie nach allen Einträgen ,undlöschenSieSie.`deliver.`
+- Öffnen Sie die Anwendung keychain, und wählen Sie Unterkategorie die Option Kenn *Wörter* Suchen Sie nach `deliver.`, und löschen Sie alle Einträge.
 
 ### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"Fehler beim Hinzufügen des Kontos. Melden Sie sich mit einem App-spezifischen Kennwort an.
 

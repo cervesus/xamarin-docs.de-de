@@ -4,15 +4,15 @@ description: Grundlegende Anwendungskonzepte
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af7ba83b9026a91028f4ffa9894d564d5ff13eb8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: eb581d68f3b7e57975b6979fe1005b1fac411ec8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755304"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019219"
 ---
 # <a name="xamarinandroid-application-fundamentals"></a>Grundlagen der xamarin. Android-Anwendung
 
@@ -62,7 +62,7 @@ Xamarin. Android unterstützt verschiedene CPU-Architekturen, einschließlich 32
 
 In diesem Artikel wird beschrieben, wie Änderungen an der Geräte Orientierung in xamarin. Android behandelt werden. Es wird erläutert, wie Sie mit dem Android-Ressourcensystem zum automatischen Laden von Ressourcen für eine bestimmte Geräte Orientierung und zum programmgesteuerten behandeln von Richtungsänderungen arbeiten. Anschließend werden Techniken zum Verwalten des Zustands beim Drehen eines Geräts beschrieben.
 
-## <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android Audio](~/android/app-fundamentals/android-audio.md)
+## <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android-Audiodatei](~/android/app-fundamentals/android-audio.md)
 
 Das Android-Betriebssystem bietet umfassende Unterstützung für Multimedia und umfasst sowohl Audioinformationen als auch Videos. Dieser Leitfaden konzentriert sich auf das Audiomaterial in Android und deckt das Abspielen und Aufzeichnen von Audiodaten mithilfe der integrierten Audioplayer-und Recorder-Klassen sowie der Low-Level-audioapi ab. Außerdem wird die Arbeit mit Audioereignissen behandelt, die von anderen Anwendungen gesendet werden, damit Entwickler gut verhaltene Anwendungen entwickeln können.
 

@@ -1,83 +1,83 @@
 ---
-title: Arbeiten mit WatchOS zur Navigation in Xamarin
-description: Dieses Dokument beschreibt das Arbeiten mit Navigation in einer WatchOS-Anwendung. Es wird erläutert, modale Schnittstellen, hierarchische Navigation und seitenbasierte Schnittstellen.
+title: Arbeiten mit der watchos-Navigation in xamarin
+description: In diesem Dokument wird beschrieben, wie Sie in einer watchos-Anwendung mit der Navigation arbeiten. Es werden modale Schnittstellen, hierarchische Navigation und Seiten basierte Schnittstellen erläutert.
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 05da84949f6613bce24f103df4d86f1bdcd30764
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d3565e359ccbad9f7b779969f4273a8cbae4d438
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768725"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021750"
 ---
-# <a name="working-with-watchos-navigation-in-xamarin"></a>Arbeiten mit WatchOS zur Navigation in Xamarin
+# <a name="working-with-watchos-navigation-in-xamarin"></a>Arbeiten mit der watchos-Navigation in xamarin
 
-Die einfachste verfügbare Navigationsoption für die Überwachung ist eine einfache [modales Fenster](#modal) , angezeigt wird, auf die aktuelle Szene.
+Die einfachste Navigations Option, die auf der Überwachung verfügbar ist, ist ein einfaches [modales Popup](#modal) , das oberhalb der aktuellen Szene angezeigt wird.
 
-Für die Multi-Szene-Watch-apps gibt es zwei Navigation Paradigmen, die verfügbar sind:
+Für Multi-Scene Watch-apps sind zwei Navigations Paradigmen verfügbar:
 
 - [Hierarchische Navigation](#Hierarchical_Navigation)
-- [Ein seitenbasiertes Schnittstellen](#Page-Based_Interfaces)
+- [Seiten basierte Schnittstellen](#Page-Based_Interfaces)
 
 <a name="modal"/>
 
 ## <a name="modal-interfaces"></a>Modale Schnittstellen
 
-Verwenden der `PresentController` Methode, um eines schnittstellencontrollers, modal aufzurufen. Die schnittstellencontrollers muss bereits definiert werden, der **Interface.storyboard**.
+Verwenden Sie die `PresentController`-Methode, um einen Schnittstellen Controller modale zu öffnen. Der Schnittstellen Controller muss bereits in " **Interface. Storyboard**" definiert sein.
 
 ```csharp
 PresentController ("pageController","some context info");
 ```
 
-Modal angezeigt Controller verwenden Sie den gesamten Bildschirm (die vorherige Szene erläutert). Der Titel ist standardmäßig auf festgelegt **Abbrechen** , und tippen, wird den Controller schließen.
+Modale vorgestellte Controller verwenden den gesamten Bildschirm (der die vorherige Szene abdeckt). Standardmäßig ist der Titel auf **Abbrechen** festgelegt, und beim Tippen wird der Controller geschlossen.
 
-Rufen Sie zum programmgesteuerten schließen den Controller modal angezeigt `DismissController`.
+Um den modale dargestellten Controller Programm gesteuert zu schließen, wenden Sie `DismissController`an.
 
 ```csharp
 DismissController();
 ```
 
-Modale Bildschirmen können einer einzigen Szene auf oder verwenden Sie ein Layout seitenbasierte sein.
+Modale Bildschirme können entweder eine einzelne Szene sein oder ein Seiten basiertes Layout verwenden.
 
 <a name="Hierarchical_Navigation"/>
 
 ## <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
-Präsentiert von Szenen wie einen Stapel, der über zurück navigiert, ähnlich wie möglich `UINavigationController` unter iOS arbeitet. Im Hintergrund können mithilfe von Push auf den Navigationsstapel übertragen und geholt (entweder programmgesteuert oder durch Auswahl des Benutzers).
+Zeigt Szenen wie einen Stapel an, der wieder durch navigiert werden kann, ähnlich wie `UINavigationController` unter IOS funktioniert. Szenen können auf den Navigations Stapel verschoben und ausgeschaltet werden (entweder Programm gesteuert oder durch Benutzer Auswahl).
 
-![](navigation-images/hierarchy-1.png "Szenen geschoben werden können, auf dem Navigationsstapel") ![](navigation-images/hierarchy-2.png "können im Hintergrund beim Übersetzen der Navigationsstapel geholt werden")
+![](navigation-images/hierarchy-1.png "Szenen können auf den Navigations Stapel verschoben werden.") ![](navigation-images/hierarchy-2.png "Szenen können aus dem Navigations Stapel entfernt werden.")
 
-Navigieren wie bei iOS, eine links-Edge-wischgeste wieder an den übergeordneten Controller in einem Stapel für die hierarchische Navigation.
+Wie bei IOS navigiert ein Left Edge-Swipe zurück zum übergeordneten Controller in einem hierarchischen Navigations Stapel.
 
-Sowohl die [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) und [WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) Beispiele umfassen die hierarchische Navigation.
+Die Beispiele [watchkitcatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) und [watchtables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) enthalten die hierarchische Navigation.
 
-### <a name="pushing-and-popping-in-code"></a>Mithilfe von Push übertragen und entfernt wurde, im Code
+### <a name="pushing-and-popping-in-code"></a>Pushübertragung und popping in Code
 
-Kit erfordert kein bestärken "navigationscontroller" sehen Sie sich einfach erstellt werden, wie iOS - push einen Controller mithilfe der `PushController` -Methode und einem Navigationsstapel automatisch erstellt werden.
+Das Watch Kit erfordert keinen übergreifenden "Navigations Controller", wie es bei IOS der Fall ist. über Push wird ein Controller einfach mithilfe der `PushController`-Methode per Push erstellt, und es wird automatisch ein Navigations Stapel erstellt.
 
 ```csharp
 PushController("secondPageController","some context info");
 ```
 
-Die Überwachung des Bildschirms enthält einen **wieder** Schaltfläche in der oberen linken Ecke, aber Sie können eine Szene auch programmgesteuert entfernen, aus dem Stapel mit Navigation `PopController`.
+Der Bildschirm der Überwachung enthält oben links eine Schaltfläche " **zurück** ", aber Sie können eine Szene auch Programm gesteuert aus dem Navigations Stapel entfernen, indem Sie `PopController`verwenden.
 
 ```csharp
 PopController();
 ```
 
-Wie iOS, es auch möglich, in das Stammverzeichnis des Stapel für die Navigation mit zurückzugeben `PopToRootController`.
+Wie bei IOS ist es auch möglich, mithilfe von `PopToRootController`zum Stammverzeichnis des Navigations Stapels zurückzukehren.
 
 ```csharp
 PopToRootController();
 ```
 
-### <a name="using-segues"></a>Mit Segues
+### <a name="using-segues"></a>Verwenden von "".
 
-Übergänge zwischen Szenen in das Storyboard so definieren Sie die hierarchische Navigation erstellt werden können. Beim Abrufen von Kontext für die Ziel-Szene, die Aufrufe des Betriebssystems `GetContextForSegue` zum Initialisieren der neuen schnittstellencontrollers.
+Sie können im Storyboard zwischen Szenen erstellt werden, um die hierarchische Navigation zu definieren. Um den Kontext für die zielszene zu erhalten, ruft das Betriebssystem `GetContextForSegue` auf, um den neuen Schnittstellen Controller zu initialisieren.
 
 ```csharp
 public override NSObject GetContextForSegue (string segueIdentifier)
@@ -91,13 +91,13 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 <a name="Page-Based_Interfaces"/>
 
-## <a name="page-based-interfaces"></a>Ein seitenbasiertes Schnittstellen
+## <a name="page-based-interfaces"></a>Seiten basierte Schnittstellen
 
-Seitenbasierte Schnittstellen Wischen Sie nach links, rechts, ähnlich wie die `UIPageViewController` unter iOS arbeitet. Indikator-Punkte werden am unteren Rand des Bildschirms anzeigen, welche Seite derzeit angezeigt wird angezeigt.
+Seiten basierte Schnittstellen Schwenken von links nach rechts, ähnlich wie `UIPageViewController` unter IOS funktioniert. Indikator Punkte werden am unteren Bildschirmrand angezeigt, um anzuzeigen, welche Seite derzeit angezeigt wird.
 
-![](navigation-images/paged-1.png "Erste Beispielseite") ![](navigation-images/paged-2.png "zweite Beispielseite") ![](navigation-images/paged-5.png "fünfte Beispielseite")
+![](navigation-images/paged-1.png "Erste Beispielseite")![](navigation-images/paged-2.png "Beispiel für eine zweite Seite")![](navigation-images/paged-5.png "Fünfte Beispielseite")
 
-Verwenden, um einer Seite-basierte Schnittstelle für die Watch-app die Hauptbenutzeroberfläche machen `ReloadRootControllers` mit einem Array von Schnittstellencontroller und Kontexte:
+Verwenden Sie `ReloadRootControllers` mit einem Array von Schnittstellen Controllern und Kontexten, um eine Seiten basierte Schnittstelle als Hauptbenutzer Oberfläche für Ihre Watch-APP zu erstellen:
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };
@@ -105,7 +105,7 @@ var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 ReloadRootControllers (controllerNames, contexts);
 ```
 
-Sie können auch einen seitenbasierte-Controller, der nicht der Stamm ist darstellen mit `PresentController` aus einem der anderen Szenen in einer app.
+Sie können auch einen seitenbasierten Controller, der nicht das Stammverzeichnis ist, mithilfe `PresentController` aus einem der anderen Szenen in einer APP darstellen.
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };
@@ -115,5 +115,5 @@ PresentController (controllerNames, contexts);
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WatchKitCatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [WatchTables (Beispiel)](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)
+- [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Watchtables (Beispiel)](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)

@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Konzept der Android-Ressourcen in xamari
 ms.prod: xamarin
 ms.assetid: C0DCC856-FA36-04CD-443F-68D26075649E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/01/2018
-ms.openlocfilehash: ec1cb6fcce320ed5ea9154b42d0a5361940c1015
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1ff4d9d896aaa5f290402a49aa4b4bd1f1e00aaf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755013"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025058"
 ---
 # <a name="android-resources"></a>Android-Ressourcen
 
@@ -26,11 +26,11 @@ Eine Android-Anwendung ist nur selten Quellcode. Es gibt oft viele andere Dateie
 
 Ressourcen bieten mehrere Vorteile für eine Android-Anwendung:
 
-- **Code Trennung** &ndash; Trennt Quellcode von Bildern, Zeichen folgen, Menüs, Animationen, Farben usw. Da solche Ressourcen bei der Lokalisierung erheblich helfen können.
+- **Code Trennung** &ndash; trennt Quellcode von Bildern, Zeichen folgen, Menüs, Animationen, Farben usw. Da solche Ressourcen bei der Lokalisierung erheblich helfen können.
 
-- **Mehrere Geräte als Ziel** &ndash; Bietet einfachere Unterstützung verschiedener Geräte Konfigurationen ohne Codeänderungen.
+- **Mehrere Geräte als Ziel** &ndash; bietet einfachere Unterstützung verschiedener Geräte Konfigurationen ohne Codeänderungen.
 
-- Über **Prüfung der Kompilierzeit** &ndash; Ressourcen sind statisch und werden in die Anwendung kompiliert. Dadurch kann die Verwendung der Ressourcen zum Zeitpunkt der Kompilierung geprüft werden, wenn die Fehler leicht abgefangen und korrigiert werden können, im Gegensatz zur Laufzeit, wenn Sie schwieriger zu finden und zu korrigieren ist.
+- Die über **Prüfung der Kompilierzeit** &ndash; Ressourcen ist statisch und wird in die Anwendung kompiliert. Dadurch kann die Verwendung der Ressourcen zum Zeitpunkt der Kompilierung geprüft werden, wenn die Fehler leicht abgefangen und korrigiert werden können, im Gegensatz zur Laufzeit, wenn Sie schwieriger zu finden und zu korrigieren ist.
 
 Wenn ein neues xamarin. Android-Projekt gestartet wird, wird ein spezielles Verzeichnis mit dem Namen "Resources" (Ressourcen) zusammen mit einigen Unterverzeichnissen erstellt:
 
@@ -60,11 +60,11 @@ Beispielsweise geben **Ressourcen/drawable-de** die Images für Geräte an, die 
 
 Dieser Artikel bietet einen umfassenden Einblick in die Verwendung von Ressourcen und deckt die folgenden Themen ab:
 
-- **Android-Ressourcen** &ndash; Verwenden Sie Standard Ressourcen Programm gesteuert und deklarativ, und fügen Sie Ressourcentypen wie Bilder und Schriftarten zu einer Anwendung hinzu.
+- **Grundlagen der Android-Ressourcen** &ndash; die programmgesteuerte Verwendung von Standard Ressourcen und die deklarative Verwendung von Ressourcentypen wie Bildern und Schriftarten zu einer Anwendung.
 
 - **Gerätespezifische Konfigurationen** &ndash; Unterstützung der verschiedenen Bildschirmauflösungen und dichten in einer Anwendung.
 
-- **Lokalisierung** &ndash; Zum Verwenden von Ressourcen zur Unterstützung der verschiedenen Regionen kann eine Anwendung verwendet werden.
+- **Lokalisierungs** &ndash; Verwenden von Ressourcen zur Unterstützung der verschiedenen Regionen, für die eine Anwendung verwendet werden kann.
 
 ## <a name="related-links"></a>Verwandte Links
 

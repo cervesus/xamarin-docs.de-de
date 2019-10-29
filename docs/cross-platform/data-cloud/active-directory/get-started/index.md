@@ -3,15 +3,15 @@ title: Azure Active Directory
 description: In diesem Dokument werden die Schritte beschrieben, die befolgt werden müssen, damit sich ein Mobile App mit Azure Active Directory authentifizieren kann.
 ms.prod: xamarin
 ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: b28fcea37d991879df0231609d09eeb2eca49505
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 18604ffa4980d47149d8feed257460e782f30bee
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766352"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016648"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 
@@ -30,9 +30,9 @@ Beispiele für verschiedene Dienste, auf die Sie zugreifen können:
 
 - [Graph-API](~/cross-platform/data-cloud/active-directory/graph.md)
 - Web-API
-- Office365
+- Office 365
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Schlussfolgerung
 
 Mithilfe der obigen Schritte können Sie Ihre mobilen apps gegen Azure Active Directory authentifizieren. Die Active Directory-Authentifizierungsbibliothek (Adal) vereinfacht die Verwendung von weniger Codezeilen erheblich, während der Großteil des Codes gleich bleibt und die plattformübergreifende Bereitstellung ermöglicht wird.
 

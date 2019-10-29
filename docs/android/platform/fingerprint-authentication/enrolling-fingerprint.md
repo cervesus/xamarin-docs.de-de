@@ -4,15 +4,15 @@ description: Einrichten einer Bildschirmsperre und Registrieren eines Fingerabdr
 ms.prod: xamarin
 ms.assetid: 52092F63-00EE-4F8B-A49F-65C9CCBA7EF2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f52be16a81f3c8047997e1f4a88e13f6b940db14
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c0290dfa3b4aa301a07a589f78577899e8282158
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756416"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027593"
 ---
 # <a name="enrolling-a-fingerprint"></a>Registrieren eines Fingerabdrucks
 
@@ -56,13 +56,13 @@ Führen Sie die folgenden Schritte aus, um eine Bildschirmsperre einzurichten:
 
 ### <a name="simulating-a-fingerprint-scan-on-the-emulator"></a>Simulieren eines Fingerabdruck Scans im Emulator
 
-Auf einem Android-Emulator ist es möglich, eine Fingerabdruck Überprüfung mithilfe des Android Debug Bridge zu simulieren. Starten Sie unter OS X eine Terminal Sitzung, und starten Sie unter Windows eine Eingabeaufforderung oder eine PowerShell `adb`-Sitzung, und führen Sie Folgendes aus:
+Auf einem Android-Emulator ist es möglich, eine Fingerabdruck Überprüfung mithilfe des Android Debug Bridge zu simulieren. Starten Sie unter OS X eine Terminal Sitzung, und starten Sie unter Windows eine Eingabeaufforderung oder eine PowerShell-Sitzung, und führen Sie `adb`aus:
 
 ```shell
 $ adb -e emu finger touch 1
 ```
 
-Der Wert **1** ist die _Finger\_-ID_ für den Finger, der "gescannt" war. Dabei handelt es sich um eine eindeutige Ganzzahl, die Sie für jeden virtuellen Fingerabdruck zuweisen. Wenn die app ausgeführt wird, können Sie den gleichen ADB-Befehl jedes Mal ausführen, wenn der Emulator Sie zur Eingabe eines Fingerabdrucks auffordert. `adb` Sie können den Befehl ausführen und die _Finger\_-ID_ übergeben, um den Fingerabdruck Scan zu simulieren.
+Der Wert **1** ist der _Finger\_ID_ für den Finger, der "gescannt" war. Dabei handelt es sich um eine eindeutige Ganzzahl, die Sie für jeden virtuellen Fingerabdruck zuweisen. Wenn die app ausgeführt wird, können Sie den gleichen ADB-Befehl jedes Mal ausführen, wenn der Emulator Sie zur Eingabe eines Fingerabdrucks auffordert. Sie können den `adb` Befehl ausführen und den _Finger\_ID_ übergeben, um den Fingerabdruck Scan zu simulieren.
 
 Nachdem die Überprüfung des Fingerabdrucks abgeschlossen ist, werden Sie von Android benachrichtigt, dass der Fingerabdruck hinzugefügt wurde:  
 

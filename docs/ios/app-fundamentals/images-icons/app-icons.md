@@ -4,15 +4,15 @@ description: 'In diesem Dokument wird beschrieben, wie Sie mit verschiedenen Anw
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: a0c5821b91c6394b8bae4a090899fa81eb4756e2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 885f5321c10bcbc5389daf7dd7a97d1f9d572499
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763764"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010375"
 ---
 # <a name="application-icons-in-xamarinios"></a>Anwendungs Symbole in xamarin. IOS
 
@@ -30,13 +30,13 @@ Auf dieselbe Weise, wie eine xamarin. IOS-App Image-Assets für UI-Steuerelement
 
 - **Anwendungssymbol** : jede IOS-app muss ein Anwendungssymbol definieren. Dies ist das Symbol, auf das der Benutzer vom IOS-Startbildschirm tippt, um die APP zu starten. Außerdem wird dieses Symbol ggf. von Game Center verwendet. Beispiel: 
 
-    [![](app-icons-images/000.png "Anwendungssymbol")](app-icons-images/000-full.png#lightbox)
+    [![](app-icons-images/000.png "Application Icon")](app-icons-images/000-full.png#lightbox)
 - **Spotlight-Symbol** : Wenn der Benutzer den Namen einer APP in eine Spotlight-Suche eingibt, wird dieses Symbol angezeigt. Beispiel: 
 
-    [![](app-icons-images/000a.png "Spotlight-Symbol")](app-icons-images/000a-full.png#lightbox)
+    [![](app-icons-images/000a.png "Spotlight Icon")](app-icons-images/000a-full.png#lightbox)
 - **Symbol "Einstellungen** ": Wenn der Benutzer die app " **Einstellungen** " auf seinem IOS-Gerät eingibt, wird dieses Symbol am Ende der **Einstellungs** Liste für die App angezeigt. Beispiel: 
 
-    [![](app-icons-images/000b.png "Symbol \"Einstellungen\"")](app-icons-images/000b-full.png#lightbox)
+    [![](app-icons-images/000b.png "Settings Icon")](app-icons-images/000b-full.png#lightbox)
 
 Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für eine xamarin. IOS-App mit IOS 5 bis IOS 9 (oder höher) erforderlichen Symboltypen zu unterstützen:
 
@@ -54,8 +54,8 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
 
     ||1X|2x|
     |---|---|---|
-    |Anwendungssymbol|60x60<sup>1</sup>|120x120|
-    |Gerückt|40x40<sup>2</sup>|80x80|
+    |Anwendungssymbol|60 x 60<sup>1</sup>|120x120|
+    |Gerückt|40 x 40<sup>2</sup>|80X 80|
     |Einstellungen|-|-|
 
 - **iPhone: IOS 5 & 6**
@@ -73,18 +73,18 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
     ||2x (iPad pro)|
     |---|---|
     |Anwendungssymbol|167x167<sup>6</sup>|
-    |Gerückt|120x120<sup>6</sup>|
+    |Gerückt|120 x 120<sup>6</sup>|
     |Einstellungen|58x58<sup>5</sup>|
 
-- **iPad: iOS 7 & 8**
+- **iPad: IOS 7 & 8**
 
     ||1X|2x|
     |---|---|---|
-    |Anwendungssymbol|76x76|152x152|
-    |Gerückt|40x40|80x80|
+    |Anwendungssymbol|76x76|152 x 152|
+    |Gerückt|40x40|80X 80|
     |Einstellungen|-|-|
 
-- **iPad: iOS 5 & 6**
+- **iPad: IOS 5 & 6**
 
     ||1X|2x|
     |---|---|---|
@@ -105,23 +105,23 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
 
 ## <a name="managing-icons-with-asset-catalogs"></a>Verwalten von Symbolen mit Asset-Katalogen
 
-Bei Symbolen kann der `AppIcon` `Assets.xcassets` Datei im Projekt der APP ein spezieller Bildsatz hinzugefügt werden. Alle Versionen des Bilds, die zur Unterstützung aller Auflösungen erforderlich sind, sind im _xcasset_ enthalten und zusammengefasst. Mit einem speziellen Editor in Visual Studio für Mac können Entwickler diese Bilder grafisch einschließen und einrichten.
+Bei Symbolen kann der `Assets.xcassets`-Datei im Projekt der APP ein spezieller `AppIcon` Bild Satz hinzugefügt werden. Alle Versionen des Bilds, die zur Unterstützung aller Auflösungen erforderlich sind, sind im _xcasset_ enthalten und zusammengefasst. Mit einem speziellen Editor in Visual Studio für Mac können Entwickler diese Bilder grafisch einschließen und einrichten.
 
 Gehen Sie folgendermaßen vor, um einen Asset-Katalog zu verwenden:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie auf `Info.plist` die Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 2. Scrollen Sie nach unten zum Abschnitt **App-Symbole** .
 3. Vergewissern Sie sich, dass in der Dropdown Liste **Quelle** die Option **AppIcon** ausgewählt ist: 
 
-    ![](app-icons-images/migrate01.png "Sicherstellen, dass AppIcon ausgewählt ist")
+    ![](app-icons-images/migrate01.png "Ensure AppIcon is selected")
 4. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Assets.xcassets` Datei, um Sie zur Bearbeitung zu öffnen: 
 
-    ![](app-icons-images/asset01.png "Die Datei Assets. xcassets im Projektmappen-Explorer")
-5. Wählen `AppIcon` Sie aus der Liste der Assets aus, `Icon Editor`um Folgendes anzuzeigen:
+    ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
+5. Wählen Sie aus der Liste der Assets `AppIcon` aus, um die `Icon Editor`anzuzeigen:
 
-    ![](app-icons-images/asset02.png "Der AppIcon-Editor")
+    ![](app-icons-images/asset02.png "The AppIcon editor")
 6. Klicken Sie entweder auf den angegebenen Symboltyp, und wählen Sie eine Bilddatei für die erforderliche Art/Größe aus, oder ziehen Sie ein Bild aus einem Ordner, und legen Sie es auf der gewünschten Größe ab.
 7. Klicken Sie auf die Schaltfläche **Öffnen** , um das Bild in das Projekt einzuschließen, und legen Sie es im xcasset fest.
 8. Wiederholen Sie diesen Schritt für alle benötigten Images.
@@ -130,16 +130,16 @@ Gehen Sie folgendermaßen vor, um einen Asset-Katalog zu verwenden:
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die Datei **Info. plist** :
 
-    ![](app-icons-images/icon01w.png "Info. plist auswählen")
+    ![](app-icons-images/icon01w.png "Select Info.plist")
 2. Klicken Sie auf die Registerkarte **visuelle Objekte** und dann unter **App-Symbole**auf die Schaltfläche " **Asset catalog verwenden** ": 
 
-    ![](app-icons-images/icon02w.png "Registerkarte \"visuelle Objekte\" auswählen")
+    ![](app-icons-images/icon02w.png "Select the Visual Assets tab")
 3. Erweitern Sie auf der **Projektmappen-Explorer**den Ordner **Asset Catalog** : 
 
-    ![](app-icons-images/image009.png "Erweitern Sie den Ordner \"Asset catalog\"")
+    ![](app-icons-images/image009.png "Expand the Asset Catalog folder")
 4. Doppelklicken Sie auf die **Medien** Datei, um Sie im Editor zu öffnen: 
 
-    ![](app-icons-images/image010.png "Öffnen Sie die Mediendatei im Editor.")
+    ![](app-icons-images/image010.png "Open the Media file in the editor")
 5. Im **Eigenschaften-Explorer** kann der Entwickler die verschiedenen Typen und Größen der erforderlichen Symbole auswählen.
 6. Klicken Sie auf den angegebenen Symboltyp, und wählen Sie eine Bilddatei für die erforderliche Art/Größe aus.
 7. Klicken Sie auf die Schaltfläche **Öffnen** , um das Bild in das Projekt einzuschließen, und legen Sie es im xcasset fest.
@@ -151,30 +151,30 @@ Dies ist die bevorzugte Methode zum einschließen und Verwalten von bildassets, 
 
 ### <a name="migrating-from-infoplist-to-asset-catalogs"></a>Migrieren von "Info. plist" zu Asset-Katalogen
 
-Für eine vorhandene xamarin. IOS-APP, `Info.plist` die die Datei zum Verwalten der Symbole verwendet, wird dringend empfohlen, dass der Entwickler das `AppIcons` Image-Asset innerhalb `Assets.xcassets`von verwendet.
+Für eine vorhandene xamarin. IOS-APP, die die `Info.plist` Datei zum Verwalten der Symbole verwendet, wird dringend empfohlen, dass der Entwickler das `AppIcons` Image-Asset innerhalb des `Assets.xcassets`verwendet.
 
 Führen Sie folgende Schritte aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie auf `Info.plist` die Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 2. Scrollen Sie nach unten zum Abschnitt **App-Symbole** .
 3. Wählen Sie in der Dropdown Liste **Quelle** die Option **zu Asset-Katalogen migrieren**aus: 
 
-    ![](app-icons-images/migrate02.png "Auswählen von zu Ressourcen Katalogen migrieren")
-4. Alle in der `Info.plist` Datei definierten vorhandenen Symbole werden zu einem `AppIcons` Image Satz migriert, der `Assets.xcassets`hinzugefügt wird: 
+    ![](app-icons-images/migrate02.png "Select Migrate to Asset Catalogs")
+4. Alle vorhandenen Symbole, die in der `Info.plist` Datei definiert sind, werden zu einem `AppIcons` Abbild Satz migriert, der `Assets.xcassets`hinzugefügt wird: 
 
-     ![](app-icons-images/migrate03.png "Das appIcons-Bild, das in den Assets. xcassets festgelegt ist.")
+     ![](app-icons-images/migrate03.png "The AppIcons Image Set in the Assets.xcassets")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie auf `Info.plist` die Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 2. Klicken Sie auf den Abschnitt iPhone-Symbole: 
 
-    ![](app-icons-images/image007.png "RHE iPhone-Symbol-Editor")
+    ![](app-icons-images/image007.png "Rhe iPhone Icons editor")
 3. Scrollen Sie nach unten zum Abschnitt **Symbole** .
 4. Wählen Sie in der Dropdown Liste **Asset Catalog** den Wert **Asset-Kataloge verwenden**aus.
-5. Alle in der Datei definierten vorhandenen `Info.plist` Symbole werden zu einer `Images` Menge migriert, die `Assets.xcassets`zu hinzugefügt wurde.
+5. Alle vorhandenen Symbole, die in der `Info.plist`-Datei definiert sind, werden zu einem `Images` Satz migriert, der `Assets.xcassets`hinzugefügt wird.
 6. Speichern Sie die Änderungen an der Datei `Info.plist`.
 
 -----
@@ -189,20 +189,20 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie auf `Info.plist` die Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 2. Scrollen Sie zum Abschnitt **iTunes-Grafik** des Editors: 
 
-    ![](app-icons-images/itunes01.png "Scrollen Sie zum Abschnitt iTunes-Grafik des Editors.")
+    ![](app-icons-images/itunes01.png "Scroll to the iTunes Artwork section of the editor")
 3. Klicken Sie für ein fehlendes Bild im Editor auf die Miniaturansicht, wählen Sie im Dialogfeld Datei öffnen die Bilddatei für die gewünschte iTunes-Grafik aus, und klicken Sie auf die Schaltfläche **OK** .
 4. Wiederholen Sie diesen Schritt, bis alle benötigten Images für die APP angegeben wurden.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie auf `Info.plist` die Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
+1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 
 2. Klicken Sie auf die Registerkarte **visuelle Assets** , und erweitern Sie die **iTunes-Grafik**: 
 
-    ![](app-icons-images/itunes01w.png "Bearbeiten von iTunes-Grafiken in Visual Studio")
+    ![](app-icons-images/itunes01w.png "Editing iTunes Artwork in Visual Studio")
 3. Klicken Sie für ein fehlendes Bild im Editor auf die Miniaturansicht, wählen Sie im Dialogfeld Datei öffnen die Bilddatei für die gewünschte iTunes-Grafik aus, und klicken Sie auf die Schaltfläche **Öffnen** .
 4. Wiederholen Sie diesen Schritt, bis alle benötigten Images für die APP angegeben wurden.
 

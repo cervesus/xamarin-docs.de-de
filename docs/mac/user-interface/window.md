@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Fenstern und Bereichen in e
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: df623efcc1da617ac6b700b42d3ac058dea817ca
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6c7a236995bf2aa9677deb6fadacf76cb5726398
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772643"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008127"
 ---
 # <a name="windows-in-xamarinmac"></a>Fenster in xamarin. Mac
 
@@ -27,13 +27,13 @@ Basierend auf dem Zweck kann eine xamarin. Mac-Anwendung ein oder mehrere Fenste
 
 Windows kann in einem nicht modalen Zustand (z. b. in einem Text-Editor, in dem mehrere Dokumente gleichzeitig geöffnet werden können) oder Modal verwendet werden (z. b. ein Export Dialogfeld, das vor dem Fortsetzen der Anwendung verworfen werden muss)
 
-Panels sind eine besondere Art von Fenster (eine Unterklasse der Basis `NSWindow` Klasse), die in der Regel eine Zusatzfunktion in einer Anwendung bereitstellt, z. b. Hilfsprogrammfenster wie Text Format Inspektoren und System Farbauswahl.
+Panels sind eine besondere Art von Fenster (eine Unterklasse der Basis `NSWindow`-Klasse), die in der Regel eine Zusatzfunktion in einer Anwendung bereitstellt, z. b. Hilfsprogrammfenster wie Text Format Inspektoren und System Farbauswahl.
 
-[![](window-images/intro01.png "Bearbeiten eines Fensters in Xcode")](window-images/intro01.png#lightbox)
+[![](window-images/intro01.png "Editing a window in Xcode")](window-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Fenstern und Bereichen in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Dieser Artikel.
 
-Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die-und `Register` `Export` -Befehle erläutert, die zum Verknüpfen der C# Klassen mit verwendet werden. Ziel-C-Objekte und UI-Elemente.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-c](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die`Register`und`Export`Befehle erläutert, die zum Verknüpfen der C# Klassen mit "Ziel-c" verwendet werden. Objekte und UI-Elemente.
 
 <a name="Introduction_to_Windows" />
 
@@ -70,7 +70,7 @@ Ein Fenster kann eine Titelleiste anzeigen, und wenn der Titel angezeigt wird, i
 Apple empfiehlt die folgenden Richtlinien:
 
 - Verwenden Sie den Anwendungsnamen für den Titel eines Hauptfensters, das kein Dokument ist. 
-- Benennen Sie ein neues Dokument `untitled`Fenster. Fügen Sie für das erste neue Dokument keine Zahl an den Titel an (z `untitled 1`. b.). Wenn der Benutzer vor dem Speichern und dem Speichern eines neuen Dokuments ein neues Dokument erstellt, rufen `untitled 2`Sie `untitled 3`dieses Fenster, usw. auf.
+- Benennen Sie ein neues Dokument Fenster `untitled`. Fügen Sie für das erste neue Dokument keine Zahl an den Titel an (z. b. `untitled 1`). Wenn der Benutzer ein neues Dokument erstellt, bevor es gespeichert wird, und das erste speichert, rufen Sie dieses Fenster `untitled 2`, `untitled 3`usw.
 
 Weitere Informationen finden Sie im Abschnitt [Benennen von Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowNaming.html#//apple_ref/doc/uid/20000957-CH35-SW1) in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) .
 
@@ -96,7 +96,7 @@ Weitere Informationen finden Sie im Abschnitt " [Vollbild-Windows](https://devel
 
 Ein Panel ist ein Hilfsfenster, das Steuerelemente und Optionen enthält, die sich auf das aktive Dokument oder die aktive Auswahl (z. b. die System Farbauswahl) auswirken:
 
-[![](window-images/panel01.png "Ein Farb Panel")](window-images/panel01.png#lightbox)
+[![](window-images/panel01.png "A color panel")](window-images/panel01.png#lightbox)
 
 Panels können _App-spezifisch_ oder _systemweit_sein. App-spezifische Panels schweben über den oberen Rand der Dokument Fenster der Anwendung und verschwinden, wenn sich die Anwendung im Hintergrund befindet. Systemweite Bereiche (z. b. das **Schriftarten** Panel) werden über alle geöffneten Fenster unabhängig von der Anwendung schwebt. 
 
@@ -112,7 +112,7 @@ Apple schlägt die folgenden Richtlinien vor:
 
 Die meisten modernen macOS-Anwendungen bieten zusätzliche Steuerelemente und Optionen, die sich auf das aktive Dokument oder die Auswahl als _Inspektoren_ auswirken, die Teil des Hauptfensters sind (wie die unten gezeigte **pages** -APP), anstatt Fenster Fenster zu verwenden:
 
-[![](window-images/panel02.png "Ein Beispiel Inspektor")](window-images/panel02.png#lightbox)
+[![](window-images/panel02.png "An example inspector")](window-images/panel02.png#lightbox)
 
 Weitere Informationen finden Sie im Abschnitt " [Panels](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) " in den [Richtlinien zur Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) und in der Beispiel-app " [macinspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector) " für eine vollständige Implementierung einer **inspektorschnittstelle** in einer xamarin. Mac-app.
 
@@ -120,13 +120,13 @@ Weitere Informationen finden Sie im Abschnitt " [Panels](https://developer.apple
 
 ## <a name="creating-and-maintaining-windows-in-xcode"></a>Erstellen und Verwalten von Fenstern in Xcode
 
-Wenn Sie eine neue xamarin. Mac-Cocoa-Anwendung erstellen, erhalten Sie standardmäßig ein Standardmäßiges leeres Standardfenster. Dieses Fenster wird in einer `.storyboard` Datei definiert, die automatisch im Projekt enthalten ist. Um den Windows-Entwurf zu bearbeiten,Doppelklicken Sie im Projektmappen-Explorer `Main.storyboard` auf die Datei:
+Wenn Sie eine neue xamarin. Mac-Cocoa-Anwendung erstellen, erhalten Sie standardmäßig ein Standardmäßiges leeres Standardfenster. Dieses Fenster wird in einer `.storyboard` Datei definiert, die automatisch im Projekt enthalten ist. Um den Windows-Entwurf zu bearbeiten, doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei:
 
-[![](window-images/edit01.png "Auswählen des Haupt Storyboards")](window-images/edit01.png#lightbox)
+[![](window-images/edit01.png "Selecting the main storyboard")](window-images/edit01.png#lightbox)
 
 Dadurch wird das Fensterdesign in der Interface Builder von Xcode geöffnet:
 
-[![](window-images/edit02.png "Bearbeiten der Benutzeroberfläche in Xcode")](window-images/edit02.png#lightbox)
+[![](window-images/edit02.png "Editing the UI in Xcode")](window-images/edit02.png#lightbox)
 
 Im **Attribut Inspektor**gibt es mehrere Eigenschaften, die Sie verwenden können, um das Fenster zu definieren und zu steuern:
 
@@ -142,7 +142,7 @@ Im **Attribut Inspektor**gibt es mehrere Eigenschaften, die Sie verwenden könne
 - **Größe** : bewirkt, dass das Fenster über ein Steuerelement zur Größenänderung verfügt.
 - **Symbolleisten Schaltfläche** : führt das Fenster zum Ausblenden/Anzeigen der Symbolleisten Schaltfläche.
 - Wieder **herstellbar** : die Position und Einstellungen des Fensters werden automatisch gespeichert und wieder hergestellt.
-- **Sichtbar beim Start** : das Fenster wird automatisch angezeigt, wenn `.xib` die Datei geladen wird.
+- **Sichtbar beim Start** : das Fenster wird automatisch angezeigt, wenn die `.xib`-Datei geladen wird.
 - **Beim Deaktivieren ausblenden** : das Fenster wird ausgeblendet, wenn die Anwendung in den Hintergrund wechselt.
 - **Release, wenn geschlossen** : das Fenster wird aus dem Arbeitsspeicher gelöscht, wenn es geschlossen wird.
 - Quick Infos **immer anzeigen** : die Quick Infos werden ständig angezeigt.
@@ -160,7 +160,7 @@ Weitere Informationen finden [Sie in der Dokumentation zu Windows](https://devel
 
 Wechseln Sie zur **Größen**Prüfung, um die anfängliche Position des Fensters festzulegen und seine Größe zu steuern:
 
-[![](window-images/edit07.png "Standardgröße und-Speicherort")](window-images/edit07.png#lightbox)
+[![](window-images/edit07.png "The default size and location")](window-images/edit07.png#lightbox)
 
 Von hier aus können Sie die anfängliche Größe des Fensters festlegen, eine minimale und maximale Größe festlegen, die ursprüngliche Position auf dem Bildschirm festlegen und die Rahmen um das Fenster steuern.
 
@@ -173,18 +173,18 @@ Damit Outlets und Aktionen erstellt werden können, um Benutzeroberflächen Elem
 Führen Sie folgende Schritte aus:
 
 1. Öffnen Sie das Storyboard der app in der Interface Builder von Xcode.
-2. Wählen Sie `NSWindowController` im Designoberfläche aus.
-3. Wechseln Sie zur Ansicht " **Identitäts Inspektor** " `WindowController` , und geben Sie als **Klassennamen**ein: 
+2. Wählen Sie die `NSWindowController` im Designoberfläche aus.
+3. Wechseln Sie zur Ansicht " **Identitäts Inspektor** ", und geben Sie `WindowController` als **Klassennamen**ein: 
 
-    [![](window-images/windowcontroller01.png "Festlegen des Klassen namens")](window-images/windowcontroller01.png#lightbox)
+    [![](window-images/windowcontroller01.png "Setting the class name")](window-images/windowcontroller01.png#lightbox)
 4. Speichern Sie die Änderungen, und kehren Sie zur Synchronisierung Visual Studio für Mac zurück.
-5. Dem `WindowController.cs` Projekt wird im **Projektmappen-Explorer** in Visual Studio für Mac eine Datei hinzugefügt: 
+5. Eine `WindowController.cs`-Datei wird dem Projekt im **Projektmappen-Explorer** in Visual Studio für Mac hinzugefügt: 
 
-    [![](window-images/windowcontroller02.png "Auswählen des Windows-Controllers")](window-images/windowcontroller02.png#lightbox)
+    [![](window-images/windowcontroller02.png "Selecting the windows controller")](window-images/windowcontroller02.png#lightbox)
 6. Öffnen Sie das Storyboard erneut in der Interface Builder von Xcode.
 7. Die `WindowController.h` Datei steht zur Verwendung zur Verfügung: 
 
-    [![](window-images/windowcontroller03.png "Bearbeiten der Datei \"windowcontroller. h\"")](window-images/windowcontroller03.png#lightbox)
+    [![](window-images/windowcontroller03.png "Editing the WindowController.h file")](window-images/windowcontroller03.png#lightbox)
 
 <a name="Adding_UI_Elements" />
 
@@ -194,21 +194,21 @@ Um den Inhalt eines Fensters zu definieren, ziehen Sie die Steuerelemente aus de
 
 Ziehen Sie als Beispiel eine Symbolleiste aus dem **Bibliotheks Inspektor** in das Fenster im Schnittstellen- **Editor**:
 
-[![](window-images/edit03.png "Auswählen einer Symbolleiste aus der Bibliothek")](window-images/edit03.png#lightbox)
+[![](window-images/edit03.png "Selecting a Toolbar from the Library")](window-images/edit03.png#lightbox)
 
 Ziehen Sie als nächstes eine **Text Ansicht** , und legen Sie die Größe ab, um den Bereich unter der Symbolleiste auszufüllen:
 
-[![](window-images/edit04.png "Hinzufügen einer Text Ansicht")](window-images/edit04.png#lightbox)
+[![](window-images/edit04.png "Adding a Text View")](window-images/edit04.png#lightbox)
 
 Da die **Text Ansicht** verkleinert und vergrößert werden soll, wenn sich die Fenstergröße ändert, wechseln wir zum Einschränkungs- **Editor** und fügen die folgenden Einschränkungen hinzu:
 
-[![](window-images/edit05.png "Bearbeitungs Einschränkungen")](window-images/edit05.png#lightbox)
+[![](window-images/edit05.png "Editing constraints")](window-images/edit05.png#lightbox)
 
 Wenn Sie am oberen Rand des Editors auf den **roten I-Balken** klicken und auf **4 Einschränkungen hinzufügen**klicken, wird die Textansicht an die angegebene X-und Y-Koordinate angefügt und horizontal und vertikal vergrößert bzw. verkleinert, wenn die Größe des Fensters geändert wird.
 
-Zum Schluss machen wir die **Text Ansicht** mithilfe eines **Outlets** für Code verfügbar (stellen Sie sicher, dass `ViewController.h` Sie die Datei auswählen):
+Zum Schluss machen wir die **Text Ansicht** mithilfe eines **Outlets** für Code verfügbar (stellen Sie sicher, dass Sie die `ViewController.h` Datei auswählen):
 
-[![](window-images/edit06.png "Konfigurieren eines Outlets")](window-images/edit06.png#lightbox)
+[![](window-images/edit06.png "Configuring an Outlet")](window-images/edit06.png#lightbox)
 
 Speichern Sie die Änderungen, und wechseln Sie zurück zu Visual Studio für Mac, um mit Xcode zu synchronisieren.
 
@@ -221,7 +221,7 @@ Weitere Informationen zum Arbeiten mit **Outlets** und **Aktionen**finden Sie in
 Für jedes Fenster, das Sie in ihrer xamarin. Mac-Anwendung erstellen und mit Ihnen arbeiten, ist der Prozess im Grunde das gleiche wie oben beschrieben:
 
 1. Fügen Sie für neue Fenster, die dem Projekt nicht automatisch hinzugefügt werden, eine neue Fenster Definition zum Projekt hinzu. Dies wird im folgenden ausführlich erläutert.
-1. Doppelklicken Sie auf `Main.storyboard` die Datei, um den Fenster Entwurf für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
+1. Doppelklicken Sie auf die Datei `Main.storyboard`, um den Fenster Entwurf für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
 1. Ziehen _Sie ein_ neues Fenster in das Design der Benutzeroberfläche, und schließen Sie das Fenster mithilfe von Listen in das Hauptfenster ein (Weitere Informationen finden Sie [im Abschnitt "](~/mac/platform/storyboards/indepth.md#Segues) Abschnitte" in unserer Dokumentation zum [Arbeiten mit Storyboards](~/mac/platform/storyboards/indepth.md) ).
 1. Legen Sie alle erforderlichen Fenster Eigenschaften in der **Attribut** Prüfung und der **Größe Inspector**fest.
 1. Ziehen Sie die Steuerelemente, die zum Erstellen der Schnittstelle erforderlich sind, und konfigurieren Sie Sie im **Attribut Inspektor**.
@@ -235,21 +235,21 @@ Nachdem wir nun ein einfaches Fenster erstellt haben, sehen wir uns die typische
 
 ## <a name="displaying-the-default-window"></a>Anzeigen des Standard Fensters
 
-Standardmäßig wird in einer neuen xamarin. Mac-Anwendung automatisch das Fenster angezeigt, das `MainWindow.xib` in der Datei beim Starten definiert ist:
+Standardmäßig wird in einer neuen xamarin. Mac-Anwendung automatisch das Fenster angezeigt, das in der `MainWindow.xib`-Datei definiert ist, wenn Sie gestartet wird:
 
-[![](window-images/display01.png "Ein Beispiel Fenster, das")](window-images/display01.png#lightbox)
+[![](window-images/display01.png "An example window running")](window-images/display01.png#lightbox)
 
-Da wir das Design dieses Fensters oben geändert haben, enthält es nun ein Standard Symbol für Symbolleiste und **Text Ansicht** . Der folgende Abschnitt `Info.plist` der Datei ist für die Anzeige dieses Fensters zuständig:
+Da wir das Design dieses Fensters oben geändert haben, enthält es nun ein Standard Symbol für Symbolleiste und **Text Ansicht** . Der folgende Abschnitt in der `Info.plist`-Datei ist für die Anzeige dieses Fensters zuständig:
 
-[![](window-images/display00.png "Bearbeiten von \"Info. plist\"")](window-images/display00.png#lightbox)
+[![](window-images/display00.png "Editing Info.plist")](window-images/display00.png#lightbox)
 
-Mithilfe der Dropdown Liste **Hauptschnittstelle** können Sie das Storyboard auswählen, das als Hauptbenutzer Oberfläche der APP verwendet wird (in `Main.storyboard`diesem Fall).
+Mithilfe der Dropdown Liste **Hauptschnittstelle** können Sie das Storyboard auswählen, das als Hauptbenutzer Oberfläche der APP verwendet wird (in diesem Fall `Main.storyboard`).
 
-Ein Ansichts Controller wird dem Projekt automatisch hinzugefügt, um die angezeigten Hauptfenster (zusammen mit der primären Ansicht) zu steuern. Sie wird in der `ViewController.cs` Datei definiert und an den Besitzer der **Datei** in Interface Builder unter dem **Identitäts Inspektor**angefügt:
+Ein Ansichts Controller wird dem Projekt automatisch hinzugefügt, um die angezeigten Hauptfenster (zusammen mit der primären Ansicht) zu steuern. Sie wird in der `ViewController.cs` Datei definiert und in Interface Builder unter dem **Identitäts Inspektor**an den **Besitzer der Datei** angefügt:
 
-[![](window-images/display02.png "Festlegen des Besitzers der Datei")](window-images/display02.png#lightbox)
+[![](window-images/display02.png "Setting the file's owner")](window-images/display02.png#lightbox)
 
-In unserem Fenster soll beim ersten Öffnen der Titel des `untitled` Titels vorhanden sein, sodass die `ViewWillAppear` -Methode in der `ViewController.cs` überschrieben wird, damit Sie wie folgt aussieht:
+In unserem Fenster soll der Titel `untitled` sein, wenn er zum ersten Mal geöffnet wird. überschreiben Sie die `ViewWillAppear`-Methode im `ViewController.cs` so, dass Sie wie folgt aussieht:
 
 ```csharp
 public override void ViewWillAppear ()
@@ -262,62 +262,62 @@ public override void ViewWillAppear ()
 ```    
 
 > [!NOTE]
-> Wir legen den Wert der-Eigenschaft des Fensters `Title` in der `ViewWillAppear` -Methode anstelle der `ViewDidLoad` -Methode fest, da die Ansicht zwar möglicherweise in den Arbeitsspeicher geladen wird, aber noch nicht vollständig instanziiert ist. Wenn versucht wurde, auf die `Title` Eigenschaft in der `ViewDidLoad` Methode zuzugreifen, wird eine `null` Ausnahme ausgelöst, da das Fenster noch nicht erstellt wurde und noch nicht mit der Eigenschaft verknüpft ist.
+> Wir legen den Wert der `Title`-Eigenschaft des Fensters in der `ViewWillAppear`-Methode anstelle der `ViewDidLoad`-Methode fest, da die Ansicht zwar möglicherweise in den Arbeitsspeicher geladen wird, aber noch nicht vollständig instanziiert ist. Wenn Sie versucht haben, in der `ViewDidLoad`-Methode auf die `Title`-Eigenschaft zuzugreifen, erhalten wir eine `null` Ausnahme, da das Fenster noch nicht erstellt wurde und noch nicht mit der-Eigenschaft verknüpft ist.
 
 <a name="Programmatically_Closing_a_Window" />
 
 ## <a name="programmatically-closing-a-window"></a>Programm gesteuertes Schließen eines Fensters
 
-Es kann vorkommen, dass Sie ein Fenster in einer xamarin. Mac-Anwendung Programm gesteuert schließen möchten, außer wenn der Benutzer auf die Schaltfläche **Schließen** oder ein Menü Element klickt. macOS bietet zwei verschiedene Möglichkeiten, ein `NSWindow` Programm gesteuert zu schließen: `Close` `PerformClose` und.
+Es kann vorkommen, dass Sie ein Fenster in einer xamarin. Mac-Anwendung Programm gesteuert schließen möchten, außer wenn der Benutzer auf die Schaltfläche **Schließen** oder ein Menü Element klickt. macOS bietet zwei verschiedene Möglichkeiten, eine `NSWindow` Programm gesteuert zu schließen: `PerformClose` und `Close`.
 
 <a name="PerformClose" />
 
 ### <a name="performclose"></a>Performclose
 
-Wenn Sie `PerformClose` die-Methode `NSWindow` eines aufrufen, wird der Benutzer durch Klicken auf die Schaltfläche **Schließen** des Fensters simuliert, indem die Schaltfläche vorübergehend hervorgehoben und das Fenster geschlossen wird.
+Wenn Sie die `PerformClose`-Methode einer `NSWindow` aufrufen, wird der Benutzer durch das Klicken auf die Schaltfläche **Schließen** des Fensters simuliert, indem die Schaltfläche vorübergehend hervorgehoben und das Fenster geschlossen wird.
 
-Wenn die Anwendung das `NSWindow`- `WillClose` Ereignis implementiert, wird Sie ausgelöst, bevor das Fenster geschlossen wird. Wenn das Ereignis zurück `false`gibt, wird das Fenster nicht geschlossen. Wenn das Fenster keine Schaltfläche " **Schließen** " hat oder aus irgendeinem Grund nicht geschlossen werden kann, gibt das Betriebssystem den Ton der Warnung aus.
+Wenn die Anwendung das `WillClose`-Ereignis der `NSWindow`implementiert, wird Sie ausgelöst, bevor das Fenster geschlossen wird. Wenn das Ereignis `false`zurückgibt, wird das Fenster nicht geschlossen. Wenn das Fenster keine Schaltfläche " **Schließen** " hat oder aus irgendeinem Grund nicht geschlossen werden kann, gibt das Betriebssystem den Ton der Warnung aus.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 MyWindow.PerformClose(this);
 ```
 
-Versucht, die `MyWindow` `NSWindow` Instanz zu schließen. Wenn der Vorgang erfolgreich war, wird das Fenster geschlossen, und der Warnungs Sound wird ausgegeben, und der wird geöffnet.
+Versucht, die `MyWindow` `NSWindow`-Instanz zu schließen. Wenn der Vorgang erfolgreich war, wird das Fenster geschlossen, und der Warnungs Sound wird ausgegeben, und der wird geöffnet.
 
 <a name="Close" />
 
 ### <a name="close"></a>Schließen
 
-Wenn Sie `Close` die-Methode `NSWindow` eines aufrufen, wird der Benutzer nicht simuliert, indem er auf die Schaltfläche Schließen des Fensters klickt, indem die Schaltfläche **kurz** hervorgehoben wird. das Fenster wird einfach geschlossen.
+Wenn Sie die `Close`-Methode einer `NSWindow` aufrufen, wird der Benutzer nicht simuliert, indem er auf die Schließ Schaltfläche des Fensters klickt, indem er die Schaltfläche **kurz** hervorhebt. er schließt das Fenster einfach.
 
-Ein Fenster muss nicht sichtbar sein, um geschlossen zu werden, und `NSWindowWillCloseNotification` es wird eine Benachrichtigung an das Standard Benachrichtigungs Center gesendet, um das Fenster zu schließen.
+Ein Fenster muss nicht sichtbar sein, um geschlossen zu werden, und es wird eine `NSWindowWillCloseNotification` Benachrichtigung an das Standard Benachrichtigungs Center gesendet, um das Fenster zu schließen.
 
-Die `Close` -Methode unterscheidet sich in zwei wichtigen `PerformClose` Punkten von der-Methode:
+Die `Close`-Methode unterscheidet sich in zwei wichtigen Punkten von der `PerformClose`-Methode:
 
-1. Es wird nicht versucht, das `WillClose` -Ereignis zu erhöhen.
+1. Es wird nicht versucht, das `WillClose`-Ereignis zu erhöhen.
 2. Er simuliert den Benutzer nicht, indem er auf die Schaltfläche **Schließen** klickt, indem er die Schaltfläche vorübergehend hervorhebt.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 MyWindow.Close();
 ```
 
-, Wenn die `MyWindow` `NSWindow` Instanz geschlossen werden soll.
+Soll die `MyWindow` `NSWindow`-Instanz schließen.
 
 <a name="Modified-Windows-Content" />
 
 ## <a name="modified-windows-content"></a>Geänderte Windows-Inhalte
 
-In macOS hat Apple eine Möglichkeit bereitgestellt, den Benutzer darüber zu informieren, dass der Inhalt eines`NSWindow`Fensters () vom Benutzer geändert und gespeichert werden muss. Wenn das Fenster geänderten Inhalt enthält, wird ein kleiner schwarzer Punkt in seinem **Close** -Widget angezeigt:
+In macOS hat Apple eine Möglichkeit bereitgestellt, den Benutzer darüber zu informieren, dass der Inhalt eines Fensters (`NSWindow`) vom Benutzer geändert und gespeichert werden muss. Wenn das Fenster geänderten Inhalt enthält, wird ein kleiner schwarzer Punkt in seinem **Close** -Widget angezeigt:
 
-[![](window-images/close01.png "Ein Fenster mit dem geänderten Marker")](window-images/close01.png#lightbox)
+[![](window-images/close01.png "A window with the modified marker")](window-images/close01.png#lightbox)
 
 Wenn der Benutzer versucht, das Fenster zu schließen oder die Mac-app zu beenden, während nicht gespeicherte Änderungen am Inhalt des Fensters vorhanden sind, sollten Sie ein [Dialog Feld](~/mac/user-interface/dialog.md) oder ein [modales Blatt](~/mac/user-interface/dialog.md) darstellen und dem Benutzer die Möglichkeit geben, die Änderungen zuerst zu speichern:
 
-[![](window-images/close02.png "Ein Speicher Blatt, das angezeigt wird, wenn das Fenster geschlossen wird.")](window-images/close02.png#lightbox)
+[![](window-images/close02.png "A save sheet being shown when the window is closed")](window-images/close02.png#lightbox)
 
 ### <a name="marking-a-window-as-modified"></a>Markieren eines Fensters als geändert
 
@@ -337,7 +337,7 @@ Window.DocumentEdited = false;
 
 ### <a name="saving-changes-before-closing-a-window"></a>Speichern von Änderungen vor dem Schließen eines Fensters
 
-Um zu überwachen, dass der Benutzer ein Fenster schließt und es Ihnen ermöglicht, geänderte Inhalte vorher zu speichern, müssen Sie eine unter `NSWindowDelegate` Klasse von erstellen `WindowShouldClose` und die zugehörige-Methode überschreiben. Zum Beispiel:
+Wenn Sie überwachen möchten, dass der Benutzer ein Fenster schließt und es Ihnen ermöglicht, geänderte Inhalte vorher zu speichern, müssen Sie eine Unterklasse von `NSWindowDelegate` erstellen und dessen `WindowShouldClose`-Methode überschreiben. Beispiel:
 
 ```csharp
 using System;
@@ -432,7 +432,7 @@ Window.Delegate = new EditorWindowDelegate(Window);
 
 ### <a name="saving-changes-before-closing-the-app"></a>Speichern von Änderungen vor dem Schließen der APP
 
-Schließlich sollte Ihre xamarin. Mac-app überprüfen, ob eines ihrer Fenster geänderte Inhalte enthält, und dass der Benutzer die Änderungen vor dem Beenden speichern kann. Bearbeiten `AppDelegate.cs` Sie hierzu die-Datei, überschreiben Sie `ApplicationShouldTerminate` die-Methode, und führen Sie Sie wie folgt aus:
+Schließlich sollte Ihre xamarin. Mac-app überprüfen, ob eines ihrer Fenster geänderte Inhalte enthält, und dass der Benutzer die Änderungen vor dem Beenden speichern kann. Bearbeiten Sie hierzu die `AppDelegate.cs` Datei, überschreiben Sie die `ApplicationShouldTerminate`-Methode, und führen Sie Sie wie folgt aus:
 
 ```csharp
 public override NSApplicationTerminateReply ApplicationShouldTerminate (NSApplication sender)
@@ -458,7 +458,7 @@ Die meisten Dokument basierten Macintosh-Anwendungen können mehrere Dokumente g
 
 Wir aktivieren dieses neue Element und ermöglichen dem Benutzer das Öffnen mehrerer Kopien des Hauptfensters, um mehrere Dokumente gleichzeitig zu bearbeiten.
 
-Bearbeiten Sie die `AppDelegate.cs` Datei, und fügen Sie die folgende berechnete Eigenschaft hinzu:
+Nun bearbeiten wir unsere `AppDelegate.cs` Datei und fügen die folgende berechnete Eigenschaft hinzu:
 
 ```csharp
 public int UntitledWindowCount { get; set;} =1;
@@ -485,11 +485,11 @@ void NewDocument (NSObject sender) {
 
 Mit diesem Code wird eine neue Version des Fenster Controllers erstellt, das neue Fenster geladen, das Hauptfenster und das Schlüssel Fenster erstellt und der Titel festgelegt. Wenn wir nun die Anwendung ausführen und im Menü " **Datei** " die Option " **neu** " auswählen, wird ein neues Editor-Fenster geöffnet und angezeigt:
 
-[![](window-images/display04.png "Ein neues unbenanntes Fenster wurde hinzugefügt")](window-images/display04.png#lightbox)
+[![](window-images/display04.png "A new untitled window was added")](window-images/display04.png#lightbox)
 
 Wenn wir das **Windows** -Menü öffnen, können Sie sehen, dass die Anwendung automatisch nachverfolgt und die geöffneten Fenster verarbeitet:
 
-[![](window-images/display05.png "Das Windows-Menü")](window-images/display05.png#lightbox)
+[![](window-images/display05.png "The windows menu")](window-images/display05.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit Menüs in einer xamarin. Mac-Anwendung finden Sie in der Dokumentation [Arbeiten mit Menüs](~/mac/user-interface/menu.md) .
 
@@ -503,7 +503,7 @@ In einer xamarin. Mac-Anwendung, die mehrere Fenster (Dokumente) öffnen kann, g
 var window = NSApplication.SharedApplication.KeyWindow;
 ```
 
-Sie kann in jeder Klasse oder Methode aufgerufen werden, die Zugriff auf das aktuelle Schlüssel Fenster benötigt. Wenn derzeit kein Fenster geöffnet ist, wird zurückgegeben `null`.
+Sie kann in jeder Klasse oder Methode aufgerufen werden, die Zugriff auf das aktuelle Schlüssel Fenster benötigt. Wenn derzeit kein Fenster geöffnet ist, wird `null`zurückgegeben.
 
 <a name="Accessing-All-App-Windows" />
 
@@ -511,7 +511,7 @@ Sie kann in jeder Klasse oder Methode aufgerufen werden, die Zugriff auf das akt
 
 Es kann vorkommen, dass Sie auf alle Fenster zugreifen müssen, die ihre xamarin. Mac-app derzeit geöffnet hat. Wenn Sie z. b. feststellen möchten, ob eine vom Benutzer geöffnete Datei bereits in einem beendenden Fenster geöffnet ist.
 
-`NSApplication.SharedApplication` Verwaltet eine`Windows` Eigenschaft, die ein Array aller geöffneten Fenster in der app enthält. Sie können dieses Array durchlaufen, um auf alle aktuellen Fenster der APP zuzugreifen. Zum Beispiel:
+Der `NSApplication.SharedApplication` verwaltet eine `Windows` Eigenschaft, die ein Array aller geöffneten Fenster in der app enthält. Sie können dieses Array durchlaufen, um auf alle aktuellen Fenster der APP zuzugreifen. Beispiel:
 
 ```csharp
 // Is the file already open?
@@ -531,7 +531,7 @@ Im Beispielcode wandeln wir jedes zurückgegebene Fenster in die benutzerdefinie
 
 ## <a name="adjusting-the-window-size-in-code"></a>Anpassen der Fenstergröße im Code
 
-Es gibt Zeiten, in denen die Anwendung die Größe eines Fensters im Code ändern muss. Um die Größe und Position eines Fensters zu ändern, passen Sie die `Frame` Eigenschaft an. Beim Anpassen der Größe eines Fensters müssen Sie in der Regel auch den Ursprung anpassen, damit das Fenster aufgrund des macOS-Koordinatensystems am gleichen Speicherort bleibt.
+Es gibt Zeiten, in denen die Anwendung die Größe eines Fensters im Code ändern muss. Um die Größe und Position eines Fensters zu ändern, passen Sie die `Frame`-Eigenschaft an. Beim Anpassen der Größe eines Fensters müssen Sie in der Regel auch den Ursprung anpassen, damit das Fenster aufgrund des macOS-Koordinatensystems am gleichen Speicherort bleibt.
 
 Anders als bei IOS, bei dem die obere linke Ecke (0,0) darstellt, verwendet macOS ein mathemkoordinaten System, bei dem die untere linke Ecke des Bildschirms (0,0) darstellt. In ios erhöhen sich die Koordinaten, wenn Sie nach unten nach rechts verschieben. In macOS erhöhen die Koordinaten den Wert nach oben nach rechts. 
 
@@ -557,11 +557,11 @@ SetFrame (frame, true);
 
 Es kann vorkommen, dass Sie Änderungen an der Größe eines Fensters in ihrer xamarin. Mac-app überwachen müssen. So können Sie beispielsweise den Inhalt neu zeichnen, damit er der neuen Größe entspricht.
 
-Stellen Sie zum Überwachen von Größenänderungen zunächst sicher, dass Sie eine benutzerdefinierte Klasse für den Fenster Controller in der Interface Builder von Xcode zugewiesen haben. `MasterWindowController` Im folgenden Beispiel:
+Stellen Sie zum Überwachen von Größenänderungen zunächst sicher, dass Sie eine benutzerdefinierte Klasse für den Fenster Controller in der Interface Builder von Xcode zugewiesen haben. `MasterWindowController` z. b. wie folgt aus:
 
-[![](window-images/resize01.png "Der Identitäts Inspektor")](window-images/resize01.png#lightbox)
+[![](window-images/resize01.png "The Identity Inspector")](window-images/resize01.png#lightbox)
 
-Bearbeiten Sie anschließend die benutzerdefinierte Fenster Controller-Klasse, `DidResize` und überwachen Sie das Ereignis im Fenster des Controllers, um über Änderungen an der Live Größe benachrichtigt zu werden. Zum Beispiel:
+Bearbeiten Sie anschließend die benutzerdefinierte Fenster Controller-Klasse, und überwachen Sie das `DidResize`-Ereignis im Fenster des Controllers, um über Änderungen an der Live Größe benachrichtigt zu werden. Beispiel:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -574,7 +574,7 @@ public override void WindowDidLoad ()
 }
 ```
 
-Optional können Sie das `DidEndLiveResize` -Ereignis verwenden, um nur benachrichtigt zu werden, wenn der Benutzer das Ändern der Fenstergröße abgeschlossen hat. Beispiel:
+Optional können Sie das `DidEndLiveResize` Ereignis verwenden, um nur benachrichtigt zu werden, nachdem der Benutzer das Ändern der Fenstergröße abgeschlossen hat. Beispiel:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -592,7 +592,7 @@ public override void WindowDidLoad ()
 
 ## <a name="setting-a-windows-title-and-represented-file"></a>Festlegen des Titels und der dargestellten Datei eines Fensters
 
-Wenn Sie mit Windows arbeiten, das Dokumente `NSWindow` darstellt, `DocumentEdited` verfügt über eine-Eigenschaft `true` , die bei Festlegung auf einen kleinen Punkt in der Schaltfläche Schließen zeigt, um dem Benutzer die Angabe zu geben, dass die Datei geändert wurde und vor dem Schließen gespeichert werden soll.
+Wenn Sie mit Windows arbeiten, das Dokumente darstellt, verfügt `NSWindow` über eine `DocumentEdited`-Eigenschaft, die bei Festlegung auf `true` einen kleinen Punkt in der Schaltfläche Schließen anzeigt, um dem Benutzer zu zeigen, dass die Datei geändert wurde und vor dem Schließen gespeichert werden muss.
 
 Nun bearbeiten wir unsere `ViewController.cs` Datei und nehmen die folgenden Änderungen vor:
 
@@ -641,19 +641,19 @@ public override void AwakeFromNib ()
 }
 ```
 
-Wir überwachen außerdem das `WillClose` -Ereignis im-Fenster und überprüfen den Zustand `DocumentEdited` der-Eigenschaft. Wenn dies der `true` Fall ist, müssen Sie dem Benutzer die Möglichkeit einräumen, die Änderungen an der Datei zu speichern. Wenn wir unsere app ausführen und Text eingeben, wird der Punkt angezeigt:
+Wir überwachen außerdem das `WillClose`-Ereignis im Fenster und überprüfen den Status der `DocumentEdited`-Eigenschaft. Wenn es `true` ist, müssen Sie dem Benutzer die Möglichkeit einräumen, die Änderungen an der Datei zu speichern. Wenn wir unsere app ausführen und Text eingeben, wird der Punkt angezeigt:
 
-[![](window-images/file01.png "Ein geändertes Fenster")](window-images/file01.png#lightbox)
+[![](window-images/file01.png "A changed window")](window-images/file01.png#lightbox)
 
 Wenn wir versuchen, das Fenster zu schließen, erhalten Sie eine Warnung:
 
-[![](window-images/file02.png "Anzeigen eines Speicher Dialogfelds")](window-images/file02.png#lightbox)
+[![](window-images/file02.png "Displaying a save dialog")](window-images/file02.png#lightbox)
 
-Wenn wir ein Dokument aus einer Datei laden, können wir den Titel des Fensters mithilfe der `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` -Methode auf den Namen der Datei festlegen (wenn es sich um eine Zeichenfolge handelt, `path` die die Datei darstellt, die geöffnet wird). Außerdem können wir die URL der Datei mit der `window.RepresentedUrl = url;` -Methode festlegen.
+Wenn wir ein Dokument aus einer Datei laden, können wir den Titel des Fensters mithilfe der `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));`-Methode auf den Dateinamen festlegen (da `path` eine Zeichenfolge ist, die die Datei darstellt, die geöffnet wird). Außerdem können wir die URL der Datei mit der `window.RepresentedUrl = url;`-Methode festlegen.
 
 Wenn die URL auf einen vom Betriebssystem bekannten Dateityp verweist, wird das Symbol in der Titelleiste angezeigt. Wenn der Benutzer mit der rechten Maustaste auf das Symbol klickt, wird der Pfad zur Datei angezeigt.
 
-Bearbeiten Sie die `AppDelegate.cs` Datei, und fügen Sie die folgende Methode hinzu:
+Bearbeiten Sie die Datei `AppDelegate.cs`, und fügen Sie die folgende Methode hinzu:
 
 ```csharp
 [Export ("openDocument:")]
@@ -690,11 +690,11 @@ void OpenDialog (NSObject sender)
 
 Wenn wir nun unsere app ausführen, wählen Sie im Menü **Datei** die Option **Öffnen...** aus, wählen Sie im Dialog Feld **Öffnen** eine Textdatei aus, und öffnen Sie Sie:
 
-[![](window-images/file03.png "Dialogfeld \"Öffnen\"")](window-images/file03.png#lightbox)
+[![](window-images/file03.png "An open dialog box")](window-images/file03.png#lightbox)
 
 Die Datei wird angezeigt, und der Titel wird mit dem Symbol der Datei festgelegt:
 
-[![](window-images/file04.png "Der Inhalt einer geladenen Datei.")](window-images/file04.png#lightbox)
+[![](window-images/file04.png "The contents of a file loaded")](window-images/file04.png#lightbox)
 
 <a name="Adding_a_New_Window_to_a_Project" />
 
@@ -707,22 +707,22 @@ Gehen Sie folgendermaßen vor, um ein neues Fenster hinzuzufügen:
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, um Sie in der Interface Builder von Xcode zur Bearbeitung zu öffnen.
 2. Ziehen Sie einen neuen **Fenster Controller** aus der **Bibliothek** , und legen Sie ihn auf dem **Designoberfläche**:
 
-    [![](window-images/new01.png "Auswählen eines neuen Fenster Controllers in der Bibliothek")](window-images/new01.png#lightbox)
-3. Geben Sie `PreferencesWindow` im **Identitäts Inspektor**als **Storyboard-ID**ein: 
+    [![](window-images/new01.png "Selecting a new Window Controller in the Library")](window-images/new01.png#lightbox)
+3. Geben Sie im **Identitäts Inspektor**`PreferencesWindow` für die **Storyboard-ID**ein: 
 
-    [![](window-images/new02.png "Festlegen der Storyboard-ID")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "Setting the storyboard ID")](window-images/new02.png#lightbox)
 4. Entwerfen Sie Ihre Schnittstelle: 
 
-    [![](window-images/new03.png "Entwerfen der Benutzeroberfläche")](window-images/new03.png#lightbox)
-5. Öffnen Sie das App-`MacWindows`Menü (), wählen Sie **Einstellungen...** , klicken Sie auf das neue Fenster, und ziehen Sie es in das neue Fenster: 
+    [![](window-images/new03.png "Designing the UI")](window-images/new03.png#lightbox)
+5. Öffnen Sie das App-Menü (`MacWindows`), klicken Sie auf **Einstellungen...** , klicken Sie auf das neue Fenster, und ziehen Sie es in das Fenster: 
 
-    [![](window-images/new05.png "Erstellen eines \"*\"")](window-images/new05.png#lightbox)
+    [![](window-images/new05.png "Creating a segue")](window-images/new05.png#lightbox)
 6. Wählen Sie im Popupmenü die Option **anzeigen** aus.
 7. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
 Wenn wir den Code ausführen und die **Einstellungen** im **Anwendungsmenü**auswählen, wird das Fenster angezeigt:
 
-[![](window-images/new04.png "Ein Beispiel Menü \"Einstellungen\"")](window-images/new04.png#lightbox)
+[![](window-images/new04.png "A sample preferences menu")](window-images/new04.png#lightbox)
 
 <a name="Working_with_Panels" />
 
@@ -733,7 +733,7 @@ Wie zu Beginn dieses Artikels erwähnt, schwebt ein Panel oberhalb der anderen F
 Ebenso wie alle anderen Fenster, die Sie in ihrer xamarin. Mac-Anwendung erstellen und mit Ihnen arbeiten, ist der Prozess im Grunde das gleiche:
 
 1. Fügen Sie dem Projekt eine neue Fenster Definition hinzu.
-2. Doppelklicken Sie auf `.xib` die Datei, um den Fenster Entwurf für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
+2. Doppelklicken Sie auf die Datei `.xib`, um den Fenster Entwurf für die Bearbeitung in der Interface Builder von Xcode zu öffnen.
 3. Legen Sie alle erforderlichen Fenster Eigenschaften in der **Attribut** Prüfung und der **Größe Inspector**fest.
 4. Ziehen Sie die Steuerelemente, die zum Erstellen der Schnittstelle erforderlich sind, und konfigurieren Sie Sie im **Attribut Inspektor**.
 5. Verwenden Sie den **Größen Inspektor** , um die Größenänderung für Ihre Benutzeroberflächen Elemente zu verarbeiten.
@@ -742,38 +742,38 @@ Ebenso wie alle anderen Fenster, die Sie in ihrer xamarin. Mac-Anwendung erstell
 
 Im **Attribut Inspektor**verfügen Sie über die folgenden Optionen, die für Panels spezifisch sind:
 
-[![](window-images/panel03.png "Der Attribut Inspektor")](window-images/panel03.png#lightbox)
+[![](window-images/panel03.png "The Attribute Inspector")](window-images/panel03.png#lightbox)
 
-- **Stil** : Hiermit können Sie den Stil des Panels anpassen: Der reguläre Bereich (sieht wie ein Standardfenster aus), das Hilfsprogramm (verfügt über eine kleinere Titelleiste), das HUD-Panel (ist durchlässig und die Titelleiste ist Teil des Hintergrunds).
+- **Stil** : Hiermit können Sie den Stil des Panels anpassen: regulärer Bereich (sieht wie ein Standardfenster aus), Utility Panel (hat eine kleinere Titelleiste), HUD-Panel (ist durchlässig und die Titelleiste ist Teil des Hintergrunds).
 - **Nicht aktivieren** : legt fest, dass im Panel zum Schlüssel Fenster wird.
 - **Modales Dokument** : Wenn es sich um ein modales Dokument handelt, wird der Bereich nur über das Fenster der Anwendung bewegt, andernfalls schwebt er über alle Fenster.
 
 Gehen Sie folgendermaßen vor, um einen neuen Bereich hinzuzufügen:
 
-1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie**neue Datei** **Hinzufügen** > ... aus.
-2. Wählen Sie im Dialogfeld neue Datei die Option **xamarin. Mac** > **Cocoa-Fenster mit Controller**:
+1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie > **neue Datei** **Hinzufügen** ... aus.
+2. Wählen Sie im Dialogfeld neue Datei die Option **xamarin. Mac**  > **Cocoa-Fenster mit Controller**:
 
-    [![](window-images/panels00.png "Hinzufügen eines neuen Fenster Controllers")](window-images/panels00.png#lightbox)
+    [![](window-images/panels00.png "Adding a new window controller")](window-images/panels00.png#lightbox)
 3. Geben Sie für den **Namen** `DocumentPanel` ein, und klicken Sie auf **Neu**.
-4. Doppelklicken Sie auf `DocumentPanel.xib` die Datei, um Sie in Interface Builder zur Bearbeitung zu öffnen: 
+4. Doppelklicken Sie auf die Datei `DocumentPanel.xib`, um Sie für die Bearbeitung in Interface Builder zu öffnen: 
 
-    [![](window-images/new02.png "Bearbeiten des Panels")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "Editing the panel")](window-images/new02.png#lightbox)
 5. Löschen Sie das vorhandene Fenster, und ziehen Sie ein Panel aus dem **Bibliotheks Inspektor** in den Schnittstellen- **Editor**: 
 
-    [![](window-images/panels01.png "Löschen des vorhandenen Fensters")](window-images/panels01.png#lightbox)
-6. Richten Sie den Bereich bis zum **Besitzer** - **Fenster** - des Benutzers**ein:** 
+    [![](window-images/panels01.png "Deleting the existing window")](window-images/panels01.png#lightbox)
+6. Schließen Sie den Bereich für den **Besitzer der Datei** - **Fenster** - **Outlets**ab: 
 
-    [![](window-images/panels02.png "Ziehen, um den Bereich zu übertragen")](window-images/panels02.png#lightbox)
-7. Wechseln Sie zum **Identitäts Inspektor** , und legen Sie die Klasse des `DocumentPanel`Panels auf Folgendes fest: 
+    [![](window-images/panels02.png "Dragging to wire up the panel")](window-images/panels02.png#lightbox)
+7. Wechseln Sie zum **Identitäts Inspektor** , und legen Sie die Klasse des Panels auf `DocumentPanel`fest: 
 
-    [![](window-images/panels03.png "Festlegen der Panel-Klasse")](window-images/panels03.png#lightbox)
+    [![](window-images/panels03.png "Setting the panel's class")](window-images/panels03.png#lightbox)
 8. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
-9. Bearbeiten Sie die Datei, und ändern Sie die Klassendefinition wie folgt: `DocumentPanel.cs` 
+9. Bearbeiten Sie die Datei `DocumentPanel.cs`, und ändern Sie die Klassendefinition wie folgt: 
 
     `public partial class DocumentPanel : NSPanel`
 10. Speichern Sie die Änderungen in der Datei.
 
-Bearbeiten Sie `AppDelegate.cs` die Datei, und `DidFinishLaunching` führen Sie die Methode wie folgt aus:
+Bearbeiten Sie die Datei `AppDelegate.cs`, und legen Sie die `DidFinishLaunching`-Methode wie folgt an:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -787,7 +787,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Wenn wir die Anwendung ausführen, wird der Bereich angezeigt:
 
-[![](window-images/panels04.png "Bereich in einer laufenden app")](window-images/panels04.png#lightbox)
+[![](window-images/panels04.png "The panel in a running app")](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Panel Fenster wurden von Apple als veraltet markiert und sollten durch Inspektor- **Schnittstellen**ersetzt werden. Ein vollständiges Beispiel für das Erstellen eines **Inspektors** in einer xamarin. Mac-app finden Sie in der Beispiel-App für [macinspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector) .

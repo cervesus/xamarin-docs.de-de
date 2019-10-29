@@ -3,19 +3,19 @@ title: 'Teil 4: Umgang mit mehreren Plattformen'
 description: In diesem Dokument wird beschrieben, wie die Anwendungs Abweichung basierend auf Plattform oder Funktion behandelt wird. Es werden Bildschirmgröße, Navigations Metaphern, toucheingaben und Gesten, Pushbenachrichtigungen und Schnittstellen Paradigmen wie Listen und Registerkarten erläutert.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fb01d0ca56365fa95aa563ca99394dea39dc7d31
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 555723e689a9ba076ee34d49b93cf7141e542832
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288883"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016887"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>Teil 4: Umgang mit mehreren Plattformen
 
-## <a name="handling-platform-divergence-amp-features"></a>Behandeln von Platt &amp; Form Abweichungen-Features
+## <a name="handling-platform-divergence-amp-features"></a>Behandeln von Platt Form Abweichungen &amp; Features
 
 Die Abweichung ist nicht nur ein plattformübergreifendes Problem. Geräte auf der gleichen Plattform verfügen über unterschiedliche Funktionen (insbesondere die Vielzahl von verfügbaren Android-Geräten). Der offensichtlichste und einfachste Wert ist die Bildschirmgröße, andere Geräte Attribute können jedoch variieren und erfordern, dass eine Anwendung bestimmte Funktionen prüft und sich je nach Anwesenheit (oder Abwesenheit) unterschiedlich verhält.
 
@@ -108,7 +108,7 @@ Diese Bibliotheken bieten auch plattformübergreifende Funktionen für C# Entwic
 
 Es gibt einige Situationen, in denen der freigegebene Code auf jeder Plattform unterschiedlich funktionieren muss und möglicherweise auf Klassen oder Funktionen zugreift, die sich anders Verhalten. Die bedingte Kompilierung funktioniert am besten mit freigegebenen Asset-Projekten, bei denen in mehreren Projekten, für die verschiedene Symbole definiert sind, auf dieselbe Quelldatei verwiesen wird.
 
-Xamarin-Projekte definieren `__MOBILE__` immer, was für IOS-und Android-Anwendungsprojekte zutrifft (Beachten Sie den doppelten unterstrich vor und nach der Behebung dieser Symbole).
+Xamarin-Projekte definieren immer `__MOBILE__`, die für IOS-und Android-Anwendungsprojekte zutreffen (Beachten Sie den doppelten unterstrich vor und nach der Behebung dieser Symbole).
 
 ```csharp
 #if __MOBILE__
@@ -118,7 +118,7 @@ Xamarin-Projekte definieren `__MOBILE__` immer, was für IOS-und Android-Anwendu
 
 #### <a name="ios"></a>iOS
 
-Xamarin. IOS definiert `__IOS__` , welche Sie zum Erkennen von IOS-Geräten verwenden können.
+Xamarin. IOS definiert `__IOS__`, die Sie zum Erkennen von IOS-Geräten verwenden können.
 
 ```csharp
 #if __IOS__
@@ -148,7 +148,7 @@ Code, der nur in xamarin. Android-Anwendungen kompiliert werden soll, kann Folge
 #endif
 ```
 
-Jede API-Version definiert auch eine neue Compilerdirektive, sodass Sie mit diesem Code Features hinzufügen können, wenn neuere APIs als Ziel verwendet werden. Jede API-Ebene enthält alle Symbole der Ebene "Lower". Diese Funktion ist für die Unterstützung mehrerer Plattformen nicht wirklich nützlich. in der `__ANDROID__` Regel ist das Symbol ausreichend.
+Jede API-Version definiert auch eine neue Compilerdirektive, sodass Sie mit diesem Code Features hinzufügen können, wenn neuere APIs als Ziel verwendet werden. Jede API-Ebene enthält alle Symbole der Ebene "Lower". Diese Funktion ist für die Unterstützung mehrerer Plattformen nicht wirklich nützlich. in der Regel reicht das `__ANDROID__` Symbol aus.
 
 ```csharp
 #if __ANDROID_11__
@@ -158,7 +158,7 @@ Jede API-Version definiert auch eine neue Compilerdirektive, sodass Sie mit dies
 
 #### <a name="mac"></a>Mac
 
-Derzeit gibt es kein integriertes Symbol für xamarin. Mac, Sie können jedoch in den Projektoptionen für Mac-apps **> Build > Compiler** im Feld **Symbole definieren** hinzufügen oder die **csproj** -Datei bearbeiten und dort hinzufügen (z `__MAC__`. b.).
+Derzeit gibt es kein integriertes Symbol für xamarin. Mac, Sie können jedoch in den Projektoptionen für Mac-apps **> Build > Compiler** im Feld **Symbole definieren** hinzufügen oder die **csproj** -Datei bearbeiten und dort hinzufügen (z. b. `__MAC__`).
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -181,9 +181,9 @@ Ein einfaches Beispiel für die bedingte Kompilierung besteht darin, den Datei S
 - **IOS** – Apple bevorzugt, dass sich Nichtbenutzer Daten an einem bestimmten Speicherort (dem Bibliotheksverzeichnis) befinden, es gibt jedoch keine System Konstante für dieses Verzeichnis. Der plattformspezifische Code ist erforderlich, um den korrekten Pfad zu erstellen.
 - **Android** – der von `Environment.SpecialFolder.Personal` zurückgegebene Systempfad ist ein akzeptabler Speicherort zum Speichern der Datenbankdatei.
 - **Windows Phone** – der isolierte Speichermechanismus lässt nicht zu, dass ein vollständiger Pfad angegeben wird, sondern nur ein relativer Pfad und Dateiname.
-- **Universelle Windows-Plattform** – verwendet `Windows.Storage` APIs.
+- **Universelle Windows-Plattform** – verwendet `Windows.Storage`-APIs.
 
-Der folgende Code verwendet die bedingte Kompilierung, `DatabaseFilePath` um sicherzustellen, dass für jede Plattform richtig ist:
+Der folgende Code verwendet die bedingte Kompilierung, um sicherzustellen, dass die `DatabaseFilePath` für jede Plattform richtig ist:
 
 ```csharp
 public static string DatabaseFilePath {

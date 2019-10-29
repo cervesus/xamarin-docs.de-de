@@ -4,15 +4,15 @@ description: Dieses Dokument ist mit Anleitungen verknüpft, die die verschieden
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2979b51c954ab891da5e452e579a650a013a7572
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289538"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022046"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Steuerelemente der Benutzeroberfläche in xamarin. IOS
 
@@ -28,7 +28,7 @@ Die UIButton-Klasse wird verwendet, um verschiedene Arten von Schaltflächen in 
 
 ## <a name="collection-viewsuicollectionviewmd"></a>[Sammlungsansichten](uicollectionview.md)
 
-Sammlungs Sichten, die in der `UICollectionView` -Klasse verfügbar sind, sind ein neues Konzept in ios 6, das die Darstellung mehrerer Elemente auf dem Bildschirm mithilfe von Layouts einführt. Die Muster für die Bereitstellung von `UICollectionView` Daten für einen, um Elemente zu erstellen und mit diesen Elementen zu interagieren, folgen derselben Delegierung und denselben Datenquellen Mustern, die häufig bei der IOS-Entwicklung
+Sammlungs Sichten, die in der `UICollectionView`-Klasse verfügbar sind, sind ein neues Konzept in ios 6, das die Darstellung mehrerer Elemente auf dem Bildschirm mithilfe von Layouts einführt. Die Muster für das Bereitstellen von Daten für eine `UICollectionView`, um Elemente zu erstellen und mit diesen Elementen zu interagieren, folgen denselben Delegat-und Datenquellen Mustern, die häufig bei der IOS-Entwicklung
 
 ## <a name="imagesimagemd"></a>[Bilder](image.md)
 
@@ -36,7 +36,7 @@ Zum Hinzufügen von Bildern zu Ihrer APP sind zwei Schritte erforderlich: zuerst
 
 ## <a name="manual-camera-controlsintro-to-manual-camera-controlsmd"></a>[Steuerelemente der manuellen Kamera](intro-to-manual-camera-controls.md)
 
-Die manuellen Kamera Steuerelemente, die von `AVFoundation Framework` der in ios 8 bereitgestellt werden, ermöglichen einer mobilen Anwendung die vollständige Kontrolle über die Kamera eines IOS-Geräts. Diese differenzierte Steuerungsebene kann verwendet werden, um professionelle Kamera Anwendungen zu erstellen und Künstler Kompositionen bereitzustellen, indem Sie die Parameter der Kamera optimieren, während gleichzeitig ein Bild oder Video erstellt wird.
+Die manuellen Kamera Steuerelemente, die vom `AVFoundation Framework` in ios 8 bereitgestellt werden, ermöglichen einer mobilen Anwendung die vollständige Kontrolle über die Kamera eines IOS-Geräts. Diese differenzierte Steuerungsebene kann verwendet werden, um professionelle Kamera Anwendungen zu erstellen und Künstler Kompositionen bereitzustellen, indem Sie die Parameter der Kamera optimieren, während gleichzeitig ein Bild oder Video erstellt wird.
 
 ## <a name="mapsios-mapsindexmd"></a>[Karten](ios-maps/index.md)
 
@@ -44,7 +44,7 @@ Maps sind ein gängiges Feature in allen modernen mobilen Betriebssystemen. IOS 
 
 ## <a name="labelslabelsmd"></a>[Bezeichnungen](labels.md)
 
-Das `UILabel` -Steuerelement wird zum Anzeigen von einzeiligen und mehrzeiligen schreibgeschützten Text verwendet.
+Das `UILabel`-Steuerelement wird zum Anzeigen von Schreib geschütztem und Schreib geschütztem Text verwendet.
 
 ## <a name="pickers-and-date-pickerspickermd"></a>[Picker und Datums-Picker](picker.md)
 
@@ -54,7 +54,7 @@ Ein spezieller Benutzer Fall, um das Datum und/oder die Uhrzeit festzulegen. Zum
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[Status- und Aktivitätsindikatoren](progress-activity-indicator.md)
 
-IOS bietet zwei Hauptmöglichkeiten, den Fortschritt in der APP anzugeben: Aktivitätsindikatoren (einschließlich eines bestimmten _Netzwerk_ Aktivitäts Indikators) und Status leisten.
+IOS bietet zwei Hauptmethoden, um den Fortschritt in Ihrer APP anzugeben: Aktivitätsindikatoren (einschließlich eines bestimmten _Netzwerk_ Aktivitäts Indikators) und Status leisten.
 
 ## <a name="search-barssearchbarmd"></a>[Suchleisten](searchbar.md)
 
@@ -62,11 +62,11 @@ Uisearchbar wird verwendet, um eine Liste von Werten zu durchsuchen.
 
 ## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[Schieberegler, Schalter und segmentierte Steuerelemente](slider-switch-segmented-controls.md)
 
-Das Schieberegler-Steuerelement ermöglicht die einfache Auswahl eines numerischen Werts innerhalb eines Bereichs. IOS verwendet `UISwitch` als boolesche Eingabe, die auf anderen Plattformen durch eine Options Schaltfläche dargestellt werden kann. Ein segmentiertes Steuerelement ist eine organisierte Methode, mit der Benutzer mit einer kleinen Anzahl von Optionen interagieren können.
+Das Schieberegler-Steuerelement ermöglicht die einfache Auswahl eines numerischen Werts innerhalb eines Bereichs. IOS verwendet die `UISwitch` als boolesche Eingabe, die auf anderen Plattformen durch eine Options Schaltfläche dargestellt werden kann. Ein segmentiertes Steuerelement ist eine organisierte Methode, mit der Benutzer mit einer kleinen Anzahl von Optionen interagieren können.
 
 ## <a name="stack-viewuistackviewmd"></a>[Stapelansicht](uistackview.md)
 
-Das Stapel Ansicht-Steuer`UIStackView`Element () nutzt die Leistungsfähigkeit von automatischen layoutklassen und Größenklassen, um einen Stapel von unter Ansichten entweder horizontal oder vertikal zu verwalten, der dynamisch auf die Ausrichtung und Bildschirmgröße des IOS-Geräts antwortet.
+Das Stapel Ansichts Steuerelement (`UIStackView`) nutzt die Leistungsfähigkeit von Klassen für automatisches Layout und Größe, um einen Stapel von untergeordneten Sichten entweder horizontal oder vertikal zu verwalten, der dynamisch auf die Ausrichtung und Bildschirmgröße des IOS-Geräts antwortet.
 
 ## <a name="tables-and-cellstablesindexmd"></a>[Tabellen und Zellen](tables/index.md)
 
@@ -74,7 +74,7 @@ in seinem Abschnitt werden die Klassen vorgestellt, die zum Erstellen und Anzeig
 
 ## <a name="text-inputtext-inputmd"></a>[Texteingabe](text-input.md)
 
-Das akzeptieren von Benutzer Texteingaben wird mit `UITextField` dem für einzeilige Eingaben und uitextview für mehrzeiligen bearbeitbaren Text erreicht. Sie können eines dieser Steuerelemente auf einen Bildschirm ziehen und doppelklicken, um den Anfangstext festzulegen.
+Das akzeptieren von Benutzer Texteingaben wird mit dem `UITextField` für einzeilige Eingaben und uitextview für mehrzeiligen bearbeitbaren Text erreicht. Sie können eines dieser Steuerelemente auf einen Bildschirm ziehen und doppelklicken, um den Anfangstext festzulegen.
 
 ## <a name="tab-bars-and-tab-bar-controllerscreating-tabbed-applicationsmd"></a>[Registerkartenleisten und Registerkartenleisten-Controller](creating-tabbed-applications.md)
 
@@ -82,7 +82,7 @@ IOS-Anwendungen, die eine Registerkarte mit Registerkarten Navigation verwenden,
 
 ## <a name="web-viewsuiwebviewmd"></a>[Webansichten](uiwebview.md)
 
-In diesem Artikel untersuchen wir die drei von Apple bereitgestellten Webansichten: `UIWebView`, `WKWebview`und `SFSafariViewController`, ihre Ähnlichkeiten und Unterschiede sowie deren Verwendung.
+In diesem Artikel untersuchen wir die drei von Apple bereitgestellten Webansichten: `UIWebView`, `WKWebview`und `SFSafariViewController`, ihre Ähnlichkeiten und Unterschiede sowie die Art und Weise, wie Sie verwendet werden können.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -3,15 +3,15 @@ title: Aktualisieren vorhandener IOS-apps
 description: In diesem Dokument werden die Schritte beschrieben, die zum Aktualisieren einer xamarin. IOS-APP von der Classic API auf die Unified API ausgeführt werden müssen.
 ms.prod: xamarin
 ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c74efef96a15a950122041eb52dc09835bb8940b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9b531bd095781c80c5f3418725d57f8f6bbb06fd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279549"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015033"
 ---
 # <a name="updating-existing-ios-apps"></a>Aktualisieren vorhandener IOS-apps
 
@@ -33,11 +33,11 @@ Bevor Sie den vorhandenen Code auf den Unified API aktualisieren, wird dringend 
 
 Nachdem die Warnungen korrigiert wurden, wählen Sie ein vorhandenes IOS-Projekt in Visual Studio für Mac oder Visual Studio aus, und wählen Sie im Menü **Projekt** die Option **zu xamarin. IOS-Unified API migrieren** aus. Beispiel:
 
-![](updating-ios-apps-images/beta-tool1.png "Wählen Sie im Menü Projekt die Option zu xamarin. IOS-Unified API migrieren aus.")
+![](updating-ios-apps-images/beta-tool1.png "Choose Migrate to Xamarin.iOS Unified API from the Project menu")
 
 Sie müssen diese Warnung akzeptieren, bevor die automatisierte Migration ausgeführt wird (natürlich sollten Sie sicherstellen, dass Sie über Sicherungen/Quell Code Verwaltung verfügen, bevor Sie mit diesem Adventure beginnen):
 
-![](updating-ios-apps-images/beta-tool2.png "Diese Warnung zustimmen, bevor die automatisierte Migration ausgeführt wird")
+![](updating-ios-apps-images/beta-tool2.png "Agree to this warning before the automated migration will run")
 
 Das Tool automatisiert im Grunde alle Schritte, die im Abschnitt **Manuelles Update manuell** beschrieben werden, und ist die empfohlene Methode, ein vorhandenes xamarin. IOS-Projekt in den Unified API zu wandeln.
 
@@ -45,45 +45,45 @@ Das Tool automatisiert im Grunde alle Schritte, die im Abschnitt **Manuelles Upd
 
 Nachdem die Warnungen korrigiert wurden, führen Sie die folgenden Schritte aus, um xamarin. IOS-apps manuell zu aktualisieren und die neuen Unified API zu verwenden:
 
-### <a name="1-update-project-type--build-target"></a>1. Projekttyp & Build-Ziel aktualisieren
+### <a name="1-update-project-type--build-target"></a>1. Projekttyp aktualisieren & Build-Ziel
 
-Ändern Sie den Projekt Geschmack in Ihren **csproj** - `6BC8ED88-2882-458C-8E55-DFD12B67127B` Dateien `FEACFBD2-3405-455C-9665-78FE426C6842`von in. Bearbeiten Sie die **csproj** -Datei in einem Text-Editor, und ersetzen Sie `<ProjectTypeGuids>` das erste Element im-Element wie gezeigt:
+Ändern Sie die Projekt Konfiguration in Ihren **csproj** -Dateien von `6BC8ED88-2882-458C-8E55-DFD12B67127B` in `FEACFBD2-3405-455C-9665-78FE426C6842`. Bearbeiten Sie die **csproj** -Datei in einem Text-Editor, und ersetzen Sie das erste Element im `<ProjectTypeGuids>`-Element wie im folgenden dargestellt:
 
-![](updating-ios-apps-images/csproj.png "Bearbeiten Sie die CSPROJ-Datei in einem Text-Editor, und ersetzen Sie das erste Element im projecttypguids-Element wie gezeigt.")
+![](updating-ios-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
 
-Ändern Sie `Xamarin.MonoTouch.CSharp.targets` dasImport-Element,dasenthält,wieimfolgenden`Xamarin.iOS.CSharp.targets` gezeigt:
+Ändern Sie das **Import** -Element, das `Xamarin.MonoTouch.CSharp.targets` enthält, in `Xamarin.iOS.CSharp.targets`, wie hier gezeigt:
 
-![](updating-ios-apps-images/csproj2.png "Ändern Sie das Import-Element, das xamarin. MonoTouch. CSharp. targets enthält, in xamarin. IOS. CSharp. targets, wie hier gezeigt.")
+![](updating-ios-apps-images/csproj2.png "Change the Import element that contains Xamarin.MonoTouch.CSharp.targets to Xamarin.iOS.CSharp.targets as shown")
 
 ### <a name="2-update-project-references"></a>2. Projekt Verweise aktualisieren
 
 Erweitern Sie den Knoten **Verweise** des IOS-Anwendungs Projekts. Anfänglich wird eine * unterbrochene **MonoTouch** -Referenz ähnlich wie in diesem Screenshot angezeigt (da wir soeben den Projekttyp geändert haben):
 
-![](updating-ios-apps-images/references.png "Anfänglich wird ein fehlerhafter MonoTouch-Verweis angezeigt, der diesem Screenshot ähnelt, weil der Projekttyp geändert wurde.")
+![](updating-ios-apps-images/references.png "It will initially show a broken- monotouch reference similar to this screenshot because the project type changed")
 
 Klicken Sie mit der rechten Maustaste auf das IOS-Anwendungsprojekt, um **Verweise zu bearbeiten**, klicken Sie dann auf die **MonoTouch** -Referenz, und löschen Sie Sie mithilfe der roten Schaltfläche "X"
 
-![](updating-ios-apps-images/references-delete-monotouch-sml.png "Klicken Sie mit der rechten Maustaste auf das IOS-Anwendungsprojekt, um Verweise zu bearbeiten, und klicken Sie dann auf die MonoTouch-Referenz, und löschen Sie Sie mithilfe der roten X")
+![](updating-ios-apps-images/references-delete-monotouch-sml.png "Right-click on the iOS application project to Edit References, then click on the monotouch reference and delete it using the red X button")
 
 Scrollen Sie nun zum Ende der Verweis Liste, und übertragen Sie die **xamarin. IOS** -Assembly.
 
-![](updating-ios-apps-images/references-add-xamarinios-sml.png "Scrollen Sie nun zum Ende der Verweis Liste, und führen Sie die xamarin. IOS-Assembly aus.")
+![](updating-ios-apps-images/references-add-xamarinios-sml.png "Now scroll to the end of the references list and tick the Xamarin.iOS assembly")
 
 Klicken Sie auf **OK** , um die Projekt Verweis Änderungen zu speichern.
 
-### <a name="3-remove-monotouch-from-namespaces"></a>3. MonoTouch aus Namespaces entfernen
+### <a name="3-remove-monotouch-from-namespaces"></a>3. Entfernen von MonoTouch aus Namespaces
 
-Entfernen Sie das **MonoTouch** -Präfix aus Namespaces in-Anweisungen oder an jedem Ort, an `using` dem ein Klassenname voll qualifiziert wurde (z.b. `MonoTouch.UIKit`wird gerade `UIKit`).
+Entfernen Sie das **MonoTouch** -Präfix aus Namespaces in `using`-Anweisungen, oder wenn ein Klassenname voll qualifiziert wurde (z. b. `MonoTouch.UIKit` wird nur `UIKit`).
 
 ### <a name="4-remap-types"></a>4. Neuzuordnen von Typen
 
-Systemeigene [Typen](~/cross-platform/macios/nativetypes.md) wurden eingeführt, die einige Typen ersetzen, die zuvor verwendet wurden, z. `System.Drawing.RectangleF` b `CoreGraphics.CGRect` . Instanzen von mit (z. b.). Die vollständige Liste der Typen finden Sie auf der Seite [native Typen](~/cross-platform/macios/nativetypes.md) .
+Systemeigene [Typen](~/cross-platform/macios/nativetypes.md) wurden eingeführt, die einige Typen ersetzen, die zuvor verwendet wurden, z. b. Instanzen von `System.Drawing.RectangleF` mit `CoreGraphics.CGRect` (z. b.). Die vollständige Liste der Typen finden Sie auf der Seite [native Typen](~/cross-platform/macios/nativetypes.md) .
 
-### <a name="5-fix-method-overrides"></a>5. Korrigieren von Methoden Überschreibungen
+### <a name="5-fix-method-overrides"></a>5. korrigieren von Methoden Überschreibungen
 
-Die `UIKit` Signatur einiger Methoden wurde geändert, um die neuen systemeigenen [Typen](~/cross-platform/macios/nativetypes.md) (z `nint`. b.) zu verwenden. Wenn benutzerdefinierte Unterklassen diese Methoden überschreiben, stimmen die Signaturen nicht mehr ab und führen zu Fehlern. Korrigieren Sie diese Methoden Überschreibungen, indem Sie die-Unterklasse so ändern, dass Sie der neuen Signatur mithilfe von systemeigenen Typen entspricht
+Die Signatur einiger `UIKit` Methoden wurde geändert, um die neuen systemeigenen [Typen](~/cross-platform/macios/nativetypes.md) (z. b. `nint`) zu verwenden. Wenn benutzerdefinierte Unterklassen diese Methoden überschreiben, stimmen die Signaturen nicht mehr ab und führen zu Fehlern. Korrigieren Sie diese Methoden Überschreibungen, indem Sie die-Unterklasse so ändern, dass Sie der neuen Signatur mithilfe von systemeigenen Typen entspricht
 
-Beispiele hierfür sind `public override int NumberOfSections (UITableView tableView)` das ändern `nint` von zum zurückgeben und Ändern von Rückgabetyp `nint`-und Parametertypen in in `public override int RowsInSection (UITableView tableView, int section)` .
+Beispiele hierfür sind das Ändern von `public override int NumberOfSections (UITableView tableView)`, um `nint` zurückzugeben und das Ändern des Rückgabe Typs und der Parametertypen in `public override int RowsInSection (UITableView tableView, int section)` in `nint`.
 
 ## <a name="considerations"></a>Weitere Überlegungen
 

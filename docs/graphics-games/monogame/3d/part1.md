@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c5702780b6a0f0732d846a2cd4226aec5e49fc21
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 909594fe86c9718d9922470d7fca36155e33aed3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766825"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005239"
 ---
 # <a name="using-the-model-class"></a>Verwenden der Model-Klasse
 
@@ -41,7 +41,7 @@ Bevor Sie fortfahren, sollten Sie überprüfen, ob das Projekt ordnungsgemäß g
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>Einschließen der xnsb im Spiel Projekt
 
-Das xnb-Dateiformat ist eine Standard Erweiterung für erstellten Inhalt (Inhalt, der vom [monogame-Pipeline Tool](http://www.monogame.net/documentation/?page=Pipeline)erstellt wurde). Alle erstellten Inhalte verfügen über eine Quelldatei (bei unserem Modell eine FBX-Datei) und eine Zieldatei (xnb-Datei). Das. f BX-Format ist ein gängiges 3D-Modell Format, das von Anwendungen wie [Maya](http://www.autodesk.com/products/maya/overview) und [Blender](http://www.blender.org/)erstellt werden kann. 
+Das xnb-Dateiformat ist eine Standard Erweiterung für erstellten Inhalt (Inhalt, der vom [monogame-Pipeline Tool](http://www.monogame.net/documentation/?page=Pipeline)erstellt wurde). Alle erstellten Inhalte verfügen über eine Quelldatei (bei unserem Modell eine FBX-Datei) und eine Zieldatei (xnb-Datei). Das. f BX-Format ist ein gängiges 3D-Modell Format, das von Anwendungen wie [Maya](https://www.autodesk.com/products/maya/overview) und [Blender](https://www.blender.org/)erstellt werden kann. 
 
 Die `Model`-Klasse kann erstellt werden, indem eine xnb-Datei von einem Datenträger geladen wird, der 3D-Geometriedaten enthält.   Diese xnb-Datei wird durch ein Inhalts Projekt erstellt. Monogame-Vorlagen enthalten automatisch ein Inhalts Projekt (mit der Erweiterung MGCP) in unserem Inhalts Ordner. Eine ausführliche Erläuterung zum monogame-Pipeline Tool finden Sie im [Leitfaden zur Inhalts Pipeline](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md).
 

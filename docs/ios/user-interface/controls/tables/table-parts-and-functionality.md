@@ -4,29 +4,29 @@ description: In diesem Dokument werden die verschiedenen Bestandteile von uitabl
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 158b3575589df5854a32e95ec80c6ef02d21e661
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0e8014263d417cef39147b440ed3b38155f226bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768344"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021853"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Tabellen Teile und-Funktionen in xamarin. IOS
 
 Eine uitableview kann einen "gruppierten" oder "Plain"-Stil aufweisen und besteht aus den folgenden Teilen:
 
 - [Abschnitts Kopfzeile](#Section_Header)
-- [Zellen](#Cells) (oder Zeilen, wenn Sie dies bevorzugen)
+- [Zellen](#Cells) (oder Zeilen, wenn Sie möchten)
 - [Abschnitts Fußzeile](#Section_Footer)
 - [Index](#Index)
 - [Bearbeitungsmodus](#Edit_Features) (enthält "Swipe zum Löschen" und Zieh Punkte zum Ändern der Zeilen Reihenfolge) 
 
 Diese Screenshots zeigen, wie Abschnitts Zeilen, Kopfzeilen, Fußzeilen, Bearbeitungs Steuerelemente und der Index angezeigt werden.
 
- [![](table-parts-and-functionality-images/image1a.png "Diese Screenshots zeigen, wie Abschnitts Zeilen, Kopfzeilen, Fußzeilen, Bearbeitungs Steuerelemente und der Index angezeigt werden.")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
 
 Diese Teile werden im folgenden ausführlicher beschrieben:
 
@@ -72,7 +72,7 @@ Im restlichen Teil dieses Dokuments wird gezeigt, wie alle diese uitableview-Fun
 
 Die primären Klassen, die zum Anzeigen von Tabellen Sichten verwendet werden, werden hier angezeigt:
 
-[![](table-parts-and-functionality-images/classdiagram.png "Die primären Klassen, die zum Anzeigen von Tabellen Sichten verwendet werden, werden hier angezeigt")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 Der Zweck der einzelnen Klassen wird im folgenden beschrieben:
 

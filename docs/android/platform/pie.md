@@ -4,15 +4,15 @@ description: Erfahren Sie, wie Sie mit xamarin. Android mit der Entwicklung von 
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 6475cd0f27e41321902b57dd28f59bfb250e0c8f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0105b43116df697bc6688becb77298c236dfa601
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757464"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019887"
 ---
 # <a name="android-pie-features"></a>Android-Kreis Features
 
@@ -35,7 +35,7 @@ Die folgende Liste ist erforderlich, um die Android-Kreis Funktionen in xamarin-
 
 - **Xamarin. Android** &ndash; xamarin. Android 9.0.0.17 oder höher muss mit Visual Studio installiert werden (xamarin. Android wird automatisch als Teil der Mobile- **Entwicklung mit .net** -Arbeitsauslastung installiert).
 
-- **Java Developer Kit** Die Entwicklung von xamarin Android 9,0 erfordert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (oder Sie können die Vorschau der Microsoft-Distribution von [openjdk](~/android/get-started/installation/openjdk.md)testen). &ndash; JDK8 wird automatisch als Teil der Mobile- **Entwicklung mit .net** -Arbeitsauslastung installiert.
+- **Java Developer Kit** &ndash; die Entwicklung von xamarin Android 9,0 erfordert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (oder Sie können die Vorschau der Microsoft-Distribution von [openjdk](~/android/get-started/installation/openjdk.md)testen). JDK8 wird automatisch als Teil der Mobile- **Entwicklung mit .net** -Arbeitsauslastung installiert.
 
 - **Android SDK** &ndash; Android SDK API 28 oder höher muss über den Android SDK-Manager installiert werden.
 
@@ -92,13 +92,13 @@ Weitere Informationen zum Verwenden des Android-Emulators zum Testen und Debugge
 
 Mit dem Android-Kreis wird eine Reihe neuer Features eingeführt. Einige dieser neuen Features sind darauf ausgelegt, neue Hardwarefunktionen zu nutzen, die von den neuesten Android-Geräten angeboten werden, während andere die Benutzer Funktionalität von Android weiter verbessern können:
 
-- **Unterstützung für Ausschneide Anzeige** Stellt APIs bereit, um den Speicherort und die Form des Ausschneide Fensters auf neueren Android-Geräten im oberen Bildschirmbereich zu finden. &ndash;
+- **Anzeigen der Ausschneide Unterstützung** &ndash; stellt APIs bereit, mit denen Sie den Speicherort und die Form des _Ausschneide_ Fensters auf neueren Android-Geräten im oberen Bildschirmbereich finden.
 
-- **Benachrichtigungs Erweiterungen** Benachrichtigungs Meldungen können jetzt Bilder anzeigen, und eine `Person` neue Klasse wird verwendet, um Konversations Teilnehmer zu vereinfachen. &ndash;
+- **Benachrichtigungs Erweiterungen** &ndash; Benachrichtigungs Meldungen können jetzt Bilder anzeigen, und eine neue `Person` Klasse wird verwendet, um Konversations Teilnehmer zu vereinfachen.
 
-- **Innen Positionierung** &ndash; Platt Form Unterstützung für das WLAN-Roundtrip-Zeitprotokoll, das es Apps ermöglicht, WiFi-Geräte für die Navigation in den Einstellungen von innen zu verwenden.
+- Die **&ndash; Plattform** -Unterstützung für das WLAN-Roundtrips-Protokoll, das es Apps ermöglicht, WiFi-Geräte für die Navigation in den Indoor-Einstellungen zu verwenden.
 
-- **Unterstützung für mehrere Kameras** &ndash; Bietet die Möglichkeit, gleichzeitig von mehreren physischen Kameras aus auf Streams zuzugreifen (z. b. Dual-Front-und Dual-Back-Kameras).
+- Die &ndash; **Unterstützung mehrerer Kameras** bietet die Möglichkeit, gleichzeitig von mehreren physischen Kameras aus auf Streams zuzugreifen (z. b. Dual-Front-und Dual-Back-Kameras).
 
 In den folgenden Abschnitten werden diese Features hervorgehoben und kurze Codebeispiele bereitgestellt, die Ihnen bei der Verwendung in Ihrer APP helfen.
 
@@ -111,11 +111,11 @@ Der folgende Screenshot zeigt ein emulatorbeispiel für einen Ausschnitt:
 
 Um zu verwalten, wie Ihr App-Fenster seinen Inhalt auf Geräten anzeigt, auf denen ein Ausschnitt angezeigt wird, hat Android-Kreis ein neues [layoutunbestrilaycutoutmode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode) -Fenster Layout-Attribut hinzugefügt. Dieses Attribut kann auf einen der folgenden Werte festgelegt werden:
 
-- [Layoutunbestrilaycutoutmumuever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; Das Fenster darf sich niemals mit dem Ausschneide Bereich überlappen.
+- [Layoutunbestreitlaycutoutmumuever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; das Fenster darf sich nie mit dem Ausschneide Bereich überlappen.
 
-- [Layoutunbestreitlaycutoutmodeshortedges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; Das Fenster darf nur auf den kurzen Rand des Bildschirms in den Ausschneide Bereich ausgedehnt werden. 
+- [Layoutnedlaycutoutmodeshortedges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; das Fenster auf den Ausschneide Bereich ausgedehnt werden darf, aber nur an den kurzen Rändern des Bildschirms. 
 
-- [Layoutunbestreitlaycutoutmodedefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; Das Fenster kann in den Ausschneide Bereich erweitert werden, wenn das Ausschneide in einer Systemleiste enthalten ist.
+- [Layoutunbestreitlaycutoutmodedefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; das Fenster kann in den Ausschneide Bereich erweitert werden, wenn sich das Ausschneide Objekt in einer Systemleiste befindet.
 
 Um beispielsweise zu verhindern, dass sich das Fenster der APP mit dem Ausschneide Bereich überschneidet, legen Sie den layoutausschneide Modus auf *nie*fest: 
 
@@ -124,14 +124,14 @@ Window.Attributes.LayoutInDisplayCutoutMode =
     Android.Views.LayoutInDisplayCutoutMode.Never;
 ```
 
-In den folgenden Beispielen werden Beispiele für diese Ausschneide Modi bereitgestellt. Der erste Screenshot auf der linken Seite befindet sich in der APP im nicht Vollbildmodus. Im Mittelpunkt des Screenshots wird die APP Vollbildmodus, `LayoutInDisplayCutoutMode` wobei auf `LayoutInDisplayCutoutModeShortEdges`festgelegt ist. Beachten Sie, dass sich der weiße Hintergrund der APP auf den Bereich Anzeige Ausschnitt erstreckt:
+In den folgenden Beispielen werden Beispiele für diese Ausschneide Modi bereitgestellt. Der erste Screenshot auf der linken Seite befindet sich in der APP im nicht Vollbildmodus. Im Mittelpunkt des Screenshots wird die APP Vollbildmodus, wobei `LayoutInDisplayCutoutMode` auf `LayoutInDisplayCutoutModeShortEdges`festgelegt ist. Beachten Sie, dass sich der weiße Hintergrund der APP auf den Bereich Anzeige Ausschnitt erstreckt:
 
-[![Beispiel für das Anzeigen von Ausschneide Modi im Emulator](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[in![Beispiel werden die Ausschneide Modi im Emulator angezeigt.](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
-Im abschließenden Screenshot (oben rechts) wird auf `LayoutInDisplayCutoutMode` `LayoutInDisplayCutoutModeShortNever` festgelegt, bevor es in den Vollbildmodus wechselt.
+Im abschließenden Screenshot (oben rechts) ist `LayoutInDisplayCutoutMode` auf `LayoutInDisplayCutoutModeShortNever` festgelegt, bevor es in den Vollbildmodus wechselt.
 Beachten Sie, dass der weiße Hintergrund der APP nicht in den Bereich für die Anzeige Ausschnitte erweitert werden darf.
 
-Wenn Sie ausführlichere Informationen zum Ausschneide Bereich auf dem Gerät benötigen, können Sie die neue [displaycutout](https://developer.android.com/reference/android/view/DisplayCutout.html) -Klasse verwenden. `DisplayCutout`stellt den Bereich der Anzeige dar, der nicht zum Anzeigen von Inhalt verwendet werden kann. Sie können diese Informationen verwenden, um den Speicherort und die Form des Ausschneide Bereichs abzurufen, sodass Ihre APP nicht versucht, Inhalt in diesem nicht Funktionsbereich anzuzeigen.
+Wenn Sie ausführlichere Informationen zum Ausschneide Bereich auf dem Gerät benötigen, können Sie die neue [displaycutout](https://developer.android.com/reference/android/view/DisplayCutout.html) -Klasse verwenden. `DisplayCutout` stellt den Bereich der Anzeige dar, der nicht zum Anzeigen von Inhalt verwendet werden kann. Sie können diese Informationen verwenden, um den Speicherort und die Form des Ausschneide Bereichs abzurufen, sodass Ihre APP nicht versucht, Inhalt in diesem nicht Funktionsbereich anzuzeigen.
 
 Weitere Informationen zu den neuen Ausschneide Features in Android P finden Sie [unter Unterstützung der Ausschneide](https://developer.android.com/about/versions/pie/android-9.0#cutout)Funktion.
 
@@ -151,9 +151,9 @@ Im folgenden Beispiel wird veranschaulicht, wie die neuen APIs verwendet werden,
 
 [![Beispiel Benachrichtigung mit Image](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
-Im folgenden Beispiel wird veranschaulicht, wie Sie ein Bild in eine Android-Kreis Benachrichtigung einschließen und die Verwendung der neuen `Person` Klasse veranschaulichen:
+Im folgenden Beispiel wird veranschaulicht, wie Sie ein Bild in eine Android-Kreis Benachrichtigung einschließen, und es wird die Verwendung der neuen `Person`-Klasse veranschaulicht:
 
-1. Erstellen Sie `Person` ein-Objekt, das den Absender darstellt. Der Name und das Symbol des Absenders sind z. b `fromPerson`. in enthalten:
+1. Erstellen Sie ein `Person` Objekt, das den Absender darstellt. Der Name und das Symbol des Absenders sind z. b. in `fromPerson`enthalten:
 
     ```csharp
     Icon senderIcon = Icon.CreateWithResource(this, Resource.Drawable.sender_icon);
@@ -163,7 +163,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie ein Bild in eine Android-Kre
         .Build();
     ```
 
-2. Erstellen Sie `Notification.MessagingStyle.Message` eine, die das zu sendende Bild enthält, und übergeben Sie das Bild an die neue [Notification. messagingstyle. Message. SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri) -Methode.
+2. Erstellen Sie eine `Notification.MessagingStyle.Message`, die das zu sendende Bild enthält, und übergeben Sie das Bild an die neue [Notification. messagingstyle. Message. SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri) -Methode.
    Beispiel:
 
     ```csharp
@@ -173,7 +173,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie ein Bild in eine Android-Kre
             .SetData("image/", imageUri);
     ```
 
-3. Fügen Sie die Nachricht einem `Notification.MessagingStyle` -Objekt hinzu. Beispiel:
+3. Fügen Sie die Nachricht einem `Notification.MessagingStyle`-Objekt hinzu. Beispiel:
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
@@ -223,7 +223,7 @@ Außerdem unterstützt Android-Kreis eine Reihe weiterer neuer Features:
 
 - Die neue [animatedimagedrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html) -Klasse, die zum Zeichnen und anzeigen animierter Bilder verwendet werden kann.
 
-- Eine neue [imagedecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) -Klasse, `BitmapFactory`die ersetzt. `ImageDecoder`kann verwendet werden, um eine `AnimatedImageDrawable`zu decodieren.
+- Eine neue [imagedecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) -Klasse, die `BitmapFactory`ersetzt. `ImageDecoder` können zum Decodieren eines `AnimatedImageDrawable`verwendet werden.
 
 - Unterstützung für Video-und heif-Bilder (High Efficiency Image File Format) für HDR (Hochdynamisches Bereich).
 
@@ -245,7 +245,7 @@ Weitere Informationen zu Verhaltensänderungen für apps, die auf Android P abzi
 
 ## <a name="sample-code"></a>Beispielcode
 
-[Androidpminidemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo) ist eine xamarin. Android-Beispiel-App für Android, die veranschaulicht, wie die Anzeige Ausschneide Modi festgelegt werden, `Person` wie die neue Klasse verwendet wird und wie eine Benachrichtigung gesendet wird, die ein Bild enthält.
+[Androidpminidemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo) ist eine xamarin. Android-Beispiel-App für Android-Kreis, die veranschaulicht, wie Anzeige Ausschneide Modi festgelegt werden, wie die neue `Person`-Klasse verwendet wird und wie eine Benachrichtigung gesendet wird, die ein Bild enthält.
 
 ## <a name="summary"></a>Zusammenfassung
 

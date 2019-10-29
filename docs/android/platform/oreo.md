@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/06/2018
-ms.openlocfilehash: 31e4073df70ced0cc9729c6dc292500264ad7fce
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 56430f8c4988c16a31f9806b0ffb8b6355d6340b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249952"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019999"
 ---
 # <a name="oreo-features"></a>Oreo-Features
 
@@ -83,11 +83,11 @@ Um ein Projekt mit xamarin. Android 8,0 zu erstellen, müssen Sie zunächst den 
 
 2. Installieren Sie die **Android 8,0-Oreo-** Pakete. Wenn Sie den Android SDK Emulator verwenden, stellen Sie sicher, dass Sie die benötigten **x86** -System Images einschließen:
 
-    [![Auswählen von Android 8,0-Paketen im Android SDK-Manager](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
+    [![auswählen von Android 8,0-Paketen im Android SDK Manager](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
 3. Installieren Sie **Android SDK Tools 26.0.2** oder höher, **Android SDK Platform-Tools 26.0.0** oder höher und **Android SDK Build-Tools 26.0.0** (oder höher):
 
-    [![Auswählen von Android SDK Tools 26 im Android SDK Manager](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
+    [![auswählen von Android SDK Tools 26 im Android SDK-Manager](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -95,11 +95,11 @@ Um ein Projekt mit xamarin. Android 8,0 zu erstellen, müssen Sie zunächst den 
 
 2. Installieren Sie die **Android 8,0-Oreo SDK-** Pakete. Wenn Sie den Android SDK Emulator verwenden, stellen Sie sicher, dass Sie die benötigten **x86** -System Images einschließen:
 
-    [![Auswählen von Android 8,0-Paketen im SDK-Manager](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
+    [![auswählen von Android 8,0-Paketen im SDK-Manager](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
 3. Installieren Sie **Android SDK Tools 26.0.2** oder höher, **Android SDK Platform-Tools 26.0.0** oder höher und **Android SDK Build-Tools 26.0.0** (oder höher):
 
-    [![Auswählen von Android SDK Tools 26 im SDK-Manager](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
+    [![auswählen von Android SDK Tools 26 im SDK-Manager](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
@@ -123,7 +123,7 @@ Wenn Sie versuchen, den standardmäßigen Google GUI-basierten AVD-Manager nach 
 
 -----
 
-Diese Meldung wird angezeigt, da Google keinen eigenständigen GUI-AVD-Manager mehr bereitstellt, der API 26,0 und höher unterstützt. Für Android 8,0 Oreo müssen Sie entweder den xamarin Android-Emulator Manager oder das Befehlszeilen `avdmanager` Tool verwenden, um virtuelle Geräte für Android Oreo zu erstellen.
+Diese Meldung wird angezeigt, da Google keinen eigenständigen GUI-AVD-Manager mehr bereitstellt, der API 26,0 und höher unterstützt. Für Android 8,0 Oreo müssen Sie entweder das xamarin Android-Emulator Manager oder das Befehlszeilen `avdmanager` Tool verwenden, um virtuelle Geräte für Android Oreo zu erstellen.
 
 Informationen zum Verwenden des Android Device Manager zum Erstellen und Verwalten von virtuellen Geräten finden Sie unter [Verwalten von virtuellen Geräten mit dem Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
 Um virtuelle Geräte ohne die Android Device Manager zu erstellen, führen Sie die Schritte im nächsten Abschnitt aus.
@@ -134,13 +134,13 @@ Gehen Sie folgendermaßen vor, um ein neues virtuelles Gerät mithilfe von **avd
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Öffnen Sie ein Eingabe Aufforderungs Fenster `JAVA_HOME` , und legen Sie auf den Speicherort des Java SDK auf Ihrem Computer fest. Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
+1. Öffnen Sie ein Eingabe Aufforderungs Fenster, und legen Sie `JAVA_HOME` auf den Speicherort des Java SDK auf Ihrem Computer fest. Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
 
     ```cmd
     setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_131"
     ```
 
-2. Fügen Sie der den Speicherort `bin` des Ordners `PATH`Android SDK hinzu.
+2. Fügen Sie den Speicherort der Android SDK `bin` Ordners zu Ihrem `PATH`hinzu.
     Für eine typische xamarin-Installation können Sie den folgenden Befehl verwenden:
 
     ```cmd
@@ -157,7 +157,7 @@ Gehen Sie folgendermaßen vor, um ein neues virtuelles Gerät mithilfe von **avd
 
 Nachdem Sie das virtuelle Gerät von **avdmanager** erstellt haben, wird es in das Pulldownmenü des Geräts eingefügt:
 
-[![Neues AVD zum Gerät hinzugefügt (Pulldownmenü)](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
+[das Pulldownmenü des Geräts wurde![neu hinzugefügt.](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -177,7 +177,7 @@ Nachdem Sie das virtuelle Gerät von **avdmanager** erstellt haben, wird es in d
 
 Nachdem Sie das virtuelle Gerät mithilfe von **avdmanager** erstellt haben, wird es in das Pulldownmenü des Geräts eingefügt:
 
-[![Neues AVD zum Gerät hinzugefügt (Pulldownmenü)](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
+[das Pulldownmenü des Geräts wurde![neu hinzugefügt.](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -200,9 +200,9 @@ Sie können einen Benachrichtigungs Kanal für jeden Benachrichtigungstyp erstel
 
 Benachrichtigungs Ausweise sind kleine Punkte, die über APP-Symbole angezeigt werden, wie in diesem Screenshot gezeigt:
 
-[![Beispiele für Benachrichtigungs Abzeichen für App-Symbole](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
+[![Beispiel-Benachrichtigungs Abzeichen für App-Symbole](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
-Diese Punkte geben an, dass neue Benachrichtigungen für mindestens einen Benachrichtigungs Kanal in der app vorhanden sind, die mit &ndash; dem App-Symbol verknüpft ist. Dies sind Benachrichtigungen, die der Benutzer noch nicht verworfen oder bearbeitet hat. Benutzer können mit einer langen Taste auf ein Symbol klicken, um auf die mit einem Benachrichtigungs Badge verknüpften Benachrichtigungen zu klicken und Benachrichtigungen aus dem Menü mit langen drücken zu verwerfen, das sich auf die Anwendung auswirkt.
+Diese Punkte geben an, dass neue Benachrichtigungen für mindestens einen Benachrichtigungs Kanal in der app vorhanden sind, die mit dem App-Symbol verknüpft ist &ndash; Dies sind Benachrichtigungen, die der Benutzer noch nicht verworfen oder bearbeitet hat. Benutzer können mit einer langen Taste auf ein Symbol klicken, um auf die mit einem Benachrichtigungs Badge verknüpften Benachrichtigungen zu klicken und Benachrichtigungen aus dem Menü mit langen drücken zu verwerfen, das sich auf die Anwendung auswirkt.
 
 Weitere Informationen zu Benachrichtigungs Abzeichen finden Sie im Thema Android-Entwickler [Benachrichtigungs Abzeichen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges) .
 
@@ -214,9 +214,9 @@ Android Oreo führt *Schriftarten in XML*ein. Dadurch können Sie benutzerdefini
 
 2. Kopieren Sie die Schriftart Dateien (z **. b. ttf** -und **OTF** -Dateien) in **Ressourcen/Schriftart**. 
 
-3. Benennen Sie ggf. alle Schriftart Dateien so um, dass Sie den Benennungs Konventionen für Android-Dateien entsprechen (d. h., verwenden Sie nur Kleinbuchstaben *a-z*, *0-9*und Unterstriche in Dateinamen). Die Schriftart Datei `Pacifico-Regular.ttf` könnte beispielsweise in etwa wie `pacifico.ttf`folgt umbenannt werden.
+3. Benennen Sie ggf. alle Schriftart Dateien so um, dass Sie den Benennungs Konventionen für Android-Dateien entsprechen (d. h., verwenden Sie nur Kleinbuchstaben *a-z*, *0-9*und Unterstriche in Dateinamen). Beispielsweise könnte die Schriftart Datei `Pacifico-Regular.ttf` in etwa `pacifico.ttf`umbenannt werden.
 
-4. Wenden Sie die benutzerdefinierte Schriftart mithilfe des `android:fontFamily` neuen Attributs in ihrer Layout-XML-Datei an. Beispielsweise wird in der `TextView` folgenden Deklaration die hinzugefügte " **Pacifico. ttf** "-Schrift Ressource verwendet:
+4. Wenden Sie die benutzerdefinierte Schriftart mithilfe des neuen `android:fontFamily`-Attributs in der Layout-XML-Datei an. Beispielsweise wird in der folgenden `TextView` Deklaration die hinzugefügte " **Pacifico. ttf** "-Schrift Ressource verwendet:
 
    ```xml
    <TextView
@@ -232,7 +232,7 @@ Sie können auch eine XML-Datei der Schriftfamilie erstellen, die mehrere Schrif
 
 Ab Android Oreo können apps Schriftarten von einem Anbieter anfordern, anstatt Sie in das APK zu bündeln. Schriftarten werden nur bei Bedarf aus dem Netzwerk heruntergeladen. Diese Funktion reduziert die APK-Größe, spart den Telefon Arbeitsspeicher und die Nutzung von Mobil Funkdaten. Sie können diese Funktion auch unter Android-API-Versionen 14 und höher verwenden, indem Sie das Paket für die Android-Unterstützungs Bibliothek 26 installieren.
 
-Wenn Ihre APP eine Schriftart benötigt, erstellen Sie ein `FontsRequest` -Objekt (indem Sie die herunter zuladbare Schriftart angeben), `FontsContract` und übergeben Sie Sie dann an eine Methode zum Herunterladen der Schriftart. In den folgenden Schritten wird der Schriftart Downloadvorgang ausführlicher beschrieben:
+Wenn Ihre APP eine Schriftart benötigt, erstellen Sie ein `FontsRequest` Objekt (das die herunter zuladbare Schriftart angibt), und übergeben Sie es dann an eine `FontsContract` Methode zum Herunterladen der Schriftart. In den folgenden Schritten wird der Schriftart Downloadvorgang ausführlicher beschrieben:
 
 1. Instanziieren Sie ein [fontrequest](https://developer.android.com/reference/android/provider/FontRequest.html) -Objekt. 
 
@@ -244,7 +244,7 @@ Wenn Ihre APP eine Schriftart benötigt, erstellen Sie ein `FontsRequest` -Objek
 
 5. Rufen Sie die Methode " [fontcontract. requestfonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback)) " auf, um die Schriftart aus dem Schriftart Anbieter abzurufen. 
 
-Wenn Sie die `RequestFonts` -Methode aufzurufen, wird zuerst überprüft, ob die Schriftart lokal zwischengespeichert ist (von einem vorherigen `RequestFont`-Aufrufvorgang). Wenn Sie nicht zwischengespeichert wird, wird der Schriftart Anbieter aufgerufen. die Schriftart wird asynchron abgerufen, und die Ergebnisse werden an Ihre APP zurückgeleitet, indem `OnTypeFaceRetrieved` die-Methode aufgerufen wird.
+Wenn Sie die `RequestFonts`-Methode aufzurufen, wird zuerst überprüft, ob die Schriftart lokal zwischengespeichert ist (von einem vorherigen `RequestFont`). Wenn Sie nicht zwischengespeichert wird, wird der Schriftart Anbieter aufgerufen. die Schriftart wird asynchron abgerufen, und die Ergebnisse werden an Ihre APP zurückgeleitet, indem Sie Ihre `OnTypeFaceRetrieved` Methode aufrufen.
 
 Das Beispiel zum Herunterladen von [Schriftarten](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) veranschaulicht, wie Sie das in Android Oreo eingeführte herunterladbare Schriftarten Feature verwenden 
 
@@ -268,11 +268,11 @@ Um anzugeben, dass die Aktivität der APP den PIP-Modus verwenden kann, legen Si
 android:supportsPictureInPicture
 ```
 
-Wenn Sie angeben möchten, wie sich die Aktivität im PIP-Modus Verhalten soll, verwenden Sie das neue-Objekt " [pictureinpictureparams](https://developer.android.com/reference/android/app/PictureInPictureParams.html) ". `PictureInPictureParams`stellt einen Satz von Parametern dar, die Sie verwenden, um eine Aktivität im PIP-Modus zu initialisieren und zu aktualisieren (z. b. das bevorzugte Seitenverhältnis der Aktivität). `Activity` In Android Oreo wurden die folgenden neuen PIP-Methoden hinzugefügt:
+Wenn Sie angeben möchten, wie sich die Aktivität im PIP-Modus Verhalten soll, verwenden Sie das neue-Objekt " [pictureinpictureparams](https://developer.android.com/reference/android/app/PictureInPictureParams.html) ". `PictureInPictureParams` stellt eine Reihe von Parametern dar, die Sie verwenden, um eine Aktivität im PIP-Modus zu initialisieren und zu aktualisieren (z. b. das bevorzugte Seitenverhältnis der Aktivität). Die folgenden neuen PIP-Methoden wurden `Activity` in Android Oreo hinzugefügt:
 
-- [Enterpictureinpicturemode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; versetzt die Aktivität in den PIP-Modus. Die Aktivität wird in der Ecke des Bildschirms platziert, und der restliche Bildschirm wird mit der vorherigen Aktivität aufgefüllt, die sich auf dem Bildschirm befand.
+- [Enterpictureinpicturemode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; die Aktivität in den PIP-Modus versetzt. Die Aktivität wird in der Ecke des Bildschirms platziert, und der restliche Bildschirm wird mit der vorherigen Aktivität aufgefüllt, die sich auf dem Bildschirm befand.
 
-- [Setpictureinpictuneu](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; Aktualisiert die PIP-Konfigurationseinstellungen der Aktivität (z. b. eine Änderung des Seitenverhältnisses).
+- [Setpictureinpictuprojekt&ndash;](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) aktualisiert die PIP-Konfigurationseinstellungen der Aktivität (z. b. eine Änderung des Seitenverhältnisses).
 
 Das Beispiel " [pictureinpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) " veranschaulicht die grundlegende Verwendung des PIP-Modus (Bild-in-Bild) für in Oreo eingeführte Hand Held Geräte. Im Beispiel wird ein Video abgespielt, das beim Wechseln zwischen Anzeigemodi oder anderen Aktivitäten ununterbrochen fortgesetzt wird.
 
@@ -288,9 +288,9 @@ Android Oreo umfasst eine Reihe von Änderungen am System-und API-Verhalten, die
 
 Um die Benutzererfahrung zu verbessern, erzwingt Android Oreo Einschränkungen, welche apps bei der Ausführung im Hintergrund ausgeführt werden können. Wenn der Benutzer z. b. ein Video ansehen oder ein Spiel spielt, könnte eine im Hintergrund ausgeführten APP die Leistung einer Video intensiven App beeinträchtigen, die im Vordergrund ausgeführt wird. Folglich werden von Android Oreo die folgenden Einschränkungen für apps, die nicht direkt mit dem Benutzer interagieren, platziert:
 
-1. **Einschränkungen für den Hintergrunddienst** &ndash; Wenn eine APP im Hintergrund ausgeführt wird, verfügt sie über ein Fenster von einigen Minuten, in dem Sie weiterhin Dienste erstellen und verwenden können. Am Ende dieses Fensters hält Android den Hintergrunddienst der APP an und behandelt ihn als im _Leerlauf_befindlich.
+1. **Einschränkungen für den Hintergrunddienst** &ndash; wenn eine APP im Hintergrund ausgeführt wird, verfügt sie über ein Fenster von einigen Minuten, in dem Sie weiterhin Dienste erstellen und verwenden können. Am Ende dieses Fensters hält Android den Hintergrunddienst der APP an und behandelt ihn als im _Leerlauf_befindlich.
 
-2. **Übertragungs Einschränkungen** &ndash; Android 7,0 (API 25) hat Einschränkungen für Übertragungen festgelegt, die von einer APP für den Empfang registriert werden. Android Oreo macht diese Einschränkungen strenger. Android Oreo-Apps können z. b. Broadcast Empfänger nicht mehr für implizite Sendungen in ihren Manifesten registrieren.
+2. **Übertragungsbeschränkungen** &ndash; Android 7,0 (API 25) hat Einschränkungen für Übertragungen festgelegt, die von einer APP für den Empfang registriert werden. Android Oreo macht diese Einschränkungen strenger. Android Oreo-Apps können z. b. Broadcast Empfänger nicht mehr für implizite Sendungen in ihren Manifesten registrieren.
 
 Weitere Informationen zu den neuen Grenzwerten für die Hintergrund Ausführung finden Sie im Thema Android Developer [Background Execution Limits](https://developer.android.com/about/versions/oreo/background.html) .
 
@@ -300,7 +300,7 @@ Apps, die auf Android Oreo oder höher ausgerichtet sind, müssen Ihre apps änd
 
 - Android Oreo ist nicht mehr in der Lage, die Priorität einzelner Benachrichtigungen festzulegen. Stattdessen legen Sie eine empfohlene Wichtigkeits Stufe fest, wenn Sie einen Benachrichtigungs Kanal erstellen. Die Wichtigkeits Stufe, die Sie einem Benachrichtigungs Kanal zuweisen, gilt für alle Benachrichtigungs Meldungen, die Sie an Sie senden.
 
-- Für apps, die auf Android Oreo abzielen, funktioniert nicht aufgrund neuer Grenzwerte für Dienste, die im Hintergrund gestartet wurden `PendingIntent.GetService()` . Wenn Sie Android Oreo als Ziel verwenden, sollten Sie stattdessen " [pdingintent. getbroadcast](xref:Android.App.PendingIntent.GetBroadcast*) " verwenden.  
+- Für apps, die auf Android Oreo abzielen, funktioniert `PendingIntent.GetService()` nicht aufgrund neuer Grenzwerte für Dienste, die im Hintergrund gestartet wurden. Wenn Sie Android Oreo als Ziel verwenden, sollten Sie stattdessen " [pdingintent. getbroadcast](xref:Android.App.PendingIntent.GetBroadcast*) " verwenden.  
 
 ## <a name="sample-code"></a>Beispielcode
 
@@ -316,7 +316,7 @@ Es stehen mehrere xamarin. Android-Beispiele zur Verfügung, die Ihnen zeigen, w
 
 - [Emojicompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat) veranschaulicht die Verwendung der emojicompat-Unterstützungs Bibliothek. Sie können diese Bibliothek verwenden, um zu verhindern, dass Ihre APP fehlende Emoji-Zeichen als "Tofu"-Zeichen anzeigt.
 
-- [Location Updates Pending Intent](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) veranschaulicht die Verwendung der Location-API, um Updates zum Speicherort eines Geräts mithilfe `PendingIntent`von zu erhalten.
+- [Location Updates Pending Intent](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) veranschaulicht die Verwendung der Location-API, um Updates zum Speicherort eines Geräts mithilfe eines `PendingIntent`zu erhalten.
 
 - [Location Updates Vordergrund Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) veranschaulicht, wie die Location-API verwendet wird, um Updates zum Speicherort eines Geräts mithilfe eines gebundenen und gestarteten Vordergrund Dienstanbieter zu erhalten.
 
@@ -332,4 +332,4 @@ In diesem Artikel wurde Android Oreo eingeführt und erläutert, wie die neueste
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android 8.0 Oreo](https://developer.android.com/index.html)
+- [Android 8,0 Oreo](https://developer.android.com/index.html)

@@ -4,15 +4,15 @@ description: Beginnen Sie mit der Verwendung von xamarin. Android zum Entwickeln
 ms.prod: xamarin
 ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/02/2018
-ms.openlocfilehash: 128982abdee7a0fea8df79f7b7b9ecd6a290775a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6274c75abf229268070d495ced662724f5c16627
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761259"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027093"
 ---
 # <a name="nougat-features"></a>Nougat-Features
 
@@ -31,11 +31,11 @@ Eine Liste bekannter Probleme mit xamarin. Android 7,0 finden Sie in den Anmerku
 
 Android-Nougat bietet viele neue Features, die für xamarin. Android-Entwickler von Interesse sind. Zu diesen Features zählen:
 
-- **Unterstützung für mehrere Fenster** &ndash; Diese Erweiterung ermöglicht es Benutzern, zwei apps gleichzeitig auf dem Bildschirm zu öffnen.
+- **Unterstützung für mehrere Fenster** &ndash; diese Erweiterung ermöglicht es Benutzern, zwei apps gleichzeitig auf dem Bildschirm zu öffnen.
 
-- **Benachrichtigungs Erweiterungen** Das neu gestaltete Benachrichtigungssystem in Android Nougat enthält eine Funktion für *direkte Antworten* , die es Benutzern ermöglicht, schnell auf Textnachrichten direkt von der Benachrichtigungs-UI zu reagieren. &ndash; Wenn Ihre APP außerdem Benachrichtigungen für empfangene Nachrichten erstellt, kann die neue *gebündelte Benachrichtigungs* Funktion Benachrichtigungen zusammen als eine einzelne Gruppe bündeln, wenn mehr als eine Nachricht empfangen wird.
+- Zu den **Verbesserungen** bei der Benachrichtigung &ndash; das neu gestaltete Benachrichtigungssystem in Android Nougat gehört ein *direktes Antwort* Feature, mit dem Benutzer schnell auf Textnachrichten direkt über die Benachrichtigungs Benutzeroberfläche reagieren können Wenn Ihre APP außerdem Benachrichtigungen für empfangene Nachrichten erstellt, kann die neue *gebündelte Benachrichtigungs* Funktion Benachrichtigungen zusammen als eine einzelne Gruppe bündeln, wenn mehr als eine Nachricht empfangen wird.
 
-- **Daten Ersparnis** &ndash; Bei diesem Feature handelt es sich um einen neuen Systemdienst, der die Nutzung der Mobilfunkdaten durch Apps verringert und Benutzern die Steuerung der Verwendung von Mobil Funkdaten durch Apps ermöglicht.
+- **Daten Ersparnis** &ndash; dieses Feature ist ein neuer Systemdienst, mit dem die Nutzung der Mobilfunkdaten durch Apps reduziert werden kann. Sie ermöglicht Benutzern die Kontrolle über die Verwendung von Mobil Funkdaten durch apps.
 
 Außerdem bietet Android Nougat viele weitere Verbesserungen, die für App-Entwickler von Interesse sind, wie z. b. ein neues Feature für die Netzwerk Sicherheitskonfiguration, Doze unterwegs, Key Attestation, neue schnell Einstellungs-APIs, Unterstützung mehrerer Gebiets Schemas, ICU4J-APIs, WebView-Erweiterungen, Zugriff auf Java 8-sprach Features, Bereichs bezogenen Verzeichnis Zugriff, eine benutzerdefinierte Zeiger-API, Unterstützung für Platform VR, virtuelle Dateien und Optimierungen der Hintergrundverarbeitung.
 
@@ -51,7 +51,7 @@ Folgendes ist erforderlich, um die neuen Android-Funktionen von Nougat in xamari
 
 - **Android SDK** -Android SDK 7,0 (API 24) oder höher muss über den Android SDK Manager installiert werden.
 
-- **Java Developer Kit** Die Entwicklung von xamarin Android 7,0 erfordert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher, wenn Sie für API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch API-Ebenen vor 24). &ndash; Die 64-Bit-Version von JDK 8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder den Formular-Previewer verwenden.
+- Die Entwicklung von **Java Developer Kit** &ndash; xamarin Android 7,0 erfordert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) oder höher, wenn Sie für API-Ebene 24 oder höher entwickeln (JDK 8 unterstützt auch API-Ebenen vor 24). Die 64-Bit-Version von JDK 8 ist erforderlich, wenn Sie benutzerdefinierte Steuerelemente oder den Formular-Previewer verwenden.
 
 > [!IMPORTANT]
 > Xamarin.Android unterstützt JDK 9 nicht.
@@ -80,15 +80,15 @@ Um xamarin-Unterstützung für Android-Nougat hinzuzufügen, ändern Sie den Upd
 
 Zum Erstellen eines Projekts mit xamarin Android 7,0 müssen Sie zunächst den Android SDK-Manager zum Installieren der **SDK-Plattform Android N (API 24)** oder höher verwenden. Außerdem müssen Sie die neuesten **Android SDK Tools**installieren:
 
-1. Starten Sie den Android SDK-Manager (> Verwenden Sie in Visual Studio für Mac Extras, um **Android SDK&hellip;Manager zu öffnen**. verwenden Sie in Visual Studio Extras **> Android > Android SDK-Manager**).
+1. Starten Sie den Android SDK-Manager (verwenden Sie in Visual Studio für Mac Extras **> Öffnen Sie Android SDK Manager&hellip;** ; verwenden Sie in Visual Studio Extras **> Android > Android SDK-Manager**).
 
 2. Installieren Sie **Android 7,0 (API 24)** oder höher:
 
-    [![Auswählen von Android 7,0-Paketen im Android SDK-Manager](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
+    [![auswählen von Android 7,0-Paketen im Android SDK Manager](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
 3. Installieren Sie die neuesten Android SDK Tools:
 
-    [![Auswählen der neuesten Android SDK Tools im Android SDK Manager](nougat-images/preview-tools.png)](nougat-images/preview-tools.png#lightbox)
+    [![auswählen der neuesten Android SDK Tools im Android SDK Manager](nougat-images/preview-tools.png)](nougat-images/preview-tools.png#lightbox)
 
     Sie müssen Android SDK Tools Revision 25.2.2 oder höher, Android SDK Platt Form Tools 24.0.3 oder höher und Android SDK Build Tools 24.0.2 oder höher installieren.
 
@@ -117,7 +117,7 @@ Wenn Sie einen Emulator verwenden, starten Sie den Android AVD-Manager, und erst
 
 Beispielsweise ist dieses virtuelle Gerät so konfiguriert, dass es einen Nexus 6 emuliert:
 
-[![Konfigurieren von AVD mit Nexus 6-Gerät, Android 7,0-Ziel und Intel Atom x86-CPU/Abi](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png#lightbox)
+[![Konfigurieren eines AVD-Geräts mithilfe eines Nexus 6-Geräts, eines Android 7,0-Ziels und einer Intel Atom x86-CPU/Abi](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png#lightbox)
 
 Wenn Sie ein physisches Gerät (z. b. ein Nexus 5x, 6 oder 9) verwenden, können Sie Ihr Gerät entweder durch automatische über-Air-Updates (OTA) aktualisieren oder ein System Abbild herunterladen und Ihr Gerät direkt blinken. Weitere Informationen zum manuellen Aktualisieren Ihres Geräts auf Android-Nougat finden Sie unter [OTA-Images für Nexus-Geräte](https://developers.google.com/android/nexus/ota).
 
@@ -134,7 +134,7 @@ Benutzer können einen unter Teiler zwischen den apps ziehen, um deren Größe z
 
 [![Beispiel-apps, die im Modus für mehrere Fenster im hoch-und Querformat ausgeführt werden](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-Sie können konfigurieren, wie die Aktivitäten ihrer xamarin. Android-App den Modus für mehrere Fenster unterstützen. Beispielsweise können Sie Attribute konfigurieren, die die minimale Größe und die Standardhöhe und-Breite Ihrer APP im Modus für mehrere Fenster festlegen. Sie können die neue `Activity.IsInMultiWindowMode` -Eigenschaft verwenden, um zu bestimmen, ob sich die Aktivität im Modus für mehrere Fenster befindet. Beispiel:
+Sie können konfigurieren, wie die Aktivitäten ihrer xamarin. Android-App den Modus für mehrere Fenster unterstützen. Beispielsweise können Sie Attribute konfigurieren, die die minimale Größe und die Standardhöhe und-Breite Ihrer APP im Modus für mehrere Fenster festlegen. Sie können die neue `Activity.IsInMultiWindowMode`-Eigenschaft verwenden, um zu bestimmen, ob sich die Aktivität im Modus für mehrere Fenster befindet. Beispiel:
 
 ```csharp
 if (!IsInMultiWindowMode) {
@@ -160,7 +160,7 @@ Diese Funktion für Inline Antworten ermöglicht es Benutzern, schnell auf eine 
 [![Screenshot einer Benachrichtigung mit einem Inline-direkt Antwortfeld](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png#lightbox)
 
 Um dieses Feature in Ihrer APP zu unterstützen, müssen Sie der APP *Inline Antwort Aktionen* über ein [remoteinput](xref:Android.App.RemoteInput) -Objekt hinzufügen, damit Benutzer über die Benachrichtigungs Benutzeroberfläche direkt über Text Antworten können.
-Der folgende Code erstellt z. b. `RemoteInput` einen zum Empfangen von Texteingaben, erstellt eine ausstehende Absicht für die Antwort Aktion und erstellt eine aktivierte Remote Eingabe Aktion:
+Der folgende Code erstellt z. b. eine `RemoteInput` zum Empfangen von Texteingaben, erstellt eine ausstehende Absicht für die Antwort Aktion und erstellt eine aktivierte Remote Eingabe Aktion:
 
 ```csharp
 // Build a RemoteInput for receiving text input:
@@ -191,7 +191,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
    .AddAction (actionReplyByRemoteInput);
 ```
 
-Die Beispiel-App für den C# [Messaging Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) enthält Code, der veranschaulicht, wie `RemoteInput` Benachrichtigungen mit einem-Objekt erweitert werden. Weitere Informationen zum Hinzufügen von Inline Antwort Aktionen zu Ihrer APP für Android 7,0 oder höher finden Sie im Thema Android Response [to Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct) .
+Die Beispiel-App für den C# [Messaging Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) enthält Code, der veranschaulicht, wie Benachrichtigungen mit einem`RemoteInput`Objekt erweitert werden. Weitere Informationen zum Hinzufügen von Inline Antwort Aktionen zu Ihrer APP für Android 7,0 oder höher finden Sie im Thema Android Response [to Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct) .
 
 #### <a name="bundled-notifications"></a>Gebündelte Benachrichtigungen
 
@@ -215,7 +215,7 @@ Weitere Informationen zum neuen Datenspeicher Feature in Android Nougat finden S
 ### <a name="app-shortcuts"></a>App-Verknüpfungen
 
 Android 7,1 hat eine Funktion für *App* -Verknüpfungen eingeführt, die es Benutzern ermöglicht, häufig gängige oder empfohlene Aufgaben mit Ihrer APP zu starten.
-Um das Menü mit Verknüpfungen zu aktivieren, drückt der Benutzer das App-Symbol für ein zweites oder &ndash; mehr, wenn das Menü mit einer schnellen Vibration angezeigt wird.
+Um das Menü mit Verknüpfungen zu aktivieren, drückt der Benutzer das App-Symbol ein zweites oder mehr &ndash; das Menü wird mit einer schnellen Vibration angezeigt.
 Wenn Sie die Presse freigeben, wird das Menü beibehalten:
 
 [![Beispiel Bildschirm eines App-Kontextmenüs für eine Messaging-App](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
@@ -229,11 +229,11 @@ Es stehen mehrere xamarin. Android-Beispiele zur Verfügung, die Ihnen zeigen, w
 
 - [Multiwindowplayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground) veranschaulicht die Verwendung der Multi-Window-API, die in Android-Nougat verfügbar ist. Sie können die Beispiel-app in den multiwindows-Modus wechseln, um zu sehen, wie sich diese auf den Lebenszyklus und das Verhalten der APP auswirkt.
 
-- Der [Messaging Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) ist ein einfacher Dienst, der `NotificationCompatManager`mithilfe von Benachrichtigungen sendet. Außerdem wird die Benachrichtigung mit einem `RemoteInput` -Objekt erweitert, damit Android-Nougat-Geräte per Text direkt aus der Benachrichtigung antworten können, ohne eine APP öffnen zu müssen.
+- Der [Messaging Dienst](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) ist ein einfacher Dienst, der Benachrichtigungen mithilfe der `NotificationCompatManager`sendet. Außerdem wird die Benachrichtigung mit einem `RemoteInput` Objekt erweitert, damit Android-Nougat-Geräte per Text direkt aus der Benachrichtigung antworten können, ohne eine APP öffnen zu müssen.
 
-- [Aktive Benachrichtigungen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications) veranschaulichen, wie die `NotificationManager` API verwendet wird, um Ihnen mitzuteilen, wie viele Benachrichtigungen derzeit von Ihrer Anwendung angezeigt werden.
+- [Aktive Benachrichtigungen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications) veranschaulichen, wie Sie die `NotificationManager`-API verwenden, um zu ermitteln, wie viele Benachrichtigungen derzeit von Ihrer Anwendung angezeigt werden.
 
-- Bereichs bezogener [Verzeichnis Zugriff](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess) Veranschaulicht die Verwendung der Bereichs bezogenen Verzeichniszugriffs-API für den einfachen Zugriff auf bestimmte Verzeichnisse. Dies dient als Alternative zum Definieren `READ_EXTERNAL_STORAGE` von-oder `WRITE_EXTERNAL_STORAGE` -Berechtigungen in ihrem Manifest.
+- Bereichs bezogener [Verzeichnis Zugriff](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess) Veranschaulicht die Verwendung der Bereichs bezogenen Verzeichniszugriffs-API für den einfachen Zugriff auf bestimmte Verzeichnisse. Dies dient als Alternative zum Definieren von `READ_EXTERNAL_STORAGE`-oder `WRITE_EXTERNAL_STORAGE` Berechtigungen in ihrem Manifest.
 
 - [Direkter Start](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot) Veranschaulicht das Speichern von Daten in einem Geräte verschlüsselten Speicher, der immer verfügbar ist, wenn das Gerät vor und nach der Eingabe von Benutzer Anmelde Informationen (PIN/Muster/Kennwort) gestartet wird.
 

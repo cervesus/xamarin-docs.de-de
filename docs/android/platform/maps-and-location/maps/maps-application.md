@@ -4,21 +4,21 @@ description: Starten der integrierten Maps-Anwendung in ihrer xamarin. Android-A
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: b950326eb5a124d5040caa0044309630a2a53d38
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7b74f564f2b6e9613874a774258a7e999002e61a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761675"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027078"
 ---
 # <a name="launching-the-maps-application"></a>Starten der Maps-Anwendung
 
 Die einfachste Methode zum Arbeiten mit Maps in xamarin. Android besteht darin, die im folgenden gezeigte integrierte Maps-Anwendung zu nutzen:
 
-[![Screenshot der integrierten Google Maps-APP](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
+[Screenshot der integrierten Google Maps-APP![Beispiel](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 Wenn Sie die Maps-Anwendung verwenden, ist die Zuordnung nicht Teil Ihrer Anwendung. Stattdessen startet die Anwendung die Maps-Anwendung und lädt die Karte extern. Im nächsten Abschnitt wird erläutert, wie mit xamarin. Android Zuordnungen wie oben beschrieben gestartet werden.
 
@@ -38,17 +38,17 @@ Dieser Code ist alles, was zum Starten der im vorherigen Screenshot gezeigten Ka
 
 Der obige Code hat das geografieschema verwendet, um einen URI zu erstellen. Dieses URI-Schema unterstützt verschiedene Formate, wie unten aufgeführt:
 
-- `geo:latitude,longitude`&ndash; Öffnet die Maps-Anwendung, die sich in einem lat/lon zentriert. 
+- `geo:latitude,longitude` &ndash; öffnet die Maps-Anwendung, die sich in einem lat/lon zentriert. 
 
-- `geo:latitude,longitude?z=zoom`&ndash; Öffnet die Maps-Anwendung, die sich in einem lat/lon zentriert und auf die angegebene Ebene vergrößert. Der Zoomfaktor kann zwischen 1 und 23 liegen: 1 zeigt die gesamte Erde an, und 23 ist die nächstgelegene Zoomstufe.
+- `geo:latitude,longitude?z=zoom` &ndash; öffnet die Maps-Anwendung, die sich in einem lat/lon zentriert und auf die angegebene Ebene vergrößert. Der Zoomfaktor liegt zwischen 1 und 23:1 zeigt die gesamte Erde an, und 23 ist die nächstgelegene Zoomstufe.
 
-- `geo:0,0?q=my+street+address`&ndash; Öffnet die Zuordnungs Anwendung zum Speicherort einer Straße. 
+- `geo:0,0?q=my+street+address` &ndash; öffnet die Anwendung Maps am Speicherort einer Straße. 
 
-- `geo:0,0?q=business+near+city`&ndash; Öffnet die Maps-Anwendung und zeigt die mit Anmerkungen versehene Suchergebnisse an. 
+- `geo:0,0?q=business+near+city` &ndash; öffnet die Maps-Anwendung und zeigt die mit Anmerkungen versehene Suchergebnisse an. 
 
-Die Versionen des URIs, die eine Abfrage ausführen (d. h. die Adresse der Straße oder die Suchbegriffe), verwenden den Geocoder-Dienst von Google, um den Speicherort abzurufen, der dann auf der Karte angezeigt wird. Der URI `geo:0,0?q=coop+Cambridge` führt z. b. zu der unten gezeigten Karte:
+Die Versionen des URIs, die eine Abfrage ausführen (d. h. die Adresse der Straße oder die Suchbegriffe), verwenden den Geocoder-Dienst von Google, um den Speicherort abzurufen, der dann auf der Karte angezeigt wird. Der URI `geo:0,0?q=coop+Cambridge` beispielsweise in der folgenden Abbildung dargestellt:
 
-[![Beispiel Bildschirm, das Google Maps mit einem Suchbegriff anzeigt](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
+[Screenshot des![Beispiels, der Google Maps mit einem Suchbegriff anzeigt](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 Weitere Informationen zu den URI-Schemas finden Sie unter [Show a Location on a map](https://developer.android.com/guide/components/intents-common.html#Maps).
 
@@ -56,9 +56,9 @@ Weitere Informationen zu den URI-Schemas finden Sie unter [Show a Location on a 
 
 Zusätzlich zum geografieschema unterstützt Android auch das Laden von Straßenansichten von einer Absicht. Im folgenden finden Sie ein Beispiel für die aus xamarin. Android gestartete Anwendung "Street View":
 
-[![Screenshot eines Beispiels für eine Straßenansicht](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
+[Screenshot einer Straße![Beispiel](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
-Um eine Straßenansicht zu starten, verwenden Sie `google.streetview` einfach das URI-Schema, wie im folgenden Code gezeigt:
+Um eine Straßenansicht zu starten, verwenden Sie einfach das `google.streetview` URI-Schema, wie im folgenden Code gezeigt:
 
 ```csharp
 var streetViewUri = Android.Net.Uri.Parse (
@@ -75,16 +75,16 @@ google.streetview:cbll=lat,lng&cbp=1,yaw,,pitch,zoom&mz=mapZoom
 
 Wie Sie sehen können, werden mehrere Parameter unterstützt, wie unten aufgeführt:
 
-- `lat`&ndash; Der Breitengrad des Orts, der in der Straße angezeigt werden soll.
+- `lat` &ndash; den Breitengrad des Orts, der in der Ansicht "Straße" angezeigt werden soll.
 
-- `lng`&ndash; Der Längengrad des Orts, der in der Straße angezeigt werden soll.
+- `lng` &ndash; den Längengrad der Position, die in der Ansicht "Straße" angezeigt werden soll.
 
-- `pitch`&ndash; Der Winkel des Straßen Ansichts Panoramas, gemessen von der Mitte in Grad, bei der 90 Grad direkt nach unten und-90 Grad gerade ist.
+- `pitch` &ndash; Winkel des Straßen Ansichts Panoramas, gemessen von der Mitte in Grad, bei der 90 Grad direkt nach unten und-90 Grad gerade ist.
 
-- `yaw`&ndash; Zentrieren der Ansicht des Straßen Ansichts Panoramas, gemessen im Uhrzeigersinn in Grad von Nord.
+- `yaw` &ndash; Mitte der Ansicht des Straßen Ansichts Panoramas, gemessen im Uhrzeigersinn in Grad von Nord.
 
-- `zoom`&ndash; Zoom Multiplikator für das Straßen Ansichts Panorama, wobei 1,0 = normaler Zoom Wert, 2,0 = zoomt 2x, 3,0 = Zoommodus 4X usw.
+- `zoom` &ndash; Zoom-Multiplikator für das Straßen Ansichts Panorama, wobei 1,0 = normaler Zoom Wert, 2,0 = vergrößert 2x, 3,0 = Zoom 4X usw.
 
-- `mz`&ndash; Der Zuordnungs Zoomfaktor, der verwendet wird, wenn die Maps-Anwendung aus der Ansicht "Straße" geht.
+- `mz` &ndash; den kartenzoomfaktor, der verwendet wird, wenn Sie die Maps-Anwendung aus der Ansicht "Straße" wechseln.
 
 Das Arbeiten mit der integrierten Maps-Anwendung oder der Straßenansicht ist eine einfache Möglichkeit, um Unterstützung für die Zuordnung schnell hinzuzufügen. Allerdings bietet die Android Maps-API eine präzisere Steuerung der Zuordnungs Funktionen.

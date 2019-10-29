@@ -3,15 +3,15 @@ title: 'Teil 6: Testen und App Store-Genehmigungen'
 description: In diesem Dokument wird beschrieben, wie Sie eine plattformübergreifende Anwendung auf dem Gerät testen, Testfälle verwalten, Tests automatisieren, Komponententests ausführen und den Prozess der APP-Übermittlung durcharbeiten.
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198431"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016853"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App Store-Genehmigungen
 
@@ -50,7 +50,7 @@ Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-u
 
 ## <a name="unit-testing"></a>Unittests
 
-### <a name="touchunit"></a>Touch.Unit
+### <a name="touchunit"></a>"Berühren. Einheit"
 
 Xamarin. IOS enthält ein Komponenten Test-Framework namens "Touchscreen. Unit", das dem JUnit/nunit-Stil zum Schreiben von Tests folgt.
 
@@ -58,7 +58,7 @@ Ausführliche Informationen zum Schreiben von Tests und zum Ausführen von "Touc
 
 ### <a name="andrunit"></a>Andr. Unit
 
-Es gibt eine Open Source-Entsprechung von "Touchscreen. Unit" für Android mit dem Namen "Andr. Unit". Sie können es von [GitHub](https://github.com/spouliot/Andr.Unit) herunterladen und sich über das Tool im [ @spouliotBlog](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)informieren.
+Es gibt eine Open Source-Entsprechung von "Touchscreen. Unit" für Android mit dem Namen "Andr. Unit". Sie können es von [GitHub](https://github.com/spouliot/Andr.Unit) herunterladen und sich über das Tool auf [@spouliotBlog](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)informieren.
 
 ## <a name="app-store-approvals"></a>App Store-Genehmigungen
 
@@ -129,7 +129,7 @@ Zusätzlich zu den offensichtlichen technischen Problemen, die dazu führen kön
 
 Setzen Sie die Metadaten der Anwendung in die Entwicklungs-und Testzwecke. Anwendungen werden bei geringfügigen Verstößen in den Metadaten abgelehnt, sodass Sie sich die Zeit nehmen, Sie richtig zu machen.
 
-### <a name="app-stores-not-for-everyone"></a>App-Stores: Nicht für alle
+### <a name="app-stores-not-for-everyone"></a>App Stores: nicht für alle
 
 Der Hauptschwerpunkt der Filialen auf den einzelnen Plattformen ist die Verteilung von Kunden-die Möglichkeit, so viele Kunden wie möglich zu erreichen. Allerdings sind nicht alle Anwendungen auf Consumer ausgerichtet, sondern es gibt eine schnell wachsende Basis von internen und Extranet-ähnlichen Anwendungen, die eine eingeschränkte Verteilung an Mitarbeiter, Lieferanten oder Kunden erfordern. Diese apps sind nicht "für den Verkauf" und benötigen keine Genehmigung, da der Entwickler die Verteilung an eine geschlossene Gruppe von Benutzern steuert.
 Die Unterstützung für diese Art der Bereitstellung variiert je nach Plattform.

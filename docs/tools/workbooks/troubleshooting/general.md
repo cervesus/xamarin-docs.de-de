@@ -3,32 +3,32 @@ title: Bekannte Probleme & Problem Umgehungen
 description: In diesem Dokument werden bekannte Probleme und Problem Umgehungen für Xamarin Workbooks beschrieben. Es werden CultureInfo-Probleme, JSON-Probleme und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: b7b73e214af6a5a45426b4e2d2d7e01a436b379e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7b9f93c2d6339ba1fd26b27742ecfc0f438c5de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292786"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018163"
 ---
 # <a name="known-issues--workarounds"></a>Bekannte Probleme & Problem Umgehungen
 
 ## <a name="persistence-of-cultureinfo-across-cells"></a>Dauerhaftigkeit von CultureInfo über Zellen hinweg
 
-Das `System.Threading.CurrentThread.CurrentCulture` festlegen `System.Globalization.CultureInfo.CurrentCulture` von oder wird nicht in Arbeitsmappenzellen auf Mono-basierten Arbeitsmappen-Zielen (Mac, IOS und Android) aufgrund eines [Fehlers in `AppContext.SetSwitch` der Mono][appcontext-bug] -Implementierung beibehalten.
+Das Festlegen von `System.Threading.CurrentThread.CurrentCulture` oder `System.Globalization.CultureInfo.CurrentCulture` wird nicht in Arbeitsmappenzellen auf Mono-basierten arbeitsmappenzielen (Mac, IOS und Android) aufgrund eines [Fehlers in der `AppContext.SetSwitch`Implementierung von Mono][appcontext-bug] beibehalten.
 
 ### <a name="workarounds"></a>Problemumgehung
 
-- Legen Sie "Application-Domain- `DefaultThreadCurrentCulture`local" fest:
+- Legen Sie den `DefaultThreadCurrentCulture`"Application-Domain-Local" fest:
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-- Oder aktualisieren Sie die Arbeitsmappen 1.2.1 oder höher, wodurch Zuweisungen zu `System.Threading.CurrentThread.CurrentCulture` und für das gewünschte Verhalten neu geschrieben werden (umgehen des Mono- `System.Globalization.CultureInfo.CurrentCulture` Fehlers).
+- Oder aktualisieren Sie die Arbeitsmappen 1.2.1 oder höher, wodurch Zuweisungen in `System.Threading.CurrentThread.CurrentCulture` und `System.Globalization.CultureInfo.CurrentCulture` neu geschrieben werden, um das gewünschte Verhalten (umgehen des Mono-Fehlers) bereitzustellen.
 
 ## <a name="unable-to-use-newtonsoftjson"></a>"Newtonsoft. JSON" kann nicht verwendet werden.
 
@@ -39,7 +39,7 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 
 ### <a name="details"></a>Details
 
-"Newtonsoft. JSON 10" wurde freigegeben, was seine Abhängigkeit von Microsoft. CSharp widerspricht, was zu einem Konflikt mit `dynamic`der Version der zu unterstützten Arbeitsmappen führt. Dies wird in der Vorschauversion der Arbeitsmappen 1,3 behandelt, aber vorerst haben wir das Thema "newtonsoft. JSON" genauer an die Version 9.0.1 angeheftetes.
+"Newtonsoft. JSON 10" wurde freigegeben, was seine Abhängigkeit von Microsoft. CSharp widerspricht, was zu einem Konflikt mit der Versions Arbeitsmappe führt, um `dynamic`zu unterstützen. Dies wird in der Vorschauversion der Arbeitsmappen 1,3 behandelt, aber vorerst haben wir das Thema "newtonsoft. JSON" genauer an die Version 9.0.1 angeheftetes.
 
 Nuget-Pakete, die explizit in Abhängigkeit von Newton Soft. JSON 10 oder neueren basieren, werden nur in-Arbeitsmappen 1,3 unterstützt, derzeit im Alphakanal.
 

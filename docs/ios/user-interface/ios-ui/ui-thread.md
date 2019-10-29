@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit dem UI-Thread in x
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ab72034d7b565a31c59d997f03844b6c8c959785
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ee7ab7c5d0503cffd2c12a493f314f191d912e92
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768179"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002834"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Arbeiten mit dem UI-Thread in xamarin. IOS
 
@@ -24,7 +24,7 @@ Der Code sollte nur Änderungen an den Steuerelementen der Benutzeroberfläche v
 
 Wenn Sie Steuerelemente in einer Ansicht erstellen oder ein vom Benutzer initiiertes Ereignis, z. b. eine Berührung, behandeln, wird der Code bereits im Kontext des UI-Threads ausgeführt.
 
-Wenn Code in einem Hintergrund Thread, in einer Aufgabe oder einem Rückruf ausgeführt wird, wird er wahrscheinlich nicht auf dem Hauptbenutzer Oberflächen-Thread ausgeführt. In diesem Fall sollten Sie den Code in einem `InvokeOnMainThread` -Befehl oder `BeginInvokeOnMainThread` wie diesem einschließen:
+Wenn Code in einem Hintergrund Thread, in einer Aufgabe oder einem Rückruf ausgeführt wird, wird er wahrscheinlich nicht auf dem Hauptbenutzer Oberflächen-Thread ausgeführt. In diesem Fall sollten Sie den Code in einem aufzurufenden `InvokeOnMainThread` oder `BeginInvokeOnMainThread` wie folgt einschließen:
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,17 +32,17 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-Die `InvokeOnMainThread` -Methode ist `NSObject` so definiert, dass Sie in Methoden aufgerufen werden kann, die für ein beliebiges UIKit-Objekt definiert sind (z. b. eine Ansicht oder ein Ansichts Controller)
+Die `InvokeOnMainThread`-Methode wird auf `NSObject` definiert, sodass Sie aus Methoden aufgerufen werden kann, die für ein beliebiges UIKit-Objekt definiert sind (z. b. eine Ansicht oder ein Ansichts Controller).
 
 Beim Debuggen von xamarin. IOS-Anwendungen wird ein Fehler ausgelöst, wenn der Code versucht, auf ein UI-Steuerelement vom falschen Thread aus zuzugreifen. Dies hilft Ihnen, diese Probleme mit der invokeonmainthread-Methode aufzuspüren und zu beheben. Dies tritt nur beim Debuggen auf und löst in Releasebuilds keinen Fehler aus. Die Fehlermeldung wird wie folgt angezeigt:
 
- ![](ui-thread-images/image10.png "UI-Thread Ausführung")
+ ![](ui-thread-images/image10.png "UI Thread Execution")
 
  <a name="Background_Thread_Example" />
 
 ## <a name="background-thread-example"></a>Beispiel für Hintergrund Thread
 
-Im folgenden Beispiel wird versucht, mithilfe eines einfachen Threads von einem Hintergrund Thread `UILabel`aus auf ein Benutzeroberflächen Steuerelement (a) zuzugreifen:
+Es folgt ein Beispiel, das versucht, auf ein Benutzeroberflächen Steuerelement (ein `UILabel`) von einem Hintergrund Thread aus mithilfe eines einfachen Threads zuzugreifen:
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -50,7 +50,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-Mit diesem Code wird während `UIKitThreadAccessException` des Debuggens ausgelöst. Um das Problem zu beheben (und sicherzustellen, dass nur über den Hauptbenutzer Oberflächen-Thread auf das Benutzeroberflächen Steuerelement zugegriffen wird), packen Sie `InvokeOnMainThread` Code, der auf UI-Steuerelemente verweist, in einem Ausdruck wie folgt
+Dieser Code löst beim Debuggen die `UIKitThreadAccessException` aus. Um das Problem zu beheben (und sicherzustellen, dass nur über den Hauptbenutzer Oberflächen-Thread auf das Benutzeroberflächen Steuerelement zugegriffen wird), packen Sie Code, der auf UI-Steuerelemente verweist, in einem `InvokeOnMainThread` Ausdruck wie folgt
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -66,9 +66,9 @@ Sie müssen dies nicht für die restlichen Beispiele in diesem Dokument verwende
 
 ## <a name="asyncawait-example"></a>Beispiel für Async/Erwartung
 
-Wenn die C# 5 Async-/erwarter-Schlüsselwörter `InvokeOnMainThread` nicht benötigt werden, ist die-Methode im aufrufenden Thread fortgesetzt, wenn eine erwartete Aufgabe abgeschlossen wird.
+Wenn Sie die C# 5 Async/erwarteschlüsselwörter verwenden`InvokeOnMainThread`ist nicht erforderlich, da die Methode bei Abschluss einer erwarteten Aufgabe im aufrufenden Thread fortgesetzt wird.
 
-Dieser Beispielcode (der bei einem verzögerten Methodenaufruf, nur zu Demonstrationszwecken, erwartet wird) zeigt eine Async-Methode an, die im UI-Thread aufgerufen wird (es handelt sich um einen touchupin-Handler). Da die enthaltende Methode im UI-Thread aufgerufen wird, können UI-Vorgänge wie das Festlegen `UILabel` des Texts auf `UIAlertView` einem oder ein, das anzeigt, sicher aufgerufen werden, nachdem asynchrone Vorgänge für Hintergrundthreads abgeschlossen wurden.
+Dieser Beispielcode (der bei einem verzögerten Methodenaufruf, nur zu Demonstrationszwecken, erwartet wird) zeigt eine Async-Methode an, die im UI-Thread aufgerufen wird (es handelt sich um einen touchupin-Handler). Da die enthaltende Methode im UI-Thread aufgerufen wird, können UI-Vorgänge wie das Festlegen des Texts auf einem `UILabel` oder das zeigen einer `UIAlertView` sicher aufgerufen werden, nachdem asynchrone Vorgänge für Hintergrundthreads abgeschlossen wurden.
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -89,7 +89,7 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-Wenn eine asynchrone Methode von einem Hintergrund Thread (nicht dem Hauptbenutzer Oberflächen-Thread) `InvokeOnMainThread` aufgerufen wird, ist dennoch erforderlich.
+Wenn eine asynchrone Methode von einem Hintergrund Thread (nicht dem Hauptbenutzer Oberflächen-Thread) aufgerufen wird, ist `InvokeOnMainThread` weiterhin erforderlich.
 
 ## <a name="related-links"></a>Verwandte Links
 

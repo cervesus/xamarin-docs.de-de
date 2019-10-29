@@ -3,15 +3,15 @@ title: Vereinheitlichen von Google Play-Dienstkomponenten und NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 8a7fd77a3f6460f0edbd76f8a4ccf45b32b3ed87
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 100ef7ffd7e05db0ed8b2af6b9990fc3a0ac1fa9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284991"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014145"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Vereinheitlichen von Google Play-Dienstkomponenten und NuGet
 
@@ -30,18 +30,18 @@ Google gibt eigentlich nur zwei JAR-Dateien für Google Play Services aus:
 - `google-play-services-froyo.jar`
 - `google-play-services.jar`
 
-Die Diskrepanz ist aufgetreten, da unsere Tools nicht `aapt.exe` richtig feststellen, was die maximale Ressourcen-API-Ebene für eine bestimmte App verwendet werden sollte. Dies bedeutete, dass wir Kompilierungsfehler erhalten haben, wenn wir versuchten, die Google Play Services (KitKat)-Bindung auf einer niedrigeren API-Ebene wie Lebkuchen zu verwenden.
+Die Diskrepanz gab es, da unsere Tools `aapt.exe`, welche Ressourcen-API-Ebene für eine bestimmte App verwendet werden sollte. Dies bedeutete, dass wir Kompilierungsfehler erhalten haben, wenn wir versuchten, die Google Play Services (KitKat)-Bindung auf einer niedrigeren API-Ebene wie Lebkuchen zu verwenden.
 
 ## <a name="unifying-google-play-services"></a>Vereinheitlichung Google Play Services
 
-In neueren Versionen von xamarin. Android haben wir nun `aapt.exe` festzustellen, welche maximale Ressourcen Version verwendet werden soll, sodass dieses Problem für uns nicht mehr auftritt.
+In neueren Versionen von xamarin. Android haben wir nun fest `aapt.exe`, welche maximale Ressourcen Version verwendet werden soll, sodass dieses Problem für uns nicht mehr besteht.
 
 Dies bedeutet, dass es keinen wirklichen Grund gibt, separate Pakete für Lebkuchen/ICS/Jellybean/KitKat zu verwenden (es wird jedoch immer noch eine separate Bindung für Froyo benötigt, da es sich um eine andere JAR-Datei handelt).
 
 Um Entwicklern die Arbeit zu erleichtern, haben wir nun die Komponenten und nuget-Pakete in zwei vereinheitlicht:
 
-- Google Play Services (Froyo) (Bindungen `google-play-services-froyo.jar`)
-- Google Play Services (Bindungen `google-play-services.jar`)
+- Google Play Services (Froyo) (bindet `google-play-services-froyo.jar`)
+- Google Play Services (bindet `google-play-services.jar`)
 
 ### <a name="which-one-should-be-used"></a>Welches sollte verwendet werden?
 
@@ -49,7 +49,7 @@ In nahezu jedem Fall sollten Google Play Services verwendet werden. Der einzige 
 
 ### <a name="note-about-gingerbread"></a>Hinweis zu Lebkuchen
 
-Lebkuchen hat standardmäßig keine fragmentunterstützung, und aus diesem Grund können einige Klassen in der Bindung in einer App zur Laufzeit auf einem Lebkuchen Gerät nicht verwendet werden. Klassen wie `MapFragment` können nicht für Lebkuchen verwendet werden, und stattdessen `SupportMapFragment`sollte Ihre Support Variante verwendet werden. Der Entwickler muss wissen, welche zu verwenden sind. Diese Inkompatibilität wird in der Google Play Services-Dokumentation von Google vermerkt.
+Lebkuchen hat standardmäßig keine fragmentunterstützung, und aus diesem Grund können einige Klassen in der Bindung in einer App zur Laufzeit auf einem Lebkuchen Gerät nicht verwendet werden. Klassen wie `MapFragment` können nicht für Lebkuchen verwendet werden, und stattdessen sollte Ihre Unterstützungs Variante verwendet werden `SupportMapFragment`. Der Entwickler muss wissen, welche zu verwenden sind. Diese Inkompatibilität wird in der Google Play Services-Dokumentation von Google vermerkt.
 
 ### <a name="what-happens-to-the-old-componentsnugets"></a>Was geschieht mit den alten Komponenten/nuget?
 

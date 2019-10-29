@@ -6,13 +6,13 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/26/2019
-ms.openlocfilehash: 6ea8195d422da3c64175b164c5fbf2885eb234ab
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 10/28/2019
+ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696388"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980872"
 ---
 # <a name="xamarinforms-label"></a>Xamarin. Forms-Bezeichnung
 
@@ -69,32 +69,6 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 ```
 
 Das Ergebnis ist, dass Zeichen in dem Text, der vom [`Label`](xref:Xamarin.Forms.Label) angezeigt wird, `CharacterSpacing` geräteunabhängigen Einheiten voneinander entfernt sind.
-
-## <a name="padding"></a>Abstand
-
-Padding stellt den Leerraum zwischen einem Element und seinen untergeordneten Elementen dar und wird verwendet, um das Element vom eigenen Inhalt zu trennen. Auffüll Zeichen können auf [`Label`](xref:Xamarin.Forms.Label) Instanzen angewendet werden, indem die `Label.Padding`-Eigenschaft auf einen [`Thickness`](xref:Xamarin.Forms.Thickness) Wert festgelegt wird:
-
-```xaml
-<Label Text="Padded text"
-       Padding="20" />
-```
-
-Der entsprechende C#-Code lautet:
-
-```csharp
-Label label = new Label
-{
-    Text = "Padded text",
-    Padding = new Thickness(20)
-};
-```
-
-> [!IMPORTANT]
-> Wenn unter IOS eine [`Label`](xref:Xamarin.Forms.Label) erstellt wird, mit der die `Padding`-Eigenschaft festgelegt wird, wird Auffüllung angewendet, und der Auffüll Wert kann später aktualisiert werden. Wenn jedoch eine `Label` erstellt wird, die die `Padding`-Eigenschaft nicht festgelegt, hat der Versuch, Sie zu einem späteren Zeitpunkt festzulegen, keine Auswirkung.
->
-> Unter Android und der universelle Windows-Plattform kann der `Padding`-Eigenschafts Wert beim Erstellen des `Label` oder später angegeben werden.
-
-Weitere Informationen zum Auffüllen finden Sie unter [Ränder und Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
 ## <a name="colors"></a>Farben
 
@@ -184,7 +158,6 @@ var label =
 Die folgenden Screenshots zeigen das Ergebnis, wenn die `MaxLines`-Eigenschaft auf 2 festgelegt wird, wenn der Text lang genug ist, um mehr als 2 Zeilen zu belegen:
 
 ![Beispiel für eine Bezeichnung MaxLines](label-images/label-maxlines.png)
-
 
 ## <a name="display-html"></a>HTML anzeigen
 
@@ -390,6 +363,48 @@ var label = new Label
 Die folgenden Screenshots zeigen das Ergebnis der Einstellung der [`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -Eigenschaft auf 1,8:
 
 ![Span LineHeight-Beispiel](label-images/span-lineheight.png)
+
+## <a name="padding"></a>Abstand
+
+Padding stellt den Leerraum zwischen einem Element und seinen untergeordneten Elementen dar und wird verwendet, um das Element vom eigenen Inhalt zu trennen. Auffüll Zeichen können auf [`Label`](xref:Xamarin.Forms.Label) Instanzen angewendet werden, indem die `Label.Padding`-Eigenschaft auf einen [`Thickness`](xref:Xamarin.Forms.Thickness) Wert festgelegt wird:
+
+```xaml
+<Label Padding="10">
+    <Label.FormattedText>
+        <FormattedString>
+            <Span Text="Lorem ipsum" />
+            <Span Text="dolor sit amet." />
+        </FormattedString>
+    </Label.FormattedText>
+</Label>
+```
+
+Der entsprechende C#-Code lautet:
+
+```csharp
+FormattedString formattedString = new FormattedString();
+formattedString.Spans.Add(new Span
+{
+  Text = "Lorem ipsum"
+});
+formattedString.Spans.Add(new Span
+{
+  Text = "dolor sit amet."
+});
+Label label = new Label
+{
+    FormattedText = formattedString,
+    Padding = new Thickness(20)
+};
+```
+
+> [!IMPORTANT]
+> Wenn unter IOS eine [`Label`](xref:Xamarin.Forms.Label) erstellt wird, mit der die `Padding`-Eigenschaft festgelegt wird, wird Auffüllung angewendet, und der Auffüll Wert kann später aktualisiert werden. Wenn jedoch eine `Label` erstellt wird, die die `Padding`-Eigenschaft nicht festgelegt, hat der Versuch, Sie zu einem späteren Zeitpunkt festzulegen, keine Auswirkung.
+>
+> Unter Android und der universelle Windows-Plattform kann der `Padding`-Eigenschafts Wert beim Erstellen des `Label` oder später angegeben werden.
+
+Weitere Informationen zum Auffüllen finden Sie unter [Ränder und Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+
 
 ## <a name="hyperlinks"></a>Links
 

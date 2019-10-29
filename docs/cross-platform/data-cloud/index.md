@@ -3,21 +3,21 @@ title: Microsoft Azure und xamarin
 description: Dieses Dokument ist mit der Dokumentation zu verbundene Dienste in Visual Studio für Mac, Azure Mobile Apps, Active Directory Authentifizierung und WebAPI verknüpft.
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/09/2017
-ms.openlocfilehash: 11a98b61d958e2e0d0fb226ba4eb05c458b5bbf2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 273a1a8fec4cf40893ff94fef4b1394065a8547b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766102"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016614"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure und xamarin
 
-[![](images/evolve-mikej-azure-sml.png "Das Hinzufügen von Azure-App Services-Funktionen zu xamarin-apps, einschließlich clouddatenspeicherung und plattformübergreifender Pushbenachrichtigungen, ist einfach.")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Azure App Services features are easy to add to Xamarin apps, including cloud data storage and cross-platform push notifications")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
-[Weiterentwicklung 2016: Entwickeln von verbundenen apps mit Azure und xamarin](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[Entwickeln 2016: entwickeln verbundener apps mit Azure und xamarin](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Verbundene Dienste in Visual Studio für Mac
 
@@ -58,6 +58,6 @@ Zusätzlich zu den [Dokumentations Beispielen](https://github.com/xamarin/mobile
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Azure PCL-Beispiel ( @paulbatumvon) (Beispiel)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
+- [Azure PCL-Beispiel (durch @paulbatum) (Beispiel)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
 - [Azure-Portal](https://azure.microsoft.com/)
 - [Mobile Client für xamarin (nuget)](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

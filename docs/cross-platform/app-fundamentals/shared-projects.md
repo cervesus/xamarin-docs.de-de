@@ -3,15 +3,15 @@ title: Verwenden von freigegebenen Projekten zum Freigeben von Code
 description: Mit freigegebenen Projekten können Sie allgemeinen Code schreiben, auf den von einer Reihe verschiedener Anwendungsprojekte verwiesen wird. Der Code wird als Teil jedes verweisenden Projekts kompiliert und kann Compilerdirektiven beinhalten, um plattformspezifische Funktionen in die freigegebene Codebasis zu integrieren.
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739057"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016693"
 ---
 # <a name="shared-projects-code-sharing"></a>Freigegebene Projekte Code Freigabe
 
@@ -33,7 +33,7 @@ Der Code in einem freigegebenen Projekt kann Compilerdirektiven enthalten, die C
 
 Ein frei gegebenes Projekt wird nicht selbst kompiliert, sondern ist ausschließlich als Gruppierung von Quell Code Dateien vorhanden, die in andere Projekte eingeschlossen werden können. Wenn von einem anderen Projekt auf Sie verwiesen wird, wird der Code effektiv als *Teil* dieses Projekts kompiliert. Freigegebene Projekte können nicht auf einen anderen Projekttyp (einschließlich anderer frei gegebener Projekte) verweisen.
 
-Beachten Sie, dass Android-Anwendungsprojekte nicht auf andere Android-Anwendungsprojekte verweisen können. beispielsweise kann ein Android-Komponenten Testprojekt nicht auf ein Android-Anwendungsprojekt verweisen. Weitere Informationen zu dieser Einschränkung finden Sie in dieser [Forumsdiskussion](http://forums.xamarin.com/discussion/comment/98092/).
+Beachten Sie, dass Android-Anwendungsprojekte nicht auf andere Android-Anwendungsprojekte verweisen können. beispielsweise kann ein Android-Komponenten Testprojekt nicht auf ein Android-Anwendungsprojekt verweisen. Weitere Informationen zu dieser Einschränkung finden Sie in dieser [Forumsdiskussion](https://forums.xamarin.com/discussion/comment/98092/).
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 

@@ -4,15 +4,15 @@ description: In Android 3,0 wurden Fragmente eingeführt, die zeigen, wie flexib
 ms.prod: xamarin
 ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: f25c587f6a51a6b196f201c1b5060ff401f8cad2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5d243429fe4f61768568a634b205055c1ad94297
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761860"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020250"
 ---
 # <a name="fragments"></a>Fragmente
 
@@ -32,13 +32,13 @@ Beispielsweise wird in der folgenden Abbildung veranschaulicht, wie eine einzeln
 
 *Fragment a* enthält eine Liste, während *Fragment B* Details für ein in dieser Liste ausgewähltes Element enthält. Wenn die Anwendung auf einem Tablet ausgeführt wird, können beide Fragmente in der gleichen Aktivität angezeigt werden. Wenn die gleiche Anwendung auf einem Mobilgerät (mit der geringeren Bildschirmgröße) ausgeführt wird, werden die Fragmente in zwei separaten Aktivitäten gehostet. Fragment a und Fragment B sind in beiden Formfaktoren identisch, aber die Aktivitäten, die Sie hosten, unterscheiden sich.
 
-Zur Unterstützung von Aktivitäts Koordinaten und-Verwaltung all dieser Fragmente hat Android eine neue Klasse mit dem Namen " *fragmentmanager*" eingeführt. Jede-Aktivität verfügt über eine `FragmentManager` eigene Instanz von zum Hinzufügen, löschen und Auffinden von gehosteten Fragmenten. Das folgende Diagramm veranschaulicht die Beziehung zwischen Fragmenten und Aktivitäten:
+Zur Unterstützung von Aktivitäts Koordinaten und-Verwaltung all dieser Fragmente hat Android eine neue Klasse mit dem Namen " *fragmentmanager*" eingeführt. Jede Aktivität verfügt über eine eigene Instanz eines `FragmentManager` zum Hinzufügen, löschen und Auffinden von gehosteten Fragmenten. Das folgende Diagramm veranschaulicht die Beziehung zwischen Fragmenten und Aktivitäten:
 
-[![Diagramm zur Veranschaulichung von Beziehungen zwischen Aktivität, fragmentmanager und Fragmenten](images/01.png)](images/01.png#lightbox)
+[![Diagramm zum Veranschaulichen der Beziehungen zwischen Aktivität, fragmentmanager und Fragmenten](images/01.png)](images/01.png#lightbox)
 
 In einigen Hinsicht können Fragmente als zusammengesetzte Steuerelemente oder als Mini Aktivitäten betrachtet werden. Sie bündeln Teile der Benutzeroberfläche in wiederverwendbare Module, die dann unabhängig von Entwicklern in Aktivitäten verwendet werden können. Ein Fragment verfügt über eine Ansichts Hierarchie – genau wie eine-Aktivität – aber im Gegensatz zu einer-Aktivität kann es für Bildschirme freigegeben werden. Sichten unterscheiden sich von Fragmenten, in denen Fragmente ihren eigenen Lebenszyklus aufweisen. Sichten nicht.
 
-Obwohl es sich bei der Aktivität um einen Host für ein oder mehrere Fragmente handelt, sind Sie nicht direkt auf die Fragmente selbst aufmerksam. Ebenso sind Fragmente nicht direkt auf andere Fragmente in der hostingaktivität aufmerksam. Allerdings erkennen `FragmentManager` Fragmente und Aktivitäten in Ihrer Aktivität. Mithilfe `FragmentManager`von kann eine Aktivität oder ein Fragment einen Verweis auf eine bestimmte Instanz eines Fragments abrufen und dann Methoden für diese Instanz aufrufen. Auf diese Weise kann die-Aktivität oder die-Fragmente kommunizieren und mit anderen Fragmenten interagieren.
+Obwohl es sich bei der Aktivität um einen Host für ein oder mehrere Fragmente handelt, sind Sie nicht direkt auf die Fragmente selbst aufmerksam. Ebenso sind Fragmente nicht direkt auf andere Fragmente in der hostingaktivität aufmerksam. Fragmente und Aktivitäten kennen jedoch den `FragmentManager` in Ihrer Aktivität. Mithilfe der `FragmentManager`ist es möglich, dass eine Aktivität oder ein Fragment einen Verweis auf eine bestimmte Instanz eines Fragments erhält und dann Methoden für diese Instanz aufruft. Auf diese Weise kann die-Aktivität oder die-Fragmente kommunizieren und mit anderen Fragmenten interagieren.
 
 Dieses Handbuch enthält umfassende Informationen zur Verwendung von Fragmenten, einschließlich:
 
@@ -50,7 +50,7 @@ Dieses Handbuch enthält umfassende Informationen zur Verwendung von Fragmenten,
 
 Fragmente sind in der Android SDK verfügbar, beginnend mit API-Ebene 11 (Android 3,0), wie im folgenden Screenshot zu sehen:
 
-[![Auswählen der API-Ebene im Android SDK-Manager](images/02.png)](images/02.png#lightbox)
+[![auswählen der API-Ebene im Android SDK Manager](images/02.png)](images/02.png#lightbox)
 
 Fragmente sind in xamarin. Android 4,0 und höher verfügbar. Eine xamarin. Android-Anwendung muss mindestens API Level 11 (Android 3,0) oder höher als Ziel haben, um Fragmente verwenden zu können. Das Ziel Framework kann wie unten gezeigt in den Projekteigenschaften festgelegt werden:
 
@@ -63,4 +63,3 @@ Es ist möglich, Fragmente in älteren Versionen von Android mit dem Android-Unt
 - [Honeycomb-Katalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/honeycombgallery)
 - [Fragmente](https://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [Unterstützungspaket](https://developer.android.com/sdk/compatibility-library.html)
-- [Motodev-Webinar: Einführung in Fragmente](http://motodev.adobeconnect.com/p9h1aqk3ttn/)

@@ -3,15 +3,15 @@ title: Übersicht über Ziel-C-Bindungen
 description: Dieses Dokument bietet eine Übersicht über die verschiedenen Methoden zum C# Erstellen von Bindungen für den Ziel-C-Code, einschließlich Befehlszeilen Bindungen, Bindungs Projekten und Ziel-Sharpie. Außerdem wird erläutert, wie die Bindung funktioniert.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: db37a6a912cae3c2d53d8838ba2d2bd0224e8df7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765598"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015873"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über Ziel-C-Bindungen
 
@@ -19,7 +19,7 @@ _Details zur Funktionsweise des Bindungs Prozesses_
 
 Das Binden einer Ziel-C-Bibliothek für die Verwendung mit xamarin führt drei Schritte aus:
 
-1. Schreiben Sie C# eine "API-Definition", um zu beschreiben, wie die Native API in .net verfügbar gemacht wird, und wie Sie dem zugrunde liegenden Ziel "-C" zugeordnet wird. Dies C# erfolgt über standardkonstrukte `interface` wie und verschiedene Bindungs **Attribute** (Weitere Informationen finden Sie in diesem [einfachen Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Schreiben Sie C# eine "API-Definition", um zu beschreiben, wie die Native API in .net verfügbar gemacht wird, und wie Sie dem zugrunde liegenden Ziel "-C" zugeordnet wird. Dies erfolgt über standardkonstrukte C# wie `interface`und verschiedene Bindungs **Attribute** (Weitere Informationen finden Sie in diesem [einfachen Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
 2. Nachdem Sie die "API-Definition" in C#geschrieben haben, kompilieren Sie Sie, um eine "Binding"-Assembly zu erstellen. Dies kann über die [**Befehlszeile**](#commandline) oder mithilfe eines [**Bindungs Projekts**](#bindingproject) in Visual Studio für Mac oder Visual Studio erfolgen.
 
@@ -35,7 +35,7 @@ Sie können auch weitere technische Details zur [Funktionsweise](#howitworks)les
 
 ## <a name="command-line-bindings"></a>Befehlszeilen Bindungen
 
-Sie können `btouch-native` für xamarin. IOS (oder `bmac-native` bei Verwendung von xamarin. Mac) verwenden, um Bindungen direkt zu erstellen. Dies funktioniert, indem die C# API-Definitionen, die Sie von Hand (oder mithilfe von Ziel-Sharpie) erstellt haben, an`btouch-native` das Befehlszeilen `bmac-native` Tool (für IOS oder für Mac) übergeben werden.
+Sie können die `btouch-native` für xamarin. IOS (oder `bmac-native` bei Verwendung von xamarin. Mac) verwenden, um Bindungen direkt zu erstellen. Dies funktioniert, indem die C# API-Definitionen, die Sie von Hand (oder mithilfe von Ziel-Sharpie) erstellt haben, an das Befehlszeilen Tool (`btouch-native`für IOS oder`bmac-native`für Mac) übergeben werden.
 
 Die allgemeine Syntax zum Aufrufen dieser Tools lautet wie folgt:
 
@@ -49,7 +49,7 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-Der obige Befehl generiert die Datei `cocos2d.dll` im aktuellen Verzeichnis und enthält die vollständig gebundene Bibliothek, die Sie in Ihrem Projekt verwenden können. Dies ist das Tool, das Visual Studio für Mac verwendet, um die Bindungen zu erstellen, wenn Sie ein Bindungs Projekt verwenden (siehe [unten](#bindingproject)).
+Der obige Befehl generiert die Datei `cocos2d.dll` im aktuellen Verzeichnis, und Sie enthält die vollständig gebundene Bibliothek, die Sie in Ihrem Projekt verwenden können. Dies ist das Tool, das Visual Studio für Mac verwendet, um die Bindungen zu erstellen, wenn Sie ein Bindungs Projekt verwenden (siehe [unten](#bindingproject)).
 
 <a name="bindingproject" />
 
@@ -75,7 +75,7 @@ Es ist möglich, das Attribut [[Register]](xref:Foundation.RegisterAttribute) , 
 
 Suchen Sie zuerst einen Typ, den Sie binden möchten. Zu Diskussions Zwecken (und Vereinfachung) binden wir den [nsenum](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) -Typ (der bereits in [Foundation. nsenübererator](xref:Foundation.NSEnumerator)gebunden wurde. die folgende Implementierung ist nur zu Beispiel Zwecken).
 
-Zweitens müssen wir den C# Typ erstellen. Wir möchten dies wahrscheinlich in einem Namespace platzieren. Da Ziel-c keine Namespaces unterstützt, müssen wir das `[Register]` -Attribut verwenden, um den Typnamen zu ändern, den xamarin. IOS bei der Ziel-c-Laufzeit registriert. Der C# Typ muss auch von [Foundation. NSObject](xref:Foundation.NSObject)erben:
+Zweitens müssen wir den C# Typ erstellen. Wir möchten dies wahrscheinlich in einem Namespace platzieren. Da Ziel-c keine Namespaces unterstützt, müssen wir das `[Register]`-Attribut verwenden, um den Typnamen zu ändern, den xamarin. IOS bei der Ziel-c-Laufzeit registriert. Der C# Typ muss auch von [Foundation. NSObject](xref:Foundation.NSObject)erben:
 
 ```csharp
 namespace Example.Binding {
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-Viertens muss Ihr Typ Konstruktoren bereitstellen. Sie *müssen* den Konstruktoraufruf mit dem Basisklassenkonstruktor verketten. Die `[Export]` Attribute ermöglichen es dem Ziel-C-Code, die Konstruktoren mit dem angegebenen Auswahl Amen aufzurufen:
+Viertens muss Ihr Typ Konstruktoren bereitstellen. Sie *müssen* den Konstruktoraufruf mit dem Basisklassenkonstruktor verketten. Die `[Export]` Attribute ermöglichen es dem Ziel-C-Code, die Konstruktoren mit dem angegebenen Auswahl Namen aufzurufen:
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Fünftens stellen Sie Methoden für jeden der in Schritt 3 deklarierten Selektoren bereit. Diese werden verwendet `objc_msgSend()` , um die Auswahl für das Native Objekt aufzurufen. Beachten Sie die Verwendung von [Runtime. getnsobject ()](xref:ObjCRuntime.Runtime.GetNSObject*) zum Konvertieren `IntPtr` eines in einen entsprechend `NSObject` typisierten (Sub-) Typ. Wenn Sie möchten, dass die Methode von Ziel-C-Code aufgerufen werden kann, *muss* der Member **virtuell**sein.
+Fünftens stellen Sie Methoden für jeden der in Schritt 3 deklarierten Selektoren bereit. Diese verwenden `objc_msgSend()`, um die Auswahl für das Native Objekt aufzurufen. Beachten Sie, dass [Runtime. getnsobject ()](xref:ObjCRuntime.Runtime.GetNSObject*) verwendet wird, um eine `IntPtr` in einen entsprechend typisierten `NSObject` (Sub-)-Typ zu konvertieren. Wenn Sie möchten, dass die Methode von Ziel-C-Code aufgerufen werden kann, *muss* der Member **virtuell**sein.
 
 ```csharp
 [Export("nextObject")]

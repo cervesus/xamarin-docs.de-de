@@ -3,26 +3,26 @@ title: Beispiel für die Verwendung von cocoapods in der Praxis
 description: In diesem Dokument wird veranschaulicht, wie Sie mit dem Ziel-Sharpie die C# Bindungs Definitionen automatisch aus einer cocoapod generieren.
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 0f730b1c0a0deacdb84c198cfe4af47308a268cc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf117880eb46b028d709a44aa453e111b007b441
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290028"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016263"
 ---
 # <a name="real-world-example-using-cocoapods"></a>Beispiel für die Verwendung von cocoapods in der Praxis
 
 > [!NOTE]
 > In diesem Beispiel wird die [afnetworking-cocoapod](https://cocoapods.org/pods/AFNetworking)verwendet.
 
-Neu in Version 3,0, Ziel-Sharpie unterstützt die Bindung von cocoapods und umfasst sogar`sharpie pod`einen Befehl (), um das herunterladen, konfigurieren und Erstellen von cocoapods sehr einfach zu gestalten. Bevor Sie dieses Feature verwenden, sollten Sie [sich mit den cocoapods im allgemeinen vertraut machen](https://cocoapods.org) .
+Neu in Version 3,0, Ziel-Sharpie unterstützt die Bindung von cocoapods und umfasst sogar einen Befehl (`sharpie pod`), um das herunterladen, konfigurieren und Erstellen von cocoapods sehr einfach zu gestalten. Bevor Sie dieses Feature verwenden, sollten Sie [sich mit den cocoapods im allgemeinen vertraut machen](https://cocoapods.org) .
 
 ## <a name="creating-a-binding-for-a-cocoapod"></a>Erstellen einer Bindung für eine cocoapod
 
-Der `sharpie pod` Befehl verfügt über eine globale Option und zwei Unterbefehle:
+Der `sharpie pod`-Befehl verfügt über eine globale Option und zwei Unterbefehle:
 
 ```bash
 $ sharpie pod -help
@@ -37,7 +37,7 @@ Available Commands:
   bind         Bind an existing Xamarin C# CocoaPods project
 ```
 
-Der `init` Unterbefehl bietet auch eine hilfreiche Hilfe:
+Der `init` Unterbefehl bietet auch hilfreiche Hilfe:
 
 ```bash
 $ sharpie pod init -help
@@ -48,7 +48,7 @@ Init Options:
                    it even if one already exists
 ```
 
-Es können mehrere cocoapod-Namen und untergeordnete Spezifikations `init`Namen für bereitgestellt werden.
+Es können mehrere cocoapod-Namen und untergeordnete Spezifikations Namen für `init`bereitgestellt werden.
 
 ```bash
 $ sharpie pod init ios AFNetworking

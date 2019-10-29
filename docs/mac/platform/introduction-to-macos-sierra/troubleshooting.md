@@ -4,15 +4,15 @@ description: Dieses Dokument enthält einige Tipps zur Problembehandlung beim Ar
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/22/2016
-ms.openlocfilehash: 51276a7682599c6480c637fac385992feaf06e49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a4e7f7169e4c7ec0ec2947e17b1434179f47488f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278898"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017035"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin. Mac-macOS Sierra Problembehandlung
 
@@ -28,7 +28,7 @@ In den folgenden Abschnitten werden einige bekannte Probleme aufgeführt, die au
 - [Core-Image](#CoreImage)
 - [Benachrichtigungen](#Notifications)
 - [NSUserActivity](#NSUserActivity)
-- [Safari](#Safari)
+- [SK](#Safari)
 
 <a name="App-Store" />
 
@@ -51,16 +51,16 @@ Wenn beim Hinzufügen einer neuen Zahlungskarte zu Apple Pay ein falsches Ablauf
 
 Bekannte Probleme:
 
-- Wenn `NSObject.ValueForKey` Sie einen `null` Schlüssel aufrufen, wird eine Ausnahme ausgelöst.
-- Und nicht `NSURLConnection` mehr RC4-Verschlüsselungs Sammlungen während des TLS-Handshake für `http://` URLs. `NSURLSession`
-- Apps können hängen bleiben, wenn Sie die Geometrie einer SuperView in der `ViewWillLayoutSubviews` - `LayoutSubviews` Methode oder der-Methode ändern.
+- Wenn Sie `NSObject.ValueForKey` `null` Schlüssel aufrufen, wird eine Ausnahme ausgelöst.
+- Beide `NSURLSession` und `NSURLConnection` während des TLS-Handshakes für `http://`-URLs nicht mehr RC4-Verschlüsselungs Sammlungen.
+- Apps können hängen bleiben, wenn Sie die Geometrie einer Super Ansicht in den `ViewWillLayoutSubviews`-oder `LayoutSubviews`-Methoden ändern.
 - Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Chiffre jetzt standardmäßig deaktiviert. Außerdem unterstützt die Secure-Transport-API SSLv3 nicht mehr. es wird empfohlen, dass die APP so bald wie möglich die SHA-1-und 3DES-Kryptografie nicht mehr verwendet.
 
 <a name="CFNetwork-HTTP-Protocol" />
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork-http-Protokoll
 
-Die `HTTPBodyStream` -Eigenschaft `NSMutableURLRequest` der `NSURLConnection` -`NSURLSession` Klasse muss auf einen nicht geöffneten Stream festgelegt werden, da Sie diese Anforderung jetzt strikt erzwingt.
+Die `HTTPBodyStream`-Eigenschaft der `NSMutableURLRequest`-Klasse muss auf einen nicht geöffneten Stream festgelegt werden, da `NSURLConnection` und `NSURLSession` diese Anforderung jetzt strikt erzwingen.
 
 <a name="CloudKit" />
 
@@ -72,7 +72,7 @@ Vorgänge mit langer Ausführungszeit geben eine _"Sie besitzen keine Berechtigu
 
 ## <a name="core-image"></a>Core-Image
 
-Die `CIImageProcessor` API unterstützt jetzt eine beliebige Eingabe Image Anzahl. `CIImageProcessor`Die API, die in macOS Sierra Beta 1 enthalten war, wird entfernt.
+Die `CIImageProcessor`-API unterstützt jetzt eine beliebige Eingabe Image Anzahl. `CIImageProcessor` API, die in macOS Sierra Beta 1 enthalten war, wird entfernt.
 
 <a name="Notifications" />
 
@@ -84,13 +84,13 @@ Beim Arbeiten mit Benachrichtigungs Inhalts Erweiterungen werden die Ansichts Co
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-Nach einem Handoff-Vorgang ist `UserInfo` die-Eigenschaft `NSUserActivity` eines-Objekts möglicherweise leer. Explizit Objekt `BecomeCurrent` als aktuelle Problem Umgehung aufzurufen `NSUserActivity` .
+Nach einem Handoff-Vorgang ist die `UserInfo`-Eigenschaft eines `NSUserActivity` Objekts möglicherweise leer. Ruft `BecomeCurrent` `NSUserActivity`-Objekt explizit als aktuelle Problem Umgehung auf.
 
 <a name="Safari" />
 
 ## <a name="safari"></a>Safari
 
-Webgeolokation erfordert eine sichere (`https://`)-URL, um sowohl an IOS 10 als auch macOS Sierra arbeiten zu können, um die böswillige Verwendung von Standortdaten zu verhindern.
+Webgeolokation erfordert eine sichere (`https://`) URL, um sowohl an IOS 10 als auch an macOS Sierra arbeiten zu können, um die böswillige Verwendung von Standortdaten zu verhindern.
 
 ## <a name="related-links"></a>Verwandte Links
 

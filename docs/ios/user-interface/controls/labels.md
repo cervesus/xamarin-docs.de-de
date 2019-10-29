@@ -4,23 +4,23 @@ description: In diesem Dokument wird erläutert, wie Bezeichnungen in xamarin. I
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 275acd02e6cece0842344d8e5833c23af1014a0f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768950"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022019"
 ---
 # <a name="labels-in-xamarinios"></a>Bezeichnungen in xamarin. IOS
 
-Das `UILabel` -Steuerelement wird zum Anzeigen von einzeiligen und mehrzeiligen schreibgeschützten Text verwendet.
+Das `UILabel`-Steuerelement wird zum Anzeigen von Schreib geschütztem und Schreib geschütztem Text verwendet.
 
 ## <a name="implementing-a-label"></a>Implementieren einer Bezeichnung
 
-Eine neue Bezeichnung wird erstellt, indem eine [`UILabel`](xref:UIKit.UILabel)instanziiert wird:
+Eine neue Bezeichnung wird erstellt, indem ein [`UILabel`](xref:UIKit.UILabel)instanziiert wird:
 
 ```csharp
 UILabel label = new UILabel();
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Weitere Informationen zum Formatieren von Text `NSAttributedString` mithilfe von finden Sie im [Stil Text](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) Rezept.
+Weitere Informationen zum Formatieren von Text mithilfe `NSAttributedString` finden Sie in der [Style-Text](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) -Anleitung.
 
-Standardmäßig ist für Bezeichnungen `Enabled` der Wert true festgelegt, aber es ist möglich, ihn auf deaktiviert festzulegen, um dem Benutzer einen Hinweis zu bieten, dass ein bestimmtes Steuerelement deaktiviert ist:
+Standardmäßig ist für Bezeichnungen der `Enabled` auf true festgelegt, aber es ist möglich, ihn auf "deaktiviert" festzulegen, damit der Benutzer einen Hinweis erhält, dass ein bestimmtes Steuerelement deaktiviert ist:
 
 ```csharp
 label.Enabled = false;

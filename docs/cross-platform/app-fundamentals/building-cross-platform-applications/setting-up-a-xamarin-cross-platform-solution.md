@@ -3,15 +3,15 @@ title: 'Teil 3: Einrichten einer plattformübergreifenden xamarin-Lösung'
 description: In diesem Dokument wird beschrieben, wie Sie eine plattformübergreifende Lösung in xamarin einrichten. Es werden verschiedene Strategien zur Code Freigabe erläutert, z. b. freigegebene Projekte und .NET Standard.
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 843887282c9a5af671d46699ae2f601fd32902e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758141"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016874"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Teil 3: Einrichten einer plattformübergreifenden xamarin-Lösung
 
@@ -63,7 +63,7 @@ Der xamarin-Ansatz besteht darin, Code in zwei Projekttypen zu gruppieren:
 
 ### <a name="core-project"></a>Core-Projekt
 
-Freigegebene Code Projekte sollten nur auf Assemblys verweisen, die plattformübergreifend verfügbar sind – d. a. die allgemeinen Framework-Namespaces `System`wie `System.Core` , `System.Xml`und.
+Freigegebene Code Projekte sollten nur auf Assemblys verweisen, die plattformübergreifend verfügbar sind – d. a. die Common Framework-Namespaces wie `System`, `System.Core` und `System.Xml`.
 
 Freigegebene Projekte sollten so viele Funktionen wie möglich implementieren, die nicht der Benutzeroberfläche unterliegen. Dies kann die folgenden Ebenen einschließen:
 
@@ -89,11 +89,11 @@ Die plattformspezifischen Projekte sollten Folgendes implementieren:
 
 Die Anwendungsarchitektur ist in diesem Diagramm dargestellt:
 
- [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "Die Anwendungsarchitektur ist in diesem Diagramm dargestellt.")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "The application architecture is illustrated in this diagram")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 Dieser Screenshot zeigt eine projektmappeneinrichtung mit den Projekten Shared Core Project, IOS und Android Application. Das freigegebene Projekt enthält Code, der sich auf die einzelnen Architektur Ebenen bezieht (Geschäfts-, Dienst-, Daten-und Datenzugriffs Code):
 
- ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Das freigegebene Projekt enthält Code, der sich auf die einzelnen Architektur Ebenen bezieht (Geschäfts-, Dienst-, Daten-und Datenzugriffs Code).")
+ ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "The Shared Project contains code relating to each of the architectural layers (Business, Service, Data and Data Access code)")
 
  <a name="Project_References" />
 
@@ -104,7 +104,7 @@ Plattformspezifische Anwendungsprojekte verweisen auf den freigegebenen Code und
 
 Die Anwendung projiziert jedes freigegebene Verweis Projekt und enthält den Code für die Benutzeroberfläche, der zum Darstellen der Funktionalität für den Benutzer erforderlich ist, wie in den folgenden Screenshots gezeigt:
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Die Anwendung projiziert, jeden Verweis freigegebenes Projekt") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "die Anwendung projiziert, jeden Verweis freigegebenen Projekts")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Die Anwendung projiziert jedes gemeinsame Verweis Projekt.") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "Die Anwendung projiziert jedes gemeinsame Verweis Projekt.")
 
 Bestimmte Beispiele dafür, wie Projekte strukturiert werden sollten, sind in den Fallstudien angegeben.
 
@@ -118,10 +118,10 @@ Bestimmte Beispiele dafür, wie Projekte strukturiert werden sollten, sind in de
 
 Es ist wichtig, die richtige Build-Aktion für bestimmte Dateitypen festzulegen. Diese Liste zeigt die Buildaktion für einige gängige Dateitypen:
 
-- **Alle C# Dateien** – Buildaktion: Compile
-- **Bilder in xamarin. IOS & Windows** – Build Action: Inhalt
-- **XIb-und Storyboard-Dateien in xamarin. IOS** – Build Action: Interfacedefinition
-- **Images und axml-Layouts in Android** – Build Action: AndroidResource
+- **Alle C# Dateien** – Buildaktion: Kompilieren
+- **Bilder in xamarin. IOS & Windows** – Build Action: Content
+- **XIb-und Storyboard-Dateien in xamarin. IOS** – Build Action: interfacedefinition
+- **Images und axml-Layouts in Android** – Build Action: androidresource
 - **XAML-Dateien in Windows-Projekten** – Buildaktion: Seite
 - **Xamarin. Forms-XAML-Dateien** – Buildaktion: EmbeddedResource
 

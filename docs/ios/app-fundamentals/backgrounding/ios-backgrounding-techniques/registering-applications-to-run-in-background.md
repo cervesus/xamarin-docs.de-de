@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie eine xamarin. IOS-Anwe
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 61b7926f28253acbcc45bc204c466d76a00c72b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757690"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010831"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Registrieren von xamarin. IOS-apps, die im Hintergrund ausgeführt werden sollen
 
@@ -34,15 +34,15 @@ Registrierte Apps können in verschiedene Kategorien unterteilt werden:
 
 Anwendungen können durch Festlegen der Eigenschaft **erforderliche hintergrundmodi** in der Datei " *Info. plist*" der Anwendung registriert werden. Eine Anwendung kann in beliebig vielen Kategorien registriert werden:
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "Festlegen der hintergrundmodi")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Setting the background modes")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 Eine Schritt-für-Schritt-Anleitung zum Registrieren einer Anwendung für Aktualisierungen im Hintergrund finden Sie unter Exemplarische Vorgehensweise für den [Hintergrund Speicherort](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
 ## <a name="application-does-not-run-in-background-property"></a>Die Anwendung wird nicht in der Background-Eigenschaft ausgeführt.
 
-Eine andere Eigenschaft, die in " *Info. plist* " festgelegt werden kann, ist die Anwendung, `UIApplicationExitsOnSuspend` die *nicht im Hintergrund ausgeführt*wird, oder die Eigenschaft:
+Eine andere Eigenschaft, die in " *Info. plist* " festgelegt werden kann, ist die Anwendung, die *nicht im Hintergrund ausgeführt*wird, oder `UIApplicationExitsOnSuspend` Eigenschaft:
 
- [![](registering-applications-to-run-in-background-images/plist.png "Deaktivieren der Hintergrund Ausführung")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/plist.png "Disabling Background Running")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 Dies hat die gleiche Auswirkung wie das Festlegen der Einstellung für die Aktualisierung der Hintergrund-app in ios 7 und höher, mit der Ausnahme, dass Sie nur auf der Entwicklerseite geändert werden kann und für IOS 4 und höher verfügbar ist. Die Anwendung wird sofort nach dem Eintreten in den Hintergrund angehalten und kann keine Verarbeitung durchführen.
 

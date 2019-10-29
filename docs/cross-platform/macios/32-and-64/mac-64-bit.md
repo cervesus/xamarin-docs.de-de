@@ -3,15 +3,15 @@ title: Aktualisieren von Unified xamarin. Mac-Anwendungen auf 64-Bit
 description: In diesem Leitfaden wird beschrieben, wie Sie Ihre xamarin. Mac-Anwendungen auf das 64-Bit-Ziel aktualisieren. Es enthält auch Beispiele für die Arten von Fehlern, die bei dieser Änderung auftreten können.
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/22/2018
-ms.openlocfilehash: 5539bab417c5efc0064cd1753cb74c7524463ee5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 1ae807869e44ad035d2681cf777af0e66ced8255
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70765919"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016318"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>Aktualisieren von Unified xamarin. Mac-Anwendungen auf 64-Bit
 
@@ -25,7 +25,7 @@ Mit der **Datei**  > **neuen** xamarin. Mac-Projektvorlage werden standardmäßi
 
    ![Das Kontextmenü für das Projekt.](mac-64-bit-images/1-contextual_menu-vsmac.png "Das Kontextmenü für das Projekt.")
 
-2. Wählen Sie **Mac Build** aus, und legen Sie **unterstützte Architekturen** auf **x86 \_64**
+2. Wählen Sie **Mac Build** aus, und legen Sie **unterstützte Architekturen** auf **x86\_64**fest:
 
    [![Festlegen der unterstützten Architekturen auf x86_64](mac-64-bit-images/2-project_options-vsmac.png "Festlegen der unterstützten Architekturen auf x86_64")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
 

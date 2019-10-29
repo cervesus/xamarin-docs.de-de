@@ -4,15 +4,15 @@ description: Dieses Dokument enthält einige Tipps zur Problembehandlung bei der
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: f10fb237bca92f49ac77657778ada8a47ed69c49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 093ac4a3242866413042de0b650433d4369ad35f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292170"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028258"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchos 3-Problembehandlung
 
@@ -72,23 +72,23 @@ Ab watchos 3 wird die Sicherheit von SSL/TLS-Verbindungen streng von Apple erzwu
 
 ## <a name="nsurlsession"></a>NSURLSession
 
-Ab `HTTPBodyStream` watchos 3 muss die-Eigenschaft `NSMutableURLRequest` der- `NSURLSession` Klasse auf einen nicht geöffneten Stream festgelegt werden, `NSURLConnection` da Sie diese Anforderung jetzt streng erzwingen.
+Ab watchos 3 muss die `HTTPBodyStream`-Eigenschaft der `NSMutableURLRequest`-Klasse auf einen nicht geöffneten Stream festgelegt werden, da `NSURLConnection` und `NSURLSession` diese Anforderung jetzt streng erzwingen.
 
 ## <a name="privacy"></a>Datenschutz
 
 Bekannte Probleme:
 
-Beim Arbeiten mit `https://` `NSURLSession` URLs werden von `NSURLConnection` und keine RC4-Verschlüsselungs Sammlungen mehr während des TLS-Handshake unterstützt. Einer der folgenden Fehlercodes kann generiert werden:
+Beim Arbeiten mit `https://`-URLs unterstützen sowohl `NSURLSession` als auch `NSURLConnection` keine RC4-Verschlüsselungs Sammlungen mehr während des TLS-Handshakes. Einer der folgenden Fehlercodes kann generiert werden:
 
-- **-1200 oder-98** -für `NSURLErrorSecurityConnectionFailed` -und securetransport-Fehler.
+- **-1200 oder-98** -für `NSURLErrorSecurityConnectionFailed`-und securetransport-Fehler.
 - **-1200 [3:-9824]** -Fehler beim Laden von http.
-- **-**  -  1200`NSURLConnection` wurde mit einem Fehler beendet.
+- **-1200** - `NSURLConnection` mit einem Fehler beendet.
 
 Ab watchos 3 wird die Sicherheit von SSL/TLS-Verbindungen streng von Apple erzwungen. Betroffene Dienste und apps sollten Webserver aktualisiert haben, damit Sie die neuesten TLS-Protokoll Versionen verwenden. Weitere Informationen finden Sie unter [NSURLConnection](#nsurlconnection) weiter oben.
 
 ## <a name="snapshots"></a>Momentaufnahmen
 
-Watchkit-apps, die die neue `HandelBackgroundTask` API nicht übernommen haben, erhalten in watchos 3 keine regelmäßigen Updates mehr. 
+Watchkit-apps, die die neue `HandelBackgroundTask`-API nicht übernommen haben, erhalten in watchos 3 keine regelmäßigen Updates mehr. 
 
 ## <a name="watchkit"></a>WatchKit
 

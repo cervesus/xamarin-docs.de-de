@@ -4,15 +4,15 @@ description: Xamarin. Android unterstützt verschiedene CPU-Architekturen, einsc
 ms.prod: xamarin
 ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: 59047b8564db6415ea3c47d7dcb72b5d0c66d1dd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2fec93ce6924d74f848cbd24736e75b0d1304584
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755589"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019366"
 ---
 # <a name="cpu-architectures"></a>CPU-Architekturen
 
@@ -31,7 +31,7 @@ In der Regel wählen Sie explizit eine Architektur (oder Architekturen) aus, wen
 
 Klicken Sie in Visual Studio mit der rechten Maustaste unter dem **Projektmappen-Explorer** auf das Projekt, und wählen Sie **Eigenschaften**aus. Überprüfen Sie auf der Seite **Android-Optionen** den Abschnitt **Paketierungs Eigenschaften** , und vergewissern Sie sich, dass **use Shared Runtime** deaktiviert ist (durch das Ausschalten können Sie explizit auswählen, welche ABIS unterstützt werden sollen). Klicken Sie auf die Schaltfläche **erweitert** , und überprüfen Sie unter **unterstützte Architekturen**die Architekturen, die Sie unterstützen möchten:
 
-[![Auswählen von ARMEABI und ARMEABI-v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
+[![auswählen von "ARMEABI" und "ARMEABI-v7a"](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -39,32 +39,32 @@ In der Regel wählen Sie explizit eine Architektur (oder Architekturen) aus, wen
 
 Suchen Sie in Visual Studio für Mac das Projekt im **lösungspad** , klicken Sie auf das Zahnrad Symbol neben dem Projekt, und wählen Sie **Optionen**aus. Klicken Sie im Dialogfeld **Projektoptionen** auf **Android-Build**. Klicken Sie auf die Registerkarte **Allgemein** , und vergewissern Sie sich, dass frei **gegebene Mono-Laufzeit verwenden** deaktiviert ist (durch das Ausschalten können Sie explizit auswählen, welche ABIS unterstützt werden). Klicken Sie auf die Registerkarte **erweitert** , und überprüfen Sie unter **unterstützte ABIS**den ABIS für die Architekturen, die Sie unterstützen möchten:
 
-[![Auswählen von ARMEABI und ARMEABI-v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
+[![auswählen von "ARMEABI" und "ARMEABI-v7a"](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
 -----
 
 Xamarin.Android unterstützt die folgenden Architekturen:
 
-- **ARMEABI** &ndash; ARM-basierte CPUs, die mindestens den ARMv5TE-Anweisungs Satz unterstützen. Beachten Sie `armeabi` , dass nicht Thread sicher ist und nicht auf Multi-CPU-Geräten verwendet werden darf.
+- **ARMEABI** &ndash; ARM-basierte CPUs, die mindestens den ARMv5TE-Anweisungs Satz unterstützen. Beachten Sie, dass `armeabi` nicht Thread sicher ist und nicht auf Multi-CPU-Geräten verwendet werden darf.
 
 > [!NOTE]
-> Ab [xamarin. Android 9,2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture) `armeabi` wird nicht mehr unterstützt.
+> Ab [xamarin. Android 9,2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture)wird `armeabi` nicht mehr unterstützt.
 
-- **ARMEABI-v7a** &ndash; ARM-basierte CPUs mit Hardware-Gleit Komma Vorgängen und SMP-Geräten (Multiple CPU). Beachten Sie `armeabi-v7a` , dass der Computercode nicht auf ARMv5-Geräten ausgeführt werden kann.
+- **ARMEABI-v7a** &ndash; ARM-basierte CPUs mit Hardware-Gleit Komma Vorgängen und SMP-Geräten (Multiple CPU). Beachten Sie, dass `armeabi-v7a` Computercode nicht auf ARMv5-Geräten ausgeführt werden kann.
 
-- **arm64-V8A** &ndash; CPUs, die auf der 64-Bit-ARMv8-Architektur basieren.
+- **arm64-V8A** &ndash; CPUs basierend auf der 64-Bit-ARMv8-Architektur.
 
-- **x86** &ndash; CPUs, die den x86-(oder IA-32)-Anweisungs Satz unterstützen. Dieser Anweisungs Satz entspricht dem des Pentium Pro, einschließlich der Anweisungen MMX, SSE, SSE2 und SSE3.
+- **x86** -&ndash; CPUs, die den x86-(oder IA-32)-Anweisungs Satz unterstützen. Dieser Anweisungs Satz entspricht dem des Pentium Pro, einschließlich der Anweisungen MMX, SSE, SSE2 und SSE3.
 
 - **x86_64** CPUs, die den 64-Bit-(auch als *x64* und *amd64*bezeichnet) Anweisungs Satz unterstützen.
 
-Xamarin. Android ist Standard `armeabi-v7a` mäßig für **Releasebuilds** . Diese Einstellung bietet eine wesentlich bessere Leistung `armeabi`als. Wenn Sie eine 64-Bit-ARM-Plattform (z. b. Nexus 9) als `arm64-v8a`Ziel auswählen, wählen Sie aus. Wenn Sie Ihre APP auf einem x86-Gerät bereitstellen, `x86`wählen Sie aus. Wenn das x86-Ziel Gerät eine 64-Bit-CPU-Architektur `x86_64`verwendet, wählen Sie aus.
+Xamarin. Android ist standardmäßig `armeabi-v7a` für **Releasebuilds** . Diese Einstellung bietet eine wesentlich bessere Leistung als `armeabi`. Wenn Sie eine 64-Bit-ARM-Plattform (z. b. Nexus 9) als Ziel auswählen, wählen Sie `arm64-v8a`aus. Wenn Sie Ihre APP auf einem x86-Gerät bereitstellen, wählen Sie `x86`aus. Wenn das x86-Ziel Gerät eine 64-Bit-CPU-Architektur verwendet, wählen Sie `x86_64`aus.
 
 ## <a name="targeting-multiple-platforms"></a>Mehrere Plattformen als Ziel
 
 Um mehrere CPU-Architekturen als Ziel zu wählen, können Sie mehr als eine ABI auswählen (auf Kosten der größeren APK-Dateigröße). Sie können die Option **ein Paket (. apk) pro ausgewählter ABI generieren** (beschrieben unter Festlegen von Paket [Eigenschaften](~/android/deploy-test/release-prep/index.md#Set_Packaging_Properties)) verwenden, um ein separates APK für jede unterstützte Architektur zu erstellen.
 
-Sie müssen nicht **arm64-V8A** oder **x86_64** auswählen, damit Sie auf 64-Bit-Geräte abzielen. die 64-Bit-Unterstützung ist nicht erforderlich, um Ihre APP auf 64-Bit-Hardware auszuführen. Beispielsweise können 64-Bit-ARM-Geräte (z. b. [Nexus 9](http://www.google.com/nexus/9/)) apps ausführen `armeabi-v7a`, die für konfiguriert sind. Der Hauptvorteil der Aktivierung der 64-Bit-Unterstützung besteht darin, dass Sie es Ihrer APP ermöglichen, mehr Arbeitsspeicher zu beheben.
+Sie müssen nicht **arm64-V8A** oder **x86_64** auswählen, damit Sie auf 64-Bit-Geräte abzielen. die 64-Bit-Unterstützung ist nicht erforderlich, um Ihre APP auf 64-Bit-Hardware auszuführen. Beispielsweise können 64-Bit-ARM-Geräte (z. b. [Nexus 9](https://www.google.com/nexus/9/)) für `armeabi-v7a`konfigurierte apps ausführen. Der Hauptvorteil der Aktivierung der 64-Bit-Unterstützung besteht darin, dass Sie es Ihrer APP ermöglichen, mehr Arbeitsspeicher zu beheben.
 
 > [!NOTE]
 > Ab August 2018 sind neue Apps erforderlich, um auf API-Ebene 26 abzielen, und ab August 2019 sind Apps [zum Bereitstellen von 64-Bit-Versionen erforderlich](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html), zusätzlich zu der 32-Bit-Version.

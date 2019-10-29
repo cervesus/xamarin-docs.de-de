@@ -4,15 +4,15 @@ description: In diesem Dokument finden Sie Links zu verschiedenen Leitfäden, in
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2017
-ms.openlocfilehash: 59257dafc1d92756feb85046df43de7b9da0cc42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ccdde29183645b93831b7261909714f9baf3fa4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290143"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010031"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Grundlagen der xamarin. IOS-Anwendung
 
@@ -72,4 +72,4 @@ Mit Touchscreens auf vielen der heutigen Geräte können Benutzer auf natürlich
 
 ## <a name="working-with-user-defaultsiosapp-fundamentalsuser-defaultsmd"></a>[Arbeiten mit Benutzer Standardwerten](~/ios/app-fundamentals/user-defaults.md)
 
-Mit `NSUserDefaults` der-Klasse können IOS-apps und-Erweiterungen Programm gesteuert mit dem systemweiten Standardsystem interagieren. Mithilfe des Standardsystems kann der Benutzer das Verhalten oder das Formatieren einer APP so konfigurieren, dass die Einstellungen (basierend auf dem Entwurf der APP) erfüllt werden. Beispielsweise zur Darstellung von Daten in Metriken im Vergleich zu kaiserlichen Messungen oder zum Auswählen eines bestimmten UI-Designs.
+Die `NSUserDefaults`-Klasse bietet IOS-apps und-Erweiterungen eine Möglichkeit, Programm gesteuert mit dem systemweiten Standardsystem zu interagieren. Mithilfe des Standardsystems kann der Benutzer das Verhalten oder das Formatieren einer APP so konfigurieren, dass die Einstellungen (basierend auf dem Entwurf der APP) erfüllt werden. Beispielsweise zur Darstellung von Daten in Metriken im Vergleich zu kaiserlichen Messungen oder zum Auswählen eines bestimmten UI-Designs.

@@ -1,17 +1,17 @@
 ---
-title: Xamarin. Android im Vergleich zu Desktop-Unterschiede in der Mono-Laufzeit
+title: 'Xamarin. Android im Vergleich zu Desktop: Unterschiede in der Mono-Laufzeit'
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 7f98f2f75a106ad3a9f62256a7145ac746c4b1c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8fe0e3a9adedb161c527ccdf6d6c3a7cd06a1d86
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757785"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027841"
 ---
 # <a name="limitations"></a>Einschränkungen
 
@@ -25,16 +25,16 @@ Dies sind die xamarin. Android-Einschränkungen im Vergleich zu Desktop Mono:
 
 ## <a name="limited-java-generation-support"></a>Eingeschränkte Unterstützung für Java-Generierung
 
-[Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) müssen generiert werden, damit Java-Code verwalteten Code aufrufen kann. *Standardmäßig*enthalten Android Callable Wrapper nur (bestimmte) deklarierte Konstruktoren und Methoden, die eine virtuelle Java-Methode über [`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)schreiben (d. h.) oder eine Java-Schnittstellen Methode implementieren (die Schnittstelle weist `Attribute`gleichermaßen).
+[Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) müssen generiert werden, damit Java-Code verwalteten Code aufrufen kann. *Standardmäßig enthalten von*Android Callable Wrapper nur (bestimmte) deklarierte Konstruktoren und Methoden, die eine virtuelle Java-Methode außer Kraft setzen (d. h., Sie verfügt über [`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)) oder eine Java-Schnittstellen Methode implementieren (die Schnittstelle verfügt ebenso über `Attribute`).
   
-Vor Version 4,1 konnten keine zusätzlichen Methoden deklariert werden. Mit der Version 4,1 [können die `Export` Benutzer `ExportField` definierten Attribute und verwendet werden, um Java-Methoden und-Felder innerhalb des Android Callable Wrapper zu deklarieren](~/android/platform/java-integration/working-with-jni.md).
+Vor Version 4,1 konnten keine zusätzlichen Methoden deklariert werden. Mit der Version 4,1 [können die benutzerdefinierten Attribute `Export` und `ExportField` verwendet werden, um Java-Methoden und-Felder innerhalb des Android Callable Wrapper zu deklarieren](~/android/platform/java-integration/working-with-jni.md).
 
 ### <a name="missing-constructors"></a>Fehlende Konstruktoren
 
-Konstruktoren bleiben knifflig, [`ExportAttribute`](xref:Java.Interop.ExportAttribute) es sei denn, wird verwendet. Der Algorithmus zum Erstellen von Android Callable Wrapper Konstruktoren ist, dass ein Java-Konstruktor ausgegeben wird, wenn Folgendes gilt:
+Konstruktoren bleiben knifflig, es sei denn, [`ExportAttribute`](xref:Java.Interop.ExportAttribute) verwendet wird. Der Algorithmus zum Erstellen von Android Callable Wrapper Konstruktoren ist, dass ein Java-Konstruktor ausgegeben wird, wenn Folgendes gilt:
 
 1. Für alle Parametertypen ist eine Java-Zuordnung vorhanden.
-2. Die Basisklasse deklariert denselben Konstruktor &ndash; . Dies ist erforderlich, da der von Android Callable Wrapper den entsprechenden Basisklassenkonstruktor aufrufen *muss* . es können keine Standardargumente verwendet werden (da es keine einfache Möglichkeit gibt, um zu ermitteln, welche Werte sollte in Java verwendet werden.)
+2. Die-Basisklasse deklariert denselben Konstruktor &ndash; Dies ist erforderlich, da der von Android Callable Wrapper den entsprechenden Basisklassenkonstruktor aufrufen *muss* . Es können keine Standardargumente verwendet werden (da es keine einfache Möglichkeit gibt, die Werte zu ermitteln, die in Java verwendet werden sollen).
 
 Betrachten Sie beispielsweise die folgende Klasse:
 
@@ -47,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-Obwohl dies perfekt logisch aussieht, enthält der resultierende Android Callable Wrapper *in Releasebuilds* keinen Standardkonstruktor. Wenn Sie also versuchen, diesen Dienst zu starten (z. [`Context.StartService`](xref:Android.Content.Context.StartService*)b. tritt ein Fehler auf:
+Obwohl dies perfekt logisch aussieht, enthält der resultierende Android Callable Wrapper *in Releasebuilds* keinen Standardkonstruktor. Wenn Sie also versuchen, diesen Dienst zu starten (z. b. [`Context.StartService`](xref:Android.Content.Context.StartService*), tritt ein Fehler auf:
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -70,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-Die Problem Umgehung besteht darin, einen Standardkonstruktor zu deklarieren `ExportAttribute`, ihn mit zu [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)schmücken und Folgendes festzulegen: 
+Die Problem Umgehung besteht darin, einen Standardkonstruktor zu deklarieren, ihn mit dem `ExportAttribute`zu schmücken und die [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)festzulegen: 
 
 ```csharp
 [Service]
@@ -88,7 +88,7 @@ class MyIntentService : IntentService {
 
 Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschränkungen sind vorhanden:
 
-- Generische Typen dürfen nicht oder `[Export]` `[ExportField`verwenden. Wenn Sie versuchen, dies zu tun `XA4207` , wird ein Fehler generiert.
+- Generische Typen dürfen nicht `[Export]` oder `[ExportField`] verwenden. Wenn Sie versuchen, dies zu tun, wird ein `XA4207` Fehler generiert.
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -101,7 +101,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
-- Generische Methoden dürfen nicht oder `[Export]` `[ExportField]`verwenden:
+- Generische Methoden dürfen keine `[Export]` oder `[ExportField]`verwenden:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -116,7 +116,7 @@ Generische C# Klassen werden nur teilweise unterstützt. Die folgenden Einschrä
     }
     ```
 
-- `[ExportField]`darf nicht für Methoden verwendet werden, die `void`Folgendes zurückgeben:
+- `[ExportField]` dürfen nicht für Methoden verwendet werden, die `void`zurückgeben:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -153,5 +153,5 @@ Wir haben einige Klassen, die diese Einschränkung nicht anwenden, aber Sie werd
 - [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md)
 - [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md)
 - [Export Attribute](xref:Java.Interop.ExportAttribute)
-- [SuperString](xref:Java.Interop.ExportAttribute.SuperArgumentsString)
-- [RegisterAttribute](xref:Android.Runtime.RegisterAttribute)
+- [Superstring](xref:Java.Interop.ExportAttribute.SuperArgumentsString)
+- [Register Attribute](xref:Android.Runtime.RegisterAttribute)

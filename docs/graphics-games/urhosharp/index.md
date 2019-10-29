@@ -1,58 +1,58 @@
 ---
-title: Von UrhoSharp - 3D/2D-Engine
-description: Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene 3D- und 2D-spielen-Engine, die zum Erstellen von animierten im Hintergrund, 2D und 3D für Ihre Anwendungen mit Geometrien, Materialien, Lichter und Kameras verwendet werden kann.
+title: Urhusharp-3D/2D-Engine
+description: Urhosharp ist ein plattformübergreifendes 3D-und 2D-Modul auf hoher Ebene, mit dem animierte 3D-und 2D-Szenen für Ihre Anwendungen mithilfe von Geometrien, Materialien, Lichtern und Kameras erstellt werden können.
 ms.prod: xamarin
 ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 06f1372d712f23078d120be824a01627d657d0a1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 10cdec5755a5fa45989396ce53da15233553a88f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832563"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005080"
 ---
-# <a name="urhosharp---3d2d-engine"></a>Von UrhoSharp - 3D/2D-Engine
+# <a name="urhosharp---3d2d-engine"></a>Urhusharp-3D/2D-Engine
 
-_Von UrhoSharp ist eine plattformübergreifende auf hoher Ebene, 2D und 3D-Engine, die zum Erstellen von animierten im Hintergrund, 2D und 3D für Ihre Anwendungen mit Geometrien, Materialien, Lichter und Kameras verwendet werden kann._
+_Urhosharp ist ein plattformübergreifendes 3D-und 2D-Modul auf hoher Ebene, mit dem animierte 3D-und 2D-Szenen für Ihre Anwendungen mithilfe von Geometrien, Materialien, Lichtern und Kameras erstellt werden können._
 
-![Von UrhoSharp Beispielspiel](images/video.gif)
+![Sample urhusharp-Spiel](images/video.gif)
 
-Von UrhoSharp wird als NuGet-Paket verteilt, die auf Visual Studio oder Visual Studio für Mac installiert werden kann, und können verwendet werden, um alle der folgenden Plattformen als Ziel verwenden: Android, MacOS, iOS, TvOS und Windows.
+Urhusharp wird als ein nuget-Paket verteilt, das entweder in Visual Studio oder Visual Studio für Mac installiert werden kann und verwendet werden kann, um eine beliebige der folgenden Plattformen als Ziel festzulegen: Android, MacOS, Ios, tvos und Windows.
 
-## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[Einführung in die von UrhoSharp](~/graphics-games/urhosharp/introduction.md)
+## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[Einführung in urhusharp](~/graphics-games/urhosharp/introduction.md)
 
-Dieser Artikel enthält eine Übersicht von UrhoSharp und die zugehörigen Funktionen für die 3D Visualisierung und für die Verwendung in einfachen 3D-Spiele.
+Dieser Artikel bietet eine allgemeine Übersicht über urhosharp und seine Funktionen für die 3D-Visualisierung und die Verwendung in einfachen 3D-spielen.
 
 ## <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[Verwenden von UrhoSharp](~/graphics-games/urhosharp/using.md)
 
-In diesem Dokument beschrieben, die grundlegenden Konzepte der von UrhoSharp, die Sie zum Erstellen eines Spiels oder erstellen Sie eine 3D Visualisierung für Ihre Anwendung verwenden würden.
+In diesem Dokument werden die wichtigsten Konzepte von urhusharp beschrieben, die Sie zum Erstellen eines Spiels oder zum Erstellen einer 3D-Visualisierung für Ihre Anwendung verwenden würden.
 
 ## <a name="urho-and-your-platformgraphics-gamesurhosharpplatformindexmd"></a>[Urho und Ihre Plattform](~/graphics-games/urhosharp/platform/index.md)
 
-Diese Anleitungen beschreiben die setupanweisungen für Urho für jede Zielplattform und beschreiben Möglichkeiten zum Urho mit Ihren vorhandenen Android und iOS-Anwendungen zu integrieren.
+In diesen Handbüchern werden die Setup Anweisungen für Urho auf jeder Zielplattform beschrieben und Möglichkeiten beschrieben, wie Sie Urho in Ihre vorhandenen Android-und IOS-Anwendungen integrieren können.
 
 ## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[Programmieren von UrhoSharp mit F#](~/graphics-games/urhosharp/fsharp.md)
 
-Dieses Handbuch führt durch die Erstellung einer einfachen "Hello, World!" Mithilfe von UrhoSharp F# und Visual Studio für Mac.
+Dieser Leitfaden führt Sie durch die Erstellung einer einfachen "Hello, World!" Urhusharp-Lösung F# mit und Visual Studio für Mac.
 
 ## <a name="samples"></a>Proben
 
-Wir haben [-Beispielen auf GitHub](https://github.com/xamarin/urho-samples) für das Verwenden von UrhoSharp veranschaulichen.
+Wir haben [auf GitHub Beispiele](https://github.com/xamarin/urho-samples) erstellt, in denen veranschaulicht wird, wie urhusharp verwendet werden kann.
 
-- **FeatureSamples** enthält mehr als 40 einzelne Beispiele, die bestimmte Features von Urho zu veranschaulichen.
+- **Featuresamples** zeigt mehr als 40 einzelne Beispiele an, die bestimmte Features von Urho veranschaulichen.
 
-- **SamplyGame** ist eine Beispiel für die Implementierung des Spiels Shooty Wetter.
+- **Samplygame** ist eine Beispiel Implementierung des Spiels "shooty Sky".
 
-- **FormsSample** veranschaulicht, wie Sie von UrhoSharp in Xamarin.Forms-Anwendungen zu verwenden.
+- **Formssample** zeigt, wie urhusharp in xamarin. Forms-Anwendungen verwendet wird.
 
-Führen Sie alle Beispiele auf Android-, iOS-, Mac und Windows.
+Alle Beispiele, die unter Android, Ios, Mac und Windows ausgeführt werden.
 
 ## <a name="copyright"></a>Copyright
 
-Diese Dokumentation enthält die ursprünglichen Inhalte von Xamarin Inc., aber sehr häufig in der open-Source-Dokumentation für das Projekt Urho3D zeichnet und enthält Screenshots aus dem Projekt Cocos2D.
+Diese Dokumentation enthält Originalinhalte von xamarin Inc, zeichnet sich jedoch in der Open-Source-Dokumentation für das Urho3D-Projekt aus und enthält Screenshots aus dem Cocos2D-Projekt.
 
 ## <a name="license"></a>Lizenz
 
-Die Lizenz von UrhoSharp finden Sie unter der [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
+Die urhusharp-Lizenz steht im [https://github.com/xamarin/urho/blob/master/LICENSE](https://github.com/xamarin/urho/blob/master/LICENSE)

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie Ihre Komponenten Verwe
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e9bd54523fa46625e9a9e6e46247b92987f3d427
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106078"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014345"
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualisieren von Komponenten verweisen auf nuget
 
@@ -41,7 +41,7 @@ So entfernen Sie eine Komponente aus dem Projekt:
 
 2. Klicken Sie erneut mit der rechten Maustaste auf das entladene Projekt, und wählen Sie dann **Bearbeiten {your-Project-Name}. csproj**aus.
 
-3. Suchen Sie Verweise in der Datei auf `XamarinComponentReference`. Dies sollte in etwa wie im folgenden Beispiel aussehen:
+3. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Dies sollte in etwa wie im folgenden Beispiel aussehen:
 
     ```xml
     <ItemGroup>
@@ -60,7 +60,7 @@ So entfernen Sie eine Komponente aus dem Projekt:
     </ItemGroup>
     ```
 
-4. Entfernen Sie die Verweise `XamarinComponentReference` auf, und speichern Sie die Datei. Im obigen Beispiel ist es sicher, die gesamte `ItemGroup`zu entfernen.
+4. Entfernen Sie die Verweise auf `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher, die gesamte `ItemGroup`zu entfernen.
 
 5. Nachdem die Datei gespeichert wurde, klicken Sie mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt erneut laden**aus.
 
@@ -76,7 +76,7 @@ So entfernen Sie eine Komponente aus dem Projekt:
 
 1. Öffnen Sie die CSPROJ-Datei. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie Extras **> Datei bearbeiten**aus.
 
-2. Suchen Sie Verweise in der Datei auf `XamarinComponentReference`. Dies sollte in etwa wie im folgenden Beispiel aussehen:
+2. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Dies sollte in etwa wie im folgenden Beispiel aussehen:
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ So entfernen Sie eine Komponente aus dem Projekt:
     </ItemGroup>
     ```
 
-3. Entfernen Sie die Verweise `XamarinComponentReference` auf, und speichern Sie die Datei. Im obigen Beispiel ist es sicher, das gesamte`ItemGroup`
+3. Entfernen Sie die Verweise auf `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher, die gesamte `ItemGroup`
 
 4. Wiederholen Sie die obigen Schritte für jedes Projekt in der Projekt Mappe.
 
@@ -159,8 +159,8 @@ Um zu bestätigen, dass ein Ersatz-nuget-Paket vorhanden ist, suchen Sie nach [N
 
 Beispielsweise können Sie das beliebte **SQLite-net-PCL-** Paket suchen, indem Sie Folgendes suchen:
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)– der Produktname.
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)– das Profil des Autors.
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – der Produktname.
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – das Profil des Autors.
 
 ### <a name="updating-the-solution"></a>Aktualisieren der Lösung
 

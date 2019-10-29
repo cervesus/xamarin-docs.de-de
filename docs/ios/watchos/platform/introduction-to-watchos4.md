@@ -4,15 +4,15 @@ description: Dieses Dokument bietet eine allgemeine Einführung in watchos 4 und
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: 7f2440cfa7ac3149fd190c6752c9b2829681b602
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 947e64c010d60a13a79a7832413d6f0226fdbdb4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293015"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028240"
 ---
 # <a name="introduction-to-watchos-4"></a>Einführung in watchOS 4
 
@@ -32,5 +32,5 @@ Greifen Sie auf neue Features von watchos 4 in ihren apps zu:
 ## <a name="related-links"></a>Verwandte Links
 
 * [watchOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
-* [WatchKit (Apple)](https://developer.apple.com/documentation/watchkit)
+* [Watchkit (Apple)](https://developer.apple.com/documentation/watchkit)
 * [Neues in watchos 4 (Apple) (Video)](https://developer.apple.com/videos/play/wwdc2017/205/)

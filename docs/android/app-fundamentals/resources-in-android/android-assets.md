@@ -3,26 +3,26 @@ title: Verwenden von Android-Ressourcen
 ms.prod: xamarin
 ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: e3b7ccf74773e5a391b8f133ccc241ca0e18bfcb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9c8db5ad7bcb012befb2fa8dcd1ecd13fa355a55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755159"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025431"
 ---
 # <a name="using-android-assets"></a>Verwenden von Android-Ressourcen
 
 _Assets_ bieten eine Möglichkeit, beliebige Dateien wie Text, XML, Schriftarten, Musik und Videos in Ihre Anwendung einzubeziehen. Wenn Sie versuchen, diese Dateien als "Ressourcen" einzuschließen, verarbeitet Android Sie in das Ressourcensystem, und Sie können die Rohdaten nicht mehr erhalten. Wenn Sie auf Daten nicht auf Daten zugreifen möchten, sind Assets eine Möglichkeit dafür.
 
 Dem Projekt hinzugefügte Ressourcen werden genau wie ein Dateisystem angezeigt, das von Ihrer Anwendung mithilfe von [Assetmanager](xref:Android.Content.Res.AssetManager)gelesen werden kann.
-In dieser einfachen Demo fügen wir dem Projekt ein Textdatei-Medienobjekt hinzu, lesen es mit `AssetManager`und zeigen es in einer TextView an.
+In dieser einfachen Demo fügen wir dem Projekt eine Textdatei hinzu, lesen Sie mit `AssetManager`und zeigen Sie in einer TextView an.
 
 ## <a name="add-asset-to-project"></a>Medienobjekt zu Projekt hinzufügen
 
-Assets wechseln in den `Assets` Ordner des Projekts. Fügen Sie diesem Ordner eine neue Textdatei mit `read_asset.txt`dem Namen hinzu. Platzieren Sie Text wie "Ich habe von einem Asset!".
+Assets gelangen in den Ordner `Assets` des Projekts. Fügen Sie diesem Ordner eine neue Textdatei mit dem Namen `read_asset.txt`hinzu. Platzieren Sie Text wie "Ich habe von einem Asset!".
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -42,7 +42,7 @@ Wenn Sie die richtige **BuildAction** auswählen, wird sichergestellt, dass die 
 
 ## <a name="reading-assets"></a>Lesen von Assets
 
-Assets werden mithilfe eines [assetmanagers](xref:Android.Content.Res.AssetManager)gelesen. Eine Instanz des `AssetManager` ist verfügbar, indem auf die [Assets](xref:Android.Content.Context.Assets) -Eigenschaft eines `Android.Content.Context`zugegriffen wird, z. b. eine-Aktivität.
+Assets werden mithilfe eines [assetmanagers](xref:Android.Content.Res.AssetManager)gelesen. Eine Instanz des `AssetManager` ist verfügbar, wenn Sie auf die [Assets](xref:Android.Content.Context.Assets) -Eigenschaft eines `Android.Content.Context`zugreifen, z. b. eine-Aktivität.
 Im folgenden Code öffnen wir das **read_asset. txt** -Asset, lesen den Inhalt und zeigen ihn mithilfe einer TextView an.
 
 ```csharp
@@ -75,5 +75,5 @@ Führen Sie die Anwendung aus, und Folgendes sollte angezeigt werden:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [AssetManager](xref:Android.Content.Res.AssetManager)
+- [Assetmanager](xref:Android.Content.Res.AssetManager)
 - [Kontext](xref:Android.Content.Context)

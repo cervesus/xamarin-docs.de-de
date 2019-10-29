@@ -1,35 +1,35 @@
 ---
-title: Verwenden von UrhoSharp zum Erstellen eines 3D-Spiels
-description: Dieses Dokument enthält einen Überblick über die von UrhoSharp, beschreiben Szenen, Komponenten, Formen, Kameras, Aktionen, Benutzereingaben, Sound und vieles mehr.
+title: Verwenden von urhusharp zum Erstellen eines 3D-Spiels
+description: Dieses Dokument bietet eine Übersicht über urhosharp und beschreibt Szenen, Komponenten, Formen, Kameras, Aktionen, Benutzereingaben, Sound und vieles mehr.
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7307f7dcfcc6b5e2576ce4b425879ae05c5a6056
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: cb4e524977b53f1a17552298c509d43ccf460f08
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832674"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011653"
 ---
-# <a name="using-urhosharp-to-build-a-3d-game"></a>Verwenden von UrhoSharp zum Erstellen eines 3D-Spiels
+# <a name="using-urhosharp-to-build-a-3d-game"></a>Verwenden von urhusharp zum Erstellen eines 3D-Spiels
 
-Bevor Sie Ihr erste Spiel schreiben, möchten Sie mit den Grundlagen vertraut zu erhalten: wie Ihrer Szene einrichten, um Ressourcen zu laden (Dies enthält Ihre Grafik) und um einfache Aktivitäten für Ihr Spiel zu erstellen.
+Bevor Sie Ihr erstes Spiel schreiben, sollten Sie sich mit den Grundlagen vertraut machen: Einrichten der Szene, Laden von Ressourcen (enthält Ihre Grafik) und so erstellen Sie einfache Interaktionen für Ihr Spiel.
 
 <a name="scenenodescomponentsandcameras"/>
 
-## <a name="scenes-nodes-components-and-cameras"></a>Im Hintergrund, Knoten, Komponenten und Kameras
+## <a name="scenes-nodes-components-and-cameras"></a>Szenen, Knoten, Komponenten und Kameras
 
-Das Modell für die Szene kann als szenengraph komponentenbasierter beschrieben werden. Die Szene besteht aus einer Hierarchie von Szenenknoten, beginnend mit den Stammknoten, der auch die gesamte Szene darstellt. Jede `Node` verfügt über eine 3D-Transformation (Position, Drehung und Skalierung), einen Namen, eine ID sowie eine beliebige Anzahl von Komponenten.  Komponenten stellen eines Knotens zum Leben, sie können eine visuelle Darstellung hinzufügen (`StaticModel`), können sie Sound ausgeben (`SoundSource`), können sie eine Kollision Grenze usw. bieten.
+Das Szenen Modell kann als komponentenbasiertes Szenen Diagramm beschrieben werden. Die Szene besteht aus einer Hierarchie von Szenen Knoten, beginnend mit dem Stamm Knoten, der auch die gesamte Szene darstellt. Jede `Node` verfügt über eine 3D-Transformation (Position, Drehung und Skala), einen Namen, eine ID sowie eine beliebige Anzahl von Komponenten.  Komponenten bringen einen Knoten in den Lebenszyklus, Sie können eine visuelle Darstellung (`StaticModel`) hinzufügen, Sie können einen Sound (`SoundSource`) ausgeben, eine Kollisions Grenze usw. bereitstellen.
 
-Sie können Ihre Szenen und die Setup-Knoten, die mit erstellen die [Urho Editor](#urhoeditor), oder Sie können Aktionen von c#-Code.  In diesem Dokument wird alles mithilfe von Code erläutert, wie sie zeigen, dass die Elemente, die erforderlichen Aufgaben auf dem Bildschirm angezeigt werden
+Mit dem [Urho-Editor](#urhoeditor)können Sie Ihre Szenen erstellen und Knoten einrichten, oder Sie können C# Code aus dem Code ausführen.  In diesem Dokument erfahren Sie, wie Sie mithilfe von Code festlegen, welche Elemente erforderlich sind, um auf dem Bildschirm angezeigt zu werden.
 
-Zusätzlich zu Ihrer Szene eingerichtet haben, müssen Sie Setup eine `Camera`, dadurch wird bestimmt, was dem Benutzer angezeigt erhalten wird.
+Zusätzlich zum Einrichten der Szene müssen Sie eine `Camera`einrichten, die bestimmt, was dem Benutzer angezeigt wird.
 
-### <a name="setting-up-your-scene"></a>Das Einrichten Ihrer Szene
+### <a name="setting-up-your-scene"></a>Einrichten der Szene
 
-In der Regel würden Sie dieses Formular Ihrer Start-Methode erstellen:
+In der Regel erstellen Sie dieses Formular mit ihrer Start Methode:
 
 ```csharp
 var scene = new Scene ();
@@ -53,7 +53,7 @@ planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 
 ### <a name="components"></a>Komponenten
 
-Rendern 3D-Objekte, Soundwiedergabe "," Physik "und" geskriptete Logik Updates sind alle aktiviert durch das Erstellen von verschiedenen Komponenten in die Knoten durch den Aufruf `CreateComponent<T>()`.  Richten Sie z. B. Ihre Knoten und light-Komponente wie folgt:
+Das Rendern von 3D-Objekten, Audiowiedergabe, Physik und Skripterstellung für logische Updates wird aktiviert, indem unterschiedliche Komponenten in den Knoten durch Aufrufen von `CreateComponent<T>()`erstellt werden.  Richten Sie z. b. den Knoten und die Light-Komponente wie folgt ein:
 
 ```csharp
 // Create a directional light to the world so that we can see something. The
@@ -65,30 +65,30 @@ var lightNode = scene.CreateChild("DirectionalLight");
 lightNode.SetDirection (new Vector3(0.6f, -1.0f, 0.8f));
 ```
 
-Wir haben über einen Knoten mit dem Namen "`DirectionalLight`" und eine Richtung für, sondern nichts anderes festgelegt.  Wir können nun den oben aufgeführten Knoten auf einen Knoten leuchtende aktivieren, durch Anfügen einer `Light` Komponente, mit `CreateComponent`:
+Wir haben oberhalb eines Knotens mit dem Namen "`DirectionalLight`" erstellt und eine Richtung dafür festgelegt, aber nichts anderes.  Nun können wir den obigen Knoten in einen Licht ausgebenden Knoten umwandeln, indem wir ihm eine `Light` Komponente mit `CreateComponent`anfügen:
 
 ```csharp
 var light = lightNode.CreateComponent<Light>();
 ```
 
-Komponenten, die erstellt wurde, in der `Scene` selbst haben eine besondere Rolle: Gesamte Szene Funktionalität implementieren. Sie sollten erstellt werden, bevor alle anderen Komponenten und umfassen Folgendes:
+Komponenten, die im `Scene` selbst erstellt wurden, haben eine besondere Rolle:, um eine Szene weite Funktionalität zu implementieren. Sie sollten vor allen anderen Komponenten erstellt werden und umfassen Folgendes:
 
- `Octree`: implementiert räumliche Partitionierung und Sichtbarkeit, Abfragen beschleunigt. Ohne diese 3D können Objekte nicht gerendert werden.
- `PhysicsWorld`: Physiksimulation implementiert. Komponenten wie z. B. Physik `RigidBody` oder `CollisionShape` kann ohne diese nicht ordnungsgemäß funktionieren.
- `DebugRenderer`: implementiert Debuggen Geometry rendern.
+ `Octree`: implementiert räumliche Partitionierung und beschleunigte Sichtbarkeits Abfragen. Ohne diese 3D-Objekte können nicht gerendert werden.
+ `PhysicsWorld`: Implementiert die Physik-Simulation. Physikalische Komponenten wie `RigidBody` oder `CollisionShape` können ohne diese Funktion nicht ordnungsgemäß funktionieren.
+ `DebugRenderer`: Implementiert das Debug-Geometrie Rendering.
 
-Normale Komponenten wie z. B. `Light`, `Camera` oder `StaticModel`
-sollte nicht erstellt werden, direkt in die `Scene`, aber eher in untergeordnete Knoten.
+Normale Komponenten wie `Light`, `Camera` oder `StaticModel`
+sollte nicht direkt im `Scene`, sondern in untergeordneten Knoten erstellt werden.
 
-Die Bibliothek enthält eine Vielzahl von Komponenten, die an den Knoten für die von ihnen zum Leben zu erwecken angefügt werden können: Benutzer sichtbare Elemente (Modelle), Sounds, rigidbodys, Kollisionen Formen, Kameras, Lichtquellen, Partikel korrekturemitter ab und vieles mehr.
+Die Bibliothek enthält eine Vielzahl von Komponenten, die Sie an Ihre Knoten anfügen können, um Sie in das Leben zu bringen: Benutzer sichtbare Elemente (Modelle), Sounds, starre Körper, Kollisions Formen, Kameras, Lichtquellen, Partikelemitter und vieles mehr.
 
 ### <a name="shapes"></a>Formen
 
-Zur Vereinfachung sind die verschiedenen Formen als einfache Knoten im Namespace Urho.Shapes zur Verfügung.  Dazu gehören die Felder, die Kugeln, Kegel, Touren und Ebenen.
+Zur Unterstützung stehen verschiedene Formen als einfache Knoten im Urho. Shapes-Namespace zur Verfügung.  Dazu zählen Felder, Bereiche, Kegel, Zylinder und Flächen.
 
-### <a name="camera-and-viewport"></a>Kamera und viewport
+### <a name="camera-and-viewport"></a>Kamera und Viewport
 
-Genau wie das Licht werden die Komponenten, von Kameras sind, daher Sie die Komponente auf einen Knoten, wie folgt angefügt müssen:
+Ähnlich wie bei der Beleuchtung sind Kameras Komponenten, daher müssen Sie die Komponente wie folgt an einen Knoten anfügen:
 
 ```csharp
 var CameraNode = scene.CreateChild ("camera");
@@ -96,72 +96,72 @@ camera = CameraNode.CreateComponent<Camera>();
 CameraNode.Position = new Vector3 (0, 5, 0);
 ```
 
-Auf diese Weise haben Sie eine Kamera, und Sie haben die Kamera in der 3D-Welt platziert, der nächste Schritt besteht darin zu informieren die `Application` dies die Kamera ist, die Sie verwenden möchten, müssen dies erfolgt durch den folgenden Code:
+Damit haben Sie eine Kamera erstellt, und Sie haben die Kamera in der 3D-Welt abgelegt. der nächste Schritt besteht darin, den `Application` zu informieren, dass es sich um die Kamera handelt, die Sie verwenden möchten. Dies geschieht mit folgendem Code:
 
 ```csharp
 Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 ```
 
-Und jetzt sollten Sie sehen die Ergebnisse der Erstellung Ihrer sein.
+Und jetzt sollten Sie in der Lage sein, die Ergebnisse ihrer Erstellung anzuzeigen.
 
-### <a name="identification-and-scene-hierarchy"></a>Identifikation und einer Szene
+### <a name="identification-and-scene-hierarchy"></a>Identifizierungs-und Szenen Hierarchie
 
-Im Gegensatz zu Knoten haben die Komponenten nicht Namen. Komponenten innerhalb der gleichen Knoten werden nur identifiziert, nach deren Typ und Index in der Komponentenliste des Knotens, der in der Reihenfolge der Erstellung gefüllt ist, Sie können z. B. Abrufen der `Light` Komponente aus der `lightNode` Objekt oben wie folgt:
+Im Gegensatz zu Knoten haben Komponenten keine Namen. Komponenten innerhalb desselben Knotens werden nur durch ihren Typ identifiziert, und Index in der Komponentenliste des Knotens, der in der Erstellungs Reihenfolge ausgefüllt ist. Sie können z. b. die `Light` Komponente aus dem obigen `lightNode` Objekt wie folgt abrufen:
 
 ```csharp
 var myLight = lightNode.GetComponent<Light>();
 ```
 
-Sie können auch eine Liste aller Komponenten abrufen, durch Abrufen der `Components` -Eigenschaft die zurückgibt ein `IList<Component>` , die Sie verwenden können.
+Sie können auch eine Liste aller Komponenten abrufen, indem Sie die `Components`-Eigenschaft abrufen, die eine `IList<Component>` zurückgibt, die Sie verwenden können.
 
-Beim Erstellen, erhalten beide Knoten und Komponenten Szene globalen ganzzahligen IDs. Sie können mithilfe der Funktionen aus der Szene abgefragt werden `GetNode(uint id)` und `GetComponent(uint id)`. Dies ist wesentlich schneller, z. B. rekursive Szene Namen-basierte Knoten Abfragen ausführen.
+Wenn Sie erstellt werden, erhalten sowohl Knoten als auch Komponenten Szene-globale ganzzahlige IDs. Sie können mithilfe der Funktionen `GetNode(uint id)` und `GetComponent(uint id)`aus der Szene abgefragt werden. Dies ist viel schneller als z. b. Durchführung von rekursiven namensbasierten Szenen Knoten Abfragen.
 
-Es gibt kein integriertes Konzept für eine Entität oder einem spielobjekt. Vielmehr ist es bis zu dem Programmierer entscheiden, die Knotenhierarchie und in welchen Knoten alle geskriptete Logik zu platzieren. Free: Verschieben von Objekten in der 3D-Welt würde in der Regel als untergeordnete Elemente des Stammknotens erstellt werden. Knoten können erstellt werden, entweder mit oder ohne mit `CreateChild`. Eindeutigkeit der Namen der Knoten wird nicht erzwungen.
+Es gibt kein integriertes Konzept für eine Entität oder ein Spielobjekt. Vielmehr ist es dem Programmierer überlassen, die Knoten Hierarchie zu entscheiden, und in welchen Knoten die Skript Logik platziert werden soll. In der Regel werden frei verschiebende Objekte in der 3D-Welt als untergeordnete Elemente des Stamm Knotens erstellt. Knoten können mit oder ohne Namen mithilfe `CreateChild`erstellt werden. Die Eindeutigkeit von Knoten Namen wird nicht erzwungen.
 
-Immer einige hierarchische Komposition vorhanden ist, es wird empfohlen (und sogar erforderlich sein, da die Komponenten keine eigene 3D-Transformationen) zum Erstellen eines untergeordneten Knotens.
+Jedes Mal, wenn eine hierarchische Komposition vorhanden ist, wird empfohlen (und tatsächlich notwendig, da Komponenten keine eigenen 3D-Transformationen aufweisen), um einen untergeordneten Knoten zu erstellen.
 
-Z. B. wenn ein Zeichen ein Objekt in der Hand gehalten hat, müssen das Objekt einen eigene Knoten, der des Zeichens Hand Knochenarbeit übergeordnet werden würde (auch eine `Node`).  Die Ausnahme ist die Physik `CollisionShape`, was offsetted und gedreht einzeln in Bezug auf den Knoten sein kann.
+Wenn z. b. ein Zeichen in der Hand ein Objekt enthält, sollte das Objekt über einen eigenen Knoten verfügen, der dem Hand Strich des Zeichens (auch einem `Node`) übergeordnet wird.  Die Ausnahme bildet die Physik-`CollisionShape`, die in Bezug auf den Knoten einzeln ausgelagert und gedreht werden kann.
 
-Beachten Sie, dass `Scene`der Besitzer der Transformation wird absichtlich als Optimierung ignoriert, bei der Berechnung der Welt abgeleitete Transformationen der untergeordneten Knoten, so dass die Änderung wirkt sich nicht, und es sollte bleiben unverändert (Position, an den Ursprung keine Drehung keine Skalierung).
+Beachten Sie, dass die eigene Transformation `Scene`als Optimierung beim Berechnen von von der Welt abgeleiteten Transformationen von untergeordneten Knoten absichtlich ignoriert wird. das Ändern der Transformation hat daher keine Auswirkungen und sollte unverändert bleiben (Position bei Ursprung, keine Drehung, keine Skalierung).
 
-`Scene` Knoten können frei neu zugeordnet werden. Im Gegensatz dazu gehören Komponenten stets auf den Knoten, den sie an, den und Sie können nicht zwischen Knoten verschoben werden. Geben Sie sowohl die Knoten als auch die Komponenten einer `Remove` Funktion, um dies zu erreichen, ohne das übergeordnete Element durchlaufen. Sobald der Knoten entfernt wird, sind keine Vorgänge auf dem Knoten oder die betreffende Komponente nach dem Aufruf dieser Funktion sicher.
+`Scene` Knoten können frei neu zugeordnet werden. Im Gegensatz dazu gehören Komponenten immer zu dem Knoten, an den Sie angefügt sind, und können nicht zwischen Knoten verschoben werden. Sowohl Knoten als auch Komponenten stellen eine `Remove` Funktion bereit, um dies zu erreichen, ohne das übergeordnete Element durchlaufen zu müssen. Nachdem der Knoten entfernt wurde, sind keine Vorgänge auf dem betreffenden Knoten oder dieser Komponente sicher, nachdem diese Funktion aufgerufen wurde.
 
-Es ist auch möglich, Sie erstellen eine `Node` , die nicht zu einer Szene gehört. Dies ist nützlich, z. B. mit einer Kamera, die in einer Szene, die geladen werden oder gespeichert haben, verschieben, da dann die Kamera wird nicht zusammen mit der tatsächlichen Szene gespeichert werden und wird nicht zerstört werden, wenn die Szene geladen wird. Beachten Sie jedoch, dass diese Komponenten nicht ordnungsgemäß funktioniert verursacht Geometry "," Physik "oder" Skript Komponenten zu einer nicht angefügten Knoten erstellen und dann später in einer Szene verschieben.
+Es ist auch möglich, einen `Node` zu erstellen, der nicht zu einer Szene gehört. Dies ist beispielsweise nützlich, wenn eine Kamera in eine Szene wechselt, die geladen oder gespeichert werden kann, da die Kamera nicht zusammen mit der eigentlichen Szene gespeichert wird und nicht zerstört wird, wenn die Szene geladen wird. Beachten Sie jedoch, dass die Erstellung von Geometrie-, Physik-oder Skript Komponenten zu einem nicht angefügten Knoten und das anschließende verschieben in eine Szene zu einem späteren Zeitpunkt dazu führt, dass diese Komponenten nicht ordnungsgemäß funktionieren.
 
-### <a name="scene-updates"></a>Updates der Szene
+### <a name="scene-updates"></a>Szenen Aktualisierungen
 
-Eine Szene, deren Updates sind aktiviert (Standard) werden bei jeder Iteration der Hauptschleife automatisch aktualisiert werden.  Der Anwendung `SceneUpdate` -Ereignishandler wird aufgerufen, darauf.
+Eine Szene, deren Updates aktiviert sind (Standard), wird bei jeder Hauptschleifen Iterations Funktion automatisch aktualisiert.  Der `SceneUpdate` Ereignishandler der Anwendung wird darauf aufgerufen.
 
-Knoten und Komponenten können von der Szene Update ausgeschlossen werden, indem Sie Sie deaktivieren, finden Sie unter `Enabled`.  Das Verhalten hängt davon ab, auf die jeweilige Komponente, sondern z. B. das Deaktivieren einer drawable-Komponente auch es nicht sichtbar ist, während eine solide Quellkomponente deaktivieren sie schaltet stumm. Wenn ein Knoten deaktiviert ist, werden alle zugehörigen Komponenten behandelt, als unabhängig von ihren eigenen aktivieren/deaktivieren-Status deaktiviert.
+Knoten und Komponenten können aus dem Szenen Update ausgeschlossen werden, indem Sie deaktiviert werden. Weitere Informationen finden Sie unter `Enabled`.  Das Verhalten hängt von der jeweiligen Komponente ab, aber wenn Sie eine drawable-Komponente deaktivieren, wird Sie auch unsichtbar, während Sie durch Debuggen einer Sound Quell Komponente nicht mehr sichtbar ist. Wenn ein Knoten deaktiviert ist, werden alle zugehörigen Komponenten unabhängig von Ihrem eigenen Aktivierungs-/deaktivitätsstatus als deaktiviert behandelt.
 
-## <a name="adding-behavior-to-your-components"></a>Hinzufügen des Verhaltens von Komponenten
+## <a name="adding-behavior-to-your-components"></a>Hinzufügen von Verhalten zu ihren Komponenten
 
-Die beste Möglichkeit, Ihr Spiel Struktur ist, stellen eine eigene Komponente, die ein Akteur oder ein Element auf Ihr Spiel zu kapseln.  Dadurch wird die Funktion als eigenständige, über die Ressourcen, um das Verhalten angezeigt.
+Die beste Möglichkeit, Ihr Spiel zu strukturieren, besteht darin, eine eigene Komponente zu erstellen, die einen Akteur oder ein Element in Ihrem Spiel kapseltes.  Dadurch wird das Feature in das zugehörige Verhalten von den Assets, die für seine Anzeige verwendet werden, selbst enthalten.
 
-Die einfachste Möglichkeit zum Hinzufügen des Verhaltens zu einer Komponente ist die Verwendung von Aktionen, die Anweisungen sind, können Sie in die Warteschlange und kombinieren Sie dies mit c# Async-Programmierung.  Dadurch können das Verhalten für die Komponente, sehr hohe sein und ist es einfacher zu verstehen, was passiert.
+Das einfachste Verfahren zum Hinzufügen von Verhalten zu einer Komponente ist die Verwendung von Aktionen, die Anweisungen sind, die Sie in die C# Warteschlange stellen und mit der asynchronen Programmierung kombinieren können.  Dadurch kann das Verhalten Ihrer Komponente sehr hoch sein, und es ist einfacher zu verstehen, was passiert.
 
-Alternativ können Sie steuern, was genau an die Komponente geschieht durch Aktualisieren Ihrer Komponenteneigenschaften auf die einzelnen Frames (im Abschnitt framebasierte Verhalten erläutert).
+Alternativ können Sie genau steuern, was mit der Komponente passiert, indem Sie die Komponenteneigenschaften für jeden Frame aktualisieren (im Abschnitt Frame-basiertes Verhalten erläutert).
 
 ### <a name="actions"></a>Aktionen
 
-Sie können ganz einfach über Aktionen Knoten Verhalten hinzufügen.  Aktionen können verschiedene Eigenschaften des Knotens ändern und führen Sie sie über eine bestimmte Zeitspanne oder Wiederholen diese in eine Anzahl von Malen mit einer bestimmten Animation-Kurve.
+Mithilfe von Aktionen können Sie Knoten sehr einfach hinzufügen.  Mithilfe von Aktionen können verschiedene Knoten Eigenschaften geändert und über einen bestimmten Zeitraum ausgeführt werden, oder Sie können mit einer bestimmten Animations Kurve mehrmals wiederholt werden.
 
-Betrachten Sie beispielsweise einen Knoten "Cloud" auf die Szene, können Sie es eingeblendet, wie folgt:
+Wenn Sie z. b. einen "Cloud"-Knoten in Ihrer Szene sehen, können Sie ihn wie folgt ausblenden:
 
 ```csharp
 await cloud.RunActionsAsync (new FadeOut (duration: 3))
 ```
 
-Aktionen sind unveränderliche Objekte an, dem Sie die Aktion zum Steuern von verschiedenen Objekten wiederverwenden können.
+Aktionen sind unveränderliche Objekte, die es Ihnen ermöglichen, die Aktion zum Verwenden von unterschiedlichen Objekten wiederzuverwenden.
 
-Eine allgemeine Vorgehensweise besteht darin, eine Aktion zu erstellen, die den umgekehrten Vorgang ausführt:
+Eine gängige Vorgehensweise besteht darin, eine Aktion zu erstellen, die den umgekehrten Vorgang ausführt:
 
 ```csharp
 var gotoExit = new MoveTo (duration: 3, position: exitLocation);
 var return = gotoExit.Reverse ();
 ```
 
-Im folgende Beispiel wird das Objekt für die Sie über einen Zeitraum von drei Sekunden ausgeblendet wird.  Sie können auch eine Aktion ausführen und z. B. Sie könnten zunächst die Cloud verschieben und dann ausblenden:
+Im folgenden Beispiel wird das-Objekt für Sie über einen Zeitraum von drei Sekunden ausgeblendet.  Sie können eine Aktion auch nach einem anderen ausführen, beispielsweise könnten Sie zuerst die Cloud verschieben und dann ausblenden:
 
 ```csharp
 await cloud.RunActionsAsync (
@@ -169,7 +169,7 @@ await cloud.RunActionsAsync (
     new FadeOut (duration: 3));
 ```
 
-Wenn beide Aktionen zur selben Zeit durchgeführt werden sollen, können Sie verwenden Sie die parallele Aktion, und geben alle die gewünschten Aktionen parallel ausgeführt:
+Wenn beide Aktionen gleichzeitig ausgeführt werden sollen, können Sie die parallele Aktion verwenden und alle Aktionen bereitstellen, die parallel ausgeführt werden sollen:
 
 ```csharp
   await cloud.RunActionsAsync (
@@ -178,29 +178,29 @@ Wenn beide Aktionen zur selben Zeit durchgeführt werden sollen, können Sie ver
       new FadeOut (duration: 3)));
 ```
 
-Im obigen Beispiel wird die Cloud verschieben und gleichzeitig ausblenden.
+Im obigen Beispiel wird die Cloud gleichzeitig verschoben und ausgeblendet.
 
-Sie werden feststellen, dass diese verwenden C# `await`, können Sie das Verhalten linear Denken Sie erreichen möchten.
+Sie werden feststellen, dass diese C#`await`verwenden, sodass Sie linear über das Verhalten nachzudenken können, das Sie erreichen möchten.
 
 ### <a name="basic-actions"></a>Grundlegende Aktionen
 
-Dies sind die Aktionen, die in von UrhoSharp unterstützt:
+Dies sind die Aktionen, die in urhosharp unterstützt werden:
 
 - Verschieben von Knoten: `MoveTo`, `MoveBy`, `Place`, `BezierTo`, `BezierBy`, `JumpTo`, `JumpBy`
-- Drehen von Knoten: `RotateTo`, `RotateBy`
-- Skalierung von Knoten: `ScaleTo`, `ScaleBy`
-- Überblenden von Knoten: `FadeIn`, `FadeTo`, `FadeOut`, `Hide`, `Blink`
-- Farben: `TintTo`, `TintBy`
-- Zeitpunkt: `Hide`, `Show`, `Place`, `RemoveSelf`, `ToggleVisibility`
-- Schleifen: `Repeat`, `RepeatForever`, `ReverseTime`
+- Rotieren von Knoten: `RotateTo``RotateBy`
+- Skalieren von Knoten: `ScaleTo``ScaleBy`
+- Verblassende Knoten: `FadeIn`, `FadeTo`, `FadeOut`, `Hide`, `Blink`
+- Tinting: `TintTo`, `TintBy`
+- Instants: `Hide`, `Show`, `Place`, `RemoveSelf`, `ToggleVisibility`
+- Schleifen: `Repeat`, `RepeatForever``ReverseTime`
 
-Die Kombination aus den anderen erweiterten Features zählen die `Spawn` und `Sequence` Aktionen.
+Weitere Erweiterte Features sind die Kombination aus den `Spawn`-und `Sequence` Aktionen.
 
 ### <a name="easing---controlling-the-speed-of-your-actions"></a>Beschleunigung: Steuern der Geschwindigkeit Ihrer Aktionen
 
-Einfachere ist eine Möglichkeit, die leitet die Möglichkeit, dass die Animation wird erweitern, und sie können Animationen sehr viel angenehmer.  Standardmäßig Ihre Aktionen haben einen linearen Verhalten, z. B. eine `MoveTo` Aktion müsste eine sehr robotic Verschiebung.  Sie können Ihre Aktionen in einer Beschleunigung-Aktion zum Ändern des Verhaltens, z. B. eine, die langsam Starten der datenverschiebung, beschleunigen und langsam aufgebraucht umschließen (`EasyInOut`).
+Die Beschleunigung ist eine Methode, die die Art und Weise der Animation der Animation anweist und die Animationen viel angenehmer machen kann.  Standardmäßig weisen ihre Aktionen ein lineares Verhalten auf, z. b. wird eine `MoveTo` Aktion eine sehr robotische Bewegung aufweisen.  Sie können Ihre Aktionen in eine Beschleunigungs Aktion einschließen, um das Verhalten zu ändern, z. b. eine, die die Bewegung langsam startet, das Ende beschleunigt und langsam erreicht (`EasyInOut`).
 
-Dazu müssen Sie eine vorhandene Aktion in eine Ads-Aktion, z. B. umschließen:
+Hierzu können Sie eine vorhandene Aktion in eine Beschleunigungs Aktion umwickeln, z. b.:
 
 ```csharp
 await cloud.RunActionAsync (
@@ -208,16 +208,16 @@ await cloud.RunActionAsync (
      new MoveTo (duration: 3, position: new Vector (0,0,15)), rate:1))
 ```
 
-Es gibt viele Ads-Modi, das folgende Diagramm zeigt die verschiedenen Beschleunigungstypen und deren Verhalten auf dem Wert des Objekts, das sie über den Zeitraum, von Anfang bis Ende steuern, sind:
+Es gibt viele Beschleunigungs Modi, das folgende Diagramm zeigt die verschiedenen Beschleunigungs Typen und deren Verhalten auf dem Wert des Objekts, das Sie über den Zeitraum steuern, von Anfang bis Ende:
 
-![Vereinfachen von Modi](using-images/easing.png "dieses Diagramm zeigt die verschiedenen Beschleunigungstypen und deren Verhalten auf dem Wert des Objekts, das sie über den Zeitraum steuern sind")
+![Beschleunigungs Modi](using-images/easing.png "Dieses Diagramm zeigt die verschiedenen Beschleunigungs Typen und deren Verhalten auf dem Wert des Objekts, das Sie im Laufe der Zeit steuern.")
 
-### <a name="using-actions-and-async-code"></a>Verwenden von Aktionen "und" Async-code
+### <a name="using-actions-and-async-code"></a>Verwenden von Aktionen und Async-Code
 
-In Ihrer `Component` -Unterklasse, sollten Sie eine asynchrone Methode, die bereitet des Verhaltens der Komponente und die Funktionalität von Festplatten für sie einführen.
-Und Sie diese mithilfe der C#-Methode aufrufen, würden `await` Schlüsselwort aus einem anderen Teil des Programms entweder Ihre `Application.Start` Methode oder als Reaktion auf einen Benutzer oder die Story zeigen Sie in Ihrer Anwendung.
+In ihrer `Component`-Unterklasse sollten Sie eine Async-Methode einführen, die das Verhalten der Komponente vorbereitet und die Funktionalität dafür steuert.
+Dann würden Sie diese Methode mit dem C#`await`-Schlüsselwort aus einem anderen Teil des Programms aufrufen, entweder ihrer `Application.Start`-Methode oder als Reaktion auf einen Benutzer oder Story Point in der Anwendung.
 
-Zum Beispiel:
+Beispiel:
 
 ```csharp
 class Robot : Component {
@@ -265,13 +265,13 @@ class Robot : Component {
 }
 ```
 
-In der `Launch` der oben genannten drei Aktionen Methoden gestartet werden: der Roboter in der Szene stammt, diese Aktion wirkt sich die Position des Knotens über einen Zeitraum von 0,6 Sekunden.  Da eine Async-Option verwendet wird, dies erfolgt gleichzeitig als die nächste Anweisung wird der Aufruf zum `MoveRandomly`.  Diese Methode wird die Position des Roboters parallel auf einem zufälligen Ort geändert werden.  Dies erfolgt durch zwei Verrunden Aktionen ausführen, die Bewegung auf einem neuen Speicherort und kehre zur ursprünglichen positionieren, und wiederholen Sie diesen Vorgang so lange der Roboter aktiv bleibt.  Und um die Dinge etwas interessanter zu machen, die Robots wird beibehalten Schießen gleichzeitig.  Die Schießen wird nur 0,1 Sekunden gestartet.
+In der `Launch`-Methode werden oben drei Aktionen gestartet: der Roboter kommt in die Szene, diese Aktion ändert die Position des Knotens über einen Zeitraum von 0,6 Sekunden.  Da es sich hierbei um eine async-Option handelt, erfolgt dies gleichzeitig als nächste Anweisung, bei der es sich um den `MoveRandomly`aufrufen handelt.  Diese Methode ändert die Position des Roboters parallel zu einem zufälligen Speicherort.  Dies wird erreicht, indem zwei zusammengesetzte Aktionen durchgeführt werden, die Bewegung zu einer neuen Position und die ursprüngliche Position wiederholt wird, solange der Roboter aktiv bleibt.  Um die Dinge interessanter zu gestalten, wird der Roboter gleichzeitig auf dem Laufenden gehalten.  Die Aufnahme wird nur alle 0,1 Sekunden gestartet.
 
-### <a name="frame-based-behavior-programming"></a>Verhalten framebasierte-Programmierung
+### <a name="frame-based-behavior-programming"></a>Frame basierte Verhaltens Programmierung
 
-Wenn Sie das Verhalten der Komponente pro Frame für Frame anstelle von Aktionen steuern möchten, gehen Sie wie besteht im Überschreiben der `OnUpdate` Methode Ihrer `Component` Unterklasse.  Diese Methode wird einmal pro Frame aufgerufen, und es wird nur aufgerufen, wenn Sie die ReceiveSceneUpdates-Eigenschaft auf "true" festlegen.
+Wenn Sie das Verhalten der Komponente Frame Weise steuern möchten, anstatt Aktionen zu verwenden, sollten Sie die `OnUpdate`-Methode Ihrer `Component`-Unterklasse überschreiben.  Diese Methode wird einmal pro Frame aufgerufen und nur aufgerufen, wenn Sie die receivesceneupdates-Eigenschaft auf "true" festlegen.
 
-Das folgende Beispiel zeigt, wie Sie erstellen eine `Rotator` Komponente, die klicken Sie dann auf einen Knoten, wodurch den Knoten zum Drehen verbunden ist:
+Das folgende Beispiel zeigt, wie Sie eine `Rotator` Komponente erstellen, die dann an einen Knoten angefügt wird, wodurch der Knoten gedreht wird:
 
 ```csharp
 class Rotator : Component {
@@ -291,7 +291,7 @@ class Rotator : Component {
 }
 ```
 
-Und wie Sie diese Komponente zu einem Knoten anfügen würden:
+Und so fügen Sie diese Komponente an einen Knoten an:
 
 ```csharp
 Node boxNode = new Node();
@@ -299,11 +299,11 @@ var rotator = new Rotator() { RotationSpeed = rotationSpeed };
 boxNode.AddComponent (rotator);
 ```
 
-### <a name="combining-styles"></a>Kombinieren von Formatvorlagen
+### <a name="combining-styles"></a>Kombinieren von Stilen
 
-Können Sie das Async/Aktion-basierten Modell zum Programmieren das Verhalten der eignet sich für Fire-and-forget-Stil, der Programmierung hervorragend, aber Sie können auch Optimieren Ihrer Komponente zu Verhalten führen Sie auch Code Update auf die einzelnen Frames.
+Sie können das Async/Action-basierte Modell zum Programmieren eines sehr großen Verhaltens verwenden, das für das Auslösen und vergessen der Programmierung ideal ist, aber Sie können auch das Verhalten der Komponente optimieren, um auch Update Code für jeden Frame auszuführen.
 
-Z. B. in der Demo SamplyGame Hiermit wird der `Enemy` Klasse codiert, die Aktionen der grundlegende Verhalten verwendet, aber es wird auch sichergestellt, dass die Komponenten zum Benutzer hin verweisen, durch Festlegen der Richtung des Knotens mit `Node.LookAt`:
+In der samplygame-Demo wird diese z. b. in der `Enemy`-Klasse verwendet, um das grundlegende Verhalten von Aktionen zu codieren, aber es wird auch sichergestellt, dass die Komponenten auf den Benutzer verweisen, indem Sie die Richtung des Knotens mit `Node.LookAt`festlegen:
 
 ```csharp
     protected override void OnUpdate(SceneUpdateEventArgs args)
@@ -318,13 +318,13 @@ Z. B. in der Demo SamplyGame Hiermit wird der `Enemy` Klasse codiert, die Aktion
 
 ## <a name="loading-and-saving-scenes"></a>Laden und Speichern von Szenen
 
-Im Hintergrund geladen, und im XML-Format gespeichert werden können; finden Sie unter den Funktionen `LoadXml` und `SaveXML`. Wenn eine Szene geladen wird, wird zunächst alle vorhandenen Inhalte in (untergeordnete Knoten und Komponenten) entfernt. Knoten und Komponenten, die mit temporären markiert sind die `Temporary` Eigenschaft wird nicht gespeichert werden. Das Serialisierungsprogramm behandelt alle integrierten Komponenten und Eigenschaften, aber es ist nicht intelligent genug, um benutzerdefinierte Eigenschaften als auch in Ihrer Unterklassen der Komponente definierten Felder zu behandeln. Jedoch stellt zwei virtuelle Methoden dafür bereit:
+Szenen können im XML-Format geladen und gespeichert werden. Weitere Informationen finden Sie in den Funktionen `LoadXml` und `SaveXML`. Wenn eine Szene geladen wird, wird der gesamte vorhandene Inhalt (untergeordnete Knoten und Komponenten) zuerst entfernt. Knoten und Komponenten, die mit der `Temporary`-Eigenschaft als temporär gekennzeichnet sind, werden nicht gespeichert. Das Serialisierungsprogramm verarbeitet alle integrierten Komponenten und Eigenschaften, aber es ist nicht intelligent genug, um benutzerdefinierte Eigenschaften und Felder zu verarbeiten, die in den Komponenten Unterklassen definiert sind. Hierfür stehen jedoch zwei virtuelle Methoden zur Verfügung:
 
- `OnSerialize` wo Sie Sie benutzerdefinierte Zustände für die Serialisierung registrieren
+ `OnSerialize`, in dem Sie benutzerdefinierte Zustände für die Serialisierung registrieren können
 
- `OnDeserialized` in dem Sie Ihre gespeicherte benutzerdefinierte Status abrufen können.
+ `OnDeserialized`, in dem Sie Ihre gespeicherten benutzerdefinierten Zustände abrufen können.
 
-In der Regel wird eine benutzerdefinierte Komponente wie folgt aussehen:
+In der Regel sieht eine benutzerdefinierte Komponente wie folgt aus:
 
 ```csharp
 class MyComponent : Component {
@@ -355,15 +355,15 @@ class MyComponent : Component {
 }
 ```
 
-### <a name="object-prefabs"></a>Objekt prefabs (Vorlagen)
+### <a name="object-prefabs"></a>Objekt präfabs
 
-Nur Laden oder speichern die gesamte Szenen ist nicht flexibel genug für Spiele, in denen neue Objekte dynamisch erstellt werden müssen. Auf der anderen Seite werden komplexe Objekte erstellen und Festlegen ihrer Eigenschaften im Code auch mühsam sein. Aus diesem Grund ist es auch möglich, einen szeneknoten speichern Sie, der zugehörigen untergeordneten Knoten, die Komponenten und die Attribute enthält. Diese können später bequem als Gruppe geladen werden.  Eine solche gespeicherte Objekt wird häufig als eines prefabs bezeichnet. Hierfür gibt es drei Möglichkeiten:
+Das Laden oder speichern ganzer Szenen ist nicht flexibel genug für Spiele, bei denen neue Objekte dynamisch erstellt werden müssen. Andererseits ist das Erstellen komplexer Objekte und das Festlegen ihrer Eigenschaften im Code ebenfalls mühsam. Aus diesem Grund ist es auch möglich, einen Szene Knoten zu speichern, der seine untergeordneten Knoten, Komponenten und Attribute enthält. Diese können später bequem als Gruppe geladen werden.  Ein solches gespeichertes Objekt wird häufig als vorfab bezeichnet. Hierfür gibt es drei Möglichkeiten:
 
-- Im Code durch den Aufruf `Node.SaveXml` auf dem Knoten
-- Im Editor durch Auswahl des Knotens in das Fenster "Aufrufhierarchie" und "Save Knoten als" über das Menü "Datei".
-- Mit dem Befehl "Node" in `AssetImporter`, die speichert der szenenhierarchie für Knoten und alle Modelle enthalten im eingabeasset (z. b. eine Collada-Datei)
+- Im Code durch Aufrufen von `Node.SaveXml` auf dem Knoten
+- Wählen Sie im Editor den Knoten im Fenster Hierarchie aus, und wählen Sie im Menü "Datei" die Option "Knoten speichern unter" aus.
+- Mithilfe des Befehls "Node" in `AssetImporter`, in dem die Szenen Knoten Hierarchie und alle im Eingabemedien Objekt enthaltenen Modelle gespeichert werden (z. b. eine Collada-Datei)
 
-Aufrufen, um den gespeicherten Knoten in einer Szene zu instanziieren, `InstantiateXml`. Der Knoten als untergeordnetes Element der Szene erstellt werden, aber es kann kostenlos erneut danach übergeordnet werden. Position und Drehung für das Platzieren des Knotens müssen angegeben werden. Der folgende Code zeigt, wie zum Instanziieren eines prefabs `Ninja.xm` zu einer Szene mit der gewünschten Position und Drehung:
+Um den gespeicherten Knoten in einer Szene zu instanziieren, wenden Sie `InstantiateXml`an. Der Knoten wird als untergeordnetes Element der Szene erstellt, kann jedoch nach diesem Vorgang frei neu zugeordnet werden. Position und Drehung zum Platzieren des Knotens müssen angegeben werden. Der folgende Code veranschaulicht, wie Sie eine vorfab `Ninja.xm` in einer Szene mit gewünschter Position und Drehung instanziieren:
 
 ```csharp
 var prefabPath = Path.Combine (FileSystem.ProgramDir,"Data/Objects/Ninja.xml");
@@ -376,11 +376,11 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 
 ## <a name="events"></a>Ereignisse
 
-UrhoObjects Auslösen einer Anzahl von Ereignissen, diese werden als C#-Ereignisse aufgeführt, auf die verschiedenen Klassen, die sie generieren.  Zusätzlich zu den C# -Code-Basis Ereignismodell, es ist auch möglich, verwenden Sie eine der `SubscribeToXXX` Methoden, mit denen Sie zum Abonnieren und eine abonnementtoken beibehalten, die später können Sie das Abonnement kündigen.  Der Unterschied besteht darin, dass Erstere ermöglicht viele Aufrufe zum abonnieren, während das zweite Argument nur ermöglicht, ermöglicht jedoch der nützlicher Lambda-Stil-Ansatz verwendet werden soll, und kann noch, einfaches Entfernen des Abonnements.  Sie schließen sich gegenseitig aus.
+Urhuobjects gibt eine Reihe von Ereignissen aus, die in den verschiedenen C# Klassen, die Sie generieren, als Ereignisse angezeigt werden.  Zusätzlich zum C#-basierten Ereignis Modell ist es auch möglich, eine der`SubscribeToXXX`Methoden zu verwenden, die es Ihnen ermöglichen, ein Abonnement Token zu abonnieren und beizubehalten, das Sie später zum kündigen von Abonnements verwenden können.  Der Unterschied besteht darin, dass das erste von vielen Aufrufern abonniert werden kann, während das zweite nur ein Abonnement zulässt, aber den einfacheren Lambda-Stil ermöglicht, aber auch das einfache Entfernen des Abonnements ermöglicht.  Sie schließen sich gegenseitig aus.
 
-Wenn Sie ein Ereignis abonnieren, müssen Sie eine Methode bereitstellen, die ein Argument mit den entsprechenden Ereignisargumenten verwendet.
+Wenn Sie ein Ereignis abonnieren, müssen Sie eine Methode bereitstellen, die ein Argument mit den entsprechenden Ereignis Argumenten annimmt.
 
-Dies ist z. B. wie Sie einer Maustaste ausgelöste Ereignis abonnieren:
+So abonnieren Sie z. b. ein Mausbutton-Down-Ereignis:
 
 ```csharp
 public void override Start ()
@@ -394,7 +394,7 @@ void HandleMouseButtonDown(MouseButtonDownEventArgs args)
 }
 ```
 
-Mit Lambda-Style:
+Mit Lambda-Stil:
 
 ```csharp
 public void override Start ()
@@ -405,7 +405,7 @@ public void override Start ()
 }
 ```
 
-Sie möchten manchmal keine Benachrichtigungen mehr empfangen, für das Ereignis in diesen Fällen speichern den Rückgabewert aus dem Aufruf von `SubscribeTo` -Methode, und rufen die Methode "Unsubscribe" auf:
+In manchen Fällen möchten Sie den Empfang von Benachrichtigungen für das Ereignis beenden, in diesen Fällen den Rückgabewert des Aufrufs von `SubscribeTo` Methode speichern und die Methode "Abmelden" aufrufen:
 
 ```csharp
 Subscription mouseSub;
@@ -419,11 +419,11 @@ public void override Start ()
 }
 ```
 
-Der Parameter empfangen, die vom Ereignishandler ist eine stark typisierte Ereignisargumentklasse, die speziell für jedes Ereignis werden und enthält die Nutzlast des Ereignisses.
+Der vom Ereignishandler empfangene Parameter ist eine stark typisierte Ereignis Argument Klasse, die für jedes Ereignis spezifisch ist und die Ereignis Nutzlast enthält.
 
-## <a name="responding-to-user-input"></a>Reagieren auf Benutzereingabe
+## <a name="responding-to-user-input"></a>Reagieren auf Benutzereingaben
 
-Sie können unten auf verschiedene Ereignisse wie Tastatureingaben abonnieren, durch das Abonnieren des Ereignisses und reagieren mit der Eingabe übermittelt werden:
+Sie können verschiedene Ereignisse abonnieren, wie z. b. Tastatureingaben, indem Sie das Ereignis abonnieren und auf die übermittelte Eingabe Antworten:
 
 ```csharp
 Start ()
@@ -438,7 +438,7 @@ void HandleKeyDown (KeyDownEventArgs arg)
 }
 ```
 
-Aber in vielen Szenarien, die Sie möchten Ihre Szene Aktualisierungshandler, überprüfen Sie auf den aktuellen Status der Schlüssel, sobald diese werden aktualisiert, und aktualisieren Sie Ihren Code entsprechend.  Z. B. die folgenden dienen zur basierend auf der Tastatur, geben Sie den Speicherort des Kamera aktualisiert:
+In vielen Szenarios möchten Sie jedoch, dass Ihre Szenen Update Handler den aktuellen Status der Schlüssel bei der Aktualisierung überprüfen und Ihren Code entsprechend aktualisieren.  Beispielsweise kann Folgendes verwendet werden, um die Kameraposition basierend auf der Tastatureingabe zu aktualisieren:
 
 ```csharp
 protected override void OnUpdate(float timeStep)
@@ -459,63 +459,63 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-## <a name="resources-assets"></a>Ressourcen (Anlagen)
+## <a name="resources-assets"></a>Ressourcen (Assets)
 
-Ressourcen gehören die meisten Aktionen in von UrhoSharp, die von Massenspeicher während der Initialisierung oder der Laufzeit geladen werden:
+Zu den Ressourcen gehören die meisten Elemente in urhusharp, die während der Initialisierung oder Laufzeit aus dem Massenspeicher geladen werden:
 
-- `Animation` – zum skeletal-Animationen
-- `Image` -Stellt in einer Vielzahl von Grafikformate gespeicherte Bilder
-- `Model` -3D-Modelle
-- `Material` -Materialien, die zum Rendern von Modellen verwendet.
-- `ParticleEffect`- [Beschreibt](http://urho3d.github.io/documentation/1.4/_particles.html) wie ein Partikel korrekturemitter funktioniert, finden Sie unter "[Partikel](#particles)" unten.
-- `Shader` – benutzerdefinierten Shadern
-- `Sound` -Sounds wiedergeben, finden Sie unter "[Sound](#sound)" unten.
-- `Technique` -Material-Rendering-Techniken
-- `Texture2D` -2D-Textur
-- `Texture3D` -3D-Textur
-- `TextureCube` -Cube Textur
+- `Animation` für Skelett Animationen verwendet
+- `Image`-Darstellung von Bildern, die in einer Vielzahl von Grafikformaten gespeichert sind
+- `Model` 3D-Modelle
+- `Material` Material, das zum Rendering von Modellen verwendet wird.
+- in `ParticleEffect`- wird [beschrieben](https://urho3d.github.io/documentation/1.4/_particles.html) , wie ein Partikelemitter funktioniert, siehe "[Partikel](#particles)" weiter unten.
+- `Shader` benutzerdefinierte Shader
+- `Sound`-Sounds für die Wiedergabe finden Sie unter "[Sound](#sound)" weiter unten.
+- `Technique` Material Rendering-Techniken
+- `Texture2D`-2D-Textur
+- `Texture3D` 3D-Textur
+- `TextureCube`-Cube-Textur
 - `XmlFile`
 
-Diese verwaltet werden und von geladen sind die `ResourceCache` Subsystem (verfügbar als `Application.ResourceCache`).
+Sie werden vom `ResourceCache` Subsystem verwaltet und geladen (verfügbar als `Application.ResourceCache`).
 
-Die Ressourcen selbst werden durch die Pfade, relativ zum registrierten Ressourcenverzeichnisse oder Dateien identifiziert. Standardmäßig registriert die Engine die Ressourcenverzeichnisse `Data` und `CoreData`, oder die Pakete `Data.pak` und `CoreData.pak` , wenn sie vorhanden sind.
+Die Ressourcen selbst werden durch ihre Dateipfade bezogen auf die registrierten Ressourcen Verzeichnisse oder Paketdateien identifiziert. Standardmäßig registriert die Engine die Ressourcen Verzeichnisse `Data` und `CoreData`oder die Pakete `Data.pak` und `CoreData.pak` Wenn Sie vorhanden sind.
 
-Wenn beim Laden einer Ressource fehlschlägt, wird ein Fehler protokolliert werden, und ein null-Verweis zurückgegeben.
+Wenn beim Laden einer Ressource ein Fehler auftritt, wird ein Fehler protokolliert, und es wird ein NULL-Verweis zurückgegeben.
 
-Das folgende Beispiel zeigt eine typische Möglichkeit das Abrufen von einer Ressource aus dem Cache für die Ressource.  In diesem Fall einer Textur für die ein Element der Benutzeroberfläche, verwendet der `ResourceCache` Eigenschaft aus der `Application` Klasse.
+Das folgende Beispiel zeigt eine typische Methode zum Abrufen einer Ressource aus dem Ressourcen Cache.  In diesem Fall wird eine Textur für ein UI-Element verwendet, die die `ResourceCache`-Eigenschaft der `Application`-Klasse verwendet.
 
 ```csharp
 healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"));
 ```
 
-Ressourcen können auch manuell erstellt und mit dem Ressourcen-Cache gespeichert werden, als ob sie von der Festplatte geladen wurde.
+Ressourcen können auch manuell erstellt und im Ressourcen Cache gespeichert werden, als ob Sie vom Datenträger geladen wurden.
 
-Arbeitsspeicher-Budgets pro Ressourcentyp festgelegt werden können: Wenn Ressourcen mehr Arbeitsspeicher als die zulässige verwendet, die ältesten Ressourcen entfernt werden aus dem Cache, wenn kein verwenden mehr. Standardmäßig werden die Arbeitsspeicher-Budgets auf unbegrenzte festgelegt.
+Arbeitsspeicher Budgets können pro Ressourcentyp festgelegt werden: Wenn Ressourcen mehr Speicher beanspruchen als zulässig belegen, werden die ältesten Ressourcen aus dem Cache entfernt, wenn Sie nicht mehr verwendet werden. Standardmäßig sind die Speicher Budgets auf unbegrenzt festgelegt.
 
-### <a name="bringing-3d-models-and-images"></a>Bringen 3D-Modelle und images
+### <a name="bringing-3d-models-and-images"></a>Einbringen von 3D-Modellen und-Bildern
 
-Urho3D versucht bestehenden Dateiformaten, wann immer möglich, und Definieren von benutzerdefinierten Dateiformaten nur, wenn Sie z. B. absolut notwendig, Modelle (.mdl) und Animationen (.ani). Für diese Arten von Assets, bietet Urho einen Konverter - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) die können viele gängige 3D Formate wie z. B. Fbx Dae "," 3ds, "und" Obj "," usw. nutzen.
+Urho3D versucht, nach Möglichkeit vorhandene Dateiformate zu verwenden, und definiert benutzerdefinierte Dateiformate nur, wenn dies unbedingt erforderlich ist, z. b. für Modelle (. MDL) und für Animationen (. ani). Für diese Arten von Assets bietet Urho einen Konverter- [assetimporter](https://urho3d.github.io/documentation/1.4/_tools.html) an, der viele beliebte 3D-Formate wie z. b. "f", "DAE", "3ds" und "obj" usw. nutzen kann.
 
-Es gibt auch eine praktische add-in für Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) exportieren, die Ihre Blender-Assets in das Format, das für die Urho3D geeignet ist.
+Es gibt auch ein praktisches Add-in für Blender- [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender) , mit dem Ihre Blender-Assets in dem für Urho3D geeigneten Format exportiert werden können.
 
 ### <a name="background-loading-of-resources"></a>Laden von Ressourcen im Hintergrund
 
-In der Regel beim Anfordern von Ressourcen mit einer der der `ResourceCache`des `Get` -Methode, sie werden sofort im Hauptthread, der mehrere Millisekunden für alle erforderlichen Schritte dauern geladen (Datei vom Datenträger zu laden, Analysieren von Daten, in GPU hochladen, falls erforderlich ) und können daher Framerate löscht.
+Beim Anfordern von Ressourcen mit einer der `Get`-Methode des `ResourceCache`werden Sie normalerweise direkt in den Haupt Thread geladen. Dies kann für alle erforderlichen Schritte (Laden der Datei von einem Datenträger, Analysieren von Daten, Hochladen auf GPU bei Bedarf) einige Millisekunden in Anspruch nehmen. Daher wird Framerate abfällt.
 
-Wenn Sie wissen, im Voraus welche Ressourcen Sie benötigen, können Sie anfordern, werden durch den Aufruf in einem Hintergrundthread geladen werden sollen `BackgroundLoadResource`. Sie können auf die Ressource Hintergrund geladen-Ereignis abonnieren, indem die `SubscribeToResourceBackgroundLoaded` Methode. Sie werden sehen, ob das Laden tatsächlich ein Erfolg oder Misserfolg wurde. Abhängig von der Ressource, die nur ein Teil des Ladeprozesses in einen Hintergrundthread verschoben werden kann, z. B. der abschließen GPU-Upload-Schritt immer muss im Hauptthread ausgeführt werden. Beachten Sie, dass wenn Sie eine der Methoden für eine Ressource, für die im Hintergrund geladen, in der Warteschlange wird, zum Laden von Ressource aufrufen, der Hauptthread installieren wird, bis der Ladevorgang abgeschlossen ist.
+Wenn Sie im Voraus wissen, welche Ressourcen Sie benötigen, können Sie anfordern, dass Sie in einem Hintergrund Thread geladen werden, indem Sie `BackgroundLoadResource`aufrufen. Sie können das Ereignis mit dem Ressourcen Hintergrund laden mithilfe der `SubscribeToResourceBackgroundLoaded`-Methode abonnieren. Es wird feststellt, ob das Laden tatsächlich erfolgreich oder fehlerhaft war. Abhängig von der Ressource kann nur ein Teil des Ladevorgangs in einen Hintergrund Thread verschoben werden, z. b. muss der Schritt zum Abschließen des GPU-Uploads immer im Haupt Thread erfolgen. Beachten Sie Folgendes: Wenn Sie eine der Methoden zum Laden von Ressourcen für eine Ressource aufzurufen, die für das Laden im Hintergrund in die Warteschlange gestellt wird, wird der Haupt Thread so lange angehalten, bis das Laden
 
-Die Funktion zum Laden von asynchronen Szene `LoadAsync` und `LoadAsyncXML` bietet die Option zum Laden der Hintergrund Ressourcen, die zum Laden des Inhalts der Szene zunächst vor dem fortfahren. Es kann auch nur die Ressourcen zu laden, ohne Änderung der Szene durch Angabe verwendet werden die `LoadMode.ResourcesOnly`. Dadurch wird eine Szene oder des Objekts prefab-Datei für schnelle Instanziierung vorbereiten.
+Bei der asynchronen Funktionalität zum Laden von Szenen `LoadAsync` und `LoadAsyncXML` können die Ressourcen zuerst geladen werden, bevor der Inhalt der Szene geladen wird. Sie kann auch verwendet werden, um nur die Ressourcen zu laden, ohne die Szene zu ändern, indem Sie die `LoadMode.ResourcesOnly`angeben. Dadurch kann eine Szene oder Objekt-vorfab-Datei für die schnelle Instanziierung vorbereitet werden.
 
-Die maximale Zeit (in Millisekunden) zum Schluss für jeden Frame aufgewendete Abschluss Hintergrund geladene Ressourcen werden, durch Festlegen konfiguriert können der `FinishBackgroundResourcesMs` Eigenschaft für die `ResourceCache`.
+Schließlich kann die maximale Zeit (in Millisekunden), die für jeden Frame zum Abschließen von im Hintergrund geladenen Ressourcen aufgewendet wurde, durch Festlegen der `FinishBackgroundResourcesMs`-Eigenschaft für die `ResourceCache`konfiguriert werden.
 
 <a name="sound"/>
 
-## <a name="sound"></a>Sound
+## <a name="sound"></a>Vernünftigen
 
-Sound ist ein wichtiger Teil des Spiels, und die von UrhoSharp-Framework bietet eine Möglichkeit der Wiedergabe von Sound in einem Spiel.  Sound durch Anfügen einer `SoundSource`
-Komponente einer `Node` und diese wiedergeben klicken Sie dann aus Ihren Ressourcen einer benannten Datei.
+Sound ist ein wichtiger Teil der Spiel Wiedergabe, und das urhusharp-Framework bietet eine Möglichkeit, Klänge in Ihrem Spiel zu spielen.  Sie spielen Klänge durch Anfügen einer `SoundSource`
+Komponente zu einem `Node` und dann eine benannte Datei aus ihren Ressourcen abspielen.
 
-Dies ist die Vorgehensweise ist:
+Dies geschieht wie folgt:
 
 ```csharp
 var explosionNode = Scene.CreateChild();
@@ -529,11 +529,11 @@ soundSource.AutoRemove = true;
 
 ## <a name="particles"></a>Partikel
 
-Partikel bieten eine einfache Möglichkeit, einige Effekte einfach und kostengünstig, Ihre Anwendung hinzuzufügen.  Sie können Partikel, die in PEX-Format gespeicherte nutzen, der mithilfe von Tools wie [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
+Mit Partikeln können Sie einfache und kostengünstige Effekte zu Ihrer Anwendung hinzufügen.  Sie können im Pex-Format gespeicherte Partikel mithilfe von Tools wie [http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/)verarbeiten.
 
-Partikel sind Komponenten, die auf einen Knoten hinzugefügt werden können.  Sie müssen zum Aufrufen des Knotens `CreateComponent<ParticleEmitter2D>` Methode, um das Partikel erstellen und konfigurieren Sie dann durch der Effect-Eigenschaft auf einen Direct2D-Effekt einstellen, des Partikels aus dem Cache für die Ressource geladen wird.
+Partikel sind Komponenten, die einem Knoten hinzugefügt werden können.  Sie müssen die `CreateComponent<ParticleEmitter2D>`-Methode des Knotens aufrufen, um das Partikel zu erstellen, und dann das Partikel konfigurieren, indem Sie die Effect-Eigenschaft auf einen 2D-Effekt festlegen, der aus dem Ressourcen Cache geladen wird.
 
-Beispielsweise können Sie diese Methode aufrufen, in der Komponente, um einige Partikel anzuzeigen, die als Zahl gerendert werden, wenn er erreicht:
+Sie können diese Methode z. b. für die Komponente aufrufen, um einige Partikel anzuzeigen, die bei einem Anstieg als Explosion gerendert werden:
 
 ```csharp
 public async void Explode (Component target)
@@ -552,27 +552,27 @@ public async void Explode (Component target)
 }
 ```
 
-Der obige Code erstellt einen Explosion-Knoten, der mit Ihrer aktuellen Komponente verbunden ist, die innerhalb dieses Knotens Explosion erstellen wir eine 2D Partikel korrekturemitter und konfigurieren Sie sie durch die Effect-Eigenschaft festlegen.  Wir führen Sie zwei Aktionen, eine, die den Knoten, um kleinere werden skaliert und eine, die es 0,5 Sekunden in dieser Größe verlässt.  Klicken Sie dann entfernen wir das unkontrollierte anwachsen, das wodurch auch die-partikeleffekt vom Bildschirm entfernt.
+Mit dem obigen Code wird ein Explosions Knoten erstellt, der an die aktuelle Komponente angefügt wird. in diesem Explosions Knoten wird ein 2D-Partikelemitter erstellt und konfiguriert, indem die Eigenschaft "Effect" festgelegt wird.  Wir führen zwei Aktionen aus, eine, die den Knoten so skaliert, dass er kleiner ist, und einen, der diesen Wert für 0,5 Sekunden verlässt.  Dann entfernen wir die Explosion, wodurch auch der Partikeleffekt aus dem Bildschirm entfernt wird.
 
-Das oben genannten Partikel Ausgabe bei Verwendung eine Kugel Textur sieht folgendermaßen aus:
+Das obige Partikel rendert bei Verwendung einer Kugel Textur wie folgt:
 
-![Partikel, mit einer Textur für die Kugel](using-images/image-1.png "das oben genannten Partikel Ausgabe sieht folgendermaßen aus bei Verwendung eine Textur für die Kugel")
+![Partikel mit einer Kugel Textur](using-images/image-1.png "Das obige Partikel rendert bei Verwendung einer Kugel Textur wie folgt.")
 
-Und wie es aussieht, wenn Sie eine Textur Blöcke verwenden:
+Und das ist das, was Sie sieht, wenn Sie eine grobe-Textur verwenden:
 
-![Partikel, mit einer Textur Feld](using-images/image-2.png "und wie es aussieht, wenn eine Textur Blöcke verwenden")
+![Partikel mit einer boxtextur](using-images/image-2.png "Und dies ist das, was bei der Verwendung einer grobe-Textur aussieht.")
 
-## <a name="multi-threading-support"></a>Multi-threading-Unterstützung
+## <a name="multi-threading-support"></a>Multithreading-Unterstützung
 
-Von UrhoSharp ist eine einzelne Threads Library.  Dies bedeutet, dass Sie nicht, zum Aufrufen von Methoden in von UrhoSharp aus einem Hintergrundthread versuchen sollten, oder Sie riskieren den Anwendungszustand beschädigen und wahrscheinlich Absturz Ihrer Anwendung.
+Urhusharp ist eine Single Thread-Bibliothek.  Dies bedeutet, dass Sie nicht versuchen sollten, Methoden in urhusharp von einem Hintergrund Thread aufzurufen, oder dass Sie den Anwendungs Zustand beschädigen und den Anwendungs Zustand wahrscheinlich abstürzen.
 
-Wenn Sie Code im Hintergrund ausgeführt, und aktualisieren Sie dann die Urho-Komponenten auf die Hauptbenutzeroberfläche möchten, können Sie die `Application.InvokeOnMain(Action)`
--Methode.  Darüber hinaus können Sie C# -Code "await" verwenden und die .NET task-APIs, um sicherzustellen, dass der Code im entsprechenden Thread ausgeführt wird.
+Wenn Sie Code im Hintergrund ausführen und dann die Urho-Komponenten auf der Hauptbenutzer Oberfläche aktualisieren möchten, können Sie die `Application.InvokeOnMain(Action)`
+-Methode.  Darüber hinaus können Sie mit C# "warten" und den .net-Task-APIs sicherstellen, dass der Code im richtigen Thread ausgeführt wird.
 
-## <a name="urhoeditor"></a>UrhoEditor
+## <a name="urhoeditor"></a>Urhueditor
 
-Sie können den Urho-Editor für Ihre Plattform aus der [Urho Website](http://urho3d.github.io/), wechseln Sie zu Downloads, und wählen Sie die neueste Version.
+Sie können den Urho-Editor für Ihre Plattform von der [Urho-Website](http://urho3d.github.io/)herunterladen. wechseln Sie zu Downloads, und wählen Sie die neueste Version aus.
 
 ## <a name="copyrights"></a>Urheberrechte
 
-Diese Dokumentation enthält die ursprünglichen Inhalte von Xamarin Inc., aber sehr häufig in der open-Source-Dokumentation für das Projekt Urho3D zeichnet und enthält Screenshots aus dem Projekt Cocos2D.
+Diese Dokumentation enthält Originalinhalte von xamarin Inc, zeichnet sich jedoch in der Open-Source-Dokumentation für das Urho3D-Projekt aus und enthält Screenshots aus dem Cocos2D-Projekt.

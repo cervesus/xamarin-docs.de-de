@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 0F0FDD2B-FFB1-476F-B674-81DB3A5E1CF3
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: c14c03d4f618644382aa80b5e0e7fc5b7a46fa9b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 35df724850e1fc945c096aebc91b7aa84936bdc1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760878"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026978"
 ---
 # <a name="android-frequently-asked-questions"></a>Häufig gestellte Fragen zu Android
 
@@ -36,7 +36,7 @@ Xamarin. Android erfordert JDK 8 oder das Microsoft Mobile openjdk. In diesem Ar
 
 ### <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packagesinstall-android-support-librarymd"></a>[Wie kann ich die Android-Unterstützungsbibliotheken, die für die Xamarin.Android.Support-Pakete erforderlich sind, manuell installieren?](install-android-support-library.md)
 
-Dieses Handbuch enthält Beispiel Schritte für die Installation `Xamarin.Android.Support.v4` der Unterstützungs Bibliothek unter Windows & Mac.
+Dieses Handbuch enthält Beispiel Schritte für die Installation der `Xamarin.Android.Support.v4`-Unterstützungs Bibliothek unter Windows & Mac.
 
 ### <a name="what-usb-drivers-do-i-need-to-debug-android-on-windowsandroid-drivers-debug-windowsmd"></a>[Welche USB-Treiber sind zum Debuggen von Android unter Windows erforderlich?](android-drivers-debug-windows.md)
 
@@ -59,7 +59,7 @@ Die häufigste Ursache für dieses Problem ist, dass die **Internet** Berechtigu
 
 ### <a name="smarter-xamarin-android-support-v4--v13-nuget-packagesandroid-support-v4v13-librariesmd"></a>[NuGet-Pakete für eine intelligentere Xamarin Android-Unterstützung v4/v13 ](android-support-v4v13-libraries.md)
 
-`Support-v4`und `Support-v13` können nicht gemeinsam in derselben App verwendet werden, d. h., Sie schließen sich gegenseitig aus. Der Grund hierfür `Support-v13` ist, dass tatsächlich alle Typen und Implementierungen von `Support-v4`enthält. Wenn Sie versuchen, auf beide im gleichen Projekt zu verweisen, werden doppelte Typfehler auftreten.
+`Support-v4` und `Support-v13` können nicht gemeinsam in derselben App verwendet werden, d. h., Sie schließen sich gegenseitig aus. Der Grund hierfür ist, dass `Support-v13` tatsächlich alle Typen und die Implementierung von `Support-v4`enthält. Wenn Sie versuchen, auf beide im gleichen Projekt zu verweisen, werden doppelte Typfehler auftreten.
 
 ### <a name="how-do-i-resolve-a-pathtoolongexception-errorpath-too-long-exceptionmd"></a>[Gewusst wie Auflösen eines PathTooLongException-Fehlers?](path-too-long-exception.md)
 
@@ -80,7 +80,7 @@ Dieser Fehler kann in älteren Versionen von xamarin auftreten, wenn einige der 
 
 ### <a name="adjusting-java-memory-parameters-for-the-android-designerandroid-designer-java-memorymd"></a>[Anpassen der Java-Speicherparameter für Android Designer](android-designer-java-memory.md)
 
-Die standardmäßigen Arbeitsspeicher Parameter, die beim Starten `java` des Prozesses für den Android-Designer verwendet werden, sind möglicherweise mit einigen Systemkonfigurationen nicht kompatibel. Ab Xamarin Studio 5.7.2.7 und xamarin für Visual Studio 3.9.344 können diese Einstellungen auf Projektbasis angepasst werden.
+Die standardmäßigen Arbeitsspeicher Parameter, die beim Starten des `java` Prozesses für den Android-Designer verwendet werden, sind möglicherweise mit einigen Systemkonfigurationen nicht kompatibel. Ab Xamarin Studio 5.7.2.7 und xamarin für Visual Studio 3.9.344 können diese Einstellungen auf Projektbasis angepasst werden.
 
 ### <a name="my-android-resourcedesignercs-file-will-not-updateresource-designer-wont-updatemd"></a>[Meine Android-Datei „Resource.designer.cs“ wird nicht aktualisiert](resource-designer-wont-update.md)
 

@@ -4,15 +4,15 @@ description: 'In diesem Dokument wird die Rückstellung in ios beschrieben: Anwe
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/24/2018
-ms.openlocfilehash: 9ae1860d127ea87e4db830d8a9d299a66fdd0f67
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 78751f53808ffa62589fdc57fe4cf59912849e00
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766591"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010842"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Einführung in die Hintergrundverarbeitung in iOS
 
@@ -28,7 +28,7 @@ Bevor wir uns mit dem Code für die Hintergrundverarbeitung in ios beschäftigen
 
 Der Lebenszyklus der IOS-Anwendung ist eine Sammlung von Anwendungs Zuständen und-Methoden für den Wechsel zwischen diesen. Eine Anwendung wechselt zwischen Zuständen, die auf dem Verhalten des Benutzers und den Anforderungen der zurück setzung der Anwendung basieren. Die Bewegung wird anhand des folgenden Diagramms veranschaulicht:
 
- [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Diagramm der Anwendungs Zustände und Anwendungs Delegatmethoden")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Application States and Application Delegate Methods diagram")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 - Wird **nicht ausgeführt** : die Anwendung wurde noch nicht auf dem Gerät gestartet.
 - Wird **ausgeführt/aktiv** : die Anwendung befindet sich auf dem Bildschirm und führt Code im Vordergrund aus.
@@ -41,17 +41,17 @@ Seit der Einführung der Multitasking-Unterstützung beendet IOS selten *Anwendu
 
 ## <a name="application-lifecycle-methods"></a>Anwendungslebenszyklus-Methoden
 
-Wenn sich der Status einer APP ändert, benachrichtigt IOS die Anwendung über Ereignis Methoden in `AppDelegate` der-Klasse:
+Wenn sich der Status einer APP ändert, benachrichtigt IOS die Anwendung über Ereignis Methoden in der `AppDelegate`-Klasse:
 
-- `OnActivated`-Dies wird beim ersten Start der Anwendung und bei jedem zurückkehren der app in den Vordergrund aufgerufen. Dies ist der Ort, an dem Code abgelegt werden muss, der jedes Mal ausgeführt werden muss, wenn die APP geöffnet wird.
+- `OnActivated`: Diese wird aufgerufen, wenn die Anwendung zum ersten Mal gestartet wird, und jedes Mal, wenn die APP wieder in den Vordergrund steht. Dies ist der Ort, an dem Code abgelegt werden muss, der jedes Mal ausgeführt werden muss, wenn die APP geöffnet wird.
 - `OnResignActivation`: Wenn der Benutzer eine Unterbrechung wie z. b. einen Text oder einen Telefonanruf erhält, wird diese Methode aufgerufen, und die APP ist vorübergehend deaktiviert. Wenn der Benutzer den Telefonanruf annimmt, wird die APP an den Hintergrund gesendet.
-- `DidEnterBackground`-Wird aufgerufen, wenn die app in den Zustand "Background" wechselt, bietet diese Methode ungefähr fünf Sekunden für die Vorbereitung auf eine mögliche Beendigung. Verwenden Sie diese Zeit zum Speichern von Benutzerdaten und-Tasks, und entfernen Sie vertrauliche Informationen auf dem Bildschirm.
-- `WillEnterForeground`: Wenn ein Benutzer zu einer zurückgesetzten oder angehaltenen Anwendung zurückkehrt und ihn im Vordergrund `WillEnterForeground` startet, wird aufgerufen. Dies ist der Zeitpunkt, an dem die APP für den Vordergrund vorbereitet wird, indem Sie alle während `DidEnterBackground` gespeicherten Zustands auffüllt.  `OnActivated`wird unmittelbar nach Abschluss dieser Methode aufgerufen.
-- `WillTerminate`-Die Anwendung wird heruntergefahren, und der Prozess wird zerstört. Diese Methode wird nur aufgerufen, wenn Multitasking auf dem Gerät oder der Betriebssystemversion nicht verfügbar ist, wenn der Arbeitsspeicher gering ist, oder wenn der Benutzer eine Anwendung mit umgekehrtem Arbeitsspeicher manuell beendet. Beachten Sie, dass Angehaltene Anwendungen, die `WillTerminate` beendet werden, nicht aufruft.
+- `DidEnterBackground` aufgerufen, wenn die app in den Zustand "Background" wechselt, gibt diese Methode eine Anwendung ungefähr fünf Sekunden an, um eine mögliche Beendigung vorzubereiten. Verwenden Sie diese Zeit zum Speichern von Benutzerdaten und-Tasks, und entfernen Sie vertrauliche Informationen auf dem Bildschirm.
+- `WillEnterForeground`: Wenn ein Benutzer zu einer zurückgesetzten oder angehaltenen Anwendung zurückkehrt und ihn im Vordergrund startet, wird `WillEnterForeground` aufgerufen. Dies ist der Zeitpunkt, an dem die APP für den Vordergrund vorbereitet wird, indem Sie alle während `DidEnterBackground` gespeicherten Zustände reaktiviert.  `OnActivated` unmittelbar nach Abschluss dieser Methode aufgerufen wird.
+- `WillTerminate`: die Anwendung wird heruntergefahren, und der Prozess wird zerstört. Diese Methode wird nur aufgerufen, wenn Multitasking auf dem Gerät oder der Betriebssystemversion nicht verfügbar ist, wenn der Arbeitsspeicher gering ist, oder wenn der Benutzer eine Anwendung mit umgekehrtem Arbeitsspeicher manuell beendet. Beachten Sie, dass Angehaltene Anwendungen, die beendet werden, `WillTerminate` nicht aufruft.
 
 Im folgenden Diagramm wird veranschaulicht, wie die Anwendungs Zustände und Lebenszyklus Methoden aufeinander abgestimmt sind:
 
- [![](introduction-to-backgrounding-in-ios-images/image2.png "Dieses Diagramm veranschaulicht, wie die Anwendungs Zustände und Lebenszyklus Methoden aufeinander abgestimmt werden.")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "This diagram illustrates how the application states and lifecycle methods fit together")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>Benutzer Steuerelemente für die Rück Setzung in ios
 
@@ -61,7 +61,7 @@ IOS 7 hat mehrere Features eingeführt, mit denen Benutzer eine bessere Kontroll
 
 Der APP-Switcher ist ein wichtiges Steuerungs Feature, das in ios 7 eingeführt wurde. Der Dienst wird durch Doppel Tippen auf die **Start** Schaltfläche gestartet und zeigt die Anwendungen an, deren Prozesse aktiv sind:
 
- [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Wechseln zwischen Apps mithilfe der APP-Switcher")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Moving between apps using the App Switcher")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 Mithilfe der APP-Umschaltung können Benutzer durch die Momentaufnahmen aller abgedeckten und angehaltenen Anwendungen scrollen. Wenn Sie auf eine Anwendung tippen, wird Sie im Vordergrund gestartet. Durch das Schwenken wird die Anwendung aus dem Hintergrund entfernt, und der Prozess wird beendet. Im nächsten Abschnitt wird der APP-Switcher in der Demo des [IOS-Anwendungslebenszyklus](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) näher betrachtet.
 
@@ -74,8 +74,8 @@ IOS 7 erhöht die Benutzerkontrolle über den Anwendungslebenszyklus, indem Benu
 
 Benutzer können diese Einstellung ändern, indem Sie zu **Einstellungen > Allgemein > Hintergrund-App-Aktualisierung** navigieren und die Sicherungs Berechtigungen für eine ausgewählte Anwendung bearbeiten. Wenn die Aktualisierung der Hintergrund-App auf OFF festgelegt ist, wird die Anwendung sofort nach der Eingabe des Hintergrunds angehalten und verhindert, dass eine Hintergrundverarbeitung durchgeführt wird:
 
- [![](introduction-to-backgrounding-in-ios-images/settings-.png "Aktualisierungs Einstellungen für die Hintergrund App")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "Background App Refresh Settings")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
-Entwickler können den Anwendungs Status der Hintergrund Aktualisierung mit der `BackgroundRefreshStatus` API überprüfen. Ein Beispiel finden Sie in der Anleitung zum [Überprüfen der Einstellung für die Hintergrund Aktualisierung](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/check_background_refresh_setting).
+Entwickler können den Anwendungs Status der Hintergrund Aktualisierung mit der `BackgroundRefreshStatus`-API überprüfen. Ein Beispiel finden Sie in der Anleitung zum [Überprüfen der Einstellung für die Hintergrund Aktualisierung](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/check_background_refresh_setting).
 
 Wir haben die Grundlagen des Lebenszyklus der IOS-Anwendung und Features zum Steuern des Anwendungslebenszyklus behandelt. Als nächstes sehen wir uns den Lebenszyklus der IOS-Anwendung an.

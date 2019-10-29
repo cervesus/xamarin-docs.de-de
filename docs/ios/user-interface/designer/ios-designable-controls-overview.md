@@ -4,15 +4,15 @@ description: Der Xamarin Designer für IOS unterstützt das Rendern von benutzer
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 51afbdf79248af6f76426dd0e0c862e506a0a22f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8c38ec407d13a99e2990a6d4cf39b5a23728b1d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768783"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003977"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Benutzerdefinierte Steuerelemente im Xamarin Designer für IOS
 
@@ -45,9 +45,9 @@ Die-Eigenschaft kann auch mit einem [DisplayNameAttribute](xref:System.Component
 
 ## <a name="initialization"></a>Initialisierung
 
-Für `UIViewController` Unterklassen sollten Sie die [viewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code verwenden, der von Sichten abhängt, die Sie im Designer erstellt haben.
+Für `UIViewController`-Unterklassen sollten Sie die [viewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code verwenden, der von Sichten abhängt, die Sie im Designer erstellt haben.
 
-Für `UIView` und andere `NSObject` Unterklassen ist die [awakeFromNib](xref:Foundation.NSObject.AwakeFromNib) -Methode der empfohlene Ort, um die Initialisierung des benutzerdefinierten Steuer Elements auszuführen, nachdem es aus der Layoutdatei geladen wurde. Dies liegt daran, dass benutzerdefinierte Eigenschaften, die im Eigenschaften Panel festgelegt sind, nicht festgelegt werden, wenn der Konstruktor des Steuer Elements ausgeführt `AwakeFromNib` wird, aber vor dem Aufrufen von festgelegt wird:
+Bei `UIView` und anderen `NSObject` Unterklassen ist die [awakeFromNib](xref:Foundation.NSObject.AwakeFromNib) -Methode der empfohlene Ort, um die Initialisierung des benutzerdefinierten Steuer Elements auszuführen, nachdem es aus der Layoutdatei geladen wurde. Dies liegt daran, dass benutzerdefinierte Eigenschaften, die im Eigenschaften Panel festgelegt sind, nicht festgelegt werden, wenn der Konstruktor des Steuer Elements ausgeführt wird. Sie werden jedoch festgelegt, bevor `AwakeFromNib` aufgerufen wird:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -122,14 +122,14 @@ public class CustomView : UIView {
 }
 ```
 
-Die `CustomView` Komponente macht eine `Counter` Eigenschaft verfügbar, die vom Entwickler innerhalb des IOS-Designers festgelegt werden kann. Unabhängig davon, welcher Wert innerhalb des Designers festgelegt wird, ist der Wert `Counter` der-Eigenschaft immer 0 (null). Erläuterung:
+Die `CustomView` Komponente macht eine `Counter` Eigenschaft verfügbar, die vom Entwickler innerhalb des IOS-Designers festgelegt werden kann. Unabhängig davon, welcher Wert innerhalb des Designers festgelegt wird, ist der Wert der `Counter`-Eigenschaft jedoch immer NULL (0). Erläuterung:
 
-- Eine Instanz von `CustomControl` wird aus der storyboarddatei aufgeblasen.
-- Alle Eigenschaften, die im IOS-Designer geändert wurden, werden festgelegt (z. `Counter` b. das Festlegen des Werts von auf zwei (2)).
-- Die `AwakeFromNib` -Methode wird ausgeführt, und es wird ein-Rückruf an `Initialize` die-Methode der Komponente vorgenommen.
-- Innerhalb `Initialize` des Werts `Counter` der-Eigenschaft wird auf 0 (null) zurückgesetzt.
+- Eine Instanz des `CustomControl` wird aus der storyboarddatei aufgeblasen.
+- Alle Eigenschaften, die im IOS-Designer geändert wurden, werden festgelegt (z. b. das Festlegen des Werts der `Counter` auf zwei (2)).
+- Die `AwakeFromNib`-Methode wird ausgeführt, und es wird ein-Rückruf an die `Initialize`-Methode der Komponente durchgeführt.
+- In `Initialize` wird der Wert der `Counter`-Eigenschaft auf 0 (null) zurückgesetzt.
 
-Um die obige Situation zu beheben, initialisieren Sie `Counter` entweder die-Eigenschaft an anderer Stelle (z. b. im Konstruktor der `AwakeFromNib` Komponente), `Initialize` oder überschreiben Sie die-Methode nicht, und wenden Sie an, wenn die Komponente keine weitere Initialisierung außerhalb der wird derzeit von seinen Konstruktoren verarbeitet.
+Um die oben beschriebene Situation zu beheben, initialisieren Sie entweder die `Counter`-Eigenschaft an einer anderen Stelle (z. b. im Konstruktor der Komponente), oder überschreiben Sie die `AwakeFromNib`-Methode nicht, und wenden Sie `Initialize` an, wenn die Komponente keine weitere Initialisierung außerhalb der aktuell wird von den Konstruktoren verarbeitet.
 
 ## <a name="design-mode"></a>Entwurfs Modus
 
@@ -163,24 +163,24 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-Überprüfen Sie immer die `Site` -Eigenschaft `null` für, bevor Sie versuchen, auf eines seiner Member zuzugreifen. Wenn `Site`den Wert hat,kanndavonausgegangenwerden,dassdasSteuerelementnichtimDesignerausgeführtwird.`null`
-Im Entwurfs Modus wird `Site` festgelegt, nachdem der Konstruktor des Steuer Elements ausgeführt wurde und `AwakeFromNib` bevor aufgerufen wird.
+Sie sollten die `Site`-Eigenschaft für `null` immer überprüfen, bevor Sie versuchen, auf eines seiner Member zuzugreifen. Wenn `Site` `null`ist, kann sicher angenommen werden, dass das Steuerelement nicht im Designer ausgeführt wird.
+Im Entwurfs Modus wird `Site` festgelegt, nachdem der Konstruktor des Steuer Elements ausgeführt wurde und bevor `AwakeFromNib` aufgerufen wird.
 
-## <a name="debugging"></a>Debuggen
+## <a name="debugging"></a>Debugging
 
 Ein Steuerelement, das die oben genannten Anforderungen erfüllt, wird in der Toolbox angezeigt und auf der-Oberfläche gerendert.
 Wenn ein Steuerelement nicht gerendert wird, überprüfen Sie das Steuerelement auf Fehler oder eine seiner Abhängigkeiten.
 
 Die Entwurfs Oberfläche kann häufig Ausnahmen abfangen, die von einzelnen Steuerelementen ausgelöst werden, während andere Steuerelemente weitergegeben werden. Das fehlerhafte Steuerelement wird durch einen roten Platzhalter ersetzt, und Sie können die Ausnahme Ablauf Verfolgung anzeigen, indem Sie auf das Ausrufezeichen Symbol klicken:
 
- ![](ios-designable-controls-overview-images/exception-box.png "Ein fehlerhaftes Steuerelement als roter Platzhalter und Ausnahme Details")
+ ![](ios-designable-controls-overview-images/exception-box.png "A faulty control as red placeholder and the exception details")
 
 Wenn für das Steuerelement Debugsymbole verfügbar sind, enthält die Ablauf Verfolgung Dateinamen und Zeilennummern.
 Wenn Sie in der Stapel Überwachung auf eine Zeile doppelklicken, wird diese Zeile im Quellcode angezeigt.
 
 Wenn der Designer das fehlerhafte Steuerelement nicht isolieren kann, wird oben in der Entwurfs Oberfläche eine Warnmeldung angezeigt:
 
- ![](ios-designable-controls-overview-images/info-bar.png "Eine Warnmeldung am oberen Rand der Entwurfs Oberfläche")
+ ![](ios-designable-controls-overview-images/info-bar.png "A warning message at the top of the design surface")
 
 Das vollständige Rendering wird fortgesetzt, wenn das fehlerhafte Steuerelement korrigiert oder von der Entwurfs Oberfläche entfernt wurde.
 

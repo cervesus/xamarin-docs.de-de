@@ -3,15 +3,15 @@ title: Lokalisierung der Anwendungs Benutzeroberfläche
 description: In diesem Dokument werden die plattformübergreifenden Konzepte der Internationalisierung und Lokalisierung beschrieben und erläutert, wie sich diese auf das Anwendungsdesign auswirken.
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9e0a6569710ca3ad10f57d7145a97af92574427c
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 418c0da2b8fa0e495ae7e6a605c7fde43b6515cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198441"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016795"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -59,7 +59,7 @@ Deutsche Zeichen folgen (z. b.) können sehr lang sein. Manchmal wird ein relati
 
 Vergleichen Sie die Zeichen folgen Längen für einige Elemente auf dem IOS-Startbildschirm auf Englisch, Deutsch und Japanisch:
 
-[![](localization-images/language-compare-sml.png "Deutsch und Japanisch Zeichen folgen Länge")](localization-images/language-compare.png#lightbox)
+[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
 
 Beachten Sie, dass die **Einstellungen** in Englisch (8 Zeichen) 13 Zeichen für die deutsche Übersetzung, aber nur 2 Zeichen in Japanisch erfordern.
 
@@ -218,7 +218,7 @@ und die Token werden als der Konvertierer bestimmt. Stellen Sie sicher, dass die
 
 ### <a name="use-multiple-strings-for-cardinality"></a>Verwenden mehrerer Zeichen folgen für die Kardinalität
 
-Vermeiden Sie Zeichen `"You have {0} message/s."` Folgen wie die Verwendung bestimmter Zeichen folgen für jeden Zustand, um eine bessere Benutzer Leistung zu bieten:
+Vermeiden Sie Zeichen folgen wie `"You have {0} message/s."` verwenden Sie bestimmte Zeichen folgen für jeden Zustand, um eine bessere Benutzer Leistung zu bieten:
 
 **Gut**:
 
@@ -235,7 +235,7 @@ Sie müssen Code in ihrer app schreiben, um die angezeigte Zahl auszuwerten und 
 
 In lateinischen Sprachen werden manchmal andere Wörter verwendet, je nach Geschlecht des Subjekts. Wenn Ihre APP über das Geschlecht Bescheid weiß, sollten Sie den übersetzten Zeichen folgen diese Darstellung ermöglichen.
 
-Außerdem gibt es auch in englischer Sprache einen offensichtlicheren Fall, bei dem Zeichen folgen auf eine bestimmte Person oder einen bestimmten Benutzer Ihrer APP verweisen. Beispielsweise zeigen einige Websites Nachrichten `"Bob commented on his post"` so an, dass Sie Zeichen folgen sowohl für ein männlich-, weiblich-als auch für ein nicht binäres oder unbekanntes Geschlecht benötigen:
+Außerdem gibt es auch in englischer Sprache einen offensichtlicheren Fall, bei dem Zeichen folgen auf eine bestimmte Person oder einen bestimmten Benutzer Ihrer APP verweisen. Beispielsweise zeigen einige Websites Nachrichten wie `"Bob commented on his post"` an, sodass Sie Zeichen folgen sowohl für ein männlich-, weiblich-als auch für ein nicht binäres oder unbekanntes Geschlecht benötigen:
 
 **Gut**:
 
@@ -271,7 +271,7 @@ Um Übersetzungsfunktionen in Ihre APP zu erstellen, berücksichtigen Sie die [A
 Zu Testzwecken können Sie eine der zahlreichen Online Übersetzungstools verwenden, um während der Entwicklung einen lokalisierten Text in Ihre APP einzubeziehen:
 
 - [Übersetzer](https://www.bing.com/translator/)
-- [Google Translation](http://translate.google.com/)
+- [Google Translation](https://translate.google.com/)
 
 Es stehen zahlreiche weitere Möglichkeiten zur Verfügung. Die Qualität der maschinellen Übersetzung wird in der Regel nicht als ausreichend erachtet, um eine Anwendung freizugeben, ohne dass Sie zuerst von professionellen Konvertierungsprogramme oder systemeigenen Referenten geprüft
 
@@ -279,7 +279,7 @@ Es stehen zahlreiche weitere Möglichkeiten zur Verfügung. Die Qualität der ma
 
 Es gibt auch professionelle Übersetzungsdienste, die ihre Zeichen folgen an Ihre eigenen Konvertierungen verteilen und Ihnen die abgeschlossenen Übersetzungen für eine Gebühr bereitstellen.
 
-Einer der bekanntesten Dienste ist [Lionbridge](http://www.lionbridge.com/). Die meisten professionellen Dienste unterstützen alle gängigen Dateitypen, einschließlich Zeichen folgen, XML, resx und Pot/po.
+Einer der bekanntesten Dienste ist [Lionbridge](https://www.lionbridge.com/). Die meisten professionellen Dienste unterstützen alle gängigen Dateitypen, einschließlich Zeichen folgen, XML, resx und Pot/po.
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -3,15 +3,15 @@ title: Einstieg in das Xamarin Workbooks SDK
 description: In diesem Dokument wird beschrieben, wie Sie mit dem Xamarin Workbooks SDK beginnen, das zum Entwickeln von Integrationen für Xamarin Workbooks verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 8e3dc65f9f615ff893f3526d53d99da25045c794
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e4a9e9113f83dd89b622de3e1f74f458efd4f07f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283966"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018684"
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Einstieg in das Xamarin Workbooks SDK
 
@@ -19,7 +19,7 @@ Dieses Dokument enthält eine kurze Anleitung für den Einstieg in die Entwicklu
 
 ## <a name="general-overview"></a>Allgemeine Übersicht
 
-Xamarin Workbooks Integrationen sind kleine Bibliotheken, die das [ `Xamarin.Workbooks.Integrations` nuget][nuget] -SDK für die Integration in die Xamarin Workbooks und Inspektor-Agents verwenden, um eine verbesserte Benutzererfahrung zu bieten.
+Xamarin Workbooks Integrationen sind kleine Bibliotheken, die das [`Xamarin.Workbooks.Integrations` nuget][nuget] -SDK für die Integration in die Xamarin Workbooks-und Inspektor-Agents verwenden, um eine verbesserte Umgebung bereitzustellen.
 
 Es gibt drei wichtige Schritte für die ersten Schritte bei der Entwicklung einer Integration – wir erläutern Sie hier.
 
@@ -29,27 +29,27 @@ Integrations Bibliotheken werden am besten als Bibliotheken mit mehreren Plattfo
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Vorlage der portablen Bibliothek Visual Studio für Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
+[![portablen Bibliotheks Vorlage Visual Studio für Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Portable Bibliotheks Vorlage Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
+[![portablen Bibliotheks Vorlage in Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
 
 In Visual Studio sollten Sie sicherstellen, dass Sie die folgenden Zielplattformen für Ihre Portable Bibliothek auswählen:
 
-[![Portable Bibliotheks Plattformen Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
+[![Portable Bibliothek Plattformen Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
 
 -----
 
-Nachdem Sie das Bibliotheksprojekt erstellt haben, fügen Sie über den `Xamarin.Workbooks.Integration` nuget-Paket-Manager einen Verweis auf die nuget-Bibliothek hinzu.
+Nachdem Sie das Bibliotheksprojekt erstellt haben, fügen Sie über den nuget-Paket-Manager einen Verweis auf unsere `Xamarin.Workbooks.Integration` nuget-Bibliothek hinzu.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Nuget-Visual Studio für Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png#lightbox)
+[![nuget-Visual Studio für Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Nuget Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png#lightbox)
+[![nuget Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png#lightbox)
 
 -----
 
@@ -57,7 +57,7 @@ Sie müssen die leere Klasse löschen, die Sie als Teil des Projekts erstellt ha
 
 ## <a name="building-an-integration"></a>Integrieren einer Integration
 
-Wir werden eine einfache Integration erstellen. Wir schätzen die Farbe Grün, daher fügen wir die Farbe Grün als Darstellung zu jedem Objekt hinzu. Erstellen Sie zunächst eine neue Klasse mit `SampleIntegration`dem Namen, und legen Sie `IAgentIntegration` die Implementierung der Schnittstelle ab:
+Wir werden eine einfache Integration erstellen. Wir schätzen die Farbe Grün, daher fügen wir die Farbe Grün als Darstellung zu jedem Objekt hinzu. Erstellen Sie zunächst eine neue Klasse mit dem Namen `SampleIntegration`, und legen Sie Sie als Implementierung unserer `IAgentIntegration` Schnittstelle:
 
 ```csharp
 using Xamarin.Interactive;
@@ -70,7 +70,7 @@ public class SampleIntegration : IAgentIntegration
 }
 ```
 
-Wir möchten für jedes Objekt, das eine grüne Farbe darstellt, eine [Darstellung](~/tools/workbooks/sdk/representations.md) hinzufügen. Hierfür wird ein Darstellungs Anbieter verwendet. Anbieter erben von der `RepresentationProvider` -Klasse – für uns müssen wir nur Folgendes über `ProvideRepresentations`schreiben:
+Wir möchten für jedes Objekt, das eine grüne Farbe darstellt, eine [Darstellung](~/tools/workbooks/sdk/representations.md) hinzufügen. Hierfür wird ein Darstellungs Anbieter verwendet. Anbieter erben von der `RepresentationProvider`-Klasse – wir müssen lediglich `ProvideRepresentations`außer Kraft setzen:
 
 ```csharp
 using Xamarin.Interactive.Representations;
@@ -85,10 +85,10 @@ class SampleRepresentationProvider : RepresentationProvider
 }
 ```
 
-Wir geben einen `Color`, einen vorgefertigten Darstellungs Typen in unserem SDK zurück.
-Sie werden feststellen, dass der Rückgabetyp hier ein `IEnumerable<object>` &mdash;einziger Darstellungs Anbieter ist und möglicherweise viele Darstellungen für ein Objekt zurückgibt. Alle Darstellungs Anbieter werden für jedes Objekt aufgerufen, daher ist es wichtig, keine Annahmen darüber zu treffen, welche Objekte an Sie übermittelt werden.
+Wir geben einen `Color`zurück, einen vordefinierten Darstellungs Typen in unserem SDK.
+Sie werden feststellen, dass der Rückgabetyp hier ein `IEnumerable<object>`&mdash;ein Darstellungs Anbieter möglicherweise viele Darstellungen für ein Objekt zurückgibt. Alle Darstellungs Anbieter werden für jedes Objekt aufgerufen, daher ist es wichtig, keine Annahmen darüber zu treffen, welche Objekte an Sie übermittelt werden.
 
-Der letzte Schritt besteht darin, den Anbieter tatsächlich beim Agent zu registrieren und Arbeitsmappen mitzuteilen, wo der Integrationstyp zu finden ist. Fügen Sie der- `IntegrateWith` Methode in der `SampleIntegration` zuvor erstellten-Klasse den folgenden Code hinzu, um den Anbieter zu registrieren:
+Der letzte Schritt besteht darin, den Anbieter tatsächlich beim Agent zu registrieren und Arbeitsmappen mitzuteilen, wo der Integrationstyp zu finden ist. Fügen Sie den folgenden Code der `IntegrateWith`-Methode in der `SampleIntegration`-Klasse hinzu, die wir zuvor erstellt haben, um den Anbieter zu registrieren:
 
 ```csharp
 agent.RepresentationManager.AddProvider (new SampleRepresentationProvider ());
@@ -100,7 +100,7 @@ Das Festlegen des Integrations Typs erfolgt über ein assemblyweites Attribut. S
 [assembly: AgentIntegration (typeof (SampleIntegration))]
 ````
 
-Während der Entwicklung ist es möglicherweise bequemer, über Ladungen `AddProvider` für `RepresentationManager` zu verwenden, die es Ihnen ermöglichen, einen einfachen Rückruf zu registrieren, um Darstellungen innerhalb einer Arbeitsmappe bereitzustellen, und diesen `RepresentationProvider` Code dann einmal in Ihre Implementierung zu verschieben. Sie sind fertig. Ein Beispiel für das Rendern eines [`OxyPlot`][oxyplot] `PlotModel` könnte wie folgt aussehen:
+Während der Entwicklung ist es möglicherweise bequemer, `AddProvider` Überladungen auf `RepresentationManager` zu verwenden, die es Ihnen ermöglichen, einen einfachen Rückruf zu registrieren, um Darstellungen innerhalb einer Arbeitsmappe bereitzustellen, und diesen Code dann in die `RepresentationProvider` Implementierung zu verschieben, sobald Sie fertig sind. Ein Beispiel für das Rendern einer [`OxyPlot`][oxyplot] `PlotModel` könnte wie folgt aussehen:
 
 ```csharp
 InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
@@ -111,7 +111,7 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 ```
 
 > [!NOTE]
-> Mit diesen APIs können Sie schnell loslegen, aber es wird nicht empfohlen, eine vollständige Integration nur mit Ihnen&mdash;durchführen zu lassen. Sie bieten nur sehr wenig Kontrolle darüber, wie Ihre Typen vom Client verarbeitet werden.
+> Mit diesen APIs können Sie schnell loslegen, aber es wird nicht empfohlen, eine vollständige Integration nur mit Ihnen zu senden,&mdash;Sie nur sehr wenig Kontrolle darüber haben, wie Ihre Typen vom Client verarbeitet werden.
 
 Wenn die Darstellung registriert ist, ist ihre Integration bereit für die Bereitstellung!
 
@@ -155,7 +155,7 @@ und veröffentlichen Sie Sie dann auf [nuget][nugetorg]. Sobald Sie vorhanden si
 
 -----
 
-Beachten Sie, dass keine `#r` Direktiven oder nichts angezeigt wird, um die Integration zu initialisieren – Arbeitsmappen haben all dies für Sie im Hintergrund erledigt!
+Beachten Sie, dass Sie keine `#r` Direktiven oder nichts sehen, um die Integration zu initialisieren – Arbeitsmappen haben all dies für Sie im Hintergrund erledigt!
 
 ## <a name="next-steps"></a>Nächste Schritte
 

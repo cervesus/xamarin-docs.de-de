@@ -3,15 +3,15 @@ title: Übersicht über Unified API
 description: Die Unified API von xamarin ermöglicht die gemeinsame Nutzung von Code zwischen Mac und IOS sowie die Unterstützung von 32-und 64-Bit-Anwendungen mit derselben Binärdatei.
 ms.prod: xamarin
 ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: cc27b3162c03f0292d3910f86fac9ed89b117f6f
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: 372a51ba204b3b87d1bb3917b26c0ffb8acfceb6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033322"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015135"
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified API
 
@@ -41,8 +41,8 @@ Unabhängig davon, welche Anwendungen migriert werden, sehen Sie sich [diese Tip
 
 Ab diesem Zeitpunkt werden unsere APIs auf zwei Arten angezeigt:
 
-- **Classic API:** Beschränkt auf 32 Bits (nur) und in den `monotouch.dll` Assemblys und `XamMac.dll` verfügbar gemacht.
-- **Unified API:** Unterstützung der 32-und 64-Bit-Entwicklung mit einer einzelnen `Xamarin.iOS.dll` API `Xamarin.Mac.dll` , die in den Assemblys und verfügbar
+- **Classic API:** Beschränkt auf 32 Bits (nur) und in den `monotouch.dll`-und `XamMac.dll`-Assemblys verfügbar gemacht.
+- **Unified API:** Unterstützung der 32-und 64-Bit-Entwicklung mit einer einzelnen API, die in den `Xamarin.iOS.dll`-und `Xamarin.Mac.dll`-Assemblys
 
 Dies bedeutet, dass Sie für Unternehmensentwickler (nicht für den App Store) die vorhandenen klassischen APIs weiterhin verwenden können, da wir Sie dauerhaft beibehalten werden, oder Sie können ein Upgrade auf die neuen APIs durchführen.
 
@@ -84,7 +84,7 @@ Eine vollständige Liste der Änderungen beim Wechsel von der klassischen zum Un
 
 ## <a name="updating-to-unified"></a>Aktualisieren auf Unified
 
-Einige alte/unterbrochene/veraltete **APIs sind in** der **vereinheitlichten** API nicht verfügbar. Es kann einfacher sein, die `CS0616` Warnungen zu beheben, bevor Sie mit der (manuellen oder automatisierten) Aktualisierung beginnen, da Sie über die `[Obsolete]` Attribut Meldung (Teil der Warnung) zur richtigen API gelangen.
+Einige alte/unterbrochene/veraltete **APIs sind in** der **vereinheitlichten** API nicht verfügbar. Es kann einfacher sein, die `CS0616` Warnungen zu beheben, bevor Sie mit dem (manuellen oder automatisierten) Upgrade beginnen, da Sie über die `[Obsolete]` Attribut Meldung (Teil der Warnung) zur richtigen API gelangen.
 
 Beachten Sie, dass wir einen [*diff*](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) der klassischen vs Unified API-Änderungen veröffentlichen, die entweder vor oder nach dem Projekt aktualisiert werden können. Immer noch eine Korrektur der veralteten Aufrufe in klassischem, ist oft ein Zeitersparnis (weniger Dokumentations Suchvorgänge).
 
@@ -110,11 +110,11 @@ Hintergrundinformationen zur Unterstützung von 32-und 64-Bit-Anwendungen sowie 
 
 Im Kern des Unterschieds verwenden sowohl Mac-als auch IOS-APIs eine architekturspezifische Datentypen, die auf 32-Bit-Plattformen immer 32 Bit und 64 Bit auf 64-Bit-Plattformen sind.
 
-Beispielsweise ordnet Ziel-C den `NSInteger` `int32_t` Datentyp auf `int64_t` 32-Bit-Systemen und auf 64-Bit-Systemen zu.
+Beispielsweise ordnet Ziel-C den `NSInteger`-Datentyp `int32_t` auf 32-Bit-Systemen und `int64_t` auf 64-Bit-Systemen zu.
 
-Um dieses Verhalten zu erfüllen, ersetzen wir in unserem Unified API die vorherigen Verwendungen von `int` (die in .net als immer wird `System.Int32`definiert definiert) auf einen neuen Datentyp: `System.nint`.  Sie können sich "n" als "Native" vorstellen, also den nativen ganzzahligen Typ der Plattform.
+Um dieses Verhalten zu erfüllen, ersetzen wir in unserem Unified API die vorherigen Verwendungsmöglichkeiten von `int` (die in .net als immer `System.Int32`definiert ist) an einen neuen Datentyp: `System.nint`.  Sie können sich "n" als "Native" vorstellen, also den nativen ganzzahligen Typ der Plattform.
 
-Wir führen eine `nint`Einführung `nuint` durch `nfloat` und stellen auch ggf. auf Ihnen basierende Datentypen bereit.
+Wir stellen `nint`, `nuint` und `nfloat` sowie ggf. auf Ihnen basierende Datentypen vor.
 
 Weitere Informationen zu diesen Datentyp Änderungen finden Sie im Dokument [native Typen](~/cross-platform/macios/nativetypes.md) .
 
@@ -134,7 +134,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>Arrays und System. Collections. Generic
 
-Da C# Indexer einen Typ von `int`erwarten, `nint` müssen Sie Werte explizit in `int` umwandeln, um auf die Elemente in einer Auflistung oder einem Array zuzugreifen. Beispiel:
+Da C# Indexer einen Typ von`int`erwarten, müssen Sie `nint`Werte explizit in`int`umwandeln, um auf die Elemente in einer Auflistung oder einem Array zuzugreifen. Beispiel:
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -146,11 +146,11 @@ public string GetName(nint index) {
 
 ```
 
-Dies ist das erwartete Verhalten, weil die Umwandlung `int` von `nint` in den 64-Bit-Wertverlust hat, wird keine implizite Konvertierung durchgeführt.
+Dies ist das erwartete Verhalten, da die Umwandlung von `int` in `nint` in 64 Bit Verlust Haft ist, aber keine implizite Konvertierung erfolgt.
 
 ### <a name="converting-datetime-to-nsdate"></a>DateTime wird in nsdate umgerechnet
 
-Bei Verwendung der vereinheitlichten APIs wird die implizite Konvertierung `DateTime` von `NSDate` in-Werte nicht mehr durchgeführt. Diese Werte müssen explizit von einem Typ in einen anderen konvertiert werden. Die folgenden Erweiterungs Methoden können verwendet werden, um diesen Prozess zu automatisieren:
+Bei Verwendung der Unified APIs wird die implizite Konvertierung von `DateTime` in `NSDate` Werte nicht mehr durchgeführt. Diese Werte müssen explizit von einem Typ in einen anderen konvertiert werden. Die folgenden Erweiterungs Methoden können verwendet werden, um diesen Prozess zu automatisieren:
 
 ```csharp
 public static DateTime NSDateToDateTime(this NSDate date)
@@ -178,10 +178,10 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 ### <a name="deprecated-apis-and-typos"></a>Veraltete APIs und Typos
 
-In der klassischen xamarin. IOS-API (MonoTouch. dll `[Obsolete]` ) wurde das-Attribut auf zwei verschiedene Arten verwendet:
+In der klassischen xamarin. IOS-API (MonoTouch. dll) wurde das `[Obsolete]`-Attribut auf zwei unterschiedliche Arten verwendet:
 
-- **Als veraltet markierte IOS-API:** Dies ist der Fall, wenn Apple Ihnen Hinweise zum Beenden der Verwendung einer API gibt, da Sie durch eine neuere ersetzt wird. Der Classic API ist weiterhin in Ordnung und oft erforderlich (wenn Sie die ältere Version von IOS unterstützen).
- Eine derartige API (und `[Obsolete]` das-Attribut) ist in den neuen xamarin. IOS-Assemblys enthalten.
+- Als **veraltet markierte IOS-API:** Dies ist der Fall, wenn Apple Ihnen Hinweise zum Beenden der Verwendung einer API gibt, da Sie durch eine neuere ersetzt wird. Der Classic API ist weiterhin in Ordnung und oft erforderlich (wenn Sie die ältere Version von IOS unterstützen).
+ Diese API (und das `[Obsolete]`-Attribut) sind in den neuen xamarin. IOS-Assemblys enthalten.
 - **Falsche API** Für einige APIs gab es Tippfehler in ihren Namen.
 
 Bei den ursprünglichen Assemblys ("MonoTouch. dll" und "xammac. dll") wurde der alte Code aus Kompatibilitätsgründen verfügbar gehalten, aber aus den Unified API Assemblys (xamarin. IOS. dll und xamarin. Mac) entfernt.
@@ -190,11 +190,11 @@ Bei den ursprünglichen Assemblys ("MonoTouch. dll" und "xammac. dll") wurde der
 
 ### <a name="nsobject-subclasses-ctorintptr"></a>NSObject Unterklassen. ctor (IntPtr)
 
-Jede `NSObject` Unterklasse verfügt über einen Konstruktor, der `IntPtr`ein akzeptiert. Auf diese Weise können wir eine neue verwaltete Instanz aus einem systemeigenen ObjC-handle instanziieren.
+Jede `NSObject`-Unterklasse verfügt über einen Konstruktor, der eine `IntPtr`akzeptiert. Auf diese Weise können wir eine neue verwaltete Instanz aus einem systemeigenen ObjC-handle instanziieren.
 
 In Classic war dies ein `public` Konstruktor. Es war jedoch einfach, dieses Feature in Benutzercode zu missbrauchen, z. b. das Erstellen mehrerer verwalteter Instanzen für eine einzelne ObjC-Instanz *oder* das Erstellen einer verwalteten Instanz, die den erwarteten verwalteten Zustand (für Unterklassen) nicht aufzeigte.
 
-Um diese Art von Problemen zu vermeiden `IntPtr` , befinden sich die `protected` Konstruktoren jetzt in der **vereinheitlichten** API, sodass Sie nur für die Unterklassen verwendet werden können. Dadurch wird sichergestellt, dass die richtige/sichere API verwendet wird, um verwaltete Instanzen aus Handles zu erstellen, d. h.
+Um diese Art von Problemen zu vermeiden, werden die `IntPtr`-Konstruktoren nun in der **Unified** API `protected`, sodass Sie nur für die Unterklassen verwendet werden können. Dadurch wird sichergestellt, dass die richtige/sichere API verwendet wird, um verwaltete Instanzen aus Handles zu erstellen, d. h.
 
 ```csharp
 var label = Runtime.GetNSObject<UILabel> (handle);
@@ -202,13 +202,13 @@ var label = Runtime.GetNSObject<UILabel> (handle);
 
 Diese API gibt eine vorhandene verwaltete Instanz zurück (falls Sie bereits vorhanden ist) oder erstellt eine neue Instanz (falls erforderlich). Es ist bereits in klassischer und einheitlicher API verfügbar.
 
-Beachten Sie, `.ctor(NSObjectFlag)` dass die jetzt `protected` auch ist, aber diese wurde nur selten außerhalb der Unterklassen verwendet.
+Beachten Sie, dass der `.ctor(NSObjectFlag)` jetzt ebenfalls `protected` ist, aber dieser wird nur selten außerhalb der Unterklassen verwendet.
 
 <a name="NSAction" />
 
 ### <a name="nsaction-replaced-with-action"></a>Nsaction ersetzt durch Aktion
 
-Mit den Unified APIs `NSAction` wurde aus dem standardmäßigen .net `Action`entfernt. Dies ist eine große Verbesserung `Action` `NSAction` , da ein gängiger .NET-Typ ist, der jedoch für xamarin. IOS spezifisch ist. Beide Aufgaben tun genau dasselbe, aber Sie waren unterschiedliche und inkompatible Typen, und es musste mehr Code geschrieben werden, um das gleiche Ergebnis zu erzielen.
+Mit den Unified APIs wurde `NSAction` zugunsten der standardmäßigen .net-`Action`entfernt. Dies ist eine große Verbesserung, da `Action` ein gängiger .NET-Typ ist, während `NSAction` für xamarin. IOS spezifisch war. Beide Aufgaben tun genau dasselbe, aber Sie waren unterschiedliche und inkompatible Typen, und es musste mehr Code geschrieben werden, um das gleiche Ergebnis zu erzielen.
 
 Wenn Ihre vorhandene xamarin-Anwendung z. b. den folgenden Code enthält:
 
@@ -224,11 +224,11 @@ Sie kann jetzt durch einen einfachen Lambda-Ausdruck ersetzt werden:
 UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDownAnimated(tblDataView));
 ```
 
-Früher `NSAction`war dies ein Compilerfehler, da `Action` kein zugewiesen werden kann. da `UITapGestureRecognizer` nun jedoch einen `Action` anstelle von `NSAction` erfordert, ist er in den vereinheitlichten APIs gültig.
+Früher war dies ein Compilerfehler, weil ein `Action` `NSAction`nicht zugewiesen werden kann, da `UITapGestureRecognizer` nun eine `Action` anstelle eines `NSAction` annimmt, ist es in den vereinheitlichten APIs gültig.
 
-### <a name="custom-delegates-replaced-with-actiont"></a>Benutzerdefinierte Delegaten,\<die durch Action T ersetzt wurden >
+### <a name="custom-delegates-replaced-with-actiont"></a>Benutzerdefinierte Delegaten wurden durch Action\<t ersetzt >
 
-In **vereinheitlichten** (z. b. einem Parameter) wurden .net-Delegaten durch ersetzt `Action<T>`. Beispiel:
+In **vereinheitlichten** einigen einfachen (z. b. einem Parameter) wurden .net-Delegaten durch `Action<T>`ersetzt. Die
 
 ```csharp
 public delegate void NSNotificationHandler (NSNotification notification);
@@ -236,15 +236,15 @@ public delegate void NSNotificationHandler (NSNotification notification);
 
 kann nun als `Action<NSNotification>`verwendet werden. Dies fördert die Wiederverwendung von Code und verringert die Code Duplizierung in xamarin. IOS und ihren eigenen Anwendungen.
 
-### <a name="taskbool-replaced-with-taskbooleannserror"></a>Der\<Task "bool" > durch Task < Boolean, nserror > ersetzt >
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>Task\<bool > durch Task < Boolean, nserror > ersetzt >
 
-Im **klassischen** Modell gab es einige Async- `Task<bool>`APIs, die zurückkehrten. Einige von Ihnen sind jedoch zu verwenden, wenn ein `NSError` Teil der Signatur war, d. h. `bool` , der `true` war bereits vorhanden, und Sie mussten eine Ausnahme abfangen, um das `NSError`zu erhalten.
+Im **klassischen** Modell gab es einige Async-APIs, die `Task<bool>`zurückgeben. Einige von Ihnen sind jedoch zu verwenden, wenn ein `NSError` Teil der Signatur war, d. h., der `bool` war bereits `true`, und Sie mussten eine Ausnahme abfangen, um die `NSError`zu erhalten.
 
-Da einige Fehler sehr häufig auftreten und der Rückgabewert nicht nützlich war, wurde dieses Muster in **Unified** geändert, um `Task<Tuple<Boolean,NSError>>`einen zurückzugeben. Dies ermöglicht es Ihnen, sowohl den Erfolg als auch alle Fehler zu überprüfen, die während des Async-Aufrufes aufgetreten sind.
+Da einige Fehler sehr häufig auftreten und der Rückgabewert nicht nützlich war, wurde dieses Muster in **Unified** geändert, um ein `Task<Tuple<Boolean,NSError>>`zurückzugeben. Dies ermöglicht es Ihnen, sowohl den Erfolg als auch alle Fehler zu überprüfen, die während des Async-Aufrufes aufgetreten sind.
 
 ### <a name="nsstring-vs-string"></a>NSString im Vergleich zu String
 
-In einigen Fällen mussten einige Konstanten von `string` in `NSString`geändert werden, z. b.`UITableViewCell`
+In einigen Fällen mussten einige Konstanten von `string` in `NSString`geändert werden, z. b. `UITableViewCell`
 
 **Ern**
 
@@ -258,13 +258,13 @@ public virtual string ReuseIdentifier { get; }
 public virtual NSString ReuseIdentifier { get; }
 ```
 
-Im allgemeinen bevorzugen wir den .net `System.String` -Typ. Trotz der Apple-Richtlinien hingegen vergleichen einige Native API Konstante Zeiger (nicht die Zeichenfolge selbst), und dies kann nur funktionieren, wenn wir die `NSString`Konstanten als verfügbar machen.
+Im allgemeinen bevorzugen wir den .net-`System.String` Typ. Trotz der Apple-Richtlinien hingegen vergleichen einige Native API Konstante Zeiger (nicht die Zeichenfolge selbst), und dies kann nur funktionieren, wenn die Konstanten als `NSString`verfügbar gemacht werden.
 
  <a name="protocols" />
 
 ### <a name="objective-c-protocols"></a>Ziel-C-Protokolle
 
-Der ursprüngliche MonoTouch hat keine vollständige Unterstützung für ObjC-Protokolle und einige, nicht optimale API hinzugefügt, um das gängigste Szenario zu unterstützen. Diese Einschränkung ist nicht mehr vorhanden, aber aus Gründen der Abwärtskompatibilität werden mehrere APIs innerhalb `monotouch.dll` von und `XamMac.dll`beibehalten.
+Der ursprüngliche MonoTouch hat keine vollständige Unterstützung für ObjC-Protokolle und einige, nicht optimale API hinzugefügt, um das gängigste Szenario zu unterstützen. Diese Einschränkung ist nicht mehr vorhanden, aber aus Gründen der Abwärtskompatibilität werden mehrere APIs in `monotouch.dll` und `XamMac.dll`beibehalten.
 
 Diese Einschränkungen wurden in den vereinheitlichten APIs entfernt und bereinigt. Die meisten Änderungen sehen wie folgt aus:
 
@@ -280,7 +280,7 @@ public virtual AVAssetResourceLoaderDelegate Delegate { get; }
 public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
 ```
 
-Das `I` Präfix bedeutet, dass **Unified** eine Schnittstelle anstelle eines bestimmten Typs für das ObjC-Protokoll verfügbar macht. Dies erleichtert Fälle, in denen der von xamarin. IOS bereitgestellte spezifische Typ nicht unterteilt werden soll.
+Das `I`-Präfix bedeutet, dass **Unified** eine Schnittstelle anstelle eines bestimmten Typs für das ObjC-Protokoll verfügbar macht. Dies erleichtert Fälle, in denen der von xamarin. IOS bereitgestellte spezifische Typ nicht unterteilt werden soll.
 
 Außerdem war es möglich, eine API präziser und benutzerfreundlicher zu verwenden, z. b.:
 
@@ -300,12 +300,12 @@ Diese API ist jetzt einfacher zu nutzen, ohne auf die Dokumentation zu verweisen
 
 #### <a name="nscoding-protocol"></a>Nscoding-Protokoll
 
-Unsere ursprüngliche Bindung enthielt eine. ctor (nscoder) für jeden Typ, auch wenn das `NSCoding` Protokoll nicht unterstützt wurde.  Eine einzelne `Encode(NSCoder)` Methode war `NSObject` im vorhanden, um das Objekt zu codieren.
+Unsere ursprüngliche Bindung enthielt eine. ctor (nscoder) für jeden Typ, auch wenn das `NSCoding`-Protokoll nicht unterstützt wurde.  Eine einzelne `Encode(NSCoder)` Methode war im `NSObject` vorhanden, um das Objekt zu codieren.
 Diese Methode funktioniert jedoch nur, wenn die Instanz mit dem nscoding-Protokoll konform ist.
 
-Auf der Unified API wir dies korrigiert haben.  Die neuen Assemblys verfügen nur `.ctor(NSCoder)` über den, `NSCoding`wenn der Typ entspricht. Außerdem verfügen solche Typen nun über `Encode(NSCoder)` eine-Methode, die `INSCoding` der-Schnittstelle entspricht.
+Auf der Unified API wir dies korrigiert haben.  Die neuen Assemblys verfügen nur über die `.ctor(NSCoder)`, wenn der Typ `NSCoding`entspricht. Außerdem verfügen solche Typen nun über eine `Encode(NSCoder)`-Methode, die der `INSCoding`-Schnittstelle entspricht.
 
-Geringe Auswirkung: In den meisten Fällen wirkt sich diese Änderung nicht auf Anwendungen aus, da die alten, entfernten Konstruktoren nicht verwendet werden konnten.
+Geringe Auswirkung: in den meisten Fällen wirkt sich diese Änderung nicht auf Anwendungen aus, da die alten, entfernten Konstruktoren nicht verwendet werden konnten.
 
 ## <a name="further-tips"></a>Weitere Tipps
 
@@ -313,7 +313,7 @@ Weitere Änderungen, die Sie beachten sollten, sind in den [Tipps zum Aktualisie
 
 ## <a name="sample-code"></a>Beispielcode
 
-Seit dem 31. Juli haben wir die Ports der IOS-Beispiele für diese neue API in der `magic-types` Verzweigung bei [MonoTouch-Samples](https://github.com/xamarin/monotouch-samples/commits/magic-types)veröffentlicht.
+Seit dem 31. Juli haben wir die Ports der IOS-Beispiele für diese neue API in der `magic-types` Branch in " [MonoTouch-Samples](https://github.com/xamarin/monotouch-samples/commits/magic-types)" veröffentlicht.
 
 Für Mac überprüfen wir die Beispiele sowohl im [Mac-Samples-](https://github.com/xamarin/mac-samples) Repository (mit neuen APIs in Mavericks/Yosemite) als auch in den 32/64-Bit-Beispielen in der Magic-Types-Verzweigung [Mac-Samples](https://github.com/xamarin/monotouch-samples/commits/magic-types).
 

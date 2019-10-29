@@ -3,19 +3,19 @@ title: Erstellen von plattformübergreifenden Anwendungen
 description: In diesem Abschnitt wird in Zusammenfassung und sechs Teilen erläutert, wie Sie Anwendungen mithilfe der xamarin-Entwicklungsplattform Erstellen – von der Funktionsweise von xamarin bis zum Entwerfen mobiler apps und anschließendes testen und Bereitstellen in den verschiedenen App Stores.
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.openlocfilehash: b3444b962a032ceaeeba36f63ad975b3d80a9f14
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "70288058"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016929"
 ---
 # <a name="building-cross-platform-applications"></a>Erstellen von plattformübergreifenden Anwendungen
 
-Es gibt zwei Optionen für die gemeinsame Nutzung von Code zwischen plattformübergreifenden mobilen Anwendungen: Freigegebene assetprojekte und Portable Klassenbibliotheken. Diese Optionen werden [hier beschrieben](~/cross-platform/app-fundamentals/code-sharing.md). Weitere Informationen zu [portablen Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md) und frei [gegebenen Projekten](~/cross-platform/app-fundamentals/shared-projects.md) sind ebenfalls verfügbar.
+Es gibt zwei Optionen für die gemeinsame Nutzung von Code zwischen plattformübergreifenden mobilen Anwendungen: freigegebene assetprojekte und Portable Klassenbibliotheken. Diese Optionen werden [hier beschrieben](~/cross-platform/app-fundamentals/code-sharing.md). Weitere Informationen zu [portablen Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md) und frei [gegebenen Projekten](~/cross-platform/app-fundamentals/shared-projects.md) sind ebenfalls verfügbar.
 
 <a name="Sections" />
 
@@ -46,7 +46,7 @@ Die in diesem Dokument beschriebenen Prinzipien werden in der Praxis in der Beis
 Tasky ist eine einfache Aufgabenlisten Anwendung für IOS, Android und Windows phone.
 Es veranschaulicht die Grundlagen der Erstellung einer plattformübergreifenden Anwendung mit xamarin und der Verwendung einer lokalen SQLite-Datenbank.
 
- Liste der [![tasky Liste](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [![tasky](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
+ [![Tasky List](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [![Tasky List](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 Lesen Sie die [Tasky-Fallstudie](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
@@ -63,8 +63,8 @@ Schließlich wird das Testen kurz erläutert, und es werden Verweise auf eine Fa
 ## <a name="related-links"></a>Verwandte Links
 
 - [Freigeben von Code Optionen](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Fallstudie: Tasky-](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
+- [Fallstudie: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky-Beispiel-app (GitHub)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin Entwicklung mobiler Anwendungen: Platt Form C# übergreifende und xamarin. Forms-Grundlagen (Amazon) ](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
-- [Mobile-Entwicklung C# mit Greg Shackles (o. o.)](http://shop.oreilly.com/product/0636920024002.do)
-- [Professionelle plattformübergreifende Mobile Entwicklung in C# von Scott Olson, John Hunter, Ben Horgen, Kenny-Besucher (Wrox)](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)
+- [Xamarin Mobile-Anwendungsentwicklung: Platt Form C# übergreifende und xamarin. Forms-Grundlagen (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Mobile-Entwicklung C# mit Greg Shackles (o. o.)](https://shop.oreilly.com/product/0636920024002.do)
+- [Professionelle plattformübergreifende Mobile Entwicklung in C# von Scott Olson, John Hunter, Ben Horgen, Kenny-Besucher (Wrox)](https://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

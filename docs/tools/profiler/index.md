@@ -3,15 +3,15 @@ title: Xamarin Profiler
 description: In diesem Leitfaden werden die wichtigsten Features der Xamarin Profiler erläutert. Dabei werden Profiler, Profilerstellung und Zeitpunkt der Verwendung sowie ein Standard Workflow für die Profilerstellung von xamarin-Anwendungen untersucht.
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: b567985fcfd9e133587c5c285e17d21465fda659
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 330d41ea795754388402fbb7c660ba8d77f1aa4b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250081"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019407"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -55,11 +55,11 @@ Der Xamarin Profiler stellt Entwicklern eine Möglichkeit zum Erstellen von Prof
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-Derzeit können die Xamarin Profiler verwendet werden, um xamarin. IOS-, xamarin. Android-und xamarin. Mac-Anwendungen auf dem Mac (über Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE und kann daher nicht nur über Visual Studio für Mac gestartet werden, sondern kann als eigenständige Anwendung verwendet werden, um exe-Dateien und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
+Derzeit können die Xamarin Profiler verwendet werden, um xamarin. IOS-, xamarin. Android-und xamarin. Mac-Anwendungen auf dem Mac (über Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE und kann daher nicht nur über Visual Studio für Mac gestartet werden, sondern kann als eigenständige Anwendung verwendet werden, um exe-und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Derzeit kann der Xamarin Profiler verwendet werden, um xamarin. Android-Apps unter Windows (über Visual Studio und Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE. Daher kann er zusätzlich zum Starten von Visual Studio als eigenständige Anwendung verwendet werden, um exe-Dateien und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
+Derzeit kann der Xamarin Profiler verwendet werden, um xamarin. Android-Apps unter Windows (über Visual Studio und Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE. Daher kann er zusätzlich zum Starten von Visual Studio als eigenständige Anwendung verwendet werden, um exe-und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
 
 -----
 
@@ -96,7 +96,7 @@ In diesem Abschnitt werden die Teile des Xamarin Profiler vorgestellt und die zu
 
 Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerstellung in den Projektoptionen der App zulassen.
 
-- iOS:
+- erhältlich
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -112,7 +112,7 @@ Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerst
 
 -----
 
-- Android:
+- Erhältlich
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -198,7 +198,7 @@ Der Xamarin Profiler besteht aus fünf Abschnitten, wie unten dargestellt:
 - **Instrumentations Liste** – Hiermit werden alle für die Profil Erstellungs Sitzung geladenen Instrumente aufgelistet.
 - **Plotdiagramm** – diese Diagramme beziehen sich horizontal auf die relevanten Instrumente in der Instrumentations Liste. Mithilfe eines Schiebereglers (unten Zeit Profiler) kann die Skala geändert werden.
 - **Instrumentierungsdetailbereich** -enthält Daten, die von der ausgewählten Ansicht des aktuellen Instrumentations Instruments angezeigt werden. Diese Sichten werden im folgenden Abschnitt ausführlicher erläutert.
-- **Inspektoransicht** – enthält Abschnitte, die vom segmentierten Steuerelement ausgewählt werden können. Die Abschnitte sind vom ausgewählten Instrument abhängig und umfassen Folgendes: Konfigurationseinstellungen, Statistiken, Stapel Verfolgungs Informationen und Pfad zu Stamm Elementen.
+- **Inspektoransicht** – enthält Abschnitte, die vom segmentierten Steuerelement ausgewählt werden können. Die Abschnitte sind vom ausgewählten Instrument abhängig und beinhaltet: Konfigurationseinstellungen, Statistiken, Stapel Verfolgungs Informationen und Pfad zu Stamm Elementen.
 
 ### <a name="allocations"></a>Bewilli
 
@@ -222,11 +222,11 @@ Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entw
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![Registerkarte "Zuweisungen](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [Registerkarte![Belegungen](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![Registerkarte "Zuweisungen](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [Registerkarte![Belegungen](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -238,11 +238,11 @@ Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![Registerkarte "Callcenter"](images/allocations2.png)](images/allocations2.png#lightbox) 
+  [Registerkarte "![Registerkarte"](images/allocations2.png)](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![Registerkarte "Callcenter"](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
+  [Registerkarte "![Registerkarte"](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -250,11 +250,11 @@ Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![Momentaufnahmen](images/allocations4.png)](images/allocations4.png#lightbox) 
+  [Registerkarte "!["](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![Momentaufnahmen](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
+  [Registerkarte "!["](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -268,13 +268,13 @@ Das Zeichnungs Diagramm zeigt, wie im folgenden Screenshot gezeigt, die Anzahl d
 
 [![Zeit-profilerinstrument](images/time1.png)](images/time1.png#lightbox) 
 
-[![Zeit Profil Erstellungs Instrument – Beispielliste](images/time3.png)](images/time3.png#lightbox) 
+[![Time Profiler Instrumentation – Samples List](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![Zeit-profilerinstrument](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Zeit Profil Erstellungs Instrument – Beispielliste](images/time3-vs.png)](images/time3-vs.png#lightbox) 
+[![Time Profiler Instrumentation – Samples List](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -282,11 +282,11 @@ Das Zeichnungs Diagramm zeigt, wie im folgenden Screenshot gezeigt, die Anzahl d
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![Zeit Profil Erstellungs Instrument – Aufruf Struktur](images/time2.png)](images/time2.png#lightbox) 
+  [![Zeit-Profiler-Instrumentations Instrument – Aufruf Struktur](images/time2.png)](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![Zeit Profil Erstellungs Instrument – Aufruf Struktur](images/time2-vs.png)](images/time2-vs.png#lightbox) 
+  [![Zeit-Profiler-Instrumentations Instrument – Aufruf Struktur](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -312,11 +312,11 @@ Wenn Sie ein Profil für eine APP mit einer anderen Konfiguration erstellen, wir
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Profil Erstellungs Fehler](images/image001.png)](images/image001.png#lightbox) 
+[Dialog Feld "Fehler beim![](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Profil Erstellungs Fehler](images/image1vs.png)](images/image1vs.png#lightbox) 
+[Dialog Feld "Fehler beim![](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 

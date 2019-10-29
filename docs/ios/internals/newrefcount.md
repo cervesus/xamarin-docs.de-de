@@ -4,15 +4,15 @@ description: In diesem Dokument wird das erweiterte Verweis zählungs System von
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8d8ad5b5f79b90fc415c9e3cdf6809a4e196056f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753346"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022300"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Neues Verweis zählungs System in xamarin. IOS
 
@@ -22,13 +22,13 @@ Xamarin. IOS 9.2.1 hat das erweiterte Verweis Zählsystem standardmäßig für a
 
 Ab xamarin 9.2.1 wird das neue Verweis Zählsystem standardmäßig für **alle** Anwendungen aktiviert.
 
-Wenn Sie eine vorhandene Anwendung entwickeln, können Sie die CSPROJ-Datei überprüfen, um sicherzustellen, dass `MtouchUseRefCounting` alle Vorkommen von `true`auf festgelegt sind, wie unten dargestellt:
+Wenn Sie eine vorhandene Anwendung entwickeln, können Sie die CSPROJ-Datei überprüfen, um sicherzustellen, dass alle Vorkommen von `MtouchUseRefCounting` auf `true`festgelegt sind, wie unten dargestellt:
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-Wenn Sie auf festgelegt `false` ist, werden die neuen Tools nicht von der Anwendung verwendet.
+Wenn der Wert auf festgelegt ist `false` werden die neuen Tools von der Anwendung nicht verwendet.
 
 ### <a name="using-older-versions-of-xamarin"></a>Verwenden älterer Versionen von xamarin
 
@@ -38,7 +38,7 @@ Xamarin. IOS 7.2.1 und höher bietet eine erweiterte Vorschau unseres neuen Refe
 
 Aktivieren Sie zum Aktivieren dieses neuen Verweis zählungs Systems das Kontrollkästchen **Verweis Zähl Erweiterung verwenden** auf der Registerkarte **erweitert** der IOS- **Buildoptionen**Ihres Projekts, wie unten dargestellt: 
 
-[![](newrefcount-images/image1.png "Aktivieren des neuen Verweis zählungs Systems")](newrefcount-images/image1.png#lightbox)
+[![](newrefcount-images/image1.png "Enable the new Reference Counting System")](newrefcount-images/image1.png#lightbox)
 
 Beachten Sie, dass diese Optionen in neueren Versionen von Visual Studio für Mac entfernt wurden.
 
@@ -71,7 +71,7 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-Ohne die Verweis Zähler Erweiterung würde dieser Code abstürzen, `cell` weil entladbar ist, und `TouchDown` somit seinen Delegaten, der in einen verbleibenden Zeiger übersetzt wird.
+Ohne die Verweis Zähler Erweiterung würde dieser Code abstürzen, weil `cell` entladbar wird, und somit seinen `TouchDown` Delegaten, der in einen verbleibenden Zeiger übersetzt wird.
 
 Die Erweiterung für Verweis Zähler stellt sicher, dass das verwaltete Objekt aktiv bleibt und seine Auflistung verhindert, vorausgesetzt, dass das systemeigene Objekt durch nativen Code beibehalten wird.
 

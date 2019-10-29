@@ -3,33 +3,33 @@ title: Überprüfen von Live-Anwendungen
 description: In diesem Dokument wird beschrieben, wie Sie die Xamarin Inspector zum Überprüfen von Anwendungen verwenden. Außerdem werden die Einschränkungen des Xamarin Inspector Tools erläutert.
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 2ccf6966e85eddaa10b5651e1b0b48dec9203b28
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bbb1e21139b5f073e2cc7e3d4781e8bc38334449
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772200"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006302"
 ---
 # <a name="inspecting-live-applications"></a>Überprüfen von Live-Anwendungen
 
-Die Überprüfung der Live-App steht für Enterprise-Kundne zur Verfügung.
+Die Live-App-Prüfung ist für Unternehmenskunden verfügbar.
 
-1. Öffnen Sie ein [unterstütztes App-Projekt](~/tools/inspector/install.md#supported-platforms) in Visual Studio für Mac oder Visual Studio.
+1. Öffnen Sie ein beliebiges [unterstütztes App-Projekt](~/tools/inspector/install.md#supported-platforms) in Visual Studio für Mac oder Visual Studio.
 1. Führen Sie die Anwendung im Debugmodus aus.
-1. Klicken Sie auf der Symbolleiste der IDE auf die Schaltfläche **Inspect** (Überprüfen) (in Visual Studio steht ebenfalls das Menüelement zum **Überprüfen der aktuellen App** über das Menü**Extras** oder **Debuggen** zur Verfügung).
+1. Klicken Sie **in der IDE** -Symbolleiste auf die Schaltfläche "über **prüfen** " (in Visual Studio ist das Menü Element **aktuelle APP überprüfen** auch im Menü Extras oder **Debuggen** verfügbar).
 
-[![](inspect-images/mac-heres-the-button.png "Klicken Sie in der IDE-Symbolleiste auf die Schaltfläche")](inspect-images/mac-heres-the-button.png#lightbox)
+[![](inspect-images/mac-heres-the-button.png "Click the Inspect button in the IDE toolbar")](inspect-images/mac-heres-the-button.png#lightbox)
 
 Ein neues Xamarin Inspector Client Fenster wird mit einer neuen repl-Eingabeaufforderung geöffnet.
 
-[![](inspect-images/inspector-0.7.0-map-inspect-small.png "Ein neues Xamarin Inspector Client Fenster wird mit einer neuen repl-Eingabeaufforderung geöffnet.")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "A new Xamarin Inspector client window will open, with a fresh REPL prompt")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
-Sobald dieses Fenster angezeigt wird, können Sie eine interaktive C#-Eingabeaufforderung verwenden, um C#-Anweisungen und Ausdrücke auszuwerten. Das Besondere dabei ist, dass der Code im Kontext des Zielprozesses ausgewertet wird. In diesem Fall zeigen wir den Code, der für die angezeigte iOS-Anwendung ausgeführt wird.
+Wenn dieses Fenster angezeigt wird, verfügen Sie über C# eine interaktive Eingabeaufforderung, mit der Sie Anweisungen C# und Ausdrücke ausführen und auswerten können. Dies macht dies eindeutig, wenn der Code im Kontext des Ziel Prozesses ausgewertet wird. In diesem Fall zeigen wir den Code an, der für die angezeigte IOS-Anwendung ausgeführt wird.
 
-Änderungen am Zustand der Anwendung werden tatsächlich im Zielprozess durchgeführt, Sie können also C# verwenden, um die Anwendung in Echtzeit zu ändern oder zu überprüfen.
+Alle Änderungen, die Sie am Zustand der Anwendung vornehmen, werden tatsächlich im Ziel Prozess ausgeführt, sodass Sie verwenden C# können, um die Anwendung Live zu ändern, oder Sie können den Status der Anwendung Live überprüfen.
 
 Beispielsweise möchten wir unter IOS möglicherweise die UIApplication-Delegatklasse suchen, bei der es sich um den Haupttreiber handelt (in dem wir einen Großteil des Anwendungs Zustands speichern):
 
@@ -40,11 +40,11 @@ del.Database.GetAllCustomers ()
 del.Database.AddCustomer (...)
 ```
 
-(Beachten Sie, dass jede Übermittlung in einem mehrzeiligen Editor erfolgt. `Shift + Enter`erstellt eine neue Zeile, und `Cmd + Enter` (`Ctrl + Enter` unter Windows) sendet den Code für die Auswertung. `Enter`wird automatisch übermittelt, wenn Sie sicher ist.)
+(Beachten Sie, dass jede Übermittlung in einem mehrzeiligen Editor erfolgt. `Shift + Enter` wird eine neue Zeile erstellen, und `Cmd + Enter` (`Ctrl + Enter` unter Windows) sendet den Code für die Auswertung. `Enter` automatisch übermittelt, wenn er sicher ist.)
 
-Eine bequemere Methode zum Erreichen der visuellen Elemente Ihrer Anwendung ist die Verwendung der Schaltfläche "überprüfen". Nachdem Sie dieses Element gedrückt haben, können Sie ein Benutzeroberflächen Element auswählen, indem Sie auf Ihre Anwendung klicken. Die Variable `selectedView` wird zugewiesen, um auf das tatsächliche Element auf dem Bildschirm zu zeigen. Im obigen Screenshot sehen Sie, wie wir auf das `selectedView.BarTintColor` `UISearchBar` , was wir ausgewählt haben, aufgerufen und dann bearbeitet haben.
+Eine bequemere Methode zum Erreichen der visuellen Elemente Ihrer Anwendung ist die Verwendung der Schaltfläche "überprüfen". Nachdem Sie dieses Element gedrückt haben, können Sie ein Benutzeroberflächen Element auswählen, indem Sie auf Ihre Anwendung klicken. Die Variable `selectedView` wird zugewiesen, um auf das tatsächliche Element auf dem Bildschirm zu zeigen. Im obigen Screenshot sehen Sie, wie wir auf den `UISearchBar`, den wir ausgewählt haben, auf die `selectedView.BarTintColor` zugegriffen und diese anschließend bearbeitet haben.
 
-Die visuelle echt Zeitstruktur ist ebenfalls sehr nützlich. Stellt die aktuelle Momentaufnahme der Ansichts Hierarchie dar. Sie können Zeilen auswählen, die `selectedView` in der repl festgelegt werden sollen, und die Eigenschaftswerte der Sicht anzeigen. Unter Mac können Sie mit einer 3D-explodierten Visualisierung der geschichteten Ansichten interagieren. Unter Windows können Sie die Eigenschaftswerte einer Ansicht visuell bearbeiten.
+Die visuelle echt Zeitstruktur ist ebenfalls sehr nützlich. Stellt die aktuelle Momentaufnahme der Ansichts Hierarchie dar. Sie können Zeilen auswählen, um `selectedView` in der repl festzulegen und die Eigenschaftswerte der Sicht anzuzeigen. Unter Mac können Sie mit einer 3D-explodierten Visualisierung der geschichteten Ansichten interagieren. Unter Windows können Sie die Eigenschaftswerte einer Ansicht visuell bearbeiten.
 
 ## <a name="known-limitations"></a>Bekannte Einschränkungen
 

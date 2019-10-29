@@ -3,15 +3,15 @@ title: Erstellen von Ressourcen für unterschiedliche Bildschirme
 ms.prod: xamarin
 ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/28/2018
-ms.openlocfilehash: 6db927409e07b97ef5b7b1e7f54b6bcbdc60e115
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: cbd392dcae173eb3baf0fb8f0c3c4ec7c0da23a1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249660"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025117"
 ---
 # <a name="creating-resources-for-varying-screens"></a>Erstellen von Ressourcen für unterschiedliche Bildschirme
 
@@ -21,19 +21,19 @@ Android selbst kann auf vielen verschiedenen Geräten ausgeführt werden, die je
 
 Einige Begriffe und Konzepte sind wichtig zu verstehen, um mehrere Bildschirme zu unterstützen.
 
-- **Bildschirmgröße** &ndash; Der physische Speicherplatz für die Anzeige der Anwendung
+- **Bildschirmgröße** &ndash; die Menge an physischem Speicherplatz für die Anzeige der Anwendung
 
-- **Bildschirm Dichte** &ndash; Die Anzahl der Pixel in einem beliebigen Bereich auf dem Bildschirm. Die typische Maßeinheit ist dpi (dots per inch).
+- **Bildschirm Dichte** &ndash; die Anzahl der Pixel in einem beliebigen Bereich auf dem Bildschirm. Die typische Maßeinheit ist dpi (dots per inch).
 
-- **Lösung** &ndash; Die Gesamtanzahl der Pixel auf dem Bildschirm. Beim Entwickeln von Anwendungen ist die Auflösung nicht so wichtig wie Bildschirmgröße und Dichte.
+- **Auflösung** &ndash; die Gesamtzahl der Pixel auf dem Bildschirm. Beim Entwickeln von Anwendungen ist die Auflösung nicht so wichtig wie Bildschirmgröße und Dichte.
 
-- **Dichte unabhängiges Pixel (DP)** &ndash; Eine virtuelle Maßeinheit, mit der Layouts unabhängig von der Dichte entworfen werden können. Diese Formel wird verwendet, um DP in Bildschirm Pixel zu konvertieren:
+- Das **Dichte unabhängige Pixel (DP)** &ndash; eine virtuelle Maßeinheit, damit Layouts unabhängig von der Dichte entworfen werden können. Diese Formel wird verwendet, um DP in Bildschirm Pixel zu konvertieren:
 
-    PX &equals; DP &times; dpi 160&divide;
+    PX &equals; DP &times; dpi &divide; 160
 
-- **Ausrichtung** &ndash; Die Ausrichtung des Bildschirms wird als Querformat betrachtet, wenn es breiter ist als das Hochformat. Im Gegensatz dazu ist die Hochformat Ausrichtung, wenn der Bildschirm größer als breit ist. Die Ausrichtung kann sich während der Lebensdauer einer Anwendung ändern, wenn der Benutzer das Gerät dreht.
+- Die **Ausrichtung** &ndash; die Ausrichtung des Bildschirms wird als Querformat betrachtet, wenn es breiter ist als das Hochformat. Im Gegensatz dazu ist die Hochformat Ausrichtung, wenn der Bildschirm größer als breit ist. Die Ausrichtung kann sich während der Lebensdauer einer Anwendung ändern, wenn der Benutzer das Gerät dreht.
 
-Beachten Sie, dass die ersten drei dieser Konzepte zusammenhängen &ndash; , um die Auflösung zu erhöhen, ohne die Dichte zu erhöhen und die Bildschirmgröße zu erhöhen. Wenn jedoch die Dichte und die Auflösung angehoben werden, kann die Bildschirmgröße unverändert bleiben. Diese Beziehung zwischen Bildschirmgröße, Dichte und Auflösung erschwert die Bildschirm Unterstützung.
+Beachten Sie, dass die ersten drei dieser Konzepte miteinander verknüpft sind, &ndash; durch Erhöhen der Auflösung ohne Erhöhung der Dichte die Bildschirmgröße erhöht werden. Wenn jedoch die Dichte und die Auflösung angehoben werden, kann die Bildschirmgröße unverändert bleiben. Diese Beziehung zwischen Bildschirmgröße, Dichte und Auflösung erschwert die Bildschirm Unterstützung.
 
 Zur Unterstützung dieser Komplexität bevorzugt das Android-Framework die Verwendung von *Dichte unabhängigen Pixeln (DP)* für Bildschirmlayouts. Durch die Verwendung von Dichte unabhängigen Pixeln werden dem Benutzer Benutzeroberflächen Elemente angezeigt, die dieselbe physische Größe auf Bildschirmen mit unterschiedlichen dichten aufweisen.
 
@@ -55,11 +55,11 @@ Unterstützte Bildschirmnamen werden in der Datei " **properites/androidmanifest
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-sml.w1581.png)](resources-for-varying-screens-images/01-android-manifest.w1581.png#lightbox)
+[Android-Manifest![](resources-for-varying-screens-images/01-android-manifest-sml.w1581.png)](resources-for-varying-screens-images/01-android-manifest.w1581.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-sml.m761.png)](resources-for-varying-screens-images/01-android-manifest.m761.png#lightbox)
+[Android-Manifest![](resources-for-varying-screens-images/01-android-manifest-sml.m761.png)](resources-for-varying-screens-images/01-android-manifest.m761.png#lightbox)
 
 -----
 
@@ -106,13 +106,13 @@ Im folgenden finden Sie eine Reihe von Zahlen für verschiedene Geräte:
 
 - **Typisches Telefon** &ndash; 320 DP: ein typisches Telefon
 
-- **Ein 5 "Tablet/" Tweener-Gerät** &ndash; 480 DP: z. b. Samsung-Hinweis
+- **Ein 5 "Tablet/" Tweener-Gerät** &ndash; 480 DP: z. b. der Samsung-Hinweis
 
-- **Ein 7-Tablet** 600 DP: z. b. &amp; "Barnes Noble Nook" &ndash;
+- **A 7 "Tablet** &ndash; 600 DP: z. b. die" Barnes &amp; Noble Nook "
 
-- **Ein 10-Tablet** &ndash; 720 DP: z. b. "Motorola Xoom"
+- **A 10 "Tablet** &ndash; 720 DP: z. b. das Motorola Xoom
 
-Für Anwendungen, die auf API-Ebenen bis 12 (Android 3,1) abzielen, sollten die Layouts in Verzeichnissen verwendet werden, in denen die Qualifizierer **Small**/**Normal**/**Large**/**XLarge** als verallgemeinungen von verwendet werden. die verschiedenen Bildschirmgrößen, die in den meisten Geräten zur Verfügung stehen. In der folgenden Abbildung sind z. b. alternative Ressourcen für die vier verschiedenen Bildschirmgrößen verfügbar:
+Für Anwendungen, die auf API-Ebenen bis 12 (Android 3,1) abzielen, sollten die Layouts in Verzeichnissen verwendet werden, in denen die Qualifizierer **Small**/**Normal**/**Large**/**XLarge** als Verallgemeinerung des verschiedenen Bildschirms verwendet werden. in den meisten Geräten Verfügbare Größen. In der folgenden Abbildung sind z. b. alternative Ressourcen für die vier verschiedenen Bildschirmgrößen verfügbar:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -171,14 +171,14 @@ Diese Website unterstützt Sie beim Erstellen von Bitmaps, die auf die vier gän
 
 Android wird auf einer verwirrenden Anzahl von Geräten ausgeführt, und die Kombination aus Bildschirmgrößen und Bildschirm dichten kann überwältigend erscheinen. Mithilfe der folgenden Tipps können Sie den erforderlichen Aufwand für die Unterstützung verschiedener Geräte minimieren:
 
-- **Nur entwerfen und entwickeln für das, was Sie benötigen** &ndash; Es gibt viele verschiedene Geräte, aber einige sind in seltenen Formfaktoren vorhanden, die einen beträchtlichen Aufwand für das Entwerfen und entwickeln von in Anspruch nehmen können. Das Dashboard [**Bildschirmgröße und Dichte**](https://developer.android.com/resources/dashboard/screens.html) ist eine von Google bereitgestellte Seite, die Daten zur Aufschlüsselung der Bildschirmgröße/Bildschirm Dichte Matrix bereitstellt. Diese Aufschlüsselung bietet Einblicke in die Entwicklung von Bildschirmen.
+- **Entwerfen und entwickeln Sie nur für das, was Sie benötigen** &ndash; es gibt viele verschiedene Geräte, aber einige sind in seltenen Formfaktoren vorhanden, die einen beträchtlichen Aufwand für das Entwerfen und entwickeln von in Anspruch nehmen können. Das Dashboard [**Bildschirmgröße und Dichte**](https://developer.android.com/resources/dashboard/screens.html) ist eine von Google bereitgestellte Seite, die Daten zur Aufschlüsselung der Bildschirmgröße/Bildschirm Dichte Matrix bereitstellt. Diese Aufschlüsselung bietet Einblicke in die Entwicklung von Bildschirmen.
 
 - **Verwenden Sie DPS anstelle von Pixel** -Pixel, wenn sich die Bildschirm Dichte ändert. Die Pixelwerte werden nicht hart codiert. Vermeiden Sie Pixel anstelle von DP (Dichte unabhängige Pixel).
 
-- **Vermeiden** Sie [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) 
-  Wenn möglich ,&ndash; ist Sie auf API-Ebene 3 (Android 1,5) veraltet und führt zu spröden Layouts. Er sollte nicht verwendet werden. Versuchen Sie stattdessen, flexiblere layoutwidgets wie [**LinearLayout**](xref:Android.Widget.LinearLayout), [**relativelayout**](xref:Android.Widget.RelativeLayout)oder das neue [**GridLayout**](xref:Android.Widget.GridLayout)zu verwenden.
+- **Vermeiden** Sie, wenn **möglich** , " [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) "-
+  , &ndash; Sie auf API-Ebene 3 (Android 1,5) veraltet ist und zu einer spröden Layouts führt. Er sollte nicht verwendet werden. Versuchen Sie stattdessen, flexiblere layoutwidgets wie [**LinearLayout**](xref:Android.Widget.LinearLayout), [**relativelayout**](xref:Android.Widget.RelativeLayout)oder das neue [**GridLayout**](xref:Android.Widget.GridLayout)zu verwenden.
 
-- **Wählen Sie eine Layoutausrichtung als Standard** aus.Anstatt z. b. die alternativen Ressourcen Layout-Land und layoutport bereitzustellen, platzieren Sie die Ressourcen für das Layout und die Ressourcen für das Hochformat in den layoutport. &ndash;
+- **Wählen Sie eine Layoutausrichtung als Standard** &ndash; z. b. anstelle der alternativen Ressourcen **Layout-Land** und **layoutport**, legen Sie die Ressourcen für Querformat im **Layout**und die Ressourcen für das Hochformat in **layoutport**.
 
 - **Verwenden von layoutpara Metern für Höhe und Breite** : beim Definieren von Benutzeroberflächen Elementen in einer XML-Layoutdatei hat eine Android-Anwendung mit den **wrap_content** -und **fill_parent** -Werten einen größeren Erfolg sicherzustellen, dass eine ordnungsgemäße Darstellung auf verschiedenen Geräten stattfindet. Verwenden von Pixel-oder Dichte unabhängigen Einheiten. Diese Dimensions Werte bewirken, dass Android Bitmapressourcen nach Bedarf skaliert. Aus demselben Grund sind Dichte unabhängige Einheiten am besten reserviert, wenn Sie die Ränder und die Auffüll Zeichen von Benutzeroberflächen Elementen angeben.
 

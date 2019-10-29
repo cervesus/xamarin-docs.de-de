@@ -4,15 +4,15 @@ description: In diesem Dokument wird der Zweck der xamarin. Mac-Registrierungsst
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: d44f445b0c3bcc6fd498372f6cdf3e20be39d5b5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 991d9b2d911b5aa4ac07225fd1df34877451df49
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290099"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017312"
 ---
 # <a name="xamarinmac-registrar"></a>Xamarin. Mac-Registrierungsstelle
 
@@ -44,4 +44,4 @@ Es gibt einige Szenarios:
 - Plug-ins nach dem Start mit von NSObject abgeleiteten Klassen
 - Dynamisch erstellte Klassen Instanzen, die von NSObject abgeleitet werden
 
-die Registrierungsstelle kann nicht erkennen, dass Sie beim Start einen Typ registrieren muss. Die `ObjCRuntime.Runtime.RegisterAssembly` -Methode wird bereitgestellt, um der Registrierungsstelle mitzuteilen, dass Sie über zusätzliche zu berücksichtigende Typen verfügt
+die Registrierungsstelle kann nicht erkennen, dass Sie beim Start einen Typ registrieren muss. Die `ObjCRuntime.Runtime.RegisterAssembly`-Methode wird bereitgestellt, um der Registrierungsstelle mitzuteilen, dass Sie über zusätzliche zu berücksichtigende Typen verfügt

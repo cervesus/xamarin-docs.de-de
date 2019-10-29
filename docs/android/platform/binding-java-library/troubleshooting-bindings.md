@@ -4,15 +4,15 @@ description: In diesem Artikel werden häufige Server Fehler zusammengefasst, di
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: dfbcb1a6f502d6d7a5b03dc03278fc21e57806bf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2eea51764e0e0f13c1a1a91db664872a67420d33
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756613"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020557"
 ---
 # <a name="troubleshooting-bindings"></a>Problembehandlung von Bindungen
 
@@ -25,11 +25,11 @@ Diese Probleme verhindern, dass xamarin. Android die Android-Bibliothek bindet u
 
 Beim Binden einer vorhandenen Android-Bibliothek müssen folgende Punkte berücksichtigt werden:
 
-- **Die externen Abhängigkeiten für die Bibliothek** Alle Java-Abhängigkeiten, die für die Android-Bibliothek erforderlich sind, müssen im xamarin. Android-Projekt als **referencejar** oder als **embeddedreferencejar**enthalten sein. &ndash;
+- **Die externen Abhängigkeiten für die Bibliothek** &ndash; Java-Abhängigkeiten, die für die Android-Bibliothek erforderlich sind, müssen im xamarin. Android-Projekt als **referencejar** oder als **embeddedreferencejar**enthalten sein.
 
-- **Die Android-API-Ebene, auf die die Android-Bibliothek** abzielt &ndash; Es ist nicht möglich, die Android-API-Ebene zu "herabstufen". Stellen Sie sicher, dass das xamarin. Android-Bindungs Projekt auf dieselbe API-Ebene (oder höher) wie die Android-Bibliothek abzielt.
+- **Die Android-API-Ebene, auf die die Android-Bibliothek abzielt,** &ndash; es nicht möglich ist, die Android-API-Ebene zu "herabstufen" Stellen Sie sicher, dass das xamarin. Android-Bindungs Projekt auf dieselbe API-Ebene (oder höher) wie die Android-Bibliothek abzielt.
 
-- **Die Version des Android JDK, das zum Verpacken der Android-Bibliothek verwendet wurde** . &ndash; Bindungs Fehler können auftreten, wenn die Android-Bibliothek mit einer anderen Version von JDK erstellt wurde, als Sie von xamarin. Android verwendet wird. Wenn möglich, kompilieren Sie die Android-Bibliothek mit derselben Version des JDK neu, das von Ihrer Installation von xamarin. Android verwendet wird.
+- **Die Version des Android JDK, das zum Verpacken der Android-Bibliothek verwendet wurde,** &ndash; Bindungs Fehler auftreten können, wenn die Android-Bibliothek mit einer anderen Version von JDK erstellt wurde, als Sie von xamarin. Android verwendet wird. Wenn möglich, kompilieren Sie die Android-Bibliothek mit derselben Version des JDK neu, das von Ihrer Installation von xamarin. Android verwendet wird.
 
 Der erste Schritt bei der Behebung von Problemen bei der Bindung einer xamarin. Android-Bibliothek besteht darin, die [Diagnose-MSBuild-Ausgabe](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)zu aktivieren.
 Erstellen Sie nach dem Aktivieren der Diagnoseausgabe das xamarin. Android-Bindungs Projekt neu, und überprüfen Sie das Buildprotokoll, um Hinweise zur Ursache des Problems zu finden.
@@ -41,18 +41,18 @@ Außerdem kann es hilfreich sein, die Android-Bibliothek zu dekompilieren und di
 Wenn Sie die Klassen und Methoden der Java-Klassen überprüfen, können Sie wertvolle Informationen bereitstellen, die beim Binden einer Bibliothek helfen.
 [JD-GUI](http://jd.benow.ca/) ist ein grafisches Hilfsprogramm, mit dem Java-Quellcode aus den in einer JAR-Datei enthaltenen **Klassen** Dateien angezeigt werden kann. Sie kann als eigenständige Anwendung oder als Plug-in für IntelliJ oder Eclipse ausgeführt werden.
 
-Öffnen Sie zum dekompilieren einer Android-Bibliothek das **. JAR** -Datei mit dem Java-Decompiler. , Wenn die Bibliothek eine ist **. AAR** -Datei, muss die Datei **Classes. jar** aus der Archivdatei extrahiert werden. Im folgenden finden Sie ein Beispiel für die Verwendung von JD-GUI zum Analysieren der [Picasso](http://square.github.io/picasso/) -JAR-Datei:
+Öffnen Sie zum dekompilieren einer Android-Bibliothek das **. JAR** -Datei mit dem Java-Decompiler. , Wenn die Bibliothek eine ist **. AAR** -Datei, muss die Datei **Classes. jar** aus der Archivdatei extrahiert werden. Im folgenden finden Sie ein Beispiel für die Verwendung von JD-GUI zum Analysieren der [Picasso](https://square.github.io/picasso/) -JAR-Datei:
 
 ![Verwenden des Java-decocompilers zum Analysieren von Picasso-2.5.2. jar](troubleshooting-bindings-images/troubleshoot-bindings-01.png)
 
 Nachdem Sie die Android-Bibliothek dekompiliert haben, untersuchen Sie den Quellcode. Im Allgemeinen sollten Sie Folgendes suchen:
 
-- **Klassen, die Merkmale der Verschleierung** aufweisen &ndash; Zu den Merkmalen von verfugenten Klassen gehören:
+- **Klassen, die Merkmale der Verschleierung** &ndash; Merkmalen von verborgenen Klassen aufweisen, umfassen Folgendes:
 
   - Der Klassenname enthält eine **$** , d. h. **eine $.-Klasse** .
   - Der Klassenname ist vollständig in Kleinbuchstaben gefährdet, d. h. **eine.-Klasse** .      
 
-- Anweisungen für &ndash; nicht referenzierte Bibliotheken identifizieren die Bibliothek, auf die nicht verwiesen wird, und fügen diese Abhängigkeiten dem xamarin. Android-Bindungs Projekt mit einer **Buildaktion** von **referencejar** oder **hinzu.`import`**  **Embedddebug ferencejar**.
+- **`import`-Anweisungen für nicht referenzierte Bibliotheken** &ndash; die Bibliothek ohne referenzierte Bibliothek identifizieren und diese Abhängigkeiten dem xamarin. Android-Bindungs Projekt mit der **Buildaktion** **referencejar** oder **embedddedreferencejar hinzufügen.** .
 
 > [!NOTE]
 > Das dekompilieren einer Java-Bibliothek ist möglicherweise nicht zulässig oder unterliegt den rechtlichen Beschränkungen, die auf lokalen Gesetzen oder der Lizenz basieren, in der die Java-Bibliothek veröffentlicht wurde. Eintragen Sie ggf. die Dienste eines juristischen Spezialisten ein, bevor Sie versuchen, eine Java-Bibliothek zu dekompilieren und den Quellcode zu überprüfen.
@@ -69,19 +69,19 @@ Diese Datei enthält eine Liste aller Java-APIs, die von xamarin. Android gebund
 
 In diesem Abschnitt werden einige der häufigsten Fehlermeldungen oder Symptome aufgelistet, die bei dem Versuch auftreten, eine Android-Bibliothek zu binden.
 
-### <a name="problem-java-version-mismatch"></a>Problem: Nicht übereinstimmende Java-Version
+### <a name="problem-java-version-mismatch"></a>Problem: Java-Versions Konflikt
 
 Manchmal werden Typen nicht generiert, oder es können unerwartete Abstürze auftreten, da Sie im Vergleich zu dem, mit dem die Bibliothek kompiliert wurde, eine neuere oder eine ältere Version von Java verwenden. Kompilieren Sie die Android-Bibliothek mit der gleichen Version des JDK neu, die das xamarin. Android-Projekt verwendet.
 
-### <a name="problem-at-least-one-java-library-is-required"></a>Problem: Mindestens eine Java-Bibliothek ist erforderlich.
+### <a name="problem-at-least-one-java-library-is-required"></a>Problem: mindestens eine Java-Bibliothek ist erforderlich.
 
 Sie erhalten den Fehler "mindestens eine Java-Bibliothek ist erforderlich", auch wenn eine. JAR wurde hinzugefügt.
 
 #### <a name="possible-causes"></a>Mögliche Ursachen:
 
-Stellen Sie sicher, dass die Buildaktion auf `EmbeddedJar`festgelegt ist. Da mehrere Buildaktionen für vorhanden sind. JAR-Dateien (z `InputJar`. `EmbeddedJar`b `ReferenceJar` . `EmbeddedReferenceJar`, und), kann der Bindungs Generator nicht automatisch erraten, welcher standardmäßig verwendet werden soll. Weitere Informationen zu Buildaktionen finden Sie unter [Erstellen von Aktionen](~/android/platform/binding-java-library/index.md).
+Stellen Sie sicher, dass die Buildaktion auf `EmbeddedJar`festgelegt ist. Da mehrere Buildaktionen für vorhanden sind. JAR-Dateien (z. b. `InputJar`, `EmbeddedJar`, `ReferenceJar` und `EmbeddedReferenceJar`), kann der Bindungs Generator nicht automatisch erraten, welcher standardmäßig verwendet werden soll. Weitere Informationen zu Buildaktionen finden Sie unter [Erstellen von Aktionen](~/android/platform/binding-java-library/index.md).
 
-### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Problem: Die Bindungs Tools können das nicht laden. JAR-Bibliothek
+### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Problem: die Bindungs Tools können das nicht laden. JAR-Bibliothek
 
 Der Bindungs Bibliotheks Generator kann die nicht laden. JAR-Bibliothek.
 
@@ -89,7 +89,7 @@ Der Bindungs Bibliotheks Generator kann die nicht laden. JAR-Bibliothek.
 
 Einige. JAR-Bibliotheken, die Code Verschleierung verwenden (über Tools wie proguard), können nicht von den Java-Tools geladen werden. Da unser Tool Java-Reflektion und die ASM-Byte Code Engineering-Bibliothek verwendet, können diese abhängigen Tools die verborgenen Bibliotheken ablehnen, während Android-Lauf Zeit Tools erfolgreich sein können. Um dieses Problem zu umgehen, binden Sie diese Bibliotheken in Hand, anstatt den Bindungs Generator zu verwenden.
 
-### <a name="problem-missing-c-types-in-generated-output"></a>Problem: Fehlende C# Typen in der generierten Ausgabe.
+### <a name="problem-missing-c-types-in-generated-output"></a>Problem: fehlende C# Typen in der generierten Ausgabe.
 
 Die Datei "Binding **. dll** " wird erstellt, es werden jedoch einige C# Java-Typen verpasst, oder die generierte Quelle wird aufgrund eines Fehlers nicht erstellt, weil fehlende Typen vorhanden sind.
 
@@ -119,7 +119,7 @@ Dieser Fehler kann aus verschiedenen Gründen auftreten, wie unten aufgeführt:
       name="obfuscated">false</attr>
   ```
 
-### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>Problem: Die C# generierte Quelle wird aufgrund eines Parametertyp Konflikts nicht erstellt.
+### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>Problem: die C# generierte Quelle wird aufgrund eines Parametertyp Konflikts nicht erstellt.
 
 Die generierte C# Quelle wird nicht erstellt. Die Parametertypen der überschriebenen Methode stimmen nicht ab.
 
@@ -127,15 +127,15 @@ Die generierte C# Quelle wird nicht erstellt. Die Parametertypen der überschrie
 
 Xamarin. Android enthält eine Vielzahl von Java-Feldern, die den-Auflistungen C# in den-Bindungen zugeordnet werden. Diese können typinkompatibilitäten in den generierten Bindungen verursachen. Um dieses Problem zu beheben, müssen die vom Bindungs Generator erstellten Methoden Signaturen so geändert werden, dass Sie die-enums verwenden. Weitere Informationen finden Sie unter [korrigieren](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)von Aufständen.
 
-### <a name="problem-noclassdeffounderror-in-packaging"></a>Problem: Noclassde ffounderror beim Verpacken
+### <a name="problem-noclassdeffounderror-in-packaging"></a>Problem: noclassde ffounderror beim Verpacken
 
-`java.lang.NoClassDefFoundError`wird im Paketierungs Schritt ausgelöst.
+im Paketierungs Schritt wird `java.lang.NoClassDefFoundError` ausgelöst.
 
 #### <a name="possible-causes"></a>Mögliche Ursachen:
 
 Der wahrscheinlichste Grund für diesen Fehler besteht darin, dass dem Anwendungsprojekt ( **. csproj**) eine erforderliche Java-Bibliothek hinzugefügt werden muss. . JAR-Dateien werden nicht automatisch aufgelöst. Eine Java-Bibliotheks Bindung wird nicht immer für eine Benutzerassembly generiert, die auf dem Zielgerät oder Emulator nicht vorhanden ist (z. b. Google Maps **Maps. jar**). Dies gilt nicht für die Unterstützung von Android-Bibliotheks Projekten als Bibliothek. JAR ist in die Bibliotheks-DLL eingebettet. Beispiel: [Fehler 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
-### <a name="problem-duplicate-custom-eventargs-types"></a>Problem: Doppelte benutzerdefinierte EventArgs-Typen
+### <a name="problem-duplicate-custom-eventargs-types"></a>Problem: doppelte benutzerdefinierte EventArgs-Typen
 
 Der Buildvorgang schlägt aufgrund doppelter benutzerdefinierter EventArgs-Typen fehl. Ein solcher Fehler tritt auf:
 
@@ -145,7 +145,7 @@ error CS0102: The type `Com.Google.Ads.Mediation.DismissScreenEventArgs' already
 
 #### <a name="possible-causes"></a>Mögliche Ursachen:
 
-Dies liegt daran, dass ein Konflikt zwischen Ereignis Typen besteht, die von mehr als einem Listenertyp der Schnittstelle stammen, der Methoden mit identischen Namen freigibt. Wenn beispielsweise zwei Java-Schnittstellen vorhanden sind, wie im folgenden Beispiel gezeigt, erstellt `DismissScreenEventArgs` der Generator sowohl `MediationBannerListener` für als auch `MediationInterstitialListener`für, was zu einem Fehler führt.
+Dies liegt daran, dass ein Konflikt zwischen Ereignis Typen besteht, die von mehr als einem Listenertyp der Schnittstelle stammen, der Methoden mit identischen Namen freigibt. Wenn beispielsweise zwei Java-Schnittstellen vorhanden sind, wie im folgenden Beispiel gezeigt, erstellt der Generator `DismissScreenEventArgs` für `MediationBannerListener` und `MediationInterstitialListener`, was zu einem Fehler führt.
 
 ```java
 // Java:
@@ -157,7 +157,7 @@ public interface MediationInterstitialListener {
 }
 ```
 
-Dies ist beabsichtigt, damit lange Namen für Ereignis Argument Typen vermieden werden. Um diese Konflikte zu vermeiden, sind einige metadatentransformationen erforderlich. Bearbeiten Sie [**Transforms\Metadata.XML**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml) , und `argsType` fügen Sie ein Attribut für eine der Schnittstellen (oder für die Schnittstellen Methode) hinzu:
+Dies ist beabsichtigt, damit lange Namen für Ereignis Argument Typen vermieden werden. Um diese Konflikte zu vermeiden, sind einige metadatentransformationen erforderlich. Bearbeiten Sie [**Transforms\Metadata.XML**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml) , und fügen Sie ein `argsType`-Attribut für eine der Schnittstellen (oder für die Schnittstellen Methode) hinzu:
 
 ```xml
 <attr path="/api/package[@name='com.google.ads.mediation']/
@@ -173,7 +173,7 @@ Dies ist beabsichtigt, damit lange Namen für Ereignis Argument Typen vermieden 
         name="argsType">DialogClickEventArgs</attr>
 ```
 
-### <a name="problem-class-does-not-implement-interface-method"></a>Problem: Klasse implementiert keine Schnittstellen Methode.
+### <a name="problem-class-does-not-implement-interface-method"></a>Problem: die Klasse implementiert keine Schnittstellen Methode.
 
 Eine Fehlermeldung wird erzeugt, die anzeigt, dass eine generierte Klasse keine Methode implementiert, die für eine Schnittstelle erforderlich ist, die von der generierten Klasse implementiert wird. Wenn Sie sich jedoch den generierten Code ansehen, sehen Sie, dass die-Methode implementiert ist.
 
@@ -190,9 +190,9 @@ return type of 'Java.Lang.Object'
 
 #### <a name="possible-causes"></a>Mögliche Ursachen:
 
-Dies ist ein Problem, das bei der Bindung von Java-Methoden mit kovarianten Rückgabe Typen auftritt. In diesem Beispiel muss die- `Oauth.Signpost.Http.IHttpRequest.UnWrap()` Methode zurückgeben `Java.Lang.Object`. Die-Methode `Oauth.Signpost.Basic.HttpURLConnectionRequestAdapter.UnWrap()` weist jedoch den Rückgabetyp auf `HttpURLConnection`. Es gibt zwei Möglichkeiten, dieses Problem zu beheben:
+Dies ist ein Problem, das bei der Bindung von Java-Methoden mit kovarianten Rückgabe Typen auftritt. In diesem Beispiel muss die Methode `Oauth.Signpost.Http.IHttpRequest.UnWrap()` `Java.Lang.Object`zurückgeben. Die-Methode `Oauth.Signpost.Basic.HttpURLConnectionRequestAdapter.UnWrap()` hat jedoch den Rückgabetyp `HttpURLConnection`. Es gibt zwei Möglichkeiten, dieses Problem zu beheben:
 
-- Fügen Sie eine partielle Klassen `HttpURLConnectionRequestAdapter` Deklaration für `IHttpRequest.Unwrap()`und explizit implementieren:
+- Fügen Sie eine partielle Klassen Deklaration für `HttpURLConnectionRequestAdapter` hinzu, und implementieren Sie `IHttpRequest.Unwrap()`explizit:
 
   ```csharp
   namespace Oauth.Signpost.Basic {
@@ -204,7 +204,7 @@ Dies ist ein Problem, das bei der Bindung von Java-Methoden mit kovarianten Rüc
   }
   ```
 
-- Entfernen Sie die Kovarianz aus C# dem generierten Code. Dies umfasst das Hinzufügen der folgenden Transformation in **Transforms\Metadata.XML** , die dazu C# führt, dass der generierte Code den `Java.Lang.Object`Rückgabetyp hat:
+- Entfernen Sie die Kovarianz aus C# dem generierten Code. Dies umfasst das Hinzufügen der folgenden Transformation in **Transforms\Metadata.XML** , die dazu C# führt, dass der generierte Code den Rückgabetyp`Java.Lang.Object`hat:
 
   ```xml
   <attr
@@ -213,11 +213,11 @@ Dies ist ein Problem, das bei der Bindung von Java-Methoden mit kovarianten Rüc
   </attr>
   ```
 
-### <a name="problem-name-collisions-on-inner-classes--properties"></a>Problem: Namenskonflikte bei inneren Klassen/Eigenschaften
+### <a name="problem-name-collisions-on-inner-classes--properties"></a>Problem: Namenskollisionen bei inneren Klassen/Eigenschaften
 
 In Konflikt stehende Sichtbarkeit für geerbte Objekte.
 
-In Java ist es nicht erforderlich, dass eine abgeleitete Klasse die gleiche Sichtbarkeit wie Ihr übergeordnetes Element hat. Java wird dies einfach für Sie beheben. In C#muss dies explizit sein, daher müssen Sie sicherstellen, dass alle Klassen in der Hierarchie über die entsprechende Sichtbarkeit verfügen. Im folgenden Beispiel wird gezeigt, wie ein Java-Paketname `Evernote.AndroidJob`von `com.evernote.android.job` in geändert wird:
+In Java ist es nicht erforderlich, dass eine abgeleitete Klasse die gleiche Sichtbarkeit wie Ihr übergeordnetes Element hat. Java wird dies einfach für Sie beheben. In C#muss dies explizit sein, daher müssen Sie sicherstellen, dass alle Klassen in der Hierarchie über die entsprechende Sichtbarkeit verfügen. Im folgenden Beispiel wird gezeigt, wie ein Java-Paketname von `com.evernote.android.job` in `Evernote.AndroidJob`geändert wird:
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -227,11 +227,11 @@ In Java ist es nicht erforderlich, dass eine abgeleitete Klasse die gleiche Sich
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>Problem: A **. so** wird die Bibliothek, die für die Bindung erforderlich ist, nicht geladen
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>Problem: eine für die Bindung erforderliche Bibliothek wird nicht geladen **.**
 
-Einige Bindungs Projekte können auch von Funktionen in einer **. so** -Bibliothek abhängen. Es ist möglich, dass xamarin. Android die **. so** -Bibliothek nicht automatisch lädt. Wenn der umschließende Java-Code ausgeführt wird, kann xamarin. Android den jni-Befehl nicht ausführen _und die Fehlermeldung "java. lang. unbefriefedlinkerror": Native Methode nicht gefunden:_ wird in der logcat-Ausgabe für die Anwendung angezeigt.
+Einige Bindungs Projekte können auch von Funktionen in einer **. so** -Bibliothek abhängen. Es ist möglich, dass xamarin. Android die **. so** -Bibliothek nicht automatisch lädt. Wenn der umschließende Java-Code ausgeführt wird, kann xamarin. Android den jni-Befehl nicht ausführen, und die Fehlermeldung _java. lang. unbefriefiedlinkerror: Native Methode wurde nicht gefunden:_ wird in der logcat out für die Anwendung angezeigt.
 
-Die Behebung hierfür besteht darin, die **. so** -Bibliothek mit einem-Befehl manuell `Java.Lang.JavaSystem.LoadLibrary`zu laden. Angenommen, ein xamarin. Android-Projekt hat eine freigegebene Bibliothek libpocketsphinx_jni, die im Bindungs Projekt mit einer Buildaktion von **embeddednativelibrary**enthalten ist, den folgenden Code Ausschnitt (vor der Verwendung der freigegebenen Bibliothek ausgeführt) **.** lädt die **. so** -Bibliothek:
+Die Behebung hierfür besteht darin, die **. so** -Bibliothek mit einem `Java.Lang.JavaSystem.LoadLibrary`-Aufrufvorgang manuell zu laden. Angenommen, ein xamarin. Android-Projekt hat eine freigegebene Bibliothek libpocketsphinx_jni, die im Bindungs Projekt mit einer Buildaktion von **embeddednativelibrary**enthalten ist, den folgenden Code Ausschnitt (vor der Verwendung der freigegebenen Bibliothek ausgeführt) **.** lädt die **. so** -Bibliothek:
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");

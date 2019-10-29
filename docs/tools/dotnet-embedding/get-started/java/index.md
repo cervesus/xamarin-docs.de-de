@@ -3,15 +3,15 @@ title: Einstieg in Java
 description: In diesem Dokument werden die ersten Schritte beim Einbetten von .net mit Java beschrieben. Es werden die Systemanforderungen, die Installation und die unterstützten Plattformen erläutert.
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 8d6bc284d07ce1be11ad273f875b75a70ae14a0f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 09ea33724c2b1184654ce7768ea1cb2525b62c28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278405"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007379"
 ---
 # <a name="getting-started-with-java"></a>Einstieg in Java
 
@@ -59,7 +59,7 @@ Darüber hinaus können Sie .net-Einbettungen aus der Quelle erstellen. Weitere 
 
 Java befindet sich derzeit in einem Vorschau Zustand für macOS, Windows und Android.
 
-Die Plattform wird ausgewählt, indem das `--platform=<platform>` Befehlszeilenargument an das .net-Einbettungs Tool übergeben wird. Derzeit werden, und`Android`unterstützt. `macOS` `Windows`
+Die Plattform wird ausgewählt, indem das Befehlszeilenargument `--platform=<platform>` an das .net-Einbettungs Tool übergeben wird. Derzeit werden `macOS`, `Windows`und `Android` unterstützt.
 
 ### <a name="macos-and-windows"></a>macOS und Windows
 

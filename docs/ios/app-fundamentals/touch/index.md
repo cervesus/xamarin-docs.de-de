@@ -4,21 +4,21 @@ description: Dieses Dokument ist mit Anleitungen verknüpft, die beschreiben, wi
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: dfd1a3c88d2c9c87c84a18736dd0f4c8c7e79005
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282988"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009360"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Behandeln von Berührungen in xamarin. IOS-apps
 
 Wie andere mobile Plattformen bietet IOS eine Reihe von Möglichkeiten, die Berührungs Möglichkeiten zu behandeln. Es kann Multitouch – viele Kontaktpunkte auf dem Bildschirm – und komplexe Gesten unterstützen. In diesem Handbuch werden einige der Konzepte sowie die Besonderheiten der Implementierung von toucheingaben und Gesten unter IOS vorgestellt.
 
-IOS kapselt Berührungs Daten in der `UITouch` -Klasse, die Anwendungen über eine Reihe von `UIResponder` Methoden zur Verfügung gestellt wird. Anwendungen können diese Methoden in Unterklassen von `UIView` und `UIViewController`überschreiben, die beide von `UIResponder`erben.
+IOS kapselt Berührungs Daten in der `UITouch`-Klasse, die Anwendungen über eine Reihe von `UIResponder` Methoden zur Verfügung gestellt wird. Anwendungen können diese Methoden in Unterklassen von `UIView` und `UIViewController`überschreiben, die beide von `UIResponder`erben.
 
 Zusätzlich zur Erfassung von Touch-Daten bietet IOS die Möglichkeit, die Muster von Berührungen in Gesten zu interpretieren. Diese Gesten Erkennungs Tools können wiederum verwendet werden, um anwendungsspezifische Befehle zu interpretieren, z. b. eine Drehung eines Bilds oder eine Seite. IOS stellt eine umfangreiche Sammlung von Klassen bereit, um häufige Gesten mit dem minimal hinzugefügten Code zu behandeln.
 
@@ -29,7 +29,7 @@ Es gibt jedoch Zeiten, in denen Sie die Touch-Verarbeitung auf niedriger Ebene v
 ## <a name="sections"></a>Abschnitte
 
 - [Toucheingabe in iOS](touch-in-ios.md)
-- [Exemplarische Vorgehensweise: Toucheingabe in iOS](ios-touch-walkthrough.md)
+- [Exemplarische Vorgehensweise: Verwenden von Toucheingaben in iOS](ios-touch-walkthrough.md)
 - [Nachverfolgen von Multitoucheingaben](touch-tracking.md)
 
 Dieses Handbuch bietet eine Einführung in die Kontaktaufnahme in ios. Weitere Informationen zur Verwendung von 3D Toucheingabe und haptisches Feedback in Ios, die in ios 9 und 10 eingeführt wurden, finden Sie in den folgenden Anleitungen:

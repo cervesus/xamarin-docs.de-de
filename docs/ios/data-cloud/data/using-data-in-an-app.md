@@ -4,15 +4,15 @@ description: In diesem Dokument wird das DataAccess_Adv-Beispiel beschrieben, da
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 060e4b8e7856e0024e6d236652c2b04c1da16f66
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766855"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008255"
 ---
 # <a name="using-data-in-an-ios-app"></a>Verwenden von Daten in einer IOS-App
 
@@ -99,7 +99,7 @@ Einige Anwendungen werden mit einer Datenbank ausgeliefert, die bereits mit Date
 Sie können dies problemlos in Ihrer mobilen Anwendung erreichen, indem Sie eine vorhandene SQLite-Datenbankdatei mit Ihrer APP versenden und in ein beschreibbares Verzeichnis kopieren, bevor Sie darauf zugreifen. Da SQLite ein Standarddatei Format ist, das auf vielen Plattformen verwendet wird, stehen eine Reihe von Tools zum Erstellen einer SQLite-Datenbankdatei zur Verfügung:
 
 - **SQLite Manager Firefox Extension** – funktioniert unter Mac und Windows und erzeugt Dateien, die mit IOS und Android kompatibel sind.
-- **Befehlszeile** – Weitere Informationen finden Sie unter [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
+- **Befehlszeile** – Weitere Informationen finden Sie unter [www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) .
 
 Wenn Sie eine Datenbankdatei für die Verteilung mit Ihrer APP erstellen, achten Sie darauf, dass Tabellen und Spalten benannt werden, um sicherzustellen, dass Sie mit den Anforderungen Ihres Codes identisch sind. Dies gilt insbesondere, C# Wenn Sie sqlite.NET verwenden, der davon ausgeht, dass die Namen der Klassen und Eigenschaften entsprechen oder die zugeordneten benutzerdefinierten Attribute).
 

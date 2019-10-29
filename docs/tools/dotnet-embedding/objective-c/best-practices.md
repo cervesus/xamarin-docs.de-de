@@ -3,15 +3,15 @@ title: Bewährte Methoden für die .net-Einbettung für Ziel-C
 description: In diesem Dokument werden verschiedene bewährte Methoden für die Verwendung der .net-Einbettung mit Ziel-C beschrieben. Es wird erläutert, wie eine Teilmenge des verwalteten Codes verfügbar gemacht wird, und die Bereitstellung einer Segl-API, Benennung und vieles mehr.
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2f632e3218d817aa0162a63ea81c61ca18c52b93
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285117"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006771"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>Bewährte Methoden für die .net-Einbettung für Ziel-C
 
@@ -66,7 +66,7 @@ Das Benennen von Dingen ist eines von zwei schwierigsten Problemen in der Comput
 
 ### <a name="types"></a>Typen
 
-"Ziel-C" unterstützt keine Namespaces. Im Allgemeinen werden den zugehörigen Typen das Zeichen Präfix 2 (für Apple) oder 3 (für Dritte) vorangestellt, `UIView` z. b. für die Ansicht "UIKit", die das Framework bezeichnet.
+"Ziel-C" unterstützt keine Namespaces. Im Allgemeinen werden den zugehörigen Typen das Zeichen Präfix 2 (für Apple) oder 3 (für Dritte) vorangestellt, z. b. `UIView` für die UIKit-Ansicht, die das Framework bezeichnet.
 
 Bei .NET-Typen ist das Überspringen des Namespaces nicht möglich, da er doppelte oder verwirrende Namen verursachen kann. Dies macht vorhandene .NET-Typen sehr lang, z. b.
 
@@ -101,15 +101,15 @@ Selbst gute .net-Namen sind möglicherweise nicht ideal für eine Ziel-C-API.
 Benennungs Konventionen in Ziel-C unterscheiden sich von .net (Camel Case anstelle von Pascal Case, more verbose).
 Lesen Sie die [Codierungs Richtlinien für Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF).
 
-Aus Sicht eines Ziel-C-Entwicklers impliziert eine Methode mit einem `Get` Präfix, dass Sie die Instanz nicht besitzen, d. h. die get- [Regel](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
+Aus Sicht eines Ziel-C-Entwicklers impliziert eine Methode mit einem `Get`-Präfix, dass Sie die Instanz nicht besitzen, d. h. die [Get-Regel](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
 
-Diese Benennungs Regel entspricht nicht der .NET GC-Welt. eine .NET-Methode mit `Create` einem Präfix verhält sich in .net identisch. Für Ziel-C-Entwickler bedeutet dies jedoch normalerweise, dass Sie die zurückgegebene Instanz besitzen, d. h. die [Create-Regel](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
+Diese Benennungs Regel entspricht nicht der .NET GC-Welt. eine .NET-Methode mit einem `Create`-Präfix verhält sich in .net identisch. Für Ziel-C-Entwickler bedeutet dies jedoch normalerweise, dass Sie die zurückgegebene Instanz besitzen, d. h. die [Create-Regel](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
 
 ## <a name="exceptions"></a>Ausnahmen
 
 In .net ist es häufig üblich, dass Ausnahmen häufig zum Melden von Fehlern verwendet werden. Sie sind jedoch langsam und in Ziel-C nicht ganz identisch. Wenn möglich, sollten Sie Sie beim Ziel-C-Entwickler ausblenden.
 
-Beispielsweise kann das .net `Try` -Muster viel einfacher aus dem Ziel-C-Code verwendet werden:
+Beispielsweise kann das .net `Try`-Muster viel leichter aus dem Ziel-C-Code verwendet werden:
 
 ```csharp
 public int Parse (string number)
@@ -127,13 +127,13 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>Ausnahmen in`init*`
+### <a name="exceptions-inside-init"></a>Ausnahmen in `init*`
 
 In .NET muss ein Konstruktor entweder erfolgreich sein und eine (_hoffentlich_) gültige Instanz zurückgeben oder eine Ausnahme auslösen.
 
-Im Gegensatz dazu ermöglicht `init*` Ziel-C die Rückgabe `nil` von, wenn eine Instanz nicht erstellt werden kann. Dies ist ein allgemeines, aber nicht allgemeines Muster, das in vielen Frameworks von Apple verwendet wird. In einigen anderen Fällen kann `assert` ein Vorkommen (und den aktuellen Prozess beenden).
+Im Gegensatz dazu ermöglicht Ziel-C `init*`, `nil` zurückzugeben, wenn keine Instanz erstellt werden kann. Dies ist ein allgemeines, aber nicht allgemeines Muster, das in vielen Frameworks von Apple verwendet wird. In einigen anderen Fällen kann eine `assert` auftreten (und den aktuellen Prozess beenden).
 
-Der Generator folgt dem gleichen `return nil` Muster für generierte `init*` Methoden. Wenn eine verwaltete Ausnahme ausgelöst wird, wird sie gedruckt (verwendet `NSLog`) und `nil` an den Aufrufer zurückgegeben.
+Der Generator folgt dem gleichen `return nil` Muster für generierte `init*` Methoden. Wenn eine verwaltete Ausnahme ausgelöst wird, wird sie gedruckt (mit `NSLog`), und `nil` wird an den Aufrufer zurückgegeben.
 
 ## <a name="operators"></a>Operatoren
 
@@ -141,4 +141,4 @@ Ziel-C lässt nicht zu, dass Operatoren wie C# verwendet werden, sodass diese in
 
 ["Friendly"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) benannte Methoden werden im Gegensatz zu den Operator Überladungen generiert, wenn Sie gefunden werden, und können eine leichter zu nutzende API erzeugen.
 
-Klassen, die die Operatoren `==` und/oder `!=` überschreiben, sollten auch die standardmäßige Gleichheits Methode (Object) überschreiben.
+Klassen, die die Operatoren `==` and\oder `!=` überschreiben, sollten auch die standardmäßige Gleichheits Methode (Object) überschreiben.

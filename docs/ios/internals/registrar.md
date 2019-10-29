@@ -4,15 +4,15 @@ description: Dieses Dokument beschreibt die xamarin. IOS-typregistrierungs Stell
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: 0d8e16c2a651df293b13e7f7586d5a643caa1c9c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f38c49ce9334a5659f0a8b5dd03e3bae8863cf5a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291833"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022277"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Typregistrierungs Stelle für xamarin. IOS
 
@@ -27,13 +27,13 @@ Beim Start wird xamarin. IOS registriert:
 - Schnittstellen mit einem [[Protocol]](xref:Foundation.ProtocolAttribute) -Attribut als Ziel-C-Protokolle.
 - Elemente mit einem [[Export]](xref:Foundation.ExportAttribute), mit denen Ziel-C darauf zugreifen kann.
 
-Angenommen, die verwaltete `Main` Methode wird in xamarin. IOS-Anwendungen häufig eingesetzt:
+Nehmen wir beispielsweise an, dass die verwaltete `Main`-Methode in xamarin. IOS-Anwendungen häufig gilt:
 
 ```csharp
 UIApplication.Main (args, null, "AppDelegate");
 ```
 
-Dieser Code weist die Ziel-C-Laufzeit an, den Typ `AppDelegate` zu verwenden, der als Delegatklasse der Anwendung aufgerufen wird. Damit die Ziel-C-Laufzeit eine Instanz der C# `AppDelegate` -Klasse erstellen kann, muss diese Klasse registriert werden.
+Dieser Code weist die Ziel-C-Laufzeit an, den Typ mit dem Namen `AppDelegate` als Delegatklasse der Anwendung zu verwenden. Damit die Ziel-C-Laufzeit eine Instanz der C#`AppDelegate`-Klasse erstellen kann, muss diese Klasse registriert werden.
 
 Xamarin. IOS führt die Registrierung automatisch aus, entweder zur Laufzeit (dynamische Registrierung) oder zur Kompilierzeit (statische Registrierung).
 
@@ -46,7 +46,7 @@ Beim Start wird die Zuordnung dann bei der Ziel-C-Laufzeit registriert. Die stat
 
 Ab xamarin. IOS 8,10 ist es möglich, Ziel-C-Kategorien mithilfe C# der-Syntax zu erstellen.
 
-Um eine Kategorie zu erstellen, verwenden `[Category]` Sie das-Attribut, und geben Sie den zu erweiternden Typ an. Der folgende Code erweitert `NSString`z. b.:
+Um eine Kategorie zu erstellen, verwenden Sie das `[Category]`-Attribut, und geben Sie den zu erweiternden Typ an. Der folgende Code erweitert z. b. `NSString`:
 
 ```csharp
 [Category (typeof (NSString))]
@@ -86,7 +86,7 @@ public static class MyStringCategory
  }
  ```
 
-In diesem Beispiel wird der `toUpper` `NSString` -Klasse eine native Instanzmethode hinzugefügt. Diese Methode kann von "Ziel-C" aufgerufen werden:
+In diesem Beispiel wird der `NSString`-Klasse eine systemeigene `toUpper` Instanzmethode hinzugefügt. Diese Methode kann von "Ziel-C" aufgerufen werden:
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -102,7 +102,7 @@ public static class MyViewControllerCategory
 
 ### <a name="protocols"></a>Protokolle
 
-Ab xamarin. IOS 8,10 werden Schnittstellen mit dem `[Protocol]` -Attribut als Protokolle in "Ziel-C" exportiert:
+Ab xamarin. IOS 8,10 werden Schnittstellen mit dem `[Protocol]`-Attribut als Protokolle in "Ziel-C" exportiert:
 
 ```csharp
 [Protocol ("MyProtocol")]
@@ -120,7 +120,7 @@ class MyClass : IMyProtocol
 }
 ```
 
-Dieser Code exportiert `IMyProtocol` in "Ziel-C" als Protokoll `MyProtocol` mit dem Namen und `MyClass` eine Klasse mit dem Namen, die das Protokoll implementiert.
+Mit diesem Code wird `IMyProtocol` als Protokoll `MyProtocol` und als `MyClass`, das das Protokoll implementiert, in "Ziel-C" exportiert.
 
 ## <a name="new-registration-system"></a>Neues Registrierungssystem
 
@@ -134,7 +134,7 @@ Dieses neue Registrierungssystem bietet die folgenden neuen Features:
 - Entfernen von nicht verwendetem nativem Code:
   - Das neue Registrierungssystem fügt starke Verweise auf den Code hinzu, der in statischen Bibliotheken verwendet wird, sodass der Native Linker nicht verwendeten systemeigenen Code aus der resultierenden Binärdatei entfernen kann. Bei den Beispiel Bindungen von xamarin werden die meisten Anwendungen mindestens 300 KB kleiner.
 
-- Unterstützung für generische Unterklassen `NSObject`von. Weitere Informationen finden Sie unter [NSObject Generika](~/ios/internals/api-design/nsobject-generics.md) . Außerdem fängt das neue Registrierungssystem nicht unterstützte generische Konstrukte ab, die vorher ein zufälliges Verhalten zur Laufzeit verursacht haben.
+- Unterstützung für generische Unterklassen von `NSObject`; Weitere Informationen finden Sie unter [NSObject Generika](~/ios/internals/api-design/nsobject-generics.md) . Außerdem fängt das neue Registrierungssystem nicht unterstützte generische Konstrukte ab, die vorher ein zufälliges Verhalten zur Laufzeit verursacht haben.
 
 ### <a name="errors-caught-by-the-new-registrar"></a>Von der neuen Registrierungsstelle aufgefangene Fehler
 
@@ -180,25 +180,25 @@ Einige Dinge, die Sie über die neue Registrierungsstelle beachten sollten:
 
 - Einige Bibliotheken von Drittanbietern müssen aktualisiert werden, um mit dem neuen Registrierungssystem zusammenarbeiten zu können. Weitere Informationen finden Sie unten unter [erforderliche Änderungen](#required-modifications) .
 
-- Ein kurzfristiger Nachteil ist auch, dass clang verwendet werden muss, wenn das Accounts-Framework verwendet wird (Dies liegt daran, dass der " **Accounts. h** "-Header von Apple nur von clang kompiliert werden kann). Fügen `--compiler:clang` Sie den zusätzlichen mtouchscreen-Argumenten hinzu, um clang zu verwenden, wenn Sie Xcode 4,6 oder früher verwenden (xamarin. IOS wählt clang automatisch in Xcode 5,0 oder höher aus).
+- Ein kurzfristiger Nachteil ist auch, dass clang verwendet werden muss, wenn das Accounts-Framework verwendet wird (Dies liegt daran, dass der " **Accounts. h** "-Header von Apple nur von clang kompiliert werden kann). Fügen Sie den zusätzlichen mberühren-Argumenten `--compiler:clang` hinzu, um clang zu verwenden, wenn Sie Xcode 4,6 oder früher verwenden (xamarin. IOS wählt clang automatisch in Xcode 5,0 oder höher aus).
 
-- Wenn Xcode 4,6 (oder früher) verwendet wird, muss gcc/G + + ausgewählt werden, wenn exportierte Typnamen nicht-ASCII-Zeichen enthalten (Dies liegt daran, dass die in Xcode 4,6 enthaltene Version von clang keine nicht-ASCII-Zeichen innerhalb von Bezeichnerzeichen in Ziel-C-Code unterstützt). Fügen `--compiler:gcc` Sie den zusätzlichen mberührungs-Argumenten hinzu, um gcc zu verwenden.
+- Wenn Xcode 4,6 (oder früher) verwendet wird, muss gcc/G + + ausgewählt werden, wenn exportierte Typnamen nicht-ASCII-Zeichen enthalten (Dies liegt daran, dass die in Xcode 4,6 enthaltene Version von clang keine nicht-ASCII-Zeichen innerhalb von Bezeichnerzeichen in Ziel-C-Code unterstützt). Fügen Sie den zusätzlichen mberührungs-Argumenten `--compiler:gcc` hinzu, um gcc zu verwenden.
 
 ## <a name="selecting-a-registrar"></a>Auswählen einer Registrierungsstelle
 
 Sie können eine andere Registrierungsstelle auswählen, indem Sie eine der folgenden Optionen zu den zusätzlichen mberührungs-Argumenten in den **IOS** -Buildeinstellungen des Projekts hinzufügen:
 
-- `--registrar:static`– Standard für gerätebuilds
-- `--registrar:dynamic`– Standard für simulatorbuilds
+- `--registrar:static` – Standard für gerätebuilds
+- `--registrar:dynamic` – Standard für simulatorbuilds
 
 > [!NOTE]
-> Xamarin Classic API unterstützt andere Optionen, wie `--registrar:legacystatic` z `--registrar:legacydynamic`. b. und. Diese Optionen werden jedoch nicht vom Unified API unterstützt.
+> Xamarin Classic API unterstützt andere Optionen, z. b. `--registrar:legacystatic` und `--registrar:legacydynamic`. Diese Optionen werden jedoch nicht vom Unified API unterstützt.
 
 ## <a name="shortcomings-in-the-old-registration-system"></a>Mängel im alten Registrierungssystem
 
 Das alte Registrierungssystem weist die folgenden Nachteile auf:
 
-- In nativen Bibliotheken von Drittanbietern gab es keinen (nativen) statischen Verweis auf Ziel-C-Klassen und-Methoden, was bedeutete, dass wir den nativen Linker nicht bitten konnten, nativen Code von Drittanbietern zu entfernen, der eigentlich nicht verwendet wurde (weil alles entfernt werden würde). Dies ist der Grund für das `-force_load libNative.a` , das jede Drittanbieter Bindung durchführen musste (oder das Äquivalent `ForceLoad=true` im `[LinkWith]` -Attribut).
+- In nativen Bibliotheken von Drittanbietern gab es keinen (nativen) statischen Verweis auf Ziel-C-Klassen und-Methoden, was bedeutete, dass wir den nativen Linker nicht bitten konnten, nativen Code von Drittanbietern zu entfernen, der eigentlich nicht verwendet wurde (weil alles entfernt werden würde). Dies ist der Grund für den `-force_load libNative.a`, den jede Drittanbieter Bindung durchführen musste (oder die entsprechende `ForceLoad=true` im `[LinkWith]`-Attribut).
 - Sie können zwei verwaltete Typen mit dem gleichen Ziel-C-Namen ohne Warnung exportieren. Ein seltenen Szenario besteht darin, zwei `AppDelegate` Klassen in verschiedenen Namespaces zu schließen. Zur Laufzeit wäre es vollständig zufällig, welches ausgewählt wurde (tatsächlich war es zwischen den Ausführungen einer APP, die noch nicht neu erstellt wurde), was für eine sehr Rätsel freie und frustrierende Debuggingumgebung gesorgt hat.
 - Sie können zwei Methoden mit der gleichen Ziel-C-Signatur exportieren. Der Aufruf von "Ziel-C" würde jedoch zufällig erfolgen (dieses Problem war jedoch nicht so üblich wie das vorherige, weil die einzige Möglichkeit zum eigentlichen Auftreten dieses Fehlers darin bestand, die nicht glückliche verwaltete Methode zu überschreiben).
 - Die exportierten Methoden unterscheiden sich geringfügig von dynamischen und statischen Builds.
@@ -212,7 +212,7 @@ In diesem Abschnitt werden Bindungs Änderungen beschrieben, die vorgenommen wer
 
 ### <a name="protocols-must-have-the-protocol-attribute"></a>Protokolle müssen über das [Protocol]-Attribut verfügen.
 
-Protokolle müssen jetzt über das `[Protocol]` -Attribut verfügen. Wenn Sie dies nicht tun, wird ein nativer Linker-Fehler angezeigt, z. b.:
+Protokolle müssen jetzt über das `[Protocol]`-Attribut verfügen. Wenn Sie dies nicht tun, wird ein nativer Linker-Fehler angezeigt, z. b.:
 
 ```console
 Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", referenced from: ...
@@ -224,9 +224,9 @@ Alle Selektoren müssen die Anzahl von Parametern ordnungsgemäß angeben. Zuvor
 
 Kurz gesagt, die Anzahl der Doppelpunkte muss mit der Anzahl von Parametern identisch sein:
 
-- Keine Parameter:`foo`
-- Ein Parameter:`foo:`
-- Zwei Parameter:`foo:parameterName2:`
+- Keine Parameter: `foo`
+- Ein Parameter: `foo:`
+- Zwei Parameter: `foo:parameterName2:`
 
 Im folgenden finden Sie falsche Verwendungsmöglichkeiten:
 
@@ -242,7 +242,7 @@ void Display ();
 
 ### <a name="use-isvariadic-parameter-in-export"></a>Isvariadic-Parameter im Export verwenden
 
-Variadic-Funktionen müssen das `IsVariadic` -Argument für `[Export]` das-Attribut verwenden:
+Variadic-Funktionen müssen das `IsVariadic`-Argument für das `[Export]` Attribut verwenden:
 
 ```csharp
 [Export ("variadicMethod:", IsVariadic = true)]

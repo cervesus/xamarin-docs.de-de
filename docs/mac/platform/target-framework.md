@@ -4,15 +4,15 @@ description: Dieser Artikel behandelt die Ziel-Frameworks (Basisklassen Biblioth
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: a612c2c23ceff13ea1d602465573514547628e55
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e07ec4fd4436d951ea4033dbceab2cef47e96218
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769806"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025935"
 ---
 # <a name="target-framework-for-xamarinmac"></a>Ziel Framework für xamarin. Mac
 
@@ -30,11 +30,11 @@ Eine der wichtigsten Auswirkungen dieser unterschiedlichen Ziel-Frameworks ist, 
 
 Für xamarin. Mac stehen drei Ziel Framework-Optionen zur Verfügung, die jeweils unterschiedliche Vorteile und Nachteile bieten:
 
-- **Modern** (in älterer Dokumentation als "Mobile" bezeichnet) – eine sehr ähnliche Teilmenge, die für die Leistung und Größe von xamarin. IOS stark optimiert ist. Dieses Ziel Framework ist Linker sicher. Daher können diese Projekte durch Entfernen von nicht verwendetem Code drastisch reduziert werden.
+- **Modern** (in älterer Dokumentation als "Mobile" bezeichnet) – eine sehr ähnliche Teilmenge für die Funktionsweise von xamarin. IOS, hochoptimiert für die Leistung und die Größe. Dieses Ziel Framework ist Linker sicher. Daher können diese Projekte durch Entfernen von nicht verwendetem Code drastisch reduziert werden.
 
-- **Vollständig** (in der älteren Dokumentation als XM 4,5 bezeichnet) – eine sehr ähnliche Teilmenge auf die "Desktop"-BCL mit einigen kleinen Entfernungen. Da das Ziel Framework fast mit net45 (und höher) identisch ist, kann es problemlos viele nuget verarbeiten, die weder netstandard2 noch bestimmte xamarin. Mac-Builds bereitstellen. Aufgrund der Verwendung von System. Configuration ist Sie jedoch nicht mit dem Verknüpfen kompatibel.
+- **Full** (in älterer Dokumentation als XM 4,5 bezeichnet) – eine sehr ähnliche Teilmenge auf die "Desktop"-BCL mit einigen kleinen Entfernungen. Da das Ziel Framework fast mit net45 (und höher) identisch ist, kann es problemlos viele nuget verarbeiten, die weder netstandard2 noch bestimmte xamarin. Mac-Builds bereitstellen. Aufgrund der Verwendung von System. Configuration ist Sie jedoch nicht mit dem Verknüpfen kompatibel.
 
-- **Nicht unterstützt** (in älterer Dokumentation genannt) – verwenden Sie das aktuell installierte System Mono, anstatt eine Verknüpfung mit einer von xamarin. Mac bereitgestellten BCL zu verwenden. Dies bietet den vollständigsten Satz von Assemblys, einschließlich einiger bekanntermaßen problematisch (z. b. System. Drawing). Diese Option ist bereits vorhanden und wird dringend empfohlen, andere Optionen zu debugden, bevor Sie Sie verwenden. Wie der Name schon sagt, wird die Verwendung durch offizielle Support Kanäle nicht unterstützt.
+- **Nicht unterstützt (wird** in der älteren Dokumentation als System bezeichnet) – verwenden Sie das aktuell installierte System Mono, anstatt eine Verknüpfung mit einer von xamarin. Mac bereitgestellten BCL zu verwenden. Dies bietet den vollständigsten Satz von Assemblys, einschließlich einiger bekanntermaßen problematisch (z. b. System. Drawing). Diese Option ist bereits vorhanden und wird dringend empfohlen, andere Optionen zu debugden, bevor Sie Sie verwenden. Wie der Name schon sagt, wird die Verwendung durch offizielle Support Kanäle nicht unterstützt.
 
 ## <a name="setting-the-target-framework"></a>Festlegen des Ziel Frameworks
 
@@ -44,7 +44,7 @@ Gehen Sie folgendermaßen vor, um zum Ziel Framework-Typ für ein xamarin. Mac-P
 2. Doppelklicken Sie auf die Projektdatei im **Projektmappen-Explorer**, um die **Projektoptionen** zu öffnen.
 3. Wählen Sie auf der Registerkarte **Allgemein** den Typ des **Ziel Frameworks** aus, das den Anforderungen Ihrer Anwendung entspricht:
 
-    [![Verwenden des Fensters "Projektoptionen" zum Auswählen eines Ziel Frameworks](target-framework-images/select-target-full.png "Verwenden des Fensters \"Projektoptionen\" zum Auswählen eines Ziel Frameworks")](target-framework-images/select-target-full-large.png#lightbox)
+    [![Verwenden des Fensters "Projektoptionen" zum Auswählen eines Ziel Frameworks](target-framework-images/select-target-full.png "Verwenden des Fensters "Projektoptionen" zum Auswählen eines Ziel Frameworks")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 

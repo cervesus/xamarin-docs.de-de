@@ -4,15 +4,15 @@ description: In diesem Handbuch wird erläutert, wie ein Android-Dienst lokale B
 ms.prod: xamarin
 ms.assetid: 6C06FDE7-6385-40EF-AC7C-8EFB54E29F45
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 5d25604db1f88702f4c24df21b3ebba6c9c2fc95
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b02785863f89ef6a273c52c09f45a99c17cb6242
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754813"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024531"
 ---
 # <a name="service-notifications"></a>Dienstbenachrichtigungen
 
@@ -47,7 +47,7 @@ public class MyService: Service
 
 Dieser Screenshot zeigt ein Beispiel für die Benachrichtigung, die angezeigt wird:
 
-[![Benachrichtigungssymbol wird in der Statusleiste angezeigt.](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
+[![Benachrichtigungssymbol, das in der Statusleiste angezeigt wird](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
 
 Wenn der Benutzer den Benachrichtigungs Bildschirm von oben nach unten bewegt, wird die vollständige Benachrichtigung angezeigt:
 

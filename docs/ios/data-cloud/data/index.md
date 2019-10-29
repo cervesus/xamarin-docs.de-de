@@ -4,15 +4,15 @@ description: Dieses Dokument ist mit Anleitungen verknüpft, die beschreiben, wi
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 6050320f781ea89c5455e10a8754a89d7086e92a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 163bd88349ee55af5f518a20364bbce7fe6052b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281740"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008436"
 ---
 # <a name="xamarinios-data-access"></a>Xamarin. IOS-Datenzugriff
 
@@ -35,7 +35,7 @@ Informationen zu xamarin. Forms-Anwendungen finden Sie unter [Arbeiten mit Daten
 ## <a name="sections"></a>Abschnitte
 
 - [Introduction (Einführung)](introduction.md)
-- [Configuration](configuration.md)
+- [Konfiguration](configuration.md)
 - [Verwenden von SQLite.NET ORM](using-sqlite-orm.md)
 - [Verwenden von ADO.NET](using-adonet.md)
 - [Verwenden von Daten in einer App](using-data-in-an-app.md)

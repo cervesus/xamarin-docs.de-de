@@ -4,15 +4,15 @@ description: Das Android-Betriebssystem verwendet Inhaltsanbieter, um den Zugrif
 ms.prod: xamarin
 ms.assetid: 6E1810AA-EB70-9AD0-1B32-D9418908CC97
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 3dd321840c4be0729b843897ad51cf5bd2b61196
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 496e5c092c79f4f71bddaad30bea6acd1d58d375
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758917"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027539"
 ---
 # <a name="intro-to-contentproviders"></a>Einführung zu contentproviders
 
@@ -20,25 +20,25 @@ _Das Android-Betriebssystem verwendet Inhaltsanbieter, um den Zugriff auf freige
 
 ## <a name="content-providers-overview"></a>Übersicht über Inhaltsanbieter
 
-Ein *Contentprovider* kapselt ein Datenrepository und stellt eine API für den Zugriff bereit. Der Anbieter ist als Teil einer Android-Anwendung vorhanden, die in der Regel auch eine Benutzeroberfläche zum Anzeigen und Verwalten der Daten bereitstellt. Der Hauptvorteil der Verwendung eines Inhalts Anbieters besteht darin, dass andere Anwendungen mithilfe eines Anbieter Client Objekts (als " *contentresolver*" bezeichnet) problemlos auf die gekapselten Daten zugreifen können. Ein Inhaltsanbieter und eine Inhalts Auflösung bieten eine konsistente Anwendungsübergreifende API für den Datenzugriff, die einfach zu erstellen und zu nutzen ist. Jede Anwendung kann für die interne `ContentProviders` Verwaltung von Daten und auch für andere Anwendungen verwenden.
+Ein *Contentprovider* kapselt ein Datenrepository und stellt eine API für den Zugriff bereit. Der Anbieter ist als Teil einer Android-Anwendung vorhanden, die in der Regel auch eine Benutzeroberfläche zum Anzeigen und Verwalten der Daten bereitstellt. Der Hauptvorteil der Verwendung eines Inhalts Anbieters besteht darin, dass andere Anwendungen mithilfe eines Anbieter Client Objekts (als " *contentresolver*" bezeichnet) problemlos auf die gekapselten Daten zugreifen können. Ein Inhaltsanbieter und eine Inhalts Auflösung bieten eine konsistente Anwendungsübergreifende API für den Datenzugriff, die einfach zu erstellen und zu nutzen ist. Jede Anwendung kann `ContentProviders` verwenden, um Daten intern zu verwalten und Sie auch anderen Anwendungen zur Verfügung zu stellen.
 
-Außerdem `ContentProvider` ist ein erforderlich, damit Ihre Anwendung benutzerdefinierte Suchvorschläge bereitstellen kann, oder wenn Sie komplexe Daten aus Ihrer Anwendung kopieren möchten, um Sie in andere Anwendungen einzufügen. In diesem Dokument wird gezeigt, wie Sie `ContentProviders` mit xamarin. Android auf Sie zugreifen und diese erstellen.
+Eine `ContentProvider` ist auch erforderlich, damit Ihre Anwendung benutzerdefinierte Suchvorschläge bereitstellen kann, oder wenn Sie komplexe Daten aus Ihrer Anwendung kopieren möchten, um Sie in andere Anwendungen einzufügen. In diesem Dokument wird gezeigt, wie Sie mit xamarin. Android auf `ContentProviders` zugreifen und diese erstellen.
 
 Die Struktur dieses Abschnitts lautet wie folgt:
 
-- **Funktionsweise** Eine Übersicht über das `ContentProvider` , wofür entworfen wurde und wie es funktioniert. &ndash;
+- **Funktionsweise** &ndash; eine Übersicht darüber, wofür das `ContentProvider` konzipiert ist und wie es funktioniert.
 
-- Nutzen **eines Inhalts Anbieters** &ndash; Ein Beispiel für den Zugriff auf die Liste Kontakte.
+- Verwenden **eines Inhalts Anbieters** &ndash; ein Beispiel für den Zugriff auf die Liste Kontakte.
 
-- **Verwenden von Contentprovider zum Freigeben von Daten** Schreiben und Verarbeiten eines `ContentProvider` in derselben Anwendung. &ndash;
+- **Verwenden von Contentprovider zum Freigeben von Daten** &ndash; schreiben und Nutzen eines `ContentProvider` in derselben Anwendung.
 
-`ContentProviders`und die Cursor, die mit Ihren Daten arbeiten, werden häufig verwendet, um ListViews aufzufüllen. Weitere Informationen zur Verwendung dieser Klassen finden Sie im [Handbuch zu ListViews und Adaptern](~/android/user-interface/layouts/list-view/index.md) .
+`ContentProviders` und die Cursor, die mit Ihren Daten arbeiten, werden häufig verwendet, um ListViews aufzufüllen. Weitere Informationen zur Verwendung dieser Klassen finden Sie im [Handbuch zu ListViews und Adaptern](~/android/user-interface/layouts/list-view/index.md) .
 
-`ContentProviders`verfügbar gemacht von Android (oder anderen Anwendungen) ist eine einfache Möglichkeit, Daten aus anderen Quellen in Ihre Anwendung einzubeziehen. Sie ermöglichen Ihnen den Zugriff auf und die Darstellung von Daten, wie z. b. die Liste Kontakte, Fotos oder Kalenderveranstaltungen innerhalb Ihrer Anwendung, und ermöglichen dem Benutzer die Interaktion mit diesen Daten.
+`ContentProviders`, die von Android (oder anderen Anwendungen) verfügbar gemacht werden, sind eine einfache Möglichkeit, Daten aus anderen Quellen in Ihre Anwendung einzubeziehen. Sie ermöglichen Ihnen den Zugriff auf und die Darstellung von Daten, wie z. b. die Liste Kontakte, Fotos oder Kalenderveranstaltungen innerhalb Ihrer Anwendung, und ermöglichen dem Benutzer die Interaktion mit diesen Daten.
 
-Benutzer `ContentProviders` definiert sind eine bequeme Möglichkeit, Ihre Daten für die Verwendung in ihrer eigenen App zu verpacken, oder für die Verwendung durch andere Anwendungen (einschließlich spezieller Verwendung, z. b. benutzerdefinierte Suche und kopieren/einfügen).
+Benutzerdefinierte `ContentProviders` sind eine bequeme Möglichkeit zum Verpacken Ihrer Daten für die Verwendung in ihrer eigenen App oder zur Verwendung durch andere Anwendungen (z. b. für die benutzerdefinierte Suche und das Kopieren/Einfügen).
 
-Die Themen in diesem Abschnitt enthalten einige einfache Beispiele für das verarbeiten und `ContentProvider` Schreiben von Code.
+Die Themen in diesem Abschnitt enthalten einige einfache Beispiele für das verarbeiten und Schreiben von `ContentProvider`-Code.
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -50,5 +50,5 @@ Die Themen in diesem Abschnitt enthalten einige einfache Beispiele für das vera
 - [ListView-Klassen Verweis](xref:Android.Widget.ListView)
 - [CursorAdapter-Klassenreferenz](xref:Android.Widget.CursorAdapter)
 - [Urimatcher-Klassenreferenz](xref:Android.Content.UriMatcher)
-- [Android.Provider](xref:Android.Provider)
+- [Android. Provider](xref:Android.Provider)
 - [Contaczcontract-Klassenreferenz](xref:Android.Provider.ContactsContract)

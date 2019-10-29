@@ -3,15 +3,15 @@ title: Binden von Objective-C
 description: Dieses Dokument enthält Links zu verschiedenen Leitfäden, in denen beschrieben C# wird, wie Bindungen mit dem Ziel-C-Code erstellt werden, sodass Entwickler in xamarin-Anwendungen offline-Bibliotheken verwenden können.
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: d48245ac6939a7b1a1528a7b42ec4a701f062a95
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cc404f3995bd1f2940897f6cb84d57cea39ae44b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765760"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016284"
 ---
 # <a name="binding-objective-c"></a>Binden von Objective-C
 
