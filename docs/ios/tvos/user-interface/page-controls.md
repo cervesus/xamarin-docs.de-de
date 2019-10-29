@@ -4,21 +4,21 @@ description: In diesem Dokument wird beschrieben, wie Sie mit tvos-Seiten Steuer
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bb517eaa549567ae92695fbad300d055f42771f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 12fe9645ab832db1db37e36b0342664bbd2fe9f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769049"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030404"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit tvos-Seiten Steuerelementen in xamarin
 
 Manchmal müssen Sie möglicherweise eine Reihe von Seiten oder Bildern in ihrer xamarin. tvos-App anzeigen. Ein Seiten Steuerelement wurde so entworfen, dass die Seite, auf der sich ein Benutzer befindet, deutlich von der maximalen Anzahl von Seiten angezeigt wird. Ein Seiten Steuerelement zeigt eine Reihe von Punkten gegen einen dunklen, oval-förmigen Hintergrund an. Auf der aktuellen Seite wird ein ausgefüllter Punkt angezeigt. alle anderen Seiten werden als hohl Punkte angezeigt. Das Seiten Steuerelement durchsucht die äußeren meisten Punkte, wenn zu viele für den Hintergrundbereich vorhanden sind.
 
-[![](page-controls-images/page01.png "Sample Page-Steuerelement")](page-controls-images/page01.png#lightbox)
+[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
 
 Ein Seiten Steuerelement in einem nicht interaktiven Element, das nur dem Benutzer Feedback geben soll. Sie müssen weitere Steuerelemente hinzufügen, um die aktuelle Seitenzahl (z. b. Gesten oder Schaltflächen) zu ändern.
 
@@ -38,14 +38,14 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
 
-    [![](page-controls-images/page02.png "Ein Seiten Steuerelement")](page-controls-images/page02.png#lightbox)
+    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
 1. Auf der **Registerkarte widget** des **Eigenschaftenpad**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**:
 
-    [![](page-controls-images/page03.png "Die Widget-Registerkarte")](page-controls-images/page03.png#lightbox)
+    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel:
 
-    [![](page-controls-images/page04.png "Benennen des Steuer Elements")](page-controls-images/page04.png#lightbox)
+    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -53,22 +53,22 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
 
-    [![](page-controls-images/page02-vs.png "Ein Seiten Steuerelement")](page-controls-images/page02-vs.png#lightbox)
+    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
 1. Auf der **Registerkarte widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**:
 
-    [![](page-controls-images/page03-vs.png "Die Widget-Registerkarte")](page-controls-images/page03-vs.png#lightbox)
+    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel:
 
-    [![](page-controls-images/page04-vs.png "Benennen des Steuer Elements")](page-controls-images/page04-vs.png#lightbox)
+    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 -----
 
 > [!IMPORTANT]
-> Obwohl es möglich ist, Ereignisse wie z `TouchUpInside` . b. einem Benutzeroberflächen Element (z. b. "UIButton") im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten das `Primary Action` -Ereignis immer verwenden, wenn Sie Ereignishandler für tvos-Benutzeroberflächen Elemente erstellen.
+> Obwohl es möglich ist, Ereignisse wie z. b. `TouchUpInside` einem Benutzeroberflächen Element (z. b. "UIButton") im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten beim Erstellen von Ereignis Handlern für tvos-Benutzeroberflächen Elemente immer das `Primary Action`-Ereignis verwenden.
 
-Bearbeiten Sie die Ansichts Controller `ViewController.cs`Datei (Beispieldatei), und fügen Sie den Code hinzu, der die geänderten Seiten behandelt. Beispiel:
+Bearbeiten Sie die Datei des Ansichts Controllers (z. b. `ViewController.cs`), und fügen Sie den Code zum Verarbeiten der geänderten Seiten hinzu. Beispiel:
 
 ```csharp
 using System;
@@ -154,7 +154,7 @@ Verwenden Sie den folgenden Code, um die aktuelle Seitenzahl zu ändern:
 PageView.CurrentPage = PageNumber;
 ```
 
-Die `CurrentPage` -Eigenschaft ist auf NULL (0) basiert, sodass die erste Seite 0 (null) und der letzte eine minus der maximalen Anzahl von Seiten sein wird.
+Die `CurrentPage`-Eigenschaft ist auf NULL (0) basiert, sodass die erste Seite 0 (null) und der letzte eine minus der maximalen Anzahl von Seiten ist.
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 

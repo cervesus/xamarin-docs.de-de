@@ -3,19 +3,19 @@ title: Erste Schritte mit C
 description: In diesem Dokument wird beschrieben, wie Sie .net-Einbettungen mithilfe von .net embed in eine C-Anwendung einbetten. Darin wird erläutert, wie .net-Einbettungen sowohl in Visual Studio 2019 als auch Visual Studio für Mac verwendet werden.
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/19/2018
-ms.openlocfilehash: 1dc68a709f8e1f864961bbe87af112b648b0dd2a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9660eccd3e14a6c4ecad901064650fe1e25458f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278736"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029787"
 ---
 # <a name="getting-started-with-c"></a>Erste Schritte mit C
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Um die .net-Einbettung mit C zu verwenden, benötigen Sie einen Mac-oder Windows-Computer unter:
 
@@ -71,7 +71,7 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-Da das `--compile` Flag an das Tool weitergegeben wurde, sollte die .net-Einbettung auch die Ausgabedateien in eine freigegebene Bibliothek kompiliert haben, die Sie neben den generierten Dateien finden können, eine **libmanaged. dylib** -Datei unter macOS und **Managed. dll** unter Windows.
+Da das `--compile`-Flag an das Tool weitergegeben wurde, sollte die .net-Einbettung auch die Ausgabedateien in eine freigegebene Bibliothek kompiliert haben, die Sie neben den generierten Dateien finden können, eine **libmanaged. dylib** -Datei unter macOS und **Managed. dll** unter Windows.
 
 Um die freigegebene Bibliothek zu nutzen, können Sie die **verwaltete h** -c-Header Datei einschließen, die die c-Deklarationen bereitstellt, die den entsprechenden verwalteten Bibliotheks-APIs entsprechen, und die Verknüpfung mit der zuvor erwähnten kompilierten freigegebenen Bibliothek.
 

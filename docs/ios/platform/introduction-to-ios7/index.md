@@ -4,25 +4,25 @@ description: In diesem Artikel werden die wichtigsten neuen APIs behandelt, die 
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b405643096699e1d965f485bdc590afa178881d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70752062"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031822"
 ---
 # <a name="introduction-to-ios-7"></a>Einführung in iOS 7
 
-_In diesem Artikel werden die wichtigsten neuen APIs behandelt, die in ios 7 eingeführt wurden. Hierzu zählen auch das Anzeigen von Controller Übergängen, Erweiterungen von UIView-Animationen, UIKit Dynamics und textkit. Außerdem werden einige der Änderungen an der Benutzeroberfläche und die neuen Funktionen für die mehrstufige Multitasking behandelt._
+_diesem Artikel werden die wichtigsten neuen APIs behandelt, die in ios 7 eingeführt wurden, einschließlich der Ansicht von Controller Übergängen, Erweiterungen von UIView-Animationen, UIKit Dynamics und textkit. Außerdem werden einige der Änderungen an der Benutzeroberfläche und die neuen Funktionen für die mehrstufige Multitasking behandelt._
 
 IOS 7 ist ein wichtiges Update für IOS. Es wird ein völlig neues Design der Benutzeroberfläche eingeführt, das den Fokus auf den Inhalt und nicht auf die Anwendung Chrome setzt. Neben den visuellen Änderungen bietet IOS 7 eine Vielzahl neuer APIs, um umfangreichere Interaktionen und Erfahrungen zu erzielen. Dieses Dokument behandelt die neuen Technologien, die mit IOS 7 eingeführt wurden, und dient als Ausgangspunkt für weitere Untersuchungen.
 
 ## <a name="uiview-animation-enhancements"></a>Erweiterungen für UIView-Animationen
 
-IOS 7 erweitert die Animations Unterstützung in UIKit und ermöglicht Anwendungen das Ausführen von Aufgaben, die zuvor notwendig waren, direkt in das Core Animation Framework zu löschen. Beispielsweise können `UIView` jetzt Spring-Animationen und Keyframe-Animationen ausführen, die zuvor eine `CAKeyframeAnimation` auf eine `CALayer` angewendet haben.
+IOS 7 erweitert die Animations Unterstützung in UIKit und ermöglicht Anwendungen das Ausführen von Aufgaben, die zuvor notwendig waren, direkt in das Core Animation Framework zu löschen. Beispielsweise können `UIView` jetzt Spring-Animationen und Keyframe-Animationen ausführen, die zuvor eine `CAKeyframeAnimation` auf eine `CALayer`angewendet haben.
 
 ### <a name="spring-animations"></a>Spring-Animationen
 
@@ -53,7 +53,7 @@ Diese Spring Effect bewirkt, dass die Bildansicht beim Vervollständigen der Ani
 
 ### <a name="keyframe-animations"></a>Keyframe-Animationen
 
-Die `UIView`-Klasse enthält nun die `AnimateWithKeyframes`-Methode zum Erstellen von Keyframe-Animationen auf einem `UIView`. Diese Methode ähnelt anderen `UIView` Animations Methoden, mit dem Unterschied, dass ein zusätzlicher `NSAction` als Parameter übergeben wird, um die Keyframes einzuschließen. Im `NSAction` werden Keyframes durch Aufrufen von `UIView.AddKeyframeWithRelativeStartTime` hinzugefügt.
+Die `UIView`-Klasse enthält nun die `AnimateWithKeyframes`-Methode zum Erstellen von Keyframe-Animationen auf einem `UIView`. Diese Methode ähnelt anderen `UIView` Animations Methoden, mit dem Unterschied, dass ein zusätzlicher `NSAction` als Parameter übergeben wird, um die Keyframes einzuschließen. Im `NSAction`werden Keyframes durch Aufrufen von `UIView.AddKeyframeWithRelativeStartTime`hinzugefügt.
 
 Der folgende Code Ausschnitt erstellt z. b. eine Keyframe-Animation zum Animieren des Mittelpunkts einer Ansicht und zum Drehen der Ansicht:
 
@@ -92,7 +92,7 @@ Die folgenden Screenshots veranschaulichen die kombinierte Animation durch die K
 
 UIKit Dynamics ist ein neuer Satz von APIs in UIKit, mit denen Anwendungen animierte Interaktionen basierend auf der Physik erstellen können. UIKit Dynamics kapselt eine 2D-Physik-Engine, um dies zu ermöglichen.
 
-Die API ist in der Natur deklarativ. Sie deklarieren, wie sich die Physik Interaktionen Verhalten, indem Sie Objekte namens *Verhalten* zum Ausdrücken von Physik-Konzepten wie Schwerkraft, Kollisionen, Quellen usw. erstellen. Dann fügen Sie das Verhalten an ein anderes Objekt an, das als *dynamischer Animator*bezeichnet wird, der eine Ansicht kapselt. Der dynamische Animator übernimmt das Anwenden des deklarierten Physik Verhaltens auf *dynamische Elemente* -Elemente, die `IUIDynamicItem` implementieren, z. b. ein `UIView`.
+Die API ist in der Natur deklarativ. Sie deklarieren, wie sich die Physik Interaktionen Verhalten, indem Sie Objekte namens *Verhalten* zum Ausdrücken von Physik-Konzepten wie Schwerkraft, Kollisionen, Quellen usw. erstellen. Dann fügen Sie das Verhalten an ein anderes Objekt an, das als *dynamischer Animator*bezeichnet wird, der eine Ansicht kapselt. Der dynamische Animator übernimmt das Anwenden des deklarierten Physik Verhaltens auf *dynamische Elemente* -Elemente, die `IUIDynamicItem`implementieren, z. b. ein `UIView`.
 
 Es gibt mehrere verschiedene primitive Verhalten, um komplexe Interaktionen zu initiieren, einschließlich:
 
@@ -111,7 +111,7 @@ Obwohl viele primitive vorhanden sind, ist der allgemeine Prozess zum Hinzufüge
 
 ### <a name="dynamics-example"></a>Dynamics-Beispiel
 
-Sehen wir uns ein Beispiel an, das einer `UIView` Schweregrad und eine Kollisions Grenze hinzufügt.
+Sehen wir uns ein Beispiel an, das einer `UIView`Schweregrad und eine Kollisions Grenze hinzufügt.
 
 #### <a name="uigravitybehavior"></a>Uigravitybehavior
 
@@ -137,13 +137,13 @@ dynAnimator = new UIDynamicAnimator (this.View);
 
 Der `UIDynamicAnimator` nimmt eine Instanz eines Verweises `UIView` oder eine `UICollectionViewLayout`, die die Elemente enthält, die gemäß angehängtem Verhalten animiert werden.
 
-Erstellen Sie als nächstes eine `UIGravityBehavior` Instanz. Sie können ein oder mehrere Objekte, die die `IUIDynamicItem` implementieren, wie eine `UIView` übergeben:
+Erstellen Sie als nächstes eine `UIGravityBehavior` Instanz. Sie können ein oder mehrere Objekte, die die `IUIDynamicItem`implementieren, wie eine `UIView`übergeben:
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-Das Verhalten wird an ein Array von `IUIDynamicItem` weitergeleitet, das in diesem Fall die einzige `UIImageView` Instanz enthält, die wir animieren.
+Das Verhalten wird an ein Array von `IUIDynamicItem`weitergeleitet, das in diesem Fall die einzige `UIImageView` Instanz enthält, die wir animieren.
 
 Fügen Sie schließlich dem dynamischen Animator das Verhalten hinzu:
 
@@ -156,13 +156,13 @@ Dies führt dazu, dass das Bild nach unten mit der Schwerkraft animiert wird, wi
 ![](images/gravity2.png "The starting image location")
 ![](images/gravity3.png "The ending image location")
 
-Da die Begrenzungen des Bildschirms nicht eingeschränkt sind, wird die Bildansicht einfach vom unteren Rand entfernt. Um die Ansicht so einzuschränken, dass das Bild mit den Rändern des Bildschirms kollidiert, können wir eine `UICollisionBehavior` hinzufügen. Dies wird im nächsten Abschnitt behandelt.
+Da die Begrenzungen des Bildschirms nicht eingeschränkt sind, wird die Bildansicht einfach vom unteren Rand entfernt. Um die Ansicht so einzuschränken, dass das Bild mit den Rändern des Bildschirms kollidiert, können wir eine `UICollisionBehavior`hinzufügen. Dies wird im nächsten Abschnitt behandelt.
 
 #### <a name="uicollisionbehavior"></a>Uicollisionbehavior
 
-Zunächst erstellen wir eine `UICollisionBehavior` und fügen Sie dem dynamischen Animator hinzu, wie dies für die `UIGravityBehavior` der Fall war.
+Zunächst erstellen wir eine `UICollisionBehavior` und fügen Sie dem dynamischen Animator hinzu, wie dies für die `UIGravityBehavior`der Fall war.
 
-Ändern Sie den Code, um den `UICollisionBehavior` einzubeziehen:
+Ändern Sie den Code, um den `UICollisionBehavior`einzubeziehen:
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {

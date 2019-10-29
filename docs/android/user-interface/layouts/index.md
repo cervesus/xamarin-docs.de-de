@@ -4,15 +4,15 @@ description: Definieren der visuellen Struktur Ihrer xamarin. Android-App
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/18/2017
-ms.openlocfilehash: 60752760415bd416d339cc2a3729075b4fca0d32
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f15aeff8590cf6d82168fd3e39ba6f78d649d2ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764473"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028968"
 ---
 # <a name="xamarinandroid-layouts"></a>Xamarin. Android-Layouts
 
@@ -34,7 +34,7 @@ Layouts werden zum Anordnen der Elemente verwendet, aus denen die Benutzeroberfl
 
     ![Beispiel für eine Recycler-Ansicht](images/recycler-view.png)
 
-- [ListView](~/android/user-interface/layouts/list-view/index.md) ist eine Ansichts Gruppe, die eine Liste von scrollbaren Elementen erstellt. Die Listenelemente werden mithilfe eines Listen Adapters automatisch in die Liste eingefügt. Bei `ListView` handelt es sich um eine wichtige Benutzeroberflächen Komponente von Android-Anwendungen, da Sie überall von kurzen Listen mit Menü Optionen bis zu langen Listen von Kontakten oder Internet Favoriten verwendet wird. Es bietet eine einfache Möglichkeit, eine Bildlauf-Liste mit Zeilen darzustellen, die entweder mit einem integrierten Stil formatiert oder ausgiebig angepasst werden können. Eine ListView-Instanz benötigt einen Adapter, um Sie mit Daten in Zeilen Sichten zu versorgen.
+- [ListView](~/android/user-interface/layouts/list-view/index.md) ist eine Ansichts Gruppe, die eine Liste von scrollbaren Elementen erstellt. Die Listenelemente werden mithilfe eines Listen Adapters automatisch in die Liste eingefügt. Die `ListView` ist eine wichtige Komponente der Benutzeroberfläche von Android-Anwendungen, da Sie überall von kurzen Listen mit Menü Optionen bis zu langen Listen von Kontakten oder Internet Favoriten verwendet wird. Es bietet eine einfache Möglichkeit, eine Bildlauf-Liste mit Zeilen darzustellen, die entweder mit einem integrierten Stil formatiert oder ausgiebig angepasst werden können. Eine ListView-Instanz benötigt einen Adapter, um Sie mit Daten in Zeilen Sichten zu versorgen.
 
     ![Beispiel für eine Listenansicht](images/list-view.png)
 

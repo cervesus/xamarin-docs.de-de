@@ -4,15 +4,15 @@ description: Bei der Verwendung von xamarin. tvos werden bei der Verwendung von 
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: f0633b0f91bf39d10ad42e1ee41997213ca3047e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8bf8aad6804fcbbc984b942fdafd12522299998
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769032"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030451"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>Entwickeln von tvos-Benutzeroberflächen mit xamarin
 
@@ -24,7 +24,7 @@ Die unten aufgeführten Anleitungen zeigen ausführliche Informationen zum Arbei
 
 ## <a name="working-with-alertsiostvosuser-interfacealertsmd"></a>[Arbeiten mit Warnungen](~/ios/tvos/user-interface/alerts.md)
 
-In diesem Artikel wird das `UIAlertController` arbeiten mit erläutert, um dem Benutzer eine Warnmeldung in xamarin. tvos anzuzeigen.
+In diesem Artikel wird das Arbeiten mit `UIAlertController` erläutert, um dem Benutzer eine Warnmeldung in xamarin. tvos anzuzeigen.
 
 ## <a name="working-with-buttonsiostvosuser-interfacebuttonsmd"></a>[Arbeiten mit Schaltflächen](~/ios/tvos/user-interface/buttons.md)
 

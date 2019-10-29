@@ -4,21 +4,21 @@ description: In diesem Dokument wird beschrieben, wie Sie mit tvos segmentierte 
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: deac7c5eee4ac0276c9d1a67cbfede8fc41378d6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0bedd898232b39898e6079a204bd7409587cde82
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769066"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030396"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Arbeiten mit tvos segmentierten Steuerelementen in xamarin
 
 Ein segmentiertes Steuerelement stellt eine Reihe linearer Elemente bereit, von denen jedes ein Symbol oder einen Text enthalten kann. Sie wird verwendet, um dem Benutzer eine Reihe verwandter Optionen bereitzustellen.
 
-[![](segmented-controls-images/segment01.png "Sample Segment-Steuerelemente")](segmented-controls-images/segment01.png#lightbox)
+[![](segmented-controls-images/segment01.png "Sample segment controls")](segmented-controls-images/segment01.png#lightbox)
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit segmentierten Steuerelementen:
 
@@ -59,15 +59,15 @@ Die einfachste Möglichkeit, mit Segment Steuerelementen in einer xamarin. tvos-
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Segment-Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
 
-    [![](segmented-controls-images/segment02.png "Ein Segment Steuerelement")](segmented-controls-images/segment02.png#lightbox)
+    [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
 1. Auf der **Registerkarte widget** des **eigenschaftenpad**können Sie verschiedene Eigenschaften des Segment Steuer Elements anpassen, z. b. den **Stil** und den **Zustand**: 
 
-    [![](segmented-controls-images/segment03.png "Die Widget-Registerkarte")](segmented-controls-images/segment03.png#lightbox)
+    [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
 1. Verwenden Sie das Feld **Segmente** , um die Anzahl der Segmente im Controller zu steuern.
 1. Wählen Sie ein bestimmtes Segment aus der **Dropdown Liste Segment** aus, um die einzelnen Eigenschaften, z. b. **Titel** oder **Bild** , anzupassen und zu steuern, ob ein bestimmtes Segment **aktiviert** oder **ausgewählt** ist, wenn das Steuerelement angezeigt wird.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel: 
 
-    [![](segmented-controls-images/segment04.png "Zuweisen eines Namens")](segmented-controls-images/segment04.png#lightbox)
+    [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -75,15 +75,15 @@ Die einfachste Möglichkeit, mit Segment Steuerelementen in einer xamarin. tvos-
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Segment-Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
 
-    [![](segmented-controls-images/segment02-vs.png "Ein Segment Steuerelement")](segmented-controls-images/segment02-vs.png#lightbox)
+    [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
 1. Auf der **Registerkarte widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Segment Steuer Elements anpassen, z. b. den **Stil** und den **Zustand**: 
 
-    [![](segmented-controls-images/segment03-vs.png "Die Widget-Registerkarte")](segmented-controls-images/segment03-vs.png#lightbox)
+    [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
 1. Verwenden Sie das Feld **Segmente** , um die Anzahl der Segmente im Controller zu steuern.
 1. Wählen Sie ein bestimmtes Segment aus der **Dropdown Liste Segment** aus, um die einzelnen Eigenschaften, z. b. **Titel** oder **Bild** , anzupassen und zu steuern, ob ein bestimmtes Segment **aktiviert** oder **ausgewählt** ist, wenn das Steuerelement angezeigt wird.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel: 
 
-    [![](segmented-controls-images/segment04-vs.png "Zuweisen eines Namens")](segmented-controls-images/segment04-vs.png#lightbox)
+    [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 -----
@@ -127,7 +127,7 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 Im obigen Beispiel wurde das Segment Steuerelement als `PlayerCount` Name und eine `PlayerCountChanged` Ereignis Aktion verfügbar gemacht. Weitere Informationen zum Arbeiten mit Aktionen und Outlets finden Sie im Abschnitt [Schreiben des Codes mit Outlets und Aktionen](~/ios/tvos/get-started/hello-tvos.md#Writing-the-Code) in unserer [Schnellstarthandbuch Hello, tvos](~/ios/tvos/get-started/hello-tvos.md).
 
-Die `SelectedSegment` -Eigenschaft ruft das aktuell ausgewählte Segment als NULL (0)-basierten Index ab oder legt dieses fest. Wenn Sie also fünf (5) Segmente haben, weist das erste Segment den Index 0 (null) und den letzten Index von vier (4) auf.
+Die `SelectedSegment`-Eigenschaft ruft das aktuell ausgewählte Segment als NULL (0)-basierten Index ab oder legt dieses fest. Wenn Sie also fünf (5) Segmente haben, weist das erste Segment den Index 0 (null) und den letzten Index von vier (4) auf.
 
 <a name="Modifying-Segments" />
 
@@ -143,7 +143,7 @@ SegmentedControl.InsertSegment(UIImage.FromFile("icon.png"), 0, true);
 SegmentedControl.InsertSegment("New Segment", 0, true);
 ```
 
-Mit dem zweiten Parameter wird definiert, wo das Segment mit einem NULL-Index (0) eingefügt wird. Wenn der letzte Parameter ist `true` , wird der Einfügevorgang animiert.
+Mit dem zweiten Parameter wird definiert, wo das Segment mit einem NULL-Index (0) eingefügt wird. Wenn der letzte Parameter `true` ist, wird der Einfügevorgang animiert.
 
 Um ein bestimmtes Segment zu entfernen, verwenden Sie Folgendes:
 
@@ -157,7 +157,7 @@ Sie können auch Folgendes entfernen, um alle Segmente zu entfernen:
 SegmentedControl.RemoveAllSegments();
 ```
 
-Wenn der letzte Parameter ist `true`, wird die Entfernung animiert. Verwenden Sie `NumberOfSegments` die-Eigenschaft, um die aktuelle Anzahl von Segmenten zurückzugeben.
+Wenn der letzte Parameter `true`ist, wird die Entfernung animiert. Verwenden Sie die `NumberOfSegments`-Eigenschaft, um die aktuelle Anzahl der Segmente zurückzugeben.
 
 Um den **Titel** oder das **Symbol** für ein bestimmtes Segment zu erhalten, verwenden Sie Folgendes:
 
@@ -204,17 +204,17 @@ Sie können den folgenden Code verwenden, um den Hintergrund eines bestimmten Se
 SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-Where `UIControlState` gibt den Zustand des Steuer Elements an, für das Sie das Bild festlegen:
+Dabei gibt `UIControlState` den Zustand des Steuer Elements an, für das Sie das Bild festlegen:
 
 - Normal
 - Vorder
-- Disabled
+- Deaktiviert
 - Ausgewählt
 - Focused
 
-Und `UIBarMetrics` gibt die zu verwendenden Metriken an:
+Und `UIBarMetrics` die Metriken angeben, die als verwendet werden sollen:
 
-- Default
+- Standard
 - Theit
 - DefaultPrompt
 - Compactprompt
@@ -225,7 +225,7 @@ Darüber hinaus können Sie den unter Teiler zwischen den Segmenten mithilfe von
 SegmentedControl.SetDividerImage (UIImage.FromFile("divider.png"), UIControlState.Normal, UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-, Wobei der `UIControlState` erste den Status des Segments Links vom unter Teiler angibt und der zweite `UIControlState` den Zustand des Segments auf der rechten Seite angibt.
+, Wobei der erste `UIControlState` den Status des Segments Links vom unter Teiler angibt, und der zweite `UIControlState` den Zustand des Segments auf der rechten Seite angibt.
 
 <a name="Summary" />
 

@@ -4,15 +4,15 @@ description: In diesem Dokument wird die IOS-Dokument Auswahl beschrieben und er
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 11c022298cbac60b86f4ef549e30cef3aa4d4660
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bbb38acdb3de972cd7f2e2ee04233bf7ed88897a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753408"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032588"
 ---
 # <a name="document-picker-in-xamarinios"></a>Dokument Auswahl in xamarin. IOS
 
@@ -20,7 +20,7 @@ Die Dokument Auswahl ermöglicht die gemeinsame Nutzung von Dokumenten zwischen 
 
 Aufgrund der Schwierigkeit, dass Dokumente über apps und die Cloud hinweg synchronisiert werden, stellen Sie eine gewisse erforderliche Komplexität dar.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Folgendes ist erforderlich, um die in diesem Artikel beschriebenen Schritte auszuführen:
 
@@ -55,7 +55,7 @@ Bevor Sie sich mit dem Code befassen, der für die Verwendung der Dokument Auswa
 
 Da eine Datei von mehreren verschiedenen Speicherorten geändert werden kann, muss eine Koordinierung verwendet werden, um Datenverluste zu verhindern.
 
- [![](document-picker-images/image1.png "Verwenden der Datei Koordination")](document-picker-images/image1.png#lightbox)
+ [![](document-picker-images/image1.png "Using File Coordination")](document-picker-images/image1.png#lightbox)
 
 Werfen wir einen Blick auf die obige Abbildung:
 
@@ -68,11 +68,11 @@ Nehmen Sie an, dass das ursprüngliche IOS-Gerät oder der Mac die Datei bearbei
 
 ### <a name="using-uidocument"></a>Verwenden von uidocument
 
- `UIDocument`macht die Dinge einfach ( `NSDocument` oder unter macOS), indem die gesamte Arbeit für den Entwickler ausgelastet ist. Es bietet integrierte Datei Koordination mit Hintergrund Warteschlangen, um die Blockierung der Benutzeroberfläche der Anwendung zu verhindern.
+ `UIDocument` macht das alles ganz einfach (oder `NSDocument` unter macOS), indem es die Arbeit für den Entwickler vollständig erschwert. Es bietet integrierte Datei Koordination mit Hintergrund Warteschlangen, um die Blockierung der Benutzeroberfläche der Anwendung zu verhindern.
 
- `UIDocument`macht mehrere APIs auf hoher Ebene verfügbar, die den Entwicklungsaufwand einer xamarin-Anwendung für beliebige Zwecke des Entwicklers vereinfachen.
+ `UIDocument` stellt mehrere APIs auf hoher Ebene zur Verfügung, die den Entwicklungsaufwand einer xamarin-Anwendung für beliebige Zwecke des Entwicklers vereinfachen.
 
-Mit dem folgenden Code wird eine Unterklasse `UIDocument` von erstellt, um ein generisches textbasiertes Dokument zu implementieren, das zum Speichern und Abrufen von Text aus icloud verwendet werden kann:
+Mit dem folgenden Code wird eine Unterklasse von `UIDocument` erstellt, um ein generisches textbasiertes Dokument zu implementieren, das zum Speichern und Abrufen von Text aus icloud verwendet werden kann:
 
 ```csharp
 using System;
@@ -152,13 +152,13 @@ namespace DocPicker
 }
 ```
 
-Die `GenericTextDocument` oben dargestellte Klasse wird in diesem Artikel bei der Arbeit mit der Dokument Auswahl und externen Dokumenten in einer xamarin. IOS 8-Anwendung verwendet.
+Die oben dargestellte `GenericTextDocument` Klasse wird in diesem Artikel bei der Arbeit mit der Dokument Auswahl und externen Dokumenten in einer xamarin. IOS 8-Anwendung verwendet.
 
 ## <a name="asynchronous-file-coordination"></a>Asynchrone Datei Koordination
 
 IOS 8 bietet über die neuen dateikoordinations-APIs mehrere neue Funktionen für die asynchrone Datei Koordination. Vor IOS 8 waren alle vorhandenen APIs für die Datei Koordination vollständig synchron. Dies bedeutete, dass der Entwickler dafür verantwortlich war, eigene hintergrundschlangen zu implementieren, um zu verhindern, dass die Datei Koordination die Benutzeroberfläche der Anwendung blockiert.
 
-Die neue `NSFileAccessIntent` Klasse enthält eine URL, die auf die Datei verweist, und mehrere Optionen, um den erforderlichen koordinierungstyp zu steuern. Der folgende Code veranschaulicht, wie eine Datei mithilfe von Intents von einem Speicherort in einen anderen verschoben wird:
+Die neue `NSFileAccessIntent`-Klasse enthält eine URL, die auf die Datei verweist, und mehrere Optionen, um die erforderliche koordinierungsart zu steuern. Der folgende Code veranschaulicht, wie eine Datei mithilfe von Intents von einem Speicherort in einen anderen verschoben wird:
 
 ```csharp
 // Get source options
@@ -188,48 +188,48 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 
 ## <a name="discovering-and-listing-documents"></a>Entdecken und Auflisten von Dokumenten
 
-Die Möglichkeit zum Ermitteln und Auflisten von Dokumenten besteht darin, die `NSMetadataQuery` vorhandenen APIs zu verwenden. In `NSMetadataQuery` diesem Abschnitt werden die neuen Features behandelt, die hinzugefügt werden, sodass die Arbeit mit Dokumenten noch einfacher als zuvor ist.
+Die Möglichkeit zum Ermitteln und Auflisten von Dokumenten besteht darin, die vorhandenen `NSMetadataQuery`-APIs zu verwenden. In diesem Abschnitt werden neue Features behandelt, die `NSMetadataQuery` hinzugefügt wurden, die das Arbeiten mit Dokumenten noch einfacher machen als bisher.
 
 ### <a name="existing-behavior"></a>Vorhandenes Verhalten
 
-Vor IOS 8 ist `NSMetadataQuery` die Abholung von lokalen Dateiänderungen langsam, wie z. b. löschen, erstellen und umbenennen.
+Vor IOS 8 waren `NSMetadataQuery` bei der Abholung von lokalen Dateiänderungen langsam, wie z. b. löschen, erstellen und umbenennen.
 
- [![](document-picker-images/image2.png "NSMetadataQuery Übersicht über lokale Dateiänderungen")](document-picker-images/image2.png#lightbox)
+ [![](document-picker-images/image2.png "NSMetadataQuery local file changes overview")](document-picker-images/image2.png#lightbox)
 
 Im obigen Diagramm:
 
-1. Für Dateien, die bereits im Anwendungs Container vorhanden sind `NSMetadataQuery` , werden `NSMetadata` vorhandene Datensätze vorab erstellt und gefälscht, damit Sie sofort für die Anwendung verfügbar sind.
+1. Für Dateien, die bereits im Anwendungs Container vorhanden sind, `NSMetadataQuery` bereits vorhandene `NSMetadata` Datensätze vorab erstellt und spoolbar, sodass Sie für die Anwendung sofort verfügbar sind.
 1. Die Anwendung erstellt eine neue Datei im Anwendungs Container.
-1. Es gibt eine Verzögerung, `NSMetadataQuery` bevor die Änderung am Anwendungs Container und der erforderliche `NSMetadata` Datensatz erstellt wird.
+1. Es gibt eine Verzögerung, bevor `NSMetadataQuery` die Änderung am Anwendungs Container sieht und den erforderlichen `NSMetadata` Datensatz erstellt.
 
-Aufgrund der Verzögerung bei der Erstellung des `NSMetadata` Datensatzes musste für die Anwendung zwei Datenquellen geöffnet sein: eine für lokale Dateiänderungen und eine für cloudbasierte Änderungen.
+Aufgrund der Verzögerung bei der Erstellung des `NSMetadata` Datensatzes mussten für die Anwendung zwei Datenquellen geöffnet sein: eine für lokale Dateiänderungen und eine für cloudbasierte Änderungen.
 
 ### <a name="stitching"></a>Ftungen
 
-In ios 8 `NSMetadataQuery` ist leichter direkt mit einem neuen Feature namens "zusammen Fügung" zu verwenden:
+In ios 8 ist `NSMetadataQuery` direkt mit einem neuen Feature namens "Nähte" zu verwenden:
 
- [![](document-picker-images/image3.png "NSMetadataQuery mit einem neuen Feature namens \"Nähte\"")](document-picker-images/image3.png#lightbox)
+ [![](document-picker-images/image3.png "NSMetadataQuery with a new feature called Stitching")](document-picker-images/image3.png#lightbox)
 
 Verwenden der zusammen Fügung im obigen Diagramm:
 
-1. Wie zuvor ist für Dateien, die bereits im Anwendungs Container vorhanden sind `NSMetadataQuery` , bereits `NSMetadata` vorhandene Datensätze erstellt und Spooling.
+1. Wie zuvor ist für Dateien, die bereits im Anwendungs Container vorhanden sind, `NSMetadataQuery` vorhandene `NSMetadata` Datensätze vorab erstellt und Spooling.
 1. Die Anwendung erstellt eine neue Datei im Anwendungs Container mithilfe der Datei Koordination.
 1. Ein Hook im Anwendungs Container sieht die Änderung und ruft `NSMetadataQuery` auf, um den erforderlichen `NSMetadata` Datensatz zu erstellen.
 1. Der `NSMetadata` Datensatz wird direkt nach der Datei erstellt und für die Anwendung zur Verfügung gestellt.
 
-Durch die Verwendung von Nähten muss die Anwendung nicht mehr eine Datenquelle öffnen, um lokale und cloudbasierte Dateiänderungen zu überwachen. Jetzt kann die Anwendung direkt auf `NSMetadataQuery` Sie zurückgreifen.
+Durch die Verwendung von Nähten muss die Anwendung nicht mehr eine Datenquelle öffnen, um lokale und cloudbasierte Dateiänderungen zu überwachen. Nun kann die Anwendung direkt auf `NSMetadataQuery` basieren.
 
 > [!IMPORTANT]
 > Das Zusammenfügen funktioniert nur, wenn die Anwendung die Datei Koordination verwendet, wie im obigen Abschnitt gezeigt. Wenn die Datei Koordination nicht verwendet wird, wird für die APIs standardmäßig das vorhandene Pre IOS 8-Verhalten verwendet.
 
 ### <a name="new-ios-8-metadata-features"></a>Neue IOS 8-Metadatenfeatures
 
-`NSMetadataQuery` In ios 8 wurden die folgenden neuen Features hinzugefügt:
+Die folgenden neuen Features wurden `NSMetadataQuery` in ios 8 hinzugefügt:
 
-- `NSMetatadataQuery`kann jetzt nicht lokale Dokumente auflisten, die in der Cloud gespeichert sind.
+- `NSMetatadataQuery` können jetzt nicht lokale Dokumente auflisten, die in der Cloud gespeichert sind.
 - Neue APIs wurden hinzugefügt, um auf Metadateninformationen in den cloudbasierten Dokumenten zuzugreifen. 
-- Es gibt eine neue `NSUrl_PromisedItems` API, mit der auf die Dateiattribute von Dateien zugegriffen werden kann, deren Inhalt lokal verfügbar sein kann.
-- Verwenden Sie `GetPromisedItemResourceValue` die-Methode, um Informationen über eine bestimmte Datei zu `GetPromisedItemResourceValues` erhalten, oder verwenden Sie die-Methode, um Informationen zu mehr als einer Datei gleichzeitig zu erhalten.
+- Es gibt eine neue `NSUrl_PromisedItems`-API, mit der auf die Dateiattribute von Dateien zugegriffen werden kann, deren Inhalt lokal verfügbar sein kann.
+- Verwenden Sie die `GetPromisedItemResourceValue`-Methode, um Informationen über eine bestimmte Datei zu erhalten, oder verwenden Sie die `GetPromisedItemResourceValues`-Methode, um Informationen zu mehr als einer Datei gleichzeitig zu erhalten.
 
 Für den Umgang mit Metadaten wurden zwei neue dateikoordinations-Flags hinzugefügt:
 
@@ -238,7 +238,7 @@ Für den Umgang mit Metadaten wurden zwei neue dateikoordinations-Flags hinzugef
 
 Mit den obigen Flags muss der Inhalt der Dokument Datei nicht lokal verfügbar sein, damit Sie verwendet werden kann.
 
-Das folgende Codesegment zeigt, wie `NSMetadataQuery` Sie mithilfe von Abfragen, ob eine bestimmte Datei vorhanden ist, und die Datei erstellen, wenn Sie nicht vorhanden ist:
+Das folgende Codesegment zeigt, wie `NSMetadataQuery` verwendet wird, um das vorhanden sein einer bestimmten Datei abzufragen und die Datei zu erstellen, wenn Sie nicht vorhanden ist:
 
 ```csharp
 using System;
@@ -423,11 +423,11 @@ Vor IOS 8 erforderte die Anzeige von Dokument Vorschauen eine benutzerdefinierte
 
 #### <a name="retrieving-document-thumbnails"></a>Abrufen von Dokument Miniaturansichten 
 
-Durch Aufrufen der `GetPromisedItemResourceValue` - `GetPromisedItemResourceValues` Methode oder `NSUrl_PromisedItems` der-Methode `NSUrlThumbnailDictionary`wird API, a zurückgegeben. Der einzige Schlüssel, der derzeit in diesem Wörter `NSThumbnial1024X1024SizeKey` Buch vorhanden ist `UIImage`, ist der und der entsprechende.
+Durch Aufrufen der Methoden `GetPromisedItemResourceValue` oder `GetPromisedItemResourceValues` wird `NSUrl_PromisedItems` API ein `NSUrlThumbnailDictionary`zurückgegeben. Der einzige Schlüssel, der derzeit in diesem Wörterbuch vorhanden ist, ist der `NSThumbnial1024X1024SizeKey` und der entsprechende `UIImage`.
 
 #### <a name="saving-document-thumbnails"></a>Speichern von Dokument Miniaturansichten
 
-Die einfachste Möglichkeit zum Speichern einer Miniaturansicht ist die `UIDocument`Verwendung von. Wenn Sie die `GetFileAttributesToWrite` `UIDocument` -Methode von aufrufen und die Miniaturansicht festlegen, wird Sie automatisch gespeichert, wenn die Dokument Datei ist. Der icloud-Daemon wird diese Änderung sehen und an icloud weitergeben. Auf Mac OS X werden Miniaturansichten für den Entwickler automatisch durch das Quick Look-Plug-in generiert.
+Die einfachste Möglichkeit, eine Miniaturansicht zu speichern, ist die Verwendung `UIDocument`. Wenn Sie die `GetFileAttributesToWrite`-Methode der `UIDocument` aufrufen und die Miniaturansicht festlegen, wird Sie automatisch gespeichert, wenn die Dokument Datei ist. Der icloud-Daemon wird diese Änderung sehen und an icloud weitergeben. Auf Mac OS X werden Miniaturansichten für den Entwickler automatisch durch das Quick Look-Plug-in generiert.
 
 Mit den Grundlagen der Arbeit mit icloud-basierten Dokumenten und den Änderungen an der vorhandenen API können wir den Dokument Auswahl-Ansichts Controller in einer mobilen xamarin IOS 8-Anwendung implementieren.
 
@@ -452,13 +452,13 @@ Führen Sie folgende Schritte aus:
 3. Wählen Sie im Dialog Feld Optionen die Option **IOS-Anwendung**aus, und vergewissern Sie sich, dass die **Bündel** -ID mit der ID übereinstimmt, die in der oben erstellten **App-ID** für die 
 4. Wählen Sie **IOS-Bündel Signierung**aus, und wählen Sie die **Entwickler Identität** und das oben erstellte **Bereitstellungs Profil** aus.
 5. Klicken Sie auf die Schaltfläche **OK** , um die Änderungen zu speichern und das Dialogfeld zu schließen.
-6. Klicken Sie mit der `Entitlements.plist` rechten Maustaste auf die **Projektmappen-Explorer** , um Sie im Editor zu öffnen.
+6. Klicken Sie mit der rechten Maustaste auf `Entitlements.plist` im **Projektmappen-Explorer** , um Sie im Editor zu öffnen.
 
     > [!IMPORTANT]
     > In Visual Studio müssen Sie möglicherweise den Berechtigungs-Editor öffnen, indem Sie mit der rechten Maustaste darauf klicken und dann **Öffnen mit..** . auswählen. und auswählen des Eigenschaften Listen-Editors
 
 7. **Aktivieren Sie icloud** , **icloud Documents** , **Key-Value Storage** und **cloudkit** .
-8. Stellen Sie sicher, dass der **Container** für die Anwendung vorhanden ist (wie oben erstellt). Beispiel: `iCloud.com.your-company.AppName`
+8. Stellen Sie sicher, dass der **Container** für die Anwendung vorhanden ist (wie oben erstellt). Ein Beispiel: `iCloud.com.your-company.AppName`
 9. Speichern Sie die Änderungen in der Datei.
 
 Weitere Informationen zu Berechtigungen finden Sie im Handbuch [Arbeiten mit Berechtigungen](~/ios/deploy-test/provisioning/entitlements.md) .
@@ -782,7 +782,7 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> Der obige Code enthält den Code aus dem obigen Abschnitt "ermitteln und Auflisten von Dokumenten". Sie wird hier vollständig dargestellt, wie Sie in einer eigentlichen Anwendung angezeigt wird. Der Einfachheit halber funktioniert dieses Beispiel nur mit einer einzelnen, hart codierten Datei`test.txt`().
+> Der obige Code enthält den Code aus dem obigen Abschnitt "ermitteln und Auflisten von Dokumenten". Sie wird hier vollständig dargestellt, wie Sie in einer eigentlichen Anwendung angezeigt wird. Der Einfachheit halber funktioniert dieses Beispiel nur mit einer einzelnen, hart codierten Datei (`test.txt`).
 
 Der obige Code macht mehrere icloud-Laufwerk Verknüpfungen verfügbar, damit Sie im Rest der Anwendung einfacher arbeiten können.
 
@@ -803,7 +803,7 @@ public AppDelegate ThisApp {
 #endregion
 ```
 
-Dadurch wird eine Verknüpfung hinzugefügt, um `AppDelegate` die zu erreichen und auf die oben erstellten icloud-Verknüpfungen zuzugreifen.
+Dadurch wird eine Verknüpfung hinzugefügt, um zum `AppDelegate` zu gelangen und auf die oben erstellten icloud-Verknüpfungen zuzugreifen.
 
 Wenn dieser Code vorhanden ist, sehen wir uns die Implementierung des Ansichts Controllers für die Dokument Auswahl in einer xamarin IOS 8-Anwendung an.
 
@@ -813,12 +813,12 @@ Vor IOS 8 war es sehr schwierig, auf Dokumente aus einer anderen Anwendung zuzug
 
 ### <a name="existing-behavior"></a>Vorhandenes Verhalten
 
- [![](document-picker-images/image31.png "Übersicht über das vorhandene Verhalten")](document-picker-images/image31.png#lightbox)
+ [![](document-picker-images/image31.png "Existing Behavior overview")](document-picker-images/image31.png#lightbox)
 
 Werfen wir einen Blick auf den Zugriff auf ein externes Dokument vor IOS 8:
 
 1. Zuerst muss der Benutzer die Anwendung öffnen, die das Dokument ursprünglich erstellt hat.
-1. Das Dokument ist ausgewählt, und `UIDocumentInteractionController` das wird verwendet, um das Dokument an die neue Anwendung zu senden.
+1. Das Dokument ist ausgewählt, und der `UIDocumentInteractionController` wird zum Senden des Dokuments an die neue Anwendung verwendet.
 1. Schließlich wird eine Kopie des ursprünglichen Dokuments in den Container der neuen Anwendung eingefügt.
 
 Von dort aus ist das Dokument verfügbar, damit die zweite Anwendung geöffnet und bearbeitet werden kann.
@@ -827,18 +827,18 @@ Von dort aus ist das Dokument verfügbar, damit die zweite Anwendung geöffnet u
 
 In ios 8 kann eine Anwendung problemlos auf Dokumente außerhalb eines eigenen Anwendungs Containers zugreifen:
 
- [![](document-picker-images/image32.png "Entdecken von Dokumenten außerhalb eines App-Containers")](document-picker-images/image32.png#lightbox)
+ [![](document-picker-images/image32.png "Discovering Documents Outside of an App's Container")](document-picker-images/image32.png#lightbox)
 
-Mithilfe der neuen icloud-Dokument Auswahl `UIDocumentPickerViewController`() kann eine IOS-Anwendung außerhalb Ihres Anwendungs Containers direkt ermitteln und darauf zugreifen. `UIDocumentPickerViewController` Stellt einen Mechanismus bereit, mit dem der Benutzer den Zugriff auf diese ermittelten Dokumente über Berechtigungen gewähren und bearbeiten können.
+Mithilfe der neuen icloud-Dokument Auswahl (`UIDocumentPickerViewController`) kann eine IOS-Anwendung außerhalb Ihres Anwendungs Containers direkt ermitteln und darauf zugreifen. Der `UIDocumentPickerViewController` stellt einen Mechanismus bereit, mit dem der Benutzer Zugriff auf diese ermittelten Dokumente über Berechtigungen gewähren und bearbeiten können.
 
-Eine Anwendung muss abonnieren, damit Ihre Dokumente in der icloud-Dokument Auswahl angezeigt werden und für andere Anwendungen verfügbar sind, um Sie zu ermitteln und damit zu arbeiten. Wenn eine xamarin IOS 8-Anwendung ihren Anwendungs Container freigeben soll, bearbeiten `Info.plist` Sie die Datei in einem Standardtext-Editor, und fügen Sie die folgenden beiden Zeilen am Ende des Wörter `<dict>...</dict>` Buchs (zwischen den Tags) hinzu:
+Eine Anwendung muss abonnieren, damit Ihre Dokumente in der icloud-Dokument Auswahl angezeigt werden und für andere Anwendungen verfügbar sind, um Sie zu ermitteln und damit zu arbeiten. Wenn eine xamarin IOS 8-Anwendung ihren Anwendungs Container freigeben soll, bearbeiten Sie Sie `Info.plist` Datei in einem Standardtext-Editor, und fügen Sie am Ende des Wörterbuchs (zwischen den `<dict>...</dict>` Tags) die folgenden beiden Zeilen hinzu:
 
 ```xml
 <key>NSUbiquitousContainerIsDocumentScopePublic</key>
 <true/>
 ```
 
-`UIDocumentPickerViewController` Bietet eine hervorragend neue Benutzeroberfläche, die es dem Benutzer ermöglicht, Dokumente auszuwählen. Gehen Sie folgendermaßen vor, um den Dokument Auswahl-Ansichts Controller in einer xamarin IOS 8-Anwendung anzuzeigen:
+Der `UIDocumentPickerViewController` bietet eine hervorragend neue Benutzeroberfläche, die es dem Benutzer ermöglicht, Dokumente auszuwählen. Gehen Sie folgendermaßen vor, um den Dokument Auswahl-Ansichts Controller in einer xamarin IOS 8-Anwendung anzuzeigen:
 
 ```csharp
 using MobileCoreServices;
@@ -890,7 +890,7 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> Der Entwickler muss die `StartAccessingSecurityScopedResource` -Methode `NSUrl` von aufrufen, bevor auf ein externes Dokument zugegriffen werden kann. Die `StopAccessingSecurityScopedResource` -Methode muss aufgerufen werden, um die Sicherheitssperre freizugeben, sobald das Dokument geladen wurde.
+> Der Entwickler muss die `StartAccessingSecurityScopedResource`-Methode des `NSUrl` aufrufen, bevor auf ein externes Dokument zugegriffen werden kann. Die `StopAccessingSecurityScopedResource`-Methode muss aufgerufen werden, um die Sicherheitssperre freizugeben, sobald das Dokument geladen wurde.
 
 ### <a name="sample-output"></a>Beispielausgabe
 
@@ -898,16 +898,16 @@ Im folgenden finden Sie ein Beispiel dafür, wie der obige Code eine Dokument Au
 
 1. Der Benutzer startet die Anwendung, und die Hauptschnittstelle wird angezeigt:   
 
-    [![](document-picker-images/image33.png "Die Hauptschnittstelle wird angezeigt.")](document-picker-images/image33.png#lightbox)
+    [![](document-picker-images/image33.png "The main interface is displayed")](document-picker-images/image33.png#lightbox)
 1. Der Benutzer tippt oben auf dem Bildschirm auf die Schaltfläche **Aktion** und wird aufgefordert, einen **Dokument Anbieter** aus der Liste der verfügbaren Anbieter auszuwählen:   
 
-    [![](document-picker-images/image34.png "Wählen Sie einen Dokument Anbieter aus der Liste der verfügbaren Anbieter aus.")](document-picker-images/image34.png#lightbox)
+    [![](document-picker-images/image34.png "Select a Document Provider from the list of available providers")](document-picker-images/image34.png#lightbox)
 1. Der **Ansichts Controller** für die Dokument Auswahl wird für den ausgewählten **Dokument Anbieter**angezeigt:   
 
-    [![](document-picker-images/image35.png "Der Dokument Auswahl-Ansichts Controller wird angezeigt.")](document-picker-images/image35.png#lightbox)
+    [![](document-picker-images/image35.png "The Document Picker View Controller is displayed")](document-picker-images/image35.png#lightbox)
 1. Der Benutzer tippt auf einen **Dokument Ordner** , um seinen Inhalt anzuzeigen:   
 
-    [![](document-picker-images/image36.png "Der Inhalt des Dokument Ordners.")](document-picker-images/image36.png#lightbox)
+    [![](document-picker-images/image36.png "The Document Folder contents")](document-picker-images/image36.png#lightbox)
 1. Der Benutzer wählt ein **Dokument** aus, und die **Dokument** Auswahl ist geschlossen.
 1. Die Hauptschnittstelle wird erneut angezeigt, das **Dokument** wird aus dem externen Container geladen und der Inhalt wird angezeigt.
 
@@ -917,19 +917,19 @@ Die tatsächliche Anzeige des Ansichts Controllers für die Dokument Auswahl hä
 
 Wie bereits erwähnt, konnte eine Anwendung vor IOS 8 nur auf Dokumente zugreifen, die Bestandteil des Anwendungs Containers waren. In ios 8 kann eine Anwendung auf Dokumente aus externen Quellen zugreifen:
 
- [![](document-picker-images/image37.png "Verwalten externer Dokumente (Übersicht)")](document-picker-images/image37.png#lightbox)
+ [![](document-picker-images/image37.png "Managing External Documents overview")](document-picker-images/image37.png#lightbox)
 
 Wenn der Benutzer ein Dokument aus einer externen Quelle auswählt, wird ein Referenzdokument in den Anwendungs Container geschrieben, das auf das ursprüngliche Dokument verweist.
 
-Zur Unterstützung beim Hinzufügen dieser neuen Funktionen in vorhandene Anwendungen wurden der `NSMetadataQuery` API mehrere neue Funktionen hinzugefügt. In der Regel verwendet eine Anwendung den universellen Dokumentbereich, um Dokumente aufzulisten, die in Ihrem Anwendungs Container Leben. Wenn Sie diesen Bereich verwenden, werden nur Dokumente innerhalb des Anwendungs Containers weiterhin angezeigt.
+Zur Unterstützung beim Hinzufügen dieser neuen Funktionalität in vorhandene Anwendungen wurden der `NSMetadataQuery`-API mehrere neue Features hinzugefügt. In der Regel verwendet eine Anwendung den universellen Dokumentbereich, um Dokumente aufzulisten, die in Ihrem Anwendungs Container Leben. Wenn Sie diesen Bereich verwenden, werden nur Dokumente innerhalb des Anwendungs Containers weiterhin angezeigt.
 
-Die Verwendung des neuen universellen externen Dokument Bereichs gibt Dokumente zurück, die sich außerhalb des Anwendungs Containers befinden und die Metadaten für Sie zurückgeben. Der `NSMetadataItemUrlKey` verweist auf die URL, in der sich das Dokument tatsächlich befindet.
+Die Verwendung des neuen universellen externen Dokument Bereichs gibt Dokumente zurück, die sich außerhalb des Anwendungs Containers befinden und die Metadaten für Sie zurückgeben. Die `NSMetadataItemUrlKey` zeigt auf die URL, auf der sich das Dokument tatsächlich befindet.
 
 Manchmal möchte eine Anwendung nicht mit den Dokumenten arbeiten, auf die durch den Verweis verwiesen wird. Stattdessen möchte die APP direkt mit dem Verweis Dokument arbeiten. Beispielsweise kann es sein, dass die APP das Dokument im Anwendungsordner in der Benutzeroberfläche anzeigen kann, oder dass der Benutzer die Verweise innerhalb eines Ordners verschieben kann.
 
 In ios 8 wurde eine neue `NSMetadataItemUrlInLocalContainerKey` bereitgestellt, um direkt auf das Referenzdokument zuzugreifen. Dieser Schlüssel verweist auf den tatsächlichen Verweis auf das externe Dokument in einem Anwendungs Container.
 
-`NSMetadataUbiquitousItemIsExternalDocumentKey` Wird verwendet, um zu testen, ob ein Dokument außerhalb eines Anwendungs Containers steht. `NSMetadataUbiquitousItemContainerDisplayNameKey` Wird verwendet, um auf den Namen des Containers zuzugreifen, in dem die ursprüngliche Kopie eines externen Dokuments enthalten ist.
+Der `NSMetadataUbiquitousItemIsExternalDocumentKey` wird verwendet, um zu testen, ob ein Dokument außerhalb eines Anwendungs Containers steht. Der-`NSMetadataUbiquitousItemContainerDisplayNameKey` wird verwendet, um auf den Namen des Containers zuzugreifen, der die ursprüngliche Kopie eines externen Dokuments verwendet.
 
 ### <a name="why-document-references-are-required"></a>Warum Dokument Verweise erforderlich sind
 
@@ -939,13 +939,13 @@ Die einzige Möglichkeit, auf ein Dokument außerhalb des Anwendungs Containers 
 
 Beachten Sie Folgendes: Wenn die Sicherheitsbereichs bezogene URL in eine Zeichenfolge serialisiert und anschließend deserialisiert wurde, gehen die Sicherheitsinformationen verloren, und die Datei ist nicht mehr über die URL zugänglich. Das Dokument Verweis Feature bietet einen Mechanismus zum zurückkehren zu den Dateien, auf die von diesen URLs verwiesen wird.
 
-Wenn die Anwendung also einen `NSUrl` aus einem der Referenzdokumente erhält, ist der Sicherheitsbereich bereits angefügt und kann für den Zugriff auf die Datei verwendet werden. Aus diesem Grund wird dringend empfohlen, den Entwickler zu verwenden `UIDocument` , da er alle diese Informationen und Prozesse für ihn verarbeitet.
+Wenn die Anwendung also eine `NSUrl` von einem der Referenzdokumente erhält, ist Ihr der Sicherheitsbereich bereits angefügt und kann für den Zugriff auf die Datei verwendet werden. Aus diesem Grund wird dringend empfohlen, dass der Entwickler `UIDocument` verwendet, da er alle diese Informationen und Prozesse für ihn verarbeitet.
 
 ### <a name="using-bookmarks"></a>Verwenden von Lesezeichen
 
 Es ist nicht immer möglich, die Dokumente einer Anwendung aufzählen, um zu einem bestimmten Dokument zurückzukehren, z. b. bei der Zustands Wiederherstellung. IOS 8 bietet einen Mechanismus zum Erstellen von Lesezeichen, die ein bestimmtes Dokument direkt als Ziel haben.
 
-Mit dem folgenden Code wird ein Lesezeichen aus `UIDocument`der `FileUrl` -Eigenschaft eines erstellt:
+Mit dem folgenden Code wird ein Lesezeichen aus der `FileUrl`-Eigenschaft eines `UIDocument`erstellt:
 
 ```csharp
 // Trap all errors
@@ -975,7 +975,7 @@ catch (Exception e) {
 }
 ```
 
-Die vorhandene Lesezeichen-API wird verwendet, um ein Lesezeichen `NSUrl` für eine vorhandene zu erstellen, die gespeichert und geladen werden kann, um den direkten Zugriff auf eine externe Datei zu ermöglichen. Mit dem folgenden Code wird ein Lesezeichen wieder hergestellt, das oben erstellt wurde:
+Die vorhandene Bookmark-API wird verwendet, um ein Lesezeichen für eine vorhandene `NSUrl` zu erstellen, die gespeichert und geladen werden kann, um den direkten Zugriff auf eine externe Datei zu ermöglichen. Mit dem folgenden Code wird ein Lesezeichen wieder hergestellt, das oben erstellt wurde:
 
 ```csharp
 if (Bookmark != null) {
@@ -1008,10 +1008,10 @@ Der Ansichts Controller für die Dokument Auswahl verfügt über zwei unterschie
 
 1. **Öffnungs Modus** – in diesem Modus erstellt die Dokument Auswahl im Anwendungs Container ein Lesezeichen mit Sicherheitsbereich, wenn der Benutzer und das externe Dokument auswählt.   
 
-    [![](document-picker-images/image37.png "Ein Lesezeichen mit Sicherheitsbereich im Anwendungs Container")](document-picker-images/image37.png#lightbox)
+    [![](document-picker-images/image37.png "A Security Scoped Bookmark in the Application Container")](document-picker-images/image37.png#lightbox)
 1. **Import Modus** – wenn der Benutzer und das externe Dokument auswählen, erstellt die Dokument Auswahl in diesem Modus kein Lesezeichen. Kopieren Sie die Datei stattdessen an einen temporären Speicherort, und stellen Sie der Anwendung Zugriff auf das Dokument an diesem Speicherort:   
 
-    [![](document-picker-images/image38.png "Die Dokument Auswahl kopiert die Datei an einen temporären Speicherort und stellt der Anwendung Zugriff auf das Dokument an diesem Speicherort bereit.")](document-picker-images/image38.png#lightbox)   
+    [![](document-picker-images/image38.png "The Document Picker will copy the file into a Temporary Location and provide the application access to the Document at this location")](document-picker-images/image38.png#lightbox)   
  Wenn die Anwendung aus irgendeinem Grund beendet wird, wird der temporäre Speicherort geleert und die Datei entfernt. Wenn die Anwendung Zugriff auf die Datei behalten muss, sollte Sie eine Kopie erstellen und Sie in Ihrem Anwendungs Container platzieren.
 
 Der Öffnungs Modus ist nützlich, wenn die Anwendung mit einer anderen Anwendung zusammenarbeiten und alle Änderungen, die an diesem Dokument vorgenommen wurden, mit der Anwendung freigeben möchten. Der Import Modus wird verwendet, wenn die Anwendung die Änderungen nicht für ein Dokument mit anderen Anwendungen freigeben möchte.
@@ -1023,18 +1023,18 @@ Wie bereits erwähnt, hat eine IOS 8-Anwendung keinen Zugriff auf Container auß
 Gehen Sie folgendermaßen vor, um ein Dokument an einen externen Speicherort zu verschieben:
 
 1. Erstellen Sie zuerst ein neues Dokument an einem lokalen Speicherort oder einem temporären Speicherort.
-1. Erstellen Sie `NSUrl` einen, der auf das neue Dokument verweist.
-1. Öffnen Sie einen neuen Dokument Auswahl-Ansichts Controller, `NSUrl` und übergeben Sie ihn `MoveToService` mit dem-Modus. 
+1. Erstellen Sie eine `NSUrl`, die auf das neue Dokument verweist.
+1. Öffnen Sie einen neuen Dokument Auswahl-Ansichts Controller, und übergeben Sie die `NSUrl` mit dem Modus `MoveToService`. 
 1. Sobald der Benutzer einen neuen Speicherort auswählt, wird das Dokument von seinem aktuellen Speicherort an den neuen Speicherort verschoben.
 1. Ein Referenzdokument wird in den Anwendungs Container der APP geschrieben, damit die erstellte Anwendung weiterhin auf die Datei zugreifen kann.
 
-Der folgende Code kann verwendet werden, um ein Dokument an einen externen Speicherort zu verschieben:`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
+Der folgende Code kann verwendet werden, um ein Dokument an einen externen Speicherort zu verschieben: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
 Das vom oben genannten Prozess zurückgegebene Verweis Dokument ist identisch mit dem vom geöffneten Modus der Dokument Auswahl erstellten Verweis Dokument. Es kann jedoch vorkommen, dass die Anwendung ein Dokument verschieben möchte, ohne einen Verweis darauf zu behalten.
 
-Wenn Sie ein Dokument ohne das Erstellen eines Verweises verschieben `ExportToService` möchten, verwenden Sie den-Modus. Beispiel: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
+Wenn Sie ein Dokument ohne das Erstellen eines Verweises verschieben möchten, verwenden Sie den `ExportToService`-Modus. Ein Beispiel: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
 
-Wenn Sie den `ExportToService` -Modus verwenden, wird das Dokument in den externen Container kopiert, und die vorhandene Kopie wird an Ihrem ursprünglichen Speicherort belassen.
+Wenn Sie den `ExportToService` Modus verwenden, wird das Dokument in den externen Container kopiert, und die vorhandene Kopie wird an Ihrem ursprünglichen Speicherort belassen.
 
 ## <a name="document-provider-extensions"></a>Dokument Anbieter Erweiterungen
 
@@ -1048,17 +1048,17 @@ Der Benutzer kann einen dieser alternativen Speicherorte aus der Dokument Auswah
 
 Dies wird mit zwei verschiedenen Erweiterungen implementiert:
 
-- **Dokument Auswahl Erweiterung** – stellt eine `UIViewController` Unterklasse bereit, die eine grafische Benutzeroberfläche bereitstellt, mit der der Benutzer ein Dokument aus einem alternativen Speicherort auswählen können. Diese Unterklasse wird als Teil des Ansichts Controllers für die Dokument Auswahl angezeigt.
-- **Dateierweiterung angeben** – Dies ist eine nicht-UI-Erweiterung, die die tatsächliche Bereitstellung der Dateiinhalte behandelt. Diese Erweiterungen werden durch die Datei Koordination ( `NSFileCoordinator` ) bereitgestellt. Dies ist ein weiterer wichtiger Fall, bei dem die Datei Koordination erforderlich ist.
+- **Dokument Auswahl Erweiterung** – stellt eine `UIViewController` Unterklasse bereit, die eine grafische Benutzeroberfläche für den Benutzer bereitstellt, um ein Dokument aus einem alternativen Speicherort auszuwählen. Diese Unterklasse wird als Teil des Ansichts Controllers für die Dokument Auswahl angezeigt.
+- **Dateierweiterung angeben** – Dies ist eine nicht-UI-Erweiterung, die die tatsächliche Bereitstellung der Dateiinhalte behandelt. Diese Erweiterungen werden durch die Datei Koordination (`NSFileCoordinator`) bereitgestellt. Dies ist ein weiterer wichtiger Fall, bei dem die Datei Koordination erforderlich ist.
 
 Das folgende Diagramm zeigt den typischen Datenfluss beim Arbeiten mit Dokument Anbieter Erweiterungen:
 
- [![](document-picker-images/image39.png "Dieses Diagramm zeigt den typischen Datenfluss beim Arbeiten mit Dokument Anbieter Erweiterungen.")](document-picker-images/image39.png#lightbox)
+ [![](document-picker-images/image39.png "This diagram shows the typical data flow when working with Document Provider Extensions")](document-picker-images/image39.png#lightbox)
 
 Der folgende Prozess tritt auf:
 
 1. Die Anwendung stellt einen Dokument Auswahl Controller dar, mit dem der Benutzer eine Datei auswählen kann, mit der Sie arbeiten möchten.
-1. Der Benutzer wählt einen alternativen Datei Speicherort aus, `UIViewController` und die benutzerdefinierte Erweiterung wird aufgerufen, um die Benutzeroberfläche anzuzeigen.
+1. Der Benutzer wählt einen alternativen Datei Speicherort aus, und die benutzerdefinierte `UIViewController` Erweiterung wird aufgerufen, um die Benutzeroberfläche anzuzeigen.
 1. Der Benutzer wählt eine Datei von diesem Speicherort aus, und die URL wird an die Dokument Auswahl zurückgegeben.
 1. Die Dokument Auswahl wählt die URL der Datei aus und gibt Sie an die Anwendung zurück, an der der Benutzer arbeitet.
 1. Die URL wird an den Datei Koordinator übermittelt, um den Inhalt der Dateien an die Anwendung zurückzugeben.
@@ -1078,17 +1078,17 @@ Aus Sicherheitsgründen verfügt IOS 8 über eine Isolationsschicht, die die Inf
 
 Das folgende Diagramm zeigt den Datenfluss beim Arbeiten mit Lesezeichen und einer Dokument Anbieter Erweiterung:
 
- [![](document-picker-images/image40.png "Dieses Diagramm zeigt den Datenfluss beim Arbeiten mit Lesezeichen und einer Dokument Anbieter Erweiterung.")](document-picker-images/image40.png#lightbox)
+ [![](document-picker-images/image40.png "This diagram shows the data flow when working with Bookmarks and a Document Provider Extension")](document-picker-images/image40.png#lightbox)
 
 Der folgende Prozess tritt auf:
 
-1. Die Anwendung ist in der Lage, den Hintergrund einzugeben, und muss ihren Zustand beibehalten. Sie ruft `NSUrl` auf, um ein Lesezeichen für eine Datei im alternativen Speicher zu erstellen.
-1. `NSUrl`Ruft die Datei Anbieter Erweiterung auf, um eine permanente URL für das Dokument zu erhalten. 
-1. Die Datei Anbieter Erweiterung gibt die URL als Zeichenfolge an `NSUrl` zurück.
+1. Die Anwendung ist in der Lage, den Hintergrund einzugeben, und muss ihren Zustand beibehalten. Es wird `NSUrl` aufgerufen, um ein Lesezeichen für eine Datei im alternativen Speicher zu erstellen.
+1. `NSUrl` Ruft die Datei Anbieter Erweiterung auf, um eine permanente URL für das Dokument zu erhalten. 
+1. Die Datei Anbieter Erweiterung gibt die URL als Zeichenfolge an den `NSUrl` zurück.
 1. Der `NSUrl` bündelt die URL in ein Lesezeichen und gibt Sie an die Anwendung zurück.
-1. Wenn sich die Anwendung im Hintergrund befindet und den Zustand wiederherstellen muss, übergibt Sie das Lesezeichen an `NSUrl` .
-1. `NSUrl`Ruft die Datei Anbieter Erweiterung mit der URL der Datei auf.
-1. Der Datei Erweiterungs Anbieter greift auf die Datei zu und gibt den Speicherort der `NSUrl` Datei an zurück.
+1. Wenn sich die Anwendung im Hintergrund befindet und den Zustand wiederherstellen muss, übergibt Sie das Lesezeichen an `NSUrl`.
+1. `NSUrl` Ruft die Datei Anbieter Erweiterung mit der URL der Datei auf.
+1. Der Datei Erweiterungs Anbieter greift auf die Datei zu und gibt den Speicherort der Datei an `NSUrl` zurück.
 1. Der Speicherort der Datei wird mit Sicherheitsinformationen gebündelt und an die Anwendung zurückgegeben.
 
 Von hier aus kann die Anwendung auf die Datei zugreifen und Sie wie gewohnt bearbeiten.

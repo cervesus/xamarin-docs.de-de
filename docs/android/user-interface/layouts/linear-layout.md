@@ -3,24 +3,24 @@ title: Xamarin. Android LinearLayout
 ms.prod: xamarin
 ms.assetid: B49D129C-AF24-3C5A-C833-5A34AFBB2442
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2018
-ms.openlocfilehash: 14e9b352a309de94a374b52141e3fd61715d8f75
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b1cff01c66ae2581a68286e62bd8c8c5fb7f9d72
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764383"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028957"
 ---
 # <a name="xamarinandroid-linearlayout"></a>Xamarin. Android LinearLayout
 
-[`LinearLayout`](xref:Android.Widget.LinearLayout)ist eine[`ViewGroup`](xref:Android.Views.ViewGroup)
-das untergeordnete Element anzeigt[`View`](xref:Android.Views.View)
+[`LinearLayout`](xref:Android.Widget.LinearLayout) ist ein [`ViewGroup`](xref:Android.Views.ViewGroup)
+, das untergeordnete [`View`](xref:Android.Views.View) anzeigt
 Elemente in einer linearen Richtung, entweder vertikal oder horizontal.
 
-Sie sollten vorsichtig sein, wenn Sie die [`LinearLayout`](xref:Android.Widget.LinearLayout)verwenden.
-Wenn Sie mit der Schachtelung mehrerer [`LinearLayout`](xref:Android.Widget.LinearLayout)s beginnen, sollten Sie die Verwendung eines[`RelativeLayout`](xref:Android.Widget.RelativeLayout)
+Sie sollten vorsichtig sein, wenn Sie die [`LinearLayout`](xref:Android.Widget.LinearLayout)verwenden möchten.
+Wenn Sie mit dem Schachteln mehrerer [`LinearLayout`](xref:Android.Widget.LinearLayout)s beginnen, sollten Sie die Verwendung eines [`RelativeLayout`](xref:Android.Widget.RelativeLayout)
 Stattdessen.
 
 Starten Sie ein neues Projekt mit dem Namen **hellolinearlayout**.
@@ -103,13 +103,13 @@ Starten Sie ein neues Projekt mit dem Namen **hellolinearlayout**.
 </LinearLayout>
 ```
 
-Prüfen Sie diese XML-Datei sorgfältig. Es ist ein Stammverzeichnis vorhanden.[`LinearLayout`](xref:Android.Widget.LinearLayout)
-, die die Ausrichtung so definiert, &ndash; dass [`View`](xref:Android.Views.View)alle untergeordneten s (von denen zwei ist) vertikal gestapelt werden. Das erste untergeordnete Element ist ein weiteres[`LinearLayout`](xref:Android.Widget.LinearLayout)
-, der eine horizontale Ausrichtung verwendet, und das zweite untergeordnete Element ein[`LinearLayout`](xref:Android.Widget.LinearLayout)
-, der eine vertikale Ausrichtung verwendet. Jede dieser nten [`LinearLayout`](xref:Android.Widget.LinearLayout)s enthält mehrere[`TextView`](xref:Android.Widget.TextView)
-Elemente, die in der durch ihr übergeordneten [`LinearLayout`](xref:Android.Widget.LinearLayout)Element definierten Weise ausgerichtet sind.
+Prüfen Sie diese XML-Datei sorgfältig. Stamm [`LinearLayout`](xref:Android.Widget.LinearLayout)
+, die die Ausrichtung so definiert, dass Sie vertikal &ndash; alle untergeordneten [`View`](xref:Android.Views.View)s (von denen zwei ist) vertikal gestapelt werden. Das erste untergeordnete Element ist ein weiteres [`LinearLayout`](xref:Android.Widget.LinearLayout)
+, der eine horizontale Ausrichtung verwendet, und das zweite untergeordnete Element ist eine [`LinearLayout`](xref:Android.Widget.LinearLayout)
+, der eine vertikale Ausrichtung verwendet. Jede dieser [`LinearLayout`](xref:Android.Widget.LinearLayout)s enthält mehrere [`TextView`](xref:Android.Widget.TextView)
+Elemente, die in der durch ihre übergeordneten [`LinearLayout`](xref:Android.Widget.LinearLayout)definierten Weise aufeinander ausgerichtet sind.
 
-Öffnen Sie jetzt **HelloLinearLayout.cs** , und stellen Sie sicher, dass das Layout " **Resources/Layout/Main. axml** " im[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Öffnen Sie jetzt **HelloLinearLayout.cs** , und stellen Sie sicher, dass das Layout **Ressourcen/Layout/Main. axml** im [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 anzuwenden
 
 ```csharp
@@ -120,18 +120,18 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-Die [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)-Methode lädt die Layoutdatei für [`Activity`](xref:Android.App.Activity)das, das durch die Ressourcen &ndash; -ID `Resources.Layout.Main` angegeben wird, bezieht sich auf die Layoutdatei **Resources/Layout/Main. axml** .
+Die [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*))-Methode lädt die Layoutdatei für die [`Activity`](xref:Android.App.Activity), die durch die Ressourcen-ID angegeben ist &ndash; `Resources.Layout.Main` verweist auf die Layoutdatei **Resources/Layout/Main. axml** .
 
 Führen Sie die Anwendung aus. Folgendes sollte angezeigt werden:
 
-[![Screenshot des ersten horizontal angeordneten App-linearlayouts, zweites vertikal](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
+[![Screenshot des ersten horizontal angeordneten App-linearlayouts, Sekunde vertikal](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
-Beachten Sie, wie die XML-Attribute jedes Verhalten der Ansicht definieren. Experimentieren Sie mit unterschiedlichen Werten `android:layout_weight` für, um zu sehen, wie die Bildschirm-Real Anlage basierend auf der Gewichtung der einzelnen Elemente verteilt wird. Weitere Informationen zur Vorgehensweise finden Sie im Dokument [Allgemeine Layoutobjekte](https://developer.android.com/guide/topics/ui/declaring-layout.html) .[`LinearLayout`](xref:Android.Widget.LinearLayout)
-behandelt das `android:layout_weight` -Attribut.
+Beachten Sie, wie die XML-Attribute jedes Verhalten der Ansicht definieren. Experimentieren Sie mit verschiedenen Werten für `android:layout_weight`, um zu sehen, wie die Bildschirmfläche auf der Grundlage der Gewichtung der einzelnen Elemente verteilt wird. Im Dokument [Allgemeine Layoutobjekte](https://developer.android.com/guide/topics/ui/declaring-layout.html) finden Sie weitere Informationen zur Vorgehensweise [`LinearLayout`](xref:Android.Widget.LinearLayout)
+behandelt das `android:layout_weight` Attribut.
 
 ## <a name="references"></a>Verweise
 
 - [`LinearLayout`](xref:Android.Widget.LinearLayout)
 - [`TextView`](xref:Android.Widget.TextView)
 
-_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](http://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._
+_Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der [Creative Commons 2,5-Zuweisungs Lizenz](https://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden._

@@ -4,15 +4,15 @@ description: Erstellen von Benutzeroberflächen für xamarin. Android-Apps
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 405fb0e30881ee64514d3984842ac820d5663382
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a881629c63ea2991b8ea4673811311076fcaabe9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764488"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028994"
 ---
 # <a name="user-interface"></a>Benutzeroberfläche
 
@@ -37,7 +37,7 @@ Eine Android-App nimmt einige Zeit in Betrieb, insbesondere wenn die APP zum ers
 ## <a name="layoutsandroiduser-interfacelayoutsindexmd"></a>[Layouts](~/android/user-interface/layouts/index.md)
 
 Layouts werden verwendet, um die visuelle Struktur für eine Benutzeroberfläche zu definieren.
-Layouts wie `ListView` und `RecyclerView` sind die grundlegendsten Bausteine von Android-Anwendungen. In der Regel verwendet ein Layout einen `Adapter` als Brücke zwischen dem Layout und den zugrunde liegenden Daten, die verwendet werden, um Datenelemente im Layout aufzufüllen. In diesem Abschnitt wird `LinearLayout`erläutert, wie Layouts wie, `RelativeLayout`, `TableLayout`, `RecyclerView`und `GridView`verwendet werden.
+Layouts wie `ListView` und `RecyclerView` sind die grundlegendsten Bausteine von Android-Anwendungen. In der Regel verwendet ein Layout eine `Adapter`, die als Brücke vom Layout zu den zugrunde liegenden Daten verwendet wird, die verwendet werden, um Datenelemente im Layout aufzufüllen. In diesem Abschnitt wird erläutert, wie Layouts wie `LinearLayout`, `RelativeLayout`, `TableLayout`, `RecyclerView`und `GridView`verwendet werden.
 
 ## <a name="controlsandroiduser-interfacecontrolsindexmd"></a>[Steuerelemente](~/android/user-interface/controls/index.md)
 

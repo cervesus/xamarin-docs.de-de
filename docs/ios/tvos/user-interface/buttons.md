@@ -4,21 +4,21 @@ description: In diesem Dokument wird beschrieben, wie Sie mit Schaltflächen in 
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 869e2e5c3b074c928f3c49ca87c1c1801154df91
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 559944e5ae168fd3b45c4d25a86705c5032b2e04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769979"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030488"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Arbeiten mit tvos-Schaltflächen in xamarin
 
-Verwenden Sie eine Instanz der `UIButton` -Klasse, um eine Fokussier Bare, auswählbare Schaltfläche in einem tvos-Fenster zu erstellen. Wenn der Benutzer eine Schaltfläche auswählt, sendet er eine Aktions Meldung an das Zielobjekt, damit Ihre xamarin. tvos-App auf die Eingabe des Benutzers antwortet.
+Verwenden Sie eine Instanz der `UIButton`-Klasse, um eine Fokussier Bare, auswählbare Schaltfläche in einem tvos-Fenster zu erstellen. Wenn der Benutzer eine Schaltfläche auswählt, sendet er eine Aktions Meldung an das Zielobjekt, damit Ihre xamarin. tvos-App auf die Eingabe des Benutzers antwortet.
 
-[![](buttons-images/buttons01.png "Beispiel Schaltflächen")](buttons-images/buttons01.png#lightbox)
+[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit dem Fokus und zum Navigieren mit der Siri-Remote Dokumentation finden Sie in der Dokumentation [Arbeiten mit Navigation und Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri-Remote-und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) .
 
@@ -28,7 +28,7 @@ Weitere Informationen zum Arbeiten mit dem Fokus und zum Navigieren mit der Siri
 
 In tvos werden Schaltflächen für App-spezifische Aktionen verwendet und können einen Titel, ein Symbol oder beides enthalten. Wenn der Benutzer die Benutzeroberfläche der App mithilfe von [Siri Remote](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)navigiert, verschiebt sich der Fokus auf die angegebene Schaltfläche, sodass Text-und Hintergrundfarben geändert werden. Ein Schatten wird auch auf die Schaltfläche zum Hinzufügen eines 3D-Effekts angewendet, sodass er über dem Rest der Benutzeroberfläche angezeigt wird.
 
-[![](buttons-images/buttons01.png "Beispiel Schaltflächen")](buttons-images/buttons01.png#lightbox)
+[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit Schaltflächen:
 
@@ -66,19 +66,19 @@ Die einfachste Möglichkeit, mit Schaltflächen in einer xamarin. tvos-APP zu ar
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Schaltfläche** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab: 
 
-    [![](buttons-images/storyboard01.png "Eine Schaltfläche")](buttons-images/storyboard01.png#lightbox)
+    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
 1. Im **Eigenschaften-Explorer**können Sie mehrere Eigenschaften der Schaltfläche anpassen, z. b. **Titel** und **Textfarbe**: 
 
-    [![](buttons-images/storyboard02.png "Schaltflächen Eigenschaften")](buttons-images/storyboard02.png#lightbox)
-1. Wechseln Sie als nächstes zur **Registerkarte Ereignisse** , und richten Sie ein **Ereignis** über die **Schaltfläche** ein `ButtonPressed`, und nennen Sie es: 
+    [![](buttons-images/storyboard02.png "Button properties")](buttons-images/storyboard02.png#lightbox)
+1. Wechseln Sie als nächstes zur **Registerkarte Ereignisse** , und richten Sie ein **Ereignis** über die **Schaltfläche** ein, und nennen Sie es `ButtonPressed`: 
 
-    [![](buttons-images/storyboard03.png "Registerkarte \"Ereignisse\"")](buttons-images/storyboard03.png#lightbox)
-1. Sie werden automatisch zu der `ViewController.cs` Ansicht gewechselt, in der Sie die neue Aktion mithilfe der nach- **oben** -und nach- **unten** -Taste in Ihrem Code platzieren können: 
+    [![](buttons-images/storyboard03.png "The Events Tab")](buttons-images/storyboard03.png#lightbox)
+1. Sie werden automatisch zur `ViewController.cs` Ansicht gewechselt, wo Sie die neue Aktion mithilfe der nach- **oben** -und **nach-unten** -Taste in Ihrem Code platzieren können: 
 
-    [![](buttons-images/storyboard04.png "Platzieren einer neuen Aktion im Code")](buttons-images/storyboard04.png#lightbox)
+    [![](buttons-images/storyboard04.png "Placing a new Action in code")](buttons-images/storyboard04.png#lightbox)
 1. Drücken Sie die **Eingabe** Taste, um den Speicherort auszuwählen: 
 
-    [![](buttons-images/storyboard05.png "Der Code-Editor")](buttons-images/storyboard05.png#lightbox)
+    [![](buttons-images/storyboard05.png "The code editor")](buttons-images/storyboard05.png#lightbox)
 1. Speichern Sie die Änderungen an allen Dateien.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -86,16 +86,16 @@ Die einfachste Möglichkeit, mit Schaltflächen in einer xamarin. tvos-APP zu ar
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Schaltfläche** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab: 
 
-    [![](buttons-images/storyboard01vs.png "Eine Schaltfläche")](buttons-images/storyboard01vs.png#lightbox)
+    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
 1. Im **Eigenschaften-Explorer**können Sie mehrere Eigenschaften der Schaltfläche anpassen, z. b. **Titel** und **Textfarbe**: 
 
-    [![](buttons-images/storyboard02vs.png "Der Eigenschaften-Explorer")](buttons-images/storyboard02vs.png#lightbox)
-1. Wechseln Sie als nächstes zur **Registerkarte Ereignisse** , und richten Sie ein **Ereignis** über die **Schaltfläche** ein `ButtonPressed`, und nennen Sie es: 
+    [![](buttons-images/storyboard02vs.png "The Properties Explorer")](buttons-images/storyboard02vs.png#lightbox)
+1. Wechseln Sie als nächstes zur **Registerkarte Ereignisse** , und richten Sie ein **Ereignis** über die **Schaltfläche** ein, und nennen Sie es `ButtonPressed`: 
 
-    [![](buttons-images/storyboard03vs.png "Registerkarte \"Ereignisse\"")](buttons-images/storyboard03vs.png#lightbox)
+    [![](buttons-images/storyboard03vs.png "The Events Tab")](buttons-images/storyboard03vs.png#lightbox)
 1. Speichern Sie die Änderungen an allen Dateien.
 
-Bearbeiten Sie die Ansichts Controller `ViewController.cs`Datei (Beispieldatei), und fügen Sie den folgenden Code hinzu, um die ausgewählte Schaltfläche zu behandeln:
+Bearbeiten Sie die Datei des Ansichts Controllers (Beispiel `ViewController.cs`), und fügen Sie den folgenden Code hinzu, um die ausgewählte Schaltfläche zu behandeln:
 
 ```
 
@@ -119,10 +119,10 @@ namespace tvRemote
 
 -----
 
-Solange die-Eigenschaft einer Schalt `Enabled` Fläche ist `true` und Sie nicht von einem anderen Steuerelement oder einer anderen Ansicht abgedeckt wird, kann Sie mithilfe von Siri Remote als Element im Fokus erstellt werden. Wenn der Benutzer die Schaltfläche auswählt und auf die Berührungs Oberfläche `ButtonPressed` klickt, wird die oben definierte Aktion ausgeführt.
+Solange die `Enabled`-Eigenschaft einer Schaltfläche `true` ist und Sie nicht von einem anderen Steuerelement oder einer anderen Ansicht abgedeckt wird, kann Sie mithilfe von Siri Remote als Element im Fokus erstellt werden. Wenn der Benutzer die Schaltfläche auswählt und auf die Berührungs Oberfläche klickt, wird die oben definierte `ButtonPressed` Aktion ausgeführt.
 
 > [!IMPORTANT]
-> Obwohl es möglich ist, bei der Erstellung eines `TouchUpInside` **Ereignis Handlers**Aktionen wie einem `UIButton` im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Beim Erstellen von **Aktionen** für tvos-Benutzeroberflächen Elemente sollte immer der Standard **Aktionstyp** verwendet werden.
+> Obwohl es möglich ist, während der Erstellung eines **Ereignis Handlers**Aktionen wie z. b. `TouchUpInside` einem `UIButton` im IOS-Designer zuzuweisen, wird er nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Beim Erstellen von **Aktionen** für tvos-Benutzeroberflächen Elemente sollte immer der Standard **Aktionstyp** verwendet werden.
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
@@ -143,7 +143,7 @@ button.AllEvents += (sender, e) => {
 View.AddSubview (button);
 ```
 
-Wenn Sie ein neues `UIButton` im Code erstellen, geben Sie dessen `UIButtonType` als einen der folgenden an:
+Wenn Sie einen neuen `UIButton` im Code erstellen, geben Sie dessen `UIButtonType` als einen der folgenden an:
 
 - **System** : Dies ist der Standardtyp der von tvos dargestellten Schaltfläche und ist der Typ, den Sie am häufigsten verwenden werden.
 - **Detaildisclosure** : zeigt den Typ der Schaltfläche "Ausschalten" an, die verwendet wird, um ausführliche Informationen auszublenden oder anzuzeigen.
@@ -158,13 +158,13 @@ Als nächstes definieren Sie die Größe und den Speicherort der Schaltfläche a
 button.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-Legen Sie dann den Titel für die Schaltfläche fest. `UIButtons`unterscheiden sich von `UIKit` den meisten Steuerelementen darin, dass Sie einen-Zustand aufweisen, sodass Sie den Titel nicht einfach ändern können, sondern Sie `UIControlState`müssen ihn für eine bestimmte ändern. Beispiel:
+Legen Sie dann den Titel für die Schaltfläche fest. `UIButtons` unterscheiden sich von den meisten `UIKit` Steuerelementen darin, dass Sie über einen Zustand verfügen, damit Sie den Titel nicht einfach ändern können, sondern müssen ihn für eine bestimmte `UIControlState`ändern. Beispiel:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-Verwenden Sie als nächstes `AllEvents` das-Ereignis, um zu sehen, wann der Benutzer auf die Schaltfläche geklickt hat. Beispiel:
+Verwenden Sie als nächstes das `AllEvents`-Ereignis, um zu sehen, wann der Benutzer auf die Schaltfläche geklickt hat. Beispiel:
 
 ```csharp
 button.AllEvents += (sender, e) => {
@@ -180,31 +180,31 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> Obwohl es möglich ist, Aktionen wie `TouchUpInside` zu einem `UIButton`zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten immer Ereignisse wie z. b. **allevents** oder **primaryaktionauslösen**verwenden.
+> Obwohl es möglich ist, Aktionen wie z. b. `TouchUpInside` einem `UIButton`zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten immer Ereignisse wie z. b. **allevents** oder **primaryaktionauslösen**verwenden.
 
 <a name="Styling-a-Button" />
 
 ## <a name="styling-a-button"></a>Formatieren einer Schaltfläche
 
-tvos bietet mehrere Eigenschaften von `UIButton` , die verwendet werden können, um den Titel und den Stil mit Dingen wie Hintergrundfarbe und Bildern bereitzustellen.
+tvos bietet verschiedene Eigenschaften einer `UIButton`, die verwendet werden können, um den Titel und den Stil mit Dingen wie Hintergrundfarbe und Bildern bereitzustellen.
 
 <a name="Button-Titles" />
 
 ### <a name="button-titles"></a>Schaltflächen Titel
 
-Wie bereits erwähnt, `UIButtons` unterscheiden sich von den meisten `UIKit` Steuerelementen darin, dass Sie über einen Zustand verfügen, sodass Sie den Titel nicht einfach ändern können, sondern Sie müssen `UIControlState`ihn für eine bestimmte ändern. Beispiel:
+Wie bereits erwähnt, unterscheiden sich `UIButtons` von den meisten `UIKit` Steuerelementen darin, dass Sie über einen Status verfügen, damit Sie den Titel nicht einfach ändern können, sondern müssen ihn für eine bestimmte `UIControlState`ändern. Beispiel:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-Mithilfe der `SetTitleColor` -Methode können Sie die Titel Farbe für die Schaltfläche festlegen. Beispiel:
+Mit der `SetTitleColor`-Methode können Sie die Titel Farbe für die Schaltfläche festlegen. Beispiel:
 
 ```csharp
 button.SetTitleColor (UIColor.White, UIControlState.Normal);
 ```
 
-Und Sie können den Schatten des Titels mithilfe `SetTitleShadowColor`von anpassen. Beispiel:
+Und Sie können den Schatten des Titels mithilfe der `SetTitleShadowColor`anpassen. Beispiel:
 
 ```csharp
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
@@ -230,13 +230,13 @@ myButton.SetAttributedTitle (highlightedAttributedTitle, UIControlState.Highligh
 
 Einem `UIButton` kann ein Bild angefügt sein, und es kann ein Bild als Hintergrund verwendet werden.
 
-Um das Hintergrundbild einer Schaltfläche für einen angegebenen `UIControlState`festzulegen, verwenden Sie den folgenden Code:
+Um das Hintergrundbild einer Schaltfläche für eine angegebene `UIControlState`festzulegen, verwenden Sie den folgenden Code:
 
 ```csharp
 button.SetBackgroundImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ```
 
-Legen Sie `AdjustsImageWhenHiglighted` die- `true` Eigenschaft auf fest, um das Bild heller zu zeichnen, wenn die Schaltfläche markiert wird (Dies ist die Standardeinstellung). Legen Sie `AdjustsImageWhenDisabled` die- `true` Eigenschaft auf fest, um das Bild dunkler zu zeichnen, wenn die Schaltfläche deaktiviert ist (Dies ist auch der Standardwert).
+Legen Sie die `AdjustsImageWhenHiglighted`-Eigenschaft auf `true` fest, um das Bild heller zu zeichnen, wenn die Schaltfläche markiert wird (Dies ist die Standardeinstellung). Legen Sie die `AdjustsImageWhenDisabled`-Eigenschaft auf `true` fest, um das Bild dunkler zu zeichnen, wenn die Schaltfläche deaktiviert ist (Dies ist auch der Standardwert).
 
 Um das auf der Schaltfläche angezeigte Bild festzulegen, verwenden Sie den folgenden Code:
 
@@ -244,7 +244,7 @@ Um das auf der Schaltfläche angezeigte Bild festzulegen, verwenden Sie den folg
 button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ```
 
-Verwenden Sie `TintColor` die-Eigenschaft, um ein farbtint festzulegen, das sowohl auf den Titel als auch auf das Bild der Schaltfläche angewendet wird. Für Schaltflächen des `Custom` Typs hat diese Eigenschaft keine Auswirkung. Sie müssen das `TintColor` Verhalten selbst implementieren.
+Verwenden Sie die `TintColor`-Eigenschaft, um ein farbtint festzulegen, das sowohl auf den Titel als auch auf das Bild der Schaltfläche angewendet wird. Für Schaltflächen des `Custom` Typs hat diese Eigenschaft keine Auswirkung. Sie müssen das `TintColor` Verhalten selbst implementieren.
 
 <a name="Summary" />
 

@@ -4,15 +4,15 @@ description: In diesem Dokument werden Abonnements ohne Erneuerung, Kostenlose A
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752675"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032302"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements und Berichterstellung in xamarin. IOS
 
@@ -50,17 +50,17 @@ Der gemeinsame geheime Schlüssel in-App-Käufe muss in der JSON-Anforderung ver
 
 Wählen Sie auf der iTunes Connect-Startseite **meine apps**aus:   
    
- [![](subscriptions-and-reporting-images/image2.png "„My Apps“ (Meine Apps) auswählen")](subscriptions-and-reporting-images/image2.png#lightbox)  
+ [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 Wählen Sie eine Anwendung aus, und klicken Sie auf die Registerkarte **in-App-Käufe** :
 
-[![](subscriptions-and-reporting-images/image6.png "Klicken Sie auf die Registerkarte in-App-Käufe.")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 Wählen Sie am unteren Rand der Seite die Option **zum Anzeigen oder Generieren eines gemeinsamen geheimen**Schlüssels aus:
    
- [![](subscriptions-and-reporting-images/image40.png "Auswählen eines gemeinsamen geheimen Schlüssels anzeigen oder generieren")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "Generieren eines gemeinsamen geheimen Schlüssels")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
 
 Um den gemeinsamen geheimen Schlüssel zu verwenden, fügen Sie ihn in die JSON-Nutzlast ein, die an die Apple-Server gesendet wird, wenn Sie eine in-App-Kaufbestätigung für ein automatisch verlängertes Abonnement überprüfen, wie hier:
 
@@ -100,7 +100,7 @@ Um das Testen von Abonnements zu vereinfachen, werden deren Dauer beim Testen in
 
 ## <a name="reporting"></a>Berichterstellung
 
-iTunes Connect ( [iTunesConnect.Apple.com](http://itunesconnect.apple.com)) bietet Folgendes:   
+iTunes Connect ( [iTunesConnect.Apple.com](https://itunesconnect.apple.com)) bietet Folgendes:   
    
  **Vertrieb und Trends** – hier werden Details zu app-Downloads, Updates und in-App-Käufen angezeigt.   
    
@@ -108,9 +108,9 @@ iTunes Connect ( [iTunesConnect.Apple.com](http://itunesconnect.apple.com)) biet
 
 Im folgenden finden Sie einen Beispiel Bericht "Sales and Trends":   
 
- [![](subscriptions-and-reporting-images/image42.png "Ein Beispiel für einen Umsatz-und Trendbericht")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
- Es gibt auch eine [ **ITC Connect Mobile**IOS-app (iTunes-Link)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
+ Es gibt auch eine [ **ITC Connect Mobile**IOS-app (iTunes-Link)](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
 die iPhone-Screenshots für einige der verfügbaren Statistiken werden hier angezeigt:   
    
- [![](subscriptions-and-reporting-images/image43.png "iPhone-Screenshots für einige der verfügbaren Statistiken")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

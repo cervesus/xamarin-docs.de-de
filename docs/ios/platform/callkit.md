@@ -4,15 +4,15 @@ description: In diesem Artikel wird die neue callkit-API behandelt, die Apple in
 ms.prod: xamarin
 ms.assetid: 738A142D-FFD2-4738-B3ED-57C273179848
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: ef2894d91604f0bc315b38eb525862858428c405
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f8b92e48578c08e491f92bcc7e2a9add67ee0cd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292166"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032596"
 ---
 # <a name="callkit-in-xamarinios"></a>Callkit in xamarin. IOS
 
@@ -48,44 +48,44 @@ In den folgenden Abschnitten werden die callkit-Architektur, die eingehenden und
 
 In ios 10 hat Apple callkit in allen System Diensten übernommen, sodass Aufrufe von carplay beispielsweise der System Benutzeroberfläche über callkit bekannt sind. Da monkeycallcallkit in dem unten angegebenen Beispiel annimmt, ist es dem System auf die gleiche Weise bekannt wie diese integrierten System Dienste und erhält die gleichen Features:
 
-[![](callkit-images/callkit01.png "Der callkit-Dienst Stapel")](callkit-images/callkit01.png#lightbox)
+[![](callkit-images/callkit01.png "The CallKit Service Stack")](callkit-images/callkit01.png#lightbox)
 
 Sehen Sie sich die monkeycallapp aus dem obigen Diagramm genauer an. Die app enthält den gesamten Code für die Kommunikation mit Ihrem eigenen Netzwerk und enthält eigene Benutzeroberflächen. Er verknüpft den callkit, um mit dem System zu kommunizieren:
 
-[![](callkit-images/callkit02.png "Monkeycallapp-Architektur")](callkit-images/callkit02.png#lightbox)
+[![](callkit-images/callkit02.png "MonkeyCall App Architecture")](callkit-images/callkit02.png#lightbox)
 
 Es gibt zwei Haupt Schnittstellen in callkit, die von der APP verwendet werden:
 
-- `CXProvider`-Dadurch kann die monkeycallapp das System über alle ggf. auftretenden out-of-Band-Benachrichtigungen informieren.
-- `CXCallController`-Ermöglicht der monkeycallapp, das System über lokale Benutzeraktionen zu informieren.
+- `CXProvider`: Dadurch kann die monkeycallapp das System über alle ggf. auftretenden out-of-Band-Benachrichtigungen informieren.
+- `CXCallController`: ermöglicht der monkeycallapp, das System über lokale Benutzeraktionen zu informieren.
 
 ### <a name="the-cxprovider"></a>Der cxprovider
 
-Wie bereits erwähnt, `CXProvider` ermöglicht es einer APP, das System über alle möglicherweise auftretenden out-of-Band-Benachrichtigungen zu informieren. Hierbei handelt es sich um Benachrichtigungen, die nicht aufgrund von lokalen Benutzeraktionen auftreten, sondern aufgrund externer Ereignisse wie z. b. eingehender Anrufe auftreten.
+Wie bereits erwähnt, ermöglicht `CXProvider` einer APP, das System über alle möglicherweise auftretenden out-of-Band-Benachrichtigungen zu informieren. Hierbei handelt es sich um Benachrichtigungen, die nicht aufgrund von lokalen Benutzeraktionen auftreten, sondern aufgrund externer Ereignisse wie z. b. eingehender Anrufe auftreten.
 
-Eine APP sollte `CXProvider` für Folgendes verwenden:
+Eine APP sollte die `CXProvider` für Folgendes verwenden:
 
 - Einen eingehenden System Rückruf melden.
 - Melden Sie einen, dass der ausgehende-Rückruf mit dem System verbunden ist.
 - Melden Sie den Remote Benutzer, der den System Rückruf beendet.
 
-Wenn die APP mit dem System kommunizieren möchte, verwendet Sie die `CXCallUpdate` -Klasse, und wenn das System mit der APP kommunizieren muss, verwendet es die `CXAction` -Klasse:
+Wenn die APP mit dem System kommunizieren möchte, verwendet Sie die `CXCallUpdate`-Klasse, und wenn das System mit der APP kommunizieren muss, verwendet es die `CXAction`-Klasse:
 
-[![](callkit-images/callkit03.png "Kommunikation mit dem System über einen cxprovider")](callkit-images/callkit03.png#lightbox)
+[![](callkit-images/callkit03.png "Communicating with the system via a CXProvider")](callkit-images/callkit03.png#lightbox)
 
 ### <a name="the-cxcallcontroller"></a>Cxcallcontroller
 
-`CXCallController` Ermöglicht einer APP, das System über lokale Benutzeraktionen zu informieren, z. b. den Benutzer, der einen VoIP-Befehl startet. Durch Implementieren `CXCallController` von wird die APP für das Zusammenwirken mit anderen Typen von Aufrufen im System ausgeführt. Wenn z. b. bereits ein aktiver telefonieanruf ausgeführt wird, `CXCallController` kann der VoIP-APP das Platzieren dieses Aufrufes erlauben und einen VoIP-Anruf starten oder beantworten.
+Der `CXCallController` ermöglicht einer APP, das System über lokale Benutzeraktionen zu informieren, z. b. den Benutzer, der einen VoIP-Befehl startet. Durch Implementieren einer `CXCallController` die APP mit anderen Arten von Aufrufen im System zusammenwirken. Wenn z. b. bereits ein aktiver telefonieanruf ausgeführt wird, können `CXCallController` der VoIP-App erlauben, diesen Anruf auf dem Laufenden zu platzieren und einen VoIP-Anruf zu starten oder zu beantworten.
 
-Eine APP sollte `CXCallController` für Folgendes verwenden:
+Eine APP sollte die `CXCallController` für Folgendes verwenden:
 
 - Meldet, wenn der Benutzer einen ausgehenden System Aufrufvorgang gestartet hat.
 - Melden Sie sich an, wenn der Benutzer einen eingehenden System Rückruf beantwortet.
 - Melden Sie sich an, wenn der Benutzer einen System Rückruf beendet.
 
-Wenn die APP lokale Benutzeraktionen an das System übermitteln möchte, verwendet Sie die `CXTransaction` -Klasse:
+Wenn die APP lokale Benutzeraktionen an das System übermitteln möchte, verwendet Sie die `CXTransaction`-Klasse:
 
-[![](callkit-images/callkit04.png "Übermitteln von Berichten an das System mit einem cxcallcontroller")](callkit-images/callkit04.png#lightbox)
+[![](callkit-images/callkit04.png "Reporting to the system using a CXCallController")](callkit-images/callkit04.png#lightbox)
 
 ## <a name="implementing-callkit"></a>Implementieren von callkit
 
@@ -93,7 +93,7 @@ In den folgenden Abschnitten wird gezeigt, wie Sie callkit in einer xamarin. IOS
 
 ### <a name="the-activecall-class"></a>Die activecall-Klasse
 
-Die `ActiveCall` -Klasse wird von der monkeycallapp verwendet, um alle Informationen über einen VoIP-Befehl aufzunehmen, der derzeit wie folgt aktiv ist:
+Die `ActiveCall`-Klasse wird von der monkeycall-App verwendet, um alle Informationen über einen VoIP-Befehl aufzunehmen, der derzeit wie folgt aktiv ist:
 
 ```csharp
 using System;
@@ -217,11 +217,11 @@ namespace MonkeyCall
 }
 ```
 
-`ActiveCall`enthält mehrere Eigenschaften, die den Status des Aufrufes definieren, und zwei Ereignisse, die ausgelöst werden können, wenn sich der Status des Aufrufes ändert. Da es sich nur um ein Beispiel handelt, gibt es drei Methoden zum Simulieren des Starts, zum beantworten und Beenden eines Aufrufes.
+`ActiveCall` enthält mehrere Eigenschaften, die den Status des Aufrufes definieren, und zwei Ereignisse, die ausgelöst werden können, wenn sich der Status des Aufrufes ändert. Da es sich nur um ein Beispiel handelt, gibt es drei Methoden zum Simulieren des Starts, zum beantworten und Beenden eines Aufrufes.
 
 ### <a name="the-startcallrequest-class"></a>Die startcallrequest-Klasse
 
-Die `StartCallRequest` statische-Klasse stellt einige Hilfsmethoden bereit, die beim Arbeiten mit ausgehenden Aufrufen verwendet werden:
+Die `StartCallRequest` statische Klasse stellt einige Hilfsmethoden bereit, die beim Arbeiten mit ausgehenden Aufrufen verwendet werden:
 
 ```csharp
 using System;
@@ -278,11 +278,11 @@ namespace MonkeyCall
 }
 ```
 
-Die `CallHandleFromURL` Klassen `CallHandleFromActivity` und werden im appdelegaten zum Abrufen des Kontakt Handles der Person verwendet, die in einem ausgehenden Aufruf aufgerufen wird. Weitere Informationen finden Sie weiter unten im Abschnitt [Verarbeiten von ausgehenden Aufrufen](#handling-outgoing-calls) .
+Die Klassen `CallHandleFromURL` und `CallHandleFromActivity` werden im appdelegaten zum Abrufen des Kontakt Handles der Person verwendet, die in einem ausgehenden Aufruf aufgerufen wird. Weitere Informationen finden Sie weiter unten im Abschnitt [Verarbeiten von ausgehenden Aufrufen](#handling-outgoing-calls) .
 
 ### <a name="the-activecallmanager-class"></a>Die activecallmanager-Klasse
 
-Die `ActiveCallManager` -Klasse verarbeitet alle geöffneten Aufrufe in der monkeycallapp.
+Die `ActiveCallManager`-Klasse verarbeitet alle geöffneten Aufrufe in der monkeycallcenter-app.
 
 ```csharp
 using System;
@@ -392,11 +392,11 @@ namespace MonkeyCall
 }
 ```
 
-Da dies nur eine Simulation ist, verwaltet `ActiveCallManager` nur eine Auflistung von `ActiveCall` -Objekten und verfügt über eine Routine, mit der ein angegebener- `UUID` Befehl über seine-Eigenschaft gefunden werden kann. Sie enthält außerdem Methoden zum Starten, beenden und Ändern des Zustands eines ausgehenden Aufrufes. Weitere Informationen finden Sie weiter unten im Abschnitt [Verarbeiten von ausgehenden Aufrufen](#handling-outgoing-calls) .
+Da es sich hierbei nur um eine Simulation handelt, behält der `ActiveCallManager` nur eine Auflistung von `ActiveCall` Objekten bei und verfügt über eine Routine zum Suchen eines bestimmten Aufrufes über seine `UUID`-Eigenschaft. Sie enthält außerdem Methoden zum Starten, beenden und Ändern des Zustands eines ausgehenden Aufrufes. Weitere Informationen finden Sie weiter unten im Abschnitt [Verarbeiten von ausgehenden Aufrufen](#handling-outgoing-calls) .
 
 ### <a name="the-providerdelegate-class"></a>Die providerdelegatklasse
 
-Wie bereits erläutert, bietet `CXProvider` eine bidirektionale Kommunikation zwischen der APP und dem System für Out-of-Band-Benachrichtigungen. Der Entwickler muss ein benutzerdefiniertes `CXProviderDelegate` bereitstellen und an das `CXProvider` anfügen, damit die app out-of-Band-callkit-Ereignisse verarbeiten kann. Monkeycallverwendet Folgendes `CXProviderDelegate`:
+Wie bereits erläutert, bietet eine `CXProvider` eine bidirektionale Kommunikation zwischen der APP und dem System für Out-of-Band-Benachrichtigungen. Der Entwickler muss ein benutzerdefiniertes `CXProviderDelegate` bereitstellen und es an den `CXProvider` anfügen, damit die app out-of-Band-callkit-Ereignisse verarbeiten kann. Monkeycallverwendet die folgenden `CXProviderDelegate`:
 
 ```csharp
 using System;
@@ -599,7 +599,7 @@ namespace MonkeyCall
 }
 ```
 
-Wenn eine Instanz dieses Delegaten erstellt wird, wird die an Sie `ActiveCallManager` übermittelt, die für die Behandlung von Aufruf Aktivitäten verwendet wird. Anschließend werden die Handle-Typen (`CXHandleType`) definiert, auf die der `CXProvider` antwortet:
+Wenn eine Instanz dieses Delegaten erstellt wird, wird der `ActiveCallManager` übermittelt, der zum Behandeln von Aufruf Aktivitäten verwendet wird. Als nächstes werden die Handle-Typen (`CXHandleType`) definiert, auf die der `CXProvider` antwortet:
 
 ```csharp
 // Define handle types
@@ -613,7 +613,7 @@ Außerdem wird das Vorlagen Image abgerufen, das auf das App-Symbol angewendet w
 var templateImage = UIImage.FromFile ("telephone_receiver.png");
 ```
 
-Diese Werte werden in einem `CXProviderConfiguration` gebündelt, das zum `CXProvider`Konfigurieren von verwendet wird:
+Diese Werte werden in einem `CXProviderConfiguration` gebündelt, der zum Konfigurieren der `CXProvider`verwendet wird:
 
 ```csharp
 // Setup the initial configurations
@@ -625,7 +625,7 @@ Configuration = new CXProviderConfiguration ("MonkeyCall") {
 };
 ```
 
-Der Delegat erstellt dann mit `CXProvider` diesen Konfigurationen einen neuen und fügt ihn an ihn an:
+Der Delegat erstellt dann eine neue `CXProvider` mit diesen Konfigurationen und fügt sich an ihn an:
 
 ```csharp
 // Create a new provider
@@ -637,7 +637,7 @@ Provider.SetDelegate (this, null);
 
 Wenn Sie callkit verwenden, erstellt und verarbeitet die APP keine eigenen audiositzungen mehr, sondern muss eine Audiositzung konfigurieren und verwenden, die vom System erstellt und verarbeitet wird. 
 
-Wenn dies eine echte App wäre, wird `DidActivateAudioSession` die-Methode verwendet, um den-Befehl mit einem vorkonfigurierten `AVAudioSession` zu starten, den das System bereitgestellt hat:
+Wenn dies eine echte App wäre, würde die `DidActivateAudioSession`-Methode verwendet werden, um den-Befehl mit einem vorkonfigurierten `AVAudioSession` zu starten, den das System bereitgestellt hat:
 
 ```csharp
 public override void DidActivateAudioSession (CXProvider provider, AVFoundation.AVAudioSession audioSession)
@@ -646,7 +646,7 @@ public override void DidActivateAudioSession (CXProvider provider, AVFoundation.
 }
 ```
 
-Außerdem wird die `DidDeactivateAudioSession` -Methode verwendet, um die Verbindung mit der vom System bereitgestellten Audiositzung abzuschließen und freizugeben:
+Außerdem wird die `DidDeactivateAudioSession`-Methode verwendet, um die Verbindung mit der vom System bereitgestellten Audiositzung abzuschließen und freizugeben:
 
 ```csharp
 public override void DidDeactivateAudioSession (CXProvider provider, AVFoundation.AVAudioSession audioSession)
@@ -660,7 +660,7 @@ Der restliche Code wird in den folgenden Abschnitten ausführlich behandelt.
 
 ### <a name="the-appdelegate-class"></a>Die appdelegatklasse
 
-Monkeycallverwendet den appdelegaten zum Speichern von Instanzen `ActiveCallManager` von `CXProviderDelegate` und, die in der gesamten App verwendet werden:
+Monkeycallverwendet den appdelegaten zum Speichern von Instanzen der `ActiveCallManager` und `CXProviderDelegate`, die in der gesamten App verwendet werden:
 
 ```csharp
 using Foundation;
@@ -728,7 +728,7 @@ namespace MonkeyCall
 }
 ```
 
-Die `OpenUrl` - `ContinueUserActivity` Methode und die-Überschreibungs Methode werden verwendet, wenn die APP einen ausgehenden-Befehl verarbeitet. Weitere Informationen finden Sie weiter unten im Abschnitt [Verarbeiten von ausgehenden Aufrufen](#handling-outgoing-calls) .
+Die `OpenUrl`-und `ContinueUserActivity` Überschreibungs Methoden werden verwendet, wenn die APP einen ausgehenden-Befehl verarbeitet. Weitere Informationen finden Sie weiter unten im Abschnitt [Verarbeiten von ausgehenden Aufrufen](#handling-outgoing-calls) .
 
 ## <a name="handling-incoming-calls"></a>Behandeln eingehender Aufrufe
 
@@ -744,13 +744,13 @@ In den folgenden Abschnitten wird ausführlich erläutert, wie eine APP callkit 
 
 Wenn ein Remote Benutzer eine VoIP-Konversation mit dem lokalen Benutzer gestartet hat, geschieht Folgendes:
 
-[![](callkit-images/callkit05.png "Ein Remote Benutzer hat eine VoIP-Konversation gestartet.")](callkit-images/callkit05.png#lightbox)
+[![](callkit-images/callkit05.png "A remote user has started a VOIP conversation")](callkit-images/callkit05.png#lightbox)
 
 1. Die APP erhält eine Benachrichtigung von Ihrem Kommunikationsnetzwerk, dass ein eingehender VoIP-Rückruf vorliegt.
-2. Die APP verwendet das `CXProvider` , um eine `CXCallUpdate` an das System zu senden, das Sie über den-Befehl informiert.
+2. Die APP verwendet die `CXProvider`, um eine `CXCallUpdate` an das System zu senden, das Sie über den-Befehl informiert.
 3. Das System veröffentlicht den Aufruf der Systembenutzer Oberfläche, der Systemdienste und aller anderen VoIP-Apps mithilfe von callkit.
 
-Beispielsweise in `CXProviderDelegate`:
+Beispielsweise in der `CXProviderDelegate`:
 
 ```csharp
 public void ReportIncomingCall (NSUuid uuid, string handle)
@@ -773,19 +773,19 @@ public void ReportIncomingCall (NSUuid uuid, string handle)
 }
 ```
 
-Mit diesem Code wird eine `CXCallUpdate` neue-Instanz erstellt und ein Handle an das Objekt angehängt, das den Aufrufer identifiziert. Anschließend wird die- `ReportNewIncomingCall` Methode `CXProvider` der-Klasse verwendet, um das System über den-Befehl zu informieren. Wenn dies erfolgreich ist, wird der Aufruf der APP-Auflistung aktiver Aufrufe hinzugefügt, wenn dies nicht der Fall ist. der Fehler muss dem Benutzer gemeldet werden.
+Mit diesem Code wird eine neue `CXCallUpdate`-Instanz erstellt und ein Handle an das Objekt angehängt, das den Aufrufer identifiziert. Anschließend wird die `ReportNewIncomingCall`-Methode der `CXProvider`-Klasse verwendet, um das System über den-Befehl zu informieren. Wenn dies erfolgreich ist, wird der Aufruf der APP-Auflistung aktiver Aufrufe hinzugefügt, wenn dies nicht der Fall ist. der Fehler muss dem Benutzer gemeldet werden.
 
 ### <a name="user-answering-incoming-call"></a>Benutzer beantwortete eingehenden Anruf
 
 Wenn der Benutzer den eingehenden VoIP-Anruf beantworten möchte, geschieht Folgendes:
 
-[![](callkit-images/callkit06.png "Der Benutzer antwortet auf den eingehenden VoIP-Rückruf.")](callkit-images/callkit06.png#lightbox)
+[![](callkit-images/callkit06.png "The user answers the incoming VOIP call")](callkit-images/callkit06.png#lightbox)
 
 1. Die Benutzeroberfläche des Systems informiert das System darüber, dass der Benutzer den VoIP-Anruf beantworten möchte.
-2. Das System sendet eine `CXAnswerCallAction` an die `CXProvider` APP, die Sie über die Antwort Absicht informiert.
+2. Das System sendet eine `CXAnswerCallAction` an die `CXProvider` der APP, die Sie über die Antwort Absicht informiert.
 3. Die APP informiert das Kommunikationsnetzwerk, dass der Benutzer den Anruf beantwortet, und der VoIP-Anruf wird wie gewohnt fortgesetzt.
 
-Beispielsweise in `CXProviderDelegate`:
+Beispielsweise in der `CXProviderDelegate`:
 
 ```csharp
 public override void PerformAnswerCallAction (CXProvider provider, CXAnswerCallAction action)
@@ -814,19 +814,19 @@ public override void PerformAnswerCallAction (CXProvider provider, CXAnswerCallA
 }
 ```
 
-Dieser Code sucht zuerst in der Liste der aktiven Aufrufe nach dem angegebenen Aufruf. Wenn der-Befehl nicht gefunden werden kann, wird das System benachrichtigt und die Methode beendet. Wenn Sie gefunden wird, wird `AnswerCall` die-Methode `ActiveCall` der-Klasse aufgerufen, um den Aufruf zu starten, und das System ist, wenn es erfolgreich ist oder fehlschlägt.
+Dieser Code sucht zuerst in der Liste der aktiven Aufrufe nach dem angegebenen Aufruf. Wenn der-Befehl nicht gefunden werden kann, wird das System benachrichtigt und die Methode beendet. Wenn Sie gefunden wird, wird die `AnswerCall`-Methode der `ActiveCall`-Klasse aufgerufen, um den Aufruf zu starten, und das System ist bei erfolgreicher oder fehlgeschlagenen Informationen.
 
 ### <a name="user-ending-incoming-call"></a>Benutzer Ende eingehender Anrufe
 
 Wenn der Benutzer den-Befehl in der Benutzeroberfläche der APP beenden möchte, geschieht Folgendes:
 
-[![](callkit-images/callkit07.png "Der Benutzer beendet den-Befehl in der Benutzeroberfläche der app.")](callkit-images/callkit07.png#lightbox)
+[![](callkit-images/callkit07.png "The user terminates the call from within the app's UI")](callkit-images/callkit07.png#lightbox)
 
-1. Die App erstellt `CXEndCallAction` , die in einem `CXTransaction` gebündelt wird, das an das System gesendet wird, um Sie darüber zu informieren, dass der-Vorgang beendet wird.
-2. Das System überprüft die Absicht des endanrufens und `CXEndCallAction` sendet die zurück an die APP `CXProvider`über den.
+1. Die App erstellt `CXEndCallAction`, die in einem `CXTransaction` gebündelt wird, das an das System gesendet wird, um Sie darüber zu informieren, dass der-Vorgang beendet wird.
+2. Das System überprüft die Absicht des endanrufes und sendet die `CXEndCallAction` über die `CXProvider`an die APP zurück.
 3. Die APP informiert das Kommunikationsnetzwerk dann darüber, dass der-Endpunkt beendet wird.
 
-Beispielsweise in `CXProviderDelegate`:
+Beispielsweise in der `CXProviderDelegate`:
 
 ```csharp
 public override void PerformEndCallAction (CXProvider provider, CXEndCallAction action)
@@ -858,22 +858,22 @@ public override void PerformEndCallAction (CXProvider provider, CXEndCallAction 
 }
 ```
 
-Dieser Code sucht zuerst in der Liste der aktiven Aufrufe nach dem angegebenen Aufruf. Wenn der-Befehl nicht gefunden werden kann, wird das System benachrichtigt und die Methode beendet. Wenn Sie gefunden wird, wird `EndCall` die-Methode `ActiveCall` der-Klasse aufgerufen, um den Aufruf zu beenden, und das System enthält Informationen, wenn es erfolgreich ist oder fehlschlägt. Bei erfolgreicher Ausführung wird der Aufruf aus der Sammlung aktiver Aufrufe entfernt.
+Dieser Code sucht zuerst in der Liste der aktiven Aufrufe nach dem angegebenen Aufruf. Wenn der-Befehl nicht gefunden werden kann, wird das System benachrichtigt und die Methode beendet. Wenn Sie gefunden wird, wird die `EndCall`-Methode der `ActiveCall`-Klasse aufgerufen, um den Aufruf zu beenden, und das System ist bei erfolgreicher oder fehlgeschlagenen Informationen. Bei erfolgreicher Ausführung wird der Aufruf aus der Sammlung aktiver Aufrufe entfernt.
 
 ## <a name="managing-multiple-calls"></a>Verwalten mehrerer Aufrufe
 
 Die meisten VoIP-Apps können mehrere Aufrufe gleichzeitig verarbeiten. Wenn z. b. zurzeit ein aktiver VoIP-Anruf vorliegt und die APP benachrichtigt wird, dass ein neuer eingehender Anruf vorliegt, kann der Benutzer beim ersten Anruf anhalten oder darauf warten, um den zweiten Anruf zu beantworten.
 
-In der obigen Situation sendet das System eine `CXTransaction` an die APP, die eine Liste mehrerer Aktionen (z `CXEndCallAction` . b. und `CXAnswerCallAction`) enthält. Alle diese Aktionen müssen einzeln ausgeführt werden, damit das System die Benutzeroberfläche entsprechend aktualisieren kann.
+In der obigen Situation sendet das System eine `CXTransaction` an die APP, die eine Liste mit mehreren Aktionen enthält (z. b. die `CXEndCallAction` und die `CXAnswerCallAction`). Alle diese Aktionen müssen einzeln ausgeführt werden, damit das System die Benutzeroberfläche entsprechend aktualisieren kann.
 
 ## <a name="handling-outgoing-calls"></a>Behandeln von ausgehenden Aufrufen
 
 Wenn der Benutzer auf einen Eintrag aus der Liste der Empfänger (in der Phone-APP) tippt (z. b. aus einem Anruf, der zur APP gehört), wird er vom System zu einer _Start Anruf Absicht_ gesendet:
 
-[![](callkit-images/callkit08.png "Empfangen einer beabsichtigte Start Absicht")](callkit-images/callkit08.png#lightbox)
+[![](callkit-images/callkit08.png "Receiving a Start Call Intent")](callkit-images/callkit08.png#lightbox)
 
 1. Die App erstellt eine _Aktion zum Starten des Aufrufes_ auf der Grundlage der Start-callanabsicht, die Sie vom System erhalten hat. 
-2. Die APP verwendet das `CXCallController` , um die Aktion zum Starten des Aufrufes vom System anzufordern.
+2. Die APP verwendet die `CXCallController`, um die Aktion zum Starten des Aufrufes vom System anzufordern.
 3. Wenn das System die Aktion annimmt, wird es über den `XCProvider` Delegaten an die APP zurückgegeben.
 4. Die APP startet den ausgehenden-Rückruf mit dem Kommunikationsnetzwerk.
 
@@ -923,9 +923,9 @@ public void StartCall (string contact)
 }
 ```
 
-Es wird ein `CXHandle` erstellt und verwendet, um eine `CXStartCallAction` zu konfigurieren, die in `CXTransaction` einem gebündelt ist, das mithilfe der `RequestTransaction` -Methode der- `CXCallController` Klasse an das System gesendet wird. Durch Aufrufen der `RequestTransaction` -Methode kann das System alle vorhandenen Aufrufe auf dem standhalten, unabhängig von der Quelle (Phone-APP, Facetime, VoIP usw.), bevor der neue Aufruf gestartet wird.
+Er erstellt einen `CXHandle` und verwendet ihn, um eine `CXStartCallAction` zu konfigurieren, die in einem `CXTransaction` gebündelt ist, das mithilfe der `RequestTransaction`-Methode der `CXCallController`-Klasse an das System gesendet wird. Wenn Sie die `RequestTransaction`-Methode aufrufen, kann das System alle vorhandenen Anrufe unabhängig von der Quelle (Phone-APP, Facetime, VoIP usw.) vor dem Start des neuen Aufrufs platzieren.
 
-Die Anforderung zum Starten eines ausgehenden VoIP-Aufrufs kann aus verschiedenen Quellen stammen, z. b. Siri, einem Eintrag auf einer Kontaktkarte (in der App "Kontakte") oder aus der Liste der wieder herzuführenden (in der Telefon-APP). In diesen Fällen wird der App eine Start Aufruf Absicht innerhalb `NSUserActivity` von gesendet, und der appdelegat muss Sie behandeln:
+Die Anforderung zum Starten eines ausgehenden VoIP-Aufrufs kann aus verschiedenen Quellen stammen, z. b. Siri, einem Eintrag auf einer Kontaktkarte (in der App "Kontakte") oder aus der Liste der wieder herzuführenden (in der Telefon-APP). In diesen Fällen wird der App eine Start Aufruf Absicht innerhalb eines `NSUserActivity` gesendet, und der appdelegat muss Sie behandeln:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -945,9 +945,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-Hier wird `CallHandleFromActivity` die-Methode der- `StartCallRequest` Hilfsklasse verwendet, um das Handle für die aufgerufene Person zu erhalten (siehe die oben genannte [startcallrequest-Klasse](#the-startcallrequest-class) ).
+Hier wird die `CallHandleFromActivity`-Methode der Hilfsklasse `StartCallRequest` verwendet, um das Handle für die aufgerufene Person zu erhalten (siehe die oben genannte [startcallrequest-Klasse](#the-startcallrequest-class) ).
 
-Die `PerformStartCallAction` -Methode der [providerdelegatklasse](#the-providerdelegate-class) wird verwendet, um den eigentlichen ausgehenden Aufruf zu starten und das System über seinen Lebenszyklus zu informieren:
+Die `PerformStartCallAction`-Methode der [providerdelegatklasse](#the-providerdelegate-class) wird verwendet, um den eigentlichen ausgehenden Aufruf zu starten und das System über seinen Lebenszyklus zu informieren:
 
 ```csharp
 public override void PerformStartCallAction (CXProvider provider, CXStartCallAction action)
@@ -987,7 +987,7 @@ public override void PerformStartCallAction (CXProvider provider, CXStartCallAct
 }
 ```
 
-Er erstellt eine Instanz der `ActiveCall` -Klasse (zum Speichern von Informationen über den Aufruf in Bearbeitung) und füllt mit der Person, die aufgerufen wird. Das `StartingConnectionChanged` - `ConnectedChanged` Ereignis und das-Ereignis werden verwendet, um den Lebenszyklus des ausgehenden Aufrufes Der-Befehl wird gestartet, und das System informierte, dass die Aktion erfüllt wurde.
+Er erstellt eine Instanz der `ActiveCall`-Klasse (zum Speichern von Informationen über den Aufruf in Bearbeitung) und füllt mit der Person, die aufgerufen wird. Die `StartingConnectionChanged`-und `ConnectedChanged` Ereignisse werden zum Überwachen und melden des ausgehenden Lebenszyklus des Aufrufes verwendet. Der-Befehl wird gestartet, und das System informierte, dass die Aktion erfüllt wurde.
 
 ### <a name="ending-an-outgoing-call"></a>Beenden eines ausgehenden Aufrufes
 
@@ -1025,13 +1025,13 @@ public void EndCall (ActiveCall call)
 }
 ```
 
-Wenn eine `CXEndCallAction` - `CXCallController` Klasse mit der UUID für den End-End-Befehl erstellt, `CXTransaction` bündeln Sie Sie in einem, der mithilfe `RequestTransaction` der-Methode der-Klasse an das System gesendet wird. 
+Wenn eine `CXEndCallAction` mit der UUID für den End-End-Vorgang erstellt, wird Sie in einem `CXTransaction` gebündelt, der mithilfe der `RequestTransaction`-Methode der `CXCallController`-Klasse an das System gesendet wird. 
 
 ## <a name="additional-callkit-details"></a>Weitere callkit-Details
 
 In diesem Abschnitt werden einige zusätzliche Details behandelt, die der Entwickler bei der Arbeit mit callkit berücksichtigen muss, wie z. b.:
 
-- Anbieter Konfiguration
+- Providerkonfiguration
 - Aktions Fehler
 - System Einschränkungen
 - VoIP-Audiodatei
@@ -1054,12 +1054,12 @@ Beachten Sie Folgendes Beispiel:
 
 1. Die APP hat eine Aktion zum Starten des Aufrufes empfangen und begonnen, den Prozess der Initialisierung eines neuen VoIP-Aufrufes mit dem Kommunikationsnetzwerk zu starten.
 2. Aufgrund der eingeschränkten oder keinen Netzwerk Kommunikationsfunktion tritt bei dieser Verbindung ein Fehler auf.
-3. Die APP *muss* die **Fehlermeldung zurück** an die Aktion zum Starten des Aufrufens (`Action.Fail()`) senden, um das System über den Fehler zu informieren.
+3. Die APP *muss* die **Fehlermeldung an** die Aktion zum Starten des Aufrufens (`Action.Fail()`) zurücksenden, um das System über den Fehler zu informieren.
 4. Dadurch kann das System den Benutzer über den Status des Aufrufes informieren. Beispielsweise, um die Benutzeroberfläche für den Aufrufen eines Fehlers anzuzeigen.
 
 Darüber hinaus muss eine IOS 10 VoIP-App auf _Timeout Fehler_ reagieren, die auftreten können, wenn eine erwartete Aktion nicht innerhalb eines bestimmten Zeitraums verarbeitet werden kann. Jedem Aktionstyp, der von callkit bereitgestellt wird, ist ein maximaler Timeout Wert zugeordnet. Diese Timeout Werte stellen sicher, dass jede vom Benutzer angeforderte callkit-Aktion reaktionsfähig verarbeitet wird, sodass das Betriebssystem auch flüssig und reaktionsfähig bleibt.
 
-Es gibt mehrere Methoden für den Anbieter Delegaten`CXProviderDelegate`(), die überschrieben werden sollten, um diese Timeout Situationen ordnungsgemäß behandeln zu können.
+Es gibt mehrere Methoden für den Anbieter Delegaten (`CXProviderDelegate`), die überschrieben werden sollten, damit diese Timeout Situationen ordnungsgemäß behandelt werden.
 
 ### <a name="system-restrictions"></a>System Einschränkungen
 
@@ -1115,12 +1115,12 @@ Außerdem verfügt callkit über Zugriff auf andere audioroutinghinweise, die di
 
 Während des Lebenszyklus eines typischen VoIP-Aufrufes mit callkit muss die APP den Audiostream konfigurieren, der von callkit bereitgestellt wird. Sehen Sie sich das folgende Beispiel an:
 
-[![](callkit-images/callkit09.png "Die Aktions Sequenz für den Start Vorgang.")](callkit-images/callkit09.png#lightbox)
+[![](callkit-images/callkit09.png "The Start Call Action Sequence")](callkit-images/callkit09.png#lightbox)
 
 1. Eine Aktion zum Starten des Aufrufes wird von der APP empfangen, um einen eingehenden Anruf zu beantworten.
-2. Bevor diese Aktion von der APP erfüllt wird, wird die Konfiguration bereitstellt, die für `AVAudioSession`die erforderlich ist.
+2. Bevor diese Aktion von der APP erfüllt wird, bietet Sie die Konfiguration, die für Ihre `AVAudioSession`erforderlich ist.
 3. Die APP informiert das System darüber, dass die Aktion erfüllt wurde.
-4. Bevor der Aufruf eine Verbindung herstellt, bietet callkit eine hohe `AVAudioSession` Priorität, die der von der APP angeforderten Konfiguration entspricht. Die APP wird über die `DidActivateAudioSession` -Methode `CXProviderDelegate`von benachrichtigt.
+4. Bevor der Aufruf eine Verbindung herstellt, bietet callkit eine `AVAudioSession` mit hoher Priorität, die der von der APP angeforderten Konfiguration entspricht. Die APP wird über die `DidActivateAudioSession`-Methode Ihrer `CXProviderDelegate`benachrichtigt.
 
 ## <a name="working-with-call-directory-extensions"></a>Arbeiten mit Verzeichnis Erweiterungen für Anrufe
 
@@ -1133,29 +1133,29 @@ Gehen Sie folgendermaßen vor, um eine Erweiterung des Callcenter in einer xamar
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Öffnen Sie die Projekt Mappe der app in Visual Studio für Mac.
-2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **hinzu** > fügen**Neues Projekt**hinzufügen
-3. Wählen Sie **IOS** > **Extensions** > **Aufrufe Verzeichnis Erweiterungen** aus, und klicken Sie auf die Schaltfläche **weiter** : 
+2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **Hinzufügen** > **Neues Projekt hinzu**fügen
+3. Wählen Sie **IOS** - > **Erweiterungen** > **Verzeichnis Erweiterungen anrufen** aus, und klicken Sie auf **weiter** : 
 
-    [![](callkit-images/calldir01.png "Erstellen einer neuen Erweiterung für das Erweiterungs Verzeichnis")](callkit-images/calldir01.png#lightbox)
+    [![](callkit-images/calldir01.png "Creating a new Call Directory Extension")](callkit-images/calldir01.png#lightbox)
 4. Geben Sie einen **Namen** für die Erweiterung ein, und klicken Sie auf die Schaltfläche **weiter** : 
 
-    [![](callkit-images/calldir02.png "Eingeben eines Namens für die Erweiterung")](callkit-images/calldir02.png#lightbox)
+    [![](callkit-images/calldir02.png "Entering a name for the extension")](callkit-images/calldir02.png#lightbox)
 5. Passen Sie den **Projektnamen** und/oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
 
-    [![](callkit-images/calldir03.png "Erstellen des Projekts")](callkit-images/calldir03.png#lightbox) 
+    [![](callkit-images/calldir03.png "Creating the project")](callkit-images/calldir03.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Öffnen Sie die Projekt Mappe der app in Visual Studio.
-2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **hinzu** > fügen**Neues Projekt**hinzufügen
-3. Wählen Sie **IOS** > **Extensions** > **Aufrufe Verzeichnis Erweiterungen** aus, und klicken Sie auf die Schaltfläche **weiter** : 
+2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **Hinzufügen** > **Neues Projekt hinzu**fügen
+3. Wählen Sie **IOS** - > **Erweiterungen** > **Verzeichnis Erweiterungen anrufen** aus, und klicken Sie auf **weiter** : 
 
-    [![](callkit-images/calldir01w.png "Erstellen einer neuen Erweiterung für das Erweiterungs Verzeichnis")](callkit-images/calldir01.png#lightbox)
+    [![](callkit-images/calldir01w.png "Creating a new Call Directory Extension")](callkit-images/calldir01.png#lightbox)
 4. Geben Sie einen **Namen** für die Erweiterung ein, und klicken Sie auf **OK** .
 
 -----
 
-Dadurch wird dem Projekt `CallDirectoryHandler.cs` eine Klasse hinzugefügt, die wie folgt aussieht:
+Dadurch wird dem Projekt eine `CallDirectoryHandler.cs` Klasse hinzugefügt, die wie folgt aussieht:
 
 ```csharp
 using System;
@@ -1249,11 +1249,11 @@ namespace MonkeyCallDirExtension
 }
 ```
 
-Die `BeginRequest` -Methode im Handler für den Callcenter muss geändert werden, um die erforderliche Funktionalität bereitzustellen. Im obigen Beispiel wird versucht, die Liste der blockierten und verfügbaren Nummern in der Contact-Datenbank der VoIP-App festzulegen. Wenn beide Anforderungen aus irgendeinem Grund fehlschlagen, erstellen `NSError` Sie einen, um den Fehler zu beschreiben `CancelRequest` , und übergeben `CXCallDirectoryExtensionContext` Sie ihm die-Methode der-Klasse.
+Die `BeginRequest`-Methode im Handler für den Callcenter muss geändert werden, um die erforderliche Funktionalität bereitzustellen. Im obigen Beispiel wird versucht, die Liste der blockierten und verfügbaren Nummern in der Contact-Datenbank der VoIP-App festzulegen. Wenn beide Anforderungen aus irgendeinem Grund fehlschlagen, erstellen Sie einen `NSError`, um den Fehler zu beschreiben, und übergeben Sie ihm die `CancelRequest`-Methode der `CXCallDirectoryExtensionContext`-Klasse.
 
-Verwenden Sie die `AddBlockingEntry` -Methode `CXCallDirectoryExtensionContext` der-Klasse, um die blockierten Nummern festzulegen. Die für die Methode bereitgestellten Zahlen _müssen_ in numerischer aufsteigender Reihenfolge vorliegen. Für eine optimale Leistung und Arbeitsspeicher Auslastung, wenn viele Telefonnummern vorhanden sind, sollten Sie nur eine Teilmenge der Zahlen zu einem bestimmten Zeitpunkt laden und einen autorelease-Pool (s) zum Freigeben von Objekten verwenden, die während der geladenen Batches von Zahlen zugeordnet werden.
+Verwenden Sie die `AddBlockingEntry`-Methode der `CXCallDirectoryExtensionContext`-Klasse, um die blockierten Nummern festzulegen. Die für die Methode bereitgestellten Zahlen _müssen_ in numerischer aufsteigender Reihenfolge vorliegen. Für eine optimale Leistung und Arbeitsspeicher Auslastung, wenn viele Telefonnummern vorhanden sind, sollten Sie nur eine Teilmenge der Zahlen zu einem bestimmten Zeitpunkt laden und einen autorelease-Pool (s) zum Freigeben von Objekten verwenden, die während der geladenen Batches von Zahlen zugeordnet werden.
 
-Verwenden Sie die `AddIdentificationEntry` -Methode `CXCallDirectoryExtensionContext` der-Klasse, und geben Sie sowohl die Zahl als auch eine identifizierende Bezeichnung an, um die Kontakt-APP über die der VoIP-App bekannten Kontaktnummern zu informieren. Auch hier _müssen_ die für die Methode bereitgestellten Zahlen in numerischer aufsteigender Reihenfolge angegeben werden. Für eine optimale Leistung und Arbeitsspeicher Auslastung, wenn viele Telefonnummern vorhanden sind, sollten Sie nur eine Teilmenge der Zahlen zu einem bestimmten Zeitpunkt laden und einen autorelease-Pool (s) zum Freigeben von Objekten verwenden, die während der geladenen Batches von Zahlen zugeordnet werden.
+Verwenden Sie die `AddIdentificationEntry`-Methode der `CXCallDirectoryExtensionContext`-Klasse, und geben Sie sowohl die Zahl als auch eine identifizierende Bezeichnung an, um die Kontakt-APP über die der VoIP-App bekannten Kontaktnummern zu informieren. Auch hier _müssen_ die für die Methode bereitgestellten Zahlen in numerischer aufsteigender Reihenfolge angegeben werden. Für eine optimale Leistung und Arbeitsspeicher Auslastung, wenn viele Telefonnummern vorhanden sind, sollten Sie nur eine Teilmenge der Zahlen zu einem bestimmten Zeitpunkt laden und einen autorelease-Pool (s) zum Freigeben von Objekten verwenden, die während der geladenen Batches von Zahlen zugeordnet werden.
 
 ## <a name="summary"></a>Zusammenfassung
 

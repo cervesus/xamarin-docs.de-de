@@ -3,15 +3,15 @@ title: iOS-Remotesimulator für Windows
 description: Mit dem remoten IOS-Simulator für Windows können Sie Ihre apps in einem IOS-Simulator testen, der in Windows zusammen mit Visual Studio 2019 angezeigt wird.
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: 3067493315c62c46f44fb94aa61a919e1449080b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 8313af47882b1c8c47f1e82f62f0a43e4e9c704c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70289706"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029715"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>iOS-Remotesimulator für Windows
 
@@ -34,7 +34,7 @@ Die Symbolleiste am oberen Rand des simulatorfensters enthält eine Reihe nützl
 
 - **Startseite** – simuliert die Start Schaltfläche auf einem IOS-Gerät.
 - **Lock** – sperrt den Simulator (Schwenk zum Entsperren).
-- **Screenshot** – speichert einen Screenshot des Simulators (gespeichert in **pictures\xamarin\ios Simulator \\** ).
+- **Screenshot** – speichert einen Screenshot des Simulators (gespeichert in **pictures\xamarin\ios Simulator\\** ).
 - [**Einstellungen**](#settings) – zeigt Tastatur, Speicherort und andere Einstellungen an.
 - [**Weitere Optionen**](#other-options) – führt verschiedene simulatoroptionen aus, z. b. Drehung, Shake Gesten und touchid.
 

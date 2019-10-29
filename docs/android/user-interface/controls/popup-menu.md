@@ -4,15 +4,15 @@ description: Vorgehensweise beim Hinzufügen eines Popup Menüs, das für eine b
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: 8a808e6ea49338de5b6bd1618fc2227e6cf5f0b1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a5370cfb8a5c4950b361e5f58b253c63f4f1e240
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764889"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029180"
 ---
 # <a name="xamarinandroid-popup-menu"></a>Xamarin. Android-Popup Menü
 
@@ -36,9 +36,9 @@ Der erste Schritt besteht darin, eine Menü Ressourcen Datei für das Menü zu e
 </menu>
 ```
 
-Erstellen Sie als nächstes eine Instanz `PopupMenu` von, und Verankern Sie Sie an der Ansicht. Wenn Sie eine Instanz von `PopupMenu`erstellen, übergeben Sie den Konstruktor einen Verweis `Context` auf und die Ansicht, an die das Menü angefügt wird. Folglich ist das Popup Menü während der Erstellung an dieser Ansicht verankert.
+Erstellen Sie als nächstes eine Instanz von `PopupMenu` und Verankern Sie diese in der Ansicht. Wenn Sie eine Instanz von `PopupMenu`erstellen, übergeben Sie den Konstruktor einen Verweis auf die `Context` und die Ansicht, an die das Menü angefügt wird. Folglich ist das Popup Menü während der Erstellung an dieser Ansicht verankert.
 
-Im folgenden Beispiel wird der `PopupMenu` im Click-Ereignishandler für die Schaltfläche (mit dem Namen `showPopupMenu`) erstellt. Diese Schaltfläche ist auch die Ansicht, in `PopupMenu` der die verankert ist, wie im folgenden Codebeispiel gezeigt:
+Im folgenden Beispiel wird der `PopupMenu` im Click-Ereignishandler für die Schaltfläche (mit dem Namen `showPopupMenu`) erstellt. Diese Schaltfläche ist auch die Ansicht, auf die die `PopupMenu` verankert ist, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -58,7 +58,7 @@ showPopupMenu.Click += (s, arg) => {
 
 ## <a name="handling-menu-events"></a>Behandeln von Menü Ereignissen
 
-Wenn der Benutzer ein Menü Element auswählt, wird das [MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) -Click-Ereignis ausgelöst, und das Menü wird verworfen. Wenn Sie auf eine beliebige Stelle außerhalb des Menüs tippen, wird Sie einfach verworfen In beiden Fällen wird das [dismissvent](xref:Android.Widget.PopupMenu.Dismiss) -Ereignis ausgelöst, wenn das Menü verworfen wird. Der folgende Code fügt Ereignishandler für das-Ereignis `MenuItemClick` und `DismissEvent` das-Ereignis hinzu:
+Wenn der Benutzer ein Menü Element auswählt, wird das [MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) -Click-Ereignis ausgelöst, und das Menü wird verworfen. Wenn Sie auf eine beliebige Stelle außerhalb des Menüs tippen, wird Sie einfach verworfen In beiden Fällen wird das [dismissvent](xref:Android.Widget.PopupMenu.Dismiss) -Ereignis ausgelöst, wenn das Menü verworfen wird. Der folgende Code fügt Ereignishandler für die Ereignisse `MenuItemClick` und `DismissEvent` hinzu:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {

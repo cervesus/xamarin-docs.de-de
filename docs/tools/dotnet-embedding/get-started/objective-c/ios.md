@@ -3,19 +3,19 @@ title: Einstieg in ios
 description: In diesem Dokument werden die ersten Schritte bei der Verwendung der .net-Einbettung mit IOS beschrieben. In diesem Thema werden die Anforderungen erläutert und eine Beispiel-App vorgestellt, um zu veranschaulichen, wie eine verwaltete Assembly gebunden und die Ausgabe in einem Xcode-Projekt verwendet wird.
 ms.prod: xamarin
 ms.assetid: D5453695-69C9-44BC-B226-5B86950956E2
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: d5bde89ed90e55724fbc25fc473e265affa9ce2f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5697d20077b746d9d33db985111c2d04908d5d01
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292946"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029766"
 ---
 # <a name="getting-started-with-ios"></a>Einstieg in ios
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Zusätzlich zu den Anforderungen des Handbuchs " [Getting Started with Ziel-C](~/tools/dotnet-embedding/get-started/objective-c/index.md) " benötigen Sie auch Folgendes:
 

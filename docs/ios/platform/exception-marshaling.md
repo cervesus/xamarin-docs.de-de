@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie in einer xamarin. IOS-
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/05/2017
-ms.openlocfilehash: 936c5b91a27fed1c00f3cf0c61d0184d5532c25a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca3d4dfcd773a4f236ffbfd715cb53b514f6e2a3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753088"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032524"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Ausnahme Marshalling in xamarin. IOS
 
@@ -32,7 +32,7 @@ Das Problem tritt auf, wenn eine Ausnahme ausgelöst wird. während der Stapel A
 
 Ein typisches Beispiel hierfür für xamarin. IOS oder xamarin. Mac ist, wenn eine Native API eine "Ziel-c"-Ausnahme auslöst und diese "Ziel-c"-Ausnahme irgendwie behandelt werden muss, wenn der Stapel Entwicklungsprozess einen verwalteten Frame erreicht.
 
-Die Standardaktion besteht darin, nichts zu Unternehmen. Im obigen Beispiel bedeutet dies, dass die Ziel-C-Laufzeit verwaltete Frames entladen soll. Das ist problematisch, da die Ziel-C-Laufzeit nicht weiß, wie verwaltete Frames entladen werden. Beispielsweise werden keine `catch` -oder `finally` -Klauseln in diesem Frame ausgeführt.
+Die Standardaktion besteht darin, nichts zu Unternehmen. Im obigen Beispiel bedeutet dies, dass die Ziel-C-Laufzeit verwaltete Frames entladen soll. Das ist problematisch, da die Ziel-C-Laufzeit nicht weiß, wie verwaltete Frames entladen werden. Beispielsweise werden keine `catch` oder `finally` Klauseln in diesem Frame ausgeführt.
 
 ### <a name="broken-code"></a>Fehlerhafter Code
 
@@ -61,7 +61,7 @@ Die Stapel Überwachung sieht etwa folgendermaßen aus:
 6   TestApp                 ExceptionMarshaling.Exceptions.ThrowObjectiveCException ()
 ```
 
-Frames 0-3 sind systemeigene Frames, und der Stapel entwinder in der Ziel-C-Laufzeit _kann_ diese Frames entladen. Insbesondere führt Sie alle Ziele-C `@catch` -oder `@finally` -Klauseln aus.
+Frames 0-3 sind systemeigene Frames, und der Stapel entwinder in der Ziel-C-Laufzeit _kann_ diese Frames entladen. Insbesondere wird eine beliebige Ziel-C-`@catch` oder `@finally`-Klauseln ausgeführt.
 
 Der Entlader des Ziel-C-Stapels ist jedoch _nicht_ in der Lage, die verwalteten Frames (Frames 4-6) ordnungsgemäß zu entladen, da die Frames entladen werden, aber verwaltete Ausnahme Logik nicht ausgeführt wird.
 
@@ -78,19 +78,19 @@ try {
 }
 ```
 
-Dies liegt daran, dass der Entlader des Ziel-C-Stapels die `catch` verwaltete Klausel nicht kennt und keine `finally` der Klauseln ausgeführt wird.
+Dies liegt daran, dass der Entlader des Ziel-C-Stapels die verwaltete `catch`-Klausel nicht kennt und keines der `finally`-Klausel ausgeführt wird.
 
-Wenn das obige Codebeispiel effektiv _ist_ , liegt dies daran, dass "Ziel-c" eine Methode für die Benachrichtigung über nicht behandelte Ziel- [`NSSetUncaughtExceptionHandler`][2]c-Ausnahmen,, die von xamarin. IOS und xamarin. Mac verwendet werden, und zu diesem Zeitpunkt versucht, beliebige Ziel-c-Ausnahmen zu konvertieren. zu verwalteten Ausnahmen.
+Wenn das obige Codebeispiel effektiv _ist_ , liegt dies daran, dass "Ziel-c" eine Methode für die Benachrichtigung über nicht behandelte Ziel-c-Ausnahmen, [`NSSetUncaughtExceptionHandler`][2], die von xamarin. IOS und xamarin. Mac verwendet werden, und zu diesem Zeitpunkt versucht, beliebige Ziele zu konvertieren. Ausnahmen von verwalteten Ausnahmen.
 
 ## <a name="scenarios"></a>Szenarien
 
 ### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>Szenario 1: Abfangen von Ziel-C-Ausnahmen mit einem verwalteten catch-Handler
 
-Im folgenden Szenario ist es möglich, Ziel-C-Ausnahmen mithilfe von verwalteten `catch` Handlern abzufangen:
+Im folgenden Szenario ist es möglich, Ziel-C-Ausnahmen mit verwalteten `catch` Handlern abzufangen:
 
 1. Eine "Ziel-C"-Ausnahme wird ausgelöst.
-2. Die Ziel-C-Laufzeit führt den Stapel durch (aber nicht entladen), sucht nach einem `@catch` systemeigenen Handler, der die Ausnahme behandeln kann.
-3. Die Ziel-C-Laufzeit findet keine `@catch` Handler, ruft `NSGetUncaughtExceptionHandler`auf und ruft den Handler auf, der von xamarin. IOS/xamarin. Mac installiert wurde.
+2. Die Ziel-C-Laufzeit führt den Stapel durch (aber nicht entladen), sucht nach einem systemeigenen `@catch` Handler, der die Ausnahme behandeln kann.
+3. Die Ziel-C-Laufzeit findet keine `@catch` Handler, ruft `NSGetUncaughtExceptionHandler`auf und ruft den Handler auf, der von xamarin. IOS/xamarin. Mac installiert wird.
 4. Der Handler von xamarin. IOS/xamarin. Mac konvertiert die "Ziel-C"-Ausnahme in eine verwaltete Ausnahme und löst Sie aus. Da die Ziel-c-Laufzeit den Stapel nicht entladen hat (nur durchlaufen), ist der aktuelle Frame derselbe, in dem die Ziel-c-Ausnahme ausgelöst wurde.
 
 Ein anderes Problem tritt auf, weil die Mono-Laufzeit nicht weiß, wie Sie die Frame-C-Frames ordnungsgemäß entladen.
@@ -111,7 +111,7 @@ Wenn xamarin. IOS ' nicht abgefangener Ziel-C-Ausnahme Rückruf aufgerufen wird,
 10 TestApp                  ExceptionMarshaling.Exceptions.ThrowObjectiveCException () [0x00013]
 ```
 
-Hier sind die einzigen verwalteten Frames Frames 8-10, aber die verwaltete Ausnahme wird in Frame 0 ausgelöst. Dies bedeutet, dass die Mono-Laufzeit die systemeigenen Frames 0-7 entladen muss. Dies führt zu einem Problem, das dem oben beschriebenen Problem entspricht: Obwohl die Mono-Laufzeit die systemeigenen Frames entladen wird, `@catch` werden `@finally` keine Ziele-C-oder-Klauseln ausgeführt. .
+Hier sind die einzigen verwalteten Frames Frames 8-10, aber die verwaltete Ausnahme wird in Frame 0 ausgelöst. Dies bedeutet, dass die Mono-Laufzeit die systemeigenen Frames 0-7 entladen muss. Dies führt zu einem Problem, das dem oben beschriebenen Problem entspricht: Obwohl die Mono-Laufzeit die systemeigenen Frames entladen wird, werden keine Ziele-C-`@catch` oder `@finally`-Klauseln ausgeführt.
 
 Code Beispiel:
 
@@ -127,9 +127,9 @@ Code Beispiel:
 }
 ```
 
-Und die `@finally` -Klausel wird nicht ausgeführt, da die Mono-Laufzeit, die diesen Frame entlädt, nicht weiß.
+Und die `@finally`-Klausel wird nicht ausgeführt, da die Mono-Laufzeit, die diesen Frame entlädt, nicht weiß.
 
-Eine Variation hierfür besteht darin, eine verwaltete Ausnahme in verwaltetem Code auszulösen und dann durch systemeigene Frames zu entwickeln, um zur ersten `catch` verwalteten Klausel zu gelangen:
+Eine Variation hierfür besteht darin, eine verwaltete Ausnahme in verwaltetem Code auszulösen und dann durch systemeigene Frames zu entwickeln, um zur ersten verwalteten `catch`-Klausel zu gelangen:
 
 ```csharp
 class AppDelegate : UIApplicationDelegate {
@@ -148,7 +148,7 @@ class AppDelegate : UIApplicationDelegate {
 }
 ```
 
-Die verwaltete `UIApplication:Main` Methode ruft die native `UIApplicationMain` -Methode auf, und dann führt IOS eine Menge System eigener Codeausführung aus, bevor Sie die `AppDelegate:FinishedLaunching` verwaltete-Methode aufruft, wobei nach wie vor viele Native Frames auf dem Stapel verwendet werden, wenn die verwaltete Ausnahme geraten
+Die verwaltete `UIApplication:Main` Methode ruft die systemeigene `UIApplicationMain`-Methode auf, und dann führt IOS viele systemeigene Code Ausführungen aus, bevor Sie die verwaltete `AppDelegate:FinishedLaunching`-Methode aufrufen, wobei beim Auslösen der verwalteten Ausnahme immer noch viele Native Rahmen auf dem Stapel angezeigt werden. :
 
 ```
  0: TestApp                 ExceptionMarshaling.IOS.AppDelegate:FinishedLaunching (UIKit.UIApplication,Foundation.NSDictionary)
@@ -184,15 +184,15 @@ Die verwaltete `UIApplication:Main` Methode ruft die native `UIApplicationMain` 
 30: TestApp                 ExceptionMarshaling.IOS.Application:Main (string[])
 ```
 
-Die Frames 0-1 und 27-30 werden verwaltet, während alle dazwischen liegen. Wenn Mono diese Frames durchläuft, werden keine Ziel-C `@catch` - `@finally` oder-Klauseln ausgeführt.
+Die Frames 0-1 und 27-30 werden verwaltet, während alle dazwischen liegen. Wenn Mono diese Frames durchläuft, werden keine Ziel-C-`@catch` oder `@finally` Klauseln ausgeführt.
 
 ### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>Szenario 2: nicht in der Lage, Ziel-C-Ausnahmen abzufangen
 
-Im folgenden Szenario ist es _nicht_ möglich, Ziel-c-Ausnahmen mithilfe von verwalteten `catch` Handlern abzufangen, weil die Ausnahme "Ziel-c" auf andere Weise behandelt wurde:
+Im folgenden Szenario ist es _nicht_ möglich, Ziel-c-Ausnahmen mit verwalteten `catch` Handlern abzufangen, da die "Ziel-c"-Ausnahme auf andere Weise behandelt wurde:
 
 1. Eine "Ziel-C"-Ausnahme wird ausgelöst.
-2. Die Ziel-C-Laufzeit führt den Stapel durch (aber nicht entladen), sucht nach einem `@catch` systemeigenen Handler, der die Ausnahme behandeln kann.
-3. Die Ziel-C-Laufzeit findet `@catch` einen Handler, entlädt den Stapel und beginnt mit der `@catch` Ausführung des Handlers.
+2. Die Ziel-C-Laufzeit führt den Stapel durch (aber nicht entladen), sucht nach einem systemeigenen `@catch` Handler, der die Ausnahme behandeln kann.
+3. Die Ziel-C-Laufzeit findet einen `@catch` Handler, entlädt den Stapel und beginnt mit der Ausführung des `@catch` Handlers.
 
 Dieses Szenario wird häufig in xamarin. IOS-apps gefunden, da es im Haupt Thread normalerweise Code wie den folgenden gibt:
 
@@ -213,7 +213,7 @@ void UIApplicationMain ()
 
 Dies bedeutet, dass es im Haupt Thread nie wirklich zu einer unbehandelten Ziel-c-Ausnahme kommt und dass der Rückruf, der die Ziel-c-Ausnahmen in verwaltete Ausnahmen konvertiert, nie aufgerufen wird.
 
-Dies ist auch beim Debuggen von xamarin. Mac-apps auf einer früheren macOS-Version üblich, als xamarin. Mac unterstützt, da bei der Überprüfung der meisten UI-Objekte im Debugger versucht wird, Eigenschaften abzurufen, die auf der ausgeführten Plattform nicht vorhanden sind. Da xamarin. Mac Unterstützung für eine höhere macOS-Version bietet). Das aufrufen solcher Selektoren löst eine `NSInvalidArgumentException` ("unbekannte Auswahl an...") aus, die letztendlich dazu führt, dass der Prozess abstürzt.
+Dies ist auch beim Debuggen von xamarin. Mac-apps auf einer früheren macOS-Version üblich, als xamarin. Mac unterstützt, da bei der Überprüfung der meisten UI-Objekte im Debugger versucht wird, Eigenschaften abzurufen, die auf der ausgeführten Plattform nicht vorhanden sind. Da xamarin. Mac Unterstützung für eine höhere macOS-Version bietet). Das aufrufen solcher Selektoren löst eine `NSInvalidArgumentException` ("Unbekannter Selektor wird an..." gesendet) aus, was letztendlich dazu führt, dass der Prozess abstürzt.
 
 Zusammenfassend lässt sich sagen, dass entweder die Ziel-C-Laufzeit oder die Mono-Lauf Zeitrahmen-entladen, die nicht für die Verarbeitung programmiert sind, zu nicht definiertem Verhalten führen können, wie z. b. Abstürze, Speicher Verluste und andere Typen unvorhersehbarer Verhalten (falsch).
 
@@ -259,17 +259,17 @@ Im Abschnitt " [buildzeitflags](#build_time_flags) " wird erläutert, wie die Ab
 
 ## <a name="events"></a>Ereignisse
 
-Wenn eine Ausnahme abgefangen wird, werden zwei neue Ereignisse ausgelöst: `Runtime.MarshalManagedException` und. `Runtime.MarshalObjectiveCException`
+Es gibt zwei neue Ereignisse, die ausgelöst werden, wenn eine Ausnahme abgefangen wird: `Runtime.MarshalManagedException` und `Runtime.MarshalObjectiveCException`.
 
-An beide Ereignisse wird ein `EventArgs` Objekt mit der ursprünglichen Ausnahme, die ausgelöst wurde (die `Exception` -Eigenschaft), und `ExceptionMode` einer-Eigenschaft, mit der definiert wird, wie die Ausnahme gemarshallt werden soll, übermittelt.
+An beide Ereignisse wird ein `EventArgs` Objekt, das die ursprüngliche ausgelöste Ausnahme (die `Exception`-Eigenschaft) enthält, und eine `ExceptionMode`-Eigenschaft zum definieren, wie die Ausnahme gemarshallt werden soll, übermittelt.
 
-Die `ExceptionMode` -Eigenschaft kann im-Ereignishandler geändert werden, um das Verhalten gemäß einer benutzerdefinierten Verarbeitung im-Handler zu ändern. Ein Beispiel wäre, den Prozess abzubrechen, wenn eine bestimmte Ausnahme auftritt.
+Die `ExceptionMode`-Eigenschaft kann im-Ereignishandler geändert werden, um das Verhalten gemäß einer benutzerdefinierten Verarbeitung im-Handler zu ändern. Ein Beispiel wäre, den Prozess abzubrechen, wenn eine bestimmte Ausnahme auftritt.
 
-Das ändern `ExceptionMode` der Eigenschaft gilt für das einzelne Ereignis und wirkt sich nicht auf Ausnahmen aus, die in der Zukunft abgefangen werden.
+Das Ändern der `ExceptionMode`-Eigenschaft gilt für das einzelne Ereignis, es wirkt sich nicht auf Ausnahmen aus, die in der Zukunft abgefangen werden.
 
 Die folgenden Modi sind verfügbar:
 
-- `Default`: Der Standardwert variiert je nach Plattform. Dies ist `ThrowObjectiveCException` der Fall, wenn sich die GC im kooperativen Modus (watchos `UnwindNativeCode` ) befindet, und andernfalls (IOS/watchos/macOS). Der Standardwert kann sich in Zukunft ändern.
+- `Default`: Der Standardwert variiert je nach Plattform. Es ist `ThrowObjectiveCException`, wenn sich die GC im kooperativen Modus (watchos) befindet, und `UnwindNativeCode` andernfalls (IOS/watchos/macOS). Der Standardwert kann sich in Zukunft ändern.
 - `UnwindNativeCode`: Dies ist das vorherige (undefinierte) Verhalten. Diese Option ist nicht verfügbar, wenn die GC im kooperativen Modus verwendet wird (Dies ist die einzige Option für watchos; daher ist dies keine gültige Option für watchos), aber Sie ist die Standardoption für alle anderen Plattformen.
 - `ThrowObjectiveCException`: Konvertieren der verwalteten Ausnahme in eine "Ziel-c"-Ausnahme und Auslösen der "Ziel-c"-Ausnahme. Dies ist die Standardeinstellung für watchos.
 - `Abort`: Brechen Sie den Prozess ab.
@@ -277,11 +277,11 @@ Die folgenden Modi sind verfügbar:
 
 Für das Mars Hallen von Ziel-C-Ausnahmen zu verwaltetem Code sind die folgenden Modi verfügbar:
 
-- `Default`: Der Standardwert variiert je nach Plattform. Dies ist `ThrowManagedException` der Fall, wenn sich die GC im kooperativen Modus (watchos `UnwindManagedCode` ) befindet, und andernfalls (IOS/tvos/macOS). Der Standardwert kann sich in Zukunft ändern.
+- `Default`: Der Standardwert variiert je nach Plattform. Es ist `ThrowManagedException`, wenn sich die GC im kooperativen Modus (watchos) befindet, und `UnwindManagedCode` andernfalls (IOS/tvos/macOS). Der Standardwert kann sich in Zukunft ändern.
 - `UnwindManagedCode`: Dies ist das vorherige (undefinierte) Verhalten. Diese Option ist nicht verfügbar, wenn die GC im kooperativen Modus verwendet wird (Dies ist der einzige gültige GC-Modus auf watchos; Dies ist daher keine gültige Option für watchos), aber dies ist die Standardeinstellung für alle anderen Plattformen.
 - `ThrowManagedException`: Konvertieren Sie die "Ziel-C"-Ausnahme in eine verwaltete Ausnahme, und lösen Sie die verwaltete Ausnahme aus. Dies ist die Standardeinstellung für watchos.
 - `Abort`: Brechen Sie den Prozess ab.
-- `Disable`:D isables das Abfangen von Ausnahmen, ist es nicht sinnvoll, diesen Wert im Ereignishandler festzulegen, aber sobald das Ereignis ausgelöst wird, ist es zu spät, es zu deaktivieren. Falls festgelegt, wird der Prozess abgebrochen.
+- `Disable`:D die die Ausnahme Abfang Funktion wieder gibt, ist es nicht sinnvoll, diesen Wert im Ereignishandler festzulegen, aber sobald das Ereignis ausgelöst wird, ist es zu spät, es zu deaktivieren. Falls festgelegt, wird der Prozess abgebrochen.
 
 Um zu sehen, wann eine Ausnahme gemarshallt wird, können Sie dies tun:
 
@@ -321,13 +321,13 @@ Es ist möglich, die folgenden Optionen an **mberührungs** (für xamarin. IOS-A
   - `abort`
   - `disable`
 
-Mit Ausnahme `disable`von sind diese Werte mit den `ExceptionMode` Werten identisch, die an das `MarshalManagedException` -Ereignis `MarshalObjectiveCException` und das-Ereignis übermittelt werden.
+Mit Ausnahme von `disable`sind diese Werte mit den `ExceptionMode` Werten identisch, die an die `MarshalManagedException`-und `MarshalObjectiveCException`-Ereignisse übermittelt werden.
 
-Mit `disable` der Option wird die Abfang Funktion _größtenteils_ deaktiviert, außer wenn kein Ausführungs Aufwand hinzugefügt wird. Die marshallingereignisse werden für diese Ausnahmen weiterhin ausgelöst, wobei der Standardmodus für die ausführende Plattform der Standardmodus ist.
+Mit der Option `disable` wird die Abfang Funktion _größtenteils_ deaktiviert, außer wenn kein Ausführungs Aufwand hinzugefügt wird. Die marshallingereignisse werden für diese Ausnahmen weiterhin ausgelöst, wobei der Standardmodus für die ausführende Plattform der Standardmodus ist.
 
 ## <a name="limitations"></a>Einschränkungen
 
-Bei dem Versuch, Ziel-C- `objc_msgSend` Ausnahmen abzufangen, werden nur P/Aufrufe an die-Funktions Familie abgefangen. Dies bedeutet, dass ein P/Aufrufen einer anderen C-Funktion, die dann alle Ziel-c-Ausnahmen auslöst, weiterhin das alte und nicht definierte Verhalten findet (Dies wird in Zukunft möglicherweise verbessert).
+Bei dem Versuch, Ziel-C-Ausnahmen abzufangen, werden nur P/Aufrufe an die `objc_msgSend`-Funktions Familie abgefangen. Dies bedeutet, dass ein P/Aufrufen einer anderen C-Funktion, die dann alle Ziel-c-Ausnahmen auslöst, weiterhin das alte und nicht definierte Verhalten findet (Dies wird in Zukunft möglicherweise verbessert).
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
 

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie digitale Produkte und Dien
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: f0cc04896b5c6e9b620b24c84d5c9d2a09b9cf4a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1efb8df4bac307d0e73da6bcbf645077cb63c839
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752640"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032355"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>In-App-Käufe in xamarin. IOS
 
@@ -28,7 +28,7 @@ Zum Bereitstellen von in-App-Kauf Funktionen sind einige Schritte erforderlich:
 
 In diesem Dokument wird erläutert, wie Sie alle diese Schritte ausführen, um in-App-Einkäufe mithilfe von xamarin. IOS bereitzustellen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Um in-App-Käufe zu unterstützen, müssen Sie xamarin. IOS 5,0 oder höher mit Xcode 7 und höher verwenden.
 
@@ -58,7 +58,7 @@ In diesem Artikel wurde das Konzept des in-App-Einkaufs eingeführt, und es wurd
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
+- [Inapppurchasesample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
 - [Im Leitfaden zur APP-Kauf Programmierung](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
 - [iTunes Connect-Entwicklerleitfaden](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
 - [Store Kit-frameworkverweis](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)

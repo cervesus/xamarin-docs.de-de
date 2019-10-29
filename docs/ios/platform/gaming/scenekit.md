@@ -4,15 +4,15 @@ description: Dieses Dokument beschreibt scenekit, eine 3D-Szene-Graph-API, die d
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: d6e6ff02fef3d2919e9716dc8a456aabd9533820
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5279effa83a8784f6d475188e67a535f7b5e1262
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292797"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032500"
 ---
 # <a name="scenekit-in-xamarinios"></a>Scenekit in xamarin. IOS
 
@@ -20,13 +20,13 @@ Scenekit ist eine 3D-Szene-Graph-API, die das Arbeiten mit 3D-Grafiken vereinfac
 
 Scenekit ist äußerst einfach zu arbeiten. Dabei handelt es sich um eine deklarative API, die das Rendering übernimmt. Sie richten einfach eine Szene ein, fügen ihr Eigenschaften hinzu, und scenekit übernimmt das Rendering der Szene.
 
-Um mit scenekit arbeiten zu können, erstellen Sie mithilfe der `SCNScene` -Klasse ein Szenen Diagramm. Eine Szene enthält eine Hierarchie von Knoten, die durch Instanzen `SCNNode`von dargestellt werden und Positionen im 3D-Raum definieren. Jeder Knoten verfügt über Eigenschaften wie z. b. Geometrie, Beleuchtung und Material, die seine Darstellung beeinflussen, wie in der folgenden Abbildung veranschaulicht:
+Um mit scenekit arbeiten zu können, erstellen Sie mit der `SCNScene`-Klasse ein Szenen Diagramm. Eine Szene enthält eine Hierarchie von Knoten, die durch Instanzen von `SCNNode`dargestellt werden, wobei Positionen im 3D-Raum definiert werden. Jeder Knoten verfügt über Eigenschaften wie z. b. Geometrie, Beleuchtung und Material, die seine Darstellung beeinflussen, wie in der folgenden Abbildung veranschaulicht:
 
-![](scenekit-images/image7.png "Die scenekit-Hierarchie")
+![](scenekit-images/image7.png "The SceneKit hierarchy")
 
 ## <a name="create-a-scene"></a>Erstellen einer Szene
 
-Damit eine Szene auf dem Bildschirm angezeigt wird, fügen Sie Sie `SCNView` einem hinzu, indem Sie Sie der Szene-Eigenschaft der Ansicht zuweisen. Wenn Sie Änderungen an der Szene vornehmen, `SCNView` aktualisiert außerdem selbst, um die Änderungen anzuzeigen.
+Damit eine Szene auf dem Bildschirm angezeigt wird, fügen Sie Sie einem `SCNView` hinzu, indem Sie Sie der Szene-Eigenschaft der Ansicht zuweisen. Wenn Sie Änderungen an der Szene vornehmen, werden `SCNView` auch aktualisiert, um die Änderungen anzuzeigen.
 
 ```csharp
 scene = SCNScene.Create ();
@@ -45,7 +45,7 @@ scene.RootNode.AddChildNode (sphereNode);
 
 ## <a name="adding-light"></a>Hinzufügen von Licht
 
-An diesem Punkt zeigt die Kugel nichts an, da es kein Licht in der Szene gibt. Durch das Anfügen von InstanzenanKnotenwerdenBeleuchtunginscenekiterstellt.`SCNLight` Es gibt verschiedene Arten von Lichtern, von denen verschiedene Formen der direktionalen Beleuchtung bis hin zur Ambiente-Beleuchtung reichen. Mit dem folgenden Code wird beispielsweise ein omnidirektionales Licht auf der Seite der Kugel erstellt:
+An diesem Punkt zeigt die Kugel nichts an, da es kein Licht in der Szene gibt. Das Anfügen von `SCNLight` Instanzen an Knoten erstellt Beleuchtung in scenekit. Es gibt verschiedene Arten von Lichtern, von denen verschiedene Formen der direktionalen Beleuchtung bis hin zur Ambiente-Beleuchtung reichen. Mit dem folgenden Code wird beispielsweise ein omnidirektionales Licht auf der Seite der Kugel erstellt:
 
 ```csharp
 // omnidirectional light
@@ -72,7 +72,7 @@ scene.RootNode.AddChildNode (ambientLightNode);
 
 Wenn die Lichter vorhanden sind, ist die Kugel nun in der Szene sichtbar.
 
-![](scenekit-images/image8.png "Die Kugel ist in der Szene sichtbar, wenn Sie beleuchtet wird.")
+![](scenekit-images/image8.png "The sphere is visible in the scene when lit")
 
 ## <a name="adding-a-camera"></a>Hinzufügen einer Kamera
 
@@ -95,13 +95,13 @@ Wie Sie aus dem obigen Code sehen können, können scenekit-Objekte mithilfe von
 
 Wenn die Kamera vorhanden ist, ist die gesamte Kugel für den Benutzer sichtbar:
 
-![](scenekit-images/image9.png "Die gesamte Kugel ist für den Benutzer sichtbar.")
+![](scenekit-images/image9.png "The entire sphere is visible to the user")
 
 Sie können der Szene auch weitere Beleuchtung hinzufügen. Hier sehen Sie, wie Sie mit einigen weiteren omnidirektionalen Lichtern aussieht:
 
-![](scenekit-images/image10.png "Die Kugel mit einigen weiteren omnidirektionalen Lichtern")
+![](scenekit-images/image10.png "The sphere with a few more omnidirectional lights")
 
-Außerdem kann der Benutzer `sceneView.AllowsCameraControl = true`durch Festlegen von die Sicht mit einer touchbewegung ändern.
+Außerdem kann der Benutzer durch Festlegen von `sceneView.AllowsCameraControl = true`den Punkt der Ansicht mit einer touchbewegung ändern.
 
 ### <a name="materials"></a>Material
 
@@ -115,11 +115,11 @@ sphere.Materials = new SCNMaterial[] { material };
 
 Dadurch wird das Bild wie unten dargestellt auf dem Knoten dargestellt:
 
-![](scenekit-images/image11.png "Schichten des Bilds auf die Kugel")
+![](scenekit-images/image11.png "Layering the image onto the sphere")
 
 Ein Material kann so festgelegt werden, dass es auch auf andere Arten von Beleuchtung reagiert. Beispielsweise kann das Objekt als Glanz festgelegt werden, und sein Glanz Inhalt wird so festgelegt, dass Glanz Farben angezeigt werden. Dies führt zu einem hellen Punkt auf der Oberfläche, wie unten dargestellt:
 
-![](scenekit-images/image12.png "Das Objekt, das durch Glanz Reflektion Glanz gemacht wurde, was zu einem hellen Fleck auf der Oberfläche führte.")
+![](scenekit-images/image12.png "The object made shiny with specular reflection, resulting in a bright spot on the surface")
 
 Material sind sehr flexibel, sodass Sie sehr wenig Code erreichen können. Wenn Sie das Bild beispielsweise nicht auf den diffusen Inhalt festlegen, legen Sie es stattdessen auf den reflektierenden Inhalt fest.
 
@@ -142,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-Sie können jedoch viel mehr als die Drehung animieren. Viele Eigenschaften von scenekit sind animabel. `Shininess` Mit dem folgenden Code werden beispielsweise die Materialien animiert, um die Glanz Reflektion zu erhöhen.
+Sie können jedoch viel mehr als die Drehung animieren. Viele Eigenschaften von scenekit sind animabel. Der folgende Code animiert z. b. die `Shininess` des Materials, um die Glanz Spiegelung zu erhöhen.
 
 ```csharp
 SCNTransaction.Begin ();

@@ -3,15 +3,15 @@ title: Arbeiten mit Bildschirmgrößen in xamarin. Android und Wear-Betriebssyst
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 86e05dc0e9cd5df325126cc5a339b36dd27c1e45
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758318"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030361"
 ---
 # <a name="working-with-screen-sizes"></a>Arbeiten mit Bildschirmgrößen
 
@@ -21,15 +21,15 @@ Android Wear-Geräte können entweder eine rechteckige oder eine Runde Anzeige a
 
 ## <a name="identifying-screen-type"></a>Identifizieren des Bildschirmtyps
 
-Die Bibliothek zur Unterstützung von Wear bietet einige Steuerelemente, mit denen Sie verschiedene Bildschirm Formen erkennen und `WatchViewStub` anpassen `BoxInsetLayout`können, wie z. b. und.
+Die Bibliothek zur Unterstützung von Wear bietet einige Steuerelemente, mit denen Sie verschiedene Bildschirm Formen erkennen und anpassen können, wie z. b. `WatchViewStub` und `BoxInsetLayout`.
 
-Beachten Sie, dass einige der anderen Unterstützungs Bibliotheks-Steuerelemente ( `GridViewPager`wie) die Bildschirm Form *automatisch* selbst erkennen und nicht als untergeordnete Elemente der unten beschriebenen Steuerelemente hinzugefügt werden sollten.
+Beachten Sie, dass einige der anderen Steuerelemente zur Unterstützung von Bibliotheken (z. b. `GridViewPager`) die Bildschirm Form *automatisch* selbst erkennen und nicht als untergeordnete Elemente der unten beschriebenen Steuerelemente hinzugefügt werden sollen.
 
-### <a name="watchviewstub"></a>WatchViewStub
+### <a name="watchviewstub"></a>Watchviewstub
 
 Sehen Sie sich das [watchviewstub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub) -Beispiel an, um zu erfahren, wie Sie den Bildschirmtypen erkennen und ein anderes Layout für jeden Typ anzeigen.
 
-Die hauptlayoutdatei enthält `android.support.wearable.view.WatchViewStub` ein-Attribut, das auf verschiedene Layouts für rechteckige `app:rectLayout` und `app:roundLayout` Runde Bildschirme mithilfe der Attribute und verweist:
+Die hauptlayoutdatei enthält eine `android.support.wearable.view.WatchViewStub`, die auf verschiedene Layouts für rechteckige und Runde Bildschirme mithilfe der Attribute `app:rectLayout` und `app:roundLayout` verweist:
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -45,11 +45,11 @@ Die Projekt Mappe enthält verschiedene Layouts für jeden Stil, der zur Laufzei
 
 ![Unter Ressourcen/Layout angezeigte Dateien](screen-sizes-images/solution.png)
 
-### <a name="boxinsetlayout"></a>BoxInsetLayout
+### <a name="boxinsetlayout"></a>Boxinsetlayout
 
 Anstatt für jeden Bildschirmtyp verschiedene Layouts zu erstellen, können Sie auch eine einzelne Ansicht erstellen, die sich auf rechteckige oder Runde Bildschirme anpasst.
 
-In diesem [Google-Beispiel](https://developer.android.com/training/wearables/ui/layouts.html#same-layout) wird gezeigt, `BoxInsetLayout` wie die verwendet wird, um dasselbe Layout sowohl auf rechteckigen als auch auf dem Bildschirm zu verwenden
+Dieses [Google-Beispiel](https://developer.android.com/training/wearables/ui/layouts.html#same-layout) zeigt, wie Sie die `BoxInsetLayout` verwenden, um das gleiche Layout sowohl auf rechteckigen als auch auf dem Bildschirm zu verwenden.
 
 ## <a name="wear-ui-designer"></a>Benutzeroberflächen-Designer
 

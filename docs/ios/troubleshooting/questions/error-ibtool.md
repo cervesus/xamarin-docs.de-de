@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A804EBC4-2BBF-4A98-A4E8-A455DB2E8A17
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: 39b522af5bdc3587e3d5aa1451ed4879c6af65f5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4ff7b88ad63870246acbf2b29d01775f6711a8ce
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769334"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031193"
 ---
 # <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool-Fehler: Der Vorgang konnte nicht abgeschlossen werden.
 
@@ -24,9 +24,9 @@ Apple hat diesen `ibtool`-Fehler in Xcode 6.1.1 [behoben](https://developer.app
 
 ## <a name="description-of-the-problem"></a>Beschreibung des Problems
 
-Der `ibtool` Befehl in Xcode 6,0 enthielt einen Fehler auf OS X 10,10 Yosemite. Xamarin. IOS verwendet Xcode zum `ibtool` Kompilieren von Storyboards und `XIB` Dateien.
+Der Befehl "`ibtool`" in Xcode 6,0 enthielt einen Fehler in OS X 10,10 Yosemite. Xamarin. IOS verwendet `ibtool` von Xcode, um Storyboards und `XIB` Dateien zu kompilieren.
 
-Weitere Informationen über den Fehler im Zusammenhang mit Xcode finden Sie im folgenden Stack Overflow Beitrag:[https://stackoverflow.com/questions/25754763/cant-open-storyboard](https://stackoverflow.com/questions/25754763/cant-open-storyboard)
+Weitere Informationen über den Fehler im Zusammenhang mit Xcode finden Sie im folgenden Stack Overflow Beitrag: [https://stackoverflow.com/questions/25754763/cant-open-storyboard](https://stackoverflow.com/questions/25754763/cant-open-storyboard)
 
 ### <a name="error-message"></a>Fehlermeldung
 
@@ -36,19 +36,19 @@ Weitere Informationen über den Fehler im Zusammenhang mit Xcode finden Sie im f
 
 ### <a name="option-1-manage-all-uiimageviewimage-properties-in-code"></a>Option 1: Alle `UIImageView.Image` Eigenschaften im Code verwalten
 
-Anstatt die `Image` -Eigenschaft `UIImageView` eines in der Storyboard-oder `.xib` -Datei festzulegen, können Sie die-Eigenschaft in einer der Überschreibungs Methoden zum Anzeigen des Lebenszyklus im Ansichts Controller ( `ViewDidLoad()`z. b. in) festlegen. Weitere Tipps zur Verwendung von vs `UIImage.FromFile()`finden Sie `UIImage.FromBundle()` [unter Arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) .
+Anstatt die `Image`-Eigenschaft eines `UIImageView` in der Storyboard-oder `.xib`-Datei festzulegen, können Sie die-Eigenschaft in einer der Überschreibungs Methoden zum Anzeigen des Lebenszyklus im Ansichts Controller festlegen (z. b. in `ViewDidLoad()`). Weitere Tipps zur Verwendung von `UIImage.FromBundle()` und `UIImage.FromFile()`finden Sie [unter Arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) .
 
-### <a name="option-2-move-all-of-the-image-resources-to-the-top-level-resources-folder"></a>Option 2: Alle Bild Ressourcen in den Ordner der obersten Ebene `Resources` verschieben
+### <a name="option-2-move-all-of-the-image-resources-to-the-top-level-resources-folder"></a>Option 2: Verschieben Sie alle Bild Ressourcen in den `Resources` Ordner der obersten Ebene.
 
-Nachdem Sie die Bilder in den Ordner der obersten `Resources` Ebene verschoben haben, müssen Sie das Storyboard und `.xib` die Dateien aktualisieren, damit die neuen Bild Pfade verwendet werden.
+Nachdem Sie die Bilder in den `Resources` Ordner der obersten Ebene verschoben haben, müssen Sie das Storyboard und `.xib` Dateien aktualisieren, um die neuen Bild Pfade zu verwenden.
 
-### <a name="option-3-set-the-logicalname-for-any-problematic-image-assets-so-they-are-copied-to-the-top-level-of-theapp-bundle"></a>Option 3: Legen Sie`.app` für alle problematischen Bild Ressourcen fest, damit Sie auf die oberste Ebene des Bündels kopiert werden. `LogicalName`
+### <a name="option-3-set-the-logicalname-for-any-problematic-image-assets-so-they-are-copied-to-the-top-level-of-theapp-bundle"></a>Option 3: Legen Sie die `LogicalName` für alle problematischen Bild Ressourcen fest, damit Sie auf die oberste Ebene des`.app` Pakets kopiert werden.
 
 Angenommen, die ursprüngliche `.csproj` Datei enthält den folgenden Eintrag:
 
 `<BundleResource Include="Resources\Images\image.png" />`
 
-Sie können dieses Element ändern und eine `LogicalName` hinzufügen, sodass das Bild stattdessen auf die oberste Ebene `.app` des Pakets kopiert wird:
+Sie können dieses Element ändern und eine `LogicalName` hinzufügen, damit das Bild stattdessen auf die oberste Ebene des `.app` Pakets kopiert wird:
 
 ```xml
 <BundleResource Include="Resources\Images\image.png">
@@ -56,9 +56,9 @@ Sie können dieses Element ändern und eine `LogicalName` hinzufügen, sodass da
 </BundleResource>
 ```
 
-In Visual Studio für Mac `LogicalName` kann auch mithilfe des `Resource ID` -Felds für das Bild unter **Ansicht > Pads > Eigenschaften**festgelegt werden. (Siehe auch: [https://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545](https://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
+In Visual Studio für Mac die `LogicalName` auch über das Feld `Resource ID` für das Bild unter **Ansicht > Pads > Eigenschaften**festgelegt werden. (Siehe auch: [https://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545](https://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
 
-Nach dieser Änderung müssen Sie das Storyboard und `.xib` die Dateien aktualisieren, um die neuen Bild Pfade der obersten Ebene zu verwenden. Visual Studio für Mac wird die Liste der automatischen Vervollständigungen für die `Image` Eigenschaft im IOS-Designer automatisch aktualisieren. In Visual Studio müssen Sie den Pfad manuell bearbeiten. Der IOS-Designer zeigt dies als fehlendes Bild an, das Projekt wird jedoch ordnungsgemäß erstellt und ausgeführt.
+Nach dieser Änderung müssen Sie die Storyboard-und `.xib` Dateien aktualisieren, damit die neuen Bild Pfade der obersten Ebene verwendet werden. Visual Studio für Mac wird die Liste der automatischen Vervollständigungen für die `Image`-Eigenschaft im IOS-Designer automatisch aktualisieren. In Visual Studio müssen Sie den Pfad manuell bearbeiten. Der IOS-Designer zeigt dies als fehlendes Bild an, das Projekt wird jedoch ordnungsgemäß erstellt und ausgeführt.
 
 ### <a name="next-steps"></a>Nächste Schritte
 

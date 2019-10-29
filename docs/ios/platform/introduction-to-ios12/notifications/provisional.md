@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie xamarin. IOS verwenden
 ms.prod: xamarin
 ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: d321e8061d3091abeaa3cff6a6af9172c981cb60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7d9fe2a651d8d75d8dd9d8c0dd1225350a58373d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291202"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031884"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Vorläufige Benachrichtigungen in xamarin. IOS
 
@@ -20,14 +20,14 @@ Durch vorläufige Benachrichtigungen können apps Benachrichtigungen übermittel
 
 Im Benachrichtigungs Center können Benutzer angeben, dass eine APP die Bereitstellung von provisorischen Benachrichtigungen beenden, Sie weiterhin vorläufig bereitstellt oder mit der Bereitstellung der Lösungen beginnen soll.
 
-## <a name="sample-app-redgreennotifications"></a>Beispiel-App: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Beispiel-App: Redgreenbenachrichtigungen
 
 Sehen Sie sich die Beispiel-APP [redgreenbenachrichtigungen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) an, mit der vorläufige Benachrichtigungen gesendet werden.
 
 ## <a name="sending-provisional-notifications"></a>Senden von provisorischen Benachrichtigungen
 
-Um vorläufige Benachrichtigungen zu senden, `UNAuthorizationOptions.Provisional` geben Sie als Option für das[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
-Methode von `UNUserNotificationCenter`:
+Um vorläufige Benachrichtigungen zu senden, geben Sie `UNAuthorizationOptions.Provisional` als Option für den [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
+Methode der `UNUserNotificationCenter`:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,7 +41,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Wenn der Benutzer vorläufige Benachrichtigungen auf eine bedeutende Übermittlung herauf stuft `UNAuthorizationOptions` , bestimmen die `RequestAuthorization` an übergebenen Werte die neuen Einstellungen für die Benachrichtigungs Übermittlung ( `UNAuthorizationOptions.Alert` im `UNAuthorizationOptions.Sound`obigen Code und).
+Wenn der Benutzer vorläufige Benachrichtigungen auf eine bedeutende Übermittlung herauf stuft, bestimmen die `UNAuthorizationOptions` Werte, die an `RequestAuthorization` weitergegeben werden, die neuen Einstellungen für die Benachrichtigungs Übermittlung (im obigen Code `UNAuthorizationOptions.Alert` und `UNAuthorizationOptions.Sound`).
 
 ## <a name="related-links"></a>Verwandte Links
 

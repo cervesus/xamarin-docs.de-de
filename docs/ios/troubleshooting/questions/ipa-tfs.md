@@ -4,19 +4,19 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 9c7b7e598f66d930b5e16ef19b8bc108d8b6701a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4493b1a0d06e2f44ee9a11a250395f058baa0548
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291057"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031019"
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>Wie kann ich IPA-Ausgabedateien in den TFS-Ablage Ordner kopieren?
 
-Öffnen Sie `.csproj` die Datei für das IOS-App-Projekt in einem Text-Editor, und fügen Sie dann am Ende (unmittelbar vor `</Project>` dem schließenden Tag) die folgenden Zeilen hinzu:
+Öffnen Sie die Datei `.csproj` für das IOS-App-Projekt in einem Text-Editor, und fügen Sie dann am Ende die folgenden Zeilen hinzu (unmittelbar vor dem schließenden `</Project>`-Tag):
 
 ```xml
 <PropertyGroup>
@@ -40,9 +40,9 @@ ms.locfileid: "70291057"
 
 ## <a name="notes"></a>Hinweise
 
-- Dies ist dieselbe allgemeine Methode, die erläutert wird, [kann ich den Ausgabepfad der IPA-Datei ändern?](~/ios/troubleshooting/questions/ipa-output-path.md) Die beiden wichtigen Punkte sind das Festlegen `$(TF_BUILD_BINARIESDIRECTORY)` von als Zielordner und das Hinzufügen einer zusätzlichen `CopyIpa` Bedingung, die nur für TFS-Builds ausgeführt wird.
+- Dies ist dieselbe allgemeine Methode, die erläutert wird, [kann ich den Ausgabepfad der IPA-Datei ändern?](~/ios/troubleshooting/questions/ipa-output-path.md) Die beiden wichtigen Punkte sind das Festlegen `$(TF_BUILD_BINARIESDIRECTORY)` als Zielordner und das Hinzufügen einer zusätzlichen Bedingung, damit `CopyIpa` nur für TFS-Builds ausgeführt wird.
 
-- Eine Beschreibung von finden `TF_BUILD_BINARIESDIRECTORY` Sie unter [vordefinierte Buildvariablen](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
+- Eine Beschreibung `TF_BUILD_BINARIESDIRECTORY` finden Sie unter [vordefinierte Buildvariablen](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
 
 ## <a name="additional-references"></a>Weitere Verweise
 

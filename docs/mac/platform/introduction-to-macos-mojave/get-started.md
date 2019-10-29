@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit xamarin. Mac für 
 ms.prod: xamarin
 ms.assetid: E9A7B68A-E164-4C5C-86AC-B2A3E7A30DA1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 64c1ca0bfee5b98b7842bdc44a46bc40cf2012fc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a7aba55f0470ad44dcce3de56ed15308439785e2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285461"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029850"
 ---
 # <a name="get-started-with-macos-mojave"></a>Einstieg in macOS
 
@@ -26,7 +26,7 @@ In diesem Dokument wird beschrieben, wie Sie mit xamarin. Mac für die Erstellun
 
 3. **Update Visual Studio für Mac** – verwenden Sie die neueste stabile Version von Visual Studio für Mac mit [xamarin. Mac 5,0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md) oder neuer.
 
-4. _(optional)_ **Installieren Sie die macOS** -"Mac-–" auf Ihrem Mac.
+4. _(optional)_ **Installieren Sie die macOS-– auf Ihrem Mac** .
 
    > [!TIP]
    > Auch wenn Ihre APP keine neuen MacOS-mujave-APIs verwendet, stellen Sie sicher, dass Sie Sie mit dem MacOS-SDK für die Überprüfung erstellen und testen, um sicherzustellen, dass alles wie erwartet funktioniert. Wenn eine APP keine neuen APIs aufruft, können Sie Sie mit dem macOS-SDK für die Überprüfung neu kompilieren und testen, ohne Ihr Mac-Betriebssystem zu aktualisieren.

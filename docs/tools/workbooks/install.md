@@ -3,15 +3,15 @@ title: Arbeitsmappen-Installation und-Anforderungen
 description: In diesem Dokument wird beschrieben, wie Sie Xamarin Workbooks herunterladen und installieren, welche unterstützten Plattformen und Systemanforderungen erörtert werden
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 6fc204e8524d53820407b2efd3ab0de6af28c669
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249908"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029633"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Arbeitsmappen-Installation und-Anforderungen
 
@@ -35,7 +35,7 @@ ms.locfileid: "71249908"
 
 -----
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 #### <a name="supported-operating-systems"></a>Unterstützte Betriebssysteme
 
@@ -64,7 +64,7 @@ Arbeitsmappen-Client Protokolldateien immer anfügen:
 - Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-Version 1.4.x bietet außerdem die Möglichkeit, die Protokolldatei im Finder (macOS) oder im Explorer (Windows) direkt über das Hauptmenü auszuwählen.
+1.4. x bietet auch die Möglichkeit, die Protokolldatei im Finder (macOS) oder Explorer (Windows) direkt über das Hauptmenü auszuwählen:
 
 - **Hilfe > Anzeigen der Protokolldatei**
 
@@ -86,12 +86,12 @@ Es ist sehr hilfreich, Details zu Ihrem Betriebs System und den installierten xa
 Visual Studio für Mac
 
 - **Visual Studio-> zu Visual Studio > Details > Kopier Informationen anzeigen**
-- Einfügen in den Fehlerbericht
+- In Fehlerbericht einfügen
 
 Visual Studio
 
 - **Hilfe > zu Visual Studio > Kopieren von Informationen**
-- Geben Sie Ihre Betriebssystemversion an und ob Sie die Windows 32-Bit-Version oder die Windows 64-Bit-Version ausführen.
+- Informieren Sie uns über die Betriebs System Version und darüber, ob Sie 32-Bit-oder 64-Bit-Windows ausführen.
 
 ### <a name="samples"></a>Proben
 
@@ -104,8 +104,8 @@ Wenn Sie Probleme beim Verbinden Ihrer IOS-oder Android-Arbeitsmappe haben und d
 - Der Name des Geräts, mit dem Sie eine Verbindung herstellen möchten.
 - Betriebssystemversion Ihres Geräts
 - Android: Überprüfen Sie, ob Sie einen x86-Emulator verwenden
-- Android: Welche Emulatorplattform verwenden Sie? Google-Emulatoren?
-  Visual Studio-Emulator für Android? Xamarin Android Player?
+- Android: Welche Emulatorplattform verwenden Sie? Google-Emulator?
+  Visual Studio-Android-Emulator? Xamarin Android Player?
 - IOS unter Windows: Welche Version des IOS-remoteios-Simulators haben Sie installiert **(überprüfen Sie die** Option "Software" in der **Systemsteuerung**)?
 - IOS unter Windows: Geben Sie auch Informationen zur Platt Form Version für den Mac-buildhost an
 - Hat das Gerät Netzwerk Konnektivität (überprüfen Sie den Webbrowser)?
@@ -128,7 +128,7 @@ Wenn Sie Arbeitsmappen selbst mit einem heruntergeladenen Installationsprogramm 
 
 > **Starten der > Einstellungen > System > Apps & Features**
 
-![](install-images/windows-remove.png "Xamarin Workbooks wie unter &quot;APP &amp; -Features aufgelistet&quot;")
+![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
 
 **Befolgen Sie die Schritte für die Visual Studio-Installer, um sicherzustellen, dass Arbeitsmappen ohne ihr wissen nicht neu installiert werden.**
 
@@ -144,7 +144,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 Der Deinstallationsprogramm erläutert die Dateien und Verzeichnisse, die entfernt werden, und fordert die Bestätigung an, bevor der Vorgang fortgesetzt wird.
 
-Übergeben Sie `-help` das Argument für `uninstall` Erweiterte Szenarien an das Skript.
+Übergeben Sie das `-help`-Argument an das `uninstall`-Skript, um erweiterte Szenarios zu erstellen.
 
 Für frühere Versionen müssen Sie manuell Folgendes entfernen:
 
@@ -155,11 +155,11 @@ Für frühere Versionen müssen Sie manuell Folgendes entfernen:
 
 ## <a name="downgrading"></a>Downgrade
 
-Die Bündel-ID für **Applications/xamarin Workbooks. app** wurde `com.xamarin.Inspector` `com.xamarin.Workbooks` in der Version 1,4 von in geändert, da Arbeitsmappen und Inspektor nun vollständig aufgeteilt sind.
+Der Bündel Bezeichner für **Applications/xamarin Workbooks. app** wurde in der Version 1,4 von `com.xamarin.Inspector` in `com.xamarin.Workbooks` geändert, da Arbeitsmappen und Inspektor nun vollständig aufgeteilt sind.
 
 Aufgrund eines Fehlers in älteren Installationsprogrammen ist es nicht möglich, 1,4 oder neuere Versionen mit den Installationsprogrammen von 1.3.2 oder älter herabzusetzen.
 
 So stufen Sie ein Downgrade von 1,4 oder höher auf 1.3.2 oder älter durch:
 
 1. [Manuelles Deinstallieren von Arbeitsmappen & Inspektor](#uninstall-macos)
-2. Ausführen des Installationsprogramms von `.pkg` 1.3.2 oder älter
+2. Führen Sie das Installationsprogramm von 1.3.2 oder älter `.pkg` aus.

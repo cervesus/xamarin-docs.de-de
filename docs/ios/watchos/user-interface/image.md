@@ -4,15 +4,15 @@ description: In diesem Dokument wird die Verwendung von Image-Steuerelementen in
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 7d24286b5d428a571afc7498afafa1171c075110
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769958"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032706"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchos-Image-Steuerelemente in xamarin
 
@@ -49,7 +49,7 @@ myOtherImageControl.SetImage("Worry");
 
 ### <a name="background-images"></a>Hintergrundbilder
 
-Die gleiche Logik gilt für die `SetBackgroundImage (string imageName)` für die Klassen `Button`, `Group` und `InterfaceController`. Die beste Leistung wird erzielt, indem die Images in der Watch-APP selbst gespeichert werden.
+Die gleiche Logik gilt für die `SetBackgroundImage (string imageName)` für die Klassen `Button`, `Group`und `InterfaceController`. Die beste Leistung wird erzielt, indem die Images in der Watch-APP selbst gespeichert werden.
 
 ## <a name="images-in-the-watch-extension"></a>Bilder in der Watch-Erweiterung
 
@@ -72,7 +72,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-## <a name="animations"></a>Animations
+## <a name="animations"></a>Animationen
 
 Um einen Satz von Bildern zu animieren, sollten Sie alle mit dem gleichen Präfix beginnen und über ein numerisches Suffix verfügen.
 
@@ -80,14 +80,14 @@ Das [watchkitcatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/wat
 
 ![](image-images/asset-bus-animation-sml.png "The WatchKitCatalog sample has a series of numbered images in the watch app project with the Bus prefix")
 
-Wenn Sie diese Bilder als Animation anzeigen möchten, laden Sie das Bild zuerst mithilfe `SetImage` mit dem Präfix Namen, und wenden Sie dann `StartAnimating` an:
+Wenn Sie diese Bilder als Animation anzeigen möchten, laden Sie das Bild zuerst mithilfe `SetImage` mit dem Präfix Namen, und wenden Sie dann `StartAnimating`an:
 
 ```csharp
 animatedImage.SetImage ("Bus");
 animatedImage.StartAnimating ();
 ```
 
-@No__t_0 für das Image-Steuerelement aufgerufen, um die Animations Schleife zu verhindern:
+`StopAnimating` für das Image-Steuerelement aufgerufen, um die Animations Schleife zu verhindern:
 
 ```csharp
 animatedImage.StopAnimating ();
@@ -116,7 +116,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-Sie können den Inhalt des Image Caches im Code mithilfe `WKInterfaceDevice.CurrentDevice.WeakCachedImages` Abfragen.
+Sie können den Inhalt des Image Caches im Code mithilfe `WKInterfaceDevice.CurrentDevice.WeakCachedImages`Abfragen.
 
 ### <a name="managing-the-cache"></a>Verwalten des Caches
 

@@ -1,37 +1,37 @@
 ---
-title: 'Inspector: Installation und Vorraussetzungen'
+title: Installation und Anforderungen des Inspektors
 description: In diesem Dokument wird beschrieben, wie Sie die Xamarin Inspector installieren und die unterstützten Betriebssysteme, IDES und App-Plattformen erörtert werden.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 1273a51d29d7abcbecb9b19ae42e111db8ccc06c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292299"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029696"
 ---
-# <a name="inspector-installation-and-requirements"></a>Inspector: Installation und Vorraussetzungen
+# <a name="inspector-installation-and-requirements"></a>Installation und Anforderungen des Inspektors
 
 ## <a name="download-and-installation"></a>Herunterladen und installieren
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. Laden Sie [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) herunter, und führen Sie die Installation durch. Wählen Sie die Workload **Mobile-Entwicklung mit .NET** aus.
-1. [Melden Sie sich an](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio), um Ihr Enterprise-Abonnement zu aktivieren.
-1. [Überprüfen Sie](~/tools/inspector/inspect.md) Ihre eigene App!
+1. Laden Sie [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) herunter, und installieren Sie die **Mobile-Entwicklung mit .net** -Arbeitsauslastung.
+1. [Melden](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) Sie sich an, um Ihr Unternehmens Abonnement zu aktivieren.
+1. Über [prüfen](~/tools/inspector/inspect.md) Sie Ihre eigene APP!
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. Laden Sie [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/) herunter, und führen Sie die Installation durch.
-1. [Melden Sie sich an](https://docs.microsoft.com/visualstudio/mac/activation), um Ihr Enterprise-Abonnement zu aktivieren.
-1. [Überprüfen Sie](~/tools/inspector/inspect.md) Ihre eigene App!
+1. [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/)herunterladen und installieren.
+1. [Melden](https://docs.microsoft.com/visualstudio/mac/activation) Sie sich an, um Ihr Unternehmens Abonnement zu aktivieren.
+1. Über [prüfen](~/tools/inspector/inspect.md) Sie Ihre eigene APP!
 
 -----
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 ### <a name="supported-operating-systems"></a>Unterstützte Betriebssysteme
 
@@ -41,9 +41,9 @@ ms.locfileid: "70292299"
 ### <a name="supported-ides"></a>Unterstützte IDEs
 
 - Visual Studio für Mac
-- Visual Studio 2017 mit der Workload **Mobile-Entwicklung mit .NET**
+- Visual Studio 2017 mit **Mobile-Entwicklung mit .net** -Arbeitsauslastung
 
-Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
+Die Live-App-Prüfung ist für Unternehmenskunden verfügbar.
 
 <a name="supported-platforms" />
 
@@ -52,44 +52,44 @@ Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
 |App-Plattform|IDE-Unterstützung|Hinweise|
 |--- |--- |--- |
 |Mac|Wird nur in Visual Studio für Mac unterstützt.|
-|iOS|Unterstützt in Visual Studio 2017 und Visual Studio für Mac| Das Linker-Verhalten muss auf " **nicht verknüpfen** " festgelegt werden (unter **IOS** -buildprojektoptionen) |
-|Android|Unterstützt in Visual Studio 2017 und Visual Studio für Mac|Muss Android mit Version 4.0.3 oder höher anzielen, für die **Fastdev** aktiviert ist.<br />Google-, Visual Studio- oder Xamarin Android-Emulatoren müssen verwendet werden. In Android 7-Emulatoren sind Überprüfungen derzeit womöglich nicht zulässig.|
+|iOS|In Visual Studio 2017 und Visual Studio für Mac unterstützt| Das Linker-Verhalten muss auf " **nicht verknüpfen** " festgelegt werden (unter **IOS** -buildprojektoptionen) |
+|Android|In Visual Studio 2017 und Visual Studio für Mac unterstützt|Muss auf Android > = 4.0.3 mit aktiviertem **fastdev** abzielen.<br />Muss Google-, Visual Studio-oder xamarin Android-Emulatoren verwenden. Android 7-Emulatoren können zu diesem Zeitpunkt keine Überprüfung zulassen.|
 |WPF|Wird nur in Visual Studio 2017 unterstützt.|
 
 <a name="reporting-bugs" />
 
 ## <a name="reporting-bugs"></a>Melden von Fehlern
 
-Fehler müssen direkt über Visual Studio gemeldet werden:
+Fehler sollten direkt über Visual Studio gemeldet werden:
 
 - **Hilfe > Senden von Feedback > Melden eines Problems**
 
-Geben Sie auch alle der folgenden Informationen an:
+Fügen Sie alle folgenden Informationen ein:
 
 ### <a name="platform-version-information"></a>Informationen zur Platt Form Version
 
-Geben Sie die folgenden Informationen unbedingt an:
+Diese Informationen sind von entscheidender Bedeutung.
 
 Visual Studio für Mac
 
 - **Visual Studio-> zu Visual Studio > Details > Kopier Informationen anzeigen**
-- Einfügen in den Fehlerbericht
+- In Fehlerbericht einfügen
 
 Visual Studio
 
 - **Hilfe > zu Visual Studio > Kopieren von Informationen**
-- Geben Sie Ihre Betriebssystemversion an und ob Sie die Windows 32-Bit-Version oder die Windows 64-Bit-Version ausführen.
+- Informieren Sie uns über die Betriebs System Version und darüber, ob Sie 32-Bit-oder 64-Bit-Windows ausführen.
 
 ### <a name="log-files"></a>Protokolldateien
 
-Fügen Sie immer die IDE und die Protokolldateien des Inspector-Clients an.
+Fügen Sie immer IDE-und Inspektor-Client Protokolldateien an.
 
-Inspector-Client
+Inspektor-Client
 
 - Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-Version 1.4.x bietet außerdem die Möglichkeit, die Protokolldatei im Finder (macOS) oder im Explorer (Windows) direkt über das Hauptmenü auszuwählen.
+1.4. x bietet auch die Möglichkeit, die Protokolldatei im Finder (macOS) oder Explorer (Windows) direkt über das Hauptmenü auszuwählen:
 
 - **Hilfe > Anzeigen der Protokolldatei**
 
@@ -100,23 +100,23 @@ Visual Studio für Mac
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Der Inhalt des **Ausgabefensters** in Visual Studio ist möglicherweise informativ.
+- Der Inhalt des **Ausgabe** Bereichs von Visual Studio kann auch informativ sein.
 
 ### <a name="project-settings"></a>Projekteinstellungen
 
-Es wäre sehr hilfreich, wenn Sie die **csproj**-Datei für das Projekt, das Sie untersuchen möchten, anfügen können Dies ist einfacher, als Ihnen Fragen zu individuellen Einstellungen zu stellen.
+Wenn Sie die **csproj** -Datei für das Projekt anfügen können, das Sie überprüfen möchten, wäre es äußerst hilfreich. Dies ist einfacher als die Frage nach einzelnen Einstellungen.
 
-Bestätigen Sie außerdem, dass die Debugkonfiguration ausgewählt ist.
+Vergewissern Sie sich außerdem, dass Sie sich in der Debugkonfiguration befinden.
 
 ### <a name="selected-devices"></a>Ausgewählte Geräte
 
-Für Android und iOS ist es wichtig, dass wir wissen, welches Gerät Sie zum Debuggen ausgewählt haben: Wir müssen Folgendes wissen:
+Für Android und IOS ist es wichtig, dass Sie wissen, auf welchem Gerät Sie Debuggen, wenn Sie es überprüfen möchten. Wir müssen Folgendes wissen:
 
-- Name des in der IDE dargestellten Geräts
+- Der Name des Geräts, wie in der IDE angezeigt.
 - Betriebssystemversion Ihres Geräts
 - Android: Überprüfen Sie, ob Sie einen x86-Emulator verwenden
-- Android: Welche Emulatorplattform verwenden Sie? Google-Emulatoren? Visual Studio-Emulator für Android? Xamarin Android Player?
-- Funktioniert die App, die Sie debuggen wollen, ordnungsgemäßauf dem Gerät?
+- Android: Welche Emulatorplattform verwenden Sie? Google-Emulator? Visual Studio-Android-Emulator? Xamarin Android Player?
+- Wird die APP, die Sie Debuggen, ordnungsgemäß angezeigt und funktioniert im Gerät?
 - Hat das Gerät Netzwerk Konnektivität (überprüfen Sie den Webbrowser)?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

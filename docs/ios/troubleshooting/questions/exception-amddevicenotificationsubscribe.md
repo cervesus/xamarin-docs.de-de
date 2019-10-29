@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: b6d2931168132630233112b9515071ac7fd07843
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e1633989fc9b85d969f464857ab763153aea2e7d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769734"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031113"
 ---
 # <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe zurückgegeben ...
 
@@ -21,7 +21,7 @@ ms.locfileid: "70769734"
 
 ## <a name="fix"></a>Korrektur
 
-1. Beenden Sie `usbmuxd` den Prozess, sodass er vom System neu gestartet wird:
+1. Beenden Sie den `usbmuxd` Prozess, sodass er vom System neu gestartet wird:
 
     ```csharp
     sudo killall -QUIT usbmuxd
@@ -41,9 +41,9 @@ AMDeviceNotificationSubscribe returned: 3892314211
   at Mtb.Application.MainClass.Main (System.String[] args) [0x00000] in <filename unknown="">:0
 ```
 
-Diese Meldung kann beim ersten Start Visual Studio für Mac in einem Fehler Dialogfeld oder in der `mtbserver.log` Datei in der xamarin. IOS-buildhost-app (**xamarin. IOS-buildhost > Anzeigen des buildhostprotokolls**) angezeigt werden.
+Diese Meldung kann beim ersten Start Visual Studio für Mac in einem Fehler Dialogfeld oder in der `mtbserver.log`-Datei in der xamarin. IOS-buildhostapp (**xamarin. IOS-buildhost > View Build Host Log**) angezeigt werden.
 
-Beachten Sie, dass dies ein ungewöhnliches Problem ist. Wenn Visual Studio Probleme beim Herstellen einer Verbindung mit dem Mac-buildhost hat, gibt es weitere Fehler, die in der `mtbserver.log` Datei wahrscheinlicher erscheinen.
+Beachten Sie, dass dies ein ungewöhnliches Problem ist. Wenn Visual Studio Probleme beim Herstellen einer Verbindung mit dem Mac-buildhost hat, gibt es weitere Fehler, die in der `mtbserver.log`-Datei wahrscheinlicher erscheinen.
 
 ### <a name="errors-in-systemlog"></a>Fehler in "System. log"
 
@@ -58,7 +58,7 @@ In einigen Fällen werden möglicherweise die folgenden beiden Fehlermeldungen i
 
 Der Grund für den Fehler liegt darin, dass die Systemdienste OS X, die für die Berichterstattung von IOS-Geräte-und simulatorinformationen verantwortlich sind, in seltenen Fällen einen unerwarteten Status aufweisen können. Xamarin kann in diesem Zustand nicht ordnungsgemäß mit den System Diensten interagieren. Beim Neustart des Computers werden die Systemdienste neu gestartet und das Problem gelöst.
 
-Basierend auf den auftretenden Fehlern `system.log` erscheint dieses Problem möglicherweise in Bezug auf Bonjour (`mDNSResponder`). Die Umstellung zwischen verschiedenen WiFi-Netzwerken scheint die Wahrscheinlichkeit zu erhöhen, dass das Problem auftritt.
+Basierend auf den Fehlern von `system.log` wird angezeigt, dass dieses Problem möglicherweise auf Bonjour (`mDNSResponder`) bezogen ist. Die Umstellung zwischen verschiedenen WiFi-Netzwerken scheint die Wahrscheinlichkeit zu erhöhen, dass das Problem auftritt.
 
 ## <a name="references"></a>Verweise
 

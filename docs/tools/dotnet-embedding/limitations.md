@@ -3,15 +3,15 @@ title: .Net-Einbettungs Einschränkungen
 description: In diesem Dokument werden die Einschränkungen der .net-Einbettung beschrieben, das Tool, mit dem .NET-Code in anderen Programmiersprachen verwendet werden kann.
 ms.prod: xamarin
 ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: cf431d4e3d30ac2ec06bfebc9cebe101411faa1c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292710"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029742"
 ---
 # <a name="net-embedding-limitations"></a>.Net-Einbettungs Einschränkungen
 
@@ -41,9 +41,9 @@ Abhängig von Ihren Anforderungen kann es möglich sein, Teile dieser Einschrän
 
 ### <a name="nullability"></a>Zulässigkeit
 
-Es gibt keine Metadaten in .net, die uns mitteilen, ob ein NULL-Verweis akzeptabel ist oder nicht für eine API. Die meisten APIs `ArgumentNullException` lösen eine Ausnahme aus, wenn Sie `null` nicht mit einem-Argument zurechtkommen. Dies ist problematisch, da die Ziel-C-Behandlung von Ausnahmen etwas besseres vermieden wird.
+Es gibt keine Metadaten in .net, die uns mitteilen, ob ein NULL-Verweis akzeptabel ist oder nicht für eine API. Die meisten APIs lösen `ArgumentNullException` aus, wenn Sie nicht mit einem `null`-Argument zurechtkommen. Dies ist problematisch, da die Ziel-C-Behandlung von Ausnahmen etwas besseres vermieden wird.
 
-Da es nicht möglich ist, genaue NULL-Zulässigkeit-Anmerkungen in den Header Dateien zu generieren und verwaltete Ausnahmen zu minimieren, werden Standard`NS_ASSUME_NONNULL_BEGIN`mäßig nicht-NULL-Argumente () hinzugefügt, und es werden einige spezifische, bei einer Genauigkeit der NULL-Zulässigkeit angegebene Anmerkungen hinzugefügt.
+Da es nicht möglich ist, genaue NULL-Zulässigkeit-Anmerkungen in den Header Dateien zu generieren und verwaltete Ausnahmen zu minimieren, werden standardmäßig nicht-NULL-Argumente (`NS_ASSUME_NONNULL_BEGIN`) hinzugefügt, und es werden einige spezifische, wenn Genauigkeit möglich, auf NULL feststellbare Anmerkungen eingefügt.
 
 ### <a name="bitcode-ios"></a>Bitcode (IOS)
 

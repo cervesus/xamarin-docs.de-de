@@ -3,25 +3,25 @@ title: Auffüllen einer xamarin. Android-ListView mit Daten
 ms.prod: xamarin
 ms.assetid: AC4F95C8-EC3F-D960-7D44-8D55D0E4F1B6
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2017
-ms.openlocfilehash: e934dd0f35b7c734228d637fe646d0e2c20e9dad
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fda021eb90feba1fed2352ef7f771f5583b00920
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758626"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028845"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Auffüllen einer xamarin. Android-ListView mit Daten
 
-Wenn `ListView` Sie Zeilen hinzufügen möchten, müssen Sie Sie dem Layout hinzufügen und eine `IListAdapter` mit Methoden implementieren, `ListView` die die Aufrufe von selbst auffüllen. Android umfasst integrierte- `ListActivity` und-Klassen, die Sie verwenden können, ohne benutzerdefiniertes Layout- `ArrayAdapter` XML oder Code zu definieren. Die `ListActivity` -Klasse erstellt automatisch `ListView` eine und macht `ListAdapter` eine-Eigenschaft verfügbar, die die über einen Adapter anzuzeigenden Zeilen Ansichten bereitstellt.
+Wenn Sie einer `ListView` Zeilen hinzufügen möchten, müssen Sie Sie dem Layout hinzufügen und eine `IListAdapter` mit Methoden implementieren, die vom `ListView` aufgerufen werden, um sich selbst aufzufüllen. Android enthält integrierte `ListActivity` und `ArrayAdapter` Klassen, die Sie verwenden können, ohne benutzerdefinierte LayoutXml oder Code zu definieren. Die `ListActivity`-Klasse erstellt automatisch eine `ListView` und macht eine `ListAdapter`-Eigenschaft verfügbar, die die über einen Adapter anzuzeigenden Zeilen Ansichten bereitstellt.
 
-Die integrierten Adapter übernehmen eine Ansichts Ressourcen-ID als Parameter, der für jede Zeile verwendet wird. Sie können integrierte Ressourcen wie z. b. die in `Android.Resource.Layout` verwenden, sodass Sie keine eigenen schreiben müssen.
+Die integrierten Adapter übernehmen eine Ansichts Ressourcen-ID als Parameter, der für jede Zeile verwendet wird. Sie können integrierte Ressourcen wie z. b. in `Android.Resource.Layout` verwenden, sodass Sie keine eigenen schreiben müssen.
 
-## <a name="using-listactivity-and-arrayadapterltstringgt"></a>Verwenden von listactivity und arrayadapter&lt;String&gt;
+## <a name="using-listactivity-and-arrayadapterltstringgt"></a>Verwenden von listactivity und arrayadapter&lt;Zeichenfolge&gt;
 
-Das Beispiel **basictable/homescreen. cs** veranschaulicht, wie diese Klassen verwendet werden, um `ListView` ein in nur wenigen Codezeilen anzuzeigen:
+Das Beispiel **basictable/homescreen. cs** veranschaulicht, wie diese Klassen verwendet werden, um eine `ListView` nur in wenigen Codezeilen anzuzeigen:
 
 ```csharp
 [Activity(Label = "BasicTable", MainLauncher = true, Icon = "@drawable/icon")]
@@ -39,7 +39,7 @@ public class HomeScreen : ListActivity {
 
 ### <a name="handling-row-clicks"></a>Behandeln von Zeilen Klicks
 
-In der `ListView` Regel kann ein Benutzer auch eine Zeile berühren, um Aktionen auszuführen (z. b. das Abspielen eines Titels oder das Aufrufen eines Kontakts oder das Anzeigen eines anderen Bildschirms). Um auf Benutzer zu `ListActivity` reagieren, muss in &ndash; `OnListItemClick` &ndash; wie folgt eine weitere Methode implementiert werden:
+In der Regel kann eine `ListView` auch eine Zeile berühren, um Aktionen auszuführen (z. b. das Abspielen eines Titels oder das Aufrufen eines Kontakts oder das Anzeigen eines anderen Bildschirms). Um auf die Benutzer zu reagieren, muss im `ListActivity` &ndash; eine weitere Methode implementiert werden, die wie folgt `OnListItemClick` &ndash;:
 
 [![Screenshot eines simplelistitem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
@@ -51,25 +51,25 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 }
 ```
 
-Nun kann der Benutzer eine Zeile berühren, und `Toast` es wird eine Warnung angezeigt:
+Nun kann der Benutzer eine Zeile berühren, und es wird eine `Toast` Warnung angezeigt:
 
 [![Screenshot von Toast, der angezeigt wird, wenn eine Zeile berührt wird](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
 ## <a name="implementing-a-listadapter"></a>Implementieren eines listadapter
 
-`ArrayAdapter<string>`ist aus Gründen der Einfachheit hervorragend, aber es ist sehr begrenzt. Häufig verfügen Sie jedoch über eine Auflistung von Geschäfts Entitäten und nicht nur über Zeichen folgen, die Sie binden möchten.
-Wenn die Daten z. b. aus einer Sammlung von Mitarbeiter Klassen bestehen, können Sie in der Liste nur die Namen der einzelnen Mitarbeiter anzeigen. Um das Verhalten eines `ListView` anzupassen und zu steuern, welche Daten angezeigt werden, müssen Sie eine Unterklasse implementieren, mit der die folgenden vier Elemente über `BaseAdapter` schrieben werden:
+`ArrayAdapter<string>` ist aufgrund seiner Einfachheit hervorragend, aber es ist äußerst eingeschränkt. Häufig verfügen Sie jedoch über eine Auflistung von Geschäfts Entitäten und nicht nur über Zeichen folgen, die Sie binden möchten.
+Wenn die Daten z. b. aus einer Sammlung von Mitarbeiter Klassen bestehen, können Sie in der Liste nur die Namen der einzelnen Mitarbeiter anzeigen. Zum Anpassen des Verhaltens einer `ListView`, um zu steuern, welche Daten angezeigt werden, müssen Sie eine Unterklasse von implementieren `BaseAdapter` die die folgenden vier Elemente überschreiben:
 
-- **Anzahl** &ndash; , Um dem Steuerelement mitzuteilen, wie viele Zeilen in den Daten vorliegen.
+- **Count** &ndash;, um dem Steuerelement mitzuteilen, wie viele Zeilen in den Daten vorliegen.
 
-- **GetView** &ndash; , Um eine Ansicht für jede Zeile zurückzugeben, die mit Daten aufgefüllt wird.
-    Diese Methode verfügt über einen Parameter für `ListView` das, das in einer vorhandenen, nicht verwendeten Zeile zur erneuten Verwendung übergeben werden soll.
+- **GetView** &ndash;, um eine Ansicht für jede Zeile zurückzugeben, die mit Daten aufgefüllt wird.
+    Diese Methode verfügt über einen Parameter für die `ListView`, um eine vorhandene, nicht verwendete Zeile zur erneuten Verwendung zu übergeben.
 
-- **GetItemID** &ndash; Rückgabe eines Zeilen Bezeichners (in der Regel die Zeilennummer, obwohl es sich um einen beliebigen langen Wert handeln kann, den Sie wünschen).
+- **GetItemID** &ndash; einen Zeilen Bezeichner zurückgeben (in der Regel die Zeilennummer, obwohl es sich um einen beliebigen langen Wert handeln kann, den Sie wünschen).
 
-- **dieser [int]** -Indexer &ndash; gibt die einer bestimmten Zeilennummer zugeordneten Daten zurück.
+- **dieser [int]** -Indexer &ndash;, um die einer bestimmten Zeilennummer zugeordneten Daten zurückzugeben.
 
-Der Beispielcode in **basictableadapter/homeskreenadapter. cs** veranschaulicht, wie Unterklassen `BaseAdapter`:
+Der Beispielcode in **basictableadapter/homeskreenadapter. cs** veranschaulicht, wie `BaseAdapter`Unterklassen:
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<string> {
@@ -102,19 +102,19 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 
 ### <a name="using-a-custom-adapter"></a>Verwenden eines benutzerdefinierten Adapters
 
-Die Verwendung des benutzerdefinierten Adapters ähnelt dem integrierten `ArrayAdapter`, wobei eine `context` und die `string[]` der anzuzeigenden Werte übergeben werden:
+Die Verwendung des benutzerdefinierten Adapters ähnelt dem integrierten `ArrayAdapter`, wobei ein `context` und die `string[]` der anzuzeigenden Werte übergeben werden:
 
 ```csharp
 ListAdapter = new HomeScreenAdapter(this, items);
 ```
 
-Da in diesem Beispiel dasselbe Zeilen Layout verwendet wird`SimpleListItem1`(), sieht die resultierende Anwendung mit dem vorherigen Beispiel identisch aus.
+Da in diesem Beispiel das gleiche Zeilen Layout (`SimpleListItem1`) verwendet wird, sieht die resultierende Anwendung mit dem vorherigen Beispiel identisch aus.
 
 ### <a name="row-view-re-use"></a>Erneute Verwendung der Zeilen Ansicht
 
-In diesem Beispiel sind nur sechs Elemente vorhanden. Da der Bildschirm acht entsprechen kann, ist keine erneute Verwendung von Zeilen erforderlich. Beim Anzeigen von Hunderten oder Tausenden von Zeilen wäre es jedoch eine Verschwendung von Arbeitsspeicher, Hunderte oder Tausende von `View` Objekten zu erstellen, wenn jeweils nur acht auf den Bildschirm passen. Um diese Situation zu vermeiden, wird die Ansicht, wenn eine Zeile auf dem Bildschirm ausgeblendet wird, zur erneuten Verwendung in eine Warteschlange eingefügt. Wenn der Benutzer einen Bildlauf `ListView` durch `GetView` führt, werden die Aufrufe zum `convertView` anfordern neuer Sichten, sofern verfügbar, eine nicht verwendete Ansicht im-Parameter übergeben. &ndash; Wenn dieser Wert NULL ist, sollte der Code eine neue Ansichts Instanz erstellen, andernfalls können Sie die Eigenschaften des Objekts neu festlegen und wieder verwenden.
+In diesem Beispiel sind nur sechs Elemente vorhanden. Da der Bildschirm acht entsprechen kann, ist keine erneute Verwendung von Zeilen erforderlich. Beim Anzeigen von Hunderten oder Tausenden von Zeilen wäre es jedoch ein Speicher Verschwendung, Hunderte oder Tausende von `View` Objekten zu erstellen, wenn jeweils nur acht auf den Bildschirm passen. Um diese Situation zu vermeiden, wird die Ansicht, wenn eine Zeile auf dem Bildschirm ausgeblendet wird, zur erneuten Verwendung in eine Warteschlange eingefügt. Wenn der Benutzer einen Bildlauf ausführt, ruft der `ListView` `GetView` auf, um neue Ansichten anzufordern, die angezeigt werden &ndash; falls verfügbar, übergibt er eine nicht verwendete Ansicht im `convertView`-Parameter. Wenn dieser Wert NULL ist, sollte der Code eine neue Ansichts Instanz erstellen, andernfalls können Sie die Eigenschaften des Objekts neu festlegen und wieder verwenden.
 
-Die `GetView` -Methode sollte diesem Muster folgen, um Zeilen Sichten erneut zu verwenden:
+Die `GetView`-Methode sollte diesem Muster folgen, um Zeilen Sichten erneut zu verwenden:
 
 ```csharp
 public override View GetView(int position, View convertView, ViewGroup parent)
@@ -129,17 +129,17 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-Benutzerdefinierte Adapter Implementierungen sollten das `convertView` Objekt immer wieder verwenden, bevor neue Sichten erstellt werden, um sicherzustellen, dass nicht genügend Arbeitsspeicher verfügbar ist, wenn lange Listen angezeigt werden.
+Benutzerdefinierte Adapter Implementierungen sollten das `convertView` Objekt *immer* wieder verwenden, bevor neue Sichten erstellt werden, um sicherzustellen, dass Sie nicht über genügend Arbeitsspeicher verfügen, wenn lange Listen angezeigt werden.
 
-Einige `CursorAdapter`Adapter Implementierungen (z. b.) verfügen nicht über eine `GetView` -Methode, sondern `BindView` erfordern zwei `NewView` verschiedene Methoden, die die erneute Verwendung von Zeilen erzwingen, indem `GetView` die Zuständigkeiten von in zwei Bereiche aufgeteilt werden. anzuwenden. Ein `CursorAdapter` Beispiel finden Sie weiter unten in diesem Dokument.
+Einige Adapter Implementierungen (z. b. die `CursorAdapter`) verfügen über keine `GetView`-Methode, sondern erfordern zwei verschiedene Methoden `NewView` und `BindView`, die die erneute Verwendung von Zeilen erzwingen, indem die Zuständigkeiten von `GetView` in zwei Methoden aufgeteilt werden. Ein `CursorAdapter` Beispiel finden Sie später im Dokument.
 
 ## <a name="enabling-fast-scrolling"></a>Aktivieren von schnellem Scrollen
 
 Das schnelle Scrollen unterstützt den Benutzer beim Durchführen eines Bildlaufs durch lange Listen, indem ein zusätzliches "handle" bereitgestellt wird, das als Bild Lauf Leiste fungiert, um direkt auf einen Teil der Liste zuzugreifen. Dieser Screenshot zeigt das fast-scrollhandle:
 
-[![Screenshot des schnell Bildlaufs mit einem scrollhandle](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
+[![Screenshot mit einem scrollhandle](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
-Das schnelle scrollhandle wird so einfach wie das Festlegen der `FastScrollEnabled` -Eigenschaft auf `true`festgelegt:
+Das schnelle scrollhandle wird so einfach wie das Festlegen der `FastScrollEnabled`-Eigenschaft auf `true`angezeigt:
 
 ```csharp
 ListView.FastScrollEnabled = true;
@@ -147,19 +147,19 @@ ListView.FastScrollEnabled = true;
 
 ### <a name="adding-a-section-index"></a>Hinzufügen eines Abschnitts Indexes
 
-Ein Abschnitts Index stellt ein zusätzliches Feedback für Benutzer bereit, wenn Sie einen schnellen Bildlauf durch &ndash; eine lange Liste durchführen. es wird angezeigt, zu welchem "Abschnitt" der Bildlauf ausgeführt wurde. Damit der Abschnitts Index angezeigt wird, muss die Adapter Unterklasse die `ISectionIndexer` -Schnittstelle implementieren, um den Indextext abhängig von den angezeigten Zeilen bereitzustellen:
+Ein Abschnitts Index bietet Benutzern zusätzliches Feedback, wenn Sie schnell durch eine lange Liste scrollen &ndash; in dem angezeigt wird, zu welchem Abschnitt Sie einen Bildlauf durchgeführt haben. Damit der Abschnitts Index angezeigt wird, muss die Adapter Unterklasse die `ISectionIndexer`-Schnittstelle implementieren, um den Indextext abhängig von den angezeigten Zeilen bereitzustellen:
 
 [![Screenshot von h, der oberhalb des Abschnitts erscheint, der mit H beginnt](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
-Zum Implementieren `ISectionIndexer` von müssen Sie drei Methoden zu einem Adapter hinzufügen:
+Zum Implementieren von `ISectionIndexer` müssen Sie drei Methoden zu einem Adapter hinzufügen:
 
-- **Getabschnitts** &ndash; Enthält die komplette Liste der Abschnitts Index Titel, die angezeigt werden können. Diese Methode erfordert ein Array von Java-Objekten, damit der Code einen `Java.Lang.Object[]` aus einer .net-Auflistung erstellen muss. In unserem Beispiel wird eine Liste der anfänglichen Zeichen in der Liste als `Java.Lang.String` zurückgegeben.
+- **Getabschnitts** &ndash; bietet die komplette Liste der Abschnitts Index Titel, die angezeigt werden können. Diese Methode erfordert ein Array von Java-Objekten, damit der Code eine `Java.Lang.Object[]` aus einer .net-Auflistung erstellen muss. In unserem Beispiel wird eine Liste der anfänglichen Zeichen in der Liste als `Java.Lang.String` zurückgegeben.
 
-- **Getpositionforsection** &ndash; Gibt die erste Zeilen Position für einen angegebenen Abschnitts Index zurück.
+- **Getpositionforsection** &ndash; gibt die erste Zeilen Position für einen angegebenen Abschnitts Index zurück.
 
-- **Getsectionforposition** &ndash; Gibt den Abschnitts Index zurück, der für eine bestimmte Zeile angezeigt werden soll.
+- **Getsectionforposition** &ndash; gibt den Abschnitts Index zurück, der für eine bestimmte Zeile angezeigt werden soll.
 
-Die Beispiel `SectionIndex/HomeScreenAdapter.cs` Datei implementiert diese Methoden und zusätzlichen Code im Konstruktor. Der-Konstruktor erstellt den Abschnitts Index, indem er jede Zeile durchläuft und das erste Zeichen des Titels extrahiert (die Elemente müssen bereits sortiert sein, damit dies funktioniert).
+Das Beispiel `SectionIndex/HomeScreenAdapter.cs` Datei implementiert diese Methoden und zusätzlichen Code im Konstruktor. Der-Konstruktor erstellt den Abschnitts Index, indem er jede Zeile durchläuft und das erste Zeichen des Titels extrahiert (die Elemente müssen bereits sortiert sein, damit dies funktioniert).
 
 ```csharp
 alphaIndex = new Dictionary<string, int>();
@@ -178,7 +178,7 @@ for (int i = 0; i < sections.Length; i++) {
 }
 ```
 
-Wenn die Datenstrukturen erstellt wurden, `ISectionIndexer` sind die Methoden sehr einfach:
+Wenn die Datenstrukturen erstellt wurden, sind die `ISectionIndexer` Methoden sehr einfach:
 
 ```csharp
 public Java.Lang.Object[] GetSections()
@@ -204,8 +204,8 @@ public int GetSectionForPosition(int position)
 }
 ```
 
-Ihre Abschnitts Index Titel müssen nicht 1:1 ihren eigentlichen Abschnitten zuordnen. Aus diesem Grund ist `GetPositionForSection` die-Methode vorhanden.
-`GetPositionForSection`bietet Ihnen die Möglichkeit, alle Indizes in ihrer Indexliste allen Abschnitten in der Listenansicht zuzuordnen. Angenommen, Sie haben ein "z" in Ihrem Index, Sie verfügen jedoch möglicherweise nicht über einen Tabellen Abschnitt für jeden Buchstaben. anstatt "z" zu 26 zuzuordnen, kann er beispielsweise 25 oder 24 oder den Abschnitts Index "z" zuordnen.
+Ihre Abschnitts Index Titel müssen nicht 1:1 ihren eigentlichen Abschnitten zuordnen. Aus diesem Grund ist die `GetPositionForSection`-Methode vorhanden.
+`GetPositionForSection` bietet Ihnen die Möglichkeit, alle Indizes, die in der Indexliste enthalten sind, den Abschnitten zuzuordnen, die in der Listenansicht aufgeführt sind. Angenommen, Sie haben ein "z" in Ihrem Index, Sie verfügen jedoch möglicherweise nicht über einen Tabellen Abschnitt für jeden Buchstaben. anstatt "z" zu 26 zuzuordnen, kann er beispielsweise 25 oder 24 oder den Abschnitts Index "z" zuordnen.
 
 ## <a name="related-links"></a>Verwandte Links
 

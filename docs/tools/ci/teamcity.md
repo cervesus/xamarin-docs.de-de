@@ -3,21 +3,21 @@ title: Verwenden von Team City mit xamarin
 description: In diesem Leitfaden werden die Schritte beschrieben, die bei der Verwendung von TeamCity zum Kompilieren mobiler Anwendungen und deren Übermittlung an Xamarin Test Cloud erläutert werden.
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72273129"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029800"
 ---
 # <a name="using-team-city-with-xamarin"></a>Verwenden von Team City mit xamarin
 
 _In diesem Leitfaden werden die Schritte beschrieben, die bei der Verwendung von TeamCity zum Kompilieren mobiler Anwendungen und deren Übermittlung an Xamarin Test Cloud erläutert werden._
 
-Wie im Leitfaden [Einführung in Continuous Integration](~/tools/ci/intro-to-ci.md) erläutert, ist Continuous Integration (CI) eine nützliche Vorgehensweise bei der Entwicklung mobiler Anwendungen. Es gibt viele geeignete Optionen für Continuous Integration Server-Software. Dieser Leitfaden konzentriert sich auf [TeamCity](http://www.jetbrains.com/teamcity/) von JetBrains.
+Wie im Leitfaden [Einführung in Continuous Integration](~/tools/ci/intro-to-ci.md) erläutert, ist Continuous Integration (CI) eine nützliche Vorgehensweise bei der Entwicklung mobiler Anwendungen. Es gibt viele geeignete Optionen für Continuous Integration Server-Software. Dieser Leitfaden konzentriert sich auf [TeamCity](https://www.jetbrains.com/teamcity/) von JetBrains.
 
 Es gibt mehrere verschiedene Permutationen einer TeamCity-Installation. Im folgenden finden Sie eine Liste der folgenden:
 
@@ -31,7 +31,7 @@ In den vorherigen Szenarios ist das Ausführen von TeamCity unter einem Benutzer
 
 Die Einrichtung von TeamCity umfasst mehrere Schritte:
 
-- **Installieren von TeamCity** – die Installation von TeamCity wird in diesem Handbuch nicht behandelt. In dieser Anleitung wird davon ausgegangen, dass TeamCity installiert ist und unter einem Benutzerkonto ausgeführt wird. Anweisungen zum [Installieren von TeamCity](http://confluence.jetbrains.com/display/TCD8/Installation) finden Sie in der [Dokumentation zu TeamCity 8](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation) von JetBrains.
+- **Installieren von TeamCity** – die Installation von TeamCity wird in diesem Handbuch nicht behandelt. In dieser Anleitung wird davon ausgegangen, dass TeamCity installiert ist und unter einem Benutzerkonto ausgeführt wird. Anweisungen zum [Installieren von TeamCity](https://confluence.jetbrains.com/display/TCD8/Installation) finden Sie in der [Dokumentation zu TeamCity 8](https://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation) von JetBrains.
 
 - **Vorbereiten des Buildservers** – dieser Schritt umfasst die Installation der erforderlichen Software, Tools und Zertifikate, die zum Erstellen mobiler Anwendungen und zur Vorbereitung auf die Verteilung erforderlich sind.
 
@@ -61,7 +61,7 @@ Ein wichtiger Schritt beim Konfigurieren eines Buildservers ist die Installation
 3. **Xcode** – Xcode ist erforderlich, um IOS-Anwendungen zu kompilieren und zu signieren.
 4. **Xcode-Befehlszeilen Tools** – Dies wird in Schritt 1 des Abschnitts "Installation" des Handbuchs " [Aktualisieren von Ruby mit rbenv](https://github.com/calabash/calabash-ios/wiki) " beschrieben.
 5. **Signieren von Identitäts & Bereitstellungs Profilen** – importieren Sie die Zertifikate und das Bereitstellungs Profil über Xcode. Weitere Informationen finden Sie im Apple-Handbuch zum [Exportieren von Signierungs Identitäten und Bereitstellungs Profilen](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) .
-6. **Android-Keystores** – kopieren Sie die erforderlichen Android-Keystores in ein Verzeichnis, auf das der TeamCity-Benutzer Zugriff hat, d. h.  `~/Documents/keystores/MyAndroidApp1`.
+6. **Android-Keystores** – kopieren Sie die erforderlichen Android-Keystores in ein Verzeichnis, auf das der TeamCity-Benutzer Zugriff hat, d. h. `~/Documents/keystores/MyAndroidApp1`.
 7. **Calabash** – Dies ist ein optionaler Schritt, wenn in Ihrer Anwendung Tests mit Calabash geschrieben wurden. Weitere Informationen finden Sie im Handbuch [Installieren von Calabash on OS X Mavericks](https://github.com/calabash/calabash-ios/wiki) und im Leitfaden zum [Aktualisieren von Ruby mit rbenv](https://github.com/calabash/calabash-ios/wiki) .
 
 Im folgenden Diagramm werden alle folgenden Komponenten veranschaulicht:
@@ -85,9 +85,9 @@ Das Buildskript kann so einfach wie eine PowerShell-Datei (unter Windows) oder e
 
 - [**psake**](https://github.com/psake/psake) – Dies ist eine Windows PowerShell-Bibliothek zum Entwickeln von Software.
 
-- [**Fake**](http://fsharp.github.io/FAKE/) – Dies ist eine DSL-basierte F# , die es ermöglicht, bei Bedarf vorhandene .NET-Bibliotheken zu verwenden.
+- [Fake](https://fsharp.github.io/FAKE/) – Dies ist eine DSL-basierte F# , die es ermöglicht, bei Bedarf vorhandene .NET-Bibliotheken zu verwenden.
 
-Welche Skriptsprache verwendet wird, hängt von Ihren Vorlieben und Anforderungen ab. Das [taskypro-Calabash-](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) Beispiel enthält ein Beispiel für die Verwendung von "Rake" als [Buildskript](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
+Welche Skriptsprache verwendet wird, hängt von Ihren Vorlieben und Anforderungen ab. Das [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash).Beispiel enthält ein Beispiel für die Verwendung von „Rake“ als [Buildskript](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
 
 > [!NOTE]
 > Es ist möglich, ein auf XML basierendes Buildsystem wie z. b. MSBuild oder nant zu verwenden, aber diese sind nicht für die Ausdrucksfähigkeit und Wartbarkeit einer DSL vorgesehen, die für das Erstellen von Software reserviert ist
@@ -134,7 +134,7 @@ Beachten Sie, dass zum Kompilieren der xamarin Android-Anwendung **xbuild** das 
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>Übermitteln von xamarin. uitests an Test Cloud
 
-Uitests werden mithilfe der `test-cloud.exe` Anwendung übermittelt, wie im folgenden Code Ausschnitt gezeigt:
+Uitests werden mithilfe der `test-cloud.exe`-Anwendung übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
@@ -146,7 +146,7 @@ Weitere Informationen zum Übermitteln von uitests an Test Cloud finden Sie unte
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>Übermitteln von Calabash-Tests an Test Cloud
 
-Calabash-Tests werden mithilfe des `test-cloud` gem übermittelt, wie im folgenden Code Ausschnitt gezeigt:
+Calabash-Tests werden mit dem `test-cloud`-gem-Wert übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
@@ -211,4 +211,4 @@ Dann haben wir erläutert, wie Sie ein Projekt in TeamCity erstellen, das jedes 
 
 - [Vorbereiten von xamarin. Android-Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
 - [Vorbereiten von xamarin. IOS-apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
-- [Installieren und Konfigurieren von TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
+- [Installieren und Konfigurieren von TeamCity](https://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

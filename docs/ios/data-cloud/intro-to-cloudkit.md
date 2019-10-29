@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit cloudkit in xamari
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 240b3c1547231ebbea568f4d5d10407ec560390b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 01c8df7cc17c71cd2ddd55e7ed1f5a8e21617604
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763398"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030464"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Cloudkit in xamarin. IOS
 
@@ -23,7 +23,7 @@ Entwickler können sich auf Ihre Client seitigen Anwendungen konzentrieren und e
 > [!IMPORTANT]
 > Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Folgendes ist erforderlich, um die in diesem Artikel beschriebenen Schritte auszuführen:
 
@@ -35,7 +35,7 @@ Folgendes ist erforderlich, um die in diesem Artikel beschriebenen Schritte ausz
 
 Cloudkit ist eine Möglichkeit, dem Entwickler Zugriff auf die icloud-Server zu verschaffen. Es ist die Grundlage für icloud Drive und die icloud-Fotobibliothek. Cloudkit wird auf Mac OS X-und Apple IOS-Geräten unterstützt.
 
- [![](intro-to-cloudkit-images/image1.png "Unterstützung von cloudkit auf Mac OS X-und Apple IOS-Geräten")](intro-to-cloudkit-images/image1.png#lightbox)
+ [![](intro-to-cloudkit-images/image1.png "How CloudKit is supported on both Mac OS X and Apple iOS Devices")](intro-to-cloudkit-images/image1.png#lightbox)
 
 Cloudkit verwendet die icloud-Konto Infrastruktur. Wenn ein Benutzer an einem icloud-Konto auf dem Gerät angemeldet ist, verwendet cloudkit seine ID, um den Benutzer zu identifizieren. Wenn kein Konto verfügbar ist, wird eingeschränkter Schreib geschützter Zugriff bereitgestellt.
 
@@ -55,15 +55,15 @@ Bevor eine xamarin-Anwendung das cloudkit-Framework verwenden kann, muss die Anw
 1. Öffnen Sie das Projekt in Visual Studio für Mac oder Visual Studio.
 2. Öffnen Sie im **Projektmappen-Explorer**die Datei " **Info. plist** ", und stellen Sie sicher, dass die **Bündel** -ID mit der ID übereinstimmt, die in der im Rahmen der Einrichtung der Bereitstellung erstellten **App-ID** definiert wurde:
 
-    [![](intro-to-cloudkit-images/image26a.png "Bündel-ID eingeben")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
+    [![](intro-to-cloudkit-images/image26a.png "Enter the Bundle Identifier")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3. Scrollen Sie nach unten in der Datei **Info. plist** , und wählen Sie **aktivierte hintergrundmodi**, **Speicherort Aktualisierungen** und **Remote Benachrichtigungen**aus:
 
-    [![](intro-to-cloudkit-images/image27a.png "Wählen Sie aktivierte hintergrundmodi, Speicherort Updates und Remote Benachrichtigungen aus.")](intro-to-cloudkit-images/image27a-orig.png#lightbox "Info.plist file displaying background modes")
+    [![](intro-to-cloudkit-images/image27a.png "Select Enabled Background Modes, Location Updates and Remote Notifications")](intro-to-cloudkit-images/image27a-orig.png#lightbox "Info.plist file displaying background modes")
 4. Klicken Sie mit der rechten Maustaste auf das IOS-Projekt in der Lösung, und wählen Sie **Optionen**
 5. Wählen Sie **IOS-Bündel Signierung**aus, und wählen Sie die oben erstellte **Entwickler Identität** und das **Bereitstellungs Profil** .
 6. Stellen Sie sicher, dass die Datei " **Berechtigungen. plist** " die Option **icloud** , **Key-Value Storage** und **cloudkit** umfasst.
-7. Stellen Sie sicher, dass der **ubiquity-Container** für die Anwendung vorhanden ist (wie oben erstellt). Beispiel: `iCloud.com.your-company.CloudKitAtlas`
+7. Stellen Sie sicher, dass der **ubiquity-Container** für die Anwendung vorhanden ist (wie oben erstellt). Ein Beispiel: `iCloud.com.your-company.CloudKitAtlas`
 8. Speichern Sie die Änderungen in der Datei.
 
 Wenn diese Einstellungen vorhanden sind, kann die Anwendung jetzt auf die cloudkit-Framework-APIs zugreifen.
@@ -92,11 +92,11 @@ Das Konzept, eine Client Anwendung und deren Ausführung von anderen Clients get
 
 Cloudkit wurde entworfen, um die gleichen Vorteile wie die oben aufgeführten zu bieten, und wendet Sie auf die Verwendung cloudbasierter Informationen an:
 
- [![](intro-to-cloudkit-images/image31.png "Cloudkit-apps kommunizieren mithilfe von Containern")](intro-to-cloudkit-images/image31.png#lightbox)
+ [![](intro-to-cloudkit-images/image31.png "CloudKit apps communicate using containers")](intro-to-cloudkit-images/image31.png#lightbox)
 
 Genau wie die Anwendung, die auf dem Gerät ausgeführt wird, ist die Kommunikation der Anwendung mit icloud 1-of-many. Jede dieser unterschiedlichen Kommunikations Silos wird als Container bezeichnet.
 
-Container werden im cloudkit-Framework über die `CKContainer` -Klasse verfügbar gemacht. Standardmäßig kommuniziert eine Anwendung mit einem Container, und dieser Container trennt die Daten für diese Anwendung. Dies bedeutet, dass mehrere Anwendungen Informationen in demselben icloud-Konto speichern können. diese Informationen werden jedoch nie miteinander vermischt.
+Container werden im cloudkit-Framework über die `CKContainer`-Klasse verfügbar gemacht. Standardmäßig kommuniziert eine Anwendung mit einem Container, und dieser Container trennt die Daten für diese Anwendung. Dies bedeutet, dass mehrere Anwendungen Informationen in demselben icloud-Konto speichern können. diese Informationen werden jedoch nie miteinander vermischt.
 
 Die Containerisierung von icloud-Daten ermöglicht cloudkit auch das Kapseln von Benutzerinformationen. Auf diese Weise erhält die Anwendung begrenzten Zugriff auf das icloud-Konto und die darin gespeicherten Benutzerinformationen, während gleichzeitig der Schutz und die Sicherheit des Benutzers geschützt werden.
 
@@ -114,17 +114,17 @@ Während Container standardmäßig an eine bestimmte Anwendung gebunden sind, k�
 
 Eine der Hauptfunktionen von cloudkit besteht darin, das Datenmodell einer Anwendung und die Replikation für das Modell auf die icloud-Server zu übernehmen. Einige Informationen sind für den Benutzer gedacht, der ihn erstellt hat. andere Informationen sind öffentliche Daten, die von einem Benutzer für die öffentliche Verwendung (z. b. eine Restaurant Überprüfung) erstellt werden können, oder es kann sich um Informationen handeln, die der Entwickler für die Anwendung veröffentlicht hat. In beiden Fällen ist die Zielgruppe nicht nur ein einziger Benutzer, sondern eine Community von Menschen.
 
- [![](intro-to-cloudkit-images/image32.png "Cloudkit-Container Diagramm")](intro-to-cloudkit-images/image32.png#lightbox)
+ [![](intro-to-cloudkit-images/image32.png "CloudKit Container Diagram")](intro-to-cloudkit-images/image32.png#lightbox)
 
 Innerhalb eines Containers ist die öffentliche Datenbank der erste und wichtigste. An dieser Stelle werden alle öffentlichen Informationen angezeigt. Außerdem gibt es mehrere einzelne private Datenbanken für jeden Benutzer der Anwendung.
 
 Wenn die Anwendung auf einem IOS-Gerät ausgeführt wird, kann Sie nur auf die Informationen für den derzeit angemeldeten icloud-Benutzer zugreifen. Die Anwendungs Ansicht des Containers lautet also wie folgt:
 
- [![](intro-to-cloudkit-images/image33.png "Anwendungs Ansicht des Containers")](intro-to-cloudkit-images/image33.png#lightbox)
+ [![](intro-to-cloudkit-images/image33.png "The applications view of the container")](intro-to-cloudkit-images/image33.png#lightbox)
 
 Es können nur die öffentliche Datenbank und die private Datenbank angezeigt werden, die mit dem derzeit angemeldeten icloud-Benutzer verknüpft sind.
 
-Datenbanken werden im cloudkit-Framework über die `CKDatabase` -Klasse verfügbar gemacht. Jede Anwendung hat Zugriff auf zwei Datenbanken: die öffentliche Datenbank und die private.
+Datenbanken werden im cloudkit-Framework über die `CKDatabase`-Klasse verfügbar gemacht. Jede Anwendung hat Zugriff auf zwei Datenbanken: die öffentliche Datenbank und die private.
 
 Der Container ist der erste Einstiegspunkt in cloudkit. Der folgende Code kann verwendet werden, um über den Standard Container der Anwendung auf die öffentliche und private Datenbank zuzugreifen:
 
@@ -149,23 +149,23 @@ Im folgenden sind die Unterschiede zwischen den Datenbanktypen aufgeführt:
 |**Datentyp**|Freigegebene Daten|Daten des aktuellen Benutzers|
 |**Kontingent**|Im Kontingent des Entwicklers berücksichtigt|Im Benutzer Kontingent berücksichtigt|
 |**Standard Berechtigungen**|Welt lesbar|Benutzer lesbar|
-|**Bearbeiten von Berechtigungen**|icloud-dashboardrollen über eine Daten Satz-Klassenebene|N/V|
+|**Bearbeiten von Berechtigungen**|icloud-dashboardrollen über eine Daten Satz-Klassenebene|Nicht zutreffend|
 
 ### <a name="records"></a>Datensätze
 
 Container enthalten Datenbanken und innerhalb von Datenbanken Datensätze. Datensätze sind der Mechanismus, bei dem strukturierte Daten in und aus cloudkit verschoben werden:
 
- [![](intro-to-cloudkit-images/image34.png "Container enthalten Datenbanken und innerhalb von Datenbanken Datensätze.")](intro-to-cloudkit-images/image34.png#lightbox)
+ [![](intro-to-cloudkit-images/image34.png "Containers hold databases, and inside databases are records")](intro-to-cloudkit-images/image34.png#lightbox)
 
-Datensätze werden im cloudkit-Framework über die `CKRecord` -Klasse verfügbar gemacht, die Schlüssel-Wert-Paare umschließt. Eine Instanz eines Objekts in einer Anwendung entspricht einem `CKRecord` in cloudkit. Außerdem verfügt jeder `CKRecord` über einen Daten Satz Typen, der der-Klasse eines Objekts entspricht.
+Datensätze werden im cloudkit-Framework über die `CKRecord`-Klasse verfügbar gemacht, die Schlüssel-Wert-Paare umschließt. Eine Instanz eines Objekts in einer Anwendung entspricht einer `CKRecord` in cloudkit. Außerdem besitzt jede `CKRecord` einen Daten Recordtyp, der der-Klasse eines Objekts entspricht.
 
 Datensätze verfügen über ein Just-in-Time-Schema, sodass die Daten in cloudkit beschrieben werden, bevor Sie zur Verarbeitung übergeben werden. Von diesem Punkt aus werden die Informationen von cloudkit interpretiert und die Logistik zum Speichern und Abrufen des Datensatzes behandelt.
 
-Die `CKRecord` -Klasse unterstützt auch eine breite Palette von Metadaten. Ein Datensatz enthält z. b. Informationen über den Zeitpunkt der Erstellung und den Benutzer, der ihn erstellt hat. Ein Datensatz enthält außerdem Informationen über den Zeitpunkt der letzten Änderung und den Benutzer, der die Änderung vorgenommen hat.
+Die `CKRecord`-Klasse unterstützt auch eine breite Palette von Metadaten. Ein Datensatz enthält z. b. Informationen über den Zeitpunkt der Erstellung und den Benutzer, der ihn erstellt hat. Ein Datensatz enthält außerdem Informationen über den Zeitpunkt der letzten Änderung und den Benutzer, der die Änderung vorgenommen hat.
 
 Datensätze enthalten das Konzept eines Änderungs Tags. Dies ist eine frühere Version einer Revision eines bestimmten Datensatzes. Das änderungstag dient als einfache Methode, um zu bestimmen, ob der Client und der Server über dieselbe Version eines bestimmten Datensatzes verfügen.
 
-Wie bereits erwähnt, `CKRecords` können Sie Schlüssel-Wert-Paare einschließen, sodass die folgenden Datentypen in einem Datensatz gespeichert werden können:
+Wie oben bereits erwähnt, können `CKRecords` Schlüssel-Wert-Paare zusammenfassen, sodass die folgenden Datentypen in einem Datensatz gespeichert werden können:
 
 1. `NSString`
 1. `NSNumber`
@@ -195,11 +195,11 @@ await CloudManager.SaveAsync (newRecord);
 
 Datensätze sind in einer bestimmten Datenbank nicht selbst vorhanden – Gruppen von Datensätzen sind innerhalb einer Daten Satz Zone nebeneinander vorhanden. Daten Satz Zonen können als Tabellen in herkömmlichen relationalen Datenbanken betrachtet werden:
 
- [![](intro-to-cloudkit-images/image35.png "In einer Daten Satz Zone sind Gruppen von Datensätzen vorhanden.")](intro-to-cloudkit-images/image35.png#lightbox)
+ [![](intro-to-cloudkit-images/image35.png "Groups of records exist together inside a Record Zone")](intro-to-cloudkit-images/image35.png#lightbox)
 
 Es können mehrere Datensätze innerhalb einer angegebenen Daten Satz Zone und mehrerer Daten Satz Zonen innerhalb einer bestimmten Datenbank vorhanden sein. Jede Datenbank enthält eine Standarddaten Satz Zone:
 
- [![](intro-to-cloudkit-images/image36.png "Jede Datenbank enthält eine Standarddaten Satz Zone und eine benutzerdefinierte Zone.")](intro-to-cloudkit-images/image36.png#lightbox)
+ [![](intro-to-cloudkit-images/image36.png "Every database contains a Default Record Zone and Custom Zone")](intro-to-cloudkit-images/image36.png#lightbox)
 
 Hier werden Datensätze standardmäßig gespeichert. Außerdem können benutzerdefinierte Daten Satz Zonen erstellt werden. Daten Satz Zonen stellen die Grundgenauigkeit dar, mit der atomarische Commits und Änderungsnachverfolgung ausgeführt werden.
 
@@ -215,7 +215,7 @@ Wenn Entwickler neue Datensätze erstellen, können Sie einen Daten Satz Bezeich
 
 Wenn Entwickler neue Daten Satz Bezeichner erstellen, können Sie festlegen, dass die Daten Satz Zonen, zu denen jeder Datensatz gehört, festgelegt werden sollen. Wenn kein Wert angegeben ist, wird die Standarddaten Satz Zone verwendet.
 
-Daten Satz Bezeichner werden im cloudkit-Framework über die `CKRecordID` -Klasse verfügbar gemacht. Der folgende Code kann verwendet werden, um einen neuen Daten Satz Bezeichner zu erstellen:
+Daten Satz Bezeichner werden im cloudkit-Framework über die `CKRecordID`-Klasse verfügbar gemacht. Der folgende Code kann verwendet werden, um einen neuen Daten Satz Bezeichner zu erstellen:
 
 ```csharp
 var recordID =  new CKRecordID("My Record");
@@ -225,11 +225,11 @@ var recordID =  new CKRecordID("My Record");
 
 Verweise stellen Beziehungen zwischen verknüpften Datensätzen in einer bestimmten Datenbank bereit:
 
- [![](intro-to-cloudkit-images/image37.png "Verweise stellen Beziehungen zwischen verknüpften Datensätzen in einer bestimmten Datenbank bereit.")](intro-to-cloudkit-images/image37.png#lightbox)
+ [![](intro-to-cloudkit-images/image37.png "References provide relationships between related Records within a given Database")](intro-to-cloudkit-images/image37.png#lightbox)
 
 Im obigen Beispiel sind übergeordnete Elemente mit untergeordneten Elementen, sodass das untergeordnete Element ein untergeordneter Datensatz des übergeordneten Datensatzes ist. Die Beziehung wird vom untergeordneten Datensatz zum übergeordneten Datensatz geleitet und als *Rück Verweis*bezeichnet.
 
-Verweise werden im cloudkit-Framework über die `CKReference` -Klasse verfügbar gemacht. Mit diesen Funktionen kann der icloud-Server die Beziehung zwischen Datensätzen verstehen.
+Verweise werden im cloudkit-Framework über die `CKReference`-Klasse verfügbar gemacht. Mit diesen Funktionen kann der icloud-Server die Beziehung zwischen Datensätzen verstehen.
 
 Verweise stellen den Mechanismus hinter kaskadierenden Lösch Vorgängen bereit. Wenn ein übergeordneter Datensatz aus der Datenbank gelöscht wird, werden auch alle untergeordneten Datensätze (wie in einer Beziehung angegeben) automatisch aus der Datenbank gelöscht.
 
@@ -250,17 +250,17 @@ var reference = new CKReference(newRecord, new CKReferenceAction());
 
 Mithilfe von Assets kann eine Datei mit großen, unstrukturierten Daten in die icloud hochgeladen und einem bestimmten Datensatz zugeordnet werden:
 
- [![](intro-to-cloudkit-images/image38.png "Mithilfe von Assets kann eine Datei mit großen, unstrukturierten Daten in die icloud hochgeladen und einem bestimmten Datensatz zugeordnet werden.")](intro-to-cloudkit-images/image38.png#lightbox)
+ [![](intro-to-cloudkit-images/image38.png "Assets allow for a file of large, unstructured data to be uploaded to iCloud and associated with a given Record")](intro-to-cloudkit-images/image38.png#lightbox)
 
-Auf dem Client wird eine `CKRecord` erstellt, die die Datei beschreibt, die auf den icloud-Server hochgeladen wird. Eine `CKAsset` wird erstellt, die die Datei enthält und mit dem Datensatz verknüpft ist, der Sie beschreibt.
+Auf dem Client wird ein `CKRecord` erstellt, in dem die Datei beschrieben wird, die auf den icloud-Server hochgeladen werden soll. Es wird eine `CKAsset` erstellt, die die Datei enthält und mit dem Datensatz verknüpft ist, der Sie beschreibt.
 
 Wenn die Datei auf den Server hochgeladen wird, wird der Datensatz in der Datenbank abgelegt, und die Datei wird in eine spezielle Massenspeicher Datenbank kopiert. Zwischen dem Daten Satz Zeiger und der hochgeladenen Datei wird eine Verknüpfung erstellt.
 
-Assets werden im cloudkit-Framework über die `CKAsset` -Klasse verfügbar gemacht und dienen zum Speichern großer, unstrukturierter Daten. Da der Entwickler keine großen, unstrukturierten Daten im Arbeitsspeicher haben will, werden Ressourcen mithilfe von Dateien auf dem Datenträger implementiert.
+Assets werden im cloudkit-Framework über die `CKAsset`-Klasse verfügbar gemacht und dienen zum Speichern großer, unstrukturierter Daten. Da der Entwickler keine großen, unstrukturierten Daten im Arbeitsspeicher haben will, werden Ressourcen mithilfe von Dateien auf dem Datenträger implementiert.
 
 Assets sind im Besitz von Datensätzen, sodass die Assets aus icloud abgerufen werden können, indem der Datensatz als Zeiger verwendet wird. Auf diese Weise kann der Server Assets in den Garbage Collection-Speicher erfassen, wenn der Datensatz, der das Asset besitzt, gelöscht wird.
 
-Da `CKAssets` für die Verarbeitung großer Datendateien vorgesehen ist, wurde das cloudkit von Apple entworfen, um die Assets effizient hochzuladen und herunterzuladen.
+Da `CKAssets` große Datendateien verarbeiten soll, wurde das cloudkit von Apple entworfen, um die Assets effizient hochzuladen und herunterzuladen.
 
 Der folgende Code kann verwendet werden, um ein Medienobjekt zu erstellen und es dem Datensatz zuzuordnen:
 
@@ -355,7 +355,7 @@ public AppDelegate ThisApp {
 #endregion
 ```
 
-Dadurch wird eine Verknüpfung hinzugefügt, um `AppDelegate` die zu erreichen und auf die oben erstellten öffentlichen und privaten Daten Bank Verknüpfungen zuzugreifen.
+Dadurch wird eine Verknüpfung hinzugefügt, um zum `AppDelegate` zu gelangen und auf die oben erstellten Verknüpfungen für die öffentliche und private Datenbank zuzugreifen.
 
 Wenn dieser Code vorhanden ist, sehen wir uns die Implementierung der cloudkit-praktische API in einer xamarin IOS 8-Anwendung an.
 
@@ -382,7 +382,7 @@ ThisApp.PublicDatabase.SaveRecord(newRecord, (record, err) => {
 
 Im obigen Code sind drei Punkte zu beachten:
 
-1. Durch Aufrufen der `SaveRecord` -Methode `PublicDatabase`von muss der Entwickler nicht angeben, wie die Daten gesendet werden, in welche Zone Sie geschrieben wird usw. Die benutzerfreundliche API kümmert sich um alle diese Details.
+1. Wenn Sie die `SaveRecord`-Methode des `PublicDatabase`aufrufen, muss der Entwickler nicht angeben, wie die Daten gesendet werden, in welche Zone Sie geschrieben wird usw. Die benutzerfreundliche API kümmert sich um alle diese Details.
 1. Der-Rückruf ist asynchron und stellt eine Rückruf Routine bereit, wenn der-Befehl abgeschlossen wird, entweder mit Erfolg oder Fehler. Wenn der-Befehl fehlschlägt, wird eine Fehlermeldung bereitgestellt.
 1. Cloudkit bietet keine lokale Speicherung/Persistenz. Es handelt sich hierbei nur um ein Übertragungsmedium. Wenn also eine Anforderung zum Speichern eines Datensatzes gestellt wird, wird er sofort an die icloud-Server gesendet.
 
@@ -432,7 +432,7 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 });
 ```
 
-Die `FetchRecord` -Methode `PublicDatabase` des gibt einen `CKRecord` zurück, wenn der-Befehl erfolgreich ausgeführt wurde. Die Anwendung ändert dann den Datensatz und ruft `SaveRecord` erneut auf, um die Änderungen wieder in die Datenbank zu schreiben.
+Die `FetchRecord`-Methode der `PublicDatabase` gibt eine `CKRecord` zurück, wenn der-Befehl erfolgreich ausgeführt wurde. Die Anwendung ändert dann den Datensatz und ruft `SaveRecord` erneut auf, um die Änderungen wieder in die Datenbank zu schreiben.
 
 In diesem Abschnitt wurde der typische Zeitraum gezeigt, den eine Anwendung bei der Arbeit mit der cloudkit-API verwendet. Die Anwendung speichert Datensätze in der icloud, ruft diese Datensätze aus icloud ab, ändert die Datensätze und speichert diese Änderungen in icloud zurück.
 
@@ -451,13 +451,13 @@ Je beliebter eine Anwendung ist, desto mehr Daten in der Datenbank und desto wen
 
 ### <a name="queries"></a>Abfragen
 
-Wie bereits erwähnt, ermöglichen Abfragen dem Entwickler, eine kleine Teilmenge des größeren Datasets auszuwählen, das in der Cloud vorhanden ist. Abfragen werden im cloudkit-Framework über die `CKQuery` -Klasse verfügbar gemacht.
+Wie bereits erwähnt, ermöglichen Abfragen dem Entwickler, eine kleine Teilmenge des größeren Datasets auszuwählen, das in der Cloud vorhanden ist. Abfragen werden im cloudkit-Framework über die `CKQuery`-Klasse verfügbar gemacht.
 
-Eine Abfrage kombiniert drei verschiedene Dinge: einen Daten Satz Typen `RecordType`(), ein Prädikat `NSPredicate`() und optional einen Sortierungs Deskriptor ( `NSSortDescriptors`). Cloudkit unterstützt die `NSPredicate`meisten von.
+Eine Abfrage kombiniert drei verschiedene Dinge: einen Daten Recordtyp (`RecordType`), ein Prädikat (`NSPredicate`) und optional einen Sortierungs Deskriptor (`NSSortDescriptors`). Cloudkit unterstützt die meisten `NSPredicate`.
 
 #### <a name="supported-predicates"></a>Unterstützte Prädikate
 
-Cloudkit unterstützt die folgenden Typen `NSPredicates` von beim Arbeiten mit Abfragen:
+Cloudkit unterstützt die folgenden Typen von `NSPredicates` bei der Arbeit mit Abfragen:
 
 1. Übereinstimmende Datensätze, bei denen der Name gleich einem in einer Variablen gespeicherten Wert ist:
 
@@ -484,13 +484,13 @@ Cloudkit unterstützt die folgenden Typen `NSPredicates` von beim Arbeiten mit A
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
-5. Cloudkit unterstützt eine tokenisierte Suche. Mit diesem-Befehl werden zwei Token erstellt: `after` eine für und `session`eine andere für. Es wird ein Datensatz zurückgegeben, der diese beiden Token enthält:
+5. Cloudkit unterstützt eine tokenisierte Suche. Mit diesem Befehl werden zwei Token erstellt, eines für `after` und ein weiteres für `session`. Es wird ein Datensatz zurückgegeben, der diese beiden Token enthält:
 
     ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
 
-6. Cloudkit unterstützt Verbund Prädikate, `AND` die mithilfe des Operators verknüpft sind.
+6. Cloudkit unterstützt Verbund Prädikate, die mithilfe des-`AND` Operators verknüpft sind.
 
     ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
@@ -530,7 +530,7 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 });
 ```
 
-Der obige Code führt die oben erstellte Abfrage aus und führt Sie für die öffentliche Datenbank aus. Da keine Daten Satz Zone angegeben ist, werden alle Zonen durchsucht. Wenn keine Fehler aufgetreten sind, wird ein `CKRecords` Array von zurückgegeben, das den Parametern der Abfrage entspricht.
+Der obige Code führt die oben erstellte Abfrage aus und führt Sie für die öffentliche Datenbank aus. Da keine Daten Satz Zone angegeben ist, werden alle Zonen durchsucht. Wenn keine Fehler aufgetreten sind, wird ein Array von `CKRecords` zurückgegeben, das den Parametern der Abfrage entspricht.
 
 Die Möglichkeit, Abfragen zu übernehmen, besteht darin, dass es sich um Umfragen handelt, die bei der slizierung durch große Datasets hervorragend sind. Abfragen sind jedoch aus folgenden Gründen für große, größtenteils statische Datasets nicht gut geeignet:
 
@@ -544,7 +544,7 @@ Beim Umgang mit großen, größtenteils statischen Datasets sollte die Abfrage n
 
 Zum Schluss sollte eine Pushbenachrichtigung an jedes Gerät gesendet werden, das an die Datenbank angefügt ist, wenn die serverseitige Abfrage ausgeführt wird.
 
-Abonnements werden im cloudkit-Framework über die `CKSubscription` -Klasse verfügbar gemacht. Sie kombinieren einen Daten Satz `RecordType`Typen (), ein Prädikat ( `NSPredicate`) und eine Apple Push `Push`Notification ().
+Abonnements werden im cloudkit-Framework über die `CKSubscription`-Klasse verfügbar gemacht. Sie kombinieren einen Daten Recordtyp (`RecordType`), ein Prädikat (`NSPredicate`) und eine Apple Push Notification (`Push`).
 
 > [!NOTE]
 > Cloudkit-Pushvorgänge werden etwas erweitert, da Sie eine Nutzlast enthalten, die cloudkit-spezifische Informationen enthält, wie z. b. die Ursache für den Push.
@@ -553,7 +553,7 @@ Abonnements werden im cloudkit-Framework über die `CKSubscription` -Klasse verf
 
 Vor der Implementierung eines C# Abonnements im Code wird eine kurze Übersicht über die Funktionsweise von Abonnements angezeigt:
 
- [![](intro-to-cloudkit-images/image39.png "Eine Übersicht über die Funktionsweise von Abonnements")](intro-to-cloudkit-images/image39.png#lightbox)
+ [![](intro-to-cloudkit-images/image39.png "An overview of how subscriptions work")](intro-to-cloudkit-images/image39.png#lightbox)
 
 Das obige Diagramm zeigt den typischen Abonnement Prozess wie folgt:
 
@@ -607,7 +607,7 @@ Mithilfe der Easy-API ist der-Befehl asynchron, einfach und ermöglicht eine ein
 
 Wenn der Entwickler bereits Apple Push Notification (APS) verwendet hat, sollte der Prozess der Handhabung von Benachrichtigungen, die von cloudkit generiert werden, vertraut sein.
 
-Überschreiben `AppDelegate.cs`Sie in der `ReceivedRemoteNotification` die-Klasse wie folgt:
+Überschreiben Sie in der `AppDelegate.cs`die `ReceivedRemoteNotification`-Klasse wie folgt:
 
 ```csharp
 public override void ReceivedRemoteNotification (UIApplication application, NSDictionary userInfo)
@@ -654,11 +654,11 @@ Als nächstes sehen wir uns diese Themen ausführlich an.
 
 Wie bereits erwähnt, bietet cloudkit eine Möglichkeit für die Anwendung, einen bestimmten Benutzer eindeutig zu identifizieren:
 
- [![](intro-to-cloudkit-images/image40.png "Eindeutige Identifizierung eines bestimmten Benutzers")](intro-to-cloudkit-images/image40.png#lightbox)
+ [![](intro-to-cloudkit-images/image40.png "Uniquely identifing a given user")](intro-to-cloudkit-images/image40.png#lightbox)
 
 Es gibt eine Client Anwendung, die auf den Geräten eines Benutzers ausgeführt wird, und alle speziellen privaten Benutzer Datenbanken innerhalb des cloudkit-Containers. Die Client Anwendung wird mit einem dieser spezifischen Benutzer verknüpft. Dies basiert auf dem Benutzer, der lokal auf dem Gerät bei icloud angemeldet ist.
 
-Da dies von icloud stammt, gibt es einen umfangreichen Sicherungs Speicher für Benutzerinformationen. Und da icloud tatsächlich den Container gehostet, kann er Benutzer korrelieren. In der obigen Grafik ist der Benutzer, dessen icloud `user@icloud.com` -Konto mit dem aktuellen Client verknüpft ist.
+Da dies von icloud stammt, gibt es einen umfangreichen Sicherungs Speicher für Benutzerinformationen. Und da icloud tatsächlich den Container gehostet, kann er Benutzer korrelieren. In der obigen Grafik wird der Benutzer, dessen icloud-Konto `user@icloud.com` mit dem aktuellen Client verknüpft ist.
 
 Auf Containerbasis wird eine eindeutige, zufällig generierte Benutzer-ID erstellt und dem icloud-Konto des Benutzers (e-Mail-Adresse) zugeordnet. Diese Benutzer-ID wird an die Anwendung zurückgegeben und kann in beliebiger Weise verwendet werden, die der Entwickler sieht.
 
@@ -689,11 +689,11 @@ Der obige Code fordert den cloudkit-Container auf, die ID des aktuell angemeldet
 
 Jeder Benutzer in cloudkit verfügt über bestimmte Metadaten, die diese beschreiben. Diese Metadaten werden als cloudkit-Datensatz dargestellt:
 
- [![](intro-to-cloudkit-images/image41.png "Jeder Benutzer in cloudkit weist bestimmte Metadaten auf, die diese beschreiben.")](intro-to-cloudkit-images/image41.png#lightbox)
+ [![](intro-to-cloudkit-images/image41.png "Each user in CloudKit has specific Metadata that describes them")](intro-to-cloudkit-images/image41.png#lightbox)
 
 Wenn Sie in der privaten Datenbank nach einem bestimmten Benutzer eines Containers suchen, gibt es einen Datensatz, der diesen Benutzer definiert. In der öffentlichen Datenbank gibt es viele Benutzerdaten Sätze, eine für jeden Benutzer des Containers. Eine dieser Daten weist eine Datensatz-ID auf, die der Datensatz-ID des aktuell angemeldeten Benutzers entspricht.
 
-Benutzerdaten Sätze in der öffentlichen Datenbank sind weltweit lesbar. Sie werden größtenteils als normaler Datensatz behandelt und weisen den Typ auf `CKRecordTypeUserRecord`. Diese Datensätze werden vom System reserviert und sind nicht für Abfragen verfügbar.
+Benutzerdaten Sätze in der öffentlichen Datenbank sind weltweit lesbar. Sie werden größtenteils als normaler Datensatz behandelt und haben einen Typ `CKRecordTypeUserRecord`. Diese Datensätze werden vom System reserviert und sind nicht für Abfragen verfügbar.
 
 Verwenden Sie den folgenden Code, um auf einen Benutzerdaten Satz zuzugreifen:
 
@@ -725,7 +725,7 @@ In diesen Fällen kann die Anwendung anfordern, dass der Benutzer diese Informat
 
 Angenommen, der Benutzer hat sich angemeldet, um der Anwendung den eingeschränkten Zugriff auf die Benutzerkontoinformationen zu gestatten, Sie kann für andere Benutzer der Anwendung erkennbar sein:
 
- [![](intro-to-cloudkit-images/image42.png "Ein Benutzer kann anderen Benutzern der Anwendung auffallen.")](intro-to-cloudkit-images/image42.png#lightbox)
+ [![](intro-to-cloudkit-images/image42.png "A user can be discoverable to other users of the application")](intro-to-cloudkit-images/image42.png#lightbox)
 
 Die Client Anwendung kommuniziert mit einem Container, und der Container kommuniziert mit icloud, um auf Benutzerinformationen zuzugreifen. Der Benutzer kann eine e-Mail-Adresse angeben, und die Ermittlung kann verwendet werden, um Informationen über den Benutzer zu erhalten. Optional kann die Benutzer-ID auch verwendet werden, um Informationen über den Benutzer zu ermitteln.
 
@@ -801,44 +801,44 @@ Vor dem Versand einer Anwendung, die cloudkit verwendet, muss Sie für die **clo
 
 Führen Sie folgende Schritte aus:
 
-1. Kompilieren Sie die Anwendung für das IOS- **Freigabe** > **Gerät**in Visual Studio für MA:
+1. Kompilieren Sie die Anwendung in Visual Studio für MA für **Release** > **IOS-Gerät**:
 
-    [![](intro-to-cloudkit-images/shipping01.png "Kompilieren der Anwendung für die Veröffentlichung")](intro-to-cloudkit-images/shipping01.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping01.png "Compile the application for Release")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
 2. Wählen Sie im Menü **Erstellen** die Option **Archive**:
 
-    [![](intro-to-cloudkit-images/shipping02.png "Archiv auswählen")](intro-to-cloudkit-images/shipping02.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping02.png "Select Archive")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
 3. Das **Archiv** wird erstellt und in Visual Studio für Mac angezeigt:
 
-    [![](intro-to-cloudkit-images/shipping03.png "Das Archiv wird erstellt und angezeigt.")](intro-to-cloudkit-images/shipping03.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping03.png "The Archive will be created and displayed")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. Starten Sie **Xcode**.
 5. Wählen Sie im Menü **Fenster** die Option **Planer**aus:
 
-    [![](intro-to-cloudkit-images/shipping04.png "Planer auswählen")](intro-to-cloudkit-images/shipping04.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping04.png "Select Organizer")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
 6. Wählen Sie das Archiv der Anwendung aus, und klicken Sie auf die Schaltfläche **exportieren...** :
 
-    [![](intro-to-cloudkit-images/shipping05.png "Das Archiv der Anwendung")](intro-to-cloudkit-images/shipping05.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping05.png "The application's archive")](intro-to-cloudkit-images/shipping05.png#lightbox)
 
 7. Wählen Sie eine Export Methode aus, und klicken Sie auf die Schaltfläche **weiter** :
 
-    [![](intro-to-cloudkit-images/shipping06.png "Methode für den Export auswählen")](intro-to-cloudkit-images/shipping06.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping06.png "Select a method for export")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
 8. Wählen Sie in der Dropdown Liste das **Entwicklungs Team** aus, und klicken Sie auf die Schaltfläche **auswählen** :
 
-    [![](intro-to-cloudkit-images/shipping07.png "Wählen Sie das Entwicklungs Team aus der Dropdown Liste aus.")](intro-to-cloudkit-images/shipping07.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping07.png "Select the Development Team from the dropdown list")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
 9. Wählen Sie in der Dropdown Liste **Production** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
-    [![](intro-to-cloudkit-images/shipping08.png "Produktion in der Dropdown Liste auswählen")](intro-to-cloudkit-images/shipping08.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping08.png "Select Production from the dropdown list")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
 10. Prüfen Sie die Einstellung, und klicken Sie auf die Schaltfläche **exportieren** :
 
-    [![](intro-to-cloudkit-images/shipping09.png "Überprüfen der Einstellung")](intro-to-cloudkit-images/shipping09.png#lightbox)
+    [![](intro-to-cloudkit-images/shipping09.png "Review the setting")](intro-to-cloudkit-images/shipping09.png#lightbox)
 
-11. Wählen Sie einen Speicherort aus, um `.ipa` die resultierende Anwendungsdatei zu generieren.
+11. Wählen Sie einen Speicherort aus, um die resultierende Anwendungs `.ipa` Datei zu generieren.
 
 Der Prozess ähnelt dem direkten Senden der Anwendung an iTunes Connect. Klicken Sie einfach auf die Schaltfläche " **Submit...** " anstatt auf "Exportieren"... Nachdem Sie im Planer-Fenster ein Archiv ausgewählt haben.
 

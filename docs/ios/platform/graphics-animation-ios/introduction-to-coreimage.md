@@ -4,19 +4,19 @@ description: Das Core-Image ist ein neues Framework, das mit IOS 5 eingeführt w
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ffaa6553830a64589818c991e8f729ff7232e367
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5525373d9bf904f67bdf02d7ec8df72e7bbd3f55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752835"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032366"
 ---
 # <a name="core-image-in-xamarinios"></a>Core-Image in xamarin. IOS
 
-_Das Core-Image ist ein neues Framework, das mit IOS 5 eingeführt wurde, um die Abbild Verarbeitung und die Funktion für die Video Verbesserung In diesem Artikel werden diese Features mit xamarin. IOS-Beispielen vorgestellt._
+_Core-Image ist ein neues Framework, das mit IOS 5 eingeführt wurde, um die Abbild Verarbeitung und die Funktion für die Optimierung von Videos In diesem Artikel werden diese Features mit xamarin. IOS-Beispielen vorgestellt._
 
 Das Core-Image ist ein neues in ios 5 eingeführte Framework, das eine Reihe integrierter Filter und Effekte bereitstellt, die auf Bilder und Videos, einschließlich Gesichtserkennung, angewendet werden können.
 
@@ -28,7 +28,7 @@ Dieses Dokument enthält einfache Beispiele für:
 
 Diese Beispiele sollen Ihnen beim Einstieg in Ihre xamarin. IOS-Anwendungen helfen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Sie müssen die neueste Version von Xcode verwenden.
 
@@ -46,7 +46,7 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-Das featurearray wird mit `CIFaceFeature` -Objekten aufgefüllt (sofern irgendwelche Gesichter erkannt wurden). Es gibt eine `CIFaceFeature` für jede Seite. `CIFaceFeature`verfügt über die folgenden Eigenschaften:
+Das Array "Features" wird mit `CIFaceFeature` Objekten aufgefüllt (wenn Gesichter erkannt wurden). Für jedes Gesicht gibt es eine `CIFaceFeature`. `CIFaceFeature` verfügt über die folgenden Eigenschaften:
 
 - Hasmundposition – gibt an, ob ein Mund für dieses Gesicht erkannt wurde.
 - Haslefteyeposition – gibt an, ob das linke Auge für dieses Gesicht erkannt wurde.
@@ -55,7 +55,7 @@ Das featurearray wird mit `CIFaceFeature` -Objekten aufgefüllt (sofern irgendwe
 - Lefteyeposition – die Koordinaten des linken Auges für dieses Gesicht.
 - Rechtschaffyeposition – die Koordinaten des rechten Auges für dieses Gesicht.
 
-Die Koordinaten für alle diese Eigenschaften haben den Ursprung unten links – im Gegensatz zu UIKit, bei dem die linke obere Seite als Ursprung verwendet wird. Wenn Sie die Koordinaten in `CIFaceFeature` verwenden, sollten Sie Sie "Kippen". Diese sehr grundlegende benutzerdefinierte Bildansicht in coreimage\coreimageviewcontroller.cs veranschaulicht, wie Sie "Gesicht Indikator"-Dreiecke im Bild `FlipForBottomOrigin` zeichnen (Beachten Sie die-Methode):
+Die Koordinaten für alle diese Eigenschaften haben den Ursprung unten links – im Gegensatz zu UIKit, bei dem die linke obere Seite als Ursprung verwendet wird. Wenn Sie die Koordinaten auf `CIFaceFeature` verwenden, sollten Sie Sie "Kippen". Diese sehr grundlegende benutzerdefinierte Bildansicht in coreimage\coreimageviewcontroller.cs veranschaulicht, wie Sie "Gesicht Indikator"-Dreiecke im Bild zeichnen (Beachten Sie die `FlipForBottomOrigin`-Methode):
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -120,7 +120,7 @@ Es gibt mehr als 50 verschiedene integrierte Filter, und das Framework ist erwei
 
 Das Anwenden eines Filters auf ein Image umfasst vier verschiedene Schritte: Laden des Bilds, Erstellen des Filters, Anwenden des Filters und speichern (oder anzeigen) des Ergebnisses.
 
-Laden Sie zunächst ein Bild in ein `CIImage` -Objekt.
+Laden Sie zunächst ein Bild in ein `CIImage` Objekt.
 
 ```csharp
 var uiimage = UIImage.FromFile ("photo.JPG");
@@ -135,7 +135,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-Drittens greifen Sie auf `OutputImage` die-Eigenschaft zu `CreateCGImage` , und wenden Sie die-Methode zum Rendering des Endergebnisses an.
+Greifen Sie drittens auf die `OutputImage`-Eigenschaft zu, und nennen Sie die `CreateCGImage`-Methode, um das Endergebnis zu erzeugen.
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -150,9 +150,9 @@ var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-Diese Screenshots zeigen das Ergebnis der `CISepia` Filter und `CIHueAdjust` , die im Beispielcode CoreImage. zip veranschaulicht werden.
+Diese Screenshots zeigen das Ergebnis der Filter für `CISepia` und `CIHueAdjust`, die im CoreImage. zip-Beispielcode veranschaulicht werden.
 
-Ein Beispiel für den `CIColorControls` Filter finden Sie unter [Anpassen des Vertrags und der Helligkeit eines Bild Rezept](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) .
+Ein Beispiel für den `CIColorControls` Filter finden Sie unter [Anpassen des Vertrags und der Helligkeit eines Bild Rezepts](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) .
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -212,7 +212,7 @@ Der [cifilter-Klassen Verweis](https://developer.apple.com/library/prerelease/io
 
 Die Ausgabe der Listen Kategorien sieht im Simulator wie folgt aus – Sie können einen Bildlauf durch die Liste durchführen, um alle Filter und deren Parameter anzuzeigen.
 
- [![](introduction-to-coreimage-images/coreimage05.png "Die Ausgabe der Listen Kategorien sieht im Simulator wie folgt aus.")](introduction-to-coreimage-images/coreimage05.png#lightbox)
+ [![](introduction-to-coreimage-images/coreimage05.png "The List Categories output looks like this on the simulator")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
 Jeder aufgeführte Filter wurde als Klasse in xamarin. IOS verfügbar gemacht, sodass Sie auch die xamarin. IOS. CoreImage-API im assemblybrowser oder die automatische Vervollständigung in Visual Studio für Mac oder Visual Studio untersuchen können. 
 

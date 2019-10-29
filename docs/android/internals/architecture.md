@@ -3,15 +3,15 @@ title: Architektur
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe0903eca5c907fc104728ca0ad7c676a45a5180
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756696"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027909"
 ---
 # <a name="architecture"></a>Architektur
 
@@ -56,7 +56,7 @@ Wenn Sie nachverfolgen möchten, wann globale Verweise erstellt und zerstört we
 
 Globale Verweise können explizit freigegeben werden, indem " [java. lang. Object. verwerfen ()](xref:Java.Lang.Object.Dispose) " für den verwalteten Callable Wrapper aufgerufen wird. Dadurch wird die Zuordnung zwischen der Java-Instanz und der verwalteten Instanz entfernt, und die Java-Instanz kann gesammelt werden. Wenn der Zugriff auf die Java-Instanz von verwaltetem Code aus wieder hergestellt wird, wird ein neuer verwalteter Aufruf barer Wrapper dafür erstellt.
 
-Beim Verwerfen von verwalteten Aufruf baren Wrappern muss sorgfältig vorgegangen werden, wenn die Instanz versehentlich zwischen Threads freigegeben werden kann, da die verwerfen der Instanz sich auf Verweise von anderen Threads auswirkt. Für maximale Sicherheit nur `Dispose()` für Instanzen, die über `new` oder von Methoden zugeordnet wurden, denen Sie *wissen* , dass Sie immer neue Instanzen zuordnen, nicht zwischengespeicherte Instanzen, die eine versehentliche instanzfreigabe verursachen können. Threads.
+Beim Verwerfen von verwalteten Aufruf baren Wrappern muss sorgfältig vorgegangen werden, wenn die Instanz versehentlich zwischen Threads freigegeben werden kann, da die verwerfen der Instanz sich auf Verweise von anderen Threads auswirkt. Für maximale Sicherheit werden nur `Dispose()` von-Instanzen, die über `new` *oder* von Methoden zugewiesen wurden, denen Sie *bekannt* sind, immer neue Instanzen und keine zwischengespeicherten Instanzen zuweisen, die eine versehentliche instanzfreigabe zwischen Threads verursachen können.
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Verwaltete Aufruf Bare Wrapper-Unterklassen
 
@@ -92,11 +92,11 @@ Reihenfolge der Ereignisse:
 
 4. Der *TextView* -Konstruktor ruft *monodroid. apidemo. logtextbox. getdefaultmovementmethod ()* auf.
 
-5. *monodroid. apidemo. logtextbox. getdefaultmovementmethod ()* ruft *logtextbox. n_getDefaultMovementMethod ()* auf, das " *TextView. n_getDefaultMovementMethod ()* " aufruft, das " [java. lang. Object. GetObject"aufruft.&lt; TextView&gt; (handle, jnishandownership. donottransfer)](xref:Java.Lang.Object.GetObject*) .
+5. *monodroid. apidemo. logtextbox. getdefaultmovementmethod ()* ruft *logtextbox. n_getDefaultMovementMethod ()* auf, das " *TextView. n_getDefaultMovementMethod ()* " aufruft, das " [java. lang. Object. GetObject" aufruft @no_ _t_4_ TextView&gt; (handle, jnishandownership. donottransfer)](xref:Java.Lang.Object.GetObject*) .
 
-6. *Java. lang. Object. GetObject&lt;TextView&gt;()* prüft, ob bereits eine entsprechende C# Instanz für *handle* vorhanden ist. Wenn dies der Fall ist, wird der Wert zurückgegeben. In diesem Szenario gibt es nicht, daher muss *Object.&lt;GetObject&gt;t ()* eine erstellen.
+6. *Java. lang. Object. GetObject&lt;TextView&gt;()* überprüft, ob bereits eine entsprechende C# Instanz für *handle* vorhanden ist. Wenn dies der Fall ist, wird der Wert zurückgegeben. In diesem Szenario gibt es nicht, daher muss *Object. GetObject&lt;t&gt;()* eine erstellen.
 
-7. *Object. GetObject&lt;T&gt;()* sucht nach dem Konstruktor *logtextbox (IntPtr, jnishandowneship)* , ruft ihn auf, erstellt eine Zuordnung zwischen *handle* und der erstellten Instanz und gibt die erstellte Instanz zurück.
+7. *Object. GetObject&lt;t&gt;()* sucht nach dem Konstruktor *logtextbox (IntPtr, jnishandowneship)* , ruft ihn auf, erstellt eine Zuordnung zwischen *handle* und der erstellten Instanz und gibt die erstellte Instanz zurück.
 
 8. *TextView. n_GetDefaultMovementMethod ()* Ruft die *logtextbox. defaultmovementmethod* -Eigenschaft Getter auf.
 
@@ -165,8 +165,8 @@ Verwerfen *()* von verwalteten Aufruf baren Wrapper-Unterklassen, wenn Sie wisse
 
 ## <a name="application-startup"></a>Anwendungsstart
 
-Wenn eine Aktivität, ein Dienst usw. gestartet wird, prüft Android zunächst, ob bereits ein Prozess zum Hosten von Aktivität/Dienst/usw. ausgeführt wird. Wenn kein solcher Prozess vorhanden ist, wird ein neuer Prozess erstellt, " [androidmanifest. XML](https://developer.android.com/guide/topics/manifest/manifest-intro.html) " gelesen, und der im [/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm) -Attribut angegebene Typ wird geladen und instanziiert. Anschließend werden alle durch die [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm) Attributwerte angegebenen Typen instanziiert, und die [Contentprovider. attachinfo% 28](xref:Android.Content.ContentProvider.AttachInfo*) -Methode wird aufgerufen. Xamarin. Android verknüpft dies durch Hinzufügen eines *Mono. Der monoruntimeprovider* - *Contentprovider* ist während des Buildprozesses "androidmanifest. xml". Der *Mono. Die monoruntimeprovider. attachinfo ()* -Methode ist dafür verantwortlich, die Mono-Laufzeit in den Prozess zu laden.
+Wenn eine Aktivität, ein Dienst usw. gestartet wird, prüft Android zunächst, ob bereits ein Prozess zum Hosten von Aktivität/Dienst/usw. ausgeführt wird. Wenn kein solcher Prozess vorhanden ist, wird ein neuer Prozess erstellt, " [androidmanifest. XML](https://developer.android.com/guide/topics/manifest/manifest-intro.html) " gelesen, und der im [/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm) -Attribut angegebene Typ wird geladen und instanziiert. Anschließend werden alle Typen, die durch die [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm) -Attributwerte angegeben werden, instanziiert, und die [Contentprovider. attachinfo %28](xref:Android.Content.ContentProvider.AttachInfo*) -Methode wird aufgerufen. Xamarin. Android verknüpft dies durch Hinzufügen eines *Mono. Der monoruntimeprovider* - *Contentprovider* ist während des Buildprozesses "androidmanifest. xml". Der *Mono. Die monoruntimeprovider. attachinfo ()* -Methode ist dafür verantwortlich, die Mono-Laufzeit in den Prozess zu laden.
 Alle Versuche, Mono vor diesem Punkt zu verwenden, schlagen fehl. ( *Hinweis*: Dies ist der Grund, warum die Unterklasse [Android. app. Application](xref:Android.App.Application) einen- [Konstruktor (IntPtr, jnilenker Ownership)](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)bereitstellen muss, da die Anwendungs Instanz erstellt wird, bevor Mono initialisiert werden kann.)
 
-Nachdem die Prozess Initialisierung abgeschlossen wurde `AndroidManifest.xml` , wird die untersucht, um den Klassennamen der zu startenden Aktivität/des Diensts bzw. des Diensts zu ermitteln. Beispielsweise wird das [ /manifest/application/activity/@android:name -Attribut](https://developer.android.com/guide/topics/manifest/activity-element.html#nm) verwendet, um den Namen einer Aktivität zu ermitteln, die geladen werden soll. Für Aktivitäten muss dieser Typ " [Android. app. Activity](xref:Android.App.Activity)" erben.
+Nachdem die Prozess Initialisierung abgeschlossen ist, wird `AndroidManifest.xml` mit dem Namen der zu startenden Aktivität bzw. des Diensts usw. gesucht. Beispielsweise wird das [/manifest/application/activity/@android:name-Attribut](https://developer.android.com/guide/topics/manifest/activity-element.html#nm) verwendet, um den Namen einer Aktivität zu ermitteln, die geladen werden soll. Für Aktivitäten muss dieser Typ " [Android. app. Activity](xref:Android.App.Activity)" erben.
 Der angegebene Typ wird über " [Class. forName ()](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) " geladen (was erfordert, dass der Typ ein Java-Typ ist, daher die für Android Callable Wrapper) und dann instanziiert werden. Durch die Erstellung einer Android Callable Wrapper-Instanz wird die Erstellung einer Instanz des entsprechenden C# Typs auslöst. Android ruft dann [Activity. OnCreate (Bundle)](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) auf, was bewirkt, dass die entsprechende [Aktivität. OnCreate (Bundle)](xref:Android.App.Activity.OnCreate*) aufgerufen wird, und Sie sind zu den Races.

@@ -3,15 +3,15 @@ title: Einstieg in Android
 description: In diesem Dokument wird beschrieben, wie Sie mit dem Einbetten von .net mit Android beginnen. Es wird erläutert, wie Sie die .net-Einbettung, das Erstellen eines Android-Bibliotheks Projekts, die Verwendung der generierten Ausgabe in einem Android Studio-Projekt und weitere Überlegungen
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 9b0da6f5b195ecef5fd4e5e2b4585b660573a5be
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bcda03d41cb3bafcfb3ee4b92046014cc5b0c119
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278563"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029768"
 ---
 # <a name="getting-started-with-android"></a>Einstieg in Android
 
@@ -33,7 +33,7 @@ Als Übersicht werden folgende Aktionen durchführt:
 
 Fügen Sie eine neue Android-Aktivität mit dem Namen **HelloActivity.cs**gefolgt von einem Android-Layout unter **Resource/Layout/Hello. axml**hinzu.
 
-Fügen Sie dem `TextView` Layout eine neue hinzu, und ändern Sie den Text in etwas unterhaltsames.
+Fügen Sie dem Layout eine neue `TextView` hinzu, und ändern Sie den Text in etwas unterhaltsames.
 
 Die layoutquelle sollte in etwa wie folgt aussehen:
 
@@ -70,7 +70,7 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> Vergessen Sie nicht `[Register]` das Attribut. Weitere Informationen finden Sie unter [Einschränkungen](#current-limitations-on-android).
+> Vergessen Sie nicht das `[Register]` Attribut. Weitere Informationen finden Sie unter [Einschränkungen](#current-limitations-on-android).
 
 Erstellen Sie das Projekt. Die resultierende Assembly wird in `bin/Debug/hello-from-csharp.dll`gespeichert.
 
@@ -111,7 +111,7 @@ Wenn Sie das neue Modul aus Ihrer **App**verwenden möchten, klicken Sie mit der
 
 ![Abhängigkeiten Android Studio](android-images/androidstudiodependencies.png)
 
-Fügen Sie in Ihrer Aktivität eine neue `onResume` Methode hinzu, und verwenden Sie den folgenden Code, C# um die Aktivität zu starten:
+Fügen Sie in Ihrer Aktivität eine neue `onResume`-Methode hinzu, und verwenden Sie den folgenden Code C# , um die-Aktivität zu starten:
 
 ```java
 import hello_from_csharp.*;
@@ -159,7 +159,7 @@ Beim Starten der APP:
 
 Beachten Sie, was hier passiert ist:
 
-- Wir haben eine C# Klasse, `HelloActivity`, die Unterklassen Java
+- Wir haben eine C# Klasse,`HelloActivity`, die Unterklassen Java
 - Wir verfügen über Android-Ressourcen Dateien.
 - Wir haben diese aus Java in Android Studio verwendet.
 
@@ -169,11 +169,11 @@ Damit dieses Beispiel funktioniert, werden alle folgenden Schritte im endgültig
 - In **Assets/** Assemblys enthaltene .NET-Assemblys
 - " **Androidmanifest. XML** "- C# Änderungen für ihre Aktivitäten usw.
 - Android-Ressourcen und-Assets aus .NET-Bibliotheken
-- [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) für eine beliebige `Java.Lang.Object` Unterklasse
+- [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) für beliebige `Java.Lang.Object` Unterklassen
 
 Wenn Sie nach einer zusätzlichen exemplarischen Vorgehensweise suchen, sehen Sie sich das folgende Video an, in dem das Einbetten der [fingerpaint-Demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) von Charles Petzold in ein Android Studio Projekt veranschaulicht wird:
 
-[![Embeddinator-4000 für Android](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
+[![embeddinator-4000 für Android](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
 ## <a name="using-java-18"></a>Verwenden von Java 1,8
 
@@ -207,7 +207,7 @@ android {
 
 ## <a name="current-limitations-on-android"></a>Aktuelle Einschränkungen bei Android
 
-Wenn Sie zurzeit eine Unterklasse `Java.Lang.Object`haben, generiert xamarin. Android den Java-Stub (Android Callable Wrapper) anstelle von .net Einbettungen. Aus diesem Grund müssen Sie die gleichen Regeln für den Export C# in Java als xamarin. Android befolgen. Beispiel:
+Wenn Sie in der Unterklasse `Java.Lang.Object`, generiert xamarin. Android den Java-Stub (Android Callable Wrapper) anstelle von .net-Einbettungen. Aus diesem Grund müssen Sie die gleichen Regeln für den Export C# in Java als xamarin. Android befolgen. Beispiel:
 
 ```csharp
 [Register("mono.embeddinator.android.ViewSubclass")]
@@ -223,10 +223,10 @@ public class ViewSubclass : TextView
 }
 ```
 
-- `[Register]`ist erforderlich, um einem gewünschten Java-Paketnamen zuzuordnen.
-- `[Export]`ist erforderlich, um eine Methode für Java sichtbar zu machen.
+- `[Register]` ist erforderlich, um den Namen eines gewünschten Java-Pakets zuzuordnen.
+- `[Export]` ist erforderlich, um eine Methode für Java sichtbar zu machen.
 
-Wir können in `ViewSubclass` Java wie folgt verwenden:
+Wir können `ViewSubclass` in Java wie folgt verwenden:
 
 ```java
 import mono.embeddinator.android.ViewSubclass;

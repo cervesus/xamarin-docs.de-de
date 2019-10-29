@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie Code mit eingebetteten
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: ba3be4fea9999698c5a81faf5b07bec99fb1aa46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cf74c31b149c24bc6e515c0f00803a60b10d5d1c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753243"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032537"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Eingebettete Frameworks in xamarin. IOS
 
@@ -38,13 +38,13 @@ Es gibt zwei Möglichkeiten, Frameworks in xamarin. IOS zu nutzen:
 
 Klicken Sie mit der rechten Maustaste auf Projekt, und navigieren Sie zu systemeigenen verweisen
 
-![](embedded-frameworks-images/xam-native-refs.png "Wählen Sie systemeigene Verweise hinzufügen in Visual Studio für Mac")
+![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Klicken Sie mit der rechten Maustaste auf Projekt, und navigieren Sie zu systemeigenen verweisen
 
-![](embedded-frameworks-images/vs-native-refs.png "Wählen Sie systemeigene Verweise hinzufügen in Visual Studio aus.")
+![](embedded-frameworks-images/vs-native-refs.png "Select Add native references in Visual Studio")
 
 -----
 

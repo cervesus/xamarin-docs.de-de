@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie in einer mit xamarin e
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 9d346dc52437b5c079d499e142036e94cfaef65d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70291402"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030442"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Arbeiten mit tvos-Status Indikatoren in xamarin
 
@@ -77,7 +77,7 @@ Die einfachste Möglichkeit, mit einer Statusanzeige in einer xamarin. tvos-APP 
 
 2. Ziehen Sie einen **Aktivitätsindikator** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 
 
-    ![Ein Aktivitätsindikator](progress-indicators-images/activity01-vs.png
+    ![einen Aktivitätsindikator](progress-indicators-images/activity01-vs.png
     "Ein Aktivitätsindikator")
 
 3. Auf der Registerkarte **Widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Aktivitäts Indikators anpassen, z. b. den **Stil**, das **Verhalten**und den **Namen**: 
@@ -106,7 +106,7 @@ Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-
 
 Wie bereits erwähnt, sollten Aktivitätsindikatoren angezeigt werden, wenn Ihre APP einen langen Prozess der unbestimmten Länge aufweist.
 
-Sie können jederzeit überprüfen, ob ein Aktivitätsindikator animiert wird, indem Sie die `IsAnimating`-Eigenschaft überprüfen. Wenn die `HidesWhenStopped`-Eigenschaft `true` ist, wird der Aktivitätsindikator automatisch ausgeblendet, wenn die Animation angehalten wird.
+Sie können jederzeit überprüfen, ob ein Aktivitätsindikator animiert wird, indem Sie die `IsAnimating`-Eigenschaft überprüfen. Wenn die `HidesWhenStopped`-Eigenschaft `true`ist, wird der Aktivitätsindikator automatisch ausgeblendet, wenn die Animation angehalten wird.
 
 Sie können den folgenden Code verwenden, um die Animation zu starten: 
 

@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F5E5DCC6-F7CC-48E2-89E8-709E9C269502
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 030f1ba87dde958aef156731de926427676163dc
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: 6df481688bfaa1e23cc56e6e34586f23d8ab9da6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033497"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031040"
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>Kann ich den Ausgabepfad der IPA-Datei ändern?
 
@@ -21,7 +21,7 @@ Ja, Sie können hierfür angepasste MSBuild-Ziele verwenden. Die einfachste Opti
 
 Diese Schritte funktionieren für alle IOS-Projekte, die die MSBuild-Build-Engine unter Mac oder Windows verwenden. (Hinweis: für alle Unified API Projekte wird die MSBuild-Build-Engine verwendet.)
 
-1. Öffnen Sie `.csproj` die Datei für das IOS-App-Projekt in einem Text-Editor, und fügen Sie dann am Ende (unmittelbar vor `</Project>` dem schließenden Tag) die folgenden Zeilen hinzu:
+1. Öffnen Sie die Datei `.csproj` für das IOS-App-Projekt in einem Text-Editor, und fügen Sie dann am Ende die folgenden Zeilen hinzu (unmittelbar vor dem schließenden `</Project>`-Tag):
 
     ```xml
     <PropertyGroup>
@@ -46,7 +46,7 @@ Diese Schritte funktionieren für alle IOS-Projekte, die die MSBuild-Build-Engin
 
 ## <a name="notes"></a>Hinweise
 
-- Die `CreateIpaDependsOn` -Eigenschaft wird in der `Xamarin.iOS.Common.targets` Datei definiert, die Teil von xamarin. IOS ist. Dies verhält sich wie im Abschnitt Überschreiben von [vordefinierten Zielen](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) im Artikel [Vorgehensweise: Erweitern Sie den Visual Studio-](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)Buildprozess.
+- Die `CreateIpaDependsOn`-Eigenschaft wird in der Datei `Xamarin.iOS.Common.targets` definiert, die Teil von xamarin. IOS ist. Dies verhält sich wie im Abschnitt Überschreiben von [vordefinierten Zielen](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) im Artikel [Vorgehensweise: Erweitern Sie den Visual Studio-Buildprozess](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process).
 
 - Sie können eine Verschiebungs Aufgabe anstelle einer **Kopier** **Aufgabe verwenden** , wenn Sie dies bevorzugen. Wenn Sie diese Option auswählen und unter Windows aufbauen, müssen Sie den voll qualifizierten Aufgaben Namen `<Microsoft.Build.Tasks.Move>` verwenden, um eine Mehrdeutigkeit mit den xamarinvs-Buildaufgaben zu vermeiden.
 
@@ -56,7 +56,7 @@ Ja, Sie können hierfür angepasste MSBuild-Ziele verwenden. Die einfachste Opti
 
 Diese Schritte funktionieren für alle IOS-Projekte, die die MSBuild-Build-Engine unter Mac oder Windows verwenden. (Hinweis: für alle Unified API Projekte wird die MSBuild-Build-Engine verwendet.)
 
-1. Öffnen Sie `.csproj` die Datei für das IOS-App-Projekt in einem Text-Editor, und fügen Sie dann am Ende (unmittelbar vor `</Project>` dem schließenden Tag) die folgenden Zeilen hinzu.
+1. Öffnen Sie die Datei `.csproj` für das IOS-App-Projekt in einem Text-Editor, und fügen Sie dann am Ende die folgenden Zeilen hinzu (unmittelbar vor dem schließenden `</Project>`-Tag).
 
     ```xml
     <PropertyGroup>
@@ -77,10 +77,10 @@ Diese Schritte funktionieren für alle IOS-Projekte, die die MSBuild-Build-Engin
     </Target>
     ```
 
-2. Legen Sie `DestinationFolder` den auf den gewünschten Ausgabeordner fest. Wie üblich können Sie MSBuild-Eigenschaften ( `$(OutputPath)`z. b.) in diesem Argument verwenden, wenn Sie möchten.
+2. Legen Sie den `DestinationFolder` auf den gewünschten Ausgabeordner fest. Wie üblich können Sie MSBuild-Eigenschaften (wie `$(OutputPath)`) in diesem Argument verwenden, wenn Sie möchten.
 
 ## <a name="notes"></a>Hinweise
 
-- Die `CreateIpaDependsOn` -Eigenschaft wird in der `Xamarin.iOS.Common.targets` Datei definiert, die Teil von xamarin. IOS ist. t verhält sich wie im Abschnitt Überschreiben von [vordefinierten Zielen](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) im Artikel [Vorgehensweise: Erweitern Sie den Visual Studio-](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)Buildprozess.
+- Die `CreateIpaDependsOn`-Eigenschaft wird in der Datei `Xamarin.iOS.Common.targets` definiert, die Teil von xamarin. IOS ist. t verhält sich wie im Abschnitt Überschreiben von [vordefinierten Zielen](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) im Artikel [Vorgehensweise: Erweitern Sie den Visual Studio-Buildprozess](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process).
 
 - Sie können eine Verschiebungs Aufgabe anstelle einer **Kopier** **Aufgabe verwenden** , wenn Sie dies bevorzugen. Wenn Sie diese Option auswählen und unter Windows aufbauen, müssen Sie den voll qualifizierten Aufgaben Namen `<Microsoft.Build.Tasks.Move>` verwenden, um eine Mehrdeutigkeit mit den xamarinvs-Buildaufgaben zu vermeiden.

@@ -4,15 +4,15 @@ description: In diesem Dokument wird die Beziehung zwischen einer IOS-APP, einer
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: dcadb5146df39aa4887e28b65078acc9454f3d34
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3dcd5f17b35b9829831adcf997d8bde97c0572e7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767983"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030160"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchos-Projekt Verweise in xamarin
 
@@ -26,30 +26,30 @@ Zeigen Sie die Verweise durch Doppelklicken auf die Knoten Verweise für jedes P
 
 - **App-Referenz für** **iPhone-App**
 
-  ![](project-references-images/catalog-reference1.png "App-Referenz für iPhone-App")
+  ![](project-references-images/catalog-reference1.png "iPhone app references Watch App")
 
 - **App-Verweise ansehen** APP- **Erweiterung** ansehen
 
-  ![](project-references-images/catalog-reference2.png "App-Referenz für iPhone-App")
+  ![](project-references-images/catalog-reference2.png "iPhone app references Watch App")
 
 - Die **Watch-App-Erweiterung** verweist nicht auf eines der anderen Projekte.
 
-  ![](project-references-images/catalog-reference3.png "Watch-App-Erweiterung verweist nicht auf andere Projekte")
+  ![](project-references-images/catalog-reference3.png "Watch App Extension does not reference the other projects")
 
 ## <a name="bundle-identifiers"></a>Bündel Bezeichner
 
 Außerdem müssen Sie sicherstellen, dass die **Bündel** Bezeichner korrekt sind.
-Alle drei Projekte sollten das *gleiche* bezeichnerpräfix haben, wobei die beiden überwachungsprojekte über vordefinierte `watchkitapp`Erweiterungen von `watchkitextension` und verfügen, wie im folgenden dargestellt (für das **watchkitcatalog** -Beispiel):
+Alle drei Projekte sollten das *gleiche* bezeichnerpräfix haben, wobei die beiden überwachungsprojekte über vordefinierte Erweiterungen von `watchkitextension` und `watchkitapp`verfügen (für das **watchkitcatalog** -Beispiel):
 
-- Einheitliches xamarin. IOS-Projekt:`com.xamarin.WatchKitCatalog`
+- Einheitliches xamarin. IOS-Projekt `com.xamarin.WatchKitCatalog`
 
 - Watchkit-Erweiterungsprojekt-`com.xamarin.WatchKitCatalog.watchkitextension`
 
-- App-Projekt überwachen:`com.xamarin.WatchKitCatalog.watchkitapp`
+- App-Projekt überwachen-`com.xamarin.WatchKitCatalog.watchkitapp`
 
 Stellen Sie außerdem sicher, dass diese Einstellungen für " **Info. plist** " korrekt sind:
 
-- Das Watch-APP- `WKCompanionAppBundleIdentifier` Projekt stimmt mit der Bündel-ID der übergeordneten/Container-App überein (d.h. der APP, die auf dem iPhone ausgeführt wird).
+- Die `WKCompanionAppBundleIdentifier` des Watch-App-Projekts stimmt mit der Bündel-ID der übergeordneten/Container-App überein (d... die, die auf dem iPhone läuft);
 
 - Die **wkapp-Bundle-ID** des Watch Kit-Erweiterungsprojekts stimmt mit der Bündel-ID des Watch-App-Projekts überein.
 
@@ -59,17 +59,17 @@ Dieser Screenshot zeigt die Info. plist-Datei der **Watch-Erweiterung** , in der
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![](project-references-images/infoplist-extension.png "Dieser Screenshot ist die Datei \"Info. plist\" der Watch-Erweiterung.")
+![](project-references-images/infoplist-extension.png "This screenshot is the Watch Extension's Info.plist file")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](project-references-images/infoplist-extension-vs.png "Dieser Screenshot ist die Datei \"Info. plist\" der Watch-Erweiterung.")
+![](project-references-images/infoplist-extension-vs.png "This screenshot is the Watch Extension's Info.plist file")
 
 -----
 
 Dieser Screenshot ist die Datei "Info. plist" der **Watch-App** .
 Die aktuelle **Überwachungs-Betriebssystem** Version ist 8,2, daher sollte das **Bereitstellungs Ziel** für die Überwachungs-APP **8,2**lauten. Beachten Sie Folgendes: Wenn Sie Xcode 6,3 installiert haben, ist dieser Wert möglicherweise auf 8,3 festgelegt. ändern Sie den Wert 8,2.
 
-![](project-references-images/infoplist-watchapp.png "Die Datei \"Watch Info. plist\"")
+![](project-references-images/infoplist-watchapp.png "The watch Info.plist file")
 
 Das Bereitstellungs Ziel für die Watch-App kann sich von der Watch-Erweiterung und der IOS-App unterscheiden.

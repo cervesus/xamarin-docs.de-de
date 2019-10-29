@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie die Berührungs-ID, di
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: bc797d250b4b66ebfd06bad76c3f43759a65e7c3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 112a2a038be9f749f37d2d3260d08f2e58b0c597
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292515"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031429"
 ---
 # <a name="touch-id-in-xamarinios"></a>Berührungs-ID in xamarin. IOS
 
@@ -29,7 +29,7 @@ Keychain ist eine große Datenbank, die sicheren Speicher für Kenn Wörter, Sch
 Keychain ist eine spezialisierte Datenbank, in der jede Zeile als _Keychain-Element_bezeichnet wird. Jedes Element wird von Keychain-Attributen beschrieben und besteht aus verschlüsselten Werten. Um die effiziente Verwendung von Keychain zu ermöglichen, ist es für kleine Elemente oder _Geheimnisse_optimiert.
 Jedes Keychain-Element wird durch die Benutzerkennung und einen eindeutigen geheimen Geräte Schlüssel geschützt. Keychain-Elemente sollten auch dann geschützt werden, wenn Benutzer ihre Geräte nicht verwenden. Dies wird in ios implementiert, da die Elemente nur dann verfügbar werden können, wenn das Gerät entsperrt ist – wenn das Gerät gesperrt ist, sind Sie nicht mehr verfügbar. Sie können auch in einer verschlüsselten Sicherung gespeichert werden. Eines der wichtigsten Features von Keychain besteht darin, die Zugriffs Steuerung zu erzwingen. eine Anwendung kann auf ihren Teil der Keychain zugreifen, und alle anderen Anwendungen werden verhindert. Im folgenden Diagramm wird veranschaulicht, wie eine Anwendung mit der Keychain interagiert:
 
-[![](touchid-images/image1.png "Dieses Diagramm veranschaulicht, wie eine Anwendung mit der Keychain interagiert.")](touchid-images/image1.png#lightbox)
+[![](touchid-images/image1.png "This diagram illustrates how an application interacts with the keychain")](touchid-images/image1.png#lightbox)
 
 ### <a name="secure-enclave"></a>Sichere Enclave
 
@@ -46,14 +46,14 @@ Zuerst sollte Ihre Anwendung die Keychain Abfragen, um zu ermitteln, ob ein Kenn
 
 Access Control Liste ist ein neues Keychain-Element Attribut in ios 8, das die Informationen darüber beschreibt, was geschehen muss, um einen bestimmten Vorgang zuzulassen. Dies kann in der Form angezeigt werden, wenn ein Warnungs Dialogfeld angezeigt oder eine Kennung angefordert werden muss. Mithilfe der ACL können Sie Barrierefreiheit und Authentifizierung für ein Keychain-Element festlegen. Das folgende Diagramm zeigt, wie dieses neue Attribut mit dem Rest des Keychain-Elements verknüpft wird:
 
-[![](touchid-images/image2.png "Dieses Diagramm zeigt, wie dieses neue Attribut mit dem Rest des Keychain-Elements verknüpft wird.")](touchid-images/image2.png#lightbox)
+[![](touchid-images/image2.png "This diagram shows how this new attribute ties in with the rest of the keychain item")](touchid-images/image2.png#lightbox)
 
-Ab IOS 8 gibt es jetzt eine neue Benutzer Anwesenheits Richtlinie, `SecAccessControl`die von der sicheren Enclave auf einem iPhone 5S und höher erzwungen wird. In der folgenden Tabelle sehen Sie, wie die Gerätekonfiguration die Richtlinien Auswertung beeinflussen kann:
+Ab IOS 8 gibt es jetzt eine neue Richtlinie für die Benutzer Präsenz, `SecAccessControl`, die von der sicheren Enclave auf einem iPhone 5S und höher erzwungen wird. In der folgenden Tabelle sehen Sie, wie die Gerätekonfiguration die Richtlinien Auswertung beeinflussen kann:
 
 |Gerätekonfiguration|Richtlinien Auswertung|Sicherungsmechanismus|
 |--- |--- |--- |
-|Gerät ohne Kennung|Kein Zugriff|None|
-|Gerät mit Kennung|Erfordert Kennung|None|
+|Gerät ohne Kennung|Kein Zugriff|Keine|
+|Gerät mit Kennung|Erfordert Kennung|Keine|
 |Gerät mit Berührungs-ID|Bevorzugt die Berührungs-ID|Ermöglicht Passcode|
 
 Alle Vorgänge innerhalb der sicheren Enclave können einander vertrauen. Dies bedeutet, dass wir das Ergebnis der Berührungs-ID-Authentifizierung verwenden können, um die Schlüsselbund Element-Entschlüsselung zu autorisieren. Die sichere Enclave hält auch einen gegen Übereinstimmung mit Fehlern bei Berührungs-IDs. in diesem Fall muss der Benutzer die Kennung wiederherstellen.
@@ -65,17 +65,17 @@ Wie bereits im vorherigen Abschnitt beschrieben, können Anwendungen die lokale 
 
 Derzeit bietet die API nur zwei Funktionen: Erstens werden die vorhandenen Keychain-Dienste durch die Verwendung neuer Keychain-Access Control Listen (ACLs) unterstützt. Keychain-Daten können mit der erfolgreichen Authentifizierung eines Benutzer Fingerabdrucks entsperrt werden.
 
-Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten verwenden `CanEvaluatePolicy` , um zu bestimmen, ob das Gerät die Berührungs-ID akzeptieren kann `EvaluatePolicy` , und dann den Authentifizierungs Vorgang zu starten.
+Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten mithilfe von `CanEvaluatePolicy` ermitteln, ob das Gerät die Berührungs-ID akzeptieren kann, und dann `EvaluatePolicy`, um den Authentifizierungs Vorgang zu starten.
 
 Obwohl beide Funktionen eine lokale Authentifizierung bieten, bieten Sie keinen Mechanismus für die Anwendung oder den Benutzer, um sich bei einem Remote Server zu authentifizieren.
 Die lokale Authentifizierung stellt eine neue Standardbenutzer Oberfläche für die Authentifizierung bereit. Im Fall von "Fingereingabe-ID" handelt es sich hierbei um eine Warnungs Ansicht mit zwei Schaltflächen, wie unten gezeigt. Eine Schaltfläche, die abgebrochen werden soll, und eine Schaltfläche, um die Ausweich Methode für die Authentifizierung zu verwenden – die Kennung. Es gibt auch eine benutzerdefinierte Meldung, die festgelegt werden muss. Es wird empfohlen, diesen Wert zu verwenden, um dem Benutzer zu erklären, warum die Berührungs-ID-Authentifizierung erforderlich ist.
 
-[![](touchid-images/image12.png "Die Berührungs-ID-Authentifizierungs Warnung")](touchid-images/image12.png#lightbox)
+[![](touchid-images/image12.png "The Touch ID authentication alert")](touchid-images/image12.png#lightbox)
 
 ### <a name="with-keychain-services"></a>Mit Keychain-Diensten
 
 Wir haben uns kurz mit der Entschlüsselung eines Keychain-Elements beschäftigt, indem wir mit dem sicheren Enclave unsere Kennung verifizieren. In ios 8 können wir die lokale Authentifizierung verwenden, um die Überprüfung von Finger Eingaben in Verbindung mit der Funktion "Access Control Listen" anzufordern, die die Implementierung des Fall Back Mechanismus oder das Kennwort bereitstellt.
-Um ACL verwenden zu können, sollten Sie `SecAccessControl` die Richtlinie verwenden und dann den Status des Geräts mithilfe `SecAccessible.WhenPasscodeSetThisDeviceOnly` von `SecAccessible.WhenUnlocked`oder überprüfen.
+Um ACL verwenden zu können, sollten Sie die Richtlinie `SecAccessControl` verwenden und dann den Status des Geräts mithilfe `SecAccessible.WhenPasscodeSetThisDeviceOnly` oder `SecAccessible.WhenUnlocked`überprüfen.
 
 #### <a name="considerations-with-acl"></a>Überlegungen zu ACL
 
@@ -92,7 +92,7 @@ Die lokale Authentifizierung wurde als Möglichkeit zum Erfassen von Anmelde Inf
 
 Zu diesem Zweck wird von einer Anwendung die Richtlinien Auswertung innerhalb der lokalen Authentifizierung aufgerufen, die den Vorgang in der sicheren Enclave startet. Sie können dies nutzen, um die Authentifizierung für Ihre APP bereitzustellen, ohne direkt auf die sichere Enclave abzufragen oder darauf zuzugreifen.
 
-[![](touchid-images/image13a.png "Verwenden der lokalen Authentifizierung ohne Keychain-Dienste")](touchid-images/image13a.png#lightbox)
+[![](touchid-images/image13a.png "Using Local Authentication without Keychain Services")](touchid-images/image13a.png#lightbox)
 
 Die Verwendung der lokalen Authentifizierung in Ihrer Anwendung bietet eine einfache Möglichkeit, die Benutzer Überprüfung zu implementieren, z. b. um eine Funktion nur für die Augen des Geräte Besitzers (z. b. Bankinganwendungen) zu entsperren oder um Jugendschutz Personen zu unterliegen. Asyl. Sie können diese Methode auch verwenden, um die Authentifizierung zu erweitern, die bereits vorhanden ist – Benutzer, deren Informationen sicher sind, aber auch über Optionen verfügen.
 
@@ -102,15 +102,15 @@ Bei der Sicherheit ist es auch äußerst wichtig zu wissen, dass es **keinen Zug
 
 Um die Berührungs-ID ohne Keychain zu verwenden, indem Sie die lokale Authentifizierungs-API nutzen, gibt es einige Funktionen, die wir verwenden können. Diese werden im folgenden beschrieben:
 
-- `CanEvaluatePolicy`– Hiermit wird lediglich überprüft, ob das Gerät die Berührungs-ID annehmen kann.
-- `EvaluatePolicy`– Hiermit wird der Authentifizierungs Vorgang gestartet, und die Benutzeroberfläche wird angezeigt `true` , `false` und es wird eine Antwort oder zurückgegeben.
-- `DeviceOwnerAuthenticationWithBiometrics`– Dies ist die Richtlinie, die verwendet werden kann, um den Touchscreen der touchkennung anzuzeigen. Beachten Sie, dass hier kein Kennungs Fall Back Mechanismus vorhanden ist. stattdessen sollten Sie diesen Fall Back in Ihre Anwendung implementieren, damit Benutzer die Berührungs-ID-Authentifizierung überspringen können.
+- `CanEvaluatePolicy` – wird lediglich überprüft, ob das Gerät die Berührungs-ID annehmen kann.
+- `EvaluatePolicy` – der Authentifizierungs Vorgang wird gestartet, und die Benutzeroberfläche wird angezeigt, und es wird eine `true` oder `false` Antwort zurückgegeben.
+- `DeviceOwnerAuthenticationWithBiometrics` – Dies ist die Richtlinie, die verwendet werden kann, um den Touchscreen der touchkennung anzuzeigen. Beachten Sie, dass hier kein Kennungs Fall Back Mechanismus vorhanden ist. stattdessen sollten Sie diesen Fall Back in Ihre Anwendung implementieren, damit Benutzer die Berührungs-ID-Authentifizierung überspringen können.
 
 Es gibt einige Einschränkungen bei der Verwendung der lokalen Authentifizierung, die unten aufgeführt sind:
 
 - Wie bei Keychain kann Sie nur im Vordergrund ausgeführt werden. Wenn Sie ihn in einem Hintergrund Thread aufrufen, tritt ein Fehler auf.
 - Beachten Sie, dass die Richtlinien Auswertung möglicherweise fehlschlägt. Eine Kennung-Schaltfläche muss als Fallback implementiert werden.
-- Sie müssen einen `localizedReason` angeben, um zu erläutern, warum die Authentifizierung erforderlich ist. Dies trägt dazu bei, eine Vertrauensstellung mit dem Benutzer zu erstellen.
+- Sie müssen eine `localizedReason` bereitstellen, um zu erläutern, warum die Authentifizierung erforderlich ist. Dies trägt dazu bei, eine Vertrauensstellung mit dem Benutzer zu erstellen.
 
 Im folgenden Abschnitt erfahren Sie, wie Sie die API implementieren, um diese Einschränkungen zu berücksichtigen.
 
@@ -123,19 +123,19 @@ In den vorherigen Abschnitten haben wir uns die Theorie hinter dem Zugriff und d
 Sehen wir uns nun an, wie wir der Anwendung eine Fingereingabe-ID-Authentifizierung hinzufügen. In dieser exemplarischen Vorgehensweise aktualisieren wir das [Storyboard-Tabellen](https://docs.microsoft.com/samples/xamarin/ios-samples/data/storyboardtable/) Beispiel, indem wir eine lokale Authentifizierung hinzufügen, sodass es wie das Beispiel [Storyboard Table – local Authentication](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable-localauthentication) funktioniert, das nur authentifizierten Benutzern das Hinzufügen von Aufgaben zur Liste gestattet.
 
 1. Laden Sie das Beispiel herunter, und führen Sie es in Visual Studio für Mac aus.
-2. Doppelklicken Sie `MainStoryboard.Storyboard` auf, um das Beispiel im IOS-Designer zu öffnen. In diesem Beispiel möchten wir der Anwendung einen neuen Bildschirm hinzufügen, mit dem die Authentifizierung gesteuert wird. Dies erfolgt vor dem aktuellen `MasterViewController`.
+2. Doppelklicken Sie auf `MainStoryboard.Storyboard`, um das Beispiel im IOS-Designer zu öffnen. In diesem Beispiel möchten wir der Anwendung einen neuen Bildschirm hinzufügen, mit dem die Authentifizierung gesteuert wird. Dies erfolgt vor dem aktuellen `MasterViewController`.
 3. Ziehen Sie einen neuen **Ansichts Controller** aus der **Toolbox** auf den **Designoberfläche**. Legen Sie diese als Stamm **Ansichts Controller** durch Drücken von **Strg + Drag** vom **Navigations Controller**fest:
 
-    [![](touchid-images/image4.png "Festlegen des root View Controller")](touchid-images/image4.png#lightbox)
+    [![](touchid-images/image4.png "Set the Root View Controller")](touchid-images/image4.png#lightbox)
 4. Benennen Sie den neuen Ansichts Controller `AuthenticationViewController`.
-5. Ziehen Sie als nächstes eine Schaltfläche, und platzieren `AuthenticationViewController`Sie Sie auf dem. Nennen Sie `AuthenticateButton`diese, und versehen Sie Sie `Add a Chore`mit dem Text.
-6. Erstellen Sie ein Ereignis für `AuthenticateButton` den `AuthenticateMe`aufgerufenen.
-7. Erstellen Sie ein manuelles Bild `AuthenticationViewController` aus, indem Sie auf die schwarze Leiste am unteren Rand klicken, **STRG + Ziehen** von `MasterViewController` der Leiste auf die und dann auf **Push** (oder bei Verwendung von Größenklassen **anzeigen** ) klicken:
+5. Ziehen Sie als nächstes eine Schaltfläche, und platzieren Sie Sie auf dem `AuthenticationViewController`. Nennen Sie dieses `AuthenticateButton`, und versehen Sie ihm den Text `Add a Chore`.
+6. Erstellen Sie ein Ereignis auf dem `AuthenticateButton` `AuthenticateMe`aufgerufen.
+7. Erstellen Sie einen manuellen enumerationskit aus `AuthenticationViewController` durch Klicken auf die schwarze Leiste unten und **STRG + Ziehen** von der Leiste zum `MasterViewController` und Auswählen von **Push** (oder **anzeigen** bei Verwendung von Größenklassen):
 
-    [![](touchid-images/image5.png "Ziehen Sie von der Leiste auf den masterviewcontroller, und wählen Sie Pushvorgang oder anzeigen aus.")](touchid-images/image6.png#lightbox)
-8. Klicken Sie auf den neu erstellten Abschnitt, und versehen Sie ihn `AuthenticationSegue`wie unten dargestellt mit dem Bezeichner:
+    [![](touchid-images/image5.png "Drag from the bar to the MasterViewController and choosing push or show")](touchid-images/image6.png#lightbox)
+8. Klicken Sie auf den neu erstellten Abschnitt, und legen Sie ihm den Bezeichner `AuthenticationSegue`(siehe unten):
 
-    [![](touchid-images/image7.png "Legen Sie den segue-Bezeichner auf authenticationsegue fest.")](touchid-images/image7.png#lightbox)
+    [![](touchid-images/image7.png "Set the segue identifier to AuthenticationSegue")](touchid-images/image7.png#lightbox)
 9. Fügen Sie den folgenden Code zu `AuthenticationViewController` hinzu:
 
     ```csharp
@@ -166,19 +166,19 @@ Sehen wir uns nun an, wie wir der Anwendung eine Fingereingabe-ID-Authentifizier
 
 Dies ist der gesamte Code, den Sie benötigen, um die Berührungs-ID-Authentifizierung mit lokaler Authentifizierung zu implementieren. Die markierten Zeilen in der Abbildung unten zeigen die Verwendung der lokalen Authentifizierung:
 
-[![](touchid-images/image8.png "Die markierten Zeilen zeigen die Verwendung der lokalen Authentifizierung an.")](touchid-images/image8.png#lightbox)
+[![](touchid-images/image8.png "The highlighted lines show the use of Local Authentication")](touchid-images/image8.png#lightbox)
 
-Zuerst müssen wir festlegen, ob das Gerät Fingereingabe `CanEvaluatePolicy` -IDs akzeptieren kann, indem es verwendet und die Richtlinie `DeviceOwnerAuthenticationWithBiometrics`übergibt. Wenn dies zutrifft, können wir die Benutzeroberfläche der touchid mithilfe `EvaluatePolicy`von anzeigen. Es gibt drei Informationen, die wir an `EvaluatePolicy` – übergeben müssen, die Richtlinie selbst, eine Zeichenfolge, die die Gründe für die Authentifizierung erläutert, und einen Antwort Handler. Der Antwort Handler teilt der Anwendung mit, was Sie im Falle einer erfolgreichen oder fehlgeschlagenen Authentifizierung tun soll. Sehen wir uns den Antwort Handler genauer an:
+Zuerst müssen wir festlegen, ob das Gerät Fingereingabe-IDs akzeptieren kann, indem es die `CanEvaluatePolicy` verwendet und die Richtlinie `DeviceOwnerAuthenticationWithBiometrics`übergibt. Wenn dies zutrifft, können wir die Benutzeroberfläche der touchid mithilfe `EvaluatePolicy`anzeigen. Es gibt drei Informationen, die wir an `EvaluatePolicy` übergeben müssen – die Richtlinie selbst, eine Zeichenfolge, die erläutert, warum die Authentifizierung erforderlich ist, und einen Antwort Handler. Der Antwort Handler teilt der Anwendung mit, was Sie im Falle einer erfolgreichen oder fehlgeschlagenen Authentifizierung tun soll. Sehen wir uns den Antwort Handler genauer an:
 
-[![](touchid-images/image9.png "Der Antwort Handler.")](touchid-images/image9.png#lightbox)
+[![](touchid-images/image9.png "The reply handler")](touchid-images/image9.png#lightbox)
 
-Der Antwort Handler `LAContextReplyHandler`wird vom Typ angegeben, der die Parameter Success – a `bool` Value und eine `NSError` aufgerufene `error`annimmt. Wenn der Vorgang erfolgreich ist, können wir tatsächlich den gewünschten Vorgang ausführen – in diesem Fall wird der Bildschirm angezeigt, auf dem wir ein neues Chore hinzufügen können. Beachten Sie, dass eine der Einschränkungen der lokalen Authentifizierung darin besteht, dass Sie im Vordergrund ausgeführt werden muss. Stellen Sie daher `InvokeOnMainThread`sicher, dass Sie Folgendes verwenden:
+Der Antwort Handler wird vom Typ `LAContextReplyHandler`angegeben, der die Parameter Success – a `bool` Wert und eine `NSError` namens `error`annimmt. Wenn der Vorgang erfolgreich ist, können wir tatsächlich den gewünschten Vorgang ausführen – in diesem Fall wird der Bildschirm angezeigt, auf dem wir ein neues Chore hinzufügen können. Beachten Sie, dass eine der Einschränkungen der lokalen Authentifizierung darin besteht, dass Sie im Vordergrund ausgeführt werden muss. Stellen Sie daher sicher, dass Sie `InvokeOnMainThread`verwenden:
 
-[![](touchid-images/image10.png "Verwenden von invokeonmainthread für die lokale Authentifizierung")](touchid-images/image10.png#lightbox)
+[![](touchid-images/image10.png "Use InvokeOnMainThread for Local Authentication")](touchid-images/image10.png#lightbox)
 
-Wenn die Authentifizierung erfolgreich war, möchten wir zum Schluss zu `MasterViewController`wechseln. Hierfür `PerformSegue` kann die-Methode verwendet werden:
+Wenn die Authentifizierung erfolgreich war, möchten wir schließlich zum `MasterViewController`wechseln. Die `PerformSegue`-Methode kann dazu verwendet werden:
 
-[![](touchid-images/image11.png "\"Performangue\"-Methode für den Übergang zum masterviewcontroller aufzurufen")](touchid-images/image11.png#lightbox)
+[![](touchid-images/image11.png "Call PerformSegue method to transition to the MasterViewController")](touchid-images/image11.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 

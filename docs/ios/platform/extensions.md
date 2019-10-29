@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 0cf44a05f8b40a07dcc099d5789171f4a234a0c2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70290604"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032570"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>IOS-Erweiterungen in xamarin. IOS
 
@@ -27,7 +27,7 @@ Alle Erweiterungen werden zusammen mit einer Container-App installiert (wobei be
 
 ## <a name="extension-points"></a>Erweiterungs Punkte
 
-|Geben Sie Folgendes ein:|Beschreibung|Erweiterungs Punkt|Host-App|
+|Typ|Beschreibung|Erweiterungs Punkt|Host-App|
 |--- |--- |--- |--- |
 |Aktion|Spezieller Editor oder Viewer für einen bestimmten Medientyp|`com.apple.ui-services`|Beliebig|
 |Dokument Anbieter|Ermöglicht es der APP, einen Remote Dokument Speicher zu verwenden.|`com.apple.fileprovider-ui`|Apps, die einen [uidocumentpickerviewcontroller](xref:UIKit.UIDocumentPickerViewController) verwenden|
@@ -49,9 +49,9 @@ Universelle Einschränkungen:
 - Erweiterungen können nicht auf die Kameras oder das Mikrofon des Geräts zugreifen (obwohl Sie auf vorhandene Mediendateien zugreifen können).
 - Erweiterungen können keine Air-Drop-Daten empfangen (obwohl Sie Daten über die luftablage übertragen können).
 - [Uiaktionsheet](xref:UIKit.UIActionSheet) und [UIAlertView](xref:UIKit.UIAlertView) sind nicht verfügbar. Erweiterungen müssen [uialertcontroller](xref:UIKit.UIAlertController) verwenden
-- Mehrere Mitglieder von [UIApplication](xref:UIKit.UIApplication) sind nicht verfügbar: [UIApplication. sharedapplikation](xref:UIKit.UIApplication.SharedApplication), [UIApplication. OpenURL](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl)), [UIApplication. beginignoringinteraktionevents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) und [ UIApplication. endignoringinteraktionevents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
+- Mehrere Mitglieder von [UIApplication](xref:UIKit.UIApplication) sind nicht verfügbar: [UIApplication. sharedapplikation](xref:UIKit.UIApplication.SharedApplication), [UIApplication. OpenURL](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl)), [UIApplication. beginignoringinteraktionevents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) und [UIApplication. endignoringinteraktionevents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - IOS erzwingt eine Speicher Auslastungs Beschränkung von 16 MB für heutige Erweiterungen.
-- Standardmäßig haben Tastatur Erweiterungen keinen Zugriff auf das Netzwerk. Dies wirkt sich auf das Debuggen auf dem Gerät aus (die Einschränkung wird im Simulator nicht erzwungen), da xamarin. IOS zum Funktionieren des Debuggens Netzwerk Zugriff benötigt. Sie können den Netzwerk Zugriff anfordern, indem Sie den `Requests Open Access` Wert in der Info. plist-Datei des Projekts auf `Yes` festlegen. Weitere Informationen zu Einschränkungen bei der Tastatur Erweiterung finden Sie im [benutzerdefinierten Tastatur Handbuch](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) von Apple.
+- Standardmäßig haben Tastatur Erweiterungen keinen Zugriff auf das Netzwerk. Dies wirkt sich auf das Debuggen auf dem Gerät aus (die Einschränkung wird im Simulator nicht erzwungen), da xamarin. IOS zum Funktionieren des Debuggens Netzwerk Zugriff benötigt. Sie können den Netzwerk Zugriff anfordern, indem Sie den `Requests Open Access` Wert in der Info. plist-Datei des Projekts auf `Yes`festlegen. Weitere Informationen zu Einschränkungen bei der Tastatur Erweiterung finden Sie im [benutzerdefinierten Tastatur Handbuch](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) von Apple.
 
 Informationen zu den einzelnen Einschränkungen finden Sie im [Programmier Handbuch zur APP-Erweiterung](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)von Apple.
 
@@ -89,13 +89,13 @@ Die Container-APP, die zum Installieren der Erweiterung verwendet wird, muss die
 
 Außerdem gelten für das Projekt der Erweiterung die folgenden Anforderungen:
 
-- Sie muss über eine Bündel-ID verfügen, die mit der Bündel-ID Ihrer Container-App beginnt. Wenn die Container-App beispielsweise einen Bündel Bezeichner `com.myCompany.ContainerApp` hat, kann der Bezeichner der Erweiterung `com.myCompany.ContainerApp.MyExtension` werden: 
+- Sie muss über eine Bündel-ID verfügen, die mit der Bündel-ID Ihrer Container-App beginnt. Wenn die Container-App beispielsweise einen Bündel Bezeichner `com.myCompany.ContainerApp`hat, kann der Bezeichner der Erweiterung `com.myCompany.ContainerApp.MyExtension`werden: 
 
   ![](extensions-images/bundleidentifiers.png) 
-- Er muss den Schlüssel `NSExtensionPointIdentifier` mit einem entsprechenden Wert (z. b. `com.apple.widget-extension` **für ein Aktuelles** Benachrichtigungs Center-Widget) in seiner `Info.plist` Datei definieren.
+- Er muss den Schlüssel `NSExtensionPointIdentifier`mit einem entsprechenden Wert (z. b. `com.apple.widget-extension` **für ein Aktuelles** Benachrichtigungs Center-Widget) in seiner `Info.plist` Datei definieren.
 - Außerdem muss *entweder* der `NSExtensionMainStoryboard` Schlüssel oder der `NSExtensionPrincipalClass` Schlüssel in der `Info.plist` Datei mit einem geeigneten Wert definiert werden:
   - Verwenden Sie den `NSExtensionMainStoryboard` Schlüssel, um den Namen des Storyboards anzugeben, das die Hauptbenutzer Oberfläche für die Erweiterung darstellt (minus `.storyboard`). Beispielsweise `Main` für die `Main.storyboard` Datei.
-  - Verwenden Sie den `NSExtensionPrincipalClass` Schlüssel, um die Klasse anzugeben, die beim Start der Erweiterung initialisiert wird. Der Wert muss mit dem **Registrierungs** Wert ihrer `UIViewController` identisch sein: 
+  - Verwenden Sie den `NSExtensionPrincipalClass` Schlüssel, um die Klasse anzugeben, die beim Start der Erweiterung initialisiert wird. Der Wert muss mit dem **Registrierungs** Wert ihrer `UIViewController`identisch sein: 
 
   ![](extensions-images/registerandprincipalclass.png)
 
@@ -166,7 +166,7 @@ Gehen Sie folgendermaßen vor, um die Benutzeroberfläche im Code zu erstellen:
 3. Wählen Sie die **Quell Ansicht** (unten auf dem Bildschirm) aus, und öffnen Sie den `NSExtension` Knoten: 
 
     [![](extensions-images/code03.png "Select the Source View from the bottom of the screen and open the NSExtension node")](extensions-images/code03.png#lightbox)
-4. Entfernen Sie die `NSExtensionMainStoryboard` Key, und fügen Sie eine `NSExtensionPrincipalClass` mit dem Wert `CodeBasedViewController` hinzu: 
+4. Entfernen Sie die `NSExtensionMainStoryboard` Key, und fügen Sie eine `NSExtensionPrincipalClass` mit dem Wert `CodeBasedViewController`hinzu: 
 
     [![](extensions-images/code04.png "Remove the NSExtensionMainStoryboard key and add a NSExtensionPrincipalClass with the value CodeBasedViewController")](extensions-images/code04.png#lightbox)
 5. Speichern Sie die Änderungen.
@@ -266,7 +266,7 @@ Das neue Widget wird der Ansicht **heute** hinzugefügt, und die Ergebnisse werd
 
 Die oben erstellte Beispiel Erweiterung kommuniziert nicht mit der zugehörigen Host-app (dem Bildschirm **heute** ). Wenn dies der Fall ist, wird die [extensioncontext](xref:Foundation.NSExtensionContext) -Eigenschaft der Klassen `TodayViewController` oder `CodeBasedViewController` verwendet. 
 
-Bei Erweiterungen, die Daten von Ihren Host-apps empfangen, werden die Daten in Form eines Arrays von [nsextensionitem](xref:Foundation.NSExtensionItem) -Objekten verwendet, die in der [inputitems](xref:Foundation.NSExtensionContext.InputItems) -Eigenschaft des [extensioncontext](xref:Foundation.NSExtensionContext) der `UIViewController` der Erweiterung gespeichert sind.
+Bei Erweiterungen, die Daten von Ihren Host-apps empfangen, werden die Daten in Form eines Arrays von [nsextensionitem](xref:Foundation.NSExtensionItem) -Objekten verwendet, die in der [inputitems](xref:Foundation.NSExtensionContext.InputItems) -Eigenschaft des [extensioncontext](xref:Foundation.NSExtensionContext) der `UIViewController`der Erweiterung gespeichert sind.
 
 Andere Erweiterungen, wie z. b. die Erweiterungen für die Fotobearbeitung, unterscheiden sich möglicherweise zwischen dem Benutzer, der die Nutzung Dies wird über die [CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*) -Methode und die [CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*) -Methode der [extensioncontext](xref:Foundation.NSExtensionContext) -Eigenschaft an die Host-app zurück signalisiert.
 

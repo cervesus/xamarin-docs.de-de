@@ -4,19 +4,19 @@ description: Mit IOS 8 hat Apple eine Vielzahl von neuen Frameworks und APIs ber
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752016"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031806"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
-_Mit IOS 8 hat Apple eine Vielzahl von neuen Frameworks und APIs bereitgestellt, mit denen sich Entwickler begeistern und begeistern können. In diesem Handbuch werden diese neuen APIs vorgestellt und erläutert, wie IOS 8 von Entwicklern und Benutzern profitieren kann._
+_mit IOS 8 hat Apple eine Vielzahl von neuen Frameworks und APIs bereitgestellt, mit denen sich Entwickler begeistern und begeistern. In diesem Handbuch werden diese neuen APIs vorgestellt und erläutert, wie IOS 8 von Entwicklern und Benutzern profitieren kann._
 
 IOS 7 hat die gesamte IOS-Benutzeroberfläche von dem ersten iPhone-Betriebssystem, das von Benutzern und Entwicklern erwartet wurde, visuell geändert. IOS 8 fährt damit fort, indem viele Frameworks für Entwickler bereitgestellt werden, die es Benutzern ermöglichen, fast alle Aspekte ihrer Lebensdauer direkt von Ihrem iPhone aus zu steuern. Beispielsweise können Integrität und Fitness mit *healthkit*analysiert werden, Kennungen sind mit der biometrischen Authentifizierung über *localauthentication*veraltet, *App-Erweiterungen* eröffnen einen Kommunikationskanal zwischen Drittanbieter-apps und  *Homekit* ermöglicht die Möglichkeit, Ihr Haus in die Zukunft zu versetzen. 
 
@@ -26,7 +26,7 @@ In diesem Handbuch werden die neuen APIs für xamarin. IOS-Entwickler vorgestell
 
 Es gibt auch einige APIs, die in ios 8 als veraltet eingestuft wurden, die am Ende dieses Dokuments ausführlich erläutert werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Zum Erstellen von IOS 8-Apps in Visual Studio für Mac sind die folgenden Schritte erforderlich:
 
@@ -48,7 +48,7 @@ Mit homekit können Drittanbieter-apps und Siri Zubehör erkennen und ihrer eige
 
 Das folgende Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör:
 
-![](introduction-to-ios8-images/image1.png "Dieses Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör.")
+![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
 Um mit homekit zu beginnen, müssen Entwickler sicherstellen, dass für das Bereitstellungs Profil der homekit-Dienst ausgewählt ist. Apple hat Entwicklern auch ein homekit-Simulator-Add-in für Xcode bereitgestellt. Diese finden Sie im [Apple Developer Center](https://developer.apple.com/downloads/index.action)unter `Hardware IO Tools for Xcode`. 
 
@@ -68,9 +68,9 @@ App-Erweiterungen, die zu viel mplify sind, sind eine Möglichkeit für Drittanb
 
 Der erste Schritt beim Erstellen einer APP-Erweiterung besteht darin, den richtigen Erweiterungs Punkt zu definieren – Dies ist wichtig, um das Verhalten und die Verfügbarkeit der richtigen APIs sicherzustellen. Um eine APP-Erweiterung in Visual Studio für Mac zu erstellen, fügen Sie Sie einer vorhandenen Anwendung hinzu, indem Sie der Projekt Mappe ein neues Projekt hinzufügen.
 
-Navigieren Sie im Dialogfeld **Neues Projekt** **C#**  > zu **IOS** > -**Unified API** > **Erweiterungen**, wie im folgenden Screenshot veranschaulicht:
+Navigieren Sie im Dialogfeld **Neues Projekt** zu **C#**  > **IOS** - > **Unified API** > **Erweiterungen**, wie im folgenden Screenshot veranschaulicht:
 
-![](introduction-to-ios8-images/image2.png "Erstellen einer neuen Erweiterung")
+![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
 Das Dialogfeld "Neues Projekt" enthält sieben neue Projektvorlagen zum Erstellen von App-Erweiterungen, die im folgenden erläutert werden. Beachten Sie, dass viele der Erweiterungen sich auf andere neue APIs in ios beziehen, wie z. b. die Dokument Auswahl:
 
@@ -91,7 +91,7 @@ Es gibt zwei Möglichkeiten, die Berührungs-ID als Authentifizierungsmechanismu
 
 Erstens werden die vorhandenen Keychain-Dienste durch die Verwendung neuer Keychain-Access Control Listen (ACLs) unterstützt. Keychain-Daten können mit der erfolgreichen Authentifizierung eines Benutzer Fingerabdrucks entsperrt werden.
 
-Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten verwenden `CanEvaluatePolicy` , um zu bestimmen, ob das Gerät die Berührungs-ID akzeptieren kann `EvaluatePolicy` , und dann den Authentifizierungs Vorgang zu starten.
+Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten mithilfe von `CanEvaluatePolicy` ermitteln, ob das Gerät die Berührungs-ID akzeptieren kann, und dann `EvaluatePolicy`, um den Authentifizierungs Vorgang zu starten.
 
 Weitere Informationen zur Touch-ID und zur Integration in eine xamarin. IOS-Anwendung finden Sie in der [Einführung in touchid](~/ios/platform/touchid.md) -Anleitungen.
 
@@ -112,7 +112,7 @@ Weitere Informationen finden Sie in unserem [Handzettel](~/ios/platform/handoff.
 ## <a name="unified-storyboards"></a>Einheitliche Storyboards
 IOS 8 umfasst einen neuen einfacheren Verwendungs Mechanismus zum Erstellen der Benutzeroberfläche – das vereinheitlichte Storyboard. Mit einem einzelnen Storyboard, das alle unterschiedlichen Hardware Bildschirmgrößen abdeckt, können schnelle und reaktionsschnelle Ansichten in einem echten "Design einmal erstellt werden.
 
-Vor iOS8 wurden Entwickler verwendet `UIInterfaceOrientation` , um zwischen hoch-und Querformat zu unterscheiden und `UIInterfaceIdiom` zwischen IOS-Geräten zu unterscheiden. In iOS8 ist es nicht mehr erforderlich, separate Storyboards für iPhone-und iPad-Geräte zu erstellen – Ausrichtung und Gerät werden durch die Verwendung von *Größenklassen*bestimmt.
+Vor iOS8 nutzten Entwickler `UIInterfaceOrientation`, um zwischen hoch-und Querformat zu unterscheiden, und `UIInterfaceIdiom`, um zwischen IOS-Geräten zu unterscheiden. In iOS8 ist es nicht mehr erforderlich, separate Storyboards für iPhone-und iPad-Geräte zu erstellen – Ausrichtung und Gerät werden durch die Verwendung von *Größenklassen*bestimmt.
 
 Jedes Gerät wird in der vertikalen und der horizontalen Achse durch eine Size-Klasse definiert, und es gibt zwei Typen von Größenklassen in ios 8:
 
@@ -121,7 +121,7 @@ Jedes Gerät wird in der vertikalen und der horizontalen Achse durch eine Size-K
 
 Wenn die beiden Konzepte gleichzeitig verwendet werden, ist das Ergebnis ein 2 x 2-Raster, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können, wie in der folgenden Abbildung dargestellt:
 
-![](introduction-to-ios8-images/image3.png "Ein Diagramm, das das 2 x 2-Raster darstellt, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können")
+![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
 
 Weitere Informationen zu Größenklassen finden Sie unter [Introduction to Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md).
 

@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: e10a04627b903c02140a6a2ead5c379c1e8bdcf6
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 0c777b8d5326963e959d8bb13d81d7058caa6bde
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021390"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030949"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>Warum schlägt mein iOS-Build fehl mit: Keine gültigen iPhone-Codesignaturschlüssel in Keychain gefunden?
 
@@ -33,7 +33,7 @@ In xamarin. Visual Studio 3,11 ist ein Fehler aufgetreten, der bewirkt hat, dass
 
 ### <a name="how-to-fix"></a>Vorgehensweise beim Beheben
 
-Sie können das Problem umgehen, indem Sie `<CodesignEntitlements>` das-Flag aus den Debugbuilds in der CSPROJ-Datei entfernen. Sie können dies wie folgt tun:
+Sie können das Problem umgehen, indem Sie das `<CodesignEntitlements>`-Flag aus den Debugbuilds in der CSPROJ-Datei entfernen. Sie können dies wie folgt tun:
 
 > [!WARNING]
 > Fehler in csproj-Dateien können das Projekt unterbrechen. Daher empfiehlt es sich, Ihre Dateien zu sichern, bevor Sie dies versuchen.
@@ -41,9 +41,9 @@ Sie können das Problem umgehen, indem Sie `<CodesignEntitlements>` das-Flag aus
 1. Klicken Sie im Lösungs Bereich mit der rechten Maustaste auf das IOS-Projekt, und wählen Sie **Projekt**
 2. Klicken Sie mit der rechten Maustaste erneut auf das Projekt, und wählen Sie **[Projektname]. csproj bearbeiten.**
 3. Suchen Sie die Debug PropertyGroups, Sie sollten mit Flags beginnen, die wie folgt aussehen:
-   - Gen`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
-   - Abgabe`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
-4. Löschen Sie in jedem der Builds, die den Simulator verwenden, die folgende Eigenschaft, oder kommentieren Sie Sie aus:`<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
+   - Debuggen: `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
+   - Release: `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
+4. Löschen Sie in jedem der Builds, die den Simulator verwenden, die folgende Eigenschaft, oder kommentieren Sie Sie aus: `<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
 5. Laden Sie das Projekt neu, und Sie sollten in der Lage sein, Sie im Simulator bereitzustellen.
 
 ### <a name="next-steps"></a>Nächste Schritte
