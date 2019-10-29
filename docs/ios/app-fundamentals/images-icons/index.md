@@ -4,26 +4,26 @@ description: Dieser Abschnitt enthält eine Vielzahl von Artikeln, in denen die 
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6940e07c51dbc19615454e0c51188152db22c63f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 08698fab2bdd1528e7f532dc02c86219f98fd611
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767211"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010206"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Bilder und Symbole in xamarin. IOS
 
 _Dieser Abschnitt enthält eine Vielzahl von Artikeln, in denen die Arbeit mit Bildern in einer xamarin. IOS-App behandelt wird, z. b. die Verwendung als Symbole, Startbildschirme oder deren Einbeziehung in Steuerelemente und das Bereitstellen von Symbolen für benutzerdefinierte Dokumenttypen._
 
-Es gibt mehrere Möglichkeiten, wie Image-Assets in einer IOS-App verwendet werden. Wenn Sie ein Bild einfach als Teil der Benutzeroberfläche einer App anzeigen und es einem UI-Steuerelement wie z `UIButton` . b. oder `UIImageView`zuweisen, können Sie mit xamarin. IOS auf folgende Weise eine hervor artige Grafik zu einer IOS-app hinzufügen: 
+Es gibt mehrere Möglichkeiten, wie Image-Assets in einer IOS-App verwendet werden. Durch einfaches Anzeigen eines Bilds als Teil der Benutzeroberfläche einer APP zu, das Zuweisen zu einem UI-Steuerelement, wie z. b. einer `UIButton` oder `UIImageView`, zum Bereitstellen von Symbolen und Start Bildschirmen, können Sie mithilfe von xamarin. IOS problemlos einer IOS-App großartige Grafiken hinzufügen. : 
 
 - Auflösen **unabhängiger Images** – verwenden Sie die integrierte Unterstützung von IOS zum Arbeiten mit Images über verschiedene Lösungen und Typen von Geräten hinweg (iPhone, iPad usw.).
 - **Asset Catalog Image Sets** : Verwenden Sie Ressourcen **Katalog-Image Gruppen** , um alle Versionen eines bestimmten Abbild Medien Objekts zu verwalten und zu gruppieren, das von einer APP benötigt wird.
 - **Bilder im IOS-Designer** : Verwenden Sie den IOS-Designer, um Bilder für Steuerelemente festzulegen.
-- **Bilder im Code** – verwenden Sie `UIImage` die-Methoden der-Klasse, um bildassets zu laden und mit diesen zu arbeiten C# , und weisen Sie Sie Benutzeroberflächen-Steuerelementen in
+- **Bilder im Code** – verwenden Sie die Methoden der `UIImage` Klasse zum Laden und Verwenden von Image Assets, und weisen Sie diese den C# UI-Steuerelementen im Code zu.
 - **Anwendungssymbol** : definieren Sie das App-Symbol, das für jede IOS-App erforderlich ist. Dies ist das Symbol, auf das der Benutzer vom IOS-Startbildschirm tippt, um die APP zu starten. Außerdem wird dieses Symbol ggf. von Game Center verwendet.
 - **Spotlight-Symbol** : Hiermit wird das Spotlight-Symbol der APP definiert. Jedes Mal, wenn der Benutzer den Namen einer APP in eine Spotlight-Suche eingibt, wird dieses Symbol angezeigt.
 - **Symbol "Einstellungen** ": definieren Sie das Symbol " **Einstellungen** " der app. Wenn der Benutzer die app " **Einstellungen** " auf seinem IOS-Gerät eingibt, wird dieses Symbol am Ende der Einstellungs Liste für die App angezeigt. 
@@ -46,9 +46,9 @@ In diesem Artikel wird das einschließen und Verwalten eines Image Assets in ein
 Apple hat eine Reihe von Erweiterungen zu IOS 10,3 hinzugefügt, die es einer APP ermöglichen, Ihr Symbol zu verwalten:
 
 - `ApplicationIconBadgeNumber`: Ruft das Badge des App-Symbols im Springboard ab oder legt es fest.
-- `SupportsAlternateIcons`: Wenn `true` die APP über eine alternative Gruppe von Symbolen verfügt.
-- `AlternateIconName`-Gibt den Namen des alternativen Symbols zurück, das derzeit `null` ausgewählt ist, oder, wenn das primäre Symbol verwendet wird.
-- `SetAlternameIconName`-Verwenden Sie diese Methode, um das Symbol der APP auf das angegebene Alternative Symbol zu wechseln.
+- `SupportsAlternateIcons`: Wenn `true` der APP ein alternativer Satz von Symbolen.
+- `AlternateIconName`: gibt den Namen des alternativen Symbols zurück, das derzeit ausgewählt ist, oder `null`, wenn das primäre Symbol verwendet wird.
+- `SetAlternameIconName`: Verwenden Sie diese Methode, um das Symbol der APP auf das angegebene Alternative Symbol zu wechseln.
 
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[Startbildschirme](~/ios/app-fundamentals/images-icons/launch-screens.md)
 

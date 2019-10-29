@@ -4,15 +4,15 @@ description: Bei den meisten Anwendungen ist es erforderlich, dass Daten lokal a
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 2343603199661ea39b1f0af172ce0ccf48a2cd66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9906e617b7072ebf7b1213a7278d117dc4f560ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754586"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023861"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin. Android-Datenzugriff
 
@@ -29,9 +29,9 @@ Xamarin. Android unterstützt Datenbankzugriffs-APIs wie z. b.:
 
 Der Großteil des Codes in diesem Abschnitt ist vollständig plattformübergreifend und kann ohne Änderungen unter IOS oder Android ausgeführt werden. Es gibt zwei Beispiel-apps, die erläutert werden:
 
-- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; Einfache Daten Vorgänge schreiben die Ergebnisse in ein Textanzeige Steuerelement;
+- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; einfache Daten Vorgänge schreibt die Ergebnisse in ein Textanzeige Steuerelement;
 
-- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; Integriert Daten Vorgänge in eine kleine funktionierende Anwendung, die eine einfache Datenstruktur auflistet und bearbeitet.
+- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; integriert Daten Vorgänge in eine kleine funktionierende Anwendung, die eine einfache Datenstruktur auflistet und bearbeitet.
 
 Beide Beispiel Lösungen enthalten IOS-und Android-Beispiel Anwendungsprojekte.
 

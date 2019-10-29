@@ -4,15 +4,15 @@ description: In dieser Anleitung wird erläutert, wie Android 6,0 App-Verknüpfu
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: d65e8fabff88489571bba9d03379ff605a6ed0fe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757729"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027745"
 ---
 # <a name="app-linking-in-android"></a>App-Verknüpfung in Android
 
@@ -20,17 +20,17 @@ _In dieser Anleitung wird erläutert, wie Android 6,0 App-Verknüpfungen unterst
 
 ## <a name="app-linking-overview"></a>Übersicht über APP-Verknüpfung
 
-Mobile Anwendungen sind in vielen Fällen nicht mehr &ndash; in einem Silo Leben, da Sie zusammen mit Ihrer Website wichtige Komponenten ihrer Unternehmen sind. Es ist wünschenswert, dass Unternehmen ihre Webpräsenz und mobilen Anwendungen nahtlos mit Links auf einer Website verbinden, die mobile Anwendungen startet und relevante Inhalte in der Mobile App anzeigt. *App-Verknüpfung* (auch als *Deep-Linking*bezeichnet) ist eine Technik, die es einem mobilen Gerät ermöglicht, auf einen URI zu reagieren und eine mobile Anwendung zu starten, die diesem URI entspricht.
+Mobile Anwendungen befinden sich nicht mehr in einem Silo &ndash; in vielen Fällen handelt es sich um wichtige Komponenten ihrer Unternehmen, zusammen mit der Website. Es ist wünschenswert, dass Unternehmen ihre Webpräsenz und mobilen Anwendungen nahtlos mit Links auf einer Website verbinden, die mobile Anwendungen startet und relevante Inhalte in der Mobile App anzeigt. *App-Verknüpfung* (auch als *Deep-Linking*bezeichnet) ist eine Technik, die es einem mobilen Gerät ermöglicht, auf einen URI zu reagieren und eine mobile Anwendung zu starten, die diesem URI entspricht.
 
-Android verarbeitet App-Verknüpfungen über das *Intent-System* &ndash; , wenn der Benutzer auf einen Link in einem mobilen Browser klickt. der Mobile Browser versendet eine Absicht, die Android an eine registrierte Anwendung delegiert. Wenn Sie z. b. auf einen Link auf einer kochwebsite klicken, wird eine Mobile App geöffnet, die dieser Website zugeordnet ist, und dem Benutzer wird eine bestimmte Rezept Anzeige angezeigt. Wenn mehr als eine Anwendung für die Verarbeitung dieser Absicht registriert ist, gibt Android das als *mehrdeutigkeits Dialogfeld bezeichnete Dialog* Feld an, in dem ein Benutzer gefragt wird, welche Anwendung die Anwendung auswählen soll, die die Absicht erfüllen soll, z. b.:
+Android verarbeitet App-Verknüpfungen über das *Intent-System* &ndash; wenn der Benutzer auf einen Link in einem mobilen Browser klickt, verteilt der Mobile Browser eine Absicht, die Android an eine registrierte Anwendung delegiert. Wenn Sie z. b. auf einen Link auf einer kochwebsite klicken, wird eine Mobile App geöffnet, die dieser Website zugeordnet ist, und dem Benutzer wird eine bestimmte Rezept Anzeige angezeigt. Wenn mehr als eine Anwendung für die Verarbeitung dieser Absicht registriert ist, gibt Android das als *mehrdeutigkeits Dialogfeld bezeichnete Dialog* Feld an, in dem ein Benutzer gefragt wird, welche Anwendung die Anwendung auswählen soll, die die Absicht erfüllen soll, z. b.:
 
 ![Screenshot eines Beispiels für die Mehrdeutigkeit](app-linking-images/01-disambiguation-dialog.png)
 
-Android 6,0 verbessert dies mithilfe der automatischen Verknüpfungs Behandlung. Android kann eine Anwendung automatisch als Standard Handler für einen URI &ndash; registrieren, der von der APP automatisch gestartet wird, und direkt zur relevanten Aktivität navigiert. Wie Android 6,0 die Behandlung eines URI beschließt, hängt von den folgenden Kriterien ab:
+Android 6,0 verbessert dies mithilfe der automatischen Verknüpfungs Behandlung. Android kann eine Anwendung automatisch als Standard Handler für einen URI registrieren, &ndash; die APP automatisch gestartet wird und direkt zu der relevanten Aktivität navigiert. Wie Android 6,0 die Behandlung eines URI beschließt, hängt von den folgenden Kriterien ab:
 
-1. **Eine vorhandene APP ist bereits dem URI zugeordnet** . &ndash; Der Benutzer hat möglicherweise bereits eine vorhandene App mit einem URI verknüpft. In diesem Fall wird die Anwendung von Android weiterhin verwendet.
-2. **Dem URI ist keine vorhandene App zugeordnet, aber es ist eine unterstützende App installiert** . &ndash; In diesem Szenario hat der Benutzer keine vorhandene App angegeben, daher verwendet Android die installierte unterstützende Anwendung, um die Anforderung zu verarbeiten.
-3. **Dem URI ist keine vorhandene App zugeordnet, aber es sind viele unterstützende apps installiert** . &ndash; Da es mehrere Anwendungen gibt, die den URI unterstützen, wird das Dialogfeld für die Mehrdeutigkeit angezeigt, und der Benutzer muss auswählen, welche App den URI verarbeiten soll.
+1. **Eine vorhandene APP ist bereits mit dem URI verknüpft** , &ndash; der Benutzer möglicherweise bereits eine vorhandene App mit einem URI verknüpft hat. In diesem Fall wird die Anwendung von Android weiterhin verwendet.
+2. **Dem URI ist keine vorhandene App zugeordnet, aber eine unterstützende APP wird** &ndash; in diesem Szenario installiert, der Benutzer hat keine vorhandene App angegeben, daher verwendet Android die installierte unterstützende Anwendung, um die Anforderung zu verarbeiten.
+3. **Dem URI ist keine vorhandene App zugeordnet, aber viele unterstützende apps werden &ndash; installiert** , da mehrere Anwendungen den URI unterstützen, wird das Dialogfeld für die Mehrdeutigkeit angezeigt, und der Benutzer muss auswählen, welche App den URI verarbeiten soll.
 
 Wenn für den Benutzer keine apps installiert sind, die den URI unterstützen, und anschließend eine installiert wird, legt Android diese Anwendung als Standard Handler für den URI fest, nachdem die Zuordnung zu der Website überprüft wurde, die dem URI zugeordnet ist.
 
@@ -46,8 +46,8 @@ Die APP-Verknüpfung ist in früheren Versionen von Android möglich, indem das 
 
 Das Einrichten von App-Links in Android 6,0 umfasst zwei Hauptschritte:
 
-1. **Hinzufügen eines oder mehrerer Intent-Filter für den Website-URI** &ndash; der Leitfaden für beabsichtigte Filter Android unter How to handle a URL Click in a Mobile Browser.
-2. **Veröffentlichen eines *Digital Assets verknüpft eine JSON* -Datei auf der Website** &ndash; . Dies ist eine Datei, die auf eine Website hochgeladen wird und von Android verwendet wird, um die Beziehung zwischen dem Mobile App und der Domäne der Website zu überprüfen. Ohne diesen kann Android die APP nicht als Standard Handle für URI installieren. der Benutzer muss dies manuell durchführen.
+1. **Hinzufügen eines oder mehrerer Intent-Filter für die Website-URI-** &ndash; the Intent Filters Guide Android in How to handle a URL Click in a Mobile Browser.
+2. **Beim Veröffentlichen eines *Digital Asset wird eine JSON* -Datei auf der Website verknüpft** &ndash; handelt es sich um eine Datei, die auf eine Website hochgeladen wird und von Android verwendet wird, um die Beziehung zwischen dem Mobile App und der Domäne der Website zu überprüfen. Ohne diesen kann Android die APP nicht als Standard Handle für URI installieren. der Benutzer muss dies manuell durchführen.
 
 <a name="configure-intent-filter" />
 
@@ -55,14 +55,14 @@ Das Einrichten von App-Links in Android 6,0 umfasst zwei Hauptschritte:
 
 Es ist erforderlich, einen beabsichtigten Filter zu konfigurieren, der einen URI (oder einen Satz von URIs) von einer Website einer Aktivität in einer Android-Anwendung zuordnet. In xamarin. Android wird diese Beziehung erstellt, indem eine Aktivität mit dem [intentfilterattribute](xref:Android.App.IntentFilterAttribute)versehen wird. Der Intent-Filter muss die folgenden Informationen deklarieren:
 
-- **`Intent.ActionView`** &ndash; Dadurch wird der Intent-Filter registriert, um auf Anforderungen zum Anzeigen von Informationen zu antworten.
-- **`Categories`** Der Intent-Filter sollte sowohl **[Intent. CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** als auch **[Intent. categorydefault](xref:Android.Content.Intent.CategoryDefault)** registrieren, damit der Web-URI ordnungsgemäß verarbeitet werden kann. &ndash;
-- **`DataScheme`** Der Intent-Filter muss und/oder `https`deklarieren `http`. &ndash; Dies sind die einzigen beiden gültigen Schemas.
-- **`DataHost`** &ndash; Dies ist die Domäne, von der die URIs stammen.
+- **`Intent.ActionView`** &ndash; wird der Intent-Filter registriert, um auf Anforderungen zum Anzeigen von Informationen zu antworten.
+- **`Categories`** &ndash; sollte der beabsichtigte Filter sowohl **[Intent. CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** als auch **[Intent. categorydefault](xref:Android.Content.Intent.CategoryDefault)** registrieren, damit der Web-URI ordnungsgemäß verarbeitet werden kann.
+- **`DataScheme`** &ndash; der Intent-Filter `http` und/oder `https`deklarieren muss. Dies sind die einzigen beiden gültigen Schemas.
+- **`DataHost`** &ndash; dies die Domäne ist, von der die URIs stammen.
 - **`DataPathPrefix`** &ndash; Dies ist ein optionaler Pfad zu Ressourcen auf der Website.
-- **`AutoVerify`** &ndash; Das`autoVerify` -Attribut weist Android an, die Beziehung zwischen der Anwendung und der Website zu überprüfen. Dies wird weiter unten erläutert.
+- **`AutoVerify`** &ndash; das `autoVerify`-Attribut die Beziehung zwischen der Anwendung und der Website von Android überprüfen. Dies wird weiter unten erläutert.
 
-Im folgenden Beispiel wird gezeigt, wie das [intentfilterattribute](xref:Android.App.IntentFilterAttribute) verwendet wird, um `https://www.recipe-app.com/recipes` Links von `http://www.recipe-app.com/recipes`und aus zu behandeln:
+Im folgenden Beispiel wird gezeigt, wie das [intentfilterattribute](xref:Android.App.IntentFilterAttribute) verwendet wird, um Links aus `https://www.recipe-app.com/recipes` und `http://www.recipe-app.com/recipes`zu behandeln:
 
 ```csharp
 [IntentFilter(new [] { Intent.ActionView },
@@ -84,15 +84,15 @@ Android überprüft alle Hosts, die von den beabsichtigten Filtern für die Digi
 Android 6,0-App-Verknüpfung erfordert, dass Android die Zuordnung zwischen der Anwendung und der Website überprüft, bevor die Anwendung als Standard Handler für den URI festgelegt wird. Diese Überprüfung erfolgt, wenn die Anwendung erstmalig installiert wird. Die Datei " *Digital Assets Links* " ist eine JSON-Datei, die von den entsprechenden Webdomänen gehostet wird.
 
 > [!NOTE]
-> Das `android:autoVerify` Attribut muss vom Intent-Filter &ndash; festgelegt werden, andernfalls wird die Überprüfung von Android nicht durchgeführt.
+> Das `android:autoVerify`-Attribut muss vom Intent-Filter festgelegt werden &ndash; andernfalls führt Android die Überprüfung nicht durch.
 
 Die Datei wird vom Webmaster der Domäne am Speicherort **https://domain/.well-known/assetlinks.json** platziert.
 
 Die Digital Asset-Datei enthält die Metadaten, die für Android erforderlich sind, um die Zuordnung zu überprüfen. Die Datei " **assetlinks. JSON** " verfügt über die folgenden Schlüssel-Wert-Paare:
 
-- `namespace`&ndash; der Namespace der Android-Anwendung.
-- `package_name`&ndash; der Paketname der Android-Anwendung (im Anwendungs Manifest deklariert).
-- `sha256_cert_fingerprints`&ndash; die SHA256-Fingerabdrücke der signierten Anwendung. Weitere Informationen zum Abrufen des SHA1-Fingerabdrucks einer Anwendung finden Sie im Handbuch [Ermitteln der MD5-oder SHA1-Signatur ihres Keystores](~/android/deploy-test/signing/keystore-signature.md) .
+- `namespace` &ndash; den Namespace der Android-Anwendung.
+- `package_name` &ndash; der Paketname der Android-Anwendung (im Anwendungs Manifest deklariert).
+- `sha256_cert_fingerprints` &ndash; die Fingerabdrücke der signierten Anwendung. Weitere Informationen zum Abrufen des SHA1-Fingerabdrucks einer Anwendung finden Sie im Handbuch [Ermitteln der MD5-oder SHA1-Signatur ihres Keystores](~/android/deploy-test/signing/keystore-signature.md) .
 
 Der folgende Code Ausschnitt ist ein Beispiel für die **Datei "assetlinks. JSON** " mit einer einzelnen aufgelisteten Anwendung:
 
@@ -173,9 +173,9 @@ Es können zwei Tests durchgeführt werden, um sicherzustellen, dass die beabsic
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    - **`Package`** &ndash; Der Paketname der Anwendung.
-    - **`Domain`** &ndash; Die Domänen (durch Leerzeichen getrennt), deren Weblinks von der Anwendung behandelt werden.
-    - **`Status`** &ndash; Dies ist der aktuelle Status der Verbindungs Behandlung für die app. Der Wert bedeutet **immer** , dass die Anwendung deklariert `android:autoVerify=true` hat und die Systemüberprüfung durchgeführt hat. Danach folgt eine hexadezimale Zahl, die den Daten Satz der Einstellung des Android-Systems darstellt.
+    - **`Package`** &ndash; den Paketnamen der Anwendung.
+    - **`Domain`** &ndash; die Domänen (durch Leerzeichen getrennt), deren Weblinks von der Anwendung behandelt werden.
+    - **`Status`** &ndash; dies der aktuelle Status der Verbindungs Behandlung für die APP ist. Der Wert bedeutet **immer** , dass die Anwendung `android:autoVerify=true` deklariert hat und die Systemüberprüfung durchgeführt hat. Danach folgt eine hexadezimale Zahl, die den Daten Satz der Einstellung des Android-Systems darstellt.
 
     Beispiel:
 
@@ -196,6 +196,6 @@ In diesem Leitfaden wurde erläutert, wie die APP-Verknüpfung in Android 6,0 fu
 
 - [Finden der MD5- oder SHA1-Signatur Ihres Keystores](~/android/deploy-test/signing/keystore-signature.md)
 - [Aktivitäten und Intents](https://university.xamarin.com/classes#4)
-- [AppLinks](http://applinks.org/)
+- [Applinks](https://developers.facebook.com/docs/applinks)
 - [Links zu Google Digital Assets](https://developers.google.com/digital-asset-links/)
 - [Anweisungs Listen Generator und Tester](https://developers.google.com/digital-asset-links/tools/generator)

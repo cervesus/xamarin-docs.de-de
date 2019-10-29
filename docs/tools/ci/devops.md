@@ -1,18 +1,18 @@
 ---
 title: DevOps mit Xamarin
 ms.assetid: ff978cc2-5a25-46d6-921b-e51adaa65992
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 manager: crdun
 ms.workload:
 - xamarin
 ms.date: 10/23/2018
-ms.openlocfilehash: de7cb0d3cce97f251fe6d9625fb1373e6aac7a67
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 57e3444ebcbd87607da248ecacca5e76a44f1577
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293686"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007450"
 ---
 # <a name="devops-with-xamarin"></a>DevOps mit Xamarin
 
@@ -26,7 +26,7 @@ In den folgenden Tabellen wird beschrieben, welche DevOps-Features in Visual Stu
 
 ## <a name="agile-tools"></a>Agile-Tools
 
-Referenzlink: **[Informationen zu Agile-Tools und Agile-projektverwaltung](/azure/devops/boards/backlogs/overview?view=vsts)**
+Verweislink: **[Informationen zu Agile-Tools und Agile-Projektverwaltung](/azure/devops/boards/backlogs/overview?view=vsts)**
 
 Allgemeiner Kommentar: alle Planungs- und Nachverfolgungsfunktionen sind vom Projekttyp und den Programmiersprachen unabhängig.
 
@@ -40,7 +40,7 @@ Allgemeiner Kommentar: alle Planungs- und Nachverfolgungsfunktionen sind vom Pro
 
 ## <a name="modeling"></a>Modellierung
 
-Referenzlink: **[Analyze and model architecture (Analysieren und Modellieren der Architektur)](/visualstudio/modeling/analyze-and-model-your-architecture)**
+Verweislink: **[Analyse und Modellarchitektur](/visualstudio/modeling/analyze-and-model-your-architecture)**
 
 Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funktionieren mit .NET-Sprachen wie C#. Mit Code zusammenhängende Aspekte finden Sie unter [Rollen von Architektur- und Modellierungsdiagrammen in der Softwareentwicklung](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools).
 
@@ -53,7 +53,7 @@ Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funkti
 |Architektur-Explorer|Ja||
 |UML-Diagramme (Anwendungsfall, Aktivität, Klasse, Komponente, Sequenz und DSL)|Ja||
 |Ebenendiagramme|Ja||
-|Gültigkeitsprüfung|Ja||
+|Ebenenüberprüfung|Ja||
 
 ## <a name="code"></a>Code
 
@@ -90,19 +90,19 @@ Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
 ## <a name="improve-code-quality"></a>Verbessern der Codequalität
 
-Referenzlink: **[Verbessern der Codequalität](/visualstudio/test/improve-code-quality)**
+Verweislink: **[Verbessern der Codequalität](/visualstudio/test/improve-code-quality)**
 
 |Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |[Analysieren der Qualität von verwaltetem Code](/visualstudio/code-quality/analyzing-managed-code-quality-by-using-code-analysis)|Ja||
 |[Suchen von doppeltem Code mit der Codeklonerkennung](https://msdn.microsoft.com/library/hh205279.aspx)|Ja||
 |[Messen von Komplexität und Verwaltbarkeit verwalteten Codes](/visualstudio/code-quality/measuring-complexity-and-maintainability-of-managed-code)|Ja||
-|[Leistungs-Explorer](/visualstudio/profiling/performance-explorer)|Nein|Verwenden der [Xamarin Profiler](/xamarin/tools/profiler/) über Visual Studio für Mac stattdessen. Beachten Sie, dass der Xamarin Profiler sich derzeit in der Vorschauversion befindet und noch nicht für Windows-Ziele funktioniert.|
+|[Performance Explorer (Leistungs-Explorer)](/visualstudio/profiling/performance-explorer)|Nein|Verwenden Sie stattdessen die [Xamarin Profiler](/xamarin/tools/profiler/) durch Visual Studio für Mac. Beachten Sie, dass der Xamarin Profiler sich derzeit in der Vorschauversion befindet und noch nicht für Windows-Ziele funktioniert.|
 |[Analysieren von .NET Framework-Arbeitsspeicherproblemen](https://msdn.microsoft.com/library/dn342825.aspx)|Nein|Visual Studio-Tools haben keinen Zugriff auf das Mono-Framework für die Profilerstellung.|
 
 ## <a name="release-management"></a>Release Management:
 
-Referenzlink: **[Build und release in Azure-Pipelines und TFS](/azure/devops/pipelines/overview?view=vsts)**
+Referenzlink: **[Build und Release in Azure Pipelines und TFS](/azure/devops/pipelines/overview?view=vsts)**
 
 |Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
@@ -112,7 +112,7 @@ Referenzlink: **[Build und release in Azure-Pipelines und TFS](/azure/devops/pip
 
 ## <a name="monitor-with-hockeyapp"></a>Überwachen mit HockeyApp
 
-Referenzlink: **[Monitor with HockeyApp (Überwachen mit HockeyApp)](https://www.hockeyapp.net/features/)**
+Verweislink: **[Überwachen mit HockeyApp](https://www.hockeyapp.net/features/)**
 
 |Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|

@@ -4,15 +4,15 @@ description: Erstellen Sie Ihre erste Android Wear-APP, und führen Sie Sie auf 
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/10/2018
-ms.openlocfilehash: ce82f10fdb8159d2007d490747329c1a3b5aeecd
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 0fe08856c70d8a23fb768a5b94b933addd42714b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250073"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028669"
 ---
 # <a name="hello-wear"></a>Hello, Wear
 
@@ -62,7 +62,7 @@ Weitere Informationen zum Festlegen des Ziel-Frameworks finden Sie Untergrund Le
 
 ### <a name="3-edit-the-mainaxml-layout"></a>3. Bearbeiten des **Main. axml** -Layouts
 
-Konfigurieren Sie das Layout so, `TextView` dass ein `Button` und ein für das Beispiel enthalten sind: 
+Konfigurieren Sie das Layout so, dass es eine `TextView` und eine `Button` für das Beispiel enthält: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ android:layout_height="match_parent">
 </FrameLayout>
 ```
 
-### <a name="4-edit-the-mainactivitycs-source"></a>4. **MainActivity.cs** Quelle bearbeiten
+### <a name="4-edit-the-mainactivitycs-source"></a>4. Bearbeiten der **MainActivity.cs** -Quelle
 
 Fügen Sie den Code hinzu, um einen Zählers zu erhöhen und anzuzeigen, wenn auf die Schaltfläche geklickt wird: 
 
@@ -137,17 +137,17 @@ Wenn Sie nicht über ein Android Wear-Gerät wie z. b. Android Wear Smartwatch v
 
 Wenn Sie über ein Android Wear-Gerät wie z. b. eine Android Wear-Smartwatch verfügen, können Sie die APP auf dem Gerät ausführen, anstatt einen Emulator zu verwenden. Weitere Informationen zum Debuggen auf einem Wear-Gerät finden Sie unter [Debuggen auf einem Wear-Gerät](~/android/wear/deploy-test/debug-on-device.md).
 
-### <a name="6-run-the-android-wear-app"></a>6. Ausführen der Android Wear-App
+### <a name="6-run-the-android-wear-app"></a>6. führen Sie die Android Wear-App aus.
 
 Das Android Wear-Gerät sollte im Pulldownmenü des Geräts angezeigt werden. Stellen Sie sicher, dass Sie das richtige Android Wear-Gerät oder AVD auswählen, bevor Sie das Debugging starten. Nachdem Sie das Gerät ausgewählt haben, klicken Sie auf die Schaltfläche Wiedergabe, um die APP auf dem Emulator oder Gerät bereitzustellen.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Auswählen von "Wear AVD" im Visual Studio-Geräte Menü](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
+[![auswählen eines "Wear AVD" im Visual Studio-Geräte Menü](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Auswählen von "Wear AVD" im Menü "Visual Studio für Mac Gerät"](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
+[![auswählen eines "Wear AVD" im Menü "Visual Studio für Mac"](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -159,7 +159,7 @@ Wenn Sie einen Überwachungs Emulator verwenden, kann es eine Weile dauern, bis 
 
 Nachdem die APP erfolgreich bereitgestellt wurde, sollte auf dem Bildschirm des Wear-Geräts ein Bildschirm wie der folgende angezeigt werden:
 
-[![Ursprünglicher Bildschirm der Wear-App](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
+[![anfangs Bildschirm der Wear-App](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 Tippen **Sie auf den Klick!** auf der Vorderseite des Wear-Geräts, und sehen Sie sich die Anzahl Inkrement mit jeder Tap an:
 

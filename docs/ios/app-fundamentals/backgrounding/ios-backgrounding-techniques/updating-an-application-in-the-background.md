@@ -4,15 +4,15 @@ description: In diesem Dokument werden verschiedene Möglichkeiten beschrieben, 
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1d5a227f4acdba319eefc91b4991dead5a036eb9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d56af364d63ff78bafbdd7d8043ae4d75d97959
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756330"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010696"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>Aktualisieren einer xamarin. IOS-App im Hintergrund
 
@@ -31,7 +31,7 @@ IOS bietet zwei standortabhängige APIs mit Hintergrund Funktionen:
 1. Die *Regions Überwachung* ist der Prozess der Einrichtung von Bereichen mit Grenzen und dem Reaktivieren des Geräts, wenn der Benutzer eine Region betritt oder verlässt. Bereiche sind zirkulär und können eine unterschiedliche Größe aufweisen. Wenn der Benutzer eine Regions Grenze überschreitet, wird das Gerät aktiviert, um das Ereignis zu verarbeiten, normalerweise durch Auslösen einer Benachrichtigung oder Auslösen einer Aufgabe. Die Regions Überwachung erfordert GPS und erhöht die Akku-und Datennutzung.
 1. Der *bedeutende Standort Änderungs Dienst* ist eine einfachere, energiesparende Option, die für Geräte mit Mobil Funk Radios verfügbar ist. Eine Anwendung, die auf bedeutende Änderungen am Standort lauscht, wird benachrichtigt, wenn das Gerät Zellen Türme wechselt. Dieser Dienst kann verwendet werden, um eine angehaltene oder beendete Anwendung zu aktivieren, und bietet die Möglichkeit, im Hintergrund nach neuen Inhalten zu suchen. Hintergrund Aktivitäten sind auf ungefähr 10 Sekunden beschränkt, es sei denn, Sie sind mit einer [Hintergrundaufgabe](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md) gekoppelt.
 
-Eine Anwendung benötigt nicht den Speicherort `UIBackgroundMode` , um diese Standort abhängigen APIs zu verwenden. Da IOS die Typen von Tasks, die ausgeführt werden können, wenn das Gerät durch Änderungen am Speicherort des Benutzers reaktiviert wird, nicht nachverfolgt, stellen diese APIs eine Problem Umgehung zum Aktualisieren von Inhalten im Hintergrund unter IOS 6 dar. *Beachten Sie, dass das Auslösen von Hintergrund Aktualisierungen mit standortbasierten APIs auf Geräte Ressourcen zurückgreifen wird und Benutzer möglicherweise verwirren, die nicht verstehen, warum eine Anwendung Zugriff auf ihren Speicherort benötigt*. Verwenden Sie bei der Implementierung von Regions Überwachung oder wichtigen Orts Änderungen für die Hintergrundverarbeitung in Anwendungen, die nicht bereits die Location-APIs verwenden, die Diskretion.
+Eine Anwendung benötigt nicht den Speicherort `UIBackgroundMode`, um diese Standort abhängigen APIs zu verwenden. Da IOS die Typen von Tasks, die ausgeführt werden können, wenn das Gerät durch Änderungen am Speicherort des Benutzers reaktiviert wird, nicht nachverfolgt, stellen diese APIs eine Problem Umgehung zum Aktualisieren von Inhalten im Hintergrund unter IOS 6 dar. *Beachten Sie, dass das Auslösen von Hintergrund Aktualisierungen mit standortbasierten APIs auf Geräte Ressourcen zurückgreifen wird und Benutzer möglicherweise verwirren, die nicht verstehen, warum eine Anwendung Zugriff auf ihren Speicherort benötigt*. Verwenden Sie bei der Implementierung von Regions Überwachung oder wichtigen Orts Änderungen für die Hintergrundverarbeitung in Anwendungen, die nicht bereits die Location-APIs verwenden, die Diskretion.
 
 Apps, die die Standortüberwachung für die Hintergrundverarbeitung verwenden, machen einen Fehler in ios 6 verfügbar: Wenn die Anforderungen einer Anwendung nicht in eine für den Hintergrund erforderliche Kategorie passen, haben Sie eingeschränkte backgroundoptionen. Mit der Einführung von zwei neuen APIs, dem *Hintergrund* Abruf und *Remote Benachrichtigungen*, bietet IOS 7 (und höher) die Möglichkeit, sich für weitere Anwendungen gegenseitig zu unterstellen. In den nächsten beiden Abschnitten werden diese neuen APIs eingeführt.
 
@@ -43,9 +43,9 @@ In ios 6 hat eine Anwendung, die in den Vordergrund gewechselt ist, Zeit benöti
 
 Um das Abrufen im Hintergrund zu implementieren, bearbeiten Sie " *Info. plist* ", und aktivieren Sie die Kontrollkästchen **hintergrundmodi** und **Hintergrund** Abruf aktivieren:
 
- [![](updating-an-application-in-the-background-images/fetch.png "Bearbeiten Sie die Datei \"Info. plist\", und aktivieren Sie die Kontrollkästchen hintergrundmodi und Hintergrund Abruf aktivieren.")](updating-an-application-in-the-background-images/fetch.png#lightbox)
+ [![](updating-an-application-in-the-background-images/fetch.png "Edit the Info.plist and check the Enable Background Modes and Background Fetch check boxes")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
-Überschreiben Sie als nächstes die `FinishedLaunching` -Methode, um das minimale Abruf Intervall festzulegen. `AppDelegate` In diesem Beispiel können Sie festlegen, wie oft neue Inhalte abgerufen werden sollen:
+Überschreiben Sie als nächstes in der `AppDelegate`die `FinishedLaunching`-Methode, um das minimale Abruf Intervall festzulegen. In diesem Beispiel können Sie festlegen, wie oft neue Inhalte abgerufen werden sollen:
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -55,7 +55,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-Führen Sie schließlich den Abruf Vorgang aus, `PerformFetch` indem Sie die `AppDelegate`-Methode in der überschreiben und einen *Vervollständigungs Handler*übergeben. Der Abschluss Handler ist ein Delegat, der `UIBackgroundFetchResult`Folgendes annimmt:
+Führen Sie schließlich den Abruf Vorgang durch, indem Sie die `PerformFetch`-Methode im `AppDelegate`überschreiben und einen *Abschluss Handler*übergeben. Der Abschluss Handler ist ein Delegat, der eine `UIBackgroundFetchResult`annimmt:
 
 ```csharp
 public override void PerformFetch (UIApplication application, Action<UIBackgroundFetchResult> completionHandler)
@@ -70,24 +70,24 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 
 Wenn Sie die Inhalts Aktualisierung abgeschlossen haben, wird das Betriebssystem durch Aufrufen des Vervollständigungs Handlers mit dem entsprechenden Status informiert. IOS bietet drei Optionen für den Beendigungs handlerstatus:
 
-1. `UIBackgroundFetchResult.NewData`: Wird aufgerufen, wenn neuer Inhalt abgerufen wurde und die Anwendung aktualisiert wurde.
-1. `UIBackgroundFetchResult.NoData`: Wird aufgerufen, wenn das Abrufen für neuen Inhalt durchlaufen wurde, aber kein Inhalt verfügbar ist.
-1. `UIBackgroundFetchResult.Failed`-Nützlich für die Fehlerbehandlung. Dies wird aufgerufen, wenn der Abruf Vorgang nicht durchlaufen werden konnte.
+1. `UIBackgroundFetchResult.NewData` aufgerufen, wenn neuer Inhalt abgerufen wurde und die Anwendung aktualisiert wurde.
+1. `UIBackgroundFetchResult.NoData` aufgerufen, wenn das Abrufen für neuen Inhalt durchlaufen wurde, aber kein Inhalt verfügbar ist.
+1. `UIBackgroundFetchResult.Failed` für die Fehlerbehandlung nützlich, wird dies aufgerufen, wenn das Abrufen nicht durchlaufen werden konnte.
 
 Anwendungen, die im Hintergrund abrufen, können Aufrufe ausführen, um die Benutzeroberfläche aus dem Hintergrund zu aktualisieren. Wenn der Benutzer die APP öffnet, ist die Benutzeroberfläche auf dem neuesten Stand und zeigt neue Inhalte an. Dadurch wird auch die APP-switchermomentaufnahme der Anwendung aktualisiert, sodass der Benutzer sehen kann, wann die Anwendung neuen Inhalt hat.
 
 > [!IMPORTANT]
-> Nachdem `PerformFetch` aufgerufen wurde, hat die Anwendung ungefähr 30 Sekunden Zeit, den Download neuer Inhalte zu starten und den Vervollständigungs Handler-Block aufzurufen. Wenn dies zu lange dauert, wird die APP beendet. Verwenden Sie beim Herunterladen von Medien oder anderen großen Dateien das Abrufen von Hintergrunddaten mit dem _Hintergrund Übertragungs Dienst_ .
+> Nachdem `PerformFetch` aufgerufen wurde, hat die Anwendung ungefähr 30 Sekunden Zeit, den Download neuer Inhalte zu starten und den Vervollständigungs Handlerblock aufzurufen. Wenn dies zu lange dauert, wird die APP beendet. Verwenden Sie beim Herunterladen von Medien oder anderen großen Dateien das Abrufen von Hintergrunddaten mit dem _Hintergrund Übertragungs Dienst_ .
 
-### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
+### <a name="backgroundfetchinterval"></a>Backgroundfetchinterval
 
-Im obigen Beispielcode legen wir fest, wie oft neue Inhalte abgerufen werden sollen, indem Sie das minimale Abruf Intervall auf `BackgroundFetchIntervalMinimum`festlegen. IOS bietet drei Optionen für das Abruf Intervall:
+Im obigen Beispielcode wird das Betriebssystem entscheiden, wie oft neue Inhalte abgerufen werden sollen, indem das minimale Abruf Intervall auf `BackgroundFetchIntervalMinimum`festgelegt wird. IOS bietet drei Optionen für das Abruf Intervall:
 
-1. `BackgroundFetchIntervalNever`-Weisen Sie das System an, nie neuen Inhalt abzurufen. Verwenden Sie diese Option, um das Abrufen in bestimmten Situationen zu deaktivieren, z. b. wenn der Benutzer nicht angemeldet ist. Dies ist der Standardwert für das Abruf Intervall. 
-1. `BackgroundFetchIntervalMinimum`: Lassen Sie das System entscheiden, wie oft basierend auf den Benutzer Mustern, der Akku Lebensdauer, der Datennutzung und den Anforderungen anderer Anwendungen abgerufen werden sollen.
-1. `BackgroundFetchIntervalCustom`Wenn Sie wissen, wie oft der Inhalt einer Anwendung aktualisiert wird, können Sie nach jedem Abruf Vorgang ein "standbyintervall" angeben, in dem die Anwendung daran gehindert wird, neue Inhalte abzurufen. Sobald das Intervall aktiv ist, bestimmt das System, wann Inhalt abgerufen werden soll.
+1. `BackgroundFetchIntervalNever` Sie dem System mitzuteilen, dass nie neuer Inhalt abgerufen werden soll. Verwenden Sie diese Option, um das Abrufen in bestimmten Situationen zu deaktivieren, z. b. wenn der Benutzer nicht angemeldet ist. Dies ist der Standardwert für das Abruf Intervall. 
+1. `BackgroundFetchIntervalMinimum`: Legen Sie fest, wie oft das System basierend auf den Benutzer Mustern, der Akku Lebensdauer, der Datennutzung und den Anforderungen anderer Anwendungen abrufen soll.
+1. `BackgroundFetchIntervalCustom`: Wenn Sie wissen, wie oft der Inhalt einer Anwendung aktualisiert wird, können Sie nach jedem Abruf ein "standbyintervall" angeben, in dem die Anwendung daran gehindert wird, neue Inhalte abzurufen. Sobald das Intervall aktiv ist, bestimmt das System, wann Inhalt abgerufen werden soll.
 
-Sowohl `BackgroundFetchIntervalMinimum` als `BackgroundFetchIntervalCustom` auch verlassen sich auf das System, um Abruf Vorgänge zu planen. Dieses Intervall ist dynamisch, und die Anpassung an die Anforderungen des Geräts und die Gewohnheiten der einzelnen Benutzer. Wenn ein Benutzer beispielsweise jeden Morgen eine Anwendung prüft und jede Stunde eine andere Prüfung durchführt, stellt IOS sicher, dass der Inhalt für beide Benutzer jedes Mal auf dem neuesten Stand ist, wenn Sie die Anwendung öffnen.
+Sowohl `BackgroundFetchIntervalMinimum` als auch `BackgroundFetchIntervalCustom` verlassen sich auf das System, um Abruf Vorgänge zu planen. Dieses Intervall ist dynamisch, und die Anpassung an die Anforderungen des Geräts und die Gewohnheiten der einzelnen Benutzer. Wenn ein Benutzer beispielsweise jeden Morgen eine Anwendung prüft und jede Stunde eine andere Prüfung durchführt, stellt IOS sicher, dass der Inhalt für beide Benutzer jedes Mal auf dem neuesten Stand ist, wenn Sie die Anwendung öffnen.
 
 Der Hintergrund Abruf sollte für Anwendungen verwendet werden, die häufig mit nicht kritischem Inhalt aktualisiert werden. Bei Anwendungen mit wichtigen Updates sollten Remote Benachrichtigungen verwendet werden. Remote Benachrichtigungen basieren auf dem Abrufen des Hintergrunds und verwenden denselben Vervollständigungs Handler. Wir werden uns weiter mit Remote Benachrichtigungen beschäftigen.
 
@@ -101,9 +101,9 @@ In ios 6 weist eine eingehende Pushbenachrichtigung das System an, den Benutzer 
 
 Bearbeiten Sie zum Implementieren von Remote Benachrichtigungen *Info. plist* , und aktivieren Sie die Kontrollkästchen **hintergrundmodi** und **Remote Benachrichtigungen** aktivieren:
 
- [![](updating-an-application-in-the-background-images/remote.png "Hintergrundmodus festgelegt, um hintergrundmodi und Remote Benachrichtigungen zu aktivieren")](updating-an-application-in-the-background-images/remote.png#lightbox)
+ [![](updating-an-application-in-the-background-images/remote.png "Background Mode set to Enable Background Modes and Remote notifications")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
-Legen Sie als nächstes `content-available` das Flag für die Pushbenachrichtigung selbst auf 1 fest. Dadurch kann die Anwendung wissen, wie neue Inhalte abgerufen werden können, bevor die Warnung angezeigt wird:
+Legen Sie als nächstes das `content-available`-Flag für die Pushbenachrichtigung selbst auf 1 fest. Dadurch kann die Anwendung wissen, wie neue Inhalte abgerufen werden können, bevor die Warnung angezeigt wird:
 
 ```csharp
 'aps' {
@@ -112,7 +112,7 @@ Legen Sie als nächstes `content-available` das Flag für die Pushbenachrichtigu
 }
 ```
 
-Überschreiben Sie im *appdelegat*die `DidReceiveRemoteNotification` -Methode, um die Benachrichtigungs Nutzlast auf verfügbaren Inhalt zu überprüfen, und rufen Sie den entsprechenden Vervollständigungs Handler auf.
+Überschreiben Sie im *appdelegat*die `DidReceiveRemoteNotification`-Methode, um die Benachrichtigungs Nutzlast auf verfügbaren Inhalt zu überprüfen, und rufen Sie den entsprechenden Vervollständigungs Handler auf.
 
 ```csharp
 public override void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
@@ -147,11 +147,11 @@ Der größte Unterschied zwischen normaler und automatischer Benachrichtigung au
 
 Allerdings lassen APNs automatische Benachrichtigungen zusammen mit einer normalen Remote Benachrichtigung oder Keep-Alive-Antwort "Piggyback" zu. Da reguläre Benachrichtigungen nicht raten gebunden sind, können Sie verwendet werden, um per Push gespeicherte unbeaufsichtigte Benachrichtigungen von APNs an das Gerät zu übersetzen, wie in der folgenden Abbildung veranschaulicht:
 
- [![](updating-an-application-in-the-background-images/silent.png "Reguläre Benachrichtigungen können verwendet werden, um gespeicherte unbeaufsichtigte Benachrichtigungen von APNs an das Gerät zu pushen, wie in diesem Diagramm veranschaulicht.")](updating-an-application-in-the-background-images/silent.png#lightbox)
+ [![](updating-an-application-in-the-background-images/silent.png "Regular notifications can be used to push stored silent notifications from the APNs to the device, as illustrated by this diagram")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > Apple ermutigt Entwickler, automatische Pushbenachrichtigungen zu senden, wenn die Anwendung dies erfordert, und ermöglicht es dem APNs, ihre Übermittlung zu planen.
 
 In diesem Abschnitt haben wir die verschiedenen Optionen zum Aktualisieren von Inhalten im Hintergrund behandelt, um Aufgaben auszuführen, die nicht in eine im Hintergrund erforderliche Kategorie passen. Sehen wir uns nun einige dieser APIs in Aktion an.
 
- [Weiter: Teil 4: Exemplarische Vorgehensweisen für IOS-backerden](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+ [Nächstes: Teil 4: Exemplarische Vorgehensweisen für IOS-Back-Ends](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)

@@ -3,15 +3,15 @@ title: Erstellen von HTML-Ansichten mithilfe von Razor-Vorlagen
 description: " Die Verwendung einer Vollbild-Webseite zum Rendering von HTML kann eine einfache und effektive Möglichkeit zum Rendering komplexer Formatierungen auf plattformübergreifende Weise darstellen, insbesondere dann, wenn Sie bereits über HTML, JavaScript und CSS aus einem Website Projekt verfügen."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/24/2018
-ms.openlocfilehash: 7f9f45976d0d7db42be18fede2f21825a385bea4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5f1b1345f9abbf891cfbea6e45a8ed2abd7c0dac
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765350"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014604"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Erstellen von HTML-Ansichten mithilfe von Razor-Vorlagen
 
@@ -41,7 +41,7 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 ```
 
-Weitere Informationen zur Verwendung des UIWebView-Steuer Elements finden Sie unter [IOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/) -Rezepte.
+Weitere Informationen zur Verwendung des UIWebView-Steuer Elements finden Sie unter [IOS UIWebView](https://github.com/xamarin/docs-archive/tree/master/Recipes/ios/content_controls/web_view) -Rezepte.
 
 ### <a name="android"></a>Android
 
@@ -58,7 +58,7 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 ```
 
-Weitere Informationen zur Verwendung des WebView-Steuer Elements finden Sie in den [Android WebView](http://docs.xamarin.com/recipes/android/controls/webview/) -Rezepten.
+Weitere Informationen zur Verwendung des WebView-Steuer Elements finden Sie in den [Android WebView](https://github.com/xamarin/docs-archive/tree/master/Recipes/android/controls/webview) -Rezepten.
 
 ### <a name="specifying-the-base-directory"></a>Angeben des Basisverzeichnisses
 
@@ -80,13 +80,13 @@ Die Vorlagen Ausgabe wird in ios mit folgendem C# Code gerendert:
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
-Das Basisverzeichnis wird angegeben `NSBundle.MainBundle.BundleUrl` , das auf das Verzeichnis verweist, in dem die Anwendung installiert ist. Alle Dateien im Ordner " **Resources** " werden an diesen Speicherort kopiert, z. b. die Datei " **Style. CSS** ", die hier gezeigt wird:
+Das Basisverzeichnis wird als `NSBundle.MainBundle.BundleUrl` angegeben, das auf das Verzeichnis verweist, in dem die Anwendung installiert ist. Alle Dateien im Ordner " **Resources** " werden an diesen Speicherort kopiert, z. b. die Datei " **Style. CSS** ", die hier gezeigt wird:
 
  ![iphonehybrid-Lösung](images/image1_240x163.png)
 
 Die Buildaktion für alle statischen Inhalts Dateien sollte **bundleresource**lauten:
 
- ![Build-Aktion für IOS-Projekt: BundleResource](images/image2_250x131.png)
+ ![IOS-projektbuildaktion: bundleresource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
@@ -102,7 +102,7 @@ Die besondere Zeichenfolge **file:///android_asset/** bezieht sich auf den Ordne
 
 Die Buildaktion für alle statischen Inhalts Dateien sollte " **androidasset**" lauten.
 
- ![Build-Aktion für Android-Projekt: AndroidAsset](images/image4_250x71.png)
+ ![Android Project Build Action: androidasset](images/image4_250x71.png)
 
 ### <a name="calling-c-from-html-and-javascript"></a>Aufrufen C# von HTML und JavaScript
 
@@ -167,9 +167,9 @@ und dann den Client in der Webansicht festlegen:
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>Aufrufen von JavaScript aus C\#
+### <a name="calling-javascript-from-c"></a>Aufrufen von JavaScript aus C-\#
 
-Zusätzlich zur Anzeige einer Webansicht, um eine neue HTML-Seite C# zu laden, kann Code auch JavaScript in der aktuell angezeigten Seite ausführen. Gesamte JavaScript-Code Blöcke können mithilfe C# von Zeichen folgen erstellt und ausgeführt werden, oder Sie können Methodenaufrufe an JavaScript erstellen, die bereits `script` über Tags auf der Seite verfügbar sind.
+Zusätzlich zur Anzeige einer Webansicht, um eine neue HTML-Seite C# zu laden, kann Code auch JavaScript in der aktuell angezeigten Seite ausführen. Gesamte JavaScript-Code Blöcke können mithilfe C# von Zeichen folgen erstellt und ausgeführt werden, oder Sie können Methodenaufrufe an JavaScript erstellen, die bereits über`script`Tags auf der Seite verfügbar sind.
 
 #### <a name="android"></a>Android
 
@@ -228,12 +228,12 @@ Eine einfache Razor-Vorlage ( **razorview. cshtml**) ist unten dargestellt.
 Beachten Sie die folgenden Unterschiede zu einer regulären HTML-Datei:
 
 - Das `@` Symbol hat eine besondere Bedeutung in Razor-Vorlagen – es gibt C# an, dass der folgende Ausdruck ausgewertet werden soll.
-- `@model`Die Direktive wird immer als erste Zeile einer Razor-Vorlagen Datei angezeigt.
-- Auf `@model` die-Direktive sollte ein-Typ folgen. In diesem Beispiel wird eine einfache Zeichenfolge an die Vorlage übermittelt, dabei kann es sich jedoch um eine beliebige benutzerdefinierte Klasse handeln.
-- Wenn `@Model` in der gesamten Vorlage auf verwiesen wird, wird ein Verweis auf das Objekt bereitstellt, das beim Generieren an die Vorlage übermittelt wird (in diesem Beispiel ist es eine Zeichenfolge).
+- `@model`-Direktive wird immer als erste Zeile einer Razor-Vorlagen Datei angezeigt.
+- Auf die `@model` Direktive sollte ein Typ folgen. In diesem Beispiel wird eine einfache Zeichenfolge an die Vorlage übermittelt, dabei kann es sich jedoch um eine beliebige benutzerdefinierte Klasse handeln.
+- Wenn auf `@Model` in der gesamten Vorlage verwiesen wird, wird ein Verweis auf das Objekt bereitstellt, das bei der Generierung an die Vorlage übermittelt wird (in diesem Beispiel ist es eine Zeichenfolge).
 - Die IDE generiert automatisch eine partielle Klasse für Vorlagen (Dateien mit der Erweiterung **. cshtml** ). Sie können diesen Code zwar anzeigen, aber nicht bearbeiten.
- ![Razorview. cshtml](images/image6_125x34.png) die partielle Klasse trägt den Namen razorview, um dem Namen der Datei. cshtml-Vorlage zu entsprechen. Dieser Name wird verwendet, um auf die Vorlage im C# Code zu verweisen.
-- `@using`Anweisungen können auch am Anfang einer Razor-Vorlage eingefügt werden, um zusätzliche Namespaces einzuschließen.
+ ![razorview. cshtml](images/image6_125x34.png) die partielle Klasse den Namen razorview hat, um dem Namen der Datei. cshtml-Vorlage zu entsprechen. Dieser Name wird verwendet, um auf die Vorlage im C# Code zu verweisen.
+- `@using`-Anweisungen können auch am Anfang einer Razor-Vorlage eingefügt werden, um zusätzliche Namespaces einzuschließen.
 
 Die endgültige HTML-Ausgabe kann dann mit folgendem C# Code generiert werden. Beachten Sie, dass das Modell als Zeichenfolge "Hallo Welt" angegeben wird, die in die Ausgabe der gerenderten Vorlage eingebunden wird.
 
@@ -313,13 +313,13 @@ Komplexere Informationen C# können in der Vorlage enthalten sein, wie z. b. die
 </html>
 ```
 
-Sie können komplexe einzeilige C# Ausdrücke (wie das Formatieren des Alters) schreiben, indem Sie `@()`den Code mit umschließen.
+Sie können komplexe einzeilige C# Ausdrücke (z. b. die Formatierung des Alters) schreiben, indem Sie den Code mit `@()`umschließen.
 
-Sie C# können mehrere-Anweisungen schreiben, indem Sie `@{}`Sie mit umschließen.
+Sie C# können mehrere-Anweisungen schreiben, indem Sie Sie mit `@{}`umschließen.
 
 #### <a name="if-else-statements"></a>If-else-Anweisungen
 
-Code branches können mit `@if` ausgedrückt werden, wie in diesem Vorlagen Beispiel gezeigt.
+Codebranches können mit `@if` ausgedrückt werden, wie in diesem Vorlagen Beispiel gezeigt.
 
 ```html
 @model Monkey
@@ -340,7 +340,7 @@ Code branches können mit `@if` ausgedrückt werden, wie in diesem Vorlagen Beis
 
 #### <a name="loops"></a>Schleifen
 
-Schleifen Konstrukte wie `foreach` können ebenfalls hinzugefügt werden. Das `@` Präfix kann für die Schleifenvariable verwendet werden `@food` (in diesem Fall), um Sie in HTML zu rendereren.
+Schleifen Konstrukte wie `foreach` können ebenfalls hinzugefügt werden. Das `@` Präfix kann für die Schleifenvariable (in diesem Fall `@food`) verwendet werden, um Sie in HTML zu rendereren.
 
 ```html
 @model Monkey
@@ -394,7 +394,7 @@ Wichtige Teile der Lösung sind:
 - Statischer Inhalt, z. b. die Datei **Style. CSS** .
 - Razor. cshtml-Vorlagen Dateien wie **razorview. cshtml** .
 - Modellklassen, auf die in den Razor-Vorlagen verwiesen wird, z. b. **ExampleModel.cs** .
-- Die plattformspezifische Klasse, die die Webansicht erstellt und die Vorlage rendert, `MainActivity` z. b. `iPhoneHybridViewController` unter Android und unter IOS.
+- Die plattformspezifische Klasse, die die Webansicht erstellt und die Vorlage rendert, wie z. b. die `MainActivity` unter Android und die `iPhoneHybridViewController` unter IOS.
 
 Im folgenden Abschnitt wird erläutert, wie die Projekte funktionieren.
 
@@ -416,7 +416,7 @@ Die Vorlage enthält eine Razor **. cshtml** -Datei, die über vorab geschrieben
 
 #### <a name="rendering-the-template"></a>Rendern der Vorlage
 
-Das `GenerateString` Aufrufen von für eine Vorlage rendert HTML-bereit für die Anzeige in einer Webansicht. Wenn die Vorlage ein Modell verwendet, sollte diese vor dem Rendering bereitgestellt werden. Dieses Diagramm veranschaulicht, wie das Rendering funktioniert – nicht, dass die statischen Ressourcen zur Laufzeit von der Webansicht aufgelöst werden. dabei wird das angegebene Basisverzeichnis verwendet, um nach den angegebenen Dateien zu suchen.
+Wenn Sie die `GenerateString` für eine Vorlage aufrufen, wird HTML für die Anzeige in einer Webansicht gerendert. Wenn die Vorlage ein Modell verwendet, sollte diese vor dem Rendering bereitgestellt werden. Dieses Diagramm veranschaulicht, wie das Rendering funktioniert – nicht, dass die statischen Ressourcen zur Laufzeit von der Webansicht aufgelöst werden. dabei wird das angegebene Basisverzeichnis verwendet, um nach den angegebenen Dateien zu suchen.
 
  ![Razor-Flussdiagramm](images/image12_700x421.png)
 
@@ -430,7 +430,7 @@ Ein Beispiel für die Behandlung der Schaltfläche razorview finden Sie unter. D
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-Die `InvokeCSharpWithFormValues` JavaScript-Funktion liest alle Werte aus dem HTML-Formular und `location.href` legt für die Webansicht fest:
+Die `InvokeCSharpWithFormValues` JavaScript-Funktion liest alle Werte aus dem HTML-Formular und legt die `location.href` für die Webansicht fest:
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
@@ -446,7 +446,7 @@ Wenn die native Webansicht diese Navigations Anforderung verarbeitet, haben wir 
 
 Die internale dieser beiden navigationinterceptors sind im Wesentlichen identisch.
 
-Überprüfen Sie zunächst die URL, die von der Webansicht geladen werden soll, und wenn Sie nicht mit dem`hybrid:`benutzerdefinierten Schema () beginnt, können Sie die Navigation wie gewohnt durchführen.
+Überprüfen Sie zunächst die URL, die von der Webansicht geladen werden soll, und wenn Sie nicht mit dem benutzerdefinierten Schema (`hybrid:`) beginnt, können Sie die Navigation wie gewohnt durchführen.
 
 Für das benutzerdefinierte URL-Schema ist alles in der URL zwischen dem Schema und dem "?" der Methodenname, der behandelt werden soll (in diesem Fall "Update Label"). Alles in der Abfrage Zeichenfolge wird als Parameter für den Methodenaufrufe behandelt:
 
@@ -456,13 +456,13 @@ var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-`UpdateLabel`in diesem Beispiel wird eine minimale Menge an Zeichen folgen Bearbeitung für den Parameter "Textfeld" (C# vorangestellt "sagt" an die Zeichenfolge) und dann ein Rückruf an die Webansicht durchführt.
+`UpdateLabel` in diesem Beispiel führt eine minimale Anzahl von Zeichen folgen Manipulationen für den Parameter "Textfeld" ausC# (vorangestellt "sagt" der Zeichenfolge) und ruft dann die Webansicht zurück.
 
 Nachdem die URL verarbeitet wurde, bricht die Methode die Navigation ab, sodass die Webansicht nicht mehr versucht, die Navigation zur benutzerdefinierten URL abzuschließen.
 
-#### <a name="manipulating-the-template-from-c"></a>Bearbeiten der Vorlage aus C\#
+#### <a name="manipulating-the-template-from-c"></a>Bearbeiten der Vorlage aus C-\#
 
-Die Kommunikation mit einer gerenderten HTML C# -Webansicht von erfolgt durch Aufrufen von JavaScript in der Webansicht. Unter IOS erfolgt dies durch Aufrufen `EvaluateJavascript` von in der UIWebView:
+Die Kommunikation mit einer gerenderten HTML C# -Webansicht von erfolgt durch Aufrufen von JavaScript in der Webansicht. Unter IOS erfolgt dies durch Aufrufen von `EvaluateJavascript` in der UIWebView:
 
 ```csharp
 webView.EvaluateJavascript (js);
@@ -495,7 +495,7 @@ Beide Beispiel-Apps enthalten Twitter-Freigabe-und Text-zu-Sprache-APIs von der 
 
 Die **razortodo** -App verwendet HTML-Razor-Vorlagen für die Listen-und Bearbeitungs Ansichten. Dies bedeutet, dass die APP fast vollständig in einer freigegebenen portablen Klassenbibliothek erstellt werden kann (einschließlich der Razor-Vorlagen "Database" und " **. cshtml** "). Die folgenden Screenshots zeigen die IOS-und Android-Apps.
 
- ![RazorTodo](images/Both_700x290.png)
+ ![Razortodo](images/Both_700x290.png)
 
 Die **razornativetodo** -App verwendet eine HTML-Razor-Vorlage für die Bearbeitungs Ansicht, implementiert aber eine native scrollliste auf jeder Plattform. Dies bietet eine Reihe von Vorteilen, einschließlich:
 
@@ -504,7 +504,7 @@ Die **razornativetodo** -App verwendet eine HTML-Razor-Vorlage für die Bearbeit
 
 Ein wichtiger Vorteil beim Aufbau von Hybrid-apps mit xamarin besteht darin, dass Sie mit einer vollständig HTML-gesteuerten Benutzeroberfläche (wie dem ersten Beispiel) beginnen und dann bei Bedarf plattformspezifische Funktionen hinzufügen können (wie im zweiten Beispiel gezeigt). Die systemeigenen Listen Bildschirme und HTML-Razor-Bearbeitungsbildschirme unter IOS und Android sind unten dargestellt.
 
- ![RazorNativeTodo](images/BothNative_700x290.png)
+ ![Razornativetodo](images/BothNative_700x290.png)
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -517,5 +517,5 @@ Schließlich wurden die razortodo-Beispiele vorgestellt, die veranschaulichen, w
 ### <a name="related-links"></a>Verwandte Links
 
 - [Razortodo-Beispiel](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
-- [MVC 3-Razor-Ansichts Modul (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
-- [Einführung in die ASP.net-Webprogrammierung mit der Razor-Syntax (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
+- [MVC 3-Razor-Ansichts Modul (Microsoft)](https://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
+- [Einführung in die ASP.net-Webprogrammierung mit der Razor-Syntax (Microsoft)](https://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

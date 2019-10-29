@@ -3,21 +3,21 @@ title: Buildoptimierungen
 description: In diesem Dokument werden die verschiedenen Optimierungen erläutert, die zur Buildzeit für xamarin. IOS-und xamarin. Mac-Apps verwendet werden.
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: 4fdc40a8aed4b3137e418d6123fc000c2b36b6dd
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 22028743742a618bd7347d5e49153defecd4e3bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226205"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015168"
 ---
 # <a name="build-optimizations"></a>Buildoptimierungen
 
 In diesem Dokument werden die verschiedenen Optimierungen erläutert, die zur Buildzeit für xamarin. IOS-und xamarin. Mac-Apps verwendet werden.
 
-## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>Remove UIApplication.EnsureUIThread / NSApplication.EnsureUIThread
+## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>Entfernen Sie UIApplication. ensureuithread/NSApplication. ensureuithread.
 
 Entfernt Aufrufe an [UIApplication. ensureuithread][1] (für xamarin. IOS) oder `NSApplication.EnsureUIThread` (für xamarin. Mac).
 
@@ -40,11 +40,11 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]` -Attribut angewendet.
+Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]`-Attribut angewendet.
 
 Standardmäßig ist es für Releasebuilds aktiviert.
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]remove-uithread-checks` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]remove-uithread-checks` an mberühren/MMP übergeben wird.
 
 [1]: https://docs.microsoft.com/dotnet/api/UIKit.UIApplication.EnsureUIThread
 
@@ -72,19 +72,19 @@ if (8 == 8) {
 }
 ```
 
-Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]` -Attribut angewendet.
+Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]`-Attribut angewendet.
 
 Diese Option ist standardmäßig aktiviert, wenn eine einzelne Architektur als Ziel verwendet wird, oder für die Plattformassembly (**xamarin. IOS. dll**, **xamarin. tvos. dll**, **xamarin. watchos. dll** oder **xamarin. Mac. dll**).
 
 Wenn Sie mehrere Architekturen als Ziel verwenden, erstellt diese Optimierung verschiedene Assemblys für die 32-Bit-Version und die 64-Bit-Version der APP, und beide Versionen müssen in der App enthalten sein, wodurch die endgültige App-Größe erhöht wird, anstatt die Größe zu verringern. ihm.
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-intptr-size` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-intptr-size` an mberühren/MMP übergeben wird.
 
 ## <a name="inline-nsobjectisdirectbinding"></a>Inline-NSObject. isdirectbinding
 
-`NSObject.IsDirectBinding`ist eine Instanzeigenschaft, die bestimmt, ob eine bestimmte Instanz einen Wrappertyp hat oder nicht (ein Wrappertyp ist ein verwalteter Typ, der einem systemeigenen `UIKit.UIView` Typ zugeordnet ist. der `UIView` verwaltete Typ ist beispielsweise dem systemeigenen Typ zugeordnet. das Gegenteil ist ein Benutzertyp. ist in diesem Fall `class MyUIView : UIKit.UIView` ein Benutzertyp.)
+`NSObject.IsDirectBinding` ist eine Instanzeigenschaft, die bestimmt, ob eine bestimmte Instanz von einem Wrappertyp ist oder nicht (ein Wrappertyp ist ein verwalteter Typ, der einem systemeigenen Typ zugeordnet ist. der verwaltete `UIKit.UIView` Typ ist beispielsweise dem systemeigenen `UIView` Typ zugeordnet. das Gegenteil ist ein Benutzertyp. in diesem Fall ist `class MyUIView : UIKit.UIView` ein Benutzertyp).
 
-Der Wert von muss beim Aufrufen von `IsDirectBinding` "Ziel-C" bekannt sein, da der Wert bestimmt, welche Version von `objc_msgSend` verwendet werden soll.
+Es ist erforderlich, beim Aufrufen von "Ziel-C" den Wert `IsDirectBinding` zu kennen, da der Wert bestimmt, welche Version von `objc_msgSend` verwendet werden soll.
 
 Nur der folgende Code:
 
@@ -117,7 +117,7 @@ class MyUIView : UIView {
 }
 ```
 
-Wir können feststellen, `UIView.SomeProperty` dass im Wert `IsDirectBinding` von keine Konstante ist und nicht Inline sein kann:
+Wir können feststellen, dass in `UIView.SomeProperty` der Wert von `IsDirectBinding` keine Konstante ist und nicht Inline sein kann:
 
 ```csharp
 void uiView = new UIView ();
@@ -126,7 +126,7 @@ void myView = new MyUIView ();
 Console.WriteLine (myView.SomeProperty); // prints 'false'
 ```
 
-Allerdings ist es möglich, alle Typen in der APP zu überprüfen und festzustellen, dass keine Typen vorhanden sind, die `NSUrl`von erben, und daher ist es sicher, `IsDirectBinding` den Wert in eine `true`Konstante Inline zu bringen:
+Allerdings ist es möglich, alle Typen in der APP zu überprüfen und festzustellen, dass keine Typen vorhanden sind, die von `NSUrl`erben, und daher ist es sicher, den `IsDirectBinding` Wert in eine Konstante `true`Inline zu bringen:
 
 ```csharp
 void myURL = new NSUrl ();
@@ -144,7 +144,7 @@ if (IsDirectBinding) {
 }
 ```
 
-in Folgendes (wenn festgestellt werden kann, dass in der APP keine Unterklassen `NSUrl` von vorhanden sind):
+in Folgendes (wenn festgestellt werden kann, dass in der APP keine Unterklassen von `NSUrl` vorhanden sind):
 
 ```csharp
 if (true) {
@@ -154,11 +154,11 @@ if (true) {
 }
 ```
 
-Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]` -Attribut angewendet.
+Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]`-Attribut angewendet.
 
 Sie ist für xamarin. IOS immer standardmäßig aktiviert und für xamarin. Mac immer standardmäßig deaktiviert (da Assemblys in xamarin. Mac dynamisch geladen werden können, ist es nicht möglich, zu bestimmen, ob eine bestimmte Klasse niemals untergeordnet ist).
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-isdirectbinding` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-isdirectbinding` an mberühren/MMP übergeben wird.
 
 ## <a name="inline-runtimearch"></a>Inline Laufzeit. Arch
 
@@ -182,11 +182,11 @@ if (Arch.DEVICE == Arch.DEVICE) {
 }
 ```
 
-Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]` -Attribut angewendet.
+Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]`-Attribut angewendet.
 
 Er ist für xamarin. IOS immer standardmäßig aktiviert (er ist für xamarin. Mac nicht verfügbar).
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-runtime-arch` es an mtouchscreen übergeben wird.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-runtime-arch` an mberührungs übergeben werden.
 
 ## <a name="dead-code-elimination"></a>Beseitigung von unzustellbaren
 
@@ -216,13 +216,13 @@ if (8 == 8) {
 }
 ```
 
-und stellen Sie fest, `8 == 8` dass der Ausdruck immer true ist, und reduzieren Sie ihn auf:
+und stellen Sie fest, dass der Ausdruck `8 == 8` immer true ist, und reduzieren Sie ihn auf:
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-Dies ist eine leistungsstarke Optimierung, wenn Sie in Verbindung mit den Inlining-Optimierungen verwendet wird, da Sie den folgenden Codetyp transformieren kann (Dies ist `NFCIso15693ReadMultipleBlocksConfiguration.Range`der Bindungs Code für):
+Dies ist eine leistungsstarke Optimierung, wenn Sie in Verbindung mit den Inlining-Optimierungen verwendet wird, da Sie den folgenden Codetyp transformieren kann (Dies ist der Bindungs Code für `NFCIso15693ReadMultipleBlocksConfiguration.Range`):
 
 ```csharp
 NSRange ret;
@@ -254,7 +254,7 @@ if (IsDirectBinding) {
 return ret;
 ```
 
-in diesen Fall (bei der Erstellung für ein 64-Bit-Gerät und wenn auch sichergestellt werden kann `NFCIso15693ReadMultipleBlocksConfiguration` , dass in der APP keine Unterklassen vorhanden sind):
+in diesen Fall (bei der Erstellung für ein 64-Bit-Gerät und auch dann, wenn Sie sicherstellen können, dass in der APP keine `NFCIso15693ReadMultipleBlocksConfiguration` Unterklassen vorhanden sind):
 
 ```csharp
 NSRange ret;
@@ -268,15 +268,15 @@ Der AOT-Compiler ist bereits in der Lage, unzustellbaren Code wie diesen zu elim
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper_stret`
 
-Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]` -Attribut angewendet.
+Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]`-Attribut angewendet.
 
 Sie ist immer standardmäßig aktiviert (wenn der Linker aktiviert ist).
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]dead-code-elimination` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]dead-code-elimination` an mberühren/MMP übergeben wird.
 
 ## <a name="optimize-calls-to-blockliteralsetupblock"></a>Optimieren von Aufrufen von blockliteral. setupblock
 
-Die xamarin. IOS/Mac-Laufzeit muss die Block Signatur kennen, wenn ein Ziel-C-Block für einen verwalteten Delegaten erstellt wird. Dies kann ein ziemlich kostspieliger Vorgang sein. Durch diese Optimierung wird die Block Signatur zur Buildzeit berechnet und die Il so geändert, `SetupBlock` dass eine Methode aufgerufen wird, die die Signatur stattdessen als Argument annimmt. Dadurch entfällt die Notwendigkeit, die Signatur zur Laufzeit zu berechnen.
+Die xamarin. IOS/Mac-Laufzeit muss die Block Signatur kennen, wenn ein Ziel-C-Block für einen verwalteten Delegaten erstellt wird. Dies kann ein ziemlich kostspieliger Vorgang sein. Durch diese Optimierung wird die Block Signatur zur Buildzeit berechnet und die Il so geändert, dass eine `SetupBlock` Methode aufgerufen wird, die die Signatur stattdessen als Argument annimmt. Dadurch entfällt die Notwendigkeit, die Signatur zur Laufzeit zu berechnen.
 
 Benchmarks zeigen, dass dies das Aufrufen eines Blocks mit einem Faktor von 10 bis 15 beschleunigt.
 
@@ -302,17 +302,17 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]` -Attribut angewendet.
+Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]`-Attribut angewendet.
 
 Sie ist standardmäßig aktiviert, wenn die statische Registrierungsstelle verwendet wird (in xamarin. IOS ist die statische Registrierungsstelle standardmäßig für gerätebuilds aktiviert, und in xamarin. Mac ist die statische Registrierungsstelle für Releasebuilds standardmäßig aktiviert).
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]blockliteral-setupblock` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]blockliteral-setupblock` an mberühren/MMP übergeben wird.
 
 ## <a name="optimize-support-for-protocols"></a>Optimieren der Unterstützung für Protokolle
 
 Die xamarin. IOS/Mac-Laufzeit benötigt Informationen darüber, wie verwaltete Typen Ziele-C-Protokolle implementieren. Diese Informationen werden in Schnittstellen (und Attributen auf diesen Schnittstellen) gespeichert, die kein sehr effizientes Format aufweisen und auch nicht Linker-freundlich sind.
 
-Ein Beispiel hierfür ist, dass diese Schnittstellen Informationen zu allen protokollmembern in einem `[ProtocolMember]` -Attribut speichern, die unter anderem Verweise auf die Parametertypen dieser Member enthalten. Dies bedeutet, dass die einfache Implementierung einer solchen Schnittstelle dazu führt, dass der Linker alle in dieser Schnittstelle verwendeten Typen beibehält, auch bei optionalen Membern, die die APP nie aufruft oder implementiert.
+Ein Beispiel hierfür ist, dass diese Schnittstellen Informationen zu allen protokollmembern in einem `[ProtocolMember]` Attribut speichern, das unter anderem Verweise auf die Parametertypen dieser Member enthält. Dies bedeutet, dass die einfache Implementierung einer solchen Schnittstelle dazu führt, dass der Linker alle in dieser Schnittstelle verwendeten Typen beibehält, auch bei optionalen Membern, die die APP nie aufruft oder implementiert.
 
 Durch diese Optimierung speichert die statische Registrierungsstelle alle erforderlichen Informationen in einem effizienten Format, das wenig Arbeitsspeicher verwendet, der zur Laufzeit leicht und schnell auffindbar ist.
 
@@ -324,7 +324,7 @@ Bei xamarin. IOS ist diese Optimierung standardmäßig aktiviert, wenn sowohl de
 
 Bei xamarin. Mac ist diese Optimierung nicht standardmäßig aktiviert, da xamarin. Mac das dynamische Laden von Assemblys unterstützt. diese Assemblys sind bei der Buildzeit möglicherweise nicht bekannt (und somit nicht optimiert).
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=-register-protocols` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=-register-protocols` an mberühren/MMP übergeben wird.
 
 ## <a name="remove-the-dynamic-registrar"></a>Entfernen der dynamischen Registrierungsstelle
 
@@ -336,15 +336,15 @@ Der Linker versucht zu bestimmen, ob die dynamische Registrierungsstelle sicher 
 
 Da xamarin. Mac das dynamische Laden von Assemblys zur Laufzeit unterstützt (die zur Buildzeit nicht bekannt waren), ist es nicht möglich, zur Buildzeit zu bestimmen, ob es sich um eine sichere Optimierung handelt. Dies bedeutet, dass diese Optimierung für xamarin. Mac-apps nie standardmäßig aktiviert ist.
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]remove-dynamic-registrar` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]remove-dynamic-registrar` an mberühren/MMP übergeben wird.
 
 Wenn der Standardwert außer Kraft gesetzt wird, um die dynamische Registrierungsstelle zu entfernen, gibt der Linker Warnungen aus, wenn er feststellt, dass er nicht sicher ist (die dynamische Registrierungsstelle wird jedoch trotzdem entfernt).
 
 ## <a name="inline-runtimedynamicregistrationsupported"></a>Inline Laufzeit. dynamicregistrationsupported
 
-Inlines den Wert von `Runtime.DynamicRegistrationSupported` , der zur Buildzeit bestimmt wird.
+Gibt den Wert von `Runtime.DynamicRegistrationSupported` entsprechend der Erstellungszeit in den Zeilen Einzug ein.
 
-Wenn die dynamische Registrierungsstelle entfernt wird (siehe " [Entfernen der dynamischen Registrierungs](#remove-the-dynamic-registrar) Stelle"), handelt es `false` sich hierbei um einen konstanten Wert; `true` andernfalls handelt es sich um einen konstanten Wert.
+Wenn die dynamische Registrierungsstelle entfernt wird (siehe [Entfernen der dynamischen Registrierungs](#remove-the-dynamic-registrar) Stelle), handelt es sich hierbei um einen konstanten `false` Wert; andernfalls handelt es sich um einen konstanten `true` Wert.
 
 Durch diese Optimierung wird der folgende Codetyp geändert:
 
@@ -368,17 +368,17 @@ in Folgendes, wenn die dynamische Registrierungsstelle nicht entfernt wird:
 Console.WriteLine ("do something");
 ```
 
-Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]` -Attribut angewendet.
+Diese Optimierung erfordert, dass der Linker aktiviert ist, und wird nur auf Methoden mit dem `[BindingImpl (BindingImplOptions.Optimizable)]`-Attribut angewendet.
 
 Sie ist immer standardmäßig aktiviert (wenn der Linker aktiviert ist).
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-dynamic-registration-supported` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]inline-dynamic-registration-supported` an mberühren/MMP übergeben wird.
 
 ## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Precompute-Methoden zum Erstellen verwalteter Delegaten für Ziel-C-Blöcke
 
 Wenn Ziel-C einen Selektor aufruft, der einen-Block als Parameter annimmt, und der verwaltete Code diese Methode überschreibt, muss die xamarin. IOS/xamarin. Mac-Laufzeit einen Delegaten für diesen Block erstellen.
 
-Der Bindungs Code, der vom Bindungs Generator generiert wird, `[BlockProxy]` enthält ein-Attribut, das den Typ `Create` mit einer Methode angibt, die dies tun kann.
+Der Bindungs Code, der vom Bindungs Generator generiert wird, enthält ein `[BlockProxy]` Attribut, das den Typ mit einer `Create` Methode angibt, die dies tun kann.
 
 Der folgende Ziel-C-Code wird angegeben:
 
@@ -503,15 +503,15 @@ static class Trampolines
 }
 ```
 
-Wenn Ziel-C aufruft `[ObjCBlockTester callClassCallback]`, betrachtet die xamarin. IOS/xamarin. Mac-Laufzeit das `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]` -Attribut für den-Parameter. Anschließend wird die `Create` -Methode für diesen Typ gesucht und diese Methode aufgerufen, um den Delegaten zu erstellen.
+Wenn von Ziel-C `[ObjCBlockTester callClassCallback]`aufgerufen wird, untersucht die xamarin. IOS/xamarin. Mac-Laufzeit das `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]`-Attribut des-Parameters. Anschließend sucht er nach der `Create`-Methode für diesen Typ und ruft diese Methode auf, um den Delegaten zu erstellen.
 
-Diese Optimierung findet die `Create` Methode zur Buildzeit, und die statische Registrierungsstelle generiert Code, der die Methode zur Laufzeit durchsucht, indem die Metadatentoken verwendet werden, wobei das Attribut und die Reflektion verwendet werden (Dies ist viel schneller und ermöglicht es dem Linker auch , um den entsprechenden Lauf Zeit Code zu entfernen, sodass die APP kleiner wird.)
+Diese Optimierung findet die `Create` Methode zur Buildzeit, und die statische Registrierungsstelle generiert Code, der die Methode zur Laufzeit durchsucht, indem die Metadatentoken verwendet werden, wobei das Attribut und die Reflektion verwendet werden (Dies ist viel schneller und ermöglicht dem Linker auch das Entfernen Sie den entsprechenden Lauf Zeit Code, sodass die APP kleiner wird.)
 
-Wenn MMP/mberührungs die `Create` Methode nicht finden kann, wird eine MT4174/MM4174-Warnung angezeigt, und die Suche wird stattdessen zur Laufzeit ausgeführt.
-Die wahrscheinlichste Ursache besteht darin, den Bindungs Code ohne die `[BlockProxy]` erforderlichen Attribute manuell zu schreiben.
+Wenn MMP/mfinger die `Create` Methode nicht finden kann, wird eine MT4174/MM4174-Warnung angezeigt, und die Suche wird stattdessen zur Laufzeit ausgeführt.
+Die wahrscheinlichste Ursache besteht darin, den Bindungs Code ohne die erforderlichen `[BlockProxy]` Attribute manuell zu schreiben.
 
 Diese Optimierung erfordert, dass die statische Registrierungsstelle aktiviert ist.
 
 Sie ist immer standardmäßig aktiviert (solange die statische Registrierungsstelle aktiviert ist).
 
-Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]static-delegate-to-block-lookup` Sie an mtouchscreen/MMP übergeben werden.
+Das Standardverhalten kann überschrieben werden, indem `--optimize=[+|-]static-delegate-to-block-lookup` an mberühren/MMP übergeben wird.

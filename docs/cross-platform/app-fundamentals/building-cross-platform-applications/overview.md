@@ -3,15 +3,15 @@ title: Übersicht über die plattformübergreifenden Anwendungen
 description: Dieses Dokument enthält eine allgemeine Übersicht über das Entwickeln von plattformübergreifenden Anwendungen. Er erläutert den Wert von C#, Entwurfsmuster wie MVC/MVVM und Native Benutzeroberflächen.
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758110"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016913"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Übersicht über die plattformübergreifenden Anwendungen
 
@@ -53,7 +53,7 @@ Einige dieser Komponenten werden in der *Tasky* -Fallstudie implementiert.
 
 Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihrer Anwendungsarchitektur und das anschließende Verschieben von Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Kernbibliothek sind, befolgen, können Sie die Code Freigabe plattformübergreifend maximieren (siehe Abbildung unten). Illustri
 
- ![](overview-images/layers2.png "Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihrer Anwendungsarchitektur und das anschließende Verschieben von Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Kernbibliothek sind, befolgen, können Sie die Code Freigabe plattformübergreifend maximieren.")
+ ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
  <a name="Case_Studies" />
 

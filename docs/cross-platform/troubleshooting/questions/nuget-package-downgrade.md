@@ -3,15 +3,15 @@ title: Wie stufe ich ein NuGet-Paket herab?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: daa8159dd7cac1f727904ca5de08908fd3ca1af9
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 0c70859845915a821bb83b0f9d29528634b1a5de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105669"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013608"
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>Wie stufe ich ein NuGet-Paket herab?
 
@@ -25,7 +25,7 @@ Visual Studio für Mac & Visual Studio über Features verfügen, mit denen älte
 
     > Install-package [PackageName]-Version [Registerkarte für Versions Menü]
 
-Sie können auch den exakten Befehl auf der nuget-Seite des Pakets kopieren bzw. einfügen. Beispiel für xamarin. Forms:[https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
+Sie können auch den exakten Befehl auf der nuget-Seite des Pakets kopieren bzw. einfügen. Beispiel für xamarin. Forms: [https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 

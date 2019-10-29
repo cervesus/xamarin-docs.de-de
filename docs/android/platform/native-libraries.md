@@ -3,15 +3,15 @@ title: Verwenden nativer Bibliotheken
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: fad17bdda9566eeabcbe173c19c4d951bed630a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7ef9e0415d7d1e5fe75be70e0ccf6e06a5eaf332
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761279"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027064"
 ---
 # <a name="using-native-libraries"></a>Verwenden nativer Bibliotheken
 
@@ -25,9 +25,9 @@ Da Android mehrere Anwendungs Binär Schnittstellen (ABIS) unterstützt, muss xa
 Es gibt zwei Möglichkeiten, dies zu erreichen:
 
 1. Pfad "Sniffing"
-1. Mithilfe eines `AndroidNativeLibrary/Abi` Elements in der Projektdatei
+1. Mithilfe eines `AndroidNativeLibrary/Abi`-Elements in der Projektdatei
 
-Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nativen Bibliothek verwendet, um die ABI anzugeben, die die Bibliothek als Ziel verwendet. Wenn Sie also dem Projekt `lib/armeabi/libfoo.so` hinzufügen, wird die ABI als `armeabi`"ermittelt".
+Bei der Pfadermittlung wird der Name des übergeordneten Verzeichnisses der nativen Bibliothek verwendet, um die ABI anzugeben, die die Bibliothek als Ziel verwendet. Wenn Sie dem Projekt also `lib/armeabi/libfoo.so` hinzufügen, wird die ABI als `armeabi`"ermittelt".
 
 Alternativ können Sie die Projektdatei bearbeiten, um die zu verwendende ABI explizit anzugeben:
 

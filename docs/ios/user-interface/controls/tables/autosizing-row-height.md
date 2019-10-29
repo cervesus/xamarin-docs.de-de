@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie xamarin. IOS-apps Tabe
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 03d79c93821737afb1f8e1946ebb3b6380d7a527
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4129370ecb465340a893e0a7f16703a08cc1db72
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768433"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021933"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>Automatische Größenanpassung der Zeilenhöhe in xamarin. IOS
 
@@ -24,48 +24,48 @@ IOS 11 hat die Möglichkeit zur automatischen Erweiterung von Zeilen hinzugefüg
 
 Öffnen Sie das Storyboard für die Tabellen Sicht, für die die automatische Größenänderung der Zeile im IOS-Designer festgelegt werden soll, wählen Sie den *Prototyp* der Zelle aus, und entwerfen Sie das Layout der Zelle. Beispiel:
 
-[![](autosizing-row-height-images/table01.png "Das prototypdesign der Zelle")](autosizing-row-height-images/table01.png#lightbox)
+[![](autosizing-row-height-images/table01.png "The Cell's Prototype design")](autosizing-row-height-images/table01.png#lightbox)
 
-Fügen Sie für jedes Element im Prototyp Einschränkungen hinzu, um die Elemente an der richtigen Position zu halten, da die Größe der Tabellenansicht für die Drehung oder für verschiedene Bildschirmgrößen von IOS-Geräten geändert wird. Beispielsweise können Sie die `Title` oben, Links und rechts in der *Inhaltsansicht*der Zelle fixieren:
+Fügen Sie für jedes Element im Prototyp Einschränkungen hinzu, um die Elemente an der richtigen Position zu halten, da die Größe der Tabellenansicht für die Drehung oder für verschiedene Bildschirmgrößen von IOS-Geräten geändert wird. Wenn Sie z. b. die `Title` an den oberen, linken und rechten Rand der *Inhaltsansicht*der Zelle anhepten:
 
-[![](autosizing-row-height-images/table02.png "Fixieren des Titels an den oberen, linken und rechten Rand der Zellen Inhaltsansicht")](autosizing-row-height-images/table02.png#lightbox)
+[![](autosizing-row-height-images/table02.png "Pinning the Title to the top, left and right of the Cells Content View")](autosizing-row-height-images/table02.png#lightbox)
 
-Im Fall der Beispiel Tabelle ist der kleine `Label` (unter dem `Title`) das Feld, das verkleinert und vergrößert werden kann, um die Zeilenhöhe zu vergrößern oder zu verkleinern. Fügen Sie zum Erreichen dieses Effekts die folgenden Einschränkungen hinzu, um den linken, rechten, oberen und unteren Rand der Bezeichnung anzuheften:
+Im Fall der Beispiel Tabelle ist die kleine `Label` (unter dem `Title`) das Feld, das verkleinert und vergrößert werden kann, um die Zeilenhöhe zu vergrößern oder zu verkleinern. Fügen Sie zum Erreichen dieses Effekts die folgenden Einschränkungen hinzu, um den linken, rechten, oberen und unteren Rand der Bezeichnung anzuheften:
 
-[![](autosizing-row-height-images/table03.png "Diese Einschränkungen, um den linken, rechten, oberen und unteren Rand der Bezeichnung anzuheften.")](autosizing-row-height-images/table03.png#lightbox)
+[![](autosizing-row-height-images/table03.png "These constraints to pin the left, right, top and bottom of the label")](autosizing-row-height-images/table03.png#lightbox)
 
 Nachdem wir nun die Elemente in der Zelle vollständig eingeschränkt haben, müssen wir verdeutlichen, welches Element gestreckt werden soll. Legen Sie zu diesem Zweck im **Layoutbereich** des Eigenschaftenpad die Priorität der **Inhalts-hugging-Priorität** und der **Inhalts Komprimierungs Priorität** nach Bedarf fest:
 
-[![](autosizing-row-height-images/table03a.png "Der Layoutteil des Eigenschaftenpad")](autosizing-row-height-images/table03a.png#lightbox)
+[![](autosizing-row-height-images/table03a.png "The Layout section of the Properties Pad")](autosizing-row-height-images/table03a.png#lightbox)
 
 Legen Sie das Element, das Sie erweitern möchten, auf einen **niedrigeren** Wert für die hugging-Priorität und einen **niedrigeren** Prioritätswert für die Komprimierung fest.
 
 Als nächstes müssen wir den Zellen Prototyp auswählen und ihm einen eindeutigen **Bezeichner**zuordnen:
 
-[![](autosizing-row-height-images/table04.png "Geben Sie dem Zellen Prototyp einen eindeutigen Bezeichner.")](autosizing-row-height-images/table04.png#lightbox)
+[![](autosizing-row-height-images/table04.png "Giving the Cell Prototype a unique Identifier")](autosizing-row-height-images/table04.png#lightbox)
 
-Im vorliegenden Beispiel wird `GrowCell`. Dieser Wert wird später verwendet, wenn wir die Tabelle auffüllen.
+Im vorliegenden Beispiel `GrowCell`. Dieser Wert wird später verwendet, wenn wir die Tabelle auffüllen.
 
 > [!IMPORTANT]
-> Wenn die Tabelle mehr als einen Zellentyp (**Prototype**) enthält, müssen Sie sicherstellen, dass jeder Typ über einen `Identifier` eigenen eindeutigen Datentyp verfügt, damit die automatische Zeilengröße geändert werden kann.
+> Wenn die Tabelle mehr als einen Zellentyp (**Prototype**) enthält, müssen Sie sicherstellen, dass jeder Typ über einen eigenen eindeutigen `Identifier` verfügt, damit die automatische Zeilen Änderung funktioniert.
 
 Weisen Sie für jedes Element des Zellen Prototyps einen **Namen** zu, um ihn C# für den Code verfügbar zu machen. Beispiel:
 
-[![](autosizing-row-height-images/table05.png "Name zuweisen, um ihn für C#-Code verfügbar zu machen")](autosizing-row-height-images/table05.png#lightbox)
+[![](autosizing-row-height-images/table05.png "Assign a Name to expose it to C# code")](autosizing-row-height-images/table05.png#lightbox)
 
-Fügen Sie als nächstes eine benutzerdefinierte Klasse `UITableViewController`für `UITableView` , und `UITableCell` hinzu. Beispiel: 
+Fügen Sie als nächstes eine benutzerdefinierte Klasse für die `UITableViewController`, die `UITableView` und die `UITableCell` (Prototyp) hinzu. Beispiel: 
 
-[![](autosizing-row-height-images/table06.png "Hinzufügen einer benutzerdefinierten Klasse für \"uitableviewcontroller\", \"uitableview\" und \"uitablecell\"")](autosizing-row-height-images/table06.png#lightbox)
+[![](autosizing-row-height-images/table06.png "Adding a custom class for the UITableViewController, the UITableView and the UITableCell")](autosizing-row-height-images/table06.png#lightbox)
 
-Um sicherzustellen, dass alle erwarteten Inhalte in unserer Bezeichnung angezeigt werden, legen Sie für die Eigenschaft `0`Lines Folgendes fest:
+Um schließlich sicherzustellen, dass alle erwarteten Inhalte in unserer Bezeichnung angezeigt werden, legen Sie die Eigenschaft **Lines** auf `0`fest:
 
-[![](autosizing-row-height-images/table06.png "Die Lines-Eigenschaft ist auf 0 festgelegt.")](autosizing-row-height-images/table06a.png#lightbox)
+[![](autosizing-row-height-images/table06.png "The Lines property set to 0")](autosizing-row-height-images/table06a.png#lightbox)
 
 Wenn Sie die Benutzeroberfläche definiert haben, fügen Sie den Code hinzu, um die Größenänderung der automatischen Zeilenhöhe zu aktivieren.
 
 ## <a name="enabling-auto-resizing-height"></a>Aktivieren der Höhe der automatischen Größenänderung
 
-In der Datenquelle (`UITableViewDatasource`) oder der Quelle (`UITableViewSource`) der Tabellenansicht müssen wir die verwenden, die `Identifier` wir im Designer definiert haben, wenn wir eine Zelle aus der Warteschlange entfernen. Beispiel:
+In der Datenquelle (`UITableViewDatasource`) oder Quelle (`UITableViewSource`) der Tabellenansicht müssen wir die im Designer definierte `Identifier` verwenden, wenn wir eine Zelle aus der Warteschlange entfernen. Beispiel:
 
 ```csharp
 public string CellID {
@@ -87,7 +87,7 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 }
 ```
 
-Standardmäßig wird die Tabellenansicht für die automatische Größenänderung der Zeilenhöhe festgelegt. Um dies zu gewährleisten `RowHeight` , sollte die-Eigenschaft `UITableView.AutomaticDimension`auf festgelegt werden. Wir müssen auch die `EstimatedRowHeight` -Eigenschaft in unserer `UITableViewController`festlegen. Beispiel:
+Standardmäßig wird die Tabellenansicht für die automatische Größenänderung der Zeilenhöhe festgelegt. Um dies zu gewährleisten, sollte die `RowHeight`-Eigenschaft auf `UITableView.AutomaticDimension`festgelegt werden. Wir müssen auch die `EstimatedRowHeight`-Eigenschaft in unserer `UITableViewController`festlegen. Beispiel:
 
 ```csharp
 public override void ViewWillAppear (bool animated)
@@ -107,7 +107,7 @@ Diese Schätzung muss nicht exakt sein, sondern nur eine grobe Schätzung der du
 
 Wenn dieser Code vorhanden ist, wird beim Ausführen der APP jede Zeile verkleinert und basierend auf der Höhe der letzten Bezeichnung im Zellen Prototyp vergrößert. Beispiel:
 
-[![](autosizing-row-height-images/table07.png "Eine Beispiel Tabelle wird ausgeführt.")](autosizing-row-height-images/table07.png#lightbox)
+[![](autosizing-row-height-images/table07.png "A sample table run")](autosizing-row-height-images/table07.png#lightbox)
 
 ## <a name="related-links"></a>Verwandte Links
 

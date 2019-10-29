@@ -4,15 +4,15 @@ description: Wir haben die Theorie hinter dem Speichern des Zustands im Aktivit�
 ms.prod: xamarin
 ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: febb9b297712a97c03613468b79ca583ec300e77
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: e449e6a62d0c8ca283f20c689477c1f1482611c5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887727"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017002"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>Exemplarische Vorgehensweise: Speichern des Aktivitätsstatus
 
@@ -20,7 +20,7 @@ _Wir haben die Theorie hinter dem Speichern des Zustands im Aktivitäts Lebenszy
 
 ## <a name="activity-state-walkthrough"></a>Exemplarische Vorgehensweise zum Aktivitäts Zustand
 
-Öffnen Sie das Projekt **ActivityLifecycle_Start** (im Beispiel [activitylifecycle](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle) ), erstellen Sie es, und führen Sie es aus. Dabei handelt es sich um ein sehr einfaches Projekt, das zwei Aktivitäten umfasst, um den Aktivitäts Lebenszyklus zu veranschaulichen, und wie die verschiedenen Lebenszyklus Methoden aufgerufen werden. Wenn Sie die Anwendung starten, wird der Bild `MainActivity` Schirm von angezeigt:
+Öffnen Sie das Projekt **ActivityLifecycle_Start** (im Beispiel [activitylifecycle](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle) ), erstellen Sie es, und führen Sie es aus. Dabei handelt es sich um ein sehr einfaches Projekt, das zwei Aktivitäten umfasst, um den Aktivitäts Lebenszyklus zu veranschaulichen, und wie die verschiedenen Lebenszyklus Methoden aufgerufen werden. Wenn Sie die Anwendung starten, wird der Bildschirm `MainActivity` angezeigt:
 
 [![Aktivität A Bildschirm](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
@@ -48,7 +48,7 @@ Wenn Sie auf die Schaltfläche **Start Aktivität b** klicken, wird *Aktivität 
 
 Daher wird *Aktivität B* gestartet und anstelle von *Aktivität a*angezeigt: 
 
-[![Bildschirm für Aktivität B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
+[Bildschirm "![Aktivität B"](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
 Wenn Sie auf die Schaltfläche " **zurück** " klicken, wird *Aktivität B* zerstört und *Aktivität a* wird fortgesetzt: 
 
@@ -63,13 +63,13 @@ Wenn Sie auf die Schaltfläche " **zurück** " klicken, wird *Aktivität B* zers
 
 ### <a name="adding-a-click-counter"></a>Hinzufügen eines Klick Zählers
 
-Als nächstes ändern wir die Anwendung so, dass eine Schaltfläche angezeigt wird, die anzeigt, wie oft auf Sie geklickt wird. Fügen Sie zunächst eine `_counter` `MainActivity`Instanzvariable hinzu:
+Als nächstes ändern wir die Anwendung so, dass eine Schaltfläche angezeigt wird, die anzeigt, wie oft auf Sie geklickt wird. Fügen Sie zunächst eine `_counter` Instanz-Variable hinzu, um `MainActivity`:
 
 ```csharp
 int _counter = 0;
 ```
 
-Als nächstes bearbeiten wir die Layoutdatei " **Resource/Layout/Main. axml** " und fügen `clickButton` eine neue hinzu, die anzeigt, wie oft der Benutzer auf die Schaltfläche geklickt hat. Die resultierende **Main. axml** sollte in etwa wie folgt aussehen: 
+Als nächstes bearbeiten wir die Layoutdatei " **Resource/Layout/Main. axml** " und fügen eine neue `clickButton` hinzu, die anzeigt, wie oft der Benutzer auf die Schaltfläche geklickt hat. Die resultierende **Main. axml** sollte in etwa wie folgt aussehen: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -90,7 +90,7 @@ Als nächstes bearbeiten wir die Layoutdatei " **Resource/Layout/Main. axml** " 
 </LinearLayout>
 ```
 
-Fügen Sie den folgenden Code am Ende der [OnCreate](xref:Android.App.Activity.OnCreate*) -Methode in `MainActivity` &ndash; den Code Handles Click-Ereignisse aus der `clickButton`-Datei ein:
+Fügen Sie den folgenden Code am Ende der [OnCreate](xref:Android.App.Activity.OnCreate*) -Methode in `MainActivity` hinzu, &ndash; dieser Code die Click-Ereignisse aus der `clickButton`behandelt:
 
 ```csharp
 var clickbutton = FindViewById<Button> (Resource.Id.clickButton);
@@ -104,13 +104,13 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 } ;
 ```
 
-Wenn Sie die APP erneut erstellen und ausführen, wird eine neue Schaltfläche angezeigt, in der der Wert von `_counter` bei jedem Mausklick erhöht und angezeigt wird:
+Wenn Sie die APP erneut erstellen und ausführen, wird eine neue Schaltfläche angezeigt, die den Wert `_counter` bei jedem Mausklick erhöht und anzeigt:
 
-[![Berührungs Anzahl hinzufügen](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
+[![hinzufügen der Berührungs Anzahl](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 Wenn wir das Gerät jedoch in den Querformat drehen, gehen diese Anzahl verloren:
 
-[![Beim Drehen in das Querformat wird die Anzahl auf 0 zurückgesetzt.](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
+[![Drehung in das Querformat setzt die Anzahl auf NULL zurück.](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 Wenn Sie die Anwendungs Ausgabe untersuchen, sehen wir, dass *Aktivität A* angehalten, beendet, zerstört, neu erstellt, neu gestartet und anschließend während der Drehung vom Hochformat in den Querformat Modus wieder aufgenommen wurde: 
 
@@ -128,7 +128,7 @@ Da *Aktivität A* beim Drehen des Geräts zerstört und erneut erstellt wird, ge
 
 ### <a name="adding-code-to-preserve-instance-state"></a>Hinzufügen von Code zum Beibehalten des Instanzstatus
 
-Fügen Sie eine Methode `MainActivity` hinzu, um den Instanzzustand zu speichern. Bevor *Aktivität A* zerstört wird, ruft Android automatisch [onsaveinstancestate](xref:Android.App.Activity.OnSaveInstanceState*) auf und übergibt ein [Bündel](xref:Android.OS.Bundle) , mit dem wir den Instanzzustand speichern können. Wir verwenden es zum Speichern der Klick Anzahl als ganzzahliger Wert:
+Fügen Sie eine Methode hinzu, um zu `MainActivity`, den Instanzzustand zu speichern. Bevor *Aktivität A* zerstört wird, ruft Android automatisch [onsaveinstancestate](xref:Android.App.Activity.OnSaveInstanceState*) auf und übergibt ein [Bündel](xref:Android.OS.Bundle) , mit dem wir den Instanzzustand speichern können. Wir verwenden es zum Speichern der Klick Anzahl als ganzzahliger Wert:
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -141,7 +141,7 @@ protected override void OnSaveInstanceState (Bundle outState)
 }
 ```
 
-Wenn *Aktivität A* neu erstellt und fortgesetzt wird, übergibt Android `Bundle` diese wieder an `OnCreate` unsere Methode. Fügen Sie Code `OnCreate` hinzu, um den `_counter` Wert `Bundle`aus dem weiter gegebenen wiederherzustellen. Fügen Sie den folgenden Code direkt vor der Zeile `clickbutton` ein, in der definiert ist: 
+Wenn *Aktivität A* neu erstellt und fortgesetzt wird, übergibt Android diese `Bundle` wieder an unsere `OnCreate`-Methode. Fügen Sie nun Code hinzu, `OnCreate`, um den `_counter` Wert aus dem weiter gegebenen `Bundle`wiederherzustellen. Fügen Sie den folgenden Code direkt vor der Zeile hinzu, in der `clickbutton` definiert ist: 
 
 ```csharp
 if (bundle != null)
@@ -169,7 +169,7 @@ Sehen wir uns das Ausgabefenster an, um zu sehen, was passiert ist:
 [ActivityLifecycle.MainActivity] Activity A - OnResume
 ```
 
-Bevor die [onstoppt](xref:Android.App.Activity.OnStop) -Methode aufgerufen wurde, wurde `OnSaveInstanceState` die neue-Methode aufgerufen, `_counter` um den Wert `Bundle`in einem zu speichern. Android hat diese `Bundle` `OnCreate` Methode an uns zurückgegeben, als die Methode aufgerufen wurde, und wir konnten Sie verwenden, um `_counter` den Wert an der Stelle wiederherzustellen, an der wir aufgehört haben.
+Bevor die [onstoppt](xref:Android.App.Activity.OnStop) -Methode aufgerufen wurde, wurde die neue `OnSaveInstanceState`-Methode aufgerufen, um den `_counter` Wert in einem `Bundle`zu speichern. Android hat diese `Bundle` an uns zurückgegeben, als er die `OnCreate`-Methode aufgerufen hat, und wir konnten ihn verwenden, um den `_counter` Wert an der Stelle wiederherzustellen, an der wir aufgehört haben.
 
 ## <a name="summary"></a>Zusammenfassung
 

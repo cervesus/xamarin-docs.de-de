@@ -2,15 +2,15 @@
 ms.assetid: 4D47185C-8998-4903-AE64-7E2A67F9DF7A
 title: Vergleichen von Benutzeroberflächen-
 description: Dieses Dokument enthält einen Vergleich der UI-Steuerelemente zwischen xamarin. Forms, Windows Forms und WPF. Außerdem wird mit einer anderen Dokumentation verknüpft, die WPF mit xamarin. Forms vergleicht.
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 7ac1c7872253f11ddd58e362501827058fd9a28a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 854d05d004276fa4ce3ccdfc63c541217c6c7acd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290393"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016497"
 ---
 # <a name="ui-controls-comparison"></a>Vergleichen von Benutzeroberflächen-
 
@@ -25,8 +25,8 @@ Erfahren Sie mehr über die [Ähnlichkeiten und Unterschiede zwischen WPF und xa
 |[Button](https://msdn.microsoft.com/library/system.windows.forms.button(v=vs.110).aspx) (Schaltfläche)|[Button](https://msdn.microsoft.com/library/system.windows.controls.button(v=vs.110).aspx) (Schaltfläche)|Schaltfläche|
 |[CheckBox](https://msdn.microsoft.com/library/system.windows.forms.checkbox(v=vs.110).aspx)|[CheckBox](https://msdn.microsoft.com/library/system.windows.controls.checkbox(v=vs.110).aspx)|Schalter|
 |[CheckedListBox](https://msdn.microsoft.com/library/system.windows.forms.checkedlistbox(v=vs.110).aspx)|[ListBox](https://msdn.microsoft.com/library/system.windows.controls.listbox(v=vs.110).aspx) mit Komposition.|ListView mit Komposition.|
-|[ColorDialog](https://msdn.microsoft.com/library/system.windows.forms.colordialog(v=vs.110).aspx)|-|-|
-|[ComboBox](https://msdn.microsoft.com/library/system.windows.forms.combobox(v=vs.110).aspx)|Kombinations [Feld](https://msdn.microsoft.com/library/system.windows.controls.combobox(v=vs.110).aspx) (bietet keine Unterstützung für die automatische Vervollständigung)|Auswahl|
+|[Color Dialog](https://msdn.microsoft.com/library/system.windows.forms.colordialog(v=vs.110).aspx)|-|-|
+|[ComboBox](https://msdn.microsoft.com/library/system.windows.forms.combobox(v=vs.110).aspx)|[ComboBox](https://msdn.microsoft.com/library/system.windows.controls.combobox(v=vs.110).aspx) (keine Unterstützung für die automatische Vervollständigung)|Auswahl|
 |[ContextMenuStrip](https://msdn.microsoft.com/library/system.windows.forms.contextmenustrip(v=vs.110).aspx)|[ContextMenu](https://msdn.microsoft.com/library/system.windows.controls.contextmenu(v=vs.110).aspx)|-|
 |[DataGridView](https://msdn.microsoft.com/library/system.windows.forms.datagridview(v=vs.110).aspx)|[DataGrid](https://msdn.microsoft.com/library/system.windows.controls.datagrid(v=vs.110).aspx)|-|
 |[DateTimePicker](https://msdn.microsoft.com/library/system.windows.forms.datetimepicker(v=vs.110).aspx)|[DatePicker](https://msdn.microsoft.com/library/system.windows.controls.datepicker(v=vs.110).aspx)|DatePicker-& timePicker|
@@ -38,7 +38,7 @@ Erfahren Sie mehr über die [Ähnlichkeiten und Unterschiede zwischen WPF und xa
 |[Formular](https://msdn.microsoft.com/library/system.windows.forms.form(v=vs.110).aspx)|[Fenster](https://msdn.microsoft.com/library/system.windows.window(v=vs.110).aspx)|Seite|
 |[GroupBox](https://msdn.microsoft.com/library/system.windows.forms.groupbox(v=vs.110).aspx)|[GroupBox](https://msdn.microsoft.com/library/system.windows.controls.groupbox(v=vs.110).aspx)|-|
 |[HelpProvider](https://msdn.microsoft.com/library/system.windows.forms.helpprovider(v=vs.110).aspx)|Kein entsprechendes Steuerelement (Quick Infos verwenden).|-|
-|[HScrollBar](https://msdn.microsoft.com/library/system.windows.forms.hscrollbar(v=vs.110).aspx)|[Scrollleiste](https://msdn.microsoft.com/library/system.windows.controls.primitives.scrollbar(v=vs.110).aspx) (Scrollen ist in Container Steuerelemente integriert)|Verwenden von ScrollView|
+|[HScrollBar](https://msdn.microsoft.com/library/system.windows.forms.hscrollbar(v=vs.110).aspx)|[ScrollBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.scrollbar(v=vs.110).aspx) (Scrollen ist in Container Steuerelemente integriert)|Verwenden von ScrollView|
 |[ImageList](https://msdn.microsoft.com/library/system.windows.forms.imagelist(v=vs.110).aspx)|-|-|
 |[Bezeichnung](https://msdn.microsoft.com/library/system.windows.forms.label(v=vs.110).aspx)|[Bezeichnung](https://msdn.microsoft.com/library/system.windows.controls.label(v=vs.110).aspx)|Bezeichnung|
 |[LinkLabel](https://msdn.microsoft.com/library/system.windows.forms.linklabel(v=vs.110).aspx)|Kein entsprechendes Steuerelement (Sie können die [Link](https://msdn.microsoft.com/library/system.windows.documents.hyperlink(v=vs.110).aspx) Klasse verwenden, um Hyperlinks innerhalb von fortlaufendem Inhalt zu hosten).|-|
@@ -50,7 +50,7 @@ Erfahren Sie mehr über die [Ähnlichkeiten und Unterschiede zwischen WPF und xa
 |[NotifyIcon](https://msdn.microsoft.com/library/system.windows.forms.notifyicon(v=vs.110).aspx)|-|-|
 |[NumericUpDown](https://msdn.microsoft.com/library/system.windows.forms.numericupdown(v=vs.110).aspx)|[Textfeld](https://msdn.microsoft.com/library/system.windows.controls.textbox(v=vs.110).aspx) und zwei [RepeatButton](https://msdn.microsoft.com/library/system.windows.controls.primitives.repeatbutton(v=vs.110).aspx) -Steuerelemente.|Stepper|
 |[OpenFileDialog](https://msdn.microsoft.com/library/system.windows.forms.openfiledialog(v=vs.110).aspx)|[OpenFileDialog](https://msdn.microsoft.com/library/microsoft.win32.openfiledialog(v=vs.110).aspx)|-|
-|[PageSetupDialog](https://msdn.microsoft.com/library/system.windows.forms.pagesetupdialog(v=vs.110).aspx)|-|-|
+|[Page Setup Dialog](https://msdn.microsoft.com/library/system.windows.forms.pagesetupdialog(v=vs.110).aspx)|-|-|
 |[Bereich](https://msdn.microsoft.com/library/system.windows.forms.panel(v=vs.110).aspx)|[Canvas](https://msdn.microsoft.com/library/system.windows.controls.canvas(v=vs.110).aspx)|Anzeigen oder AbsoluteLayout|
 |[PictureBox](https://msdn.microsoft.com/library/system.windows.forms.picturebox(v=vs.110).aspx)|[Image](https://msdn.microsoft.com/library/system.windows.controls.image(v=vs.110).aspx)|Bild|
 |[PrintDialog](https://msdn.microsoft.com/library/system.windows.forms.printdialog(v=vs.110).aspx)|[PrintDialog](https://msdn.microsoft.com/library/system.windows.controls.printdialog(v=vs.110).aspx)|-|
@@ -65,11 +65,11 @@ Erfahren Sie mehr über die [Ähnlichkeiten und Unterschiede zwischen WPF und xa
 |[ScrollableControl](https://msdn.microsoft.com/library/system.windows.forms.scrollablecontrol(v=vs.110).aspx)|[ScrollViewer](https://msdn.microsoft.com/library/system.windows.controls.scrollviewer(v=vs.110).aspx)|ScrollView|
 |[SoundPlayer](https://msdn.microsoft.com/library/system.media.soundplayer(v=vs.110).aspx)|[Media Player](https://msdn.microsoft.com/library/system.windows.media.mediaplayer(v=vs.110).aspx)|-|
 |[SplitContainer](https://msdn.microsoft.com/library/system.windows.forms.splitcontainer(v=vs.110).aspx)|[GridSplitter](https://msdn.microsoft.com/library/system.windows.controls.gridsplitter(v=vs.110).aspx)|Masterdetailpage in Erwägung gezogen|
-|[StatusStrip](https://msdn.microsoft.com/library/system.windows.forms.statusstrip(v=vs.110).aspx)|[StatusBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.statusbar(v=vs.110).aspx)|-|
+|[Status Strip](https://msdn.microsoft.com/library/system.windows.forms.statusstrip(v=vs.110).aspx)|[StatusBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.statusbar(v=vs.110).aspx)|-|
 |[TabControl](https://msdn.microsoft.com/library/system.windows.forms.tabcontrol(v=vs.110).aspx)|[TabControl](https://msdn.microsoft.com/library/system.windows.controls.tabcontrol(v=vs.110).aspx)|TabbedPage|
 |[TableLayoutPanel](https://msdn.microsoft.com/library/system.windows.forms.tablelayoutpanel(v=vs.110).aspx)|[Raster](https://msdn.microsoft.com/library/system.windows.controls.grid(v=vs.110).aspx)|Raster|
 |[TextBox](https://msdn.microsoft.com/library/system.windows.forms.textbox(v=vs.110).aspx)|[TextBox](https://msdn.microsoft.com/library/system.windows.controls.textbox(v=vs.110).aspx)|Der Editor unterstützt keinen umfangreichen (formatierten) Text.|
-|[Zeitgeber](https://msdn.microsoft.com/library/system.windows.forms.timer(v=vs.110).aspx)|[DispatcherTimer](https://msdn.microsoft.com/library/system.windows.threading.dispatchertimer(v=vs.110).aspx)|Device.StartTime()|
+|[Zeitgeber](https://msdn.microsoft.com/library/system.windows.forms.timer(v=vs.110).aspx)|[DispatcherTimer](https://msdn.microsoft.com/library/system.windows.threading.dispatchertimer(v=vs.110).aspx)|Device. StartTime ()|
 |[ToolStrip](https://msdn.microsoft.com/library/system.windows.forms.toolstrip(v=vs.110).aspx)|[ToolBar](https://msdn.microsoft.com/library/system.windows.controls.toolbar(v=vs.110).aspx)|Page. ToolbarItems und ToolBarItem|
 |[ToolStripContainer](https://msdn.microsoft.com/library/system.windows.forms.toolstripcontainer(v=vs.110).aspx), [ToolStripDropDown](https://msdn.microsoft.com/library/system.windows.forms.toolstripdropdown(v=vs.110).aspx), [ToolStripDropDownMenu](https://msdn.microsoft.com/library/system.windows.forms.toolstripdropdownmenu(v=vs.110).aspx), [ToolStripPanel](https://msdn.microsoft.com/library/system.windows.forms.toolstrippanel(v=vs.110).aspx)|[Symbolleiste](https://msdn.microsoft.com/library/system.windows.controls.toolbar(v=vs.110).aspx) mit Komposition.|Page. ToolbarItems und ToolBarItem mit Komposition|
 |[QuickInfo](https://msdn.microsoft.com/library/system.windows.forms.tooltip(v=vs.110).aspx)|[QuickInfo](https://msdn.microsoft.com/library/system.windows.controls.tooltip(v=vs.110).aspx)|Verwenden von Barrierefreiheits Funktionen|
@@ -77,4 +77,4 @@ Erfahren Sie mehr über die [Ähnlichkeiten und Unterschiede zwischen WPF und xa
 |[TreeView](https://msdn.microsoft.com/library/system.windows.forms.treeview(v=vs.110).aspx)|[TreeView](https://msdn.microsoft.com/library/system.windows.controls.treeview(v=vs.110).aspx)|Hierarchische ListView in einer navigationpage|
 |[UserControl](https://msdn.microsoft.com/library/system.windows.forms.usercontrol(v=vs.110).aspx)|[UserControl](https://msdn.microsoft.com/library/system.windows.controls.usercontrol(v=vs.110).aspx)|Anzeigen und auch benutzerdefinierte Renderer|
 |[VScrollBar](https://msdn.microsoft.com/library/system.windows.forms.vscrollbar(v=vs.110).aspx)|[ScrollBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.scrollbar(v=vs.110).aspx)|Verwenden von ScrollView|
-|[WebBrowser](https://msdn.microsoft.com/library/system.windows.forms.webbrowser(v=vs.110).aspx)|[WebBrowser](https://msdn.microsoft.com/library/system.windows.controls.webbrowser(v=vs.110).aspx)|WebView|
+|[Web](https://msdn.microsoft.com/library/system.windows.forms.webbrowser(v=vs.110).aspx)|[Web](https://msdn.microsoft.com/library/system.windows.controls.webbrowser(v=vs.110).aspx)|WebView|

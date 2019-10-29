@@ -3,15 +3,15 @@ title: Manuelles Erstellen von nuget-Paketen für xamarin
 description: Dieses Dokument enthält Tipps zum Erstellen von nuget-Paketen, die auf die xamarin-Plattform abzielen. Es beschreibt nuget-Paket xamarin-Profile, PCL-nuget mit Platt Form Abhängigkeiten und Links zu verschiedenen Open Source-Beispielen.
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 88feea4c0a638da99a0316d802f04f08f0fea689
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289199"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016776"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Manuelles Erstellen von nuget-Paketen für xamarin
 
@@ -26,7 +26,7 @@ In der nuget-Website, die [mehrere .NET Framework Versionen und Profile unterst�
 
 Die wichtigsten xamarin-Ziel-Frameworks werden heute verwendet:
 
-- **MonoAndroid** - Xamarin.Android
+- **Monoandroid** -xamarin. Android
 - **Xamarin. IOS** -xamarin. IOS- [Unified API](~/cross-platform/macios/unified/index.md) (unterstützt 64-Bit)
 - Das Mobile Profil **xamarin. Mac** -xamarin. Mac entspricht der xamarin. IOS-und xamarin. Android-API-Oberfläche.
 
@@ -51,7 +51,7 @@ Die meisten **nuspec** -Dateien geben die Versionsnummer des Ziel Frameworks an,
 
 Sie können die Version mit einer Reihe von Zahlen ohne Dezimaltrennzeichen angeben, oder Sie können Sie mithilfe von Dezimaltrennzeichen angeben. Ohne den Dezimaltrennzeichen nimmt nuget einfach jede Zahl an und verwandelt sie in eine Version, indem zwischen den einzelnen Ziffern ein "." eingefügt wird.
 
-Im obigen Abschnitt "MonoAndroid10" bedeutet "Android 1,0". Dies bedeutet lediglich, dass das [Ziel Framework](~/android/app-fundamentals/android-api-levels.md) des Projekts monoandroid, Version 1,0 oder höher, sein muss. Die Version wird im `<TargetFrameworkVersion>` -Element in der Projektdatei angegeben.
+Im obigen Abschnitt "MonoAndroid10" bedeutet "Android 1,0". Dies bedeutet lediglich, dass das [Ziel Framework](~/android/app-fundamentals/android-api-levels.md) des Projekts monoandroid, Version 1,0 oder höher, sein muss. Die Version wird im `<TargetFrameworkVersion>`-Element in der Projektdatei angegeben.
 
 So verdeutlichen Sie Folgendes:
 
@@ -63,11 +63,11 @@ So verdeutlichen Sie Folgendes:
 
 PCL-Profile sind auf die .NET Framework-APIs beschränkt, auf die Sie zugreifen können, und Sie können sicherlich nicht auf plattformspezifischen Code zugreifen. Diese Links von Drittanbietern erörtern verschiedene Ansätze zum Erstellen von nuget-Paketen, die PCL und Native APIs verwenden, um Kompatibilität für xamarin und andere Plattformen bereitzustellen:
 
-- [Vorgehensweise beim Arbeiten mit portablen Klassenbibliotheken](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
-- [Der Köder-und Switch-PCL-Trick](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
-- [Erstellen einer nuget-PCL, die mit xamarin. IOS funktioniert](http://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
+- [Vorgehensweise beim Arbeiten mit portablen Klassenbibliotheken](https://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
+- [Der Köder-und Switch-PCL-Trick](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
+- [Erstellen einer nuget-PCL, die mit xamarin. IOS funktioniert](https://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
 
-Diese externe [Liste von PCL-Profilen mit Ihrem nuget-Zielnamen](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) ist auch eine hilfreiche Referenz.
+Diese externe [Liste von PCL-Profilen mit Ihrem nuget-Zielnamen](https://portablelibraryprofiles.stephencleary.com) ist auch eine hilfreiche Referenz.
 
 ## <a name="examples"></a>Beispiele
 

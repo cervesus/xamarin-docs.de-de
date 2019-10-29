@@ -4,15 +4,15 @@ description: Dieser Artikel beschreibt das Arbeiten mit Symbolleisten in einer x
 ms.prod: xamarin
 ms.assetid: C8D228CE-C860-47E1-85FD-69864BF91F20
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: cd2490bfad880d128f5eaeebd4aac58ad3a4d8fa
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5cf86adf07043a60c6fe445265e14591692e365b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70772722"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008355"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Symbolleisten in xamarin. Mac
 
@@ -66,7 +66,7 @@ Beim Einrichten einer Symbolleiste in der Interface Builder von Xcode kann ein E
 
 Die Symbolleiste stellt automatisch eine Verbindung mit dem Menü **Ansicht** her, sodass Benutzer Sie ausblenden, anzeigen und anpassen können:
 
-![Symbolleisten bezogene Elemente im Menü Ansicht](toolbar-images/info08.png "Symbolleisten bezogene Elemente im Menü Ansicht")
+![Symbolleisten bezogene Elemente im Menü "Ansicht"](toolbar-images/info08.png "Symbolleisten bezogene Elemente im Menü "Ansicht"")
 
 Weitere Informationen finden Sie in der Dokumentation zur [integrierten Menü Funktionalität](~/mac/user-interface/menu.md) .
 
@@ -92,13 +92,13 @@ Um UI-Elemente für C# den Code über Outlets und Aktionen verfügbar zu machen,
 6. Öffnen Sie das Storyboard erneut in der Interface Builder von Xcode.
 7. Die Datei " **windowcontroller. h** " steht zur Verwendung zur Verfügung: 
 
-    [![Die Datei windowcontroller. h](toolbar-images/windowcontroller03.png "Die Datei windowcontroller. h")](toolbar-images/windowcontroller03-large.png#lightbox)
+    [![Die Datei "windowcontroller. h"](toolbar-images/windowcontroller03.png "Die Datei "windowcontroller. h"")](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Erstellen und Verwalten von Symbolleisten in Xcode
 
 Symbolleisten werden mit dem Interface Builder von Xcode erstellt und verwaltet. Wenn Sie einer Anwendung eine Symbolleiste hinzufügen möchten, bearbeiten Sie das primäre Storyboard der APP (in diesem Fall " **Main. Storyboard**"), indem Sie in der **Lösungspad**auf die Symbolleiste doppelklicken:
 
-![Öffnen von Main. Storyboard im Lösungspad](toolbar-images/edit01.png "Öffnen von Main. Storyboard im Lösungspad")
+![Öffnen von "Main. Storyboard" im Lösungspad](toolbar-images/edit01.png "Öffnen von "Main. Storyboard" im Lösungspad")
 
 Geben Sie im **Bibliotheks Inspektor**"Tool" in das **Suchfeld** ein, damit alle verfügbaren Symbolleisten Elemente leichter angezeigt werden können:
 

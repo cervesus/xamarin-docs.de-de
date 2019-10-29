@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/07/2018
-ms.openlocfilehash: d3f4c602f7e581cab74b61072e248a22eede9a22
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0f7499551db7d86d7978b9c3e1f562a2f054c202
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762015"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019528"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Wie aktualisiere ich die Java Development Kit-Version (JDK)?
 

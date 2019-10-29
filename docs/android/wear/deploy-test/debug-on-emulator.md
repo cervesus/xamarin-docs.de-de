@@ -4,15 +4,15 @@ description: In diesen Artikeln wird erläutert, wie eine xamarin. Android Wear-
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: f085aaffbedb2965222b98a22cf6a4bb2393642b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca0a6884c05686bded25a2e515456ab192002a24
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764039"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028686"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debuggen von Android Wear in einem Emulator
 
@@ -34,7 +34,7 @@ Wenn Sie ein virtuelles Wear-Gerät erstellen, wählen Sie ein Android Wear-Ger�
 
 Nachdem Sie ein virtuelles Android Wear-Gerät erstellt haben, können Sie es aus dem Pulldownmenü des Geräts in der IDE auswählen, bevor Sie mit dem Debuggen beginnen. Wenn Ihr virtuelles Gerät nicht im pulldowngerät des Geräts verfügbar ist, überprüfen Sie, ob es sich bei dem Projekt um ein Android *Wear* -App-Projekt (kein Android-App-Projekt) handelt und ob die Ziel-API-Ebene auf dieselbe API-Ebene wie das virtuelle Gerät festgelegt ist. Beispiel:
 
-[![Auswählen von "Wear AVD" im Visual Studio-Geräte Menü](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
+[![auswählen eines "Wear AVD" im Visual Studio-Geräte Menü](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
 Nachdem der Android-Emulator gestartet wurde, stellt xamarin. Android die Wear-App im Emulator bereit. Der Emulator führt die App mit dem Image des konfigurierten virtuellen Geräts aus.
 

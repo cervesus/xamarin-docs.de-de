@@ -3,15 +3,15 @@ title: Verpacken von Wear-apps
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: fa35f6fe2388484875180594f18041947963ef7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aa4a4f1ab3ae3024de2d969f9325c2efa4db48af
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763965"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028648"
 ---
 # <a name="packaging-wear-apps"></a>Verpacken von Wear-apps
 
@@ -95,7 +95,7 @@ Sie können Android Wear-apps in xamarin. Android vor Version 5,0 schreiben, abe
     </wearableApp>
     ```
 
-5. Fügen Sie dem `<meta-data />` " **androidmanifest. XML** `<application>` "-Element des Handlers manuell ein-Element hinzu, das auf die neue XML-Ressource verweist:
+5. Fügen Sie dem " **androidmanifest. xml"-`<application>` Element "androidmanifest. XML** " manuell ein `<meta-data />` Element hinzu, das auf die neue XML-Ressource verweist
 
     ```xml
     <meta-data android:name="com.google.android.wearable.beta.app"

@@ -4,15 +4,15 @@ description: In diesem Artikel wird erläutert, wie eine xamarin. Android-Wear-A
 ms.prod: xamarin
 ms.assetid: 01668E4B-BB83-4C26-B23A-F788173FB823
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 9596ff34352337d892fc22df5651b2f78f8c33f6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762158"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028694"
 ---
 # <a name="debug-on-a-wear-device"></a>Debuggen Sie auf einem Wear-Gerät
 
@@ -86,7 +86,7 @@ Führen Sie die folgenden Schritte aus, um das Wear-Gerät mit Ihrem Telefon zu 
     Target: connected
     ```
 
-6. Nachdem Sie die obigen Schritte ausgeführt `adb devices` haben, wird in der Status des Telefons und des Android Wear-Geräts angezeigt:
+6. Nachdem Sie die obigen Schritte ausgeführt haben, wird durch das Ausführen von `adb devices` der Status des Telefons und des Android Wear-Geräts angezeigt:
 
     ```
     List of devices attached

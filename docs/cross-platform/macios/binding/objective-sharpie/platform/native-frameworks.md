@@ -3,19 +3,19 @@ title: Binden von nativen Frameworks
 description: In diesem Dokument wird beschrieben, wie Sie die Option "-Framework" von Target Sharpie verwenden, um eine Bindung an eine als Framework verteilte Bibliothek zu erstellen.
 ms.prod: xamarin
 ms.assetid: 91AE058A-3A1F-41A9-9DE4-4B96880A1869
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: 560db570e915cc9bf261f482f03d972973968585
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 78c489518833705432610e83453c3c04bf1cca53
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279042"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016091"
 ---
 # <a name="binding-native-frameworks"></a>Binden von nativen Frameworks
 
-Manchmal wird eine native Bibliothek als [Framework](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)verteilt. Ziel-Sharpie bietet eine praktische Funktion zum Binden ordnungsgemäß definierter Frame `-framework` Works mithilfe der-Option.
+Manchmal wird eine native Bibliothek als [Framework](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)verteilt. Ziel-Sharpie bietet eine praktische Funktion zum Binden ordnungsgemäß definierter Frameworks über die `-framework`-Option.
 
 Beispielsweise ist die Bindung des [Adobe Creative SDK-Frameworks](https://creativesdk.adobe.com/downloads.html) für IOS unkompliziert:
 
@@ -25,12 +25,12 @@ $ sharpie bind \
     -sdk iphoneos8.1
 ```
 
-In einigen Fällen gibt ein Framework eine **Info. plist** -Datei an, die angibt, mit welchem SDK das Framework kompiliert werden soll. Wenn diese Informationen vorhanden sind und keine `-sdk` explizite Option übergeben wird, leitet der Ziel-Sharpie ihn aus der " **Info. plist** "-Datei `DTSDKName` des Frameworks (entweder dem `DTPlatformName` Schlüssel `DTPlatformVersion` oder einer Kombination der Schlüssel und) ab.
+In einigen Fällen gibt ein Framework eine **Info. plist** -Datei an, die angibt, mit welchem SDK das Framework kompiliert werden soll. Wenn diese Informationen vorhanden sind und keine explizite `-sdk` Option übergeben wird, leitet der Ziel-Sharpie ihn aus der " **Info. plist** "-Datei des Frameworks (`DTSDKName` Schlüssel oder einer Kombination aus der `DTPlatformName` und `DTPlatformVersion` Schlüssel) ab.
 
-Die `-framework` -Option lässt nicht zu, dass explizite Header Dateien übermittelt werden. Die Header Datei des Headers wird anhand der Konvention basierend auf dem frameworknamen ausgewählt. Wenn ein Ober Schirm nicht gefunden werden kann, versucht der Ziel-Sharpie nicht, das Framework zu binden, und Sie müssen die Bindung manuell ausführen, indem Sie die richtigen zu pargenden Header Dateien und alle frameworgumente für clang bereitstellen (z. b. die `-F`frameworksuchpfad-Option).
+Die Option `-framework` lässt nicht zu, dass explizite Header Dateien übermittelt werden. Die Header Datei des Headers wird anhand der Konvention basierend auf dem frameworknamen ausgewählt. Wenn ein Ober Schirm nicht gefunden werden kann, versucht der Ziel-Sharpie nicht, das Framework zu binden, und Sie müssen die Bindung manuell ausführen, indem Sie die richtigen zu pargenden Header Dateien und alle frameworgumente für clang bereitstellen (z. b. die `-F` frameworksuchpfad-Option).
 
-Unter der Haube ist die `-framework` Angabe von nur eine Verknüpfung. Die folgenden Bindungs Argumente sind mit der `-framework` Kurzweile identisch.
-Eine besondere Wichtigkeit ist `-F .` der frameworksuchpfad, der für clang bereitgestellt wird (Beachten Sie den Bereich und den Zeitraum, der als Teil des Befehls erforderlich ist).
+Im Hintergrund ist das Angeben von `-framework` nur eine Verknüpfung. Die folgenden Bindungs Argumente sind identisch mit der `-framework` Kurzzeit oben.
+Eine besondere Wichtigkeit ist der für clang bereitgestellte Suchpfad für `-F .` Framework (Beachten Sie den Bereich und den Zeitraum, der als Teil des Befehls erforderlich ist).
 
 ```
 $ sharpie bind \

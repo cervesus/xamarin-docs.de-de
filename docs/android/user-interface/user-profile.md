@@ -3,15 +3,15 @@ title: Benutzerprofil
 ms.prod: xamarin
 ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2018
-ms.openlocfilehash: ef8f6aeb3c6577825210c0bce594ea0eb4af4e2f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 252a104118b0419f33abdf7f522ad8fc358e3f76
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648259"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028713"
 ---
 # <a name="user-profile"></a>Benutzerprofil
 
@@ -45,16 +45,16 @@ if (cursor != null)
 }
 ```
 
-Ab Android 4 (API-Ebene 14) ist die [contactcontact. profile](xref:Android.Provider.ContactsContract.Profile) -Klasse über den `ContactsContract` Anbieter verfügbar. `ContactsContact.Profile` Bietet Zugriff auf das persönliche Profil für den Besitzer eines Geräts, das Kontaktdaten wie den Namen des Geräte Besitzers und die Telefonnummer enthält.
+Ab Android 4 (API-Ebene 14) ist die [contactcontact. profile](xref:Android.Provider.ContactsContract.Profile) -Klasse über den `ContactsContract` Anbieter verfügbar. Der `ContactsContact.Profile` bietet Zugriff auf das persönliche Profil für den Besitzer eines Geräts, das Kontaktdaten wie den Namen und die Telefonnummer des Geräte Besitzers enthält.
 
 ## <a name="required-permissions"></a>Erforderliche Berechtigungen
 
-Zum Lesen und Schreiben von Kontaktdaten müssen Anwendungen die `READ_CONTACTS` Berechtigungen und `WRITE_CONTACTS` anfordern.
-Außerdem müssen Anwendungen die `READ_PROFILE` Berechtigungen und `WRITE_PROFILE` anfordern, um das Benutzerprofil zu lesen und zu bearbeiten.
+Zum Lesen und Schreiben von Kontaktdaten müssen Anwendungen die Berechtigungen für den `READ_CONTACTS` und `WRITE_CONTACTS` anfordern.
+Außerdem müssen Anwendungen die Berechtigungen `READ_PROFILE` und `WRITE_PROFILE` anfordern, um das Benutzerprofil zu lesen und zu bearbeiten.
 
 ## <a name="updating-profile-data"></a>Aktualisieren von Profildaten
 
-Nachdem diese Berechtigungen festgelegt wurden, kann eine Anwendung normale Android-Techniken verwenden, um mit den Daten des Benutzerprofils zu interagieren. Um z. b. den anzeigen amen des Profils zu aktualisieren, nennen Sie [contentresolver. Update](xref:Android.Content.ContentResolver.Update*) mit einem `Uri` , das über die Eigenschaft [contactcontract. profile. contentrawcontactsuri](xref:Android.Provider.ContactsContract.Profile.ContentRawContactsUri) abgerufen wurde, wie unten dargestellt:
+Nachdem diese Berechtigungen festgelegt wurden, kann eine Anwendung normale Android-Techniken verwenden, um mit den Daten des Benutzerprofils zu interagieren. Um z. b. den anzeigen amen des Profils zu aktualisieren, können Sie [contentresolver. Update](xref:Android.Content.ContentResolver.Update*) mit einem `Uri` aufrufen, das über die Eigenschaft [contactcontract. profile. contentrawcontactsuri](xref:Android.Provider.ContactsContract.Profile.ContentRawContactsUri) abgerufen wurde, wie unten dargestellt:
 
 ```csharp
 var values = new ContentValues ();
@@ -90,7 +90,7 @@ if (cursor != null)
 
 ## <a name="navigating-to-the-user-profile"></a>Navigieren zum Benutzerprofil
 
-Um zum Benutzerprofil zu navigieren, erstellen Sie abschließend eine Absicht mit einer `ActionView` Aktion, `ContactsContract.Profile.ContentUri` und übergeben Sie Sie dann wie `StartActivity` folgt an die-Methode:
+Um zum Benutzerprofil zu navigieren, erstellen Sie zum Schluss eine Absicht mit einer `ActionView` Aktion und eine `ContactsContract.Profile.ContentUri` und übergeben Sie Sie dann wie folgt an die `StartActivity`-Methode:
 
 ```csharp
 var intent = new Intent (Intent.ActionView,
@@ -107,5 +107,5 @@ Das Arbeiten mit dem Benutzerprofil ähnelt dem interagieren mit anderen Daten i
 ## <a name="related-links"></a>Verwandte Links
 
 - [Contactsproviderdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)
-- [Einführung in Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Einführung in Ice Cream Sandwich](https://www.android.com/about/ice-cream-sandwich/)
 - [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)

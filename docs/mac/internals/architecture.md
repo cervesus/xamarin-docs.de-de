@@ -4,15 +4,15 @@ description: In diesem Handbuch werden xamarin. Mac und seine Beziehung zu Ziel-
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 2c9bbd663257e937e35e062f03b4aa84813edb27
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51900adb1dd15675e584671f3b06ad6d7572f47d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287782"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017552"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin. Mac-Architektur
 
@@ -40,7 +40,7 @@ Sie benötigen Folgendes, um eine macOS-Anwendung mit Xamarin.Mac zu erstellen:
 - Die neueste Version von Xcode (installiert aus dem [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12))
 - Die neueste Version von xamarin. Mac und Visual Studio für Mac
 
-Für das Ausführen von mit Xamarin.Mac erstellten Mac-Anwendungen müssen die folgenden Systemanforderungen erfüllt werden:
+Für das Ausführen von mit Xamarin-Mac erstellten Mac-Anwendungen müssen die folgenden Systemanforderungen erfüllt werden:
 
 - Ein Mac, der Mac OS X 10,7 oder höher ausgeführt wird.
 
@@ -62,7 +62,7 @@ Zuerst muss eine Möglichkeit zum verfügbar machen von Ziel-C für C#verfügbar
 
 Wie bereits erwähnt, ist die Registrierungsstelle Code, der verwalteten Code für "Ziel-C" verfügbar macht. Hierzu wird eine Liste aller verwalteten Klassen erstellt, die von NSObject abgeleitet werden:
 
-- Für alle Klassen, die keine vorhandene Ziel-c-Klasse umwickeln, wird eine neue Ziel-c-Klasse erstellt, wobei die Ziel-c-Member alle verwalteten Member `[Export]` mit einem-Attribut spiegeln.
+- Für alle Klassen, die keine vorhandene Ziel-c-Klasse umwickeln, wird eine neue Ziel-c-Klasse erstellt, wobei die Ziel-c-Member alle verwalteten Member mit einem `[Export]` Attribut spiegeln.
 - In den Implementierungen für jedes Ziel – C-Member wird automatisch Code hinzugefügt, um den gespiegelten verwalteten Member aufzurufen.
 
 Der folgende Pseudo Code zeigt ein Beispiel für die Vorgehensweise:
@@ -92,7 +92,7 @@ class MyViewController : UIViewController{
 @end
 ```
 
-Der verwaltete Code kann die Attribute `[Register]` und `[Export]`enthalten, die von der Registrierungsstelle verwendet werden, um zu wissen, dass das Objekt für "Ziel-C" verfügbar gemacht werden muss. Das [Register]-Attribut wird verwendet, um den Namen der generierten Ziel-C-Klasse anzugeben, falls der generierte Standardname nicht geeignet ist. Alle von NSObject abgeleiteten Klassen werden automatisch bei Ziel-C registriert. Das erforderliche [Export]-Attribut enthält eine Zeichenfolge, bei der es sich um den in der generierten Ziel-C-Klasse verwendeten Selektor handelt.
+Der verwaltete Code kann die Attribute, `[Register]` und `[Export]`enthalten, die von der Registrierungsstelle verwendet werden, um zu wissen, dass das Objekt für "Ziel-C" verfügbar gemacht werden muss. Das [Register]-Attribut wird verwendet, um den Namen der generierten Ziel-C-Klasse anzugeben, falls der generierte Standardname nicht geeignet ist. Alle von NSObject abgeleiteten Klassen werden automatisch bei Ziel-C registriert. Das erforderliche [Export]-Attribut enthält eine Zeichenfolge, bei der es sich um den in der generierten Ziel-C-Klasse verwendeten Selektor handelt.
 
 Es gibt zwei Typen von Registrierungsstellen, die in xamarin. Mac – Dynamic und static verwendet werden:
 
@@ -136,9 +136,9 @@ public interface NSBox {
 }
 ```
 
-Der in xamarin. Mac aufgerufene `bmac` Generator übernimmt diese Definitions Dateien und verwendet .NET-Tools, um Sie in eine temporäre Assembly zu kompilieren. Diese temporäre Assembly kann jedoch nicht zum Aufruf von Ziel-C-Code aufgerufen werden. Der Generator liest dann die temporäre Assembly und generiert C# Code, der zur Laufzeit verwendet werden kann. Wenn Sie z. b. ein zufälliges Attribut zu ihrer Definition. cs-Datei hinzufügen, wird es im ausgegebenen Code nicht angezeigt. Der Generator weiß es nicht, und er weiß `bmac` daher nicht, dass er in der temporären Assembly suchen muss, um ihn auszugeben.
+Der Generator, der in xamarin. Mac `bmac` aufgerufen wird, nimmt diese Definitions Dateien und verwendet .NET-Tools, um Sie in eine temporäre Assembly zu kompilieren. Diese temporäre Assembly kann jedoch nicht zum Aufruf von Ziel-C-Code aufgerufen werden. Der Generator liest dann die temporäre Assembly und generiert C# Code, der zur Laufzeit verwendet werden kann. Wenn Sie z. b. ein zufälliges Attribut zu ihrer Definition. cs-Datei hinzufügen, wird es im ausgegebenen Code nicht angezeigt. Der Generator weiß es nicht, weshalb `bmac` nicht weiß, dass er in der temporären Assembly nach der Ausgabe sucht, um Sie auszugeben.
 
-Nachdem xamarin. Mac. dll erstellt wurde, bündelt der Packager `mmp`alle Komponenten zusammen.
+Nachdem die xamarin. Mac. dll erstellt wurde, bündelt der Packager (`mmp`) alle Komponenten zusammen.
 
 Auf hoher Ebene wird dies erreicht, indem die folgenden Aufgaben ausgeführt werden:
 
@@ -147,7 +147,7 @@ Auf hoher Ebene wird dies erreicht, indem die folgenden Aufgaben ausgeführt wer
 - Wenn die Verknüpfung aktiviert ist, führen Sie den verwalteten Linker aus, um die Assemblys zu optimieren, indem Sie nicht verwendete
 - Erstellen Sie eine Start Programm Anwendung, und verknüpfen Sie im Start Programmcode, der im Zusammenhang mit dem Registrierungscode gesprochen wird, im statischen Modus.
 
-Diese wird dann im Rahmen des benutzerbuildprozesses ausgeführt, der Benutzercode in eine Assembly kompiliert, die `mmp` auf xamarin. Mac. dll verweist und ausgeführt wird, um Sie zu einem Paket zu machen.
+Diese wird dann im Rahmen des benutzerbuildprozesses ausgeführt, der Benutzercode in eine Assembly kompiliert, die auf xamarin. Mac. dll verweist und `mmp` ausführt, um das Paket zu erstellen.
 
 Ausführlichere Informationen zum Linker und seiner Verwendung finden Sie im IOS [Linker](~/ios/deploy-test/linker.md) Guide.
 

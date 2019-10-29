@@ -4,15 +4,15 @@ description: Dieses Dokument verweist auf verschiedene Anleitungen, in denen bes
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/06/2016
-ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7f5af84a8dfb9f774822e28e50cf8bbca9acf94b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768404"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021888"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Arbeiten mit Tabellen und Zellen in xamarin. IOS
 
@@ -22,14 +22,14 @@ Bei der Verwendung von plattformübergreifenden Anwendungen mit xamarin. Android
 
 Diese Artikel machen einen umfassenden Einblick in die Arbeit mit Tabellen, einschließlich der folgenden:
 
-- **Tabellen Teile** – Einführung und Erläuterung der visuellen Elemente des `UITableView` Steuer Elements. 
+- **Tabellen Teile** – Einführung und Erläuterung der visuellen Elemente des Steuer Elements `UITableView`. 
 - **Anzeigen von Daten in Tabellen** – veranschaulichen, wie Sie eine Tabelle erstellen und Auffüllen, verschiedene Tabellen-und Zell Stile verwenden und Speicherprobleme vermeiden, indem Sie Zellen Objekte wieder verwenden. 
 - **Erweiterte Verwendung** – das Entwickeln von benutzerdefinierten Zellen und das Verwenden der Bearbeitungsfunktionen der uitableview-Klasse. 
 - **Visuelles Erstellen einer Tabelle** – mithilfe der Xamarin Designer für IOS, um eine Tabellen gesteuerte Schnittstelle mit einem Storyboard zu erstellen. 
 
 ## <a name="contents"></a>Inhalt
 
- [Tabellen Teile &amp; Funktionalität](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
+ [Tabellen Teile &amp;-Funktionalität](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
  [Auffüllen einer Tabelle mit Daten](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 
@@ -55,5 +55,5 @@ Diese Artikel machen einen umfassenden Einblick in die Arbeit mit Tabellen, eins
 - [Tableandcellstyles-Beispiel auf GitHub](https://github.com/xamarin/mobile-samples/tree/master/TablesLists)
 - [Uitableview-Klassenreferenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/)
 - [Uitableviewcell-Klassenreferenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/)
-- [UITableViewDelegate](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/)
-- [UITableViewDataSource](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/)
+- [Uitableviewdelegat](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/)
+- [Uitableviewdatasource](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/)

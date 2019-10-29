@@ -4,15 +4,15 @@ description: Sie können eine xamarin. Android-Bindung anpassen, indem Sie die M
 ms.prod: xamarin
 ms.assetid: 63C5078D-9E42-4F70-AF8C-8CEEA84FB6AF
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 37e91070ea10defedbeebdbb06220fabbd2554fc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04f3720d8684129476c955819390e91330a7800a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756640"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020654"
 ---
 # <a name="customizing-bindings"></a>Anpassen von Bindungen
 
@@ -24,7 +24,7 @@ Xamarin. Android automatisiert einen Großteil des Bindungs Vorgangs. in einigen
 
 - Auflösen von Buildfehlern, die durch fehlende Typen, verborgene Typen, doppelte Namen, Probleme mit der Sichtbarkeit von Klassen und andere Situationen verursacht werden, die nicht durch die xamarin. Android-Tools aufgelöst werden können. 
 
-- Ändern der Zuordnung, die xamarin. Android verwendet, um die Android-API an verschiedene C# Typen in zu binden (z. b. werden `int` viele Entwickler C# `enum` die Zuordnung von Java-Konstanten zu konstanten bevorzugen).
+- Ändern der Zuordnung, die xamarin. Android verwendet, um die Android-API an verschiedene C# Typen in zu binden (z. b. möchten viele Entwickler C#`enum`Konstanten Java-`int`Konstanten zuordnen).
 
 - Entfernen nicht verwendeter Typen, die nicht gebunden werden müssen. 
 

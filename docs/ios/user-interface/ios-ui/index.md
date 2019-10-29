@@ -4,15 +4,15 @@ description: Dieses Dokument ist mit Anleitungen verknüpft, die beschreiben, wi
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 325898b3c934e25ae1610a3437f787476dcd22cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768305"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003342"
 ---
 # <a name="user-interfaces-in-ios"></a>Benutzeroberflächen in iOS
 
@@ -22,11 +22,11 @@ IOS ermöglicht das Design vieler visueller Attribute der Steuerelemente der Ben
 
 ## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[Erstellen von Benutzeroberflächenobjekten](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
-Apple gruppiert verwandte Funktionen in "Frameworks", die xamarin. IOS-Namespaces entsprechen. `UIKit`der Namespace, der alle Benutzeroberflächen-Steuerelemente für IOS enthält.
+Apple gruppiert verwandte Funktionen in "Frameworks", die xamarin. IOS-Namespaces entsprechen. `UIKit` ist der Namespace, der alle Benutzeroberflächen-Steuerelemente für IOS enthält.
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[Layoutoptionen](~/ios/user-interface/ios-ui/layout-options.md)
 
-Es gibt zwei verschiedene Mechanismen, um das Layout zu steuern, wenn die Größe einer Ansicht geändert oder gedreht wird: AutoSizing und AutoLayout.
+Es gibt zwei verschiedene Mechanismen, um das Layout zu steuern, wenn die Größe einer Ansicht geändert oder gedreht wird: "autoSizing" und "AutoLayout".
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
 

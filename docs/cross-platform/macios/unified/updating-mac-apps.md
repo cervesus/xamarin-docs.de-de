@@ -3,15 +3,15 @@ title: Aktualisieren vorhandener Mac-apps
 description: In diesem Dokument werden die Schritte beschrieben, die zum Aktualisieren einer xamarin. Mac-app von der Classic API auf die Unified API ausgeführt werden müssen.
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 43498c0609fdbe6dba59b9ed5926c9c58b72d4db
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4590e5d987acbb5bd97b41477e6aafa7c17d7778
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280868"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015316"
 ---
 # <a name="updating-existing-mac-apps"></a>Aktualisieren vorhandener Mac-apps
 
@@ -31,11 +31,11 @@ Bevor Sie den vorhandenen Code auf den Unified API aktualisieren, wird dringend 
 
 Nachdem die Warnungen korrigiert wurden, wählen Sie ein vorhandenes Mac-Projekt in Visual Studio für Mac oder Visual Studio aus, und wählen Sie im Menü **Projekt** die Option **zu xamarin. Unified API Mac migrieren** aus. Beispiel:
 
-![](updating-mac-apps-images/beta-tool1.png "Wählen Sie im Menü Projekt die Option zu xamarin. Unified API Mac Migrieren aus.")
+![](updating-mac-apps-images/beta-tool1.png "Choose Migrate to Xamarin.Mac Unified API from the Project menu")
 
 Sie müssen diese Warnung akzeptieren, bevor die automatisierte Migration ausgeführt wird (natürlich sollten Sie sicherstellen, dass Sie über Sicherungen/Quell Code Verwaltung verfügen, bevor Sie mit diesem Adventure beginnen):
 
-![](updating-mac-apps-images/migrate01.png "Diese Warnung zustimmen, bevor die automatisierte Migration ausgeführt wird")
+![](updating-mac-apps-images/migrate01.png "Agree to this warning before the automated migration will run")
 
 Es gibt zwei unterstützte Ziel Framework-Typen, die ausgewählt werden können, wenn die Unified API in einer xamarin. Mac-Anwendung verwendet wird:
 
@@ -50,17 +50,17 @@ Das Tool automatisiert im Grunde alle Schritte, die im Abschnitt **Manuelles Upd
 
 Nachdem die Warnungen korrigiert wurden, führen Sie die folgenden Schritte aus, um xamarin. Mac-apps manuell zu aktualisieren und die neuen Unified API zu verwenden:
 
-### <a name="1-update-project-type--build-target"></a>1. Projekttyp & Build-Ziel aktualisieren
+### <a name="1-update-project-type--build-target"></a>1. Projekttyp aktualisieren & Build-Ziel
 
-Ändern Sie den Projekt Geschmack in Ihren **csproj** - `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` Dateien `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`von in. Bearbeiten Sie die **csproj** -Datei in einem Text-Editor, und ersetzen Sie `<ProjectTypeGuids>` das erste Element im-Element wie gezeigt:
+Ändern Sie die Projekt Konfiguration in Ihren **csproj** -Dateien von `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` in `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Bearbeiten Sie die **csproj** -Datei in einem Text-Editor, und ersetzen Sie das erste Element im `<ProjectTypeGuids>`-Element wie im folgenden dargestellt:
 
-![](updating-mac-apps-images/csproj.png "Bearbeiten Sie die CSPROJ-Datei in einem Text-Editor, und ersetzen Sie das erste Element im projecttypguids-Element wie gezeigt.")
+![](updating-mac-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
 
-Ändern Sie `Xamarin.Mac.targets` dasImport-Element,dasenthält,wieimfolgenden`Xamarin.Mac.CSharp.targets` gezeigt:
+Ändern Sie das **Import** -Element, das `Xamarin.Mac.targets` enthält, in `Xamarin.Mac.CSharp.targets`, wie hier gezeigt:
 
-![](updating-mac-apps-images/csproj2.png "Ändern Sie das Import-Element, das xamarin. Mac. targets enthält, in xamarin. Mac. CSharp. targets, wie hier gezeigt.")
+![](updating-mac-apps-images/csproj2.png "Change the Import element that contains Xamarin.Mac.targets to Xamarin.Mac.CSharp.targets as shown")
 
-Fügen Sie nach dem `<AssemblyName>` -Element die folgenden Codezeilen hinzu:
+Fügen Sie die folgenden Codezeilen nach dem `<AssemblyName>`-Element hinzu:
 
 ```xml
 <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -70,33 +70,33 @@ Fügen Sie nach dem `<AssemblyName>` -Element die folgenden Codezeilen hinzu:
 
 Beispiel:
 
-![Fügen Sie nach dem Element AssemblyName > die \<folgenden Codezeilen hinzu.](updating-mac-apps-images/csproj3.png)
+![Fügen Sie nach dem \<AssemblyName >-Element diese Codezeilen hinzu.](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2. Projekt Verweise aktualisieren
 
 Erweitern Sie den Knoten **Verweise** des Mac-Anwendungs Projekts. Anfänglich wird ein * fehlerhafter **xammac** -Verweis angezeigt, der diesem Screenshot ähnelt (da wir soeben den Projekttyp geändert haben):
 
-![](updating-mac-apps-images/references.png "Anfänglich wird ein fehlerhafter xammac-Verweis angezeigt, der diesem Screenshot ähnelt.")
+![](updating-mac-apps-images/references.png "It will initially show a broken- XamMac reference similar to this screenshot")
 
 Klicken Sie neben dem Eintrag **xammac** auf das **Zahnrad Symbol** , und wählen Sie **Löschen** aus, um die beschädigte Referenz zu entfernen.
 
 Klicken Sie anschließend im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Verweise** , und wählen Sie **Verweise bearbeiten**aus. Scrollen Sie zum Ende der Liste der Verweise, und platzieren Sie eine Prüfung neben **xamarin. Mac**.
 
-![](updating-mac-apps-images/references2.png "Scrollen Sie zum Ende der Liste der Verweise, und platzieren Sie eine Prüfung neben xamarin. Mac.")
+![](updating-mac-apps-images/references2.png "Scroll to the bottom of the list of references and place a check besides Xamarin.Mac")
 
 Klicken Sie auf **OK** , um die Projekt Verweis Änderungen zu speichern.
 
-### <a name="3-remove-monomac-from-namespaces"></a>3. Entfernen von monomac aus Namespaces
+### <a name="3-remove-monomac-from-namespaces"></a>3. entfernen Sie monomac aus Namespaces.
 
-Entfernen Sie das **monomac** -Präfix aus Namespaces in-Anweisungen oder an jedem Ort, an `using` dem ein Klassenname voll qualifiziert wurde (z.b. `MonoMac.AppKit`wird gerade `AppKit`).
+Entfernen Sie das **monomac** -Präfix aus Namespaces in `using`-Anweisungen oder immer dann, wenn ein Klassenname voll qualifiziert wurde (z. b. `MonoMac.AppKit` wird nur `AppKit`).
 
 ### <a name="4-remap-types"></a>4. Neuzuordnen von Typen
 
-Systemeigene [Typen](~/cross-platform/macios/nativetypes.md) wurden eingeführt, die einige Typen ersetzen, die zuvor verwendet wurden, z. `System.Drawing.RectangleF` b `CoreGraphics.CGRect` . Instanzen von mit (z. b.). Die vollständige Liste der Typen finden Sie auf der Seite [native Typen](~/cross-platform/macios/nativetypes.md) .
+Systemeigene [Typen](~/cross-platform/macios/nativetypes.md) wurden eingeführt, die einige Typen ersetzen, die zuvor verwendet wurden, z. b. Instanzen von `System.Drawing.RectangleF` mit `CoreGraphics.CGRect` (z. b.). Die vollständige Liste der Typen finden Sie auf der Seite [native Typen](~/cross-platform/macios/nativetypes.md) .
 
-### <a name="5-fix-method-overrides"></a>5. Korrigieren von Methoden Überschreibungen
+### <a name="5-fix-method-overrides"></a>5. korrigieren von Methoden Überschreibungen
 
-Die `AppKit` Signatur einiger Methoden wurde geändert, um die neuen systemeigenen [Typen](~/cross-platform/macios/nativetypes.md) (z `nint`. b.) zu verwenden. Wenn benutzerdefinierte Unterklassen diese Methoden überschreiben, stimmen die Signaturen nicht mehr ab und führen zu Fehlern. Korrigieren Sie diese Methoden Überschreibungen, indem Sie die-Unterklasse so ändern, dass Sie der neuen Signatur mithilfe von systemeigenen Typen entspricht 
+Die Signatur einiger `AppKit` Methoden wurde geändert, um die neuen systemeigenen [Typen](~/cross-platform/macios/nativetypes.md) (z. b. `nint`) zu verwenden. Wenn benutzerdefinierte Unterklassen diese Methoden überschreiben, stimmen die Signaturen nicht mehr ab und führen zu Fehlern. Korrigieren Sie diese Methoden Überschreibungen, indem Sie die-Unterklasse so ändern, dass Sie der neuen Signatur mithilfe von systemeigenen Typen entspricht 
 
 ## <a name="considerations"></a>Weitere Überlegungen
 

@@ -4,15 +4,15 @@ description: 'Gewusst wie: Implementieren von Google Maps API v2-Features in ihr
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/07/2018
-ms.openlocfilehash: a640e1d6accdfa9184a29127bf4b3c7eeefe9b64
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: adcfb1457742d343f87a602885566107cf327e2d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761833"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027154"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>Verwenden der Google Maps-API in Ihrer Anwendung
 
@@ -40,7 +40,7 @@ Bevor Sie die Maps-API verwenden können, müssen mehrere Schritte ausgeführt w
 
 Der erste Schritt besteht darin, einen Google Maps-API-Schlüssel zu erhalten (Beachten Sie, dass Sie keinen API-Schlüssel aus der Legacy-API von Google Maps v1 wieder verwenden können). Informationen dazu, wie Sie den API-Schlüssel mit xamarin. Android abrufen und verwenden, finden Sie unter Abrufen [eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" />Installieren des Google Play Services SDK
+### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Installieren des Google Play Services SDK
 
 Google Play Services ist eine Technologie von Google, mit der Android-Anwendungen verschiedene Google-Features wie Google +, in-App-Abrechnung und Maps nutzen können. Diese Features sind auf Android-Geräten als Hintergrunddienste verfügbar, die im [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)enthalten sind.
 
@@ -56,7 +56,7 @@ Bevor eine xamarin. Android-Anwendung die Maps-API verwenden kann, muss das Goog
 > [!NOTE]
 > Das APK für die Google Play-Dienste ist ein lizenziertes Produkt, das möglicherweise nicht auf allen Geräten vorhanden ist. Wenn Sie nicht installiert ist, funktioniert Google Maps nicht auf dem Gerät.
 
-### <a name="a-nameinstall-gpsmaps-nuget--install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" />Installieren des xamarin. googleplayservices. Maps-Pakets von nuget
+### <a name="a-nameinstall-gpsmaps-nuget--install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" /> Installieren des xamarin. googleplayservices. Maps-Pakets von nuget
 
 Das [xamarin. googleplayservices. Maps-Paket](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Maps) enthält die xamarin. Android-Bindungen für die Google Play Services Maps-API.
 Klicken Sie zum Hinzufügen des Google Play Services Map-Pakets mit der rechten Maustaste auf den Ordner **Verweise** Ihres Projekts im Projektmappen-Explorer, und klicken Sie auf **nuget-Pakete verwalten...** :
@@ -65,38 +65,38 @@ Klicken Sie zum Hinzufügen des Google Play Services Map-Pakets mit der rechten 
 
 Der **nuget-Paket-Manager**wird geöffnet. Klicken Sie auf **Durchsuchen** , und geben Sie im Suchfeld **xamarin Google Play Services Maps** ein. Wählen Sie **xamarin. googleplayservices. Maps** aus, und klicken Sie auf **Installieren**. (Wenn dieses Paket bereits installiert wurde, klicken Sie auf **Aktualisieren**.):
 
-[![Nuget-Paket-Manager mit ausgewähltem xamarin. googleplayservices. Maps-Paket](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
+[![nuget-Paket-Manager mit ausgewähltem xamarin. googleplayservices. Maps-Paket](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
 
 Beachten Sie, dass die folgenden Abhängigkeits Pakete ebenfalls installiert sind:
 
-- **Xamarin.GooglePlayServices.Base**
-- **Xamarin.GooglePlayServices.Basement**
-- **Xamarin.GooglePlayServices.Tasks**
+- **Xamarin. googleplayservices. Base**
+- **Xamarin. googleplayservices. Basement**
+- **Xamarin. googleplayservices. Tasks**
 
-### <a name="a-namedeclare-permissions--specify-the-required-permissions"></a><a name="declare-permissions" />Geben Sie die erforderlichen Berechtigungen an.
+### <a name="a-namedeclare-permissions--specify-the-required-permissions"></a><a name="declare-permissions" /> geben Sie die erforderlichen Berechtigungen an.
 
 Apps müssen die Hardware-und Berechtigungsanforderungen ermitteln, damit Sie die Google Maps-API verwenden können.  Einige Berechtigungen werden automatisch durch das Google Play Services SDK erteilt, und es ist nicht erforderlich, dass ein Entwickler diese explizit zu " **androidmanfest. XML**" hinzufügt:
 
-- **Zugriff auf den Netzwerkstatus** &ndash; Die Maps-API muss überprüfen können, ob Sie die Karten Kacheln herunterladen kann.
+- Der **Zugriff auf den Netzwerkstatus** &ndash; der Maps-API muss überprüfen können, ob die Karten Kacheln heruntergeladen werden können.
 
-- **Internet Zugriff** &ndash; Zum Herunterladen der Karten Kacheln und zum kommunizieren mit den Google Play Servern für den API-Zugriff ist ein Internet Zugriff erforderlich.
+- **Internet Zugriff** &ndash; Internet Zugriff ist erforderlich, um die Karten Kacheln herunterzuladen und mit den Google Play Servern für den API-Zugriff zu kommunizieren.
 
 Die folgenden Berechtigungen und Features müssen in der Datei " **androidmanifest. XML** " für die Google Maps Android-API angegeben werden:
 
-- **OpenGL es v2** &ndash; Die Anwendung muss die Anforderung für OpenGL es v2 deklarieren.
+- **OpenGL es v2** &ndash; die Anwendung muss die Anforderung für OpenGL es v2 deklarieren.
 
-- **Google Maps-API-Schlüssel** &ndash; Der API-Schlüssel wird verwendet, um zu bestätigen, dass die Anwendung registriert und für die Verwendung von Google Play Services autorisiert ist. Weitere Informationen zu diesem Schlüssel finden Sie unter Abrufen [eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md) .
+- **Google Maps-API-Schlüssel** &ndash; der API-Schlüssel verwendet wird, um zu bestätigen, dass die Anwendung registriert und für die Verwendung Google Play Services autorisiert ist. Weitere Informationen zu diesem Schlüssel finden Sie unter Abrufen [eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md) .
 
-- **Anfordern des Legacy-Apache-HTTP-Clients** &ndash; Apps, die auf Android 9,0 (API-Ebene 28) oder höher ausgerichtet sind, müssen angeben, dass der Legacy-Apache HTTP-Client eine optionale zu verwendende Bibliothek ist.
+- **Anfordern des Legacy-Apache HTTP-Clients** &ndash; apps, die auf Android 9,0 (API-Ebene 28) oder höher abzielen, müssen angeben, dass der Legacy-Apache-HTTP-Client eine optionale zu verwendende Bibliothek ist.
 
-- **Zugriff auf die webbasierten Google-Dienste** &ndash; Die Anwendung benötigt Berechtigungen für den Zugriff auf Google-Webdienste, die auf die Android Maps-API zurückgreifen.
+- Der **Zugriff auf die webbasierten Google-Dienste** &ndash; die Anwendung benötigt Berechtigungen für den Zugriff auf Google-Webdienste, die auf die Android Maps-API zurückgreifen.
 
-- **Berechtigungen für Google Play Services Benachrichtigungen** &ndash; Der Anwendung muss die Berechtigung zum Empfangen von Remote Benachrichtigungen von Google Play Services erteilt werden.
+- **Berechtigungen für Google Play Services Benachrichtigungen** &ndash; der Anwendung muss die Berechtigung zum Empfangen von Remote Benachrichtigungen von Google Play Services erteilt werden.
 
-- **Zugriff auf standortanbieter** &ndash; Dabei handelt es sich um optionale Berechtigungen.
-   Dadurch kann die `GoogleMap` Klasse den Speicherort des Geräts auf der Karte anzeigen.
+- Der **Zugriff auf standortanbieter** &ndash; diese optionalen Berechtigungen.
+   Sie ermöglichen es der `GoogleMap` Klasse, den Speicherort des Geräts auf der Karte anzuzeigen.
 
-Außerdem hat Android 9 die Apache HTTP-Client Bibliothek aus dem bootclasspath entfernt und ist daher für Anwendungen, die auf API 28 oder höher ausgerichtet sind, nicht verfügbar. Die folgende Zeile muss dem- `application` Knoten der Datei " **androidmanifest. XML** " hinzugefügt werden, um den Apache HTTP-Client in Anwendungen mit der Ziel-API 28 oder höher zu verwenden:
+Außerdem hat Android 9 die Apache HTTP-Client Bibliothek aus dem bootclasspath entfernt und ist daher für Anwendungen, die auf API 28 oder höher ausgerichtet sind, nicht verfügbar. Die folgende Zeile muss dem `application`-Knoten der Datei " **androidmanifest. XML** " hinzugefügt werden, um den Apache HTTP-Client in Anwendungen mit der Ziel-API 28 oder höher zu verwenden:
 
 ```xml
 <application ...>
@@ -106,7 +106,7 @@ Außerdem hat Android 9 die Apache HTTP-Client Bibliothek aus dem bootclasspath 
 ```
 
 > [!NOTE]
-> Bei sehr alten Versionen des Google Play SDK war eine APP erforderlich, um `WRITE_EXTERNAL_STORAGE` die Berechtigung anzufordern. Diese Anforderung ist mit den aktuellen xamarin-Bindungen für Google Play Services nicht mehr erforderlich.
+> Bei sehr alten Versionen des Google Play SDK war eine APP erforderlich, um die `WRITE_EXTERNAL_STORAGE` Berechtigung anzufordern. Diese Anforderung ist mit den aktuellen xamarin-Bindungen für Google Play Services nicht mehr erforderlich.
 
 Der folgende Code Ausschnitt ist ein Beispiel für die Einstellungen, die " **androidmanifest. XML**" hinzugefügt werden müssen:
 
@@ -140,7 +140,7 @@ Der folgende Code Ausschnitt ist ein Beispiel für die Einstellungen, die " **an
 </manifest>
 ```
 
-Zusätzlich zum Anfordern der Berechtigungen " **androidmanifest. XML**" muss eine APP auch Lauf Zeit Berechtigungs Prüfungen für `ACCESS_COARSE_LOCATION` die- `ACCESS_FINE_LOCATION` Berechtigung und die-Berechtigung durchführen. Weitere Informationen zum Ausführen von Lauf Zeit Berechtigungs Prüfungen finden Sie im [xamarin. Android-Berechtigungs](~/android/app-fundamentals/permissions.md) Handbuch.
+Zusätzlich zum Anfordern der Berechtigungen " **androidmanifest. XML**" muss eine APP auch Lauf Zeit Berechtigungs Prüfungen für die `ACCESS_COARSE_LOCATION` und die `ACCESS_FINE_LOCATION` Berechtigungen ausführen. Weitere Informationen zum Ausführen von Lauf Zeit Berechtigungs Prüfungen finden Sie im [xamarin. Android-Berechtigungs](~/android/app-fundamentals/permissions.md) Handbuch.
 
 ### <a name="a-namecreate-emulator-with-google-api-create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />Erstellen eines Emulators mit Google-APIs
 
@@ -158,24 +158,24 @@ Nachdem die Voraussetzungen erfüllt sind, ist es an der Zeit, mit der Entwicklu
 
 - Zeichnen von Markern und geometrischen Formen in Maps.
 
-Das `GoogleMap` wird einer Aktivität auf zwei Arten hinzugefügt:
+Die `GoogleMap` wird einer Aktivität auf zwei Arten hinzugefügt:
 
-- **Mapfragment** : das [mapfragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) ist ein spezielles Fragment, das als Host für das `GoogleMap` -Objekt fungiert. Erfordert `MapFragment` die Android-API-Ebene 12 oder höher.
-   Ältere Versionen von Android können das [supportmapfragment](https://developers.google.com/android/reference/com/google/android/gms/maps/SupportMapFragment)verwenden.  Dieser Leitfaden konzentriert sich auf die Verwendung `MapFragment` der-Klasse.
+- **Mapfragment** : das [mapfragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) ist ein spezielles Fragment, das als Host für das `GoogleMap` Objekt fungiert. Der `MapFragment` erfordert mindestens die Android-API-Ebene 12.
+   Ältere Versionen von Android können das [supportmapfragment](https://developers.google.com/android/reference/com/google/android/gms/maps/SupportMapFragment)verwenden.  Dieser Leitfaden konzentriert sich auf die Verwendung der `MapFragment`-Klasse.
 
-- **MapView** : [MapView](https://developers.google.com/android/reference/com/google/android/gms/maps/MapView) ist eine spezialisierte Ansichts Unterklasse, die als Host für ein `GoogleMap` -Objekt fungieren kann. Benutzer dieser Klasse müssen alle Aktivitäts Lebenszyklus Methoden an die `MapView` -Klasse weiterleiten.
+- **MapView** : [MapView](https://developers.google.com/android/reference/com/google/android/gms/maps/MapView) ist eine spezialisierte Ansichts Unterklasse, die als Host für ein `GoogleMap` Objekt fungieren kann. Benutzer dieser Klasse müssen alle Aktivitäts Lebenszyklus Methoden an die `MapView` Klasse weiterleiten.
 
-Jeder dieser Container macht eine `Map` -Eigenschaft verfügbar, die eine Instanz von `GoogleMap`zurückgibt. Die zugriffsklasse sollte an die [mapfragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) -Klasse übergeben werden, da es sich um eine einfachere API handelt, die den Code für die Code Menge reduziert, den ein Entwickler manuell implementieren muss.
+Jeder dieser Container macht eine `Map`-Eigenschaft verfügbar, die eine Instanz von `GoogleMap`zurückgibt. Die zugriffsklasse sollte an die [mapfragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) -Klasse übergeben werden, da es sich um eine einfachere API handelt, die den Code für die Code Menge reduziert, den ein Entwickler manuell implementieren muss.
 
 ### <a name="adding-a-mapfragment-to-an-activity"></a>Hinzufügen eines mapfragments zu einer Aktivität
 
-Der folgende Screenshot zeigt ein einfaches `MapFragment`Beispiel:
+Der folgende Screenshot zeigt ein Beispiel für eine einfache `MapFragment`:
 
 [![Screenshot eines Geräts, das ein Google Map-Fragment anzeigt](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
 
-Ähnlich wie bei anderen fragmentklassen gibt es zwei Möglichkeiten, einer `MapFragment` Aktivität eine hinzuzufügen:
+Ähnlich wie bei anderen fragmentklassen gibt es zwei Möglichkeiten, einer Aktivität eine `MapFragment` hinzuzufügen:
 
-- **Deklarativ** : die `MapFragment` kann über die XML-Layoutdatei für die-Aktivität hinzugefügt werden. Der folgende XML-Code Ausschnitt zeigt ein Beispiel für die Verwendung des `fragment` -Elements:
+- **Deklarativ** : der `MapFragment` kann über die XML-Layoutdatei für die-Aktivität hinzugefügt werden. Der folgende XML-Code Ausschnitt zeigt ein Beispiel für die Verwendung des `fragment`-Elements:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -186,7 +186,7 @@ Der folgende Screenshot zeigt ein einfaches `MapFragment`Beispiel:
               class="com.google.android.gms.maps.MapFragment" />
     ```
 
-- **Programm** gesteuert: `MapFragment` kann Programm gesteuert mithilfe der [`MapFragment.NewInstance`](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) -Methode instanziiert und dann zu einer-Aktivität hinzugefügt werden. Dieser Code Ausschnitt zeigt die einfachste Möglichkeit, ein `MapFragment` -Objekt zu instanziieren und zu einer-Aktivität hinzuzufügen:
+- **Programm** gesteuert: der `MapFragment` kann Programm gesteuert mit der [`MapFragment.NewInstance`](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) -Methode instanziiert und dann zu einer-Aktivität hinzugefügt werden. Dieser Code Ausschnitt zeigt die einfachste Möglichkeit zum Instanziieren eines `MapFragment` Objekts und zum Hinzufügen zu einer Aktivität:
 
     ```csharp
         var mapFrag = MapFragment.NewInstance();
@@ -196,11 +196,11 @@ Der folgende Screenshot zeigt ein einfaches `MapFragment`Beispiel:
 
     ```
 
-    Es ist möglich, das `MapFragment` -Objekt zu konfigurieren, indem Sie ein [`GoogleMapOptions`](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) -Objekt an `NewInstance`übergeben. Dies wird im Abschnitt [GoogleMap-Eigenschaften](#googlemap_object) erläutert, die später in diesem Handbuch angezeigt werden.
+    Es ist möglich, das `MapFragment` Objekt zu konfigurieren, indem Sie ein [`GoogleMapOptions`](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) Objekt an `NewInstance`übergeben. Dies wird im Abschnitt [GoogleMap-Eigenschaften](#googlemap_object) erläutert, die später in diesem Handbuch angezeigt werden.
 
-Die `MapFragment.GetMapAsync` -Methode wird verwendet, um den [`GoogleMap`](#googlemap_object) zu initialisieren, der vom-Fragment gehostet wird, und rufen Sie einen Verweis auf das Map `MapFragment`-Objekt ab, das von gehostet wird. Diese Methode nimmt ein Objekt an, das `IOnMapReadyCallback` die-Schnittstelle implementiert.
+Die `MapFragment.GetMapAsync`-Methode wird verwendet, um die vom Fragment gehostete [`GoogleMap`](#googlemap_object) zu initialisieren und einen Verweis auf das Map-Objekt zu erhalten, das vom `MapFragment`gehostet wird. Diese Methode nimmt ein Objekt an, das die `IOnMapReadyCallback`-Schnittstelle implementiert.
 
-Diese Schnittstelle verfügt über eine einzelne `IMapReadyCallback.OnMapReady(MapFragment map)` Methode, die aufgerufen wird, wenn es möglich ist, dass die APP mit `GoogleMap` dem Objekt interagiert. Der folgende Code Ausschnitt zeigt, wie eine Android-Aktivität eine `MapFragment` initialisieren und die `IOnMapReadyCallback` -Schnittstelle implementieren kann:
+Diese Schnittstelle verfügt über eine einzelne Methode, `IMapReadyCallback.OnMapReady(MapFragment map)`, die aufgerufen wird, wenn es möglich ist, dass die APP mit dem `GoogleMap` Objekt interagiert. Der folgende Code Ausschnitt zeigt, wie eine Android-Aktivität eine `MapFragment` initialisieren und die `IOnMapReadyCallback`-Schnittstelle implementieren kann:
 
 ```csharp
 public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
@@ -239,9 +239,9 @@ Es gibt fünf verschiedene Typen von Zuordnungen, die über die Google Maps-API 
 
 Die Abbildung unten zeigt drei der verschiedenen Typen von Karten von links nach rechts (normal, Hybrid, Gelände):
 
-[![Drei Screenshots für Karten Beispiele: Normal, Hybrid und Gelände](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
+[![drei Karten Beispiel-Screenshots: normal, Hybrid und Gelände](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
-Die `GoogleMap.MapType` -Eigenschaft wird verwendet, um festzulegen, welcher Typ von Map angezeigt wird. Der folgende Code Ausschnitt zeigt, wie eine Satellitenkarte angezeigt wird.
+Mit der `GoogleMap.MapType`-Eigenschaft wird festgelegt, welcher Kartentyp angezeigt wird. Der folgende Code Ausschnitt zeigt, wie eine Satellitenkarte angezeigt wird.
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -252,7 +252,7 @@ public void OnMapReady(GoogleMap map)
 
 ### <a name="a-namegooglemap_object-googlemap-properties"></a><a name="googlemap_object" />GoogleMap-Eigenschaften
 
-`GoogleMap`definiert mehrere Eigenschaften, die die Funktionalität und Darstellung der Karte steuern können. Eine Möglichkeit, den Anfangszustand eines `GoogleMap` zu konfigurieren, besteht darin, ein [googlemapoptions](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) -Objekt zu `MapFragment`übergeben, wenn ein erstellt wird. Der folgende Code Ausschnitt ist ein Beispiel für die Verwendung eines `GoogleMapOptions` -Objekts beim Erstellen `MapFragment`eines:
+`GoogleMap` definiert mehrere Eigenschaften, die die Funktionalität und Darstellung der Karte steuern können. Eine Möglichkeit, den Anfangszustand einer `GoogleMap` zu konfigurieren, besteht darin, ein [googlemapoptions](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) -Objekt zu übergeben, wenn ein `MapFragment`erstellt wird. Der folgende Code Ausschnitt ist ein Beispiel für die Verwendung eines `GoogleMapOptions` Objekts beim Erstellen eines `MapFragment`:
 
 ```csharp
 GoogleMapOptions mapOptions = new GoogleMapOptions()
@@ -266,7 +266,7 @@ fragTx.Add(Resource.Id.map, mapFragment, "map");
 fragTx.Commit();
 ```
 
-Die andere Möglichkeit, eine `GoogleMap` zu konfigurieren, besteht darin, die Eigenschaften der [uisettings](https://developers.google.com/android/reference/com/google/android/gms/maps/UiSettings) -Eigenschaft des Map-Objekts zu manipulieren. Im nächsten Codebeispiel wird veranschaulicht, wie Sie `GoogleMap` eine konfigurieren, um die Zoom Steuerelemente und einen Kompass anzuzeigen:
+Die andere Möglichkeit, eine `GoogleMap` zu konfigurieren, besteht darin, die Eigenschaften der [uisettings](https://developers.google.com/android/reference/com/google/android/gms/maps/UiSettings) -Eigenschaft des Map-Objekts zu ändern. Im nächsten Codebeispiel wird gezeigt, wie ein `GoogleMap` konfiguriert wird, um die Zoom Steuerelemente und einen Kompass anzuzeigen:
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -282,11 +282,11 @@ Die Android Maps-API stellt APIs bereit, mit denen eine Aktivität den Standpunk
 
 ### <a name="changing-the-viewpoint"></a>Ändern des Standpunkts
 
-Karten werden basierend auf der Mercator-Projektion als flache Ebene auf dem Bildschirm modelliert. Die Kartenansicht ist die einer *Kamera* , die auf dieser Ebene nach unten zeigt. Die Position der Kamera kann gesteuert werden, indem Sie den Speicherort, den Zoom, die Neigung und das-Verhalten ändern. Die [cameraupdate](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdate) -Klasse wird verwendet, um die Kameraposition zu verschieben. `CameraUpdate`Objekte werden nicht direkt instanziiert, stattdessen stellt die Maps-API die [cameraupdatefactory](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdateFactory) -Klasse bereit.
+Karten werden basierend auf der Mercator-Projektion als flache Ebene auf dem Bildschirm modelliert. Die Kartenansicht ist die einer *Kamera* , die auf dieser Ebene nach unten zeigt. Die Position der Kamera kann gesteuert werden, indem Sie den Speicherort, den Zoom, die Neigung und das-Verhalten ändern. Die [cameraupdate](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdate) -Klasse wird verwendet, um die Kameraposition zu verschieben. `CameraUpdate` Objekte nicht direkt instanziiert werden, stellt die Maps-API stattdessen die [cameraupdatefactory](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdateFactory) -Klasse bereit.
 
-Sobald ein `CameraUpdate` -Objekt erstellt wurde, wird es als Parameter an die [GoogleMap. muvecamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#moveCamera(com.google.android.gms.maps.CameraUpdate)) -Methode oder die [GoogleMap. animatecamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#animateCamera(com.google.android.gms.maps.CameraUpdate)) -Methode übergeben. Die `MoveCamera` -Methode aktualisiert die Zuordnung sofort, `AnimateCamera` während die-Methode einen reibungslosen, animierten Übergang bereitstellt.
+Nachdem ein `CameraUpdate` Objekt erstellt wurde, wird es als Parameter an die [GoogleMap. muvecamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#moveCamera(com.google.android.gms.maps.CameraUpdate)) -Methode oder die [GoogleMap. animatecamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#animateCamera(com.google.android.gms.maps.CameraUpdate)) -Methode übergeben. Die `MoveCamera`-Methode aktualisiert die Zuordnung sofort, während die `AnimateCamera`-Methode einen reibungslosen, animierten Übergang bereitstellt.
 
-Dieser Code Ausschnitt ist ein einfaches Beispiel für die `CameraUpdateFactory` Verwendung von zum Erstellen eines `CameraUpdate` , mit dem der Zoomfaktor der Zuordnung um eine Zoomstufe erhöht wird:
+Dieser Code Ausschnitt ist ein einfaches Beispiel für die Verwendung der `CameraUpdateFactory`, um eine `CameraUpdate` zu erstellen, mit der die Zoomstufe der Karte um eine Zoomstufe erhöht wird:
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -299,7 +299,7 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-Die Maps-API stellt eine [cameraposition](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) bereit, mit der alle möglichen Werte für die Kameraposition aggregiert werden. Eine Instanz dieser Klasse kann der [cameraupdatefactory. newcameraposition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) -Methode zur Verfügung gestellt werden, die ein `CameraUpdate` -Objekt zurückgibt. Die Maps-API enthält auch die Klasse " [cameraposition. Builder](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) ", die eine fließende `CameraPosition` API zum Erstellen von Objekten bereitstellt.
+Die Maps-API stellt eine [cameraposition](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) bereit, mit der alle möglichen Werte für die Kameraposition aggregiert werden. Eine Instanz dieser Klasse kann für die [cameraupdatefactory. newcameraposition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) -Methode bereitgestellt werden, die ein `CameraUpdate` Objekt zurückgibt. Die Maps-API enthält auch die Klasse " [cameraposition. Builder](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) ", die eine fließende API zum Erstellen von `CameraPosition` Objekten bereitstellt.
 Der folgende Code Ausschnitt zeigt ein Beispiel für das Erstellen eines `CameraUpdate` aus einem `CameraPosition` und dessen Verwendung zum Ändern der Kameraposition auf einem `GoogleMap`:
 
 ```csharp
@@ -321,9 +321,9 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-Im vorherigen Code Ausschnitt wird eine bestimmte Position auf der Karte durch die [latlng](https://developers.google.com/android/reference/com/google/android/gms/maps/model/LatLng) -Klasse dargestellt. Der Zoomfaktor ist auf 18 festgelegt, was ein beliebiges Measure von Zoom ist, das von Google Maps verwendet wird. Das-Verhalten ist die Kompass Messung im Uhrzeigersinn von North. Die Neigung-Eigenschaft steuert den Anzeige Winkel und gibt einen Winkel von 25 Grad aus der vertikalen an. Der folgende Screenshot zeigt das `GoogleMap` nach dem Ausführen des vorangehenden Codes:
+Im vorherigen Code Ausschnitt wird eine bestimmte Position auf der Karte durch die [latlng](https://developers.google.com/android/reference/com/google/android/gms/maps/model/LatLng) -Klasse dargestellt. Der Zoomfaktor ist auf 18 festgelegt, was ein beliebiges Measure von Zoom ist, das von Google Maps verwendet wird. Das-Verhalten ist die Kompass Messung im Uhrzeigersinn von North. Die Neigung-Eigenschaft steuert den Anzeige Winkel und gibt einen Winkel von 25 Grad aus der vertikalen an. Der folgende Screenshot zeigt die `GoogleMap` nach dem Ausführen des vorangehenden Codes:
 
-[![Beispiel für eine Google-Karte mit einem angegebenen Speicherort mit einem gekippten Anzeige Winkel](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
+[![Beispiel Google Map, das eine angegebene Position mit einem gekippten Anzeige Winkel anzeigt](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
 
 ### <a name="drawing-on-the-map"></a>Zeichnen auf der Karte
 
@@ -341,7 +341,7 @@ Die Maps-API stellt eine [markerklasse](https://developers.google.com/android/re
 
 ##### <a name="adding-a-marker"></a>Hinzufügen eines Markers
 
-Um einer Karte einen Marker hinzuzufügen, müssen Sie ein neues [markerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) -Objekt erstellen und dann die [AddMarker](https://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) -Methode für eine `GoogleMap` -Instanz aufzurufen. Diese Methode gibt ein [Markerobjekt](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker) zurück.
+Um einer Karte einen Marker hinzuzufügen, müssen Sie ein neues [markerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) -Objekt erstellen und dann die [AddMarker](https://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) -Methode für eine `GoogleMap` Instanz aufzurufen. Diese Methode gibt ein [Markerobjekt](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker) zurück.
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -356,22 +356,22 @@ public void OnMapReady(GoogleMap map)
 
 Der Titel des Markers wird in einem *Infofenster* angezeigt, wenn der Benutzer auf den Marker tippt. Der folgende Screenshot zeigt, wie dieser Marker aussieht:
 
-[![Beispiel für Google Map mit einem Marker und einem Infofenster für Vimy-Grat](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
+[![Beispiel Google Map mit einem Marker und einem Infofenster für Vimy-Grat](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
 
 ##### <a name="customizing-a-marker"></a>Anpassen eines Markers
 
-Sie können das Symbol anpassen, das von der Markierung verwendet wird, indem `MarkerOptions.InvokeIcon` Sie die-Methode aufrufen, wenn Sie der Karte den Marker hinzufügen.
-Diese Methode nimmt ein [bitmapdescriptor](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptor) -Objekt an, das die zum Rendering des Symbols erforderlichen Daten enthält. Die [bitmapdescriptorfactory](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptorFactory) -Klasse stellt einige Hilfsmethoden bereit, um das Erstellen `BitmapDescriptor`eines zu vereinfachen. In der folgenden Liste werden einige dieser Methoden eingeführt:
+Es ist möglich, das Symbol anzupassen, das von der Markierung verwendet wird, indem Sie die `MarkerOptions.InvokeIcon`-Methode aufrufen, wenn Sie der Karte den Marker hinzufügen.
+Diese Methode nimmt ein [bitmapdescriptor](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptor) -Objekt an, das die zum Rendering des Symbols erforderlichen Daten enthält. Die [bitmapdescriptorfactory](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptorFactory) -Klasse stellt einige Hilfsmethoden bereit, um die Erstellung eines `BitmapDescriptor`zu vereinfachen. In der folgenden Liste werden einige dieser Methoden eingeführt:
 
-- `DefaultMarker(float colour)`&ndash; Verwenden Sie den Standard Marker von Google Maps, aber ändern Sie die Farbe.
+- `DefaultMarker(float colour)` &ndash; den standardmäßigen Google Maps-Marker verwenden, aber die Farbe ändern.
 
-- `FromAsset(string assetName)`&ndash; Verwenden Sie ein benutzerdefiniertes Symbol aus der angegebenen Datei im Ordner "Assets".
+- `FromAsset(string assetName)` &ndash; ein benutzerdefiniertes Symbol aus der angegebenen Datei im Ordner "Assets" verwenden.
 
-- `FromBitmap(Bitmap image)`&ndash; Verwenden Sie die angegebene Bitmap als Symbol.
+- `FromBitmap(Bitmap image)` &ndash; die angegebene Bitmap als Symbol verwenden.
 
-- `FromFile(string fileName)`&ndash; Erstellen Sie das benutzerdefinierte Symbol aus der Datei im angegebenen Pfad.
+- `FromFile(string fileName)` &ndash; erstellen Sie das benutzerdefinierte Symbol aus der Datei im angegebenen Pfad.
 
-- `FromResource(int resourceId)`&ndash; Erstellen Sie ein benutzerdefiniertes Symbol aus der angegebenen Ressource.
+- `FromResource(int resourceId)` &ndash; ein benutzerdefiniertes Symbol aus der angegebenen Ressource erstellen.
 
 Der folgende Code Ausschnitt zeigt ein Beispiel für das Erstellen eines Zy-farbigen Standard Markers:
 
@@ -395,9 +395,9 @@ public void OnMapReady(GoogleMap map)
 
 Sie können das Infofenster anpassen, indem Sie die [GoogleMap. iinfowindowadapter](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.InfoWindowAdapter) -Schnittstelle implementieren. Es gibt zwei wichtige Methoden für diese Schnittstelle:
 
-- `public View GetInfoWindow(Marker marker)`&ndash; Diese Methode wird aufgerufen, um ein benutzerdefiniertes Infofenster für einen Marker zu erhalten. Wenn zurück `null` gegeben wird, wird das Standardfenster Rendering verwendet. Wenn diese Methode eine Ansicht zurückgibt, wird diese Ansicht in den Rahmen des Info Fensters eingefügt.
+- `public View GetInfoWindow(Marker marker)` &ndash; diese Methode aufgerufen wird, um ein benutzerdefiniertes Infofenster für einen Marker zu erhalten. Wenn `null` zurückgegeben wird, wird das Standardfenster Rendering verwendet. Wenn diese Methode eine Ansicht zurückgibt, wird diese Ansicht in den Rahmen des Info Fensters eingefügt.
 
-- `public View GetInfoContents(Marker marker)`Diese Methode wird nur aufgerufen, wenn getinfowindow zurück `null`gibt. &ndash; Diese Methode kann einen `null` Wert zurückgeben, wenn das standardmäßige Rendering des Inhalts des Informations Fensters verwendet werden soll. Andernfalls sollte diese Methode eine Ansicht mit dem Inhalt des Info Fensters zurückgeben.
+- `public View GetInfoContents(Marker marker)` &ndash; diese Methode wird nur aufgerufen, wenn getinfowindow `null` zurückgibt. Diese Methode kann einen `null` Wert zurückgeben, wenn das standardmäßige Rendering des Inhalts des Informations Fensters verwendet werden soll. Andernfalls sollte diese Methode eine Ansicht mit dem Inhalt des Info Fensters zurückgeben.
 
 Ein Infofenster ist keine Live Ansicht, stattdessen konvertiert Android die Ansicht in eine statische Bitmap und zeigt diese auf dem Bild an. Dies bedeutet, dass ein Infofenster weder auf Berührungs Ereignisse noch Gesten reagieren kann, und es wird nicht automatisch selbst aktualisiert. Zum Aktualisieren eines Info Fensters ist es erforderlich, die [GoogleMap. showinfowindow](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker.html#showInfoWindow()) -Methode aufzurufen.
 
@@ -411,7 +411,7 @@ Anders als Marker, die eine bestimmte Position auf einer Karte identifizieren, i
 
 ##### <a name="adding-a-groundoverlay"></a>Hinzufügen von GroundOverlay
 
-Das Hinzufügen einer Grund Überlagerung zu einer Karte ähnelt dem Hinzufügen eines Markers zu einer Zuordnung. Zuerst wird ein [groundoverlayoptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/GroundOverlayOptions) -Objekt erstellt. Dieses Objekt wird dann als Parameter an die [`GoogleMap.AddGroundOverlay`](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addGroundOverlay(com.google.android.gms.maps.model.GroundOverlayOptions)) -Methode übergeben, die ein `GroundOverlay` -Objekt zurückgibt. Dieser Code Ausschnitt ist ein Beispiel für das Hinzufügen einer Grund Überlagerung zu einer Karte:
+Das Hinzufügen einer Grund Überlagerung zu einer Karte ähnelt dem Hinzufügen eines Markers zu einer Zuordnung. Zuerst wird ein [groundoverlayoptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/GroundOverlayOptions) -Objekt erstellt. Dieses Objekt wird dann als Parameter an die [`GoogleMap.AddGroundOverlay`](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addGroundOverlay(com.google.android.gms.maps.model.GroundOverlayOptions)) -Methode übergeben, die ein `GroundOverlay`-Objekt zurückgibt. Dieser Code Ausschnitt ist ein Beispiel für das Hinzufügen einer Grund Überlagerung zu einer Karte:
 
 ```csharp
 BitmapDescriptor image = BitmapDescriptorFactory.FromResource(Resource.Drawable.polarbear);
@@ -437,7 +437,7 @@ Es gibt drei einfache Typen von geometrischen Abbildungen, die einer Karte hinzu
 
 ##### <a name="polylines"></a>Polylinien
 
-Eine [Polylinie](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Polyline) ist eine Liste von aufeinander `LatLng` folgenden Objekten, die die Scheitel Punkte der einzelnen Zeilen Segmente angeben. Ein Polylinie wird erstellt, indem zuerst ein `PolylineOptions` -Objekt erstellt und der Punkt hinzugefügt wird. Das `PolylineOption` -Objekt wird dann durch Aufrufen `GoogleMap` der `AddPolyline` -Methode an ein-Objekt weitergegeben.
+Eine [Polylinie](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Polyline) ist eine Liste von aufeinander folgenden `LatLng` Objekten, die die Scheitel Punkte der einzelnen Zeilen Segmente angeben. Eine Polylinie wird erstellt, indem zuerst ein `PolylineOptions` Objekt erstellt und der Punkt hinzugefügt wird. Das `PolylineOption` Objekt wird dann durch Aufrufen der `AddPolyline`-Methode an ein `GoogleMap` Objekt weitergegeben.
 
 ```csharp
 PolylineOption rectOptions = new PolylineOption();
@@ -465,10 +465,10 @@ googleMap.AddCircle (circleOptions);
 
 ##### <a name="polygons"></a>Polygone
 
-`Polygon`e ähneln `Polyline`n, Sie sind jedoch nicht geöffnet. `Polygon`s sind eine geschlossene Schleife, in der das innere ausgefüllt ist.
-`Polygon`e werden auf die gleiche Weise wie ein `Polyline`erstellt, außer der aufgerufenen [GoogleMap. AddPolygon](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addPolygon(com.google.android.gms.maps.model.PolygonOptions)) -Methode.
+`Polygon`s ähneln `Polyline`s, Sie sind jedoch nicht geöffnet. `Polygon`s sind eine geschlossene Schleife, deren innere ausgefüllt ist.
+`Polygon`s werden auf die gleiche Weise wie ein `Polyline`erstellt, mit der Ausnahme, dass die [GoogleMap. AddPolygon](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addPolygon(com.google.android.gms.maps.model.PolygonOptions)) -Methode aufgerufen wurde.
 
-Anders als `Polyline`bei einem `Polygon` ist ein selbst schließender. Das Polygon wird von der `AddPolygon` -Methode geschlossen, indem eine Linie gezeichnet wird, die den ersten und den letzten Punkt verbindet. Der folgende Code Ausschnitt erstellt ein voll solides Rechteck über demselben Bereich wie der vorherige Code Ausschnitt im `Polyline` Beispiel.
+Im Gegensatz zu einem `Polyline`ist ein `Polygon` selbst geschlossen. Das Polygon wird durch die `AddPolygon`-Methode geschlossen, indem eine Linie gezeichnet wird, die den ersten und den letzten Punkt verbindet. Der folgende Code Ausschnitt erstellt ein voll solides Rechteck über demselben Bereich wie der vorherige Code Ausschnitt im `Polyline` Beispiel.
 
 ```csharp
 PolygonOptions rectOptions = new PolygonOptions();
@@ -495,13 +495,13 @@ Diese Ereignisse werden im folgenden ausführlicher erläutert.
 
 ### <a name="marker-click-events"></a>Markerklickereignisse
 
-Das `MarkerClicked` -Ereignis wird ausgelöst, wenn der Benutzer auf einen Marker tippt. Dieses Ereignis akzeptiert ein `GoogleMap.MarkerClickEventArgs` -Objekt als Parameter. Diese Klasse enthält zwei Eigenschaften:
+Das `MarkerClicked`-Ereignis wird ausgelöst, wenn der Benutzer auf einen Marker tippt. Dieses Ereignis akzeptiert ein `GoogleMap.MarkerClickEventArgs`-Objekt als Parameter. Diese Klasse enthält zwei Eigenschaften:
 
-- `GoogleMap.MarkerClickEventArgs.Handled`Diese Eigenschaft sollte auf `true` festgelegt werden, um anzugeben, dass der Ereignishandler das Ereignis konsumiert hat. &ndash; Wenn diese Einstellung auf fest `false` gelegt ist, tritt das Standardverhalten zusätzlich zum benutzerdefinierten Verhalten des Ereignis Handlers auf.
+- `GoogleMap.MarkerClickEventArgs.Handled` &ndash; diese Eigenschaft auf `true` festgelegt werden, um anzugeben, dass der Ereignishandler das Ereignis verarbeitet hat. Wenn dieser auf `false` festgelegt ist, wird das Standardverhalten zusätzlich zum benutzerdefinierten Verhalten des Ereignis Handlers angezeigt.
 
-- `Marker`Diese Eigenschaft ist ein Verweis auf den Marker, der das `MarkerClick` Ereignis ausgelöst hat. &ndash;
+- `Marker` &ndash; diese Eigenschaft ist ein Verweis auf den Marker, der das Ereignis `MarkerClick` ausgelöst hat.
 
-Dieser Code Ausschnitt zeigt ein Beispiel für eine `MarkerClick` , die die Kameraposition an eine neue Position auf der Karte ändert:
+Dieser Code Ausschnitt zeigt ein Beispiel für eine `MarkerClick`, die die Kameraposition an eine neue Position auf der Karte ändert:
 
 ```csharp
 void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs markerClickEventArgs)
@@ -529,23 +529,23 @@ void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs markerClickE
 
 ### <a name="marker-drag-events"></a>Marker-Zieh Ereignisse
 
-Dieses Ereignis wird ausgelöst, wenn der Benutzer den Marker ziehen möchte. Standardmäßig sind Marker nicht dragfähig. Ein Marker kann als dragfähig festgelegt werden, indem `Marker.Draggable` die- `true` Eigenschaft auf oder festgelegt wird `true` , indem die `MarkerOptions.Draggable` -Methode mit als Parameter aufgerufen wird.
+Dieses Ereignis wird ausgelöst, wenn der Benutzer den Marker ziehen möchte. Standardmäßig sind Marker nicht dragfähig. Ein Marker kann als dragfähig festgelegt werden, indem die `Marker.Draggable`-Eigenschaft auf `true` festgelegt wird oder indem die `MarkerOptions.Draggable`-Methode mit `true` als Parameter aufgerufen wird.
 
 Um den Marker zu ziehen, muss der Benutzer zuerst auf den Marker und dann auf die Karte klicken. Wenn der Finger des Benutzers auf dem Bildschirm bewegt wird, wird der Marker verschoben. Wenn sich der Finger des Benutzers auf dem Bildschirm befindet, bleibt der Marker vorhanden.
 
 In der folgenden Liste werden die verschiedenen Ereignisse beschrieben, die für einen dragbaren Marker ausgelöst werden:
 
-- `GoogleMap.MarkerDragStart(object sender, GoogleMap.MarkerDragStartEventArgs e)`&ndash; Dieses Ereignis wird ausgelöst, wenn der Benutzer zuerst den Marker zieht.
+- `GoogleMap.MarkerDragStart(object sender, GoogleMap.MarkerDragStartEventArgs e)` &ndash; dieses Ereignis ausgelöst wird, wenn der Benutzer den Marker zum ersten Mal zieht.
 
-- `GoogleMap.MarkerDrag(object sender, GoogleMap.MarkerDragEventArgs e)`&ndash; Dieses Ereignis wird ausgelöst, wenn der Marker gezogen wird.
+- `GoogleMap.MarkerDrag(object sender, GoogleMap.MarkerDragEventArgs e)` &ndash; dieses Ereignis ausgelöst wird, wenn der Marker gezogen wird.
 
-- `GoogleMap.MarkerDragEnd(object sender, GoogleMap.MarkerDragEndEventArgs e)`&ndash; Dieses Ereignis wird ausgelöst, wenn der Benutzer das Ziehen des Markers abgeschlossen hat.
+- `GoogleMap.MarkerDragEnd(object sender, GoogleMap.MarkerDragEndEventArgs e)` &ndash; dieses Ereignis ausgelöst wird, wenn der Benutzer das Ziehen des Markers abgeschlossen hat.
 
-Jedes-Objekt `P0` `Marker` enthält eine einzelne Eigenschaft namens, die einen Verweis auf das Objekt enthält, das gezogen wird. `EventArgs`
+Jede der `EventArgs` enthält eine einzelne Eigenschaft mit dem Namen `P0`, die ein Verweis auf das `Marker` Objekt ist, das gezogen wird.
 
 ### <a name="info-window-click-events"></a>Info Fenster Click-Ereignisse
 
-Es kann jeweils nur ein Infofenster angezeigt werden. Wenn der Benutzer auf ein Infofenster in einer Zuordnung klickt, wird von dem Map-Objekt `InfoWindowClick` ein Ereignis ausgegeben. Der folgende Code Ausschnitt zeigt, wie ein Handler an das-Ereignis gesendet wird:
+Es kann jeweils nur ein Infofenster angezeigt werden. Wenn der Benutzer auf ein Infofenster in einer Karte klickt, wird vom Map-Objekt ein `InfoWindowClick` Ereignis ausgegeben. Der folgende Code Ausschnitt zeigt, wie ein Handler an das-Ereignis gesendet wird:
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -560,11 +560,11 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 }
 ```
 
-Beachten Sie, dass ein Infofenster ein `View` statisches ist, das als Bild auf der Karte gerendert wird. Alle Widgets (z. b. Schaltflächen, Kontrollkästchen oder Text Ansichten), die im Infofenster abgelegt werden, sind insoweit und können auf keines ihrer ganzzahligen Benutzer Ereignisse reagieren.
+Beachten Sie, dass ein Infofenster ein statisches `View` ist, das als Bild auf der Karte gerendert wird. Alle Widgets (z. b. Schaltflächen, Kontrollkästchen oder Text Ansichten), die im Infofenster abgelegt werden, sind insoweit und können auf keines ihrer ganzzahligen Benutzer Ereignisse reagieren.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo)
+- [Simplemapdemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo)
 - [Google Play Services](https://developers.google.com/android/guides/overview)
 - [Google Maps Android-API v2](https://developers.google.com/maps/documentation/android-sdk/intro)
 - [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)

@@ -4,15 +4,15 @@ description: In diesem Dokument wird erläutert, wie Status-und Aktivitätsindik
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: a2197a1ff9c37546fd97eb5a2459764ec05d4412
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 76e1ee54a5e1b729fdcb0b0a2c1f278703b2b4d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768919"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021969"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Status-und Aktivitätsindikatoren in xamarin. IOS
 
@@ -32,7 +32,7 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Aktivitätsindikatoren:
 
 ### <a name="implementing-an-activity-indicator"></a>Implementieren eines Aktivitäts Indikators
 
-Ein Aktivitätsindikator wird durch die [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) -Klasse implementiert, um anzugeben, dass eine `UIActivity` stattfindet.
+Ein Aktivitätsindikator wird durch die [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) -Klasse implementiert, um anzugeben, dass ein `UIActivity` stattfindet.
 
 ### <a name="activity-indicators-and-storyboards"></a>Aktivitätsindikatoren und Storyboards
 
@@ -42,19 +42,19 @@ Wenn Sie den IOS-Designer verwenden, um die Benutzeroberfläche zu erstellen, ka
 
 ### <a name="managing-activity-indicator-behavior"></a>Verwalten des Aktivitätsindikator Verhaltens
 
-Verwenden Sie `StartAnimating()` die `StopAnimating()` -und-Methoden, um die Aktivitätsindikator Animation zu starten und anzuhalten.
+Verwenden Sie die Methoden `StartAnimating()` und `StopAnimating()`, um die Aktivitätsindikator Animation zu starten und zu unterbinden.
 
-Legen Sie `HidesWhenStopped` die- `true` Eigenschaft auf fest, damit der Aktivitäts `StopAnimating()` Indikator ausgeblendet wird, nachdem aufgerufen wurde. Diese ist standardmäßig `true` auf festgelegt. An jedem Punkt können Sie sehen, ob der Aktivitätsindikator seine spinanimation durch Überprüfen der `IsAnimating` -Eigenschaft ausgeführt wird. 
+Legen Sie die `HidesWhenStopped`-Eigenschaft auf `true` fest, damit der Aktivitätsindikator nach dem Aufrufen `StopAnimating()` verschwindet. Diese Einstellung ist standardmäßig auf `true` festgelegt. An jedem Punkt können Sie festzustellen, ob der Aktivitätsindikator seine drehende Animation durch Überprüfen der `IsAnimating`-Eigenschaft ausgeführt wird. 
 
 ### <a name="managing-activity-indicator-appearances"></a>Verwalten von Aktivitätsindikator Auftritten
 
-Die `UIActivityIndicatorViewStyle` -Enumeration kann als Parameter übergeben werden, wenn der Aktivitätsindikator instanziiert wird. Sie können dies verwenden, um den visuellen Stil auf `Gray`, `White`oder `WhiteLarge`festzulegen, z. b.:
+Die `UIActivityIndicatorViewStyle` Enumeration kann als Parameter übergeben werden, wenn der Aktivitätsindikator instanziiert wird. Sie können dies verwenden, um den visuellen Stil auf `Gray`, `White`oder `WhiteLarge`festzulegen, z. b.:
 
 ```csharp
 activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 ```
 
-Sie können die von `UIActivityIndicatorViewStyle` bereitgestellte Farbe überschreiben, indem Sie die `Color` -Eigenschaft festlegen.
+Sie können die von `UIActivityIndicatorViewStyle` bereitgestellte Farbe überschreiben, indem Sie die `Color`-Eigenschaft festlegen.
 
 ## <a name="progress-bar"></a>Statusanzeige
 
@@ -67,7 +67,7 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Status leisten:
 
 ### <a name="implementing-an-progress-bar"></a>Implementieren einer Statusanzeige
 
-Eine Statusanzeige wird durch Instanziierung von erstellt.[`UIProgressView`](xref:UIKit.UIProgressView)
+Eine Statusanzeige wird erstellt, indem ein [`UIProgressView`](xref:UIKit.UIProgressView) instanziiert wird.
 
 ### <a name="progress-bars-and-storyboards"></a>Status anzeigen und Storyboards
 
@@ -79,13 +79,13 @@ Die folgenden Eigenschaften können im eigenschaftenpad angepasst werden:
 
 ### <a name="managing-progress-bar-behavior"></a>Verwalten des Statusanzeige Verhaltens
 
-Der Status der Leiste kann zunächst mithilfe der `Progress` -Eigenschaft festgelegt werden:
+Der Status der Leiste kann anfänglich mit der `Progress`-Eigenschaft festgelegt werden:
 
 ```csharp
 ProgressBar.Progress = 0f;
 ```
 
-Der Fortschritt kann mithilfe der `SetProgress` -Methode angepasst und eine boolesche Deklaration übergeben werden, wenn die Änderung animiert werden soll oder nicht.
+Der Fortschritt kann mit der `SetProgress`-Methode angepasst und eine boolesche Deklaration übergeben werden, wenn die Änderung animiert werden soll oder nicht.
 
 ```csharp
 ProgressBar.SetProgress(1.0f, true);
@@ -95,7 +95,7 @@ Weitere Informationen zur Verwendung der Statusanzeige finden Sie in der Anleitu
 
 ### <a name="managing-progress-bar-appearance"></a>Verwalten der Statusanzeige
 
-Ähnlich wie bei einem Aktivitätsindikator kann `UIProgressViewStyle` die-Enumeration beim Instanziieren der Statusanzeige als Parameter übergeben werden.
+Ähnlich wie bei einem Aktivitätsindikator kann die `UIProgressViewStyle` Enumeration beim Instanziieren der Statusanzeige als Parameter übergeben werden.
 
 Der Fortschritt und die Bild-und Bildfarben können mithilfe der folgenden Eigenschaften angepasst werden:
 

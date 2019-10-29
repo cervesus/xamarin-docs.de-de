@@ -1,84 +1,84 @@
 ---
-title: Arbeiten mit WatchOS Layout in Xamarin
-description: In diesem Dokument wird beschrieben, wie ein WatchOS-Layout mithilfe von Xamarin erstellt wird. Es wird erläutert, Schnittstellencontroller, Gruppen, Trennzeichen und ContentControl-Elemente.
+title: Arbeiten mit dem watchos-Layout in xamarin
+description: In diesem Dokument wird beschrieben, wie Sie ein watchos-Layout mithilfe von xamarin erstellen. Hier werden Schnittstellen Controller, Gruppen, Trennzeichen und Inhalts Steuerelemente erläutert.
 ms.prod: xamarin
 ms.assetid: BEDB62A1-2249-4459-986F-413A41E63DF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 568d1e354d0ee840aeed980d6e8cc6b83068a1c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768748"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001547"
 ---
-# <a name="working-with-watchos-layout-in-xamarin"></a>Arbeiten mit WatchOS Layout in Xamarin
+# <a name="working-with-watchos-layout-in-xamarin"></a>Arbeiten mit dem watchos-Layout in xamarin
 
-Entwerfen von Layouts für die Apple Watch- [Bildschirmgrößen](~/ios/watchos/app-fundamentals/screen-sizes.md) besondere Herausforderungen bereit.
+Das Entwerfen von Layouts für die Apple Watch [Bildschirmgrößen](~/ios/watchos/app-fundamentals/screen-sizes.md) stellt besondere Herausforderungen dar.
 
-## <a name="design-tips"></a>Tipps für den Entwurf
+## <a name="design-tips"></a>Entwurfs Tipps
 
-Der wichtigste Punkt ist: treffen Sie Ihre Benutzeroberfläche lesbar und auf einem Bildschirm kleine sehen Sie sich mit einem großen Finger verwendet. Tappen Sie nicht in der Trap beim Entwurf für die **iOS-Simulator** (wird angezeigt, sehr groß) und ein **Mauszeiger** (das funktioniert mit kleinen Touch-Ziele)!
+Der wichtigste Punkt ist: machen Sie Ihre Benutzeroberfläche auf einem kleinen Bildschirm mit einem großen Finger lesbar und nutzbar. Gehen Sie beim Entwerfen für den **IOS-Simulator** (der sehr groß erscheint) und einem **Mauszeiger** (der mit kleinen Berührungs Zielen funktioniert) nicht in den Trap.
 
-- Erhält einen schwarzen Hintergrund verwenden – die Illusion von einem größeren Bildschirm mit der Apple Watch schwarzen Rahmen erstellt.
+- Verwenden Sie einen schwarzen Hintergrund. Dadurch wird die Illusion eines größeren Bildschirms mit dem schwarzen Bild der Uhr angezeigt.
 
-- Führen Sie für Ihre Bildschirmlayouts nicht aufgefüllt: die Blende bildet natürlich visual Auffüllung.
+- Nicht um das Bildschirmlayout herum Auffüllen: das Ecke bildet eine natürliche visuelle Auffüllung.
 
-- Konzentrieren sich auf die Lesbarkeit. Verwenden Sie Schriftgrößen und Farben mit Bedacht, stellen Sie sicher, dass der Text lesbar ist. Verwenden Sie die integrierte Text-Formate, um automatische Typ "Dynamic"-Unterstützung zu erhalten.
+- Konzentrieren Sie sich auf die Lesbarkeit. Verwenden Sie Schriftart Größen und Farben mit bedacht, um sicherzustellen, dass der Text lesbar ist. Verwenden Sie die integrierten Text Stile, um die automatische Unterstützung dynamischer Typen zu erhalten.
 
-![](layout-images/type.png "Beispiel für die Unterstützung von dynamischen Typen")
+![](layout-images/type.png "Example of Dynamic Type support")
 
-- Touch-zielgrößen darauf konzentrieren. Schaltflächen/tappable Tabellenzeilen mit Beschriftungen, die den gesamten Bildschirm umfassen soll. Apple sagt "nie mehr als drei Elemente-Seite-an-Seite platzieren", und wenn Sie Symbole und nicht die Beschriftungen verwenden.
+- Konzentrieren Sie sich auf die Berührungs Zielgrößen. Schaltflächen/Einfügbare Tabellenzeilen mit Text Bezeichnungen sollten den gesamten Bildschirm überspannen. Apple sagt, dass Sie nicht mehr als drei Elemente nebeneinander platzieren können, und wenn Sie Symbole und keine Text Bezeichnungen verwenden.
 
-- Verwenden der [ `Menu` Steuerelement](~/ios/watchos/user-interface/menu.md) zu machen, die weniger häufig verwendete Funktionen, Ihr app-Design klaren und präzisen zu halten.
+- Verwenden Sie das [`Menu`-Steuer](~/ios/watchos/user-interface/menu.md) Element, um weniger häufig verwendete Funktionen verfügbar zu machen, um Ihren app-Entwurf klar und präzise zu halten.
 
 ## <a name="implementation"></a>Implementierung
 
-Sehen Sie sich Kit umfasst die folgenden Steuerelemente, damit Sie attraktive sehen Sie sich app-Layouts erstellen können:
+Das Watch Kit umfasst die folgenden Steuerelemente, die Ihnen bei der Erstellung ansprechender App-Layouts helfen:
 
-### <a name="interface-controller"></a>Schnittstellencontroller
+### <a name="interface-controller"></a>Schnittstellen Controller
 
-Die `WKInterfaceController` ist die Basisklasse aller den Szenen.
+Der `WKInterfaceController` ist die Basisklasse in ihren Kulissen.
 
-Die Entwurfsoberfläche für die schnittstellencontrollers verhält sich wie ein vertikales **Gruppe**: können Sie andere Steuerelemente in der schnittstellencontrollers ziehen und sie werden automatisch gelayoutet eine über der anderen:
+Die Entwurfs Oberfläche für den Schnittstellen Controller verhält sich wie eine vertikale **Gruppe**: Sie können andere Steuerelemente auf den Schnittstellen Controller ziehen, und Sie werden automatisch über den anderen festgelegt:
 
-![](layout-images/controller-scene.png "Steuerelemente sind automatisch gelayoutet eine über der anderen")
+![](layout-images/controller-scene.png "Controls are automatically laid-out one above the other")
 
-Sie können festlegen, die **Position** und **Größe** Eigenschaften für jedes Steuerelement, um ihre Darstellung zu steuern:
+Sie können die Eigenschaften **Position** und **Größe** jedes Steuer Elements festlegen, um die Darstellung zu steuern:
 
-![](layout-images/positionsize-attributes.png "Legen Sie die Position und Größe-Eigenschaften für jedes Steuerelement")
+![](layout-images/positionsize-attributes.png "Set the Position and Size properties on each control")
 
-Wenn die Größe festgelegt ist, um **relativ zum Container** können Sie angeben, proportionaler Wert und eine Anpassung der Offset. Dieser Screenshot zeigt eine Schaltfläche, die festgelegt wurde, verwenden Sie 80 % der Breite für die Überwachung des Bildschirms (**0,8**):
+Wenn die Größe **relativ zum Container** auf festgelegt ist, können Sie einen proportionalen Wert und eine Offset Anpassung bereitstellen. Dieser Screenshot zeigt eine Schaltfläche, die für die Verwendung von 80% der Breite des Bildschirms (**0,8**) festgelegt wurde:
 
-![](layout-images/button-attributes.png "Geben Sie proportionaler Wert und eine Offset-Anpassung")
+![](layout-images/button-attributes.png "Provide a proportional value and an offset adjustment")
 
 ### <a name="group"></a>Gruppieren
 
-`WKInterfaceGroup` ist ein einfaches Layout-Container, der konfiguriert werden kann, um die Aufrufliste vertikal oder horizontal steuert. Es enthält Abstand zwischen den Steuerelementen in der Standardeinstellung, aber Sie können den Abstand (und die Abstände) ändern, der **Attribute** Inspector.
+`WKInterfaceGroup` ist ein einfacher Layoutcontainer, der so konfiguriert werden kann, dass Steuerelemente vertikal oder horizontal gestapelt werden. Sie enthält standardmäßig Abstände zwischen den einzelnen Steuerelementen, aber Sie können den Abstand (und die Insets) im **Attribut** Inspektor ändern.
 
-![](layout-images/group-attributes.png "Ändern der Abstände und der Abstände im Attributes inspector")
+![](layout-images/group-attributes.png "Modify the spacing and insets in the Attributes inspector")
 
-Gruppen können selbst werden Größe und relativ zu den Steuerelementen zu positioniert, und Servergruppen können geschachtelt sein, um komplexe Layouts zu erstellen.
+Gruppen können selbst angepasst und in Relation zu den Steuerelementen herum positioniert werden, und Gruppen können zum Erstellen komplexer Layouts gruppiert werden.
 
-![](layout-images/group-scene.png "Gruppen können geschachtelt werden, um komplexe Layouts zu erstellen.")
+![](layout-images/group-scene.png "Groups can be nested to create complex layouts")
 
 ### <a name="separator"></a>Trennzeichen
 
-Das Separator-Steuerelement soll darstellungsleitfaden im Layout zu bieten. Verwenden Sie die Trennzeichen (oder Hintergrundfarben oder Bilder) können Sie die Benutzer wissen, welcher Inhalt auf dem Bildschirm zusammenhängt.
+Das Trennzeichen Steuerelement soll Ihnen helfen, visuelle Anleitungen in Ihrem Layout bereitzustellen. Verwenden Sie Trennzeichen (oder Hintergrundfarben oder Bilder), um dem Benutzer zu helfen, zu verstehen, welcher Inhalt auf dem Bildschirm verknüpft ist.
 
-![](layout-images/separator-scene.png "Beispiel für die Verwendung von Trennzeichen")
+![](layout-images/separator-scene.png "Example of Separator usage")
 
-Beachten Sie die blauen und grünen Trennzeichen, die nicht die gesamte Breite des Bildschirms verwenden entweder konfiguriert wurden **Fixed** oder **relativ zum Container** Größen.
+Beachten Sie, dass die blauen und grünen Trennzeichen, die nicht die vollständige Breite des Bildschirms verwenden, mit **fester** oder **relativ zu Container** Größen konfiguriert wurden.
 
 ### <a name="content-controls"></a>Inhaltssteuerelemente
 
-Kein Layout wäre vollständig ohne die `Label`, `Image`, `Button`, `Switch`, `Slider`, `Map`, und [andere Steuerelemente](~/ios/watchos/user-interface/index.md).
-Diese können in Ihre Layouts mit positioniert werden **Gruppen** oder die Position und Größe auf jedes Steuerelement.
+Es ist kein Layout ohne die `Label`, `Image`, `Button`, `Switch`, `Slider`, `Map`und anderen Steuer [Elementen](~/ios/watchos/user-interface/index.md)fertig.
+Diese können in ihren Layouts mithilfe von **Gruppen** oder den Positions-und Größen Einstellungen der einzelnen Steuerelemente positioniert werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [WatchKitCatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [Apple Layout-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
-- [Farb & Typografie von Apple zu verweisen.](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)
+- [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Apple-layoutverweis](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
+- [Farb & typografiereferenz von Apple](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)

@@ -3,15 +3,15 @@ title: Überlegungen zu 32/64-Bit-Plattformen
 description: In diesem Dokument werden verschiedene Überlegungen beschrieben, die Sie berücksichtigen sollten, wenn Sie für eine xamarin. IOS-oder xamarin. Mac-Anwendung auf 32-Bit-und 64-Bit-Architekturen abzielen.
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71249795"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016329"
 ---
 # <a name="3264-bit-platform-considerations"></a>Überlegungen zu 32/64-Bit-Plattformen
 
@@ -40,9 +40,9 @@ Für Mobile xamarin. IOS-Anwendungen, die in die Unified API konvertiert wurden,
 
 1. Doppelklicken Sie im **Lösungspad**auf das Projekt der APP, um das Fenster **Projektoptionen** zu öffnen.
 2. Wählen Sie **IOS-Build**aus.
-3. Wählen Sie für den iPhone-Simulator in der Dropdown Liste **unterstützte Architekturen** entweder **x86 \_64** oder **i386 + x86 \_64**aus:
+3. Wählen Sie für den iPhone-Simulator in der Dropdown Liste **unterstützte Architekturen** entweder **x86\_64** oder **i386 + x86\_64**aus:
 
-   [![Festlegen unterstützter Architekturen auf x86 \_64 oder i386 + x86 \_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![Festlegen unterstützter Architekturen auf x86\_64 oder i386 + x86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. Wählen Sie für physische Geräte eine der verfügbaren **ARM64** -Kombinationen aus:
 
@@ -55,9 +55,9 @@ Für Mobile xamarin. IOS-Anwendungen, die in die Unified API konvertiert wurden,
 
 1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt der APP, und wählen Sie **Eigenschaften**aus.
 2. Wählen Sie **IOS-Build**aus.
-3. Legen Sie für den iPhone-Simulator **unterstützte Architekturen** entweder auf **x86 \_64** oder **i386 + x86 \_64**fest: 
+3. Legen Sie für den iPhone-Simulator **unterstützte Architekturen** entweder auf **x86\_64** oder **i386 + x86\_64**fest: 
 
-   [![Festlegen unterstützter Architekturen auf x86_64 oder i386 + x86 \_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![Festlegen unterstützter Architekturen auf x86_64 oder i386 + x86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. Wählen Sie für physische Geräte eine der verfügbaren **ARM64** -Kombinationen aus:
     

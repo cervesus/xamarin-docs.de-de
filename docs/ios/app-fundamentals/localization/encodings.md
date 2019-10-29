@@ -4,15 +4,15 @@ description: In diesem Dokument werden die Codierungs Codierungen in xamarin. IO
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c8e82f9261601db48ec48092a5f3f81394a86eec
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d204aeac18fc08bf6eb2221b6f64ecbbded8121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763408"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010003"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Internationalisierungs Codierungen in xamarin. IOS
 
@@ -22,18 +22,18 @@ Um die Größe der Anwendung zu reduzieren, umfasst xamarin. IOS keine bestimmte
 
 Dazu wählen Sie die zusätzlichen Codierungen aus dem Bereich IOS-Build/erweitert in Visual Studio für Mac oder Visual Studio aus:
 
- [![](encodings-images/00.png "Auswählen der zusätzlichen Codierungen")](encodings-images/00.png#lightbox)
+ [![](encodings-images/00.png "Selecting the extra encodings")](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "Auswählen der zusätzlichen Codierungen")](encodings-images/00a.png#lightbox)
+ [![](encodings-images/00a.png "Selecting the extra encodings")](encodings-images/00a.png#lightbox)
 
 Sie können eine der folgenden Aktionen auswählen:
 
 - CJK: für Chineese, Japanisch und Koreanisch
-- Naher Osten Arabisch, Hebräisch, Türkisch und Latin5.
-- außer Kyrillisch, Baltikum, Vietnamesisch, Ukrainisch und Thailändisch
-- ere EBCDIC-Codierungen und andere seltene Codepages
-- Westen Lateinische Sprachen, Ostern und Westeuropäisch
-- all
+- midäast: Arabisch, Hebräisch, Türkisch und Latin5.
+- Sonstiges: Kyrillisch, Baltikum, Vietnamesisch, Ukrainisch und Thailändisch
+- selten: EBCDIC-Codierungen und andere seltene Codepages
+- West: lateinische Sprachen, Ostern und Westeuropäisch
+- alle
 
  <a name="cjk" />
 
@@ -62,7 +62,7 @@ Sie können eine der folgenden Aktionen auswählen:
 
 ## <a name="other"></a>andere
 
-- CP1251
+- Cp1251
 - CP1257
 - CP1258
 - CP20866

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie eine watchos-App berei
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768702"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028355"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Testen auf Apple Watch Geräten
 
@@ -26,21 +26,21 @@ Nachdem Sie die [Bereitstellungs Schritte](~/ios/watchos/deploy-test/index.md) z
 
 ## <a name="devices"></a>Geräte
 
-Das Testen von IOS-apps auf einem echten iPhone oder iPad erforderte immer das Registrieren des Geräts im dev Center. Die Geräteliste sieht wie folgt aus (Klicken Sie auf **+** das Pluszeichen, um ein neues Gerät hinzuzufügen):
+Das Testen von IOS-apps auf einem echten iPhone oder iPad erforderte immer das Registrieren des Geräts im dev Center. Die Geräteliste sieht wie folgt aus (Klicken Sie auf das Pluszeichen **+** , um ein neues Gerät hinzuzufügen):
 
-![](device-images/devices-sml.png "Die Geräteliste sieht wie folgt aus.")
+![](device-images/devices-sml.png "The device list looks like this")
 
 Uhren sind nicht anders. Sie müssen nun Ihr Apple Watch Gerät hinzufügen, bevor Sie Apps für das Gerät bereitstellen. Suchen Sie die Benutzerkontensteuerung mithilfe von **Xcode** (**Windows >-Geräte** Liste). Wenn das gekoppelte Telefon verbunden ist, werden die Überwachungsinformationen ebenfalls angezeigt:
 
-[![](device-images/xcode-devices-sml.png "Gekoppelte Überwachungsinformationen")](device-images/xcode-devices.png#lightbox)
+[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
 
 Wenn Sie das UDID der Überwachung kennen, fügen Sie es der Geräteliste im dev Center hinzu:
 
-![](device-images/devices-watch-sml.png "UDID der Überwachung in der Geräteliste")
+![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
 
 Nachdem das Überwachungsgerät hinzugefügt wurde, stellen Sie sicher, dass es in neuen oder vorhandenen Entwicklungs-oder Ad-hoc-Bereitstellungs Profilen ausgewählt ist, die Sie erstellen:
 
-![](device-images/devices-provisioning.png "Liste der verfügbaren Geräte")
+![](device-images/devices-provisioning.png "Available device list")
 
 Vergessen Sie nicht, wenn Sie ein vorhandenes Bereitstellungs Profil bearbeiten, um es herunterzuladen und erneut zu installieren.
 
@@ -52,17 +52,17 @@ Zum Erstellen von Tests auf Ihrem Gerät müssen Sie ein **Entwicklungs Bereitst
 
 Wenn Sie über eine Platzhalter-APP-ID verfügen, *wird nur ein Bereitstellungs Profil benötigt*. Wenn Sie jedoch über eine separate App-ID für jedes Projekt verfügen, benötigen Sie ein Bereitstellungs Profil für jede APP-ID:
 
-![](device-images/provisioningprofile-development.png "Das Entwicklungs Bereitstellungs Profil")
+![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
 
 Nachdem Sie alle drei Profile erstellt haben, werden Sie in der Liste angezeigt. Denken Sie daran, die einzelnen herunterzuladen und zu installieren:
 
-![](device-images/provisioningprofiles.png "Die verfügbaren Entwicklungs Bereitstellungs profile")
+![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
 
 Sie können das Bereitstellungs Profil in den **Projektoptionen** überprüfen, indem Sie den Bildschirm zum **Erstellen > IOS-Bundle-Signierung** auswählen und die iPhone-Konfiguration **Release** oder **Debug** auswählen.
 
 In der Liste der **Bereitstellungs profile** werden alle übereinstimmenden Profile angezeigt. Sie sollten die entsprechenden Profile sehen, die Sie in dieser Dropdown Liste erstellt haben:
 
-![](device-images/options-selectprofile.png "Die Liste der Bereitstellungs profile")
+![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
 <a name="testing" />
 
@@ -91,13 +91,13 @@ Nachdem Sie das Gerät, App-IDs und Bereitstellungs Profile konfiguriert haben, 
 
 Wenn während der Bereitstellung ein Fehler auftritt, verwenden Sie die **Ansicht > Pads > Geräte Protokoll** , um weitere Informationen zum Fehler anzuzeigen. Einige Fehler und deren Gründe sind unten aufgeführt:
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>Fehler MT3001: Die Assembly konnte nicht gefunden werden.
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>Fehler MT3001: die Assembly konnte nicht gefunden werden.
 
 Dies kann bei der Erstellung im Debugmodus zur Bereitstellung auf einem Apple Watch Gerät auftreten.
 
 Um dieses Problem *vorübergehend* zu umgehen, deaktivieren Sie **inkrementelle Builds** in den Optionen für das Überwachungs Erweiterungs **Projekt > Build > watchos Build** -Fensters:
 
-[![](device-images/disable-incremental-sml.png "Kontrollkästchen inkrementelle Builds")](device-images/disable-incremental.png#lightbox)
+[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
 
 Dies wird in einer zukünftigen Version korrigiert, nach der inkrementelle Builds erneut aktiviert werden können, um schnellere Buildzeiten zu nutzen.
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Ungültige anwendungsausführ Bare Warnung")
+![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
 
 Wenn diese Nachrichten *auf dem Bildschirm überwachen* angezeigt werden, nachdem die APP versucht hat, zu installieren, können einige Probleme auftreten:
 
@@ -120,7 +120,7 @@ Wenn diese Nachrichten *auf dem Bildschirm überwachen* angezeigt werden, nachde
 
 - Für die für den Test verwendeten Entwicklungs Bereitstellungs profile wurde das Überwachungsgerät nicht eingeschlossen. oder nachdem die Überwachung den Bereitstellungs Profilen hinzugefügt wurde, wurden Sie nicht erneut heruntergeladen und erneut installiert. Befolgen Sie die Anweisungen, um [die Bereitstellungs profile ordnungsgemäß zu konfigurieren](#profiles).
 
-- Wenn das **IOS-Geräte Protokoll** enthält `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` , weist die Datei " **Info. plist** " der Watch-App den falschen **minimumosversion** -Wert auf.
+- Wenn das **IOS-Geräte Protokoll** `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` enthält, weist die Datei " **Info. plist** " der Watch-App den falschen **minimumosversion** -Wert auf.
   Dieser Wert sollte **8,2** lauten. Wenn Sie Xcode 6,3 installiert haben, müssen Sie möglicherweise die Quelle manuell bearbeiten, um Sie auf 8,2 festzulegen.
 
 - Die Berechtigung " **Berechtigungen. plist** " der Watch-APP ist fälschlicherweise aktiviert (z. b. app-Gruppen).

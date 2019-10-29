@@ -5,26 +5,26 @@ ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 24203d8a3a4356fb4de08d132c164d9f2d19a0c9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61d1adfc997b34302f1f89f56653af906ca90135
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291800"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022221"
 ---
 # <a name="binding-ios-libraries"></a>Binden von IOS-Bibliotheken
 
 Befolgen Sie diese Links, um mehr über das Binden von Ziel-C-Bibliotheken und cocoapods für xamarin. IOS und xamarin. Mac zu erfahren:
 
-- [**Übersicht**](~/cross-platform/macios/binding/overview.md) -
-  Beschreibt, wie die Bindung funktioniert.
-- [**Binden von Ziel-C-Bibliotheken**](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  Anweisungen zum Binden von Ziel-C-Bibliotheken für die Verwendung in xamarin-Projekten.
-- [**Referenzhandbuch zur Typdefinition**](~/cross-platform/macios/binding/binding-types-reference.md) -
-  Beschreibt alle verfügbaren Attribute für das Binden von Autoren, um den Bindungs Generierungsprozess zu steuern.
+- In der [**Übersicht**](~/cross-platform/macios/binding/overview.md) -
+  wird beschrieben, wie die Bindung funktioniert.
+- Binden von [**Ziel-c-Bibliotheken**](~/cross-platform/macios/binding/objective-c-libraries.md) -
+  Anweisungen zum Binden von Ziel-c-Bibliotheken zur Verwendung in xamarin-Projekten.
+- [**Typdefinition-Referenzhandbuch**](~/cross-platform/macios/binding/binding-types-reference.md) -
+  beschreibt alle Attribute, die für die Bindung von Autoren zum Steuern des Bindungs Generierungs Prozesses verfügbar sind.
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objektive Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

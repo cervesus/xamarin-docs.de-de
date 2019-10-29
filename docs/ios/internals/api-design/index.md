@@ -4,19 +4,19 @@ description: Leitfäden, die zum Entwerfen der xamarin. IOS-APIs und deren Bezie
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 843aeda14ad8c47014b577bdce8004872b12865d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ab56332617fece8e80429f82000880012bf85b41
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753463"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022406"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin. IOS-API-Design
 
-Zusätzlich zu den Basisklassen Bibliotheken, die Teil von Mono sind, werden in [xamarin. IOS](http://www.xamarin.com/iOS) Bindungen für verschiedene IOS-APIs geliefert, damit Entwickler Native IOS-Anwendungen mit Mono erstellen können.
+Zusätzlich zu den Basisklassen Bibliotheken, die Teil von Mono sind, werden in [xamarin. IOS](~/ios/index.yml) Bindungen für verschiedene IOS-APIs geliefert, damit Entwickler Native IOS-Anwendungen mit Mono erstellen können.
 
 Im Kern von xamarin. IOS gibt es eine Interop-Engine, die die C# Welt mit der Ziel-C-Welt verbindet, sowie Bindungen für die auf IOS C basierenden APIs wie CoreGraphics und [OpenGL es](#opengles).
 
@@ -59,13 +59,13 @@ Dies sind einige unserer Entwurfs Prinzipien für die xamarin. IOS-Bindungen (Si
     NSView [] Views { get; set; }
     ```
 
-    Dadurch haben Visual Studio für Mac die Möglichkeit, die automatische Vervollständigung beim Durchsuchen der API durch `System.Array` zuführen, alle Vorgänge für den zurückgegebenen Wert verfügbar zu machen, und der Rückgabewert kann an LINQ teilnehmen.
+    Dadurch haben Visual Studio für Mac die Möglichkeit, die automatische Vervollständigung beim Durchsuchen der API durchzuführen, alle `System.Array` Vorgänge für den zurückgegebenen Wert verfügbar zu machen, und der Rückgabewert kann an LINQ teilnehmen.
 
 - Native C# Typen:
 
-  - [`NSString`verfügbar`string`](~/ios/internals/api-design/nsstring.md)
-  - Turn `int` - `uint` und-Parameter, die in C# Enumerationen und C# Enumerationen mit `[Flags]` Attributen enthalten sein sollen
-  - Stellen Sie Arrays anstelle von `NSArray` typneutralen Objekten als stark typisierte Arrays bereit.
+  - [`NSString` wird `string`](~/ios/internals/api-design/nsstring.md)
+  - Umwandeln von `int` und `uint` Parametern, die C# Enumerationen und C# Enumerationen mit`[Flags]`Attributen sein sollten
+  - Stellen Sie Arrays anstelle von typneutralen `NSArray` Objekten als stark typisierte Arrays bereit.
   - Für Ereignisse und Benachrichtigungen können Sie den Benutzern folgende Möglichkeiten einräumen:
 
     - Standardmäßig eine stark typisierte Version
@@ -74,7 +74,7 @@ Dies sind einige unserer Entwurfs Prinzipien für die xamarin. IOS-Bindungen (Si
 - Unterstützen Sie das Ziel-C-delegatmuster:
 
   - C#Ereignis System
-  - C# Verfügbar machen von Delegaten (Lambdas, anonyme `System.Delegate`Methoden und) an Ziel-C-APIs als Blöcke
+  - C# Verfügbar machen von Delegaten (Lambdas, anonyme Methoden und`System.Delegate`) an Ziel-C-APIs als Blöcke
 
 ### <a name="assemblies"></a>Assemblys
 
@@ -82,7 +82,7 @@ Xamarin. IOS enthält eine Reihe von Assemblys, die das *xamarin. IOS-Profil*bil
 
 ### <a name="major-namespaces"></a>Haupt Namespaces
 
-#### <a name="objcruntime"></a>ObjCRuntime
+#### <a name="objcruntime"></a>Objcruntime
 
 Der [objcruntime](xref:ObjCRuntime) -Namespace ermöglicht es Entwicklern, die Welten C# zwischen und Ziel-C zu überbrücken.
 Dabei handelt es sich um eine neue Bindung, die speziell für IOS entwickelt wurde, basierend auf der Verwendung von Cocoa # und GTK #.
@@ -93,7 +93,7 @@ Der [Foundation](xref:Foundation) -Namespace stellt die grundlegenden Datentypen
 
 Xamarin. IOS-Spiegelungen in C# der Klassenhierarchie von "Ziel-C". Beispielsweise kann das [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) der Ziel-C-Basisklasse von C# über [Foundation. NSObject](xref:Foundation.NSObject)verwendet werden.
 
-Obwohl dieser Namespace Bindungen für die zugrunde liegenden Ziel-C Foundation-Typen bereitstellt, haben wir in einigen Fällen die zugrunde liegenden Typen .NET-Typen zugeordnet. Zum Beispiel:
+Obwohl dieser Namespace Bindungen für die zugrunde liegenden Ziel-C Foundation-Typen bereitstellt, haben wir in einigen Fällen die zugrunde liegenden Typen .NET-Typen zugeordnet. Beispiel:
 
 - Anstatt [NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) und [NSArray zu verwenden](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), macht die Common Language Runtime diese C#in der gesamten API als [Zeichen](xref:System.String)folgen-und stark typisierte [Array](xref:System.Array)-e verfügbar.
 
@@ -107,7 +107,7 @@ Der [NSObject](xref:Foundation.NSObject) -Typ ist die Grundlage für alle Ziel-C
 
 Für jeden Typ, der einen nicht verwalteten Typ widerspiegelt, ist es möglich, das Native Objekt über die [handle](xref:Foundation.NSObject.Handle) -Eigenschaft abzurufen.
 
-Während Mono Garbage Collection für alle Objekte bereitstellt, implementiert die `Foundation.NSObject` [System. iverwerfbare](xref:System.IDisposable) Schnittstelle. Dies bedeutet, dass Sie die Ressourcen eines beliebigen beliebigen NSObject explizit freigeben können, ohne darauf warten zu müssen, dass der Garbage Collector gestartet wird. Dies ist wichtig, wenn Sie große NSObjects verwenden, z. b. UIimages, die möglicherweise Zeiger auf große Datenblöcke enthalten.
+Während Mono Garbage Collection für alle Objekte bereitstellt, implementiert die `Foundation.NSObject` die [System. iverwerfbare](xref:System.IDisposable) Schnittstelle. Dies bedeutet, dass Sie die Ressourcen eines beliebigen beliebigen NSObject explizit freigeben können, ohne darauf warten zu müssen, dass der Garbage Collector gestartet wird. Dies ist wichtig, wenn Sie große NSObjects verwenden, z. b. UIimages, die möglicherweise Zeiger auf große Datenblöcke enthalten.
 
 Wenn Ihr Typ deterministische Finalisierung ausführen muss, überschreiben Sie die [Methode NSObject. verwerfen (bool)](xref:Foundation.NSObject.Dispose(System.Boolean)) , da der zu löschende Parameter "bool disposing" lautet. Wenn dieser Wert auf "true" festgelegt ist, bedeutet dies, dass Ihre Löschmethode aufgerufen wird, da der Benutzer explizit aufgerufen wird. Verwerfen () für das-Objekt. Wenn der Wert false ist, bedeutet dies, dass die verwerfen-Methode (bool disposing) vom Finalizer im Finalizerthread aufgerufen wird.
 
@@ -115,13 +115,13 @@ Wenn Ihr Typ deterministische Finalisierung ausführen muss, überschreiben Sie 
 
 Ab xamarin. IOS 8,10 ist es möglich, Ziel-C-Kategorien aus C#zu erstellen.
 
-Dies erfolgt mithilfe des `Category` -Attributs und gibt den Typ an, der als Argument für das-Attribut erweitert werden soll. Im folgenden Beispiel wird z. b. NSString erweitert.
+Dies erfolgt mithilfe des `Category`-Attributs, wobei der Typ angegeben wird, der als Argument für das Attribut erweitert werden soll. Im folgenden Beispiel wird z. b. NSString erweitert.
 
 ```csharp
 [Category (typeof (NSString))]
 ```
 
-Jede kategoriemethode verwendet den normalen Mechanismus zum Exportieren von Methoden zu "Ziel- `Export` C" mithilfe des-Attributs:
+Jede kategoriemethode verwendet den normalen Mechanismus zum Exportieren von Methoden zu "Ziel-C" mithilfe des `Export` Attributs:
 
 ```csharp
 [Export ("today")]
@@ -171,7 +171,7 @@ public static class MyViewControllerCategory
 }
 ```
 
-Ein Szenario, in dem dies hilfreich ist, besteht darin, eine Methode zu einem vollständigen Satz von Klassen in Ihrer Codebasis hinzuzufügen. so `UIViewController` werden z. b. alle Instanzen melden, dass Sie sich drehen können:
+Ein Szenario, in dem dies hilfreich ist, besteht darin, eine Methode zu einem vollständigen Satz von Klassen in Ihrer Codebasis hinzuzufügen. Dadurch werden z. b. alle `UIViewController` Instanzen melden, dass Sie sich drehen können:
 
 ```csharp
 [Category (typeof (UINavigationController))]
@@ -184,13 +184,13 @@ class Rotation_IOS6 {
 }
 ```
 
-##### <a name="preserveattribute"></a>PreserveAttribute
+##### <a name="preserveattribute"></a>Preserveattribute
 
 Preserveattribute ist ein benutzerdefiniertes Attribut, das verwendet wird, um mberühren – das Bereitstellungs Tool xamarin. IOS – zum Beibehalten eines Typs oder eines Members eines Typs während der Phase, in der die Anwendung verarbeitet wird, um die Größe zu verringern.
 
 Jeder Member, der nicht statisch durch die Anwendung verknüpft ist, muss entfernt werden. Daher wird dieses Attribut verwendet, um Member zu kennzeichnen, auf die nicht statisch verwiesen wird, die aber noch von Ihrer Anwendung benötigt werden.
 
-Wenn Sie beispielsweise Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten. Wenn Sie die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
+Wenn Sie beispielsweise Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten. Wenn Sei die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
 
 Sie können dieses Attribut auf alle Member eines Typs oder auf den Typ selbst anwenden. Wenn Sie den gesamten Typ beibehalten möchten, können Sie die Syntax [Preserve (AllMembers = true)] für den Typ verwenden.
 
@@ -222,7 +222,7 @@ Die Diskussion in den nächsten Abschnitten ist für Benutzer, die xamarin. IOS-
 
 Wenn es sinnvoll ist, C# werden Typen anstelle von Basis Typen auf niedriger Ebene im C# Universum verfügbar gemacht.  Dies bedeutet, dass [die API den C# Typ "String" anstelle von NSString verwendet](~/ios/internals/api-design/nsstring.md) und stark typisierte C# Arrays verwendet, anstatt NSArray verfügbar zu machen.
 
-Im Allgemeinen wird das zugrunde liegende `NSArray` Objekt im xamarin. IOS-und xamarin. Mac-Design nicht verfügbar gemacht. Stattdessen konvertiert `NSArray`die Common Language Runtime s automatisch in stark typisierte Arrays `NSObject` einer Klasse. Daher macht xamarin. IOS keine schwach typisierte Methode wie GetViews verfügbar, um einen NSArray zurückzugeben:
+Im Allgemeinen wird das zugrunde liegende `NSArray` Objekt im xamarin. IOS-und xamarin. Mac-Design nicht verfügbar gemacht. Stattdessen konvertiert die Common Language Runtime `NSArray`s automatisch in stark typisierte Arrays einer `NSObject` Klasse. Daher macht xamarin. IOS keine schwach typisierte Methode wie GetViews verfügbar, um einen NSArray zurückzugeben:
 
 ```csharp
 NSArray GetViews ();
@@ -234,9 +234,9 @@ Stattdessen stellt die Bindung einen stark typisierten Rückgabewert wie folgt b
 UIView [] GetViews ();
 ```
 
-Es gibt einige Methoden, die in `NSArray`für die Fälle verfügbar sind, in denen Sie möglicherweise einen `NSArray` direkt verwenden möchten, aber ihre Verwendung wird in der API-Bindung nicht empfohlen.
+In `NSArray`stehen einige Methoden zur Verfügung, für die Fälle, in denen Sie möglicherweise eine `NSArray` direkt verwenden möchten, aber ihre Verwendung wird in der API-Bindung nicht empfohlen.
 
-Darüber hinaus haben wir im **Classic API** anstelle von `CGRect` `CGPoint` und von `CGSize` der `System.Drawing` `RectangleF`CoreGraphics-API diese durch die Implementierungen `PointF`ersetzt. `SizeF`Sie würden Entwicklern dabei helfen, vorhandenen OpenGL-Code zu erhalten, der opentk verwendet. Wenn Sie die neue 64-Bit- **Unified API**verwenden, sollte die CoreGraphics-API verwendet werden.
+Außerdem haben wir im **Classic API** statt `CGRect`, `CGPoint` und `CGSize` von der CoreGraphics-API zur Verfügung zu stellen, die Sie durch die `System.Drawing` Implementierungen `RectangleF`, `PointF` und `SizeF` ersetzt haben. vorhandener OpenGL-Code, der opentk verwendet. Wenn Sie die neue 64-Bit- **Unified API**verwenden, sollte die CoreGraphics-API verwendet werden.
 
 #### <a name="inheritance"></a>Vererbung
 
@@ -246,7 +246,7 @@ Dieser Entwurf ermöglicht Entwicklern, den Umgang mit Ziel-c-Selektoren im Rahm
 
 #### <a name="types-and-interface-builder"></a>Typen und Interface Builder
 
-Wenn Sie .NET-Klassen erstellen, bei denen es sich um Instanzen von Typen handelt, die von Interface Builder erstellt wurden, müssen Sie `IntPtr` einen Konstruktor angeben, der einen einzelnen Parameter annimmt.
+Wenn Sie .NET-Klassen erstellen, bei denen es sich um Instanzen von Typen handelt, die von Interface Builder erstellt wurden, müssen Sie einen Konstruktor bereitstellen, der einen einzelnen `IntPtr` Parameter annimmt.
 Dies ist erforderlich, um die verwaltete Objektinstanz an das nicht verwaltete Objekt zu binden.
 Der Code besteht aus einer einzelnen Zeile, wie z. b.:
 
@@ -271,19 +271,19 @@ Diese Delegaten spielen eine wichtige Rolle bei UIKit und anderen cocoatouch-API
 
 Das-Programmier Muster wurde entworfen, um die Erstellung abgeleiteter Klassen zu minimieren, um das Verhalten eines Steuer Elements zu ändern. Diese Lösung ist in der Praxis ähnlich, wie andere GUI-Toolkits im Laufe der Jahre ausgeführt wurden: GTK-Signale, Qt-Slots, WinForms-Ereignisse, WPF/Silverlight-Ereignisse usw. Um zu vermeiden, dass Hunderte von Schnittstellen vorhanden sind (eine für jede Aktion) oder dass Entwickler zu viele Methoden implementieren müssen, die Sie nicht benötigen, unterstützt Ziel-C optionale Methoden Definitionen. Dies unterscheidet sich C# von Schnittstellen, für die alle Methoden implementiert werden müssen.
 
-In den Ziel-C-Klassen werden Sie feststellen, dass Klassen, die dieses Programmier Muster verwenden, eine `delegate`Eigenschaft verfügbar machen, die in der Regel als bezeichnet wird, die erforderlich ist, um die obligatorischen Teile der Schnittstelle zu implementieren, und NULL (oder mehr) der optionalen Teile.
+In Ziel-C-Klassen werden Sie feststellen, dass Klassen, die dieses Programmier Muster verwenden, eine Eigenschaft verfügbar machen, die in der Regel als `delegate`bezeichnet wird, die erforderlich ist, um die obligatorischen Teile der Schnittstelle zu implementieren, und NULL (oder mehr) der optionalen Teile.
 
 In xamarin. IOS werden drei gegenseitig ausschließende Mechanismen zur Bindung an diese Delegaten angeboten:
 
 1. [Über Ereignisse](#via-events).
-2. [Stark typisiert über `Delegate` eine Eigenschaft](#strongly-typed-via-a-delegate-property)
-3. [Lose Typisierung über `WeakDelegate` eine Eigenschaft](#loosely-typed-via-the-weakdelegate-property)
+2. [Stark typisiert über eine `Delegate`-Eigenschaft](#strongly-typed-via-a-delegate-property)
+3. [Lose Typisierung über eine `WeakDelegate`-Eigenschaft](#loosely-typed-via-the-weakdelegate-property)
 
 Betrachten Sie z. b. die [UIWebView](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) -Klasse. Dies wird an eine [uiwebviewdelegatinstanz](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) gesendet [, die der delegateigenschaft zugewiesen](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) wird.
 
 ##### <a name="via-events"></a>Via-Ereignisse
 
-Für viele Typen erstellt xamarin. IOS automatisch einen geeigneten Delegaten, der die `UIWebViewDelegate` Aufrufe an C# Ereignisse weiterleiten soll. Für `UIWebView`:
+Für viele Typen erstellt xamarin. IOS automatisch einen geeigneten Delegaten, der die `UIWebViewDelegate` Aufrufe an C# Ereignisse weitergibt. Für `UIWebView`:
 
 - Die [webviewdidstartload](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) -Methode wird dem Ereignis [UIWebView. LoadStarted](xref:UIKit.UIWebView.LoadStarted) zugeordnet.
 - Die [webviewdidfinishload](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) -Methode wird dem Ereignis [UIWebView. loadbeendeten](xref:UIKit.UIWebView.LoadFinished) zugeordnet.
@@ -316,7 +316,7 @@ void SetupTextField (UITextField tf)
 }
 ```
 
-Die `UITextField` -`ShouldReturn` Eigenschaft in diesem Fall übernimmt als Argument einen Delegaten, der einen booleschen Wert zurückgibt, und bestimmt, ob das Textfeld einen Vorgang ausführen soll, bei dem die Rückgabe Schaltfläche gedrückt wird. In unserer Methode wird für den Aufrufer " *true* " zurückgegeben, aber wir entfernen die Tastatur auch aus dem Bildschirm (Dies geschieht `ResignFirstResponder`, wenn das TextField aufruft).
+In diesem Fall nimmt die `ShouldReturn`-Eigenschaft des `UITextField`als Argument einen Delegaten an, der einen booleschen Wert zurückgibt, und bestimmt, ob das Textfeld eine Aktion ausführen soll, wenn die Rückgabe Schaltfläche gedrückt wird. In unserer Methode wird für den Aufrufer " *true* " zurückgegeben, aber wir entfernen die Tastatur auch aus dem Bildschirm (Dies geschieht, wenn das Textfeld `ResignFirstResponder`aufruft).
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>Stark typisiert über eine delegateigenschaft
 
@@ -349,16 +349,16 @@ web.Delegate = new Notifier ();
 
 Der obige Vorgang erstellt einen uiwebviewer und weist ihn an, Nachrichten an eine Instanz des Notifizierers zu senden, eine Klasse, die wir erstellt haben, um auf Nachrichten zu antworten.
 
-Dieses Muster wird auch zum Steuern des Verhaltens bestimmter Steuerelemente verwendet, z. b. im UIWebView-Fall, `UIWebView` mit der [UIWebView. Schulter dstartload](xref:UIKit.UIWebView.ShouldStartLoad) -Eigenschaft kann die `UIWebView` Instanz steuern, ob eine Seite lädt.
+Dieses Muster wird auch zum Steuern des Verhaltens bestimmter Steuerelemente verwendet, z. b. im UIWebView-Fall, mit der [UIWebView. Schulter dstartload](xref:UIKit.UIWebView.ShouldStartLoad) -Eigenschaft kann die `UIWebView` Instanz steuern, ob die `UIWebView` eine Seite lädt.
 
 Das Muster wird auch verwendet, um die Daten für einige Steuerelemente Bedarfs gesteuert bereitzustellen. Das [uitableview](xref:UIKit.UITableView) -Steuerelement ist beispielsweise ein leistungsfähiges Tabellen Rendering-Steuerelement – und sowohl das Aussehen als auch der Inhalt werden von einer Instanz von " [uitableviewdatasource](xref:UIKit.UITableViewDataSource) " gesteuert.
 
 ### <a name="loosely-typed-via-the-weakdelegate-property"></a>Lose Typisierung über die weakdelegateigenschaft
 
 Zusätzlich zur Eigenschaft mit starker Typisierung gibt es auch einen schwachen typisierten Delegaten, der es dem Entwickler ermöglicht, die Dinge bei Bedarf anders zu binden.
-Überall dort, wo `Delegate` eine stark typisierte Eigenschaft in der xamarin. IOS-Bindung `WeakDelegate` verfügbar gemacht wird, wird auch eine entsprechende Eigenschaft verfügbar gemacht.
+Überall dort, wo eine stark typisierte `Delegate` Eigenschaft in der xamarin. IOS-Bindung verfügbar gemacht wird, wird auch eine entsprechende `WeakDelegate` Eigenschaft verfügbar gemacht.
 
-Wenn Sie verwenden `WeakDelegate`, sind Sie dafür verantwortlich, die Klasse ordnungsgemäß mit dem [Export](xref:Foundation.ExportAttribute) -Attribut zu versehen, um die Auswahl anzugeben. Zum Beispiel:
+Wenn Sie die `WeakDelegate`verwenden, sind Sie dafür verantwortlich, die Klasse ordnungsgemäß mit dem [Export](xref:Foundation.ExportAttribute) -Attribut zu versehen, um die Auswahl anzugeben. Beispiel:
 
 ```csharp
 class Notifier : NSObject  {
@@ -383,7 +383,7 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.WeakDelegate = new Notifier ();
 ```
 
-Beachten Sie, dass `WeakDelegate` die `Delegate` -Eigenschaft nicht verwendet wird, nachdem die-Eigenschaft zugewiesen wurde. Außerdem müssen Sie, wenn Sie die Methode in einer geerbten Basisklasse implementieren, die Sie [exportieren] möchten, eine öffentliche Methode erstellen.
+Beachten Sie, dass die Eigenschaft `Delegate` nicht verwendet wird, sobald die `WeakDelegate`-Eigenschaft zugewiesen wurde. Außerdem müssen Sie, wenn Sie die Methode in einer geerbten Basisklasse implementieren, die Sie [exportieren] möchten, eine öffentliche Methode erstellen.
 
 ## <a name="mapping-of-the-objective-c-delegate-pattern-to-c"></a>Zuordnung des Ziels-C-delegatmusters zu C\#
 
@@ -401,13 +401,13 @@ foo.Delegate = new SomethingDelegate ();
 
 In xamarin. IOS haben wir stark typisierte Klassen bereitgestellt, die den Ziel-C-Delegatklassen zugeordnet werden. Um diese zu verwenden, werden Sie die von der xamarin. IOS-Implementierung definierten Methoden Unterklassen und überschreiben. Weitere Informationen zur Funktionsweise finden Sie im Abschnitt "Models" (Modelle) weiter unten.
 
-### <a name="mapping-delegates-to-c"></a>Mapping von Delegaten zu C\#
+### <a name="mapping-delegates-to-c"></a>Zuordnung von Delegaten zu C-\#
 
 UIKit verwendet in der Regel Ziele-C-Delegaten in zwei Formen.
 
 Das erste Formular stellt eine Schnittstelle zum Modell einer Komponente bereit. Beispielsweise als Mechanismus zur Bereitstellung von Daten nach Bedarf für eine Sicht, wie z. b. die Datenspeicher Einrichtung für eine Listenansicht.  In diesen Fällen sollten Sie immer eine Instanz der richtigen Klasse erstellen und die Variable zuweisen.
 
-Im folgenden Beispiel stellen wir eine-Implementierung `UIPickerView` für ein Modell bereit, das Zeichen folgen verwendet:
+Im folgenden Beispiel stellen wir dem `UIPickerView` eine Implementierung für ein Modell bereit, das Zeichen folgen verwendet:
 
 ```csharp
 public class SampleTitleModel : UIPickerViewTitleModel {
@@ -452,7 +452,7 @@ Wie bereits erwähnt, unterstützt xamarin. IOS sowohl C# das ereignisbasierte P
 
 Es ist auch möglich, das Muster von Ziel C zu unterstützen, bei dem Beantworter für mehrere verschiedene Vorgänge alle in derselben Instanz einer Klasse gehostet werden. Zu diesem Zweck müssen Sie jedoch Features auf niedriger Ebene der xamarin. IOS-Bindung verwenden.
 
-Wenn Sie z. b. möchten, dass Ihre Klasse sowohl auf `UITextFieldDelegate.textFieldShouldClear`die `UIWebViewDelegate.webViewDidStartLoad`-Nachricht als auch auf die-Klasse antwortet, müssten Sie die [Export]-Attribut Deklaration verwenden:
+Wenn Sie z. b. möchten, dass Ihre Klasse sowohl auf die `UITextFieldDelegate.textFieldShouldClear`:-Nachricht als auch auf die `UIWebViewDelegate.webViewDidStartLoad`antwortet: in derselben Instanz einer Klasse müssen Sie die [Export]-Attribut Deklaration verwenden:
 
 ```csharp
 public class MyCallbacks : NSObject {
@@ -500,7 +500,7 @@ public class MyAppController : NSObject {
 }
 ```
 
-Der Name der Ziel-C-Auswahl ("applicationdidfinishstarts:") wird mit dem Export-Attribut deklariert, und die- `[Register]` Klasse wird mit dem-Attribut registriert.
+Der Name der Ziel-C-Auswahl ("applicationdidfinishstarts:") wird mit dem Export-Attribut deklariert, und die-Klasse wird mit dem `[Register]`-Attribut registriert.
 
 Xamarin. IOS stellt stark typisierte Deklarationen bereit, die verwendet werden können und für die keine manuelle Bindung erforderlich ist. Um dieses Programmiermodell zu unterstützen, unterstützt die xamarin. IOS-Laufzeit das [Model]-Attribut für eine Klassen Deklaration. Dadurch wird der Laufzeit mitgeteilt, dass Sie nicht alle Methoden in der Klasse verknüpfen sollte, es sei denn, die Methoden werden explizit implementiert.
 
@@ -532,12 +532,12 @@ public class AppController : UIApplicationDelegate {
 
 Der Vorteil besteht darin, dass es nicht erforderlich ist, die Ziel-C-Header Dateien zu finden, um den Selektor, die Typen der Argumente oder die C#Zuordnung zu finden und IntelliSense aus Visual Studio für Mac zusammen mit starken Typen zu erhalten.
 
-#### <a name="xib-outlets-and-c"></a>XIb-Outlets und C\#
+#### <a name="xib-outlets-and-c"></a>XIb-Outlets und C-\#
 
 > [!IMPORTANT]
 > In diesem Abschnitt wird die IDE-Integration in Outlets bei der Verwendung von XIb-Dateien erläutert. Wenn Sie die Xamarin Designer für IOS verwenden, wird dies durch Eingeben eines Namens unter **Identity > Name** im Abschnitt Properties der IDE ersetzt, wie unten dargestellt:
 >
-> [![](images/designeroutlet.png "Eingeben eines Element namens im IOS-Designer")](images/designeroutlet.png#lightbox)
+> [![](images/designeroutlet.png "Entering an item Name in the iOS Designer")](images/designeroutlet.png#lightbox)
 >
 >Weitere Informationen zum IOS-Designer finden Sie in der [Einführung in das IOS-Designer](~/ios/user-interface/designer/introduction.md#how-it-works) -Dokument.
 
@@ -595,13 +595,13 @@ Sie müssen sich keine Gedanken darüber machen, wenn Sie Visual Studio für Mac
 
 Ein zentrales Konzept der Ziel-C-Programmierung sind Selectors. Sie werden häufig über APIs verfügen, bei denen Sie einen Selektor übergeben müssen, oder erwarten, dass Ihr Code auf einen Selektor antwortet.
 
-Das Erstellen neuer Selektoren C# in ist sehr einfach – Sie erstellen einfach eine neue Instanz der `ObjCRuntime.Selector` -Klasse und verwenden das Ergebnis an einer beliebigen Stelle in der API, die dies erfordert. Zum Beispiel:
+Das Erstellen neuer Selektoren C# in ist sehr einfach – Sie erstellen einfach eine neue Instanz der`ObjCRuntime.Selector`-Klasse und verwenden das Ergebnis an einer beliebigen Stelle in der API, die dies erfordert. Beispiel:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-Bei einer C# Methode, die auf einen Auswahl Befehl antwortet, muss Sie vom `NSObject` -Typ erben C# , und die-Methode muss mithilfe des `[Export]` -Attributs mit dem Auswahl Namen versehen werden. Zum Beispiel:
+Bei einer C# Methode, die auf einen Auswahl Befehl antwortet, muss Sie vom`NSObject`-Typ erben C# , und die-Methode muss mit dem Auswahl Namen versehen werden, wobei das `[Export]`-Attribut verwendet wird. Beispiel:
 
 ```csharp
 public class MyMath : NSObject {
@@ -617,7 +617,7 @@ Beachten Sie, dass die Auswahl Amen genau übereinstimmen **müssen** , einschli
 
 #### <a name="nsobject-constructors"></a>NSObject-Konstruktoren
 
-Die meisten Klassen in xamarin. IOS, die `NSObject` von abgeleitet werden, machen für die Funktionalität des-Objekts spezifische Konstruktoren verfügbar. Sie machen jedoch auch verschiedene Konstruktoren verfügbar, die nicht sofort offensichtlich sind.
+Die meisten Klassen in xamarin. IOS, die von `NSObject` abgeleitet werden, machen für die Funktionalität des Objekts spezifische Konstruktoren verfügbar. Sie machen jedoch auch verschiedene Konstruktoren verfügbar, die nicht sofort offensichtlich sind.
 
 Die Konstruktoren werden wie folgt verwendet:
 
@@ -633,13 +633,13 @@ In der Regel müssen Sie lediglich den Basiskonstruktor mit dem handle-Parameter
 public Foo ()
 ```
 
-Dies ist der Standardkonstruktor für eine-Klasse, und in von xamarin. IOS bereitgestellten Klassen initialisiert dies die Foundation. NSObject-Klasse und alle Klassen in between und verkettet diese mit der Ziel-C `init` -Methode der-Klasse.
+Dies ist der Standardkonstruktor für eine-Klasse, und in von xamarin. IOS bereitgestellten Klassen initialisiert dies die Foundation. NSObject-Klasse und alle Klassen in between und verkettet diese mit der Ziel-C-`init`-Methode für die-Klasse.
 
 ```csharp
 public Foo (NSObjectFlag x)
 ```
 
-Dieser Konstruktor wird verwendet, um die Instanz zu initialisieren, verhindert jedoch, dass der Code am Ende die "init"-Methode von "Ziel-C" aufruft. Dies wird in der Regel verwendet, wenn Sie sich bereits für die Initialisierung registriert `[Export]` haben (bei Verwendung von auf dem Konstruktor) oder wenn Sie die Initialisierung bereits über einen anderen Mittelwert durchgeführt haben.
+Dieser Konstruktor wird verwendet, um die Instanz zu initialisieren, verhindert jedoch, dass der Code am Ende die "init"-Methode von "Ziel-C" aufruft. Dies wird in der Regel verwendet, wenn Sie sich bereits für die Initialisierung registriert haben (wenn Sie `[Export]` auf Ihrem Konstruktor verwenden) oder wenn Sie die Initialisierung bereits über einen anderen Mittelwert durchgeführt haben.
 
 ```csharp
 public Foo (NSCoder coder)
@@ -653,17 +653,17 @@ Das xamarin. IOS-API-Design gibt keine Ziel-C- C# Ausnahmen als Ausnahmen aus. D
 
 #### <a name="notifications"></a>Benachrichtigungen
 
-Sowohl unter IOS als auch OS X können Entwickler Benachrichtigungen abonnieren, die von der zugrunde liegenden Plattform gesendet werden. Dies erfolgt mithilfe der `NSNotificationCenter.DefaultCenter.AddObserver` -Methode. Die `AddObserver` -Methode nimmt zwei Parameter an. eine ist die Benachrichtigung, die Sie abonnieren möchten. die andere Methode ist die Methode, die aufgerufen werden soll, wenn die Benachrichtigung ausgelöst wird.
+Sowohl unter IOS als auch OS X können Entwickler Benachrichtigungen abonnieren, die von der zugrunde liegenden Plattform gesendet werden. Dies erfolgt mithilfe der `NSNotificationCenter.DefaultCenter.AddObserver`-Methode. Die `AddObserver`-Methode nimmt zwei Parameter an: eine ist die Benachrichtigung, die Sie abonnieren möchten. die andere ist die Methode, die aufgerufen werden soll, wenn die Benachrichtigung ausgelöst wird.
 
-Sowohl in xamarin. IOS als auch in xamarin. Mac werden die Schlüssel für die verschiedenen Benachrichtigungen in der Klasse gehostet, die die Benachrichtigungen auslöst. Beispielsweise `UIMenuController` werden die Benachrichtigungen, die von ausgelöst werden, `static NSString` als Eigenschaften in `UIMenuController` den Klassen gehostet, die mit dem Namen "Notification" enden.
+Sowohl in xamarin. IOS als auch in xamarin. Mac werden die Schlüssel für die verschiedenen Benachrichtigungen in der Klasse gehostet, die die Benachrichtigungen auslöst. Beispielsweise werden die Benachrichtigungen, die vom `UIMenuController` ausgelöst werden, als `static NSString` Eigenschaften in den `UIMenuController`-Klassen gehostet, die mit dem Namen "Notification" enden.
 
 ### <a name="memory-management"></a>Speicherverwaltung
 
-Xamarin. IOS verfügt über eine Garbage Collector, die die Freigabe von Ressourcen für Sie übernimmt, wenn Sie nicht mehr verwendet werden. Zusätzlich zum Garbage Collector wird von allen Objekten, die von `NSObject` abgeleitet werden, die `System.IDisposable` -Schnittstelle implementiert.
+Xamarin. IOS verfügt über eine Garbage Collector, die die Freigabe von Ressourcen für Sie übernimmt, wenn Sie nicht mehr verwendet werden. Zusätzlich zum Garbage Collector werden alle Objekte, die von abgeleitet sind, `NSObject` die `System.IDisposable`-Schnittstelle implementieren.
 
 #### <a name="nsobject-and-idisposable"></a>NSObject und iverwerf
 
-Das verfügbar `IDisposable` machen der-Schnittstelle ist eine bequeme Möglichkeit, Entwickler bei der Freigabe von Objekten zu unterstützen, die möglicherweise große `UIImage` Speicherblöcke Kapseln (z. b. könnte ein-Wert sein, der auf ein Bild von 2 Megabyte zeigt). ) und andere wichtige und begrenzte Ressourcen (z. b. einen Video-Decodierung-Puffer).
+Das verfügbar machen der `IDisposable`-Schnittstelle ist eine bequeme Möglichkeit, Entwickler bei der Freigabe von Objekten zu unterstützen, die möglicherweise große Speicherblöcke Kapseln (z. b. ein `UIImage` kann wie ein nicht verzigter Zeiger aussehen, aber auf ein Image mit 2 Megabyte zeigen) und andere wichtige und begrenzte Ressourcen (z. b. ein Video-Decodierung-Puffer).
 
 NSObject implementiert die iverwerfbare Schnittstelle und auch das .net-Lösch [Muster](https://msdn.microsoft.com/library/fs2xkftw.aspx). Dadurch können Entwickler, die eine Unterklasse NSObject haben, das Lösch Verhalten außer Kraft setzen und ihre eigenen Ressourcen bei Bedarf freigeben. Betrachten Sie beispielsweise diesen Ansichts Controller, der eine Reihe von Bildern beibehält:
 

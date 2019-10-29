@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie mit xamarin erstellten
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: af6d32808e2847c99c4f8a2d90e7dc2d3955ae03
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284676"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028341"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Bereitstellen und Testen von watchos-apps mit xamarin
 
@@ -42,9 +42,9 @@ Unabhängig davon, ob Sie die Bereitstellung für eine Testuhr oder das Hochlade
 
 Wie in den [Setup Anweisungen](~/ios/watchos/get-started/installation.md)erläutert, weisen alle drei Projekte in einer Watch-App zugehörige Bündel-IDs auf, wie z. b.:
 
-- Einheitliches xamarin. IOS-Projekt:`com.xamarin.WatchKitCatalog`
+- Einheitliches xamarin. IOS-Projekt `com.xamarin.WatchKitCatalog`
 - Watchkit-Erweiterungsprojekt-`com.xamarin.WatchKitCatalog.watchkitextension`
-- App-Projekt überwachen:`com.xamarin.WatchKitCatalog.watchkitapp`
+- App-Projekt überwachen-`com.xamarin.WatchKitCatalog.watchkitapp`
 
 Alle drei Projekte erfordern ein entsprechendes Verteilungs Bereitstellungs Profil, das entweder explizit App-IDs für jede oder eine Platzhalter-APP-ID verwendet.
 
@@ -60,7 +60,7 @@ Sie müssen ein Verteilungs Bereitstellungs Profil für jede APP-ID erstellen.
 
 ### <a name="wildcard-app-id"></a>Platzhalter APP-ID
 
-Alternativ können Sie eine Platzhalter- **App-ID** erstellen, die allen drei Projekten entspricht `com.xamarin.*`, z. b.
+Alternativ können Sie eine Platzhalter- **App-ID** erstellen, die allen drei Projekten entspricht, z. b. `com.xamarin.*`.
 
 Beachten Sie, dass einige Funktionen nicht mit einer Platzhalter-APP-ID (z. b. Pushbenachrichtigungen) verwendet werden können. Wenn Ihre APP diese Features erfordert, sollten Sie explizite App-IDs erstellen.
 
@@ -78,7 +78,7 @@ Sie können eine APP-Gruppe zum Freigeben von Daten zwischen Ihrer IOS-APP und d
 
 ### <a name="certificates-identifiers--profiles"></a>Zertifikate, Bezeichner & profile
 
-Um eine APP-Gruppe zu verwenden, erstellen Sie auf dem Bildschirm **App-Gruppen** einen Eintrag. Im folgenden Beispiel wird die Gruppe mit dem gleichen Reverse-DNS-Stil benannt, der häufig für App-IDs verwendet wird, jedoch `group.` mit dem Präfix (das erforderlich ist):
+Um eine APP-Gruppe zu verwenden, erstellen Sie auf dem Bildschirm **App-Gruppen** einen Eintrag. Im folgenden Beispiel wird die Gruppe mit dem gleichen Reverse-DNS-Stil benannt, der häufig für App-IDs verwendet wird, jedoch mit dem `group.` Präfix (erforderlich):
 
 ![Der Bezeichner](images/appgroups-new-sml.png)
 
@@ -100,7 +100,7 @@ Doppelklicken Sie, um die **Datei "** Berechtigungsdatei" in diesen Projekten zu
 - IOS-App-Projekt
 - Überwachungs Erweiterungsprojekt
 
-.![Der Berechtigungen. plist-Editor](images/entitlements-plist-sml.png)
+sein.![Der Berechtigungen. plist-Editor](images/entitlements-plist-sml.png)
 
 Aktivieren Sie **keine** Berechtigungen im Überwachungs-App-Projekt. Es ist nicht erforderlich, auf der Überwachung selbst aktiviert zu werden.
 

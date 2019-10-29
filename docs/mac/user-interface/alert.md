@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Warnungen in einer xamarin.
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 6fa442926fc2a54325713caf9764b37b530a345d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2ef8e81390b5d64971aa3883a05da9fb8795a416
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769845"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001528"
 ---
 # <a name="alerts-in-xamarinmac"></a>Warnungen in xamarin. Mac
 
@@ -22,7 +22,7 @@ Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 Eine Warnung ist eine besondere Art von Dialogfeld, das angezeigt wird, wenn ein schwerwiegendes Problem auftritt (z. b. ein Fehler) oder eine Warnung (z. b. das Löschen einer Datei). Da es sich bei einer Warnung um ein Dialogfeld handelt, ist auch eine Benutzer Antwort erforderlich, bevor Sie geschlossen werden kann.
 
-[![](alert-images/alert06.png "Beispiel für eine Warnung")](alert-images/alert06.png#lightbox)
+[![](alert-images/alert06.png "An example alert")](alert-images/alert06.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Warnungen in einer xamarin. Mac-Anwendung behandelt. 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 Der obige Code zeigt eine Warnung an, bei der das Anwendungssymbol auf dem Warnungs Symbol, einem Titel, einer Warnmeldung und einer einzelnen Schaltfläche " **OK** " überlagert wurde:
 
-[![](alert-images/alert01.png "Eine Warnung mit der Schaltfläche \"OK\"")](alert-images/alert01.png#lightbox)
+[![](alert-images/alert01.png "An alert with a OK button")](alert-images/alert01.png#lightbox)
 
 Apple bietet verschiedene Eigenschaften, die verwendet werden können, um eine Warnung anzupassen:
 
@@ -73,8 +73,8 @@ Apple bietet verschiedene Eigenschaften, die verwendet werden können, um eine W
 - **Symbol** : Hiermit kann ein benutzerdefiniertes Symbol für den Benutzer angezeigt werden.
 - **Helpanchor** & **showshelp** : ermöglicht das Binden der Warnung in das Anwendungs helpbook und das Anzeigen der Hilfe für die Warnung.
 - **Schaltflächen: Standard** mäßig hat eine Warnung nur die Schaltfläche **OK** , aber mit der Auflistung **Buttons** können Sie je nach Bedarf weitere Optionen hinzufügen.
-- **Showssuppressionbutton** -if `true` zeigt ein Kontrollkästchen an, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde.
-- **Accessoryview** : ermöglicht das Anfügen einer anderen unter Ansicht an die Warnung, um zusätzliche Informationen bereitzustellen, z. b. das Hinzufügen eines **Textfelds** für die Dateneingabe. Wenn Sie eine neue **accessoryview** festlegen oder eine vorhandene ändern, müssen Sie die `Layout()` -Methode zum Anpassen des sichtbaren Layouts der Warnung aufruft.
+- **Showssuppressionbutton** -wenn `true` ein Kontrollkästchen anzeigt, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde.
+- **Accessoryview** : ermöglicht das Anfügen einer anderen unter Ansicht an die Warnung, um zusätzliche Informationen bereitzustellen, z. b. das Hinzufügen eines **Textfelds** für die Dateneingabe. Wenn Sie eine neue **accessoryview** festlegen oder eine vorhandene ändern, müssen Sie die `Layout()`-Methode aufzurufen, um das sichtbare Layout der Warnung anzupassen.
 
 <a name="Displaying_an_Alert" />
 
@@ -93,7 +93,7 @@ alert.RunModal ();
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert02.png "Eine einfache Warnung")](alert-images/alert02.png#lightbox)
+[![](alert-images/alert02.png "A simple alert")](alert-images/alert02.png#lightbox)
 
 Der folgende Code zeigt dieselbe Warnung an wie ein Blatt:
 
@@ -108,7 +108,7 @@ alert.BeginSheet (this);
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert03.png "Eine Warnung, die als Blatt angezeigt wird.")](alert-images/alert03.png#lightbox)
+[![](alert-images/alert03.png "An alert displayed as a sheet")](alert-images/alert03.png#lightbox)
 
 <a name="Working_with_Alert_Buttons" />
 
@@ -136,7 +136,7 @@ Die erste Schaltfläche, die hinzugefügt wird, ist die _Standard_ Schaltfläche
 
 Wenn Sie den Code ausführen, wird Folgendes angezeigt:
 
-[![](alert-images/alert04.png "Eine Warnung mit drei Schaltflächen Optionen")](alert-images/alert04.png#lightbox)
+[![](alert-images/alert04.png "An alert with three button options")](alert-images/alert04.png#lightbox)
 
 Dies ist der Code für dieselbe Warnung wie ein Blatt:
 
@@ -156,7 +156,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert05.png "Eine drei Schaltflächen Warnung wird als Blatt angezeigt.")](alert-images/alert05.png#lightbox)
+[![](alert-images/alert05.png "A three button alert displayed as a sheet")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > Sie sollten einer Warnung niemals mehr als drei Schaltflächen hinzufügen.
@@ -165,7 +165,7 @@ Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
 ## <a name="showing-the-suppress-button"></a>Schaltfläche "unterdrücken"
 
-Wenn die- `ShowSuppressButton` Eigenschaft der Warnung `true`ist, wird in der Warnung ein Kontrollkästchen angezeigt, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde. Im folgenden Code wird eine unverankerte Warnung mit der Schaltfläche unterdrücken angezeigt:
+Wenn die `ShowSuppressButton`-Eigenschaft der Warnung `true`ist, wird in der Warnung ein Kontrollkästchen angezeigt, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde. Im folgenden Code wird eine unverankerte Warnung mit der Schaltfläche unterdrücken angezeigt:
 
 ```csharp
 var alert = new NSAlert () {
@@ -181,11 +181,11 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-Wenn der Wert von `alert.SuppressionButton.State` ist, hat der Benutzer das Kontrollkästchen unterdrücken aktiviert, andernfalls ist dies `NSCellStateValue.On`nicht der Fall.
+Wenn der Wert des `alert.SuppressionButton.State` `NSCellStateValue.On`ist, hat der Benutzer das Kontrollkästchen unterdrücken aktiviert, andernfalls ist dies nicht der Fall.
 
 Wenn der Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert06.png "Eine Warnung mit der Schaltfläche \"unterdrücken\"")](alert-images/alert06.png#lightbox)
+[![](alert-images/alert06.png "An alert with a suppress button")](alert-images/alert06.png#lightbox)
 
 Dies ist der Code für dieselbe Warnung wie ein Blatt:
 
@@ -206,13 +206,13 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert07.png "Eine Warnung mit der Schaltfläche \"unterdrücken\" als Blatt")](alert-images/alert07.png#lightbox)
+[![](alert-images/alert07.png "An alert with a suppress button display as a sheet")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
 ## <a name="adding-a-custom-subview"></a>Hinzufügen einer benutzerdefinierten unter Ansicht
 
-Warnungen verfügen über `AccessoryView` eine-Eigenschaft, die zum weiteren Anpassen der Warnung und zum Hinzufügen von Elementen wie einem **Textfeld** für Benutzereingaben verwendet werden kann. Mit dem folgenden Code wird eine unverankerte Warnung mit einem hinzugefügten Texteingabefeld erstellt:
+Warnungen verfügen über eine `AccessoryView`-Eigenschaft, die zum weiteren Anpassen der Warnung und zum Hinzufügen von Elementen wie einem **Textfeld** für die Benutzereingabe verwendet werden kann. Mit dem folgenden Code wird eine unverankerte Warnung mit einem hinzugefügten Texteingabefeld erstellt:
 
 ```csharp
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
@@ -232,11 +232,11 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-In den folgenden Schlüssel Zeilen `var input = new NSTextField (new CGRect (0, 0, 300, 20));` wird ein neues **Textfeld** erstellt, in dem die Warnung hinzugefügt wird. `alert.AccessoryView = input;`Dabei wird das **Textfeld** an die Warnung angefügt und der- `Layout()` Befehl an die-Methode übergeben, die für die Größe der Warnung an die neue unter Ansicht angepasst werden muss.
+Die Schlüssel Zeilen hier sind `var input = new NSTextField (new CGRect (0, 0, 300, 20));`, wodurch ein neues **Textfeld** erstellt wird, das wir der Warnung hinzufügen werden. `alert.AccessoryView = input;`, das das **Textfeld** an die Warnung anfügt, und der aufzurufende `Layout()` Methode, die erforderlich ist, um die Größe der Warnung an die neue unter Ansicht anzupassen.
 
 Wenn Sie den Code ausführen, wird Folgendes angezeigt:
 
-[![](alert-images/alert08.png "Wenn Sie den Code ausführen, wird Folgendes angezeigt:")](alert-images/alert08.png#lightbox)
+[![](alert-images/alert08.png "If we run the code, the following will be displayed")](alert-images/alert08.png#lightbox)
 
 Dies ist dieselbe Warnung wie ein Blatt:
 
@@ -261,7 +261,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Wenn Sie diesen Code ausführen, wird Folgendes angezeigt:
 
-[![](alert-images/alert09.png "Eine Warnung mit einer benutzerdefinierten Ansicht")](alert-images/alert09.png#lightbox)
+[![](alert-images/alert09.png "An alert with a custom view")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 

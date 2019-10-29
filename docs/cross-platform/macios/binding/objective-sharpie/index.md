@@ -3,15 +3,15 @@ title: Erstellen von Bindungen mit dem Ziel-Sharpie
 description: Dieser Abschnitt enthält eine Einführung in das-Befehlszeilen Tool von Target Sharpie, xamarin, das verwendet wird, um den Prozess der Erstellung einer Bindung an eine Ziel-C-Bibliothek zu automatisieren.
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: d5b9fa1edc09b831dbc69ab092dfb5270942e67a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4d6ab6cf48c5c365a4d8d05ef108a4d3a5d16134
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765710"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016193"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>Erstellen von Bindungen mit dem Ziel-Sharpie
 

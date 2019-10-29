@@ -3,21 +3,21 @@ title: Erweitertes (Manuelles) Beispiel
 description: In diesem Dokument wird beschrieben, wie die Ausgabe von xcodebuild als Eingabe für das Ziel-Sharpie verwendet wird, das Einblicke in den Ziel-sharkreis bietet.
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 6dbaf904c31d1a778a25e591ee94c4d354f5698a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 23ca9c3fe36a65aefb17f10fd3e680937c36acc0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765735"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016253"
 ---
 # <a name="advanced-manual-real-world-example"></a>Erweitertes (Manuelles) Beispiel
 
 **In diesem Beispiel wird die [Pop-Bibliothek von Facebook](https://github.com/facebook/pop)verwendet.**
 
-In diesem Abschnitt wird ein erweiterter Ansatz für die Bindung behandelt, bei dem das `xcodebuild` Apple-Tool verwendet wird, um zunächst das Pop-Projekt zu erstellen, und dann die Eingabe für das Ziel-Sharpie manuell ableiten. Dabei geht es im Wesentlichen darum, welches Ziel Sharpie im vorherigen Abschnitt im Hintergrund ausgeführt wird.
+In diesem Abschnitt wird ein erweiterter Ansatz für die Bindung behandelt, wobei wir das `xcodebuild` Tool von Apple verwenden, um zuerst das Pop-Projekt zu erstellen, und dann die Eingabe für das Ziel "Sharpie" manuell ableiten. Dabei geht es im Wesentlichen darum, welches Ziel Sharpie im vorherigen Abschnitt im Hintergrund ausgeführt wird.
 
 ```
  $ git clone https://github.com/facebook/pop.git
@@ -27,7 +27,7 @@ Cloning into 'pop'...
 $ cd pop
 ```
 
-Da die Pop-Bibliothek über ein Xcode-`pop.xcodeproj`Projekt () verfügt, können `xcodebuild` wir einfach zum Erstellen von Pop verwenden. Dieser Prozess kann wiederum Header Dateien generieren, die vom Ziel-Sharpie möglicherweise analysiert werden müssen. Dies ist der Grund, warum das aufbauen vor der Bindung wichtig ist. Wenn Sie mit `xcodebuild` der Erstellung über sicherstellen, dass Sie denselben SDK-Bezeichner und dieselbe Architektur übergeben, die Sie an das Ziel-Sharpie übergeben möchten (und denken Sie daran, dass dies für Sie in der Regel von Ziel-Sharpie 3,0
+Da die Pop-Bibliothek über ein Xcode-Projekt (`pop.xcodeproj`) verfügt, können wir einfach `xcodebuild` verwenden, um Pop zu erstellen. Dieser Prozess kann wiederum Header Dateien generieren, die vom Ziel-Sharpie möglicherweise analysiert werden müssen. Dies ist der Grund, warum das aufbauen vor der Bindung wichtig ist. Bei der Erstellung über `xcodebuild` stellen Sie sicher, dass Sie denselben SDK-Bezeichner und dieselbe Architektur übergeben, die Sie an das Ziel shar3,0 Pie übergeben möchten.
 
 ```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
@@ -50,9 +50,9 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 ** BUILD SUCCEEDED **
 ```
 
-In der-Konsole werden viele Buildinformationen als Teil von `xcodebuild`ausgegeben. Wie oben gezeigt, können wir sehen, dass ein "cpheader"-Ziel ausgeführt wurde, in dem Header Dateien in ein Buildausgabeverzeichnis kopiert wurden. Dies ist häufig der Fall, und die Bindung wird vereinfacht: als Teil der Erstellung der nativen Bibliothek werden Header Dateien häufig in einen "öffentlich" verwendbaren Speicherort kopiert, der die Datenbindung vereinfachen kann. In diesem Fall wissen wir, dass sich die Header Dateien des `build/Headers` Popups im Verzeichnis befinden.
+In der-Konsole werden viele Buildinformationen als Teil `xcodebuild`ausgegeben. Wie oben gezeigt, können wir sehen, dass ein "cpheader"-Ziel ausgeführt wurde, in dem Header Dateien in ein Buildausgabeverzeichnis kopiert wurden. Dies ist häufig der Fall, und die Bindung wird vereinfacht: als Teil der Erstellung der nativen Bibliothek werden Header Dateien häufig in einen "öffentlich" verwendbaren Speicherort kopiert, der die Datenbindung vereinfachen kann. In diesem Fall wissen wir, dass sich die Header Dateien des Popups im `build/Headers` Verzeichnis befinden.
 
-Wir sind nun bereit, den Pop zu binden. Wir wissen, dass wir für das SDK `iphoneos8.1` mit der `arm64` Architektur erstellen möchten, und dass sich die Header Dateien, die für `build/Headers` Sie wichtig sind, unter dem Pop-Scheck-Checkout befinden. Wenn wir uns das `build/Headers` Verzeichnis ansehen, sehen wir eine Reihe von Header Dateien:
+Wir sind nun bereit, den Pop zu binden. Wir wissen, dass wir für SDK-`iphoneos8.1` mit der `arm64`-Architektur erstellen möchten, und dass sich die Header Dateien, die für Sie wichtig sind, in `build/Headers` unter dem Pop-git-Checkout befinden. Wenn wir uns das `build/Headers` Verzeichnis ansehen, sehen wir eine Reihe von Header Dateien:
 
 ```
 $ ls build/Headers/POP/
@@ -64,7 +64,7 @@ POPAnimationExtras.h     POPCustomAnimation.h     POPSpringAnimation.h
 POPAnimationPrivate.h    POPDecayAnimation.h
 ```
 
-Wenn wir uns ansehen `POP.h`, sehen wir, dass es sich um die Haupt Header Datei der obersten Ebene der `#import`Bibliothek handelt, bei der es sich um andere Dateien handelt. Aus diesem Grund müssen wir nur an das Ziel `POP.h` "Sharpie" übergeben, und clang führt den Rest im Hintergrund aus:
+Wenn wir uns `POP.h`ansehen, sehen wir, dass es sich um die Haupt Header Datei der obersten Ebene der Bibliothek handelt, die andere Dateien `#import`. Aus diesem Grund müssen wir nur `POP.h` an das Ziel "Sharpie" übergeben, und clang führt den Rest im Hintergrund aus:
 
 ```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
@@ -122,18 +122,18 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-Sie werden feststellen, dass wir `-scope build/Headers` ein Argument an target Sharpie übermittelt haben. Da C-und Target-C- `#import` Bibliotheken `#include` oder andere Header Dateien, bei denen es sich um Implementierungsdetails der Bibliothek handelt, und nicht um `-scope` die API, die Sie binden möchten, das-Argument anweist, eine API zu ignorieren, die nicht in einer Datei irgendwo innerhalb des `-scope` Verzeichnisses.
+Sie werden feststellen, dass wir ein `-scope build/Headers` Argument an target Sharpie übermittelt haben. Da C-und Ziel-C-Bibliotheken andere Header Dateien `#import` oder `#include` müssen, bei denen es sich um Implementierungsdetails der Bibliothek handelt, nicht um die API, die Sie binden möchten, weist das `-scope`-Argument dem Ziel Sharpie an, alle APIs zu ignorieren, die nicht in einer Datei definiert sind. innerhalb des `-scope` Verzeichnisses.
 
-Sie werden feststellen `-scope` , dass das Argument häufig für sauber implementierte Bibliotheken optional ist, aber es gibt keine Beschädigung bei der expliziten Bereitstellung.
+Sie werden feststellen, dass das `-scope`-Argument häufig für ordnungsgemäß implementierte Bibliotheken optional ist, aber es gibt keine Beschädigung bei der expliziten Bereitstellung.
 
-Außerdem haben wir angegeben `-c -Ibuild/headers`. Zuerst weist das `-c` -Argument den Ziel-Sharpie an, das Interpretieren von Befehlszeilen Argumenten zu verhindern und nachfolgende Argumente _direkt an den clang-Compiler zu_übergeben. Daher ist ein clang-compilerargument, das clang anweist, unter `build/Headers`zu suchen, wo sich die Pop-Header befinden. `-Ibuild/Headers` Ohne dieses Argument weiß clang nicht, wo die Dateien `POP.h` zu finden sind `#import`, die Sie durchlaufen. _Fast alle "Probleme" mit der Verwendung von "Ziel-Sharpie", um herauszufinden, was an clang übergeben werden soll_.
+Außerdem haben wir `-c -Ibuild/headers`angegeben. Erstens weist das `-c`-Argument das Ziel Sharpie an, das Interpretieren von Befehlszeilen Argumenten zu verhindern und nachfolgende Argumente _direkt an den clang-Compiler zu_übergeben. Daher ist `-Ibuild/Headers` ein clang-compilerargument, das clang anweist, unter `build/Headers`nach includes zu suchen, wo sich die Pop-Header befinden. Ohne dieses Argument weiß clang nicht, wo die Dateien zu finden sind, die `POP.h` `#import`. _Fast alle "Probleme" mit der Verwendung von "Ziel-Sharpie", um herauszufinden, was an clang übergeben werden soll_.
 
 ### <a name="completing-the-binding"></a>Abschließen der Bindung
 
-Der Ziel-Sharpie hat `Binding/ApiDefinitions.cs` nun `Binding/StructsAndEnums.cs` und Dateien generiert.
+Der Ziel-Sharpie hat jetzt `Binding/ApiDefinitions.cs`-und `Binding/StructsAndEnums.cs` Dateien generiert.
 
 Dabei handelt es sich um die erste grundlegende Sharpie-Basis, die an der Bindung liegt, und in einigen Fällen ist es möglicherweise alles, was Sie benötigen. Wie bereits erwähnt, muss der Entwickler die generierten Dateien in der Regel manuell ändern, nachdem der Ziel-Sharpie abgeschlossen ist, um [Probleme zu beheben](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) , die nicht automatisch vom Tool behandelt werden konnten.
 
-Nachdem die Updates abgeschlossen sind, können diese beiden Dateien nun zu einem Bindungs Projekt in Visual Studio für Mac hinzugefügt oder direkt an das-Tool `btouch` oder `bmac` das-Tool zur Erstellung der endgültigen Bindung übermittelt werden.
+Nachdem die Updates abgeschlossen sind, können diese beiden Dateien nun zu einem Bindungs Projekt in Visual Studio für Mac hinzugefügt oder direkt an die `btouch` oder `bmac` Tools zur Erstellung der endgültigen Bindung geleitet werden.
 
 Eine ausführliche Beschreibung des Bindungs Vorgangs finden Sie in unseren [vollständigen Anweisungen](~/ios/platform/binding-objective-c/walkthrough.md)für die exemplarische Vorgehensweise.

@@ -4,19 +4,19 @@ description: In diesem Dokument wird beschrieben, wie die System. Threading-APIs
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 7d3f00f3abd13d2edf8b827a881768fbd54d6379
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 1c9282c790aa5436667b37e1861a96afffcaa668
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106021"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009434"
 ---
 # <a name="threading-in-xamarinios"></a>Threading in xamarin. IOS
 
-Die xamarin. IOS-Laufzeit ermöglicht Entwicklern den Zugriff auf die .NET-Threading-APIs, sowohl explizit`System.Threading.Thread, System.Threading.ThreadPool`bei der Verwendung von Threads () als auch implizit, wenn die asynchronen delegatmuster oder die BeginXxx-Methoden sowie der gesamte Bereich von APIs verwendet werden, die die Task Parallel Library.
+Die xamarin. IOS-Laufzeit ermöglicht Entwicklern den Zugriff auf die .NET-Threading-APIs, sowohl explizit bei der Verwendung von Threads (`System.Threading.Thread, System.Threading.ThreadPool`) als auch implizit, wenn die asynchronen delegatmuster oder die BeginXxx-Methoden sowie die vollständige Palette an APIs verwendet werden, die die Aufgabe unterstützen. Parallele Bibliothek.
 
 Xamarin empfiehlt dringend, den [Task Parallel Library](https://msdn.microsoft.com/library/dd460717.aspx) (TPL) zum Entwickeln von Anwendungen aus verschiedenen Gründen zu verwenden:
 
@@ -24,7 +24,7 @@ Xamarin empfiehlt dringend, den [Task Parallel Library](https://msdn.microsoft.c
 - Es ist einfacher, Vorgänge in Bezug auf TPL-Aufgaben zu übernehmen. Sie können Sie problemlos manipulieren, planen, ihre Ausführung Serialisieren oder viele parallel mit einem umfangreichen Satz von APIs starten. 
 - Es ist die Grundlage für die Programmierung mit den C# neuen Async-Spracherweiterungen. 
 
-Der Thread Pool vergrößert die Anzahl der Threads nach Bedarf, basierend auf der Anzahl der im System verfügbaren CPU-Kerne, der System Auslastung und der Anwendungsanforderungen. Sie können diesen Thread Pool entweder durch Aufrufen von Methoden in `System.Threading.ThreadPool` oder mithilfe des Standard `System.Threading.Tasks.TaskScheduler` mäßigen (Teil des *parallelen Frameworks*) verwenden.
+Der Thread Pool vergrößert die Anzahl der Threads nach Bedarf, basierend auf der Anzahl der im System verfügbaren CPU-Kerne, der System Auslastung und der Anwendungsanforderungen. Sie können diesen Thread Pool entweder durch Aufrufen von Methoden in `System.Threading.ThreadPool` oder mithilfe der standardmäßigen `System.Threading.Tasks.TaskScheduler` (Teil der *parallelen Frameworks*) verwenden.
 
 In der Regel verwenden Entwickler Threads, wenn Sie reaktionsschnelle Anwendungen erstellen müssen, und Sie möchten die Haupt-UI-Lauf Zeitschleife nicht blockieren.
 
@@ -55,9 +55,9 @@ Der obige Code Ruft den Code innerhalb des Delegaten im Kontext des Haupt Thread
 
 ## <a name="threading-and-garbage-collection"></a>Threading und Garbage Collection
 
-Im Verlauf der Ausführung werden Objekte von der Ziel-C-Laufzeit erstellt und freigegeben. Wenn Objekte für "Automatisches Release" gekennzeichnet sind, gibt die Ziel-C-Laufzeit diese Objekte an den aktuellen `NSAutoReleasePool`des Threads frei. Xamarin. IOS erstellt einen `NSAutoRelease` Pool für jeden Thread `System.Threading.ThreadPool` aus und für den Haupt Thread. Dadurch werden alle Threads behandelt, die mit dem Standard Task Scheduler in System. Threading. Tasks erstellt wurden.
+Im Verlauf der Ausführung werden Objekte von der Ziel-C-Laufzeit erstellt und freigegeben. Wenn Objekte für "Automatisches Release" gekennzeichnet sind, gibt die Ziel-C-Laufzeit diese Objekte in der aktuellen `NSAutoReleasePool`des Threads frei. Xamarin. IOS erstellt einen `NSAutoRelease` Pool für jeden Thread aus dem `System.Threading.ThreadPool` und für den Haupt Thread. Dadurch werden alle Threads behandelt, die mit dem Standard Task Scheduler in System. Threading. Tasks erstellt wurden.
 
-Wenn Sie Ihre eigenen Threads mithilfe `System.Threading` von erstellen, müssen Sie einen eigenen `NSAutoRelease` Pool bereitstellen, um zu verhindern, dass die Daten nicht mehr vorhanden sind. Umschließen Sie zu diesem Zweck einfach den Thread in den folgenden Code Ausschnitt:
+Wenn Sie mit `System.Threading` eigene Threads erstellen, müssen Sie einen eigenen `NSAutoRelease` Pool bereitstellen, um zu verhindern, dass die Daten nicht mehr vorhanden sind. Umschließen Sie zu diesem Zweck einfach den Thread in den folgenden Code Ausschnitt:
 
 ```csharp
 void MyThreadStart (object arg)
@@ -68,7 +68,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-Hinweis: Seit xamarin. IOS 5,2 müssen Sie keine eigenen `NSAutoReleasePool` bereitstellen, da eine automatisch für Sie bereitgestellt wird.
+Hinweis: seit xamarin. IOS 5,2 müssen Sie nicht mehr ihren eigenen `NSAutoReleasePool` bereitstellen, da eine automatisch für Sie bereitgestellt wird.
 
 ## <a name="related-links"></a>Verwandte Links
 

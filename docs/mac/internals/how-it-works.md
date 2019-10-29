@@ -4,27 +4,27 @@ description: In diesem Dokument wird die interne Funktionsweise von xamarin. Mac
 ms.prod: xamarin
 ms.assetid: C2053ABB-6DBF-4233-AEEA-B72FC6A81FE1
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/25/2017
-ms.openlocfilehash: 24ddd71fe1468edc70ec4d487dc2cb2dbd4da1b6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 347fb1021a290fa849ae354468bc66b0cdd8b684
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769811"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017593"
 ---
 # <a name="how-xamarinmac-works"></a>Funktionsweise von Xamarin.Mac
 
 In den meisten Fällen muss sich der Entwickler nicht um die interne "Magic" von xamarin. Mac kümmern, aber ein grobes Verständnis der Art und Weise, in der die Funktionsweise funktioniert, hilft bei der Interpretation vorhandener C# Dokumentationen mit einem Bild-und Debuggen. Probleme, wenn diese auftreten.
 
-In xamarin. Mac Bridges eine Anwendung zwei Welten: Die Ziel-C-basierte Laufzeit enthält Instanzen von systemeigenen Klassen (`NSString`, `NSApplication`usw.), und die C# Laufzeit enthält Instanzen von verwalteten Klassen (`System.String`, `HttpClient`usw.). In zwischen diesen beiden Welten erstellt xamarin. Mac eine bidirektionale Bridge, sodass eine APP Methoden (Selectors) in Ziel-c (z. `NSApplication.Init`b.) aufruft und Ziel-c die Methoden C# der APP wieder abrufen kann (z. b. Methoden für einen app-Delegaten). Im Allgemeinen werden Aufrufe von Ziel-C transparent über **P/** Calls und einigen Lauf Zeit Code, den xamarin bietet, verarbeitet.
+In xamarin. Mac Bridges eine Anwendung zwei Welten: die Ziel-C-basierte Laufzeit enthält Instanzen von systemeigenen Klassen (`NSString`, `NSApplication`usw.), und die C# Laufzeit enthält Instanzen von verwalteten Klassen (`System.String`,`HttpClient`usw.). . Zwischen diesen beiden Welten erstellt xamarin. Mac eine bidirektionale Bridge, sodass eine APP Methoden (Selectors) in Ziel-c (wie z. b. `NSApplication.Init`) aufruft, und Ziel-c kann C# die Methoden der APP zurück (wie Methoden in einem App-Delegaten). Im Allgemeinen werden Aufrufe von Ziel-C transparent über **P/** Calls und einigen Lauf Zeit Code, den xamarin bietet, verarbeitet.
 
 <a name="exposing-classes" />
 
 ## <a name="exposing-c-classes--methods-to-objective-c"></a>Verfügbar C# machen von Klassen/Methoden für Ziel-C
 
-Damit von Ziel-c die Objekte einer APP zurück aufgerufen werden können C# , müssen Sie jedoch auf eine Weise verfügbar gemacht werden, die von Ziel-c verstanden werden kann. Dies erfolgt über das `Register` -Attribut und das- `Export` Attribut. Betrachten Sie das folgende Beispiel:
+Damit von Ziel-c die Objekte einer APP zurück aufgerufen werden können C# , müssen Sie jedoch auf eine Weise verfügbar gemacht werden, die von Ziel-c verstanden werden kann. Dies erfolgt über die Attribute "`Register`" und "`Export`". Betrachten Sie das folgende Beispiel:
 
 ```csharp
 [Register ("MyClass")]
@@ -42,9 +42,9 @@ public class MyClass : NSObject
 }
 ```
 
-In diesem Beispiel kennt die Ziel-C-Laufzeit nun eine Klasse `MyClass` mit dem Namen `init` und `run`mit Selektoren.
+In diesem Beispiel kennt die Ziel-C-Laufzeit nun eine Klasse mit dem Namen `MyClass` mit den Selektoren `init` und `run`.
 
-In den meisten Fällen handelt es sich hierbei um ein Implementierungsdetail, das vom Entwickler ignoriert werden kann, da die meisten Rückrufe, die eine App empfängt `base` , entweder über überschriebene `DataSources`Methoden in Klassen ( `AppDelegate`z. b., `Delegates`,) oder **Aktionen** verwendet werden. an APIs übermittelt. In allen diesen Fällen `Export` sind Attribute im C# Code nicht erforderlich.
+In den meisten Fällen handelt es sich hierbei um ein Implementierungsdetail, das vom Entwickler ignoriert werden kann, da die meisten Rückrufe, die eine App empfängt, entweder über überschriebene Methoden in `base` Klassen (z. b. `AppDelegate`, `Delegates`, `DataSources`) oder über an APIs übergebenen **Aktionen** erfolgen. In allen diesen Fällen sind `Export` Attribute im C# Code nicht erforderlich.
 
 ## <a name="constructor-runthrough"></a>Konstruktorrunthrough
 
@@ -81,7 +81,7 @@ public CustomView () : base (NSObjectFlag.Empty)
 }
 ```
 
-Im Allgemeinen sollte der Entwickler die `IntPtr` -und- `NSCoder` Konstruktoren belassen, die generiert werden, wenn einige Typen, z. b. Benutzer `NSViews` definiert, allein erstellt werden. Wenn xamarin. Mac einen dieser Konstruktoren als Reaktion auf eine Ziel-C-Lauf Zeit Anforderung aufruft und Sie ihn entfernt hat, stürzt die APP innerhalb von System eigenem Code ab, und es kann schwierig sein, genau das Problem zu ermitteln.
+Im Allgemeinen sollte der Entwickler die `IntPtr` und `NSCoder` Konstruktoren belassen, die beim Erstellen einiger Typen, z. b. benutzerdefinierter `NSViews`, generiert werden. Wenn xamarin. Mac einen dieser Konstruktoren als Reaktion auf eine Ziel-C-Lauf Zeit Anforderung aufruft und Sie ihn entfernt hat, stürzt die APP innerhalb von System eigenem Code ab, und es kann schwierig sein, genau das Problem zu ermitteln.
 
 ## <a name="memory-management-and-cycles"></a>Speicherverwaltung und Zyklen
 
@@ -99,12 +99,12 @@ Neu bei xamarin. Mac ist die Möglichkeit, den IL-Code während des App-Buildvor
 
 Es gibt zwei Hauptbereiche, in denen AOT eine xamarin. Mac-app unterstützen kann:
 
-- **Bessere "Native" Absturz Protokolle** : Wenn eine xamarin. Mac-Anwendung in System eigenem Code abstürzt, was bei ungültigen Aufrufen von Cocoa-APIs üblich ist (z `null` . b. das Senden eines in eine Methode, die es nicht akzeptiert), systemeigene Absturz Protokolle mit JIT-Frames. sind schwer zu analysieren. Da die JIT-Frames keine Debuginformationen aufweisen, gibt es mehrere Zeilen mit hexadezimalen Offsets und keinen Hinweis darauf, was passiert ist. AOT generiert "echte" benannte Frames, und die Ablauf Verfolgungen sind viel leichter zu lesen. Dies bedeutet auch, dass die xamarin. Mac-app mit nativen Tools wie **lldb** und **Instruments**besser interagieren kann.
+- **Bessere "Native" Absturz Protokolle** : Wenn eine xamarin. Mac-Anwendung in System eigenem Code abstürzt, was bei ungültigen Aufrufen von Cocoa-APIs üblich ist (z. b. das Senden einer `null` an eine Methode, die Sie nicht akzeptiert), werden Native Absturz Protokolle mit JIT-Frames schwierig zu analysieren. Da die JIT-Frames keine Debuginformationen aufweisen, gibt es mehrere Zeilen mit hexadezimalen Offsets und keinen Hinweis darauf, was passiert ist. AOT generiert "echte" benannte Frames, und die Ablauf Verfolgungen sind viel leichter zu lesen. Dies bedeutet auch, dass die xamarin. Mac-app mit nativen Tools wie **lldb** und **Instruments**besser interagieren kann.
 - **Bessere Leistung bei der Startzeit** : bei großen xamarin. Mac-Anwendungen mit einer Zeitspanne von mehreren Sekunden kann die JIT-Kompilierung des gesamten Codes eine beträchtliche Zeit in Anspruch nehmen. Dies erfolgt im voraus.
 
 ### <a name="enabling-aot-compilation"></a>Aktivieren der AOT-Kompilierung
 
-AOT ist in xamarin. Mac aktiviert, indem Sie im **Projektmappen-Explorer**auf den **Projektnamen** doppelklicken, zum **Mac-Build** navigieren `--aot:[options]` und zum **zusätzlichen MMP-Argument** hinzufügen ( `[options]` wobei mindestens ein Optionen zum Steuern des AOT-Typs finden Sie unten). Beispiel:
+AOT ist in xamarin. Mac aktiviert, indem Sie im **Projektmappen-Explorer**auf den **Projektnamen** doppelklicken, zum **Mac-Build** navigieren und `--aot:[options]` zum **zusätzlichen MMP-Argument:** -Feld hinzufügen (wobei `[options]` eine oder mehrere Optionen für Steuern Sie den AOT-Typ, siehe unten). Beispiel:
 
 ![Hinzufügen von AOT zu zusätzlichen MMP-Argumenten](how-it-works-images/aot01.png "Hinzufügen von AOT zu zusätzlichen MMP-Argumenten")
 
@@ -115,15 +115,15 @@ AOT ist in xamarin. Mac aktiviert, indem Sie im **Projektmappen-Explorer**auf de
 
 Es gibt verschiedene Optionen, die beim Aktivieren der AOT-Kompilierung für eine xamarin. Mac-app angepasst werden können:
 
-- `none`-Keine AOT-Kompilierung. Dies ist die Standardeinstellung.
+- `none`-keine AOT-Kompilierung. Dies ist die Standardeinstellung.
 - `all`-AOT kompiliert jede Assembly im monobundle.
-- `core`-AOT kompiliert die `Xamarin.Mac`Assemblys, `System` und `mscorlib` .
-- `sdk`-AOT kompiliert die `Xamarin.Mac` -und-Basisklassen Bibliotheken-Assemblys (BCL).
-- `|hybrid`-Das Hinzufügen zu einer der oben genannten Optionen ermöglicht Hybrid-AOT, das Il-Speicher Abstriche ermöglicht, aber längere Kompilierungszeiten zur Folge hat.
-- `+`: Enthält eine einzelne Datei für die AOT-Kompilierung.
-- `-`: Entfernt eine einzelne Datei aus der AOT-Kompilierung.
+- `core`-AOT kompiliert die `Xamarin.Mac`-, `System`-und `mscorlib`-Assemblys.
+- `sdk`-AOT kompiliert die `Xamarin.Mac` und die Basisklassen Bibliotheken-Assemblys (BCL).
+- `|hybrid`: das Hinzufügen zu einer der oben genannten Optionen ermöglicht Hybrid AOT, das Il-Speicher Abstriche ermöglicht, aber längere Kompilierungszeiten zur Folge hat.
+- `+`: enthält eine einzelne Datei für die AOT-Kompilierung.
+- `-`: entfernt eine einzelne Datei aus der AOT-Kompilierung.
 
-Beispiels `--aot:all,-MyAssembly.dll` Weise `mscorlib.dll`würde `MyAssembly.dll` die `--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll` AOT-KompilierungfüralleAssemblysimmonobundlemit`MyOtherAssembly.dll` Ausnahme von aktivieren und Hybrid aktivieren
+Beispielsweise würde `--aot:all,-MyAssembly.dll` die AOT-Kompilierung für alle Assemblys im monobundle _mit Ausnahme_ von `MyAssembly.dll` aktivieren und `--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll` Hybrid aktivieren. Code AOT schließt den `MyOtherAssembly.dll` ein und schließt den `mscorlib.dll`aus.
 
 ## <a name="partial-static-registrar"></a>Partielle statische Registrierungsstelle
 
@@ -133,20 +133,20 @@ Zusätzlich zu xamarin. Mac können von der _partiellen statischen Registrierung
 
 ### <a name="about-the-registrar"></a>Informationen zur Registrierungsstelle
 
-In einer beliebigen xamarin. Mac-Anwendung befindet sich das Cocoa-Framework von Apple und die Ziel-C-Laufzeit. Die Hauptaufgabe von xamarin. Mac besteht darin, eine Brücke zwischen dieser C# "nativen Welt" und der "verwalteten Welt" zu entwickeln. Ein Teil dieser Aufgabe wird von der Registrierungsstelle behandelt, die innerhalb `NSApplication.Init ()` der-Methode ausgeführt wird. Dies ist ein Grund, warum die Verwendung von Cocoa-APIs in xamarin. `NSApplication.Init` Mac zuerst aufgerufen werden muss.
+In einer beliebigen xamarin. Mac-Anwendung befindet sich das Cocoa-Framework von Apple und die Ziel-C-Laufzeit. Die Hauptaufgabe von xamarin. Mac besteht darin, eine Brücke zwischen dieser C# "nativen Welt" und der "verwalteten Welt" zu entwickeln. Ein Teil dieser Aufgabe wird von der Registrierungsstelle behandelt, die innerhalb `NSApplication.Init ()`-Methode ausgeführt wird. Dies ist ein Grund, warum für die Verwendung von Cocoa-APIs in xamarin. Mac zuerst `NSApplication.Init` aufgerufen werden muss.
 
-Der Auftrag der Registrierungsstelle besteht darin, die Ziel-C-Laufzeit über das vorhanden sein der C# Klassen der APP zu informieren, die `NSApplicationDelegate`von Klassen `NSWindow`wie, `NSObject`, und abgeleitet werden `NSView`. Dies erfordert eine Überprüfung aller Typen in der APP, um zu bestimmen, was registriert werden muss und welche Elemente für die einzelnen Typen gemeldet werden sollen.
+Der Auftrag der Registrierungsstelle besteht darin, die Ziel-C-Laufzeit über das vorhanden sein der C# Klassen der APP zu informieren, die von Klassen wie`NSApplicationDelegate`,`NSView`,`NSWindow`und`NSObject`abgeleitet werden. Dies erfordert eine Überprüfung aller Typen in der APP, um zu bestimmen, was registriert werden muss und welche Elemente für die einzelnen Typen gemeldet werden sollen.
 
 Diese Überprüfung kann entweder **dynamisch**, beim Starten der Anwendung mit Reflektion oder **statisch**, als buildzeitschritt ausgeführt werden. Wenn Sie einen Registrierungstyp auswählen, sollte der Entwickler Folgendes beachten:
 
 - Die statische Registrierung kann die Startzeiten drastisch verkürzen, kann jedoch die Buildzeiten erheblich verlangsamen (in der Regel mehr als doppelte Debug-Buildzeit). Dies ist die Standardeinstellung für Builds der **Releasekonfiguration** .
 - Die dynamische Registrierung verzögert diese Arbeit, bis die Anwendung gestartet wird und die Codegenerierung überspringt. durch diese zusätzliche Arbeit kann jedoch eine merkliche Pause (mindestens zwei Sekunden) beim Starten der Anwendung erstellt werden. Dies ist besonders bei Debug-Konfigurations Builds erkennbar, bei denen standardmäßig die dynamische Registrierung verwendet wird und deren Reflektion langsamer ist.
 
-Die teilweise statische Registrierung, die erstmals in xamarin. IOS 8,13 eingeführt wurde, bietet dem Entwickler das Beste aus beiden Optionen. Durch das vorab Berechnen der Registrierungsinformationen für jedes Element in `Xamarin.Mac.dll` und das Versenden dieser Informationen mit xamarin. Mac in einer statischen Bibliothek (die nur zur Buildzeit verknüpft werden muss) hat Microsoft den größten Teil der Reflexions Zeit des dynamischen Registrierungsstelle, ohne Auswirkungen auf die Buildzeit.
+Die teilweise statische Registrierung, die erstmals in xamarin. IOS 8,13 eingeführt wurde, bietet dem Entwickler das Beste aus beiden Optionen. Durch das vorab Berechnen der Registrierungsinformationen für jedes Element in `Xamarin.Mac.dll` und das Versenden dieser Informationen mit xamarin. Mac in einer statischen Bibliothek (die nur zur Buildzeit verknüpft werden muss) hat Microsoft den größten Teil der reflektionzeit der dynamischen Registrierungsstelle entfernt. während der Buildzeit nicht beeinträchtigt wird.
 
 ### <a name="enabling-the-partial-static-registrar"></a>Aktivieren der partiellen statischen Registrierungsstelle
 
-Die partielle statische Registrierungsstelle ist in xamarin. Mac aktiviert, indem Sie im **Projektmappen-Explorer**auf den **Projektnamen** doppelklicken, zu **Mac Build** navigieren und dem Feld `--registrar:static` **zusätzliche MMP-Argumente** hinzufügen. Beispiel:
+Die partielle statische Registrierungsstelle ist in xamarin. Mac aktiviert, indem Sie im **Projektmappen-Explorer**auf den **Projektnamen** doppelklicken, zum **Mac-Build** navigieren und `--registrar:static` zum **zusätzlichen MMP-Argument** hinzufügen:. Beispiel:
 
 ![Hinzufügen der partiellen statischen Registrierungsstelle zu zusätzlichen MMP-Argumenten](how-it-works-images/psr01.png "Hinzufügen der partiellen statischen Registrierungsstelle zu zusätzlichen MMP-Argumenten")
 
@@ -159,4 +159,4 @@ Im folgenden finden Sie einige Ausführlichere Erläuterungen zur internen Funkt
 - [Xamarin-Unified API für IOS und OS X](~/cross-platform/macios/unified/index.md)
 - [Grundlagen der Grundlagen](~/ios/app-fundamentals/threading.md)
 - [Delegaten, Protokolle und Ereignisse](~/ios/app-fundamentals/delegates-protocols-and-events.md)
-- [Zu`newrefcount`](~/ios/internals/newrefcount.md)
+- [Informationen zu `newrefcount`](~/ios/internals/newrefcount.md)

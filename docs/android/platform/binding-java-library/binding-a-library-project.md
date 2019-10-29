@@ -4,15 +4,15 @@ description: In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie mi
 ms.prod: xamarin
 ms.assetid: CEE90F8A-164B-4155-813A-7537A665A7E7
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 78b70ce70292e589aee4a1dbe56f3765552ece7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2ac402bf423c9f3fe136d1ba31622d915d2e2eef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757721"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027729"
 ---
 # <a name="binding-an-eclipse-library-project"></a>Binden eines Eclipse-Bibliotheksprojekts
 
@@ -39,13 +39,13 @@ Nachdem das Android-Bibliotheksprojekt in Eclipse kompiliert wurde, kann es mit 
 
 Dafür. Die ZIP-Datei wird dann dem Java-Bindungs Projekt xamarin. Android hinzugefügt, wie im folgenden Screenshot zu sehen:
 
-[![ZIP-Hinzufügung zum Java-Bindungs Projekt](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
+[![zip wurde zum Java-Bindungs Projekt hinzugefügt.](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
 
 Beachten Sie, dass die Buildaktion des. Die ZIP-Datei wurde automatisch auf **libraryprojectzip**festgelegt.
 
 Wenn vorhanden. JAR-Dateien, die für das Android-Bibliotheksprojekt erforderlich sind, müssen dem Ordner " **Jars** " des Projekts für die Java-Bindungs Bibliothek und der **Buildaktion** **referencejar**hinzugefügt werden. Ein Beispiel hierfür finden Sie im folgenden Screenshot: 
 
-[![Buildaktion auf referencejar festgelegt](binding-a-library-project-images/set-to-referencejar.png)](binding-a-library-project-images/set-to-referencejar.png#lightbox)
+[![Build-Aktion auf referencejar festgelegt](binding-a-library-project-images/set-to-referencejar.png)](binding-a-library-project-images/set-to-referencejar.png#lightbox)
 
 Nachdem diese Schritte ausgeführt wurden, kann das xamarin. Android-Java-Bindungs Projekt verwendet werden, wie weiter oben in diesem Dokument beschrieben.
 

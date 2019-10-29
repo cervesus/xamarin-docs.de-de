@@ -3,15 +3,15 @@ title: Teil 1 – Grundlegendes zur xamarin Mobile-Plattform
 description: In diesem Dokument wird die xamarin-Plattform auf hoher Ebene beschrieben. dabei werden der Kompilierungsprozess, der Zugriff auf das Plattform-SDK, die Freigabe von Code, die Erstellung von Benutzeroberflächen, visuelle Designer und mehr erläutert.
 ms.prod: xamarin
 ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: af2b8cd39d5fb1b0ce6c12f7d6ad87e245b9a594
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e10e9f5330de3226fb0f08051ab135ea58900fe7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761971"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016867"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>Teil 1 – Grundlegendes zur xamarin Mobile-Plattform
 
@@ -39,7 +39,7 @@ Die C# Quelle wird auf jeder Plattform auf sehr unterschiedliche Weise in eine n
 
 In der linkerdokumentation für [xamarin. IOS](~/ios/deploy-test/linker.md) und [xamarin. Android](~/android/deploy-test/linker.md) finden Sie weitere Informationen zu diesem Teil des Kompilierungsprozesses.
 
-Runtime-Kompilierung – das dynamische Erstellen von `System.Reflection.Emit` Code mit – sollte vermieden werden.
+Runtime-Kompilierung – das dynamische Erstellen von Code mit `System.Reflection.Emit` – sollte vermieden werden.
 
 Der Kernel von Apple verhindert die Generierung dynamischer Code auf IOS-Geräten, sodass die Ausgabe von Code im laufenden Betrieb nicht in xamarin. IOS funktioniert. Ebenso können die Funktionen der Dynamic Language Runtime nicht mit xamarin-Tools verwendet werden.
 
@@ -49,8 +49,8 @@ Einige Reflektionsobjekte funktionieren (z. b. MonoTouch. Dialog verwendet es f�
 
 Xamarin ermöglicht den einfachen Zugriff auf die Features, die vom plattformspezifischen SDK C# bereitgestellt werden, mit vertrauter Syntax:
 
-- **IOS** – xamarin. IOS macht die cocoatouch SDK-Frameworks von C#Apple als Namespaces verfügbar, auf die Sie verweisen können. Beispielsweise kann das UIKit-Framework, das alle Steuerelemente der Benutzeroberfläche enthält, in `using UIKit;` eine einfache Anweisung eingeschlossen werden.
-- **Android** – xamarin. Android stellt Google-Android SDK als Namespaces zur Verfügung, sodass Sie `using Android.Views;` auf einen beliebigen Teil des unterstützten SDKs mit einer using-Anweisung verweisen können, z. b. für den Zugriff auf die Steuerelemente der Benutzeroberfläche.
+- **IOS** – xamarin. IOS macht die cocoatouch SDK-Frameworks von C#Apple als Namespaces verfügbar, auf die Sie verweisen können. Beispielsweise kann das UIKit-Framework, das alle Steuerelemente der Benutzeroberfläche enthält, in eine einfache `using UIKit;`-Anweisung eingeschlossen werden.
+- **Android** – xamarin. Android stellt Google-Android SDK als Namespaces zur Verfügung, sodass Sie mit einer using-Anweisung, z. b. `using Android.Views;`, auf die Benutzeroberflächen-Steuerelemente zugreifen können, auf einen beliebigen Teil des unterstützten SDK verweisen können.
 - **Windows** – Windows-apps werden mithilfe von Visual Studio unter Windows erstellt. Zu den Projekttypen zählen Windows Forms, WPF, WinRT und die universelle Windows-Plattform (UWP).
 
 ## <a name="seamless-integration-for-developers"></a>Nahtlose Integration für Entwickler
@@ -86,7 +86,7 @@ Die Entwicklung von Android-Anwendungen erfordert, dass die Java-und Android-sdc
 
 Xamarin bietet ein einheitliches Installationsprogramm, das Ihr System mit den erforderlichen Java-, Android-und xamarin-Tools (einschließlich eines visuellen Designers für Bildschirmlayouts) konfiguriert. Ausführliche Anweisungen finden Sie im [xamarin. Android-Installationshandbuch](~/android/get-started/installation/index.md) .
 
-Sie können Anwendungen auf einem echten Gerät ohne jegliche Lizenz von Google erstellen und testen. um Ihre Anwendung jedoch über einen Store zu verteilen (z. b. Google Play, &amp; Amazon oder Barnes Noble), kann eine Registrierungsgebühr an den Operator gezahlt werden. Google Play wird Ihre APP umgehend veröffentlichen, während die anderen Geschäfte einen Genehmigungsprozess ähnlich dem von Apple haben.
+Sie können Anwendungen auf einem echten Gerät ohne jegliche Lizenz von Google erstellen und testen. um Ihre Anwendung jedoch über einen Store zu verteilen (z. b. Google Play, Amazon oder Barnes &amp; Noble), kann eine Registrierungsgebühr an den Operator gezahlt werden. Google Play wird Ihre APP umgehend veröffentlichen, während die anderen Geschäfte einen Genehmigungsprozess ähnlich dem von Apple haben.
 
 ### <a name="windows"></a>Windows
 
@@ -115,7 +115,7 @@ Jede Plattform verfügt über eine andere Methode zum visuellen Anordnen von Bil
 
 Diese Screenshots zeigen die visuellen Bildschirm-Designer, die auf jeder Plattform verfügbar sind:
 
- [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "Diese Screenshots zeigen die visuellen Bildschirm Designer, die auf jeder Plattform verfügbar sind.")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "These screenshots show the visual screen designers available on each platform")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 In allen Fällen kann auf die Elemente, die Sie visuell erstellen, in Ihrem Code verwiesen werden.
 
@@ -149,7 +149,7 @@ Beispiele für C# die Quelle, die in xamarin. IOS oder xamarin. Android verwende
 
 Xamarin stellt ein Tool namens *bberührungs* bereit, mit dem Bindungen erstellt werden können, die das Verwenden von Ziel-C-Bibliotheken in xamarin. IOS-Projekten ermöglichen. Ausführliche Informationen zur Vorgehensweise finden Sie in der [Dokumentation zum Bindungs Ziel-C-Typ](~/cross-platform/macios/binding/binding-types-reference.md) .
 
-Beispiele für Ziel-C-Bibliotheken, die in xamarin. IOS verwendet werden können, sind: RedLaser-Barcode Überprüfung, Google Analytics-und PayPal-Integration. Open-Source-xamarin. IOS-Bindungen sind auf [GitHub](https://github.com/mono/monotouch-bindings)verfügbar.
+Beispiele für Ziel-C-Bibliotheken, die in xamarin. IOS verwendet werden können, sind: RedLaser Barcode Scan, Google Analytics und PayPal-Integration. Open-Source-xamarin. IOS-Bindungen sind auf [GitHub](https://github.com/mono/monotouch-bindings)verfügbar.
 
 ### <a name="jar-bindings--binding-projects"></a>JAR-Bindungen und Bindungs Projekte
 

@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Suchleisten in xamarin. IO
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 8b129e0e70bf3ded787094d1b1f740e73a8cbca1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70283350"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021985"
 ---
 # <a name="search-bars-in-xamarinios"></a>Suchleisten in xamarin. IOS
 
@@ -88,7 +88,7 @@ Diese Eigenschaften werden im folgenden erläutert:
   - Zeigt die Schaltfläche "Suchergebnisse/Lesezeichen" – zeigt ein Suchergebnis oder Lesezeichen Symbol auf der Suchleiste an
   - Zeigt die Schaltfläche "Abbrechen" – ermöglicht Benutzern das Beenden der Suchfunktion. Es wird empfohlen, diese Option auszuwählen.
   - Zeigt die Bereichs Leiste an – dadurch können Benutzer den Umfang Ihrer Suche einschränken. Wenn Sie z. b. in der Music-App suchen, kann der Benutzer auswählen, ob Apple Music oder seine Bibliothek nach einem bestimmten Song oder einer bestimmten Künstlerin durchsucht werden soll. Zum Anzeigen verschiedener Optionen fügen Sie der Eigenschaft **scopebartiteln** ein Array von Titeln hinzu.
-  ![Search leisten Bereichs Titel ](searchbar-images/image4.png)
+  Bereichs Titel für ![Suchleiste](searchbar-images/image4.png)
 
 - **Text Verhalten** – diese Optionen werden verwendet, um zu adressieren, wie die Benutzereingabe bei der Eingabe formatiert wird. Durch die Groß-/Kleinschreibung wird der Anfang jedes Worts oder Satzes oder jedes Zeichen als Großbuchstabe festgelegt. Korrektur-und Rechtschreibprüfung, bei der der Benutzer zur Eingabe von empfohlenen rechtschreibweisen bei der Eingabe aufgefordert wird.
 - **Tastatur** – steuert den Tastatur Stil, der für die Eingabe angezeigt wird, und damit die auf der Tastatur verfügbaren Tasten. Dies schließt das Zahlen Pad, den telefonpad, die e-Mail, die URL und andere Optionen ein.

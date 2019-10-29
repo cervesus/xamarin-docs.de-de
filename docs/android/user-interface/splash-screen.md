@@ -4,21 +4,21 @@ description: Eine Android-App nimmt einige Zeit in Betrieb, insbesondere wenn di
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 4633811b2c0b001ab220f5fedaf116b1b269344a
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032550"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028715"
 ---
 # <a name="splash-screen"></a>Begrüßungsbildschirm
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
 
-_eine Android-App nimmt einige Zeit in Betrieb, insbesondere wenn die APP zum ersten Mal auf einem Gerät gestartet wird. Ein Begrüßungsbildschirm kann den Startstatus für den Benutzer oder das Branding anzeigen._
+_Eine Android-App nimmt einige Zeit in Betrieb, insbesondere wenn die APP zum ersten Mal auf einem Gerät gestartet wird. Ein Begrüßungsbildschirm kann den Startstatus für den Benutzer oder das Branding anzeigen._
 
 ## <a name="overview"></a>Übersicht
 
@@ -32,7 +32,7 @@ In diesem Leitfaden wird eine Technik zum Implementieren eines Begrüßungs Bild
 
 3. Hinzufügen einer neuen Aktivität zur Anwendung, die als Begrüßungsbildschirm verwendet wird, der von dem im vorherigen Schritt erstellten Design definiert wird.
 
-[![ xamarin-Logo-Begrüßungsbildschirm, gefolgt vom APP-Bildschirm](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
+[![Beispiel-xamarin-Logo-Begrüßungsbildschirm, gefolgt vom APP-Bildschirm](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -67,7 +67,7 @@ Die Beispielanwendung definiert eine drawable namens **splash_screen. XML**. Die
 </layer-list>
 ```
 
-Dieser `layer-list` zentriert das Begrüßungs Bild auf eine Hintergrundfarbe, die durch die `@color/splash_background`-Ressource angegeben wird. Die Beispielanwendung definiert diese Farbe in der Datei **Resources/Values/Color. XML** :
+In diesem `layer-list` wird das Begrüßungs Bild auf eine Hintergrundfarbe festgelegt, die durch die `@color/splash_background`-Ressource angegeben wird. Die Beispielanwendung definiert diese Farbe in der Datei **Resources/Values/Color. XML** :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -77,11 +77,11 @@ Dieser `layer-list` zentriert das Begrüßungs Bild auf eine Hintergrundfarbe, d
 </resources>
 ```
 
-Weitere Informationen zu `Drawable`-Objekten finden Sie [in der Google-Dokumentation unter Android drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable).
+Weitere Informationen zu `Drawable` Objekten finden Sie [in der Google-Dokumentation unter Android drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable).
 
 ### <a name="implementing-a-theme"></a>Implementieren eines Designs
 
-Um ein benutzerdefiniertes Design für die Aktivität des Begrüßungs Bildschirms zu erstellen, bearbeiten Sie die Datei **Values/Styles. XML** , oder fügen Sie Sie hinzu, und erstellen Sie ein neues `style`-Element für den Begrüßungsbildschirm. Unten sehen Sie eine Beispiel **Werte/Style. XML-** Datei mit einer `style` mit dem Namen **mytheme. Splash**:
+Um ein benutzerdefiniertes Design für die Aktivität des Begrüßungs Bildschirms zu erstellen, bearbeiten Sie die Datei **Values/Styles. XML** , oder fügen Sie Sie hinzu, und erstellen Sie ein neues `style`-Element für den Begrüßungsbildschirm. Eine Beispieldatei " **values. XML** " wird unten mit einem `style` mit dem Namen " **mytheme. Splash**" angezeigt:
 
 ```xml
 <resources>
@@ -101,7 +101,7 @@ Um ein benutzerdefiniertes Design für die Aktivität des Begrüßungs Bildschir
 </resources>
 ```
 
-**Mytheme. Splash** ist sehr sparsam &ndash; gibt es den Fenster Hintergrund an, entfernt die Titelleiste explizit aus dem Fenster und deklariert, dass es sich um einen voll Bildschirm handelt. Wenn Sie einen Begrüßungsbildschirm erstellen möchten, der die Benutzeroberfläche der APP emuliert, bevor die Aktivität das erste Layout auffüllt, können Sie in der Format Definition `windowContentOverlay` anstelle von `windowBackground` verwenden. In diesem Fall müssen Sie auch das drawable-Element von **splash_screen. XML** so ändern, dass es eine Emulation ihrer Benutzeroberfläche anzeigt.
+**Mytheme. Splash** ist sehr sparsam &ndash; es den Hintergrund des Fensters deklariert, die Titelleiste explizit aus dem Fenster entfernt und deklariert, dass es sich um einen voll Bildschirm handelt. Wenn Sie einen Begrüßungsbildschirm erstellen möchten, mit dem die Benutzeroberfläche der APP emuliert wird, bevor die Aktivität das erste Layout auffüllt, können Sie in der Format Definition `windowContentOverlay` statt `windowBackground`. In diesem Fall müssen Sie auch das drawable-Element von **splash_screen. XML** so ändern, dass es eine Emulation ihrer Benutzeroberfläche anzeigt.
 
 ### <a name="create-a-splash-activity"></a>Erstellen einer Begrüßungs Aktivität
 
@@ -141,15 +141,15 @@ public class SplashActivity : AppCompatActivity
 `SplashActivity` verwendet explizit das Design, das im vorherigen Abschnitt erstellt wurde, wobei das Standarddesign der Anwendung überschrieben wird.
 Es ist nicht erforderlich, ein Layout in `OnCreate` zu laden, da das Design einen drawable als Hintergrund deklariert.
 
-Es ist wichtig, das `NoHistory=true`-Attribut festzulegen, damit die Aktivität aus dem Hintergrund Stapel entfernt wird. Wenn Sie verhindern möchten, dass der Startvorgang von der Schaltfläche "zurück" abgebrochen wird, können Sie auch `OnBackPressed` überschreiben und keine Aktion ausführen:
+Es ist wichtig, das `NoHistory=true`-Attribut so festzulegen, dass die Aktivität aus dem Hintergrund Stapel entfernt wird. Wenn Sie verhindern möchten, dass der Startvorgang von der Schaltfläche "zurück" abgebrochen wird, können Sie auch `OnBackPressed` außer Kraft setzen und keine Aktion ausführen:
 
 ```csharp
 public override void OnBackPressed() { }
 ```
 
-Der Startvorgang wird asynchron in `OnResume` ausgeführt. Dies ist erforderlich, damit die Start Arbeit die Darstellung des Startbildschirms nicht verlangsamt oder verzögert. Nachdem die Arbeit abgeschlossen ist, wird `SplashActivity` gestartet `MainActivity`, und der Benutzer kann mit der Interaktion mit der APP beginnen.
+Die Start Arbeit wird in `OnResume`asynchron ausgeführt. Dies ist erforderlich, damit die Start Arbeit die Darstellung des Startbildschirms nicht verlangsamt oder verzögert. Wenn die Arbeit abgeschlossen ist, wird `SplashActivity` gestartet `MainActivity` und der Benutzer kann mit der Interaktion mit der APP beginnen.
 
-Diese neue `SplashActivity` wird als Start Programm Aktivität für die Anwendung festgelegt, indem das `MainLauncher`-Attribut auf `true` festgelegt wird. Da `SplashActivity` nun die Start Programm Aktivität ist, müssen Sie `MainActivity.cs` bearbeiten und das `MainLauncher`-Attribut aus `MainActivity` entfernen:
+Diese neue `SplashActivity` wird als Start Programm Aktivität für die Anwendung festgelegt, indem das `MainLauncher`-Attribut auf `true`festgelegt wird. Da `SplashActivity` jetzt die Start Programm Aktivität ist, müssen Sie `MainActivity.cs`bearbeiten und das `MainLauncher`-Attribut aus `MainActivity`entfernen:
 
 ```csharp
 [Activity(Label = "@string/ApplicationName")]
@@ -167,7 +167,7 @@ Zum Hinzufügen eines Begrüßungs Bildschirms für den Querformat führen Sie d
 
 1. Fügen Sie im Ordner **Resources/drawable** die Landscape-Version des Begrüßungsbildschirm Bilds hinzu, das Sie verwenden möchten. In diesem Beispiel ist **splash_logo_land. png** die Landscape-Version des Logos, das in den obigen Beispielen verwendet wurde (es wird eine weiße Beschriftung anstelle von Blue verwendet).
 
-2. Erstellen Sie im Ordner **Resources/drawable** eine Landscape-Version der zuvor definierten drawable `layer-list` (z. b **. splash_screen_land. XML**). Legen Sie in dieser Datei den bitmappfad auf die Querformat Version des Begrüßungsbildschirm Bilds fest. Im folgenden Beispiel verwendet **splash_screen_land. XML** **splash_logo_land. png**:
+2. Erstellen Sie im Ordner **Resources/drawable** eine Landscape-Version der zuvor definierten `layer-list` drawable (z. b **. splash_screen_land. XML**). Legen Sie in dieser Datei den bitmappfad auf die Querformat Version des Begrüßungsbildschirm Bilds fest. Im folgenden Beispiel verwendet **splash_screen_land. XML** **splash_logo_land. png**:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -188,7 +188,7 @@ Zum Hinzufügen eines Begrüßungs Bildschirms für den Querformat führen Sie d
 
 4. Fügen Sie die Dateien **Colors. XML** und **Style. XML** zu **Values-Land** hinzu (diese können aus den vorhandenen **Werten/Colors. XML** -und **Values/Style. XML** -Dateien kopiert und geändert werden).
 
-5. Ändern Sie **Values-Land/Style. XML** so, dass die quer Version der drawable für `windowBackground` verwendet wird. In diesem Beispiel wird **splash_screen_land. XML** verwendet:
+5. Ändern Sie **Values-Land/Style. XML** so, dass es die Landscape-Version der drawable für `windowBackground`verwendet. In diesem Beispiel wird **splash_screen_land. XML** verwendet:
 
     ```xml
     <resources>
@@ -221,9 +221,9 @@ Zum Hinzufügen eines Begrüßungs Bildschirms für den Querformat führen Sie d
 
 7. Erstellen Sie die APP erneut, und führen Sie Sie aus. Drehen Sie das Gerät in den Querformat, während der Begrüßungsbildschirm weiterhin angezeigt wird. Der Begrüßungsbildschirm ändert sich in die Landscape-Version:
 
-    [![drehung des Begrüßungs Bildschirms in den Querformat](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+    [![Drehung des Begrüßungs Bildschirms in den Querformat](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
-Beachten Sie, dass die Verwendung eines Begrüßungs Bildschirms im Querformat nicht immer eine nahtlose Umgebung bereitstellt. Standardmäßig wird die APP von Android im Hochformat gestartet und in den Querformat versetzt, auch wenn sich das Gerät bereits im Querformat befindet. Wenn die APP gestartet wird, während sich das Gerät im Querformat befindet, stellt das Gerät den Begrüßungsbildschirm für Hochformat kurz her und animiert dann die Drehung vom Hochformat auf den Begrüßungsbildschirm des quer Bildes. Leider findet dieser anfängliche Querformat Übergang statt, auch wenn `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` in den Flags der Begrüßungs Aktivität angegeben ist. Die beste Möglichkeit, diese Einschränkung zu umgehen, besteht darin, ein einzelnes Begrüßungsbildschirm Bild zu erstellen, das im hoch-und Querformat ordnungsgemäß gerendert wird.
+Beachten Sie, dass die Verwendung eines Begrüßungs Bildschirms im Querformat nicht immer eine nahtlose Umgebung bereitstellt. Standardmäßig wird die APP von Android im Hochformat gestartet und in den Querformat versetzt, auch wenn sich das Gerät bereits im Querformat befindet. Wenn die APP gestartet wird, während sich das Gerät im Querformat befindet, stellt das Gerät den Begrüßungsbildschirm für Hochformat kurz her und animiert dann die Drehung vom Hochformat auf den Begrüßungsbildschirm des quer Bildes. Leider findet dieser erste Querformat Übergang statt, auch wenn `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` in den Flags der Begrüßungs Aktivität angegeben ist. Die beste Möglichkeit, diese Einschränkung zu umgehen, besteht darin, ein einzelnes Begrüßungsbildschirm Bild zu erstellen, das im hoch-und Querformat ordnungsgemäß gerendert wird.
 
 ## <a name="summary"></a>Zusammenfassung
 

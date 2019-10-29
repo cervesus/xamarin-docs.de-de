@@ -4,19 +4,19 @@ description: Die UIButton-Klasse wird verwendet, um verschiedene Arten von Schal
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2018
-ms.openlocfilehash: ce0c4579f13311811106a00390f95a20a0abf979
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a8dfd267fe9f5f838927fc216d53c2475398ed16
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768451"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022115"
 ---
 # <a name="buttons-in-xamarinios"></a>Schaltflächen in xamarin. IOS
 
-In ios stellt die `UIButton` -Klasse ein Schaltflächen-Steuerelement dar.
+In ios stellt die `UIButton`-Klasse ein Schaltflächen-Steuerelement dar.
 
 Die Eigenschaften einer Schaltfläche können entweder Programm gesteuert oder mit dem **Eigenschaftenpad** des IOS-Designers geändert werden:
 
@@ -24,7 +24,7 @@ Die Eigenschaften einer Schaltfläche können entweder Programm gesteuert oder m
 
 ## <a name="creating-a-button-programmatically"></a>Programm gesteuertes Erstellen einer Schaltfläche
 
-Ein `UIButton` kann nur mit wenigen Codezeilen erstellt werden.
+Eine `UIButton` kann nur mit wenigen Codezeilen erstellt werden.
 
 - Instanziieren Sie eine Schaltfläche, und geben Sie Ihren Typ an:
 
@@ -34,12 +34,12 @@ Ein `UIButton` kann nur mit wenigen Codezeilen erstellt werden.
 
   Der Typ der Schaltfläche wird durch einen `UIButtonType`angegeben:
 
-  - `UIButtonType.System`-Eine Schaltfläche für allgemeine Zwecke
-  - `UIButtonType.DetailDisclosure`: Gibt die Verfügbarkeit detaillierter Informationen an, in der Regel zu einem bestimmten Element in einer Tabelle.
-  - `UIButtonType.InfoDark`: Gibt die Verfügbarkeit von Konfigurationsinformationen an. dunkel farbig
-  - `UIButtonType.InfoLight`: Gibt die Verfügbarkeit von Konfigurationsinformationen an. hell farbig
-  - `UIButtonType..AddContact`-Gibt an, dass ein Kontakt hinzugefügt werden kann.
-  - `UIButtonType.Custom`-Anpassbare Schaltfläche
+  - `UIButtonType.System`-Schaltfläche "Allgemein"
+  - `UIButtonType.DetailDisclosure`: gibt die Verfügbarkeit detaillierter Informationen an, in der Regel zu einem bestimmten Element in einer Tabelle.
+  - `UIButtonType.InfoDark`: gibt die Verfügbarkeit von Konfigurationsinformationen an. dunkel farbig
+  - `UIButtonType.InfoLight`: gibt die Verfügbarkeit von Konfigurationsinformationen an. hell farbig
+  - `UIButtonType..AddContact`: gibt an, dass ein Kontakt hinzugefügt werden kann.
+  - `UIButtonType.Custom` anpassbare Schaltfläche
 
   Weitere Informationen zu den verschiedenen Schaltflächen Typen finden Sie unter:
   
@@ -53,7 +53,7 @@ Ein `UIButton` kann nur mit wenigen Codezeilen erstellt werden.
   myButton.Frame = new CGRect(25, 25, 300, 150);
   ```
 
-- Legen Sie den Text der Schaltfläche fest. Verwenden Sie `SetTitle` die-Methode, die den Text und `UIControlState` einen-Wert erfordert:
+- Legen Sie den Text der Schaltfläche fest. Verwenden Sie die `SetTitle`-Methode, die den Text und einen `UIControlState` Wert erfordert:
 
   ```csharp
   myButton.SetTitle("Hello, World!", UIControlState.Normal);
@@ -66,7 +66,7 @@ Ein `UIButton` kann nur mit wenigen Codezeilen erstellt werden.
 
 ## <a name="handling-a-button-tap"></a>Verarbeiten einer Schaltflächen Abzweigung
 
-Wenn Sie auf eine Schaltfläche tippen möchten, geben Sie einen Handler für `TouchUpInside` das-Ereignis der Schaltfläche an:
+Wenn Sie auf eine Schaltfläche tippen möchten, geben Sie einen Handler für das `TouchUpInside`-Ereignis der Schaltfläche an:
 
 ```csharp
 button.TouchUpInside += (sender, e) => {
@@ -75,7 +75,7 @@ button.TouchUpInside += (sender, e) => {
 ```
 
 > [!NOTE]
-> `TouchUpInside`ist nicht das einzige verfügbare Schaltflächen Ereignis. `UIButton`ist eine untergeordnete Klasse `UIControl`von, die [viele verschiedene Ereignisse](xref:UIKit.UIControlEvent)definiert.
+> `TouchUpInside` ist nicht das einzige verfügbare Schaltflächen Ereignis. `UIButton` ist eine untergeordnete Klasse von `UIControl`, die [viele verschiedene Ereignisse](xref:UIKit.UIControlEvent)definiert.
 
 ### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>Verwenden des IOS-Designers zum Angeben von Schaltflächen-Ereignis Handlern
 
@@ -83,24 +83,24 @@ Verwenden Sie die Registerkarte **Ereignisse** des **Eigenschaftenpad** , um Ere
 
 Geben Sie für das entsprechende Ereignis entweder den Namen eines neuen Ereignis Handlers ein, oder wählen Sie einen aus der Liste aus. Dadurch wird im Code für den Ansichts Controller der Schaltfläche ein Ereignishandler erstellt.
 
-![Registerkarte "Ereignisse" des Eigenschaftenpad](buttons-images/image1.png "Registerkarte \"Ereignisse\" des Eigenschaftenpad")
+![Registerkarte "Ereignisse" des Eigenschaftenpad](buttons-images/image1.png "Registerkarte "Ereignisse" des Eigenschaftenpad")
 
 ## <a name="styling-a-button"></a>Formatieren einer Schaltfläche
 
-`UIButton` Steuerelemente können in einer Reihe verschiedener Zustände vorhanden, jede gemäß einem `UIControlState` Wert – `Normal`, `Disabled`, `Focused`, `Highlighted`usw. Jedem Zustand kann ein eindeutiger Stil zugewiesen werden, der Programm gesteuert oder mit dem IOS-Designer angegeben wird.
+`UIButton` Steuerelemente können in einer Reihe von verschiedenen Zuständen vorhanden sein, die jeweils durch einen `UIControlState` Wert angegeben werden, der `Normal`, `Disabled`, `Focused`, `Highlighted`usw. Jedem Zustand kann ein eindeutiger Stil zugewiesen werden, der Programm gesteuert oder mit dem IOS-Designer angegeben wird.
 
 > [!NOTE]
-> Eine vollständige Liste aller `UIControlState` Werte finden Sie unter[`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
+> Eine vollständige Liste aller `UIControlState` Werte finden Sie im [`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
 > Dokumentation.
 
-So legen Sie z. b. die Titel Farbe und Schatten `UIControlState.Normal`Farbe für fest:
+So legen Sie z. b. die Titel Farbe und Schatten Farbe für `UIControlState.Normal`fest:
 
 ```csharp
 button.SetTitleColor(UIColor.White, UIControlState.Normal);
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-Im folgenden Code wird der Titel der Schaltfläche auf eine attributierte (stilisierte `UIControlState.Highlighted`) Zeichenfolge für `UIControlState.Normal` und festgelegt:
+Im folgenden Code wird der Titel der Schaltfläche auf eine attributierte (stilisierte) Zeichenfolge für `UIControlState.Normal` und `UIControlState.Highlighted`festgelegt:
 
 ```csharp
 var normalAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
@@ -112,7 +112,7 @@ myButton.SetAttributedTitle(highlightedAttributedTitle, UIControlState.Highlight
 
 ## <a name="custom-button-types"></a>Benutzerdefinierte Schaltflächen Typen
 
-Schaltflächen mit `UIButtonType` einer `Custom` von haben keine Standard Stile. Allerdings ist es möglich, die Darstellung der Schaltfläche zu konfigurieren, indem Sie ein Bild für die unterschiedlichen Zustände festlegt:
+Schaltflächen mit einer `UIButtonType` `Custom` haben keine Standard Stile. Allerdings ist es möglich, die Darstellung der Schaltfläche zu konfigurieren, indem Sie ein Bild für die unterschiedlichen Zustände festlegt:
 
 ```csharp
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
@@ -122,8 +122,8 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlStat
 
 Abhängig davon, ob der Benutzer die Schaltfläche berührt oder nicht, wird er als eines der folgenden Bilder (`UIControlState.Normal`, `UIControlState.Highlighted` und `UIControlState.Selected` Zustände) angezeigt:
 
-![UIControlState.Normal](buttons-images/image22.png "UIControlState.Normal")
-![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted")
-![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
+![Uicontrolstate. Normal](buttons-images/image22.png "Uicontrolstate. Normal")
+![uicontrolstate. hervorgehoben](buttons-images/image23.png "Uicontrolstate. hervorgehoben")
+![uicontrolstate. Selected](buttons-images/image24.png "Uicontrolstate. Selected")
 
 Weitere Informationen zum Arbeiten mit benutzerdefinierten Schaltflächen finden Sie im Rezept zum [Verwenden eines Bilds für eine Schaltfläche](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button) .

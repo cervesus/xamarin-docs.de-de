@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 6fd6484e547f22f1dc7f27578834b5292d6d2d2a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770010"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001609"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Tipps zur Problembehandlung bei xamarin. Mac
 
@@ -47,20 +47,20 @@ In den meisten Fällen fängt der Debugger in Visual Studio für Mac Ausnahmen u
 Das Debuggen dieser Programme kann frustrierend sein, da das Auffinden der erforderlichen Informationen schwierig sein kann. Im folgenden finden Sie einige Ansätze, die möglicherweise hilfreich sind:
 
 - Stellen Sie sicher, dass die in der Datei " **Info. plist** " aufgeführte MacOS-Version mit der Version von MacOS übereinstimmt, die derzeit auf dem Computer installiert ist.
-- Überprüfen Sie die Visual Studio für Mac Anwendungs Ausgabe (**anzeigen** -> der**Pads** -> -**Anwendungs Ausgabe**) für Stapel Überwachungen oder Ausgaben in roter Farbe aus Cocoa, die die Ausgabe beschreiben können.
+- Überprüfen Sie die Visual Studio für Mac Anwendungs Ausgabe (**anzeigen** -> **Pads** -> **Anwendungs Ausgabe**) für Stapel Überwachungen oder Ausgaben in roter Farbe aus Cocoa, die die Ausgabe beschreiben können.
 - Führen Sie die Anwendung über die Befehlszeile aus, und überprüfen Sie die Ausgabe (in der **Terminal** -APP) mithilfe von:
 
-  `MyApp.app/Contents/MacOS/MyApp`(wobei `MyApp` der Name der Anwendung ist.)
+  `MyApp.app/Contents/MacOS/MyApp` (wobei `MyApp` der Name der Anwendung ist)
 - Sie können die Ausgabe vergrößern, indem Sie Ihrem Befehl in der Befehlszeile "MONO_LOG_LEVEL" hinzufügen, z. b.:
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
 - Sie können einen systemeigenen Debugger (`lldb`) an Ihren Prozess anfügen, um festzustellen, ob dieser weitere Informationen enthält (Dies erfordert eine kostenpflichtige Lizenz). Gehen Sie beispielsweise wie folgt vor:
 
-  1. Geben `lldb MyApp.app/Contents/MacOS/MyApp` Sie im Terminal ein.
-  2. Geben `run` Sie im Terminal ein.
-  3. Geben `c` Sie im Terminal ein.
+  1. Geben Sie `lldb MyApp.app/Contents/MacOS/MyApp` im Terminal ein.
+  2. Geben Sie `run` im Terminal ein.
+  3. Geben Sie `c` im Terminal ein.
   4. Beenden, nachdem das Debugging abgeschlossen wurde.
-- Als letztes Mittel können Sie vor dem `NSApplication.Init` Aufrufen von `Main` in ihrer-Methode (oder an anderen Stellen wie erforderlich) Text in eine Datei an einem bekannten Speicherort schreiben, um zu verfolgen, bei welchem Schritt der Startprobleme auftreten.
+- Als letztes Mittel können Sie vor dem Aufrufen von `NSApplication.Init` in ihrer `Main`-Methode (oder an anderen Stellen nach Bedarf) Text in eine Datei an einem bekannten Speicherort schreiben, um zu verfolgen, bei welchem Schritt der Startprobleme auftreten.
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
@@ -72,15 +72,15 @@ Der Debugger stellt über TCP eine Verbindung mit xamarin. Mac-apps her. Dies be
 
 [![Bearbeiten der Berechtigungen](troubleshooting-images/debug01.png "Bearbeiten der Berechtigungen")](troubleshooting-images/debug01-large.png#lightbox)
 
-Die Berechtigung **ausgehende Netzwerkverbindungen zulassen (Client)** ist die Berechtigung, die für den Debugger erforderlich ist. durch Aktivieren dieser Option wird das Debugging normal zugelassen. Da Sie nicht ohne diese Debuggen können, haben `CompileEntitlements` wir das `msbuild` Ziel für aktualisiert, um diese Berechtigung automatisch den Berechtigungen für jede APP hinzuzufügen, die nur für Debugbuilds in einem Sandkasten enthalten ist. Releasebuilds sollten die Berechtigungen unverändert verwenden, die in der Berechtigungsdatei angegeben sind.
+Die Berechtigung **ausgehende Netzwerkverbindungen zulassen (Client)** ist die Berechtigung, die für den Debugger erforderlich ist. durch Aktivieren dieser Option wird das Debugging normal zugelassen. Da Sie nicht ohne diese Debuggen können, haben wir das `CompileEntitlements` Ziel für `msbuild` aktualisiert, um diese Berechtigung automatisch den Berechtigungen für jede APP hinzuzufügen, die nur für Debugbuilds in einem Sandkasten enthalten ist. Releasebuilds sollten die Berechtigungen unverändert verwenden, die in der Berechtigungsdatei angegeben sind.
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System. NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar.
 
-Wenn Sie Drittanbieterbibliotheken in Ihre xamarin. Mac-app einschließen, erhalten Sie möglicherweise eine Fehlermeldung in der Form "System. NotSupportedException: Bei dem Versuch, die APP zu kompilieren und auszuführen, sind keine Daten für die Codierung 437 verfügbar. Beispielsweise können Bibliotheken, z `Ionic.Zip.ZipFile`. b., diese Ausnahme während des Vorgangs auslösen.
+Wenn Sie Drittanbieterbibliotheken in Ihre xamarin. Mac-app einschließen, erhalten Sie möglicherweise einen Fehler im Format "System. NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar", wenn Sie versuchen, die APP zu kompilieren und auszuführen. Beispielsweise können Bibliotheken, z. b. `Ionic.Zip.ZipFile`, diese Ausnahme während des Vorgangs auslösen.
 
-Dies kann behoben werden, indem Sie die Optionen für das xamarin. Mac-Projekt öffnen, zur **Mac** > -buildinternationalisierung wechseln und die **westliche** Internationalisierung überprüfen:
+Dies kann behoben werden, indem Sie die Optionen für das xamarin. Mac-Projekt öffnen, zu **Mac Build** > **Internationalisierung** wechseln und die **westliche** Internationalisierung überprüfen:
 
-[![Bearbeiten der Buildoptionen](troubleshooting-images/issue01.png "Editing the build options")](troubleshooting-images/issue01-large.png#lightbox)
+[![Bearbeiten der Buildoptionen](troubleshooting-images/issue01.png "Bearbeiten der Buildoptionen")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>Kompilierung fehlgeschlagen (mm5103)
 
@@ -102,17 +102,17 @@ Wenn Sie auf die Datei " **Berechtigungen. plist** " doppelklicken, wird der Ber
 
 [![Bearbeiten der Berechtigungen](troubleshooting-images/entitlements02.png "Bearbeiten der Berechtigungen")](troubleshooting-images/entitlements02-large.png#lightbox)
 
-Für vorhandene xamarin. Mac-Projekte müssen Sie die Datei " **Berechtigungen. plist** " manuell erstellen, indem Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt klicken und**neue Datei** **Hinzufügen** > auswählen. Wählen Sie als nächstes **xamarin. Mac** > **leere Eigenschaften Liste**aus:
+Für vorhandene xamarin. Mac-Projekte müssen Sie die Datei "Berechtigungs **. plist** " manuell erstellen, indem Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt klicken und > **neue Datei** **Hinzufügen** auswählen. Wählen Sie als nächstes **xamarin. Mac** > **Liste leere Eigenschaften**aus:
 
 ![Hinzufügen einer neuen Eigenschaften Liste](troubleshooting-images/entitlements03.png "Hinzufügen einer neuen Eigenschaften Liste")
 
-Geben `Entitlements` Sie als Namen ein, und klicken Sie auf die Schaltfläche **neu** . Wenn Ihr Projekt zuvor eine Berechtigungsdatei enthielt, werden Sie aufgefordert, Sie dem Projekt hinzuzufügen, anstatt eine neue Datei zu erstellen:
+Geben Sie `Entitlements` als Namen ein, und klicken Sie auf die Schaltfläche **neu** . Wenn Ihr Projekt zuvor eine Berechtigungsdatei enthielt, werden Sie aufgefordert, Sie dem Projekt hinzuzufügen, anstatt eine neue Datei zu erstellen:
 
 [![Überprüfen der Datei überschreiben](troubleshooting-images/entitlements04.png "Überprüfen der Datei überschreiben")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="community-support-on-the-forums"></a>Communityunterstützung in den Foren
 
-Die Community von Entwicklern, die xamarin-Produkte verwenden, ist erstaunlich, und viele besuchen unsere [xamarin. Mac-Foren](http://forums.xamarin.com/categories/mac) , um Erfahrungen und deren Fachkenntnisse zu teilen. Außerdem besuchen xamarin-Techniker in regelmäßigen Abständen das Forum, um Hilfe zu erhalten.
+Die Community von Entwicklern, die xamarin-Produkte verwenden, ist erstaunlich, und viele besuchen unsere [xamarin. Mac-Foren](https://forums.xamarin.com/categories/mac) , um Erfahrungen und deren Fachkenntnisse zu teilen. Außerdem besuchen xamarin-Techniker in regelmäßigen Abständen das Forum, um Hilfe zu erhalten.
 
 <a name="filing-a-bug"/>
 

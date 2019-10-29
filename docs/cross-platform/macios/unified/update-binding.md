@@ -3,15 +3,15 @@ title: Migrieren einer Bindung zu Unified API
 description: In diesem Artikel werden die Schritte beschrieben, die zum Aktualisieren eines vorhandenen xamarin-Bindungs Projekts erforderlich sind, um die Unified APIs für xamarin. IOS-und xamarin. Mac-Anwendungen zu unterstützen.
 ms.prod: xamarin
 ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: da877cc10829c4067596263b2a3676413103282d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8f55dd2d300da80a57c06f15cf185558cfc5e41
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765422"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015045"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrieren einer Bindung zu Unified API
 
@@ -36,7 +36,7 @@ Bindungs Projekte werden in Visual Studio auf einem Windows-Computer nicht unter
 
 Die vereinheitlichten APIs machen es einfacher als je zuvor, Code zwischen Mac und IOS gemeinsam zu nutzen, und Sie können 32-und 64-Bit-Anwendungen mit derselben Binärdatei unterstützen. Durch das Löschen der _monomac_ -und _MonoTouch_ -Präfixe aus den Namespaces wird die einfachere Freigabe über xamarin. Mac-und xamarin. IOS-Anwendungsprojekte hinweg erreicht.
 
-Daher müssen wir unsere Bindungs Verträge (und `.cs` andere Dateien in unserem Bindungs Projekt) ändern, um die _monomac_ -und `using` MonoTouch-Präfixe aus den Anweisungen zu entfernen.
+Daher müssen wir unsere Bindungs Verträge (und andere `.cs` Dateien im Bindungs Projekt) ändern, um die _monomac_ -und _MonoTouch_ -Präfixe aus unseren `using` Anweisungen zu entfernen.
 
 Angenommen, die folgenden using-Anweisungen sind in einem Bindungs Vertrag angegeben:
 
@@ -64,11 +64,11 @@ Weitere Informationen zum Unified API finden Sie in der [Unified API](~/cross-pl
 
 ## <a name="update-to-native-data-types"></a>Aktualisieren auf systemeigene Datentypen
 
-Mit Ziel-C wird `NSInteger` der- `int32_t` Datentyp auf `int64_t` 32-Bit-Systemen und auf 64-Bit-Systemen zugeordnet. Um dieses Verhalten zu erfüllen, ersetzt das neue Unified API die vorherigen Verwendungen von `int` (die in .net als `System.Int32`immer bezeichnet wird) auf einen neuen Datentyp `System.nint`:.
+Ziel-C ordnet den `NSInteger`-Datentyp `int32_t` auf 32-Bit-Systemen und `int64_t` auf 64-Bit-Systemen zu. Um dieses Verhalten zu erfüllen, ersetzt das neue Unified API die vorherige Verwendung von `int` (die in .net als immer `System.Int32`definiert ist) in einen neuen Datentyp: `System.nint`.
 
-Zusammen mit dem neuen `nint` -Datentyp führt der Unified API die `nuint` - `nfloat` und-Typen ein, um `NSUInteger` auch `CGFloat` die-und-Typen zu Mapping.
+Zusammen mit dem neuen `nint`-Datentyp führt der Unified API die `nuint`-und `nfloat` Typen ein, um auch den `NSUInteger`-und `CGFloat`-Typen zu Mapping.
 
-Im obigen Beispiel müssen wir unsere API überprüfen und sicherstellen, dass jede Instanz `NSInteger`von `NSUInteger` `CGFloat` , die wir zuvor `int`zugeordnet haben `uint` `float` , und auf die neue `nint` aktualisiertwerden.`nuint` - `nfloat` und-Typen.
+Im obigen Beispiel müssen wir unsere API überprüfen und sicherstellen, dass jede Instanz von `NSInteger`, `NSUInteger` und `CGFloat`, die wir zuvor `int`, `uint` und `float` die neue `nint`, `nuint` und `nfloat` Typen.
 
 Angenommen, eine Definition der Ziel-C-Methode von:
 
@@ -90,21 +90,21 @@ Die neue Bindung wird wie folgt aktualisiert:
 nint Add(nint operandUn, nint operandDeux);
 ```
 
-Wenn eine Zuordnung zu einer neueren Version von Drittanbietern als mit der `.h` ursprünglich verknüpften Version stattfinden soll, müssen die Header Dateien für die Bibliothek überprüft werden, und es wird geprüft, ob es sich um das Beenden, explizite Aufrufe von `int`, `int32_t`, `unsigned int` `uint32_t` oder handelt. wurde aktualisiert, sodass Sie ein `NSInteger`oder `NSUInteger` ein `CGFloat`ist. `float` Wenn dies der Fall ist, müssen die `nint`gleichen `nuint` Änderungen `nfloat` an den-und-Typen auch an Ihren Zuordnungen vorgenommen werden.
+Wenn eine Zuordnung zu einer neueren Drittanbieter Bibliothek als mit der ursprünglich verknüpften Version stattfinden soll, müssen wir die `.h` Header Dateien für die Bibliothek überprüfen und prüfen, ob es sich um explizite Aufrufe von `int`, `int32_t``unsigned int`, `uint32_t` oder `float` als `NSInteger`, `NSUInteger` oder `CGFloat`aktualisiert wurden. Wenn dies der Fall ist, müssen die gleichen Änderungen am `nint`, `nuint` und `nfloat` Typen auch an Ihren Zuordnungen vorgenommen werden.
 
 Weitere Informationen zu diesen Datentyp Änderungen finden Sie im Dokument [native Typen](~/cross-platform/macios/nativetypes.md) .
 
 ## <a name="update-the-coregraphics-types"></a>Aktualisieren der CoreGraphics-Typen
 
-Abhängig vom Gerät, auf dem Sie ausgeführt werden, werden die `CoreGraphics` Datentypen "Point", "size" und "Rechteck" 64 32 verwendet, die in verwendet werden. Wenn xamarin die IOS-und Mac-APIs ursprünglich gebunden hat, wurden vorhandene Datenstrukturen verwendet, die mit den `System.Drawing` Daten`RectangleF` Typen in (z. b.) verglichen wurden.
+Die mit `CoreGraphics` verwendeten Punkt-, Größen-und Rechteck Datentypen verwenden je nach dem Gerät, auf dem Sie ausgeführt werden, 32-oder 64-Bits. Wenn xamarin die IOS-und Mac-APIs ursprünglich gebunden hat, wurden vorhandene Datenstrukturen verwendet, die mit den Datentypen in `System.Drawing` verglichen wurden (z. b.`RectangleF`).
 
 Aufgrund der Anforderungen zur Unterstützung von 64 Bits und den neuen systemeigenen Datentypen müssen die folgenden Anpassungen an vorhandenem Code vorgenommen werden, wenn `CoreGraphic` Methoden aufgerufen werden:
 
-- **CGRect** : verwenden `CGRect` Sie anstelle `RectangleF` von, wenn Sie Gleit Komma-rechteckige Bereiche definieren.
-- **CGSize** : verwenden `CGSize` Sie anstelle `SizeF` von, wenn Sie Gleit Komma Größen (Breite und Höhe) definieren.
-- **CGPoint** : verwenden `CGPoint` Sie anstelle `PointF` von, wenn Sie eine Gleit Komma Position (X-und Y-Koordinaten) definieren.
+- **CGRect** : Verwenden Sie `CGRect` anstelle von `RectangleF`, wenn Sie Gleit Komma-rechteckige Bereiche definieren.
+- **CGSize** : Verwenden Sie `CGSize` anstelle von `SizeF`, wenn Sie Gleit Komma Größen (Breite und Höhe) definieren.
+- **CGPoint** -verwenden Sie `CGPoint` anstelle von `PointF`, wenn Sie eine Gleit Komma Position (X-und Y-Koordinaten) definieren.
 
-Im obigen Beispiel müssen wir unsere API überprüfen und sicherstellen, dass jede Instanz von `CGRect` `CGSize` oder, `CGPoint` die zuvor an `PointF` `RectangleF` `SizeF` den systemeigenen Typ gebunden oder in den systemeigenen `CGRect`Typ geändert wurde, `CGSize` oder`CGPoint` direkt.
+Im obigen Beispiel müssen wir unsere API überprüfen und sicherstellen, dass alle Instanzen von `CGRect`, `CGSize` oder `CGPoint`, die zuvor an `RectangleF`, `SizeF` oder `PointF` gebunden waren, in den systemeigenen Typ geändert werden `CGRect`, `CGSize` oder `CGPoint` direkt.
 
 Beispielsweise bei einem Ziel-C-Initialisierer von:
 
@@ -132,13 +132,13 @@ Wenn alle Codeänderungen vorhanden sind, müssen wir das Bindungs Projekt ände
 
 ## <a name="modify-the-binding-project"></a>Ändern des Bindungs Projekts
 
-Als letzten Schritt zum Aktualisieren des Bindungs Projekts für die Verwendung der Unified APIs muss entweder der `MakeFile` geändert werden, der zum Erstellen des Projekts oder des xamarin-Projekt Typs verwendet wird (wenn die Bindung aus Visual Studio für Mac) und das anweisen von _bberühren_ an BIND für die vereinheitlichten APIs anstelle der klassischen APIs.
+Als letzten Schritt zum Aktualisieren des Bindungs Projekts für die Verwendung der vereinheitlichten APIs müssen wir entweder die `MakeFile` ändern, mit der wir das Projekt oder den xamarin-Projekttyp erstellen (bei der Bindung aus Visual Studio für Mac) und die _bberührungs_ Anweisung anweisen, eine Bindung herzustellen. die vereinheitlichten APIs anstelle der klassischen APIs.
 
 ### <a name="updating-a-makefile"></a>Aktualisieren eines Makefile
 
-Wenn wir ein Makefile verwenden, um das Bindungs Projekt in xamarin zu erstellen. DLL, wir müssen die `--new-style` Befehlszeilenoption einschließen und anstelle von `btouch`aufruft `btouch-native` .
+Wenn wir ein Makefile verwenden, um das Bindungs Projekt in xamarin zu erstellen. DLL, wir müssen die Befehlszeilenoption `--new-style` einschließen und `btouch-native` anstelle von `btouch`aufzurufen.
 
-Es gibt also Folgendes `MakeFile`:
+Wenn die folgenden `MakeFile`:
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -174,13 +174,13 @@ clean:
 ```
 <!--markdownlint-enable MD010 -->
 
-Wir müssen vom Aufruf `btouch` von zu wechseln, damit wir die `btouch-native`Makro Definition wie folgt anpassen:
+Wir müssen vom Aufruf von `btouch` zu `btouch-native`wechseln, damit wir die Makro Definition wie folgt anpassen:
 
 ```makefile
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch-native
 ```
 
-Aktualisieren Sie den-Befehl, `btouch` und fügen Sie `--new-style` die-Option wie folgt hinzu:
+Aktualisieren Sie den `btouch`-Befehl, und fügen Sie die `--new-style`-Option wie folgt hinzu:
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -189,7 +189,7 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 ```
 <!--markdownlint-enable MD010 -->
 
-Wir können nun die neue `MakeFile` 64-Bit-Version unserer API als normale Version ausführen.
+Nun können wir unsere `MakeFile` wie gewohnt ausführen, um die neue 64-Bit-Version unserer API zu erstellen.
 
 ### <a name="updating-a-binding-project-type"></a>Aktualisieren eines Bindungs Projekt Typs
 
@@ -198,13 +198,13 @@ Wenn wir eine Visual Studio für Mac Bindungs Projektvorlage verwenden, um unser
 Führen Sie folgende Schritte aus:
 
 1. Starten Sie Visual Studio für Mac.
-2. Wählen **Sie Datei** > neue > Projekt Mappe **...**
-3. Wählen Sie im Dialog Feld neue Projekt Mappe die Option **IOS** > -**Unified API** > **IOS-Bindungs Projekt**aus: 
+2. **Datei** > **neue** > **Lösung auswählen...**
+3. Wählen Sie im Dialog Feld neue Projekt Mappe die Option **IOS** > **Unified API** > **IOS-Bindungs Projekt**aus: 
 
-    [![](update-binding-images/image01new.png "Wählen Sie im Dialog Feld neue Projekt Mappe die Option IOS/Unified API/IOS-Bindungs Projekt aus.")](update-binding-images/image01new.png#lightbox)
+    [![](update-binding-images/image01new.png "In the New Solution Dialog Box, select iOS / Unified API / iOS Binding Project")](update-binding-images/image01new.png#lightbox)
 4. Geben Sie im Dialogfeld "Neues Projekt konfigurieren" einen **Namen** für das neue Bindungs Projekt ein, und klicken Sie auf die Schaltfläche **OK** .
 5. Schließen Sie die 64-Bit-Version der Ziel-C-Bibliothek ein, für die Bindungen erstellt werden sollen.
-6. Kopieren Sie den Quellcode aus Ihrem vorhandenen 32-Bit-Classic API Bindungs Projekt (z. `ApiDefinition.cs` b `StructsAndEnums.cs` . die Dateien und).
+6. Kopieren Sie den Quellcode aus Ihrem vorhandenen 32-Bit-Classic API Bindungs Projekt (z. b. die `ApiDefinition.cs`-und `StructsAndEnums.cs`-Dateien).
 7. Legen Sie die oben aufgeführten Änderungen an den Quell Code Dateien fest.
 
 Wenn alle diese Änderungen vorhanden sind, können Sie die neue 64-Bit-Version der API wie die 32-Bit-Version erstellen.

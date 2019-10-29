@@ -4,15 +4,15 @@ description: In diesem Artikel werden einige der neuen Features beschrieben, die
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 8cbb7c9c3da92b1ea5140e6f85accf53dab0bf80
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 382315f755102d7111db1a5c0f71d43bdea97a10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761461"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020187"
 ---
 # <a name="ice-cream-sandwich-features"></a>Ice Cream Sandwich-Features
 
@@ -22,10 +22,10 @@ _In diesem Artikel werden einige der neuen Features beschrieben, die Anwendungse
 
 Die Android-Betriebs System Version 4,0 (API-Ebene 14) stellt eine größere Funktionsweise des Android-Betriebssystems dar und umfasst eine Reihe wichtiger Änderungen und Upgrades, einschließlich der folgenden:
 
-- **Aktualisierte Benutzeroberfläche** – mit mehreren neuen Benutzeroberflächen Features können Entwickler beim Erstellen von Anwendungs Benutzeroberflächen mehr Leistung und Flexibilität erzielen. Zu diesen neuen Features gehören `GridLayout` : `PopupMenu` , `Switch` , Widget und `TextureView` . 
+- **Aktualisierte Benutzeroberfläche** – mit mehreren neuen Benutzeroberflächen Features können Entwickler beim Erstellen von Anwendungs Benutzeroberflächen mehr Leistung und Flexibilität erzielen. Zu diesen neuen Features gehören: `GridLayout`, `PopupMenu`, `Switch` Widget und `TextureView`. 
 - **Bessere Hardware Beschleunigung** – das 2D-Rendering erfolgt nun auf der GPU für alle Android-Steuerelemente. Außerdem ist die Hardwarebeschleunigung standardmäßig in allen Anwendungen aktiviert, die für Android 4,0 entwickelt wurden. 
 - **Neue Daten-APIs** – es gibt neuen Zugriff auf Daten, die zuvor nicht offiziell zugänglich waren, wie z. b. Kalenderdaten und das Benutzerprofil des Geräte Besitzers. 
-- **App-Datenfreigabe** – das Freigeben von Daten zwischen Anwendungen und Geräten ist jetzt einfacher als je zuvor über `ShareActionProvider` Technologien wie das, was das Erstellen einer Freigabe Aktion aus einer Aktionsleiste und *Android-Beam* für *Near Field erleichtert. Kommunikation (NFC)* , wodurch es zu einem Snap-in ist, Daten auf mehreren Geräten in unmittelbarer Nähe zueinander zu teilen. 
+- **App-Datenfreigabe** – das Freigeben von Daten zwischen Anwendungen und Geräten ist jetzt einfacher als je zuvor über Technologien wie die `ShareActionProvider`, was das Erstellen einer Freigabe Aktion aus einem Aktionsleiste und *Android-Beam* für die *Near Field Communications ermöglicht. NFC)* , wodurch das Freigeben von Daten auf mehreren Geräten in unmittelbarer Nähe zueinander zu einem Snap-in wird. 
 
 In diesem Artikel untersuchen wir diese Features und andere Änderungen, die an der Android 4,0-API vorgenommen wurden. Außerdem wird erläutert, wie Sie die einzelnen Features mit xamarin. Android verwenden.
 
@@ -38,7 +38,7 @@ Eine Reihe von neuen Technologien für die Benutzeroberfläche ist mit Android 4
 - **[Textureview](~/android/user-interface/controls/texture-view.md)** – aktiviert Video-und OpenGL-Inhalte in einer Ansicht. 
 - **[Navigationsleiste](~/android/user-interface/controls/navigation-bar.md)** – enthält virtuelle Schaltflächen für "Back", "Home" und "Multitasking". 
 
-Außerdem wurden andere Elemente der Benutzeroberfläche verbessert, wie z. `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`b. die, die nun einfacher zu bearbeiten ist, und Registerkarten, die eine präziere Darstellung aufweisen.
+Außerdem wurden andere Elemente der Benutzeroberfläche verbessert, wie z. b. das `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`, das nun einfacher zu arbeiten ist, und Registerkarten, die eine präziere Darstellung aufweisen.
 
 ## <a name="sharing-features"></a>Freigabe Features
 

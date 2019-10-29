@@ -3,15 +3,15 @@ title: Verwenden von Daten in einer Android-App
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/08/2018
-ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: c0ff15c516fa2eb85ac9748004df5a14425b510c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754458"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023739"
 ---
 # <a name="using-data-in-an-app"></a>Verwenden von Daten in einer App
 
@@ -94,7 +94,7 @@ Einige Anwendungen werden mit einer Datenbank ausgeliefert, die bereits mit Date
 
 - Der **SQLite-Manager Firefox-Erweiterungs** &ndash; funktioniert unter Mac und Windows und erzeugt Dateien, die mit IOS und Android kompatibel sind.
 
-- @No__t_1 **Befehlszeile** finden Sie unter [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
+- &ndash; **Befehlszeile** finden Sie unter [www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) .
 
 Wenn Sie eine Datenbankdatei für die Verteilung mit Ihrer APP erstellen, achten Sie darauf, dass Tabellen und Spalten benannt werden, um sicherzustellen, dass Sie mit den Anforderungen Ihres Codes identisch sind. Dies gilt insbesondere, C# Wenn Sie sqlite.NET verwenden, der davon ausgeht, dass die Namen der Klassen und Eigenschaften entsprechen oder die zugeordneten benutzerdefinierten Attribute).
 

@@ -4,15 +4,15 @@ description: Dieser Artikel bietet eine Einführung in die Arbeit mit Storyboard
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: ff29ac58db618d4a644bbaa5a95ac8624726827f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b27a8d65ebaca6009d8310931b9dac3a4d7e12f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770049"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026149"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Einführung in Storyboards in xamarin. Mac
 
@@ -20,7 +20,7 @@ _Dieser Artikel bietet eine Einführung in die Arbeit mit Storyboards in einer x
 
 Storyboards ermöglichen es Ihnen, eine Benutzeroberfläche für die xamarin. Mac-app zu entwickeln, die nicht nur die Fenster Definitionen und Steuerelemente enthält, sondern auch die Verknüpfungen zwischen verschiedenen Fenstern (über Seiten und Ansichts Zuständen) enthält.
 
-[![](images/intro01.png "Eine Beispiel Benutzeroberfläche in Xcode")](images/intro01.png#lightbox)
+[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
 
 Dieser Artikel bietet eine Einführung in die Verwendung von Storyboards zum Definieren der Benutzeroberfläche einer xamarin. Mac-app.
 
@@ -36,11 +36,11 @@ Mithilfe von Storyboards kann die gesamte Benutzeroberfläche einer xamarin. Mac
 
 Wie bereits erwähnt, definiert ein Storyboard alle Benutzeroberflächen für eine bestimmte APP, die in einer funktionalen Übersicht der zugehörigen _Ansichts Controller_aufgeschlüsselt sind. In der Interface Builder von Xcode befindet sich jeder dieser Controller in einer eigenen _Szene_.
 
-[![](images/intro02.png "Ein Beispiel für einen Ansichts Controller")](images/intro02.png#lightbox)
+[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
 
 Jede Szene stellt ein angegebenes Ansichts-und Ansichts Controller Paar mit einem Satz von Zeilen (sogenannten Segues) dar, die jede Szene in der Benutzeroberfläche verbinden und so ihre Beziehungen anzeigen. Einige-Elemente definieren, wie ein Ansichts Controller eine oder mehrere untergeordnete Sichten oder Ansichts Controller enthält. Andere Segues definieren Übergänge zwischen Ansichts Controller (z. b. das Anzeigen eines popover oder Dialog Felds). 
 
-[![](images/intro03.png "Ein Beispiel für einen anderen.")](images/intro03.png#lightbox)
+[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
 
 Wichtig zu beachten ist, dass jeder-Typ den Datenfluss zwischen dem angegebenen Element der Benutzeroberfläche der APP darstellt.
 
@@ -50,7 +50,7 @@ Wichtig zu beachten ist, dass jeder-Typ den Datenfluss zwischen dem angegebenen 
 
 Ansichts Controller definieren die Beziehungen zwischen einer bestimmten Ansicht von Informationen in einer Mac-app und dem Datenmodell, das diese Informationen bereitstellt. Jede Szene der obersten Ebene im Storyboard stellt einen Ansichts Controller im Code der xamarin. Mac-app dar.
 
-[![](images/intro04.png "Ein Beispiel für den Ansichts Controller")](images/intro04.png#lightbox)
+[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
 
 Auf diese Weise ist jeder Ansichts Controller eine eigenständige, wiederverwendbare Kopplung der visuellen Darstellung der Informationen (Ansicht) und der Logik, um diese Informationen darzustellen und zu steuern.
 
@@ -70,7 +70,7 @@ Unter macOS gruppieren die meisten apps ihre Ansichten tendenziell innerhalb des
 
 Bei den Tendenzen von macOS in Bezug auf die _Kapselung_ gibt es Situationen, in denen Präsentationsseiten verwendet werden, wie z. b. modale Fenster, Blatt Ansichten und popovers.
 
-Wenn Sie präsentationsegues verwenden, können Sie `PrepareForSegue` die-Methode des übergeordneten Ansichts Controllers überschreiben, um die Präsentation zu initialisieren und Variablen zu erstellen und dem Ansichts Controller alle Daten bereitzustellen.
+Wenn Sie präsentationsegues verwenden, können Sie die `PrepareForSegue`-Methode des übergeordneten Ansichts Controllers überschreiben, um die Darstellung und Variablen zu initialisieren und alle Daten für den Ansichts Controller bereitzustellen, der angezeigt wird.
 
 <a name="Design-and-Run-Times" />
 

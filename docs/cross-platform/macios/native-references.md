@@ -3,15 +3,15 @@ title: Native Verweise auf Ios-, Mac-und Bindungs Projekte
 description: Native Verweise bieten Ihnen die Möglichkeit, ein natives Framework in ein xamarin. IOS-, xamarin. Mac-oder Bindungs Projekt einzubetten.
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 1ad7a98b92c34cf956e50ebc7a6cec73580f8f04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b3adfac067964e0a0f169b5d8f8860f34deffe62
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765501"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015621"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>Native Verweise in Ios-, Mac-und Bindungs Projekten
 
@@ -30,19 +30,19 @@ In ios 8 (und höher) können **eingebettete Frameworks** sowohl statisch verkn�
 
 <a name="Static-vs-Dynamic-Frameworks" />
 
-### <a name="static-vs-dynamic-frameworks"></a>Statische und Dynamische Frameworks
+### <a name="static-vs-dynamic-frameworks"></a>Statische und dynamische Frameworks
 
 **Statische Frameworks** werden zum Zeitpunkt der Kompilierung verknüpft, bei dem **dynamische Frameworks** zur Laufzeit verknüpft werden, und Sie können ohne erneute Verknüpfung geändert werden. Wenn Sie ein Drittanbieter-Framework vor IOS 8 verwendet haben, haben Sie ein **statisches Framework** verwendet, das in Ihre APP kompiliert wurde. Weitere Informationen finden Sie in der Dokumentation zur [dynamischen Bibliotheks Programmierung](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html#//apple_ref/doc/uid/TP40001873-SW1) von Apple.
 
 <a name="Embedded-vs-System-Frameworks" />
 
-### <a name="embedded-vs-system-frameworks"></a>Eingebettete und System Frameworks
+### <a name="embedded-vs-system-frameworks"></a>Eingebettete und System-Frameworks
 
 **Eingebettete Frameworks** sind in Ihrem App-Bündel enthalten und sind nur über die Sandbox für Ihre APP zugänglich. **System-Frameworks** werden auf Betriebs System Ebene gespeichert und sind für alle apps auf dem Gerät verfügbar. Derzeit ist nur Apple in der Lage, Frameworks auf Betriebs System Ebene zu erstellen.
 
 <a name="Thin-vs-Fat-Frameworks" />
 
-### <a name="thin-vs-fat-frameworks"></a>Dünn im Vergleich zu FAT-Frameworks
+### <a name="thin-vs-fat-frameworks"></a>Thin-und FAT-Frameworks
 
 **Thin Frameworks** enthalten nur den kompilierten Code für eine bestimmte Systemarchitektur, in der **FAT-Frameworks** Code für mehrere Architekturen enthalten. Jede architekturspezifische Codebasis, die in ein Framework kompiliert wurde, wird als _Slice_bezeichnet. Wenn wir z. b. ein Framework haben, das für die beiden IOS-simulatorarchitekturen (i386 und x86_64) kompiliert wurde, würde es zwei Slices enthalten.
 
@@ -62,7 +62,7 @@ Wie bereits erwähnt, muss es ein FAT-Framework sein, das alle Systemarchitektur
 
 Wenn sich das Framework und die verbrauchende App im gleichen Xcode-Projekt befinden, ist dies kein Problem, da Xcode sowohl das Framework als auch die APP mit denselben Buildeinstellungen erstellt. Da xamarin-apps keine eingebetteten Frameworks erstellen können, kann diese Technik nicht verwendet werden.
 
-Um dieses Problem zu beheben, `lipo` kann das Befehlszeilen Tool verwendet werden, um zwei oder mehr Frameworks in einem FAT-Framework zusammenzuführen, das alle erforderlichen Slices enthält. Weitere Informationen zum Arbeiten mit dem `lipo` Befehl finden Sie in unserer Dokumentation zum Verknüpfen von [nativen Bibliotheken](~/ios/platform/native-interop.md) .
+Um dieses Problem zu beheben, kann das `lipo`-Befehlszeilen Tool verwendet werden, um zwei oder mehr Frameworks in einem FAT-Framework zusammenzuführen, das alle erforderlichen Slices enthält. Weitere Informationen zum Arbeiten mit dem `lipo`-Befehl finden Sie in unserer Dokumentation zum [Verknüpfen von nativen Bibliotheken](~/ios/platform/native-interop.md) .
 
 <a name="Embedding-a-Framework" />
 
@@ -71,15 +71,15 @@ Um dieses Problem zu beheben, `lipo` kann das Befehlszeilen Tool verwendet werde
 Der folgende Schritt ist erforderlich, um ein Framework in ein xamarin. IOS-oder xamarin. Mac-Projekt mithilfe nativer Verweise einzubetten:
 
 1. Erstellen Sie ein neues, oder öffnen Sie ein vorhandenes xamarin. IOS-, xamarin. Mac-oder-Bindungs Projekt.
-2. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie **hinzu** > fügen**nativer Verweis**hinzufügen aus: 
+2. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Hinzufügen** > **nativen Verweis hinzufügen**aus: 
 
-    [![](native-references-images/ref01.png "Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie nativen Verweis hinzufügen aus.")](native-references-images/ref01.png#lightbox)
+    [![](native-references-images/ref01.png "In the Solution Explorer, right-click on the project name and select Add Native Reference")](native-references-images/ref01.png#lightbox)
 3. Wählen Sie im Dialogfeld **Öffnen** den Namen des nativen Frameworks aus, das Sie einbetten möchten, und klicken Sie auf die Schaltfläche **Öffnen** : 
 
-    [![](native-references-images/ref02.png "Wählen Sie den Namen des Einbindungs Frameworks aus, und klicken Sie auf die Schaltfläche öffnen.")](native-references-images/ref02.png#lightbox)
+    [![](native-references-images/ref02.png "Select the name of the Native Framework to embed and click the Open button")](native-references-images/ref02.png#lightbox)
 4. Das Framework wird der Struktur des Projekts hinzugefügt: 
 
-    [![](native-references-images/ref03.png "Das Framework wird der Projektstruktur hinzugefügt.")](native-references-images/ref03.png#lightbox)
+    [![](native-references-images/ref03.png "The framework will be added to the projects tree")](native-references-images/ref03.png#lightbox)
 
 Wenn das Projekt kompiliert wird, wird das Native Framework in das Paket der APP eingebettet.
 

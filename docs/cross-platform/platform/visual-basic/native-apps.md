@@ -3,15 +3,15 @@ title: Visual Basic in xamarin. Android und xamarin. IOS
 description: In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Native xamarin. IOS-und xamarin. Android-Apps erstellt werden, die in Visual Basic.NET geschriebene Geschäftslogik verwenden.
 ms.prod: xamarin
 ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: ea4dc91b262c2ae153088f6e1a8416cc01cb0fa9
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.openlocfilehash: 9f227f51596a4ed93fd830c3f3495a90c1f7f722
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959124"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014564"
 ---
 # <a name="visual-basic-in-xamarin-android-and-ios"></a>Visual Basic in xamarin Android und IOS
 

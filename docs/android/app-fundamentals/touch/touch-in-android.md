@@ -3,32 +3,32 @@ title: Toucheingabe in Android
 ms.prod: xamarin
 ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: e9810eed3affb15f581b95aec1aff9ae560ff63c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 960f75126fdfed770f79e0b4dad5641886eaf8ba
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754756"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024320"
 ---
 # <a name="touch-in-android"></a>Toucheingabe in Android
 
-Ähnlich wie bei IOS erstellt Android ein Objekt, das Daten über die physische Interaktion des Benutzers mit dem Bild &ndash; Schirm `Android.View.MotionEvent` eines Objekts enthält. Dieses Objekt enthält Daten, z. b. welche Aktion ausgeführt wird, wo die Fingereingabe stattfindet, wie viel Druck aufgetreten ist usw. Ein `MotionEvent` -Objekt unterteilt die Verschiebung in die folgenden Werte:
+Ähnlich wie bei IOS erstellt Android ein Objekt, das Daten über die physische Interaktion des Benutzers mit dem Bildschirm &ndash; einem `Android.View.MotionEvent`-Objekt enthält. Dieses Objekt enthält Daten, z. b. welche Aktion ausgeführt wird, wo die Fingereingabe stattfindet, wie viel Druck aufgetreten ist usw. Ein `MotionEvent`-Objekt teilt die Verschiebung in die folgenden Werte auf:
 
 - Ein Aktions Code, der den Typ der Bewegung beschreibt, z. b. den anfänglichen Fingerabdruck, die Fingereingabe, die sich auf dem Bildschirm bewegt, oder das touchende.
 
-- Ein Satz von Achsen Werten, die die Position von `MotionEvent` und anderen Verschiebungs Eigenschaften beschreiben, z. b. wo die Fingereingabe stattfindet, wann die Fingereingabe stattfindet und wie viel Druck verwendet wurde.
+- Ein Satz von Achsen Werten, die die Position des `MotionEvent` und andere Verschiebungs Eigenschaften beschreiben, z. b. wo die Fingereingabe stattfindet, wann die Fingereingabe stattfindet und wie viel Druck verwendet wurde.
    Die Achsen Werte können sich je nach Gerät unterscheiden, sodass nicht alle Achsen Werte in der vorherigen Liste beschrieben werden.
 
-Das `MotionEvent` -Objekt wird an eine entsprechende Methode in einer Anwendung übermittelt. Es gibt drei Möglichkeiten für eine xamarin. Android-Anwendung, auf ein Berührungs Ereignis zu reagieren:
+Das `MotionEvent` Objekt wird an eine geeignete Methode in einer Anwendung übermittelt. Es gibt drei Möglichkeiten für eine xamarin. Android-Anwendung, auf ein Berührungs Ereignis zu reagieren:
 
-- *Zuweisen eines Ereignis Handlers `View.Touch` zu* : `Android.Views.View` die Klasse verfügt `EventHandler<View.TouchEventArgs>` über eine, der Anwendungen einen Handler zuweisen können. Dies ist das typische .net-Verhalten.
+- *Weisen Sie `View.Touch`einen Ereignishandler zu* : die `Android.Views.View` Klasse verfügt über einen `EventHandler<View.TouchEventArgs>` der Anwendungen einen Handler zuweisen können. Dies ist das typische .net-Verhalten.
 
-- *Implementieren`View.IOnTouchListener`* : Instanzen dieser Schnittstelle können mithilfe der-Sicht einem Ansichts Objekt zugewiesen werden. `SetOnListener`anzuwenden. Dies ist funktional äquivalent zum Zuweisen eines Ereignis Handlers zum `View.Touch` -Ereignis. Wenn eine gemeinsame oder gemeinsam genutzte Logik vorhanden ist, die viele verschiedene Sichten ggf. benötigen, ist es effizienter, eine Klasse zu erstellen und diese Methode zu implementieren, als jede Ansicht als eigenen Ereignishandler zuzuweisen.
+- Das *Implementieren von `View.IOnTouchListener`* Instanzen dieser Schnittstelle kann mithilfe der-Sicht einem Ansichts Objekt zugewiesen werden. `SetOnListener`-Methode. Dies ist funktional äquivalent zum Zuweisen eines Ereignis Handlers zum `View.Touch`-Ereignis. Wenn eine gemeinsame oder gemeinsam genutzte Logik vorhanden ist, die viele verschiedene Sichten ggf. benötigen, ist es effizienter, eine Klasse zu erstellen und diese Methode zu implementieren, als jede Ansicht als eigenen Ereignishandler zuzuweisen.
 
-- *Überschreibungs `View.OnTouchEvent`*  -alle Sichten in der Android `Android.Views.View`-Unterklasse. Wenn eine Ansicht berührt wird, ruft Android den `OnTouchEvent` auf und übergibt ihm ein `MotionEvent` -Objekt als Parameter.
+- Über *schreiben Sie `View.OnTouchEvent`* alle Sichten in der Android-Unterklasse `Android.Views.View`. Wenn eine Ansicht berührt wird, ruft Android den `OnTouchEvent` auf und übergibt ihm ein `MotionEvent`-Objekt als Parameter.
 
 > [!NOTE]
 > Nicht alle Android-Geräte unterstützen Touchscreens. 
@@ -43,9 +43,9 @@ Das Hinzufügen des folgenden Tags zu ihrer Manifest-Datei bewirkt, dass Google 
 
 Eine Geste ist eine handgezeichnete Form auf dem Touchscreen. Eine Geste kann einen oder mehrere Striche enthalten. jeder Strich besteht aus einer Sequenz von Punkten, die von einem anderen Kontaktpunkt mit dem Bildschirm erstellt werden. Android kann viele verschiedene Arten von Gesten unterstützen, von einem einfachen Weg über den Bildschirm bis hin zu komplexen Gesten, die Multitouch betreffen.
 
-Android stellt den `Android.Gestures` Namespace speziell für die Verwaltung und Reaktion auf Gesten bereit. Das Herzstück aller Gesten ist eine spezielle Klasse mit dem Namen `Android.Gestures.GestureDetector`. Wie der Name schon sagt, lauscht diese Klasse auf `MotionEvents` Gesten und Ereignisse, die vom Betriebssystem bereitgestellt werden.
+Android bietet den `Android.Gestures`-Namespace speziell für die Verwaltung und Reaktion auf Gesten. Das Herzstück aller Gesten ist eine spezielle Klasse mit dem Namen `Android.Gestures.GestureDetector`. Wie der Name schon sagt, lauscht diese Klasse auf Gesten und Ereignisse basierend auf `MotionEvents`, die vom Betriebssystem bereitgestellt werden.
 
-Zum Implementieren eines Gesten Detektors muss eine-Aktivität eine `GestureDetector` -Klasse instanziieren und eine Instanz von `IOnGestureListener`bereitstellen, wie im folgenden Code Ausschnitt veranschaulicht:
+Zum Implementieren eines Gesten Detektors muss eine Aktivität eine `GestureDetector` Klasse instanziieren und eine Instanz von `IOnGestureListener`bereitstellen, wie im folgenden Code Ausschnitt veranschaulicht:
 
 ```csharp
 GestureOverlayView.IOnGestureListener myListener = new MyGestureListener();
@@ -131,11 +131,11 @@ Der folgende XML-Code Ausschnitt zeigt, wie Sie eine gestureoverlayview deklarat
     android:layout_height="match_parent" />
 ```
 
-Der `GestureOverlayView` weist mehrere Ereignisse auf, die während des Zeichnens einer Geste ausgelöst werden. Das interessanteste Ereignis ist `GesturePerformed`. Dieses Ereignis wird ausgelöst, wenn der Benutzer das Zeichnen der Geste abgeschlossen hat.
+Der `GestureOverlayView` verfügt über mehrere Ereignisse, die während des Zeichnens einer Geste ausgelöst werden. Das interessanteste Ereignis ist `GesturePerformed`. Dieses Ereignis wird ausgelöst, wenn der Benutzer das Zeichnen der Geste abgeschlossen hat.
 
-Wenn dieses Ereignis ausgelöst wird, fordert die-Aktivität `GestureLibrary` eine auf, eine Entsprechung für den Benutzer mit einer der Gesten auszuführen, die von Gesten Tool erstellt wurde. `GestureLibrary`gibt eine Liste der Vorhersage Objekte zurück.
+Wenn dieses Ereignis ausgelöst wird, fordert die-Aktivität eine `GestureLibrary` auf, die Geste zu versuchen, die dem Benutzer mit einer der Gesten Tool erstellt wurde, die von Gesten Tool erstellt wurden. `GestureLibrary` gibt eine Liste der Vorhersage Objekte zurück.
 
-Jedes Vorhersage Objekt enthält eine Bewertung und einen Namen einer der Gesten in `GestureLibrary`. Je höher das Ergebnis, desto wahrscheinlicher entspricht die in der Vorhersage benannte Geste der vom Benutzer gezeichneten Bewegung.
+Jedes Vorhersage Objekt enthält eine Bewertung und einen Namen einer der Gesten in der `GestureLibrary`. Je höher das Ergebnis, desto wahrscheinlicher entspricht die in der Vorhersage benannte Geste der vom Benutzer gezeichneten Bewegung.
 Im Allgemeinen werden Bewertungen, die niedriger als 1,0 sind, als schlechte Übereinstimmungen angesehen.
 
 Der folgende Code zeigt ein Beispiel für die Übereinstimmung einer Geste:

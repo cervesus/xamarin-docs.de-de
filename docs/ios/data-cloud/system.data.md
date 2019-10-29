@@ -4,19 +4,19 @@ description: In diesem Dokument wird beschrieben, wie Sie mithilfe von "System. 
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4f5f6adf99306754fa7b2aa49855fe228e740d7e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766537"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016944"
 ---
 # <a name="systemdata-in-xamarinios"></a>System. Data in xamarin. IOS
 
-Xamarin. IOS 8,10 bietet Unterstützung für [System. Data](xref:System.Data), einschließlich `Mono.Data.Sqlite.dll` des ADO.NET-Anbieters. Die Unterstützung umfasst das Hinzufügen [der folgenden](~/cross-platform/internals/available-assemblies.md)Assemblys:
+Xamarin. IOS 8,10 bietet Unterstützung für [System. Data](xref:System.Data), einschließlich des `Mono.Data.Sqlite.dll` ADO.NET-Anbieters. Die Unterstützung umfasst das Hinzufügen [der folgenden](~/cross-platform/internals/available-assemblies.md)Assemblys:
 
 - `System.Data.dll`
 - `System.Data.Service.Client.dll`
@@ -28,13 +28,13 @@ Xamarin. IOS 8,10 bietet Unterstützung für [System. Data](xref:System.Data), e
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Programm erstellt eine Datenbank in `Documents/mydb.db3`, und wenn die Datenbank nicht bereits vorhanden ist, wird Sie mit Beispiel Daten aufgefüllt. Die Datenbank wird dann abgefragt, und die Ausgabe wird in `stderr`geschrieben.
+Das folgende Programm erstellt eine Datenbank in `Documents/mydb.db3`, und wenn die Datenbank zuvor nicht vorhanden ist, wird Sie mit Beispiel Daten aufgefüllt. Die Datenbank wird dann abgefragt, wobei die Ausgabe in `stderr`geschrieben wird.
 
 ### <a name="add-references"></a>Verweise hinzufügen
 
-Klicken Sie zunächst mit der rechten Maustaste auf den Knoten **Verweise** , und wählen Sie **Verweise bearbeiten...** aus, `System.Data` und `Mono.Data.Sqlite`wählen Sie dann aus:
+Klicken Sie zunächst mit der rechten Maustaste auf den Knoten **Verweise** , und wählen Sie **Verweise bearbeiten...** aus, und wählen Sie dann `System.Data` und `Mono.Data.Sqlite`:
 
-[![](system.data-images/edit-references-sml.png "Neue Verweise werden hinzugefügt")](system.data-images/edit-references.png#lightbox)
+[![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>Beispielcode
 
@@ -144,15 +144,15 @@ Die in " **System. Data. dll** " fehlenden Funktionen bestehen aus folgendem:
 - Alles, was [System. CodeDom](xref:System.CodeDom) erfordert (z. b.  [System. Data. TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
 - Unterstützung der XML-Konfigurationsdatei (z. b.  [System. Data. Common. dbproviderconfigurationhandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
 - [System. Data. Common. dbproviderfactorys](xref:System.Data.Common.DbProviderFactories) (abhängig von der Unterstützung der XML-Konfigurationsdatei)
-- [System.Data.OleDb](xref:System.Data.OleDb)
-- [System.Data.Odbc](xref:System.Data.Odbc)
-- Die `System.EnterpriseServices.dll` Abhängigkeit wurde aus `System.Data.dll` entfernt, was zum Entfernen der Methode [SqlConnection. endlistdistributedtransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) führte.
+- [System. Data. OleDb](xref:System.Data.OleDb)
+- [System. Data. ODBC](xref:System.Data.Odbc)
+- Die `System.EnterpriseServices.dll` Abhängigkeit wurde aus `System.Data.dll` *entfernt* , was zum Entfernen der Methode [SqlConnection. endlistdistributedtransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) führte.
 
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono. Data. sqlite
 
-In der Zwischenzeit hat **Mono. Data. sqlite. dll** keine Quell Codeänderungen, sondern möglicherweise als Host für eine Reihe von Lauf `Mono.Data.Sqlite.dll` Zeitproblemen, da SQLite 3,5 bindet. IOS 8 wird in der Zwischenzeit mit SQLite 3.8.5 ausgeliefert. Es genügt, dass sich einige Dinge zwischen den beiden Versionen geändert haben.
+In der Zwischenzeit hat **Mono. Data. sqlite. dll** keine Quell Codeänderungen, sondern möglicherweise eine Reihe von *Lauf* Zeitproblemen aufweisen, da `Mono.Data.Sqlite.dll` SQLite 3,5 bindet. IOS 8 wird in der Zwischenzeit mit SQLite 3.8.5 ausgeliefert. Es genügt, dass sich einige Dinge zwischen den beiden Versionen geändert haben.
 
 Die ältere Version von IOS wird mit den folgenden Versionen von SQLite ausgeliefert:
 
@@ -161,7 +161,7 @@ Die ältere Version von IOS wird mit den folgenden Versionen von SQLite ausgelie
 - **IOS 5** -Version 3.7.7.
 - **IOS 4** -Version 3.6.22.
 
-Die häufigsten Probleme stehen im Zusammenhang mit Datenbankschema Abfragen, z. b. der Bestimmung der Laufzeit, welche Spalten in einer bestimmten Tabelle vorhanden `Mono.Data.Sqlite.SqliteConnection.GetSchema` sind, z. b. (über `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` Schreiben von [DbConnection. GetSchema](xref:System.Data.Common.DbConnection.GetSchema) und ( [Überschreiben von DbDataReader. getschemsierbar](xref:System.Data.Common.DbDataReader.GetSchemaTable). Kurz gesagt: Es ist unwahrscheinlich, dass alles, was die [Daten](xref:System.Data.DataTable) Tabelle verwendet, funktioniert.
+Die häufigsten Probleme stehen im Zusammenhang mit Datenbankschema Abfragen, z. b. der Bestimmung der Laufzeit, welche Spalten in einer bestimmten Tabelle vorhanden sind, z. b. `Mono.Data.Sqlite.SqliteConnection.GetSchema` (außer Kraft setzen von [DbConnection. GetSchema](xref:System.Data.Common.DbConnection.GetSchema) und `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` ( [Überschreiben von DbDataReader. getschemsierbar](xref:System.Data.Common.DbDataReader.GetSchemaTable). Kurz gesagt: Es ist unwahrscheinlich, dass alles, was die [Daten](xref:System.Data.DataTable) Tabelle verwendet, funktioniert.
 
 <a name="Data_Binding" />
 

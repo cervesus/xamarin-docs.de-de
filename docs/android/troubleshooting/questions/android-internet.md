@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A6FE770B-A19A-4BF8-95E9-2CF880D4AFC5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 162378c00f3e20574d04dc373fcc492a9407b88d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5996cfa3c0a18fc186ea862a2b3d7910594e1281
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761031"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027012"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Warum kann mein Android-Releasebuild keine Verbindung mit dem Internet herstellen?
 
@@ -26,7 +26,7 @@ Um das Problem zu beheben, können Sie die Internet-Berechtigung im Android-Mani
 
 - Behebung im Editor: Wechseln Sie in Ihrem Android-Projekt zu **Properties-> androidmanifest. XML-> erforderliche Berechtigungen** , und überprüfen Sie **Internet** .
 
-- Behebung in Sourcecode: Öffnen Sie die Datei "androidmanifest" in einem Quellen-Editor, und `<Manifest>` fügen Sie das Berechtigungs Kennzeichen in den Tags
+- Behebung in Sourcecode: Öffnen Sie das "androidmanifest" in einem Quellen-Editor, und fügen Sie das Berechtigungs Kennzeichen in den `<Manifest>`-Tags ein:
 
     ```xml
     <Manifest>

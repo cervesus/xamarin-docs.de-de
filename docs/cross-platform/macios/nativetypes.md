@@ -3,23 +3,23 @@ title: Native Typen für IOS und macOS
 description: In diesem Dokument wird beschrieben, wie die xamarin-Unified API .NET-Typen nach Bedarf den systemeigenen 32-Bit-und 64-Bit-Typen zuordnet, basierend auf der Kompilierungs Zielarchitektur
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: f370bc816fa72f94af8dae32ac295448f858dbb8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1168dfe0f2120e87c57b46011caba5e7a8a0c020
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290796"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015484"
 ---
 # <a name="native-types-for-ios-and-macos"></a>Native Typen für IOS und macOS
 
 Mac-und IOS-APIs verwenden architekturspezifische Datentypen, die auf 32-Bit-Plattformen immer 32 Bits und 64 Bits auf 64-Bit-Plattformen sind.
 
-Beispielsweise ordnet Ziel-C den `NSInteger` `int64_t` -Datentyp auf `int32_t` 32-Bit-Systemen und auf 64-Bit-Systemen zu.
+Ziel-C ordnet z. b. den `NSInteger`-Datentyp `int32_t` auf 32-Bit-Systemen und `int64_t` auf 64-Bit-Systemen zu.
 
-Um dieses Verhalten zu erfüllen, ersetzen wir in unserer vereinheitlichten API die vorherigen Verwendungen `int` von (die in .net als immer wird `System.Int32`definiert definiert) auf einen neuen Datentyp `System.nint`:. Sie können sich "n" als "Native" vorstellen, also den nativen ganzzahligen Typ der Plattform.
+Um dieses Verhalten zu erfüllen, ersetzen wir in unserer vereinheitlichten API die vorherigen Verwendungsmöglichkeiten von `int` (in .net als immer `System.Int32`bezeichnet) an einen neuen Datentyp: `System.nint`. Sie können sich "n" als "Native" vorstellen, also den nativen ganzzahligen Typ der Plattform.
 
 Mit diesen neuen Datentypen wird der gleiche Quellcode für 32-Bit-und 64-Bit-Architekturen kompiliert, abhängig von den Kompilierungs-Flags.
 
@@ -45,19 +45,19 @@ Implizite Konvertierungs Operatoren werden bereitgestellt, wenn es keine Möglic
 
 Explizite Konvertierungs Operatoren werden bereitgestellt, wenn ein Datenverlust möglich ist (64-Bit-Wert wird an einem 32-oder potenziell 32-Speicherort gespeichert).
 
-`int`, `uint` und `float` sindimplizit`nfloat` in konvertierbar `nuint`,und da 32 Bits immer in 32 oder 64 Bits passen. `nint`
+`int`, `uint` und `float` sind implizit in `nint`konvertierbar, `nuint` und `nfloat`, da 32 Bits immer in 32 oder 64 Bits passen.
 
-`nint`, `nuint` `long`und `nfloat` sind implizit in konvertierbar. als 32-oder 64 `ulong` -Bit-Werte werden immer in den 64-Bit- `double` Speicher passen.
+`nint`, `nuint` und `nfloat` sind implizit in `long`konvertierbar. `ulong` und `double` als 32-oder 64-Bit-Werte werden immer in den 64-Bit-Speicher passen.
 
-Sie müssen explizite Konvertierungen von `nint` `nuint` und `nfloat` in `int`verwenden, `uint` und `float` da die systemeigenen Typen möglicherweise 64 Bits Speicher enthalten.
+Sie müssen explizite Konvertierungen von `nint`, `nuint` und `nfloat` in `int`, `uint` und `float` verwenden, da die systemeigenen Typen möglicherweise 64 Bits Speicherplatz enthalten.
 
-Sie müssen explizite Konvertierungen von `long` `ulong` und `double` in `nint`verwenden, `nuint` und `nfloat` da die systemeigenen Typen möglicherweise nur 32 Bits Speicherplatz enthalten können.
+Sie müssen explizite Konvertierungen von `long`, `ulong` und `double` in `nint`, `nuint` und `nfloat` verwenden, da die systemeigenen Typen möglicherweise nur 32 Bits Speicherplatz enthalten können.
 
 ## <a name="coregraphics-types"></a>CoreGraphics-Typen
 
-Die für CoreGraphics verwendeten Punkt-, Größen-und Rechteck Datentypen verwenden je nach dem Gerät, auf dem Sie ausgeführt werden, 32 oder 64 Bits.  Als wir die IOS-und Mac-APIs ursprünglich gebunden haben, verwendeten wir vorhandene Datenstrukturen, die mit den Größen der Host Plattform (Datentypen `System.Drawing`in) verglichen wurden.
+Die für CoreGraphics verwendeten Punkt-, Größen-und Rechteck Datentypen verwenden je nach dem Gerät, auf dem Sie ausgeführt werden, 32 oder 64 Bits.  Als wir die IOS-und Mac-APIs ursprünglich gebunden haben, verwendeten wir vorhandene Datenstrukturen, die den Größen der Host Plattform (Datentypen in `System.Drawing`) entsprechen.
 
-Wenn Sie zu **Unified**migrieren, müssen Sie die Instanzen von `System.Drawing` durch ihre `CoreGraphics` Entsprechungen ersetzen, wie in der folgenden Tabelle gezeigt:
+Wenn Sie zu **Unified**migrieren, müssen Sie Instanzen von `System.Drawing` durch ihre `CoreGraphics` Entsprechungen ersetzen, wie in der folgenden Tabelle gezeigt:
 
 |Alter Typ in System. Drawing|Neue Datentyp-CoreGraphics|Beschreibung|
 |--- |--- |--- |
@@ -65,7 +65,7 @@ Wenn Sie zu **Unified**migrieren, müssen Sie die Instanzen von `System.Drawing`
 |`SizeF`|`CGSize`|Enthält Informationen zur Gleit Komma Größe (Breite, Höhe).|
 |`PointF`|`CGPoint`|Enthält einen Gleit Komma Wert, Punkt Informationen (X, Y)|
 
-Die alten Datentypen, die verwendet werden, um die Elemente der Datenstrukturen zu speichern, während der `System.nfloat`neue Datentypen verwendet.
+Die alten Datentypen, die verwendet werden, um die Elemente der Datenstrukturen zu speichern, während der neue die `System.nfloat`verwendet.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -3,21 +3,21 @@ title: Debugintegrationen
 description: In diesem Dokument wird beschrieben, wie Sie Xamarin Workbooks-Integrationen sowohl auf Agent-Seite als auch auf Clientseite unter Windows und Mac Debuggen.
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: fbb5673a70328ad6edde78af1b35d2801fe65ca8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3030bf907d1ddbb02884f997f178b55950b442d4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283927"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018822"
 ---
 # <a name="debugging-integrations"></a>Debugintegrationen
 
 ## <a name="debugging-agent-side-integrations"></a>Debuggen von agentseitigen Integrationen
 
-Das Debuggen von agentseitigen Integrationen erfolgt am besten mithilfe der Protokollierungs `Log` Methoden der `Xamarin.Interactive.Logging`-Klasse in.
+Das Debuggen von agentseitigen Integrationen erfolgt am besten mithilfe der Protokollierungs Methoden der `Log`-Klasse in `Xamarin.Interactive.Logging`.
 
 Unter macOS werden Protokollmeldungen sowohl im Menü Log Viewer (**Fenster > Log Viewer**) als auch im Client Protokoll angezeigt. Unter Windows werden Meldungen nur im Client Protokoll angezeigt, da dort kein Protokoll-Viewer vorhanden ist.
 
@@ -44,7 +44,7 @@ defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 
 und dann Xamarin Workbooks neu starten. Wenn Sie dies tun, sollte das Element "über **prüfen** " in Ihrem Kontextmenü angezeigt werden, und ein neuer **Entwickler** Bereich ist in den Arbeitsmappen-Einstellungen verfügbar. Mit dieser Option können Sie auswählen, ob die Entwicklertools beim Start geöffnet werden sollen:
 
-[![Entwicklerbereich](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
+[Entwicklerbereich![](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 Diese Einstellung ist nur neu starten – Sie müssen den Arbeitsmappen-Client neu starten, damit er in neuen Arbeitsmappen wirksam wird. Wenn Sie die Entwicklertools über das Kontextmenü oder die Einstellungen aktivieren, wird die vertraute Safari-Benutzeroberfläche angezeigt:
 

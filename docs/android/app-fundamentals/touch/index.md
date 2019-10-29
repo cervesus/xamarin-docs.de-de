@@ -4,15 +4,15 @@ description: Mit Touchscreens auf vielen der heutigen Geräte können Benutzer a
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 54f036b2a845b7d2f6603b6b9f54472ad2af8bcd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 43637d8592631b2732e5922544f52d91947dd3bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754717"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024280"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Toucheingabe und Gesten in xamarin. Android
 
@@ -22,7 +22,7 @@ _Mit Touchscreens auf vielen der heutigen Geräte können Benutzer auf natürlic
 
 IOS und Android sind in der Art und Weise vergleichbar, wie Sie die Fingereingabe behandeln. Beide können Multitouch-viele Kontaktpunkte auf dem Bildschirm und komplexe Gesten unterstützen. In diesem Handbuch werden einige der Ähnlichkeiten in den Konzepten sowie die Besonderheiten der Implementierung von toucheingaben und Gesten auf beiden Plattformen vorgestellt.
 
-Android verwendet ein `MotionEvent` -Objekt zum Kapseln von Touch-Daten und Methoden für das Ansichts Objekt, um auf Berührungen zu lauschen.
+Android verwendet ein `MotionEvent` Objekt, um Touch-Daten zu kapseln, und Methoden für das Ansichts Objekt, um auf Berührungen zu lauschen.
 
 Zusätzlich zur Erfassung von Touch-Daten bieten sowohl IOS als auch Android Mittel für das Interpretieren von Mustern von Berührungen in Gesten. Diese Gesten Erkennungs Tools können wiederum verwendet werden, um anwendungsspezifische Befehle zu interpretieren, z. b. eine Drehung eines Bilds oder eine Seite. Android bietet eine Reihe von unterstützten Gesten sowie Ressourcen, die das Hinzufügen komplexer benutzerdefinierter Gesten vereinfachen.
 
@@ -33,7 +33,7 @@ Diese Anleitung folgt einem ähnlichen Format für jedes Betriebssystem: zuerst 
 ## <a name="sections"></a>Abschnitte
 
 - [Toucheingabe in Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
-- [Exemplarische Vorgehensweise: Verwenden von "berühren" in Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+- [Exemplarische Vorgehensweise: Verwenden von Touchscreen in Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 - [Multi-Touch-Nachverfolgung](touch-tracking.md)
 
 ## <a name="summary"></a>Zusammenfassung

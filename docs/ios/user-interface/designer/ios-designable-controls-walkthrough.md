@@ -4,15 +4,15 @@ description: In diesem Dokument wird beschrieben, wie Sie ein benutzerdefinierte
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 651df247e3b5616a3baa38e85159c6a6d5247807
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4b8c72da1e280b83e215bca9316bc0b9de99402c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768806"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003805"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierter Steuerelemente im iOS-Designer
 
@@ -25,17 +25,17 @@ In diesem Leitfaden wird davon ausgegangen, dass Sie sich mit den Inhalten vertr
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
 > [!IMPORTANT]
-> Ab xamarin. Studio 5,5 unterscheidet sich die Art und Weise, in der benutzerdefinierte Steuerelemente erstellt werden, geringfügig von früheren Versionen. Zum Erstellen eines benutzerdefinierten Steuer Elements ist `IComponent` entweder die-Schnittstelle erforderlich (mit den zugehörigen Implementierungs Methoden), oder die-Klasse kann `[DesignTimeVisible(true)]`mit kommentiert werden. Die letztere Methode wird in der folgenden exemplarischen Vorgehensweise verwendet.
+> Ab xamarin. Studio 5,5 unterscheidet sich die Art und Weise, in der benutzerdefinierte Steuerelemente erstellt werden, geringfügig von früheren Versionen. Um ein benutzerdefiniertes Steuerelement zu erstellen, ist entweder die `IComponent`-Schnittstelle erforderlich (mit den zugehörigen Implementierungs Methoden), oder die-Klasse kann mit `[DesignTimeVisible(true)]`kommentiert werden. Die letztere Methode wird in der folgenden exemplarischen Vorgehensweise verwendet.
 
-1. Erstellen Sie eine neue Projekt Mappe aus der **IOS-> app > Vorlage C# für die Einzelansicht-Anwendungs >** , benennen Sie Sie, und fahren Sie `ScratchTicket`mit dem Assistenten für neue Projekte fort
+1. Erstellen Sie eine neue Projekt Mappe aus der **IOS-> app > Vorlage C# für die Einzelansicht-Anwendungs >** , benennen Sie Sie`ScratchTicket`, und fahren Sie mit dem Assistenten für neue Projekte fort:
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "Erstellen einer neuen Projekt Mappe")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/01new.png "Create a new solution")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
-1. Erstellen Sie eine neue leere Klassendatei `ScratchTicketView`mit dem Namen:
+1. Erstellen Sie eine neue leere Klassendatei mit dem Namen `ScratchTicketView`:
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "Erstellen einer neuen scratchticketview-Klasse")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/02new.png "Create a new ScratchTicketView class")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
-1. Fügen Sie den folgenden Code `ScratchTicketView` für die-Klasse hinzu:
+1. Fügen Sie den folgenden Code für `ScratchTicketView`-Klasse hinzu:
 
     ```csharp
     using System;
@@ -156,53 +156,53 @@ In diesem Leitfaden wird davon ausgegangen, dass Sie sich mit den Inhalten vertr
     }
     ```
 
-1. Fügen Sie `FillTexture.png`die `FillTexture2.png` Dateien `Monkey.png` , und (die über [GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)verfügbar sind) dem **Ressourcen** Ordner hinzu.
+1. Fügen Sie die `FillTexture.png`-, `FillTexture2.png`-und `Monkey.png` Dateien (verfügbar über [GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) dem **Ressourcen** Ordner hinzu.
 
-1. Doppelklicken Sie auf `Main.storyboard` die Datei, um Sie im Designer zu öffnen:
+1. Doppelklicken Sie auf die Datei `Main.storyboard`, um Sie im Designer zu öffnen:
 
-    [![](ios-designable-controls-walkthrough-images/03new.png "Der IOS-Designer")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/03new.png "The iOS Designer")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 1. Ziehen Sie eine **Bildansicht** aus der **Toolbox** auf die Ansicht im Storyboard, und legen Sie Sie dort ab.
 
-    [![](ios-designable-controls-walkthrough-images/04new.png "Eine Bildansicht, die dem Layout hinzugefügt wurde.")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/04new.png "An Image View added to the layout")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
-1. Wählen Sie die **Bildansicht** aus, und ändern Sie `Monkey.png`deren **Bild** Eigenschaft in.
+1. Wählen Sie die **Bildansicht** aus, und ändern Sie die **Image** -Eigenschaft in `Monkey.png`.
 
-    [![](ios-designable-controls-walkthrough-images/05new.png "Festlegen der Bild Eigenschaft Image View auf Monkey. png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/05new.png "Setting Image View Image property to Monkey.png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
 1. Bei der Verwendung von Größenklassen muss diese Bildansicht eingeschränkt werden. Klicken Sie zweimal auf das Bild, um es in den Einschränkungs Modus zu versetzen. Wir beschränken ihn auf den Mittelpunkt, indem wir auf das zentrierende Handle klicken und ihn sowohl vertikal als auch horizontal ausrichten:
 
-    [![](ios-designable-controls-walkthrough-images/06new.png "Zentrieren des Bilds")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/06new.png "Centering the image")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
 
 1. Um die Höhe und Breite einzuschränken, klicken Sie auf die Steuerpunkte mit der Größenbegrenzung (die "mit dem Strich" formatierte Handles), und wählen Sie "width" und "Height" aus:
 
-    [![](ios-designable-controls-walkthrough-images/07new.png "Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/07new.png "Adding Constraints")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 1. Aktualisieren Sie den Frame basierend auf Einschränkungen, indem Sie auf der Symbolleiste auf die Schaltfläche Aktualisieren klicken:
 
-    [![](ios-designable-controls-walkthrough-images/08new.png "Die Einschränkungs Symbolleiste")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/08new.png "The Constraints toolbar")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 1. Erstellen Sie als nächstes das Projekt, sodass die **Ticket Ansicht Scratch** unter **benutzerdefinierte Komponenten** in der Toolbox angezeigt wird:
 
-    [![](ios-designable-controls-walkthrough-images/09new.png "Die Toolbox für benutzerdefinierte Komponenten")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/09new.png "The Custom Components toolbox")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 1. Ziehen Sie eine **Scratch-Ticket Ansicht** per Drag & Drop, damit Sie über dem affenbild angezeigt wird. Passen Sie die Zieh Punkte so an, dass die Scratch-Ticket Ansicht den Affen vollständig abdeckt, wie unten dargestellt:
 
-    [![](ios-designable-controls-walkthrough-images/10new.png "Eine Scratch-Ticket Ansicht in der Bildansicht")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/10new.png "A Scratch Ticket View over the Image View")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
 1. Schränken Sie die Ansicht für das Scratch-Ticket auf die Bildansicht ein, indem Sie ein umgebenden Rechteck zeichnen, um beide Sichten auszuwählen. Wählen Sie die Optionen aus, um Sie auf die breiten-, Höhen-, Mittel-und Mittel-und Update Rahmen zu beschränken, wie unten dargestellt:
 
-    [![](ios-designable-controls-walkthrough-images/11new.png "Zentrieren und Hinzufügen von Einschränkungen")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/11new.png "Centering and adding Constraints")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 1. Führen Sie die Anwendung aus, und deaktivieren Sie das Bild, um den Affen zu verdeutlichen.
 
-    [![](ios-designable-controls-walkthrough-images/10-app.png "Eine Beispiel-App-Run")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "A sample app run")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>Hinzufügen von Entwurfszeit Eigenschaften
 
-Der Designer umfasst auch Entwurfszeit Unterstützung für benutzerdefinierte Steuerelemente des Eigenschaftentyps numeric, Enumeration, String, bool, CGSize, uicolor und uiimage. Um dies zu veranschaulichen, fügen Sie eine Eigenschaft `ScratchTicketView` hinzu, um das Bild festzulegen, das "kratzt" ist.
+Der Designer umfasst auch Entwurfszeit Unterstützung für benutzerdefinierte Steuerelemente des Eigenschaftentyps numeric, Enumeration, String, bool, CGSize, uicolor und uiimage. Um dies zu veranschaulichen, fügen Sie dem `ScratchTicketView` eine Eigenschaft hinzu, um das Bild festzulegen, das "kratzt" ist.
 
-Fügen Sie der- `ScratchTicketView` Klasse den folgenden Code für die-Eigenschaft hinzu:
+Fügen Sie der `ScratchTicketView`-Klasse den folgenden Code für die-Eigenschaft hinzu:
 
 ```csharp
 [Export("Image"), Browsable(true)]
@@ -216,7 +216,7 @@ public UIImage Image
 }
 ```
 
-Möglicherweise möchten Sie der-Methode auch eine NULL- `Draw` Überprüfung hinzufügen, wie im folgenden Beispiel:
+Möglicherweise möchten Sie der `Draw`-Methode auch eine NULL-Überprüfung hinzufügen, wie im folgenden Beispiel:
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -256,9 +256,9 @@ public override void Draw(CGRect rect)
 }
 ```
 
-Wenn ein `ExportAttribute` und ein `BrowsableAttribute` mit dem-Argument auf `true` festgelegt sind, wird die-Eigenschaft im **Eigenschaften** Panel des Designers angezeigt. Wenn Sie die-Eigenschaft in ein anderes Bild ändern, das im `FillTexture2.png`Projekt enthalten ist, z. b., wird das Steuerelement zur Entwurfszeit aktualisiert, wie unten dargestellt:
+Das Einschließen eines `ExportAttribute` und eines `BrowsableAttribute`, bei dem das-Argument auf `true` festgelegt ist, führt dazu, dass die-Eigenschaft im **Eigenschaften** Panel des Designers angezeigt wird. Das Ändern der Eigenschaft in ein anderes Bild, wie z. b. `FillTexture2.png`, führt dazu, dass das Steuerelement zur Entwurfszeit aktualisiert wird, wie unten dargestellt:
 
- [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Bearbeiten von Entwurfszeit Eigenschaften")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Editing Design Time properties")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 

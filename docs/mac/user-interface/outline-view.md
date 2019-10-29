@@ -4,15 +4,15 @@ description: In diesem Artikel wird das Arbeiten mit Gliederungs Ansichten in ei
 ms.prod: xamarin
 ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: e4f1f1333c35a72e7243e892e7aac8d98603c973
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: dd710f13d9324ce31e08641f214241e0433fe809
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772600"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004345"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Gliedern von Ansichten in xamarin. Mac
 
@@ -22,11 +22,11 @@ Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 Eine Gliederungs Ansicht ist ein Typ von Tabelle, der es dem Benutzer ermöglicht, Zeilen hierarchischer Daten zu erweitern oder zu reduzieren. Wie eine Tabellenansicht zeigt eine Gliederungs Ansicht Daten für eine Reihe verwandter Elemente an, wobei Zeilen die einzelnen Elemente und Spalten darstellen, die die Attribute dieser Elemente darstellen. Im Gegensatz zu einer Tabellenansicht befinden sich Elemente in einer Gliederungs Ansicht nicht in einer flachen Liste, Sie sind in einer Hierarchie angeordnet, wie z. b. Dateien und Ordner auf einer Festplatte.
 
-[![](outline-view-images/populate03.png "Ein Beispiel für eine APP-Laufzeit")](outline-view-images/populate03.png#lightbox)
+[![](outline-view-images/populate03.png "An example app run")](outline-view-images/populate03.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Gliederungs Ansichten in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Dieser Artikel.
 
-Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-C](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die-und `Register` `Export` -Befehle erläutert, die zum Verknüpfen der C# Klassen mit verwendet werden. Ziel-C-Objekte und UI-Elemente.
+Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-c](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die`Register`und`Export`Befehle erläutert, die zum Verknüpfen der C# Klassen mit "Ziel-c" verwendet werden. Objekte und UI-Elemente.
 
 <a name="Introduction_to_Outline_Views" />
 
@@ -36,11 +36,11 @@ Eine Gliederungs Ansicht ist ein Typ von Tabelle, der es dem Benutzer ermöglich
 
 Wenn ein Element in einer Gliederungs Ansicht andere Elemente enthält, kann es vom Benutzer erweitert oder reduziert werden. Ein erweiterbares Element zeigt ein Offenlegungs Dreieck an, das nach rechts zeigt, wenn das Element reduziert wird, und zeigt, wenn das Element erweitert wird. Wenn Sie auf das Offenlegungs Dreieck klicken, wird das Element erweitert oder reduziert.
 
-Die Gliederungs`NSOutlineView`Ansicht () ist eine Unterklasse der Tabellenansicht`NSTableView`() und erbt daher viel von Ihrem Verhalten von der übergeordneten Klasse. Infolgedessen werden viele Vorgänge, die von einer Tabellen Sicht unterstützt werden, z. b. das Auswählen von Zeilen oder Spalten, das Neupositionieren von Spalten durchziehen von Spalten Headern usw., auch von einer Gliederungs Ansicht unterstützt. Eine xamarin. Mac-Anwendung verfügt über die Kontrolle über diese Features und kann die Parameter der Gliederungs Ansicht (entweder im Code oder Interface Builder) so konfigurieren, dass bestimmte Vorgänge zugelassen oder verweigert werden.
+Die Gliederungs Ansicht (`NSOutlineView`) ist eine Unterklasse der Tabellenansicht (`NSTableView`) und erbt daher einen Großteil ihres Verhaltens von der übergeordneten Klasse. Infolgedessen werden viele Vorgänge, die von einer Tabellen Sicht unterstützt werden, z. b. das Auswählen von Zeilen oder Spalten, das Neupositionieren von Spalten durchziehen von Spalten Headern usw., auch von einer Gliederungs Ansicht unterstützt. Eine xamarin. Mac-Anwendung verfügt über die Kontrolle über diese Features und kann die Parameter der Gliederungs Ansicht (entweder im Code oder Interface Builder) so konfigurieren, dass bestimmte Vorgänge zugelassen oder verweigert werden.
 
 In einer Gliederungs Ansicht werden die eigenen Daten nicht gespeichert. stattdessen wird eine Datenquelle (`NSOutlineViewDataSource`) verwendet, um sowohl die erforderlichen Zeilen als auch die Spalten bereitzustellen.
 
-Das Verhalten einer Gliederungs Ansicht kann angepasst werden, indem eine Unterklasse des Gliederungs`NSOutlineViewDelegate`Ansichts Delegaten () bereitgestellt wird, um die Gliederung der Spalten Verwaltung, den Typ und die Auswahl von Funktionen, die Zeilenauswahl und-Bearbeitung, die benutzerdefinierte Nachverfolgung Spalten und Zeilen.
+Das Verhalten einer Gliederungs Ansicht kann angepasst werden, indem eine Unterklasse des Gliederungs Ansichts Delegaten (`NSOutlineViewDelegate`) bereitgestellt wird, um die Gliederung der Spalten Verwaltung, den Typ der Auswahl, die Zeilenauswahl und die Bearbeitung, die benutzerdefinierte Nachverfolgung und benutzerdefinierte Ansichten und Zeilen.
 
 Da eine Gliederungs Ansicht viel von Ihrem Verhalten und ihrer Funktionalität mit einer Tabellenansicht gemeinsam nutzt, sollten Sie die Dokumentation der [Tabellen Sichten](~/mac/user-interface/table-view.md) lesen, bevor Sie mit diesem Artikel fortfahren.
 
@@ -48,60 +48,60 @@ Da eine Gliederungs Ansicht viel von Ihrem Verhalten und ihrer Funktionalität m
 
 ## <a name="creating-and-maintaining-outline-views-in-xcode"></a>Erstellen und Verwalten von Gliederungs Ansichten in Xcode
 
-Wenn Sie eine neue xamarin. Mac-Cocoa-Anwendung erstellen, erhalten Sie standardmäßig ein Standardmäßiges leeres Standardfenster. Dieses Fenster wird in einer `.storyboard` Datei definiert, die automatisch im Projekt enthalten ist. Um den Windows-Entwurf zu bearbeiten,Doppelklicken Sie im Projektmappen-Explorer `Main.storyboard` auf die Datei:
+Wenn Sie eine neue xamarin. Mac-Cocoa-Anwendung erstellen, erhalten Sie standardmäßig ein Standardmäßiges leeres Standardfenster. Dieses Fenster wird in einer `.storyboard` Datei definiert, die automatisch im Projekt enthalten ist. Um den Windows-Entwurf zu bearbeiten, doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei:
 
-[![](outline-view-images/edit01.png "Auswählen des Haupt Storyboards")](outline-view-images/edit01.png#lightbox)
+[![](outline-view-images/edit01.png "Selecting the main storyboard")](outline-view-images/edit01.png#lightbox)
 
 Dadurch wird das Fensterdesign in der Interface Builder von Xcode geöffnet:
 
-[![](outline-view-images/edit02.png "Bearbeiten der Benutzeroberfläche in Xcode")](outline-view-images/edit02.png#lightbox)
+[![](outline-view-images/edit02.png "Editing the UI in Xcode")](outline-view-images/edit02.png#lightbox)
 
-Geben `outline` Sie in das Suchfeld des **Bibliotheks Inspektors** ein, um die Suche nach den Gliederungs Ansicht-Steuerelementen zu vereinfachen:
+Geben Sie `outline` in das Suchfeld des **Bibliotheks Inspektors** ein, um die Suche nach den Gliederungs Ansicht-Steuerelementen zu vereinfachen:
 
-[![](outline-view-images/edit03.png "Auswählen einer Gliederungs Ansicht aus der Bibliothek")](outline-view-images/edit03.png#lightbox)
+[![](outline-view-images/edit03.png "Selecting an Outline View from the Library")](outline-view-images/edit03.png#lightbox)
 
 Ziehen Sie eine Gliederungs Ansicht auf den Ansichts Controller im Schnittstellen-Editor, füllen Sie den Inhalts Bereich des Ansichts Controllers aus, und legen Sie ihn an der **Stelle**ab, an der er verkleinert wird und mit dem Fenster im Einschränkungs- **Editor**wächst:
 
-[![](outline-view-images/edit04.png "Bearbeiten der Einschränkungen")](outline-view-images/edit04.png#lightbox)
+[![](outline-view-images/edit04.png "Editing the constraints")](outline-view-images/edit04.png#lightbox)
 
 Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](outline-view-images/edit05.png "Der Attribut Inspektor")](outline-view-images/edit05.png#lightbox)
+[![](outline-view-images/edit05.png "The Attribute Inspector")](outline-view-images/edit05.png#lightbox)
 
 - Gliederungs **Spalte** : die Tabellenspalte, in der die hierarchischen Daten angezeigt werden.
-- **Autosave** -Gliederungs `true`Spalte: Wenn, wird die Gliederungs Spalte automatisch zwischen Anwendungs Läufen gespeichert und wieder hergestellt.
+- **Spalte für die automatische Speicherung** von Gliederung: Wenn `true`, wird die Gliederungs Spalte automatisch zwischen Anwendungs Ausführungen gespeichert und wieder hergestellt.
 - **Einzug** : der Betrag für den Einzug von Spalten unter einem erweiterten Element.
-- Der **Einzug folgt auf Zellen** : Wenn `true`, wird die Einzugs Markierung zusammen mit den Zellen eingerückt.
+- **Einzug folgt Zellen** : Wenn `true`, wird die Einzugs Markierung zusammen mit den Zellen eingerückt.
 - **Erweiterte Elemente automatisch speichern** : Wenn `true`, wird der erweiterte/reduzierte Zustand der Elemente automatisch zwischen Anwendungs Ausführungen gespeichert und wieder hergestellt.
-- **Inhalts Modus** : ermöglicht es Ihnen, die Daten in`NSView`den Zeilen und Spalten`NSCell`entweder mithilfe von Sichten () oder Zellen () anzuzeigen. Ab macOS 10,7 sollten Sie Ansichten verwenden.
-- Gleit Komma **Gruppen Zeilen** : `true`wenn, werden in der Tabellenansicht gruppierte Zellen so gezeichnet, als wären Sie unverankert.
+- **Inhalts Modus** : ermöglicht die Verwendung von Sichten (`NSView`) oder Zellen (`NSCell`), um die Daten in den Zeilen und Spalten anzuzeigen. Ab macOS 10,7 sollten Sie Ansichten verwenden.
+- Gleit Komma **Gruppen Zeilen** : Wenn `true`, zeichnet die Tabellenansicht gruppierte Zellen so, als wären Sie unverankert.
 - **Columns** : definiert die Anzahl der angezeigten Spalten.
 - **Headers** : Wenn `true`, enthalten die Spaltenheader.
 - **Neuanordnen** : Wenn `true`, kann der Benutzer die Reihenfolge der Spalten in der Tabelle verschieben.
-- Größenänderung: Wenn `true`, kann der Benutzer Spaltenüberschriften ziehen, um **die Größe der** Spalten zu ändern.
+- Größenänderung: Wenn `true`, kann der Benutzer **Spaltenüberschriften** ziehen, um die Größe der Spalten zu ändern.
 - **Spaltengröße** : steuert die automatische Größenanpassung von Spalten durch die Tabelle.
 - **Hervor** Hebung: steuert den Typ der Hervorhebung, die die Tabelle verwendet, wenn eine Zelle ausgewählt wird.
-- **Alternative Zeilen** : Wenn `true`, hat eine andere Zeile eine andere Hintergrundfarbe.
+- **Alternative Zeilen** : Wenn `true`, hat eine beliebige andere Zeile eine andere Hintergrundfarbe.
 - **Horizontales Raster** : wählt den Typ des Rahmens aus, der zwischen Zellen horizontal gezeichnet wird.
 - **Vertikales Raster** : wählt den Typ des Rahmens aus, der zwischen Zellen vertikal gezeichnet wird.
 - **Raster Farbe** : legt die Farbe für den Zell Rahmen fest.
 - **Background** : legt die Hintergrundfarbe der Zelle fest.
 - **Auswahl** : Hiermit können Sie steuern, wie der Benutzer Zellen in der Tabelle auswählen kann:
-  - **Multiple** -if `true`, der Benutzer kann mehrere Zeilen und Spalten auswählen.
+  - **Mehrfach** : Wenn `true`, kann der Benutzer mehrere Zeilen und Spalten auswählen.
   - **Spalte** : Wenn `true`, kann der Benutzer Spalten auswählen.
-  - **Typ SELECT** -if `true`, der Benutzer kann ein Zeichen eingeben, um eine Zeile auszuwählen.
-  - **Leer** : Wenn `true`, der Benutzer ist nicht erforderlich, um eine Zeile oder Spalte auszuwählen, kann die Tabelle überhaupt keine Auswahl treffen.
+  - **Typ SELECT** -wenn `true`, kann der Benutzer ein Zeichen eingeben, um eine Zeile auszuwählen.
+  - **Leer** : Wenn `true`, ist es nicht erforderlich, dass der Benutzer eine Zeile oder Spalte auswählt, da die Tabelle überhaupt keine Auswahl zulässt.
 - **Autosave** : der Name, unter dem das Tabellenformat automatisch gespeichert wird.
 - **Spalten Informationen** : Wenn `true`, werden die Reihenfolge und Breite der Spalten automatisch gespeichert.
 - **Zeilenumbrüche** : Wählen Sie aus, wie die Zelle Zeilenumbrüche behandelt.
-- **Abgeschnitten der letzten sichtbaren Zeile** : `true`wenn, wird die Zelle in den Daten abgeschnitten und kann nicht in die Grenzen passen.
+- Kürzt die **letzte sichtbare Zeile** : Wenn `true`, wird die Zelle abgeschnitten, wenn die Daten nicht innerhalb der Grenzen passen.
 
 > [!IMPORTANT]
-> Wenn Sie keine ältere xamarin. Mac-Anwendung verwalten, `NSView` sollten Sie auf den basierten Tabellen Sichten `NSCell` basierende Gliederungs Ansichten verwenden. `NSCell`wird als Legacy angesehen und wird möglicherweise nicht weiter unterstützt.
+> Wenn Sie keine ältere xamarin. Mac-Anwendung verwalten, sollten Sie `NSView` basierten Gliederungs Ansichten in `NSCell` basierten Tabellen Sichten verwenden. `NSCell` gilt als Legacy und wird möglicherweise nicht weiter unterstützt.
 
 Wählen Sie eine Tabellenspalte in der **Schnittstellen Hierarchie** aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](outline-view-images/edit06.png "Der Attribut Inspektor")](outline-view-images/edit06.png#lightbox)
+[![](outline-view-images/edit06.png "The Attribute Inspector")](outline-view-images/edit06.png#lightbox)
 
 - **Title** : legt den Titel der Spalte fest.
 - **Ausrichtung** : Legen Sie die Ausrichtung des Texts innerhalb der Zellen fest.
@@ -110,42 +110,42 @@ Wählen Sie eine Tabellenspalte in der **Schnittstellen Hierarchie** aus, und di
 - **Selector** : ist die **Aktion** , die zum Ausführen der Sortierung verwendet wird. Lassen Sie das Feld leer, wenn der Benutzer diese Spalte nicht sortieren kann.
 - **Order** : gibt die Sortierreihenfolge für die Spaltendaten an.
 - **Ändern der Größe** : wählt den Typ der Größe der Größe für die Spalte aus.
-- **Editable** -if `true`, der Benutzer kann Zellen in einer Zellen basierten Tabelle bearbeiten.
+- **Bearbeitbar** : Wenn `true`, kann der Benutzer Zellen in einer Zellen basierten Tabelle bearbeiten.
 - **Hidden** : Wenn `true`, wird die Spalte ausgeblendet.
 
 Sie können auch die Größe der Spalte ändern, indem Sie den Zieh Punkt (vertikal auf der rechten Seite der Spalte) nach links oder rechts ziehen.
 
-Wählen Sie in der Tabellenansicht die einzelnen Spalten aus `Product` , und geben Sie der ersten Spalte den **Titel** `Details`und die zweite Spalte.
+Wählen Sie in der Tabellenansicht die einzelnen Spalten aus, und geben Sie der ersten Spalte einen **Titel** `Product` und der zweite `Details`.
 
-Wählen Sie in der`NSTableViewCell` **Schnittstellen Hierarchie** eine Tabellenzellen Ansicht () aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
+Wählen Sie in der **Schnittstellen Hierarchie** eine Tabellenzellen Ansicht (`NSTableViewCell`) aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](outline-view-images/edit07.png "Der Attribut Inspektor")](outline-view-images/edit07.png#lightbox)
+[![](outline-view-images/edit07.png "The Attribute Inspector")](outline-view-images/edit07.png#lightbox)
 
 Dabei handelt es sich um alle Eigenschaften einer Standardansicht. Sie haben auch die Möglichkeit, die Zeilen für diese Spalte hier zu ändern.
 
 Wählen Sie eine Tabellen Ansichts Zelle (standardmäßig eine `NSTextField`) in der **Schnittstellen Hierarchie** aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](outline-view-images/edit08.png "Der Attribut Inspektor")](outline-view-images/edit08.png#lightbox)
+[![](outline-view-images/edit08.png "The Attribute Inspector")](outline-view-images/edit08.png#lightbox)
 
 Sie verfügen über alle Eigenschaften eines Standard Textfelds, das hier festgelegt werden soll. Standardmäßig wird ein Standard Textfeld verwendet, um Daten für eine Zelle in einer Spalte anzuzeigen.
 
-Wählen Sie in der`NSTableFieldCell` **Schnittstellen Hierarchie** eine Tabellenzellen Ansicht () aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
+Wählen Sie in der **Schnittstellen Hierarchie** eine Tabellenzellen Ansicht (`NSTableFieldCell`) aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](outline-view-images/edit09.png "Der Attribut Inspektor")](outline-view-images/edit09.png#lightbox)
+[![](outline-view-images/edit09.png "The Attribute Inspector")](outline-view-images/edit09.png#lightbox)
 
 Die wichtigsten Einstellungen finden Sie hier:
 
 - **Layout** : Wählen Sie aus, wie Zellen in dieser Spalte angelegt werden.
-- **Verwendet den Einzeilenmodus** : Wenn `true`der Wert ist, ist die Zelle auf eine einzelne Zeile beschränkt.
-- **Breite des ersten Lauf** Zeit Layouts `true`: Wenn, wird die Zelle die für Sie festgelegte Breite (entweder manuell oder automatisch) bevorzugen, wenn Sie beim ersten Ausführen der Anwendung angezeigt wird.
+- **Verwendet den Einzeilenmodus** -wenn `true`, ist die Zelle auf eine einzelne Zeile beschränkt.
+- **Breite des ersten Lauf Zeit Layouts** : Wenn `true`, wird die Zelle für die Zelle (entweder manuell oder automatisch) bevorzugt, wenn Sie beim ersten Ausführen der Anwendung angezeigt wird.
 - **Action** : steuert, wann die Bearbeitungs **Aktion** für die Zelle gesendet wird.
 - **Behavior** : definiert, ob eine Zelle auswählbar ist oder bearbeitet werden kann.
-- **Rich-Text** : `true`wenn, kann die Zelle formatierten und formatierten Text anzeigen.
-- **Rückgängig** - `true`wenn, übernimmt die Zelle die Verantwortung für das rückgängig-Verhalten.
+- **Rich-Text** : Wenn `true`, kann die Zelle formatierten und formatierten Text anzeigen.
+- **Rückgängig** : Wenn `true`, übernimmt die Zelle die Verantwortung für das rückgängig-Verhalten.
 
-Wählen Sie die Tabellenzellen Ansicht`NSTableFieldCell`() unten in einer Tabellenspalte in der **Schnittstellen Hierarchie**aus:
+Wählen Sie die Tabellenzellen Ansicht (`NSTableFieldCell`) unten in einer Tabellenspalte in der **Schnittstellen Hierarchie**aus:
 
-[![](outline-view-images/edit11.png "Auswählen der Tabellenzellen Ansicht")](outline-view-images/edit10.png#lightbox)
+[![](outline-view-images/edit11.png "Selecting the table cell view")](outline-view-images/edit10.png#lightbox)
 
 Dies ermöglicht es Ihnen, die Tabellenzellen Ansicht zu bearbeiten, die als Basis _Muster_ für alle Zellen verwendet wird, die für die jeweilige Spalte erstellt werden.
 
@@ -157,16 +157,16 @@ Genau wie jedes andere Cocoa UI-Steuerelement müssen wir unsere Gliederungs Ans
 
 Der Prozess ist für ein beliebiges Gliederungs Ansichts Element identisch, das wir verfügbar machen möchten:
 
-1. Wechseln Sie zum **Assistenten-Editor** , und stellen `ViewController.h` Sie sicher, dass die Datei ausgewählt ist:
+1. Wechseln Sie zum **Assistenten-Editor** , und stellen Sie sicher, dass die Datei `ViewController.h` ausgewählt ist:
 
-    [![](outline-view-images/edit11.png "Auswählen der richtigen h-Datei")](outline-view-images/edit11.png#lightbox)
-2. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie**aus, und ziehen `ViewController.h` Sie Sie in die Datei.
-3. Erstellen Sie ein **Outlet** für die Gliederungs Ansicht mit dem Namen `ProductOutline`:
+    [![](outline-view-images/edit11.png "Selecting the correct .h file")](outline-view-images/edit11.png#lightbox)
+2. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie**aus, und ziehen Sie Sie in die `ViewController.h` Datei.
+3. Erstellen Sie ein **Outlet** für die Gliederungs Ansicht namens `ProductOutline`:
 
-    [![](outline-view-images/edit13.png "Konfigurieren eines Outlets")](outline-view-images/edit13.png#lightbox)
-4. Erstellen Sie **Outlets** für die Tabellen Spalten ebenso wie `ProductColumn` und `DetailsColumn`:
+    [![](outline-view-images/edit13.png "Configuring an Outlet")](outline-view-images/edit13.png#lightbox)
+4. Erstellen Sie **Outlets** für die Tabellen Spalten, die auch `ProductColumn` und `DetailsColumn`genannt werden:
 
-    [![](outline-view-images/edit14.png "Konfigurieren eines Outlets")](outline-view-images/edit14.png#lightbox)
+    [![](outline-view-images/edit14.png "Configuring an Outlet")](outline-view-images/edit14.png#lightbox)
 5. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
 Als nächstes schreiben wir den Code, um einige Daten für die Kontur anzuzeigen, wenn die Anwendung ausgeführt wird.
@@ -177,11 +177,11 @@ Als nächstes schreiben wir den Code, um einige Daten für die Kontur anzuzeigen
 
 Wenn unsere Gliederungs Ansicht in Interface Builder entworfen und über ein **Outlet**verfügbar gemacht wird, müssen Sie C# als nächstes den Code erstellen, um ihn aufzufüllen.
 
-Zunächst erstellen wir eine neue `Product` Klasse, die die Informationen für die einzelnen Zeilen und Gruppen von unter Produkten enthält. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie**neue Datei** **Hinzufügen** > ... aus. Wählen Sie **Allgemeine** > **leere Klasse**aus `Product` , geben Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
+Zunächst erstellen wir eine neue `Product`-Klasse, die die Informationen für die einzelnen Zeilen und Gruppen von unter Produkten enthält. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie > **neue Datei** **Hinzufügen** ... aus. Wählen Sie **Allgemein** > **leere Klasse**aus, geben Sie `Product` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
 
-[![](outline-view-images/populate01.png "Erstellen einer leeren Klasse")](outline-view-images/populate01.png#lightbox)
+[![](outline-view-images/populate01.png "Creating an empty class")](outline-view-images/populate01.png#lightbox)
 
-Erstellen Sie `Product.cs` die Datei wie folgt:
+Erstellen Sie die `Product.cs` Datei wie folgt:
 
 ```csharp
 using System;
@@ -219,9 +219,9 @@ namespace MacOutlines
 }
 ```
 
-Als nächstes müssen wir eine Unterklasse von `NSOutlineDataSource` erstellen, um die Daten für den gewünschten Umriss bereitzustellen. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie**neue Datei** **Hinzufügen** > ... aus. Wählen Sie **Allgemeine** > **leere Klasse**aus `ProductOutlineDataSource` , geben Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** .
+Als nächstes müssen wir eine Unterklasse von `NSOutlineDataSource` erstellen, um die Daten für unsere Kontur anzugeben, wie Sie angefordert werden. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie > **neue Datei** **Hinzufügen** ... aus. Wählen Sie **Allgemein** > **leere Klasse**aus, geben Sie `ProductOutlineDataSource` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** .
 
-Bearbeiten Sie `ProductTableDataSource.cs` die Datei, und führen Sie Sie wie folgt aus:
+Bearbeiten Sie die Datei `ProductTableDataSource.cs`, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -280,11 +280,11 @@ namespace MacOutlines
 }
 ```
 
-Diese Klasse verfügt über Speicher für die Elemente unserer Gliederungs Ansicht und `GetChildrenCount` überschreibt die, um die Anzahl der Zeilen in der Tabelle zurückzugeben. Gibt ein bestimmtes über-oder untergeordnetes Element zurück (wie von der Gliederungs Ansicht `ItemExpandable` angefordert), und definiert das angegebene Element entweder als übergeordnetes Element oder als untergeordnetes Element. `GetChild`
+Diese Klasse verfügt über Speicher für die Elemente unserer Gliederungs Ansicht und überschreibt die `GetChildrenCount`, um die Anzahl der Zeilen in der Tabelle zurückzugeben. Der `GetChild` gibt ein bestimmtes über-oder untergeordnetes Element zurück (wie von der Gliederungs Ansicht angefordert), und der `ItemExpandable` definiert das angegebene Element entweder als übergeordnetes Element oder als untergeordnetes Element.
 
-Zum Schluss muss eine Unterklasse von `NSOutlineDelegate` erstellt werden, um das Verhalten für unseren Umriss bereitzustellen. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie**neue Datei** **Hinzufügen** > ... aus. Wählen Sie **Allgemeine** > **leere Klasse**aus `ProductOutlineDelegate` , geben Sie als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** .
+Zum Schluss müssen wir eine Unterklasse von `NSOutlineDelegate` erstellen, um das Verhalten für unsere Gliederung bereitzustellen. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie > **neue Datei** **Hinzufügen** ... aus. Wählen Sie **Allgemein** > **leere Klasse**aus, geben Sie `ProductOutlineDelegate` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** .
 
-Bearbeiten Sie `ProductOutlineDelegate.cs` die Datei, und führen Sie Sie wie folgt aus:
+Bearbeiten Sie die Datei `ProductOutlineDelegate.cs`, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -349,9 +349,9 @@ namespace MacOutlines
 }
 ```
 
-Wenn Sie eine Instanz von `ProductOutlineDelegate`erstellen, übergeben wir auch eine Instanz von, die `ProductOutlineDataSource` die Daten für die Kontur bereitstellt. Die `GetView` -Methode ist dafür verantwortlich, eine Ansicht (Daten) zurückzugeben, um die Zelle für eine Spalte und eine Zeile mit dem Wert anzuzeigen. Wenn möglich, wird eine vorhandene Ansicht wieder verwendet, um die Zelle anzuzeigen, wenn keine neue Ansicht erstellt werden muss.
+Wenn wir eine Instanz des `ProductOutlineDelegate`erstellen, übergeben wir auch eine Instanz des `ProductOutlineDataSource`, die die Daten für die Kontur bereitstellt. Die `GetView`-Methode ist dafür verantwortlich, eine Ansicht (Daten) zurückzugeben, um die Zelle für eine Spalte und eine Zeile mit dem Wert anzuzeigen. Wenn möglich, wird eine vorhandene Ansicht wieder verwendet, um die Zelle anzuzeigen, wenn keine neue Ansicht erstellt werden muss.
 
-Um die Gliederung aufzufüllen, bearbeiten Sie die `MainWindow.cs` Datei, und `AwakeFromNib` führen Sie die Methode wie folgt aus:
+Um die Gliederung aufzufüllen, müssen Sie die `MainWindow.cs` Datei bearbeiten und die `AwakeFromNib`-Methode wie folgt aussehen:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -390,23 +390,23 @@ public override void AwakeFromNib ()
 
 Wenn die Anwendung ausgeführt wird, wird Folgendes angezeigt:
 
-[![](outline-view-images/populate02.png "Die reduzierte Ansicht")](outline-view-images/populate02.png#lightbox)
+[![](outline-view-images/populate02.png "The collapsed view")](outline-view-images/populate02.png#lightbox)
 
 Wenn ein Knoten in der Gliederungs Ansicht erweitert wird, sieht er wie folgt aus:
 
-[![](outline-view-images/populate03.png "Die erweiterte Ansicht")](outline-view-images/populate03.png#lightbox)
+[![](outline-view-images/populate03.png "The expanded view")](outline-view-images/populate03.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
 ## <a name="sorting-by-column"></a>Sortieren nach Spalte
 
-Lassen Sie den Benutzer das Sortieren der Daten in der Gliederung zu, indem Sie auf eine Spaltenüberschrift klicken. Doppelklicken Sie zunächst auf die `Main.storyboard` Datei, um Sie zur Bearbeitung in Interface Builder zu öffnen. Wählen Sie `Product` die Spalte aus `Title` , geben Sie für den `compare:` **Sortierschlüssel**für die **Auswahl** ein, und wählen Sie `Ascending` für die **Reihenfolge**aus:
+Lassen Sie den Benutzer das Sortieren der Daten in der Gliederung zu, indem Sie auf eine Spaltenüberschrift klicken. Doppelklicken Sie zunächst auf die `Main.storyboard` Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Spalte `Product` aus, geben Sie `Title` für den **Sortierschlüssel**ein `compare:` für die **Auswahl** , und wählen Sie `Ascending` für die **Reihenfolge**aus:
 
-[![](outline-view-images/sort01.png "Festlegen der Sortierschlüssel Reihenfolge")](outline-view-images/sort01.png#lightbox)
+[![](outline-view-images/sort01.png "Setting the sort key order")](outline-view-images/sort01.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-Bearbeiten Sie nun die `ProductOutlineDataSource.cs` Datei, und fügen Sie die folgenden Methoden hinzu:
+Nun bearbeiten wir die `ProductOutlineDataSource.cs` Datei und fügen die folgenden Methoden hinzu:
 
 ```csharp
 public void Sort(string key, bool ascending) {
@@ -431,11 +431,11 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 }
 ```
 
-Mit `Sort` der-Methode können wir die Daten in der Datenquelle auf der Grundlage eines `Product` angegebenen Klassen Felds in aufsteigender oder absteigender Reihenfolge sortieren. Die überschriebene `SortDescriptorsChanged` -Methode wird jedes Mal aufgerufen, wenn die Verwendung auf eine Spaltenüberschrift klickt. Der **Schlüssel** Wert, den wir in Interface Builder festgelegt haben, und die Sortierreihenfolge für diese Spalte werden an Sie übermittelt.
+Mit der `Sort`-Methode können wir die Daten in der Datenquelle auf der Grundlage eines bestimmten `Product` Klassen Felds in aufsteigender oder absteigender Reihenfolge sortieren. Die überschriebene `SortDescriptorsChanged` Methode wird jedes Mal aufgerufen, wenn die Verwendung auf eine Spaltenüberschrift klickt. Der **Schlüssel** Wert, den wir in Interface Builder festgelegt haben, und die Sortierreihenfolge für diese Spalte werden an Sie übermittelt.
 
 Wenn Sie die Anwendung ausführen und in die Spaltenüberschriften klicken, werden die Zeilen nach dieser Spalte sortiert:
 
-[![](outline-view-images/sort02.png "Beispiel für eine sortierte Ausgabe")](outline-view-images/sort02.png#lightbox)
+[![](outline-view-images/sort02.png "Example of sorted output")](outline-view-images/sort02.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -443,11 +443,11 @@ Wenn Sie die Anwendung ausführen und in die Spaltenüberschriften klicken, werd
 
 Wenn Sie dem Benutzer die Auswahl einer einzelnen Zeile gestatten möchten, doppelklicken Sie auf die `Main.storyboard` Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und deaktivieren Sie das Kontrollkästchen **mehrfach** im **Attribut Inspektor**:
 
-[![](outline-view-images/select01.png "Der Attribut Inspektor")](outline-view-images/select01.png#lightbox)
+[![](outline-view-images/select01.png "The Attribute Inspector")](outline-view-images/select01.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-Bearbeiten Sie anschließend die `ProductOutlineDelegate.cs` Datei, und fügen Sie die folgende Methode hinzu:
+Bearbeiten Sie als nächstes die Datei `ProductOutlineDelegate.cs`, und fügen Sie die folgende Methode hinzu:
 
 ```csharp
 public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
@@ -457,19 +457,19 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 }
 ```
 
-Dadurch kann der Benutzer eine beliebige einzelne Zeile in der Gliederungs Ansicht auswählen. Geben `false` Sie `ShouldSelectItem` für jedes Element zurück, das nicht vom Benutzer ausgewählt werden kann, oder `false` für jedes Element, wenn Sie nicht möchten, dass der Benutzer Elemente auswählen kann.
+Dadurch kann der Benutzer eine beliebige einzelne Zeile in der Gliederungs Ansicht auswählen. Geben Sie `false` für die `ShouldSelectItem` für jedes Element zurück, das nicht vom Benutzer ausgewählt oder für jedes Element `false` werden soll, wenn der Benutzer nicht in der Lage sein soll, Elemente auszuwählen.
 
 <a name="Multiple_Row_Selection" />
 
 ## <a name="multiple-row-selection"></a>Auswahl mehrerer Zeilen
 
-Wenn Sie zulassen möchten, dass der Benutzer mehrere Zeilen auswählt, doppelklicken Sie auf `Main.storyboard` die Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **mehrfach** im **Attribut Inspektor**:
+Wenn Sie zulassen möchten, dass der Benutzer mehrere Zeilen auswählt, doppelklicken Sie auf die `Main.storyboard` Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **mehrfach** im **Attribut Inspektor**:
 
-[![](outline-view-images/select02.png "Der Attribut Inspektor")](outline-view-images/select02.png#lightbox)
+[![](outline-view-images/select02.png "The Attribute Inspector")](outline-view-images/select02.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
-Bearbeiten Sie anschließend die `ProductOutlineDelegate.cs` Datei, und fügen Sie die folgende Methode hinzu:
+Bearbeiten Sie als nächstes die Datei `ProductOutlineDelegate.cs`, und fügen Sie die folgende Methode hinzu:
 
 ```csharp
 public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
@@ -479,15 +479,15 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 }
 ```
 
-Dadurch kann der Benutzer eine beliebige einzelne Zeile in der Gliederungs Ansicht auswählen. Geben `false` Sie `ShouldSelectRow` für jedes Element zurück, das nicht vom Benutzer ausgewählt werden kann, oder `false` für jedes Element, wenn Sie nicht möchten, dass der Benutzer Elemente auswählen kann.
+Dadurch kann der Benutzer eine beliebige einzelne Zeile in der Gliederungs Ansicht auswählen. Geben Sie `false` für die `ShouldSelectRow` für jedes Element zurück, das nicht vom Benutzer ausgewählt oder für jedes Element `false` werden soll, wenn der Benutzer nicht in der Lage sein soll, Elemente auszuwählen.
 
 <a name="Type_to_Select_Row" />
 
 ## <a name="type-to-select-row"></a>Zum Auswählen der Zeile eingeben
 
-Wenn Sie es dem Benutzer gestatten möchten, ein Zeichen mit ausgewählter Gliederungs Ansicht einzugeben, und die erste Zeile mit diesem Zeichen auszuwählen, doppelklicken Sie `Main.storyboard` auf die Datei, um Sie zur Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **Type Select** in the **Attribute Inspector**:
+Wenn Sie zulassen möchten, dass der Benutzer ein Zeichen mit ausgewählter Gliederungs Ansicht eingibt, und dann die erste Zeile mit diesem Zeichen auswählen, doppelklicken Sie auf die `Main.storyboard` Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **Type Select** in the **Attribute Inspector**:
 
-[![](outline-view-images/type01.png "Bearbeiten des Zeilen Typs")](outline-view-images/type01.png#lightbox)
+[![](outline-view-images/type01.png "Editing the row type")](outline-view-images/type01.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
@@ -507,15 +507,15 @@ public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSOb
 }
 ```
 
-Die `GetNextTypeSelectMatch` - `searchString` `Product` Methode nimmtdieangegebeneanundgibtdasElementdeserstenzurück,dasdieseZeichenfolgeenthält.`Title`
+Die `GetNextTypeSelectMatch`-Methode nimmt die angegebene `searchString` an und gibt das Element des ersten `Product` zurück, das diese Zeichenfolge enthält `Title`.
 
 <a name="Reordering_Columns" />
 
 ## <a name="reordering-columns"></a>Neuordnen von Spalten
 
-Wenn Sie zulassen möchten, dass der Benutzer die Neuanordnen von Spalten in der Gliederungs Ansicht zieht, `Main.storyboard` Doppelklicken Sie auf die Datei, um Sie zur Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **Neuanordnen** im **Attribut Inspektor**:
+Wenn Sie zulassen möchten, dass der Benutzer die Neuanordnen von Spalten in der Gliederungs Ansicht zieht, doppelklicken Sie auf die `Main.storyboard` Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Gliederungs Ansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **Neuanordnen** im **Attribut Inspektor**:
 
-[![](outline-view-images/reorder01.png "Der Attribut Inspektor")](outline-view-images/reorder01.png#lightbox)
+[![](outline-view-images/reorder01.png "The Attribute Inspector")](outline-view-images/reorder01.png#lightbox)
 
 Wenn wir einen Wert für die Eigenschaft **Autosave** festlegen und das Feld **Spalten Informationen** aktivieren, werden alle Änderungen, die wir am Layout der Tabelle vornehmen, automatisch für uns gespeichert und beim nächsten Ausführen der Anwendung wieder hergestellt.
 
@@ -530,17 +530,17 @@ public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex,
 }
 ```
 
-Die `ShouldReorder` -Methode sollte `true` für jede Spalte zurückgeben, für die das ziehen in das `newColumnIndex`reorderstream erfolgen soll, `false`andernfalls.
+Die `ShouldReorder`-Methode sollte `true` für jede Spalte zurückgeben, die in die `newColumnIndex`gezogen werden soll. andernfalls wird `false`zurückgegeben.
 
 Wenn wir die Anwendung ausführen, können wir die Spaltenkopfzeilen verschieben, um die Spalten neu zu sortieren:
 
-[![](outline-view-images/reorder02.png "Beispiel für das Neuordnen von Spalten")](outline-view-images/reorder02.png#lightbox)
+[![](outline-view-images/reorder02.png "Example of reordering columns")](outline-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
 ## <a name="editing-cells"></a>Bearbeiten von Zellen
 
-Wenn Sie zulassen möchten, dass der Benutzer die Werte für eine bestimmte Zelle bearbeitet, bearbeiten `ProductOutlineDelegate.cs` Sie die Datei, und ändern Sie die `GetViewForItem` Methode wie folgt:
+Wenn Sie zulassen möchten, dass der Benutzer die Werte für eine bestimmte Zelle bearbeitet, bearbeiten Sie die Datei `ProductOutlineDelegate.cs`, und ändern Sie die `GetViewForItem`-Methode wie folgt:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -596,13 +596,13 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 
 Wenn nun die Anwendung ausgeführt wird, kann der Benutzer die Zellen in der Tabellenansicht bearbeiten:
 
-[![](outline-view-images/editing01.png "Beispiel für das Bearbeiten von Zellen")](outline-view-images/editing01.png#lightbox)
+[![](outline-view-images/editing01.png "An example of editing cells")](outline-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Outline_Views" />
 
 ## <a name="using-images-in-outline-views"></a>Verwenden von Bildern in Gliederungs Ansichten
 
-Wenn Sie ein Bild als Teil der Zelle in einem `NSOutlineView`einschließen möchten, müssen Sie ändern, wie die Daten von der- `NSTableViewDelegate's` `GetView` Methode der Gliederungs Ansicht zurückgegeben `NSTableCellView` werden, um anstelle `NSTextField`der typischen zu verwenden. Zum Beispiel:
+Wenn Sie ein Bild als Teil der Zelle in einem `NSOutlineView` einschließen möchten, müssen Sie ändern, wie die Daten von der `NSTableViewDelegate's` `GetView`-Methode der Gliederungs Ansicht zurückgegeben werden, um anstelle der typischen `NSTextField` einen `NSTableCellView` zu verwenden. Beispiel:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -674,7 +674,7 @@ Weitere Informationen finden Sie im Abschnitt [Verwenden von Bildern mit](~/mac/
 
 Durch die Verwendung von Schlüssel-Wert-Codierungs-und Daten Bindungs Techniken in ihrer xamarin. Mac-Anwendung können Sie die Menge des Codes, den Sie schreiben und verwalten müssen, erheblich verringern, um Benutzeroberflächen Elemente aufzufüllen und mit Ihnen zu arbeiten. Außerdem profitieren Sie von der weiteren Entkopplung ihrer Sicherungsdaten (_Datenmodell_) von der Front-End-Benutzeroberfläche (_Model-View-Controller_). Dies führt zu einer einfacheren Wartung und einem flexibleren Anwendungs Entwurf.
 
-Key-Value Coding (KVC) ist ein Mechanismus für den indirekten Zugriff auf die Eigenschaften eines Objekts, indem Schlüssel (speziell formatierte Zeichen folgen) verwendet werden, um Eigenschaften zu identifizieren, anstatt über Instanzvariablen oder Zugriffsmethoden (`get/set`) auf Sie zuzugreifen. Durch die Implementierung von Schlüssel-Wert-Codierungs kompatiblen Accessoren in ihrer xamarin. Mac-Anwendung erhalten Sie Zugriff auf andere macOS-Features, wie z. b. Key-Value-Beobachtungen (KVO), Datenbindung, Kerndaten, Cocoa-Bindungen und scriptbarkeit.
+Key-Value Coding (KVC) ist ein Mechanismus für den indirekten Zugriff auf die Eigenschaften eines Objekts, indem Schlüssel (speziell formatierte Zeichen folgen) verwendet werden, um Eigenschaften zu identifizieren, anstatt über Instanzvariablen oder Accessormethoden (`get/set`) auf Sie zuzugreifen. Durch die Implementierung von Schlüssel-Wert-Codierungs kompatiblen Accessoren in ihrer xamarin. Mac-Anwendung erhalten Sie Zugriff auf andere macOS-Features, wie z. b. Key-Value-Beobachtungen (KVO), Datenbindung, Kerndaten, Cocoa-Bindungen und scriptbarkeit.
 
 Weitere Informationen finden Sie im Abschnitt Gliederung der [Datenbindung](~/mac/app-fundamentals/databinding.md#Outline_View_Data_Binding) in unserer Datenbindung und in der Dokumentation zum [Schlüssel-Wert-Code](~/mac/app-fundamentals/databinding.md) .
 
@@ -694,6 +694,6 @@ In diesem Artikel wurde die Arbeit mit Gliederungs Ansichten in einer xamarin. M
 - [Datenbindung und Schlüssel/Wert-Codierung](~/mac/app-fundamentals/databinding.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in Gliederungs Ansichten](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
-- [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
-- [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
-- [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)
+- [Nsoutlineview](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
+- [Nsoutlineviewdatasource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
+- [Nsoutlineviewdelegat](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)
