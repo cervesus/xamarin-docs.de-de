@@ -6,13 +6,13 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/23/2018
-ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 09/27/2019
+ms.openlocfilehash: fa92409b33717e528c3cfb83a24148c698836594
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653370"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697147"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms-Datenbindung
 
@@ -35,7 +35,7 @@ Eines der beiden Objekte, das an einer Datenbindung beteiligt ist, ist immer ein
 - Ein weiteres `View`-Derivat, meist auf der gleichen Seite
 - Ein Objekt in einer Codedatei
 
-In Beispielprogrammen wie dem [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)-Beispiel werden zu Demonstrationszwecken und der Einfachheit halber oft zwei `View`-Derivate verwendet. Die gleichen Prinzipien können jedoch auch auf Datenbindungen zwischen einem `View`-Objekt und einem anderen Objekt angewendet werden. Wenn eine Anwendung mit einer MVVM-Architektur erstellt wird, wird die Klasse mit den zugrunde liegenden Daten oft als ViewModel bezeichnet.
+In Beispielprogrammen wie dem [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)-Beispiel werden zu Demonstrationszwecken und der Einfachheit halber oft zwei `View`-Derivate verwendet. Die gleichen Prinzipien können jedoch auch auf Datenbindungen zwischen einem `View`-Objekt und einem anderen Objekt angewendet werden. Wenn eine Anwendung mit einer MVVM-Architektur (Model-View-ViewModel) erstellt wird, wird die Klasse mit den zugrunde liegenden Daten oft als ViewModel bezeichnet.
 
 In den folgenden Artikeln wird ausführlicher auf Datenbindungen eingegangen:
 
@@ -58,6 +58,10 @@ Beschäftigen Sie sich ausführlicher mit der `Path`-Eigenschaft der Datenbindun
 ## <a name="binding-value-convertersconvertersmd"></a>[Binden von Wertkonvertern](converters.md)
 
 Verwenden Sie Bindungswertkonverter, um Werte in der Datenbindung anzupassen.
+
+## <a name="relative-bindingsrelative-bindingsmd"></a>[Relative Bindungen](relative-bindings.md)
+
+Verwenden Sie relative Bindungen, um die Bindungsquelle relativ zur Position des Bindungsziels festzulegen.
 
 ## <a name="binding-fallbacksbinding-fallbacksmd"></a>[Bindungsfallbacks](binding-fallbacks.md)
 

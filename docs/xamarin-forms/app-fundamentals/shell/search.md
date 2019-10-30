@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: 9e3acf1c5b101f021b0071947e91f0c9fc3dafcb
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 09/25/2019
+ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739251"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695937"
 ---
 # <a name="xamarinforms-shell-search"></a>Suche in der Xamarin.Forms-Shell
 
@@ -24,7 +24,7 @@ Die integrierte Suchfunktionalität in der Xamarin.Forms-Shell wird von der `Sea
 
 Wird eine Abfrage in das Suchfeld eingegeben, wird die `Query`-Eigenschaft aktualisiert, und bei jeder Aktualisierung wird die `OnQueryChanged`-Methode ausgeführt. Diese Methode kann überschrieben werden, um den Suchvorschlagsbereich mit Daten zu füllen:
 
-[![Screenshot von Suchergebnissen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-suggestions.png "Suchergebnisse des Shell-SearchHandler-Objekts")](search-images/search-suggestions-large.png#lightbox "Suchergebnisse des Shell-SearchHandler-Objekts")
+[![Screenshot von Suchergebnissen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-suggestions.png "Suchergebnisse in einem Shell-SearchHandler-Objekt")](search-images/search-suggestions-large.png#lightbox "Suchergebnisse in einem Shell-SearchHandler-Objekt")
 
 Wenn dann ein Ergebnis aus dem Suchvorschlagsbereich ausgewählt wird, wird die `OnItemSelected`-Methode ausgeführt. Diese Methode kann überschrieben werden, um entsprechend zu reagieren, z.B. zu einer Detailseite zu navigieren.
 
@@ -99,11 +99,11 @@ Die `MonkeySearchHandler.OnQueryChanged`-Methode gibt eine `List` von `Animal`-O
 
 Die `ShowsResults`-Eigenschaft wird auf `true` festgelegt, sodass Suchvorschläge angezeigt werden, wenn der Benutzer eine Suchanfrage eingibt:
 
-[![Screenshot von Suchergebnissen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-results.png "Suchergebnisse des Shell-SearchHandler-Objekts")](search-images/search-results-large.png#lightbox "Suchergebnisse des Shell-SearchHandler-Objekts")
+[![Screenshot von Suchergebnissen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-results.png "Suchergebnisse in einem Shell-SearchHandler-Objekt")](search-images/search-results-large.png#lightbox "Suchergebnisse in einem Shell-SearchHandler-Objekt")
 
 Mit jeder Änderung der Abfrage wird der Bereich der Suchvorschläge aktualisiert:
 
-[![Screenshot von Suchergebnissen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-results-change.png "Suchergebnisse des Shell-SearchHandler-Objekts")](search-images/search-results-change-large.png#lightbox "Suchergebnisse des Shell-SearchHandler-Objekts")
+[![Screenshot von Suchergebnissen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-results-change.png "Suchergebnisse in einem Shell-SearchHandler-Objekt")](search-images/search-results-change-large.png#lightbox "Suchergebnisse in einem Shell-SearchHandler-Objekt")
 
 Wird ein Suchergebnis ausgewählt, wird zum `MonkeyDetailPage`-Objekt navigiert, und es werden Daten über den ausgewählten Affen angezeigt:
 
@@ -172,7 +172,7 @@ Die im [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Objekt angegebenen Elem
 
 Die folgenden Screenshots zeigen das Ergebnis der Vorlagenerstellung für jedes Element im Vorschlagsbereich:
 
-[![Screenshot der Suchergebnisse mit Vorlagen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-results-template.png "Suchergebnisse mit Vorlagen in einem Shell-SearchHandler-Objekt")](search-images/search-results-template-large.png#lightbox "Suchergebnisse mit Vorlagen in einem Shell-SearchHandler-Objekt")
+[![Screenshot von Suchergebnissen mit Vorlagen in einem Shell-SearchHandler-Objekt unter iOS und Android](search-images/search-results-template.png "Suchergebnisse mit Vorlagen in einem Shell-SearchHandler-Objekt")](search-images/search-results-template-large.png#lightbox "Suchergebnisse mit Vorlagen in einem Shell-SearchHandler-Objekt")
 
 Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
@@ -211,12 +211,14 @@ Die `SearchHandler`-Klasse definiert die folgenden Eigenschaften, die ihre Darst
 
 - `BackgroundColor` vom Typ `Color`: Farbe des Hintergrunds des Texts im Suchfeld.
 - `CancelButtonColor` vom Typ `Color`: Farbe der Schaltfläche „Abbrechen“.
+- `CharacterSpacing` vom Typ `double`: Abstand zwischen den Zeichen des `SearchHandler`-Texts.
 - `FontAttributes` vom Typ `FontAttributes`: Gibt an, ob der Text im Suchfeld kursiv oder fett formatiert ist.
 - `FontFamily` vom Typ `string`: Schriftartfamilie für den Text im Suchfeld.
 - `FontSize` vom Typ `double`: Schriftgrad für den Text im Suchfeld.
 - `HorizontalTextAlignment` vom Typ `TextAlignment`: horizontale Ausrichtung des Texts im Suchfeld.
 - `PlaceholderColor` vom Typ `Color`: Farbe des Platzhaltertexts im Suchfeld.
 - `TextColor` vom Typ `Color`: Farbe des Texts im Suchfeld.
+- `VerticalTextAlignment` vom Typ `TextAlignment`: Vertikale Ausrichtung des Texts im Suchfeld.
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler-Tastatur
 

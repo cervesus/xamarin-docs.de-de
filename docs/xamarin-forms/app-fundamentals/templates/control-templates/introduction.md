@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771268"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Einführung in Xamarin.Forms-Steuerelementvorlagen
@@ -26,7 +26,7 @@ Steuerelementvorlagen trennen das Aussehen und den Inhalt einer Seite klar vonei
 
 Eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse legt die Darstellung einer Seite oder Ansicht fest. Sie enthält ein Stammlayout und darin die Steuerelemente, die die Vorlage implementieren. In der Regel wird für eine `ControlTemplate`-Klasse eine [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)-Klasse verwendet, um die Position des auf der Seite oder Ansicht anzuzeigenden Inhalts anzugeben. Die Seite oder Ansicht, für die die `ControlTemplate`-Klasse gedacht ist, gibt dann den Inhalt vor, der von der `ContentPresenter`-Klasse angezeigt werden soll. Das folgende Diagramm veranschaulicht eine `ControlTemplate`-Klasse für eine Seite mit einer Reihe von Steuerelementen. Zusätzlich abgebildet ist eine `ContentPresenter`-Klasse, hier dargestellt durch ein blaues Rechteck:
 
-![](introduction-images/control-template.png "Steuerelementvorlage für eine Seite")
+![](introduction-images/control-template.png "Control Template for a Page")
 
 Sie können die [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse auf die folgenden Typen anwenden, indem Sie die Eigenschaft `ControlTemplate` festlegen:
 

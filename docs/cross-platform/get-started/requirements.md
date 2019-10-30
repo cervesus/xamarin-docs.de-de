@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
-ms.date: 04/26/2018
-ms.openlocfilehash: adedb10f3baf7faa97260ebbc94e3d1802b7d847
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.date: 10/16/2019
+ms.openlocfilehash: ebfe139d614db95c7dd1af0c76926d934144d74f
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105949"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584335"
 ---
 # <a name="system-requirements"></a>Systemanforderungen
 
@@ -59,6 +59,7 @@ Der Visual Studio 2019-Installer bzw. der Visual Studio 2017-Installer umfasst e
 > [!NOTE]
 >
 > - Xamarin für Visual Studio unterstützt jede Version von Visual Studio 2019 oder von Visual Studio 2017 (Community, Professional und Enterprise).
+> - Wenn Sie die aktuellen SDKs für Android und iOS verwenden möchten, benötigen Sie die aktuelle Version von Visual Studio. Informationen zu bestimmten Versionsanforderungen finden Sie in den [Xamarin.Android-Versionshinweisen](/xamarin/android/release-notes/) und in den [Xamarin.iOS-Versionshinweisen](/xamarin/ios/release-notes/).
 > - Die Entwicklung von Xamarin.Forms-Apps für die universelle Windows-Plattform (UWP) erfordert Windows 10 mit Visual Studio 2017. Visual Studio 2019 wird empfohlen.
 
 ### <a name="testing--debugging-on-windows"></a>Testen und Debuggen unter Windows

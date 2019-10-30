@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771885"
 ---
 # <a name="introduction-to-custom-renderers"></a>Einführung in benutzerdefinierte Renderer
@@ -56,7 +56,7 @@ Das `local`-Namespacepräfix kann beliebig gewählt werden. Die Werte `namespace
 
 Das benutzerdefinierte Steuerelement `MyEntry` wird dann auf jeder Plattform mit einem grauen Hintergrund gerendert, wie in den folgenden Screenshots gezeigt:
 
-![](introduction-images/screenshots.png "Benutzerdefiniertes Steuerelement „MyEntry“ auf jeder Plattform")
+![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
 
 Das Ändern der Hintergrundfarbe des Steuerelements auf jeder Plattform wurde ausschließlich über das Erstellen von Unterklassen für das Steuerelement erreicht. Die Leistung dieses Verfahrens ist jedoch eingeschränkt, da plattformspezifische Erweiterungen und Anpassungen nicht genutzt werden können. Wenn sie benötigt werden, müssen benutzerdefinierte Renderer implementiert werden.
 
