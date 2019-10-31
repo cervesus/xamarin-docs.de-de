@@ -3,15 +3,15 @@ title: Buildprozess
 ms.prod: xamarin
 ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2019
-ms.openlocfilehash: 45d57f818fc6d90cb712b9f43ef815d44059ea68
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 06e40fce69ee6d614bcf27bd563d9452595bd6ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021374"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028149"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -526,7 +526,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   - **Other:** Andere Codierungen werden einbezogen, z.B. *Kyrillisch (Windows)* \[CP1251\], *Baltisch (Windows)* \[iso-8859-4, CP1257\], *Vietnamesisch (Windows)* \[CP1258\], *Kyrillisch (KOI8-R)* \[koi8-r, CP1251\], *Ukrainisch (KOI8-U)* \[koi8-u, CP1251\], *Baltisch (ISO)* \[iso-8859-4, CP1257\], *Kyrillisch (ISO)* \[iso-8859-5, CP1251\], *ISCII Devanagari* \[x-iscii-de, CP57002\], *ISCII Bangla* \[x-iscii-be, CP57003\], *ISCII Tamil* \[x-iscii-ta, CP57004\], *ISCII Telugu* \[x-iscii-te, CP57005\], *ISCII Assamesisch* \[x-iscii-as, CP57006\], *ISCII Odia* \[x-iscii-or, CP57007\], *ISCII Kannada* \[x-iscii-ka, CP57008\], *ISCII Malayalam* \[x-iscii-ma, CP57009\], *ISCII Gujarati* \[x-iscii-gu, CP57010\], *ISCII Punjabi* \[x-iscii-pa, CP57011\] und *Thailändisch (Windows)* \[CP874\].
 
-  - **Rare:** Seltene Codierungen werden einbezogen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\]*, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
+  - **Rare:** Seltene Codierungen werden einbezogen, z.B. *IBM EBCDIC (Türkisch)* \[CP1026\], *IBM EBCDIC (Open Systems Lateinisch 1)* \[CP1047\], *IBM EBCDIC (USA/Kanada mit Euro)* \[CP1140\], *IBM EBCDIC (Deutschland mit Euro)* \[CP1141\], *IBM EBCDIC (Dänemark/Norwegen mit Euro)* \[CP1142\], *IBM EBCDIC (Finnland/Schweden mit Euro)* \[CP1143\], *IBM EBCDIC (Italien mit Euro)* \[CP1144\], *IBM EBCDIC (Lateinamerika/Spanien mit Euro)* \[CP1145\], *IBM EBCDIC (Vereinigtes Königreich mit Euro)* \[CP1146\], *IBM EBCDIC (Frankreich mit Euro)* \[CP1147\], *IBM EBCDIC (International mit Euro)* \[CP1148\], *IBM EBCDIC (Isländisch mit Euro)* \[CP1149\], *IBM EBCDIC (Deutschland)* \[CP20273\], *IBM EBCDIC (Dänemark/Norwegen)* \[CP20277\], *IBM EBCDIC (Finnland/Schweden)* \[CP20278\], *IBM EBCDIC (Italien)* \[CP20280\], *IBM EBCDIC (Lateinamerika/Spanien)* \[CP20284\], *IBM EBCDIC (Vereinigtes Königreich)* \[CP20285\], *IBM EBCDIC (Japanisch, erweitertes Katakana)* \[CP20290\], *IBM EBCDIC (Frankreich)* \[CP20297\], *IBM EBCDIC (Arabisch)* \[CP20420\], *IBM EBCDIC (Hebräisch)* \[CP20424\], *IBM EBCDIC (Isländisch)* \[CP20871\], *IBM EBCDIC (Kyrillisch: Serbisch, Bulgarisch)* \[CP21025\], *IBM EBCDIC (USA/Kanada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabisch (ASMO 708)* \[CP708\], *Zentraleuropäisch(DOS)* \[CP852\] *, Kyrillisch (DOS)* \[CP855\], *Türkisch (DOS)* \[CP857\], *Westeuropäisch (DOS mit Euro)* \[CP858\], *Hebräisch (DOS)* \[CP862\], *Arabisch (DOS)* \[CP864\], *Russisch (DOS)* \[CP866\], *Griechisch (DOS)* \[CP869\], *IBM EBCDIC (Lateinisch 2)* \[CP870\] und *IBM EBCDIC (Griechisch)* \[CP875\].
 
   - **West:** Westliche Codierungen werden einbezogen, z.B. *Westeuropäisch (Mac)* \[macintosh, CP10000\], *Isländisch (Mac)* \[x-mac-icelandic, CP10079\], *Zentraleuropäisch (Windows)* \[iso-8859-2, CP1250\], *Westeuropäisch (Windows)* \[iso-8859-1, CP1252\], *Griechisch (Windows)* \[iso-8859-7, CP1253\], *Zentraleuropäisch (ISO)* \[iso-8859-2, CP28592\], *Lateinisch 3 (ISO)* \[iso-8859-3, CP28593\], *Griechisch (ISO)* \[iso-8859-7, CP28597\], *Lateinisch 9 (ISO)* \[iso-8859-15, CP28605\], *OEM USA* \[CP437\], *Westeuropäisch (DOS)* \[CP850\], *Portugiesisch (DOS)* \[CP860\], *Isländisch (DOS)* \[CP861\], *Französisch, Kanada (DOS)* \[CP863\] und *Nordisch (DOS)* \[CP865\].
 
@@ -636,11 +636,11 @@ Standardmäßig generiert das Signaturziel bei Bedarf einen neuen Debugsignaturs
 
 - **AndroidSigningKeyAlias** &ndash; Gibt den Alias für den Schlüssel im Keystore an. Dies ist der Wert **keytool -alias**, der beim Erstellen des Keystore verwendet wird.
 
-- **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)**.
+- **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)** .
 
 - **AndroidSigningKeyStore** &ndash; Gibt den Dateinamen der von `keytool` erstellten Keystoredatei an. Dies entspricht dem Wert, der der Option **keytool -keystore** zur Verfügung gestellt wird.
 
-- **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:**.
+- **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:** .
 
 Betrachten Sie zum Beispiel den folgenden `keytool`-Aufruf:
 

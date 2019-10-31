@@ -4,15 +4,15 @@ description: In diesem Dokument wird erörtert, wie ein APK erstellt wird, das m
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 0c3bb547a21457a1666db5fe84560e10e3bb8eb1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754279"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028133"
 ---
 # <a name="building-abi-specific-apks"></a>Erstellen ABI-spezifischer Android-Anwendungspakete (APKs)
 
@@ -35,7 +35,7 @@ In dieser Anleitung wird beschrieben, wie für das Erstellen mehrerer APKs für 
 1. Erstellen der Anwendung mithilfe der Datei **AndroidManifest.XML** aus dem vorherigen Schritt
 1. Vorbereiten des APK auf die Freigabe, indem es signiert und Zipalign darauf angewendet wird
 
-Am Ende dieser Anleitung finden Sie eine exemplarische Vorgehensweise, die demonstriert, wie Sie für diese Schritte mit [Rake](http://martinfowler.com/articles/rake.html) ein Skript erstellen.
+Am Ende dieser Anleitung finden Sie eine exemplarische Vorgehensweise, die demonstriert, wie Sie für diese Schritte mit [Rake](https://martinfowler.com/articles/rake.html) ein Skript erstellen.
 
 ### <a name="creating-the-version-code-for-the-apk"></a>Erstellen des Versionscodes für das APK
 
@@ -157,7 +157,7 @@ Sobald der Rake-Task abgeschlossen ist, gibt es drei `bin`-Ordner mit der Datei 
 [![Speicherorte plattformspezifischer Ordner, die „xamarin.helloworld.apk“ enthalten](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> Der in dieser Anleitung beschriebene Buildprozess kann in eins der vielen verschiedenen Buildsysteme implementiert werden. Obwohl wir kein vorgefertigtes Beispiel haben, sollte es auch mit [PowerShell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) oder [Fake](http://fsharp.github.io/FAKE/) möglich sein.
+> Der in dieser Anleitung beschriebene Buildprozess kann in eins der vielen verschiedenen Buildsysteme implementiert werden. Obwohl wir kein vorgefertigtes Beispiel haben, sollte es auch mit [PowerShell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) oder [Fake](https://fsharp.github.io/FAKE/) möglich sein.
 
 ## <a name="summary"></a>Zusammenfassung
 

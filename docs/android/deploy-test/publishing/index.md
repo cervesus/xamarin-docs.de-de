@@ -3,15 +3,15 @@ title: Veröffentlichen einer Anwendung
 ms.prod: xamarin
 ms.assetid: 51E19000-040A-2B74-C462-EC57C617085C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 765adf10e5bdf20191c5ee1c089d39032ea07ce0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753807"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021374"
 ---
 # <a name="publishing-an-application"></a>Veröffentlichen einer Anwendung
 
@@ -33,7 +33,7 @@ Wie Sie im oben stehenden Diagramm erkennen können, unterscheidet sich die Vorb
 
 - **Über eine Website**: Eine Xamarin.Android-Anwendung kann auf einer Website zum Download zur Verfügung gestellt werden. Dort können Benutzer die Anwendung über einen Link installieren.
 - **Über eine E-Mail**: Benutzer können eine Xamarin.Android-Anwendung über Ihre E-Mail installieren. Die Anwendung wird installiert, wenn der Anhang mit einem Android-Gerät geöffnet wird.
-- **Über einen Marketplace**: Es gibt mehrere Anwendungsmarketplaces, die der Verteilung dienen, wie z.B. [Google Play](http://play.google.com/) oder der [Amazon Appstore für Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
+- **Über einen Marketplace**: Es gibt mehrere Anwendungsmarketplaces, die der Verteilung dienen, wie z.B. [Google Play](https://play.google.com/) oder der [Amazon Appstore für Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
 
 Ein etablierten Marketplace ist die am häufigsten gewählte Methode zur Verteilung einer Anwendung, da so die weiteste Reichweite und die höchstmögliche Kontrolle über die Verteilung erreicht wird. Die Veröffentlichung einer Anwendung auf einem Marketplace geht jedoch mit einem Mehraufwand einher.
 

@@ -4,15 +4,15 @@ description: So signieren Sie das Android-Anwendungspaket (APK) für die Veröff
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: 0a60031481f16a3a600cca090d39ec47cbb8ca9a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b646893d8bbe63aa537c973c90552e0367735e47
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756060"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021215"
 ---
 # <a name="signing-the-android-application-package"></a>Signieren des Android-Anwendungspakets
 
@@ -42,7 +42,7 @@ Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/inde
 
 Nachdem **Ad-Hoc** ausgewählt wurde, öffnet Visual Studio wie im nächsten Screenshot gezeigt die Seite **Signierungsidentität** des Dialogfelds. Um das .APK zu veröffentlichen, muss es zunächst mithilfe eines Signaturschlüssels (auch als Zertifikat bezeichnet) signiert werden.
 
-Ein vorhandenes Zertifikat kann verwendet werden, indem Sie auf die Schaltfläche **Importieren** klicken und dann mit [APK signieren](#sign-the-apk) fortfahren. Andernfalls klicken Sie auf die Schaltfläche **+**, um ein neues Zertifikat zu erstellen:
+Ein vorhandenes Zertifikat kann verwendet werden, indem Sie auf die Schaltfläche **Importieren** klicken und dann mit [APK signieren](#sign-the-apk) fortfahren. Andernfalls klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen:
 
 [![Ad-Hoc-Signierungsidentität](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 

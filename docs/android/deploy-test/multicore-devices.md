@@ -4,15 +4,15 @@ description: Android kann in mehreren verschiedenen Computerarchitekturen ausgef
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: f24fdb768cc0c4e12fdc58f6e5386edd0db98527
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1141b96151df0adda755b7c6d60019c18825cc76
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753944"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028017"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Multi-Core-Geräte und Xamarin.Android
 
@@ -140,7 +140,7 @@ Nach der Installation enthält das Verzeichnis für die native Bibliothek Folgen
 $APP/lib/libtwo.so # from the armeabi-v7a directory in the apk
 ```
 
-Das heißt, es wird keine Datei `libone.so` installiert. Dies führt zu Problemen, da `libone.so` nicht vorhanden ist, um von der Anwendung zur Laufzeit geladen zu werden. Dieses Verhalten (obwohl unerwartet) wurde als Fehler protokolliert und als „[bestimmungsgemäße Funktion](http://code.google.com/p/android/issues/detail?id=9089)“ neu klassifiziert.
+Das heißt, es wird keine Datei `libone.so` installiert. Dies führt zu Problemen, da `libone.so` nicht vorhanden ist, um von der Anwendung zur Laufzeit geladen zu werden. Dieses Verhalten (obwohl unerwartet) wurde als Fehler protokolliert und als „[bestimmungsgemäße Funktion](https://code.google.com/p/android/issues/detail?id=9089)“ neu klassifiziert.
 
 Wenn das Ziel Android-Versionen vor 4.0 sind, ist es daher erforderlich, *alle* nativen Bibliotheken für *jede* ABI bereitzustellen, die von der Anwendung unterstützt werden, d.h. die `.apk`-Datei sollte Folgendes enthalten:
 
@@ -174,7 +174,7 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-Leider hängt dieses Verhalten wie im folgenden Dokument beschrieben von der Reihenfolge ab: [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk (Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind)](http://code.google.com/p/android/issues/detail?id=25321).
+Leider hängt dieses Verhalten wie im folgenden Dokument beschrieben von der Reihenfolge ab: [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk (Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind)](https://code.google.com/p/android/issues/detail?id=25321).
 
 Die nativen Bibliotheken werden „in der jeweiligen Reihenfolge“ verarbeitet (z.B. wie durch unzip aufgelistet), und die *erste Übereinstimmung* wird extrahiert. Da die `.apk`-Datei die Versionen `armeabi` und `armeabi-v7a` von `libtwo.so` enthält und `armeabi` zuerst aufgelistet wird, wird die `armeabi`-Version extrahiert, *nicht* die `armeabi-v7a`-Version:
 
@@ -255,5 +255,5 @@ Anschließend wurde erläutert, wie die ABI-Unterstützung in einer Xamarin.Andr
 
 - [ABI für die ARM-Architektur (PDF-Datei)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
-- [Problem 9089: Nexus One: Es werden KEINE nativen Bibliotheken aus armeabi geladen, wenn mindestens eine Bibliothek unter armeabi-v7a vorhanden ist.](http://code.google.com/p/android/issues/detail?id=9089)
-- [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk (Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind)](http://code.google.com/p/android/issues/detail?id=25321).
+- [Problem 9089: Nexus One: Es werden KEINE nativen Bibliotheken aus armeabi geladen, wenn mindestens eine Bibliothek unter armeabi-v7a vorhanden ist.](https://code.google.com/p/android/issues/detail?id=9089)
+- [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk (Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind)](https://code.google.com/p/android/issues/detail?id=25321).

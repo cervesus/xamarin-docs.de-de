@@ -3,15 +3,15 @@ title: Unabhängiges Veröffentlichen
 ms.prod: xamarin
 ms.assetid: 6FB4DEF2-01AD-C5FE-0950-CE1BF088A9C6
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: bd505e97ce4fcca2197f6c7da2de8411931900ab
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: dee49d556173ec0b9544820f129eef8a9cce404f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753778"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021323"
 ---
 # <a name="publishing-independently"></a>Unabhängiges Veröffentlichen
 
@@ -55,7 +55,7 @@ Sie können eine Anwendung auch über einen Webserver verteilen. Hierzu müssen 
 Die manuelle Installation ist die dritte Option zur Installation von Anwendungen. Gehen Sie wie folgt vor, um eine manuelle Installation durchzuführen:
 
 1. **Verteilen Sie eine Kopie des APKs an Benutzer**: Diese Kopie kann beispielsweise über eine CD oder einen USB-Speicherstick verteilt werden.
-1. **Der Benutzer installiert die Anwendung auf einem Android-Gerät**: Verwenden Sie das Befehlszeilentool *Android Debug Bridge* (**adb**). **adb** ist ein vielseitiges Befehlszeilentool, das die Kommunikation mit einer Emulatorinstanz oder einem Android-Gerät ermöglicht. Das Android SDK beinhaltet das Tool **adb**. Es befindet sich im Verzeichnis **\<sdk>/platform-tools/**.
+1. **Der Benutzer installiert die Anwendung auf einem Android-Gerät**: Verwenden Sie das Befehlszeilentool *Android Debug Bridge* (**adb**). **adb** ist ein vielseitiges Befehlszeilentool, das die Kommunikation mit einer Emulatorinstanz oder einem Android-Gerät ermöglicht. Das Android SDK beinhaltet das Tool **adb**. Es befindet sich im Verzeichnis **\<sdk>/platform-tools/** .
 
 Das Android-Gerät muss mit einem USB-Kabel mit dem Computer verbunden sein.
 Für Windows-Computer sind möglicherweise zusätzliche USB-Treiber vom Smartphonehersteller erforderlich, damit das Gerät von **adb** erkannt wird. Auf Installationsanweisungen für diese zusätzlichen USB-Treiber kann in diesem nicht eingegangen werden.

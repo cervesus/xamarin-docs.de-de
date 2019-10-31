@@ -4,15 +4,15 @@ description: In diesem Dokument wird das Tool „mtouch“ beschrieben, das viel
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 9b2cb44dff7712953454a9add71f092956e3c759
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762773"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026282"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Verwenden von mtouch zum Bündeln von Xamarin.iOS-Apps
 
@@ -120,6 +120,3 @@ Diese Schritte werden in der Regel von Visual Studio für Mac ausgeführt.
 
 Auf der Seite [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) im Leitfaden finden Sie Informationen zu den anderen Befehlszeilenoptionen.
 
-## <a name="related-links"></a>Verwandte Links
-
-- [mtouch(1)](http://iosapi.xamarin.com/?link=man%3amtouch(1))

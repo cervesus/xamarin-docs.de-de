@@ -1,21 +1,21 @@
 ---
-title: 'Hallo, Android-Multiscreen: Ausführliche Erläuterungen'
+title: 'Hello, Android Multiscreen (Hallo, Android-Multiscreen): Ausführliche Erläuterungen'
 description: In diesem zweiteiligen Leitfaden wird die grundlegende Phoneword-Anwendung erweitert, die Sie im Leitfaden „Hallo, Android“ erstellt haben, um einen zweiten Bildschirm behandeln zu können. Dabei werden die grundlegenden Bausteine für die Android-Anwendung eingeführt. Es ist ein tieferer Einblick in die Android-Architektur enthalten, damit Sie sich ein besseres Bild der Android-Anwendungsstruktur und -Funktionen machen können.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 3eee66032a33e66d3a6a22ca43cb931fbd59888f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4acbfe810abefd9a25721ddf59c9f4f197afdf28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122984"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020977"
 ---
-# <a name="hello-android-multiscreen-deep-dive"></a>Hallo, Android-Multiscreen: Ausführliche Erläuterungen
+# <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen): Ausführliche Erläuterungen
 
 _In diesem zweiteiligen Leitfaden wird die grundlegende Phoneword-Anwendung erweitert, die Sie im Leitfaden „Hallo, Android“ erstellt haben, um einen zweiten Bildschirm behandeln zu können. Dabei werden die grundlegenden Bausteine für die Android-Anwendung eingeführt. Es ist ein tieferer Einblick in die Android-Architektur enthalten, damit Sie sich ein besseres Bild der Android-Anwendungsstruktur und -Funktionen machen können._
 

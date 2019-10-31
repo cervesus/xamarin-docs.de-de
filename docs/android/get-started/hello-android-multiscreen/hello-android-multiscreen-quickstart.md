@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: d1a4d73242e9701ff9ffcfc58791986bca89a095
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 114373b6c4b194fe6e566255eb09eb82a8208312
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755850"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020964"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen): Schnellstart
 
@@ -78,7 +78,7 @@ Wenn Sie auf der Designoberfläche auf die Schaltfläche **Übersetzungsverlauf*
 
 ### <a name="creating-the-second-activity"></a>Erstellen der zweiten Aktivität
 
-Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neues Element…**:
+Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neues Element…** :
 
 [![Hinzufügen einer neuen Datei](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
@@ -222,7 +222,7 @@ Klicken Sie auf der Designoberfläche die Schaltfläche **Übersetzungsverlauf**
 
 ### <a name="creating-the-second-activity"></a>Erstellen der zweiten Aktivität
 
-Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Lösungspad** auf das graue Zahnradsymbol neben dem Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neue Datei...**:
+Erstellen Sie eine zweite Aktivität, um den zweiten Bildschirm einzurichten. Klicken Sie im **Lösungspad** auf das graue Zahnradsymbol neben dem Projekt **Phoneword**, und klicken Sie auf **Hinzufügen > Neue Datei...** :
 
 Klicken Sie im Dialogfeld **Neue Datei** auf **Android > Aktivität**, nennen Sie die Aktivität `TranslationHistoryActivity`, und klicken Sie anschließend auf **Hinzufügen**.
 

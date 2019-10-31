@@ -3,15 +3,15 @@ title: APK-Erweiterungsdateien
 ms.prod: xamarin
 ms.assetid: DB7E38E8-3C4E-5191-27EA-22DE63044FE2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e542336cfd3bf1eac50c343a3edfeb0efa414d0c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 712322435614966348fc5c10cabf724870c307e4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753609"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021292"
 ---
 # <a name="apk-expansion-files"></a>APK-Erweiterungsdateien
 
@@ -36,8 +36,8 @@ Google Play verhindert, dass eine Erweiterungsdatei zu einem vorhandenen APK hoc
 
 Wenn die Dateien auf ein Gerät heruntergeladen werden, werden sie unter **_freigegebener-speicher_/Android/obb/_paket-name_** gespeichert:
 
-- **_freigegebener-speicher_**: Das durch `Android.OS.Environment.ExternalStorageDirectory` angegebene Verzeichnis.
-- **_paket-name_**: Dies ist der Paketname der Anwendung im Java-Stil.
+- **_freigegebener-speicher_** : Das durch `Android.OS.Environment.ExternalStorageDirectory` angegebene Verzeichnis.
+- **_paket-name_** : Dies ist der Paketname der Anwendung im Java-Stil.
 
 Nach dem Herunterladen sollten die Erweiterungsdateien nicht verschoben, geändert, umbenannt oder von ihrem Speicherort auf dem Gerät gelöscht werden. Ansonsten werden die Erweiterungsdateien erneut heruntergeladen, und die alte(n) Datei(en) gelöscht. Darüber hinaus sollte das Dateiverzeichnis für die Erweiterung nur das Paket der Erweiterungsdateien enthalten.
 
@@ -69,7 +69,7 @@ Wenn eine Anwendung über Google Play installiert wird, sollten die Erweiterungs
 
 [![APK-Erweiterungsflussdiagramm](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-Wenn eine Anwendung gestartet wird, sollte überprüft werden, ob die entsprechenden Erweiterungsdateien auf dem aktuellen Gerät vorhanden sind. Wenn dies nicht der Fall ist, muss die Anwendung eine Anforderung der [Anwendungslizenzierung](https://developer.android.com/google/play/licensing/index.html) von Google Play stellen. Diese Überprüfung erfolgt mithilfe der *License Verification Library (LVL)*, und sie muss für kostenlose und lizenzierte Anwendungen erfolgen. Die LVL wird hauptsächlich von kostenpflichtigen Anwendungen verwendet, um Lizenzbeschränkungen zu erzwingen. Google hat die LVL jedoch erweitert, sodass sie ebenfalls mit den Erweiterungsbibliotheken verwendet werden kann. Kostenlose Anwendungen müssen die LVL-Überprüfung ausführen, können aber die Lizenzeinschränkungen ignorieren. Die Anforderung der LVL ist verantwortlich für die Bereitstellung der folgenden Informationen zu den Erweiterungsdateien, die die Anwendung erfordert: 
+Wenn eine Anwendung gestartet wird, sollte überprüft werden, ob die entsprechenden Erweiterungsdateien auf dem aktuellen Gerät vorhanden sind. Wenn dies nicht der Fall ist, muss die Anwendung eine Anforderung der [Anwendungslizenzierung](https://developer.android.com/google/play/licensing/index.html) von Google Play stellen. Diese Überprüfung erfolgt mithilfe der *License Verification Library (LVL)* , und sie muss für kostenlose und lizenzierte Anwendungen erfolgen. Die LVL wird hauptsächlich von kostenpflichtigen Anwendungen verwendet, um Lizenzbeschränkungen zu erzwingen. Google hat die LVL jedoch erweitert, sodass sie ebenfalls mit den Erweiterungsbibliotheken verwendet werden kann. Kostenlose Anwendungen müssen die LVL-Überprüfung ausführen, können aber die Lizenzeinschränkungen ignorieren. Die Anforderung der LVL ist verantwortlich für die Bereitstellung der folgenden Informationen zu den Erweiterungsdateien, die die Anwendung erfordert: 
 
 - **Dateigröße**: Die Größe der Erweiterungsdateien dienen als Teil der Überprüfung, die bestimmt, ob die richtigen Erweiterungsdateien bereits heruntergeladen wurden oder nicht.
 - **Dateinamen**: Dies ist der Dateiname (auf dem aktuellen Gerät), in dem die Erweiterungspakete gespeichert werden müssen.
@@ -92,7 +92,7 @@ Wenn die Erweiterungsdateien nicht heruntergeladen wurden oder die aktuellen Dat
 Um den erforderlichen Aufwand für die Integration der Erweiterungsdateien in einer Anwendung zu erleichtern, erstellte Google mehrere Bibliotheken in Java. Die fraglichen Bibliotheken sind:
 
 - **Downloader-Bibliothek**: Dies ist eine Bibliothek, die den erforderlichen Aufwand für die Integration der Erweiterungsdateien in einer Anwendung reduziert. Die Bibliothek lädt die Erweiterungsdateien in einem Hintergrunddienst herunter, zeigt Benutzerbenachrichtigungen an, behandelt Probleme mit der Netzwerkkonnektivität, setzt Downloads fort, usw.
-- **License Verification Library (LVL)**: Eine Bibliothek zum Erstellen und Verarbeiten von Aufrufen an die Anwendungslizenzierungsdienste. Sie kann auch zur Ausführung von Lizenzierungsüberprüfungen verwendet werden, um festzustellen, ob die Anwendung für die Verwendung auf dem Gerät autorisiert ist.
-- **APK-Erweiterungs-ZIP-Bibliothek (optional)**: Wenn sich die Erweiterungsdateien in einer ZIP-Datei befinden, fungiert diese Bibliothek als Inhaltsanbieter und lässt zu, dass eine Anwendung Ressourcen und Objekte direkt aus der ZIP-Datei liest, ohne die ZIP-Datei zu erweitern.
+- **License Verification Library (LVL)** : Eine Bibliothek zum Erstellen und Verarbeiten von Aufrufen an die Anwendungslizenzierungsdienste. Sie kann auch zur Ausführung von Lizenzierungsüberprüfungen verwendet werden, um festzustellen, ob die Anwendung für die Verwendung auf dem Gerät autorisiert ist.
+- **APK-Erweiterungs-ZIP-Bibliothek (optional)** : Wenn sich die Erweiterungsdateien in einer ZIP-Datei befinden, fungiert diese Bibliothek als Inhaltsanbieter und lässt zu, dass eine Anwendung Ressourcen und Objekte direkt aus der ZIP-Datei liest, ohne die ZIP-Datei zu erweitern.
 
 Diese Bibliotheken wurden in C# portiert und sind unter der Apache 2.0-Lizenz verfügbar. Um Erweiterungsdateien schnell in eine vorhandene Anwendung zu integrieren, können diese Bibliotheken zu einer vorhandenen Xamarin.Android-Anwendung hinzugefügt werden. Den Code finden Sie in der [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) auf GitHub.

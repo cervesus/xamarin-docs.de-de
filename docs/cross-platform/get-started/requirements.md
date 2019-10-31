@@ -3,15 +3,15 @@ title: Systemanforderungen
 description: In diesem Artikel werden die Systemanforderungen zum Erstellen von Apps mit Xamarin auf Mac- und Windows-Computern aufgeführt. Außerdem sind Links zu Installationsanweisungen enthalten.
 ms.prod: xamarin
 ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/16/2019
-ms.openlocfilehash: ebfe139d614db95c7dd1af0c76926d934144d74f
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.openlocfilehash: 093369010d9327cd2b19fdac09f77697532bfb75
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584335"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016437"
 ---
 # <a name="system-requirements"></a>Systemanforderungen
 

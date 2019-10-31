@@ -4,15 +4,15 @@ description: In diesem Leitfaden werden die Unterschiede zwischen einer System-A
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 9ef13816dc1bc11eab0105ec223c2ef98366e4e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754004"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028059"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Installieren von Xamarin.Android als System-App
 
@@ -44,13 +44,13 @@ Die folgenden Schritte beschreiben, wie eine Xamarin.Android-App als System-App 
 
 1. **Packen eines Release-APK der Xamarin.Android-App**: Dieser Schritt wird ausführlicher im Leitfaden [Veröffentlichen einer Anwendung](~/android/deploy-test/publishing/index.md) beschrieben.
 
-2. **Extrahieren freigegebener Bibliotheken aus dem APK**: Verwenden eines ZIP-Hilfsprogramms, Öffnen der APK-Datei und Untersuchen der Inhalte des **/lib/**-Ordners. Dieser Ordner enthält dann ein Unterverzeichnis für jede _Anwendungsbinärdatei-Schnittstelle_ (ABI), die von der Anwendung unterstützt wird. Die Inhalte dieses Ordners enthalten alle freigegebenen Bibliotheken, die von der App auf dieser bestimmten ABI benötigt werden:
+2. **Extrahieren freigegebener Bibliotheken aus dem APK**: Verwenden eines ZIP-Hilfsprogramms, Öffnen der APK-Datei und Untersuchen der Inhalte des **/lib/** -Ordners. Dieser Ordner enthält dann ein Unterverzeichnis für jede _Anwendungsbinärdatei-Schnittstelle_ (ABI), die von der Anwendung unterstützt wird. Die Inhalte dieses Ordners enthalten alle freigegebenen Bibliotheken, die von der App auf dieser bestimmten ABI benötigt werden:
 
     ![Screenshot von SO-Dateien im armeabi-v7a-Ordner der „taskypro.zip“-Datei](install-system-app-images/install-system-app-01.png)
 
    Im obigen Screenshot sehen Sie nur eine unterstützte ABI, (**armeabi-v7a**), die die zwei **SO**-Dateien enthält, die von der App benötigt werden. Beachten Sie, dass nur die ABI-Dateien, die für das Gerät oder die Zielarchitektur des Geräte-ROM geeignet sind, extrahiert werden müssen. Kopieren Sie also keine **SO**-Dateien aus dem **x86**-Ordner auf ein **armeabi-v7a**-Gerät oder -ROM.
 
-3. **Kopieren der SO-Dateien nach /system/lib**: Kopieren Sie **SO**-Dateien, die aus dem Android-Anwendungspaket im vorherigen Schritt kopiert wurden, in den **/system/lib/**-Ordner auf dem benutzerdefinierten ROM.
+3. **Kopieren der SO-Dateien nach /system/lib**: Kopieren Sie **SO**-Dateien, die aus dem Android-Anwendungspaket im vorherigen Schritt kopiert wurden, in den **/system/lib/** -Ordner auf dem benutzerdefinierten ROM.
 
 4. **Kopieren der APK-Datei nach /system/app** &ndash; Der letzte Schritt ist, die APK-Datei in den **/system/app**-Ordner auf dem ROM zu kopieren.
 

@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie ein Android-Gerät eingeric
 ms.prod: xamarin
 ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: a2b69152ab616e74761d9acf6a74d30144fe43b3
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f5b92bc202cbf9765a63219ad653442152c3eb24
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925053"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020712"
 ---
 # <a name="set-up-device-for-development"></a>Einrichten eines Geräts für die Entwicklung
 
@@ -71,7 +71,7 @@ Führen Sie die Anwendung **android.bat** im Verzeichnis **[Installationspfad de
 
 ### <a name="download-the-usb-drivers"></a>Herunterladen der USB-Treiber
 
-Google Nexus-Geräte (mit Ausnahme des Galaxy Nexus) erfordern den Google-USB-Treiber. Der Treiber für das Galaxy Nexus wird [von Samsung verteilt](http://www.samsung.com/us/support/downloads/).
+Google Nexus-Geräte (mit Ausnahme des Galaxy Nexus) erfordern den Google-USB-Treiber. Der Treiber für das Galaxy Nexus wird [von Samsung verteilt](https://www.samsung.com/us/support/downloads/).
 Alle anderen Android-Geräte sollten den [USB-Treiber des jeweiligen Herstellers](https://developer.android.com/tools/extras/oem-usb.html#Drivers) verwenden.
 
 Installieren Sie das **Google-USB-Treiberpaket**, indem Sie wie im folgenden Screenshot gezeigt den Android SDK-Manager starten und den Ordner **Extras** erweitern:
@@ -183,7 +183,7 @@ In diesem Artikel wurde erläutert, wie ein Android-Gerät für die Entwicklung 
 
 - [Android Debug Bridge](https://developer.android.com/tools/help/adb.html)
 - [Using Hardware Devices (Verwenden von Hardwaregeräten)](https://developer.android.com/tools/device.html)
-- [Samsung Driver Downloads (Samsung-Treiberdownloads)](http://www.samsung.com/us/support/downloads/)
+- [Samsung Driver Downloads (Samsung-Treiberdownloads)](https://www.samsung.com/us/support/downloads/)
 - [OEM USB Drivers (OEM-USB-Treiber)](https://developer.android.com/tools/extras/oem-usb.html#Drivers)
 - [Google-USB-Treiber](https://developer.android.com/sdk/win-usb.html)
-- [XDA-Entwickler: Windows 8 – ADB/fastboot driver problem solved (ADB-/Fastboot-Treiberproblem gelöst)](http://forum.xda-developers.com/showthread.php?t=1583801)
+- [XDA-Entwickler: Windows 8 – ADB/fastboot driver problem solved (ADB-/Fastboot-Treiberproblem gelöst)](https://forum.xda-developers.com/showthread.php?t=1583801)

@@ -3,15 +3,15 @@ title: Manuelles Hochladen des APKs
 ms.prod: xamarin
 ms.assetid: 1309C251-ABF0-4412-B1F5-200DC8321A9D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756070"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021251"
 ---
 # <a name="manually-uploading-the-apk"></a>Manuelles Hochladen des APKs
 
@@ -88,7 +88,7 @@ Klicken Sie in der **Google Play Developer Console** auf **Einstufung des Inhalt
 
 [![Abschnitt „Einstufung des Inhalts“](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
-Für sämtliche Google Play-Anwendungen ist eine Einstufung auf der Grundlage des Einstufungssystems von Google Play erforderlich. Zusätzliche müssen alle Anwendungen in Einklang mit den [Richtlinien für Entwicklerinhalte](http://www.android.com/us/developer-content-policy.html) stehen.
+Für sämtliche Google Play-Anwendungen ist eine Einstufung auf der Grundlage des Einstufungssystems von Google Play erforderlich. Zusätzliche müssen alle Anwendungen in Einklang mit den [Richtlinien für Entwicklerinhalte](https://www.android.com/us/developer-content-policy.html) stehen.
 
 Im Folgenden werden die vier Stufen des Einstufungssystems von Google Play aufgeführt. Außerdem werden Hinweise zu Funktionen und Inhalten gegeben, die eine bestimmte Einstufung erforderlich machen oder erzwingen: 
 
@@ -131,7 +131,7 @@ Nach diesem Abschnitt werden Ihnen zusätzliche Optionen angezeigt. Hierbei kön
 ### <a name="consent"></a>Einverständniserklärung
 
 Im unteren Bereich der Seite **Preisgestaltung &amp; Verteilung** befindet sich der Abschnitt **Einverständniserklärung**.
-Die Angaben in diesem Abschnitt sind obligatorisch. Mit diesen bestätigen Sie, dass die App in Einklang mit den [Richtlinien für Android-Content](http://www.android.com/market/terms/developer-content-policy.html#hl=us) steht. Des Weiteren erklären Sie, dass die Anwendung US-amerikanischen Exportgesetzen unterliegt:
+Die Angaben in diesem Abschnitt sind obligatorisch. Mit diesen bestätigen Sie, dass die App in Einklang mit den [Richtlinien für Android-Content](https://www.android.com/market/terms/developer-content-policy.html#hl=us) steht. Des Weiteren erklären Sie, dass die Anwendung US-amerikanischen Exportgesetzen unterliegt:
 
 [![Abschnitt „Einverständniserklärung“](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
