@@ -120,7 +120,7 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: map/index.md
-            title: Karten
+            title: Zuordnung
           - href: menuitem.md
             html: 'Erfahren Sie, wie Sie die MenuItem-Klasse verwenden, um Elemente dem Kontextmenü der ListView-Zellen hinzuzufügen.'
             image:
