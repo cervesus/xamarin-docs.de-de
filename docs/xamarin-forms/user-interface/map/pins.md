@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: a2fb0ba2036dfe34e85c7bebab6ecb55cd868ad5
-ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
+ms.openlocfilehash: 930d2dcc701f88e2a350ec1011405bb18b86de6e
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810510"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425568"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. Forms-Karten Pins
 
@@ -44,10 +44,7 @@ Eine [`Pin`](xref:Xamarin.Forms.Maps.Pin) kann einer [`Map`](xref:Xamarin.Forms.
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
      <maps:Map x:Name="map"
                IsShowingUser="True"
-               MoveToLastRegionOnLayoutChange="False"
-               HeightRequest="100"                  
-               WidthRequest="960"
-               VerticalOptions="FillAndExpand">
+               MoveToLastRegionOnLayoutChange="False">
          <x:Arguments>
              <maps:MapSpan>
                  <x:Arguments>
@@ -80,10 +77,7 @@ Eine [`Pin`](xref:Xamarin.Forms.Maps.Pin) kann einer [`Map`](xref:Xamarin.Forms.
 </ContentPage>
 ```
 
-Dieser XAML-Code erstellt ein [`Map`](xref:Xamarin.Forms.Maps.Map) Objekt, das den Bereich anzeigt, der durch das [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Objekt angegeben wird. Das `MapSpan` Objekt wird auf den breiten-und Längengrad zentriert, der durch ein [`Position`](xref:Xamarin.Forms.Maps.Position) -Objekt dargestellt wird, das 0,01 Längen-und Längengrad erweitert. Ein [`Pin`](xref:Xamarin.Forms.Maps.Pin) -Objekt wird der [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) Auflistung hinzugefügt und auf dem `Map` an dem Speicherort gezeichnet, der durch seine [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) -Eigenschaft angegeben wird. Informationen zum Übergeben von Argumenten in XAML an Objekte, die Standardkonstruktoren fehlen, finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
-
-> [!NOTE]
-> Die [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur definiert schreibgeschützte [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude) und [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude) Eigenschaften, beide vom Typ `double`. Beim Erstellen eines `Position` Objekts über den Konstruktor wird der Breitengrad zwischen-90,0 und 90,0 und der Längen Wert zwischen-180,0 und 180,0 geklammert.
+Dieser XAML-Code erstellt ein [`Map`](xref:Xamarin.Forms.Maps.Map) Objekt, das den Bereich anzeigt, der durch das [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Objekt angegeben wird. Das `MapSpan` Objekt wird auf den breiten-und Längengrad zentriert, der durch ein [`Position`](xref:Xamarin.Forms.Maps.Position) -Objekt dargestellt wird, das 0,01 Längen-und Längengrad erweitert. Ein [`Pin`](xref:Xamarin.Forms.Maps.Pin) -Objekt wird der [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) Auflistung hinzugefügt und auf dem `Map` an dem Speicherort gezeichnet, der durch seine [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) -Eigenschaft angegeben wird. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md). Informationen zum Übergeben von Argumenten in XAML an Objekte, die Standardkonstruktoren fehlen, finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
 
 Der entsprechende C#-Code lautet:
 
@@ -119,7 +113,7 @@ Wenn ein [`Pin`](xref:Xamarin.Forms.Maps.Pin) abgetippt wird, wird standardmäß
 
 Wenn Sie an anderer Stelle auf der Karte tippen, wird das Informationsfenster geschlossen
 
-Die [`Pin`](xref:Xamarin.Forms.Maps.Pin) -Klasse definiert ein `MarkerClicked` Ereignis, das ausgelöst wird, wenn ein `Pin` getippt wird. Es ist nicht erforderlich, dieses Ereignis zu behandeln, um das Informationsfenster anzuzeigen. Stattdessen sollte dieses Ereignis nur behandelt werden, wenn eine Voraussetzung dafür vorliegt, dass eine bestimmte Pin abgetippt wurde.
+Die [`Pin`](xref:Xamarin.Forms.Maps.Pin) -Klasse definiert ein `MarkerClicked` Ereignis, das ausgelöst wird, wenn ein `Pin` getippt wird. Es ist nicht erforderlich, dieses Ereignis zu behandeln, um das Informationsfenster anzuzeigen. Stattdessen sollte dieses Ereignis behandelt werden, wenn eine Anforderung vorhanden ist, benachrichtigt zu werden, dass eine bestimmte Pin abgetippt wurde.
 
 Die [`Pin`](xref:Xamarin.Forms.Maps.Pin) -Klasse definiert auch ein `InfoWindowClicked` Ereignis, das ausgelöst wird, wenn ein Informationsfenster getippt wird. Dieses Ereignis sollte behandelt werden, wenn eine Anforderung vorhanden ist, benachrichtigt zu werden, dass ein bestimmtes Informationsfenster angetippt wurde.
 
@@ -190,7 +184,6 @@ Eine [`Map`](xref:Xamarin.Forms.Maps.Map) kann mit Pins aufgefüllt werden, inde
     <Grid>
         ...
         <maps:Map x:Name="map"
-                  MoveToLastRegionOnLayoutChange="false"
                   ItemsSource="{Binding Locations}">
             <maps:Map.ItemTemplate>
                 <DataTemplate>
@@ -211,7 +204,7 @@ Die Darstellung der einzelnen Elemente in der `IEnumerable` Auflistung wird defi
 
 Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , die eine [`Pin`](xref:Xamarin.Forms.Maps.Pin) Auflistung mithilfe der Datenbindung anzeigt:
 
-[![Screenshot der Karte mit Daten gebundenen Pins unter IOS und Android](map-images/pins-itemssource.png "Zuordnung mit Daten gebundenen Pins")](map-images/pins-itemssource-large.png#lightbox "Zuordnung mit Daten gebundenen Pins")
+[![Screenshot der Karte mit Daten gebundenen Pins unter IOS und Android](pins-images/pins-itemsource.png "Zuordnung mit Daten gebundenen Pins")](pins-images/pins-itemsource-large.png#lightbox "Zuordnung mit Daten gebundenen Pins")
 
 ### <a name="choose-item-appearance-at-runtime"></a>Auswählen der Element Darstellung zur Laufzeit
 

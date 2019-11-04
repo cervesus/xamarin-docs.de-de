@@ -6,12 +6,12 @@ ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: dad1b7173e302931455887fdaa4730347f0e5e55
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 48519431a65fba0cdc61062021ad86fb53854ef3
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014999"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425460"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualisieren vorhandener xamarin. Forms-apps
 
@@ -196,14 +196,14 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 Gelegentlich wird ein Fehler angezeigt, der diesem ähnelt, nachdem das xamarin. Forms-nuget-Paket aktualisiert wurde. Dies tritt auf, wenn der nuget-Updater Verweise auf ältere Versionen nicht vollständig aus Ihren **csproj** -Dateien entfernt.
 
->Ihr\_Project. csproj: Fehler: dieses Projekt verweist auf nuget-Pakete, die auf diesem Computer fehlen. Aktivieren Sie die nuget-Paket Wiederherstellung zum herunterladen.  Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkID=322105. Die fehlende Datei ist.. /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win + net45 + WP80 + MonoAndroid10 + MonoTouch10/xamarin. Forms. targets. (Ihr\_Projekt)
+>Ihr\_Project. csproj: Fehler: dieses Projekt verweist auf nuget-Pakete, die auf diesem Computer fehlen. Aktivieren Sie die nuget-Paket Wiederherstellung zum herunterladen.  Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?LinkID=322105. Die fehlende Datei ist.. /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win + net45 + WP80 + MonoAndroid10 + MonoTouch10/xamarin. Forms. targets. (Ihr\_Projekt)
 
 Um diese Fehler zu beheben, öffnen Sie die **csproj** -Datei in einem Text-Editor, und suchen Sie nach `<Target` Elementen, die auf ältere Versionen von xamarin. Forms verweisen, z. b. auf das unten gezeigte-Element. Löschen Sie das gesamte Element manuell aus der **csproj** -Datei, und speichern Sie die Änderungen.
 
 ```csharp
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see https://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets'))" />
   </Target>
