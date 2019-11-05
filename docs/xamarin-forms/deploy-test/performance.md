@@ -22,7 +22,7 @@ ms.locfileid: "68820944"
 
 Eine schlechte Anwendungsleistung kann sich auf unterschiedliche Weise bemerkbar machen. Die Anwendung reagiert scheinbar nicht mehr, der Bildlauf ist möglicherweise verlangsamt, und auch die Akkulaufzeit des Geräts kann abnehmen. Leistungsoptimierung umfasst jedoch mehr als das bloße Implementieren eines effizienten Codes. Es muss ebenfalls berücksichtigt werden, wie der Benutzer die Leistung der Anwendung wahrnimmt. Wenn beispielsweise Vorgänge ausgeführt werden können, ohne dass der Benutzer daran gehindert wird, gleichzeitig andere Aktivitäten auszuführen, kann dies dazu beitragen die Benutzerfreundlichkeit zu verbessern.
 
-Es gibt zahlreiche Techniken zum Verbessern der Leistung und der wahrnehmbaren Leistung von Xamarin.Forms-Anwendungen. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren.
+Es gibt zahlreiche Techniken zum Verbessern der tatsächlichen wie auch der „gefühlten“ Leistung von Xamarin.Forms-Anwendungen. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren.
 
 > [!NOTE]
 > Bevor Sie diesen Artikel lesen, sollten Sie zuerst den Artikel [Cross-Platform Performance (Plattformübergreifende Leistung)](~/cross-platform/deploy-test/memory-perf-best-practices.md) lesen, der nicht-plattformspezifische Methoden zur Verbesserung der Arbeitsspeicherauslastung und Leistung von Anwendungen beschreibt, die mit der Xamarin-Plattform erstellt wurden.
@@ -39,7 +39,7 @@ XAMLC ist in neuen Xamarin.Forms-Lösungen standardmäßig aktiviert. Allerdings
 
 ## <a name="use-compiled-bindings"></a>Verwenden kompilierter Bindungen
 
-Kompilierte Bindungen verbessern die Datenbindungsleistung in Xamarin.Forms-Anwendungen, indem die Bindungsausdrücke zur Kompilierzeit anstatt zur Laufzeit mit Reflektion aufgelöst werden. Das Kompilieren eines Bindungsausdrucks generiert kompilierten Code, der in der Regel eine Bindung 8 bis 20 Mal schneller auflöst als bei Verwendung einer klassischen Bindung. Weitere Informationen finden Sie unter [Kompilierte Bindungen](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md).
+Kompilierte Bindungen verbessern die Datenbindungsleistung in Xamarin.Forms-Anwendungen, indem die Bindungsausdrücke zur Kompilierzeit anstatt zur Laufzeit mit Reflexion aufgelöst werden. Das Kompilieren eines Bindungsausdrucks generiert kompilierten Code, der in der Regel eine Bindung 8 bis 20 Mal schneller auflöst als bei Verwendung einer klassischen Bindung. Weitere Informationen finden Sie unter [Kompilierte Bindungen](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md).
 
 ## <a name="reduce-unnecessary-bindings"></a>Reduzieren unnötiger Bindungen
 
@@ -53,9 +53,9 @@ Ab Xamarin.Forms 4.0 verwenden alle Anwendungen mit dem Ziel `FormsAppCompatActi
 
 ## <a name="enable-startup-tracing-on-android"></a>Aktivieren der Startablaufverfolgung unter Android
 
-Die AOT-Kompilierung (Ahead-Of-Time) unter Android minimiert den JIT-Anwendungsstartaufwand (Just-In-Time) und die Arbeitsspeicherauslastung, wobei ein viel größeres APK erstellt wird. Eine Alternative ist die Verwendung von Startablaufverfolgung, die im Vergleich zur konventionellen AOT-Kompilierung einen Kompromiss zwischen der Android-APK-Größe und der Startzeit bietet.
+Die AOT-Kompilierung (Ahead-Of-Time) unter Android minimiert den JIT-Anwendungsstartaufwand (Just-In-Time) und die Arbeitsspeicherauslastung, wobei ein viel größeres APK erstellt wird. Eine Alternative ist die Verwendung der Startablaufverfolgung, die im Vergleich zur konventionellen AOT-Kompilierung einen Kompromiss zwischen der Android-APK-Größe und der Startzeit bietet.
 
-Anstatt so viel von der Anwendung wie möglich mit nicht verwaltetem Code zu kompilieren, kompiliert die Startablaufverfolgung nur den Satz verwalteter Methoden, die die teuersten Teile des Anwendungsstarts in einer leeren Xamarin.Forms-Anwendung darstellen. Diese Vorgehensweise führt im Vergleich zur konventionellen AOT-Kompilierung zu einer verringerten APK-Größe, während gleichzeitig ähnliche Startverbesserungen bereitgestellt werden.
+Statt einen möglichst großen Teil der Anwendung in nicht verwalteten Code zu kompilieren, kompiliert die Startablaufverfolgung nur diejenigen verwalteten Methoden, die die aufwändigsten Teile des Anwendungsstars darstellen, in eine leere Xamarin.Forms-Anwendung. Diese Vorgehensweise führt im Vergleich zur konventionellen AOT-Kompilierung zu einer verringerten APK-Größe, während gleichzeitig ähnliche Startverbesserungen bereitgestellt werden.
 
 ## <a name="enable-layout-compression"></a>Aktivieren der Layoutkomprimierung
 
@@ -166,7 +166,7 @@ Als Alternative kann die Abhängigkeitsinjektion durch manuelle Implementierung 
 
 ## <a name="create-shell-applications"></a>Erstellen von Shellanwendungen
 
-Xamarin.Forms-Shellanwendungen bieten eine Benutzeroberfläche mit zahlreichen Optionen für die Navigation, basierend auf Flyouts und Registerkarten. Wenn Ihre Anwendungsbenutzeroberfläche mit der Shell implementiert werden kann, ist es vorteilhaft, so vorzugehen. Shellanwendungen helfen, ein schlechtes Starterlebnis zu vermeiden, da Seiten bei Bedarf als Reaktion auf die Navigation erstellt werden und nicht beim Start der Anwendung, wie bei Anwendungen, die eine [„TabbedPage“](xref:Xamarin.Forms.TabbedPage) verwenden. Weitere Informationen finden Sie unter [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+Xamarin.Forms-Shellanwendungen bieten eine Benutzeroberfläche mit zahlreichen Optionen für die Navigation, basierend auf Flyouts und Registerkarten. Wenn Ihre Anwendungsbenutzeroberfläche mit der Shell implementiert werden kann, ist es vorteilhaft, so vorzugehen. Shellanwendungen beschleunigen den Anwendungsstart, denn Seiten werden anders als bei [„TabbedPage“](xref:Xamarin.Forms.TabbedPage)-Anwendungen nicht direkt beim Start der Anwendung erstellt, sondern nur bei Bedarf infolge von Navigationshandlungen. Weitere Informationen finden Sie unter [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
 
 ## <a name="use-collectionview-instead-of-listview"></a>Verwenden von CollectionView anstelle von ListView
 
@@ -264,7 +264,7 @@ Weitere Informationen zu Anwendungsressourcen finden Sie unter [XAML-Stile](~/xa
 
 ## <a name="use-the-custom-renderer-pattern"></a>Verwenden des benutzerdefinierten Renderermusters
 
-Die meisten Xamarin.Forms-Rendererklassen stellen die `OnElementChanged`-Methode bereit, die bei der Erstellung eines benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Passen Sie Rendererklassen in jedem Plattformprojekt an, und setzen Sie diese Methode anschließend außer Kraft, um das native Steuerelement zu instanziieren und anzupassen. Mit der `SetNativeControl`-Methode wird das native Steuerelement instanziiert und die Steuerelementreferenz der Eigenschaft `Control` zugewiesen.
+Die meisten Xamarin.Forms-Rendererklassen stellen die `OnElementChanged`-Methode bereit, die bei der Erstellung eines benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Passen Sie Rendererklassen in jedem Plattformprojekt an, und überschreiben Sie diese Methode anschließend, um das native Steuerelement zu instanziieren und anzupassen. Mit der `SetNativeControl`-Methode wird das native Steuerelement instanziiert und die Steuerelementreferenz der Eigenschaft `Control` zugewiesen.
 
 In einigen Fällen kann die `OnElementChanged`-Methode mehrmals aufgerufen werden. Daher müssen Sie bei der Instanziierung eines nativen Steuerelements sorgfältig vorgehen, um Arbeitsspeicherverluste zu vermeiden, die Auswirkungen auf die Leistung haben können. Im folgenden Codebeispiel ist der Ansatz zu sehen, der beim Instanziieren eines neuen nativen Steuerelements in einem benutzerdefinierten Renderer verwendet werden soll:
 

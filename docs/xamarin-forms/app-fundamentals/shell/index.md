@@ -46,7 +46,7 @@ Shell-Anwendungen können integrierte Suchfunktionalität über ein Suchfeld nut
 
 ## <a name="lifecyclelifecyclemd"></a>[Lebenszyklus](lifecycle.md)
 
-Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein `Appearing`-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein `Disappearing`-Ereignis wird ausgelöst, wenn eine Seite im Begriff ist, nicht mehr auf dem Bildschirm angezeigt zu werden.
+Für Shellanwendungen gilt der Xamarin.Forms-Lebenszyklus. Deswegen wird beim Aufrufen einer Seite für die Bildschirmanzeige ein `Appearing`-Ereignis und beim Entfernen der Seite vom Bildschirm ein `Disappearing`-Ereignis aufgerufen.
 
 ## <a name="custom-rendererscustomrenderersmd"></a>[Benutzerdefinierte Renderer](customrenderers.md)
 

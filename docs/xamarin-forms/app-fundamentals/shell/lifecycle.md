@@ -18,7 +18,7 @@ ms.locfileid: "72749769"
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein `Appearing`-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein `Disappearing`-Ereignis wird ausgelöst, wenn eine Seite im Begriff ist, nicht mehr auf dem Bildschirm angezeigt zu werden. Diese Ereignisse werden an Seiten weitergegeben und können durch Überschreiben der [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)- oder [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing)-Methoden auf der Seite verarbeitet werden.
+Für Shellanwendungen gilt der Xamarin.Forms-Lebenszyklus. Deswegen wird beim Aufrufen einer Seite für die Bildschirmanzeige ein `Appearing`-Ereignis und beim Entfernen der Seite vom Bildschirm ein `Disappearing`-Ereignis aufgerufen. Diese Ereignisse werden an Seiten weitergegeben und können durch Überschreiben der [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)- oder [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing)-Methoden auf der Seite verarbeitet werden.
 
 > [!NOTE]
 > In einer Shellanwendung werden die `Appearing`- und `Disappearing`-Ereignisse durch plattformübergreifenden Code ausgelöst, bevor der Plattformcode eine Seite sichtbar macht oder eine Seite vom Bildschirm entfernt.
