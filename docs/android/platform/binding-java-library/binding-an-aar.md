@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 516d8ebfd8e0dabbdbba9737ae8b35627c649380
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
+ms.sourcegitcommit: 5a23c66f81853884480aca666d649a56d68c01cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027761"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618535"
 ---
 # <a name="binding-an-aar"></a>Binden einer AAR-Datei
 
@@ -31,7 +31,7 @@ Halbe. Die Aar-Datei ist ein. ZIP-Archiv, das Folgendes enthält:
 In dieser Anleitung werden die Grundlagen der Erstellung einer Bindungs Bibliothek für einen einzelnen Schritt erläutert. AAR-Datei. Eine Übersicht über die Java-Bibliotheks Bindung im allgemeinen (mit einem einfachen Codebeispiel) finden Sie unter [Binden einer Java-Bibliothek](~/android/platform/binding-java-library/index.md).
 
 > [!IMPORTANT]
-> Ein Bindungs Projekt kann nur eines enthalten. AAR-Datei. , Wenn die. AAR-Abhängigkeiten von anderen. Aar, dann sollten diese Abhängigkeiten in Ihrem eigenen Bindungs Projekt enthalten sein und dann referenziert werden. Siehe [Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573).
+> Ein Bindungs Projekt kann nur eines enthalten. AAR-Datei. , Wenn die. AAR hängt von einem anderen ab. Aar, dann sollten diese Abhängigkeiten in Ihrem eigenen Bindungs Projekt enthalten sein und dann referenziert werden. Siehe [Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573).
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
