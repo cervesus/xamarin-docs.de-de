@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 5afdaa9afa4c5ced39498a1cb45de07fe4bf4195
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696706"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662332"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. Forms CollectionView-Daten
 
@@ -69,12 +69,15 @@ collectionView.ItemsSource = new string[]
 };
 ```
 
-> [!IMPORTANT]
-> Wenn die [`CollectionView`](xref:Xamarin.Forms.CollectionView) beim Hinzufügen, entfernen oder Ändern von Elementen in der zugrunde liegenden Auflistung aktualisiert werden muss, sollte die zugrunde liegende Auflistung eine `IEnumerable` Auflistung sein, die Benachrichtigungen über Eigenschafts Änderungen sendet, z. b. `ObservableCollection`.
+> [!WARNING]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) löst eine Ausnahme aus, wenn die [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) vom UI-Thread aktualisiert wird.
 
 Standardmäßig zeigt [`CollectionView`](xref:Xamarin.Forms.CollectionView) Elemente in einer vertikalen Liste an, wie in den folgenden Screenshots gezeigt:
 
 [![Screenshot von CollectionView mit Textelementen unter IOS und Android](populate-data-images/text.png "Text Elemente in einer CollectionView")](populate-data-images/text-large.png#lightbox "Text Elemente in einer CollectionView")
+
+> [!IMPORTANT]
+> Wenn die [`CollectionView`](xref:Xamarin.Forms.CollectionView) beim Hinzufügen, entfernen oder Ändern von Elementen in der zugrunde liegenden Auflistung aktualisiert werden muss, sollte die zugrunde liegende Auflistung eine `IEnumerable` Auflistung sein, die Benachrichtigungen über Eigenschafts Änderungen sendet, z. b. `ObservableCollection`.
 
 Informationen zum Ändern des [`CollectionView`](xref:Xamarin.Forms.CollectionView) Layouts finden Sie unter [xamarin. Forms CollectionView Layout](layout.md). Informationen dazu, wie Sie die Darstellung der einzelnen Elemente im `CollectionView` definieren, finden Sie unter [Definieren der Element](#define-item-appearance)Darstellung.
 

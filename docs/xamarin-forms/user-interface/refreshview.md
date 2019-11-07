@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: b53c58a5e859bf7752855c3954666a062261599d
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: e38987006025dad1c2ff49c3ea8916e2075d61d7
+ms.sourcegitcommit: d1d4700b3b1b417a9d7b7da85ab5d28f8e8e599d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697740"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73649298"
 ---
 # <a name="xamarinforms-refreshview"></a>Xamarin. Forms-Ansicht "erfrischend"
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
 Der `RefreshView` ist ein Container Steuerelement, das Pull zur Aktualisierungs Funktionalität für scrollbaren Inhalt bereitstellt. Daher muss das untergeordnete Element einer `RefreshView` ein scrollbares Steuerelement sein, z. b. [`ScrollView`](xref:Xamarin.Forms.ScrollView), [`CollectionView`](xref:Xamarin.Forms.CollectionView)oder [`ListView`](xref:Xamarin.Forms.ListView).
 
@@ -105,6 +105,6 @@ Wenn Sie die `Command`-Eigenschaft definieren, können Sie alternativ den `CanEx
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Aktuerfrischendes Ansicht (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+- [Aktuerfrischendes Ansicht (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [Bindbare Layouts in xamarin. Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
 - [Aktualisierbare Pull Direction-plattformspezifisch](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

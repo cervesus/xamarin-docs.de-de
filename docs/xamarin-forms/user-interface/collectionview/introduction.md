@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 274a2a99445a77a2b8c1f68e823c753bc16b673a
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 871d7cad6c57cd34757ae992ce14d5f686935584
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696672"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662311"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Einführung in xamarin. Forms CollectionView
 
@@ -37,6 +37,7 @@ Obwohl die [`CollectionView`](xref:Xamarin.Forms.CollectionView) -und [`ListView
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) automatisch die von den zugrunde liegenden systemeigenen Steuerelementen bereitgestellte Virtualisierung verwendet.
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) reduziert die API-Oberfläche [`ListView`](xref:Xamarin.Forms.ListView). Viele Eigenschaften und Ereignisse aus [`ListView`](xref:Xamarin.Forms.ListView) sind in `CollectionView` nicht vorhanden.
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) enthält keine integrierten Trennzeichen.
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView) löst eine Ausnahme aus, wenn die [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) vom UI-Thread aktualisiert wird.
 
 ## <a name="move-from-listview-to-collectionview"></a>Aus ListView in CollectionView verschieben
 
