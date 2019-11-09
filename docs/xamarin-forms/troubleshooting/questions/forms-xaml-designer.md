@@ -7,21 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 43088beba6c6a86330cac164856be98d88f07fe2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ce318faab1af07b95a7769d81a506979b37a34e4
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61247795"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73843003"
 ---
 # <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-files"></a>Warum funktioniert der Visual Studio-XAML-Designer nicht für Xamarin.Forms-XAML-Dateien?
 
-Xamarin.Forms unterstützt derzeit keine visuelle Designer für XAML-Dateien. Aus diesem Grund beim Versuch, eine Forms XAML-Datei in der Visual Studio öffnen *XAML-Benutzeroberflächen-Designer* oder *XAML-Benutzeroberflächen-Designer mit Codierung*, wird ausgelöst, die folgende Fehlermeldung angezeigt:
+Xamarin. Forms unterstützt derzeit keine visuellen Designer für XAML-Dateien. Aus diesem Grund wird beim Versuch, eine Forms-XAML-Datei im *XAML-Benutzeroberflächen Designer* von Visual Studio oder im *XAML-UI-Designer mit Codierung*zu öffnen, die folgende Fehlermeldung ausgelöst:
 
-> "Die Datei kann nicht mit dem ausgewählten-Editor geöffnet werden. Wählen Sie einen anderen Editor."
+> "Die Datei kann nicht mit dem ausgewählten Editor geöffnet werden. Wählen Sie einen anderen Editor aus. "
 
-Diese Einschränkung wird beschrieben, der [Übersicht über die](~/xamarin-forms/xaml/xaml-basics/index.md#Overview) im Abschnitt der [Xamarin.Forms XAML Basics](~/xamarin-forms/xaml/xaml-basics/index.md) Handbuch:
+Diese Einschränkung wird im Handbuch zu den [Grundlagen von xamarin. Forms-XAML](~/xamarin-forms/xaml/xaml-basics/index.md) beschrieben:
 
-> "Es ist noch keinem visuellen Designer für die Generierung von XAML in Xamarin.Forms-Anwendungen, sodass alle XAML muss handschriftlichen."
+> "Es ist noch kein visueller Designer zum Erstellen von XAML-Code in xamarin. Forms-Anwendungen vorhanden. Deshalb müssen alle XAML-Code Hand geschrieben werden."
 
-Allerdings kann die Xamarin.Forms-XAML-Vorschau angezeigt werden, durch Auswählen der **Ansicht > Other Windows > Xamarin.Forms-Vorschau** Menüoption.
+Allerdings kann xamarin. Forms-XAML-Previewer angezeigt werden, indem Sie die **Previewer-Option > andere Windows > xamarin. Forms-Vorschau** auswählen.

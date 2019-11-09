@@ -3,15 +3,16 @@ title: Was ist Xamarin?
 description: In diesem Artikel werden xamarin und verwandte Bibliotheken vorgestellt.
 ms.prod: xamarin
 ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
+ms.custom: video
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/16/2019
-ms.openlocfilehash: 8213eeb18ec23e79f0cc2a82c22b50d77b6d4931
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71256618"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842927"
 ---
 # <a name="what-is-xamarin"></a>Was ist Xamarin?
 
@@ -49,14 +50,14 @@ Xamarin kombiniert die Möglichkeiten nativer Plattformen und bietet eine Reihe 
 
 1. **Vollständige Bindung für die zugrunde liegenden sdgs** – xamarin enthält Bindungen für fast alle zugrunde liegenden Plattform-sdgs in IOS und Android. Zusätzlich dazu sind diese Bindungen stark typisiert. So bieten sie einfach Navigation, lassen sich leicht nutzen und sorgen während der Entwicklung für eine stabile Typüberprüfung zur Kompilierzeit und während der Entwicklung. Stark typisierte Bindungen führen zu weniger Laufzeitfehlern und Anwendungen höherer Qualität.
 1. **Ziel-c, Java, C und C++ Interop** – xamarin bietet Funktionen zum direkten Aufrufen von Ziel-c, Java, c und Bibliotheken und C++ bietet Ihnen die Möglichkeit, ein breites Array von Code von Drittanbietern zu verwenden. Mit dieser Funktion können Sie vorhandene IOS-und Android-Bibliotheken verwenden, die in Ziel-C, JavaC++oder C/geschrieben sind. Außerdem bietet xamarin Bindungs Projekte, mit denen Sie Native Ziel-C-und Java-Bibliotheken mithilfe einer deklarativen Syntax binden können.
-1. **Moderne Sprachkonstrukte** – xamarin-Anwendungen werden C#in geschrieben, eine moderne Sprache, die bedeutende Verbesserungen gegenüber Ziel-C und Java enthält, wie z. b. dynamische sprach Features, funktionale Konstrukte wie Lambdas, LINQ, parallel Programmierung, Generika usw.
+1. **Moderne Sprachkonstrukte** – xamarin-Anwendungen werden C#in geschrieben, eine moderne Sprache, die bedeutende Verbesserungen gegenüber Ziel-C und Java umfasst, wie z. b. dynamische sprach Features, funktionale Konstrukte wie Lambdas, LINQ, parallele Programmierung, Generika usw.
 1. **Robuste Basisklassen Bibliothek (Base Class Library, BCL)** – xamarin-Anwendungen verwenden die .net-BCL, eine große Auflistung von Klassen, die über umfassende und optimierte Features wie leistungsstarke XML-, Datenbank-, Serialisierungs-, e/a-, Zeichen folgen-und Netzwerkunterstützung verfügen. Vorhandener C# Code kann für die Verwendung in einer APP kompiliert werden, die den Zugriff auf Tausende von Bibliotheken ermöglicht, die über die BCL hinaus Funktionalität hinzufügen.
-1. **Moderne integrierte Entwicklungsumgebung (Integrated Development Environment, IDE)** – xamarin verwendet Visual Studio, eine moderne IDE, die Funktionen wie die automatische Vervollständigung von Code, ein anspruchsvolles Projekt-und projektmappenverwaltungssystem, eine umfassende Projektvorlagen Bibliothek, enthält. integrierte Quell Code Verwaltung und mehr.
+1. **Moderne integrierte Entwicklungsumgebung (Integrated Development Environment, IDE)** – xamarin verwendet Visual Studio, eine moderne IDE, die Funktionen wie die automatische Vervollständigung von Code, ein anspruchsvolles Projekt-und projektmappenverwaltungssystem, eine umfassende Projektvorlagen Bibliothek, eine integrierte Quell Code Verwaltung und vieles mehr umfasst.
 1. **Mobile plattformübergreifende Unterstützung** – xamarin bietet ausgereifte plattformübergreifende Unterstützung für die drei Hauptplattformen von IOS, Android und Windows. Anwendungen können so geschrieben werden, dass Sie bis zu 90% Ihres Codes freigeben können, und xamarin. Essentials bietet eine einheitliche API für den Zugriff auf gemeinsame Ressourcen auf allen drei Plattformen. Mit frei gegebenem Code können Entwicklungskosten und die Markteinführungszeit für Mobile Entwickler erheblich reduziert werden.
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
-[![Xamarin. Android-Architektur Diagramm](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
+[![xamarin. Android-Architektur Diagramm](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
 
 Xamarin. Android-Anwendungen kompilieren C# aus in **Intermediate Language (IL)** , was dann **Just-in-time (JIT)** in eine systemeigene Assembly kompiliert wird, wenn die Anwendung gestartet wird. Xamarin. Android-Anwendungen werden in der Mono-Ausführungsumgebung parallel zum virtuellen Computer der Android-Laufzeit (Art) ausgeführt. Xamarin stellt .Net-Bindungen für die Namespaces "Android. *" und "java. *" bereit. Die Mono-Ausführungsumgebung ruft diese Namespaces über die **verwalteten Callable Wrapper (MCW)** auf und stellt **Android Callable Wrapper (ACW)** für die Kunst bereit, sodass beide Umgebungen Code aufeinander aufrufen können.
 
@@ -64,7 +65,7 @@ Weitere Informationen finden Sie unter [xamarin. Android-Architektur](~/android/
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
-[![Xamarin. IOS-Architektur Diagramm](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
+[![xamarin. IOS-Architektur Diagramm](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
 
 Xamarin. IOS-Anwendungen sind vollständig **im Vorfeld (AOT)** , die aus C# in nativem Arm-Assemblycode kompiliert wurden. Xamarin verwendet **Selectors** , um Ziel-c für verwaltete C# und **Registrare** verfügbar zu machen C# , um verwalteten Code für "Ziel-c" verfügbar zu machen. Selektoren und Registrare werden zusammen als "Bindungen" bezeichnet und ermöglichen die Kommunikation mit C# dem Ziel-C und der Kommunikation.
 
@@ -103,3 +104,9 @@ Die folgenden Leitfäden helfen Ihnen beim Erstellen Ihrer ersten App mithilfe v
 - [Beginnen Sie mit xamarin. Android](~/android/index.yml)
 - [Beginnen Sie mit xamarin. IOS](~/ios/index.yml)
 - [Beginnen Sie mit xamarin. Mac](~/mac/index.yml)
+
+## <a name="related-video"></a>Verwandte Videos
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/What-is-Xamarin-1-of-11/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

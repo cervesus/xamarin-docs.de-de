@@ -6,13 +6,13 @@ ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2017
-ms.openlocfilehash: 3c167b025b41bd4fc7c8c93bdb2f825c9daa540c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 11/07/2019
+ms.openlocfilehash: 83fbad8a9bbb9afef5ee80705fe9e86e51284e7d
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032846"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842985"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>Authentifizieren von Benutzern mit einem Identitäts Anbieter
 
@@ -259,6 +259,16 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ```
 
 Die `FindAccountsForService`-Methode gibt eine `IEnumerable` Auflistung von `Account` Objekten zurück, wobei das erste Element in der Auflistung als übereinstimmendes Konto festgelegt wird.
+
+## <a name="troubleshooting"></a>Problembehandlung
+
+- Wenn Sie unter Android eine Popup Benachrichtigung erhalten, wenn Sie den Browser nach der Authentifizierung schließen und die Popup Benachrichtigung beenden möchten, fügen Sie dem Android-Projekt nach dem Initialisieren von xamarin. auth den folgenden Code hinzu:
+
+```csharp
+Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
+```
+
+- Wenn der Browser unter Android nicht automatisch geschlossen wird, besteht eine vorübergehende Problem Umgehung darin, das xamarin. auth-Paket auf Version 1.5.0.3 herabzusetzen. Fügen Sie dann dem Android-Projekt die [PCL-kryptografiev-2.0.147](https://www.nuget.org/packages/PCLCrypto/2.0.147) hinzu.
 
 ## <a name="summary"></a>Zusammenfassung
 

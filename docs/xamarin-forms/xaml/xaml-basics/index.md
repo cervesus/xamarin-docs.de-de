@@ -1,89 +1,68 @@
 ---
-title: Xamarin.Forms-XAML-Grundlagen
-description: Dieses Handbuch erklärt, wie Sie erste Schritte mit plattformübergreifenden XAML für mobile Geräte. XAML ermöglicht Entwicklern, Benutzeroberflächen in Xamarin.Forms-Anwendungen mit Markup statt Code zu definieren.
+title: Xamarin. Forms-XAML-Grundlagen
+description: In dieser Anleitung wird erläutert, wie Sie plattformübergreifende XAML für mobile Geräte starten. Mit XAML können Entwickler Benutzeroberflächen in xamarin. Forms-Anwendungen mithilfe von Markup anstelle von Code definieren.
 ms.prod: xamarin
+ms.custom: video
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 0b30a0167b72ebeb4c53481c6d2d9d9344296894
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8f5a083f49565a00a7ffe4c068d8dbd7815cc8b
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767365"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842860"
 ---
-# <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms-XAML-Grundlagen
+# <a name="xamarinforms-xaml-basics"></a>Xamarin. Forms-XAML-Grundlagen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-XAML (Extensible Application Markup Language) ermöglicht es Entwicklern, Benutzeroberflächen in Xamarin.Forms-Anwendungen mit Markup statt mit Code zu definieren. XAML ist nicht in einer Xamarin.Forms-Anwendung erforderlich, aber häufig ist kompakt und visuell kohärent ist als der entsprechende Code und potenziell lässt. XAML eignet sich besonders gut für die Verwendung mit der gängigen MVVM (Model-View-ViewModel)-Anwendungsarchitektur: XAML definiert die Sicht, die über XAML-basierte Daten Bindungen mit dem ViewModel-Code verknüpft ist.
+Die Extensible Application Markup Language (XAML) ist eine XML-basierte Sprache, die von Microsoft als Alternative zum Programmieren von Code zum Instanziieren und Initialisieren von Objekten und organisieren dieser Objekte in über-/unterordnungshierarchien erstellt wird. XAML wurde an verschiedene Technologien innerhalb von .NET Framework angepasst, aber es wurde das größte Hilfsprogramm zum Definieren des Layouts von Benutzeroberflächen in den Windows Presentation Foundation (WPF), Silverlight, Windows-Runtime und den universellen Fenstern gefunden. Plattform (UWP).
 
-## <a name="xaml-basics-contents"></a>Inhalt der XAML-Grundlagen
+Mit XAML können Entwickler Benutzeroberflächen in xamarin. Forms-Anwendungen mithilfe von Markup anstelle von Code definieren. XAML ist in einem xamarin. Forms-Programm nie erforderlich, aber es ist oft eher präglicher und visuell kohärenter als äquivalenter Code und potenziell Toolbar. XAML eignet sich gut für die Verwendung mit der gängigen MVVM (Model-View-ViewModel)-Anwendungsarchitektur: XAML definiert die Ansicht, die mit dem ViewModel-Code durch XAML-basierte Daten Bindungen verknüpft ist.
 
-- [Übersicht](#Overview)
-- [Teil 1. Erste Schritte mit XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [Teil 2. Grundlegende XAML-Syntax](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [Teil 3. XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Teil 4. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [Teil 5. Aus einer Datenbindung zu MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+In einer XAML-Datei kann der xamarin. Forms-Entwickler Benutzeroberflächen definieren, indem er alle xamarin. Forms-Ansichten,-Layouts und-Seiten sowie benutzerdefinierte Klassen verwendet. Die XAML-Datei kann entweder kompiliert oder in die ausführbare Datei eingebettet werden. In beiden Fällen werden die XAML-Informationen zur Buildzeit analysiert, um benannte Objekte zu suchen, und wieder zur Laufzeit, um Objekte zu instanziieren und zu initialisieren und um Links zwischen diesen Objekten und dem Programmiercode herzustellen.
 
-Sie können zusätzlich zu diesen Artikeln XAML-Grundlagen Kapiteln des Buchs herunterladen [Erstellen mobiler Apps mit Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
+XAML hat mehrere Vorteile gegenüber äquivalenten Code:
 
-[![](images/cover-sml.png "Buch-Abdeckung")](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
+- XAML ist oft prägnanter und besser lesbar als äquivalenter Code.
+- Die über-/unterordnungshierarchie, die in XML enthalten ist, ermöglicht es XAML, die über-/unterordnungshierarchie von Benutzeroberflächen Objekten zu imitieren.
+- XAML kann problemlos von Programmierern Hand geschrieben werden, kann aber auch von den visuellen Entwurfs Tools erstellt und generiert werden.
 
-XAML-Themen werden behandelt, ausführlicher in viele Kapiteln des Buchs, einschließlich:
+Es gibt auch Nachteile, die sich hauptsächlich auf Einschränkungen beziehen, die in Markup Sprachen intrinsisch sind:
 
-| Kapitel | Herunterladen | Zusammenfassung |
-|---------|---------|---------|
-| Kapitel 7. Visual Studio mit XAML. Code | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md) |
-| Kapitel 8. Code und XAML in Harmonie | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md) |
-| Kapitel 10. XAML-Markuperweiterungen | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md) |
-| Kapitel 18. MVVM | [PDF herunterladen](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf) | [Zusammenfassung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md) |
+- XAML darf keinen Code enthalten. Alle Ereignishandler müssen in einer Codedatei definiert werden.
+- XAML kann keine Schleifen für die wiederholte Verarbeitung enthalten. (Einige visuelle xamarin. Forms-Objekte – insbesondere [`ListView`](xref:Xamarin.Forms.ListView) – können jedoch auf der Grundlage der Objekte in der `ItemsSource` Auflistung mehrere untergeordnete Elemente generieren.)
+- XAML kann keine bedingte Verarbeitung enthalten (eine Datenbindung kann jedoch auf einen Code basierten Bindungs Konverter verweisen, der die bedingte Verarbeitung effektiv zulässt).
+- XAML kann im Allgemeinen keine Klassen instanziieren, die keinen Parameter losen Konstruktor definieren. (Manchmal gibt es jedoch eine Möglichkeit, diese Einschränkung zu umgehen.)
+- XAML kann im Allgemeinen keine Methoden aufzurufen. (Diese Einschränkung kann manchmal auch überwunden werden.)
 
-Diese Kapitel möglich [kostenlos heruntergeladen](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
+Es ist noch kein visueller Designer zum Erstellen von XAML-Code in xamarin. Forms-Anwendungen vorhanden. Alle XAML-Steuerpunkte müssen Hand geschrieben sein, aber es ist ein [XAML-Previewer](~/xamarin-forms/xaml/xaml-previewer/index.md)vorhanden. Programmierer, die noch nicht mit XAML vertraut sind, können Ihre Anwendungen häufig erstellen und ausführen, vor allem, wenn alles möglicherweise nicht korrekt ist. Auch Entwickler mit vielen Funktionen in XAML wissen, dass das Experimentieren lohnenswert ist.
 
-<a name="Overview" />
+XAML ist im Grunde XML, aber XAML verfügt über einige eindeutige Syntax Funktionen. Die wichtigsten sind:
 
-## <a name="overview"></a>Übersicht
-
-XAML ist eine XML-basierte Sprache, die von Microsoft erstellt, als Alternative zur Programmcode für das Instanziieren und Initialisieren von Objekten und die Objekte in der über-/ unterordnungshierarchien zu organisieren. XAML wurde an mehrere Technologien in .NET Framework angepasst wurde, jedoch die größte Hilfsprogramm hat bei der Definition des Layouts von Benutzeroberflächen in Windows Presentation Foundation (WPF), Silverlight, die Windows-Runtime und die universelle Windows gefunden Plattform (UWP).
-
-XAML ist auch Teil von Xamarin.Forms, die plattformübergreifende nativ-basierte Programmierschnittstelle für iOS-, Android- und UWP mobile Geräte. In der XAML-Datei kann der Xamarin.Forms-Entwickler von Benutzeroberflächen, die mit allen der Xamarin.Forms-Ansichten, Layouts und Seiten als auch als benutzerdefinierte Klassen definieren. Die XAML-Datei kann entweder kompiliert oder in die ausführbare Datei eingebettet werden. In beiden Fällen wird die XAML-Informationen analysiert, zur Buildzeit können Sie benannte Objekte ermitteln, und wieder zur Laufzeit zum Instanziieren und Initialisieren von Objekten und Links zwischen diesen Objekten und Programmiercode einzurichten.
-
-XAML hat mehrere Vorteile gegenüber der entsprechende Code:
-
-- XAML ist häufig kompakt und besser lesbar als die entsprechenden Code.
-- Die XML-eigenen über-/ unterordnungshierarchie kann XAML, um für mehr visual Klarheit der über-/ unterordnungshierarchie von Benutzeroberflächenobjekten zu imitieren.
-- XAML kann leicht von Programmierern handschriftlichen, aber eignet sich Tools bearbeitbaren und von visuellen Entwurfstools generiert werden.
-
-Es gibt natürlich auch Nachteile, Einschränkungen, die von Markupsprachen für das systeminterne indexspeicherkosten beziehen:
-
-- XAML kann nicht mit Code enthalten. Alle Ereignishandler müssen in einer Codedatei definiert werden.
-- XAML kann keine Schleifen zur wiederholten Verarbeitung enthalten. (Allerdings mehrere Xamarin.Forms visuelle Objekte – insbesondere [ `ListView` ](xref:Xamarin.Forms.ListView) – kann mehrere untergeordnete Elemente erstellt auf der Grundlage der Objekte in der `ItemsSource` Sammlung.)
-- XAML kann nicht als bedingte Verarbeitung enthalten (jedoch kann eine Datenbindung einen codebasierten Binding-Konverter, der eine bedingte Verarbeitung ermöglicht verweisen.)
-- XAML kann nicht in der Regel Klassen instanziiert, die einen parameterlosen Konstruktor nicht definieren. (Allerdings es ist manchmal eine Methode zur Umgehung dieser Einschränkung.)
-- XAML kann nicht in der Regel Methoden aufrufen. (In diesem Fall kann diese Einschränkung manchmal überwunden werden.)
-
-Es ist noch kein visuellen Designer für die Generierung von XAML in Xamarin.Forms-Anwendungen. Alle XAML handschriftlich, es ist jedoch ein [XAML-Vorschau](~/xamarin-forms/xaml/xaml-previewer/index.md). Neue XAML Programmierer sollten so häufig erstellen, und führen ihre Anwendungen, insbesondere nach der alle Elemente, die möglicherweise nicht offensichtlich richtig. Sogar Entwickler, die mit viel Erfahrung in XAML wissen, dass es sich bei experimentieren belohnen ist.
-
-XAML ist im Grunde XML, aber XAML verfügt über einige Features für die spezielle Syntax. Die wichtigsten sind:
-
-- Property-Elemente
+- Eigenschaften Elemente
 - Angefügte Eigenschaften
-- Markuperweiterungen
+- Markup Erweiterungen
 
-Diese Funktionen sind *nicht* XML-Erweiterungen. XAML ist vollständig gültige XML-Daten. Aber diese Funktionen der XAML-Syntax Verwenden von XML in eindeutigen Möglichkeiten. Sie werden in den folgenden Artikeln ausführlich beschrieben, die mit der eine Einführung zur Verwendung von XAML für die Implementierung von MVVM schließen.
+Diese Funktionen sind *keine* XML-Erweiterungen. XAML ist vollständig gültiger XML-Code. Diese XAML-Syntax Funktionen verwenden jedoch XML auf besondere Weise. Sie werden in den folgenden Artikeln ausführlich erläutert, die eine Einführung in die Verwendung von XAML zum Implementieren von MVVM haben.
 
 ## <a name="requirements"></a>Anforderungen
 
-In diesem Artikel geht davon aus, mit Xamarin.Forms auszukennen. Dieser Artikel setzt auch voraus eine gewisse Vertrautheit mit XML, einschließlich Grundlegendes zur Verwendung von XML-Namespace-Deklarationen und die Bedingungen *Element*, *Tag*, und *Attribut*.
+In diesem Artikel wird davon ausgegangen, dass Sie mit xamarin. Forms vertraut sind. Außerdem wird in diesem Artikel eine gewisse Vertrautheit mit XML vorausgesetzt, einschließlich der Verwendung von XML-Namespace Deklarationen und den Begriffen *Element*, *Tag*und *Attribut*.
 
-Wenn Sie mit Xamarin.Forms und XML vertraut sind, lesen Sie zum Einstieg [Teil 1. Erste Schritte mit XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md).
+Wenn Sie mit xamarin. Forms und XML vertraut sind, beginnen Sie mit dem Lesen von [Teil 1. Der Einstieg in XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [Erstellen Mobile Apps-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
+- [Xamlsamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [Erstellen Mobile Apps Buchs](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 - [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+
+## <a name="related-video"></a>Verwandte Videos
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/XamarinForms-UI-with-XAML-5-of-11/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
