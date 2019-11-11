@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: c65a8d4cf47fdec582b46370b6a8dbc1ddd55a1e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bdc8366e75455755cbb2f533b6707f72e33436e2
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022781"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425584"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
@@ -39,7 +39,7 @@ Sie müssen außerdem mit einem Mac-Buildhost gekoppelt sein, der über folgende
 
 ## <a name="enabling-automatic-signing"></a>Aktivieren von „Automatische Signatur“
 
-Bevor Sie den automatischen Signierprozess starten, vergewissern Sie sich, dass Sie, wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben, in Visual Studio eine Apple-ID hinzugefügt haben. Nachdem Sie eine Apple-ID hinzugefügt haben, können Sie alle zugeordneten _Teams_ nutzen. So lassen sich Zertifikate, Profile und andere IDs dem Team zuzuordnen. Die Team-ID wird auch zum Erstellen eines App-ID-Präfix verwendet, das im Bereitstellungsprofil mit eingeschlossen werden soll. Dies erlaubt Apple sicherzustellen, dass Sie sind, wer Sie vorgeben zu sein.
+Bevor Sie den automatischen Signierprozess starten, vergewissern Sie sich, dass Sie, wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben, in Visual Studio eine Apple-ID hinzugefügt haben. Nachdem Sie eine Apple-ID hinzugefügt haben, können Sie alle zugeordneten _Teams_ nutzen. So lassen sich Zertifikate, Profile und andere IDs dem Team zuzuordnen. Die Team-ID wird auch verwendet, um ein Präfix für eine App-ID zu erstellen, die in das Bereitstellungsprofil aufgenommen wird. Dies erlaubt Apple sicherzustellen, dass Sie sind, wer Sie vorgeben zu sein.
 
 > [!IMPORTANT]
 > Melden Sie sich zunächst entweder bei [iTunes Connect](https://itunesconnect.apple.com/) oder bei [appleid.apple.com](https://appleid.apple.com) an, um sicherzustellen, dass Sie die aktuellen Apple-Kontorichtlinien akzeptiert haben. Führen Sie bei Aufforderung die erforderlichen Schritte zum Akzeptieren neuer Kontovereinbarungen von Apple aus. Wenn Sie die Datenschutzbestimmungen von Mai 2018 nicht akzeptieren, wird beim Versuch der Gerätebereitstellung die folgende Warnung angezeigt:
