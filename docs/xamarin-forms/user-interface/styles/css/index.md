@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: 6cece2c7cad401a9dc6f14b689c5c9e5ab757df5
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: fdee070021b22f82cb69571f0fa2f396831b14e6
+ms.sourcegitcommit: 6781967baeed4fe2c58f070476e7c21d01c25c30
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696879"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74052808"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von xamarin. Forms-apps mit Cascading Stylesheets (CSS)
 
@@ -352,7 +352,7 @@ Die folgenden CSS-Eigenschaften werden von xamarin. Forms unterstützt (in der *
 
 |property|Betrifft|Werte|Beispiel|
 |---|---|---|---|
-|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| 0 1 2 3 4 5 6 7 @no__ t_18 9 0 1 2 |`align-content: space-between;`|
+|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| 0 1 2 |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| 0 1 2 3 4|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_Farbe_ \| `initial` |`background-color: springgreen;`|
@@ -372,7 +372,7 @@ Die folgenden CSS-Eigenschaften werden von xamarin. Forms unterstützt (in der *
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_doppelte_ \| _namedsize_ -\| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_doppelte_ \| `initial` |`min-height: 250;`|
-|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| 0 1 2 3 4 5 6 7 @no__ t_18 9 0|`justify-content: flex-end;`|
+|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`line-height`|`Label`, `Span`|_doppelte_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_Stärke_ \| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_Stärke_ \| `initial` |`margin-left: 3;`|
@@ -409,6 +409,8 @@ Die folgenden Eigenschaften werden zurzeit nicht unterstützt:
 - Kurzform Eigenschaften, z. b. `font`, und `border`.
 
 Außerdem gibt es keinen `inherit` Wert, sodass keine Vererbung unterstützt wird. Daher können Sie z. b. die `font-size`-Eigenschaft nicht für ein Layout festlegen und erwarten, dass alle [`Label`](xref:Xamarin.Forms.Label) Instanzen im Layout den Wert erben. Die einzige Ausnahme ist die `direction`-Eigenschaft, die über den Standardwert `inherit` verfügt.
+
+Das Ausrichten von `Span` Elementen hat ein bekanntes Problem, das verhindert, dass spannen durch Element und Name (mithilfe des `#` Symbols) als Ziel der CSS-Stile verwendet werden. Das `Span`-Element wird von `GestureElement`abgeleitet, das nicht über die `StyleClass`-Eigenschaft verfügt, sodass spannen keine CSS-Klassen Ausrichtung unterstützen. Weitere Informationen finden Sie unter nicht in der Lage, CSS-Stile [auf die Span-Steuerelemente anzuwenden](https://github.com/xamarin/Xamarin.Forms/issues/5979).
 
 ### <a name="xamarinforms-specific-properties"></a>Xamarin. Forms-spezifische Eigenschaften
 
@@ -455,8 +457,8 @@ Die folgenden `color` Werte werden unterstützt:
 
 - `X11` [Farben](https://en.wikipedia.org/wiki/X11_color_names/), die CSS-Farben, vordefinierte UWP-Farben und xamarin. Forms-Farben entsprechen. Beachten Sie, dass bei diesen Farbwerten die Groß-/Kleinschreibung
 - hexadezimale Farben: `#rgb`, `#argb` `#rrggbb`, `#aarrggbb`
-- RGB-Farben: `rgb(255,0,0)` `rgb(100%,0%,0%)`. Die Werte liegen im Bereich von 0-255 oder 0%-100%.
-- RGBA-Farben: `rgba(255, 0, 0, 0.8)` `rgba(100%, 0%, 0%, 0.8)`. Der Wert für die Deckkraft liegt im Bereich 0,0-1.0.
+- RGB-Farben: `rgb(255,0,0)``rgb(100%,0%,0%)`. Die Werte liegen im Bereich von 0-255 oder 0%-100%.
+- RGBA-Farben: `rgba(255, 0, 0, 0.8)``rgba(100%, 0%, 0%, 0.8)`. Der Wert für die Deckkraft liegt im Bereich 0,0-1.0.
 - HSL-Farben: `hsl(120, 100%, 50%)`. Der Wert für "h" liegt im Bereich von 0-360, während "s" und "l" im Bereich von 0%-100% liegen.
 - HSLA-Farben: `hsla(120, 100%, 50%, .8)`. Der Wert für die Deckkraft liegt im Bereich 0,0-1.0.
 
