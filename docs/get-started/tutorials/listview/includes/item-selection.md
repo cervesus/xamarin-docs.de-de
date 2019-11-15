@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a537bdaf2015dd7d179545cb7587934818e960d7
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
+ms.sourcegitcommit: ecb81266e59c9e1773a06582e138bf4eed713dfe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004146"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062885"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -39,7 +39,7 @@ ms.locfileid: "71004146"
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: ListView, die auf Elementauswahl und Datenabzweigungen unter iOS und Android reagiert](../images/item-selection.png "ListView-Elementauswahl")](../images/item-selection-large.png#lightbox "ListView-Elementauswahl")
+    [![Screenshot: ListView, die auf Elementauswahl und Tippen unter iOS und Android reagiert](../images/item-selection.png "ListView-Elementauswahl")](../images/item-selection-large.png#lightbox "ListView-Elementauswahl")
 
     Legen Sie Breakpoints in den beiden Ereignishandlern fest, und tippen Sie auf Elemente in der [`ListView`](xref:Xamarin.Forms.ListView). Beachten Sie, dass das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis nur ausgelöst wird, wenn ein neues Element in der [`ListView`](xref:Xamarin.Forms.ListView) ausgewählt wird, während das [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)-Ereignis bei jedem Antippen eines Elements ausgelöst wird.
 
@@ -76,10 +76,10 @@ ms.locfileid: "71004146"
     > [!IMPORTANT]
     > Das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis wird nur ausgelöst, wenn ein neues Element in der [`ListView`](xref:Xamarin.Forms.ListView) ausgewählt wird. Wenn das gleiche Element zweimal angetippt wird, werden deshalb zwei [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)-Ereignisse ausgelöst, aber nur ein `ItemSelected`-Ereignis wird ausgelöst.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: ListView, die auf Elementauswahl und Datenabzweigungen unter iOS und Android reagiert](../images/item-selection.png "ListView-Elementauswahl")](../images/item-selection-large.png#lightbox "ListView-Elementauswahl")
+    [![Screenshot: ListView, die auf Elementauswahl und Tippen unter iOS und Android reagiert](../images/item-selection.png "ListView-Elementauswahl")](../images/item-selection-large.png#lightbox "ListView-Elementauswahl")
 
     Legen Sie Breakpoints in den beiden Ereignishandlern fest, und tippen Sie auf Elemente in der [`ListView`](xref:Xamarin.Forms.ListView). Beachten Sie, dass das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis nur ausgelöst wird, wenn ein neues Element in der [`ListView`](xref:Xamarin.Forms.ListView) ausgewählt wird, während das [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)-Ereignis bei jedem Antippen eines Elements ausgelöst wird.
 
-    Weitere Informationen zur Elementauswahl und Datenabzweigungen finden Sie unter [Auswahl und Datenabzweigungen](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and).
+    Weitere Informationen zu Elementauswahl und Tippen finden Sie unter [Auswählen und Tippen](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps).
