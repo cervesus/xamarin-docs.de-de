@@ -1,77 +1,66 @@
 ---
-title: Die Xamarin.Forms-Klasse „TabbedPage“
+title: 'Xamarin.Forms: TabbedPage'
 description: Die TabbedPage-Klasse von Xamarin.Forms besteht aus einer Liste von Registerkarten und aus einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können.
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: f8f2fc489c10d404b5864ea13c438e3e5508eabe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 11/07/2019
+ms.openlocfilehash: 22c5b5b6479ce65c2e6b69f6ad5a98fd11ae47d7
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771364"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842871"
 ---
-# <a name="xamarinforms-tabbed-page"></a>Die Xamarin.Forms-Klasse „TabbedPage“
+# <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms: TabbedPage
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-_Die TabbedPage-Klasse von Xamarin.Forms besteht aus einer Liste von Registerkarten und aus einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können._
+Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse von Xamarin.Forms besteht aus einer Liste von Registerkarten sowie einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. Die folgenden Screenshots zeigen eine `TabbedPage` unter iOS und Android:
 
-## <a name="overview"></a>Übersicht
+[![Screenshot einer TabbedPage mit drei Registerkarten unter iOS und Android](tabbed-page-images/tabbedpage-today.png "TabbedPage mit drei Registerkarten")](tabbed-page-images/tabbedpage-today-large.png#lightbox "TabbedPage mit drei Registerkarten")
 
-Die folgenden Screenshots zeigen eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse auf jeder Plattform:
+Unter iOS wird die Liste der Registerkarten am unteren Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darüber. Jede Registerkarte besteht aus einem Titel und einem Symbol, bei dem es sich um eine PNG-Datei mit einem Alphakanal handeln sollte. Im Hochformat werden die Symbole der Registerkartenleiste über den Registerkartentiteln angezeigt. Im Querformat werden die Symbole und Titel nebeneinander angezeigt. Außerdem kann je nach Gerät und Ausrichtung eine reguläre oder kompakte Registerkartenleiste angezeigt werden. Wenn mehr als fünf Registerkarten vorhanden sind, wird die Registerkarte **More** (Weitere) angezeigt, die verwendet werden kann, um auf die zusätzlichen Registerkarten zuzugreifen. Weitere Informationen zu den Symbolanforderungen finden Sie unter [Tab Bar Icon Size](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size) (Größe von Symbolen auf Registerkartenleisten) auf developer.apple.com.
 
-![](tabbed-page-images/tab1.png "Beispiel für TabbedPage")
+> [!TIP]
+> Die `TabbedRenderer`-Klasse für iOS enthält eine überschreibbare `GetIcon`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer angegebenen Quelle zu laden. Durch diese Überschreibung können Sie SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwenden. Darüber hinaus können die ausgewählte und nicht ausgewählte Versionen eines Symbols zur Verfügung gestellt werden.
 
-Die folgenden Screenshots beziehen sich auf das Registerkartenformat auf jeder Plattform:
+Unter Android wird die Liste der Registerkarten am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Jede Registerkarte besteht aus einem Titel und einem Symbol, bei dem es sich um eine PNG-Datei mit einem Alphakanal handeln sollte. Die Registerkarten können jedoch mit einem plattformspezifischen Element an den unteren Rand des Bildschirms verschoben werden. Weitere Informationen zu den Symbolanforderungen finden Sie unter [Tabs](https://material.io/components/tabs/#) (Registerkarten) auf material.io und [Support different pixel densities](https://developer.android.com/training/multiscreen/screendensities) (Unterstützung verschiedener Pixeldichten) auf developer.android.com. Weitere Informationen zum Verschieben der Registerkarten an den unteren Bildschirmrand finden Sie unter [Setting TabbedPage Toolbar Placement and Color](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md) (Festlegen der TabbedPage-Symbolleistenanordnung und -farbe).
 
-![](tabbed-page-images/tabbedpage-components.png "Komponenten einer TabbedPage-Registerkarte")
+> [!TIP]
+> Die `TabbedPageRenderer`-Klasse von AppCompat unter Android enthält eine überschreibbare `GetIconDrawable`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse zu laden. Durch diese Überschreibung können SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwendet werden. Die Bilder funktionieren auf Registerkartenleisten am oberen und am unteren Rand. Alternativ kann die überschreibbare `SetTabIcon`-Methode verwendet werden, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse für Registerkartenleisten am oberen Rand zu laden.
 
-Das Layout einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse und der zugehörigen Registerkarten ist plattformabhängig:
+Auf der universellen Windows-Plattform (UWP) wird die Liste der Registerkarten am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Jede Registerkarte umfasst einen Titel. Den Registerkarten können allerdings mit einem plattformspezifischen Element Symbole hinzugefügt werden. Weitere Informationen finden Sie unter [TabbedPage Icons on Windows](~/xamarin-forms/platform/windows/tabbedpage-icons.md) (TabbedPage-Symbole unter Windows).
 
-- Unter iOS wird die Liste der Registerkarten am unteren Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darüber. Jede Registerkarte enthält zudem ein Symbol, bei dem es sich um eine PNG-Bilddatei mit 30×30 Pixeln mit Transparenz für eine normale Auflösung, 60×60 Pixeln für eine hohe Auflösung und 90×90 Pixeln für die Auflösung des iPhone 6 Plus handeln sollte. Wenn mehr als fünf Registerkarten vorhanden sind, wird die Registerkarte *More* (Weitere) angezeigt, die verwendet werden kann, um auf die zusätzlichen Registerkarten zuzugreifen. Weitere Informationen zum Laden von Bildern in einer Xamarin.Forms-Anwendung finden Sie unter [Images in Xamarin.Forms (Bilder in Xamarin.Forms)](~/xamarin-forms/user-interface/images.md). Weitere Informationen zu den Anforderungen für Symbole finden Sie unter [Creating Tabbed Applications (Erstellen von Anwendungen mit Registerkarten)](~/ios/user-interface/controls/creating-tabbed-applications.md).
-
-  > [!NOTE]
-  > Beachten Sie, dass die `TabbedRenderer`-Klasse für iOS eine überschreibbare `GetIcon`-Methode enthält, die verwendet werden kann, um Registerkartensymbole aus einer angegebenen Quelle zu laden. Durch diese Überschreibung können Sie SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwenden. Darüber hinaus können die ausgewählte und nicht ausgewählte Versionen eines Symbols zur Verfügung gestellt werden.
-
-- Unter Android wird die Liste der Registerkarten standardmäßig am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Die Liste der Registerkarten kann jedoch mit einem plattformspezifischen Element an den unteren Rand des Bildschirms verschoben werden. Weitere Informationen finden Sie unter [Setting TabbedPage Toolbar Placement and Color (Festlegen der Position und Farbe von TabbedPage-Symbolleisten)](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
-
-  > [!NOTE]
-  > Beachten Sie, dass für jede Registerkarte ein Symbol angezeigt wird, wenn Sie AppCompat unter Android verwenden. Außerdem enthält `TabbedPageRenderer`-Klasse von AppCompat unter Android eine überschreibbare `GetIconDrawable`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse zu laden. Durch diese Überschreibung können SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwendet werden. Die Bilder funktionieren auf Registerkartenleisten am oberen und am unteren Rand. Alternativ kann die überschreibbare `SetTabIcon`-Methode verwendet werden, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse für Registerkartenleisten am oberen Rand zu laden.
-
-- Bei Formfaktoren für Windows-Tablets werden die Registerkarten nicht immer angezeigt, und die Benutzer müssen nach unten wischen (oder mit der rechten Maustaste klicken, wenn eine Maus angeschlossen ist), um die Registerkarten in einer `TabbedPage`-Klasse anzuzeigen (siehe unten).
-
-    ![](tabbed-page-images/windows-tabs.png "TabbedPage-Registerkarten unter Windows")
-
-## <a name="creating-a-tabbedpage"></a>Erstellen einer TabbedPage-Klasse
-
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) definiert die folgenden Eigenschaften:
-
-- [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Hintergrundfarbe der Registerkartenleiste
-- [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Textfarbe auf der Registerkartenleiste
-- [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Registerkartenfarbe, sofern ausgewählt
-- [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor) vom Typ [`Color`](xref:Xamarin.Forms.Color), die Registerkartenfarbe, wenn nicht ausgewählt
-
-Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften formatiert werden können und die Ziele von Datenverbindungen sein können.
+## <a name="create-a-tabbedpage"></a>Erstellen einer TabbedPage
 
 Es gibt zwei Ansätze zum Erstellen einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse:
 
-- [Füllen Sie](#Populating_a_TabbedPage_with_a_Page_Collection) die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse mit einer Collection von untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten auf, z.B. mit einer Collection aus [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Instanzen.
-- [Weisen Sie](#Populating_a_TabbedPage_with_a_Template) der [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft eine Collection zu, und weisen Sie der [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)-Eigenschaft eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse zu, um Seiten für Objekte in der Collection zurückzugeben.
+- Füllen Sie die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse mit einer Sammlung von untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten auf, z. B. einer Sammlung von [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekten. Weitere Informationen finden Sie unter [Populate a TabbedPage with a Page Collection](#populate-a-tabbedpage-with-a-page-collection) (Füllen einer TabbedPage mit einer Seitensammlung).
+- Weisen Sie der [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft eine Sammlung und der [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)-Eigenschaft eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) zu, um Seiten für Objekte in der Sammlung zurückzugeben. Weitere Informationen finden Sie unter [Populate a TabbedPage with a template](#populate-a-tabbedpage-with-a-template) (Füllen einer TabbedPage mithilfe einer Vorlage).
 
 Durch beide Ansätze zeigt die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse die entsprechende Seite an, wenn der Benutzer eine Registerkarte auswählt.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Es wird empfohlen, die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse nur mit [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)- und [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Instanzen aufzufüllen. Dadurch wird eine konsistente Benutzerumgebung auf allen Plattformen gewährleistet.
 
-<a name="Populating_a_TabbedPage_with_a_Page_Collection" />
+Darüber hinaus definiert [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) die folgenden Eigenschaften:
 
-### <a name="populating-a-tabbedpage-with-a-page-collection"></a>Auffüllen einer TabbedPage-Klasse mit einer Seitenauflistung
+- [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor) vom Typ [`Color`](xref:Xamarin.Forms.Color): die Hintergrundfarbe der Registerkartenleiste
+- [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor) vom Typ [`Color`](xref:Xamarin.Forms.Color): die Textfarbe auf der Registerkartenleiste
+- [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) vom Typ [`Color`](xref:Xamarin.Forms.Color): die Registerkartenfarbe, wenn ausgewählt
+- [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor) vom Typ [`Color`](xref:Xamarin.Forms.Color): die Registerkartenfarbe, wenn nicht ausgewählt
 
-Im folgenden XAML-Codebeispiel wird eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse erstellt, indem diese mit einer Collection von untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten aufgefüllt wird.
+Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften formatiert werden können und die Ziele von Datenverbindungen sein können.
+
+> [!WARNING]
+> In einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) wird jedes [`Page`](xref:Xamarin.Forms.Page)-Objekt bei der Erstellung von `TabbedPage` erstellt. Dies kann insbesondere dann das Benutzererlebnis beeinträchtigen, wenn die `TabbedPage` die Stammseite der Anwendung ist. Die Xamarin.Forms-Shell ermöglicht jedoch, dass Seiten, auf die über eine Registerkartenleiste zugegriffen wird, bei Bedarf als Reaktion auf die Navigation erstellt werden. Weitere Informationen finden Sie unter [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+
+## <a name="populate-a-tabbedpage-with-a-page-collection"></a>Auffüllen einer TabbedPage mit einer Seitensammlung
+
+Sie können eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) mit einer Sammlung von untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten auffüllen, z. B. einer Sammlung von [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekten. Dies wird erreicht, indem der [`TabbedPage.Children`](xref:Xamarin.Forms.MultiPage`1.Children*)-Sammlung die `Page`-Objekte hinzugefügt werden. Dies kann in XAML folgendermaßen durchgeführt werden:
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -87,14 +76,17 @@ Im folgenden XAML-Codebeispiel wird eine [`TabbedPage`](xref:Xamarin.Forms.Tabbe
 </TabbedPage>
 ```
 
-Im folgenden Codebeispiel wird die entsprechende [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse in C# dargestellt:
+> [!NOTE]
+> Die [`Children`](xref:Xamarin.Forms.MultiPage`1.Children*)-Eigenschaft der [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1)-Klasse, von der [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) abgeleitet ist, ist die `ContentProperty` von `MultiPage<T>`. Daher ist es in XAML nicht notwendig, die [`Page`](xref:Xamarin.Forms.Page)-Objekte explizit der `Children`-Eigenschaft zuzuweisen.
+
+Der entsprechende C#-Code lautet:
 
 ```csharp
 public class MainPageCS : TabbedPage
 {
   public MainPageCS ()
   {
-    var navigationPage = new NavigationPage (new SchedulePageCS ());
+    NavigationPage navigationPage = new NavigationPage (new SchedulePageCS ());
     navigationPage.IconImageSource = "schedule.png";
     navigationPage.Title = "Schedule";
 
@@ -104,52 +96,45 @@ public class MainPageCS : TabbedPage
 }
 ```
 
-Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse wird mit zwei untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten aufgefüllt. Beim ersten untergeordneten Objekt handelt es sich um eine [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Instanz, und die zweite Registerkarte ist eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse, die eine `ContentPage`-Instanz enthält.
+In diesem Beispiel wird die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) mit zwei [`Page`](xref:Xamarin.Forms.ContentPage)-Objekten aufgefüllt. Beim ersten untergeordneten Objekt handelt es sich um ein [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt, und beim zweiten um eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage), die ein `ContentPage`-Objekt enthält.
 
-> [!NOTE]
-> Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse unterstützt keine Benutzeroberflächenvirtualisierung. Deshalb kann die Leistung beeinträchtigt werden, wenn die `TabbedPage`-Klasse zu viele untergeordnete Elemente enthält.
+Die folgenden Screenshots zeigen ein [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt in einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage):
 
-Auf den folgenden Screenshots wird die `TodayPage`-Instanz der [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse veranschaulicht, die auf der Registerkarte *Today* (Heute) angezeigt wird:
+[![Screenshot einer TabbedPage mit drei Registerkarten unter iOS und Android](tabbed-page-images/tabbedpage-today.png "TabbedPage mit drei Registerkarten")](tabbed-page-images/tabbedpage-today-large.png#lightbox "TabbedPage mit drei Registerkarten")
 
-![](tabbed-page-images/today-page.png "ContentPage-Klasse in einer TabbedPage-Klasse")
+Durch das Auswählen einer anderen Registerkarte wird das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt angezeigt, das die Registerkarte darstellt:
 
-Durch das Auswählen der Registerkarte *Schedule* (Zeitplan) wird die `SchedulePage`-Instanz der [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse angezeigt, die von einer Instanz der [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse umschlossen ist. Dies ist auf dem folgenden Screenshot zu sehen:
+[![Screenshot einer TabbedPage mit Registerkarten unter iOS und Android](tabbed-page-images/tabbedpage-week.png "TabbedPage mit Registerkarten")](tabbed-page-images/tabbedpage-week-large.png#lightbox "TabbedPage mit Registerkarten")
 
-![](tabbed-page-images/schedule-page.png "NavigationPage-Klasse in einer TabbedPage-Klasse")
+Auf der Registerkarte **Schedule** (Zeitplan) ist das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt von einem [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Objekt umschlossen.
 
-Weitere Informationen zum Layout einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse finden Sie unter [Performing Navigation (Einrichten der Navigation)](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
+> [!WARNING]
+> Während eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) in eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) eingefügt werden kann, wird davon abgeraten, eine `TabbedPage` in eine `NavigationPage` einzufügen. Dies liegt darin begründet, dass `UITabBarController` unter iOS immer als Wrapper für `UINavigationController` fungiert. Weitere Informationen finden Sie unter [Combined View Controller Interfaces (Kombinierte Schnittstellen für View Controller)](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) in der iOS Developer Library.
 
-> [!NOTE]
-> Es wird zwar empfohlen, eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse in einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse zu verwenden, allerdings sollten Sie keine `TabbedPage`-Klasse in einer `NavigationPage`-Klasse verwenden. Dies liegt darin begründet, dass `UITabBarController` unter iOS immer als Wrapper für `UINavigationController` fungiert. Weitere Informationen finden Sie unter [Combined View Controller Interfaces (Kombinierte Schnittstellen für View Controller)](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) in der iOS Developer Library.
+## <a name="navigate-within-a-tab"></a>Navigieren auf einer Registerkarte
 
-#### <a name="navigation-inside-a-tab"></a>Navigation auf einer Registerkarte
-
-Die Navigation kann auf der zweiten Registerkarte durchgeführt werden, indem die [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)-Methode in der [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)-Eigenschaft der [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Instanz aufgerufen wird. Dies wird in folgendem Codebeispiel veranschaulicht:
+Die Navigation kann auf einer Registerkarte ausgeführt werden, wenn das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt von einem [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Objekt umschlossen wird. Dies wird durch die Aufrufen der [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)-Methode in der [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)-Eigenschaft des [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts erreicht:
 
 ```csharp
-async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
-{
-  await Navigation.PushAsync (new UpcomingAppointmentsPage ());
-}
+await Navigation.PushAsync (new UpcomingAppointmentsPage ());
 ```
 
-Dies bewirkt, dass die `UpcomingAppointmentsPage`-Instanz mithilfe von Push auf den Navigationsstapel übertragen wird, wo sie dann zur aktiven Seite wird. Dies wird im folgenden Screenshot veranschaulicht:
+Die Seite, die das Ziel der Navigation ist, wird der [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)-Methode als Argument angegeben. In diesem Beispiel wird die Seite `UpcomingAppointmentsPage` auf den Navigationsstapel gepusht und dort zur aktiven Seite:
 
-![](tabbed-page-images/navigationpage.png "Navigation auf einer Registerkarte")
+[![Screenshot der Navigation auf einer Registerkarte unter iOS und Android](tabbed-page-images/tabbedpage-upcoming.png "TabbedPage-Navigation auf einer Registerkarte")](tabbed-page-images/tabbedpage-upcoming-large.png#lightbox "TabbedPage-Navigation auf einer Registerkarte")
 
 Weitere Informationen zur Navigation mithilfe der [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse finden Sie unter [Hierarchical Navigation (Hierarchische Navigation)](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
-<a name="Populating_a_TabbedPage_with_a_Template" />
+## <a name="populate-a-tabbedpage-with-a-template"></a>Auffüllen einer TabbedPage mithilfe einer Vorlage
 
-### <a name="populating-a-tabbedpage-with-a-template"></a>Auffüllen einer TabbedPage-Klasse mit einer Vorlage
-
-Das folgende XAML-Codebeispiel zeigt eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse, die durch Zuweisen einer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse zur [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)-Eigenschaft erstellt wurde, um Seiten für Objekte in der Collection zurückzugeben:
+Eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) kann mit Seiten aufgefüllt werden, indem der [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft eine Sammlung von Daten zugewiesen wird. Dazu wird der [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)-Eigenschaft eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) zugewiesen, die als Vorlage der Daten in Form von [`Page`](xref:Xamarin.Forms.Page)-Objekten fungiert. Dies kann in XAML folgendermaßen durchgeführt werden:
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:local="clr-namespace:TabbedPageDemo;assembly=TabbedPageDemo"
-            x:Class="TabbedPageDemo.TabbedPageDemoPage">
+            x:Class="TabbedPageDemo.TabbedPageDemoPage"
+            ItemsSource="{x:Static local:MonkeyDataModel.All}">            
   <TabbedPage.Resources>
     <ResourceDictionary>
       <local:NonNullToBooleanConverter x:Key="booleanConverter" />
@@ -175,17 +160,7 @@ Das folgende XAML-Codebeispiel zeigt eine [`TabbedPage`](xref:Xamarin.Forms.Tabb
 </TabbedPage>
 ```
 
-Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse wird mit Daten aufgefüllt, indem die [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft im Konstruktor für die CodeBehind-Datei festgelegt wird:
-
-```csharp
-public TabbedPageDemoPage ()
-{
-  ...
-  ItemsSource = MonkeyDataModel.All;
-}
-```
-
-Im folgenden Codebeispiel wird die entsprechende [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse in C# dargestellt:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 public class TabbedPageDemoPageCS : TabbedPage
@@ -194,8 +169,10 @@ public class TabbedPageDemoPageCS : TabbedPage
   {
     var booleanConverter = new NonNullToBooleanConverter ();
 
-    ItemTemplate = new DataTemplate (() => {
-      var nameLabel = new Label {
+    ItemTemplate = new DataTemplate (() =>
+    {
+      var nameLabel = new Label
+      {
         FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)),
         FontAttributes = FontAttributes.Bold,
         HorizontalOptions = LayoutOptions.Center
@@ -205,31 +182,38 @@ public class TabbedPageDemoPageCS : TabbedPage
       var image = new Image { WidthRequest = 200, HeightRequest = 200 };
       image.SetBinding (Image.SourceProperty, "PhotoUrl");
 
-      var familyLabel = new Label {
+      var familyLabel = new Label
+      {
         FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
         FontAttributes = FontAttributes.Bold
       };
       familyLabel.SetBinding (Label.TextProperty, "Family");
       ...
 
-      var contentPage = new ContentPage {
+      var contentPage = new ContentPage
+      {
         IconImageSource = "monkeyicon.png",
         Content = new StackLayout {
           Padding = new Thickness (5, 25),
-          Children = {
+          Children =
+          {
             nameLabel,
             image,
-            new StackLayout {
+            new StackLayout
+            {
               Padding = new Thickness (50, 10),
-              Children = {
-                new StackLayout {
+              Children =
+              {
+                new StackLayout
+                {
                   Orientation = StackOrientation.Horizontal,
-                  Children = {
+                  Children =
+                  {
                     new Label { Text = "Family:", HorizontalOptions = LayoutOptions.FillAndExpand },
                     familyLabel
                   }
                 },
-                ...
+                // ...
               }
             }
           }
@@ -243,24 +227,16 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-Jede Registerkarte stellt eine [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse dar, die eine Reihe von [`StackLayout`](xref:Xamarin.Forms.StackLayout)- und [`Label`](xref:Xamarin.Forms.Label)-Instanzen verwendet, um die Daten der Registerkarte anzuzeigen. Auf den folgenden Screenshots ist der Inhalt der Registerkarte *Tamarin* dargestellt:
+In diesem Beispiel enthält jede Registerkarte ein [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt, das [`Image`](xref:Xamarin.Forms.Image)-Objekte und [`Label`](xref:Xamarin.Forms.Label)-Objekte für das Anzeigen von Daten für die Registerkarte verwendet:
 
-![](tabbed-page-images/tab3.png "Auffüllen einer TabbedPage-Klasse mit einer Vorlage")
+[![Screenshot einer auf einer Vorlage basierenden TabbedPage unter iOS und Android](tabbed-page-images/tabbedpage-template.png "Auf Vorlage basierende TabbedPage")](tabbed-page-images/tabbedpage-template-large.png#lightbox "Auf Vorlage basierende TabbedPage")
 
-Wenn Sie eine andere Registerkarte auswählen, wird deren Inhalt angezeigt.
-
-> [!NOTE]
-> Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse unterstützt keine Benutzeroberflächenvirtualisierung. Deshalb kann die Leistung beeinträchtigt werden, wenn die `TabbedPage`-Klasse zu viele untergeordnete Elemente enthält.
-
-Weitere Informationen zur [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse finden Sie in [Kapitel 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) im Xamarin.Forms-Buch von Charles Petzold.
-
-## <a name="summary"></a>Zusammenfassung
-
-In diesem Artikel wurde veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können. Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse von Xamarin.Forms besteht aus einer Liste von Registerkarten sowie einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich.
+Durch das Auswählen einer anderen Registerkarte wird das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt angezeigt, das die Registerkarte darstellt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Page Varieties (Seitenvarianten)](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [TabbedPage mit NavigationPage (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [TabbedPage (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
-- [TabbedPage](xref:Xamarin.Forms.TabbedPage)
+- [Hierarchische Navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
+- [Page Varieties (Seitenvarianten)](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [TabbedPage-API](xref:Xamarin.Forms.TabbedPage)
