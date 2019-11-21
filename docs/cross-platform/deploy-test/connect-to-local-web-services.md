@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
-ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
+ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
+ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72526817"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74135279"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Herstellen einer Verbindung mit lokalen Webdiensten aus iOS-Simulatoren und Android-Emulatoren
 
@@ -37,13 +37,13 @@ Jeder Aspekt wird nacheinander erläutert.
 
 Durch das Installieren des ASP.NET Core SDK wird das ASP.NET Core-HTTPS-Entwicklungszertifikat im lokalen Benutzerzertifikatspeicher installiert. Allerdings ist das Zertifikat, auch wenn es installiert wurde, nicht vertrauenswürdig. Damit das Zertifikat vertrauenswürdig wird, führen Sie den folgenden, einmaligen Schritt durch, um das dotnet-Tool `dev-certs` auszuführen:
 
-```console
+```dotnetcli
 dotnet dev-certs https --trust
 ```
 
 Der folgende Befehl stellt Hilfe zum `dev-certs`-Tool bereit:
 
-```console
+```dotnetcli
 dotnet dev-certs https --help
 ```
 
