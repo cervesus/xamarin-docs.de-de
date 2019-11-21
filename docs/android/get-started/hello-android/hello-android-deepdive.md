@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756722"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028008"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: Ausführliche Erläuterungen
 
@@ -188,7 +188,7 @@ Alles, was auf der Entwurfsoberfläche definiert ist, wird für Xamarin.Android 
 
 ::: zone pivot="windows"
 
-[![Quellansicht des Designers](hello-android-deepdive-images/vs/05-source-view-sml.png "Designer source view")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
+[![Designer-Quellansicht](hello-android-deepdive-images/vs/05-source-view-sml.png "Designer-Quellansicht")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -332,7 +332,7 @@ Bevor ein Android-Gerät für das Testen von Anwendungen verwendet werden kann, 
 
 Nachdem das Gerät konfiguriert ist, können Sie auf dieses bereitstellen, indem Sie es anschließen, dieses aus dem Dialogfeld **Gerät auswählen** auswählen und die Anwendung starten:
 
-![Auswählen des Geräts für das Debuggen](hello-android-deepdive-images/vs/06-select-device.png "Select debug device")
+![Auswählen des Geräts für das Debuggen](hello-android-deepdive-images/vs/06-select-device.png "Auswählen des Geräts für das Debuggen")
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -357,7 +357,7 @@ Es wird empfohlen, dies zu berücksichtigen, indem Sie Symbole mit verschiedenen
 
 ::: zone pivot="windows"
 
-![mipmap-Ordner](hello-android-deepdive-images/vs/07-mipmap-folders.png "mipmap folders")
+![mipmap-Ordner](hello-android-deepdive-images/vs/07-mipmap-folders.png "mipmap-Ordner")
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -376,26 +376,26 @@ Nicht jedem steht ein Designer zur Verfügung, um die benutzerdefinierten Symbol
 
 ::: zone pivot="windows"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
 
 - Visual Studio: Sie können dies verwenden, um einfache Symbole für Ihre App direkt in der IDE zu erstellen.
 
-- [Glyphish](http://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
+- [Glyphish](https://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
 
-- [Fiverr](http://www.fiverr.com/) &ndash; Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
+- [Fiverr](https://www.fiverr.com/) &ndash; Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch ist eine Mac-App für das Entwerfen von Benutzeroberflächen, Symbolen usw. Diese App wurde verwendet, um die Xamarin App-Symbole und Startbilder zu entwerfen. Sketch 3 ist im App Store verfügbar und kostet ungefähr 80 Dollar. Sie können ebenfalls das kostenlose [Sketch Tool](http://bohemiancoding.com/sketch/tool/) testen.
+- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch ist eine Mac-App für das Entwerfen von Benutzeroberflächen, Symbolen usw. Diese App wurde verwendet, um die Xamarin App-Symbole und Startbilder zu entwerfen. Sketch 3 ist im App Store verfügbar und kostet ungefähr 80 Dollar. Sie können ebenfalls das kostenlose [Sketch Tool](https://bohemiancoding.com/sketch/tool/) testen.
 
-- [Pixelmator](http://www.pixelmator.com/): Eine vielseitige Mac-App für das Bearbeiten von Bildern, die ungefähr 30 US-Dollar kostet.
+- [Pixelmator](https://www.pixelmator.com/): Eine vielseitige Mac-App für das Bearbeiten von Bildern, die ungefähr 30 US-Dollar kostet.
 
-- [Glyphish](http://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
+- [Glyphish](https://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
 
-- [Fiverr](http://www.fiverr.com/) &ndash; Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
+- [Fiverr](https://www.fiverr.com/) &ndash; Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end
 

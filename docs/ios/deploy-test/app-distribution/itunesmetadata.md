@@ -4,15 +4,15 @@ description: In diesem Artikel wird die „iTunesMetadata.plist“-Datei vorgest
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 47b2428ddca47f554fea675a9d2e70374679688f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281159"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026505"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Die Datei „iTunesMetadata.plist“ in Xamarin.iOS-Apps
 
@@ -242,7 +242,7 @@ Für iOS-Anwendungen stellt Apple zur Zeit folgende Genres und Genre-IDs zur Ver
 
 [!include[](~/ios/includes/table-appstore.md)]
 
-Weitere Informationen finden Sie in der Dokumentation von Apple zu [Genre IDs Appendix (Genre-ID-Anhang)](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html).
+Weitere Informationen finden Sie in der Dokumentation von Apple zu [Genre IDs Appendix (Genre-ID-Anhang)](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html).
 
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
@@ -302,26 +302,26 @@ Führen Sie folgende Schritte aus:
 1. Rechtsklicken Sie im **Projektmappen-Explorer** auf die Xamarin.iOS-Projektdatei, und klicken Sie dann auf **Hinzufügen** > **Neue Datei...** .
 2. Klicken Sie im Dialogfeld „Neue Datei“ auf **iOS** > **Eigenschaftenliste**:
 
-    ![](itunesmetadata-images/image01.png "Auswählen der iOS-Eigenschaftenliste")
+    ![](itunesmetadata-images/image01.png "Select iOS Property List")
 3. Geben Sie für den **Namen** `iTunesMetadata` ein, und klicken Sie auf **Neu**.
 4. Doppelklicken Sie im `iTunesMetadata.plist`Projektmappen-Explorer**auf die Datei**, um sie zur Bearbeitung zu öffnen:
 
-    ![](itunesmetadata-images/image02.png "Der iTunesMetadata.plist-Editor")
+    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
 5. Klicken Sie auf das grüne **+** , um einen neuen Eintrag hinzuzufügen, oder geben Sie `UIRequiredDeviceCapabilities` als Schlüsselnamen ein:
 
-    ![](itunesmetadata-images/image03.png "Erstellen eines neuen Eintrags und Eingeben des Schlüsselnamens „UIRequiredDeviceCapabilities“")
+    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
 6. Klicken Sie auf den Werttyp **String**, und klicken Sie anschließend in der Popupliste auf **Wörterbuch**:
 
-    ![](itunesmetadata-images/image04.png "Auswählen von „Wörterbuch“ aus der Popupliste")
+    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
 7. Klicken Sie auf den Pfeil links vom Namen der Eigenschaft, um die Einträge des Wörterbuchs anzuzeigen:
 
-    ![](itunesmetadata-images/image05.png "Anzeigen der Wörterbucheinträge")
+    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
 8. Klicken Sie auf **Neuen Eintrag hinzufügen**, und klicken Sie dann auf das grüne **+** , um einen Eintrag im Wörterbuch hinzuzufügen:
 
-    ![](itunesmetadata-images/image06.png "Hinzufügen eines Eintrags zum Wörterbuch")
+    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
 9. Geben Sie `armv7` für den Schlüsselnamen ein, wählen Sie einen **booleschen Wert** aus, und geben Sie **YES** als Wert ein:
 
-    ![](itunesmetadata-images/image07.png "Eingeben von „armv7“ für den Schlüsselnamen, auswählen eines booleschen Typs und auswählen von YES als Wert")
+    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
 10. Wiederholen Sie die oben stehenden Schritte, bis Sie die `iTunesMetadata.plist`-Datei mit allen erforderlichen Schlüssel-Wert-Paaren ausgefüllt haben. Ausführlichere Informationen finden Sie im Abschnitt [Inhalt der „iTunesMetadata.plist“-Datei](#iTunesMetadata_contents) weiter oben.
 
 11. Speichern Sie die Änderungen an der PLIST-Datei.

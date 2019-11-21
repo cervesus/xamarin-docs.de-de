@@ -4,15 +4,15 @@ description: 'In diesem Artikel wird Fastlane beschrieben. Ein Tool, das viele B
 ms.prod: xamarin
 ms.assetid: 900FA6FF-F3C9-4D35-993E-B0D88E6B1883
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8e98a8e0314d8cb5ace4d17fdc62eb2ec75ca336
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba0348ff0cf6dc394f67b3c5779fd49eb852673f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292459"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028520"
 ---
 # <a name="fastlane-for-ios--cert"></a>Fastlane für iOS – Cert
 
@@ -65,7 +65,7 @@ fastlane cert --development
 
 Geben Sie Ihre Apple-ID und Ihr Kennwort ein, wenn Cert Sie dazu auffordert:
 
-[![](cert-images/fastlane-image1.png "Cert fordert Ihre Apple-ID und Ihr Kennwort an")](cert-images/fastlane-image1.png#lightbox)
+[![](cert-images/fastlane-image1.png "cert will prompt for your Apple ID and password")](cert-images/fastlane-image1.png#lightbox)
 
 > [!IMPORTANT]
 > Wenn Sie Ihr Kennwort zum ersten Mal eingeben, wird es in der lokalen macOS-Keychain gespeichert. Alternativ können Sie Umgebungsvariablen zum Speichern des Benutzernamens und Kennworts verwenden, oder `export fastlane_DONT_STORE_PASSWORD=1` verwenden, wenn Sie nicht möchten, dass Ihr Kennwort in der Keychain gespeichert wird. Weitere Informationen zum Verwalten von Anmeldeinformationen mit Fastlane finden Sie im Leitfaden zu [CredentialsManager](https://github.com/fastlane/fastlane/blob/master/credentials_manager/README.md).
@@ -76,9 +76,9 @@ Die Apple-ID kann auch mithilfe des folgenden Befehls als Argument übergeben we
 fastlane cert -u myemailadress@domain.com
 ```
 
-Wenn Ihre Apple-ID mit mehreren Teams verbunden ist, werden sie hier angezeigt. Wählen Sie die Nummer aus, die dem Team entspricht, das Sie verwenden möchten:
+Wenn Ihre Apple-ID mit mehreren Teams verbunden ist, werden sie hier angezeigt. Wählen Sie die Zahl aus, die dem Team entspricht, das Sie verwenden möchten:
 
-[![](cert-images/fastlane-image2.png "Das Team auswählen, das Sie verwenden möchten")](cert-images/fastlane-image2.png#lightbox)
+[![](cert-images/fastlane-image2.png "Select the team that you wish to use")](cert-images/fastlane-image2.png#lightbox)
 
 Die Team-ID kann auch mithilfe des folgenden Flags übergeben werden:
 

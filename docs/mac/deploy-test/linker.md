@@ -4,15 +4,15 @@ description: In diesem Dokument wird das Verknüpfen in Xamarin.Mac beschrieben.
 ms.prod: xamarin
 ms.assetid: F03176C3-F8D4-4DE8-870C-7F27D8CE525A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 4b538df5e8e615f8594bd38cb13d9b45b0961dac
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f4ab94c4eede4a122ac834e075270a375bca0807
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770126"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030009"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac-Linkeroptionen
 
@@ -49,7 +49,7 @@ Um zur Linkerkonfiguration für ein Xamarin.Mac-Projekt zu wechseln, führen Sie
 2. Doppelklicken Sie auf die Projektdatei im **Projektmappen-Explorer**, um die **Projektoptionen** zu öffnen.
 3. Wählen Sie auf der Registerkarte **Mac-Build** den Typ des **Linkerverhaltens**, der am besten zu Ihrer Anwendung passt:
 
-    ![Auswählen des zu verwendenden Linkerverhaltens](linker-images/link-behavior.png "Choose which linker behavior to use")
+    ![Auswählen, welches Linkerverhalten verwendet werden soll](linker-images/link-behavior.png "Auswählen, welches Linkerverhalten verwendet werden soll")
 
 4. Die Plattformverknüpfung für Full-Zielframeworks wird erst in einem späteren Update zur IDE hinzugefügt. Fügen Sie bis dahin stattdessen den **zusätzlichen mmp-Argumenten** `--linkplatform` hinzu.
 5. Klicken Sie auf **OK**, um die Änderungen zu speichern.

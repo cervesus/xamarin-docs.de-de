@@ -4,15 +4,15 @@ description: Dieser Leitfaden beschreibt die verschiedenen fastlane-Tools zum Hi
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: c26d912a4684f6ddbee46ae953ce5cf1a3db67bd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0af85c1c27d2b329d81cc680a0fc4c075d4a86dd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762719"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028604"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Einführung in fastlane für iOS
 
@@ -50,13 +50,13 @@ Der Inhalt dieser Anleitung kann als Ausgangspunkt für die Hilfe bei der App-Ve
 3. Entzippen Sie die Datei, und doppelklicken Sie auf die ausführbare Datei `install`, um fastlane zu installieren. Wird ein Fehler angezeigt mit der Meldung, dass die Datei „nicht geöffnet werden kann, da sie von einem unbekannten Entwickler stammt“, klicken Sie auf OK, und führen Sie folgende Schritte aus:
     - Halten Sie STRG gedrückt, und klicken Sie auf die ausführbare Datei `install`. Dadurch wird das folgende Dialogfeld angezeigt:
 
-     ![](images/fastlane-image12.png "Das Dialogfeld „Installieren“")
+     ![](images/fastlane-image12.png "The install dialog")
 
     - Klicken Sie auf OK, um die Installation der fastlane-Tools zu starten.
 
 4. Terminal zeigt Ihnen das folgende Dialogfeld an. Drücken Sie `y`:
 
-   ![](images/fastlane-image13.png "Die Eingabeaufforderung „Terminal“")
+   ![](images/fastlane-image13.png "The Terminal prompt")
 
 5. Führen Sie `which fastlane` aus, bevor Sie fastlane zum ersten Mal verwenden. Der Pfad sollte wie folgt aussehen: 
 
@@ -84,11 +84,11 @@ Der Inhalt dieser Anleitung kann als Ausgangspunkt für die Hilfe bei der App-Ve
 
 Fastlane ist ein sehr aktives Open Source-Projekt, das regelmäßig neue Versionen veröffentlicht. Sobald eine neue Version von fastlane verfügbar ist, werden Sie beim Ausführen eines beliebigen fastlane-Befehls zu Folgendem aufgefordert:
 
-[![](images/fastlane-image0.png "Eingabeaufforderung für fastlane-Update")](images/fastlane-image0.png#lightbox)
+[![](images/fastlane-image0.png "The fast lane update prompt")](images/fastlane-image0.png#lightbox)
 
 Laden Sie [hier](https://download.fastlane.tools) das neueste Paket herunter, um auf eine neue Version von fastlane zu aktualisieren. Doppelklicken Sie zum Ausführen auf das Installationspaket:
 
-[![](images/fastlane-image0a.png "Installationspaket ausführen")](images/fastlane-image0a.png#lightbox)
+[![](images/fastlane-image0a.png "Running the install package")](images/fastlane-image0a.png#lightbox)
 
 ## <a name="contents"></a>Inhalt
 
@@ -106,7 +106,7 @@ Nachdem Sie mit fastlane eine Signierungsidentität und Bereitstellungsprofile e
 
 Zum Festlegen der Codesignierungsoptionen für eine Xamarin.iOS-Anwendung klicken Sie mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projektoptionen > Erstellen > iOS-Bundle-Signierung** aus. Legen Sie die Signierungsidentität und die Bereitstellungsprofile wie folgt eindeutig fest:
 
-[![](images/fastlane-image11.png "Signieridentität und Bereitstellungsprofil explizit festlegen")](images/fastlane-image11.png#lightbox)
+[![](images/fastlane-image11.png "Set the Signing Identity and Provisioning Profile explicitly")](images/fastlane-image11.png#lightbox)
 
 ## <a name="related-links"></a>Verwandte Links
 

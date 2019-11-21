@@ -4,15 +4,15 @@ description: Dieses Handbuch enthält die Schritte zur Problembehandlung für Pr
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ae8095ed0ef0ba8d0bfaf8295832bbef006d1627
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 4abe0da2b75b6859c6547f0dc1c4cf8708491afb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198531"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022468"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
@@ -44,15 +44,15 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
 2. Stellen Sie sicher, dass die **Remoteanmeldung** auf dem Mac aktiviert ist. Legen Sie den Zugriff für **Nur diese Benutzer** fest, und stellen Sie sicher, dass Ihr Mac-Benutzer in der Liste oder Gruppe inbegriffen ist:
 
-    [![](troubleshooting-images/troubleshooting-image1.png "Zugriff nur für diese Benutzer festlegen")](troubleshooting-images/troubleshooting-image1.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image1.png "Set access for Only these users")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. Überprüfen Sie, dass die Firewall eingehende Verbindungen über Port 22 – den Standardwert für SSH – zulässt:
 
-    [![](troubleshooting-images/troubleshooting-image2.png "Überprüfen Sie, ob die Firewall eingehende Verbindungen über Port 22 zulässt")](troubleshooting-images/troubleshooting-image2.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image2.png "Check that the firewall allows incoming connections through port 22")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     Wenn Sie **Automatically allow signed software to receive incoming connections** (Signierte Software automatisch für den Empfang eingehender Verbindungen zulassen) deaktiviert haben, wird in OS X während des Verbindungsaufbaus ein Dialogfeld angezeigt, das Sie auffordert, `mono-sgen` oder `mono-sgen32` für den Empfang von eingehenden Verbindungen zuzulassen. Klicken Sie in diesem Dialogfeld auf **Zulassen**:
 
-    [![](troubleshooting-images/troubleshooting-image4a.png "Klicken Sie in diesem Dialogfeld auf „Zulassen“")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image4a.png "Click Allow on this dialog")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. Vergewissern Sie sich, dass Sie über das Benutzerkonto auf diesem Mac angemeldet sind und über eine aktive GUI-Sitzung verfügen.
 
@@ -62,11 +62,11 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
     Beispielsweise wird der Kontoname des folgenden Screenshots **amyb** und nicht **Amy Burns** lauten:
 
-    [![](troubleshooting-images/troubleshooting-image5a.png "Abrufen des Kontonamens aus der Terminal-App")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image5a.png "Getting the account name from the Terminal app")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 6. Überprüfen Sie, dass die IP-Adresse, die Sie für den Mac verwenden, richtig ist. Sie finden die IP-Adresse unter **Systemeinstellungen > Freigabe > Remoteanmeldung** auf dem Mac.
 
-    [![](troubleshooting-images/troubleshooting-image17.png "Die IP-Adresse in der App „Systemeinstellungen“")](troubleshooting-images/troubleshooting-image17.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image17.png "The IP address in the System Preferences app")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. Wenn Sie die IP-Adresse für den Mac bestätigt haben, führen Sie einen `ping` an diese Adresse in `cmd.exe` unter Windows durch:
 
@@ -153,13 +153,13 @@ Gemeldete Ursachen:
 
 - **Einschränkung**: Dieser Fehler kann auftreten, wenn der Mac-Buildhost mit einem Router verbunden ist, der keinen Internetzugriff hat (oder wenn der Mac einen DNS-Server verwendet, bei dem ein Timeout auftritt, wenn nach der Reverse-DNS-Suche des Windows-Computers gefragt wird). Visual Studio benötigt zum Abrufen des SSH-Fingerabdrucks ungefähr 30 Sekunden und kann möglicherweise keine Verbindung herstellen.
 
-    **Mögliche Problemumgehung**: Fügen Sie „UseDNS no“ zur **sshd\_config**-Datei hinzu. Achten Sie darauf, sich über die SSH-Einstellung zu informieren, bevor Sie sie ändern. Informationen finden Sie beispielsweise unter [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option).
+    **Mögliche Problemumgehung**: Fügen Sie „UseDNS no“ zur **sshd\_config**-Datei hinzu. Achten Sie darauf, sich über die SSH-Einstellung zu informieren, bevor Sie sie ändern. Informationen finden Sie beispielsweise unter [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](https://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option).
 
     Die folgenden Schritte beschreiben eine Möglichkeit, die Einstellung zu ändern. Sie müssen mit einem Administratorkonto auf dem Mac angemeldet sein, um diese Schritte durchführen zu können.
 
     1. Überprüfen Sie den Speicherort der **sshd\_config**-Datei durch Ausführen von `ls /etc/ssh/sshd_config` und `ls /etc/sshd_config` in einer Eingabeaufforderung eines Terminals. Für alle verbleibenden Schritte müssen Sie den Speicherort verwenden, der _nicht_ „Datei oder Verzeichnis nicht vorhanden“ zurückgibt.
 
-        [![](troubleshooting-images/troubleshooting-image18.png "Ausführen von „ls /etc/ssh/sshd_config“ und „ls /etc/sshd_config“ im Terminal")](troubleshooting-images/troubleshooting-image18.png#lightbox)
+        [![](troubleshooting-images/troubleshooting-image18.png "Running `ls /etc/ssh/sshd_config` and `ls /etc/sshd_config` in the Terminal")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     2. Führen Sie `cp /etc/ssh/sshd_config "$HOME/Desktop/"` im Terminal aus, um die Datei auf Ihren Desktop zu kopieren.
 
@@ -193,7 +193,7 @@ Wenn die Protokolldateien ein Problem während der Schritte „Installieren“, 
     
 2. Klicken Sie bei gleichzeitigem Drücken von STRG auf den **XMA**-Ordner, und wählen Sie **In den Papierkorb verschieben** aus:
 
-    [![](troubleshooting-images/troubleshooting-image8.png "Verschieben des Ordners „XMA“ in den Papierkorb")](troubleshooting-images/troubleshooting-image8.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image8.png "Move the XMA folder to Trash")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Auf Windows gibt es auch einen Zwischenspeicher, dessen Bereinigung hilfreich sein kann. Öffnen Sie eine Befehlseingabeaufforderung als Administrator unter Windows:
 
@@ -233,7 +233,7 @@ Das Ausgabefenster ist der beste Startpunkt. Es zeigt Meldungen über Hauptverbi
 2. Wählen Sie in der Dropdownliste **Ausgabe anzeigen von** aus.
 3. Wählen Sie **Xamarin** aus.
 
-[![](troubleshooting-images/troubleshooting-image11.png "Wählen Sie „Xamarin“ auf der Registerkarte „Ausgabe“ aus")](troubleshooting-images/troubleshooting-image11.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image11.png "Select Xamarin in the Output tab")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 #### <a name="log-files"></a>Protokolldateien
 
@@ -248,17 +248,17 @@ Wenn das Ausgabefenster nicht genügend Informationen enthält, um das Problem z
 
 3. Nachdem Visual Studio einen Verbindungsfehler aufweist, sammeln Sie die Protokolle von **Hilfe > Xamarin > Zip-Protokolle**:
 
-    [![](troubleshooting-images/troubleshooting-image12.png "Sammeln Sie die Protokolle aus „Hilfe > Xamarin > Protokolle zippen“")](troubleshooting-images/troubleshooting-image12.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image12.png "Collect the logs from Help > Xamarin > Zip Logs")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. Wenn Sie die ZIP-Datei öffnen, wird Ihnen eine Liste der Dateien angezeigt, die dem folgenden Beispiel ähneln. Bei Verbindungsfehlern sind die wichtigsten Dateien **\*Ide.log** und **\*Ide.svclog**. Diese Dateien enthalten die gleichen Meldungen in zwei etwas unterschiedlichen Formaten. Die **.svclog** steht im XML-Format zur Verfügung und ist nützlich, wenn Sie die Nachrichten durchsuchen möchten. Bei **.log** handelt es sich um Klartext. Dies ist nützlich, wenn Nachrichten mithilfe von Befehlszeilentools gefiltert werden sollen.
 
     Um alle Nachrichten zu durchsuchen, wählen Sie die **.svclog**-Datei aus, und öffnen Sie sie:
 
-    [![](troubleshooting-images/troubleshooting-image13.png "Wählen Sie die SVCLOG-Datei aus")](troubleshooting-images/troubleshooting-image13.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image13.png "Select the svclog file")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. Die **.svclog**-Datei wird in **Microsoft Service Trace Viewer** geöffnet. Sie können die Nachrichten nach Threads durchsuchen, um verwandte Nachrichtengruppen anzuzeigen. Zum Durchsuchen nach Threads wählen Sie zuerst die Registerkarte **Graph** aus, klicken dann auf das Dropdownmenü **Layoutmodus** und wählen **Thread** aus:
 
-    [![](troubleshooting-images/troubleshooting-image14.png "Klicken Sie auf das Dropdownmenü „Layoutmodus“, und wählen Sie „Thread“ aus")](troubleshooting-images/troubleshooting-image14.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image14.png "Click the Layout Mode drop-down menu and select Thread")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -324,7 +324,7 @@ Verwandter Fehler: [#36195](https://bugzilla.xamarin.com/show_bug.cgi?id=36195)
 
 Starten Sie Xcode auf dem Mac, und stellen Sie sicher, dass Ihr Apple-Entwicklerkonto angemeldet und Ihr iOS-Entwicklungsprofil heruntergeladen ist:
 
-[![](troubleshooting-images/troubleshooting-image7.png "Stellen Sie sicher, dass Ihr Apple-Entwicklerkonto angemeldet und das iOS-Entwicklungsprofil heruntergeladen ist")](troubleshooting-images/troubleshooting-image7.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image7.png "Ensuring that the Apple developer account is logged in and the iOS Development Profile is downloaded")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>„Ein Socketvorgang für ein nicht erreichbares Netzwerk wurde versucht“
 
@@ -350,7 +350,7 @@ Das Verhalten der aktuellen aktiven Verbindung kann manchmal von Prozessen von v
 ps -A | grep mono
 ```
 
-[![](troubleshooting-images/troubleshooting-image10.png "Ausführen von Befehlen im Terminal auf dem Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image10.png "Running commands in Terminal on the Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 Verwenden Sie zum Beenden der vorhandenen Prozesse den folgenden Befehl:
 
@@ -370,7 +370,7 @@ Wenn Sie eine Problembehandlung für einen Build durchführen und sicher stellen
 
 2. Klicken Sie bei gleichzeitigem Drücken von STRG auf den **mtbs**-Ordner, und wählen Sie **In den Papierkorb verschieben** aus:
 
-    [![](troubleshooting-images/troubleshooting-image9.png "Verschieben des Ordners „mtbs“ in den Papierkorb")](troubleshooting-images/troubleshooting-image9.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image9.png "Move the mtbs folder to Trash")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 ## <a name="related-links"></a>Verwandte Links
 

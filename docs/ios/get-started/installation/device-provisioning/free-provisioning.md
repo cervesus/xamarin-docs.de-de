@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Xamarin.iOS-Entwickler Ihre
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/16/2018
-ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291435"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022753"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Kostenlose Bereitstellung für Xamarin.iOS-Apps
 
@@ -49,23 +49,23 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 2. Öffnen Sie Xcode, und navigieren Sie zu **Xcode > Einstellungen**.
 3. Klicken Sie unter **Konten** auf die **+** -Schaltfläche, um Ihre vorhandene Apple-ID hinzuzufügen. Dies sollte ungefähr wie folgt aussehen:
 
-    ![Xcode-Einstellungen > Konten](free-provisioning-images/launchapp1.png "Xcode Preferences – Accounts")
+    ![Xcode > Einstellungen > Konten](free-provisioning-images/launchapp1.png "Xcode > Voreinstellungen > Konten")
 
 4. Schließen Sie die Xcode-Einstellungen.
 5. Schließen Sie das iOS-Gerät an, auf dem Sie Ihre App bereitstellen möchten.
 6. Erstellen Sie ein neues Projekt in Xcode. Navigieren Sie zu **Datei > Neu > Projekt**, und wählen Sie **Einzelansicht-App** aus.
 7. Legen Sie im Dialogfeld für ein neues Projekt **Team** auf die gerade hinzugefügte Apple-ID fest. In der Dropdownliste sollte die Option in etwa **Ihr Name (Persönliches Team)** lauten:
 
-    ![Neue App erstellen](free-provisioning-images/launchapp2.png "Create a new app")
+    ![Erstellen einer neuen App](free-provisioning-images/launchapp2.png "Erstellen einer neuen App")
 
 8. Wenn das neue Projekt erstellt wurde, wählen Sie ein Xcode-Buildschema aus, das Ihr iOS-Gerät (statt eines Simulators) als Ziel verwendet.
 
-    ![Xcode-Buildschema auswählen](free-provisioning-images/xcodescheme.png "Select an Xcode build scheme")
+    ![Auswählen eines Xcode-Buildschemas](free-provisioning-images/xcodescheme.png "Auswählen eines Xcode-Buildschemas")
 
 9. Öffnen Sie die Projekteinstellungen Ihrer App. Wählen Sie dazu den obersten Knoten im **Projektnavigator** in Xcode aus.
 10. Achten Sie darauf, dass die **Bündle-ID** unter **Allgemein > Identität** _genau_ mit der Bündel-ID Ihrer Xamarin.iOS-App übereinstimmt.
 
-    ![Bündel-ID festlegen](free-provisioning-images/launchapp5.png "Set a bundle identifier")
+    ![Festlegen einer Bundle-ID](free-provisioning-images/launchapp5.png "Festlegen einer Bundle-ID")
 
     > [!IMPORTANT]
     > Xcode erstellt nur ein Bereitstellungsprofil für eine eindeutige App-ID, die mit der App-ID Ihrer Xamarin.iOS-App übereinstimmen muss.
@@ -74,11 +74,11 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 11. Achten Sie darauf, dass das Bereitstellungsziel unter **Bereitstellungsinformationen** mit der iOS-Version des verbundenen iOS-Geräts übereinstimmt oder niedriger ist.
 12. Wählen Sie unter **Signing** (Signieren) die Option **Automatically manage signing** (Signierung automatisch verwalten) und Ihr Team aus der Dropdownliste aus.
 
-    ![Signierung automatisch verwalten](free-provisioning-images/launchapp6.png "Automatically manage signing")
+    ![Signierung automatisch verwalten](free-provisioning-images/launchapp6.png "Signierung automatisch verwalten")
 
     Xcode erstellt automatisch ein Bereitstellungsprofil und eine Signierungsidentität für Sie. Diese werden durch Klicken auf das Informationssymbol neben dem Bereitstellungsprofil angezeigt:
 
-    ![Bereitstellungsprofil anzeigen](free-provisioning-images/launchapp7.png "View the provisioning profile")
+    ![Anzeigen des Bereitstellungsprofils](free-provisioning-images/launchapp7.png "Anzeigen des Bereitstellungsprofils")
 
     > [!TIP]
     > Wenn es einen Fehler beim Erstellen des Bereitstellungsprofils gibt, stellen Sie sicher, dass das aktuell ausgewählte Buildschema von Xcode das verbundene iOS-Gerät und keinen Simulator als Ziel verwendet.
@@ -98,7 +98,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 7. Wählen Sie die von Xcode erstellte **Signierungsidentität**.
 8. Wählen Sie das von Xcode erstellte **Bereitstellungsprofil**.
 
-    ![Signierungsidentität und Bereitstellungsprofil festlegen](free-provisioning-images/launchapp8.png "Set the signing identity and provisioning profile")
+    ![Festlegen der Signierungsidentität und des Bereitstellungsprofils](free-provisioning-images/launchapp8.png "Festlegen der Signierungsidentität und des Bereitstellungsprofils")
 
     > [!TIP]
     > Wird Ihre Signierungsidentität oder das korrekte Bereitstellungsprofil nicht angezeigt, müssen Sie Visual Studio für Mac möglicherweise neu starten.
@@ -118,7 +118,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 8. Wählen Sie die von Xcode erstellte **Signierungsidentität**.
 9. Wählen Sie das von Xcode erstellte **Bereitstellungsprofil**.
     
-    ![Signierungsidentität und Bereitstellungsprofil festlegen](free-provisioning-images/setprofile-w157.png "Set the signing identity and provisioning profile")
+    ![Festlegen der Signierungsidentität und des Bereitstellungsprofils](free-provisioning-images/setprofile-w157.png "Festlegen der Signierungsidentität und des Bereitstellungsprofils")
 
     > [!TIP]
     > Xcode hat eine Signierungsidentität und ein Bereitstellungsprofil erstellt und diese auf Ihrem Mac-Buildhost gespeichert. Visual Studio 2019 oder Visual Studio 2017 können darauf zugreifen, weil es mit dem Mac-Buildhost [gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md) wurde. Wenn sie nicht angezeigt werden, müssen Sie Visual Studio 2019 oder Visual Studio 2017 vermutlich neu starten.

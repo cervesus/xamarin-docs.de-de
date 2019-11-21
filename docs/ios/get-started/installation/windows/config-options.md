@@ -4,15 +4,15 @@ description: In diesem Artikel wird erläutert, wie Sie Visual Studio 2019 für 
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: b3910bd096f2a8dd301a9ba6e200028d3121c8df
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279229"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022537"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>Konfigurieren von Visual Studio für die iOS-Entwicklung
 
@@ -42,7 +42,7 @@ Wenn ein iOS-Projekt in Visual Studio 2019 oder Visual Studio 2017 geöffnet ist
 
 Wenn diese Symbolleiste nicht angezeigt wird, öffnen Sie das Menü **Ansicht** in Visual Studio 2019 oder Visual Studio 2017, und klicken Sie auf **Symbolleisten > iOS**:
 
-![Aktivieren der iOS-Symbolleiste](config-options-images/ios-toolbar-enable.png "Enabling the iOS toolbar")
+![Aktivieren der iOS-Symbolleiste](config-options-images/ios-toolbar-enable.png "Aktivieren der iOS-Symbolleiste")
 
 ## <a name="solution-platforms-drop-down-menu"></a>Dropdownmenü „Projektmappenplattformen“
 
@@ -54,8 +54,8 @@ So stellen Sie sicher, dass das Dropdownmenü in der Standardsymbolleiste angeze
 - Wählen Sie **Schaltflächen hinzufügen oder entfernen** aus. 
 - Stellen Sie sicher, dass das **Projektmappenplattformen**-Element aktiviert ist:
 
-![Aktivieren des Dropdownmenüs „Projektmappenplattformen“](config-options-images/solution-platforms-enable.png "Enabling the Solution Platforms drop-down menu")
+![Aktivieren des Dropdownmenüs „Projektmappenplattformen“](config-options-images/solution-platforms-enable.png "Aktivieren des Dropdownmenüs „Projektmappenplattformen“")
 
 Falls ein iOS-Projekt geöffnet ist, sollten die **Standardsymbolleiste** und die **iOS-Symbolleiste** nun wie auf dem folgenden Screenshot aussehen:
 
-![Standardsymbolleiste und iOS-Symbolleiste](config-options-images/toolbars.png "Standard and iOS toolbars")
+![Standard- und iOS-Symbolleisten](config-options-images/toolbars.png "Standard- und iOS-Symbolleisten")

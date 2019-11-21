@@ -4,15 +4,15 @@ description: In diesem Dokument wird der Xamarin.iOS-Linker beschrieben, der zum
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 2cda4d53ae3f5f5716d53fd8862ca9cf000003e0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762839"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030222"
 ---
 # <a name="linking-xamarinios-apps"></a>Verknüpfen von Xamarin.iOS-Apps
 
@@ -30,7 +30,7 @@ Da der Linker ein statisches Tool ist, kann er nicht für Inklusionstypen und -m
 
 Der Verknüpfungsprozess kann in **Projektoptionen** über das Dropdownmenü „Linkerverhalten“ angepasst werden. Um auf dieses iOS-Projekt zuzugreifen, doppelklicken Sie darauf, und navigieren Sie zu **iOS-Build > Linkeroptionen**, wie unten dargestellt:
 
-[![](linker-images/image1.png "Linkeroptionen")](linker-images/image1.png#lightbox)
+[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ Führen Sie folgende Schritte aus:
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen**, und wählen Sie **Eigenschaften** aus:
 
-    ![](linker-images/linking01w.png "Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie „Eigenschaften“ aus")
+    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
 2. Wählen Sie in den **Projekteigenschaften** die Option **iOS-Build** aus:
 
-    ![](linker-images/linking02w.png "Wählen Sie „iOS-Build“ aus")
+    ![](linker-images/linking02w.png "Select IOS Build")
 3. Befolgen Sie die nachstehenden Anweisungen, um die Verknüpfungsoptionen zu ändern.
 
 -----
@@ -169,4 +169,4 @@ Befolgen Sie die [Anweisungen zum Erstellen einer Linkerkonfigurationsdatei](~/c
 
 - [Benutzerdefinierte Linkerkonfiguration](~/cross-platform/deploy-test/linker.md)
 - [Verknüpfung auf dem Mac](~/mac/deploy-test/linker.md)
-- [Verknüpfung unter Android](~/android/deploy-test/linker.md)
+- [Linking on Android (Verknüpfung unter Android)](~/android/deploy-test/linker.md)

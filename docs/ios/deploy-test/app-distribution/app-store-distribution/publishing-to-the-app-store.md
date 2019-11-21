@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwend
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
-ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
+ms.openlocfilehash: 3803d7e14b161a7c166bcae37e3d9f46b7637984
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71811184"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026635"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
 
@@ -106,7 +106,7 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
     Wenn Sie die oben beschriebenen Optionen festgelegt haben, sollten Ihre Buildeinstellungen in etwa wie folgt aussehen:
 
-    ![iOS-Buildeinstellungen](publishing-to-the-app-store-images/build-m157.png "iOS Build settings")
+    ![iOS-Buildeinstellungen](publishing-to-the-app-store-images/build-m157.png "iOS-Buildeinstellungen")
 
     Lesen Sie außerdem den Leitfaden [Abläufe beim Erstellen von iOS-Builds](~/ios/deploy-test/ios-build-mechanics.md), in dem Buildeinstellungen ausführlicher beschrieben werden.
 
@@ -117,7 +117,7 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
     Die Bundlesignierungsoptionen Ihres Projekts sollten jetzt in etwa wie folgt aussehen:
 
-    ![iOS-Bundlesignierung](publishing-to-the-app-store-images/bundleSigning-m157.png "iOS Bundle Signing")
+    ![iOS-Bundlesignierung](publishing-to-the-app-store-images/bundleSigning-m157.png "iOS-Bundlesignierung")
 
 15. Klicken Sie auf **OK**, um die Änderungen an den Projekteigenschaften zu speichern.
 
@@ -136,7 +136,7 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
     Wenn Sie die oben beschriebenen Optionen festgelegt haben, sollten Ihre Buildeinstellungen in etwa wie folgt aussehen:
 
-    ![iOS-Buildeinstellungen](publishing-to-the-app-store-images/build-w157.png "iOS Build settings")
+    ![iOS-Buildeinstellungen](publishing-to-the-app-store-images/build-w157.png "iOS-Buildeinstellungen")
 
     Lesen Sie außerdem den Leitfaden [Abläufe beim Erstellen von iOS-Builds](~/ios/deploy-test/ios-build-mechanics.md), in dem Buildeinstellungen ausführlicher beschrieben werden.
 
@@ -146,7 +146,7 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
     Die Bundlesignierungsoptionen Ihres Projekts sollten jetzt in etwa wie folgt aussehen:
 
-    ![iOS-Bundlesignierungseinstellungen](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS Bundle Signing settings")
+    ![Einstellungen der iOS-Bundlesignierung](publishing-to-the-app-store-images/bundleSigning-w157.png "Einstellungen der iOS-Bundlesignierung")
 
 14. Speichern Sie die Buildkonfiguration, und schließen Sie sie.
 
@@ -165,7 +165,7 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
     Wenn Sie die oben beschriebenen Optionen festgelegt haben, sollten Ihre Buildeinstellungen in etwa wie folgt aussehen:
 
-    ![iOS-Buildeinstellungen](publishing-to-the-app-store-images/build-w157.png "iOS Build settings")
+    ![iOS-Buildeinstellungen](publishing-to-the-app-store-images/build-w157.png "iOS-Buildeinstellungen")
 
     Lesen Sie außerdem den Leitfaden [Abläufe beim Erstellen von iOS-Builds](~/ios/deploy-test/ios-build-mechanics.md), in dem Buildeinstellungen ausführlicher beschrieben werden.
 
@@ -175,7 +175,7 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
     Die Bundlesignierungsoptionen Ihres Projekts sollten jetzt in etwa wie folgt aussehen:
 
-    ![iOS-Bundlesignierungseinstellungen](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS Bundle Signing settings")
+    ![Einstellungen der iOS-Bundlesignierungg](publishing-to-the-app-store-images/bundleSigning-w157.png "Einstellungen der iOS-Bundlesignierung")
 
 14. Navigieren Sie zur Registerkarte **iOS IPA-Optionen**.
 15. Stellen Sie sicher, dass **Konfiguration** auf **Release** und **Plattform** auf **iPhone** festgelegt ist.
@@ -186,7 +186,7 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
 17. Geben Sie einen Namen im Feld **Paketname** ein, um einen Namen einer IPA-Datei anzugeben, der vom Namen des Xamarin.iOS-Projekts abweicht.
 
-    ![iOS-Bundlesignierungseinstellungen](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS Bundle Signing settings")
+    ![Einstellungen der iOS-Bundlesignierung](publishing-to-the-app-store-images/ipaOptions-w157.png "Einstellungen der iOS-Bundlesignierung")
 
 18. Speichern Sie die Buildkonfiguration, und schließen Sie sie.
 
@@ -206,12 +206,12 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
 
 1. Wählen Sie in Visual Studio für Mac die Buildkonfiguration **Release** und ein Gerät (keinen Simulator) aus, für das Sie den Build durchführen möchten.
 
-    ![Buildkonfiguration und Auswahl der Plattform](publishing-to-the-app-store-images/chooseConfig-m157.png "Build configuration and platform selection")
+    ![Buildkonfiguration und Plattformauswahl](publishing-to-the-app-store-images/chooseConfig-m157.png "Buildkonfiguration und Plattformauswahl")
 
 2. Wählen Sie aus dem **Build**-Menü die Option **Archive for Publishing** (Für Veröffentlichung archivieren):
 3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt. Klicken Sie auf **Signieren und verteilen...** , um den Veröffentlichungs-Assistenten zu öffnen.
 
-    ![Screenshot der Schaltfläche „Signieren und verteilen“ in der Ansicht „Archive“](publishing-to-the-app-store-images/archives-mac.png "Screenshot der Schaltfläche „Signieren und verteilen“ in der Ansicht „Archive“")
+    ![Screenshot: Schaltfläche „Signieren und verteilen“ in der Archivansicht](publishing-to-the-app-store-images/archives-mac.png "Screenshot: Schaltfläche „Signieren und verteilen“ in der Archivansicht")
 
     > [!NOTE]
     > Standardmäßig zeigt die Ansicht **Archive** nur die Archive für die geöffnete Projektmappe an. Aktivieren Sie das Kontrollkästchen **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen. Es empfiehlt sich, alle Archive beizubehalten, damit die darin enthaltenen Debuginformationen verwendet werden können, um Absturzberichte bei Bedarf durch Symbole zu ersetzen.
@@ -222,11 +222,11 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
 
 6. Wählen Sie im Fenster **Bereitstellungsprofil** Ihrer Signierungsidentität, App und Ihr Bereitstellungsprofil aus. Klicken Sie auf **Weiter**.
 
-    ![Screenshot der Assistentenseite für das Bereitstellungsprofil, die eine gültige Signierungsidentität, App und Auswahl des Bereitstellungsprofils zeigt](publishing-to-the-app-store-images/provProfileSelect-mac.png "Screenshot der Assistentenseite für das Bereitstellungsprofil, auf der eine gültige Signierungsidentität, App und Auswahl des Bereitstellungsprofils ausgewählt ist")
+    ![Screenshot: Seite des Assistenten des Bereitstellungsprofils mit einer gültigen Signierungsidentität, einer App und einer Auswahl des Bereitstellungsprofils](publishing-to-the-app-store-images/provProfileSelect-mac.png "Screenshot: Seite des Assistenten des Bereitstellungsprofils mit einer gültigen Signierungsidentität, einer App und einem ausgewählten Bereitstellungsprofil")
 
 7. Wählen Sie im Fenster **App Store Connect information** (Informationen zu App Store Connect) im Menü einen Apple ID-Benutzernamen aus, und geben Sie [ein App-spezifisches Kennwort](https://support.apple.com/ht204397) ein. Klicken Sie auf **Weiter**.
 
-    ![Screenshot der Assistentenseite von App Store Connect information (Informationen zu App Store Connect) mit einem ausgewählten Apple ID-Benutzernamen](publishing-to-the-app-store-images/connectInfo-mac.png "Screenshot der Assistentenseite von App Store Connect information (Informationen zu App Store Connect) mit einem ausgewählten Apple ID-Benutzernamen")
+    ![Screenshot: Seite des Assistenten der App Store Connect-Informationen mit einem ausgewählten Apple-ID-Benutzernamen](publishing-to-the-app-store-images/connectInfo-mac.png "Screenshot: Seite des Assistenten der App Store Connect-Informationen mit einem ausgewählten Apple-ID-Benutzernamen")
 
 8. Überprüfen Sie die Details Ihres Pakets, und klicken Sie auf **Veröffentlichen**. Nachdem Sie einen Speicherort für die IPA-Datei ausgewählt haben, wird Ihre App vom Assistenten in App Store Connect hochgeladen.
 
@@ -245,23 +245,23 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
 1. Stellen Sie sicher, dass Visual Studio 2019 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Wählen Sie im Dropdownmenü **Projektmappenkonfigurationen** **Release** und aus dem Dropdownmenü **Projektmappenplattformen** **iPhone** aus.
 
-    ![Screenshot der Visual Studio-Symbolleiste mit der zu veröffentlichen Projektmappenkonfiguration, die auf iPhone festgelegte Projektmappenplattform und auf das Gerät festgelegte Ziel](publishing-to-the-app-store-images/chooseConfig-w157.png "Screenshot der Visual Studio-Symbolleiste mit der zu veröffentlichen Projektmappenkonfiguration, die auf iPhone festgelegte Projektmappenplattform und auf das Gerät festgelegte Ziel")
+    ![Screenshot: Visual Studio-Symbolleiste mit der Lösungskonfiguration für die Freigabe, der Lösungsplattform für das iPhone und dem Ziel für das Gerät](publishing-to-the-app-store-images/chooseConfig-w157.png "Screenshot: Visual Studio-Symbolleiste mit der Lösungskonfiguration für die Freigabe, der Lösungsplattform für das iPhone und dem Ziel für das Gerät")
 
 3. Wählen Sie im Menü **Erstellen** die Option **Archiv...** aus. Dadurch wird der **Archiv-Manager** geöffnet und mit dem Erstellen eines Archivs begonnen.
 
 4. Sobald das Archiv erstellt wurde, klicken Sie auf **Verteilen...** , um den Assistenten zur Veröffentlichung zu öffnen.
 
-    ![Screenshot der Position der Schaltfläche „Verteilen“ in der Ansicht des Archiv-Managers](publishing-to-the-app-store-images/archives-win.png "Screenshot der Position der Schaltfläche „Verteilen“ in der Ansicht des Archiv-Managers")
+    ![Screenshot: Schaltfläche „Verteilen“ in der Archiv-Manager-Ansicht](publishing-to-the-app-store-images/archives-win.png "Screenshot: Schaltfläche „Verteilen“ in der Archiv-Manager-Ansicht")
 
 5. Wählen Sie als Verteilungskanal den **App Store** aus.
 
 6. Wählen Sie Ihre Signierungsidentität und das Bereitstellungsprofil aus. Klicken Sie auf **Upload to Store** (In Store hochladen).
 
-    ![Screenshot des Assistenten für die Veröffentlichung mit einer gültigen Signierungsidentität und Auswahl des Bereitstellungsprofils](publishing-to-the-app-store-images/provProfileSelect-win.png "Screenshot des Assistenten für die Veröffentlichung mit einer gültigen Signierungsidentität und Auswahl des Bereitstellungsprofils")
+    ![Screenshot: Veröffentlichungs-Assistent mit einer gültigen Signierungsidentität und einer Auswahl des Bereitstellungsprofils](publishing-to-the-app-store-images/provProfileSelect-win.png "Screenshot: Veröffentlichungs-Assistent mit einer gültigen Signierungsidentität und einer Auswahl des Bereitstellungsprofils")
 
 7. Geben Sie Ihre Apple-ID und [ein für die App spezifisches Kennwort](https://support.apple.com/ht204397) ein. Klicken Sie auf **OK**, um mit dem Hochladen Ihrer App in App Store Connect zu beginnen.
 
-    ![Screenshot des Popupfensters zum Eingeben Ihrer Apple-ID und dem für die App spezifischen Kennwort](publishing-to-the-app-store-images/connectInfo-win.png "Screenshot des Popupfensters zum Eingeben Ihrer Apple-ID und dem für die App spezifischen Kennwort")
+    ![Screenshot: Popupfenster zur Eingabe Ihrer Apple-ID und Ihres App-spezifischen Kennworts](publishing-to-the-app-store-images/connectInfo-win.png "Screenshot: Popupfenster zur Eingabe Ihrer Apple-ID und Ihres App-spezifischen Kennworts")
 
 # <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
@@ -275,7 +275,7 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
 1. Stellen Sie sicher, dass Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Wählen Sie im Dropdownmenü **Projektmappenkonfigurationen** in Visual Studio 2017 **Release** und aus dem Dropdownmenü **Projektmappenplattformen** **iPhone** aus.
 
-    ![Buildkonfiguration und Auswahl der Plattform](publishing-to-the-app-store-images/chooseConfig-w157.png "Build configuration and platform selection")
+    ![Buildkonfiguration und Plattformauswahl](publishing-to-the-app-store-images/chooseConfig-w157.png "Buildkonfiguration und Plattformauswahl")
 
 3. Erstellen Sie das Projekt. Dadurch wird eine IPA-Datei erstellt.
 
@@ -299,16 +299,16 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
 7. Melden Sie sich bei Application Loader an (Sie müssen ein [App-spezifisches Kennwort](https://support.apple.com/ht204397) für Ihre Apple-ID erstellen).
 8. Wählen Sie **Ihre App übermitteln** aus, und klicken Sie auf die Schaltfläche **Auswählen**:
 
-    ![Auswahl von „Deliver Your App“ (App übermitteln)](publishing-to-the-app-store-images/publishvs01.png "Select Deliver Your App")
+    ![Auswählen von „Ihre App übermitteln“](publishing-to-the-app-store-images/publishvs01.png "Auswählen von „Ihre App übermitteln“")
 
 9. Wählen Sie die zuvor erstellte IPA-Datei aus, und klicken Sie auf **OK**.
 10. Die Datei wird durch den Application Loader überprüft:
 
-    ![Der Validierungsbildschirm](publishing-to-the-app-store-images/publishvs02.png "The validation screen")
+    ![Der Validierungsbildschirm](publishing-to-the-app-store-images/publishvs02.png "Der Validierungsbildschirm")
 
 11. Klicken Sie auf die Schaltfläche **Weiter**. Die Anwendung wird nun für den App Store überprüft:
 
-    ![Validierung im App Store](publishing-to-the-app-store-images/publishvs03.png "Validating against the App Store")
+    ![Überprüfen für den App Store](publishing-to-the-app-store-images/publishvs03.png "Überprüfen für den App Store")
 
 12. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
 13. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
@@ -326,7 +326,7 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
 
 Melden Sie sich bei iTunes Connect an, und wählen Sie Ihre App aus, um den Status Ihrer Übermittlung einzusehen. Der Status sollte zunächst **Waiting for Review** (Überprüfung ausstehend) lauten, vorrübergehend kann er aber auch **Upload Received** (Upload eingegangen) lauten, wenn die Übermittlung verarbeitet wird.
 
-![Waiting For Review](publishing-to-the-app-store-images/image21.png "Waiting For Review")
+![Warten auf Überprüfung](publishing-to-the-app-store-images/image21.png "Warten auf Überprüfung")
 
 ## <a name="tips-and-tricks"></a>Tipps und Tricks
 

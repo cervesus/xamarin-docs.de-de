@@ -4,15 +4,15 @@ description: In diesem Dokument wird der match-Befehl von fastlane beschrieben, 
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8991ddc55069fad8c5f023f35ece0926f0f7e5b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08fdcafe33e4b9b2aa6b5595c732718878be33f2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285728"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028512"
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane für iOS – match
 
@@ -59,15 +59,15 @@ fastlane match init
 
 Geben Sie die URL des Git-Repositorys ein, wenn Sie dazu aufgefordert werden:
 
- [![](match-images/fastlane-image7.png "Eingabe der URL des Git-Repositorys")](match-images/fastlane-image7.png#lightbox)
+ [![](match-images/fastlane-image7.png "Enter the URL of the git repo")](match-images/fastlane-image7.png#lightbox)
 
 Die URL kann wie im Folgenden dargestellt gefunden und kopiert werden, indem Sie auf die Schaltfläche **Clone or Download** (Klonen oder Herunterladen) auf github.com klicken:
 
-[![](match-images/fastlane-image6.png "Die URL unter der Schaltfläche „Klonen“ oder „Herunterladen“ auf github.com")](match-images/fastlane-image6.png#lightbox)
+[![](match-images/fastlane-image6.png "The URL under the Clone or Download button on github.com")](match-images/fastlane-image6.png#lightbox)
 
 Das Initialisieren des Projekts erstellt eine match-Datei. Dabei handelt es sich um eine Textdatei, die bearbeitet werden kann, um Umgebungsvariablen an das match-Tool zu übergeben. Im Folgenden finden Sie ein Beispiel für eine match-Datei:
 
-[![](match-images/fastlane-image8.png "Ein Beispiel für matchfile")](match-images/fastlane-image8.png#lightbox)
+[![](match-images/fastlane-image8.png "A matchfile example")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -93,7 +93,7 @@ Zusätzlich zum Erstellen neuer Zertifikate und Profile fügt das Verwenden dies
 - Eine Infodatei mit grundlegenden Anweisungen
 - Eine Version von match
 
-[![](match-images/fastlane-image9.png "Die Projektstruktur im Git-Repository")](match-images/fastlane-image9.png#lightbox)
+[![](match-images/fastlane-image9.png "The project structure in the git repo")](match-images/fastlane-image9.png#lightbox)
 
 Bereitstellungsprofile werden in `~/Library/MobileDevice/Provisioning Profiles` installiert. Zertifikate und private Schüssel werden direkt in Ihrer Keychain installiert.
 

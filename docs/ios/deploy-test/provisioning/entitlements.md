@@ -4,15 +4,15 @@ description: Berechtigungen sind besondere App-Funktionen und Sicherheitsberecht
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/13/2018
-ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43bde3a31a79728548e72ea1d34977f1a131f282
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284806"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028539"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Arbeiten mit Berechtigungen in Xamarin.iOS
 
@@ -44,12 +44,12 @@ Um die Berechtigungen in Visual Studio für Mac zu konfigurieren, gehen Sie folg
 1. Doppelklicken Sie auf die **info.plist**-Datei im **Projektmappen-Explorer**, um sie zu öffnen und zu bearbeiten.
 2. Füllen Sie im Abschnitt **Ziel für iOS-Anwendung** den Namen für Ihre Anwendung aus, und geben Sie die **Bundle-ID** ein, die Sie beim Definieren der App-ID erstellt haben:
 
-    ![](entitlements-images/servicexs01.png "Geben Sie eine Bündel-ID ein")
+    ![](entitlements-images/servicexs01.png "Enter a Bundle Identifier")
 
 3. Speichern Sie die Änderungen an der **info.plist**-Datei.
 4. Doppelklicken Sie im **Projektmappen-Explorer** auf die **entitlements.plist**-Datei, um sie zur Bearbeitung zu öffnen:
 
-    ![](entitlements-images/servicexs02.png "Bearbeiten der Berechtigungen")
+    ![](entitlements-images/servicexs02.png "Editing the Entitlements")
 
 5. Die Berechtigungen für Ihre Xamarin.iOS-Anwendung müssen so ausgewählt und konfiguriert werden, dass sie mit den Einstellungen übereinstimmen, die Sie beim Erstellen der App-ID festgelegt haben.
 6. Speichern Sie die Änderungen an der **entitlements.plist**-Datei.
@@ -61,12 +61,12 @@ Um die Berechtigung in Visual Studio zu konfigurieren, führen Sie Folgendes aus
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die **info.plist**-Datei, klicken Sie auf **Öffnen mit...** und auf die **PLIST**-Datei, um sie für die Bearbeitung zu öffnen.
 2. Füllen Sie im Abschnitt **Ziel für iOS-Anwendung** den Namen für Ihre Anwendung aus, und geben Sie die **Bundle-ID** ein, die Sie beim Definieren der App-ID erstellt haben:
 
-    ![](entitlements-images/servicevs01.png "Festlegen der Bündel-ID")
+    ![](entitlements-images/servicevs01.png "Setting the Bundle Identifier")
 
 3. Speichern Sie die Änderungen an der **info.plist**-Datei.
 4. Rechtsklicken Sie im **Projektmappen-Explorer** auf die **entitlements.plist**-Datei, klicken Sie auf **Öffnen mit...** und auf die **PLIST**-Datei, um sie für die Bearbeitung zu öffnen:
 
-    ![](entitlements-images/servicevs02.png "Bearbeiten der Berechtigungen")
+    ![](entitlements-images/servicevs02.png "Editing the Entitlements")
 
     Alternativ wird nach dem Doppelklicken auf die **entitlements.plist**-Datei der XML-Quell-Editor geöffnet, in dem Sie die Eigenschaft „Entitlement“ und den Schlüsselwert festlegen können. Dies wird unten im Abschnitt [Referenz zu Berechtigungsschlüsseln](#entitlement-key-reference) genauer beschrieben.
 

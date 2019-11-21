@@ -4,15 +4,15 @@ description: Dieses Dokument bietet einen kurzen Überblick über die interne Ve
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763066"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026551"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -56,15 +56,15 @@ Es ist wichtig, zu beachten, dass abgelaufene Zertifikate nicht erneuert werden 
 3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Produktion* **Intern und Ad-hoc** aus:
 
-   [![](in-house-distribution-images/createcertmanually01.png "„Intern“ und „Ad-hoc“ auswählen")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
-5. Klicken Sie auf „Continue“ (Weiter), und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung (CSR) mithilfe des Keychain-Zugriffs:
+5. Klicken Sie auf „Weiter“, und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung mithilfe des Keychain-Zugriffs:
 
-   [![](in-house-distribution-images/createcertmanually02.png "Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. Sobald Sie Ihre CSR wie beschrieben erstellt haben, klicken Sie auf „Weiter“, und laden Sie Ihre CSR in das Member Center hoch:
 
-   [![](in-house-distribution-images/createcertmanually03.png "Zertifikatsignieranforderung in das Member Center hochladen")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually03.png "Upload the CSR to the Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf „Generieren“, um Ihr Zertifikat zu erstellen.
 8. Laden Sie das abgeschlossene Zertifikat herunter, und doppelklicken Sie auf die Datei, um sie zu installieren.
@@ -74,15 +74,15 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Einstellungen
 
 1. Wählen Sie das Team aus, und klicken Sie auf *Details anzeigen*:
 
-   [![](in-house-distribution-images/selectteam.png "Ihr Team auswählen")](in-house-distribution-images/selectteam.png#lightbox)
+   [![](in-house-distribution-images/selectteam.png "Select your team")](in-house-distribution-images/selectteam.png#lightbox)
 
-2. Klicken Sie anschließend auf die Schaltfläche **Create** (Erstellen) neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat):
+2. Klicken Sie anschließend auf die Schaltfläche **Erstellen** neben **iOS-Verteilungszertifikat**:
 
-   [![](in-house-distribution-images/selectcert.png "Das iOS-Verteilungszertifikat erstellen")](in-house-distribution-images/selectcert.png#lightbox)
+   [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
 
-3. Klicken Sie anschließend auf die Schaltfläche **plus (+)** , und wählen Sie **iOS App Store** aus:
+3. Klicken Sie anschließend auf die Schaltfläche **Plus (+)** , und wählen Sie **iOS App Store** aus:
 
-   [![](in-house-distribution-images/selectcert.png "„iOS App Store“ auswählen")](in-house-distribution-images/selectcert.png#lightbox)
+   [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile" />
 
@@ -102,25 +102,25 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 
 Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils haben, führen Sie die folgenden Schritte aus, um es zu erstellen:
 
-1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und wählen Sie **Provisioning** (Bereitstellung) > **Distribution** (Verteilung) aus:
+1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und wählen Sie **Bereitstellung** > **Verteilung** aus:
 
-   [![](in-house-distribution-images/distribute01.png "Klicken Sie auf „Bereitstellung > Verteilung“")](in-house-distribution-images/distribute01.png#lightbox)
+   [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
 
 2. Klicken Sie auf die **+** -Schaltfläche, und wählen Sie den Typ des Verteilungsprofils aus, das Sie **intern** erstellen möchten:
 
-   [ ![](in-house-distribution-images/distribute02.png "Erstellen Sie ein internes Verteilungsprofil")](in-house-distribution-images/distribute02.png#lightbox)
+   [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
 
-3. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
+3. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
 
-   [![](in-house-distribution-images/distribute03.png "Wählen Sie in der Dropdownliste „App-ID“ aus")](in-house-distribution-images/distribute03.png#lightbox)
+   [![](in-house-distribution-images/distribute03.png "Select App ID from the dropdown list")](in-house-distribution-images/distribute03.png#lightbox)
 
 4. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie ein Verteilungszertifikat zum Signieren der Anwendung aus:
 
-   [ ![](in-house-distribution-images/distribute04.png "Wählen Sie ein zum Signieren der Anwendung erforderliches Verteilungszertifikat aus")](in-house-distribution-images/distribute04.png#lightbox)
+   [![](in-house-distribution-images/distribute04.png "Select distribution certificate required to sign the application")](in-house-distribution-images/distribute04.png#lightbox)
 
-5. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
+5. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und geben Sie unter **Name** einen Wert für das neue Verteilungsprofil ein:
 
-   [![](in-house-distribution-images/distribute06.png "Geben Sie einen Namen für das neue Verteilungsprofil ein")](in-house-distribution-images/distribute06.png#lightbox)
+   [![](in-house-distribution-images/distribute06.png "Enter a Name for the new Distribution Profile")](in-house-distribution-images/distribute06.png#lightbox)
 
 6. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
@@ -138,7 +138,7 @@ Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac d
 
 ## <a name="distributing-your-app-in-house"></a>Verteilen Ihrer Anwendung intern
 
-Mit dem Developer Enterprise Program von Apple ist der Lizenznehmer verantwortlich für das Verteilen der Anwendung und für die Einhaltung der von Apple festgelegten [Richtlinien](http://adcdownload.apple.com/Documentation/License_Agreements__Apple_Developer_Enterprise_Program/Apple_Developer_Program_Enterprise_Agreement_20150608.pdf).
+Mit dem Developer Enterprise Program von Apple ist der Lizenznehmer verantwortlich für das Verteilen der Anwendung und für die Einhaltung der von Apple festgelegten [Richtlinien](https://developer.apple.com/programs/enterprise/).
 
 Ihre Anwendung kann mithilfe einer Vielzahl verschiedener Methoden sicher verteilt werden, z.B.:
 

@@ -3,15 +3,15 @@ title: Lebenszyklus der Entwicklung mobiler Software
 description: In diesem Dokument werden unter anderem der Lebenszyklus der mobilen Softwareentwicklung, das UX-Design, das UI-Design, die Entwicklung, die Stabilisierung und die Verteilung beschrieben.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 4e2af0d1746ef1321db39d97a86af2b4bd769c69
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526693"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016399"
 ---
 # <a name="mobile-software-development-lifecycle"></a>Lebenszyklus der Entwicklung mobiler Software
 
@@ -72,7 +72,7 @@ Sobald die Funktionen und Funktionalitäten der App bestimmt sind, sollten Sie s
 
 Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von [einem von vielen verfügbaren Entwurfstoolkits](https://docs.microsoft.com/windows/uwp/design/downloads/) entworfen. Durch UX-Modelle kann die UX entworfen werden, ohne den tatsächlichen UI-Entwurf berücksichtigen zu müssen:
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "Die Benutzererfahrung wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von Tools wie Balsamiq entworfen")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX is usually done via wireframes or mockups using tools such as Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen offiziellen Entwurfsrichtlinien für die jeweiligen Plattformen finden Sie unter:
 
@@ -84,11 +84,11 @@ Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den
 
 Zudem werden UX-Entscheidungen von der Hardware an sich beeinflusst. Beispielsweise haben iOS-Geräte keine physische *Zurück-* Taste, weshalb Sie die Metapher Navigation Controller (Navigationscontroller) einfügen sollten.
 
- ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS-Geräte haben keine physische Zurück-Taste, weshalb Sie die Metapher „Navigation Controller“ (Navigationscontroller) einfügen")
+ ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
 
 Auch Formfaktoren beeinflussen UX-Entscheidungen. Tablets sind viel größer als Smartphones und können daher auch mehr Informationen anzeigen. Häufig werden mehrere Anzeigen auf einem Smartphone auf Tablets auf nur eine Anzeige komprimiert.
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Häufig werden mehrere Anzeigen auf einem Smartphone auf Tablets zu nur einer Anzeige komprimiert")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Often what needs multiple screens on a phone is compressed into one for a tablet")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 Angesichts der unzähligen bestehenden Formfaktoren gibt es häufig auch mittelgroße Formfaktoren (die zwischen einem Smartphone und einem Tablet liegen), die sie auch berücksichtigen sollten.
 
@@ -98,7 +98,7 @@ Sobald die UX bestimmt ist, muss als nächstes die UI entworfen werden. Für die
 
 Genauso wie bei der Erstellung der UX ist es wichtig zu bedenken, dass jede Plattform eine eigene Entwurfssprache hat. D.h., eine gut entworfene Anwendung wird möglicherweise trotzdem auf jeder Plattform anders aussehen.
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "Eine überlegt entworfene Anwendung wird möglicherweise trotzdem auf jeder Plattform anders aussehen")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>Entwicklung
 
@@ -146,10 +146,10 @@ Stattdessen kann jeder einen App Store erstellen, und auf den meisten Android-Sm
 
 Dadurch haben die Entwickler Zugang zu einem Verteilungskanal für ihre Anwendungen, der zwar größer, aber auch viel komplexer ist. [Google Play](https://play.google.com/store?hl=en) ist zwar der offizielle App Store von Google, aber es gibt noch viele andere. Die Beliebtesten sind:
 
-1. [AppBrain](http://www.appbrain.com/)
-1. [Amazon App Store for Android (Amazon Appstore für Android)](http://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
-1. [Handango](http://www.handango.com/)
-1. [GetJar](http://www.getjar.com/)
+1. [AppBrain](https://www.appbrain.com/)
+1. [Amazon App Store for Android (Amazon Appstore für Android)](https://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
+1. [Handango](https://www.handango.com/)
+1. [GetJar](https://www.getjar.com/)
 
 #### <a name="uwp"></a>UWP
 

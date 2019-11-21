@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie ein Gerät bereitstelle
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 7ee3d7d9b2ce074174b676225ec934279ceb5a86
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bb1ef1e948c796e6b0d91230be3c82c5a8c7d366
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292626"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022697"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Gerätebereitstellung für Xamarin.iOS
 
@@ -20,7 +20,7 @@ Beim Entwickeln einer Xamarin.iOS-Anwendung ist es wichtig diese durch Bereitste
 
 Die hervorgehobenen Abschnitte in der folgenden Abbildung zeigen, welche Schritte vor der iOS-Bereitstellung erforderlich sind:
 
-[![](images/provisioningdiagram.png "Die hervorgehobenen Abschnitte in dieser Abbildung zeigen, welche Schritte vor der iOS-Bereitstellung erforderlich sind")](images/provisioningdiagram.png#lightbox)
+[![](images/provisioningdiagram.png "The highlighted sections in this image show the steps required to get set up for iOS provisioning")](images/provisioningdiagram.png#lightbox)
 
 Der nächste Schritt besteht dann in der Verteilung der Anwendung. Weitere Informationen zur Bereitstellung finden Sie in den Leitfäden zur [App Distribution (App-Verteilung)](~/ios/deploy-test/app-distribution/index.md).
 

@@ -4,15 +4,15 @@ description: Dieses Dokument enthält Tipps zur Problembehandlung beim Codesigni
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: b6fbe8ca975100310922240e532b9922e76e4724
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1c8eddcf16c8513852c21babf34d81c9a3290406
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290670"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028438"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Tests und Bereitstellung für Xamarin.iOS: Problembehandlung
 
@@ -22,7 +22,7 @@ Das Hinzufügen von Codesignaturen und Bereitstellen von Code mit iOS kann mühs
 
 - Große Entwicklerteams sollten nicht die im Folgenden dargestellte Schaltfläche „Fix issue“ (Problem beheben) in Xcode verwenden:
 
-    [![](troubleshooting-images/fixissue.png "Das Dialogfeld „Problem beheben“")](troubleshooting-images/fixissue.png#lightbox)
+    [![](troubleshooting-images/fixissue.png "The Fix Issues dialog")](troubleshooting-images/fixissue.png#lightbox)
 
     Über diese Schaltfläche werden neue Bereitstellungsprofile und Zertifikate erstellt. Bestenfalls wird immer dann ein Bereitstellungsprofil erstellt, wenn ein Teammitglied auf die Schaltfläche klickt, was lediglich zu einer unübersichtlichen Verwaltung von Profilen führt. Im schlimmsten Fall werden jedoch die Zertifikate aller Personen im Unternehmen widerrufen, sodass deren Apps nicht mehr funktionieren.
 

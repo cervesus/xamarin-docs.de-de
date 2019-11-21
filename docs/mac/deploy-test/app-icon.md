@@ -4,15 +4,15 @@ description: In diesem Artikel wird beschrieben, wie Sie die für das Anwendungs
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2a5f8f6f2feda1ab27c874d8281483e9e26f0855
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0acd44561b220507aafda7af05cd2862f6c9009
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770140"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021704"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Anwendungssymbol für Xamarin.Mac-Apps
 
@@ -24,7 +24,7 @@ Ein Entwickler, der mit C# und .NET in einer Xamarin.Mac-Anwendung arbeitet, hat
 
 Ein aussagekräftiges Symbol sollte den Hauptzweck der Xamarin.Mac-App darstellen und auf Funktionen hindeuten, die ein Benutzer von der Anwendung erwarten kann. In diesem Artikel wird beschrieben, wie Sie Bildanlagen erstellen, die sie für ein Anwendungssymbol benötigen, wie Sie diese Bildanlagen in eine `AppIcon.appiconset`-Datei bündeln und wie diese Datei anschließend in einer Xamarin.Mac-App verarbeitet wird.
 
-![Der AppIcons.appiconset-Editor](app-icon-images/intro01.png "Der AppIcons.appiconset-Editor")
+![Das Fenster „AppIcon.appiconset“](app-icon-images/intro01.png "Das Fenster „AppIcon.appiconset“")
 
 ## <a name="application-icon"></a>Anwendungssymbol
 
@@ -80,10 +80,10 @@ Führen Sie folgende Schritte aus:
 
 1. Öffnen Sie **Assets.xcassets** > **AppIcons.appiconset** im **Lösungspad**: 
 
-    ![Bearbeiten von AppIcons.appiconset](app-icon-images/intro01.png "Bearbeiten von AppIcons.appiconset")
+    ![Bearbeiten von „AppIcon.appiconset“](app-icon-images/intro01.png "Bearbeiten von „AppIcon.appiconset“")
 2. Klicken Sie für jede benötigte Symbolgröße auf das Symbol und wählen Sie die dazugehörige Bilddatei aus, die Sie zuvor erstellt haben: 
 
-    [![Auswählen eines Symbolbilds](app-icon-images/intro02.png "Selecting an icon image")](app-icon-images/intro02-large.png#lightbox)
+    [![Auswählen eines Symbolbilds](app-icon-images/intro02.png "Auswählen eines Symbolbilds")](app-icon-images/intro02-large.png#lightbox)
 3. Speichern Sie die Änderungen.
 
 ## <a name="using-the-icon"></a>Verwenden des Symbols
@@ -95,12 +95,12 @@ Führen Sie folgende Schritte aus:
 1. Doppelklicken Sie auf **Info.plist** im **Projektmappen-Explorer**, um die **Projektoptionen** zu öffnen.
 2. Klicken Sie im Abschnitt **Mac OS X Application Target (Anwendungsziel für Mac OS X Application Target)** auf **App-Symbole**, um die `AppIcon.appiconset`-Datei auszuwählen: 
 
-    [![Festlegen der Symbole](app-icon-images/icon01.png "Setting the icon set")](app-icon-images/icon01-large.png#lightbox)
+    [![Festlegen des Symbolsatzes](app-icon-images/icon01.png "Festlegen der Symbole")](app-icon-images/icon01-large.png#lightbox)
 3. Speichern Sie die Änderungen.
 
 Wenn die App ausgeführt wird, wird das neue Symbol im Dock angezeigt:
 
-![Beispiel eines App-Symbols im macOS-Dock](app-icon-images/icon04.png "An example of an app icon in the macOS dock")
+![Beispiel eines App-Symbols im macOS-Dock](app-icon-images/icon04.png "Beispiel eines App-Symbols im macOS-Dock")
 
 ## <a name="summary"></a>Zusammenfassung
 

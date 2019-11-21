@@ -4,15 +4,15 @@ description: In diesem Artikel werden verschiedene Optionen der Buildkonfigurati
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: dd6fac2434c5205acfec10e4830dc72ea42aa340
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 30415bd2df14cdc13f94a020475acf471b25c6ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756159"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030372"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Kompilieren für verschiedene Geräte in Xamarin.iOS
 
@@ -20,11 +20,11 @@ Die Buildeigenschaften Ihrer ausführbaren Datei können Sie auf der Eigenschaft
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](compiling-for-different-devices-images/image1.png "Eigenschaftenseite „iOS-Build“ des Projekts")](compiling-for-different-devices-images/image1.png#lightbox) 
+[![](compiling-for-different-devices-images/image1.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](compiling-for-different-devices-images/image1a.png "Eigenschaftenseite „iOS-Build“ des Projekts")](compiling-for-different-devices-images/image1a.png#lightbox)
+[![](compiling-for-different-devices-images/image1a.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1a.png#lightbox)
 
 -----
 
@@ -62,9 +62,9 @@ Die LLVM-Optimierungs-Back-End-Engine generiert sowohl schnelleren als auch stra
 
 Sie können diese in Visual Studio für Mac oder Visual Studio über „iOS-Buildoptionen“ aktivieren.
 
-[![](compiling-for-different-devices-images/image2.png "Aktivieren von LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
+[![](compiling-for-different-devices-images/image2.png "Enabling LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
 
-[![](compiling-for-different-devices-images/image2a.png "Aktivieren von LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
+[![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
 
@@ -124,7 +124,7 @@ Gehen Sie dazu folgendermaßen vor:
 - Öffnen Sie **Projektoptionen**, und navigieren Sie zum Bereich **iOS-Build**.
 - Fügen Sie `'-gcc_flags "-weak_framework iAd"'` zu **Zusätzliche Optionen** für jede Konfiguration hinzu, für die Sie eine schwache Verknüpfung wünschen:
 
-[![](compiling-for-different-devices-images/image3.png "Zusätzliche Optionen")](compiling-for-different-devices-images/image3.png#lightbox)
+[![](compiling-for-different-devices-images/image3.png "Additional Options")](compiling-for-different-devices-images/image3.png#lightbox)
 
 Zusätzlich dazu müssen Sie Ihre Verwendung der Typen davor schützen, unter älteren Versionen von iOS ausgeführt zu werden, in denen sie möglicherweise nicht vorhanden sind. Es gibt mehrere Methoden, um dies zu erreichen, von denen eine die Analyse von `UIDevice.CurrentDevice.SystemVersion` ist.
 
