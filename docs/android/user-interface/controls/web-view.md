@@ -93,7 +93,7 @@ protected override void OnCreate (Bundle bundle)
 ```
 
 Dadurch wird das Element [`WebView`](xref:Android.Webkit.WebView) mit dem Element aus dem [`Activity`](xref:Android.App.Activity) Layout initialisiert und JavaScript für die [`WebView`](xref:Android.Webkit.WebView) mit [`JavaScriptEnabled`](xref:Android.Webkit.WebSettings.JavaScriptEnabled)
-`= true` aktiviert (Weitere Informationen finden Sie in der Anleitung zum [Abrufen von C\# von JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript) für Informationen zum Abrufen von C-\# Funktionen aus JavaScript). Zum Schluss wird eine anfängliche Webseite mit [`LoadUrl(String)`](xref:Android.Webkit.WebView)geladen.
+`= true` aktiviert (Weitere Informationen zum Abrufen von c-\# Funktionen aus JavaScript finden Sie in der Anleitung zum Abrufen von c-\# [von](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript) JavaScript). Zum Schluss wird eine anfängliche Webseite mit [`LoadUrl(String)`](xref:Android.Webkit.WebView)geladen.
 
 Erstellen Sie die App, und führen Sie sie aus. Es sollte eine einfache Web Page Viewer-App angezeigt werden, die im folgenden Screenshot zu sehen ist:
 
@@ -129,8 +129,8 @@ Führen Sie die Anwendung erneut aus. Sie sollten nun Links verwenden und wieder
 *Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der*
 [*Creative Commons 2,5-Zuweisungs Lizenz*](https://creativecommons.org/licenses/by/2.5/)beschriebenen Begriffen verwendet werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Call C# from JavaScript (Aufrufen von C#-Code über JavaScript)](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
-- [Android. WebKit. WebView](xref:Android.Webkit.WebView)
+- [Android.Webkit.WebView](xref:Android.Webkit.WebView)
 - [KeyEvent](xref:Android.Webkit.WebView)

@@ -73,8 +73,8 @@ Ein oder mehrere Platt Form Projekte können der Projekt Mappe hinzugefügt werd
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 Nachdem Sie in ein frei gegebenes Projekt umgerechnet haben, besuchen Sie den [Abschnitt](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) **Projektoptionen > nuget-Paket >** Verweisassemblys
-, und stellen Sie sicher, dass alle erforderlichen Profile ausgewählt sind (damit das nuget weiterhin mit Projekten kompatibel ist, die es zuvor in verwendet).
+, und stellen Sie sicher, dass alle erforderlichen Profile ausgewählt sind (damit das nuget weiterhin mit Projekten kompatibel ist, die zuvor in verwendet wurden).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Leitfaden zu Metadaten](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

@@ -44,7 +44,7 @@ Die Erfassung in Klammern basiert auf den Einstellungen der oben dargestellten m
 
 Die in Klammern gefasste Erfassung ist ein Burst von Bildern, die mit einer Vielzahl von Einstellungen von Bild zu Bild erstellt wurden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Folgende Schritte sind erforderlich, um die in diesem Artikel beschriebenen Schritte auszuführen:
 
@@ -168,7 +168,7 @@ Die AV-Erfassungs Sitzung dient zum Steuern der Aufzeichnung von Livevideos von 
 Gehen Sie folgendermaßen vor, um die `AppDelegate` der Anwendung zu ändern und den erforderlichen Code hinzuzufügen:
 
 1. Doppelklicken Sie auf die `AppDelegate.cs` Datei im Projektmappen-Explorer, um Sie für die Bearbeitung zu öffnen.
-1. Fügen Sie am Anfang der Datei die folgenden using-Anweisungen ein:
+1. Fügen Sie die folgenden "using"-Anweisungen am Anfang der Datei ein:
 
     ```csharp
     using System;
@@ -1117,7 +1117,7 @@ Alle Aufzeichnungs Befehle in Klammern werden in der `AVCaptureStillImageOutput`
 Es wurden zwei neue Klassen implementiert, um die Einstellungen zu behandeln:
 
 - `AVCaptureAutoExposureBracketedStillImageSettings` – Sie verfügt über eine Eigenschaft, `ExposureTargetBias`, die verwendet wird, um die Verschiebung für eine Klammer für die automatische Verfügbarkeit festzulegen.
-- `AVCaptureManual` @ no__t_1_ – es verfügt über zwei Eigenschaften: `ExposureDuration` und `ISO`, die zum Festlegen der Auslösegeschwindigkeit und der ISO-Datei für eine manuelle Klammer verwendet werden.
+- `AVCaptureManual``ExposureBracketedStillImageSettings` – es verfügt über zwei Eigenschaften: `ExposureDuration` und `ISO`, mit denen die Auslösegeschwindigkeit und ISO für eine manuelle Klammer für die festgelegte Klammer festgelegt wird.
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>Erfassungs Steuerelemente in Klammern
 
@@ -1319,7 +1319,7 @@ Der obige Code hat gezeigt, wie Sie in ios 8 eine automatische Erfassung in Klam
 
 In diesem Artikel haben wir eine Einführung in die neuen manuellen Kamera Steuerelemente von IOS 8 behandelt und die Grundlagen der Aufgaben und deren Funktionsweise erläutert. Wir haben Beispiele für den manuellen Fokus, manuelles verfügbar machen und manuellen Leerstand angegeben. Zum Schluss haben wir ein Beispiel mit einer Erfassung in Klammern mit den zuvor beschriebenen manuellen Kamera Steuerelementen erstellt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Manualcameracontrols (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualcameracontrols)
 - [Einführung in iOS 8](~/ios/platform/introduction-to-ios8.md)

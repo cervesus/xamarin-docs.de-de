@@ -35,9 +35,9 @@ Xamarin.Forms | 4,1 oder höher
 
 Für die Verwendung von XAML Hot Neuladen ist keine zusätzliche Installation oder Einrichtung erforderlich. Es ist in Visual Studio integriert und kann in den IDE-Einstellungen aktiviert werden. Nach der Aktivierung können Sie mit der Verwendung von XAML Hot Neuladen beginnen, indem Sie Ihre APP auf einem Emulator, Simulator oder einem physischen Gerät Debuggen. Derzeit funktioniert das Laden von XAML-Hot nur beim Debuggen unter IOS oder Android.
 
-Unter Windows kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Extras @no__t-** 2**Optionen** > **xamarin** > **Hot Upload**aktiviert werden.
+Unter Windows kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Extras > ** **Optionen** > **xamarin** > **Hot Neuladen**aktiviert werden.
 
-Auf einem Mac kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Visual Studio** > -**Einstellungen** > -**Projekte** > **xamarin Hot Upload**aktiviert werden.
+Auf einem Mac kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " in **Visual Studio** > **Einstellungen** > **Projekten** > **xamarin Hot Neuladen**aktiviert werden.
 
 ## <a name="resilient-reloading"></a>Resilientes erneutes Laden
 
@@ -48,7 +48,7 @@ Wenn Sie eine Änderung vornehmen, dass das Laden von XAML-Hot nicht erneut gela
 - Sie können während einer XAML-Sitzung zum aktiven erneuten Laden keine Dateien oder nuget-Pakete hinzufügen, entfernen oder umbenennen. Wenn Sie eine Datei oder ein nuget-Paket hinzufügen oder entfernen, erstellen Sie Ihre APP erneut, und stellen Sie Sie erneut bereit.
 - Legen Sie den Linker auf **keine Verknüpfung** fest, um eine optimale Leistung zu erzielen. Die Einstellung **Link SDK only** funktioniert meistens, kann jedoch in bestimmten Fällen fehlschlagen.
 - Das Debuggen auf einem physischen iPhone erfordert, dass der Interpreter XAML-Hot-Neuladen verwendet. Fügen Sie **--Interpreter** zum Feld **zusätzliche mberührungs-Argumente** in ihren IOS-Buildeinstellungen hinzu, um XAML Hot Neuladen zu verwenden.
-- Alle Verweise, @no__t die durch Zuweisen eines Steuer Elements zu einem anderen Feld oder einer Eigenschaft erstellt werden
+- Alle Verweise, `x:Name` die durch Zuweisen eines Steuer Elements zu einem anderen Feld oder einer Eigenschaft erstellt werden
 - Das Aktualisieren der visuellen Hierarchie Ihrer Shell-Anwendung in **appshell. XAML** kann Probleme beim Verwalten des Zustands der Anwendung verursachen. Erstellen Sie die APP neu, damit Sie erneut geladen wird.
 - Beim erneuten Laden von XAML C# kann Code nicht neu geladen werden, einschließlich Ereignis Handlern, benutzerdefinierte Steuerelemente, Seitencode Behind und zusätzliche Klassen.
 
@@ -65,4 +65,4 @@ Wenn Sie Teil der privaten Vorschau sind, wird die XAML-Erweiterung zum erneuten
 - Wenn beim Speichern der XAML-Datei nichts passiert, stellen Sie sicher, dass das heiße laden in der IDE aktiviert ist.
 - Wenn Sie auf einem physischen iPhone Debuggen und Ihre APP nicht mehr reagiert, überprüfen Sie, ob der Interpreter aktiviert ist. Um dies zu aktivieren, fügen Sie **--Interpreter** in den IOS-Buildeinstellungen zum Feld **zusätzliches mberührungs-Argument** hinzu.
 
-Um einen Fehler zu melden, verwenden Sie das Feedback Tool in der **Hilfe** > **Feedback senden** >  Menü "**Problem melden** " unter Windows, und die **Hilfe** > **melden Sie ein Problem** Menü auf einem Mac.
+Um einen Fehler zu melden, verwenden Sie das Feedback Tool in der **Hilfe** > Senden von Feedback > **melden Sie ein Problem** Menü unter Windows, **und > ** melden **Sie** **ein problemmenü** auf einem Mac.

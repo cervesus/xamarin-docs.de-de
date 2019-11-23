@@ -55,11 +55,11 @@ Unterstützte Bildschirmnamen werden in der Datei " **properites/androidmanifest
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[Android-Manifest![](resources-for-varying-screens-images/01-android-manifest-sml.w1581.png)](resources-for-varying-screens-images/01-android-manifest.w1581.png#lightbox)
+[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-sml.w1581.png)](resources-for-varying-screens-images/01-android-manifest.w1581.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[Android-Manifest![](resources-for-varying-screens-images/01-android-manifest-sml.m761.png)](resources-for-varying-screens-images/01-android-manifest.m761.png#lightbox)
+[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-sml.m761.png)](resources-for-varying-screens-images/01-android-manifest.m761.png#lightbox)
 
 -----
 
@@ -112,7 +112,7 @@ Im folgenden finden Sie eine Reihe von Zahlen für verschiedene Geräte:
 
 - **A 10 "Tablet** &ndash; 720 DP: z. b. das Motorola Xoom
 
-Für Anwendungen, die auf API-Ebenen bis 12 (Android 3,1) abzielen, sollten die Layouts in Verzeichnissen verwendet werden, in denen die Qualifizierer **Small**/**Normal**/**Large**/**XLarge** als Verallgemeinerung des verschiedenen Bildschirms verwendet werden. in den meisten Geräten Verfügbare Größen. In der folgenden Abbildung sind z. b. alternative Ressourcen für die vier verschiedenen Bildschirmgrößen verfügbar:
+Für Anwendungen, die auf API-Ebenen bis 12 (Android 3,1) abzielen, sollten die Layouts in Verzeichnissen verwendet werden, in denen die Qualifizierer **Small**/**Normal**/**Large**/**XLarge** als Verallgemeinerung der verschiedenen Bildschirmgrößen verwendet werden, die in den meisten Geräten zur Verfügung stehen. In der folgenden Abbildung sind z. b. alternative Ressourcen für die vier verschiedenen Bildschirmgrößen verfügbar:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -178,9 +178,9 @@ Android wird auf einer verwirrenden Anzahl von Geräten ausgeführt, und die Kom
 - **Vermeiden** Sie, wenn **möglich** , " [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) "-
   , &ndash; Sie auf API-Ebene 3 (Android 1,5) veraltet ist und zu einer spröden Layouts führt. Er sollte nicht verwendet werden. Versuchen Sie stattdessen, flexiblere layoutwidgets wie [**LinearLayout**](xref:Android.Widget.LinearLayout), [**relativelayout**](xref:Android.Widget.RelativeLayout)oder das neue [**GridLayout**](xref:Android.Widget.GridLayout)zu verwenden.
 
-- **Wählen Sie eine Layoutausrichtung als Standard** &ndash; z. b. anstelle der alternativen Ressourcen **Layout-Land** und **layoutport**, legen Sie die Ressourcen für Querformat im **Layout**und die Ressourcen für das Hochformat in **layoutport**.
+- **Wählen Sie eine Layoutausrichtung als Standard** &ndash; z. b. anstatt das alternative Ressourcen **Layout-Land** und den **layoutport**bereitzustellen, legen Sie die Ressourcen für das **Layout im Layout**und die Ressourcen für das Hochformat in **layoutport**ab.
 
-- **Verwenden von layoutpara Metern für Höhe und Breite** : beim Definieren von Benutzeroberflächen Elementen in einer XML-Layoutdatei hat eine Android-Anwendung mit den **wrap_content** -und **fill_parent** -Werten einen größeren Erfolg sicherzustellen, dass eine ordnungsgemäße Darstellung auf verschiedenen Geräten stattfindet. Verwenden von Pixel-oder Dichte unabhängigen Einheiten. Diese Dimensions Werte bewirken, dass Android Bitmapressourcen nach Bedarf skaliert. Aus demselben Grund sind Dichte unabhängige Einheiten am besten reserviert, wenn Sie die Ränder und die Auffüll Zeichen von Benutzeroberflächen Elementen angeben.
+- **Verwenden von layoutpara Metern für Höhe und Breite** : beim Definieren von Benutzeroberflächen Elementen in einer XML-Layoutdatei hat eine Android-Anwendung, die die **wrap_content** -und **fill_parent** Werte verwendet, einen größeren Erfolg sicherzustellen, dass Sie über verschiedene Geräte hinweg ordnungsgemäß aussehen als bei der Verwendung von Pixel oder Dichte Diese Dimensions Werte bewirken, dass Android Bitmapressourcen nach Bedarf skaliert. Aus demselben Grund sind Dichte unabhängige Einheiten am besten reserviert, wenn Sie die Ränder und die Auffüll Zeichen von Benutzeroberflächen Elementen angeben.
 
 ## <a name="testing-multiple-screens"></a>Testen mehrerer Bildschirme
 

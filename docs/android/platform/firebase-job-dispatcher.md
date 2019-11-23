@@ -34,7 +34,7 @@ Android stellt die folgenden APIs bereit, um die Arbeit im Hintergrund zu unters
 Es gibt zwei wichtige Features für die effiziente Durchführung von Hintergrund arbeiten (manchmal auch als _Hintergrund Auftrag_ oder _Auftrag_bezeichnet):
 
 1. **Intelligent Planen der Arbeit** &ndash; es wichtig, dass eine Anwendung im Hintergrundaufgaben durchführt, die dies als guter Bürger bewirkt. Im Idealfall sollte die Anwendung nicht verlangen, dass ein Auftrag ausgeführt wird. Stattdessen sollte die Anwendung Bedingungen angeben, die erfüllt sein müssen, wenn der Auftrag ausgeführt werden kann, und dann die Ausführung planen, wenn die Bedingungen erfüllt sind. Dadurch kann Android Intelligent Arbeiten ausführen. Beispielsweise können Netzwerk Anforderungen in einem Batch zusammengefasst werden, um alle gleichzeitig auszuführen, um einen maximalen Aufwand für das Netzwerk zu ermöglichen.
-2. Das **Kapseln der Arbeit** &ndash; der Code zum Ausführen der Hintergrundarbeit sollte in einer diskreten Komponente gekapselt werden, die unabhängig von der Benutzeroberfläche ausgeführt werden kann und relativ einfach neu geplant werden kann, wenn die Arbeit für einige nicht vollständig ausgeführt wird. weshalb.
+2. Das **Kapseln der Arbeit** &ndash; der Code zum Ausführen der Hintergrundarbeit sollte in einer diskreten Komponente gekapselt werden, die unabhängig von der Benutzeroberfläche ausgeführt werden kann und relativ einfach neu geplant werden kann, wenn die Arbeit aus irgendeinem Grund nicht vollständig ausgeführt werden kann.
 
 Der Firebase Job Dispatcher ist eine Bibliothek von Google, die eine fließende API bereitstellt, um die Planung von Hintergrundaufgaben zu vereinfachen. Er soll als Ersatz für Google Cloud Manager dienen. Der Firebase-Auftrags Verteiler besteht aus den folgenden APIs:
 
@@ -55,7 +55,7 @@ Um einen Auftrag zu planen, instanziiert die Anwendung ein `JobDispatcher` Objek
 
 In diesem Handbuch wird erläutert, wie Sie den Firebase-Auftrags Verteiler einer xamarin. Android-Anwendung hinzufügen und ihn zum Planen der Hintergrundarbeit verwenden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Der Firebase-Auftrags Verteiler erfordert Android-API-Ebene 9 oder höher. Die Firebase-Auftrags Verteiler Bibliothek basiert auf einigen Komponenten, die von Google Play Services bereitgestellt werden. auf dem Gerät müssen Google Play Services installiert sein.
 
@@ -125,7 +125,7 @@ Nachdem der `FirebaseJobDispatcher` instanziiert wurde, ist es möglich, eine `J
 
 ### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Erstellen eines Firebase. jobdispatcher. Job mit "Job. Builder"
 
-Die `Firebase.JobDispatcher.Job`-Klasse ist verantwortlich für das Kapseln der Metadaten, die erforderlich sind, um eine `JobService`auszuführen. Ein @ no__t_0_ enthält Informationen wie jede Einschränkung, die erfüllt sein muss, bevor der Auftrag ausgeführt werden kann, wenn die `Job` wiederholt wird, oder alle Trigger, die dazu führen, dass der Auftrag ausgeführt wird.  Ein `Job` muss mindestens über ein _Tag_ (eine eindeutige Zeichenfolge, die den Auftrag für die `FirebaseJobDispatcher`identifiziert) und den Typ des `JobService` verfügen, der ausgeführt werden soll. Der Firebase-Auftrags Verteiler instanziiert die `JobService`, wenn es an der Zeit ist, den Auftrag auszuführen.  Eine `Job` wird mit einer Instanz der `Firebase.JobDispatcher.Job.JobBuilder`-Klasse erstellt. 
+Die `Firebase.JobDispatcher.Job`-Klasse ist verantwortlich für das Kapseln der Metadaten, die erforderlich sind, um eine `JobService`auszuführen. Eine`Job` enthält Informationen wie jede Einschränkung, die erfüllt sein muss, bevor der Auftrag ausgeführt werden kann, wenn die `Job` wiederholt wird, oder alle Trigger, die dazu führen, dass der Auftrag ausgeführt wird.  Ein `Job` muss mindestens über ein _Tag_ (eine eindeutige Zeichenfolge, die den Auftrag für die `FirebaseJobDispatcher`identifiziert) und den Typ des `JobService` verfügen, der ausgeführt werden soll. Der Firebase-Auftrags Verteiler instanziiert die `JobService`, wenn es an der Zeit ist, den Auftrag auszuführen.  Eine `Job` wird mit einer Instanz der `Firebase.JobDispatcher.Job.JobBuilder`-Klasse erstellt. 
 
 Der folgende Code Ausschnitt ist das einfachste Beispiel für das Erstellen einer `Job` mithilfe der xamarin. Android-Bindung:
 
@@ -244,7 +244,7 @@ Der `Firebase.JobDispatcher.RetryStrategy` wird verwendet, um anzugeben, wie lan
 
 Die zwei Arten von Wiederholungs Richtlinien werden durch diese int-Werte identifiziert:
 
-- `RetryStrategy.RetryPolicyExponential` &ndash; einer _exponentiellen Backoff_ -Richtlinie erhöht sich der anfängliche Backoff-Wert exponentiell nach jedem Fehler. Wenn ein Auftrag zum ersten Mal fehlschlägt, wartet die Bibliothek das _initial-Intervall, das vor der erneuten Planung des Auftrags angegeben wird, &ndash; beispielsweise 30 Sekunden. Wenn der Auftrag zum zweiten Mal fehlschlägt, wartet die Bibliothek mindestens 60 Sekunden, bevor versucht wird, den Auftrag auszuführen. Nach dem dritten fehlgeschlagenen Versuch wartet die Bibliothek 120 Sekunden usw. Der Standard `RetryStrategy` für die Firebase-Auftrags Verteiler Bibliothek wird durch das `RetryStrategy.DefaultExponential`-Objekt dargestellt. Er verfügt über einen anfänglichen Backoff von 30 Sekunden und einen maximalen Backoff von 3600 Sekunden.
+- `RetryStrategy.RetryPolicyExponential` &ndash; einer _exponentiellen Backoff_ -Richtlinie erhöht sich der anfängliche Backoff-Wert exponentiell nach jedem Fehler. Wenn ein Auftrag zum ersten Mal fehlschlägt, wartet die Bibliothek das _initial Intervall, das vor dem erneuten Planen des Auftrags angegeben wird, &ndash; Beispiel 30 Sekunden. Wenn der Auftrag zum zweiten Mal fehlschlägt, wartet die Bibliothek mindestens 60 Sekunden, bevor versucht wird, den Auftrag auszuführen. Nach dem dritten fehlgeschlagenen Versuch wartet die Bibliothek 120 Sekunden usw. Der Standard `RetryStrategy` für die Firebase-Auftrags Verteiler Bibliothek wird durch das `RetryStrategy.DefaultExponential`-Objekt dargestellt. Er verfügt über einen anfänglichen Backoff von 30 Sekunden und einen maximalen Backoff von 3600 Sekunden.
 - `RetryStrategy.RetryPolicyLinear` &ndash; diese Strategie ein _lineares Backoff_ , dass der Auftrag für die Ausführung in festgelegten Intervallen neu geplant werden soll (bis er erfolgreich ausgeführt wird). Der lineare Backoff eignet sich am besten für die Arbeit, die so bald wie möglich abgeschlossen werden muss, oder für Probleme, die sich schnell auflösen. Die Firebase Job Dispatcher Library definiert eine `RetryStrategy.DefaultLinear`, die ein Fenster mit einer Neuplanung von mindestens 30 Sekunden und bis zu 3600 Sekunden aufweist.
 
 Es ist möglich, eine benutzerdefinierte `RetryStrategy` mit der `FirebaseJobDispatcher.NewRetryStrategy`-Methode zu definieren. Es werden drei Parameter benötigt:
@@ -285,7 +285,7 @@ Beide Methoden geben einen ganzzahligen Wert zurück:
 
 In diesem Leitfaden wurde erläutert, wie der Firebase-Auftrags Verteiler verwendet wird, um im Hintergrund arbeiten Intelligent auszuführen. Es wurde erläutert, wie die auszuführenden Aufgaben als `JobService` gekapselter werden, und wie die `FirebaseJobDispatcher` verwendet wird, um die Arbeit zu planen, die Kriterien mit einem `JobTrigger` anzugeben und zu erfahren, wie Fehler mit einer `RetryStrategy`behandelt werden müssen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Xamarin. Firebase. jobdispatcher für nuget](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [Firebase-Job-Dispatcher auf GitHub](https://github.com/firebase/firebase-jobdispatcher-android)

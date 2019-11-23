@@ -120,7 +120,7 @@ Wir haben stark investiert, um Probleme zu beheben, z. b. aufgrund ihrer Auswirk
 Wenn ein Problem wie das folgende auftritt:
 
 1. Notieren Sie sich den Hinweis. Was war die letzte Aktion, die Ihr Projekt in diesen Zustand versetzt hat?
-1. Speichern Sie das aktuelle Buildprotokoll. Versuchen Sie es erneut, und notieren Sie sich ein [diagnosebuildprotokoll](#diagnostic-msbuild-output).
+1. Speichern Sie das aktuelle Buildprotokoll. Versuchen Sie es erneut, und zeichnen Sie ein [Diagnosebuildprotokoll](#diagnostic-msbuild-output) auf.
 1. Senden Sie einen [Fehlerbericht][bug].
 
 Bevor Sie Ihre `bin` und `obj` Verzeichnisse löschen, zippen Sie Sie, und speichern Sie Sie zur späteren Diagnose, falls erforderlich. Sie können Ihr xamarin. Android-Anwendungsprojekt wahrscheinlich nur `Clean`, um die Arbeit zu wiederholen.
@@ -209,7 +209,7 @@ Es gibt vier Nachrichten, die Folgen:
 - Schwache globale Verweis Erstellung: Hierbei handelt es sich um die Zeilen, die mit *+ w +* beginnen.
 - Schwache globale verweiszerstörung: Hierbei handelt es sich um Zeilen, die mit *-w-* beginnen.
 
-In allen Nachrichten ist der *grefc* -Wert die Anzahl der globalen Verweise, die xamarin. Android erstellt hat, während der *grefwc* -Wert die Anzahl der schwachen globalen Verweise ist, die xamarin. Android erstellt hat. Der *handle* *-oder obj-handle-* Wert ist der Wert des jni-Handles, und das Zeichen nach dem ' */* ' ist der Typ des Handle-Werts: */L* for local Reference, */G* for Global References und */W* for Weak Global bezieht.
+In allen Nachrichten ist der *grefc* -Wert die Anzahl der globalen Verweise, die xamarin. Android erstellt hat, während der *grefwc* -Wert die Anzahl der schwachen globalen Verweise ist, die xamarin. Android erstellt hat. Der *handle* *-oder obj-handle-* Wert ist der Wert des jni-Handles, und das Zeichen nach dem ' */* ' ist der Typ des Handle-Werts: */L* for local Reference, */G* for Global References und */W* for Weak Global References.
 
 Im Rahmen des GC-Prozesses werden globale Verweise (+ g +) in schwache globale Verweise konvertiert (was zu "+ w +" und "-g" führt), eine Java-seitige GC wird gestartet, und anschließend wird die schwache globale Referenz geprüft, um festzustellen, ob Sie gesammelt wurde. Wenn es immer noch aktiv ist, wird eine neue Gref um den schwachen Ref (+ g +,-w-) erstellt. andernfalls wird der schwache Verweis zerstört (-w).
 
@@ -306,7 +306,7 @@ Dies bedeutet, dass ihr Pfad nicht das Verzeichnis enthält, in dem sich das Ver
 
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>"monodroid. exe" oder "aresgen. exe" wurde mit dem Code 1 beendet.
 
-Um dieses Problem zu beheben, navigieren Sie zu Visual Studio, und ändern Sie den ausführlichkeits Grad von MSBuild. Wählen Sie dazu: Extras **> Optionen > Projekt und Projekt** Mappen **> Erstellen** und **Ausführen > MSBuild-Projektbuildausgabe Ausführlichkeit** aus, und legen Sie diese fest. der Wert ist **Normal**.
+Um dieses Problem zu beheben, navigieren Sie zu Visual Studio, und ändern Sie den ausführlichkeits Grad von MSBuild. Wählen Sie dazu: Extras **> Optionen > Projekt und Projekt** Mappen **> Erstellen** Sie **> MSBuild-Projektbuildausgabe Ausführlichkeit** , und legen Sie diesen Wert auf **Normal**fest.
 
 Erstellen Sie neu, und überprüfen Sie den Ausgabebereich von Visual Studio, der den vollständigen Fehler enthalten sollte.
 
@@ -464,7 +464,7 @@ mAdapter = new SimpleExpandableListAdapter (
 );
 ```
 
-Das Problem besteht darin, dass xamarin. Android fälschlicherweise die generischen generischen Typen marsheitet. Der `List<IDictionary<string, object>>` wird an eine [java. lang. arrraylist](xref:Java.Util.ArrayList)gemarshallt, aber der `ArrayList` enthält `mono.android.runtime.JavaObject` Instanzen (die auf die `Dictionary<string, object>` Instanzen verweisen) anstelle von etwas, das " [java. util. map](xref:Java.Util.IMap)" implementiert. Dies führt zu folgendem: distanzieren
+Das Problem besteht darin, dass xamarin. Android fälschlicherweise die generischen generischen Typen marsheitet. Der `List<IDictionary<string, object>>` wird an eine [java. lang. arrraylist](xref:Java.Util.ArrayList)gemarshallt, aber der `ArrayList` enthält `mono.android.runtime.JavaObject` Instanzen (die auf die `Dictionary<string, object>` Instanzen verweisen) anstelle von etwas, das " [java. util. map](xref:Java.Util.IMap)" implementiert. Dies führt zu folgender Ausnahme:
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -627,7 +627,7 @@ E/dalvikvm(  602): VM aborting
 
 Im obigen Beispiel (das übrigens von [Fehler 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)stammt) liegt das Problem darin, dass zu viele Android. Graphics. Point-Instanzen erstellt werden. eine Liste der Fehlerbehebungen für diesen speziellen Fehler finden Sie unter [comment \#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2) .
 
-In der Regel besteht eine sinnvolle Lösung darin, herauszufinden, welchem Typ zu viele Instanzen zugeordnet sind &ndash; Android. Graphics. Point im obigen Dump &ndash; dann festzustellen, wo Sie im Quellcode erstellt wurden, und Sie entsprechend zu verwerfen (damit Ihr Java-Objekt die Lebensdauer wird verkürzt.) Dies ist nicht immer angebracht (\#685215 ist multithreaded, sodass die triviale Lösung den Löschvorgang vermeidet), aber es ist das erste zu berücksichtigende.
+In der Regel besteht eine sinnvolle Lösung darin, zu ermitteln, welcher Typ zu viele Instanzen zugeordnet sind &ndash; Android. Graphics. Point im obigen Dump &ndash; dann festzustellen, wo Sie im Quellcode erstellt wurden, und Sie entsprechend zu verwerfen (damit Ihre Java-Objekt Lebensdauer verkürzt wird). Dies ist nicht immer angebracht (\#685215 ist multithreaded, sodass die triviale Lösung den Löschvorgang vermeidet), aber es ist das erste zu berücksichtigende.
 
 Sie können die [Gref-Protokollierung](~/android/troubleshooting/index.md) aktivieren, um festzustellen, wann Grefs erstellt werden und wie viele vorhanden sind.
 

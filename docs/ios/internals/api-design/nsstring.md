@@ -16,9 +16,9 @@ ms.locfileid: "73022346"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>NSString in xamarin. IOS und xamarin. Mac
 
-Der Entwurf von xamarin. IOS und xamarin. Mac erfordert die Verwendung der API, um den systemeigenen .net-Zeichen Folgentyp, `string`, für die C# Zeichen folgen Bearbeitung in und anderen .NET-Programmiersprachen verfügbar zu machen und Zeichenfolge als den Datentyp verfügbar zu machen, der von der API verfügbar gemacht wird, anstelle von `NSString` -Datentyp.
+Der Entwurf von xamarin. IOS und xamarin. Mac erfordert die Verwendung der API zum verfügbar machen des systemeigenen .net-Zeichen folgen Typs, `string`, die Zeichen C# folgen Bearbeitung in und anderen .NET-Programmiersprachen und das verfügbar machen von Zeichen folgen als Datentyp, der von der API verfügbar gemacht wird, anstelle des `NSString` Datentyps.
 
-Dies bedeutet, dass Entwickler keine Zeichen folgen beibehalten müssen, die für den Aufruf von xamarin. IOS & xamarin. Mac-API (vereinheitlicht) in einem besonderen Typ (`Foundation.NSString`) verwendet werden sollen. Sie können weiterhin Mono-`System.String` für alle Vorgänge und immer dann verwenden, wenn eine API in Xamarin. IOS oder xamarin. Mac erfordert eine Zeichenfolge, und die API-Bindung übernimmt das Marshalling der Informationen.
+Dies bedeutet, dass Entwickler keine Zeichen folgen beibehalten müssen, die zum Aufrufen von xamarin verwendet werden sollen. IOS & xamarin. Mac-API (vereinheitlicht) in einem besonderen Typ (`Foundation.NSString`), können Sie die `System.String` von Mono für alle Vorgänge weiterhin verwenden. Wenn eine API in xamarin. IOS oder xamarin. Mac eine Zeichenfolge erfordert, übernimmt unsere API-Bindung das Marshalling der Informationen.
 
 Beispielsweise wird die "Text"-Eigenschaft von "Ziel-C" für eine `UILabel` vom Typ "`NSString`" wie folgt deklariert:
 
@@ -34,9 +34,9 @@ class UILabel {
 }
 ```
 
-Im Hintergrund Marshalls die-Implementierung dieser Eigenschaft die C# Zeichenfolge in eine`NSString`und ruft die`objc_msgSend`-Methode auf die gleiche Weise auf wie bei "Ziel-C".
+Im Hintergrund Marshalls die-Implementierung dieser Eigenschaft die C# Zeichenfolge in eine `NSString` und ruft die `objc_msgSend`-Methode auf die gleiche Weise auf wie bei "Ziel-C".
 
-Es gibt eine Handvoll von Ziel-C-APIs von Drittanbietern, die keine `NSString`verwenden, sondern stattdessen eine C-Zeichenfolge ("*char*") verwenden. In diesen Fällen können Sie weiterhin den C# String-Datentyp verwenden, aber Sie müssen das Attribut [[plainstring]](~/cross-platform/macios/binding/objective-c-libraries.md) verwenden, um den Bindungs Generator darüber zu informieren, dass diese Zeichenfolge nicht als`NSString`gemarshallt werden soll, sondern als C-Zeichenfolge.
+Es gibt eine Handvoll von Ziel-C-APIs von Drittanbietern, die keine `NSString`verwenden, sondern stattdessen eine C-Zeichenfolge ("*char*") verwenden. In diesen Fällen können Sie weiterhin den C# String-Datentyp verwenden, aber Sie müssen das Attribut [[plainstring]](~/cross-platform/macios/binding/objective-c-libraries.md) verwenden, um den Bindungs Generator darüber zu informieren, dass diese Zeichenfolge nicht als `NSString`gemarshallt werden soll, sondern als C-Zeichenfolge.
 
  <a name="Exceptions_to_the_Rule" />
 

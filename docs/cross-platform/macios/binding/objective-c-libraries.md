@@ -108,7 +108,7 @@ Dieses Diagramm zeigt die Beziehung zwischen den Dateien:
 
 Die API-Definitionsdatei enthält nur Namespaces und Schnittstellendefinitionen (mit allen Membern, die eine Schnittstelle enthalten kann) und sollte keine Klassen, Enumerationen, Delegaten oder Strukturen enthalten. Die API-Definitionsdatei ist lediglich der Vertrag, der zum Generieren der API verwendet wird.
 
-Zusätzlicher Code, den Sie wie Enumerationen oder unterstützende Klassen benötigen, sollte in einer separaten Datei gehostet werden, im obigen Beispiel ist der "cameramode" ein Enumerationswert, der in der CS-Datei nicht vorhanden ist und in einer separaten Datei gehostet werden soll, z. b. `StructsAndEnums.cs`:
+Zusätzlicher Code, den Sie wie Enumerationen oder unterstützende Klassen benötigen, sollte in einer separaten Datei gehostet werden, im obigen Beispiel ist "cameramode" ein Enumerationswert, der in der CS-Datei nicht vorhanden ist und in einer separaten Datei gehostet werden soll, z. b. `StructsAndEnums.cs`:
 
 ```csharp
 public enum CameraMode {
@@ -132,7 +132,7 @@ public partial class Camera {
 
 Wenn Sie die Bibliothek aufbauen, wird Ihre Native Bindung erstellt.
 
-Um diese Bindung abzuschließen, sollten Sie die native Bibliothek zum Projekt hinzufügen.  Hierzu können Sie die native Bibliothek zu Ihrem Projekt hinzufügen, indem Sie die native Bibliothek von Finder auf das Projekt im Projektmappen-Explorer ziehen und ablegen oder indem Sie mit der rechten Maustaste auf das Projekt klicken und **Hinzufügen** > Hinzufügen von **Dateien** zur Auswahl auswählen. die native Bibliothek.
+Um diese Bindung abzuschließen, sollten Sie die native Bibliothek zum Projekt hinzufügen.  Hierzu können Sie die native Bibliothek zu Ihrem Projekt hinzufügen, indem Sie entweder die native Bibliothek von Finder auf das Projekt im Projektmappen-Explorer ziehen und ablegen, oder indem Sie mit der rechten Maustaste auf das Projekt klicken und **Hinzufügen** > **Dateien hinzufügen** auswählen, um die native Bibliothek auszuwählen.
 Native Bibliotheken nach Konvention beginnen mit dem Wort "lib" und enden mit der Erweiterung ". a". Wenn Sie dies tun, werden Visual Studio für Mac zwei Dateien hinzufügen: die Datei ". a" und C# eine automatisch aufgefüllte Datei, die Informationen darüber enthält, was die native Bibliothek enthält:
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
@@ -168,7 +168,7 @@ Da wir jedoch die-Schnittstelle als Gerüst zum Generieren einer Klasse verwende
 ### <a name="binding-methods"></a>Bindungsmethoden
 
 Die einfachste Bindung besteht darin, eine Methode zu binden. Deklarieren Sie einfach eine Methode in der Schnitt C# Stelle mit den Benennungs Konventionen, und ergänzen Sie die Methode mit dem [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
-versehen. Das [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Attribut verknüpft Ihren C# Namen mit dem Ziel-C-Namen in der xamarin. IOS-Laufzeit. Der-Parameter der [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+-Attribut angezeigt. Das [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Attribut verknüpft Ihren C# Namen mit dem Ziel-C-Namen in der xamarin. IOS-Laufzeit. Der-Parameter der [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 Attribut ist der Name des Ziels-C-Selektor. Einige Beispiele:
 
 ```csharp
@@ -212,7 +212,7 @@ Beim Exportieren eines Verweis Typs können Sie mit dem [`[Export]`](~/cross-pla
 Genau wie Methoden werden die Ziel-C-Eigenschaften mithilfe der [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
 -Attribut, und ordnen C# Sie Eigenschaften direkt zu. Ebenso wie Methoden können Eigenschaften mit dem [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)
 und der [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
-legt.
+definiert.
 
 Wenn Sie das [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Attribut für eine Eigenschaft im decksatz verwenden, bindet bberührungs-Native tatsächlich zwei Methoden: Getter und Setter. Der Name, den Sie für den Export angeben, ist der **baseName** , und der Setter wird berechnet, indem das Wort "Set" vorangestellt wird. dabei wird der erste Buchstabe des **baseName** in Großbuchstaben umgewandelt, und der Selektor nimmt ein Argument an. Dies bedeutet, dass `[Export ("label")]`, die auf eine Eigenschaft angewendet werden, tatsächlich die Methoden "Label" und "setlabel:" mit Ziel-C bindet.
 
@@ -283,7 +283,7 @@ Ziel-C-Frameworks verwenden eine Ausdrucks Formatierung, bei der einige Klassen 
 In diesen Klassen ist es üblich, dass die unveränderliche Basisklasse Eigenschaften mit einem Getter, aber ohne Setter enthält. Und für die änderbare Version, um den Setter einzuführen. Da dies mit C#nicht wirklich möglich ist, mussten wir diese Ausdrucksweise einer Ausdrucksweise zuordnen, die mit C#funktioniert.
 
 Die Zuordnung zu C# erfolgt durch Hinzufügen von Getter und Setter für die Basisklasse, das Kennzeichnen des Setters mit einem [`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)
-versehen.
+-Attribut angezeigt.
 
 Verwenden Sie dann in der änderbare-Unterklasse die [`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
 -Attribut für die-Eigenschaft, um sicherzustellen, dass die-Eigenschaft das übergeordnete Verhalten tatsächlich überschreibt.
@@ -326,7 +326,7 @@ IntPtr Constructor (CGRect frame);
 ### <a name="binding-protocols"></a>Bindungs Protokolle
 
 Wie im Dokument zum API-Design beschrieben, ordnet xamarin. IOS die Ziele-C-Protokolle im Abschnitt [Erörterung von Modellen und Protokollen](~/ios/internals/api-design/index.md#models)den Klassen zu, die mit dem [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
-versehen. Dies wird in der Regel verwendet, wenn Ziel-C-Delegatklassen implementiert werden.
+-Attribut angezeigt. Dies wird in der Regel verwendet, wenn Ziel-C-Delegatklassen implementiert werden.
 
 Der große Unterschied zwischen einer regulären gebundenen Klasse und einer Delegatklasse besteht darin, dass die Delegatklasse eine oder mehrere optionale Methoden aufweisen kann.
 
@@ -541,7 +541,7 @@ interface LonelyClass {
 ```
 
 Im obigen Beispiel wird ein `LonelyClass` generiert, das nicht von `NSObject` abgeleitet ist und eine Bindung an die `NSSomeEventNotification`
-enthält, die als`NSString` verfügbar gemacht wird.
+enthält, die als `NSString` verfügbar gemacht wird.`NSString`
 
 Das [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) -Attribut kann auf die folgenden Datentypen angewendet werden:
 
@@ -647,7 +647,7 @@ Ausgabe:
 bool? ShouldDraw (CGRect rect) { ... }
 ```
 
-Intern werden die `bool?` <-> `NSNumber` und `CGRect` <-> Konvertierungen durchführen.
+Intern werden die `bool?` <-> `NSNumber` und `CGRect` <-> Konvertierungen durchführen.`NSValue`
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) unterstützt auch Arrays von `NSNumber` `NSValue` und `NSString`(Aufstände).
 
@@ -901,11 +901,11 @@ Task<string> LoadFileAsync (string file);
 
 ### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>Starke Typen für schwache NSDictionary-Parameter
 
-An vielen Stellen in der Ziel-C-API werden Parameter als schwach typisierte `NSDictionary`-APIs mit bestimmten Schlüsseln und Werten übergeben. diese sind jedoch fehleranfällig (Sie können ungültige Schlüssel übergeben und keine Warnungen erhalten, Sie können ungültige Werte übergeben und keine Warnungen erhalten) und frustrierend zu verwenden. Da mehrere Fahrten zur Dokumentation erforderlich sind, um die möglichen Schlüsselnamen und-Werte zu suchen.
+An vielen Stellen in der Ziel-C-API werden Parameter als schwach typisierte `NSDictionary` APIs mit bestimmten Schlüsseln und Werten übergeben. diese sind jedoch fehleranfällig (Sie können ungültige Schlüssel übergeben und keine Warnungen erhalten, Sie können ungültige Werte übergeben und keine Warnungen erhalten) und frustrierend zu verwenden, da Sie mehrere Fahrten zur Dokumentation benötigen, um die möglichen Schlüsselnamen und Werte zu suchen.
 
 Die Lösung besteht darin, eine stark typisierte Version bereitzustellen, die die stark typisierte Version der API bereitstellt und hinter den Kulissen die verschiedenen zugrunde liegenden Schlüssel und Werte zuordnet.
 
-Angenommen, die Ziel-C-API hat eine `NSDictionary` angenommen, und Sie ist so dokumentiert, dass Sie den Schlüssel annimmt `XyzVolumeKey` der einen `NSNumber` mit einem volumewert von 0,0 bis 1,0 und eine `XyzCaptionKey`, die eine Zeichenfolge annimmt sollen die Benutzer über eine schöne API verfügen, die wie folgt aussieht:
+Angenommen, die API "Ziel-C" hat beispielsweise eine `NSDictionary` angenommen, und Sie ist so dokumentiert, dass Sie den Schlüssel übernimmt `XyzVolumeKey` der einen `NSNumber` mit einem volumewert von 0,0 bis 1,0 und eine `XyzCaptionKey`, die eine Zeichenfolge akzeptiert, haben sollte:
 
 ```csharp
 public class  XyzOptions {
@@ -957,7 +957,7 @@ interface XyzPanel {
 ```
 
 Wenn Ihre API nicht überschrieben werden muss, können Sie die auf NSDictionary basierende API auf sichere Weise ausblenden, indem Sie die [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
-versehen.
+-Attribut angezeigt.
 
 Wie Sie sehen können, verwenden wir den [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)
 -Attribut, um einen neuen API-Einstiegspunkt zu verwenden, und wir verwenden unsere stark typisierte `XyzOptions`-Klasse.  Die Wrapper Methode ermöglicht auch das passieren von NULL.
@@ -1055,7 +1055,7 @@ In der folgenden Tabelle wird gezeigt, wie Sie der xamarin. IOS-Welt Typen von d
 
 ### <a name="arrays"></a>Arrays
 
-Die xamarin. IOS-Laufzeit übernimmt automatisch die Konvertierung C# von Arrays in`NSArrays`und führt die Konvertierung zurück, z. b. die imaginäre Ziel-C-Methode, die eine`NSArray`der`UIViews`zurückgibt:
+Die xamarin. IOS-Laufzeit übernimmt automatisch die Konvertierung C# von Arrays in `NSArrays` und führt die Konvertierung zurück, z. b. die imaginäre Ziel-C-Methode, die eine `NSArray` der `UIViews`zurückgibt:
 
 ```csharp
 // Get the peer views - untyped
@@ -1111,7 +1111,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-Um die Bindung für Entwickler zu C# vereinfachen, stellen Sie in der Regel eine Methode bereit, die einen`NSAction`-Parameter C# annimmt, der es ermöglicht, Delegaten und Lambdas anstelle des`Target+Selector`zu verwenden. Zu diesem Zweck würden Sie in der Regel die `SetTarget` Methode ausblenden, indem Sie Sie mit einer [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+Um die Bindung für Entwickler zu C# vereinfachen, stellen Sie in der Regel eine Methode bereit, die einen `NSAction`-Parameter C# annimmt, der es ermöglicht, Delegaten und Lambdas anstelle des `Target+Selector`zu verwenden. Zu diesem Zweck würden Sie in der Regel die `SetTarget` Methode ausblenden, indem Sie Sie mit einer [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 -Attribut, und dann würden Sie eine neue Hilfsmethode wie die folgende verfügbar machen:
 
 ```csharp
@@ -1159,7 +1159,7 @@ Wenn Sie eine Methode binden, die eine `NSString`annimmt, können Sie diese durc
 Der einzige Fall, in dem Sie eine `NSString` direkt verwenden möchten, ist, wenn die Zeichenfolge als Token verwendet wird. Weitere Informationen zu Zeichen folgen und `NSString`finden Sie im Dokument " [API-Design für NSString](~/ios/internals/api-design/nsstring.md) ".
 
 In einigen seltenen Fällen kann eine API eine C-ähnliche Zeichenfolge (`char *`) anstelle einer Ziel-C-Zeichenfolge (`NSString *`) verfügbar machen. In diesen Fällen können Sie den Parameter mit dem [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)
-versehen.
+-Attribut angezeigt.
 
 <a name="outref_parameters" />
 
@@ -1328,7 +1328,7 @@ Sie können auch auf Enumerationen oder Basis Typen verweisen, die nicht direkt 
 
 Wenn Sie APIs binden, die nicht Teil der Anwendung sind, müssen Sie sicherstellen, dass die ausführbare Datei mit diesen Bibliotheken verknüpft ist.
 
-Sie müssen xamarin. IOS informieren, wie Ihre Bibliotheken verknüpft werden können. Dies kann entweder durch Ändern der Buildkonfiguration geändert werden, um den `mtouch` Befehl mit einigen zusätzlichen buildargumenten aufzurufen, die angeben, wie eine Verknüpfung mit den neuen Bibliotheken mithilfe der Option "-gcc_flags" erfolgt. gefolgt von einer Zeichenfolge in Anführungszeichen, die alle zusätzlichen Bibliotheken enthält, die für das Programm erforderlich sind, wie hier:
+Sie müssen xamarin. IOS informieren, wie Ihre Bibliotheken verknüpft werden können. dazu können Sie entweder die Buildkonfiguration ändern, um den `mtouch` Befehl mit einigen zusätzlichen buildargumenten aufzurufen, die angeben, wie die neuen Bibliotheken mithilfe der Option "-gcc_flags" verknüpft werden sollen, gefolgt von einer Zeichenfolge in Anführungszeichen, die alle zusätzlichen Bibliotheken enthält, die für das Programm erforderlich sind:
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
@@ -1347,7 +1347,7 @@ Wenn Sie die [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-typ
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-Vielleicht Fragen Sie sich, warum Sie `-force_load` Befehl benötigen, und der Grund dafür ist, dass das-ObjC-Flag, obwohl der Code in kompiliert wird, die für die Unterstützung von Kategorien erforderlichen Metadaten nicht beibehält (der Linker/Compiler entfernt die Entfernung durch unzustellbare Code). Runtime für xamarin. IOS.
+Vielleicht Fragen Sie sich, warum Sie `-force_load` Befehl benötigen, und der Grund ist, dass das-ObjC-Flag, obwohl der Code in kompiliert wird, die für die Unterstützung von Kategorien erforderlichen Metadaten nicht beibehält (die Linker-/compilerfehlerentfernung entfernt), die Sie zur Laufzeit für xamarin. IOS benötigen.
 
 <a name="Assisted_References" />
 

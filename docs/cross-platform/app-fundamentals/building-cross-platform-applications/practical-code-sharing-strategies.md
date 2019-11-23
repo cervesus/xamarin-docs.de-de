@@ -1,6 +1,6 @@
 ---
 title: 'Teil 5: Praktische Strategien für die Codefreigabe'
-description: In diesem Dokument werden praktische Code Freigabe Strategien für Szenarien wie Datenbanken, Dateizugriff, Netzwerk Vorgänge und asynchroner Code behandelt.
+description: In diesem Dokument wird erläutert, praktische Strategien für Szenarien wie z. B. Datenbanken, den Zugriff auf Dateien, Netzwerkvorgänge und asynchronem Code für die Codefreigabe.
 ms.prod: xamarin
 ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
@@ -15,34 +15,34 @@ ms.locfileid: "73016838"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>Teil 5: Praktische Strategien für die Codefreigabe
 
-Dieser Abschnitt enthält Beispiele für das Freigeben von Code für gängige Anwendungsszenarien.
+Dieser Abschnitt enthält Beispiele zum Freigeben von Code für häufige Anwendungsszenarien.
 
 ## <a name="data-layer"></a>Datenschicht
 
-Die Datenschicht besteht aus einer Speicher-Engine und Methoden zum Lesen und Schreiben von Informationen. Aus Leistungs-, Flexibilität-und plattformübergreifender Kompatibilität wird die SQLite-Datenbank-Engine für plattformübergreifende xamarin-Anwendungen empfohlen.
-Es wird auf einer Vielzahl von Plattformen ausgeführt, einschließlich Windows, Android, IOS und Mac.
+Die Datenschicht besteht aus einem Speicher-Engine und Methoden zum Lesen und Schreiben von Informationen. Für die Leistung, Flexibilität und plattformübergreifende Kompatibilität der SQLite wird die Datenbank-Engine für plattformübergreifende Xamarin-Anwendungen empfohlen.
+Ausführung auf einer Vielzahl von Plattformen einschließlich Windows, Android, iOS und Mac.
 
 ### <a name="sqlite"></a>SQLite
 
-SQLite ist eine Open-Source-Datenbankimplementierung. Die Quelle und die Dokumentation finden Sie unter [sqlite.org](https://www.sqlite.org/). SQLite-Unterstützung ist auf jeder mobilen Plattform verfügbar:
+SQLite ist eine Open-Source-Datenbank-Implementierung. Die Quelle und die Dokumentation finden Sie unter [sqlite.org](https://www.sqlite.org/). SQLite-Unterstützung ist auf jeder mobilen Plattform verfügbar:
 
-- **IOS** – in das Betriebssystem integriert.
-- **Android** – integriert in das Betriebssystem seit Android 2,2 (API-Ebene 10).
-- **Windows** – Weitere Informationen finden Sie unter [sqlite für universelle Windows-Plattform-Erweiterung](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936).
+- **iOS** – in das Betriebssystem integriert.
+- **Android** – seit Android 2.2 (API Level 10) für das Betriebssystem integriert.
+- **Windows** – finden Sie unter den [SQLite für universelle Windows-Plattform-Erweiterung](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936).
 
-Auch wenn die Datenbank-Engine auf allen Plattformen verfügbar ist, unterscheiden sich die systemeigenen Methoden für den Zugriff auf die Datenbank. Sowohl IOS als auch Android bieten integrierte APIs für den Zugriff auf SQLite, die von xamarin. IOS oder xamarin. Android verwendet werden könnten. die Verwendung der nativen SDK-Methoden bietet jedoch keine Möglichkeit, Code freizugeben (außer vielleicht selbst, wenn Sie als Zeichen folgen gespeichert sind). . Weitere Informationen zu systemeigenen Datenbankfunktionen finden Sie unter `CoreData` in der `SQLiteOpenHelper`-Klasse von IOS oder Android. Da diese Optionen nicht plattformübergreifend sind, gehen Sie über den Rahmen dieses Dokuments hinaus.
+Auch bei der Datenbank-Engine, die auf allen Plattformen verfügbar ist unterscheiden die systemeigenen Methoden für den Datenbankzugriff. Sowohl iOS und Android bieten integrierte APIs zum Zugreifen auf SQLite verwendet werden kann, die von Xamarin.iOS oder Xamarin.Android, jedoch mit den systemeigenen SDK-Methoden bietet keine Möglichkeit zum Freigeben von Code (außer vielleicht die SQL-Abfragen selbst, vorausgesetzt, dass diese als Zeichenfolgen gespeichert sind) . Weitere Informationen zu Datenbank im einheitlichen Funktionen suchen Sie nach `CoreData` in iOS oder Android `SQLiteOpenHelper` Klasse, da diese Optionen nicht plattformübergreifend sind, sind sie über den Rahmen dieses Dokuments hinaus.
 
 ### <a name="adonet"></a>ADO.NET
 
-Sowohl xamarin. IOS als auch xamarin. Android unterstützen `System.Data` und `Mono.Data.Sqlite` (Weitere Informationen finden Sie in der xamarin. IOS- [Dokumentation](~/ios/data-cloud/system.data.md) ).
-Mit diesen Namespaces können Sie ADO.NET-Code schreiben, der auf beiden Plattformen funktioniert. Bearbeiten Sie die Verweise des Projekts so, dass Sie `System.Data.dll` und `Mono.Data.Sqlite.dll` enthalten, und fügen Sie diese using-Anweisungen zum Code hinzu:
+Unterstützung für sowohl Xamarin.iOS und Xamarin.Android `System.Data` und `Mono.Data.Sqlite` (finden Sie unter den Xamarin.iOS [Dokumentation](~/ios/data-cloud/system.data.md) Informationen).
+Mit diesen Namespaces können Sie, ADO.NET-Code zu schreiben, die auf beiden Plattformen funktioniert. Bearbeiten Sie die Verweise des Projekts eingeschlossen `System.Data.dll` und `Mono.Data.Sqlite.dll` und fügen Sie die folgenden using-Anweisungen zu Ihrem Code hinzu:
 
 ```csharp
 using System.Data;
 using Mono.Data.Sqlite;
 ```
 
-Der folgende Beispielcode funktioniert dann:
+Der folgende Code funktioniert:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -79,24 +79,24 @@ using (var contents = connection.CreateCommand ()) {
 connection.Close ();
 ```
 
-Reale Implementierungen von ADO.net werden offensichtlich auf verschiedene Methoden und Klassen aufgeteilt (dieses Beispiel dient nur zu Demonstrationszwecken).
+Real-World-Implementierungen von ADO.NET werden offensichtlich aufgeteilt werden über verschiedene Methoden und Klassen (in diesem Beispiel ist nur zu Demonstrationszwecken).
 
-### <a name="sqlite-net--cross-platform-orm"></a>SQLite-net – plattformübergreifende ORM
+### <a name="sqlite-net--cross-platform-orm"></a>SQLite-NET-Cross-Platform ORM
 
-Ein ORM (oder Objekt relationaler Mapper) versucht, die Speicherung von Daten zu vereinfachen, die in Klassen modelliert werden. Anstatt manuell SQL-Abfragen zu schreiben, mit denen Tabellen erstellt oder Daten, die manuell aus Klassen Feldern und-Eigenschaften extrahiert werden, hinzugefügt, eingefügt und gelöscht werden, fügt ein ORM eine Codeebene hinzu, die dies für Sie erledigt. Wenn Sie die Struktur der Klassen mithilfe von Reflektion untersuchen, kann ein ORM automatisch Tabellen und Spalten erstellen, die einer Klasse entsprechen, und Abfragen generieren, um die Daten zu lesen und zu schreiben. Dies ermöglicht Anwendungscode das einfache senden und Abrufen von Objektinstanzen an den ORM, der alle SQL-Vorgänge im Hintergrund übernimmt.
+Versucht, ein ORM (oder Object-Relational Mapper) zur Vereinfachung der Speicherung von Daten in Klassen modelliert. Anstatt manuell Schreiben von SQL-Abfragen, Tabellen erstellen oder wählen Sie INSERT- und DELETE-Daten, die manuell aus extrahierten Klasse Felder und Eigenschaften, die ein ORM erhöht den Code, der für Sie ausführt. Verwenden Reflektion, um die Struktur der Klassen zu untersuchen, kann ein ORM automatisch erstellen, Tabellen und Spalten, die eine Klasse übereinstimmen und Abfragen zum Lesen und schreiben die Daten generieren. Dadurch können Anwendungscode, um einfach senden und Abrufen von Objektinstanzen an den-ORM, der die SQL-Vorgänge intern abnimmt.
 
-SQLite-NET fungiert als einfaches ORM, das es Ihnen ermöglicht, Ihre Klassen in SQLite zu speichern und abzurufen. Dadurch wird die Komplexität des plattformübergreifenden SQLite-Zugriffs durch eine Kombination aus Compilerdirektiven und anderen Tricks ausgeblendet.
+SQLite-NET-fungiert als einer einfachen ORM, mit denen Sie zum Speichern und Abrufen von Klassen in SQLite. Es Blendet die Komplexität der plattformübergreifenden Zugriff auf SQLite mit einer Kombination von Compiler-Direktiven und andere Tricks.
 
-Features von SQLite-net:
+SQLite-NET-Funktionen:
 
-- Tabellen werden durch das Hinzufügen von Attributen zu Modellklassen definiert.
-- Eine Daten Bank Instanz wird durch eine Unterklasse von `SQLiteConnection` dargestellt, der Hauptklasse in der SQLite-NET-Bibliothek.
-- Daten können mithilfe von-Objekten eingefügt, abgefragt und gelöscht werden. Es sind keine SQL-Anweisungen erforderlich (obwohl Sie ggf. SQL-Anweisungen schreiben können).
-- Grundlegende LINQ-Abfragen können für die von SQLite-net zurückgegebenen Sammlungen durchgeführt werden.
+- Tabellen werden durch Hinzufügen von Attributen zu ViewModel-Klassen definiert.
+- Eine Datenbankinstanz wird durch eine Unterklasse von dargestellt `SQLiteConnection` , die Hauptklasse in der SQLite-Net-Bibliothek.
+- Daten können abgefragt und gelöschte Objekte mit eingefügt werden. SQL-Anweisungen müssen (obwohl Sie SQL-Anweisungen schreiben können, falls erforderlich).
+- Grundlegende Linq-Abfragen können auf die vom SQLite-NET-Sammlungen ausgeführt werden.
 
-Der Quellcode und die Dokumentation für SQLite-net sind unter [SQLite-NET auf GitHub](https://github.com/praeclarum/sqlite-net) verfügbar und wurden in beiden Fallstudien implementiert. Im folgenden finden Sie ein einfaches Beispiel für SQLite-NET-Code (aus der *Tasky pro* -Fallstudie).
+Den Quellcode und Dokumentation für SQLite-NET-finden Sie unter [SQLite-Net auf Github](https://github.com/praeclarum/sqlite-net) und in beiden Fallstudien implementiert wurde. Ein einfaches Beispiel für SQLite-NET-Code (aus der *Tasky Pro* Fallstudie) wird im folgenden dargestellt.
 
-Zuerst verwendet die `TodoItem`-Klasse Attribute zum Definieren eines Felds als Primärschlüssel der Datenbank:
+Zunächst wird die `TodoItem` Klasse verwendet die Attribute ein Felds, um eine Datenbank Primärschlüssel zu definieren:
 
 ```csharp
 public class TodoItem : IBusinessEntity
@@ -110,13 +110,13 @@ public class TodoItem : IBusinessEntity
 }
 ```
 
-Dadurch kann eine `TodoItem` Tabelle mit der folgenden Codezeile (und ohne SQL-Anweisungen) auf einer `SQLiteConnection` Instanz erstellt werden:
+Dies ermöglicht eine `TodoItem` Tabelle mit der folgenden Zeile des Codes (und keine SQL-Anweisungen) erstellt werden, auf eine `SQLiteConnection` Instanz:
 
 ```csharp
 CreateTable<TodoItem> ();
 ```
 
-Die Daten in der Tabelle können auch mit anderen Methoden auf dem `SQLiteConnection` manipuliert werden (auch ohne die Verwendung von SQL-Anweisungen):
+Daten in der Tabelle können auch mit anderen Methoden bearbeitet werden, auf die `SQLiteConnection` (in diesem Fall ohne SQL-Anweisungen):
 
 ```csharp
 Insert (TodoItem); // 'task' is an instance with data populated in its properties
@@ -124,31 +124,31 @@ Update (TodoItem); // Primary Key field must be populated for Update to work
 Table<TodoItem>.ToList(); // returns all rows in a collection
 ```
 
-Ausführliche Beispiele finden Sie im Quellcode der Fallstudie.
+Finden Sie vollständige Beispiele für die Fallstudie-Quellcode.
 
 ## <a name="file-access"></a>Dateizugriff
 
-Der Dateizugriff ist ein wichtiger Bestandteil einer beliebigen Anwendung. Gängige Beispiele für Dateien, die Teil einer Anwendung sein können, sind u. a.:
+Dateizugriff ist sicher, dass ein wichtiger Bestandteil jeder Anwendung sein. Allgemeine Beispiele für Dateien, die Teil einer Anwendung gehören möglicherweise:
 
 - SQLite-Datenbankdateien.
-- Benutzergenerierte Daten (Text, Bilder, Sound, Video).
-- Heruntergeladene Daten zum Zwischenspeichern (Bilder, HTML-oder PDF-Dateien).
+- Von Benutzern generierte Daten (Text, Bilder, Audio-, Video).
+- Heruntergeladenen Daten für die Zwischenspeicherung (Bilder, html oder PDF-Dateien).
 
-### <a name="systemio-direct-access"></a>System.IO direkter Zugriff
+### <a name="systemio-direct-access"></a>System.IO-Direct-Zugriff
 
-Sowohl xamarin. IOS als auch xamarin. Android ermöglichen den Dateisystem Zugriff mithilfe von Klassen im `System.IO`-Namespace.
+Sowohl Xamarin.iOS und Xamarin.Android können Sie den Dateisystemzugriff mithilfe von Klassen in der `System.IO` Namespace.
 
-Jede Plattform hat unterschiedliche Zugriffsbeschränkungen, die berücksichtigt werden müssen:
+Jede Plattform besitzt Zugriff auf unterschiedliche Einschränkungen, die berücksichtigt werden müssen:
 
-- IOS-Anwendungen werden in einem Sandkasten mit sehr eingeschränktem Dateisystem Zugriff ausgeführt. Apple legt außerdem fest, wie Sie das Dateisystem verwenden sollten, indem Sie bestimmte Standorte angeben, die gesichert werden (und andere nicht). Weitere Informationen finden Sie im Handbuch [Arbeiten mit dem Datei System in xamarin. IOS](~/ios/app-fundamentals/file-system.md) .
-- Android schränkt auch den Zugriff auf bestimmte Verzeichnisse ein, die mit der Anwendung verknüpft sind, unterstützt jedoch auch externe Medien (z. b. SD-Karten) und den Zugriff auf freigegebene Daten.
-- Windows Phone 8 (Silverlight) lässt keinen direkten Dateizugriff zu – Dateien können nur mithilfe `IsolatedStorage`manipuliert werden.
-- Windows 8.1 WinRT-und Windows 10-UWP-Projekte bieten nur asynchrone Datei Vorgänge über `Windows.Storage`-APIs, die sich von den anderen Plattformen unterscheiden.
+- iOS-Anwendungen, die in einer Sandbox mit sehr eingeschränkten Dateisystemzugriff ausgeführt werden. Weitere Apple schreibt vor, wie Sie das Dateisystem verwenden sollten, durch Angeben von bestimmten Standorten, die gesichert werden (und andere, die nicht). Finden Sie in der [arbeiten mit dem Dateisystem in Xamarin.iOS](~/ios/app-fundamentals/file-system.md) Handbuch für die weitere Details.
+- Android schränkt auch den Zugriff auf bestimmte Verzeichnisse, die im Zusammenhang mit der Anwendung, aber sie unterstützt auch externe Medien (z. b. SD-Karten) und den Zugriff auf freigegebene Daten.
+- Windows Phone 8 (Silverlight) lassen sich nicht auf die direkten Zugriff – Dateien können nur bearbeitet werden mithilfe von `IsolatedStorage`.
+- WinRT für Windows 8.1 und Windows 10-UWP-Projekte bieten nur asynchrone Dateivorgänge über `Windows.Storage` -APIs, die von den anderen Plattformen unterscheiden.
 
-#### <a name="example-for-ios-and-android"></a>Beispiel für IOS und Android
+#### <a name="example-for-ios-and-android"></a>Beispiel für iOS und Android
 
-Im folgenden finden Sie ein einfaches Beispiel für das Schreiben und Lesen einer Textdatei.
-Wenn Sie `Environment.GetFolderPath` verwenden, kann derselbe Code unter IOS und Android ausgeführt werden, die jeweils ein gültiges Verzeichnis basierend auf Ihren Dateisystem Konventionen zurückgeben.
+Ein sehr einfaches Beispiel, das schreibt und eine Textdatei ist unten dargestellt.
+Mithilfe von `Environment.GetFolderPath` ermöglicht es den gleichen Code für die Ausführung auf iOS und Android, die jeweils ein gültiges Verzeichnis basierend auf ihren Konventionen Dateisystem zurück.
 
 ```csharp
 string filePath = Path.Combine (
@@ -158,14 +158,14 @@ System.IO.File.WriteAllText (filePath, "Contents of text file");
 Console.WriteLine (System.IO.ReadAllText (filePath));
 ```
 
-Weitere Informationen zu IOS-spezifischen File System-Funktionen finden Sie unter xamarin. IOS [Arbeiten mit dem Datei System](~/ios/app-fundamentals/file-system.md) Dokument. Beachten Sie beim Schreiben von Platt Form übergreifendem Datei Zugriffs Code, dass bei einigen Dateisystemen die Groß-/Kleinschreibung beachtet wird und verschiedene Verzeichnis Trennzeichen vorhanden sind. Es empfiehlt sich, bei der Erstellung von Datei-oder Verzeichnis Pfaden immer die gleiche Groß-/Kleinschreibung für Dateinamen und die `Path.Combine()`-Methode zu verwenden.
+Finden Sie in der Xamarin.iOS [arbeiten mit dem Dateisystem](~/ios/app-fundamentals/file-system.md) Dokument Weitere Informationen zu iOS-spezifische Filesystem-Funktionen. Cross-Platform-Datei schreiben, denken Sie daran, dass einige Dateisysteme Groß-/Kleinschreibung beachtet und anderen Verzeichnistrennzeichen. Es wird empfohlen, immer die gleiche Groß-/Kleinschreibung bei Dateinamen verwenden und die `Path.Combine()` Methode, wenn eine Datei oder Verzeichnis Pfade zu erstellen.
 
-### <a name="windowsstorage-for-windows-8-and-windows-10"></a>Windows. Storage für Windows 8 und Windows 10
+### <a name="windowsstorage-for-windows-8-and-windows-10"></a>Windows.Storage für Windows 8 und Windows 10
 
 Die *Mobile Apps erstellen mit xamarin. Forms* [Book](https://developer.xamarin.com/r/xamarin-forms/book/)
 [Kapitel 20. Async und Datei-e/](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) a enthalten [Beispiele für Windows 8.1 und Windows 10](https://github.com/xamarin/xamarin-forms-book-preview-2/tree/master/Chapter20).
 
-Mithilfe eines [`DependencyService`](~/xamarin-forms/app-fundamentals/dependency-service/index.md) es möglich, Dateien auf diesen Plattformen mithilfe der unterstützten APIs zu lesen und zu verwenden:
+Mit einem [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) es ist möglich, Lese- und Datei Dateien auf diesen Plattformen unter Verwendung der unterstützten APIs:
 
 ```csharp
 StorageFolder localFolder = ApplicationData.Current.LocalFolder;
@@ -174,38 +174,38 @@ IStorageFile storageFile = await localFolder.CreateFileAsync("MyFile.txt",
 await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 ```
 
-Weitere Informationen finden Sie im [Buchkapitel](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) .
+Finden Sie in der [Book-Kapitel](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) Weitere Details.
 
 <a name="Isolated_Storage" />
 
-### <a name="isolated-storage-on-windows-phone-7--8-silverlight"></a>Isolierter Speicher auf Windows Phone 7 & 8 (Silverlight)
+### <a name="isolated-storage-on-windows-phone-7--8-silverlight"></a>Isolierter Speicher auf Windows Phone 7 und 8 (Silverlight)
 
-Isolierter Speicher ist eine gängige API zum Speichern und Laden von Dateien über alle IOS-, Android-und älteren Windows Phone Plattformen.
+Isolierte Speicherung ist eine allgemeine API für das Speichern und Laden von Dateien für alle iOS-, Android- und älteren Windows Phone-Plattformen.
 
-Dies ist der Standardmechanismus für den Dateizugriff in Windows Phone (Silverlight), der in xamarin. IOS und xamarin. Android implementiert wurde, damit allgemeiner Datei Zugriffs Code geschrieben werden kann. Auf die `System.IO.IsolatedStorage` Klasse kann auf allen drei Plattformen in einem frei [gegebenen Projekt](~/cross-platform/app-fundamentals/shared-projects.md)verwiesen werden.
+Es ist der standardmäßige Mechanismus für den Zugriff auf Dateien im Windows Phone (Silverlight), die in Xamarin.iOS und Xamarin.Android zu gemeinsamen Dateizugriff Code geschrieben werden implementiert wurde. Die `System.IO.IsolatedStorage` Klasse verwiesen werden kann, auf allen drei Plattformen in einem [freigegebenes Projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
-Weitere Informationen Windows Phone finden Sie unter [Übersicht über den isolierten Speicher](https://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx) .
+Finden Sie in der [isolierten Speicher Übersicht für Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx) für Weitere Informationen.
 
-Die APIs für den isolierten Speicher sind in [portablen Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md)nicht verfügbar. Eine Alternative für die PCL ist das [pclstorage-nuget](https://pclstorage.codeplex.com/) .
+Der Isolated Storage-APIs sind nicht verfügbar in [Portable Class Libraries](~/cross-platform/app-fundamentals/pcl.md). Eine Alternative für PCL ist die [PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
-### <a name="cross-platform-file-access-in-pcls"></a>Plattformübergreifender Dateizugriff in pcls
+### <a name="cross-platform-file-access-in-pcls"></a>Plattformübergreifende Dateizugriff in PCLs
 
-Außerdem gibt es eine PCL-kompatible nuget-– [pclstorage](https://www.nuget.org/packages/PCLStorage/) –, die plattformübergreifenden Dateizugriff für xamarin-unterstützte Plattformen und die neuesten Windows-APIs bietet.
+Es gibt auch ein PCL-kompatible Nuget – [PCLStorage](https://www.nuget.org/packages/PCLStorage/) –, plattformübergreifende Dateizugriff Einrichtungen für Xamarin-Unterstützung von Plattformen und die neuesten Windows-APIs.
 
-## <a name="network-operations"></a>Netzwerk Vorgänge
+## <a name="network-operations"></a>Netzwerkvorgänge
 
-Die meisten mobilen Anwendungen verfügen über eine Netzwerkkomponente, z. b.:
+Die meisten mobile Anwendungen müssen die Netzwerkkomponente, z.B.:
 
-- Herunterladen von Bildern, Videos und Audiodaten (z. b. Miniaturansichten, Fotos, Musik).
-- Herunterladen von Dokumenten (z.b. HTML, PDF).
-- Hochladen von Benutzerdaten (z. b. Fotos oder Text).
-- Zugreifen auf Webdienste oder Drittanbieter-APIs (einschließlich SOAP, XML oder JSON).
+- Herunterladen von Abbildern, Video- und Audiostreams (z. b. Miniaturansichten, Fotos, Musik).
+- Herunterladen von Dokumenten (z. b. HTML, PDF-DATEI).
+- Hochladen von Benutzerdaten (z. B. Fotos oder Text).
+- Zugriff auf Webdienste oder 3rd Party APIs (einschließlich SOAP, XML oder JSON).
 
-Der .NET Framework bietet verschiedene Klassen für den Zugriff auf Netzwerkressourcen: `HttpClient`, `WebClient`und `HttpWebRequest`.
+.NET Framework bietet ein paar unterschiedliche Klassen für den Zugriff auf Netzwerkressourcen: `HttpClient`, `WebClient`, und `HttpWebRequest`.
 
 ### <a name="httpclient"></a>HttpClient
 
-Die `HttpClient`-Klasse im `System.Net.Http`-Namespace ist in xamarin. IOS, xamarin. Android und den meisten Windows-Plattformen verfügbar. Es gibt eine [Microsoft HTTP-Client Bibliothek](https://www.nuget.org/packages/Microsoft.Net.Http/) , mit der Sie diese API in Portable Klassenbibliotheken (und Windows Phone 8 Silverlight) einbringen können.
+Die `HttpClient` -Klasse in der `System.Net.Http` Namespace ist in Xamarin.iOS, Xamarin.Android und die meisten Windows-Plattformen verfügbar. Es gibt eine [Microsoft HTTP Client Library Nuget](https://www.nuget.org/packages/Microsoft.Net.Http/) , die verwendet werden kann, um diese API zu Portable Class Libraries (und Windows Phone 8 Silverlight) machen.
 
 ```csharp
 var client = new HttpClient();
@@ -215,11 +215,11 @@ var response = await myClient.SendAsync(request);
 
 ### <a name="webclient"></a>WebClient
 
-Die `WebClient`-Klasse stellt eine einfache API zum Abrufen von Remote Daten von Remote Servern bereit.
+Die `WebClient` -Klasse bietet eine einfache API zum Abrufen von Remotedaten von Remoteservern.
 
-Universelle Windows-Plattform Vorgänge *müssen* Async sein, auch wenn xamarin. IOS und xamarin. Android synchrone Vorgänge unterstützen (was für Hintergrundthreads möglich ist).
+Universelle Windows Plattform-Vorgänge *müssen* asynchron, sein, obwohl Xamarin.iOS und Xamarin.Android synchrone Vorgänge unterstützt (die in Hintergrundthreads ausgeführt werden können).
 
-Der Code für eine einfache asynchrone `WebClient` Operation lautet wie folgt:
+Der Code für eine einfache asynchrone `WebClient` Vorgang ist:
 
 ```csharp
 var webClient = new WebClient ();
@@ -238,9 +238,9 @@ webClient.DownloadStringAsync (new Uri ("http://some-server.com/file.xml"));
 
 ### <a name="httpwebrequest"></a>HttpWebRequest
 
-`HttpWebRequest` bietet mehr Anpassungen als `WebClient` und erfordert daher mehr Code für die Verwendung von.
+`HttpWebRequest` bietet größere Anpassung als `WebClient` und erfordert daher mehr Code verwenden.
 
-Der Code für einen einfachen synchronen `HttpWebRequest` Vorgang lautet wie folgt:
+Der Code für eine einfache, synchrone `HttpWebRequest` Vorgang ist:
 
 ```csharp
 var request = HttpWebRequest.Create(@"http://some-server.com/file.xml ");
@@ -258,72 +258,72 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 }
 ```
 
-In unserer [Webdienst Dokumentation](~/cross-platform/data-cloud/web-services/index.md)finden Sie ein Beispiel.
+Es folgt ein Beispiel in unserem [Web Services-Dokumentation](~/cross-platform/data-cloud/web-services/index.md).
 
  <a name="Reachability" />
 
 ### <a name="reachability"></a>Erreichbarkeit
 
-Mobile Geräte arbeiten unter einer Vielzahl von Netzwerkbedingungen, von schnellen Wi-Fi-oder 4G-Verbindungen zu schlechten Empfangsbereichen und langsamen Daten Verknüpfungen. Aus diesem Grund empfiehlt es sich, zu erkennen, ob das Netzwerk verfügbar ist, und wenn dies der Fall ist, welcher Netzwerktyp verfügbar ist, bevor versucht wird, eine Verbindung mit Remote Servern herzustellen.
+Mobile Geräte, die eine Vielzahl von netzwerkbedingungen schnell Wi-Fi-oder 4G-Verbindungen an eine schlechte Empfangsbereichen und langsamen Verbindungen von EDGE-Daten ausgeführt werden. Aus diesem Grund ist es empfehlenswert, zu ermitteln, ob das Netzwerk verfügbar ist, und wenn Ja, welche Art von Netzwerk verfügbar ist, bevor zu Remoteservern eine Verbindung mit.
 
-Zu den Aktionen, die eine Mobile App in diesen Fällen ausführen kann, gehören:
+Aktionen, die in diesen Situationen eine mobile app benötigt möglicherweise gehören:
 
-- Wenn das Netzwerk nicht verfügbar ist, sollten Sie den Benutzer informieren. Wenn Sie Sie manuell deaktiviert haben (z. b. Der Flugzeug Modus oder das Ausschalten des WLAN), dann können Sie das Problem beheben.
-- Wenn die Verbindung 3G ist, können sich Anwendungen anders Verhalten (z. b. Apple lässt nicht zu, dass apps, die größer als 20 MB sind, über 3G heruntergeladen werden). Anwendungen könnten diese Informationen verwenden, um den Benutzer über übermäßig lange Downloadzeiten beim Abrufen großer Dateien zu warnen.
-- Auch wenn das Netzwerk verfügbar ist, empfiehlt es sich, die Konnektivität mit dem Zielserver zu überprüfen, bevor andere Anforderungen initiiert werden. Dadurch wird verhindert, dass die Netzwerk Vorgänge der APP wiederholt ablaufen und dem Benutzer eine informative Fehlermeldung angezeigt wird.
+- Wenn das Netzwerk nicht verfügbar ist, der Benutzer ist. Wenn sie ihn (z. b. manuell deaktiviert haben Flugzeugmodus, oder deaktivieren Wi-Fi) und dann das Problem zu beheben.
+- Wenn die Verbindung 3 G beträgt, Anwendungen anderes Verhalten aufweisen (z. B. Apple lässt keine apps mehr als 20Mb über 3 G heruntergeladen werden). Anwendungen können diese Informationen verwenden, um warnen den Benutzer über eine übermäßige Download ein Timeout beim Abrufen von großer Dateien.
+- Auch wenn das Netzwerk verfügbar ist, ist es empfiehlt sich, die Konnektivität mit dem Zielserver zu überprüfen, bevor andere Anforderungen initiiert. Dies zu verhindern, dass der app Netzwerkvorgänge zeitüberschreitungen wiederholt und können auch eine informativere Fehlermeldung, die dem Benutzer angezeigt werden.
 
-Es ist ein [xamarin. IOS-Beispiel](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample) verfügbar (basiert auf dem [Erreichbarkeits Beispielcode](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html) von Apple), um die Netzwerkverfügbarkeit zu erkennen.
+Gibt es eine [Xamarin.iOS-Beispiel](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample) verfügbar (die basiert auf der Apple [Erreichbarkeit Beispielcode](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html) ) zum Erkennen von netzwerkverfügbarkeit.
 
-## <a name="webservices"></a>Webservices
+## <a name="webservices"></a>WebServices
 
-Weitere Informationen finden Sie in unserer Dokumentation zum [Arbeiten mit Webdiensten](~/cross-platform/data-cloud/web-services/index.md), die den Zugriff auf Rest-, SOAP-und WCF-Endpunkte mit xamarin. IOS behandelt. Es ist möglich, Webdienst Anforderungen Hand zu erstellen und die Antworten zu analysieren. es sind jedoch Bibliotheken verfügbar, um dies zu vereinfachen, einschließlich Azure, restsharp und servicestack. Sogar grundlegende WCF-Vorgänge können in xamarin-apps aufgerufen werden.
+Finden Sie in unserer Dokumentation auf [arbeiten mit Webdiensten](~/cross-platform/data-cloud/web-services/index.md), die Zugriff auf REST, enthält, SOAP- und WCF-Endpunkte, die unter Verwendung von Xamarin.iOS. Es ist möglich, webdienstanforderungen Hand-selbst zu erstellen und Analysieren von Antworten, jedoch stehen Ihnen Bibliotheken zur Verfügung, um dies viel einfacher, einschließlich Azure, RestSharp und ServiceStack. Selbst grundlegende WCF-Dienstvorgänge können in Xamarin-apps zugegriffen werden.
 
 ### <a name="azure"></a>Azure
 
-Microsoft Azure ist eine cloudplattform, die eine Vielzahl von Diensten für Mobile Apps bereitstellt, einschließlich Datenspeicherung und-Synchronisierung und Pushbenachrichtigungen.
+Microsoft Azure ist eine Cloudplattform, die eine Vielzahl von Diensten für mobile apps, einschließlich der datenspeicherung und -Synchronisierung und Pushbenachrichtigungen bereitstellt.
 
-Besuchen Sie [Azure.Microsoft.com](https://azure.microsoft.com/) , um es kostenlos zu testen.
+Besuchen Sie ["Azure.Microsoft.com"](https://azure.microsoft.com/) es kostenlos testen.
 
 ### <a name="restsharp"></a>RestSharp
 
-Restsharp ist eine .NET-Bibliothek, die in Mobile Anwendungen integriert werden kann, um einen Rest-Client bereitzustellen, der den Zugriff auf Webdienste vereinfacht. Dies erleichtert die Bereitstellung einer einfachen API, um Daten anzufordern und die Rest-Antwort zu analysieren. Restsharp kann nützlich sein.
+RestSharp ist eine .NET-Bibliothek, die in mobilen Anwendungen mit einen REST-Client bereitstellen, der Zugriff auf Webdienste vereinfacht einbezogen werden kann. Sie können, indem Sie eine einfache API zum Anfordern von Daten und Analyse der REST-Antwort bereitgestellt. RestSharp kann nützlich sein.
 
-Die [restsharp-Website](http://restsharp.org/) enthält eine [Dokumentation](https://github.com/restsharp/RestSharp/wiki) zur Implementierung eines Rest-Clients mithilfe von restsharp.
-Restsharp bietet xamarin. IOS-und xamarin. Android-Beispiele auf [GitHub](https://github.com/restsharp/RestSharp/).
+Die [RestSharp Website](http://restsharp.org/) enthält [Dokumentation](https://github.com/restsharp/RestSharp/wiki) zum Implementieren eines REST-Clients mithilfe von RestSharp.
+RestSharp enthält Xamarin.iOS und Xamarin.Android-Beispiele für [Github](https://github.com/restsharp/RestSharp/).
 
-Es gibt auch einen xamarin. IOS-Code Ausschnitt in unserer [Webdienst Dokumentation](~/cross-platform/data-cloud/web-services/index.md).
+Es gibt auch ein Xamarin.iOS-Codeausschnitt in unserer [Web Services-Dokumentation](~/cross-platform/data-cloud/web-services/index.md).
 
  <a name="ServiceStack" />
 
 ### <a name="servicestack"></a>ServiceStack
 
-Im Gegensatz zu restsharp ist servicestack sowohl eine serverseitige Lösung zum Hosten eines Webdiensts als auch eine Client Bibliothek, die in mobilen Anwendungen implementiert werden kann, um auf diese Dienste zuzugreifen.
+Im Gegensatz zu RestSharp ist die ServiceStack sowohl eine serverseitige Lösung zum Hosten von einem Webdienst als auch für eine Clientbibliothek, die in mobilen Anwendungen den Zugriff auf diese Dienste implementiert werden kann.
 
-Die [servicestack-Website](http://servicestack.net/) erläutert den Zweck des Projekts und Links zu Dokument-und Codebeispielen. Die Beispiele umfassen eine komplette serverseitige Implementierung eines Webdiensts sowie verschiedene Client seitige Anwendungen, die darauf zugreifen können.
+Die [ServiceStack Website](http://servicestack.net/) erläutert den Zweck des Projekts und Links zum Dokument und Codebeispiele. Die Beispiele umfassen eine vollständige Implementierung von serverseitigen Webdienst als auch für verschiedene Client-Side-Anwendungen, die darauf zugreifen können.
 
-Es gibt ein [xamarin. IOS-Beispiel](http://www.servicestack.net/monotouch/remote-info/) auf der servicestack-Website und einen Code Ausschnitt in unserer [Webdienst Dokumentation](~/cross-platform/data-cloud/web-services/index.md).
+Gibt es eine [Xamarin.iOS-Beispiel](http://www.servicestack.net/monotouch/remote-info/) auf die Website ServiceStack und einen Codeausschnitt in unserer [Web Services-Dokumentation](~/cross-platform/data-cloud/web-services/index.md).
 
 ### <a name="wcf"></a>WCF
 
-Mithilfe von xamarin-Tools können Sie einige Windows Communication Foundation (WCF)-Dienste nutzen. Im Allgemeinen unterstützt xamarin die gleiche Client seitige Teilmenge von WCF, die im Lieferumfang der Silverlight-Laufzeit enthalten ist. Dies umfasst die gängigsten Codierungs-und Protokollimplementierungen von WCF: Text codierte SOAP-Nachrichten über das HTTP-Transportprotokoll mithilfe der `BasicHttpBinding`.
+Xamarin-Tools können Sie einige Windows Communication Foundation (WCF)-Dienste nutzen. Im Allgemeinen unterstützt Xamarin jedoch die gleiche Client-Side Teilmenge von WCF, die in der Silverlight-Laufzeit enthalten ist. Dies schließt die am häufigsten verwendeten Codierungs- und Protokolldetails Implementierungen von WCF: textcodierten SOAP-Nachrichten über die HTTP-transport-Protokoll der `BasicHttpBinding`.
 
-Aufgrund der Größe und Komplexität des WCF-Frameworks können aktuelle und zukünftige Dienst Implementierungen vorhanden sein, die außerhalb des Bereichs liegen, der von der Client-Subset-Domäne von xamarin unterstützt wird. Außerdem erfordert die WCF-Unterstützung die Verwendung von Tools, die nur in einer Windows-Umgebung zur Generierung des Proxys verfügbar sind.
+Aufgrund der Größe und Komplexität des WCF-Frameworks es gibt möglicherweise aktuellen und zukünftigen dienstimplementierungen, die außerhalb des unterstützten Bereichs von Xamarin Client-Teilmenge Domäne liegen werden. Unterstützung der WCF erfordert außerdem die Verwendung von Tools, die nur verfügbar, in einer Windows-Umgebung in den Proxy zu generieren.
 
  <a name="Threading" />
 
 ## <a name="threading"></a>Threading
 
-Die Reaktionsfähigkeit der Anwendung ist für mobile Anwendungen wichtig – Benutzer erwarten, dass Anwendungen schnell geladen und durchgeführt werden. Ein "fixierter" Bildschirm, der die Annahme von Benutzereingaben nicht mehr anzeigt, scheint, dass die Anwendung abgestürzt ist, daher ist es wichtig, den UI-Thread nicht mit langen blockierenden aufrufen zu verknüpfen, wie z. b. Netzwerk Anforderungen oder langsame lokale Vorgänge (z. b. Entzippen einer Datei). Insbesondere sollte der Startprozess keine Aufgaben mit langer Ausführungsdauer enthalten – alle mobilen Plattformen beenden eine APP, die zu lange dauert, bis Sie geladen werden kann.
+Reaktionsfähigkeit der Anwendung ist wichtig für mobile Anwendungen – erwarten, dass Benutzer Anwendungen laden, und führen Sie schnell. Eine "fixierte"-Bildschirm, den beendet wird, die Benutzereingaben akzeptiert angezeigt werden, um anzugeben, dass die Anwendung ist abgestürzt, daher ist es wichtig, nicht im UI-Thread mit langer blockierenden Aufrufe wie z. B. netzwerkanforderungen oder langsame lokale Vorgänge (z. B. Entpacken eine Datei) zu verknüpfen. Insbesondere der Startprozess sollten keine lang andauernden Aufgaben – bricht alle mobile Plattformen eine app, die beim Laden zu lange dauert.
 
-Dies bedeutet, dass Ihre Benutzeroberfläche eine "Fortschrittsanzeige" oder eine anderweitig verwendbare Benutzeroberfläche implementieren muss, die schnell angezeigt werden kann, sowie asynchrone Aufgaben zum Durchführen von Hintergrund Vorgängen. Das Ausführen von Hintergrundaufgaben erfordert die Verwendung von Threads. das bedeutet, dass die Hintergrundaufgaben eine Möglichkeit benötigen, um mit dem Haupt Thread zu kommunizieren, um den Fortschritt anzuzeigen, oder wann Sie abgeschlossen wurden.
+Dies bedeutet, dass Ihre Benutzeroberfläche eine Statusanzeige oder andernfalls 'verwendet' Benutzeroberfläche, die schnell anzeigen und asynchronen Aufgaben zum Durchführen von Hintergrundoperationen implementieren soll. Ausführen von Hintergrundaufgaben erfordert die Verwendung von Threads, was bedeutet den Hintergrund-Aufgaben-Anforderungen auf eine Möglichkeit für die Kommunikation mit den Hauptthread zum Anzeigen des Status oder wann diese abgeschlossen haben.
 
  <a name="Parallel_Task_Library" />
 
-### <a name="parallel-task-library"></a>Parallele Task Bibliothek
+### <a name="parallel-task-library"></a>Bibliothek für parallele Tasks
 
-Aufgaben, die mit der parallel-Task Bibliothek erstellt werden, können asynchron ausgeführt werden und werden in Ihrem aufrufenden Thread zurückgegeben, sodass Sie sehr nützlich sind, um Vorgänge mit langer Ausführungszeit auszulösen, ohne die Benutzeroberfläche
+Aufgaben mit der Task Parallel Library können asynchron ausgeführt und ihre aufrufenden Thread, sodass sie sehr nützlich für das Auslösen von Vorgängen mit langen Laufzeiten ohne Blockierung der Benutzeroberfläche zurück.
 
-Ein einfacher paralleler Task Vorgang könnte wie folgt aussehen:
+Ein Vorgang für die einfache parallele Aufgabe könnte folgendermaßen aussehen:
 
 ```csharp
 using System.Threading.Tasks;
@@ -335,9 +335,9 @@ void MainThreadMethod ()
 }
 ```
 
-Der Schlüssel ist `TaskScheduler.FromCurrentSynchronizationContext()`, der "SynchronizationContext. Current" des Threads, der die-Methode aufruft (hier der Haupt Thread, der `MainThreadMethod`ausgeführt wird) als Möglichkeit zum Mars Hallen von Aufrufen an diesen Thread verwendet. Dies bedeutet, dass, wenn die-Methode im UI-Thread aufgerufen wird, der `ContinueWith` Vorgang wieder im UI-Thread ausgeführt wird.
+Der Schlüssel ist `TaskScheduler.FromCurrentSynchronizationContext()` die wird wiederverwendet, die SynchronizationContext.Current des Threads die Methode aufrufen (hier den Hauptthread, der ausgeführt wird `MainThreadMethod`) als eine Möglichkeit, zurück zu diesem Thread marshallen. Dies bedeutet, wenn die Methode im UI-Thread aufgerufen wird, führt er die `ContinueWith` Vorgang wieder im UI-Thread.
 
-Wenn der Code Tasks aus anderen Threads startet, verwenden Sie das folgende Muster, um einen Verweis auf den UI-Thread zu erstellen, und der Task kann dennoch einen Rückruf dafür ausführen:
+Wenn der Code Aufgaben von anderen Threads gestartet wird, verwenden Sie Folgendes Muster, um einen Verweis auf den UI-Thread zu erstellen, und die Aufgabe kann immer noch einen Rückruf aus:
 
 ```csharp
 static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
@@ -345,18 +345,18 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
  <a name="Invoking_on_the_UI_Thread" />
 
-### <a name="invoking-on-the-ui-thread"></a>Aufrufen von im UI-Thread
+### <a name="invoking-on-the-ui-thread"></a>Klicken Sie auf der UI-Thread aufrufen
 
-Für Code, der die parallele Aufgaben Bibliothek nicht verwendet, verfügt jede Plattform über eine eigene Syntax für das Marshalling von Vorgängen zurück zum UI-Thread:
+Bei Code, der Task Parallel Library verwendet wird nicht, gelten für jede Plattform eine eigene Syntax für Marshalling-Vorgänge an den UI-Thread:
 
-- **IOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
+- **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
 - **Android** – `owner.RunOnUiThread(action)`
-- **Xamarin. Forms** – `Device.BeginInvokeOnMainThread(action)`
-- **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
+- **Xamarin.Forms** : `Device.BeginInvokeOnMainThread(action)`
+- **Windows** : `Deployment.Current.Dispatcher.BeginInvoke(action)`
 
-Die IOS-und Android-Syntax erfordert, dass eine Context-Klasse verfügbar ist. Dies bedeutet, dass der Code dieses Objekt an alle Methoden übergeben muss, die einen Rückruf für den UI-Thread erfordern.
+IOS- und Android-Syntax erfordert eine 'Context'-Klasse zur Verfügung stehen, was bedeutet, dass der Code muss alle Methoden dieses Objekts übergeben, die einen Rückruf für den UI-Thread erfordern.
 
-Um UI-Thread Aufrufe in frei gegebenem Code auszuführen, befolgen Sie das [idispatchonuithread-Beispiel](https://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net) (Courtesy of [@follesoe](https://twitter.com/follesoe)). Deklarieren Sie an einer `IDispatchOnUIThread`-Schnittstelle im freigegebenen Code und Programmieren Sie, und implementieren Sie dann die plattformspezifischen Klassen, wie hier gezeigt:
+Um UI-Thread-Aufrufe in freigegebenem Code zu machen, führen Sie die [IDispatchOnUIThread Beispiel](https://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net) (von [ @follesoe ](https://twitter.com/follesoe)). Deklarieren und Programm bereit, um eine `IDispatchOnUIThread` -Schnittstelle in den freigegebenen Code, und klicken Sie dann die Clientplattform-spezifische Klassen implementieren, wie hier gezeigt:
 
 ```csharp
 // program to the interface in shared code
@@ -391,10 +391,10 @@ public class DispatchAdapter : IDispatchOnUIThread {
 }
 ```
 
-Xamarin. Forms-Entwickler sollten [`Device.BeginInvokeOnMainThread`](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads) in Common Code (freigegebene Projekte oder PCL) verwenden.
+Xamarin.Forms-Entwickler sollten verwenden [ `Device.BeginInvokeOnMainThread` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads) im gemeinsamen Code (Projekten mit freigegebenen oder PCL).
 
  <a name="Platform_and_Device_Capabilities_and_Degradation" />
 
-## <a name="platform-and-device-capabilities-and-degradation"></a>Plattform-und Gerätefunktionen und-Beeinträchtigung
+## <a name="platform-and-device-capabilities-and-degradation"></a>Plattform und Gerätefunktionen und Beeinträchtigung
 
-Weitere spezifische Beispiele für den Umgang mit verschiedenen Funktionen finden Sie in der Dokumentation zu den Plattformfunktionen. Es befasst sich mit dem Erkennen verschiedener Funktionen und der ordnungsgemäßen deverarbeitung einer Anwendung, um eine gute Benutzer Funktionalität zu gewährleisten, selbst wenn die APP nicht mit dem vollen Potenzial arbeiten kann.
+Weitere spezifische Beispiele für den Umgang mit unterschiedlichen Funktionen in der Dokumentation zu Plattformfunktionen erhalten. Er behandelt die unterschiedliche Funktionen und wie Sie Ihre Anforderungen ordnungsgemäß herabstufen eine Anwendung eine gute benutzererfahrung, bereitstellen, auch wenn die app auf ihr volles Potenzial betrieben werden, kann nicht erkannt.

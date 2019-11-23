@@ -16,9 +16,9 @@ ms.locfileid: "70770643"
 ---
 # <a name="native-views-in-xaml"></a>Native Ansichten in XAML
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
-_Native Ansichten in iOS, Android und die universelle Windows-Plattform können direkt von Xamarin.Forms-XAML-Dateien verwiesen werden. Eigenschaften und Ereignishandler für native Ansichten festgelegt werden können, und sie können mit Xamarin.Forms-Ansichten interagieren. In diesem Artikel wird veranschaulicht, wie native Ansichten in Xamarin.Forms XAML-Dateien genutzt wird._
+_Von xamarin. Forms-XAML-Dateien kann direkt auf native Ansichten von IOS, Android und den universelle Windows-Plattform verwiesen werden. Eigenschaften und Ereignishandler können für Native Ansichten festgelegt werden, und Sie können mit xamarin. Forms-Sichten interagieren. In diesem Artikel wird veranschaulicht, wie Native Sichten von xamarin. Forms-XAML-Dateien verwendet werden._
 
 In diesem Artikel werden die folgenden Themen behandelt:
 
@@ -38,7 +38,7 @@ So betten Sie einen einheitlichen Einblick in einer Xamarin.Forms-XAML-Datei ein
 1. Erstellen Sie eine Instanz der einheitlichen Ansicht, in der XAML-Datei.
 
 > [!IMPORTANT]
-> Das kompilierte XAML muss für alle XAML-Seiten deaktiviert werden, die native Sichten verwenden. Dies kann erreicht werden, indem Sie die Code-Behind-Klasse für die XAML- `[XamlCompilation(XamlCompilationOptions.Skip)]` Seite mit dem-Attribut versehen. Weitere Informationen zur XAML-Kompilierung finden Sie unter [XAML-Kompilierung in xamarin. Forms](~/xamarin-forms/xaml/xamlc.md).
+> Das kompilierte XAML muss für alle XAML-Seiten deaktiviert werden, die native Sichten verwenden. Dies kann erreicht werden, indem Sie die Code-Behind-Klasse für die XAML-Seite mit dem `[XamlCompilation(XamlCompilationOptions.Skip)]`-Attribut versehen. Weitere Informationen zur XAML-Kompilierung finden Sie unter [XAML-Kompilierung in xamarin. Forms](~/xamarin-forms/xaml/xamlc.md).
 
 Um auf eine einheitliche Ansicht aus einer CodeBehind-Datei verweisen, verwenden Sie eine freigegebene Asset Projekt (SAP) und umschließen Sie den plattformspezifischen Code mit bedingten Kompilierungsdirektiven. Weitere Informationen finden Sie unter [verweisen auf Native Ansichten aus Code](#native_view_code).
 
@@ -487,7 +487,7 @@ Die `MySpinner` -Klasse macht `ItemsSource` und `SelectedObject` Eigenschaften, 
 
 In diesem Artikel wurde veranschaulicht, wie native Ansichten in Xamarin.Forms XAML-Dateien nutzen. Eigenschaften und Ereignishandler für native Ansichten festgelegt werden können, und sie können mit Xamarin.Forms-Ansichten interagieren.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [NativeSwitch (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 - [Forms2Native (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)

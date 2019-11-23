@@ -34,7 +34,7 @@ Erstellen Sie eine neue Datei im **Ressourcen/drawable-** Verzeichnis mit dem Na
 </selector>
 ```
 
-Dadurch wird eine einzelne drawable-Ressource definiert, die Ihr Bild basierend auf dem aktuellen Zustand der Schaltfläche ändert. Der erste `<item>` definiert **android_pressed. png** als Bild, wenn die Schaltfläche gedrückt wird (Sie wurde aktiviert); der zweite `<item>` definiert **android_focused. png** als Bild, wenn die Schaltfläche fokussiert ist (wenn die Schaltfläche mit dem trackballunterstützung oder direktionalen Pad hervorgehoben wird). und der dritte `<item>` definiert **android_normal. png** als Bild für den normalen Zustand (wenn weder gedrückt noch fokussiert). Diese XML-Datei stellt nun eine einzelne drawable-Ressource dar, und wenn von einer [`Button`](xref:Android.Widget.Button) auf den Hintergrund verwiesen wird, ändert sich das angezeigte Bild basierend auf diesen drei Zuständen.
+Dadurch wird eine einzelne drawable-Ressource definiert, die Ihr Bild basierend auf dem aktuellen Zustand der Schaltfläche ändert. Der erste `<item>` definiert **android_pressed. png** als Bild, wenn die Schaltfläche gedrückt wird (Sie wurde aktiviert); mit dem zweiten `<item>` wird **android_focused. png** als Bild definiert, wenn die Schaltfläche fokussiert ist (wenn die Schaltfläche mit dem trackballunterstützung oder direktionalen Pad hervorgehoben wird). und der dritte `<item>` definiert **android_normal. png** als Bild für den normalen Zustand (wenn weder gedrückt noch fokussiert). Diese XML-Datei stellt nun eine einzelne drawable-Ressource dar, und wenn von einer [`Button`](xref:Android.Widget.Button) auf den Hintergrund verwiesen wird, ändert sich das angezeigte Bild basierend auf diesen drei Zuständen.
 
 > [!NOTE]
 > Die Reihenfolge der `<item>` Elemente ist wichtig. Wenn auf diese drawable verwiesen wird, werden die `<item>`s in der Reihenfolge durchlaufen, um zu bestimmen, welche für den aktuellen Schaltflächen Zustand geeignet ist.
@@ -54,7 +54,7 @@ Dadurch wird eine einzelne drawable-Ressource definiert, die Ihr Bild basierend 
 Das `android:background`-Attribut gibt die drawable-Ressource an, die für den Schaltflächen Hintergrund verwendet werden soll (bei der Speicherung unter " **Resources/drawable/Android. XML**" wird als `@drawable/android`bezeichnet). Dadurch wird das normale Hintergrundbild ersetzt, das für Schaltflächen im gesamten System verwendet wird. Damit das Bild auf der Grundlage des Schaltflächen Zustands geändert werden kann, muss das Bild auf den Hintergrund angewendet werden.
 
 Fügen Sie den folgenden Code am Ende [`OnCreate()`](xref:Android.App.Activity.OnCreate*) der hinzu, um die Schaltfläche zu ändern.
-anzuwenden
+methode:
 
 ```csharp
 Button button = FindViewById<Button>(Resource.Id.button);

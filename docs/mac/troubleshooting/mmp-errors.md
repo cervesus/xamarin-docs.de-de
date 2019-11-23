@@ -19,7 +19,7 @@ ms.locfileid: "73025720"
 
 ## <a name="mm0xxx-mmp-error-messages"></a>MM0xxx: MMP-Fehlermeldungen
 
-Die Parameter, Umgebung, fehlende Tools.
+Beispiel: Parameter, Umgebung, fehlende Tools.
 
 <a name="MM0000" />
 
@@ -210,7 +210,7 @@ Die angegebene Optimierung wurde nicht erkannt.
 
 Das akzeptierte Format ist `[+|-]optimization-name`, wobei `optimization-name` einer der in der Fehlermeldung aufgelisteten Werte ist.
 
-Eine umfassende Beschreibung der einzelnen Optimierungen finden Sie unter [buildoptimierungen](https://developer.xamarin.com/guides/cross-platform/macios/build-optimizations) .
+Eine umfassende Beschreibung der einzelnen Optimierungen finden Sie unter [Buildoptimierungen](https://developer.xamarin.com/guides/cross-platform/macios/build-optimizations).
 
 <a name="MM0133" />
 
@@ -338,7 +338,7 @@ Verwenden Sie als letzte Lösung eine ältere Version von xamarin. Mac, bei der 
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: auf {0}verwiesen.{1} @ no__t_2_\* diese Nachricht bezieht sich auf MM2006 \*\*
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: auf {0}verwiesen.{1}\*\* diese Nachricht bezieht sich auf MM2006 \*\*
 
 <a name="MM2010" />
 
@@ -358,7 +358,7 @@ Verwenden Sie als letzte Lösung eine ältere Version von xamarin. Mac, bei der 
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: xamarin. Mac-Erweiterungen unterstützen keine Verknüpfungen. Die Verbindungsanforderung wird ignoriert. \*\* diese Nachricht in XM 3.6 + \*veraltet\*
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: xamarin. Mac-Erweiterungen unterstützen keine Verknüpfungen. Die Verbindungsanforderung wird ignoriert. \*\* diese Nachricht in XM 3.6 + \*veraltet \*
 
 <!-- 2015 used by mtouch -->
 
@@ -570,7 +570,7 @@ Weitere Informationen finden Sie in der [entsprechenden mberührungs-Warnung](~/
 
 <a name="MM5310" />
 
-#### <a name="mm5310-install_name_tool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310: Fehler bei install_name_tool mit dem Fehlercode '{0}'. Weitere Informationen finden Sie im Buildprotokoll.
+#### <a name="mm5310-install_name_tool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310: Fehler bei install_name_tool mit dem Fehlercode "{0}". Weitere Informationen finden Sie im Buildprotokoll.
 
 <a name="MM5311" />
 

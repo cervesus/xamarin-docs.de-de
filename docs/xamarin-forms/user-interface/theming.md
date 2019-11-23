@@ -29,8 +29,8 @@ Der Prozess der Implementierung von Lauf Zeit Designs in einer xamarin. Forms-An
 
 Die folgenden Screenshots zeigen Design Seiten, bei denen die IOS-Anwendung ein helles Design und die Android-Anwendung mit einem dunklen Design verwendet:
 
-[![Screenshot der Hauptseite einer Designs-app unter IOS und Android](theming-images/main-page-both-themes.png "Hauptseite der App Thema")](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App Thema") 
-[![Screenshot der Detailseite einer Designs-app unter IOS und Android](theming-images/detail-page-both-themes.png "Detail Seite der APP mit Design")](theming-images/detail-page-both-themes-large.png#lightbox "Detail Seite der APP mit Design")
+[![Screenshot der Hauptseite einer Designs-app unter IOS und Android](theming-images/main-page-both-themes.png "Hauptseite der App Thema")](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App Thema")
+[ ![Screenshot der Detailseite einer Designs-app unter IOS und Android](theming-images/detail-page-both-themes.png "Detail Seite der APP mit Design")](theming-images/detail-page-both-themes-large.png#lightbox "Detail Seite der APP mit Design")
 
 ## <a name="define-themes"></a>Definieren von Designs
 
@@ -70,7 +70,7 @@ Das folgende Beispiel zeigt die `DarkTheme` aus der Beispielanwendung:
 </ResourceDictionary>
 ```
 
-Jede [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) enthält [`Color`](xref:Xamarin.Forms.Color) Ressourcen, die ihre jeweiligen Designs definieren, wobei jede `ResourceDictionary` identische Schlüsselwerte verwendet. Weitere Informationen zu Ressourcen Wörterbüchern finden Sie unter [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md).
+Jede [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) enthält [`Color`](xref:Xamarin.Forms.Color) Ressourcen, die ihre jeweiligen Designs definieren, wobei jede `ResourceDictionary` identische Schlüsselwerte verwendet. Weitere Informationen zu Ressourcenwörterbüchern, finden Sie unter [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md).
 
 > [!IMPORTANT]
 > Für jede `ResourceDictionary`, die die `InitializeComponent`-Methode aufruft, ist eine Code Behind-Datei erforderlich. Dies ist erforderlich, damit ein CLR-Objekt, das das ausgewählte Design darstellt, zur Laufzeit erstellt werden kann.
@@ -183,7 +183,7 @@ Weitere Informationen zum Formatieren finden Sie unter Formatieren von [xamarin.
 Wenn ein Design zur Laufzeit ausgewählt wird, sollte die Anwendung Folgendes ausführen:
 
 1. Entfernen Sie das aktuelle Design aus der Anwendung. Dies wird erreicht, indem die [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) -Eigenschaft der [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Anwendungsebene gelöscht wird.
-2. Ausgewähltes Designladen. Dies wird erreicht, indem der `MergedDictionaries`-Eigenschaft der `ResourceDictionary` auf Anwendungsebene eine Instanz des ausgewählten Designs hinzugefügt wird.
+2. Ausgewähltes Designladen. Dies wird erreicht, indem der `MergedDictionaries`-Eigenschaft der `ResourceDictionary`auf Anwendungsebene eine Instanz des ausgewählten Designs hinzugefügt wird.
 
 Alle [`VisualElement`](xref:Xamarin.Forms.VisualElement) Objekte, die Eigenschaften mit der `DynamicResource` Markup Erweiterung festlegen, wenden dann die neuen Designwerte an. Dies tritt auf, weil die `DynamicResource` Markup Erweiterung einen Link zu Wörterbuch Schlüsseln beibehält. Wenn also die den Schlüsseln zugeordneten Werte ersetzt werden, werden die Änderungen auf die `VisualElement` Objekte angewendet.
 

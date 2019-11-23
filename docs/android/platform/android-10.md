@@ -24,7 +24,7 @@ Dieser Artikel ist für den Einstieg in die Entwicklung von xamarin. Android-App
 
 Xamarin. Android 10,0 bietet Unterstützung für Android 10. Weitere Informationen zur xamarin. Android-Unterstützung für Android 10 finden Sie in den Anmerkungen zu dieser [Version von xamarin. Android 10,0](https://docs.microsoft.com/xamarin/android/release-notes/10/10.0).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 Die folgende Liste ist erforderlich, um Android 10-Features in xamarin-basierten apps zu verwenden:
 
