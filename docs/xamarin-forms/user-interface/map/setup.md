@@ -50,7 +50,7 @@ Nachdem das nuget-Paket hinzugefügt wurde und die Initialisierungs Methode in j
 
 ## <a name="platform-configuration"></a>Platt Form Konfiguration
 
-Für Android und die universelle Windows-Plattform (UWP) ist eine zusätzliche Konfiguration erforderlich, bevor die Karte angezeigt wird. Außerdem erfordert das Zugreifen auf den Speicherort des Benutzers unter IOS, Android und UWP das Erteilen von Standort Berechtigungen für die Anwendung.
+Für Android und die universelle Windows-Plattform (UWP) ist eine zusätzliche Konfiguration erforderlich, bevor die Karte angezeigt wird. Außerdem erfordert das Zugreifen auf den Standort des Benutzers unter IOS, Android und UWP das Erteilen von Standort Berechtigungen für die Anwendung.
 
 ### <a name="ios"></a>iOS
 
@@ -80,7 +80,7 @@ Die **Info. plist** -Einträge können auch beim Bearbeiten der Datei " **Info. 
 
 ![Info. plist für IOS 8](setup-images/ios8-map-permissions.png "IOS 8 erforderliche Info. plist-Einträge")
 
-Daraufhin wird eine Aufforderung angezeigt, wenn die Anwendung versucht, auf den Speicherort des Benutzers zuzugreifen und Zugriff anzufordern:
+Daraufhin wird eine Aufforderung angezeigt, wenn die Anwendung versucht, auf den Standort des Benutzers zuzugreifen und Zugriff anzufordern:
 
 [![Screenshot der Standort Berechtigungs Anforderung unter IOS](setup-images/permission-ios.png "IOS-Berechtigungs Anforderung")](setup-images/permission-ios-large.png#lightbox "IOS-Berechtigungs Anforderung")
 
@@ -92,8 +92,8 @@ Der Konfigurations Vorgang zum Anzeigen und interagieren mit einer Karte unter A
 1. Geben Sie die Google Play Services-Versionsnummer im Manifest an.
 1. Geben Sie im Manifest die Anforderung für die Apache HTTP-Legacy Bibliothek an.
 1. optionale Geben Sie die WRITE_EXTERNAL_STORAGE-Berechtigung im Manifest an.
-1. optionale Geben Sie die Speicherort Berechtigungen im Manifest an.
-1. optionale Berechtigungen für Lauf Zeit Speicherort in der `MainActivity`-Klasse anfordern.
+1. optionale Geben Sie die Standort-Berechtigungen im Manifest an.
+1. optionale Standort-Berechtigungen zur Laufzeit  in der `MainActivity`-Klasse anfordern.
 
 Ein Beispiel für eine ordnungsgemäß konfigurierte Manifest-Datei finden Sie unter " [androidmanifest. XML](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) " aus der Beispielanwendung.
 
@@ -144,9 +144,9 @@ Wenn Ihre Anwendung auf API 22 oder niedriger abzielt, kann es erforderlich sein
 
 Dies ist nicht erforderlich, wenn Ihre Anwendung auf API 23 oder höher ausgerichtet ist.
 
-#### <a name="specify-location-permissions"></a>Speicherort Berechtigungen angeben
+#### <a name="specify-location-permissions"></a>Standort Berechtigungen angeben
 
-Wenn die Anwendung auf den Speicherort des Benutzers zugreifen muss, müssen Sie die Berechtigung anfordern, indem Sie dem Manifest (oder beiden) die Berechtigungen `ACCESS_COARSE_LOCATION` oder `ACCESS_FINE_LOCATION` als untergeordnetes Element des Elements `<manifest>` hinzufügen:
+Wenn die Anwendung auf den Standort des Benutzers zugreifen muss, müssen Sie die Berechtigung anfordern, indem Sie dem Manifest (oder beiden) die Berechtigungen `ACCESS_COARSE_LOCATION` oder `ACCESS_FINE_LOCATION` als untergeordnetes Element des Elements `<manifest>` hinzufügen:
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.myapp">
@@ -156,7 +156,7 @@ Wenn die Anwendung auf den Speicherort des Benutzers zugreifen muss, müssen Sie
 </manifest>
 ```
 
-Mit der `ACCESS_COARSE_LOCATION` Berechtigung kann die API den Speicherort des Geräts mithilfe von WiFi-oder mobilen Daten (oder beides) bestimmen. Mit den `ACCESS_FINE_LOCATION` Berechtigungen kann die API die GPS (GPS), WiFi oder Mobile Daten verwenden, um einen präzisen Speicherort wie möglich zu bestimmen.
+Mit der `ACCESS_COARSE_LOCATION` Berechtigung kann die API den Standort des Geräts mithilfe von WiFi-oder mobilen Daten (oder beides) bestimmen. Mit den `ACCESS_FINE_LOCATION` Berechtigungen kann die API die GPS (GPS), WiFi oder Mobile Daten verwenden, um einen präzisen Standort wie möglich zu bestimmen.
 
 Alternativ können diese Berechtigungen aktiviert werden, indem Sie mit dem Manifest-Editor die folgenden Berechtigungen hinzufügen:
 
@@ -167,9 +167,9 @@ Diese werden im folgenden Screenshot gezeigt:
 
 ![Erforderliche Berechtigungen für Android](setup-images/android-map-permissions.png "Erforderliche Berechtigungen für Android")
 
-#### <a name="request-runtime-location-permissions"></a>Berechtigungen für Lauf Zeit Speicherort anfordern
+#### <a name="request-runtime-location-permissions"></a>Berechtigungen für Lauf Zeit Standort anfordern
 
-Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Speicherort des Benutzers zugreifen muss, muss Sie überprüfen, ob Sie zur Laufzeit über die erforderliche Berechtigung verfügt, und Sie anfordern, wenn Sie nicht vorhanden ist. Dies kann folgendermaßen erfüllt werden:
+Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Standort des Benutzers zugreifen muss, muss Sie überprüfen, ob Sie zur Laufzeit über die erforderliche Berechtigung verfügt, und Sie anfordern, wenn Sie nicht vorhanden ist. Dies kann folgendermaßen erfüllt werden:
 
 1. Fügen Sie in der `MainActivity`-Klasse die folgenden Felder hinzu:
 
@@ -227,7 +227,7 @@ Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Speicherort des B
 
     Diese außer Kraft Setzung behandelt das Ergebnis der Berechtigungs Anforderung.
 
-Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt wird, wenn die Anwendung den Speicherort des Benutzers anfordert:
+Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt wird, wenn die Anwendung den Standort des Benutzers anfordert:
 
 [![Screenshot der Standort Berechtigungs Anforderung unter Android](setup-images/permission-android.png "Android-Berechtigungs Anforderung")](setup-images/permission-android-large.png#lightbox "Android-Berechtigungs Anforderung")
 
@@ -235,10 +235,10 @@ Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt 
 
 Bei UWP muss Ihre Anwendung authentifiziert werden, bevor eine Zuordnung angezeigt und Kartendienste genutzt werden können. Um Ihre Anwendung zu authentifizieren, müssen Sie einen Maps-Authentifizierungsschlüssel angeben. Weitere Informationen finden Sie unter [Anfordern eines Zuordnungs Authentifizierungs Schlüssels](/windows/uwp/maps-and-location/authentication-key). Das Authentifizierungs Token sollte dann im `FormsMaps.Init("AUTHORIZATION_TOKEN")`-Methoden Aufrufes angegeben werden, um die Anwendung mit dem Namen von "admaps" zu authentifizieren.
 
-Außerdem müssen Sie, wenn Ihre Anwendung auf den Speicherort des Benutzers zugreifen muss, die Standort Funktion im Paket Manifest aktivieren. Dies kann folgendermaßen erfüllt werden:
+Außerdem müssen Sie, wenn Ihre Anwendung auf den Standort des Benutzers zugreifen muss, die Standort Funktion im Paket Manifest aktivieren. Dies kann folgendermaßen erfüllt werden:
 
 1. Doppelklicken Sie in **Projektmappen-Explorer**auf **Package. appxmanifest** , und wählen Sie die Registerkarte **Funktionen** aus.
-1. Aktivieren Sie in der Liste der **Funktionen** das Kontrollkästchen für **Speicherort**. Dadurch wird die `location` Geräte Funktion der Paket Manifest-Datei hinzugefügt.
+1. Aktivieren Sie in der Liste der **Funktionen** das Kontrollkästchen für **Standort**. Dadurch wird die `location` Geräte Funktion der Paket Manifest-Datei hinzugefügt.
 
     ```xml
     <Capabilities>
