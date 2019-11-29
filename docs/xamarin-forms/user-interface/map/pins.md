@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: 930d2dcc701f88e2a350ec1011405bb18b86de6e
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.openlocfilehash: 197c48a7a3486d7161d351a6b06101daaa389256
+ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425568"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74556162"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. Forms-Karten Pins
 
@@ -198,7 +198,7 @@ Eine [`Map`](xref:Xamarin.Forms.Maps.Map) kann mit Pins aufgefüllt werden, inde
 </ContentPage>
 ```
 
-Die [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) -Eigenschafts Daten werden an die `Locations`-Eigenschaft des verbundenen ViewModel gebunden, das eine `ObservableCollection` von `Location` Objekten zurückgibt, bei der es sich um einen benutzerdefinierten Typ handelt. Jedes `Location` Objekt definiert `Address` und `Description` Eigenschaften vom Typ `string` und eine `Position` Eigenschaft vom Typ [`Position`](xref:Xamarin.Forms.Maps.Position).
+Die [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) -Eigenschafts Daten werden an die `Locations`-Eigenschaft des verbundenen ViewModel gebunden, das eine `ObservableCollection` von `Location` Objekten zurückgibt, bei der es sich um einen benutzerdefinierten Typ handelt. Jedes `Location` Objekt definiert `Address` und `Description` Eigenschaften vom Typ `string`und eine `Position` Eigenschaft vom Typ [`Position`](xref:Xamarin.Forms.Maps.Position).
 
 Die Darstellung der einzelnen Elemente in der `IEnumerable` Auflistung wird definiert, indem die [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) -Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt wird, die ein [`Pin`](xref:Xamarin.Forms.Maps.Pin) Objekt enthält, das von Daten an die entsprechenden Eigenschaften gebunden wird.
 
@@ -225,6 +225,7 @@ Die Darstellung der einzelnen Elemente in der `IEnumerable` Auflistung kann zur 
             </local:MapItemTemplateSelector.DefaultTemplate>
             <local:MapItemTemplateSelector.XamarinTemplate>
                 <DataTemplate>
+                    <!-- Change the property values, or the properties that are bound to. -->
                     <maps:Pin Position="{Binding Position}"
                               Address="{Binding Address}"
                               Label="Xamarin!" />
@@ -258,7 +259,10 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-Die `MapItemTemplateSelector`-Klasse definiert `DefaultTemplate` und `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Eigenschaften, die auf unterschiedliche Datenvorlagen festgelegt sind. Die `OnSelectTemplate`-Methode gibt die `XamarinTemplate` zurück, die "xamarin" als Bezeichnung anzeigt, wenn ein `Pin` getippt wird, wenn das Element über eine Adresse verfügt, die "San Francisco" enthält. Wenn das Element nicht über eine Adresse verfügt, die "San Francisco" enthält, gibt die `OnSelectTemplate`-Methode die `DefaultTemplate` zurück.
+Die `MapItemTemplateSelector`-Klasse definiert `DefaultTemplate` und `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Eigenschaften, die auf unterschiedliche Datenvorlagen festgelegt sind. Die `OnSelectTemplate`-Methode gibt die `XamarinTemplate`zurück, die "xamarin" als Bezeichnung anzeigt, wenn ein `Pin` getippt wird, wenn das Element über eine Adresse verfügt, die "San Francisco" enthält. Wenn das Element nicht über eine Adresse verfügt, die "San Francisco" enthält, gibt die `OnSelectTemplate`-Methode die `DefaultTemplate`zurück.
+
+> [!NOTE]
+> Ein Anwendungsfall für diese Funktion ist das Binden von Eigenschaften von untergeordneten [`Pin`](xref:Xamarin.Forms.Maps.Pin) Objekten an verschiedene Eigenschaften, basierend auf dem `Pin` Untertyp.
 
 Weitere Informationen zu Datenvorlagen-Selektoren finden Sie unter [Erstellen eines xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 

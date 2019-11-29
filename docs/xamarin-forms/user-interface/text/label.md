@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/28/2019
-ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
-ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
+ms.openlocfilehash: d47146c90635084a4974cfa0c7dcb142ac918788
+ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980872"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74556181"
 ---
 # <a name="xamarinforms-label"></a>Xamarin. Forms-Bezeichnung
 
@@ -76,7 +76,7 @@ Bezeichnungen können so festgelegt werden, dass eine benutzerdefinierte Textfar
 
 Eine besondere Sorgfalt ist erforderlich, um sicherzustellen, dass Farben auf jeder Plattform verwendet werden können. Da jede Plattform über andere Standardwerte für Text-und Hintergrundfarben verfügt, müssen Sie darauf achten, einen Standardwert auszuwählen, der für jede Plattform geeignet ist.
 
-Im folgenden XAML-Beispiel wird die Textfarbe einer `Label` festgelegt:
+Im folgenden XAML-Beispiel wird die Textfarbe einer `Label`festgelegt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -114,7 +114,7 @@ Weitere Informationen zu Farben finden Sie unter [Farben](~/xamarin-forms/user-i
 
 ## <a name="fonts"></a>Schriftarten
 
-Weitere Informationen zum Angeben von Schriftarten für eine `Label` finden Sie unter [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md).
+Weitere Informationen zum Angeben von Schriftarten für eine `Label`finden Sie unter [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md).
 
 <a name="Truncation_and_Wrapping" />
 
@@ -133,8 +133,9 @@ Bezeichnungen können so festgelegt werden, dass Sie Text verarbeiten können, d
 
 Die Anzahl der Zeilen, die von einem [`Label`](xref:Xamarin.Forms.Label) angezeigt werden, kann durch Festlegen der `Label.MaxLines`-Eigenschaft auf einen `int` Wert angegeben werden:
 
-- Wenn `MaxLines` 0 ist, respektiert der `Label` den Wert der [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) -Eigenschaft, um entweder nur eine Zeile, möglicherweise abgeschnitten oder alle Zeilen mit dem gesamten Text anzuzeigen.
-- Wenn `MaxLines` 1 ist, ist das Ergebnis mit dem Festlegen der Eigenschaft [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) auf [`NoWrap`](xref:Xamarin.Forms.LineBreakMode), [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode), [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode)oder [0](xref:Xamarin.Forms.LineBreakMode)identisch. Allerdings berücksichtigt der `Label` den Wert der Eigenschaft [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) hinsichtlich der Platzierung eines Auslassungs Zeichen, falls zutreffend.
+- Wenn `MaxLines`-1 ist, d. h. der Standardwert, berücksichtigt die `Label` den Wert der [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) -Eigenschaft, um entweder nur eine Zeile, möglicherweise abgeschnitten oder alle Zeilen mit dem gesamten Text anzuzeigen.
+- Wenn `MaxLines` 0 ist, wird der `Label` nicht angezeigt.
+- Wenn `MaxLines` 1 ist, ist das Ergebnis mit dem Festlegen der Eigenschaft [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) auf [`NoWrap`](xref:Xamarin.Forms.LineBreakMode), [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode), [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode)oder [`TailTruncation`](xref:Xamarin.Forms.LineBreakMode)identisch. Allerdings berücksichtigt der `Label` den Wert der Eigenschaft [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) hinsichtlich der Platzierung eines Auslassungs Zeichen, falls zutreffend.
 - Wenn `MaxLines` größer als 1 ist, wird der `Label` bis zu der angegebenen Anzahl von Zeilen angezeigt. dabei wird der Wert der [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) -Eigenschaft in Bezug auf die Platzierung der Auslassungs Punkte, falls zutreffend, berücksichtigt. Das Festlegen der `MaxLines`-Eigenschaft auf einen Wert größer als 1 hat jedoch keine Auswirkung, wenn die [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) -Eigenschaft auf [`NoWrap`](xref:Xamarin.Forms.LineBreakMode)festgelegt ist.
 
 Das folgende XAML-Beispiel veranschaulicht das Festlegen der `MaxLines`-Eigenschaft für ein [`Label`](xref:Xamarin.Forms.Label):
@@ -166,7 +167,7 @@ Die [`Label`](xref:Xamarin.Forms.Label) -Klasse verfügt über eine `TextType`-E
 - `Text` gibt an, dass der `Label` nur-Text anzeigt, und ist der Standardwert der `Label.TextType`-Eigenschaft.
 - `Html` gibt an, dass die `Label` HTML-Text anzeigen wird.
 
-Daher können [`Label`](xref:Xamarin.Forms.Label) Instanzen HTML-Code anzeigen, indem Sie die `Label.TextType`-Eigenschaft auf `Html` und die `Label.Text`-Eigenschaft auf eine HTML-Zeichenfolge festlegen:
+Daher können [`Label`](xref:Xamarin.Forms.Label) Instanzen HTML-Code anzeigen, indem Sie die `Label.TextType`-Eigenschaft auf `Html`und die `Label.Text`-Eigenschaft auf eine HTML-Zeichenfolge festlegen:
 
 ```csharp
 Label label = new Label
@@ -215,7 +216,7 @@ Bezeichnungen machen eine [`FormattedText`](xref:Xamarin.Forms.Label.FormattedTe
 Die `FormattedText`-Eigenschaft ist vom Typ [`FormattedString`](xref:Xamarin.Forms.FormattedString), der eine oder mehrere [`Span`](xref:Xamarin.Forms.Span) Instanzen umfasst, die über die [`Spans`](xref:Xamarin.Forms.FormattedString.Spans) -Eigenschaft festgelegt werden. Die folgenden `Span` Eigenschaften können verwendet werden, um die visuelle Darstellung festzulegen:
 
 - [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) – die Farbe des spannen Hintergrunds.
-- `CharacterSpacing` vom Typ `double` ist der Abstand zwischen den Zeichen des `Span` Texts.
+- `CharacterSpacing` vom Typ `double`: Abstand zwischen den Zeichen des `Span`-Texts.
 - [`Font`](xref:Xamarin.Forms.Span.Font) – die Schriftart für den Text in der Spanne.
 - [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) – die Schriftart Attribute für den Text in der Spanne.
 - [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) – die Schriftfamilie, zu der die Schriftart für den Text in der Spanne gehört.
@@ -405,15 +406,14 @@ Label label = new Label
 
 Weitere Informationen zum Auffüllen finden Sie unter [Ränder und Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-
 ## <a name="hyperlinks"></a>Links
 
 Der von [`Label`](xref:Xamarin.Forms.Label) -und [`Span`](xref:Xamarin.Forms.Span) Instanzen angezeigte Text kann mit folgendem Ansatz in Hyperlinks umgewandelt werden:
 
 1. Legen Sie die Eigenschaften `TextColor` und `TextDecoration` der [`Label`](xref:Xamarin.Forms.Label) oder [`Span`](xref:Xamarin.Forms.Span)fest.
-1. Fügen Sie der [`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers) Auflistung der [`Label`](xref:Xamarin.Forms.Label) oder [`Span`](xref:Xamarin.Forms.Span)ein [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) hinzu, dessen [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command) -Eigenschaft an einen 0 gebunden ist und dessen [2](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) -Eigenschaft die zu öffnende URL enthält.
+1. Fügen Sie der [`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers) Auflistung der [`Label`](xref:Xamarin.Forms.Label) oder [`Span`](xref:Xamarin.Forms.Span)ein [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) hinzu, dessen [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command) -Eigenschaft an einen `ICommand`gebunden ist und dessen [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) -Eigenschaft die zu öffnende URL enthält.
 1. Definieren Sie die `ICommand`, die vom [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)ausgeführt wird.
-1. Schreiben Sie den Code, der vom `ICommand` ausgeführt wird.
+1. Schreiben Sie den Code, der vom `ICommand`ausgeführt wird.
 
 Das folgende Codebeispiel stammt aus dem Beispiel für [Hyperlink-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/) und zeigt eine [`Label`](xref:Xamarin.Forms.Label) , deren Inhalt aus mehreren [`Span`](xref:Xamarin.Forms.Span) Instanzen festgelegt ist:
 
