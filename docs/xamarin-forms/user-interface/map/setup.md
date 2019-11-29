@@ -50,7 +50,7 @@ Nachdem das nuget-Paket hinzugefügt wurde und die Initialisierungs Methode in j
 
 ## <a name="platform-configuration"></a>Platt Form Konfiguration
 
-Für Android und die universelle Windows-Plattform (UWP) ist eine zusätzliche Konfiguration erforderlich, bevor die Karte angezeigt wird. Außerdem erfordert das Zugreifen auf den Speicherort des Benutzers unter IOS, Android und UWP das Erteilen von Standort Berechtigungen für die Anwendung.
+Für Android und die universelle Windows-Plattform (UWP) ist eine zusätzliche Konfiguration erforderlich, bevor die Karte angezeigt wird. Außerdem erfordert das Zugreifen auf den Standort des Benutzers unter iOS, Android und UWP das Erteilen von Standortberechtigungen für die Anwendung.
 
 ### <a name="ios"></a>iOS
 
@@ -144,7 +144,7 @@ Wenn Ihre Anwendung auf API 22 oder niedriger abzielt, kann es erforderlich sein
 
 Dies ist nicht erforderlich, wenn Ihre Anwendung auf API 23 oder höher ausgerichtet ist.
 
-#### <a name="specify-location-permissions"></a>Speicherort Berechtigungen angeben
+#### <a name="specify-location-permissions"></a>Standortberechtigungen angeben
 
 Wenn die Anwendung auf den Speicherort des Benutzers zugreifen muss, müssen Sie die Berechtigung anfordern, indem Sie dem Manifest (oder beiden) die Berechtigungen `ACCESS_COARSE_LOCATION` oder `ACCESS_FINE_LOCATION` als untergeordnetes Element des Elements `<manifest>` hinzufügen:
 
