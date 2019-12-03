@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: f6d255e9af64d316ac76eab92a73cc1c90b82956
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 659545431a490f50224de3e7728b4d4d0c111d64
+ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019551"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74681326"
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
@@ -35,6 +35,6 @@ Dieses Handbuch bietet Problem Umgehungen für einige häufige Fehler, die beim 
 
 Beginnend mit der 26.0.1 des Android SDK Tools hat Google die vorhandenen AVD-und SDK-Manager aus neuen Befehlszeilen Tools entfernt.
 
-## <a name="xamarinandroid-errors-referenceandroidtroubleshootingerrorsmd"></a>[Xamarin.Android-Fehlerreferenz](~/android/troubleshooting/errors.md)
+## <a name="xamarinandroid-errors-referencexamarinandroiderrors-and-warnings"></a>[Xamarin.Android-Fehlerreferenz](/xamarin/android/errors-and-warnings/)
 
-Ein Fehler Referenzhandbuch, in dem die häufigsten Fehler angezeigt werden, die bei der Verwendung von xamarin. Android in Xamarin Studio auftreten können.
+Ein Fehler Referenzhandbuch, in dem die häufigsten Fehler angezeigt werden, die bei der Verwendung von xamarin. Android in Visual Studio auftreten können.

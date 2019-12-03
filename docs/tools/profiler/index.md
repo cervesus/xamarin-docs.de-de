@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: 330d41ea795754388402fbb7c660ba8d77f1aa4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8927e7b2a1b194d1bfab334736c3d024f0542b01
+ms.sourcegitcommit: 60e955ce65194ffea987409157ccc7d5db87c2ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019407"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690209"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -34,8 +34,8 @@ Bei der Xamarin Profiler handelt es sich um eine eigenständige Anwendung, die i
 
 Laden Sie das Installationspaket für Ihre Plattform herunter:
 
-- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
-- [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
+- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac-1.6.10-15.pkg)
+- [**Windows**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
 
 Starten Sie nach dem herunterladen das Installationsprogramm, um dem System die Xamarin Profiler hinzuzufügen.
 
@@ -96,7 +96,7 @@ In diesem Abschnitt werden die Teile des Xamarin Profiler vorgestellt und die zu
 
 Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerstellung in den Projektoptionen der App zulassen.
 
-- erhältlich
+- iOS:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -112,7 +112,7 @@ Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerst
 
 -----
 
-- Erhältlich
+- Android:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -222,11 +222,11 @@ Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entw
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-  [Registerkarte![Belegungen](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [Registerkarte ![Belegungen](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [Registerkarte![Belegungen](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [Registerkarte ![Belegungen](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -312,11 +312,11 @@ Wenn Sie ein Profil für eine APP mit einer anderen Konfiguration erstellen, wir
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-[Dialog Feld "Fehler beim![](images/image001.png)](images/image001.png#lightbox) 
+[Dialog Feld "Fehler beim ![](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[Dialog Feld "Fehler beim![](images/image1vs.png)](images/image1vs.png#lightbox) 
+[Dialog Feld "Fehler beim ![](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 
@@ -334,11 +334,11 @@ Obwohl Sie mit einem Meldungs Dialogfeld aufgefordert werden, wenn Ihre APP den 
 
 Weitere Informationen zur Speicherverwaltung finden Sie im Handbuch mit [bewährten Methoden für Arbeitsspeicher und Leistung](~/cross-platform/deploy-test/memory-perf-best-practices.md) .
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In dieser Anleitung haben wir uns mit der Profilerstellung und der Vorteile des Entwicklers beschäftigt. Anschließend haben wir die Xamarin Profiler eingeführt und einige Verlaufs Informationen und Informationen zur Funktionsweise bereitgestellt. Schließlich haben wir die Features der Xamarin Profiler besucht und die Zuordnungen und die Zeit der Profiler-Instrumente untersucht.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Bewährte Methoden für Arbeitsspeicher und Leistung](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [Anmerkungen zu dieser Version](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/profiler/preview/index.md)
+- [Versionshinweise](/xamarin/tools/profiler/release-notes/)
