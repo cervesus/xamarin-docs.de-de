@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: d120b9420061ac0c3c4e2ccda3021320d29a547d
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: c73144f797447832d795c1379f12a52494c1fbca
+ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629601"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74536520"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
 
@@ -68,7 +68,7 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar, das jedem vorhandenen oder ne
     Um Laufzeitberechtigungen auf Android zu verwalten, muss Xamarin.Essentials `OnRequestPermissionsResult` erhalten. Fügen Sie allen `Activity`-Klassen den folgenden Code hinzu:
 
     ```csharp
-    public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+    public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
     {
         Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
