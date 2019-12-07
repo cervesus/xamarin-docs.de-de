@@ -7,16 +7,14 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 020b8208dfbfd7594d152a7b6e32f7e41f974c2f
-ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
+ms.openlocfilehash: 0f3ff5357d3fb4c60a910dda6befa8c699c6fc07
+ms.sourcegitcommit: 5f7749d6ba1db79aa0fbf4ee7c90f2dcd4de812b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303257"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884123"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>XAML-Hot-Upload für xamarin. Forms (Vorschau)
-
-![Feature der Vorschauversion](~/media/shared/preview.png)
 
 XAML Hot Upload wird in Ihren vorhandenen Workflow integriert, um Ihre Produktivität zu steigern und Zeit zu sparen. Ohne das erneute Laden von XAML müssen Sie die APP jedes Mal erstellen und bereitstellen, wenn Sie eine XAML-Änderung sehen möchten. Wenn Sie beim Laden der XAML-Datei die XAML-Datei speichern, werden die Änderungen in der laufenden app Live übernommen. Außerdem werden der Navigations Zustand und die Daten beibehalten, sodass Sie Ihre Benutzeroberfläche schnell durchlaufen können, ohne Ihre Position in der APP zu verlieren. Mit XAML Hot Neuladen verbringen Sie daher weniger Zeit mit der Neuerstellung und Bereitstellung Ihrer Apps, um Änderungen an der Benutzeroberfläche zu überprüfen.
 
@@ -27,8 +25,8 @@ XAML Hot Upload wird in Ihren vorhandenen Workflow integriert, um Ihre Produktiv
 
 | IDE/Framework | Erforderliche Version |
 |------|------------------|
-|Visual Studio 2019 | 16,3 oder höher
-Visual Studio 2019 für Mac | 8,3 oder höher
+|Visual Studio 2019 | 16,4 oder höher
+Visual Studio 2019 für Mac | 8,4 oder höher
 Xamarin.Forms | 4,1 oder höher
 
 ## <a name="use-xaml-hot-reload-for-xamarinforms"></a>Verwenden von XAML-Hot-Neuladen für xamarin. Forms
@@ -47,7 +45,7 @@ Wenn Sie eine Änderung vornehmen, dass das Laden von XAML-Hot nicht erneut gela
 
 - Sie können während einer XAML-Sitzung zum aktiven erneuten Laden keine Dateien oder nuget-Pakete hinzufügen, entfernen oder umbenennen. Wenn Sie eine Datei oder ein nuget-Paket hinzufügen oder entfernen, erstellen Sie Ihre APP erneut, und stellen Sie Sie erneut bereit.
 - Legen Sie den Linker auf **keine Verknüpfung** fest, um eine optimale Leistung zu erzielen. Die Einstellung **Link SDK only** funktioniert meistens, kann jedoch in bestimmten Fällen fehlschlagen.
-- Das Debuggen auf einem physischen iPhone erfordert, dass der Interpreter XAML-Hot-Neuladen verwendet. Fügen Sie **--Interpreter** zum Feld **zusätzliche mberührungs-Argumente** in ihren IOS-Buildeinstellungen hinzu, um XAML Hot Neuladen zu verwenden.
+- Das Debuggen auf einem physischen iPhone erfordert, dass der Interpreter XAML-Hot-Neuladen verwendet. Öffnen Sie hierzu die Projekteinstellungen, wählen Sie die Registerkarte IOS-Build aus, und vergewissern Sie sich, dass **die Einstellung Mono-Interpreter aktivieren** aktiviert ist. Möglicherweise müssen Sie die **Platt Form** Option oben auf der Eigenschaften Seite in **iPhone**ändern.
 - Alle Verweise, `x:Name` die durch Zuweisen eines Steuer Elements zu einem anderen Feld oder einer Eigenschaft erstellt werden
 - Das Aktualisieren der visuellen Hierarchie Ihrer Shell-Anwendung in **appshell. XAML** kann Probleme beim Verwalten des Zustands der Anwendung verursachen. Erstellen Sie die APP neu, damit Sie erneut geladen wird.
 - Beim erneuten Laden von XAML C# kann Code nicht neu geladen werden, einschließlich Ereignis Handlern, benutzerdefinierte Steuerelemente, Seitencode Behind und zusätzliche Klassen.
@@ -63,6 +61,6 @@ Wenn Sie Teil der privaten Vorschau sind, wird die XAML-Erweiterung zum erneuten
   - Stellen Sie sicher, dass Sie über die neueste Version der IDE verfügen.
   - Legen Sie die Einstellungen für den Android-oder IOS-Linker auf **keine Verknüpfung** in den Buildeinstellungen des Projekts fest.
 - Wenn beim Speichern der XAML-Datei nichts passiert, stellen Sie sicher, dass das heiße laden in der IDE aktiviert ist.
-- Wenn Sie auf einem physischen iPhone Debuggen und Ihre APP nicht mehr reagiert, überprüfen Sie, ob der Interpreter aktiviert ist. Um dies zu aktivieren, fügen Sie **--Interpreter** in den IOS-Buildeinstellungen zum Feld **zusätzliches mberührungs-Argument** hinzu.
+- Wenn Sie auf einem physischen iPhone Debuggen und Ihre APP nicht mehr reagiert, überprüfen Sie, ob der Interpreter aktiviert ist. Um es zu aktivieren, öffnen Sie die Projekteinstellungen, wählen Sie die Registerkarte IOS-Build aus, und aktivieren Sie die Einstellung **Mono-Interpreter aktivieren** .
 
 Um einen Fehler zu melden, verwenden Sie das Feedback Tool in der **Hilfe** > Senden von Feedback > **melden Sie ein Problem** Menü unter Windows, **und > ** melden **Sie** **ein problemmenü** auf einem Mac.
