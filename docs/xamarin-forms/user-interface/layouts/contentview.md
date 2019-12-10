@@ -7,63 +7,63 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 86e92ee5293b4c9ed902f1c8d9858e06db1aa458
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 69f3311834fd438af97b3d2fa527572f02d2b0cb
+ms.sourcegitcommit: fa2898d95b35fcee05503f3829351ba5a7d4a44d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065511"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955078"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms-contentview
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
-Die xamarin. Forms [`ContentView`](xref:Xamarin.Forms.ContentView) -Klasse ist ein Typ `Layout` von, der ein einzelnes untergeordnetes Element enthält und normalerweise verwendet wird, um benutzerdefinierte, wiederverwendbare Steuerelemente zu erstellen. Die `ContentView` Klasse erbt von [`TemplatedView`](xref:Xamarin.Forms.TemplatedView). In diesem Artikel und dem zugehörigen Beispiel wird erläutert, wie ein Benutzer `CardView` definiertes Steuerelement `ContentView` auf Grundlage der-Klasse erstellt wird.
+Die xamarin. Forms [`ContentView`](xref:Xamarin.Forms.ContentView) -Klasse ist ein `Layout`, der ein einzelnes untergeordnetes Element enthält und in der Regel verwendet wird, um benutzerdefinierte, wiederverwendbare Steuerelemente zu erstellen. Die `ContentView`-Klasse erbt von [`TemplatedView`](xref:Xamarin.Forms.TemplatedView). In diesem Artikel und dem zugehörigen Beispiel wird erläutert, wie ein benutzerdefiniertes `CardView`-Steuerelement auf Grundlage der `ContentView`-Klasse erstellt wird.
 
-Der folgende Screenshot zeigt ein `CardView` Steuerelement, das von `ContentView` der-Klasse abgeleitet ist:
+Der folgende Screenshot zeigt ein `CardView` Steuerelement, das von der `ContentView`-Klasse abgeleitet wird:
 
-[![Bildschirm Abbildung der CardView-Beispielanwendung](contentview-images/cardview-list-cropped.png)](contentview-images/cardview-list.png#lightbox)
+[Bildschirm Abbildung der ![CardView-Beispielanwendung](contentview-images/cardview-list-cropped.png)](contentview-images/cardview-list.png#lightbox)
 
-Die `ContentView` -Klasse definiert eine einzelne Eigenschaft:
+Die `ContentView`-Klasse definiert eine einzelne Eigenschaft:
 
-* [`Content`](xref:Xamarin.Forms.ContentView.Content)ist ein `View` -Objekt. Diese Eigenschaft wird von einem [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekt unterstützt, sodass Sie das Ziel von Daten Bindungen sein kann.
+* [`Content`](xref:Xamarin.Forms.ContentView.Content) ist ein `View` Objekt. Diese Eigenschaft wird durch ein [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekt gestützt, sodass es das Ziel von Daten Bindungen sein kann.
 
-Die `ContentView` erbt auch eine-Eigenschaft von `TemplatedView` der-Klasse:
+Der `ContentView` erbt auch eine Eigenschaft von der `TemplatedView`-Klasse:
 
-* [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate)ist ein `ControlTemplate` , mit dem die Darstellung des Steuer Elements definiert oder überschrieben werden kann.
+* [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) ist ein `ControlTemplate`, mit dem die Darstellung des Steuer Elements definiert oder überschrieben werden kann.
 
-Weitere Informationen zur-Eigenschaft `ControlTemplate` finden Sie unter [Anpassen der Darstellung mit einer ControlTemplate](#customize-appearance-with-a-controltemplate).
+Weitere Informationen zur `ControlTemplate`-Eigenschaft finden Sie unter [Anpassen der Darstellung mit einer ControlTemplate](#customize-appearance-with-a-controltemplate).
 
 ## <a name="create-a-custom-control"></a>Erstellen eines benutzerdefinierten Steuer Elements
 
-Die `ContentView` -Klasse bietet nur wenige Funktionen, kann jedoch verwendet werden, um ein benutzerdefiniertes Steuerelement zu erstellen. Das Beispiel Projekt definiert ein `CardView` Steuerelement-ein UI-Element, das ein Bild, einen Titel und eine Beschreibung in einem Karten ähnlichen Layout anzeigt.
+Die `ContentView`-Klasse bietet nur wenige Funktionen, kann jedoch verwendet werden, um ein benutzerdefiniertes Steuerelement zu erstellen. Das Beispiel Projekt definiert ein `CardView`-Steuerelement, ein Benutzeroberflächen Element, das ein Bild, einen Titel und eine Beschreibung in einem Karten ähnlichen Layout anzeigt.
 
 Der Prozess zum Erstellen eines benutzerdefinierten Steuer Elements lautet:
 
-1. Erstellen Sie eine neue Klasse mithilfe `ContentView` der Vorlage in Visual Studio 2019.
+1. Erstellen Sie eine neue Klasse mithilfe der `ContentView` Vorlage in Visual Studio 2019.
 1. Definieren Sie eindeutige Eigenschaften oder Ereignisse in der Code-Behind-Datei für das neue benutzerdefinierte Steuerelement.
 1. Erstellen Sie die Benutzeroberfläche für das benutzerdefinierte Steuerelement.
 
 > [!NOTE]
-> Es ist möglich, ein benutzerdefiniertes Steuerelement zu erstellen, dessen Layout im Code anstelle von XAML definiert ist. Der Einfachheit halber definiert die Beispielanwendung nur eine einzelne `CardView` Klasse mit einem XAML-Layout. Die Beispielanwendung enthält jedoch eine **cardviewcodepage** -Klasse, die den Prozess der Verwendung des benutzerdefinierten Steuer Elements im Code anzeigt.
+> Es ist möglich, ein benutzerdefiniertes Steuerelement zu erstellen, dessen Layout im Code anstelle von XAML definiert ist. Der Einfachheit halber definiert die Beispielanwendung nur eine einzige `CardView`-Klasse mit einem XAML-Layout. Die Beispielanwendung enthält jedoch eine **cardviewcodepage** -Klasse, die den Prozess der Verwendung des benutzerdefinierten Steuer Elements im Code anzeigt.
 
 ### <a name="create-code-behind-properties"></a>Code Behind-Eigenschaften erstellen
 
-Das `CardView` benutzerdefinierte Steuerelement definiert die folgenden Eigenschaften:
+Das benutzerdefinierte Steuerelement `CardView` definiert die folgenden Eigenschaften:
 
-* `CardTitle`: ein `string` -Objekt, das den auf der Karte angezeigten Titel darstellt.
-* `CardDescription`: ein `string` -Objekt, das die auf der Karte angezeigte Beschreibung darstellt.
+* `CardTitle`: ein `string` Objekt, das den auf der Karte angezeigten Titel darstellt.
+* `CardDescription`: ein `string` Objekt, das die auf der Karte angezeigte Beschreibung darstellt.
 * `IconImageSource`: ein `ImageSource` Objekt, das das Bild darstellt, das auf der Karte angezeigt wird.
-* `IconBackgroundColor`: ein `Color` -Objekt, das die Hintergrundfarbe für das Bild darstellt, das auf der Karte angezeigt wird.
-* `BorderColor`: ein `Color` -Objekt, das die Farbe des Karten Rahmens, des Bildrands und der Trennlinie darstellt.
-* `CardColor`: ein `Color` -Objekt, das die Hintergrundfarbe der Karte darstellt.
+* `IconBackgroundColor`: ein `Color` Objekt, das die Hintergrundfarbe für das Bild darstellt, das auf der Karte angezeigt wird.
+* `BorderColor`: ein `Color` Objekt, das die Farbe des Karten Rahmens, des Bildrands und der Trennlinie darstellt.
+* `CardColor`: ein `Color`-Objekt, das die Hintergrundfarbe der Karte darstellt.
 
 > [!NOTE]
-> Die `BorderColor` -Eigenschaft wirkt sich auf mehrere-Elemente aus, um Sie zu demonstrieren. Diese Eigenschaft könnte bei Bedarf in drei Eigenschaften aufgeteilt werden.
+> Die `BorderColor`-Eigenschaft wirkt sich auf mehrere Elemente aus, die für die Demonstration verwendet werden. Diese Eigenschaft könnte bei Bedarf in drei Eigenschaften aufgeteilt werden.
 
-Jede Eigenschaft wird von einer `BindableProperty` -Instanz unterstützt. Durch die `BindableProperty` Unterstützung kann jede Eigenschaft mithilfe des MVVM-Musters formatiert und gebunden werden.
+Jede Eigenschaft wird durch eine `BindableProperty` Instanz unterstützt. Der Unterstützungs `BindableProperty` ermöglicht das Formatierungs-und Bindungsverhalten der einzelnen Eigenschaften mithilfe des MVVM-Musters.
 
-Im folgenden Beispiel wird gezeigt, wie Sie eine `BindableProperty`Sicherung erstellen:
+Im folgenden Beispiel wird gezeigt, wie ein Sicherungs `BindableProperty`erstellt wird:
 
 ```csharp
 public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(
@@ -73,7 +73,7 @@ public static readonly BindableProperty CardTitleProperty = BindableProperty.Cre
     string.Empty);      // the default value for the property
 ```
 
-Die benutzerdefinierte Eigenschaft verwendet `GetValue` die `SetValue` -und-Methoden, um `BindableProperty` die Objektwerte zu erhalten und festzulegen:
+Die benutzerdefinierte Eigenschaft verwendet die Methoden `GetValue` und `SetValue`, um die `BindableProperty` Objektwerte zu erhalten und festzulegen:
 
 ```csharp
 public string CardTitle
@@ -87,7 +87,7 @@ Weitere Informationen zu `BindableProperty` Objekten finden Sie unter [bindbare 
 
 ### <a name="define-ui"></a>Definieren der Benutzeroberfläche
 
-Die benutzerdefinierte Steuerelement- `ContentView` Benutzeroberfläche verwendet einen als Stamm `CardView` Element für das-Steuerelement. Das folgende Beispiel zeigt das `CardView` XAML:
+Die benutzerdefinierte Steuerelement-Benutzeroberfläche verwendet eine `ContentView` als Stamm Element für das `CardView`-Steuerelement. Das folgende Beispiel zeigt die `CardView` XAML:
 
 ```XAML
 <ContentView ...
@@ -99,37 +99,40 @@ Die benutzerdefinierte Steuerelement- `ContentView` Benutzeroberfläche verwende
             ...>
         <Grid>
             ...
-            <Frame BorderColor="{Binding BorderColor}"
-                   BackgroundColor="{Binding IconBackgroundColor}"
+            <Frame BorderColor="{Binding BorderColor, FallbackValue='Black'}"
+                   BackgroundColor="{Binding IconBackgroundColor, FallbackValue='Grey'}"
                    ...>
                 <Image Source="{Binding IconImageSource}"
                        .. />
             </Frame>
-            <Label Text="{Binding CardTitle}"
+            <Label Text="{Binding CardTitle, FallbackValue='Card Title'}"
                    ... />
-            <BoxView BackgroundColor="{Binding BorderColor}"
+            <BoxView BackgroundColor="{Binding BorderColor, FallbackValue='Black'}"
                      ... />
-            <Label Text="{Binding CardDescription}"
+            <Label Text="{Binding CardDescription, FallbackValue='Card description text.'}"
                    ... />
         </Grid>
     </Frame>
 </ContentView>
 ```
 
-Das `ContentView` -Element legt `x:Name` die-Eigenschaft auf **diese**fest, die verwendet werden kann, um auf das `CardView` Objekt zuzugreifen, das an die Instanz gebunden ist. Elemente im Layout legen Bindungen an ihren Eigenschaften auf Werte fest, die für das gebundene Objekt definiert sind.
+Das `ContentView`-Element legt die `x:Name`-Eigenschaft auf **diese**fest, die verwendet werden kann, um auf das Objekt zuzugreifen, das an die `CardView` Instanz gebunden ist. Elemente im Layout legen Bindungen an ihren Eigenschaften auf Werte fest, die für das gebundene Objekt definiert sind.
 
 Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
+> [!NOTE]
+> Die `FallbackValue`-Eigenschaft stellt einen Standardwert für den Fall bereit, dass die Bindung `null`ist. Dadurch kann der [XAML-Previewer](~/xamarin-forms/xaml/xaml-previewer/index.md) in Visual Studio auch das `CardView` Steuerelement Rendering.
+
 ## <a name="instantiate-a-custom-control"></a>Instanziieren eines benutzerdefinierten Steuer Elements
 
-Ein Verweis auf den Namespace des benutzerdefinierten Steuer Elements muss einer Seite hinzugefügt werden, die das benutzerdefinierte Steuerelement instanziiert. Das folgende Beispiel zeigt einen Namespace Verweis namens Steuer **Elemente** , die `ContentPage` einer-Instanz in XAML hinzugefügt werden:
+Ein Verweis auf den Namespace des benutzerdefinierten Steuer Elements muss einer Seite hinzugefügt werden, die das benutzerdefinierte Steuerelement instanziiert. Das folgende Beispiel zeigt einen Namespace Verweis namens Steuer **Elemente** , die einer `ContentPage`-Instanz in XAML hinzugefügt wurden:
 
 ```xaml
 <ContentPage ...
              xmlns:controls="clr-namespace:CardViewDemo.Controls" >
 ```
 
-Nachdem der Verweis hinzugefügt `CardView` wurde, kann in XAML instanziiert und seine Eigenschaften definiert werden:
+Nachdem der Verweis hinzugefügt wurde, kann der `CardView` in XAML instanziiert und seine Eigenschaften definiert werden:
 
 ```xaml
 <controls:CardView BorderColor="DarkGray"
@@ -154,9 +157,9 @@ CardView card = new CardView
 
 ## <a name="customize-appearance-with-a-controltemplate"></a>Anpassen des Erscheinungs Bilds mit einer ControlTemplate
 
-Ein benutzerdefiniertes Steuerelement, `ContentView` das von der-Klasse abgeleitet wird, kann die Darstellung mithilfe von XAML oder Code definieren, oder es kann überhaupt keine Darstellung definieren. Unabhängig davon, wie das Erscheinungsbild definiert `ControlTemplate` ist, kann ein-Objekt die Darstellung mit einem benutzerdefinierten Layout überschreiben.
+Ein benutzerdefiniertes Steuerelement, das von der `ContentView`-Klasse abgeleitet wird, kann die Darstellung mithilfe von XAML oder Code definieren, oder es kann überhaupt keine Darstellung definieren. Unabhängig davon, wie das Erscheinungsbild definiert ist, kann ein `ControlTemplate` Objekt die Darstellung mit einem benutzerdefinierten Layout überschreiben.
 
-Das `CardView` Layout kann für einige Anwendungsfälle zu viel Speicherplatz belegen. Ein `ControlTemplate` kann das Layout `CardView` überschreiben, um eine kompaktere Ansicht bereitzustellen, die für eine komprimierte Liste geeignet ist:
+Das `CardView` Layout kann für einige Anwendungsfälle zu viel Speicherplatz belegen. Eine `ControlTemplate` kann das `CardView` Layout überschreiben, um eine kompaktere Ansicht bereitzustellen, die für eine komprimierte Liste geeignet ist:
 
 ```xaml
 <ContentPage.Resources>
@@ -191,21 +194,21 @@ Das `CardView` Layout kann für einige Anwendungsfälle zu viel Speicherplatz be
 </ContentPage.Resources>
 ```
 
-Die Datenbindung in `ControlTemplate` einem verwendet `TemplateBinding` die Markup Erweiterung zum Angeben von Bindungen. Die `ControlTemplate` -Eigenschaft kann dann mithilfe Ihres `x:Key` Werts auf das definierte ControlTemplate-Objekt festgelegt werden. Im folgenden Beispiel wird die `ControlTemplate` -Eigenschaft auf einer `CardView` -Instanz festgelegt:
+Die Datenbindung in einem `ControlTemplate` verwendet die `TemplateBinding` Markup Erweiterung zum Angeben von Bindungen. Die `ControlTemplate`-Eigenschaft kann dann mithilfe Ihres `x:Key` Werts auf das definierte ControlTemplate-Objekt festgelegt werden. Das folgende Beispiel zeigt die `ControlTemplate`-Eigenschaft, die für eine `CardView` Instanz festgelegt wurde:
 
 ```xaml
 <controls:CardView ControlTemplate="{StaticResource CardViewCompressed}"/>
 ```
 
-Die folgenden Screenshots zeigen eine Standard `CardView` `CardView` Instanz, deren `ControlTemplate` überschrieben wurde:
+Die folgenden Screenshots zeigen eine Standard `CardView` Instanz und `CardView`, deren `ControlTemplate` überschrieben wurde:
 
-[![Bildschirm Abbildung von CardView ControlTemplate](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
+[Bildschirm Abbildung von ![CardView ControlTemplate](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
-Weitere Informationen zu Steuerelement Vorlagen finden Sie unter [xamarin. Forms-Steuerelement Vorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md).
+Weitere Informationen zu Steuerelementvorlagen finden Sie unter [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
 * [Contentview-Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin. Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [Bindbare Eigenschaften](~/xamarin-forms/xaml/bindable-properties.md).
-* [Xamarin. Forms-Steuerelement Vorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
+* [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
