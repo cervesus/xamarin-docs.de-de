@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 8b84d959ce7976fc51cbdfee99cbceec560e8e8e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6b2753b0f1a7389d62866e5c8003b439a283e5b5
+ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022429"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74536516"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Einführung in C# für Objective-C-Entwickler
 
 _Xamarin.iOS ermöglicht, in C# geschriebenen plattformunabhängigen Code auf verschiedenen Plattformen gemeinsam zu nutzen. Bestehende iOS-Anwendungen möchten jedoch möglicherweise bereits erstellten Objective-C-Code nutzen. Dieser Artikel dient als kurze Einführung für Objective-C-Entwickler, die zu Xamarin und zur Sprache C# wechseln möchten._
 
-iOS- und OS X-Anwendungen, die in Objective-C entwickelt wurden, können von Xamarin profitieren, indem C# an Stellen eingesetzt wird, an denen plattformspezifischer Code nicht erforderlich ist. Dadurch kann dieser Code auf Geräten verwendet werden, die nicht von Apple stammen. Elemente wie Webdienste, JSON- und XML-Analysen sowie benutzerdefinierte Algorithmen können dann plattformübergreifend verwendet werden.
+iOS- und macOS-Anwendungen, die in Objective-C entwickelt wurden, können von Xamarin profitieren, indem C# an Stellen eingesetzt wird, an denen plattformspezifischer Code nicht erforderlich ist. Dadurch kann dieser Code auf Geräten verwendet werden, die nicht von Apple stammen. Elemente wie Webdienste, JSON- und XML-Analysen sowie benutzerdefinierte Algorithmen können dann plattformübergreifend verwendet werden.
 
 Um die Vorteile von Xamarin unter Beibehaltung bestehender Objective-C-Ressourcen zu nutzen, können diese für C# in einer Technologie von Xamarin verfügbar gemacht werden, die als Bindungen bekannt ist. Diese hat den Zweck, den Objective-C-Code der verwalteten C#-Welt zugänglich zu machen. Auf Wunsch kann Code auch zeilenweise nach C# portiert werden. Unabhängig davon, ob der Bindungs- oder Portierungsansatz gewählt wird, sind Objective-C- und C#-Kenntnisse erforderlich, um den vorhandenen Objective-C-Code mit Xamarin.iOS effektiv zu nutzen.
 
@@ -64,7 +64,7 @@ Beim Aufruf der Erweiterungsmethode wird die Instanz an das Argument übergeben,
 
 ### <a name="frameworks-vs-assemblies"></a>Frameworks im Vergleich zu Assemblys
 
-Objective-C packt verwandte Klassen in speziellen Verzeichnissen, die als Frameworks bezeichnet werden. In C# und .NET werden hingegen Assemblys verwendet, um wiederverwendbare Bits von vorkompiliertem Code bereitzustellen. In Umgebungen außerhalb von iOS enthalten Assemblys Zwischensprachcode (Intermediate Language, IL), der Just-In-Time (JIT) zur Laufzeit kompiliert wird. Apple lässt jedoch in iOS-Anwendungen JIT nicht zu. Daher wird C#-Code, der auf iOS mit Xamarin abzielt, AOT-kompiliert (Ahead of time) und erzeugt eine einzelne ausführbare Unix-Datei zusammen mit Metadatendateien, die im Anwendungspaket enthalten sind.
+Objective-C packt verwandte Klassen in speziellen Verzeichnissen, die als Frameworks bezeichnet werden. In C# und .NET werden hingegen Assemblys verwendet, um wiederverwendbare Bits von vorkompiliertem Code bereitzustellen. In Umgebungen außerhalb von iOS enthalten Assemblys Zwischensprachcode (Intermediate Language, IL), der Just-In-Time (JIT) zur Laufzeit kompiliert wird. Apple erlaubt die Ausführung von JIT kompiliertem Code in iOS-Anwendungen jedoch nicht, die im App Store veröffentlicht wurden. Daher wird C#-Code, der auf iOS mit Xamarin abzielt, AOT-kompiliert (Ahead of time) und erzeugt eine einzelne ausführbare Unix-Datei zusammen mit Metadatendateien, die im Anwendungspaket enthalten sind.
 
 ### <a name="selectors-vs-named-parameters"></a>Selektoren im Vergleich zu benannten Parametern
 

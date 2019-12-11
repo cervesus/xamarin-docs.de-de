@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
+ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889200"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74451810"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms-Shell-Flyout
 
@@ -20,7 +20,7 @@ ms.locfileid: "69889200"
 
 Das Flyout ist das Hauptmenü für eine Shell-Anwendung, und der Zugriff erfolgt über ein Symbol oder durch Wischen von einer Seite des Bildschirms. Das Flyout besteht aus einem optionalen Header, Flyout-Elementen und optionalen Menüelementen:
 
-![Screenshot eines mit Anmerkung versehenen Shell-Flyouts](flyout-images/flyout-annotated.png "Mit Anmerkung versehenes Flyout")
+![Screenshot: Shell-Flyout mit Anmerkungen](flyout-images/flyout-annotated.png "Flyout mit Anmerkungen")
 
 Falls erforderlich, kann die Hintergrundfarbe des Flyouts über die bindbare Eigenschaft `Shell.FlyoutBackgroundColor` auf eine [`Color`](xref:Xamarin.Forms.Color) festgelegt werden. Diese Eigenschaft kann auch über ein Cascading Stylesheet (CSS) festgelegt werden. Weitere Informationen finden Sie unter [Spezifische Eigenschaften der Xamarin.Forms-Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
 
@@ -93,7 +93,7 @@ Der `FlyoutHeader`-Typ wird im folgenden Beispiel gezeigt:
 
 Dies führt zu folgendem Flyout-Header:
 
-![Screenshot des Flyout-Headers](flyout-images/flyout-header.png "Flyout-Header")
+![Screenshot: Flyout-Header](flyout-images/flyout-header.png "Flyout-Header")
 
 Alternativ kann die Darstellung des Flyout-Headers definiert werden, indem die `Shell.FlyoutHeaderTemplate`-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt wird:
 
@@ -155,7 +155,7 @@ Das folgende Beispiel zeigt, wie diese Eigenschaften festgelegt werden:
 
 Dies führt dazu, dass im Flyout ein Hintergrundbild angezeigt wird:
 
-![Screenshot eines Flyout-Hintergrundbilds](flyout-images/flyout-backgroundimage.png "Flyout-Hintergrundbild")
+![Screenshot: Flyout-Hintergrundbild](flyout-images/flyout-backgroundimage.png "Flyout-Hintergrundbild")
 
 ## <a name="flyout-items"></a>Flyout-Elemente
 
@@ -193,7 +193,7 @@ Das folgende Beispiel erstellt ein Flyout, das einen Flyout-Header und zwei Flyo
 
 In diesem Beispiel kann jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt nur über Flyout-Elemente aufgerufen werden:
 
-[![Screenshot einer Zwei-Seiten-Shell-App mit Flyout-Elementen unter iOS und Android](flyout-images/two-page-app-flyout.png "Zwei-Seiten-Shell-App mit Flyout-Elementen")](flyout-images/two-page-app-flyout-large.png#lightbox "Zwei-Seiten-Shell-App mit Flyout-Elementen")
+[![Screenshot: Shell-App mit zwei Seiten und Flyout-Elementen unter iOS und Android](flyout-images/two-page-app-flyout.png "Shell-App mit zwei Seiten und Flyout-Elementen")](flyout-images/two-page-app-flyout-large.png#lightbox "Shell-App mit zwei Seiten und Flyout-Elementen")
 
 > [!NOTE]
 > Wenn kein Flyout-Header vorhanden ist, werden Flyout-Elemente ganz oben im Flyout angezeigt. Andernfalls werden sie unterhalb des Headers Flyout angezeigt.
@@ -300,7 +300,7 @@ In diesem Beispiel werden Flyout-Elemente für das `Tab`-Objekt, das ein unterge
 
 Dies führt zu folgenden Flyout-Elementen:
 
-[![Screenshot des Flyouts mit FlyoutItem-Objekten unter IOS und Android](flyout-images/flyout-reduced.png "Shell-Flyout mit FlyoutItem-Objekten")](flyout-images/flyout-reduced-large.png#lightbox "Shell-Flyout mit FlyoutItem-Objekten")
+[![Screenshot: Flyout mit FlyoutItem-Objekten unter iOS und Android](flyout-images/flyout-reduced.png "Shell-Flyout mit FlyoutItem-Objekten")](flyout-images/flyout-reduced-large.png#lightbox "Shell-Flyout mit FlyoutItem-Objekten")
 
 ## <a name="define-flyoutitem-appearance"></a>Definieren der FlyoutItem-Darstellung
 
@@ -331,10 +331,73 @@ Die Darstellung jedes `FlyoutItem` kann angepasst werden, indem die angefügte `
 
 Dieses Beispiel stellt die Titel der einzelnen `FlyoutItem`-Objekte in Kursivschrift dar:
 
-[![Screenshot der auf Vorlagen basierenden FlyoutItem-Objekte unter IOS- und Android](flyout-images/flyoutitem-templated.png "Auf Vorlagen basierende Shell-FlyoutItem-Objekte")](flyout-images/flyoutitem-templated-large.png#lightbox "Auf Vorlagen basierende Shell-FlyoutItem-Objekte")
+[![Screenshot: FlyoutItem-Objekte als Vorlage unter iOS und Android](flyout-images/flyoutitem-templated.png "FlyoutItem-Objekte als Shell-Vorlagen")](flyout-images/flyoutitem-templated-large.png#lightbox "FlyoutItem-Objekte als Shell-Vorlagen")
+
+
+Da `Shell.ItemTemplate` eine angefügte Eigenschaft ist, können verschiedene Vorlagen an bestimmte `FlyoutItem`-Objekte angefügt werden.
 
 > [!NOTE]
 > Die Shell stellt die Eigenschaften `Title` und `FlyoutIcon` für den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `ItemTemplate` zur Verfügung.
+
+
+### <a name="default-template-for-flyoutitems-and-menuitems"></a>Standardvorlage für FlyoutItems und MenuItems
+Shell verwendet intern die folgende Vorlage für die Standardimplementierung. Wenn Sie lediglich kleine Änderungen an den vorhandenen Layouts vornehmen, ist dies ein hervorragender Ausgangspunkt. Dies veranschaulicht auch die Features des Visual State-Managers für Flyout-Elemente. Die gleiche Vorlage kann auch für MenuItems verwendet werden.
+
+```xaml
+<DataTemplate x:Key="FlyoutTemplates">
+    <Grid HeightRequest="{x:OnPlatform Android=50}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                    </VisualState>
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50}"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding FlyoutIcon}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="{x:OnPlatform Android=24, iOS=22}"
+            WidthRequest="{x:OnPlatform Android=24, iOS=22}">
+        </Image>
+        <Label VerticalOptions="Center"
+                Text="{Binding Title}"
+                FontSize="{x:OnPlatform Android=14, iOS=Small}"
+                FontAttributes="Bold" Grid.Column="1">
+            <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="#D2000000" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.TextColor>
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20, 0, 0, 0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.Margin>
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="sans-serif-medium" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+    </Grid>
+</DataTemplate>
+```
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem-Aktivierreihenfolge
 
@@ -403,7 +466,7 @@ Menüelemente können optional zum Flyout hinzugefügt werden, und jedes Menüel
 
 Dieser Code fügt zwei unter allen Flyout-Elementen [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekte zum Flyout hinzu:
 
-[![Screenshot des Flyouts mit MenuItem-Objekten unter IOS und Android](flyout-images/flyout.png "Shell-Flyout mit MenuItem-Objekten")](flyout-images/flyout-large.png#lightbox "Shell-Flyout mit MenuItem-Objekten")
+[![Screenshot: Flyout mit MenuItem-Objekten unter iOS und Android](flyout-images/flyout.png "Shell-Flyout mit MenuItem-Objekten")](flyout-images/flyout-large.png#lightbox "Shell-Flyout mit MenuItem-Objekten")
 
 Das erste [`MenuItem`](xref:Xamarin.Forms.MenuItem)-Objekt führt einen `ICommand` namens `RandomPageCommand` aus, der zu einer zufälligen Seite in der Anwendung navigiert. Das zweite `MenuItem`-Objekt führt einen `ICommand` namens `HelpCommand` aus, der die durch die Eigenschaft `CommandParameter` angegebene URL in einem Webbrowser öffnet.
 
@@ -446,10 +509,10 @@ Die Darstellung jedes `MenuItem` kann angepasst werden, indem die angefügte `Sh
 
 In diesem Beispiel wird jedem `MenuItem`-Objekt die `MenuItemTemplate` auf Shell-Ebene hinzugefügt, wodurch die Titel der einzelnen `MenuItem`-Objekte in Kursivschrift angezeigt werden:
 
-[![Screenshot der auf Vorlagen basierenden MenuItem-Objekte unter IOS- und Android](flyout-images/menuitem-templated.png "Auf Vorlagen basierende Shell-MenuItem-Objekte")](flyout-images/menuitem-templated-large.png#lightbox "Auf Vorlagen basierende Shell-MenuItem-Objekte")
+[![Screenshot: MenuItem-Objekte als Vorlage unter iOS und Android](flyout-images/menuitem-templated.png "MenuItem-Objekte als Shell-Vorlagen")](flyout-images/menuitem-templated-large.png#lightbox "MenuItem-Objekte als Shell-Vorlagen")
 
 > [!NOTE]
-> Die Shell stellt die Eigenschaften [`Text`](xref:Xamarin.Forms.MenuItem.Text) und [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) für den [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der `MenuItemTemplate` zur Verfügung.
+> Die Shell stellt die Eigenschaften [`Text`](xref:Xamarin.Forms.MenuItem.Text) und [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) für die [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Klasse von `MenuItemTemplate` zur Verfügung. Sie können auch `Title` anstelle von `Text` und `Icon` anstelle von `IconImageSource` verwenden. Dadurch können Sie dieselbe Vorlage für Menüelemente und Flyout-Elemente wiederverwenden.
 
 Da `Shell.MenuItemTemplate` eine angefügte Eigenschaft ist, können verschiedene Vorlagen an bestimmte `MenuItem`-Objekte angefügt werden:
 
@@ -488,6 +551,10 @@ Da `Shell.MenuItemTemplate` eine angefügte Eigenschaft ist, können verschieden
     </MenuItem>
 </Shell>
 ```
+
+
+> [!NOTE]
+> Sie können dieselbe Vorlage, die Sie für [Flyout-Elemente](#default-template-for-flyoutitems-and-menuitems) verwendet haben, auch für Menüelemente verwenden.
 
 In diesem Beispiel wird die `MenuItemTemplate` der Shell-Ebene an das erste `MenuItem`-Objekt und die Inline-`MenuItemTemplate` an das zweite `MenuItem`-Objekt angefügt.
 

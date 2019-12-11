@@ -6,13 +6,13 @@ ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.date: 12/03/2019
+ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
+ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978127"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74824246"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Renderer
 
@@ -46,18 +46,14 @@ Eine Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView) ist eine Ansicht, d
 
 Eine Xamarin.Forms-[`ViewCell`](xref:Xamarin.Forms.ViewCell) ist eine Zelle, die einer [`ListView`](xref:Xamarin.Forms.ListView) oder [`TableView`](xref:Xamarin.Forms.TableView) hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine `ViewCell` erstellen können, die in einem Xamarin.Forms-`ListView`-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in `ListView` aufgerufen werden.
 
+## <a name="customizing-a-webviewhybridwebviewmd"></a>[Anpassen eines WebView-Elements](hybridwebview.md)
+
+Das Xamarin.Forms-[`WebView`](xref:Xamarin.Forms.WebView)-Element ist eine Ansicht, die Web- und HTML-Inhalte in Ihrer App anzeigt. In diesem Artikel wird erläutert, wie Sie einen benutzerdefinierten Renderer erstellen, der `WebView` erweitert, um das Aufrufen von C#-Code über JavaScript zuzulassen.
+
 ## <a name="implementing-a-viewviewmd"></a>[Implementieren einer Ansicht](view.md)
 
 Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der [`View`](xref:Xamarin.Forms.View)-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen können, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können.
 
-## <a name="implementing-a-hybridwebviewhybridwebviewmd"></a>[Implementieren einer HybridWebView](hybridwebview.md)
-
-In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes `HybridWebView`-Steuerelement erstellen können. Dadurch wird veranschaulicht, wie Sie plattformspezifische Websteuerelemente erweitern können, sodass diese zulassen, dass C#-Code über JavaScript aufgerufen werden kann.
-
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Implementieren eines Videoplayers](video-player/index.md)
 
 In diesem Artikel wird veranschaulicht, wie Sie Renderer schreiben können, die ein benutzerdefiniertes `VideoPlayer`-Steuerelement implementieren, das Webvideos, als Anwendungsressourcen eingebettete Videos oder Videos aus der Videogalerie des Geräts abspielen können. Es werden mehrere Vorgehensweisen demonstriert, u.a. das Implementieren von Methoden und schreibgeschützten, bindbaren Eigenschaften.
-
-## <a name="related-links"></a>Verwandte Links
-
-- [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md)
