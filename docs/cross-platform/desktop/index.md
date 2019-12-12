@@ -28,7 +28,7 @@ Kurzübersicht, um äquivalente Steuerelemente in Windows Forms, WPF und xamarin
 
 Verwenden der Portabilitäts Analyse zum Migrieren von Desktop Anwendungscode (ohne die Benutzeroberfläche) zu xamarin. Forms.
 
-## <a name="samplessamplesmd"></a>[Proben](samples.md)
+## <a name="samplessamplesmd"></a>[Beispiele](samples.md)
 
 Beispiele für die Architektur von Unternehmensanwendungen und das Portieren von Code von WPF zu xamarin. Forms.
 
