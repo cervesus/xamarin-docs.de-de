@@ -33,7 +33,7 @@ In diesem Artikel wird erläutert, wie virtuelle Android-Geräte mit Android Dev
 Mit dem Android Device Manager können _virtuelle Android-Geräte_ (AVDs) erstellt und konfiguriert werden, die sich im [Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) ausführen lassen.
 Jedes virtuelle Android-Gerät stellt eine Emulatorkonfiguration dar, die ein physisches Android-Gerät simuliert. Dadurch wird das Ausführen und Testen Ihrer App mit einer Vielzahl von Konfigurationen ermöglicht, die verschiedene physische Android-Geräte simulieren.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Sie benötigen Folgendes, um Android Device Manager verwenden zu können:
 
@@ -149,7 +149,7 @@ Wählen Sie zum Bearbeiten eines vorhandenen virtuellen Geräts ein Gerät aus, 
 
 [![Schaltfläche „Bearbeiten“ zum Bearbeiten eines Geräts](device-manager-images/win/21-edit-button-sml.png)](device-manager-images/win/21-edit-button.png#lightbox)
 
-Wenn Sie auf **Bearbeiten** klicken, wird der Geräte-Editor für das ausgewählte virtuelle Gerät gestartet:
+Wenn Sie auf klicken **Bearbeiten**, wird der Geräte-Editor für das ausgewählte virtuelle Gerät gestartet:
 
 [![Bildschirm „Geräte-Editor“](device-manager-images/win/22-device-editor-sml.png)](device-manager-images/win/22-device-editor.png#lightbox)
 
@@ -171,7 +171,7 @@ Zusätzliche Optionen für die Arbeit mit Geräten sind im Pulldownmenü **Zusä
 
 Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 
-- **Duplizieren und Bearbeiten:** Dupliziert das derzeit ausgewählte Gerät und öffnet dieses im Bildschirm **New Device** mit einem anderen eindeutigen Namen. Wenn Sie beispielsweise **Pixel_API_27** auswählen und auf **Duplizieren und Bearbeiten** klicken, wird ein Zähler an den Namen angefügt:
+- **Duplizieren und Bearbeiten:** Dupliziert das derzeit ausgewählte Gerät und öffnet dieses im Bildschirm **Neues Gerät** mit einem anderen eindeutigen Namen. Wenn Sie beispielsweise **Pixel_API_27** auswählen und auf **Duplizieren und Bearbeiten** klicken, wird ein Zähler an den Namen angefügt:
 
   [![Bildschirm „Duplizieren und Bearbeiten“](device-manager-images/win/25-dupe-and-edit-sml.png)](device-manager-images/win/25-dupe-and-edit.png#lightbox)
 
@@ -203,7 +203,7 @@ Xamarin Studio ist nicht mit Android Device Manager kompatibel.
 Mit dem Android Device Manager können *virtuelle Android-Geräte* (AVDs) erstellt und konfiguriert werden, die sich im [Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) ausführen lassen.
 Jedes virtuelle Android-Gerät stellt eine Emulatorkonfiguration dar, die ein physisches Android-Gerät simuliert. Dadurch wird das Ausführen und Testen Ihrer App mit einer Vielzahl von Konfigurationen ermöglicht, die verschiedene physische Android-Geräte simulieren.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Sie benötigen Folgendes, um Android Device Manager verwenden zu können:
 
@@ -315,7 +315,7 @@ Klicken Sie auf das Pulldownmenü **Zusätzliche Optionen** (Zahnradsymbol) und 
 
 [![Menüauswahl „Bearbeiten“ zum Bearbeiten eines neuen Geräts](device-manager-images/mac/21-edit-button-m76-sml.png)](device-manager-images/mac/21-edit-button-m76.png#lightbox)
 
-Wenn Sie auf **Bearbeiten** klicken, wird der Geräte-Editor für das ausgewählte virtuelle Gerät gestartet:
+Wenn Sie auf klicken **Bearbeiten**, wird der Geräte-Editor für das ausgewählte virtuelle Gerät gestartet:
 
 [![Bildschirm „Geräte-Editor“](device-manager-images/mac/22-device-editor-sml.png)](device-manager-images/mac/22-device-editor.png#lightbox)
 
@@ -339,7 +339,7 @@ Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 
 - **Bearbeiten:** Öffnet das derzeit ausgewählte Gerät wie zuvor beschrieben im Geräte-Editor.
 
-- **Duplizieren und Bearbeiten:** Dupliziert das derzeit ausgewählte Gerät und öffnet dieses im Bildschirm **New Device** mit einem anderen eindeutigen Namen. Wenn Sie beispielsweise **Pixel 2 API 28** auswählen und auf **Duplizieren und Bearbeiten** klicken, wird ein Zähler an den Namen angefügt:
+- **Duplizieren und Bearbeiten:** Dupliziert das derzeit ausgewählte Gerät und öffnet dieses im Bildschirm **Neues Gerät** mit einem anderen eindeutigen Namen. Wenn Sie beispielsweise **Pixel 2 API 28** auswählen und auf **Duplizieren und Bearbeiten** klicken, wird ein Zähler an den Namen angefügt:
 
   [![Bildschirm „Duplizieren und Bearbeiten“](device-manager-images/mac/25-dupe-and-edit-sml.png)](device-manager-images/mac/25-dupe-and-edit.png#lightbox)
 
@@ -488,7 +488,7 @@ In diesem Handbuch wurde der Android Device Manager vorgestellt, der in Visual S
 ## <a name="related-links"></a>Verwandte Links
 
 - [Änderungen an den Tools des Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
-- [Debugging on the Android Emulator (Debuggen auf dem Android-Emulator)](~/android/deploy-test/debugging/debug-on-emulator.md)
+- [Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md)
 - [Anmerkungen zu dieser Version von SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

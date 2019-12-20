@@ -1,5 +1,6 @@
 ---
-title: Erstellt eine Xamarin.Forms-Shell-Anwendung
+title: >
+  Erstellen einer Xamarin.Forms-Shell-Anwendung
 description: Das Vorgehen zum Erstellen einer Xamarin.Forms-Shell-Anwendung besteht darin, eine XAML-Datei zu erstellen, die die Shell-Klasse untergliedert, die MainPage-Eigenschaft der App-Klasse der Anwendung auf das in Unterklassen untergliederte Shell-Objekt festzulegen und dann die visuelle Hierarchie der Anwendung in der in Unterklassen untergliederten Shell-Klasse zu beschreiben.
 ms.prod: xamarin
 ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
@@ -14,14 +15,15 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 08/02/2019
 ms.locfileid: "68739310"
 ---
-# <a name="create-a-xamarinforms-shell-application"></a>Erstellt eine Xamarin.Forms-Shell-Anwendung
+# <a name="create-a-xamarinforms-shell-application"></a>Erstellen einer Xamarin.Forms-Shell-Anwendung
+
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 So erstellen Sie eine Xamarin.Forms-Shell-Anwendung:
 
 1. Erstellen Sie eine neue Xamarin.Forms-Anwendung, oder laden Sie eine vorhandene Anwendung, die Sie in eine Shell-Anwendung konvertieren möchten.
-1. Fügen Sie eine XAML-Datei zum Projekt mit freigegebenem Code hinzu, das die `Shell`-Klasse untergliedert. Weitere Informationen finden Sie unter [Untergliedern der Shell-Klasse](#subclass-the-shell-class).
+1. Fügen Sie eine XAML-Datei zum Projekt mit freigegebenem Code hinzu, das die `Shell`-Klasse untergliedert. Erstellen von [Unterklassen für die Shell-Klasse](#subclass-the-shell-class).
 1. Legen Sie die [`MainPage`](xref:Xamarin.Forms.Application.MainPage)-Eigenschaft der `App`-Klasse der Anwendung auf das `Shell`-Objekt mit Unterklassen fest. Weitere Informationen finden Sie unter [Bootstrapping für die Shell-Anwendung](#bootstrap-the-shell-application).
 1. Beschreiben Sie die visuelle Hierarchie der Anwendung in der in Unterklassen untergliederten `Shell`-Klasse. Weitere Informationen finden Sie unter [Beschreiben der visuellen Hierarchie der Anwendung](#describe-the-visual-hierarchy-of-the-application).
 
@@ -83,10 +85,11 @@ In diesem Beispiel ist die `AppShell`-Klasse die XAML-Datei, die sich aus der `S
 Der letzte Schritt bei der Erstellung einer Xamarin.Forms-Shell-Anwendung ist die Beschreibung der visuellen Hierarchie der Anwendung in der in Unterklassen untergliederten `Shell`-Klasse. Eine in Unterklassen untergliederte `Shell`-Klasse besteht aus drei hierarchischen Hauptobjekten:
 
 - `FlyoutItem` oder `TabBar`. Ein `FlyoutItem`-Objekt stellt ein oder mehrere Elemente im Flyout dar und sollte verwendet werden, wenn das Navigationsmuster für die Anwendung ein Flyout beinhaltet. Ein `TabBar`-Objekt stellt die untere Registerkartenleiste dar und sollte verwendet werden, wenn das Navigationsmuster für die Anwendung mit unteren Registerkarten beginnt. Jedes `FlyoutItem`- oder `TabBar`-Objekt ist ein untergeordnetes Objekt des `Shell`-Objekts.
-- `Tab`: Stellt gruppierten Inhalt dar, der über die unteren Registerkarten navigierbar ist. Jedes `Tab`-Objekt ist ein untergeordnetes `FlyoutItem`-Objekt eines `TabBar`-Objekts.
+- `Tab`: Stellt gruppierten Inhalt dar, der über die unteren Registerkarten navigierbar ist. Jedes `Tab` ist ein untergeordnetes Element eines `FlyoutItem`-Objekts oder eines `TabBar`-Objekts.
 - `ShellContent`: Stellt die `ContentPage`-Objekte in Ihrer Anwendung dar. Jedes `ShellContent`-Objekt ist ein untergeordnetes Objekt eines `Tab`-Objekts. Wenn mehr als ein `ShellContent`-Objekt in einem `Tab`-Objekt vorhanden ist, sind die Objekte über obere Registerkarten navigierbar.
 
-Keines dieser Objekte repräsentiert eine Benutzeroberfläche, sondern die Organisation der visuellen Struktur der Hierarchie. Shell wird diese Objekte übernehmen und die Benutzeroberfläche für die Navigation der Inhalte erstellen.
+Keines dieser Objekte repräsentiert eine Benutzeroberfläche, sondern die Organisation der visuellen Struktur der Hierarchie. Die Shell wird diese Objekte übernehmen und die Benutzeroberfläche für die Navigation der Inhalte erstellen.
+
 
 Die folgende XAML zeigt ein Beispiel für eine `Shell`-Klasse mit Unterklassen:
 
@@ -126,7 +129,7 @@ Die folgende XAML zeigt ein Beispiel für eine `Shell`-Klasse mit Unterklassen:
 </Shell>
 ```
 
-Wird dieses Beispiel ausgeführt, zeigt der XAML-Code das `CatsPage`-Objekt an, da es das erste Inhaltselements ist das in der in Unterklassen untergliederten `Shell`-Klasse deklariert ist:
+Wird dieses Beispiel ausgeführt, zeigt der XAML-Code das `CatsPage`-Objekt an, da es das erste Inhaltselements ist, das in der in Unterklassen untergliederten `Shell`-Klasse deklariert ist:
 
 [![Screenshot einer Shell-App unter iOS und Android](create-images/cats.png "Shell-App")](create-images/cats-large.png#lightbox "Shell-App")
 
