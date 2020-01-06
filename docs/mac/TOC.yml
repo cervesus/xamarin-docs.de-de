@@ -224,4 +224,4 @@
     - name: Versionshinweise
       href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
     - name: Proben
-      href: samples/index.yml
+      href: samples/index.md
