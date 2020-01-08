@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 5af4ba8057070481728948635352e1ec2484a0d4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fb8cd050c789e165c1774398a3a2cc8e0467bde1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032339"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489023"
 ---
 # <a name="purchasing-consumable-products-in-xamarinios"></a>Erwerben von nutzbaren Produkten in xamarin. IOS
 
@@ -24,7 +24,7 @@ Der Beispielcode für dieses Dokument veranschaulicht integrierte Produkte – d
    
 [![der Purchasing-Prozess-Visualisierung](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
- Der grundlegende Workflow lautet:   
+ So sieht der grundlegende Workflow aus:   
    
  1. Die APP fügt der Warteschlange eine `SKPayment` hinzu. Falls erforderlich, wird der Benutzer zur Eingabe der Apple-ID aufgefordert und aufgefordert, die Zahlung zu bestätigen.   
    
@@ -74,7 +74,7 @@ buy10Button.TouchUpInside += (sender, e) => {
 Der zweite Teil der Benutzeroberfläche ist die Verarbeitung der Benachrichtigung, dass die Transaktion erfolgreich war, in diesem Fall durch Aktualisieren des angezeigten Ausgleichs:
 
 ```csharp
-priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
+succeededObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
 (notification) => {
    balanceLabel.Text = CreditManager.Balance() + " monkey credits";
 });
@@ -323,9 +323,9 @@ if (iap.CanMakePayments()) {
 
 Die Anwendung sieht wie folgt aus, wenn die Funktion **in-App-Käufe** eingeschränkt ist – die Schaltflächen für den Einkauf sind deaktiviert.   
 
- [Wenn das Feature in-App-Käufe eingeschränkt ist,![die Anwendung so aussehen, dass die Kauf Schaltflächen deaktiviert werden.](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [Wenn das Feature in-App-Käufe eingeschränkt ist, ![die Anwendung so aussehen, dass die Kauf Schaltflächen deaktiviert werden.](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
 
-Produktinformationen können weiterhin angefordert werden, wenn `CanMakePayments` false ist, sodass die APP weiterhin Preise abrufen und anzeigen kann. Dies bedeutet Folgendes: Wenn wir die `CanMakePayments` Prüfung aus dem Code entfernt haben, sind die Kauf Schaltflächen weiterhin aktiv. Wenn jedoch ein Kauf Versuch unternommen wird, wird dem Benutzer eine Meldung angezeigt, dass **in-App-Einkäufe nicht zulässig sind** (von storekit generiert, wenn die Zahlungs Warteschlange ist). Zugriff):   
+Produktinformationen können weiterhin angefordert werden, wenn `CanMakePayments` false ist, sodass die APP weiterhin Preise abrufen und anzeigen kann. Dies bedeutet Folgendes: Wenn wir die `CanMakePayments` Prüfung aus dem Code entfernt haben, sind die Kauf Schaltflächen weiterhin aktiv. Wenn jedoch ein Kauf Versuch unternommen wird, wird dem Benutzer eine Meldung angezeigt, dass **in-App-Einkäufe nicht zulässig sind** (von storekit generiert, wenn auf die Zahlungs Warteschlange zugegriffen wird):   
 
  [![in-App-Käufe sind nicht zulässig.](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
 

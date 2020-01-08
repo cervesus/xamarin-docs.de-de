@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a4bf0b89a9ab336bf47ddcd104760211d912f423
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022046"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663433"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Steuerelemente der Benutzeroberfläche in xamarin. IOS
 
@@ -80,10 +80,10 @@ Das akzeptieren von Benutzer Texteingaben wird mit dem `UITextField` für einzei
 
 IOS-Anwendungen, die eine Registerkarte mit Registerkarten Navigation verwenden, werden mithilfe der uitabbarcontroller-Klasse erstellt. In diesem Artikel wird beschrieben, wie Sie eine Anwendung im Registerkarten Format einrichten, die mehrere Controller und Ansichten enthält. Wir untersuchen dann, wie ein uitabbarcontroller geladen wird, wenn es sich nicht um den Stamm Controller handelt, z. b. nach einem Anmeldebildschirm.
 
-## <a name="web-viewsuiwebviewmd"></a>[Webansichten](uiwebview.md)
+## <a name="web-viewswebviewmd"></a>[Webansichten](webview.md)
 
-In diesem Artikel untersuchen wir die drei von Apple bereitgestellten Webansichten: `UIWebView`, `WKWebview`und `SFSafariViewController`, ihre Ähnlichkeiten und Unterschiede sowie die Art und Weise, wie Sie verwendet werden können.
+In diesem Artikel untersuchen wir die von Apple bereitgestellten Webansichten –`WKWebview` und `SFSafariViewController`– ihre Ähnlichkeiten und Unterschiede sowie die Art und Weise, wie Sie verwendet werden können.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

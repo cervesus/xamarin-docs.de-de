@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 7b073e0233fb9c5511593ed80313f402c888c811
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 64209f905ba07f7efc7368b8f054dfc3ae606af2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771015"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489985"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifizieren von Benutzern mit einer Azure Cosmos DB-dokumentdatenbank und xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
-_Azure Cosmos DB-Dokumentdatenbanken unterstützen partitionierte Sammlungen enthalten, die mehrere Server und Partitionen unterstützt unbegrenzten Speicher und Durchsatz umfassen können. In diesem Artikel wird erläutert, wie Zugriffssteuerung mit partitionierten Sammlungen kombiniert, damit ein Benutzer nur ihre eigenen Dokumente in einer Xamarin.Forms-Anwendung zugreifen kann._
+_Azure Cosmos DB Dokumenten Datenbanken unterstützen partitionierte Sammlungen, die mehrere Server und Partitionen umfassen können und gleichzeitig unbegrenzten Speicher und Durchsatz unterstützen. In diesem Artikel wird erläutert, wie Sie die Zugriffs Steuerung mit partitionierten Sammlungen kombinieren, sodass ein Benutzer nur in einer xamarin. Forms-Anwendung auf seine eigenen Dokumente zugreifen kann._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Ein Partitionsschlüssel angegeben werden, wenn Sie eine partitionierte Sammlung erstellen und Dokumente mit demselben Partitionsschlüssel werden in der gleichen Partition gespeichert. Aus diesem Grund führt angeben der Identität des Benutzers als Partitionsschlüssel in einer partitionierten Sammlung, die nur die Dokumente für diesen Benutzer gespeichert werden. Dadurch wird auch sichergestellt, dass die Azure Cosmos DB-dokumentdatenbank, als die Anzahl von Benutzern skaliert wird und Elementen erhöhen.
 
@@ -33,7 +33,7 @@ Cosmos DB-Konto besteht die Gefahr von böswilliger oder fahrlässiger Nutzung w
 
 Ein typischer Ansatz zum anfordern, ist die generieren und Bereitstellen von Ressourcentoken an einer mobilen Anwendung zur Verwendung von Resource token Broker. Das folgende Diagramm zeigt einen allgemeinen Überblick darüber, wie die beispielanwendung eine ressourcentokenbroker zum Verwalten des Zugriffs auf die Dokumentendaten für die Datenbank verwendet:
 
-![](azure-cosmosdb-auth-images/documentdb-authentication.png "Prozess der Dokument-Datenbank-Authentifizierung")
+![](azure-cosmosdb-auth-images/documentdb-authentication.png "Document Database Authentication Process")
 
 Die ressourcentokenbroker ist ein Mid-Tier-Web-API, gehosteter Dienst in Azure App Service, der den Hauptschlüssel des Cosmos DB-Konto besitzt. Die beispielanwendung verwendet die ressourcentokenbroker zum Verwalten des Zugriffs auf die Dokumentendaten für die Datenbank wie folgt:
 
@@ -57,6 +57,9 @@ Der Prozess für die Integration der ressourcentokenbroker in einer Xamarin.Form
 1. Erstellen einer Facebook-app für die Authentifizierung an. Weitere Informationen finden Sie unter [Facebook-App Configuration](#facebook_configuration).
 1. Konfigurieren von Azure App Service für die einfache Authentifizierung mit Facebook. Weitere Informationen finden Sie unter [Konfiguration von Azure App Service-Authentifizierung](#app_service_authentication_configuration).
 1. Konfigurieren Sie die Xamarin.Forms-beispielanwendung für die Kommunikation mit Azure App Service und Cosmos DB. Weitere Informationen finden Sie unter [Xamarin.Forms-Anwendungskonfiguration](#forms_application_configuration).
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
 <a name="cosmosdb_configuration" />
 
@@ -83,7 +86,7 @@ Der Prozess zum Hosten der ressourcentokenbroker in Azure App Service lautet wie
 
     Der folgende Screenshot veranschaulicht diese Konfiguration:
 
-    [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "App Service-Web-App-Einstellungen")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service-Web-App-Einstellungen")
+    [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "App Service Web App Settings")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service Web App Settings")
 
 1. Veröffentlichen Sie die Resource token Broker-Lösung in die Azure App Service-Web-app an.
 
@@ -102,7 +105,7 @@ Der Prozess zum Erstellen einer Facebook-app für die Authentifizierung lautet w
 
   Der folgende Screenshot veranschaulicht diese Konfiguration:
 
-  ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook-Anmeldung OAuth-Einstellungen")
+  ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook Login OAuth Settings")
 
 Weitere Informationen finden Sie unter [Registrieren Ihrer Anwendung für Facebook](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook).
 
@@ -119,7 +122,7 @@ Der Prozess für die Konfiguration einfach App Service-Authentifizierung lautet 
 
     Der folgende Screenshot veranschaulicht diese Konfiguration:
 
-    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service-Web-App-Authentifizierungseinstellungen")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service-Web-App-Authentifizierungseinstellungen")
+    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
 
 Die App Service-Web-app sollte auch für die Kommunikation mit der Facebook-app So aktivieren Sie den Authentifizierungsablauf konfiguriert werden. Dies kann erreicht werden, von der Facebook-Identitätsanbieter auswählen und Eingeben der **App-ID** und **App-Geheimnis** Werte aus den Facebook-app-Einstellungen für das Facebook Developer Center. Weitere Informationen finden Sie unter [Hinzufügen von Facebook-Informationen für Ihre Anwendung](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 
@@ -148,7 +151,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 Dies bewirkt, dass ein OAuth-authentifizierungsflusses initiiert werden, zwischen Azure App Service und Facebook, das die Facebook-Anmeldeseite anzeigt:
 
-![](azure-cosmosdb-auth-images/login.png "Facebook-Anmeldung")
+![](azure-cosmosdb-auth-images/login.png "Facebook Login")
 
 Die Anmeldung abgebrochen werden kann, durch Drücken der **Abbrechen** auf iOS oder durch Drücken der Schaltfläche die **zurück** Schaltfläche unter Android wird in diesem Fall der Benutzer nicht authentifiziert bleibt und Identity Provider User Interface vom Bildschirm entfernt.
 
@@ -205,7 +208,7 @@ Wenn die `resourcetoken` API erfolgreich abgeschlossen wurde, sendet er HTTP-Sta
 }
 ```
 
-Die `WebRedirectAuthenticator.Completed` Ereignishandler liest die Antwort auf die `resourcetoken` API und extrahiert das Ressourcentoken und die Benutzer-Id. Das Ressourcentoken wird dann als Argument für das Übergeben der `DocumentClient` -Konstruktor, der kapselt den Endpunkt, Anmeldeinformationen und verwendet, um den Zugriff auf Cosmos DB-Verbindungsrichtlinie und dient zum Konfigurieren und Ausführen von Anforderungen an Cosmos DB. Das Ressourcentoken wird mit jeder Anforderung direkt Zugriff auf eine Ressource gesendet, und gibt an, dass Lese-/Schreibzugriff in der authentifizierten Benutzer partitionierte Sammlung gewährt wird.
+Der `WebRedirectAuthenticator.Completed`-Ereignishandler liest die Antwort aus der `resourcetoken`-API und extrahiert das Ressourcen Token und die Benutzer-ID. Das Ressourcen Token wird dann als Argument an den `DocumentClient`-Konstruktor übergeben, der den Endpunkt, die Anmelde Informationen und die Verbindungsrichtlinie kapselt, die für den Zugriff auf Cosmos DB verwendet werden, und wird verwendet, um Anforderungen für Cosmos DB zu konfigurieren und auszuführen. Das Ressourcentoken wird mit jeder Anforderung direkt Zugriff auf eine Ressource gesendet, und gibt an, dass Lese-/Schreibzugriff in der authentifizierten Benutzer partitionierte Sammlung gewährt wird.
 
 ## <a name="retrieving-documents"></a>Abrufen von Dokumenten
 
@@ -264,11 +267,11 @@ Dadurch wird sichergestellt, dass Cosmos DB weiß die partitionierte Auflistung 
 
 Weitere Informationen zum Löschen eines Dokuments in einer Dokumentsammlung finden Sie unter [Löschen eines Dokuments in einer Dokumentsammlung](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting_document).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurde erläutert, wie Zugriffssteuerung mit partitionierten Sammlungen kombiniert, damit ein Benutzer nur ihre eigenen Dokument-Datenbank-Dokumente in einer Xamarin.Forms-Anwendung zugreifen kann. Angeben der Identität des Benutzers als Partitionsschlüssel wird sichergestellt, dass eine partitionierte Sammlung nur Dokumente für diesen Benutzer gespeichert werden kann.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [TODO Azure Cosmos DB-Authentifizierung (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 - [Verwenden einer Azure Cosmos DB-Dokumentdatenbank](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md)

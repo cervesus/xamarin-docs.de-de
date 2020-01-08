@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 1f06601b2b419141b4bd44677826df4e64a831fc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020572"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487788"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
 _C#Code in xamarin. Android ruft Java-Bibliotheken über Bindungen auf, bei denen es sich um einen Mechanismus handelt, der die in Java Native Interface (JNI) angegebenen Low-Level-Details abstrahiert. Xamarin. Android stellt ein Tool bereit, das diese Bindungen generiert. Mit diesem Tool kann der Entwickler steuern, wie eine Bindung mithilfe von Metadaten erstellt wird, die Prozeduren wie das Ändern von Namespaces und das Umbenennen von Membern ermöglicht. In diesem Dokument wird erläutert, wie Metadaten funktionieren, fasst die von Metadaten unterstützten Attribute zusammen und erläutert, wie Bindungsprobleme durch Ändern dieser Metadaten gelöst werden._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Eine xamarin. Android- **Java-Bindungs Bibliothek** versucht, einen Großteil der Arbeit zu automatisieren, die erforderlich ist, um eine vorhandene Android-Bibliothek mithilfe eines Tools zu binden, das manchmal als _Bindungs Generator_bezeichnet wird. Beim Binden einer Java-Bibliothek prüft xamarin. Android die Java-Klassen und generiert eine Liste aller Pakete, Typen und Member, die gebunden werden sollen. Diese Liste der APIs wird in einer XML-Datei gespeichert, die in **\{Project Directory} \obj\release\api.XML** für einen **Releasebuild** und in **\{Projektverzeichnis} \obj\debug\api.XML** für einen **Debugbuild** zu finden ist.
 
@@ -56,9 +56,9 @@ Diese XML-Zuordnungs Dateien befinden sich möglicherweise im Ordner " **Transfo
 
 - Mit **Metadata. XML** &ndash; können Änderungen an der endgültigen API vorgenommen werden, z. b. das Ändern des Namespaces der generierten Bindung. 
 
-- " **EnumFields. XML** &ndash;" enthält die Zuordnung zwischen Java- C# `int` Konstanten und`enums`. 
+- " **EnumFields. XML** &ndash;" enthält die Zuordnung zwischen Java- C# `int` Konstanten und `enums`. 
 
-- **EnumMethods. XML** &ndash; ermöglicht das Ändern von Methoden Parametern und Rückgabe Typen aus Java- C# `int` Konstanten in`enums`. 
+- **EnumMethods. XML** &ndash; ermöglicht das Ändern von Methoden Parametern und Rückgabe Typen aus Java- C# `int` Konstanten in `enums`. 
 
 Die Datei " **Metadata. XML** " ist der größte Import dieser Dateien, da Sie allgemeine Änderungen an der Bindung zulässt, wie z. b.:
 
@@ -101,13 +101,13 @@ Im folgenden finden Sie ein Beispiel für eine Datei " **Metadata. XML** ":
 
 Im folgenden sind einige der gängigsten XPath-Elemente für die Java-APIs aufgeführt:
 
-- `interface` &ndash;, die zum Suchen einer Java-Schnittstelle verwendet wird. z. b. `/interface[@name='AuthListener']`.
+- `interface` &ndash;, die zum Suchen einer Java-Schnittstelle verwendet wird. Beispiel: `/interface[@name='AuthListener']`.
 
-- `class` &ndash; verwendet, um eine Klasse zu suchen. z. b. `/class[@name='MapView']`.
+- `class` &ndash; verwendet, um eine Klasse zu suchen. Beispiel: `/class[@name='MapView']`.
 
-- `method` &ndash; verwendet, um eine Methode in einer Java-Klasse oder-Schnittstelle zu suchen. z. b. `/class[@name='MapView']/method[@name='setTitleSource']`.
+- `method` &ndash; verwendet, um eine Methode in einer Java-Klasse oder-Schnittstelle zu suchen. Beispiel: `/class[@name='MapView']/method[@name='setTitleSource']`.
 
-- `parameter` &ndash; einen Parameter für eine Methode identifizieren. z. b. `/parameter[@name='p0']`
+- `parameter` &ndash; einen Parameter für eine Methode identifizieren. Beispiel: `/parameter[@name='p0']`
 
 ### <a name="adding-types"></a>Hinzufügen von Typen
 
@@ -162,7 +162,7 @@ Um den verwalteten Namen eines umschließenden Typs (oder einer Methode) ordnung
 
 #### <a name="renaming-eventarg-wrapper-classes"></a>Umbenennen `EventArg` Wrapper Klassen
 
-Wenn der xamarin. Android-Bindungs Generator eine `onXXX` Setter-Methode für einen _Listenertyp_identifiziert, werden ein C# -Ereignis und eine`EventArgs`-Unterklasse generiert, um eine .net-geprägte API für das Java-basierte listenermuster zu unterstützen. Sehen Sie sich als Beispiel die folgende Java-Klasse und-Methode an:
+Wenn der xamarin. Android-Bindungs Generator eine `onXXX` Setter-Methode für einen _Listenertyp_identifiziert, werden ein C# -Ereignis und eine `EventArgs`-Unterklasse generiert, um eine .net-geprägte API für das Java-basierte listenermuster zu unterstützen. Sehen Sie sich als Beispiel die folgende Java-Klasse und-Methode an:
 
 ```xml
 com.someapp.android.mpa.guidance.NavigationManager.on2DSignNextManuever(NextManueverListener listener);
@@ -174,7 +174,7 @@ Xamarin. Android löscht das Präfix `on` aus der Setter-Methode und verwendet s
 NavigationManager.2DSignNextManueverEventArgs
 ```
 
-Dies ist kein gültiger C# Klassenname. Um dieses Problem zu beheben, muss der Bindungs Autor das `argsType`-Attribut verwenden und einen C# gültigen Namen für die`EventArgs`-Unterklasse angeben:
+Dies ist kein gültiger C# Klassenname. Um dieses Problem zu beheben, muss der Bindungs Autor das `argsType`-Attribut verwenden und einen C# gültigen Namen für die `EventArgs`-Unterklasse angeben:
 
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
@@ -187,7 +187,7 @@ Dies ist kein gültiger C# Klassenname. Um dieses Problem zu beheben, muss der B
 
 In den folgenden Abschnitten werden einige der Attribute zum Transformieren von Java-APIs beschrieben.
 
-### <a name="argstype"></a>argstype
+### <a name="argstype"></a>argsType
 
 Dieses Attribut wird in Setter-Methoden eingefügt, um die `EventArg` Unterklasse zu benennen, die zur Unterstützung von Java-Listenern generiert wird. Dies wird weiter unten im Abschnitt [Umbenennen von EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes) weiter unten in diesem Handbuch ausführlich beschrieben.
 
@@ -196,7 +196,7 @@ Dieses Attribut wird in Setter-Methoden eingefügt, um die `EventArg` Unterklass
 Gibt einen Namen für ein Ereignis an. Wenn der Wert leer ist, wird die Ereignis Generierung verhindert.
 Dies wird im Abschnitttitel [Umbenennen von EventArg-Wrapper Klassen](#Renaming_EventArg_Wrapper_Classes)ausführlicher beschrieben.
 
-### <a name="managedname"></a>managedname
+### <a name="managedname"></a>managedName
 
 Diese wird verwendet, um den Namen eines Pakets, einer Klasse, einer Methode oder eines Parameters zu ändern. Um z. b. den Namen der Java-Klasse `MyClass` in `NewClassName`zu ändern:
 
@@ -212,11 +212,11 @@ Im nächsten Beispiel wird ein XPath-Ausdruck zum Umbenennen der Methode `java.l
     name="managedName">NewMethodName</attr>
 ```
 
-### <a name="managedtype"></a>ManagedType
+### <a name="managedtype"></a>managedType
 
 `managedType` wird verwendet, um den Rückgabetyp einer Methode zu ändern. In einigen Situationen führt der Bindungs Generator fälschlicherweise den Rückgabetyp einer Java-Methode aus, was zu einem Kompilierzeitfehler führt. Eine mögliche Lösung in dieser Situation besteht darin, den Rückgabetyp der Methode zu ändern.
 
-Der Bindungs Generator geht z. b. davon aus, dass die Java-Methode `de.neom.neoreadersdk.resolution.compareTo()` eine `int`zurückgeben soll, die zu der Fehlermeldung **CS0535: ' de. "Netom. netoreadersdk. Resolution" implementiert den Schnittstellenmember "java. lang. ivergleichbare. CompareTo (Java. lang. Object)" nicht**. Der folgende Code Ausschnitt veranschaulicht, wie der paramtertyp der generierten C# Methode von einem`DE.Neom.Neoreadersdk.Resolution`in einen `Java.Lang.Object`geändert wird: 
+Der Bindungs Generator geht z. b. davon aus, dass die Java-Methode `de.neom.neoreadersdk.resolution.compareTo()` eine `int` zurückgeben und `Object` als Parameter akzeptieren soll. Dies führt zu der Fehlermeldung **CS0535: ' de. "Netom. netoreadersdk. Resolution" implementiert den Schnittstellenmember "java. lang. ivergleichbare. CompareTo (Java. lang. Object)" nicht**. Der folgende Code Ausschnitt veranschaulicht, wie der Typ des ersten Parameters der generierten C# Methode von einem `DE.Neom.Neoreadersdk.Resolution` in einen `Java.Lang.Object`geändert wird: 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -271,7 +271,7 @@ Beachten Sie, dass die Setter-und Getter-Methoden weiterhin vom Bindungs Generat
 
 ### <a name="sender"></a>sender
 
-Gibt an, welcher Parameter einer Methode der `sender`-Parameter sein soll, wenn die-Methode einem Ereignis zugeordnet wird. Der Wert kann `true` oder `false`sein. Beispiel:
+Gibt an, welcher Parameter einer Methode der `sender`-Parameter sein soll, wenn die-Methode einem Ereignis zugeordnet wird. Der Wert kann `true` oder `false` lauten. Beispiel:
 
 ```xml
 <attr path="/api/package[@name='android.app']/
@@ -283,7 +283,7 @@ Gibt an, welcher Parameter einer Methode der `sender`-Parameter sein soll, wenn 
 
 ### <a name="visibility"></a>Sichtbarkeit
 
-Dieses Attribut wird verwendet, um die Sichtbarkeit einer Klasse, Methode oder Eigenschaft zu ändern. Beispielsweise kann es erforderlich sein, eine `protected` Java-Methode heraufzustufen, damit der C# zugehörige Wrapper`public`ist:
+Dieses Attribut wird verwendet, um die Sichtbarkeit einer Klasse, Methode oder Eigenschaft zu ändern. Beispielsweise kann es erforderlich sein, eine `protected` Java-Methode heraufzustufen, damit der C# zugehörige Wrapper `public`ist:
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -299,7 +299,7 @@ Es gibt Fälle, in denen Android-Bibliotheken ganzzahlige Konstanten zum Darstel
 
 ### <a name="defining-an-enum-using-enumfieldsxml"></a>Definieren einer Enumeration mithilfe von "EnumFields. xml"
 
-Die Datei " **EnumFields. XML** " enthält die Zuordnung zwischen Java- C# `int` Konstanten und`enums`. Betrachten wir das folgende Beispiel für eine C# Enumeration, die für einen Satz von`int`Konstanten erstellt wird: 
+Die Datei " **EnumFields. XML** " enthält die Zuordnung zwischen Java- C# `int` Konstanten und `enums`. Betrachten wir das folgende Beispiel für eine C# Enumeration, die für einen Satz von `int` Konstanten erstellt wird: 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -309,11 +309,11 @@ Die Datei " **EnumFields. XML** " enthält die Zuordnung zwischen Java- C# `int`
 </mapping>
 ```
 
-Hier haben wir die Java-Klasse `SKRealReachSettings` und eine C# Enumeration mit dem Namen`SKMeasurementUnit`im Namespace`Skobbler.Ngx.Map.RealReach`definiert. Der `field` Einträge definiert den Namen der Java-Konstante (z. b. `UNIT_SECOND`), den Namen des enumerationseintrags (Beispiel `Second`) und den ganzzahligen Wert, der von beiden Entitäten dargestellt wird (Beispiel `0`). 
+Hier haben wir die Java-Klasse `SKRealReachSettings` und eine C# Enumeration mit dem Namen `SKMeasurementUnit` im Namespace `Skobbler.Ngx.Map.RealReach`definiert. Der `field` Einträge definiert den Namen der Java-Konstante (z. b. `UNIT_SECOND`), den Namen des enumerationseintrags (Beispiel `Second`) und den ganzzahligen Wert, der von beiden Entitäten dargestellt wird (Beispiel `0`). 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Definieren von Getter/Setter-Methoden mithilfe von "EnumMethods. xml"
 
-Die Datei " **EnumMethods. XML** " ermöglicht das Ändern von Methoden Parametern und Rückgabe Typen aus C# Java-`int` Konstanten in`enums`. Das heißt, das Lesen und Schreiben von C# Enumerationsdaten (in der Datei " **EnumFields. XML** " definiert) wird Java `int`Konstanten`get`und`set`Methoden zugeordnet.
+Die Datei " **EnumMethods. XML** " ermöglicht das Ändern von Methoden Parametern und Rückgabe Typen aus C# Java-`int` Konstanten in `enums`. Das heißt, das Lesen und Schreiben von C# Enumerationsdaten (in der Datei " **EnumFields. XML** " definiert) wird Java `int` Konstanten `get` und `set` Methoden zugeordnet.
 
 Aufgrund der oben definierten `SKRealReachSettings` Enumeration würde die folgende Datei " **EnumMethods. XML** " den Getter/Setter für diese Enumeration definieren:
 
@@ -332,11 +332,11 @@ Wenn alle diese Änderungen vorhanden sind, können Sie den folgenden Code in xa
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurde erläutert, wie xamarin. Android Metadaten verwendet, um eine API-Definition aus dem *Google* *aosp-Format*zu transformieren. Nach dem abdecken der Änderungen, die mithilfe von *Metadata. XML*möglich sind, wurden die Einschränkungen beim Umbenennen von Membern sowie die Liste der unterstützten XML-Attribute untersucht, die beschreiben, wann die einzelnen Attribute verwendet werden sollen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md)
 - [Binden einer Java-Bibliothek](~/android/platform/binding-java-library/index.md)

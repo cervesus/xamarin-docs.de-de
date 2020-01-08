@@ -7,24 +7,29 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 4dedcb0869c1e965679812239b1de09f07efa875
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869392"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487619"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 Der Gesichtserkennungs-API kann eine Emotions Erkennung durchführen, um Ärger, Verachtung, Verschleierung, Angst, Glück, neutral, traurig und überraschend in einem Gesichtsausdruck zu erkennen, der auf wahrgenommenen Anmerkungen durch menschliche Programmierer basiert. Es ist jedoch wichtig zu beachten, dass Gesichtsausdrücke nicht notwendigerweise die internen Zustände von Personen darstellen.
 
-Zusätzlich zum Zurückgeben eines Emotions Ergebnisses für einen Gesichtsausdruck kann die Gesichtserkennungs-API auch ein Begrenzungsfeld für erkannte Gesichter zurückgeben. Beachten Sie, dass ein API-Schlüssel abgerufen werden muss, um die Gesichtserkennungs-API zu verwenden. Dadurch erhalten Sie unter [Cognitive Services versuchen](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+Zusätzlich zum Zurückgeben eines Emotions Ergebnisses für einen Gesichtsausdruck kann die Gesichtserkennungs-API auch ein Begrenzungsfeld für erkannte Gesichter zurückgeben.
 
 Zur Erkennung von Emotionen kann über eine Clientbibliothek und über eine REST-API ausgeführt werden. Dieser Artikel konzentriert sich auf die zur Erkennung von Emotionen über die REST-API ausführen. Weitere Informationen über die REST-API finden Sie unter [Gesichtserkennungs-REST-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
 Der Gesichtserkennungs-API kann auch verwendet werden, den Gesichtsausdruck von Personen im Video zu erkennen, und Sie können eine Übersicht über deren Emotionen zurück. Weitere Informationen finden Sie unter [Vorgehensweise Analysieren von Videos in Echtzeit](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/).
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
+
+Ein API-Schlüssel muss für die Verwendung des Gesichtserkennungs-API abgerufen werden. Dadurch erhalten Sie unter [Cognitive Services versuchen](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
 
 Weitere Informationen zu der Gesichtserkennungs-API, finden Sie unter [Gesichtserkennungs-API](/azure/cognitive-services/face/overview/).
 
@@ -46,8 +51,8 @@ Fehler beim Übergeben eines gültigen API-Schlüssels, der Gesichtserkennungs-A
 
 Zur Erkennung von Emotionen wird durchgeführt, indem eine POST-Anforderung mit einem Bild an der `detect` -API zu `https://[location].api.cognitive.microsoft.com/face/v1.0`, wobei `[location]]` ist die Region, die Sie verwendet, um Ihren API-Schlüssel abzurufen. Die mit optionalen Anforderungsparameter sind:
 
-- `returnFaceId` – ob FaceIds von der erkannten Gesichtern zurückgegeben. Der Standardwert ist `true`.
-- `returnFaceLandmarks` – ob Orientierungspunkte von der erkannten Gesichtern zurückgegeben. Der Standardwert ist `false`.
+- `returnFaceId` – ob FaceIds von der erkannten Gesichtern zurückgegeben. Der Standardwert ist `true`sein.
+- `returnFaceLandmarks` – ob Orientierungspunkte von der erkannten Gesichtern zurückgegeben. Der Standardwert ist `false`sein.
 - `returnFaceAttributes` – an, ob analysieren und zurückgeben, eine oder mehrere angegebene Attribute stehen. Unterstützte gesichtsmerkmale sind `age`, `gender`, `headPose`, `smile`, `facialHair`, `glasses`, `emotion`, `hair`, `makeup`, `occlusion`, `accessories`, `blur`, `exposure`, und `noise`. Beachten Sie, dass Gesicht Attribut Analysis zusätzliche Kosten für COMPUTE und Zeit.
 
 Bildinhalt muss im Text der POST-Anforderung als URL oder binäre Daten platziert werden.
@@ -79,7 +84,7 @@ Diese Methode generiert einen Anforderungs-URI und sendet dann die Anforderung a
 > [!NOTE]
 > Sie müssen die gleiche Region in Ihren Gesichtserkennungs-API-aufrufen, als Sie zum Abrufen Ihrer Abonnementschlüssel verwenden. Z. B., wenn Sie Ihre Abonnementschlüssel aus erhalten die `westus` , der Endpunkt der gesichtserkennungs-Erkennung werden `https://westus.api.cognitive.microsoft.com/face/v1.0/detect`.
 
-### <a name="send-the-request"></a>Anforderung senden
+### <a name="send-the-request"></a>Senden der Anforderung
 
 Die `SendRequestAsync` Methode macht die POST-Anforderung der Gesichtserkennungs-API und gibt das Ergebnis als eine `Face` Array:
 
@@ -170,7 +175,7 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 
 Der folgende Screenshot zeigt das Ergebnis des Prozesses Emotionen erkennen, in der beispielanwendung:
 
-![](emotion-recognition-images/emotion-recognition.png "Zur Erkennung von Emotionen")
+![](emotion-recognition-images/emotion-recognition.png "Emotion Recognition")
 
 ## <a name="related-links"></a>Verwandte Links
 

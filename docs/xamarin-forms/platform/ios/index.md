@@ -6,13 +6,13 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/22/2019
-ms.openlocfilehash: c90cfc297914b585403ae84e7dbac11fd6e02836
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.date: 12/11/2019
+ms.openlocfilehash: 5d0e289ddeb7eabef6d96c8882c772c704c54b34
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170940"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489725"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>IOS-Plattformfunktionen in xamarin. Forms
 
@@ -30,14 +30,15 @@ Die folgenden plattformspezifischen Funktionen werden für xamarin. Forms-Ansich
 
 Die folgenden plattformspezifischen Funktionen werden für xamarin. Forms-Ansichten unter IOS bereitgestellt:
 
-- Festlegen der [`Cell`-](xref:Xamarin.Forms.Cell) Hintergrundfarbe. Weitere Informationen finden Sie unter [Zellen Hintergrundfarbe unter IOS](cell-background-color.md).
+- Festlegen der [`Cell`](xref:Xamarin.Forms.Cell) Hintergrundfarbe. Weitere Informationen finden Sie unter [Zellen Hintergrundfarbe unter IOS](cell-background-color.md).
 - Um sicherzustellen, die eingegebenen Text passt in einen [ `Entry` ](xref:Xamarin.Forms.Entry) durch den Schriftgrad anpassen. Weitere Informationen finden Sie unter [Entry Font Size on IOS](entry-font-size.md).
 - Festlegen der cursorfarbe in einem [ `Entry` ](xref:Xamarin.Forms.Entry). Weitere Informationen finden Sie unter [Entry Cursor Color on IOS](entry-cursor-color.md).
-- Steuern, ob [`ListView`-](xref:Xamarin.Forms.ListView) Header Zellen beim Scrollen schweben. Weitere Informationen finden Sie unter [ListView Group Header Style on IOS](listview-group-header-style.md).
-- Steuern, ob Zeilen Animationen deaktiviert werden, wenn die [`ListView` Items-](xref:Xamarin.Forms.ListView) Auflistung aktualisiert wird. Weitere Informationen finden Sie unter [ListView-Zeilen Animationen unter IOS](listview-row-animations.md).
+- Steuern, ob beim Scrollen [`ListView`](xref:Xamarin.Forms.ListView) Header Zellen schweben. Weitere Informationen finden Sie unter [ListView Group Header Style on IOS](listview-group-header-style.md).
+- Steuern, ob Zeilen Animationen deaktiviert werden, wenn die Auflistung der [`ListView`](xref:Xamarin.Forms.ListView) Elemente aktualisiert wird. Weitere Informationen finden Sie unter [ListView-Zeilen Animationen unter IOS](listview-row-animations.md).
 - Festlegen von den Trennzeichenstil für eine [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter dem [ListView-Trennzeichen Stil unter IOS](listview-separator-style.md).
 - Steuern der bei Auswahl von Listenelementen in tritt auf, eine [ `Picker` ](xref:Xamarin.Forms.Picker). Weitere Informationen finden Sie unter [Auswahl Elementauswahl unter IOS](picker-selection.md).
 - Aktivieren der [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) festzulegende Eigenschaft durch Tippen auf eine Position auf der [ `Slider` ](xref:Xamarin.Forms.Slider) Balken-und nicht durch Ziehen mit der `Slider` Thumb-Steuerelement. Weitere Informationen finden Sie unter " [Slider Thumb Tap on IOS](slider-thumb.md)".
+- Steuern des Übergangs, der beim Öffnen einer `SwipeView`verwendet wird. Weitere Informationen finden Sie unter [swipeer View-Swipe-Übergangsmodus](swipeview-swipetransitionmode.md).
 
 Die folgenden plattformspezifischen Funktionen werden für xamarin. Forms-Seiten unter IOS bereitgestellt:
 
@@ -54,7 +55,7 @@ Die folgenden plattformspezifischen Funktionen werden für xamarin. Forms-Layout
 
 - Steuern, ob eine [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) behandelt eine Touch-Geste oder übergibt es an seinen Inhalt. Weitere Informationen finden Sie unter [Übersicht über ScrollView-Inhalte unter IOS](scrollview-content-touches.md).
 
-Die folgende plattformspezifische Funktionalität wird für die xamarin. Forms [`Application`-](xref:Xamarin.Forms.Application) Klasse unter IOS bereitgestellt:
+Die folgende plattformspezifische Funktionalität wird für die xamarin. Forms- [`Application`](xref:Xamarin.Forms.Application) -Klasse unter IOS bereitgestellt:
 
 - Deaktivieren der Barrierefreiheits Skalierung für benannte Schriftgrößen. Weitere Informationen finden Sie unter [Barrierefreiheits Skalierung für benannte Schriftgrößen unter IOS](named-font-size-scaling.md).
 - Aktivieren der Steuerung des Layouts und Rendern von Updates auf dem Hauptthread ausgeführt werden. Weitere Informationen finden Sie unter [Haupt-Thread Steuerungs Updates unter IOS](main-thread-updates-ui.md).
@@ -66,7 +67,7 @@ Xamarin. Forms ermöglicht die Festlegung von plattformübergreifenden Benutzero
 
 [Erfahren Sie mehr über das Formatieren](formatting.md) der Benutzeroberfläche mithilfe von IOS-spezifischen APIs, wie z **. b. info. plist** -Konfiguration und der `UIAppearance`-API.
 
-![](images/status-white-sml.png "IOS-Themen")
+![](images/status-white-sml.png "iOS Theming")
 
 ## <a name="other-ios-features"></a>Andere IOS-Features
 

@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/02/2019
-ms.openlocfilehash: 0ad31bc6f84ae633a9a18592a00670703db19df9
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/17/2019
+ms.openlocfilehash: 7d1183bf0c741b5a7ca02b43c4edb0c640ee1ac2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697872"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488222"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Xamarin. Forms carouselview-Daten
 
@@ -22,7 +22,7 @@ ms.locfileid: "72697872"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) enthält die folgenden Eigenschaften, die die anzuzeigenden Daten und ihre Darstellung definieren:
 
-- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)vom Typ `IEnumerable` gibt die Sammlung von Elementen an, die angezeigt werden sollen, und hat den Standardwert `null`.
+- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)vom Typ `IEnumerable`gibt die Sammlung von Elementen an, die angezeigt werden sollen, und hat den Standardwert `null`.
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)gibt die Vorlage an, die auf jedes Element in der Auflistung der anzuzeigenden Elemente angewendet werden soll.
 
 Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
@@ -34,7 +34,7 @@ Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.Bindabl
 
 ## <a name="populate-a-carouselview-with-data"></a>Auffüllen einer "carouselview" mit Daten
 
-Ein [`CarouselView`](xref:Xamarin.Forms.CarouselView) wird mit Daten aufgefüllt, indem seine [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) -Eigenschaft auf eine beliebige Auflistung festgelegt wird, die `IEnumerable` implementiert. Elemente können in XAML hinzugefügt werden, indem die `ItemsSource`-Eigenschaft aus einem Zeichen folgen Array initialisiert wird:
+Ein [`CarouselView`](xref:Xamarin.Forms.CarouselView) wird mit Daten aufgefüllt, indem seine [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) -Eigenschaft auf eine beliebige Auflistung festgelegt wird, die `IEnumerable`implementiert. Elemente können in XAML hinzugefügt werden, indem die `ItemsSource`-Eigenschaft aus einem Zeichen folgen Array initialisiert wird:
 
 ```xaml
 <CarouselView>
@@ -78,7 +78,7 @@ Standardmäßig zeigt [`CarouselView`](xref:Xamarin.Forms.CarouselView) Elemente
 
 [![Screenshot von carouselview mit Textelementen unter IOS und Android](populate-data-images/text.png "Text Elemente in einer carouselview")](populate-data-images/text-large.png#lightbox "Text Elemente in einer carouselview")
 
-Informationen zum Ändern der [`CarouselView`](xref:Xamarin.Forms.CarouselView) Ausrichtung finden Sie unter [xamarin. Forms carouselview Layout](layout.md). Informationen dazu, wie Sie die Darstellung der einzelnen Elemente im `CarouselView` definieren, finden Sie unter [Definieren der Element](#define-item-appearance)Darstellung.
+Informationen zum Ändern der [`CarouselView`](xref:Xamarin.Forms.CarouselView) Ausrichtung finden Sie unter [xamarin. Forms carouselview Layout](layout.md). Informationen dazu, wie Sie die Darstellung der einzelnen Elemente im `CarouselView`definieren, finden Sie unter [Definieren der Element](#define-item-appearance)Darstellung.
 
 ### <a name="data-binding"></a>Datenbindung
 
@@ -256,11 +256,39 @@ Die `MonkeyDataTemplateSelector`-Klasse definiert `AmericanMonkey` und `OtherMon
 Weitere Informationen zu Datenvorlagen-Selektoren finden Sie unter [Erstellen eines xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 
 > [!IMPORTANT]
-> Wenn Sie [`CarouselView`](xref:Xamarin.Forms.CarouselView)verwenden, legen Sie das Stamm Element ihrer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) -Objekte nie auf einen `ViewCell` fest. Dies führt dazu, dass eine Ausnahme ausgelöst wird, da `CarouselView` über kein Konzept von Zellen verfügt.
+> Wenn Sie [`CarouselView`](xref:Xamarin.Forms.CarouselView)verwenden, legen Sie das Stamm Element ihrer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) -Objekte nie auf einen `ViewCell`fest. Dies führt dazu, dass eine Ausnahme ausgelöst wird, da `CarouselView` über kein Konzept von Zellen verfügt.
 
-## <a name="pull-to-refresh"></a>Pull zum Aktualisieren
+## <a name="display-indicators"></a>Anzeigen von Indikatoren
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) unterstützt die Funktion zum Aktualisieren von Pull zum Aktualisieren durch die `RefreshView`, wodurch die zu aktualisierenden Daten durch Abrufen der Elemente aktualisiert werden können. Der `RefreshView` ist ein Container Steuerelement, das dem untergeordneten Pullvorgang zur Aktualisierungs Funktion bereitstellt, vorausgesetzt, das untergeordnete Element unterstützt scrollbaren Inhalt. Der Pull-Vorgang zum Aktualisieren wird daher für eine `CarouselView` implementiert, indem Sie als untergeordnetes Element eines `RefreshView` festgelegt wird:
+Indikatoren, die die Anzahl der Elemente und die aktuelle Position in einem `CarouselView`darstellen, können neben dem `CarouselView`angezeigt werden. Dies kann mit dem `IndicatorView`-Steuerelement erreicht werden:
+
+```xaml
+<StackLayout>
+    <CarouselView x:Name="carouselView"
+                  ItemsSource="{Binding Monkeys}">
+        <CarouselView.ItemTemplate>
+            <!-- DataTemplate that defines item appearance -->
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+    <IndicatorView ItemsSourceBy="carouselView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="DarkGray"
+                   HorizontalOptions="Center" />
+</StackLayout>
+```
+
+In diesem Beispiel wird der `IndicatorView` unterhalb des `CarouselView`gerendert, mit einem Indikator für jedes Element im `CarouselView`. Die `IndicatorView` wird mit Daten aufgefüllt, indem die `ItemsSourceBy`-Eigenschaft auf das `CarouselView`-Objekt festgelegt wird. Jeder Indikator ist ein heller grauer Kreis, während der Indikator, der das aktuelle Element im `CarouselView` darstellt, dunkelgrau ist:
+
+[![Screenshot von "carouselview" und "indikatorview" unter IOS und Android](populate-data-images/indicators.png "Sichorview-Kreise")](populate-data-images/indicators-large.png#lightbox "Sichorview-Kreise")
+
+> [!IMPORTANT]
+> Wenn Sie die `ItemsSourceBy`-Eigenschaft festlegen, wird die `IndicatorView.Position`-Eigenschaft an die `CarouselView.Position`-Eigenschaft gebunden, und die `IndicatorView.ItemsSource` Eigenschaften Bindung an die `CarouselView.ItemsSource`-Eigenschaft.
+
+Weitere Informationen zu Indikatoren finden Sie unter [xamarin. Forms-Anzeige](~/xamarin-forms/user-interface/indicatorview.md).
+
+## <a name="pull-to-refresh"></a>Aktualisieren durch Ziehen
+
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) unterstützt die Funktion zum Aktualisieren von Pull zum Aktualisieren durch die `RefreshView`, wodurch die zu aktualisierenden Daten durch Abrufen der Elemente aktualisiert werden können. Der `RefreshView` ist ein Container Steuerelement, das dem untergeordneten Pullvorgang zur Aktualisierungs Funktion bereitstellt, vorausgesetzt, das untergeordnete Element unterstützt scrollbaren Inhalt. Der Pull-Vorgang zum Aktualisieren wird daher für eine `CarouselView` implementiert, indem Sie als untergeordnetes Element eines `RefreshView`festgelegt wird:
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -293,9 +321,9 @@ Wenn der Benutzer eine Aktualisierung initiiert, wird die von der `Command`-Eige
 
 [![Screenshot von "carouselview Pull-to-refresh" unter IOS und Android](populate-data-images/pull-to-refresh.png "Carouselview Pull-to-refresh")](populate-data-images/pull-to-refresh-large.png#lightbox "Carouselview Pull-to-refresh")
 
-Der Wert der `RefreshView.IsRefreshing`-Eigenschaft gibt den aktuellen Status des `RefreshView` an. Wenn eine Aktualisierung durch den Benutzer ausgelöst wird, wird diese Eigenschaft automatisch zu `true` übergehen. Nachdem die Aktualisierung abgeschlossen ist, sollten Sie die-Eigenschaft auf `false` zurücksetzen.
+Der Wert der `RefreshView.IsRefreshing`-Eigenschaft gibt den aktuellen Status des `RefreshView`an. Wenn eine Aktualisierung durch den Benutzer ausgelöst wird, wird diese Eigenschaft automatisch zu `true`übergehen. Nachdem die Aktualisierung abgeschlossen ist, sollten Sie die-Eigenschaft auf `false`zurücksetzen.
 
-Weitere Informationen zu `RefreshView` finden Sie unter [xamarin. Forms erfrischendes View](~/xamarin-forms/user-interface/refreshview.md).
+Weitere Informationen zu `RefreshView`finden Sie unter [xamarin. Forms erfrischendes View](~/xamarin-forms/user-interface/refreshview.md).
 
 ## <a name="load-data-incrementally"></a>Inkrementelles Laden von Daten
 
@@ -303,8 +331,8 @@ Weitere Informationen zu `RefreshView` finden Sie unter [xamarin. Forms erfrisch
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert die folgenden Eigenschaften, um das inkrementelle Laden von Daten zu steuern:
 
-- `RemainingItemsThreshold` vom Typ `int` den Schwellenwert für Elemente, die noch nicht in der Liste angezeigt werden, bei der das `RemainingItemsThresholdReached` Ereignis ausgelöst wird.
-- `RemainingItemsThresholdReachedCommand` vom Typ `ICommand`, der ausgeführt wird, wenn die `RemainingItemsThreshold` erreicht wird.
+- `RemainingItemsThreshold`vom Typ `int`den Schwellenwert für Elemente, die noch nicht in der Liste angezeigt werden, bei der das `RemainingItemsThresholdReached` Ereignis ausgelöst wird.
+- `RemainingItemsThresholdReachedCommand`vom Typ `ICommand`, der ausgeführt wird, wenn die `RemainingItemsThreshold` erreicht wird.
 - `RemainingItemsThresholdReachedCommandParameter` vom Typ `object`: der Parameter, der an `RemainingItemsThresholdReachedCommand` übergeben wird.
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert auch ein `RemainingItemsThresholdReached` Ereignis, das ausgelöst wird, wenn der `CarouselView` einen Rollup hat, dass `RemainingItemsThreshold` Elemente nicht angezeigt wurden. Dieses Ereignis kann behandelt werden, um weitere Elemente zu laden. Wenn das `RemainingItemsThresholdReached`-Ereignis ausgelöst wird, wird außerdem der `RemainingItemsThresholdReachedCommand` ausgeführt, sodass inkrementelles Laden von Daten in einem ViewModel erfolgen kann.
@@ -351,6 +379,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 ## <a name="related-links"></a>Verwandte Links
 
 - [Carouselview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [Xamarin. Forms-Anzeige Ansicht](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin. Forms-Ansicht "erfrischend"](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin. Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin. Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)

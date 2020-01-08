@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031780"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488945"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
@@ -141,7 +141,7 @@ In ios 9 hat Apple die Keychain erweitert, um einen neuen Verschlüsselungs Schl
 - Access Control Listen Entropie (mit der Option "Anwendungs Kennwort") für die von der APP bereitgestellte Schlüsselbund Element-Verschlüsselung.
 - Unterstützung für das Erstellen und Verwenden von Schlüsseln innerhalb der sicheren Enclave (über das `kSecAttrTokenIDSecureEnclave`-Attribut).
 
-Weitere Informationen finden Sie [in unserer Einführung in die Berührungs-ID](~/ios/platform/touchid.md) -Dokumentation.
+Weitere Informationen finden Sie unter Fingereingabe [-ID und Face ID in xamarin. IOS](~/ios/platform/touch-id-face-id.md).
 
 ## <a name="right-to-left-language-support"></a>Sprachunterstützung von rechts nach links
 
@@ -187,21 +187,21 @@ Eine umfassende Liste der spezifischen API-Abgrenzungen finden Sie in der Dokume
 
 Wir haben einige [IOS 9-spezifische Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9) für den Einstieg:
 
-- [Astrolayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
+- [AstroLayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
-- [Metalperformanceshadershelloworld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
+- [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
 - [Musik Bewegung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
-- [Photoprogress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
-- [Abbild Katalogisierung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
+- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
-- ["Stickycorners"](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
+- [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 Sehen Sie sich auch die IOS-Abschnitte dieser Beispiele an (Begleit Mac OS X Versionen kommen!):
 
-- [Agentscatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
-- [Metalkitessentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
+- [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
+- [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Einführung in 3D-Fingereingabe](~/ios/platform/3d-touch.md)

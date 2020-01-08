@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031806"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489205"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
-_mit IOS 8 hat Apple eine Vielzahl von neuen Frameworks und APIs bereitgestellt, mit denen sich Entwickler begeistern und begeistern. In diesem Handbuch werden diese neuen APIs vorgestellt und erläutert, wie IOS 8 von Entwicklern und Benutzern profitieren kann._
+_Mit IOS 8 hat Apple eine Vielzahl von neuen Frameworks und APIs bereitgestellt, mit denen sich Entwickler begeistern und begeistern können. In diesem Handbuch werden diese neuen APIs vorgestellt und erläutert, wie IOS 8 von Entwicklern und Benutzern profitieren kann._
 
-IOS 7 hat die gesamte IOS-Benutzeroberfläche von dem ersten iPhone-Betriebssystem, das von Benutzern und Entwicklern erwartet wurde, visuell geändert. IOS 8 fährt damit fort, indem viele Frameworks für Entwickler bereitgestellt werden, die es Benutzern ermöglichen, fast alle Aspekte ihrer Lebensdauer direkt von Ihrem iPhone aus zu steuern. Beispielsweise können Integrität und Fitness mit *healthkit*analysiert werden, Kennungen sind mit der biometrischen Authentifizierung über *localauthentication*veraltet, *App-Erweiterungen* eröffnen einen Kommunikationskanal zwischen Drittanbieter-apps und  *Homekit* ermöglicht die Möglichkeit, Ihr Haus in die Zukunft zu versetzen. 
+IOS 7 hat die gesamte IOS-Benutzeroberfläche von dem ersten iPhone-Betriebssystem, das von Benutzern und Entwicklern erwartet wurde, visuell geändert. IOS 8 fährt damit fort, indem viele Frameworks für Entwickler bereitgestellt werden, die es Benutzern ermöglichen, fast alle Aspekte ihrer Lebensdauer direkt von Ihrem iPhone aus zu steuern. Beispielsweise können Integrität und Fitness mit *healthkit*analysiert werden, Kennungen sind mit der biometrischen Authentifizierung über *localauthentication*veraltet, *App-Erweiterungen* eröffnen einen Kommunikationskanal zwischen Drittanbieter-apps, und *homekit* ermöglicht die Möglichkeit, Ihr Haus zu einem Zuhause in der Zukunft zu machen. 
 
 Wenn IOS 7 mit einem erfreuen von Benutzern zu tun hat, konzentriert sich IOS 8 auf die Auswahl von Entwicklern, die über eine ganze Reihe von leckeren neuen Tools verfügen. 
 
@@ -26,7 +26,7 @@ In diesem Handbuch werden die neuen APIs für xamarin. IOS-Entwickler vorgestell
 
 Es gibt auch einige APIs, die in ios 8 als veraltet eingestuft wurden, die am Ende dieses Dokuments ausführlich erläutert werden.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>-Anforderungen
 
 Zum Erstellen von IOS 8-Apps in Visual Studio für Mac sind die folgenden Schritte erforderlich:
 
@@ -44,7 +44,7 @@ Das Steuern ihrer Geräte über Ihr iPhone ist keine neue Technologie Anwendung.
 
 Mit homekit können Drittanbieter-apps und Siri Zubehör erkennen und ihrer eigenen Konfigurations Datenbank für die privat Datenbank hinzufügen, diese Daten bearbeiten und bearbeiten und mit Zubehör und Ihren Diensten kommunizieren, um eine Aktion auszuführen.
 
-### <a name="configuration"></a>Konfiguration
+### <a name="configuration"></a>-Konfiguration
 
 Das folgende Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör:
 
@@ -93,7 +93,7 @@ Erstens werden die vorhandenen Keychain-Dienste durch die Verwendung neuer Keych
 
 Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten mithilfe von `CanEvaluatePolicy` ermitteln, ob das Gerät die Berührungs-ID akzeptieren kann, und dann `EvaluatePolicy`, um den Authentifizierungs Vorgang zu starten.
 
-Weitere Informationen zur Touch-ID und zur Integration in eine xamarin. IOS-Anwendung finden Sie in der [Einführung in touchid](~/ios/platform/touchid.md) -Anleitungen.
+Weitere Informationen über die Fingereingabe-ID und Informationen zur Integration in eine xamarin. IOS-Anwendung finden Sie unter Fingereingabe [-ID und Face ID in xamarin. IOS](~/ios/platform/touch-id-face-id.md) Guides.
 
 ### <a name="document-picker"></a>Dokumentauswahl
 
@@ -161,10 +161,10 @@ Mit allen in ios 8 vorgenommenen Verbesserungen sind einige APIs veraltet. Einig
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – dies wurde durch uisearchcontroller in iOS8 ersetzt.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 In diesem Artikel wurden einige der neuen Features behandelt, die von Apple in ios 8 eingeführt wurden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Uikitenhancements (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-uikitenhancements)
 - [Einführung in App-Erweiterungen](~/ios/platform/extensions.md)
@@ -172,5 +172,5 @@ In diesem Artikel wurden einige der neuen Features behandelt, die von Apple in i
 - [Einführung in die Dokument Auswahl](~/ios/platform/document-picker.md)
 - [Einführung in healthkit](~/ios/platform/healthkit.md)
 - [Einführung in manuelle Kamera Steuerelemente](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
-- [Einführung in touchid](~/ios/platform/touchid.md)
+- [Fingereingabe-ID und Face ID mit xamarin. IOS](~/ios/platform/touch-id-face-id.md)
 - [Einführung in vereinheitlichte Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)

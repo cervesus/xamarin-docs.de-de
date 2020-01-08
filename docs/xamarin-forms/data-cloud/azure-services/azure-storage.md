@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/28/2018
-ms.openlocfilehash: 3f3ff0b06fe23d724e04ac34108119932aa666ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8d773abbca348d09d3359f09cbded22f6521fb7f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649715"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487320"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Speichern und Zugreifen auf Daten in Azure Storage aus xamarin. Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
-_Azure Storage ist ein skalierbarer Cloud-speicherlösung, die zum Speichern von unstrukturierter und strukturierter Daten verwendet werden kann. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms zum Speichern von Text- und Binärdaten im Azure-Speicher zu verwenden, und die Daten zugreifen._
+_Azure Storage ist eine skalierbare cloudspeicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann. In diesem Artikel wird veranschaulicht, wie Sie xamarin. Forms verwenden, um Text-und Binärdaten in Azure Storage zu speichern und um auf die Daten zuzugreifen._
 
 Azure Storage bietet vier Storage-Dienste:
 
@@ -36,17 +36,20 @@ In diesem Artikel und die zugehörige beispielanwendung veranschaulicht, Hochlad
 
 Weitere Informationen zu Azure Storage finden Sie unter [Einführung in Storage](https://azure.microsoft.com/documentation/articles/storage-introduction/).
 
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
+
 ## <a name="introduction-to-blob-storage"></a>Einführung in Blob Storage
 
 BLOB-Speicher besteht aus drei Komponenten, die in der folgenden Abbildung dargestellt sind:
 
-![](azure-storage-images/blob-storage.png "Konzepte des BLOB-Speicher")
+![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
 
 Alle Zugriffe auf Azure Storage erfolgt über ein Speicherkonto. Ein Speicherkonto kann eine unbegrenzte Anzahl von Containern enthalten, und einem Container kann eine unbegrenzte Anzahl von Blobs, die bis zur speicherkapazitätsgrenze des Speicherkontos gespeichert.
 
 Ein Blob ist eine Datei von beliebiger Art und Größe. Azure Storage unterstützt drei verschiedene blobtypen:
 
-- Block-Blobs sind für das Streamen und Speichern von cloudobjekten optimiert und eignen sich gut zum Speichern von Sicherungen, Mediendateien, Dokumente usw. Block-Blobs können bis zu 195 Gb groß sein.
+- Blockblobs sind für das Streamen und Speichern von cloudressourcen optimiert und sind eine gute Wahl für das Speichern von Sicherungen, Mediendateien, Dokumenten usw. Block-BLOBs können bis zu 1 bis 7 GB groß sein.
 - Fügen Sie Blobs ähneln blockblobs sind aber für Anfügevorgänge, z. B. die Protokollierung. Append-Blobs können bis zu 195Gb groß sein.
 - Seitenblobs sind für häufige Lese/Schreibvorgänge optimiert und in der Regel zum Speichern von virtuellen Computern und deren Datenträger verwendet werden. Seiten-Blobs können bis zu 1 Tb groß sein.
 
@@ -70,7 +73,7 @@ Der Prozess zur Integration von Azure Storage-Konto in einer Xamarin.Forms-Anwen
 
 <a name="connecting" />
 
-## <a name="connecting-to-azure-storage"></a>Herstellen einer Verbindung mit Azure-Speicher
+## <a name="connecting-to-azure-storage"></a>Herstellen einer Verbindung mit Azure Storage
 
 Jede Anforderung für Speicherkonto-Ressourcen muss authentifiziert werden. Während es sich bei Blobs um die Unterstützung anonymer Authentifizierungen konfiguriert werden können, gibt es zwei Hauptansätze, mit denen eine Anwendung mit einem Speicherkonto zu authentifizieren:
 
@@ -122,7 +125,7 @@ Weitere Informationen zu Shared Access Signatures finden Sie unter [mithilfe von
 
 ## <a name="creating-a-container"></a>Erstellen eines Containers
 
-Die `GetContainer` Methode wird verwendet, um einen Verweis auf ein benannter Container, abrufen, die dann zum Abrufen von Blobs aus dem Container oder Hinzufügen von Blobs in den Container verwendet werden kann. Das folgende Codebeispiel zeigt die `GetContainer` Methode:
+Die `GetContainer` Methode wird verwendet, um einen Verweis auf ein benannter Container, abrufen, die dann zum Abrufen von Blobs aus dem Container oder Hinzufügen von Blobs in den Container verwendet werden kann. Die `GetContainer`-Methode wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -258,7 +261,7 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 Nach dem Abrufen einer Referenz zur Container, ruft die Methode einen Blob-Verweis für das angegebene Blob ab. Das Blob wird dann gelöscht, mit der `DeleteIfExistsAsync` Methode.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Azure-Speicher (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [Einführung in Storage](https://azure.microsoft.com/documentation/articles/storage-introduction/)

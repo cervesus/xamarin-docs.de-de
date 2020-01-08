@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027745"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487827"
 ---
 # <a name="app-linking-in-android"></a>App-Verknüpfung in Android
 
@@ -36,7 +36,7 @@ Wenn für den Benutzer keine apps installiert sind, die den URI unterstützen, u
 
 In diesem Handbuch wird erläutert, wie eine Android 6,0-Anwendung konfiguriert wird und wie die Digital Asset Links-Datei erstellt und veröffentlicht wird, um App-Verknüpfungen in Android 6,0 zu unterstützen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 Diese Anleitung erfordert xamarin. Android 6,1 und eine Anwendung, die auf Android 6,0 (API-Ebene 23) oder höher ausgerichtet ist.
 
@@ -188,14 +188,13 @@ Es können zwei Tests durchgeführt werden, um sicherzustellen, dass die beabsic
     Status: always : 200000002
     ```
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Leitfaden wurde erläutert, wie die APP-Verknüpfung in Android 6,0 funktioniert. Anschließend wird erläutert, wie eine Android 6,0-Anwendung konfiguriert wird, um App-Links zu unterstützen und darauf zu reagieren. Außerdem wurde erläutert, wie App-Verknüpfungen in einer Android-Anwendung getestet werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Finden der MD5- oder SHA1-Signatur Ihres Keystores](~/android/deploy-test/signing/keystore-signature.md)
-- [Aktivitäten und Intents](https://university.xamarin.com/classes#4)
-- [Applinks](https://developers.facebook.com/docs/applinks)
+- [AppLinks](https://developers.facebook.com/docs/applinks)
 - [Links zu Google Digital Assets](https://developers.google.com/digital-asset-links/)
 - [Anweisungs Listen Generator und Tester](https://developers.google.com/digital-asset-links/tools/generator)

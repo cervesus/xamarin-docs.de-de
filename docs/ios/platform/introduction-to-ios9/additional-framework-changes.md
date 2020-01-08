@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ef0bcba7a59984c6bad7091431fe00b1f1b7eee3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031790"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489088"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Weitere Änderungen an IOS 9-Frameworks
 
@@ -62,7 +62,7 @@ Weitere Informationen finden Sie in den folgenden Dokumenten:
 - [Cloudkit-Schnellstart](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987) : Einführung in cloudkit von Apple.
 - [Cloudkit js-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359) : die cloudkit js-Dokumentation von Apple.
 - [Referenz zu cloudkit-Webdiensten](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240) : der Verweis von Apple, der die HTTP-Schnittstelle zu cloudkit beschreibt.
-- [cloudkit-Katalog: Eine Einführung in cloudkit (Cocoa und JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) die Beispiel-APP von Apple mithilfe von cloudkit und cloudkit js.
+- [Cloudkit-Katalog: eine Einführung in cloudkit (Cocoa und JavaScript):](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) die Beispiel-APP von Apple mithilfe von cloudkit und cloudkit js.
 
 > [!IMPORTANT]
 > Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
@@ -131,7 +131,7 @@ Apple enthielt die folgenden Änderungen am [lokalen Authentifizierungs](xref:Lo
 - Die Möglichkeit, den _Authentifizierungs Kontext_ in Keychain-aufrufen und Unterstützung zum Auswerten von Zugriffs Steuerungs Listen für Keychain zu verwenden.
 - Die Möglichkeit, eine Benutzereingabe Aufforderung aus dem Code abzubrechen.
 
-Weitere Informationen zum Arbeiten mit der Touchscreen-ID in xamarin. IOS finden Sie in unserer [Einführung in die Berührungs-ID](~/ios/platform/touchid.md) -Dokumentation.
+Weitere Informationen finden Sie unter Fingereingabe [-ID und Face ID mit xamarin. IOS](~/ios/platform/touch-id-face-id.md).
 
 ### <a name="lacontext-changes"></a>Lacontext-Änderungen
 
@@ -259,7 +259,7 @@ Um dieses Problem zu beheben, verwenden Sie die Klassen automatisch Layout und G
 
 Verwenden Sie die neue `UITextInputAssistantItem`-Klasse, um Balken Schaltflächen Gruppen in einer Verknüpfungs _Leiste_zu verwenden. Die Verknüpfungs Leiste ist ein neuer Bereich, der in der Bildschirmtastatur verfügbar ist, um Tipp Verknüpfungen bereitzustellen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Einführung in iOS 9](~/ios/platform/introduction-to-ios9/index.md)

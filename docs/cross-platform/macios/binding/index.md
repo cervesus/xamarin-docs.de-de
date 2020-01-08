@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: davidortinau
 ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: cc404f3995bd1f2940897f6cb84d57cea39ae44b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7764d63991ec636043982509319e7097ef2091b
+ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016284"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663251"
 ---
 # <a name="binding-objective-c"></a>Binden von Objective-C
 
@@ -48,9 +48,11 @@ Eine Auflistung von Bindungen von Drittanbietern, die als Verweis verwendet werd
 
 ## <a name="mac"></a>Mac
 
-In der Vergangenheit war die [Mac-Bindung](~/mac/platform/binding.md) ein sehr manueller Prozess. Zurzeit ist eine [herunterladbare Vorschau](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview) der Mac-Bindungs Projektunterstützung für eine zukünftige Version von Visual Studio für Mac verfügbar.
+Befolgen Sie die Anweisungen für [Mac-Bindungen](~/mac/platform/binding.md) zum Binden von macOS-Bibliotheken. Sie können eine neue **Mac-Bindungs Bibliothek** im Fenster **Neues Projekt** erstellen:
 
-## <a name="related-links"></a>Verwandte Links
+[Dialogfeld "![Datei" neues Mac-Bindungen Projekt](images/new-bindings-library-sml.png)](images/new-bindings-library.png#lightbox)
+
+## <a name="related-links"></a>Verwandte Themen
 
 - [IOS-Bindung](~/ios/platform/binding-objective-c/index.md)
 - [Mac-Bindung](~/mac/platform/binding.md)

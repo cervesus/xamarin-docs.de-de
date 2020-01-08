@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 609ee17b6f2fd392c612277de8bbf59f8780f7d9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 871058d1c128b37a0f2e77b43587139efb433de1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020385"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487775"
 ---
 # <a name="creating-a-cryptoobject"></a>Erstellen eines cryptoobject
 
@@ -57,7 +57,7 @@ public class CryptoObjectHelper
         Cipher cipher = Cipher.GetInstance(TRANSFORMATION);
         try
         {
-            cipher.Init(CipherMode.EncryptMode | CipherMode.DecryptMode, key);
+            cipher.Init(CipherMode.EncryptMode, key);
         } catch(KeyPermanentlyInvalidatedException e)
         {
             _keystore.DeleteEntry(KEY_NAME);
@@ -132,7 +132,7 @@ Nachdem der `KeyGenParameterSpec` erstellt wurde, wird er verwendet, um den `Key
 
 ## <a name="using-the-cryptoobjecthelper"></a>Verwenden von cryptoobjecthelper
 
-Nun, da der Beispielcode einen Großteil der Logik zum Erstellen einer `CryptoWrapper` in der `CryptoObjectHelper`-Klasse gekapselt hat, sehen wir uns den Code vom Anfang dieses Handbuchs an und verwenden die `CryptoObjectHelper`, um die Chiffre zu erstellen und einen Fingerabdruckscanner zu starten. : 
+Nun, da der Beispielcode einen Großteil der Logik zum Erstellen einer `CryptoWrapper` in der `CryptoObjectHelper`-Klasse gekapselt hat, sehen wir uns den Code vom Anfang dieses Handbuchs an und verwenden die `CryptoObjectHelper`, um die Chiffre zu erstellen und einen Fingerabdruckscanner zu starten: 
 
 ```csharp
 protected void FingerPrintAuthenticationExample()
@@ -155,15 +155,15 @@ protected void FingerPrintAuthenticationExample()
 
 Nachdem Sie nun erfahren haben, wie Sie eine `CryptoObject`erstellen, können Sie sich mit der Verwendung der `FingerprintManager.AuthenticationCallbacks` für das übertragen der Ergebnisse des Fingerabdruck-Überprüfungs Dienstanbieter auf eine Android-Anwendung fortfahren.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [Verschlüsselungs](xref:Javax.Crypto.Cipher)
-- [Fingerprintmanager. cryptoobject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
-- [Fingerprintmanagercompat. cryptoobject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
-- [Keygenerator](xref:Javax.Crypto.KeyGenerator)
-- [Keygenparameterspec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
-- [Keygenparameterspec. Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
-- [Keypermanentlyinvalidatedexception](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
+- [Verschlüsselung](xref:Javax.Crypto.Cipher)
+- [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
+- [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
+- [KeyGenerator](xref:Javax.Crypto.KeyGenerator)
+- [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
+- [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
+- [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
 - [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
-- [Kak](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
+- [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 - [RFC 2315-pcks-#7](https://tools.ietf.org/html/rfc2315)

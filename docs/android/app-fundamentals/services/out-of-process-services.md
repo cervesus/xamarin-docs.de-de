@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: fda5ed3b2a26166e23d4a796219758853d0aace7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f546a1403aa0af07fc69187c4cfbec8982ed7a2a
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024548"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556508"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Ausführen von Android-Diensten in Remote Prozessen
 
@@ -39,26 +39,26 @@ In vielerlei Hinsicht ist das Binden an einen Dienst, der in einem anderen Proze
 
 Die Notwendigkeit, prozessübergreifende Grenzen zu überschreiten, führt zu einer zusätzlichen Komplexität: die Kommunikation erfolgt unidirektional (Client zu Server), und der Client kann Methoden für die Dienstklasse nicht direkt aufrufen. Beachten Sie, dass Android ein `IBinder` Objekt bereitstellt, das möglicherweise eine bidirektionale Kommunikation zulässt, wenn ein Dienst denselben Prozess wie der Client ausgeführt hat. Dies ist nicht der Fall, wenn der Dienst in einem eigenen Prozess ausgeführt wird. Ein Client kommuniziert mit einem Remote Dienst mithilfe der `Android.OS.Messenger`-Klasse.
 
-Wenn ein Client eine Bindung an den Remote Dienst anfordert, ruft Android die `Service.OnBind` Lifecycle-Methode auf, die das interne `IBinder` Objekt zurückgibt, das vom `Messenger` gekapselt wird. Der `Messenger` ist ein schlanker Wrapper für eine spezielle `IBinder` Implementierung, die vom Android SDK bereitgestellt wird. Der `Messenger` kümmert sich um die Kommunikation zwischen den beiden unterschiedlichen Prozessen. Der Entwickler hat keine Sorgen um die Details der Serialisierung einer Nachricht, das Marshalling der Nachricht über die Prozess Grenze und die anschließende Deserialisierung auf dem Client. Diese Arbeit wird vom `Messenger`-Objekt verarbeitet. Dieses Diagramm zeigt die Client seitigen Android-Komponenten, die beteiligt sind, wenn ein Client eine Bindung an einen Out-of-Process-Dienst initiiert:
+Wenn ein Client eine Bindung an den Remote Dienst anfordert, ruft Android die `Service.OnBind` Lifecycle-Methode auf, die das interne `IBinder` Objekt zurückgibt, das vom `Messenger`gekapselt wird. Der `Messenger` ist ein schlanker Wrapper für eine spezielle `IBinder` Implementierung, die vom Android SDK bereitgestellt wird. Der `Messenger` kümmert sich um die Kommunikation zwischen den beiden unterschiedlichen Prozessen. Der Entwickler hat keine Sorgen um die Details der Serialisierung einer Nachricht, das Marshalling der Nachricht über die Prozess Grenze und die anschließende Deserialisierung auf dem Client. Diese Arbeit wird vom `Messenger`-Objekt verarbeitet. Dieses Diagramm zeigt die Client seitigen Android-Komponenten, die beteiligt sind, wenn ein Client eine Bindung an einen Out-of-Process-Dienst initiiert:
 
 ![Diagramm, das die Schritte und Komponenten für eine Client Bindung an einen Dienst anzeigt](out-of-process-services-images/ipc-01.png "Diagramm, das die Schritte und Komponenten für eine Client Bindung an einen Dienst anzeigt.")
 
-Die `Service`-Klasse im Remote Prozess durchläuft die gleichen Lebenszyklus Rückrufe, die von einem gebundenen Dienst in einem lokalen Prozess durchlaufen werden, und viele der beteiligten APIs sind identisch. `Service.OnCreate` wird verwendet, um eine `Handler` zu initialisieren und in `Messenger` Objekt einzufügen. Entsprechend wird `OnBind` überschrieben, aber statt ein `IBinder` Objekt zurückzugeben, gibt der Dienst die `Messenger` zurück.  Dieses Diagramm veranschaulicht, was im Dienst passiert, wenn ein Client an ihn gebunden wird:
+Die `Service`-Klasse im Remote Prozess durchläuft die gleichen Lebenszyklus Rückrufe, die von einem gebundenen Dienst in einem lokalen Prozess durchlaufen werden, und viele der beteiligten APIs sind identisch. `Service.OnCreate` wird verwendet, um eine `Handler` zu initialisieren und in `Messenger` Objekt einzufügen. Entsprechend wird `OnBind` überschrieben, aber statt ein `IBinder` Objekt zurückzugeben, gibt der Dienst die `Messenger`zurück.  Dieses Diagramm veranschaulicht, was im Dienst passiert, wenn ein Client an ihn gebunden wird:
 
 ![Diagramm, das die Schritte und Komponenten anzeigt, die ein Dienst durchläuft, wenn er von einem Remote Client an gebunden wird](out-of-process-services-images/ipc-02.png "Diagramm, das die Schritte und Komponenten anzeigt, die ein Dienst durchläuft, wenn er von einem Remote Client an gebunden wird.")
 
-Wenn ein `Message` von einem Dienst empfangen wird, wird er von in einer Instanz von `Android.OS.Handler` verarbeitet. Der Dienst implementiert eine eigene `Handler` Unterklasse, die die `HandleMessage`-Methode überschreiben muss. Diese Methode wird vom `Messenger` aufgerufen und empfängt die `Message` als Parameter. Der `Handler` prüft die `Message` Metadaten und verwendet diese Informationen, um Methoden für den Dienst aufzurufen.
+Wenn ein `Message` von einem Dienst empfangen wird, wird er von in einer Instanz von `Android.OS.Handler`verarbeitet. Der Dienst implementiert eine eigene `Handler` Unterklasse, die die `HandleMessage`-Methode überschreiben muss. Diese Methode wird vom `Messenger` aufgerufen und empfängt die `Message` als Parameter. Der `Handler` prüft die `Message` Metadaten und verwendet diese Informationen, um Methoden für den Dienst aufzurufen.
 
-Eine unidirektionale Kommunikation erfolgt, wenn ein Client ein `Message`-Objekt erstellt und mithilfe der `Messenger.Send`-Methode an den Dienst sendet. `Messenger.Send` serialisiert die `Message` und übergibt diese serialisierten Daten an Android, wodurch die Nachricht über die Prozess Grenze und an den Dienst weitergeleitet wird.  Der `Messenger`, der vom-Dienst gehostet wird, erstellt ein `Message`-Objekt aus den eingehenden Daten. Diese `Message` wird in eine Warteschlange gestellt, in der Nachrichten einzeln an die `Handler` übermittelt werden. In der `Handler` werden die in der `Message` enthaltenen Metadaten überprüft und die entsprechenden Methoden auf dem `Service` aufgerufen. Das folgende Diagramm veranschaulicht die verschiedenen Konzepte in Aktion:
+Eine unidirektionale Kommunikation erfolgt, wenn ein Client ein `Message`-Objekt erstellt und mithilfe der `Messenger.Send`-Methode an den Dienst sendet. `Messenger.Send` serialisiert die `Message` und übergibt diese serialisierten Daten an Android, wodurch die Nachricht über die Prozess Grenze und an den Dienst weitergeleitet wird.  Der `Messenger`, der vom-Dienst gehostet wird, erstellt ein `Message`-Objekt aus den eingehenden Daten. Diese `Message` wird in eine Warteschlange gestellt, in der Nachrichten einzeln an die `Handler`übermittelt werden. In der `Handler` werden die in der `Message` enthaltenen Metadaten überprüft und die entsprechenden Methoden auf dem `Service`aufgerufen. Das folgende Diagramm veranschaulicht die verschiedenen Konzepte in Aktion:
 
 ![Diagramm zum Übertragen von Nachrichten zwischen Prozessen](out-of-process-services-images/ipc-03.png "Diagramm, das zeigt, wie Nachrichten zwischen Prozessen übermittelt werden.")
 
 In diesem Leitfaden werden die Details der Implementierung eines Out-of-Process-Dienstanbieter erörtert. Es wird erläutert, wie ein Dienst implementiert wird, der in einem eigenen Prozess ausgeführt werden soll, und wie ein Client mit diesem Dienst über das `Messenger` Framework kommunizieren kann. Außerdem wird die bidirektionale Kommunikation kurz erörtert: der Client sendet eine Nachricht an einen Dienst, und der Dienst sendet eine Nachricht zurück an den Client. Da Dienste von verschiedenen Anwendungen gemeinsam genutzt werden können, wird in diesem Handbuch auch eine Methode zum Einschränken des Client Zugriffs auf den Dienst mithilfe von Android-Berechtigungen erörtert.
 
 > [!IMPORTANT]
-> [Bugzilla 51940/GitHub 1950-Dienste mit isolierten Prozessen und einer benutzerdefinierten Anwendungsklasse können keine über Ladungen beheben](https://github.com/xamarin/xamarin-android/issues/1950) , um zu melden, dass ein xamarin. Android-Dienst nicht ordnungsgemäß gestartet wird, wenn die `IsolatedProcess` auf `true` festgelegt ist. Dieses Handbuch wird für einen-Verweis bereitgestellt. Eine xamarin. Android-Anwendung sollte weiterhin in der Lage sein, mit einem Out-of-Process-Dienst zu kommunizieren, der in Java geschrieben ist.
+> [Bugzilla 51940/GitHub 1950-Dienste mit isolierten Prozessen und einer benutzerdefinierten Anwendungsklasse können keine über Ladungen beheben](https://github.com/xamarin/xamarin-android/issues/1950) , um zu melden, dass ein xamarin. Android-Dienst nicht ordnungsgemäß gestartet wird, wenn die `IsolatedProcess` auf `true`festgelegt ist. Dieses Handbuch wird für einen-Verweis bereitgestellt. Eine xamarin. Android-Anwendung sollte weiterhin in der Lage sein, mit einem Out-of-Process-Dienst zu kommunizieren, der in Java geschrieben ist.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 In dieser Anleitung wird das Erstellen von-Diensten vorausgesetzt.
 
@@ -79,7 +79,7 @@ Ein Dienst, der in einem eigenen Prozess ausgeführt werden soll, ist im Grunde 
 3. `IsolatedProcess` &ndash; diese Eigenschaft zusätzliche Sicherheit, die es Android ermöglicht, den Dienst in einem isolierten Sandkasten mit minimaler Berechtigung zum interagieren mit dem Rest des Systems auszuführen. Weitere Informationen finden [Sie unter Bugzilla 51940-Dienste mit isolierten Prozessen und benutzerdefinierte Anwendungsklasse Fehler beim ordnungsgemäßen Auflösen von über Ladungen](https://bugzilla.xamarin.com/show_bug.cgi?id=51940).
 4. `Permission` &ndash; es möglich, den Client Zugriff auf den Dienst zu steuern, indem Sie eine Berechtigung angeben, die Clients anfordern (und erteilt) werden müssen.
 
-Um einen Dienst als eigenen Prozess auszuführen, muss die `Process`-Eigenschaft des `ServiceAttribute` auf den Namen des Dienstanbieter festgelegt werden. Um mit externen Anwendungen zu interagieren, sollte die `Exported`-Eigenschaft auf `true` festgelegt werden. Wenn `Exported` `false` ist, können nur Clients im gleichen APK (d. h. die gleiche Anwendung), die in demselben Prozess ausgeführt werden, mit dem Dienst interagieren.
+Um einen Dienst als eigenen Prozess auszuführen, muss die `Process`-Eigenschaft des `ServiceAttribute` auf den Namen des Dienstanbieter festgelegt werden. Um mit externen Anwendungen zu interagieren, sollte die `Exported`-Eigenschaft auf `true`festgelegt werden. Wenn `Exported` `false`ist, können nur Clients im gleichen APK (d. h. die gleiche Anwendung), die in demselben Prozess ausgeführt werden, mit dem Dienst interagieren.
 
 Die Art des Prozesses, in dem der Dienst ausgeführt wird, hängt vom Wert der `Process`-Eigenschaft ab. Android identifiziert drei verschiedene Arten von Prozessen:
 
@@ -125,11 +125,11 @@ Der nächste Screenshot zeigt, `Process="com.xamarin.xample.messengerservice.tim
 
 ![Screenshot eines Dienstanbieter, der in einem globalen Prozess ausgeführt wird](out-of-process-services-images/ipc-05.png "Screenshot eines Dienstanbieter, der in einem globalen Prozess ausgeführt wird.")
 
-Nachdem die `ServiceAttribute` festgelegt wurde, muss der Dienst eine `Handler` implementieren.
+Nachdem die `ServiceAttribute` festgelegt wurde, muss der Dienst eine `Handler`implementieren.
 
 ### <a name="implementing-a-handler"></a>Implementieren eines Handlers
 
-Zum Verarbeiten von Client Anforderungen muss der Dienst eine `Handler` implementieren und die `HandleMessage` methodthis-Methode außer Kraft setzen. Dies bedeutet, dass die-Methode eine `Message`-Instanz verwendet, die den Methodenaufruf vom Client kapselt und diesen Aufruf in eine Aktion oder Aufgabe übersetzt, die der Dienst durchführt. vornehmen. Das `Message`-Objekt macht eine Eigenschaft mit dem Namen `What` verfügbar. Dies ist ein ganzzahliger Wert, dessen Bedeutung von dem Client und dem Dienst gemeinsam genutzt wird und die sich auf eine Aufgabe bezieht, die der Dienst für den Client ausführen soll.
+Zum Verarbeiten von Client Anforderungen muss der Dienst eine `Handler` implementieren und die `HandleMessage`-Methode überschreiben. Dies ist die Methode, die eine `Message`-Instanz verwendet, die den Methodenaufrufe vom Client kapselt und diesen Rückruf in eine Aktion oder Aufgabe übersetzt, die der Dienst ausführen wird. Das `Message`-Objekt macht eine Eigenschaft mit dem Namen `What` verfügbar. Dies ist ein ganzzahliger Wert, dessen Bedeutung von dem Client und dem Dienst gemeinsam genutzt wird und die sich auf eine Aufgabe bezieht, die der Dienst für den Client ausführen soll.
 
 Der folgende Code Ausschnitt aus der Beispielanwendung zeigt ein Beispiel für `HandleMessage`. In diesem Beispiel gibt es zwei Aktionen, die von einem Client für den Dienst angefordert werden können:
 
@@ -149,7 +149,7 @@ public class TimestampRequestHandler : Android.OS.Handler
         switch (messageType)
         {
             case Constants.SAY_HELLO_TO_TIMESTAMP_SERVICE:
-                // The client as sent a simple Hello, say in the Android Log.
+                // The client has sent a simple Hello, say in the Android Log.
                 break;
 
             case Constants.GET_UTC_TIMESTAMP:
@@ -164,13 +164,13 @@ public class TimestampRequestHandler : Android.OS.Handler
 }
 ```
 
-Es ist auch möglich, Parameter für den Dienst in der `Message` zu verpacken. Dies wird später in diesem Handbuch erläutert. Das nächste zu berücksichtigende Thema ist das Erstellen des `Messenger` Objekts zum Verarbeiten der eingehenden `Message`s.
+Es ist auch möglich, Parameter für den Dienst in der `Message`zu verpacken. Dies wird später in diesem Handbuch erläutert. Das nächste zu berücksichtigende Thema ist das Erstellen des `Messenger` Objekts zum Verarbeiten der eingehenden `Message`s.
 
 ### <a name="instantiating-the-messenger"></a>Instanziieren des Messenger
 
 Wie bereits erwähnt, liegt das Deserialisieren des `Message` Objekts und das Aufrufen von `Handler.HandleMessage` in der Verantwortung des `Messenger` Objekts. Die `Messenger`-Klasse stellt außerdem ein `IBinder` Objekt bereit, das der Client verwendet, um Nachrichten an den Dienst zu senden.  
 
-Wenn der Dienst gestartet wird, wird der `Messenger` instanziiert und die `Handler` eingefügt. Ein guter Ausgangspunkt für diese Initialisierung ist die `OnCreate`-Methode des Diensts. Dieser Code Ausschnitt ist ein Beispiel für einen Dienst, der seine eigenen `Handler` und `Messenger` initialisiert:
+Wenn der Dienst gestartet wird, wird der `Messenger` instanziiert und die `Handler`eingefügt. Ein guter Ausgangspunkt für diese Initialisierung ist die `OnCreate`-Methode des Diensts. Dieser Code Ausschnitt ist ein Beispiel für einen Dienst, der seine eigenen `Handler` und `Messenger`initialisiert:
 
 ```csharp
 private Messenger messenger; // Instance variable for the Messenger
@@ -183,7 +183,7 @@ public override void OnCreate()
 }
 ```
 
-An diesem Punkt besteht der letzte Schritt darin, dass die `Service` `OnBind` überschreiben.
+An diesem Punkt besteht der letzte Schritt darin, dass die `Service` `OnBind`überschreiben.
 
 ### <a name="implementing-serviceonbind"></a>Implementieren von "Service. onbind"
 
@@ -217,7 +217,7 @@ Intent serviceToStart = new Intent();
 serviceToStart.SetComponent(cn);
 ```
 
-Wenn der Dienst gebunden ist, wird die `IServiceConnection.OnServiceConnected`-Methode aufgerufen und stellt einem Client eine `IBinder` bereit. Der-Client verwendet den `IBinder` jedoch nicht direkt. Stattdessen instanziiert er ein `Messenger` Objekt aus diesem `IBinder`. Dies ist der `Messenger`, der vom Client für die Interaktion mit dem Remote Dienst verwendet wird.
+Wenn der Dienst gebunden ist, wird die `IServiceConnection.OnServiceConnected`-Methode aufgerufen und stellt einem Client eine `IBinder` bereit. Der-Client verwendet den `IBinder`jedoch nicht direkt. Stattdessen instanziiert er ein `Messenger` Objekt aus diesem `IBinder`. Dies ist der `Messenger`, der vom Client für die Interaktion mit dem Remote Dienst verwendet wird.
 
 Im folgenden finden Sie ein Beispiel für eine sehr einfache `IServiceConnection` Implementierung, die veranschaulicht, wie ein Client das Herstellen einer Verbindung mit einem Dienst und das Trennen der Verbindung mit einem Dienst übernimmt. Beachten Sie, dass die `OnServiceConnected`-Methode empfängt und `IBinder`, und der Client erstellt eine `Messenger` aus diesem `IBinder`:
 
@@ -242,7 +242,7 @@ public class TimestampServiceConnection : Java.Lang.Object, IServiceConnection
     {
         Log.Debug(TAG, $"OnServiceConnected {name.ClassName}");
 
-        IsConnected = service != null
+        IsConnected = service != null;
         Messenger = new Messenger(service);
 
         if (IsConnected)
@@ -270,17 +270,17 @@ public class TimestampServiceConnection : Java.Lang.Object, IServiceConnection
 Nachdem die Dienst Verbindung und die Absicht erstellt wurden, kann der Client `BindService` aufzurufen und den Bindungsprozess initiieren:
 
 ```csharp
-IServiceConnection serviceConnection = new TimestampServiceConnection(this);
-BindActivity(serviceToStart, serviceConnection, Bind.AutoCreate);
+var serviceConnection = new TimestampServiceConnection(this);
+BindService(serviceToStart, serviceConnection, Bind.AutoCreate);
 ```
 
 Nachdem der Client erfolgreich an den Dienst gebunden wurde und die `Messenger` verfügbar ist, kann der Client `Messages` an den Dienst senden.
 
 ## <a name="sending-messages-to-the-service"></a>Senden von Nachrichten an den Dienst
 
-Sobald der Client verbunden ist und über ein `Messenger` Objekt verfügt, ist es möglich, mit dem Dienst zu kommunizieren, indem `Message` Objekte über die `Messenger` verteilt werden. Diese Kommunikation erfolgt unidirektional, der Client sendet die Nachricht, aber es gibt keine Rückgabe Meldung vom Dienst an den Client. In dieser Hinsicht ist der `Message` ein Fire-and-Forget-Mechanismus.
+Sobald der Client verbunden ist und über ein `Messenger` Objekt verfügt, ist es möglich, mit dem Dienst zu kommunizieren, indem `Message` Objekte über die `Messenger`verteilt werden. Diese Kommunikation erfolgt unidirektional, der Client sendet die Nachricht, aber es gibt keine Rückgabe Meldung vom Dienst an den Client. In dieser Hinsicht ist der `Message` ein Fire-and-Forget-Mechanismus.
 
-Die bevorzugte Methode zum Erstellen eines `Message` Objekts ist die Verwendung der [`Message.Obtain`](xref:Android.OS.Message) Factory-Methode. Diese Methode ruft ein `Message` Objekt aus einem globalen Pool ab, der von Android verwaltet wird. `Message.Obtain` verfügt auch über überladene Methoden, mit denen das `Message` Objekt mit den Werten und Parametern initialisiert werden kann, die für den Dienst erforderlich sind.  Nachdem der `Message` instanziiert wurde, wird er durch Aufrufen von `Messenger.Send` an den Dienst gesendet. Dieser Code Ausschnitt ist ein Beispiel für das Erstellen und Verteilen eines `Message` an den Dienst Prozess:
+Die bevorzugte Methode zum Erstellen eines `Message` Objekts ist die Verwendung der [`Message.Obtain`](xref:Android.OS.Message) Factory-Methode. Diese Methode ruft ein `Message` Objekt aus einem globalen Pool ab, der von Android verwaltet wird. `Message.Obtain` verfügt auch über überladene Methoden, mit denen das `Message` Objekt mit den Werten und Parametern initialisiert werden kann, die für den Dienst erforderlich sind.  Nachdem der `Message` instanziiert wurde, wird er durch Aufrufen von `Messenger.Send`an den Dienst gesendet. Dieser Code Ausschnitt ist ein Beispiel für das Erstellen und Verteilen eines `Message` an den Dienst Prozess:
 
 ```csharp
 Message msg = Message.Obtain(null, Constants.SAY_HELLO_TO_TIMESTAMP_SERVICE);
@@ -294,13 +294,13 @@ catch (RemoteException ex)
 }
 ```
 
-Es gibt mehrere verschiedene Formen der `Message.Obtain`-Methode. Im vorherigen Beispiel wird der [`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)verwendet. Da es sich hierbei um eine asynchrone Anforderung an einen Out-of-Process-Dienst handelt, Es gibt keine Antwort vom Dienst, deshalb ist die `Handler` auf `null` festgelegt. Der zweite Parameter, `Int32 what`, wird in der `.What`-Eigenschaft des `Message`-Objekts gespeichert. Die `.What`-Eigenschaft wird vom Code im Dienst Prozess verwendet, um Methoden für den Dienst aufzurufen.
+Es gibt mehrere verschiedene Formen der `Message.Obtain`-Methode. Im vorherigen Beispiel wird der [`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)verwendet. Da es sich hierbei um eine asynchrone Anforderung an einen Out-of-Process-Dienst handelt, Es gibt keine Antwort vom Dienst, deshalb ist die `Handler` auf `null`festgelegt. Der zweite Parameter, `Int32 what`, wird in der `.What`-Eigenschaft des `Message`-Objekts gespeichert. Die `.What`-Eigenschaft wird vom Code im Dienst Prozess verwendet, um Methoden für den Dienst aufzurufen.
 
 Die `Message`-Klasse macht auch zwei zusätzliche Eigenschaften verfügbar, die möglicherweise für den Empfänger verwendet werden: `Arg1` und `Arg2`. Diese beiden Eigenschaften sind ganzzahlige Werte, die möglicherweise einige besondere Werte aufweisen, die zwischen dem Client und dem Dienst Bedeutung haben. Beispielsweise kann `Arg1` eine Kunden-ID enthalten, und `Arg2` kann eine Bestellnummer für diesen Kunden enthalten. Der [`Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)`](xref:Android.OS.Message.Obtain) kann verwendet werden, um die beiden Eigenschaften festzulegen, wenn die `Message` erstellt wird. Eine andere Möglichkeit zum Auffüllen dieser beiden Werte besteht darin, die `.Arg` und `.Arg2` Eigenschaften direkt auf das `Message` Objekt festzulegen, nachdem es erstellt wurde.
 
 ### <a name="passing-additional-values-to-the-service"></a>Übergeben zusätzlicher Werte an den Dienst
 
-Es ist möglich, mithilfe eines `Bundle` komplexere Daten an den Dienst zu übergeben. In diesem Fall können zusätzliche Werte in einem `Bundle` platziert und zusammen mit dem `Message` gesendet werden, indem die [Eigenschaft `.Data` Eigenschaft](xref:Android.OS.Message.Data) vor dem senden festgelegt wird.
+Es ist möglich, mithilfe eines `Bundle`komplexere Daten an den Dienst zu übergeben. In diesem Fall können zusätzliche Werte in einem `Bundle` platziert und zusammen mit dem `Message` gesendet werden, indem die [Eigenschaft`.Data` Eigenschaft](xref:Android.OS.Message.Data) vor dem senden festgelegt wird.
 
 ```csharp
 Bundle serviceParameters = new Bundle();
@@ -317,7 +317,7 @@ messenger.Send(msg);
 
 ## <a name="returning-values-from-the-service"></a>Zurückgeben von Werten aus dem Dienst
 
-Die Messaging Architektur, die zu diesem Zeitpunkt diskutiert wurde, ist unidirektional, der Client sendet eine Nachricht an den Dienst. Wenn es erforderlich ist, dass der Dienst einen Wert an einen Client zurückgibt, wird alles, was zu diesem Zeitpunkt besprochen wurde, umgekehrt. Der Dienst muss eine `Message` erstellen, alle Rückgabewerte verpackt und die `Message` über einen `Messenger` an den Client senden. Der Dienst erstellt jedoch keinen eigenen `Messenger`; Stattdessen wird die Client Instanziierung und das Packen einer `Messenger` als Teil der ursprünglichen Anforderung unterstützt. Der Dienst `Send` die Nachricht mithilfe dieses vom Client bereitgestellten `Messenger`.  
+Die Messaging Architektur, die zu diesem Zeitpunkt diskutiert wurde, ist unidirektional, der Client sendet eine Nachricht an den Dienst. Wenn es erforderlich ist, dass der Dienst einen Wert an einen Client zurückgibt, wird alles, was zu diesem Zeitpunkt besprochen wurde, umgekehrt. Der Dienst muss eine `Message`erstellen, alle Rückgabewerte verpackt und die `Message` über einen `Messenger` an den Client senden. Der Dienst erstellt jedoch keinen eigenen `Messenger`; Stattdessen wird die Client Instanziierung und das Packen einer `Messenger` als Teil der ursprünglichen Anforderung unterstützt. Der Dienst `Send` die Nachricht mithilfe dieses vom Client bereitgestellten `Messenger`.  
 
 Die Abfolge der Ereignisse für die bidirektionale Kommunikation lautet wie folgt:
 
@@ -327,7 +327,7 @@ Die Abfolge der Ereignisse für die bidirektionale Kommunikation lautet wie folg
 4. Der Dienst empfängt die Nachricht vom Client und führt die angeforderte Arbeit aus.
 5. Wenn der Dienst die Antwort an den Client sendet, wird `Message.Obtain` zum Erstellen eines neuen `Message` Objekts verwendet.
 6. Um diese Nachricht an den Client zu senden, extrahiert der Dienst den Client Messenger aus der `.ReplyTo`-Eigenschaft der Client Nachricht und verwendet diese, um die `Message` zurück an den Client zu `.Send`.
-7. Wenn die Antwort vom Client empfangen wird, verfügt sie über einen eigenen `Handler`, der die `Message` verarbeitet, indem Sie die `.What`-Eigenschaft prüft (und ggf. alle Parameter extrahiert, die in der `Message` enthalten sind).
+7. Wenn die Antwort vom Client empfangen wird, verfügt sie über einen eigenen `Handler`, der die `Message` verarbeitet, indem Sie die `.What`-Eigenschaft prüft (und ggf. alle Parameter extrahiert, die in der `Message`enthalten sind).
 
 In diesem Beispielcode wird veranschaulicht, wie der Client die `Message` instanziiert und eine `Messenger` Verpacken muss, die der Dienst für seine Antwort verwenden soll:
 
@@ -392,7 +392,7 @@ Da `signature`-und `normal` Berechtigungen von Android automatisch zur installie
 
 Es gibt zwei gängige Möglichkeiten, um einen Dienst mit Android-Berechtigungen zu sichern:
 
-1. **Implementieren der Sicherheit auf Signatur Ebene** &ndash; auf Signatur Ebene, bedeutet dies, dass den Anwendungen, die mit demselben Schlüssel signiert wurden, der mit demselben Schlüssel signiert wurde, der zum Signieren des APK-Diensts verwendet wurde Dies ist eine einfache Möglichkeit für Entwickler, ihren Dienst zu schützen, aber Sie können Sie über ihre eigenen Anwendungen zugänglich halten. Berechtigungen auf Signatur Ebene werden deklariert, indem die `Permission`-Eigenschaft des `ServiceAttribute` auf `signature` festgelegt wird:
+1. **Implementieren der Sicherheit auf Signatur Ebene** &ndash; auf Signatur Ebene, bedeutet dies, dass den Anwendungen, die mit demselben Schlüssel signiert wurden, der mit demselben Schlüssel signiert wurde, der zum Signieren des APK-Diensts verwendet wurde Dies ist eine einfache Möglichkeit für Entwickler, ihren Dienst zu schützen, aber Sie können Sie über ihre eigenen Anwendungen zugänglich halten. Berechtigungen auf Signatur Ebene werden deklariert, indem die `Permission`-Eigenschaft des `ServiceAttribute` auf `signature`festgelegt wird:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -414,7 +414,7 @@ Ein vereinfachtes Beispiel für das Erstellen einer benutzerdefinierten `normal`
 
 Um eine benutzerdefinierte Berechtigung zu verwenden, wird Sie vom Dienst deklariert, während der Client diese Berechtigung explizit anfordert.
 
-Zum Erstellen einer Berechtigung im Dienst-APK wird dem `manifest`-Element in " **androidmanifest. XML**" ein `permission`-Element hinzugefügt. Für diese Berechtigung müssen die Attribute `name`, `protectionLevel` und `label` festgelegt sein. Das `name`-Attribut muss auf eine Zeichenfolge festgelegt werden, die die Berechtigung eindeutig identifiziert. Der Name wird in der APP- **Info** -Ansicht der **Android-Einstellungen** angezeigt (wie im nächsten Abschnitt gezeigt).
+Zum Erstellen einer Berechtigung im Dienst-APK wird dem `manifest`-Element in " **androidmanifest. XML**" ein `permission`-Element hinzugefügt. Für diese Berechtigung müssen die Attribute `name`, `protectionLevel`und `label` festgelegt sein. Das `name`-Attribut muss auf eine Zeichenfolge festgelegt werden, die die Berechtigung eindeutig identifiziert. Der Name wird in der APP- **Info** -Ansicht der **Android-Einstellungen** angezeigt (wie im nächsten Abschnitt gezeigt).
 
 Das `protectionLevel`-Attribut muss auf einen der vier Zeichen folgen Werte festgelegt werden, die oben beschrieben wurden.  Die `label` und `description` müssen auf Zeichen folgen Ressourcen verweisen und zum Bereitstellen eines benutzerfreundlichen namens und einer Beschreibung für den Benutzer verwendet werden.
 
@@ -471,15 +471,15 @@ Anschließend muss die Datei " **androidmanifest. XML** " des Client-APK diese n
 
 [![Screenshots von einem Android-Gerät, das zeigt, wie die einer Anwendung gewährten Berechtigungen gefunden werden.](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Leitfaden wurde erläutert, wie Sie einen Android-Dienst in einem Remote Prozess ausführen. Die Unterschiede zwischen einem lokalen und einem Remote Dienst wurden zusammen mit einigen Gründen erläutert, warum ein Remote Dienst für die Stabilität und Leistung einer Android-App hilfreich sein kann. Nachdem erläutert wurde, wie ein Remote Dienst implementiert wird und wie ein Client mit dem Dienst kommunizieren kann, wurde in diesem Handbuch eine Möglichkeit bereitgestellt, den Zugriff auf den Dienst nur von autorisierten Clients aus einzuschränken.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Lers](xref:Android.OS.Handler)
 - [Meldung](xref:Android.OS.Message)
-- [Messengers](xref:Android.OS.Messenger)
+- [Messenger](xref:Android.OS.Messenger)
 - [Service Attribute](xref:Android.App.ServiceAttribute)
 - [Das exportierte Attribut.](https://developer.android.com/guide/topics/manifest/service-element.html#exported)
 - [Dienste mit isolierten Prozessen und benutzerdefinierten Anwendungs Klassen können über Ladungen nicht ordnungsgemäß auflösen.](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f49fa08e5d9b2ad76fc069b415d6ea5b899b2bf7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a3d0962eb8253ca72b6afce77036e02a7aa59b94
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030790"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607892"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Veröffentlichen im Apple TV App Store
 
@@ -47,7 +47,7 @@ Apple unterhält außerdem eine Liste der Tipps für die Übermittlung von Apple
 
 [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa) ist eine Suite von webbasierten Tools, die unter anderem die Verwaltung Ihrer tvos-apps im Apple TV App Store unterstützen. Ihre xamarin. tvos-app muss in iTunes Connect ordnungsgemäß eingerichtet und konfiguriert werden, bevor Sie zur Überprüfung an Apple übermittelt werden kann, und schließlich für den Verkauf oder als kostenlose App im Apple TV App Store veröffentlicht werden kann.
 
-Führen Sie folgende Schritte aus:
+Gehen Sie wie folgt vor:
 
 1. Gehen Sie in iTunes Connect zum Abschnitt **Vereinbarungen, Steuern und Bankgeschäfte**. Stellen Sie sicher, dass die Vereinbarungen richtig eingerichtet und auf dem neuesten Stand sind, um eine iOS-Anwendung kostenlos oder zum Verkauf freizugeben.
 2. Erstellen Sie einen neuen **iTunes Connect-Datensatz** für die Anwendung, und geben Sie den **anzeigen Amen** an (wie im Apple TV App Store zu sehen).
@@ -69,7 +69,7 @@ Wenn Sie eine APP im Apple TV App Store veröffentlichen möchten, müssen Sie S
 
 <a name="Provisioning_for_Application_Services" />
 
-### <a name="provisioning-for-application-services"></a>Bereitstellung für Anwendungsdienste
+### <a name="provisioning-for-application-services"></a>Provisioning for Application Services (Bereitstellung für Anwendungsdienste)
 
 Apple bietet eine Auswahl spezieller Anwendungsdienste (auch als Berechtigungen bezeichnet), die für Ihre tvos-App aktiviert werden können, wenn Sie eine eindeutige ID für Sie erstellen. Unabhängig davon, ob Sie benutzerdefinierte Berechtigungen verwenden oder nicht, müssen Sie dennoch eine eindeutige ID für Ihre xamarin. tvos-app erstellen, bevor Sie im Apple TV App Store veröffentlicht werden kann.
 
@@ -91,7 +91,7 @@ Führen Sie die folgenden Schritte in Visual Studio für Mac aus:
 5. Wählen Sie die erforderlichen Berechtigungen für Ihre xamarin. tvos-App aus, und konfigurieren Sie diese, damit Sie dem Setup entsprechen, das Sie oben beim Definieren der APP-ID ausgeführt haben.
 6. Speichern Sie die Änderungen an der Datei `Entitlements.plist`.
 
-Eine ausführliche Anleitung finden Sie in der Dokumentation unter [Provisioning for Application Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) (Bereitstellung für Anwendungsdienste). Während dieses Dokument für IOS geschrieben wurde, werden dieselben Schritte auch zum Bereitstellen einer xamarin. tvos-App verwendet.
+Eine ausführliche Anleitung finden Sie in der Dokumentation unter [Provisioning for Application Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services) (Bereitstellung für Anwendungsdienste). Während dieses Dokument für IOS geschrieben wurde, werden dieselben Schritte auch zum Bereitstellen einer xamarin. tvos-App verwendet.
 
 <a name="Setting_the_Apps_Icons_and_Launch_Screens" />
 
@@ -125,7 +125,7 @@ Eine ausführliche Anleitung finden Sie unter [Creating a Distribution Profile](
 
 Wenn Sie eine neue xamarin. tvos-app erstellen, werden standardmäßig _Buildkonfigurationen_ sowohl für die **Debug** -als auch für die **releasebereitstellung** erstellt. Vor der endgültigen Erstellung Ihrer APP, die Sie an Apple übermitteln, müssen Sie einige Änderungen an der Basis **Releasekonfiguration** vornehmen.
 
-Führen Sie folgende Schritte aus:
+Gehen Sie wie folgt vor:
 
 1. Klicken Sie mit der rechten Maustaste auf den **Projektnamen** in den **Projektmappen-Explorer** -und Auswahl **Optionen** , um Sie zur Bearbeitung zu öffnen.
 2. Wenn Sie auf eine bestimmte Version von tvos abzielen, wählen Sie Sie unter **tvos Build** > **IOS SDK-Version**aus. Legen Sie für die Vorschauversion der tvos-Unterstützung diesen Wert auf **default**fest.
@@ -149,7 +149,7 @@ Wenn Sie Ihre xamarin. tvos-App ordnungsgemäß konfiguriert haben, können Sie 
 2. Wählen Sie aus dem **Build**-Menü die Option **Zur Veröffentlichung aktivieren**:
 
     [![](app-store-publishing-images/buildxs02new.png "Select Archive for Publishing")](app-store-publishing-images/buildxs02new.png#lightbox)
-3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt:
+3. Sobald das Archiv erstellt wurde, wird die **Archiv**-Ansicht angezeigt:
 
     [![](app-store-publishing-images/buildxs03new.png "The Archives view")](app-store-publishing-images/buildxs03new.png#lightbox)
 
@@ -217,11 +217,11 @@ Wenn Sie Probleme beim Einreichen Ihrer xamarin. tvos-APP an den Apple TV App St
 
 <a name="Summary" />
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurde eine Schritt-für-Schritt-Anleitung zum Konfigurieren, entwickeln und Übermitteln einer APP für die Apple TV App Store-Veröffentlichung vorgestellt. Zuerst wird die Vorgehensweise zum Erstellen und Installieren eines Verteilungsbereitstellungsprofils erklärt. Im nächsten Schritt wird erläutert, wie Sie mit Visual Studio für Mac einen verteilungsbuild erstellen. Schließlich haben Sie erfahren, wie Sie iTunes Connect und das Xcode Archive-Tool verwenden, um eine Anwendung an den Apple TV App Store zu übermitteln.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Arbeiten mit Symbolen und Bildern](~/ios/tvos/app-fundamentals/icons-images.md)
 - [Vorbereiten der APP-Übermittlung für das neue Apple TV](https://developer.apple.com/tvos/submit/)

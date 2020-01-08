@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: ea2c733a9c85662b9286f8e8631b601248dc11de
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cd5aaac0f41ee6e4afd79397a77635e66abad219
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770838"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489790"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>Daten mit Azure Search und xamarin. Forms suchen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
-_Azure Search ist ein Clouddienst zur indizierungs- und Abfragefunktionen für hochgeladene Daten. Dies entfernt die Anforderungen an die Infrastruktur und die Suche Algorithmus Komplexitäten, die normalerweise bei der Implementierung von Suchfunktionen in einer Anwendung verknüpft ist. In diesem Artikel veranschaulicht, wie die Bibliothek für Microsoft Azure Search, um Azure Search in einer Xamarin.Forms-Anwendung zu integrieren._
+_Azure Search ist ein clouddienst, der Indizierungs-und Abfragefunktionen für hochgeladene Daten bereitstellt. Dadurch werden die Komplexitäten in Bezug auf die Infrastruktur und Suchalgorithmen entfernt In diesem Artikel wird veranschaulicht, wie Sie die Microsoft Azure Search-Bibliothek verwenden, um Azure Search in eine xamarin. Forms-Anwendung zu integrieren._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Daten werden in Azure Search als Indizes und Dokumente gespeichert. Ein *Index* ist ein Speicher für Daten, die von Azure Search-Diensts durchsucht werden können, und gleicht konzeptionell einer Datenbanktabelle. Ein *Dokument* ist eine Einheit mit durchsuchbaren Daten in einem Index, und gleicht konzeptionell einer Datenbankzeile. Beim Hochladen von Dokumenten und Suchabfragen an Azure Search übermitteln, Anforderungen an einen bestimmten Index in der Search-Dienst vorgenommen.
 
@@ -37,6 +37,9 @@ Die am häufigsten verwendete Anforderung an Azure Search ist zum Ausführen ein
 Suchabfragen und Filtern Sie Abfragen können separat oder zusammen verwendet werden. Bei gemeinsamer Verwendung die Filterabfrage für den gesamten Index zuerst angewendet wird, und klicken Sie dann die Suchabfrage für die Ergebnisse der Filterabfrage ausgeführt wird.
 
 Azure Search unterstützt auch beim Abrufen von Vorschlägen, die basierend auf der Sucheingabe. Weitere Informationen finden Sie unter [Vorschlag Abfragen](#suggestions).
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
 ## <a name="setup"></a>Setup
 
@@ -91,11 +94,11 @@ static void CreateSearchIndex()
 Die `Index.Name` -Eigenschaft sollte auf den Namen des Index festgelegt werden und die `Index.Fields` Eigenschaft muss festgelegt werden, auf ein Array von `Field` Objekte. Jede `Field` Instanz gibt einen Namen, einen Typ und Eigenschaften, die angeben, wie das Feld verwendet wird. Zu diesen Eigenschaften zählen:
 
 - `IsKey` – Gibt an, ob das Feld der Schlüssel des Indexes ist. Nur ein Feld im Index vom Typ `DataType.String`, als das Schlüsselfeld festgelegt werden muss.
-- `IsFacetable` – Gibt an, ob es möglich ist, facettennavigation für dieses Feld ausführen. Der Standardwert ist `false`.
-- `IsFilterable` – Gibt an, ob das Feld in Filterabfragen verwendet werden kann. Der Standardwert ist `false`.
-- `IsRetrievable` – Gibt an, ob das Feld in Suchergebnissen abgerufen werden kann. Der Standardwert ist `true`.
-- `IsSearchable` – Gibt an, ob das Feld in der Volltextsuche enthalten ist. Der Standardwert ist `false`.
-- `IsSortable` – Gibt an, ob in das Feld verwendet werden kann `OrderBy` Ausdrücke. Der Standardwert ist `false`.
+- `IsFacetable` – Gibt an, ob es möglich ist, facettennavigation für dieses Feld ausführen. Der Standardwert ist `false`sein.
+- `IsFilterable` – Gibt an, ob das Feld in Filterabfragen verwendet werden kann. Der Standardwert ist `false`sein.
+- `IsRetrievable` – Gibt an, ob das Feld in Suchergebnissen abgerufen werden kann. Der Standardwert ist `true`sein.
+- `IsSearchable` – Gibt an, ob das Feld in der Volltextsuche enthalten ist. Der Standardwert ist `false`sein.
+- `IsSortable` – Gibt an, ob in das Feld verwendet werden kann `OrderBy` Ausdrücke. Der Standardwert ist `false`sein.
 
 > [!NOTE]
 > Nachdem sie bereitgestellt wurde, wird durch das Ändern eines Indexes beinhaltet, neu zu erstellen und das erneute Laden der Daten.
@@ -216,7 +219,7 @@ Diese Filterabfrage für den gesamten Index angewendet wird und Dokumenten aus d
 
 Die `SearchAsync` Methode gibt eine `DocumentSearchResult` Objekt, das die Ergebnisse der Abfrage enthält. Dieses Objekt wird aufgelistet, mit jedem `Document` Objekt erstellt wird, als eine `Monkey` Objekt hinzugefügt, und wählen Sie die `Monkeys` `ObservableCollection` für die Anzeige. Die folgenden Screenshots zeigen Ergebnisse der Suchabfrage von Azure Search zurückgegebenen:
 
-![](azure-search-images/search.png "Suchergebnisse")
+![](azure-search-images/search.png "Search Results")
 
 Weitere Informationen suchen und filtern, finden Sie unter [Abfragen Ihrer Azure Search-Index mit dem .NET SDK](/azure/search/search-query-dotnet/).
 
@@ -268,15 +271,15 @@ Der Gesamteffekt besteht, dass die ersten 10 Ergebnisse aus dem Index mit zurüc
 
 Die `SuggestAsync` Methode gibt eine `DocumentSuggestResult` Objekt, das die Ergebnisse der Abfrage enthält. Dieses Objekt wird aufgelistet, mit jedem `Document` Objekt erstellt wird, als eine `Monkey` Objekt hinzugefügt, und wählen Sie die `Monkeys` `ObservableCollection` für die Anzeige. Die folgenden Screenshots zeigen die von Azure Search zurückgegebenen Ergebnisse Vorschlag:
 
-![](azure-search-images/suggest.png "Vorschlag Ergebnisse")
+![](azure-search-images/suggest.png "Suggestion Results")
 
 Beachten Sie, dass in der beispielanwendung, die `SuggestAsync` Methode wird nur aufgerufen, wenn der Benutzer einen Suchbegriff eingeben. Allerdings können sie auch verwendet werden, automatische Vervollständigung von Suchabfragen zu unterstützen, indem Sie auf jeden Tastendruck ausführen.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurde veranschaulicht, wie die Microsoft Azure Search-Bibliothek verwenden, um Azure Search in einer Xamarin.Forms-Anwendung zu integrieren. Azure Search ist ein Clouddienst zur indizierungs- und Abfragefunktionen für hochgeladene Daten. Dies entfernt die Anforderungen an die Infrastruktur und die Suche Algorithmus Komplexitäten, die normalerweise bei der Implementierung von Suchfunktionen in einer Anwendung verknüpft ist.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Azure Search (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 - [Azure Search-Dokumentation](/azure/search/)

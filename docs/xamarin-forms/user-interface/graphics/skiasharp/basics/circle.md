@@ -7,16 +7,16 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: a3eca2036b0e4c2722e034e48ad4ca3054343a89
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: a0ab6a965c2507c01f5b7ebdc3670e6661ca481e
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032584"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545633"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erlernen der Grundlagen von SkiaSharp-Zeichnungen, einschließlich Leinwände, und Zeichnen von Objekten_
 
@@ -24,7 +24,7 @@ In diesem Artikel erläutert die Konzepte der Zeichnen von Grafiken in Xamarin.F
 
 Die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm enthält den Beispielcode für diese Reihe von SkiaSharp-Artikeln. Die erste Seite berechtigt ist **einfachen Kreises** und ruft die Seitenklasse [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Dieser Code zeigt, wie Sie das Zeichnen eines Kreises in der Mitte der Seite mit einem Radius von 100 Pixel. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist Blau.
 
-![](circle-images/circleexample.png "Ein blauer Kreis rot umrandet")
+![](circle-images/circleexample.png "A blue circle outlined in red")
 
 Die [ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page-Klasse leitet sich von `ContentPage` und enthält zwei `using` Direktiven für die SkiaSharp-Namespaces:
 
@@ -60,8 +60,8 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die [ `SKPaintSurfaceEventArgs` ](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs) -Objekt, das das Ereignis verfügt über zwei Eigenschaften:
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) Der Typ [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) Der Typ [`SKSurface`](xref:SkiaSharp.SKSurface)
+- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) vom Typ [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
+- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) vom Typ [`SKSurface`](xref:SkiaSharp.SKSurface)
 
 Die `SKImageInfo` Struktur enthält Informationen über die Zeichenoberfläche, vor allem die Breite und Höhe in Pixel. Die `SKSurface` Objekt darstellt, die Zeichenoberfläche selbst. In diesem Programm ist die Zeichenoberfläche ein video anzeigen, aber in anderen Programmen eine `SKSurface` Objekt kann auch repräsentieren eine Bitmap, mit denen Sie SkiaSharp gezeichnet werden soll.
 
@@ -141,9 +141,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Dieses Mal die `DrawCircle` Aufruf füllt den Kreis, der mithilfe der neuen Eigenschaften der `SKPaint` Objekt.
 
-So sieht das Programm ausgeführt wird, unter iOS, Android und die universelle Windows-Plattform aus:
+Hier ist das Programm, das unter IOS und Android ausgeführt wird:
 
-[![](circle-images/simplecircle-small.png "Dreifacher Screenshot der einfachen kreisseite")](circle-images/simplecircle-large.png#lightbox "Dreifacher Screenshot der einfachen kreisseite")
+[![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
 
 Wenn das Programm selbst ausführen, können Sie aktivieren das Telefon oder den Simulator auf die Seite, um festzustellen, wie die Abbildung neu gezeichnet wird. Jedes Mal neu gezeichnet wird, die Grafik muss die `PaintSurface` -Ereignishandler erneut aufgerufen wird.
 
@@ -154,11 +154,11 @@ Ein `SKPaint` Objekt ist nicht viel mehr als eine Auflistung von Grafiken, die E
 > [!NOTE]
 > Die `SKPaint` -Klasse definiert ein [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) in das Rendern von Grafiken Antialiasing zu aktivieren. Anti-Aliasing im Allgemeinen führt visuell weichere Kanten, sollten Sie wahrscheinlich zum Festlegen dieser Eigenschaft auf `true` in den meisten Ihrer `SKPaint` Objekte. Der Einfachheit halber, diese Eigenschaft ist _nicht_ in den meisten die Beispielseiten festgelegt.
 
-Obwohl die Breite des Kreis Gliederung als 25 Pixel festgelegt ist &mdash; oder ein Viertel des Radius des Kreises &mdash; scheint es dünner zu sein, und es gibt einen guten Grund dafür: Die Hälfte der Linienbreite wird durch den blauen Kreis verdeckt. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
+Obwohl die Breite der Umriss des Kreises als 25 Pixeln angegeben wird &mdash; oder ein Viertel der den Radius des Kreises &mdash; anscheinend schlankere werden, und es gibt ein guter Grund dafür: halbe Breite der Zeile durch den blauen Kreis verdeckt ist. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
 
 Im folgenden Beispiel in der [Integrieren von Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) Artikel veranschaulicht dies visuell.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

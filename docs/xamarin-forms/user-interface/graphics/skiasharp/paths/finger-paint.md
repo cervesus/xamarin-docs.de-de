@@ -7,22 +7,22 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: 571ddae0757691cd7fee301076f0b1310749531d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 98809dca503d03d3d592161608fa9a6fa0e5d394
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657456"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488347"
 ---
 # <a name="finger-painting-in-skiasharp"></a>Zeichnen mit Fingern in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Verwenden Sie die Finger, um auf der Leinwand zeichnen._
 
 Ein `SKPath` Objekt ständig aktualisiert und angezeigt werden kann. Mit diesem Feature können einen Pfad zu den für interaktive Funktionen zum Zeichnen, z. B. in einem multitoucheingaben Programm verwendet werden.
 
-![](finger-paint-images/fingerpaintsample.png "Eine Übung in Zeichnen mit Fingern")
+![](finger-paint-images/fingerpaintsample.png "An exercise in finger painting")
 
 Die Touch-Unterstützung in Xamarin.Forms lässt sich nicht auf einzelner Finger verfolgt, auf dem Bildschirm, damit ein Nachverfolgen von Touch-Effekt Xamarin.Forms entwickelt wurde, um zusätzliche Multitouch-Unterstützung bieten. Dieser Effekt wird in diesem Artikel beschrieben [ **Aufrufen von Ereignissen von Auswirkungen**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Das Beispielprogramm [ **Auswirkung Nachverfolgen von Touch-Demos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) enthält zwei Seiten, die SkiaSharp, einschließlich von multitoucheingaben Programm verwenden.
 
@@ -53,7 +53,7 @@ Die [ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-sample
 
 Anfügen der `TouchEffect` direkt an die `SKCanvasView` funktioniert nicht unter allen Plattformen.
 
-Die [ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs) Code-Behind-Datei definiert zwei Auflistungen für die Speicherung von der `SKPath` Objekte als auch eines `SKPaint` Objekt zum Rendern dieser Pfade:
+Die [ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FingerPaintPage.xaml.cs) Code-Behind-Datei definiert zwei Auflistungen für die Speicherung von der `SKPath` Objekte als auch eines `SKPaint` Objekt zum Rendern dieser Pfade:
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -165,11 +165,11 @@ public partial class FingerPaintPage : ContentPage
 
 Ihr Finger Originalwerke werden nur durch Ihr Talent beschränkt:
 
-[![](finger-paint-images/fingerpaint-small.png "Dreifacher Screenshot der Seite Fingerpaint")](finger-paint-images/fingerpaint-large.png#lightbox "dreifachen Screenshot der Seite Fingerpaint")
+[![](finger-paint-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](finger-paint-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
 
 Sie haben jetzt gesehen, wie zum Zeichnen von Linien und Kurven, die mithilfe von Parametrischer Formeln definiert werden. In einem späteren Abschnitt [ **SkiaSharp-Kurven und-Pfade** ](../curves/index.md) behandelt die verschiedenen Typen von Kurven, `SKPath` unterstützt. Jedoch nützlich, eine erforderliche Komponente ist eine Untersuchung [ **SkiaSharp-Transformationen**](../transforms/index.md).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

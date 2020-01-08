@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: cc62ca4656a845a261c56424aa1ea1331c994994
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759215"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545607"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erfahren Sie, wie SkiaSharp verwenden Sie zum Zeichnen von Linien mit anderen Strichenden_
 
 In SkiaSharp unterscheidet rendern eine einzelne Zeile aus einer Reihe verbundener gerader Linien zu rendern. Selbst wenn einzelne Zeilen zu zeichnen, ist es jedoch oft erforderlich, um den Zeilen zu eine bestimmten Strichbreite gewähren. Sobald diese Zeilen breiter sind, wird die Darstellung der Enden der Zeilen auch wichtig. Die Darstellung der das Ende der Zeile wird aufgerufen, die *Stroke Cap*:
 
-![](lines-images/strokecapsexample.png "Die drei Stroke Caps-Optionen")
+![](lines-images/strokecapsexample.png "The three stroke caps options")
 
 Für das Zeichnen von Linien, `SKCanvas` definiert eine einfache [ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) Methode, deren Argumente angeben, der Anfangs- und Endkoordinaten der Linie mit, einem `SKPaint` Objekt:
 
@@ -30,7 +30,7 @@ Für das Zeichnen von Linien, `SKCanvas` definiert eine einfache [ `DrawLine` ](
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-In der Standardeinstellung die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten wie Smartphones, mit hoher Auflösung, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Wenn Sie jedoch mit dem Zeichnen von Linien mit einer hervor generischen Stärke beginnen, wird ein anderes Problem ausgelöst: Wie sollen die Starts und enden dieser Thick Lines gerendert werden?
+In der Standardeinstellung die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft des neu instanziierten `SKPaint` Objekt ist 0 (null) und denselben Effekt wie der Wert 1 hat in beim Rendern einer Zeile von einem Pixel im Stärke. Dies scheint sehr dünne auf Geräten wie Smartphones, mit hoher Auflösung, sollten Sie wahrscheinlich zum Festlegen der `StrokeWidth` auf einen höheren Wert. Aber sobald Sie das Zeichnen von Linien mit einer beträchtliche Dicke starten, ein weiteres Problem auslöst: wie den Beginn und Ende diese dicken Zeilen gerendert werden soll?
 
 Die Darstellung der den Beginn und Ende von Zeilen wird aufgerufen, eine *Linienende* oder Skia, eine *Stroke Cap*. Das Wort "Obergrenze" in diesem Kontext bezieht sich auf eine Art von Hat &mdash; etwas, das auf das Ende der Zeile befindet. Festlegen der [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) Eigenschaft der `SKPaint` -Objekts auf einen der folgenden Elemente von der [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) Enumeration:
 
@@ -94,7 +94,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Für jedes Element der `SKStrokeCap` Enumeration, der Handler zeichnet zwei Zeilen, die mit einer Strichstärke von 50 Pixeln und eine neue Zeile, die im Vordergrund positioniert wird, mit der Strichstärke zwei Pixel. Diese zweite Zeile soll lediglich die geometrische Start und Ende der Zeile, die unabhängig von der Linienstärke und eine Obergrenze Strich zu veranschaulichen:
 
-[![](lines-images/strokecaps-small.png "Dreifacher Screenshot der Seite Strichenden")](lines-images/strokecaps-large.png#lightbox "dreifachen Screenshot der Seite Strichenden")
+[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
 
 Wie Sie sehen können, die `Square` und `Round` Strichenden effektiv die Länge der Zeile erweitern, indem Sie halbe Strichbreite am Anfang der Zeile und erneut am Ende. Diese Erweiterung wird wichtig, wenn es erforderlich, um zu bestimmen, die Abmessungen eines gerenderten Graphics-Objekts ist.
 
@@ -228,17 +228,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Screenshots zeigen eine Vielzahl von `Picker` Auswahl:
 
-[![](lines-images/multiplelines-small.png "Dreifacher Screenshot der Seite mehrere Zeilen")](lines-images/multiplelines-large.png#lightbox "dreifachen Screenshot der Seite mehrere Zeilen")
+[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
 
 Das iPhone auf der linken wie die `SKPointMode.Points` bewirkt, dass Enumerationsmember `DrawPoints` zum Rendern jeder der Punkte in der `SKPoint` array als ein Quadrat ist das Linienende `Butt` oder `Square`. Kreise werden gerendert, wenn das Linienende `Round`.
 
-Wenn Sie stattdessen verwenden `SKPointMode.Lines`auf dem Android-Bildschirm in der Mitte, siehe die `DrawPoints` Methode zeichnet eine Linie zwischen jedem Tabellenpaar `SKPoint` Werte, verwenden die Obergrenze für die angegebene Zeile, in diesem Fall `Round`.
+Der Android-Screenshot zeigt das Ergebnis der `SKPointMode.Lines`. Die `DrawPoints`-Methode zeichnet eine Linie zwischen jedem Paar von `SKPoint` Werten, wobei das angegebene Linien Ende verwendet wird (in diesem Fall `Round`).
 
-Der UWP-Screenshot zeigt das Ergebnis der `SKPointMode.Polygon` Wert. Wird eine Linie zwischen den aufeinander folgenden Punkten im Array, aber wenn Sie sehr genau hinsehen, sehen Sie, dass diese Zeilen nicht verbunden sind. Jede dieser separaten Zeilen beginnt und endet mit dem angegebenen Linienende. Bei Auswahl der `Round` Großbuchstaben, scheinen die Zeilen verbunden sein, aber sie eigentlich nicht verbunden sind.
+Wenn Sie stattdessen `SKPointMode.Polygon`verwenden, wird eine Linie zwischen den aufeinander folgenden Punkten im Array gezeichnet. Wenn Sie jedoch sehr genau sehen, werden Sie feststellen, dass diese Zeilen nicht verbunden sind. Jede dieser separaten Zeilen beginnt und endet mit dem angegebenen Linienende. Bei Auswahl der `Round` Großbuchstaben, scheinen die Zeilen verbunden sein, aber sie eigentlich nicht verbunden sind.
 
 Ist ein entscheidender Aspekt für die Arbeit mit Grafikpfade, ob Zeilen oder nicht verbunden sind.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

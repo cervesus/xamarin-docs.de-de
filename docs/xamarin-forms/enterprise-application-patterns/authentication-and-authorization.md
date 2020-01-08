@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 667de4d579f43558d9a811c386e355433f526077
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7ced28a5ed379b761ffcc9841f5d0e923ec747e7
+ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760462"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75667051"
 ---
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
@@ -39,7 +39,7 @@ Die Kombination von OpenID Connect und OAuth 2,0 kombiniert die beiden grundlege
 
 In Anwendungen, die eine direkte Kommunikation zwischen Client und-Dienst verwenden, z. b. die eshoponcontainers-Referenz Anwendung, kann ein dedizierter authentifizierungsmikrodienst, der als Sicherheitstokendienst (STS) fungiert, zum Authentifizieren von Benutzern verwendet werden, wie in Abbildung 9-1. Weitere Informationen zur direkten Kommunikation zwischen Client und mikroservice finden Sie unter [Kommunikation zwischen Client und-Dienst](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices).
 
-![](authentication-and-authorization-images/authentication.png "Authentifizierung durch einen dedizierten authentifizierungmikrodienst")
+![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
 
 **Abbildung 9-1:** Authentifizierung durch einen dedizierten authentifizierungmikrodienst
 
@@ -55,7 +55,7 @@ Der eshoponcontainers-Mobile App kommuniziert mit dem Identitäts-mikrodienst, d
 
 Damit eine ASP.net Core Webanwendung identityserver 4 verwenden kann, muss Sie der Visual Studio-Projekt Mappe der Webanwendung hinzugefügt werden. Weitere Informationen finden Sie unter [Übersicht](https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html) in der identityserver-Dokumentation.
 
-Nachdem identityserver in der Visual Studio-Projekt Mappe der Webanwendung enthalten ist, muss Sie der Pipeline für die HTTP-Anforderungs Verarbeitung der Webanwendung hinzugefügt werden, damit Sie Anforderungen an OpenID Connect-und OAuth 2,0-Endpunkte verarbeiten kann. Dies wird in der- `Configure` Methode in der- `Startup` Klasse der Webanwendung erreicht, wie im folgenden Codebeispiel gezeigt:
+Nachdem identityserver in der Visual Studio-Projekt Mappe der Webanwendung enthalten ist, muss Sie der Pipeline für die HTTP-Anforderungs Verarbeitung der Webanwendung hinzugefügt werden, damit Sie Anforderungen an OpenID Connect-und OAuth 2,0-Endpunkte verarbeiten kann. Dies wird in der `Configure`-Methode in der `Startup` Klasse der Webanwendung erreicht, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public void Configure(  
@@ -71,7 +71,7 @@ Die Reihenfolge spielt in der HTTP-Anforderungs Verarbeitungs Pipeline der Weban
 
 ### <a name="configuring-identityserver"></a>Konfigurieren von identityserver
 
-Identityserver sollte in `ConfigureServices` der-Methode in der-Klasse der Webanwendung konfiguriert werden `services.AddIdentityServer` , indem die-Methode aufgerufen wird, wie im folgenden Codebeispiel aus der eshoponcontainers- `Startup` Referenz Anwendung veranschaulicht:
+Identityserver sollte in der `ConfigureServices`-Methode in der `Startup` Klasse der Webanwendung konfiguriert werden, indem die `services.AddIdentityServer`-Methode aufgerufen wird. Dies wird im folgenden Codebeispiel aus der eshoponcontainers-Referenz Anwendung veranschaulicht:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)  
@@ -90,7 +90,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Nach dem Aufrufen `services.AddIdentityServer` der-Methode werden weitere fließende APIs aufgerufen, um Folgendes zu konfigurieren:
+Nachdem Sie die `services.AddIdentityServer`-Methode aufgerufen haben, werden zusätzliche fließende APIs aufgerufen, um Folgendes zu konfigurieren:
 
 - Zum Signieren verwendete Anmelde Informationen.
 - API-und Identitäts Ressourcen, auf die Benutzer möglicherweise Zugriff anfordern.
@@ -104,7 +104,7 @@ Informationen zum Konfigurieren von identityserver für die Verwendung ASP.net C
 
 #### <a name="configuring-api-resources"></a>Konfigurieren von API-Ressourcen
 
-Beim Konfigurieren von API-Ressourcen `AddInMemoryApiResources` erwartet die- `IEnumerable<ApiResource>` Methode eine-Auflistung. Im folgenden Codebeispiel wird die `GetApis` -Methode veranschaulicht, die diese Sammlung in der eshoponcontainers-Referenz Anwendung bereitstellt:
+Beim Konfigurieren von API-Ressourcen erwartet die `AddInMemoryApiResources` Methode eine `IEnumerable<ApiResource>` Auflistung. Im folgenden Codebeispiel wird die `GetApis`-Methode veranschaulicht, die diese Sammlung in der eshoponcontainers-Referenz Anwendung bereitstellt:
 
 ```csharp
 public static IEnumerable<ApiResource> GetApis()  
@@ -117,11 +117,11 @@ public static IEnumerable<ApiResource> GetApis()
 }
 ```
 
-Diese Methode gibt an, dass identityserver die Aufträge und die Warenkorb-APIs schützen soll. Daher sind die identityserver-Zugriffs Token, die beim Aufrufen dieser APIs verwendet werden, erforderlich. Weitere Informationen `ApiResource` zum-Typ finden Sie unter [API-Ressource](https://identityserver4.readthedocs.io/en/latest/reference/api_resource.html) in der identityserver 4-Dokumentation.
+Diese Methode gibt an, dass identityserver die Aufträge und die Warenkorb-APIs schützen soll. Daher sind die identityserver-Zugriffs Token, die beim Aufrufen dieser APIs verwendet werden, erforderlich. Weitere Informationen zum `ApiResource`-Typ finden Sie unter [API-Ressource](https://identityserver4.readthedocs.io/en/latest/reference/api_resource.html) in der identityserver 4-Dokumentation.
 
 #### <a name="configuring-identity-resources"></a>Konfigurieren von Identitäts Ressourcen
 
-Beim Konfigurieren von Identitäts Ressourcen erwartet `AddInMemoryIdentityResources` die-Methode `IEnumerable<IdentityResource>` eine-Auflistung. Identitäts Ressourcen sind Daten wie z. b. Benutzer-ID, Name oder e-Mail-Adresse. Jede Identitäts Ressource hat einen eindeutigen Namen, und es können beliebige Anspruchs Typen zugewiesen werden, die dann in das Identitäts Token für den Benutzer eingeschlossen werden. Im folgenden Codebeispiel wird die `GetResources` -Methode veranschaulicht, die diese Sammlung in der eshoponcontainers-Referenz Anwendung bereitstellt:
+Beim Konfigurieren von Identitäts Ressourcen erwartet die `AddInMemoryIdentityResources` Methode eine `IEnumerable<IdentityResource>` Auflistung. Identitäts Ressourcen sind Daten wie z. b. Benutzer-ID, Name oder e-Mail-Adresse. Jede Identitäts Ressource hat einen eindeutigen Namen, und es können beliebige Anspruchs Typen zugewiesen werden, die dann in das Identitäts Token für den Benutzer eingeschlossen werden. Im folgenden Codebeispiel wird die `GetResources`-Methode veranschaulicht, die diese Sammlung in der eshoponcontainers-Referenz Anwendung bereitstellt:
 
 ```csharp
 public static IEnumerable<IdentityResource> GetResources()  
@@ -137,9 +137,9 @@ public static IEnumerable<IdentityResource> GetResources()
 In der OpenID Connect-Spezifikation sind einige [Standard-Identitäts Ressourcen](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims)angegeben. Die Mindestanforderung besteht darin, dass die Unterstützung für die Ausgabe einer eindeutigen ID für Benutzer bereitgestellt wird. Dies wird erreicht, indem die `IdentityResources.OpenId` Identity-Ressource verfügbar gemacht wird.
 
 > [!NOTE]
-> Die `IdentityResources` -Klasse unterstützt alle Bereiche, die in der OpenID Connect-Spezifikation (OpenID, e-Mail, Profil, Telefon und Adresse) definiert sind.
+> Die `IdentityResources`-Klasse unterstützt alle Bereiche, die in der OpenID Connect-Spezifikation (OpenID, e-Mail, Profil, Telefon und Adresse) definiert sind.
 
-Identityserver unterstützt auch das Definieren von benutzerdefinierten Identitäts Ressourcen. Weitere Informationen finden Sie unter [Definieren von benutzerdefinierten Identitäts Ressourcen](http://docs.identityserver.io/en/latest/topics/resources.html#defining-custom-identity-resources) in der identityserver-Dokumentation. Weitere Informationen `IdentityResource` zum-Typ finden Sie unter [Identity-Ressource](https://identityserver4.readthedocs.io/en/latest/reference/identity_resource.html) in der identityserver 4-Dokumentation.
+Identityserver unterstützt auch das Definieren von benutzerdefinierten Identitäts Ressourcen. Weitere Informationen finden Sie unter [Definieren von benutzerdefinierten Identitäts Ressourcen](http://docs.identityserver.io/en/latest/topics/resources.html#defining-custom-identity-resources) in der identityserver-Dokumentation. Weitere Informationen zum `IdentityResource`-Typ finden Sie unter [Identity-Ressource](https://identityserver4.readthedocs.io/en/latest/reference/identity_resource.html) in der identityserver 4-Dokumentation.
 
 #### <a name="configuring-clients"></a>Konfigurieren von Clients
 
@@ -150,7 +150,7 @@ Clients sind Anwendungen, die Token von identityserver anfordern können. In der
 - Der Speicherort, an den Identitäts-und Zugriffs Token gesendet werden (als Umleitungs-URI bezeichnet).
 - Eine Liste von Ressourcen, auf die der Client Zugriff hat (als Bereiche bezeichnet).
 
-Beim Konfigurieren von Clients erwartet `AddInMemoryClients` die-Methode `IEnumerable<Client>` eine-Auflistung. Das folgende Codebeispiel zeigt die Konfiguration für die eshoponcontainers-Mobile App in `GetClients` der-Methode, die diese Sammlung in der eshoponcontainers-Referenz Anwendung bereitstellt:
+Beim Konfigurieren von Clients erwartet die `AddInMemoryClients` Methode eine `IEnumerable<Client>` Auflistung. Das folgende Codebeispiel zeigt die Konfiguration für die eshoponcontainers-Mobile App in der `GetClients`-Methode, die diese Sammlung in der eshoponcontainers-Referenz Anwendung bereitstellt:
 
 ```csharp
 public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUrl)
@@ -190,25 +190,25 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 Diese Konfiguration gibt Daten für die folgenden Eigenschaften an:
 
-- `ClientId`: Eine eindeutige ID für den Client.
-- `ClientName`: Der Client Anzeige Name, der für die Protokollierung und den Zustimmungs Bildschirm verwendet wird.
-- `AllowedGrantTypes`: Gibt an, wie ein Client mit identityserver interagieren möchte. Weitere Informationen finden Sie [unter Konfigurieren des Authentifizierungs Flusses](#configuring_the_authentication_flow).
-- `ClientSecrets`: Gibt die geheimen Client Schlüssel Anmelde Informationen an, die beim Anfordern von Token vom tokenendpunkt verwendet werden.
-- `RedirectUris`: Gibt die zulässigen URIs an, an die Token oder Autorisierungscodes zurückgegeben werden sollen.
-- `RequireConsent`: Gibt an, ob ein Zustimmungs Bildschirm erforderlich ist.
-- `RequirePkce`: Gibt an, ob Clients, die einen Autorisierungs Code verwenden, einen Nachweis Schlüssel senden müssen.
-- `PostLogoutRedirectUris`: Gibt die zulässigen URIs an, an die nach der Abmeldung umgeleitet werden soll.
-- `AllowedCorsOrigins`: Gibt den Ursprung des Clients an, sodass identityserver Ursprungs übergreifende Aufrufe vom Ursprung zulassen kann.
-- `AllowedScopes`: Gibt die Ressourcen an, auf die der Client Zugriff hat. Standardmäßig hat ein Client keinen Zugriff auf Ressourcen.
-- `AllowOfflineAccess`: Gibt an, ob Aktualisierungs Token vom Client angefordert werden können.
+- `ClientId`: eine eindeutige ID für den Client.
+- `ClientName`: der Anzeige Name des Clients, der für die Protokollierung und den Zustimmungs Bildschirm verwendet wird.
+- `AllowedGrantTypes`: gibt an, wie ein Client mit identityserver interagieren möchte. Weitere Informationen finden Sie [unter Konfigurieren des Authentifizierungs Flusses](#configuring_the_authentication_flow).
+- `ClientSecrets`: gibt die geheimen Client Schlüssel Anmelde Informationen an, die beim Anfordern von Token vom tokenendpunkt verwendet werden.
+- `RedirectUris`: gibt die zulässigen URIs an, an die Token oder Autorisierungscodes zurückgegeben werden sollen.
+- `RequireConsent`: gibt an, ob ein Zustimmungs Bildschirm erforderlich ist.
+- `RequirePkce`: gibt an, ob Clients, die einen Autorisierungs Code verwenden, einen Nachweis Schlüssel senden müssen.
+- `PostLogoutRedirectUris`: gibt die zulässigen URIs an, an die nach der Abmeldung umgeleitet werden soll.
+- `AllowedCorsOrigins`: gibt den Ursprung des Clients an, sodass identityserver Ursprungs übergreifende Aufrufe vom Ursprung zulassen kann.
+- `AllowedScopes`: gibt die Ressourcen an, auf die der Client Zugriff hat. Standardmäßig hat ein Client keinen Zugriff auf Ressourcen.
+- `AllowOfflineAccess`: Hiermit wird angegeben, ob Aktualisierungs Token vom Client angefordert werden können.
 
 <a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>Konfigurieren des Authentifizierungs Flusses
 
-Der Authentifizierungs Fluss zwischen einem Client und identityserver kann konfiguriert werden, indem die Grant-Typen in `Client.AllowedGrantTypes` der-Eigenschaft angegeben werden. Die OpenID Connect-und OAuth 2,0-Spezifikationen definieren eine Reihe von Authentifizierungs Läufen, einschließlich:
+Der Authentifizierungs Fluss zwischen einem Client und identityserver kann durch Angabe der Grant-Typen in der `Client.AllowedGrantTypes`-Eigenschaft konfiguriert werden. Die OpenID Connect-und OAuth 2,0-Spezifikationen definieren eine Reihe von Authentifizierungs Läufen, einschließlich:
 
-- Verzerrungen. Dieser Flow ist für browserbasierte Anwendungen optimiert und sollte entweder für Benutzerauthentifizierung oder für Authentifizierungs-und zugriffstokenanforderungen verwendet werden. Alle Token werden über den Browser übertragen. Daher sind erweiterte Funktionen wie Aktualisierungs Token nicht zulässig.
+- Implicit. Dieser Flow ist für browserbasierte Anwendungen optimiert und sollte entweder für Benutzerauthentifizierung oder für Authentifizierungs-und zugriffstokenanforderungen verwendet werden. Alle Token werden über den Browser übertragen. Daher sind erweiterte Funktionen wie Aktualisierungs Token nicht zulässig.
 - Autorisierungs Code. Dieser Flow bietet die Möglichkeit zum Abrufen von Token in einem backchannel, im Gegensatz zum Browser-Front-Channel, während gleichzeitig die Client Authentifizierung unterstützt wird.
 - Hybrid: Dieser Flow ist eine Kombination der impliziten Typen für die Autorisierungs Code Gewährung. Das Identitäts Token wird über den Browser Kanal übertragen und enthält die signierte Protokoll Antwort zusammen mit anderen Artefakten, wie z. b. dem Autorisierungs Code. Nach erfolgreicher Überprüfung der Antwort sollte der Back-Channel verwendet werden, um das Zugriffs-und Aktualisierungs Token abzurufen.
 
@@ -223,23 +223,23 @@ Damit identityserver Token im Namen eines Benutzers ausgibt, muss sich der Benut
 
 Die eshoponcontainers-Mobile App authentifiziert sich mit identityserver mit dem Hybrid Authentifizierungs Fluss, der in Abbildung 9-2 veranschaulicht wird.
 
-![](authentication-and-authorization-images/sign-in.png "Allgemeine Übersicht über den Anmeldevorgang")
+![](authentication-and-authorization-images/sign-in.png "High-level overview of the sign-in process")
 
 **Abbildung 9-2:** Allgemeine Übersicht über den Anmeldevorgang
 
-Es erfolgt eine Anmelde Anforderung an `<base endpoint>:5105/connect/authorize`. Nach erfolgreicher Authentifizierung gibt identityserver eine Authentifizierungs Antwort mit einem Autorisierungs Code und einem Identitäts Token zurück. Der Autorisierungs Code wird dann an `<base endpoint>:5105/connect/token`gesendet, was mit Zugriffs-, Identitäts-und Aktualisierungs Token antwortet.
+Eine Anmelde Anforderung wird an `<base endpoint>:5105/connect/authorize`gerichtet. Nach erfolgreicher Authentifizierung gibt identityserver eine Authentifizierungs Antwort mit einem Autorisierungs Code und einem Identitäts Token zurück. Der Autorisierungs Code wird dann an `<base endpoint>:5105/connect/token`gesendet, der mit Zugriffs-, Identitäts-und Aktualisierungs Token antwortet.
 
-Die eshoponcontainers-Mobile App von identityserver abgemeldet, indem eine Anforderung an `<base endpoint>:5105/connect/endsession`mit zusätzlichen Parametern gesendet wird. Nach der Abmeldung antwortet identityserver, indem er einen Umleitungs-URI nach der Abmeldung an den Mobile App zurücksendet. In Abbildung 9-3 wird dieser Prozess veranschaulicht.
+Der eshoponcontainers-Mobile App meldet sich vom identityserver ab, indem er eine Anforderung an `<base endpoint>:5105/connect/endsession`mit zusätzlichen Parametern sendet. Nach der Abmeldung antwortet identityserver, indem er einen Umleitungs-URI nach der Abmeldung an den Mobile App zurücksendet. In Abbildung 9-3 wird dieser Prozess veranschaulicht.
 
-![](authentication-and-authorization-images/sign-out.png "Allgemeine Übersicht über den Abmeldevorgang")
+![](authentication-and-authorization-images/sign-out.png "High-level overview of the sign-out process")
 
 **Abbildung 9-3:** Allgemeine Übersicht über den Abmeldevorgang
 
-Im eshoponcontainers-Mobile App wird die Kommunikation mit identityserver von der `IdentityService` -Klasse ausgeführt, die die `IIdentityService` -Schnittstelle implementiert. Diese Schnittstelle gibt an, dass die implementierende `CreateLogoutRequest`Klasse, `GetTokenAsync` -und-Methoden bereitstellen `CreateAuthorizationRequest`muss.
+Im Mobile App eshoponcontainers wird die Kommunikation mit identityserver durch die `IdentityService`-Klasse durchgeführt, die die `IIdentityService`-Schnittstelle implementiert. Diese Schnittstelle gibt an, dass die implementierende Klasse `CreateAuthorizationRequest`-, `CreateLogoutRequest`-und `GetTokenAsync`-Methoden bereitstellen muss.
 
 #### <a name="signing-in"></a>Anmelden
 
-Wenn der Benutzer auf `LoginView`die **Anmelde** Schaltfläche in tippt `SignInCommand` , wird `LoginViewModel` die in der-Klasse ausgeführt, die wiederum `SignInAsync` die-Methode ausführt. Im folgenden Codebeispiel wird diese Methode veranschaulicht:
+Wenn der Benutzer auf der `LoginView`auf die **Anmelde** Schaltfläche tippt, wird die `SignInCommand` in der `LoginViewModel`-Klasse ausgeführt, die wiederum die `SignInAsync`-Methode ausführt. Im folgenden Codebeispiel wird diese Methode veranschaulicht:
 
 ```csharp
 private async Task SignInAsync()  
@@ -251,7 +251,7 @@ private async Task SignInAsync()
 }
 ```
 
-Diese Methode ruft die `CreateAuthorizationRequest` -Methode in `IdentityService` der-Klasse auf, die im folgenden Codebeispiel gezeigt wird:
+Diese Methode ruft die `CreateAuthorizationRequest`-Methode in der `IdentityService`-Klasse auf, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 public string CreateAuthorizationRequest()
@@ -265,7 +265,7 @@ public string CreateAuthorizationRequest()
     dic.Add("client_secret", GlobalSetting.Instance.ClientSecret); 
     dic.Add("response_type", "code id_token");
     dic.Add("scope", "openid profile basket orders locations marketing offline_access");
-    dic.Add("redirect_uri", GlobalSetting.Instance.IdentityCallback);
+    dic.Add("redirect_uri", GlobalSetting.Instance.Callback);
     dic.Add("nonce", Guid.NewGuid().ToString("N"));
     dic.Add("code_challenge", CreateCodeChallenge());
     dic.Add("code_challenge_method", "S256");
@@ -280,18 +280,18 @@ public string CreateAuthorizationRequest()
 
 ```
 
-Diese Methode erstellt den URI für den [Autorisierungs Endpunkt](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)von identityserver mit den erforderlichen Parametern. Der Autorisierungs Endpunkt befindet `/connect/authorize` sich am Port 5105 des Basis Endpunkts, der als Benutzereinstellung verfügbar gemacht wird. Weitere Informationen zu Benutzereinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Diese Methode erstellt den URI für den [Autorisierungs Endpunkt](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)von identityserver mit den erforderlichen Parametern. Der Autorisierungs Endpunkt befindet sich `/connect/authorize` an Port 5105 des Basis Endpunkts, der als Benutzereinstellung verfügbar gemacht wird. Weitere Informationen zu Benutzereinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
 > Die Angriffsfläche des eshoponcontainers-Mobile App wird verringert, indem der Prüfschlüssel für die Code Austausch Erweiterung (pkce) in OAuth implementiert wird. Pkce schützt den Autorisierungs Code vor der Verwendung, wenn er abgefangen wird. Dies wird erreicht, indem der Client eine geheime Überprüfung erstellt, ein Hash, der in der Autorisierungs Anforderung übermittelt wird und der beim Einlösen des Autorisierungscodes als unhashwert dargestellt wird. Weitere Informationen zu pkce finden Sie unter [Prüfschlüssel für den Code Austausch durch öffentliche OAuth-Clients](https://tools.ietf.org/html/rfc7636) auf der Website "Internet Engineering Task Force".
 
-Der zurückgegebene URI wird in der `LoginUrl` -Eigenschaft `LoginViewModel` der-Klasse gespeichert. Wenn die `IsLogin` -Eigenschaft `true`wird, [`WebView`](xref:Xamarin.Forms.WebView) wird der `LoginView` in der sichtbar. Die `WebView` [`Source`](xref:Xamarin.Forms.WebView.Source) -Eigenschaft bindet die-Eigenschaft `LoginUrl` `LoginViewModel` an die-Eigenschaft der-Klasse und führt daher eine Anmelde Anforderung an identityserver aus, `LoginUrl` wenn die-Eigenschaft auf den Autorisierungs Endpunkt von identityserver festgelegt ist. Wenn identityserver diese Anforderung empfängt und der Benutzer nicht authentifiziert ist, `WebView` wird der an die konfigurierte Anmeldeseite umgeleitet, die in Abbildung 9-4 dargestellt wird.
+Der zurückgegebene URI wird in der `LoginUrl`-Eigenschaft der `LoginViewModel`-Klasse gespeichert. Wenn die `IsLogin`-Eigenschaft `true`wird, wird der [`WebView`](xref:Xamarin.Forms.WebView) in der `LoginView` sichtbar. Der `WebView` Daten bindet seine [`Source`](xref:Xamarin.Forms.WebView.Source) -Eigenschaft an die `LoginUrl`-Eigenschaft der `LoginViewModel`-Klasse und sendet daher eine Anmelde Anforderung an identityserver, wenn die `LoginUrl`-Eigenschaft auf den Autorisierungs Endpunkt von identityserver festgelegt ist. Wenn identityserver diese Anforderung empfängt und der Benutzer nicht authentifiziert ist, wird der `WebView` auf die konfigurierte Anmeldeseite umgeleitet, die in Abbildung 9-4 dargestellt wird.
 
-![](authentication-and-authorization-images/login.png "Von der WebView angezeigte Anmeldeseite")
+![](authentication-and-authorization-images/login.png "Login page displayed by the WebView")
 
 **Abbildung 9-4:** Von der WebView angezeigte Anmeldeseite
 
-Nachdem die Anmeldung abgeschlossen ist, [`WebView`](xref:Xamarin.Forms.WebView) wird der an einen Rückgabe-URI umgeleitet. Diese `WebView` Navigation bewirkt, dass `NavigateAsync` die-Methode `LoginViewModel` in der-Klasse ausgeführt wird. Dies wird im folgenden Codebeispiel gezeigt:
+Nachdem die Anmeldung abgeschlossen ist, wird der [`WebView`](xref:Xamarin.Forms.WebView) an einen Rückgabe-URI umgeleitet. Diese `WebView` Navigation bewirkt, dass die `NavigateAsync`-Methode in der `LoginViewModel`-Klasse ausgeführt wird. Dies wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -316,23 +316,23 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-Diese Methode analysiert die Authentifizierungs Antwort, die im Rückgabe-URI enthalten ist, und stellt fest, dass ein gültiger Autorisierungs Code vorhanden ist, sendet eine Anforderung an den [tokenendpunkt](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)von identityserver und übergibt dabei den Autorisierungs Code, die geheime pkce-verifiziererin. und andere erforderliche Parameter. Der tokenendpunkt befindet `/connect/token` sich am Port 5105 des Basis Endpunkts, der als Benutzereinstellung verfügbar gemacht wird. Weitere Informationen zu Benutzereinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Diese Methode analysiert die Authentifizierungs Antwort, die im Rückgabe-URI enthalten ist, und stellt fest, dass ein gültiger Autorisierungs Code vorhanden ist, sendet eine Anforderung an den [tokenendpunkt](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)von identityserver, übergibt den Autorisierungs Code, den geheimen Schlüssel Prüfer und andere erforderliche Parameter. Der tokenendpunkt befindet sich `/connect/token` an Port 5105 des Basis Endpunkts, der als Benutzereinstellung verfügbar gemacht wird. Weitere Informationen zu Benutzereinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!TIP]
 > Validieren Sie Rückgabe-URIs. Obwohl der eshoponcontainers-Mobile App den Rückgabe-URI nicht überprüft, empfiehlt es sich, zu überprüfen, ob der Rückgabe-URI auf einen bekannten Speicherort verweist, um Open-Redirect-Angriffe zu verhindern.
 
-Wenn der tokenendpunkt einen gültigen Autorisierungs Code und einen geheimen pkce-Verifizierer erhält, antwortet er mit einem Zugriffs Token, einem Identitäts Token und einem Aktualisierungs Token. Das Zugriffs Token (das den Zugriff auf API-Ressourcen zulässt) und das Identitäts Token werden dann als Anwendungseinstellungen gespeichert, und die Seitennavigation wird durchgeführt. Daher ist der Gesamteffekt in den eshoponcontainers-Mobile App dies: vorausgesetzt, dass sich Benutzer erfolgreich bei identityserver authentifizieren können, werden Sie zu der `MainView` Seite [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) `CatalogView` navigiert. als Registerkarte ausgewählt.
+Wenn der tokenendpunkt einen gültigen Autorisierungs Code und einen geheimen pkce-Verifizierer erhält, antwortet er mit einem Zugriffs Token, einem Identitäts Token und einem Aktualisierungs Token. Das Zugriffs Token (das den Zugriff auf API-Ressourcen zulässt) und das Identitäts Token werden dann als Anwendungseinstellungen gespeichert, und die Seitennavigation wird durchgeführt. Daher ist der Gesamteffekt in den eshoponcontainers-Mobile App dies: vorausgesetzt, dass sich Benutzer erfolgreich bei identityserver authentifizieren können, werden Sie zur `MainView` Seite navigiert, die eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ist, auf der die `CatalogView` als die ausgewählte Registerkarte angezeigt wird.
 
-Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) die Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
 > Eshoponcontainers ermöglicht außerdem eine Mock-Anmeldung, wenn die APP für die Verwendung von mockdiensten in der `SettingsView`konfiguriert ist. In diesem Modus kommuniziert die APP nicht mit identityserver, sondern ermöglicht es dem Benutzer, sich mit beliebigen Anmelde Informationen anzumelden.
 
 #### <a name="signing-out"></a>Abmelden
 
-Wenn der Benutzer auf die **Abmelde** Schaltfläche `ProfileView`in der `LogoutCommand` tippt, `ProfileViewModel` wird die in der-Klasse ausgeführt, die `LogoutAsync` wiederum die-Methode ausführt. Diese Methode führt die Seitennavigation zur `LoginView` Seite durch und übergibt `LogoutParameter` dabei eine- `true` Instanz, die als Parameter auf festgelegt ist. Weitere Informationen zum Übergeben von Parametern während der Seitennavigation finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
+Wenn der Benutzer auf die **Abmelde** Schaltfläche im `ProfileView`tippt, wird die `LogoutCommand` in der `ProfileViewModel`-Klasse ausgeführt, die wiederum die `LogoutAsync`-Methode ausführt. Diese Methode führt die Seitennavigation zur `LoginView` Seite durch und übergibt eine `LogoutParameter` Instanz, die als Parameter auf `true` festgelegt ist. Weitere Informationen zum Übergeben von Parametern während der Seitennavigation finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
 
-Wenn eine Sicht erstellt und dorthin navigiert wird, wird `InitializeAsync` die-Methode des zugeordneten Ansichts Modells der Sicht ausgeführt, das dann `Logout` die-Methode `LoginViewModel` der-Klasse ausführt, die im folgenden Codebeispiel gezeigt wird:
+Wenn eine Sicht erstellt und dorthin navigiert wird, wird die `InitializeAsync`-Methode des zugeordneten Ansichts Modells der Sicht ausgeführt, das dann die `Logout`-Methode der `LoginViewModel`-Klasse ausführt, die im folgenden Codebeispiel gezeigt wird:
 
 ```csharp
 private void Logout()  
@@ -349,7 +349,7 @@ private void Logout()
 }
 ```
 
-Diese Methode ruft die `CreateLogoutRequest` -Methode in `IdentityService` der-Klasse auf und übergibt das Identitäts Token, das aus den Anwendungseinstellungen abgerufen wurde, als Parameter. Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md). Die `CreateLogoutRequest`-Methode wird in folgendem Codebeispiel veranschaulicht:
+Diese Methode ruft die `CreateLogoutRequest`-Methode in der `IdentityService`-Klasse auf und übergibt das Identitäts Token, das aus den Anwendungseinstellungen abgerufen wurde, als Parameter. Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md). Die `CreateLogoutRequest`-Methode wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 public string CreateLogoutRequest(string token)  
@@ -362,11 +362,11 @@ public string CreateLogoutRequest(string token)
 }
 ```
 
-Diese Methode erstellt den URI für den [endsitzungs Endpunkt](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)von identityserver mit den erforderlichen Parametern. Der Endpunkt der Endsitzung befindet `/connect/endsession` sich am Port 5105 des Basis Endpunkts, der als Benutzereinstellung verfügbar gemacht wird. Weitere Informationen zu Benutzereinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Diese Methode erstellt den URI für den [endsitzungs Endpunkt](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)von identityserver mit den erforderlichen Parametern. Der Endpunkt der Endsitzung befindet `/connect/endsession` sich am Port 5105 des als Benutzereinstellung verfügbar gemachten Basis Endpunkts. Weitere Informationen zu Benutzereinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
-Der zurückgegebene URI wird in der `LoginUrl` -Eigenschaft `LoginViewModel` der-Klasse gespeichert. Während die `IsLogin` -Eigenschaft `true`ist, [`WebView`](xref:Xamarin.Forms.WebView) ist der `LoginView` in der sichtbar. Die `WebView` [`Source`](xref:Xamarin.Forms.WebView.Source) -Eigenschaft bindet die-Eigenschaft `LoginUrl` `LoginViewModel` an die-Eigenschaft der-Klasse und führt daher eine Abmelde Anforderung an identityserver aus `LoginUrl` , wenn die-Eigenschaft auf den endsitzungs Endpunkt von identityserver festgelegt ist. Wenn identityserver diese Anforderung empfängt, sofern der Benutzer angemeldet ist, erfolgt die Abmeldung. Die Authentifizierung wird mit einem Cookie nachverfolgt, das von der Cookie-Authentifizierungs Middleware aus ASP.net Core verwaltet wird. Daher wird beim Abmelden von identityserver das Authentifizierungs Cookie entfernt und ein Umleitungs-URI nach der Abmeldung an den Client zurückgesendet.
+Der zurückgegebene URI wird in der `LoginUrl`-Eigenschaft der `LoginViewModel`-Klasse gespeichert. Während die `IsLogin`-Eigenschaft `true`ist, wird die [`WebView`](xref:Xamarin.Forms.WebView) in der `LoginView` sichtbar. Der `WebView` Daten bindet seine [`Source`](xref:Xamarin.Forms.WebView.Source) -Eigenschaft an die `LoginUrl`-Eigenschaft der `LoginViewModel`-Klasse und sendet daher eine Abmelde Anforderung an identityserver, wenn die `LoginUrl`-Eigenschaft auf den endsitzungs Endpunkt von identityserver festgelegt ist. Wenn identityserver diese Anforderung empfängt, sofern der Benutzer angemeldet ist, erfolgt die Abmeldung. Die Authentifizierung wird mit einem Cookie nachverfolgt, das von der Cookie-Authentifizierungs Middleware aus ASP.net Core verwaltet wird. Daher wird beim Abmelden von identityserver das Authentifizierungs Cookie entfernt und ein Umleitungs-URI nach der Abmeldung an den Client zurückgesendet.
 
-Im Mobile App wird der [`WebView`](xref:Xamarin.Forms.WebView) an den Umleitungs-URI nach der Abmeldung umgeleitet. Diese `WebView` Navigation bewirkt, dass `NavigateAsync` die-Methode `LoginViewModel` in der-Klasse ausgeführt wird. Dies wird im folgenden Codebeispiel gezeigt:
+Im Mobile App wird die [`WebView`](xref:Xamarin.Forms.WebView) an den Umleitungs-URI nach der Abmeldung umgeleitet. Diese `WebView` Navigation bewirkt, dass die `NavigateAsync`-Methode in der `LoginViewModel`-Klasse ausgeführt wird. Dies wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -380,9 +380,9 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-Diese Methode löscht sowohl das Identitäts Token als auch das Zugriffs Token aus den Anwendungseinstellungen und legt `IsLogin` die- `false`Eigenschaft auf fest. [`WebView`](xref:Xamarin.Forms.WebView) dadurch wird `LoginView` der auf der Seite unsichtbar. Zum Schluss wird `LoginUrl` die-Eigenschaft auf den URI des [Autorisierungs Endpunkts](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)von identityserver mit den erforderlichen Parametern festgelegt, der für das nächste Mal vorbereitet wird, wenn der Benutzer eine Anmeldung initiiert.
+Diese Methode löscht sowohl das Identitäts Token als auch das Zugriffs Token aus den Anwendungseinstellungen und legt die `IsLogin`-Eigenschaft auf `false`fest. Dies bewirkt, dass die [`WebView`](xref:Xamarin.Forms.WebView) auf der `LoginView` Seite unsichtbar werden. Zum Schluss wird die `LoginUrl`-Eigenschaft auf den URI des [Autorisierungs Endpunkts](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)von identityserver mit den erforderlichen Parametern festgelegt, der für das nächste Mal vorbereitet wird, wenn der Benutzer eine Anmeldung initiiert.
 
-Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) die Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
 > Eshoponcontainers ermöglicht außerdem eine Mock-Abmeldung, wenn die APP für die Verwendung von mockdiensten in der settingsview konfiguriert ist. In diesem Modus kommuniziert die APP nicht mit identityserver und löscht stattdessen alle gespeicherten Token aus den Anwendungseinstellungen.
@@ -403,14 +403,14 @@ public class BasketController : Controller
 }
 ```
 
-Wenn ein nicht autorisierter Benutzer versucht, auf einen Controller oder eine Aktion zuzugreifen, `Authorize` der mit dem-Attribut markiert ist, gibt das MVC-Framework den HTTP-Statuscode 401 (nicht autorisiert) zurück.
+Wenn ein nicht autorisierter Benutzer versucht, auf einen Controller oder eine Aktion zuzugreifen, der mit dem `Authorize`-Attribut markiert ist, gibt das MVC-Framework den HTTP-Statuscode 401 (nicht autorisiert) zurück.
 
 > [!NOTE]
-> Parameter können für das `Authorize` -Attribut angegeben werden, um eine API auf bestimmte Benutzer zu beschränken. Weitere Informationen finden Sie unter [Autorisierung](/aspnet/core/security/authorization/introduction/).
+> Parameter können für das `Authorize` Attribut angegeben werden, um eine API auf bestimmte Benutzer zu beschränken. Weitere Informationen finden Sie unter [Autorisierung](/aspnet/core/security/authorization/introduction/).
 
 Identityserver kann in den Autorisierungs Workflow integriert werden, sodass die Zugriffs Token, die es bereitstellt, die Autorisierung steuern. Diese Vorgehensweise ist in Abbildung 9-5 dargestellt.
 
-![](authentication-and-authorization-images/authorization.png "Autorisierung durch Zugriffs Token")
+![](authentication-and-authorization-images/authorization.png "Authorization by access token")
 
 **Abbildung 9-5:** Autorisierung durch Zugriffs Token
 
@@ -418,7 +418,7 @@ Der eshoponcontainers-Mobile App kommuniziert mit dem Identitäts-mikrodienst un
 
 ### <a name="configuring-identityserver-to-perform-authorization"></a>Konfigurieren von identityserver zum Ausführen der Autorisierung
 
-Um die Autorisierung mit identityserver auszuführen, muss die zugehörige Autorisierungs Middleware zur HTTP-Anforderungs Pipeline der Webanwendung hinzugefügt werden. Die Middleware wird in `ConfigureAuth` der-Methode in der-Klasse der Webanwendung hinzugefügt, die von der `Configure` -Methode aufgerufen wird, und wird im folgenden Codebeispiel aus der eshoponcontainers- `Startup` Referenz Anwendung veranschaulicht:
+Um die Autorisierung mit identityserver auszuführen, muss die zugehörige Autorisierungs Middleware zur HTTP-Anforderungs Pipeline der Webanwendung hinzugefügt werden. Die Middleware wird in der `ConfigureAuth`-Methode in der `Startup`-Klasse der Webanwendung hinzugefügt, die von der `Configure`-Methode aufgerufen wird. Dies wird im folgenden Codebeispiel aus der eshoponcontainers-Referenz Anwendung veranschaulicht:
 
 ```csharp
 protected virtual void ConfigureAuth(IApplicationBuilder app)  
@@ -436,7 +436,7 @@ protected virtual void ConfigureAuth(IApplicationBuilder app)
 Diese Methode stellt sicher, dass auf die API nur mit einem gültigen Zugriffs Token zugegriffen werden kann. Die Middleware überprüft das eingehende Token, um sicherzustellen, dass es von einem vertrauenswürdigen Aussteller gesendet wird, und überprüft, ob das Token für die Verwendung mit der API gültig ist, die es empfängt. Daher wird durch das Navigieren zu der Reihenfolge oder dem Korb Controller der HTTP-Statuscode 401 (nicht autorisiert) zurückgegeben, der angibt, dass ein Zugriffs Token erforderlich ist.
 
 > [!NOTE]
-> Die Autorisierungs Middleware von identityserver muss der HTTP-Anforderungs Pipeline der Webanwendung hinzugefügt werden, `app.UseMvc()` bevor `app.UseMvcWithDefaultRoute()`MVC mit oder hinzugefügt wird.
+> Die Autorisierungs Middleware von identityserver muss der HTTP-Anforderungs Pipeline der Webanwendung hinzugefügt werden, bevor MVC mit `app.UseMvc()` oder `app.UseMvcWithDefaultRoute()`hinzugefügt wird.
 
 ### <a name="making-access-requests-to-apis"></a>Herstellen von Zugriffs Anforderungen an APIs
 
@@ -447,7 +447,7 @@ var authToken = Settings.AuthAccessToken;
 Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), authToken);
 ```
 
-Das Zugriffs Token wird als Anwendungs Einstellung gespeichert und aus dem plattformspezifischen Speicher abgerufen und im Aufrufen der `GetOrderAsync` -Methode in der `OrderService` -Klasse enthalten.
+Das Zugriffs Token wird als Anwendungs Einstellung gespeichert und aus dem plattformspezifischen Speicher abgerufen und in den Aufrufen der `GetOrderAsync`-Methode in der `OrderService`-Klasse eingeschlossen.
 
 Ebenso muss das Zugriffs Token beim Senden von Daten an eine von identityserver geschützte API eingeschlossen werden, wie im folgenden Codebeispiel gezeigt:
 
@@ -460,25 +460,25 @@ await _basketService.UpdateBasketAsync(new CustomerBasket
 }, authToken);
 ```
 
-Das Zugriffs Token wird aus dem plattformspezifischen Speicher abgerufen und im Aufrufen der `UpdateBasketAsync` -Methode in der `BasketService` -Klasse enthalten.
+Das Zugriffs Token wird aus dem plattformspezifischen Speicher abgerufen und in den Aufrufen der `UpdateBasketAsync`-Methode in der `BasketService`-Klasse eingeschlossen.
 
-Die `RequestProvider` -Klasse in der eshoponcontainers-Mobile App verwendet die `HttpClient` -Klasse, um Anforderungen an die Rest-APIs zu senden, die von der eshoponcontainers-Referenz Anwendung verfügbar gemacht werden. Beim Anfordern von Anforderungen an die Bestell-und Korb-APIs, die eine Autorisierung erfordern, muss ein gültiges Zugriffs Token in der Anforderung enthalten sein. Dies wird erreicht, indem das Zugriffs Token den Headern der `HttpClient` -Instanz hinzugefügt wird, wie im folgenden Codebeispiel gezeigt:
+Die `RequestProvider`-Klasse in der eshoponcontainers-Mobile App verwendet die `HttpClient`-Klasse, um Anforderungen an die Rest-APIs zu senden, die von der eshoponcontainers-Referenz Anwendung verfügbar gemacht werden. Beim Anfordern von Anforderungen an die Bestell-und Korb-APIs, die eine Autorisierung erfordern, muss ein gültiges Zugriffs Token in der Anforderung enthalten sein. Dies wird erreicht, indem das Zugriffs Token den Headern der `HttpClient` Instanz hinzugefügt wird, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 ```
 
-Die `DefaultRequestHeaders` -Eigenschaft `HttpClient` der-Klasse macht die Header verfügbar, die mit jeder Anforderung gesendet werden, und das Zugriffs Token wird `Authorization` dem Header hinzugefügt, dem `Bearer`die Zeichenfolge als Präfix vorangestellt ist. Wenn die Anforderung an eine Rest-API gesendet wird, wird der Wert `Authorization` des-Headers extrahiert und überprüft, um sicherzustellen, dass er von einem vertrauenswürdigen Aussteller gesendet wird. er wird verwendet, um zu bestimmen, ob der Benutzer über die Berechtigung zum Aufrufen der API verfügt, die ihn empfängt.
+Die `DefaultRequestHeaders`-Eigenschaft der `HttpClient`-Klasse macht die Header verfügbar, die mit jeder Anforderung gesendet werden, und das Zugriffs Token wird dem `Authorization`-Header hinzugefügt, dem die Zeichenfolge `Bearer`vorangestellt ist. Wenn die Anforderung an eine Rest-API gesendet wird, wird der Wert des `Authorization`-Headers extrahiert und überprüft, um sicherzustellen, dass er von einem vertrauenswürdigen Aussteller gesendet wird. er wird verwendet, um zu bestimmen, ob der Benutzer über die Berechtigung zum Aufrufen der API verfügt, die ihn empfängt.
 
 Weitere Informationen zur Verwendung von Webanforderungen durch das eshoponcontainers-Mobile App finden Sie unter [zugreifen auf Remote Daten](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 Es gibt viele Ansätze für die Integration von Authentifizierung und Autorisierung in eine xamarin. Forms-APP, die mit einer ASP.NET MVC-Webanwendung kommuniziert. Der eshoponcontainers-Mobile App führt die Authentifizierung und Autorisierung mit einem containerisierten Identitäts-microservice aus, der "identityserver 4" verwendet. Identityserver ist ein OpenID Connect-und OAuth 2,0-Open-Source-Framework für ASP.net Core, die in ASP.net Core Identity integriert ist, um bearertokenauthentifizierung auszuführen.
 
 Der Mobile App fordert Sicherheits Token von identityserver an, entweder zum Authentifizieren eines Benutzers oder zum Zugreifen auf eine Ressource. Beim Zugriff auf eine Ressource muss ein Zugriffs Token in die Anforderung an APIs eingeschlossen werden, die eine Autorisierung erfordern. Die Middleware von identityserver überprüft eingehende Zugriffs Token, um sicherzustellen, dass Sie von einem vertrauenswürdigen Aussteller gesendet werden, und dass Sie für die Verwendung mit der API, die Sie empfängt, gültig sind.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

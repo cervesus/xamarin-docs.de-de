@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 78f8c8d1340c6bb1063e59ad03485d8b9b807c58
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032282"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488997"
 ---
 # <a name="ios-platform-features-overview"></a>Übersicht über IOS-Platt Form Features
 
@@ -53,7 +53,7 @@ IOS verfügt über zwei integrierte Kalender bezogene Anwendungen: die Kalendera
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[IOS-Erweiterungen](~/ios/platform/extensions.md)
 
-Erweiterungen, die in ios 8 eingeführt werden, sind spezialisierte `UIViewControllers`, die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert werden, um spezialisierte Eingaben oder andere Kontexte wie Bearbeiten eines Fotos, bei dem die Erweiterung spezielle Effektfilter bereitstellen kann.
+Erweiterungen, die in ios 8 eingeführt werden, sind spezialisierte `UIViewControllers`, die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert werden, um spezialisierte Eingaben oder andere Kontexte wie das Bearbeiten eines Fotos auszuführen, bei dem die Erweiterung spezielle Effektfilter bereitstellen kann.
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[Grafiken und Animationen in ios](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -125,9 +125,9 @@ Das textkit ist eine neue API, die leistungsstarke Layout-und Renderingfeatures 
 
 Dieser Artikel bietet eine Einführung in die Verwendung der neuen 3D-touchapis, um Ihren xamarin. IOS-apps, die auf den neuen iPhone 6S-und iPhone 6S Plus-Geräten ausgeführt werden, druckempfindliche Gesten hinzuzufügen.
 
-## <a name="touch-idiosplatformtouchidmd"></a>[Touch-ID](~/ios/platform/touchid.md)
+## <a name="touch-id-and-face-id-with-xamariniosiosplatformtouch-id-face-idmd"></a>[Fingereingabe-ID und Face ID mit xamarin. IOS](~/ios/platform/touch-id-face-id.md)
 
-Die Berührungs-ID wurde in ios 7 als Mittel zum Authentifizieren des Benutzers eingeführt, ähnlich wie bei einer Kennung. Dies war jedoch auf das Entsperren des Geräts, das Verwenden des App Store, die Verwendung von iTunes und das Authentifizieren der icloud-Keychain beschränkt.
+Die Fingereingabe-ID und die Gesichts-ID sind biometrische Authentifizierungssysteme seit IOS 8. In diesem Artikel und Beispiel wird beschrieben, wie Sie die Fingereingabe-ID und die Face ID mit xamarin. IOS verwenden.
 
 ## <a name="user-notificationsiosplatformuser-notificationsindexmd"></a>[Benutzer Benachrichtigungen](~/ios/platform/user-notifications/index.md)
 

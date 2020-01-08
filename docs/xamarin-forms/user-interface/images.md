@@ -6,17 +6,17 @@ ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/15/2017
-ms.openlocfilehash: baf5d7a348c96cc2c43fd909bcc543fbfbfe81ce
-ms.sourcegitcommit: 58b21bf0eda3a7cea91a95b479f499c9d499b6d5
+ms.date: 12/04/2019
+ms.openlocfilehash: 255d3f2f532e4899b1a890405af942a7ca2da8ea
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310789"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490155"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _Bilder können auf Plattformen mit Xamarin.Forms freigegeben werden, sie können speziell für jede Plattform geladen werden, oder für die Anzeige heruntergeladen werden._
 
@@ -24,7 +24,7 @@ Images sind ein entscheidender Punkt bei der Navigation in der Anwendung, Nutzba
 
 Clientplattform-spezifische Images sind auch für Symbole und Begrüßungsbildschirme erforderlich; für jede Plattform konfiguriert werden müssen.
 
-## <a name="displaying-images"></a>Anzeigen von Bildern
+## <a name="display-images"></a>Anzeigen von Bildern
 
 Xamarin.Forms nutzt die [ `Image` ](xref:Xamarin.Forms.Image) Ansicht zum Anzeigen von Bildern auf einer Seite. Es werden zwei wichtige Eigenschaften hat:
 
@@ -44,20 +44,20 @@ Die [ `Aspect` ](xref:Xamarin.Forms.Image.Aspect) Eigenschaft bestimmt, wie das 
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -Schneidet das Bild ab, so dass es sich um den Anzeigebereich ausfüllt, und gleichzeitig den Aspekt (d. h. ohne Verzerrung).
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -Letterbox das Bild (falls erforderlich), damit das gesamte Bild in den Anzeigebereich passt, mit Leerzeichen hinzugefügt, die oben/unten oder den Seiten, je nachdem, ob das Bild ist breit oder hoch.
 
-Bilder können aus geladen werden, eine [lokale Datei](#local-images), [eingebettete Ressource](#embedded-images), oder [heruntergeladen](#downloading-images). Außerdem können Schriftart Symbole in der [`Image`](xref:Xamarin.Forms.Image) Ansicht angezeigt werden, indem die Schriftart Symbol Daten in einem `FontImageSource` -Objekt angegeben werden. Weitere Informationen finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) im [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Handbuch.
+Images können aus einer [lokalen Datei](#local-images), einer [eingebetteten Ressource](#embedded-images), [heruntergeladen](#download-images)oder aus einem Stream geladen werden. Außerdem können Schriftart Symbole in der [`Image`](xref:Xamarin.Forms.Image) Ansicht angezeigt werden, indem die Schriftart Symbol Daten in einem `FontImageSource`-Objekt angegeben werden. Weitere Informationen finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) im [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Handbuch.
 
-## <a name="local-images"></a>Lokalen Images
+## <a name="local-images"></a>Lokale Images
 
-Bilddateien können jedes Anwendungsprojekt hinzugefügt und von Xamarin.Forms freigegebenen Code verwiesen werden. Dieses Verfahren zum Verteilen von Abbildern ist erforderlich, wenn Bilder plattformspezifisch, z. B. sind, bei Verwendung von unterschiedlichen Auflösungen auf verschiedenen Plattformen oder etwas unterschiedlichen Entwürfe.
+Bilddateien können jedes Anwendungsprojekt hinzugefügt und von Xamarin.Forms freigegebenen Code verwiesen werden. Diese Vorgehensweise ist zum Verteilen plattformspezifischer Bilder erforderlich. Beispielsweise kann es vorkommen, dass auf verschiedenen Plattformen unterschiedliche Auflösungen oder geringfügig abweichende Designs verwendet werden.
 
 Verwenden Sie ein einzelnes Abbild für alle apps *die gleiche Dateinamen muss auf allen Plattformen verwendet werden*, und er muss einen gültigen Ressourcennamen für Android (ie. nur Kleinbuchstaben, Ziffern, Unterstriche und den Zeitraum sind zulässig).
 
 - **iOS** : die Möglichkeit zum Verwalten und unterstützen Bilder aus, da iOS 9 ist die Verwendung bevorzugter **Bildzusammenstellungen für Asset-Katalog**, die enthält alle Versionen der Bilddatei, die sind erforderlich, um Unterstützung für verschiedene Geräte und Skalierungsfaktoren für ein die Anwendung. Weitere Informationen finden Sie unter [Bilder hinzufügen, um eine Asset-Katalog-Image festzulegen](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
-- **Android** : Platzieren Sie Images im **Ressourcen/drawable-** Verzeichnis **mit der Buildaktion: "Androidresource**". Hohe und niedrige-DPI-Versionen eines Bildes können auch angegeben werden (in entsprechend benannt **Ressourcen** Unterverzeichnisse, wie z. B. **drawable-Ldpi**, **drawable-Hdpi**, und **drawable-Xhdpi**).
-- **Universelle Windows-Plattform (UWP)** : Platzieren Sie Images im Stammverzeichnis der Anwendung mit **der Buildaktion: Inhalt**.
+- **Android** -Platzieren von Bildern in der **Ressourcen/drawable** -Verzeichnis mit **Buildvorgang: AndroidResource**. Hohe und niedrige-DPI-Versionen eines Bildes können auch angegeben werden (in entsprechend benannt **Ressourcen** Unterverzeichnisse, wie z. B. **drawable-Ldpi**, **drawable-Hdpi**, und **drawable-Xhdpi**).
+- **Universelle Windows-Plattform (UWP)** -Platzieren von Bildern im Stammverzeichnis der Anwendung, mit **Buildvorgang: Inhalt**.
 
 > [!IMPORTANT]
-> Vor IOS 9 wurden Images in der Regel im Ordner " **Resources** " mit **Buildaktion abgelegt: Bundleresource**. Allerdings ist diese Methode für die Arbeit mit Bildern in einer iOS-app von Apple veraltet. Weitere Informationen finden Sie unter [Bildgrößen und Dateinamen](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+> Vor iOS 9, wurden in der Regel Bilder platziert die **Ressourcen** Ordner mit **Buildvorgang: BundleResource**. Allerdings ist diese Methode für die Arbeit mit Bildern in einer iOS-app von Apple veraltet. Weitere Informationen finden Sie unter [Bildgrößen und Dateinamen](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
 Befolgen die folgenden Regeln für Dateibenennung und Platzierung kann der folgende XAML zum Laden und Anzeigen der Abbildung auf allen Plattformen:
 
@@ -73,18 +73,20 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Die folgenden Screenshots zeigen das Ergebnis ein lokales Image auf jeder Plattform anzuzeigen:
 
-[![Lokale ImageSource](images-images/local-sml.png "Beispielanwendung, die ein lokales Image anzeigt")](images-images/local.png#lightbox "Beispielanwendung, die ein lokales Image anzeigt")
+[![Beispielanwendung, die ein lokales Image anzeigt](images-images/local-sml.png)](images-images/local.png#lightbox)
 
 Zur Erhöhung der Flexibilität der `Device.RuntimePlatform` Eigenschaft kann auf eine andere Bilddatei oder den Pfad für einige oder alle Plattformen verwendet werden, wie in diesem Codebeispiel wird dargestellt:
 
 ```csharp
-image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("waterfront.jpg") : ImageSource.FromFile("Images/waterfront.jpg");
+image.Source = Device.RuntimePlatform == Device.Android 
+                ? ImageSource.FromFile("waterfront.jpg") 
+                : ImageSource.FromFile("Images/waterfront.jpg");
 ```
 
 > [!IMPORTANT]
 > Verwendung der gleichen Dateiname des Bilds auf allen Plattformen muss der Name auf allen Plattformen gültig sein. Android zeichenbarer Ressourcen haben benennungseinschränkungen – nur Kleinbuchstaben, Zahlen, einem Unterstrich und Punkt sind zulässig – und für die plattformübergreifende Kompatibilität Dies muss folgen auf den anderen Plattformen zu. Der Dateiname Beispiel **waterfront.png** folgt den Regeln jedoch Beispiele für ungültige Dateinamen enthalten "Wasser front.png", "WaterFront.png", "Wasser-front.png" und "wåterfront.png".
 
-### <a name="native-resolutions-retina-and-high-dpi"></a>Native Auflösung (Retina und High-DPI)
+### <a name="native-resolutions-retina-and-high-dpi"></a>Native Auflösungen (Retina und High-dpi)
 
 IOS-, Android- und UWP enthalten Unterstützung für verschiedene bildauflösungen, in denen das Betriebssystem das entsprechende Image zur Laufzeit basierend auf die Funktionen des Geräts auswählt. Xamarin.Forms verwendet der nativen Plattformen-APIs für das Laden von lokalen Images, damit es automatisch alternative Lösungen unterstützt, wenn die Dateien ordnungsgemäß mit dem Namen und dem Projekt ein.
 
@@ -94,7 +96,7 @@ Vor iOS 9, Retina-Versionen des Images platziert werden konnte, der **Ressourcen
 
 Bilder mit Android alternativen Auflösung platziert werden soll, im [speziell benannte Verzeichnisse](https://developer.android.com/guide/practices/screens_support.html) im Android-Projekt, wie im folgenden Screenshot gezeigt:
 
-[![Android-Image Speicherort mit mehreren Auflösungen](images-images/xs-highdpisolution-sml.png "Android-Image Speicherort mit mehreren Auflösungen")](images-images/xs-highdpisolution.png#lightbox "Android-Image Speicherort mit mehreren Auflösungen")
+[Speicherort für die ![Android-Image mit mehreren Auflösungen](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
 UWP-Bilddateinamen [können mit dem Suffix werden `.scale-xxx` vor der Dateierweiterung](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), wobei `xxx` ist der Prozentsatz der Skalierung auf das Medienobjekt angewendet wurde, z. B. **myimage.scale-200.png**. Images können im Code oder XAML, ohne den Scale-Modifizierer, z. B. nur dann verwiesen werden **myimage.png**. Die Plattform wird die nächste geeignete Objektskalierung basierend auf der Anzeige des aktuellen DPI ausgewählt.
 
@@ -102,25 +104,26 @@ UWP-Bilddateinamen [können mit dem Suffix werden `.scale-xxx` vor der Dateierwe
 
 Einige Steuerelemente verfügen über Eigenschaften, die ein Bild, wie z. B. angezeigt:
 
-- [`Page`](xref:Xamarin.Forms.Page)-Jeder Seitentyp, der von `Page` abgeleitet [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) wird [`BackgroundImageSource`](xref:Xamarin.Forms.Page.BackgroundImageSource) , verfügt über die Eigenschaften und, denen eine Datei, eine eingebettete Ressource, ein URI oder ein Stream zugewiesen werden kann. Unter bestimmten Umständen, z. B. wenn ein [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) zeigt eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), das Symbol wird angezeigt, wenn von der Plattform unterstützt.
+- [`Button`](xref:Xamarin.Forms.Button) verfügt über eine [`ImageSource`](xref:Xamarin.Forms.Button.ImageSource) -Eigenschaft, die auf ein Bitmap-Bild festgelegt werden kann, das auf dem `Button`angezeigt werden soll. Weitere Informationen finden Sie unter [Verwenden von Bitmaps mit Schalt](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)Flächen.
+- [`ImageButton`](xref:Xamarin.Forms.Button) verfügt über eine [`Source`](xref:Xamarin.Forms.ImageButton.Source) -Eigenschaft, die auf das Bild festgelegt werden kann, das im `ImageButton`angezeigt werden soll. Weitere Informationen finden Sie unter [Festlegen der Bildquelle](~/xamarin-forms/user-interface/imagebutton.md#setting-the-image-source).
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) verfügt über eine [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) -Eigenschaft, die auf ein Bild festgelegt werden kann, das aus einer Datei, einer eingebetteten Ressource, einem URI oder einem Stream geladen wird.
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) verfügt über eine [`ImageSource`](xref:Xamarin.Forms.ImageCell.ImageSource) -Eigenschaft, die auf ein Bild festgelegt werden kann, das aus einer Datei, einer eingebetteten Ressource, einem URI oder einem Stream abgerufen wurde.
+- [`Page`](xref:Xamarin.Forms.Page). Jeder Seitentyp, der von `Page` abgeleitet ist, verfügt über [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) -und [`BackgroundImageSource`](xref:Xamarin.Forms.Page.BackgroundImageSource) -Eigenschaften, denen eine Datei, eine eingebettete Ressource, ein URI oder ein Stream zugewiesen werden kann. Unter bestimmten Umständen, z. B. wenn ein [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) zeigt eine [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), das Symbol wird angezeigt, wenn von der Plattform unterstützt.
 
   > [!IMPORTANT]
-  > Unter iOS die [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource) Eigenschaft kann nicht aus einem Image in einem Satz für Asset-Katalog-Image nicht aufgefüllt werden. Laden Sie stattdessen Symbolbilder für die `Page.IconImageSource` Eigenschaft aus einer Datei, einer eingebetteten Ressource, einem URI oder einem Stream.
-
-- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)-Verfügt über [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) eine-Eigenschaft, die auf ein Bild festgelegt werden kann, das aus einer Datei, einer eingebetteten Ressource, einem URI oder einem Stream geladen wird.
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell)-Verfügt über [`ImageSource`](xref:Xamarin.Forms.ImageCell.ImageSource) eine-Eigenschaft, die auf ein Bild festgelegt werden kann, das aus einer Datei, einer eingebetteten Ressource, einem URI oder einem Stream abgerufen wurde.
+  > Unter iOS die [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource) Eigenschaft kann nicht aus einem Image in einem Satz für Asset-Katalog-Image nicht aufgefüllt werden. Laden Sie stattdessen Symbolbilder für die `Page.IconImageSource`-Eigenschaft aus einer Datei, einer eingebetteten Ressource, einem URI oder einem Stream.
 
 ## <a name="embedded-images"></a>Eingebettete Bilder
 
 Eingebettete Bilder werden auch mit einer Anwendung (z. B. lokalen Images) geliefert, aber anstatt eine Kopie des Abbilds in jeder Anwendung Dateistruktur das Image-Datei in der Assembly als Ressource eingebettet ist. Dieses Verfahren zum Verteilen von Abbildern wird empfohlen, wenn die identische Images auf jeder Plattform verwendet werden, und eignet sich insbesondere für das Erstellen von Komponenten, wie das Bild mit dem Code im Paket enthalten ist.
 
-Maustaste, um ein Bild in einem Projekt einbetten, um neue Elemente hinzufügen, und wählen Sie die Bild/s, die Sie hinzufügen möchten. Standardmäßig hat **das Image eine Buildaktion: None**; diese muss auf **Buildaktion festgelegt werden: EmbeddedResource** festgelegt sein.
+Maustaste, um ein Bild in einem Projekt einbetten, um neue Elemente hinzufügen, und wählen Sie die Bild/s, die Sie hinzufügen möchten. Standardmäßig hat das Bild **Buildvorgang: keine**; Dies muss festgelegt werden, um **Buildvorgang: EmbeddedResource**.
 
 <!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](images-images/vs-buildaction.png "Buildaktion festlegen: EmbeddedResource")
+[![Buildaktion auf eingebettete Ressource festlegen](images-images/vs-buildaction-sml.png)](images-images/vs-buildaction.png#lightbox)
 
 Die **Buildvorgang** angezeigt und geändert werden können die **Eigenschaften** Fenster für eine Datei.
 
@@ -130,14 +133,14 @@ Die IDE hat diese Standardeinstellung generiert, durch die Verkettung der **Stan
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "Buildaktion festlegen: EmbeddedResource")
+![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
 
 **Buildvorgang** auch angezeigt und geändert werden können die **Eigenschaften** Pad für eine Datei.
 Dieses Feld zeigt die **Ressourcen-ID** , auf die Ressource im Code verwendet wird. Im folgenden Screenshot die **Ressourcen-ID** ist **WorkingWithImages.beach.jpg**.
 Die IDE hat diese Standardeinstellung generiert, durch die Verkettung der **Standard-Namespace** verwenden Sie für dieses Projekt mit dem Dateinamen, einen Punkt (.) zwischen den einzelnen Werten.
 Diese ID kann bearbeitet werden, der **Eigenschaften** Pad, aber diese Beispiele für den Wert **WorkingWithImages.beach.jpg** verwendet werden.
 
-![](images-images/xs-embeddedproperties.png "EmbeddedResource Pad \"Eigenschaften\"")
+[Eigenschaften-Pad für eingebettete Ressourcen ![](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
@@ -146,7 +149,11 @@ Wenn Sie eingebettete Bilder in Ordnern innerhalb Ihres Projekts ablegen, werden
 Übergibt der Code zum Laden eines eingebetteten Bilds einfach die **Ressourcen-ID** auf die [ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*) Methode wie unten dargestellt:
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
+var embeddedImage = new Image { 
+      Source = ImageSource.FromResource(
+        "WorkingWithImages.beach.jpg", 
+        typeof(EmbeddedImages).GetTypeInfo().Assembly
+      ) };
 ```
 
 > [!NOTE]
@@ -156,9 +163,9 @@ Zurzeit besteht keine implizite Konvertierung für die Ressourcen-IDs. Sie müss
 
 Die folgenden Screenshots zeigen das Ergebnis ein eingebettetes Bild auf jeder Plattform anzuzeigen:
 
-[![Resourceimagesource](images-images/resource-sml.png "Beispielanwendung, die ein eingebettetes Bild anzeigt")](images-images/resource.png#lightbox "Beispielanwendung, die ein eingebettetes Bild anzeigt")
+[![Beispielanwendung, die ein eingebettetes Bild anzeigt](images-images/resource-sml.png)](images-images/resource.png#lightbox)
 
-### <a name="using-xaml"></a>Mithilfe von XAML
+### <a name="xaml"></a>XAML
 
 Da es ist kein integrierter Typ-Konverter aus `string` zu `ResourceImageSource`, diese Arten von Images können nicht systemintern von XAML geladen werden. Stattdessen kann eine einfache benutzerdefinierte XAML-Markuperweiterung geschrieben werden, zum Laden von Bildern, die mit einem **Ressourcen-ID** in XAML angegeben:
 
@@ -202,9 +209,9 @@ Verwenden Sie diese Erweiterung hinzufügen ein benutzerdefinierten `xmlns` , di
 </ContentPage>
 ```
 
-### <a name="troubleshooting-embedded-images"></a>Problembehandlung bei Embedded-Images
+### <a name="troubleshoot-embedded-images"></a>Problembehandlung für eingebettete Bilder
 
-#### <a name="debugging-code"></a>Debuggen von Code
+#### <a name="debug-code"></a>Debuggen von Code
 
 Da es in einigen Fällen schwer ist zu verstehen, warum eine bestimmte imageressource nicht geladen werden ist, kann die folgenden Debuggen von Code vorübergehend hinzugefügt werden, zu einer Anwendung, um zu bestätigen, dass die Ressourcen korrekt konfiguriert sind. Alle bekannte Ressourcen, die in der angegebenen Assembly eingebettet erfolgt die Ausgabe der **Konsole** zum Debuggen von Problemen Laden der Ressource.
 
@@ -219,17 +226,18 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects"></a>In anderen Projekten eingebetteten Bilder
+#### <a name="images-embedded-in-other-projects"></a>In andere Projekte eingebettete Bilder
 
 In der Standardeinstellung die `ImageSource.FromResource` Methode sucht nur für Bilder in der gleichen Assembly wie die aufrufende Code die `ImageSource.FromResource` Methode. Verwenden den Debuggen von Code über die Sie ermitteln kann, welche Assemblys eine bestimmte Ressource durch Ändern enthalten die `typeof()` Anweisung, um eine `Type` bekannt, dass in jeder Assembly sind.
 
 Allerdings kann die Assembly der Ereignisquelle für ein eingebettetes Bild zu durchsuchenden angegeben werden, als Argument an die `ImageSource.FromResource` Methode:
 
 ```csharp
-var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+var imageSource = ImageSource.FromResource("filename.png", 
+            typeof(MyClass).GetTypeInfo().Assembly);
 ```
 
-## <a name="downloading-images"></a>Herunterladen von Abbildern
+## <a name="download-images"></a>Images herunterladen
 
 Bilder können für die Anzeige, automatisch heruntergeladen werden, wie in den folgenden XAML dargestellt:
 
@@ -249,7 +257,10 @@ Bilder können für die Anzeige, automatisch heruntergeladen werden, wie in den 
 Der entsprechende C#-Code lautet wie folgt aus:
 
 ```csharp
-var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
+var webImage = new Image { 
+     Source = ImageSource.FromUri(
+        new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")
+     ) };
 ```
 
 Die [ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) Methode erfordert eine `Uri` Objekt aus, und gibt ein neues [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource) , liest aus der `Uri`.
@@ -262,9 +273,9 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Die folgenden Screenshots zeigen das Ergebnis zum Anzeigen von remotebilds auf jeder Plattform:
 
-[![ImageSource heruntergeladen](images-images/download-sml.png "Beispielanwendung, die ein heruntergeladenes Image anzeigt")](images-images/download.png#lightbox "Beispielanwendung, die ein heruntergeladenes Image anzeigt")
+[![Beispielanwendung, die ein heruntergeladenes Image anzeigt](images-images/download-sml.png)](images-images/download.png#lightbox)
 
-### <a name="downloaded-image-caching"></a>Heruntergeladene Bild Zwischenspeichern
+### <a name="downloaded-image-caching"></a>Herunterladen von Bild Caching
 
 Ein [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource) unterstützt auch die Zwischenspeicherung von heruntergeladenen Bilder, die über die folgenden Eigenschaften konfiguriert:
 
@@ -290,6 +301,25 @@ webImage.Source = new UriImageSource
 
 Integriertes Zwischenspeichern erleichtert Szenarios wie die Liste der Images, in dem Sie festgelegt (ein Bild oder binden können) in jeder Zelle Bildlauf unterstützen und den integrierten Cache kümmert sich erneute Laden das Image, wenn die Zelle zurück in die Ansicht gescrollt wird.
 
+## <a name="animated-gifs"></a>Animierte GIFs
+
+Xamarin. Forms bietet Unterstützung für die Anzeige von kleinen, animierten GIFs. Dies wird erreicht, indem die [`Image.Source`](xref:Xamarin.Forms.Image.Source) -Eigenschaft auf eine animierte GIF-Datei festgelegt wird:
+
+```xaml
+<Image Source="demo.gif" />
+```
+
+> [!IMPORTANT]
+> Während die animierte GIF-Unterstützung in xamarin. Forms die Möglichkeit bietet, Dateien herunterzuladen, unterstützt das Caching oder Streaming animierte GIFs nicht.
+
+Wenn eine animierte GIF geladen wird, wird Sie standardmäßig nicht wiedergegeben. Dies liegt daran, dass die `IsAnimationPlaying`-Eigenschaft, mit der gesteuert wird, ob ein animiertes GIF wiedergegeben oder angehalten wird, über den Standardwert `false`verfügt. Diese Eigenschaft vom Typ "`bool`" wird durch ein [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekt unterstützt. Dies bedeutet, dass es sich um das Ziel einer Datenbindung handeln und formatiert werden kann.
+
+Wenn ein animiertes GIF geladen wird, wird es daher erst wiedergegeben, wenn die `IsAnimationPlaying`-Eigenschaft auf `true`festgelegt ist. Die Wiedergabe kann dann beendet werden, indem die `IsAnimationPlaying`-Eigenschaft auf `false`festgelegt wird. Beachten Sie, dass diese Eigenschaft keine Auswirkung hat, wenn eine nicht-GIF-Bildquelle angezeigt wird.
+
+> [!NOTE]
+> Unter Android erfordert die animierte GIF-Unterstützung, dass Ihre Anwendung schnelle Renderer verwendet, und funktioniert nicht, wenn Sie sich für die Verwendung der Legacy-Renderer entschieden haben.
+> Bei UWP erfordert die animierte GIF-Unterstützung mindestens eine Version von Windows 10 Anniversary Update (Version 1607).
+
 ## <a name="icons-and-splash-screens"></a>Symbole und Begrüßungsbildschirme
 
 Während die nicht im Zusammenhang mit der [ `Image` ](xref:Xamarin.Forms.Image) anzeigen, Symbole und Begrüßungsbildschirme sind ebenfalls eine wichtige Aufgabe von Bildern in Xamarin.Forms-Projekte.
@@ -298,21 +328,15 @@ Festlegen, Symbole und Begrüßungsbildschirme für Xamarin.Forms-apps erfolgt i
 
 ## <a name="icons"></a>Symbole
 
-Finden Sie unter den [iOS arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md), [Google Ikonographie](https://developer.android.com/design/style/iconography.html), und [Richtlinien für die Kachel "und" Symbol-Objekte](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) für Weitere Informationen zum Erstellen dieser Anwendungsressourcen.
+Weitere Informationen zum Erstellen dieser Anwendungs Ressourcen finden Sie unter [IOS-arbeiten mit Images](~/ios/app-fundamentals/images-icons/index.md), [Google Iconography](https://developer.android.com/design/style/iconography.html)und [UWP-Richtlinien für Kachel-und Symbol](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) Ressourcen.
 
-Außerdem können Schriftart Symbole in der [`Image`](xref:Xamarin.Forms.Image) Ansicht angezeigt werden, indem die Schriftart Symbol Daten in einem `FontImageSource` -Objekt angegeben werden. Weitere Informationen finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) im [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Handbuch.
+Außerdem können Schriftart Symbole in der [`Image`](xref:Xamarin.Forms.Image) Ansicht angezeigt werden, indem die Schriftart Symbol Daten in einem `FontImageSource`-Objekt angegeben werden. Weitere Informationen finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) im [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Handbuch.
 
 ## <a name="splash-screens"></a>Begrüßungsbildschirme
 
 Nur iOS und UWP-Anwendungen einen Begrüßungsbildschirm (auch als ein Start-Bildschirm oder Standard-Image) ist erforderlich.
 
 Lesen Sie die Dokumentation für [iOS arbeiten mit Bildern](~/ios/app-fundamentals/images-icons/index.md) und [Begrüßungsbildschirmen](/windows/uwp/launch-resume/splash-screens/) im Windows Dev Center.
-
-## <a name="summary"></a>Zusammenfassung
-
-Xamarin.Forms bietet es sich um eine Reihe von Möglichkeiten zum Einschließen von Images in eine plattformübergreifende Anwendung, sodass für das gleiche Bild, der plattformübergreifend verwendet werden oder für plattformspezifische Images angegeben werden. Heruntergeladenen Bilder werden auch automatisch zwischengespeichert, ein gängiges Szenario für die Programmierung zu automatisieren.
-
-Application-Symbol und Bilder des Begrüßungsbildschirms werden eingerichtet und konfiguriert wie für nicht-Xamarin.Forms-Anwendungen – befolgen Sie die gleiche Anweisungen, die für bestimmte apps verwendet.
 
 ## <a name="related-links"></a>Verwandte Links
 

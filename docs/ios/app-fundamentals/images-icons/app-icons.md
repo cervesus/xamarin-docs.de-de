@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 885f5321c10bcbc5389daf7dd7a97d1f9d572499
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010375"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488430"
 ---
 # <a name="application-icons-in-xamarinios"></a>Anwendungs Symbole in xamarin. IOS
 
@@ -47,23 +47,23 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
     ||3X|
     |---|---|
     |Anwendungssymbol|180 x 180|
-    |Gerückt|120x120|
+    |Spotlight|120x120|
     |Einstellungen|87x87|
 
 - **iPhone: IOS 7 & 8**
 
-    ||1X|2x|
+    ||1x|2x|
     |---|---|---|
-    |Anwendungssymbol|60 x 60<sup>1</sup>|120x120|
-    |Gerückt|40 x 40<sup>2</sup>|80X 80|
+    |Anwendungssymbol|60x60<sup>1</sup>|120x120|
+    |Spotlight|40x40<sup>2</sup>|80x80|
     |Einstellungen|-|-|
 
 - **iPhone: IOS 5 & 6**
 
-    ||1X|2x|
+    ||1x|2x|
     |---|---|---|
     |Anwendungssymbol|57x57|114 x 114|
-    |Gerückt|29x29|58x58|
+    |Spotlight|29x29|58x58|
     |Einstellungen|29x29<sup>3, 4</sup>|58x58<sup>3, 4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>iPad-Symbolgrößen
@@ -73,23 +73,23 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
     ||2x (iPad pro)|
     |---|---|
     |Anwendungssymbol|167x167<sup>6</sup>|
-    |Gerückt|120 x 120<sup>6</sup>|
+    |Spotlight|120x120<sup>6</sup>|
     |Einstellungen|58x58<sup>5</sup>|
 
-- **iPad: IOS 7 & 8**
+- **iPad: iOS 7 & 8**
 
-    ||1X|2x|
+    ||1x|2x|
     |---|---|---|
-    |Anwendungssymbol|76x76|152 x 152|
-    |Gerückt|40x40|80X 80|
+    |Anwendungssymbol|76x76|152x152|
+    |Spotlight|40x40|80x80|
     |Einstellungen|-|-|
 
-- **iPad: IOS 5 & 6**
+- **iPad: iOS 5 & 6**
 
-    ||1X|2x|
+    ||1x|2x|
     |---|---|---|
     |Anwendungssymbol|72x72|144 x 144|
-    |Gerückt|50x50|deren|
+    |Spotlight|50x50|deren|
     |Einstellungen|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
 
  1. Sowohl Visual Studio für Mac als auch Xcode unterstützen nicht mehr das Einrichten von 1 x-Image für IOS 7.
@@ -107,39 +107,48 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
 
 Bei Symbolen kann der `Assets.xcassets`-Datei im Projekt der APP ein spezieller `AppIcon` Bild Satz hinzugefügt werden. Alle Versionen des Bilds, die zur Unterstützung aller Auflösungen erforderlich sind, sind im _xcasset_ enthalten und zusammengefasst. Mit einem speziellen Editor in Visual Studio für Mac können Entwickler diese Bilder grafisch einschließen und einrichten.
 
-Gehen Sie folgendermaßen vor, um einen Asset-Katalog zu verwenden:
+Um einen Asset-Katalog zu verwenden, führen Sie die folgenden Schritte aus:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
-2. Scrollen Sie nach unten zum Abschnitt **App-Symbole** .
-3. Vergewissern Sie sich, dass in der Dropdown Liste **Quelle** die Option **AppIcon** ausgewählt ist: 
+2. Scrollen Sie nach unten zum Abschnitt **iPhone-Symbole** .
+3. Klicken Sie auf die Schaltfläche **zu Asset Catalog migrieren** :
 
     ![](app-icons-images/migrate01.png "Ensure AppIcon is selected")
+
 4. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Assets.xcassets` Datei, um Sie zur Bearbeitung zu öffnen: 
 
     ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
+
 5. Wählen Sie aus der Liste der Assets `AppIcon` aus, um die `Icon Editor`anzuzeigen:
 
     ![](app-icons-images/asset02.png "The AppIcon editor")
+
 6. Klicken Sie entweder auf den angegebenen Symboltyp, und wählen Sie eine Bilddatei für die erforderliche Art/Größe aus, oder ziehen Sie ein Bild aus einem Ordner, und legen Sie es auf der gewünschten Größe ab.
 7. Klicken Sie auf die Schaltfläche **Öffnen** , um das Bild in das Projekt einzuschließen, und legen Sie es im xcasset fest.
 8. Wiederholen Sie diesen Schritt für alle benötigten Images.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie im **Projektmappen-Explorer**auf die Datei **Info. plist** :
+1. Doppelklicken Sie auf die * *-Informationen.  \* * Datei in der **Projektmappen-Explorer**:
 
     ![](app-icons-images/icon01w.png "Select Info.plist")
+
 2. Klicken Sie auf die Registerkarte **visuelle Objekte** und dann unter **App-Symbole**auf die Schaltfläche " **Asset catalog verwenden** ": 
 
     ![](app-icons-images/icon02w.png "Select the Visual Assets tab")
+
+    Wenn keine Schaltfläche vorhanden ist, sondern stattdessen eine Dropdown Liste, wurde diesem Projekt bereits ein Asset-Katalog hinzugefügt.
+
 3. Erweitern Sie auf der **Projektmappen-Explorer**den Ordner **Asset Catalog** : 
 
     ![](app-icons-images/image009.png "Expand the Asset Catalog folder")
+
 4. Doppelklicken Sie auf die **Medien** Datei, um Sie im Editor zu öffnen: 
 
     ![](app-icons-images/image010.png "Open the Media file in the editor")
+
 5. Im **Eigenschaften-Explorer** kann der Entwickler die verschiedenen Typen und Größen der erforderlichen Symbole auswählen.
 6. Klicken Sie auf den angegebenen Symboltyp, und wählen Sie eine Bilddatei für die erforderliche Art/Größe aus.
 7. Klicken Sie auf die Schaltfläche **Öffnen** , um das Bild in das Projekt einzuschließen, und legen Sie es im xcasset fest.
@@ -148,36 +157,6 @@ Gehen Sie folgendermaßen vor, um einen Asset-Katalog zu verwenden:
 -----
 
 Dies ist die bevorzugte Methode zum einschließen und Verwalten von bildassets, die verwendet werden, um Symbole für Anwendungen, Spotlight und Einstellungen für eine APP bereitzustellen.
-
-### <a name="migrating-from-infoplist-to-asset-catalogs"></a>Migrieren von "Info. plist" zu Asset-Katalogen
-
-Für eine vorhandene xamarin. IOS-APP, die die `Info.plist` Datei zum Verwalten der Symbole verwendet, wird dringend empfohlen, dass der Entwickler das `AppIcons` Image-Asset innerhalb des `Assets.xcassets`verwendet.
-
-Führen Sie folgende Schritte aus:
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-
-1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
-2. Scrollen Sie nach unten zum Abschnitt **App-Symbole** .
-3. Wählen Sie in der Dropdown Liste **Quelle** die Option **zu Asset-Katalogen migrieren**aus: 
-
-    ![](app-icons-images/migrate02.png "Select Migrate to Asset Catalogs")
-4. Alle vorhandenen Symbole, die in der `Info.plist` Datei definiert sind, werden zu einem `AppIcons` Abbild Satz migriert, der `Assets.xcassets`hinzugefügt wird: 
-
-     ![](app-icons-images/migrate03.png "The AppIcons Image Set in the Assets.xcassets")
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
-2. Klicken Sie auf den Abschnitt iPhone-Symbole: 
-
-    ![](app-icons-images/image007.png "Rhe iPhone Icons editor")
-3. Scrollen Sie nach unten zum Abschnitt **Symbole** .
-4. Wählen Sie in der Dropdown Liste **Asset Catalog** den Wert **Asset-Kataloge verwenden**aus.
-5. Alle vorhandenen Symbole, die in der `Info.plist`-Datei definiert sind, werden zu einem `Images` Satz migriert, der `Assets.xcassets`hinzugefügt wird.
-6. Speichern Sie die Änderungen an der Datei `Info.plist`.
-
------
 
 <a name="itunes" />
 
@@ -208,7 +187,7 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 
 -----
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Arbeiten mit Bildern (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
 - [Hallo iPhone](~/ios/get-started/hello-ios/index.md)

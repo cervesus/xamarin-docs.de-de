@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: ec5c6e4c4c47995e78c1819007a8fa5660873bd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026594"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488932"
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
 
-## <a name="getting-diagnostic-information"></a>Diagnoseinformationen werden erhalten.
+## <a name="getting-diagnostic-information"></a>Abrufen von Diagnoseinformationen
 
 Xamarin. Android bietet einige Punkte, die beim Nachverfolgen verschiedener Fehler zu sehen sind.
 Dazu gehören:
@@ -662,7 +662,7 @@ Beim Bereitstellen einer mit [AOT + llvm](~/android/deploy-test/release-prep/ind
 
 ```shell
 Assertion: should not be reached at /Users/.../external/mono/mono/mini/tramp-x86.c:124
-Fatal signal 6 (SIGABRT), code -6 in tid 4051 (amarin.bug56111)
+Fatal signal 6 (SIGABRT), code -6 in tid 4051 (Xamarin.bug56111)
 ```
 
-Dies ist ein bekanntes Problem, das in [56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111)gemeldet wird. Die Problem Umgehung besteht darin, llvm zu deaktivieren.
+Dies ist ein bekanntes Problem – die Problem Umgehung besteht darin, llvm zu deaktivieren.

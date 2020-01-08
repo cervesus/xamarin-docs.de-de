@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: e54b36989f5b4694da5d46a89391d56920b8d6a9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ddb25a1f01f91b627fc0c370f7f21e2a797b72cb
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656253"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545581"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms-Schieberegler
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _Verwenden Sie einen Schieberegler für die Auswahl aus einem Bereich fortlaufender Werte._
 
@@ -39,7 +39,7 @@ Die `Slider` wandelt die `Value` Eigenschaft, damit es zwischen ist `Minimum` un
 
 Die [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Objekt an, die mit der `ValueChanged` Ereignis verfügt über zwei Eigenschaften, die beide vom Typ `double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) und [ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). Zum Zeitpunkt das Ereignis ausgelöst wird, den Wert der `NewValue` ist identisch mit der `Value` Eigenschaft der `Slider` Objekt.
 
-`Slider`definiert `DragStarted` auch- `DragCompleted` und-Ereignisse, die am Anfang und Ende der Zieh Aktion ausgelöst werden. Im Gegensatz [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) zum-Ereignis `DragStarted` werden das-Ereignis und das- `DragCompleted` Ereignis nur durch `Slider`die Benutzer Bearbeitung von ausgelöst. Wenn das `DragStarted` -Ereignis ausgelöst wird `DragStartedCommand`, wird der `ICommand`vom Typ ausgeführt. Ebenso wird, wenn `DragCompleted` das Ereignis ausgelöst wird `DragCompletedCommand`, der vom `ICommand`Typ ausgeführt.
+`Slider` definiert auch `DragStarted`-und `DragCompleted` Ereignisse, die am Anfang und Ende der Zieh Aktion ausgelöst werden. Im Gegensatz zum [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) Ereignis werden die Ereignisse `DragStarted` und `DragCompleted` nur durch Benutzer Manipulation der `Slider`ausgelöst. Wenn das `DragStarted`-Ereignis ausgelöst wird, wird der `DragStartedCommand`vom Typ `ICommand`ausgeführt. Wenn das `DragCompleted`-Ereignis ausgelöst wird, wird auch die `DragCompletedCommand`des Typs `ICommand`ausgeführt.
 
 > [!WARNING]
 > Verwenden Sie keine Optionen uneingeschränkte horizontales Layout `Center`, `Start`, oder `End` mit `Slider`. Für Android und UWP die `Slider` reduziert, die in ein Balkendiagramm der Länge Null, und klicken Sie unter iOS, die Leiste ist sehr kurz. Behalten Sie den Standardwert `HorizontalOptions` -Einstellung `Fill`, und verwenden Sie keine Breite von `Auto` beim `Slider` in eine `Grid` Layout.
@@ -109,9 +109,9 @@ public class BasicSliderCodePage : ContentPage
 
 Die `Slider` initialisiert wird, dass eine `Maximum` Eigenschaft 360. Der `ValueChanged` Handler der `Slider` verwendet der `Value` Eigenschaft der `slider` Objekt zum Festlegen von der `Rotation` Eigenschaft des ersten `Label` und verwendet die `String.Format` -Methode mit der `NewValue` Eigenschaft der Ereignisargumente, um das Festlegen der `Text` -Eigenschaft der zweiten `Label`. Diese beiden Ansätze zum Abrufen des aktuellen Werts von der `Slider` sind austauschbar.
 
-Hier wird das Programm Geräte unter iOS, Android und universelle Windows-Plattform (UWP) ausgeführt wird:
+Hier ist das Programm, das auf IOS-und Android-Geräten ausgeführt wird:
 
-[![Grundlegende Schieberegler Code](slider-images/BasicSliderCode.png "grundlegende Schieberegler-Code")](slider-images/BasicSliderCode-Large.png#lightbox)
+[![Standard Schieberegler-Code](slider-images/BasicSliderCode.png "Standard Schieberegler-Code")](slider-images/BasicSliderCode-Large.png#lightbox)
 
 Die zweite `Label` zeigt den Text "(nicht initialisierte)", bis die `Slider` bearbeitet wird, der bewirkt, dass der erstes `ValueChanged` Ereignis ausgelöst werden. Beachten Sie, dass die Anzahl der Dezimalstellen, die angezeigt werden, je nach Plattform unterschiedlich ist. Diese Unterschiede beziehen sich auf die plattformimplementierungen aus, der die `Slider` und werden weiter unten in diesem Artikel im Abschnitt [Implementierung Plattformunterschiede](#implementations).
 
@@ -205,7 +205,7 @@ Die **Standardbindungen Schieberegler** Seite zeigt, wie ein nahezu gleichwertig
 </ContentPage>
 ```
 
-Die `Rotation` Eigenschaft des ersten `Label` gebunden ist die `Value` Eigenschaft der `Slider`, da die `Text` -Eigenschaft der zweiten `Label` mit einer `StringFormat` Spezifikation. Die Seite mit den **grundlegenden Schieberegler-Bindungen** funktioniert etwas anders als die beiden vorherigen Seiten: Wenn die Seite zum ersten Mal angezeigt wird `Label` , zeigt die zweite die Text Zeichenfolge mit dem Wert an. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der `ValueChanged` Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor.
+Die `Rotation` Eigenschaft des ersten `Label` gebunden ist die `Value` Eigenschaft der `Slider`, da die `Text` -Eigenschaft der zweiten `Label` mit einer `StringFormat` Spezifikation. Die **Standardbindungen Schieberegler** Seite Funktionen etwas anders aus den vorherigen zwei Seiten:, wenn die Seite zuerst angezeigt wird, das zweite `Label` zeigt die Textzeichenfolge, mit dem Wert. Dies ist ein Vorteil der Verwendung der Datenbindung. Um Text ohne Datenbindung anzuzeigen, müssen Sie explizit Initialisieren der `Text` Eigenschaft der `Label` oder simulieren Sie eine Auslösung des der `ValueChanged` Ereignis durch Aufrufen des ereignishandlers aus dem Klassenkonstruktor.
 
 <a name="precautions" />
 
@@ -295,11 +295,11 @@ Die Android-Implementierung von `Slider` basiert auf dem Android [ `SeekBar` ](x
 
 Die UWP-Implementierung von `Slider` basiert auf der UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider) Steuerelement. Die `StepFrequency` Eigenschaft der UWP `Slider` festgelegt ist, um den Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften unterteilt, 10, aber nicht größer als 1.
 
-Für die Standard-Bereich von 0 bis 1, beispielsweise die `StepFrequency` -Eigenschaftensatz auf 0,1. Als die `Slider` bearbeitet wird, die `Value` -Eigenschaft auf 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 und 1.0 beschränkt ist. (Dies wird in der letzten Seite in der [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) Beispiel.) Wenn der Unterschied zwischen der `Maximum` und `Minimum` Eigenschaften ist 10 oder höher ist, klicken Sie dann `StepFrequency` ist auf 1 festgelegt, und die `Value` Eigenschaft verfügt über ganzzahlige Werte.
+Für die Standard-Bereich von 0 bis 1, beispielsweise die `StepFrequency` -Eigenschaftensatz auf 0,1. Als die `Slider` bearbeitet wird, die `Value` -Eigenschaft auf 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 und 1.0 beschränkt ist. (Dies ist auf der letzten Seite des [**sliderdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) -Beispiels ersichtlich.) Wenn der Unterschied zwischen den Eigenschaften `Maximum` und `Minimum` 10 oder größer ist, wird `StepFrequency` auf 1 festgelegt, und die `Value` Eigenschaft hat ganzzahlige Werte.
 
 ### <a name="the-stepslider-solution"></a>Die Lösung StepSlider
 
-Ein flexibler `StepSlider` ausführlicher [Kapitel 27. Benutzerdefinierte Renderer](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) des Buchs *Erstellen mobiler Apps mit Xamarin.Forms*. Die `StepSlider` ähnelt `Slider` fügt jedoch ein `Steps` -Eigenschaft an die Anzahl von Werten zwischen `Minimum` und `Maximum`.
+Ein vielseitiger `StepSlider` wird in [Kapitel 27 erläutert. Benutzerdefinierte Renderer](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) des Buchs, das *Mobile Apps mit xamarin. Forms erstellt*. Die `StepSlider` ähnelt `Slider` fügt jedoch ein `Steps` -Eigenschaft an die Anzahl von Werten zwischen `Minimum` und `Maximum`.
 
 ## <a name="sliders-for-color-selection"></a>Schieberegler für die Farbauswahl
 
@@ -383,7 +383,7 @@ public partial class RgbColorSlidersPage : ContentPage
 
 Im ersten Abschnitt wird die `Text` Eigenschaft eines der `Label` Instanzen, um eine kurze Textzeichenfolge, die den Wert, der angibt, die `Slider` im Hexadezimalformat. Klicken Sie dann alle drei `Slider` Instanzen erfolgt zum Erstellen einer `Color` Wert aus den RGB-Komponenten:
 
-[![RGB-Farbe Schieberegler](slider-images/RgbColorSliders.png "RGB-Farbe Schieberegler")](slider-images/RgbColorSliders-Large.png#lightbox)
+[![RGB-Farb Schieberegler](slider-images/RgbColorSliders.png "RGB-Farb Schieberegler")](slider-images/RgbColorSliders-Large.png#lightbox)
 
 ### <a name="binding-the-slider-to-a-viewmodel"></a>Binden den Schieberegler an ein "ViewModel"
 
@@ -503,11 +503,11 @@ Die **HslColorSlidersPage.xaml** Datei instanziiert den `HslColorViewModel` und 
 
 Als die `Slider` Elemente bearbeitet werden, die `BoxView` und `Label` Elemente aus dem ViewModel aktualisiert werden:
 
-[![HSL-Farbe Schieberegler](slider-images/HslColorSliders.png "HSL-Farbe Schieberegler")](slider-images/HslColorSliders-Large.png#lightbox)
+[![HSL-Farb Schieberegler](slider-images/HslColorSliders.png "HSL-Farb Schieberegler")](slider-images/HslColorSliders-Large.png#lightbox)
 
-Die `StringFormat` -Komponente von der `Binding` Markuperweiterung für ein Format von "F2" festgelegt ist, zwei Dezimalstellen angezeigt. (Datenbindungen Formatieren von Zeichenfolgen ist in diesem Artikel erläuterten [Zeichenfolgenformatierung](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Allerdings ist die UWP-Version des Programms auf Werte von 0, 0.1, 0.2... 0,9 und 1.0. Dies ist das direkte Ergebnis der Implementierung der UWP `Slider` wie im Abschnitt oben beschrieben [Implementierung Plattformunterschiede](#implementations).
+Die `StringFormat` -Komponente von der `Binding` Markuperweiterung für ein Format von "F2" festgelegt ist, zwei Dezimalstellen angezeigt. (Die Zeichen folgen Formatierung in Daten Bindungen wird im Artikel [Zeichen folgen Formatierung](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)erläutert.) Die UWP-Version des Programms ist jedoch auf die Werte 0, 0,1, 0,2,... 0,9 und 1,0. Dies ist das direkte Ergebnis der Implementierung der UWP `Slider` wie im Abschnitt oben beschrieben [Implementierung Plattformunterschiede](#implementations).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Beispiel für Schieberegler-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 - [Schieberegler-API](xref:Xamarin.Forms.Slider)

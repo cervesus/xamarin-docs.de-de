@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/12/2017
-ms.openlocfilehash: ef9577aad756ae67ac9fed685d7e40faea33c316
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c52ac3c0f06d58ab5fff8228ca3bdf722056b5b6
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032049"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663446"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>Änderungen an WebKit und Safari in ios 11
 
@@ -20,7 +20,7 @@ IOS 11 führt eine neue Version des Safari-Webbrowsers – Safari 11,0 – ein, 
 
 ## <a name="safariservices"></a>Safariservices
 
-`SFSafariViewController` wurde in ios 9 als Option zum Anzeigen von Webinhalten oder Authentifizieren von Benutzern in Ihrer APP eingeführt. Weitere Informationen zu den Funktionen finden Sie im Handbuch für [Webansichten](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) .
+`SFSafariViewController` wurde in ios 9 als Option zum Anzeigen von Webinhalten oder Authentifizieren von Benutzern in Ihrer APP eingeführt. Weitere Informationen zu den Funktionen finden Sie im Handbuch für [Webansichten](~/ios/user-interface/controls/webview.md#sfsafariviewcontroller) .
 
 IOS 11 hat Stil Updates für den Safari-Ansichts Controller eingeführt, sodass Ihre Benutzer eine nahtlose Benutzer Darstellung zwischen einer APP und dem Web erhalten. Beispielsweise gibt das Entfernen der Adressleiste nun dem Safari-Ansichts Controller das Gefühl eines in-App-Browsers und nicht eines Mini Browsers. Sie können das Farbschema auch anpassen, um das Farbschema Ihrer APP anzupassen, indem Sie die Eigenschaften "`preferredBarTintColor`" und "`PreferredControlTintColor`" festlegen:
 
@@ -66,7 +66,7 @@ Apple hat drei wesentliche Verbesserungen für `WKWebView` mit IOS 11 eingeführ
 
 - Die Fähigkeit zum Verwalten von Cookies
 - Inhalts Filterung
-- Laden von benutzerdefinierten Ressourcen. 
+- Laden benutzerdefinierter Ressourcen
 
 Die Cookieverwaltung erfolgt über die neue [`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore) -Klasse, die es Ihnen ermöglicht, Cookies hinzuzufügen und zu löschen, alle in einer wkwebview gespeicherten Cookies zu erhalten und den Cookiespeicher für Änderungen zu beobachten.
 

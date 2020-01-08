@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4d28b80b32ff0d20afbe643d9c000f301a8ea582
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
+ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027815"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75667038"
 ---
 # <a name="android-job-scheduler"></a>Android-Auftragsplaner
 
 _In dieser Anleitung wird erläutert, wie Sie Hintergrund arbeiten mithilfe der Android-Auftrags Planer-API planen, die auf Android-Geräten mit Android 5,0 (API-Ebene 21) und höher verfügbar ist._
 
-## <a name="overview"></a>Übersicht 
+## <a name="overview"></a>Übersicht über 
 
 Eine der besten Möglichkeiten, eine Android-Anwendung auf den Benutzer reaktionsfähig zu halten, besteht darin, sicherzustellen, dass komplexe oder lange laufende Arbeiten im Hintergrund ausgeführt werden. Allerdings ist es wichtig, dass sich Hintergrund arbeiten nicht negativ auf die Benutzererfahrung des Geräts auswirken. 
 
@@ -33,7 +33,7 @@ Android stellt die folgenden APIs bereit, um die Arbeit im Hintergrund zu unters
 Es gibt zwei wichtige Features für die effiziente Durchführung von Hintergrund arbeiten (manchmal auch als _Hintergrund Auftrag_ oder _Auftrag_bezeichnet):
 
 1. **Intelligent Planen der Arbeit** &ndash; es wichtig, dass eine Anwendung im Hintergrundaufgaben durchführt, die dies als guter Bürger bewirkt. Im Idealfall sollte die Anwendung nicht verlangen, dass ein Auftrag ausgeführt wird. Stattdessen sollte die Anwendung Bedingungen angeben, die erfüllt sein müssen, wenn der Auftrag ausgeführt werden kann. Anschließend wird der Auftrag mit dem Betriebssystem geplant, von dem die Arbeit ausgeführt wird, wenn die Bedingungen erfüllt sind. Dadurch kann Android den Auftrag ausführen, um eine maximale Effizienz auf dem Gerät sicherzustellen. Beispielsweise können Netzwerk Anforderungen in einem Batch zusammengefasst werden, um alle gleichzeitig auszuführen, um einen maximalen Aufwand für das Netzwerk zu ermöglichen.
-2. Das **Kapseln der Arbeit** &ndash; der Code zum Ausführen der Hintergrundarbeit sollte in einer diskreten Komponente gekapselt werden, die unabhängig von der Benutzeroberfläche ausgeführt werden kann und relativ einfach neu geplant werden kann, wenn die Arbeit für einige nicht vollständig ausgeführt wird. weshalb.
+2. Das **Kapseln der Arbeit** &ndash; der Code zum Ausführen der Hintergrundarbeit sollte in einer diskreten Komponente gekapselt werden, die unabhängig von der Benutzeroberfläche ausgeführt werden kann und relativ einfach neu geplant werden kann, wenn die Arbeit aus irgendeinem Grund nicht vollständig ausgeführt werden kann.
 
 Der Android-Auftrags Planer ist ein Framework, das in das Android-Betriebssystem integriert ist, das eine fließende API bereitstellt, um die Planung der Hintergrundarbeit zu vereinfachen.  Der Android-Auftrags Planer besteht aus den folgenden Typen:
 
@@ -43,7 +43,7 @@ Der Android-Auftrags Planer ist ein Framework, das in das Android-Betriebssystem
 
 Um die Arbeit mit dem Android-Auftrags Planer zu planen, muss eine xamarin. Android-Anwendung den Code in einer Klasse Kapseln, die die `JobService` Klasse erweitert. `JobService` verfügt über drei Lebenszyklus Methoden, die während der Lebensdauer des Auftrags aufgerufen werden können:
 
-- **bool onstartjob (jobparameters Parameters)** &ndash; diese Methode wird vom `JobScheduler` aufgerufen, um Arbeit auszuführen, und wird im Haupt Thread der Anwendung ausgeführt. Es liegt in der Verantwortung des `JobService`, die Arbeit asynchron auszuführen und `true`, wenn noch Arbeit vorhanden ist, oder `false`, wenn die Arbeit erledigt ist.
+- **bool onstartjob (jobparameters Parameters)** &ndash; diese Methode wird vom `JobScheduler` aufgerufen, um Arbeit auszuführen, und wird im Haupt Thread der Anwendung ausgeführt. Es liegt in der Verantwortung des `JobService`, die Arbeit asynchron auszuführen und `true` zurückzugeben, wenn noch verbleibende Arbeit vorliegt, oder `false`, wenn die Arbeit erledigt ist.
     
     Wenn die `JobScheduler` diese Methode aufruft, wird für die Dauer des Auftrags ein wakelock von Android angefordert und beibehalten. Wenn der Auftrag abgeschlossen ist, liegt es in der Verantwortung des `JobService`, dem `JobScheduler` dieses Fakts mitzuteilen, indem er die `JobFinished`-Methode aufruft (weiter unten beschrieben).
 
@@ -55,7 +55,7 @@ Es ist möglich, _Einschränkungen_ oder _Trigger_ anzugeben, die Steuern, wann 
 
 In diesem Leitfaden wird ausführlich erläutert, wie Sie eine `JobService` Klasse implementieren und mit der `JobScheduler`planen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 Der Android-Auftrags Planer erfordert Android-API-Ebene 21 (Android 5,0) oder höher. 
 
@@ -135,7 +135,7 @@ var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 
 Ein leistungsfähiges Feature des Android-Auftrags Planers ist die Möglichkeit, zu steuern, wann ein Auftrag ausgeführt wird oder unter welchen Bedingungen ein Auftrag ausgeführt werden kann. In der folgenden Tabelle werden einige der Methoden auf `JobInfo.Builder` beschrieben, mit denen eine APP beeinflussen kann, wann ein Auftrag ausgeführt werden kann:  
 
-|  Methode | Beschreibung   |
+|  -Methode | Beschreibung   |
 |---|---|
 | `SetMinimumLatency`  | Gibt an, dass eine Verzögerung (in Millisekunden) vor dem Ausführen eines Auftrags festgestellt werden soll. |
 | `SetOverridingDeadline`  | Deklariert, dass der Auftrag vor diesem Zeitpunkt (in Millisekunden) ausgeführt werden muss. |
@@ -214,11 +214,11 @@ jobScheduler.CancelAll();
 jobScheduler.Cancel(1)
 ```
   
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Leitfaden wurde erläutert, wie Sie den Android-Auftrags Planer verwenden, um im Hintergrund arbeiten Intelligent auszuführen. Es wurde erläutert, wie die auszuführenden Aufgaben als `JobService` gekapselter werden, und wie die `JobScheduler` verwendet wird, um die Arbeit zu planen, die Kriterien mit einem `JobTrigger` anzugeben und zu erfahren, wie Fehler mit einer `RetryStrategy`behandelt werden müssen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Intelligente Auftragsplanung](https://developer.android.com/topic/performance/scheduling.html)
 - [JobScheduler-API-Referenz](https://developer.android.com/reference/android/app/job/JobScheduler.html)

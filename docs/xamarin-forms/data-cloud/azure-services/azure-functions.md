@@ -7,16 +7,16 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 04/02/2019
-ms.openlocfilehash: a54d82a3e7ad95267b4083827faf0e52972417bd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 09a3770eb02810f9a4565dfc450332a1bba2034f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658657"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487477"
 ---
 # <a name="get-started-with-azure-functions"></a>Erste Schritte mit Azure Functions
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
 
 _Beginnen Sie Ihre erste Azure-Funktion, mit der interagiert mit Xamarin.Forms erstellen._
 
@@ -26,7 +26,10 @@ _Beginnen Sie Ihre erste Azure-Funktion, mit der interagiert mit Xamarin.Forms e
 
 ## <a name="step-by-step-instructions"></a>Schrittanleitungen
 
-Zusätzlich zu diesem Video können Sie diese Anweisungen, um befolgen [Erstellen Ihrer erste Funktion mit Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
+Zusätzlich zum Video können Sie diese Anweisungen befolgen, um [Ihre erste Funktion mit Visual Studio zu erstellen](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
 ## <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
@@ -34,7 +37,10 @@ Zusätzlich zu diesem Video können Sie diese Anweisungen, um befolgen [Erstelle
 
 ## <a name="step-by-step-instructions"></a>Schrittanleitungen
 
-Zusätzlich zu diesem Video können Sie diese Anweisungen, um befolgen [Erstellen Ihrer erste Funktion mit Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
+Zusätzlich zum Video können Sie diese Anweisungen befolgen, um [Ihre erste Funktion mit Visual Studio zu erstellen](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
 ## <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -44,9 +50,12 @@ Zusätzlich zu diesem Video können Sie diese Anweisungen, um befolgen [Erstelle
 
 Gibt es zusätzlich zu diesem Video wird eine [schrittweises Lernprogramm](https://docs.microsoft.com/visualstudio/mac/azure-functions-lab) , die zeigt, wie erstellen und Debuggen von Azure Functions in Visual Studio für Mac.
 
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
+
 -----
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Azure Functions-Dokumentation](https://docs.microsoft.com/azure/azure-functions/)
 - [Implementieren einer einfachen Azure-Funktion mit einem Xamarin.Forms-Client (Beispiel)](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)

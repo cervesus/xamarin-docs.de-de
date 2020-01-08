@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 7ef9e0415d7d1e5fe75be70e0ccf6e06a5eaf332
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7d69e99327aa3d3e3e1f5e5dbc61697d1fb9b71
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027064"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489166"
 ---
 # <a name="using-native-libraries"></a>Verwenden nativer Bibliotheken
 
@@ -52,9 +52,9 @@ Gehen Sie folgen C++ dermaßen vor, um systemeigenen Code in Ihrem Projekt zu De
 2. Scrollen Sie nach unten zu **Debugoptionen**.
 3. Wählen Sie **C++** im Dropdown Menü des **Debuggers** (anstelle des standardmäßigen **.net (xamarin)** ) aus.
 
-Visual Studio C++ -Entwickler können das [SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk) -Beispiel sehen, C++ um das Debuggen von Visual Studio 2019 oder Visual Studio 2017 mit xamarin zu testen. Weitere Informationen finden Sie in unserem [Blogbeitrag](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) .
+Visual Studio C++ -Entwickler können das [SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk) Beispiel sehen, um C++ das Debuggen von Visual Studio 2019 oder Visual Studio 2017 mit xamarin zu testen. Weitere Informationen finden Sie in unserem [Blogbeitrag](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) .
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SanAngeles_NativeDebug (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk)
 - [Entwickeln von nativen xamarin Android-Anwendungen](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

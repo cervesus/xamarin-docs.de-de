@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 0f3ff5357d3fb4c60a910dda6befa8c699c6fc07
-ms.sourcegitcommit: 5f7749d6ba1db79aa0fbf4ee7c90f2dcd4de812b
+ms.openlocfilehash: d94f18d00ebf6eeec5f33343b5c0f985ba2a6ea8
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884123"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655406"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>XAML-Hot-Upload für xamarin. Forms (Vorschau)
 
@@ -20,6 +20,8 @@ XAML Hot Upload wird in Ihren vorhandenen Workflow integriert, um Ihre Produktiv
 
 > [!NOTE]
 > Wenn Sie eine WPF-oder UWP-app schreiben, finden Sie weitere Informationen unter [XAML-Hot-Upload für UWP und WPF](/visualstudio/debugger/xaml-hot-reload).
+>
+> Das Laden von XAML-Hot für xamarin. Forms funktioniert zurzeit _nicht_ für xamarin. Forms-UWP-Projekte.
 
 ## <a name="system-requirements"></a>Systemanforderungen
 
@@ -49,6 +51,7 @@ Wenn Sie eine Änderung vornehmen, dass das Laden von XAML-Hot nicht erneut gela
 - Alle Verweise, `x:Name` die durch Zuweisen eines Steuer Elements zu einem anderen Feld oder einer Eigenschaft erstellt werden
 - Das Aktualisieren der visuellen Hierarchie Ihrer Shell-Anwendung in **appshell. XAML** kann Probleme beim Verwalten des Zustands der Anwendung verursachen. Erstellen Sie die APP neu, damit Sie erneut geladen wird.
 - Beim erneuten Laden von XAML C# kann Code nicht neu geladen werden, einschließlich Ereignis Handlern, benutzerdefinierte Steuerelemente, Seitencode Behind und zusätzliche Klassen.
+- Funktioniert _nicht_ auf anderen xamarin. Forms-unterstützten Plattformen (z. b. Mac OS oder UWP).
 
 ## <a name="migrate-from-the-private-preview"></a>Migrieren von der privaten Vorschau
 

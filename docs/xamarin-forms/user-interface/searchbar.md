@@ -6,36 +6,36 @@ ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 07/12/2019
-ms.openlocfilehash: 4deeab1b2792675033372ccfe2bf343c08794955
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 11/04/2019
+ms.openlocfilehash: 8888f1615f250a908930cec9058a54bd6e7fedc2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696432"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490076"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms-Suchleiste
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
-Das xamarin. Forms- [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das `SearchBar`-Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit in einem `ListView` angezeigten Ergebnissen:
+Das xamarin. Forms- [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das `SearchBar`-Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit in einem `ListView`angezeigten Ergebnissen:
 
 [![Bildschirm Abbildung von Searchbar unter IOS und Android](searchbar-images/device-searchbars-cropped.png "Searchbar unter IOS und Android")](searchbar-images/device-searchbars.png#lightbox "Searchbar unter IOS und Android")
 
 Die `SearchBar`-Klasse definiert die folgenden Eigenschaften:
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor) ist ein `Color`, der die Farbe der Schaltfläche Abbrechen definiert.
-* `CharacterSpacing` vom Typ `double` ist der Abstand zwischen den Zeichen des `SearchBar` Texts.
+* `CharacterSpacing` vom Typ `double`: Abstand zwischen den Zeichen des `SearchBar`-Texts.
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes) ist ein `FontAttributes` Enumerationswert, der bestimmt, ob die `SearchBar` Schriftart fett, kursiv oder keines von beiden ist.
-* [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily) ist ein `string`, der die vom `SearchBar` verwendete Schriftfamilie bestimmt.
+* [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily) ist ein `string`, der die vom `SearchBar`verwendete Schriftfamilie bestimmt.
 * [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize) kann ein `NamedSize` Enumerationswert oder ein `double` Wert sein, der bestimmte Schriftgrößen plattformübergreifend darstellt.
 * [`HorizontalTextAlignment`](xref:Xamarin.Forms.SearchBar.HorizontalTextAlignment) ist ein `TextAlignment` Enumerationswert, der die horizontale Ausrichtung des Abfrage Texts definiert.
 * `VerticalTextAlignment` ist ein `TextAlignment` Enumerationswert, der die vertikale Ausrichtung des Abfrage Texts definiert.
 * [`Placeholder`](xref:Xamarin.Forms.SearchBar.Placeholder) ist ein `string`, der den Platzhalter Text definiert, z. b. "Search...".
 * [`PlaceholderColor`](xref:Xamarin.Forms.SearchBar.PlaceholderColor) ist ein `Color`, der die Farbe des Platzhalter Texts definiert.
 * [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) ist ein `ICommand`, der die Bindung von Benutzeraktionen, wie z. b. Finger Tippen oder Klicks, auf Befehle ermöglicht, die für ein ViewModel definiert sind.
-* [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) ist ein `object`, der den Parameter angibt, der an die `SearchCommand` übergeben werden soll.
-* [`Text`](xref:Xamarin.Forms.SearchBar.Text) ist ein `string`, der den Abfragetext im `SearchBar` enthält.
+* [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) ist ein `object`, der den Parameter angibt, der an die `SearchCommand`übergeben werden soll.
+* [`Text`](xref:Xamarin.Forms.SearchBar.Text) ist ein `string`, der den Abfragetext im `SearchBar`enthält.
 * [`TextColor`](xref:Xamarin.Forms.SearchBar.TextColor) ist ein `Color`, der die Farbe für den Abfragetext definiert.
 
 Diese Eigenschaften werden [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. das bedeutet, dass die `SearchBar` angepasst werden können und das Ziel von Daten Bindungen sind. Das Angeben von Schriftart Eigenschaften für den `SearchBar` ist mit dem Anpassen von Text in anderen [xamarin. Forms-Text Steuerelementen](~/xamarin-forms/user-interface/text/index.md)konsistent. Weitere Informationen finden Sie unter [Schriftarten in xamarin. Forms](~/xamarin-forms/user-interface/text/fonts.md).
@@ -85,6 +85,9 @@ SearchBar searchBar = new SearchBar
 Der folgende Screenshot zeigt das resultierende `SearchBar`-Steuerelement:
 
 [![Screenshot der angepassten Suchleiste unter IOS und Android](searchbar-images/device-searchbars-styled-cropped.png "Angepasste Suchleiste unter IOS und Android")](searchbar-images/device-searchbars-styled.png#lightbox "Angepasste Suchleiste unter IOS und Android")
+
+> [!NOTE]
+> Unter IOS enthält die `SearchBarRenderer`-Klasse eine über schreibbare `UpdateCancelButton` Methode. Diese Methode steuert, wann die Schaltfläche Abbrechen angezeigt wird, und kann in einem benutzerdefinierten Renderer überschrieben werden. Weitere Informationen zu benutzerdefinierten Renderer finden Sie unter [xamarin. Forms Custom Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
 ## <a name="perform-a-search-with-event-handlers"></a>Ausführen einer Suche mit Ereignis Handlern
 

@@ -1,28 +1,35 @@
 ---
-title: Anforderungen für Xamarin.Forms
-description: Plattform- und Systemanforderungen für Xamarin.Forms
+title: Xamarin. Formular Anforderungen
+description: Anforderungen an die Plattform und das Entwicklungssystem für Xamarin. Forms.
 ms.prod: xamarin
 ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 46a72534fba7a45323a82ad121e5844410472812
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+no-loc:
+- Xamarin
+- Xamarin.Forms
+- Xamarin.Android
+- Xamarin.Essentials
+- Xamarin.iOS
+- Xamarin.Mac
+ms.openlocfilehash: d12daa358917399fc5fd1febf02d4f96a647f360
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584352"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607853"
 ---
-# <a name="xamarinforms-requirements"></a>Anforderungen für Xamarin.Forms
+# <a name="opno-locxamarinforms-requirements"></a>Xamarin. Formular Anforderungen
 
-_Plattform- und Entwicklungssystemanforderungen für Xamarin.Forms_
+_Anforderungen an die Plattform und das Entwicklungssystem für Xamarin. Forms._
 
 Im Artikel [Installation](installation/index.md) finden Sie eine Übersicht über die Installations- und Setupmethoden, die plattformübergreifend gelten.
 
 ## <a name="target-platforms"></a>Zielplattformen
 
-Xamarin.Forms-Anwendungen können für die folgenden Betriebssysteme geschrieben werden:
+Xamarin. Formular Anwendungen können für die folgenden Betriebssysteme geschrieben werden:
 
 - IOS 9 oder höher
 - Android 4.4 (API 19) oder höher ([weitere Informationen](#android))
@@ -34,7 +41,7 @@ Es wird davon ausgegangen, dass Entwickler Vertrautheit mit [.NET Standard](~/cr
 
 ### <a name="additional-platform-support"></a>Unterstützung für zusätzliche Plattformen
 
-Der Status dieser Plattformen ist auf der [GitHub-Seite zu Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) verfügbar:
+Der Status dieser Plattformen ist auf dem [Xamarinverfügbar. Formulare GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support):
 
 - Samsung Tizen
 - macOS
@@ -67,18 +74,18 @@ Außerdem **muss** die Ziel-/Kompilierversion für Android-Projekte auf *Zuletzt
 
 ## <a name="development-system-requirements"></a>Systemanforderungen für die Bereitstellung
 
-Xamarin.Forms-Apps können unter macOS und Windows entwickelt werden. Mit Windows und Visual Studio können jedoch nur die Windows-Versionen der App erstellt werden.
+Xamarin. Formular-Apps können unter macOS und Windows entwickelt werden. Mit Windows und Visual Studio können jedoch nur die Windows-Versionen der App erstellt werden.
 
 ## <a name="mac-system-requirements"></a>Systemanforderungen für Mac
 
-Sie können Visual Studio für Mac verwenden, um xamarin. Forms-apps auf macOS High Sierra (10,13) oder höher zu entwickeln. Zum Entwickeln von IOS-apps empfiehlt es sich, die neueste Version von Xcode, IOS und macOS zu verwenden. Informationen zu bestimmten Versions Anforderungen finden Sie in den neuesten Versions [Anmerkungen zu xamarin. IOS](/xamarin/ios/release-notes/).
+Sie können Visual Studio für Mac verwenden, um Xamarinzu entwickeln. Formular-apps auf macOS High Sierra (10,13) oder höher. Zum Entwickeln von IOS-apps empfiehlt es sich, die neueste Version von Xcode, IOS und macOS zu verwenden. Informationen zu bestimmten Versions Anforderungen finden Sie in den neuesten [Xamarin. IOS](/xamarin/ios/release-notes/)-Versions Anmerkungen.
 
 > [!NOTE]
 > Windows-Apps können nicht unter macOS entwickelt werden.
 
 ## <a name="windows-system-requirements"></a>Systemanforderungen für Windows
 
-Xamarin.Forms-Apps für iOS und Android können auf allen Windows-Installationen erstellt werden, die die Xamarin-Entwicklung unterstützen. Verwenden Sie die neueste Version von Visual Studio, um die aktuellen Platt Form Features vollständig zu unterstützen. 
+Xamarin. Formular-Apps für IOS und Android können auf jeder Windows-Installation erstellt werden, die die Xamarin Entwicklung unterstützt. Verwenden Sie die neueste Version von Visual Studio, um die aktuellen Platt Form Features vollständig zu unterstützen. 
 
 Ein vernetzter Mac ist für die IOS-Entwicklung mit der aktuellen Version von Xcode und der von Apple angegebenen Mindestversion von macOS erforderlich.
 
@@ -86,7 +93,7 @@ Ein vernetzter Mac ist für die IOS-Entwicklung mit der aktuellen Version von Xc
 
 ### <a name="universal-windows-platform-uwp"></a>Universelle Windows-Plattform (UWP)
 
-Das Entwickeln von Xamarin.Forms-Apps für die universelle Windows-Plattform erfordert Folgendes:
+Entwickeln von Xamarin. Für Forms-Apps für UWP ist Folgendes erforderlich:
 
 - Windows 10 (neueste Version empfohlen, Fall Creators Update minimal)
 
@@ -94,11 +101,11 @@ Das Entwickeln von Xamarin.Forms-Apps für die universelle Windows-Plattform erf
 
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
-Sie können einer vorhandenen Xamarin.Forms-Projektmappe jederzeit eine [universelle Windows-Plattform-App (UWP)](~/xamarin-forms/platform/windows/installation/index.md) hinzufügen.
+Sie können [eine universelle Windows-Plattform-app (UWP)](~/xamarin-forms/platform/windows/installation/index.md) zu einer vorhandenen Xamarinhinzufügen. Formular Projekt Mappe zu einem beliebigen Zeitpunkt.
 
 ## <a name="deprecated-platforms"></a>Veraltete Plattformen
 
-Diese Plattformen werden bei Verwendung von xamarin. Forms 3,0 oder neuer nicht unterstützt:
+Diese Plattformen werden bei Verwendung Xamarinnicht unterstützt. Formulare 3,0 oder höher:
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*

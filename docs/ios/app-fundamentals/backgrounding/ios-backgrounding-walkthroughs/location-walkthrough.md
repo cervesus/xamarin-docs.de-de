@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 625826e729a6b4153396286361730d6a2b878dca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b357a6e1531c8f587c8fc0f86e2b56d6fecc2923
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010473"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488321"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Exemplarische Vorgehensweise: Hintergrund Speicherort in xamarin. IOS
 
@@ -80,7 +80,7 @@ In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erl
     > [!IMPORTANT]
     > IOS 8 (und höher) erfordert auch einen Eintrag in der **Info. plist** -Datei, um den Benutzer als Teil der Autorisierungs Anforderung anzuzeigen.
 
-1. Fügen Sie eine Schlüssel `NSLocationAlwaysUsageDescription` oder `NSLocationWhenInUseUsageDescription` mit einer Zeichenfolge hinzu, die dem Benutzer in der Warnung angezeigt wird, die den Zugriff auf Standortdaten anfordert.
+1. Hinzufügen von " **Info. plist** "-Schlüsseln für die Berechtigungs Typen, die die APP benötigt – `NSLocationAlwaysUsageDescription`, `NSLocationWhenInUseUsageDescription`und/oder `NSLocationAlwaysAndWhenInUseUsageDescription` – mit einer Zeichenfolge, die dem Benutzer in der Warnung angezeigt wird, die den Zugriff auf Standortdaten anfordert.
 
 1. IOS 9 erfordert, dass bei Verwendung `AllowsBackgroundLocationUpdates` die Datei " **Info. plist** " den Schlüssel `UIBackgroundModes` mit dem Wert `location`enthält. Wenn Sie Schritt 2 dieser exemplarischen Vorgehensweise abgeschlossen haben, sollte diese bereits in der Datei "Info. plist" vorhanden sein.
 
@@ -276,7 +276,7 @@ Nun wird die Benutzeroberfläche aktualisiert, wenn die Anwendung zum ersten Mal
 
 In dieser exemplarischen Vorgehensweise haben wir eine gut verhaltene, Hintergrund fähige IOS-Anwendung erstellt, die Standortdaten sowohl auf dem Bildschirm als auch im Anwendungs Ausgabefenster ausgibt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Standort (Teil 4) (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
 - [Core Location Framework-Referenz](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)

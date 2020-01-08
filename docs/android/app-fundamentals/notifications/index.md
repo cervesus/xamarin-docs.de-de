@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 5d91904e35a658b03d4602567e5a123cafd6926c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e0035414cb8a24e5571b2972ec638eec550c593c
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025533"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545555"
 ---
 # <a name="notifications-in-xamarinandroid"></a>Benachrichtigungen in xamarin. Android
 
@@ -29,7 +29,7 @@ In dieser exemplarischen Vorgehensweise wird erläutert, wie lokale Benachrichti
 
 [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase Cloud Messaging (SCM) ist ein Dienst, der das Messaging zwischen mobilen apps und Server Anwendungen ermöglicht. Firebase Cloud Messaging kann zum Implementieren von Remote Benachrichtigungen (auch als Pushbenachrichtigungen bezeichnet) in xamarin. Android-Anwendungen verwendet werden.
 
-[Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; dieses Android-Entwickler Thema ist das definitive Handbuch für Android-Benachrichtigungen. Es enthält einen Abschnitt Überlegungen zum Entwurf, der Ihnen hilft, Ihre Benachrichtigungen so zu entwerfen, dass Sie den Richtlinien der Android-Benutzeroberfläche entsprechen. Sie bietet weitere Hintergrundinformationen zur vorab servitätsnavigation beim Starten einer Aktivität und erläutert, wie der Fortschritt in einer Benachrichtigung angezeigt und die Medienwiedergabe auf dem Sperrbildschirm gesteuert wird.
+[Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; dieses Android-Entwickler Thema ist das definitive Handbuch für Android-Benachrichtigungen. Es enthält einen Abschnitt Überlegungen zum Entwurf, der Ihnen hilft, Ihre Benachrichtigungen so zu entwerfen, dass Sie den Richtlinien der Android-Benutzeroberfläche entsprechen. Er bietet weitere Hintergrundinformationen zum Beibehalten der Navigation beim Starten einer Aktivität. Außerdem wird erläutert, wie der Fortschritt in einer Benachrichtigung angezeigt und die Medienwiedergabe auf dem Sperrbildschirm gesteuert wird.
 
 [Notificationlistenerservice](xref:Android.Service.Notification.NotificationListenerService) &ndash; dieser Android-Dienst ermöglicht es Ihrer APP, alle auf dem Android-Gerät veröffentlichten Benachrichtigungen zu lauschen (und damit zu interagieren), nicht nur die Benachrichtigungen, die Ihre APP für den Empfang registriert hat.
 Beachten Sie, dass der Benutzer die Berechtigung für Ihre APP explizit erteilen muss, damit er auf dem Gerät auf Benachrichtigungen lauschen kann.
@@ -37,4 +37,3 @@ Beachten Sie, dass der Benutzer die Berechtigung für Ihre APP explizit erteilen
 ## <a name="related-links"></a>Verwandte Links
 
 - [Lokale Benachrichtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
-- [Remote Benachrichtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/remotenotifications)

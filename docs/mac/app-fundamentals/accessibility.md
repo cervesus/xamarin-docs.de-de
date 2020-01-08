@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 3f3b9c84fad0bce8939187fcd0c91d18314ce8ab
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2162fba1275b66167965e90aeade721e08ea9130
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032640"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489322"
 ---
 # <a name="accessibility-on-macos"></a>Barrierefreiheit unter macOS
 
@@ -23,7 +23,7 @@ Um zu verstehen, wie die Barrierefreiheits-APIs in macOS funktionieren (früher 
 
 ## <a name="describing-ui-elements"></a>Beschreiben von UI-Elementen
 
-AppKit verwendet das `NSAccessibility`-Protokoll, um APIs verfügbar zu machen, mit denen die Benutzeroberfläche zugänglich gemacht werden kann. Dies schließt ein Standardverhalten ein, das versucht, sinnvolle Werte für Barrierefreiheits Eigenschaften festzulegen, z. b. das Festlegen der `AccessibilityLabel` einer Schaltfläche. Die Bezeichnung ist in der Regel ein einzelnes Wort oder ein kurzer Ausdruck, der das Steuerelement oder die Ansicht beschreibt.
+AppKit verwendet das `NSAccessibility`-Protokoll, um APIs verfügbar zu machen, mit denen die Benutzeroberfläche zugänglich gemacht werden kann. Dies schließt ein Standardverhalten ein, das versucht, sinnvolle Werte für Barrierefreiheits Eigenschaften festzulegen, z. b. das Festlegen der `AccessibilityLabel`einer Schaltfläche. Die Bezeichnung ist in der Regel ein einzelnes Wort oder ein kurzer Ausdruck, der das Steuerelement oder die Ansicht beschreibt.
 
 ### <a name="storyboard-files"></a>Storyboarddateien
 
@@ -37,14 +37,14 @@ Informationen zur Barrierefreiheit können im **Identitäts Inspektor** bearbeit
 Xamarin. Mac macht derzeit nicht als `AccessibilityLabel` Setter verfügbar.  Fügen Sie die folgende Hilfsmethode hinzu, um die Barrierefreiheits Bezeichnung festzulegen:
 
 ```csharp
-public static class AccessibilityHelper
+public static class AccessibilityHelper
 {
-    [System.Runtime.InteropServices.DllImport (ObjCRuntime.Constants.ObjectiveCLibrary)]
-    extern static void objc_msgSend (IntPtr handle, IntPtr selector, IntPtr label);
+    [System.Runtime.InteropServices.DllImport (ObjCRuntime.Constants.ObjectiveCLibrary)]
+    extern static void objc_msgSend (IntPtr handle, IntPtr selector, IntPtr label);
 
-    static public void SetAccessibilityLabel (this NSView view, string value)
+    static public void SetAccessibilityLabel (this NSView view, string value)
     {
-        objc_msgSend (view.Handle, new ObjCRuntime.Selector ("setAccessibilityLabel:").Handle, new NSString (value).Handle);
+        objc_msgSend (view.Handle, new ObjCRuntime.Selector ("setAccessibilityLabel:").Handle, new NSString (value).Handle);
     }
 }
 ```
@@ -84,7 +84,7 @@ Nach der Aktivierung wird der Inspektor als ein unverankertes Fenster angezeigt,
 
 Weitere Informationen finden Sie im [Leitfaden Testen von Barrierefreiheit für OS X](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Plattformübergreifende Barrierefreiheit](~/cross-platform/app-fundamentals/accessibility.md)
 - [Mac-Barrierefreiheit](https://www.apple.com/accessibility/mac/)

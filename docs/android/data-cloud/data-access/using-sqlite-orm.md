@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 96f084dc49a5558767b162eee59eff722f247904
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ff59213a730b74b916b993c48a6f5f779149a6f9
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023675"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488074"
 ---
 # <a name="using-sqlitenet-with-android"></a>Verwenden von SQLite.net mit Android
 
@@ -60,7 +60,7 @@ Sobald die SQLite.NET-Bibliothek verfügbar ist, führen Sie die folgenden drei 
 
 ## <a name="basic-data-access-sample"></a>Beispiel für den grundlegenden Datenzugriff
 
-Der *DataAccess_Basic* -Beispielcode für dieses Dokument sieht wie folgt aus, wenn er unter Android ausgeführt wird. Im Code wird veranschaulicht, wie einfache sqlite.net-Vorgänge durchgeführt und die Ergebnisse in als Text im Hauptfenster der Anwendung angezeigt werden.
+Der *DataAccess_Basic* Beispielcode für dieses Dokument sieht wie folgt aus, wenn er unter Android ausgeführt wird. Im Code wird veranschaulicht, wie einfache sqlite.net-Vorgänge durchgeführt und die Ergebnisse in als Text im Hauptfenster der Anwendung angezeigt werden.
 
 **Android**
 
@@ -128,9 +128,9 @@ Allgemeine Attribute, die Sie auf die Klassen anwenden können, um zu steuern, w
 
 - **[AUTOINCREMENT]** &ndash; dieses Attribut bewirkt, dass der Wert einer ganzzahligen Eigenschaft für jedes neue Objekt, das in die Datenbank eingefügt wird, automatisch erhöht wird.
 
-- **[Column (Name)]** &ndash; die Angabe des optionalen `name`-Parameters überschreibt den Standardwert des zugrunde liegenden Daten Bank Spalten-namens (der mit der-Eigenschaft identisch ist).
+- **[Column (Name)]** &ndash; der `name` Parameter den Namen der zugrunde liegenden Daten Bank Spalte festlegt.
 
-- **[Tabelle (Name)]** &ndash; markiert die Klasse als in der Lage, in einer zugrunde liegenden SQLite-Tabelle gespeichert zu werden. Wenn Sie den optionalen Name-Parameter angeben, wird der Standardwert des Namens der zugrunde liegenden Datenbanktabelle (der mit dem Klassennamen identisch ist) überschrieben.
+- **[Tabelle (Name)]** &ndash; markiert die Klasse als in einer zugrunde liegenden SQLite-Tabelle mit dem angegebenen Namen zu speichern.
 
 - **[MaxLength (Wert)]** &ndash; die Länge einer Text Eigenschaft einschränken, wenn versucht wird, eine Daten Bank Einfügung auszuführen. Durch die Verwendung von Code sollte dies vor dem Einfügen des Objekts überprüft werden, da dieses Attribut nur beim Versuch, einen Daten Bank Einfüge-oder Aktualisierungs Vorgang auszuführen, "überprüft" ist
 
@@ -139,7 +139,7 @@ Allgemeine Attribute, die Sie auf die Klassen anwenden können, um zu steuern, w
 
 - **[Eindeutig]** &ndash; stellt sicher, dass die Werte in der zugrunde liegenden Daten Bank Spalte eindeutig sind.
 
-Die meisten dieser Attribute sind optional, SQLite verwendet Standardwerte für Tabellen-und Spaltennamen. Sie sollten immer einen ganzzahligen Primärschlüssel angeben, damit Auswahl-und Lösch Abfragen für Ihre Daten effizient ausgeführt werden können.
+Die meisten dieser Attribute sind optional. Sie sollten immer einen ganzzahligen Primärschlüssel angeben, damit Auswahl-und Lösch Abfragen für Ihre Daten effizient ausgeführt werden können.
 
 ## <a name="more-complex-queries"></a>Komplexere Abfragen
 
@@ -236,7 +236,7 @@ Die Android-Version von SQLite weist eine Einschränkung auf, die einige weitere
 
 Diese Problem Umgehung kann auch für die `Mono.Data.Sqlite`-Bibliothek verwendet werden. Weitere Informationen zu SQLite und Multithreading finden Sie unter [sqlite und mehrere Threads](https://www.sqlite.org/threadsafe.html).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)

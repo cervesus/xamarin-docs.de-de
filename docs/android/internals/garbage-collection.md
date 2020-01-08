@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 62560d97a2e85a6045e419f0c0602a375f5a2a75
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da00eef7c08f7025239d15e60e6ec42416a36089
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027883"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487840"
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
@@ -108,13 +108,15 @@ Die einzige Möglichkeit, herauszufinden, welche GC-Brücke am besten funktionie
 
 - **Bridge Accounting aktivieren** : bei Bridge Accounting werden die durchschnittlichen Kosten der Objekte angezeigt, die von den einzelnen auf den Bridge Prozess beteiligten Objekten verwiesen werden. Das Sortieren dieser Informationen nach Größe bietet Hinweise darauf, was die größte Menge an zusätzlichen Objekten enthält. 
 
-Wenn Sie angeben möchten, welche `GC_BRIDGE` Option eine Anwendung haben soll, übergeben Sie `bridge-implementation=old`, `bridge-implementation=new` oder `bridge-implementation=tarjan` an die `MONO_GC_PARAMS`-Umgebungsvariable, z. b.: 
+Die Standardeinstellung ist **Tarjan**. Wenn eine Regression gefunden wird, ist es möglicherweise erforderlich, diese Option auf " **alt**" festzulegen. Sie können auch die stabilere **alte** Option verwenden, wenn **Tarjan** keine Verbesserung der Leistung erzielt.
+
+Um anzugeben, welche `GC_BRIDGE` Option eine Anwendung verwenden soll, übergeben Sie `bridge-implementation=old`, `bridge-implementation=new` oder `bridge-implementation=tarjan` an die `MONO_GC_PARAMS`-Umgebungsvariable. Dies wird durch Hinzufügen einer neuen Datei zum Projekt mit einer **Buildaktion** von `AndroidEnvironment`erreicht. Beispiel: 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-Die Standardeinstellung ist **Tarjan**. Wenn eine Regression gefunden wird, ist es möglicherweise erforderlich, diese Option auf " **alt**" festzulegen. Sie können auch die stabilere **alte** Option verwenden, wenn **Tarjan** keine Verbesserung der Leistung erzielt. 
+Weitere Informationen finden Sie unter [Konfiguration](#configuration).
 
 <a name="Helping_the_GC" />
 
@@ -127,7 +129,7 @@ Es gibt mehrere Möglichkeiten, die GC zu unterstützen, um Speicherauslastung u
 Der GC verfügt über eine unvollständige Ansicht des Prozesses und wird möglicherweise nicht ausgeführt, wenn der Arbeitsspeicher gering ist, da der GC nicht weiß, dass der Arbeitsspeicher gering ist. 
 
 Eine Instanz eines [java. lang. Object](xref:Java.Lang.Object) -Typs oder eines abgeleiteten Typs hat z. b. eine Größe von mindestens 20 Bytes (vorbehaltlich der Änderung ohne vorherige Ankündigung usw.). 
-[Verwaltete Callable Wrapper](~/android/internals/architecture.md) fügen keine zusätzlichen Instanzmember hinzu. Wenn Sie also über eine [Android. Graphics. Bitmap](xref:Android.Graphics.Bitmap) -Instanz verfügen, die auf ein 10 MB-BLOB des Arbeitsspeichers verweist, weiß die GC von xamarin. Android nicht, dass &ndash; dem GC ein 20-Byte-Objekt angezeigt wird. Es ist nicht möglich, festzustellen, ob es mit von Android-Lauf Zeit Objekten zugewiesenen Objekten verknüpft ist, die 10 MB Arbeitsspeicher aufrechterhalten. 
+[Verwaltete Callable Wrapper](~/android/internals/architecture.md) fügen keine zusätzlichen Instanzmember hinzu. Wenn Sie also über eine [Android. Graphics. Bitmap](xref:Android.Graphics.Bitmap) -Instanz verfügen, die auf ein 10 MB-BLOB des Arbeitsspeichers verweist, weiß die GC von xamarin. Android nicht, dass &ndash; dem GC ein 20-Byte-Objekt angezeigt wird, und kann nicht feststellen, dass es mit von Android-Lauf Zeit Objekten zugewiesenen Objekten verknüpft ist, die 10 MB Arbeitsspeicher aufrechterhalten 
 
 Häufig ist es notwendig, die GC zu unterstützen. Leider *GC. AddMemoryPressure ()* und *GC. Removememoryprint ()* wird nicht unterstützt. Wenn Sie also *wissen* , dass Sie gerade ein großes, von Java zugeordneter Objekt Graph freigegeben haben, müssen Sie möglicherweise GC manuell abrufen [. Erfassen ()](xref:System.GC.Collect) , um eine GC zum Freigeben des Java-basierten Speichers aufzufordern, oder Sie können explizit *java. lang. Object* -Unterklassen verwerfen und die Zuordnung zwischen dem verwalteten Aufruf baren Wrapper und der Java-Instanz unterbrechen. Informationen hierzu finden Sie beispielsweise in [Bug 1084](https://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
@@ -138,7 +140,7 @@ Beachten Sie beim Aufrufen von `Dispose()`die folgenden Richtlinien, um die Mög
 
 #### <a name="sharing-between-multiple-threads"></a>Freigabe zwischen mehreren Threads
 
-Wenn die *Java* -Instanz oder die verwaltete Instanz von mehreren Threads gemeinsam genutzt werden **kann, darf** *Sie nicht `Dispose()`d sein*. Beispielsweise [`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
+Wenn die *Java* -Instanz oder die verwaltete Instanz von mehreren Threads gemeinsam genutzt werden **kann, darf** *Sie nicht `Dispose()`d sein*. Beispiel: [`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
 gibt möglicherweise eine *zwischengespeicherte-Instanz*zurück. Wenn mehrere Threads dieselben Argumente bereitstellen, erhalten Sie *dieselbe* Instanz. Folglich kann `Dispose()`erung der `Typeface` Instanz von einem Thread andere Threads ungültig machen, was dazu führen kann, dass `ArgumentException`s aus `JNIEnv.CallVoidMethod()` (unter anderem) resultiert, weil die Instanz von einem anderen Thread verworfen wurde. 
 
 #### <a name="disposing-bound-java-types"></a>Verwerfen von gebundenen Java-Typen
@@ -152,7 +154,7 @@ using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-Der obige Code ist sicher, weil der von [drawable. kreatefrompath ()](xref:Android.Graphics.Drawables.Drawable.CreateFromPath*) zurückgegebene Peer auf einen frameworkpeer verweist, *nicht* auf einen benutzerpeer. Der `Dispose()` Aufruf am Ende des `using` Blocks unterbricht die Beziehung zwischen den verwalteten [drawable](xref:Android.Graphics.Drawables.Drawable) -und [frameworkdrawable](https://developer.android.com/reference/android/graphics/drawable/Drawable.html) -Instanzen, sodass die Java-Instanz erfasst werden kann, sobald die Android-Laufzeit benötigt wird. Dies wäre *nicht* sicher, wenn Peer Instanz an einen benutzerpeer verwiesen wird. Hier verwenden wir "externe" Informationen, um zu *wissen* , dass der `Drawable` nicht auf einen benutzerpeer verweisen kann. der `Dispose()`-aufrufist daher sicher. 
+Der obige Code ist sicher, weil der von [drawable. kreatefrompath ()](xref:Android.Graphics.Drawables.Drawable.CreateFromPath*) zurückgegebene Peer auf einen frameworkpeer verweist, *nicht* auf einen benutzerpeer. Der `Dispose()`-Aufruf am Ende des `using`-Blocks unterbricht die Beziehung zwischen den verwalteten [Drawable](xref:Android.Graphics.Drawables.Drawable)-Instanzen und [Drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)-Frameworkinstanzen, sodass die Java-Instanz erfasst werden kann, sobald die Android-Laufzeit dies benötigt. Dies wäre *nicht* sicher, wenn Peer Instanz an einen benutzerpeer verwiesen wird. Hier verwenden wir "externe" Informationen, um zu *wissen* , dass der `Drawable` nicht auf einen benutzerpeer verweisen kann. der `Dispose()`-aufrufist daher sicher. 
 
 #### <a name="disposing-other-types"></a>Verwerfen anderer Typen 
 
@@ -185,7 +187,7 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-Diese Situation tritt häufig auf, wenn der erste Löschvorgang eines-Objekts bewirkt, dass ein Member NULL wird, und ein nachfolgende Zugriffs Versuch für dieses NULL-Element bewirkt, dass eine Ausnahme ausgelöst wird. Insbesondere der `Handle` des Objekts (das eine verwaltete Instanz mit der zugrunde liegenden Java-Instanz verknüpft) wird für den ersten Löschvorgang ungültig, aber verwalteter Code versucht weiterhin, auf diese zugrunde liegende Java-Instanz zuzugreifen, auch wenn Sie nicht mehr verfügbar ist (siehe [). Verwaltete Aufruf Bare Wrapper](~/android/internals/architecture.md#Managed_Callable_Wrappers) für weitere Informationen zur Zuordnung zwischen Java-Instanzen und verwalteten Instanzen). 
+Diese Situation tritt häufig auf, wenn der erste Löschvorgang eines-Objekts bewirkt, dass ein Member NULL wird, und ein nachfolgende Zugriffs Versuch für dieses NULL-Element bewirkt, dass eine Ausnahme ausgelöst wird. Insbesondere der `Handle` des Objekts (das eine verwaltete Instanz mit der zugrunde liegenden Java-Instanz verknüpft) wird für den ersten Löschvorgang ungültig, aber verwalteter Code versucht weiterhin, auf diese zugrunde liegende Java-Instanz zuzugreifen, auch wenn Sie nicht mehr verfügbar ist (Weitere Informationen zur Zuordnung zwischen Java-Instanzen und verwalteten Instanzen finden Sie unter [verwaltete Aufruf Bare Wrapper](~/android/internals/architecture.md#Managed_Callable_Wrappers) ). 
 
 Eine gute Möglichkeit, diese Ausnahme zu verhindern, besteht darin, in der `Dispose`-Methode explizit zu überprüfen, ob die Zuordnung zwischen der verwalteten Instanz und der zugrunde liegenden Java-Instanz weiterhin gültig ist. Das heißt, überprüfen Sie, ob die `Handle` des Objekts NULL (`IntPtr.Zero`) ist, bevor Sie auf seine Member zugreifen. Beispielsweise greift die folgende `Dispose`-Methode auf ein `childViews`-Objekt zu: 
 
@@ -321,7 +323,7 @@ Wichtige Sammlungen sollten nur manuell aufgerufen werden:
 
 Wenn Sie nachverfolgen möchten, wann globale Verweise erstellt und zerstört werden, können Sie die System Eigenschaft [Debug. Mono. log](~/android/troubleshooting/index.md) auf [*Gref*](~/android/troubleshooting/index.md) und/oder [*GC*](~/android/troubleshooting/index.md)festlegen. 
 
-## <a name="configuration"></a>Konfiguration
+## <a name="configuration"></a>-Konfiguration
 
 Der xamarin. Android-Garbage Collector kann durch Festlegen der `MONO_GC_PARAMS`-Umgebungsvariablen konfiguriert werden. Umgebungsvariablen können mit der Buildaktion " [androidenvironment](~/android/deploy-test/environment.md)" festgelegt werden.
 

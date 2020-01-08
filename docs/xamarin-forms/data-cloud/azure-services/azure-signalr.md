@@ -6,12 +6,12 @@ ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
-ms.openlocfilehash: a4d0f5c5ceefcfe9a36a5fcf10c6fb4937c1db90
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 7b5cb6a93e5dcb958fcb30f0469b8300b169ee86
+ms.sourcegitcommit: cead6f989860331777b0502a5e56269958046517
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739213"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75687426"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>Azure signalr Service mit xamarin. Forms
 
@@ -20,6 +20,9 @@ ms.locfileid: "68739213"
 ASP.net Core signalr ist ein Anwendungsmodell, das das Hinzufügen von Echtzeitkommunikation zu Anwendungen vereinfacht. Der Azure signalr Service ermöglicht eine schnelle Entwicklung und Bereitstellung skalierbarer signalr-Anwendungen. Azure Functions sind kurzlebige und Server lose Code Methoden, die kombiniert werden können, um ereignisgesteuerte, skalierbare Anwendungen zu bilden.
 
 In diesem Artikel und Beispiel wird gezeigt, wie Sie den Azure signalr-Dienst und Azure Functions mit xamarin. Forms kombinieren, um Echtzeitnachrichten an verbundene Clients zu übermitteln.
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
 ## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>Erstellen eines Azure signalr-Dienstanbieter und einer Azure Functions-App
 
@@ -31,7 +34,7 @@ Die Beispielanwendung umfasst drei Hauptkomponenten: einen Azure signalr Service
 1. Die **Talk** -Funktion übergibt die eingehende Nachricht an den signalr-Hub.
 1. Der signalr-Hub überträgt die Nachricht an alle verbundenen mobilen Anwendungs Instanzen, einschließlich des ursprünglichen Absenders.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Die **Aushandlungs** -und **Talk** -Funktionen in der Beispielanwendung können lokal mit Visual Studio 2019 und den Azure-Lauf Zeit Tools ausgeführt werden. Allerdings kann der Azure signalr-Dienst nicht lokal emuliert werden, und es ist schwierig, Lokal gehostete Azure Functions auf physischen oder virtuellen Geräten zu Testzwecken verfügbar zu machen. Es wird empfohlen, die Azure Functions in einer Azure Functions-app-Instanz bereitzustellen, da dies plattformübergreifende Tests ermöglicht. Weitere Informationen zur Bereitstellung finden Sie unter Bereitstellen von [Azure Functions mit Visual Studio 2019](#deploy-azure-functions-with-visual-studio-2019).
 
 ### <a name="create-an-azure-signalr-service"></a>Erstellen eines Azure signalr-Dienstanbieter
@@ -52,7 +55,7 @@ Diese Verbindungs Zeichenfolge wird zum Bereitstellen von [Azure Functions mit V
 
 Um die Beispielanwendung zu testen, sollten Sie eine neue Azure Functions-app in der Azure-Portal erstellen. Notieren Sie sich den **APP-Namen** , da diese URL in der **Constants.cs** -Beispieldatei verwendet wird. Der folgende Screenshot zeigt die Erstellung einer neuen Azure Functions-App mit dem Namen "xdocsfunctions":
 
-[![Screenshot Azure Functions App-Erstellung](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[Screenshot der Azure Functions App-Erstellung ![](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
 Azure Functions kann in einer Azure Functions-app-Instanz aus Visual Studio 2019 bereitgestellt werden. In den folgenden Abschnitten wird die Bereitstellung von zwei Funktionen in der Beispielanwendung für eine Azure Functions-app-Instanz beschrieben.
 
@@ -205,6 +208,7 @@ public async Task ConnectAsync()
         string negotiateJson = await client.GetStringAsync($"{Constants.HostName}/api/negotiate");
         NegotiateInfo negotiate = JsonConvert.DeserializeObject<NegotiateInfo>(negotiateJson);
         HubConnection connection = new HubConnectionBuilder()
+            .AddNewtonsoftJsonProtocol()
             .WithUrl(negotiate.Url, options =>
             {
                 options.AccessTokenProvider = async () => negotiate.AccessToken;
@@ -226,7 +230,10 @@ public async Task ConnectAsync()
 }
 ```
 
-Die `AddNewMessage`-Methode wird wie im vorherigen Code gezeigt als Ereignishandler in der `ConnectAsync`-Nachricht gebunden. Wenn eine Nachricht empfangen wird, wird die `AddNewMessage`-Methode mit den Nachrichten Daten aufgerufen, die als `JObject` bereitgestellt werden. Die `AddNewMessage`-Methode konvertiert die `JObject` in eine Instanz der `Message`-Klasse und ruft dann den Handler für `NewMessageReceived` auf, wenn ein solcher gebunden wurde. Der folgende Code veranschaulicht die `AddNewMessage`-Methode:
+> [!NOTE]
+> Der signalr-Dienst verwendet `System.Text.Json`, um JSON standardmäßig zu serialisieren und zu deserialisieren. Daten, die mit anderen Bibliotheken, z. b. newtonsoft, serialisiert werden, können möglicherweise nicht vom signalr-Dienst deserialisiert werden. Die `HubConnection`-Instanz im Beispiel Projekt enthält einen aufzurufenden `AddNewtonsoftJsonProtocol` zum Angeben des JSON-Serialisierungsprogramms. Diese Methode wird in einem speziellen nuget-Paket mit dem Namen **Microsoft. aspnetcore. signalr. Protokolls. newtonsoftware** definiert, das in das Projekt eingeschlossen werden muss. Wenn Sie `System.Text.Json` zum Serialisieren/Deserialisieren von JSON-Daten verwenden, sollten diese Methode und dieses nuget-Paket nicht verwendet werden.
+
+Die `AddNewMessage`-Methode wird wie im vorherigen Code gezeigt als Ereignishandler in der `ConnectAsync`-Nachricht gebunden. Wenn eine Nachricht empfangen wird, wird die `AddNewMessage`-Methode mit den Nachrichten Daten aufgerufen, die als `JObject`bereitgestellt werden. Die `AddNewMessage`-Methode konvertiert die `JObject` in eine Instanz der `Message`-Klasse und ruft dann den Handler für `NewMessageReceived` auf, wenn ein solcher gebunden wurde. Der folgende Code veranschaulicht die `AddNewMessage`-Methode:
 
 ```csharp
 public void AddNewMessage(JObject message)

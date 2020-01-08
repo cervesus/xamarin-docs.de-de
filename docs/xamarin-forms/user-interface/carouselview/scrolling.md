@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: dc72dc7549a697c7231045601851ba4108f29e1b
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: ce0e0b63206ab918b5d761be3e619370aec1eec7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697848"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489751"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin. Forms carouselview-Bildlauf
 
@@ -22,17 +22,17 @@ ms.locfileid: "72697848"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert die folgenden scrollbezogenen Eigenschaften:
 
-- `HorizontalScrollBarVisibility` vom Typ `ScrollBarVisibility`, der angibt, wann die horizontale Schiebe Leiste sichtbar ist.
-- `IsDragging` vom Typ `bool`, der angibt, ob die `CarouselView` einen Bildlauf durchführt. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert `false` ist.
-- `IsScrollAnimated` vom Typ `bool`, der angibt, ob beim Scrollen der `CarouselView` eine Animation erfolgt. Der Standardwert ist `true`sein.
-- `ItemsUpdatingScrollMode` vom Typ `ItemsUpdatingScrollMode`, der das Scrollverhalten der `CarouselView` darstellt, wenn diesem neue Elemente hinzugefügt werden.
-- `VerticalScrollBarVisibility` vom Typ `ScrollBarVisibility`, der angibt, wann die vertikale Schiebe Leiste sichtbar ist.
+- `HorizontalScrollBarVisibility`vom Typ `ScrollBarVisibility`, der angibt, wann die horizontale Schiebe Leiste sichtbar ist.
+- `IsDragging`vom Typ `bool`, der angibt, ob die `CarouselView` einen Bildlauf durchführt. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert `false`ist.
+- `IsScrollAnimated`vom Typ `bool`, der angibt, ob beim Scrollen der `CarouselView`eine Animation erfolgt. Der Standardwert ist `true`sein.
+- `ItemsUpdatingScrollMode`vom Typ `ItemsUpdatingScrollMode`, der das Scrollverhalten der `CarouselView` darstellt, wenn diesem neue Elemente hinzugefügt werden.
+- `VerticalScrollBarVisibility`vom Typ `ScrollBarVisibility`, der angibt, wann die vertikale Schiebe Leiste sichtbar ist.
 
 Alle diese Eigenschaften werden von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten gestützt, was bedeutet, dass Sie Ziele von Daten Bindungen sein können.
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert auch zwei [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden, die Elemente in der Ansicht scrollen. Eine der-über Ladungen führt einen Bildlauf für das Element am angegebenen Index durch, während der andere das angegebene Element in die Ansicht verschiebt. Beide über Ladungen verfügen über zusätzliche Argumente, die angegeben werden können, um die genaue Position des Elements nach dem Abschluss des Bildlaufs anzugeben, und ob der Bild Lauf animiert werden soll.
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert ein [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) Ereignis, das ausgelöst wird, wenn eine der [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden aufgerufen wird. Das [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) Objekt, das das `ScrollToRequested` Ereignis begleitet, verfügt über viele Eigenschaften, einschließlich `IsAnimated`, `Index`, `Item` und `ScrollToPosition`. Diese Eigenschaften werden von den Argumenten festgelegt, die in den `ScrollTo` Methoden aufrufen angegeben werden.
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert ein [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) Ereignis, das ausgelöst wird, wenn eine der [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden aufgerufen wird. Das [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) Objekt, das das `ScrollToRequested` Ereignis begleitet, verfügt über viele Eigenschaften, einschließlich `IsAnimated`, `Index`, `Item`und `ScrollToPosition`. Diese Eigenschaften werden von den Argumenten festgelegt, die in den `ScrollTo` Methoden aufrufen angegeben werden.
 
 Außerdem definiert [`CarouselView`](xref:Xamarin.Forms.CarouselView) ein `Scrolled` Ereignis, das ausgelöst wird, um anzugeben, dass der Bildlauf ausgeführt wurde. Das `ItemsViewScrolledEventArgs` Objekt, das das `Scrolled` Ereignis begleitet, verfügt über zahlreiche Eigenschaften. Weitere Informationen finden Sie unter [Erkennen von scrollläufen](#detect-scrolling).
 
@@ -83,7 +83,7 @@ In diesem Beispiel gibt der `OnCarouselViewScrolled` Ereignishandler die Werte d
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>Scrollen eines Elements an einem Index in der Ansicht
 
-Die erste [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) -Methoden Überladung führt einen Bildlauf für das Element am angegebenen Index durch. Im folgenden Beispiel wird ein [`CarouselView`](xref:Xamarin.Forms.CarouselView) Objekt mit dem Namen `carouselView` dargestellt, das zeigt, wie das Element am Index 6 in der Ansicht angezeigt wird:
+Die erste [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) -Methoden Überladung führt einen Bildlauf für das Element am angegebenen Index durch. Im folgenden Beispiel wird ein [`CarouselView`](xref:Xamarin.Forms.CarouselView) Objekt mit dem Namen `carouselView`dargestellt, das zeigt, wie das Element am Index 6 in der Ansicht angezeigt wird:
 
 ```csharp
 carouselView.ScrollTo(6);
@@ -132,7 +132,7 @@ Dieser Beispielcode führt zu einem minimalen Bildlauf, der erforderlich ist, um
 > [!NOTE]
 > Der [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) Member wird standardmäßig verwendet, wenn das `position`-Argument beim Aufrufen der `ScrollTo`-Methode nicht angegeben wird.
 
-### <a name="start"></a>Starten
+### <a name="start"></a>Start
 
 Der [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) Member gibt an, dass für das Element ein Rollup zum Anfang der Ansicht ausgeführt werden soll:
 
@@ -170,7 +170,7 @@ Dieser Beispielcode führt dazu, dass das Element an das Ende der Ansicht gescro
 - `KeepScrollOffset` behält den scrolloffset relativ zum Anfang der Liste bei, wenn neue Elemente hinzugefügt werden.
 - `KeepLastItemInView` passt den scrolloffset an, damit das letzte Element sichtbar bleibt, wenn neue Elemente hinzugefügt werden.
 
-Der Standardwert der `ItemsUpdatingScrollMode`-Eigenschaft ist `KeepItemsInView`. Wenn also neue Elemente zu einem hinzugefügt werden [`CarouselView`](xref:Xamarin.Forms.CarouselView) wird das erste sichtbare Element in der Liste angezeigt. Um sicherzustellen, dass neu hinzugefügte Elemente immer am Ende der Liste sichtbar sind, sollte die `ItemsUpdatingScrollMode`-Eigenschaft auf `KeepLastItemInView` festgelegt werden:
+Der Standardwert der `ItemsUpdatingScrollMode`-Eigenschaft ist `KeepItemsInView`. Wenn also neue Elemente zu einem hinzugefügt werden [`CarouselView`](xref:Xamarin.Forms.CarouselView) wird das erste sichtbare Element in der Liste angezeigt. Um sicherzustellen, dass neu hinzugefügte Elemente immer am Ende der Liste sichtbar sind, sollte die `ItemsUpdatingScrollMode`-Eigenschaft auf `KeepLastItemInView`festgelegt werden:
 
 ```xaml
 <CarouselView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -213,24 +213,24 @@ Die [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) -Enumeration definiert
 
 - `None` gibt an, dass der Bildlauf nicht an Elemente andostet.
 - `Mandatory` gibt an, dass der Inhalt immer an den nächstgelegenen Punkt ausgerichtet wird, an dem der Bildlauf auf natürliche Weise an der Richtung der Trägheit angehalten wird.
-- `MandatorySingle` gibt das gleiche Verhalten wie `Mandatory` an, führt jedoch nur ein Element gleichzeitig aus.
+- `MandatorySingle` gibt das gleiche Verhalten wie `Mandatory`an, führt jedoch nur ein Element gleichzeitig aus.
 
-Standardmäßig wird für eine [`CarouselView`](xref:Xamarin.Forms.CarouselView)die Eigenschaft [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) auf `SnapPointsType.MandatorySingle` festgelegt, wodurch sichergestellt wird, dass bei einem Bildlauf nur ein Element gleichzeitig durchsucht wird.
+Standardmäßig wird für eine [`CarouselView`](xref:Xamarin.Forms.CarouselView)die Eigenschaft [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) auf `SnapPointsType.MandatorySingle`festgelegt, wodurch sichergestellt wird, dass bei einem Bildlauf nur ein Element gleichzeitig durchsucht wird.
 
 ### <a name="snap-points-alignment"></a>Ausrichtung der Andockpunkte
 
 Die [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) -Enumeration definiert `Start`-, `Center`-und `End`-Member.
 
 > [!IMPORTANT]
-> Der Wert der [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) -Eigenschaft wird nur berücksichtigt, wenn die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) -Eigenschaft auf `Mandatory` oder `MandatorySingle` festgelegt ist.
+> Der Wert der [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) -Eigenschaft wird nur berücksichtigt, wenn die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) -Eigenschaft auf `Mandatory`oder `MandatorySingle`festgelegt ist.
 
-#### <a name="start"></a>Starten
+#### <a name="start"></a>Start
 
 Der `SnapPointsAlignment.Start` Member gibt an, dass die Ausrichtungs Punkte am führenden Rand von Elementen ausgerichtet sind. Das folgende XAML-Beispiel zeigt, wie dieser Enumerationsmember festgelegt wird:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"
@@ -260,11 +260,11 @@ Wenn ein Benutzer einen Bildlauf in einem horizontalen Bildlauf [`CarouselView`]
 
 Der `SnapPointsAlignment.Center` Member gibt an, dass die Punkt Punkte an der Mitte der Elemente ausgerichtet sind.
 
-Standardmäßig ist für eine [`CarouselView`](xref:Xamarin.Forms.CarouselView)die Eigenschaft [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) auf `Center` festgelegt. Aus Gründen der Vollständigkeit wird jedoch im folgenden XAML-Beispiel gezeigt, wie dieser Enumerationsmember festgelegt wird:
+Standardmäßig ist für eine [`CarouselView`](xref:Xamarin.Forms.CarouselView)die Eigenschaft [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) auf `Center`festgelegt. Aus Gründen der Vollständigkeit wird jedoch im folgenden XAML-Beispiel gezeigt, wie dieser Enumerationsmember festgelegt wird:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"
@@ -296,7 +296,7 @@ Das `SnapPointsAlignment.End`-Element gibt an, dass die Andockpunkte am nachfolg
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"

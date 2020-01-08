@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: 051bbc1732dc1b074d27080f74621a57a80aaaa4
-ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.openlocfilehash: 0149a66fedd98a94f1c9d96bf8e7e57715d1b90b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749820"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488256"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin. Forms carouselview-Layout
 
@@ -22,14 +22,12 @@ ms.locfileid: "72749820"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert die folgenden Eigenschaften, die das Layout Steuern:
 
-- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)vom Typ `LinearItemsLayout` gibt das Layout an, das verwendet werden soll.
-- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)vom Typ [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)gibt die zu verwendende elementmeasure-Strategie an.
-- `NumberOfSideItems` vom Typ `int` die Anzahl der sichtbaren Elemente, die dem aktuellen Element neben dem aktuellen Element entspricht. Der Standardwert ist 0.
-- `PeekAreaInsets` vom Typ [`Thickness`](xref:Xamarin.Forms.Thickness)gibt an, wie weit angrenzende Elemente teilweise durch sichtbar gemacht werden sollen.
+- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)vom Typ `LinearItemsLayout`gibt das Layout an, das verwendet werden soll.
+- `PeekAreaInsets`vom Typ [`Thickness`](xref:Xamarin.Forms.Thickness)gibt an, wie weit angrenzende Elemente teilweise durch sichtbar gemacht werden sollen.
 
 Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
-Standardmäßig werden die Elemente in einem [`CarouselView`](xref:Xamarin.Forms.CarouselView) horizontal ausgerichtet angezeigt. Auf dem Bildschirm wird ein einzelnes Element angezeigt, das eine Schwenkbewegung und eine rückwärts Navigation durch die Auflistung von Elementen zur Folge hat. Es ist jedoch auch eine vertikale Ausrichtung möglich. Dies liegt daran, dass die [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) -Eigenschaft vom Typ `LinearItemsLayout` ist, der von der [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) -Klasse erbt. Die `ItemsLayout`-Klasse definiert die folgenden Eigenschaften:
+Standardmäßig werden die Elemente in einem [`CarouselView`](xref:Xamarin.Forms.CarouselView) horizontal ausgerichtet angezeigt. Auf dem Bildschirm wird ein einzelnes Element angezeigt, das eine Schwenkbewegung und eine rückwärts Navigation durch die Auflistung von Elementen zur Folge hat. Es ist jedoch auch eine vertikale Ausrichtung möglich. Dies liegt daran, dass die [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) -Eigenschaft vom Typ `LinearItemsLayout`ist, der von der [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) -Klasse erbt. Die `ItemsLayout`-Klasse definiert die folgenden Eigenschaften:
 
 - [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)vom Typ [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)gibt die Richtung an, in der die [`CarouselView`](xref:Xamarin.Forms.CarouselView) erweitert werden, wenn Elemente hinzugefügt werden.
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)vom Typ [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)gibt an, wie Andockpunkte an Elementen ausgerichtet werden.
@@ -192,35 +190,9 @@ CarouselView carouselView = new CarouselView
 
 Das Ergebnis ist, dass angrenzende Elemente teilweise auf dem Bildschirm verfügbar gemacht werden.
 
-## <a name="fully-visible-adjacent-items"></a>Vollständig sichtbare angrenzende Elemente
-
-Standardmäßig wird in [`CarouselView`](xref:Xamarin.Forms.CarouselView) ein Element gleichzeitig angezeigt. Dieses Verhalten kann jedoch geändert werden, indem die `NumberOfSideItems`-Eigenschaft auf eine ganze Zahl festgelegt wird, die die Anzahl der Elemente darstellt, die neben dem aktuellen Element angezeigt werden. Der folgende XAML-Code zeigt ein Beispiel für das Festlegen dieser Eigenschaft:
-
-```xaml
-<CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
-    ...
-</CarouselView>
-```
-
-Der entsprechende C#-Code lautet:
-
-```csharp
-CarouselView carouselView = new CarouselView
-{
-    ...
-    NumberOfSideItems = 1
-};
-```
-
-Dieses Beispiel führt dazu, dass auf jeder Seite des aktuellen Elements ein angefügtes Element angezeigt wird.
-
-> [!NOTE]
-> Wenn Sie die `NumberOfSideItems`-Eigenschaft festlegen, werden alle `PeekAreaInsets` Werte weiterhin angewendet.
-
 ## <a name="item-spacing"></a>Element Abstand
 
-Standardmäßig weist jedes Element in einer [`CarouselView`](xref:Xamarin.Forms.CarouselView) keinen leeren Leerraum auf. Dieses Verhalten kann geändert werden, indem Eigenschaften für das vom `CarouselView` verwendete Element Layout festgelegt werden.
+Standardmäßig weist jedes Element in einer [`CarouselView`](xref:Xamarin.Forms.CarouselView) keinen leeren Leerraum auf. Dieses Verhalten kann geändert werden, indem Eigenschaften für das vom `CarouselView`verwendete Element Layout festgelegt werden.
 
 Wenn eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegt, kann die `LinearItemsLayout.ItemSpacing`-Eigenschaft auf einen `double` Wert festgelegt werden, der den leeren Bereich um jedes Element darstellt:
 

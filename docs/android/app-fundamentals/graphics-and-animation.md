@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 1781503d214b959d31223cbe8f55fd6afa0fef44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: eeee9b7d694d9380c653fb87c24171bcaf79389d
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019292"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655288"
 ---
 # <a name="android-graphics-and-animation"></a>Android-Grafiken und-Animationen
 
 _Android bietet ein sehr umfangreiches und vielfältiges Framework für die Unterstützung von 2D-Grafiken und-Animationen. In diesem Thema werden diese Frameworks vorgestellt und erläutert, wie benutzerdefinierte Grafiken und Animationen für die Verwendung in einer xamarin. Android-Anwendung erstellt werden._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Trotz der Ausführung auf Geräten, die in der Regel nur eine begrenzte Leistung aufweisen, verfügen die Anwendungen mit der höchsten Bewertung häufig über eine ausgereifte Benutzererfahrung (UX), die mit qualitativ hochwertigen Grafiken und Animationen ausgestattet ist, die ein intuitives, reaktionsfähiges dynamisches Verhalten bieten. Wenn mobile Anwendungen immer komplexer werden, haben die Benutzer bereits mehr und mehr von Anwendungen erwartet.
 
@@ -47,7 +47,7 @@ Die Anzeige von Animationen eignet sich besser für Anwendungen, die ältere Pre
 
 Alle diese Frameworks sind geeignete Optionen, aber wenn möglich, sollten Sie den Eigenschafts Animationen bevorzugen, da es sich um eine flexiblere API handelt, mit der Sie arbeiten können. Eigenschafts Animationen ermöglichen das Kapseln von Animations Logik in unterschiedlichen Klassen, die die Code Freigabe vereinfachen und die Code Verwaltung vereinfachen.
 
-## <a name="accessibility"></a>Zugriff
+## <a name="accessibility"></a>Barrierefreiheit
 
 Grafiken und Animationen helfen Ihnen, die Verwendung von Android-Apps zu optimieren. Es ist jedoch wichtig zu beachten, dass einige Interaktionen über Screenreader, Alternative Eingabegeräte oder mit unterstütztem Zoom erfolgen.
 Außerdem können einige Interaktionen ohne Audiofunktionen auftreten.
@@ -139,7 +139,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 Um zu sehen, wie dies aussehen würde, führen Sie das *animationsdemo* -Projekt aus, und wählen Sie das Element Form drawable aus dem Hauptmenü aus. Es sollte etwas angezeigt werden, das dem folgenden Screenshot ähnelt:
 
-![TextView mit einem benutzerdefinierten Hintergrund, drawable mit einem Farbverlauf und abgerundeten Ecken](graphics-and-animation-images/image1.png)
+[![Text View mit einem benutzerdefinierten Hintergrund, drawable mit einem Farbverlauf und abgerundeten Ecken](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
 
 Weitere Informationen zu den XML-Elementen und zur Syntax von drawable-Ressourcen finden Sie in [der Google-Dokumentation](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape).
 
@@ -172,7 +172,7 @@ Die Canvas-Klasse macht Methoden verfügbar, um die Draw-Anweisungen Programm ge
 
 #### <a name="drawing-with-the-canvas-api"></a>Zeichnen mit der Canvas-API
 
-Sehen wir uns ein Beispiel für die Canvas-API in Aktion an. Der folgende Code Ausschnitt zeigt, wie Sie eine Ansicht zeichnen:
+Im folgenden finden Sie ein Beispiel für die Canvas-API in Aktion. Der folgende Code Ausschnitt zeigt, wie Sie eine Ansicht zeichnen:
 
 ```csharp
 public class MyView : View
@@ -201,7 +201,7 @@ public class MyView : View
 
 Dieser Code oben erstellt zunächst eine rote und ein grünes Farb Objekt. Er füllt den Inhalt der Canvas mit rot und weist dann den Zeichenbereich an, ein grünes Rechteck zu zeichnen, das 25% der Breite des Zeichen Bereichs entspricht. Ein Beispiel hierfür finden Sie in `AnimationsDemo` Projekt, das im Quellcode für diesen Artikel enthalten ist. Wenn Sie die Anwendung starten und das Zeichnungs Element im Hauptmenü auswählen, sollte ein Bildschirm ähnlich dem folgenden angezeigt werden:
 
-![Bildschirm mit roten Paint-und grünen Paint-Objekten](graphics-and-animation-images/image3.png)
+[![Bildschirm mit roten Paint-und grünen Paint-Objekten](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>Animation
 
@@ -417,16 +417,16 @@ protected override void OnCreate(Bundle bundle)
 
 An dieser Stelle haben wir die Grundlagen der in einer Android-Anwendung verfügbaren Animations-APIs behandelt.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurden viele neue Konzepte und APIs vorgestellt, mit denen Sie einer Android-Anwendung einige Grafiken hinzufügen können. Zuerst wurden die verschiedenen 2D-Grafik-APIs erläutert und veranschaulicht, wie Android Anwendungen mithilfe eines Canvas-Objekts direkt auf den Bildschirm zeichnen kann. Wir haben auch einige alternative Techniken gesehen, mit denen Grafiken deklarativ mithilfe von XML-Dateien erstellt werden können. Anschließend haben wir uns mit den alten und neuen APIs zum Erstellen von Animationen in Android vertraut gemacht.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Animations Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/animationdemo)
 - [Animation und Grafiken](https://developer.android.com/guide/topics/graphics/index.html)
 - [Verwenden von Animationen zum bringen ihrer Mobile Apps](https://youtu.be/ikSk_ILg3d0)
-- [Animationdrawable](xref:Android.Graphics.Drawables.AnimationDrawable)
+- [AnimationDrawable](xref:Android.Graphics.Drawables.AnimationDrawable)
 - [Canvas](xref:Android.Graphics.Canvas)
 - [Objektanimator](xref:Android.Animation.ObjectAnimator)
 - [Wert Animator](xref:Android.Animation.ValueAnimator)

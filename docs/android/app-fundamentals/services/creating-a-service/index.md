@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 658bb65c9f9dea2c68b782736de02d95df368dd3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 97c582ada0951f530885359112c3c7adfacc3502
+ms.sourcegitcommit: bdb8ad7337931adf2ea45b10c2af81ecc4aad26a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024853"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75500235"
 ---
 # <a name="creating-a-service"></a>Erstellen eines Diensts
 
@@ -38,7 +38,7 @@ Zum Zeitpunkt der Kompilierung registriert xamarin. Android den Dienst, indem er
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-Es ist möglich, einen Dienst gemeinsam mit anderen Android-Anwendungen zu verwenden, indem Sie ihn _exportieren_ . Dies wird erreicht, indem die `Exported`-Eigenschaft für die `ServiceAttribute` festgelegt wird. Wenn Sie einen Dienst exportieren, sollte die `ServiceAttribute.Name`-Eigenschaft auch so festgelegt werden, dass Sie einen aussagekräftigen öffentlichen Namen für den Dienst bereitstellt. Dieser Code Ausschnitt veranschaulicht, wie Sie einen Dienst exportieren und benennen:
+Es ist möglich, einen Dienst gemeinsam mit anderen Android-Anwendungen zu verwenden, indem Sie ihn _exportieren_ . Dies wird erreicht, indem die `Exported`-Eigenschaft für die `ServiceAttribute`festgelegt wird. Wenn Sie einen Dienst exportieren, sollte die `ServiceAttribute.Name`-Eigenschaft auch so festgelegt werden, dass Sie einen aussagekräftigen öffentlichen Namen für den Dienst bereitstellt. Dieser Code Ausschnitt veranschaulicht, wie Sie einen Dienst exportieren und benennen:
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -83,7 +83,7 @@ Die einfachste Möglichkeit, einen Dienst in Android zu starten, besteht darin, 
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
-- **Implizites Intent** &ndash; diese Art von Absicht gibt den der Aktion, die der Benutzer ausführen möchte, locker an, aber der genaue Dienst zum Abschluss dieser Aktion ist unbekannt. Eine implizite Absicht kann als Buchstabe angesehen werden, der adressiert wird, dass es sich um ein Problem handelt.
+- **Implizites Intent** &ndash; diese Art von Absicht gibt den Typ der Aktion, die der Benutzer ausführen möchte, locker an, aber der genaue Dienst zum Abschluss dieser Aktion ist unbekannt. Eine implizite Absicht kann als Buchstabe angesehen werden, der adressiert wird, dass es sich um ein Problem handelt.
     Android prüft den Inhalt der Absicht und ermittelt, ob ein vorhandener Dienst vorhanden ist, der mit der Absicht übereinstimmt.
 
     Ein beabsichtigter _Filter_ wird verwendet, um die implizite Absicht mit einem registrierten Dienst abzugleichen. Ein Intent Filter ist ein XML-Element, das der Datei " **androidmanifest. XML** " hinzugefügt wird, die die erforderlichen Metadaten enthält, um einen Dienst mit einer impliziten Absicht abzugleichen.
@@ -106,7 +106,7 @@ Die Art und Weise, wie die Absicht verteilt wird, hängt von der Art des Diensta
 
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>Erstellen eines Intent-Filters für implizite Intents
 
-Um einen Dienst einer impliziten Absicht zuzuordnen, muss eine Android-App metadatendaten bereitstellen, um die Funktionen des Dienstanbieter zu identifizieren. Diese Metadaten werden von _beabsichtigten Filtern_bereitgestellt. Beabsichtigte Filter enthalten einige Informationen, z. b. eine Aktion oder einen Datentyp, die in einer Absicht vorhanden sein müssen, einen Dienst zu starten. In xamarin. Android wird der Intent-Filter in **androidmanifest. XML** registriert, indem ein Dienst mit dem [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)versehen wird. Der folgende Code fügt z. b. einen Intent-Filter mit einer zugeordneten Aktion `com.xamarin.DemoService` hinzu:
+Um einen Dienst einer impliziten Absicht zuzuordnen, muss eine Android-App metadatendaten bereitstellen, um die Funktionen des Dienstanbieter zu identifizieren. Diese Metadaten werden von _beabsichtigten Filtern_bereitgestellt. Beabsichtigte Filter enthalten einige Informationen, z. b. eine Aktion oder einen Datentyp, die in einer Absicht vorhanden sein müssen, einen Dienst zu starten. In xamarin. Android wird der Intent-Filter in **androidmanifest. XML** registriert, indem ein Dienst mit dem [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)versehen wird. Der folgende Code fügt z. b. einen Intent-Filter mit einer zugeordneten Aktion `com.xamarin.DemoService`hinzu:
 
 ```csharp
 [Service]
@@ -128,9 +128,9 @@ Dies führt dazu, dass in der Datei " **androidmanifest. XML** " ein Eintrag ent
 
 Mit den Grundlagen eines xamarin. Android-Diensts können wir die verschiedenen Untertypen von Diensten ausführlicher untersuchen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [Android. app. Service](xref:Android.App.Service)
-- [Android. app. Service Attribute](xref:Android.App.ServiceAttribute)
-- [Android. app. Intent](xref:Android.Content.Intent)
-- [Android. app. intentfilterattribute](xref:Android.App.IntentFilterAttribute)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.App.ServiceAttribute](xref:Android.App.ServiceAttribute)
+- [Android.App.Intent](xref:Android.Content.Intent)
+- [Android.App.IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

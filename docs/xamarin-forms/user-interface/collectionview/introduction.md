@@ -6,13 +6,13 @@ ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: 871d7cad6c57cd34757ae992ce14d5f686935584
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 12/11/2019
+ms.openlocfilehash: c04b5250bcdc575adc5aaff73901347e1e476b07
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662311"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489335"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Einführung in xamarin. Forms CollectionView
 
@@ -35,7 +35,7 @@ Obwohl die [`CollectionView`](xref:Xamarin.Forms.CollectionView) -und [`ListView
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) unterstützt die einfache und mehrfache Auswahl.
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) hat kein Konzept von Zellen. Stattdessen wird eine Daten Vorlage verwendet, um die Darstellung der einzelnen Datenelemente in der Liste zu definieren.
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) automatisch die von den zugrunde liegenden systemeigenen Steuerelementen bereitgestellte Virtualisierung verwendet.
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) reduziert die API-Oberfläche [`ListView`](xref:Xamarin.Forms.ListView). Viele Eigenschaften und Ereignisse aus [`ListView`](xref:Xamarin.Forms.ListView) sind in `CollectionView` nicht vorhanden.
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView) reduziert die API-Oberfläche [`ListView`](xref:Xamarin.Forms.ListView). Viele Eigenschaften und Ereignisse aus [`ListView`](xref:Xamarin.Forms.ListView) sind in `CollectionView`nicht vorhanden.
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) enthält keine integrierten Trennzeichen.
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView) löst eine Ausnahme aus, wenn die [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) vom UI-Thread aktualisiert wird.
 
@@ -45,18 +45,18 @@ Obwohl die [`CollectionView`](xref:Xamarin.Forms.CollectionView) -und [`ListView
 
 | Konzept | ListView-API | CollectionView |
 |---|---|---|
-| Daten | `ItemsSource` | Ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) wird mit Daten aufgefüllt, indem seine `ItemsSource`-Eigenschaft festgelegt wird. Weitere Informationen finden Sie unter Auffüllen [einer CollectionView mit Daten](populate-data.md#populate-a-collectionview-with-data). |
+| importieren | `ItemsSource` | Ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) wird mit Daten aufgefüllt, indem seine `ItemsSource`-Eigenschaft festgelegt wird. Weitere Informationen finden Sie unter Auffüllen [einer CollectionView mit Daten](populate-data.md#populate-a-collectionview-with-data). |
 | Element Darstellung | `ItemTemplate` | Die Darstellung der einzelnen Elemente in einer [`CollectionView`](xref:Xamarin.Forms.CollectionView) kann durch Festlegen der `ItemTemplate`-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)definiert werden. Weitere Informationen finden Sie unter [Definieren der Element](populate-data.md#define-item-appearance)Darstellung. |
-| Zellen | `TextCell`ist `ImageCell`ist `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) hat kein Konzept von Zellen. Stattdessen wird eine Daten Vorlage verwendet, um die Darstellung der einzelnen Datenelemente in der Liste zu definieren. |
+| Zellen | `TextCell`ist `ImageCell`ist `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) hat kein Konzept von Zellen und daher kein Konzept von Offenlegungs Indikatoren. Stattdessen wird eine Daten Vorlage verwendet, um die Darstellung der einzelnen Datenelemente in der Liste zu definieren. |
 | Zeilen Trennzeichen | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) enthält keine integrierten Trennzeichen. Diese können, falls gewünscht, in der Element Vorlage angegeben werden. |
-| Auswahl | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) unterstützt die einfache und mehrfache Auswahl. Weitere Informationen finden Sie unter [xamarin. Forms CollectionView-Auswahl](selection.md). |
-| Zeilenhöhe | `HasUnevenRows`, `RowHeight` | In einer `CollectionView` wird die Zeilenhöhe jedes Elements durch die `ItemSizingStrategy`-Eigenschaft bestimmt. Weitere Informationen finden Sie unter [Item Sizing](layout.md#item-sizing).|
-| Zwischenspeicherung | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) automatisch die von den zugrunde liegenden systemeigenen Steuerelementen bereitgestellte Virtualisierung verwendet. |
+| Markierung | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) unterstützt die einfache und mehrfache Auswahl. Weitere Informationen finden Sie unter [xamarin. Forms CollectionView-Auswahl](selection.md). |
+| Zeilenhöhe | `HasUnevenRows`, `RowHeight` | In einer `CollectionView`wird die Zeilenhöhe jedes Elements durch die `ItemSizingStrategy`-Eigenschaft bestimmt. Weitere Informationen finden Sie unter [Item Sizing](layout.md#item-sizing).|
+| Zwischenspeichern | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) automatisch die von den zugrunde liegenden systemeigenen Steuerelementen bereitgestellte Virtualisierung verwendet. |
 | Kopf- und Fußzeilen | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) können eine Kopf-und Fußzeile darstellen, die mit den Elementen in der Liste über die Eigenschaften "`Header`", "`Footer`", "`HeaderTemplate`" und "`FooterTemplate`" scrollen. Weitere Informationen finden Sie unter [Kopf-und Fußzeilen](layout.md#headers-and-footers). |
-| Gruppieren | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) zeigt ordnungsgemäß gruppierte Daten an, indem die `IsGrouped` Eigenschaft auf `true` festgelegt wird. Gruppen Kopfzeilen und-Fußzeilen können angepasst werden, indem die Eigenschaften `GroupHeaderTemplate` und `GroupFooterTemplate` auf [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Objekte festgelegt werden. Weitere Informationen finden Sie unter [xamarin. Forms CollectionView-Gruppierung](grouping.md). |
-| Pull zum Aktualisieren | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | Die Funktion "Pull to refresh" wird unterstützt, indem ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) als untergeordnetes Element eines `RefreshView` festgelegt wird. Weitere Informationen finden Sie unter [Pull to refresh](populate-data.md#pull-to-refresh). |
-| Kontextaktionen | `ContextActions` | Kontext Aktionen werden derzeit in `CollectionView` nicht unterstützt, werden jedoch in einer zukünftigen Version hinzugefügt. |
-| Scrollen | `ScrollTo()` | in [`CollectionView`](xref:Xamarin.Forms.CollectionView) werden `ScrollTo` Methoden definiert, mit denen Elemente in der Ansicht angezeigt werden. Weitere Informationen finden Sie unter [scrollvorgänge](scrolling.md). |
+| Gruppieren | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) zeigt ordnungsgemäß gruppierte Daten an, indem die `IsGrouped` Eigenschaft auf `true`festgelegt wird. Gruppen Kopfzeilen und-Fußzeilen können angepasst werden, indem die Eigenschaften `GroupHeaderTemplate` und `GroupFooterTemplate` auf [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Objekte festgelegt werden. Weitere Informationen finden Sie unter [xamarin. Forms CollectionView-Gruppierung](grouping.md). |
+| Aktualisieren durch Ziehen | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | Die Funktion "Pull to refresh" wird unterstützt, indem ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) als untergeordnetes Element eines `RefreshView`festgelegt wird. Weitere Informationen finden Sie unter [Pull to refresh](populate-data.md#pull-to-refresh). |
+| Kontextmenüelemente | `ContextActions` | Kontextmenü Elemente werden unterstützt, indem ein `SwipeView` als Stamm Ansicht in der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) festgelegt wird, die die Darstellung der einzelnen Datenelemente im [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert. Weitere Informationen finden Sie unter [Kontextmenüs](populate-data.md#context-menus). |
+| Bildlauf | `ScrollTo()` | in [`CollectionView`](xref:Xamarin.Forms.CollectionView) werden `ScrollTo` Methoden definiert, mit denen Elemente in der Ansicht angezeigt werden. Weitere Informationen finden Sie unter [scrollvorgänge](scrolling.md). |
 
 ## <a name="related-links"></a>Verwandte Links
 

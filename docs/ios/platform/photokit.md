@@ -7,16 +7,27 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 82cff753e7569c2642c467db692c2d2d84347df0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: def34efd1fd48cc0e7dd802a6d3e843be1e156a4
+ms.sourcegitcommit: 5ddb107b0a56bef8a16fce5bc6846f9673b3b22e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031616"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75558806"
 ---
 # <a name="photokit-in-xamarinios"></a>Photokit in xamarin. IOS
 
-Photokit ist ein neues Framework, das es Anwendungen ermöglicht, die System Image Bibliothek abzufragen und benutzerdefinierte Benutzeroberflächen zu erstellen, um deren Inhalte anzuzeigen und zu ändern. Sie enthält eine Reihe von Klassen, die Bild-und Video Medienobjekte sowie Sammlungen von Assets wie z. b. Alben und Ordner darstellen.
+[Beispiel für ![herunterladen](~/media/shared/download.png) Codebeispiel herunterladen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+
+Photokit ist ein Framework, das es Anwendungen ermöglicht, die System Image Bibliothek abzufragen und benutzerdefinierte Benutzeroberflächen zu erstellen, um deren Inhalte anzuzeigen und zu ändern. Sie enthält eine Reihe von Klassen, die Bild-und Video Medienobjekte sowie Sammlungen von Assets wie z. b. Alben und Ordner darstellen.
+
+## <a name="permissions"></a>Berechtigungen
+
+Bevor Ihre APP auf die Fotobibliothek zugreifen kann, wird dem Benutzer ein Berechtigungs Dialogfeld angezeigt. Sie müssen erklärenden Text in der Datei " **Info. plist** " bereitstellen, um zu erläutern, wie Ihre APP die Fotobibliothek verwendet, z. b.:
+
+```xml
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Applies filters to photos and updates the original image</string>
+```
 
 ## <a name="model-objects"></a>Modell Objekte
 
@@ -55,7 +66,7 @@ Dies führt zu einem Raster mit Bildern, wie unten dargestellt:
 
 ## <a name="saving-changes-to-the-photo-library"></a>Speichern von Änderungen an der Fotobibliothek
 
-So wird das Abfragen und Lesen von Daten behandelt. Sie können auch Änderungen zurück in die Bibliothek schreiben. Da mehrere interessierte Anwendungen mit der System Fotobibliothek interagieren können, können Sie einen Beobachter registrieren, um über Änderungen mithilfe eines photolibraryobserver benachrichtigt zu werden. Wenn dann Änderungen auftreten, kann die Anwendung entsprechend aktualisiert werden. Hier ist beispielsweise eine einfache Implementierung zum erneuten Laden der oben aufgeführten Sammlungsansicht:
+So wird das Abfragen und Lesen von Daten behandelt. Sie können auch Änderungen zurück in die Bibliothek schreiben. Da mehrere interessierte Anwendungen mit der System Fotobibliothek interagieren können, können Sie einen Beobachter registrieren, um über Änderungen mithilfe eines `PhotoLibraryObserver`benachrichtigt zu werden. Wenn dann Änderungen auftreten, kann die Anwendung entsprechend aktualisiert werden. Hier ist beispielsweise eine einfache Implementierung zum erneuten Laden der oben aufgeführten Sammlungsansicht:
 
 ```csharp
 class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
@@ -70,26 +81,25 @@ class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
     public override void PhotoLibraryDidChange (PHChange changeInstance)
     {
         DispatchQueue.MainQueue.DispatchAsync (() => {
-        var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
-        controller.fetchResults = changes.FetchResultAfterChanges;
-        controller.CollectionView.ReloadData ();
+            var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
+            controller.fetchResults = changes.FetchResultAfterChanges;
+            controller.CollectionView.ReloadData ();
         });
     }
 }
 ```
 
-Wenn Sie tatsächlich Änderungen von Ihrer Anwendung Zurückschreiben möchten, erstellen Sie eine Change Request. Jede Modell Klasse verfügt über eine zugeordnete Change Request-Klasse. Wenn Sie z. b. ein phasset ändern möchten, erstellen Sie eine phassetchangerequest. Die Schritte zum Ausführen von Änderungen, die in die Fotobibliothek zurückgeschrieben und an Beobachter wie die oben gesendet werden, lauten wie folgt:
+Wenn Sie tatsächlich Änderungen von Ihrer Anwendung Zurückschreiben möchten, erstellen Sie eine Change Request. Jede Modell Klasse verfügt über eine zugeordnete Change Request-Klasse. Wenn Sie z. b. eine `PHAsset`ändern möchten, erstellen Sie eine `PHAssetChangeRequest`. Die Schritte zum Ausführen von Änderungen, die in die Fotobibliothek zurückgeschrieben und an Beobachter wie die oben gesendet werden, lauten wie folgt:
 
-- Führt den Bearbeitungsvorgang aus.
-- Speichern Sie die gefilterten Bilddaten in einer phcontenteditingoutput-Instanz.
-- Erstellen Sie eine Change Request, um die Änderungen in der Bearbeitungs Ausgabe zu veröffentlichen.
+1. Führt den Bearbeitungsvorgang aus.
+2. Speichert die gefilterten Bilddaten in einer `PHContentEditingOutput`-Instanz.
+3. Erstellen Sie eine Change Request, um die Änderungen aus der Bearbeitungs Ausgabe zu veröffentlichen.
 
 Hier ist ein Beispiel, das eine Änderung an ein Bild zurückgibt, das einen Core-Bild-WF-Filter anwendet:
 
 ```csharp
 void ApplyNoirFilter (object sender, EventArgs e)
 {
-
     Asset.RequestContentEditingInput (new PHContentEditingInputRequestOptions (), (input, options) => {
 
         // perform the editing operation, which applies a noir filter in this case
@@ -123,8 +133,8 @@ void ApplyNoirFilter (object sender, EventArgs e)
 
 Wenn der Benutzer die Schaltfläche auswählt, wird der Filter angewendet:
 
-![](photokit-images/image5.png "An example of the filter being applied")
+![Zwei Beispiele, in denen das Foto vor und nach dem Anwenden des Filters angezeigt wird](photokit-images/image5.png)
 
-Dank der phphotolibrarychangeobserver wird die Änderung in der Auflistungs Ansicht widergespiegelt, wenn der Benutzer zurück navigiert:
+Dank der `PHPhotoLibraryChangeObserver`wird die Änderung in der Auflistungs Ansicht widergespiegelt, wenn der Benutzer zurück navigiert:
 
-![](photokit-images/image6.png "The change is reflected in the collection view when the user navigates back")
+![Foto-Sammlungsansicht mit geändertem Foto](photokit-images/image6.png)

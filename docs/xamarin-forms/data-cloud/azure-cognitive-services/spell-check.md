@@ -7,25 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: ed6992f946512cd88b4b2b8cfcf4c826bdd6b837
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 924f5403f12250fcfc5f026438d08ed618fb373f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645350"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487606"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Rechtschreibprüfung mithilfe der Bing-Rechtschreibprüfungs-API
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Bing-Rechtschreibprüfung führt kontextbezogene Rechtschreibprüfung für Text Inline Empfehlungen für falsch geschriebene Wörter. In diesem Artikel wird erläutert, wie Sie mit der Bing-Rechtschreibprüfungs REST-API, korrigieren Sie Rechtschreibfehler in einer Xamarin.Forms-Anwendung._
+_Bing-Rechtschreibprüfung führt die kontextbezogene Rechtschreibprüfung für Text durch und stellt Inline Vorschläge für falsch geschriebene Wörter bereit. In diesem Artikel wird erläutert, wie Sie die Bing-Rechtschreibprüfung Rest-API verwenden, um Rechtschreibfehler in einer xamarin. Forms-Anwendung zu korrigieren._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Die Bing-Rechtschreibprüfungs REST-API verfügt über zwei Betriebsmodi, und ein Modus muss angegeben werden, wenn eine Anforderung an die API vornehmen:
 
 - `Spell` kurzen Text (bis zu 9 Wörter) ohne Änderungen zur Groß-und Kleinschreibung wird automatisch behoben.
 - `Proof` langen Text korrigiert, bietet Schreibweise Korrekturen und grundlegende Zeichensetzung und unterdrückt die aggressive Korrekturen.
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
 API-Schlüssel muss abgerufen werden, um die Bing-Rechtschreibprüfungs-API zu verwenden. Dadurch erhalten Sie unter [Cognitive Services testen](https://azure.microsoft.com/try/cognitive-services/)
 
@@ -151,18 +154,18 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 Dieser Code durchläuft die `FlaggedTokens` Auflistung und ersetzt alle falsch geschrieben oder grammatisch falsch geschriebene Wörter im Quelltext mit der erste Vorschlag. Die folgenden Screenshots zeigen vor und nach dem die Rechtschreibung überprüfen:
 
-![](spell-check-images/before-spell-check.png "Vor der Rechtschreibprüfung")
+![](spell-check-images/before-spell-check.png "Before Spell Check")
 
-![](spell-check-images/after-spell-check.png "Nach der Rechtschreibprüfung")
+![](spell-check-images/after-spell-check.png "After Spell Check")
 
 > [!NOTE]
-> Im obigen Beispiel wird `Replace` der Einfachheit halber verwendet, aber über eine große Menge an Text kann das falsche Token ersetzt werden. Die API stellt den `offset` Wert bereit, der in Produktions-Apps verwendet werden soll, um die richtige Position im Quelltext zum Ausführen eines Updates zu identifizieren.
+> Im obigen Beispiel wird `Replace` aus Gründen der Einfachheit verwendet, aber über eine große Menge an Text kann das falsche Token ersetzt werden. Die API stellt den `offset` Wert bereit, der in Produktions-Apps verwendet werden soll, um die richtige Position im Quelltext zum Ausführen eines Updates zu identifizieren.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurde erläutert, wie die Bing-Rechtschreibprüfungs REST-API zu verwenden, um korrigieren Sie Rechtschreibfehler in einer Xamarin.Forms-Anwendung. Bing-Rechtschreibprüfung führt kontextbezogene Rechtschreibprüfung für Text Inline Empfehlungen für falsch geschriebene Wörter.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Dokumentation zur Bing-Rechtschreibprüfungs-Überprüfung](/azure/cognitive-services/bing-spell-check/)
 - [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)

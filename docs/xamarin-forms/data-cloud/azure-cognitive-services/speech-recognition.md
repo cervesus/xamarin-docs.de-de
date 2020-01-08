@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 97997a527647ae972eadff47da8c1321d5d55daa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eca079972f4e46c0cf60c4749658ff9a7fe1791b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655457"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489803"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>Spracherkennung, die mit der Microsoft-Spracheingabe-API
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Der Microsoft Speech-API ist eine Cloud-basierte API, Algorithmen zur Verarbeitung gesprochener Sprache. In diesem Artikel wird erläutert, wie der Microsoft Speech Recognition-REST-API zu verwenden, um Audiodaten in Text in einer Xamarin.Forms-Anwendung zu konvertieren._
+_Die Microsoft Speech-API ist eine cloudbasierte API, die Algorithmen zur Verarbeitung der gesprochenen Sprache bereitstellt. In diesem Artikel wird erläutert, wie Sie die Rest-API von Microsoft Speech Recognition verwenden, um Audiodaten in einer xamarin. Forms-Anwendung zu konvertieren._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Der Microsoft Speech-API besteht aus zwei Komponenten:
 
@@ -28,6 +28,9 @@ Der Microsoft Speech-API besteht aus zwei Komponenten:
 - Ein Text in Sprache API für die Konvertierung von Text in gesprochenen Wörtern. Konvertierung von Text in Sprache erfolgt über eine REST-API.
 
 Dieser Artikel konzentriert sich auf die Spracherkennung, über die REST-API ausführt. Während der Client und Dienst-Bibliotheken partielle Ergebnisse zurückgeben unterstützt, kann der REST-API nur eine einzelne Erkennungsergebnis, ohne alle partiellen Ergebnisse zurückgeben.
+
+> [!NOTE]
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
 API-Schlüssel muss zum Verwenden der Microsoft Speech-API abgerufen werden. Dadurch erhalten Sie über das Azure [Portal](https://portal.azure.com/). Weitere Informationen finden Sie unter [Cognitive Services-Konto im Azure-Portal erstellen](/azure/cognitive-services/cognitive-services-apis-create-account).
 
@@ -161,13 +164,13 @@ Die API-Antwort wird im JSON-Format zurückgegeben, mit der erkannte Text wird i
 
 In diesem Beispiel, in die JSON-Antwort deserialisiert wird eine `SpeechResult` -Instanz, mit das Ergebnis an die aufrufende Methode für die Anzeige zurückgegeben wird, wie in den folgenden Screenshots gezeigt:
 
-![](speech-recognition-images/speech-recognition.png "Spracherkennung")
+![](speech-recognition-images/speech-recognition.png "Speech Recognition")
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurde erläutert, wie der REST-API von Microsoft zu verwenden, um Audiodaten in Text in einer Xamarin.Forms-Anwendung zu konvertieren. Zusätzlich zur Spracherkennung ausführt, können die Microsoft-Spracheingabe-API auch Text in gesprochenen Wörtern konvertieren.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Dokumentation zu Microsoft Speech API](/azure/cognitive-services/speech/home/).
 - [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)

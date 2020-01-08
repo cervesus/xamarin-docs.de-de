@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e229ad37e8cd5ff940fb5abece7b782b84336d50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fb0981fea906a474d39834a52f0a8bfdf496ca1e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008165"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488412"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Verwenden von SQLite.net mit xamarin. IOS
 
@@ -21,7 +21,7 @@ ORM steht für relationale Objekt Zuordnung – eine API, mit der Sie "Objekte" 
 
 <a name="Usage"/>
 
-## <a name="usage"></a>Verwendung
+## <a name="usage"></a>Verwendungs-
 
 Fügen Sie dem Projekt das folgende nuget-Paket hinzu, um die SQLite.NET-Bibliothek in eine xamarin-App einzubeziehen:
 
@@ -67,7 +67,7 @@ Sobald die SQLite.NET-Bibliothek verfügbar ist, führen Sie die folgenden drei 
 
 ## <a name="basic-data-access-sample"></a>Beispiel für den grundlegenden Datenzugriff
 
-Der *DataAccess_Basic* -Beispielcode für dieses Dokument sieht wie folgt aus, wenn er unter IOS ausgeführt wird. Im Code wird veranschaulicht, wie einfache sqlite.net-Vorgänge durchgeführt und die Ergebnisse in als Text im Hauptfenster der Anwendung angezeigt werden.
+Der *DataAccess_Basic* Beispielcode für dieses Dokument sieht wie folgt aus, wenn er unter IOS ausgeführt wird. Im Code wird veranschaulicht, wie einfache sqlite.net-Vorgänge durchgeführt und die Ergebnisse in als Text im Hauptfenster der Anwendung angezeigt werden.
 
 **iOS**
 
@@ -130,13 +130,13 @@ Allgemeine Attribute, die Sie auf die Klassen anwenden können, um zu steuern, w
 
 - **[PrimaryKey]** – dieses Attribut kann auf eine ganzzahlige Eigenschaft angewendet werden, um den Primärschlüssel der zugrunde liegenden Tabelle zu erzwingen. Zusammengesetzte Primärschlüssel werden nicht unterstützt.
 - **[AUTOINCREMENT]** – dieses Attribut bewirkt, dass der Wert einer ganzzahligen Eigenschaft für jedes neue Objekt, das in die Datenbank eingefügt wird, automatisch erhöht wird.
-- **[Column (Name)]** – bei Angabe des optionalen `name`-Parameters wird der Standardwert für den Namen der zugrunde liegenden Daten Bank Spalte überschrieben (entspricht der-Eigenschaft).
-- **[Tabelle (Name)]** – markiert die Klasse als in einer zugrunde liegenden SQLite-Tabelle gespeichert werden kann. Wenn Sie den optionalen Name-Parameter angeben, wird der Standardwert des Namens der zugrunde liegenden Datenbanktabelle (der mit dem Klassennamen identisch ist) überschrieben.
+- **[Column (Name)]** &ndash; der `name` Parameter den Namen der zugrunde liegenden Daten Bank Spalte festlegt.
+- **[Tabelle (Name)]** – markiert die Klasse als in einer zugrunde liegenden SQLite-Tabelle mit dem angegebenen Namen zu speichern.
 - **[MaxLength (Wert)]** – schränkt die Länge einer Text Eigenschaft ein, wenn versucht wird, eine Daten Bank Einfügung auszuführen. Durch die Verwendung von Code sollte dies vor dem Einfügen des Objekts überprüft werden, da dieses Attribut nur beim Versuch, einen Daten Bank Einfüge-oder Aktualisierungs Vorgang auszuführen, "überprüft" ist
 - **[Ignore]** – bewirkt, dass SQLite.net diese Eigenschaft ignoriert. Dies ist besonders nützlich für Eigenschaften, die einen Typ haben, der nicht in der Datenbank gespeichert werden kann, oder für Eigenschaften, die Sammlungen modellieren, die nicht automatisch aufgelöst werden können, SQLite.
 - **[Eindeutig]** – stellt sicher, dass die Werte in der zugrunde liegenden Daten Bank Spalte eindeutig sind.
 
-Die meisten dieser Attribute sind optional, SQLite verwendet Standardwerte für Tabellen-und Spaltennamen. Sie sollten immer einen ganzzahligen Primärschlüssel angeben, damit Auswahl-und Lösch Abfragen für Ihre Daten effizient ausgeführt werden können.
+Die meisten dieser Attribute sind optional. Sie sollten immer einen ganzzahligen Primärschlüssel angeben, damit Auswahl-und Lösch Abfragen für Ihre Daten effizient ausgeführt werden können.
 
 ## <a name="more-complex-queries"></a>Komplexere Abfragen
 
@@ -204,7 +204,7 @@ using Mono.Data.Sqlite;
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)

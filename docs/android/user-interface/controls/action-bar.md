@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: b2b7c2cc87b37ae0e7397988e37df6b9b1e3aa10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f64b57e73b69b3111087ca1352f5fb9536f855e5
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029385"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488958"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Aktionsleiste für xamarin. Android
 
@@ -77,7 +77,7 @@ this.ActionBar.AddTab (tab);
 
 Das komplette Beispiel finden Sie im Projekt *hellotabsics* im Beispielcode für dieses Dokument.
 
-## <a name="shareactionprovider"></a>Shareaktionbieter
+## <a name="shareactionprovider"></a>ShareActionProvider
 
 Die `ShareActionProvider`-Klasse ermöglicht das Ausführen einer Freigabe Aktion aus einer Aktionsleiste. Es übernimmt das Erstellen einer Aktions Ansicht mit einer Liste von apps, die eine Freigabe Absicht verarbeiten können, und speichert einen Verlauf der zuvor verwendeten Anwendungen für den einfachen Zugriff auf diese Anwendungen später aus dem Aktionsleiste. Dies ermöglicht Anwendungen die gemeinsame Nutzung von Daten über eine Benutzer Darstellung, die in Android konsistent ist.
 
@@ -138,9 +138,7 @@ Intent CreateIntent ()
 
 Das Image im obigen Codebeispiel ist als Medienobjekt mit der Anwendung enthalten und an einen öffentlich zugänglichen Speicherort kopiert, wenn die Aktivität erstellt wird, sodass andere Anwendungen, wie z. b. die Messaging-APP, darauf zugreifen können. Der Beispielcode für diesen Artikel enthält die vollständige Quelle dieses Beispiels, die seine Verwendung veranschaulicht.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Hello Tabs ICS (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
 - [Shareaktionprovider-Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
-- [Einführung in Ice Cream Sandwich](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)
