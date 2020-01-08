@@ -226,7 +226,7 @@
             - name: Texteingabe
               href: user-interface/controls/text-input.md
             - name: Webansichten
-              href: user-interface/controls/uiwebview.md
+              href: user-interface/controls/webview.md
         - name: Einschränkungen für programmgesteuerte Layouts
           href: user-interface/programmatic-layout-constraints.md
         - name: MonoTouch.Dialog
@@ -388,7 +388,7 @@
               href: platform/message-app-integration/advanced-message-app-extensions.md
         - name: Multitasking für iPad
           href: platform/multitasking.md
-        - name: Analyse natürlicher Sprache
+        - name: Natürliche Sprache
           href: platform/introduction-to-ios12/natural-language.md
         - name: PassKit
           href: platform/passkit.md
@@ -453,8 +453,8 @@
           href: platform/textkit.md
         - name: 3D Touch
           href: platform/3d-touch.md
-        - name: Touch-ID
-          href: platform/touchid.md
+        - name: Touch ID und Face ID
+          href: platform/touch-id-face-id.md
         - name: Framework für Benutzerbenachrichtigungen
           items:
             - name: Übersicht
@@ -1112,4 +1112,4 @@
     - name: Versionshinweise
       href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
     - name: Proben
-      href: samples/index.yml
+      href: samples/index.md

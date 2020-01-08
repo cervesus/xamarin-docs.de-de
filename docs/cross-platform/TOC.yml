@@ -6,7 +6,7 @@
       href: get-started/index.md
       expanded: true
       items:
-        - name: Requirements (Anforderungen)
+        - name: Anforderungen
           displayName: System requirements
           href: get-started/requirements.md
         - name: Lebenszyklus der Entwicklung mobiler Software
@@ -20,17 +20,17 @@
               href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
             - name: 'Teil 2: Architektur'
               href: app-fundamentals/building-cross-platform-applications/architecture.md
-            - name: 'Teil 3: Einrichten einer plattformübergreifenden Xamarin-Lösung'
+            - name: 'Teil 3: Erstellen einer plattformübergreifenden Xamarin-Lösung'
               href: app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md
             - name: 'Teil 4: Umgang mit mehreren Plattformen'
               href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
             - name: 'Teil 5: Praktische Strategien für die Codefreigabe'
               href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
-            - name: 'Teil 6: Testen und App Store-Genehmigungen'
+            - name: 'Teil 6: Testen und App Store-Genehmigungen einholen'
               href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
             - name: 'Fallstudie: Tasky'
               href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
-    - name: Freigeben von Code
+    - name: Code freigeben
       href: app-fundamentals/index.md
       items:
         - name: Übersicht
@@ -62,9 +62,9 @@
       items:
         - name: 'C#'
           items:
-            - name: Async Support Overview (Übersicht über die asynchrone Unterstützung)
+            - name: Übersicht über die Async-Unterstützung
               href: platform/async.md
-            - name: 'C# 6-Sprachfunktionen'
+            - name: 'Features von C# 6'
               href: platform/csharp-six.md
         - name: 'F#'
           href: platform/fsharp/index.md
@@ -88,11 +88,13 @@
         - name: Leistung
           href: deploy-test/memory-perf-best-practices.md
           items:
+            - name: Xamarin.Forms-Leistung
+              href: ~/xamarin-forms/deploy-test/performance.md?context=xamarin/cross-platform
             - name: Android-Leistung
               href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
             - name: iOS-Leistung
               href: ~/ios/deploy-test/performance.md?context=xamarin/cross-platform
-            - name: Mac-Leistung
+            - name: macOS-Leistung
               href: ~/mac/deploy-test/performance.md?context=xamarin/cross-platform
         - name: Transport Layer Security (TLS)
           href: app-fundamentals/transport-layer-security.md
@@ -111,7 +113,7 @@
         - name: Debuggen mehrerer Prozesse
           href: deploy-test/multi-process-debugging.md
     - name: Desktopentwickler
-      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers'
+      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP developers'
       href: desktop/index.md
       items:
         - name: App-Lebenszyklusvergleich
@@ -128,7 +130,7 @@
     - name: Problembehandlung
       href: troubleshooting/index.md
       items:
-        - name: Häufig gestellte Fragen (FAQs)
+        - name: Häufig gestellte Fragen
           displayName: FAQ
           href: troubleshooting/questions/index.md
           items:
@@ -171,4 +173,4 @@
         - name: Aktualisieren von Komponentenverweisen auf NuGet
           href: troubleshooting/component-nuget.md
     - name: Proben
-      href: samples/index.yml
+      href: samples/index.md

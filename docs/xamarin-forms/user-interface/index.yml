@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 08/07/2019
+  ms.date: 12/11/2019
 abstract:
   description: Informationen zum Erstellen von Benutzeroberflächen mit Xamarin.Forms
 sections:
@@ -103,11 +103,17 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: imagebutton.md
             title: ImageButton
-          - href: layouts/index.md
+          - href: indicatorview.md
+            html: 'Hier erfahren Sie, wie Sie sich mithilfe des Steuerelements IndicatorView Indikatoren anzeigen lassen, die Auskunft über die Gesamtzahl der Elemente und die aktuelle Position im Karusselllayout geben.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: indicatorview.md
+            title: IndicatorView
+          - href: layouts/index.yml
             html: Informationen zum Organisieren von Inhalt mithilfe der Layoutsteuerelemente und -features in Xamarin.Forms
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: layouts/index.md
+              href: layouts/index.yml
             title: Layouts
           - href: listview/index.md
             html: Informationen zum Darstellen von Datenlisten mithilfe des ListView-Steuerelements
@@ -175,6 +181,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: styles/index.md
             title: Stile
+          - href: swipeview.md
+            html: 'Hier erfahren Sie, wie Sie mit SwipeView Kontextmenüelemente bereitstellen, die sich per Wischgeste einblenden lassen.'
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: swipeview.md
+            title: SwipeView
           - href: switch.md
             html: Informationen zur Festlegung eines booleschen Werts mithilfe der Switch-Klasse
             image:
