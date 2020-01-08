@@ -6,21 +6,19 @@ ms.assetid: 6960E025-3D5C-457A-B893-25B734F8626D
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
-ms.date: 03/18/2017
-ms.openlocfilehash: 6004598b215c85b70b057ff156c3a905a0879138
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 01/02/2020
+ms.openlocfilehash: 90d5034f332b311ee83ac2654bcbbc2cde2b11c0
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010718"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607827"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Hintergrund Übertragung und nsurlsession in xamarin. IOS
 
 Eine Hintergrund Übertragung wird durch das Konfigurieren eines Hintergrund `NSURLSession` und das Einreihen von Upload-oder Download Tasks initiiert. Wenn Aufgaben abgeschlossen sind, während die Anwendung mit einem Sicherungs Satz, einer Unterbrechung oder einem Abbruch abgeschlossen ist, wird die Anwendung von IOS benachrichtigt, indem der Abschluss Handler im *appdelegaten*der Anwendung aufgerufen wird. Dies wird in der folgenden Abbildung veranschaulicht:
 
- [![](background-transfer-walkthrough-images/transfer.png "A background transfer is initiated by configuring a background NSURLSession and enqueuing upload or download tasks")](background-transfer-walkthrough-images/transfer.png#lightbox)
-
-Sehen wir uns an, wie das im Code aussieht.
+ [![eine Hintergrund Übertragung durch Konfigurieren einer nsurlsession im Hintergrund und Einreihen von Upload-oder Download Aufgaben in die Warteschlange initiiert wird.](background-transfer-walkthrough-images/transfer.png)](background-transfer-walkthrough-images/transfer.png#lightbox)
 
 ## <a name="configuring-a-background-session"></a>Konfigurieren einer Hintergrund Sitzung
 
@@ -38,7 +36,7 @@ public partial class SimpleBackgroundTransferViewController : UIViewController
   NSUrlSessionConfiguration configuration =
       NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration ("com.SimpleBackgroundTransfer.BackgroundSession");
   session = NSUrlSession.FromConfiguration
-      (configuration, (NSUrlSessionDelegate) new MySessionDelegate(), new NSOperationQueue());
+      (configuration, new MySessionDelegate(), new NSOperationQueue());
 
 }
 ```
@@ -58,13 +56,13 @@ Eine `NSUrlSessionDelegate` stellt die folgenden grundlegenden Methoden zum Übe
 
 Hintergrund Sitzungen erfordern speziellere Delegaten, abhängig von den Tasks, die ausgeführt werden. Hintergrund Sitzungen sind auf zwei Arten von Aufgaben beschränkt:
 
-- *Aufgaben hochladen* : Aufgaben vom Typ `NSUrlSessionUploadTask` die `NSUrlSessionTaskDelegate` verwenden, die von `NSUrlSessionDelegate` erbt. Dieser Delegat stellt zusätzliche Methoden zum Nachverfolgen des uploadfortschritts, zum Verarbeiten der HTTP-Umleitung usw.
-- *Tasks herunterladen* : Aufgaben vom Typ `NSUrlSessionDownloadTask` die `NSUrlSessionDownloadDelegate` verwenden, die von `NSUrlSessionTaskDelegate` erbt. Dieser Delegat stellt alle Methoden zum Hochladen von Aufgaben sowie Download spezifische Methoden bereit, um den Download Fortschritt zu verfolgen und zu ermitteln, wann eine Download Aufgabe fortgesetzt oder abgeschlossen wurde.
+- *Aufgaben hochladen* : Aufgaben vom Typ `NSUrlSessionUploadTask` die `INSUrlSessionTaskDelegate`-Schnittstelle verwenden, die `INSUrlSessionDelegate`implementiert. Dies bietet zusätzliche Methoden zum Nachverfolgen des uploadfortschritts, zum Verarbeiten der HTTP-Umleitung und mehr.
+- *Tasks herunterladen* : Aufgaben vom Typ `NSUrlSessionDownloadTask` die `INSUrlSessionDownloadDelegate`-Schnittstelle verwenden, die `INSUrlSessionDelegate` und `INSUrlSessionTaskDelegate`implementiert. Dadurch werden alle Methoden zum Hochladen von Aufgaben sowie Download spezifische Methoden bereitgestellt, um den Download Fortschritt zu verfolgen und zu ermitteln, wann eine Download Aufgabe fortgesetzt oder abgeschlossen wurde.
 
-Der folgende Code definiert einen Task, der zum Herunterladen eines Bilds aus einer URL verwendet werden kann. Wir beginnen mit der Aufgabe, indem wir `CreateDownloadTask` in unserer Hintergrund Sitzung aufrufen und die URL-Anforderung übergeben:
+Der folgende Code definiert einen Task, der zum Herunterladen eines Bilds aus einer URL verwendet werden kann. Der Task wird gestartet, indem `CreateDownloadTask` in der Hintergrund Sitzung aufgerufen und die URL-Anforderung übergeben wird:
 
 ```csharp
-const string DownloadURLString = "http://cdn1.xamarin.com/webimages/images/xamarin.png";
+const string DownloadURLString = "http://xamarin.com/images/xamarin.png"; // or other hosted file
 public NSUrlSessionDownloadTask downloadTask;
 
 NSUrl downloadURL = NSUrl.FromString (DownloadURLString);
@@ -72,12 +70,12 @@ NSUrlRequest request = NSUrlRequest.FromUrl (downloadURL);
 downloadTask = session.CreateDownloadTask (request);
 ```
 
-Als Nächstes erstellen wir einen neuen Sitzungs Download Delegaten, um alle Download Tasks in dieser Sitzung nachzuverfolgen:
+Erstellen Sie als nächstes einen neuen Sitzungs Download Delegaten, um alle Download Tasks in dieser Sitzung nachzuverfolgen. Die Delegatklasse sollte von `NSObject` erben und die erforderliche Schnittstelle implementieren:
 
 ```csharp
-public class MySessionDelegate : NSUrlSessionDownloadDelegate
+public class MySessionDelegate : NSObject, INSUrlSessionDownloadDelegate
 {
-  public override void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+  public void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
   {
     Console.WriteLine (string.Format ("DownloadTask: {0}  progress: {1}", downloadTask, progress));
     InvokeOnMainThread( () => {
@@ -88,7 +86,7 @@ public class MySessionDelegate : NSUrlSessionDownloadDelegate
 }
 ```
 
-Wenn Sie den Fortschritt einer Download Aufgabe ermitteln möchten, können Sie die `DidWriteData`-Methode außer Kraft setzen, um den Fortschritt zu verfolgen und sogar die Benutzeroberfläche zu aktualisieren. Aktualisierungen der Benutzeroberfläche werden sofort angezeigt, wenn sich die Anwendung im Vordergrund befindet oder wenn Sie auf den Benutzer wartet, wenn Sie die Anwendung das nächste Mal öffnen.
+Um den Fortschritt einer Download Aufgabe herauszufinden, überschreiben Sie die `DidWriteData`-Methode, um den Fortschritt zu verfolgen und sogar die Benutzeroberfläche zu aktualisieren. Aktualisierungen der Benutzeroberfläche werden sofort angezeigt, wenn sich die Anwendung im Vordergrund befindet oder wenn Sie auf den Benutzer wartet, wenn Sie die Anwendung das nächste Mal öffnen.
 
 Die Sitzungs delegatapi bietet ein breites Toolkit für die Interaktion mit Aufgaben. Eine vollständige Liste der Sitzungs Delegatmethoden finden Sie in der `NSUrlSessionDelegate`-API-Dokumentation.
 
@@ -99,31 +97,31 @@ Die Sitzungs delegatapi bietet ein breites Toolkit für die Interaktion mit Aufg
 
 Der letzte Schritt besteht darin, die Anwendung zu informieren, wenn alle der Sitzung zugeordneten Aufgaben abgeschlossen sind, und den neuen Inhalt zu verarbeiten.
 
-Abonnieren Sie das `HandleEventsForBackgroundUrl`-Ereignis im *appdelegaten*. Wenn die Anwendung in den Hintergrund wechselt und eine Übertragungs Sitzung ausgeführt wird, wird diese Methode aufgerufen, und das System übergibt uns einen Abschluss Handler:
+Abonnieren Sie in der `AppDelegate`das `HandleEventsForBackgroundUrl`-Ereignis. Wenn die Anwendung in den Hintergrund wechselt und eine Übertragungs Sitzung ausgeführt wird, wird diese Methode aufgerufen, und das System übergibt uns einen Abschluss Handler:
 
 ```csharp
 public System.Action backgroundSessionCompletionHandler;
 
-public override void HandleEventsForBackgroundUrl (UIApplication application, string sessionIdentifier, System.Action completionHandler)
+public void HandleEventsForBackgroundUrl (UIApplication application, string sessionIdentifier, System.Action completionHandler)
 {
   this.backgroundSessionCompletionHandler = completionHandler;
 }
 ```
 
-Wir verwenden den Abschluss Handler, um IOS zu informieren, wann die Verarbeitung der Anwendung abgeschlossen ist.
+Verwenden Sie den Vervollständigungs Handler, um IOS mitzuteilen, wann die Verarbeitung der Anwendung abgeschlossen ist.
 
 Denken Sie daran, dass eine Sitzung mehrere Aufgaben zum Verarbeiten einer Übertragung erzeugen kann. Wenn die letzte Aufgabe abgeschlossen ist, wird eine angehaltene oder beendete Anwendung im Hintergrund neu gestartet. Anschließend stellt die Anwendung die Verbindung mit dem `NSURLSession` mithilfe des eindeutigen Sitzungs Bezeichners erneut her und ruft `DidFinishEventsForBackgroundSession` für den Sitzungs Delegaten auf. Diese Methode bietet die Möglichkeit, neuen Inhalt zu verarbeiten, einschließlich der Aktualisierung der Benutzeroberfläche, um die Ergebnisse der Übertragung widerzuspiegeln:
 
 ```csharp
-public override void DidFinishEventsForBackgroundSession (NSUrlSession session) {
+public void DidFinishEventsForBackgroundSession (NSUrlSession session) {
   // Handle new information, update UI, etc.
 }
 ```
 
-Nachdem die Verarbeitung neuer Inhalte abgeschlossen ist, wird der Abschluss Handler aufgerufen, um dem System mitzuteilen, dass es sicher ist, eine Momentaufnahme der Anwendung zu erstellen und wieder in den Standbymodus zurückzukehren:
+Nachdem die Verarbeitung neuer Inhalte abgeschlossen ist, rufen Sie den Abschluss Handler auf, damit das System weiß, dass es sicher ist, eine Momentaufnahme der Anwendung zu erstellen und wieder in den Standbymodus zu wechseln
 
 ```csharp
-public override void DidFinishEventsForBackgroundSession (NSUrlSession session) {
+public void DidFinishEventsForBackgroundSession (NSUrlSession session) {
   var appDelegate = UIApplication.SharedApplication.Delegate as AppDelegate;
 
   // Handle new information, update UI, etc.
@@ -137,7 +135,7 @@ public override void DidFinishEventsForBackgroundSession (NSUrlSession session) 
 }
 ```
 
-In dieser exemplarischen Vorgehensweise haben wir die grundlegenden Schritte zur Implementierung des Background Transfer Service in ios 7 behandelt.
+In dieser exemplarischen Vorgehensweise wurden die grundlegenden Schritte zum Implementieren des Background Transfer Service in ios 7 und höher behandelt.
 
 ## <a name="related-links"></a>Verwandte Links
 
