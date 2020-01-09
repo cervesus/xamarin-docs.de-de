@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/03/2019
-ms.openlocfilehash: e3c042a82a9870e68c94741ae4bdfaa728a40cb0
-ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
+ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823928"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487008"
 ---
-# <a name="customizing-a-hybridwebview"></a>Anpassen eines HybridWebView-Steuerelements
+# <a name="customizing-a-webview"></a>Anpassen eines WebView-Elements
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
@@ -105,7 +105,7 @@ Sie können auf das benutzerdefinierte Steuerelement `HybridWebView` in XAML im 
 
 Das `local`-Namespacepräfix kann beliebig benannt werden. Die Werte `clr-namespace` und `assembly` müssen jedoch mit den Angaben des benutzerdefinierten Steuerelements übereinstimmen. Wenn der Namespace deklariert wurde, wird das Präfix verwendet, um auf das benutzerdefinierte Steuerelement zu verweisen.
 
-Das folgende Codebeispiel veranschaulicht, wie das benutzerdefinierte Steuerelement `HybridWebView` von einer C#-Seite genutzt werden kann:
+Im folgenden Codebeispiel wird veranschaulicht, wie das benutzerdefinierte Steuerelement `HybridWebView` von einer C#-Seite genutzt werden kann:
 
 ```csharp
 public HybridWebViewPageCS()

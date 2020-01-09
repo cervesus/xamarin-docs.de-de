@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 74e258eeca78260fbfe3811e1dc6d8051e68e5f2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030256"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607918"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad-Hoc-Verteilung für Xamarin.iOS-Apps
 
@@ -84,7 +84,7 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt sein und kann nicht geändert werden. Wählen Sie entweder „Explicit ID“ (explizite ID) oder „ Wildcard App ID“ (Platzhalter-App-ID) aus, und geben Sie unter „Bundle ID“ eine Bundle-ID in einem der folgenden umgekehrten DNS-Formate ein:
     - **Explizit**: `com.[DomainName].[AppName]`
     - **Platzhalter**: `com.[DomainName].*`
-4. Wählen Sie die [App Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) (App-Dienste) aus, die für Ihre Anwendung erforderlich sind.
+4. Wählen Sie die [App Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services) (App-Dienste) aus, die für Ihre Anwendung erforderlich sind.
 5. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und folgen Sie den Anweisungen auf dem Bildschirm, um die neue App-ID zu erstellen.
 
 Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils haben, führen Sie die folgenden Schritte aus, um es zu erstellen:

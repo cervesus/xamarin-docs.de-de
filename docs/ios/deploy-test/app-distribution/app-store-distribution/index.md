@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 78df4a7f4c90cd6459216f1f65dd09e0daae19f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 96300cdddcc21511ef85ebbfe33f6ce32cb56cd7
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026702"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607931"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -85,7 +85,7 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 3. Das App-Präfix sollte bereits als Ihre Team-ID festgelegt sein und kann nicht geändert werden. Wählen Sie entweder eine explizite oder eine Platzhalter-App-ID aus, und geben Sie eine Bundle-ID in einem umgekehrten DNS-Format ein, wie beispielsweise:
     - **Explizit**: com.[Domänenname].[AppName]
     - **Platzhalter**: com.[Domänenname].*
-4. Wählen Sie die [App-Dienste](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) aus, die die Anwendung benötigt.
+4. Wählen Sie die [App-Dienste](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services) aus, die die Anwendung benötigt.
 5. Klicken Sie auf die Schaltfläche **Weiter**, und folgen Sie der Anleitung auf dem Bildschirm, um die neue App-ID zu erstellen.
 
 ### <a name="creating-a-provisioning-profile"></a>Erstellen eines Bereitstellungsprofils

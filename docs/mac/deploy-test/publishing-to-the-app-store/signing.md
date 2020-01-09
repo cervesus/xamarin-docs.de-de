@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: eb8df9f7088c4954ed48ce8c7c145334004207cd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: de858049ef899134d61596cabfcf81fca973e8b0
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017945"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489348"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Signieren von Xamarin.Mac-Apps mit einer Entwickler-ID
 
@@ -20,7 +20,7 @@ Wenn der Entwickler eine App direkt an macOS-Benutzer verteilen möchte, empfieh
 
 Auf der Website von Apple erfahren Sie mehr über die [Entwickler-ID und Gatekeeper](https://developer.apple.com/resources/developer-id/) und das [Verteilen außerhalb des Mac App Stores](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html).
 
-## <a name="code-signing-options"></a>Optionen für das Codesignieren
+## <a name="code-signing-options"></a>Optionen zum Codesignieren
 
 Um eine App zu erstellen, die direkt und NICHT über den Mac App Store an Benutzer verteilt werden soll, legen Sie **Signing Settings** auf **Developer ID** fest. Achten Sie darauf, die Konfiguration **Release** zu bearbeiten.
 

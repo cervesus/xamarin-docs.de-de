@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 114373b6c4b194fe6e566255eb09eb82a8208312
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b8f7d882306ed5c00404ae7a050da8e02a49d609
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020964"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607905"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen): Schnellstart
 
@@ -26,7 +26,7 @@ Im Teil des Handbuchs mit der exemplarischen Vorgehensweise fügen Sie einen zwe
 
 Im begleitenden Artikel [Hello, Android Multiscreen: Deep Dive (Hallo, Android: Ausführliche Erläuterungen)](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md) wird wiederholt, was erstellt wurde, und es werden die Architektur, die Navigation und andere neue Android-Konzepte diskutiert.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Da dieses Handbuch dort ansetzt, wo [Hallo, Android](~/android/get-started/hello-android/index.md) aufhört, muss der [Schnellstart für „Hallo, Android“](~/android/get-started/hello-android/hello-android-quickstart.md) abgeschlossen werden.
 Wenn Sie direkt mit der exemplarischen Vorgehensweise weiter unten beginnen möchten, können Sie die vollständige Version von [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) aus dem Artikel Schnellstart für „Hallo, Android“ herunterladen und damit die exemplarische Vorgehensweise durcharbeiten.
@@ -108,7 +108,7 @@ namespace Phoneword
 }
 ```
 
-In dieser Klasse erstellen Sie eine `ListActivity` und füllen sie programmgesteuert, damit Sie keine neue Layoutdatei für diese Aktivität erstellen müssen. Dies wird unter [Hello, Android Multiscreen Deep Dive („Hallo, Android“-Multiscreen – Ausführliche Erläuterungen)](~/android/get-started/hello-android/hello-android-deepdive.md) genauer erläutert.
+In dieser Klasse erstellen Sie eine `ListActivity` und füllen sie programmgesteuert, damit Sie keine neue Layoutdatei für diese Aktivität erstellen müssen. Dies wird unter [Hello, Android Multiscreen Deep Dive („Hallo, Android“-Multiscreen – Ausführliche Erläuterungen)](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md) genauer erläutert.
 
 ### <a name="adding-a-list"></a>Hinzufügen einer Liste
 
@@ -156,7 +156,7 @@ string translatedNumber = string.Empty;
 translateButton.Click += (sender, e) =>
 {
     // Translate user's alphanumeric phone number to numeric
-    translatedNumber = PhonewordTranslator.ToNumber(phoneNumberText.Text);
+    translatedNumber = Core.PhonewordTranslator.ToNumber(phoneNumberText.Text);
     if (string.IsNullOrWhiteSpace(translatedNumber))
     {
         translatedPhoneWord.Text = "";
@@ -295,7 +295,7 @@ Aktualisieren Sie die Schaltfläche **Übersetzen**, um die Telefonnummer zur Li
 translateButton.Click += (sender, e) =>
 {
     // Translate user's alphanumeric phone number to numeric
-    translatedNumber = PhonewordTranslator.ToNumber(phoneNumberText.Text);
+    translatedNumber = Core.PhonewordTranslator.ToNumber(phoneNumberText.Text);
     if (string.IsNullOrWhiteSpace(translatedNumber))
     {
         translatedPhoneWord.Text = "";
