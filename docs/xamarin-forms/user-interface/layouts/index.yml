@@ -1,117 +1,63 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Forms-Layouts
+summary: Informationen zu Layoutklassen und Layoutkonzepten in Xamarin.Forms
 metadata:
   title: Xamarin.Forms-Layouts
-  description: Informationen zu Layoutklassen und Layoutfunktionen in Xamarin.Forms
+  description: Informationen zu Layoutklassen und Layoutkonzepten in Xamarin.Forms
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: CF6BD41F-CD4B-4576-841D-B8A49A4EC754
   author: davidbritch
   ms.author: dabritch
-  ms.date: 08/14/2019
-abstract:
-  description: Informationen zu Layoutklassen und Layoutfunktionen in Xamarin.Forms
-sections:
-  - title: null
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: choose-layout.md
-            html: 'Erfahren Sie mehr darüber, wie die wichtigsten Layoutklassen in Xamarin.Forms ihre untergeordneten Elemente positionieren und dimensionieren.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: choose-layout.md
-            title: Auswählen eines Layouts
-          - href: stack-layout.md
-            html: 'Erfahren Sie, wie Sie Ansichten in einem eindimensionalen Stapel entweder horizontal oder vertikal anordnen.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: stack-layout.md
-            title: StackLayout
-          - href: grid.md
-            html: 'Erfahren Sie, wie Sie Ansichten in Zeilen und Spalten anordnen, die proportionale oder absolute Abmessungen aufweisen können.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: grid.md
-            title: Raster
-          - href: flex-layout.md
-            html: Informationen zum horizontalen oder vertikalen Organisieren von Ansichten mithilfe von Wrapping
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: flex-layout.md
-            title: FlexLayout
-          - href: relative-layout.md
-            html: 'Informationen zum Organisieren von Ansichten durch Festlegen von Einschränkungen, die relativ zu den Eigenschaften der Layoutansichten oder gleichgeordneten Ansichten sind'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: RelativeLayout
-          - href: absolute-layout.md
-            html: 'Informationen zum Organisieren von Ansichten durch Festlegen von Koordinaten- und Größenwerten, die proportional oder absolut sein können'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: AbsoluteLayout
-          - href: scroll-view.md
-            html: 'Informationen zum Ermöglichen von Scrollen, wenn eine Ansicht nicht innerhalb der Bildschirmgrenzen passt'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: scroll-view.md
-            title: ScrollView
-          - href: contentview.md
-            html: 'Erfahren Sie, wie Sie ein ContentView-Element zum Erstellen eines benutzerdefinierten Steuerelements verwenden.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: contentview.md
-            title: ContentView
-          - href: frame.md
-            html: 'Informationen zum Umschließen einer Ansicht mit einem Frame, der mit Farbe, Schlagschatten und anderen Optionen konfiguriert werden kann'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: frame.md
-            title: Frame
-          - href: layout-options.md
-            html: Informationen zum Definieren der Ausrichtung einer Ansicht mit dem übergeordneten Layout
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: layout-options.md
-            title: LayoutOptions
-          - href: margin-and-padding.md
-            html: Informationen zum Steuern der Distanz zwischen einem Element und dessen angrenzenden Elementen sowie dessen untergeordneten Elementen
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: margin-and-padding.md
-            title: Ränder und Abstände
-          - href: device-orientation.md
-            html: Informationen zum Konfigurieren und Reagieren auf Änderungen bei der Geräteausrichtung
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: device-orientation.md
-            title: Geräteausrichtung
-          - href: tablet.md
-            html: Informationen zum Optimieren des Layouts für Tablet- und Desktopanwendungen
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: tablet.md
-            title: Tablet- und Desktoplayout
-          - href: bindable-layouts.md
-            html: 'Informationen zum Aktivieren von Layoutklassen, um deren Inhalt zu generieren und dessen Darstellung durch Bindung an Elemente festzulegen'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: bindable-layouts.md
-            title: Bindbare Layouts
-          - href: layout-compression.md
-            html: 'Informationen zum Entfernen bestimmter Layoutobjekte aus der visuellen Struktur, um die Leistung des Seitenrenderings zu verbessern'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: layout-compression.md
-            title: Layoutkomprimierung
-          - href: custom.md
-            html: Informationen zum Erstellen einer für die Ausrichtung sensiblen benutzerdefinierten Layoutklasse
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: custom.md
-            title: Benutzerdefiniertes Layout
+  ms.date: 01/03/2020
+  ms.openlocfilehash: e8d3e6d57bab88c85f0058ee2c974d932bd07b37
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679739"
+landingContent:
+- title: Kernlayouts
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Auswählen eines Layouts
+      url: choose-layout.md
+    - text: AbsoluteLayout
+      url: absolute-layout.md
+    - text: FlexLayout
+      url: flex-layout.md
+    - text: Raster
+      url: grid.md
+    - text: RelativeLayout
+      url: relative-layout.md
+    - text: StackLayout
+      url: stack-layout.md
+- title: Weitere Layouts
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ContentView
+      url: contentview.md
+    - text: Frame
+      url: frame.md
+    - text: ScrollView
+      url: scroll-view.md
+- title: Layoutkonzepte
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Bindbare Layouts
+      url: bindable-layouts.md
+    - text: Benutzerdefinierte Layouts
+      url: custom.md
+    - text: Geräteausrichtung
+      url: device-orientation.md
+    - text: LayoutOptions
+      url: layout-options.md
+    - text: Layoutkomprimierung
+      url: layout-compression.md
+    - text: Ränder und Abstände
+      url: margin-and-padding.md
+    - text: Tablet- und Desktoplayout
+      url: tablet.md
