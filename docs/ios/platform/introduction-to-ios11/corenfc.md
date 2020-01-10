@@ -7,18 +7,18 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2e19fd37270d3c96cb175d30dc786a95a01c3fcf
+ms.sourcegitcommit: 2ed3d1c933fce4ce332128f125acb2f23f9e0f1a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032196"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75753017"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Kern-NFC in xamarin. IOS
 
 _Lesen von NFC-Tags (Near Field Communication) mithilfe von IOS 11_
 
-Correfc ist ein neues Framework in ios 11, das den Zugriff auf das NFC-Radio ( _Near Field Communication_ ) zum Lesen von Tags aus Apps ermöglicht. Es funktioniert auf iPhone 7, 7 Plus, 8, 8 Plus und X.
+Correfc ist ein neues Framework in ios 11, das den Zugriff auf das NFC-Radio ( _Near Field Communication_ ) zum Lesen von Tags aus Apps ermöglicht. Corenfc funktioniert mit den Modellen iPhone 7, iPhone 7 Plus, iPhone 8, iPhone 8 Plus, iPhone X, iPhone XS und iPhone 11 (während iPhone 6-und iPhone 6 Plus-Modelle über NFC-Zahlungs Funktionen verfügen, die corenfc nicht unterstützen).
 
 Der NFC-TagReader in IOS-Geräten unterstützt alle NFC-Tagtypen von 1 bis 5, die Informationen zum _NFC-Datenaustausch Format_ (ndef) enthalten.
 
@@ -31,7 +31,7 @@ Beachten Sie die folgenden Einschränkungen:
 
 Auf dieser Seite wird die Konfiguration beschrieben, die für die Verwendung von corenfc und die Verwendung der API mithilfe des [Beispielcodes "nfctagreader](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)" erforderlich ist.
 
-## <a name="configuration"></a>Konfiguration
+## <a name="configuration"></a>-Konfiguration
 
 Zum Aktivieren von Cor-FC müssen Sie drei Elemente in Ihrem Projekt konfigurieren:
 
@@ -78,7 +78,7 @@ Die-Schnittstelle verfügt über zwei Methoden, die implementiert werden müssen
 - `DidDetect` – wird aufgerufen, wenn ein Transponder erfolgreich gelesen wurde.
 - `DidInvalidate` – wird aufgerufen, wenn ein Fehler auftritt oder das 60-Sekunden-Timeout erreicht wird.
 
-#### <a name="diddetect"></a>Diddetect
+#### <a name="diddetect"></a>DidDetect
 
 Im Beispielcode wird jede gescannte Nachricht einer Tabellenansicht hinzugefügt:
 
@@ -98,7 +98,7 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 
 Diese Methode kann mehrmals aufgerufen werden (und es kann ein Array von Nachrichten übermittelt werden), wenn die Sitzung mehrere Transponder Lesevorgänge zulässt. Dies wird mit dem dritten Parameter der `Start`-Methode festgelegt (in [Schritt 2](#step2)erläutert).
 
-#### <a name="didinvalidate"></a>Didinvalidate
+#### <a name="didinvalidate"></a>DidInvalidate
 
 Die Invalidierung kann aus verschiedenen Gründen erfolgen:
 
@@ -155,11 +155,11 @@ Session.InvalidateSession();
 
 In beiden Fällen wird die `DidInvalidate`-Methode des Delegaten aufgerufen.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 Corenfc ermöglicht der APP das Lesen von Daten aus NFC-Tags. Es unterstützt das Lesen einer Vielzahl von tagformaten (ndef-Typen 1 bis 5), unterstützt jedoch weder das Schreiben noch das formatieren.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [NF ctagreader (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
 - [Einführung in Core NFC (WWDC) (Video)](https://developer.apple.com/videos/play/wwdc2017/718/)
