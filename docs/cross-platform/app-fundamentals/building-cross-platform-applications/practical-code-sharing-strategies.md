@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fdc9fd6eac8c7b0c9ec91eb66b5d6723cda71006
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ad576f10fc0af5d96396d90b3e502e21da1182d
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016838"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728238"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>Teil 5: Praktische Strategien für die Codefreigabe
 
@@ -155,7 +155,7 @@ string filePath = Path.Combine (
         Environment.GetFolderPath (Environment.SpecialFolder.Personal),
         "MyFile.txt");
 System.IO.File.WriteAllText (filePath, "Contents of text file");
-Console.WriteLine (System.IO.ReadAllText (filePath));
+Console.WriteLine (System.IO.File.ReadAllText (filePath));
 ```
 
 Finden Sie in der Xamarin.iOS [arbeiten mit dem Dateisystem](~/ios/app-fundamentals/file-system.md) Dokument Weitere Informationen zu iOS-spezifische Filesystem-Funktionen. Cross-Platform-Datei schreiben, denken Sie daran, dass einige Dateisysteme Groß-/Kleinschreibung beachtet und anderen Verzeichnistrennzeichen. Es wird empfohlen, immer die gleiche Groß-/Kleinschreibung bei Dateinamen verwenden und die `Path.Combine()` Methode, wenn eine Datei oder Verzeichnis Pfade zu erstellen.
@@ -190,7 +190,7 @@ Der Isolated Storage-APIs sind nicht verfügbar in [Portable Class Libraries](~/
 
 ### <a name="cross-platform-file-access-in-pcls"></a>Plattformübergreifende Dateizugriff in PCLs
 
-Es gibt auch ein PCL-kompatible Nuget – [PCLStorage](https://www.nuget.org/packages/PCLStorage/) –, plattformübergreifende Dateizugriff Einrichtungen für Xamarin-Unterstützung von Plattformen und die neuesten Windows-APIs.
+Außerdem gibt es eine PCL-kompatible nuget-– [pclstorage](https://www.nuget.org/packages/PCLStorage/) –, die plattformübergreifenden Dateizugriff für xamarin-unterstützte Plattformen und die neuesten Windows-APIs bietet.
 
 ## <a name="network-operations"></a>Netzwerkvorgänge
 
@@ -205,7 +205,7 @@ Die meisten mobile Anwendungen müssen die Netzwerkkomponente, z.B.:
 
 ### <a name="httpclient"></a>HttpClient
 
-Die `HttpClient` -Klasse in der `System.Net.Http` Namespace ist in Xamarin.iOS, Xamarin.Android und die meisten Windows-Plattformen verfügbar. Es gibt eine [Microsoft HTTP Client Library Nuget](https://www.nuget.org/packages/Microsoft.Net.Http/) , die verwendet werden kann, um diese API zu Portable Class Libraries (und Windows Phone 8 Silverlight) machen.
+Die `HttpClient` -Klasse in der `System.Net.Http` Namespace ist in Xamarin.iOS, Xamarin.Android und die meisten Windows-Plattformen verfügbar. Es gibt eine [Microsoft HTTP-Client Bibliothek](https://www.nuget.org/packages/Microsoft.Net.Http/) , mit der Sie diese API in Portable Klassenbibliotheken (und Windows Phone 8 Silverlight) einbringen können.
 
 ```csharp
 var client = new HttpClient();
@@ -278,7 +278,7 @@ Gibt es eine [Xamarin.iOS-Beispiel](https://github.com/xamarin/monotouch-samples
 
 Finden Sie in unserer Dokumentation auf [arbeiten mit Webdiensten](~/cross-platform/data-cloud/web-services/index.md), die Zugriff auf REST, enthält, SOAP- und WCF-Endpunkte, die unter Verwendung von Xamarin.iOS. Es ist möglich, webdienstanforderungen Hand-selbst zu erstellen und Analysieren von Antworten, jedoch stehen Ihnen Bibliotheken zur Verfügung, um dies viel einfacher, einschließlich Azure, RestSharp und ServiceStack. Selbst grundlegende WCF-Dienstvorgänge können in Xamarin-apps zugegriffen werden.
 
-### <a name="azure"></a>Azure
+### <a name="azure"></a>Azure-
 
 Microsoft Azure ist eine Cloudplattform, die eine Vielzahl von Diensten für mobile apps, einschließlich der datenspeicherung und -Synchronisierung und Pushbenachrichtigungen bereitstellt.
 

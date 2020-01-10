@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 65a613f229f04a4ab01ca73a9c53c026add49f84
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029051"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728147"
 ---
 # <a name="viewpager-with-views"></a>ViewPager mit Ansichten
 
-_viewpager ist ein Layoutmanager, mit dem Sie die Gestural-Navigation implementieren können. Die Gestural-Navigation ermöglicht dem Benutzer das Schwenken von Links und rechts zum Durchlaufen von Datenseiten. In diesem Handbuch wird erläutert, wie Sie eine Benutzeroberfläche mit "viewpager" und "PagerTabStrip" implementieren können, indem Sie Ansichten als Datenseiten verwenden (im nachfolgenden Handbuch wird erläutert, wie Fragmente für die Seiten verwendet werden)._
+_Viewpager ist ein Layoutmanager, mit dem Sie die Gestural-Navigation implementieren können. Die Gestural-Navigation ermöglicht dem Benutzer das Schwenken von Links und rechts zum Durchlaufen von Datenseiten. In diesem Handbuch wird erläutert, wie Sie eine Benutzeroberfläche mit "viewpager" und "PagerTabStrip" implementieren können, indem Sie Ansichten als Datenseiten verwenden (im nachfolgenden Handbuch wird erläutert, wie Fragmente für die Seiten verwendet werden)._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Diese Anleitung enthält eine exemplarische Vorgehensweise, in der eine schrittweise Anleitung zum Implementieren eines Bild Katalogs von Laub-und Evergreen-Strukturen mit `ViewPager` beschrieben wird. In dieser APP wird der Benutzer nach links und rechts durch einen "Struktur Katalog", um Baum Bilder anzuzeigen. Am oberen Rand jeder Seite des Katalogs wird der Name der Struktur in einem`PagerTabStrip`aufgeführt, und in einem `ImageView`wird ein Bild der Struktur angezeigt. Ein Adapter wird verwendet, um die `ViewPager` mit dem zugrunde liegenden Datenmodell zu verbinden. Diese APP implementiert einen Adapter, der von `PagerAdapter`abgeleitet ist. 
 
@@ -26,7 +26,7 @@ Obwohl `ViewPager`-basierte apps häufig mit `Fragment`s implementiert werden, g
 
 ## <a name="start-an-app-project"></a>Starten eines App-Projekts
 
-Erstellen Sie ein neues Android-Projekt namens **treepager** (Weitere Informationen zum Erstellen neuer Android-Projekte finden Sie [unter Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ). Starten Sie als nächstes den nuget-Paket-Manager. (Weitere Informationen zum Installieren von nuget-Paketen finden Sie unter [Exemplarische Vorgehensweise: Einschließen eines nuget-Projekts in das Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Suchen und Installieren der **Android-Unterstützungs Bibliothek V4**: 
+Erstellen Sie ein neues Android-Projekt namens **treepager** (Weitere Informationen zum Erstellen neuer Android-Projekte finden Sie [unter Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ). Starten Sie als nächstes den nuget-Paket-Manager. (Weitere Informationen zum Installieren von nuget-Paketen finden Sie unter Exemplarische Vorgehensweise [: Einschließen eines nuget-Pakets in Ihr Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Suchen und Installieren der **Android-Unterstützungs Bibliothek V4**: 
 
 [![Screenshot der im nuget-Paket-Manager ausgewählten Unterstützung von v4 nuget](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
@@ -91,7 +91,7 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-Dieser Code führt folgende Schritte aus:
+Dieser Code bewirkt Folgendes:
 
 1. Legt die Ansicht aus der **Main. axml** -layoutressource fest.
 
@@ -207,7 +207,7 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 }
 ```
 
-Dieser Code führt folgende Schritte aus:
+Dieser Code bewirkt Folgendes:
 
 1. Instanziiert einen neuen `ImageView`, um das Struktur Bild an der angegebenen Position anzuzeigen. Der `MainActivity` der APP ist der Kontext, der an den `ImageView`-Konstruktor übergeben wird.
 
@@ -234,17 +234,17 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 }
 ```
 
-Dieser Code führt folgende Schritte aus:
+Dieser Code bewirkt Folgendes:
 
 1. Wandelt den bestandenen Container `View` in einen `ViewPager` Verweis um.
 
-2. Wandelt das bestandene Java-Objekt (`view`) C# in einen`View`(`view as View`) um.
+2. Wandelt das bestandene Java-Objekt (`view`) C# in einen `View` (`view as View`) um.
 
 3. Entfernt die Ansicht aus der `ViewPager`. 
 
 ### <a name="implement-isviewfromobject"></a>Implementieren von isviewfromubject
 
-Wenn der Benutzer die Seiten des Inhalts nach links und rechts bewegt, ruft `ViewPager` `IsViewFromObject` auf, um zu überprüfen, ob die untergeordnete `View` an der angegebenen Position mit dem Objekt des Adapters für dieselbe Position verknüpft ist (daher wird das Objekt des Adapters als *Objekt Schlüssel* bezeichnet). ). Für relativ einfache Apps ist die Zuordnung eine der Identitäts &ndash; der Objekt Schlüssel des Adapters bei dieser Instanz ist die Ansicht, die zuvor über `InstantiateItem`an die `ViewPager` zurückgegeben wurde. Bei anderen apps kann es sich bei dem Objekt Schlüssel jedoch um eine andere adapterspezifische Klasseninstanz handeln, die der untergeordneten Ansicht zugeordnet ist, die `ViewPager` an dieser Stelle anzeigt. Nur der Adapter weiß, ob die bestandene Sicht und der Objekt Schlüssel zugeordnet sind oder nicht. 
+Wenn der Benutzer die Seiten des Inhalts nach links und rechts bewegt, ruft `ViewPager` `IsViewFromObject` auf, um zu überprüfen, ob die untergeordnete `View` an der angegebenen Position mit dem Objekt des Adapters für dieselbe Position verknüpft ist (daher wird das Objekt des Adapters als *Objekt Schlüssel*bezeichnet). Für relativ einfache Apps ist die Zuordnung eine der Identitäts &ndash; der Objekt Schlüssel des Adapters bei dieser Instanz ist die Ansicht, die zuvor über `InstantiateItem`an die `ViewPager` zurückgegeben wurde. Bei anderen apps kann es sich bei dem Objekt Schlüssel jedoch um eine andere adapterspezifische Klasseninstanz handeln, die der untergeordneten Ansicht zugeordnet ist, die `ViewPager` an dieser Stelle anzeigt. Nur der Adapter weiß, ob die bestandene Sicht und der Objekt Schlüssel zugeordnet sind oder nicht. 
 
 `IsViewFromObject` müssen implementiert werden, damit `PagerAdapter` ordnungsgemäß funktioniert. Wenn `IsViewFromObject` `false` für eine bestimmte Position zurückgibt, wird die Ansicht von `ViewPager` nicht an dieser Position angezeigt. In der `TreePager`-APP *ist* der von `InstantiateItem` zurückgegebene Objekt Schlüssel die Seite `View` einer Struktur. Daher muss der Code nur die Identität überprüfen (d. h. der Objekt Schlüssel und die Ansicht sind identisch). Ersetzen Sie den Code `IsViewFromObject` durch folgenden Code: 
 
@@ -323,10 +323,10 @@ Sie können hin und her schwenken, um jedes Bild der beschrifteten Struktur im K
 
 Beachten Sie, dass die Unterstreichung entfernt wird, wenn Sie in `PagerTitleStrip`konvertieren. 
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In dieser exemplarischen Vorgehensweise wurde ein schrittweises Beispiel für das Erstellen einer einfachen `ViewPager`basierten App ohne Verwendung `Fragment`s bereitgestellt. Es wurde eine Beispiel Datenquelle mit Bildern und Beschriftungs Zeichenfolgen vorgestellt, ein `ViewPager` Layout zum Anzeigen der Bilder und eine `PagerAdapter`-Unterklasse, die die `ViewPager` mit der Datenquelle verbindet. Um dem Benutzer beim Navigieren durch das DataSet zu helfen, sind Anweisungen enthalten, die erläutern, wie Sie eine `PagerTabStrip` oder `PagerTitleStrip` hinzufügen, um die Bild Beschriftung am oberen Rand jeder Seite anzuzeigen. 
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Treepager (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)

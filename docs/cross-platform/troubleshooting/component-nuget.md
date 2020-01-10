@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014345"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728251"
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualisieren von Komponenten verweisen auf nuget
 
@@ -37,11 +37,11 @@ Wenn Sie ein Projekt in Visual Studio laden, wird das folgende Dialogfeld angeze
 
 So entfernen Sie eine Komponente aus dem Projekt:
 
-1. Öffnen Sie die **csproj** -Datei. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt entladen**aus. 
+1. Öffnen Sie die Datei **.csproj**. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt entladen**aus. 
 
 2. Klicken Sie erneut mit der rechten Maustaste auf das entladene Projekt, und wählen Sie dann **Bearbeiten {your-Project-Name}. csproj**aus.
 
-3. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Dies sollte in etwa wie im folgenden Beispiel aussehen:
+3. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Er sollte ähnlich wie im folgenden Beispiel aussehen:
 
     ```xml
     <ItemGroup>
@@ -76,7 +76,7 @@ So entfernen Sie eine Komponente aus dem Projekt:
 
 1. Öffnen Sie die CSPROJ-Datei. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie Extras **> Datei bearbeiten**aus.
 
-2. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Dies sollte in etwa wie im folgenden Beispiel aussehen:
+2. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Er sollte ähnlich wie im folgenden Beispiel aussehen:
 
     ```xml
     <ItemGroup>
@@ -174,7 +174,7 @@ Klicken Sie mit der rechten Maustaste auf die Komponente in der Projekt Mappe, u
 
 Hierdurch werden die Komponente und alle Verweise gelöscht. Dadurch wird der Build unterbricht, bis Sie das entsprechende nuget-Paket hinzufügen, um es zu ersetzen.
 
-#### <a name="add-the-nuget-package"></a>Hinzufügen des nuget-Pakets
+#### <a name="add-the-nuget-package"></a>Hinzufügen des NuGet-Pakets
 
 1. Klicken Sie mit der rechten Maustaste auf den Knoten **Pakete** , und wählen Sie **Pakete hinzufügen...** aus.
 2. Suchen Sie nach dem Namen oder dem Autor des nuget-Austauschs:
@@ -201,7 +201,7 @@ Dies bedeutet, dass die Komponente nicht heruntergeladen und installiert wird, w
 
 Viele Komponentenhersteller arbeiten noch an der Migration zu nuget, und andere (einschließlich kommerziell verfügbarer Produkte) untersuchen möglicherweise Alternative Übermittlungs Optionen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Liste der gängigen xamarin-Plug-ins und-Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Installieren und Verwenden eines nuget-Pakets (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)

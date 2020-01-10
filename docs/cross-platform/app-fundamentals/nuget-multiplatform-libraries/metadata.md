@@ -6,12 +6,12 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5965b3f78bfc086b1cc6030a02f1cabafaae29d3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e71ff86869c42d478fbf1ee3f6de5bff59431fc
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016740"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728212"
 ---
 # <a name="editing-nuget-metadata"></a>Bearbeiten von nuget-Metadaten
 
@@ -27,7 +27,7 @@ Die Registerkarte **Allgemein** enthält vier Felder, die eingegeben werden müs
 
 [![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
 
-- **ID** – der Paket Bezeichner, der innerhalb von Nuget.org eindeutig sein sollte (oder wo das Paket verteilt wird). Befolgen Sie diese [Anleitung](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) , und verwenden Sie nur Zeichen, die in einer URL gültig sind (ohne Leerzeichen, und vermeiden Sie die meisten Sonderzeichen).
+- **ID** – der Paket Bezeichner, der innerhalb von NuGet.org eindeutig sein sollte (oder wo das Paket verteilt wird). Befolgen Sie diese [Anleitung](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) , und verwenden Sie nur Zeichen, die in einer URL gültig sind (ohne Leerzeichen, und vermeiden Sie die meisten Sonderzeichen).
 - **Version** – wählen Sie eine Versionsnummer aus, [die den nuget-Versions Regeln](https://docs.microsoft.com/nuget/create-packages/dependency-versions)entspricht.
 - **Autoren** – durch Trennzeichen getrennte Liste von Namen.
 - **Beschreibung** – Übersicht über die Features des Pakets, das angezeigt wird, wenn Benutzer das Paket auswählen.
@@ -51,6 +51,6 @@ Weitere Informationen zu den erforderlichen und optionalen Feldern finden Sie in
 > [!NOTE]
 > Wenn das nuget-Paket auf [NuGet.org](https://www.nuget.org) verteilt wird, wird empfohlen, so viele Informationen wie möglich bereitzustellen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [NUSPEC-Verweis](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)

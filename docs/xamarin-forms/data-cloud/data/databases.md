@@ -4,123 +4,289 @@ description: Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über di
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/21/2018
-ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/05/2019
+ms.openlocfilehash: 190aeb83456fa7c7ba8a9415b02ab56f3f8779da
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739176"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728277"
 ---
 # <a name="xamarinforms-local-databases"></a>Lokale Datenbanken von Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
-_Xamarin. Forms unterstützt datenbankgesteuerte Anwendungen, die die SQLite-Datenbank-Engine verwenden. Dadurch können Objekte in frei gegebenem Code geladen und gespeichert werden. In diesem Artikel wird beschrieben, wie xamarin. Forms-Anwendungen mithilfe von SQLite.NET Daten in einer lokalen SQLite-Datenbank lesen und schreiben können._
+Die SQLite-Datenbank-Engine ermöglicht xamarin. Forms-Anwendungen das Laden und Speichern von Datenobjekten in frei gegebenem Code. Die Beispielanwendung verwendet eine SQLite-Datenbanktabelle zum Speichern von TODO-Elementen. In diesem Artikel wird beschrieben, wie Sie sqlite.net in frei gegebenem Code verwenden, um Informationen in einer lokalen Datenbank zu speichern und abzurufen.
 
-## <a name="overview"></a>Übersicht
+[![Screenshots der App "App-Liste" unter IOS und Android](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "App-Liste unter IOS und Android")
 
-Xamarin.Forms-Apps können das Paket [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) verwenden, um Datenbankvorgänge in freigegebenen Code zu integrieren, indem auf die `SQLite`-Klassen verwiesen wird, die im NuGet-Paket enthalten sind. Datenbankvorgänge können im Projekt der .NET Standard-Bibliothek der Xamarin.Forms-Projektmappe definiert werden.
+Integrieren Sie sqlite.net in Mobile Apps, indem Sie die folgenden Schritte ausführen:
 
-Bei der zugehörigen [Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) handelt es sich um eine einfache App für To-do-Listen. Auf den folgenden Screenshots wird veranschaulicht, wie das Beispiel auf jeder Plattform angezeigt wird:
+1. [Installieren Sie das nuget-Paket](#install-the-sqlite-nuget-package).
+1. [Konfigurieren von Konstanten](#configure-app-constants).
+1. [Erstellen Sie eine Datenbankzugriffs Klasse](#create-a-database-access-class).
+1. [Zugreifen auf Daten in xamarin. Forms](#access-data-in-xamarinforms).
+1. [Erweiterte Konfiguration](#advanced-configuration).
 
-[![Xamarin. Forms Database example screenshots](databases-images/todo-list-sml.png "Screenshots der ersten Seite auf der Liste")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste") [ ![xamarin. Forms Database example screenshots](databases-images/todo-list-sml.png "Screenshots der ersten Seite auf der Liste")](databases-images/todo-list.png#lightbox "Screenshots der ersten Seite auf der Liste")
+## <a name="install-the-sqlite-nuget-package"></a>Installieren des SQLite-nuget-Pakets
 
-<a name="Using_SQLite_with_PCL" />
+Verwenden Sie den nuget-Paket-Manager, um nach **SQLite-net-PCL** zu suchen und die neueste Version dem Projekt mit dem freigegebenen Code hinzuzufügen.
 
-## <a name="using-sqlite"></a>Verwendung von SQLite
-
-Verwenden Sie zum Hinzufügen des SQLite-Support zu einer .NET Standard-Bibliothek von Xamarin.Forms die Suchfunktion von NuGet, um **sqlite-net-pcl** zu finden und das neueste Paket zu installieren:
-
-![Hinzufügen von nuget sqlite.net PCL-Paket](databases-images/vs2017-sqlite-pcl-nuget.png "Hinzufügen von nuget sqlite.net PCL-Paket")
-
-Es gibt mehrere NuGet-Pakete mit ähnlichen Namen. Das richtige Paket verfügt über folgende Attribute:
+Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über die folgenden Attribute:
 
 - **Erstellt von:** Frank A. Krueger
-- **ID:** sqlite-net-pcl
-- **NuGet-Link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **ID:** SQLite-net-PCL
+- **Nuget-Link:** [SQLite-net-PCL](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
 > Verwenden Sie trotz des Paketnamens in .NET Standard-Projekten das NuGet-Paket **sqlite-net-pcl**.
 
-Wenn der Verweis hinzugefügt wurde, fügen Sie eine Eigenschaft zur `App`-Klasse hinzu, die einen lokalen Dateipfad zum Speichern der Datenbank zurückgibt:
+## <a name="configure-app-constants"></a>Konfigurieren von App-Konstanten
+
+Das Beispiel Projekt enthält eine **Constants.cs** -Datei, die allgemeine Konfigurationsdaten bereitstellt:
 
 ```csharp
-static TodoItemDatabase database;
+public static class Constants
+{
+    public const string DatabaseFilename = "TodoSQLite.db3";
 
+    public const SQLite.SQLiteOpenFlags Flags =
+        // open the database in read/write mode
+        SQLite.SQLiteOpenFlags.ReadWrite |
+        // create the database if it doesn't exist
+        SQLite.SQLiteOpenFlags.Create |
+        // enable multi-threaded database access
+        SQLite.SQLiteOpenFlags.SharedCache;
+
+    public static string DatabasePath
+    {
+        get
+        {
+            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            return Path.Combine(basePath, DatabaseFilename);
+        }
+    }
+}
+```
+
+Die Konstanten Datei gibt standardmäßige `SQLiteOpenFlag` Enumerationswerte an, die verwendet werden, um die Datenbankverbindung zu initialisieren. Die `SQLiteOpenFlag` Enumeration unterstützt diese Werte:
+
+- `Create`: die Verbindung wird automatisch erstellt, wenn Sie nicht vorhanden ist.
+- `FullMutex`: die Verbindung wird im serialisierten Threading Modus geöffnet.
+- `NoMutex`: die Verbindung wird im Multithreadmodus geöffnet.
+- `PrivateCache`: die Verbindung wird nicht an dem freigegebenen Cache beteiligt, auch wenn Sie aktiviert ist.
+- `ReadWrite`: die Verbindung kann Daten lesen und schreiben.
+- `SharedCache`: die Verbindung wird am freigegebenen Cache beteiligt, wenn Sie aktiviert ist.
+- `ProtectionComplete`: die Datei ist verschlüsselt und nicht zugänglich, solange das Gerät gesperrt ist.
+- `ProtectionCompleteUnlessOpen`: die Datei wird so lange verschlüsselt, bis Sie geöffnet ist, aber auch dann zugänglich ist, wenn der Benutzer das Gerät sperrt.
+- `ProtectionCompleteUntilFirstUserAuthentication`: die Datei wird verschlüsselt, bis der Benutzer das Gerät gestartet und entsperrt hat.
+- `ProtectionNone`: die Datenbankdatei ist nicht verschlüsselt.
+
+Je nachdem, wie die Datenbank verwendet wird, müssen Sie möglicherweise unterschiedliche Flags angeben. Weitere Informationen zu `SQLiteOpenFlags`finden Sie unter [Öffnen einer neuen Datenbankverbindung](https://www.sqlite.org/c3ref/open.html) auf sqlite.org.
+
+## <a name="create-a-database-access-class"></a>Erstellen einer Datenbankzugriffs Klasse
+
+Eine Datenbank-Wrapper Klasse abstrahiert die Datenzugriffs Ebene vom Rest der app. Mit dieser Klasse wird die Abfrage Logik zentralisiert, und die Verwaltung der Daten Bank Initialisierung wird vereinfacht, sodass Daten Vorgänge einfacher umgestalten oder erweitert werden können, wenn die APP wächst. Die ToDo-APP definiert zu diesem Zweck eine `TodoItemDatabase`-Klasse.
+
+### <a name="lazy-initialization"></a>Verzögerte Initialisierung
+
+Der `TodoItemDatabase` verwendet die .net `Lazy`-Klasse, um die Initialisierung der Datenbank zu verzögern, bis der erste Zugriff erfolgt. Die Verwendung der verzögerten Initialisierung verhindert, dass der Daten Bank Ladevorgang den App-Start verzögert. Weitere Informationen finden Sie unter [Lazy&lt;t&gt; Class](https://docs.microsoft.com/dotnet/api/system.lazy-1).
+
+```csharp
+public class TodoItemDatabase
+{
+    static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
+    {
+        return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+    });
+
+    static SQLiteAsyncConnection Database => lazyInitializer.Value;
+    static bool initialized = false;
+
+    public TodoItemDatabase()
+    {
+        InitializeAsync().SafeFireAndForget(false);
+    }
+
+    async Task InitializeAsync()
+    {
+        if (!initialized)
+        {
+            if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(TodoItem).Name))
+            {
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(TodoItem)).ConfigureAwait(false);
+                initialized = true;
+            }
+        }
+    }
+
+    //...
+}
+```
+
+Die Datenbankverbindung ist ein statisches Feld, mit dem sichergestellt wird, dass eine einzelne Datenbankverbindung für die Lebensdauer der APP verwendet wird. Die Verwendung einer permanenten, statischen Verbindung bietet eine bessere Leistung als das mehrfach öffnen und Schließen von Verbindungen während einer einzelnen App-Sitzung.
+
+Die `InitializeAsync`-Methode ist dafür verantwortlich, zu überprüfen, ob bereits eine Tabelle zum Speichern von `TodoItem` Objekten vorhanden ist. Diese Methode erstellt die Tabelle automatisch, wenn Sie nicht vorhanden ist.
+
+### <a name="the-safefireandforget-extension-method"></a>Die safefireandforget-Erweiterungsmethode
+
+Wenn die `TodoItemDatabase`-Klasse instanziiert wird, muss Sie die Datenbankverbindung initialisieren, bei der es sich um einen asynchronen Prozess handelt. Aber:
+
+- Klassenkonstruktoren dürfen nicht asynchron sein.
+- Eine Async-Methode, die nicht erwartet wird, löst keine Ausnahmen aus.
+- Wenn Sie die `Wait`-Methode verwenden, wird der Thread blockiert _und_ Ausnahmen werden verschluckt
+
+Um die asynchrone Initialisierung zu starten, eine blockierende Ausführung zu vermeiden und die Möglichkeit zum Abfangen von Ausnahmen zu haben, verwendet die Beispielanwendung eine Erweiterungsmethode mit dem Namen `SafeFireAndForget`. Die `SafeFireAndForget`-Erweiterungsmethode bietet zusätzliche Funktionen für die `Task`-Klasse:
+
+```csharp
+public static class TaskExtensions
+{
+    // NOTE: Async void is intentional here. This provides a way
+    // to call an async method from the constructor while
+    // communicating intent to fire and forget, and allow
+    // handling of exceptions
+    public static async void SafeFireAndForget(this Task task,
+        bool returnToCallingContext,
+        Action<Exception> onException = null)
+    {
+        try
+        {
+            await task.ConfigureAwait(returnToCallingContext);
+        }
+
+        // if the provided action is not null, catch and
+        // pass the thrown exception
+        catch (Exception ex) when (onException != null)
+        {
+            onException(ex);
+        }
+    }
+}
+```
+
+Die `SafeFireAndForget`-Methode wartet auf die asynchrone Ausführung des bereitgestellten `Task` Objekts und ermöglicht das Anfügen eines `Action`, das aufgerufen wird, wenn eine Ausnahme ausgelöst wird.
+
+Weitere Informationen finden Sie unter [Task basiertes asynchrones Muster (Tap)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap).
+
+### <a name="data-manipulation-methods"></a>Daten Bearbeitungsmethoden
+
+Die `TodoItemDatabase`-Klasse enthält Methoden für die vier Arten von Datenbearbeitung: erstellen, lesen, bearbeiten und löschen. Die SQLite.NET-Bibliothek stellt eine einfache Objekt relationale Zuordnung (ORM) bereit, die das Speichern und Abrufen von Objekten ohne das Schreiben von SQL-Anweisungen ermöglicht.
+
+```csharp
+public static class TodoItemDatabase {
+
+    // ...
+
+    public Task<List<TodoItem>> GetItemsAsync()
+    {
+        return Database.Table<TodoItem>().ToListAsync();
+    }
+
+    public Task<List<TodoItem>> GetItemsNotDoneAsync()
+    {
+        // SQL queries are also possible
+        return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+    }
+
+    public Task<TodoItem> GetItemAsync(int id)
+    {
+        return Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+    }
+
+    public Task<int> SaveItemAsync(TodoItem item)
+    {
+        if (item.ID != 0)
+        {
+            return Database.UpdateAsync(item);
+        }
+        else
+        {
+            return Database.InsertAsync(item);
+        }
+    }
+
+    public Task<int> DeleteItemAsync(TodoItem item)
+    {
+        return Database.DeleteAsync(item);
+    }
+}
+```
+
+## <a name="access-data-in-xamarinforms"></a>Zugreifen auf Daten in xamarin. Forms
+
+Die xamarin. Forms `App`-Klasse macht eine Instanz der `TodoItemDatabase`-Klasse verfügbar:
+
+```csharp
 public static TodoItemDatabase Database
 {
-  get
-  {
-    if (database == null)
+    get
     {
-      database = new TodoItemDatabase(
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
+        if (database == null)
+        {
+            database = new TodoItemDatabase();
+        }
+        return database;
     }
-    return database;
-  }
 }
 ```
 
-Der Konstruktor `TodoItemDatabase`, der den Pfad zur Datenbankdatei als Argument verwendet, wird nachfolgend gezeigt:
+Mit dieser Eigenschaft können xamarin. Forms-Komponenten Datenabruf-und Bearbeitungsmethoden für die `Database` Instanz als Reaktion auf eine Benutzerinteraktion aufzurufen. Beispiel:
 
 ```csharp
-public TodoItemDatabase(string dbPath)
+var saveButton = new Button { Text = "Save" };
+saveButton.Clicked += async (sender, e) =>
 {
-  database = new SQLiteAsyncConnection(dbPath);
-  database.CreateTableAsync<TodoItem>().Wait();
-}
+    var todoItem = (TodoItem)BindingContext;
+    await App.Database.SaveItemAsync(todoItem);
+    await Navigation.PopAsync();
+};
 ```
 
-Durch das Bereitstellen der Datenbank als Singleton kann eine einzelne Datenbankverbindung erstellt werden, die während der Ausführung der App offen bleibt, sodass der Aufwand für das Öffnen und Schließen der Datenbank beim Ausführen des Datenbankvorgangs vermieden wird.
+## <a name="advanced-configuration"></a>Erweiterte Konfiguration
 
-Der Rest der `TodoItemDatabase`-Klasse enthält SQLite-Abfragen, die plattformübergreifend ausgeführt werden. Nachfolgend wird ein Beispielcode für eine Abfrage angezeigt. Weitere Informationen finden Sie unter [Using SQLite.NET with Xamarin.iOS (Verwenden von SQLite.NET mit Xamarin.iOS)](~/ios/data-cloud/data/using-sqlite-orm.md).
+SQLite bietet eine robuste API mit mehr Funktionen als in diesem Artikel und der Beispiel-App behandelt werden. In den folgenden Abschnitten werden Features behandelt, die für die Skalierbarkeit wichtig sind.
+
+Weitere Informationen finden Sie in der [SQLite-Dokumentation](https://www.sqlite.org/docs.html) auf sqlite.org.
+
+### <a name="write-ahead-logging"></a>Write-Ahead-Protokollierung
+
+Standardmäßig verwendet SQLite ein herkömmliches Rollback-Journal. Eine Kopie des unveränderten Daten Bank Inhalts wird in eine separate Rollback-Datei geschrieben. die Änderungen werden dann direkt in die Datenbankdatei geschrieben. Der Commit tritt auf, wenn das Rollback-Journal gelöscht wird.
+
+Bei der Write-Ahead-Protokollierung (Wal) werden Änderungen zuerst in eine separate Wal-Datei geschrieben. Im Wal-Modus ist ein Commit ein spezieller Datensatz, der an die Wal-Datei angehängt wird. Dadurch können mehrere Transaktionen in einer einzelnen Wal-Datei auftreten. Eine Wal-Datei wird in einem speziellen Vorgang, der als Prüfpunkt bezeichnet wird, in der Datenbankdatei zusammen _geführt._
+
+Wal kann für lokale Datenbanken schneller sein, da Reader und Writer einander nicht blockieren, sodass Lese-und Schreibvorgänge gleichzeitig durchführen können. Der Wal-Modus lässt jedoch keine Änderungen an der _Seitengröße_zu, fügt der Datenbank zusätzliche Dateizuordnungen hinzu und fügt den zusätzlichen _Prüf_ Punkt Vorgang hinzu.
+
+Um Wal in SQLite.net zu aktivieren, müssen Sie die `EnableWriteAheadLoggingAsync`-Methode für die `SQLiteAsyncConnection` Instanz abrufen:
 
 ```csharp
-public Task<List<TodoItem>> GetItemsAsync()
-{
-  return database.Table<TodoItem>().ToListAsync();
-}
-
-public Task<List<TodoItem>> GetItemsNotDoneAsync()
-{
-  return database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-}
-
-public Task<TodoItem> GetItemAsync(int id)
-{
-  return database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
-}
-
-public Task<int> SaveItemAsync(TodoItem item)
-{
-  if (item.ID != 0)
-  {
-    return database.UpdateAsync(item);
-  }
-  else {
-    return database.InsertAsync(item);
-  }
-}
-
-public Task<int> DeleteItemAsync(TodoItem item)
-{
-  return database.DeleteAsync(item);
-}
+await Database.EnableWriteAheadLoggingAsync();
 ```
 
-> [!NOTE]
-> Durch die Verwendung der asynchronen SQLite.Net-API können Datenbankvorgänge in Hintergrundthreads verschoben werden. Darüber hinaus muss kein zusätzlicher Parallelitätsbearbeitungscode geschrieben werden, da sich die API darum kümmert.
+Weitere Informationen finden Sie unter [SQLite Write-Ahead Logging](https://www.sqlite.org/wal.html) on sqlite.org.
 
-## <a name="summary"></a>Zusammenfassung
+### <a name="copying-a-database"></a>Kopieren einer Datenbank
 
-Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen über die SQLite-Datenbank-Engine. Dadurch ist es möglich, Objekte in freigegebenem Code zu laden und zu speichern.
+Es gibt mehrere Fälle, in denen es erforderlich sein kann, eine SQLite-Datenbank zu kopieren:
 
-Im Artikel wird hauptsächlich der **Zugriff** auf eine SQLite-Datenbank mit Xamarin.Forms beschrieben. Weitere Informationen über das Arbeiten mit SQLite.Net finden Sie in den Dokumentationen [Using SQLite.NET with Android (Verwenden von SQLite.NET mit Android)](~/android/data-cloud/data-access/using-sqlite-orm.md) oder [Using SQLite.NET with Xamarin.iOS (Verwenden von SQLite.NET mit Xamarin.iOs)](~/ios/data-cloud/data/using-sqlite-orm.md).
+- Eine Datenbank wurde mit Ihrer Anwendung ausgeliefert, muss jedoch kopiert oder in beschreibbaren Speicher auf dem mobilen Gerät verschoben werden.
+- Sie müssen eine Sicherung oder Kopie der Datenbank erstellen.
+- Sie müssen die Datenbankdatei versieren, verschieben oder umbenennen.
 
-## <a name="related-links"></a>Verwandte Links
+Im Allgemeinen ist das Verschieben, umbenennen oder Kopieren einer Datenbankdatei der gleiche Prozess wie jeder andere Dateityp mit einigen zusätzlichen Überlegungen:
 
-- [Todo Sample (Todo (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
-- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- Alle Datenbankverbindungen sollten geschlossen werden, bevor versucht wird, die Datenbankdatei zu verschieben.
+- Wenn Sie die [Write-Ahead-Protokollierung](#write-ahead-logging)verwenden, erstellt SQLite eine Datei für den freigegebenen Speicherzugriff (. SHM) und eine Datei (. Wal) (Write Ahead Log). Stellen Sie sicher, dass Sie auch alle Änderungen an diesen Dateien anwenden.
+
+Weitere Informationen finden Sie unter [Datei Behandlung in xamarin. Forms](~/xamarin-forms/data-cloud/data/files.md).
+
+## <a name="related-links"></a>Verwandte Themen
+
+- [TODO-Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+- [SQLite.net nuget-Paket](https://www.nuget.org/packages/sqlite-net-pcl/)
+- [SQLite-Dokumentation](https://www.sqlite.org/docs.html)
+- [Verwenden von SQLite mit Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
+- [Verwenden von SQLite mit IOS](~/ios/data-cloud/data/using-sqlite-orm.md)
+- [Aufgabenbasiertes asynchrones Muster (tippen)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [Lazy<T>-Klasse](https://docs.microsoft.com//api/system.lazy-1)

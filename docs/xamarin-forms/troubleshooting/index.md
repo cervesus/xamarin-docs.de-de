@@ -8,18 +8,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 93cab36b21e2fe73a0e6890140b5ebaeb32f7951
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b38e33e05b0bb9d40582611857671d6617023b35
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760037"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728316"
 ---
 # <a name="troubleshooting"></a>Problembehandlung
 
 _Häufige Fehlerbedingungen und deren Behebung_
 
-## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>Fehler: "Es kann keine Version von xamarin. Forms gefunden werden, die mit"... "kompatibel ist.
+## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>Fehler: "Es konnte keine Version von xamarin. Forms gefunden werden, die mit..." kompatibel ist.
 
 Wenn Sie alle nuget-Pakete in einer xamarin. Forms-Projekt Mappe oder in einem xamarin. Forms Android-App-Projekt aktualisieren, können die folgenden Fehler im **Paket Konsolen** Fenster angezeigt werden:
 
@@ -36,7 +36,7 @@ Unable to find a version of 'Xamarin.Forms' that is compatible with 'Xamarin.And
 
 Visual Studio für Mac (oder Visual Studio) gibt möglicherweise an, dass Updates für xamarin. Forms-nuget-Paketname *und alle Abhängigkeiten*verfügbar sind. In Xamarin Studio könnte der Knoten **Pakete** der Projekt Mappe wie folgt aussehen (die Versionsnummern können abweichen):
 
-![](images/updates-available.png "Ordner für Android-Projektpakete")
+![](images/updates-available.png "Android Project Packages Folder")
 
 Dieser Fehler kann auftreten, wenn Sie versuchen, _alle_ Pakete zu aktualisieren.
 
@@ -45,9 +45,9 @@ Dies liegt daran, dass xamarin. Forms bei Android-Projekten, die auf eine Ziel-/
 In diesem Fall sollten Sie _nur_ das **xamarin. Forms** -Paket aktualisieren, da dadurch sichergestellt wird, dass die Abhängigkeiten in kompatiblen Versionen verbleiben. Andere Pakete, die Sie Ihrem Projekt hinzugefügt haben, können auch einzeln aktualisiert werden, solange Sie nicht bewirken, dass die Android-Unterstützungspakete aktualisiert werden.
 
 > [!NOTE]
-> Wenn Sie xamarin. Forms 2.3.4 oder höher verwenden **und** die Ziel-/Kompilierungs Version Ihres Android-Projekts auf Android 7,0 (API 24) oder höher festgelegt ist, gelten die oben genannten Hardwareabhängigkeiten nicht mehr, und Sie können die Unterstützungspakete unabhängig von aktualisieren. Das xamarin. Forms-Paket.
+> Wenn Sie xamarin. Forms 2.3.4 oder höher verwenden **und** die Ziel-/Kompilierungs Version Ihres Android-Projekts auf Android 7,0 (API 24) oder höher festgelegt ist, gelten die oben genannten Hardwareabhängigkeiten nicht mehr, und Sie können die Unterstützungspakete unabhängig vom xamarin. Forms-Paket aktualisieren.
 
-### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>Zusetzen Entfernen Sie alle Pakete, und fügen Sie xamarin. Forms erneut hinzu.
+### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>Behebung: Entfernen Sie alle Pakete, und fügen Sie xamarin. Forms erneut hinzu.
 
 Wenn die **xamarin. Android. Support** -Pakete auf inkompatible Versionen aktualisiert wurden, ist die einfachste Lösung:
 

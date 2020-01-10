@@ -8,12 +8,12 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: 9fb085313e994adc486833bb25e893659aa33b4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032758"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728342"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Neuladen (Vorschau)
 
@@ -22,7 +22,7 @@ ms.locfileid: "73032758"
 
 Mit xamarin Live Neuladen können Sie **Änderungen an Ihrem XAML-Code vornehmen und diese wiedergeben, ohne dass eine andere Kompilierung und Bereitstellung erforderlich ist**. Alle Änderungen, die an Ihrem XAML-Code vorgenommen wurden, werden bei der Speicherung erneut bereitgestellt und auf dem Bereitstellungs Ziel reflektiert.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 * [Visual Studio 2017 Version 15,7 oder höher](https://visualstudio.microsoft.com/vs/) mit der Arbeitsauslastung für die **Mobile-Entwicklung mit .net** .
 * [Xamarin. Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/).
@@ -105,7 +105,7 @@ Wenn Sie einen Android-Emulator oder einen IOS-Simulator Debuggen, verwendet Liv
 
 ### <a name="does-it-require-debugging-the-app"></a>Muss die APP debuggt werden? 
 
-Nein. Tatsächlich können Sie sogar alle Ihre unterstützten Anwendungs Ziele (Android, IOS und UWP) auf einer beliebigen Anzahl von Geräten oder Simulatoren bzw. Emulatoren starten und alle Updates gleichzeitig durch sehen. 
+No. Tatsächlich können Sie sogar alle Ihre unterstützten Anwendungs Ziele (Android, IOS und UWP) auf einer beliebigen Anzahl von Geräten oder Simulatoren bzw. Emulatoren starten und alle Updates gleichzeitig durch sehen. 
 
 ## <a name="limitations"></a>Einschränkungen
 
@@ -143,7 +143,7 @@ Nein. Tatsächlich können Sie sogar alle Ihre unterstützten Anwendungs Ziele (
 
 ### <a name="app-doesnt-connect"></a>App stellt keine Verbindung her
 
-Wenn die Anwendung erstellt wird, werden die Informationen aus **Tools > Optionen > xamarin > Live Neuladen** (Hostname, Port und Verschlüsselungsschlüssel) in die APP eingebettet, sodass beim Ausführen `LiveReload.Init()` keine Kopplung oder Konfiguration erforderlich ist, um die Verbindung zu sein.
+Wenn die Anwendung erstellt wird, werden die Informationen aus **Tools > Optionen > xamarin > Live Neuladen** (Hostname, Port und Verschlüsselungsschlüssel) in die APP eingebettet, sodass beim Ausführen `LiveReload.Init()` keine Kopplung oder Konfiguration erforderlich ist, damit die Verbindung erfolgreich hergestellt werden kann.
 
 Abgesehen von den normalen Netzwerkproblemen (Firewall, Gerät in einem anderen Netzwerk) ist der Hauptgrund, warum die APP möglicherweise nicht erfolgreich eine Verbindung mit der IDE herstellt, weil die Konfiguration von der Konfiguration in Visual Studio abweicht. Dies kann bei folgenden Aktionen vorkommen:
 
@@ -170,7 +170,7 @@ Wenn Sie über eine ältere Vorschauversion verfügen und Probleme beim Deinstal
 
 ## <a name="live-reload-server"></a>Live neu laden des Servers
 
-In Szenarien, in denen eine Verbindung zwischen der laufenden app und Ihrem Computer (wie durch die Verwendung von `localhost` oder `127.0.0.1` in **Tools > Optionen > xamarin > Live Neuladen**) nicht möglich ist (d. h. Firewalls, unterschiedliche Netzwerke), können Sie einen Remote Server konfigurieren. Stattdessen werden sowohl die IDE als auch die APP mit zusammenhängt.
+In Szenarien, in denen eine Verbindung zwischen der laufenden app und Ihrem Computer (wie durch die Verwendung von `localhost` oder `127.0.0.1` in **Tools > Optionen > xamarin > Live**rebuggen) nicht möglich ist (d. h. Firewalls, unterschiedliche Netzwerke), können Sie stattdessen einen Remote Server konfigurieren, der sowohl von der IDE als auch von der APP verwendet wird.
 
 Live-Neuladen verwendet das standardmäßige [mqtt-Protokoll](https://mqtt.org/) zum Austauschen von Nachrichten und kann daher mit [Servern von Drittanbietern](https://github.com/mqtt/mqtt.github.io/wiki/servers)kommunizieren. Es stehen sogar [öffentliche Server](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (auch als *Broker*bezeichnet) zur Verfügung, die Sie verwenden können. Das Live Neuladen wurde mit `broker.hivemq.com`-und `iot.eclipse.org` Hostnamen sowie mit den von [www.cloudmqtt.com](https://www.cloudmqtt.com) und [www.cloudamqp.com](https://www.cloudamqp.com)bereitgestellten Diensten getestet. Sie können auch einen eigenen mqtt-Server in der Cloud bereitstellen, z. b. [hivemq in Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 

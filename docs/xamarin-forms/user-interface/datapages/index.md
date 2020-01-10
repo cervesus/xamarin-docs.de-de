@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1dc62066b71842e1d3b07495912fa35a549c0f1e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759685"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727939"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin. Forms-DataPages
 
-![](~/media/shared/preview.png "Diese API ist derzeit als Vorschauversion")
+![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
 > Für DataPages ist ein xamarin. Forms-Design Verweis zum Rendering erforderlich. Dies umfasst das Installieren des [xamarin. Forms. Theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) -nuget-Pakets in Ihrem Projekt, gefolgt von den nuget-Paketen [xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
@@ -27,7 +27,7 @@ DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vor
 
 Sehen Sie sich die [Anleitung](get-started.md)für die ersten Schritte an.
 
-[![](images/demo-sml.png "Beispielanwendung DataPages")](images/demo.png#lightbox "DataPages-Beispielanwendung")
+[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
 
 ## <a name="introduction"></a>Einführung
 
@@ -43,7 +43,7 @@ Die Vorschau bietet einige vorgefertigte Datenquellen, die für die Verwendung z
 * **Azuredatasource** (separates nuget)
 * **Azureeasytabledatasource** (separates nuget)
 
-Ein Beispiel für die Verwendung von finden Sie `JsonDataSource`im [Leitfaden zu](get-started.md) den ersten Schritten.
+Ein Beispiel für die Verwendung eines `JsonDataSource`finden Sie im [Leitfaden zu](get-started.md) den ersten Schritten.
 
 ### <a name="pages--controls"></a>Seiten & Steuerelementen
 
@@ -59,15 +59,15 @@ Die folgenden Seiten und Steuerelemente sind enthalten, um eine einfache Bindung
 
 Beispiele finden Sie in der [Referenz zu DataPages](controls.md) -Steuerelementen.
 
-### <a name="under-the-hood"></a>Im Hintergrund
+### <a name="under-the-hood"></a>Einblick in die Hintergründe
 
-Eine xamarin. Forms-Datenquelle entspricht der `IDataSource` -Schnittstelle.
+Eine xamarin. Forms-Datenquelle entspricht der `IDataSource`-Schnittstelle.
 
 Die xamarin. Forms-Infrastruktur interagiert mit einer Datenquelle über die folgenden Eigenschaften:
 
-* `Data`– eine schreibgeschützte Liste von Datenelementen, die angezeigt werden können.
-* `IsLoading`– ein boolescher Wert, der angibt, ob die Daten geladen und zum Rendern verfügbar sind.
-* `[key]`– ein Indexer zum Abrufen von Elementen.
+* `Data` – eine schreibgeschützte Liste von Datenelementen, die angezeigt werden können.
+* `IsLoading` – ein boolescher Wert, der angibt, ob die Daten geladen und zum Rendern verfügbar sind.
+* `[key]` – ein Indexer zum Abrufen von Elementen.
 
-Es gibt zwei Methoden `MaskKey` `UnmaskKey` , die verwendet werden können, um Datenelement Eigenschaften auszublenden (oder anzuzeigen). verhindern, dass Sie gerendert werden.)
+Es gibt zwei Methoden `MaskKey` und `UnmaskKey`, die verwendet werden können, um Datenelement Eigenschaften auszublenden (oder anzuzeigen). verhindern, dass Sie gerendert werden.)
 Der Schlüssel entspricht der benannten Eigenschaft für das Datenelement Objekt.

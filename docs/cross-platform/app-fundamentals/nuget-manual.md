@@ -6,12 +6,12 @@ ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 16b8f303555bc2f45516c3c060c0d2482f9c4954
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016776"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728225"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Manuelles Erstellen von nuget-Paketen für xamarin
 
@@ -26,7 +26,7 @@ In der nuget-Website, die [mehrere .NET Framework Versionen und Profile unterst�
 
 Die wichtigsten xamarin-Ziel-Frameworks werden heute verwendet:
 
-- **Monoandroid** -xamarin. Android
+- **MonoAndroid** - Xamarin.Android
 - **Xamarin. IOS** -xamarin. IOS- [Unified API](~/cross-platform/macios/unified/index.md) (unterstützt 64-Bit)
 - Das Mobile Profil **xamarin. Mac** -xamarin. Mac entspricht der xamarin. IOS-und xamarin. Android-API-Oberfläche.
 
@@ -53,7 +53,7 @@ Sie können die Version mit einer Reihe von Zahlen ohne Dezimaltrennzeichen ange
 
 Im obigen Abschnitt "MonoAndroid10" bedeutet "Android 1,0". Dies bedeutet lediglich, dass das [Ziel Framework](~/android/app-fundamentals/android-api-levels.md) des Projekts monoandroid, Version 1,0 oder höher, sein muss. Die Version wird im `<TargetFrameworkVersion>`-Element in der Projektdatei angegeben.
 
-So verdeutlichen Sie Folgendes:
+Zur Verdeutlichung:
 
 - **MonoAndroid403** entspricht Android 4.0.3 und höher (IE-API-Ebene 15)
 - **Xamarin. iOS10** entspricht xamarin. IOS 1,0 und höher
@@ -77,7 +77,7 @@ Einige Open Source-Beispiele, auf die Sie verweisen können:
 - [**Splat**](https://www.nuget.org/packages/Splat/) – eine Bibliothek, um die plattformübergreifende Plattform zu gestalten, die ( [Quelle](https://github.com/paulcbetts/Splat)anzeigen) sein sollte.
 - [**Ngraphics**](https://www.nuget.org/packages/NGraphics/) : eine plattformübergreifende Bibliothek zum Rendern von Vektorgrafiken in .net ( [Quelle](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec)anzeigen).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Nugetizer-3000 automatisierte nuget-Erstellung](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
 - [Einschließen eines nuget-Projekts in Ihr Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

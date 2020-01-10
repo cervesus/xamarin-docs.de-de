@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005454"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728329"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Hinzufügen von AppCompat und Material Design
 
@@ -21,7 +21,7 @@ _Gehen Sie folgendermaßen vor, um vorhandene xamarin. Forms Android-Apps für d
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 In diesen Anweisungen wird erläutert, wie Sie Ihre vorhandenen xamarin. Forms Android-Anwendungen aktualisieren, um die AppCompat-Bibliothek zu verwenden und Material Design in der Android-Version Ihrer xamarin. Forms-apps zu aktivieren.
 
@@ -84,7 +84,7 @@ Im Ordner **Values-V21** muss ein zusätzlicher Stil enthalten sein, um bestimmt
 
 Um sicherzustellen, dass diese neuen Design Informationen verwendet werden, legen Sie "Design" in der Datei " **androidmanifest** " fest, indem Sie `android:theme="@style/MyTheme"` hinzufügen (belassen Sie den restlichen XML-Code unverändert).
 
-**Properties/androidmanifest. XML**
+**Properties/AndroidManifest.xml**
 
 ```xml
 ...
