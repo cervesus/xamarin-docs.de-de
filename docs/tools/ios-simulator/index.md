@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: 8313af47882b1c8c47f1e82f62f0a43e4e9c704c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
+ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029715"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886592"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>iOS-Remotesimulator für Windows
 
@@ -72,3 +72,12 @@ Um den remoten IOS-Simulator für Windows zu deaktivieren, navigieren Sie zu Ext
 [![Kontrollkästchen zur Verwendung des Simulators](images/options-sml.png "Kontrollkästchen zur Verwendung des Simulators")](images/options.png#lightbox)
 
 Wenn diese Option deaktiviert ist, öffnet das Debuggen den IOS-Simulator auf dem verbundenen Mac-buildhost.
+
+## <a name="troubleshooting"></a>Problembehandlung
+
+Wenn Probleme mit dem remoten IOS-Simulator auftreten, können Sie die Protokolle an den folgenden Speicherorten anzeigen:
+
+- **Mac** – `~/Library/Logs/Xamarin/Simulator.Server`
+- **Windows** : `%LOCALAPPDATA%\Xamarin\Logs\Xamarin.Simulator`
+
+Wenn Sie [ein Problem in Visual Studio melden](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio), ist es möglicherweise hilfreich, diese Protokolle anzufügen (es gibt Optionen, um Uploads privat zu halten).
