@@ -613,8 +613,9 @@
         - name: Übersicht
           href: deploy-test/index.md
         - name: App-Verteilung
-          href: deploy-test/app-distribution/index.md
           items:
+            - name: Übersicht
+              href: deploy-test/app-distribution/index.md
             - name: App Store-Verteilung
               href: deploy-test/app-distribution/app-store-distribution/index.md
               items:
@@ -626,7 +627,7 @@
               href: deploy-test/app-distribution/in-house-distribution.md
             - name: Ad-hoc-Verteilung
               href: deploy-test/app-distribution/ad-hoc-distribution.md
-            - name: Die „iTunesMetadata.plist“-Datei
+            - name: Die Datei „iTunesMetadata.plist“
               href: deploy-test/app-distribution/itunesmetadata.md
             - name: IPA-Unterstützung
               href: deploy-test/app-distribution/ipa-support.md
