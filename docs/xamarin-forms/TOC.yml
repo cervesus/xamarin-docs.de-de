@@ -10,18 +10,75 @@
           href: ~/get-started/requirements.md
         - name: Installation
           href: ~/get-started/installation/index.md
-        - name: Erstellen Ihrer ersten App
+          items:
+            - name: Installieren von Xamarin unter Windows
+              href: ~/get-started/installation/windows.md
+              items:
+                - name: Installieren von Xamarin-Vorschauversionen (Windows)
+                  href: ~/get-started/installation/windows-preview.md
+            - name: Installieren von Visual Studio für Mac
+              href: /visualstudio/mac/installation/
+              items:
+                - name: Installieren von Xamarin-Vorschauversionen (Mac)
+                  href: /visualstudio/mac/update/
+            - name: Xamarin-Firewall-Konfigurationsanleitung
+              href: ~/get-started/installation/firewall.md
+            - name: Deinstallieren von Xamarin
+              href: ~/get-started/installation/uninstalling-xamarin.md
+        - name: Erste App
           href: ~/get-started/first-app/index.md
-        - name: 'Schnellstart: einseitige App'
-          href: ~/get-started/quickstarts/single-page.md
-        - name: 'Schnellstart: mehrseitige App'
-          href: ~/get-started/quickstarts/multi-page.md
-        - name: 'Schnellstart: Lokale Datenbank'
-          href: ~/get-started/quickstarts/database.md
-        - name: 'Schnellstart: Formatierung'
-          href: ~/get-started/quickstarts/styling.md
-        - name: Vertiefung
-          href: ~/get-started/quickstarts/deepdive.md
+        - name: Schnellstarts
+          href: ~/get-started/quickstarts/index.md
+          items:
+            - name: Datei > Neu
+              href: ~/get-started/quickstarts/single-page.md
+            - name: Mehrseitig
+              href: ~/get-started/quickstarts/multi-page.md
+            - name: Datenbank
+              href: ~/get-started/quickstarts/database.md
+            - name: Format
+              href: ~/get-started/quickstarts/styling.md
+            - name: Vertiefung
+              href: ~/get-started/quickstarts/deepdive.md
+        - name: Tutorials
+          href: ~/get-started/tutorials/index.yml
+          items:
+            - name: Stapellayout
+              href: ~/get-started/tutorials/stacklayout/index.yml
+            - name: Bezeichnung
+              href: ~/get-started/tutorials/label/index.yml
+            - name: Schaltfläche
+              href: ~/get-started/tutorials/button/index.yml
+            - name: Texteintrag
+              href: ~/get-started/tutorials/entry/index.yml
+            - name: Text-Editor
+              href: ~/get-started/tutorials/editor/index.yml
+            - name: Bilder
+              href: ~/get-started/tutorials/image/index.yml
+            - name: Rasterlayout
+              href: ~/get-started/tutorials/grid/index.yml
+            - name: Listen
+              href: ~/get-started/tutorials/listview/index.yml
+            - name: Popupelemente
+              href: ~/get-started/tutorials/pop-ups/index.yml
+            - name: App-Lebenszyklus
+              href: ~/get-started/tutorials/app-lifecycle/index.yml
+            - name: Lokale Datenbank
+              href: ~/get-started/tutorials/local-database/index.yml
+            - name: Webdienste
+              href: ~/get-started/tutorials/web-service/index.yml
+        - name: Informationen zu Xamarin
+          items:
+            - name: .NET-Entwickler
+              href: ~/cross-platform/desktop/index.md
+            - name: Java-Entwickler
+              href: ~/android/get-started/java-developers.md
+            - name: Objective-C-Entwickler
+              href: ~/ios/get-started/objective-c-developers/index.md
+            - name: Azure
+              href: ~/xamarin-forms/data-cloud/index.yml
+        - name: Anleitung zur Entwicklung
+          href: ~/cross-platform/index.yml
     - name: XAML
       items:
         - name: Übersicht
@@ -266,17 +323,11 @@
             - name: Benutzerdefinierte Renderer
               href: app-fundamentals/shell/customrenderers.md
         - name: Vorlagen
-          href: app-fundamentals/templates/index.md
           items:
+            - name: Übersicht
+              href: app-fundamentals/templates/index.md
             - name: Steuerelementvorlagen
-              href: app-fundamentals/templates/control-templates/index.md
-              items:
-                - name: Einführung
-                  href: app-fundamentals/templates/control-templates/introduction.md
-                - name: Erstellen von Steuerelementvorlagen
-                  href: app-fundamentals/templates/control-templates/creating.md
-                - name: Vorlagenbindungen
-                  href: app-fundamentals/templates/control-templates/template-binding.md
+              href: app-fundamentals/templates/control-template.md
             - name: Datenvorlagen
               href: app-fundamentals/templates/data-templates/index.md
               items:
