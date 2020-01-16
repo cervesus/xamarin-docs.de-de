@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: c9f934ad690bffa2418a7221445a473d9a90fdb9
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490206"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031380"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms-WebView
 
@@ -518,6 +518,50 @@ function factorial(num) {
 </body>
 </html>
 ```
+
+## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>UIWebView depreation und App Store-Ablehnung (iTMS-90809)
+
+Ab dem 2020 werden apps, die weiterhin die veraltete `UIWebView`-API verwenden, von [Apple abgelehnt](https://developer.apple.com/news/?id=12232019b) . Obwohl xamarin. Forms standardmäßig auf `WKWebView` umgestellt wurde, gibt es noch einen Verweis auf das ältere SDK in den xamarin. Forms-Binärdateien. Das aktuelle [IOS](~/ios/deploy-test/linker.md) -linkerverhalten führt dies nicht aus, und als Ergebnis wird die veraltete `UIWebView`-API weiterhin von Ihrer APP referenziert, wenn Sie Sie an den App Store übermitteln.
+
+Eine Vorschauversion des Linkers ist verfügbar, um dieses Problem zu beheben. Um die Vorschau zu aktivieren, müssen Sie dem Linker ein zusätzliches Argument `--optimize=experimental-xforms-product-type` bereitstellen. 
+
+Hierfür müssen folgende Voraussetzungen erfüllt sein:
+
+- **Xamarin. Forms 4,5 oder höher** &ndash; vorab Versionen von xamarin. Forms 4,5 können verwendet werden.
+- **Xamarin. IOS 13.10.0.17 oder höher** &ndash; die xamarin. IOS-Version [in Visual Studio](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)überprüfen. Diese Version von xamarin. IOS ist in Visual Studio für Mac 8.4.1 und Visual Studio 16.4.3 enthalten.
+- **Entfernen Sie Verweise auf `UIWebView`** &ndash; der Code darf keine Verweise auf `UIWebView` oder Klassen enthalten, die `UIWebView`verwenden.
+
+### <a name="configure-the-linker-preview"></a>Konfigurieren der Linker-Vorschau
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+Führen Sie die folgenden Schritte für den Linker aus, um `UIWebView` Verweise zu entfernen:
+
+1. **Öffnen Sie IOS-Projekteigenschaften** &ndash; klicken Sie mit der rechten Maustaste auf Ihr IOS-Projekt, **und wählen Sie**
+1. **Navigieren Sie zum Abschnitt IOS-Build,** &ndash; den Abschnitt **IOS-Build** auszuwählen.
+1. **Aktualisieren Sie die zusätzlichen mberührungs-Argumente** &ndash; in den **zusätzlichen mberührungs-Argumenten** dieses Flag `--optimize=experimental-xforms-product-type` hinzufügen (zusätzlich zu allen Werten, die möglicherweise bereits vorhanden sind). 
+1. **Aktualisieren Sie alle Buildkonfigurationen** &ndash; verwenden Sie die **Konfigurations** -und **Platt Form** Listen am oberen Rand des Fensters, um alle Buildkonfigurationen zu aktualisieren. Die wichtigste zu Aktualisier dende Konfiguration ist die **Release/iPhone-** Konfiguration, da diese normalerweise zum Erstellen von Builds für die App Store-Übermittlung verwendet wird.
+
+Sie können das Fenster mit dem neuen Flag in diesem Screenshot sehen:
+
+[![Festlegen des Flags im Abschnitt IOS-Build](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+
+Führen Sie diese Schritte für den Linker aus, um `UIWebView` Verweise zu entfernen.
+
+1. **Öffnen Sie IOS-Projektoptionen** &ndash; klicken Sie mit der rechten Maustaste auf Ihr IOS-Projekt, **und wählen Sie**
+1. **Navigieren Sie zum Abschnitt IOS-Build,** &ndash; den Abschnitt **IOS-Build** auszuwählen.
+1. **Aktualisieren Sie die zusätzlichen _mberührungs_ -Argumente** &ndash; iin den **zusätzlichen _mberührungs_ -Argumenten** fügen Sie dieses Flag `--optimize=experimental-xforms-product-type` hinzu (zusätzlich zu allen Werten, die möglicherweise bereits vorhanden sind).
+1. **Aktualisieren Sie alle Buildkonfigurationen** &ndash; verwenden Sie die **Konfigurations** -und **Platt Form** Listen am oberen Rand des Fensters, um alle Buildkonfigurationen zu aktualisieren. Die wichtigste zu Aktualisier dende Konfiguration ist die **Release/iPhone-** Konfiguration, da diese normalerweise zum Erstellen von Builds für die App Store-Übermittlung verwendet wird.
+
+Sie können das Fenster mit dem neuen Flag in diesem Screenshot sehen:
+
+[![Festlegen des Flags im Abschnitt IOS-Build](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+
+-----
+
+Wenn Sie nun einen neuen (Release) Build erstellen und an den App Store senden, sollten keine Warnungen zu der veralteten API vorliegen.
 
 ## <a name="related-links"></a>Verwandte Themen
 
