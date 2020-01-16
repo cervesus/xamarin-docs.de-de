@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: cb5eb783109f4758fcbc997c4f2bf4a93aaa262b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018129"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489738"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac: Exemplarische Vorgehensweise
 
@@ -33,12 +33,12 @@ Die folgenden Konzepte werden besprochen:
 - **Outlets und Aktionen:** Verwendung von Outlets und Aktionen zum Verbinden von Steuerelementen auf der Benutzeroberfläche
 - **Bereitstellung/Tests**: So führen Sie eine Xamarin.Mac-App aus und testen diese.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Zum Entwickeln von Xamarin.Mac-Anwendungen benötigen Sie Folgendes:
 
 - Mac-Computer unter macOS High Sierra (10.13) oder höher.
-- [Xcode 9 oder höher](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- [Xcode 10 oder höher](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
 - Die neueste Version von [Xamarin.Mac und Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation/).
 
 Zum Ausführen einer mit Xamarin.Mac erstellten Anwendung benötigen Sie Folgendes:
@@ -63,7 +63,7 @@ So beginnen Sie
 
     [![](hello-mac-images/setup02-sml.png "Selecting a Cocoa App")](hello-mac-images/setup02.png#lightbox)
 
-3. Geben Sie als **App-Namen** `Hello_Mac` ein, und behalten Sie für alles andere die Standardwerte bei. Klicken Sie auf **Weiter**:
+3. Geben Sie als **App-Namen**`Hello_Mac` ein, und behalten Sie für alles andere die Standardwerte bei. Klicken Sie auf **Weiter**:
 
     [![](hello-mac-images/setup03-sml.png "Setting the name of the app")](hello-mac-images/setup03.png#lightbox)
 
@@ -411,7 +411,7 @@ Führen Sie folgende Schritte aus:
 
     [![](hello-mac-images/outlet04.png "Dragging to create an Outlet")](hello-mac-images/outlet04.png#lightbox)
 
-8. Es wird ein Dialogfeld geöffnet. Belassen Sie die **Verbindung** bei **Outlet**, und geben Sie für **Name** `ClickedLabel` ein:
+8. Es wird ein Dialogfeld geöffnet. Belassen Sie die **Verbindung** bei **Outlet**, und geben Sie für **Name**`ClickedLabel` ein:
 
     [![](hello-mac-images/outlet05.png "Defining the Outlet")](hello-mac-images/outlet05.png#lightbox)
 

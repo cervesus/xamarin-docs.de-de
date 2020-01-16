@@ -6,13 +6,13 @@ ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/30/2019
-ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.date: 12/04/2019
+ms.openlocfilehash: 63ce27fc871da12eabb1baad568af167c860926f
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959134"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955813"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Relative Bindungen in Xamarin.Forms
 
@@ -23,7 +23,7 @@ Mit relativen Bindungen kann die Bindungsquelle relativ zur Position des Bindung
 Die Markuperweiterung `RelativeSource` wird von der Klasse `RelativeSourceExtension` unterstützt, in der die folgenden Eigenschaften definiert werden:
 
 - `Mode` (vom Typ `RelativeBindingSourceMode`): Gibt den Speicherort der Bindungsquelle relativ zur Position des Bindungsziels an.
-- `AncestorLevel` (vom Typ `int`): Optionale Vorgängerebene, nach der gesucht werden soll, wenn die `Mode`-Eigenschaft `FindAncestor` lautet.
+- `AncestorLevel` (vom Typ `int`): Optionale Vorgängerebene, nach der gesucht werden soll, wenn die `Mode`-Eigenschaft `FindAncestor` lautet. Bei einer `AncestorLevel` von `n` werden `n-1` Instanzen vom `AncestorType` übersprungen.
 - `AncestorType` (vom Typ `Type`): Vorgängertyp, nach dem gesucht werden soll, wenn die `Mode`-Eigenschaft `FindAncestor` lautet.
 
 > [!NOTE]
@@ -81,6 +81,9 @@ Die Modi `FindAncestor` und `FindAncestorBindingContext` für relative Bindungen
 > Bei Verwendung von relativen Bindungen in den Modi `FindAncestor` und `FindAncestorBindingContext` muss die Eigenschaft `AncestorType` auf `Type` festgelegt sein. Andernfalls wird eine `XamlParseException` ausgelöst.
 
 Wird die Eigenschaft `Mode` nicht explizit festgelegt, wird durch Festlegen der Eigenschaft `AncestorType` auf einen von [`Element`](xref:Xamarin.Forms.Element) abgeleiteten Typ die `Mode`-Eigenschaft implizit auf `FindAncestor` festgelegt. Wird die `AncestorType`-Eigenschaft entsprechend hierzu auf einen Typ festgelegt, der nicht von `Element` abgeleitet ist, wird die `Mode`-Eigenschaft implizit auf `FindAncestorBindingContext` festgelegt.
+
+> [!NOTE]
+> Relative Bindungen, die den `FindAncestorBindingContext`-Modus verwenden, werden erneut angewendet, wenn sich der `BindingContext` eines Vorgängers ändert.
 
 Im folgenden XAML-Beispiel wird die `Mode`-Eigenschaft implizit auf `FindAncestorBindingContext` festgelegt:
 
@@ -176,10 +179,10 @@ In diesem Beispiel ist die `BindingContext`-Eigenschaft der [`Frame`](xref:Xamar
 
 [![Screenshot einer relativen Bindung im TemplatedParent-Modus unter iOS und Android](relative-bindings-images/templatedparent-relative-binding.png "Relative Bindung im TemplatedParent-Modus")](relative-bindings-images/templatedparent-relative-binding-large.png#lightbox "Relative Bindung im TemplatedParent-Modus")
 
-Weitere Informationen zu Steuerelementvorlagen finden Sie unter [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md).
+Weitere Informationen zu Steuerelementvorlagen finden Sie unter [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
+- [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-template.md)

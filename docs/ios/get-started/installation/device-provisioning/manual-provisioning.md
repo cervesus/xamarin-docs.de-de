@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/15/2017
-ms.openlocfilehash: 50ba4a46e9d9f7cbf5337844025790ab51e309dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 945a42485486dbfddfd023a72e88d9127651c71f
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022680"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607949"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 
@@ -181,9 +181,10 @@ Führen Sie diese Schritte aus, um ein Bereitstellungsprofil für die Entwicklun
 8. Drücken Sie auf **Herunterladen**, um das Bereitstellungsprofil auf einem Mac herunterzuladen:
 
     [![](manual-provisioning-images/provisioning-profile06.png "Download the provisioning profile")](manual-provisioning-images/provisioning-profile06.png#lightbox)
-9. Doppelklicken Sie auf die Datei, auf der das Bereitstellungsprofil in Xcode installiert werden soll. Beachten Sie, dass Xcode möglicherweise keine optischen Hinweise zur Profilinstallation anzeigen wird, mit Ausnahme des Profilstarts. Dies kann unter **Xcode > Einstellungen > Konten** überprüft werden. Wählen Sie Ihre Apple-ID aus, und klicken Sie auf **Details anzeigen...** . Ihr neues Bereitstellungsprofil sollte wie unten gezeigt aufgeführt werden:
 
-      [![](manual-provisioning-images/provisioning-profile07.png "Viewing the profile in Xcode")](manual-provisioning-images/provisioning-profile07.png#lightbox)
+9. Doppelklicken Sie auf die Datei, auf der das Bereitstellungsprofil in Xcode installiert werden soll. Beachten Sie, dass Xcode möglicherweise keine optischen Hinweise zur Profilinstallation anzeigen wird, mit Ausnahme des Profilstarts. Dies kann unter **Xcode > Windows > Geräte und Simulatoren** überprüft werden. Klicken Sie mit der rechten Maustaste auf Ihr Gerät, und wählen Sie **Bereitstellungsprofile anzeigen**... aus.
+
+      [![](manual-provisioning-images/provisioning-profile07-sml.png "Viewing the profile in Xcode")](manual-provisioning-images/provisioning-profile07.png#lightbox)
 
 Nachdem das Bereitstellungsprofil erfolgreich erstellt wurde, kann es erforderlich sein, Xcode zu aktualisieren, sodass alle Entwicklungszertifikate in Visual Studio für Mac und Visual Studio zur Verfügung stehen.
 
@@ -197,7 +198,9 @@ Zertifikate und Bereitstellungsprofile, die im Apple-Entwicklerportal erstellt w
 2. Starten Sie Xcode.
 3. Wählen Sie **Xcode-Menü > Einstellungen...** aus
 4. Klicken Sie auf die **Konten**-Registerkarte.
-5. Wählen Sie ein Team aus, und klicken Sie auf die Schaltfläche **Download Manual Profiles** (Manuelle Profile herunterladen):  [![](manual-provisioning-images/selectteam1.png "Herunterladen von manuellen Profilen")](manual-provisioning-images/selectteam1.png#lightbox).
+5. Wählen Sie ein Team aus, und klicken Sie auf die Schaltfläche **Download Manual Profiles** (Manuelle Profile herunterladen):
+
+    [![Herunterladen von manuellen Profilen](manual-provisioning-images/selectteam1.png)](manual-provisioning-images/selectteam1.png#lightbox)
 
 6. Beenden Sie Xcode.
 7. Starten Sie Visual Studio für Mac bzw. Visual Studio.
@@ -215,8 +218,6 @@ Die neuen Zertifikate oder Bereitstellungsprofile sind in Visual Studio für Mac
 > Möglicherweise müssen Sie Visual Studio beenden und neu starten, bevor neue oder geänderte Zertifikate oder von Xcode aktualisierte Profile angezeigt werden.
 
 -----
-
-<a name="appservices" />
 
 ## <a name="provisioning-for-application-services"></a>Bereitstellung für Anwendungsdienste
 
@@ -238,11 +239,11 @@ An dieser Stelle sollte die Bereitstellung abgeschlossen sein, und die App kann 
 1. Schließen Sie das Gerät an einem Macintosh-Computer an.
 2. Stellen Sie in der **Info.plist** des Projekts sicher, dass die Bundle-ID der App-ID entspricht (es sei denn, die App-ID ist ein Platzhalter):
 
-   ![](manual-provisioning-images/deploydevice01xs.png "Entering an Identifier")
+   ![Eingeben eines Bezeichners](manual-provisioning-images/deploydevice01xs.png)
 
 3. Klicken Sie mit der rechten Maustaste auf das Projekt, um das Dialogfeld Projektoptionen anzuzeigen, und navigieren Sie zu **Erstellen > iOS-Bundle-Signierung**. Überprüfen Sie in der Dropdownliste neben der **Signierungsidentität** und dem **Bereitstellungsprofil**, ob Visual Studio für Mac die richtigen Profile anzeigt, und wählen Sie eine bestimmte Identität und ein bestimmtes Profil aus:
 
-   ![](manual-provisioning-images/deploydevice02xs.png "Select a specific identity & profile")
+   ![Eine bestimmte Identität und ein Profil auswählen](manual-provisioning-images/deploydevice02xs.png)
 
    Wenn die Einstellung auf **Automatisch** festgelegt ist, wählt Visual Studio für Mac die Identität und das Profil basierend auf der Bundle-ID aus, die in Schritt 2 festgelegt wurde.
 
@@ -257,7 +258,7 @@ An dieser Stelle sollte die Bereitstellung abgeschlossen sein, und die App kann 
 1. Schließen Sie das Gerät an den Mac-Buildhost an.
 2. Stellen Sie in der **Info.plist** des Projekts sicher, dass die Bundle-ID der App-ID entspricht:
 
-   ![](manual-provisioning-images/servicevs01.png "Entering an Identifier")
+   ![Eingeben eines Bezeichners](manual-provisioning-images/servicevs01.png)
 
 3. Klicken Sie mit der rechten Maustaste auf das Projekt, um das Dialogfeld Projektoptionen anzuzeigen, und navigieren Sie zu **Erstellen > iOS Bundle Signing**. Überprüfen Sie in der Dropdownliste neben der **Signierungsidentität** und dem **Bereitstellungsprofil**, dass Xamarin Studio die richtigen Profile anzeigt, und wählen Sie eine bestimmte Identität bzw. ein bestimmtes Profil aus:
 

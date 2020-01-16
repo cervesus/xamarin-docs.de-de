@@ -1,5 +1,5 @@
 ---
-title: Debuggen von Xamarin.Android auf Geräten und in Emulatoren
+title: Debuggen von Xamarin.Android-Apps auf Geräten und in Emulatoren
 description: Testen und Debuggen einer Xamarin.Android-App
 ms.prod: xamarin
 ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 0f873f69de7f85a77bdd0ca7aafa33bff1d9b961
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3b3fa14ec81bd4f06322197b7140654f9086ce73
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021524"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556482"
 ---
-# <a name="debugging"></a>Debuggen
+# <a name="debug-xamarinandroid-apps"></a>Debuggen von Xamarin.Android-Apps
 
 In diesem Abschnitt wird beschrieben, wie das Debuggen einer Xamarin.Android-App auf Geräten oder in Emulatoren erfolgt.
 
@@ -22,7 +22,7 @@ In diesem Abschnitt wird beschrieben, wie das Debuggen einer Xamarin.Android-App
 
 Die Entwicklung von Android-Anwendungen erfordert das Ausführen der Anwendung, entweder auf physischer Hardware oder in einem Emulator. Die beste, aber nicht immer zweckmäßigste, Herangehensweise ist die Verwendung von Hardware. In vielen Fällen kann es einfacher und kostengünstiger sein, Android-Hardware mithilfe einer der unten beschriebenen Emulatoren zu simulieren/emulieren.
 
-### <a name="debugging-on-the-android-emulatorandroiddeploy-testdebuggingdebug-on-emulatormd"></a>[Debugging on the Android Emulator (Debuggen auf dem Android-Emulator)](~/android/deploy-test/debugging/debug-on-emulator.md)
+### <a name="debugging-on-the-android-emulatorandroiddeploy-testdebuggingdebug-on-emulatormd"></a>[Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md)
 
 In diesem Artikel wird erläutert, wie Sie den Android-Emulator in Visual Studio starten und die App auf einem virtuellen Gerät ausführen.
 
@@ -33,6 +33,3 @@ In diesem Artikel wird dargestellt, wie Sie ein physisches Android-Gerät so kon
 ### <a name="android-debug-logandroiddeploy-testdebuggingandroid-debug-logmd"></a>[Android-Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md)
 
 Ein sehr gängiger Trick, den Entwickler verwenden, um ihre Anwendungen zu debuggen, ist die Verwendung von `Console.WriteLine`. Auf einer mobilen Plattform wie Android steht jedoch keine Konsole zur Verfügung. Android-Geräte stellen ein Protokoll bereit, das Sie beim Schreiben von Apps wahrscheinlich verwenden müssen. Dies wird aufgrund der abrufenden Befehle manchmal als **Logcat** bezeichnet. Dieser Artikel beschreibt die Verwendung von **Logcat**.
-
-> [!WARNING]
-> Beachten Sie, dass der **Xamarin Android Player** veraltet ist. Weitere Informationen finden Sie unter der [Ankündigung in diesem Blogbeitrag](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/). Darüber hinaus ist der **Visual Studio-Android-Emulator** seit Visual Studio 2017 als veraltet gekennzeichnet.

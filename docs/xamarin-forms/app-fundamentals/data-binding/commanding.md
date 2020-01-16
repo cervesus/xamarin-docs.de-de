@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7d442d14589b35632bce2b6caec09235138ec585
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 185aebf48b24a6abbdd8f56dbbfc32f6e99f6e63
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771626"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545594"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Die Befehlsschnittstelle in Xamarin.Forms
 
@@ -69,9 +69,9 @@ Die ViewModel-Klasse muss zudem auf eine Klasse verweisen, die die `ICommand`-Sc
 
 Wenn der Benutzer das `Button`-Element anklickt, ruft `Button` die `Execute`-Methode im `ICommand`-Objekt auf, das an dessen `Command`-Eigenschaft gebunden ist. Das ist der einfachste Teil der Befehlsschnittstelle.
 
-Die `CanExecute`-Methode ist komplexer. Wenn die Bindung zuerst in der `Command`-Eigenschaft von `Button` definiert wird und die Datenbindung sich ändert, ruft `Button` die `CanExecute`-Methode im `ICommand`-Objekt auf. Wenn `CanExecute` `false` zurückgibt, deaktiviert `Button` sich selbst. Das bedeutet, dass der entsprechende Befehl aktuell nicht verfügbar oder ungültig ist.
+Die `CanExecute`-Methode ist komplexer. Wenn die Bindung zuerst in der `Command`-Eigenschaft von `Button` definiert wird und die Datenbindung sich ändert, ruft `Button` die `CanExecute`-Methode im `ICommand`-Objekt auf. Wenn `CanExecute``false` zurückgibt, deaktiviert `Button` sich selbst. Das bedeutet, dass der entsprechende Befehl aktuell nicht verfügbar oder ungültig ist.
 
-`Button` fügt ebenfalls einen Handler an das `CanExecuteChanged`-Ereignis von `ICommand` an. Das Ereignis wird innerhalb der ViewModel-Klasse ausgelöst. Wenn das Ereignis ausgelöst wird, ruft `Button` `CanExecute` erneut auf. Das `Button`-Element aktiviert sich selbst, wenn `CanExecute` `true` zurückgibt, und es deaktiviert sich selbst, wenn `CanExecute` `false` zurückgibt.
+`Button` fügt ebenfalls einen Handler an das `CanExecuteChanged`-Ereignis von `ICommand` an. Das Ereignis wird innerhalb der ViewModel-Klasse ausgelöst. Wenn das Ereignis ausgelöst wird, ruft `Button``CanExecute` erneut auf. Das `Button`-Element aktiviert sich selbst, wenn `CanExecute``true` zurückgibt, und es deaktiviert sich selbst, wenn `CanExecute``false` zurückgibt.
 
 > [!IMPORTANT]
 > Verwenden Sie die `IsEnabled`-Eigenschaft von `Button` nicht, wenn Sie die Befehlsschnittstelle verwenden.  
@@ -88,7 +88,7 @@ Wenn das Freigeben von ViewModel-Klassen zwischen Windows und Xamarin.Forms für
 
 Die Seite **Person Entry** im Beispielprogramm für [**Datenbindungen**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) veranschaulicht einige einfache Befehle, die in eine ViewModel-Klasse implementiert werden.
 
-Die `PersonViewModel`-Klasse definiert drei Eigenschaften namens `Name`, `Age` und `Skills`, über die eine Person definiert wird. Diese Klasse enthält *keine* `ICommand`-Eigenschaften:
+Die `PersonViewModel`-Klasse definiert drei Eigenschaften namens `Name`, `Age` und `Skills`, über die eine Person definiert wird. Diese Klasse enthält *keine*`ICommand`-Eigenschaften:
 
 ```csharp
 public class PersonViewModel : INotifyPropertyChanged
@@ -279,9 +279,9 @@ Bevor Sie den Konstruktor der `PersonCollectionViewModel`-Klasse untersuchen, so
 
 Dieser Vorgang funktioniert folgendermaßen: Der Benutzer drückt zunächst auf die Schaltfläche **New** (Neu). Dadurch wird das Eingabeformular aktiviert, aber die Schaltfläche **New** (Neu) wird deaktiviert. Der Benutzer gibt dann einen Namen, ein Alter und seine Qualifikationen ein. Während der Bearbeitung kann der Benutzer jederzeit auf **Cancel** (Abbrechen) drücken, um von vorne zu beginnen. Die Schaltfläche **Submit** (Senden) wird nur aktiviert, wenn ein Name und ein gültiges Alter eingegeben wurden. Wenn auf die Schaltfläche **Submit** (Senden) gedrückt wird, wird die Person an die Collection übertragen, die von `ListView` angezeigt wird. Nachdem auf **Cancel** (Abbrechen) oder **Submit** (Senden) gedrückt wurde, wird das Eingabeformular zurückgesetzt, und die Schaltfläche **New** (Neu) wird wieder aktiviert.
 
-Auf dem iOS-Bildschirm auf der linken Seite sehen Sie das Layout, bevor ein gültiges Alter eingegeben wurde. Auf den Android- und UWP-Bildschirmen wird die Schaltfläche **Submit** (Senden) angezeigt, die aktiviert wurde, nachdem ein Alter festgelegt wurde:
+Auf dem iOS-Bildschirm auf der linken Seite sehen Sie das Layout, bevor ein gültiges Alter eingegeben wurde. Auf dem Android-Bildschirm wird die Schaltfläche **Submit** (Senden) angezeigt, die aktiviert wurde, nachdem ein Alter festgelegt wurde:
 
-[![Eingabe einer Person](commanding-images/personentry-small.png "Eingabe einer Person")](commanding-images/personentry-large.png#lightbox "Eingabe einer Person")
+[![Personeneintrag](commanding-images/personentry-small.png "Personeneintrag")](commanding-images/personentry-large.png#lightbox "Personeneintrag")
 
 Über das Programm können vorhandene Einträge nicht bearbeitet werden, und die Einträge werden nicht gespeichert, wenn Sie zu einer anderen Seite navigieren.
 
@@ -335,7 +335,7 @@ Wenn der Benutzer auf die Schaltfläche **New** klickt, wird die `execute`-Funkt
 
 Die `Command`-Klasse implementiert nicht nur die `ICommand`-Schnittstelle, sondern definiert auch eine Methode namens `ChangeCanExecute`. Ihre ViewModel-Klasse sollte `ChangeCanExecute` für eine `ICommand`-Eigenschaft aufrufen, wenn ein Vorgang den Rückgabewert der `CanExecute`-Methode ändern könnte. Durch einen Aufruf von `ChangeCanExecute` löst die `Command`-Klasse die `CanExecuteChanged`-Methode aus. An das `Button`-Element ist ein Handler für dieses Ereignis angefügt, und das Element reagiert, indem `CanExecute` erneut aufgerufen wird. Anschließend aktiviert es sich je nach Rückgabewert der Methode selbst.
 
-Wenn die `execute`-Methode von `NewCommand` `RefreshCanExecutes` aufruft, erhält die `NewCommand`-Eigenschaft einen Aufruf von `ChangeCanExecute`, und `Button` ruft die `canExecute`-Methode auf, die nun `false` zurückgibt, da die `IsEditing`-Eigenschaft nun den Wert `true` aufweist.
+Wenn die `execute`-Methode von `NewCommand``RefreshCanExecutes` aufruft, erhält die `NewCommand`-Eigenschaft einen Aufruf von `ChangeCanExecute`, und `Button` ruft die `canExecute`-Methode auf, die nun `false` zurückgibt, da die `IsEditing`-Eigenschaft nun den Wert `true` aufweist.
 
 Der `PropertyChanged`-Handler für das neue `PersonViewModel`-Objekt ruft die `ChangeCanExecute`-Methode von `SubmitCommand` auf. Hier sehen Sie, wie diese Befehlseigenschaft implementiert wird:
 

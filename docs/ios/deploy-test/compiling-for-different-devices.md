@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 30415bd2df14cdc13f94a020475acf471b25c6ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
+ms.sourcegitcommit: 0177e06169da621ed9d5fa0f6118a628e8c92bd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030372"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663726"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Kompilieren für verschiedene Geräte in Xamarin.iOS
 
@@ -30,27 +30,23 @@ Die Buildeigenschaften Ihrer ausführbaren Datei können Sie auf der Eigenschaft
 
 Zusätzlich zu den Konfigurationsoptionen, die auf der Benutzeroberfläche verfügbar sind, können Sie auch Ihren eigenen Satz von Befehlszeilenoptionen an das [Xamarin.iOS-Build-Tool (mtouch)](~/ios/deploy-test/mtouch.md) übergeben.
 
-[http://iossupportmatrix.com/](http://iossupportmatrix.com/) ist eine nützliche Ressource, mit der sich sicherstellen lässt, dass alle erforderlichen Geräte, Architekturen und iOS-Versionen eingeschlossen sind.
-
- <a name="SDK_Options" />
-
 ## <a name="sdk-options"></a>SDK-Optionen
 
 Mit Visual Studio für Mac können Sie zwei wichtige Eigenschaften des SDK konfigurieren: die iOS SDK-Version, die für die Erstellung Ihrer Software verwendet wird, und das Bereitstellungsziel (bzw. die mindestens erforderliche iOS-Version).
 
-Die iOS-Option **SDK-Version** ermöglicht Ihnen, verschiedene Versionen eines von Apple veröffentlichten SDK zu verwenden, wodurch Xamarin.iOS an die Compiler, Linker und Bibliotheken weitergeleitet wird, auf die es während Ihres Builds verweisen soll. 
+Die iOS-Option **SDK-Version** ermöglicht Ihnen, verschiedene Versionen eines von Apple veröffentlichten SDK zu verwenden, wodurch Xamarin.iOS an die Compiler, Linker und Bibliotheken weitergeleitet wird, auf die es während Ihres Builds verweisen soll. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Optionen** und dann im Fenster „Optionen“ **iOS-Build** aus:
 
-Die Einstellung **Bereitstellungsziel** wird verwendet, um die mindestens erforderliche Version des Betriebssystems auszuwählen, unter der Ihre Anwendung ausgeführt wird. Diese wird in der Datei „Info.plist“ Ihres Projekts festgelegt. Sie sollten die Mindestversion auswählen, die alle APIs enthält, die Sie für die Ausführung Ihrer Anwendung benötigen.
+[![Auswählen der SDK-Version im Fenster „Optionen“](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
+
+Die Einstellung **Bereitstellungsziel** wird verwendet, um die mindestens erforderliche Version des Betriebssystems auszuwählen, unter der Ihre Anwendung ausgeführt wird. Diese wird in der Datei **Info.plist** Ihres Projekts festgelegt. Sie sollten die Mindestversion auswählen, die alle APIs enthält, die Sie für die Ausführung Ihrer Anwendung benötigen.
+
+[![Festlegen des Bereitstellungsziels in der Datei „Info.plist“](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
 Im Allgemeinen stellt die Xamarin.iOS-API alle Methoden zur Verfügung, die in der neuesten Version des SDK verfügbar sind. Bei Bedarf stellen wir praktische Eigenschaften zur Verfügung, mit denen Sie erkennen können, ob die Funktionalität zur Laufzeit verfügbar ist (z. B. funktionieren `UIDevice.UserInterfaceIdiom` und `UIDevice.IsMultitaskingSupported` immer in Xamarin.iOS. Wir erledigen alle Aufgaben im Hintergrund).
-
- <a name="Linking" />
 
 ## <a name="linking"></a>Verknüpfen
 
 Sehen Sie sich unsere gesonderte Seite zum [Linker](~/ios/deploy-test/linker.md) an, um mehr darüber zu erfahren, wie der Linker Ihnen hilft, die Größe Ihrer ausführbaren Dateien zu reduzieren, und um herauszufinden, wie Sie diese effektiv nutzen können.
-
- <a name="Code_Generation_Engine" />
 
 ## <a name="code-generation-engine"></a>Codegenerierungsengine
 
@@ -66,11 +62,7 @@ Sie können diese in Visual Studio für Mac oder Visual Studio über „iOS-Buil
 
 [![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
- <a name="ARMV7_and_ARMV7s_support" />
-
 ## <a name="architecture-support"></a>Architekturunterstützung
-
-<a name="armv6-discontinued" />
 
 ### <a name="armv6-xamarinios-discontinued-support-for-armv6-with-v810"></a>ARMv6 (Xamarin.iOS unterstützt ARMv6 ab v8.10 nicht mehr)
 
@@ -107,13 +99,9 @@ Wenn Sie nur auf den ARMv7s-Prozessor abzielen, wird der generierte Code etwas s
 
 Beachten Sie, dass alle Builds, die an den App Store übermittelt werden, 64-Bit-Unterstützung aufweisen müssen. Dies ist eine von [Apple](https://developer.apple.com/news/?id=12172014b) gestellte Anforderung. Darüber hinaus unterstützt iOS 11 nur 64-Bit-Anwendungen.
 
- <a name="ARM_Thumb_Support" />
-
 ### <a name="arm-thumb-2-support"></a>ARM Thumb-2-Unterstützung
 
 Thumb ist ein kompakterer Befehlssatz, der von ARM-Prozessoren verwendet wird. Indem Sie die Thumb-Unterstützung aktivieren, können Sie die Größe Ihrer ausführbaren Datei reduzieren, jedoch auf Kosten langsamerer Ausführungszeiten. Thumb wird unter ARMv7 und ARMv7s unterstützt.
-
- <a name="Conditional_framwork_useage" />
 
 ## <a name="conditional-framework-usage"></a>Bedingte Frameworknutzung
 
@@ -131,4 +119,3 @@ Zusätzlich dazu müssen Sie Ihre Verwendung der Typen davor schützen, unter ä
 ## <a name="related-links"></a>Verwandte Links
 
 - [Linker](~/ios/deploy-test/linker.md)
-- [Extern: iOS-Supportmatrix](http://iossupportmatrix.com/)

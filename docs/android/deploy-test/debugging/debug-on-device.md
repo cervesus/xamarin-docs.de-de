@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e697459b20a481b1d2bada69677647ad4fbd3023
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3ca524e451a7a4eb838805c839b33c4b9dd6bddd
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021586"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556534"
 ---
-# <a name="debug-on-device"></a>Debugvorgang auf einem Gerät
+# <a name="debug-on-an-android-device"></a>Auf einem Android-Gerät debuggen
 
 _In diesem Artikel wird das Debuggen einer Xamarin.Android-Anwendung auf einem physischen Android-Gerät erläutert._
-
-## <a name="debug-on-device-overview"></a>Übersicht: Debuggen auf einem Gerät
 
 Es ist möglich, eine Xamarin.Android-Anwendung auf einem Android-Gerät mit Visual Studio für Mac oder Visual Studio zu debuggen. Bevor ein Gerät debuggt werden kann, muss es [für die Entwicklung vorbereitet](~/android/get-started/installation/set-up-device-for-development.md), und mit Ihrem PC oder Mac verbunden werden.
 

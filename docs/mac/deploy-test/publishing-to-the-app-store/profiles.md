@@ -7,20 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: b361cd00121d16752d5eebc971653c8ea185c641
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1bb7ffba11a7135735b7599fa7f12b47d0b347c8
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018106"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489387"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Bereitstellungsprofile für Xamarin.Mac-Apps
 
 Bereitstellungsprofile ermöglichen es Entwicklern, mehrere spezifische macOS-Funktionen (ehemals Mac OS X), z.B. iCloud und Pushbenachrichtigungen, in ihre Xamarin.Mac-Apps zu integrieren. Sie müssen ein Mac-Bereitstellungsprofil für jede entwickelte Anwendung, die diese Funktionen verwendet, erstellen, herunterladen und installieren.
 
 [![](profiles-images/certif13.png "The Apple Provisioning Portal")](profiles-images/certif13.png#lightbox)
-
-<a name="Development_Provisioning_Profile" />
 
 ## <a name="development-provisioning-profile"></a>Entwicklungsbereitstellungsprofil
 
@@ -60,8 +58,6 @@ Führen Sie folgende Schritte aus:
     [![](profiles-images/image48.png "The Developer Certificate Utility")](profiles-images/image48.png#lightbox)
 
 Ein neues Entwicklungsbereitstellungsprofil muss für jede neue App oder jeden neuen Computer, der für das Testen hinzugefügt wird, erstellt werden.
-
-<a name="Production_Provisioning_Profile" />
 
 ## <a name="production-provisioning-profile"></a>Produktionsbereitstellungsprofil
 

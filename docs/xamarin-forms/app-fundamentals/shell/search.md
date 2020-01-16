@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
-ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/18/2019
+ms.openlocfilehash: 9bd4fe5f1a35e2a6f36540cbee13838841b36d92
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72695937"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490063"
 ---
 # <a name="xamarinforms-shell-search"></a>Suche in der Xamarin.Forms-Shell
 
@@ -181,8 +181,11 @@ Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorl
 Wird am oberen Rand einer Seite ein `SearchHandler` hinzugefügt, ist dieses standardmäßig sichtbar und vollständig erweitert. Allerdings kann dieses Verhalten geändert werden, indem die `SearchHandler.SearchBoxVisibility`-Eigenschaft auf eines der `SearchBoxVisibility`-Enumerationsmember festgelegt wird:
 
 - `Hidden` – Das Suchfeld ist nicht sichtbar, oder es kann nicht darauf zugegriffen werden.
-- `Collapsible` – Das Suchfeld ist ausgeblendet, bis der Benutzer eine Aktion ausführt, um es einzublenden.
-- `Expanded` – Das Suchfeld sichtbar und vollständig erweitert.
+- `Collapsible` – Das Suchfeld ist ausgeblendet, bis der Benutzer eine Aktion ausführt, um es einzublenden. Unter iOS wird das Suchfeld durch vertikales Springen des Seiteninhalts angezeigt, und bei Android wird das Suchfeld durch Tippen auf das Fragezeichensymbol angezeigt.
+- `Expanded` – Das Suchfeld sichtbar und vollständig erweitert. Dies ist der Standardwert der `SearchHandler.SearchBoxVisibility`-Eigenschaft.
+
+> [!IMPORTANT]
+> Unter iOS erfordert ein reduzierbares Suchfeld iOS 11 oder höher.
 
 Das folgende Beispiel zeigt, wie Sie das Suchfeld ausblenden:
 
@@ -190,7 +193,7 @@ Das folgende Beispiel zeigt, wie Sie das Suchfeld ausblenden:
 <ContentPage ...
              xmlns:controls="clr-namespace:Xaminals.Controls">
     <Shell.SearchHandler>
-        <controls:MonkeySearchHandler SearchBoxVisibility="Hidden"
+        <controls:AnimalSearchHandler SearchBoxVisibility="Hidden"
                                       ... />
     </Shell.SearchHandler>
     ...
@@ -288,7 +291,7 @@ Die `SearchHandler`-Klasse definiert die folgenden Eigenschaften, die ihre Darst
 - `ClearIconName` vom Typ `string`: der Name des Löschen-Symbols zur Verwendung mit Bildschirmsprachausgaben.
 - `ClearPlaceholderCommand` vom Typ `ICommand`: Wird ausgeführt, wenn `ClearPlaceholderIcon` angetippt wird.
 - `ClearPlaceholderCommandParameter` vom Typ `object`: der Parameter, der an `ClearPlaceholderCommand` übergeben wird.
-- `ClearPlaceholderEnabled`vom Typ `bool`: Bestimmt, ob `ClearPlaceholderCommand` ausgeführt werden kann. Der Standardwert ist `true`sein.
+- `ClearPlaceholderEnabled`vom Typ `bool`: Bestimmt, ob `ClearPlaceholderCommand` ausgeführt werden kann. Der Standardwert ist `true`.
 - `ClearPlaceholderHelpText` vom Typ `string`: der barrierefreie Hilfetext für das Löschen-Platzhaltersymbol.
 - `ClearPlaceholderIcon` vom Typ [`ImageSource`](xref:Xamarin.Forms.ImageSource): das Löschen-Platzhaltersymbol, das angezeigt wird, wenn das Suchfeld leer ist.
 - `ClearPlaceholderName` vom Typ `string`: der Name des Löschen-Platzhaltersymbols für die Verwendung mit Bildschirmsprachausgaben.
@@ -300,7 +303,7 @@ Die `SearchHandler`-Klasse definiert die folgenden Eigenschaften, die ihre Darst
 - `FontSize` vom Typ `double`: Schriftgrad für den Text im Suchfeld.
 - `HorizontalTextAlignment` vom Typ `TextAlignment`: horizontale Ausrichtung des Texts im Suchfeld.
 - `IsFocused` vom Typ `bool`: Gibt an, ob ein `SearchHandler` derzeit über den Eingabefokus verfügt.
-- `IsSearchEnabled` vom Typ `bool`: Stellt den aktivierten Zustand des Suchfelds dar. Der Standardwert ist `true`sein.
+- `IsSearchEnabled` vom Typ `bool`: Stellt den aktivierten Zustand des Suchfelds dar. Der Standardwert ist `true`.
 - `ItemsSource` vom Typ `IEnumerable`: Gibt die Sammlung von Elementen an, die im Vorschlagsbereich angezeigt werden sollen; Standardwert ist `null`.
 - `ItemTemplate` vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate): Gibt die Vorlage an, die für jedes Element in der Sammlung von Elementen gilt, die im Vorschlagsbereich angezeigt werden soll.
 - `Keyboard` vom Typ `Keyboard`: Gibt die Tastatur für den `SearchHandler` an.
@@ -312,7 +315,7 @@ Die `SearchHandler`-Klasse definiert die folgenden Eigenschaften, die ihre Darst
 - `QueryIconName` vom Typ `string`: der Name des Abfragesymbols zur Verwendung mit Bildschirmsprachausgaben.
 - `SearchBoxVisibility` vom Typ `SearchBoxVisibility`: die Sichtbarkeit des Suchfelds. Standardmäßig ist das Suchfeld sichtbar und vollständig erweitert.
 - `SelectedItem` vom Typ `object`: das in den Suchergebnissen ausgewählte Element. Diese Eigenschaft ist schreibgeschützt; Standardwert ist `null`.
-- `ShowsResults` vom Typ `bool`:Gibt an, ob bei der Texteingabe Suchergebnisse im Vorschlagsbereich zu erwarten sind. Der Standardwert ist `false`sein.
+- `ShowsResults` vom Typ `bool`:Gibt an, ob bei der Texteingabe Suchergebnisse im Vorschlagsbereich zu erwarten sind. Der Standardwert ist `false`.
 - `TextColor` vom Typ `Color`: Farbe des Texts im Suchfeld.
 
 Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Datenverbindungen sein können.

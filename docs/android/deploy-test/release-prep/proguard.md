@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 854287ec22fb89ec2f0a55f8c3854dc0106fb11a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1ae7850951060f2e89a953ce554a0dbfa286c3a1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021165"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487988"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -29,7 +29,7 @@ ProGuard verarbeitet Eingabe-APKs mithilfe der folgenden Schritte:
 2. **Optimierungsschritt**: ProGuard optimiert den Code weiter. 
     Optimierungen, Klassen und Methoden, die keine Einstiegspunkte sind, können privat, statisch oder abschließend gemacht, nicht verwendete Parameter können entfernt, und einige Methoden als Inlinefunktionen umgesetzt werden. 
 
-3. **Obfuskationsschritt:** Bei der nativen Android-Entwicklung benennt ProGuard Klassen und Klassenmember um, die keine Einstiegspunkte sind. Das Beibehalten von Einstiegspunkten stellt sicher, dass auf sie immer noch von deren ursprünglichen Namen zugegriffen werden kann. Dieser Schritt wird jedoch nicht von Xamarin.Android unterstützt, da die App in eine Zwischensprache kompiliert wird.
+3. **Obfuskationsschritt:** : Bei der nativen Android-Entwicklung benennt ProGuard Klassen und Klassenmember um, die keine Einstiegspunkte sind. Das Beibehalten von Einstiegspunkten stellt sicher, dass auf sie immer noch von deren ursprünglichen Namen zugegriffen werden kann. Dieser Schritt wird jedoch nicht von Xamarin.Android unterstützt, da die App in eine Zwischensprache kompiliert wird.
 
 4. **Vorüberprüfungsschritt**: Führt Überprüfungen von Java-Bytecode vor der Laufzeit aus und kommentiert Klassendateien für die Java-VM. Dies ist der einzige Schritt, der die Einstiegspunkte nicht kennen muss. 
 
@@ -77,9 +77,9 @@ Verwenden Sie die folgenden Schritte, um ProGuard im Anwendungsprojekt zu aktivi
 
     [![Releasekonfiguration auswählen](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png#lightbox)
    
-2. Aktivieren Sie ProGuard, indem Sie die Option **ProGuard aktivieren** in der Registerkarte **Verpackung** unter **Eigenschaften > Android-Optionen** aktivieren: 
+2. Wählen Sie **ProGuard** in der Dropdownliste **Codeshrinker** im Fenster **Eigenschaften > Android-Optionen** aus: 
 
-    [![Option „ProGuard aktivieren“ ausgewählt](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png#lightbox)
+    [![Proguard-Codeshrinker ausgewählt](proguard-images/03-enable-proguard-shrinker-sml.png)](proguard-images/03-enable-proguard-shrinker.png#lightbox)
 
 Für die meisten Xamarin.Android-Anwendungen ist die von Xamarin.Android unterstützte ProGuard-Standardkonfigurationsdatei ausreichend, um den gesamten (und nur) nicht verwendeten Code zu entfernen. Zur Anzeige der ProGuard-Standardkonfiguration öffnen Sie die Datei unter **obj\\Release\\proguard\\proguard_xamarin.cfg**.
 

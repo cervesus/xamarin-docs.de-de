@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.openlocfilehash: 0e5fd88678becd7becfcb1c43e14b1e33aad72de
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170964"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489878"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -26,7 +26,7 @@ Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)
 
 Die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Klasse bietet Multicast-Funktionen zum Veröffentlichen und Abonnieren. Dies bedeutet, dass mehrere Herausgeber vorhanden sein können, die eine einzelne Nachricht veröffentlichen, und es können mehrere Abonnenten vorhanden sein, die auf dieselbe Nachricht lauschen:
 
-![](messaging-center-images/messaging-center.png "Multicast-Funktionen zum Veröffentlichen und Abonnieren")
+![](messaging-center-images/messaging-center.png "Multicast publish-subscribe functionality")
 
 Herausgeber senden Nachrichten mithilfe der [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Methode, während Abonnenten mithilfe der [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode auf Nachrichten lauschen. Darüber hinaus können Abonnenten bei Bedarf mit der [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)-Methode auch Nachrichtenabonnements kündigen.
 
@@ -82,6 +82,9 @@ MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
 ```
 
 In diesem Beispiel abonniert die [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode `Hi`-Nachrichten, die vom `MainPage`-Typ gesendet werden, dessen Nutzlastdaten ein `string`-Objekt sind. Ein Rückrufdelegat wird als Reaktion auf den Empfang einer solchen Nachricht ausgeführt, der die Nutzlastdaten in einer Benachrichtigung anzeigt.
+
+> [!IMPORTANT]
+> Der Delegat, der von der `Subscribe`-Methode ausgeführt wird, wird in demselben Thread ausgeführt, der die Nachricht mit der `Send`-Methode veröffentlicht.
 
 ## <a name="unsubscribe-from-a-message"></a>Kündigen des Abonnements einer Nachricht
 

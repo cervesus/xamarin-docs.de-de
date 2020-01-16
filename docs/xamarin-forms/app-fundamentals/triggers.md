@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.openlocfilehash: 056bb16c76887661f054422b2c682a91e6bfa466
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71997156"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489894"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -43,8 +43,9 @@ In diesem Beispiel wird ein Trigger veranschaulicht, der eine `Entry`-Hintergrun
 <Entry Placeholder="enter name">
     <Entry.Triggers>
         <Trigger TargetType="Entry"
-             Property="IsFocused" Value="True">
+                 Property="IsFocused" Value="True">
             <Setter Property="BackgroundColor" Value="Yellow" />
+            <!-- multiple Setters elements are allowed -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -74,6 +75,7 @@ Trigger können auch zu einer `Style`-Deklaration in einem Steuerelement, auf ei
                 <Trigger TargetType="Entry"
                          Property="IsFocused" Value="True">
                     <Setter Property="BackgroundColor" Value="Yellow" />
+                    <!-- multiple Setters elements are allowed -->
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -106,6 +108,7 @@ um auf die Eigenschaften eines anderen Steuerelements zu verweisen. Wenn die Lä
                                        Path=Text.Length}"
                      Value="0">
             <Setter Property="IsEnabled" Value="False" />
+            <!-- multiple Setters elements are allowed -->
         </DataTrigger>
     </Button.Triggers>
 </Button>
@@ -188,8 +191,7 @@ Hier finden Sie ein Beispiel für einen Trigger für eine Schaltfläche, die zwe
                                    Path=Text.Length}"
                                Value="0" />
     </MultiTrigger.Conditions>
-
-  <Setter Property="IsEnabled" Value="False" />
+    <Setter Property="IsEnabled" Value="False" />
     <!-- multiple Setter elements are allowed -->
 </MultiTrigger>
 ```
@@ -270,7 +272,7 @@ Der XAML-Code wird unten veranschaulicht. Beachten Sie die folgenden Unterschied
 Im folgenden Screenshot wird der Unterschied zwischen den zwei oben gezeigten Beispielen für Multitrigger dargestellt. Im oberen Teil der Bildschirme genügt die Texteingabe in einem `Entry`-Element, um die Schaltfläche **Save** (Speichern) zu aktivieren.
 Im unteren Teil der Bildschirme bleibt die Schaltfläche **Login** (Anmelden) inaktiv, bis beide Felder Daten enthalten.
 
-![](triggers-images/multi-requireall.png "Beispiele für Multitrigger")
+![](triggers-images/multi-requireall.png "MultiTrigger Examples")
 
 <a name="enterexit" />
 
@@ -316,19 +318,18 @@ Im Folgenden wird der `FadeTriggerAction`-Code dargestellt:
 ```csharp
 public class FadeTriggerAction : TriggerAction<VisualElement>
 {
-    public FadeTriggerAction() {}
-
     public int StartsFrom { set; get; }
 
-    protected override void Invoke (VisualElement visual)
+    protected override void Invoke(VisualElement sender)
     {
-            visual.Animate("", new Animation( (d)=>{
-                var val = StartsFrom==1 ? d : 1-d;
-                visual.BackgroundColor = Color.FromRgb(1, val, 1);
-
-            }),
-            length:1000, // milliseconds
-            easing: Easing.Linear);
+        sender.Animate("FadeTriggerAction", new Animation((d) =>
+        {
+            var val = StartsFrom == 1 ? d : 1 - d;
+            // so i was aiming for a different color, but then i liked the pink :)
+            sender.BackgroundColor = Color.FromRgb(1, val, 1);
+        }),
+        length: 1000, // milliseconds
+        easing: Easing.Linear);
     }
 }
 ```

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: b8020ae8539e12640cde0d565ccbd2eb0c01fc30
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e93a12fec63dcb0a31e57de26b3d7ee8827e7864
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022498"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489062"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung
 
@@ -168,7 +168,7 @@ Wenn ein bestimmter Mac nicht im Dialogfeld **Mit Mac koppeln** aufgeführt wird
 > - Für die automatische Bereitstellung eines Macs muss die Remoteanmeldung auf dem Mac aktiviert sein. Außerdem muss ein Windows-Computer über ein Netzwerk auf den Mac zugreifen können. Weitere Informationen finden Sie unter [Aktivieren der Remoteanmeldung auf dem Mac](#enable-remote-login-on-the-mac).
 > - Für die automatische Mac-Bereitstellung sind 3 GB freier Speicherplatz auf dem Mac erforderlich, um Xamarin.iOS zu installieren.
 
-Das Feature „Mit Mac koppeln“ installiert die erforderliche Software oder aktualisiert diese, wenn Visual Studio 2017 [eine Verbindung mit dem Mac herstellt](#connect-to-the-mac-from-visual-studio-2019).
+Das Feature „Mit Mac koppeln“ installiert die erforderliche Software oder aktualisiert diese, wenn Visual Studio 2019 [eine Verbindung mit dem Mac herstellt](#connect-to-the-mac-from-visual-studio-2019).
 
 ### <a name="mono"></a>Mono
 
@@ -204,7 +204,7 @@ Das Feature „Mit Mac koppeln“ überprüft auch, ob Xcode installiert wurde u
 |---|---|---|
 |Xcode|[![Xcode-Installation fehlt](images/xcode-missing.png "Xcode-Installation fehlt")](images/xcode-missing-large.png#lightbox)|[![Xcode-Lizenz](images/xcode-license.png "Xcode-Lizenz")](images/xcode-license-large.png#lightbox)|
 
-Zusätzlich installiert oder aktualisiert das Feature „Mit Mac koppeln“ verschiedene Pakete, die mit Xcode verteilt werden. Beispiel:
+Zusätzlich installiert oder aktualisiert das Feature „Mit Mac koppeln“ verschiedene Pakete, die mit Xcode verteilt werden. Zum Beispiel:
 
 - **MobileDeviceDevelopment.pkg**
 - **XcodeExtensionSupport.pkg**
@@ -218,11 +218,11 @@ Die Installation dieser Pakete erfolgt schnell, und es wird keine Eingabeaufford
 
 ### <a name="troubleshooting-automatic-mac-provisioning"></a>Problembehandlung bei der automatischen Bereitstellung eines Macs
 
-Wenn bei der automatischen Bereitstellung eines Macs Probleme auftreten, können Sie sich die Protokolle der Visual Studio 2019-IDE ansehen, die unter **%LOCALAPPDATA%\Xamarin\Logs\15.0** gespeichert werden. Diese Protokolle enthalten möglicherweise Fehlermeldungen, die Sie zur effizienteren Diagnose des Fehlers oder für Supportanfragen verwenden können.
+Wenn bei der automatischen Bereitstellung eines Macs Probleme auftreten, können Sie sich die Protokolle der Visual Studio 2019-IDE ansehen, die unter **%LOCALAPPDATA%\Xamarin\Logs\16.0** gespeichert werden. Diese Protokolle enthalten möglicherweise Fehlermeldungen, die Sie zur effizienteren Diagnose des Fehlers oder für Supportanfragen verwenden können.
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>Erstellen von iOS-Apps über die Windows-Befehlszeile
 
-Das Feature „Mit Mac koppeln“ unterstützt die Erstellung von Xamarin.iOS-Anwendungen über die Befehlszeile. Beispiel:
+Das Feature „Mit Mac koppeln“ unterstützt die Erstellung von Xamarin.iOS-Anwendungen über die Befehlszeile. Zum Beispiel:
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
@@ -236,7 +236,7 @@ Die im obigen Beispiel an `msbuild` übergebenen Parameter sind:
 - `ServerPassword`: das Kennwort, das zur Anmeldung bei dem Mac-Buildhost verwendet wird.
 
 > [!NOTE]
-> Visual Studio 2019 speichert `msbuild` im folgenden Verzeichnis: **C:\Programme (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin**
+> Visual Studio 2019 speichert `msbuild` im folgenden Verzeichnis: **C:\Programme (x86)\Microsoft Visual Studio\2019\\&lt;Version&gt;\MSBuild\Current\Bin**
 
 Wenn sich das Feature „Mit Mac koppeln“ zum ersten Mal über Visual Studio 2019 oder über die Befehlszeile bei einem Mac-Buildhost anmeldet, werden SSH-Schlüssel eingerichtet. Durch die Verwendung dieser Schlüssel entfällt bei weiteren Anmeldungen die Angabe des Benutzernamens oder des Kennworts. Neu erstellte Schlüssel werden unter **%LOCALAPPDATA%\Xamarin\MonoTouch** gespeichert.
 

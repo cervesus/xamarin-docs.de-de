@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771715"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545664"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Einfache Xamarin.Forms-Bindungen
 
@@ -197,7 +197,7 @@ Wenn Sie dieses Programm ausführen, passiert etwas Unerwartetes:
 
 Wenn die Seite angezeigt wird, sieht sie zunächst wie der iOS-Bildschirm links aus. Wo ist das `Label`?
 
-Dieses Problem wird ausgelöst, weil der `Slider` einen Anfangswert von 0 (null) hat. Dadurch wird die `Scale`-Eigenschaft des `Label` auch auf 0 (null) festgelegt, also der Standardwert von 1 überschrieben. Deshalb ist das `Label` zunächst nicht sichtbar. Wie Sie auf den Android- und UWP-Screenshots sehen können, können Sie den `Slider` anpassen, damit das `Label` wieder angezeigt wird. Dass es aber zunächst nicht angezeigt wurde, ist verwirrend.
+Dieses Problem wird ausgelöst, weil der `Slider` einen Anfangswert von 0 (null) hat. Dadurch wird die `Scale`-Eigenschaft des `Label` auch auf 0 (null) festgelegt, also der Standardwert von 1 überschrieben. Deshalb ist das `Label` zunächst nicht sichtbar. Wie Sie auf dem Android-Screenshot sehen können, können Sie den `Slider` anpassen, damit das `Label` wieder angezeigt wird. Dass es aber zunächst nicht angezeigt wurde, ist verwirrend.
 
 Im [nächsten Artikel](binding-mode.md) erfahren Sie, wie Sie dieses Problem umgehen, indem Sie den `Slider` über den Standardwert der `Scale`-Eigenschaft initialisieren.
 
@@ -325,7 +325,7 @@ Das Beispiel **Binding Context Inheritance** (Bindungskontextvererbung) veransch
 
 Die `BindingContext`-Eigenschaft des `StackLayout`-Objekts wird auf das Objekt `slider` festgelegt. Dieser Bindungskontext wird sowohl vom `Label` als auch von `BoxView` geerbt. Deren `Rotation`-Eigenschaften werden auf die `Value`-Eigenschaft des `Slider` festgelegt:
 
-[![Bindungskontextvererbung](basic-bindings-images/bindingcontextinheritance-small.png "Bindungskontextvererbung")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Bindungskontextvererbung")
+[![Vererbung von Bindungskontexten](basic-bindings-images/bindingcontextinheritance-small.png "Vererbung von Bindungskontexten")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Vererbung von Bindungskontexten")
 
 Im [nächsten Artikel](binding-mode.md) erfahren Sie, wie sich der *Bindungsmodus* auf den Datenfluss zwischen Ziel- und Quellobjekten auswirken kann.
 

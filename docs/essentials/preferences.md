@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: 6d57b5ce9cb61363eef24b230f6cf71894f66198
-ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
+ms.openlocfilehash: 1c6e55b69ca683b7fc1919995ba576ab77bf3c3b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54317881"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488503"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
@@ -83,7 +83,9 @@ Alle Daten werden in [freigegebenen Einstellungen](https://developer.android.com
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) wird zum Speichern von Werten auf dem Gerät verwendet. Wenn kein `sharedName` angegeben ist, werden die `LocalSettings` verwendet. Andernfalls wird der Name zum Erstellen eines neuen Containers innerhalb von `LocalSettings` verwendet.
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) wird zum Speichern von Werten auf dem Gerät verwendet. Wenn kein `sharedName` angegeben ist, werden die `LocalSettings` verwendet. Andernfalls wird der Name zum Erstellen eines neuen Containers innerhalb von `LocalSettings` verwendet. 
+
+`LocalSettings` weist außerdem die folgende Einschränkung auf, dass der Name jeder einzelnen Einstellung höchstens 255 Zeichen lang sein darf. Jede Einstellung kann bis zu 8 KB groß sein, und jede zusammengesetzte Einstellung kann bis zu 64 KB groß sein.
 
 --------------
 

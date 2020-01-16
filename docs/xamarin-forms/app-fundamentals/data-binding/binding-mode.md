@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1991be6961cbc296501a1df92fe3c89dda01d190
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: acfa7bc953906654567d361b93ec1ccff22c1f1b
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771693"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545644"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms-Bindungsmodus
 
@@ -49,7 +49,7 @@ Sie konnten es sich vielleicht schon denken: Der `Slider` wird über den anfäng
 
 [![Umgekehrte Bindung](binding-mode-images/reversebinding-small.png "Umgekehrte Bindung")](binding-mode-images/reversebinding-large.png#lightbox "Umgekehrte Bindung")
 
-Möglicherweise ist es für Sie überraschend, dass der `Slider` weiterhin funktioniert, wie Sie auf den Android- und UWP-Screenshots sehen können. Die Datenbindung scheint sogar besser zu funktionieren, wenn der `Slider` und nicht das `Label` das Bindungsziel ist, da die Initialisierung wie erwartet funktioniert.
+Möglicherweise wären Sie aber überrascht, dass der `Slider` weiterhin funktioniert, wie Sie auf dem Android-Screenshot sehen können. Die Datenbindung scheint sogar besser zu funktionieren, wenn der `Slider` und nicht das `Label` das Bindungsziel ist, da die Initialisierung wie erwartet funktioniert.
 
 Der Unterschied zwischen dem Beispiel für die **umgekehrte Bindung** und den vorherigen Beispielen besteht im *Bindungsmodus*.
 
@@ -209,7 +209,7 @@ Wenn sich die `Color`-Eigenschaft ändert, ruft die `GetNearestColorName`-Method
 
 Wenn eine ViewModel-Klasse als Bindungsquelle festgelegt wird, fügt die Bindungsinfrastruktur einen Handler an das `PropertyChanged`-Ereignis an. So kann die Bindung informiert werden, wenn sich die Eigenschaften ändern, um die Zieleigenschaften der geänderten Werte entsprechend anzupassen.
 
-Wenn die Zieleigenschaft (oder die `Binding`-Definition einer Zieleigenschaft) jedoch den `BindingMode` `OneTime` aufweist, muss die Bindungsinfrastruktur keinen Handler an das `PropertyChanged`-Ereignis anfügen. Die Zieleigenschaft wird nur dann aktualisiert, wenn sich der `BindingContext` ändert, und nicht, wenn sich die Quelleigenschaft ändert.
+Wenn die Zieleigenschaft (oder die `Binding`-Definition einer Zieleigenschaft) jedoch den `BindingMode``OneTime` aufweist, muss die Bindungsinfrastruktur keinen Handler an das `PropertyChanged`-Ereignis anfügen. Die Zieleigenschaft wird nur dann aktualisiert, wenn sich der `BindingContext` ändert, und nicht, wenn sich die Quelleigenschaft ändert.
 
 Die XAML-Datei **Simple Color Selector** (Einfache Farbauswahl) instanziiert die Klasse `HslColorViewModel` im Ressourcenverzeichnis der Seite und initialisiert die `Color`-Eigenschaft. Die `BindingContext`-Eigenschaft des `Grid`-Objekts wird auf die Bindungserweiterung `StaticResource` festgelegt, um auf diese Ressource zu verweisen:
 
@@ -263,7 +263,7 @@ Wenn das Programm zum ersten Mal ausgeführt wird, werden die Elemente `BoxView`
 
 [![Einfache Farbauswahl](binding-mode-images/simplecolorselector-small.png "Einfache Farbauswahl")](binding-mode-images/simplecolorselector-large.png#lightbox "Einfache Farbauswahl")
 
-Wenn Sie die Schieberegler anpassen, werden `BoxView` und `Label` entsprechend aktualisiert. Dies wird auf den Android- und UWP-Screenshots veranschaulicht.
+Wenn Sie die Schieberegler anpassen, werden `BoxView` und `Label` entsprechend aktualisiert, wie in dem Android-Screenshot veranschaulicht.
 
 Ein gängiger Ansatz ist das Instanziieren der ViewModel-Klasse im Ressourcenverzeichnis. Zudem ist es möglich, die ViewModel-Klasse innerhalb von Eigenschaftenelementtags für die `BindingContext`-Eigenschaft zu instanziieren. Versuchen Sie in der Datei **Simple Color Selector** (Einfache Farbauswahl) `HslColorViewModel` aus dem Ressourcenverzeichnis zu entfernen, und legen Sie das Objekt wie folgt auf die `BindingContext`-Eigenschaft des `Grid`-Objekts fest:
 
@@ -675,7 +675,7 @@ public partial class SampleSettingsPage : ContentPage
 
 Der iOS-Screenshot auf der linken Seite zeigt das Programm bei der ersten Ausführung. Der Konstruktor in `SampleSettingsViewModel` initialisiert die Hintergrundfarbe in weiß, was so in `ListView` ausgewählt wurde:
 
-[![Beispieleinstellungen](binding-mode-images/samplesettings-small.png "Beispieleinstellungen")](binding-mode-images/samplesettings-large.png#lightbox "Beispieleinstellungen")
+[![Beispieleinstellung](binding-mode-images/samplesettings-small.png "Beispieleinstellungen")](binding-mode-images/samplesettings-large.png#lightbox "Beispieleinstellungen")
 
 Der andere Screenshot zeigt die geänderten Einstellungen. Denken Sie daran, das Programm auf dem ausgeführten Gerät oder Emulator in den Energiesparmodus zu versetzen oder es zu beenden, wenn Sie mit dieser Seite experimentieren. Wenn Sie das Programm über den Visual Studio-Debugger beenden, wird die `OnSleep`-Überschreibung in der `App`-Klasse nicht aufgerufen.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 60f51be5ffad67d839edd42b7826b0c57c46eb8a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2b6dcd53a9761ec3f030f3f5bf81894e9faa8b1f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029995"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487021"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Veröffentlichen von Xamarin.Mac-Apps im Mac App Store
 
@@ -44,7 +44,7 @@ Dieser Leitfaden enthält Informationen zum Erstellen der notwendigen Zertifikat
 
 Dieser Leitfaden enthält Informationen zum Erstellen der erforderlichen Bereitstellungsprofile, die für das Veröffentlichen einer Xamarin.Mac-App benötigt werden.
 
-### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac-App-Konfiguration](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
+### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Konfiguration einer Mac-App](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
 
 Dieser Leitfaden enthält Informationen zum Konfigurieren einer Xamarin.Mac-App für die Veröffentlichung.
 

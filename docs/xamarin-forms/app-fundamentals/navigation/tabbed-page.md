@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 22c5b5b6479ce65c2e6b69f6ad5a98fd11ae47d7
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842871"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489998"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms: TabbedPage
 
@@ -27,7 +27,7 @@ Unter iOS wird die Liste der Registerkarten am unteren Rand des Bildschirms ange
 > [!TIP]
 > Die `TabbedRenderer`-Klasse für iOS enthält eine überschreibbare `GetIcon`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer angegebenen Quelle zu laden. Durch diese Überschreibung können Sie SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwenden. Darüber hinaus können die ausgewählte und nicht ausgewählte Versionen eines Symbols zur Verfügung gestellt werden.
 
-Unter Android wird die Liste der Registerkarten am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Jede Registerkarte besteht aus einem Titel und einem Symbol, bei dem es sich um eine PNG-Datei mit einem Alphakanal handeln sollte. Die Registerkarten können jedoch mit einem plattformspezifischen Element an den unteren Rand des Bildschirms verschoben werden. Weitere Informationen zu den Symbolanforderungen finden Sie unter [Tabs](https://material.io/components/tabs/#) (Registerkarten) auf material.io und [Support different pixel densities](https://developer.android.com/training/multiscreen/screendensities) (Unterstützung verschiedener Pixeldichten) auf developer.android.com. Weitere Informationen zum Verschieben der Registerkarten an den unteren Bildschirmrand finden Sie unter [Setting TabbedPage Toolbar Placement and Color](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md) (Festlegen der TabbedPage-Symbolleistenanordnung und -farbe).
+Unter Android wird die Liste der Registerkarten am oberen Rand des Bildschirms angezeigt, und der Detailbereich befindet sich darunter. Jede Registerkarte besteht aus einem Titel und einem Symbol, bei dem es sich um eine PNG-Datei mit einem Alphakanal handeln sollte. Die Registerkarten können jedoch mit einem plattformspezifischen Element an den unteren Rand des Bildschirms verschoben werden. Wenn mehr als fünf Registerkarten vorhanden sind und die Registerkartenliste sich am unteren Rand des Bildschirms befindet, wird eine Registerkarte *More* (Weitere) angezeigt, die für den Zugriff auf zusätzliche Registerkarten verwendet werden kann. Weitere Informationen zu den Symbolanforderungen finden Sie unter [Tabs](https://material.io/components/tabs/#) (Registerkarten) auf material.io und [Support different pixel densities](https://developer.android.com/training/multiscreen/screendensities) (Unterstützung verschiedener Pixeldichten) auf developer.android.com. Weitere Informationen zum Verschieben der Registerkarten an den unteren Bildschirmrand finden Sie unter [Setting TabbedPage Toolbar Placement and Color](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md) (Festlegen der TabbedPage-Symbolleistenanordnung und -farbe).
 
 > [!TIP]
 > Die `TabbedPageRenderer`-Klasse von AppCompat unter Android enthält eine überschreibbare `GetIconDrawable`-Methode, die verwendet werden kann, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse zu laden. Durch diese Überschreibung können SVG-Bilder als Symbole in einer `TabbedPage`-Klasse verwendet werden. Die Bilder funktionieren auf Registerkartenleisten am oberen und am unteren Rand. Alternativ kann die überschreibbare `SetTabIcon`-Methode verwendet werden, um Registerkartensymbole aus einer benutzerdefinierten `Drawable`-Klasse für Registerkartenleisten am oberen Rand zu laden.

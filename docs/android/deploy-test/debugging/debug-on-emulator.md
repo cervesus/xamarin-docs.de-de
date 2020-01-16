@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 8ca13b4f9c961b8bb206d065ce3cf641a8662160
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028081"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556521"
 ---
-# <a name="debugging-on-the-android-emulator"></a>Debuggen auf dem Android-Emulator
+# <a name="debug-on-the-android-emulator"></a>Debuggen auf dem Android-Emulator
 
 _In diesem Leitfaden erfahren Sie, wie Sie ein virtuelles Gerät im Android-Emulator zum Debuggen und Testen Ihrer App starten._
-
-## <a name="overview"></a>Übersicht
 
 Der Android-Emulator wird zusammen mit der Workload **Mobile-Entwicklung mit .NET** installiert und kann mit vielen verschiedenen Konfigurationen verwendet werden, wodurch sich unterschiedliche Android-Geräte simulieren lassen. Jede dieser Konfigurationen wird als _virtuelles Gerät_ erstellt. In diesem Leitfaden erfahren Sie, wie Sie den Emulator in Visual Studio starten und die App auf einem virtuellen Gerät ausführen. Informationen zum Konfigurieren des Android-Emulators und Erstellen von neuen virtuellen Geräten finden Sie unter [Android Emulator Setup (Einrichten des Android-Emulators)](~/android/get-started/installation/android-emulator/index.md).
 

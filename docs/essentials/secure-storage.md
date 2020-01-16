@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 1e4cb52772a60489f887116cbcfd4e6a8930fa3a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756796"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488490"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
 
@@ -113,7 +113,7 @@ catch (Exception ex)
 ```
 
 > [!NOTE]
-> Wenn dem angeforderten Schlüssel kein Wert zugeordnet ist, gibt `GetAsync` `null` zurück.
+> Wenn dem angeforderten Schlüssel kein Wert zugeordnet ist, gibt `GetAsync``null` zurück.
 
 So entfernen Sie einen bestimmten Schlüssel:
 
@@ -155,13 +155,13 @@ In einigen Fällen werden KeyChain-Daten mit iCloud synchronisiert, und bei der 
 
 Verschlüsselte Werte werden in `ApplicationData.Current.LocalSettings` gespeichert, in einem Container mit dem Namen **[YOUR-APP-ID].xamarinessentials**.
 
-**SecureStorage** verwendet die [Einstellungen](preferences.md)-API und berücksichtigt die in der Dokumentation [Einstellungen](preferences.md#persistence) beschriebene Datenpersistenz.
+**SecureStorage** verwendet die [Einstellungen](preferences.md)-API und berücksichtigt die in der Dokumentation [Einstellungen](preferences.md#persistence) beschriebene Datenpersistenz. Es verwendet außerdem `LocalSettings`, das die Einschränkung aufweist, dass der Name jeder einzelnen Einstellung höchstens 255 Zeichen lang sein darf. Jede Einstellung kann bis zu 8 KB groß sein, und jede zusammengesetzte Einstellung kann bis zu 64 KB groß sein.
 
 -----
 
 ## <a name="limitations"></a>Einschränkungen
 
-Diese API wurde zum Speichern kleiner Textmengen konzipiert.  Die Leistung ist ggf. langsam, wenn Sie versuchen, damit große Textmengen zu speichern.
+Diese API wurde zum Speichern kleiner Textmengen konzipiert.  Die Leistung ist ggf. langsam, wenn Sie versuchen, damit große Textmengen zu speichern. 
 
 ## <a name="api"></a>API
 

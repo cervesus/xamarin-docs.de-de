@@ -5,12 +5,12 @@ ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 3e49e12faac1fc93816d9a51646f639046c200c5
-ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
+ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70887375"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488516"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Startprogramm
 
@@ -53,6 +53,30 @@ public class LauncherTest
     }
 }
 ```
+
+### <a name="additional-platform-setup"></a>Einrichtung zusätzlicher Plattformen
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Kein zusätzliches Setup.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+In iOS 9 und höher erzwingt Apple, welche Schemas eine Anwendung abfragen kann. Um anzugeben, welche Schemas Sie verwenden möchten, müssen Sie `LSApplicationQueriesSchemes` in Ihrer `Info.plist`-Datei angeben.
+
+```
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>lyft</string>  
+    <string>fb</string>
+</array>
+```
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+Kein zusätzliches Setup.
+
+-----
 
 ## <a name="files"></a>Dateien
 

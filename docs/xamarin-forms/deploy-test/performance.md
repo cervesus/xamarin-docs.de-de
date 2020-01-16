@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
-ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681339"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487164"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Verbessern der Leistung von Xamarin.Forms-Apps
 
@@ -172,7 +172,7 @@ Die allgemeine Reaktionsfähigkeit Ihrer Anwendung kann verbessert und Leistungs
 - Vermeiden Sie es, asynchrone Konstruktoren zu erstellen. Verwenden Sie stattdessen Lebenszyklusereignisse oder separate Initialisierungslogik, um `await` ordnungsgemäß für beliebige Initialisierungen auszuführen. Weitere Informationen finden Sie unter [Asynchrone Konstruktoren](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html) auf blog.stephencleary.com.
 - Verwenden Sie das verzögerte Aufgabenmuster, um das Warten auf asynchrone Vorgänge beim Anwendungsstart zu vermeiden. Weitere Informationen finden Sie unter [AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/).
 - Erstellen Sie einen Aufgabenwrapper für vorhandene asynchrone Vorgänge, die keine aufgabenbasierten asynchronen Muster verwenden, indem Sie `TaskCompletionSource<T>`-Objekte erstellen. Diese Objekte erhalten die Vorteile der `Task`-Programmierbarkeit und ermöglichen es Ihnen, die Lebensdauer und den Abschluss der zugeordneten `Task`-Elemente zu steuern. Weitere Informationen finden Sie unter [Das Wesen von TaskCompletionSource](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/).
-asynchronous-mvvm-applications-commands).
+ 
 - Geben Sie ein `Task`-Objekt zurück, anstatt ein erwartetes `Task`-Objekt zurückzugeben, wenn das Ergebnis eines asynchronen Vorgangs nicht verarbeitet werden muss. Aufgrund weniger Kontextwechsel ist dies leistungsfähiger.
 - Verwenden Sie die TPL-Datenflussbibliothek (Task Parallel Library) in Szenarios wie der Verarbeitung von Daten, sobald sie verfügbar sind, oder wenn Sie über mehrere Vorgänge verfügen, die asynchron miteinander kommunizieren müssen. Weitere Informationen finden Sie unter [Datenfluss (Task Parallel Library)](/dotnet/standard/parallel-programming/dataflow-task-parallel-library).
 
@@ -324,7 +324,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control` `null` lautet. Ein Steuerelement sollte außerdem nur dann erstellt, konfiguriert und vom Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein gut funktionierender benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
+Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control``null` lautet. Ein Steuerelement sollte außerdem nur dann erstellt, konfiguriert und vom Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein gut funktionierender benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
 
 > [!IMPORTANT]
 > Die `SetNativeControl`-Methode sollte nur aufgerufen werden, wenn die `e.NewElement`-Eigenschaft nicht `null` ist und die `Control`-Eigenschaft `null` ist.
