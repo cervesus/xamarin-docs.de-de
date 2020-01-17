@@ -6,13 +6,13 @@ ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/28/2019
-ms.openlocfilehash: 022aa9f1aeb2961d98b52747441e875bd89a584a
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 12/05/2019
+ms.openlocfilehash: e207949d607219393ffeb51fce818ddfb68ae344
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739313"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489907"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms-Shell-Seitenkonfiguration
 
@@ -86,6 +86,21 @@ Alternativ können die Farbeigenschaften mit einer XAML-Formatvorlage festgelegt
 
 Weitere Informationen zu XAML-Formatvorlagen finden Sie unter [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md).
 
+## <a name="enable-navigation-bar-shadow"></a>Aktivieren des Navigationsleistenschattens
+
+Die `Shell`-Klasse definiert die angefügte Eigenschaft `NavBarHasShadow` vom Typ `bool`, die steuert, ob die Navigationsleiste einen Schatten hat. Der Standardwert der Eigenschaft lautet `false`.
+
+Diese Eigenschaft kann zwar auf einem `Shell`-Objekt mit Unterklassen festgelegt werden, kann aber auch auf allen Seiten festgelegt werden, die den Schatten der Navigationsleiste aktivieren möchten. Im folgenden XAML-Code wird zum Beispiel das Aktivieren des Navigationsleistenschattens durch eine [`ContentPage`](xref:Xamarin.Forms.ContentPage) gezeigt:
+
+```xaml
+<ContentPage ...
+             Shell.NavBarHasShadow="true">
+    ...
+</ContentPage>
+```
+
+Dies führt dazu, dass der Schatten der Navigationsleiste aktiviert wird.
+
 ## <a name="disable-the-navigation-bar"></a>Deaktivieren der Navigationsleiste
 
 Die `Shell`-Klasse definiert die angefügte `NavBarIsVisible`-Eigenschaft vom Typ `bool` die steuert, ob die Navigationsleiste eingeblendet werden soll, wenn eine Seite angezeigt wird. Der Standardwert der Eigenschaft lautet `true`.
@@ -139,7 +154,7 @@ Diese Eigenschaft kann zwar auf einem `Shell`-Objekt mit Unterklassen festgelegt
 
 Dies führt dazu, dass eine Bild in der Navigationsleiste auf der Seite angezeigt wird:
 
-![Screenshot des Shell-Seite mit einer Titelansicht unter iOS und Android](configuration-images/titleview.png "Shell-Seite mit einer Titelansicht")
+![Screenshot der Shell-Seite mit einer Titelansicht unter iOS und Android](configuration-images/titleview.png "Shell-Seite mit Titelansicht")
 
 > [!IMPORTANT]
 > Wenn die Navigationsleiste mit der angefügten `NavBarIsVisible`-Eigenschaft ausgeblendet wurde, wird die Titelansicht nicht angezeigt.

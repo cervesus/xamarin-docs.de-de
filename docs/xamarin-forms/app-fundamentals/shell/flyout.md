@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2019
-ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
-ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
+ms.date: 11/05/2019
+ms.openlocfilehash: 4049b3bdfdd6077dcfa151df9553722e63def0ba
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74451810"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489959"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms-Shell-Flyout
 
@@ -223,7 +223,7 @@ Diese implizite Konvertierung umschließt jedes [`ContentPage`](xref:Xamarin.For
 
 Die `FlyoutItem`-Klasse umfasst die folgenden Eigenschaften, die die Darstellung und das Verhalten des Flyoutelements steuern:
 
-- `FlyoutDisplayOptions` vom Typ `FlyoutDisplayOptions`: Definiert, wie das Element und seine untergeordneten Elemente im Flyout angezeigt werden. Der Standardwert ist `AsSingleItem`sein.
+- `FlyoutDisplayOptions` vom Typ `FlyoutDisplayOptions`: Definiert, wie das Element und seine untergeordneten Elemente im Flyout angezeigt werden. Der Standardwert ist `AsSingleItem`.
 - `CurrentItem` vom Typ `Tab`: das ausgewählte Element.
 - `Items` vom Typ `IList<Tab>`: Definiert alle Registerkarten in einem `FlyoutItem`-Objekt.
 - `FlyoutIcon` vom Typ `ImageSource`: das für das Element verwendete Symbol. Wenn diese Eigenschaft nicht festgelegt ist, wird der `Icon`-Eigenschaftswert verwendet.
@@ -246,6 +246,23 @@ Darüber hinaus stellt die `FlyoutItem`-Klasse die folgenden überschreibbaren M
 - `OnTabStopPropertyChanged`: Wird aufgerufen, wenn sich die `IsTabStop`-Eigenschaft ändert.
 - `TabIndexDefaultValueCreator`: Gibt einen `int`-Wert zurück und wird aufgerufen, um den Standardwert der `TabIndex`-Eigenschaft festzulegen.
 - `TabStopDefaultValueCreator`: Gibt einen `bool`-Wert zurück und wird aufgerufen, um den Standardwert der `TabStop`-Eigenschaft festzulegen.
+
+## <a name="flyout-vertical-scroll"></a>Flyout mit vertikalem Scrollen
+
+Standardmäßig kann ein Flyout vertikal gescrollt werden, wenn die Flyoutelemente nicht in das Flyout passen. Dieses Verhalten kann geändert werden, indem die bindbare Eigenschaft `Shell.FlyoutVerticalScrollMode` auf eines der `ScrollMode`-Enumerationsmember festgelegt wird:
+
+- `Disabled`: Gibt an, dass das vertikale Scrollen deaktiviert wird.
+- `Enabled`: Gibt an, dass das vertikale Scrollen aktiviert wird.
+- `Auto`: Gibt an, dass das vertikale Scrollen aktiviert wird, wenn die Flyoutelemente nicht in das Flyout passen. Dies ist der Standardwert der `Shell.FlyoutVerticalScrollMode`-Eigenschaft.
+
+Im folgenden Beispiel wird gezeigt, wie Sie das vertikale Scrollen deaktivieren:
+
+```xaml
+<Shell ...
+       FlyoutVerticalScrollMode="Disabled"
+    ...
+</Shell>
+```
 
 ## <a name="flyout-display-options"></a>Anzeigeoptionen für Flyouts
 

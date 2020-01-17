@@ -6,13 +6,13 @@ ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: a6d99197adca9d07fec5b996d2a74e2ac336d2e9
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 11/06/2019
+ms.openlocfilehash: 0ffcbe99ef9696c5fde501809bea5ddcc7a793a7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888980"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489834"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms-Shell-Registerkarten
 
@@ -50,7 +50,7 @@ Die einfachste Shell-Anwendung ist eine Single-Page-Webanwendung, die durch Hinz
 
 Dieses Codebeispiel führt zu der folgenden Single-Page-Webanwendung:
 
-[![Screenshot einer Shell-Einzelseiten-App unter iOS und Android](tabs-images/single-page-app.png "Shell-Einzelseiten-App")](tabs-images/single-page-app-large.png#lightbox "Shell-Einzelseiten-App")
+[![Screenshot einer Shell-App mit einer Seite unter iOS und Android](tabs-images/single-page-app.png "Shell-App mit einer Seite")](tabs-images/single-page-app-large.png#lightbox "Shell-App mit einer Seite")
 
 > [!NOTE]
 > Die Navigationsleiste kann bei Bedarf ausgeblendet werden, indem die angefügte Eigenschaft `Shell.NavBarIsVisible` für das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt auf `false` festgelegt wird.
@@ -100,7 +100,11 @@ Diese implizite Konvertierung schließt das [`ContentPage`](xref:Xamarin.Forms.C
 
 Registerkartentitel und -symbole werden für die einzelnen `Tab`-Objekte festgelegt und auf den unteren Registerkarten angezeigt:
 
-[![Screenshot einer Shell-Two-Page-App mit unteren Registerkarten unter iOS und Android](tabs-images/two-page-app-bottom-tabs.png "Shell-Two-Page-App mit unteren Registerkarten")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "Shell-Two-Page-App mit unteren Registerkarten")
+[![Screenshot einer Shell-App mit zwei Seiten mit unten liegenden Registerkarten unter iOS und Android](tabs-images/two-page-app-bottom-tabs.png "Shell-App mit zwei Seiten mit unten liegenden Registerkarten")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "Shell-App mit zwei Seiten mit unten liegenden Registerkarten")
+
+Wenn mehr als fünf Registerkarten vorhanden sind, wird die Registerkarte **More** (Weitere) angezeigt, die verwendet werden kann, um auf die zusätzlichen Registerkarten zuzugreifen:
+
+[![Screenshot einer Shell-App mit einer Registerkarte „Mehr“ unter iOS und Android](tabs-images/more-tabs.png "Shell-App mit Registerkarte „Mehr“")](tabs-images/more-tabs-large.png#lightbox "Shell-App mit Registerkarten „Mehr“")
 
 Alternativ können die impliziten Shell-Konvertierungsoperatoren verwendet werden, um die Objekte `ShellContent` und `Tab` aus dem vorherigen Beispiel zu entfernen:
 
@@ -126,7 +130,7 @@ Diese implizite Konvertierung schließt jedes [`ContentPage`](xref:Xamarin.Forms
 Die `Tab`-Klasse umfasst die folgenden Eigenschaften, die die Darstellung und das Verhalten der Registerkarte steuern:
 
 - `CurrentItem` vom Typ `ShellContent`: das ausgewählte Element.
-- `FlyoutDisplayOptions` vom Typ `FlyoutDisplayOptions`: Definiert, wie das Element und seine untergeordneten Elemente im Flyout angezeigt werden. Der Standardwert ist `AsSingleItem`sein.
+- `FlyoutDisplayOptions` vom Typ `FlyoutDisplayOptions`: Definiert, wie das Element und seine untergeordneten Elemente im Flyout angezeigt werden. Der Standardwert ist `AsSingleItem`.
 - `FlyoutIcon` vom Typ `ImageSource`: Definiert das Symbol, das im Flyout angezeigt wird.
 - `Icon` vom Typ `ImageSource`: Definiert das Symbol, das in Teilen des Chroms angezeigt wird, die nicht das Flyout sind.
 - `IsChecked` vom Typ `boolean`: Definiert, ob das Element im Flyout derzeit ausgewählt ist.
@@ -213,7 +217,7 @@ Wenn mehr als ein `ShellContent`-Objekt in einem `Tab`-Objekt vorhanden ist, wir
 
 Dies ergibt das in den folgenden Screenshots gezeigte Layout:
 
-[![Screenshot einer Shell-Two-Page-App mit oberen und unteren Registerkarten unter iOS und Android](tabs-images/two-page-app-top-tabs.png "Shell-Two-Page-App mit oberen und unteren Registerkarten")](tabs-images/two-page-app-top-tabs-large.png#lightbox "Shell-Two-Page-App mit oberen und unteren Registerkarten")
+[![Screenshot einer Shell-App mit zwei Seiten mit oben und unten liegenden Registerkarten unter iOS und Android](tabs-images/two-page-app-top-tabs.png "Shell-App mit zwei Seiten und oben und unten liegenden Registerkarten")](tabs-images/two-page-app-top-tabs-large.png#lightbox "Shell-App mit zwei Seiten und oben und unten liegenden Registerkarten")
 
 Alternativ können die impliziten Shell-Konvertierungsoperatoren verwendet werden, um die `ShellContent`-Objekte und das zweite `Tab`-Objekt aus dem vorherigen Beispiel zu entfernen:
 
