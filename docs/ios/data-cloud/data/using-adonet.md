@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: db26de8deed9945c6fff2d49f7d12de03fbe38df
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ed16c651d0b373e33d58bb73591977d3484d6e0
+ms.sourcegitcommit: be8ce3449afab22673e48b546d857431c071d66f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008238"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162939"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Verwenden von ADO.net mit xamarin. IOS
 
@@ -69,7 +69,7 @@ Beim direkten Ausführen von SQL für die Datenbank sollten Sie die normalen Vor
 
 ## <a name="basic-data-access"></a>Grundlegender Datenzugriff
 
-Der *DataAccess_Basic* -Beispielcode für dieses Dokument sieht bei der Ausführung unter IOS wie folgt aus:
+Der *DataAccess_Basic* Beispielcode für dieses Dokument sieht wie folgt aus, wenn er unter IOS ausgeführt wird:
 
  ![](using-adonet-images/image9.png "iOS ADO.NET sample")
 
@@ -210,7 +210,18 @@ using (var contents = connection.CreateCommand ()) {
 
 Der Rückgabetyp der `ExecuteScalar` Methode ist `object` – Sie sollten das Ergebnis in Abhängigkeit von der Datenbankabfrage umwandeln. Das Ergebnis kann eine ganze Zahl aus einer count-Abfrage oder eine Zeichenfolge aus einer einzelnen Spalte SELECT-Abfrage sein. Beachten Sie, dass sich dies von anderen Execute-Methoden unterscheidet, die ein Reader-Objekt oder eine Anzahl der betroffenen Zeilen zurückgeben.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="microsoftdatasqlite"></a>Microsoft.Data.Sqlite
+
+Es gibt eine weitere Bibliothek `Microsoft.Data.Sqlite`, die über [nuget installiert](https://www.nuget.org/packages/Microsoft.Data.Sqlite)werden kann, die funktionell gleichwertig mit `Mono.Data.Sqlite` ist und die gleichen Abfrage Typen zulässt.
+
+Es gibt einen [Vergleich zwischen den beiden Bibliotheken](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare) und einigen [xamarin-spezifischen Details](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin). Besonders wichtig für xamarin. IOS-apps müssen Sie einen Initialisierungs aufzurufen einschließen:
+
+```csharp
+// required for Xamarin.iOS
+SQLitePCL.Batteries_V2.Init();
+```
+
+## <a name="related-links"></a>Verwandte Themen
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)

@@ -1,177 +1,474 @@
 ---
-title: Spracherkennung, die mit der Microsoft-Spracheingabe-API
-description: Der Microsoft Speech-API ist eine Cloud-basierte API, Algorithmen zur Verarbeitung gesprochener Sprache. In diesem Artikel wird erläutert, wie der Microsoft Speech Recognition-REST-API zu verwenden, um Audiodaten in Text in einer Xamarin.Forms-Anwendung zu konvertieren.
+title: Spracherkennung mithilfe der Sprachdienst-API
+description: In diesem Artikel wird erläutert, wie Sie mit der Azure Speech Service-API Sprache in Text in einer xamarin. Forms-Anwendung umwandeln.
 ms.prod: xamarin
 ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/08/2017
-ms.openlocfilehash: eca079972f4e46c0cf60c4749658ff9a7fe1791b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 01/14/2020
+ms.openlocfilehash: c10b8feea5fbec21fc127262c3f1bfda50beba7f
+ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489803"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265149"
 ---
-# <a name="speech-recognition-using-the-microsoft-speech-api"></a>Spracherkennung, die mit der Microsoft-Spracheingabe-API
+# <a name="speech-recognition-using-azure-speech-service"></a>Spracherkennung mit Azure Speech Service
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
 
-_Die Microsoft Speech-API ist eine cloudbasierte API, die Algorithmen zur Verarbeitung der gesprochenen Sprache bereitstellt. In diesem Artikel wird erläutert, wie Sie die Rest-API von Microsoft Speech Recognition verwenden, um Audiodaten in einer xamarin. Forms-Anwendung zu konvertieren._
+Der Azure Speech Service ist eine cloudbasierte API, die die folgenden Funktionen bietet:
 
-## <a name="overview"></a>Übersicht über
+- **Sprache-zu-Text** -Daten werden Audiodateien oder Streams in Text umgewandelt.
+- **Text-zu-Sprache** konvertiert Eingabe Text in Menschen ähnliche Sprache mit synthetischer Sprache.
+- Die **Sprachübersetzung** ermöglicht die Echt Zeit übergreifende Übersetzung von Sprache zu Sprache und Spracherkennung.
+- **Sprach-Assistenten** können Menschen ähnliche Konversations Schnittstellen für Anwendungen erstellen.
 
-Der Microsoft Speech-API besteht aus zwei Komponenten:
+In diesem Artikel wird erläutert, wie Sprache-zu-Text in der xamarin. Forms-Beispielanwendung mit dem Azure Speech-Dienst implementiert wird. Die folgenden Screenshots zeigen die Beispielanwendung unter IOS und Android:
 
-- Eine Spracherkennung API für die Konvertierung von gesprochener Wörtern in Text. Spracherkennung kann über eine REST-API, -Clientbibliothek oder -Dienstbibliothek ausgeführt werden.
-- Ein Text in Sprache API für die Konvertierung von Text in gesprochenen Wörtern. Konvertierung von Text in Sprache erfolgt über eine REST-API.
+[![Screenshots der Beispielanwendung unter IOS und Android](speech-recognition-images/speech-recognition-cropped.png)](speech-recognition-images/speech-recognition.png#lightbox "Screenshots der Beispielanwendung unter IOS und Android")
 
-Dieser Artikel konzentriert sich auf die Spracherkennung, über die REST-API ausführt. Während der Client und Dienst-Bibliotheken partielle Ergebnisse zurückgeben unterstützt, kann der REST-API nur eine einzelne Erkennungsergebnis, ohne alle partiellen Ergebnisse zurückgeben.
+## <a name="create-an-azure-speech-service-resource"></a>Erstellen einer Azure Speech Service-Ressource
+
+Der Azure Speech Service ist Teil von Azure Cognitive Services und bietet cloudbasierte APIs für Aufgaben wie Bild Erkennung, Spracherkennung und-Übersetzung sowie die Suche nach Azure. Weitere Informationen finden Sie unter [Was sind Azure-Cognitive Services?](https://docs.microsoft.com/azure/cognitive-services/welcome).
+
+Für das Beispiel Projekt muss eine Azure Cognitive Services-Ressource in Ihrem Azure-Portal erstellt werden. Eine Cognitive Services Ressource kann für einen einzelnen Dienst, z. b. den Sprachdienst, oder als multidienstressource erstellt werden. Die Schritte zum Erstellen einer Sprachdienst Ressource lauten wie folgt:
+
+1. Melden Sie sich bei Ihrem [Azure-Portal](https://portal.azure.com)an.
+1. Erstellen Sie eine Multiservice-oder eine Einzel Dienst Ressource.
+1. Abrufen der API-Schlüssel-und Regions Informationen für Ihre Ressource.
+1. Aktualisieren Sie die **Constants.cs** -Beispieldatei.
+
+Eine Schritt-für-Schritt-Anleitung zum Erstellen einer Ressource finden Sie unter [Erstellen einer Cognitive Services Ressource](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
 
 > [!NOTE]
-> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
+> Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen. Sobald Sie über ein Konto verfügen, können Sie eine einzelne Dienst Ressource im Free-Tarif erstellen, um den Dienst zu testen.
 
-API-Schlüssel muss zum Verwenden der Microsoft Speech-API abgerufen werden. Dadurch erhalten Sie über das Azure [Portal](https://portal.azure.com/). Weitere Informationen finden Sie unter [Cognitive Services-Konto im Azure-Portal erstellen](/azure/cognitive-services/cognitive-services-apis-create-account).
+## <a name="configure-your-app-with-the-speech-service"></a>Konfigurieren Ihrer APP mit dem Sprachdienst
 
-Weitere Informationen zu der Microsoft Speech-API, finden Sie unter [Microsoft Speech-API-Dokumentation](/azure/cognitive-services/speech/home/).
-
-## <a name="authentication"></a>Authentifizierung
-
-Jeder Anforderung an die REST-API von Microsoft erfordert ein JSON Web Token (JWT)-Zugriffstoken, der vom token cognitive Services-Dienst auf abgerufen werden kann `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`. Ein Token abgerufen werden kann, durch eine POST-Anforderung an den Sicherheitstokendienst angeben einer `Ocp-Apim-Subscription-Key` Header, der den API-Schlüssel als Wert enthält.
-
-Das folgende Codebeispiel veranschaulicht eine zugriffsanforderung token vom Tokendienst:
+Nachdem Sie eine Cognitive Services Ressource erstellt haben, kann die Datei **Constants.cs** mit der Region und dem API-Schlüssel aus ihrer Azure-Ressource aktualisiert werden:
 
 ```csharp
-public AuthenticationService(string apiKey)
+public static class Constants
 {
-    subscriptionKey = apiKey;
-    httpClient = new HttpClient();
-    httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
-}
-...
-async Task<string> FetchTokenAsync(string fetchUri)
-{
-    UriBuilder uriBuilder = new UriBuilder(fetchUri);
-    uriBuilder.Path += "/issueToken";
-    var result = await httpClient.PostAsync(uriBuilder.Uri.AbsoluteUri, null);
-    return await result.Content.ReadAsStringAsync();
+    public static string CognitiveServicesApiKey = "YOUR_KEY_GOES_HERE";
+    public static string CognitiveServicesRegion = "westus";
 }
 ```
 
-Das zurückgegebene Zugriffstoken, das Base64-Text ist, hat eine Ablaufzeit von 10 Minuten. Aus diesem Grund erneuert die beispielanwendung das Zugriffstoken 9 Minuten.
+## <a name="install-nuget-speech-service-package"></a>Nuget-Sprachdienst Paket installieren
 
-Das Zugriffstoken muss angegeben werden, in den einzelnen REST-API von Microsoft rufen Sie als ein `Authorization` Header, die mit der Zeichenfolge das Präfix `Bearer`, wie im folgenden Codebeispiel gezeigt:
+In der Beispielanwendung wird das nuget-Paket **Microsoft. cognitiveservices. Speech** verwendet, um eine Verbindung mit dem Azure Speech-Dienst herzustellen. Installieren Sie dieses nuget-Paket im Projekt "freigegeben" und in jedem Platt Form Projekt.
 
-```csharp
-httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
-```
+## <a name="create-an-imicrophoneservice-interface"></a>Erstellen einer imikro phoneservice-Schnittstelle
 
-Fehler beim Übergeben eines gültiges Zugriffstokens an die REST-API von Microsoft führt zu einem Fehler 403-Antwort.
-
-## <a name="performing-speech-recognition"></a>Spracherkennung ausführt
-
-Spracherkennung wird erreicht, indem Sie eine POST-Anforderung, sodass die `recognition` -API zu `https://speech.platform.bing.com/speech/recognition/`. Eine einzelne Anforderung darf nicht mehr als 10 Sekunden Audio enthalten, und die gesamte Anforderung kann nicht länger als 14 Sekunden.
-
-Audioinhalte muss im POST-Text der Anforderung in die Wav-Format platziert werden.
-
-In der beispielanwendung die `RecognizeSpeechAsync` Methode aufruft, den Speech Recognition Prozess:
+Jede Plattform erfordert die Berechtigung für den Zugriff auf das Mikrofon. Das Beispiel Projekt stellt eine `IMicrophoneService`-Schnittstelle im freigegebenen Projekt bereit und verwendet die xamarin. Forms-`DependencyService`, um Platt Form Implementierungen der-Schnittstelle abzurufen.
 
 ```csharp
-public async Task<SpeechResult> RecognizeSpeechAsync(string filename)
+public interface IMicrophoneService
 {
-    ...
-
-    // Read audio file to a stream
-    var file = await PCLStorage.FileSystem.Current.LocalStorage.GetFileAsync(filename);
-    var fileStream = await file.OpenAsync(PCLStorage.FileAccess.Read);
-
-    // Send audio stream to Bing and deserialize the response
-    string requestUri = GenerateRequestUri(Constants.SpeechRecognitionEndpoint);
-    string accessToken = authenticationService.GetAccessToken();
-    var response = await SendRequestAsync(fileStream, requestUri, accessToken, Constants.AudioContentType);
-    var speechResult = JsonConvert.DeserializeObject<SpeechResult>(response);
-
-    fileStream.Dispose();
-    return speechResult;
+    Task<bool> GetPermissionAsync();
+    void OnRequestPermissionResult(bool isGranted);
 }
 ```
 
-Audio wird in den einzelnen plattformspezifischen Projekten PCM-Wav-Daten, aufgezeichnet und die `RecognizeSpeechAsync` -Methode verwendet die `PCLStorage` NuGet-Paket, um die audio-Datei als Stream zu öffnen. Der Speech Recognition Anforderungs-URI generiert wird und ein Zugriffstoken wird vom Tokendienst abgerufen. Die Speech Recognition-Anforderung wird gesendet, um die `recognition` -API, die eine JSON-Antwort, die das Ergebnis zurückgibt. Die JSON-Antwort wird deserialisiert, mit dem Ergebnis, das an die aufrufende Methode für die Anzeige zurückgegeben wird.
+## <a name="create-the-page-layout"></a>Erstellen des Seitenlayouts
 
-### <a name="configuring-speech-recognition"></a>Konfigurieren der Spracherkennung
+Das Beispiel Projekt definiert ein einfaches Seitenlayout in der Datei " **MainPage. XAML** ". Bei den schlüssellayoutelementen handelt es sich um eine `Button`, die den Aufzeichnungsprozess startet, eine `Label`, die den Transkriptions Text enthält, sowie eine `ActivityIndicator`, die angezeigt wird, wenn die Aufzeichnung ausgeführt wird:
 
-Der Speech Recognition Prozess kann durch Angabe von Abfrageparametern für HTTP konfiguriert werden:
+```xaml
+<ContentPage ...>
+    <StackLayout>
+        <Frame ...>
+            <ScrollView x:Name="scroll"
+                        ...>
+                <Label x:Name="transcribedText"
+                       ... />
+            </ScrollView>
+        </Frame>
 
-```csharp
-string GenerateRequestUri(string speechEndpoint)
-{
-    // To build a request URL, you should follow:
-    // https://docs.microsoft.com/azure/cognitive-services/speech/getstarted/getstartedrest
-    string requestUri = speechEndpoint;
-    requestUri += @"dictation/cognitiveservices/v1?";
-    requestUri += @"language=en-us";
-    requestUri += @"&format=simple";
-    System.Diagnostics.Debug.WriteLine(requestUri.ToString());
-    return requestUri;
-}
+        <ActivityIndicator x:Name="transcribingIndicator"
+                           IsRunning="False" />
+        <Button x:Name="transcribeButton"
+                ...
+                Clicked="TranscribeClicked"/>
+    </StackLayout>
+</ContentPage>
 ```
 
-Die wichtigsten Konfiguration durch die `GenerateRequestUri` Methode besteht darin, das Gebietsschema der Audioinhalt festgelegt. Eine Liste der unterstützten Gebiets Schemas finden Sie [unter Unterstützte Sprachen](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/).
+## <a name="implement-the-speech-service"></a>Implementieren des sprach Dienstanbieter
 
-### <a name="sending-the-request"></a>Senden der Anforderung
+Die **MainPage.XAML.cs** -Code Behind-Datei enthält die gesamte Logik zum Senden von Audiodaten und zum Empfangen von Text aus dem Azure Speech-Dienst.
 
-Die `SendRequestAsync` Methode macht die POST-Anforderung an die REST-API von Microsoft und die Antwort zurückgegeben:
+Der `MainPage`-Konstruktor ruft eine Instanz der `IMicrophoneService` Schnittstelle aus dem `DependencyService`ab:
 
 ```csharp
-async Task<string> SendRequestAsync(Stream fileStream, string url, string bearerToken, string contentType)
+public partial class MainPage : ContentPage
 {
-    if (httpClient == null)
+    SpeechRecognizer recognizer;
+    IMicrophoneService micService;
+    bool isTranscribing = false;
+
+    public MainPage()
     {
-        httpClient = new HttpClient();
+        InitializeComponent();
+
+        micService = DependencyService.Resolve<IMicrophoneService>();
     }
-    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 
-    var content = new StreamContent(fileStream);
-    content.Headers.TryAddWithoutValidation("Content-Type", contentType);
-    var response = await httpClient.PostAsync(url, content);
-    return await response.Content.ReadAsStringAsync();
+    // ...
 }
 ```
 
-Diese Methode erstellt die POST-Anforderung durch:
+Die `TranscribeClicked`-Methode wird aufgerufen, wenn die `transcribeButton` Instanz abgetippt wird:
 
-- Umschließen den Audiostream in einem `StreamContent` -Instanz, die Grundlage eines Datenstroms HTTP-Inhalt enthält.
-- Festlegen der `Content-Type` -Header der Anforderung um `audio/wav; codec="audio/pcm"; samplerate=16000`.
-- Hinzufügen des Zugriffstokens für die `Authorization` -Header, die Zeichenfolge mit dem Präfix `Bearer`.
+```csharp
+async void TranscribeClicked(object sender, EventArgs e)
+{
+    bool isMicEnabled = await micService.GetPermissionAsync();
 
-Anschließend wird die POST-Anforderung an gesendet `recognition` API. Die Antwort ist dann gelesen und an die aufrufende Methode zurückgegeben.
+    // EARLY OUT: make sure mic is accessible
+    if (!isMicEnabled)
+    {
+        UpdateTranscription("Please grant access to the microphone!");
+        return;
+    }
 
-Die `recognition` API sendet HTTP-Statuscode 200 (OK) in der Antwort angegeben, dass die Anforderung gültig ist, was bedeutet, dass die Anforderung erfolgreich war, und dass die angeforderte Informationen in der Antwort ist. Eine Liste der möglichen Fehlerantworten, finden Sie unter [Problembehandlung](/azure/cognitive-services/speech/troubleshooting).
+    // initialize speech recognizer 
+    if (recognizer == null)
+    {
+        var config = SpeechConfig.FromSubscription(Constants.CognitiveServicesApiKey, Constants.CognitiveServicesRegion);
+        recognizer = new SpeechRecognizer(config);
+        recognizer.Recognized += (obj, args) =>
+        {
+            UpdateTranscription(args.Result.Text);
+        };
+    }
 
-### <a name="processing-the-response"></a>Verarbeiten der Antwort
+    // if already transcribing, stop speech recognizer
+    if (isTranscribing)
+    {
+        try
+        {
+            await recognizer.StopContinuousRecognitionAsync();
+        }
+        catch(Exception ex)
+        {
+            UpdateTranscription(ex.Message);
+        }
+        isTranscribing = false;
+    }
 
-Die API-Antwort wird im JSON-Format zurückgegeben, mit der erkannte Text wird im der `name` Tag. Die folgenden JSON-Daten zeigt eine typische erfolgreiche Antwortnachricht:
-
-```json
-{  
-   "RecognitionStatus":"Success",
-   "DisplayText":"Go shopping tomorrow.",
-   "Offset":16000000,
-   "Duration":17100000
+    // if not transcribing, start speech recognizer
+    else
+    {
+        Device.BeginInvokeOnMainThread(() =>
+        {
+            InsertDateTimeRecord();
+        });
+        try
+        {
+            await recognizer.StartContinuousRecognitionAsync();
+        }
+        catch(Exception ex)
+        {
+            UpdateTranscription(ex.Message);
+        }
+        isTranscribing = true;
+    }
+    UpdateDisplayState();
 }
 ```
 
-In diesem Beispiel, in die JSON-Antwort deserialisiert wird eine `SpeechResult` -Instanz, mit das Ergebnis an die aufrufende Methode für die Anzeige zurückgegeben wird, wie in den folgenden Screenshots gezeigt:
+Die `TranscribeClicked`-Methode führt folgende Schritte aus:
 
-![](speech-recognition-images/speech-recognition.png "Speech Recognition")
+1. Überprüft, ob die Anwendung Zugriff auf das Mikrofon hat, und wird vorzeitig beendet, wenn dies nicht der Fall ist.
+1. Erstellt eine Instanz `SpeechRecognizer`-Klasse, wenn Sie nicht bereits vorhanden ist.
+1. Beendet die fortlaufende Aufzeichnung, wenn Sie ausgeführt wird.
+1. Fügt einen Zeitstempel ein und startet fortlaufende Aufzeichnung, wenn er nicht ausgeführt wird.
+1. Benachrichtigt die Anwendung, ihre Darstellung basierend auf dem neuen Anwendungs Zustand zu aktualisieren.
 
-## <a name="summary"></a>Summary
+Der Rest der `MainPage`-Klassen Methoden sind Hilfsprogramme zum Anzeigen des Anwendungs Zustands:
 
-In diesem Artikel wurde erläutert, wie der REST-API von Microsoft zu verwenden, um Audiodaten in Text in einer Xamarin.Forms-Anwendung zu konvertieren. Zusätzlich zur Spracherkennung ausführt, können die Microsoft-Spracheingabe-API auch Text in gesprochenen Wörtern konvertieren.
+```csharp
+void UpdateTranscription(string newText)
+{
+    Device.BeginInvokeOnMainThread(() =>
+    {
+        if (!string.IsNullOrWhiteSpace(newText))
+        {
+            transcribedText.Text += $"{newText}\n";
+        }
+    });
+}
 
-## <a name="related-links"></a>Verwandte Themen
+void InsertDateTimeRecord()
+{
+    var msg = $"=================\n{DateTime.Now.ToString()}\n=================";
+    UpdateTranscription(msg);
+}
 
-- [Dokumentation zu Microsoft Speech API](/azure/cognitive-services/speech/home/).
-- [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+void UpdateDisplayState()
+{
+    Device.BeginInvokeOnMainThread(() =>
+    {
+        if (isTranscribing)
+        {
+            transcribeButton.Text = "Stop";
+            transcribeButton.BackgroundColor = Color.Red;
+            transcribingIndicator.IsRunning = true;
+        }
+        else
+        {
+            transcribeButton.Text = "Transcribe";
+            transcribeButton.BackgroundColor = Color.Green;
+            transcribingIndicator.IsRunning = false;
+        }
+    });
+}
+```
+
+Die `UpdateTranscription`-Methode schreibt die angegebene `newText` `string` in das `Label` Element mit dem Namen `transcribedText`. Es erzwingt, dass dieses Update im UI-Thread ausgeführt wird, sodass es von jedem Kontext aus aufgerufen werden kann, ohne dass Ausnahmen ausgelöst werden. Der `InsertDateTimeRecord` schreibt das aktuelle Datum und die aktuelle Uhrzeit in die `transcribedText` Instanz, um den Anfang einer neuen Aufzeichnung zu markieren. Zum Schluss aktualisiert die `UpdateDisplayState`-Methode die `Button` und `ActivityIndicator` Elemente, um widerzuspiegeln, ob eine Aufzeichnung ausgeführt wird oder nicht.
+
+## <a name="create-platform-microphone-services"></a>Erstellen von Platform-Mikrofon-Diensten
+
+Die Anwendung muss über Mikrofon Zugriff verfügen, um Sprach Daten zu erfassen. Die `IMicrophoneService`-Schnittstelle muss implementiert und bei der `DependencyService` auf jeder Plattform registriert werden, damit die Anwendung funktioniert.
+
+### <a name="android"></a>Android
+
+Das Beispiel Projekt definiert eine `IMicrophoneService` Implementierung für Android namens `AndroidMicrophoneService`:
+
+```csharp
+[assembly: Dependency(typeof(AndroidMicrophoneService))]
+namespace CognitiveSpeechService.Droid.Services
+{
+    public class AndroidMicrophoneService : IMicrophoneService
+    {
+        public const int RecordAudioPermissionCode = 1;
+        private TaskCompletionSource<bool> tcsPermissions;
+        string[] permissions = new string[] { Manifest.Permission.RecordAudio };
+
+        public Task<bool> GetPermissionAsync()
+        {
+            tcsPermissions = new TaskCompletionSource<bool>();
+
+            if ((int)Build.VERSION.SdkInt < 23)
+            {
+                tcsPermissions.TrySetResult(true);
+            }
+            else
+            {
+                var currentActivity = MainActivity.Instance;
+                if (ActivityCompat.CheckSelfPermission(currentActivity, Manifest.Permission.RecordAudio) != (int)Permission.Granted)
+                {
+                    RequestMicPermissions();
+                }
+                else
+                {
+                    tcsPermissions.TrySetResult(true);
+                }
+
+            }
+
+            return tcsPermissions.Task;
+        }
+
+        public void OnRequestPermissionResult(bool isGranted)
+        {
+            tcsPermissions.TrySetResult(isGranted);
+        }
+
+        void RequestMicPermissions()
+        {
+            if (ActivityCompat.ShouldShowRequestPermissionRationale(MainActivity.Instance, Manifest.Permission.RecordAudio))
+            {
+                Snackbar.Make(MainActivity.Instance.FindViewById(Android.Resource.Id.Content),
+                        "Microphone permissions are required for speech transcription!",
+                        Snackbar.LengthIndefinite)
+                        .SetAction("Ok", v =>
+                        {
+                            ((Activity)MainActivity.Instance).RequestPermissions(permissions, RecordAudioPermissionCode);
+                        })
+                        .Show();
+            }
+            else
+            {
+                ActivityCompat.RequestPermissions((Activity)MainActivity.Instance, permissions, RecordAudioPermissionCode);
+            }
+        }
+    }
+}
+```
+
+Der `AndroidMicrophoneService` verfügt über die folgenden Features:
+
+1. Das `Dependency`-Attribut registriert die Klasse beim `DependencyService`.
+1. Die `GetPermissionAsync`-Methode überprüft, ob Berechtigungen auf der Grundlage der Android SDK Version erforderlich sind, und ruft `RequestMicPermissions` auf, wenn die Berechtigung noch nicht erteilt wurde.
+1. Die `RequestMicPermissions`-Methode verwendet die `Snackbar`-Klasse, um Berechtigungen für den Benutzer anzufordern, wenn eine Begründung erforderlich ist; andernfalls werden direkt audioaufzeichnungs Berechtigungen angefordert.
+1. Die `OnRequestPermissionResult`-Methode wird mit einem `bool` Ergebnis aufgerufen, sobald der Benutzer auf die Berechtigungs Anforderung geantwortet hat.
+
+Die `MainActivity`-Klasse wird angepasst, um die `AndroidMicrophoneService` Instanz zu aktualisieren, wenn Berechtigungsanforderungen erfüllt sind:
+
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    IMicrophoneService micService;
+    internal static MainActivity Instance { get; private set; }
+    
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        Instance = this;
+        // ...
+        micService = DependencyService.Resolve<IMicrophoneService>();
+    }
+    public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+    {
+        // ...
+        switch(requestCode)
+        {
+            case AndroidMicrophoneService.RecordAudioPermissionCode:
+                if (grantResults[0] == Permission.Granted)
+                {
+                    micService.OnRequestPermissionResult(true);
+                }
+                else
+                {
+                    micService.OnRequestPermissionResult(false);
+                }
+                break;
+        }
+    }
+}
+```
+
+Die `MainActivity`-Klasse definiert einen statischen Verweis namens `Instance`, der beim Anfordern von Berechtigungen vom `AndroidMicrophoneService`-Objekt benötigt wird. Er überschreibt die `OnRequestPermissionsResult`-Methode, um das `AndroidMicrophoneService` Objekt zu aktualisieren, wenn die Berechtigungs Anforderung vom Benutzer genehmigt oder verweigert wird.
+
+Schließlich muss die Android-Anwendung die Berechtigung zum Aufzeichnen von Audiodaten in der Datei " **androidmanifest. XML** " enthalten:
+
+```xml
+<manifest ...>
+    ...
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+</manifest>
+```
+
+### <a name="ios"></a>iOS
+
+Das Beispiel Projekt definiert eine `IMicrophoneService` Implementierung für IOS namens `iOSMicrophoneService`:
+
+```csharp
+[assembly: Dependency(typeof(iOSMicrophoneService))]
+namespace CognitiveSpeechService.iOS.Services
+{
+    public class iOSMicrophoneService : IMicrophoneService
+    {
+        TaskCompletionSource<bool> tcsPermissions;
+
+        public Task<bool> GetPermissionAsync()
+        {
+            tcsPermissions = new TaskCompletionSource<bool>();
+            RequestMicPermission();
+            return tcsPermissions.Task;
+        }
+
+        public void OnRequestPermissionResult(bool isGranted)
+        {
+            tcsPermissions.TrySetResult(isGranted);
+        }
+
+        void RequestMicPermission()
+        {
+            var session = AVAudioSession.SharedInstance();
+            session.RequestRecordPermission((granted) =>
+            {
+                tcsPermissions.TrySetResult(granted);
+            });
+        }
+    }
+}
+```
+
+Der `iOSMicrophoneService` verfügt über die folgenden Features:
+
+1. Das `Dependency`-Attribut registriert die Klasse beim `DependencyService`.
+1. Mit der `GetPermissionAsync`-Methode werden `RequestMicPermissions` aufgerufen, um Berechtigungen vom Gerätebenutzer anzufordern.
+1. Die `RequestMicPermissions`-Methode verwendet die Shared `AVAudioSession`-Instanz, um Aufzeichnungs Berechtigungen anzufordern.
+1. Die `OnRequestPermissionResult`-Methode aktualisiert die `TaskCompletionSource` Instanz mit dem angegebenen `bool` Wert.
+
+Zum Schluss muss die IOS-APP **Info. plist** eine Meldung enthalten, die den Benutzer darüber informiert, warum die APP Zugriff auf das Mikrofon anfordert. Bearbeiten Sie die Datei "Info. plist", um die folgenden Tags in das `<dict>`-Element einzubeziehen:
+
+```xml
+<plist>
+    <dict>
+        ...
+        <key>NSMicrophoneUsageDescription</key>
+        <string>Voice transcription requires microphone access</string>
+    </dict>
+</plist>
+```
+
+### <a name="uwp"></a>UWP
+
+Das Beispiel Projekt definiert eine `IMicrophoneService` Implementierung für UWP namens `UWPMicrophoneService`:
+
+```csharp
+[assembly: Dependency(typeof(UWPMicrophoneService))]
+namespace CognitiveSpeechService.UWP.Services
+{
+    public class UWPMicrophoneService : IMicrophoneService
+    {
+        public async Task<bool> GetPermissionAsync()
+        {
+            bool isMicAvailable = true;
+            try
+            {
+                var mediaCapture = new MediaCapture();
+                var settings = new MediaCaptureInitializationSettings();
+                settings.StreamingCaptureMode = StreamingCaptureMode.Audio;
+                await mediaCapture.InitializeAsync(settings);
+            }
+            catch(Exception ex)
+            {
+                isMicAvailable = false;
+            }
+
+            if(!isMicAvailable)
+            {
+                await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-microphone"));
+            }
+
+            return isMicAvailable;
+        }
+
+        public void OnRequestPermissionResult(bool isGranted)
+        {
+            // intentionally does nothing
+        }
+    }
+}
+```
+
+Der `UWPMicrophoneService` verfügt über die folgenden Features:
+
+1. Das `Dependency`-Attribut registriert die Klasse beim `DependencyService`.
+1. Die `GetPermissionAsync`-Methode versucht, eine `MediaCapture` Instanz zu initialisieren. Wenn dies nicht der Fall ist, wird eine Benutzer Anforderung zum Aktivieren des Mikrofons gestartet.
+1. Die `OnRequestPermissionResult`-Methode ist vorhanden, um die-Schnittstelle zu erfüllen, ist aber für die UWP-Implementierung nicht erforderlich
+
+Zum Schluss muss das UWP- **Paket. appxmanifest** angeben, dass die Anwendung das Mikrofon verwendet. Doppelklicken Sie auf die Datei Package. appxmanifest, und wählen Sie die Option **Mikrofon** auf der Registerkarte **Funktionen** in Visual Studio 2019 aus:
+
+[![Screenshot des Manifests in Visual Studio 2019](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Screenshot des Manifests in Visual Studio 2019")
+
+## <a name="test-the-application"></a>Testen der Anwendung
+
+Führen Sie die APP aus, und klicken Sie auf die Schaltfläche **transcri** Die APP sollte Mikrofon Zugriff anfordern und den Aufzeichnungsprozess starten. Der `ActivityIndicator` wird animiert und zeigt an, dass die Aufzeichnung aktiv ist. Wenn Sie sprechen, werden die Audiodaten von der APP an die Azure Speech Services-Ressource gestreamt, die mit einem Text mit Text überschrieben wird. Der Text mit Text wird im `Label` Element angezeigt, wenn er empfangen wird.
+
+> [!NOTE]
+> Android-Emulatoren können die Sprachdienst Bibliotheken nicht laden und initialisieren. Das Testen auf einem physischen Gerät wird für die Android-Plattform empfohlen.
+
+## <a name="related-links"></a>Verwandte Links
+
+- [Azure Speech Service-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
+- [Übersicht über den Azure-Sprachdienst](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)
+- [Erstellen einer Cognitive Services-Ressource](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)
+- [Schnellstart: Erkennen von Sprache von einem Mikrofon](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)

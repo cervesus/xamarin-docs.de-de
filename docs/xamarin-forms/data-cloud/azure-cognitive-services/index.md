@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2019
-ms.openlocfilehash: fed556dc303fecb92a1ce5b09bfaa1aeb0c61bd0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 03fb194a4c85d51a6fe477dcfdc8fa38fec5a89c
+ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869329"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265161"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin. Forms und Azure Cognitive Services
 
@@ -22,7 +22,7 @@ Microsoft Cognitive Services sind ein Satz von APIs, sdert und Diensten, die Ent
 
 ## <a name="speech-recognitionspeech-recognitionmd"></a>[Spracherkennung](speech-recognition.md)
 
-Der Microsoft Speech-API ist eine Cloud-basierte API, Algorithmen zur Verarbeitung gesprochener Sprache. In diesem Artikel wird erläutert, wie der Microsoft Speech Recognition-REST-API zu verwenden, um Audiodaten in Text in einer Xamarin.Forms-Anwendung zu konvertieren.
+Der Azure Speech Service ist eine cloudbasierte API, die Algorithmen zur Verarbeitung der gesprochenen Sprache bereitstellt. In diesem Artikel wird erläutert, wie Sie mithilfe des Azure Speech-dienstantexts in einer xamarin. Forms-Anwendung Sprache in Text umwandeln.
 
 ## <a name="spell-checkspell-checkmd"></a>[Rechtschreibprüfung](spell-check.md)
 
@@ -32,6 +32,6 @@ Bing-Rechtschreibprüfung führt kontextbezogene Rechtschreibprüfung für Text 
 
 Die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine REST-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie die Microsoft Textübersetzungs-API verwenden, um Text aus einer Sprache in eine andere in einer Xamarin.Forms-Anwendung zu übersetzen.
 
-## <a name="perceived-emotion-recognitionemotion-recognitionmd"></a>[Wahrgenommene Emotions Erkennung](emotion-recognition.md)
+## <a name="perceived-emotion-recognitionemotion-recognitionmd"></a>[Wahrgenommene Emotionserkennung](emotion-recognition.md)
 
 Die Gesichtserkennungs-API Gesichtsausdrücke in einem Bild als Eingabe akzeptiert und gibt die Daten, die Vertrauensgrade auf eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit der Gesichtserkennungs-API zur Erkennung von Emotionen, um eine Xamarin.Forms-Anwendung zu bewerten.
