@@ -16,7 +16,7 @@ ms.locfileid: "75955768"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms-Layouts
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms-Layouts werden verwendet, um Benutzeroberflächen-Steuerelemente in visual Strukturen zu erstellen._
 
@@ -54,7 +54,7 @@ Diese Klassen werden aus [ `Layout` ](xref:Xamarin.Forms.Layout), die definiert,
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView) ist in der Lage des Bildlaufs an seinen Inhalt. Legen Sie die [ `Content` ](xref:Xamarin.Forms.ScrollView.Content) Eigenschaft auf eine Sicht oder Layout zu groß, um auf dem Bildschirm zu passen. (Der Inhalt einer `ScrollView` ist häufig [`StackLayout`](#stackLayout).) Legen Sie die [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) -Eigenschaft fest, um anzugeben, ob das Scrollen vertikal, horizontal oder beides sein soll.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ScrollView) / [Handbuch](~/xamarin-forms/user-interface/layouts/scroll-view.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView-Beispiel](layouts-images/ScrollView.png "ScrollView-Beispiel")](layouts-images/ScrollView-Large.png#lightbox "ScrollView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView) ist in der Lage des Bildlaufs an seinen Inhalt. Legen Sie die [ `Content` ](xref:Xamarin.Forms.ScrollView.Content) Eigenschaft auf eine Sicht oder Layout zu groß, um auf dem Bildschirm zu passen. (Der Inhalt des eine `ScrollView` sehr häufig wird eine [ `StackLayout` ](#stackLayout).) Legen Sie die [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation) Eigenschaft, um anzugeben, wenn vertikalen, Durchführen eines Bildlaufs werden soll Horizontal oder beides.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ScrollView) / [Handbuch](~/xamarin-forms/user-interface/layouts/scroll-view.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView-Beispiel](layouts-images/ScrollView.png "ScrollView-Beispiel")](layouts-images/ScrollView-Large.png#lightbox "ScrollView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView
@@ -93,7 +93,7 @@ Diese Klassen werden aus [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1).
 | [`Grid`](xref:Xamarin.Forms.Grid) positioniert die untergeordneten Elemente in einem Raster mit Zeilen und Spalten an. Ein untergeordnetes Element des Position wird angegeben, mit der [angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](xref:Xamarin.Forms.Grid.RowProperty), [ `Column` ](xref:Xamarin.Forms.Grid.ColumnProperty), [ `RowSpan` ](xref:Xamarin.Forms.Grid.RowSpanProperty), und [ `ColumnSpan` ](xref:Xamarin.Forms.Grid.ColumnSpanProperty).<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Grid) / [Handbuch](~/xamarin-forms/user-interface/layouts/grid.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Raster Beispiel](layouts-images/Grid.png "Raster Beispiel")](layouts-images/Grid-Large.png#lightbox "Raster Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
 |     |     |
 
-### <a name="absolutelayout"></a>AbsoluteLayout
+### <a name="absolutelayout"></a>Von "AbsoluteLayout"
 
 |     |     |
 | --- | --- |
@@ -114,8 +114,8 @@ Diese Klassen werden aus [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1).
 | [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) basiert darauf, dass der CSS [Flexible Box-Layout-Module](https://www.w3.org/TR/css-flexbox-1/), häufig als bezeichnet _flex Layout_ oder _-Box-Flex_. `FlexLayout` definiert sechs bindbare Eigenschaften und fünf angefügte bindbare Eigenschaften, mit denen untergeordnete Elemente gestapelt oder mit vielen Ausrichtung und die Ausrichtung Optionen umschlossen werden soll.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.FlexLayout) / [Handbuch](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos) | [![Flexlayout-Beispiel](layouts-images/FlexLayout.png "Flexlayout-Beispiel")](layouts-images/FlexLayout-Large.png#lightbox "Flexlayout-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
 |     |     |
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Beispiel für Xamarin.Forms FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.Forms-API-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

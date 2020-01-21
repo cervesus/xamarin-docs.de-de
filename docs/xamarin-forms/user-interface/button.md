@@ -407,7 +407,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 Das Ergebnis ist, die `Label` nur dreht, während es sich bei ein Finger in Kontakt stehen ist die `Button`, und endet, wenn der Finger veröffentlicht wird:
 
-[![Schaltfläche "drücken und freigeben"](button-images/PressAndReleaseButton.png "Schaltfläche "drücken und freigeben"")](button-images/PressAndReleaseButton-Large.png)
+[![Schaltfläche drücken und freigeben](button-images/PressAndReleaseButton.png "Schaltfläche "drücken und freigeben"")](button-images/PressAndReleaseButton-Large.png)
 
 Diese Art von Verhalten hat Anwendungen für Spiele: ein Finger, der auf einem `Button` gehalten wird, kann ein Bild auf dem Bildschirm in eine bestimmte Richtung verschieben.
 
