@@ -76,7 +76,7 @@ Beim ersten Start benötigt der **Zugriffs Steuerungs Inspektor** die Berechtigu
 
 Entsperren Sie den Bildschirm "Einstellungen" (falls erforderlich, in der linken unteren Ecke), und klicken Sie auf den **Barrierefreiheits Inspektor**:
 
-![Bildschirm Einstellungen zum Aktivieren der Zugriffstaste](accessibility-images/accessibility-inspector-2.png "Bildschirm "Einstellungen" zum Aktivieren der Zugriffstaste")
+![Bildschirm Einstellungen zum Aktivieren der Zugriffstaste](accessibility-images/accessibility-inspector-2.png "Bildschirm Einstellungen zum Aktivieren der Zugriffstaste")
 
 Nach der Aktivierung wird der Inspektor als ein unverankertes Fenster angezeigt, das auf dem Bildschirm verschoben werden kann. Der folgende Screenshot zeigt den Inspektor, der neben einer Mac-Beispiel-app ausgeführt wird. Wenn der Cursor über das Fenster bewegt wird, zeigt der Inspektor alle zugänglichen Eigenschaften der einzelnen Steuerelemente an:
 
