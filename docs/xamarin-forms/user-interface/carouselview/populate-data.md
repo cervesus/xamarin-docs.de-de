@@ -193,7 +193,7 @@ public class Monkey
 
 Die folgenden Screenshots zeigen das Ergebnis der Vorlagen Darstellung der einzelnen Elemente:
 
-[![Screenshot von carouselview, in dem jedes Element auf IOS und Android Vorlagen basiert](populate-data-images/datatemplate.png "Auf Vorlagen basierende Elemente in einer "carouselview"")](populate-data-images/datatemplate-large.png#lightbox "Auf Vorlagen basierende Elemente in einer "carouselview"")
+[![Screenshot von carouselview, in dem jedes Element auf IOS und Android Vorlagen basiert](populate-data-images/datatemplate.png "Auf Vorlagen basierende Elemente in einer carouselview")](populate-data-images/datatemplate-large.png#lightbox "Auf Vorlagen basierende Elemente in einer carouselview")
 
 Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
@@ -251,7 +251,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 Die `MonkeyDataTemplateSelector`-Klasse definiert `AmericanMonkey` und `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Eigenschaften, die auf unterschiedliche Datenvorlagen festgelegt sind. Die `OnSelectTemplate` Überschreibung gibt die `AmericanMonkey` Vorlage zurück, wenn der affenname "America" enthält. Wenn der affenname nicht "America" enthält, gibt die `OnSelectTemplate` Überschreibung die `OtherMonkey` Vorlage zurück, die die Daten abgeblendet anzeigt:
 
-[![Screenshot der Auswahl von "carouselview Runtime item Template" unter IOS und Android](populate-data-images/datatemplateselector.png "Auswahl der Lauf Zeitelement Vorlage in einer "carouselview"")](populate-data-images/datatemplateselector-large.png#lightbox "Auswahl der Lauf Zeitelement Vorlage in einer "carouselview"")
+[![Screenshot der Auswahl von "carouselview Runtime item Template" unter IOS und Android](populate-data-images/datatemplateselector.png "Auswahl der Lauf Zeitelement Vorlage in einer carouselview")](populate-data-images/datatemplateselector-large.png#lightbox "Auswahl der Lauf Zeitelement Vorlage in einer carouselview")
 
 Weitere Informationen zu Datenvorlagen-Selektoren finden Sie unter [Erstellen eines xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 
