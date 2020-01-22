@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: e8d4be4b06c051386afa0358856a6df49abb6653
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 20126849027f735e9ecd3599c290b4e7a57f837e
+ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026467"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886579"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Übersicht über die Xamarin.iOS-App-Verteilung
 
@@ -20,17 +20,16 @@ _Dieser Artikel bietet eine Übersicht über Verteilungstechniken, die für Xama
 
 Nach der Entwicklung der Xamarin.iOS-App ist der nächste Schritt im Lebenszyklus der Softwareentwicklung die Verteilung der App an Benutzer. Dieser Vorgang wird im folgenden Diagramm abgebildet:
 
-[![](images/publishingdiagram.png "After the iOS app has been developed, the next step is to distribute the app to users, as shown in the highlighted section of this diagram")](images/publishingdiagram.png#lightbox)
+[![Nachdem die iOS-App entwickelt wurde, ist der nächste Schritt die Verteilung der App an die Benutzer, was im hervorgehobenen Abschnitt dieses Diagramms gezeigt wird.](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
-Apple bietet zum Verteilen einer iOS-Anwendung mehrere Möglichkeiten, die von Xamarin.iOS unterstützt werden:
+Apple bietet die folgenden Optionen für die Verteilung von iOS-Anwendungen:
 
-1. [**App Store-Verteilung**](#App_Store_Distribution)
-2. [**Interne Verteilung (Enterprise-Verteilung)** ](#In-House_Distribution)
-3. [**Ad-hoc-Verteilung**](#Ad_Hoc_Distribution)
+- [**App Store**](#app-store-distribution)
+- [**Interne Verteilung (Enterprise-Verteilung)** ](#in-house-distribution)
+- [**Ad-hoc-Verteilung**](#ad-hoc-distribution)
+- [**Benutzerdefinierte Apps für Unternehmen**](#custom-apps-for-business)
 
 Für jedes dieser Szenarios müssen Anwendungen mit dem entsprechenden *Bereitstellungsprofil* bereitgestellt werden. Bereitstellungsprofile sind Dateien, die Informationen zur Codesignierung sowie die Identität der Anwendung und den beabsichtigten Verteilungsmechanismus enthalten. Bei einer Verteilung, die nicht über den App Store erfolgt, enthalten Bereitstellungsprofile auch Informationen darüber, für welche Geräte eine App bereitgestellt werden kann.
-
-<a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -46,15 +45,11 @@ Beachten Sie, dass nur Entwickler, die Teil des **Apple Developer Program** sind
 
 Weitere Informationen finden Sie im Leitfaden [App Store Distribution (App Store-Verteilung)](~/ios/deploy-test/app-distribution/app-store-distribution/index.md).
 
-<a name="In-House_Distribution"/>
-
 ## <a name="in-house-distribution"></a>Interne Verteilung
 
 Durch die interne Verteilung, die auch als *Enterprise-Verteilung* bezeichnet wird, können Mitglieder des **Apple Developer Enterprise Program** Apps an andere Mitglieder innerhalb derselben Organisation verteilen. Die Vorteile der internen Verteilung bestehen darin, dass kein App Store-Review erforderlich ist und keine Beschränkung für die Anzahl der Geräte vorhanden ist, auf denen eine Anwendung installiert werden kann. Beachten Sie aber, dass Mitglieder des **Apple Developer Enterprise Program** **nicht** auf iTunes Connect zugreifen können und daher der Lizenznehmer für die Verteilung der App zuständig ist.
 
 Weitere Informationen zur internen Verteilung einer Anwendung und den hierfür erforderlichen Vorbereitungen finden Sie im [Leitfaden zur internen Verteilung](~/ios/deploy-test/app-distribution/in-house-distribution.md).
-
-<a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>Ad-hoc-Verteilung
 
@@ -62,9 +57,9 @@ Xamarin.iOS-Anwendungen können über die Ad-hoc-Verteilung durch Benutzer getes
 
 Weitere Informationen zur internen Verteilung einer Anwendung und den hierfür erforderlichen Vorbereitungen finden Sie im [Leitfaden zur Ad-hoc-Verteilung](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="custom-apps-for-business"></a>Benutzerdefinierte Apps für Unternehmen
 
-In diesem Artikel wurde eine kurze Übersicht über die Verteilungsmechanismen gegeben, die für Xamarin.iOS-Anwendungen verfügbar sind. Außerdem wurden der iTunes App Store, die Ad-hoc-Bereitstellung und die interne Bereitstellung einführend dargestellt sowie Links zu ausführlicheren Informationen bereitgestellt.
+Apple ermöglicht die [benutzerdefinierte Verteilung](https://developer.apple.com/business/custom-apps/) von Apps an Unternehmen und Bildungseinrichtungen. Weitere Informationen finden Sie im [Apple Business Manager-Benutzerhandbuch](https://support.apple.com/guide/apple-business-manager/welcome/web).
 
 ## <a name="related-links"></a>Verwandte Links
 
