@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
-ms.sourcegitcommit: ecb81266e59c9e1773a06582e138bf4eed713dfe
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "74062885"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -57,7 +57,7 @@ ms.locfileid: "74062885"
 
     Dieser Code legt das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis auf einen Ereignishandler mit dem Namen `OnListViewItemSelected` fest, und das [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)-Ereignis auf einen Handler mit dem Namen `OnListViewItemTapped`. Beide Ereignishandler werden im nächsten Schritt erstellt.
 
-1. Erweitern Sie **MainPage.xaml** im **Lösungspad** im Projekt **ListViewTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie dann in der Datei **MainPage.xaml.cs** der Klasse die Ereignishandler `OnListViewItemSelected` und `OnListViewItemTapped` hinzu:
+1. Erweitern Sie **MainPage.xaml** im **Lösungspad** im Projekt **ListViewTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie anschließend in der Datei **MainPage.xaml.cs** der Klasse die Ereignishandler `OnListViewItemSelected` und `OnListViewItemTapped` hinzu:
 
     ```csharp
     void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)

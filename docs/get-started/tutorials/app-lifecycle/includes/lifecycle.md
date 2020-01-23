@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 247e75435f42a49d5d1ea01a4d0ec3da67866156
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277250"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -113,7 +113,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!NOTE]
     > Es gibt keine Methode zum Beenden der App. Unter normalen Umständen erfolgt die Beendigung der Anwendung durch die `OnSleep`-Methode.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten. Beim Starten der Anwendung wird die `OnStart`-Methode aufgerufen, und **OnStart** wird an das **Anwendungsausgabe**-Fenster in Visual Studio für Mac ausgegeben:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten: Beim Starten der Anwendung wird die `OnStart`-Methode aufgerufen, und **OnStart** wird an das **Anwendungsausgabe**-Fenster in Visual Studio für Mac ausgegeben:
 
     ```
     2019-02-11 12:05:23.164761+0000 AppLifecycleTutorial.iOS[4089:361037] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=4089
