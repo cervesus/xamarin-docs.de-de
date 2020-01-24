@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2019
-ms.openlocfilehash: 94523bb019e366738de65ce0b05c70264fce738b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: ce8d0b834cff5b2eee46b4ace5de4a95d196726d
+ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489764"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549994"
 ---
 # <a name="android-platform-features"></a>Android-Plattformfeatures
 
-Zum Entwickeln von xamarin. Forms-Anwendungen für Android ist Visual Studio erforderlich. Die [Seite Anforderungen](~/get-started/requirements.md) enthält weitere Informationen zu den Voraussetzungen.
+Zum Entwickeln von xamarin. Forms-Anwendungen für Android ist Visual Studio erforderlich. Die [Seite "Unterstützte Plattformen](~/get-started/supported-platforms.md) " enthält weitere Informationen zu den Voraussetzungen.
 
 ## <a name="platform-specifics"></a>Plattformspezifische Besonderheiten
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: 71305dd7287df56036d0298ebfcf8a8cb7c4d3b3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a90c56102f77e3f64d9333eec03b025d24888977
+ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528374"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549985"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android-Buildfehler – unerwarteter Fehler der linkassemblyaufgabe
 
-Möglicherweise wird eine Fehlermeldung `The "LinkAssemblies" task failed unexpectedly` angezeigt, wenn Sie ein xamarin. Android-Projekt mit Formularen verwenden. Dies geschieht, wenn der Linker aktiv ist (in der Regel auf einem *Releasebuild* , um die Größe des App-Pakets zu verringern). Dies liegt daran, dass die Android-Ziele nicht auf das neueste Framework aktualisiert werden. (Weitere Informationen: [Xamarin. Forms für Android-Anforderungen](~/get-started/requirements.md#android))
+Wenn Sie ein xamarin. Android-Projekt mit Formularen verwenden, wird möglicherweise eine Fehlermeldung `The "LinkAssemblies" task failed unexpectedly` angezeigt. Dies geschieht, wenn der Linker aktiv ist (in der Regel auf einem *Releasebuild* , um die Größe des App-Pakets zu verringern). Dies liegt daran, dass die Android-Ziele nicht auf das neueste Framework aktualisiert werden. (Weitere Informationen finden Sie [unter Unterstützte xamarin. Forms-Plattformen](~/get-started/supported-platforms.md#android-platform-support))
 
 Beheben Sie dieses Problem, indem Sie sicherstellen, dass Sie über die neuesten unterstützten Android SDK Versionen verfügen, und legen Sie das **Ziel Framework** auf die neueste installierte Plattform fest. Außerdem wird empfohlen, dass Sie die **Android-Zielversion** auf die neueste installierte Plattform und die **Android-Mindestversion** auf API 19 oder höher festlegen. Dies gilt als die unterstützte Konfiguration.
 
@@ -24,7 +24,7 @@ Beheben Sie dieses Problem, indem Sie sicherstellen, dass Sie über die neuesten
 
 1. Klicken Sie mit der rechten Maustaste auf das Android-Projekt, und wählen Sie im Menü **Optionen** aus.
 2. Wechseln Sie im Dialogfeld **Projektoptionen** zu **Build > Allgemein**.
-3. Festlegen der **Kompilierung mit der Android-Version: (Ziel Framework)**  auf die neueste installierte Plattform.
+3. Legen **Sie die Kompilierung mit Android-Version: (Ziel Framework)** auf die neueste installierte Plattform fest.
 4. Wechseln Sie im Dialogfeld " **Projektoptionen** " zu **Build > Android-Anwendung**.
 5. Legen Sie die **Android-Mindestversion** auf API-Ebene 19 oder höher und die **Android-Zielversion** auf die neueste installierte Plattform fest, die Sie in ausgewählt haben (3).
 
@@ -32,7 +32,7 @@ Beheben Sie dieses Problem, indem Sie sicherstellen, dass Sie über die neuesten
 
 1. Klicken Sie mit der rechten Maustaste auf das Android-Projekt, und wählen Sie im Menü **properies** aus.
 2. Wechseln Sie in den Projekteigenschaften zu **Anwendung**.
-3. Festlegen der **Kompilierung mit der Android-Version: (Ziel Framework)**  auf die neueste installierte Plattform.
+3. Legen **Sie die Kompilierung mit Android-Version: (Ziel Framework)** auf die neueste installierte Plattform fest.
 4. Wechseln Sie in den Projekteigenschaften zu **Android-Manifest**.
 5. Legen Sie die **Android-Mindestversion** auf API-Ebene 19 oder höher und die **Android-Zielversion** auf die neueste installierte Plattform fest, die Sie in ausgewählt haben (3).
 
