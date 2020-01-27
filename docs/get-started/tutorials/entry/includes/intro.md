@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: e05a20149d33eed58918382371e8bc333d4a5f8d
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107244"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -21,4 +21,4 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie das Verhalten eines [`Entry`](xref:Xamarin.Forms.Entry) anpassen können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-[![Screenshot: Eingabe mit durch Kennwortzeichen maskiertem Text unter iOS und Android](../images/customize-behavior.png "Eingabe mit maskierten Kennwortzeichen")](../images/customize-behavior-large.png#lightbox "Eingabe mit maskierten Kennwortzeichen")
+[![Screenshot: Eintrag mit durch Kennwortzeichen verborgenem Text unter iOS und Android](../images/customize-behavior.png "Eintrag mit verborgenen Kennwortzeichen")](../images/customize-behavior-large.png#lightbox "Eintrag mit verborgenen Kennwortzeichen")

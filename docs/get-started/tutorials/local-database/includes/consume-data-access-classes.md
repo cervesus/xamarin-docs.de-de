@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67659811"
 ---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten Datenzugriffsklassen zu verwenden.
@@ -74,7 +74,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten
 
     Geben Sie mehrere Datenelemente ein, und tippen Sie für jedes Datenelement auf das [`Button`](xref:Xamarin.Forms.Button)-Objekt. Dadurch werden die Daten in der Datenbank gespeichert, und die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse wieder mit allen Daten der Datenbank befüllt:
 
-    [![Screenshot: Lokale Datenpersistenz der SQLite.NET-Datenbankdaten, auf iOS und Android](../images/consume-data-access-classes.png "Lokale Datenbankdatenpersistenz")](../images/consume-data-access-classes-large.png#lightbox "Lokale Datenbankdatenpersistenz")
+    [![Screenshot: Datenpersistenz der lokalen SQLite.NET-Datenbank unter iOS und Android](../images/consume-data-access-classes.png "Datenpersistenz der lokalen Datenbank")](../images/consume-data-access-classes-large.png#lightbox "Datenpersistenz der lokalen Datenbank")
 
     Weitere Informationen zu lokalen Datenbanken in Xamarin.Forms finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).
 
@@ -140,10 +140,10 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten
     > [!NOTE]
     > Die Außerkraftsetzung der `OnAppearing`-Methode wird ausgeführt, nachdem die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse angelegt wurde, aber noch bevor sie angezeigt wird. Deshalb ist dies ein guter Ort, um den Inhalt der Xamarin.Forms-Ansichten festzulegen.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
 
     Geben Sie mehrere Datenelemente ein, und tippen Sie für jedes Datenelement auf das [`Button`](xref:Xamarin.Forms.Button)-Objekt. Dadurch werden die Daten in der Datenbank gespeichert, und die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse wieder mit allen Daten der Datenbank befüllt:
 
-    [![Screenshot: Lokale Datenpersistenz der SQLite.NET-Datenbankdaten, auf iOS und Android](../images/consume-data-access-classes.png "Lokale Datenbankdatenpersistenz")](../images/consume-data-access-classes-large.png#lightbox "Lokale Datenbankdatenpersistenz")
+    [![Screenshot: Datenpersistenz der lokalen SQLite.NET-Datenbank unter iOS und Android](../images/consume-data-access-classes.png "Datenpersistenz der lokalen Datenbank")](../images/consume-data-access-classes-large.png#lightbox "Datenpersistenz der lokalen Datenbank")
 
     Weitere Informationen zu lokalen Datenbanken in Xamarin.Forms finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).

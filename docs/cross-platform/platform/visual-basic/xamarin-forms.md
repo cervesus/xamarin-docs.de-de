@@ -6,12 +6,12 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: e1a540eef2a4d54ead68ae4a9427b0622b668182
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 42be47e74b4b0da60d517a17bb6090c58448b718
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014551"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724869"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin. Forms mithilfe von Visual Basic.net
 
@@ -38,7 +38,7 @@ Führen Sie die folgenden Schritte aus, um ein einfaches xamarin. Forms-Projekt 
 
 4. Wählen Sie die **leere** Vorlage, und klicken Sie auf **OK**:
 
-    [leere xamarin. Forms-Vorlage![](xamarin-forms-images/04-sml.png)](xamarin-forms-images/04.png#lightbox)
+    [leere xamarin. Forms-Vorlage ![](xamarin-forms-images/04-sml.png)](xamarin-forms-images/04.png#lightbox)
 
     Dadurch wird in Visual Studio mithilfe C#von eine xamarin. Forms-Projekt Mappe erstellt. In den nächsten Schritten wird die Lösung so geändert, dass Sie Visual Basic verwendet.
 
@@ -121,13 +121,13 @@ Klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** in den Android
 
 Wie auf der [Seite Portable Visual Basic.net](~/cross-platform/platform/visual-basic/index.md)angegeben, unterstützt xamarin die Visual Basic Sprache nicht. Dies bedeutet, dass es einige Einschränkungen gibt, wo Sie Visual Basic verwenden können:
 
-- XAML-Seiten können nicht in das Visual Basic-Projekt eingeschlossen werden, da der Code-Behind C#-Generator nur erstellt werden kann. Sie können XAML in einer separaten, referenzierten, C# portablen Klassenbibliothek einschließen und Datenbindung zum Auffüllen der XAML-Dateien über Visual Basic Modelle verwenden (ein Beispiel hierfür finden Sie im Beispiel) [.](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)
+- XAML-Seiten können nicht in das Visual Basic-Projekt eingeschlossen werden, da der Code-Behind C#-Generator nur erstellt werden kann. Sie können XAML in einer separaten, referenzierten, C# portablen Klassenbibliothek einschließen und Datenbindung zum Auffüllen der XAML-Dateien über Visual Basic Modelle verwenden (ein Beispiel hierfür finden Sie im Beispiel) [.](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
 
 - Benutzerdefinierte Renderer können nicht in Visual Basic geschrieben werden, sondern müssen in den C# nativen Platt Form Projekten geschrieben werden.
 
 - Abhängigkeits Dienst Implementierungen können nicht in Visual Basic geschrieben werden, sondern müssen in C# den nativen Platt Form Projekten geschrieben werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [Xamarinformsvb (Beispiel)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+- [XamarinFormsVB (sample)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [Plattformübergreifende Entwicklung mit der .NET Framework](https://docs.microsoft.com/dotnet/standard/cross-platform/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545568"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723639"
 ---
 # <a name="the-path-fill-types"></a>Die Fülltypen für Pfade
 
@@ -35,7 +35,7 @@ Die wicklungsreihenfolgen und gerade-ungerade Algorithmen bestimmen, ob alle ein
 
 Mit vielen routinemäßige Pfaden füllt der wicklungsreihenfolgen Algorithmus häufig die eingeschlossene Bereiche eines Pfads. Der gerade-ungerade Algorithmus erzeugt in der Regel Weitere interessante Ergebnisse.
 
-Das klassische Beispiel ist ein Stern fünf zwischengespeichert, wie in der **Five-Pointed Stern** Seite. Die [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) Datei instanziiert zwei `Picker` Ansichten, wählen Sie den Pfad zu füllen, Typ und gibt an, ob der Pfad mit Strichen gezeichnet oder gefüllt ist oder beide, und in welcher Reihenfolge:
+Das klassische Beispiel ist ein Stern fünf zwischengespeichert, wie in der **Five-Pointed Stern** Seite. Die [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml) Datei instanziiert zwei `Picker` Ansichten, wählen Sie den Pfad zu füllen, Typ und gibt an, ob der Pfad mit Strichen gezeichnet oder gefüllt ist oder beide, und in welcher Reihenfolge:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         // angle from vertical
         double angle = i * 4 * Math.PI / 5;
-        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle), 
+        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle),
                                         -radius * (float)Math.Cos(angle)));
     }
     path.Close();

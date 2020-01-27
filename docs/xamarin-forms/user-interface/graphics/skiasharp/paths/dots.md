@@ -7,32 +7,32 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 2d02e79ff51468572250d1a7ce7c6d3da103c03a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 229f60cbb96058454a1c634e53a7bb00ec725bcf
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770525"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723754"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Punkte und Striche in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Meistern Sie die feinheiten der punktierte und gestrichelte Linien im SkiaSharp zeichnen_
 
 SkiaSharp können Sie das Zeichnen von Linien, die nicht solid aber stattdessen aus Punkten und Bindestrichen zusammengesetzt sind:
 
-![](dots-images/dottedlinesample.png "Gepunktete Linie")
+![](dots-images/dottedlinesample.png "Dotted line")
 
 Dies erledigen Sie über eine *Pfad Auswirkungen*, dies ist eine Instanz von der [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect) -Klasse, die Sie, um festlegen die [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect) Eigenschaft `SKPaint`. Sie können einen Pfad erstellen Auswirkungen (oder kombinieren pfadeffekte) mit einer der definierten Erstellungsmethoden statische `SKPathEffect`. (`SKPathEffect` ist eine der sechs Auswirkungen von SkiaSharp unterstützt werden; die anderen sind im Abschnitt beschriebenen [ **Auswirkung von SkiaSharp**](../effects/index.md).)
 
-Um gepunkteten oder gestrichelten Linien zu zeichnen, verwenden Sie die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) statische Methode. Es gibt zwei Argumente: Dabei handelt es sich um ein `float` Array von Werten, die die Länge der Punkte und Bindestriche sowie die Länge der Leerzeichen dazwischen angeben. Dieses Array muss eine gerade Anzahl von Elementen verwendet, und es sollte mindestens zwei Elemente vorhanden sein. (Es kann sein, aber dies führt zu einer durchgezogenen Linie 0 (null) Elemente im Array.) Wenn zwei Elemente vorhanden sind, wird die erste ist die Länge von einem Punkt oder Gedankenstrich, und die zweite ist die Länge der Lücke, bevor der nächste Punkt oder Gedankenstrich. Wenn mehr als zwei Elemente vorhanden sind, sie sind in der folgenden Reihenfolge: dash, Länge, Länge der Lücke, Dash-Länge, Länge der Lücke und So weiter.
+Um gepunkteten oder gestrichelten Linien zu zeichnen, verwenden Sie die [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) statische Methode. Es gibt zwei Argumente: Dies ist zunächst ein Array von `float` Werte, die die Länge der die Punkte und Bindestriche enthalten und die Länge der Leerzeichen dazwischen angeben. Dieses Array muss eine gerade Anzahl von Elementen verwendet, und es sollte mindestens zwei Elemente vorhanden sein. (Es können 0 Elemente im Array vorhanden sein, dies führt jedoch zu einer voll soliden Linie.) Wenn zwei Elemente vorhanden sind, ist die erste die Länge eines Punkts oder Strichs, und die zweite ist die Länge der Lücke vor dem nächsten Punkt oder Bindestrich. Wenn mehr als zwei Elemente vorhanden sind, sie sind in der folgenden Reihenfolge: dash, Länge, Länge der Lücke, Dash-Länge, Länge der Lücke und So weiter.
 
 Im Allgemeinen sollten Sie den Striche und Lücken Längen ein Vielfaches der Strichbreite vornehmen. Wenn die Strichbreite 10 Pixel ist, wird z. B. Klicken Sie dann das Array {10, 10} eine gepunktete Linie gezeichnet, wo sind die Punkte und Lücken. für die gleiche Länge wie die Stärke des Strichs.
 
 Allerdings die `StrokeCap` festlegen, der die `SKPaint` Objekt wirkt sich auch auf diese Punkte und Bindestriche enthalten. Wie Sie bald sehen werden, hat, die Auswirkungen auf die Elemente dieses Arrays.
 
-Gepunktete und gestrichelte Linien werden auf veranschaulicht die **Punkte und Gedankenstriche** Seite. Die [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) Datei instanziiert zwei `Picker` anzeigt, für die in dem Sie eine Obergrenze für die Kontur und die zweite Auswahl ein Array von Dash auswählen:
+Gepunktete und gestrichelte Linien werden auf veranschaulicht die **Punkte und Gedankenstriche** Seite. Die [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml) Datei instanziiert zwei `Picker` anzeigt, für die in dem Sie eine Obergrenze für die Kontur und die zweite Auswahl ein Array von Dash auswählen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -100,7 +100,7 @@ Gepunktete und gestrichelte Linien werden auf veranschaulicht die **Punkte und G
 
  Die ersten drei Elemente in der `dashArrayPicker` wird vorausgesetzt, dass die Strichbreite 10 Pixel. Die {10, 10} Array für eine gepunktete Linie ist {30, 10} ist für eine gestrichelte Linie, und {10, 10, 30, 10} wird für Punkt-und-gestrichelte Linie als Trennzeichen. (Die anderen drei wird in Kürze erläutert.)
 
-Die [ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) Code-Behind-Datei enthält die `PaintSurface` -Ereignishandler und Hilfsroutinen, die für den Zugriff auf die `Picker` Ansichten:
+Die [ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs) Code-Behind-Datei enthält die `PaintSurface` -Ereignishandler und Hilfsroutinen, die für den Zugriff auf die `Picker` Ansichten:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     path.LineTo(0.2f * info.Width, 0.8f * info.Height);
     path.LineTo(0.8f * info.Width, 0.2f * info.Height);
 
-    canvas.DrawPath(path, paint); 
+    canvas.DrawPath(path, paint);
 }
 
 float[] GetPickerArray(Picker picker)
@@ -150,9 +150,9 @@ float[] GetPickerArray(Picker picker)
 
 In den folgenden Screenshots wird der iOS-Bildschirms ganz links eine gepunktete Linie auf:
 
-[![](dots-images/dotsanddashes-small.png "Dreifacher Screenshot der Seite für Punkte und Striche")](dots-images/dotsanddashes-large.png#lightbox "dreifachen Screenshot der Seite für Punkte und Bindestriche enthalten")
+[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
 
-Die Android-Bildschirm sollte auch eine gepunktete Linie mit dem Array {10, 10} zeigen jedoch die Zeile ist stattdessen solid. Was ist passiert? Das Problem besteht darin, dass die Android-Bildschirm auch Stroke Caps Einstellung wurde `Square`. Dies erweitert alle Gedankenstriche halbe Strichbreite, veranlassen, um die Lücken zu füllen.
+Die Android-Bildschirm sollte auch eine gepunktete Linie mit dem Array {10, 10} zeigen jedoch die Zeile ist stattdessen solid. Worin besteht die Ursache? Das Problem besteht darin, dass die Android-Bildschirm auch Stroke Caps Einstellung wurde `Square`. Dies erweitert alle Gedankenstriche halbe Strichbreite, veranlassen, um die Lücken zu füllen.
 
 Um dieses Problem umgehen, bei Verwendung einer Stroke Begrenzung von `Square` oder `Round`, müssen Sie verringern die Längen Dash in Arrays durch die Stroke-Länge (in einigen Fällen führt ein Dash-Länge von 0), und erhöhen Sie die Länge der Lücke durch die Länge des Strichs. Dies ist wie die letzten drei Arrays in dash der `Picker` in der XAML-Datei wurden berechnet:
 
@@ -211,9 +211,9 @@ public class AnimatedSpiralPage : ContentPage
 
 Natürlich müssen Sie das Programm zum Anzeigen der Animation tatsächlich auszuführen:
 
-[![](dots-images/animatedspiral-small.png "Dreifacher Screenshot der Seite animiert Spirale")](dots-images/animatedspiral-large.png#lightbox "dreifachen Screenshot der Seite animiert Spirale")
+[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

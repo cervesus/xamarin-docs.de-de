@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: 35df724850e1fc945c096aebc91b7aa84936bdc1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 28b13951a0d681ffdb8e643667e496e0b3606628
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026978"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724002"
 ---
 # <a name="android-frequently-asked-questions"></a>Häufig gestellte Fragen zu Android
 
@@ -51,7 +51,7 @@ Dieser Leitfaden behandelt die Methoden bei der Verwendung des Android-Emulators
 
 ### <a name="how-do-i-automate-an-android-nunit-test-projectautomate-android-nunit-testmd"></a>[Wie automatisiere ich ein Android NUnit-Testprojekt?](automate-android-nunit-test.md)
 
-Dieses Handbuch enthält die Schritte zum Einrichten eines Android nunit-Testprojekts, _nicht_ als xamarin. UITest-Projekt. Xamarin. UITest-Anleitungen finden Sie [hier](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
+Dieses Handbuch enthält die Schritte zum Einrichten eines Android nunit-Testprojekts, _nicht_ als xamarin. UITest-Projekt. Xamarin. UITest-Anleitungen finden Sie [hier](/appcenter/test-cloud/preparing-for-upload).
 
 ### <a name="why-cant-my-android-release-build-connect-to-the-internetandroid-internetmd"></a>[Warum kann mein Android-Releasebuild keine Verbindung mit dem Internet herstellen?](android-internet.md)
 
@@ -65,7 +65,7 @@ Die häufigste Ursache für dieses Problem ist, dass die **Internet** Berechtigu
 
 In diesem Artikel wird erläutert, wie Sie einen **PathTooLongException** -Fehler beheben, der beim Aufbau eines xamarin. Android-Projekts auftreten kann.
 
-## <a name="deprecated"></a>Veraltet
+## <a name="deprecated"></a>Als veraltet markiert
 
 > [!NOTE]
 > Die folgenden Artikel gelten für Probleme, die in neueren Versionen von xamarin behoben wurden. Wenn das Problem jedoch in der aktuellen Version der Software auftritt, melden Sie einen [neuen Fehler](~/cross-platform/troubleshooting/questions/howto-file-bug.md) mit den vollständigen Versionsinformationen und der vollständigen buildprotokolleausgabe.

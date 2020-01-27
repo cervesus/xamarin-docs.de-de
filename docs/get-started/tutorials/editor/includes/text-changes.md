@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19afeed47f1c06c89c58dfd996d360698b19fc9c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61373377"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -84,7 +84,7 @@ ms.locfileid: "61373377"
     > [!IMPORTANT]
     > Jeder in einen [`Editor`](xref:Xamarin.Forms.Editor) eingegebene Text wird in der [`Text`](xref:Xamarin.Forms.Editor.Text)-Eigenschaft gespeichert.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
     [![Screenshot: Editor mit Text unter iOS und Android](../images/text-changes.png "Editor mit Text")](../images/text-changes-large.png#lightbox "Editor mit Text")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 4f73ea249d29075b0e9e115e86afc971632b7b61
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 841b1d4abab5e4c09249174b221da20794771a86
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487502"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725568"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Übersetzung von Text mit der Translator-API
 
@@ -67,7 +67,7 @@ Das Zugriffstoken muss angegeben werden, in jeder Textübersetzungs-API Aufrufen
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-Weitere Informationen zu den token cognitive Services-Dienst, finden Sie unter [Authentifizierungs-Token-API](https://docs.microsofttranslator.com/oauth-token.html).
+Weitere Informationen zum Cognitive Services-Tokendienst finden Sie unter [Authentifizierung](/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="performing-text-translation"></a>Durchführen der Übersetzung von Texteingabe
 
@@ -87,7 +87,7 @@ public async Task<string> TranslateTextAsync(string text)
 
 Die `TranslateTextAsync` Methode generiert einen Anforderungs-URI und ruft ein Zugriffstoken vom Tokendienst ab. Anforderung der Übersetzung wird dann gesendet, um die `translate` -API, die eine XML-Antwort, die das Ergebnis zurückgibt. Die XML-Antwort wird analysiert, und das übersetzungsergebnis an die aufrufende Methode für die Anzeige zurückgegeben.
 
-Weitere Informationen zu den Text Translation-REST-APIs, finden Sie unter [Microsoft Textübersetzungs-API](https://docs.microsofttranslator.com/text-translate.html).
+Weitere Informationen zu den Rest-APIs für die Text Übersetzung finden Sie unter [Textübersetzungs-API](/azure/cognitive-services/translator/reference/v3-0-reference).
 
 ### <a name="configuring-text-translation"></a>Konfigurieren die Übersetzung von Texteingabe
 
@@ -128,7 +128,7 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 
 Diese Methode erstellt die GET-Anforderung durch das Hinzufügen des Zugriffstokens für die `Authorization` -Header, die Zeichenfolge mit dem Präfix `Bearer`. Die GET-Anforderung wird dann gesendet, um die `translate` -API, mit der Anforderungs-URL angeben des Texts übersetzt werden, und die Sprache, die den Text zu übersetzen. Die Antwort ist dann gelesen und an die aufrufende Methode zurückgegeben.
 
-Die `translate` API sendet HTTP-Statuscode 200 (OK) in der Antwort angegeben, dass die Anforderung gültig ist, was bedeutet, dass die Anforderung erfolgreich war, und dass die angeforderte Informationen in der Antwort ist. Eine Liste der möglichen Fehlerantworten, finden Sie unter Antwortnachrichten an [erhalten übersetzen](https://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate).
+Die `translate` API sendet HTTP-Statuscode 200 (OK) in der Antwort angegeben, dass die Anforderung gültig ist, was bedeutet, dass die Anforderung erfolgreich war, und dass die angeforderte Informationen in der Antwort ist. Eine Liste der möglichen Fehlerantworten, finden Sie unter Antwortnachrichten an [erhalten übersetzen](/azure/cognitive-services/translator/reference/v3-0-translate).
 
 ### <a name="processing-the-response"></a>Verarbeiten der Antwort
 
@@ -148,7 +148,7 @@ In diesem Artikel wurde erläutert, wie die Microsoft Textübersetzungs-API verw
 
 ## <a name="related-links"></a>Verwandte Themen
 
-- [Translator-Text-API-Dokumentation](/azure/cognitive-services/translator/).
+- [Dokumentation zu Textübersetzungs-API](/azure/cognitive-services/translator/)
 - [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
-- [Microsoft-Textübersetzungs-API](https://docs.microsofttranslator.com/text-translate.html).
+- [Textübersetzungs-API](/azure/cognitive-services/translator/reference/v3-0-reference)

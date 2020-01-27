@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/05/2019
-ms.openlocfilehash: 190aeb83456fa7c7ba8a9415b02ab56f3f8779da
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e86d69bb9dc751f70d03a556f65c11efd0b34d10
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728277"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725586"
 ---
 # <a name="xamarinforms-local-databases"></a>Lokale Datenbanken von Xamarin.Forms
 
@@ -92,7 +92,7 @@ Eine Datenbank-Wrapper Klasse abstrahiert die Datenzugriffs Ebene vom Rest der a
 
 ### <a name="lazy-initialization"></a>Verzögerte Initialisierung
 
-Der `TodoItemDatabase` verwendet die .net `Lazy`-Klasse, um die Initialisierung der Datenbank zu verzögern, bis der erste Zugriff erfolgt. Die Verwendung der verzögerten Initialisierung verhindert, dass der Daten Bank Ladevorgang den App-Start verzögert. Weitere Informationen finden Sie unter [Lazy&lt;t&gt; Class](https://docs.microsoft.com/dotnet/api/system.lazy-1).
+Der `TodoItemDatabase` verwendet die .net `Lazy`-Klasse, um die Initialisierung der Datenbank zu verzögern, bis der erste Zugriff erfolgt. Die Verwendung der verzögerten Initialisierung verhindert, dass der Daten Bank Ladevorgang den App-Start verzögert. Weitere Informationen finden Sie unter [Lazy&lt;t&gt; Class](xref:System.Lazy`1).
 
 ```csharp
 public class TodoItemDatabase
@@ -289,4 +289,4 @@ Weitere Informationen finden Sie unter [Datei Behandlung in xamarin. Forms](~/xa
 - [Verwenden von SQLite mit Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [Verwenden von SQLite mit IOS](~/ios/data-cloud/data/using-sqlite-orm.md)
 - [Aufgabenbasiertes asynchrones Muster (tippen)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
-- [Lazy<T>-Klasse](https://docs.microsoft.com//api/system.lazy-1)
+- [Lazy&lt;t-&gt; Klasse](xref:System.Lazy`1)

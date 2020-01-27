@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d8b48892a5a1106b03778ac30eca4b18f049f4d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032774"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725323"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchos – Exemplarische Vorgehensweise
 
@@ -87,7 +87,7 @@ Erstellen Sie die Benutzeroberfläche:
 
 ![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-Nachdem Sie das Storyboard gespeichert haben, wird die **InterfaceController.Designer.cs** mit den Steuerelement Namen und-Aktionen aktualisiert. Wenn Sie diese Datei nach der Aktualisierung öffnen, können Sie sehen, wie die `RegisterAttribute` dem Controller entspricht, und wie UI-Steuerelemente C# den mit der`OutletAttribute`markierten Instanzvariablen entsprechen und wie Aktionen partiellen Methoden zugeordnet werden, die mit dem markiert sind`ActionAttribute`:
+Nachdem Sie das Storyboard gespeichert haben, wird die **InterfaceController.Designer.cs** mit den Steuerelement Namen und-Aktionen aktualisiert. Wenn Sie diese Datei nach der Aktualisierung öffnen, können Sie sehen, wie die `RegisterAttribute` dem Controller entspricht, und wie UI-Steuerelemente C# den mit der `OutletAttribute` markierten Instanzvariablen entsprechen und wie Aktionen partiellen Methoden zugeordnet werden, die mit dem `ActionAttribute`gekennzeichnet sind:
 
 ```csharp
 // WARNING
@@ -153,8 +153,7 @@ Herzlichen Glückwunsch! Sie haben eine Watch-App!
 
 ![](hello-watch-images/running.png "The app running in the Simulator")
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [Getting Started (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
 - [Einrichtung und Installation](~/ios/watchos/get-started/installation.md)
-- [Video zur ersten Watch-App](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [Erste Watch-App-video](https://blog.xamarin.com/your-first-watch-kit-app/)

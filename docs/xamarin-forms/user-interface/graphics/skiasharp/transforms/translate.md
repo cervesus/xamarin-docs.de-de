@@ -7,16 +7,16 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e108852b2978903fb74686ad60cf419bbe4e3c0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1efd7610b32e6a3903d34fc2f8b5a6e20c9da8a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772966"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723603"
 ---
 # <a name="the-translate-transform"></a>Die Verschiebungstransformation
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erfahren Sie, wie die Verschiebungstransformation zu verwenden, um das Verschieben von SkiaSharp-Grafiken_
 
@@ -24,7 +24,7 @@ Die einfachste Art der Transformation im SkiaSharp ist die *übersetzen* oder *�
 
 Übersetzung ist auch nützlich, Animation und Effekte für einfachen Text:
 
-![](translate-images/translateexample.png "Textschatten, Eingravieren und bei der Übersetzung Prägen")
+![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
 
 Die [ `Translate` ](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) -Methode in der `SKCanvas` verfügt über zwei Parameter, die dazu führen, dass nachfolgend gezeichneten Grafikobjekten, die horizontal und vertikal verschoben werden sollen:
 
@@ -71,7 +71,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die nachfolgenden Rechtecke, die unten auf der Seite angewendet wurden:
 
-[![](translate-images/accumulatedtranslate-small.png "Dreifacher Screenshot der Seite übersetzt kumuliert")](translate-images/accumulatedtranslate-large.png#lightbox "dreifachen Screenshot der Seite übersetzt gesammelt")
+[![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
 
 Wenn die akkumulierten Übersetzung Faktoren sind `dx` und `dy`, und der Angabe in einer zeichnen-Funktion (`x`, `y`), und klicken Sie dann die grafischen Objekts, an dem Punkt gerendert wird (`x'`, `y'`), wobei:
 
@@ -128,7 +128,7 @@ using (SKPaint textPaint = new SKPaint())
 
 In jedem der drei Beispiele `Translate` wird aufgerufen, für die Anzeige von den Text, um es von den vom angegebenen Speicherort versetzt die `x` und `y` Variablen. Dann wird der Text in einer anderen Farbe ohne Übersetzung Auswirkungen erneut angezeigt:
 
-[![](translate-images/translatetexteffects-small.png "Dreifacher Screenshot der Seite für Texteffekte übersetzen")](translate-images/translatetexteffects-large.png#lightbox "dreifachen Screenshot der Seite für Texteffekte übersetzen")
+[![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
 
 Jedes der drei Beispiele zeigt, dass eine andere Art der negieren die `Translate` aufrufen:
 
@@ -136,13 +136,13 @@ Ruft das erste Beispiel einfach `Translate` wieder, aber mit negativen Werten. D
 
 Im zweiten Beispiel wird [ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix). Dies bewirkt, dass alle Transformationen, die für die zurückzugebenden auf ihren Standardzustand zurückgesetzt.
 
-Das dritte Beispiel speichert den Zustand der `SKCanvas` Objekt mit einem Aufruf von [ `Save` ](xref:SkiaSharp.SKCanvas.Save) und dann wird der Status mit einem Aufruf von [ `Restore` ](xref:SkiaSharp.SKCanvas.Restore). Dies ist der vielseitigste Möglichkeit zum Bearbeiten von Transformationen für eine Reihe von Operationen zu zeichnen. Diese `Save` und`Restore` Aufrufe funktionieren wie ein Stapel: Sie können mehrmals `Save` aufzurufen und dann in umgekehrter Reihenfolge aufzurufen `Restore` , um zu den vorherigen Zuständen zurückzukehren. Die `Save` Methode gibt eine ganze Zahl zurück, und Sie können diese ganze Zahl, und übergeben [ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*) effektiv Aufrufen `Restore` mehrmals. Die [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount) Eigenschaft gibt die Anzahl der Zustände, die derzeit auf dem Stapel gespeichert.
+Das dritte Beispiel speichert den Zustand der `SKCanvas` Objekt mit einem Aufruf von [ `Save` ](xref:SkiaSharp.SKCanvas.Save) und dann wird der Status mit einem Aufruf von [ `Restore` ](xref:SkiaSharp.SKCanvas.Restore). Dies ist der vielseitigste Möglichkeit zum Bearbeiten von Transformationen für eine Reihe von Operationen zu zeichnen. Diese `Save` und `Restore` Ruft die Funktion wie ein Stapel: Rufen Sie `Save` mehrere Male aus, und rufen Sie dann `Restore` in umgekehrte Sequenz, die in vorherigen Zustand zurück. Die `Save` Methode gibt eine ganze Zahl zurück, und Sie können diese ganze Zahl, und übergeben [ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*) effektiv Aufrufen `Restore` mehrmals. Die [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount) Eigenschaft gibt die Anzahl der Zustände, die derzeit auf dem Stapel gespeichert.
 
-Sie können auch die [ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore) -Klasse für den Wiederherstellungsstatus der Canvas. Richtet sich an der Konstruktor dieser Klasse aufgerufen werden, eine `using` -Anweisung, die Canvas Zustand wird automatisch wiederhergestellt, am Ende der `using` Block. 
+Sie können auch die [ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore) -Klasse für den Wiederherstellungsstatus der Canvas. Richtet sich an der Konstruktor dieser Klasse aufgerufen werden, eine `using` -Anweisung, die Canvas Zustand wird automatisch wiederhergestellt, am Ende der `using` Block.
 
 Jedoch keinen kümmern, Transformationen, die von einem Aufruf von übertragen die `PaintSurface` Handler zur nächsten. Jeder neue Aufruf `PaintSurface` bietet eine neue `SKCanvas` Objekt mit der standardmäßigen Transformationen.
 
-Häufig verwendet die `Translate` Transformation ist für das Rendern eines visuellen Objekts, das ursprünglich erstellt wurde mithilfe von Koordinaten, die zum Zeichnen sind. Beispielsweise empfiehlt es sich Koordinaten für einer analogen Uhr mit einem Rechenzentrum, an dem Punkt (0, 0) an. Sie können dann Transformationen verwenden, um die Uhr anzuzeigen an die gewünschte. Dieses Verfahren wird veranschaulicht, der [**Hendecagram Array**] Seite. Die [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Klasse beginnt mit der Erstellung einer `SKPath` -Objekt für einen Stern 11 zwischengespeichert. Die `HendecagramPath` Objekt ist als öffentliche, statische und schreibgeschützte definiert, sodass es von anderen Programmen Demo zugegriffen werden kann. Es wird in einem statischen Konstruktor erstellt:
+Häufig verwendet die `Translate` Transformation ist für das Rendern eines visuellen Objekts, das ursprünglich erstellt wurde mithilfe von Koordinaten, die zum Zeichnen sind. Beispielsweise empfiehlt es sich Koordinaten für einer analogen Uhr mit einem Rechenzentrum, an dem Punkt (0, 0) an. Sie können dann Transformationen verwenden, um die Uhr anzuzeigen an die gewünschte. Dieses Verfahren wird veranschaulicht, der [**Hendecagram Array**] Seite. Die [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs) Klasse beginnt mit der Erstellung einer `SKPath` -Objekt für einen Stern 11 zwischengespeichert. Die `HendecagramPath` Objekt ist als öffentliche, statische und schreibgeschützte definiert, sodass es von anderen Programmen Demo zugegriffen werden kann. Es wird in einem statischen Konstruktor erstellt:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -173,7 +173,7 @@ public class HendecagramArrayPage : ContentPage
 }
 ```
 
-Wenn die Mitte des Sterns den Punkt (0, 0) ist, werden alle Punkte des Sterns auf einem Kreis, um diesen Punkt. Jeder Punkt ist eine Kombination von Werten von Sinus und Kosinus eines Winkels, der um 5/11ths von 360 Grad erhöht. (Es ist auch möglich, einen Stern 11 Spitzen zu erstellen, durch das Erhöhen der Neigungswinkel 2/11., 3/11ths oder 4/11. des Kreises.) Der Radius des Kreises wird als 100 festgelegt.
+Wenn die Mitte des Sterns den Punkt (0, 0) ist, werden alle Punkte des Sterns auf einem Kreis, um diesen Punkt. Jeder Punkt ist eine Kombination von Werten von Sinus und Kosinus eines Winkels, der um 5/11ths von 360 Grad erhöht. (Es ist auch möglich, einen 11-pointierten Stern zu erstellen, indem der Winkel um 2/11., 3/11sekunden oder 4/11. des Kreises vergrößert wird.) Der RADIUS dieses Kreises wird auf 100 festgelegt.
 
 Wenn dieser Pfad ohne Transformationen gerendert wird, wird das Center auf der linken oberen Ecke des positioniert die `SKCanvas`, und nur ein Viertel des Zertifikats ist sichtbar. Die `PaintSurface` Handler `HendecagramPage` verwendet stattdessen `Translate` um die Kachel im Zeichenbereichs aus, wenn mehrere Kopien des Sterns jeweils nach dem Zufallsprinzip zugewiesen:
 
@@ -212,9 +212,9 @@ public class HendecagramArrayPage : ContentPage
 
 ```
 
-Hier ist das Ergebnis:
+So sieht das Ergebnis aus:
 
-[![](translate-images/hendecagramarray-small.png "Dreifacher Screenshot der Seite Hendecagram Array")](translate-images/hendecagramarray-large.png#lightbox "dreifachen Screenshot der Seite Hendecagram-Array")
+[![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
 
 Animationen umfassen häufig Transformationen. Die **Hendecagram Animation** Seite verschiebt den Stern 11 Spitzen in einem Kreis. Die [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Klasse beginnt mit einigen Feldern und der überschreibt die `OnAppearing` und `OnDisappearing` Methoden zum Starten und Beenden einen Timer Xamarin.Forms:
 
@@ -299,11 +299,11 @@ public class HendecagramAnimationPage : ContentPage
 
 Die `PaintSurface` Ereignishandler ruft die `Translate` Methode zweimal, um in der Mitte der Canvas, übersetzt und dann in den Umfang eines Kreises bei zentraler Punkt übersetzt (0, 0). Der Radius des Kreises ist so groß wie möglich sein und dennoch die Sicherheit des Sterns innerhalb der Grenzen der Seite festgelegt:
 
-[![](translate-images/hendecagramanimation-small.png "Dreifacher Screenshot der Seite Hendecagram Animation")](translate-images/hendecagramanimation-large.png#lightbox "dreifachen Screenshot der Seite Hendecagram-Animation")
+[![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
 
 Beachten Sie, dass das Sternsymbol dieselbe Ausrichtung verwaltet, wie sie in der Mitte der Seite basiert. Es werden nicht alle drehen. Dies ist ein Auftrag für eine Rotationstransformation.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

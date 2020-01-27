@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 16ceaba572ca932777bb366d9f7c58f6dcb24f70
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67841502"
 ---
 Die Unterklasse [`Application`](xref:Xamarin.Forms.Application) enthält ein statisches [`Properties`](xref:Xamarin.Forms.Application.Properties)-Wörterbuch, das zum Speichern von Daten bei Zustandsänderungen des Lebenszyklus verwendet werden kann. Das Wörterbuch verwendet einen `string`-Schlüssel und speichert einen `object`-Wert. Das Wörterbuch wird automatisch auf dem Gerät gespeichert und wird bei Neustart der Anwendung erneut aufgefüllt.
@@ -113,7 +113,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
 
     Starten Sie die Anwendung schließlich erneut über Visual Studio. Der Text, den Sie zuvor in die [`Entry`](xref:Xamarin.Forms.Entry)-Klasse eingegeben haben, sollte wiederhergestellt werden:
 
-    [![Screenshot: Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus unter iOS und Android](../images/persist-data.png "Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus")](../images/persist-data-large.png#lightbox "Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus")
+    [![Screenshot: Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird, unter iOS und Android](../images/persist-data.png "Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird")](../images/persist-data-large.png#lightbox "Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird")
 
     Weitere Informationen zum Beibehalten von Daten im Eigenschaftenwörterbuch finden Sie unter [Eigenschaftenwörterbuch](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary) im Leitfaden zur [Xamarin.Forms-App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).
 
@@ -211,12 +211,12 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
 
     Sobald der Text in der [`Entry`](xref:Xamarin.Forms.Entry)-Klasse mit der EINGABETASTE fertig gestellt wird, wird die Methode `OnEntryCompleted` ausgeführt, und der `Entry`-Text wird in der Eigenschaft `App.DisplayText` gespeichert.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
 
     Geben Sie einen Text in die [`Entry`](xref:Xamarin.Forms.Entry)-Klasse ein, und drücken Sie die EINGABETASTE. Minimieren Sie dann die Anwendung, indem Sie auf die Home-Taste tippen, um die Methode `OnSleep` aufzurufen.
 
     Starten Sie die Anwendung schließlich erneut über Visual Studio für Mac. Der Text, den Sie zuvor in die [`Entry`](xref:Xamarin.Forms.Entry)-Klasse eingegeben haben, sollte wiederhergestellt werden:
 
-    [![Screenshot: Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus unter iOS und Android](../images/persist-data.png "Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus")](../images/persist-data-large.png#lightbox "Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus")
+    [![Screenshot: Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird, unter iOS und Android](../images/persist-data.png "Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird")](../images/persist-data-large.png#lightbox "Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird")
 
     Weitere Informationen zum Beibehalten von Daten im Eigenschaftenwörterbuch finden Sie unter [Eigenschaftenwörterbuch](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary) im Leitfaden zur [Xamarin.Forms-App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: edc778879aa88d420f41bd2b7b8e15b6d80b5939
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e12bac1f65981776a7bd650cbc840cc0cdf72892
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728264"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725158"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9-Kompatibilität
 
@@ -21,9 +21,7 @@ _Auch wenn Sie nicht beabsichtigen, IOS 9-Features direkt zu Ihrer APP hinzuzuf�
 > [!IMPORTANT]
 > Die Informationen auf dieser Seite gelten für Kunden mit bereits im App Store als Ziel für IOS 8 oder früher, die noch keine Updates für IOS 9-Kompatibilität übermittelt haben. Wenn Sie bereits die neuesten Versionen (Xcode 7 und xamarin. IOS 9) verwenden, besuchen Sie für Ihre APP-Entwicklung die [Einführung zu IOS 9](~/ios/platform/introduction-to-ios9/index.md).
 
-Als die ersten IOS 9-Beta Versionen aufgetreten sind, haben wir zwei Probleme mit älteren Versionen von xamarin festgestellt, die sich als ältere apps in ios 9 nicht starten können.
-
-Diese beiden Probleme (wie [in unseren Foren ausführlich erläutert](https://forums.xamarin.com/discussion/comment/131529/#Comment_131529)) waren:
+Als die ersten IOS 9 Beta Versionen auftraten, haben wir zwei Probleme mit älteren Versionen von xamarin erkannt, die sich als ältere apps zeigten, die auf IOS 9 nicht gestartet werden können:
 
 - Apps, die für IOS 8 oder früher erstellt wurden, können nicht auf 32-Bit-Geräten gestartet werden (einschließlich apps, die mit dem [Unified API](~/cross-platform/macios/unified/index.md)erstellt wurden).
 - P/Aufruf fehlgeschlagen, da der vollständige Pfad nicht angegeben ist.

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 863748a7af057d2ea3e53719c332cd555ff3b698
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: da75d42e0e0bcf38dd2ff50999b705125dc4e2b5
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656859"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723612"
 ---
 # <a name="searchbar-spell-check-on-windows"></a>Searchbar-Rechtschreibprüfung unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese universelle Windows-Plattform plattformspezifisch ermöglicht einem [`SearchBar`](xref:Xamarin.Forms.SearchBar) die Interaktion mit der Rechtschreibprüfung. Es ist in XAML verwendet, durch Festlegen der [ `SearchBar.IsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty) angefügten Eigenschaft, um eine `boolean` Wert:
+Diese universelle Windows-Plattform plattformspezifisch ermöglicht einer [`SearchBar`](xref:Xamarin.Forms.SearchBar) die Interaktion mit der Rechtschreibprüfung. Es ist in XAML verwendet, durch Festlegen der [ `SearchBar.IsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty) angefügten Eigenschaft, um eine `boolean` Wert:
 
 ```xaml
 <ContentPage ...
@@ -30,7 +30,7 @@ Diese universelle Windows-Plattform plattformspezifisch ermöglicht einem [`Sear
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -48,10 +48,10 @@ searchBar.On<Windows>().SetIsSpellCheckEnabled(!searchBar.On<Windows>().GetIsSpe
 
 Das Ergebnis ist, den in eingegebenen Text die [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) kann Rechtschreibung überprüft werden, mit der falsche Schreibweisen für den Benutzer angegeben wird:
 
-![SearchBar Rechtschreibung prüfen plattformspezifische](searchbar-spell-check-images/searchbar-spellcheck.png "SearchBar Rechtschreibung prüfen plattformspezifische")
+![Plattformspezifische Überprüfung der Suchleiste](searchbar-spell-check-images/searchbar-spellcheck.png "Plattformspezifische Überprüfung der Suchleiste")
 
 > [!NOTE]
-> Die `SearchBar` -Klasse in der [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) Namespace verfügt auch über [ `EnableSpellCheck` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.EnableSpellCheck*) und [ `DisableSpellCheck` ](xre:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.DisableSpellCheck*) Methoden, die zum Aktivieren und deaktivieren verwendet werden können die Rechtschreibprüfung für die `SearchBar`bzw.
+> Die `SearchBar` -Klasse in der [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) Namespace verfügt auch über [ `EnableSpellCheck` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.EnableSpellCheck*) und [ `DisableSpellCheck` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.DisableSpellCheck*) Methoden, die zum Aktivieren und deaktivieren verwendet werden können die Rechtschreibprüfung für die `SearchBar`bzw.
 
 ## <a name="related-links"></a>Verwandte Links
 

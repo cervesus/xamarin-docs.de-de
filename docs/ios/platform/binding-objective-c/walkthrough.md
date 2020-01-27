@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: f5e5af7d9b4ec85832f2d6050f632d054ba089a2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f7c98de605f71b320f0650954f08c8857459ceaf
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032684"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725269"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer IOS-Ziel-C-Bibliothek
 
@@ -28,7 +28,7 @@ In der Regel im IOS-Ökosystem finden Sie Bibliotheken in drei Varianten:
 
 Im ersten und zweiten Szenario gibt es bereits eine vorkompilierte, statische cocoatouch-Bibliothek, daher konzentrieren wir uns in diesem Artikel auf das dritte Szenario. Bevor Sie beginnen, eine Bindung zu erstellen, sollten Sie die in der Bibliothek bereitgestellte Lizenz immer überprüfen, um sicherzustellen, dass Sie diese binden können.
 
-Dieser Artikel enthält eine schrittweise exemplarische Vorgehensweise zum Erstellen eines Bindungs Projekts mithilfe des Open Source-Projekts " [infcolorpicker](https://github.com/InfinitApps/InfColorPicker) " für Ziel-c. alle Informationen in diesem Handbuch können jedoch für die Verwendung mit der Ziel-c-Bibliothek von Drittanbietern angepasst werden. . Die infcolorpicker-Bibliothek stellt einen wiederverwendbaren Ansichts Controller bereit, mit dem der Benutzer eine Farbe basierend auf der HSB-Darstellung auswählen kann, wodurch die Farbauswahl benutzerfreundlicher wird.
+Dieser Artikel enthält eine schrittweise exemplarische Vorgehensweise zum Erstellen eines Bindungs Projekts mithilfe des Open Source-Projekts " [infcolorpicker](https://github.com/InfinitApps/InfColorPicker) " für Ziel-c. alle Informationen in diesem Handbuch können jedoch für die Verwendung mit der Ziel-c-Bibliothek von Drittanbietern angepasst werden. Die infcolorpicker-Bibliothek stellt einen wiederverwendbaren Ansichts Controller bereit, mit dem der Benutzer eine Farbe basierend auf der HSB-Darstellung auswählen kann, wodurch die Farbauswahl benutzerfreundlicher wird.
 
 [![](walkthrough-images/run01.png "Example of the InfColorPicker library running on iOS")](walkthrough-images/run01.png#lightbox)
 
@@ -41,7 +41,7 @@ Wir behandeln alle notwendigen Schritte, um diese spezielle Ziel-C-API in xamari
 
 Die Beispielanwendung zeigt, wie Sie einen starken Delegaten für die Kommunikation zwischen der infcolorpicker-API C# und unserem Code verwenden. Nachdem Sie erfahren haben, wie Sie einen starken Delegaten verwenden, wird erläutert, wie Sie schwache Delegaten verwenden, um dieselben Aufgaben auszuführen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 In diesem Artikel wird davon ausgegangen, dass Sie mit Xcode und der Programmiersprache "Ziel-c" vertraut sind und dass Sie unsere [Bindungs Ziel-c-](~/cross-platform/macios/binding/index.md) Dokumentation gelesen haben. Außerdem ist Folgendes erforderlich, um die folgenden Schritte auszuführen:
 
@@ -168,7 +168,7 @@ An diesem Punkt sind wir geschlossen, aber wir sind noch nicht fertig. Die stati
 
 ### <a name="creating-a-fat-binary"></a>Erstellen einer FAT-Binärdatei
 
-Alle IOS-Geräte verfügen über Prozessoren, die von der ARM-Architektur betrieben werden und mit der Zeit entwickelt wurden Jede neue Architektur hat neue Anweisungen und andere Verbesserungen hinzugefügt, wobei die Abwärtskompatibilität weiterhin gewahrt bleibt. IOS-Geräte verfügen über ARMv6, armv7, armv7s, arm64-Anweisungs Sätze – Obwohl [ARMv6 nicht mehr verwendet wird](~/ios/deploy-test/compiling-for-different-devices.md). Der IOS-Simulator wird nicht von Arm unterversorgt und ist stattdessen ein x86-und x86_64-gestützter Simulator. Dies bedeutet, dass Bibliotheken für jeden Anweisungs Satz bereitgestellt werden müssen.
+Alle IOS-Geräte verfügen über Prozessoren, die von der ARM-Architektur betrieben werden und mit der Zeit entwickelt wurden Jede neue Architektur hat neue Anweisungen und andere Verbesserungen hinzugefügt, wobei die Abwärtskompatibilität weiterhin gewahrt bleibt. IOS-Geräte verfügen über ARMv6, armv7, armv7s, arm64-Anweisungs Sätze – Obwohl [ARMv6 nicht mehr verwendet wird](~/ios/deploy-test/compiling-for-different-devices.md). Der IOS-Simulator wird nicht von Arm unterversorgt und ist stattdessen ein x86-und x86_64 gestützter Simulator. Dies bedeutet, dass Bibliotheken für jeden Anweisungs Satz bereitgestellt werden müssen.
 
 Eine FAT-Bibliothek ist `.a` Datei, die alle unterstützten Architekturen enthält.
 
@@ -180,7 +180,7 @@ Das Erstellen einer FAT-Binärdatei ist ein dreistufiger Prozess:
 
 Diese drei Schritte sind zwar recht unkompliziert, es kann jedoch erforderlich sein, Sie in Zukunft zu wiederholen, wenn die Ziel-C-Bibliothek Updates empfängt oder wenn wir Fehlerbehebungen benötigen. Wenn Sie diese Schritte automatisieren, wird die zukünftige Wartung und Unterstützung des IOS-Bindungs Projekts vereinfacht.
 
-Es stehen zahlreiche Tools zur Verfügung, mit denen Sie Aufgaben wie Shellskripts, [Rake](https://rake.rubyforge.org/), [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)und [make](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)automatisieren können. Wenn die Xcode-Befehlszeilen Tools installiert sind, wird `make` ebenfalls installiert. Dies ist das Buildsystem, das für diese exemplarische Vorgehensweise verwendet wird. Hier ist ein **Makefile** , mit dem Sie eine freigegebene Bibliothek für mehrere Architekturen erstellen können, die auf einem IOS-Gerät und dem Simulator für jede Bibliothek funktioniert:
+Es stehen zahlreiche Tools zur Verfügung, mit denen Sie Aufgaben wie Shellskripts, [Rake](https://rake.rubyforge.org/), [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)und Make automatisieren können. Wenn die Xcode-Befehlszeilen Tools installiert sind, wird `make` ebenfalls installiert. Dies ist das Buildsystem, das für diese exemplarische Vorgehensweise verwendet wird. Hier ist ein **Makefile** , mit dem Sie eine freigegebene Bibliothek für mehrere Architekturen erstellen können, die auf einem IOS-Gerät und dem Simulator für jede Bibliothek funktioniert:
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -419,7 +419,7 @@ Geben Sie den folgenden Befehl in der Terminal-app ein:
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-Dabei ist `[full-path-to-project]` der vollständige Pfad zu dem Verzeichnis, in dem sich die Projektdatei " **infcolorpicker** " auf dem Computer befindet, und [iPhone-OS] ist das IOS-SDK, das wir installiert haben, wie vom `sharpie xcode -sdks`-Befehl angegeben. Beachten Sie, dass in diesem Beispiel **\*. h** als Parameter übergeben wurde, der *alle* Header Dateien in diesem Verzeichnis enthält. normalerweise sollten Sie dies nicht tun, sondern Sie sollten die Header Dateien sorgfältig durchlesen, um die h-Datei der obersten Ebene zu finden **.** , der auf alle anderen relevanten Dateien verweist und diese einfach an den Ziel-Sharpie übergibt.
+Dabei ist `[full-path-to-project]` der vollständige Pfad zu dem Verzeichnis, in dem sich die Projektdatei " **infcolorpicker** " auf dem Computer befindet, und [iPhone-OS] ist das IOS-SDK, das wir installiert haben, wie vom `sharpie xcode -sdks`-Befehl angegeben. Beachten Sie, dass in diesem Beispiel **\*. h** als Parameter übergeben wurde, der *alle* Header Dateien in diesem Verzeichnis enthält. Dies ist normalerweise nicht der Fall, Sie sollten jedoch die Header Dateien sorgfältig durchlesen, um die **h** -Datei der obersten Ebene zu suchen, die auf alle anderen relevanten Dateien verweist, und Sie einfach an das Ziel "Sharpie" zu übergeben.
 
 Die folgende [Ausgabe](walkthrough-images/os05.png) wird im Terminal generiert:
 
@@ -460,7 +460,7 @@ Und die **InfColorPicker.enums.cs** -und **InfColorPicker.cs** -Dateien werden i
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der Datei **InfColorPicker.cs** (auf dem **Mac-buildhost**), und fügen Sie ihn in die Datei **ApiDefinition.cs** ein. ersetzen Sie dabei den vorhandenen `namespace ...` Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei ( die `using`-Anweisungen sind intakt).
+Öffnen Sie beide Dateien im Bindungs Projekt, das wir oben erstellt haben. Kopieren Sie den Inhalt der Datei **InfColorPicker.cs** (auf dem **Mac-buildhost**), und fügen Sie ihn in die Datei **ApiDefinition.cs** ein. ersetzen Sie dabei den vorhandenen `namespace ...` Codeblock durch den Inhalt der **InfColorPicker.cs** -Datei (wobei die `using` Anweisungen intakt bleiben).
 
 -----
 
@@ -586,7 +586,7 @@ Wenn die Bindungs Bibliothek kompiliert wird, erstellt xamarin. IOS eine abstrak
 
 Es gibt zwei Möglichkeiten, wie Sie diese Schnittstelle in einer xamarin. IOS-Anwendung implementieren können:
 
-- **Starker** Delegat: die Verwendung eines starken Delegaten C# umfasst das Erstellen einer Klasse, die Unterklassen`InfColorPickerControllerDelegate`und die entsprechenden Methoden überschreibt. **Infcolorpickercontroller** verwendet eine Instanz dieser Klasse, um mit den Clients zu kommunizieren.
+- **Starker** Delegat: die Verwendung eines starken Delegaten C# umfasst das Erstellen einer Klasse, die Unterklassen `InfColorPickerControllerDelegate` und die entsprechenden Methoden überschreibt. **Infcolorpickercontroller** verwendet eine Instanz dieser Klasse, um mit den Clients zu kommunizieren.
 - **Schwacher** Delegat: bei einem schwachen Delegaten handelt es sich um eine etwas andere Technik, die das Erstellen einer öffentlichen Methode in einer Klasse (z. b. `InfColorPickerSampleViewController`) und das anschließende verfügbar machen der Methode für das `InfColorPickerDelegate` Protokoll über ein `Export` Attribut umfasst.
 
 Starke Delegaten bieten IntelliSense, Typsicherheit und eine bessere Kapselung. Aus diesen Gründen sollten Sie anstelle eines schwachen Delegaten starke Delegaten verwenden.
@@ -667,7 +667,7 @@ Herzlichen Glückwunsch! An diesem Punkt haben Sie eine Ziel-C-Bibliothek erfolg
 
 ### <a name="implementing-a-weak-delegate"></a>Implementieren eines schwachen Delegaten
 
-Anstatt eine Klasse zu unterbinden, die an das Ziel-C-Protokoll für einen bestimmten Delegaten gebunden ist, können Sie mit xamarin. IOS auch die Protokoll Methoden in jeder Klasse implementieren, die von `NSObject`abgeleitet ist, ihre Methoden mit dem `ExportAttribute`versehen und dann die geeignete Selektoren. Wenn Sie diesen Ansatz verwenden, weisen Sie der `WeakDelegate`-Eigenschaft anstelle der `Delegate`-Eigenschaft eine Instanz der-Klasse zu. Ein schwacher Delegat bietet Ihnen die Flexibilität, ihre Delegatklasse in eine andere Vererbungs Hierarchie zu bringen. Sehen wir uns an, wie Sie einen schwachen Delegaten in unserer xamarin. IOS-Anwendung implementieren und verwenden.
+Anstatt eine Klasse zu Unterklassen, die an das Ziel-C-Protokoll für einen bestimmten Delegaten gebunden ist, können Sie mit xamarin. IOS auch die Protokoll Methoden in jeder Klasse implementieren, die von `NSObject`abgeleitet ist, ihre Methoden mit dem `ExportAttribute`versehen und dann die entsprechenden Selektoren bereitstellen. Wenn Sie diesen Ansatz verwenden, weisen Sie der `WeakDelegate`-Eigenschaft anstelle der `Delegate`-Eigenschaft eine Instanz der-Klasse zu. Ein schwacher Delegat bietet Ihnen die Flexibilität, ihre Delegatklasse in eine andere Vererbungs Hierarchie zu bringen. Sehen wir uns an, wie Sie einen schwachen Delegaten in unserer xamarin. IOS-Anwendung implementieren und verwenden.
 
 **Create Event Handler for touchupinside** : Erstellen Sie einen neuen Ereignishandler für das `TouchUpInside`-Ereignis der Schaltfläche Hintergrundfarbe ändern. Dieser Handler nimmt dieselbe Rolle wie der `HandleTouchUpInsideWithStrongDelegate` Handler, den wir im vorherigen Abschnitt erstellt haben, verwendet aber einen schwachen Delegaten anstelle eines starken Delegaten. Bearbeiten Sie die-Klasse `ViewController`, und fügen Sie die folgende Methode hinzu:
 
@@ -692,7 +692,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**Behandeln von colorpickercontrollerdidfinish: Message:** wenn die `ViewController` abgeschlossen ist, sendet IOS die Nachricht `colorPickerControllerDidFinish:` an die `WeakDelegate`. Wir müssen eine C# Methode erstellen, die diese Nachricht verarbeiten kann. Zu diesem Zweck erstellen wir eine C# Methode und schmücken Sie dann mit dem`ExportAttribute`. Bearbeiten Sie `ViewController`, und fügen Sie der-Klasse die folgende Methode hinzu:
+**Behandeln von colorpickercontrollerdidfinish: Message:** wenn die `ViewController` abgeschlossen ist, sendet IOS die Nachricht `colorPickerControllerDidFinish:` an die `WeakDelegate`. Wir müssen eine C# Methode erstellen, die diese Nachricht verarbeiten kann. Zu diesem Zweck erstellen wir eine C# Methode und schmücken Sie dann mit dem `ExportAttribute`. Bearbeiten Sie `ViewController`, und fügen Sie der-Klasse die folgende Methode hinzu:
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -706,13 +706,12 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 Führen Sie die Anwendung aus. Es sollte sich nun genau wie zuvor Verhalten, aber es verwendet einen schwachen Delegaten anstelle des starken Delegaten. An diesem Punkt haben Sie diese exemplarische Vorgehensweise erfolgreich abgeschlossen. Sie sollten nun wissen, wie ein xamarin. IOS-Bindungs Projekt erstellt und genutzt werden kann.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurde das Erstellen und Verwenden eines xamarin. IOS-Bindungs Projekts erläutert. Zuerst wurde erläutert, wie eine vorhandene Ziel-C-Bibliothek in eine statische Bibliothek kompiliert wird. Anschließend haben wir erläutert, wie Sie ein xamarin. IOS-Bindungs Projekt erstellen und die API-Definitionen für die Ziel-C-Bibliothek mit dem Ziel-Sharpie generieren. Wir haben erläutert, wie Sie die generierten API-Definitionen aktualisieren und optimieren, damit Sie für den öffentlichen Gebrauch geeignet sind. Nachdem das xamarin. IOS-Bindungs Projekt fertiggestellt wurde, haben wir mit der Verwendung dieser Bindung in einer xamarin. IOS-Anwendung weiterentwickelt, wobei der Schwerpunkt auf der Verwendung starker Delegaten und schwacher Delegaten liegt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [Bindungs Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/infcolorpicker)
 - [Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Bindungs Details](~/cross-platform/macios/binding/overview.md)
 - [Bindungs Typen-Referenzhandbuch](~/cross-platform/macios/binding/binding-types-reference.md)

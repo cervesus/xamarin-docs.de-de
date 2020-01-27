@@ -61,7 +61,7 @@ public static class Constants
 
 Eine mobile Anwendung muss beim Mandanten registriert werden, bevor Sie eine Verbindung herstellen und Benutzer authentifizieren kann. Der Registrierungsprozess weist der Anwendung eine eindeutige **Anwendungs-ID** und eine **Umleitungs-URL** zu, die Antworten nach der Authentifizierung an die Anwendung zurück leitet. Weitere Informationen finden Sie unter [Azure Active Directory B2C: Registrieren Ihrer Anwendung](/azure/active-directory-b2c/active-directory-b2c-app-registration/). Sie müssen die **Anwendungs-ID** kennen, die Ihrer Anwendung zugewiesen ist, die nach dem Anwendungsnamen in der Eigenschaften Ansicht aufgeführt wird. Der folgende Screenshot zeigt, wo Sie die Anwendungs-ID finden:
 
-[Anwendungs-ID ![in der Azure-Anwendungseigenschaften Ansicht](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
+[![Anwendungs-ID in der Azure-Anwendungseigenschaften Ansicht](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
 
 Die Microsoft-Authentifizierungs Bibliothek erwartet, dass die **Umleitungs-URL** für Ihre Anwendung ihrer **Anwendungs-ID** als Präfix mit dem Text "msal" vorangestellt ist, gefolgt von einem Endpunkt namens "auth". Wenn Ihre Anwendungs-ID "1234ABCD" lautet, sollte die vollständige URL `msal1234abcd://auth`werden. Stellen Sie sicher, dass Ihre Anwendung die **Native Client** -Einstellung aktiviert hat, und erstellen Sie mithilfe ihrer Anwendungs-ID wie im folgenden Screenshot gezeigt einen **benutzerdefinierten Umleitungs-URI** :
 

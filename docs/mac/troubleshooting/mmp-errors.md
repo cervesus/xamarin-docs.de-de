@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 32fecaff7f6896c03f3ac094d478fef3338f844d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1dc53b863e0408e27351aabfa625a08baae3d5a1
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025720"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725449"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin. Mac-Fehlermeldungen (MMP)
 
@@ -158,7 +158,7 @@ Xamarin. Mac erfordert, dass die Header Dateien aus der in der Fehlermeldung ang
 
 Eine mögliche alternative Lösung besteht darin, den verwalteten Linker zu aktivieren. Dadurch wird die nicht verwendete API entfernt. Dies gilt in den meisten Fällen für die neue API, bei der die Header Dateien fehlen (oder unvollständig). Dies funktioniert jedoch nicht, wenn Ihr Projekt API verwendet, die in einem neueren SDK eingeführt wurde, als das, das Ihr Xcode bereitstellt.
 
-Eine zweite mögliche alternative Lösung besteht darin, stattdessen die dynamische Registrierungsstelle zu verwenden. Dies führt zu Startkosten durch dynamisches Registrieren von Typen, wobei jedoch die Anforderung der Header Datei entfernt wird. 
+Eine zweite mögliche alternative Lösung besteht darin, stattdessen die dynamische Registrierungsstelle zu verwenden. Dies führt zu Startkosten durch dynamisches Registrieren von Typen, wobei jedoch die Anforderung der Header Datei entfernt wird.
 
 Eine letzte Lösung besteht darin, eine ältere Version von xamarin. Mac zu verwenden, eine, die das für Ihr Projekt erforderliche SDK unterstützt.
 
@@ -210,7 +210,7 @@ Die angegebene Optimierung wurde nicht erkannt.
 
 Das akzeptierte Format ist `[+|-]optimization-name`, wobei `optimization-name` einer der in der Fehlermeldung aufgelisteten Werte ist.
 
-Eine umfassende Beschreibung der einzelnen Optimierungen finden Sie unter [Buildoptimierungen](https://developer.xamarin.com/guides/cross-platform/macios/build-optimizations).
+Eine umfassende Beschreibung der einzelnen Optimierungen finden Sie unter [Buildoptimierungen](~/cross-platform/macios/optimizations.md).
 
 <a name="MM0133" />
 
@@ -220,9 +220,9 @@ Eine umfassende Beschreibung der einzelnen Optimierungen finden Sie unter [Build
 
 #### <a name="mm0134-32-bit-applications-should-be-migrated-to-64-bit"></a>MM0134:32-Bit-Anwendungen sollten zu 64-Bit migriert werden.
 
-Apple hat angekündigt, dass keine Übermittlungen von macOS-App-Stores von 32-Bit-Apps (ab dem 2018. Januar) zugelassen werden. 
+Apple hat angekündigt, dass keine Übermittlungen von macOS-App-Stores von 32-Bit-Apps (ab dem 2018. Januar) zugelassen werden.
 
-Darüber hinaus werden 32-Bit-Anwendungen nicht auf der macOS-Version ausgeführt, nachdem High Sierra "ohne Kompromisse" ausgeführt wurde. 
+Darüber hinaus werden 32-Bit-Anwendungen nicht auf der macOS-Version ausgeführt, nachdem High Sierra "ohne Kompromisse" ausgeführt wurde.
 
 Weitere Informationen finden Sie hier: https://developer.apple.com/news/?id=06282017a
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 3db7e456d4321aa7eba415813f8c374b030da4ca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 44468d3f2d323065161c290f2df8e6f0e89d3def
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029866"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724987"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Zusätzliche macOS Sierra Framework-Änderungen
 
@@ -101,7 +101,7 @@ Weitere Informationen finden Sie in den [Anmerkungen zu dieser Version von Apple
 
 Die folgenden Verbesserungen wurden am GameKit-Framework für macOS Sierra vorgenommen:
 
-- Die **Game Center-App** wurde als veraltet markiert und aus macOS entfernt. Wenn die APP GameKit verwendet, _muss_ Sie eine eigene Schnittstelle zum Anzeigen von GameKit-Features, z. b. Bestenlisten usw., enthalten. 
+- Die **Game Center-App** wurde als veraltet markiert und aus macOS entfernt. Wenn die APP GameKit verwendet, _muss_ Sie eine eigene Schnittstelle zum Anzeigen von GameKit-Features, z. b. Bestenlisten usw., enthalten.
 - Ein neuer icloud-Kontotyp wurde von der [gkcloudplayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) -Klasse implementiert.
 - Die neue Klasse " [gkgamesession](https://developer.apple.com/reference/gamekit/gkgamesession) " stellt eine generalisierte Lösung für die Verwaltung von persistenten Daten speichern auf Game Center bereit. `GKGameSession` verwaltet eine Liste von Playern, und die APP ist dafür verantwortlich, wie und wann das Teilnehmer Datum gespeichert, abgerufen oder zwischen den Playern ausgetauscht wird. In vielen Fällen können Spielsitzungen vorhandene Turn-basierte Übereinstimmungen, Echt Zeit Übereinstimmungen oder persistente Spiel Speichermethoden ersetzen.
 
@@ -169,7 +169,7 @@ Die folgenden Verbesserungen wurden am scenekit-Framework für macOS Sierra vorg
 - Scenekit interpretiert Farbkomponenten Werte in einem linearen RGB-Farbraum für alle shadertypen.
 - Da scenekit Farbprofil Informationen in Textur Bildern liest und anpasst, verwenden Sie für alle Images Asset-Kataloge, um sicherzustellen, dass diese Informationen bereitgestellt werden.
 - Sowohl lineares Farb Raum Rendering als auch breit Farben können deaktiviert werden, indem die `SCNDisableLinearSpaceRendering` und `SCNDisableWideGamut` Schlüssel im `Info.plist`der APP angegeben werden.
-- Erstellen Sie beliebige Polygon-Prime (entweder aus Dateien geladen oder Programm gesteuert generiert), um die Geometrie mit der neuen [scngeometryprimitivetyetpolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon) -Klasse anzugeben.
+- Erstellen Sie beliebige Polygon-Prime (entweder aus Dateien geladen oder Programm gesteuert generiert), um die Geometrie mit der neuen [scngeometryprimitivetyetpolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon?language=objc) -Klasse anzugeben.
 
 <a name="Security-Framework-Enhancements" />
 
@@ -199,7 +199,7 @@ Die folgenden Frameworks wurden macOS Sierra hinzugefügt:
 - **Intents Framework** : Dieses Framework ermöglicht der APP, Interaktionen (z. b. Speicherort oder Benutzeraktionen) zu überprüfen und auf der Grundlage dieser Informationen Maßnahmen zu ergreifen.
 - **Safariservices-Framework** : Dieses Framework ermöglicht der APP, App-Erweiterungen für Safari (z. b. Inhalts Blockierer) für macOS und IOS zu entwickeln.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Mac-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [Neuerungen in OS X 10,12](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

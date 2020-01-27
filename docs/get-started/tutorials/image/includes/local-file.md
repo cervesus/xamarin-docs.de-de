@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61384490"
 ---
 Plattformprojekten lassen sich Bilddateien hinzufügen, auf die mit freigegebenem Code in Xamarin.Forms verwiesen werden kann. Diese Vorgehensweise ist zum Verteilen plattformspezifischer Bilder erforderlich. Beispielsweise kann es vorkommen, dass auf verschiedenen Plattformen unterschiedliche Auflösungen oder geringfügig abweichende Designs verwendet werden.
@@ -24,11 +24,11 @@ In dieser Übung passen Sie die Projektmappe **ImageTutorial** so an, dass anste
 
 1. Klicken Sie auf der Registerkarte **Assets.xcassets** auf die neue Bildgruppe, damit der Editor angezeigt wird:
 
-    ![Screenshot: neue Bildgruppe im Ressourcenkatalog in Visual Studio](../images/vs/new-image-set-editor.png "Editor für Bildgruppe im Ressourcenkatalog")
+    ![Screenshot: neue Bildgruppe im Ressourcenkatalog in Visual Studio](../images/vs/new-image-set-editor.png "Editor für Bildgruppen im Ressourcenkatalog")
 
 1. Ziehen Sie **XamarinLogo.png** von Ihrem Dateisystem für die Kategorie **Universell** auf das Feld **1x**:
 
-    ![Screenshot: Bildgruppe mit Bild in Visual Studio](../images/vs/image-set-with-image.png "Bildgruppe mit Bild")
+    ![Screenshot: Bildgruppe mit Bild in Visual Studio](../images/vs/image-set-with-image.png "Bildgruppe mit einem Bild")
 
 1. Klicken Sie auf der Registerkarte **Assets.xcassets** mit der rechten Maustaste auf den Namen der neuen Bildgruppe, und benennen Sie sie in **XamarinLogo** um:
 
@@ -56,9 +56,9 @@ In dieser Übung passen Sie die Projektmappe **ImageTutorial** so an, dass anste
     > [!NOTE]
     > Für PNG-Bilder kann unter iOS die **PNG**-Erweiterung im Dateinamen weggelassen werden, der in der [`Source`](xref:Xamarin.Forms.Image.Source)-Eigenschaft festgelegt wird. Für andere Bildformate ist die Erweiterung erforderlich.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: Bildansicht mit lokalem Bild unter iOS und Android](../images/local-file.png "Bildansicht mit lokalem Bild")](../images/local-file-large.png#lightbox "Bildansicht mit lokalem Bild")
+    [![Screenshot: Bildansicht mit einem lokalen Bild unter iOS und Android](../images/local-file.png "Bildansicht mit einem lokalen Bild")](../images/local-file-large.png#lightbox "Bildansicht mit einem lokalen Bild")
 
     Weitere Informationen zu lokalen Bildern finden Sie unter [Local images (Lokale Bilder)](~/xamarin-forms/user-interface/images.md#local-images) im [Xamarin.Forms-Leitfaden](~/xamarin-forms/user-interface/images.md).
 
@@ -70,11 +70,11 @@ In dieser Übung passen Sie die Projektmappe **ImageTutorial** so an, dass anste
 
 1. Klicken Sie in der **Assets List** (Ressourcenliste) auf die neue Bildgruppe, damit der Editor angezeigt wird:
 
-    ![Screenshot: neue Bildgruppe im Ressourcenkatalog in Visual Studio für Mac](../images/vsmac/new-image-set-editor.png "Editor für Bildgruppe im Ressourcenkatalog")
+    ![Screenshot: neue Bildgruppe im Ressourcenkatalog in Visual Studio für Mac](../images/vsmac/new-image-set-editor.png "Editor für Bildgruppen im Ressourcenkatalog")
 
 1. Ziehen Sie **XamarinLogo.png** von Ihrem Dateisystem für die Kategorie **Universell** auf das Feld **1x**:
 
-    ![Screenshot: Bildgruppe mit Bild in Visual Studio für Mac](../images/vsmac/image-set-with-image.png "Bildgruppe mit Bild")
+    ![Screenshot: Bildgruppe mit Bild in Visual Studio für Mac](../images/vsmac/image-set-with-image.png "Bildgruppe mit einem Bild")
 
 1. Doppelklicken Sie in der **Assets List** (Ressourcenliste) auf den Namen der neuen Bildgruppe, und benennen Sie sie in **XamarinLogo** um:
 
@@ -102,8 +102,8 @@ In dieser Übung passen Sie die Projektmappe **ImageTutorial** so an, dass anste
     > [!NOTE]
     > Für PNG-Bilder kann unter iOS die **PNG**-Erweiterung im Dateinamen weggelassen werden, der in der [`Source`](xref:Xamarin.Forms.Image.Source)-Eigenschaft festgelegt wird. Für andere Bildformate ist die Erweiterung erforderlich.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: Bildansicht mit lokalem Bild unter iOS und Android](../images/local-file.png "Bildansicht mit lokalem Bild")](../images/local-file-large.png#lightbox "Bildansicht mit lokalem Bild")
+    [![Screenshot: Bildansicht mit einem lokalen Bild unter iOS und Android](../images/local-file.png "Bildansicht mit einem lokalen Bild")](../images/local-file-large.png#lightbox "Bildansicht mit einem lokalen Bild")
 
     Weitere Informationen zu lokalen Bildern finden Sie unter [Local images (Lokale Bilder)](~/xamarin-forms/user-interface/images.md#local-images) im [Xamarin.Forms-Leitfaden](~/xamarin-forms/user-interface/images.md).

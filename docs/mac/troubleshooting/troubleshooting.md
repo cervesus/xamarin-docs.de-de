@@ -8,16 +8,16 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001609"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725440"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Tipps zur Problembehandlung bei xamarin. Mac
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Manchmal bleiben wir bei der Arbeit an einem Projekt auf dem Weg, entweder wenn Sie nicht in der Lage sind, eine API so zu arbeiten, wie wir möchten, oder wenn Sie versuchen, einen Fehler zu umgehen. Unser Ziel von xamarin besteht darin, dass Sie Ihre mobilen und Desktop Anwendungen erfolgreich schreiben können. Wir haben einige Ressourcen bereitgestellt, die Ihnen helfen.
 
@@ -51,10 +51,10 @@ Das Debuggen dieser Programme kann frustrierend sein, da das Auffinden der erfor
 - Führen Sie die Anwendung über die Befehlszeile aus, und überprüfen Sie die Ausgabe (in der **Terminal** -APP) mithilfe von:
 
   `MyApp.app/Contents/MacOS/MyApp` (wobei `MyApp` der Name der Anwendung ist)
-- Sie können die Ausgabe vergrößern, indem Sie Ihrem Befehl in der Befehlszeile "MONO_LOG_LEVEL" hinzufügen, z. b.:
+- Sie können die Ausgabe vergrößern, indem Sie "MONO_LOG_LEVEL" dem Befehl in der Befehlszeile hinzufügen, z. b.:
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- Sie können einen systemeigenen Debugger (`lldb`) an Ihren Prozess anfügen, um festzustellen, ob dieser weitere Informationen enthält (Dies erfordert eine kostenpflichtige Lizenz). Gehen Sie beispielsweise wie folgt vor:
+- Sie können einen systemeigenen Debugger (`lldb`) an Ihren Prozess anfügen, um festzustellen, ob dieser weitere Informationen enthält (Dies erfordert eine kostenpflichtige Lizenz). Führen Sie beispielsweise die folgenden Schritte aus:
 
   1. Geben Sie `lldb MyApp.app/Contents/MacOS/MyApp` im Terminal ein.
   2. Geben Sie `run` im Terminal ein.
@@ -68,7 +68,7 @@ In den folgenden Abschnitten werden bekannte Probleme und ihre Lösungen behande
 
 ### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>Die Verbindung mit dem Debugger in Sandbox-apps kann nicht hergestellt werden.
 
-Der Debugger stellt über TCP eine Verbindung mit xamarin. Mac-apps her. Dies bedeutet, dass beim Aktivieren von Sandboxing standardmäßig keine Verbindung mit der APP hergestellt werden kann. Wenn Sie also versuchen, die APP auszuführen, ohne dass die entsprechenden Berechtigungen aktiviert sind, erhalten Sie die Fehlermeldung *"Es konnte keine Verbindung mit dem Debugger hergestellt werden."* .
+Der Debugger stellt über TCP eine Verbindung mit xamarin. Mac-apps her. Dies bedeutet, dass beim Aktivieren von Sandboxing standardmäßig keine Verbindung mit der APP hergestellt werden kann. Wenn Sie also versuchen, die APP auszuführen, ohne dass die entsprechenden Berechtigungen aktiviert sind, erhalten Sie die Fehlermeldung *"Es konnte keine Verbindung mit dem Debugger*hergestellt werden".
 
 [![Bearbeiten der Berechtigungen](troubleshooting-images/debug01.png "Bearbeiten der Berechtigungen")](troubleshooting-images/debug01-large.png#lightbox)
 
@@ -112,7 +112,7 @@ Geben Sie `Entitlements` als Namen ein, und klicken Sie auf die Schaltfläche **
 
 ## <a name="community-support-on-the-forums"></a>Communityunterstützung in den Foren
 
-Die Community von Entwicklern, die xamarin-Produkte verwenden, ist erstaunlich, und viele besuchen unsere [xamarin. Mac-Foren](https://forums.xamarin.com/categories/mac) , um Erfahrungen und deren Fachkenntnisse zu teilen. Außerdem besuchen xamarin-Techniker in regelmäßigen Abständen das Forum, um Hilfe zu erhalten.
+Die Community von Entwicklern, die xamarin-Produkte verwenden, ist erstaunlich, und viele besuchen unsere [xamarin. Mac-Foren](https://forums.xamarin.com/categories/xamarin-mac) , um Erfahrungen und deren Fachkenntnisse zu teilen. Außerdem besuchen xamarin-Techniker in regelmäßigen Abständen das Forum, um Hilfe zu erhalten.
 
 <a name="filing-a-bug"/>
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 62859e19c533d7b200833996b44a65cb275805c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6180896002d19c51bce47bf53aaecdc11b0cae6e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029251"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725149"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin. Android-Bearbeitungs Text
 
 In diesem Abschnitt verwenden Sie das [EDITTEXT](xref:Android.Widget.EditText) -Widget, um ein Textfeld für Benutzereingaben zu erstellen. Nachdem Text in das Feld eingegeben wurde, wird in der **Eingabe** Taste der Text in einer Popup Meldung angezeigt.
 
-Öffnen Sie **Resources/Layout/activity_main. axml** , und fügen Sie das [EDITTEXT](xref:Android.Widget.EditText) -Element einem enthaltenden Layout hinzu. Das folgende Beispiel **activity_main. axml** verfügt über eine `EditText`, die zu einem `LinearLayout`hinzugefügt wurde:
+Öffnen Sie **Resources/Layout/activity_main. axml** , und fügen Sie das [EDITTEXT](xref:Android.Widget.EditText) -Element einem enthaltenden Layout hinzu. Das folgende Beispiel **activity_main. axml** verfügt über eine `EditText`, die einer `LinearLayout`hinzugefügt wurde:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -44,7 +44,7 @@ Fügen Sie den folgenden Code am Ende der [OnCreate](xref:Android.App.Activity.O
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);
 edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
     e.Handled = false;
-    if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter) 
+    if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter)
     {
         Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
         e.Handled = true;
@@ -64,8 +64,8 @@ Führen Sie die Anwendung aus, und geben Sie Text in das Textfeld ein. Wenn Sie 
 
 [![Beispiele für das Eingeben von Text in EDITTEXT](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*Teile dieser Seite sind Änderungen, die auf* [*der vom Android Open Source-Projekt erstellten und freigegebenen*](https://code.google.com/policies.html) Arbeit basieren *und gemäß den in der* [*Creative Commons 2,5-Zuweisungs Lizenz*](https://creativecommons.org/licenses/by/2.5/) beschriebenen Begriffen verwendet werden *. Dieses Tutorial basiert auf dem* Android-Lernprogramm für [*Formular Inhalte*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
+*Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der* [*Creative Commons 2,5-Zuweisungs Lizenz*](https://creativecommons.org/licenses/by/2.5/) beschriebenen Begriffen verwendet werden *. Dieses Tutorial basiert auf dem* Android-Lernprogramm für [*Formular Inhalte*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [Edittextsample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)
+- [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f15c754a47f910f430af3c036ed510cc9e130eac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021813"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725471"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin Designer für IOS
 
@@ -20,7 +20,7 @@ Das automatische Layout (auch als "Adaptive Layout" bezeichnet) ist ein reaktion
 
 In dieser Anleitung werden Einschränkungen eingeführt und erläutert, wie Sie im xamarin IOS-Designer verwendet werden. Dieses Handbuch behandelt nicht Programm gesteuert das Arbeiten mit Einschränkungen. Informationen zur programmgesteuerten Verwendung des automatischen Layouts finden Sie in der [Apple-Dokumentation](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 Der Xamarin Designer für IOS ist in Visual Studio für Mac in Visual Studio 2017 und höher unter Windows verfügbar.
 
@@ -69,7 +69,7 @@ Mit dem Editor für Einschränkungs-Editor können Sie mehrere Einschränkungen 
 
 Zum Bearbeiten von Einschränkungen für die ausgewählte Ansicht klicken Sie auf das Auslassungs Zeichen, um die popover-![Einschränkungen für die Einschränkungen anzuzeigen](designer-auto-layout-images/constraints-popup.png)
 
-Beim Öffnen des popover "Einschränkungen" werden alle vordefinierten Einschränkungen für die Sicht angezeigt. Wir können alle Abstands Einschränkungen festlegen, indem wir **alle Seiten** aus dem Kombinations Feld in der oberen rechten Ecke auswählen und **Alle löschen** auswählen, um Sie zu entfernen. 
+Beim Öffnen des popover "Einschränkungen" werden alle vordefinierten Einschränkungen für die Sicht angezeigt. Wir können alle Abstands Einschränkungen festlegen, indem wir **alle Seiten** aus dem Kombinations Feld in der oberen rechten Ecke auswählen und **Alle löschen** auswählen, um Sie zu entfernen.
 
 Der Wert von **W** legt Width fest, und **H** legt die Height-Einschränkung fest. Wenn Sie das **Seitenverhältnis**überprüfen, werden die Höhe und Breite der Ansichten auf unterschiedlichen Bildschirmgrößen gesteuert, die Breite der Ansicht wird als Zähler für die Ration und die Höhe als Nenner verwendet.
 
@@ -201,7 +201,7 @@ Mit der folgenden Einstellung für die Einschränkung im IOS-Designer:
 
 Anstatt die angefügte Ansicht als Reaktion auf Einschränkungs Änderungen zu aktualisieren, plant das Modul für automatisches Layout in naher Zukunft eine _verzögerte layoutdurchführung_ . Bei diesem verzögerten Durchlauf wird nicht nur die Einschränkung der angegebenen Ansicht aktualisiert, sondern die Einschränkungen für jede Ansicht in der Hierarchie werden neu berechnet und aktualisiert, um das neue Layout anzupassen.
 
-Sie können zu jedem Zeitpunkt ihren eigenen verzögerten Layoutdurchlauf planen, indem Sie die Methoden `SetNeedsLayout` oder `SetNeedsUpdateConstraints` der übergeordneten Ansicht aufrufen. 
+Sie können zu jedem Zeitpunkt ihren eigenen verzögerten Layoutdurchlauf planen, indem Sie die Methoden `SetNeedsLayout` oder `SetNeedsUpdateConstraints` der übergeordneten Ansicht aufrufen.
 
 Der verzögerte Layoutdurchlauf besteht aus zwei eindeutigen Durchläufen der Ansichts Hierarchie:
 
@@ -224,14 +224,13 @@ UIView.CommitAnimations();
 
 Der Schlüssel hier ist das Aufrufen der `LayoutIfNeeded`-Methode der übergeordneten Sicht innerhalb des Animations Blocks. Dadurch wird die Ansicht aufgefordert, jeden "Frame" der animierten Position oder Größenänderung zu zeichnen. Ohne diese Zeile würde die Ansicht einfach an die endgültige Version andocken, ohne eine Animation durchlaufen zu müssen.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Handbuch wurden das automatische IOS-Layout (oder das adaptive Layout) und das Konzept der Einschränkungen als mathematische Darstellungen von Beziehungen zwischen Elementen auf der Entwurfs Oberfläche vorgestellt. Es wurde beschrieben, wie Sie das automatische Layout im IOS-Designer aktivieren, mit der **Einschränkungs Symbolleiste**arbeiten und Einschränkungen einzeln auf der Entwurfs Oberfläche bearbeiten. Im nächsten Schritt wurde erläutert, wie drei häufige Einschränkungs Probleme behoben werden. Schließlich wurde gezeigt, wie Einschränkungen im Code geändert werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md)
 - [Exemplarische Vorgehensweise für Steuerelemente für IOS](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Übersicht über Android Designer](~/android/user-interface/android-designer/index.md)
 - [Programmgesteuerte Einschränkungen](~/ios/user-interface/programmatic-layout-constraints.md)
-- [Apple-Handbuch zum automatischen Layout](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/AutolayoutPG/Introduction/Introduction.html#/apple_ref/doc/uid/TP40010853-CH13-SW1)

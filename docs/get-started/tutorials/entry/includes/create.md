@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 820761111c609f224a6dda14d5853777d22aa259
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277243"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -34,7 +34,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: Entry unter iOS und Android](../images/create-entry.png "Entry mit Platzhaltertext")](../images/create-entry-large.png#lightbox "Entry mit Platzhaltertext")
+    [![Screenshot: Eintrag unter iOS und Android](../images/create-entry.png "Eintrag mit Platzhaltertext")](../images/create-entry-large.png#lightbox "Eintrag mit Platzhaltertext")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -62,6 +62,6 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
 
     In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Entry`-Elements anfänglich zu sehen ist.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: Entry unter iOS und Android](../images/create-entry.png "Entry mit Platzhaltertext")](../images/create-entry-large.png#lightbox "Entry mit Platzhaltertext")
+    [![Screenshot: Eintrag unter iOS und Android](../images/create-entry.png "Eintrag mit Platzhaltertext")](../images/create-entry-large.png#lightbox "Eintrag mit Platzhaltertext")

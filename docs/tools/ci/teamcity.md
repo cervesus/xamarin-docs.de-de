@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 94bc775366d832e0994b8d3c74a45123ff56c13b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029800"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725305"
 ---
 # <a name="using-team-city-with-xamarin"></a>Verwenden von Team City mit xamarin
 
@@ -39,7 +39,7 @@ Die Einrichtung von TeamCity umfasst mehrere Schritte:
 
 - Erstellen **eines TeamCity-Projekts** – nachdem die vorangegangenen drei Schritte abgeschlossen sind, müssen wir ein TeamCity-Projekt erstellen, das alle Metadaten enthält, die zum Abrufen des Quellcodes, zum Kompilieren der Projekte und zum übermitteln der Tests an Xamarin Test Cloud erforderlich sind.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 Die Verwendung von [App Center Test](https://docs.microsoft.com/appcenter/test-cloud/) ist erforderlich.
 
@@ -85,9 +85,9 @@ Das Buildskript kann so einfach wie eine PowerShell-Datei (unter Windows) oder e
 
 - [**psake**](https://github.com/psake/psake) – Dies ist eine Windows PowerShell-Bibliothek zum Entwickeln von Software.
 
-- [Fake](https://fsharp.github.io/FAKE/) – Dies ist eine DSL-basierte F# , die es ermöglicht, bei Bedarf vorhandene .NET-Bibliotheken zu verwenden.
+- [**FAKE** ](https://fsharp.github.io/FAKE/) – Hierbei handelt es sich um eine DSL auf der Basis von F#, mit deren Hilfe ggf. vorhandene .NET-Bibliotheken verwendet werden können.
 
-Welche Skriptsprache verwendet wird, hängt von Ihren Vorlieben und Anforderungen ab. Das [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash).Beispiel enthält ein Beispiel für die Verwendung von „Rake“ als [Buildskript](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
+Welche Skriptsprache verwendet wird, hängt von Ihren Vorlieben und Anforderungen ab.
 
 > [!NOTE]
 > Es ist möglich, ein auf XML basierendes Buildsystem wie z. b. MSBuild oder nant zu verwenden, aber diese sind nicht für die Ausdrucksfähigkeit und Wartbarkeit einer DSL vorgesehen, die für das Erstellen von Software reserviert ist
@@ -134,7 +134,7 @@ Beachten Sie, dass zum Kompilieren der xamarin Android-Anwendung **xbuild** das 
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>Übermitteln von xamarin. uitests an Test Cloud
 
-Uitests werden mithilfe der `test-cloud.exe`-Anwendung übermittelt, wie im folgenden Code Ausschnitt gezeigt:
+Uitests werden mithilfe der `test-cloud.exe` Anwendung übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
@@ -146,7 +146,7 @@ Weitere Informationen zum Übermitteln von uitests an Test Cloud finden Sie unte
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>Übermitteln von Calabash-Tests an Test Cloud
 
-Calabash-Tests werden mit dem `test-cloud`-gem-Wert übermittelt, wie im folgenden Code Ausschnitt gezeigt:
+Calabash-Tests werden mithilfe des `test-cloud` gem übermittelt, wie im folgenden Code Ausschnitt gezeigt:
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
@@ -201,13 +201,13 @@ Sobald TeamCity installiert ist und Visual Studio für Mac das Projekt erstellen
 
 8. Nachdem der Build abgeschlossen wurde, überprüfen Sie das Buildprotokoll, und prüfen Sie, ob Probleme oder Warnungen mit dem Build vorliegen, die Aufmerksamkeit erfordern.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In dieser Anleitung wurde beschrieben, wie Sie TeamCity zum Erstellen von mobilen xamarin-Anwendungen und zum anschließenden einreichen an Test Cloud verwenden. Wir haben das Erstellen eines Buildskripts zum Automatisieren des Buildprozesses erläutert. Das Buildskript kümmert sich um die Kompilierung der Anwendung, die Übermittlung an Test Cloud und das warten auf die Ergebnisse.
 
 Dann haben wir erläutert, wie Sie ein Projekt in TeamCity erstellen, das jedes Mal einen Build in die Warteschlange einreiht, wenn ein Entwickler Code committet, und das Buildskript
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Vorbereiten von xamarin. Android-Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
 - [Vorbereiten von xamarin. IOS-apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67559998"
 ---
 Die Größe und Position untergeordneter Ansichten innerhalb einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse hängen von den Werten der Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) der untergeordneten Ansichten ab sowie den Werten der Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
@@ -53,7 +53,7 @@ Die Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOption
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot von Ansichten eines untergeordneten Elements in einer StackLayout-Klasse, mit festgelegten Ausrichtungs- und Erweiterungsoptionen unter Android und iOS](../images/alignment-expansion.png "StackLayout mit Bezeichnungsinstanzen, mit festgelegter Ausrichtung und Erweiterung")](../images/alignment-expansion-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen, mit festgelegter Ausrichtung und Erweiterung")
+    [![Screenshot: untergeordnete Ansichten in StackLayout mit Ausrichtung und Erweiterung unter iOS und Android](../images/alignment-expansion.png "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")](../images/alignment-expansion-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")
 
     Eine [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse respektiert ausschließlich die Ausrichtungseinstellungen für Ansichten untergeordneter Elemente, die sich in entgegengesetzter Richtung zur `StackLayout`-Ausrichtung befinden. Deshalb legen die Ansichten der untergeordneten [`Label`](xref:Xamarin.Forms.Label)-Klasse innerhalb einer vertikal ausgerichteten `StackLayout`-Klasse ihre [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaften auf eines der Ausrichtungsfelder fest:
 
@@ -107,9 +107,9 @@ Die Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOption
     > [!NOTE]
     > Der Standardwert der Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) einer Ansicht lautet [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot von Ansichten eines untergeordneten Elements in einer StackLayout-Klasse, mit festgelegten Ausrichtungs- und Erweiterungsoptionen unter Android und iOS](../images/alignment-expansion.png "StackLayout mit Bezeichnungsinstanzen, mit festgelegter Ausrichtung und Erweiterung")](../images/alignment-expansion-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen, mit festgelegter Ausrichtung und Erweiterung")
+    [![Screenshot: untergeordnete Ansichten in StackLayout mit Ausrichtung und Erweiterung unter iOS und Android](../images/alignment-expansion.png "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")](../images/alignment-expansion-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")
 
     Eine [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse respektiert ausschließlich die Ausrichtungseinstellungen für Ansichten untergeordneter Elemente, die sich in entgegengesetzter Richtung zur `StackLayout`-Ausrichtung befinden. Deshalb legen die Ansichten der untergeordneten [`Label`](xref:Xamarin.Forms.Label)-Klasse innerhalb einer vertikal ausgerichteten `StackLayout`-Klasse ihre [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaften auf eines der Ausrichtungsfelder fest:
 

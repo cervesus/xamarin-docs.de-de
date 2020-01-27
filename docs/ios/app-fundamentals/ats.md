@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: e0ab824eff4c8bb18a2bd1998862df433cdade1a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 84d235bb7c6874255ea025ff5897e150bd6f023b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011102"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724683"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>App-Transport Sicherheit in xamarin. IOS
 
 _App-Transport Sicherheit (app Transport Security, ATS) erzwingt sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und ihrer app._
 
-In diesem Artikel werden die Sicherheitsänderungen vorgestellt, die von der APP-Transport Sicherheit für eine IOS 9-APP erzwungen werden, und das bedeutet, dass [für Ihre xamarin. IOS-Projekte](#xamarinsupport)die [Optionen der ATS](#config) [-](#optout) Konfiguration abgedeckt werden. Falls erforderlich. Da ATS standardmäßig aktiviert ist, wird bei allen nicht sicheren Internetverbindungen eine Ausnahme in ios 9-apps ausgelöst (es sei denn, Sie haben Sie explizit zugelassen).
+In diesem Artikel werden die Sicherheitsänderungen vorgestellt, die von der APP-Transport Sicherheit für eine IOS 9-APP erzwungen werden, und das bedeutet, dass [für Ihre xamarin. IOS-Projekte](#xamarinsupport)die [Optionen der ATS-Konfiguration](#config) behandelt werden, und es wird erläutert, wie Sie die ATS-Funktionen bei Bedarf [ablehnen](#optout) . Da ATS standardmäßig aktiviert ist, wird bei allen nicht sicheren Internetverbindungen eine Ausnahme in ios 9-apps ausgelöst (es sei denn, Sie haben Sie explizit zugelassen).
 
 ## <a name="about-app-transport-security"></a>Informationen zur APP-Transport Sicherheit
 
@@ -93,11 +93,11 @@ Zum Festlegen der httpclient-Implementierung, die von einer IOS-App verwendet wi
 
 Der verwaltete Handler ist der vollständig verwaltete httpclient-Handler, der in früheren Versionen von xamarin. IOS enthalten war und der Standard Handler ist.
 
-Vorteile
+Vorteile:
 
 - Sie ist mit Microsoft .net und einer älteren Version von xamarin am meisten kompatibel.
 
-Nachteile
+Nachteile:
 
 - Sie ist nicht vollständig in ios integriert (z. b. auf TLS 1,0 beschränkt).
 - Es ist in der Regel viel langsamer als die nativen APIs.
@@ -107,12 +107,12 @@ Nachteile
 
 Der CFNetwork-basierte Handler basiert auf dem systemeigenen `CFNetwork`-Framework.
 
-Vorteile
+Vorteile:
 
 - Verwendet Native API, um eine bessere Leistung und kleinere ausführbare Größen zu erzielen.
 - Bietet Unterstützung für neuere Standards, z. b. TLS 1,2.
 
-Nachteile
+Nachteile:
 
 - Erfordert IOS 6 oder höher.
 - Nicht verfügbar für watchos.
@@ -122,12 +122,12 @@ Nachteile
 
 Der nsurlsession-basierte Handler basiert auf der systemeigenen `NSUrlSession`-API.
 
-Vorteile
+Vorteile:
 
 - Verwendet Native API, um eine bessere Leistung und kleinere ausführbare Größen zu erzielen.
 - Bietet Unterstützung für neuere Standards, z. b. TLS 1,2.
 
-Nachteile
+Nachteile:
 
 - Erfordert IOS 7 oder höher.
 - Einige Features und Optionen für httpclient sind nicht verfügbar.
@@ -136,7 +136,7 @@ Nachteile
 
 Wenn Sie versuchen, eine Verbindung mit dem Internet (entweder direkt oder über eine Webansicht in ios 9) herzustellen, erhalten Sie möglicherweise eine Fehlermeldung in der Form:
 
-> Die APP-Transport Sicherheit hat eine Klartext-http (http://www.-the-blocked-domain.com) Ressourcen Last, da Sie unsicher ist, blockiert. Temporäre Ausnahmen können über die Datei "Info. plist" ihrer App konfiguriert werden.
+> Die APP-Transport Sicherheit hat eine Klartext http (`http://www.-the-blocked-domain.com`)-Ressourcen Last blockiert, da Sie unsicher ist. Temporäre Ausnahmen können über die Datei "Info. plist" ihrer App konfiguriert werden.
 
 In iOS9 erzwingt App-Transport Sicherheit (app Transport Security, ATS) sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und ihrer app. Darüber hinaus erfordert die Kommunikation mit dem `HTTPS`-Protokoll und der übergeordneten API-Kommunikation, um mit der TLS-Version 1,2 mit vorwärts Geheimnisse verschlüsselt zu werden.
 
@@ -175,12 +175,12 @@ Jeder Schlüssel hat den folgenden Typ und Bedeutung:
 - **\<Domain-Name-for-Exception-As-String >** (`Dictionary`): eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`) angezeigt wird.
 - **Nsexceptionminimumtlsversion** (`String`): die minimale TLS-Version ist entweder `TLSv1.0`, `TLSv1.1` oder `TLSv1.2` (Standardeinstellung).
 - **Nsexceptionrequirements sforwardgeheimnis** (`Boolean`): Wenn `NO` die Domäne keine Chiffre mit vorwärts Sicherheit verwenden muss. Der Standardwert ist `YES`sein.
-- **Nsexceptionallowsinsecurehttploads** (`Boolean`): Wenn `NO` (Standardeinstellung), muss die gesamte Kommunikation mit dieser Domäne im `HTTPS` Protokoll vorliegen.
+- **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `NO` (the default) all communications with this domain must be in the `HTTPS` protocol.
 - **Nsrequirements scertificatetransparenz** (`Boolean`): Wenn `YES` der Secure Sockets Layer der Domäne (SSL) gültige Transparenz Daten enthalten muss. Der Standardwert ist `NO`sein.
 - **Nsincludessubdomains** (`Boolean`): Wenn `YES` diese Einstellungen alle Unterdomänen dieser Domäne überschreiben. Der Standardwert ist `NO`sein.
 - **Nsthirdpartyexceptionminimumtlsversion** (`String`): die TLS-Version, die verwendet wird, wenn es sich bei der Domäne um einen Drittanbieter Dienst außerhalb der Kontrolle des Entwicklers handelt.
 - **Nsthirdpartyexceptionrequirements sforwardgeheimnis** (`Boolean`): Wenn `YES` einer Drittanbieter Domäne eine Weiterleitung von Bedingungen erfordert.
-- **Nsthirdpartyexceptionallowsinsecurehttploads** (`Boolean`): Wenn `YES` werden die ATS eine nicht sichere Kommunikation mit Domänen von Drittanbietern zulassen.
+- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `YES` the ATS will allow non-secure communication with 3rd party domains.
 
 <a name="optout" />
 
@@ -239,18 +239,18 @@ Doppelklicken Sie in Visual Studio für Mac auf die `Info.plist` Datei im **Proj
 [![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> Wenn Ihre Anwendung eine Verbindung mit einer unsicheren Website erfordert, sollten Sie die Domäne **immer** als Ausnahme mithilfe von `NSExceptionDomains` eingeben, anstatt sie vollständig mithilfe `NSAllowsArbitraryLoads`zu deaktivieren. `NSAllowsArbitraryLoads` sollten nur in extrem Notfällen verwendet werden.
+> Wenn Ihre Anwendung eine Verbindung mit einer unsicheren Website erfordert, sollten Sie die Domäne **immer** als Ausnahme mithilfe von `NSExceptionDomains` eingeben, anstatt sie vollständig mithilfe `NSAllowsArbitraryLoads`zu deaktivieren. `NSAllowsArbitraryLoads` sollte nur im Notfall extrem verwendet werden.
 
 Die Deaktivierung von ATS sollte _nur_ als letztes Mittel verwendet werden, wenn der Wechsel zu sicheren Verbindungen entweder nicht verfügbar oder nicht praktikabel ist.
 
 <a name="Summary" />
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurden App-Transport Sicherheit (app Transport Security, ATS) vorgestellt und beschrieben, wie die sichere Kommunikation mit dem Internet erzwungen wird. Zunächst haben wir die Änderungen erläutert, die für eine xamarin. IOS-app unter IOS 9 erforderlich sind. Anschließend haben wir die Kontrolle über die Features und Optionen von ATS behandelt. Schließlich haben wir uns mit der Entscheidung in ihrer xamarin. IOS-App abgemeldet.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
-- [IOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

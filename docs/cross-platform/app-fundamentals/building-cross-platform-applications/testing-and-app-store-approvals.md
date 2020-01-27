@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9f84192a312f9aba98817b75c058229e6c721bb
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016853"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723620"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App Store-Genehmigungen
 
@@ -31,7 +31,7 @@ Außerdem sollten Sie so viele verschiedene physische Hardware Geräte wie mögl
 
 Das Mobiltelefon-und Tablet-Ökosystem wächst ständig, sodass es nicht mehr möglich ist, die ständig zunehmende Anzahl der verfügbaren Geräte zu testen. Um dieses Problem zu beheben, bieten eine Reihe von Diensten die Möglichkeit, viele verschiedene Geräte remote zu steuern, damit Anwendungen installiert und getestet werden können, ohne dass Sie direkt in viel Hardware investieren müssen.
 
-[App Center Test](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) bietet eine einfache Möglichkeit zum Testen von IOS-und Android-Anwendungen auf hunderten unterschiedlichen Geräten.
+App Center Test bietet eine einfache Möglichkeit zum Testen von IOS-und Android-Anwendungen auf hunderten unterschiedlichen Geräten. Weitere Informationen finden Sie unter [Vorbereiten von xamarin. Android-Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) und [Vorbereiten von xamarin. IOS-apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest).
 
 ### <a name="test-management"></a>Testverwaltung
 
@@ -50,7 +50,7 @@ Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-u
 
 ## <a name="unit-testing"></a>Unittests
 
-### <a name="touchunit"></a>"Berühren. Einheit"
+### <a name="touchunit"></a>Touch.Unit
 
 Xamarin. IOS enthält ein Komponenten Test-Framework namens "Touchscreen. Unit", das dem JUnit/nunit-Stil zum Schreiben von Tests folgt.
 

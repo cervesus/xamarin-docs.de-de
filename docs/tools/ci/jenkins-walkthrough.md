@@ -6,16 +6,16 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 6d420faf59d940bb111b5ecd326a29083cab012e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4f91e683b826657a9740de7e0b98137858130042
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029912"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725377"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Verwenden von Jenkins mit Xamarin
 
-in dieser Anleitung wird erläutert, wie Sie Jenkins als Continuous Integration Server einrichten und die Kompilierung mobiler Anwendungen automatisieren, die mit xamarin erstellt wurden.  _Es wird beschrieben, wie Jenkins unter OS X installiert, konfiguriert und Aufträge für die Kompilierung von xamarin. IOS-und xamarin. Android-Anwendungen eingerichtet werden, wenn Änderungen an das Quell Code Verwaltungssystem übertragen werden._
+_In dieser Anleitung wird veranschaulicht, wie Sie Jenkins als Continuous Integration Server einrichten und die Kompilierung mobiler Anwendungen automatisieren, die mit xamarin erstellt wurden. Es wird beschrieben, wie Jenkins unter OS X installiert, konfiguriert und Aufträge für die Kompilierung von xamarin. IOS-und xamarin. Android-Anwendungen eingerichtet werden, wenn Änderungen an das Quell Code Verwaltungssystem übertragen werden._
 
 Die [Einführung in Continuous Integration mit xamarin](~/tools/ci/intro-to-ci.md) führt Continuous Integration als nützliche Software Entwicklungspraxis ein, die eine frühe Warnung bei fehlerlichem oder inkompatiblem Code bereitstellt. Mit CI können Entwickler Probleme und Probleme beheben, wenn Sie auftreten, und die Software in einem geeigneten Zustand für die Bereitstellung behalten. In dieser exemplarischen Vorgehensweise wird erläutert, wie Sie den Inhalt aus beiden Dokumenten gemeinsam verwenden.
 
@@ -32,7 +32,7 @@ Nachdem Jenkins konfiguriert wurde und alle erforderlichen Plug-ins installiert 
 
 In diesem Handbuch wird erläutert, wie Sie einen Jenkins-Server einrichten, der die einzelnen Punkte abdeckt. Am Ende dieses Projekts sollten Sie sich mit dem Einrichten und Konfigurieren von Jenkins vertraut machen, um IPA und APK für unsere mobilen xamarin-Projekte zu erstellen.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>-Anforderungen
 
 Der ideale Buildserver ist ein eigenständiger Computer, der ausschließlich für das Erstellen und möglicherweise das Testen der Anwendung vorgesehen ist. Ein dedizierter Computer stellt sicher, dass Artefakte, die möglicherweise für andere Rollen (z. b. die eines Webservers) erforderlich sind, den Build nicht verunreinigen. Wenn der Buildserver z. b. auch als Webserver fungiert, benötigt der Webserver möglicherweise eine widersprüchliche Version einer gemeinsamen Bibliothek. Aufgrund dieses Konflikts funktioniert der Webserver möglicherweise nicht ordnungsgemäß, oder Jenkins erstellt Builds, die bei der Bereitstellung für Benutzer nicht funktionieren.
 
@@ -387,13 +387,13 @@ Nachdem alle Buildaktionen durchgeführt wurden, empfiehlt es sich, einen manuel
 
 ### <a name="submitting-tests-to-test-cloud"></a>Senden von Tests an Test Cloud
 
-Automatisierte Tests können mithilfe von Shellbefehlen an Test Cloud übermittelt werden. Weitere Informationen zum Einrichten eines Testlaufs in Xamarin Test Cloud finden Sie in diesem Handbuch für die Verwendung von [xamarin. UITest](/appcenter/test-cloud/preparing-for-upload/uitest/).
+Automatisierte Tests können mithilfe von Shellbefehlen an Test Cloud übermittelt werden. Weitere Informationen zum Einrichten eines Testlaufs in Xamarin Test Cloud finden Sie unter [Vorbereiten von xamarin. Android-Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) und Vorbereiten von [xamarin. IOS-apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Handbuch haben wir Jenkins als Buildserver unter macOS eingeführt und so konfiguriert, dass Mobile xamarin-Anwendungen für die Veröffentlichung kompiliert und vorbereitet werden. Wir haben Jenkins auf einem macOS-Computer installiert und mehrere Plug-Ins zur Unterstützung des Buildprozesses erstellt. Wir haben einen Auftrag erstellt und konfiguriert, der Code aus TFS oder git per Pull abruft und diesen Code dann in eine Release Ready-Anwendung kompiliert. Wir haben auch zwei verschiedene Möglichkeiten zum Planen der Ausführung von Aufträgen untersucht.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Continuous Integration](~/tools/ci/index.md)
 - [App Center Test (App Center-Test)](https://docs.microsoft.com/appcenter/test-cloud/)

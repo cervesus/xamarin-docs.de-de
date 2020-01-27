@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: 2c1f571efb9ec3fb726912eb1e30496bc51fe26e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 49d1eea60f766f4cb61484a6e441506cf8f046ff
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026991"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725078"
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Ist es möglich, über eine Windows-VM mit den Android-Emulatoren, die auf einem Mac ausgeführt werden, eine Verbindung herzustellen?
 
@@ -37,8 +37,7 @@ Führen Sie die folgenden Schritte aus, um eine Verbindung mit dem Android-Emula
 
     Der ungerade nummerierte Port ist der Port, der zum Herstellen einer Verbindung mit `adb`verwendet wird. Siehe auch [https://developer.android.com/tools/devices/emulator.html#emulatornetworking](https://developer.android.com/tools/devices/emulator.html#emulatornetworking).
 
-4. _Option 1_: Verwenden von [`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
-    So leiten Sie eingehende TCP-Pakete, die extern an Port 5555 (oder einem beliebigen anderen Port) empfangen werden, an den ungeraden Port der Loopback Schnittstelle (in diesem Beispiel**127.0.0.1 5555** ) weiter
+4. _Option 1_: Verwenden Sie `nc`, um eingehende TCP-Pakete, die extern an Port 5555 (oder an einem anderen Port) empfangen werden, an den ungeraden Port der Loopback Schnittstelle (in diesem Beispiel**127.0.0.1 5555** ) weiterzuleiten und die ausgehenden Pakete auf andere Weise weiterzuleiten:
 
     ```bash
     cd /tmp
@@ -48,10 +47,9 @@ Führen Sie die folgenden Schritte aus, um eine Verbindung mit dem Android-Emula
 
     Solange die `nc` Befehle in einem Terminal Fenster ausgeführt werden, werden die Pakete erwartungsgemäß weitergeleitet. Sie können im Terminal Fenster Control-C eingeben, um die `nc` Befehle zu beenden, sobald Sie mit dem Emulator fertig sind.
 
-    (Option 1 ist in der Regel einfacher als Option 2, insbesondere dann, wenn **System Einstellungen > Sicherheits & Datenschutz > Firewall** aktiviert ist.) 
+    (Option 1 ist in der Regel einfacher als Option 2, insbesondere dann, wenn **System Einstellungen > Sicherheits & Datenschutz > Firewall** aktiviert ist.)
 
-    _Option 2_: Verwenden von [`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
-    zum Umleiten von TCP-Paketen von Port `5555` (oder einem anderen Port, den Sie möchten) auf der frei [gegebenen Netzwerk](https://kb.parallels.com/en/4948) Schnittstelle an den ungeraden Port der Loopback Schnittstelle (`127.0.0.1:5555` in diesem Beispiel):
+    _Option 2_: Verwenden Sie `pfctl`, um TCP-Pakete von Port `5555` (oder einem beliebigen anderen Port) an der frei [gegebenen Netzwerk](https://kb.parallels.com/en/4948) Schnittstelle an den ungeraden Port der Loopback Schnittstelle umzuleiten (in diesem Beispiel`127.0.0.1:5555`):
 
     ```bash
     sed '/rdr-anchor/a rdr pass on vmnet8 inet proto tcp from any to any port 5555 -> 127.0.0.1 port 5555' /etc/pf.conf | sudo pfctl -ef -
@@ -77,7 +75,7 @@ Wenn Sie _entfernte Anmeldung_ auf dem Mac aktiviert haben, können Sie `ssh` Po
 
 3. Führen Sie `ssh` unter Windows aus, um die bidirektionale Port Weiterleitung zwischen einem lokalen Port unter Windows (`localhost:15555` in diesem Beispiel) und dem ungeraden emulatorport in der Loopback Schnittstelle des Macs (in diesem Beispiel`127.0.0.1:5555`) einzurichten:
 
-    ```cmd 
+    ```cmd
     C:\> ssh -L localhost:15555:127.0.0.1:5555 mac-username@ip-address-of-the-mac
     ```
 
@@ -103,4 +101,4 @@ Die xamarin. Android-IDE-Erweiterungen bieten derzeit jedoch keine Möglichkeit,
 In diesem Dokument wird das aktuelle Verhalten von März 2016 erläutert. Das in diesem Dokument beschriebene Verfahren ist nicht Teil der stabilen Testsuite für xamarin, sodass es in Zukunft unterbrechen kann.
 
 Wenn Sie bemerken, dass das Verfahren nicht mehr funktioniert, oder wenn Sie andere Fehler im Dokument bemerken, können Sie die Diskussion im folgenden Forums Thread hinzufügen: [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](https://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm).
-Danke!
+Vielen Dank.

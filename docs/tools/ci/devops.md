@@ -7,12 +7,12 @@ manager: crdun
 ms.workload:
 - xamarin
 ms.date: 10/23/2018
-ms.openlocfilehash: 57e3444ebcbd87607da248ecacca5e76a44f1577
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bd1a728dfe14ff9243402bedae74db7be93bf466
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007450"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725131"
 ---
 # <a name="devops-with-xamarin"></a>DevOps mit Xamarin
 
@@ -26,7 +26,7 @@ In den folgenden Tabellen wird beschrieben, welche DevOps-Features in Visual Stu
 
 ## <a name="agile-tools"></a>Agile-Tools
 
-Verweislink: **[Informationen zu Agile-Tools und Agile-Projektverwaltung](/azure/devops/boards/backlogs/overview?view=vsts)**
+Verweislink: **[Informationen zu Agile-Tools und Agile-Projektverwaltung](/azure/devops/boards/backlogs/backlogs-overview?view=azure-devops)**
 
 Allgemeiner Kommentar: alle Planungs- und Nachverfolgungsfunktionen sind vom Projekttyp und den Programmiersprachen unabhängig.
 
@@ -65,7 +65,7 @@ Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funkti
 |[Ermitteln von Änderungen am Code und andere Verläufe](/visualstudio/ide/find-code-changes-and-other-history-with-codelens)|Ja|Außer über plattformspezifische Grenzen hinweg, in denen die Implementierung bis zur Laufzeit nicht aufgelöst wird.|
 |[Verwenden von Code Maps zum Debuggen von Anwendungen](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|Ja||
 
-## <a name="build"></a>Build
+## <a name="build"></a>Erstellen
 
 Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
@@ -77,14 +77,14 @@ Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 |Builddefinitionen mit Vor- und Nachskripts|Ja||
 |Fortlaufende Integration einschließlich abgegrenzter Eincheckvorgänge|Ja|Abgegrenzte Eincheckvorgänge für TFVC, nur wenn Git auf einem Pull-Request-Modell statt mit Eincheckvorgängen arbeitet.|
 
-## <a name="test"></a>Test
+## <a name="test"></a>Testen
 
 |Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Planen von Tests, Erstellen von Testfällen und Organisieren von Testauflistungen|Ja||
 |Manuelle Tests|Ja||
 |Test-Manager (Aufzeichnung und Wiedergabe von Tests)|Ja|Nur Windows-Geräte und Android-Emulatoren von Visual Studio.|
-|Codeabdeckung|n/v||
+|Codeabdeckung|nicht verfügbar||
 |[Ausführen von Komponententests für Code](/visualstudio/test/unit-test-your-code/)|Ja|Für Windows- und Android-Ziele können die integrierten MSTest-Tools verwendet werden. Zum Ausführen von Komponententests für Windows, Android und iOS empfiehlt Xamarin NUnit. Siehe [Verwenden von TFVC](/azure/devops/repos/tfvc/overview?view=vsts).|
 |[Verwenden der Benutzeroberflächenautomatisierung zum Testen des Codes](/visualstudio/test/use-ui-automation-to-test-your-code/)|Nur Windows|Testaufzeichnung der Benutzeroberfläche in Visual Studio ist nur unter Windows möglich. Alle Plattformen finden Sie unter [Xamarin.UITest](/appcenter/test-cloud/uitest/).|
 
@@ -108,7 +108,7 @@ Referenzlink: **[Build und Release in Azure Pipelines und TFS](/azure/devops/pip
 |-------------|----------------------------|-------------------------|
 |Verwalten von Releaseprozessen|Ja||
 |Bereitstellen auf Servern für das Sideloading über Skripts|Ja||
-|Hochladen in den App Store|Partial|Es stehen Erweiterungen zur Verfügung, die diesen Prozess für manche App-Stores automatisieren können.  Ein Übersicht finden Sie unter [Extensions for Azure DevOps Services (Erweiterungen für Azure DevOps Services)](https://marketplace.visualstudio.com/VSTS). Dort ist beispielsweise die [Erweiterung für Google Play](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play) erhältlich.|
+|Hochladen in den App Store|Partial|Es stehen Erweiterungen zur Verfügung, die diesen Prozess für manche App-Stores automatisieren können.  Siehe [Extensions for Azure DevOps Services (Erweiterungen für Azure DevOps Services)](https://marketplace.visualstudio.com/VSTS); beispielsweise die [Extension for Google Play (Erweiterung für Google Play)](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play).|
 
 ## <a name="monitor-with-hockeyapp"></a>Überwachen mit HockeyApp
 

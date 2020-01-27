@@ -6,12 +6,12 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: b3444b962a032ceaeeba36f63ad975b3d80a9f14
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 551e9b1fc6298ddc2cf64e2e9ef60d90f6c1abac
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016929"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723763"
 ---
 # <a name="building-cross-platform-applications"></a>Erstellen von plattformübergreifenden Anwendungen
 
@@ -50,7 +50,7 @@ Es veranschaulicht die Grundlagen der Erstellung einer plattformübergreifenden 
 
 Lesen Sie die [Tasky-Fallstudie](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Abschnitt werden die Anwendungs Entwicklungs Tools von xamarin vorgestellt und erläutert, wie Sie Anwendungen erstellen, die mehrere mobile Plattformen als Ziel haben.
 
@@ -60,11 +60,10 @@ Beispiele hierfür sind Allgemeine Anwendungsfunktionen (z. b. Datei-und Netzwer
 
 Schließlich wird das Testen kurz erläutert, und es werden Verweise auf eine Fallstudie bereitstellt, die diese Prinzipien in Aktion einfügt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Freigeben von Code Optionen](~/cross-platform/app-fundamentals/code-sharing.md)
 - [Fallstudie: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky-Beispiel-app (GitHub)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
 - [Xamarin Mobile-Anwendungsentwicklung: Platt Form C# übergreifende und xamarin. Forms-Grundlagen (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Mobile-Entwicklung C# mit Greg Shackles (o. o.)](https://shop.oreilly.com/product/0636920024002.do)
-- [Professionelle plattformübergreifende Mobile Entwicklung in C# von Scott Olson, John Hunter, Ben Horgen, Kenny-Besucher (Wrox)](https://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

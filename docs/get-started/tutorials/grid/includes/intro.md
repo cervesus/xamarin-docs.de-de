@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cbf301b341f78ae8d8826580d30a13393716f56c
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059667"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -20,4 +20,4 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie die Layoutsteuerelemente innerhalb eines [`Grid`](xref:Xamarin.Forms.Grid) anpassen können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-[![Screenshot: Raster mit Inhalt, der mehrere Spalten und Zeilen umfasst, unter iOS und Android](../images/span-columns-rows.png "Raster mit Inhalt, der Spalten und Zeilen umfasst")](../images/span-columns-rows-large.png#lightbox "Raster mit Inhalt, der Spalten und Zeilen umfasst")
+[![Screenshot: Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt, unter iOS und Android](../images/span-columns-rows.png "Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt")](../images/span-columns-rows-large.png#lightbox "Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt")

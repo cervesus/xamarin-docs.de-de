@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015873"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725341"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über Ziel-C-Bindungen
 
@@ -19,7 +19,7 @@ _Details zur Funktionsweise des Bindungs Prozesses_
 
 Das Binden einer Ziel-C-Bibliothek für die Verwendung mit xamarin führt drei Schritte aus:
 
-1. Schreiben Sie C# eine "API-Definition", um zu beschreiben, wie die Native API in .net verfügbar gemacht wird, und wie Sie dem zugrunde liegenden Ziel "-C" zugeordnet wird. Dies erfolgt über standardkonstrukte C# wie `interface`und verschiedene Bindungs **Attribute** (Weitere Informationen finden Sie in diesem [einfachen Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Schreiben Sie C# eine "API-Definition", um zu beschreiben, wie die Native API in .net verfügbar gemacht wird, und wie Sie dem zugrunde liegenden Ziel "-C" zugeordnet wird. Dies erfolgt über standardkonstrukte C# wie `interface` und verschiedene Bindungs **Attribute** (Weitere Informationen finden Sie in diesem [einfachen Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
 2. Nachdem Sie die "API-Definition" in C#geschrieben haben, kompilieren Sie Sie, um eine "Binding"-Assembly zu erstellen. Dies kann über die [**Befehlszeile**](#commandline) oder mithilfe eines [**Bindungs Projekts**](#bindingproject) in Visual Studio für Mac oder Visual Studio erfolgen.
 
@@ -35,7 +35,7 @@ Sie können auch weitere technische Details zur [Funktionsweise](#howitworks)les
 
 ## <a name="command-line-bindings"></a>Befehlszeilen Bindungen
 
-Sie können die `btouch-native` für xamarin. IOS (oder `bmac-native` bei Verwendung von xamarin. Mac) verwenden, um Bindungen direkt zu erstellen. Dies funktioniert, indem die C# API-Definitionen, die Sie von Hand (oder mithilfe von Ziel-Sharpie) erstellt haben, an das Befehlszeilen Tool (`btouch-native`für IOS oder`bmac-native`für Mac) übergeben werden.
+Sie können die `btouch-native` für xamarin. IOS (oder `bmac-native` bei Verwendung von xamarin. Mac) verwenden, um Bindungen direkt zu erstellen. Dies funktioniert, indem die C# API-Definitionen, die Sie von Hand (oder mithilfe von Ziel-Sharpie) erstellt haben, an das Befehlszeilen Tool (`btouch-native` für IOS oder `bmac-native` für Mac) übergeben werden.
 
 Die allgemeine Syntax zum Aufrufen dieser Tools lautet wie folgt:
 
@@ -73,7 +73,7 @@ Lesen Sie die [Ziel-Sharpie](~/cross-platform/macios/binding/objective-sharpie/i
 
 Es ist möglich, das Attribut [[Register]](xref:Foundation.RegisterAttribute) , [[Export]](xref:Foundation.ExportAttribute) und den [manuellen Aufruf der Ziel-c-Auswahl](~/ios/internals/objective-c-selectors.md) zu verwenden, um neue (zuvor nicht gebundene) Ziel-c-Typen manuell zu binden.
 
-Suchen Sie zuerst einen Typ, den Sie binden möchten. Zu Diskussions Zwecken (und Vereinfachung) binden wir den [nsenum](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) -Typ (der bereits in [Foundation. nsenübererator](xref:Foundation.NSEnumerator)gebunden wurde. die folgende Implementierung ist nur zu Beispiel Zwecken).
+Suchen Sie zuerst einen Typ, den Sie binden möchten. Zu Diskussions Zwecken (und Vereinfachung) binden wir den [nsenum](https://developer.apple.com/documentation/foundation/nsenumerator) -Typ (der bereits in [Foundation. nsenübererator](xref:Foundation.NSEnumerator)gebunden wurde. die folgende Implementierung ist nur zu Beispiel Zwecken).
 
 Zweitens müssen wir den C# Typ erstellen. Wir möchten dies wahrscheinlich in einem Namespace platzieren. Da Ziel-c keine Namespaces unterstützt, müssen wir das `[Register]`-Attribut verwenden, um den Typnamen zu ändern, den xamarin. IOS bei der Ziel-c-Laufzeit registriert. Der C# Typ muss auch von [Foundation. NSObject](xref:Foundation.NSObject)erben:
 

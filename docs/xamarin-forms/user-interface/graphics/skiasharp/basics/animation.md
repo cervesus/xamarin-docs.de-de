@@ -7,22 +7,22 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: ceeacaed510005cec7a4017ce45706e492d7e146
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 80de16a0cf9b601ac3795085b638b9d62812f4d9
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759749"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725550"
 ---
 # <a name="basic-animation-in-skiasharp"></a>Grundlegende Animation in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erfahren Sie, wie zum Animieren von SkiaSharp-Grafiken_
 
 Sie können Grafiken von SkiaSharp in Xamarin.Forms animieren, verliert, indem die `PaintSurface` in regelmäßigen Abständen aufzurufende Methode jedes Mal, wenn die Grafik ein wenig anders zu zeichnen. Hier ist eine Animation, die weiter unten in diesem Artikel mit konzentrischen Kreise, die scheinbar aus dem Center erweitert:
 
-![](animation-images/animationexample.png "Mehrere konzentrische Kreise scheinbar aus dem Center erweitern")
+![](animation-images/animationexample.png "Several concentric circles seemingly expanding from the center")
 
 Die **Pulsating Ellipse** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm erstellt eine Animation der beiden Achsen einer Ellipse, damit er angezeigt wird, um pulsating werden, und Sie können auch steuern, die Rate der dieser Pulsation. Die [ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) Datei instanziiert ein Xamarin.Forms `Slider` und `Label` den aktuellen Wert des Schiebereglers angezeigt. Dies ist eine allgemeine Möglichkeit zum Integrieren einer `SKCanvasView` mit anderen Xamarin.Forms-Ansichten:
 
@@ -141,7 +141,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Methode berechnet eine maximale basierend auf der Größe des Anzeigebereichs, und eine minimale Radius basierend auf den maximalen Radius. Die `scale` Wert animiert ist zwischen 0 und 1 und 0 (null) zurück, daher die Methode, die zum Berechnen verwendet einer `xRadius` und `yRadius` liegt, die im Bereich zwischen `minRadius` und `maxRadius`. Diese Werte werden verwendet, und geben Sie eine Ellipse:
 
-[![](animation-images/pulsatingellipse-small.png "Dreifacher Screenshot der Seite animiertes Ellipse")](animation-images/pulsatingellipse-large.png#lightbox "dreifachen Screenshot der Seite animiertes Ellipse")
+[![](animation-images/pulsatingellipse-small.png "Triple screenshot of the Pulsating Ellipse page")](animation-images/pulsatingellipse-large.png#lightbox "Triple screenshot of the Pulsating Ellipse page")
 
 Beachten Sie, dass die `SKPaint` -Objekt wird erstellt, einem `using` Block. Wie viele Klassen von SkiaSharp `SKPaint` leitet sich von `SKObject`, die sich daraus ableitet `SKNativeObject`, implementiert die [ `IDisposable` ](xref:System.IDisposable) Schnittstelle. `SKPaint` überschreibt die `Dispose` Methode, um nicht verwaltete Ressourcen freizugeben.
 
@@ -149,7 +149,7 @@ Beachten Sie, dass die `SKPaint` -Objekt wird erstellt, einem `using` Block. Wie
 
  In diesem Fall eine bessere Lösung wäre zwei `SKPaint` Objekte einmal, und speichern sie als Felder.
 
-Was ist die **erweitern Kreise** Animation ist. Die [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Klasse beginnt, durch die Definition von mehreren Feldern, einschließlich einer `SKPaint` Objekt:
+Was ist die **erweitern Kreise** Animation ist. Die [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Klasse beginnt, durch die Definition von mehreren Feldern, einschließlich einer `SKPaint` Objekt:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -244,9 +244,9 @@ public class ExpandingCirclesPage : ContentPage
 
 Das Ergebnis ist, dass das Bild bei Verwendung sieht `t` gleich 0, als wenn `t` gleich 1 ist, und die Kreise scheinen weiterhin unbegrenzt erweitern:
 
-[![](animation-images/expandingcircles-small.png "Dreifacher Screenshot der Seite erweitert Kreise")](animation-images/expandingcircles-large.png#lightbox "dreifachen Screenshot der Seite Kreise erweitern")
+[![](animation-images/expandingcircles-small.png "Triple screenshot of the Expanding Circles page")](animation-images/expandingcircles-large.png#lightbox "Triple screenshot of the Expanding Circles page")
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

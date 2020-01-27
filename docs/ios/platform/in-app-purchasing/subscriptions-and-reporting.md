@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e1019417ff7ac93abfe2396a4acaa76c66d182f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032302"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725368"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements und Berichterstellung in xamarin. IOS
 
 ## <a name="about-non-renewing-subscriptions"></a>Informationen zu nicht erneuerten Abonnements
 
 Abonnements, die nicht erneuert werden, sind für Produkte bestimmt, die den Verkauf eines diengs mit einer Zeitbeschränkung darstellen (z. b. der Zugriff einer Woche auf eine Navigations Anwendung oder der zeitlich eingeschränkte Zugriff auf ein Datenarchiv).   
-   
+
 Wichtige Unterschiede zwischen nicht erneuerten Abonnements und anderen Produkttypen:
 
-- Die Produktdefinition in iTunes Connect enthält nicht den Begriff. Der Anwendungscode muss die Gültigkeitsdauer von der Produkt-ID ableiten können. 
-- Sie können mehrmals gekauft werden (z. b. ein nutzbares Produkt). Anwendungen sind erforderlich, um die Abonnement Laufzeit bzw. den Ablauf und die Erneuerung zu verwalten, und verhindern, dass der Benutzer überlappende Abonnements kauft. 
-- Die Einkäufe werden von der storekit-Wiederherstellungs Funktion nicht unterstützt. Wenn das Abonnement auf allen Geräten eines Benutzers verfügbar sein soll, muss diese Funktion in Verbindung mit einem Remote Server entworfen und implementiert werden. Anwendungen sind auch dafür verantwortlich, den Abonnement Status zu sichern, wenn ein Gerät gesichert und dann wieder hergestellt wird. 
+- Die Produktdefinition in iTunes Connect enthält nicht den Begriff. Der Anwendungscode muss die Gültigkeitsdauer von der Produkt-ID ableiten können.
+- Sie können mehrmals gekauft werden (z. b. ein nutzbares Produkt). Anwendungen sind erforderlich, um die Abonnement Laufzeit bzw. den Ablauf und die Erneuerung zu verwalten, und verhindern, dass der Benutzer überlappende Abonnements kauft.
+- Die Einkäufe werden von der storekit-Wiederherstellungs Funktion nicht unterstützt. Wenn das Abonnement auf allen Geräten eines Benutzers verfügbar sein soll, muss diese Funktion in Verbindung mit einem Remote Server entworfen und implementiert werden. Anwendungen sind auch dafür verantwortlich, den Abonnement Status zu sichern, wenn ein Gerät gesichert und dann wieder hergestellt wird.
 - Implementierungs Übersicht
-- Abonnements, die nicht erneuert werden, sollten normalerweise mit dem vom Server übermittelten Workflow implementiert und wie z. b. nutzbare Produkte verwaltet werden 
+- Abonnements, die nicht erneuert werden, sollten normalerweise mit dem vom Server übermittelten Workflow implementiert und wie z. b. nutzbare Produkte verwaltet werden
 
 ## <a name="about-free-subscriptions"></a>Informationen zu kostenlosen Abonnements
 
@@ -49,7 +49,7 @@ Abonnements mit automatischer Wiederverwendung sollten mithilfe des Workflows f�
 Der gemeinsame geheime Schlüssel in-App-Käufe muss in der JSON-Anforderung verwendet werden, wenn die auf dem Server automatisch zu überprüfenden Abonnements überprüft werden. Der gemeinsame geheime Schlüssel wird über iTunes Connect erstellt/aufgerufen.
 
 Wählen Sie auf der iTunes Connect-Startseite **meine apps**aus:   
-   
+
  [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 Wählen Sie eine Anwendung aus, und klicken Sie auf die Registerkarte **in-App-Käufe** :
@@ -57,7 +57,7 @@ Wählen Sie eine Anwendung aus, und klicken Sie auf die Registerkarte **in-App-K
 [![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 Wählen Sie am unteren Rand der Seite die Option **zum Anzeigen oder Generieren eines gemeinsamen geheimen**Schlüssels aus:
-   
+
  [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
@@ -101,16 +101,15 @@ Um das Testen von Abonnements zu vereinfachen, werden deren Dauer beim Testen in
 ## <a name="reporting"></a>Berichterstellung
 
 iTunes Connect ( [iTunesConnect.Apple.com](https://itunesconnect.apple.com)) bietet Folgendes:   
-   
+
  **Vertrieb und Trends** – hier werden Details zu app-Downloads, Updates und in-App-Käufen angezeigt.   
-   
+
  **Zahlungen und Finanzberichte** – erläutert das von ihren apps verdiente Einkommen und listet Zahlungen auf, die an Sie übermittelt wurden, und wie viel Sie Ihnen geschuldet sind.
 
 Im folgenden finden Sie einen Beispiel Bericht "Sales and Trends":   
 
  [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
-   
- Es gibt auch eine [ **ITC Connect Mobile**IOS-app (iTunes-Link)](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
-die iPhone-Screenshots für einige der verfügbaren Statistiken werden hier angezeigt:   
-   
+
+ Es gibt auch eine **ITC Connect Mobile** IOS-app. die iPhone-Screenshots für einige der verfügbaren Statistiken werden hier angezeigt:   
+
  [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

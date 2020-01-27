@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 01/24/2020
 ms.locfileid: "75727939"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin. Forms-DataPages
@@ -59,7 +59,7 @@ Die folgenden Seiten und Steuerelemente sind enthalten, um eine einfache Bindung
 
 Beispiele finden Sie in der [Referenz zu DataPages](controls.md) -Steuerelementen.
 
-### <a name="under-the-hood"></a>Einblick in die Hintergründe
+### <a name="under-the-hood"></a>Im Hintergrund
 
 Eine xamarin. Forms-Datenquelle entspricht der `IDataSource`-Schnittstelle.
 

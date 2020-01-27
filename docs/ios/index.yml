@@ -12,10 +12,10 @@ abstract:
   description: 'Xamarin.iOS macht das komplette iOS SDK für .NET-Entwickler verfügbar. Erstellen Sie vollständig native iOS-Apps mit C# oder F# in Visual Studio.'
   menu:
     items:
-      - href: ~/ios/samples/index.yml
+      - href: ~/ios/samples/index.md
         text: iOS-Beispiele
       - href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
-        text: Versionsinformationen
+        text: Versionshinweise
       - href: 'https://developer.apple.com/documentation/'
         text: Entwicklerdokumentation von Apple
       - href: /visualstudio/
@@ -30,7 +30,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: Einrichtung
+            text: Setup
             href: ~/ios/get-started/installation/index.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
@@ -44,7 +44,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
             text: iOS 13
             href: ~/ios/platform/ios13/index.md
-  - title: Anleitungen
+  - title: Führungslinien
     items:
       - type: list
         style: cards
@@ -110,7 +110,7 @@ sections:
               src: ~/media/icons/i_tvos.svg
               href: ~/ios/tvos/index.md
             title: tvOS
-  - title: Verweis
+  - title: Referenz
     items:
       - type: list
         style: cards
@@ -119,6 +119,6 @@ sections:
           - title: API
             href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12'
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12">iOS-API-Dokumentation</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">Basisklassenbibliothek</a></p>'
-          - title: Beispiele
+          - title: Proben
             href: 'https://developer.xamarin.com/samples'
             html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">iOS-Beispiele</a></p><p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">watchOS-Beispiele</a></p><p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">tvOS-Beispiele</a></p>'

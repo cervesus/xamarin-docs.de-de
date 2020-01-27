@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: bbf580007f4d149501efe424f0e36178a49f6aa5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a622684461bfe2e4a57b910288ee1f9afb54c694
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028372"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725122"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>Bereitstellen von watchos-apps im App Store
 
@@ -136,7 +136,7 @@ Im folgenden finden Sie einige Fehler, die bei der Übermittlung an den App Stor
 
 Führen Sie die [obigen Schritte](#xamarin_studio) aus, um die Lösung für die Archivierung zu konfigurieren. Wenn Sie das Startprojekt nicht korrekt festlegen können, stellen Sie sicher, dass die Buildkonfiguration zuerst auf Debug oder Release festgelegt wird, bevor Sie versuchen, das Startprojekt zu ändern. Legen Sie dann die Buildkonfiguration auf **AppStore**zurück.
 
-### <a name="invalid-icon"></a>Symbol "ungültig"
+### <a name="invalid-icon"></a>Symbol „Ungültig“
 
 ```csharp
 Invalid Icon - The watch application '...watchkitextension.appex/WatchApp.app'
@@ -177,7 +177,7 @@ Stellen Sie sicher, dass Sie über die neueste Version von Visual Studio für Ma
 > [!IMPORTANT]
 > Es gibt einen bekannten Fehler in Visual Studio für Mac Unterstützung für das Überwachen von Symbolen: Sie erwartet ein 88x88-Pixel Bild für das **29x29@3x** Bild (in der Größe 87x 87 Pixel).
 
-Dies kann in Visual Studio für Mac nicht behoben werden. Bearbeiten Sie entweder das Image-Asset in Xcode, oder bearbeiten Sie die Datei " **Content. JSON** " manuell (entsprechend [diesem Beispiel](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+Dies kann in Visual Studio für Mac nicht behoben werden. Bearbeiten Sie entweder das Image-Asset in Xcode, oder bearbeiten Sie die Datei " **Content. JSON** " manuell.
 
 ### <a name="invalid-watchkit-support"></a>Ungültige watchkit-Unterstützung
 
@@ -254,6 +254,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 
 Dieser Fehler ist wahrscheinlich darauf zurückzuführen, dass Ihre Xcode-Installation von **Xcode. app**umbenannt wurde. Dieser Fehler tritt beispielsweise auf, wenn Sie die-Installation in **Xcode 6.2. app**umbenennen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Leitfaden für die Apple watchkit-Übermittlung](https://developer.apple.com/app-store/watch/)

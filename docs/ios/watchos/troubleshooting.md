@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 06524163fadc4300d55ec90f35723fd1561bb8a0
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032731"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725314"
 ---
 # <a name="watchos-troubleshooting"></a>Problembehandlung bei watchos
 
@@ -36,9 +36,9 @@ Diese Seite enthält weitere Informationen und Problem Umgehungen für Probleme,
 <a name="deploy" />
 
 - In früheren Versionen von Visual Studio für Mac fälschlicherweise eines der **applecompanionsettings** -Symbole als 88x88 Pixel angezeigt. Dies führt zu einem **fehlenden symbolfehler** , wenn Sie versuchen, eine Übermittlung an den App Store durchführen.
-    Dieses Symbol sollte 87x 87 Pixel (29 Einheiten für **@3x** Retina-Bildschirme) sein. Dies kann in Visual Studio für Mac nicht behoben werden. Bearbeiten Sie entweder das Image-Asset in Xcode, oder bearbeiten Sie die Datei " **Content. JSON** " manuell (entsprechend [diesem Beispiel](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+    Dieses Symbol sollte 87x 87 Pixel (29 Einheiten für **@3x** Retina-Bildschirme) sein. Dies kann in Visual Studio für Mac nicht behoben werden. Bearbeiten Sie entweder das Image-Asset in Xcode, oder bearbeiten Sie die Datei " **Content. JSON** " manuell.
 
-- Wenn die **Info. plist** -Datei des Watch-Erweiterungsprojekts > die wkapp-Bundle-ID nicht ordnungsgemäß auf die **Paket-ID**der Watch-APP [festgelegt](~/ios/watchos/get-started/project-references.md) ist, kann der Debugger keine Verbindung herstellen, und Visual Studio für Mac wartet mit der Meldung "der *Debugger wird gewartet. Verbinden "* .
+- Wenn die **Info. plist** -Datei des Watch-Erweiterungsprojekts > die wkapp-Bundle-ID nicht ordnungsgemäß für die **Paket-ID**der Überwachungsanwendung [festgelegt](~/ios/watchos/get-started/project-references.md) ist, kann der Debugger keine Verbindung herstellen, und Visual Studio für Mac wartet mit der Meldung "auf die Verbindung des *Debuggers wird gewartet"* .
 
 - Debugging wird im **Benachrichtigungs** Modus unterstützt, kann jedoch unzuverlässig sein. Der Wiederholungsversuch funktioniert manchmal. Vergewissern Sie sich, dass die **Info. plist** -`WKCompanionAppBundleIdentifier` der Watch-APP so festgelegt ist, dass Sie mit der Bündel-ID der übergeordneten IOS-/Container-app (d. h. der Anwendung auf dem iPhone)
 
@@ -52,7 +52,7 @@ Diese Seite enthält weitere Informationen und Problem Umgehungen für Probleme,
 - Wenn Sie versuchen, die APP zu starten, wird möglicherweise die Fehlermeldung "die Anwendung wurde nicht erstellt" angezeigt. Dies tritt nach einer **Bereinigung** auf, wenn das Startprojekt auf das Überwachungs Erweiterungsprojekt festgelegt ist.
     Die Lösung besteht darin, den **Build auszuwählen > alle neu zu erstellen** und dann die APP neu zu starten.
 
-### <a name="visual-studio"></a>Visual Studio
+### <a name="visual-studio"></a>öffnen
 
 Die IOS Designer-Unterstützung für Watch Kit *erfordert* , dass die Projekt Mappe ordnungsgemäß konfiguriert wird. Wenn die Projekt Verweise nicht festgelegt werden (siehe [Festlegen von verweisen](~/ios/watchos/get-started/project-references.md)), wird die Entwurfs Oberfläche nicht ordnungsgemäß ausgeführt.
 
@@ -166,7 +166,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`
+8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`.
     Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdown Liste **Klasse:** angezeigt werden, und Sie können es von dort aus auswählen.
 
     ![](troubleshooting-images/add-4.png "Setting a custom class")
@@ -257,7 +257,7 @@ Die übrigen Argumente werden im folgenden erläutert:
 
 ### <a name="--sdkroot"></a>--SDKRoot
 
-Erforderlich. Gibt den Pfad zu Xcode an (6,2 oder höher).
+Erforderlich Gibt den Pfad zu Xcode an (6,2 oder höher).
 
 Beispiel:
 
@@ -291,7 +291,7 @@ Beispiel:
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [Watchtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)
+- [WatchKitCatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchTables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)

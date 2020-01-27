@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2019
-ms.openlocfilehash: dcba15d049e5bab09142f0aeba237b2a790a5950
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 7d53623ef1fb1eeb917cbf4cd6d65d461e525982
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728186"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724237"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -66,7 +66,7 @@ Ansichten sind Benutzeroberflächenobjekte wie Bezeichnungen, Schaltflächen und
 | [`Map`](xref:Xamarin.Forms.Maps.Map) eine Karte angezeigt. Das **xamarin. Forms. Maps** -nuget-Paket muss installiert sein. Android und die universelle Windows-Plattform erforderlich, einen Map-Autorisierungsschlüssel.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Maps.Map) / [Handbuch](~/xamarin-forms/user-interface/map/index.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![Map-Beispiel](views-images/Map.png "Map-Beispiel")](views-images/Map-Large.png#lightbox "Map-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) |
 |     |     |
 
-## <a name="views-that-initiate-commands"></a>Sichten, die Befehle zu initiieren.
+## <a name="views-that-initiate-commands"></a>Ansichten, die Befehle initiieren
 
 ### <a name="button"></a>Schaltfläche
 
@@ -96,20 +96,20 @@ Ansichten sind Benutzeroberflächenobjekte wie Bezeichnungen, Schaltflächen und
 | [`SearchBar`](xref:Xamarin.Forms.SearchBar) Zeigt einen Bereich für den Benutzer geben eine Zeichenfolge, und eine Schaltfläche (oder eine Taste der Tastatur), der signalisiert die Anwendung gesucht werden soll. Die [ `Text` ](xref:Xamarin.Forms.SearchBar.Text) Eigenschaft bietet Zugriff auf den Text ein, und die [ `SearchButtonPressed` ](xref:Xamarin.Forms.SearchBar.SearchButtonPressed) Ereignis weist darauf hin, dass die Schaltfläche gedrückt wurde.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.SearchBar) / [Handbuch](~/xamarin-forms/user-interface/searchbar.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/) | [![Beispiel für eine Searchbar](views-images/SearchBar.png "Beispiel für eine Searchbar")](views-images/SearchBar-Large.png#lightbox "Beispiel für eine Searchbar")<br /> [C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
 |     |     |
 
-### <a name="swipeview"></a>Swidansicht
+### <a name="swipeview"></a>SwipeView
 
 |     |     |
 | --- | --- |
 | `SwipeView` ist ein Container Steuerelement, das ein Inhalts Element umschließt und Kontextmenü Elemente bereitstellt, die durch eine Schwenkbewegung angezeigt werden. Jedes Menü Element wird durch einen `SwipeItem`dargestellt, der über eine `Command` Eigenschaft verfügt, die eine `ICommand` ausführt, wenn das Element getippt wird.<br /><br /> [Handbuch](~/xamarin-forms/user-interface/swipeview.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![Swipeer View-Beispiel](views-images/SwipeView.png "Swipeer View-Beispiel")](views-images/SwipeView-Large.png#lightbox "Swipeer View-Beispiel")<br /> [C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwipeViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-for-setting-values"></a>Ansichten für das Festlegen von Werten
+## <a name="views-for-setting-values"></a>Ansichten zum Festlegen von Werten
 
 ### <a name="checkbox"></a>CheckBox
 
 |     |     |
 | --- | --- |
-| `CheckBox` ermöglicht dem Benutzer die Auswahl eines booleschen Werts mithilfe eines Schaltflächen Typs, der entweder aktiviert oder leer ist. Die `IsChecked`-Eigenschaft ist der Status des `CheckBox`, und das `CheckedChanged`-Ereignis wird ausgelöst, wenn sich der Status ändert.<br /><br />API-Dokumentation/ [Handbuch](~/xamarin-forms/user-interface/checkbox.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox-Beispiel](views-images/CheckBox.png "CheckBox-Beispiel")](views-images/CheckBox-Large.png#lightbox "CheckBox-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
+| `CheckBox` ermöglicht dem Benutzer die Auswahl eines booleschen Werts mithilfe eines Schaltflächen Typs, der entweder aktiviert oder leer ist. Die `IsChecked`-Eigenschaft ist der Status des `CheckBox`, und das `CheckedChanged`-Ereignis wird ausgelöst, wenn sich der Status ändert.<br /><br />API-Dokumentation/ [Handbuch](~/xamarin-forms/user-interface/checkbox.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox-Beispiel](views-images/CheckBox.png "CheckBox-Beispiel")](views-images/CheckBox-Large.png#lightbox "CheckBox-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
 |     |     |
 
 ### <a name="slider"></a>Slider
@@ -147,7 +147,7 @@ Ansichten sind Benutzeroberflächenobjekte wie Bezeichnungen, Schaltflächen und
 | [`TimePicker`](xref:Xamarin.Forms.TimePicker) ermöglicht dem Benutzer, eine Zeit mit der Plattform / Zeitauswahl auszuwählen. Die [ `Time` ](xref:Xamarin.Forms.TimePicker.Time) -Eigenschaft ist der ausgewählten Zeit. Überwachung einer Anwendung kann Änderungen an der `Time` Eigenschaft, indem Sie installieren einen Handler für die [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged) Ereignis.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.TimePicker) / [Handbuch](~/xamarin-forms/user-interface/timepicker.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker) | [![TimePicker-Beispiel](views-images/TimePicker.png "TimePicker-Beispiel")](views-images/TimePicker-Large.png#lightbox "TimePicker-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
 |     |     |
 
-## <a name="views-for-editing-text"></a>Ansichten zum Bearbeiten von text
+## <a name="views-for-editing-text"></a>Ansichten zum Bearbeiten von Text
 
 Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView) -Klasse, die definiert, die [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) Eigenschaft.
 
@@ -165,7 +165,7 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 | [`Editor`](xref:Xamarin.Forms.Editor) ermöglicht dem Benutzer zum eingeben und bearbeiten mehrere Textzeilen. Der Text ist verfügbar, als die [ `Text` ](xref:Xamarin.Forms.Editor.Text) -Eigenschaft, und die [ `TextChanged` ](xref:Xamarin.Forms.Editor.TextChanged) und [ `Completed` ](xref:Xamarin.Forms.Editor.Completed) Ereignisse werden ausgelöst, wenn der Text ändert oder der Benutzer signalisiert Abschluss.<br /><br />Verwenden einer [ `Entry` ](#entry) Ansicht für die Eingabe und Bearbeitung von einer einzelnen Textzeile an.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Editor) / [Handbuch](~/xamarin-forms/user-interface/text/editor.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![Beispiel für den Eintrag](views-images/Editor.png "Editor-Beispiel")](views-images/Editor-Large.png#lightbox "Editor-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EditorDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EditorDemoPage.xaml) |
 |     |     |
 
-## <a name="views-to-indicate-activity"></a>Ansichten für die Aktivität angeben.
+## <a name="views-to-indicate-activity"></a>Ansichten zum Anzeigen einer Aktivität
 
 ### <a name="activityindicator"></a>ActivityIndicator
 
@@ -181,7 +181,7 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 | [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) verwendet eine Animation an, dass die Anwendung über eine lange Aktivität fortgesetzt wird. Legen Sie die [ `Progress` ](xref:Xamarin.Forms.ProgressBar.Progress) Eigenschaft, um Werte zwischen 0 und 1 fest, um den Status angeben.<br /><br />Wenn der Aktivität Status unbekannt ist, verwenden Sie eine [ `ActivityIndicator` ](#activityindicator) stattdessen.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ProgressBar) / [Handbuch](~/xamarin-forms/user-interface/progressbar.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/) | [![ProgressBar-Beispiel](views-images/ProgressBar.png "ProgressBar-Beispiel")](views-images/ProgressBar-Large.png#lightbox "ProgressBar-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml) mit [CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-that-display-collections"></a>Ansichten, die Auflistungen anzeigen.
+## <a name="views-that-display-collections"></a>Ansichten, die Sammlungen anzeigen
 
 ### <a name="carouselview"></a>CarouselView
 
@@ -197,7 +197,7 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 | [`CollectionView`](xref:Xamarin.Forms.CollectionView) zeigt eine Bild lauffähigen Liste auswählbarer Datenelemente mit unterschiedlichen layoutspezifikationen an. Es zielt darauf ab, eine flexiblere und leistungsfähigere Alternative zu [`ListView`](xref:Xamarin.Forms.ListView)bereitzustellen. Legen Sie die `ItemsSource`-Eigenschaft auf eine Auflistung von-Objekten fest, und legen Sie die `ItemTemplate`-Eigenschaft auf ein [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Objekt fest, das beschreibt, wie die Elemente formatiert werden sollen. Das `SelectionChanged`-Ereignis signalisiert, dass eine Auswahl getroffen wurde, die als `SelectedItem`-Eigenschaft verfügbar ist.<br /><br />[Handbuch](~/xamarin-forms/user-interface/collectionview/index.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/) | [![CollectionView-Beispiel](views-images/CollectionView.png "CollectionView-Beispiel")](views-images/CollectionView-Large.png#lightbox "CollectionView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
-### <a name="indicatorview"></a>Indikator Ansicht
+### <a name="indicatorview"></a>IndicatorView
 
 |     |     |
 | --- | --- |
@@ -222,7 +222,7 @@ Diese beiden Klassen werden von der [ `InputView` ](xref:Xamarin.Forms.InputView
 
 |     |     |
 | --- | --- |
-| [`TableView`](xref:Xamarin.Forms.TableView) Zeigt eine Liste von Zeilen vom Typ [ `Cell` ](xref:Xamarin.Forms.Cell) mit optionalen Header und Subheader hinzuzufügen. Legen Sie die [ `Root` ](xref:Xamarin.Forms.TableView.Root) Eigenschaft, um ein Objekt vom Typ [ `TableRoot` ](xref:Xamarin.Forms.TableRoot), und fügen [ `TableSection` ](xref:Xamarin.Forms.TableSection) -Objekte mit `TableRoot`. Jede `TableSection` ist eine Sammlung von `Cell` Objekte.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.TableView) / [Handbuch](~/xamarin-forms/user-interface/tableview.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview) | [![TableView-Beispiel](views-images/TableView.png "TableView-Beispiel")](views-images/TableView-Large.png#lightbox "TableView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TableViewDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TableViewDemoPage.xaml) |
+| [`TableView`](xref:Xamarin.Forms.TableView) Zeigt eine Liste von Zeilen vom Typ [ `Cell` ](xref:Xamarin.Forms.Cell) mit optionalen Header und Subheader hinzuzufügen. Legen Sie die [ `Root` ](xref:Xamarin.Forms.TableView.Root) Eigenschaft, um ein Objekt vom Typ [ `TableRoot` ](xref:Xamarin.Forms.TableRoot), und fügen [ `TableSection` ](xref:Xamarin.Forms.TableSection) -Objekte mit `TableRoot`. Jede `TableSection` ist eine Sammlung von `Cell` Objekte.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.TableView) / [Handbuch](~/xamarin-forms/user-interface/tableview.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview) | [![TableView-Beispiel](views-images/TableView.png "TableView-Beispiel")](views-images/TableView-Large.png#lightbox "TableView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TableViewFormDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TableViewFormDemoPage.xaml) |
 |     |     |
 
 ## <a name="related-links"></a>Verwandte Themen

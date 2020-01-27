@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 3d74e2db541e1f30c7626cd1b08228c1e8f57a42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9c655a503ebdd9ebc08646fb385cdd8f4aa5753
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029316"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725167"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin. Android-Kalender
 
@@ -265,7 +265,7 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 Wenn Sie der Benutzeroberfläche der Ereignisliste eine Schaltfläche Hinzufügen und den obigen Code im Click-Ereignishandler der Schaltfläche ausführen, wird das Ereignis dem Kalender hinzugefügt und in der Liste aktualisiert, wie unten dargestellt:
 
-[Screenshot der Beispiel-App mit Kalender Ereignissen, gefolgt von Schaltfläche zum Hinzufügen eines Beispiel Ereignisses![](calendar-images/13.png)](calendar-images/13.png#lightbox)
+[Screenshot der Beispiel-App mit Kalender Ereignissen, gefolgt von Schaltfläche zum Hinzufügen eines Beispiel Ereignisses ![](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 Wenn wir die Kalender-APP öffnen, sehen wir, dass das Ereignis ebenfalls dort geschrieben wird:
 
@@ -273,8 +273,6 @@ Wenn wir die Kalender-APP öffnen, sehen wir, dass das Ereignis ebenfalls dort g
 
 Wie Sie sehen können, ermöglicht Android einen leistungsstarken und einfachen Zugriff zum Abrufen und beibehalten von Kalenderdaten, sodass Anwendungen die Kalenderfunktionen nahtlos integrieren können.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Kalender Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
-- [Einführung in Ice Cream Sandwich](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)

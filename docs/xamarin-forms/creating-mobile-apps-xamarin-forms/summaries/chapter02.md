@@ -7,16 +7,16 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 95defd11a9e568d1089cb2f262cb323045b6c247
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f900cb1532ba4415127c95b07e777881e1d74994
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334400"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724994"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Zusammenfassung der Kapitel 2. Aufbau einer app
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 
 > [!NOTE]
 > Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
@@ -38,14 +38,12 @@ Mit der Xamarin-Plattform installiert wird können Sie eine neue Xamarin.Forms-P
 > [!NOTE]
 > Portable Klassenbibliotheken wurden von .NET Standard-Bibliotheken ersetzt. Der Beispielcode aus dem Buch wurde zur Verwendung von .NET standard-Bibliotheken konvertiert.
 
-Dieses Beispiel zeigt eine Xamarin.Forms-Projektmappe in Visual Studio erstellt werden, ohne Änderungen. Die Lösung besteht aus sechs Projekte:
+Dieses Beispiel zeigt eine Xamarin.Forms-Projektmappe in Visual Studio erstellt werden, ohne Änderungen. Die Lösung besteht aus vier Projekten:
 
 - [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), eine Portable Klassenbibliothek (PCL), die von anderen Projekten gemeinsam genutzt
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid), ein Projekt für Android
-- [**"Hello.IOS"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS), ein Anwendungsprojekt für iOS
+- [ **"Hello.IOS"** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS), ein Anwendungsprojekt für iOS
 - [**Hello.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP), ein Anwendungsprojekt für die universelle Windows-Plattform (Windows 10 und Windows 10 Mobile)
-- [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), ein Projekt für Windows 8.1
-- [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), ein Projekt für Windows Phone 8.1
 
 > [!NOTE]
 > Xamarin.Forms nicht mehr unterstützt wird, Windows 8.1, Windows Phone 8.1 oder Windows 10 Mobile Xamarin.Forms-Anwendungen werden auf dem Windows 10-Desktop ausgeführt.
@@ -185,11 +183,11 @@ Diese Eigenschaften werden in der Regel nicht direkt verwendet. Stattdessen werd
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`HorizontalOptions` und `VerticalOptions` sind die wichtigsten Eigenschaften in Xamarin.Forms-Layouts und werden ausführlicher in [ **Kapitel 4. Scrollen im Stapel**](chapter04.md).
+`HorizontalOptions` und `VerticalOptions` sind die wichtigsten Eigenschaften im xamarin. Forms-Layout und werden ausführlicher in [**Kapitel 4 erläutert. Scrollen des Stapels**](chapter04.md).
 
 Hier ist das Ergebnis mit der `HorizontalOptions` und `VerticalOptions` Eigenschaften `Label` auf festlegen `LayoutOptions.Center`:
 
-[![Dreifacher Screenshot Greetings-Programms](images/ch02fg05-small.png "horizontal und vertikal ausgerichtet Bezeichnung")](images/ch02fg05-large.png#lightbox "horizontal und vertikal ausgerichtet Bezeichnung")
+[![Dreifacher Screenshot des Greetings-Programms](images/ch02fg05-small.png "Horizontal und vertikal zentrierte Bezeichnung")](images/ch02fg05-large.png#lightbox "Horizontal und vertikal zentrierte Bezeichnung")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>Lösung 5. Der Text innerhalb der Bezeichnung zentrieren
 

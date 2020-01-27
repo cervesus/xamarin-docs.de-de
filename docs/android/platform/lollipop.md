@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 104141d98cecb31cae17f4510f742387be4a3fb7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027254"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724442"
 ---
 # <a name="lollipop-features"></a>Lollipop-Features
 
@@ -40,11 +40,11 @@ Zusätzlich zu den Verbesserungen der Benutzeroberfläche, die über das Materia
 
 - **Neue APIs** &ndash; Android 5,0 fügt neue APIs für die Unterstützung mehrerer Netzwerke, eine verbesserte Bluetooth-Konnektivität, eine einfachere Speicherverwaltung und eine flexiblere Kontrolle von Multimedia-Playern und Kamera Geräten hinzu. Ein neues Auftrags Planungs Feature ist zum asynchronen Ausführen von Aufgaben zu geplanten Zeiten verfügbar. Mit dieser Funktion können Sie die Akku Lebensdauer verbessern, indem Sie z. b. Aufgaben planen, die durchgeführt werden, wenn das Gerät angeschlossen und berechnet wird.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 Folgendes ist erforderlich, um die neuen Android 5,0-Features in xamarin-basierten apps zu verwenden:
 
-- **Xamarin. Android** &ndash; xamarin. Android 4,20 oder höher muss entweder mit Visual Studio oder mit Visual Studio für Mac installiert und konfiguriert werden. 
+- **Xamarin. Android** &ndash; xamarin. Android 4,20 oder höher muss entweder mit Visual Studio oder mit Visual Studio für Mac installiert und konfiguriert werden.
 
 - **Android SDK** &ndash; Android 5,0 (API 21) oder höher muss über den Android SDK Manager installiert werden.
 
@@ -105,7 +105,7 @@ Die Benachrichtigungen wurden in Android 5,0 erheblich geändert:
 
 - **Sounds und Vibrationen werden unterschiedlich behandelt** &ndash; Benachrichtigungs Sounds und-Vibrationen werden nun von `Notification.Builder` anstelle von `Ringtone`, `MediaPlayer`und `Vibrator`behandelt.
 
-- **Neues Farbschema** &ndash; gemäß dem Material Design werden Benachrichtigungen mit einem dunklen Text über weißem oder sehr hellen Hintergründen gerendert. Außerdem können Alphakanäle in Benachrichtigungs Symbolen von Android geändert werden, damit Sie mit System Farbschemas koordiniert werden. 
+- **Neues Farbschema** &ndash; gemäß dem Material Design werden Benachrichtigungen mit einem dunklen Text über weißem oder sehr hellen Hintergründen gerendert. Außerdem können Alphakanäle in Benachrichtigungs Symbolen von Android geändert werden, damit Sie mit System Farbschemas koordiniert werden.
 
 - **Sperrbildschirm Benachrichtigungen** &ndash; Benachrichtigungen können jetzt auf dem Sperrbildschirm des Geräts angezeigt werden.
 
@@ -113,7 +113,7 @@ Die Benachrichtigungen wurden in Android 5,0 erheblich geändert:
 
 In den meisten Fällen sind zum Portieren vorhandener App-Benachrichtigungsfunktionen auf Android 5,0 die folgenden Schritte erforderlich:
 
-1. Konvertieren Sie den Code, um `Notification.Builder` (oder `NotificationsCompat.Builder`) zum Erstellen von Benachrichtigungen zu verwenden. 
+1. Konvertieren Sie den Code, um `Notification.Builder` (oder `NotificationsCompat.Builder`) zum Erstellen von Benachrichtigungen zu verwenden.
 
 2. Vergewissern Sie sich, dass Ihre vorhandenen Benachrichtigungs Ressourcen im neuen Material Design-Farbschema angezeigt werden können.
 
@@ -133,7 +133,7 @@ Das neue Android 5,0-Material Design führt zu tiefgreifenden Änderungen am Aus
 
 Android 5,0 empfängt Sie mit dem auf der linken Seite angezeigten Startbildschirm. Der Screenshot "Mittelpunkt" ist der erste Bildschirm der APP-Liste, und der Screenshot auf der rechten Seite ist der Bildschirm " **Einstellungen** ". Die [Material Design](https://material.io/guidelines/material-design/introduction.html) -Spezifikation von Google erläutert die zugrunde liegenden Entwurfs Regeln hinter dem neuen Material Design-Konzept.
 
-Das Material Design enthält drei integrierte Varianten, die Sie in Ihrer APP verwenden können: das `Theme.Material` dunkles Design (Standard), das `Theme.Material.Light` Design und das `Theme.Material.Light.DarkActionBar` Design: 
+Das Material Design enthält drei integrierte Varianten, die Sie in Ihrer APP verwenden können: das `Theme.Material` dunkles Design (Standard), das `Theme.Material.Light` Design und das `Theme.Material.Light.DarkActionBar` Design:
 
 [![Screenshots der Designs "dunkel", "Hell" und "darkaktionsbar"](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
@@ -215,11 +215,11 @@ Weitere Informationen über Ansichts Zustandsübergänge-Animationen in Android 
 
 Der Anzeige *Effekt* ist ein clippingkreis, mit dem der RADIUS geändert wird, um eine Ansicht anzuzeigen oder auszublenden. Sie können diesen Effekt steuern, indem Sie den anfänglichen und den letzten Radius des clippingkreises festlegen. Die folgende Sequenz von Screenshots veranschaulicht eine Darstellung des Effekts im Mittelpunkt des Bildschirms:
 
-[Bildschirm Screenshots von "Animation anzeigen"![Frame](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
+[Bildschirm Screenshots von "Animation anzeigen" ![Frame](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
 Die nächste Sequenz veranschaulicht eine Darstellung der Ergebnis Animation, die in der unteren linken Ecke des Bildschirms stattfindet:
 
-[Frame Screenshots der Clipping-Animation![Frame](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
+[Frame Screenshots der Clipping-Animation ![Frame](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
 Das Anzeigen von Animationen kann rückgängig gemacht werden. Das heißt, der clippingkreis kann verkleinert werden, um die Ansicht auszublenden, anstatt Sie zu vergrößern, um die Ansicht anzuzeigen.
 
@@ -343,7 +343,7 @@ Das Benachrichtigungssystem in Android 5,0 wurde mit einem neuen visuellen Forma
 
 ![Beispiel für eine nicht erweiterte Android 5,0-Benachrichtigung](lollipop-images/expanded-notification-contracted.png)
 
-Wenn in einer Benachrichtigung ein großes Symbol angezeigt wird (wie im obigen Beispiel gezeigt), zeigt Android 5,0 das kleine Symbol als einen Badge über dem großen Symbol an. 
+Wenn in einer Benachrichtigung ein großes Symbol angezeigt wird (wie im obigen Beispiel gezeigt), zeigt Android 5,0 das kleine Symbol als einen Badge über dem großen Symbol an.
 
 In Android 5,0 können Benachrichtigungen auch auf dem Sperrbildschirm des Geräts angezeigt werden.
 Hier sehen Sie beispielsweise einen Screenshot eines Sperr Bildschirms mit einer einzelnen Benachrichtigung:
@@ -352,7 +352,8 @@ Hier sehen Sie beispielsweise einen Screenshot eines Sperr Bildschirms mit einer
 
 Benutzer können auf dem Sperrbildschirm auf eine Benachrichtigung Doppel tippen, um das Gerät zu entsperren und zu der APP zu springen, die diese Benachrichtigung ausgelöst hat, oder die Benachrichtigung zu verwerfen. Benachrichtigungen verfügen über eine neue *Sichtbarkeits* Einstellung, die festlegt, wie viel Inhalt auf dem Sperrbildschirm angezeigt werden kann. Benutzer können auswählen, ob sensible Inhalte in Sperrbildschirm Benachrichtigungen angezeigt werden sollen.
 
-Android 5,0 führt ein neues Format für die Benachrichtigungs Präsentation mit hoher Priorität als *Heads-up*ein. Heads-up-Benachrichtigungen werden für einige Sekunden vom oberen Bildschirmrand nach unten und dann wieder in den Benachrichtigungs Schatten oben auf dem Bildschirm zurückgezogen. Heads-up-Benachrichtigungen ermöglichen es der Benutzeroberfläche des Systems, wichtige Informationen vor dem Benutzer zu platzieren, ohne die aktuell laufende Aktivität zu stören. Das folgende Beispiel veranschaulicht eine einfache Heads-up-Benachrichtigung, die oberhalb einer App angezeigt wird:
+Android 5,0 führt ein neues Format für die Benachrichtigungs Präsentation mit hoher Priorität als *Heads-up*ein. Heads-up-Benachrichtigungen werden für einige Sekunden vom oberen Bildschirmrand nach unten und dann wieder in den Benachrichtigungs Schatten oben auf dem Bildschirm zurückgezogen. Heads-up-Benachrichtigungen ermöglichen es der Benutzeroberfläche des Systems, wichtige Informationen vor dem Benutzer zu platzieren, ohne die aktuell laufende Aktivität zu stören.
+Das folgende Beispiel veranschaulicht eine einfache Heads-up-Benachrichtigung, die oberhalb einer App angezeigt wird:
 
 [![Beispiel für eine Heads-up-Benachrichtigung](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
@@ -377,7 +378,7 @@ Ausführliche Informationen zum Erstellen und starten von Benachrichtigungen mit
 
 Zusätzlich zu den oben beschriebenen neuen Funktionen für das Aussehen und fühlen werden von Android 5,0 neue APIs hinzugefügt, mit denen die Funktionen vorhandener Multimedia-, Speicher-und drahtlos-und Konnektivitätsfunktionen erweitert werden. Außerdem enthält Android 5,0 neue APIs, die Unterstützung für ein neues Auftrags Planer-Feature bieten.
 
-### <a name="camera"></a>Camera
+### <a name="camera"></a>Kamera
 
 Android 5,0 bietet mehrere neue APIs für erweiterte Kamerafunktionen. Der neue `Android.Hardware.Camera2`-Namespace umfasst Funktionen für den Zugriff auf einzelne Kamerageräte, die mit einem Android-Gerät verbunden sind. Außerdem `Android.Hardware.Camera2` jedes Kamera Gerät als Pipeline modelliert: es akzeptiert eine Aufzeichnungs Anforderung, erfasst das Abbild und gibt dann das Ergebnis aus. Diese Vorgehensweise ermöglicht es apps, mehrere Aufzeichnungs Anforderungen in eine Warteschlange zu stellen.
 
@@ -417,7 +418,7 @@ Außerdem können Sie die neue `Android.App.Notification.MediaStyle`-Klasse verw
 
 Weitere Informationen zu den neuen Funktionen für die Medienwiedergabe Steuerung in Android 5,0 finden Sie unter [Medien](https://developer.android.com/about/versions/android-5.0.html#Media).
 
-### <a name="storage"></a>Speicher
+### <a name="storage"></a>-Speicher
 
 Android 5,0 aktualisiert das Speicherzugriffs Framework, um Anwendungen das Arbeiten mit Verzeichnissen und Dokumenten zu vereinfachen:
 
@@ -447,7 +448,7 @@ Mit Android 5,0 wird eine neue `JobScheduler`-API eingeführt, mit der Benutzer 
 
 Weitere Informationen zu den neuen Auftrags Planungs-APIs in Android 5,0 finden Sie unter [Planen von Aufträgen](https://developer.android.com/preview/api-overview.html#JobScheduler).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 Dieser Artikel bietet einen Überblick über wichtige neue Features in Android 5,0 für xamarin. Android-App-Entwickler:
 
@@ -468,9 +469,8 @@ Dieser Artikel bietet einen Überblick über wichtige neue Features in Android 5
 Wenn Sie mit der xamarin Android-Entwicklung noch nicht vertraut sind, lesen Sie [Setup und Installation](~/android/get-started/installation/index.md) , um Ihnen den Einstieg in xamarin. Android zu erleichtern.
 [Hello, Android](~/android/get-started/hello-android/index.md) ist eine ausgezeichnete Einführung, um zu erfahren, wie Sie Android-Projekte erstellen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Android L Developer Preview](https://developer.android.com/preview/index.html)
 - [Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [Material Design](https://developer.android.com/preview/material/index.html)
-- [Grundlagen des Material Entwurfs](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1d49be1f4339b658e8202d4091b9a12b45d7b507
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7cf18934c70acf59213a697ab57b6c5e308e7b2a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031910"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725221"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>Änderungen an StoreKit in iOS 6
 
@@ -21,11 +21,11 @@ _IOS 6 hat zwei Änderungen an der Store-Kit-API eingeführt: die Möglichkeit, 
 Die wichtigsten Änderungen am Store Kit in iOS6 sind die folgenden beiden neuen Features:
 
 - **Anzeige von in-App-Inhalten & Einkauf** – Benutzer können apps, Musik, Bücher und andere iTunes-Inhalte kaufen und herunterladen, ohne Ihre APP zu überlassen. Sie können auch eine Verknüpfung mit ihren eigenen apps herstellen, um den Einkauf zu fördern, oder Sie können nur Überprüfungen und Bewertungen
-- **In-App-Käufe gehostete Inhalte** – Apple speichert und liefert die Inhalte, die ihren in-App-Kauf Produkten zugeordnet sind. Dadurch entfällt die Notwendigkeit eines separaten Servers zum Hosten Ihrer Dateien, das automatische Herunterladen von Downloads wird automatisch unterstützt, und Sie können das Schreiben weniger Code.
+- **In-App-Käufe gehostete Inhalte** – Apple speichert und liefert die Inhalte, die ihren in-App-Kauf Produkten zugeordnet sind. Dadurch entfällt die Notwendigkeit eines separaten Servers zum Hosten Ihrer Dateien, das automatische Herunterladen von Inhalten wird automatisch unterstützt, und Sie können weniger Code schreiben.
 
 Ausführliche Informationen zu den storekit-APIs finden Sie in den [in-App-Kauf](~/ios/platform/in-app-purchasing/index.md) Handbüchern.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>-Anforderungen
 
 Die in diesem Dokument erläuterten Store-Kit-Features erfordern IOS 6 und Xcode 4,5 zusammen mit xamarin. IOS 6,0.
 
@@ -51,7 +51,7 @@ Nachdem der `SKStoreProductViewController` angezeigt wurde, kann der Benutzer mi
 
 Einige Optionen in der `SKStoreProductViewController` erzwingen weiterhin, dass der Benutzer Ihre APP verlässt und die relevante Store-APP öffnet, z. b. das Klicken auf **Verwandte Produkte** oder den **Support** Link einer App.
 
-### <a name="skstoreproductviewcontroller"></a>Skstoreproductviewcontroller
+### <a name="skstoreproductviewcontroller"></a>SKStoreProductViewController
 
 Die API zum Anzeigen eines Produkts in einer beliebigen APP ist einfach: Es ist nur erforderlich, dass Sie eine `SKStoreProductViewController`erstellen und anzeigen. Führen Sie die folgenden Schritte aus, um ein Produkt zu erstellen und anzuzeigen:
 
@@ -100,14 +100,14 @@ Sie können eine Versions Überprüfung implementieren, um zu bestimmen, welcher
 if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
     // do iOS6+ stuff, using SKStoreProductViewController as shown above
 } else {
-    // don't do stuff requiring iOS 6.0, use the old syntax 
+    // don't do stuff requiring iOS 6.0, use the old syntax
     // (which will take the user out of your app)
     var nsurl = new NSUrl("http://itunes.apple.com/us/app/angry-birds/id343200656?mt=8");
     UIApplication.SharedApplication.OpenUrl (nsurl);
 }
 ```
 
-### <a name="errors"></a>Fehler
+### <a name="errors"></a>-Fehler
 
 Der folgende Fehler tritt auf, wenn die von Ihnen verwendete Apple-ID ungültig ist. Dies kann verwirrend sein, da es sich um ein Netzwerk-oder Authentifizierungs Problem handelt.
 
@@ -121,7 +121,7 @@ Entwickler, die das Store-Kit im Entwickler Portal von Apple lesen, sehen ein Pr
 
 Die für den `SKStoreProductViewController` erforderliche Apple-ID ist eine *Zahl* (nicht zu verwechseln mit Bündel-IDs wie "com. xamarin. mwc2012"). Es gibt verschiedene Möglichkeiten, wie Sie die Apple-ID für Produkte ermitteln können, die Sie anzeigen möchten, die unten aufgeführt sind:
 
-### <a name="itunesconnect"></a>Verbindung herstellen
+### <a name="itunesconnect"></a>iTunesConnect
 
 Für Anwendungen, die Sie veröffentlichen, ist es einfach, die **Apple-ID** in iTunes Connect zu finden:
 
@@ -131,7 +131,7 @@ Für Anwendungen, die Sie veröffentlichen, ist es einfach, die **Apple-ID** in 
 
 ### <a name="search-api"></a>Search-API
 
-Apple stellt eine dynamische Such-API bereit, um alle Produkte im App Store, iTunes und ibookstore abzufragen. Informationen zum Zugriff auf die Such-API finden Sie in den [Partner Ressourcen von Apple](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html), obwohl die API für beliebige Personen (nicht nur registrierte Unternehmen) verfügbar gemacht wird. Der resultierende JSON-Code kann analysiert werden, um die `trackId` zu ermitteln, die die Apple-ID ist, die mit `SKStoreProductViewController`verwendet werden soll.
+Apple stellt eine dynamische Such-API bereit, um alle Produkte im App Store, iTunes und ibookstore abzufragen. Informationen zum Zugriff auf die Such-API finden Sie in den Partner Ressourcen von Apple, obwohl die API für beliebige Personen (nicht nur registrierte Unternehmen) verfügbar gemacht wird. Der resultierende JSON-Code kann analysiert werden, um die `trackId` zu ermitteln, die die Apple-ID ist, die mit `SKStoreProductViewController`verwendet werden soll.
 
 Die Ergebnisse enthalten auch andere Metadaten, einschließlich Anzeigeinformationen und Grafik-URLs, mit denen das Produkt in Ihrer APP dargestellt werden kann.
 
@@ -142,7 +142,7 @@ Hier einige Beispiele:
 
 ### <a name="enterprise-partner-feed"></a>Enterprise-Partner Feed
 
-Apple bietet genehmigte Partnern ein vollständiges Daten Abbild aller Produkte in Form von herunterladbaren Flatfiles, die für die Datenbank bereit sind. Wenn Sie sich für den Zugriff auf den [Enterprise-Partner Feed](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-enterprise-partner-feed.html)qualifizieren, finden Sie die Apple-ID für ein beliebiges Produkt in diesem DataSet.
+Apple bietet genehmigte Partnern ein vollständiges Daten Abbild aller Produkte in Form von herunterladbaren Flatfiles, die für die Datenbank bereit sind. Wenn Sie sich für den Zugriff auf den Enterprise-Partner Feed qualifizieren, finden Sie die Apple-ID für ein beliebiges Produkt in diesem DataSet.
 
 Viele Benutzer des Enterprise-Partner Feeds sind Mitglieder des Partner [Programms](https://www.apple.com/itunes/affiliates) , das das verdienen von Aufträgen für den Produktverkauf ermöglicht. `SKStoreProductViewController` unterstützt keine Partner-IDs (zum Zeitpunkt des Schreibens).
 
@@ -170,8 +170,8 @@ und die Apple-ID ist **496963922**.
 Wenn Ihre in-App-Käufe aus herunter ladbarem Inhalt bestehen (z. b. Bücher oder andere Medien, Art und Konfiguration auf Spielebene oder andere große Dateien), dann werden diese Dateien auf dem Webserver gehostet, und apps mussten Code enthalten, um Sie sicher herunterzuladen. zulegen. Ab IOS 6 hostet Apple Ihre Dateien auf Ihren Servern, wodurch kein separater Server mehr benötigt wird. Die-Funktion ist nur für nicht nutzbare Produkte verfügbar (nicht für die Verwendbarkeit oder Abonnements). Zu den Vorteilen der Verwendung des Apple-Hostingdiensts gehören:
 
 - Sparen Sie die Kosten für Hosting & Bandbreite.
-- Wahrscheinlich skalierbarer als der Server Host, den Sie zurzeit verwenden. 
-- Weniger Code zum Schreiben, da Sie keine serverseitige Verarbeitung erstellen müssen. 
+- Wahrscheinlich skalierbarer als der Server Host, den Sie zurzeit verwenden.
+- Weniger Code zum Schreiben, da Sie keine serverseitige Verarbeitung erstellen müssen.
 - Das Herunterladen im Hintergrund ist für Sie implementiert.
 
 Hinweis: das Testen von gehosteten in-App-Kauf Inhalten im IOS-Simulator wird nicht unterstützt, daher müssen Sie mit einem echten Gerät testen.
@@ -269,7 +269,8 @@ Die einfachste Möglichkeit zum Hochladen von Inhalts Paketen ist das **Xcode Ar
 
 ![](changes-to-storekit-images/image13.png "Choose Archiven")
 
-Das Inhalts Paket wird dann wie unten dargestellt im Archiv angezeigt. Der archivistyp und das Symbol zeigen diese Zeile ist ein **in-App-Kauf Inhalts Archiv**. Klicken Sie auf überprüfen **...** zum Überprüfen des Inhalts Pakets auf Fehler, ohne den Upload tatsächlich auszuführen.
+Das Inhalts Paket wird dann wie unten dargestellt im Archiv angezeigt.
+Der archivistyp und das Symbol zeigen diese Zeile ist ein **in-App-Kauf Inhalts Archiv**. Klicken Sie auf überprüfen **...** zum Überprüfen des Inhalts Pakets auf Fehler, ohne den Upload tatsächlich auszuführen.
 
 [![](changes-to-storekit-images/image14.png "Validate the package")](changes-to-storekit-images/image14.png#lightbox)
 
@@ -452,7 +453,7 @@ public override void PaymentQueueUpdatedDownloads (SKPaymentQueue queue, SKDownl
 }
 ```
 
-### <a name="inapppurchasemanager-skproductsrequestdelegate"></a>Inapppurchasemanager (skproductenrequestdelegat)
+### <a name="inapppurchasemanager-skproductsrequestdelegate"></a>InAppPurchaseManager (SKProductsRequestDelegate)
 
 Diese Klasse enthält eine neue Methode `SaveDownload`, die aufgerufen wird, nachdem jeder Download erfolgreich abgeschlossen wurde.
 
@@ -469,7 +470,7 @@ public void SaveDownload (SKDownload download)
     // targetfolder will be "/Documents/com.xamarin.storekitdoc.montouchimages/" or something like that
     if (!System.IO.Directory.Exists (targetfolder))
         System.IO.Directory.CreateDirectory (targetfolder);
-    foreach (var file in System.IO.Directory.EnumerateFiles 
+    foreach (var file in System.IO.Directory.EnumerateFiles
              (System.IO.Path.Combine(download.ContentUrl.Path, "Contents"))) { // Contents directory is the default in .PKG files
         var fileName = file.Substring (file.LastIndexOf ("/") + 1);
         var newFilePath = System.IO.Path.Combine(targetfolder, fileName);
@@ -514,18 +515,17 @@ Wenn der Code `FinishTransaction` in der Zahlungs Warteschlange aufruft, bevor d
 
 Die icloud-Sicherungs Richtlinien von Apple deuten darauf hin, dass Nichtbenutzer Inhalte, die auf einfache Weise von einem Server wieder hergestellt werden sollen, *nicht* gesichert werden sollten (weil der icloud-Speicher unnötig genutzt werden würde). Weitere Informationen zum Festlegen des Backup-Attributs finden Sie in der [Dateisystem](~/ios/app-fundamentals/file-system.md) Dokumentation.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel wurden zwei neue Features von Store Kit in iOS6 eingeführt: der Erwerb von iTunes und anderen Inhalten innerhalb Ihrer APP und die Verwendung des Apple-Servers zum Hosten Ihrer eigenen in-App-Käufe. Diese Einführung sollte in Verbindung mit der vorhandenen [in-App-Kauf Dokumentation](~/ios/platform/in-app-purchasing/index.md) gelesen werden, um eine umfassende Abdeckung der Implementierung der Store-Kit-Funktionalität zu erhalten.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Storekit (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)
 - [In-App-Käufe](~/ios/platform/in-app-purchasing/index.md)
 - [Referenz zum storekit-Framework](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [Skstoreproductviewcontroller-Klassenreferenz](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
-- [iTunes Search-API-Referenz](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 - [Skdownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
-- [Skpaymentqueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
-- [Skproduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
-- [WWDC-Video: Verkaufen von Produkten mit dem Store-Kit](https://developer.apple.com/videos/wwdc/2012/?include=302#302)
+- [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
+- [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
+- [WWDC-Video: Verkauf von Produkten mit dem Store-Kit](https://developer.apple.com/videos/wwdc/2012/?include=302#302)

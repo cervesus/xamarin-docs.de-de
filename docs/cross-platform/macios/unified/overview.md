@@ -6,19 +6,19 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 372a51ba204b3b87d1bb3917b26c0ffb8acfceb6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dee7f4fa0b3d8fbd0b3ed57e885c9f5083d9875e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015135"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725296"
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified API
 
 Die Unified API von xamarin ermöglicht die gemeinsame Nutzung von Code zwischen Mac und IOS sowie die Unterstützung von 32-und 64-Bit-Anwendungen mit derselben Binärdatei. Der Unified API wird standardmäßig in neuen xamarin. IOS-und xamarin. Mac-Projekten verwendet.
 
 > [!IMPORTANT]
-> Das xamarin-Classic API, das dem Unified API vorangestellt ist, ist veraltet. 
+> Das xamarin-Classic API, das dem Unified API vorangestellt ist, ist veraltet.
 >
 > - Die letzte Version von xamarin. IOS zur Unterstützung der Classic API ("MonoTouch. dll") war xamarin. IOS 9,10.
 > - Xamarin. Mac unterstützt zwar weiterhin die Classic API, wird jedoch nicht mehr aktualisiert. Da sie veraltet ist, sollten Entwickler ihre Anwendungen in die Unified API verschieben.
@@ -98,7 +98,7 @@ Nuget-Pakete, die xamarin. IOS zuvor über das Classic API unterstützte, veröf
 Der Unified API führt einen neuen Platt Form Bezeichner für kompatible Pakete ein ( **xamarin. iOS10**). Vorhandene nuget-Pakete müssen aktualisiert werden, um Unterstützung für diese Plattform hinzuzufügen, indem Sie für die Unified API erstellt werden.
 
 > [!IMPORTANT]
-> Wenn ein Fehler in der Form _"Fehler 3 kann nicht sowohl ' MonoTouch. dll ' als auch ' xamarin. IOS. dll ' im gleichen xamarin. IOS-Projekt enthalten ist, wird explizit auf '" "" "" "" "" "" ". neutral, PublicKeyToken = null ' "_ nach der Umstellung der Anwendung in die vereinheitlichten APIs liegt dies in der Regel daran, dass eine Komponente oder ein nuget-Paket im Projekt vorhanden ist, das nicht auf den Unified API aktualisiert wurde. Sie müssen die vorhandene Komponente bzw. nuget entfernen, ein Update auf eine Version durchführen, die die vereinheitlichten APIs unterstützt, und einen sauberen Build durchführen.
+> Wenn Sie einen Fehler im _Format "Fehler 3 können nicht sowohl ' MonoTouch. dll ' als auch ' xamarin. IOS. dll ' in dasselbe xamarin. IOS-Projekt einschließen (xamarin). auf" IOS. dll "wird explizit verwiesen, während" MonoTouch. dll "von" xxx, Version = 0.0.000, Culture = neutral, PublicKeyToken = null ""_ nach der Umstellung der Anwendung in die vereinheitlichten APIs referenziert wird. Dies liegt in der Regel daran, dass eine Komponente oder ein nuget-Paket im Projekt vorhanden ist, das nicht auf den Unified API aktualisiert wurde Sie müssen die vorhandene Komponente bzw. nuget entfernen, ein Update auf eine Version durchführen, die die vereinheitlichten APIs unterstützt, und einen sauberen Build durchführen.
 
 ### <a name="the-road-to-64-bits"></a>Der Weg zu 64 Bits
 
@@ -134,7 +134,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>Arrays und System. Collections. Generic
 
-Da C# Indexer einen Typ von`int`erwarten, müssen Sie `nint`Werte explizit in`int`umwandeln, um auf die Elemente in einer Auflistung oder einem Array zuzugreifen. Beispiel:
+Da C# Indexer einen Typ von `int`erwarten, müssen Sie `nint` Werte explizit in `int` umwandeln, um auf die Elemente in einer Auflistung oder einem Array zuzugreifen. Beispiel:
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -228,7 +228,7 @@ Früher war dies ein Compilerfehler, weil ein `Action` `NSAction`nicht zugewiese
 
 ### <a name="custom-delegates-replaced-with-actiont"></a>Benutzerdefinierte Delegaten wurden durch Action\<t ersetzt >
 
-In **vereinheitlichten** einigen einfachen (z. b. einem Parameter) wurden .net-Delegaten durch `Action<T>`ersetzt. Die
+In **vereinheitlichten** einigen einfachen (z. b. einem Parameter) wurden .net-Delegaten durch `Action<T>`ersetzt. Beispiel:
 
 ```csharp
 public delegate void NSNotificationHandler (NSNotification notification);
@@ -311,13 +311,8 @@ Geringe Auswirkung: in den meisten Fällen wirkt sich diese Änderung nicht auf 
 
 Weitere Änderungen, die Sie beachten sollten, sind in den [Tipps zum Aktualisieren von apps auf die Unified API](~/cross-platform/macios/unified/updating-tips.md)aufgeführt.
 
-## <a name="sample-code"></a>Beispielcode
 
-Seit dem 31. Juli haben wir die Ports der IOS-Beispiele für diese neue API in der `magic-types` Branch in " [MonoTouch-Samples](https://github.com/xamarin/monotouch-samples/commits/magic-types)" veröffentlicht.
-
-Für Mac überprüfen wir die Beispiele sowohl im [Mac-Samples-](https://github.com/xamarin/mac-samples) Repository (mit neuen APIs in Mavericks/Yosemite) als auch in den 32/64-Bit-Beispielen in der Magic-Types-Verzweigung [Mac-Samples](https://github.com/xamarin/monotouch-samples/commits/magic-types).
-
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Aktualisieren von IOS-apps](updating-ios-apps.md)
 - [Aktualisieren von Mac-apps](updating-mac-apps.md)

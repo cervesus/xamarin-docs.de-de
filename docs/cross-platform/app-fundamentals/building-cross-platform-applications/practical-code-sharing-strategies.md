@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 2ad576f10fc0af5d96396d90b3e502e21da1182d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 0e37e138607fb0e00fbdc463ac7c53facf81395d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728238"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723630"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>Teil 5: Praktische Strategien für die Codefreigabe
 
@@ -272,8 +272,6 @@ Aktionen, die in diesen Situationen eine mobile app benötigt möglicherweise ge
 - Wenn die Verbindung 3 G beträgt, Anwendungen anderes Verhalten aufweisen (z. B. Apple lässt keine apps mehr als 20Mb über 3 G heruntergeladen werden). Anwendungen können diese Informationen verwenden, um warnen den Benutzer über eine übermäßige Download ein Timeout beim Abrufen von großer Dateien.
 - Auch wenn das Netzwerk verfügbar ist, ist es empfiehlt sich, die Konnektivität mit dem Zielserver zu überprüfen, bevor andere Anforderungen initiiert. Dies zu verhindern, dass der app Netzwerkvorgänge zeitüberschreitungen wiederholt und können auch eine informativere Fehlermeldung, die dem Benutzer angezeigt werden.
 
-Gibt es eine [Xamarin.iOS-Beispiel](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample) verfügbar (die basiert auf der Apple [Erreichbarkeit Beispielcode](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html) ) zum Erkennen von netzwerkverfügbarkeit.
-
 ## <a name="webservices"></a>WebServices
 
 Finden Sie in unserer Dokumentation auf [arbeiten mit Webdiensten](~/cross-platform/data-cloud/web-services/index.md), die Zugriff auf REST, enthält, SOAP- und WCF-Endpunkte, die unter Verwendung von Xamarin.iOS. Es ist möglich, webdienstanforderungen Hand-selbst zu erstellen und Analysieren von Antworten, jedoch stehen Ihnen Bibliotheken zur Verfügung, um dies viel einfacher, einschließlich Azure, RestSharp und ServiceStack. Selbst grundlegende WCF-Dienstvorgänge können in Xamarin-apps zugegriffen werden.
@@ -300,8 +298,6 @@ Es gibt auch ein Xamarin.iOS-Codeausschnitt in unserer [Web Services-Dokumentati
 Im Gegensatz zu RestSharp ist die ServiceStack sowohl eine serverseitige Lösung zum Hosten von einem Webdienst als auch für eine Clientbibliothek, die in mobilen Anwendungen den Zugriff auf diese Dienste implementiert werden kann.
 
 Die [ServiceStack Website](http://servicestack.net/) erläutert den Zweck des Projekts und Links zum Dokument und Codebeispiele. Die Beispiele umfassen eine vollständige Implementierung von serverseitigen Webdienst als auch für verschiedene Client-Side-Anwendungen, die darauf zugreifen können.
-
-Gibt es eine [Xamarin.iOS-Beispiel](http://www.servicestack.net/monotouch/remote-info/) auf die Website ServiceStack und einen Codeausschnitt in unserer [Web Services-Dokumentation](~/cross-platform/data-cloud/web-services/index.md).
 
 ### <a name="wcf"></a>WCF
 

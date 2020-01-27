@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 9aaecb8c63ff28111097dce81954f523b4c7731b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545607"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725212"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
@@ -38,7 +38,7 @@ Die Darstellung der den Beginn und Ende von Zeilen wird aufgerufen, eine *Linien
 - `Square`
 - `Round`
 
-Diese werden am besten mit einem Beispiel veranschaulicht. Die **SkiaSharp-Linien und-Pfade** Teil der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm beginnt mit einer Seite mit dem Titel **Strichenden** basierend auf der [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) Klasse. Auf dieser Seite wird eine `PaintSurface` -Ereignishandler, der die drei Elemente von durchläuft die `SKStrokeCap` Enumeration, die den Namen des Enumerationsmembers angezeigt, und Zeichnen einer Linie mit diese Obergrenze, Strich:
+Diese werden am besten mit einem Beispiel veranschaulicht. Die **SkiaSharp-Linien und-Pfade** Teil der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm beginnt mit einer Seite mit dem Titel **Strichenden** basierend auf der [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) Klasse. Auf dieser Seite wird eine `PaintSurface` -Ereignishandler, der die drei Elemente von durchläuft die `SKStrokeCap` Enumeration, die den Namen des Enumerationsmembers angezeigt, und Zeichnen einer Linie mit diese Obergrenze, Strich:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ Die `points` -Parameter ist ein Array von `SKPoint` Werte und `mode` ist ein Mit
 - `Lines` jedem Standortpaar der Verbindung
 - `Polygon` die Verbindung alle aufeinander folgenden Punkten
 
-Die **mehrere Zeilen** Seite veranschaulicht diese Methode. Die [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) Datei instanziiert zwei `Picker` Ansichten, mit denen Sie auswählen, ein Mitglied der `SKPointMode` Enumeration und ein Mitglied der `SKStrokeCap` Enumeration:
+Die **mehrere Zeilen** Seite veranschaulicht diese Methode. Die [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml) Datei instanziiert zwei `Picker` Ansichten, mit denen Sie auswählen, ein Mitglied der `SKPointMode` Enumeration und ein Mitglied der `SKStrokeCap` Enumeration:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

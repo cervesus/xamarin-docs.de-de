@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 2eea51764e0e0f13c1a1a91db664872a67420d33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0c273797d7512f062260e49e0f71fdd1132f037b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020557"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723803"
 ---
 # <a name="troubleshooting-bindings"></a>Problembehandlung von Bindungen
 
 _In diesem Artikel werden häufige Server Fehler zusammengefasst, die beim Erstellen von Bindungen auftreten können, sowie mögliche Ursachen und empfohlene Möglichkeiten, diese zu beheben._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Das Binden einer Android-Bibliothek (eine **. Aar** -oder **jar**-Datei) ist selten eine einfache Angelegenheit. Dies erfordert in der Regel zusätzlichen Aufwand, um Probleme zu beheben, die sich aus den Unterschieden zwischen Java und .net ergeben.
 Diese Probleme verhindern, dass xamarin. Android die Android-Bibliothek bindet und als Fehlermeldungen im Buildprotokoll angezeigt wird. Dieses Handbuch enthält einige Tipps zur Problembehandlung, eine Liste der gängigeren Probleme/Szenarios sowie mögliche Lösungen für eine erfolgreiche Bindung der Android-Bibliothek.
@@ -52,7 +52,7 @@ Nachdem Sie die Android-Bibliothek dekompiliert haben, untersuchen Sie den Quell
   - Der Klassenname enthält eine **$** , d. h. **eine $.-Klasse** .
   - Der Klassenname ist vollständig in Kleinbuchstaben gefährdet, d. h. **eine.-Klasse** .      
 
-- **`import`-Anweisungen für nicht referenzierte Bibliotheken** &ndash; die Bibliothek ohne referenzierte Bibliothek identifizieren und diese Abhängigkeiten dem xamarin. Android-Bindungs Projekt mit der **Buildaktion** **referencejar** oder **embedddedreferencejar hinzufügen.** .
+- **`import`-Anweisungen für nicht referenzierte Bibliotheken** &ndash; die Bibliothek ohne referenzierte Bibliothek identifizieren und diese Abhängigkeiten dem xamarin. Android-Bindungs Projekt mit der **Buildaktion** **referencejar** oder **embedddedreferencejar**hinzufügen.
 
 > [!NOTE]
 > Das dekompilieren einer Java-Bibliothek ist möglicherweise nicht zulässig oder unterliegt den rechtlichen Beschränkungen, die auf lokalen Gesetzen oder der Lizenz basieren, in der die Java-Bibliothek veröffentlicht wurde. Eintragen Sie ggf. die Dienste eines juristischen Spezialisten ein, bevor Sie versuchen, eine Java-Bibliothek zu dekompilieren und den Quellcode zu überprüfen.
@@ -157,7 +157,7 @@ public interface MediationInterstitialListener {
 }
 ```
 
-Dies ist beabsichtigt, damit lange Namen für Ereignis Argument Typen vermieden werden. Um diese Konflikte zu vermeiden, sind einige metadatentransformationen erforderlich. Bearbeiten Sie [**Transforms\Metadata.XML**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml) , und fügen Sie ein `argsType`-Attribut für eine der Schnittstellen (oder für die Schnittstellen Methode) hinzu:
+Dies ist beabsichtigt, damit lange Namen für Ereignis Argument Typen vermieden werden. Um diese Konflikte zu vermeiden, sind einige metadatentransformationen erforderlich. Bearbeiten Sie **Transforms\Metadata.XML** , und fügen Sie ein `argsType`-Attribut für eine der Schnittstellen (oder für die Schnittstellen Methode) hinzu:
 
 ```xml
 <attr path="/api/package[@name='com.google.ads.mediation']/
@@ -204,7 +204,7 @@ Dies ist ein Problem, das bei der Bindung von Java-Methoden mit kovarianten Rüc
   }
   ```
 
-- Entfernen Sie die Kovarianz aus C# dem generierten Code. Dies umfasst das Hinzufügen der folgenden Transformation in **Transforms\Metadata.XML** , die dazu C# führt, dass der generierte Code den Rückgabetyp`Java.Lang.Object`hat:
+- Entfernen Sie die Kovarianz aus C# dem generierten Code. Dies umfasst das Hinzufügen der folgenden Transformation in **Transforms\Metadata.XML** , die dazu C# führt, dass der generierte Code den Rückgabetyp `Java.Lang.Object`hat:
 
   ```xml
   <attr
@@ -231,17 +231,17 @@ In Java ist es nicht erforderlich, dass eine abgeleitete Klasse die gleiche Sich
 
 Einige Bindungs Projekte können auch von Funktionen in einer **. so** -Bibliothek abhängen. Es ist möglich, dass xamarin. Android die **. so** -Bibliothek nicht automatisch lädt. Wenn der umschließende Java-Code ausgeführt wird, kann xamarin. Android den jni-Befehl nicht ausführen, und die Fehlermeldung _java. lang. unbefriefiedlinkerror: Native Methode wurde nicht gefunden:_ wird in der logcat out für die Anwendung angezeigt.
 
-Die Behebung hierfür besteht darin, die **. so** -Bibliothek mit einem `Java.Lang.JavaSystem.LoadLibrary`-Aufrufvorgang manuell zu laden. Angenommen, ein xamarin. Android-Projekt hat eine freigegebene Bibliothek libpocketsphinx_jni, die im Bindungs Projekt mit einer Buildaktion von **embeddednativelibrary**enthalten ist, den folgenden Code Ausschnitt (vor der Verwendung der freigegebenen Bibliothek ausgeführt) **.** lädt die **. so** -Bibliothek:
+Die Behebung hierfür besteht darin, die **. so** -Bibliothek mit einem `Java.Lang.JavaSystem.LoadLibrary`-Aufrufvorgang manuell zu laden. Angenommen, ein xamarin. Android-Projekt verfügt über eine freigegebene Bibliothek **libpocketsphinx_jni.** diese ist im Bindungs Projekt mit einer Buildaktion von **embeddednativelibrary**enthalten, und der folgende Code Ausschnitt (vor der Verwendung der freigegebenen Bibliothek ausgeführt) lädt die **. so** -Bibliothek:
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel haben wir allgemeine Problem Behandlungs Probleme im Zusammenhang mit Java-Bindungen aufgelistet und erläutert, wie Sie aufgelöst werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Bibliotheks Projekte](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md)

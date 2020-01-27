@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c25ea0878906b31028143ff1ad689db56b197458
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a6ec3c34afc0c017d5b37eec080f7f9bad08c0c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032266"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725404"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Weitere Änderungen an IOS 10-Frameworks
 
@@ -23,7 +23,7 @@ _In diesem Artikel werden zusätzliche, kleinere Änderungen oder Verbesserungen
 Das AVFoundation-Framework umfasst die folgenden Verbesserungen:
 
 - In ios 10 muss der Entwickler nicht mehr unterschiedliche [avplayeritem](xref:AVFoundation.AVPlayerItem) -Verhaltensweisen basierend auf dem Inhaltstyp implementieren. Legen Sie einfach die `Rate`-Eigenschaft fest, und AVFoundation bestimmt, wann genug Inhalt für die Wiedergabe ohne Stalling verfügbar ist.
-- Die neue [avcapturephotooutput](xref:AVFoundation.AVCaptureFileOutput) -Klasse ersetzt die veraltete `AVCaptureStillImageOutput`-Klasse und stellt eine einheitliche Methode für die Verarbeitung aller Bild Verarbeitungs Workflows bereit, indem eine ausgereifte Kontrolle und Überwachung des Aufzeichnungsprozesses und die Unterstützung neuer Funktionen bereitgestellt werden. als livefotos und das RAW-Erfassungs Format.
+- Die neue [avcapturephotooutput](xref:AVFoundation.AVCaptureFileOutput) -Klasse ersetzt die veraltete `AVCaptureStillImageOutput`-Klasse und stellt eine einheitliche Methode für die Verarbeitung aller Bild Verarbeitungs Workflows bereit, indem eine ausgereifte Kontrolle und Überwachung des Aufzeichnungsprozesses und Unterstützung für neue Funktionen wie livefotos und das RAW-Erfassungs Format bereitgestellt wird.
 - Die neue `AVPlayerLooper`-Klasse vereinfacht die Schleife eines bestimmten Mediums während der Wiedergabe.
 - Die `AVAssetDownloadURLSession`-Klasse ermöglicht das herunterladen und spätere Wiedergabe von Fairplay-verschlüsselten HLS-Datenströmen.
 - Standardmäßig unterstützt die [avcapturesession](xref:AVFoundation.AVCaptureSession) -Klasse automatisch eine breit farbige und breit gefasste Erfassung, wenn Sie von der Gerätehardware unterstützt wird. Weitere Informationen finden Sie in der [Referenz zur IOS-Gerätekompatibilität](https://developer.apple.com/library/prerelease/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013599) von Apple.
@@ -50,7 +50,7 @@ IOS 10 nimmt die folgenden Verbesserungen am Core-Image-Framework vor:
 
 - Der Entwickler kann nun Bilder in einem Farbraum außerhalb des Arbeits Farbraums des Kern Bild Kontexts verarbeiten, indem er vor und nach der Verarbeitung in den und aus dem Farb Raum umrechnet.
 - Für IOS-Geräte, die A8-oder A9-CPUs verwenden, wird das Rohbild Format jetzt unterstützt. Das Core-Image bietet jetzt Unterstützung für das Decodieren von rohimages von der integrierten iSight-Kamera oder von einer Drittanbieter Kamera. Verwenden Sie die Methoden `FilterWithImageData` oder `FilterWithImageURL` der [cifilter](xref:CoreImage.CIFilter) -Klasse, um unformatierte Images zu verarbeiten.
-- Es wurden mehrere renderingleistungserweiterungen für das `UIImage` Rendering (bei der Unterstützung durch Core Image Image-Speicher) in `UIImageView` Objekten vorgenommen. 
+- Es wurden mehrere renderingleistungserweiterungen für das `UIImage` Rendering (bei der Unterstützung durch Core Image Image-Speicher) in `UIImageView` Objekten vorgenommen.
 - `UIImage`-Objekte, die als Wide-Gamut gekennzeichnet sind, werden in `UIImageView` Objekten auf IOS-Geräten, die Breite Farben unterstützen, als Breite Farbe dargestellt.
 - Kernbild-Kernelcode kann jetzt bestimmte Pixel Ausgabeformate anfordern.
 - Die `ImageWithExtent`-Methode der [cifilter](xref:CoreImage.CIFilter) -Klasse kann verwendet werden, um eine benutzerdefinierte Verarbeitung in den Filter Vorgang einzufügen. Das Core-Image Ruft den gegebenen Rückruf zwischen Filtern auf, wenn ein Bild für die Ausgabe oder Anzeige verarbeitet wird.
@@ -71,9 +71,9 @@ Neu bei IOS 10, das Core Motion Framework umfasst Peer Domain-Ereignisse, die ei
 
 Die folgenden Verbesserungen wurden an Foundation Framework für IOS 10 vorgenommen:
 
-- Verwenden Sie die neue [NS-](https://developer.apple.com/reference/foundation/nsmeasurementformatter) Klasse, um lokalisierte Messungen zum Anzeigen für den Endbenutzer zu formatieren.
+- Verwenden Sie die neue [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)-Klasse, um lokalisierte Messungen zu formatieren, die dem Endbenutzer angezeigt werden sollen.
 - Verwenden Sie die neue [nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval) -Klasse, um Datums-und Zeitintervall Berechnungen zu erstellen, z. b. Dauer Zeiten, zum Vergleichen von Intervallen und zum Testen von Intervall interabschnitten.
-- Verwenden Sie die neue [nsmeasure](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse, um zwischen verschiedenen Maßeinheiten (User Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
+- Verwenden Sie die neue [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)-Klasse, um zwischen verschiedenen Maßeinheiten (Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
 
 - Verwenden Sie die neuen [nsunit](https://developer.apple.com/reference/foundation/nsunit) -und [nsdimension](https://developer.apple.com/reference/foundation/nsdimension) -Klassen, um bestimmte UOMS darzustellen.
 - Der [nslocal](https://developer.apple.com/reference/foundation/nslocale) -Klasse wurden mehrere neue Eigenschaften hinzugefügt, um lokale Informationen und die verfügbaren Anzeige Formate abzurufen.
@@ -82,7 +82,7 @@ Die folgenden Verbesserungen wurden an Foundation Framework für IOS 10 vorgenom
 
 Die folgenden Verbesserungen wurden an dem GameKit-Framework in ios 10 vorgenommen:
 
-- Die **Game Center-App** wurde als veraltet markiert und von Ios entfernt. Wenn die APP GameKit verwendet, _muss_ Sie eine eigene Schnittstelle zum Anzeigen von GameKit-Features, z. b. Bestenlisten usw., enthalten. 
+- Die **Game Center-App** wurde als veraltet markiert und von Ios entfernt. Wenn die APP GameKit verwendet, _muss_ Sie eine eigene Schnittstelle zum Anzeigen von GameKit-Features, z. b. Bestenlisten usw., enthalten.
 - Ein neuer icloud-Kontotyp wurde von der [gkcloudplayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) -Klasse implementiert.
 - Die neue Klasse " [gkgamesession](https://developer.apple.com/reference/gamekit/gkgamesession) " stellt eine generalisierte Lösung für die Verwaltung von persistenten Daten speichern auf Game Center bereit. `GKGameSession` verwaltet eine Liste von Playern, und die APP ist dafür verantwortlich, wie und wann das Teilnehmer Datum gespeichert, abgerufen oder zwischen den Playern ausgetauscht wird. In vielen Fällen können Spielsitzungen vorhandene Turn-basierte Übereinstimmungen, Echt Zeit Übereinstimmungen oder persistente Spiel Speichermethoden ersetzen.
 
@@ -165,7 +165,7 @@ Die folgenden Verbesserungen wurden an dem scenekit-Framework in ios 10 vorgenom
 - Scenekit ist nun mit allen Farben übereinstimmen, indem die Farbprofil Informationen gelesen werden.
 - Scenekit interpretiert Farbkomponenten Werte in einem linearen RGB-Farbraum für alle shadertypen.
 - Sowohl lineares Farb Raum Rendering als auch breit Farben können deaktiviert werden, indem die `SCNDisableLinearSpaceRendering` und `SCNDisableWideGamut` Schlüssel im `Info.plist`der APP angegeben werden.
-- Erstellen Sie beliebige Polygon-Prime (entweder aus Dateien geladen oder Programm gesteuert generiert), um die Geometrie mit der neuen [scngeometryprimitivetyetpolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon) -Klasse anzugeben.
+- Erstellen Sie beliebige Polygon-Prime (entweder aus Dateien geladen oder Programm gesteuert generiert), um die Geometrie mit der neuen [scngeometryprimitivetyetpolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon) -Klasse anzugeben.
 - Da scenekit Farbprofil Informationen in Textur Bildern liest und anpasst, verwenden Sie für alle Images Asset-Kataloge, um sicherzustellen, dass diese Informationen bereitgestellt werden.
 
 ## <a name="spritekit-enhancements"></a>Spritekit-Erweiterungen
@@ -192,7 +192,7 @@ Informationen zur Verwendung finden Sie im [iostenthree-Beispiel](https://docs.m
 Die folgenden Verbesserungen wurden an dem UIKit-Framework in ios 10 vorgenommen:
 
 - Die neue [uipasteboard](xref:UIKit.UIPasteboard) -API bietet neue Optionen (z. b. Lebensdauer Einschränkungen) und deklariert automatisch kompatible Inhaltstypen für allgemeine Klassentypen.
-- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt und kann mit Gesten verknüpft werden. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der [uitimingcurrveprovider-Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und [ Uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) für weitere Informationen.
+- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt und kann mit Gesten verknüpft werden. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der [uitimingcurrveprovider-Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und der [uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) .
 - Die neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` ermöglichen der Entwickler-App, eine benutzerdefinierte Schnittstelle für Peek-und Pop-Vorgänge bereitzustellen.
 - Die neue `UIAccessibilityCustomRotor`-Klasse ermöglicht der APP, benutzerdefinierte kontextspezifische Funktionen für Hilfstechnologien wie Voice over bereitzustellen.
 - Verwenden Sie die Symbole `UIAccessibilityIsAssistiveTouchRunning` und `UIAccessibilityAssistiveTouchStatusDidChangeNotification`, um zu bestimmen, ob assistivetouch aktiviert ist.
@@ -211,7 +211,7 @@ Die folgenden Verbesserungen wurden an dem WebKit-Framework in ios 10 vorgenomme
 
 - Die Unterstützung von Peek und Pop wurde der `WKWebView`-Klasse hinzugefügt. Verwenden Sie die `ShouldPreviewElement`-Methode, um zu bestimmen, ob eine bestimmte Webansicht eine Vorschau anzeigen soll.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [IOS 10-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [Neuerungen in ios 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277248"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -46,7 +46,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: ListView unter iOS und Android](../images/create-listview.png "ListView: Anzeige von Daten")](../images/create-listview-large.png#lightbox "ListView: Anzeige von Daten")
+    [![Screenshot: Listenansicht unter iOS und Android](../images/create-listview.png "Listenansicht mit Daten")](../images/create-listview-large.png#lightbox "Listenansicht mit Daten")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -86,6 +86,6 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
 
     In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`ListView`](xref:Xamarin.Forms.Image)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft legt fest, welche Elemente angezeigt werden sollen. Die Elemente werden wiederum über ein Array aus Zeichenfolgen definiert.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: ListView unter iOS und Android](../images/create-listview.png "ListView: Anzeige von Daten")](../images/create-listview-large.png#lightbox "ListView: Anzeige von Daten")
+    [![Screenshot: Listenansicht unter iOS und Android](../images/create-listview.png "Listenansicht mit Daten")](../images/create-listview-large.png#lightbox "Listenansicht mit Daten")

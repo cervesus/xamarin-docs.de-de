@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: ff3a0477c6b8a2bf30693ff05a4a992ad053d2b9
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107246"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -21,4 +21,4 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie Text einer [`Label`](xref:Xamarin.Forms.Label) anzeigen können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-[![Screenshot unter iOS und Android von einer Bezeichnung, die formatierten Text anzeigt](../images/label-formatted-text.png "Bezeichnung mit formatiertem Text")](../images/label-formatted-text-large.png#lightbox "Bezeichnung mit formatiertem Text")
+[![Screenshot: Bezeichnung mit formatiertem Text unter iOS und Android](../images/label-formatted-text.png "Bezeichnung mit formatiertem Text")](../images/label-formatted-text-large.png#lightbox "Bezeichnung mit formatiertem Text")

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61037630"
 ---
 Zuvor wurde die [`ListView`](xref:Xamarin.Forms.ListView) mithilfe von Datenbindung mit Daten gefüllt. Trotz Datenbindung zu einer Auflistung, in der jedes Objekt der Auflistung mehrere Datenelemente definiert hat, wurde nur ein Datenelement pro Objekt angezeigt (die `Name`-Eigenschaft des `Monkey`-Objekts).
@@ -58,7 +58,7 @@ In dieser Übung ändern Sie das **ListViewTutorial**-Projekt, damit die [`ListV
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: ListView, deren Elemente mit einer Datenvorlage erstellt wurden](../images/customize-cell-appearance.png "ListView, die Daten mit Vorlagen anzeigt")](../images/customize-cell-appearance-large.png#lightbox "ListView, die Daten mit Vorlagen anzeigt")
+    [![Screenshot: Listenansicht, deren Elemente mithilfe einer Datenvorlage erstellt werden](../images/customize-cell-appearance.png "Listenansicht mit Daten aus Vorlagen")](../images/customize-cell-appearance-large.png#lightbox "Listenansicht mit Daten aus Vorlagen")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -106,6 +106,6 @@ In dieser Übung ändern Sie das **ListViewTutorial**-Projekt, damit die [`ListV
 
     Weitere Informationen zur Darstellung der [`ListView`](xref:Xamarin.Forms.ListView)-Zelle finden Sie unter [Customizing ListView Cell Appearance (Anpassen der ListView-Zellendarstellung)](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md). Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: ListView, deren Elemente mit einer Datenvorlage erstellt wurden](../images/customize-cell-appearance.png "ListView, die Daten mit Vorlagen anzeigt")](../images/customize-cell-appearance-large.png#lightbox "ListView, die Daten mit Vorlagen anzeigt")
+    [![Screenshot: Listenansicht, deren Elemente mithilfe einer Datenvorlage erstellt werden](../images/customize-cell-appearance.png "Listenansicht mit Daten aus Vorlagen")](../images/customize-cell-appearance-large.png#lightbox "Listenansicht mit Daten aus Vorlagen")

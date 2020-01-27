@@ -7,18 +7,18 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 737e242e14778f38405845541b2ca30d27c3cf5a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e4746ed94a008d382ce15bb9cd7c52365d9ba574
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334622"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725528"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Zusammenfassung der Kapitel 13. Bitmaps
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 
-> [!NOTE] 
+> [!NOTE]
 > Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
 
 Die Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) Element wird in eine Bitmap. Alle Xamarin.Forms-Plattformen unterstützen die JPEG, PNG, GIF und BMP-Dateiformate.
@@ -32,7 +32,7 @@ Bitmaps in Xamarin.Forms stammen aus vier Stellen:
 
 Bitmapressourcen in der freigegebenen Bibliothek sind plattformunabhängig, während Bitmapressourcen in die Plattformprojekte plattformspezifisch sind.
 
-> [!NOTE] 
+> [!NOTE]
 > Der Text des Buchs stellt Verweise auf Portable Class Libraries, die von .NET Standard-Bibliotheken ersetzt wurden. Der Beispielcode aus dem Buch wurde zur Verwendung von .NET standard-Bibliotheken konvertiert.
 
 Die Bitmap wird angegeben, indem die [ `Source` ](xref:Xamarin.Forms.Image.Source) Eigenschaft `Image` auf ein Objekt des Typs [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), eine abstrakte Klasse mit drei ableitungen:
@@ -86,16 +86,16 @@ Der beste Ansatz ist, beginnen mit einer Bitmap, die länger als die Phone Breit
 
 Die [ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty) zeigt Kapitel 7 des Lewis Carroll *Abenteuer von Alice im Wunderland* mit den ursprünglichen Abbildungen von John Tenniel:
 
-[![Dreifacher Screenshot mad Tee Partei](images/ch13fg16-small.png "Mad Hatters Tee Partei Buch Text")](images/ch13fg16-large.png#lightbox "Mad Hatters Tee Partei Buch Text")
+[![Dreifacher Screenshot der Mad-Tea-Party](images/ch13fg16-small.png "Mad Hatters Tea Party Book Text")](images/ch13fg16-large.png#lightbox "Mad Hatters Tea Party Book Text")
 
 ### <a name="browsing-and-waiting"></a>Durchsuchen, und warten
 
 Die [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) Beispiel ermöglicht dem Benutzer, durchsuchen die vorhandene Images, die auf der Xamarin-Website gespeichert. Er verwendet den .NET [ `WebRequest` ](xref:System.Net.WebRequest) Klasse, um eine JSON-Datei mit der Liste von Bitmaps zu laden.
 
 > [!NOTE]
-> Xamarin.Forms-Programme verwenden sollten [ `HttpClient` ](xref:System.Net.Http.HttpClient) statt [ `WebRequest` ](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet. 
+> Xamarin.Forms-Programme verwenden sollten [ `HttpClient` ](xref:System.Net.Http.HttpClient) statt [ `WebRequest` ](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet.
 
-Das Programm verwendet eine [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator) um anzugeben, dass etwas passiert. Wie jede Bitmap lädt, die nur-Lese- [ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading) Eigenschaft `Image` ist `true`. Die `IsLoading` Eigenschaft wird durch eine bindbare Eigenschaft und gesichert, sodass eine `PropertyChanged` Ereignis wird ausgelöst, wenn diese Eigenschaft geändert wird. Die Anwendung fügt einen Handler an dieses Ereignis und verwendet die aktuelle Einstellung der `IsLoaded` Festlegen der [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) Eigenschaft der `ActivityIndicator`.
+Das Programm verwendet eine [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator) um anzugeben, dass etwas passiert. Wie jede Bitmap lädt, die nur-Lese- [ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading) Eigenschaft `Image` ist `true`. Die `IsLoading` Eigenschaft wird durch eine bindbare Eigenschaft und gesichert, sodass eine `PropertyChanged` Ereignis wird ausgelöst, wenn diese Eigenschaft geändert wird. Die Anwendung fügt einen Handler an dieses Ereignis und verwendet die aktuelle Einstellung der `IsLoaded` Festlegen der [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning) Eigenschaft der `ActivityIndicator`.
 
 ## <a name="streaming-bitmaps"></a>Streaming von bitmaps
 

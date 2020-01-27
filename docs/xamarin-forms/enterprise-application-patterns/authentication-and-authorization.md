@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 7ced28a5ed379b761ffcc9841f5d0e923ec747e7
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 528ccd66cc013f83752d93251cb9714115b29819
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667051"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725604"
 ---
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
@@ -100,7 +100,7 @@ Nachdem Sie die `services.AddIdentityServer`-Methode aufgerufen haben, werden zu
 > [!TIP]
 > Dynamisches Laden der identityserver 4-Konfiguration. Die APIs von identityserver 4 ermöglichen das Konfigurieren von identityserver aus einer Speicher internen Liste von Konfigurationsobjekten. In der eshoponcontainers-Referenz Anwendung sind diese in-Memory-Auflistungen in der Anwendung hart codiert. In Produktionsszenarien können Sie jedoch dynamisch aus einer Konfigurationsdatei oder aus einer Datenbank geladen werden.
 
-Informationen zum Konfigurieren von identityserver für die Verwendung ASP.net Core der Identität finden [Sie unter Using ASP.net Core Identity](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html) in der identityserver-Dokumentation.
+Informationen zum Konfigurieren von identityserver für die Verwendung ASP.net Core der Identität finden [Sie unter Using ASP.net Core Identity](https://identityserver4.readthedocs.io/en/latest/quickstarts/6_aspnet_identity.html) in der identityserver-Dokumentation.
 
 #### <a name="configuring-api-resources"></a>Konfigurieren von API-Ressourcen
 

@@ -6,12 +6,12 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 1a94a29f0da6f7916eca697a24ad504a0af46b7c
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8ffb62c8715ff60e9b0ea3b2bc536f3441fb8765
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978393"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724674"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>Einführung in die Spieleentwicklung mit monogame
 
@@ -40,11 +40,9 @@ Entwickler, die mit XNA vertraut sind, sind bereits mit der Syntax von monogame 
 - [Teil 1 – Erstellen eines plattformübergreifenden monogame-Projekts](~/graphics-games/monogame/introduction/part1.md)
 - [Teil 2 – Implementieren von walkinggame](~/graphics-games/monogame/introduction/part2.md)
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Walkinggame monogame-Projekt (Beispiel)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
-- [Xnb Fonts (IOS)](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
-- [Xnb-Schriftarten Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
 - [Monogame Android auf nuget](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [Monogame IOS auf nuget](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [Monogame-API-Dokumentation](http://www.monogame.net/documentation/?page=main)

@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: fe4b9ade9e6e462c3472a8bb3bb8750ed6cac326
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8194c369aa0e4f8bb17a1a162354b4f72c6aaa41
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015893"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725332"
 ---
 # <a name="binding-troubleshooting"></a>Bindungs Problembehandlung
 
@@ -44,15 +44,15 @@ Wenn in einem Fall, in dem die Übergabe von `null` eine `ArgumentNullException`
 
 Ihr Feedback ist für uns wichtig. Wenn Sie Probleme mit xamarin. Mac finden:
 
-- Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/mac).
-- Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues). 
+- Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/xamarin-mac).
+- Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues).
 - Vor der Umstellung auf das GitHub-Repository „Issues“ wurden Xamarin-Probleme auf [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) nachverfolgt. Suchen Sie dort nach übereinstimmenden Problemen.
 - Wenn Sie kein übereinstimmendes Problem finden können, melden Sie ein neues Problem im [GitHub-Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues/new).
 
-GitHub-Issues sind allesamt öffentlich. Es ist nicht möglich, Kommentare oder Anlagen auszublenden. 
+GitHub-Issues sind allesamt öffentlich. Es ist nicht möglich, Kommentare oder Anlagen auszublenden.
 
 Fügen Sie möglichst viele der folgenden Informationen hinzu:
 
-- Ein einfaches Beispiel, um das Problem zu reproduzieren. Dies ist von **sehr großem Nutzen**, sofern möglich. 
+- Ein einfaches Beispiel, um das Problem zu reproduzieren. Dies ist von **sehr großem Nutzen**, sofern möglich.
 - Die vollständige Stapelüberwachung des Absturzes.
 - Den C#-Code, der den Absturz umgibt.

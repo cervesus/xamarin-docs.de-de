@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: 742555da24120eaeadcc4b6232b24d23f41da283
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e9b0337c9cdcfbd8f738a11c5dffff427df620bc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023700"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723661"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -27,7 +27,7 @@ _Google Cloud Messaging (GCM) ist ein Dienst, der das Messaging zwischen mobilen
 
 Dieses Thema bietet eine allgemeine Übersicht darüber, wie Google Cloud Messaging Nachrichten zwischen Ihrer APP und einem App-Server weiterleitet, und bietet eine schrittweise Anleitung zum Abrufen von Anmelde Informationen, sodass Ihre APP GCM-Dienste verwenden kann.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Google Cloud Messaging (GCM) ist ein Dienst, der das senden, das Routing und das Queuing von Nachrichten zwischen Server Anwendungen und mobilen Client-apps verarbeitet. Eine *Client-App* ist eine GCM-aktivierte APP, die auf einem Gerät ausgeführt wird. Der *App-Server* (der von Ihnen oder Ihrem Unternehmen bereitgestellt wird) ist der GCM-fähige Server, mit dem Ihre Client-App über GCM kommuniziert:
 
@@ -35,11 +35,9 @@ Google Cloud Messaging (GCM) ist ein Dienst, der das senden, das Routing und das
 
 Mithilfe von GCM können App-Server Nachrichten an ein einzelnes Gerät, eine Gruppe von Geräten oder eine Reihe von Geräten senden, die ein Thema abonniert haben. Ihre Client-App kann GCM zum Abonnieren von downstreamnachrichten von einem App-Server (z. b. zum Empfangen von Remote Benachrichtigungen) verwenden. Außerdem ermöglicht GCM es Client-apps, upstreamnachrichten an den App-Server zurückzusenden.
 
-Weitere Informationen zum Implementieren eines App-Servers für GCM finden Sie unter Informationen zum [GCM-Verbindungs Server](https://developers.google.com/cloud-messaging/server).
-
 ## <a name="google-cloud-messaging-in-action"></a>Google Cloud Messaging in Aktion
 
-Wenn downstreamnachrichten von einem App-Server an eine Client-App gesendet werden, sendet der App-Server die Nachricht an einen *GCM-Verbindungs Server*. der GCM-Verbindungs Server leitet die Nachricht ihrerseits an ein Gerät weiter, auf dem Ihre Client-app ausgeführt wird. Nachrichten können über HTTP oder [XMPP](https://developers.google.com/cloud-messaging/ccs) (erweiterbares Messaging- und Anwesenheitsprotokoll) gesendet werden. Da Client-apps nicht immer verbunden sind oder ausgeführt werden, stellt der GCM-Verbindungs Server Nachrichten in die Warteschlange Ebenso fügt GCM upstreamnachrichten aus der Client-App an den App-Server in die Warteschlange ein, wenn der App-Server nicht verfügbar ist.
+Wenn downstreamnachrichten von einem App-Server an eine Client-App gesendet werden, sendet der App-Server die Nachricht an einen *GCM-Verbindungs Server*. der GCM-Verbindungs Server leitet die Nachricht ihrerseits an ein Gerät weiter, auf dem Ihre Client-app ausgeführt wird. Nachrichten können über HTTP oder [XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) (erweiterbares Messaging- und Anwesenheitsprotokoll) gesendet werden. Da Client-apps nicht immer verbunden sind oder ausgeführt werden, stellt der GCM-Verbindungs Server Nachrichten in die Warteschlange Ebenso fügt GCM upstreamnachrichten aus der Client-App an den App-Server in die Warteschlange ein, wenn der App-Server nicht verfügbar ist.
 
 GCM verwendet die folgenden Anmelde Informationen, um den App-Server und Ihre Client-App zu identifizieren, und verwendet diese Anmelde Informationen, um Nachrichten Transaktionen über GCM zu autorisieren:
 
@@ -61,7 +59,7 @@ In den folgenden Abschnitten wird erläutert, wie diese Anmelde Informationen ve
 
 Eine Client-App, die auf einem Gerät installiert ist, muss zuerst bei GCM registriert werden, bevor das Messaging erfolgen kann. Die Client-App muss die im folgenden Diagramm gezeigten Registrierungsschritte ausführen:
 
-[Schritte zur![App-Registrierung](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png#lightbox)
+[Schritte zur ![App-Registrierung](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1. Die Client-App kontaktiert GCM zum Abrufen eines Registrierungs Tokens und übergibt die Absender-ID an GCM.
 
@@ -73,8 +71,6 @@ Der App-Server speichert das Registrierungs Token für die nachfolgende Kommunik
 
 Wenn die Client-App keine Nachrichten mehr vom App-Server empfangen will, kann Sie eine Anforderung an den App-Server senden, um das Registrierungs Token zu löschen. Wenn die Client-App Themen Meldungen empfängt (wird weiter unten in diesem Artikel erläutert), kann Sie das Abonnement kündigen.
 Wenn die Client-App auf einem Gerät deinstalliert wird, erkennt GCM dies und benachrichtigt den App-Server automatisch, das Registrierungs Token zu löschen.
-
-Die Registrierung von [Client-apps](https://developers.google.com/cloud-messaging/registration) von Google erläutert den Registrierungsvorgang ausführlicher. Es wird die Aufhebung der Registrierung und die Aufhebung der Registrierung erläutert. Außerdem wird der Prozess der Aufhebung der Registrierung beim Deinstallieren einer Client-App beschrieben.
 
 ### <a name="downstream-messaging"></a>Downstream-Messaging
 
@@ -96,15 +92,15 @@ Ausführliche Informationen (einschließlich Codebeispielen) zum Empfangen von n
 
 #### <a name="topic-messaging"></a>Thema Messaging
 
-*Thema Messaging* ist ein Typ von downstreammessaging, bei dem der App-Server eine einzelne Nachricht an mehrere Client-App-Geräte sendet, die ein Thema abonnieren (z. b. eine Wettervorhersage). Themen Nachrichten können bis zu 2 KB lang sein, und Topic Messaging unterstützt bis zu 1 Million Abonnements pro app. Wenn GCM nur für Themen Nachrichten verwendet wird, ist es nicht erforderlich, dass die Client-App ein Registrierungs Token an den App-Server sendet. In Google ist das [Implementieren von Themen Messaging](https://developers.google.com/cloud-messaging/topic-messaging) erläutert, wie Nachrichten von einem App-Server an mehrere Geräte gesendet werden, die ein bestimmtes Thema abonnieren.
+*Thema Messaging* ist ein Typ von downstreammessaging, bei dem der App-Server eine einzelne Nachricht an mehrere Client-App-Geräte sendet, die ein Thema abonnieren (z. b. eine Wettervorhersage). Themen Nachrichten können bis zu 2 KB lang sein, und Topic Messaging unterstützt bis zu 1 Million Abonnements pro app. Wenn GCM nur für Themen Nachrichten verwendet wird, ist es nicht erforderlich, dass die Client-App ein Registrierungs Token an den App-Server sendet.
 
 #### <a name="group-messaging"></a>Gruppieren von Nachrichten
 
-Das *Gruppieren* von Nachrichten ist eine Art von downstreammessaging, bei dem der App-Server eine einzelne Nachricht an mehrere Client-App-Geräte sendet, die zu einer Gruppe gehören (z. b. eine Gruppe von Geräten, die zu einem einzelnen Benutzer gehören). Gruppen Nachrichten können für IOS-Geräte eine Länge von bis zu 2 KB und für Android-Geräte eine Länge von bis zu 4 KB aufweisen. Eine Gruppe ist auf maximal 20 Mitglieder beschränkt. Google- [Gerätegruppen Messaging](https://developers.google.com/cloud-messaging/notifications) erläutert, wie App-Server eine einzelne Nachricht an mehrere Client-App-Instanzen senden können, die auf Geräten ausgeführt werden, die zu einer Gruppe gehören.
+Das *Gruppieren* von Nachrichten ist eine Art von downstreammessaging, bei dem der App-Server eine einzelne Nachricht an mehrere Client-App-Geräte sendet, die zu einer Gruppe gehören (z. b. eine Gruppe von Geräten, die zu einem einzelnen Benutzer gehören). Gruppen Nachrichten können für IOS-Geräte eine Länge von bis zu 2 KB und für Android-Geräte eine Länge von bis zu 4 KB aufweisen. Eine Gruppe ist auf maximal 20 Mitglieder beschränkt.
 
 ### <a name="upstream-messaging"></a>Upstream-Messaging
 
-Wenn Ihre Client-App eine Verbindung mit einem Server herstellt, der [XMPP](https://developers.google.com/cloud-messaging/ccs)unterstützt, können Sie Nachrichten zurück an den App-Server senden, wie in der folgenden Abbildung dargestellt:
+Wenn Ihre Client-App eine Verbindung mit einem Server herstellt, der [XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)unterstützt, können Sie Nachrichten zurück an den App-Server senden, wie in der folgenden Abbildung dargestellt:
 
 [![Upstream-Messaging Diagramm](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
@@ -118,7 +114,7 @@ Wenn Ihre Client-App eine Verbindung mit einem Server herstellt, der [XMPP](http
 
 5. Der App-Server verarbeitet die Nachricht.
 
-Die [upstreamnachrichten](https://developers.google.com/cloud-messaging/ccs#upstream) von Google erläutern, wie JSON-codierte Nachrichten strukturiert und an App-Server gesendet werden, die den XMPP-basierten cloudverbindungsserver von Google ausführen.
+Die [upstreamnachrichten](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref#upstream) von Google erläutern, wie JSON-codierte Nachrichten strukturiert und an App-Server gesendet werden, die den XMPP-basierten cloudverbindungsserver von Google ausführen.
 
 <a name="settingup" />
 
@@ -165,14 +161,12 @@ Um den **API-Schlüssel**anzuzeigen, klicken Sie auf **API-Manager** und dann au
 
 ## <a name="for-further-reading"></a>Weitere Informationen
 
-- Bei der [Registrierung von Client-apps](https://developers.google.com/cloud-messaging/registration) von Google wird der Client Registrierungsvorgang ausführlicher beschrieben. Außerdem finden Sie hier Informationen zum Konfigurieren des automatischen Wiederholungs Versuchs und zum Synchronisieren des Registrierungs Zustands.
-
 - [RFC 6120](https://tools.ietf.org/html/rfc6120) und [RFC 6121](https://tools.ietf.org/html/rfc6121) erläutern und definieren das Extensible Messaging and Presence Protocol (XMPP).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 Dieser Artikel bietet eine Übersicht über Google Cloud Messaging (GCM). Es wurden die verschiedenen Anmelde Informationen erläutert, die zum Identifizieren und Autorisieren von Messaging zwischen App-Servern und Client-Apps verwendet werden. Es wurden die häufigsten Messaging Szenarien veranschaulicht, und es werden die Schritte zum Registrieren Ihrer APP bei GCM für die Verwendung von GCM-Diensten beschrieben.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Cloud-Messaging](https://developers.google.com/cloud-messaging/)

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61375387"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -46,7 +46,7 @@ ms.locfileid: "61375387"
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: Raster mit Inhalt in Spalten und Zeilen, auf iOS und Android](../images/columns-rows.png "Raster mit Inhalt in Spalten und Zeilen")](../images/columns-rows-large.png#lightbox "Raster mit Inhalt in Spalten und Zeilen")
+    [![Screenshot: Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt, unter iOS und Android](../images/columns-rows.png "Raster mit Inhalt in Spalten und Zeilen")](../images/columns-rows-large.png#lightbox "Raster mit Inhalt in Spalten und Zeilen")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -86,6 +86,6 @@ ms.locfileid: "61375387"
     > [!NOTE]
     > Der Abstand zwischen Spalten und Zeilen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse wird mithilfe der Eigenschaften [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) und [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) festgelegt. Weitere Informationen hierzu finden Sie unter [Spacing (Abstände)](~/xamarin-forms/user-interface/layouts/grid.md#spacing) in [Xamarin.Forms Grid (Xamarin.Forms-Raster)](~/xamarin-forms/user-interface/layouts/grid.md).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: Raster mit Inhalt in Spalten und Zeilen, auf iOS und Android](../images/columns-rows.png "Raster mit Inhalt in Spalten und Zeilen")](../images/columns-rows-large.png#lightbox "Raster mit Inhalt in Spalten und Zeilen")
+    [![Screenshot: Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt, unter iOS und Android](../images/columns-rows.png "Raster mit Inhalt in Spalten und Zeilen")](../images/columns-rows-large.png#lightbox "Raster mit Inhalt in Spalten und Zeilen")

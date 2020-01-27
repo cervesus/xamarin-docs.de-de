@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 4b6fcfc3120c3ef09556f3466295f4bee35fad0c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 13271b50353d95ecd2db40e25d549788111530f7
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029009"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725003"
 ---
 # <a name="xamarinandroid-gridlayout"></a>Xamarin. Android-GridLayout
 
@@ -233,8 +233,6 @@ Dies führt zu einem Layout für das `TextViews`, das dem oben erwähnten Layout
 
  [![Screenshot von gridlayoutdemo mit Schaltfläche, die beide Spalten umfasst](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Gridlayoutdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)
-- [Einführung in Ice Cream Sandwich](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4,0-Plattform](https://developer.android.com/sdk/android-4.0.html)

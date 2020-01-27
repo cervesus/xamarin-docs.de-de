@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: 2f1fb3706012fa86834986064a366071b644b2dc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f60be3f7dc14749f5cd58d5228c17fa85282cd78
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015955"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725350"
 ---
 # <a name="objective-sharpie-release-history"></a>Ziel-Sharpie-releaseverlauf
 
@@ -58,11 +58,9 @@ ms.locfileid: "73015955"
 
 ## <a name="216-march-17-2015"></a>2.1.6 (17. März 2015)
 
-[Download v 2.1.6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
-
 * Korrigieren der Ausdrucks Bindung des binären Operators: die linke Seite des Ausdrucks wurde fälschlicherweise mit der rechten Seite ausgetauscht (z. b. `1 << 0` fälschlicherweise als `0 << 1`gebunden). Vielen Dank, dass Adam Kemp dies bemerkt hat!
 * Es wurde ein Problem behoben, bei dem `NSInteger` und `NSUInteger` als `int` und `uint` als `nint` und `nuint` auf i386 gebunden wurden. `-DNS_BUILD_32_LIKE_64` wird jetzt an clang übergeben, damit die `objc/NSObjCRuntime.h` auf dem i386 erwartungsgemäß funktioniert.
-* Die Standard Architektur für Mac OS X SDI (z. b. `-sdk macosx10.10`) ist jetzt x86_64 anstelle von i386, sodass `-arch` ausgelassen werden kann, es sei denn, der Standardwert überschreiben ist erwünscht.
+* Die Standard Architektur für Mac OS X SDI (z. b. `-sdk macosx10.10`) wird jetzt anstelle von i386 x86_64, sodass `-arch` weggelassen werden kann, es sei denn, das Überschreiben der Standardeinstellung ist erwünscht.
 
 ## <a name="210-march-15-2015"></a>2.1.0 (15. März 2015)
 
@@ -95,7 +93,7 @@ Ziel-Sharpie 2,0 basiert auf clang-3.6.1.
 
 * Es gibt eine verbesserte Benennungs-Heuristik für anonyme Enumerationen, denen unmittelbar eine `typedef` der Auflösung in einen integralen integralen Typ (z. b. `long` oder `int`) vorangestellt ist.
 
-* C-Zeiger werden nun als C#`unsafe`Zeiger anstelle`System.IntPtr`gebunden. Dies führt zu einer besseren Übersichtlichkeit in der Bindung, wenn Sie Zeiger Parameter möglicherweise in `out`-oder `ref` Parameter umwandeln möchten. Es ist nicht möglich, immer abzuleiten, ob ein Parameter `out` oder `ref`werden soll, sodass der Zeiger in der Bindung beibehalten wird, um eine einfachere Überwachung zu ermöglichen.
+* C-Zeiger werden nun als C# `unsafe` Zeiger anstelle `System.IntPtr`gebunden. Dies führt zu einer besseren Übersichtlichkeit in der Bindung, wenn Sie Zeiger Parameter möglicherweise in `out`-oder `ref` Parameter umwandeln möchten. Es ist nicht möglich, immer abzuleiten, ob ein Parameter `out` oder `ref`werden soll, sodass der Zeiger in der Bindung beibehalten wird, um eine einfachere Überwachung zu ermöglichen.
 
 * Eine Ausnahme von der obigen Zeiger Bindung ist, wenn ein 2-Rang-Zeiger auf ein Ziel-C-Objekt als Parameter gefunden wird. In diesen Fällen ist die Konvention vorherrschend, und der Parameter wird als `out` (z. b. `NSError **error` → `out NSError error`) gebunden.
 
@@ -135,7 +133,7 @@ Weitere Informationen finden Sie in der Dokumentation [Überprüfen von Attribut
 
 [Download v 1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
 
-Kleinere Fehlerbehebungen.
+Behebung geringfügiger Programmfehler.
 
 ## <a name="111-december-15-2014"></a>1.1.1:15. Dezember 2014
 

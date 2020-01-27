@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 25a09e27fb25e477c5176af0ee4a75a836751ccf
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 0fa433de7fd1acb6fb27741f1615a644315f373f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487632"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725559"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>Authentifizieren von Benutzern mit einem Identitäts Anbieter
 
@@ -90,7 +90,7 @@ Die `OAuth2Authenticator` Klasse erfordert eine Reihe von Parametern, die Folgen
 
 - **Client-ID** – Dies wird vom Client aus dem Projekt im abgerufen werden kann, die die Anforderung identifiziert die [Google-API-Konsole](https://console.developers.google.com).
 - **Geheimer Clientschlüssel** – Dies dürfte `null` oder `string.Empty`.
-- **Bereich** – dies identifiziert die API-Zugriff, die von der Anwendung angefordert wird, und der Wert informiert im Zustimmungsdialogfeld angezeigt, die dem Benutzer angezeigt wird. Weitere Informationen zu geltungsbereichen finden Sie unter [autorisieren-API-Anforderung](https://developers.google.com/+/web/api/rest/oauth) Googles-Website.
+- **Bereich** – dies identifiziert die API-Zugriff, die von der Anwendung angefordert wird, und der Wert informiert im Zustimmungsdialogfeld angezeigt, die dem Benutzer angezeigt wird. Weitere Informationen zu Bereichen finden Sie unter [Autorisieren von Anforderungen](https://developers.google.com/docs/api/how-tos/authorizing) auf der Website von Google.
 - **Autorisieren Sie die URL** – dies identifiziert die URL, in dem der Autorisierungscode aus abgerufen werden wird.
 - **Umleitungs-URL** – dies identifiziert die URL, in dem die Antwort gesendet wird. Der Wert dieses Parameters muss einer der Werte, die in angezeigt entsprechen der **Anmeldeinformationen** Registerkarte für das Projekt in der [Google Developers Console](https://console.developers.google.com/).
 - **AccessToken Url** – dies identifiziert die URL zum Anfordern von Zugriffstoken, nachdem Sie ein Autorisierungscode abgerufen wird.

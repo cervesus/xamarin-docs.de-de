@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61343459"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -25,7 +25,7 @@ ms.locfileid: "61343459"
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten: Geben Sie Text in [`Entry`](xref:Xamarin.Forms.Entry) ein. Wie Sie beobachten können, wird jedes Zeichen durch ein Zeichen zur Kennwortmaskierung ersetzt. Es können maximal 15 Zeichen eingegeben werden:
 
-    [![Screenshot: Eingabe mit durch Kennwortzeichen maskiertem Text unter iOS und Android](../images/customize-behavior.png "Eingabe mit maskierten Kennwortzeichen")](../images/customize-behavior-large.png#lightbox "Eingabe mit maskierten Kennwortzeichen")
+    [![Screenshot: Eintrag mit durch Kennwortzeichen verborgenem Text unter iOS und Android](../images/customize-behavior.png "Eintrag mit verborgenen Kennwortzeichen")](../images/customize-behavior-large.png#lightbox "Eintrag mit verborgenen Kennwortzeichen")
 
     Weitere Informationen zum Anpassen des [`Entry`](xref:Xamarin.Forms.Entry)-Verhaltens finden Sie im Artikel [Xamarin.Forms-Eintrag](~/xamarin-forms/user-interface/text/entry.md).
 
@@ -46,8 +46,8 @@ ms.locfileid: "61343459"
     > [!NOTE]
     > Bei einigen Texteingabeszenarios wie der Eingabe eines Kennworts sind die Rechtschreibprüfung und die Textvorhersage störend und sollten daher deaktiviert werden.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten. Geben Sie Text in [`Entry`](xref:Xamarin.Forms.Entry) ein. Wie Sie beobachten können, wird jedes Zeichen durch ein Zeichen zur Kennwortmaskierung ersetzt. Es können maximal 15 Zeichen eingegeben werden:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten: Geben Sie Text in [`Entry`](xref:Xamarin.Forms.Entry) ein. Wie Sie beobachten können, wird jedes Zeichen durch ein Zeichen zur Kennwortmaskierung ersetzt. Es können maximal 15 Zeichen eingegeben werden:
 
-    [![Screenshot: Eingabe mit durch Kennwortzeichen maskiertem Text unter iOS und Android](../images/customize-behavior.png "Eingabe mit maskierten Kennwortzeichen")](../images/customize-behavior-large.png#lightbox "Eingabe mit maskierten Kennwortzeichen")
+    [![Screenshot: Eintrag mit durch Kennwortzeichen verborgenem Text unter iOS und Android](../images/customize-behavior.png "Eintrag mit verborgenen Kennwortzeichen")](../images/customize-behavior-large.png#lightbox "Eintrag mit verborgenen Kennwortzeichen")
 
     Weitere Informationen zum Anpassen des [`Entry`](xref:Xamarin.Forms.Entry)-Verhaltens finden Sie im Artikel [Xamarin.Forms-Eintrag](~/xamarin-forms/user-interface/text/entry.md).

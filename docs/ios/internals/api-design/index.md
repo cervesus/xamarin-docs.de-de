@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ab56332617fece8e80429f82000880012bf85b41
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a2435b30b7d5b468fca6c55d295c87b9a0d20652
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022406"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724433"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin. IOS-API-Design
 
@@ -64,7 +64,7 @@ Dies sind einige unserer Entwurfs Prinzipien für die xamarin. IOS-Bindungen (Si
 - Native C# Typen:
 
   - [`NSString` wird `string`](~/ios/internals/api-design/nsstring.md)
-  - Umwandeln von `int` und `uint` Parametern, die C# Enumerationen und C# Enumerationen mit`[Flags]`Attributen sein sollten
+  - Umwandeln von `int` und `uint` Parametern, die C# Enumerationen und C# Enumerationen mit `[Flags]` Attributen sein sollten
   - Stellen Sie Arrays anstelle von typneutralen `NSArray` Objekten als stark typisierte Arrays bereit.
   - Für Ereignisse und Benachrichtigungen können Sie den Benutzern folgende Möglichkeiten einräumen:
 
@@ -74,7 +74,7 @@ Dies sind einige unserer Entwurfs Prinzipien für die xamarin. IOS-Bindungen (Si
 - Unterstützen Sie das Ziel-C-delegatmuster:
 
   - C#Ereignis System
-  - C# Verfügbar machen von Delegaten (Lambdas, anonyme Methoden und`System.Delegate`) an Ziel-C-APIs als Blöcke
+  - C# Verfügbar machen von Delegaten (Lambdas, anonyme Methoden und `System.Delegate`) an Ziel-C-APIs als Blöcke
 
 ### <a name="assemblies"></a>Assemblys
 
@@ -82,20 +82,20 @@ Xamarin. IOS enthält eine Reihe von Assemblys, die das *xamarin. IOS-Profil*bil
 
 ### <a name="major-namespaces"></a>Haupt Namespaces
 
-#### <a name="objcruntime"></a>Objcruntime
+#### <a name="objcruntime"></a>ObjCRuntime
 
 Der [objcruntime](xref:ObjCRuntime) -Namespace ermöglicht es Entwicklern, die Welten C# zwischen und Ziel-C zu überbrücken.
 Dabei handelt es sich um eine neue Bindung, die speziell für IOS entwickelt wurde, basierend auf der Verwendung von Cocoa # und GTK #.
 
-#### <a name="foundation"></a>Neu
+#### <a name="foundation"></a>Foundation
 
 Der [Foundation](xref:Foundation) -Namespace stellt die grundlegenden Datentypen bereit, die für die Zusammenarbeit mit dem Ziel-c Foundation-Framework entwickelt wurden, das Teil von IOS ist, und es ist die Basis für die objektorientierte Programmierung in Ziel-c.
 
-Xamarin. IOS-Spiegelungen in C# der Klassenhierarchie von "Ziel-C". Beispielsweise kann das [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) der Ziel-C-Basisklasse von C# über [Foundation. NSObject](xref:Foundation.NSObject)verwendet werden.
+Xamarin. IOS-Spiegelungen in C# der Klassenhierarchie von "Ziel-C". Beispielsweise kann das NSObject der Ziel-C-Basisklasse von C# über [Foundation. NSObject](xref:Foundation.NSObject)verwendet werden.
 
 Obwohl dieser Namespace Bindungen für die zugrunde liegenden Ziel-C Foundation-Typen bereitstellt, haben wir in einigen Fällen die zugrunde liegenden Typen .NET-Typen zugeordnet. Beispiel:
 
-- Anstatt [NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) und [NSArray zu verwenden](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), macht die Common Language Runtime diese C#in der gesamten API als [Zeichen](xref:System.String)folgen-und stark typisierte [Array](xref:System.Array)-e verfügbar.
+- Anstatt NSString und [NSArray zu verwenden](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), macht die Common Language Runtime diese C#in der gesamten API als [Zeichen](xref:System.String)folgen-und stark typisierte [Array](xref:System.Array)-e verfügbar.
 
 - Hier werden verschiedene Hilfsobjekte bereitgestellt, die es Entwicklern ermöglichen, Ziel-C-APIs von Drittanbietern, andere IOS-APIs oder APIs zu binden, die derzeit nicht von xamarin. IOS gebunden sind.
 
@@ -109,7 +109,7 @@ Für jeden Typ, der einen nicht verwalteten Typ widerspiegelt, ist es möglich, 
 
 Während Mono Garbage Collection für alle Objekte bereitstellt, implementiert die `Foundation.NSObject` die [System. iverwerfbare](xref:System.IDisposable) Schnittstelle. Dies bedeutet, dass Sie die Ressourcen eines beliebigen beliebigen NSObject explizit freigeben können, ohne darauf warten zu müssen, dass der Garbage Collector gestartet wird. Dies ist wichtig, wenn Sie große NSObjects verwenden, z. b. UIimages, die möglicherweise Zeiger auf große Datenblöcke enthalten.
 
-Wenn Ihr Typ deterministische Finalisierung ausführen muss, überschreiben Sie die [Methode NSObject. verwerfen (bool)](xref:Foundation.NSObject.Dispose(System.Boolean)) , da der zu löschende Parameter "bool disposing" lautet. Wenn dieser Wert auf "true" festgelegt ist, bedeutet dies, dass Ihre Löschmethode aufgerufen wird, da der Benutzer explizit aufgerufen wird. Verwerfen () für das-Objekt. Wenn der Wert false ist, bedeutet dies, dass die verwerfen-Methode (bool disposing) vom Finalizer im Finalizerthread aufgerufen wird.
+Wenn Ihr Typ deterministische Finalisierung ausführen muss, überschreiben Sie die [Methode NSObject. verwerfen (bool)](xref:Foundation.NSObject.Dispose(System.Boolean)) , da der zu löschende Parameter "bool disposing" lautet. Wenn dieser Wert auf "true" festgelegt ist, bedeutet dies, dass die verwerfen-Methode aufgerufen wird, da der Benutzer explizit "verwerfen ()" für das Objekt aufgerufen hat. Wenn der Wert false ist, bedeutet dies, dass die verwerfen-Methode (bool disposing) vom Finalizer im Finalizerthread aufgerufen wird.
 
 ##### <a name="categories"></a>Kategorien
 
@@ -184,13 +184,13 @@ class Rotation_IOS6 {
 }
 ```
 
-##### <a name="preserveattribute"></a>Preserveattribute
+##### <a name="preserveattribute"></a>PreserveAttribute
 
 Preserveattribute ist ein benutzerdefiniertes Attribut, das verwendet wird, um mberühren – das Bereitstellungs Tool xamarin. IOS – zum Beibehalten eines Typs oder eines Members eines Typs während der Phase, in der die Anwendung verarbeitet wird, um die Größe zu verringern.
 
 Jeder Member, der nicht statisch durch die Anwendung verknüpft ist, muss entfernt werden. Daher wird dieses Attribut verwendet, um Member zu kennzeichnen, auf die nicht statisch verwiesen wird, die aber noch von Ihrer Anwendung benötigt werden.
 
-Wenn Sie beispielsweise Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten. Wenn Sei die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
+Wenn Sie beispielsweise Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten. Wenn Sie die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
 
 Sie können dieses Attribut auf alle Member eines Typs oder auf den Typ selbst anwenden. Wenn Sie den gesamten Typ beibehalten möchten, können Sie die Syntax [Preserve (AllMembers = true)] für den Typ verwenden.
 
@@ -202,7 +202,7 @@ C#Delegaten werden für allgemeine Vorgänge bereitgestellt. Weitere Information
 
 #### <a name="opengles"></a>OpenGLES
 
-Für opengles verteilen wir eine [geänderte Version](xref:OpenTK) der [opentk](http://www.opentk.com/) -API, eine objektorientierte Bindung an OpenGL, die so geändert wurde, dass CoreGraphics-Datentypen und-Strukturen verwendet werden, und stellen nur die Funktionalität bereit, die unter IOS verfügbar ist.
+Für opengles verteilen wir eine [geänderte Version](xref:OpenTK) der [opentk](https://opentk.net/) -API, eine objektorientierte Bindung an OpenGL, die so geändert wurde, dass CoreGraphics-Datentypen und-Strukturen verwendet werden, und stellen nur die Funktionalität bereit, die unter IOS verfügbar ist.
 
 Die opengles 1,1-Funktionalität ist über den [ES11.gl-Typ](xref:OpenTK.Graphics.ES11.GL)verfügbar.
 
@@ -236,11 +236,11 @@ UIView [] GetViews ();
 
 In `NSArray`stehen einige Methoden zur Verfügung, für die Fälle, in denen Sie möglicherweise eine `NSArray` direkt verwenden möchten, aber ihre Verwendung wird in der API-Bindung nicht empfohlen.
 
-Außerdem haben wir im **Classic API** statt `CGRect`, `CGPoint` und `CGSize` von der CoreGraphics-API zur Verfügung zu stellen, die Sie durch die `System.Drawing` Implementierungen `RectangleF`, `PointF` und `SizeF` ersetzt haben. vorhandener OpenGL-Code, der opentk verwendet. Wenn Sie die neue 64-Bit- **Unified API**verwenden, sollte die CoreGraphics-API verwendet werden.
+Außerdem haben wir im **Classic API** statt `CGRect`, `CGPoint` und `CGSize` von der CoreGraphics-API zur Verfügung zu stellen, die Sie durch die `System.Drawing`-Implementierungen `RectangleF`, `PointF` und `SizeF` ersetzt haben, da Sie Entwicklern den vorhandenen OpenGL-Code beibehält, der opentk verwendet. Wenn Sie die neue 64-Bit- **Unified API**verwenden, sollte die CoreGraphics-API verwendet werden.
 
 #### <a name="inheritance"></a>Vererbung
 
-Mit dem xamarin. IOS-API-Design können Entwickler systemeigene Ziel-C-Typen auf die gleiche Weise erweitern, C# wie Sie einen Typ erweitern, indem Sie das Schlüsselwort "override" für eine abgeleitete Klasse verwenden, und die Basis Implementierung mithilfe von " C# Base" verketten. Schlüsselwort.
+Der xamarin. IOS-API-Entwurf ermöglicht es Entwicklern, Native Ziel-C-Typen auf die gleiche Weise zu erweitern C# , wie Sie einen Typ erweitern, indem das Schlüsselwort "override" für eine abgeleitete Klasse verwendet wird, und mit dem Schlüsselwort " C# Base" eine Verkettung für die Basis Implementierung durchführt.
 
 Dieser Entwurf ermöglicht Entwicklern, den Umgang mit Ziel-c-Selektoren im Rahmen des Entwicklungsprozesses zu vermeiden, da das gesamte Ziel-c-System bereits in die xamarin. IOS-Bibliotheken integriert ist.
 
@@ -279,15 +279,15 @@ In xamarin. IOS werden drei gegenseitig ausschließende Mechanismen zur Bindung 
 2. [Stark typisiert über eine `Delegate`-Eigenschaft](#strongly-typed-via-a-delegate-property)
 3. [Lose Typisierung über eine `WeakDelegate`-Eigenschaft](#loosely-typed-via-the-weakdelegate-property)
 
-Betrachten Sie z. b. die [UIWebView](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) -Klasse. Dies wird an eine [uiwebviewdelegatinstanz](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) gesendet [, die der delegateigenschaft zugewiesen](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) wird.
+Betrachten Sie z. b. die UIWebView-Klasse. Dies wird an eine uiwebviewdelegatinstanz gesendet, die der delegateigenschaft zugewiesen wird.
 
 ##### <a name="via-events"></a>Via-Ereignisse
 
 Für viele Typen erstellt xamarin. IOS automatisch einen geeigneten Delegaten, der die `UIWebViewDelegate` Aufrufe an C# Ereignisse weitergibt. Für `UIWebView`:
 
-- Die [webviewdidstartload](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) -Methode wird dem Ereignis [UIWebView. LoadStarted](xref:UIKit.UIWebView.LoadStarted) zugeordnet.
-- Die [webviewdidfinishload](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) -Methode wird dem Ereignis [UIWebView. loadbeendeten](xref:UIKit.UIWebView.LoadFinished) zugeordnet.
-- Die Methode [WebView: didfailloadwitherror](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) ist dem Ereignis [UIWebView. LoadError](xref:UIKit.UIWebView.LoadError) zugeordnet.
+- Die webviewdidstartload-Methode wird dem Ereignis [UIWebView. LoadStarted](xref:UIKit.UIWebView.LoadStarted) zugeordnet.
+- Die webviewdidfinishload-Methode wird dem Ereignis [UIWebView. loadbeendeten](xref:UIKit.UIWebView.LoadFinished) zugeordnet.
+- Die Methode WebView: didfailloadwitherror ist dem Ereignis [UIWebView. LoadError](xref:UIKit.UIWebView.LoadError) zugeordnet.
 
 Dieses einfache Programm zeichnet z. b. die Start-und Endzeit beim Laden einer Webansicht auf:
 
@@ -474,7 +474,7 @@ Die C# Namen für die Methoden sind nicht wichtig. alles, was wichtig ist, sind 
 
 Wenn Sie diese Art der Programmierung verwenden, stellen Sie C# sicher, dass die Parameter den tatsächlichen Typen entsprechen, die vom Lauf Zeit Modul übergeben werden.
 
-#### <a name="models"></a>Modelle
+#### <a name="models"></a>Models
 
 In UIKit-Speichereinrichtungen oder in Respondern, die mithilfe von Hilfsklassen implementiert werden, werden diese in der Regel im Ziel-C-Code als Delegaten bezeichnet und als Protokolle implementiert.
 
@@ -595,13 +595,13 @@ Sie müssen sich keine Gedanken darüber machen, wenn Sie Visual Studio für Mac
 
 Ein zentrales Konzept der Ziel-C-Programmierung sind Selectors. Sie werden häufig über APIs verfügen, bei denen Sie einen Selektor übergeben müssen, oder erwarten, dass Ihr Code auf einen Selektor antwortet.
 
-Das Erstellen neuer Selektoren C# in ist sehr einfach – Sie erstellen einfach eine neue Instanz der`ObjCRuntime.Selector`-Klasse und verwenden das Ergebnis an einer beliebigen Stelle in der API, die dies erfordert. Beispiel:
+Das Erstellen neuer Selektoren C# in ist sehr einfach – Sie erstellen einfach eine neue Instanz der `ObjCRuntime.Selector`-Klasse und verwenden das Ergebnis an einer beliebigen Stelle in der API, die dies erfordert. Beispiel:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-Bei einer C# Methode, die auf einen Auswahl Befehl antwortet, muss Sie vom`NSObject`-Typ erben C# , und die-Methode muss mit dem Auswahl Namen versehen werden, wobei das `[Export]`-Attribut verwendet wird. Beispiel:
+Bei einer C# Methode, die auf einen Auswahl Befehl antwortet, muss Sie vom `NSObject`-Typ erben C# , und die-Methode muss mit dem Auswahl Namen versehen werden, wobei das `[Export]`-Attribut verwendet wird. Beispiel:
 
 ```csharp
 public class MyMath : NSObject {
@@ -645,7 +645,7 @@ Dieser Konstruktor wird verwendet, um die Instanz zu initialisieren, verhindert 
 public Foo (NSCoder coder)
 ```
 
-Dieser Konstruktor wird für die Fälle bereitgestellt, in denen das Objekt von einer nscoding-Instanz initialisiert wird. Weitere Informationen finden Sie im Apple- [Handbuch zu Archiven und serialisierungsprogrammierung.](https://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
+Dieser Konstruktor wird für die Fälle bereitgestellt, in denen das Objekt von einer nscoding-Instanz initialisiert wird.
 
 #### <a name="exceptions"></a>Ausnahmen
 
@@ -663,7 +663,7 @@ Xamarin. IOS verfügt über eine Garbage Collector, die die Freigabe von Ressour
 
 #### <a name="nsobject-and-idisposable"></a>NSObject und iverwerf
 
-Das verfügbar machen der `IDisposable`-Schnittstelle ist eine bequeme Möglichkeit, Entwickler bei der Freigabe von Objekten zu unterstützen, die möglicherweise große Speicherblöcke Kapseln (z. b. ein `UIImage` kann wie ein nicht verzigter Zeiger aussehen, aber auf ein Image mit 2 Megabyte zeigen) und andere wichtige und begrenzte Ressourcen (z. b. ein Video-Decodierung-Puffer).
+Das verfügbar machen der `IDisposable`-Schnittstelle ist eine bequeme Möglichkeit, Entwickler bei der Freigabe von Objekten zu unterstützen, die möglicherweise große Speicherblöcke Kapseln (z. b. ein `UIImage` könnte z. b. wie ein unbedeutender Zeiger aussehen, aber auf ein Image mit 2 Megabyte zeigen) und andere wichtige und begrenzte Ressourcen (z. b. ein Video-Decodierung)
 
 NSObject implementiert die iverwerfbare Schnittstelle und auch das .net-Lösch [Muster](https://msdn.microsoft.com/library/fs2xkftw.aspx). Dadurch können Entwickler, die eine Unterklasse NSObject haben, das Lösch Verhalten außer Kraft setzen und ihre eigenen Ressourcen bei Bedarf freigeben. Betrachten Sie beispielsweise diesen Ansichts Controller, der eine Reihe von Bildern beibehält:
 
@@ -707,6 +707,6 @@ Ein Nebeneffekt der automatischen Speicherverwaltung besteht darin, dass die GC 
 
 Wenn Sie für Ihre Objekte keinen Verweis in den statischen Variablen oder Instanzvariablen beibehalten, ruft Mono die verwerfen ()-Methode auf, und Sie geben den Verweis auf das Objekt frei. Da dies möglicherweise der einzige ausstehende Verweis ist, wird das-Objekt von der Ziel-C-Laufzeit zerstört.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Bindungs Felder](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_Fields)

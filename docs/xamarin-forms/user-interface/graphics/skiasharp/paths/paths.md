@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: eee338461593ad131f679d32cadf63fe3b1a4c40
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c892adf2f75ec00c4a9ee171ded78f79bb8227e9
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759348"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725194"
 ---
 # <a name="path-basics-in-skiasharp"></a>Grundlagen zu Pfaden in SkiaSharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Untersuchen Sie das SkiaSharp SKPath-Objekt, für das Kombinieren von miteinander verbundenen Linien und Kurven_
 
 Eines der wichtigsten Features des Pfads Grafiken ist die Möglichkeit zum definieren, wenn mehrere Zeilen verbunden werden sollen, und wenn sie nicht verbunden werden soll. Der Unterschied kann erheblich ist, sein, wie in den oberen Bereich dieser zwei Dreiecken veranschaulicht:
 
-![](paths-images/connectedlinesexample.png "Zwei Dreiecken, die mit den Unterschieden zwischen verbundenen und nicht verbundenen Zeilen")
+![](paths-images/connectedlinesexample.png "Two triangles showing the difference between connected and disconnected lines")
 
 Ein Grafikpfad gekapselt ist, durch die [ `SKPath` ](xref:SkiaSharp.SKPath) Objekt. Ein Pfad ist eine Auflistung einer oder mehreren *Konturen*. Jede Contour Global ist eine Sammlung von *verbunden* geraden Linien und Kurven. Konturen nicht miteinander verbunden sind, jedoch können sie visuell die sich überlappen. Manchmal kann eine einzelne Kontur selbst überlappen.
 
@@ -53,7 +53,7 @@ Die `R` steht für *relative*. Diese Methoden verfügen über die gleiche Syntax
 
 Eine Kontur endet mit einem weiteren Aufruf von `MoveTo` oder `RMoveTo`, beginnt eine neue Kontur oder einen Aufruf von `Close`, die die Kontur schließt. Die `Close` Methode automatisch eine gerade Linie von der aktuellen Punkt und dem ersten Punkt der Kontur angefügt und markiert den Pfad als geschlossen, was bedeutet, dass es ohne jede Strichenden gerendert wird.
 
-Der Unterschied zwischen offenen und geschlossenen Konturen wird veranschaulicht, der **zwei Dreieck Konturen** Seite verwendet ein `SKPath` Objekt mit zwei Konturen auf zwei Dreiecken zu rendern. Die erste Kontur öffnen und die zweite geschlossen ist. Hier ist die [ `TwoTriangleContoursPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) Klasse:
+Der Unterschied zwischen offenen und geschlossenen Konturen wird veranschaulicht, der **zwei Dreieck Konturen** Seite verwendet ein `SKPath` Objekt mit zwei Konturen auf zwei Dreiecken zu rendern. Die erste Kontur öffnen und die zweite geschlossen ist. Hier ist die [ `TwoTriangleContoursPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/TwoTriangleContoursPage.cs) Klasse:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -101,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die erste Contour Global besteht aus einem Aufruf von [ `MoveTo` ](xref:SkiaSharp.SKPath.MoveTo(System.Single,System.Single)) mit X- und Y-Koordinaten anstelle einer `SKPoint` Werts, gefolgt von drei Aufrufe [ `LineTo` ](xref:SkiaSharp.SKPath.LineTo(System.Single,System.Single)) zum Zeichnen von der drei Seiten des der Dreieck. Die zweite Kontur hat nur zwei Aufrufe `LineTo` , aber er abgeschlossen ist, die Kontur mit einem Aufruf von [ `Close` ](xref:SkiaSharp.SKPath.Close), die schließt der Kontur. Der Unterschied ist signifikant:
 
-[![](paths-images/twotrianglecontours-small.png "Dreifacher Screenshot der Seite zwei Dreieck Konturen")](paths-images/twotrianglecontours-large.png#lightbox "dreifachen Screenshot der Seite zwei Dreieck Konturen")
+[![](paths-images/twotrianglecontours-small.png "Triple screenshot of the Two Triangle Contours page")](paths-images/twotrianglecontours-large.png#lightbox "Triple screenshot of the Two Triangle Contours page")
 
 Wie Sie sehen können, die erste Kontur ist natürlich eine Reihe von drei miteinander verbundenen Linien, aber nicht das Ende mit dem Anfang verbunden. Die beiden Zeilen überlappen sich am Anfang. Die zweite Kontur wird offensichtlich geschlossen, und wurde erreicht, mit einem weniger `LineTo` aufgerufen werden, da die `Close` Methode fügt automatisch eine letzte Zeile aus, um die Kontur zu schließen.
 
@@ -125,7 +125,7 @@ Genau wie die Darstellung des Start- und Ende einer Zeile durch eine Obergrenze 
 - `Round` für einen gerundeten join
 - `Bevel` für einen Join Systemschicht-deaktiviert
 
-Die **Stroke Joins** Seite zeigt drei Joins mit Code wie zeichnen den **Strichenden** Seite. Dies ist die `PaintSurface` -Ereignishandler in der [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) Klasse:
+Die **Stroke Joins** Seite zeigt drei Joins mit Code wie zeichnen den **Strichenden** Seite. Dies ist die `PaintSurface` -Ereignishandler in der [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeJoinsPage.cs) Klasse:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -189,13 +189,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![](paths-images/strokejoins-small.png "Dreifacher Screenshot der Seite verknüpft Stroke")](paths-images/strokejoins-large.png#lightbox "dreifachen Screenshot der Seite Stroke verknüpft")
+[![](paths-images/strokejoins-small.png "Triple screenshot of the Stroke Joins page")](paths-images/strokejoins-large.png#lightbox "Triple screenshot of the Stroke Joins page")
 
 Die gehrungsverbindung besteht aus einem sharp Punkt, der die Zeilen, in dem eine Verbindung herstellen. Wenn zwei Zeilen in einem kleinen Winkel verbinden, kann die Gehrungsgrenze recht lang sind. Um übermäßig lange gehrungsverbindungen zu verhindern, wird die Länge der Gehrungsgrenze durch den Wert des beschränkt die [ `StrokeMiter` ](xref:SkiaSharp.SKPaint.StrokeMiter) Eigenschaft `SKPaint`. Eine gehrungsverbindung, die diese Länge überschreiten ist deaktiviert aufgeteilt, um eine abgeschrägte Verbindung werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

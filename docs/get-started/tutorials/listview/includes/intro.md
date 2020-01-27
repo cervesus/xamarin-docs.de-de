@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 552251490665b673e02eb58c50c643daed9c1aed
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107243"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -25,4 +25,4 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie die Darstellung einer [`ListView`](xref:Xamarin.Forms.ListView) anpassen können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-[![Screenshot: ListView, deren Elemente mit einer Datenvorlage erstellt wurden](../images/customize-cell-appearance-reduced.png "ListView, die Daten mit Vorlagen anzeigt")](../images/customize-cell-appearance-large.png#lightbox "ListView, die Daten mit Vorlagen anzeigt")
+[![Screenshot: Listenansicht, deren Elemente mithilfe einer Datenvorlage erstellt werden](../images/customize-cell-appearance-reduced.png "Listenansicht mit Daten aus Vorlagen")](../images/customize-cell-appearance-large.png#lightbox "Listenansicht mit Daten aus Vorlagen")

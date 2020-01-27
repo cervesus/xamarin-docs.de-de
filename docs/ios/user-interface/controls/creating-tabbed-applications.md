@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ad4682e9a3d4de2565bee54ffa159fd739572e24
-ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
+ms.openlocfilehash: 25d8563288cce614bc2823b0146e5121688c6f02
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663321"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725480"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Registerkarten und Tab-leisten-Controller in xamarin. IOS
 
@@ -27,7 +27,7 @@ Auf dieser Seite werden beide Szenarien erläutert: Wenn sich die Registerkarten
 Die `UITabBarController` unterstützt im Registerkartenformat Anwendungsentwicklung durch Folgendes:
 
 - So können mehrere Controller hinzugefügt werden.
-- Bereitstellen einer Benutzeroberfläche mit Registerkarten, über die `UITabBar` -Klasse, damit der Benutzer zwischen Controllern und ihre Ansichten wechseln kann. 
+- Bereitstellen einer Benutzeroberfläche mit Registerkarten, über die `UITabBar` -Klasse, damit der Benutzer zwischen Controllern und ihre Ansichten wechseln kann.
 
 Controller werden hinzugefügt, um die `UITabBarController` über seine `ViewControllers` Eigenschaft, die eine `UIViewController` Array. Die `UITabBarController` selbst kümmert sich um den entsprechenden Controller laden und präsentieren die Ansicht auf Grundlage der ausgewählten Registerkarte.
 
@@ -63,9 +63,9 @@ Die `TabController` Klasse enthält die Implementierung der `UITabBarController`
 
 Zum Implementieren der `UITabBarController` müssen wir die folgenden Aktionen ausführen:
 
-1. Legen Sie die Basisklasse der `TabController` zu `UITabBarController` . 
-1. Erstellen Sie `UIViewController` Instanzen hinzugefügt der `TabController` . 
-1. Hinzufügen der `UIViewController` Instanzen, um ein Array zugewiesen der `ViewControllers` Eigenschaft der `TabController` . 
+1. Legen Sie die Basisklasse der `TabController` zu `UITabBarController` .
+1. Erstellen Sie `UIViewController` Instanzen hinzugefügt der `TabController` .
+1. Hinzufügen der `UIViewController` Instanzen, um ein Array zugewiesen der `ViewControllers` Eigenschaft der `TabController` .
 
 Fügen Sie den folgenden Code der `TabController` Klasse folgendermaßen erreichen:
 
@@ -118,16 +118,16 @@ public partial class AppDelegate : UIApplicationDelegate
 {
     UIWindow window;
     TabController tabController;
-    
+
     public override bool FinishedLaunching (UIApplication app, NSDictionary options)
     {
         window = new UIWindow (UIScreen.MainScreen.Bounds);
-        
+
         tabController = new TabController ();
         window.RootViewController = tabController;
-        
+
         window.MakeKeyAndVisible ();
-        
+
         return true;
     }
 }
@@ -217,7 +217,7 @@ In diesem Beispiel wird ein Storyboard zum Anordnen von Ansichts Controllern ver
 
 - Wenn das Dialogfeld "neue Datei" angezeigt wird, navigieren Sie zu **iOS > leeres iPhone-Storyboard**.
 
-Wir nennen das neue Storyboard **MainStoryboard** , wie unten gezeigt: 
+Wir nennen das neue Storyboard **MainStoryboard** , wie unten gezeigt:
 
 [![](creating-tabbed-applications-images/new-file-dialog.png "Add a MainStoryboard file to the project")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
@@ -295,7 +295,7 @@ Löschen Sie diese neue Ansicht-Controller, indem die schwarze Leiste am unteren
 
 In unserem Storyboards können wir Segues verwenden, um die Übergänge zwischen den TabBarController und unsere View-Controller zu verarbeiten. Nach dem Arbeiten mit die anfängliche Ansicht, möchten wir sie in der dem Benutzer angezeigten TabBarController laden. Richten wir dies im Designer.
 
-**Strg + Klick** und **Drag** über die Schaltfläche, um die TabBarController. In der Maustaste oben wird ein Kontextmenü angezeigt. Eine modale Segue verwendet werden soll. 
+**Strg + Klick** und **Drag** über die Schaltfläche, um die TabBarController. In der Maustaste oben wird ein Kontextmenü angezeigt. Eine modale Segue verwendet werden soll.
 
 Unsere Registerkarten, einrichten **Strg + Klick** aus der TabBarController aller unserer View-Controller in der Reihenfolge von einer bis zu drei, und wählen Sie die Beziehung **Registerkarte** aus dem Kontextmenü aus, wie unten gezeigt:
 
@@ -309,7 +309,7 @@ Wenn wir klicken Sie auf eines der Elemente der Registerkarte und den Eigenschaf
 
 [![](creating-tabbed-applications-images/properties-panel.png "Setting the tab options in the Properties Explorer")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
-Wir können dies verwenden, um bestimmte Attribute wie den Badge, den Titel und den iOS-bearbeiten [Bezeichner](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html), u. a.
+Wir können dies verwenden, um bestimmte Attribute, wie z. b. das Badge, den Titel und den IOS-Bezeichner, zu bearbeiten.
 
 Wir speichern und die Anwendung jetzt ausführen, werden wir feststellen, dass die Schaltfläche wird erneut angezeigt, wenn die ViewController1-Instanz in der TabBarController geladen wird. Lassen Sie uns dies beheben, indem überprüft wird, wenn die aktuelle Ansicht eine übergeordnete Ansicht-Controller verfügt. Wenn Ja, wir wissen, dass wir innerhalb der TabBarController sind und daher die Schaltfläche ausgeblendet werden soll. Fügen Sie den folgenden Code, der ViewController1-Klasse:
 

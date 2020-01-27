@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/16/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "69541470"
 ---
 Eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse wird unter Verwendung der Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource), die vom Typ `IEnumerable` ist, mit Daten aufgefüllt. Im vorherigen Schritt wurde die `ListView`-Klasse in XAML mit einem Zeichenfolgenarray aufgefüllt. Eine `ListView`-Klasse wird jedoch üblicherweise mit Daten aus einer Sammlung aufgefüllt, die im CodeBehind definiert ist, der `IEnumerable` implementiert.
@@ -187,7 +187,7 @@ In dieser Übung ändern Sie das Projekt **ListViewTutorial** so, dass die [`Lis
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: Eine ListView-Klasse wird unter iOS und Android mit Daten aus einer Sammlung aufgefüllt](../images/populate-data.png "ListView mit Daten aus einer Sammlung")](../images/populate-data-large.png#lightbox "ListView mit Daten aus einer Sammlung")
+    [![Screenshot: Listenansicht mit Daten aus einer Sammlung unter iOS und Android](../images/populate-data.png "Listenansicht mit Daten aus einer Sammlung")](../images/populate-data-large.png#lightbox "Listenansicht mit Daten aus einer Sammlung")
 
     Die Klasse [`ListView`](xref:Xamarin.Forms.ListView) zeigt die Eigenschaft `Name` für jedes `Monkey`-Objekt in der `Monkeys`-Sammlung an. Dies liegt daran, dass in der Standardeinstellung die `ListView`-Klasse die `ToString`-Methode aufruft, wenn sie die Objekte aus einer Sammlung anzeigt (dies wurde in der `Monkey`-Klasse überschrieben, um den Eigenschaftswert `Name` zurückzugeben).
 
@@ -366,8 +366,8 @@ In dieser Übung ändern Sie das Projekt **ListViewTutorial** so, dass die [`Lis
 
     Dieser Code stellt eine Datenbindung zwischen der Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) und der Sammlung `Monkeys` her. Zur Laufzeit sucht die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse in ihrer [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft nach der Sammlung `Monkeys` und wird mit Daten aus dieser Sammlung aufgefüllt. Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: Eine ListView-Klasse wird unter iOS und Android mit Daten aus einer Sammlung aufgefüllt](../images/populate-data.png "ListView mit Daten aus einer Sammlung")](../images/populate-data-large.png#lightbox "ListView mit Daten aus einer Sammlung")
+    [![Screenshot: Listenansicht mit Daten aus einer Sammlung unter iOS und Android](../images/populate-data.png "Listenansicht mit Daten aus einer Sammlung")](../images/populate-data-large.png#lightbox "Listenansicht mit Daten aus einer Sammlung")
 
     Die Klasse [`ListView`](xref:Xamarin.Forms.ListView) zeigt die Eigenschaft `Name` für jedes `Monkey`-Objekt in der `Monkeys`-Sammlung an. Dies liegt daran, dass in der Standardeinstellung die `ListView`-Klasse die `ToString`-Methode aufruft, wenn sie die Objekte aus einer Sammlung anzeigt (dies wurde in der `Monkey`-Klasse überschrieben, um den Eigenschaftswert `Name` zurückzugeben).

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61372938"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -33,7 +33,7 @@ ms.locfileid: "61372938"
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten: Klicken Sie auf die [`Button`](xref:Xamarin.Forms.Button), und beobachten Sie, dass sich der darauf angezeigte Text ändert:
 
-    [![Screenshot: Schaltflächentext ändert sich nach dem Klicken in iOS und Android](../images/handle-button-click.png "Behandeln eines Schaltflächenklicks")](../images/handle-button-click-large.png#lightbox "Behandeln eines Schaltflächenklicks")
+    [![Screenshot: Schaltflächentext ändert sich nach dem Klicken in iOS und Android](../images/handle-button-click.png "Klick auf eine Schaltfläche verarbeiten")](../images/handle-button-click-large.png#lightbox "Klick auf eine Schaltfläche verarbeiten")
 
     Weitere Informationen zum Behandeln von Schaltflächenklicks finden Sie im Leitfaden [Xamarin.Forms Button (Xamarin.Forms-Schaltfläche)](~/xamarin-forms/user-interface/button.md#handling-button-clicks) unter [Handling button clicks (Behandlung von Schaltflächenklicks)](~/xamarin-forms/user-interface/button.md).
 
@@ -62,8 +62,8 @@ ms.locfileid: "61372938"
     > [!NOTE]
     > Neben dem `Clicked`-Ereignis definiert das `Button`-Element auch die Ereignisse [`Pressed`](xref:Xamarin.Forms.Button.Pressed) und [`Released`](xref:Xamarin.Forms.Button.Released). Weitere Informationen finden Sie im Leitfaden [Xamarin.Forms Button (Xamarin.Forms-Schaltfläche)](~/xamarin-forms/user-interface/button.md#pressing-and-releasing-the-button) unter [Pressing and releasing the button (Drücken und Loslassen der Schaltfläche)](~/xamarin-forms/user-interface/button.md).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten. Klicken Sie auf die [`Button`](xref:Xamarin.Forms.Button), und beobachten Sie, dass sich der darauf angezeigte Text ändert:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten: Klicken Sie auf die [`Button`](xref:Xamarin.Forms.Button), und beobachten Sie, dass sich der darauf angezeigte Text ändert:
 
-    [![Screenshot: Schaltflächentext ändert sich nach dem Klicken in iOS und Android](../images/handle-button-click.png "Behandeln eines Schaltflächenklicks")](../images/handle-button-click-large.png#lightbox "Behandeln eines Schaltflächenklicks")
+    [![Screenshot: Schaltflächentext ändert sich nach dem Klicken in iOS und Android](../images/handle-button-click.png "Klick auf eine Schaltfläche verarbeiten")](../images/handle-button-click-large.png#lightbox "Klick auf eine Schaltfläche verarbeiten")
 
     Weitere Informationen zum Behandeln von Schaltflächenklicks finden Sie im Leitfaden [Xamarin.Forms Button (Xamarin.Forms-Schaltfläche)](~/xamarin-forms/user-interface/button.md#handling-button-clicks) unter [Handling button clicks (Behandlung von Schaltflächenklicks)](~/xamarin-forms/user-interface/button.md).

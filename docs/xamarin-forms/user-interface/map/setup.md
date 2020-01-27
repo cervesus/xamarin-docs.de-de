@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/06/2019
-ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.openlocfilehash: 9213e893d222e26168940e09a93e158d1e74d8dc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662345"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725577"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. Forms-Zuordnungs Initialisierung und-Konfiguration
 
@@ -50,7 +50,7 @@ Nachdem das nuget-Paket hinzugefügt wurde und die Initialisierungs Methode in j
 
 ## <a name="platform-configuration"></a>Platt Form Konfiguration
 
-Für Android und die universelle Windows-Plattform (UWP) ist eine zusätzliche Konfiguration erforderlich, bevor die Karte angezeigt wird. Außerdem erfordert das Zugreifen auf den Standort des Benutzers unter iOS, Android und UWP das Erteilen von Standortberechtigungen für die Anwendung.
+Für Android und die universelle Windows-Plattform (UWP) ist eine zusätzliche Konfiguration erforderlich, bevor die Karte angezeigt wird. Außerdem erfordert das Zugreifen auf den Speicherort des Benutzers unter IOS, Android und UWP das Erteilen von Standort Berechtigungen für die Anwendung.
 
 ### <a name="ios"></a>iOS
 
@@ -58,14 +58,14 @@ Das anzeigen und interagieren mit einer Karte unter IOS erfordert keine zusätzl
 
 - IOS 11 und höher
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – für die Verwendung von Location Services, wenn die Anwendung verwendet wird.
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – für die jederzeit Verwendung von Location Services
-- IOS 10 und früher
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) – für die Verwendung der Standortdienste jederzeit
+- iOS 10 und früher
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – für die Verwendung von Location Services, wenn die Anwendung verwendet wird.
-  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – für die jederzeit Verwendung von Location Services    
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – für die Verwendung der Standortdienste jederzeit    
 
-Zur Unterstützung von IOS 11 und früher können Sie alle drei Schlüssel einschließen: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription` und `NSLocationAlwaysUsageDescription`.
+Um iOS 11 und früheren zu unterstützen, können Sie alle drei Product Keys einschließen: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, und `NSLocationAlwaysUsageDescription`.
 
-Die XML-Darstellung für diese Schlüssel in " **Info. plist** " ist unten dargestellt. Aktualisieren Sie die `string` Werte, um widerzuspiegeln, wie Ihre Anwendung die Standortinformationen verwendet:
+Die XML-Darstellung für diese Schlüssel im **"Info.plist"** ist unten dargestellt. Aktualisieren Sie die `string` Werte, um anzugeben, wie Ihre Anwendung die Informationen zum Speicherort verwendet:
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -76,11 +76,11 @@ Die XML-Darstellung für diese Schlüssel in " **Info. plist** " ist unten darge
 <string>Can we use your location at all times?</string>
 ```
 
-Die **Info. plist** -Einträge können auch beim Bearbeiten der Datei " **Info. plist** " in der **Quell** Ansicht hinzugefügt werden:
+Die **"Info.plist"** Einträge können auch hinzugefügt werden, **Quelle** anzeigen, während der Bearbeitung der **"Info.plist"** Datei:
 
 ![Info. plist für IOS 8](setup-images/ios8-map-permissions.png "IOS 8 erforderliche Info. plist-Einträge")
 
-Daraufhin wird eine Aufforderung angezeigt, wenn die Anwendung versucht, auf den Standort des Benutzers zuzugreifen und Zugriff anzufordern:
+Daraufhin wird eine Aufforderung angezeigt, wenn die Anwendung versucht, auf den Speicherort des Benutzers zuzugreifen und Zugriff anzufordern:
 
 [![Screenshot der Standort Berechtigungs Anforderung unter IOS](setup-images/permission-ios.png "IOS-Berechtigungs Anforderung")](setup-images/permission-ios-large.png#lightbox "IOS-Berechtigungs Anforderung")
 
@@ -92,8 +92,8 @@ Der Konfigurations Vorgang zum Anzeigen und interagieren mit einer Karte unter A
 1. Geben Sie die Google Play Services-Versionsnummer im Manifest an.
 1. Geben Sie im Manifest die Anforderung für die Apache HTTP-Legacy Bibliothek an.
 1. optionale Geben Sie die WRITE_EXTERNAL_STORAGE-Berechtigung im Manifest an.
-1. optionale Geben Sie die Standort-Berechtigungen im Manifest an.
-1. optionale Standort-Berechtigungen zur Laufzeit  in der `MainActivity`-Klasse anfordern.
+1. optionale Geben Sie die Speicherort Berechtigungen im Manifest an.
+1. optionale Berechtigungen für Lauf Zeit Speicherort in der `MainActivity`-Klasse anfordern.
 
 Ein Beispiel für eine ordnungsgemäß konfigurierte Manifest-Datei finden Sie unter " [androidmanifest. XML](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) " aus der Beispielanwendung.
 
@@ -112,7 +112,7 @@ Nachdem Sie einen API-Schlüssel abgerufen haben, muss er innerhalb des `<applic
 Dadurch wird der API-Schlüssel in das Manifest eingebettet. Ohne einen gültigen API-Schlüssel zeigt das [`Map`](xref:Xamarin.Forms.Maps.Map) -Steuerelement ein leeres Raster an.
 
 > [!NOTE]
-> Beachten Sie, dass Sie, damit Ihr APK auf Google Maps zugreifen kann, SHA-1-Fingerabdrücke und Paketnamen für jeden Keystore (Debug und Release) einschließen müssen, mit dem Sie Ihr APK signieren. Wenn Sie z. b. einen Computer für das Debuggen und einen anderen Computer zum Erstellen des Release-APK verwenden, sollten Sie den SHA-1-Zertifikat Fingerabdruck aus dem Debug-keystore des ersten Computers und dem SHA-1-Zertifikat Fingerabdruck aus dem releasekeystore von der zweite Computer. Beachten Sie auch, dass die Schlüssel Anmelde Informationen bearbeitet werden, wenn sich der **Paketname** der app ändert. Siehe Abrufen [eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+> Beachten Sie, dass in der Reihenfolge für das APK Zugriff auf Google Maps, müssen Sie SHA1-Fingerabdrücke gehören und Packen Namen für jede Keystore (Debug und Release), die Sie verwenden, um das APK zu signieren. Z. B. Wenn Sie einen Computer für Debug- und einem anderen Computer zum Generieren des Release-APK verwenden, sollten Sie den SHA-1-Fingerabdruck des Zertifikats aus dem debugkeystore des ersten Computers und der SHA-1-Fingerabdruck des Zertifikats aus dem Keystore Version der einschließen der zweite Computer. Beachten Sie außerdem die schlüsselanmeldeinformationen bearbeiten, wenn der app **Paketname** Änderungen. Siehe Abrufen [eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
 #### <a name="specify-the-google-play-services-version-number"></a>Angeben der Google Play Services-Versionsnummer
 
@@ -134,7 +134,7 @@ Wenn Ihre xamarin. Forms-Anwendung auf API 28 oder höher ausgerichtet ist, müs
 
 Dadurch wird die Anwendung aufgefordert, die Apache HTTP-Client Bibliothek zu verwenden, die aus der `bootclasspath` in Android 9 entfernt wurde.
 
-#### <a name="specify-the-write_external_storage-permission"></a>WRITE_EXTERNAL_STORAGE-Berechtigung angeben
+#### <a name="specify-the-write_external_storage-permission"></a>WRITE_EXTERNAL_STORAGE Berechtigung angeben
 
 Wenn Ihre Anwendung auf API 22 oder niedriger abzielt, kann es erforderlich sein, dem Manifest die `WRITE_EXTERNAL_STORAGE` Berechtigung als untergeordnetes Element des `<manifest>`-Elements hinzuzufügen:
 
@@ -144,9 +144,9 @@ Wenn Ihre Anwendung auf API 22 oder niedriger abzielt, kann es erforderlich sein
 
 Dies ist nicht erforderlich, wenn Ihre Anwendung auf API 23 oder höher ausgerichtet ist.
 
-#### <a name="specify-location-permissions"></a>Standortberechtigungen angeben
+#### <a name="specify-location-permissions"></a>Speicherort Berechtigungen angeben
 
-Wenn die Anwendung auf den Standort des Benutzers zugreifen muss, müssen Sie die Berechtigung anfordern, indem Sie dem Manifest (oder beiden) die Berechtigungen `ACCESS_COARSE_LOCATION` oder `ACCESS_FINE_LOCATION` als untergeordnetes Element des Elements `<manifest>` hinzufügen:
+Wenn die Anwendung auf den Speicherort des Benutzers zugreifen muss, müssen Sie die Berechtigung anfordern, indem Sie dem Manifest (oder beiden) die Berechtigungen `ACCESS_COARSE_LOCATION` oder `ACCESS_FINE_LOCATION` als untergeordnetes Element des Elements `<manifest>` hinzufügen:
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.myapp">
@@ -156,7 +156,7 @@ Wenn die Anwendung auf den Standort des Benutzers zugreifen muss, müssen Sie di
 </manifest>
 ```
 
-Mit der `ACCESS_COARSE_LOCATION` Berechtigung kann die API den Standort des Geräts mithilfe von WiFi-oder mobilen Daten (oder beides) bestimmen. Mit den `ACCESS_FINE_LOCATION` Berechtigungen kann die API die GPS (GPS), WiFi oder Mobile Daten verwenden, um einen präzisen Standort wie möglich zu bestimmen.
+Mit der `ACCESS_COARSE_LOCATION` Berechtigung kann die API den Speicherort des Geräts mithilfe von WiFi-oder mobilen Daten (oder beides) bestimmen. Mit den `ACCESS_FINE_LOCATION` Berechtigungen kann die API die GPS (GPS), WiFi oder Mobile Daten verwenden, um einen präzisen Speicherort wie möglich zu bestimmen.
 
 Alternativ können diese Berechtigungen aktiviert werden, indem Sie mit dem Manifest-Editor die folgenden Berechtigungen hinzufügen:
 
@@ -167,9 +167,9 @@ Diese werden im folgenden Screenshot gezeigt:
 
 ![Erforderliche Berechtigungen für Android](setup-images/android-map-permissions.png "Erforderliche Berechtigungen für Android")
 
-#### <a name="request-runtime-location-permissions"></a>Berechtigungen für Lauf Zeit Standort anfordern
+#### <a name="request-runtime-location-permissions"></a>Berechtigungen für Lauf Zeit Speicherort anfordern
 
-Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Standort des Benutzers zugreifen muss, muss Sie überprüfen, ob Sie zur Laufzeit über die erforderliche Berechtigung verfügt, und Sie anfordern, wenn Sie nicht vorhanden ist. Dies kann folgendermaßen erfüllt werden:
+Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Speicherort des Benutzers zugreifen muss, muss Sie überprüfen, ob Sie zur Laufzeit über die erforderliche Berechtigung verfügt, und Sie anfordern, wenn Sie nicht vorhanden ist. Dies kann folgendermaßen erfüllt werden:
 
 1. Fügen Sie in der `MainActivity`-Klasse die folgenden Felder hinzu:
 
@@ -227,7 +227,7 @@ Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Standort des Benu
 
     Diese außer Kraft Setzung behandelt das Ergebnis der Berechtigungs Anforderung.
 
-Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt wird, wenn die Anwendung den Standort des Benutzers anfordert:
+Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt wird, wenn die Anwendung den Speicherort des Benutzers anfordert:
 
 [![Screenshot der Standort Berechtigungs Anforderung unter Android](setup-images/permission-android.png "Android-Berechtigungs Anforderung")](setup-images/permission-android-large.png#lightbox "Android-Berechtigungs Anforderung")
 
@@ -235,10 +235,10 @@ Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt 
 
 Bei UWP muss Ihre Anwendung authentifiziert werden, bevor eine Zuordnung angezeigt und Kartendienste genutzt werden können. Um Ihre Anwendung zu authentifizieren, müssen Sie einen Maps-Authentifizierungsschlüssel angeben. Weitere Informationen finden Sie unter [Anfordern eines Zuordnungs Authentifizierungs Schlüssels](/windows/uwp/maps-and-location/authentication-key). Das Authentifizierungs Token sollte dann im `FormsMaps.Init("AUTHORIZATION_TOKEN")`-Methoden Aufrufes angegeben werden, um die Anwendung mit dem Namen von "admaps" zu authentifizieren.
 
-Außerdem müssen Sie, wenn Ihre Anwendung auf den Standort des Benutzers zugreifen muss, die Standort Funktion im Paket Manifest aktivieren. Dies kann folgendermaßen erfüllt werden:
+Außerdem müssen Sie, wenn Ihre Anwendung auf den Speicherort des Benutzers zugreifen muss, die Standort Funktion im Paket Manifest aktivieren. Dies kann folgendermaßen erfüllt werden:
 
 1. Doppelklicken Sie in **Projektmappen-Explorer**auf **Package. appxmanifest** , und wählen Sie die Registerkarte **Funktionen** aus.
-1. Aktivieren Sie in der Liste der **Funktionen** das Kontrollkästchen für **Standort**. Dadurch wird die `location` Geräte Funktion der Paket Manifest-Datei hinzugefügt.
+1. Aktivieren Sie in der Liste der **Funktionen** das Kontrollkästchen für **Speicherort**. Dadurch wird die `location` Geräte Funktion der Paket Manifest-Datei hinzugefügt.
 
     ```xml
     <Capabilities>
@@ -266,4 +266,4 @@ Dieser Code übergibt die Assembly, in der sich die `Xamarin.Forms.Maps.UWP.MapR
 - [Maps-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin. Forms. Maps-Pins](~/xamarin-forms/user-interface/map/pins.md).
 - [Karten-API](xref:Xamarin.Forms.Maps)
-- [Zuordnen eines benutzerdefinierten Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [Zuordnen von benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)

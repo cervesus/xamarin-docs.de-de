@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67659813"
 ---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Klasse zu verwenden, die wiederum Daten aus der Web-API [OpenWeatherMap](https://openweathermap.org/) abruft.
@@ -123,7 +123,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Kl
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten: Tippen Sie auf das [`Button`](xref:Xamarin.Forms.Button)-Objekt, um aktuelle Wetterdaten für Seattle abzurufen:
 
-    [![Screenshot: Wetterdaten für Seattle, auf iOS und Android](../images/consume-web-service.png "Wetterdaten für Seattle")](../images/consume-web-service-large.png#lightbox "Wetterdaten für Seattle")
+    [![Screenshot: Wetterdaten für Seattle unter iOS und Android](../images/consume-web-service.png "Wetterdaten für Seattle")](../images/consume-web-service-large.png#lightbox "Wetterdaten für Seattle")
 
     > [!IMPORTANT]
     > Ihr persönlicher API-Schlüssel für OpenWeatherMap muss als Wert der Konstante `OpenWeatherMapAPIKey` in der Klasse `Constants` festgelegt werden.
@@ -243,9 +243,9 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Kl
     > [!IMPORTANT]
     > Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) wird über die visuelle Struktur vererbt. Da sie auf das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt festgelegt wurde, erben deshalb untergeordnete Objekte von der `ContentPage`-Klasse ihren Wert, darunter auch die [`Label`](xref:Xamarin.Forms.Label)-Instanzen.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten. Tippen Sie auf das [`Button`](xref:Xamarin.Forms.Button)-Objekt, um aktuelle Wetterdaten für Seattle abzurufen:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten: Tippen Sie auf das [`Button`](xref:Xamarin.Forms.Button)-Objekt, um aktuelle Wetterdaten für Seattle abzurufen:
 
-    [![Screenshot: Wetterdaten für Seattle, auf iOS und Android](../images/consume-web-service.png "Wetterdaten für Seattle")](../images/consume-web-service-large.png#lightbox "Wetterdaten für Seattle")
+    [![Screenshot der Wetterdaten für Seattle unter iOS und Android](../images/consume-web-service.png "Wetterdaten für Seattle")](../images/consume-web-service-large.png#lightbox "Wetterdaten für Seattle")
 
     > [!IMPORTANT]
     > Ihr persönlicher API-Schlüssel für OpenWeatherMap muss als Wert der Konstante `OpenWeatherMapAPIKey` in der Klasse `Constants` festgelegt werden.

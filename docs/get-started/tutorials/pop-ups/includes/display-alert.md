@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 875f00b379879aa131d37018f89e475170e5320e
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277260"
 ---
 Xamarin.Forms verfügt über ein modales Popupelement, das als „Warnung“ bezeichnet wird, um dem Benutzer eine Warnung anzuzeigen oder einfache Fragen zu stellen. In dieser Übung verwenden Sie die [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)-Methode aus der [`Page`](xref:Xamarin.Forms.Page)-Klasse, um dem Benutzer eine Warnung anzuzeigen und eine einfache Frage zu stellen.
@@ -17,7 +17,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **PopupsTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **PopupsTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -37,7 +37,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
 
     Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus zwei [`Button`](xref:Xamarin.Forms.Button)-Objekten in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse besteht. Die [`Button.Text`](xref:Xamarin.Forms.Button.Text)-Eigenschaften geben den Text an, der in jedem `Button`-Objekt angezeigt wird, und die [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignisse werden als Ereignishandler festgelegt, die im nächsten Schritt erstellt werden.
 
-1. Erweitern Sie **MainPage.xaml** im **Projektmappen-Explorer** im Projekt **PopupsTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie dann in der Datei **MainPage.xaml.cs** der Klasse die Ereignishandler `OnDisplayAlertButtonClicked` und `OnDisplayAlertQuestionButtonClicked` hinzu:
+1. Erweitern Sie **MainPage.xaml** im **Projektmappen-Explorer** im Projekt **PopupsTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie anschließend in der Datei **MainPage.xaml.cs** der Klasse die Ereignishandler `OnDisplayAlertButtonClicked` und `OnDisplayAlertQuestionButtonClicked` hinzu:
 
     ```csharp
     async void OnDisplayAlertButtonClicked(object sender, EventArgs e)
@@ -61,11 +61,11 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten: Tippen Sie dann auf das erste [`Button`](xref:Xamarin.Forms.Button)-Objekt:
 
-    [![Screenshot: Warnung auf iOS und Android](../images/alert.png "Warnung")](../images/alert-large.png#lightbox "Warnung")
+    [![Screenshot: Warnung unter iOS und Android](../images/alert.png "Warnung")](../images/alert-large.png#lightbox "Warnung")
 
     Schließen Sie die Warnung, und tippen Sie dann auf das zweite [`Button`](xref:Xamarin.Forms.Button)-Objekt:
 
-    [![Screenshot: Warnung, die eine Frage stellt, auf iOS und Android](../images/alert-question.png " Warnung, die eine Frage stellt")](../images/alert-question-large.png#lightbox "Warnung, die eine Frage stellt")
+    [![Screenshot: Warnung mit einer Frage unter iOS und Android](../images/alert-question.png "Warnung mit einer Frage")](../images/alert-question-large.png#lightbox "Warnung mit einer Frage")
 
     Sie können sehen, dass die Antwort als Ausgabe im **Ausgabefenster** von Visual Studio angezeigt wird, nachdem eine Antwort für die Frage ausgewählt wurde.
 
@@ -80,7 +80,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **PopupsTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Doppelklicken Sie im **Lösungspad** im Projekt **PopupsTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -100,7 +100,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
 
     Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus zwei [`Button`](xref:Xamarin.Forms.Button)-Objekten in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse besteht. Die [`Button.Text`](xref:Xamarin.Forms.Button.Text)-Eigenschaften geben den Text an, der in jedem `Button`-Objekt angezeigt wird, und die [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignisse werden als Ereignishandler festgelegt, die im nächsten Schritt erstellt werden.
 
-1. Erweitern Sie **MainPage.xaml** im **Lösungspad** im Projekt **PopupsTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie dann in der Datei **MainPage.xaml.cs** der Klasse die Ereignishandler `OnDisplayAlertButtonClicked` und `OnDisplayAlertQuestionButtonClicked` hinzu:
+1. Erweitern Sie **MainPage.xaml** im **Lösungspad** im Projekt **PopupsTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie anschließend in der Datei **MainPage.xaml.cs** der Klasse die Ereignishandler `OnDisplayAlertButtonClicked` und `OnDisplayAlertQuestionButtonClicked` hinzu:
 
     ```csharp
     async void OnDisplayAlertButtonClicked(object sender, EventArgs e)
@@ -122,13 +122,13 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!IMPORTANT]
     > Die [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)-Methode ist asynchron und sollte immer mit dem `await`-Schlüsselwort erwartet werden.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten. Tippen Sie dann auf das erste [`Button`](xref:Xamarin.Forms.Button)-Objekt:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten: Tippen Sie dann auf das erste [`Button`](xref:Xamarin.Forms.Button)-Objekt:
 
-    [![Screenshot: Warnung auf iOS und Android](../images/alert.png "Warnung")](../images/alert-large.png#lightbox "Warnung")
+    [![Screenshot: Warnung unter iOS und Android](../images/alert.png "Warnung")](../images/alert-large.png#lightbox "Warnung")
 
     Schließen Sie die Warnung, und tippen Sie dann auf das zweite [`Button`](xref:Xamarin.Forms.Button)-Objekt:
 
-    [![Screenshot: Warnung, die eine Frage stellt, auf iOS und Android](../images/alert-question.png " Warnung, die eine Frage stellt")](../images/alert-question-large.png#lightbox "Warnung, die eine Frage stellt")
+    [![Screenshot: Warnung mit einer Frage unter iOS und Android](../images/alert-question.png "Warnung mit einer Frage")](../images/alert-question-large.png#lightbox "Warnung mit einer Frage")
 
     Sie können sehen, dass die Antwort als Ausgabe im **Ausgabefenster** von Visual Studio für Mac angezeigt wird, nachdem eine Antwort für die Frage ausgewählt wurde.
 

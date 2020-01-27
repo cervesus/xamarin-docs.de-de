@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1339a6c2909c7ba62592d66dcdf08bcfd2e668a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b9dfb354f33f67c73b415f8c109ebdc27dcdb6d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030634"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725386"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Weitere tvos 10-Frameworks-Änderungen
 
@@ -55,7 +55,7 @@ Weitere Informationen finden Sie in der [Core Data Framework-Referenz](https://d
 
 tvos 10 umfasst die folgenden Verbesserungen am Kern Grafik Framework:
 
-- Die neue [cgcolorconverterref](https://developer.apple.com/reference/coregraphics/cgcolorconverterref) -Klasse kann verwendet werden, um eine Reihe von Farb Konvertierungen auszuführen.
+- Die neue cgcolorconverterref-Klasse kann verwendet werden, um eine Reihe von Farb Konvertierungen auszuführen.
 
 <a name="Core-Image-Enhancements" />
 
@@ -65,7 +65,7 @@ tvos 10 nimmt die folgenden Verbesserungen am Core-Image-Framework vor:
 
 - Die `ImageWithExtent`-Methode der [cifilter](https://developer.apple.com/reference/coreimage/cifilter) -Klasse kann verwendet werden, um eine benutzerdefinierte Verarbeitung in den Filter Vorgang einzufügen. Das Core-Image Ruft den gegebenen Rückruf zwischen Filtern auf, wenn ein Bild für die Ausgabe oder Anzeige verarbeitet wird.
 - Die APP kann jetzt Bilder in einem Farbraum außerhalb des Arbeits Farbraums des Kern Bild Kontexts verarbeiten, indem Sie vor und nach der Verarbeitung in den und aus dem Farbraum in-und auslagern.
-- Es wurden mehrere renderingleistungserweiterungen für das `UIImage` Rendering (bei der Unterstützung durch Core Image Image-Speicher) in `UIImageView` Objekten vorgenommen. 
+- Es wurden mehrere renderingleistungserweiterungen für das `UIImage` Rendering (bei der Unterstützung durch Core Image Image-Speicher) in `UIImageView` Objekten vorgenommen.
 - `UIImage`-Objekte, die als Wide-Gamut gekennzeichnet sind, werden in `UIImageView` Objekten auf IOS-Geräten, die Breite Farben unterstützen, als Breite Farbe dargestellt.
 - Kernbild-Kernelcode kann jetzt bestimmte Pixel Ausgabeformate anfordern.
 
@@ -85,8 +85,8 @@ Die folgenden Verbesserungen wurden an Foundation Framework für tvos 10 vorgeno
 
 - Verwenden Sie die neue [nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval) -Klasse, um Datums-und Zeitintervall Berechnungen zu erstellen, z. b. Dauer Zeiten, zum Vergleichen von Intervallen und zum Testen von Intervall interabschnitten.
 - Der [nslocal](https://developer.apple.com/reference/foundation/nslocale) -Klasse wurden mehrere neue Eigenschaften hinzugefügt, um lokale Informationen und die verfügbaren Anzeige Formate abzurufen.
-- Verwenden Sie die neue [nsmeasure](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse, um zwischen verschiedenen Maßeinheiten (User Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
-- Verwenden Sie die neue [NS-](https://developer.apple.com/reference/foundation/nsmeasurementformatter) Klasse, um lokalisierte Messungen zum Anzeigen für den Endbenutzer zu formatieren.
+- Verwenden Sie die neue [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)-Klasse, um zwischen verschiedenen Maßeinheiten (Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
+- Verwenden Sie die neue [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)-Klasse, um lokalisierte Messungen zu formatieren, die dem Endbenutzer angezeigt werden sollen.
 - Verwenden Sie die neuen [nsunit](https://developer.apple.com/reference/foundation/nsunit) -und [nsdimension](https://developer.apple.com/reference/foundation/nsdimension) -Klassen, um bestimmte UOMS darzustellen.
 
 <a name="GameKit-Enhancements" />
@@ -159,7 +159,7 @@ Die folgenden Verbesserungen wurden an dem scenekit-Framework in tvos 10 vorgeno
 - Scenekit interpretiert Farbkomponenten Werte in einem linearen RGB-Farbraum für alle shadertypen.
 - Da scenekit Farbprofil Informationen in Textur Bildern liest und anpasst, verwenden Sie für alle Images Asset-Kataloge, um sicherzustellen, dass diese Informationen bereitgestellt werden.
 - Sowohl lineares Farb Raum Rendering als auch breit Farben können deaktiviert werden, indem die `SCNDisableLinearSpaceRendering` und `SCNDisableWideGamut` Schlüssel im `Info.plist`der APP angegeben werden.
-- Erstellen Sie beliebige Polygon-Prime (entweder aus Dateien geladen oder Programm gesteuert generiert), um die Geometrie mit der neuen [scngeometryprimitivetyetpolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon) -Klasse anzugeben.
+- Erstellen Sie beliebige Polygon-Prime (entweder aus Dateien geladen oder Programm gesteuert generiert), um die Geometrie mit der neuen [scngeometryprimitivetyetpolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon) -Klasse anzugeben.
 
 <a name="SpriteKit-Enhancements" />
 
@@ -181,7 +181,7 @@ Die folgenden Verbesserungen wurden an dem UIKit-Framework in tvos 10 vorgenomme
 - Die Fokus-API wurde erweitert und unterstützt nicht nur die `UIViews`, sondern auch den Fokus des nicht Sicht Elements. Elemente, die den Fokus unterstützen, _müssen_ die `IUIFocusItem` Schnittstelle implementieren.
 - Die neue `UIGraphicsRender`-Klasse stellt eine objektorientierte Methode zum Erstellen von Bitmaps oder PDF-Code aus dem UIKit-Rendering oder Kern Grafiken bereit und ersetzt die veraltete `UIGraphicsBeginImageContext` Methode.
 - Die `UIUserInterfaceStyle`-Klasse wurde hinzugefügt, um zu bestimmen, welches Design der Benutzeroberfläche (dunkel oder hell) derzeit aktiv ist.
-- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt, und van ist mit Gesten verknüpft. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der [uitimingcurrveprovider-Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und [ Uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) für weitere Informationen.
+- Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt, und van ist mit Gesten verknüpft. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der [uitimingcurrveprovider-Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und der [uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) .
 - Die neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` ermöglichen der APP, eine benutzerdefinierte Schnittstelle für Peek-und Pop-Vorgänge bereitzustellen.
 - Die neue `UIAccessibilityCustomRotor`-Klasse ermöglicht der APP, benutzerdefinierte kontextspezifische Funktionen für Hilfstechnologien wie Voice over bereitzustellen.
 - Verwenden Sie die Symbole `UIAccessibilityIsAssistiveTouchRunning` und `UIAccessibilityAssistiveTouchStatusDidChangeNotification`, um zu bestimmen, ob assistivetouch aktiviert ist.
@@ -195,7 +195,7 @@ Die folgenden Verbesserungen wurden an dem UIKit-Framework in tvos 10 vorgenomme
 - Initiieren Sie die cloudkit-Freigabe, und ändern Sie deren Eigenschaften mithilfe der neuen Klassen `UICloudSharingController` und `UICloudSharingControllerDelegate`.
 - Profitieren Sie von vorab abgerufenen Zellen, um die scrolldarstellung von `UICollectionViews` mit dem neuen `UICollectionViewDataSourcePrefetching` Delegaten zu verbessern.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [Neues in tvos 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

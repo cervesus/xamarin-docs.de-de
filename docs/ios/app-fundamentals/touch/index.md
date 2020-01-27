@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: edf5f1c82857930a2647f306195a4c82f4338db6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009360"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724629"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Behandeln von Berührungen in xamarin. IOS-apps
 
@@ -37,8 +37,7 @@ Dieses Handbuch bietet eine Einführung in die Kontaktaufnahme in ios. Weitere I
 - [3D Touch](~/ios/platform/3d-touch.md)
 - [Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [IOS-Berührungs Start (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
 - [IOS-Berührungs Finale (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
 - [Fingerpaint (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

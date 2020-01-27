@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 8ad5ca60a074cbdc6ff91134cc9c1276ed653b91
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277254"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -15,11 +15,11 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **LocalDatabaseTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **LocalDatabaseTutorial** und anschließend auf **Manage NuGet Packages...** (NuGet-Pakete verwalten...).
 
-    ![Screenshot: ausgewähltes Menüelement „Manage NuGet Packages...“ (NuGet-Pakete hinzufügen...)](../images/vs/add-nuget-packages.png "Menüelement „Manage NuGet Packages...“ (NuGet-Pakete hinzufügen...)")
+    ![Screenshot: Menüelement „Manage NuGet Packages...“ (NuGet-Pakete verwalten...) ausgewählt](../images/vs/add-nuget-packages.png "Menüelement „Add NuGet Packages“ (NuGet-Pakete hinzufügen)")
 
 1. Klicken Sie im **NuGet-Paket-Manager** auf die Registerkarte **Durchsuchen**, suchen Sie nach dem NuGet-Paket **sqlite-net-pcl**, wählen Sie es aus, und klicken Sie auf die Schaltfläche **Installieren**, um es dem Projekt hinzuzufügen:
 
@@ -46,11 +46,11 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **LocalDatabaseTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Klicken Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt **LocalDatabaseTutorial** und anschließend auf **Add > Add NuGet Packages...** (Hinzufügen > NuGet-Pakete hinzufügen...).
 
-    ![Screenshot: ausgewähltes Menüelement „Add NuGet Packages...“ (NuGet-Pakete hinzufügen...)](../images/vsmac/add-nuget-packages.png "Menüelement „Add NuGet Packages...“ (NuGet-Pakete hinzufügen...)")
+    ![Screenshot: Menüelement „Add NuGet Packages“ (NuGet-Pakete hinzufügen) ausgewählt](../images/vsmac/add-nuget-packages.png "Menüelement „Add NuGet Packages“ (NuGet-Pakete hinzufügen)")
 
 1. Suchen Sie im Fenster **Pakete hinzufügen** nach dem NuGet-Paket **sqlite-net-pcl**, wählen Sie es aus, und klicken Sie auf **Paket hinzufügen**, um es dem Projekt hinzuzufügen:
 

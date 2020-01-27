@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: b1a041f1a2baae9b06de023f6eae9c6598b80061
-ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "72678720"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -15,7 +15,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **GridTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **GridTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -37,7 +37,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot einer Bezeichnung in einem Raster unter iOS und Android](../images/create-grid.png "Raster mit einer Bezeichnung")](../images/create-grid-large.png#lightbox "Raster mit einer Bezeichnungs")
+    [![Screenshot einer Bezeichnung in einem Raster unter iOS und Android](../images/create-grid.png "Raster mit einer Bezeichnung")](../images/create-grid-large.png#lightbox "Raster mit einer Bezeichnung")
 
     Weitere Informationen zur [`Grid`](xref:Xamarin.Forms.Grid)-Klasse finden Sie unter [Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
 
@@ -72,6 +72,6 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
 
 1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot einer Bezeichnung in einem Raster unter iOS und Android](../images/create-grid.png "Raster mit einer Bezeichnung")](../images/create-grid-large.png#lightbox "Raster mit einer Bezeichnungs")
+    [![Screenshot einer Bezeichnung in einem Raster unter iOS und Android](../images/create-grid.png "Raster mit einer Bezeichnung")](../images/create-grid-large.png#lightbox "Raster mit einer Bezeichnung")
 
     Weitere Informationen zur [`Grid`](xref:Xamarin.Forms.Grid)-Klasse finden Sie unter [Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).

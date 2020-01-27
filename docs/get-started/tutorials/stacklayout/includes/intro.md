@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 8820d52a2a41ce3c5de9cf1176d5a8a90a987900
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107250"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -20,4 +20,4 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie die Ausrichtungssteuerelemente innerhalb eines [`StackLayout`](xref:Xamarin.Forms.StackLayout) anpassen können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-[![Screenshot von Ansichten eines untergeordneten Elements in einer StackLayout-Klasse, mit festgelegten Ausrichtungs- und Erweiterungsoptionen unter Android und iOS](../images/alignment-expansion-reduced.png "StackLayout mit Bezeichnungsinstanzen, mit festgelegter Ausrichtung und Erweiterung")](../images/alignment-expansion-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen, mit festgelegter Ausrichtung und Erweiterung")
+[![Screenshot: untergeordnete Ansichten in StackLayout mit Ausrichtung und Erweiterung unter iOS und Android](../images/alignment-expansion-reduced.png "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")](../images/alignment-expansion-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")

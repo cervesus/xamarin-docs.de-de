@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 933edb1c0681f3fc9cbb8d81aa3091a65c4346e3
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031360"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725431"
 ---
 # <a name="web-views-in-xamarinios"></a>Webansichten in xamarin. IOS
 
@@ -22,8 +22,8 @@ IOS 11 hat neue Änderungen an `WKWebView` und `SFSafariViewController`eingefüh
 
 ## <a name="wkwebview"></a>WKWebView
 
-`WKWebView` wurde in ios 8 eingeführt, sodass App-Entwickler eine Webbrowserschnittstelle implementieren können, die der von Mobile Safari ähnelt. Dies liegt teilweise an der Tatsache, dass `WKWebView` die Nitro-Javascript-Engine verwendet, die gleiche Engine, die von Mobile Safari verwendet wird. `WKWebView` sollten immer über UIWebView verwendet werden, wenn möglich, aufgrund der [verbesserten Leistung](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview), der integrierten benutzerfreundlichen Gesten und der einfachen Interaktion zwischen der Webseite und ihrer app.
-  
+`WKWebView` wurde in ios 8 eingeführt, sodass App-Entwickler eine Webbrowserschnittstelle implementieren können, die der von Mobile Safari ähnelt. Dies liegt teilweise an der Tatsache, dass `WKWebView` die Nitro-Javascript-Engine verwendet, die gleiche Engine, die von Mobile Safari verwendet wird. `WKWebView` sollten immer über UIWebView verwendet werden, wenn möglich, aufgrund der verbesserten Leistung, der integrierten benutzerfreundlichen Gesten und der einfachen Interaktion zwischen der Webseite und ihrer app.
+
 `WKWebView` können Ihrer APP nahezu identisch mit UIWebView hinzugefügt werden. als Entwickler haben Sie jedoch viel mehr Kontrolle über die Benutzeroberfläche, die Benutzeroberfläche und die Funktionalität. Beim Erstellen und Anzeigen des webansichts Objekts wird die angeforderte Seite angezeigt, Sie können jedoch steuern, wie die Ansicht dargestellt wird, wie der Benutzer navigieren kann und wie der Benutzer die Ansicht verlässt.  
 
 Der folgende Code kann verwendet werden, um eine `WKWebView` in ihrer xamarin. IOS-APP zu starten:
@@ -49,7 +49,7 @@ Das Rezept zum [Behandeln von JavaScript-Warnungen](https://github.com/xamarin/r
 
  `SFSafariViewController` ist im Wesentlichen eine "Mini Safari", die in Ihre APP eingebettet werden kann. Wie bei wkwebview wird dieselbe Nitro-Javascript-Engine verwendet, aber es bietet auch eine Reihe zusätzlicher Safari-Features, wie z. b. AutoFill, Reader und die Möglichkeit, Cookies und Daten mit mobile Safari gemeinsam zu nutzen. Die Interaktion zwischen dem Benutzer und dem `SFSafariViewController` ist für Ihre APP nicht zugänglich. Ihre APP hat keinen Zugriff auf die standardmäßigen Safari-Features.
 
-Außerdem implementiert Sie standardmäßig eine Schaltfläche " **done** ", die es Benutzern ermöglicht, problemlos zu Ihrer APP zurückzukehren und Navigations Schaltflächen Vorwärts und rückwärts zu navigieren, sodass der Benutzer durch einen Stapel von Webseiten navigieren kann. Außerdem bietet Sie dem Benutzer eine Adressleiste, die dem Benutzer die Meinung bietet, dass Sie sich auf der erwarteten Webseite befinden. In der Adressleiste ist es dem Benutzer nicht möglich, die URL zu ändern. 
+Außerdem implementiert Sie standardmäßig eine Schaltfläche " **done** ", die es Benutzern ermöglicht, problemlos zu Ihrer APP zurückzukehren und Navigations Schaltflächen Vorwärts und rückwärts zu navigieren, sodass der Benutzer durch einen Stapel von Webseiten navigieren kann. Außerdem bietet Sie dem Benutzer eine Adressleiste, die dem Benutzer die Meinung bietet, dass Sie sich auf der erwarteten Webseite befinden. In der Adressleiste ist es dem Benutzer nicht möglich, die URL zu ändern.
 
 Diese Implementierungen können nicht geändert werden. Daher ist `SFSafariViewController` ideal, um als Standardbrowser zu verwenden, wenn Ihre APP eine Webseite ohne Anpassungen präsentieren möchte.
 
@@ -93,7 +93,7 @@ Weitere Informationen zu den Vorgängen, einschließlich der Implementierung in 
 
 > [!IMPORTANT]
 > `UIWebView` ist veraltet. Apps, die dieses Steuerelement verwenden [, werden vom April 2020 nicht in den App Store übernommen, und vorhandene apps müssen es bis zum 2020. Dezember entfernen](https://developer.apple.com/news/?id=12232019b).
-> 
+>
 > In [der `UIWebView` Dokumentation von Apple](https://developer.apple.com/documentation/uikit/uiwebview) wird vorgeschlagen, dass apps stattdessen [`WKWebView`](#wkwebview) verwenden sollten.
 
 > [!IMPORTANT]

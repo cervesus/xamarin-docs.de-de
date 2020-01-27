@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cae1ec70880fe694584e14b732608725bcbb1d91
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059669"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -21,4 +21,4 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie Daten auch für alle Änderungen des Lebenszyklusstatus beibehalten können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-[![Screenshot: Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus unter iOS und Android](../images/persist-data.png "Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus")](../images/persist-data-large.png#lightbox "Eingabe mit beibehaltener Texteigenschaft zwischen Änderungen des Zustands des Lebenszyklus")
+[![Screenshot: Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird, unter iOS und Android](../images/persist-data.png "Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird")](../images/persist-data-large.png#lightbox "Eintrag, dessen Texteigenschaft auch bei Zustandsänderungen des Lebenszyklus beibehalten wird")

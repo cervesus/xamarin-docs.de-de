@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5a464196c08220158432219d96bf82578789d8e5
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67559997"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -23,7 +23,7 @@ ms.locfileid: "67559997"
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
-    [![Screenshot: Eine horizontal ausgerichtete Ansicht der untergeordneten Elemente in einer StackLayout-Klasse, auf iOS und Android](../images/orientation.png "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")](../images/orientation-large.png#lightbox "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")
+    [![Screenshot: horizontal ausgerichtete untergeordnete Ansichten in StackLayout unter iOS und Android](../images/orientation.png "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")](../images/orientation-large.png#lightbox "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")
 
     Wie Sie sehen können, sind die [`Label`](xref:Xamarin.Forms.Label)-Instanzen in der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse jetzt horizontal anstatt vertikal ausgerichtet.
 
@@ -42,9 +42,9 @@ ms.locfileid: "67559997"
 
     Im folgenden Code wird die [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)-Eigenschaft auf [`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal) festgelegt.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
-    [![Screenshot: Eine horizontal ausgerichtete Ansicht der untergeordneten Elemente in einer StackLayout-Klasse, auf iOS und Android](../images/orientation.png "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")](../images/orientation-large.png#lightbox "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")
+    [![Screenshot: horizontal ausgerichtete untergeordnete Ansichten in StackLayout unter iOS und Android](../images/orientation.png "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")](../images/orientation-large.png#lightbox "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")
 
     Wie Sie sehen können, sind die [`Label`](xref:Xamarin.Forms.Label)-Instanzen in der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse jetzt horizontal anstatt vertikal ausgerichtet.
 

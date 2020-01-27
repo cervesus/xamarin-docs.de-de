@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: 5ff315270646389d67b505eef04c1aa11d0029c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f849ad9d722e297438b3960f74953ff922be0e56
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028264"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725287"
 ---
 # <a name="introduction-to-watchos-3"></a>Einführung in watchOS 3
 
@@ -79,7 +79,7 @@ Außerdem bieten Komplikationen die folgenden Vorteile:
 - Der Benutzer kann die app schnell starten, indem er direkt von einem Überwachungs Gesicht aus auf die Komplikation tippt.
 - Wenn Sie eine der Komplikationen der APP auf der Seite "überwachen" haben, bewirkt das System, dass die app in einem betriebsbereiten Zustand ist, in dem Sie versucht, die APP im Hintergrund zu starten, Sie im Arbeitsspeicher beibehalten und zusätzliche Zeit zum Aktualisieren zu erhalten.
 - Komplikationen sind mindestens 50 pushupdates pro Tag garantiert.
-- Wenn die APP Komplikationen umfasst, wird Sie im Apple Watch Gesicht Gallery vorgestellt (Weitere Informationen finden Sie unter [Hinzufügen von Komplikationen](https://developer.apple.com/documentation/clockkit/adding_complications_to_the_gallery) von Apple zur Katalog Dokumentation).
+- Wenn die APP Komplikationen umfasst, wird Sie in der Apple Watch Gesicht Gallery vorgestellt.
 
 In watchos 3 enthält das clockkit-Framework nun einige neue Vorlagen für zusätzliche große Komplikationen, wie z. b. [clkcomplicationtemplateextralargecolumnstext](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargecolumnstext) und [clkcomplicationtemplateextralargeringimage](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargeringimage). Verwenden Sie zum Erstellen von Lokalisier barem Text außerdem neue Methoden der [clktextprovider](https://developer.apple.com/reference/clockkit/clktextprovider) -Klasse.
 
@@ -151,7 +151,7 @@ watchos 3 umfasst mehrere Verbesserungen des watchkit-Frameworks, einschließlic
 - Die APP kann den Status der Digital Crown mithilfe der neuen [wkcrownsequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer) -Klasse abrufen und Updates erhalten, wenn der Benutzer die Krone mithilfe der [wkcrowndelegatklasse](https://developer.apple.com/reference/watchkit/wkcrowndelegate) rotiert.
 - Die [wkextension](https://developer.apple.com/reference/watchkit/wkextension) -Klasse enthält nun die `ApplicationState`-Methode und die [wkapplicationstate](https://developer.apple.com/reference/watchkit/wkapplicationstate) -Konstante, mit der die APP den Lauf Zeit Status der APP verfolgen kann. `WKExtension` bietet auch zwei neue Methoden, die verwendet werden können, um Hintergrundaufgaben zu planen.
 - Der [wkextensiondelegat](https://developer.apple.com/reference/watchkit/wkextensiondelegate) enthält jetzt die neuen Methoden "`ApplicationWillEnterForeground`", "`ApplicationDidEnterBackground`" und "`HandleBackgroundTasks`", um Änderungen am Zustand der APP zu überwachen und Hintergrundaufgaben Aktualisierungen zu behandeln.
-- Eine neue [wkgesturerecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) -Klasse wurde hinzugefügt, um die folgenden Arten von Gestenerkennung für die Watch-apps bereitzustellen: [wklongpressgesturerecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer), [wkpangesturerecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer), [wkswipgesturerecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) und [ Wktapgesturerecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer).
+- Es wurde eine neue [wkgesturerecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) -Klasse hinzugefügt, um die folgenden Arten von Gestenerkennung für die Watch-apps bereitzustellen: [wklongpressgesturerecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer), [wkpangesturerecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer), [wkswipeer GestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) und [wktapgesturerecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer).
 - Die neue [wkinterfacehmcamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera) -Klasse stellt eine Schnittstelle für alle angeschlossenen homekit-IP-Kameras bereit.
 - Die neue [wkinterfaceinlinemovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie) -Klasse ermöglicht der APP, ein Movie-"Poster" anzuzeigen, das durch den laufenden Film ersetzt wird, wenn der Benutzer darauf tippt.
 - Die neue [wkinterfacepaymentbutton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton) -Klasse ermöglicht der APP, auf der Benutzeroberfläche eine Apple Pay Schaltfläche darzustellen, die eine Zahlungs Anforderung initiiert, wenn Sie getippt wird.
@@ -188,7 +188,7 @@ Die folgenden APIs sind in watchos 3 veraltet:
 
 Eine umfassende Liste mit veralteten Vorgängen und Änderungen finden Sie in der Dokumentation zu den Apple- [watchos 2,2 zur watchos 3,0 API-Unterschiede](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html) .
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [watchOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
 - [Neues in watchos 3](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)
