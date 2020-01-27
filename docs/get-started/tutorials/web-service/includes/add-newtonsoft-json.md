@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cef0b8f56639e7bc8571ab01b820dfd54b074472
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277259"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -17,13 +17,13 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
 
     Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **WebServiceTutorial** und anschließend auf **NuGet-Pakete verwalten...** :
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **WebServiceTutorial** und anschließend auf **NuGet-Pakete verwalten...**:
 
-    ![Screenshot: ausgewähltes Menüelement „NuGet-Pakete verwalten...“](../images/vs/add-nuget-packages.png "Menüelement „NuGet-Pakete verwalten...“")
+    ![Screenshot: Menüelement „Add NuGet Packages“ (NuGet-Pakete hinzufügen) ausgewählt](../images/vs/add-nuget-packages.png "Menüelement „Add NuGet Packages“ (NuGet-Pakete hinzufügen)")
 
 1. Klicken Sie im **NuGet-Paket-Manager** auf die Registerkarte **Durchsuchen**, suchen Sie nach dem NuGet-Paket **Newtonsoft.Json**, wählen Sie es aus, und klicken Sie auf die Schaltfläche **Installieren**, um es dem Projekt hinzuzufügen:
 
-    ![Screenshot: NuGet-Paket „Newtonsoft.Json “ im NuGet-Paket-Manager](../images/vs/add-package.png "NuGet-Paket „Newtonsoft.Json“")
+    ![Screenshot: NuGet-Paket „Newtonsoft.json“ im NuGet-Paket-Manager](../images/vs/add-package.png "NuGet-Paket „Newtonsoft.json“")
 
     Mit diesem Paket kann die JSON-Deserialisierung in der Anwendung verwendet werden.
 
@@ -42,11 +42,11 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
 
 1. Klicken Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt **WebServiceTutorial** und anschließend auf **Add > Add NuGet Packages...** (Hinzufügen > NuGet-Pakete hinzufügen...):
 
-    ![Screenshot: ausgewähltes Menüelement „NuGet-Pakete verwalten...“](../images/vsmac/add-nuget-packages.png "Menüelement „NuGet-Pakete verwalten...“")
+    ![Screenshot: Menüelement „Add NuGet Packages“ (NuGet-Pakete hinzufügen) ausgewählt](../images/vsmac/add-nuget-packages.png "Menüelement „Add NuGet Packages“ (NuGet-Pakete hinzufügen)")
 
 1. Suchen Sie im Fenster **Pakete hinzufügen** nach dem NuGet-Paket **Newtonsoft.Json**, wählen Sie es aus, und klicken Sie auf **Paket hinzufügen**, um es dem Projekt hinzuzufügen:
 
-    ![Screenshot: NuGet-Paket „Newtonsoft.Json “ im NuGet-Paket-Manager](../images/vsmac/add-package.png "NuGet-Paket „Newtonsoft.Json“")
+    ![Screenshot: NuGet-Paket „Newtonsoft.json“ im NuGet-Paket-Manager](../images/vsmac/add-package.png "NuGet-Paket „Newtonsoft.json“")
 
     Mit diesem Paket kann die JSON-Deserialisierung in der Anwendung verwendet werden.
 
