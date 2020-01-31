@@ -31,7 +31,7 @@ Plattformübergreifende Xamarin-Beispiel-Apps und -Code-Demos für die ersten Sc
 In diesem Beispiel wird eine To-Do-Listen-Anwendung veranschaulicht, bei der eine mit Xamarin.Forms erstellte lokale SQLite-Datenbank verwendet wird, um die Daten zu speichern und auf sie zuzugreifen.
     :::column-end:::
     :::column:::
-[meine Shoppe ![](images/myshoppe.png)](https://github.com/xamarinhq/app-myshoppe)
+[![meine Shoppe ](images/myshoppe.png)](https://github.com/xamarinhq/app-myshoppe)
 
 ### <a name="my-shoppehttpsgithubcomxamarinhqapp-myshoppe"></a>[Meine Shoppe](https://github.com/xamarinhq/app-myshoppe)
 

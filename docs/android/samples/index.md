@@ -36,7 +36,7 @@ Dieses Beispiel veranschaulicht die neuen Material Design-APIs in Android Lollip
 Diese Lösung verwendet Xamarin Google Play Services NuGet, um einige Anwendungsbereiche der Karten-API zu veranschaulichen.
   :::column-end:::
     :::column:::
-[Pager für ![Flash Karte](images/flash.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
+[![Pager für Flash Karte](images/flash.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
 
 ### <a name="flash-card-pagerhttpsdocsmicrosoftcomsamplesxamarinmonodroid-samplesuserinterface-flashcardpager"></a>[Flash Karten-Pager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
 

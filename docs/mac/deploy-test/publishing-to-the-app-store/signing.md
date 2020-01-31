@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: de858049ef899134d61596cabfcf81fca973e8b0
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: f05e763df58e6fafc4d4ed1d4007979859670c28
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489348"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725461"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Signieren von Xamarin.Mac-Apps mit einer Entwickler-ID
 
 Wenn der Entwickler eine App direkt an macOS-Benutzer verteilen möchte, empfiehlt Apple, sie mit der Entwickler-ID zu codesignieren, damit sie auf macOS-Systemen mit aktiviertem **GateKeeper** installiert werden kann. Wenn die App nicht signiert wurde, hindert **GateKeeper** Benutzer mithilfe einer Warnmeldung an der Installation. Dies kann umgangen werden, indem Sie die Taste STRG während des Starts gedrückt halten.
 
-Auf der Website von Apple erfahren Sie mehr über die [Entwickler-ID und Gatekeeper](https://developer.apple.com/resources/developer-id/) und das [Verteilen außerhalb des Mac App Stores](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html).
+Auf der Website von Apple erfahren Sie mehr über die [Entwickler-ID und Gatekeeper](https://developer.apple.com/developer-id/) und das [Verteilen außerhalb des Mac App Stores](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html).
 
 ## <a name="code-signing-options"></a>Optionen zum Codesignieren
 
@@ -48,4 +48,4 @@ Nachdem die Anwendung erstellt wurde, kann der Entwickler mit der rechten Mausta
 - [„Hallo, Mac“-Beispiel](~//mac/get-started/hello-mac.md)
 - [Verteilen Ihrer Apps im Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [Tool-Leitfaden: Codesignieren Ihrer App](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
-- [Developer ID and GateKeeper (Entwickler-ID und Gatekeeper)](https://developer.apple.com/resources/developer-id/)
+- [Developer ID and GateKeeper (Entwickler-ID und Gatekeeper)](https://developer.apple.com/developer-id/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026505"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724619"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Die Datei „iTunesMetadata.plist“ in Xamarin.iOS-Apps
 
@@ -108,7 +108,7 @@ Die Werte der einzelnen Schlüssel werden weiter unten ausführlich behandelt.
 
 ### <a name="uirequireddevicecapabilities"></a>UIRequiredDeviceCapabilities
 
-Der Schlüssel `UIRequiredDeviceCapabilities` informiert iTunes darüber, welche gerätespezifischen Funktionen für eine iOS-Anwendung vor der Installation auf einem Gerät erforderlich sind. Er wird als Wörterbuch (`<dict>...</dict>`) aus Funktionen (`<key>...</key>`) mit jeweils einem booleschen Wert für jede Funktion bereitgestellt. Wenn der Wert einer Funktion `true` ist, muss die Funktion vorhanden sein. Wenn er `false` ist, muss die Funktion auf dem Gerät nicht vorhanden sein. Beispiel:
+Der Schlüssel `UIRequiredDeviceCapabilities` informiert iTunes darüber, welche gerätespezifischen Funktionen für eine iOS-Anwendung vor der Installation auf einem Gerät erforderlich sind. Er wird als Wörterbuch (`<dict>...</dict>`) aus Funktionen (`<key>...</key>`) mit jeweils einem booleschen Wert für jede Funktion bereitgestellt. Wenn der Wert einer Funktion `true` ist, muss die Funktion vorhanden sein. Wenn er `false` ist, muss die Funktion auf dem Gerät nicht vorhanden sein. Zum Beispiel:
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -242,8 +242,6 @@ Für iOS-Anwendungen stellt Apple zur Zeit folgende Genres und Genre-IDs zur Ver
 
 [!include[](~/ios/includes/table-appstore.md)]
 
-Weitere Informationen finden Sie in der Dokumentation von Apple zu [Genre IDs Appendix (Genre-ID-Anhang)](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html).
-
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
 Verwenden Sie den Schlüssel `softwareSupportedDeviceIds`, um iTunes darüber zu informieren, welche iOS-Geräte von dieser iOS-Anwendung unterstützt werden. Beispiel:
@@ -303,7 +301,7 @@ Führen Sie folgende Schritte aus:
 2. Klicken Sie im Dialogfeld „Neue Datei“ auf **iOS** > **Eigenschaftenliste**:
 
     ![](itunesmetadata-images/image01.png "Select iOS Property List")
-3. Geben Sie für den **Namen** `iTunesMetadata` ein, und klicken Sie auf **Neu**.
+3. Geben Sie für den **Namen**`iTunesMetadata` ein, und klicken Sie auf **Neu**.
 4. Doppelklicken Sie im `iTunesMetadata.plist`Projektmappen-Explorer**auf die Datei**, um sie zur Bearbeitung zu öffnen:
 
     ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")

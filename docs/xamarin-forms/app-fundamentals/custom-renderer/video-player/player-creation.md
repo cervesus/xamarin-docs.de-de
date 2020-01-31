@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 007c027772701e424aad5995c0ec025c3589171c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771784"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725090"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer
 
@@ -22,7 +22,7 @@ Die [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-fo
 
 ## <a name="the-video-player"></a>Der Videoplayer
 
-Die [`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs)-Klasse ist Teil der **VideoPlayerDemos**-.NET Standard-Bibliothek, die sich die Plattformen teilen. Sie wird aus der `View` abgeleitet:
+Die [`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoPlayer.cs)-Klasse ist Teil der **VideoPlayerDemos**-.NET Standard-Bibliothek, die sich die Plattformen teilen. Sie wird aus der `View` abgeleitet:
 
 ```csharp
 using System;
@@ -45,7 +45,7 @@ Jede Plattform enthält eine Klasse mit dem Namen `VideoPlayerRenderer`, die den
 
 Es sind mehrere Klassen an der Implementierung eines Videoplayers in iOS beteiligt. Die Anwendung erstellt zunächst einen [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController) und legt dann die [`Player`](xref:AVKit.AVPlayerViewController.Player*)-Eigenschaft auf ein Objekt vom Typ [`AVPlayer`](xref:AVFoundation.AVPlayer) fest. Wenn der Player einer Videoquelle zugewiesen wird, sind weitere Klassen erforderlich.
 
-Wie alle anderen Renderer auch enthält der iOS-[`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) ein `ExportRenderer`-Attribut, das die `VideoPlayer`-Ansicht mit dem Renderer in Verbindung bringt:
+Wie alle anderen Renderer auch enthält der iOS-[`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/FormsVideoLibrary/VideoPlayerRenderer.csVideoPlayerRenderer.cs) ein `ExportRenderer`-Attribut, das die `VideoPlayer`-Ansicht mit dem Renderer in Verbindung bringt:
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ In der Regel bezieht sich dann die `Control`-Eigenschaft der Rendererklasse auf 
 
 ### <a name="the-android-video-view"></a>Die Videoansicht unter Android
 
-Der Android-Renderer für `VideoPlayer` basiert auf der Android-Klasse [`VideoView`](xrtef:Android.Widget.VideoView). Wenn allerdings `VideoView` alleine verwendet wird, um ein Video in einer Xamarin.Forms-Anwendung abzuspielen, füllt das Video den Bereich aus, der dem `VideoPlayer` zugewiesen ist und behält dabei nicht das richtige Seitenverhältnis bei. Aus diesem Grund (wie gleich deutlich werden sollte) ist die `VideoView` ein untergeordnetes Element des Android-`RelativeLayout`. Eine `using`-Direktive definiert das `ARelativeLayout`, um dieses von der `RelativeLayout` für Xamarin.Forms zu unterscheiden. Dies stellt das zweite generische Argument im `ViewRenderer` dar:
+Der Android-Renderer für `VideoPlayer` basiert auf der Android-Klasse [`VideoView`](xref:Android.Widget.VideoView). Wenn allerdings `VideoView` alleine verwendet wird, um ein Video in einer Xamarin.Forms-Anwendung abzuspielen, füllt das Video den Bereich aus, der dem `VideoPlayer` zugewiesen ist und behält dabei nicht das richtige Seitenverhältnis bei. Aus diesem Grund (wie gleich deutlich werden sollte) ist die `VideoView` ein untergeordnetes Element des Android-`RelativeLayout`. Eine `using`-Direktive definiert das `ARelativeLayout`, um dieses von der `RelativeLayout` für Xamarin.Forms zu unterscheiden. Dies stellt das zweite generische Argument im `ViewRenderer` dar:
 
 ```csharp
 using System;

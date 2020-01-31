@@ -133,7 +133,7 @@ Nachdem das **Google Developer Console** -API-Projekt erstellt wurde, ist es erf
 
 1. Wechseln Sie auf der Seite **Maps SDK für Android** , die angezeigt wird (nachdem Sie im vorherigen Schritt auf **aktivieren** geklickt haben), zur Registerkarte **Anmelde** Informationen, und klicken Sie auf die Schaltfläche **Anmelde Informationen erstellen** :
 
-   [Meldung zu ![Maps SDK für Android-Anmelde Informationen](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![Meldung zu Maps SDK für Android-Anmelde Informationen](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. Klicken Sie auf **API-Schlüssel**:
 
@@ -173,7 +173,7 @@ Ab dem 11. Juni 2018 funktioniert der API-Schlüssel nicht, wenn das Projekt nic
 
 2. Verknüpfen Sie das Projekt mit einem Abrechnungskonto, indem Sie auf mit **einem Abrechnungskonto verknüpfen** und dann auf dem angezeigten Popup ein **Abrechnungskonto erstellen** (wenn Sie über kein Konto verfügen, werden Sie aufgefordert, ein neues Konto zu erstellen):
 
-   [Projekt mit Abrechnungskonto ![verknüpfen](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
+   [![Projekt mit Abrechnungskonto verknüpfen](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 
 ## <a name="adding-the-key-to-your-project"></a>Hinzufügen des Schlüssels zum Projekt
 

@@ -146,7 +146,7 @@ Weitere Informationen finden [Sie in der Dokumentation zu Windows](https://devel
 
 Wechseln Sie zur **Größen**Prüfung, um die anfängliche Position des Fensters festzulegen und seine Größe zu steuern:
 
-[Standardgröße und-Speicherort ![](window-images/edit07.png)](window-images/edit07.png#lightbox)
+[![Standardgröße und-Speicherort](window-images/edit07.png)](window-images/edit07.png#lightbox)
 
 Von hier aus können Sie die anfängliche Größe des Fensters festlegen, eine minimale und maximale Größe festlegen, die ursprüngliche Position auf dem Bildschirm festlegen und die Rahmen um das Fenster steuern.
 
@@ -184,7 +184,7 @@ Ziehen Sie als nächstes eine **Text Ansicht** , und legen Sie die Größe ab, u
 
 Da die **Text Ansicht** verkleinert und vergrößert werden soll, wenn sich die Fenstergröße ändert, wechseln wir zum Einschränkungs- **Editor** und fügen die folgenden Einschränkungen hinzu:
 
-[Einschränkungen für die ![Bearbeitung](window-images/edit05.png)](window-images/edit05.png#lightbox)
+[![Einschränkungen für die Bearbeitung](window-images/edit05.png)](window-images/edit05.png#lightbox)
 
 Indem Sie auf die vier **roten I-Balken** am oberen Rand des Editors klicken und auf **4 Einschränkungen hinzufügen**klicken, wird die Textansicht an die angegebene X-und Y-Koordinate angefügt und horizontal und vertikal vergrößert oder verkleinert, wenn die Größe des Fensters geändert wird.
 

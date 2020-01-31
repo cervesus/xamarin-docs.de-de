@@ -96,7 +96,7 @@ Vor iOS 9, Retina-Versionen des Images platziert werden konnte, der **Ressourcen
 
 Bilder mit Android alternativen Auflösung platziert werden soll, im [speziell benannte Verzeichnisse](https://developer.android.com/guide/practices/screens_support.html) im Android-Projekt, wie im folgenden Screenshot gezeigt:
 
-[Speicherort für die ![Android-Image mit mehreren Auflösungen](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
+[![Speicherort für die Android-Image mit mehreren Auflösungen](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
 UWP-Bilddateinamen [können mit dem Suffix werden `.scale-xxx` vor der Dateierweiterung](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), wobei `xxx` ist der Prozentsatz der Skalierung auf das Medienobjekt angewendet wurde, z. B. **myimage.scale-200.png**. Images können im Code oder XAML, ohne den Scale-Modifizierer, z. B. nur dann verwiesen werden **myimage.png**. Die Plattform wird die nächste geeignete Objektskalierung basierend auf der Anzeige des aktuellen DPI ausgewählt.
 
@@ -140,7 +140,7 @@ Dieses Feld zeigt die **Ressourcen-ID** , auf die Ressource im Code verwendet wi
 Die IDE hat diese Standardeinstellung generiert, durch die Verkettung der **Standard-Namespace** verwenden Sie für dieses Projekt mit dem Dateinamen, einen Punkt (.) zwischen den einzelnen Werten.
 Diese ID kann bearbeitet werden, der **Eigenschaften** Pad, aber diese Beispiele für den Wert **WorkingWithImages.beach.jpg** verwendet werden.
 
-[Eigenschaften-Pad für eingebettete Ressourcen ![](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
+[![Eigenschaften-Pad für eingebettete Ressourcen](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 

@@ -1,100 +1,93 @@
 ---
-title: Was ist Xamarin. Forms?
-description: In diesem Artikel wird Xamarinvorgestellt. Formulare und zugehörige Bibliotheken.
+title: Was ist Xamarin.Forms?
+description: In diesem Artikel werden Xamarin.Forms sowie damit verbundene Bibliotheken eingeführt.
 ms.prod: xamarin
 ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/18/2019
-no-loc:
-- Xamarin
-- Xamarin.Forms
-- Xamarin.Android
-- Xamarin.Essentials
-- Xamarin.iOS
-- Xamarin.Mac
-ms.openlocfilehash: c217acdc3bd5c007822cc29fc730df99e373ba01
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
-ms.translationtype: MT
+ms.openlocfilehash: 8bd530e743330ab8058f13cb7ba09f95a30ee886
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "75607840"
 ---
-# <a name="what-is-opno-locxamarinforms"></a>Was ist Xamarin. Forms?
+# <a name="what-is-xamarinforms"></a>Was ist Xamarin.Forms?
 
-[![Screenshots des Beispiels [! Schel. No-Loc (xamarin)]. Formular Anwendung in IOS und Android](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
+[![Screenshots einer Xamarin.Forms-Beispielanwendung unter iOS und Android](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
 
-Xamarin. Forms ist ein Open-Source-Framework für die Benutzeroberfläche. Xamarin. Mit Formularen können Entwickler Android-, IOS-und Windows-Anwendungen aus einer einzelnen freigegebenen CodeBase erstellen.
+Bei Xamarin.Forms handelt es sich um ein Open-Source-Benutzeroberflächenframework. Mithilfe von Xamarin.Forms können Entwickler iOS-, Android- und Windows-Anwendungen aus einer einzigen freigegebenen CodeBase erstellen.
 
-Xamarin. Mit Formularen können Entwickler Benutzeroberflächen in XAML mit Code Behind in C#erstellen. Diese Schnittstellen werden als leistungsfähige native Steuerelemente auf jeder Plattform gerendert.
+Mithilfe von Xamarin.Forms können Entwickler Benutzeroberflächen in XAML mit CodeBehind in C# erstellen. Diese Benutzeroberflächen werden als leistungsfähige native Steuerelemente für jede Plattform gerendert.
 
-## <a name="who-opno-locxamarinforms-is-for"></a>Wer Xamarin. Formulare sind für
+## <a name="who-xamarinforms-is-for"></a>Zielgruppe von Xamarin.Forms
 
-Xamarin. Formulare sind für Entwickler mit den folgenden Zielen konzipiert:
+Xamarin.Forms eignet sich für Entwickler mit den folgenden Zielen:
 
-- Freigeben von Benutzeroberflächen Layout und-Entwurf
-- Teilen Sie Code, Test und Geschäftslogik plattformübergreifend.
-- Schreiben Sie plattformübergreifende apps C# in mit Visual Studio.
+- Plattformübergreifendes Freigeben von Benutzeroberflächenlayout und -design
+- Plattformübergreifendes Freigeben von Code, Test- und Geschäftslogik
+- Schreiben von plattformübergreifenden Apps in C# mit Visual Studio
 
-## <a name="how-opno-locxamarinforms-works"></a>Wie Xamarin. Formulare funktionieren
+## <a name="how-xamarinforms-works"></a>Funktionsweise von Xamarin.Forms
 
-![[! Schel. No-Loc (xamarin)]. Diagramm der Formular Architektur](what-is-xamarin-forms-images/xamarin-forms-architecture.png)
+![Architekturdiagramm für Xamarin.Forms](what-is-xamarin-forms-images/xamarin-forms-architecture.png)
 
-Xamarin. Forms bietet eine konsistente API zum plattformübergreifenden Erstellen von UI-Elementen. Diese API kann entweder in XAML oder C# implementiert werden und unterstützt Datenbindung für Muster wie Model-View-ViewModel (MVVM).
+Über Xamarin.Forms steht eine konsistente API zur Verfügung, um plattformübergreifende Benutzeroberflächenelemente zu erstellen. Diese API kann in XAML oder in C# implementiert werden und unterstützt Datenbindung für Muster wie Model View ViewModel (MVVM).
 
-Zur Laufzeit Xamarin. In Formularen werden Platt Form Renderer verwendet, um die plattformübergreifenden Benutzeroberflächen Elemente in systemeigene Steuerelemente auf Android, IOS und UWP zu konvertieren. Ermöglicht Entwicklern das Native aussehen, das Aussehen und die Leistung, während die Vorteile der plattformübergreifenden Code Freigabe realisiert werden.
+Zur Laufzeit verwendet Xamarin.Forms Plattformrenderer, um die plattformübergreifenden Benutzeroberflächenelemente zu nativen Steuerelementen für Android, iOS und UWP zu konvertieren. So können Entwickler natives Aussehen, native Servicequalität und native Leistung erreichen und dabei von den Vorteilen der plattformübergreifenden Codefreigabe profitieren.
 
-Xamarin. Formular Anwendungen bestehen normalerweise aus einer freigegebenen .NET Standard Bibliothek und einzelnen Platt Form Projekten. Die freigegebene Bibliothek enthält die XAML C# -oder-Sichten sowie sämtliche Geschäftslogik, wie z. b. Dienste, Modelle oder anderen Code. Die Platt Form Projekte enthalten plattformspezifische Logik oder Pakete, die für die Anwendung erforderlich sind.
+Xamarin.Forms-Anwendungen bestehen normalerweise aus einer freigegebenen .NET Standard-Bibliothek und einzelnen Plattformprojekten. Die freigegebene Bibliothek enthält die XAML- und C#-Ansichten und sämtliche Geschäftslogik, wie Dienste, Modelle oder anderen Code. In den Plattformprojekten ist alle plattformspezifische Logik oder sind alle Pakete enthalten, die für die Anwendung erforderlich sind.
 
-Xamarin. Formulare verwendet Xamarin, um .NET-Anwendungen nativ plattformübergreifend auszuführen. Weitere Informationen zu Xamarinfinden Sie unter [Was ist Xamarin?](~/get-started/what-is-xamarin.md).
+Xamarin.Forms verwendet Xamarin, um .NET-Anwendungen plattformübergreifend nativ auszuführen. Weitere Informationen zu Xamarin finden Sie unter [Was ist Xamarin?](~/get-started/what-is-xamarin.md).
 
-## <a name="additional-tools"></a>Zusätzliche Tools
+## <a name="additional-tools"></a>Weitere Tools
 
-Xamarin. Forms verfügt über ein umfangreiches Ökosystem mit nuget-Paketen, die Anwendungen verschiedene Funktionen hinzufügen. In diesem Abschnitt werden einige häufig verwendete nuget-Pakete beschrieben.
+Xamarin.Forms verfügt über ein großes Ökosystem an NuGet-Paketen, die in Anwendungen verschiedene Funktionen hinzufügen. In diesem Abschnitt werden einige häufig verwendeten NuGet-Pakete näher beschrieben.
 
-### <a name="opno-locxamarinessentials"></a>Xamarin. Notwendige
+### <a name="xamarinessentials"></a>Xamarin.Essentials
 
-Xamarin. Essentials ist eine Bibliothek, die plattformübergreifende APIs für Native Gerätefunktionen bereitstellt. Wie Xamarin selbst Xamarin. Essentials ist eine Abstraktion, die den Prozess des Zugriffs auf native Hilfsprogramme vereinfacht. Einige Beispiele für Hilfsprogramme, die von Xamarinbereitgestellt werden. Zu den Essentials gehören:
+Bei Xamarin.Essentials handelt es sich um eine Bibliothek, die plattformübergreifende APIs für native Gerätefeatures bietet. Wie Xamarin selbst ist Xamarin.Essentials eine Abstraktion, die den Zugriffsprozess auf native Hilfsprogramme vereinfacht. Zu den von Xamarin.Essentials zur Verfügung gestellten Hilfsprogrammen gehören die folgenden:
 
 - Geräteinformationen
 - Dateisystem
 - Beschleunigungsmesser
-- Telefon Einwählprogramm
+- Wählhilfe
 - Text-zu-Sprache
 - Bildschirmsperre
 
-Weitere Informationen finden Sie unter [Xamarin. Essentials](~/essentials/index.md).
+Weitere Informationen finden Sie unter [Xamarin.Essentials](~/essentials/index.md).
 
 ### <a name="shell"></a>Shell
 
-Xamarin. Mit Forms Shell wird die Komplexität der Entwicklung mobiler Anwendungen verringert, indem die grundlegenden Funktionen bereitgestellt werden, die die meisten Anwendungen erfordern. Einige Beispiele für die von der Shell bereitgestellten Features sind:
+Die Xamarin.Forms-Shell reduziert die Komplexität der Entwicklung mobiler Anwendungen, indem sie die grundlegenden Features bereitstellt, die für die meisten mobilen Anwendungen erforderlich sind. Zu den von der Shell zur Verfügung gestellten Features gehören die folgenden:
 
-- Allgemeine Navigationsmöglichkeiten
-- URI-basiertes Navigations Schema
-- Integrierter Such Handler
+- Allgemeine Navigationsoberfläche
+- URI-basiertes Navigationsschema
+- Ein integrierter Suchhandler
 
-Weitere Informationen finden Sie unter [Xamarin. Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md)
+Weitere Informationen finden Sie unter [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
 
-### <a name="platform-specifics"></a>Plattformspezifische Besonderheiten
+### <a name="platform-specifics"></a>Plattformeigenschaften
 
-Xamarin. Forms bietet eine gemeinsame API, die native Steuerelemente plattformübergreifend rendert, aber eine bestimmte Plattform verfügt möglicherweise über Funktionen, die auf anderen Plattformen nicht vorhanden sind Die Android-Plattform verfügt z. b. über Native Funktionen für einen schnellen Bildlauf in einem `ListView` aber IOS nicht. Xamarin. Mit Formularen Platform-Besonderheiten können Sie Funktionen verwenden, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte zu erstellen.
+Xamarin.Forms stellt eine allgemeine API zur Verfügung, die native Steuerelemente plattformübergreifend rendert. Eine bestimmte Plattform verfügt aber möglicherweise über Funktionen, die auf anderen Plattformen nicht zur Verfügung stehen. Die Android-Plattform bietet beispielsweise native Funktionen für schnelles Scrollen in der Klasse `ListView`. Unter iOS ist dies jedoch nicht möglich. Dank der für Xamarin.Forms plattformspezifischen Eigenschaften können Sie Funktionen verwenden, die nur auf einer bestimmten Plattform zur Verfügung stehen, ohne benutzerdefinierte Renderer oder Effekte erstellen zu müssen.
 
-Xamarin. Forms enthält vorgefertigte Lösungen für eine Vielzahl plattformspezifischer Funktionen. Weitere Informationen finden Sie unter: .
+Xamarin.Forms beinhaltet vorgefertigte Lösungen für die unterschiedlichsten plattformspezifischen Funktionen. Weitere Informationen finden Sie unter:
 
-- [Xamarin. Formular plattformspezifische Besonderheiten](~/xamarin-forms/platform/platform-specifics/index.md)
-- [Android-plattformspezifische Besonderheiten](~/xamarin-forms/platform/android/index.md)
-- [IOS-Platt Form Besonderheiten](~/xamarin-forms/platform/ios/index.md)
-- [Windows-Platt Form Besonderheiten](~/xamarin-forms/platform/windows/index.md)
+- [Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md)
+- [Android-Plattformeigenschaften](~/xamarin-forms/platform/android/index.md)
+- [iOS-Plattformfeatures in Xamarin.Forms](~/xamarin-forms/platform/ios/index.md)
+- [Windows-Plattformeigenschaften](~/xamarin-forms/platform/windows/index.md)
 
 ### <a name="material-visual"></a>Visuelles Materialobjekt
 
-Xamarin. Visuelles Formular Material dient zum Anwenden von Material Entwurfs Regeln auf Xamarin. Formular Anwendungen. Xamarin. Das visuelle Formular Material verwendet die Visual-Eigenschaft, um benutzerdefinierte Renderer selektiv auf die Benutzeroberfläche anzuwenden. Dies führt zu einer Anwendung mit einem konsistenten Erscheinungsbild für IOS und Android.
+Das visuelle Material-Objekt für Xamarin.Forms wird verwendet, um Material Design-Regeln auf Xamarin.Forms-Anwendungen anzuwenden. Das visuelle Material.Objekt für Xamarin.Forms verwendet die Eigenschaft des visuellen Objekts, um selektiv benutzerdefinierte Renderer auf die Benutzeroberfläche anzuwenden. Das führt dann zu einer Anwendung mit konsistentem Aussehen und Servicequalität für iOS und Android.
 
-Weitere Informationen finden Sie unter [Xamarin. Visuelles Formular Material](~/xamarin-forms/user-interface/visual/material-visual.md)
+Weitere Informationen finden Sie unter [Visuelles Material-Objekt für Xamarin.Forms](~/xamarin-forms/user-interface/visual/material-visual.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Beginnen Sie mit Xamarin. Forms](~/xamarin-forms/index.yml)
-- [Xamarin. Notwendige](~/essentials/index.md)
-- [Xamarin. Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md)
-- [Xamarin. Visuelles Formular Material](~/xamarin-forms/user-interface/visual/material-visual.md)
+- [Xamarin.Forms-Dokumentation](~/xamarin-forms/index.yml)
+- [Xamarin.Essentials](~/essentials/index.md)
+- [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md)
+- [Visuelles Material-Objekt für Xamarin.Forms](~/xamarin-forms/user-interface/visual/material-visual.md)

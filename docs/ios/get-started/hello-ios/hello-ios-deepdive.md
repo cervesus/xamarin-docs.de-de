@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 0fa6c05b3aa90f1d1875b9169350b197d882d863
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023261"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724771"
 ---
 # <a name="hello-ios--deep-dive"></a>Hallo, iOS – Ausführliche Erläuterungen
 
@@ -439,16 +439,13 @@ Nicht jedem steht ein Designer zur Verfügung, der benutzerdefinierte Symbole un
 
 ::: zone pivot="macos"
 
-- [**Sketch**](https://www.sketchapp.com"): Sketch ist eine Mac-App für das Entwerfen von Benutzeroberflächen, Symbolen usw. Diese App wurde verwendet, um die Xamarin-App-Symbole und -Startbilder zu entwerfen. Sketch 3 ist im App Store verfügbar. Sie können ebenfalls das kostenlose [Sketch Tool](https://bohemiancoding.com/sketch/tool/) testen.
 - [**Pixelmator**](https://www.pixelmator.com/): Eine vielseitige Mac-App für das Bearbeiten von Bildern, die ungefähr 30 Dollar kostet.
-- [**Glyphish**](https://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
 - [**Fiverr**](https://www.fiverr.com/): Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end
 ::: zone pivot="windows"
 
 - Visual Studio: Sie können dies verwenden, um einfache Symbole für Ihre App direkt in der IDE zu erstellen.
-- [**Glyphish**](https://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
 - [**Fiverr**](https://www.fiverr.com/): Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end

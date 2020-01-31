@@ -1,6 +1,6 @@
 ---
 title: Formatieren einer plattformübergreifenden Xamarin.Forms-App
-description: In diesem Artikel wird erläutert, wie eine plattformübergreifende xamarin. Forms-Anwendung mit XAML-Stilen formatiert wird.
+description: In diesem Artikel wird erläutert, wie Sie eine plattformübergreifende Xamarin.Forms-Anwendung mit XAML-Formatvorlagen formatieren.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -10,36 +10,36 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: a7e1cdd59b463c38be1a49e962112cb893eed50f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "75488867"
 ---
-# <a name="style-a-cross-platform-xamarinforms-application"></a>Stil einer plattformübergreifenden xamarin. Forms-Anwendung
+# <a name="style-a-cross-platform-xamarinforms-application"></a>Formatieren einer plattformübergreifenden Xamarin.Forms-Anwendung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
-In dieser Schnellstartanleitung erfahren Sie Folgendes:
+In diesem Schnellstart lernen Sie Folgendes:
 
-- Formatieren Sie eine xamarin. Forms-Anwendung mithilfe von XAML-Stilen.
+- Formatieren einer Xamarin.Forms-Anwendung mithilfe von XAML-Formatvorlagen
 
-In der Schnellstartanleitung erfahren Sie, wie Sie eine plattformübergreifende xamarin. Forms-Anwendung mit XAML-Stilen formatieren. Die fertige Anwendung wird unten gezeigt:
+In diesem Schnellstart erfahren Sie, wie Sie eine plattformübergreifende Xamarin.Forms-Anwendung mit XAML-Formatvorlagen formatieren können. Die fertige Anwendung wird unten gezeigt:
 
 [![](styling-images/screenshots1-sml.png "Notes Page")](styling-images/screenshots1.png#lightbox "Notes Page")
 [![](styling-images/screenshots2-sml.png "Note Entry Page")](styling-images/screenshots2.png#lightbox "Note Entry Page")
 
-### <a name="prerequisites"></a>Erforderliche Komponenten
+### <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen haben, bevor Sie diesen Schnellstart durchführen. Alternativ können Sie das [vorherige Schnellstart Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/) herunterladen und als Ausgangspunkt für diesen Schnellstart verwenden.
+Sie sollten den [letzten Schnellstart](database.md) erfolgreich abgeschlossen haben, bevor Sie mit diesem Schnellstart beginnen. Alternativ können Sie auch das [letzte Schnellstartbeispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/) herunterladen und als Startpunkt für diesen Schnellstart verwenden.
 
 ::: zone pivot="windows"
 
 ## <a name="update-the-app-with-visual-studio"></a>Aktualisieren der App mit Visual Studio
 
-1. Starten Sie Visual Studio, und öffnen Sie die Lösung Notes.
+1. Starten Sie Visual Studio, und öffnen Sie die Projektmappe „Notes“.
 
-2. Doppelklicken Sie in **Projektmappen-Explorer**im **Notes** -Projekt auf **app. XAML** , um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+2. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **Notes** auf die Datei **App.xaml**, um sie zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -77,11 +77,11 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
     </Application>
     ```
 
-    Dieser Code definiert einen [`Thickness`](xref:Xamarin.Forms.Thickness) Wert, eine Reihe von [`Color`](xref:Xamarin.Forms.Color) Werten und implizite Stile für die [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) und [`ContentPage`](xref:Xamarin.Forms.ContentPage). Beachten Sie, dass diese Stile, die sich auf der [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Anwendungsebene befinden, in der gesamten Anwendung verwendet werden können. Weitere Informationen zur XAML- [Formatierung finden Sie unter](deepdive.md#styling) formatieren im [xamarin. Forms-Schnellstart Deep Dive](deepdive.md).
+    Dieser Code definiert einen [`Thickness`](xref:Xamarin.Forms.Thickness)-Wert, eine Reihe von [`Color`](xref:Xamarin.Forms.Color)-Werten sowie implizite Formate für die Klassen [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) und [`ContentPage`](xref:Xamarin.Forms.ContentPage). Diese Formate, die sich in der Klasse [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) auf der Anwendungsebene befinden, können in der gesamten App verarbeitet werden. Weitere Informationen zur XAML-Formatierung finden Sie unter [Format](deepdive.md#styling) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
-    Speichern Sie die Änderungen an **app. XAML** , indem Sie **STRG + S**drücken, und schließen Sie die Datei.
+    Speichern Sie die Änderungen an der Datei **App.xaml**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
-3. Doppelklicken Sie in **Projektmappen-Explorer**im **Notes** -Projekt auf **NotesPage. XAML** , um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+3. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **Notes** auf die Datei **NotesPage.xaml**, um sie zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -116,11 +116,11 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
     </ContentPage>
     ```
 
-    Dieser Code fügt der [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Seitenebene einen impliziten Stil für das [`ListView`](xref:Xamarin.Forms.ListView) hinzu und legt die `ListView.Margin`-Eigenschaft auf einen Wert fest, der in der `ResourceDictionary`auf Anwendungsebene definiert ist. Beachten Sie, dass der `ListView` impliziter Stil der `ResourceDictionary`auf Seitenebene hinzugefügt wurde, da er nur von der `NotesPage`genutzt wird. Weitere Informationen zur XAML- [Formatierung finden Sie unter](deepdive.md#styling) formatieren im [xamarin. Forms-Schnellstart Deep Dive](deepdive.md).
+    Mit diesem Code wird ein implizites Format für die Klasse [`ListView`](xref:Xamarin.Forms.ListView) zur Klasse [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) auf Seitenebene hinzugefügt und die Eigenschaft `ListView.Margin` auf einen Wert festgelegt, der in der Klasse `ResourceDictionary` auf Anwendungsebene definiert ist. Beachten Sie, dass das implizite Format der Klasse `ListView` zur Klasse `ResourceDictionary` auf Seitenebene hinzugefügt wurde, weil es nur von der Klasse `NotesPage` verarbeitet wird. Weitere Informationen zur XAML-Formatierung finden Sie unter [Format](deepdive.md#styling) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
-    Speichern Sie die Änderungen an der Datei " **NotesPage. XAML** ", indem Sie **STRG + S**drücken, und schließen Sie die Datei.
+    Speichern Sie die Änderungen an der Datei **NotesPage.xaml**, indem Sie **STRG+S** drücken, und schließen Sie sie.
 
-4. Doppelklicken Sie in **Projektmappen-Explorer**im **Notes** -Projekt auf **noteentrypage. XAML** , um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+4. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **Notes** auf die Datei **NoteEntryPage.xaml**, um sie zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -165,22 +165,22 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
     </ContentPage>
     ```
 
-    Mit diesem Code werden dem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Seitenebene implizite Stile für die [`Editor`](xref:Xamarin.Forms.Editor) -und [`Button`](xref:Xamarin.Forms.Button) Ansichten hinzugefügt, und die `StackLayout.Margin`-Eigenschaft wird auf einen Wert festgelegt, der in der `ResourceDictionary`auf Anwendungsebene definiert ist. Beachten Sie, dass die `Editor`-und `Button` impliziten Stile zum `ResourceDictionary`auf Seitenebene hinzugefügt wurden, da Sie nur vom `NoteEntryPage`verwendet werden. Weitere Informationen zur XAML- [Formatierung finden Sie unter](deepdive.md#styling) formatieren im [xamarin. Forms-Schnellstart Deep Dive](deepdive.md).
+    Mit diesem Code werden implizite Formate für die Ansichten [`Editor`](xref:Xamarin.Forms.Editor) und [`Button`](xref:Xamarin.Forms.Button) zur Klasse [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) auf Seitenebene hinzugefügt und die Eigenschaft `StackLayout.Margin` auf einen Wert festgelegt, der in der Klasse `ResourceDictionary` auf Anwendungsebene definiert ist. Die impliziten Formate für `Editor` und `Button` wurden zu der Klasse `ResourceDictionary` auf Seitenebene hinzugefügt, weil sie nur von der Klasse `NoteEntryPage` verarbeitet werden. Weitere Informationen zur XAML-Formatierung finden Sie unter [Format](deepdive.md#styling) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
-    Speichern Sie die Änderungen an **noteentrypage. XAML** , indem Sie **STRG + S**drücken, und schließen Sie die Datei.
+    Speichern Sie die Änderungen an der Datei **NoteEntryPage.xaml.cs**, indem Sie **STRG+S** drücken, und schließen Sie sie.
 
-5. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie es aus. Weitere Informationen finden Sie unter Erste Schritte mit [der Schnellstartanleitung](single-page.md#building-the-quickstart).
+5. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie es aus. Weitere Informationen finden Sie unter [Erstellen des Schnellstarts](single-page.md#building-the-quickstart).
 
-    Klicken Sie auf der **Seite NotesPage** auf die Schaltfläche **+** , um zur **noteentrypage** zu navigieren, und geben Sie einen Hinweis ein. Beobachten Sie auf jeder Seite, wie sich das Formatieren seit dem vorherigen Schnellstart geändert hat.
+    Klicken Sie unter **NotesPage** auf **+** , um zur **NoteEntryPage**-Seite zu navigieren und eine Notiz einzugeben. Beobachten Sie auf jeder Seite, wie sich die Formatierung im Vergleich zum letzten Schnellstart geändert hat.
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Aktualisieren der App mit Visual Studio für Mac
 
-1. Starten Sie Visual Studio für Mac, und öffnen Sie das Notes-Projekt.
+1. Starten Sie Visual Studio für Mac, und öffnen Sie das Projekt „Notes“.
 
-2. Doppelklicken Sie im **Lösungspad**im **Notes** -Projekt auf **app. XAML** , um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+2. Doppelklicken Sie im **Lösungspad** im Projekt **Notes** auf die Datei **App.xaml**, um sie zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -218,11 +218,11 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
     </Application>
     ```
 
-    Dieser Code definiert einen [`Thickness`](xref:Xamarin.Forms.Thickness) Wert, eine Reihe von [`Color`](xref:Xamarin.Forms.Color) Werten und implizite Stile für die [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) und [`ContentPage`](xref:Xamarin.Forms.ContentPage). Beachten Sie, dass diese Stile, die sich auf der [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Anwendungsebene befinden, in der gesamten Anwendung verwendet werden können. Weitere Informationen zur XAML- [Formatierung finden Sie unter](deepdive.md#styling) formatieren im [xamarin. Forms-Schnellstart Deep Dive](deepdive.md).
+    Dieser Code definiert einen [`Thickness`](xref:Xamarin.Forms.Thickness)-Wert, eine Reihe von [`Color`](xref:Xamarin.Forms.Color)-Werten sowie implizite Formate für die Klassen [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) und [`ContentPage`](xref:Xamarin.Forms.ContentPage). Diese Formate, die sich in der Klasse [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) auf der Anwendungsebene befinden, können in der gesamten App verarbeitet werden. Weitere Informationen zur XAML-Formatierung finden Sie unter [Format](deepdive.md#styling) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
-    Speichern Sie die Änderungen in der Datei **app. XAML** , indem Sie **Datei > Speichern** (oder durch Drücken  **&#8984; von + S**) auswählen, und schließen Sie die Datei.
+    Speichern Sie die Änderungen an der Datei **App.xaml**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 
-3. Doppelklicken Sie im **Lösungspad**im Projekt **Notes** auf **NotesPage. XAML** , um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+3. Doppelklicken Sie im **Lösungspad** im Projekt **Notes** auf die Datei **NotesPage.xaml**, um sie zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -257,11 +257,11 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
     </ContentPage>
     ```
 
-    Dieser Code fügt der [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Seitenebene einen impliziten Stil für das [`ListView`](xref:Xamarin.Forms.ListView) hinzu und legt die `ListView.Margin`-Eigenschaft auf einen Wert fest, der in der `ResourceDictionary`auf Anwendungsebene definiert ist. Beachten Sie, dass der `ListView` impliziter Stil der `ResourceDictionary`auf Seitenebene hinzugefügt wurde, da er nur von der `NotesPage`genutzt wird. Weitere Informationen zur XAML- [Formatierung finden Sie unter](deepdive.md#styling) formatieren im [xamarin. Forms-Schnellstart Deep Dive](deepdive.md).
+    Mit diesem Code wird ein implizites Format für die Klasse [`ListView`](xref:Xamarin.Forms.ListView) zur Klasse [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) auf Seitenebene hinzugefügt und die Eigenschaft `ListView.Margin` auf einen Wert festgelegt, der in der Klasse `ResourceDictionary` auf Anwendungsebene definiert ist. Beachten Sie, dass das implizite Format der Klasse `ListView` zur Klasse `ResourceDictionary` auf Seitenebene hinzugefügt wurde, weil es nur von der Klasse `NotesPage` verarbeitet wird. Weitere Informationen zur XAML-Formatierung finden Sie unter [Format](deepdive.md#styling) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
-    Speichern Sie die Änderungen an der Datei " **NotesPage. XAML** ", indem Sie **Datei > Speichern** (oder durch Drücken  **&#8984; von + S**) auswählen, und schließen Sie die Datei.
+    Speichern Sie die Änderungen an der Datei **NotesPage.xaml**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 
-4. Doppelklicken Sie im **Lösungspad**im **Notes** -Projekt auf **noteentrypage. XAML** , um es zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
+4. Doppelklicken Sie im **Lösungspad** im Projekt **Notes** auf die Datei **NoteEntryPage.xaml**, um sie zu öffnen. Ersetzen Sie dann den vorhandenen Code durch den folgenden Code:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -306,13 +306,13 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
     </ContentPage>
     ```
 
-    Mit diesem Code werden dem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)auf Seitenebene implizite Stile für die [`Editor`](xref:Xamarin.Forms.Editor) -und [`Button`](xref:Xamarin.Forms.Button) Ansichten hinzugefügt, und die `StackLayout.Margin`-Eigenschaft wird auf einen Wert festgelegt, der in der `ResourceDictionary`auf Anwendungsebene definiert ist. Beachten Sie, dass die `Editor`-und `Button` impliziten Stile zum `ResourceDictionary`auf Seitenebene hinzugefügt wurden, da Sie nur vom `NoteEntryPage`verwendet werden. Weitere Informationen zur XAML- [Formatierung finden Sie unter](deepdive.md#styling) formatieren im [xamarin. Forms-Schnellstart Deep Dive](deepdive.md).
+    Mit diesem Code werden implizite Formate für die Ansichten [`Editor`](xref:Xamarin.Forms.Editor) und [`Button`](xref:Xamarin.Forms.Button) zur Klasse [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) auf Seitenebene hinzugefügt und die Eigenschaft `StackLayout.Margin` auf einen Wert festgelegt, der in der Klasse `ResourceDictionary` auf Anwendungsebene definiert ist. Die impliziten Formate für `Editor` und `Button` wurden zu der Klasse `ResourceDictionary` auf Seitenebene hinzugefügt, weil sie nur von der Klasse `NoteEntryPage` verarbeitet werden. Weitere Informationen zur XAML-Formatierung finden Sie unter [Format](deepdive.md#styling) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
-    Speichern Sie die Änderungen an **noteentrypage. XAML** , indem Sie **Datei > Speichern** (oder durch Drücken  **&#8984; von + S**) auswählen, und schließen Sie die Datei.
+    Speichern Sie die Änderungen an **NoteEntryPage.xaml**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 
-5. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie es aus. Weitere Informationen finden Sie unter Erste Schritte mit [der Schnellstartanleitung](single-page.md#building-the-quickstart).
+5. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie es aus. Weitere Informationen finden Sie unter [Erstellen des Schnellstarts](single-page.md#building-the-quickstart).
 
-    Klicken Sie auf der **Seite NotesPage** auf die Schaltfläche **+** , um zur **noteentrypage** zu navigieren, und geben Sie einen Hinweis ein. Beobachten Sie auf jeder Seite, wie sich das Formatieren seit dem vorherigen Schnellstart geändert hat.
+    Klicken Sie unter **NotesPage** auf **+** , um zur **NoteEntryPage**-Seite zu navigieren und eine Notiz einzugeben. Beobachten Sie auf jeder Seite, wie sich die Formatierung im Vergleich zum letzten Schnellstart geändert hat.
 
 ::: zone-end
 
@@ -320,9 +320,9 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
 
 In diesem Schnellstart haben Sie Folgendes gelernt:
 
-- Formatieren Sie eine xamarin. Forms-Anwendung mithilfe von XAML-Stilen.
+- Formatieren einer Xamarin.Forms-Anwendung mithilfe von XAML-Formatvorlagen
 
-Weitere Informationen zu den Grundlagen der Anwendungsentwicklung mit xamarin. Forms finden Sie unter Deep Dive (Schnellstart).
+Weitere Informationen zu den Grundlagen der Anwendungsentwicklung mit Xamarin.Forms finden Sie in den ausführlichen Erläuterungen zum Schnellstart.
 
 > [!div class="nextstepaction"]
 > [Nächste](deepdive.md)
@@ -330,4 +330,4 @@ Weitere Informationen zu den Grundlagen der Anwendungsentwicklung mit xamarin. F
 ## <a name="related-links"></a>Verwandte Links
 
 - [Notes (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
-- [Xamarin. Forms-Schnellstart Deep Dive](deepdive.md)
+- [Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md)

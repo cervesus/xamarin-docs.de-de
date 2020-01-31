@@ -17,7 +17,7 @@ Tools, die dabei helfen, Ihren Xamarin-Entwicklungsprozess zu verbessern.
 
 :::row:::
     :::column:::
-[IOS-Simulator für Windows ![](~/media/index/xamarin-tools-windows-simulator.svg?branch=master)](~/tools/ios-simulator/index.md)
+[![IOS-Simulator für Windows](~/media/index/xamarin-tools-windows-simulator.svg?branch=master)](~/tools/ios-simulator/index.md)
 
 ### <a name="ios-simulator-for-windowstoolsios-simulatorindexmd"></a>[iOS-Simulator für Windows](~/tools/ios-simulator/index.md)
 

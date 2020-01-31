@@ -22,7 +22,7 @@ Die xamarin. Forms [`ContentView`](xref:Xamarin.Forms.ContentView) -Klasse ist e
 
 Der folgende Screenshot zeigt ein `CardView` Steuerelement, das von der `ContentView`-Klasse abgeleitet wird:
 
-[Bildschirm Abbildung der ![CardView-Beispielanwendung](contentview-images/cardview-list-cropped.png)](contentview-images/cardview-list.png#lightbox)
+[![Bildschirm Abbildung der CardView-Beispielanwendung](contentview-images/cardview-list-cropped.png)](contentview-images/cardview-list.png#lightbox)
 
 Die `ContentView`-Klasse definiert eine einzelne Eigenschaft:
 
@@ -202,7 +202,7 @@ Die Datenbindung in einem `ControlTemplate` verwendet die `TemplateBinding` Mark
 
 Die folgenden Screenshots zeigen eine Standard `CardView` Instanz und `CardView`, deren `ControlTemplate` überschrieben wurde:
 
-[Bildschirm Abbildung von ![CardView ControlTemplate](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
+[![Bildschirm Abbildung von CardView ControlTemplate](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
 Weitere Informationen zu Steuerelementvorlagen finden Sie unter [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 

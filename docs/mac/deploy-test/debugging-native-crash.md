@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: bc5a151323414e867b919035b0c5705234faebf9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 40d849ad403f2f47c00be9d3da7b59fc27ce8002
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021672"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725492"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Debuggen eines nativen Absturzes in einer Xamarin.Mac-App
 
 ## <a name="overview"></a>Übersicht
 
-Mitunter können Programmierfehler zu Abstürzen in der nativen Objective-C-Laufzeit führen. Im Gegensatz zu C#-Ausnahmen zeigen diese nicht auf eine bestimmte Zeile in Ihrem Code, die Sie korrigieren können. Manchmal kann es sehr einfach sein, sie zu finden und zu beheben. Doch manchmal ist es überaus schwierig, sie aufzuspüren. 
+Mitunter können Programmierfehler zu Abstürzen in der nativen Objective-C-Laufzeit führen. Im Gegensatz zu C#-Ausnahmen zeigen diese nicht auf eine bestimmte Zeile in Ihrem Code, die Sie korrigieren können. Manchmal kann es sehr einfach sein, sie zu finden und zu beheben. Doch manchmal ist es überaus schwierig, sie aufzuspüren.
 
 Lassen Sie uns ein paar Beispiele aus der Praxis für native Abstürze durchgehen und einen Blick darauf werfen.
 
@@ -163,40 +163,40 @@ In dieser Anleitung erfahren Sie, wie Sie Fehler dieser Art aufspüren können, 
 
 ### <a name="locating"></a>Suchen
 
-In fast allen Fällen mit Fehlern dieser Art ist das primäre Symptom native Abstürze, normalerweise mit etwas Ähnlichem wie `mono_sigsegv_signal_handler` oder `_sigtrap` in den oberen Frames des Stapels. Cocoa versucht einen Rückruf an Ihren C#-Code, trifft auf ein Objekt, für das eine Garbage Collection erfolgt ist, und stürzt ab. Jedoch wird nicht jeder Absturz mit diesen Symbolen durch ein Bindungsproblem wie dieses verursacht. Sie müssen einige zusätzliche Aufgaben erledigen, um zu bestätigen, dass dies das Problem ist. 
+In fast allen Fällen mit Fehlern dieser Art ist das primäre Symptom native Abstürze, normalerweise mit etwas Ähnlichem wie `mono_sigsegv_signal_handler` oder `_sigtrap` in den oberen Frames des Stapels. Cocoa versucht einen Rückruf an Ihren C#-Code, trifft auf ein Objekt, für das eine Garbage Collection erfolgt ist, und stürzt ab. Jedoch wird nicht jeder Absturz mit diesen Symbolen durch ein Bindungsproblem wie dieses verursacht. Sie müssen einige zusätzliche Aufgaben erledigen, um zu bestätigen, dass dies das Problem ist.
 
 Das Aufspüren dieser Fehler wird dadurch erschwert, dass sie erst auftreten, **nachdem** eine Garbage Collection das betreffende Objekt entfernt hat. Wenn Sie glauben, dass Sie einen dieser Fehler gefunden haben, fügen Sie den folgenden Code an beliebiger Stelle in Ihrer Startsequenz hinzu:
 
 ```csharp
-new System.Threading.Thread (() => 
+new System.Threading.Thread (() =>
 {
     while (true) {
          System.Threading.Thread.Sleep (1000);
          GC.Collect ();
     }
-}).Start (); 
+}).Start ();
 ```
 
 Dadurch wird Ihre Anwendung gezwungen, den Garbage Collector im Sekundentakt auszuführen. Führen Sie Ihre Anwendung erneut aus, und versuchen Sie, den Fehler zu reproduzieren. Wenn es sofort zum Absturz kommt oder beständig statt zufällig, sind Sie auf dem richtigen Weg.
 
 ### <a name="reporting"></a>Berichterstellung
 
-Der nächste Schritt ist das Melden des Problems an Xamarin, damit die Bindung für künftige Releases korrigiert werden kann. Wenn Sie eine Unternehmenslizenz haben, öffnen Sie ein Ticket unter 
+Der nächste Schritt ist das Melden des Problems an Xamarin, damit die Bindung für künftige Releases korrigiert werden kann. Wenn Sie eine Unternehmenslizenz haben, öffnen Sie ein Ticket unter
 
 [visualstudio.microsoft.com/vs/support/](https://visualstudio.microsoft.com/vs/support/)
 
 Suchen Sie andernfalls nach einem bestehenden Problem:
 
-- Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/mac).
+- Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/xamarin-mac).
 - Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues).
 - Vor der Umstellung auf das GitHub-Repository „Issues“ wurden Xamarin-Probleme auf [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) nachverfolgt. Suchen Sie dort nach übereinstimmenden Problemen.
 - Wenn Sie kein übereinstimmendes Problem finden können, melden Sie ein neues Problem im [GitHub-Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues/new).
 
-GitHub-Issues sind allesamt öffentlich. Es ist nicht möglich, Kommentare oder Anlagen auszublenden. 
+GitHub-Issues sind allesamt öffentlich. Es ist nicht möglich, Kommentare oder Anlagen auszublenden.
 
 Fügen Sie möglichst viele der folgenden Informationen hinzu:
 
-- Ein einfaches Beispiel, um das Problem zu reproduzieren. Dies ist von **sehr großem Nutzen**, sofern möglich. 
+- Ein einfaches Beispiel, um das Problem zu reproduzieren. Dies ist von **sehr großem Nutzen**, sofern möglich.
 - Die vollständige Stapelüberwachung des Absturzes.
 - Den C#-Code, der den Absturz umgibt.   
 
@@ -250,4 +250,4 @@ Sie dürfen niemals zulassen, dass eine C#-Ausnahme einen Escapevorgang für ver
 
 Ohne sich allzu sehr mit den technischen Gründen zu verzetteln, ist die Einrichtung der Infrastruktur zum Abfangen von Ausnahmen bei verwaltetem Code an jeder verwalteten/nativen Grenze aufwändig und es gibt _viele_ Übergänge, die in vielen gemeinsamen Vorgängen vorkommen. Viele Vorgänge, insbesondere solche, die mit dem UI-Thread zu tun haben, müssen schnell beendet werden, weil sonst Ihre Anwendung ins Stocken gerät und unakzeptable Leistungsmerkmale aufweist. Viele dieser Rückrufe machen sehr einfache Dinge, die selten die Möglichkeit des Auslösens von Ausnahmen bieten, weshalb dieser Mehraufwand in diesen Fällen sowohl teuer als auch unnötig wäre.
 
-Deshalb richten wir diese Try/-Catch-Anweisungen nicht für Sie ein. Für Stellen, an denen Ihr Code wichtige Aufgaben erledigt (was über die Rückgabe boolescher Werte oder einfache Berechnungen hinausgeht), können Sie versuchen, selbst mit Try/Catch-Blöcken zu arbeiten. 
+Deshalb richten wir diese Try/-Catch-Anweisungen nicht für Sie ein. Für Stellen, an denen Ihr Code wichtige Aufgaben erledigt (was über die Rückgabe boolescher Werte oder einfache Berechnungen hinausgeht), können Sie versuchen, selbst mit Try/Catch-Blöcken zu arbeiten.

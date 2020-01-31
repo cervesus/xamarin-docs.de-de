@@ -116,7 +116,7 @@ Die im [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) angegebenen Elemente de
 
 Die folgenden Screenshots zeigen Indikatoren, die mithilfe eines Schriftart Symbols gerendert werden:
 
-[![Screenshot einer Vorlagen basierten Anzeige Ansicht unter IOS und Android](indicatorview-images/templated.png "Vorlagenbasierte "indikatorview"")](indicatorview-images/templated-large.png#lightbox "Vorlagenbasierte "indikatorview"")
+[![Screenshot einer Vorlagen basierten Anzeige Ansicht unter IOS und Android](indicatorview-images/templated.png "Vorlagenbasierte indikatorview")](indicatorview-images/templated-large.png#lightbox "Vorlagenbasierte indikatorview")
 
 Weitere Informationen zur `FontImage` Markup Erweiterung finden Sie unter [fontimage Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension).
 

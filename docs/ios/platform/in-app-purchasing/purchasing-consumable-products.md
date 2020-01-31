@@ -323,7 +323,7 @@ if (iap.CanMakePayments()) {
 
 Die Anwendung sieht wie folgt aus, wenn die Funktion **in-App-Käufe** eingeschränkt ist – die Schaltflächen für den Einkauf sind deaktiviert.   
 
- [Wenn das Feature in-App-Käufe eingeschränkt ist, ![die Anwendung so aussehen, dass die Kauf Schaltflächen deaktiviert werden.](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [![Wenn das Feature in-App-Käufe eingeschränkt ist, die Anwendung so aussehen, dass die Kauf Schaltflächen deaktiviert werden.](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
 
 Produktinformationen können weiterhin angefordert werden, wenn `CanMakePayments` false ist, sodass die APP weiterhin Preise abrufen und anzeigen kann. Dies bedeutet Folgendes: Wenn wir die `CanMakePayments` Prüfung aus dem Code entfernt haben, sind die Kauf Schaltflächen weiterhin aktiv. Wenn jedoch ein Kauf Versuch unternommen wird, wird dem Benutzer eine Meldung angezeigt, dass **in-App-Einkäufe nicht zulässig sind** (von storekit generiert, wenn auf die Zahlungs Warteschlange zugegriffen wird):   
 

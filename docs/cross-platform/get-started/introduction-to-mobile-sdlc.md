@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016399"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724833"
 ---
 # <a name="mobile-software-development-lifecycle"></a>Lebenszyklus der Entwicklung mobiler Software
 
@@ -80,7 +80,7 @@ Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzer
 1. **Android**:[Design Guidelines (Entwurfsrichtlinien)](https://developer.android.com/design/index.html)
 1. **UWP**: [UWP Design basics (Grundlagen des UWP-Entwurfs)](https://docs.microsoft.com/windows/uwp/design/basics/)
 
-Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den einzelnen Abschnitten einer Anwendung wechseln kann. Bei iOS ist die Registerkartenleiste im unteren Bereich des Bildschirms platziert, bei Android im oberen Bereich, während bei UWP eine Ansicht mit [Pivots und Registerkarten](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) verwendet wird.
+Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den einzelnen Abschnitten einer Anwendung wechseln kann. Bei iOS ist die Registerkartenleiste im unteren Bereich des Bildschirms platziert, bei Android im oberen Bereich, während bei UWP eine Ansicht mit [Pivots und Registerkarten](/windows/uwp/design/controls-and-patterns/pivot) verwendet wird.
 
 Zudem werden UX-Entscheidungen von der Hardware an sich beeinflusst. Beispielsweise haben iOS-Geräte keine physische *Zurück-* Taste, weshalb Sie die Metapher Navigation Controller (Navigationscontroller) einfügen sollten.
 

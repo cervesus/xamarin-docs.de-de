@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 12/17/2019
-ms.openlocfilehash: 2ea3516c1fb89c8c9b9cc3694d7c95ccd87e9d41
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 2b2bfe9925a99c2ba7f1366ea28d5c72e2e1da88
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489648"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725540"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Zertifikate und Bezeichner in Xamarin.Mac
 
@@ -150,7 +150,7 @@ Wie bereits erwähnt ist das Entwicklerzertifikat nicht immer erforderlich, es s
 
 Um eine App im App Store freizugeben, benötigen Sie zwei Zertifikate:
 
-- **Mac App-Verteilung**szertifikat, das zum Signieren der Anwendung verwendet wird, und 
+- **Mac App-Verteilung**szertifikat, das zum Signieren der Anwendung verwendet wird, und
 - **Mac Installer-Verteilung**szertifikat, um den Installer zu signieren.
 
 > [!TIP]
@@ -183,7 +183,7 @@ Erstellen Sie als Erstes das Installerzertifikat:
 
 Wenn sie eine Xamarin.Mac-Anwendung selbst veröffentlichen möchten (also nicht über den Apple App Store), benötigen Sie zwei Zertifikate:
 
-- **Entwickler-ID Installer**-Zertifikat, das zum Signieren der Anwendung verwendet wird, und 
+- **Entwickler-ID Installer**-Zertifikat, das zum Signieren der Anwendung verwendet wird, und
 - **Entwickler-ID-Anwendung**szertifikat, um den Installer zu signieren.
 
 > [!TIP]
@@ -198,4 +198,4 @@ Nachdem Sie Zertifikate erstellt, heruntergeladen und installiert haben, werden 
 - [Installation](/visualstudio/mac/installation/)
 - [„Hallo, Mac“-Beispiel](~/mac/get-started/hello-mac.md)
 - [Verteilen Ihrer Apps im Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
-- [Developer ID and GateKeeper (Entwickler-ID und Gatekeeper)](https://developer.apple.com/resources/developer-id/)
+- [Developer ID and GateKeeper (Entwickler-ID und Gatekeeper)](https://developer.apple.com/developer-id/)

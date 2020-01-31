@@ -55,7 +55,7 @@ Diese Verbindungs Zeichenfolge wird zum Bereitstellen von [Azure Functions mit V
 
 Um die Beispielanwendung zu testen, sollten Sie eine neue Azure Functions-app in der Azure-Portal erstellen. Notieren Sie sich den **APP-Namen** , da diese URL in der **Constants.cs** -Beispieldatei verwendet wird. Der folgende Screenshot zeigt die Erstellung einer neuen Azure Functions-App mit dem Namen "xdocsfunctions":
 
-[Screenshot der Azure Functions App-Erstellung ![](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[![Screenshot der Azure Functions App-Erstellung ](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
 Azure Functions kann in einer Azure Functions-app-Instanz aus Visual Studio 2019 bereitgestellt werden. In den folgenden Abschnitten wird die Bereitstellung von zwei Funktionen in der Beispielanwendung für eine Azure Functions-app-Instanz beschrieben.
 
