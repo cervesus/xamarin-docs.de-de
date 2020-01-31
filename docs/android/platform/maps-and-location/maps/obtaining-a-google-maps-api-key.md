@@ -111,7 +111,7 @@ Nachdem Sie den SHA-1-Fingerabdruck des Signatur-Keystores abgerufen haben, müs
 
 1. Navigieren Sie in einem Browser zur [Google Developers Console-API & Services-Dashboard](https://console.developers.google.com/apis/dashboard/) , und klicken Sie auf **Projekt auswählen**. Klicken Sie auf einen Projektnamen, oder erstellen Sie einen neuen, indem Sie auf " **Neues Projekt**" klicken:
 
-   [Schaltfläche zum Erstellen eines Projekts in der Google Developer Console ![](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
+   [![Schaltfläche zum Erstellen eines Projekts in der Google Developer Console](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
 2. Wenn Sie ein neues Projekt erstellt haben, geben Sie den Projektnamen im Dialogfeld **Neues Projekt** ein, das angezeigt wird. In diesem Dialogfeld wird eine eindeutige Projekt-ID erstellt, die auf Ihrem Projektnamen basiert. Klicken Sie anschließend auf die Schaltfläche **Erstellen** , wie im folgenden Beispiel gezeigt:
 

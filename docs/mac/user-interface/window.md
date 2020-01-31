@@ -648,7 +648,7 @@ void OpenDialog (NSObject sender)
 
 Wenn wir nun unsere app ausführen, wählen Sie im Menü **Datei** die Option **Öffnen...** aus, wählen Sie im Dialog Feld **Öffnen** eine Textdatei aus, und öffnen Sie Sie:
 
-[Dialogfeld "Öffnen" ![](window-images/file03.png)](window-images/file03.png#lightbox)
+[![Dialogfeld "Öffnen"](window-images/file03.png)](window-images/file03.png#lightbox)
 
 Die Datei wird angezeigt, und der Titel wird mit dem Symbol der Datei festgelegt:
 
