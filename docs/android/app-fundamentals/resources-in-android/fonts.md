@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/09/2018
-ms.openlocfilehash: 8f732e05565c420ef28da38c0da0e61ecd595313
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3bfa3bbde68fab95d729cc8a558d4eb3baf7b4fa
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025022"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940654"
 ---
 # <a name="fonts"></a>Schriftarten
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Ab API-Ebene 26 ermöglicht der Android SDK Schriftarten, wie z. b. Layouts oder drawables, als Ressourcen behandelt zu werden. Die [Android-Unterstützungs Bibliothek 26 nuget](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/26.1.0.1) führt einen Backport für die neuen Schriftart-APIs auf die Apps aus, die auf API-Ebene 14 oder höher ausgerichtet sind.
 
-Nach dem erreichen von API 26 oder der Installation der Android-Unterstützungs Bibliothek V26 gibt es zwei Möglichkeiten, Schriftarten in einer Android-Anwendung zu verwenden:
+Nach dem Ziel der API 26 oder der Installation der Android-Unterstützungs Bibliothek V26 gibt es zwei Möglichkeiten, Schriftarten in einer Android-Anwendung zu verwenden:
 
 1. **Verpacken der Schriftart als Android-Ressource** &ndash; dadurch wird sichergestellt, dass die Schriftart für die Anwendung immer verfügbar ist, aber die Größe des APK vergrößert.
 2. **Die Schriftarten herunterladen** &ndash; Android unterstützt auch das Herunterladen einer Schriftart von einem _Schriftart Anbieter_. Der Schriftart Anbieter überprüft, ob die Schriftart bereits auf dem Gerät vorhanden ist. Bei Bedarf wird die Schriftart heruntergeladen und auf dem Gerät zwischengespeichert. Diese Schriftart kann von mehreren Anwendungen gemeinsam genutzt werden.
@@ -112,7 +112,7 @@ Das `fontWeight`-Attribut entspricht dem CSS-`font-weight` Attribut und bezieht 
 - **Thin** &ndash; 100
 - **Zusätzliches Licht** &ndash; 200
 - **Light** &ndash; 300
-- **Normaler** &ndash; 400
+- **Normal** &ndash; 400
 - **Mittlere** &ndash; 500
 - **Semibold** &ndash; 600
 - **Fett** &ndash; 700
@@ -264,7 +264,7 @@ Bevor der `FontRequest` an die `FontContractCompat.RequestFont`-Methode übergeb
 - **`FontsContractCompat.FontRequestCallback`** &ndash; handelt es sich um eine abstrakte Klasse, die erweitert werden muss. Es handelt sich um einen Rückruf, der aufgerufen wird, wenn `RequestFont` abgeschlossen ist. Eine xamarin. Android-App muss `FontsContractCompat.FontRequestCallback` Unterklassen überschreiben und die `OnTypefaceRequestFailed` und `OnTypefaceRetrieved`überschreiben und die Aktionen bereitstellen, die durchgeführt werden, wenn der Download fehlschlägt oder erfolgreich ist.
 - **`Handler`** &ndash; handelt es sich um eine `Handler`, die von `RequestFont` verwendet wird, um die Schriftart ggf. in einen Thread herunterzuladen. Schriftarten sollten **nicht** im UI-Thread heruntergeladen werden.
 
-Dieser Code Ausschnitt ist ein Beispiel für eine C# Klasse, die asynchron eine Schriftart aus der Google Fonts Open Source-Sammlung herunterlädt. Es implementiert die `FontRequestCallback`-Schnittstelle und löst C# ein-Ereignis aus, wenn `FontRequest`abgeschlossen ist.
+Dieser Code Ausschnitt ist ein Beispiel für eine C# Klasse, die asynchron eine Schriftart aus der Google Fonts Open Source-Sammlung herunterlädt. Es implementiert die `FontRequestCallback`-Schnittstelle und löst C# ein-Ereignis aus, wenn `FontRequest` abgeschlossen ist.
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
@@ -338,17 +338,17 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Handbuch wurden die neuen APIs in Android 8,0 erläutert, um das Herunterladen von Schriftarten und Schriftarten als Ressourcen Es wurde erläutert, wie vorhandene Schriftarten in ein APK eingebettet und in einem Layout verwendet werden. Außerdem wird erläutert, wie Android 8,0 das Herunterladen von Schriftarten von einem Schriftart Anbieter unterstützt, entweder Programm gesteuert oder durch Deklarieren der Schriftart Metadaten in Ressourcen Dateien.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
-- [FontFamily](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)
-- [Fontconfig](https://developer.android.com/reference/android/text/FontConfig.html)
-- [Fontrequest](https://developer.android.com/reference/android/support/v4/provider/FontRequest.html)
-- [Fontkontratcompat](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)
-- [Resources. GetFont](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))
+- [fontFamily](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)
+- [FontConfig](https://developer.android.com/reference/android/text/FontConfig.html)
+- [FontRequest](https://developer.android.com/reference/android/support/v4/provider/FontRequest.html)
+- [FontsContractCompat](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)
+- [Resources.GetFont](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))
 - [Gotik](https://developer.android.com/reference/android/graphics/Typeface.html)
 - [Android-Unterstützungs Bibliothek 26 nuget](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)
 - [Verwenden von Schriftarten in Android](https://www.youtube.com/watch?v=TfB-TsLFJdM)

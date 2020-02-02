@@ -6,12 +6,12 @@ ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: davidortinau
 ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: 6fffad744fa2f60239b0c96f01ff241e2cad9252
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d951952103a94dfc60a8083a75998611b635cda9
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016073"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940786"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>Ziel-Sharpie-Verifizierungs Attribute
 
@@ -30,10 +30,10 @@ Das Argument Argument, das für das Attribut bereitgestellt wird, kann mit der f
 
 |`[Verify]` Hinweis|Beschreibung|
 |---|---|
-|Inferredfromvorangeder typedef|Der Name dieser Deklaration wurde durch eine gängige Konvention von der unmittelbar vorangehenden `typedef` im ursprünglichen systemeigenen Quellcode abgeleitet. Überprüfen Sie, ob der abherzuende Name korrekt ist, da diese Konvention mehrdeutig ist|
-|Constantsinterfaceassociation|Es gibt keine Möglichkeit, zu bestimmen, mit welcher Ziel-C-Schnittstelle eine externe Variablen Deklaration verknüpft werden kann. Instanzen dieser werden als `[Field]` Eigenschaften in einer partiellen Schnittstelle an eine nahe konkrete Oberfläche gebunden, um eine intuitivere API zu erhalten, sodass die "Konstanten"-Schnittstelle möglicherweise vollständig ausgeschlossen wird.|
+|InferredFromPreceedingTypedef|Der Name dieser Deklaration wurde durch eine gängige Konvention von der unmittelbar vorangehenden `typedef` im ursprünglichen systemeigenen Quellcode abgeleitet. Überprüfen Sie, ob der abherzuende Name korrekt ist, da diese Konvention mehrdeutig ist|
+|ConstantsInterfaceAssociation|Es gibt keine Möglichkeit, zu bestimmen, mit welcher Ziel-C-Schnittstelle eine externe Variablen Deklaration verknüpft werden kann. Instanzen dieser werden als `[Field]` Eigenschaften in einer partiellen Schnittstelle an eine nahe konkrete Oberfläche gebunden, um eine intuitivere API zu erhalten, sodass die "Konstanten"-Schnittstelle möglicherweise vollständig ausgeschlossen wird.|
 |Methodtoproperty|Eine Ziel-C-Methode wurde aufgrund der C# Konvention (z. b. ohne Rückgabe von Parametern und Rückgabe eines Werts) als Eigenschaft gebunden. Häufig werden Methoden wie diese als Eigenschaften an eine schönere API gebunden, aber manchmal können falsch positive Ergebnisse auftreten, und die Bindung sollte eigentlich eine Methode sein.|
-|Stronglytypednsarray|Eine systemeigene `NSArray*` wurde als `NSObject[]`gebunden. Möglicherweise ist es möglich, das Array in der Bindung basierend auf den durch die API-Dokumentation festgelegten Erwartungen (z. b. Kommentare in der Header Datei) oder durch Überprüfen der Array Inhalte durch Tests stärker einzugeben. Beispielsweise kann ein NSArray *, das nur NSNumber * instancesenthält, nicht als `NSObject[]`, sondern als `NSNumber[]` gebunden werden.|
+|StronglyTypedNSArray|Eine systemeigene `NSArray*` wurde als `NSObject[]`gebunden. Möglicherweise ist es möglich, das Array in der Bindung basierend auf den durch die API-Dokumentation festgelegten Erwartungen (z. b. Kommentare in der Header Datei) oder durch Überprüfen der Array Inhalte durch Tests stärker einzugeben. Z. B. eine nsarray im*, enthält nur NSNumber* Instancescan als gebunden werden `NSNumber[]` anstelle von `NSObject[]`.|
 
 Mit dem `sharpie verify-docs` Tool können Sie auch schnell eine Dokumentation für einen Hinweis erhalten, z. b.:
 

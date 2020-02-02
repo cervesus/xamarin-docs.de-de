@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 4255891174b639022a45c45c22e0022cd0403f26
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c0338fce694d61dc19484c56dbc00bb854d0d0d7
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030593"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940970"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -40,10 +40,10 @@ Der Siri-Remote Computer verfügt über folgende Features und erwartete Verwendu
 |---|---|---|
 |**Berührungs Oberfläche**<br />Wischen Sie, um zu navigieren, und drücken Sie, um Kontextmenüs auszuwählen und zu halten.|**Tippen/schwenken**<br />UI-Navigation zwischen fokussierbaren Elementen.<br /><br />**Sie**<br />Aktiviert das ausgewählte (im Fokus) Element.|**Tippen/schwenken**<br />Hängt vom Spiel Entwurf ab und kann als D-Pad durch Tippen auf die Ränder verwendet werden.<br /><br />**Sie**<br />Ausführen der primären Schaltflächen Funktion.|
 |**Menü**<br />Drücken Sie, um zum vorherigen Bildschirm oder Menü zurückzukehren.|Kehrt zum vorherigen Bildschirm zurück und beendet den Apple TV-Startbildschirm über den Hauptbildschirm der app.|Anhalten und Fortsetzen des Spiels, zurück zum vorherigen Bildschirm und Beenden des Apple TV-Startbildschirms über den Bildschirm der Haupt-app.|
-|**Siri/Suche**<br />Klicken Sie in Ländern mit Siri auf Sprachsteuerung, und in allen anderen Ländern wird Suchbildschirm angezeigt.|n/v|n/v|
+|**Siri/Suche**<br />Klicken Sie in Ländern mit Siri auf Sprachsteuerung, und in allen anderen Ländern wird Suchbildschirm angezeigt.|nicht verfügbar|nicht verfügbar|
 |**Wiedergabe/Pause**<br />Wiedergabe und Pause von Medien oder Bereitstellen einer sekundären Funktion in-apps.|Startet die Medienwiedergabe und hält die Wiedergabe wieder auf.|Führt eine sekundäre Schaltflächen Funktion aus oder überspringt das Intro-Video (sofern vorhanden).|
-|**Home**<br />Drücken Sie, um zum Startbildschirm zurückzukehren, doppelklicken Sie, um ausgestellte apps anzuzeigen, und halten Sie das Gerät gedrückt.|n/v|n/v|
-|**Handels**<br />Steuert das Volume für angefügte audiovolumes und Videogeräte.|n/v|n/v|
+|**Home**<br />Drücken Sie, um zum Startbildschirm zurückzukehren, doppelklicken Sie, um ausgestellte apps anzuzeigen, und halten Sie das Gerät gedrückt.|nicht verfügbar|nicht verfügbar|
+|**Handels**<br />Steuert das Volume für angefügte audiovolumes und Videogeräte.|nicht verfügbar|nicht verfügbar|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -286,14 +286,14 @@ Ein Game Controller verfügt über die folgenden Features und erwarteten Verwend
 |**A**|Aktiviert das ausgewählte (im Fokus) Element.|Führt die primäre Schaltflächen Funktion aus und bestätigt Dialog Aktionen.|
 |**B**|Kehrt zum vorherigen Bildschirm zurück oder beendet den Startbildschirm, wenn er auf dem Hauptbildschirm der App angezeigt wird.|Führt die Funktion der sekundären Schaltfläche aus oder kehrt zum vorherigen Bildschirm zurück.|
 |**X**|Startet die Medienwiedergabe oder hält die Wiedergabe an.|Hängt von Spiel ab.|
-|**Y**|n/v|Hängt von Spiel ab.|
+|**Y**|nicht verfügbar|Hängt von Spiel ab.|
 |**Menü**|Kehrt zum vorherigen Bildschirm zurück oder beendet den Startbildschirm, wenn er auf dem Hauptbildschirm der App angezeigt wird.|Das Anhalten/Fortsetzen des Spiels wird zum vorherigen Bildschirm zurückgegeben oder auf dem Startbildschirm angezeigt, wenn es auf dem Hauptbildschirm der App angezeigt wird.|
 |**Linke Schulter Schaltfläche**|Navigiert nach links.|Hängt von Spiel ab.|
 |**Linker-Auslösung**|Navigiert nach links.|Hängt von Spiel ab.|
 |**Schaltfläche mit rechter Schulter**|Navigiert nach rechts.|Hängt von Spiel ab.|
 |**Rechter Auslösers**|Navigiert nach rechts|Hängt von Spiel ab.|
 |**Linker fingerstick**|Navigiert durch Benutzeroberflächen Elemente (ändert den Fokus).|Hängt von Spiel ab.|
-|**Rechter fingerstick**|n/v|Hängt von Spiel ab.|
+|**Rechter fingerstick**|nicht verfügbar|Hängt von Spiel ab.|
 
 Apple bietet die folgenden Vorschläge zum Arbeiten mit Spiel Controllern:
 
@@ -361,11 +361,11 @@ Weitere Informationen zum Implementieren von Game Controller-Unterstützung find
 
 <a name="Summary" />
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 Dieser Artikel behandelt den neuen Siri-Remote Computer, der im Lieferumfang von Apple TV, touchoberflächen Gesten und Siri-Remote Schaltflächen enthalten ist. Im nächsten Schritt wird die Arbeit mit Gesten und Storyboards, Gesten und Code und Low-Level-Ereignissen behandelt. Abschließend wird erläutert, wie Sie mit Spiel Controllern arbeiten.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

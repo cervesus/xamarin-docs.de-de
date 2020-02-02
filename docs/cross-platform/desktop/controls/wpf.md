@@ -5,12 +5,12 @@ description: Dieses Dokument vergleicht und vergleicht WPF mit xamarin. Forms. E
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 9c69449f88f9c237b5075967c89ff7ff3b6fb57a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955656"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940797"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF im Vergleich zu xamarin. Forms: Ähnlichkeiten & Unterschiede
 
@@ -74,11 +74,11 @@ Ein vollständiges Beispiel finden Sie unter [bindbare Eigenschaften in xamarin.
 
 ### <a name="attached-properties"></a>Angefügte Eigenschaften
 
-Angefügte Eigenschaften sind eine Teilmenge der bindbaren Eigenschaft und funktionieren genauso wie in WPF. Der Hauptunterschied besteht darin, dass in diesem Fall der Eigenschafts Wrapper konvertiert und durch einen Satz statischer Get/Set-Methoden für die besitzende Klasse ersetzt wird. Weitere Informationen finden Sie [unter angefügte Eigenschaften in xamarin. Forms](~/xamarin-forms/xaml/attached-properties.md) .
+Angefügte Eigenschaften sind eine Teilmenge der bindbaren Eigenschaft und funktionieren genauso wie in WPF. Der Hauptunterschied besteht darin, dass der Eigenschafts Wrapper in diesem Fall weggelassen und durch einen Satz statischer Get/Set-Methoden für die besitzende Klasse ersetzt wird. Weitere Informationen finden Sie [unter angefügte Eigenschaften in xamarin. Forms](~/xamarin-forms/xaml/attached-properties.md) .
 
 ### <a name="using-the-binding-engine"></a>Verwenden der Bindungs-Engine
 
-Der Prozess für die Verwendung der Bindungs-Engine ist der gleiche wie in WPF. Sie kann im Code-Behind verwendet werden, indem ein `Binding` Objekt erstellt wird, das an ein Quell Objekt (beliebiger .NET-Typ) und einen optionalen Eigenschafts Wert gebunden ist (bei der Übermittlung wird das Quell Objekt wie WPF als die Eigenschaft selbst behandelt). Anschließend können Sie `SetBinding` auf allen `BindableObject` verwenden, um die Bindung einer `BindableProperty`zuzuordnen.
+Der Prozess für die Verwendung der Bindungs-Engine ist der gleiche wie in WPF. Sie kann in Code Behind verwendet werden, indem ein `Binding` Objekt erstellt wird, das an ein Quell Objekt (beliebiger .NET-Typ) und einen optionalen Eigenschafts Wert gebunden ist (wenn der Wert weggelassen wird, wird das Quell Objekt als Eigenschaft selbst wie WPF behandelt). Anschließend können Sie `SetBinding` auf allen `BindableObject` verwenden, um die Bindung einer `BindableProperty`zuzuordnen.
 
 Alternativ können Sie die Bindungs Beziehung in XAML mithilfe des `BindingExtension`definieren. Sie verfügt über die gleichen grundlegenden Werte wie die Erweiterung in WPF.
 
@@ -128,7 +128,7 @@ In xamarin. Forms ist dieselbe Funktion verfügbar, aber der Eigenschaftsname is
 
 Wert Konverter werden in xamarin. Forms wie WPF vollständig unterstützt. Dieselbe Schnittstellen Form wird verwendet, aber xamarin. Forms verfügt über die-Schnittstelle, die im `Xamarin.Forms`-Namespace definiert ist.
 
-### <a name="model-view-viewmodel"></a>Model View ViewModel
+### <a name="model-view-viewmodel"></a>Model-View-ViewModel
 
 MVVM wird sowohl von WPF als auch von xamarin. Forms vollständig unterstützt.
 

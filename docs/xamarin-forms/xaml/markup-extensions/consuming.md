@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
-ms.openlocfilehash: 47fd6d34a1ef286fa8e1a307ea6033c9c6a9feea
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 693dd29e59aee73a206398a8a44cc4f15e385d8d
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955754"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940287"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
@@ -60,7 +60,7 @@ Die **X: Static Demo** Seite zeigt verschiedene Möglichkeiten zum Verwenden der
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              xmlns:local="clr-namespace:MarkupExtensions"
              x:Class="MarkupExtensions.StaticDemoPage"
              Title="x:Static Demo">
@@ -115,7 +115,7 @@ Dies ist die am häufigsten verwendeten Form der `x:Static` Markuperweiterung.
 Die **statische Demo** Seite enthält zwei weitere Beispiele. Stammelement der XAML-Datei enthält eine XML-Namespacedeklaration für .NET `System` Namespace:
 
 ```xaml
-xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=netstandard"
 ```
 
 Auf diese Weise können die `Label` Schriftgrad auf das statische Feld festzulegende `Math.PI`. Dies führt zu eher klein Text, sodass die `Scale` -Eigenschaftensatz auf `Math.E`:

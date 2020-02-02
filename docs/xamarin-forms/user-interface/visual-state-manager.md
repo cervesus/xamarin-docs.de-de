@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2019
-ms.openlocfilehash: 11de0ecf20c6748d4958d1f1f1bea80e6a87024e
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 99bf55b6e956efe54510e822d379665879f3ba44
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490011"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940293"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Die Xamarin.Forms visuellen Zustands-Manager
 
@@ -511,7 +511,7 @@ Wenn eine gültige Telefonnummer eingegeben wird, klicken Sie dann der aktuelle 
 
 [![VSM-Überprüfung: gültiger Status](vsm-images/VsmValidationValid.png "VSM-Validierung-gültig")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
-Die Code-Behind-Datei wird ermittelt, für die Behandlung der `TextChanged` Ereignis aus der `Entry`. Der Handler verwendet einen regulären Ausdruck, um festzustellen, ob die Eingabezeichenfolge gültig ist. Die Methode in der CodeBehind-Datei mit dem Namen `GoToState` Ruft die statische `VisualStateManager.GoToState` -Methode für beide `helpLabel` und `submitButton`:
+Die Code-Behind-Datei ist für die Behandlung des `TextChanged` Ereignisses vom `Entry`verantwortlich. Der Handler verwendet einen regulären Ausdruck, um festzustellen, ob die Eingabezeichenfolge gültig ist. Die Methode in der CodeBehind-Datei mit dem Namen `GoToState` Ruft die statische `VisualStateManager.GoToState` -Methode für beide `helpLabel` und `submitButton`:
 
 ```csharp
 public partial class VsmValidationPage : ContentPage
@@ -681,7 +681,7 @@ VSM Markup tritt an vier Stellen in der XAML-Datei. Die `StackLayout` mit dem Na
 
 Die innere `ScrollView` mit dem Namen `menuScroll` und `StackLayout` mit dem Namen `menuStack` klicken Sie im Menü von Schaltflächen zu implementieren. Die Ausrichtung dieser Layouts ist entgegengesetzten von `mainStack`. Klicken Sie im Menü sollte im Hochformat horizontale und vertikale im Querformatmodus ausgeführt werden.
 
-Der vierte Abschnitt VSM Markup wird in ein impliziter Stil für die Schaltflächen selbst. Dieses Markup wird `VerticalOptions`, `HorizontalOptions`, und `Margin` Eigenschaften, die spezifisch für die Ausrichtungen Portait und Querformat.
+Der vierte Abschnitt VSM Markup wird in ein impliziter Stil für die Schaltflächen selbst. Dieses Markup legt `VerticalOptions`-, `HorizontalOptions`-und `Margin`-Eigenschaften fest, die für das hoch-und Querformat spezifisch sind.
 
 Im Code-Behind-Datei wird die `BindingContext` Eigenschaft `menuStack` implementieren `Button` Befehle aus, und fügt außerdem einen Handler, der die `SizeChanged` -Ereignis der Seite:
 

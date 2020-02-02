@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 9dd06044ea9c4bf28e785932d316b3222c6cd16b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 885e5862e517303b4a2556b0b1bd3fa8759bbca6
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009141"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940890"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Touchereignisse und Gesten in xamarin. IOS
 
@@ -20,7 +20,7 @@ Es ist wichtig, die touchereignisse und touchapis in einer IOS-Anwendung zu vers
 
 ## <a name="enabling-touch"></a>Aktivieren der Fingereingabe
 
-Steuerelemente in `UIKit` – solche, die von UIControl – untergeordnet sind, sind so von der Benutzerinteraktion abhängig, dass Sie Gesten in UIKit integriert haben. Daher ist es nicht erforderlich, die Toucheingabe zu aktivieren. Sie ist bereits aktiviert.
+Steuerelemente in `UIKit` – solche, die von UIControl – untergeordnet sind, sind so von der Benutzerinteraktion abhängig, dass Sie Gesten in UIKit eingebaut haben. Daher ist es nicht erforderlich, die Toucheingabe zu aktivieren. Sie ist bereits aktiviert.
 
 Für viele der Sichten in `UIKit` ist die Fingereingabe jedoch standardmäßig nicht aktiviert. Es gibt zwei Möglichkeiten, die Fingereingabe für ein Steuerelement zu aktivieren. Die erste Möglichkeit ist das Aktivieren des Kontrollkästchens aktivierte Benutzerinteraktion im Eigenschaften-Pad des IOS-Designers, wie im folgenden Screenshot zu sehen:
 

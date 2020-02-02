@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f6218977e9ad0d4c396ef127c3c3ca53dc56d7d3
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022242"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940869"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>XIb-Code Generierung in xamarin. IOS
 
@@ -33,7 +33,7 @@ Benutzerdefinierte Klassen können in einer **XIb** -Datei mithilfe des Befehls 
 
 ## <a name="generating-code"></a>Generieren von Code
 
-Wenn eine Datei mit dem Namen " **{0}. XIb.Designer.cs** " im Projekt vorhanden ist, werden für alle **{0}. XIb** -Dateien mit einer Buildaktion der *Seite*Visual Studio für Mac in der Designer Datei partielle Klassen für alle Benutzer Klassen generiert, die Sie im **XIb** -Datei mit Eigenschaften für die Outlets und partielle Methoden für alle Aktionen. Die Code Generierung wird einfach durch das vorhanden sein dieser Datei ermöglicht.
+Wenn eine Datei mit dem Namen " **{0}. XIb.Designer.cs** " im Projekt vorhanden ist, generieren Visual Studio für Mac in der Designer-Datei für alle Benutzer Klassen, die in der XIb-Datei gefunden werden können, für alle Benutzer *Klassen, die*in der **XIb** -Datei enthalten sind, die Eigenschaften für die Outlets und partielle Methoden für alle Aktionen. **{0}** Die Code Generierung wird einfach durch das vorhanden sein dieser Datei ermöglicht.
 
 Die Designer Datei wird automatisch aktualisiert, wenn sich die **XIb** -Datei ändert, und Visual Studio für Mac den Fokus erhält. Die Designer Datei sollte nicht manuell geändert werden, da Änderungen das nächste Mal überschrieben werden, Visual Studio für Mac die Datei aktualisiert wird.
 
@@ -47,7 +47,7 @@ Klassen können nicht in mehr als einer **. XIb**definiert werden, oder Sie veru
 
 ## <a name="non-designer-class-parts"></a>Nicht-Designer-Klassen Teile
 
-Die partiellen Klassen des Designers sind nicht für die Verwendung ohne die Verwendung vorgesehen. Outlets sind privat, und es wird keine Basisklasse angegeben. Es wird erwartet, dass jede Klasse einen entsprechenden "Non-Designer"-Klassen Teil in einer anderen Datei hat, die die Basisklasse festlegt, die Outlets verwendet oder verfügbar macht, und definiert Konstruktoren, die zum Instanziieren der Klasse aus nativem Code beim Laden von **XIb erforderlich sind.** . Dies wird in den Vorlagen für "Default **. XIb** " durchführen, aber für alle zusätzlichen benutzerdefinierten Klassen, die Sie in einer **XIb**definieren, müssen Sie den nicht-Designer-Teil manuell hinzufügen.
+Die partiellen Klassen des Designers sind nicht für die Verwendung ohne die Verwendung vorgesehen. Outlets sind privat, und es wird keine Basisklasse angegeben. Es wird erwartet, dass jede Klasse einen entsprechenden "Non-Designer"-Klassen Teil in einer anderen Datei hat, die die Basisklasse festlegt, die Outlets verwendet oder verfügbar macht, und definiert Konstruktoren, die zum Instanziieren der Klasse aus nativem Code beim Laden der **XIb**erforderlich sind. Dies wird in den Vorlagen für "Default **. XIb** " durchführen, aber für alle zusätzlichen benutzerdefinierten Klassen, die Sie in einer **XIb**definieren, müssen Sie den nicht-Designer-Teil manuell hinzufügen.
 
 Der Grund hierfür ist die Notwendigkeit der Flexibilität. Beispielsweise können mehrere Code Behind-Klassen eine gemeinsame verwaltete abstrakte Klasse Unterklassen Unterklassen aufweisen, die die Klasse Unterklassen von IB Unterklassen unterordnen.
 
@@ -81,7 +81,7 @@ Beachten Sie, dass diese partiellen Methoden nur C#für erstellt werden, da Code
 
 ## <a name="cross-xib-class-usage"></a>Verwendung von Cross-XIb-Klassen
 
-Manchmal möchten Benutzer aus mehreren **XIb** -Dateien, z. b. mit Registerkarten Controllern, auf dieselbe Klasse verweisen. Dies kann durch expliziter Verweis auf die Klassendefinition aus einer anderen **XIb** -Datei oder durch das erneute definieren desselben Klassen namens in der zweiten **. XIb**-Datei erfolgen.
+Manchmal möchten Benutzer aus mehreren **XIb** -Dateien, z. b. mit Registerkarten Controllern, auf dieselbe Klasse verweisen. Dies kann durch explizites verweisen auf die Klassendefinition aus einer anderen **XIb** -Datei oder durch das erneute definieren desselben Klassen namens in der zweiten **. XIb**-Datei erfolgen.
 
 Der letztere Fall kann problematisch sein, da Visual Studio für Mac **XIb** -Dateien einzeln verarbeitet. Doppelte Definitionen können nicht automatisch erkannt und zusammengeführt werden. Daher können Konflikte auftreten, wenn das Register Attribut mehrmals angewendet wird, wenn dieselbe partielle Klasse in mehreren Designer Dateien definiert ist. Die neuesten Versionen von Visual Studio für Mac versuchen, dieses Problem zu beheben, aber es funktioniert möglicherweise nicht immer wie erwartet. In Zukunft wird dies wahrscheinlich nicht mehr unterstützt. stattdessen werden Visual Studio für Mac alle Typen, die in allen **XIb** -Dateien und verwaltetem Code im Projekt definiert sind, direkt aus allen **XIb** -Dateien sichtbar gemacht.
 

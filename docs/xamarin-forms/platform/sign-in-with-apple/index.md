@@ -7,27 +7,27 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 1e436cf96367141873f16a09d8c818be4265226b
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: a0d15c7d264c32a8ed193e55fb934f63992198eb
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206503"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940276"
 ---
 # <a name="sign-in-with-apple-in-xamarinforms"></a>Mit Apple in xamarin. Forms anmelden
 
-Bei der Anmeldung mit Apple wird ein neuer Dienst eingeführt, der Identitätsschutz für Benutzer bereitstellt. Ab IOS 13 erfordert Apple, dass apps, die Authentifizierungs Anbieter von Drittanbietern verwenden, auch eine Anmeldung mit Apple anbieten. Anweisungen zur Verwendung dieser Anwendung mit xamarin. IOS finden [Sie hier](~/ios/platform/ios13/sign-in.md).
+Bei der Anmeldung mit Apple wird ein neuer Dienst eingeführt, der Identitätsschutz für Benutzer bereitstellt. Ab IOS 13 erfordert Apple, dass apps, die Authentifizierungs Anbieter von Drittanbietern verwenden, auch eine Anmeldung mit Apple anbieten. Weitere Informationen zur Verwendung dieser Funktion mit xamarin. IOS finden [Sie hier](~/ios/platform/ios13/sign-in.md).
 
 Bei der Unterstützung der Anmeldung mit Apple in einer xamarin. Forms-Projekt Mappe müssen für Android und UWP weitere Aspekte berücksichtigt werden. Für diese Plattformen stellt Apple einen anderen Workflow bereit.
 
-## <a name="setup-for-iosiosplatformios13sign-inmd"></a>[Setup für iOS](~/ios/platform/ios13/sign-in.md)
+## <a name="setup-for-xamariniosiosplatformios13sign-inmd"></a>[Setup für xamarin. IOS](~/ios/platform/ios13/sign-in.md)
 
-Dieser Leitfaden führt Sie durch das Setup, das zum Aktivieren der Anmeldung mit Apple für IOS-Anwendungen erforderlich ist.
+Dieser Leitfaden führt Sie durch das Setup, das zum Aktivieren der Anmeldung mit Apple für xamarin. IOS-Anwendungen erforderlich ist.
 
 ## <a name="setup-for-other-platformssetupmd"></a>[Setup für anderen Plattformen](setup.md)
 
-Dieser Leitfaden führt Sie durch das Setup, das zum Aktivieren der Anmeldung mit Apple für nicht-IOS-Anwendungen, einschließlich xamarin. Forms Android und UWP, erforderlich ist.
+Dieser Leitfaden führt Sie durch das Setup, das zum Aktivieren der Anmeldung mit Apple für andere Plattformen, einschließlich xamarin. Forms Android und UWP, erforderlich ist.
 
-## <a name="use-sign-in-with-appleandroid-ios-sign-inmd"></a>[Anmelden mit Apple verwenden](android-ios-sign-in.md)
+## <a name="use-sign-in-with-apple-in-xamarinformsandroid-ios-sign-inmd"></a>[Verwenden Sie die Anmeldung mit Apple in xamarin. Forms.](android-ios-sign-in.md)
 
 Mit einigen Diensten können Sie die Anmeldung mit Apple in ihren plattformübergreifenden xamarin. Forms-Anwendungen unterstützen. In diesem Leitfaden werden die erforderlichen Schritte beschrieben.

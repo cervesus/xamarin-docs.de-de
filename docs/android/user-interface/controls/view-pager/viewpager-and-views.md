@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 7413fbe3f08988cfdb7c7b4e5237539aca250772
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728147"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940845"
 ---
 # <a name="viewpager-with-views"></a>ViewPager mit Ansichten
 
@@ -62,18 +62,13 @@ Da die Implementierungsdetails `TreeCatalog` für das Verständnis von `ViewPage
     android:layout_height="match_parent" >
 
 </android.support.v4.view.ViewPager>
+```
 
-```csharp
-This XML defines a `ViewPager` that occupies the entire screen. Note that
-you must use the fully-qualified name **android.support.v4.view.ViewPager**
-because `ViewPager` is packaged in a support library. `ViewPager` is
-available only from 
-[Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
-it is not available in the Android SDK. 
+Dieser XML-Code definiert eine `ViewPager`, die den gesamten Bildschirm einnimmt. Beachten Sie, dass Sie den voll qualifizierten Namen **Android. Support. v4. View. viewpager** verwenden müssen, da `ViewPager` in einer Unterstützungs Bibliothek verpackt ist. `ViewPager` ist nur in der [Android-Unterstützungs Bibliothek V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verfügbar. Er ist im Android SDK nicht verfügbar. 
 
-## Set up ViewPager
+## <a name="set-up-viewpager"></a>Einrichten von "viewpager"
 
-Edit **MainActivity.cs** and add the following `using` statement:
+Bearbeiten Sie **MainActivity.cs** , und fügen Sie die folgende `using`-Anweisung hinzu:
 
 ```csharp
 using Android.Support.V4.View;
@@ -91,7 +86,7 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-Dieser Code bewirkt Folgendes:
+Dieser Code führt folgende Schritte aus:
 
 1. Legt die Ansicht aus der **Main. axml** -layoutressource fest.
 
@@ -207,7 +202,7 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 }
 ```
 
-Dieser Code bewirkt Folgendes:
+Dieser Code führt folgende Schritte aus:
 
 1. Instanziiert einen neuen `ImageView`, um das Struktur Bild an der angegebenen Position anzuzeigen. Der `MainActivity` der APP ist der Kontext, der an den `ImageView`-Konstruktor übergeben wird.
 
@@ -234,7 +229,7 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 }
 ```
 
-Dieser Code bewirkt Folgendes:
+Dieser Code führt folgende Schritte aus:
 
 1. Wandelt den bestandenen Container `View` in einen `ViewPager` Verweis um.
 

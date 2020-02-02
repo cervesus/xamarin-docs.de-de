@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 542ae6696bae8fccfa6d5ed9842bce126760da37
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8efa116a82ba021c2a723dc6ab636f54b6b5af71
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021866"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940986"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Arbeiten mit Zeilen Aktionen in xamarin. IOS
 
@@ -27,13 +27,13 @@ IOS bietet zwei Möglichkeiten zum Ausführen von Aktionen für eine Tabelle: `U
 Die `UITableViewRowAction`-Klasse wird verwendet, um eine Aktion zu definieren, die ausgeführt wird, wenn der Benutzer in einer Zeile in einer Tabellenansicht horizontal nach links bewegt.
 Wenn Sie z. b. eine Tabelle bearbeiten, wird die Schaltfläche **Löschen** standardmäßig in einer Zeile nach links angezeigt. Indem mehrere Instanzen der `UITableViewRowAction` Klasse an einen `UITableView`angefügt werden, können mehrere benutzerdefinierte Aktionen definiert werden, jeweils mit eigenem Text, Formatierung und Verhalten.
 
-## <a name="uiswipeactionsconfiguration"></a>Uiswipeactionsconfiguration
+## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
 Zum Implementieren von wischen-Aktionen mit `UISwipeActionsConfiguration`sind drei Schritte erforderlich:
 
 1. Überschreiben Sie `GetLeadingSwipeActionsConfiguration`-und/oder `GetTrailingSwipeActionsConfiguration`-Methoden. Diese Methoden geben einen `UISwipeActionsConfiguration`zurück.
 2. Instanziieren Sie den `UISwipeActionsConfiguration`, der zurückgegeben werden soll. Diese Klasse nimmt ein Array von `UIContextualAction`an.
-3. Erstellen Sie eine `UIContextualAction`.
+3. Erstellen Sie ein `UIContextualAction`.
 
 Diese werden in den folgenden Abschnitten ausführlicher erläutert.
 
@@ -71,7 +71,7 @@ var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualActio
 leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 ```
 
-Beachten Sie, dass die Reihenfolge, in der die Aktionen angezeigt werden, von der Art und Weise abhängt, wie Sie an das Array übermittelt werden. Der obige Code für führende Streif zeigt z. b. die Aktionen wie folgt an:
+Es ist wichtig zu beachten, dass die Reihenfolge, in der die Aktionen angezeigt werden, davon abhängt, wie Sie an das Array weitergeleitet werden. Der obige Code für führende Streif zeigt z. b. die Aktionen wie folgt an:
 
 ![führende Schwenk Aktionen, die für eine Tabellenzeile angezeigt werden](row-action-images/action03.png)
 
@@ -115,7 +115,7 @@ Verschiedene visuelle Eigenschaften, z. b. die Hintergrundfarbe oder das Bild de
 
 Nachdem die kontextbezogenen Aktionen erstellt wurden, können Sie verwenden, um die `UISwipeActionsConfiguration` in der `GetLeadingSwipeActionsConfiguration`-Methode zu initialisieren.
 
-## <a name="uitableviewrowaction"></a>Uitableviewrowaction
+## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
 Wenn Sie eine oder mehrere benutzerdefinierte Zeilen Aktionen für eine `UITableView`definieren möchten, müssen Sie eine Instanz der `UITableViewDelegate`-Klasse erstellen und die `EditActionsForRow`-Methode überschreiben. Beispiel:
 
@@ -179,7 +179,7 @@ Wenn der obige Code ausgeführt wird und der Benutzer in einer Tabellenzeile nac
 
 Wenn der Benutzer auf die Schaltfläche " **Hi** " tippt, wird `Hello World!` in Visual Studio für Mac oder Visual Studio in die Konsole geschrieben, wenn die Anwendung im Debugmodus ausgeführt wird.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Tableswipeer Actions (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
 - [Workingwithtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 10d2ae6ac35f02d75ef6e04a0531ec3f5dafd668
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667038"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940820"
 ---
 # <a name="android-job-scheduler"></a>Android-Auftragsplaner
 
@@ -76,7 +76,7 @@ Alle Aufgaben, die von der Android-Auftrags Planer-Bibliothek ausgeführt werden
 3. Legen Sie die `Permission`-Eigenschaft des `ServiceAttribute` auf die Zeichenfolge `android.permission.BIND_JOB_SERVICE`fest.
 4. Überschreiben Sie die `OnStartJob`-Methode, und fügen Sie den Code zum Ausführen der Arbeit hinzu. Diese Methode wird von Android auf dem Haupt Thread der Anwendung aufgerufen, um den Auftrag auszuführen. Die Arbeit dauert länger, bis ein paar Millisekunden in einem Thread ausgeführt werden, um eine Blockierung der Anwendung zu vermeiden.
 5. Wenn die Arbeit erledigt ist, muss der `JobService` die `JobFinished`-Methode aufzurufen. Diese Methode gibt an, wie `JobService` dem `JobScheduler` mitteilt, dass die Arbeit erledigt ist. Wenn Sie `JobFinished` nicht aufrufen, führt dies dazu, dass die `JobService` unnötige Anforderungen an das Gerät stellen, wodurch die Akku Lebensdauer verkürzt wird. 
-6. Es empfiehlt sich, auch die `OnStopJob`-Methode außer Kraft zu setzen. Diese Methode wird von Android aufgerufen, wenn der Auftrag beendet wird, bevor er abgeschlossen ist, und bietet dem `JobService` die Möglichkeit, sämtliche Ressourcen ordnungsgemäß zu verwerfen. Diese Methode sollte `true` zurückgeben, wenn es erforderlich ist, den Auftrag neu zu planen, oder `false`, wenn der Auftrag nicht erneut ausgeführt werden kann.
+6. Es empfiehlt sich, auch die `OnStopJob`-Methode außer Kraft zu setzen. Diese Methode wird von Android aufgerufen, wenn der Auftrag beendet wird, bevor er abgeschlossen ist, und bietet dem `JobService` die Möglichkeit, sämtliche Ressourcen ordnungsgemäß zu verwerfen. Diese Methode sollte `true` zurückgeben, wenn es erforderlich ist, den Auftrag neu zu planen, oder `false`, wenn es nicht wünschenswert ist, den Auftrag erneut auszuführen.
 
 Der folgende Code ist ein Beispiel für die einfachste `JobService` für eine Anwendung, wobei die TPL zum asynchronen Ausführen einiger Aufgaben verwendet wird:
 

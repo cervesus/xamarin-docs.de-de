@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 3adabbac3f56747093aa8a3def85869a92d33600
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ef1a97df5648d0f120b58f6206f18f74a6f50f92
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010488"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940981"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Startbildschirme für xamarin. IOS-apps
 
@@ -89,7 +89,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
 
     ![Eine Bezeichnung mit Layouteinschränkungen](launch-screens-images/launch11.png)
 
-12. Testen Sie andere Geräte und Ausrichtungen, um zu überprüfen, ob der Entwurf in allen Szenarien als beabsichtigt aussieht. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder eine bestimmte Ausrichtung vorgenommen werden müssen, verwenden Sie die Schaltfläche zum **Bearbeiten von Merkmalen** , um für bestimmte Größenklassen eine Verbindung hinzuzufügen:
+12. Testen Sie andere Geräte und Ausrichtungen, um zu überprüfen, ob der Entwurf in allen Szenarien als beabsichtigt aussieht. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder eine bestimmte Ausrichtung vorgenommen werden müssen, verwenden Sie die Schaltfläche zum **Bearbeiten von Merkmalen** , um Einschränkungen für bestimmte Größenklassen hinzuzufügen:
 
     ![Der als iPhone X gerenderte Startbildschirm mithilfe der quer Ausrichtung](launch-screens-images/launch12.png)
 
@@ -124,7 +124,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
 
     ![Fenster "Neues Element hinzufügen" mit ausgewähltem Asset Catalog](launch-screens-images/launch05.w157.png)
 
-    - Fügen [Sie dem](~/ios/app-fundamentals/images-icons/displaying-an-image.md) **Assets** -Asset-Katalog ein neues Abbild hinzu, wie im Abschnitt [Hinzufügen von Bildern zu einem Asset Catalog-Image festgelegt](~/ios/app-fundamentals/images-icons/displaying-an-image.md) .
+    - Fügen Sie dem Asset-Katalog **Assets** neue Bilder hinzu. Informationen hierzu finden Sie im Abschnitt [Hinzufügen von Bildern zu Bildern des Asset-Katalogs](~/ios/app-fundamentals/images-icons/displaying-an-image.md) des Leifadens [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
 6. Öffnen Sie **launchscreen. Storyboard** zur Bearbeitung, indem Sie in der **Projektmappen-Explorer**auf die Datei doppelklicken.
 
@@ -172,7 +172,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
     
     ![Eine Bezeichnung mit Layouteinschränkungen](launch-screens-images/launch14-vs.png) 
 
-15. Testen Sie andere Geräte und Ausrichtungen, um zu überprüfen, ob der Entwurf in allen Szenarien als beabsichtigt aussieht. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder eine bestimmte Ausrichtung vorgenommen werden müssen, verwenden Sie die Schaltfläche zum **Bearbeiten von Merkmalen** , um für bestimmte Größenklassen eine Verbindung hinzuzufügen:
+15. Testen Sie andere Geräte und Ausrichtungen, um zu überprüfen, ob der Entwurf in allen Szenarien als beabsichtigt aussieht. In Fällen, in denen Anpassungen für ein bestimmtes Gerät oder eine bestimmte Ausrichtung vorgenommen werden müssen, verwenden Sie die Schaltfläche zum **Bearbeiten von Merkmalen** , um Einschränkungen für bestimmte Größenklassen hinzuzufügen:
 
     ![Der als iPhone X gerenderte Startbildschirm mithilfe der quer Ausrichtung](launch-screens-images/launch15-vs.png) 
 
@@ -223,7 +223,7 @@ Gehen Sie folgendermaßen vor, um das neue Storyboard als Startbildschirm zu ver
 
 -----
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Dynamische Startbildschirme (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [Einheitliche Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)

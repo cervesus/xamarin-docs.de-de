@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 911f56026a1495099e81a542b30b280f26b6a9e1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da4884e7f1e3ec1ae8653ea8ec4247fce54a6565
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025463"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940761"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Berechtigungen in xamarin. Android
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Android-Anwendungen werden in einem eigenen Sandkasten ausgeführt und haben aus Sicherheitsgründen keinen Zugriff auf bestimmte Systemressourcen oder Hardware auf dem Gerät. Der Benutzer muss der APP explizit Berechtigungen erteilen, bevor diese Ressourcen verwendet werden können. Beispielsweise kann eine Anwendung nicht auf das GPS auf einem Gerät zugreifen, ohne dass der Benutzer explizit berechtigt ist. Android löst eine `Java.Lang.SecurityException` aus, wenn eine APP versucht, ohne Berechtigung auf eine geschützte Ressource zuzugreifen.
 
@@ -40,7 +40,7 @@ Vor dem Anfordern einer oder mehrerer Berechtigungen ist es eine bewährte Vorge
 
 Der gesamte Workflow zum Überprüfen und Anfordern von Berechtigungen wird als _Lauf Zeit Berechtigungs_ Überprüfung bezeichnet und kann im folgenden Diagramm zusammengefasst werden: 
 
-[Flussdiagramm zur Überprüfung der![Lauf Zeit Berechtigung](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
+[Flussdiagramm zur Überprüfung der ![Lauf Zeit Berechtigung](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
 Die Android-Unterstützungs Bibliothek unterstützt einige der neuen APIs für Berechtigungen für ältere Android-Versionen. Diese backportiert-APIs überprüfen automatisch die Android-Version auf dem Gerät, sodass Sie nicht jedes Mal eine Überprüfung auf API-Ebene durchführen müssen.  
 
@@ -51,7 +51,7 @@ In diesem Dokument wird erläutert, wie Sie einer xamarin. Android-Anwendung Ber
 
 <a name="requirements" />
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 Es wird dringend empfohlen, dass xamarin. Android-Projekte das nuget-Paket [xamarin. Android. Support. compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) enthalten. Mit diesem Paket werden Berechtigungs spezifische APIs für ältere Versionen von Android backportieren. dabei wird eine gemeinsame Schnittstelle bereitgestellt, ohne dass die Android-Version, auf der die app ausgeführt wird, ständig überprüft werden muss.
 
@@ -205,11 +205,11 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Leitfaden wurde erläutert, wie Sie Berechtigungen auf einem Android-Gerät hinzufügen und überprüfen. Die Unterschiede in der Funktionsweise von Berechtigungen zwischen alten Android-Apps (API-Ebene < 23) und neuen Android-Apps (API-Ebene > 22). Es wurde erläutert, wie Lauf Zeit Berechtigungs Überprüfungen in Android 6,0 ausgeführt werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Liste der normalen Berechtigungen](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
 - [Beispiel-App für Lauf Zeit Berechtigungen](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)

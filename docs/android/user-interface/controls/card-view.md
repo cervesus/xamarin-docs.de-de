@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 053847426d770408826297d9a80b6e38d7f6bc44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 37afc9ef7773bbfefe442216055c0501af2ab966
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029282"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940884"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin. Android-Kartenansicht
 
 _Das CardView-Widget ist eine Benutzeroberflächen Komponente, die Text-und Bildinhalte in Sichten darstellt, die Karten ähneln. In diesem Handbuch wird erläutert, wie CardView in xamarin. Android-Anwendungen verwendet und angepasst wird, während die Abwärtskompatibilität mit früheren Versionen von Android gewahrt bleibt._
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 Das in Android 5,0 (Lollipop) eingeführte `Cardview`-Widget ist eine Benutzeroberflächen Komponente, die Text-und Bildinhalte in Ansichten anzeigt, die Karten ähneln. `CardView` ist als `FrameLayout` Widget mit abgerundeten Ecken und einem Schatten implementiert. In der Regel wird eine `CardView` verwendet, um ein einzelnes Zeilen Element in einer `ListView`-oder `GridView` Ansichts Gruppe darzustellen. Der folgende Screenshot ist beispielsweise ein Beispiel für eine Reise Reservierungs-APP, die `CardView`-basierten Reise zielkarten in einem scrollfähigen `ListView`implementiert:
 
@@ -28,7 +28,7 @@ In diesem Handbuch wird erläutert, wie Sie das `CardView`-Paket Ihrem xamarin. 
 
 <a name="requirements" />
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>-Anforderungen
 
 Folgendes ist erforderlich, um neue Features von Android 5,0 und höher (einschließlich `CardView`) in xamarin-basierten apps zu verwenden:
 
@@ -36,7 +36,7 @@ Folgendes ist erforderlich, um neue Features von Android 5,0 und höher (einschl
 
 - **Android SDK** &ndash; Android 5,0 (API 21) oder höher muss über den Android SDK Manager installiert werden.
 
-- **Java JDK 1,8** &ndash; JDK 1,7 kann verwendet werden, wenn Sie auf API-Ebene 23 und früher abzielen. JDK 1,8 ist in [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)verfügbar.
+- **Java JDK 1,8** &ndash; JDK 1,7 kann verwendet werden, wenn Sie speziell auf API-Ebene 23 und früher abzielen. JDK 1,8 ist in [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)verfügbar.
 
 Ihre APP muss auch das `Xamarin.Android.Support.v7.CardView` Paket enthalten. So fügen Sie das `Xamarin.Android.Support.v7.CardView` Paket in Visual Studio für Mac hinzu:
 
@@ -189,7 +189,7 @@ Die Auffüll Attribute werden wie folgt erläutert:
 Die Attribute für die Inhalts Auffüll Zeichen sind relativ zur Grenze des Inhalts Bereichs und nicht zu einem beliebigen Widget innerhalb des Inhalts Bereichs.
 Wenn `contentPadding` z. b. in der Foto Anzeige-App ausreichend erweitert wurden, würden die `CardView` sowohl das Bild als auch den Text, der auf der Karte angezeigt wird, zuschneiden.
 
-#### <a name="elevation"></a>Trie
+#### <a name="elevation"></a>Erhöhung
 
 `CardView` bietet zwei Attribute zur Rechte Erweiterung, um die Rechte Erweiterung zu steuern, und somit die Größe Ihres Schattens:
 
@@ -237,11 +237,11 @@ Zur Unterstützung bei der Verwaltung dieser Kompatibilitäts Unterschiede biete
 
 Weitere Informationen zur Aufrechterhaltung der Kompatibilität mit früheren Versionen von Android finden Sie unter [beibehalten der Kompatibilität](https://developer.android.com/training/material/compatibility.html).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Leitfaden wurde das neue `CardView` Widget in Android 5,0 (Lollipop) vorgestellt. Es wurde die standardmäßige `CardView` Darstellung demonstriert und erläutert, wie Sie `CardView` anpassen können, indem Sie die Rechte Erweiterung, den Eckraum, das Auffüllen von Inhalt und die Hintergrundfarbe ändern. Dabei wurden die `CardView` Layoutattribute (mit Referenz Diagrammen) aufgelistet, und es wurde erläutert, wie `CardView` auf Android-Geräten vor Android 5,0 Lollipop verwendet werden kann. Weitere Informationen zu `CardView`finden Sie in der [CardView-Klassenreferenz](https://developer.android.com/reference/android/support/v7/widget/CardView.html).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Recyclerview (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [Einführung in Lollipop](~/android/platform/lollipop.md)
