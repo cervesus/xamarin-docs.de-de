@@ -71,9 +71,9 @@ Neu bei IOS 10, das Core Motion Framework umfasst Peer Domain-Ereignisse, die ei
 
 Die folgenden Verbesserungen wurden an Foundation Framework für IOS 10 vorgenommen:
 
-- Verwenden Sie die neue [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)-Klasse, um lokalisierte Messungen zu formatieren, die dem Endbenutzer angezeigt werden sollen.
+- Verwenden Sie die neue [NS-](https://developer.apple.com/reference/foundation/nsmeasurementformatter) Klasse, um lokalisierte Messungen zum Anzeigen für den Endbenutzer zu formatieren.
 - Verwenden Sie die neue [nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval) -Klasse, um Datums-und Zeitintervall Berechnungen zu erstellen, z. b. Dauer Zeiten, zum Vergleichen von Intervallen und zum Testen von Intervall interabschnitten.
-- Verwenden Sie die neue [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)-Klasse, um zwischen verschiedenen Maßeinheiten (Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
+- Verwenden Sie die neue [nsmeasure](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse, um zwischen verschiedenen Maßeinheiten (User Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
 
 - Verwenden Sie die neuen [nsunit](https://developer.apple.com/reference/foundation/nsunit) -und [nsdimension](https://developer.apple.com/reference/foundation/nsdimension) -Klassen, um bestimmte UOMS darzustellen.
 - Der [nslocal](https://developer.apple.com/reference/foundation/nslocale) -Klasse wurden mehrere neue Eigenschaften hinzugefügt, um lokale Informationen und die verfügbaren Anzeige Formate abzurufen.
@@ -211,7 +211,7 @@ Die folgenden Verbesserungen wurden an dem WebKit-Framework in ios 10 vorgenomme
 
 - Die Unterstützung von Peek und Pop wurde der `WKWebView`-Klasse hinzugefügt. Verwenden Sie die `ShouldPreviewElement`-Methode, um zu bestimmen, ob eine bestimmte Webansicht eine Vorschau anzeigen soll.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [IOS 10-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [Neuerungen in ios 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

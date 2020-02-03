@@ -35,11 +35,11 @@ Mithilfe von Datenquellen und den zugehörigen Datenseiten können Entwickler sc
 
 DataPages werden einer xamarin. Forms-Anwendung hinzugefügt, indem das nuget-Paket **xamarin. Forms. Pages** eingeschlossen wird.
 
-### <a name="data-sources"></a>Datenquellen
+### <a name="data-sources"></a>Projektmappen-Explorer
 
 Die Vorschau bietet einige vorgefertigte Datenquellen, die für die Verwendung zur Verfügung stehen:
 
-* **JsonDataSource**
+* **Jsondatasource**
 * **Azuredatasource** (separates nuget)
 * **Azureeasytabledatasource** (separates nuget)
 

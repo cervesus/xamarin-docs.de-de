@@ -97,7 +97,7 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 
 **Behebung:** Dies wird für IOS 9 behandelt, aber es gibt eine einfache Problem Umgehung, die Sie in der Zwischenzeit selbst anwenden können. (in diesem Fall können Sie IOS 7 testen.) Andere Frameworks weisen möglicherweise ähnliche Probleme auf, z. b. weil das WebKit-Framework in ios 8 öffentlich gemacht wurde (und das Ziel IOS 7 ist dieser Fehler. Sie sollten IOS 8 als Ziel verwenden, um webkit in Ihrer APP zu verwenden).
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [IOS 9-Kompatibilitäts Freigabe Informationen](https://releases.xamarin.com/ios-hotfix-for-ios-9-preview-xcode-6/)
 - [Einführung in iOS 9](~/ios/platform/introduction-to-ios9/index.md)

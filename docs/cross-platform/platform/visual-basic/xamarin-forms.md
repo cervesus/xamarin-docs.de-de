@@ -127,7 +127,7 @@ Wie auf der [Seite Portable Visual Basic.net](~/cross-platform/platform/visual-b
 
 - Abhängigkeits Dienst Implementierungen können nicht in Visual Basic geschrieben werden, sondern müssen in C# den nativen Platt Form Projekten geschrieben werden.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [XamarinFormsVB (sample)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+- [Xamarinformsvb (Beispiel)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [Plattformübergreifende Entwicklung mit der .NET Framework](https://docs.microsoft.com/dotnet/standard/cross-platform/)

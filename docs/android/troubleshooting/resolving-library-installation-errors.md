@@ -19,7 +19,7 @@ ms.locfileid: "76724299"
 
 _In einigen Fällen erhalten Sie möglicherweise Fehler bei der Installation von Android-Unterstützungs Bibliotheken. Dieses Handbuch enthält Problem Umgehungen für einige häufige Fehler._
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Beim Erstellen eines xamarin. Android-App-Projekts erhalten Sie möglicherweise Buildfehler, wenn Visual Studio oder Visual Studio für Mac versuchen, Abhängigkeits Bibliotheken herunterzuladen und zu installieren. Viele dieser Fehler werden durch Netzwerkkonnektivitätsprobleme, Datei Beschädigungen oder Versions Probleme verursacht. In dieser Anleitung werden die am häufigsten auftretenden Installationsfehler für die Unterstützungs Bibliothek beschrieben, und es werden die Schritte zum Umgehen dieser Probleme und zum erneuten aufbauen des App-Projekts beschrieben.
 
@@ -63,43 +63,43 @@ Wenn Sie die oben beschriebenen automatischen Wiederherstellungsschritte ausgef�
 
 1. Laden Sie die Datei **Android\_m2repository\_r_nn_. zip** herunter, die der Fehlermeldung entspricht, &ndash; Links in der folgenden Liste (zusammen mit dem entsprechenden MD5-Hash der URL der einzelnen Links) bereitgestellt werden:
 
-    - [android\_m2repository\_r33.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r33.zip) &ndash; 5FB756A25962361D17BBE99C3B3FCC44
+    - [Android\_m2repository\_R33. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r33.zip) &ndash; 5bb756a25962361d17bbe99c3b3f cc44
 
     - [Android\_m2repository\_R32. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip) &ndash; F16A3455987DBAE5783F058F19F7FCDF
 
     - [Android\_m2repository\_R31. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r31.zip) &ndash; 99a8907ce2324316e754a95e4c2d786e
 
-    - [android\_m2repository\_r30.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r30.zip) &ndash; 05AD180B8BDC7C21D6BCB94DDE7F2C8F
+    - [Android\_m2repository\_R30. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r30.zip) &ndash; 05ad180b8bdc7c21d6bcb94dde7f & 2c8f
 
     - [Android\_m2repository\_R29. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r29.zip) &ndash; 2a3a8a6d6826ef6cc653030e7d695c41
 
-    - [android\_m2repository\_r28.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r28.zip) &ndash; 17BE247580748F1EDB72E9F374AA0223
+    - [Android\_m2repository\_R28. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r28.zip) &ndash; 17be247580748f 1edb72e9f 374aa0223
 
     - [Android\_m2repository\_R27. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r27.zip) &ndash; C9FD4FCD69D7D12B1D9DF076B7BE4E1C
 
     - [Android\_m2repository\_R26. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r26.zip) &ndash; 8157fc1c311bb36420c1d8992af54a4d
 
-    - [android\_m2repository\_r25.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r25.zip) &ndash; 0B3F1796C97C707339FB13AE8507AF50
+    - [Android\_m2repository\_R25. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r25.zip) &ndash; 0b3b1796c97c707339b13ae8507af50
 
-    - [android\_m2repository\_r24.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r24.zip) &ndash; 8E3C9EC713781EDFE1EFBC5974136BEA
+    - [Android\_m2repository\_R24. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r24.zip) &ndash; 8e3c9ec713781edfe1efbc5974136bea
 
     - [Android\_m2repository\_R23. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r23.zip) &ndash; D5BB66B3640FD9B9C6362C9DB5AB0FE7
 
-    - [android\_m2repository\_r22.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r22.zip) &ndash; 96659D653BDE0FAEDB818170891F2BB0
+    - [Android\_m2repository\_R22. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r22.zip) &ndash; 96659d653bde 0faedb818170891f2bb0
 
     - [Android\_m2repository\_R21. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r21.zip) &ndash; CD3223F2EFE068A26682B9E9C4B6FBB5
 
     - [Android\_m2repository\_R20. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r20.zip) &ndash; 650e58df02db1a832386fa4a2ent46b1a
 
-    - [android\_m2repository\_r19.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r19.zip) &ndash; 263B062D6EFAA8AEE39E9460B8A5851A
+    - [Android\_m2repository\_R19. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r19.zip) &ndash; 263b062d6efaa8aee39e9460b8a5851a
 
-    - [android\_m2repository\_r18.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r18.zip) &ndash; 25947AD38DCB4865ABEB61522FAFDA0E
+    - [Android\_m2repository\_R18. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r18.zip) &ndash; 25947ad38dcb4865abeb61522maafda0e
 
-    - [android\_m2repository\_r17.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r17.zip) &ndash; 49054774F44AE5F35A6BA9D3C117EFD8
+    - [Android\_m2repository\_R17. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r17.zip) &ndash; 49054774b44ae5f 35a6ba9d3c117efd8
 
-    - [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
+    - [Android\_m2repository\_R16. zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595e577d19d31708195a83087881ee6
 
-    Wenn das **m2repository** Archive in dieser Tabelle nicht angezeigt wird, können Sie die Download-URL erstellen, indem Sie `https://dl-ssl.google.com/android/repository/` dem Namen des herunter zuladenden **m2repository** hinzufügen. Verwenden Sie beispielsweise **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** , um **Android\_ m2repository\_ R10. zip**herunterzuladen.
+    Wenn das **m2repository** Archive in dieser Tabelle nicht angezeigt wird, können Sie die Download-URL erstellen, indem Sie `https://dl-ssl.google.com/android/repository/` dem Namen des herunter zuladenden **m2repository** hinzufügen. Verwenden Sie beispielsweise **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** , um **Android\_m2repository\_R10. zip**herunterzuladen.
 
 2. Benennen Sie die Datei in den entsprechenden MD5-Hash der Download-URL um, wie in der obigen Tabelle gezeigt. Wenn Sie z. b **. Android\_m2repository\_R25. zip**heruntergeladen haben, benennen Sie es in **0b3f1796c97c707339fb13ae8507af50. zip**um. Wenn der MD5-Hash für die Download-URL der heruntergeladenen Datei nicht in der Tabelle angezeigt wird, können Sie einen [Online-MD5-Generator](http://www.webconfs.com/online-md5-generator.php) verwenden, um die URL in eine MD5-Hash Zeichenfolge zu konvertieren.
 
@@ -159,7 +159,7 @@ Führen Sie die folgenden Schritte aus, um **m2repository** herunterzuladen und 
 
 An diesem Punkt haben Sie die fehlenden Komponenten manuell installiert, und das Projekt sollte ohne Fehler erstellt werden. Wenn dies nicht der Wert ist, vergewissern Sie sich, dass Sie die **m2repository** **. zip** -Archiv Version heruntergeladen haben, die exakt der Version in der Fehlermeldung entspricht, und überprüfen Sie, ob Sie Ihren Inhalt an den richtigen Speicherorten installiert haben, wie in den obigen Schritten beschrieben
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie Sie nach häufigen Fehlern wiederherstellen, die während des automatischen Downloads und der Installation von Abhängigkeits Bibliotheken stattfinden können. Es wurde beschrieben, wie die problematische Bibliothek gelöscht und das Projekt neu erstellt werden kann, um die Bibliothek erneut herunterzuladen und erneut zu installieren.
 Es wurde beschrieben, wie Sie die Bibliothek herunterladen und im Ordner **Zips** installieren. Außerdem wurde ein ausführlicheres Verfahren zum manuellen herunterladen und Installieren der erforderlichen Dateien als Möglichkeit zum Umgehen von Problemen beschrieben, die nicht über automatische Methoden aufgelöst werden können.

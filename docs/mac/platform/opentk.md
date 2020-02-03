@@ -286,7 +286,7 @@ Der Rendering-Code wird in der Regel mit einem-`GL.Clear` aufgerufen, um alle vo
 
 ### <a name="running-the-game-view"></a>Ausführen der Spielansicht
 
-Wenn Sie alle erforderlichen Ereignisse definieren und die Spielansicht, die mit dem Mac-Hauptfenster der App verbunden ist, werden wir gelesen, um die Spielansicht auszuführen und die Grafiken anzuzeigen. Verwenden Sie folgenden Code:
+Wenn Sie alle erforderlichen Ereignisse definieren und die Spielansicht, die mit dem Mac-Hauptfenster der App verbunden ist, werden wir gelesen, um die Spielansicht auszuführen und die Grafiken anzuzeigen. Verwenden Sie den folgenden Code:
 
 ```csharp
 // Run the game at 60 updates per second
@@ -319,11 +319,11 @@ Ein komplexeres xamarin. Mac-Beispiel für eine opentk-Implementierung finden Si
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde die Arbeit mit opentk in einer xamarin. Mac-Anwendung kurz erläutert. Wir haben gesehen, wie Sie ein Spielfenster erstellen, das Spielfenster an ein Mac-Fenster anfügen und eine einfache Form im Spielfenster darstellen.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Macopentk (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macopentk)
 - [Monomacgameview (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)

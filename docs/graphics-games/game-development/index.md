@@ -46,7 +46,7 @@ Zu den gängigen Logik Typen, die möglicherweise für jeden Frame ausgeführt w
 - **Bewegung** – Objekte, die von einem Ort zu einem anderen verschoben werden, verschieben in der Regel einen sehr kleinen Anteil jedes Frames, um die Illusion von fließendem Bewegungs Aufwand zu erwecken.
 - **Kollision** – viele Spiele erfordern das häufige testen, ob verschiedene Objekte sich überlappen oder sich überschneiden. Der Konflikt wird in einem späteren Abschnitt in diesem Artikel ausführlicher behandelt. Bewegung und Kollision können von einem dedizierten Physik Simulationssystem behandelt werden.
 - Die **Überprüfung auf Spiel spezifische Bedingungen** – der Status eines Spiels kann durch bestimmte Bedingungen gesteuert werden, z. b. ob der Spieler genügend Punkte verdient hat oder ob die zugewiesene Zeit abgelaufen ist.
-- **AI-Verhalten** – jeder Frame-Logik, die verwendet werden kann, das Verhalten von Objekten zu steuern, die nicht von den Player verwenden, z. B. die patrolling ein Gegner oder die Übertragung der protokollsicherungsdaten Gegner Treiber um eine Oval kontrolliert werden.
+- **AI-Verhalten** – jede Frame-Logik, die verwendet werden kann, um das Verhalten von Objekten zu steuern, die nicht vom Player gesteuert werden, wie z. b. das patken eines Feindes oder die Bewegung von Gegner Treibern um eine Rennstrecke.
 - **Rendering** – die meisten Spiele aktualisieren, was auf dem Bildschirm jedes Frame angezeigt wird. Dies kann als Reaktion auf Änderungen erfolgen, die Auswirkungen auf Spiel Spiele haben (z. b. ein Zeichen, das sich durch eine Ebene bewegt), oder um visuelle Politur (z. b. Schnee-oder animierte Symbole) bereitzustellen.
 
 Beachten Sie, dass viele der oben aufgeführten Aktivitäten den Zustand der gesamten Anwendung ändern können, während viele nicht-Spiel-apps tendenziell den Status als Reaktion auf Ereignisse ändern, die ausgelöst werden.
@@ -61,7 +61,7 @@ Das manuelle Laden und Entladen (oder verwerfen) von Inhalten ist abhängig von 
 
 Benutzerdefinierte Dateiformate müssen möglicherweise zur Ladezeit verarbeitet werden, sodass benutzerdefinierter Lade Code erforderlich ist.
 
-### <a name="math"></a>Mathematisch
+### <a name="math"></a>Mathematik
 
 Viele Spiele erfordern eine erweiterte Mathematik als nicht-Spielanwendungen. Natürlich hängt der Grad der Mathematik von der Komplexität des Spiels ab. Im Allgemeinen erfordern 3D-Spiele mehr Mathematik als 2D. Glücklicherweise können Sie jederzeit mit einfachen spielen und lernen, wie Sie loslegen. Die Spieleentwicklung ist eine hervorragend geeignet, um Mathematik zu erlernen.
 
@@ -145,7 +145,7 @@ Die oben markierten Technologien sind nur ein Beispiel für die verfügbaren Tec
 - **Scene Kit** – xamarin bietet auch Unterstützung für das Scene Kit-Framework von Apple, das die Implementierung von 3D-Grafiken in ios-apps vereinfacht. Das Scene Kit ist auch von Apple bereitgestellte Technologie, sodass es sowohl über die Integrations-als auch über die plattformspezifischen Überlegungen für Sprite Kit verfügt. Weitere Informationen zum Scene Kit finden Sie in diesem Beitrag: [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
 - **Opentk –** Opentk (steht für Open Tool Kit) bietet OpenGL-Zugriff auf niedriger Ebene auf Ios-, Apple-und Mac-Hardware. Weitere Informationen zu opentk finden Sie auf der Hauptseite unter: [https://opentk.net/](https://opentk.net/)
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Monogame-Führungslinien](~/graphics-games/monogame/index.md)
 - [Urhusharp-Führungslinien](~/graphics-games/urhosharp/index.md)

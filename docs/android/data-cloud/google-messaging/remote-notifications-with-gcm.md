@@ -118,7 +118,7 @@ Diese Berechtigungen werden im Android-Manifest festgelegt. Bearbeiten Sie " **a
 </manifest>
 ```
 
-Ändern Sie im obigen XML-Code *YOUR_PACKAGE_NAME* in den Paketnamen für das Client-App-Projekt. Beispielsweise `com.xamarin.gcmexample`.
+Ändern Sie im obigen XML-Code *YOUR_PACKAGE_NAME* in den Paketnamen für das Client-App-Projekt. Beispiel: `com.xamarin.gcmexample`.
 
 ### <a name="check-for-google-play-services"></a>Auf Google Play Services überprüfen
 
@@ -501,7 +501,7 @@ Vor dem empfangen von Nachrichten aus GCM müssen wir den GCM-Listener im Androi
 
 Sehen wir uns an, was die einzelnen Einstellungen in dieser XML-Datei sind:
 
-|-Einstellung|Beschreibung|
+|Einstellung|BESCHREIBUNG|
 |---|---|
 |`com.google.android.gms.gcm.GcmReceiver`|Deklariert, dass unsere APP einen GCM-Empfänger implementiert, der eingehende pushbenachrichtigungsnachrichten erfasst und verarbeitet.|
 |`com.google.android.c2dm.permission.SEND`|Deklariert, dass nur GCM-Server Nachrichten direkt an die APP senden können.|
@@ -643,11 +643,11 @@ Herzlichen Glückwunsch, Ihre APP hat ihre erste Remote Benachrichtigung erhalte
 
 Beachten Sie, dass GCM-Nachrichten nicht mehr empfangen werden, wenn die APP erzwungen wird. Zum Fortsetzen von Benachrichtigungen nach einem Erzwingen der Beendigung muss die APP manuell neu gestartet werden. Weitere Informationen zu dieser Android-Richtlinie finden Sie unter [Launch Controls on beendete Applications](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) und this [Stack Overflow Post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In dieser exemplarischen Vorgehensweise werden die Schritte zum Implementieren von Remote Benachrichtigungen in einer xamarin. Android-Anwendung beschrieben. Es wurde beschrieben, wie Sie zusätzliche Pakete installieren, die für die GCM-Kommunikation benötigt werden, und wie Sie App-Berechtigungen für den Zugriff auf GCM-Server konfigurieren.
 Es wurde ein Beispielcode bereitgestellt, der veranschaulicht, wie Sie das vorhanden sein von Google Play Services überprüfen, wie Sie einen Dienst für die Registrierungs Absicht und einen Instanz-ID-Listenerdienst implementieren, der mit GCM für ein Registrierungs Token verhandelt und wie ein GCM-Listener implementiert wird. Dienst, der Remote Benachrichtigungs Meldungen empfängt und verarbeitet. Schließlich haben wir ein Befehlszeilen-Testprogramm implementiert, mit dem Test Benachrichtigungen über GCM an unsere Client-App gesendet werden.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)

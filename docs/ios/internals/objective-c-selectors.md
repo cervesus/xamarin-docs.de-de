@@ -19,7 +19,7 @@ ms.locfileid: "76725185"
 Die Sprache "Ziel-C" basiert auf *Selektoren*. Eine Auswahl ist eine Nachricht, die an ein Objekt oder eine *Klasse*gesendet werden kann. [Xamarin. IOS](~/ios/internals/api-design/index.md) ordnet instanzselektoren Instanzmethoden und Klassenselektoren zu statischen Methoden zu.
 
 Im Gegensatz zu normalen C-Funktionen C++ (und wie Element Funktionen) ist es nicht möglich, einen Selektor direkt mithilfe von [P/Aufruf](https://www.mono-project.com/docs/advanced/pinvoke/) aufzurufen. Selektoren werden stattdessen mithilfe des [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
--Funktion.
+Funktion zurückgegeben wird.
 
 Weitere Informationen zu Nachrichten in Ziel-C finden Sie im Handbuch [Arbeiten mit Objekten](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2) von Apple.
 
@@ -39,7 +39,7 @@ Diese API weist die folgenden Eigenschaften auf:
 - Der `font`-Parameter ist ein [uifont](xref:UIKit.UIFont) -Objekt (und ein Typ (indirekt), der von [NSObject](xref:Foundation.NSObject)abgeleitet und [System. IntPtr](xref:System.IntPtr)zugeordnet wird.
 - Der `width`-Parameter, ein `CGFloat`, wird `nfloat`zugeordnet.
 - Der `lineBreakMode`-Parameter ( [`UILineBreakMode`](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)) wurde in xamarin. IOS bereits als [`UILineBreakMode`](xref:UIKit.UILineBreakMode) gebunden.
-dokumentiert ().
+Enumeration.
 
 Wenn Sie alles zusammenbringen, sollte die `objc_msgSend` Deklaration entsprechen:
 

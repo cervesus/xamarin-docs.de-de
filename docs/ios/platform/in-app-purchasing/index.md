@@ -28,11 +28,11 @@ Zum Bereitstellen von in-App-Kauf Funktionen sind einige Schritte erforderlich:
 
 In diesem Dokument wird erläutert, wie Sie alle diese Schritte ausführen, um in-App-Einkäufe mithilfe von xamarin. IOS bereitzustellen.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Um in-App-Käufe zu unterstützen, müssen Sie xamarin. IOS 5,0 oder höher mit Xcode 7 und höher verwenden.
 
-## <a name="contents"></a>Inhalt
+## <a name="contents"></a>Contents
 
 - [Grundlagen und Konfiguration der In-App-Käufe](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
@@ -46,7 +46,7 @@ Um in-App-Käufe zu unterstützen, müssen Sie xamarin. IOS 5,0 oder höher mit 
 
 - [Abonnements und Berichte](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das Konzept des in-App-Einkaufs eingeführt, und es wurde beschrieben, wie Sie Ihre Anwendung so konfigurieren, dass Sie von der APP genutzt und Beispiele mithilfe von xamarin. IOS präsentiert werden. Es hat Folgendes abgedeckt:
 
@@ -56,9 +56,9 @@ In diesem Artikel wurde das Konzept des in-App-Einkaufs eingeführt, und es wurd
 - **Codieren Ihrer APP für den Einkauf** – Beispiele für das Erstellen von in-App-Käufen in einer xamarin. IOS-app.
 - **Bericht** Erstellung – Übersicht über die über iTunes Connect verfügbaren Statistiken.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
+- [Inapppurchasesample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
 - [Im Leitfaden zur APP-Kauf Programmierung](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
 - [iTunes Connect-Entwicklerleitfaden](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
 - [Store Kit-frameworkverweis](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)

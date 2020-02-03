@@ -136,10 +136,10 @@ Weitere Informationen finden Sie unter Fingereingabe [-ID und Face ID mit xamari
 
 Die folgenden Änderungen wurden an der [lacontext](xref:LocalAuthentication.LAContext) -Klasse für IOS 9 vorgenommen:
 
-- **TouchIdAuthenticationMaximumAllowableReuseDuration** - Returns the maximum amount of time that a touch ID authentication can be reused.
+- **Touchidauthenticationmaximumallowablereulduration** : gibt den maximalen Zeitraum zurück, in dem eine Fingereingabe-ID-Authentifizierung wieder verwendet werden kann.
 - **Evaluatedpolicydomainstate** : Ruft den Status einer ausgewerteten Richtlinie ab oder legt ihn fest.
 - **Maxbiometryfailure** : wurde in ios 9 abgewertet.
-- **TouchIdAuthenticationAllowableReuseDuration** Gets or sets the amount of time that a touch ID authentication can be reused.
+- **Touchidauthenticationallowablereulduration** Ruft die Zeitspanne ab, in der eine Fingerabdruck-Authentifizierung wieder verwendet werden kann, oder legt diese fest.
 - **Evaluateaccesscontrol** : wertet eine Authentifizierungs Richtlinie asynchron aus.
 - **Invalidate** : gibt eine angegebene Fingereingabe-ID-Authentifizierung ungültig aus.
 - **Iskredentialset** -gibt `true` zurück, wenn die Anmelde Informationen momentan festgelegt sind.
@@ -220,7 +220,7 @@ Die neue `NSDataAsset`-Klasse ermöglicht einer xamarin. IOS-APP das Abrufen von
 
 Die neuen Anker Klassen `NSLayoutAnchor` und `NSLayoutDimension` Layouts arbeiten mit den neuen Anker Eigenschaften der [UIView](xref:UIKit.UIView) -Klasse (z. b. `LeadingAnchor` und `WidthAnchor`), um das Layout in ios 9 zu vereinfachen.
 
-Weitere Informationen zur Arbeit mit AutoLayout- und Size-Klassen in einer Xamarin.iOS-App finden Sie in der [Einführung in einheitliche Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) und in der [Referenz zu NSLayoutAnchor](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor) [NSLayoutDimension](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) und [UIView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView) von Apple.
+Weitere Informationen zum Arbeiten mit den Klassen "AutoLayout" und "size" in einer xamarin. IOS-APP und der [nslayoutanchor-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)von Apple, [nslayoutdimension-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) und [UIView-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView) finden Sie in der Dokumentation [zu Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 ### <a name="new-readable-content-margins"></a>Neue lesbare Inhalts Ränder
 
@@ -258,7 +258,7 @@ Um dieses Problem zu beheben, verwenden Sie die Klassen automatisch Layout und G
 
 Verwenden Sie die neue `UITextInputAssistantItem`-Klasse, um Balken Schaltflächen Gruppen in einer Verknüpfungs _Leiste_zu verwenden. Die Verknüpfungs Leiste ist ein neuer Bereich, der in der Bildschirmtastatur verfügbar ist, um Tipp Verknüpfungen bereitzustellen.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Einführung in iOS 9](~/ios/platform/introduction-to-ios9/index.md)

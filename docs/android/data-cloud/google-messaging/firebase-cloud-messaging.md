@@ -22,11 +22,11 @@ _Firebase Cloud Messaging (SCM) ist ein Dienst, der das Messaging zwischen mobil
 
 Dieses Thema enthält eine allgemeine Übersicht über die Weiterleitung von Nachrichten zwischen Ihrer Xamarin Android-App und einem App-Server durch Firebase Cloud Messaging. Außerdem erhalten Sie eine Schritt-für-Schritt-Anleitung zum Abrufen von Anmeldeinformationen, damit Ihre App die Dienstprinzipalnamen verwenden kann.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Firebase Cloud Messaging (FCM) ist ein plattformübergreifender Dienst, der das Senden, Weiterleiten und Einreihen von Nachrichten zwischen Serveanwendungen und mobilen Client-Apps verarbeitet. FCM ist der Nachfolger von Google Cloud Messaging (GCM) und basiert auf Google Play Services.
 
-Wie im folgenden Diagramm dargestellt, fungiert dieser als Vermittler zwischen Nachrichtensendern und-Clients. Bei einer *Client-App* handelt es sich um eine auf einem Gerät ausgeführte App. Der *App-Server* (der von Ihnen oder Ihrem Unternehmen bereitgestellt wird) ist der Server mit aktiviertem Server, mit dem Ihre Client-App über FCM kommuniziert. Anders als GCM ermöglicht FCM es Ihnen, Nachrichten direkt über die Konsolenbenachrichtigungs-GUI von Firebase an Client-Apps zu senden:
+Wie im folgenden Diagramm dargestellt, fungiert dieser als Vermittler zwischen Nachrichtensendern und-Clients. Bei einer *Client-App* handelt es sich um eine auf einem Gerät ausgeführte, auf einem Gerät ausgeführte app. Der *App-Server* (der von Ihnen oder Ihrem Unternehmen bereitgestellt wird) ist der Server mit aktiviertem Server, mit dem Ihre Client-App über den ficm kommuniziert. Anders als GCM ermöglicht FCM es Ihnen, Nachrichten direkt über die Konsolenbenachrichtigungs-GUI von Firebase an Client-Apps zu senden:
 
 [![-Datei-App zwischen der Client-App und einem App-Server](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
@@ -141,7 +141,7 @@ Bevor Sie in Ihrer APP-Dienst-Dienste verwenden können, müssen Sie über die [
 
 Ein ausführliches Beispiel zum Hinzufügen von " **Google-Services. JSON** " zu einem App-Projekt zum Empfangen von FCM-pushbenachrichtigungsnachrichten unter Android finden Sie unter [Remote Benachrichtigungen mit FCM](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
-## <a name="for-further-reading"></a>Weitere Informationen
+## <a name="for-further-reading"></a>Weitere nützliche Informationen
 
 - Das [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) von Google bietet einen Überblick über die wichtigsten Funktionen von Firebase Cloud Messaging, eine Erläuterung der Funktionsweise sowie Anweisungen zum Setup.
 
@@ -151,10 +151,10 @@ Ein ausführliches Beispiel zum Hinzufügen von " **Google-Services. JSON** " zu
 
 - [Informationen zu](https://firebase.google.com/docs/cloud-messaging/concept-options) den unterschiedlichen Arten von Nachrichten, die mit Firebase Cloud Messaging gesendet werden können, finden Sie unter.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel bietet eine Übersicht über Firebase Cloud Messaging (SCM). Es wurden die verschiedenen Anmelde Informationen erläutert, die zum Identifizieren und Autorisieren von Messaging zwischen App-Servern und Client-Apps verwendet werden. Es wurden die Szenarien für Registrierung und downstreammessaging veranschaulicht, und es werden die Schritte zum Registrieren Ihrer APP bei FCM für die Verwendung von FCM-Diensten erläutert.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/)

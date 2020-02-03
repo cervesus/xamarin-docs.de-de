@@ -273,6 +273,6 @@ Wenn wir die Kalender-APP öffnen, sehen wir, dass das Ereignis ebenfalls dort g
 
 Wie Sie sehen können, ermöglicht Android einen leistungsstarken und einfachen Zugriff zum Abrufen und beibehalten von Kalenderdaten, sodass Anwendungen die Kalenderfunktionen nahtlos integrieren können.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Kalender Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)

@@ -32,7 +32,7 @@ Nachdem Jenkins konfiguriert wurde und alle erforderlichen Plug-ins installiert 
 
 In diesem Handbuch wird erläutert, wie Sie einen Jenkins-Server einrichten, der die einzelnen Punkte abdeckt. Am Ende dieses Projekts sollten Sie sich mit dem Einrichten und Konfigurieren von Jenkins vertraut machen, um IPA und APK für unsere mobilen xamarin-Projekte zu erstellen.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Der ideale Buildserver ist ein eigenständiger Computer, der ausschließlich für das Erstellen und möglicherweise das Testen der Anwendung vorgesehen ist. Ein dedizierter Computer stellt sicher, dass Artefakte, die möglicherweise für andere Rollen (z. b. die eines Webservers) erforderlich sind, den Build nicht verunreinigen. Wenn der Buildserver z. b. auch als Webserver fungiert, benötigt der Webserver möglicherweise eine widersprüchliche Version einer gemeinsamen Bibliothek. Aufgrund dieses Konflikts funktioniert der Webserver möglicherweise nicht ordnungsgemäß, oder Jenkins erstellt Builds, die bei der Bereitstellung für Benutzer nicht funktionieren.
 
@@ -142,7 +142,7 @@ Dieser Abschnitt ist obligatorisch, wenn Sie TFS für die Quell Code Verwaltung 
 Damit eine macOS-Arbeitsstation mit einem TFS-Server interagiert, müssen [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) auf der Arbeitsstation installiert sein. Team Explorer Everywhere ist ein Satz von Tools von Microsoft, der einen plattformübergreifenden Befehlszeilen Client für den Zugriff auf TFS umfasst. Team Explorer Everywhere können von Microsoft heruntergeladen und in drei Schritten installiert werden:
 
 1. Entpacken Sie die Archivdatei in ein Verzeichnis, auf das das Benutzerkonto zugreifen kann. Beispielsweise können Sie die Datei in **~/Tee**entzippen.
-2. Konfigurieren Sie die Shell oder den Systempfad so, dass Sie den Ordner mit den Dateien enthält, die in der obigen Schritt 1 entzippt wurden. Ein auf ein Objekt angewendeter
+2. Konfigurieren Sie die Shell oder den Systempfad so, dass Sie den Ordner mit den Dateien enthält, die in der obigen Schritt 1 entzippt wurden. Beispiel:
 
     ```
     echo export PATH~/tee/:$PATH' >> ~/.bash_profile
@@ -341,7 +341,7 @@ Das Signieren und zipalign des APK sind technisch zwei separate Aufgaben, die vo
 
 Für beide Befehle sind Befehlszeilenparameter erforderlich, die von Projekt zu Projekt abweichen können. Außerdem handelt es sich bei einigen dieser Befehlszeilenparameter um Kenn Wörter, die nicht in der Konsolenausgabe angezeigt werden sollen, wenn der Build ausgeführt wird. Einige dieser Befehlszeilenparameter werden in Umgebungsvariablen gespeichert. In der folgenden Tabelle werden die Umgebungsvariablen beschrieben, die für das Signieren und/oder die ZIP-Ausrichtung erforderlich sind:
 
-|Umgebungs Variable|Beschreibung|
+|Umgebungsvariable|BESCHREIBUNG|
 |--- |--- |
 |KEYSTORE_FILE|Dies ist der Pfad zum Keystore zum Signieren des APK.|
 |KEYSTORE_ALIAS|Der Schlüssel im Keystore, der zum Signieren des APK verwendet wird.|
@@ -389,11 +389,11 @@ Nachdem alle Buildaktionen durchgeführt wurden, empfiehlt es sich, einen manuel
 
 Automatisierte Tests können mithilfe von Shellbefehlen an Test Cloud übermittelt werden. Weitere Informationen zum Einrichten eines Testlaufs in Xamarin Test Cloud finden Sie unter [Vorbereiten von xamarin. Android-Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) und Vorbereiten von [xamarin. IOS-apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Handbuch haben wir Jenkins als Buildserver unter macOS eingeführt und so konfiguriert, dass Mobile xamarin-Anwendungen für die Veröffentlichung kompiliert und vorbereitet werden. Wir haben Jenkins auf einem macOS-Computer installiert und mehrere Plug-Ins zur Unterstützung des Buildprozesses erstellt. Wir haben einen Auftrag erstellt und konfiguriert, der Code aus TFS oder git per Pull abruft und diesen Code dann in eine Release Ready-Anwendung kompiliert. Wir haben auch zwei verschiedene Möglichkeiten zum Planen der Ausführung von Aufträgen untersucht.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Continuous Integration](~/tools/ci/index.md)
 - [App Center Test (App Center-Test)](https://docs.microsoft.com/appcenter/test-cloud/)

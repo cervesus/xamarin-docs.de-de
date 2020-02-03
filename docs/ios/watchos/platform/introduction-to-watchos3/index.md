@@ -188,7 +188,7 @@ Die folgenden APIs sind in watchos 3 veraltet:
 
 Eine umfassende Liste mit veralteten Vorgängen und Änderungen finden Sie in der Dokumentation zu den Apple- [watchos 2,2 zur watchos 3,0 API-Unterschiede](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html) .
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [watchOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
 - [Neues in watchos 3](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

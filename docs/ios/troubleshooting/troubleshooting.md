@@ -287,7 +287,7 @@ Beim Hochladen einer APP auf Ihr Gerät erhalten Sie möglicherweise die Fehlerm
 ## <a name="error-mtouch-failed-with-no-output"></a>Fehler "mfinger Fehler ohne Ausgabe"
 
 Die aktuelle Version von xamarin. IOS und Visual Studio für Mac schlägt fehl, wenn der Projektname oder das Verzeichnis, in dem die Projekt Mappe oder das Projekt gespeichert ist, Leerzeichen enthält.
-Gehen Sie wie folgt vor, um das Problem zu beheben:
+So beheben Sie dieses Problem:
 
 - Stellen Sie sicher, dass weder das Projekt noch das Verzeichnis, in dem es gespeichert ist, ein Leerzeichen enthält.
 - Stellen Sie sicher, dass der Projekt Name im Projekt "Haupteinstellungen" keine Leerzeichen enthält.
@@ -309,7 +309,7 @@ Dieses Schlüsselpaar sollte entfernt werden, Visual Studio für Mac es automati
 
 (Beigetragen von Ed Anuff)
 
-Führen Sie die folgenden Schritte aus:
+Folgen Sie diesen Schritten:
 
 - Ändern Sie die SDK-Version in iPhone Build in 3,2, oder iTunes Connect lehnt Sie beim Upload ab, da eine iPad-kompatible App mit einer SDK-Version kleiner als 3,2 erstellt wird.
 - Erstellen Sie eine benutzerdefinierte Datei "Info. plist" für das Projekt, und legen Sie minimumosversion explizit auf 3,0 fest.   Dadurch wird der von xamarin. IOS festgelegte minimumosversion 3,2-Wert überschrieben.   Wenn Sie dies nicht tun, kann die APP nicht auf einem iPhone ausgeführt werden.

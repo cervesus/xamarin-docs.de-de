@@ -42,7 +42,7 @@ Wenn in einem Fall, in dem die Übergabe von `null` eine `ArgumentNullException`
 
 ## <a name="reporting-bugs"></a>Melden von Fehlern
 
-Ihr Feedback ist für uns wichtig. Wenn Sie Probleme mit xamarin. Mac finden:
+Ihr Feedback ist uns sehr wichtig. Wenn Sie Probleme mit xamarin. Mac finden:
 
 - Überprüfen Sie die [Xamarin.Mac-Foren](https://forums.xamarin.com/categories/xamarin-mac).
 - Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues).

@@ -27,7 +27,7 @@ _Google Cloud Messaging (GCM) ist ein Dienst, der das Messaging zwischen mobilen
 
 Dieses Thema bietet eine allgemeine Übersicht darüber, wie Google Cloud Messaging Nachrichten zwischen Ihrer APP und einem App-Server weiterleitet, und bietet eine schrittweise Anleitung zum Abrufen von Anmelde Informationen, sodass Ihre APP GCM-Dienste verwenden kann.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Google Cloud Messaging (GCM) ist ein Dienst, der das senden, das Routing und das Queuing von Nachrichten zwischen Server Anwendungen und mobilen Client-apps verarbeitet. Eine *Client-App* ist eine GCM-aktivierte APP, die auf einem Gerät ausgeführt wird. Der *App-Server* (der von Ihnen oder Ihrem Unternehmen bereitgestellt wird) ist der GCM-fähige Server, mit dem Ihre Client-App über GCM kommuniziert:
 
@@ -163,10 +163,10 @@ Um den **API-Schlüssel**anzuzeigen, klicken Sie auf **API-Manager** und dann au
 
 - [RFC 6120](https://tools.ietf.org/html/rfc6120) und [RFC 6121](https://tools.ietf.org/html/rfc6121) erläutern und definieren das Extensible Messaging and Presence Protocol (XMPP).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel bietet eine Übersicht über Google Cloud Messaging (GCM). Es wurden die verschiedenen Anmelde Informationen erläutert, die zum Identifizieren und Autorisieren von Messaging zwischen App-Servern und Client-Apps verwendet werden. Es wurden die häufigsten Messaging Szenarien veranschaulicht, und es werden die Schritte zum Registrieren Ihrer APP bei GCM für die Verwendung von GCM-Diensten beschrieben.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Cloud-Messaging](https://developers.google.com/cloud-messaging/)

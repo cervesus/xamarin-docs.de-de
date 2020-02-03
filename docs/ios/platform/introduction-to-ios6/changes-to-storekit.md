@@ -25,7 +25,7 @@ Die wichtigsten Änderungen am Store Kit in iOS6 sind die folgenden beiden neuen
 
 Ausführliche Informationen zu den storekit-APIs finden Sie in den [in-App-Kauf](~/ios/platform/in-app-purchasing/index.md) Handbüchern.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Die in diesem Dokument erläuterten Store-Kit-Features erfordern IOS 6 und Xcode 4,5 zusammen mit xamarin. IOS 6,0.
 
@@ -107,7 +107,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 }
 ```
 
-### <a name="errors"></a>-Fehler
+### <a name="errors"></a>Errors
 
 Der folgende Fehler tritt auf, wenn die von Ihnen verwendete Apple-ID ungültig ist. Dies kann verwirrend sein, da es sich um ein Netzwerk-oder Authentifizierungs Problem handelt.
 
@@ -135,10 +135,10 @@ Apple stellt eine dynamische Such-API bereit, um alle Produkte im App Store, iTu
 
 Die Ergebnisse enthalten auch andere Metadaten, einschließlich Anzeigeinformationen und Grafik-URLs, mit denen das Produkt in Ihrer APP dargestellt werden kann.
 
-Hier einige Beispiele:
+Im Folgenden finden Sie einige Beispiele:
 
-- **iBooks-App** – [https://itunes.apple.com/search?term=ibooks&amp ; Entity = Software&amp; Land = US](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
-- **Punkt und das Känguru iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; Entity = eBook&amp; Country = US](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
+- **iBooks-App** – [https://itunes.apple.com/search?term=ibooks&amp; Entity = Software&amp;Land = US](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
+- **Punkt und das Känguru iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; Entity = eBook&amp;Country = US](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
 ### <a name="enterprise-partner-feed"></a>Enterprise-Partner Feed
 
@@ -485,7 +485,7 @@ public void SaveDownload (SKDownload download)
 
 Wenn `FinishTransaction` aufgerufen wird, werden die heruntergeladenen Dateien nicht mehr im `Cache` Verzeichnis angezeigt. Vor dem Aufrufen von `FinishTransaction`sollten alle Dateien kopiert werden.
 
-## <a name="other-considerations"></a>Andere Überlegungen
+## <a name="other-considerations"></a>Weitere Überlegungen
 
 Der obige Beispielcode veranschaulicht eine relativ einfache Implementierung des Erwerbs von gehosteten Inhalten. Sie müssen einige zusätzliche Punkte beachten:
 
@@ -515,17 +515,17 @@ Wenn der Code `FinishTransaction` in der Zahlungs Warteschlange aufruft, bevor d
 
 Die icloud-Sicherungs Richtlinien von Apple deuten darauf hin, dass Nichtbenutzer Inhalte, die auf einfache Weise von einem Server wieder hergestellt werden sollen, *nicht* gesichert werden sollten (weil der icloud-Speicher unnötig genutzt werden würde). Weitere Informationen zum Festlegen des Backup-Attributs finden Sie in der [Dateisystem](~/ios/app-fundamentals/file-system.md) Dokumentation.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden zwei neue Features von Store Kit in iOS6 eingeführt: der Erwerb von iTunes und anderen Inhalten innerhalb Ihrer APP und die Verwendung des Apple-Servers zum Hosten Ihrer eigenen in-App-Käufe. Diese Einführung sollte in Verbindung mit der vorhandenen [in-App-Kauf Dokumentation](~/ios/platform/in-app-purchasing/index.md) gelesen werden, um eine umfassende Abdeckung der Implementierung der Store-Kit-Funktionalität zu erhalten.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Storekit (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)
 - [In-App-Käufe](~/ios/platform/in-app-purchasing/index.md)
 - [Referenz zum storekit-Framework](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [Skstoreproductviewcontroller-Klassenreferenz](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
 - [Skdownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
-- [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
-- [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
+- [Skpaymentqueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
+- [Skproduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
 - [WWDC-Video: Verkauf von Produkten mit dem Store-Kit](https://developer.apple.com/videos/wwdc/2012/?include=302#302)

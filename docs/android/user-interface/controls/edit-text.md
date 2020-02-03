@@ -66,6 +66,6 @@ Führen Sie die Anwendung aus, und geben Sie Text in das Textfeld ein. Wenn Sie 
 
 *Teile dieser Seite sind Änderungen, die auf der vom Android Open Source-Projekt erstellten und freigegebenen Arbeit basieren und gemäß den in der* [*Creative Commons 2,5-Zuweisungs Lizenz*](https://creativecommons.org/licenses/by/2.5/) beschriebenen Begriffen verwendet werden *. Dieses Tutorial basiert auf dem* Android-Lernprogramm für [*Formular Inhalte*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)
+- [Edittextsample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)

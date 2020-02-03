@@ -48,7 +48,7 @@ iOS 11 Vision Framework und CoreML, die ein Modell verwenden, das vom Custom Vis
     :::column:::
 [![Kontakte](images/contacts.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
 
-### <a name="contactshttpsdocsmicrosoftcomsamplesxamarinios-samplescontacts"></a>[Partner](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
+### <a name="contactshttpsdocsmicrosoftcomsamplesxamarinios-samplescontacts"></a>[Kontakte](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
 
 Verwendung von ContactsUI-Ansichtscontrollern und -Eigenschaften.
     :::column-end:::

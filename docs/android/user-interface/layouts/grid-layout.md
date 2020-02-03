@@ -233,6 +233,6 @@ Dies führt zu einem Layout für das `TextViews`, das dem oben erwähnten Layout
 
  [![Screenshot von gridlayoutdemo mit Schaltfläche, die beide Spalten umfasst](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Gridlayoutdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)

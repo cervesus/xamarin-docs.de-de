@@ -30,7 +30,7 @@ Verweislink: **[Informationen zu Agile-Tools und Agile-Projektverwaltung](/azure
 
 Allgemeiner Kommentar: alle Planungs- und Nachverfolgungsfunktionen sind vom Projekttyp und den Programmiersprachen unabhängig.
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Verwalten von Rückständen und Sprints|Ja||
 |Arbeitsüberwachung|Ja||
@@ -44,7 +44,7 @@ Verweislink: **[Analyse und Modellarchitektur](/visualstudio/modeling/analyze-an
 
 Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funktionieren mit .NET-Sprachen wie C#. Mit Code zusammenhängende Aspekte finden Sie unter [Rollen von Architektur- und Modellierungsdiagrammen in der Softwareentwicklung](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools).
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Sequenzdiagramme|Ja||
 |Abhängigkeitsdiagramme|Ja||
@@ -53,11 +53,11 @@ Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funkti
 |Architektur-Explorer|Ja||
 |UML-Diagramme (Anwendungsfall, Aktivität, Klasse, Komponente, Sequenz und DSL)|Ja||
 |Ebenendiagramme|Ja||
-|Ebenenüberprüfung|Ja||
+|Gültigkeitsprüfung|Ja||
 
 ## <a name="code"></a>Code
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |[Verwenden der Team Foundation-Versionskontrolle (TFVC)](/azure/devops/repos/tfvc/overview?view=vsts) oder Azure Repos|Ja||
 |[Erste Schritte mit Git in Azure Repos](/azure/devops/repos/git/gitquickstart?view=vsts&tabs=visual-studio)|Ja||
@@ -65,11 +65,11 @@ Die Entwicklungsfeatures sind unabhängig von der Programmiersprache oder funkti
 |[Ermitteln von Änderungen am Code und andere Verläufe](/visualstudio/ide/find-code-changes-and-other-history-with-codelens)|Ja|Außer über plattformspezifische Grenzen hinweg, in denen die Implementierung bis zur Laufzeit nicht aufgelöst wird.|
 |[Verwenden von Code Maps zum Debuggen von Anwendungen](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|Ja||
 
-## <a name="build"></a>Erstellen
+## <a name="build"></a>Entwickeln
 
 Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Lokaler TFS-Server|Ja|Auf Buildcomputern muss Xamarin installiert sein, und sie können mit einem OSX-Computer verknüpft werden, um Builds für iOS zu erstellen. Siehe [Verwenden von TFVC](/azure/devops/repos/tfvc/overview?view=vsts).|
 |Lokaler Buildserver mit Verbindung zu Azure Pipelines|Ja|Anweisungen finden Sie unter [Build and release agents (Build- und Release-Agents)](/azure/devops/pipelines/agents/agents?view=vsts).|
@@ -77,14 +77,14 @@ Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 |Builddefinitionen mit Vor- und Nachskripts|Ja||
 |Fortlaufende Integration einschließlich abgegrenzter Eincheckvorgänge|Ja|Abgegrenzte Eincheckvorgänge für TFVC, nur wenn Git auf einem Pull-Request-Modell statt mit Eincheckvorgängen arbeitet.|
 
-## <a name="test"></a>Testen
+## <a name="test"></a>Test
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Planen von Tests, Erstellen von Testfällen und Organisieren von Testauflistungen|Ja||
 |Manuelle Tests|Ja||
 |Test-Manager (Aufzeichnung und Wiedergabe von Tests)|Ja|Nur Windows-Geräte und Android-Emulatoren von Visual Studio.|
-|Codeabdeckung|nicht verfügbar||
+|Codeabdeckung|–||
 |[Ausführen von Komponententests für Code](/visualstudio/test/unit-test-your-code/)|Ja|Für Windows- und Android-Ziele können die integrierten MSTest-Tools verwendet werden. Zum Ausführen von Komponententests für Windows, Android und iOS empfiehlt Xamarin NUnit. Siehe [Verwenden von TFVC](/azure/devops/repos/tfvc/overview?view=vsts).|
 |[Verwenden der Benutzeroberflächenautomatisierung zum Testen des Codes](/visualstudio/test/use-ui-automation-to-test-your-code/)|Nur Windows|Testaufzeichnung der Benutzeroberfläche in Visual Studio ist nur unter Windows möglich. Alle Plattformen finden Sie unter [Xamarin.UITest](/appcenter/test-cloud/uitest/).|
 
@@ -92,7 +92,7 @@ Referenzlink: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
 Verweislink: **[Verbessern der Codequalität](/visualstudio/test/improve-code-quality)**
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |[Analysieren der Qualität von verwaltetem Code](/visualstudio/code-quality/analyzing-managed-code-quality-by-using-code-analysis)|Ja||
 |[Suchen von doppeltem Code mit der Codeklonerkennung](https://msdn.microsoft.com/library/hh205279.aspx)|Ja||
@@ -104,16 +104,16 @@ Verweislink: **[Verbessern der Codequalität](/visualstudio/test/improve-code-qu
 
 Referenzlink: **[Build und Release in Azure Pipelines und TFS](/azure/devops/pipelines/overview?view=vsts)**
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Verwalten von Releaseprozessen|Ja||
 |Bereitstellen auf Servern für das Sideloading über Skripts|Ja||
-|Hochladen in den App Store|Partial|Es stehen Erweiterungen zur Verfügung, die diesen Prozess für manche App-Stores automatisieren können.  Siehe [Extensions for Azure DevOps Services (Erweiterungen für Azure DevOps Services)](https://marketplace.visualstudio.com/VSTS); beispielsweise die [Extension for Google Play (Erweiterung für Google Play)](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play).|
+|Hochladen in den App Store|Teilweise|Es stehen Erweiterungen zur Verfügung, die diesen Prozess für manche App-Stores automatisieren können.  Ein Übersicht finden Sie unter [Extensions for Azure DevOps Services (Erweiterungen für Azure DevOps Services)](https://marketplace.visualstudio.com/VSTS). Dort ist beispielsweise die [Erweiterung für Google Play](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play) erhältlich.|
 
 ## <a name="monitor-with-hockeyapp"></a>Überwachen mit HockeyApp
 
 Verweislink: **[Überwachen mit HockeyApp](https://www.hockeyapp.net/features/)**
 
-|Feature|Unterstützt von Xamarin|Zusätzliche Kommentare|
+|Funktion|Unterstützt von Xamarin|Zusätzliche Kommentare|
 |-------------|----------------------------|-------------------------|
 |Absturzanalysen, Telemetrie und Betaverteilung|Ja||

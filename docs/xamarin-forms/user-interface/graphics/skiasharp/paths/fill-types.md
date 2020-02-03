@@ -18,13 +18,13 @@ ms.locfileid: "76723639"
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Ermitteln Sie die verschiedenen Effekte, die mit SkiaSharp-Fülltypen für Pfade_
+_Entdecken Sie die verschiedenen Effekte, die mit skiasharp-Pfad Füll Typen möglich sind._
 
-Zwei Konturen in einem Pfad können sich überschneiden, und die Zeilen, aus denen eine einzelne Contour Global besteht, können sich überschneiden. Potenziell kann eingeschlossene Bereich gefüllt werden, aber Sie möchten möglicherweise nicht alle eingeschlossene Bereiche zu füllen. Im Folgenden ein Beispiel:
+Zwei Konturen in einem Pfad können sich überschneiden, und die Zeilen, aus denen eine einzelne Contour Global besteht, können sich überschneiden. Potenziell kann eingeschlossene Bereich gefüllt werden, aber Sie möchten möglicherweise nicht alle eingeschlossene Bereiche zu füllen. Hier sehen Sie ein Beispiel:
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-Sie haben ein wenig Kontrolle über diese. Der Algorithmus aufgefüllt werden, unterliegt die [ `SKFillType` ](xref:SkiaSharp.SKPath.FillType) Eigenschaft `SKPath`, festgelegt auf einen Member der [ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType) Enumeration:
+Sie haben ein wenig Kontrolle über diese. Der Füll Algorithmus wird durch die [`SKFillType`](xref:SkiaSharp.SKPath.FillType) -Eigenschaft von `SKPath`gesteuert, die Sie auf einen Member der [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) -Enumeration festlegen:
 
 - `Winding`, der Standardwert
 - `EvenOdd`
@@ -35,7 +35,7 @@ Die wicklungsreihenfolgen und gerade-ungerade Algorithmen bestimmen, ob alle ein
 
 Mit vielen routinemäßige Pfaden füllt der wicklungsreihenfolgen Algorithmus häufig die eingeschlossene Bereiche eines Pfads. Der gerade-ungerade Algorithmus erzeugt in der Regel Weitere interessante Ergebnisse.
 
-Das klassische Beispiel ist ein Stern fünf zwischengespeichert, wie in der **Five-Pointed Stern** Seite. Die [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml) Datei instanziiert zwei `Picker` Ansichten, wählen Sie den Pfad zu füllen, Typ und gibt an, ob der Pfad mit Strichen gezeichnet oder gefüllt ist oder beide, und in welcher Reihenfolge:
+Das klassische Beispiel ist ein fünf zeiiger Stern, wie auf der **fünf-Sterne-Stern** Seite gezeigt. Die Datei " [**filevepointedstarpage. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml) " instanziiert zwei `Picker` Sichten, um den Pfad Fülltyp auszuwählen, und gibt an, ob der Pfad gestreichelt oder ausgefüllt ist, und in welcher Reihenfolge:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +102,7 @@ Das klassische Beispiel ist ein Stern fünf zwischengespeichert, wie in der **Fi
 </ContentPage>
 ```
 
-Die Code-Behind-Datei verwendet `Picker` Werte zum Zeichnen von eines Sterns fünf Spitzen:
+Die Code-Behind-Datei verwendet beide `Picker` Werte, um einen fünf-Sterne-Stern zu zeichnen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,20 +168,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Der Pfadtyp sollte normalerweise beeinflussen, nur gefüllt, und nicht die Striche, doch die beiden `Inverse` Modi wirken sich sowohl Flächen und Konturen. Für gefüllt, die beiden `Inverse` Typen Bereiche füllen oppositely, damit Sie der Bereich außerhalb der Stern gefüllt wird. Für die Striche, die beiden `Inverse` Typen Farbe, die alles mit Ausnahme des Strichs. Die Verwendung dieser Füllungstypen inverse kann einige ungerade Effekte, erzeugt, wie der iOS-Screenshot veranschaulicht:
+Normalerweise sollte der Pfad Fülltyp nur Füll-und keine Striche beeinflussen, die beiden `Inverse` Modi wirken sich jedoch sowohl auf Fill als auch auf Striche aus. Bei Fills füllen die beiden `Inverse` Typen Bereiche gegenseitig aus, sodass der Bereich außerhalb des Sterns ausgefüllt ist. Bei Strichen werden die beiden `Inverse` Typen mit Ausnahme des Strichs vollständig Farben. Die Verwendung dieser Füllungstypen inverse kann einige ungerade Effekte, erzeugt, wie der iOS-Screenshot veranschaulicht:
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 Der Android-Screenshot zeigt die typischen, geraden und auffüllenden Effekte, aber die Reihenfolge der Striche und der Füllung wirkt sich auch auf die Ergebnisse aus.
 
-Der Algorithmus wicklungsreihenfolgen ist abhängig von die Richtung von Linien gezeichnet werden. In der Regel können Wenn Sie einen Pfad erstellen, Sie die entsprechende Richtung steuern, wie Sie angeben, dass Zeilen, die von einem Punkt in eine andere gezeichnet werden. Allerdings die `SKPath` -Klasse definiert außerdem Methoden wie `AddRect` und `AddCircle` , die gesamte Konturen zeichnen. Um zu steuern, wie diese Objekte gezeichnet werden, enthalten die Methoden einen Parameter vom Typ [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection), die über zwei Member verfügt:
+Der Algorithmus wicklungsreihenfolgen ist abhängig von die Richtung von Linien gezeichnet werden. In der Regel können Wenn Sie einen Pfad erstellen, Sie die entsprechende Richtung steuern, wie Sie angeben, dass Zeilen, die von einem Punkt in eine andere gezeichnet werden. Die `SKPath`-Klasse definiert jedoch auch Methoden wie `AddRect` und `AddCircle`, die ganze Kontur zeichnen. Um zu steuern, wie diese Objekte gezeichnet werden, enthalten die Methoden einen Parameter vom Typ [`SKPathDirection`](xref:SkiaSharp.SKPathDirection), der zwei Member hat:
 
 - `Clockwise`
 - `CounterClockwise`
 
-Die Methoden in `SKPath` , enthalten ein `SKPathDirection` Parameter Geben Sie ihm den Standardwert `Clockwise`.
+Die Methoden in `SKPath`, die einen `SKPathDirection`-Parameter enthalten, geben dem Standardwert `Clockwise`.
 
-Die **überlappende Kreise** Seite wird ein Pfad mit vier überlappende Kreise mit einem gerade-ungerade Pfad Fill-Typ erstellt:
+Auf der Seite über **Lapp Ende Kreise** wird ein Pfad mit vier überlappenden Kreisen mit einem gerade ungeraden Pfad Fülltyp erstellt:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -225,7 +225,7 @@ Es ist ein interessantes Bild mit einem Minimum an Code erstellt:
 
 [![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

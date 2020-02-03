@@ -1,5 +1,5 @@
 ---
-title: Formatieren von Xamarin.Forms-Apps mithilfe von Cascading Stylesheets (CSS)
+title: Formatieren von Xamarin.Forms-Apps, die mithilfe von Cascading Stylesheets (CSS)
 description: Xamarin.Forms unterstützt visuelle Stile-Elemente mithilfe von Cascading Stylesheets (CSS).
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -19,7 +19,7 @@ ms.locfileid: "76724193"
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
-_Xamarin.Forms unterstützt visuelle Stile-Elemente mithilfe von Cascading Stylesheets (CSS)._
+_Xamarin. Forms unterstützt das Formatieren visueller Elemente mithilfe Cascading Stylesheets (CSS)._
 
 Xamarin.Forms-Anwendungen können mit CSS formatiert werden. Ein Stylesheet besteht aus einer Liste von Regeln, mit jeder Regel, die eine oder mehrere Auswahlzeiger und einen Deklarationsblock bestehen. Ein Deklarationsblock besteht aus einer Liste von Deklarationen in geschweiften Klammern, jede Deklaration einer Eigenschaft, einen Doppelpunkt und einen Wert aus. Wenn mehrere Deklarationen in einem Block vorhanden sind, wird eine durch Semikolons als Trennzeichen eingefügt. Im folgenden Codebeispiel wird veranschaulicht, Xamarin.Forms kompatibel CSS:
 
@@ -76,7 +76,7 @@ In Xamarin.Forms werden CSS-Stylesheets analysiert und Stylesheets werden erneut
 > [!NOTE]
 > Derzeit können nicht alle Teil des Designs, die mit XAML-Formatierung kann mit CSS ausgeführt werden. Allerdings können der XAML-Stile verwendet werden, CSS für Eigenschaften zu ergänzen, die derzeit von Xamarin.Forms nicht unterstützt werden. Weitere Informationen zu XAML-Formatvorlagen finden Sie unter [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md).
 
-Die [MonkeyAppCSS](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss) Beispiel veranschaulicht die Verwendung von CSS zum Formatieren der einer einfachen app, und wird in den folgenden Screenshots dargestellt:
+Das [monkeyappcss](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss) -Beispiel veranschaulicht die Verwendung von CSS zum Formatieren einer einfachen APP und ist in den folgenden Screenshots dargestellt:
 
 [![Monkeyapp-Hauptseite mit CSS-Formatierung](css-images/MonkeyAppMainPage.png "Monkeyapp-Hauptseite mit CSS-Formatierung")](css-images/MonkeyAppMainPage-Large.png#lightbox "Monkeyapp-Hauptseite mit CSS-Formatierung")
 
@@ -87,7 +87,7 @@ Die [MonkeyAppCSS](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samp
 Der Prozess zum Hinzufügen eines Stylesheets zu einer Lösung lautet wie folgt aus:
 
 1. Fügen Sie eine leere CSS-Datei zu Ihrem Projekt für .NET Standard-Bibliothek hinzu.
-1. Legen Sie die Buildaktion der CSS-Datei, die **EmbeddedResource**.
+1. Legen Sie die Buildaktion der CSS-Datei auf **EmbeddedResource**fest.
 
 ### <a name="loading-a-style-sheet"></a>Beim Laden eines Stylesheets
 
@@ -95,7 +95,7 @@ Es gibt eine Reihe von Ansätzen, die zum Laden eines Stylesheets verwendet werd
 
 ### <a name="xaml"></a>XAML
 
-Ein Stylesheet geladen und mit analysiert werden kann, die [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) Klasse hinzugefügt werden, bevor Sie eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
+Ein Stylesheet kann geladen und mit der [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) -Klasse analysiert werden, bevor es zu einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)hinzugefügt wird:
 
 ```xaml
 <Application ...>
@@ -105,12 +105,12 @@ Ein Stylesheet geladen und mit analysiert werden kann, die [ `StyleSheet` ](xref
 </Application>
 ```
 
-Die [ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) Eigenschaft gibt das Stylesheet als URI relativ zum Speicherort der einschließenden XAML-Datei oder Bezug auf das Stammverzeichnis des Projekts an, wenn der URI mit beginnt eine `/`.
+Die [`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) -Eigenschaft gibt das Stylesheet als URI relativ zum Speicherort der einschließenden XAML-Datei oder relativ zum Projektstamm an, wenn der URI mit einem `/`beginnt.
 
 > [!WARNING]
-> Die CSS-Datei kann nicht geladen werden, wenn der Buildvorgang nicht, um festgelegt ist **EmbeddedResource**.
+> Die CSS-Datei kann nicht geladen werden, wenn die Buildaktion nicht auf **EmbeddedResource**festgelegt ist.
 
-Alternativ ein Stylesheet geladen und mit analysiert werden kann die [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) -Klasse, bevor Sie hinzugefügt eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), inlining in einer `CDATA` Abschnitt:
+Alternativ kann ein Stylesheet mit der [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) -Klasse geladen und analysiert werden, bevor es zu einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)hinzugefügt wird, indem es in einem `CDATA` Abschnitt inlining wird:
 
 ```xaml
 <ContentPage ...>
@@ -127,7 +127,7 @@ Alternativ ein Stylesheet geladen und mit analysiert werden kann die [ `StyleShe
 </ContentPage>
 ```
 
-Weitere Informationen zu Ressourcenwörterbüchern, finden Sie unter [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md).
+Weitere Informationen zu Ressourcen Wörterbüchern finden Sie unter [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md).
 
 ### <a name="c"></a>C\#
 
@@ -148,17 +148,17 @@ public partial class MyPage : ContentPage
 }
 ```
 
-Das Argument für die `StyleSheet.FromReader` Methode ist die `TextReader` hat, das das Stylesheet gelesen.
+Das Argument für die `StyleSheet.FromReader`-Methode ist der `TextReader`, der das Stylesheet gelesen hat.
 
 ## <a name="selecting-elements-and-applying-properties"></a>Auswählen von Elementen und Eigenschaften anwenden
 
-CSS wird Selektoren verwendet, um zu bestimmen, welche Elemente als Ziel. Stile mit übereinstimmenden Selektoren werden nacheinander, in der Definition Reihenfolge angewendet. Für ein bestimmtes Element definierten Stile werden immer zuletzt angewendet. Weitere Informationen zu unterstützten Selektoren, finden Sie unter [Selektor Verweis](#selector-reference).
+CSS wird Selektoren verwendet, um zu bestimmen, welche Elemente als Ziel. Stile mit übereinstimmenden Selektoren werden nacheinander, in der Definition Reihenfolge angewendet. Für ein bestimmtes Element definierten Stile werden immer zuletzt angewendet. Weitere Informationen zu unterstützten Selektoren finden Sie unter [Selector Reference](#selector-reference).
 
-CSS verwendet zum Formatieren eines ausgewählten Elements. Jede Eigenschaft verfügt über einen Satz möglicher Werte ein, und einige Eigenschaften können jede Art von Element wirken sich auf, während andere auf Gruppen von Elementen anwenden. Weitere Informationen zu unterstützten Eigenschaften finden Sie unter [Eigenschaftsverweis](#property-reference).
+CSS verwendet zum Formatieren eines ausgewählten Elements. Jede Eigenschaft verfügt über einen Satz möglicher Werte ein, und einige Eigenschaften können jede Art von Element wirken sich auf, während andere auf Gruppen von Elementen anwenden. Weitere Informationen zu unterstützten Eigenschaften finden Sie unter Eigenschaften [Referenz](#property-reference).
 
 ### <a name="selecting-elements-by-type"></a>Auswählen von Elementen nach Typ
 
-Elemente in der visuellen Struktur ausgewählt werden können, nach Typ mit der Groß-/Kleinschreibung `element` Selektor:
+Elemente in der visuellen Struktur können nach Typ ausgewählt werden, wobei die Groß-/Kleinschreibung `element` Auswahl nicht beachtet wird:
 
 ```css
 stacklayout {
@@ -166,14 +166,14 @@ stacklayout {
 }
 ```
 
-Diese Auswahl identifiziert alle [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Elementen auf Seiten, die das Stylesheet nutzen und ihre Ränder festgelegt, um eine einheitliche Breite von 20.
+Dieser Selektor identifiziert alle [`StackLayout`](xref:Xamarin.Forms.StackLayout) Elemente auf Seiten, die das Stylesheet verwenden, und legt seine Ränder auf eine einheitliche Stärke von 20 fest.
 
 > [!NOTE]
 > Der `element` Selektor identifiziert keine Unterklassen des angegebenen Typs.
 
 ### <a name="selecting-elements-by-base-class"></a>Auswählen von Elementen durch Basisklasse
 
-Elemente in der visuellen Struktur ausgewählt werden können, von der Basisklasse mit der Groß-/Kleinschreibung `^base` Selektor:
+Elemente in der visuellen Struktur können von der Basisklasse ausgewählt werden, ohne dass die `^base` Groß-/Kleinschreibung nicht beachtet wird.
 
 ```css
 ^contentpage {
@@ -181,14 +181,14 @@ Elemente in der visuellen Struktur ausgewählt werden können, von der Basisklas
 }
 ```
 
-Diese Auswahl identifiziert alle [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) Elemente, die das Stylesheet nutzen, und werden ihren Hintergrund Farbe `lightgray`.
+Dieser Selektor identifiziert alle [`ContentPage`](xref:Xamarin.Forms.ContentPage) Elemente, die das Stylesheet verwenden, und legt die Hintergrundfarbe auf `lightgray`fest.
 
 > [!NOTE]
-> Die `^base` Selektor bezieht sich auf Xamarin.Forms und ist nicht Teil der CSS-Spezifikation.
+> Der `^base` Selektor ist für xamarin. Forms spezifisch und nicht Teil der CSS-Spezifikation.
 
 ### <a name="selecting-an-element-by-name"></a>Auswählen eines Elements anhand des Namens
 
-Einzelne Elemente in der visuellen Struktur ausgewählt werden können, mit der Groß-/ Kleinschreibung `#id` Selektor:
+Einzelne Elemente in der visuellen Struktur können mit der `#id` Auswahl unter Berücksichtigung von Groß-/Kleinschreibung ausgewählt werden:
 
 ```css
 #listView {
@@ -196,7 +196,7 @@ Einzelne Elemente in der visuellen Struktur ausgewählt werden können, mit der 
 }
 ```
 
-Diese Auswahl gibt das Element, dessen [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) -Eigenschaftensatz auf `listView`. Aber wenn die `StyleId` Eigenschaft nicht festgelegt ist, die Auswahl wird ein Fallback auf mit der `x:Name` des Elements. Daher in den folgenden XAML-Beispiel das `#listView` Selektor erkennt die [ `ListView` ](xref:Xamarin.Forms.ListView) , deren `x:Name` -Attributsatz auf `listView`, und legt die Hintergrundfarbe auf `lightgray`.
+Dieser Selektor identifiziert das-Element, dessen [`StyleId`](xref:Xamarin.Forms.Element.StyleId) -Eigenschaft auf `listView`festgelegt ist. Wenn die `StyleId`-Eigenschaft jedoch nicht festgelegt ist, greift der Selektor auf die `x:Name` des-Elements zurück. Im folgenden XAML-Beispiel identifiziert die `#listView` Auswahl die [`ListView`](xref:Xamarin.Forms.ListView) , deren `x:Name`-Attribut auf `listView`festgelegt ist, und legt die Hintergrundfarbe für den `lightgray`fest.
 
 ```xaml
 <ContentPage ...>
@@ -213,7 +213,7 @@ Diese Auswahl gibt das Element, dessen [ `StyleId` ](xref:Xamarin.Forms.Element.
 
 ### <a name="selecting-elements-with-a-specific-class-attribute"></a>Auswählen von Elementen mit einer bestimmten Klasse-Attribut
 
-Elemente mit einer bestimmten Klasse-Attribut ausgewählt werden können, mit der Groß-/ Kleinschreibung `.class` Selektor:
+Elemente mit einem bestimmten Klassen Attribut können mit der `.class` Auswahl unter Berücksichtigung von Groß-/Kleinschreibung ausgewählt werden:
 
 ```css
 .detailPageTitle {
@@ -228,7 +228,7 @@ Elemente mit einer bestimmten Klasse-Attribut ausgewählt werden können, mit de
 }
 ```
 
-Eine CSS-Klasse kann an ein XAML-Element zugewiesen werden, durch Festlegen der [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass) Eigenschaft des Elements, das den Namen der CSS-Klasse. Aus diesem Grund in den folgenden XAML-Beispiel, die Stile definiert durch die `.detailPageTitle` Klasse zugewiesen werden, mit dem ersten [ `Label` ](xref:Xamarin.Forms.Label), zwar von definierten Stile der `.detailPageSubtitle` Klasse zugewiesen werden, mit dem zweiten `Label`.
+Eine CSS-Klasse kann einem XAML-Element zugewiesen werden, indem die [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) -Eigenschaft des-Elements auf den CSS-Klassennamen festgelegt wird. Im folgenden XAML-Beispiel werden die Stile, die von der `.detailPageTitle`-Klasse definiert werden, dem ersten [`Label`](xref:Xamarin.Forms.Label)zugewiesen, während die von der `.detailPageSubtitle`-Klasse definierten Stile der zweiten `Label`zugewiesen werden.
 
 ```xaml
 <ContentPage ...>
@@ -247,7 +247,7 @@ Eine CSS-Klasse kann an ein XAML-Element zugewiesen werden, durch Festlegen der 
 
 ### <a name="selecting-child-elements"></a>Auswählen von untergeordneten Elementen
 
-Untergeordnete Elemente in der visuellen Struktur ausgewählt werden können, mit der Groß-/Kleinschreibung `element element` Selektor:
+Untergeordnete Elemente in der visuellen Struktur können ohne Berücksichtigung der Groß-/Kleinschreibung `element element` Auswahl ausgewählt werden:
 
 ```css
 listview image {
@@ -256,7 +256,7 @@ listview image {
 }
 ```
 
-Diese Auswahl identifiziert alle [ `Image` ](xref:Xamarin.Forms.Image) Elemente, die untergeordneten Elemente des [ `ListView` ](xref:Xamarin.Forms.ListView) Elemente und ihrer Höhe und Breite auf 60 festgelegt. Daher in den folgenden XAML-Beispiel die `listview image` Selektor erkennt die [ `Image` ](xref:Xamarin.Forms.Image) ist ein untergeordnetes Element des der [ `ListView` ](xref:Xamarin.Forms.ListView), und seine Höhe und Breite auf 60 festgelegt.
+Dieser Selektor identifiziert alle [`Image`](xref:Xamarin.Forms.Image) Elemente, die untergeordnete Elemente von [`ListView`](xref:Xamarin.Forms.ListView) Elementen sind, und legt deren Höhe und Breite auf 60 fest. Im folgenden XAML-Beispiel identifiziert der `listview image` Selektor die [`Image`](xref:Xamarin.Forms.Image) , die ein untergeordnetes Element des [`ListView`](xref:Xamarin.Forms.ListView)ist, und legt seine Höhe und Breite auf 60 fest.
 
 ```xaml
 <ContentPage ...>
@@ -282,11 +282,11 @@ Diese Auswahl identifiziert alle [ `Image` ](xref:Xamarin.Forms.Image) Elemente,
 ```
 
 > [!NOTE]
-> Die `element element` Auswahl erfordert das untergeordnete Element, werden keine _direkte_ untergeordnetes Element des übergeordneten Elements – das untergeordnete Element ist möglicherweise ein anderes übergeordnetes Element. Auswahl vorgenommen wird, vorausgesetzt, dass ein Vorgänger das erste angegebene Element ist.
+> Die `element element` Auswahl erfordert nicht, dass das untergeordnete Element ein _direkt_ untergeordnetes Element des übergeordneten Elements ist – das untergeordnete Element kann ein anderes übergeordnetes Element aufweisen. Auswahl vorgenommen wird, vorausgesetzt, dass ein Vorgänger das erste angegebene Element ist.
 
 ### <a name="selecting-direct-child-elements"></a>Auswählen von direkt untergeordneten Elementen
 
-Direkte untergeordnete Elemente in der visuellen Struktur ausgewählt werden können, mit der Groß-/Kleinschreibung `element>element` Selektor:
+Direkt untergeordnete Elemente in der visuellen Struktur können ohne Berücksichtigung der Groß-/Kleinschreibung `element>element` Auswahl ausgewählt werden:
 
 ```css
 stacklayout>image {
@@ -295,7 +295,7 @@ stacklayout>image {
 }
 ```
 
-Diese Auswahl identifiziert alle [ `Image` ](xref:Xamarin.Forms.Image) Elemente, die direkt untergeordnete Elemente eines [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Elemente und legt die Höhe und Breite auf 200 fest. Daher in den folgenden XAML-Beispiel das `stacklayout>image` Selektor erkennt der [ `Image` ](xref:Xamarin.Forms.Image) direkt untergeordnet ist der [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), und seine Höhe und Breite auf 200 festgelegt.
+Dieser Selektor identifiziert alle [`Image`](xref:Xamarin.Forms.Image) Elemente, die direkt untergeordnete Elemente von [`StackLayout`](xref:Xamarin.Forms.StackLayout) Elementen sind, und legt ihre Höhe und Breite auf 200 fest. Im folgenden XAML-Beispiel identifiziert der `stacklayout>image` Selektor die [`Image`](xref:Xamarin.Forms.Image) , die ein direkt untergeordnetes Element des [`StackLayout`](xref:Xamarin.Forms.StackLayout)ist, und legt seine Höhe und Breite auf 200 fest.
 
 ```xaml
 <ContentPage ...>
@@ -313,29 +313,29 @@ Diese Auswahl identifiziert alle [ `Image` ](xref:Xamarin.Forms.Image) Elemente,
 ```
 
 > [!NOTE]
-> Die `element>element` Auswahl erfordert, dass das untergeordnete Element ist ein _direkte_ untergeordnetes Element des übergeordneten Elements.
+> Der `element>element` Selector erfordert, dass das untergeordnete Element ein _direkt_ untergeordnetes Element des übergeordneten Elements ist.
 
 ## <a name="selector-reference"></a>Selector-Referenz
 
 Die folgenden CSS-Selektoren werden von Xamarin.Forms unterstützt:
 
-|Selector|Beispiel|Beschreibung|
+|Auswahl|Beispiel|BESCHREIBUNG|
 |---|---|---|
-|`.class`|`.header`|Wählt alle Elemente mit den `StyleClass` Eigenschaft, die "Header" enthält. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung beachtet wird.|
-|`#id`|`#email`|Wählt alle Elemente mit `StyleId` festgelegt `email`. Wenn `StyleId` nicht festgelegt ist, um alternative `x:Name`. Bei Verwendung von XAML, `x:Name` vorzuziehen ist `StyleId`. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung beachtet wird.|
+|`.class`|`.header`|Wählt alle-Elemente mit der `StyleClass`-Eigenschaft aus, die ' Header ' enthält. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung beachtet wird.|
+|`#id`|`#email`|Wählt alle Elemente aus, für die `StyleId` auf `email`festgelegt ist. Wenn `StyleId` nicht festgelegt ist, Fall Back auf `x:Name`. Bei der Verwendung von XAML wird `x:Name` als `StyleId`bevorzugt. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung beachtet wird.|
 |`*`|`*`|Wählt alle Elemente aus.|
 |`element`|`label`|Wählt alle Elemente vom Typ `Label`aus, aber keine Unterklassen. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
-|`^base`|`^contentpage`|Wählt alle Elemente mit `ContentPage` als Basisklasse, einschließlich `ContentPage` selbst. Beachten Sie, dass diese Auswahl wird die Groß-/Kleinschreibung und ist nicht Teil der CSS-Spezifikation.|
-|`element,element`|`label,button`|Wählt alle `Button` Elemente und alle `Label` Elemente. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
-|`element element`|`stacklayout label`|Wählt alle `Label` Elemente innerhalb einer `StackLayout`. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
-|`element>element`|`stacklayout>label`|Wählt alle `Label` Elemente mit `StackLayout` als direkt übergeordnet. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
-|`element+element`|`label+entry`|Wählt alle `Entry` Elemente direkt nach einem `Label`. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
-|`element~element`|`label~entry`|Wählt alle `Entry` Elementen vorangestellt wird, wird eine `Label`. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
+|`^base`|`^contentpage`|Wählt alle Elemente mit `ContentPage` als Basisklasse aus, einschließlich `ContentPage` selbst. Beachten Sie, dass diese Auswahl wird die Groß-/Kleinschreibung und ist nicht Teil der CSS-Spezifikation.|
+|`element,element`|`label,button`|Wählt alle `Button` Elemente und alle `Label` Elemente aus. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
+|`element element`|`stacklayout label`|Wählt alle `Label` Elemente innerhalb eines `StackLayout`aus. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
+|`element>element`|`stacklayout>label`|Wählt alle `Label` Elemente mit `StackLayout` als direktes übergeordnetes Element aus. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
+|`element+element`|`label+entry`|Wählt alle `Entry` Elemente direkt nach einem `Label`aus. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
+|`element~element`|`label~entry`|Wählt alle `Entry` Elemente aus, denen ein `Label`vorangestellt ist. Beachten Sie, dass diese Auswahl Groß-/Kleinschreibung.|
 
 Stile mit übereinstimmenden Selektoren werden nacheinander, in der Definition Reihenfolge angewendet. Für ein bestimmtes Element definierten Stile werden immer zuletzt angewendet.
 
 > [!TIP]
-> Selektoren können kombiniert werden, ohne Einschränkung, wie z. B. `StackLayout>ContentView>label.email`.
+> Selektoren können ohne Einschränkung kombiniert werden, wie z. b. `StackLayout>ContentView>label.email`.
 
 Folgenden Auswahlmöglichkeiten werden zurzeit nicht unterstützt:
 
@@ -346,99 +346,99 @@ Folgenden Auswahlmöglichkeiten werden zurzeit nicht unterstützt:
 > [!NOTE]
 > Spezifität und Spezifität Außerkraftsetzungen werden nicht unterstützt.
 
-## <a name="property-reference"></a>Eigenschaftsreferenz
+## <a name="property-reference"></a>Eigenschaftsverweis
 
-Die folgenden CSS-Eigenschaften werden von Xamarin.Forms unterstützt (in der **Werte** Spalte Typen sind _Kursiv_, während Zeichenfolgenliterale sind `gray`):
+Die folgenden CSS-Eigenschaften werden von xamarin. Forms unterstützt (in der **Values** -Spalte sind die Typen _kursiv_formatiert, während Zeichen folgen Literale `gray`werden):
 
-|Die Eigenschaften-|Gilt für e|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_Farbe_ \| `initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_Zeichenfolge_ \| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`ist `Frame`ist `ImageButton`|_Farbe_ \| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_Double-Wert_ \| `initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_Double-Wert_ \| `initial` |`border-width: .5;`|
+|`background-image`|`Page`|_Zeichen_ folgen \| `initial` |`background-image: bg.png;`|
+|`border-color`|`Button`, `Frame`, `ImageButton`|_Farbe_ \| `initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_doppelte_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_doppelte_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_Farbe_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_Double-Wert_ \| `initial`|`column-gap: 9;`|
+|`column-gap`|`Grid`|_doppelte_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
-|`flex-basis`|`VisualElement`|_"float"_ \| `auto` \| `initial`. Darüber hinaus kann ein Prozentsatz in den Bereich 0 bis 100 % angegeben werden, mit der `%` anmelden.|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_"Float"_ \| `initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_"Float"_ \| `initial`|`flex-shrink: 1;`|
+|`flex-basis`|`VisualElement`|_float_ \| `auto` \| `initial`. Außerdem kann ein Prozentsatz im Bereich von 0% bis 100% mit dem `%` Vorzeichen angegeben werden.|`flex-basis: 25%;`|
+|`flex-grow`|`VisualElement`|_float_ -\| `initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_float_ -\| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_doppelte_ \| _Namedsize_ \| `initial` |`font-size: 12;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichen_ folgen \| `initial` |`font-family: Consolas;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_doppelte_\| _namedsize_ -\| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_Double-Wert_ \| `initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_doppelte_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
-|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_Double-Wert_ \| `initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_Double-Wert_ \| `initial` |`line-height: 1.8;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_doppelte_ \| `initial`|`letter-spacing: 2.5;`|
+|`line-height`|`Label`, `Span`|_doppelte_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_Stärke_ \| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_Stärke_ \| `initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_Stärke_ \| `initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_Stärke_ \| `initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_Stärke_ \| `initial` |`margin-bottom: 6;`|
-|`max-lines`|`Label`|_Int_ \| `initial`|`max-lines: 2;`|
-|`min-height`|`VisualElement`|_Double-Wert_ \| `initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_Double-Wert_ \| `initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_Double-Wert_ \| `initial` |`opacity: .3;`|
-|`order`|`VisualElement`|_Int_ \| `initial`|`order: -1;`|
+|`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
+|`min-height`|`VisualElement`|_doppelte_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_doppelte_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_doppelte_ \| `initial` |`opacity: .3;`|
+|`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_Stärke_ \| `initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_Double-Wert_ \| `initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _Double-Wert_ \| `initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _Double-Wert_ \| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _Double-Wert_ \| `initial` |`padding-bottom: 6;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_doppelte_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _doppelte_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _doppelte_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _doppelte_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
-|`row-gap`|`Grid`| _Double-Wert_ \| `initial`|`row-gap: 12;`|
-|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left` und `right` sollte in Umgebungen mit rechts-nach-links-vermieden werden.| `text-align: right;`|
+|`row-gap`|`Grid`| _doppelte_ \| `initial`|`row-gap: 12;`|
+|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left` und `right` sollten in Umgebungen mit von rechts nach links vermieden werden.| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
-|`transform-origin`|`VisualElement`| _doppelte_, _double_ \| `initial` |`transform-origin: 7.5, 12.5;`|
+|`transform-origin`|`VisualElement`| _Double_, _Double_ \| `initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
-|`width`|`VisualElement`|_Double-Wert_ \| `initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_doppelte_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
 > `initial` ist ein gültiger Wert für alle Eigenschaften. Es löscht den Wert (den Standardwert zurückgesetzt), der von einem anderen Stil festgelegt wurde.
 
 Die folgenden Eigenschaften werden derzeit nicht unterstützt:
 
-- `all: initial`.
+- [https://login.microsoftonline.com/consumers/](`all: initial`).
 - Layout-Eigenschaften (Feld oder Raster).
-- Kompakteigenschaften, z. B. `font`, und `border`.
+- Kurzform Eigenschaften, z. b. `font`, und `border`.
 
-Darüber hinaus besteht keine `inherit` Wert und daher Vererbung wird nicht unterstützt. Legen Sie daher nicht möglich ist, z. B. die `font-size` Eigenschaft für ein Layout und erwarten, dass alle der [ `Label` ](xref:Xamarin.Forms.Label) -Instanzen in das Layout, das den Wert erben. Die einzige Ausnahme ist die `direction` -Eigenschaft, die einen Standardwert besitzt der `inherit`.
+Außerdem gibt es keinen `inherit` Wert, sodass keine Vererbung unterstützt wird. Daher können Sie z. b. die `font-size`-Eigenschaft nicht für ein Layout festlegen und erwarten, dass alle [`Label`](xref:Xamarin.Forms.Label) Instanzen im Layout den Wert erben. Die einzige Ausnahme ist die `direction`-Eigenschaft, die über den Standardwert `inherit`verfügt.
 
 Das Ausrichten von `Span` Elementen hat ein bekanntes Problem, das verhindert, dass spannen durch Element und Name (mithilfe des `#` Symbols) als Ziel der CSS-Stile verwendet werden. Das `Span`-Element wird von `GestureElement`abgeleitet, das nicht über die `StyleClass`-Eigenschaft verfügt, sodass spannen keine CSS-Klassen Ausrichtung unterstützen. Weitere Informationen finden Sie unter nicht in der Lage, CSS-Stile [auf die Span-Steuerelemente anzuwenden](https://github.com/xamarin/Xamarin.Forms/issues/5979).
 
 ### <a name="xamarinforms-specific-properties"></a>Xamarin. Forms-spezifische Eigenschaften
 
-Die folgenden Xamarin.Forms bestimmten CSS-Eigenschaften werden ebenfalls unterstützt. (in der **Werte** Spalte Typen sind _Kursiv_, während Zeichenfolgenliterale sind `gray`):
+Die folgenden xamarin. Forms-spezifischen CSS-Eigenschaften werden ebenfalls unterstützt (in der **Values** -Spalte sind die Typen _kursiv_formatiert, während Zeichen folgen Literale `gray`werden):
 
-|Die Eigenschaften-|Gilt für e|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_Farbe_ \| `initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_Farbe_ \| `initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`|_Int_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`, `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_Farbe_ \| `initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_Farbe_ \| `initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` wird nur unterstützt, auf eine `ScrollView`. |`-xf-orientation: horizontal;`|
-|`-xf-placeholder`|`Entry`ist `Editor`ist `SearchBar`|_Text in Anführungszeichen_ \| `initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`ist `Editor`ist `SearchBar`|_Farbe_ \| `initial` |`-xf-placeholder-color: green;`|
-|`-xf-spacing`|`StackLayout`|_Double-Wert_ \| `initial` |`-xf-spacing: 8;`|
+|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` wird nur auf einem `ScrollView`unterstützt. |`-xf-orientation: horizontal;`|
+|`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_Text_ \| in Anführungszeichen `initial` |`-xf-placeholder: Enter name;`|
+|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_Farbe_ \| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-spacing`|`StackLayout`|_doppelte_ \| `initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`, `Switch`|_Farbe_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_Zeichenfolge_ \| `initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_Zeichen_ folgen \| `initial` |`-xf-visual: material;`|
 
 ### <a name="xamarinforms-shell-specific-properties"></a>In xamarin. Forms shellspezifische Eigenschaften
 
 Die folgenden xamarin. Forms-shellspezifischen CSS-Eigenschaften werden ebenfalls unterstützt (in der **Values** -Spalte sind die Typen _kursiv_formatiert, während Zeichen folgen Literale `gray`werden):
 
-|Die Eigenschaften-|Gilt für e|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
 |`-xf-flyout-background`|`Shell`|_Farbe_ \| `initial` |`-xf-flyout-background: red;`|
 |`-xf-shell-background`|`Element`|_Farbe_ \| `initial` |`-xf-shell-background: green;`|
@@ -452,20 +452,20 @@ Die folgenden xamarin. Forms-shellspezifischen CSS-Eigenschaften werden ebenfall
 |`-xf-shell-title`|`Element`|_Farbe_ \| `initial` |`-xf-shell-title: teal;`|
 |`-xf-shell-unselected`|`Element`|_Farbe_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
-### <a name="color"></a>Farbe
+### <a name="color"></a>Color
 
 Die folgenden `color` Werte werden unterstützt:
 
-- `X11` [Farben](https://en.wikipedia.org/wiki/X11_color_names), die mit CSS-Farben, UWP vordefinierte Farben und Farben von Xamarin.Forms übereinstimmen. Beachten Sie, dass diese Farbwerte Groß-/Kleinschreibung.
-- Hex-Farben: `#rgb`, `#argb`, `#rrggbb`, `#aarrggbb`
-- RGB-Farben: `rgb(255,0,0)`, `rgb(100%,0%,0%)`. Werte liegen im Bereich 0 – 100 % oder 0-255.
-- RGBA-Farben: `rgba(255, 0, 0, 0.8)`, `rgba(100%, 0%, 0%, 0.8)`. Der Durchlässigkeitswert ist im Bereich von 0,0 bis 1,0.
+- `X11` [Farben](https://en.wikipedia.org/wiki/X11_color_names), die CSS-Farben, vordefinierte UWP-Farben und xamarin. Forms-Farben entsprechen. Beachten Sie, dass diese Farbwerte Groß-/Kleinschreibung.
+- hexadezimale Farben: `#rgb`, `#argb``#rrggbb`, `#aarrggbb`
+- RGB-Farben: `rgb(255,0,0)``rgb(100%,0%,0%)`. Werte liegen im Bereich 0 – 100 % oder 0-255.
+- RGBA-Farben: `rgba(255, 0, 0, 0.8)``rgba(100%, 0%, 0%, 0.8)`. Der Durchlässigkeitswert ist im Bereich von 0,0 bis 1,0.
 - HSL-Farben: `hsl(120, 100%, 50%)`. Der h-Wert wird im Bereich zwischen 0 und 360, s und l sind in den Bereich 0 – 100 %.
-- HSLA Farben: `hsla(120, 100%, 50%, .8)`. Der Durchlässigkeitswert ist im Bereich von 0,0 bis 1,0.
+- HSLA-Farben: `hsla(120, 100%, 50%, .8)`. Der Durchlässigkeitswert ist im Bereich von 0,0 bis 1,0.
 
 ### <a name="thickness"></a>Stärke
 
-Einem, zwei, drei oder vier `thickness` Werte werden unterstützt, die jeweils durch ein Leerzeichen voneinander getrennt sind:
+Ein, zwei, drei oder vier `thickness` Werte werden unterstützt, die jeweils durch Leerzeichen voneinander getrennt sind:
 
 - Ein einzelner Wert gibt die einheitliche Stärke an.
 - Zwei Werte geben die vertikale und horizontale Breite an.
@@ -473,11 +473,11 @@ Einem, zwei, drei oder vier `thickness` Werte werden unterstützt, die jeweils d
 - Vier Werte geben an, oben, und klicken Sie dann rechts, unten und dann linken Stärke.
 
 > [!NOTE]
-> CSS `thickness` Werte unterscheiden sich von XAML [ `Thickness` ](xref:Xamarin.Forms.Thickness) Werte. Z. B. in XAML ein zweiwertiger `Thickness` gibt die horizontale und vertikale Stärke, während ein vier-Wert an `Thickness` gibt an, nach rechts und Links, dann oben nach unten Stärke. Darüber hinaus XAML `Thickness` Werte sind durch Kommas getrennt.
+> CSS-`thickness` Werte unterscheiden sich von XAML- [`Thickness`](xref:Xamarin.Forms.Thickness) Werten. In XAML gibt z. b. ein zwei-Wert-`Thickness` die horizontale und vertikale Dicke an, während ein vier-Wert-`Thickness` Links, dann oben, rechts und dann untere Dicke anzeigt. Außerdem sind XAML-`Thickness` Werte durch Kommas getrennt.
 
 ### <a name="namedsize"></a>NamedSize
 
-Die folgenden Groß-/Kleinschreibung `namedsize` Werte werden unterstützt:
+Die folgenden `namedsize` Werte werden unterstützt:
 
 - `default`
 - `micro`
@@ -485,7 +485,7 @@ Die folgenden Groß-/Kleinschreibung `namedsize` Werte werden unterstützt:
 - `medium`
 - `large`
 
-Die genaue Bedeutung der einzelnen `namedsize` Wert ist plattformabhängig und abhängige anzeigen.
+Die genaue Bedeutung der einzelnen `namedsize` Werte ist plattformabhängig und Ansichts abhängig.
 
 ## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>CSS-Code in Xamarin.Forms mit Xamarin.University
 
@@ -493,8 +493,8 @@ Die genaue Bedeutung der einzelnen `namedsize` Wert ist plattformabhängig und a
 
 **Xamarin. Forms 3,0-CSS-Video**
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [MonkeyAppCSS (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+- [Monkeyappcss (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 - [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

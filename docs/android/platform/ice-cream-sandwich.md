@@ -18,7 +18,7 @@ ms.locfileid: "76724375"
 
 _In diesem Artikel werden einige der neuen Features beschrieben, die Anwendungsentwicklern mit dem Android 4-API-Ice-Sandwich zur Verfügung stehen. Es umfasst mehrere neue Technologien für die Benutzeroberfläche und prüft dann eine Reihe neuer Funktionen, die Android 4 für die gemeinsame Nutzung von Daten zwischen Anwendungen und Geräten bietet._
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Die Android-Betriebs System Version 4,0 (API-Ebene 14) stellt eine größere Funktionsweise des Android-Betriebssystems dar und umfasst eine Reihe wichtiger Änderungen und Upgrades, einschließlich der folgenden:
 
@@ -53,12 +53,12 @@ Android 4 umfasst mehrere neue Technologien, mit denen Sie Daten Geräte übergr
 
 ICS unterstützt die Entwicklung mit einem x86-Emulator noch nicht. x86-Emulatoren werden nur mit Android 2.3.3, API-Ebene 10 unterstützt. Weitere Informationen finden Sie [unter Konfigurieren des x86-Emulators](~/android/get-started/installation/android-emulator/index.md) .
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel behandelt eine Reihe von neuen Technologien, die nun mit Android 4 verfügbar sind. Wir haben neue Features für die Benutzeroberfläche, wie z. b. *GridLayout*, *PopupMenu*und *Switch* -Widget, geprüft. Wir haben auch einige der neuen Unterstützung für die Steuerung der Systembenutzer Oberfläche und die Verwendung von *textureview*behandelt. Anschließend haben wir eine Reihe von neuen Technologien für die gemeinsame Nutzung erläutert. Wir haben erläutert, wie Sie mit *Android-Beam* Informationen auf allen Geräten freigeben können, die *NFC*verwenden, die neue *Kalender-API*besprochen und die Verwendung des integrierten *shareaktionsanbieters*gezeigt haben.
 Schließlich wurde untersucht, wie der *contactscontract* -Anbieter verwendet wird, um auf Benutzerprofil Daten zuzugreifen.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Textureviewdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
 - [Calendardemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)

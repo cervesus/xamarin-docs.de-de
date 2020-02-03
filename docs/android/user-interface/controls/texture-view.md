@@ -71,6 +71,6 @@ Der obige Code erstellt eine `TextureView` Instanz in der `OnCreate`-Methode der
 
 Um die `TextureView`zu verwenden, muss die Hardwarebeschleunigung aktiviert werden. diese wird standardmäßig auf API-Ebene 14 fest. Da in diesem Beispiel die Kamera verwendet wird, müssen sowohl die `android.permission.CAMERA`-Berechtigung als auch die `android.hardware.camera`-Funktion in der Datei " **androidmanifest. XML**" festgelegt werden.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Textureviewdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)/)

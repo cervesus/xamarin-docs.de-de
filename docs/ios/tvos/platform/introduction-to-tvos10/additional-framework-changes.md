@@ -85,8 +85,8 @@ Die folgenden Verbesserungen wurden an Foundation Framework für tvos 10 vorgeno
 
 - Verwenden Sie die neue [nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval) -Klasse, um Datums-und Zeitintervall Berechnungen zu erstellen, z. b. Dauer Zeiten, zum Vergleichen von Intervallen und zum Testen von Intervall interabschnitten.
 - Der [nslocal](https://developer.apple.com/reference/foundation/nslocale) -Klasse wurden mehrere neue Eigenschaften hinzugefügt, um lokale Informationen und die verfügbaren Anzeige Formate abzurufen.
-- Verwenden Sie die neue [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)-Klasse, um zwischen verschiedenen Maßeinheiten (Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
-- Verwenden Sie die neue [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)-Klasse, um lokalisierte Messungen zu formatieren, die dem Endbenutzer angezeigt werden sollen.
+- Verwenden Sie die neue [nsmeasure](https://developer.apple.com/reference/foundation/nsmeasurement) -Klasse, um zwischen verschiedenen Maßeinheiten (User Unit of Measure, UOM) zu konvertieren oder Berechnungen für Werte in verschiedenen UOMS auszuführen.
+- Verwenden Sie die neue [NS-](https://developer.apple.com/reference/foundation/nsmeasurementformatter) Klasse, um lokalisierte Messungen zum Anzeigen für den Endbenutzer zu formatieren.
 - Verwenden Sie die neuen [nsunit](https://developer.apple.com/reference/foundation/nsunit) -und [nsdimension](https://developer.apple.com/reference/foundation/nsdimension) -Klassen, um bestimmte UOMS darzustellen.
 
 <a name="GameKit-Enhancements" />
@@ -195,7 +195,7 @@ Die folgenden Verbesserungen wurden an dem UIKit-Framework in tvos 10 vorgenomme
 - Initiieren Sie die cloudkit-Freigabe, und ändern Sie deren Eigenschaften mithilfe der neuen Klassen `UICloudSharingController` und `UICloudSharingControllerDelegate`.
 - Profitieren Sie von vorab abgerufenen Zellen, um die scrolldarstellung von `UICollectionViews` mit dem neuen `UICollectionViewDataSourcePrefetching` Delegaten zu verbessern.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [Neues in tvos 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

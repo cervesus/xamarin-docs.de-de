@@ -18,7 +18,7 @@ ms.locfileid: "76723803"
 
 _In diesem Artikel werden häufige Server Fehler zusammengefasst, die beim Erstellen von Bindungen auftreten können, sowie mögliche Ursachen und empfohlene Möglichkeiten, diese zu beheben._
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Binden einer Android-Bibliothek (eine **. Aar** -oder **jar**-Datei) ist selten eine einfache Angelegenheit. Dies erfordert in der Regel zusätzlichen Aufwand, um Probleme zu beheben, die sich aus den Unterschieden zwischen Java und .net ergeben.
 Diese Probleme verhindern, dass xamarin. Android die Android-Bibliothek bindet und als Fehlermeldungen im Buildprotokoll angezeigt wird. Dieses Handbuch enthält einige Tipps zur Problembehandlung, eine Liste der gängigeren Probleme/Szenarios sowie mögliche Lösungen für eine erfolgreiche Bindung der Android-Bibliothek.
@@ -237,11 +237,11 @@ Die Behebung hierfür besteht darin, die **. so** -Bibliothek mit einem `Java.La
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir allgemeine Problem Behandlungs Probleme im Zusammenhang mit Java-Bindungen aufgelistet und erläutert, wie Sie aufgelöst werden.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Bibliotheks Projekte](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [Arbeiten mit jni](~/android/platform/java-integration/working-with-jni.md)

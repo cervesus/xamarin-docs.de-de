@@ -123,7 +123,7 @@ Weitere Informationen finden Sie in der Dokumentation [Überprüfen von Attribut
 
 * Das xamarin-Unified API ist nun das Standard Bindungs Ziel. Verwenden Sie die Option `-classic`, um nur das 32-Bit-Classic API als Ziel zu verwenden.
 
-### <a name="notable-bug-fixes"></a>Wichtige Fehlerbehebungen
+### <a name="notable-bug-fixes"></a>Wichtige Programmfehlerbehebungen
 
 * Korrektur `instancetype` Bindung bei Verwendung in einer Ziel-C-Kategorie
 * Ziel-C-Kategorien vollständig benennen
@@ -133,7 +133,7 @@ Weitere Informationen finden Sie in der Dokumentation [Überprüfen von Attribut
 
 [Download v 1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
 
-Behebung geringfügiger Programmfehler.
+Kleinere Fehlerbehebungen
 
 ## <a name="111-december-15-2014"></a>1.1.1:15. Dezember 2014
 

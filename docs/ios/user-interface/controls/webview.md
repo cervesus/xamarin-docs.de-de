@@ -97,7 +97,7 @@ Weitere Informationen zu den Vorgängen, einschließlich der Implementierung in 
 > In [der `UIWebView` Dokumentation von Apple](https://developer.apple.com/documentation/uikit/uiwebview) wird vorgeschlagen, dass apps stattdessen [`WKWebView`](#wkwebview) verwenden sollten.
 
 > [!IMPORTANT]
-> Wenn Sie für die Verwendung von xamarin. Forms Ressourcen in Bezug auf die `UIWebView` depreationwarning (iTMS-90809) suchen, finden Sie weitere Informationen in der Dokumentation zu [xamarin. Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) .
+> Wenn Sie Xamarin.Forms verwenden und nach Ressourcen zur `UIWebView`-Veraltungswarnung (ITMS-90809) suchen, finden Sie weitere Informationen in der [Dokumentation zu Xamarin.Forms-WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809).
 
 `UIWebView` ist die ältere Methode von Apple, Webinhalte in Ihrer APP bereitzustellen. Sie wurde in ios 2,0 veröffentlicht und ist seit 8,0 als veraltet markiert.
 
@@ -115,6 +115,6 @@ Dadurch wird die folgende Webansicht erzeugt:
 
 [![der Auswirkung von scalespagestofit](webview-images/webview.png)](webview-images/webview.png#lightbox)
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Webviews (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)

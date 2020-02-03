@@ -104,6 +104,6 @@ Wenn Sie den obigen Code ausführen, wird das Benutzerprofil wie im folgenden Sc
 
 Das Arbeiten mit dem Benutzerprofil ähnelt dem interagieren mit anderen Daten in Android und bietet ein zusätzliches Maß an Geräte Personalisierung.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Contactsproviderdemo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)

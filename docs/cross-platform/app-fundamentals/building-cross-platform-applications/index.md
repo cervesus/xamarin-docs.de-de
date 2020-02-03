@@ -50,7 +50,7 @@ Es veranschaulicht die Grundlagen der Erstellung einer plattformübergreifenden 
 
 Lesen Sie die [Tasky-Fallstudie](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Abschnitt werden die Anwendungs Entwicklungs Tools von xamarin vorgestellt und erläutert, wie Sie Anwendungen erstellen, die mehrere mobile Plattformen als Ziel haben.
 
@@ -60,7 +60,7 @@ Beispiele hierfür sind Allgemeine Anwendungsfunktionen (z. b. Datei-und Netzwer
 
 Schließlich wird das Testen kurz erläutert, und es werden Verweise auf eine Fallstudie bereitstellt, die diese Prinzipien in Aktion einfügt.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Freigeben von Code Optionen](~/cross-platform/app-fundamentals/code-sharing.md)
 - [Fallstudie: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)

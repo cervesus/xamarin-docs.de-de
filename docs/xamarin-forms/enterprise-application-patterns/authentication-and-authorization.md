@@ -20,7 +20,7 @@ Die Authentifizierung ist der Prozess, bei dem Identifikations Anmelde Informati
 
 Es gibt viele Ansätze zum Integrieren der Authentifizierung und Autorisierung in eine xamarin. Forms-APP, die mit einer ASP.NET MVC-Webanwendung kommuniziert, einschließlich der Verwendung ASP.net Core Identität, externer Authentifizierungs Anbieter wie Microsoft, Google, Facebook-, Twitter-und Authentifizierungs Middleware. Der eshoponcontainers-Mobile App führt die Authentifizierung und Autorisierung mit einem containerisierten Identitäts-microservice aus, der "identityserver 4" verwendet. Der Mobile App fordert Sicherheits Token von identityserver an, entweder zum Authentifizieren eines Benutzers oder zum Zugreifen auf eine Ressource. Damit identityserver Token im Namen eines Benutzers ausgibt, muss sich der Benutzer bei identityserver anmelden. Allerdings stellt identityserver keine Benutzeroberfläche oder Datenbank für die Authentifizierung bereit. Daher wird in der eshoponcontainers-Referenz Anwendung ASP.net Core Identität zu diesem Zweck verwendet.
 
-## <a name="authentication"></a>Authentifizierung
+## <a name="authentication"></a>Authentication
 
 Die Authentifizierung ist erforderlich, wenn eine Anwendung die Identität des aktuellen Benutzers kennen muss. Der primäre Mechanismus von ASP.net Core für die Identifizierung von Benutzern ist das ASP.net Core Identity-Mitgliedschaftssystem, das Benutzerinformationen in einem vom Entwickler konfigurierten Datenspeicher speichert. In der Regel handelt es sich bei diesem Datenspeicher um einen EntityFramework-Speicher, obwohl benutzerdefinierte Speicher oder Drittanbieter Pakete zum Speichern von Identitätsinformationen in Azure Storage, Azure Cosmos DB oder anderen Speicherorten verwendet werden können.
 
@@ -210,7 +210,7 @@ Der Authentifizierungs Fluss zwischen einem Client und identityserver kann durch
 
 - Implicit. Dieser Flow ist für browserbasierte Anwendungen optimiert und sollte entweder für Benutzerauthentifizierung oder für Authentifizierungs-und zugriffstokenanforderungen verwendet werden. Alle Token werden über den Browser übertragen. Daher sind erweiterte Funktionen wie Aktualisierungs Token nicht zulässig.
 - Autorisierungs Code. Dieser Flow bietet die Möglichkeit zum Abrufen von Token in einem backchannel, im Gegensatz zum Browser-Front-Channel, während gleichzeitig die Client Authentifizierung unterstützt wird.
-- Hybrid: Dieser Flow ist eine Kombination der impliziten Typen für die Autorisierungs Code Gewährung. Das Identitäts Token wird über den Browser Kanal übertragen und enthält die signierte Protokoll Antwort zusammen mit anderen Artefakten, wie z. b. dem Autorisierungs Code. Nach erfolgreicher Überprüfung der Antwort sollte der Back-Channel verwendet werden, um das Zugriffs-und Aktualisierungs Token abzurufen.
+- Hybrid. Dieser Flow ist eine Kombination der impliziten Typen für die Autorisierungs Code Gewährung. Das Identitäts Token wird über den Browser Kanal übertragen und enthält die signierte Protokoll Antwort zusammen mit anderen Artefakten, wie z. b. dem Autorisierungs Code. Nach erfolgreicher Überprüfung der Antwort sollte der Back-Channel verwendet werden, um das Zugriffs-und Aktualisierungs Token abzurufen.
 
 > [!TIP]
 > Verwenden Sie den Hybrid-Authentifizierungs Fluss. Der Hybrid Authentifizierungs Fluss reduziert eine Reihe von Angriffen, die für den browserchannel gelten, und ist der empfohlene Fluss für native Anwendungen, die Zugriffs Token abrufen möchten (und möglicherweise Aktualisierungs Token).
@@ -389,7 +389,7 @@ Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamar
 
 <a name="authorization" />
 
-## <a name="authorization"></a>Autorisierung
+## <a name="authorization"></a>Authorization
 
 Nach der Authentifizierung müssen ASP.net Core Web-APIs oft den Zugriff autorisieren, sodass ein Dienst APIs für einige authentifizierte Benutzer verfügbar machen kann, aber nicht für alle.
 
@@ -472,13 +472,13 @@ Die `DefaultRequestHeaders`-Eigenschaft der `HttpClient`-Klasse macht die Header
 
 Weitere Informationen zur Verwendung von Webanforderungen durch das eshoponcontainers-Mobile App finden Sie unter [zugreifen auf Remote Daten](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Es gibt viele Ansätze für die Integration von Authentifizierung und Autorisierung in eine xamarin. Forms-APP, die mit einer ASP.NET MVC-Webanwendung kommuniziert. Der eshoponcontainers-Mobile App führt die Authentifizierung und Autorisierung mit einem containerisierten Identitäts-microservice aus, der "identityserver 4" verwendet. Identityserver ist ein OpenID Connect-und OAuth 2,0-Open-Source-Framework für ASP.net Core, die in ASP.net Core Identity integriert ist, um bearertokenauthentifizierung auszuführen.
 
 Der Mobile App fordert Sicherheits Token von identityserver an, entweder zum Authentifizieren eines Benutzers oder zum Zugreifen auf eine Ressource. Beim Zugriff auf eine Ressource muss ein Zugriffs Token in die Anforderung an APIs eingeschlossen werden, die eine Autorisierung erfordern. Die Middleware von identityserver überprüft eingehende Zugriffs Token, um sicherzustellen, dass Sie von einem vertrauenswürdigen Aussteller gesendet werden, und dass Sie für die Verwendung mit der API, die Sie empfängt, gültig sind.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

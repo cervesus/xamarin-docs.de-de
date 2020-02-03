@@ -153,7 +153,7 @@ Herzlichen Glückwunsch! Sie haben eine Watch-App!
 
 ![](hello-watch-images/running.png "The app running in the Simulator")
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [Einrichtung und Installation](~/ios/watchos/get-started/installation.md)
-- [Erste Watch-App-video](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [Setup und Installation](~/ios/watchos/get-started/installation.md)
+- [Video zur ersten Watch-App](https://blog.xamarin.com/your-first-watch-kit-app/)

@@ -254,6 +254,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 
 Dieser Fehler ist wahrscheinlich darauf zurückzuführen, dass Ihre Xcode-Installation von **Xcode. app**umbenannt wurde. Dieser Fehler tritt beispielsweise auf, wenn Sie die-Installation in **Xcode 6.2. app**umbenennen.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Leitfaden für die Apple watchkit-Übermittlung](https://developer.apple.com/app-store/watch/)

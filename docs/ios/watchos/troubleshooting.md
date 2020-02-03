@@ -52,7 +52,7 @@ Diese Seite enthält weitere Informationen und Problem Umgehungen für Probleme,
 - Wenn Sie versuchen, die APP zu starten, wird möglicherweise die Fehlermeldung "die Anwendung wurde nicht erstellt" angezeigt. Dies tritt nach einer **Bereinigung** auf, wenn das Startprojekt auf das Überwachungs Erweiterungsprojekt festgelegt ist.
     Die Lösung besteht darin, den **Build auszuwählen > alle neu zu erstellen** und dann die APP neu zu starten.
 
-### <a name="visual-studio"></a>öffnen
+### <a name="visual-studio"></a>Visual Studio
 
 Die IOS Designer-Unterstützung für Watch Kit *erfordert* , dass die Projekt Mappe ordnungsgemäß konfiguriert wird. Wenn die Projekt Verweise nicht festgelegt werden (siehe [Festlegen von verweisen](~/ios/watchos/get-started/project-references.md)), wird die Entwurfs Oberfläche nicht ordnungsgemäß ausgeführt.
 
@@ -166,7 +166,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`.
+8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. [https://login.microsoftonline.com/consumers/](`MyInterfaceController`).
     Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdown Liste **Klasse:** angezeigt werden, und Sie können es von dort aus auswählen.
 
     ![](troubleshooting-images/add-4.png "Setting a custom class")
@@ -257,7 +257,7 @@ Die übrigen Argumente werden im folgenden erläutert:
 
 ### <a name="--sdkroot"></a>--SDKRoot
 
-Erforderlich Gibt den Pfad zu Xcode an (6,2 oder höher).
+Erforderlich. Gibt den Pfad zu Xcode an (6,2 oder höher).
 
 Beispiel:
 
@@ -291,7 +291,7 @@ Beispiel:
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [WatchKitCatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [WatchTables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)
+- [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Watchtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)

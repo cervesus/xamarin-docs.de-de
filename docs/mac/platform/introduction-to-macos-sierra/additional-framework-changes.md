@@ -199,7 +199,7 @@ Die folgenden Frameworks wurden macOS Sierra hinzugefügt:
 - **Intents Framework** : Dieses Framework ermöglicht der APP, Interaktionen (z. b. Speicherort oder Benutzeraktionen) zu überprüfen und auf der Grundlage dieser Informationen Maßnahmen zu ergreifen.
 - **Safariservices-Framework** : Dieses Framework ermöglicht der APP, App-Erweiterungen für Safari (z. b. Inhalts Blockierer) für macOS und IOS zu entwickeln.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Mac-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [Neuerungen in OS X 10,12](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

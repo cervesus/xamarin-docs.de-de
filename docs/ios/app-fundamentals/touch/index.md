@@ -37,7 +37,7 @@ Dieses Handbuch bietet eine Einführung in die Kontaktaufnahme in ios. Weitere I
 - [3D Touch](~/ios/platform/3d-touch.md)
 - [Übermitteln von haptischem Feedback](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [IOS-Berührungs Finale (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
 - [Fingerpaint (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

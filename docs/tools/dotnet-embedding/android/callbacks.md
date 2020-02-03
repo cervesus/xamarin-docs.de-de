@@ -291,7 +291,7 @@ Es gibt einige Möglichkeiten, diese Szenarios zu verbessern:
 
 Hier sind viele Aufgaben zu erledigen, aber diese Verbesserungen an der .net-Einbettung sind möglich.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 - [Einstieg in Android](~/tools/dotnet-embedding/get-started/java/android.md)
 - [Vorläufige Android-Recherche](~/tools/dotnet-embedding/android/index.md)

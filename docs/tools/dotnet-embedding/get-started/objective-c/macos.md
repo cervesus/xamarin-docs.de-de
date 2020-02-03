@@ -15,11 +15,11 @@ ms.locfileid: "76725278"
 ---
 # <a name="getting-started-with-macos"></a>Ersten Einstieg in macOS
 
-## <a name="what-you-will-need"></a>Was Sie benötigen
+## <a name="what-you-will-need"></a>Benötigte Komponenten
 
 * Befolgen Sie die Anweisungen im Handbuch " [Getting Started with Ziel-C](~/tools/dotnet-embedding/get-started/objective-c/index.md) ".
 
-## <a name="hello-world"></a>Hello World
+## <a name="hello-world"></a>Hello world
 
 Erstellen Sie zuerst ein einfaches Hello World-Beispiel C#in.
 

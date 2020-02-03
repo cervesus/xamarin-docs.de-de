@@ -18,7 +18,7 @@ ms.locfileid: "76724344"
 
 _Xamarin. Android ermöglicht das Schreiben von Android C# -apps mit anstelle von Java. Mit xamarin. Android werden mehrere Assemblys bereitgestellt, die Bindungen für Java-Bibliotheken bereitstellen, einschließlich Mono. Android. dll und Mono. Android. GoogleMaps. dll. Allerdings werden Bindungen nicht für jede mögliche Java-Bibliothek bereitgestellt, und die bereitgestellten Bindungen binden möglicherweise nicht alle Java-Typen und-Member. Um ungebundene Java-Typen und-Member zu verwenden, kann die Java Native Interface (JNI) verwendet werden. In diesem Artikel wird veranschaulicht, wie jni verwendet wird, um mit Java-Typen und-Membern von xamarin. Android-Anwendungen zu interagieren._
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Es ist nicht immer erforderlich, einen verwalteten Callable Wrapper (MCW) zum Aufrufen von Java-Code zu erstellen. In vielen Fällen ist "Inline"-jni durchaus akzeptabel und nützlich für die einmalige Verwendung ungebundener Java-Member. Es ist häufig einfacher, JNI zu verwenden, um eine einzelne Methode in einer Java-Klasse aufzurufen, als eine gesamte jar-Bindung zu generieren.
 
@@ -34,7 +34,7 @@ In diesem Dokument wird Folgendes erläutert:
 - So machen Sie virtuelle Methoden verfügbar, um das Überschreiben von verwaltetem Code zuzulassen.
 - Verfügbar machen von Schnittstellen.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Jni ist in jeder Version von xamarin. Android verfügbar, die durch den [Android. Runtime. jnienv-Namespace](xref:Android.Runtime.JNIEnv)verfügbar gemacht wird.
 Zum Binden von Java-Typen und-Schnittstellen müssen Sie xamarin. Android 4,0 oder höher verwenden.
@@ -59,7 +59,7 @@ Wenn Android-Code eine virtuelle oder Schnittstellen Methode ausführen muss, di
 
 Android Callable Wrapper werden während des [Buildprozesses](~/android/deploy-test/building-apps/build-process.md)durch das **monodroid. exe** -Programm generiert und für alle Typen generiert, die (direkt oder indirekt) [java. lang. Object](xref:Java.Lang.Object)erben.
 
-### <a name="implementing-interfaces"></a>Implementieren von Schnittsellen
+### <a name="implementing-interfaces"></a>Implementieren von Schnittstellen
 
 Es gibt Zeiten, in denen Sie möglicherweise eine Android-Schnittstelle implementieren müssen (z. b [. Android. Content. icomponentcallbacks](xref:Android.Content.IComponentCallbacks)).
 
@@ -77,7 +77,7 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-### <a name="implementation-details"></a>Implementierungsdetails
+### <a name="implementation-details"></a>Details zur Implementierung
 
 *Der Rest dieses Artikels enthält Implementierungsdetails, die sich ohne vorherige Ankündigung ändern* können (und wird hier nur hier vorgestellt, da Entwickler möglicherweise neugierig sind, was im Hintergrund passiert).
 
@@ -393,7 +393,7 @@ public Integer (int value)
 }
 ```
 
-Die [jnienv. kreatabstance](xref:Android.Runtime.JNIEnv.CreateInstance*) -Methoden sind Hilfsprogramme zum Durchführen einer `JNIEnv.FindClass`, `JNIEnv.GetMethodID`, `JNIEnv.NewObject`und `JNIEnv.DeleteGlobalReference` für den Wert, der von `JNIEnv.FindClass`zurückgegeben wird. Nähere Informationen finden Sie im nächsten Abschnitt.
+Die [jnienv. kreatabstance](xref:Android.Runtime.JNIEnv.CreateInstance*) -Methoden sind Hilfsprogramme zum Durchführen einer `JNIEnv.FindClass`, `JNIEnv.GetMethodID`, `JNIEnv.NewObject`und `JNIEnv.DeleteGlobalReference` für den Wert, der von `JNIEnv.FindClass`zurückgegeben wird. Weitere Details finden Sie im nächsten Abschnitt.
 
 <a name="_Supporting_Inheritance,_Interfaces_1" />
 
@@ -665,7 +665,7 @@ Beim Schreiben eines Typs, der mit den folgenden Kriterien übereinstimmt:
 
 1. Hat ein benutzerdefiniertes `[Register]`-Attribut
 
-1. `RegisterAttribute.DoNotGenerateAcw` ist gleich `true`.
+1. `RegisterAttribute.DoNotGenerateAcw` ist `true`.
 
 Bei der GC-Interaktion darf der Typ *nicht* über Felder verfügen, die zur Laufzeit auf eine `Java.Lang.Object` oder `Java.Lang.Object` Unterklasse verweisen können. Beispielsweise sind Felder vom Typ `System.Object` und alle Schnittstellentypen nicht zulässig. Typen, die nicht auf `Java.Lang.Object` Instanzen verweisen können, sind zulässig, z. b. `System.String` und `List<int>`. Diese Einschränkung besteht darin, eine vorzeitige Objekt Auflistung durch die GC zu verhindern.
 
@@ -1034,7 +1034,7 @@ Der Typ `T` muss die folgenden Anforderungen erfüllen:
 
 1. `T` muss ein Verweistyp sein.
 
-1. `T` müssen die `IJavaObject`-Schnittstelle implementieren.
+1. `T` muss die `IJavaObject`-Schnittstelle implementieren.
 
 1. Wenn `T` keine abstrakte Klasse oder Schnittstelle ist, müssen `T` einen Konstruktor mit den Parametertypen `(IntPtr,
     JniHandleOwnership)` bereitstellen.
@@ -1314,9 +1314,9 @@ Im Allgemeinen wird *dringend* empfohlen, den `javap`-Befehl zu verwenden, um jn
 Jni-Typverweise unterscheiden sich von Java-Typverweisen. Sie können keine voll qualifizierten Java-Typnamen (z. b. `java.lang.String` mit JNI) verwenden. stattdessen müssen Sie je nach Kontext die jni-Variationen `"java/lang/String"` oder `"Ljava/lang/String;"`verwenden. Weitere Informationen finden Sie weiter unten.
 Es gibt vier Typen von jni-Typverweisen:
 
-- **built-in**
-- **simplified**
-- **Typ**
+- **integriert**
+- **einfach**
+- **type**
 - **array**
 
 ### <a name="built-in-type-references"></a>Integrierte Typverweise
@@ -1460,7 +1460,7 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 Außerdem wurden alle jni-Funktionen geändert, indem der `JNIEnv*`-Parameter entfernt wurde, der in jeder jni-Funktion vorhanden ist.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Der direkte Umgang mit jni ist ein schreckliches Verfahren, das bei allen Kosten vermieden werden sollte. Leider ist dies nicht immer vermeidbar. hoffentlich erhalten Sie in diesem Handbuch einige Unterstützung, wenn Sie die ungebundenen Java-Fälle mit Mono für Android erreichen.
 

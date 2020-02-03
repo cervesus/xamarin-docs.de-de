@@ -172,15 +172,15 @@ Jeder Schlüssel hat den folgenden Typ und Bedeutung:
 - **Nsallowsarbitraryloads** (`Boolean`): Wenn `YES` ATS für jede Domäne deaktiviert werden, die in `NSExceptionDomains`**nicht** aufgeführt ist. Bei aufgelisteten Domänen werden die angegebenen Sicherheitseinstellungen verwendet.
 - **Nsallowsarbitraryloadsinwebcontent** (`Boolean`): Wenn `YES` das ordnungsgemäße Laden von Webseiten ermöglicht, während der Apple-Transport Sicherheitsschutz (ATS) weiterhin für den Rest der App aktiviert ist.
 - **Nsexceptiondomains** (`Dictionary`): eine Auflistung von Domänen und die Sicherheitseinstellungen, die von ATS für eine bestimmte Domäne verwendet werden sollen.
-- **\<Domain-Name-for-Exception-As-String >** (`Dictionary`): eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`) angezeigt wird.
+- **\<Domain-Name-for-Exception-As-String >** (`Dictionary`): eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`).
 - **Nsexceptionminimumtlsversion** (`String`): die minimale TLS-Version ist entweder `TLSv1.0`, `TLSv1.1` oder `TLSv1.2` (Standardeinstellung).
-- **Nsexceptionrequirements sforwardgeheimnis** (`Boolean`): Wenn `NO` die Domäne keine Chiffre mit vorwärts Sicherheit verwenden muss. Der Standardwert ist `YES`sein.
-- **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `NO` (the default) all communications with this domain must be in the `HTTPS` protocol.
-- **Nsrequirements scertificatetransparenz** (`Boolean`): Wenn `YES` der Secure Sockets Layer der Domäne (SSL) gültige Transparenz Daten enthalten muss. Der Standardwert ist `NO`sein.
-- **Nsincludessubdomains** (`Boolean`): Wenn `YES` diese Einstellungen alle Unterdomänen dieser Domäne überschreiben. Der Standardwert ist `NO`sein.
+- **Nsexceptionrequirements sforwardgeheimnis** (`Boolean`): Wenn `NO` die Domäne keine Chiffre mit vorwärts Sicherheit verwenden muss. Standardwert: `YES`.
+- **Nsexceptionallowsinsecurehttploads** (`Boolean`): Wenn `NO` (Standardeinstellung), muss die gesamte Kommunikation mit dieser Domäne im `HTTPS` Protokoll vorliegen.
+- **Nsrequirements scertificatetransparenz** (`Boolean`): Wenn `YES` der Secure Sockets Layer der Domäne (SSL) gültige Transparenz Daten enthalten muss. Standardwert: `NO`.
+- **Nsincludessubdomains** (`Boolean`): Wenn `YES` diese Einstellungen alle Unterdomänen dieser Domäne überschreiben. Standardwert: `NO`.
 - **Nsthirdpartyexceptionminimumtlsversion** (`String`): die TLS-Version, die verwendet wird, wenn es sich bei der Domäne um einen Drittanbieter Dienst außerhalb der Kontrolle des Entwicklers handelt.
 - **Nsthirdpartyexceptionrequirements sforwardgeheimnis** (`Boolean`): Wenn `YES` einer Drittanbieter Domäne eine Weiterleitung von Bedingungen erfordert.
-- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `YES` the ATS will allow non-secure communication with 3rd party domains.
+- **Nsthirdpartyexceptionallowsinsecurehttploads** (`Boolean`): Wenn `YES` werden die ATS eine nicht sichere Kommunikation mit Domänen von Drittanbietern zulassen.
 
 <a name="optout" />
 
@@ -239,18 +239,18 @@ Doppelklicken Sie in Visual Studio für Mac auf die `Info.plist` Datei im **Proj
 [![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> Wenn Ihre Anwendung eine Verbindung mit einer unsicheren Website erfordert, sollten Sie die Domäne **immer** als Ausnahme mithilfe von `NSExceptionDomains` eingeben, anstatt sie vollständig mithilfe `NSAllowsArbitraryLoads`zu deaktivieren. `NSAllowsArbitraryLoads` sollte nur im Notfall extrem verwendet werden.
+> Wenn Ihre Anwendung eine Verbindung mit einer unsicheren Website erfordert, sollten Sie die Domäne **immer** als Ausnahme mithilfe von `NSExceptionDomains` eingeben, anstatt sie vollständig mithilfe `NSAllowsArbitraryLoads`zu deaktivieren. `NSAllowsArbitraryLoads` sollten nur in extrem Notfällen verwendet werden.
 
 Die Deaktivierung von ATS sollte _nur_ als letztes Mittel verwendet werden, wenn der Wechsel zu sicheren Verbindungen entweder nicht verfügbar oder nicht praktikabel ist.
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden App-Transport Sicherheit (app Transport Security, ATS) vorgestellt und beschrieben, wie die sichere Kommunikation mit dem Internet erzwungen wird. Zunächst haben wir die Änderungen erläutert, die für eine xamarin. IOS-app unter IOS 9 erforderlich sind. Anschließend haben wir die Kontrolle über die Features und Optionen von ATS behandelt. Schließlich haben wir uns mit der Entscheidung in ihrer xamarin. IOS-App abgemeldet.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [IOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

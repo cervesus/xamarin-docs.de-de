@@ -40,7 +40,7 @@ Entwickler, die mit XNA vertraut sind, sind bereits mit der Syntax von monogame 
 - [Teil 1 – Erstellen eines plattformübergreifenden monogame-Projekts](~/graphics-games/monogame/introduction/part1.md)
 - [Teil 2 – Implementieren von walkinggame](~/graphics-games/monogame/introduction/part2.md)
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Walkinggame monogame-Projekt (Beispiel)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
 - [Monogame Android auf nuget](https://www.nuget.org/packages/MonoGame.Framework.Android/)

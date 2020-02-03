@@ -20,7 +20,7 @@ Das automatische Layout (auch als "Adaptive Layout" bezeichnet) ist ein reaktion
 
 In dieser Anleitung werden Einschränkungen eingeführt und erläutert, wie Sie im xamarin IOS-Designer verwendet werden. Dieses Handbuch behandelt nicht Programm gesteuert das Arbeiten mit Einschränkungen. Informationen zur programmgesteuerten Verwendung des automatischen Layouts finden Sie in der [Apple-Dokumentation](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html).
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Der Xamarin Designer für IOS ist in Visual Studio für Mac in Visual Studio 2017 und höher unter Windows verfügbar.
 
@@ -224,11 +224,11 @@ UIView.CommitAnimations();
 
 Der Schlüssel hier ist das Aufrufen der `LayoutIfNeeded`-Methode der übergeordneten Sicht innerhalb des Animations Blocks. Dadurch wird die Ansicht aufgefordert, jeden "Frame" der animierten Position oder Größenänderung zu zeichnen. Ohne diese Zeile würde die Ansicht einfach an die endgültige Version andocken, ohne eine Animation durchlaufen zu müssen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Handbuch wurden das automatische IOS-Layout (oder das adaptive Layout) und das Konzept der Einschränkungen als mathematische Darstellungen von Beziehungen zwischen Elementen auf der Entwurfs Oberfläche vorgestellt. Es wurde beschrieben, wie Sie das automatische Layout im IOS-Designer aktivieren, mit der **Einschränkungs Symbolleiste**arbeiten und Einschränkungen einzeln auf der Entwurfs Oberfläche bearbeiten. Im nächsten Schritt wurde erläutert, wie drei häufige Einschränkungs Probleme behoben werden. Schließlich wurde gezeigt, wie Einschränkungen im Code geändert werden.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Einführung in Storyboards](~/ios/user-interface/storyboards/index.md)
 - [Exemplarische Vorgehensweise für Steuerelemente für IOS](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)

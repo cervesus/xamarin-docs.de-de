@@ -76,6 +76,6 @@ Ein umfassendes Codebeispiel, das den Android-Strahl verwendet, der im folgenden
 
 [![Beispiel-Screenshots aus der Android-Strahl-Demo](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Android-Strahl-Demo (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)

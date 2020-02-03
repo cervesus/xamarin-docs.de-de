@@ -15,7 +15,7 @@ ms.locfileid: "76723620"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Teil 6: Testen und App Store-Genehmigungen
 
-## <a name="testing"></a>Test
+## <a name="testing"></a>Testen
 
 Viele apps (sogar Android-Apps in einigen Filialen) müssen einen Genehmigungsprozess durchlaufen, bevor Sie veröffentlicht werden. Daher ist das Testen wichtig, um sicherzustellen, dass Ihre APP auf den Markt kommt (lassen Sie sich allein mit ihren Kunden erfolgreich). Das Testen kann viele Formen annehmen, von Komponententests auf Entwicklerebene bis hin zur Verwaltung von Beta-Tests auf einer Vielzahl von Hardware.
 
@@ -48,7 +48,7 @@ Es gibt eine Reihe von Diensten, mit denen Sie diese Probleme beheben können, i
 
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) kann verwendet werden, um automatisierte Test Skripts für Benutzeroberflächen zu erstellen, die lokal ausgeführt oder in [App Center Test](https://docs.microsoft.com/appcenter/test-cloud/)hochgeladen werden können.
 
-## <a name="unit-testing"></a>Unittests
+## <a name="unit-testing"></a>Komponententests
 
 ### <a name="touchunit"></a>Touch.Unit
 

@@ -17,7 +17,7 @@ ms.locfileid: "76725440"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Tipps zur Problembehandlung bei xamarin. Mac
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Manchmal bleiben wir bei der Arbeit an einem Projekt auf dem Weg, entweder wenn Sie nicht in der Lage sind, eine API so zu arbeiten, wie wir möchten, oder wenn Sie versuchen, einen Fehler zu umgehen. Unser Ziel von xamarin besteht darin, dass Sie Ihre mobilen und Desktop Anwendungen erfolgreich schreiben können. Wir haben einige Ressourcen bereitgestellt, die Ihnen helfen.
 
@@ -118,7 +118,7 @@ Die Community von Entwicklern, die xamarin-Produkte verwenden, ist erstaunlich, 
 
 ## <a name="filing-a-bug"></a>Einreichen eines Fehlers
 
-Ihr Feedback ist für uns wichtig. Wenn Sie Probleme mit xamarin. Mac finden:
+Ihr Feedback ist uns sehr wichtig. Wenn Sie Probleme mit xamarin. Mac finden:
 
 - Durchsuchen Sie das [Repository „Issues“](https://github.com/xamarin/xamarin-macios/issues).
 - Vor der Umstellung auf das GitHub-Repository „Issues“ wurden Xamarin-Probleme auf [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) nachverfolgt. Suchen Sie dort nach übereinstimmenden Problemen.

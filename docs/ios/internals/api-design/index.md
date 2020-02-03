@@ -22,7 +22,7 @@ Im Kern von xamarin. IOS gibt es eine Interop-Engine, die die C# Welt mit der Zi
 
 Die Laufzeit auf niedriger Ebene für die Kommunikation mit dem Ziel-C-Code befindet sich in [MonoTouch. objcruntime](#objcruntime). Darüber hinaus werden Bindungen für [Foundation](#foundation), CoreFoundation und [UIKit](#uikit) bereitgestellt.
 
-## <a name="design-principles"></a>Entwurfs Prinzipien
+## <a name="design-principles"></a>Entwurfsprinzipien
 
 Dies sind einige unserer Entwurfs Prinzipien für die xamarin. IOS-Bindungen (Sie gelten auch für xamarin. Mac, Mono-Bindungen für Ziel-C unter macOS):
 
@@ -190,7 +190,7 @@ Preserveattribute ist ein benutzerdefiniertes Attribut, das verwendet wird, um m
 
 Jeder Member, der nicht statisch durch die Anwendung verknüpft ist, muss entfernt werden. Daher wird dieses Attribut verwendet, um Member zu kennzeichnen, auf die nicht statisch verwiesen wird, die aber noch von Ihrer Anwendung benötigt werden.
 
-Wenn Sie beispielsweise Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten. Wenn Sie die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
+Wenn Sie beispielsweise Typen dynamisch instanziieren, sollten Sie den Standardkonstruktor Ihrer Typen beibehalten. Wenn Sei die XML-Serialisierung verwenden, sollten Sie die Eigenschaften Ihrer Typen beibehalten.
 
 Sie können dieses Attribut auf alle Member eines Typs oder auf den Typ selbst anwenden. Wenn Sie den gesamten Typ beibehalten möchten, können Sie die Syntax [Preserve (AllMembers = true)] für den Typ verwenden.
 
@@ -474,7 +474,7 @@ Die C# Namen für die Methoden sind nicht wichtig. alles, was wichtig ist, sind 
 
 Wenn Sie diese Art der Programmierung verwenden, stellen Sie C# sicher, dass die Parameter den tatsächlichen Typen entsprechen, die vom Lauf Zeit Modul übergeben werden.
 
-#### <a name="models"></a>Models
+#### <a name="models"></a>Modelle
 
 In UIKit-Speichereinrichtungen oder in Respondern, die mithilfe von Hilfsklassen implementiert werden, werden diese in der Regel im Ziel-C-Code als Delegaten bezeichnet und als Protokolle implementiert.
 
@@ -573,7 +573,7 @@ Gehen Sie dann wie folgt vor, um den ViewController aus einer NIB-Datei zu laden
 var controller = new MyViewController ("HelloWorld", NSBundle.MainBundle, this);
 ```
 
-Dadurch wird die Benutzeroberfläche aus dem NIB geladen. Um jetzt auf die Outlets zuzugreifen, ist es erforderlich, die Laufzeit darüber zu informieren, dass wir auf Sie zugreifen möchten. Zu diesem Zweck muss die `UIViewController` Unterklasse die Eigenschaften deklarieren und Sie mit dem [Connect]-Attribut versehen. Und zwar so:
+Dadurch wird die Benutzeroberfläche aus dem NIB geladen. Um jetzt auf die Outlets zuzugreifen, ist es erforderlich, die Laufzeit darüber zu informieren, dass wir auf Sie zugreifen möchten. Zu diesem Zweck muss die `UIViewController` Unterklasse die Eigenschaften deklarieren und Sie mit dem [Connect]-Attribut versehen. Dies sieht folgendermaßen aus:
 
 ```csharp
 [Connect]
@@ -657,7 +657,7 @@ Sowohl unter IOS als auch OS X können Entwickler Benachrichtigungen abonnieren,
 
 Sowohl in xamarin. IOS als auch in xamarin. Mac werden die Schlüssel für die verschiedenen Benachrichtigungen in der Klasse gehostet, die die Benachrichtigungen auslöst. Beispielsweise werden die Benachrichtigungen, die vom `UIMenuController` ausgelöst werden, als `static NSString` Eigenschaften in den `UIMenuController`-Klassen gehostet, die mit dem Namen "Notification" enden.
 
-### <a name="memory-management"></a>Speicherverwaltung
+### <a name="memory-management"></a>Arbeitsspeicherverwaltung
 
 Xamarin. IOS verfügt über eine Garbage Collector, die die Freigabe von Ressourcen für Sie übernimmt, wenn Sie nicht mehr verwendet werden. Zusätzlich zum Garbage Collector werden alle Objekte, die von abgeleitet sind, `NSObject` die `System.IDisposable`-Schnittstelle implementieren.
 
@@ -707,6 +707,6 @@ Ein Nebeneffekt der automatischen Speicherverwaltung besteht darin, dass die GC 
 
 Wenn Sie für Ihre Objekte keinen Verweis in den statischen Variablen oder Instanzvariablen beibehalten, ruft Mono die verwerfen ()-Methode auf, und Sie geben den Verweis auf das Objekt frei. Da dies möglicherweise der einzige ausstehende Verweis ist, wird das-Objekt von der Ziel-C-Laufzeit zerstört.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Bindungs Felder](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_Fields)
