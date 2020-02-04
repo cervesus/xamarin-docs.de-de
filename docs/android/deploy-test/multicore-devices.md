@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: 1141b96151df0adda755b7c6d60019c18825cc76
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e27e73ac2c5164fa3431c8892b21a71c32fcd8ef
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028017"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724014"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Multi-Core-Geräte und Xamarin.Android
 
@@ -91,17 +91,17 @@ Das APK-Format (Android Application Package) ist das Dateiformat, das den gesamt
 
 Kurze Beschreibung des Inhalts der `.apk`-Datei:
 
-- **AndroidManifest.xml** &ndash; Dies ist die `AndroidManifest.xml`-Datei im XML-Binärformat.
+- **AndroidManifest.xml:** Dies ist die `AndroidManifest.xml`-Datei im XML-Binärformat.
 
-- **classes.dex** &ndash; Enthält den Anwendungscode, der in das `dex`-Dateiformat kompiliert wurde, das von der Android-Runtime-VM verwendet wird.
+- **classes.dex:** Enthält den Anwendungscode, der in das `dex`-Dateiformat kompiliert wurde, das von der Android-Runtime-VM verwendet wird.
 
-- **resources.arsc** &ndash; Diese Datei enthält alle vorkompilierten Ressourcen für die Anwendung.
+- **resources.arsc:** Diese Datei enthält alle vorkompilierten Ressourcen für die Anwendung.
 
-- **lib** &ndash; Dieses Verzeichnis enthält den kompilierten Code für jede ABI. Es enthält einen Unterordner für jede ABI, die im vorherigen Abschnitt beschrieben wurde. Im obigen Screenshot besitzt die fragliche `.apk`-Datei native Bibliotheken für `armeabi-v7a` und für `x86`.
+- **lib:** Dieses Verzeichnis enthält den kompilierten Code für jede ABI. Es enthält einen Unterordner für jede ABI, die im vorherigen Abschnitt beschrieben wurde. Im obigen Screenshot besitzt die fragliche `.apk`-Datei native Bibliotheken für `armeabi-v7a` und für `x86`.
 
-- **META-INF** &ndash; Dieses Verzeichnis (wenn vorhanden) wird zum Speichern von Signaturinformationen, Paket- und Erweiterungskonfigurationsdaten verwendet.
+- **META-INF:** Dieses Verzeichnis (wenn vorhanden) wird zum Speichern von Signaturinformationen sowie Paket- und Erweiterungskonfigurationsdaten verwendet.
 
-- **res** &ndash; Dieses Verzeichnis enthält die Ressourcen, die nicht in `resources.arsc` kompiliert wurden.
+- **res:** Dieses Verzeichnis enthält die Ressourcen, die nicht in `resources.arsc` kompiliert wurden.
 
 > [!NOTE]
 > Die Datei `libmonodroid.so` ist die native Bibliothek, die von allen Xamarin.Android-Anwendungen verlangt wird.
@@ -110,9 +110,9 @@ Kurze Beschreibung des Inhalts der `.apk`-Datei:
 
 Jedes Android-Gerät unterstützt die Ausführung von nativem Code in bis zu zwei ABIs:
 
-- **In der „primären“ ABI** &ndash; Dies entspricht dem Computercode, der im Systemimage verwendet wird.
+- **Die „primäre“ ABI:** Dies entspricht dem Computercode, der im Systemimage verwendet wird.
 
-- **In einer „sekundären“ ABI** &ndash; Dies ist eine optionale ABI, die auch vom Systemimage unterstützt wird.
+- **Die „sekundäre“ ABI:** Dies ist eine optionale ABI, die auch vom Systemimage unterstützt wird.
 
 Beispielsweise verfügt ein typisches ARMv5TE-Gerät nur über eine primäre ABI von `armeabi`, während ein ARMv7-Gerät eine primäre ABI von `armeabi-v7a` und eine sekundäre ABI von `armeabi` angeben würde. Ein typisches x86-Gerät würde nur eine primäre ABI von `x86` angeben.
 
@@ -253,7 +253,6 @@ Anschließend wurde erläutert, wie die ABI-Unterstützung in einer Xamarin.Andr
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [ABI für die ARM-Architektur (PDF-Datei)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [Problem 9089: Nexus One: Es werden KEINE nativen Bibliotheken aus armeabi geladen, wenn mindestens eine Bibliothek unter armeabi-v7a vorhanden ist.](https://code.google.com/p/android/issues/detail?id=9089)
 - [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk (Problem 24321: Galaxy Nexus 4.0.2 verwendet nativen armeabi-Code, wenn armeabi und armeabi-v7a in der APK-Datei enthalten sind)](https://code.google.com/p/android/issues/detail?id=25321).

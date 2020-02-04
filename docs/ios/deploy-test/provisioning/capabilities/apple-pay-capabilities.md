@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 4406ff3ce67ddf4787d155794258faa1a172eec1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 54fcc3bb683f6ca4515d807da5c3345cf71a2df3
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016949"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725240"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Apple Pay-Funktionen in Xamarin.iOS
 
@@ -34,91 +34,91 @@ Die folgenden Schritte führen Sie durch die Erstellung der oben genannten Eleme
 
 Eine Händler-ID wird verwendet, um Apple Pay wissen zu lassen, dass Sie Zahlungen akzeptieren können. Sie wird an PassKits `PaymentRequest`-Methode übergeben und in der Apple Pay-Berechtigung verwendet:
 
-1. Navigieren Sie in das [Apple Developer Center](https://developer.apple.com/account/), und navigieren Sie zum Abschnitt „Zertifikate“, „Bezeichner“ und „Profile“: 
+1. Navigieren Sie in das [Apple Developer Center](https://developer.apple.com/account/), und navigieren Sie zum Abschnitt „Zertifikate“, „Bezeichner“ und „Profile“:
 
     ![Auswahl der Händler-ID im Developer Center](apple-pay-capabilities-images/image57.png)
 
 2. Wählen Sie unter **Bezeichner** die **Händler-IDs** aus, und wählen Sie dann **+** aus, um eine neue Händler-ID zu erstellen:  
 
 3. Füllen Sie das Formular, wie unten angegeben, mit einer neuen Beschreibung und einem Bezeichner aus. Durch die Beschreibung kann die ID von Ihnen identifiziert und später geändert werden. Der Bezeichner muss für Sie eindeutig sein, und er muss mit der Zeichenfolge  `merchant` beginnen. Apple empfiehlt, dass der Bezeichner im folgenden Format dargestellt wird: `merchant.com.[Your-App-Name]`:
-   
+
     ![Details der neuen Händler-ID](apple-pay-capabilities-images/image58.png)
 
 4. Bestätigen Sie die Details, und  **Registrieren**  Sie Ihre ID: 
-    
+
     ![Bestätigung der Händler-ID](apple-pay-capabilities-images/image59.png)
 
 <a name="appid" />
 
 ## <a name="create-an-app-id-with-the-apple-pay-capability-that-includes-the-merchant-id"></a>Erstellen einer App-ID mit der Apple Pay-Funktion, die die Händler-ID enthält
 
-1. Klicken Sie im [Developer Center](https://developer.apple.com/account/) auf die **App-IDs** unter **Bezeichner**: 
-    
+1. Klicken Sie im [Developer Center](https://developer.apple.com/account/) auf die **App-IDs** unter **Bezeichner**:
+
     ![Auswählen der App-ID im Developer Center](apple-pay-capabilities-images/image6.png)
 
-2. Wählen Sie die **+** -Schaltfläche zum Hinzufügen einer neuen App-ID aus: 
-   
+2. Wählen Sie die **+** -Schaltfläche zum Hinzufügen einer neuen App-ID aus:
+
     ![Hinzufügen einer neuen App-ID-Schaltfläche](apple-pay-capabilities-images/image27.png)
 
 3. Geben Sie einen Namen für die App-ID und eine explizite App-ID an:    
-   
+
     ![Bildschirm „App-ID-Details“](apple-pay-capabilities-images/image35.png)
 
 4. Wählen Sie unter App-Dienste Apple Pay aus:    
-  
+
     ![App-Dienste Apple Pay](apple-pay-capabilities-images/image36.png)
 
-5. Wählen Sie **Continue** (Weiter) und dann **Register** (Registrieren) aus. Beachten Sie, dass Apple Pay auf dem Bestätigungsbildschirm als konfigurierbar aktiviert ist und ein gelbes Symbol angezeigt wird: 
-   
+5. Wählen Sie **Continue** (Weiter) und dann **Register** (Registrieren) aus. Beachten Sie, dass Apple Pay auf dem Bestätigungsbildschirm als konfigurierbar aktiviert ist und ein gelbes Symbol angezeigt wird:
+
     ![Bestätigungsbildschirm für Apple Pay](apple-pay-capabilities-images/image37.png)
 
 6. Wechseln Sie zurück zur Liste der App-IDs, und wählen Sie diejenige aus, die Sie gerade erstellt haben:  
-   
+
     ![Bearbeiten der App-ID](apple-pay-capabilities-images/image38.png)
 
 7. Führen Sie einen Bildlauf zum unteren Rand dieses erweiterten Abschnitts aus, und klicken Sie auf **Bearbeiten**.
 8. Scrollen Sie nach unten zu Apple Pay, und klicken Sie auf die Schaltfläche **Bearbeiten**:  
-    
+
     ![Bearbeiten der Details für Apple Pay-App-ID](apple-pay-capabilities-images/image39.png)
 
 9. Wählen Sie die Händler-ID aus, die mit dieser App-ID verwendet wird, und klicken Sie auf **Fortfahren**:  
-    
+
     ![Auswählen der Händler-ID für die App-ID](apple-pay-capabilities-images/image40.png)
 
 10. Bestätigen Sie die Zuweisungen der Händler-ID, und klicken Sie auf **Zuweisen**:  
-    
+
     ![Bestätigungsbildschirm](apple-pay-capabilities-images/image41.png)
 
-Diese App-ID kann jetzt zum Generieren oder erneuten Generieren eines neuen Bereitstellungsprofils verwendet werden (siehe die Erläuterung in der Anleitung [Arbeiten mit Funktionen](~/ios/deploy-test/provisioning/capabilities/index.md)). 
+Diese App-ID kann jetzt zum Generieren oder erneuten Generieren eines neuen Bereitstellungsprofils verwendet werden (siehe die Erläuterung in der Anleitung [Arbeiten mit Funktionen](~/ios/deploy-test/provisioning/capabilities/index.md)).
 
 <a name="certificate" />
 
 ## <a name="create-a-certificate-for-your-merchant-id"></a>Erstellen eines Zertifikats für die Händler-ID
 
-Apple erfordert ein Zertifikat zum Verschlüsseln vertraulicher Daten, die der Transaktion zugeordnet sind. Jede erstellte Händler-ID muss über ein eigenes Zertifikat verfügen. 
+Apple erfordert ein Zertifikat zum Verschlüsseln vertraulicher Daten, die der Transaktion zugeordnet sind. Jede erstellte Händler-ID muss über ein eigenes Zertifikat verfügen.
 
 Führen Sie die folgenden Schritte aus, um ein Zertifikat zu erstellen:
 
-1. Wählen Sie die Händler-ID aus, die oben erstellt wurde, und drücken Sie **Bearbeiten**: 
-    
+1. Wählen Sie die Händler-ID aus, die oben erstellt wurde, und drücken Sie **Bearbeiten**:
+
     ![Bearbeiten des Händler-ID-Dialogfelds](apple-pay-capabilities-images/image42.png)
 
-2. Klicken Sie auf dem iOS-Bildschirm der Einstellungen der Händler-ID auf **Zertifikat erstellen**: 
-   
+2. Klicken Sie auf dem iOS-Bildschirm der Einstellungen der Händler-ID auf **Zertifikat erstellen**:
+
     ![Erstellen des Zahlungsverarbeitungszertifikats](apple-pay-capabilities-images/image43.png)
 
-3. Beantworten Sie die folgende Frage: 
+3. Beantworten Sie die folgende Frage:
 
     ![Angabe, ob Zahlungen ausschließlich in China verarbeitet werden](apple-pay-capabilities-images/image44.png)
 
-4. An diesem Punkt werden Sie aufgefordert, eine _Zertifikatsignieranforderung_ zu erstellen: 
+4. An diesem Punkt werden Sie aufgefordert, eine _Zertifikatsignieranforderung_ zu erstellen:
 
     ![Erstellen einer Zertifikatsignieranforderung (CSR)](apple-pay-capabilities-images/image45.png)
-    
-    > [!IMPORTANT]
-    > Bei Verwendung eines Zahlungsanbieters für Apple Pay, wie JudoPay oder Stripe, können Sie eine ordnungsgemäß formatierte CSR anfordern, die Sie an diesem Punkt verwenden können. Informationen zu dieser Anforderung befinden sich auf den Websites [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) und [Stripe](https://stripe.com/docs/apple-pay/apps#csr). Führen Sie die Schritte 5 bis 8 unten aus, um Ihre eigene CSR zu erstellen. Sobald Sie über eine CSR verfügen, fahren Sie mit Schritt 9 fort.
 
-5. Öffnen Sie die Anwendung „Keychain-Zugriff“, und navigieren Sie zu **Keychain-Zugriff > Certificate Assistant (Zertifikatassistent) > Request a Certificate from a Certificate Authority (Ein Zertifikat von einer Zertifizierungsstelle anfordern):** 
+    > [!IMPORTANT]
+    > Bei Verwendung eines Zahlungsanbieters für Apple Pay, wie JudoPay oder Stripe, können Sie eine ordnungsgemäß formatierte CSR anfordern, die Sie an diesem Punkt verwenden können. Informationen zu dieser Anforderung finden Sie auf der [Stripe](https://stripe.com/docs/apple-pay/apps#csr)-Website. Führen Sie die Schritte 5 bis 8 unten aus, um Ihre eigene CSR zu erstellen. Sobald Sie über eine CSR verfügen, fahren Sie mit Schritt 9 fort.
+
+5. Öffnen Sie die Anwendung „Keychain-Zugriff“, und navigieren Sie zu **Keychain-Zugriff > Certificate Assistant (Zertifikatassistent) > Request a Certificate from a Certificate Authority (Ein Zertifikat von einer Zertifizierungsstelle anfordern):**
 
      ![Erstellen einer Zertifikatsignieranforderung mithilfe einer Keychain auf einem Mac](apple-pay-capabilities-images/image46.png)
 
@@ -126,7 +126,7 @@ Führen Sie die folgenden Schritte aus, um ein Zertifikat zu erstellen:
 
      ![Dialogfeld „Zertifikatinformationen“](apple-pay-capabilities-images/image47.png)
 
-7. Speichern Sie die CSR an einem geeigneten Speicherort: 
+7. Speichern Sie die CSR an einem geeigneten Speicherort:
 
      ![Speichern der CSR auf einem lokalen Computer](apple-pay-capabilities-images/image48.png)
 
@@ -134,11 +134,11 @@ Führen Sie die folgenden Schritte aus, um ein Zertifikat zu erstellen:
 
      ![Dialogfeld „Schlüsselpaarinformationen angeben“](apple-pay-capabilities-images/image49.png)
 
-9. Klicken Sie im Developer Center auf **Fortfahren**, um die CSR hochzuladen: 
+9. Klicken Sie im Developer Center auf **Fortfahren**, um die CSR hochzuladen:
 
      ![Hochladen von CSR in Developer Center](apple-pay-capabilities-images/image50.png)
 
-10. Klicken Sie auf **Datei auswählen...** , um die CSR auszuwählen, und auf **Fortfahren**, um sie in das Entwicklerportal hochzuladen: 
+10. Klicken Sie auf **Datei auswählen...** , um die CSR auszuwählen, und auf **Fortfahren**, um sie in das Entwicklerportal hochzuladen:
 
      ![Hochladen der CSR in Developer Center](apple-pay-capabilities-images/image51.png)
 

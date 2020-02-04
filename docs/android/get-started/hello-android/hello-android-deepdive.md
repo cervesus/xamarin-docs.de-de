@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 10a46c916654f8421dc5a9af93de3abbbae5e934
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028008"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724365"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: Ausführliche Erläuterungen
 
@@ -26,32 +26,32 @@ Dieser Leitfaden befasst sich mit folgenden Themen:
 
 ::: zone pivot="windows"
 
-- **Einführung in Visual Studio**: Einführung in Visual Studio und das Erstellen einer neuen Xamarin.Android-Anwendung
+- **Einführung in Visual Studio:** Einführung in Visual Studio und das Erstellen einer neuen Xamarin.Android-Anwendung
 
 - **Aufbau einer Xamarin.Android-Anwendung**: Überblick über die wesentlichen Bestandteile einer Xamarin.Android-Anwendung
 
-- **Grundlagen zu Apps und Architektur**: Einführung in Aktivitäten, das Android-Manifest und die Grundlagen der Android-Entwicklung
+- **Grundlagen zu Apps und Architektur:** Einführung in Aktivitäten, das Android-Manifest und die Grundlagen der Android-Entwicklung
 
-- **Benutzeroberfläche (User Interface, UI)** : Erstellen von Benutzeroberflächen mit dem Android Designer
+- **Benutzeroberfläche (User Interface, UI):** Erstellen von Benutzeroberflächen mit dem Android Designer
 
-- **Aktivitäten und Aktivitätslebenszyklus**: Eine Einführung in den Aktivitätslebenszyklus und das Schreiben der Benutzeroberfläche in Code
+- **Aktivitäten und Aktivitätslebenszyklus:** Eine Einführung in den Aktivitätslebenszyklus und das Schreiben der Benutzeroberfläche in Code
 
-- **Tests, Bereitstellung und Vollendung**: Fertigstellen der Anwendung mit Ratschlägen zu Tests, Bereitstellung, Erstellen von Grafiken usw.
+- **Tests, Bereitstellung und Vollendung:** Fertigstellen der Anwendung mit Ratschlägen zu Tests, Bereitstellung und Erstellen von Grafiken
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- **Einführung in Visual Studio für Mac**: Einführung in Visual Studio für Mac und das Erstellen einer neuen Xamarin.Android-Anwendung
+- **Einführung in Visual Studio für Mac:** Einführung in Visual Studio für Mac und das Erstellen einer neuen Xamarin.Android-Anwendung
 
-- **Aufbau einer Xamarin.Android-Anwendung**: Überblick über die wesentlichen Bestandteile einer Xamarin.Android-Anwendung
+- **Aufbau einer Xamarin.Android-Anwendung:** Überblick über die wesentlichen Bestandteile einer Xamarin.Android-Anwendung
 
-- **Grundlagen zu Apps und Architektur**: Einführung in Aktivitäten, das Android-Manifest und die Grundlagen der Android-Entwicklung
+- **Grundlagen zu Apps und Architektur:** Einführung in Aktivitäten, das Android-Manifest und die Grundlagen der Android-Entwicklung
 
-- **Benutzeroberfläche (User Interface, UI)** : Erstellen von Benutzeroberflächen mit dem Android Designer
+- **Benutzeroberfläche (User Interface, UI):** Erstellen von Benutzeroberflächen mit dem Android Designer
 
-- **Aktivitäten und Aktivitätslebenszyklus**: Eine Einführung in den Aktivitätslebenszyklus und das Schreiben der Benutzeroberfläche in Code
+- **Aktivitäten und Aktivitätslebenszyklus:** Eine Einführung in den Aktivitätslebenszyklus und das Schreiben der Benutzeroberfläche in Code
 
-- **Tests, Bereitstellung und Vollendung**: Fertigstellen der Anwendung mit Ratschlägen zu Tests, Bereitstellung, Erstellen von Grafiken usw.
+- **Tests, Bereitstellung und Vollendung:** Fertigstellen der Anwendung mit Ratschlägen zu Tests, Bereitstellung und Erstellen von Grafiken
 
 ::: zone-end
 
@@ -99,13 +99,13 @@ Eine Projektmappe namens **Phoneword** wurde erstellt. In dieser wurde das Andro
 
 Betrachten Sie die Elemente innerhalb des Projekts, um jeden Ordner und seinen Zweck zu sehen:
 
-- **Eigenschaften**: Enthält die Datei [AndroidManifest.xml](~/android/platform/android-manifest.md), die alle Anforderungen für die Xamarin.Android-Anwendung beschreibt, einschließlich des Namens, der Versionsnummer und der Berechtigungen. Der Ordner **Eigenschaften** enthält ebenfalls [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo), eine Metadatendatei der .NET-Assembly. Es wird empfohlen, diese Datei mit grundlegenden Informationen zu Ihrer Anwendung zu füllen.
+- **Eigenschaften:** Enthält die Datei [AndroidManifest.xml](~/android/platform/android-manifest.md), die alle Anforderungen für die Xamarin.Android-Anwendung beschreibt, einschließlich des Namens, der Versionsnummer und der Berechtigungen. Der Ordner **Eigenschaften** enthält ebenfalls [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo), eine Metadatendatei der .NET-Assembly. Es wird empfohlen, diese Datei mit grundlegenden Informationen zu Ihrer Anwendung zu füllen.
 
-- **Verweise**: Enthält die Assemblys, die zum Erstellen und Ausführen der Anwendung erforderlich sind. Wenn Sie das Verzeichnis „Verweise“ erweitern, werden Ihnen die Verweise zu .NET-Assemblys angezeigt, z.B. [System](xref:System), System.Core und [System.xml](xref:System.Xml), sowie ein Verweis zur Mono.Android-Assembly von Xamarin.
+- **Verweise:** Enthält die Assemblys, die zum Erstellen und Ausführen der Anwendung erforderlich sind. Wenn Sie das Verzeichnis „Verweise“ erweitern, werden Ihnen die Verweise zu .NET-Assemblys angezeigt, z.B. [System](xref:System), System.Core und [System.xml](xref:System.Xml), sowie ein Verweis zur Mono.Android-Assembly von Xamarin.
 
-- **Objekte**: Enthält die Dateien, die die Anwendung für die Ausführung benötigt, einschließlich Schriftarten, lokalen Datendateien und Textdateien. Auf die hier enthaltenen Dateien kann über die generierte `Assets`-Klasse zugegriffen werden. Weitere Informationen zu Android-Objekten finden Sie im Xamarin-Leitfaden[Using Android Assets (Verwenden von Android-Objekten)](~/android/app-fundamentals/resources-in-android/android-assets.md).
+- **Objekte:** Enthält die Dateien, die die Anwendung für die Ausführung benötigt, einschließlich Schriftarten, lokalen Datendateien und Textdateien. Auf die hier enthaltenen Dateien kann über die generierte `Assets`-Klasse zugegriffen werden. Weitere Informationen zu Android-Objekten finden Sie im Xamarin-Leitfaden[Using Android Assets (Verwenden von Android-Objekten)](~/android/app-fundamentals/resources-in-android/android-assets.md).
 
-- **Ressourcen**: Enthält Anwendungsressourcen wie Zeichenfolgen, Bilder und Layouts. Sie können auf diese Ressourcen im Code über die generierte `Resource`-Klasse zugreifen. Der Leitfaden [Android Resources (Android-Ressourcen)](~/android/app-fundamentals/resources-in-android/index.md) enthält weitere Informationen über das Verzeichnis **Ressourcen**. Die Anwendungsvorlage enthält ebenfalls einen kurzen Leitfaden zu Ressourcen in der Datei **AboutResources.txt**.
+- **Ressourcen:** Enthält Anwendungsressourcen wie Zeichenfolgen, Bilder und Layouts. Sie können auf diese Ressourcen im Code über die generierte `Resource`-Klasse zugreifen. Der Leitfaden [Android Resources (Android-Ressourcen)](~/android/app-fundamentals/resources-in-android/index.md) enthält weitere Informationen über das Verzeichnis **Ressourcen**. Die Anwendungsvorlage enthält ebenfalls einen kurzen Leitfaden zu Ressourcen in der Datei **AboutResources.txt**.
 
 ### <a name="resources"></a>Ressourcen
 
@@ -113,24 +113,24 @@ Das Verzeichnis **Ressourcen** enthält drei Ordner namens **drawable**, **layou
 
 Diese Elemente werden in der folgenden Tabelle zusammengefasst:
 
-- **drawable**: Die Verzeichnisse „drawable“ enthalten [drawable resources (zeichenbare Ressourcen)](https://developer.android.com/guide/topics/resources/drawable-resource.html) wie Bilder und Bitmaps.
+- **drawable:** Die Verzeichnisse „drawable“ enthalten [zeichenbare Ressourcen](https://developer.android.com/guide/topics/resources/drawable-resource.html) wie Bilder und Bitmaps.
 
-- **mipmap** &ndash; Das mipmap-Verzeichnis enthält zeichenbare Dateien für verschiedene Dichten von Startprogrammsymbolen. In der Standardvorlage enthält das Verzeichnis „drawable“ die Anwendungssymboldatei, **Icon.png**.
+- **mipmap:** Das mipmap-Verzeichnis enthält zeichenbare Dateien für verschiedene Dichten von Startprogrammsymbolen. In der Standardvorlage enthält das Verzeichnis „drawable“ die Anwendungssymboldatei, **Icon.png**.
 
 ::: zone pivot="windows"
 
-- **layout**: Das Verzeichnis „layout“ enthält _Android Designer-Dateien_ (AXML), die die Benutzeroberfläche für jeden Bildschirm oder jede Aktivität definieren. Die Vorlage erstellt ein Standardlayout namens **activity_main.axml**.
+- **layout:** Das Verzeichnis „layout“ enthält _Android Designer-Dateien_ (AXML), die die Benutzeroberfläche für jeden Bildschirm oder jede Aktivität definieren. Die Vorlage erstellt ein Standardlayout namens **activity_main.axml**.
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- **layout**: Das Verzeichnis „layout“ enthält _Android Designer-Dateien_ (AXML), die die Benutzeroberfläche für jeden Bildschirm oder jede Aktivität definieren. Die Vorlage erstellt ein Standardlayout namens **Main.axml**.
+- **layout:** Das Verzeichnis „layout“ enthält _Android Designer-Dateien_ (AXML), die die Benutzeroberfläche für jeden Bildschirm oder jede Aktivität definieren. Die Vorlage erstellt ein Standardlayout namens **Main.axml**.
 
 ::: zone-end
 
-- **values**: Dieses Verzeichnis enthält XML-Dateien, die einfache Werte wie Zeichenfolgen, Ganzzahlen und Farben speichern. Die Vorlage erstellt eine Datei namens **Strings.xml**, um Zeichenfolgenwerte zu speichern.
+- **values:** Dieses Verzeichnis enthält XML-Dateien, die einfache Werte wie Zeichenfolgen, Integer und Farben speichern. Die Vorlage erstellt eine Datei namens **Strings.xml**, um Zeichenfolgenwerte zu speichern.
 
-- **Resource.designer.cs**: Diese Datei, die auch als `Resource`-Klasse bekannt ist, ist eine partielle Klasse, die die eindeutigen IDs enthält, die jeder Ressource zugewiesen wurden. Diese wird automatisch von den Xamarin.Android-Tools erstellt und kann bei Bedarf erneut generiert werden. Diese Datei sollte nicht manuell bearbeitet werden, da Xamarin.Android alle manuellen Änderungen überschreibt.
+- **Resource.designer.cs:** Diese Datei, die auch als `Resource`-Klasse bekannt ist, ist eine partielle Klasse, die die eindeutigen IDs enthält, die jeder Ressource zugewiesen wurden. Diese wird automatisch von den Xamarin.Android-Tools erstellt und kann bei Bedarf erneut generiert werden. Diese Datei sollte nicht manuell bearbeitet werden, da Xamarin.Android alle manuellen Änderungen überschreibt.
 
 ## <a name="app-fundamentals-and-architecture-basics"></a>Grundlagen zu Apps und Architektur
 
@@ -235,11 +235,11 @@ In Android durchlaufen Aktivitäten abhängig von ihren Interaktionen mit dem Be
 
 Indem Sie die `Activity`-Lebenszyklusmethoden überschreiben, können Sie steuern, wie die Aktivität lädt, wie sie auf den Benutzer reagiert und sogar was passiert, nachdem diese auf dem Gerätebildschirm geschlossen wird. Sie können beispielsweise die Lebenszyklusmethoden im oben stehenden Diagramm überschreiben, um einige wichtige Aufgaben auszuführen:
 
-- **OnCreate**: Erstellt Ansichten, initialisiert Variablen und führt andere vorbereitende Arbeiten aus, die erledigt werden müssen, bevor die Aktivität dem Benutzer angezeigt wird. Diese Methode wird nur einmal aufgerufen, wenn die Aktivität in den Arbeitsspeicher geladen wird. 
+- **OnCreate:** Erstellt Ansichten, initialisiert Variablen und führt andere vorbereitende Arbeiten aus, die erledigt werden müssen, bevor die Aktivität dem Benutzer angezeigt wird. Diese Methode wird nur einmal aufgerufen, wenn die Aktivität in den Arbeitsspeicher geladen wird.
 
-- **OnResume**: Führt alle Aufgaben aus, die immer dann ausgeführt werden müssen, wenn die Aktivität zum Gerätebildschirm zurückkehrt.
+- **OnResume:** Führt alle Aufgaben aus, die immer dann ausgeführt werden müssen, wenn die Aktivität zum Gerätebildschirm zurückkehrt.
 
-- **OnPause**: Führt alle Aufgaben aus, die immer dann ausgeführt werden müssen, wenn die Aktivität den Gerätebildschirm verlässt.
+- **OnPause:** Führt alle Aufgaben aus, die immer dann ausgeführt werden müssen, wenn die Aktivität den Gerätebildschirm verlässt.
 
 Wenn Sie benutzerdefinierten Code zu einer Lebenszyklusmethode in der `Activity` hinzufügen, *überschreiben* Sie dadurch die *Basisimplementierung* dieser Lebenszyklusmethode. Navigieren Sie zur bestehenden Lebenszyklusmethode (der bereits Code angefügt wurde), und erweitern Sie diese Methode mit Ihrem eigenen Code. Rufen Sie die Basisimplementierung innerhalb Ihrer Methode auf, um sicherzustellen, dass der ursprüngliche Code vor Ihrem neuen Code ausgeführt wird. Ein Beispiel dafür wird im nächsten Abschnitt dargestellt.
 
@@ -279,7 +279,7 @@ In der **Phoneword**-App sollte in `OnCreate` zuerst die Benutzeroberfläche gel
 SetContentView (Resource.Layout.Main);
 ```
 
-Wenn `MainActivity` gestartet wird, wird eine Ansicht basierend auf den Inhalten der Datei **Main.axml** erstellt. Beachten Sie, dass der Name der Layoutdatei mit dem Aktivitätsnamen übereinstimmt &ndash; *Main*.axml ist das Layout für *Main*Activity. Dies ist aus der Sicht von Android nicht erforderlich. Wenn Sie jedoch weitere Bildschirme zur Anwendung hinzufügen, werden Sie feststellen, dass diese Namenskonvention die Zuordnung der Codedatei zur Layoutdatei erleichtert.
+Wenn `MainActivity` gestartet wird, wird eine Ansicht basierend auf den Inhalten der Datei **Main.axml** erstellt. Beachten Sie, dass der Name der Layoutdatei mit dem Aktivitätsnamen übereinstimmt &ndash; *Main*.axml ist das Layout für *Main*Activity. Dies ist aus der Sicht von Android nicht erforderlich. Wenn Sie jedoch weitere Bildschirme zur Anwendung hinzufügen, werden Sie feststellen, dass diese Namenskonvention die Zuordnung der Codedatei zur Layoutdatei erleichtert.
 
 ::: zone-end
 
@@ -296,7 +296,7 @@ Da nun Verweise zu den Steuerelementen in der Layoutdatei vorhanden sind, könne
 
 ### <a name="responding-to-user-interaction"></a>Reagieren auf eine Benutzerinteraktion
 
-In Android wartet das `Click`-Ereignis auf die Toucheingabe des Benutzers. In dieser App wird das `Click`-Ereignis mit einem Lambdaausdruck behandelt, stattdessen könnte jedoch auch ein Delegat oder ein benannter Ereignishandler verwendet werden. Der endgültige Code für **TranslateButton** ähnelt Folgendem: 
+In Android wartet das `Click`-Ereignis auf die Toucheingabe des Benutzers. In dieser App wird das `Click`-Ereignis mit einem Lambdaausdruck behandelt, stattdessen könnte jedoch auch ein Delegat oder ein benannter Ereignishandler verwendet werden. Der endgültige Code für **TranslateButton** ähnelt Folgendem:
 
 ```csharp
 translateButton.Click += (sender, e) =>
@@ -376,26 +376,20 @@ Nicht jedem steht ein Designer zur Verfügung, um die benutzerdefinierten Symbol
 
 ::: zone pivot="windows"
 
-- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
+- [Android Asset Studio:](https://romannurik.github.io/AndroidAssetStudio/index.html) Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
 
 - Visual Studio: Sie können dies verwenden, um einfache Symbole für Ihre App direkt in der IDE zu erstellen.
 
-- [Glyphish](https://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
-
-- [Fiverr](https://www.fiverr.com/) &ndash; Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
+- [Fiverr:](https://www.fiverr.com/) Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
+- [Android Asset Studio:](https://romannurik.github.io/AndroidAssetStudio/index.html) Ein webbasierter Generator innerhalb des Browsers für alle Arten von Android-Symbolen mit Links zu anderen nützlichen Communitytools. Dieser funktioniert am besten in Google Chrome.
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch ist eine Mac-App für das Entwerfen von Benutzeroberflächen, Symbolen usw. Diese App wurde verwendet, um die Xamarin App-Symbole und Startbilder zu entwerfen. Sketch 3 ist im App Store verfügbar und kostet ungefähr 80 Dollar. Sie können ebenfalls das kostenlose [Sketch Tool](https://bohemiancoding.com/sketch/tool/) testen.
+- [Pixelmator:](https://www.pixelmator.com/) Eine vielseitige Mac-App für das Bearbeiten von Bildern, die ungefähr 30 US-Dollar kostet.
 
-- [Pixelmator](https://www.pixelmator.com/): Eine vielseitige Mac-App für das Bearbeiten von Bildern, die ungefähr 30 US-Dollar kostet.
-
-- [Glyphish](https://www.glyphish.com/): Qualitativ hochwertige, vorgefertigte Symbole, die entweder gratis heruntergeladen oder käuflich erworben werden können.
-
-- [Fiverr](https://www.fiverr.com/) &ndash; Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
+- [Fiverr:](https://www.fiverr.com/) Wählen Sie aus einer Vielzahl von Designern aus, die ab 5 Dollar Symbole für Sie erstellen. Obwohl das Ergebnis nicht immer zuverlässig ist, ist dies eine gute Ressource, falls Sie schnell Symbole benötigen.
 
 ::: zone-end
 

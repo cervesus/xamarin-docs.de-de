@@ -6,16 +6,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b54296da3f1253b77b63363583c34e1548cd6abc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021251"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724083"
 ---
 # <a name="manually-uploading-the-apk"></a>Manuelles Hochladen des APKs
 
-Beim erstmaligen Einreichen eines APKs bei Google Play (oder bei Verwendung einer frühen Xamarin.Android-Version) muss das APK manuell mithilfe der [Google Play Developer Console](https://play.google.com/apps/publish) hochgeladen werden. In dieser Anleitung werden die hierfür notwendigen Schritte beschrieben. 
+Beim erstmaligen Einreichen eines APKs bei Google Play (oder bei Verwendung einer frühen Xamarin.Android-Version) muss das APK manuell mithilfe der [Google Play Developer Console](https://play.google.com/apps/publish) hochgeladen werden.
+In dieser Anleitung werden die hierfür notwendigen Schritte beschrieben.
 
 ## <a name="google-play-developer-console"></a>Google Play Developer Console
 
@@ -25,7 +26,7 @@ Sobald das APK kompiliert ist und die Werbeelemente vorbereitet sind, müssen Si
 
 Wenn Sie bereits eine vorhandene App bei Google Play registriert haben, klicken Sie auf die Schaltfläche **Add new application** (Neue Anwendung hinzufügen):
 
-[![Schaltfläche „Neue Anwendung hinzufügen“](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
+[![Schaltfläche „Add new application“ (Neue Anwendung hinzufügen)](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
 
 Wenn das Dialogfeld **ADD NEW APPLICATION** (Neue Anwendung hinzufügen) angezeigt wird, geben Sie den Namen der App ein, und klicken Sie auf **APK hochladen**:
 
@@ -35,7 +36,7 @@ Auf der nächsten Seite kann die App für Alpha- oder Betatests oder aber für d
 
 [![Schaltfläche „Erste APK-Datei in Alphaphase hochladen“](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
-Das Dialogfeld **Erste APK-Datei in Alphaphase hochladen** wird angezeigt. Sie können das APK entweder durch Klicken auf die Schaltfläche **Hinzufügen** oder per Drag & Drop hochladen: 
+Das Dialogfeld **Erste APK-Datei in Alphaphase hochladen** wird angezeigt. Sie können das APK entweder durch Klicken auf die Schaltfläche **Hinzufügen** oder per Drag & Drop hochladen:
 
 [![Dialogfeld „Erste APK-Datei in Alphaphase hochladen“](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
 
@@ -54,7 +55,7 @@ Nachdem das APK hochgeladen wurde, wird es als Entwurf gespeichert. Es kann erst
 
 ## <a name="store-listing"></a>Store-Eintrag
 
-Klicken Sie in der **Google Play Developer Console** auf **Store-Eintrag**. Hierdurch können Sie Informationen eingeben, die auf Google Play potenziellen Benutzern der Anwendung angezeigt werden: 
+Klicken Sie in der **Google Play Developer Console** auf **Store-Eintrag**. Hierdurch können Sie Informationen eingeben, die auf Google Play potenziellen Benutzern der Anwendung angezeigt werden:
 
 [![Dialogfeld „Store-Eintrag“](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
 
@@ -90,19 +91,19 @@ Klicken Sie in der **Google Play Developer Console** auf **Einstufung des Inhalt
 
 Für sämtliche Google Play-Anwendungen ist eine Einstufung auf der Grundlage des Einstufungssystems von Google Play erforderlich. Zusätzliche müssen alle Anwendungen in Einklang mit den [Richtlinien für Entwicklerinhalte](https://www.android.com/us/developer-content-policy.html) stehen.
 
-Im Folgenden werden die vier Stufen des Einstufungssystems von Google Play aufgeführt. Außerdem werden Hinweise zu Funktionen und Inhalten gegeben, die eine bestimmte Einstufung erforderlich machen oder erzwingen: 
+Im Folgenden werden die vier Stufen des Einstufungssystems von Google Play aufgeführt. Außerdem werden Hinweise zu Funktionen und Inhalten gegeben, die eine bestimmte Einstufung erforderlich machen oder erzwingen:
 
-- **Alle**: Das Zugreifen auf, Veröffentlichen von oder Freigeben von Standortdaten ist nicht möglich. Vom Benutzer generierte Inhalte können nicht gehostet werden. Die Kommunikation zwischen Benutzern ist nicht möglich. 
+- **Everyone** (Alle): Das Zugreifen auf, Veröffentlichen oder Freigeben von Standortdaten ist nicht möglich. Vom Benutzer generierte Inhalte können nicht gehostet werden. Die Kommunikation zwischen Benutzern ist nicht möglich.
 
-- **Stufe 3 - Niedrig**: Anwendungen, die auf Standortdaten zugreifen, diese aber nicht freigeben. Schließt Darstellung von leichter Gewalt oder Gewalt in Cartoons ein. 
+- **Low maturity** (Niedrig): Anwendungen, die auf Standortdaten zugreifen, diese aber nicht freigeben Schließt Darstellung von leichter Gewalt oder Gewalt in Cartoons ein.
 
-- **Stufe 2 - Mittel**: Anspielungen auf Drogen, Alkohol oder Tabak. Des Weiteren werden folgende Themen eingeschlossen: Glücksspiel oder simuliertes Glücksspiel; hetzerische Inhalte; obszöne Äußerungen und anstößiger Humor; anzügliche Bemerkungen oder sexuelle Anspielungen; 
-    intensive Gewalt in Verbindung mit dem Fantasy-Genre; realistische Darstellung von Gewalt; Ortung von Benutzern durch andere Benutzer; Kommunikation zwischen Benutzern; 
-    Freigeben von Standortdaten eines Benutzers. 
+- **Medium maturity** (Mittel): Anspielungen auf Drogen, Alkohol oder Tabak Des Weiteren werden folgende Themen eingeschlossen: Glücksspiel oder simuliertes Glücksspiel; hetzerische Inhalte; obszöne Äußerungen und anstößiger Humor; anzügliche Bemerkungen oder sexuelle Anspielungen;
+    intensive Gewalt in Verbindung mit dem Fantasy-Genre; realistische Darstellung von Gewalt; Ortung von Benutzern durch andere Benutzer; Kommunikation zwischen Benutzern;
+    Freigeben von Standortdaten eines Benutzers.
 
-- **Stufe 1 - Hoch**: Schwerpunktmäßige Darstellung des Konsums oder Verkaufs von Alkohol, Tabak oder Drogen. Des Weiteren werden folgende Themen eingeschlossen: große Anzahl von anzüglichen Bemerkungen oder sexuellen Anspielungen; explizite Darstellung intensiver Gewalt. 
+- **High maturity** (Hoch): Schwerpunktmäßige Darstellung des Konsums oder Verkaufs von Alkohol, Tabak oder Drogen Des Weiteren werden folgende Themen eingeschlossen: große Anzahl von anzüglichen Bemerkungen oder sexuellen Anspielungen; explizite Darstellung intensiver Gewalt.
 
-Die Elemente in der Liste „Stufe 2 - Mittel“ sind subjektiv. Es ist daher möglich, dass eine Richtlinie, die auf den ersten Blick eine Einstufung von Inhalten in Stufe 2 verlangt, letztlich doch „Stufe 1 - Hoch“ als Einstufung fordert. 
+Die Elemente in der Liste „Stufe 2 - Mittel“ sind subjektiv. Es ist daher möglich, dass eine Richtlinie, die auf den ersten Blick eine Einstufung von Inhalten in Stufe 2 verlangt, letztlich doch „Stufe 1 - Hoch“ als Einstufung fordert.
 
 ## <a name="pricing-amp-distribution"></a>Preisgestaltung &amp; Vertrieb
 
@@ -131,7 +132,7 @@ Nach diesem Abschnitt werden Ihnen zusätzliche Optionen angezeigt. Hierbei kön
 ### <a name="consent"></a>Einverständniserklärung
 
 Im unteren Bereich der Seite **Preisgestaltung &amp; Verteilung** befindet sich der Abschnitt **Einverständniserklärung**.
-Die Angaben in diesem Abschnitt sind obligatorisch. Mit diesen bestätigen Sie, dass die App in Einklang mit den [Richtlinien für Android-Content](https://www.android.com/market/terms/developer-content-policy.html#hl=us) steht. Des Weiteren erklären Sie, dass die Anwendung US-amerikanischen Exportgesetzen unterliegt:
+Die Angaben in diesem Abschnitt sind obligatorisch. Mit diesen bestätigen Sie, dass die App in Einklang mit den [Richtlinien für Android-Content](https://play.google.com/about/restricted-content/) steht. Des Weiteren erklären Sie, dass die Anwendung US-amerikanischen Exportgesetzen unterliegt:
 
 [![Abschnitt „Einverständniserklärung“](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
@@ -149,29 +150,29 @@ Wenn Benutzer die Google Play-Website nach Anwendungen durchsuchen, können sie 
 
 Sie können Elemente zum Anwendungsmanifest hinzufügen, um einzustellen, nach welchen Kriterien eine App im Google Play Store gefiltert wird. Die folgenden Elemente und Attribute können zum Filtern von Anwendungen verwendet werden:
 
-- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html): Die angegebenen Attribute werden von Google Play verwendet, um zu bestimmen, ob eine Anwendung auf einem Gerät mit einer bestimmten Bildschirmgröße bereitgestellt werden kann. 
-    Hierbei geht Google Play davon aus, dass Android zwar ein Layout an einen größeren Bildschirm anpassen kann, der umgekehrte Vorgang jedoch nicht möglich ist. Eine Anwendung, die normale Bildschirmgrößen unterstützt, wird daher bei Suchanfragen auf Geräten mit großen Bildschirmen, nicht aber auf Geräten mit kleinen Bildschirmen angezeigt. Wenn eine Xamarin.Android-Anwendung kein `<supports-screen>`-Element in der Manifestdatei bereitstellt, wird von Google Play angenommen, dass alle Attribute auf den Wert „true“ festgelegt sind und die Anwendung alle Bildschirmgrößen unterstützt. Dieses Element muss manuell zur Datei **AndroidManifest.xml** hinzugefügt werden. 
+- [supports-screen:](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) Die angegebenen Attribute werden von Google Play verwendet, um zu bestimmen, ob eine Anwendung auf einem Gerät mit einer bestimmten Bildschirmgröße bereitgestellt werden kann.
+    Hierbei geht Google Play davon aus, dass Android zwar ein Layout an einen größeren Bildschirm anpassen kann, der umgekehrte Vorgang jedoch nicht möglich ist. Eine Anwendung, die normale Bildschirmgrößen unterstützt, wird daher bei Suchanfragen auf Geräten mit großen Bildschirmen, nicht aber auf Geräten mit kleinen Bildschirmen angezeigt. Wenn eine Xamarin.Android-Anwendung kein `<supports-screen>`-Element in der Manifestdatei bereitstellt, wird von Google Play angenommen, dass alle Attribute auf den Wert „true“ festgelegt sind und die Anwendung alle Bildschirmgrößen unterstützt. Dieses Element muss manuell zur Datei **AndroidManifest.xml** hinzugefügt werden.
 
-- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; Dieses Manifestelement wird verwendet, um bestimmte Hardwareeigenschaften wie die verwendete Tastatur, Navigationsgeräte oder den Touchscreen anzufordern. Dieses Element muss manuell zur Datei **AndroidManifest.xml** hinzugefügt werden. 
+- [uses-configuration:](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) Dieses Manifestelement wird verwendet, um bestimmte Hardwareeigenschaften wie die verwendete Tastatur, Navigationsgeräte oder den Touchscreen anzufordern. Dieses Element muss manuell zur Datei **AndroidManifest.xml** hinzugefügt werden.
 
-- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html): In diesem Manifestelement werden Hardwareeigenschaften oder Softwarefunktionen deklariert, über die ein Gerät zur ordnungsgemäßen Ausführung der Anwendung verfügen muss. Dieses Attribut dient nur zu Informationszwecken. Google Play zeigt zwar die Anwendung nicht auf Geräten an, die diesem Filterkriterium nicht entsprechen. Die Anwendung kann aber dennoch auf andere Weise installiert werden (z.B. manuell oder durch Herunterladen). Dieses Element muss manuell zur Datei **AndroidManifest.xml** hinzugefügt werden. 
+- [uses-feature:](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) In diesem Manifestelement werden Hardwareeigenschaften oder Softwarefeatures deklariert, über die ein Gerät zur ordnungsgemäßen Ausführung der Anwendung verfügen muss. Dieses Attribut dient nur zu Informationszwecken. Google Play zeigt zwar die Anwendung nicht auf Geräten an, die diesem Filterkriterium nicht entsprechen. Die Anwendung kann aber dennoch auf andere Weise installiert werden (z.B. manuell oder durch Herunterladen). Dieses Element muss manuell zur Datei **AndroidManifest.xml** hinzugefügt werden.
 
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html): In diesem Element werden bestimmte freigegebene Bibliotheken (beispielsweise die von Google Maps) angegeben, die auf einem Gerät vorhanden sein müssen. Dieses Element kann auch mit `Android.App.UsesLibraryAttribute` angegeben werden. Beispiel: 
+- [uses-library:](https://developer.android.com/guide/topics/manifest/uses-library-element.html) In diesem Element werden bestimmte freigegebene Bibliotheken (beispielsweise die von Google Maps) angegeben, die auf einem Gerät vorhanden sein müssen. Dieses Element kann auch mit `Android.App.UsesLibraryAttribute` angegeben werden. Zum Beispiel:
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
-- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html): Mit diesem Element lassen sich bestimmte Hardwareeigenschaften ermitteln, zur Ausführung der Anwendung erforderlich sind, jedoch nicht korrekt im `<uses-feature>`-Element deklariert wurden. Wenn z.B. eine Anwendung die Berechtigung zur Verwendung der Kamera anfordert, wird von Google Play angenommen, dass das Gerät über eine Kamera verfügt. Dies ist auch dann der Fall, wenn kein `<uses-feature>`-Element vorhanden ist, in dem die Kamera deklariert wird. Dieses Element kann mit `Android.App.UsesPermissionsAttribute` festgelegt werden. Beispiel: 
+- [uses-permission:](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) Mit diesem Element lassen sich bestimmte Hardwareeigenschaften ermitteln, die zur Ausführung der Anwendung erforderlich sind, jedoch möglicherweise nicht korrekt im `<uses-feature>`-Element deklariert wurden. Wenn z.B. eine Anwendung die Berechtigung zur Verwendung der Kamera anfordert, wird von Google Play angenommen, dass das Gerät über eine Kamera verfügt. Dies ist auch dann der Fall, wenn kein `<uses-feature>`-Element vorhanden ist, in dem die Kamera deklariert wird. Dieses Element kann mit `Android.App.UsesPermissionsAttribute` festgelegt werden. Zum Beispiel:
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]
     ```
 
-- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html)&ndash; Mit diesem Element wird die Mindestversion der Android-API-Ebene deklariert, die für die Anwendung erforderlich ist. Das Element kann in den Xamarin.Android-Optionen eines Xamarin.Android-Projekts festgelegt werden. 
+- [uses-sdk:](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) Mit diesem Element wird die Mindestversion der Android-API-Ebene deklariert, die für die Anwendung erforderlich ist. Das Element kann in den Xamarin.Android-Optionen eines Xamarin.Android-Projekts festgelegt werden.
 
-- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html): Dieses Element wird zum Filtern von Anwendungen verwendet, die nicht der Bildschirmgröße und -dichte entsprechen, die im Element angegeben wurden. Für die meisten Anwendungen sollte auf die Nutzung dieses Filters verzichtet werden, da dieser für Spiele mit hohen Leistungsanforderungen oder aber Anwendungen vorgesehen ist, bei denen strenge Verteilungskontrollen erforderlich sind. Stattdessen sollte das oben erwähnte `<support-screen>`-Attribut verwendet werden. 
+- [compatible-screens:](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) Dieses Element wird zum Filtern von Anwendungen verwendet, die nicht der Bildschirmgröße und -dichte entsprechen, die im Element angegeben wurden. Für die meisten Anwendungen sollte auf die Nutzung dieses Filters verzichtet werden, da dieser für Spiele mit hohen Leistungsanforderungen oder aber Anwendungen vorgesehen ist, bei denen strenge Verteilungskontrollen erforderlich sind. Stattdessen sollte das oben erwähnte `<support-screen>`-Attribut verwendet werden.
 
-- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html): In diesem Element werden GL-Texturkomprimierungsformate deklariert, die für die Anwendung erforderlich sind. Für die meisten Anwendungen sollte auf die Nutzung dieses Filters verzichtet werden, da dieser für Spiele mit hohen Leistungsanforderungen oder aber Anwendungen vorgesehen ist, bei denen strenge Verteilungskontrollen erforderlich sind. 
+- [supports-gl-texture:](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) In diesem Element werden GL-Texturkomprimierungsformate deklariert, die für die Anwendung erforderlich sind. Für die meisten Anwendungen sollte auf die Nutzung dieses Filters verzichtet werden, da dieser für Spiele mit hohen Leistungsanforderungen oder aber Anwendungen vorgesehen ist, bei denen strenge Verteilungskontrollen erforderlich sind.
 
 Weitere Informationen zum Konfigurieren des App-Manifests finden Sie im Android-Thema [App Manifest (App-Manifest)](https://developer.android.com/guide/topics/manifest/manifest-intro.html).

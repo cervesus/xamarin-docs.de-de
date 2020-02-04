@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: 675e6cebab95d2a997bf48a6c9231b5e8c661342
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
+ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020845"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794829"
 ---
 # <a name="android-emulator-troubleshooting"></a>Behandlung von Problemen mit dem Android-Emulator
 
@@ -39,7 +39,7 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK nicht im Emulator installiert
    adb devices
    ```
 
-4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Beispiel:
+4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Zum Beispiel:
 
    ```shell
    List of devices attached
@@ -58,8 +58,8 @@ Wenn die Meldung **Ein MMIO-Zugriffsfehler ist aufgetreten.** angezeigt wird, st
 
 Wenn Google Play Services oder der Google Play Store nicht auf dem virtuellen Gerät installiert ist, das im Emulator ausgeführt wird, wird diese Bedingung häufig durch die Erstellung eines virtuellen Geräts ohne Einschließen dieser Pakete verursacht. Wenn Sie ein virtuelles Gerät erstellen (siehe [Verwalten von virtuellen Geräten mit Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), müssen Sie eine oder beide der folgenden Optionen auswählen:
 
-- **Google-APIs** &ndash; Beinhalten Google Play Services auf dem virtuellen Gerät.
-- **Google Play Store** &ndash; Beinhaltet Google Play Store auf dem virtuellen Gerät.
+- **Google-APIs:** beinhalten Google Play Services auf dem virtuellen Gerät
+- **Google Play Store:** beinhaltet Google Play Store auf dem virtuellen Gerät
 
 Dieses virtuelle Gerät beinhaltet z.B. Google Play Services und den Google Play Store:
 
@@ -230,11 +230,11 @@ Wenn `STATE` nicht auf `RUNNING` festgelegt ist, erfahren Sie unter [How to Use 
 
 HAXM kann mit anderen Technologien, die die Virtualisierung verwenden, in Konflikt stehen, wie etwa Hyper-V, Windows Device Guard und einige Antivirussoftware:
 
-- **Hyper-V** &ndash; Wenn Sie eine Version von Windows vor dem **Windows 10-Update vom April 2018 (Build 1803)** verwenden und Hyper-V aktiviert ist, führen Sie die Schritte unter [Deaktivieren von Hyper-V](#disable-hyperv) aus, damit HAXM aktiviert werden kann.
+- **Hyper-V:** Wenn Sie eine Version von Windows vor dem **Windows 10-Update von April 2018 (Build 1803)** verwenden und Hyper-V aktiviert ist, führen Sie die Schritte unter [Deaktivieren von Hyper-V](#disable-hyperv) aus, damit HAXM aktiviert werden kann.
 
-- **Device Guard** &ndash; Device Guard und Credential Guard können verhindern, dass Hyper-V unter Windows deaktiviert werden kann. Informationen zum Deaktivieren von Device Guard und Credential Guard finden Sie unter [Deaktivieren von Device Guard](#disable-devguard).
+- **Device Guard:** Device Guard und Credential Guard können verhindern, dass Hyper-V unter Windows deaktiviert werden kann. Informationen zum Deaktivieren von Device Guard und Credential Guard finden Sie unter [Deaktivieren von Device Guard](#disable-devguard).
 
-- **Antivirensoftware** &ndash; Wenn Sie eine Antivirensoftware ausführen, die die hardwareunterstützte Virtualisierung verwendet (z.B. Avast), deaktivieren oder deinstallieren Sie diese Software, starten Sie den Computer neu, und versuchen Sie erneut, den Android-Emulator zu starten.
+- **Antivirensoftware:** Wenn Sie eine Antivirensoftware ausführen, die die hardwareunterstützte Virtualisierung verwendet (z. B. Avast), deaktivieren oder deinstallieren Sie diese Software, starten Sie den Computer neu, und versuchen Sie erneut, den Android-Emulator zu starten.
 
 #### <a name="incorrect-bios-settings"></a>Falsche BIOS-Einstellungen
 
@@ -284,7 +284,7 @@ Wenn Device Guard aktiviert ist, können Sie es mit den folgenden Schritten deak
 
 1. Achten Sie wie im vorherigen Abschnitt beschrieben darauf, dass **Hyper-V** deaktiviert ist (unter **Windows-Features ein- oder ausschalten**).
 
-2. Geben Sie im Windows-Suchfeld **gpedit** ein, und klicken Sie auf das Suchergebnis **Gruppenrichtlinie bearbeiten**. Durch diese Schritte wird der **Editor für lokale Gruppenrichtlinien** gestartet.
+2. Geben Sie im Windows-Suchfeld **gpedit.msc** ein, und klicken Sie auf das Suchergebnis **Gruppenrichtlinie bearbeiten**. Durch diese Schritte wird der **Editor für lokale Gruppenrichtlinien** gestartet.
 
 3. Navigieren Sie im **Editor für lokale Gruppenrichtlinien** zu **Computerkonfiguration > Administrative Vorlagen > System > Device Guard**:
 
@@ -375,7 +375,7 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK nicht im Emulator installiert
    adb devices
    ```
 
-4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Beispiel:
+4. Wenn auf den Emulator vom Android SDK aus zugegriffen werden kann, sollte der Emulator in der Liste der angehängten Geräte aufgelistet sein. Zum Beispiel:
 
    ```shell
    List of devices attached
@@ -394,8 +394,8 @@ Wenn **Ein MMIO-Zugriffsfehler ist aufgetreten.** angezeigt wird, starten Sie de
 
 Wenn Google Play Services oder der Google Play Store nicht auf dem virtuellen Gerät installiert ist, das im Emulator ausgeführt wird, wird diese Bedingung in der Regel durch die Erstellung eines virtuellen Geräts ohne Einschließen dieser Pakete verursacht. Wenn Sie ein virtuelles Gerät erstellen (siehe [Verwalten von virtuellen Geräten mit Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), müssen Sie eine oder beide der folgenden Optionen auswählen:
 
-- **Google-APIs** &ndash; Beinhalten Google Play Services auf dem virtuellen Gerät.
-- **Google Play Store** &ndash; Beinhaltet Google Play Store auf dem virtuellen Gerät.
+- **Google-APIs:** beinhalten Google Play Services auf dem virtuellen Gerät
+- **Google Play Store:** beinhaltet Google Play Store auf dem virtuellen Gerät
 
 Dieses virtuelle Gerät beinhaltet z.B. Google Play Services und den Google Play Store:
 

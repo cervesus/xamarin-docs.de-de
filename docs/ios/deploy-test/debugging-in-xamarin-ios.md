@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ae140f7ea75c1631c6c96170af738f3fac04dcdb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026511"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724695"
 ---
 # <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
 
@@ -198,7 +198,7 @@ Dieser Soft-Debugger erfordert ein kooperatives Debugschema bei der Ausführung 
 
 Es werden Absturzprotokolle und die Ausgabe der Console-Klasse an die iPhone-Konsole gesendet. Sie können mit Xcode auf diese Konsole zugreifen. Verwenden Sie den „Organisator“, und wählen Sie Ihr Gerät aus.
 
-Wenn Sie Xcode nicht starten möchten, können Sie alternativ das [iPhone-Konfigurationsprogramm](https://www.apple.com/support/iphone/enterprise/) von Apple verwenden, um direkt auf die Konsole zuzugreifen. Dies hat den zusätzlichen Vorteil, dass Sie von einem Windows-Computer aus auf Konsolenprotokolle zugreifen können, wenn Sie ein Problem im Feld debuggen.
+Wenn Sie Xcode nicht starten möchten, können Sie alternativ das iPhone-Konfigurationsprogramm von Apple verwenden, um direkt auf die Konsole zuzugreifen. Dies hat den zusätzlichen Vorteil, dass Sie von einem Windows-Computer aus auf Konsolenprotokolle zugreifen können, wenn Sie ein Problem im Feld debuggen.
 
 Für Visual Studio-Benutzer stehen einige Protokolle im Ausgabefenster zur Verfügung, aber für gründlichere und ausführlichere Protokolle sollten Sie zu Ihrem Mac wechseln.
 

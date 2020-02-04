@@ -35,7 +35,7 @@ Xamarin.Forms | 4,1 oder höher
 
 Für die Verwendung von XAML Hot Neuladen ist keine zusätzliche Installation oder Einrichtung erforderlich. Es ist in Visual Studio integriert und kann in den IDE-Einstellungen aktiviert werden. Nach der Aktivierung können Sie mit der Verwendung von XAML Hot Neuladen beginnen, indem Sie Ihre APP auf einem Emulator, Simulator oder einem physischen Gerät Debuggen. Derzeit funktioniert das Laden von XAML-Hot nur beim Debuggen unter IOS oder Android.
 
-Unter Windows kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Extras > ** **Optionen** > **xamarin** > **Hot Neuladen**aktiviert werden.
+Unter Windows kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " unter **Extras** > **Optionen** > **xamarin** > **Hot Neuladen**aktiviert werden.
 
 Auf einem Mac kann das aktive XAML-Neuladen durch Aktivieren des Kontrollkästchens " **xamarin Hot Neuladen aktivieren** " in **Visual Studio** > **Einstellungen** > **Projekten** > **xamarin Hot Neuladen**aktiviert werden.
 
@@ -66,4 +66,4 @@ Wenn Sie Teil der privaten Vorschau sind, wird die XAML-Erweiterung zum erneuten
 - Wenn beim Speichern der XAML-Datei nichts passiert, stellen Sie sicher, dass das heiße laden in der IDE aktiviert ist.
 - Wenn Sie auf einem physischen iPhone Debuggen und Ihre APP nicht mehr reagiert, überprüfen Sie, ob der Interpreter aktiviert ist. Um es zu aktivieren, öffnen Sie die Projekteinstellungen, wählen Sie die Registerkarte IOS-Build aus, und aktivieren Sie die Einstellung **Mono-Interpreter aktivieren** .
 
-Um einen Fehler zu melden, verwenden Sie das Feedback Tool in der **Hilfe** > Senden von Feedback > **melden Sie ein Problem** Menü unter Windows, **und > ** melden **Sie** **ein problemmenü** auf einem Mac.
+Um einen Fehler zu melden, verwenden Sie das Feedback Tool in der **Hilfe** > Senden von Feedback > **melden Sie ein Problem** Menü unter Windows, **und** >  melden **Sie** **ein problemmenü** auf einem Mac.
