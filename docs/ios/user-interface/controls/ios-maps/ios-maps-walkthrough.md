@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 404483bb0c2c405fb810ebcd3a8007692219f522
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7e9010eb579f28e62b5f7ab72ac061e9898e7ecf
+ms.sourcegitcommit: a9b180651863cb7da31d3af14182fe3ad44796f7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022000"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76971531"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Anmerkungen und Überlagerungen in xamarin. IOS
 
@@ -80,7 +80,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
     ```
 
-1. Erstellen Sie eine neue Instanz von `MapDelegate` und weisen Sie Sie dem `Delegate` des `MKMapView`zu. Auch hier wird der `MapDelegate` in Kürze:
+1. Erstellen Sie eine neue Instanz von `MapDelegate` und weisen Sie Sie dem `Delegate` des `MKMapView`zu. Auch hier implementieren wir den `MapDelegate` in Kürze:
 
     ```csharp
     mapDelegate = new MapDelegate ();
@@ -107,7 +107,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
     und Zeichenfolge:
 
-    `Maps Walkthrough Docs Sample`
+    `Maps Walkthrough Docs Sample`.
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs – eine Klasse für benutzerdefinierte Anmerkungen
 
@@ -178,7 +178,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
 Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `MapDelegate`-Klasse implementieren, um das Erstellen der Anmerkung und der Überlagerungs Sichten zu verarbeiten.
 
-## <a name="mapdelegate"></a>Mapdelegat
+## <a name="mapdelegate"></a>MapDelegate
 
 1. Erstellen Sie eine Klasse mit dem Namen `MapDelegate`, die von `MKMapViewDelegate` erbt, und fügen Sie eine `annotationId` Variable ein, die als Verwendungs Bezeichner für die Anmerkung verwendet werden soll:
 
@@ -245,7 +245,7 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
     }
     ```
 
-1. Um das Bild auszublenden, wenn der Benutzer die Anmerkung deaktiviert, indem Sie auf eine beliebige andere Stelle auf der Karte tippen, implementieren Sie die `DidSelectAnnotationView`-Methode wie folgt:
+1. Um das Bild auszublenden, wenn der Benutzer die Anmerkung deaktiviert, indem Sie auf eine beliebige andere Stelle auf der Karte tippen, implementieren Sie die `DidDeselectAnnotationView`-Methode wie folgt:
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -280,11 +280,11 @@ Führen Sie die Anwendung aus. Wir verfügen jetzt über eine interaktive Karte 
 
  [![](ios-maps-walkthrough-images/01-map-image.png "Tap on the annotation and the image of Austin is displayed")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Artikel haben wir uns mit dem Hinzufügen einer Anmerkung zu einer Zuordnung und dem Hinzufügen einer Überlagerung für ein bestimmtes Polygon beschäftigt. Wir haben außerdem gezeigt, wie Sie der Anmerkung die Berührungs Unterstützung hinzufügen, um ein Bild über eine Karte zu animieren.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Exemplarische Vorgehensweise für Maps](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
 - [Beispiel für eine Karten Demo](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
