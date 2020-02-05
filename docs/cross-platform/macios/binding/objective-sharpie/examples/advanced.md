@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 23ca9c3fe36a65aefb17f10fd3e680937c36acc0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
+ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016253"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980427"
 ---
 # <a name="advanced-manual-real-world-example"></a>Erweitertes (Manuelles) Beispiel
 
@@ -19,7 +19,7 @@ ms.locfileid: "73016253"
 
 In diesem Abschnitt wird ein erweiterter Ansatz für die Bindung behandelt, wobei wir das `xcodebuild` Tool von Apple verwenden, um zuerst das Pop-Projekt zu erstellen, und dann die Eingabe für das Ziel "Sharpie" manuell ableiten. Dabei geht es im Wesentlichen darum, welches Ziel Sharpie im vorherigen Abschnitt im Hintergrund ausgeführt wird.
 
-```
+```bash
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 Da die Pop-Bibliothek über ein Xcode-Projekt (`pop.xcodeproj`) verfügt, können wir einfach `xcodebuild` verwenden, um Pop zu erstellen. Dieser Prozess kann wiederum Header Dateien generieren, die vom Ziel-Sharpie möglicherweise analysiert werden müssen. Dies ist der Grund, warum das aufbauen vor der Bindung wichtig ist. Bei der Erstellung über `xcodebuild` stellen Sie sicher, dass Sie denselben SDK-Bezeichner und dieselbe Architektur übergeben, die Sie an das Ziel shar3,0 Pie übergeben möchten.
 
-```
+```bash
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ In der-Konsole werden viele Buildinformationen als Teil `xcodebuild`ausgegeben. 
 
 Wir sind nun bereit, den Pop zu binden. Wir wissen, dass wir für SDK-`iphoneos8.1` mit der `arm64`-Architektur erstellen möchten, und dass sich die Header Dateien, die für Sie wichtig sind, in `build/Headers` unter dem Pop-git-Checkout befinden. Wenn wir uns das `build/Headers` Verzeichnis ansehen, sehen wir eine Reihe von Header Dateien:
 
-```
+```bash
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 Wenn wir uns `POP.h`ansehen, sehen wir, dass es sich um die Haupt Header Datei der obersten Ebene der Bibliothek handelt, die andere Dateien `#import`. Aus diesem Grund müssen wir nur `POP.h` an das Ziel "Sharpie" übergeben, und clang führt den Rest im Hintergrund aus:
 
-```
+```bash
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64
@@ -122,7 +122,7 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-Sie werden feststellen, dass wir ein `-scope build/Headers` Argument an target Sharpie übermittelt haben. Da C-und Ziel-C-Bibliotheken andere Header Dateien `#import` oder `#include` müssen, bei denen es sich um Implementierungsdetails der Bibliothek handelt, nicht um die API, die Sie binden möchten, weist das `-scope`-Argument dem Ziel Sharpie an, alle APIs zu ignorieren, die nicht in einer Datei definiert sind. innerhalb des `-scope` Verzeichnisses.
+Sie werden feststellen, dass wir ein `-scope build/Headers` Argument an target Sharpie übermittelt haben. Da C-und Target-C-Bibliotheken andere Header Dateien `#import` oder `#include` müssen, bei denen es sich um Implementierungsdetails der Bibliothek handelt, nicht um die API, die Sie binden möchten, weist das `-scope`-Argument an, dass alle APIs ignoriert werden, die in einer Datei irgendwo innerhalb des `-scope` Verzeichnisses nicht definiert sind.
 
 Sie werden feststellen, dass das `-scope`-Argument häufig für ordnungsgemäß implementierte Bibliotheken optional ist, aber es gibt keine Beschädigung bei der expliziten Bereitstellung.
 
