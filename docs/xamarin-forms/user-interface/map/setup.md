@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 9213e893d222e26168940e09a93e158d1e74d8dc
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.date: 02/07/2020
+ms.openlocfilehash: eff7dff15fb75859d43923f71696bccf1b0e2cc5
+ms.sourcegitcommit: 87b818373d83fd3a6856c4b5a702b013a731b5ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725577"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77069649"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. Forms-Zuordnungs Initialisierung und-Konfiguration
 
@@ -234,6 +234,9 @@ Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
 Bei UWP muss Ihre Anwendung authentifiziert werden, bevor eine Zuordnung angezeigt und Kartendienste genutzt werden können. Um Ihre Anwendung zu authentifizieren, müssen Sie einen Maps-Authentifizierungsschlüssel angeben. Weitere Informationen finden Sie unter [Anfordern eines Zuordnungs Authentifizierungs Schlüssels](/windows/uwp/maps-and-location/authentication-key). Das Authentifizierungs Token sollte dann im `FormsMaps.Init("AUTHORIZATION_TOKEN")`-Methoden Aufrufes angegeben werden, um die Anwendung mit dem Namen von "admaps" zu authentifizieren.
+
+> [!NOTE]
+> Um Kartendienste wie z. b. die Geocodierung verwenden zu können, müssen Sie die `MapService.ServiceToken`-Eigenschaft auf den Wert des Authentifizierungs Schlüssels festlegen. Dies kann mit der folgenden Codezeile erreicht werden: `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";`.
 
 Außerdem müssen Sie, wenn Ihre Anwendung auf den Speicherort des Benutzers zugreifen muss, die Standort Funktion im Paket Manifest aktivieren. Dies kann folgendermaßen erfüllt werden:
 
