@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 3e63a580bbdb1c220d44b100725cdc8ce387b405
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: cb2ae3afe9db86d4db603d499ef0e75e7cbbf552
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696521"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940405"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Einführung in die Xamarin.Forms-Shell
 
@@ -37,6 +37,8 @@ Xamarin.Forms-Shell ist unter iOS und Android vollständig verfügbar, auf der u
 ```csharp
 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
 ```
+
+Weitere Informationen zum Hinzufügen eines UWP-Projekts zu einer Xamarin.Forms-Lösung finden Sie unter [Einrichten von Windows-Projekten](~/xamarin-forms/platform/windows/installation/index.md).
 
 ## <a name="shell-navigation-experience"></a>Shell-Navigationsoberfläche
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: ba7148ecabf7f534a953fda3c3d3021abeaa034c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771566"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940381"
 ---
 # <a name="xamarinforms-string-formatting"></a>Zeichenfolgenformatierung in Xamarin.Forms
 
@@ -44,7 +44,7 @@ Auf der Seite **String Formatting** (Zeichenfolgenformatierung) werden verschied
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="DataBindingDemos.StringFormattingPage"
              Title="String Formatting">
 
@@ -123,7 +123,7 @@ Im letzten Abschnitt wird `BindingContext` auf den Wert von `Math.PI` festgelegt
 
 Dies ist das Programm, das ausgeführt wird:
 
-[![Zeichenfolgenformatierung](string-formatting-images/stringformatting-small.png "String Formatting")](string-formatting-images/stringformatting-large.png#lightbox "String Formatting")
+[![Zeichenfolgenformatierung](string-formatting-images/stringformatting-small.png "Formatierung von Zeichenfolgen")](string-formatting-images/stringformatting-large.png#lightbox "Formatierung von Zeichenfolgen")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModels und die Zeichenfolgenformatierung
 

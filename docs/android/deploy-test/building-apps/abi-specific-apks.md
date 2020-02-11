@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028133"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940635"
 ---
 # <a name="building-abi-specific-apks"></a>Erstellen ABI-spezifischer Android-Anwendungspakete (APKs)
 
@@ -65,16 +65,16 @@ Das folgende Diagramm veranschaulicht die Position jedes Code, der in der obigen
 Google Play stellt sicher, dass auf Grundlage der `versionCode`- und APK-Konfiguration das richtige APK an das Gerät übermittelt wird. Das APK mit dem höchsten Versionscode wird an das Gerät übermittelt. Beispielsweise kann eine Anwendung drei APKs mit den folgenden Versionscodes aufweisen:
 
 - 11413456: Die ABI ist `armeabi`; für die API-Ebene 14; kleine bis große Bildschirme; mit der Versionsnummer 456.
-- 21423456: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; normale und große Bildschirme; mit der Versionsnummer 456.
-- 61423456: Die ABI ist `x86`; für die API-Ebene 14; normale und große Bildschirme; mit der Versionsnummer 456.
+- 21423456: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; normale &amp; große Bildschirme; mit der Versionsnummer 456.
+- 61423456: Die ABI ist `x86`; für die API-Ebene 14; normale &amp; große Bildschirme; mit der Versionsnummer 456.
 
 Um mit diesem Beispiel fortzufahren, stellen Sie sich vor, dass ein Fehler behoben wurde, der spezifisch für `armeabi-v7a` war. Die Anwendungsversion erhöht sich auf 457, und ein neues APK wird erstellt, wobei die `android:versionCode` auf 21423457 festgelegt wird. Die Versionscodes für die Versionen `armeabi` und `x86` bleiben hingegen unverändert.
 
 Stellen Sie sich nun vor, dass die x86-Version einige Updates oder Fehlerkorrekturen erhält, die auf eine neuere API (API-Ebene 19) abzielen, sodass dies die Version 500 der Anwendung darstellt. Der neue `versionCode` ändert sich in 61923500, während „armeabi/armeabi-v7a“ unverändert bleiben. Zu diesem Zeitpunkt lauten die Versionscodes wie folgt:
 
-- 11413456: Die ABI ist `armeabi`; für die API-Ebene 14; kleine bis große Bildschirme; mit dem Versionsnamen 456.
-- 21423457: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; kleine bis große Bildschirme; mit dem Versionsnamen 457.
-- 61923500: Die ABI ist `x86`; für die API-Ebene 19; kleine bis große Bildschirme; mit dem Versionsnamen 500.
+- 11413456: Die ABI ist `armeabi`; für die API-Ebene 14; kleine bis große Bildschirme; mit der Versionsbezeichnung 456.
+- 21423457: Die ABI ist `armeabi-v7a`; für die API-Ebene 14; normale &amp; große Bildschirme; mit der Versionsbezeichnung 457.
+- 61923500: Die ABI ist `x86`; für die API-Ebene 19; normale &amp; große Bildschirme; mit der Versionsbezeichnung 500.
 
 Die manuelle Pflege dieser Versionscodes kann einen erheblichen Aufwand für den Entwickler bedeuten. Der Prozess der Berechnung des ordnungsgemäßen `android:versionCode` und der anschließenden Erstellung der APKs sollte automatisiert werden.
 Ein Beispiel dafür wird in der exemplarischen Vorgehensweise am Ende dieses Dokuments erläutert.

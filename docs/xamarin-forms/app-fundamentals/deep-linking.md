@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: ff5c7cb36305780d12b5fd69b7cbadec0eaef551
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fcd8333a0623058fceb486183ddb995e85eaf18a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771562"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940328"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Anwendungsindizierung und Deep Linking
 
@@ -29,7 +29,7 @@ Die Funktion „Anwendungsindizierung und Deep Linking“ von Xamarin.Forms stel
 
 In dieser Beispielanwendung wird eine Anwendung mit Aufgabenlisten (ToDoList) veranschaulicht, bei der die Daten in einer lokalen SQLite-Datenbank gespeichert sind, wie aus den folgenden Screenshots hervorgeht:
 
-![](deep-linking-images/screenshots.png "Aufgabenlisten-Anwendung")
+![](deep-linking-images/screenshots.png "TodoList Application")
 
 Jede vom Benutzer erstellte `TodoItem`-Instanz wird indiziert. Anschließend kann die plattformspezifische Suche zum Auffinden der indizierten Daten aus der Anwendung verwendet werden. Wenn der Benutzer in den Suchergebnissen auf ein Element für die Anwendung tippt, wird die Anwendung gestartet, die Seite `TodoItemPage` wird aufgerufen, und die `TodoItem`-Instanz, auf die der Deep-Link verweist, wird angezeigt.
 
@@ -79,6 +79,9 @@ AndroidAppLinks.Init(this);
 ```
 
 Wenn die Datei **google-services.json** dem Projekt hinzugefügt wird (und der Buildvorgang auf *GoogleServicesJson** festgelegt ist), extrahiert der Buildvorgang die Client-ID und den API-Schlüssel und fügt dann diese Anmeldeinformationen der generierten Manifestdatei hinzu.
+
+> [!NOTE]
+> In diesem Artikel werden die Begriffe Anwendungslinks und Deep-Links oft synonym verwendet. Unter Android haben diese Begriffe jedoch jeweils eine andere Bedeutung. Unter Android ist ein Deep-Link ein Intent-Filter, der es Benutzern ermöglicht, eine bestimmte Aktivität in der App direkt einzugeben. Wenn Sie auf einen Deep-Link klicken, wird ggf. ein Dialogfeld mit mehrere Apps zur Auswahl angezeigt, aus der der Benutzer die auswählen kann, die die URL verarbeiten können. Ein Android-App-Link ist ein Deep-Link, der auf Ihrer Website-URL basiert, und dessen Zugehörigkeit zu Ihrer Website überprüft wurde. Wenn Sie auf einen App-Link klicken, wird die App geöffnet, wenn sie installiert ist, ohne dass ein Dialogfeld mit Auswahlmöglichkeiten anzeigt wird.
 
 Weitere Informationen finden Sie unter [Deep Link Content with Xamarin.Forms URL Navigation](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) (Deep Linking von Inhalten mit der URL-Navigation von Xamarin.Forms) im Xamarin-Blog.
 
@@ -135,7 +138,7 @@ Dadurch wird die [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry)-Instanz der [
 
 Wenn Sie die [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry)-Instanz für die Indizierung registriert haben, kann sie in den Suchergebnissen angezeigt werden. Der folgende Screenshot zeigt den indizierten Inhalt, wie er auf der iOS-Plattform in den Suchergebnissen angezeigt wird:
 
-![](deep-linking-images/ios-search.png "Indizierter Inhalt in den Suchergebnissen unter iOS")
+![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
 
 ## <a name="de-registering-indexed-content"></a>Aufheben der Registrierung von indizierten Inhalten
 

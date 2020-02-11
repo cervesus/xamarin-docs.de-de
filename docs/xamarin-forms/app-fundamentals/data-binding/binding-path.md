@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: ca27b0ba0f9e434809250a78047f3bd503f80b50
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771641"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940346"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
 
@@ -40,7 +40,7 @@ Dieses Beispiel wird zusammen mit einigen anderen Beispielen auf der Seite **Pat
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:globe="clr-namespace:System.Globalization;assembly=mscorlib"
+             xmlns:globe="clr-namespace:System.Globalization;assembly=netstandard"
              x:Class="DataBindingDemos.PathVariationsPage"
              Title="Path Variations"
              x:Name="page">
@@ -138,7 +138,7 @@ Bei diesem untergeordneten Element handelt es sich um ein `Label`-Element, das d
 
 Dies ist das Programm, das ausgeführt wird:
 
-[![Pfadvariationen](binding-path-images/pathvariations-small.png "Pfadvariationen")](binding-path-images/pathvariations-large.png#lightbox "Pfadvariationen")
+[![Pfadabweichungen](binding-path-images/pathvariations-small.png "Pfadabweichungen")](binding-path-images/pathvariations-large.png#lightbox "Pfadabweichungen")
 
 ## <a name="debugging-complex-paths"></a>Debuggen komplexer Pfade
 

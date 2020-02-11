@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 9d8b3e68aa626890fdce5c004928541ece263703
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6e80daf2be1b672dc7d0de3e303dfb9261c10472
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020801"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940913"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
 
@@ -29,7 +29,7 @@ Der Xamarin Android SDK-Manager (der als Teil der Workload **Mobile-Entwicklung 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Sie benötigen Folgendes, um den Xamarin Android SDK-Manager verwenden zu können:
 
@@ -125,7 +125,7 @@ Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktiviere
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Sie benötigen Folgendes, um den Xamarin Android SDK-Manager verwenden zu können:
 
