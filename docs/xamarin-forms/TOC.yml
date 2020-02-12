@@ -250,6 +250,17 @@
               href: app-fundamentals/dependency-service/registration-and-resolution.md
             - name: Auswählen aus der Fotobibliothek
               href: app-fundamentals/dependency-service/photo-picker.md
+        - name: Zwei Bildschirme
+          href: app-fundamentals/dual-screen/index.md
+          items:
+            - name: Muster für zwei Bildschirme
+              href: app-fundamentals/dual-screen/design-patterns.md
+            - name: TwoPaneView
+              href: app-fundamentals/dual-screen/twopaneview.md
+            - name: DualScreenInfo
+              href: app-fundamentals/dual-screen/dual-screen-info.md
+            - name: DualScreenHelper
+              href: app-fundamentals/dual-screen/dual-screen-helper.md
         - name: Effekte
           href: app-fundamentals/effects/index.md
           items:
