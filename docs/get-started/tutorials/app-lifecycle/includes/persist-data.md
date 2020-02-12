@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 16ceaba572ca932777bb366d9f7c58f6dcb24f70
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 5d9d5e4eb757d6afd1c13cb4851edd23feaa6e65
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67841502"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135071"
 ---
 Die Unterklasse [`Application`](xref:Xamarin.Forms.Application) enthält ein statisches [`Properties`](xref:Xamarin.Forms.Application.Properties)-Wörterbuch, das zum Speichern von Daten bei Zustandsänderungen des Lebenszyklus verwendet werden kann. Das Wörterbuch verwendet einen `string`-Schlüssel und speichert einen `object`-Wert. Das Wörterbuch wird automatisch auf dem Gerät gespeichert und wird bei Neustart der Anwendung erneut aufgefüllt.
 
@@ -82,7 +82,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft legt einen Platzhaltertext fest, der angezeigt wird, wenn `Entry` zum ersten Mal angezeigt wurde. Außerdem wird ein Ereignishandler namens `OnEntryCompleted` mit dem Ereignis [`Completed`](xref:Xamarin.Forms.Entry.Completed) registriert. Außerdem hat die `Entry`-Klasse einen Namen, der mit dem `x:Name`-Attribut festgelegt wird. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt `Entry` zugreifen.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft legt einen Platzhaltertext fest, der angezeigt wird, wenn `Entry` zum ersten Mal angezeigt wurde. Außerdem wird ein Ereignishandler namens `OnEntryCompleted` mit dem Ereignis [`Completed`](xref:Xamarin.Forms.Entry.Completed) registriert. Außerdem hat die `Entry`-Klasse einen Namen, der mit dem `x:Name`-Attribut festgelegt wird. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt `Entry` zugreifen.
 
 1. Erweitern Sie **MainPage.xaml** im **Projektmappen-Explorer** im Projekt **AppLifecycleTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie dann in der Datei **MainPage.xaml.cs** eine Überschreibung für die Methode `OnAppearing` und den Ereignishandler `OnEntryCompleted` zur Klasse hinzu:
 
@@ -100,7 +100,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
     }
     ```
 
-    Die `OnAppearing`-Methode ruft den Wert der Eigenschaft `App.DisplayText` ab und legt diesen als [`Text`](xref:Xamarin.Forms.Entry.Text)-Eigenschaftswert der [`Entry`](xref:Xamarin.Forms.Entry)-Klasse fest.
+    Die `OnAppearing`-Methode ruft den Wert der Eigenschaft `App.DisplayText` ab und legt diesen als [`Text`](xref:Xamarin.Forms.InputView.Text)-Eigenschaftswert der [`Entry`](xref:Xamarin.Forms.Entry)-Klasse fest.
 
     > [!NOTE]
     > Die Außerkraftsetzung der `OnAppearing`-Methode wird ausgeführt, nachdem die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse angelegt wurde, aber noch bevor sie angezeigt wird. Deshalb ist dies ein guter Ort, um den Inhalt der Xamarin.Forms-Ansichten festzulegen.
@@ -186,7 +186,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft legt einen Platzhaltertext fest, der angezeigt wird, wenn `Entry` zum ersten Mal angezeigt wurde. Außerdem wird ein Ereignishandler namens `OnEntryCompleted` mit dem Ereignis [`Completed`](xref:Xamarin.Forms.Entry.Completed) registriert. Außerdem hat die `Entry`-Klasse einen Namen, der mit dem `x:Name`-Attribut festgelegt wird. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt `Entry` zugreifen.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft legt einen Platzhaltertext fest, der angezeigt wird, wenn `Entry` zum ersten Mal angezeigt wurde. Außerdem wird ein Ereignishandler namens `OnEntryCompleted` mit dem Ereignis [`Completed`](xref:Xamarin.Forms.Entry.Completed) registriert. Außerdem hat die `Entry`-Klasse einen Namen, der mit dem `x:Name`-Attribut festgelegt wird. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt `Entry` zugreifen.
 
 1. Erweitern Sie **MainPage.xaml** im **Lösungspad** im Projekt **AppLifecycleTutorial**, und doppelklicken Sie dann auf die Datei **MainPage.xaml.cs**, um sie zu öffnen. Fügen Sie dann in der Datei **MainPage.xaml.cs** eine Überschreibung für die Methode `OnAppearing` und den Ereignishandler `OnEntryCompleted` zur Klasse hinzu:
 
@@ -204,7 +204,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
     }
     ```
 
-    Die `OnAppearing`-Methode ruft den Wert der Eigenschaft `App.DisplayText` ab und legt diesen als [`Text`](xref:Xamarin.Forms.Entry.Text)-Eigenschaftswert der [`Entry`](xref:Xamarin.Forms.Entry)-Klasse fest.
+    Die `OnAppearing`-Methode ruft den Wert der Eigenschaft `App.DisplayText` ab und legt diesen als [`Text`](xref:Xamarin.Forms.InputView.Text)-Eigenschaftswert der [`Entry`](xref:Xamarin.Forms.Entry)-Klasse fest.
 
     > [!NOTE]
     > Die Außerkraftsetzung der `OnAppearing`-Methode wird ausgeführt, nachdem die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse angelegt wurde, aber noch bevor sie angezeigt wird. Deshalb ist dies ein guter Ort, um den Inhalt der Xamarin.Forms-Ansichten festzulegen.

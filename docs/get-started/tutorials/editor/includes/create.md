@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7471d6bc66463091fafea855b12da06292055be6
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: fe7e11f37f303c2ec1f5bc58e98953449694191c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67277252"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135067"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Editor`](xref:Xamarin.Forms.Editor)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Editor.Placeholder`](xref:Xamarin.Forms.Editor.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Editor`-Elements anfänglich zu sehen ist. Mit der [`HeightRequest`](xref:Xamarin.Forms.VisualElement)-Eigenschaft wird zusätzlich die Höhe des `Editor`-Elements in geräteunabhängigen Einheiten angegeben.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Editor`](xref:Xamarin.Forms.Editor)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Editor`-Elements anfänglich zu sehen ist. Mit der [`HeightRequest`](xref:Xamarin.Forms.VisualElement)-Eigenschaft wird zusätzlich die Höhe des `Editor`-Elements in geräteunabhängigen Einheiten angegeben.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
@@ -65,7 +65,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Editor`](xref:Xamarin.Forms.Editor)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Editor.Placeholder`](xref:Xamarin.Forms.Editor.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Editor`-Elements anfänglich zu sehen ist. Mit der [`HeightRequest`](xref:Xamarin.Forms.VisualElement)-Eigenschaft wird zusätzlich die Höhe des `Editor`-Elements in geräteunabhängigen Einheiten angegeben.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Editor`](xref:Xamarin.Forms.Editor)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Editor`-Elements anfänglich zu sehen ist. Mit der [`HeightRequest`](xref:Xamarin.Forms.VisualElement)-Eigenschaft wird zusätzlich die Höhe des `Editor`-Elements in geräteunabhängigen Einheiten angegeben.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 

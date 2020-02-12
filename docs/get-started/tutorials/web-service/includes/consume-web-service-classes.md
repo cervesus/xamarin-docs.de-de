@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 90f3f9ff5ed29a1ae2c93e355fc15bc6550d78dd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67659813"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135155"
 ---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Klasse zu verwenden, die wiederum Daten aus der Web-API [OpenWeatherMap](https://openweathermap.org/) abruft.
 
@@ -67,7 +67,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Kl
     </ContentPage>
     ```
 
-    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus einer [`Entry`](xref:Xamarin.Forms.Entry)-Klasse, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer Reihe von [`Label`](xref:Xamarin.Forms.Label)-Instanzen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse besteht. Die `Entry`-Klasse ist bereits mit „Seattle“ gefüllt, indem dessen [`Text`](xref:Xamarin.Forms.Entry.Text)-Eigenschaft festgelegt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die Hälfte der `Label`-Instanzen zeigen statischen Text an. Die andere Hälfte der Instanzen stellt Datenbindung mit den `WeatherData`-Eigenschaften her. Während der Laufzeit suchen die `Label`-Instanzen, die Datenbindung verwenden, in ihren entsprechenden [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaften nach dem `WeatherData`-Objekt, das in ihren Bindungsausdrücken verwendet werden soll. Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus einer [`Entry`](xref:Xamarin.Forms.Entry)-Klasse, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer Reihe von [`Label`](xref:Xamarin.Forms.Label)-Instanzen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse besteht. Die `Entry`-Klasse ist bereits mit „Seattle“ gefüllt, indem dessen [`Text`](xref:Xamarin.Forms.InputView.Text)-Eigenschaft festgelegt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die Hälfte der `Label`-Instanzen zeigen statischen Text an. Die andere Hälfte der Instanzen stellt Datenbindung mit den `WeatherData`-Eigenschaften her. Während der Laufzeit suchen die `Label`-Instanzen, die Datenbindung verwenden, in ihren entsprechenden [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaften nach dem `WeatherData`-Objekt, das in ihren Bindungsausdrücken verwendet werden soll. Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
     Außerdem hat die [`Entry`](xref:Xamarin.Forms.Entry)-Klasse einen Namen, der mit dem `x:Name`-Attribut festgelegt wird. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt zugreifen.
 
@@ -123,7 +123,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Kl
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten: Tippen Sie auf das [`Button`](xref:Xamarin.Forms.Button)-Objekt, um aktuelle Wetterdaten für Seattle abzurufen:
 
-    [![Screenshot: Wetterdaten für Seattle unter iOS und Android](../images/consume-web-service.png "Wetterdaten für Seattle")](../images/consume-web-service-large.png#lightbox "Wetterdaten für Seattle")
+    [![Screenshot der Wetterdaten für Seattle unter iOS und Android](../images/consume-web-service.png "Wetterdaten für Seattle")](../images/consume-web-service-large.png#lightbox "Wetterdaten für Seattle")
 
     > [!IMPORTANT]
     > Ihr persönlicher API-Schlüssel für OpenWeatherMap muss als Wert der Konstante `OpenWeatherMapAPIKey` in der Klasse `Constants` festgelegt werden.
@@ -187,7 +187,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die `RestService`-Kl
     </ContentPage>
     ```
 
-    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus einer [`Entry`](xref:Xamarin.Forms.Entry)-Klasse, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer Reihe von [`Label`](xref:Xamarin.Forms.Label)-Instanzen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse besteht. Die `Entry`-Klasse ist bereits mit „Seattle“ gefüllt, indem dessen [`Text`](xref:Xamarin.Forms.Entry.Text)-Eigenschaft festgelegt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die Hälfte der `Label`-Instanzen zeigen statischen Text an. Die andere Hälfte der Instanzen stellt Datenbindung mit den `WeatherData`-Eigenschaften her. Während der Laufzeit suchen die `Label`-Instanzen, die Datenbindung verwenden, in ihren entsprechenden [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaften nach dem `WeatherData`-Objekt, das in ihren Bindungsausdrücken verwendet werden soll. Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus einer [`Entry`](xref:Xamarin.Forms.Entry)-Klasse, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer Reihe von [`Label`](xref:Xamarin.Forms.Label)-Instanzen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse besteht. Die `Entry`-Klasse ist bereits mit „Seattle“ gefüllt, indem dessen [`Text`](xref:Xamarin.Forms.InputView.Text)-Eigenschaft festgelegt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die Hälfte der `Label`-Instanzen zeigen statischen Text an. Die andere Hälfte der Instanzen stellt Datenbindung mit den `WeatherData`-Eigenschaften her. Während der Laufzeit suchen die `Label`-Instanzen, die Datenbindung verwenden, in ihren entsprechenden [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaften nach dem `WeatherData`-Objekt, das in ihren Bindungsausdrücken verwendet werden soll. Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
     Außerdem hat die [`Entry`](xref:Xamarin.Forms.Entry)-Klasse einen Namen, der mit dem `x:Name`-Attribut festgelegt wird. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt zugreifen.
 

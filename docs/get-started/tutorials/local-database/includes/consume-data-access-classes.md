@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: caee3eeda90a560f032c17657072ae5ba5023a69
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67659811"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135095"
 ---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten Datenzugriffsklassen zu verwenden.
 
@@ -36,7 +36,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten
     </ContentPage>
     ```
 
-    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus zwei [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer [`ListView`](xref:Xamarin.Forms.ListView)-Klasse in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse besteht. Jede `Entry`-Klasse hat ihre [`Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft festgelegt, die den Platzhaltertext angibt, die vor der Benutzereingabe angezeigt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die `ListView`-Klasse legt ihre [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse fest, die eine [`TextCell`](xref:Xamarin.Forms.TextCell)-Klasse verwendet, um das Auftreten jeder Zeile in der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse zu bestimmen. Die Daten aus der `TextCell`-Klasse binden ihre [`Text`](xref:Xamarin.Forms.TextCell.Text)- und [`Detail`](xref:Xamarin.Forms.TextCell.Detail)-Eigenschaften jeweils an die `Name`- und `Age`-Eigenschaften jedes `Person`-Objekts.
+    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus zwei [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer [`ListView`](xref:Xamarin.Forms.ListView)-Klasse in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse besteht. Jede `Entry`-Klasse hat ihre [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft festgelegt, die den Platzhaltertext angibt, die vor der Benutzereingabe angezeigt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die `ListView`-Klasse legt ihre [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse fest, die eine [`TextCell`](xref:Xamarin.Forms.TextCell)-Klasse verwendet, um das Auftreten jeder Zeile in der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse zu bestimmen. Die Daten aus der `TextCell`-Klasse binden ihre [`Text`](xref:Xamarin.Forms.TextCell.Text)- und [`Detail`](xref:Xamarin.Forms.TextCell.Detail)-Eigenschaften jeweils an die `Name`- und `Age`-Eigenschaften jedes `Person`-Objekts.
 
     Außerdem haben die [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen und die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse Namen, die mit dem `x:Name`-Attribut angegeben werden. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt zugreifen.
 
@@ -106,7 +106,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten
     </ContentPage>
     ```
 
-    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus zwei [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer [`ListView`](xref:Xamarin.Forms.ListView)-Klasse in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse besteht. Jede `Entry`-Klasse hat ihre [`Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft festgelegt, die den Platzhaltertext angibt, die vor der Benutzereingabe angezeigt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die `ListView`-Klasse legt ihre [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse fest, die eine [`TextCell`](xref:Xamarin.Forms.TextCell)-Klasse verwendet, um das Auftreten jeder Zeile in der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse zu bestimmen. Die Daten aus der `TextCell`-Klasse binden ihre [`Text`](xref:Xamarin.Forms.TextCell.Text)- und [`Detail`](xref:Xamarin.Forms.TextCell.Detail)-Eigenschaften jeweils an die `Name`- und `Age`-Eigenschaften jedes `Person`-Objekts.
+    Dieser Code definiert deklarativ die Benutzeroberfläche für die Seite, die aus zwei [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen, einem [`Button`](xref:Xamarin.Forms.Button)-Objekt und einer [`ListView`](xref:Xamarin.Forms.ListView)-Klasse in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse besteht. Jede `Entry`-Klasse hat ihre [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft festgelegt, die den Platzhaltertext angibt, die vor der Benutzereingabe angezeigt wird. Das `Button`-Objekt legt sein [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis auf einen Ereignishandler namens `OnButtonClicked` fest, der im nächsten Schritt erstellt wird. Die `ListView`-Klasse legt ihre [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)-Eigenschaft auf eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse fest, die eine [`TextCell`](xref:Xamarin.Forms.TextCell)-Klasse verwendet, um das Auftreten jeder Zeile in der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse zu bestimmen. Die Daten aus der `TextCell`-Klasse binden ihre [`Text`](xref:Xamarin.Forms.TextCell.Text)- und [`Detail`](xref:Xamarin.Forms.TextCell.Detail)-Eigenschaften jeweils an die `Name`- und `Age`-Eigenschaften jedes `Person`-Objekts.
 
     Außerdem haben die [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen und die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse Namen, die mit dem `x:Name`-Attribut angegeben werden. Dadurch kann die CodeBehind-Datei mithilfe des zugewiesenen Namens auf das Objekt zugreifen.
 

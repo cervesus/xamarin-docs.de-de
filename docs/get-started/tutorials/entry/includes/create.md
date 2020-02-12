@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 820761111c609f224a6dda14d5853777d22aa259
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: d8c50b1dfb2a2669f7611a6bc6da882c54b877aa
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67277243"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135061"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -30,7 +30,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Entry`-Elements anfänglich zu sehen ist.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Entry`-Elements anfänglich zu sehen ist.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
@@ -60,7 +60,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Entry`-Elements anfänglich zu sehen ist.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`Entry`](xref:Xamarin.Forms.Entry)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Objekt enthält. Mit der [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft wird der Platzhaltertext festgelegt, der bei der Anzeige des `Entry`-Elements anfänglich zu sehen ist.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
