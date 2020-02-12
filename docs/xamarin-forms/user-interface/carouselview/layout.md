@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: 0149a66fedd98a94f1c9d96bf8e7e57715d1b90b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 38c891a095b2b3d41d906e747585b961516f9256
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488256"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130854"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin. Forms carouselview-Layout
 
@@ -47,7 +47,7 @@ Die `LinearItemsLayout`-Klasse erbt von der [`ItemsLayout`](xref:Xamarin.Forms.I
 
 ## <a name="horizontal-layout"></a>Horizontales Layout
 
-Standardmäßig werden die Elemente [`CarouselView`](xref:Xamarin.Forms.CarouselView) horizontal angezeigt. Daher ist es nicht erforderlich, die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft für die Verwendung dieses Layouts festzulegen:
+Standardmäßig werden die Elemente [`CarouselView`](xref:Xamarin.Forms.CarouselView) horizontal angezeigt. Daher ist es nicht erforderlich, die [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) -Eigenschaft für die Verwendung dieses Layouts festzulegen:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -87,7 +87,7 @@ Standardmäßig werden die Elemente [`CarouselView`](xref:Xamarin.Forms.Carousel
 </CarouselView>
 ```
 
-Alternativ kann dieses Layout auch erreicht werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festgelegt wird. dabei wird der `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angegeben:
+Alternativ kann dieses Layout auch erreicht werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festgelegt wird. dabei wird der `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angegeben:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -112,7 +112,7 @@ Dies führt zu einem Layout, das horizontal vergrößert wird, wenn neue Element
 
 ## <a name="vertical-layout"></a>Vertikales Layout
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) können seine Elemente vertikal anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegen und dabei den `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angeben:
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) können seine Elemente vertikal anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegen und dabei den `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angeben:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -194,7 +194,7 @@ Das Ergebnis ist, dass angrenzende Elemente teilweise auf dem Bildschirm verfüg
 
 Standardmäßig weist jedes Element in einer [`CarouselView`](xref:Xamarin.Forms.CarouselView) keinen leeren Leerraum auf. Dieses Verhalten kann geändert werden, indem Eigenschaften für das vom `CarouselView`verwendete Element Layout festgelegt werden.
 
-Wenn eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegt, kann die `LinearItemsLayout.ItemSpacing`-Eigenschaft auf einen `double` Wert festgelegt werden, der den leeren Bereich um jedes Element darstellt:
+Wenn eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) die [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegt, kann die `LinearItemsLayout.ItemSpacing`-Eigenschaft auf einen `double` Wert festgelegt werden, der den leeren Bereich um jedes Element darstellt:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">

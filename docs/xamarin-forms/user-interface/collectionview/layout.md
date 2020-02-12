@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2019
-ms.openlocfilehash: 901ea8a3b00a129d39e824e1ab0b053c8d5c743c
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 6c2b3d8bad621db3110fe25041125c5694f21180
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696817"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130993"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin. Forms CollectionView-Layout
 
@@ -21,7 +21,7 @@ ms.locfileid: "72696817"
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert die folgenden Eigenschaften, die das Layout Steuern:
 
 - [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)vom Typ [`IItemsLayout`](xref:Xamarin.Forms.IItemsLayout)gibt das Layout an, das verwendet werden soll.
-- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)vom Typ [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)gibt die zu verwendende elementmeasure-Strategie an.
+- [`ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy)vom Typ [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)gibt die zu verwendende elementmeasure-Strategie an.
 
 Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
@@ -32,7 +32,7 @@ Standardmäßig zeigt ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) 
 - Vertikales Raster – ein mehrspaltige Raster, das beim Hinzufügen neuer Elemente vertikal wächst.
 - Horizontales Raster – ein Raster mit mehreren Zeilen, das horizontal vergrößert wird, wenn neue Elemente hinzugefügt werden.
 
-Diese Layouts können angegeben werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf die Klasse festgelegt wird, die von der [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) -Klasse abgeleitet wird. Diese Klasse definiert die folgenden Eigenschaften:
+Diese Layouts können angegeben werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf die Klasse festgelegt wird, die von der [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) -Klasse abgeleitet wird. Diese Klasse definiert die folgenden Eigenschaften:
 
 - [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)vom Typ [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)gibt die Richtung an, in der die [`CollectionView`](xref:Xamarin.Forms.CollectionView) erweitert werden, wenn Elemente hinzugefügt werden.
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)vom Typ [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)gibt an, wie Andockpunkte an Elementen ausgerichtet werden.
@@ -49,9 +49,9 @@ Die `LinearItemsLayout`-Klasse erbt von der [`ItemsLayout`](xref:Xamarin.Forms.I
 
 Die [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) -Klasse erbt von der-Klasse [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) und definiert die folgenden Eigenschaften:
 
-- `VerticalItemSpacing` vom Typ `double`, der den vertikalen leeren Leerraum um jedes Element darstellt. Der Standardwert dieser Eigenschaft ist 0, und der Wert muss immer größer oder gleich 0 sein.
-- `HorizontalItemSpacing` vom Typ `double`, der den horizontalen leeren Leerraum um jedes Element darstellt. Der Standardwert dieser Eigenschaft ist 0, und der Wert muss immer größer oder gleich 0 sein.
-- `Span` vom Typ `int`, der die Anzahl der Spalten oder Zeilen darstellt, die im Raster angezeigt werden sollen. Der Standardwert dieser Eigenschaft ist 1, und der Wert muss immer größer oder gleich 1 sein.
+- `VerticalItemSpacing`vom Typ `double`, der den vertikalen leeren Leerraum um jedes Element darstellt. Der Standardwert dieser Eigenschaft ist 0, und der Wert muss immer größer oder gleich 0 sein.
+- `HorizontalItemSpacing`vom Typ `double`, der den horizontalen leeren Leerraum um jedes Element darstellt. Der Standardwert dieser Eigenschaft ist 0, und der Wert muss immer größer oder gleich 0 sein.
+- `Span`vom Typ `int`, der die Anzahl der Spalten oder Zeilen darstellt, die im Raster angezeigt werden sollen. Der Standardwert dieser Eigenschaft ist 1, und der Wert muss immer größer oder gleich 1 sein.
 
 Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
@@ -60,7 +60,7 @@ Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.Bindabl
 
 ## <a name="vertical-list"></a>Vertikale Liste
 
-Standardmäßig werden die Elemente [`CollectionView`](xref:Xamarin.Forms.CollectionView) in einem vertikalen Listen Layout angezeigt. Daher ist es nicht erforderlich, die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft für die Verwendung dieses Layouts festzulegen:
+Standardmäßig werden die Elemente [`CollectionView`](xref:Xamarin.Forms.CollectionView) in einem vertikalen Listen Layout angezeigt. Daher ist es nicht erforderlich, die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft für die Verwendung dieses Layouts festzulegen:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -94,7 +94,7 @@ Standardmäßig werden die Elemente [`CollectionView`](xref:Xamarin.Forms.Collec
 </CollectionView>
 ```
 
-Aus Gründen der Vollständigkeit kann eine [`CollectionView`](xref:Xamarin.Forms.CollectionView) jedoch so festgelegt werden, dass die Elemente in einer vertikalen Liste angezeigt werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf `VerticalList` festgelegt wird:
+Aus Gründen der Vollständigkeit kann eine [`CollectionView`](xref:Xamarin.Forms.CollectionView) jedoch so festgelegt werden, dass die Elemente in einer vertikalen Liste angezeigt werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf `VerticalList`festgelegt wird:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -103,7 +103,7 @@ Aus Gründen der Vollständigkeit kann eine [`CollectionView`](xref:Xamarin.Form
 </CollectionView>
 ```
 
-Dies kann auch erreicht werden, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegen und dabei den `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angeben:
+Dies kann auch erreicht werden, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegen und dabei den `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angeben:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -130,7 +130,7 @@ Dies führt zu einer einzelnen Spaltenliste, die beim Hinzufügen neuer Elemente
 
 ## <a name="horizontal-list"></a>Horizontale Liste
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) können seine Elemente in einer horizontalen Liste anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf `HorizontalList` festlegen:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) können seine Elemente in einer horizontalen Liste anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf `HorizontalList`festlegen:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -167,7 +167,7 @@ Dies führt zu einer einzelnen Spaltenliste, die beim Hinzufügen neuer Elemente
 </CollectionView>
 ```
 
-Alternativ kann dieses Layout auch erreicht werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festgelegt wird. dabei wird der `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angegeben:
+Alternativ kann dieses Layout auch erreicht werden, indem die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festgelegt wird. dabei wird der `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) Enumerationsmember als `Orientation`-Eigenschafts Wert angegeben:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -194,7 +194,7 @@ Dies führt zu einer einzelnen Zeilen Liste, die horizontal vergrößert wird, w
 
 ## <a name="vertical-grid"></a>Vertikales Raster
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) können seine Elemente in einem vertikalen Raster anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) Objekt festlegen, dessen [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) -Eigenschaft auf `Vertical` festgelegt ist:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) können seine Elemente in einem vertikalen Raster anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf ein [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) Objekt festlegen, dessen [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) -Eigenschaft auf `Vertical`festgelegt ist:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -250,7 +250,7 @@ Standardmäßig werden in einem vertikalen [`GridItemsLayout`](xref:Xamarin.Form
 
 ## <a name="horizontal-grid"></a>Horizontales Raster
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) können seine Elemente in einem horizontalen Raster anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) Objekt festlegen, dessen[ `Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) -Eigenschaft auf `Horizontal` festgelegt ist:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) können seine Elemente in einem horizontalen Raster anzeigen, indem Sie die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf ein [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) Objekt festlegen, dessen[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) -Eigenschaft auf `Horizontal`festgelegt ist:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -310,10 +310,10 @@ Standardmäßig werden in einem horizontalen [`GridItemsLayout`](xref:Xamarin.Fo
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert die folgenden Eigenschaften zum Angeben der Kopf-und Fußzeile:
 
-- `Header` vom Typ `object` gibt die Zeichenfolge, die Bindung oder die Ansicht an, die am Anfang der Liste angezeigt wird.
-- `HeaderTemplate` vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)gibt die `DataTemplate` an, die zum Formatieren des `Header` verwendet werden soll.
-- `Footer` vom Typ `object` gibt die Zeichenfolge, die Bindung oder die Ansicht an, die am Ende der Liste angezeigt wird.
-- `FooterTemplate` vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)gibt die `DataTemplate` an, die zum Formatieren des `Footer` verwendet werden soll.
+- `Header`vom Typ `object`gibt die Zeichenfolge, die Bindung oder die Ansicht an, die am Anfang der Liste angezeigt wird.
+- `HeaderTemplate`vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)gibt die `DataTemplate` an, die zum Formatieren des `Header`verwendet werden soll.
+- `Footer`vom Typ `object`gibt die Zeichenfolge, die Bindung oder die Ansicht an, die am Ende der Liste angezeigt wird.
+- `FooterTemplate`vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)gibt die `DataTemplate` an, die zum Formatieren des `Footer`verwendet werden soll.
 
 Diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
@@ -456,9 +456,9 @@ Dieser Code führt zu den folgenden Screenshots, wobei die Kopfzeile im IOS-Bild
 
 ## <a name="item-spacing"></a>Element Abstand
 
-Standardmäßig weist jedes Element in einer [`CollectionView`](xref:Xamarin.Forms.CollectionView) keinen leeren Leerraum auf. Dieses Verhalten kann geändert werden, indem Eigenschaften für das vom `CollectionView` verwendete Element Layout festgelegt werden.
+Standardmäßig weist jedes Element in einer [`CollectionView`](xref:Xamarin.Forms.CollectionView) keinen leeren Leerraum auf. Dieses Verhalten kann geändert werden, indem Eigenschaften für das vom `CollectionView`verwendete Element Layout festgelegt werden.
 
-Wenn eine [`CollectionView`](xref:Xamarin.Forms.CollectionView) die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegt, kann die `LinearItemsLayout.ItemSpacing`-Eigenschaft auf einen `double` Wert festgelegt werden, der den leeren Bereich um jedes Element darstellt:
+Wenn eine [`CollectionView`](xref:Xamarin.Forms.CollectionView) die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf ein `LinearItemsLayout` Objekt festlegt, kann die `LinearItemsLayout.ItemSpacing`-Eigenschaft auf einen `double` Wert festgelegt werden, der den leeren Bereich um jedes Element darstellt:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -490,7 +490,7 @@ Dieser Code ergibt eine vertikale einzelne Spaltenliste, die für jedes Element 
 
 [![Screenshot einer CollectionView mit Element Abstand unter IOS und Android](layout-images/vertical-list-spacing.png "Element Abstand für CollectionView")](layout-images/vertical-list-spacing-large.png#lightbox "Element Abstand für CollectionView")
 
-Wenn eine [`CollectionView`](xref:Xamarin.Forms.CollectionView) die [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) -Eigenschaft auf ein [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) Objekt festlegt, können die Eigenschaften `GridItemsLayout.VerticalItemSpacing` und `GridItemsLayout.HorizontalItemSpacing` auf `double` Werte festgelegt werden, die den leeren Bereich vertikal und horizontal um die einzelnen Elemente darstellen:
+Wenn eine [`CollectionView`](xref:Xamarin.Forms.CollectionView) die [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) -Eigenschaft auf ein [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) Objekt festlegt, können die Eigenschaften `GridItemsLayout.VerticalItemSpacing` und `GridItemsLayout.HorizontalItemSpacing` auf `double` Werte festgelegt werden, die den leeren Bereich vertikal und horizontal um die einzelnen Elemente darstellen:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -527,7 +527,7 @@ Dieser Code ergibt ein vertikales zweispaltige Raster mit einem vertikalen Absta
 
 ## <a name="item-sizing"></a>Elementgröße
 
-Standardmäßig wird jedes Element in einem [`CollectionView`](xref:Xamarin.Forms.CollectionView) einzeln gemessen und verkleinert, vorausgesetzt, dass die Benutzeroberflächen Elemente im [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) keine festgelegten Größen angeben. Dieses Verhalten, das geändert werden kann, wird durch den [`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy) -Eigenschafts Wert angegeben. Dieser Eigenschafts Wert kann auf einen der [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy) Enumerationsmember festgelegt werden:
+Standardmäßig wird jedes Element in einem [`CollectionView`](xref:Xamarin.Forms.CollectionView) einzeln gemessen und verkleinert, vorausgesetzt, dass die Benutzeroberflächen Elemente im [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) keine festgelegten Größen angeben. Dieses Verhalten, das geändert werden kann, wird durch den [`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy) -Eigenschafts Wert angegeben. Dieser Eigenschafts Wert kann auf einen der [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy) Enumerationsmember festgelegt werden:
 
 - `MeasureAllItems` – jedes Element wird einzeln gemessen. Dies ist der Standardwert.
 - `MeasureFirstItem` – nur das erste Element wird gemessen, wobei alle nachfolgenden Elemente dieselbe Größe wie das erste Element erhalten.
@@ -535,7 +535,7 @@ Standardmäßig wird jedes Element in einem [`CollectionView`](xref:Xamarin.Form
 > [!IMPORTANT]
 > Die `MeasureFirstItem` Größen Anpassungsstrategie führt zu einer verbesserten Leistung, wenn Sie in Situationen verwendet wird, in denen die Elementgröße für alle Elemente einheitlich sein soll.
 
-Im folgenden Codebeispiel wird das Festlegen der [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy) -Eigenschaft veranschaulicht:
+Im folgenden Codebeispiel wird das Festlegen der [`ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy) -Eigenschaft veranschaulicht:
 
 ```xaml
 <CollectionView ...

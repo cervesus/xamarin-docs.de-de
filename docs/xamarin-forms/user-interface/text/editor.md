@@ -1,26 +1,26 @@
 ---
-title: Xamarin. Forms-Editor
-description: In diesem Artikel wird erläutert, wie Sie das xamarin. Forms-Editor-Steuerelement verwenden, um mehrzeilige Texteingaben in einer Anwendung zu akzeptieren.
+title: Xamarin.Forms-Editor
+description: In diesem Artikel wird erläutert, wie Sie das Xamarin.Forms-Editor-Steuerelement verwenden, um mehrzeilige Texteingabe in einer Anwendung zu akzeptieren.
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/26/2019
-ms.openlocfilehash: 0c610d7bdecc5d3454079be38c7e6ede5f0596e1
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 1ae176cfebdde31038c30895d1bf562ff3396eaa
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696807"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131074"
 ---
-# <a name="xamarinforms-editor"></a>Xamarin. Forms-Editor
+# <a name="xamarinforms-editor"></a>Xamarin.Forms-Editor
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Mehrzeilige Texteingabe_
 
-Das [`Editor`](xref:Xamarin.Forms.Editor) -Steuerelement wird verwendet, um mehrzeilige Eingaben zu akzeptieren. Dieser Artikel behandelt Folgendes:
+Das [`Editor`](xref:Xamarin.Forms.Editor) -Steuerelement wird verwendet, um mehrzeilige Eingaben zu akzeptieren. In diesem Artikel wird Folgendes behandelt:
 
 - **[Anpassung](#customization)** &ndash; Tastatur-und Farboptionen.
 - **[Interactivity](#interactivity)** &ndash; Ereignisse, die überwacht werden können, um Interaktivität bereitzustellen.
@@ -29,7 +29,7 @@ Das [`Editor`](xref:Xamarin.Forms.Editor) -Steuerelement wird verwendet, um mehr
 
 ### <a name="setting-and-reading-text"></a>Festlegen und Lesen von Text
 
-Der [`Editor`](xref:Xamarin.Forms.Editor)macht wie andere Text Ansichts Ansichten die `Text`-Eigenschaft verfügbar. Diese Eigenschaft kann verwendet werden, um den von der `Editor` dargestellten Text festzulegen und zu lesen. Im folgenden Beispiel wird veranschaulicht, wie die `Text`-Eigenschaft in XAML festgelegt wird:
+Der [`Editor`](xref:Xamarin.Forms.Editor)macht wie andere Text Ansichts Ansichten die `Text`-Eigenschaft verfügbar. Diese Eigenschaft kann verwendet werden, um den von der `Editor`dargestellten Text festzulegen und zu lesen. Im folgenden Beispiel wird veranschaulicht, wie die `Text`-Eigenschaft in XAML festgelegt wird:
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -47,9 +47,9 @@ Um Text zu lesen, greifen Sie in C#auf die `Text`-Eigenschaft zu:
 var text = MyEditor.Text;
 ```
 
-### <a name="setting-placeholder-text"></a>Festlegen von Platzhalter Text
+### <a name="setting-placeholder-text"></a>Festlegen von Platzhaltertext
 
-Der [`Editor`](xref:Xamarin.Forms.Editor) kann so festgelegt werden, dass Platzhalter Text angezeigt wird, wenn er keine Benutzereingaben speichert. Dies wird erreicht, indem die [`Placeholder`](xref:Xamarin.Forms.Editor.Placeholder) -Eigenschaft auf ein `string` festgelegt wird und häufig verwendet wird, um den Typ des Inhalts anzugeben, der für die `Editor` geeignet ist. Außerdem kann die Platzhalter Textfarbe gesteuert werden, indem die [`PlaceholderColor`](xref:Xamarin.Forms.Editor.PlaceholderColor) -Eigenschaft auf einen [`Color`](xref:Xamarin.Forms.Color)festgelegt wird:
+Der [`Editor`](xref:Xamarin.Forms.Editor) kann so festgelegt werden, dass Platzhalter Text angezeigt wird, wenn er keine Benutzereingaben speichert. Dies wird erreicht, indem die [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) -Eigenschaft auf ein `string`festgelegt wird und häufig verwendet wird, um den Typ des Inhalts anzugeben, der für die `Editor`geeignet ist. Außerdem kann die Platzhalter Textfarbe gesteuert werden, indem die [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) -Eigenschaft auf einen [`Color`](xref:Xamarin.Forms.Color)festgelegt wird:
 
 ```xaml
 <Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
@@ -61,7 +61,7 @@ var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Co
 
 ### <a name="preventing-text-entry"></a>Verhindern des Text Eintrags
 
-Benutzer können daran gehindert werden, den Text in einem [`Editor`](xref:Xamarin.Forms.Editor) zu ändern, indem Sie die `IsReadOnly`-Eigenschaft mit dem Standardwert `false` auf `true` festlegen:
+Benutzer können daran gehindert werden, den Text in einem [`Editor`](xref:Xamarin.Forms.Editor) zu ändern, indem Sie die `IsReadOnly`-Eigenschaft mit dem Standardwert `false`auf `true`festlegen:
 
 ```xaml
 <Editor Text="This is a read-only Editor"
@@ -75,9 +75,9 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 > [!NOTE]
 > Die `IsReadonly`-Eigenschaft ändert nicht die visuelle Darstellung eines [`Editor`](xref:Xamarin.Forms.Editor), anders als die `IsEnabled`-Eigenschaft, die auch die visuelle Darstellung der `Editor` in grau ändert.
 
-### <a name="limiting-input-length"></a>Einschränken der Eingabe Länge
+### <a name="limiting-input-length"></a>Geben Sie die Länge beschränken
 
-Die [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) -Eigenschaft kann verwendet werden, um die für die [`Editor`](xref:Xamarin.Forms.Editor)zulässige Eingabe Länge einzuschränken. Diese Eigenschaft sollte auf eine positive ganze Zahl festgelegt werden:
+Die [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) -Eigenschaft kann verwendet werden, um die für die [`Editor`](xref:Xamarin.Forms.Editor)zulässige Eingabe Länge einzuschränken. Diese Eigenschaft muss eine positive ganze Zahl festgelegt werden:
 
 ```xaml
 <Editor ... MaxLength="10" />
@@ -131,7 +131,7 @@ Wenn die automatische Größenänderung aktiviert ist, erhöht sich die Höhe de
 > [!NOTE]
 > Ein [`Editor`](xref:Xamarin.Forms.Editor) wird nicht automatisch Größe angezeigt, wenn die [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) -Eigenschaft festgelegt wurde.
 
-### <a name="customizing-the-keyboard"></a>Anpassen der Tastatur
+### <a name="customizing-the-keyboard"></a>Anpassen der Tastaturfokus
 
 Die Tastatur, die angezeigt wird, wenn Benutzer mit einem [`Editor`](xref:Xamarin.Forms.Editor) interagieren, kann Programm gesteuert über die [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) -Eigenschaft auf eine der folgenden Eigenschaften der [`Keyboard`](xref:Xamarin.Forms.Keyboard) -Klasse festgelegt werden:
 
@@ -190,11 +190,11 @@ var editor = new Editor();
 editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
 ```
 
-### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und Deaktivieren der Rechtschreibprüfung
+### <a name="enabling-and-disabling-spell-checking"></a>Aktivieren und deaktivieren die Rechtschreibprüfung
 
-Die [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft steuert, ob die Rechtschreibprüfung aktiviert ist. Standardmäßig ist die-Eigenschaft auf `true` festgelegt. Wenn der Benutzer Text eingibt, werden falsche Schreibweisen angegeben.
+Die [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft steuert, ob die Rechtschreibprüfung aktiviert ist. Standardmäßig ist die-Eigenschaft auf `true`festgelegt. Wenn der Benutzer Text eingibt, werden von Rechtschreibfehlern angegeben.
 
-Für einige Texteingabe Szenarios, z. b. die Eingabe eines Benutzernamens, bietet die Rechtschreibprüfung jedoch eine negative Darstellung und sollte daher durch Festlegen der [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft auf `false` deaktiviert werden:
+Für einige Texteingabe Szenarios, z. b. die Eingabe eines Benutzernamens, bietet die Rechtschreibprüfung jedoch eine negative Darstellung und sollte daher durch Festlegen der [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft auf `false`deaktiviert werden:
 
 ```xaml
 <Editor ... IsSpellCheckEnabled="false" />
@@ -205,13 +205,13 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> Wenn die [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft auf `false` festgelegt ist und eine benutzerdefinierte Tastatur nicht verwendet wird, wird die native Rechtschreibprüfung deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Rechtschreibprüfung deaktiviert (z. b. [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat)), wird die Eigenschaft `IsSpellCheckEnabled` ignoriert. Daher kann die-Eigenschaft nicht verwendet werden, um die Rechtschreibprüfung für eine `Keyboard` zu aktivieren, die Sie explizit deaktiviert.
+> Wenn die [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) -Eigenschaft auf `false`festgelegt ist und eine benutzerdefinierte Tastatur nicht verwendet wird, wird die native Rechtschreibprüfung deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Rechtschreibprüfung deaktiviert (z. b. [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat)), wird die Eigenschaft `IsSpellCheckEnabled` ignoriert. Daher kann die-Eigenschaft nicht verwendet werden, um die Rechtschreibprüfung für eine `Keyboard` zu aktivieren, die Sie explizit deaktiviert.
 
-### <a name="enabling-and-disabling-text-prediction"></a>Aktivieren und Deaktivieren der Text Vorhersage
+### <a name="enabling-and-disabling-text-prediction"></a>Aktivieren und Deaktivieren von Textvorhersage
 
-Die `IsTextPredictionEnabled`-Eigenschaft steuert, ob die Text Vorhersage und die automatische Textkorrektur aktiviert ist. Standardmäßig ist die-Eigenschaft auf `true` festgelegt. Wenn der Benutzer Text eingibt, werden Word-Vorhersagen angezeigt.
+Die `IsTextPredictionEnabled`-Eigenschaft steuert, ob die Text Vorhersage und die automatische Textkorrektur aktiviert ist. Standardmäßig ist die-Eigenschaft auf `true`festgelegt. Wenn der Benutzer Text eingibt, werden Word Vorhersagen angezeigt.
 
-Bei manchen Texteingabe Szenarios, z. b. bei der Eingabe eines Benutzernamens, bietet die Text Vorhersage und die automatische Textkorrektur jedoch eine negative Benutzerumgebung und sollte durch Festlegen der `IsTextPredictionEnabled`-Eigenschaft auf `false` deaktiviert werden:
+Bei manchen Texteingabe Szenarios, z. b. bei der Eingabe eines Benutzernamens, bietet die Text Vorhersage und die automatische Textkorrektur jedoch eine negative Benutzerumgebung und sollte durch Festlegen der `IsTextPredictionEnabled`-Eigenschaft auf `false`deaktiviert werden:
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -222,11 +222,11 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
 
 > [!NOTE]
-> Wenn die `IsTextPredictionEnabled`-Eigenschaft auf `false` festgelegt ist und eine benutzerdefinierte Tastatur nicht verwendet wird, werden die Text Vorhersage und die automatische Textkorrektur deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Text Vorhersage deaktiviert, wird die `IsTextPredictionEnabled`-Eigenschaft ignoriert. Daher kann die-Eigenschaft nicht verwendet werden, um die Text Vorhersage für eine `Keyboard` zu aktivieren, die Sie explizit deaktiviert.
+> Wenn die `IsTextPredictionEnabled`-Eigenschaft auf `false`festgelegt ist und eine benutzerdefinierte Tastatur nicht verwendet wird, werden die Text Vorhersage und die automatische Textkorrektur deaktiviert. Wenn jedoch ein [`Keyboard`](xref:Xamarin.Forms.Keyboard) festgelegt wurde, der die Text Vorhersage deaktiviert, wird die `IsTextPredictionEnabled`-Eigenschaft ignoriert. Daher kann die-Eigenschaft nicht verwendet werden, um die Text Vorhersage für eine `Keyboard` zu aktivieren, die Sie explizit deaktiviert.
 
 ### <a name="colors"></a>Farben
 
-`Editor` kann so festgelegt werden, dass eine benutzerdefinierte Hintergrundfarbe über die `BackgroundColor`-Eigenschaft verwendet wird. Eine besondere Sorgfalt ist erforderlich, um sicherzustellen, dass Farben auf jeder Plattform verwendet werden können. Da jede Plattform über andere Standardwerte für die Textfarbe verfügt, müssen Sie möglicherweise für jede Plattform eine benutzerdefinierte Hintergrundfarbe festlegen. Weitere Informationen zur Optimierung der Benutzeroberfläche für die einzelnen Plattformen finden Sie unter [Arbeiten mit Platt Form Anpassungen](~/xamarin-forms/platform/device.md) .
+`Editor` kann so festgelegt werden, dass eine benutzerdefinierte Hintergrundfarbe über die `BackgroundColor`-Eigenschaft verwendet wird. Besondere Sorgfalt ist erforderlich, um sicherzustellen, dass Farben auf jeder Plattform verwendet werden können. Da jede Plattform unterschiedliche Standardwerte für die Textfarbe verfügt, müssen Sie eine benutzerdefinierte Hintergrundfarbe für jede Plattform festgelegt. Weitere Informationen zur Optimierung der Benutzeroberfläche für die einzelnen Plattformen finden Sie unter [Arbeiten mit Platt Form Anpassungen](~/xamarin-forms/platform/device.md) .
 
 In C#:
 
@@ -270,13 +270,13 @@ In XAML:
 
 ![](editor-images/textbackgroundcolor.png "Editor with BackgroundColor Example")
 
-Stellen Sie sicher, dass die von Ihnen ausgewählten Hintergrund-und Textfarben auf jeder Plattform verwendbar sind und keinen Platzhalter Text verbergen.
+Stellen Sie sicher, dass die Hintergrund- und Textfarben können auf jeder Plattform verwendet werden können und keine Platzhaltertext verdecken.
 
 ## <a name="interactivity"></a>Interaktivität
 
 `Editor` macht zwei Ereignisse verfügbar:
 
-- [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash; ausgelöst, wenn sich der Text im Editor ändert. Stellt den Text vor und nach der Änderung bereit.
+- [TextChanged](xref:Xamarin.Forms.InputView.TextChanged) &ndash; ausgelöst, wenn sich der Text im Editor ändert. Stellt den Text an, vor und nach der Änderung.
 - [Abgeschlossen](xref:Xamarin.Forms.Editor.Completed) &ndash; ausgelöst, wenn der Benutzer die Eingabe beendet hat, indem er die Rückgabetaste auf der Tastatur gedrückt hat.
 
 > [!NOTE]
@@ -284,7 +284,7 @@ Stellen Sie sicher, dass die von Ihnen ausgewählten Hintergrund-und Textfarben 
 
 ### <a name="completed"></a>Abgeschlossen
 
-Das `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem `Editor` zu reagieren. `Completed` wird ausgelöst, wenn der Benutzer die Eingabe mit einem Feld beendet, indem die Rückgabetaste auf der Tastatur eingegeben wird (oder durch Drücken der Tab-Taste auf der UWP). Der Handler für das-Ereignis ist ein generischer Ereignishandler, der den Absender und den `EventArgs` annimmt:
+Das `Completed` Ereignis wird verwendet, um auf den Abschluss einer Interaktion mit einem `Editor`zu reagieren. `Completed` wird ausgelöst, wenn der Benutzer die Eingabe mit einem Feld beendet, indem die Rückgabetaste auf der Tastatur eingegeben wird (oder durch Drücken der Tab-Taste auf der UWP). Der Handler für das-Ereignis ist ein generischer Ereignishandler, der den Absender und den `EventArgs`annimmt:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -293,7 +293,7 @@ void EditorCompleted (object sender, EventArgs e)
 }
 ```
 
-Das abgeschlossene Ereignis kann im Code und in XAML abonniert werden:
+Das abgeschlossene Ereignis kann im Code und XAML abonniert werden:
 
 In C#:
 
@@ -332,7 +332,7 @@ Title="Editor Demo">
 
 Das `TextChanged` Ereignis wird verwendet, um auf eine Änderung im Inhalt eines Felds zu reagieren.
 
-`TextChanged` wird immer dann ausgelöst, wenn sich die `Text` des `Editor` ändert. Der Handler für das-Ereignis nimmt eine Instanz von `TextChangedEventArgs` an. `TextChangedEventArgs` bietet Zugriff auf die alten und neuen Werte der `Editor` `Text` über die Eigenschaften `OldTextValue` und `NewTextValue`:
+`TextChanged` wird immer dann ausgelöst, wenn sich die `Text` des `Editor` ändert. Der Handler für das-Ereignis nimmt eine Instanz von `TextChangedEventArgs`an. `TextChangedEventArgs` bietet Zugriff auf die alten und neuen Werte der `Editor` `Text` über die Eigenschaften `OldTextValue` und `NewTextValue`:
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -342,9 +342,9 @@ void EditorTextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-Das abgeschlossene Ereignis kann im Code und in XAML abonniert werden:
+Das abgeschlossene Ereignis kann im Code und XAML abonniert werden:
 
-In Code:
+Im Code:
 
 ```csharp
 public partial class EditorPage : ContentPage
