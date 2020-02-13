@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 92e2ceeea901e2acea70118e75d936f3b3ac94db
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 12c6229c1922f0bd4a4d25ca796bcb46141a326c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199995"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131136"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Automatisierungseigenschaften in Xamarin.Forms
 
@@ -113,7 +113,7 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 > [!NOTE]
 > Beachten Sie, dass auch die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode verwendet werden kann, um die angefügte Eigenschaft `AutomationProperties.HelpText` festzulegen – `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`.
 
-Auf manchen Plattformen kann für Bearbeitungssteuerelemente wie [`Entry`](xref:Xamarin.Forms.Entry) die `HelpText`-Eigenschaft in einigen Fällen weggelassen und durch Platzhaltertext ersetzt werden. Zum Beispiel ist „Geben Sie hier Ihren Namen ein“ eine gute Variante für die [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder)-Eigenschaft, die vor der tatsächlichen Eingabe durch den Benutzer den Text in das Steuerelement platziert.
+Auf manchen Plattformen kann für Bearbeitungssteuerelemente wie [`Entry`](xref:Xamarin.Forms.Entry) die `HelpText`-Eigenschaft in einigen Fällen weggelassen und durch Platzhaltertext ersetzt werden. Zum Beispiel ist „Geben Sie hier Ihren Namen ein“ eine gute Variante für die [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft, die vor der tatsächlichen Eingabe durch den Benutzer den Text in das Steuerelement platziert.
 
 <a name="labeledby" />
 

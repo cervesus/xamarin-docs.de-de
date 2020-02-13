@@ -10,12 +10,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 3936fe16ee768505c53ec119c51dcbecef7e6fbe
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: c0e8ec27898cc842d485967e525c2936d7a0f56d
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "73842954"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131052"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart
 
@@ -383,7 +383,7 @@ Weitere Informationen zur hierarchischen Navigation finden Sie unter [Hierarchic
 
 Datenbindung wird verwendet, um die Vorgänge zu vereinfachen, über die in einer Xamarin.Forms-Anwendung Daten angezeigt werden und interagieren. Sie stellt eine Verbindung zwischen der Benutzeroberfläche und der zugrundeliegenden Anwendung her. Die [`BindableObject`](xref:Xamarin.Forms.BindableObject)-Klasse beinhaltet einen Großteil der Infrastruktur, um die Datenbindung zu unterstützen.
 
-Bei der Datenbindung werden zwei Objekte miteinander verbunden: die *Quelle* und das *Ziel*. Das *Quellobjekt* stellt die Daten bereit. Das *Zielobjekt* verwendet Daten aus dem Quellobjekt (und zeigt diese häufig an). Mit einem [`Editor`](xref:Xamarin.Forms.Editor) (*Zielobjekt*) wird die zugehörige Eigenschaft [`Text`](xref:Xamarin.Forms.Editor.Text) beispielsweise häufig an eine öffentliche `string`-Eigenschaft in einem *Quellobjekt* gebunden. Das folgende Diagramm veranschaulicht die Bindungsbeziehung:
+Bei der Datenbindung werden zwei Objekte miteinander verbunden: die *Quelle* und das *Ziel*. Das *Quellobjekt* stellt die Daten bereit. Das *Zielobjekt* verwendet Daten aus dem Quellobjekt (und zeigt diese häufig an). Mit einem [`Editor`](xref:Xamarin.Forms.Editor) (*Zielobjekt*) wird die zugehörige Eigenschaft [`Text`](xref:Xamarin.Forms.InputView.Text) beispielsweise häufig an eine öffentliche `string`-Eigenschaft in einem *Quellobjekt* gebunden. Das folgende Diagramm veranschaulicht die Bindungsbeziehung:
 
 ![](deepdive-images/data-binding.png "Data Binding")
 
@@ -432,7 +432,7 @@ Der [`Editor`](xref:Xamarin.Forms.Editor) auf der Seite `NoteEntryPage` bindet d
         ... />
 ```
 
-Zwischen der Eigenschaft [`Editor.Text`](xref:Xamarin.Forms.Editor.Text) und der Eigenschaft `Text` des *Quellobjekts* wird eine Bindung eingerichtet. Am `Editor` vorgenommene Änderungen werden automatisch an das `Note`-Objekt weitergegeben. Gleichermaßen aktualisiert die Xamarin.Forms-Bindungs-Engine auch die Inhalte des `Editor`, wenn Änderungen an der Eigenschaft `Note.Text` vorgenommen werden. Dies wird als *bidirektionale Bindung* bezeichnet.
+Zwischen der Eigenschaft [`Editor.Text`](xref:Xamarin.Forms.InputView.Text) und der Eigenschaft `Text` des *Quellobjekts* wird eine Bindung eingerichtet. Am `Editor` vorgenommene Änderungen werden automatisch an das `Note`-Objekt weitergegeben. Gleichermaßen aktualisiert die Xamarin.Forms-Bindungs-Engine auch die Inhalte des `Editor`, wenn Änderungen an der Eigenschaft `Note.Text` vorgenommen werden. Dies wird als *bidirektionale Bindung* bezeichnet.
 
 Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
