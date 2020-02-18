@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: jimmgarrido
 ms.author: jigarrid
 ms.date: 01/14/2020
-ms.openlocfilehash: fb607ab605322499e42f500e4f3bf08c1c267c23
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 2cf925a96e952e6b760da9ca5416e124a3e3716b
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519657"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071152"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (Preview)
 
@@ -52,7 +52,7 @@ Mit Xamarin Hot Restart können Sie Änderungen an Ihrer App während der Entwic
 > Die Verwendung der automatischen Bereitstellung wird empfohlen, damit zusätzliche iOS-Geräte einfach für die Bereitstellung konfiguriert werden können. Sie können diese jedoch deaktivieren und die manuelle Bereitstellung weiterhin verwenden, wenn die richtigen Bereitstellungsprofile vorhanden sind.
 
 ## <a name="use-xamarin-hot-restart"></a>Verwenden von Xamarin Hot Restart
-Nach der anfänglichen Einrichtung erscheint Ihr verbundenes Gerät im Dropdownmenü für das Debugziel. Wählen Sie Ihr Gerät im Dropdownmenü aus, und klicken Sie auf die Schaltfläche **Ausführen**, um Ihre App zu debuggen. Möglicherweise müssen Sie die App auf dem Gerät manuell starten, um die Debugsitzung zu starten.
+Nach der anfänglichen Einrichtung erscheint Ihr verbundenes Gerät im Dropdownmenü für das Debugziel. Wählen Sie Ihr Gerät im Dropdownmenü aus, und klicken Sie auf die Schaltfläche **Ausführen**, um Ihre App zu debuggen. Möglicherweise wird Ihnen in Visual Studio eine Benachrichtigung mit der Bitte angezeigt, die App auf dem Gerät manuell zu starten, um die Debugsitzung zu beginnen.
 
 Sie können während des Debuggens Änderungen an Ihren Codedateien vornehmen und dann die Schaltfläche **Neu starten** in der Debugsymbolleiste drücken oder **STRG+Umschalt+F5** verwenden, um die Debugsitzung mit Ihren neuen Änderungen neu zu starten:
 
@@ -66,6 +66,7 @@ Sie können während des Debuggens Änderungen an Ihren Codedateien vornehmen un
 
 ## <a name="troubleshoot"></a>Problembehandlung
 - Der Setup-Assistent erkennt iTunes nicht, wenn es über den Microsoft Store installiert wurde. Sie müssen diese Version zuerst deinstallieren und dann den [Installer von Apple](https://go.microsoft.com/fwlink/?linkid=2101014) herunterladen.
+- Es gibt ein bekanntes Problem, bei dem durch aktivierte gerätespezifische Builds verhindert wird, dass die App in den Debugmodus wechselt. Problemumgehung: Deaktivieren Sie aktivierte gerätespezifische Builds unter **Properties > iOS Build** (Eigenschaften > iOS-Build), und versuchen Sie noch einmal, den Debugmodus zu starten. Dieses Problem wird in einem kommenden Release behoben.
 - Wenn die App bereits auf dem Gerät vorhanden ist, kann der Versuch der Bereitstellung mit Hot Restart mit einem `AMDeviceStartHouseArrestService`-Fehler fehlschlagen. Das Problem kann umgangen werden, indem die App auf dem Gerät deinstalliert wird und dann noch mal bereitgestellt wird.
 
 Verwenden Sie bitte das Feedbacktool unter [Hilfe > Feedback senden > Ein Problem melden](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem), um zusätzliche Probleme zu melden.

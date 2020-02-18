@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 056bb16c76887661f054422b2c682a91e6bfa466
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: d046962bf08b85069b1a698324db76a4ac3286d9
+ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489894"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144652"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -22,7 +22,7 @@ Mit Triggern können Sie Aktionen deklarativ in XAML ausdrücken, die die Darste
 
 Sie können einen Trigger direkt zu einem Steuerelement zuweisen oder zu einem Ressourcenverzeichnis auf Seitenebene oder Anwendungsebene hinzufügen, das auf mehrere Steuerelemente angewendet wird.
 
-Es gibt vier Typen von Triggern:
+Es gibt mehrere Typen von Triggern:
 
 - [Eigenschaftstrigger:](#property) tritt auf, wenn eine Eigenschaft eines Steuerelements auf einen bestimmten Wert festgelegt wird.
 
@@ -31,6 +31,20 @@ Es gibt vier Typen von Triggern:
 - [Ereignistrigger:](#event) tritt auf, wenn ein Ereignis auf dem Steuerelement auftritt.
 
 - [Multitrigger:](#multi) ermöglicht das Festlegen mehrerer Triggerbedingungen, unter denen eine Aktion auftritt.
+
+- [Adaptiver Trigger](#adaptive) (VORSCHAU): reagiert auf Änderungen in der Breite und Höhe eines Anwendungsfensters.
+
+- [Vergleichstrigger](#compare) (VORSCHAU): wird ausgelöst, wenn zwei Werte verglichen werden.
+
+- [Gerätetrigger](#device) (VORSCHAU): wird ausgelöst, wenn ein bestimmtes Gerät verwendet wird. 
+
+- [Ausrichtungstrigger](#orientation) (VORSCHAU): wird ausgelöst, wenn sich die Bildschirmausrichtung ändert.
+
+Wenn Sie die Vorschautrigger verwenden möchten, müssen Sie sie über das Featureflag in der Datei `App.xaml.cs` aktivieren:
+
+```csharp
+Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
+```
 
 <a name="property" />
 
@@ -333,6 +347,141 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
+
+<a name="adaptive" />
+
+## <a name="adaptive-trigger-preview"></a>Adaptiver Trigger (VORSCHAU)
+
+Ein adaptiver Trigger (`AdaptiveTrigger`) wird automatisch ausgelöst, wenn das Fenster eine bestimmte Höhe oder Breite hat. Ein `AdaptiveTrigger` hat zwei mögliche Eigenschaften:
+
+- **MinWindowHeight**
+- **MinWindowWidth**
+
+<a name="compare"/>
+
+## <a name="compare-trigger-preview"></a>Vergleichstrigger (VORSCHAU)
+
+Ein Vergleichstrigger (`CompareStateTrigger`) ist ein sehr vielseitiger `StateTrigger`, der ausgelöst wird, wenn **Value** gleich **Property** ist.
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="Checked">
+                <VisualState.StateTriggers>
+                    <CompareStateTrigger Property="{Binding IsChecked, Source={x:Reference CheckBox}}" Value="True" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Green" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="UnChecked">
+                <VisualState.StateTriggers>
+                    <CompareStateTrigger Property="{Binding IsChecked, Source={x:Reference CheckBox}}" Value="False" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>     
+    </VisualStateManager.VisualStateGroups>  
+    <Frame
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        BackgroundColor="White"
+        Margin="24">
+        <StackLayout
+            Orientation="Horizontal">
+            <CheckBox 
+                x:Name="CheckBox"
+                VerticalOptions="Center"/>
+            <Label
+                Text="Checked/Uncheck the CheckBox to modify the Grid BackgroundColor"
+                VerticalOptions="Center"/>
+        </StackLayout>
+    </Frame>
+</Grid>
+```
+
+In diesem Beispiel wird gezeigt, wie die Eigenschaft **BackgroundColor** eines Rasters (**Grid**) auf dem Status der Eigenschaft **CheckBox** **IsChecked** basiert. **StateTrigger** unterstützt Bindungen. Das wiederum eröffnet viele Möglichkeiten, um Werte zu vergleichen – nicht nur die von UI-Elementen, sondern auch die von **BindingContext**.
+
+<a name="device" />
+
+## <a name="device-trigger-preview"></a>Gerätetrigger (VORSCHAU)
+
+Mit einem Gerätetrigger (`DeviceTrigger`) können Sie steuern, wie ein Zustand auf einer bestimmten Geräteplattform angewendet wird, ähnlich wie bei `OnPlatform`.
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState
+                x:Name="Android">
+                <VisualState.StateTriggers>
+                    <DeviceStateTrigger Device="Android" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Blue" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState
+                x:Name="iOS">
+                <VisualState.StateTriggers>
+                    <DeviceStateTrigger Device="iOS" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>  
+    </VisualStateManager.VisualStateGroups>  
+    <Label
+        Text="This page changes the color based on the device where the App is running."
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+</Grid>
+```
+
+Im obigen Beispiel ist die Hintergrundfarbe auf einem Android-Gerät blau und auf einem iOS-Gerät rot.
+
+<a name="orientation" />
+
+## <a name="orientation-trigger-preview"></a>Ausrichtungstrigger (VORSCHAU)
+
+Ein Ausrichtungstrigger (`OrientationTrigger`) unterstützt das Ändern des Ansichtszustands, wenn sich die Geräteausrichtung zwischen Quer- und Hochformat ändert.
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState
+                x:Name="Landscape">
+                <VisualState.StateTriggers>
+                    <OrientationStateTrigger Orientation="Landscape" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Blue" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState
+                x:Name="Portrait">
+                <VisualState.StateTriggers>
+                    <OrientationStateTrigger Orientation="Portrait" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>  
+    <Label
+        Text="This Grid changes the color based on the orientation device where the App is running."
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+</Grid>
+```
+
+Im obigen Beispiel ist der Hintergrund blau, wenn sich das Gerät im Querformat befindet, und rot, wenn es im Hochformat ist.
 
 ## <a name="related-links"></a>Verwandte Links
 

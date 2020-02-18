@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772101"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131095"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Erstellen von Xamarin.Forms-Verhalten
 
@@ -84,7 +84,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-Das `NumericValidationBehavior`-Verhalten wird von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse abgeleitet, bei der `T` einem [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement entspricht. Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode registriert einen Ereignishandler für das [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged)-Ereignis mit der [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode, die die Registrierung des `TextChanged`-Ereignisses aufhebt, um Arbeitsspeicherverluste zu verhindern. Die Kernfunktionalität des Verhaltens wird von der `OnEntryTextChanged`-Methode bereitgestellt, die den vom Benutzer in `Entry` eingegebenen Wert analysiert und die [`TextColor`](xref:Xamarin.Forms.Entry.TextColor)-Eigenschaft auf rot festlegt, wenn es sich nicht um einen `double`-Wert handelt.
+Das `NumericValidationBehavior`-Verhalten wird von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse abgeleitet, bei der `T` einem [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement entspricht. Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode registriert einen Ereignishandler für das [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)-Ereignis mit der [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode, die die Registrierung des `TextChanged`-Ereignisses aufhebt, um Arbeitsspeicherverluste zu verhindern. Die Kernfunktionalität des Verhaltens wird von der `OnEntryTextChanged`-Methode bereitgestellt, die den vom Benutzer in `Entry` eingegebenen Wert analysiert und die [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)-Eigenschaft auf rot festlegt, wenn es sich nicht um einen `double`-Wert handelt.
 
 > [!NOTE]
 > Xamarin.Forms legt nicht die `BindingContext`-Eigenschaft von Verhalten fest, da Verhalten mit Formatvorlagen freigegeben und auf mehrere Steuerelemente angewendet werden können.
@@ -110,7 +110,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 Bei der Ausführung reagiert das Verhalten gemäß der Verhaltensimplementierung auf die Interaktion mit dem Steuerelement. In den folgenden Screenshots wird die Reaktion des Verhaltens auf ungültige Eingabe veranschaulicht:
 
-[![](creating-images/screenshots-sml.png "Beispielanwendung mit Xamarin.Forms-Verhalten")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
+[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
 
 > [!NOTE]
 > Verhalten werden für einen spezifischen Steuerelementtyp (oder eine übergeordnete Klasse, die für mehrere Steuerelemente gelten kann) geschrieben und sollten nur zu kompatiblen Steuerelementen hinzugefügt werden. Wenn ein Verhalten an ein inkompatibles Steuerelement angefügt wird, wird eine Ausnahme ausgelösten.

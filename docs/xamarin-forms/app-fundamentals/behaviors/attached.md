@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: ab39c79c59855c9f78184614176b1658ee0e29b2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772114"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131117"
 ---
 # <a name="attached-behaviors"></a>Angefügte Verhaltensweisen
 
@@ -80,7 +80,7 @@ public static class NumericValidationBehavior
 }
 ```
 
-Die `NumericValidationBehavior`-Klasse enthält eine angefügte Eigenschaft namens `AttachBehavior` mit einem `static`-Getter und -Setter, mit denen das Hinzufügen und Entfernen des Verhaltens aus dem Steuerelement gesteuert wird, an das das Verhalten angefügt wird. Diese angefügte Eigenschaft registriert die `OnAttachBehaviorChanged`-Methode, die ausgeführt wird, wenn der Wert der Eigenschaft geändert wird. Bei dieser Methode wird ein Ereignishandler basierend auf dem Wert der angefügten `AttachBehavior`-Eigenschaft für das Ereignis [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) registriert, oder seine Registrierung wird aufgehoben. Die Kernfunktionalität des Verhaltens wird von der `OnEntryTextChanged`-Methode bereitgestellt, die den vom Benutzer in [`Entry`](xref:Xamarin.Forms.Entry) eingegebenen Wert analysiert und die `TextColor`-Eigenschaft auf rot festlegt, wenn es sich nicht um einen `double`-Wert handelt.
+Die `NumericValidationBehavior`-Klasse enthält eine angefügte Eigenschaft namens `AttachBehavior` mit einem `static`-Getter und -Setter, mit denen das Hinzufügen und Entfernen des Verhaltens aus dem Steuerelement gesteuert wird, an das das Verhalten angefügt wird. Diese angefügte Eigenschaft registriert die `OnAttachBehaviorChanged`-Methode, die ausgeführt wird, wenn der Wert der Eigenschaft geändert wird. Bei dieser Methode wird ein Ereignishandler basierend auf dem Wert der angefügten `AttachBehavior`-Eigenschaft für das Ereignis [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) registriert, oder seine Registrierung wird aufgehoben. Die Kernfunktionalität des Verhaltens wird von der `OnEntryTextChanged`-Methode bereitgestellt, die den vom Benutzer in [`Entry`](xref:Xamarin.Forms.Entry) eingegebenen Wert analysiert und die `TextColor`-Eigenschaft auf rot festlegt, wenn es sich nicht um einen `double`-Wert handelt.
 
 ## <a name="consuming-an-attached-behavior"></a>Verwenden von angefügtem Verhalten
 
@@ -103,7 +103,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 Bei der Ausführung reagiert das Verhalten gemäß der Verhaltensimplementierung auf die Interaktion mit dem Steuerelement. In den folgenden Screenshots wird die Reaktion des angefügten Verhaltens auf ungültige Eingabe veranschaulicht:
 
-[![](attached-images/screenshots-sml.png "Beispielanwendung mit angefügtem Verhalten")](attached-images/screenshots.png#lightbox "Beispielanwendung mit angefügtem Verhalten")
+[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
 
 > [!NOTE]
 > Angefügte Verhaltensweisen werden für einen spezifischen Steuerelementtyp (oder eine übergeordnete Klasse, die für mehrere Steuerelemente gelten kann) geschrieben und sollten nur zu kompatiblen Steuerelementen hinzugefügt werden. Der Versuch, ein Verhalten an ein nicht kompatibles Steuerelement anzufügen, führt zu einem unbekannten Verhalten und hängt von der Verhaltensimplementierung ab.
@@ -123,7 +123,7 @@ var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-Zur Laufzeit wird die `OnAttachBehaviorChanged`-Methode ausgeführt, wenn der Wert der angefügten `AttachBehavior`-Eigenschaft auf `false` festgelegt ist. Anschließend wird mit der `OnAttachBehaviorChanged`-Methode die Registrierung des Ereignishandlers für das Ereignis [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) aufgehoben. Dabei wird sichergestellt, dass das Verhalten nicht ausgeführt wird, während der Benutzer mit dem Steuerelement interagiert.
+Zur Laufzeit wird die `OnAttachBehaviorChanged`-Methode ausgeführt, wenn der Wert der angefügten `AttachBehavior`-Eigenschaft auf `false` festgelegt ist. Anschließend wird mit der `OnAttachBehaviorChanged`-Methode die Registrierung des Ereignishandlers für das Ereignis [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) aufgehoben. Dabei wird sichergestellt, dass das Verhalten nicht ausgeführt wird, während der Benutzer mit dem Steuerelement interagiert.
 
 ## <a name="summary"></a>Zusammenfassung
 
