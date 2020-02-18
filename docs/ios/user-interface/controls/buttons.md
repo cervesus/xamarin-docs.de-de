@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2018
-ms.openlocfilehash: a8dfd267fe9f5f838927fc216d53c2475398ed16
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0619488199c202e1877e4cfa60d622ef247e2b3f
+ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022115"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77374119"
 ---
 # <a name="buttons-in-xamarinios"></a>Schaltflächen in xamarin. IOS
 
@@ -69,7 +69,7 @@ Eine `UIButton` kann nur mit wenigen Codezeilen erstellt werden.
 Wenn Sie auf eine Schaltfläche tippen möchten, geben Sie einen Handler für das `TouchUpInside`-Ereignis der Schaltfläche an:
 
 ```csharp
-button.TouchUpInside += (sender, e) => {
+myButton.TouchUpInside += (sender, e) => {
     DoSomething();
 };
 ```
@@ -91,13 +91,13 @@ Geben Sie für das entsprechende Ereignis entweder den Namen eines neuen Ereigni
 
 > [!NOTE]
 > Eine vollständige Liste aller `UIControlState` Werte finden Sie im [`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
-> Dokumentation.
+> Onlinedokumentation.
 
 So legen Sie z. b. die Titel Farbe und Schatten Farbe für `UIControlState.Normal`fest:
 
 ```csharp
-button.SetTitleColor(UIColor.White, UIControlState.Normal);
-button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
+myButton.SetTitleColor(UIColor.White, UIControlState.Normal);
+myButton.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
 Im folgenden Code wird der Titel der Schaltfläche auf eine attributierte (stilisierte) Zeichenfolge für `UIControlState.Normal` und `UIControlState.Highlighted`festgelegt:
@@ -115,9 +115,9 @@ myButton.SetAttributedTitle(highlightedAttributedTitle, UIControlState.Highlight
 Schaltflächen mit einer `UIButtonType` `Custom` haben keine Standard Stile. Allerdings ist es möglich, die Darstellung der Schaltfläche zu konfigurieren, indem Sie ein Bild für die unterschiedlichen Zustände festlegt:
 
 ```csharp
-button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
-button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UIControlState.Highlighted);
-button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
+myButton.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
+myButton.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UIControlState.Highlighted);
+myButton.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
 ```
 
 Abhängig davon, ob der Benutzer die Schaltfläche berührt oder nicht, wird er als eines der folgenden Bilder (`UIControlState.Normal`, `UIControlState.Highlighted` und `UIControlState.Selected` Zustände) angezeigt:
