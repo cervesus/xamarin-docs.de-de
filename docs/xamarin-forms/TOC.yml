@@ -555,7 +555,12 @@
                 - name: Formatieren von Xamarin.Forms-Apps mithilfe von Cascading Stylesheets (CSS)
                   href: user-interface/styles/css/index.md
             - name: Design
-              href: user-interface/theming.md
+              href: user-interface/theming/index.md
+              items:
+                - name: Erstellen des Designs einer Anwendung
+                  href: user-interface/theming/theming.md
+                - name: Verwenden des dunklen Modus
+                  href: user-interface/theming/dark-mode.md
             - name: Grafisches Element
               href: user-interface/visual/index.md
               items:

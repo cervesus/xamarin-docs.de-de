@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: 1199cdf00a5fa93b7ed7a4351ea5838a2065eddd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a724a21dfffead307ca3d65d5ff134cf2d7c90db
+ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020861"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77374035"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -42,7 +42,7 @@ Ihnen stehen die folgenden Virtualisierungstechnologien zum Beschleunigen des An
 2. **Intel Hardware Accelerated Execution Manager (HAXM)**
    Bei HAXM handelt es sich um eine Virtualisierungs-Engine für Computer mit Intel-CPUs.
 
-Für die beste Benutzererfahrung unter Windows empfiehlt es sich, HAXM zum Beschleunigen des Android-Emulators zu verwenden. Wenn HAXM auf Ihrem Computer nicht verfügbar ist, kann die Windows Hypervisor-Plattform (WHPX) verwendet werden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
+Für die beste Benutzererfahrung unter Windows empfiehlt es sich, WHPX zum Beschleunigen des Android-Emulators zu verwenden. Wenn WHPX nicht für Ihren Computer verfügbar ist, können Sie HAXM verwenden. Der Android-Emulator verwendet die Hardwarebeschleunigung automatisch, wenn folgende Kriterien erfüllt sind:
 
 - Die Hardwarebeschleunigung ist verfügbar und auf Ihrem Entwicklungscomputer aktiviert.
 
@@ -89,7 +89,7 @@ Hyper-V wird auf der Windows Hypervisor-Plattform ausgeführt. Ihr Computer muss
 systeminfo
 ```
 
-Wenn alle Hyper-V-Anforderungen den Wert **Yes** (Ja) aufweisen, wird Hyper-V von Ihrem Computer unterstützt. Beispiel:
+Wenn alle Hyper-V-Anforderungen den Wert **Yes** (Ja) aufweisen, wird Hyper-V von Ihrem Computer unterstützt. Zum Beispiel:
 
 [![Beispielausgabe der Systeminformationen](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -102,6 +102,10 @@ Wenn Ihr Computer die obigen Kriterien erfüllt, führen Sie die folgenden Schri
     [![Aktivieren von Hyper-V und Windows Hypervisor-Plattform](hardware-acceleration-images/win/03-hyper-v-settings-w158-sml.png)](hardware-acceleration-images/win/03-hyper-v-settings-w158.png#lightbox)
 
    Nachdem Sie die Änderungen vorgenommen haben, starten Sie den Computer neu.
+   
+> [!IMPORTANT]
+>
+> Für das Windows-Update vom 10. Oktober 2018 (RS5) und höhere Versionen müssen Sie nur Hyper-V aktivieren, da hier die Windows-Hypervisor-Plattform (WHPX) automatisch verwendet wird.
 
 2. **Installieren Sie [Visual Studio 15.8 oder höher](https://visualstudio.microsoft.com/vs/)** (diese Version von Visual Studio stellt IDE-Unterstützung zum Ausführen des Android-Emulators mit Hyper-V bereit).
 
@@ -126,7 +130,7 @@ Wenn Ihre Hardware HAXM unterstützt, können Sie überprüfen, ob HAXM bereits 
     sc query intelhaxm
     ```
 
-2. Überprüfen Sie die Ausgabe, um festzustellen, ob der HAXM-Prozess ausgeführt wird. Wenn er ausgeführt wird, wird der Zustand `intelhaxm` in der Ausgabe als `RUNNING` aufgeführt. Beispiel:
+2. Überprüfen Sie die Ausgabe, um festzustellen, ob der HAXM-Prozess ausgeführt wird. Wenn er ausgeführt wird, wird der Zustand `intelhaxm` in der Ausgabe als `RUNNING` aufgeführt. Zum Beispiel:
 
     ![Ausgabe des Befehls „sc query“, wenn HAXM verfügbar ist](hardware-acceleration-images/win/05-sc_query-w158.png)
 
