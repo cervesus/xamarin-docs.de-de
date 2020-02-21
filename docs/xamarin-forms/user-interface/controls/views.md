@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2019
-ms.openlocfilehash: 286950104e9a85b6ec89f0c0f3f891f29dada4ec
-ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
+ms.openlocfilehash: 06b802a90ef350dcbd0b056f801109609dcd7a35
+ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144664"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480633"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -66,7 +66,7 @@ Sichten sind Benutzeroberflächen Objekte, wie z. b. Bezeichnungen, Schaltfläch
 | [`Map`](xref:Xamarin.Forms.Maps.Map) eine Karte anzeigt. Das **xamarin. Forms. Maps** -nuget-Paket muss installiert sein. Android und die universelle Windows-Plattform erforderlich, einen Map-Autorisierungsschlüssel.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Maps.Map) / [Handbuch](~/xamarin-forms/user-interface/map/index.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![Map-Beispiel](views-images/Map.png "Map-Beispiel")](views-images/Map-Large.png#lightbox "Map-Beispiel")<br />Code für diese Seite / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) |
 |     |     |
 
-### <a name="mediaelement"></a>Media Element
+### <a name="mediaelement"></a>MediaElement
 
 |     |     |
 | --- | --- |
@@ -208,7 +208,7 @@ Diese beiden Klassen werden von der [`InputView`](xref:Xamarin.Forms.InputView) 
 
 |     |     |
 | --- | --- |
-| `IndicatorView` zeigt Indikatoren an, die die Anzahl der Elemente in einer `CarouselView`darstellen. Legen Sie die `ItemsSourceBy`-Eigenschaft auf das `CarouselView` Objekt fest, für das Indikatoren angezeigt werden sollen. <br /><br />[Leitfaden](~/xamarin-forms/user-interface/indicatorview.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![Beispiel für die Anzeige Ansicht](views-images/IndicatorView.png "Beispiel für die Anzeige Ansicht")](views-images/IndicatorView-Large.png#lightbox "Beispiel für die Anzeige Ansicht")<br />Code für diese Seite / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
+| `IndicatorView` zeigt Indikatoren an, die die Anzahl der Elemente in einer `CarouselView`darstellen. Legen Sie die `IndicatorView.ItemsSourceBy` angefügte-Eigenschaft auf das `CarouselView` Objekt fest, für das Indikatoren angezeigt werden. <br /><br />[Leitfaden](~/xamarin-forms/user-interface/indicatorview.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![Beispiel für die Anzeige Ansicht](views-images/IndicatorView.png "Beispiel für die Anzeige Ansicht")](views-images/IndicatorView-Large.png#lightbox "Beispiel für die Anzeige Ansicht")<br />Code für diese Seite / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
 |     |     |
 
 ### <a name="listview"></a>ListView

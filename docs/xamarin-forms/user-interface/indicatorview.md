@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/17/2019
-ms.openlocfilehash: 6b7845011470d83d8f2187e0227950c23e46d52d
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: a5a9daa39dcc94bbf77d9c91ea651bda6ec5747b
+ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490517"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480553"
 ---
 # <a name="xamarinforms-indicatorview"></a>Xamarin. Forms-Anzeige Ansicht
 
@@ -30,19 +30,19 @@ Der `IndicatorView` ist ein Steuerelement, das Indikatoren anzeigt, die die Anza
 Forms.SetFlags("IndicatorView_Experimental");
 ```
 
-`IndicatorView` definiert die folgenden Eigenschaften an:
+`IndicatorView` definiert die folgenden Eigenschaften:
 
 - `Count`vom Typ `int`die Anzahl der Indikatoren.
-- `HideSingle`vom Typ `bool`gibt an, ob der Indikator ausgeblendet werden soll, wenn nur ein solcher vorhanden ist. Der Standardwert ist `true`sein.
+- `HideSingle`vom Typ `bool`gibt an, ob der Indikator ausgeblendet werden soll, wenn nur ein solcher vorhanden ist. Standardwert: `true`.
 - `IndicatorColor`vom Typ `Color`die Farbe der Indikatoren.
 - `IndicatorSize`vom Typ `double`die Größe der Indikatoren. Der Standardwert ist 6,0.
 - `IndicatorLayout`vom Typ `Layout<View>`definiert die zum Rendering der `IndicatorView`verwendete Layoutklasse. Diese Eigenschaft wird von xamarin. Forms festgelegt und muss in der Regel nicht von Entwicklern festgelegt werden.
 - `IndicatorTemplate`vom Typ `DataTemplate`die Vorlage, die die Darstellung der einzelnen Indikatoren definiert.
 - `IndicatorsShape`vom Typ `IndicatorShape`die Form jedes Indikators.
-- `ItemsSource`vom Typ `IEnumerable`die Auflistung, für die Indikatoren angezeigt werden. Diese Eigenschaft wird automatisch festgelegt, wenn die `ItemsSourceBy`-Eigenschaft festgelegt wird.
-- `ItemsSourceBy`vom Typ `VisualElement`, das `CarouselView` Objekt, für das Indikatoren angezeigt werden sollen.
-- `MaximumVisible`vom Typ `int`die maximale Anzahl sichtbarer Indikatoren. Der Standardwert ist `int.MaxValue`sein.
-- `Position`vom Typ `int`den aktuell ausgewählten Indikator Index. Diese Eigenschaft verwendet eine `TwoWay` Bindung. Diese Eigenschaft wird automatisch festgelegt, wenn die `ItemsSourceBy`-Eigenschaft festgelegt wird.
+- `ItemsSource`vom Typ `IEnumerable`die Auflistung, für die Indikatoren angezeigt werden. Diese Eigenschaft wird automatisch festgelegt, wenn die `ItemsSourceBy` angefügte Eigenschaft festgelegt wird.
+- `ItemsSourceBy`vom Typ `VisualElement`, das `CarouselView` Objekt, für das Indikatoren angezeigt werden sollen. Dies ist eine angefügte Eigenschaft.
+- `MaximumVisible`vom Typ `int`die maximale Anzahl sichtbarer Indikatoren. Standardwert: `int.MaxValue`.
+- `Position`vom Typ `int`den aktuell ausgewählten Indikator Index. Diese Eigenschaft verwendet eine `TwoWay` Bindung. Diese Eigenschaft wird automatisch festgelegt, wenn die `ItemsSourceBy` angefügte Eigenschaft festgelegt wird.
 - `SelectedIndicatorColor`vom Typ `Color`die Farbe des Indikators, der das aktuelle Element in der `CarouselView`darstellt.
 
 Diese Eigenschaften werden [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. Dies bedeutet, dass Sie Ziele von Daten Bindungen sein können und formatiert sind.
@@ -59,17 +59,17 @@ Im folgenden Beispiel wird gezeigt, wie ein `IndicatorView` in XAML instanziiert
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView ItemsSourceBy="carouselView"
+    <IndicatorView IndicatorView.ItemsSourceBy="carouselView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="DarkGray"
                    HorizontalOptions="Center" />
 </StackLayout>
 ```
 
-In diesem Beispiel wird der `IndicatorView` unterhalb des `CarouselView`gerendert, mit einem Indikator für jedes Element im `CarouselView`. Die `IndicatorView` wird mit Daten aufgefüllt, indem die `ItemsSourceBy`-Eigenschaft auf das `CarouselView`-Objekt festgelegt wird. Jeder Indikator ist ein heller grauer Kreis, während der Indikator, der das aktuelle Element im `CarouselView` darstellt, dunkelgrau ist.
+In diesem Beispiel wird der `IndicatorView` unterhalb des `CarouselView`gerendert, mit einem Indikator für jedes Element im `CarouselView`. Die `IndicatorView` wird mit Daten aufgefüllt, indem die `ItemsSourceBy` angefügte-Eigenschaft auf das `CarouselView`-Objekt festgelegt wird. Jeder Indikator ist ein heller grauer Kreis, während der Indikator, der das aktuelle Element im `CarouselView` darstellt, dunkelgrau ist.
 
 > [!IMPORTANT]
-> Wenn Sie die `ItemsSourceBy`-Eigenschaft festlegen, wird die `Position`-Eigenschaft an die `CarouselView.Position`-Eigenschaft gebunden, und die `ItemsSource` Eigenschaften Bindung an die `CarouselView.ItemsSource`-Eigenschaft.
+> Wenn Sie die `ItemsSourceBy` angefügte Eigenschaft festlegen, wird die `Position`-Eigenschaft an die `CarouselView.Position`-Eigenschaft gebunden, und die `ItemsSource` Eigenschaften Bindung an die `CarouselView.ItemsSource`-Eigenschaft.
 
 ## <a name="change-indicator-shape"></a>Form "Indikator ändern"
 
@@ -82,7 +82,7 @@ Das folgende Beispiel zeigt eine `IndicatorView`, die für die Verwendung von qu
 
 ```xaml
 <IndicatorView IndicatorsShape="Square"
-               ItemsSourceBy="carouselView"
+               IndicatorView.ItemsSourceBy="carouselView"
                IndicatorColor="LightGray"
                SelectedIndicatorColor="DarkGray" />
 ```
@@ -99,7 +99,7 @@ Die Darstellung der einzelnen Indikatoren kann definiert werden, indem Sie die `
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView ItemsSourceBy="carouselView"
+    <IndicatorView IndicatorView.ItemsSourceBy="carouselView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="Black"
                    HorizontalOptions="Center">
@@ -123,4 +123,4 @@ Weitere Informationen zur `FontImage` Markup Erweiterung finden Sie unter [fonti
 ## <a name="related-links"></a>Verwandte Links
 
 - [Indikator orview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
-- [Fontimage-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)
+- [FontImage-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)
