@@ -322,6 +322,11 @@
           items:
             - name: 'Exemplarische Vorgehensweise: Binden einer iOS Objective-C-Bibliothek'
               href: platform/binding-objective-c/walkthrough.md
+        - name: Binden von iOS Swift-Bibliotheken
+          href: platform/binding-swift/index.md
+          items:
+            - name: Exemplarische Vorgehensweise
+              href: platform/binding-swift/walkthrough.md
         - name: CallKit
           href: platform/callkit.md
         - name: Kontakte und ContactsUI
