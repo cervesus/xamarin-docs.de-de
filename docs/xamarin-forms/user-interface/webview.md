@@ -174,11 +174,11 @@ Implementierungen der Schnittstelle für jede Plattform müssen bereitgestellt w
 
 Unter iOS, sollten die Webinhalte im Stammverzeichnis des Projekts gespeichert werden oder **Ressourcen** Verzeichnis mit Buildaktion *BundleResource*, wie unten dargestellt:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Lokale Dateien unter IOS](webview-images/ios-vs.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ![Lokale Dateien unter IOS](webview-images/ios-xs.png)
 
@@ -204,11 +204,11 @@ namespace WorkingWithWebview.iOS
 
 Unter Android, platzieren Sie HTML, CSS und Bilder im Ordner "Assets" mit Buildaktion *AndroidAsset* wie unten dargestellt:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Lokale Dateien unter Android](webview-images/android-vs.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ![Lokale Dateien unter Android](webview-images/android-xs.png)
 
@@ -417,7 +417,7 @@ Aus Kompatibilitätsgründen kann eine Anwendung zur Implementierung des xamarin
 
 `WebView` unter Android in der Standardeinstellung ist etwa so schnell wie den integrierten Browser ein.
 
-Die [UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) verwendet die Microsoft Edge-Rendering-Engine. Desktop und Tablet-Geräte sollten die gleiche Leistung wie die Verwendung des Edge-Browsers selbst angezeigt werden.
+Die [UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) verwendet die Microsoft Edge-Rendering-Engine. Desktop und Tablet-Geräte sollten die gleiche Leistung wie die Verwendung des Microsoft Edge-Browsers selbst angezeigt werden.
 
 ## <a name="permissions"></a>Berechtigungen
 
@@ -533,7 +533,7 @@ Hierfür müssen folgende Voraussetzungen erfüllt sein:
 
 ### <a name="configure-the-linker-preview"></a>Konfigurieren der Linker-Vorschau
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Führen Sie die folgenden Schritte für den Linker aus, um `UIWebView` Verweise zu entfernen:
 
@@ -546,7 +546,7 @@ Sie können das Fenster mit dem neuen Flag in diesem Screenshot sehen:
 
 [![Festlegen des Flags im Abschnitt IOS-Build](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Führen Sie diese Schritte für den Linker aus, um `UIWebView` Verweise zu entfernen.
 

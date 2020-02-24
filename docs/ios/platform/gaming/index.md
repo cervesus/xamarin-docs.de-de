@@ -52,7 +52,7 @@ Werfen wir einen kurzen Blick auf die Implementierung einiger einfacher Spielmec
 ### <a name="pathfinding"></a>Pfadsuche
 
 Pathfind ist die Fähigkeit eines Ki-Elements eines Spiels, seine Art um das spielboard zu finden.
-Beispielsweise wird ein 2D-Feind durch ein Labyrinth oder ein 3D-Zeichen durch ein First-Person-Shooter-Welt Gelände gefunden.
+Beispielsweise wird ein 2D-Gegner durch ein Labyrinth oder ein 3D-Zeichen durch ein First-Person-Shooter-Welt Gelände gefunden.
 
 Sehen Sie sich die folgende Karte an:
 

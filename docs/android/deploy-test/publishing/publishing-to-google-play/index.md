@@ -42,9 +42,9 @@ Um Anwendungen in Google Play zu veröffentlichen, müssen Sie über ein Herausg
 
 Google Play unterstützt nicht alle Länder der Welt. Die neueste Liste der unterstützten Länder finden Sie unter folgenden Links:
 
-1. [Unterstützte Registrierungsstandorte für Entwickler &amp; Händler](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Dies ist eine Liste aller Länder, in denen sich Entwickler als Händler registrieren können und bezahlte Anwendungen verkaufen können.
+1. [Unterstützte Registrierungsstandorte für Entwickler &amp; Händler](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Dies ist eine Liste aller Länder/Regionen, in denen sich Entwickler als Händler registrieren können und bezahlte Anwendungen verkaufen können.
 
-1. [Unterstützte Bereitstellungsstandorte für Google Play-Nutzer](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Dies ist eine Liste aller Länder, in denen Anwendungen verteilt werden dürfen.
+1. [Unterstützte Bereitstellungsstandorte für Google Play-Nutzer](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Dies ist eine Liste aller Länder/Regionen, in denen Anwendungen verteilt werden dürfen.
 
 ### <a name="preparing-promotional-assets"></a>Vorbereiten von Werbeobjekten
 
@@ -111,7 +111,7 @@ Hierbei handelt es sich um eine URL zu einem YouTube-Video, das die Anwendung ve
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 In Xamarin.Android 7.0 wird ein integrierter Workflow für die Veröffentlichung von Apps in Google Play von Visual Studio eingeführt. Wen Sie eine Version von Xamarin.Android vor Version 7.0 verwenden, müssen Sie Ihr Android-Anwendungspaket manuell über die Google Play Developer-Konsole hochladen. Es muss auch mindestens ein APK bereits hochgeladen sein, bevor Sie den integrierten Workflow verwenden können. Wenn Sie Ihr erstes Android-Anwendungspaket noch nicht hochgeladen haben, müssen Sie dies manuell tun. Weitere Informationen finden Sie unter [Manually Uploading the APK (Manuelles Hochladen des Android-Anwendungspakets)](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md).
 
@@ -142,7 +142,7 @@ Im Dialogfeld **Google-API-Zugriff registrieren** müssen Sie die _Client-ID_ so
 
 Im nächsten Abschnitt wird erläutert, wie ein neues Google API-Projekt erstellt und die erforderliche _Client-ID_ sowie der _geheime Clientschlüssel_ generiert werden.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Visual Studio für Mac umfasst einen integrierten Workflow für die Veröffentlichung von Apps in Google Play.
 
@@ -206,7 +206,7 @@ Diese JSON-Datei enthält die Client-iD und den geheimen Clientschlüssel, den S
 
 #### <a name="register-google-api-access"></a>Google-API-Zugriff registrieren
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Verwenden Sie die Client-ID und den geheimen Clientschlüssel, um das Dialogfeld **Google Play API-Konto** in Visual Studio für Mac abzuschließen. Es ist möglich, das Konto mit einer Beschreibung zu versehen &ndash; dadurch wird ermöglicht, mehr als ein Google Play-Konto zu registrieren und zukünftige Android-Anwendungspakete in unterschiedliche Google Play-Konten hochzuladen. Kopieren Sie die Client-ID und den geheimen Clientschlüssel in dieses Dialogfeld, und klicken Sie auf **Registrieren**:
 
@@ -261,7 +261,7 @@ Wenn dieser Fehler angezeigt wird, laden Sie manuell ein Android-Anwendungspaket
 
 Um diesen Fehler zu beheben, erstellen Sie die App mit einer anderen Versionsnummer neu, und übermitteln Sie sie über das Dialogfeld **Verteilungskanal** erneut an Google Play.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Verwenden Sie die Client-ID und den geheimen Clientschlüssel, um das Dialogfeld **Google Play API-Konto** in Visual Studio für Mac abzuschließen. Es ist möglich, das Konto mit einer Beschreibung zu versehen &ndash; dadurch wird ermöglicht, mehr als ein Google Play-Konto zu registrieren und zukünftige Android-Anwendungspakete in unterschiedliche Google Play-Konten hochzuladen. Kopieren Sie die Client-ID und den geheimen Clientschlüssel in dieses Dialogfeld, und klicken Sie auf **Registrieren**:
 
