@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 0812347e85b0ccb6aa0bbb16649a89bb4d961c9b
-ms.sourcegitcommit: a14edebf00f3e0f8944e59042ca7aa5c42173e30
+ms.openlocfilehash: afdf9029f836ac8e55b2bb338b31f669af946c12
+ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780352"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77567083"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms-ToolBarItem
 
@@ -32,7 +32,7 @@ Die `ToolbarItem`-Klasse definiert die folgenden Eigenschaften:
 Die `ToolbarItem`-Klasse erbt die folgenden normalerweise verwendeten Eigenschaften von der `MenuItem`-Klasse:
 
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command) ist ein `ICommand`, der die Bindung von Benutzeraktionen, wie z. b. Finger Tippen oder Klicks, auf Befehle ermöglicht, die für ein ViewModel definiert sind.
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) ist ein `object`, der den Parameter angibt, der an die `Command` übergeben werden soll.
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) ist ein `object`, der den Parameter angibt, der an die `Command`übergeben werden soll.
 * [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) ist ein `ImageSource` Wert, der das Anzeige Symbol auf einem `ToolbarItem`-Objekt bestimmt.
 * [`Text`](xref:Xamarin.Forms.MenuItem.Text) ist ein `string`, der den Anzeige Text in einem `ToolbarItem`-Objekt bestimmt.
 
@@ -43,7 +43,7 @@ Diese Eigenschaften werden von [`BindableProperty`](xref:Xamarin.Forms.BindableP
 
 ## <a name="create-a-toolbaritem"></a>Erstellen eines ToolBarItem
 
-Ein `ToolbarItem`-Objekt kann in XAML instanziiert werden. Die Eigenschaften `Text` und `IconImageSource` können festgelegt werden, um zu bestimmen, wie die Schaltfläche auf der Navigationsleiste angezeigt wird. Im folgenden Beispiel wird gezeigt, wie eine `ToolbarItem` mit einigen allgemeinen Eigenschaften instanziiert und der `ToolbarItems` Auflistung einer `ContentPage` hinzugefügt wird:
+Ein `ToolbarItem`-Objekt kann in XAML instanziiert werden. Die Eigenschaften `Text` und `IconImageSource` können festgelegt werden, um zu bestimmen, wie die Schaltfläche auf der Navigationsleiste angezeigt wird. Im folgenden Beispiel wird gezeigt, wie eine `ToolbarItem` mit einigen allgemeinen Eigenschaften instanziiert und der `ToolbarItems` Auflistung einer `ContentPage`hinzugefügt wird:
 
 ```xaml
 <ContentPage.ToolbarItems>
@@ -69,7 +69,7 @@ ToolbarItem item = new ToolbarItem
 this.ToolbarItems.Add(item);
 ```
 
-Die Datei, die durch den `string` dargestellt wird, der als `IconImageSource`-Eigenschaft bereitgestellt wird, muss in jedem Platt Form Projekt vorhanden sein.
+Die Datei, die durch den `string`dargestellt wird, der als `IconImageSource`-Eigenschaft bereitgestellt wird, muss in jedem Platt Form Projekt vorhanden sein.
 
 > [!NOTE]
 > Bild Ressourcen werden auf jeder Plattform unterschiedlich behandelt. Eine `ImageSource` kann aus Quellen stammen, einschließlich einer lokalen Datei oder eingebetteten Ressource, eines URIs oder eines Streams. Weitere Informationen zum Festlegen der `IconImageSource` Eigenschaft und der Bilder in xamarin. Forms finden Sie unter [Bilder in xamarin. Forms](~/xamarin-forms/user-interface/images.md).
@@ -102,15 +102,21 @@ void OnItemClicked(object sender, EventArgs e)
 
 `ToolbarItem` Objekte können auch die Eigenschaften `Command` und `CommandParameter` verwenden, um auf Benutzereingaben ohne Ereignishandler zu reagieren. Weitere Informationen zur `ICommand`-Schnittstelle und zur MVVM-Datenbindung finden Sie unter [xamarin. Forms MenuItem MVVM-Verhalten](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm).
 
+## <a name="enable-or-disable-a-toolbaritem-at-runtime"></a>Aktivieren oder Deaktivieren eines ToolBarItem zur Laufzeit
+
+Um das Deaktivieren einer `ToolbarItem` zur Laufzeit zu ermöglichen, binden Sie die `Command`-Eigenschaft an eine `ICommand`-Implementierung, und stellen Sie sicher, dass ein `canExecute` Delegat den `ICommand` entsprechend aktiviert und deaktiviert.
+
+Weitere Informationen finden Sie [unter Aktivieren oder Deaktivieren eines MenuItem zur Laufzeit](menuitem.md#enable-or-disable-a-menuitem-at-runtime).
+
 ## <a name="primary-and-secondary-menus"></a>Primäre und sekundäre Menüs
 
 Die `ToolbarItemOrder`-Enumeration verfügt über `Default`-, `Primary`-und `Secondary`-Werte.
 
-Wenn die `Order`-Eigenschaft auf `Primary` festgelegt ist, wird das `ToolbarItem`-Objekt auf der Hauptnavigationsleiste auf allen Plattformen angezeigt. `ToolbarItem` Objekte werden über den Seitentitel priorisiert, die abgeschnitten werden, um Platz für die Elemente zu schaffen. Die folgenden Screenshots zeigen `ToolbarItem` Objekte im primären Menü unter IOS und Android:
+Wenn die `Order`-Eigenschaft auf `Primary`festgelegt ist, wird das `ToolbarItem`-Objekt auf der Hauptnavigationsleiste auf allen Plattformen angezeigt. `ToolbarItem` Objekte werden über den Seitentitel priorisiert, die abgeschnitten werden, um Platz für die Elemente zu schaffen. Die folgenden Screenshots zeigen `ToolbarItem` Objekte im primären Menü unter IOS und Android:
 
 !["ToolBarItem-Hauptmenü: Screenshot Android und IOS"](toolbaritem-images/toolbaritem-primary-menu.png "Bildschirm Abbildung des primären ToolBarItem-Menüs unter Android und IOS")
 
-Wenn die `Order`-Eigenschaft auf `Secondary` festgelegt ist, variiert das Verhalten plattformübergreifend. Bei UWP und Android wird das Menü `Secondary` Elemente als drei Punkte angezeigt, auf die Sie tippen oder klicken können, um Elemente in einer vertikalen Liste anzuzeigen. Unter IOS wird das Menü `Secondary` Elemente unterhalb der Navigationsleiste als horizontale Liste angezeigt. Die folgenden Screenshots zeigen ein sekundäres Menü unter IOS und Android:
+Wenn die `Order`-Eigenschaft auf `Secondary`festgelegt ist, variiert das Verhalten plattformübergreifend. Bei UWP und Android wird das Menü `Secondary` Elemente als drei Punkte angezeigt, auf die Sie tippen oder klicken können, um Elemente in einer vertikalen Liste anzuzeigen. Unter IOS wird das Menü `Secondary` Elemente unterhalb der Navigationsleiste als horizontale Liste angezeigt. Die folgenden Screenshots zeigen ein sekundäres Menü unter IOS und Android:
 
 !["ToolBarItem-Menü auf dem sekundären Menü" Android und IOS "](toolbaritem-images/toolbaritem-secondary-menu.png "Bildschirm Abbildung des sekundären ToolBarItem-Menüs unter Android und IOS")
 
@@ -121,4 +127,4 @@ Wenn die `Order`-Eigenschaft auf `Secondary` festgelegt ist, variiert das Verhal
 
 * [ToolBarItem-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Bilder in xamarin. Forms](~/xamarin-forms/user-interface/images.md)
-* [Xamarin. Forms (MenuItem)](~/xamarin-forms/user-interface/menuitem.md)
+* [Xamarin.Forms: MenuItem](~/xamarin-forms/user-interface/menuitem.md)
