@@ -6,13 +6,13 @@ ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
-ms.openlocfilehash: 83aca8c9e64ffb01eb9773c17b42333f73c1aab5
-ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
+ms.date: 01/17/2020
+ms.openlocfilehash: c71153cdaa94a7983b89968abc828011a648f2b1
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72971252"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636098"
 ---
 # <a name="display-pop-ups"></a>Popup anzeigen
 
@@ -48,7 +48,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) ist ein allgemeines Benutzeroberflächenelement unter iOS. Mithilfe der [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)-Methode von Xamarin.Forms können Sie dieses Steuerelement in plattformübergreifende Apps einfügen, um native Alternativen unter Android und auf der UWP zu rendern.
 
-Mit `await` [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) in einem beliebigen [`Page`](xref:Xamarin.Forms.Page)-Element werden die Bezeichnungen für die Nachricht und die Schaltfläche als Zeichenfolge übergeben, um ein Aktionsblatt anzuzeigen. Die Methode gibt die Bezeichnung der Zeichenfolge für die Schaltfläche zurück, auf die der Benutzer getippt hat. Hier ist ein einfaches Beispiel:
+Zum Anzeigen eines Aktions Blatts `await` [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) in einem beliebigen [`Page`](xref:Xamarin.Forms.Page), indem Sie die Nachrichten-und Schaltflächen Bezeichnungen als Zeichen folgen übergeben. Die Methode gibt die Bezeichnung der Zeichenfolge für die Schaltfläche zurück, auf die der Benutzer getippt hat. Hier ist ein einfaches Beispiel:
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -84,25 +84,26 @@ Die Eingabeaufforderung wird modisch angezeigt:
 
 [![Screenshot einer modalen Eingabeaufforderung unter IOS und Android](pop-ups-images/simple-prompt.png "Modale Eingabeaufforderung")](pop-ups-images/simple-prompt-large.png#lightbox "Modale Eingabeaufforderung")
 
-Wenn die Schaltfläche OK abgetippt wird, wird die eingegebene Antwort als `string` zurückgegeben. Wenn die Schaltfläche Abbrechen angetippt wird, wird `null` zurückgegeben.
+Wenn die Schaltfläche OK abgetippt wird, wird die eingegebene Antwort als `string`zurückgegeben. Wenn die Schaltfläche Abbrechen angetippt wird, wird `null` zurückgegeben.
 
 Die vollständige Argumentliste für die `DisplayPromptAsync`-Methode lautet:
 
-- `title` vom Typ `string` ist der Titel, der in der Eingabeaufforderung angezeigt werden soll.
-- `message` vom Typ `string` ist die Meldung, die in der Eingabeaufforderung angezeigt werden soll.
-- `accept` vom Typ `string` ist der Text für die Accept-Schaltfläche. Dies ist ein optionales Argument, dessen Standardwert OK ist.
-- `cancel` vom Typ "`string`" ist der Text für die Schaltfläche "Abbrechen". Dies ist ein optionales Argument, dessen Standardwert "Cancel" lautet.
-- `placeholder` vom Typ `string` ist der Platzhalter Text, der in der Eingabeaufforderung angezeigt werden soll. Dies ist ein optionales Argument, dessen Standardwert `null` ist.
-- `maxLength` vom Typ `int` ist die maximale Länge der Benutzer Antwort. Dies ist ein optionales Argument, dessen Standardwert-1 ist.
-- `keyboard` vom Typ `Keyboard` ist der Tastatur Typ, der für die Benutzer Antwort verwendet werden soll. Dies ist ein optionales Argument, dessen Standardwert `Keyboard.Default` ist.
+- `title`vom Typ `string`ist der Titel, der in der Eingabeaufforderung angezeigt werden soll.
+- `message`vom Typ `string`ist die Meldung, die in der Eingabeaufforderung angezeigt werden soll.
+- `accept`vom Typ `string`ist der Text für die Accept-Schaltfläche. Dies ist ein optionales Argument, dessen Standardwert OK ist.
+- `cancel`vom Typ "`string`" ist der Text für die Schaltfläche "Abbrechen". Dies ist ein optionales Argument, dessen Standardwert "Cancel" lautet.
+- `placeholder`vom Typ `string`ist der Platzhalter Text, der in der Eingabeaufforderung angezeigt werden soll. Dies ist ein optionales Argument, dessen Standardwert `null`ist.
+- `maxLength`vom Typ `int`ist die maximale Länge der Benutzer Antwort. Dies ist ein optionales Argument, dessen Standardwert-1 ist.
+- `keyboard`vom Typ `Keyboard`ist der Tastatur Typ, der für die Benutzer Antwort verwendet werden soll. Dies ist ein optionales Argument, dessen Standardwert `Keyboard.Default`ist.
+- `initialValue`vom Typ `string`ist eine vordefinierte Antwort, die angezeigt wird und bearbeitet werden kann. Dies ist ein optionales Argument, dessen Standardwert eine leere `string`ist.
 
 Das folgende Beispiel zeigt das Festlegen einiger optionaler Argumente:
 
 ```csharp
-string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
+string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialValue: "10", maxLength: 2, keyboard: Keyboard.Numeric);
 ```
 
-Dieser Code schränkt die Anzahl von Zeichen ein, die in 2 eingegeben werden können, und zeigt die numerische Tastatur für die Benutzereingabe an:
+Dieser Code zeigt eine vordefinierte Antwort von 10 an, schränkt die Anzahl der Zeichen ein, die in 2 eingegeben werden können, und zeigt die numerische Tastatur für die Benutzereingabe an:
 
 [![Screenshot einer modalen Eingabeaufforderung unter IOS und Android](pop-ups-images/keyboard-prompt.png "Modale Eingabeaufforderung")](pop-ups-images/keyboard-prompt-large.png#lightbox "Modale Eingabeaufforderung")
 

@@ -6,13 +6,13 @@ ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/14/2019
-ms.openlocfilehash: ce0e0b63206ab918b5d761be3e619370aec1eec7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/28/2020
+ms.openlocfilehash: 735a572f4aadfc224e545e371525b96f29c9552e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489751"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635912"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin. Forms carouselview-Bildlauf
 
@@ -24,7 +24,7 @@ ms.locfileid: "75489751"
 
 - `HorizontalScrollBarVisibility`vom Typ `ScrollBarVisibility`, der angibt, wann die horizontale Schiebe Leiste sichtbar ist.
 - `IsDragging`vom Typ `bool`, der angibt, ob die `CarouselView` einen Bildlauf durchführt. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert `false`ist.
-- `IsScrollAnimated`vom Typ `bool`, der angibt, ob beim Scrollen der `CarouselView`eine Animation erfolgt. Der Standardwert ist `true`sein.
+- `IsScrollAnimated`vom Typ `bool`, der angibt, ob beim Scrollen der `CarouselView`eine Animation erfolgt. Standardwert: `true`.
 - `ItemsUpdatingScrollMode`vom Typ `ItemsUpdatingScrollMode`, der das Scrollverhalten der `CarouselView` darstellt, wenn diesem neue Elemente hinzugefügt werden.
 - `VerticalScrollBarVisibility`vom Typ `ScrollBarVisibility`, der angibt, wann die vertikale Schiebe Leiste sichtbar ist.
 
@@ -142,7 +142,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 Dieser Beispielcode führt dazu, dass das Element zum Anfang der Ansicht gescrollt wird.
 
-### <a name="center"></a>Center
+### <a name="center"></a>Zentrum
 
 Der [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition) Member gibt an, dass das Element in den Mittelpunkt der Ansicht gescrollt werden soll:
 
@@ -217,6 +217,10 @@ Die [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) -Enumeration definiert
 
 Standardmäßig wird für eine [`CarouselView`](xref:Xamarin.Forms.CarouselView)die Eigenschaft [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) auf `SnapPointsType.MandatorySingle`festgelegt, wodurch sichergestellt wird, dass bei einem Bildlauf nur ein Element gleichzeitig durchsucht wird.
 
+Die folgenden Screenshots zeigen eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) an, für die das ausrichten deaktiviert wurde:
+
+[![Screenshot einer carouselview ohne Ausrichtungs Punkte unter IOS und Android](scrolling-images/snappoints-none.png "Carouselview ohne Andockpunkte")](scrolling-images/snappoints-none-large.png#lightbox "Carouselview ohne Andockpunkte")
+
 ### <a name="snap-points-alignment"></a>Ausrichtung der Andockpunkte
 
 Die [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) -Enumeration definiert `Start`-, `Center`-und `End`-Member.
@@ -254,9 +258,11 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-Wenn ein Benutzer einen Bildlauf in einem horizontalen Bildlauf [`CarouselView`](xref:Xamarin.Forms.CarouselView)initiiert, wird das linke Element am linken Rand der Sicht ausgerichtet.
+Wenn ein Benutzer einen Bildlauf in einem horizontalen Bildlauf [`CarouselView`](xref:Xamarin.Forms.CarouselView)initiiert, wird das linke Element am linken Rand der Ansicht ausgerichtet:
 
-#### <a name="center"></a>Center
+[![Screenshot einer carouselview mit Start-Snap-Points unter IOS und Android](scrolling-images/snappoints-start.png "Carouselview mit Start-Snap Points")](scrolling-images/snappoints-start-large.png#lightbox "Carouselview mit Start-Snap Points")
+
+#### <a name="center"></a>Zentrum
 
 Der `SnapPointsAlignment.Center` Member gibt an, dass die Punkt Punkte an der Mitte der Elemente ausgerichtet sind.
 
@@ -288,7 +294,9 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-Wenn ein Benutzer einen Bildlauf in einem horizontalen Bildlauf [`CarouselView`](xref:Xamarin.Forms.CarouselView)initiiert, wird das Mittel Element an der Mitte der Ansicht ausgerichtet.
+Wenn ein Benutzer einen Bildlauf in einem horizontalen Bildlauf [`CarouselView`](xref:Xamarin.Forms.CarouselView)initiiert, wird das Mittel Element an der Mitte der Ansicht ausgerichtet:
+
+[![Screenshot einer carouselview mit Center-Snap-Points unter IOS und Android](scrolling-images/snappoints-center.png "Carouselview mit Center-Snap-Points")](scrolling-images/snappoints-center-large.png#lightbox "Carouselview mit Center-Snap-Points")
 
 #### <a name="end"></a>Ende
 
@@ -321,6 +329,8 @@ CarouselView carouselView = new CarouselView
 ```
 
 Wenn ein Benutzer einen Bildlauf in einem horizontalen Bildlauf [`CarouselView`](xref:Xamarin.Forms.CarouselView)initiiert, wird das Rechte Element am rechten Rand der Sicht ausgerichtet.
+
+[![Screenshot einer carouselview mit endandock Punkten unter IOS und Android](scrolling-images/snappoints-end.png "Carouselview mit endandock Punkten")](scrolling-images/snappoints-end-large.png#lightbox "Carouselview mit endandock Punkten")
 
 ## <a name="related-links"></a>Verwandte Links
 

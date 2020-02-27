@@ -7,13 +7,13 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2019
-ms.openlocfilehash: d6f5b3022f930dc1345e230d3d6ea4e5fb8be55c
-ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
+ms.date: 02/14/2020
+ms.openlocfilehash: c4d2c6bdab09e87bcfc4a191c64425316fe133f9
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77567098"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635848"
 ---
 # <a name="xaml-controls"></a>XAML-Steuerelemente
 
@@ -31,6 +31,7 @@ Auf alle Sichten, die in xamarin. Forms definiert sind, kann in XAML-Dateien ver
 | <h3>Image</h3>Zeigt eine Bitmap an.<p align="center">![Screenshot eines Bilds](xaml-controls-images/Image.png "Image")</p>[API](xref:Xamarin.Forms.Image) - / [Handbuch](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
 | <h3>Bezeichnung</h3>Zeigt eine oder mehrere Textzeilen an.<p align="center">![Screenshot einer Bezeichnung](xaml-controls-images/Label.png "Bezeichnung")</p>[API](xref:Xamarin.Forms.Label) - / [Handbuch](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
 | <h3>Karte</h3>Zeigt eine Karte an.<p align="center">![Screenshot einer Karte](xaml-controls-images/Map.png "Karte")</p>[API](xref:Xamarin.Forms.Maps.Map) - / [Handbuch](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
+| <h3>MediaElement</h3>Abspielen von Videos oder Audiodaten.<p align="center">![Screenshot eines Media Element-Elements](xaml-controls-images/MediaElement.png "Media Element")</p>[API](xref:Xamarin.Forms.MediaElement) - / [Handbuch](~/xamarin-forms/user-interface/mediaelement.md) | <p valign="center"><pre>&lt;MediaElement Source="https://sec.ch9.ms/ch9/XamarinShow_mid.mp4"<br />              AutoPlay="True"<br />              ShowsPlaybackControls="True" /&gt;</pre></p> |
 | <h3>WebView</h3>Zeigt Webseiten oder HTML-Inhalte an.<p align="center">![Screenshot einer WebView](xaml-controls-images/WebView.png "WebView")</p>[API](xref:Xamarin.Forms.WebView) - / [Handbuch](~/xamarin-forms/user-interface/webview.md) | <p valign="center"><pre>&lt;WebView Source="https://docs.microsoft.com/xamarin/"<br/>         VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
 

@@ -6,13 +6,13 @@ ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: 550ad9b068e71e53a98329663d2ee9b55be1864e
-ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
+ms.date: 01/16/2020
+ms.openlocfilehash: 694ec24697937b114036eceab1cafd5aae3617d8
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549976"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635549"
 ---
 # <a name="windows-platform-features"></a>Features der Windows-Plattform
 
@@ -20,28 +20,32 @@ Zum Entwickeln von xamarin. Forms-Anwendungen für Windows-Plattformen ist Visua
 
 ![](images/allhanselman.png "Xamarin.Forms Applications Running on Windows")
 
-## <a name="platform-specifics"></a>Plattformspezifische Besonderheiten
+## <a name="platform-specifics"></a>Plattformeigenschaften
 
 Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte.
 
 Die folgenden plattformspezifischen Funktionen werden für xamarin. Forms-Sichten,-Seiten und-Layouts auf der universelle Windows-Plattform (UWP) bereitgestellt:
 
-- Festlegen einer Zugriffstaste für eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [visualelement Access Keys on Windows](visualelement-access-keys.md).
-- Deaktivieren auf einer unterstützten legacy Farbmodus [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [visualelement Legacy Color Mode on Windows](legacy-color-mode.md).
+- Festlegen einer Zugriffstaste für einen [`VisualElement`](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [visualelement Access Keys on Windows](visualelement-access-keys.md).
+- Deaktivieren des Legacy Farb Modus auf einem unterstützten [`VisualElement`](xref:Xamarin.Forms.VisualElement). Weitere Informationen finden Sie unter [visualelement Legacy Color Mode on Windows](legacy-color-mode.md).
 
 Die folgenden plattformspezifischen Funktionen werden für xamarin. Forms-Ansichten auf UWP bereitgestellt:
 
-- Erkennen von leserichtung von Textinhalt in [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), und [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Weitere Informationen finden Sie unter [inputview-Lesefolge unter Windows](inputview-reading-order.md).
-- Aktivieren von Tap-gestenunterstützung im eine [ `ListView` ](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [ListView SelectionMode unter Windows](listview-selectionmode.md).
+- Erkennen von Lesereihenfolge aus Text Inhalt in [`Entry`](xref:Xamarin.Forms.Entry)-, [`Editor`](xref:Xamarin.Forms.Editor)-und [`Label`](xref:Xamarin.Forms.Label) -Instanzen. Weitere Informationen finden Sie unter [inputview-Lesefolge unter Windows](inputview-reading-order.md).
+- Aktivieren der TAP-Gesten Unterstützung in einem [`ListView`](xref:Xamarin.Forms.ListView). Weitere Informationen finden Sie unter [ListView SelectionMode unter Windows](listview-selectionmode.md).
 - Aktivieren der Pull-Richtung einer `RefreshView`, die geändert werden soll. Weitere Informationen finden Sie unter [pullview-pullrichtung unter Windows](refreshview-pulldirection.md).
-- Aktivieren einer [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) für die Interaktion mit der Rechtschreibprüfungs-Check-Engine. Weitere Informationen finden Sie unter [Windows-Suchleiste Rechtschreibprüfung](searchbar-spell-check.md).
-- Aktivieren einer [ `WebView` ](xref:Xamarin.Forms.WebView) zum Anzeigen von JavaScript-Warnungen in einem Meldungsdialogfeld UWP. Weitere Informationen finden Sie unter [WebView JavaScript Alerts on Windows](webview-javascript-alert.md).
+- Aktivieren einer [`SearchBar`](xref:Xamarin.Forms.SearchBar) für die Interaktion mit der Rechtschreibprüfung. Weitere Informationen finden Sie unter [Windows-Suchleiste Rechtschreibprüfung](searchbar-spell-check.md).
+- Aktivieren einer [`WebView`](xref:Xamarin.Forms.WebView) zum Anzeigen von JavaScript-Warnungen in einem UWP-Meldungs Dialogfeld. Weitere Informationen finden Sie unter [WebView JavaScript Alerts on Windows](webview-javascript-alert.md).
 
 Die folgenden plattformspezifischen Funktionen werden für xamarin. Forms-Seiten auf UWP bereitgestellt:
 
-- Reduzieren der [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Navigationsleiste. Weitere Informationen finden Sie [in der masterdetailpage-Navigationsleiste unter Windows](masterdetailpage-navigation-bar.md).
+- Die [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) Navigationsleiste wird reduziert. Weitere Informationen finden Sie [in der masterdetailpage-Navigationsleiste unter Windows](masterdetailpage-navigation-bar.md).
 - Festlegen von Platzierungsoptionen für die Symbolleiste. Weitere Informationen finden Sie unter [Platzierung von Seiten Symbolleisten unter Windows](page-toolbar-placement.md).
-- Aktivieren die Seitensymbole anzuzeigendes eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Symbolleiste. Weitere Informationen finden Sie unter [TabbedPage Icons on Windows](tabbedpage-icons.md) (TabbedPage-Symbole unter Windows).
+- Aktivieren von Seiten Symbolen, die auf einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) Symbolleiste angezeigt werden sollen. Weitere Informationen finden Sie unter [TabbedPage Icons on Windows](tabbedpage-icons.md) (TabbedPage-Symbole unter Windows).
+
+Die folgende plattformspezifische Funktionalität wird für die xamarin. Forms- [`Application`](xref:Xamarin.Forms.Application) -Klasse in UWP bereitgestellt:
+
+- Angeben des Verzeichnisses in dem Projekt, aus dem Image Assets geladen werden. Weitere Informationen finden Sie unter [Standard Image Verzeichnis unter Windows](default-image-directory.md).
 
 ## <a name="platform-support"></a>Plattformunterstützung
 
@@ -56,7 +60,7 @@ Wechseln Sie zu **Datei > Neues > Projekt** in Visual Studio, und wählen Sie ei
 
 Ältere xamarin. Forms-Lösungen oder solche, die unter macOS erstellt werden, verfügen nicht über alle oben aufgeführten Windows-Projekte (Sie müssen jedoch manuell hinzugefügt werden). Wenn die Windows-Plattform, die Sie als Ziel festlegen möchten, nicht bereits in der Projekt Mappe vorhanden ist, können Sie die [Setup Anweisungen](installation/index.md) aufrufen, um die gewünschten Windows-Projekttyp
 
-## <a name="samples"></a>-Beispiele
+## <a name="samples"></a>Beispiele
 
 [Alle Beispiele für das](https://github.com/xamarin/xamarin-forms-book-preview-2) Buch zum Erstellen von [*Mobile Apps mit xamarin. Forms in*](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) Charles Petzold enthalten universelle Windows-Plattform (für Windows 10)-Projekte.
 

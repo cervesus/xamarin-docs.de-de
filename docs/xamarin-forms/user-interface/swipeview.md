@@ -6,13 +6,13 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: 4119a650c431013bb0c8e680de600ed4e73d0c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 02/11/2020
+ms.openlocfilehash: 6131287b200846a033e0c476d7039dfd774cab68
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490505"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635589"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin. Forms swipeer View
 
@@ -30,7 +30,7 @@ Der `SwipeView` ist ein Container Steuerelement, das ein Inhalts Element umschli
 Forms.SetFlags("SwipeView_Experimental");
 ```
 
-`SwipeView` definiert die folgenden Eigenschaften an:
+`SwipeView` definiert die folgenden Eigenschaften:
 
 - `LeftItems`vom Typ `SwipeItems`, der die schwingenden Elemente darstellt, die aufgerufen werden können, wenn das Steuerelement von der linken Seite entfernt wird.
 - `RightItems`vom Typ `SwipeItems`, der die schwingenden Elemente darstellt, die aufgerufen werden können, wenn das Steuerelement von der rechten Seite entfernt wird.
@@ -57,7 +57,7 @@ Außerdem definiert `SwipeView` eine `Close`-Methode, die die Schwenk Elemente s
 
 Ein `SwipeView` muss den Inhalt definieren, der von der `SwipeView` umschlossen wird, und die von der Schwenkbewegung offenbarten Elemente. Die Schwenk Elemente sind ein oder mehrere `SwipeItem` Objekte, die in einer der vier `SwipeView` direktionalen Auflistungen `LeftItems`, `RightItems`, `TopItems`oder `BottomItems`platziert werden.
 
-Das folgende Beispiel zeigt, wie Sie instanziieren ein `SwipeView` in XAML:
+Im folgenden Beispiel wird gezeigt, wie ein `SwipeView` in XAML instanziiert wird:
 
 ```xaml
 <SwipeView>
@@ -82,6 +82,49 @@ Das folgende Beispiel zeigt, wie Sie instanziieren ein `SwipeView` in XAML:
                VerticalOptions="Center" />
     </Grid>
 </SwipeView>
+```
+
+Der entsprechende C#-Code lautet:
+
+```csharp
+// SwipeItems
+SwipeItem favoriteSwipeItem = new SwipeItem
+{
+    Text = "Favorite",
+    IconImageSource = "favorite.png",
+    BackgroundColor = Color.LightGreen
+};
+favoriteSwipeItem.Invoked += OnFavoriteSwipeItemInvoked;
+
+SwipeItem deleteSwipeItem = new SwipeItem
+{
+    Text = "Delete",
+    IconImageSource = "delete.png",
+    BackgroundColor = Color.LightPink
+};
+deleteSwipeItem.Invoked += OnDeleteSwipeItemInvoked;
+
+List<SwipeItem> swipeItems = new List<SwipeItem>() { favoriteSwipeItem, deleteSwipeItem };
+
+// SwipeView content
+Grid grid = new Grid
+{
+    HeightRequest = 60,
+    WidthRequest = 300,
+    BackgroundColor = Color.LightGray
+};
+grid.Children.Add(new Label
+{
+    Text = "Swipe right",
+    HorizontalOptions = LayoutOptions.Center,
+    VerticalOptions = LayoutOptions.Center
+});
+
+SwipeView swipeView = new SwipeView
+{
+    LeftItems = new SwipeItems(swipeItems),
+    Content = grid
+};
 ```
 
 In diesem Beispiel ist der `SwipeView` Inhalt ein [`Grid`](xref:Xamarin.Forms.Grid) , der einen [`Label`](xref:Xamarin.Forms.Label)enthält:
@@ -136,14 +179,16 @@ Das folgende Beispiel zeigt zwei `SwipeItem` Objekte in der `LeftItems` Auflistu
 </SwipeView>
 ```
 
-Die Darstellung der einzelnen `SwipeItem` wird durch die Eigenschaften `Text`, `IconImageSource`und `BackgroundColor` definiert:
+Die Darstellung der einzelnen `SwipeItem` wird durch eine Kombination der Eigenschaften "`Text`", "`IconImageSource`" und "`BackgroundColor`" definiert:
 
 [![Screenshot der swidanview-Streifen Elemente unter IOS und Android](swipeview-images/swipeview-swipeitems.png "Swipinview-Streifen Elemente")](swipeview-images/swipeview-swipeitems-large.png#lightbox "Swipinview-Streifen Elemente")
 
 Wenn ein `SwipeItem` abgetippt wird, wird das `Invoked` Ereignis ausgelöst und vom registrierten Ereignishandler behandelt. Alternativ kann die `Command`-Eigenschaft auf eine `ICommand` Implementierung festgelegt werden, die ausgeführt wird, wenn die `SwipeItem` aufgerufen wird.
 
 > [!NOTE]
-> Neben der Definition von Schwenk Elementen als `SwipeItem` Objekten ist es auch möglich, benutzerdefinierte Streifen Element Sichten zu definieren. Weitere Informationen finden Sie unter [benutzerdefinierte wischen-Elemente](#custom-swipe-items).
+> Wenn das Aussehen einer `SwipeItem` nur mithilfe der Eigenschaften `Text` oder `IconImageSource` definiert wird, wird der Inhalt immer zentriert.
+
+Neben der Definition von Schwenk Elementen als `SwipeItem` Objekten ist es auch möglich, benutzerdefinierte Streifen Element Sichten zu definieren. Weitere Informationen finden Sie unter [benutzerdefinierte wischen-Elemente](#custom-swipe-items).
 
 ## <a name="swipe-direction"></a>Richtung schwenken
 
@@ -288,4 +333,4 @@ Außerdem kann beim Definieren der `Command`-Eigenschaft eines `SwipeItem` oder 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Swidanview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
-- [Xamarin. Forms (MenuItem)](~/xamarin-forms/user-interface/menuitem.md)
+- [Xamarin.Forms: MenuItem](~/xamarin-forms/user-interface/menuitem.md)

@@ -6,13 +6,13 @@ ms.assetid: fede0382-c972-4023-a4ea-fe5cadec91a6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/14/2019
-ms.openlocfilehash: 38c891a095b2b3d41d906e747585b961516f9256
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.date: 01/28/2020
+ms.openlocfilehash: 2e3d3ccd42907ef3678ccfb634c036930800a145
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77130854"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636122"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin. Forms carouselview-Layout
 
@@ -108,7 +108,9 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-Dies führt zu einem Layout, das horizontal vergrößert wird, wenn neue Elemente hinzugefügt werden.
+Dies führt zu einem Layout, das horizontal vergrößert wird, wenn neue Elemente hinzugefügt werden:
+
+[![Screenshot eines horizontalen caretzeitenlayouts unter IOS und Android](layout-images/horizontal.png "Karouselview horizontales Layout")](layout-images/horizontal-large.png#lightbox "Karouselview horizontales Layout")
 
 ## <a name="vertical-layout"></a>Vertikales Layout
 
@@ -165,7 +167,9 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-Dies führt zu einem Layout, das vertikal wächst, wenn neue Elemente hinzugefügt werden.
+Dies führt zu einem Layout, das vertikal wächst, wenn neue Elemente hinzugefügt werden:
+
+[![Screenshot eines vertikalen karouselview-Layouts unter IOS und Android](layout-images/vertical.png "Karouselview vertikal Layout")](layout-images/vertical-large.png#lightbox "Karouselview vertikal Layout")
 
 ## <a name="partially-visible-adjacent-items"></a>Teilweise sichtbare angrenzende Elemente
 
@@ -188,7 +192,9 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-Das Ergebnis ist, dass angrenzende Elemente teilweise auf dem Bildschirm verfügbar gemacht werden.
+Das Ergebnis ist, dass angrenzende Elemente teilweise auf dem Bildschirm verfügbar gemacht werden:
+
+[![Screenshot einer CollectionView mit teilweise sichtbaren angrenzenden Elementen unter IOS und Android](layout-images/peek-items.png "Carouselview Peek Area insets")](layout-images/peek-items-large.png#lightbox "Eingangsbereich-Insets für carouselview")
 
 ## <a name="item-spacing"></a>Element Abstand
 
@@ -238,7 +244,9 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-Der `OnImageTapped` Ereignishandler wird als Reaktion auf ein [`Image`](xref:Xamarin.Forms.Image) Objekt ausgeführt, das abgetippt wird, und ändert die Abmessungen des Bilds (und des übergeordneten Frames), sodass es einfacher angezeigt wird.
+Der `OnImageTapped` Ereignishandler wird als Reaktion auf ein [`Image`](xref:Xamarin.Forms.Image) Objekt ausgeführt, das abgetippt wird, und ändert die Abmessungen des Bilds (und dessen übergeordnetes `Frame`), sodass es leichter angezeigt werden kann:
+
+[![Screenshot einer "carouselview" mit dynamischer Elementgröße unter IOS und Android](layout-images/runtime-resizing.png "Dynamische Elementgröße von carouselview")](layout-images/runtime-resizing-large.png#lightbox "Dynamische Elementgröße von carouselview")
 
 ## <a name="right-to-left-layout"></a>Layout von rechts nach links
 

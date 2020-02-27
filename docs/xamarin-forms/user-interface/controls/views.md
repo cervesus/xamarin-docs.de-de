@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2019
-ms.openlocfilehash: 06b802a90ef350dcbd0b056f801109609dcd7a35
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.date: 02/14/2020
+ms.openlocfilehash: 1e8b6f5e1ea090abc8ebd6084095bf6b34663a42
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480633"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635866"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -70,7 +70,7 @@ Sichten sind Benutzeroberflächen Objekte, wie z. b. Bezeichnungen, Schaltfläch
 
 |     |     |
 | --- | --- |
-| `MediaElement` zeigt ein Video an oder gibt Audiodaten wieder. Medien können über das Internet heruntergeladen oder als Ressourcen in Platt Form Projekten eingebettet werden.<br /><br />[Leitfaden](~/xamarin-forms/user-interface/mediaelement.md) / [Beispiel](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/WorkingWithMediaElement) | |
+| [`MediaElement`](xref:Xamarin.Forms.MediaElement) Wiedergabe von Video-oder Audiodaten. Medien können über eine URL oder eine lokale Datei abgespielt werden, je nachdem, ob die [`Source`](xref:Xamarin.Forms.MediaElement.Source) -Eigenschaft auf einen [`UriMediaSource`](xref:Xamarin.Forms.UriMediaSource) oder eine [`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)festgelegt ist.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.MediaElement) / [Handbuch](~/xamarin-forms/user-interface/mediaelement.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos) | [![Media Element-Beispiel](views-images/MediaElement.png "Media Element-Beispiel")](views-images/MediaElement-Large.png#lightbox "Media Element-Beispiel")<br />Code für diese Seite / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MediaElementDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MediaElementDemoPage.cs) |
 |     |     |
 
 ## <a name="views-that-initiate-commands"></a>Ansichten, die Befehle initiieren
