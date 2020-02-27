@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: d6300d6d3fdebf851c3710aa2a949575e6fe3f68
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: f26a786f3da909c7d948fe99b4b3a1423352ecbe
+ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249563"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553565"
 ---
 # <a name="metadata-and-markdown-template"></a>Metadaten und Markdownvorlage
 
@@ -68,8 +68,8 @@ Dateinamen verwenden die folgenden Regeln:
 
 - Es sollten nur Kleinbuchstaben, Zahlen und Bindestriche enthalten sein.
 - Keine Leer- oder Interpunktionszeichen. Verwenden Sie die Bindestriche zum Trennen von Wörtern und Zahlen im Dateinamen.
-- Verwenden Sie genaue Aktionsverben wie „entwickeln“, „kaufen“, „erstellen“ oder „beheben“. Keine auf „-ing“ endenden Worte dürfen verwendet werden.
-- Keine kurzen Worte wie a, and, the, in, or usw. sind erlaubt.
+- Verwenden Sie genaue Aktionsverben wie „entwickeln“, „kaufen“, „erstellen“ oder „beheben“. Keine englischen Wörter mit der Endung „-ing“
+- Keine kurzen Wörter – verwenden Sie nicht „ein/eine/einer“, „und“, „der/die/das“, „in“, „oder“ usw.
 - Muss in Markdown geschrieben werden und die Dateierweiterung .md verwenden.
 - Halten Sie Dateinamen einigermaßen kurz. Sie sind Teil der URL für Ihre Artikel.
 
@@ -95,7 +95,7 @@ Wenn Ihre Überschrift mit dem Zeichen `#` endet, müssen Sie ein zusätzliches 
 
 ## <a name="text-styling"></a>Textstil
 
-*Kursiv*: wird für Dateien, Ordner, Pfade (lange Pfade sollten in einer eigenen Zeile stehen), neue Begriffe und URLs (sofern diese nicht entsprechend dem Standard als Links gerendert werden) verwendet.
+_Kursiv_: wird für Dateien, Ordner, Pfade (lange Pfade sollten in einer eigenen Zeile stehen), neue Begriffe und URLs (sofern diese nicht entsprechend dem Standard als Links gerendert werden) verwendet.
 
 **Fett** wird für Benutzeroberflächenelemente verwendet.
 
