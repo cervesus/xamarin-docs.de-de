@@ -398,6 +398,8 @@
                   href: user-interface/map/geocoder.md
                 - name: Starten der nativen Karten-App
                   href: user-interface/map/native-map-app.md
+            - name: MediaElement
+              href: user-interface/mediaelement.md
             - name: WebView
               href: user-interface/webview.md
         - name: Initiieren von Befehlen
@@ -620,6 +622,8 @@
           items:
             - name: Übersicht
               href: platform/android/index.md
+            - name: AndroidX-Migration
+              href: platform/android/androidx-migration.md
             - name: AppCompat und Material Design
               href: platform/android/appcompat-material-design.md
             - name: Schaltflächenabstand und Schatten
@@ -662,6 +666,8 @@
               href: platform/ios/named-font-size-scaling.md
             - name: Zellhintergrundfarbe
               href: platform/ios/cell-background-color.md
+            - name: Elementauswahl in DatePicker
+              href: platform/ios/datepicker-selection.md
             - name: Farbe für Eingabecursor
               href: platform/ios/entry-cursor-color.md
             - name: Schriftgrad für Einträge
@@ -702,16 +708,24 @@
               href: platform/ios/slider-thumb.md
             - name: SwipeView-Übergangsmodus bei Wischbewegung
               href: platform/ios/swipeview-swipetransitionmode.md
+            - name: 'TabbedPage: transparente TabBar'
+              href: platform/ios/tabbedpage-translucent-tabbar.md
+            - name: Elementauswahl in TimePicker
+              href: platform/ios/timepicker-selection.md
             - name: Weichzeichner für visuelle Elemente
               href: platform/ios/visualelement-blur.md
             - name: Schlagschatten für visuelle Elemente
               href: platform/ios/visualelement-drop-shadow.md
             - name: Legacyfarbmodus für visuelle Elemente
               href: platform/ios/legacy-color-mode.md
+            - name: 'VisualElement: FirstResponder'
+              href: platform/ios/visualelement-first-responder.md
         - name: Windows
           items:
             - name: Übersicht
               href: platform/windows/index.md
+            - name: Standardbildverzeichnis
+              href: platform/windows/default-image-directory.md
             - name: Lesefolge in Eingabeansicht
               href: platform/windows/inputview-reading-order.md
             - name: Auswahlmodus in Listenansicht
