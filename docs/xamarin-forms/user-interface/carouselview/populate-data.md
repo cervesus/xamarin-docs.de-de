@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/17/2019
-ms.openlocfilehash: 8ec66a8d39f373b624e3a597e62014e3b1c72f56
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.date: 02/27/2019
+ms.openlocfilehash: 154d039e95ccc2de28e09a7162a32a19f8f84656
+ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480559"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77674531"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Xamarin. Forms carouselview-Daten
 
@@ -264,25 +264,25 @@ Indikatoren, die die Anzahl der Elemente und die aktuelle Position in einem `Car
 
 ```xaml
 <StackLayout>
-    <CarouselView x:Name="carouselView"
-                  ItemsSource="{Binding Monkeys}">
+    <CarouselView ItemsSource="{Binding Monkeys}"
+                  IndicatorView="indicatorView">
         <CarouselView.ItemTemplate>
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView IndicatorView.ItemsSourceBy="carouselView"
+    <IndicatorView x:Name="indicatorView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="DarkGray"
                    HorizontalOptions="Center" />
 </StackLayout>
 ```
 
-In diesem Beispiel wird der `IndicatorView` unterhalb des `CarouselView`gerendert, mit einem Indikator für jedes Element im `CarouselView`. Die `IndicatorView` wird mit Daten aufgefüllt, indem die `ItemsSourceBy` angefügte-Eigenschaft auf das `CarouselView`-Objekt festgelegt wird. Jeder Indikator ist ein heller grauer Kreis, während der Indikator, der das aktuelle Element im `CarouselView` darstellt, dunkelgrau ist:
+In diesem Beispiel wird der `IndicatorView` unterhalb des `CarouselView`gerendert, mit einem Indikator für jedes Element im `CarouselView`. Die `IndicatorView` wird mit Daten aufgefüllt, indem die `CarouselView.IndicatorView`-Eigenschaft auf das `IndicatorView`-Objekt festgelegt wird. Jeder Indikator ist ein heller grauer Kreis, während der Indikator, der das aktuelle Element im `CarouselView` darstellt, dunkelgrau ist:
 
 [![Screenshot von "carouselview" und "indikatorview" unter IOS und Android](populate-data-images/indicators.png "Sichorview-Kreise")](populate-data-images/indicators-large.png#lightbox "Sichorview-Kreise")
 
 > [!IMPORTANT]
-> Wenn Sie die `IndicatorView.ItemsSourceBy` angefügte Eigenschaft festlegen, wird die `IndicatorView.Position`-Eigenschaft an die `CarouselView.Position`-Eigenschaft gebunden, und die `IndicatorView.ItemsSource` Eigenschaften Bindung an die `CarouselView.ItemsSource`-Eigenschaft.
+> Wenn Sie die `CarouselView.IndicatorView`-Eigenschaft festlegen, wird die `IndicatorView.Position`-Eigenschaft an die `CarouselView.Position`-Eigenschaft gebunden, und die `IndicatorView.ItemsSource` Eigenschaften Bindung an die `CarouselView.ItemsSource`-Eigenschaft.
 
 Weitere Informationen zu Indikatoren finden Sie unter [xamarin. Forms-Anzeige](~/xamarin-forms/user-interface/indicatorview.md).
 

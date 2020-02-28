@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/14/2020
-ms.openlocfilehash: 1e8b6f5e1ea090abc8ebd6084095bf6b34663a42
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 09bcb49db7f257a415518b259672ca8e776cdbc4
+ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77635866"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77674564"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms-Ansichten
 
@@ -208,7 +208,7 @@ Diese beiden Klassen werden von der [`InputView`](xref:Xamarin.Forms.InputView) 
 
 |     |     |
 | --- | --- |
-| `IndicatorView` zeigt Indikatoren an, die die Anzahl der Elemente in einer `CarouselView`darstellen. Legen Sie die `IndicatorView.ItemsSourceBy` angefügte-Eigenschaft auf das `CarouselView` Objekt fest, für das Indikatoren angezeigt werden. <br /><br />[Leitfaden](~/xamarin-forms/user-interface/indicatorview.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![Beispiel für die Anzeige Ansicht](views-images/IndicatorView.png "Beispiel für die Anzeige Ansicht")](views-images/IndicatorView-Large.png#lightbox "Beispiel für die Anzeige Ansicht")<br />Code für diese Seite / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
+| `IndicatorView` zeigt Indikatoren an, die die Anzahl der Elemente in einer `CarouselView`darstellen. Legen Sie die `CarouselView.IndicatorView`-Eigenschaft auf das `IndicatorView`-Objekt fest, um Indikatoren für die `CarouselView`anzuzeigen. <br /><br />[Leitfaden](~/xamarin-forms/user-interface/indicatorview.md) / [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![Beispiel für die Anzeige Ansicht](views-images/IndicatorView.png "Beispiel für die Anzeige Ansicht")](views-images/IndicatorView-Large.png#lightbox "Beispiel für die Anzeige Ansicht")<br />Code für diese Seite / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
 |     |     |
 
 ### <a name="listview"></a>ListView
