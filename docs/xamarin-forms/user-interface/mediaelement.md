@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/18/2020
-ms.openlocfilehash: 601a2884cb9ca90ab6681e48afda4c9f1f467932
-ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
+ms.openlocfilehash: 76a30bfb17c8263345d781386acf9d34c01aae3b
+ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77674546"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160409"
 ---
 # <a name="xamarinforms-mediaelement"></a>Xamarin. Forms Media Element
 
@@ -38,14 +38,14 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 ```
 
 > [!NOTE]
-> [`MediaElement`](xref:Xamarin.Forms.MediaElement) ist unter IOS, Android, der universelle Windows-Plattform (UWP) und weiteren Plattformen verfügbar.
+> [`MediaElement`](xref:Xamarin.Forms.MediaElement) ist unter IOS, Android, der universelle Windows-Plattform (UWP), macOS, Windows Presentation Foundation und tizen verfügbar.
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement) definiert die folgenden Eigenschaften:
 
 - [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect)vom Typ [`Aspect`](xref:Xamarin.Forms.Aspect)bestimmt, wie die Medien so skaliert werden, dass Sie dem Anzeigebereich entsprechen. Der Standardwert dieser Eigenschaft ist `AspectFit`.
 - [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay)vom Typ `bool`gibt an, ob die Medienwiedergabe automatisch startet, wenn die [`Source`](xref:Xamarin.Forms.MediaElement.Source) -Eigenschaft festgelegt wird. Der Standardwert dieser Eigenschaft ist `true`.
 - [`BufferingProgress`](xref:Xamarin.Forms.MediaElement.BufferingProgress)vom Typ `double`gibt den aktuellen Puffer Status an. Der Standardwert dieser Eigenschaft ist 0,0.
-- [`CanSeek`](xref:Xamarin.Forms.MediaElement.CanSeek)vom Typ `bool`gibt an, ob die Medien neu positioniert werden können, indem der Wert der [`Position`](xref:Xamarin.Forms.MediaElement.Position) -Eigenschaft festgelegt wird. Dies ist eine schreibgeschützte Eigenschaft.
+- [`CanSeek`](xref:Xamarin.Forms.MediaElement.CanSeek)vom Typ `bool`gibt an, ob die Medien neu positioniert werden können, indem der Wert der [`Position`](xref:Xamarin.Forms.MediaElement.Position) -Eigenschaft festgelegt wird. Diese Eigenschaft ist schreibgeschützt.
 - [`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState)vom Typ [`MediaElementState`](xref:Xamarin.Forms.MediaElementState)gibt den aktuellen Status des Steuer Elements an. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert `MediaElementState.Closed`ist.
 - [`Duration`](xref:Xamarin.Forms.MediaElement.Duration)vom Typ `TimeSpan?`gibt die Dauer des aktuell geöffneten Mediums an. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert `null`ist.
 - [`IsLooping`](xref:Xamarin.Forms.MediaElement.IsLooping)vom Typ `bool`beschreibt, ob die derzeit geladene Medienquelle die Wiedergabe von Anfang an wieder aufnehmen soll, nachdem das Ende erreicht wurde. Der Standardwert dieser Eigenschaft ist `false`.
@@ -53,8 +53,8 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 - [`Position`](xref:Xamarin.Forms.MediaElement.Position)vom Typ `TimeSpan`beschreibt den aktuellen Fortschritt durch die Wiedergabezeit des Mediums. Der Standardwert dieser Eigenschaft ist `TimeSpan.Zero`.
 - [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls)vom Typ `bool`bestimmt, ob die Plattformen Wiedergabe Steuerelemente angezeigt werden. Der Standardwert dieser Eigenschaft ist `false`.
 - [`Source`](xref:Xamarin.Forms.MediaElement.Source)vom Typ [`MediaSource`](xref:Xamarin.Forms.MediaSource)gibt die Quelle des Mediums an, das in das Steuerelement geladen wurde.
-- [`VideoHeight`](xref:Xamarin.Forms.MediaElement.VideoHeight)vom Typ `int`gibt die Höhe des Steuer Elements an. Dies ist eine schreibgeschützte Eigenschaft.
-- [`VideoWidth`](xref:Xamarin.Forms.MediaElement.VideoWidth)vom Typ `int`gibt die Breite des Steuer Elements an. Dies ist eine schreibgeschützte Eigenschaft.
+- [`VideoHeight`](xref:Xamarin.Forms.MediaElement.VideoHeight)vom Typ `int`gibt die Höhe des Steuer Elements an. Diese Eigenschaft ist schreibgeschützt.
+- [`VideoWidth`](xref:Xamarin.Forms.MediaElement.VideoWidth)vom Typ `int`gibt die Breite des Steuer Elements an. Diese Eigenschaft ist schreibgeschützt.
 - [`Volume`](xref:Xamarin.Forms.MediaElement.Volume)vom Typ `double`bestimmt das Volume des Mediums, das auf einer linearen Skala zwischen 0 und 1 dargestellt wird. Diese Eigenschaft verwendet eine `TwoWay` Bindung, und der Standardwert ist 1.
 
 Diese Eigenschaften, mit Ausnahme der `CanSeek`-Eigenschaft, werden von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten gestützt, was bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
