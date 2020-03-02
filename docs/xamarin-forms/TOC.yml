@@ -255,12 +255,14 @@
           items:
             - name: Muster für zwei Bildschirme
               href: app-fundamentals/dual-screen/design-patterns.md
-            - name: TwoPaneView
+            - name: Layout für zwei Bildschirme
               href: app-fundamentals/dual-screen/twopaneview.md
-            - name: DualScreenInfo
+            - name: Gerätefunktionen bei zwei Bildschirmen
               href: app-fundamentals/dual-screen/dual-screen-info.md
-            - name: DualScreenHelper
+            - name: Plattformhilfsprogramme für zwei Bildschirme
               href: app-fundamentals/dual-screen/dual-screen-helper.md
+            - name: Trigger für zwei Bildschirme
+              href: app-fundamentals/dual-screen/triggers.md
         - name: Effekte
           href: app-fundamentals/effects/index.md
           items:
