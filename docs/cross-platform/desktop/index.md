@@ -16,22 +16,22 @@ ms.locfileid: "73016464"
 
 Dieser Abschnitt enthält Informationen, die es WPF-und Windows Forms Entwicklern erleichtern, Mobile App Entwicklung mit xamarin zu erlernen, indem Sie auf Ihr vorhandenes Wissen und ihre Erfahrungen mit der mobilen Idiome verweisen und Beispiele für das Portieren von Desktop-Apps auf Mobilgeräte bereitstellen.
 
-## <a name="app-lifecycle-comparisonlifecyclemd"></a>[App-Lebenszyklus Vergleich](lifecycle.md)
+## <a name="app-lifecycle-comparison"></a>[App-Lebenszyklus Vergleich](lifecycle.md)
 
 Grundlegendes zu den Unterschieden zwischen WPF-und xamarin. Forms-App-Start-und Hintergrund Zuständen
 
-## <a name="ui-controls-comparisoncontrolsindexmd"></a>[Vergleichen von Benutzeroberflächen-](controls/index.md)
+## <a name="ui-controls-comparison"></a>[Vergleichen von Benutzeroberflächen-](controls/index.md)
 
 Kurzübersicht, um äquivalente Steuerelemente in Windows Forms, WPF und xamarin. Forms zu finden, einschließlich zusätzlicher Anleitungen zu den Unterschieden zwischen WPF und xamarin. Forms.
 
-## <a name="porting-guidanceportingmd"></a>[Leitfaden zum Portieren](porting.md)
+## <a name="porting-guidance"></a>[Leitfaden zum Portieren](porting.md)
 
 Verwenden der Portabilitäts Analyse zum Migrieren von Desktop Anwendungscode (ohne die Benutzeroberfläche) zu xamarin. Forms.
 
-## <a name="samplessamplesmd"></a>[Beispiele](samples.md)
+## <a name="samples"></a>[Beispiele](samples.md)
 
 Beispiele für die Architektur von Unternehmensanwendungen und das Portieren von Code von WPF zu xamarin. Forms.
 
 ## <a name="learn-more"></a>Weitere Informationen
 
-[![erstellen Mobile Apps e-book](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [![Unternehmens Anwendungs Muster](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md) -e-book
+[![erstellen Mobile Apps e-book](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [![Unternehmens Anwendungs Muster](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)
