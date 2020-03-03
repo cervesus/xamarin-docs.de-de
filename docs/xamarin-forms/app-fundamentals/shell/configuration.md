@@ -6,19 +6,19 @@ ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/05/2019
-ms.openlocfilehash: e207949d607219393ffeb51fce818ddfb68ae344
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/29/2020
+ms.openlocfilehash: dfa452addd7cfb838091afdfb350484998d0cc9d
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489907"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636086"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms-Shell-Seitenkonfiguration
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Die `Shell`-Klasse definiert angefügte Eigenschaften, die verwendet werden können, um die Darstellung von Seiten in Xamarin.Forms-Shell-Anwendungen zu konfigurieren. Dies schließt das Festlegen von Seitenfarben, das Deaktivieren der Navigationsleiste, das Deaktivieren der Registerkartenleiste und das Anzeigen von Ansichten in der Navigationsleiste ein.
+Die `Shell`-Klasse definiert angefügte Eigenschaften, die verwendet werden können, um die Darstellung von Seiten in Xamarin.Forms-Shell-Anwendungen zu konfigurieren. Dies schließt das Festlegen von Seitenfarben und des Seitenpräsentationsmodus, das Deaktivieren der Navigationsleiste und der Registerkartenleiste sowie das Anzeigen von Ansichten auf der Navigationsleiste ein.
 
 ## <a name="set-page-colors"></a>Festlegen der Seitenfarben
 
@@ -85,6 +85,30 @@ Alternativ können die Farbeigenschaften mit einer XAML-Formatvorlage festgelegt
 ```
 
 Weitere Informationen zu XAML-Formatvorlagen finden Sie unter [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md).
+
+## <a name="set-page-presentation-mode"></a>Festlegen des Seitenpräsentationsmodus
+
+Standardmäßig erfolgt eine kleine Navigationsanimation, wenn mit der `GoToAsync`-Methode zu einer Seite navigiert wird. Allerdings kann dieses Verhalten geändert werden, indem die angefügte `Shell.PresentationMode`-Eigenschaft für [`ContentPage`](xref:Xamarin.Forms.ContentPage) auf eines der `PresentationMode`-Enumerationsmember festgelegt wird:
+
+- `NotAnimated` gibt an, dass die Seite ohne Navigationsanimation angezeigt wird.
+- `Animated` gibt an, dass die Seite mit Navigationsanimation angezeigt wird. Dies ist der Standardwert der angefügten `Shell.PresentationMode`-Eigenschaft.
+- `Modal` gibt an, dass die Seite als modale Seite angezeigt wird.
+- `ModalAnimated` gibt an, dass die Seite als modale Seite mit Navigationsanimation angezeigt wird.
+- `ModalNotAnimated` gibt an, dass die Seite als modale Seite ohne Navigationsanimation angezeigt wird.
+
+> [!IMPORTANT]
+> Der Typ `PresentationMode` ist eine Flagenumeration. Dies bedeutet, dass im Code eine Kombination von Enumerationsmembern angewendet werden kann. Für mehr Benutzerfreundlichkeit in XAML ist das `ModalAnimated`-Member jedoch eine Kombination der Member `Animated` und `Modal` und das `ModalNotAnimated`-Member eine Kombination der Member `NotAnimated` und `Modal`. Weitere Informationen zu Flagenumerationen finden Sie unter [Enumerationstypen als Bitflags](/dotnet/csharp/language-reference/builtin-types/enum#enumeration-types-as-bit-flags).
+
+Im folgenden XAML-Beispiel wird die angefügte `Shell.PresentationMode`-Eigenschaft für eine [`ContentPage`](xref:Xamarin.Forms.ContentPage) festgelegt:
+
+```xaml
+<ContentPage ...
+             Shell.PresentationMode="Modal">
+    ...             
+</ContentPage>
+```
+
+In diesem Beispiel wird die [`ContentPage`](xref:Xamarin.Forms.ContentPage) so festgelegt, dass sie als modale Seite angezeigt wird, wenn mit der `GoToAsync`-Methode zur Seite navigiert wird.
 
 ## <a name="enable-navigation-bar-shadow"></a>Aktivieren des Navigationsleistenschattens
 
@@ -162,6 +186,10 @@ Dies führt dazu, dass eine Bild in der Navigationsleiste auf der Seite angezeig
 Viele Ansichten werden nicht in der Navigationsleiste angezeigt, es sei denn, die Größe der Ansicht wird mit den Eigenschaften [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) und [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) angegeben oder der Ort der Ansicht wird mit den Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) angegeben.
 
 Da die [`Layout`](xref:Xamarin.Forms.Layout)-Klasse von der [`View`](xref:Xamarin.Forms.View)-Klasse abgeleitet ist, kann die angefügte `TitleView`-Eigenschaft so festgelegt werden, dass sie eine Layoutklasse anzeigt, die mehrere Ansichten enthält. Entsprechend gilt, dass die angefügte `TitleView`-Eigenschaft so festgelegt werden kann, dass sie eine `ContentView` anzeigt, die eine einzelne Ansicht enthält, weil die [`ContentView`](xref:Xamarin.Forms.ContentView)-Klasse letztendlich von der [`View`](xref:Xamarin.Forms.View)-Klasse abgeleitet ist.
+
+## <a name="page-visibility"></a>Seitensichtbarkeit
+
+Shell beachtet die mit der [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible)-Eigenschaft festgelegte Seitensichtbarkeit. Wenn die `IsVisible`-Eigenschaft einer Seite auf `false` festgelegt ist, wird sie daher in der Shell-Anwendung nicht angezeigt, und es ist nicht möglich, zu ihr zu navigieren.
 
 ## <a name="related-links"></a>Verwandte Links
 

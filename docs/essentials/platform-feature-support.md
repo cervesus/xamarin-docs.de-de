@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 66cc9042b74cd29cc11194e8cfde91a6ebec6f8b
-ms.sourcegitcommit: 04929b5ff4384ca807727bec7c0467111a7eb283
+ms.openlocfilehash: a104b3828caa9e00e9307420ae5473d0fe7d7784
+ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867629"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77545194"
 ---
 # <a name="platform-support"></a>Plattformunterstützung
 
@@ -43,7 +43,8 @@ Symbole und ihre Bedeutung:
 | Feature | Android | iOS | UWP | watchOS | tvOS | Tizen |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Beschleunigungsmesser](accelerometer.md?context=xamarin/xamarin-forms) | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP](~/media/shared/yes.png "Unterstützt UWP") | ![Unterstützt watchOS](~/media/shared/yes.png "Unterstützt watchOS") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen](~/media/shared/yes.png "Unterstützt Tizen") | 
-| [App-Informationen](app-information.md?context=xamarin/xamarin-forms) | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP](~/media/shared/yes.png "Unterstützt UWP") | ![Unterstützt watchOS](~/media/shared/yes.png "Unterstützt watchOS") | ![Unterstützt tvOS](~/media/shared/yes.png "Unterstützt tvOS") | ![Unterstützt Tizen](~/media/shared/yes.png "Unterstützt Tizen") | 
+| [App-Informationen](app-information.md?context=xamarin/xamarin-forms) | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP](~/media/shared/yes.png "Unterstützt UWP") | ![Unterstützt watchOS](~/media/shared/no.png "Unterstützt watchOS nicht") | ![Unterstützt tvOS](~/media/shared/yes.png "Unterstützt tvOS") | ![Unterstützt Tizen](~/media/shared/no.png "Unterstützt Tizen nicht") | 
+| [App-Design](app-theme.md?context=xamarin/xamarin-forms) | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP](~/media/shared/yes.png "Unterstützt UWP") | ![Unterstützt watchOS](~/media/shared/yes.png "Unterstützt watchOS") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen](~/media/shared/yes.png "Unterstützt Tizen") | 
 | [Barometer](barometer.md?context=xamarin/xamarin-forms) | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP](~/media/shared/yes.png "Unterstützt UWP") | ![Unterstützt watchOS](~/media/shared/yes.png "Unterstützt watchOS") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen](~/media/shared/yes.png "Unterstützt Tizen") | 
 | [Akku](battery.md?context=xamarin/xamarin-forms) | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP](~/media/shared/yes.png "Unterstützt UWP") | ![Unterstützt watchOS](~/media/shared/yes.png "Unterstützt watchOS") | ![Eingeschränkte Unterstützung für tvOS](~/media/shared/warn.png "Eingeschränkte Unterstützung für tvOS") | ![Eingeschränkte Unterstützung für Tizen](~/media/shared/warn.png "Eingeschränkte Unterstützung für Tizen") | 
 | [Zwischenablage](clipboard.md?context=xamarin/xamarin-forms) | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP](~/media/shared/yes.png "Unterstützt UWP") | ![Unterstützt watchOS nicht](~/media/shared/no.png "Unterstützt watchOS nicht") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen nicht](~/media/shared/no.png "Unterstützt Tizen nicht") | 

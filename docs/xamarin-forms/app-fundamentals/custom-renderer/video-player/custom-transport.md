@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: efe41fa5f25f6257587fd97a2711e9037b94dc6e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771829"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636015"
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte Transportsteuerelemente für Videos
 
@@ -613,7 +613,7 @@ Die Seite **Custom Transport** (Benutzerdefinierte Transportsteuerelemente) legt
 </ContentPage>
 ```
 
-Ausführliche Informationen über Datentrigger finden Sie im Artikel [Data Triggers (Datentrigger)](~/xamarin-forms/app-fundamentals/triggers.md#data).
+Ausführliche Informationen über Datentrigger finden Sie im Artikel [Data Triggers (Datentrigger)](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers).
 
 Die CodeBehind-Datei verfügt über Handler für die `Clicked`-Schaltflächenereignisse:
 
@@ -649,11 +649,11 @@ namespace VideoPlayerDemos
 
 Da `AutoPlay` in der Datei **CustomTransport.xaml** auf `false` festgelegt ist, müssen Sie auf die Schaltfläche **Wiedergabe** tippen, wenn sie aktiviert ist, um das Video zu starten. Die Schaltflächen sind so definiert, dass die entsprechenden Texte der oben genannten Unicode-Zeichen ebenfalls angezeigt werden. Die Schaltflächen weisen auf allen Plattformen eine einheitliche Darstellung auf, wenn das Video wiedergegeben wird:
 
-[![Benutzerdefinierte Transportsteuerelemente während der Wiedergabe](custom-transport-images/customtransportplaying-small.png "Benutzerdefinierte Transportsteuerelemente während der Wiedergabe")](custom-transport-images/customtransportplaying-large.png#lightbox "Benutzerdefinierte Transportsteuerelemente während der Wiedergabe")
+[![Benutzerdefinierter Transport wird wiedergegeben](custom-transport-images/customtransportplaying-small.png "Benutzerdefinierter Transport wird wiedergegeben")](custom-transport-images/customtransportplaying-large.png#lightbox "Benutzerdefinierter Transport wird wiedergegeben")
 
 Unter Android und auf der UWP sieht die Schaltfläche **Wiedergabe** jedoch anders aus, wenn das Video pausiert ist:
 
-[![Benutzerdefinierte Transportsteuerelemente während der Pause](custom-transport-images/customtransportpaused-small.png "Benutzerdefinierte Transportsteuerelemente während der Pause")](custom-transport-images/customtransportpaused-large.png#lightbox "Benutzerdefinierte Transportsteuerelemente während der Pause")
+[![Benutzerdefinierter Transport ist angehalten](custom-transport-images/customtransportpaused-small.png "Benutzerdefinierter Transport ist angehalten")](custom-transport-images/customtransportpaused-large.png#lightbox "Benutzerdefinierter Transport ist angehalten")
 
 In einer Produktionsanwendung sollten Sie Ihre eigenen Bitmap-Bilder für die Schaltflächen benutzen, damit diese visuell einheitlich sind.
 

@@ -4,13 +4,13 @@ description: Die Klasse „UnitConverters“ in Xamarin.Essentials stellt mehrer
 ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: be560a156647274932265597ae5b83f22255d061
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.date: 01/06/2020
+ms.openlocfilehash: c07e0c7d9645c22f0d70c75fd7d8dffdec8cde04
+ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120134"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77545033"
 ---
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials: Einheitenkonverter
 
@@ -31,7 +31,7 @@ using Xamarin.Essentials;
 Alle Einheitenkonverter stehen über die statische Klasse `UnitConverters` in Xamarin.Essentials zur Verfügung. Beispielsweise können Sie mühelos Fahrenheit in Celsius konvertieren.
 
 ```csharp
-var celcius = UnitConverters.FahrenheitToCelsius(32.0);
+var celsius = UnitConverters.FahrenheitToCelsius(32.0);
 ```
 
 Es folgt eine Liste der verfügbaren Konvertierungen:
@@ -43,6 +43,8 @@ Es folgt eine Liste der verfügbaren Konvertierungen:
 - MilesToMeters
 - MilesToKilometers
 - KilometersToMiles
+- MetersToInternationalFeet
+- InternationalFeetToMeters
 - DegreesToRadians
 - RadiansToDegrees
 - DegreesPerSecondToRadiansPerSecond
@@ -59,6 +61,10 @@ Es folgt eine Liste der verfügbaren Konvertierungen:
 - PascalsToAtmospheres
 - CoordinatesToMiles
 - CoordinatesToKilometers
+- KilogramsToPounds
+- PoundsToKilograms
+- StonesToPounds
+- PoundsToStones
 
 ## <a name="api"></a>API
 

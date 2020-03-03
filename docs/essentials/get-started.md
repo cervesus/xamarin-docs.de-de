@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: e388df2b4c7201cad01789de1676f79bec8d351e
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: daab2b3a18eeea2f50c9518144b3396fbba90928
+ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488542"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77545123"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
 
@@ -31,11 +31,11 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar und in jedem neuen Projekt in 
 3. Fügen Sie das NuGet-Paket [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) jedem Projekt hinzu:
 
     <!--markdownlint-disable MD023 -->
-    # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+    # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
     Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Namen der Projektmappe, und wählen Sie **NuGet-Pakete** aus. Suchen Sie nach **Xamarin.Essentials**, und installieren Sie das Paket in **ALLEN** Projekten, einschließlich der Android-, iOS-, UWP- und .NET-Standardbibliotheken.
 
-    # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+    # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
     Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Hinzufügen > NuGet-Pakete...** aus. Suchen Sie nach **Xamarin.Essentials**, und installieren Sie das Paket in **ALLEN** Projekten, einschließlich der Android-, iOS- und .NET-Standardbibliotheken.
 
@@ -49,11 +49,11 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar und in jedem neuen Projekt in 
 
 5. Xamarin.Essentials erfordert ein plattformspezifisches Setup:
 
-    # <a name="androidtabandroid"></a>[Android](#tab/android)
+    # <a name="android"></a>[Android](#tab/android)
 
     Xamarin.Essentials unterstützt die Android-Mindestversion 4.4, d.h. API-Ebene 19, doch die Android-Zielversion für die Kompilierung muss 9.0 entsprechen, d.h. API-Ebene 28. In Visual Studio werden diese beiden Versionen auf der Registerkarte „Android-Manifest“ im Dialogfeld „Projekteigenschaften“ für das Android-Projekt festgelegt. In Visual Studio für Mac werden sie auf der Registerkarte „Android-Anwendung“ im Dialogfeld „Projektoptionen“ für das Android-Projekt eingerichtet.
 
-    Xamarin.Essentials installiert die benötigte Version 28.0.0.1 der Xamarin.Android.Support-Bibliotheken. Alle anderen Xamarin.Android.Support-Bibliotheken, die Ihre Anwendung benötigt, sollten ebenfalls mit dem NuGet-Paket-Manager auf Version 28.0.0.1 aktualisiert werden. Alle von Ihrer Anwendung verwendeten Xamarin.Android.Support-Bibliotheken sollten gleich sein und mindestens die Version 28.0.0.1 haben. Wenn Sie Probleme beim Hinzufügen des Xamarin.Essentials-NuGets oder beim Aktualisieren von NuGet-Paketen in Ihrer Projektmappe haben, lesen Sie [Problembehandlung](troubleshooting.md).
+    Xamarin.Essentials installiert die benötigte Version 28.0.0.3 der Xamarin.Android.Support-Bibliotheken. Alle anderen Xamarin.Android.Support-Bibliotheken, die Ihre Anwendung benötigt, sollten ebenfalls mit dem NuGet-Paket-Manager auf Version 28.0.0.3 aktualisiert werden. Alle von Ihrer Anwendung verwendeten Xamarin.Android.Support-Bibliotheken sollten gleich sein und mindestens die Version 28.0.0.3 haben. Wenn Sie Probleme beim Hinzufügen des Xamarin.Essentials-NuGets oder beim Aktualisieren von NuGet-Paketen in Ihrer Projektmappe haben, lesen Sie [Problembehandlung](troubleshooting.md).
 
     Im `MainLauncher`-Element oder in einem beliebigen `Activity`-Element des Android-Projekts, das gestartet wird, muss Xamarin.Essentials in der `OnCreate`-Methode initialisiert werden:
 
@@ -76,11 +76,11 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar und in jedem neuen Projekt in 
     }
     ```
 
-    # <a name="iostabios"></a>[iOS](#tab/ios)
+    # <a name="ios"></a>[iOS](#tab/ios)
 
     Es ist kein zusätzliches Setup erforderlich.
 
-    # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+    # <a name="uwp"></a>[UWP](#tab/uwp)
 
     Es ist kein zusätzliches Setup erforderlich.
 
