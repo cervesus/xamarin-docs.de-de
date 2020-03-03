@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: d988be9163c0a6e12735425a139c03d9641fa95c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f7526b6cecebadd30e95718b7e537026a6557adf
+ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772762"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78214993"
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 Es ist wichtig zu berücksichtigen, wie Ihre Anwendung verwendet wird und wie Querformat integriert werden kann, um die benutzerfreundlichkeit zu verbessern. Einzelne Layouts können entworfen werden, um mehrere Ausrichtungen zu berücksichtigen und am besten verwenden Sie den verfügbaren Speicherplatz. Auf der Anwendungsebene kann Drehung deaktiviert oder aktiviert werden.
 
@@ -28,25 +28,25 @@ Wenn Sie Xamarin.Forms verwenden, werden das unterstützte Verfahren zum Steuern
 
 ### <a name="ios"></a>iOS
 
-Geräteausrichtung erfolgt unter iOS, für Anwendungen unter Verwendung der **"Info.plist"** Datei. Diese Datei enthält Einstellungen für die Ausrichtung für iPhone und iPod sowie Einstellungen für iPad, wenn die app als Ziel enthält. Im folgenden finden Anweisungen zu Ihrer IDE. Verwenden Sie die IDE-Optionen am oberen Rand dieses Dokuments, welche Anweisungen auswählen, finden Sie unter möchten:
+Unter IOS wird die Geräte Ausrichtung für Anwendungen konfiguriert, die die **Info. plist** -Datei verwenden. Diese Datei enthält Einstellungen für die Ausrichtung für iPhone und iPod sowie Einstellungen für iPad, wenn die app als Ziel enthält. Im folgenden finden Anweisungen zu Ihrer IDE. Verwenden Sie die IDE-Optionen am oberen Rand dieses Dokuments, welche Anweisungen auswählen, finden Sie unter möchten:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Klicken Sie in Visual Studio, öffnen Sie das iOS-Projekt, und öffnen Sie **"Info.plist"** . Die Datei wird in einem Bereich Konfiguration angezeigt, beginnend mit der iPhone-Bereitstellungsinformationen-Registerkarte geöffnet:
+Öffnen Sie in Visual Studio das IOS-Projekt, und öffnen Sie " **Info. plist**". Die Datei wird in einem Bereich Konfiguration angezeigt, beginnend mit der iPhone-Bereitstellungsinformationen-Registerkarte geöffnet:
 
 ![iPhone-Bereitstellungsinformationen in Visual Studio](device-orientation-images/orientation-vs-iphone.png)
 
-Wählen Sie zum Konfigurieren der iPad-Ausrichtung der **iPad-Bereitstellungsinformationen** Registerkarte oben links im Bereich, klicken Sie dann auswählen von die verfügbaren Ausrichtungen:
+Um die iPad-Ausrichtung zu konfigurieren, wählen Sie die Registerkarte **iPad-Bereitstellungs Informationen** oben links im Bereich aus, und wählen Sie dann eine der verfügbaren Ausrichtungen aus
 
 ![Unterstützte Geräteausrichtungen in Visual Studio](device-orientation-images/orientation-vs-ipad.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Klicken Sie in Visual Studio für Mac öffnen Sie das iOS-Projekt, und öffnen Sie **"Info.plist"** . Unter den **Anwendung** Registerkarte Abschnitte stehen Ausrichtung festgelegt:
+Öffnen Sie in Visual Studio für Mac das IOS-Projekt, und öffnen Sie die Datei **Info. plist**. Auf der Registerkarte **Anwendung** stehen Abschnitte zum Festlegen der Ausrichtung zur Verfügung:
 
 ![iPhone-Bereitstellungsinformationen in Visual Studio für Mac](device-orientation-images/orientation-xam-ui.png)
 
-Wenn Sie lieber so bearbeiten Sie die Werte, die über eine Editorschnittstelle für Schlüssel-Wert-, wählen Sie die **Quelle**> Registerkarte am unteren Rand des Bildschirms:
+Wenn Sie die Werte mit einer Schnittstelle für den Schlüssel-Wert-Editor bearbeiten möchten, wählen Sie unten auf dem Bildschirm die Registerkarte **Quelle**> aus:
 
 ![Geräteausrichtungen in Visual Studio für Mac unterstützt.](device-orientation-images/orientation-xam-source.png)
 
@@ -54,7 +54,7 @@ Wenn Sie lieber so bearbeiten Sie die Werte, die über eine Editorschnittstelle 
 
 ### <a name="android"></a>Android
 
-Öffnen Sie zum Steuern der Ausrichtung auf Android **"mainactivity.cs"** und legen Sie die Orientierung mit dem Attribut versehen der `MainActivity` Klasse:
+Um die Ausrichtung auf Android zu steuern, öffnen Sie **MainActivity.cs** , und legen Sie die Ausrichtung mithilfe des Attributs fest, das die `MainActivity` Klasse schmückt:
 
 ```csharp
 namespace MyRotatingApp.Droid
@@ -68,37 +68,36 @@ namespace MyRotatingApp.Droid
 
 Xamarin.Android unterstützt mehrere Optionen zum Angeben der Ausrichtung:
 
-- **Querformat** &ndash; erzwingt, dass die Anwendung-Ausrichtung auf Querformat, unabhängig davon, Sensordaten sein.
-- **Hochformat** &ndash; erzwingt, dass die Anwendung-Ausrichtung auf Hochformat, unabhängig von Daten von gerätesensoren zu werden.
-- **Benutzer** &ndash; bewirkt, dass die Anwendung mithilfe der bevorzugte Ausrichtung des Benutzers angezeigt werden.
-- **Hinter** &ndash; bewirkt Ausrichtung der Anwendung, mit der die Ausrichtung des identisch sein, dass die [Aktivität](xref:Android.App.Activity) dahinter.
-- **Sensor** &ndash; bewirkt, dass die Anwendung die Ausrichtung vom Sensor, bestimmt werden soll, selbst wenn der Benutzer die automatische Drehung deaktiviert hat.
-- **SensorLandscape** &ndash; bewirkt, dass die Anwendung zur Verwendung von Querformat bei der Verwendung von Daten von triebwerksensoren so ändern Sie die Richtung der Bildschirm befindet sich in einer (sodass der Bildschirm als auf dem Kopf stehend betrachtet wird).
-- **SensorPortrait** &ndash; bewirkt, dass die Anwendung zur Verwendung von Hochformat bei der Verwendung von Daten von triebwerksensoren so ändern Sie die Richtung der Bildschirm befindet sich in einer (sodass der Bildschirm als auf dem Kopf stehend betrachtet wird).
-- **ReverseLandscape** &ndash; bewirkt, dass die Anwendung zur Verwendung von Querformat, mit der entgegengesetzten Richtung üblich ist, um "auf dem Kopf stehend." angezeigt.
-- **ReversePortrait** &ndash; bewirkt, dass die Anwendung zur Verwendung von Hochformat anzeigt, mit der entgegengesetzten Richtung üblich ist, um "auf dem Kopf stehend." angezeigt.
-- **FullSensor** &ndash; bewirkt, dass die Anwendung abhängig von Sensordaten in die richtige Ausrichtung (nicht die möglichen 4) wählen.
-- **FullUser** &ndash; bewirkt, dass die Anwendung verwenden Sie die Einstellungen des Benutzers Ausrichtung. Wenn die automatische Drehung aktiviert ist, können alle 4 Ausrichtungen verwendet werden.
-- **UserLandscape** &ndash; _\[Nepodporuje\]_ bewirkt, dass die Anwendung zum Querformat, es sei denn, der Benutzer die automatische Drehung aktiviert ist, hat in diesem Fall verwendet der Sensor Ausrichtung zu bestimmen. Diese Option wird die Kompilierung unterbrochen.
-- **UserPortrait** &ndash; _\[Nepodporuje\]_ bewirkt, dass die Anwendung zur Verwendung von Hochformat, es sei denn, der Benutzer die automatische Drehung aktiviert ist, hat in diesem Fall verwendet der Sensor Ausrichtung zu bestimmen. Diese Option wird die Kompilierung unterbrochen.
-- **Gesperrt** &ndash; _\[Nepodporuje\]_ bewirkt, dass die Anwendung zur Verwendung der bildschirmausrichtung, was sie beim Start ist, ohne die Reaktion auf Änderungen an das Gerät den physikalischen die Ausrichtung. Diese Option wird die Kompilierung unterbrochen.
+- **Landscape** &ndash; erzwingt, dass die Anwendungs Ausrichtung unabhängig von den Sensordaten Querformat ist.
+- Hoch &ndash; erzwingt, dass die Anwendungs Ausrichtung unabhängig von den Sensordaten Hochformat ist.
+- **Benutzer** &ndash; bewirkt, dass die Anwendung mithilfe der bevorzugten Ausrichtung des Benutzers angezeigt wird.
+- **Hinter** &ndash; bewirkt, dass die Ausrichtung der Anwendung mit der Ausrichtung der dahinter liegenden [Aktivität](xref:Android.App.Activity) identisch ist.
+- **Sensor** &ndash; bewirkt, dass die Ausrichtung der Anwendung durch den Sensor bestimmt wird, auch wenn der Benutzer die automatische Drehung deaktiviert hat.
+- **Sensorlandscape** &ndash; bewirkt, dass die Anwendung Querformat verwendet, während Sensordaten verwendet werden, um die Richtung zu ändern, mit der der Bildschirm angezeigt wird (sodass der Bildschirm nicht als aufwärts angezeigt wird).
+- **Sensorhoch** &ndash; bewirkt, dass die Anwendung die Hochformat Ausrichtung verwendet, während Sensordaten die Richtung ändern, mit der der Bildschirm angezeigt wird (sodass der Bildschirm nicht als aufwärts angezeigt wird).
+- **Reverselandscape** &ndash; bewirkt, dass die Anwendung Querformat verwendet, wobei die entgegengesetzte Richtung von gewöhnlich aus angezeigt wird.
+- **Reversehoch** &ndash; bewirkt, dass die Anwendung die Hochformat-Ausrichtung verwendet, wobei die entgegengesetzte Richtung von gewöhnlich aus angezeigt wird.
+- Die **voll Sensor** &ndash; bewirkt, dass die Anwendung Sensordaten nutzt, um die richtige Ausrichtung auszuwählen (aus der möglichen 4).
+- **Fulluser** &ndash; bewirkt, dass die Anwendung die Ausrichtungs Einstellungen des Benutzers verwendet. Wenn die automatische Drehung aktiviert ist, können alle 4 Ausrichtungen verwendet werden.
+- **Userlandscape** -&ndash; _\[nicht unterstützt\]_ bewirkt, dass die Anwendung die Querformat Ausrichtung verwendet, es sei denn, für den Benutzer ist die automatische Rotation aktiviert. in diesem Fall wird der Sensor zum Bestimmen der Ausrichtung verwendet. Diese Option wird die Kompilierung unterbrochen.
+- **Userportrait** &ndash; _\[nicht unterstützt\]_ bewirkt, dass die Anwendung die Hochformat Ausrichtung verwendet, es sei denn, für den Benutzer ist die automatische Rotation aktiviert. in diesem Fall wird der Sensor verwendet, um die Ausrichtung zu bestimmen. Diese Option wird die Kompilierung unterbrochen.
+- **Gesperrte** &ndash; _\[nicht unterstützt\]_ bewirkt, dass die Anwendung die Bildschirm Ausrichtung verwendet, unabhängig davon, was beim Start erfolgt, ohne dass auf Änderungen in der physischen Ausrichtung des Geräts reagiert wird. Diese Option wird die Kompilierung unterbrochen.
 
 Beachten Sie, dass die systemeigene Android-APIs bieten einen hohen steuern, wie die Ausrichtung verwaltet wird, einschließlich der Optionen, die des Benutzers explizit zu widersprechen Voreinstellungen ausgedrückt werden.
 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
-Für die universelle Windows Plattform (UWP), in dem unterstützte Ausrichtungen festgelegt sind das **"Package.appxmanifest"** Datei. Öffnen das Manifest wird ein Konfigurationsfenster anzuzeigen, in denen unterstützte Ausrichtungen ausgewählt werden können.
+Beim universelle Windows-Plattform (UWP) werden unterstützte Ausrichtungen in der Datei " **Package. appxmanifest** " festgelegt. Öffnen das Manifest wird ein Konfigurationsfenster anzuzeigen, in denen unterstützte Ausrichtungen ausgewählt werden können.
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
 ## <a name="reacting-to-changes-in-orientation"></a>Reagieren auf Änderungen im Ausrichtung
 
-Xamarin.Forms bietet keine native Ereignisse für die Benachrichtigung von Ihrer app von Änderungen der bildschirmausrichtung in freigegebenem Code. Jedoch die `SizeChanged` Ereignis die `Page` wird ausgelöst, wenn entweder die Breite oder Höhe der `Page` Änderungen. Wenn die Breite des der `Page` ist größer als die Höhe des Geräts wird im Querformat. Weitere Informationen finden Sie unter [zeigen Sie ein Bild, das je nach Ausrichtung des Bildschirms](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation).
+Xamarin.Forms bietet keine native Ereignisse für die Benachrichtigung von Ihrer app von Änderungen der bildschirmausrichtung in freigegebenem Code. [Xamarin. Essentials](~/essentials/index.md) enthält jedoch eine [`DeviceDisplay`]-Klasse, die Benachrichtigungen über die Ausrichtung von Änderungen bereitstellt.
 
-> [!NOTE]
-> Es ist ein vorhandener, kostenlose NuGet-Paket für den Empfang von Benachrichtigungen über Änderungen der bildschirmausrichtung in freigegebenem Code. Finden Sie unter den [GitHub-Repository](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) für Weitere Informationen.
+Zum Erkennen von Ausrichtungen ohne xamarin. Essentials überwachen Sie das `SizeChanged`-Ereignis des `Page`, das ausgelöst wird, wenn die Breite oder Höhe des `Page` geändert wird. Wenn die Breite des `Page` größer als die Höhe ist, befindet sich das Gerät im Querformat. Weitere Informationen finden Sie unter [Anzeigen eines Bilds auf der Grundlage der Bildschirm Ausrichtung](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation).
 
-Alternativ ist es möglich, überschreiben die [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) Methode für eine `Page`, Einfügen von Layouts ändern Logik vorhanden. Die `OnSizeAllocated` Methode wird aufgerufen, wenn eine `Page` wird zugeordnet, eine neue Größe, was geschieht, wenn das Gerät gedreht wird. Beachten Sie, dass die basisimplementierung für `OnSizeAllocated` führt wichtige Layout-Funktionen, daher ist es wichtig, überschreiben die basisimplementierung aufrufen:
+Es ist auch möglich, die [`OnSizeAllocated`](xref:Xamarin.Forms.Page.OnSizeAllocated*) -Methode für eine `Page`zu überschreiben und dort jede beliebige layoutänderungslogik einzufügen. Die `OnSizeAllocated`-Methode wird immer dann aufgerufen, wenn einer `Page` eine neue Größe zugewiesen wird. Dies geschieht, wenn das Gerät gedreht wird. Beachten Sie, dass die Basis Implementierung von `OnSizeAllocated` wichtige Layoutfunktionen ausführt, daher ist es wichtig, die Basis Implementierung in der Überschreibung aufzurufen:
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -109,7 +108,7 @@ protected override void OnSizeAllocated(double width, double height)
 
 Fehler bei diesem Schritt führt zu einer Seite nicht funktionsfähigen.
 
-Beachten Sie, dass die `OnSizeAllocated` Methode kann mehrmals aufgerufen, wenn ein Gerät gedreht wird. Ändern das Layout jedes Mal, ist Vergeudung von Ressourcen und kann zu Flimmern führen. Erwägen Sie eine Instanzvariable innerhalb Ihrer Seite, um nachzuverfolgen, ob die Ausrichtung im Querformat oder Hochformat befindet, und nur neu zeichnen Sie, wenn eine Änderung vorliegt:
+Beachten Sie, dass die `OnSizeAllocated`-Methode möglicherweise mehrmals aufgerufen wird, wenn ein Gerät gedreht wird. Ändern das Layout jedes Mal, ist Vergeudung von Ressourcen und kann zu Flimmern führen. Erwägen Sie eine Instanzvariable innerhalb Ihrer Seite, um nachzuverfolgen, ob die Ausrichtung im Querformat oder Hochformat befindet, und nur neu zeichnen Sie, wenn eine Änderung vorliegt:
 
 ```csharp
 private double width = 0;
@@ -129,11 +128,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 Sobald eine Änderung der geräteausrichtung erkannt wird, empfiehlt es sich beim Hinzufügen oder entfernen zusätzliche Ansichten in der Benutzeroberfläche, auf die Änderung in den verfügbaren Speicherplatz zu reagieren. Betrachten Sie z. B. des integrierte Rechners auf jeder Plattform im Hochformat aus:
 
-![](device-orientation-images/calculator-portrait.png "Rechner-Anwendung im Hochformat")
+![](device-orientation-images/calculator-portrait.png "Calculator Application in Portrait")
 
 und Querformat:
 
-![](device-orientation-images/calculator-landscape.png "Rechner-Anwendung im Querformat")
+![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
 
 Beachten Sie, dass die apps von den verfügbaren Speicherplatz nutzen, indem weitere Funktionen im Querformat hinzu.
 
@@ -143,23 +142,23 @@ Beachten Sie, dass die apps von den verfügbaren Speicherplatz nutzen, indem wei
 
 Es ist möglich, Design-Schnittstellen, die mithilfe von den integrierten Layouts, damit sie ordnungsgemäß übergehen, wenn das Gerät gedreht wird. Berücksichtigen Sie beim Entwerfen von Schnittstellen, die weiterhin attraktiv sein, die Reaktion auf Änderungen in Ausrichtung auf folgenden allgemeinen Regeln:
 
-- **Achten Sie darauf, Verhältnissen** &ndash; Änderungen in Ausrichtung können Probleme verursachen, wenn bestimmte Annahmen im Hinblick auf die Verhältnisse vorgenommen werden. Z. B. eine Sicht, die ausreichend Speicherplatz in 1/3, der den vertikalen Platz eines Bildschirms im Hochformat hätte passt möglicherweise nicht in 1/3, der den vertikalen Platz im Querformat.
-- **Achten Sie darauf, dass Sie mit absoluten Werten** &ndash; Absolutwerte (Pixel), die im Hochformat sinnvoll möglicherweise nicht sinnvoll im Querformat. Wenn Absolute Werte erforderlich sind, verwenden Sie geschachtelte Layouts, um deren Auswirkungen zu isolieren. Beispielsweise wäre es sinnvoll, den absoluten Werten in einer `TableView` `ItemTemplate` bei die Elementvorlage eine garantierte einheitliche Höhe hat.
+- **Achten Sie auf die Verhältnisse,** &ndash; Änderungen der Ausrichtung Probleme verursachen können, wenn bestimmte Annahmen hinsichtlich der Verhältnisse getroffen werden. Z. B. eine Sicht, die ausreichend Speicherplatz in 1/3, der den vertikalen Platz eines Bildschirms im Hochformat hätte passt möglicherweise nicht in 1/3, der den vertikalen Platz im Querformat.
+- **Seien Sie vorsichtig mit absoluten Werten** &ndash; absoluten (Pixel-) Werten, die im Hochformat sinnvoll sind, im Querformat möglicherweise keinen Sinn machen. Wenn Absolute Werte erforderlich sind, verwenden Sie geschachtelte Layouts, um deren Auswirkungen zu isolieren. Beispielsweise wäre es sinnvoll, absolute Werte in einer `TableView` `ItemTemplate` zu verwenden, wenn die Element Vorlage eine garantierte einheitliche Höhe aufweist.
 
 Die oben genannten Regeln gelten auch beim Implementieren Schnittstellen für mehrere Bildschirmgrößen und sind im Allgemeinen Best Practice betrachtet. Im Rest dieses Leitfadens werden spezifische Beispiele von reaktionsfähigen Layouts mit den einzelnen primären Layouts in Xamarin.Forms erläutert.
 
 > [!NOTE]
-> Aus Gründen der Übersichtlichkeit in den folgenden Abschnitten veranschaulichen, wie reagiert, verwenden nur eine Art von Layouts zu implementieren `Layout` zu einem Zeitpunkt. In der Praxis ist es häufig einfacher zu mischen `Layout`s, um eine gewünschte Layout mit dem einfacher oder intuitivste erhalten `Layout` für jede Komponente.
+> Aus Gründen der Übersichtlichkeit wird in den folgenden Abschnitten veranschaulicht, wie reaktionsfähige Layouts mit nur einer Art von `Layout` gleichzeitig implementiert werden. In der Praxis ist es häufig einfacher, `Layout`en zu kombinieren, um ein gewünschtes Layout zu erzielen, indem die einfachere oder intuitivste `Layout` für jede Komponente verwendet wird.
 
 ### <a name="stacklayout"></a>StackLayout
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt:
 
-![](device-orientation-images/photo-stack-portrait.png "Fotogalerie-Anwendung im Hochformat")
+![](device-orientation-images/photo-stack-portrait.png "Photo Application in Portrait")
 
 und Querformat:
 
-![](device-orientation-images/photo-stack-landscape.png "Fotogalerie-Anwendung im Querformat")
+![](device-orientation-images/photo-stack-landscape.png "Photo Application in Landscape")
 
 Die erfolgt mit den folgenden XAML:
 
@@ -204,7 +203,7 @@ Title="Stack Photo Editor - XAML">
 </ContentPage>
 ```
 
-Einige C# -Code dient zum Ändern der Ausrichtung der `outerStack` je nach Ausrichtung des Geräts:
+Einige C# werden verwendet, um die Ausrichtung von `outerStack` basierend auf der Ausrichtung des Geräts zu ändern:
 
 ```csharp
 protected override void OnSizeAllocated (double width, double height){
@@ -223,17 +222,17 @@ protected override void OnSizeAllocated (double width, double height){
 
 Beachten Sie Folgendes:
 
-- `outerStack` wird angepasst, um das Image und die Steuerelemente als horizontalen oder vertikalen Stapel je nach Ausrichtung, den verfügbaren Platz optimal nutzen zu präsentieren.
+- `outerStack` wird so angepasst, dass das Bild und die Steuerelemente abhängig von der Ausrichtung als horizontaler oder vertikaler Stapel dargestellt werden, um den verfügbaren Platz optimal zu nutzen.
 
 ### <a name="absolutelayout"></a>Von "AbsoluteLayout"
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt:
 
-![](device-orientation-images/photo-abs-portrait.png "Fotogalerie-Anwendung im Hochformat")
+![](device-orientation-images/photo-abs-portrait.png "Photo Application in Portrait")
 
 und Querformat:
 
-![](device-orientation-images/photo-abs-landscape.png "Fotogalerie-Anwendung im Querformat")
+![](device-orientation-images/photo-abs-landscape.png "Photo Application in Landscape")
 
 Die erfolgt mit den folgenden XAML:
 
@@ -275,17 +274,17 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 Beachten Sie Folgendes:
 
 - Aufgrund der Art und Weise, die die Seite angeordnet wurden, besteht keine Notwendigkeit für prozeduralen Code Reaktionsfähigkeit Einführung zur Verfügung.
-- Die `ScrollView` wird verwendet, um die Bezeichnung auch, wenn kleiner als die Summe der feste Höhe der Schaltflächen und das Bild der Höhe des Bildschirms ist sichtbar sein können.
+- Die `ScrollView` wird verwendet, damit die Bezeichnung auch dann sichtbar ist, wenn die Höhe des Bildschirms kleiner ist als die Summe der Höhen der Schaltflächen und des Bilds.
 
 ### <a name="relativelayout"></a>RelativeLayout
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt:
 
-![](device-orientation-images/photo-rel-portrait.png "Fotogalerie-Anwendung im Hochformat")
+![](device-orientation-images/photo-rel-portrait.png "Photo Application in Portrait")
 
 und Querformat:
 
-![](device-orientation-images/photo-rel-landscape.png "Fotogalerie-Anwendung im Querformat")
+![](device-orientation-images/photo-rel-landscape.png "Photo Application in Landscape")
 
 Die erfolgt mit den folgenden XAML:
 
@@ -366,17 +365,17 @@ BackgroundImageSource="deer.jpg">
 Beachten Sie Folgendes:
 
 - Aufgrund der Art und Weise, die die Seite angeordnet wurden, besteht keine Notwendigkeit für prozeduralen Code Reaktionsfähigkeit Einführung zur Verfügung.
-- Die `ScrollView` wird verwendet, um die Bezeichnung auch, wenn kleiner als die Summe der feste Höhe der Schaltflächen und das Bild der Höhe des Bildschirms ist sichtbar sein können.
+- Die `ScrollView` wird verwendet, damit die Bezeichnung auch dann sichtbar ist, wenn die Höhe des Bildschirms kleiner ist als die Summe der Höhen der Schaltflächen und des Bilds.
 
 ### <a name="grid"></a>Raster
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt:
 
-![](device-orientation-images/photo-grid-portrait.png "Fotogalerie-Anwendung im Hochformat")
+![](device-orientation-images/photo-grid-portrait.png "Photo Application in Portrait")
 
 und Querformat:
 
-![](device-orientation-images/photo-grid-landscape.png "Fotogalerie-Anwendung im Querformat")
+![](device-orientation-images/photo-grid-landscape.png "Photo Application in Landscape")
 
 Die erfolgt mit den folgenden XAML:
 
@@ -470,9 +469,9 @@ Beachten Sie Folgendes:
 
 - Aufgrund der Art und Weise, die die Seite angeordnet wurden, besteht eine Methode zum Ändern der Raster-Platzierung der Steuerelemente zur Verfügung.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Verwandte Themen
 
 - [Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble-Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
-- [Dynamisches Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
-- [Zeigen Sie ein Bild, das je nach Ausrichtung des Bildschirms](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
+- [Businesstumm Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [Reaktionsfähiges Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+- [Anzeigen eines Bilds auf der Grundlage der Bildschirm Ausrichtung](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

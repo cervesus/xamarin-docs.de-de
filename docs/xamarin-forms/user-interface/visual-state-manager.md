@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2020
-ms.openlocfilehash: 086adee4dc6b921abe92f6486186023a3125695c
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 0149806f3ab3772bc206cea9540a989d997c817b
+ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77636050"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78214998"
 ---
 # <a name="xamarinforms-visual-state-manager"></a>Xamarin. Forms Visual State Manager
 
@@ -409,11 +409,12 @@ In der folgenden Tabelle sind die visuellen Zustände aufgeführt, die in xamari
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [Visuelle Schaltflächen für Flächen](~/xamarin-forms/user-interface/button.md#button-visual-states) |
 | `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [Visuelle Zustände von carouselview](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
-| `CollectionView` | `Selected` | [Farbe für ausgewähltes Element ändern](~/xamarin-forms/user-interface/collectionview/selection.md#change-selected-item-color) |
 | `ImageButton` | `Pressed` | [Visuelle Status von ImageButton](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
 | `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [Allgemeine Zustände](#common-states) |
 
 Auf jeden dieser Zustände kann über die visuelle Zustands Gruppe mit dem Namen `CommonStates`zugegriffen werden.
+
+Außerdem implementiert die `CollectionView` den `Selected`-Zustand. Weitere Informationen finden Sie unter [Ändern der Farbe des ausgewählten Elements](~/xamarin-forms/user-interface/collectionview/selection.md#change-selected-item-color).
 
 ## <a name="set-state-on-multiple-elements"></a>Festlegen des Zustands für mehrere Elemente
 
@@ -480,7 +481,7 @@ Die "gedrückte" `VisualState` gibt an, dass die `Scale` Eigenschaft beim Drück
 
 ## <a name="define-your-own-visual-states"></a>Definieren Ihrer eigenen visuellen Zustände
 
-Jede Klasse, die von `VisualElement` abgeleitet wird, unterstützt die drei allgemeinen Zustände "Normal", "fokussiert" und "deaktiviert". Intern erkennt die [`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) -Klasse, wann Sie aktiviert oder deaktiviert wird, oder konzentriert bzw. ohne Fokus ist, und ruft die statische [`VisualStateManager.GoToState`](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String)) -Methode auf:
+Jede Klasse, die von `VisualElement` abgeleitet wird, unterstützt die allgemeinen Zustände "Normal", "fokussiert" und "deaktiviert". Außerdem unterstützt die `CollectionView`-Klasse den Status "ausgewählt". Intern erkennt die [`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) -Klasse, wann Sie aktiviert oder deaktiviert wird, oder konzentriert bzw. ohne Fokus ist, und ruft die statische [`VisualStateManager.GoToState`](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String)) -Methode auf:
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");
