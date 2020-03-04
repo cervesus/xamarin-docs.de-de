@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: 161da8948f356fef997a411855598bc99d2f49b7
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: d029e679400b9523df8e03d509230849fa0c96c4
+ms.sourcegitcommit: 9ae537efc106f56aeec562773004c6f708704ae9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "69893997"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252876"
 ---
 # <a name="choose-a-xamarinforms-layout"></a>Auswählen eines xamarin. Forms-Layouts
 
@@ -97,7 +97,7 @@ Der folgende XAML-Code zeigt, wie Sie eine [`Grid`](xref:Xamarin.Forms.Grid) mit
         <ColumnDefinition />
     </Grid.ColumnDefinitions>    
     <Label Text="Column 0, Row 0"
-           Width="200" />
+           WidthRequest="200" />
     <Label Grid.Column="1"
            Text="Column 1, Row 0" />
     <Label Grid.Row="1"
@@ -113,7 +113,7 @@ In diesem Beispiel funktioniert die Größenanpassung wie folgt:
 - Jede Zeile hat eine explizite Höhe von 50 geräteunabhängigen Einheiten.
 - Die Breite der ersten Spalte wird auf [`Auto`](xref:Xamarin.Forms.GridLength.Auto)festgelegt und ist daher für ihre untergeordneten Elemente so breit wie erforderlich. In diesem Fall handelt es sich um 200 geräteunabhängige Einheiten, die für die Breite des ersten [`Label`](xref:Xamarin.Forms.Label)geeignet sind.
 
-Der Speicherplatz kann in einer Spalte oder Zeile mithilfe der automatischen Größenanpassung verteilt werden, sodass die Größe von Spalten und Zeilen an ihren Inhalt angepasst werden kann. Dies wird erreicht, indem die Höhe eines [`RowDefinition`](xref:Xamarin.Forms.RowDefinition)oder die Breite eines [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition)auf " [`Auto`](xref:Xamarin.Forms.GridLength.Auto)" festgelegt wird. Die proportionale Größenanpassung kann auch verwendet werden, um den verfügbaren Platz zwischen den Zeilen und Spalten des Rasters durch gewichtete Proportionen zu verteilen. Dies wird erreicht, indem die Höhe eines `RowDefinition` oder die Breite eines `ColumnDefinition` auf einen Wert festgelegt wird, der den `*`-Operator verwendet.
+Der Speicherplatz kann in einer Spalte oder Zeile mithilfe der automatischen Größenanpassung verteilt werden, sodass die Größe von Spalten und Zeilen an ihren Inhalt angepasst werden kann. Dies wird erreicht, indem die Höhe eines [`RowDefinition`](xref:Xamarin.Forms.RowDefinition)oder die Breite eines [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition)auf " [`Auto`](xref:Xamarin.Forms.GridLength.Auto)" festgelegt wird. Die proportionale Größenanpassung kann auch verwendet werden, um den verfügbaren Platz zwischen den Zeilen und Spalten des Rasters durch gewichtete Proportionen zu verteilen. Dies wird erreicht, indem die Höhe eines `RowDefinition`oder die Breite eines `ColumnDefinition`auf einen Wert festgelegt wird, der den `*`-Operator verwendet.
 
 > [!CAUTION]
 > Stellen Sie sicher, dass so wenige Zeilen und Spalten wie möglich auf [`Auto`](xref:Xamarin.Forms.GridLength.Auto) Größe festgelegt sind. Durch jede Zeile oder Spalte, deren Größe automatisch angepasst wird, wird verursacht, dass die Layout-Engine zusätzliche Layoutberechnungen durchführt. Verwenden Sie stattdessen wenn möglich Zeilen und Spalten mit festen Größen. Alternativ können Sie Zeilen und Spalten festlegen, um eine proportionale Menge an Speicherplatz mit dem [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) -Enumerationswert zu belegen.
@@ -138,9 +138,9 @@ Der folgende XAML-Code zeigt, wie Sie eine [`FlexLayout`](xref:Xamarin.Forms.Fle
 
 In diesem Beispiel funktioniert das Layout wie folgt:
 
-- Die [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) -Eigenschaft ist auf `Column` festgelegt, was bewirkt, dass die untergeordneten Elemente des `FlexLayout` in einer einzelnen Spalte von Elementen angeordnet werden.
-- Die [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems) -Eigenschaft ist auf `Center` festgelegt, was bewirkt, dass jedes Element horizontal zentriert wird.
-- Die [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent) -Eigenschaft ist auf `SpaceEvenly` festgelegt. Dadurch wird der gesamte restliche vertikale Leerraum gleichmäßig zwischen allen Elementen und oberhalb des ersten Elements und unterhalb des letzten Elements zugeordnet.
+- Die [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) -Eigenschaft ist auf `Column`festgelegt, was bewirkt, dass die untergeordneten Elemente des `FlexLayout` in einer einzelnen Spalte von Elementen angeordnet werden.
+- Die [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems) -Eigenschaft ist auf `Center`festgelegt, was bewirkt, dass jedes Element horizontal zentriert wird.
+- Die [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent) -Eigenschaft ist auf `SpaceEvenly`festgelegt. Dadurch wird der gesamte restliche vertikale Leerraum gleichmäßig zwischen allen Elementen und oberhalb des ersten Elements und unterhalb des letzten Elements zugeordnet.
 
 Weitere Informationen finden Sie unter [xamarin. Forms flexlayout](flex-layout.md).
 
@@ -186,7 +186,7 @@ In diesem Beispiel funktioniert das Layout wie folgt:
 - Die blaue [`BoxView`](xref:Xamarin.Forms.BoxView) erhält eine explizite Größe von 50 x 50 geräteunabhängigen Einheiten. Sie befindet sich in der linken oberen Ecke des Layouts. Dies ist die Standardposition.
 - Die rote [`BoxView`](xref:Xamarin.Forms.BoxView) erhält eine explizite Größe von 50 x 50 geräteunabhängigen Einheiten. Sie befindet sich in der rechten oberen Ecke des Layouts.
 - Die graue [`BoxView`](xref:Xamarin.Forms.BoxView) erhält eine explizite Breite von 15 geräteunabhängigen Einheiten, und die Höhe wird auf 75% der Höhe des übergeordneten Elements festgelegt.
-- Für den grünen [`BoxView`](xref:Xamarin.Forms.BoxView) wird keine explizite Größe angegeben. Seine Position wird relativ zum `BoxView` mit dem Namen `pole` festgelegt.
+- Für den grünen [`BoxView`](xref:Xamarin.Forms.BoxView) wird keine explizite Größe angegeben. Seine Position wird relativ zum `BoxView` mit dem Namen `pole`festgelegt.
 
 > [!WARNING]
 > Vermeiden Sie die Verwendung eines `RelativeLayout`, wenn dies möglich ist. Dies führt dazu, dass die CPU erheblich mehr Arbeit übernehmen muss.
@@ -195,7 +195,7 @@ Weitere Informationen finden Sie unter [xamarin. Forms relativelayout](relative-
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
-Ein [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) wird zum Positionieren und Anpassen von Elementen mithilfe expliziter Werte oder der Werte relativ zur Größe des Layouts verwendet. Die Position wird von der linken oberen Ecke des untergeordneten Elements relativ zur linken oberen Ecke des `AbsoluteLayout` angegeben.
+Ein [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) wird zum Positionieren und Anpassen von Elementen mithilfe expliziter Werte oder der Werte relativ zur Größe des Layouts verwendet. Die Position wird von der linken oberen Ecke des untergeordneten Elements relativ zur linken oberen Ecke des `AbsoluteLayout`angegeben.
 
 Ein [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) sollte als ein spezielles Layout angesehen werden, das nur verwendet werden kann, wenn Sie eine Größe für untergeordnete Elemente festlegen können, oder wenn die Größe des Elements die Positionierung anderer untergeordneter Elemente nicht beeinträchtigt. Standardmäßig wird dieses Layout verwendet, um eine Überlagerung zu erstellen, die die Seite mit anderen Steuerelementen abdeckt, um den Benutzer vor der Interaktion mit den normalen Steuerelementen auf der Seite zu schützen.
 
@@ -226,7 +226,7 @@ In diesem Beispiel funktioniert das Layout wie folgt:
 
 - Jede [`BoxView`](xref:Xamarin.Forms.BoxView) erhält eine explizite Größe von 100 x 100 und wird an derselben Position, horizontal zentriert, angezeigt.
 - Der rote [`BoxView`](xref:Xamarin.Forms.BoxView) wird um 30 Grad gedreht, und der grüne `BoxView` wird um 60 Grad gedreht.
-- Bei jedem [`BoxView`](xref:Xamarin.Forms.BoxView)wird die [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) angefügte-Eigenschaft auf `PositionProportional` festgelegt, was darauf hinweist, dass die Position proportional zum verbleibenden Bereich ist, nachdem Breite und Höhe berücksichtigt wurden.
+- Bei jedem [`BoxView`](xref:Xamarin.Forms.BoxView)wird die [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) angefügte-Eigenschaft auf `PositionProportional`festgelegt, was darauf hinweist, dass die Position proportional zum verbleibenden Bereich ist, nachdem Breite und Höhe berücksichtigt wurden.
 
 > [!CAUTION]
 > Vermeiden Sie die Verwendung der [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) -Eigenschaft, wenn dies möglich ist, da die LayoutEngine weitere Layoutberechnungen durchführt.
