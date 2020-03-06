@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/27/2019
-ms.openlocfilehash: 8b633481d74810bc4d86d68f8c36d55980092510
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 778f56ec844e2802c1e1bc783824d55218678761
+ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940320"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78337291"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Senden und empfangen von Pushbenachrichtigungen mit Azure Notification Hubs und xamarin. Forms
 
@@ -518,6 +518,7 @@ Mit Azure Notification Hubs können Sie überprüfen, ob Ihre Anwendung Testnach
 1. Wenn Sie testen, ob eine Anwendung Pushbenachrichtigungen empfangen kann, müssen Sie ein physisches Gerät verwenden. Virtuelle Android-und IOS-Geräte sind möglicherweise nicht ordnungsgemäß für den Empfang von Pushbenachrichtigungen konfiguriert.
 1. Die Android-Beispielanwendung registriert das Token und die Vorlagen einmal, wenn das Firebase-Token ausgegeben wird. Während des Tests müssen Sie möglicherweise ein neues Token anfordern und sich erneut beim Azure Notification Hub registrieren. Die beste Möglichkeit, dies zu erzwingen, besteht darin, das Projekt zu bereinigen, die `bin` und `obj` Ordner zu löschen und die Anwendung vor der Neuerstellung und Bereitstellung vom Gerät zu deinstallieren.
 1. Viele Teile des pushbenachrichtigungsflows werden asynchron ausgeführt. Dies kann dazu führen, dass Breakpoints nicht in einer unerwarteten Reihenfolge getroffen werden oder nicht. Verwenden Sie die Geräte-oder Debugprotokollierung, um die Ausführung ohne Unterbrechung des Anwendungs Flusses Filtern Sie das Android-Geräte Protokoll mithilfe der in `Constants`angegebenen `DebugTag`.
+1. Wenn das Debuggen in Visual Studio beendet wird, wird die APP gezwungen, geschlossen zu werden. Alle Nachrichtenempfänger oder andere Dienste, die im Rahmen des Debugprozesses gestartet werden, werden geschlossen und reagieren nicht auf Nachrichten Ereignisse.
 
 ## <a name="create-a-notification-dispatcher"></a>Erstellen eines Benachrichtigungs Verteilers
 
