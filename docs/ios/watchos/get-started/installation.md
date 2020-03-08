@@ -1,6 +1,6 @@
 ---
-title: Installieren und Verwenden von watchos in xamarin
-description: In diesem Dokument wird beschrieben, wie Sie watchos mit xamarin installieren und verwenden. Es wird die Installation, die watchos-Projektstruktur, die Verwendung des IOS-Designers, die Xcode-Integration und Tipps zur Problembehandlung erläutert.
+title: Installieren und Verwenden von WatchOS in Xamarin
+description: Dieses Dokument beschreibt das Installieren und Verwenden von WatchOS mit Xamarin. Es wird erläutert, Installation, WatchOS-Projekt zu strukturieren, wie Sie mithilfe der iOS-Designer, die Xcode-Integration, und enthält Tipps zur Problembehandlung.
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
@@ -8,26 +8,26 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/05/2017
 ms.openlocfilehash: f986099011dbccb0eb43c62d253ee497d46ca08e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001687"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915475"
 ---
-# <a name="installing-and-using-watchos-in-xamarin"></a>Installieren und Verwenden von watchos in xamarin
+# <a name="installing-and-using-watchos-in-xamarin"></a>Installieren und Verwenden von WatchOS in Xamarin
 
-watchos 4 erfordert macOS Sierra (10,12) mit Xcode 9.
+WatchOS 4 ist MacOS Sierra (10.12) mit Xcode 9 erforderlich.
 
-watchos 1 erforderte ursprünglich OS X Yosemite (10,10) mit Xcode 7.
+WatchOS 1 erforderlich ursprünglich OS X Yosemite (10.10) mit Xcode 7.
 
 > [!WARNING]
-> [watchos 1-Updates werden nach dem 1. April 2018 nicht mehr akzeptiert](https://developer.apple.com/news/?id=11162017a). Für zukünftige Updates muss das watchos 2 SDK oder höher verwendet werden. Das entwickeln mit dem watchos 4 SDK wird empfohlen.
+> [watchos 1-Updates werden nach dem 1. April 2018 nicht mehr akzeptiert](https://developer.apple.com/news/?id=11162017a). Zukünftige Updates müssen verwenden WatchOS 2 SDK oder höher, Erstellen mit dem WatchOS empfiehlt 4 SDK.
 
 ## <a name="project-structure"></a>Projektstruktur
 
-Eine Watch-App besteht aus drei Projekten:
+Eine Watch-app besteht aus drei Projekten:
 
-- **Xamarin. IOS-iPhone-App-Projekt** : Hierbei handelt es sich um ein normales iPhone-Projekt, bei dem es sich um beliebige xamarin. IOS-Vorlagen handeln kann. Die Watch-APP und ihre Erweiterung werden innerhalb dieses Hauptprojekts gebündelt.
+- **Xamarin. IOS-iPhone-App-Projekt** : Hierbei handelt es sich um ein normales iPhone-Projekt, bei dem es sich um beliebige xamarin. IOS-Vorlagen handeln kann. Die Watch-App und ihre Erweiterung werden in diesem Projekt wichtigsten gebündelt werden.
 
 - **Überwachungs Erweiterungsprojekt** : enthält den Code (z. b. Controller Klassen) für die Watch-app.
 
@@ -35,11 +35,11 @@ Eine Watch-App besteht aus drei Projekten:
 
 Die [Beispiel Projekt Mappe Watch Kit Catalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) sieht in xamarin. Studio wie folgt aus:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ![](installation-images/catalog-solution.png "The solution in Visual Studio")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](installation-images/catalog-solution-vs.png "The solution in Visual Studio")
 
@@ -50,7 +50,7 @@ Bildschirme aus dem Beispiel finden Sie auf der Seite "Steuer [Elemente](~/ios/w
 
 ## <a name="creating-a-new-project"></a>Erstellen eines neuen Projekts
 
-Sie können keine neue "Überwachungslösung" erstellen... Stattdessen können Sie eine Watch-APP zu einer vorhandenen IOS-Anwendung hinzufügen. Gehen Sie folgendermaßen vor, um eine Watch-APP zu erstellen:
+Sie können nicht erstellt, eine neue "Watch Lösung"... Sie können stattdessen eine Watch-App zu einer vorhandenen iOS-Anwendung hinzufügen. Um eine Watch-app erstellen, gehen Sie wie folgt vor:
 
 1. Wenn Sie nicht über ein vorhandenes Projekt verfügen, wählen Sie zunächst **Datei > neue Projekt Mappe** aus, und erstellen Sie eine IOS-app (z. b. eine **Einzelansicht-App**):
 
@@ -60,29 +60,29 @@ Sie können keine neue "Überwachungslösung" erstellen... Stattdessen können S
 
     [![](installation-images/cycle8-6-sml.png "Select watchOS > App > WatchKit App")](installation-images/cycle8-6.png#lightbox)
 
-3. Im nächsten Bildschirm können Sie auswählen, welches IOS-App-Projekt die Watch-App enthalten soll:
+3. Im nächste Bildschirm können Sie auswählen, welche iOS-app-Projekt die Watch-app enthalten soll:
 
     [![](installation-images/cycle8-7-sml.png "Choose which iOS app project should include the watch app")](installation-images/cycle8-7.png#lightbox)
 
-4. Wählen Sie abschließend den Speicherort zum Speichern des Projekts (und optional die Quell Code Verwaltung) aus:
+4. Wählen Sie abschließend den Speicherort zum Speichern des Projekts (und optional die quellcodeverwaltung aktiviert):
 
     [![](installation-images/cycle8-8-sml.png "Choose the location to save the project")](installation-images/cycle8-8.png#lightbox)
 
 5. Visual Studio für Mac automatisch [Projekt Verweise und Einstellungen für " **Info. plist** ](~/ios/watchos/get-started/project-references.md) " für Sie konfiguriert.
 
-## <a name="creating-the-watch-user-interface"></a>Erstellen der Benutzeroberfläche für die Überwachung
+## <a name="creating-the-watch-user-interface"></a>Erstellen der Benutzeroberfläche sehen Sie sich
 
 <a name="designer" />
 
-### <a name="using-the-xamarin-ios-designer"></a>Verwenden des xamarin IOS-Designers
+### <a name="using-the-xamarin-ios-designer"></a>Verwendung des Xamarin.IOS-Designers
 
 Doppelklicken Sie auf das **Interface. Storyboard** der Watch-APP, um mit dem IOS-Designer zu bearbeiten. Sie können Schnittstellen Controller und UI-Steuerelemente aus der **Toolbox** in das Storyboard ziehen und diese mit dem **eigenschaftenpad** konfigurieren:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 [![](installation-images/iosdesigner-sml.png "The storyboard in the Designer")](installation-images/iosdesigner.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](installation-images/iosdesigner-sml-vs.png "The storyboard in the Designer")](installation-images/iosdesigner-vs.png#lightbox)
 
@@ -90,11 +90,11 @@ Doppelklicken Sie auf das **Interface. Storyboard** der Watch-APP, um mit dem IO
 
 Sie sollten jedem neuen Schnittstellen Controller eine **Klasse** geben, indem Sie ihn auswählen und dann den Namen im **eigenschaftenpad** eingeben (Dadurch werden C# die erforderlichen Code Behind-Dateien automatisch erstellt):
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ![](installation-images/iosdesigner-classname.png "Give each new interface controller a Class")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](installation-images/iosdesigner-classname-vs.png "Give each new interface controller a Class")
 
@@ -102,15 +102,15 @@ Sie sollten jedem neuen Schnittstellen Controller eine **Klasse** geben, indem S
 
 Erstellen Sie mithilfe von **STRG + Ziehen** von einer Schaltfläche, einem Tabellen-oder einem Schnittstellen Controller auf einen anderen Schnittstellen Controller.
 
-### <a name="using-xcode-on-the-mac"></a>Verwenden von Xcode auf dem Mac
+### <a name="using-xcode-on-the-mac"></a>Mithilfe von Xcode auf dem Mac
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Sie können weiterhin Xcode verwenden, um die Benutzeroberfläche zu erstellen, indem Sie mit der rechten Maustaste auf die Datei Interface. Storyboard klicken und dann **Öffnen mit > Xcode Interface Builder**auswählen:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Visual Studio-Benutzer können auch Xcode verwenden, um Ihre Benutzeroberfläche zu erstellen, indem Sie zur direkten Verwendung des Mac-buildhosts wechseln.
+Visual Studio-Benutzer können auch Xcode verwenden, ihre Benutzeroberfläche zu erstellen, indem Sie direkt mit dem Mac-Buildhost wechseln.
 Öffnen Sie die Projekt Mappe in Visual Studio für Mac, klicken Sie dann mit der rechten Maustaste auf die Datei Interface. Storyboard, und wählen Sie **Öffnen mit > Xcode Interface Builder**aus:
 
 -----
@@ -121,7 +121,7 @@ Wenn Sie Xcode verwenden, sollten Sie die gleichen Schritte wie bei der überwac
 
 Wenn Sie das Storyboard in Xcode speichern Interface Builder werden die von C# Ihnen erstellten Outlets und Aktionen automatisch den **. Designer.cs** -Dateien im Überwachungs Erweiterungsprojekt hinzugefügt.
 
-### <a name="adding-additional-screens-in-xcode"></a>Hinzufügen zusätzlicher Bildschirme in Xcode
+### <a name="adding-additional-screens-in-xcode"></a>Hinzufügen weiterer Bildschirme in Xcode
 
 Wenn Sie dem Storyboard mithilfe von xInterface Builder Code weitere Bildschirme hinzufügen (außer der standardmäßig in der Vorlage enthalten), **müssen Sie die C# Code Dateien** für jeden neuen Schnittstellen Controller manuell hinzufügen.
 
@@ -129,17 +129,17 @@ Weitere Informationen finden Sie in den [erweiterten Anweisungen zum Hinzufügen
 
 *Der xamarin IOS-Designer führt dies automatisch aus. es sind keine manuellen Schritte erforderlich.*
 
-## <a name="building"></a>Erstellung
+## <a name="building"></a>Erstellen
 
-Ein Projekt, das eine Watch-APP wie andere IOS-Projekte enthält. Der erbauprozess führt zu einer iPhone-Anwendung (. app), die eine Watch-Erweiterung (. APPEX) enthält, die wiederum die Code lose Watch-Anwendung (. app) enthält.
+Ein Projekt, das eine Watch-app enthält, erstellt wie andere iOS-Projekte. Der Erstellungsprozess führt eine iPhone-Anwendung (. app), die eine Watch-Erweiterung (.appex), enthält das wiederum die Code weniger Watch-Anwendung (. app).
 
-## <a name="launching"></a>Abschuss
+## <a name="launching"></a>Starten
 
-Sie können Watch-apps im Simulator entweder mithilfe von Visual Studio für Mac oder Visual Studio starten (startet auf dem Mac-buildhost).
+Sie können die Watch-apps im Simulator mit der Visual Studio für Mac oder Visual Studio (er beginnt auf der Mac-Buildhost) starten.
 
-Es gibt zwei Modi für das Starten einer watchkit-App:
+Es gibt zwei Modi für die eine WatchKit-app starten:
 
-- normaler APP-Modus (Standard) und
+- normale app-Modus (Standard), und
 - [Benachrichtigungen](~/ios/watchos/platform/notifications.md) (für die eine Test Benachrichtigungs Nutzlast im JSON-Format erforderlich ist).
 
 ### <a name="xcode-8-support"></a>Xcode 8-Unterstützung
@@ -149,7 +149,7 @@ Wenn Sie das App-Projekt überwachen auswählen und es als Startprojekt festlege
 
 [![](installation-images/xs-xcode8-watchos3-sml.png "Selecting the Simulator type")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
-Wenn Sie mit dem Debuggen beginnen, sollten *zwei* Simulatoren gestartet werden: der IOS-Simulator *und* der Apple Watch Simulator. Verwenden Sie **Befehl + Umschalt + H** , um zum Menü "überwachen" und "Takt Gesicht" zu navigieren. Verwenden Sie das Menü **Hardware** , um den **Force Touch Druck**festzulegen. Der Bildlauf auf der Trackpad-oder Maus wird mithilfe des Digital Crown simuliert.
+Wenn Sie mit dem Debuggen beginnen, sollten *zwei* Simulatoren gestartet werden: der IOS-Simulator *und* der Apple Watch Simulator. Verwenden Sie **Befehl + Umschalt + H** , um zum Menü "überwachen" und "Takt Gesicht" zu navigieren. Verwenden Sie das Menü **Hardware** , um den **Force Touch Druck**festzulegen. Scrollen auf dem Trackpad oder eine Maus simuliert mit der digitalen Crown.
 
 #### <a name="troubleshooting"></a>Problembehandlung
 
@@ -164,9 +164,9 @@ Weitere Informationen zum Konfigurieren der Simulatoren finden Sie in den [Foren
 
 <a name="xcode6" />
 
-### <a name="xcode-6-and-watchos-1"></a>Xcode 6 und watchos 1
+### <a name="xcode-6-and-watchos-1"></a>Xcode 6 und WatchOS 1
 
-Sie müssen vor dem Ausführen oder Debuggen der APP das **Startprojekt** als Projekt für die *Überwachungs Erweiterung* festlegen. Sie können die Watch-APP selbst nicht "starten", und wenn Sie die IOS-App auswählen, wird Sie im IOS-Simulator im normalen Zustand gestartet.
+Sie müssen vor dem Ausführen oder Debuggen der APP das **Startprojekt** als Projekt für die *Überwachungs Erweiterung* festlegen. Sie können nicht "start" die Watch-app selbst, und bei der Auswahl der iOS-app dann beginnt im iOS-Simulator wie gewohnt.
 
 Standardmäßig wird eine Watch-App im normalen **App** -Modus (nicht im Blick-oder Benachrichtigungs Modus) aus den Befehlen **Ausführen** oder **Debuggen** von Visual Studio für Mac gestartet.
 
@@ -178,7 +178,7 @@ Bei Verwendung von Xcode 6 kann nur das iPhone 5, iPhone 5S, iPhone 6 und iPhone
 
 <a name="custommodes" />
 
-## <a name="launching-notification-mode"></a>Starten des Benachrichtigungs Modus
+## <a name="launching-notification-mode"></a>Starten der Benachrichtigungsmodus
 
 Informationen zum Behandeln von Benachrichtigungen im Code finden Sie auf der [Seite "Benachrichtigungen](~/ios/watchos/platform/notifications.md) ".
 
@@ -192,17 +192,17 @@ Dadurch wird das Fenster **benutzerdefinierte Parameter** geöffnet, in dem Sie 
 
 [![](installation-images/runwith-execargs-sml.png "Setting the Notification and Payload")](installation-images/runwith-execargs.png#lightbox)
 
-## <a name="debugging"></a>Debugging
+## <a name="debugging"></a>Debuggen
 
-Debuggen wird sowohl in Visual Studio für Mac als auch in Visual Studio unterstützt.
-Stellen Sie beim Debuggen im Benachrichtigungs Modus eine JSON-Benachrichtigungs Datei bereit. Dieser Screenshot zeigt, wie ein debugbreakpoint in einer Watch-App angezeigt wird:
+Debuggen wird in Visual Studio für Mac und Visual Studio unterstützt.
+Denken Sie daran, eine Benachrichtigung JSON-Datei angeben beim Debuggen im Modus für Benachrichtigungen. Dieser Screenshot zeigt einen Debughaltepunkt in eine Watch-app erreicht wird:
 
 ![](installation-images/debug-sml.png "This screenshot shows a debug breakpoint being hit in a watch app")
 
 Nachdem Sie die Anweisungen für den Start ausgeführt haben, wird Ihre Watch-App auf dem **IOS-Simulator (Watch)** ausgeführt.
 Für den Benachrichtigungs Modus können Sie **Debuggen > System Protokoll öffnen** (**cmd +/** ) auswählen und `Console.WriteLine` im Code verwenden.
 
-### <a name="debugging-lifecycle-event-handlers"></a>Debugger-Ereignishandler
+### <a name="debugging-lifecycle-event-handlers"></a>Lebenszyklus-Ereignishandler Debuggen
 
 <!--
 To test the functionality in your  and 

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: c0338fce694d61dc19484c56dbc00bb854d0d0d7
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940970"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915790"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -36,14 +36,14 @@ Die Herausforderung als tvos-App-Entwickler besteht darin, eine schnelle, benutz
 
 Der Siri-Remote Computer verfügt über folgende Features und erwartete Verwendungen in ihrer tvos-App:
 
-|Feature|Allgemeine App-Nutzung|Spiele-App-Verwendung|
+|Funktion|Allgemeine App-Nutzung|Spiele-App-Verwendung|
 |---|---|---|
-|**Berührungs Oberfläche**<br />Wischen Sie, um zu navigieren, und drücken Sie, um Kontextmenüs auszuwählen und zu halten.|**Tippen/schwenken**<br />UI-Navigation zwischen fokussierbaren Elementen.<br /><br />**Sie**<br />Aktiviert das ausgewählte (im Fokus) Element.|**Tippen/schwenken**<br />Hängt vom Spiel Entwurf ab und kann als D-Pad durch Tippen auf die Ränder verwendet werden.<br /><br />**Sie**<br />Ausführen der primären Schaltflächen Funktion.|
+|**Berührungs Oberfläche**<br />Wischen Sie, um zu navigieren, und drücken Sie, um Kontextmenüs auszuwählen und zu halten.|**Tippen/schwenken**<br />UI-Navigation zwischen fokussierbaren Elementen.<br /><br />**Mausaktion**<br />Aktiviert das ausgewählte (im Fokus) Element.|**Tippen/schwenken**<br />Hängt vom Spiel Entwurf ab und kann als D-Pad durch Tippen auf die Ränder verwendet werden.<br /><br />**Mausaktion**<br />Ausführen der primären Schaltflächen Funktion.|
 |**Menü**<br />Drücken Sie, um zum vorherigen Bildschirm oder Menü zurückzukehren.|Kehrt zum vorherigen Bildschirm zurück und beendet den Apple TV-Startbildschirm über den Hauptbildschirm der app.|Anhalten und Fortsetzen des Spiels, zurück zum vorherigen Bildschirm und Beenden des Apple TV-Startbildschirms über den Bildschirm der Haupt-app.|
-|**Siri/Suche**<br />Klicken Sie in Ländern mit Siri auf Sprachsteuerung, und in allen anderen Ländern wird Suchbildschirm angezeigt.|nicht verfügbar|nicht verfügbar|
+|**Siri/Suche**<br />Klicken Sie in Ländern mit Siri auf Sprachsteuerung, und in allen anderen Ländern wird Suchbildschirm angezeigt.|–|–|
 |**Wiedergabe/Pause**<br />Wiedergabe und Pause von Medien oder Bereitstellen einer sekundären Funktion in-apps.|Startet die Medienwiedergabe und hält die Wiedergabe wieder auf.|Führt eine sekundäre Schaltflächen Funktion aus oder überspringt das Intro-Video (sofern vorhanden).|
-|**Home**<br />Drücken Sie, um zum Startbildschirm zurückzukehren, doppelklicken Sie, um ausgestellte apps anzuzeigen, und halten Sie das Gerät gedrückt.|nicht verfügbar|nicht verfügbar|
-|**Handels**<br />Steuert das Volume für angefügte audiovolumes und Videogeräte.|nicht verfügbar|nicht verfügbar|
+|**Startseite**<br />Drücken Sie, um zum Startbildschirm zurückzukehren, doppelklicken Sie, um ausgestellte apps anzuzeigen, und halten Sie das Gerät gedrückt.|–|–|
+|**Umfang**<br />Steuert das Volume für angefügte audiovolumes und Videogeräte.|–|–|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -51,7 +51,7 @@ Der Siri-Remote Computer verfügt über folgende Features und erwartete Verwendu
 
 Die Touch-Oberfläche von Siri ist in der Lage, eine Vielzahl von Einzel Fingergesten zu erkennen, auf die Sie in ihrer xamarin. tvos-App reagieren können:
 
-|Wischen|Klicken|Tippen|
+|Wischen|Klicken Sie auf|Tippen|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |Verschiebt die Auswahl (Fokus) zwischen den Benutzeroberflächen Elementen auf dem Bildschirm (nach oben, nach links, rechts). Mithilfe von Striping können Sie mithilfe von Trägheit schnell durch große Inhaltslisten scrollen.|Aktiviert das ausgewählte (im Fokus) Element oder verhält sich wie die primäre Schaltfläche in einem Spiel. Durch Klicken und halten können Kontextmenüs oder sekundäre Funktionen aktiviert werden.|Das leichte Tippen auf die Berührungs Oberfläche der Kanten verhält sich wie direktionale Schaltflächen auf einem D-Pad, wobei der Fokus abhängig von der gekippten Fläche nach oben, unten, Links oder rechts verschoben wird. Abhängig von der APP kann verwendet werden, um ausgeblendete Steuerelemente anzuzeigen.|
@@ -280,20 +280,20 @@ Spiele Controller können verwendet werden, um das Spiel zu verbessern und ein G
 
 Ein Game Controller verfügt über die folgenden Features und erwarteten Verwendungen in ihrer tvos-App:
 
-|Feature|Allgemeine App-Nutzung|Spiele-App-Verwendung|
+|Funktion|Allgemeine App-Nutzung|Spiele-App-Verwendung|
 |---|---|---|
 |**D-Pad**|Navigiert durch Benutzeroberflächen Elemente (ändert den Fokus).|Hängt von Spiel ab.|
 |**A**|Aktiviert das ausgewählte (im Fokus) Element.|Führt die primäre Schaltflächen Funktion aus und bestätigt Dialog Aktionen.|
 |**B**|Kehrt zum vorherigen Bildschirm zurück oder beendet den Startbildschirm, wenn er auf dem Hauptbildschirm der App angezeigt wird.|Führt die Funktion der sekundären Schaltfläche aus oder kehrt zum vorherigen Bildschirm zurück.|
 |**X**|Startet die Medienwiedergabe oder hält die Wiedergabe an.|Hängt von Spiel ab.|
-|**Y**|nicht verfügbar|Hängt von Spiel ab.|
+|**J**|–|Hängt von Spiel ab.|
 |**Menü**|Kehrt zum vorherigen Bildschirm zurück oder beendet den Startbildschirm, wenn er auf dem Hauptbildschirm der App angezeigt wird.|Das Anhalten/Fortsetzen des Spiels wird zum vorherigen Bildschirm zurückgegeben oder auf dem Startbildschirm angezeigt, wenn es auf dem Hauptbildschirm der App angezeigt wird.|
 |**Linke Schulter Schaltfläche**|Navigiert nach links.|Hängt von Spiel ab.|
 |**Linker-Auslösung**|Navigiert nach links.|Hängt von Spiel ab.|
 |**Schaltfläche mit rechter Schulter**|Navigiert nach rechts.|Hängt von Spiel ab.|
 |**Rechter Auslösers**|Navigiert nach rechts|Hängt von Spiel ab.|
 |**Linker fingerstick**|Navigiert durch Benutzeroberflächen Elemente (ändert den Fokus).|Hängt von Spiel ab.|
-|**Rechter fingerstick**|nicht verfügbar|Hängt von Spiel ab.|
+|**Rechter fingerstick**|–|Hängt von Spiel ab.|
 
 Apple bietet die folgenden Vorschläge zum Arbeiten mit Spiel Controllern:
 
@@ -361,11 +361,11 @@ Weitere Informationen zum Implementieren von Game Controller-Unterstützung find
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Dieser Artikel behandelt den neuen Siri-Remote Computer, der im Lieferumfang von Apple TV, touchoberflächen Gesten und Siri-Remote Schaltflächen enthalten ist. Im nächsten Schritt wird die Arbeit mit Gesten und Storyboards, Gesten und Code und Low-Level-Ereignissen behandelt. Abschließend wird erläutert, wie Sie mit Spiel Controllern arbeiten.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/09/2018
 ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022307"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911546"
 ---
 # <a name="limitations-of-xamarinios"></a>Einschränkungen von xamarin. IOS
 
@@ -60,7 +60,7 @@ Da der IOS-Kernel verhindert, dass eine Anwendung Code dynamisch generiert, unte
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-Das Fehlen von System. Reflection. Ausgabe **bedeutet,** dass kein Code funktioniert, der von der Generierung von Lauf Zeit Code abhängt. Dies schließt Folgendes ein:
+Das Fehlen von System. Reflection. Ausgabe **bedeutet,** dass kein Code funktioniert, der von der Generierung von Lauf Zeit Code abhängt. Dazu zählen etwa:
 
 - Die Dynamic Language Runtime.
 - Alle Sprachen, die auf der Dynamic Language Runtime erstellt wurden.
