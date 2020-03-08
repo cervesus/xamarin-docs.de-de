@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760390"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915290"
 ---
 # <a name="containerized-microservices"></a>Containermicroservices
 
@@ -20,9 +20,9 @@ Die Entwicklung von Client-Server-Anwendungen führte zu einem Schwerpunkt auf d
 
 Insbesondere in Bezug auf das Alter der Cloud besteht darin, dass einzelne Komponenten nicht problemlos skaliert werden können. Eine monolithische Anwendung enthält domänenspezifische Funktionen und wird in der Regel durch funktionale Ebenen wie Front-End, Geschäftslogik und Datenspeicher aufgeteilt. Eine monolithische Anwendung wird skaliert, indem die gesamte Anwendung auf mehreren Computern geklont wird, wie in Abbildung 8-1 dargestellt.
 
-![](containerized-microservices-images/monolithicapp.png "Monolithischer Anwendungs Skalierungs Ansatz")
+![](containerized-microservices-images/monolithicapp.png "Monolithic application scaling approach")
 
-**Abbildung 8-1**: Monolithischer Anwendungs Skalierungs Ansatz
+**Abbildung 8-1**: monolithischer Ansatz bei der Anwendungs Skalierung
 
 ## <a name="microservices"></a>Microservices
 
@@ -30,9 +30,9 @@ Microservices bieten einen anderen Ansatz für die Entwicklung und Bereitstellun
 
 Im Vergleich zu riesigen monolithischen Anwendungen, die eine gemeinsame Skalierung durchgeführt haben, kann die Skalierung von-Diensten unabhängig voneinander Dies bedeutet, dass ein bestimmter Funktionsbereich, der eine höhere Verarbeitungsleistung oder Netzwerkbandbreite erfordert, zur Unterstützung von Anforderungen skaliert werden kann, anstatt unnötige horizontale Skalierung für andere Bereiche der Anwendung zu erfordern. In Abbildung 8-2 wird dieser Ansatz veranschaulicht, bei dem microservices unabhängig bereitgestellt und skaliert werden, indem Instanzen von Diensten auf mehreren Computern erstellt werden.
 
-![](containerized-microservices-images/microservicesapp.png "Microservices-Skalierungs Ansatz für Anwendungen")
+![](containerized-microservices-images/microservicesapp.png "Microservices application scaling approach")
 
-**Abbildung 8-2**: Microservices-Skalierungs Ansatz für Anwendungen
+**Abbildung 8-2**: Skalieren der Skalierungs Methode für microservices
 
 Das horizontale hochskalieren von Webdiensten kann nahezu unmittelbar erfolgen, sodass eine Anwendung sich an veränderliche Lasten anpassen kann. Beispielsweise kann ein einzelner-mikrodienst in der webseitigen Funktionalität einer Anwendung der einzige in der Anwendung benötigte-Dienst sein, der horizontal hochskaliert werden muss, um zusätzlichen eingehenden Datenverkehr zu verarbeiten.
 
@@ -64,9 +64,9 @@ Ein Container ist eine isolierte, Ressourcen gesteuerte und tragbare Betriebsumg
 
 Es gibt viele Ähnlichkeiten zwischen Containern und virtuellen Computern, wie in Abbildung 8-3 dargestellt.
 
-![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices-Skalierungs Ansatz für Anwendungen")
+![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices application scaling approach")
 
-**Abbildung 8-3**: Vergleich zwischen virtuellen Computern und Containern
+**Abbildung 8-3**: Vergleich von virtuellen Computern und Containern
 
 Ein Container führt ein Betriebssystem aus, verfügt über ein Dateisystem und kann über ein Netzwerk aufgerufen werden, als ob es sich um einen physischen oder einen virtuellen Computer handelt. Die von Containern verwendeten Technologien und Konzepte unterscheiden sich jedoch stark von virtuellen Computern. Zu den virtuellen Computern zählen die Anwendungen, die erforderlichen Abhängigkeiten und ein vollständiges Gast Betriebssystem. Container enthalten die Anwendung und ihre Abhängigkeiten, geben jedoch das Betriebssystem für andere Container frei, die als isolierte Prozesse auf dem Host Betriebssystem ausgeführt werden (abgesehen von Hyper-V-Containern, die in einem speziellen virtuellen Computer pro Container ausgeführt werden). Daher verwenden Container Ressourcen gemeinsam und benötigen in der Regel weniger Ressourcen als virtuelle Computer.
 
@@ -74,17 +74,17 @@ Der Vorteil eines Container orientierten Entwicklungs-und Bereitstellungs Ansatz
 
 Die wichtigsten Konzepte beim Erstellen und arbeiten mit Containern sind:
 
-- Container Host: Der physische oder virtuelle Computer, der zum Hosten von Containern konfiguriert ist. Der Container Host führt einen oder mehrere Container aus.
-- Container Image: Ein Bild besteht aus einer Kombination von geschichteten Dateisystemen, die aufeinander gestapelt sind, und ist die Grundlage für einen Container. Ein Image weist keinen Status auf und ändert sich nie, wenn es in unterschiedlichen Umgebungen bereitgestellt wird.
-- Kum Ein Container ist eine Lauf Zeit Instanz eines Bilds.
-- Container Betriebssystem-Image: Container werden mithilfe von Images bereitgestellt. Das Betriebssystem Abbild für den Container ist die erste Ebene in potenziell vielen Bildebenen, aus denen ein Container besteht. Ein Container Betriebssystem ist unveränderlich und kann nicht geändert werden.
-- Containerrepository: Jedes Mal, wenn ein Container Image erstellt wird, werden das Image und seine Abhängigkeiten in einem lokalen Repository gespeichert. Diese Images können auf dem Container Host mehrmals wieder verwendet werden. Die Container Images können auch in einer öffentlichen oder privaten Registrierung, wie z. [b. docker Hub](https://hub.docker.com/), gespeichert werden, damit Sie auf verschiedenen Container Hosts verwendet werden können.
+- Container Host: der physische oder virtuelle Computer, der zum Hosten von Containern konfiguriert ist. Der Container Host führt einen oder mehrere Container aus.
+- Container Image: ein Bild besteht aus einer Vereinigung von geschichteten Dateisystemen, die aufeinander gestapelt sind, und ist die Grundlage für einen Container. Ein Image weist keinen Status auf und ändert sich nie, wenn es in unterschiedlichen Umgebungen bereitgestellt wird.
+- Container: ein Container ist eine Lauf Zeit Instanz eines Bilds.
+- Containerbetriebssystem-Image: Container werden mithilfe von Images bereitgestellt. Das Betriebssystem Abbild für den Container ist die erste Ebene in potenziell vielen Bildebenen, aus denen ein Container besteht. Ein Container Betriebssystem ist unveränderlich und kann nicht geändert werden.
+- Containerrepository: jedes Mal, wenn ein Container Image erstellt wird, werden das Image und seine Abhängigkeiten in einem lokalen Repository gespeichert. Diese Bilder können oft auf dem Host Container wiederverwendet werden. Die Container Images können auch in einer öffentlichen oder privaten Registrierung, wie z. [b. docker Hub](https://hub.docker.com/), gespeichert werden, damit Sie auf verschiedenen Container Hosts verwendet werden können.
 
 Unternehmen nehmen bei der Implementierung von auf einem Dienst basierenden Anwendungen immer mehr Container in Betrieb, und docker wurde zur Standardcontainer Implementierung, die von den meisten Softwareplattformen und cloudanbietern übernommen wurde.
 
 Die eshoponcontainers-Referenz Anwendung verwendet docker zum Hosten von vier containerisierten Back-End-microservices, wie in Abbildung 8-4 dargestellt.
 
-![](containerized-microservices-images/microservicesarchitecture.png "eshoponcontainers Referenz für Anwendungs-Back-End-mikrodienste")
+![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers reference application back-end microservices")
 
 **Abbildung 8-4**: eshoponcontainers Referenz für Anwendungs-Back-End-mikrodienste
 
@@ -92,7 +92,7 @@ Die Architektur der Back-End-Dienste in der Referenz Anwendung wird in mehrere a
 
 Jeder-mikrodienst verfügt über eine eigene Datenbank, sodass er vollständig von den anderen-Diensten entkoppelt werden kann. Bei Bedarf wird die Konsistenz zwischen Datenbanken aus unterschiedlichen-Diensten mithilfe von Ereignissen auf Anwendungsebene erreicht. Weitere Informationen finden Sie unter [Kommunikation zwischen-Diensten](#communication_between_microservices).
 
-Weitere Informationen zur Referenz Anwendung finden [Sie unter .net-mikrodienste: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
+Weitere Informationen zur Referenz Anwendung finden Sie unter [.net-microservices: Architektur für .NET-Container Anwendungen](https://aka.ms/microservicesebook).
 
 <a name="communication_between_client_and_microservices" />
 
@@ -100,14 +100,14 @@ Weitere Informationen zur Referenz Anwendung finden [Sie unter .net-mikrodienste
 
 Der eshoponcontainers-Mobile App kommuniziert mit den containerisierten Back-End-microservices mithilfe der direkten Kommunikation zwischen *Client und microservice* , wie in Abbildung 8-5 dargestellt.
 
-![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices-Skalierungs Ansatz für Anwendungen")
+![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices application scaling approach")
 
-**Abbildung 8-5**: Direkte Kommunikation zwischen Client und Microservice
+**Abbildung 8-5**: direkte Kommunikation zwischen Client und verwaltdienst
 
 Bei der direkten Kommunikation zwischen Client und verwaltdienst stellt die Mobile App Anforderungen an jeden einzelnen mikrodienst direkt über seinen öffentlichen Endpunkt, mit einem anderen TCP-Port pro mikrodienst. In der Produktionsumgebung wird der Endpunkt in der Regel dem Load Balancer des-subdienstanzen zugeordnet, der Anforderungen über die verfügbaren Instanzen verteilt.
 
 > [!TIP]
-> Verwenden Sie die API-gatewaykommunikation. Die direkte Kommunikation zwischen Client und verwaltedienst kann bei der Erstellung einer großen und komplexen, auf einem Dienst basierenden Anwendung Nachteile haben, ist aber für eine kleine Anwendung mehr als ausreichend. Wenn Sie eine umfangreiche auf einem-Dienst basierende Anwendung mit Dutzenden von-Diensten entwickeln, empfiehlt es sich, die API-gatewaykommunikation Weitere Informationen finden [Sie unter .net-mikrodienste: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
+> Verwenden Sie die API-gatewaykommunikation. Die direkte Kommunikation zwischen Client und verwaltedienst kann bei der Erstellung einer großen und komplexen, auf einem Dienst basierenden Anwendung Nachteile haben, ist aber für eine kleine Anwendung mehr als ausreichend. Wenn Sie eine umfangreiche auf einem-Dienst basierende Anwendung mit Dutzenden von-Diensten entwickeln, empfiehlt es sich, die API-gatewaykommunikation Weitere Informationen finden Sie unter [.net-microservices: Architektur für .NET-Container Anwendungen](https://aka.ms/microservicesebook).
 
 <a name="communication_between_microservices" />
 
@@ -121,19 +121,19 @@ Die asynchrone Messaging basierte ereignisgesteuerte Kommunikation ist wichtig, 
 
 Ein Ereignisbus ermöglicht das Veröffentlichen/Abonnieren der Kommunikation zwischen-Diensten, ohne dass die Komponenten einander explizit erkennen müssen, wie in Abbildung 8-6 dargestellt.
 
-![](containerized-microservices-images/eventbus.png "Veröffentlichen: abonnieren mit einem Ereignisbus")
+![](containerized-microservices-images/eventbus.png "Publish-subscribe with an event bus")
 
 **Abbildung 8-6:** Veröffentlichen: abonnieren mit einem Ereignisbus
 
 Aus Anwendungs Sicht ist der Ereignisbus einfach ein veröffentlichen-abonnieren-Kanal, der über eine Schnittstelle verfügbar gemacht wird. Die Art und Weise, in der der Ereignisbus implementiert ist, kann jedoch variieren. Beispielsweise könnte eine Ereignisbus Implementierung rabbitmq, Azure Service Bus oder andere Dienst Busse wie nServiceBus und masstransit verwenden. In Abbildung 8-7 wird gezeigt, wie ein Ereignisbus in der eshoponcontainers-Referenz Anwendung verwendet wird.
 
-![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchrone ereignisgesteuerte Kommunikation in der Referenz Anwendung")
+![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchronous event-driven communication in the reference application")
 
 **Abbildung 8-7:** Asynchrone ereignisgesteuerte Kommunikation in der Referenz Anwendung
 
 Der mit rabbitmq implementierte eshoponcontainers-Ereignisbus bietet eine 1: n-Funktion für asynchrone Veröffentlichung/abonnieren. Dies bedeutet, dass nach dem Veröffentlichen eines Ereignisses mehrere Abonnenten auf dasselbe Ereignis lauschen können. In Abbildung 8-9 wird diese Beziehung veranschaulicht.
 
-![](containerized-microservices-images/eventdrivencommunication.png "1: n-Kommunikation")
+![](containerized-microservices-images/eventdrivencommunication.png "One-to-many communication")
 
 **Abbildung 8-9**: 1: n-Kommunikation
 
@@ -142,7 +142,7 @@ Dieser 1: n-Kommunikationsansatz verwendet Ereignisse, um Geschäftstransaktione
 > [!NOTE]
 > Der mit rabbitmq implementierte eshoponcontainers-Ereignisbus soll nur als Proof of Concept verwendet werden. Für Produktionssysteme sollten alternative Ereignisbus Implementierungen berücksichtigt werden.
 
-Weitere Informationen zur Ereignisbus Implementierung finden [Sie unter .net-mikrodienste: NET Microservices: Architecture for Containerized .NET Applications (.NET Microservices: Architektur für .NET-Containeranwendungen)](https://aka.ms/microservicesebook).
+Weitere Informationen zur Ereignisbus Implementierung finden Sie unter [.net-microservices: Architektur für .NET-Container Anwendungen](https://aka.ms/microservicesebook).
 
 ## <a name="summary"></a>Zusammenfassung
 

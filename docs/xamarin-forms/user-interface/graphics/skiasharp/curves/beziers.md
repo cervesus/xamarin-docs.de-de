@@ -8,33 +8,33 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
 ms.openlocfilehash: 1cf061f2ff27720ad78567bc26f00d99c5456f04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759419"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916413"
 ---
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Erfahren Sie, wie SkiaSharp, die zum Rendern von kubische, quadratischen und konischen Bézierkurven verwenden_
+_Erfahren Sie, wie Sie skiasharp zum Rendering von kubischen, quadratischen und Konstanten Bézier-Kurven verwenden können._
 
 Die Bézierkurve ist nach Pierre Bézier (1910: 1999), einem französischen Engineer bei der Automobilhersteller Renault, mit dem Namen, die die Kurve für den Computer-gestützten Entwurf Car-Nachrichtentexte verwendet.
 
-Die Bézier-Kurven sind bekanntermaßen für den interaktiven Entwurf geeignet: Sie Verhalten &mdash; sich mit anderen Worten: Es gibt keine Singularitäten, die bewirken, dass die Kurve unendlich oder unhandlich &mdash; wird, und Sie sind im allgemeinen ästhetisch ansprechend.
+Die Bézier-Kurven sind bekanntermaßen für einen interaktiven Entwurf geeignet: Sie sind gut verhaltenen &mdash; mit anderen Worten: Es gibt keine Singularitäten, die bewirken, dass die Kurve unendlich oder unhandlich ist &mdash; und Sie sind im allgemeinen ästhetisch ansprechend.
 
 ![Ein Beispiel für eine Bezier-Kurve](beziers-images/beziersample.png)
 
 Zeichenumrisse computerbasierte Schriftarten werden in der Regel mit Bézierkurven definiert.
 
-Der Wikipedia-Artikel zu [ **Bézierkurve** ](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) enthält einige wichtige Hintergrundinformationen. Der Begriff *Bézierkurve* verweist auf eine Gruppe von ähnlichen Kurven. SkiaSharp unterstützt drei Arten von Bézierkurven, dem Namen der *kubische*, *quadratischen*, und die *konischen*. Die Conic ist auch bekannt als die *rational Quadratic*.
+Der Wikipedia-Artikel über die [**Bézier-Kurve**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) enthält einige nützliche Hintergrundinformationen. Der Begriff " *Bézier-Kurve* " bezieht sich tatsächlich auf eine Familie ähnlicher Kurven. Skiasharp unterstützt drei Arten von Bézier-Kurven, die als *kubisch*, das *quadratische*und das *konische*-Zeichen bezeichnet werden. Die Konstante wird auch als " *rational quadratischen*" bezeichnet.
 
 ## <a name="the-cubic-bzier-curve"></a>Die kubische Bézierkurve
 
 Die kubische ist der Typ des Bézierkurve, die meisten Entwickler vorstellen, wenn der Antragsteller des Bézierkurven angezeigt wird.
 
-Können Sie eine kubische Bézierkurve zum Hinzufügen einer `SKPath` -Objekt unter Verwendung der [ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKPoint)) Methode mit drei `SKPoint` Parameter oder die [ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)) Überladung mit separaten `x` und `y` Parameter:
+Sie können einer `SKPath`-Objekt eine kubische Bézier-Kurve hinzufügen, indem Sie die [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKPoint)) -Methode mit drei `SKPoint` Parametern oder die [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)) Überladung mit separaten `x`-und `y`-Parametern verwenden:
 
 ```csharp
 public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
@@ -44,14 +44,14 @@ public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Sing
 
 Die Kurve beginnt am aktuellen Punkt der Kontur. Die vollständige kubische Bezier-Kurve, wird durch vier Punkte definiert:
 
-- Startpunkt: aktuelle zeigen in der Kontur oder (0, 0), wenn `MoveTo` nicht aufgerufen wurde
-- zuerst, Utility control Point: `point1` in die `CubicTo` aufrufen
-- Zweitens, Utility control Point: `point2` in die `CubicTo` aufrufen
-- Endpunkt: `point3` in die `CubicTo` aufrufen
+- Startpunkt: aktueller Punkt in der Kontur oder (0,0), wenn `MoveTo` nicht aufgerufen wurde.
+- erster Kontrollpunkt: `point1` im `CubicTo`-Befehl
+- zweiter Kontrollpunkt: `point2` im `CubicTo`-Befehl
+- Endpunkt: `point3` im `CubicTo`-Befehl
 
 Die resultierende Kurve beginnt am Anfangspunkt und endet mit dem Endpunkt. Die Kurve übergibt in der Regel nicht über die beiden Steuerpunkte; Stattdessen zeigt das Steuerelement Funktion ähnlich wie Magnetquellen Kurve hauptneuerungen ihnen abrufen.
 
-Die beste Möglichkeit, ein Gefühl für die die kubische Bézierkurve ist durch Experimentieren ermittelt. Dies ist der Zweck der **Bezier-Kurve** Seite abgeleitet `InteractivePage`. Die [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) Datei instanziiert den `SKCanvasView` und `TouchEffect`. Die [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) Code-Behind-Datei erstellt vier `TouchPoint` Objekte in seinem Konstruktor. Die `PaintSurface` -Ereignishandler erstellt ein `SKPath` zum Rendern einer Bézierkurve basierend auf den vier `TouchPoint` Objekte und zeichnet auch die gepunktete Tangenten aus die Kontrollpunkte für die Endpunkte:
+Die beste Möglichkeit, ein Gefühl für die die kubische Bézierkurve ist durch Experimentieren ermittelt. Dies ist der Zweck der **Bezier-Kurven** Seite, die von `InteractivePage`abgeleitet ist. Die Datei [**BezierCurvePage. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) instanziiert die `SKCanvasView` und eine `TouchEffect`. Mit der [**BezierCurvePage.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) -Code Behind-Datei werden vier `TouchPoint` Objekte in Ihrem Konstruktor erstellt. Der `PaintSurface`-Ereignishandler erstellt eine `SKPath`, um eine Bézier-Kurve basierend auf den vier `TouchPoint` Objekten zu erzeugen, und zeichnet auch gepunktete Tangenten Linien von den Steuer Punkten bis zu den Endpunkten:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -93,11 +93,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird ausgeführt:
 
-[![Dreifacher Screenshot der Bezier-kurvenseite](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
+[![dreifacher Screenshot der Seite "Bezier-Kurve"](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
 
 Aus mathematischer Sicht ist die Kurve einen kubischen Polynom. Die Kurve wird eine gerade Linie an drei Punkten höchstens überschneidet. Auf den Anfangspunkt die Kurve ist immer eine gerade Linie von Anfang Tangens, und klicken Sie in die gleiche Richtung wie, zeigen Sie auf den ersten Kontrollpunkt. Auf den Endpunkt die Kurve ist immer eine gerade Linie von das zweite Steuerelement Tangens, und klicken Sie in die gleiche Richtung wie, zeigen Sie auf den Endpunkt.
 
-Die kubische Bézierkurve wird immer durch eine konvexe Viereck zwischen den vier Punkten begrenzt. Dies wird als bezeichnet ein *konvexe Hülle*. Wenn das Steuerelement zeigt auf die gerade Linie zwischen den Start- und Endpunkt befinden, wird die Bézierkurve als eine gerade Linie gerendert. Aber die Kurve kann auch plattformübergreifende selbst, wie im dritten Screenshot veranschaulicht.
+Die kubische Bézierkurve wird immer durch eine konvexe Viereck zwischen den vier Punkten begrenzt. Dies wird als " *konforme Hülle*" bezeichnet. Wenn das Steuerelement zeigt auf die gerade Linie zwischen den Start- und Endpunkt befinden, wird die Bézierkurve als eine gerade Linie gerendert. Aber die Kurve kann auch plattformübergreifende selbst, wie im dritten Screenshot veranschaulicht.
 
 Eine Kontur Pfad kann mehrere verbundene kubische Bézierkurven enthalten, die Verbindung zwischen zwei kubische Bézierkurven sind jedoch nur, wenn die folgenden drei Punkte kollineare smooth (d. h. auf einer geraden Linie liegen):
 
@@ -105,35 +105,35 @@ Eine Kontur Pfad kann mehrere verbundene kubische Bézierkurven enthalten, die V
 - der Endpunkt der erste Kurve, die auch den Anfangspunkt der Kurve für die zweite ist
 - der erste Kontrollpunkt, der die zweite Kurve
 
-Im nächsten Artikel auf [ **SVG-Pfaddaten**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md), erfahren Sie, eine Funktion, um die Definition der smooth verbundenen Bézierkurven zu erleichtern.
+Im nächsten Artikel zu [**SVG-Pfaddaten**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)finden Sie eine Möglichkeit, um die Definition von glatt verbundenen Bézier-Kurven zu vereinfachen.
 
-Manchmal ist es hilfreich zu wissen, die zugrunde liegenden parametrischen Formeln, die eine kubische Bézierkurve zu rendern. Für *t* zwischen 0 und 1, parametrischen Formeln lauten wie folgt:
+Manchmal ist es hilfreich zu wissen, die zugrunde liegenden parametrischen Formeln, die eine kubische Bézierkurve zu rendern. Für *t* im Bereich von 0 bis 1 lauten die parametrischen Gleichungen wie folgt:
 
 x(t) = (1 – t) ³x₀ + 3 t (1 – t) ²x₁ + 3t² (1 – t) X₂ + t³x₃
 
 y(t) = (1 – t) ³y₀ + 3 t (1 – t) ²y₁ + 3t² (1 – t) Y₂ + t³y₃
 
-Der höchste Exponent 3 bestätigt, dass diese kubische Polynomials sind. Es ist einfach, überprüfen Sie, ob bei `t` gleich 0, die Frage ist (X₀, Y₀): Dies ist der Ausgangspunkt, und wann `t` gleich 1 ist, der Punkt (X₃, Y₃), dies ist der Endpunkt. In der Nähe der Anfangspunkt (für niedrige Werte für `t`), der erste Kontrollpunkt (X₁, Y₁) verfügt über eine starke Auswirkung und in der Nähe der Endpunkt (hohe Werte von t ") der zweite Kontrollpunkt (X₂, Y₂) hat einen großen Einfluss.
+Der höchste Exponent 3 bestätigt, dass diese kubische Polynomials sind. Es ist einfach zu überprüfen, ob der Punkt, wenn `t` 0 (null) ist, der Punkt (x ₀, y ₀), der Startpunkt, und wenn `t` den Wert 1 hat, der Punkt (x ₃, y ₃) ist, d. h. der Endpunkt. In der Nähe des Startpunkts (bei niedrigen Werten von `t`) hat der erste Kontrollpunkt (x ₁, y ₁) einen starken Effekt, und in der Nähe des Endpunkts (hohe Werte von 't) hat der zweite Kontrollpunkt (x-, y-) einen starken Effekt.
 
 ## <a name="bezier-curve-approximation-to-circular-arcs"></a>Bezier-Kurve Näherung Kreisbögen
 
-Manchmal ist es sinnvoll, eine Bézierkurve verwenden, um ein Kreisbogensegment zu rendern. Eine kubische Bézierkurve kann ein Kreisbogensegment sehr gut bis zu ein Viertel Kreis, Ungefährer also vier verbundenen Bézierkurven können einen gesamten Kreis zu definieren. Diese Schätzung wird in zwei Artikeln, die vor mehr als 25 Jahren veröffentlicht erläutert:
+Es ist manchmal praktisch, eine Bézier-Kurve zu verwenden, um einen Kreisbogen zu erzeugen. Eine kubische Bézier-Kurve kann einen Zirkel Bogen sehr gut in einen Viertelkreis angleichen, sodass vier verbundene Bézier-Kurven einen ganzen Kreis definieren können. Diese Schätzung wird in zwei Artikeln, die vor mehr als 25 Jahren veröffentlicht erläutert:
 
-> Tor Dokken, u. a., "Gute Annäherung des Kreise von Krümmung ununterbrochen Bézierkurven," *Computer Aided geometrische Design 7* (1990), 33: 41.
+> Tor Dokken, et al, "gute Näherung der Kreise durch Krümmung-kontinuierliche Bézier-Kurven", *Computer gestützter geometrischer Entwurf 7* (1990), 33-41.
 
-> Michael Goldapp, "Approximation Kreisbögen von kubische Polynomials," *CAE-geometrische Design 8* (1991), 227 238.
+> Michael goldapp, "Näherungs kreisförmige Arcs durch kubische Polynomen", *Computer gestützter geometrischer Entwurf 8* (1991), 227-238.
 
-Das folgende Diagramm zeigt die vier Punkte, die mit der Bezeichnung `pto`, `pt1`, `pt2`, und `pt3` definieren eine Bézierkurve (in Rot dargestellt), die ein Kreisbogensegment entspricht:
+Das folgende Diagramm zeigt vier Punkte mit der Bezeichnung `pto`, `pt1`, `pt2`und `pt3` Definieren einer Bézier-Kurve (rot), die einem Kreisbogen entspricht:
 
 ![Näherung eines kreisförmigen Bogens mit einer Bézier-Kurve](beziers-images/bezierarc45.png)
 
-Die Zeilen aus der Start- und Endpunkt der Control-Punkte sind Tangens auf den Kreis und die Bézierkurve aus, und sie haben eine Länge von *L*. Im erste Artikel, die oben genannten gibt an, dass die beste Bézierkurve ein Kreisbogensegment entspricht bei der diese Länge *L* wird wie folgt berechnet:
+Die Zeilen vom Start-und Endpunkt bis hin zu den Steuerungs Punkten sind tangengent zum Kreis und zur Bézier-Kurve und haben die Länge *L*. Der erste Artikel oben zeigt an, dass die Bézier-Kurve am besten einem Kreisbogen entspricht, wenn diese Länge *L* wie folgt berechnet wird:
 
 L = 4 × tan(α / 4) / 3
 
 Die Abbildung zeigt einen Drehwinkel um 45 Grad, sodass L 0.265 entspricht. Im Code würde diesen Wert mit den gewünschten Radius des Kreises multipliziert werden.
 
-Die **Bezier-Kreisbogen** Seite ermöglicht Ihnen das Experimentieren mit der Definition einer Bézierkurve, um einen Kreisbogen für Winkel, die im Bereich von bis zu 180 Grad Ungefährer. Die [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) Datei instanziiert den `SKCanvasView` und `Slider` für die Auswahl des Winkels. Die `PaintSurface` -Ereignishandler in der [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) Code-Behind-Datei verwendet eine Transformation, um die Mitte der Canvas den Punkt (0, 0) fest. Es zeichnet einen Kreis, dessen Mitte sich an diesem Punkt für den Vergleich und berechnet dann die beiden Steuerpunkte, die für die Bézierkurve:
+Mithilfe der **Kreisbogen Seite "Bezier** " können Sie experimentieren, indem Sie eine Bézier-Kurve definieren, um einen Kreisbogen für Winkel von bis zu 180 Grad zu nähern. Die Datei " [**beziercirculararcpage. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) " instanziiert die `SKCanvasView` und eine `Slider` zum Auswählen des Winkels. Der `PaintSurface`-Ereignishandler in der [**BezierCircularArgPage.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) -Code Behind-Datei verwendet eine Transformation, um den Punkt (0,0) auf den Mittelpunkt der Canvas festzulegen. Es zeichnet einen Kreis, dessen Mitte sich an diesem Punkt für den Vergleich und berechnet dann die beiden Steuerpunkte, die für die Bézierkurve:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -207,11 +207,11 @@ float Magnitude(SKPoint v)
 
 ```
 
-Die Start- und Endpunkt (`point0` und `point3`) werden basierend auf den normalen parametrischen Formeln für den Kreis berechnet. Da auf der Kreis zentriert ist (0, 0), diese Punkte können auch als behandelt werden radiale Vektoren aus der Mitte des Kreises auf den Umfang. Die Control-Punkte sind in den Zeilen, die Tangente auf den Kreis, sodass sie auf diese radialen Vektoren rechtwinklig sind. Im rechten Winkel in eine andere besteht einfach dem ursprünglichen Vektor mit den X- und Y-Koordinaten, die ausgetauscht und das andere von ihnen vorgenommenen negativ.
+Die Start-und Endpunkte (`point0` und `point3`) werden basierend auf den normalen parametrischen Gleichungen für den Kreis berechnet. Da auf der Kreis zentriert ist (0, 0), diese Punkte können auch als behandelt werden radiale Vektoren aus der Mitte des Kreises auf den Umfang. Die Control-Punkte sind in den Zeilen, die Tangente auf den Kreis, sodass sie auf diese radialen Vektoren rechtwinklig sind. Im rechten Winkel in eine andere besteht einfach dem ursprünglichen Vektor mit den X- und Y-Koordinaten, die ausgetauscht und das andere von ihnen vorgenommenen negativ.
 
 So sieht das Programm ausgeführt wird, mit verschiedenen Blickwinkeln aus:
 
-[![Dreifacher Screenshot der Bezier-Kreisbogen Seite](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
+[![dreifacher Screenshot der Bezier-Kreisbogen Seite](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
 
 Sehen Sie sich im dritten Screenshot aus, und sehen Sie, dass die Bézierkurve wird vor allem aus ein Halbkreis abweicht, wenn der Winkel um 180 Grad, aber iOS-Bildschirms zeigt, dass es scheint, passen Viertelkreis-einwandfrei, wenn der Winkel 90 Grad ist.
 
@@ -219,9 +219,9 @@ Berechnen die Koordinaten der die beiden Steuerpunkte ist recht einfach, wenn di
 
 ![Näherung eines Quartals Kreises mit einer Bézier-Kurve](beziers-images/bezierarc90.png)
 
-Wenn der Radius des Kreises 100, dann ist *L* 55 ist und das ist eine einfache Anzahl merken müssen.
+Wenn der Radius des Kreises 100 ist, ist *L* 55, und das ist eine leicht zu merken.
 
-Die **Quadrieren des Kreises** Seite erstellt eine Animation eine Abbildung zwischen einen Kreis oder ein Quadrat. Der Kreis wird durch vier Bézierkurven, dessen Koordinaten werden in dieser Definition Array, in der ersten Spalte angezeigt, angeglichen der [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) Klasse:
+Durch die **quadratung der Kreis** Seite wird eine Abbildung zwischen einem Kreis und einem Quadrat animiert. Der Kreis entspricht vier Bézier-Kurven, deren Koordinaten in der ersten Spalte dieser Array Definition in der [`SquaringTheCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) -Klasse angezeigt werden:
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -246,9 +246,9 @@ public class SquaringTheCirclePage : ContentPage
 }
 ```
 
-Die zweite Spalte enthält die Koordinaten der vier Bézierkurven, die ein Quadrat definieren, deren Bereich ungefähr die Fläche des Kreises identisch ist. (Zeichnen ein Quadrat mit der *genaue* Bereich wie einen bestimmten Kreis besteht in der klassischen unlösbar geometrische Problem [Quadrieren des Kreises](https://en.wikipedia.org/wiki/Squaring_the_circle).) Für das Rendern eines Quadrats mit Bézierkurven an, die beiden Steuerpunkte für jede Kurve sind identisch, und sie sind mit den Start- und Endpunkt, kollineare, sodass die Bézierkurve als gerade Linie gerendert wird.
+Die zweite Spalte enthält die Koordinaten der vier Bézierkurven, die ein Quadrat definieren, deren Bereich ungefähr die Fläche des Kreises identisch ist. (Das Zeichnen eines Quadrats mit dem *exakten* Bereich in einem bestimmten Kreis ist das klassische, nicht lösbare geometrische Problem bei der [quadraterung des Kreises](https://en.wikipedia.org/wiki/Squaring_the_circle).) Zum Rendern eines Quadrats mit Bézier-Kurven sind die beiden Steuerungs Punkte für jede Kurve identisch, und Sie sind mit dem Start-und Endpunkt verbunden, sodass die Bézier-Kurve als gerade Linie gerendert wird.
 
-Die dritte Spalte des Arrays ist für interpolierte Werte für eine Animation. Die Seite wird ein Timer bei 16 Millisekunden festgelegt und die `PaintSurface` Handler wird aufgerufen, bei dieser Rate:
+Die dritte Spalte des Arrays ist für interpolierte Werte für eine Animation. Auf der Seite wird ein Timer für 16 Millisekunden festgelegt, und der `PaintSurface`-Handler wird an dieser Rate aufgerufen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -291,13 +291,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die Punkte werden basierend auf den Sinusförmig oszillierenden Wert interpoliert `t`. Die interpolierte Punkte werden dann verwendet, um eine Reihe von vier verbundenen Bézierkurven zu erstellen. Hier ist die Animation ausgeführt wird:
+Die Punkte werden auf Grundlage eines sinusoidinoszierenden Werts von `t`interpoliert. Die interpolierte Punkte werden dann verwendet, um eine Reihe von vier verbundenen Bézierkurven zu erstellen. Hier ist die Animation ausgeführt wird:
 
-[![Dreifacher Screenshot der quadvon der kreisseite](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
+[![Triple-Bildschirm Abbildung der Seite "Kreis quadvon"](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
 
 Eine solche Animation wäre ohne Kurven unmöglich, die algorithmisch flexibel genug ist, als Kreisbögen und gerade Linien gerendert werden soll.
 
-Die **Bezier-Infinity** Seite zudem nutzt die Fähigkeit einer Bézierkurve ein Kreisbogensegment Annäherung an. Hier ist die `PaintSurface` -Handler aus der [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) Klasse:
+Die Seite " **Bezier unendlich** " nutzt auch die Fähigkeit einer Bézier-Kurve, einen Kreisbogen zu nähern. Dies ist der `PaintSurface` Handler aus der [`BezierInfinityPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) -Klasse:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -338,13 +338,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Es kann sein, dass eine gute Übung zum Zeichnen diese Koordinaten auf Graph Papier, um anzuzeigen, wie diese miteinander verknüpft sind. Die Vorzeichen unendlich ist zentriert, um den Punkt (0, 0) und die zwei Schleifen haben, wird von (–150, 0) und (150, 0) und die Radien der 100. In den `CubicTo` Befehle sehen Sie X-Koordinaten des Steuerelements auf den Werten der –95 und –205 dauert (diese Werte sind –150 Plus- und Minuszeichen 55), 205 und 95 (150 Plus- und Minuszeichen 55) als auch 250 und –250 für die Rechte und linke Seite. Die einzige Ausnahme ist, wenn die Infinity-Zeichen in der Mitte überschreitet. In diesem Fall haben Steuerungspunkte Koordinaten mit einer Kombination von 50 und –50 Biegen Sie sich die Kurve in der Mitte.
+Es kann sein, dass eine gute Übung zum Zeichnen diese Koordinaten auf Graph Papier, um anzuzeigen, wie diese miteinander verknüpft sind. Die Vorzeichen unendlich ist zentriert, um den Punkt (0, 0) und die zwei Schleifen haben, wird von (–150, 0) und (150, 0) und die Radien der 100. In der Reihe von `CubicTo` Befehlen können Sie X Koordinaten von Steuerungs Punkten sehen, die die Werte von – 95 und – 205 (diese Werte lauten – 150 Plus und minus 55), 205 und 95 (150 Plus und minus 55) und 250 und – 250 für die Rechte und linke Seite. Die einzige Ausnahme ist, wenn die Infinity-Zeichen in der Mitte überschreitet. In diesem Fall haben Steuerungspunkte Koordinaten mit einer Kombination von 50 und –50 Biegen Sie sich die Kurve in der Mitte.
 
 Hier ist der Infinity-Zeichen:
 
-[![Dreifacher Screenshot der Bézier-unendlich Seite](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
+[![dreifacher Screenshot der Bézier Infinity-Seite](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
-Es ist etwas glatter in Richtung der Mitte als das Infinity-Zeichen, die von gerendert der **Bogen unendlich** Seite die [ **drei Möglichkeiten, einen Bogen zu zeichnen** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) Artikel.
+Es ist etwas komplizierter als das Unendlichkeitszeichen, das von der **Arc Infinity** -Seite gerendert wird, von den [**drei Möglichkeiten, einen Bogen Artikel zu zeichnen**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) .
 
 ## <a name="the-quadratic-bzier-curve"></a>Die quadratische Bézierkurve
 
@@ -354,7 +354,7 @@ x(t) = (1 – t) ²x₀ + 2 t (1 – t) X₁ + t²x₂
 
 y(t) = (1 – t) ²y₀ + 2 t (1 – t) Y₁ + t²y₂
 
-Verwenden Sie zum Hinzufügen einer quadratischen Bézierkurve auf einen Pfad der [ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint)) Methode oder der [ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(System.Single,System.Single,System.Single,System.Single)) Überladung mit separaten `x` und `y` Koordinaten:
+Wenn Sie einem Pfad eine quadratische Bézier-Kurve hinzufügen möchten, verwenden Sie die [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint)) -Methode oder die [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo(System.Single,System.Single,System.Single,System.Single)) Überladung mit separaten `x` und `y` Koordinaten:
 
 ```csharp
 public void QuadTo (SKPoint point1, SKPoint point2)
@@ -362,9 +362,9 @@ public void QuadTo (SKPoint point1, SKPoint point2)
 public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 ```
 
-Die Methoden hinzufügen eine Kurve, aus der aktuellen Position bis `point2` mit `point1` als Steuerungspunkts für das.
+Die-Methoden fügen eine Kurve von der aktuellen Position zu `point2` mit `point1` als Kontrollpunkt hinzu.
 
-Sie können mit quadratischen Bézierkurven mit experimentieren der **quadratischen Kurve** Seite ähnelt der **Bezier-Kurve** Seite aber nur drei Touch-Punkte. Hier ist die `PaintSurface` Ereignishandler in der [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) Code-Behind-Datei:
+Sie können mit den quadratischen Bézier-Kurven mit der **quadratischen Kurven** Seite experimentieren, die der **Bezier** -kurvenseite ähnlich ist, es sei denn, Sie enthält nur drei Berührungspunkte. Dies ist der `PaintSurface` Handler in der [**QuadraticCurve.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) -Code Behind-Datei:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -405,19 +405,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Und hier er ausgeführt wird:
 
-[![Dreifacher Screenshot der Seite mit der quadratischen Kurve](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
+[![dreifacher Screenshot der Seite mit der quadratischen Kurve](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
 
 Die gepunkteten Linien Tangente der Kurve in den Startpunkt und Endpunkt sind und an dem Punkt des Steuerelements zu erfüllen.
 
 Der quadratischen Bézier ist gut, wenn eine Kurve einer allgemeinen Form erforderlich, aber Sie die Vorteile von nur einem Kontrollpunkt statt zwei lieber. Die quadratische Bézier rendert effizienter als alle anderen Kurve, weshalb sie intern in Skia verwendet wird, um elliptische Bogen zu rendern.
 
-Allerdings ist die Form einer quadratischen Kurve der Bézier nicht elliptischen, deshalb mehrere quadratischen Béziers erforderlich sind, um einen elliptischen Bogen zu ermitteln. Die quadratische Bézier wird stattdessen ein Segment einer Parabola.
+Die Form einer quadratischen Bézier-Kurve ist jedoch nicht elliptisch. aus diesem Grund ist es erforderlich, dass mehrere quadratische bézierer einen elliptischen Bogen annähern. Die Quadratische Bézier ist stattdessen ein Segment einer Parabel.
 
 ## <a name="the-conic-bzier-curve"></a>Die konischen Bézierkurve
 
-Die konischen Bézierkurve &mdash; auch bekannt als die rationale quadratischen Bézierkurve &mdash; ist eine relativ neue Erweiterung der Bézierkurven-Familie. Wie die quadratische Bézierkurve umfasst die rationale quadratische Bézierkurve einen Startpunkt, einen Endpunkt und Steuerungspunkts für das ein. Die rationale quadratische Bézierkurve erfordert jedoch auch eine *Gewichtung* Wert. Es heißt eine *rational* quadratische, da die parametrischen Formeln Verhältnisse beinhalten.
+Die Konstante Bézier-Kurve &mdash; auch als "Rational quadratischen Bézier-Kurve" bezeichnet &mdash; ist eine relativ aktuelle Ergänzung zur Familie der Bézier-Kurven. Wie die quadratische Bézierkurve umfasst die rationale quadratische Bézierkurve einen Startpunkt, einen Endpunkt und Steuerungspunkts für das ein. Die rational quadratischen Bézier-Kurve erfordert jedoch auch einen *Gewichtungs* Wert. Sie wird als *rationell* quadratisch bezeichnet, da die parametrischen Formeln die Verhältnisse einschließen.
 
-Die parametrischen Formeln für die X- und Y Verhältnisse sind, die den gleichen Nenner gemeinsam nutzen. Hier ist die Gleichung für den Nenner für *t* im Bereich von 0 auf 1 und einen Gewichtungswert von *w*:
+Die parametrischen Formeln für die X- und Y Verhältnisse sind, die den gleichen Nenner gemeinsam nutzen. Hier ist die Gleichung für den Nenner für " *t* " im Bereich von 0 bis 1 und einem Gewichtungswert von *w*:
 
 d(t) = (1 – t) ² + 2wt(1 – t) + t²
 
@@ -429,9 +429,9 @@ x(t) = ((1 – t) ²x₀ + 2wt (1 – t) X₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1 – t) Y₁ + t²y₂)) ÷ d(t)
 
-Rationale quadratische Bézierkurven werden auch als bezeichnet *Conics* , da sie Segmente einem Conic Abschnitt genau darstellen können &mdash; Hyperbeln, Parabeln, Ellipsen und Kreisen.
+Rational quadratischen Bézier-Kurven werden auch als "als" bezeichnet, da Sie genau Segmente eines beliebigen, *gleichzeitig &mdash;* hyperbolas, parabolas, Ellipsen und Kreise darstellen können.
 
-Um eine rationale quadratischen Bézierkurve auf einen Pfad hinzuzufügen, verwenden die [ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) Methode oder der [ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(System.Single,System.Single,System.Single,System.Single,System.Single)) Überladung mit separaten `x` und `y` Koordinaten:
+Verwenden Sie die [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) -Methode oder die [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo(System.Single,System.Single,System.Single,System.Single,System.Single)) Überladung mit separaten `x` und `y` Koordinaten, um einem Pfad eine rationale Quadratische Bézier-Kurve hinzuzufügen:
 
 ```csharp
 public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
@@ -439,9 +439,9 @@ public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
 public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 ```
 
-Beachten Sie, dass die endgültige `weight` Parameter.
+Beachten Sie den abschließenden `weight`-Parameter.
 
-Die **konischen Kurve** Seite ermöglicht Ihnen das Experimentieren mit diese Kurven. Die `ConicCurvePage`-Klasse wird von `InteractivePage` abgeleitet. Die [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) Datei instanziiert ein `Slider` einen Gewichtungswert von – 2 bis 2 auswählen. Die [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) Code-Behind-Datei erstellt drei `TouchPoint` Objekte, und die `PaintSurface` Handler einfach rendert die resultierende Kurve mit die Tangenten Zeilen, die das Steuerelement Punkte:
+Auf der Seite für die zusammen gewollte **Kurve** können Sie mit diesen Kurven experimentieren. Die `ConicCurvePage`-Klasse wird von `InteractivePage` abgeleitet. Die Datei [**ConicCurvePage. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) instanziiert eine `Slider`, um einen Gewichtungswert zwischen – 2 und 2 auszuwählen. Mit der [**ConicCurvePage.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) -Code Behind-Datei werden drei `TouchPoint` Objekte erstellt, und der `PaintSurface` Handler rendert die resultierende Kurve einfach mit den Tangenten Linien zu den Steuer Punkten:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -483,19 +483,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hier wird ausgeführt:
 
-[![Dreifacher Screenshot der Seite mit der Seite "Seite"](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
+[![dreifacher Screenshot der Seite mit der Seite "Seite"](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
 
 Wie Sie sehen können, scheint der Kontrollpunkt die Kurve für es abrufen, wenn das Gewicht größer ist. Wenn die Gewichtung auf 0 (null) ist, wird die Kurve eine gerade Linie von den Anfangspunkt, an den Endpunkt an.
 
-In der Theorie negative Gewichtungen zulässig ist, und führen Sie die Kurve Biegen *sofort* aus der Kontrollpunkt. Allerdings von – 1 oder unter Ursache Nenner der parametrischen Formeln, die für bestimmte Werte negativ werden gewichtet *t*. Aus diesem Grund werden negative Gewichtungen wahrscheinlich im ignoriert die `ConicTo` Methoden. Die **konischen Kurve** Programm können Sie die negative Gewichtungen festgelegt, aber wie Sie durch Experimentieren sehen können, negative Gewichtungen haben dieselbe Wirkung wie eine Gewichtung von 0 (null), und dazu führen, dass eine gerade Linie gerendert werden soll.
+Theoretisch sind negative Gewichtungen zulässig und bewirken, dass die Kurve vom Steuerungspunkt *entfernt* wird. Gewichtungen von – 1 oder niedriger bewirken jedoch, dass der Nenner in den parametrischen Gleichungen für bestimmte Werte von " *t*" negativ wird. Aus diesem Grund werden negative Gewichtungen in den `ConicTo` Methoden ignoriert. Mit dem Programm für die zusammengestellte **Kurve** können Sie negative Gewichtungen festlegen, aber wie Sie durch das Experimentieren erkennen können, haben negative Gewichtungen denselben Effekt wie eine Gewichtung von 0 (null) und bewirken, dass eine gerade Linie gerendert wird.
 
-Es ist sehr einfach, den Kontrollpunkt und die zu verwendende seitengewichtung, leiten die `ConicTo` -Methode zum Zeichnen von bis zu ein Kreisbogensegment (aber nicht einschließlich) ein Halbkreis. Im folgenden Diagramm erfüllen Tangenten aus der Start- und Endpunkt am Steuerungspunkts für das.
+Es ist sehr einfach, den Steuerungspunkt und die Gewichtung abzuleiten, um die `ConicTo`-Methode zu verwenden, um einen Kreisbogen bis zu einem semikreis zu zeichnen (aber nicht einschließlich). Im folgenden Diagramm erfüllen Tangenten aus der Start- und Endpunkt am Steuerungspunkts für das.
 
 ![Ein konstanter Bogen Rendering eines Kreis Bogens](beziers-images/conicarc.png)
 
-Sie können trigonometrische verwenden, um den Abstand des Steuerungs Punkts von der Mitte des Kreises zu bestimmen: Dabei handelt es sich um den Radius des Kreises dividiert durch den Kosinus der Hälfte des Winkels. Um einen Kreisbogen zwischen den Start- und Endpunkt zu zeichnen, legen Sie die Gewichtung dieses gleiche Kosinus der Hälfte der Winkel aus. Beachten Sie, dass wenn der Winkel um 180 Grad ist, klicken Sie dann die Tangenten nie erfüllen und die Gewichtung ist 0 (null). Aber für Winkel ist kleiner als 180 Grad, wird die mathematischen Grundlagen von gut funktioniert.
+Sie können trigonometrische verwenden, um zu bestimmen, die Entfernung des Steuerungspunkts für das von den Mittelpunkt: den Radius des Kreises geteilt durch den Kosinus der Hälfte der Winkel α ist. Um einen Kreisbogen zwischen den Start- und Endpunkt zu zeichnen, legen Sie die Gewichtung dieses gleiche Kosinus der Hälfte der Winkel aus. Beachten Sie, dass wenn der Winkel um 180 Grad ist, klicken Sie dann die Tangenten nie erfüllen und die Gewichtung ist 0 (null). Aber für Winkel ist kleiner als 180 Grad, wird die mathematischen Grundlagen von gut funktioniert.
 
-Die **konischen Kreisbogen** Seite veranschaulicht dies. Die [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) Datei instanziiert ein `Slider` für die Auswahl des Winkels. Die `PaintSurface` Ereignishandler in der [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) Code-Behind-Datei wird berechnet, der Kontrollpunkt und die Gewichtung:
+Dies wird auf der Seite "gleich **Kreisbogen** " veranschaulicht. Die Datei "Configuration Manager [ **. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) " instanziiert eine `Slider` zum Auswählen des Winkels. Der `PaintSurface`-Handler in der [**ConicCircularArc.XAML.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) -Code Behind-Datei berechnet den Steuerungspunkt und die Gewichtung:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -545,15 +545,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Wie Sie sehen können, besteht keine visuellen Unterschied zwischen der `ConicTo` in Rot gezeigten Pfad und den zugrunde liegenden Kreis zu Referenzzwecken angezeigt:
+Wie Sie sehen können, gibt es keinen visuellen Unterschied zwischen dem in rot gezeigten `ConicTo` Pfad und dem zugrunde liegenden Kreis, der als Verweis angezeigt wird:
 
-[![Dreifacher Screenshot der Seite "Konkel Kreisbogen"](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
+[![dreifacher Screenshot der Seite mit dem kreisförmigen Kreisbogen](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
 
 Aber legen Sie den Winkel um 180 Grad und der Mathematik fehlschlägt.
 
-Es ist in diesem Fall unglücklich, `ConicTo` negative Gewichtungen nicht unterstützt, da in der Theorie (basierend auf den parametrischen Formeln) der Kreis mit einem anderen Aufruf abgeschlossen werden kann `ConicTo` mit denselben Punkten, aber einen negativen Wert der Gewichtung. Dies würde ermöglichen, erstellen einen gesamten Kreis mit nur zwei `ConicTo` Kurven basierend auf einen beliebigen Winkel zwischen (aber nicht einschließlich) Null Grad und 180 Grad.
+In diesem Fall ist es nicht zu beachten, dass `ConicTo` negative Gewichtungen nicht unterstützt, da der Kreis theoretisch (auf der Grundlage der parametrischen Gleichungen) mit einem weiteren `ConicTo` mit denselben Punkten, aber einem negativen Wert der Gewichtung, abgeschlossen werden kann. Dies ermöglicht die Erstellung eines ganzen Kreises mit nur zwei `ConicTo` Kurven, die auf einem beliebigen Winkel zwischen (aber nicht einschließlich) 0 Grad und 180 Grad liegen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

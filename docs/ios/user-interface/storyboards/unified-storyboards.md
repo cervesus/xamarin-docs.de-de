@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
 ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001827"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915176"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in xamarin. IOS
 
@@ -112,7 +112,7 @@ In diesem Abschnitt werden typische Typen von Merkmals Auflistungen behandelt, d
 
 Im folgenden finden Sie eine typische Merkmals Auflistung, die dem Entwickler möglicherweise auf einem iPhone angezeigt wird:
 
-|property|Wert|
+|Eigenschaft|value|
 |--- |--- |
 |`HorizontalSizeClass`|Theit|
 |`VerticalSizeClass`|Regulär|
@@ -123,12 +123,12 @@ Der obige Satz stellt eine voll qualifizierte Merkmals Auflistung dar, da Sie We
 
 Es ist auch möglich, eine Merkmals Auflistung zu haben, in der einige ihrer Werte fehlen (was Apple als *nicht angegeben*bezeichnet):
 
-|property|Wert|
+|Eigenschaft|value|
 |--- |--- |
 |`HorizontalSizeClass`|Theit|
-|`VerticalSizeClass`|Nicht angegeben.|
-|`UserInterfaceIdom`|Nicht angegeben.|
-|`DisplayScale`|Nicht angegeben.|
+|`VerticalSizeClass`|Unspecified|
+|`UserInterfaceIdom`|Unspecified|
+|`DisplayScale`|Unspecified|
 
 Wenn der Entwickler jedoch die Merkmals Umgebung für seine Merkmals Auflistung anfordert, wird eine voll qualifizierte Sammlung zurückgegeben, wie im obigen Beispiel gezeigt.
 
@@ -158,7 +158,7 @@ IOS 8 wurde erweitert, um dem Entwickler zu ermöglichen, mehrere Versionen eine
 
 Wenn eines der Bilder in einer `UIImageView` Klasse verwendet wird, wird in der Bildansicht automatisch die korrekte Version des Bilds für die Merkmals Auflistung angezeigt. Wenn sich die Merkmals Umgebung ändert (z. b. wenn der Benutzer das Gerät vom Hochformat in das Querformat wechselt), wählt die Bildansicht automatisch die neue Bildgröße aus, um der neuen Merkmals Auflistung zu entsprechen, und ändert ihre Größe entsprechend der aktuellen Version des Abbilds. gestellte.
 
-## <a name="uiimageasset"></a>Uiimageasset
+## <a name="uiimageasset"></a>UIImageAsset
 
 Apple hat eine neue Klasse mit dem Namen "`UIImageAsset`" hinzugefügt, um dem Entwickler noch mehr Kontrolle über die Bildauswahl zu verschaffen.
 
@@ -214,11 +214,11 @@ Zuerst führt IOS 8 einige Setup Schritte aus, um den Übergang vorzubereiten. I
 
 IOS 8 bietet mehrere Rückrufe, mit denen der Entwickler an der Merkmals Änderung teilnehmen kann, wie in der folgenden Tabelle gezeigt:
 
-|Phase|Rückruf|Beschreibung|
+|Phase|Rückruf|BESCHREIBUNG|
 |--- |--- |--- |
-|Setup|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Diese Methode wird zu Beginn einer Merkmals Änderung aufgerufen, bevor eine Merkmals Auflistung auf Ihren neuen Wert festgelegt wird.</li><li>Die-Methode wird aufgerufen, wenn sich der Wert der Merkmals Auflistung geändert hat, aber bevor eine Animation stattfindet.</li></ul>|
+|Einrichten|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Diese Methode wird zu Beginn einer Merkmals Änderung aufgerufen, bevor eine Merkmals Auflistung auf Ihren neuen Wert festgelegt wird.</li><li>Die-Methode wird aufgerufen, wenn sich der Wert der Merkmals Auflistung geändert hat, aber bevor eine Animation stattfindet.</li></ul>|
 |Animation|`WillTransitionToTraitCollection`|Der Übergangs Koordinator, der an diese Methode weitergegeben wird, verfügt über eine `AnimateAlongside`-Eigenschaft, die es dem Entwickler ermöglicht, Animationen hinzuzufügen, die zusammen mit den Standard Animationen ausgeführt werden.|
-|Bereinigen|`WillTransitionToTraitCollection`|Stellt eine Methode bereit, mit der Entwickler ihren eigenen Bereinigungs Code nach der Umstellung einschließen können.|
+|Bereinigung|`WillTransitionToTraitCollection`|Stellt eine Methode bereit, mit der Entwickler ihren eigenen Bereinigungs Code nach der Umstellung einschließen können.|
 
 Die `WillTransitionToTraitCollection`-Methode eignet sich hervorragend zum Animieren von Ansichts Controllern zusammen mit den Änderungen der Merkmals Auflistung. Die `WillTransitionToTraitCollection`-Methode ist nur auf Ansichts Controllern (`UIViewController`) und nicht in anderen Merkmals Umgebungen verfügbar, wie z. b. `UIViews`.
 
@@ -242,7 +242,7 @@ In einem Split View Controller spielt der primäre Ansichts Controller eine Roll
 
 ### <a name="showing-view-controllers"></a>Anzeige Controller anzeigen
 
-Eine weitere Änderung, die Apple an IOS 8 vorgenommen hat, ist die Art und Weise, wie der Entwickler Ansichts Controller anzeigt. In der Vergangenheit, wenn die Anwendung einen endansichts Controller besaß (z. b. einen Tabellen Ansichts Controller) und der Entwickler einen anderen angezeigt hat (z. b. als Reaktion auf den Benutzer, der auf eine Zelle tippt), würde die Anwendung wieder durch die Controller Hierarchie zum Navigations Ansichts Controller und ruft die `PushViewController`-Methode auf, um die neue Ansicht anzuzeigen.
+Eine weitere Änderung, die Apple an IOS 8 vorgenommen hat, ist die Art und Weise, wie der Entwickler Ansichts Controller anzeigt. Wenn die Anwendung in der Vergangenheit einen endansichts Controller (z. b. einen Tabellen Ansichts Controller) besaß und der Entwickler einen anderen angezeigt hat (z. b. als Reaktion auf den Benutzer, der auf eine Zelle tippt), würde die Anwendung wieder durch die Controller Hierarchie zum Navigations Ansichts Controller gelangen und die `PushViewController`-Methode aufrufen, um die neue Ansicht anzuzeigen.
 
 Dies führte zu einer sehr engen Kopplung zwischen dem Navigations Controller und der Umgebung, in der er ausgeführt wurde. In ios 8 hat Apple dies durch die Bereitstellung von zwei neuen Methoden entkoppelt:
 
@@ -680,7 +680,7 @@ Eine Implementierung von Unified Storyboards finden Sie in der `UnifiedStoryboar
 
 Die Startbildschirm Datei wird als Begrüßungsbildschirm angezeigt, während eine IOS-Anwendung gestartet wird, um dem Benutzer Feedback bereitzustellen, dass die APP tatsächlich gestartet wird. Vor IOS 8 musste der Entwickler mehrere `Default.png` Image-Assets für jeden Gerätetyp, jede Ausrichtung und Bildschirmauflösung einschließen, auf der die Anwendung ausgeführt wird. Beispielsweise `Default@2x.png`, `Default-Landscape@2x~ipad.png`, `Default-Portrait@2x~ipad.png`usw.
 
-Durch die Umgestaltung der neuen iPhone 6-und iPhone 6-und-Geräte (und der bevorstehenden Apple Watch) mit allen vorhandenen iPhone-und iPad-Geräten stellt dies ein großes Array unterschiedlicher Größen, Ausrichtungen und Auflösungen von `Default.png` Bild Ressourcen des Startbildschirms dar, die erstellt und verwaltet. Darüber hinaus können diese Dateien recht groß sein und das lieferbare Anwendungs Bündel "Bloat", wodurch die erforderliche Zeit für das Herunterladen der Anwendung aus dem iTunes App Store erhöht wird (möglicherweise, damit Sie nicht mehr über ein Mobilfunknetz geliefert werden kann). und erhöhen Sie die Menge an Speicherplatz, die auf dem Gerät des Endbenutzers benötigt wird.
+Durch die Umgestaltung der neuen iPhone 6-und iPhone 6-und-Geräte (und der anstehenden Apple Watch) mit allen vorhandenen iPhone-und iPad-Geräten stellt dies ein großes Array unterschiedlicher Größen, Ausrichtungen und Auflösungen von `Default.png` Bild Ressourcen des Startbildschirms dar, die erstellt und gewartet werden müssen. Darüber hinaus können diese Dateien recht groß sein und das lieferbare Anwendungs Bündel "Bloat", wodurch die erforderliche Zeit für das Herunterladen der Anwendung aus dem iTunes App Store erhöht wird (möglicherweise, damit Sie nicht mehr über ein Mobilfunknetz geliefert werden kann). und erhöhen Sie die Menge an Speicherplatz, die auf dem Gerät des Endbenutzers benötigt wird.
 
 Neu bei IOS 8: Entwickler können eine einzelne atomarische `.xib`-Datei in Xcode erstellen, die Auto Layout-und Größenklassen verwendet, um einen *dynamischen Startbildschirm* zu erstellen, der für jedes Gerät, jede Auflösung und jede Ausrichtung funktioniert. Dadurch wird nicht nur der Arbeitsaufwand reduziert, den der Entwickler benötigt, um alle erforderlichen Image Ressourcen zu erstellen und zu verwalten, sondern die Größe des installierten Pakets der Anwendung erheblich reduziert.
 
@@ -695,7 +695,7 @@ Dynamische Startbildschirme haben folgende Einschränkungen und Überlegungen:
 
 Beachten Sie bei den obigen Richtlinien, wie Sie einem vorhandenen xamarin IOS 8-Projekt einen dynamischen Startbildschirm hinzufügen.
 
-Führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor:
 
 1. Öffnen Sie **Visual Studio für Mac** , und **Laden Sie die Projekt Mappe, um** den dynamischen Startbildschirm hinzuzufügen.
 2. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf die Datei `MainStoryboard.storyboard`, und wählen Sie **Öffnen mit** > **Xcode Interface Builder**aus:
@@ -713,7 +713,7 @@ Führen Sie folgende Schritte aus:
 6. Bearbeiten Sie das Design des Startbildschirms, indem Sie grafische Elemente hinzufügen und Layouteinschränkungen verwenden, um Sie für die angegebenen Geräte, Ausrichtungen und Bildschirmgrößen zu positionieren:
 
     [![](unified-storyboards-images/dls05.png "Editing the design of the launch screen")](unified-storyboards-images/dls05.png#lightbox)
-7. Speichern Sie die Änderungen an `LaunchScreen.xib`.
+7. Speichern Sie die Änderungen in `LaunchScreen.xib`.
 8. Wählen Sie das **Anwendungs Ziel** und die Registerkarte **Allgemein** aus:
 
     [![](unified-storyboards-images/dls06.png "Select the Applications Target and the General tab")](unified-storyboards-images/dls06.png#lightbox)

@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
 ms.openlocfilehash: ebd7cad9ef33a44dbc7aa469bb4e866bdfea2e61
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724781"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915374"
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
@@ -39,7 +39,7 @@ Representational State Transfer (REST) ist ein Architekturstil zum Erstellen von
 
 Webdienst-APIs, die mit REST entsprechen RESTful-APIs aufgerufen werden, und mit definiert werden:
 
-- Basis-URI.
+- Ein Basis-URI.
 - HTTP-Methoden, z. B. GET, POST, PUT, PATCH oder DELETE.
 - Ein anderes Medium für die Daten, z. B. JavaScript Object Notation (JSON).
 

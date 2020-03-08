@@ -7,27 +7,27 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029633"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914372"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Arbeitsmappen-Installation und-Anforderungen
 
 <a name="install" />
 
-## <a name="download-and-install"></a>Herunterladen und installieren
+## <a name="download-and-install"></a>Herunterladen und Installieren
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. Überprüfen Sie die unten aufgeführten [Anforderungen](#requirements) .
 2. Laden Sie [Xamarin Workbooks für Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi)herunter, und installieren Sie es.
 3. [Spielen](~/tools/workbooks/workbook.md) Sie mit Arbeitsmappen.
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. Überprüfen Sie die unten aufgeführten [Anforderungen](#requirements) .
 2. Laden Sie [Xamarin Workbooks für Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)herunter, und installieren Sie es.
@@ -35,7 +35,7 @@ ms.locfileid: "73029633"
 
 -----
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 #### <a name="supported-operating-systems"></a>Unterstützte Betriebssysteme
 
@@ -44,7 +44,7 @@ ms.locfileid: "73029633"
 
 #### <a name="supported-app-platforms"></a>Unterstützte Anwendungsplattformen
 
-|App-Plattform|Betriebssystemunterstützung|Hinweise|
+|App-Plattform|Betriebssystemunterstützung|Notizen|
 |--- |--- |--- |
 |Mac|Nur auf Mac unterstützt|
 |iOS|Unterstützt unter Mac und Windows|Xamarin. IOS 11,0 und Xcode 9,0 oder höher müssen auf dem Mac installiert sein. Zum Ausführen von IOS-Arbeitsmappen unter Windows ist ein Mac-buildhost erforderlich, auf dem alle oben aufgeführten und der [Remote-IOS-Simulator](~/tools/ios-simulator/index.md) unter Windows installiert ist.|
@@ -64,7 +64,7 @@ Arbeitsmappen-Client Protokolldateien immer anfügen:
 - Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-1.4. x bietet auch die Möglichkeit, die Protokolldatei im Finder (macOS) oder Explorer (Windows) direkt über das Hauptmenü auszuwählen:
+Version 1.4.x bietet außerdem die Möglichkeit, die Protokolldatei im Finder (macOS) oder im Explorer (Windows) direkt über das Hauptmenü auszuwählen.
 
 - **Hilfe > Anzeigen der Protokolldatei**
 
@@ -86,14 +86,14 @@ Es ist sehr hilfreich, Details zu Ihrem Betriebs System und den installierten xa
 Visual Studio für Mac
 
 - **Visual Studio-> zu Visual Studio > Details > Kopier Informationen anzeigen**
-- In Fehlerbericht einfügen
+- Einfügen in den Fehlerbericht
 
 Visual Studio
 
 - **Hilfe > zu Visual Studio > Kopieren von Informationen**
-- Informieren Sie uns über die Betriebs System Version und darüber, ob Sie 32-Bit-oder 64-Bit-Windows ausführen.
+- Geben Sie Ihre Betriebssystemversion an und ob Sie die Windows 32-Bit-Version oder die Windows 64-Bit-Version ausführen.
 
-### <a name="samples"></a>Proben
+### <a name="samples"></a>Beispiele
 
 Wenn Sie die **Arbeits** Mappen-Datei anfügen oder verknüpfen können, mit der Sie Probleme haben, können Sie den Fehler schneller lösen.
 
@@ -103,11 +103,11 @@ Wenn Sie Probleme beim Verbinden Ihrer IOS-oder Android-Arbeitsmappe haben und d
 
 - Der Name des Geräts, mit dem Sie eine Verbindung herstellen möchten.
 - Betriebssystemversion Ihres Geräts
-- Android: Überprüfen Sie, ob Sie einen x86-Emulator verwenden
-- Android: Welche Emulatorplattform verwenden Sie? Google-Emulator?
-  Visual Studio-Android-Emulator? Xamarin Android Player?
-- IOS unter Windows: Welche Version des IOS-remoteios-Simulators haben Sie installiert **(überprüfen Sie die** Option "Software" in der **Systemsteuerung**)?
-- IOS unter Windows: Geben Sie auch Informationen zur Platt Form Version für den Mac-buildhost an
+- Android: Stellen Sie sicher, dass Sie den x86-Emulator verwenden.
+- Android: welche Emulatorplattform verwenden Sie? Google-Emulatoren?
+  Visual Studio-Emulator für Android? Xamarin Android Player?
+- IOS unter Windows: welche Version des remoteios-Simulators von xamarin haben Sie installiert **(überprüfen Sie die** Option "Software" in der **Systemsteuerung**)?
+- IOS unter Windows: Geben Sie auch Informationen zur Platt Form Version für den Mac-buildhost an.
 - Hat das Gerät Netzwerk Konnektivität (überprüfen Sie den Webbrowser)?
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new

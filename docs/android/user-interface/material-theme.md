@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 809f6241b3a17f63fe3077f896095c303e1dfd2e
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940836"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916751"
 ---
 # <a name="material-theme"></a>Materialdesign
 
@@ -36,7 +36,7 @@ Sie können ein einzelnes Design für eine gesamte App verwenden, oder Sie könn
 
 Da das Material Design nur unter Android 5,0 und höher unterstützt wird, können Sie es (oder ein benutzerdefiniertes Design, das aus dem Material Design abgeleitet ist) nicht verwenden, um die APP für die Ausführung unter früheren Versionen von Android zu verwenden. Allerdings können Sie Ihre APP so konfigurieren, dass Sie das Material Design auf Android 5,0-Geräten verwendet, und auf ein früheres Design zurückgreifen, wenn es unter älteren Versionen von Android ausgeführt wird (Weitere Informationen finden Sie im Abschnitt zur [Kompatibilität](#compatibility) in diesem Artikel).
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Folgendes ist erforderlich, um die neuen Android 5,0-Material Design Features in xamarin-basierten apps zu verwenden:
 
@@ -260,11 +260,11 @@ Wenn Ihre APP auf einem Android 5,0-Gerät ausgeführt wird, wird die in **Resou
 
 Weitere Informationen zur Design Kompatibilität mit älteren Android-Versionen finden Sie unter [Alternative Ressourcen](~/android/app-fundamentals/resources-in-android/alternate-resources.md).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde das neue Design Design der Benutzeroberfläche vorgestellt, das in Android 5,0 (Lollipop) enthalten ist. Es wurden die drei integrierten Material Design-Varianten beschrieben, die Sie verwenden können, um Ihre APP zu formatieren. es wurde erläutert, wie Sie ein benutzerdefiniertes Design zum Branding Ihrer APP erstellen, und es wurde ein Beispiel für das Design einer einzelnen Ansicht bereitgestellt. Schließlich wurde in diesem Artikel erläutert, wie Sie das Material Design in Ihrer APP verwenden und gleichzeitig die Kompatibilität mit älteren Versionen von Android aufrechterhalten.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Themeswitcher (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-themeswitcher)
 - [Einführung in Lollipop](../platform/lollipop.md)

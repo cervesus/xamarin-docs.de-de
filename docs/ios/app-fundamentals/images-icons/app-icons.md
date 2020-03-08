@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
 ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488430"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916548"
 ---
 # <a name="application-icons-in-xamarinios"></a>Anwendungs Symbole in xamarin. IOS
 
@@ -54,8 +54,8 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
 
     ||1x|2x|
     |---|---|---|
-    |Anwendungssymbol|60x60<sup>1</sup>|120x120|
-    |Spotlight|40x40<sup>2</sup>|80x80|
+    |Anwendungssymbol|60 x 60<sup>1</sup>|120x120|
+    |Spotlight|40 x 40<sup>2</sup>|80x80|
     |Einstellungen|-|-|
 
 - **iPhone: IOS 5 & 6**
@@ -73,10 +73,10 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
     ||2x (iPad pro)|
     |---|---|
     |Anwendungssymbol|167x167<sup>6</sup>|
-    |Spotlight|120x120<sup>6</sup>|
+    |Spotlight|120 x 120<sup>6</sup>|
     |Einstellungen|58x58<sup>5</sup>|
 
-- **iPad: iOS 7 & 8**
+- **iPad: IOS 7 & 8**
 
     ||1x|2x|
     |---|---|---|
@@ -84,7 +84,7 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
     |Spotlight|40x40|80x80|
     |Einstellungen|-|-|
 
-- **iPad: iOS 5 & 6**
+- **iPad: IOS 5 & 6**
 
     ||1x|2x|
     |---|---|---|
@@ -109,7 +109,7 @@ Bei Symbolen kann der `Assets.xcassets`-Datei im Projekt der APP ein spezieller 
 
 Um einen Asset-Katalog zu verwenden, führen Sie die folgenden Schritte aus:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 2. Scrollen Sie nach unten zum Abschnitt **iPhone-Symbole** .
@@ -129,7 +129,7 @@ Um einen Asset-Katalog zu verwenden, führen Sie die folgenden Schritte aus:
 7. Klicken Sie auf die Schaltfläche **Öffnen** , um das Bild in das Projekt einzuschließen, und legen Sie es im xcasset fest.
 8. Wiederholen Sie diesen Schritt für alle benötigten Images.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die * *-Informationen.  \* * Datei in der **Projektmappen-Explorer**:
 
@@ -166,7 +166,7 @@ Bei Verwendung der Ad-hoc-Methode der Bereitstellung der APP (entweder für Unte
 
 Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 2. Scrollen Sie zum Abschnitt **iTunes-Grafik** des Editors: 
@@ -175,7 +175,7 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 3. Klicken Sie für ein fehlendes Bild im Editor auf die Miniaturansicht, wählen Sie im Dialogfeld Datei öffnen die Bilddatei für die gewünschte iTunes-Grafik aus, und klicken Sie auf die Schaltfläche **OK** .
 4. Wiederholen Sie diesen Schritt, bis alle benötigten Images für die APP angegeben wurden.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
 
@@ -187,7 +187,7 @@ Um die iTunes-Grafik festzulegen, führen Sie Folgendes aus:
 
 -----
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit Bildern (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
 - [Hallo iPhone](~/ios/get-started/hello-ios/index.md)

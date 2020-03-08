@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
 ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842971"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916481"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms-App-Klasse
 
@@ -110,9 +110,9 @@ if (Application.Current.Properties.ContainsKey("id"))
 Das `Properties`-Wörterbuch wird automatisch auf dem Gerät gespeichert.
 Daten, die dem Wörterbuch hinzugefügt werden, werden verfügbar, wenn die Anwendung aus dem Hintergrund zurückkehrt oder wenn sie neu gestartet wird.
 
-Mit Xamarin.Forms 1.4 wurde die zusätzliche Methode `SavePropertiesAsync()` in der `Application`-Klasse eingeführt, die aufgerufen werden kann, um das `Properties`-Wörterbuch proaktiv beizubehalten. Dadurch können Sie Eigenschaften nach wichtigen Updates speichern anstatt zu riskieren, dass diese durch einen Absturz oder eine Löschung durch das Betriebssystem nicht serialisiert werden.
+Mit Xamarin.Forms 1.4 wurde die zusätzliche Methode `Application` in der `SavePropertiesAsync()`-Klasse eingeführt, die aufgerufen werden kann, um das `Properties`-Wörterbuch proaktiv beizubehalten. Dadurch können Sie Eigenschaften nach wichtigen Updates speichern anstatt zu riskieren, dass diese durch einen Absturz oder eine Löschung durch das Betriebssystem nicht serialisiert werden.
 
-Verweise zur Verwendung des `Properties`-Wörterbuchs finden Sie in den Kapiteln [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) und [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) des Buchs **Creating Mobile Apps with Xamarin.Forms (Erstellen mobiler Apps mit Xamarin.Forms)** und in den zugehörigen [Beispielen](https://github.com/xamarin/xamarin-forms-book-preview-2).
+Verweise zur Verwendung des `Properties`-Wörterbuchs finden Sie in den Kapiteln **6**, [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf) und [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) des Buchs [Creating Mobile Apps with Xamarin.Forms (Erstellen mobiler Apps mit Xamarin.Forms)](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) und in den zugehörigen [Beispielen](https://github.com/xamarin/xamarin-forms-book-preview-2).
 
 ## <a name="the-application-class"></a>Die Anwendungsklasse
 

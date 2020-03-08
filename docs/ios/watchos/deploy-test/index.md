@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028341"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918739"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Bereitstellen und Testen von watchos-apps mit xamarin
 
-## <a name="deployment-checklist"></a>Bereitstellungs Checkliste
+## <a name="deployment-checklist"></a>Checkliste für das Bereitstellen von
 
 Unabhängig davon, ob Sie die Bereitstellung für eine Testuhr oder das Hochladen in den App Store ausführen, müssen Sie die Schritte auf dieser Seite ausführen:
 
@@ -68,7 +68,7 @@ Für die Verteilung müssen Sie nur ein Verteilungs Bereitstellungs Profil für 
 
 <a name="App_Groups" />
 
-## <a name="app-groups"></a>App-Gruppen
+## <a name="app-groups"></a>Gruppen hinzufügen
 
 Sie können eine APP-Gruppe zum Freigeben von Daten zwischen Ihrer IOS-APP und der Watch-Erweiterung verwenden. Stellen Sie sicher, dass die Lösung über Folgendes verfügt:
 
@@ -76,7 +76,7 @@ Sie können eine APP-Gruppe zum Freigeben von Daten zwischen Ihrer IOS-APP und d
 
 - Aktivierte **App-Gruppen** (und die **App-Gruppen-ID**) in der IOS-APP und der **App-ID** der Überwachungs Erweiterung und der Datei " **Berechtigungen. plist**".
 
-### <a name="certificates-identifiers--profiles"></a>Zertifikate, Bezeichner & profile
+### <a name="certificates-identifiers--profiles"></a>Zertifikate, Bezeichner und Profile
 
 Um eine APP-Gruppe zu verwenden, erstellen Sie auf dem Bildschirm **App-Gruppen** einen Eintrag. Im folgenden Beispiel wird die Gruppe mit dem gleichen Reverse-DNS-Stil benannt, der häufig für App-IDs verwendet wird, jedoch mit dem `group.` Präfix (erforderlich):
 
@@ -100,7 +100,7 @@ Doppelklicken Sie, um die **Datei "** Berechtigungsdatei" in diesen Projekten zu
 - IOS-App-Projekt
 - Überwachungs Erweiterungsprojekt
 
-sein.![Der Berechtigungen. plist-Editor](images/entitlements-plist-sml.png)
+erforderlich.![Der Berechtigungen. plist-Editor](images/entitlements-plist-sml.png)
 
 Aktivieren Sie **keine** Berechtigungen im Überwachungs-App-Projekt. Es ist nicht erforderlich, auf der Überwachung selbst aktiviert zu werden.
 

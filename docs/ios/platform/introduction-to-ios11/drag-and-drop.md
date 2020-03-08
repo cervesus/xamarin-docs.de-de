@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/05/2017
 ms.openlocfilehash: 928936815c89dd74d0ad3775f59ea210702c8857
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032175"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915740"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>Drag & Drop in xamarin. IOS
 
@@ -95,7 +95,7 @@ Die Methoden auf dem Drop-Delegaten werden aufgerufen, wenn ein Zieh Vorgang üb
 - `DropSessionDidUpdate` –, während der Zieh Vorgang ausgeführt wird, wird diese Methode aufgerufen, um zu bestimmen, welche Aktion beabsichtigt ist. Informationen aus der über gezogenen Tabellenansicht, der Zieh Sitzung und dem möglichen Indexpfad können verwendet werden, um das Verhalten und das visuelle Feedback zu ermitteln, die dem Benutzer bereitgestellt werden.
 - `PerformDrop` – wenn der Benutzer den Löschvorgang abschließt (durch das Heben des Fingers), extrahiert diese Methode die gezogenen Daten und ändert die Tabellenansicht, um die Daten in einer neuen Zeile (oder Zeilen) hinzuzufügen.
 
-#### <a name="canhandledropsession"></a>Canlenker dropsession
+#### <a name="canhandledropsession"></a>CanHandleDropSession
 
 `CanHandleDropSession` gibt an, ob die Tabellen Sicht die gezogenen Daten akzeptieren kann. In diesem Code Ausschnitt wird `CanLoadObjects` verwendet, um zu bestätigen, dass diese Tabellenansicht Zeichen folgen Daten akzeptieren kann.
 
@@ -106,7 +106,7 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 }
 ```
 
-#### <a name="dropsessiondidupdate"></a>Dropsessiondidupdate
+#### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
 Die `DropSessionDidUpdate`-Methode wird wiederholt aufgerufen, während der Zieh Vorgang ausgeführt wird, um dem Benutzer visuelle Hinweise bereitzustellen.
 

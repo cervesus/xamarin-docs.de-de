@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/16/2018
 ms.openlocfilehash: 617c04e2f40af535fb381362a389524d693fad0b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025649"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913498"
 ---
 # <a name="local-notifications-on-android"></a>Lokale Benachrichtigungen unter Android
 
@@ -116,7 +116,7 @@ Die mit Android Oreo installierte **YouTube** -App listet zwei Benachrichtigungs
 
 Jede dieser Kategorien entspricht einem Benachrichtigungs Kanal. Die YouTube-App implementiert einen **Download Benachrichtigungs** Kanal und einen **allgemeinen Benachrichtigungs** Kanal. Der Benutzer kann auf **Benachrichtigungen herunterladen**tippen, wodurch der Bildschirm "Einstellungen" für den Download Benachrichtigungs Kanal der App angezeigt wird:
 
-[Bildschirm zum Herunterladen von Benachrichtigungen für die YouTube-App![](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
+[Bildschirm zum Herunterladen von Benachrichtigungen für die YouTube-App ![](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
 In diesem Bildschirm kann der Benutzer das Verhalten des Kanals zum **herunterladen** von Benachrichtigungen wie folgt ändern:
 
@@ -474,7 +474,7 @@ In diesem Format wird nur ein Auszug der Nachricht angezeigt, der durch zwei Pun
 
 Dieses erweiterte Layoutformat enthält auch den Zusammenfassungs Text am unteren Rand der Benachrichtigung. Die maximale Höhe der *Big Text* -Benachrichtigung beträgt 256 DP.
 
-Um eine *Big Text* -Benachrichtigung zu erstellen, instanziieren Sie wie zuvor ein `NotificationCompat.Builder` Objekt, und instanziieren Sie anschließend ein [bigtextstyle](xref:Android.App.Notification.BigTextStyle) -Objekt, und fügen Sie es dem `NotificationCompat.Builder`-Objekt hinzu. Im Folgenden ein Beispiel:
+Um eine *Big Text* -Benachrichtigung zu erstellen, instanziieren Sie wie zuvor ein `NotificationCompat.Builder` Objekt, und instanziieren Sie anschließend ein [bigtextstyle](xref:Android.App.Notification.BigTextStyle) -Objekt, und fügen Sie es dem `NotificationCompat.Builder`-Objekt hinzu. Beispiel:
 
 ```csharp
 // Instantiate the Big Text style:
@@ -570,7 +570,7 @@ Wenn der Benutzer die Benachrichtigung abzieht, wird er erweitert, um eine e-Mai
 
 ![Beispiel für erweiterte Posteingangs Benachrichtigung](local-notifications-images/21-inbox-expanded.png)
 
-Um eine *Posteingangs* Benachrichtigung zu erstellen, instanziieren Sie wie zuvor ein `NotificationCompat.Builder` Objekt, und fügen Sie dem `NotificationCompat.Builder`ein [inboxstyle](xref:Android.App.Notification.InboxStyle) -Objekt hinzu. Im Folgenden ein Beispiel:
+Um eine *Posteingangs* Benachrichtigung zu erstellen, instanziieren Sie wie zuvor ein `NotificationCompat.Builder` Objekt, und fügen Sie dem `NotificationCompat.Builder`ein [inboxstyle](xref:Android.App.Notification.InboxStyle) -Objekt hinzu. Beispiel:
 
 ```csharp
 // Instantiate the Inbox style:
@@ -592,7 +592,7 @@ builder.SetStyle (inboxStyle);
 
 Um dem Benachrichtigungs Text neue Textzeilen hinzuzufügen, müssen Sie die [AddLine](xref:Android.App.Notification.InboxStyle.AddLine*) -Methode des `InboxStyle` Objekts (die maximale Höhe der *Posteingang* Benachrichtigung ist 256 DP) aufzurufen. Beachten Sie, dass der Eingangsbox Stil im Gegensatz zum *groß Text* *Stil einzelne* Textzeilen im Benachrichtigungs Text unterstützt.
 
-Sie können auch den *Posteingangs* Stil für jede Benachrichtigung verwenden, die einzelne Textzeilen in einem erweiterten Format anzeigen muss. Beispielsweise kann der Benachrichtigungs Stil für die Eingangsbox verwendet werden, um mehrere ausstehende Benachrichtigungen in einer Zusammenfassungs Benachrichtigung zu kombinieren, &ndash; Sie eine e-How *-Benachrichtigung mit* neuen Benachrichtigungs Inhalten aktualisieren können (siehe [Aktualisieren eines Benachrichtigung](#updating-a-notification) oben), anstatt einen kontinuierlichen Stream neuer, größtenteils ähnlicher Benachrichtigungen zu generieren.
+Sie können auch den *Posteingangs* Stil für jede Benachrichtigung verwenden, die einzelne Textzeilen in einem erweiterten Format anzeigen muss. Beispielsweise kann der Benachrichtigungs Stil für die Eingangsbox verwendet werden, um mehrere ausstehende Benachrichtigungen in einer Zusammenfassungs Benachrichtigung zu kombinieren, &ndash; Sie eine e-How *-Benachrichtigung mit* neuen Zeilen von Benachrichtigungs Inhalten aktualisieren können (siehe [Aktualisieren einer obigen Benachrichtigung](#updating-a-notification) ), anstatt einen kontinuierlichen Stream neuer, größtenteils ähnlicher Benachrichtigungen zu generieren.
 
 ## <a name="configuring-metadata"></a>Konfigurieren von Metadaten
 
@@ -707,7 +707,7 @@ Die Funktion " *nicht stören* " (neu in Android 5,0) filtert Benachrichtigungen
 
 ![Bildschirm Switches nicht stören](local-notifications-images/26-do-not-disturb.png)
 
-Wenn der Benutzer konfiguriert ist, dass *nicht* alle Interrupts mit Ausnahme von Telefon anrufen blockiert werden (wie im obigen Screenshot dargestellt), ermöglicht Android, dass Benachrichtigungen mit der Kategorieeinstellung `Notification.CategoryCall` angezeigt werden, während das Gerät in *nicht gestört wird.* Modus. Beachten Sie, dass `Notification.CategoryAlarm` Benachrichtigungen niemals im Modus " *nicht stören* " blockiert werden.
+Wenn der Benutzer konfiguriert ist, dass *nicht* alle Interrupts mit Ausnahme von Telefon anrufen blockiert werden (wie im obigen Screenshot dargestellt), ermöglicht Android, dass Benachrichtigungen mit der Kategorieeinstellung `Notification.CategoryCall` angezeigt werden, während sich das Gerät im Modus " *nicht stören* " befindet. Beachten Sie, dass `Notification.CategoryAlarm` Benachrichtigungen niemals im Modus " *nicht stören* " blockiert werden.
 
 Das [localnotification](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications) -Beispiel veranschaulicht, wie mit `NotificationCompat.Builder` eine zweite Aktivität aus einer Benachrichtigung gestartet wird. Dieser Beispielcode wird in der exemplarischen Vorgehensweise [Verwenden von lokalen Benachrichtigungen in xamarin. Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) erläutert.
 
@@ -750,7 +750,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie lokale Benachrichtigungen in Android erstellt werden. Es wurde die Anatomie einer Benachrichtigung beschrieben. es wurde erläutert, wie Sie `NotificationCompat.Builder` zum Erstellen von Benachrichtigungen, zum Formatieren von Benachrichtigungen in großen Symbolen, in *Big Text*-, *Bild* -und *Posteingangs* Formaten und zum Festlegen von Benachrichtigungs metadateneinstellungen wie z. b. Priorität, Sichtbarkeit und Kategorie sowie das Starten einer Aktivität aus einer Benachrichtigung. Außerdem wurde in diesem Artikel beschrieben, wie diese Benachrichtigungseinstellungen mit den neuen Köpfen, dem Sperrbildschirm und den in Android 5,0 eingeführten Features *nicht gestört* werden. Schließlich haben Sie erfahren, wie Sie `NotificationCompat.Builder` verwenden, um die Benachrichtigungs Kompatibilität mit früheren Versionen von Android aufrechtzuerhalten.
+In diesem Artikel wurde erläutert, wie lokale Benachrichtigungen in Android erstellt werden. Es wurde die Anatomie einer Benachrichtigung beschrieben. es wurde erläutert, wie Sie `NotificationCompat.Builder` zum Erstellen von Benachrichtigungen, zum Formatieren von Benachrichtigungen in Form von großen Symbolen, *Big Text*, *Bild* -und *Posteingang* , zum Festlegen von Benachrichtigungs metadateneinstellungen wie Priorität, Sichtbarkeit und Kategorie und zum Starten einer Aktivität aus einer Benachrichtigung verwenden. Außerdem wurde in diesem Artikel beschrieben, wie diese Benachrichtigungseinstellungen mit den neuen Köpfen, dem Sperrbildschirm und den in Android 5,0 eingeführten Features *nicht gestört* werden. Schließlich haben Sie erfahren, wie Sie `NotificationCompat.Builder` verwenden, um die Benachrichtigungs Kompatibilität mit früheren Versionen von Android aufrechtzuerhalten.
 
 Richtlinien zum Entwerfen von Benachrichtigungen für Android finden Sie unter [Benachrichtigungen](https://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 

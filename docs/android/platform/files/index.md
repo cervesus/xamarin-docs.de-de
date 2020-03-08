@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
 ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020415"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914226"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>File Storage und Zugriff mit xamarin. Android
 
@@ -64,7 +64,7 @@ In diesem Dokument wird das interne Speicher Verzeichnis als _interner\_Speicher
 
 Um die Code Freigabe zu maximieren, sollten xamarin. Android-Apps (oder xamarin. Forms-Apps für xamarin. Android) die [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*) -Methode verwenden. In xamarin. Android gibt diese Methode eine Zeichenfolge für ein Verzeichnis zurück, das den gleichen Speicherort wie `Android.Content.Context.FilesDir`hat. Diese Methode verwendet eine Enumeration, `System.Environment.SpecialFolder`, die verwendet wird, um einen Satz von enumerierten Konstanten zu identifizieren, die die Pfade spezieller Ordner darstellen, die vom Betriebssystem verwendet werden. Nicht alle `System.Environment.SpecialFolder` Werte werden einem gültigen Verzeichnis in xamarin. Android zugeordnet. In der folgenden Tabelle wird beschrieben, welchen Pfad Sie für einen bestimmten Wert von `System.Environment.SpecialFolder`erwarten können:
 
-| System. Environment. SpecialFolder | Pfad  |
+| System.Environment.SpecialFolder | `Path`  |
 |----------------------|---|
 | `ApplicationData` | **_Interner\_Speicher_/.config** |
 | `Desktop` | **_Interner\_Speicher_/Desktop** |

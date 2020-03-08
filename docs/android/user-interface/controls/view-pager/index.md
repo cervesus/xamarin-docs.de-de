@@ -8,23 +8,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: c7718ef7a02365e9ca09f7491804cbadfa0c9a41
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940859"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914292"
 ---
 # <a name="viewpager"></a>ViewPager
 
 _Viewpager ist ein Layoutmanager, mit dem Sie die Gestural-Navigation implementieren können. Die Gestural-Navigation ermöglicht dem Benutzer das Schwenken von Links und rechts zum Durchlaufen von Datenseiten. In diesem Handbuch wird erläutert, wie die Gestural-Navigation mit viewpager mit und ohne Fragmente implementiert wird. Außerdem wird beschrieben, wie Seiten Indikatoren mithilfe von PagerTitleStrip und PagerTabStrip hinzugefügt werden._
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Ein häufiges Szenario bei der APP-Entwicklung ist die Notwendigkeit, Benutzern eine gesturale Navigation zwischen gleich geordneten Ansichten bereitzustellen. Bei dieser Vorgehensweise wird der Benutzer nach links oder rechts zum Zugriff auf Inhaltsseiten (z. b. in einem Setup-Assistenten oder einer Folien Anzeige). Sie können diese Schwenk Ansichten mit dem `ViewPager`-Widget erstellen, das in der [Android-Unterstützungs Bibliothek V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)verfügbar ist. Der `ViewPager` ist ein layoutwidget, das aus mehreren untergeordneten Sichten besteht, wobei jede untergeordnete Ansicht eine Seite im Layout darstellt: 
 
 [![Screenshots der treepager-App mit horizontaler wischen-Beispiel](images/01-intro-sml.png)](images/01-intro.png#lightbox)
 
-In der Regel wird `ViewPager` zusammen mit [Fragment](~/android/platform/fragments/index.md)-Klassen verwendet. In einigen Fällen sollten Sie jedoch `ViewPager` verwenden, ohne die Anwendung durch `Fragment`-Klassen komplexer zu gestalten.
+In der Regel wird `ViewPager` in Verbindung mit [Fragmenten](~/android/platform/fragments/index.md)verwendet. Es gibt jedoch einige Situationen, in denen Sie `ViewPager` ohne die zusätzliche Komplexität `Fragment`s verwenden möchten.
 
 in `ViewPager` wird ein Adapter Muster verwendet, um die anzuzeigenden Ansichten anzuzeigen. Der hier verwendete Adapter ähnelt konzeptionell der von [recyclerview](~/android/user-interface/layouts/recycler-view/index.md) &ndash; Sie eine Implementierung von `PagerAdapter` bereitstellen, um die Seiten zu generieren, die `ViewPager` dem Benutzer angezeigt werden. Die von `ViewPager` angezeigten Seiten können `View`s oder `Fragment`s sein. Wenn `View`s angezeigt werden, werden die `PagerAdapter` Basisklasse der Adapter Unterklassen von Android Unterklassen angezeigt. Wenn `Fragment`s angezeigt werden, werden die `FragmentPagerAdapter`des Adapters Unterklassen von Android. Die Android-Unterstützungs Bibliothek umfasst auch `FragmentPagerAdapter` (eine Unterklasse von `PagerAdapter`), um die Details zum Verbinden von `Fragment`s mit Daten zu unterstützen. 
 
@@ -35,11 +35,11 @@ In diesem Leitfaden werden beide Ansätze veranschaulicht:
 
 - In [viewpager mit Fragmenten](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)wird eine etwas komplexere app " [Flash cardpager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager) " entwickelt, um zu veranschaulichen, wie `ViewPager` mit `Fragment`s verwendet wird, um eine APP zu erstellen, die mathematische Probleme als Flash Karten darstellt und auf Benutzereingaben antwortet. 
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Wenn Sie `ViewPager` im App-Projekt verwenden möchten, müssen Sie das Paket für die [Android-Unterstützungs Bibliothek V4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) installieren. Weitere Informationen zum Installieren von nuget-Paketen finden Sie unter Exemplarische Vorgehensweise [: Einschließen eines nuget-Pakets in Ihr Projekt](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). 
 
-## <a name="architecture"></a>Architektur
+## <a name="architecture"></a>Aufbau
 
 Zum Implementieren der Gestural-Navigation mit `ViewPager`werden drei Komponenten verwendet:
 
@@ -73,7 +73,7 @@ Es gibt zwei Sichten, die diese Navigationsinformationen für Sie liefern könne
 
 In dieser Anleitung wird veranschaulicht, wie Sie `ViewPager`-, Adapter-und Indikator-App-Komponenten immplement und diese zur Unterstützung der Gestural-Navigation integrieren. 
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Treepager (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)
 - [Flashcardpager (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)

@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 9955b68346c74435a3a141c69d02e1bec5856bd3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759511"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915898"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>Anzeigen von SkiaSharp-bitmaps
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Das Subjekt der Bitmaps, SkiaSharp wurde eingeführt, in diesem Artikel  **[Bitmap-Grundlagen in SkiaSharp](../basics/bitmaps.md)** . Dieser Artikel wurde gezeigt, drei Möglichkeiten zum Laden von Bitmaps und drei Möglichkeiten zum Anzeigen von Bitmaps. In diesem Artikel werden die Techniken zum Laden von Bitmaps und geht tiefer in die Verwendung der `DrawBitmap` Methoden `SKCanvas`.
+Der Betreff von skiasharp-Bitmaps wurde im Artikel **[Bitmap-Grundlagen in skiasharp](../basics/bitmaps.md)** vorgestellt. Dieser Artikel wurde gezeigt, drei Möglichkeiten zum Laden von Bitmaps und drei Möglichkeiten zum Anzeigen von Bitmaps. Dieser Artikel befasst sich mit den Techniken zum Laden von Bitmaps und vertieft die Verwendung der `DrawBitmap` Methoden `SKCanvas`.
 
-![Anzeigen von Beispiel](displaying-images/DisplayingSample.png "Beispiel anzeigen")
+![Anzeigen von Beispielen](displaying-images/DisplayingSample.png "Anzeigen von Beispielen")
 
-Die `DrawBitmapLattice` und `DrawBitmapNinePatch` Methoden sind in diesem Artikel erläuterten  **[segmentierte Anzeige der SkiaSharp-Bitmaps](segmented.md)** .
+Die Methoden `DrawBitmapLattice` und `DrawBitmapNinePatch` werden im Artikel **[segmentierte Anzeige von skiasharp-Bitmaps](segmented.md)** erläutert.
 
-Beispiele auf dieser Seite stammen aus der **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** Anwendung. Wählen Sie auf der Startseite der Anwendung **SkiaSharp Bitmaps**, und navigieren Sie zu der **Anzeigen von Bitmaps** Abschnitt.
+Die Beispiele auf dieser Seite stammen aus der Anwendung **[skiasharpformsdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** . Wählen Sie auf der Startseite dieser Anwendung **skiasharp-Bitmaps**aus, und navigieren Sie dann zum Abschnitt **Anzeigen von Bitmaps** .
 
 ## <a name="loading-a-bitmap"></a>Laden eine bitmap
 
@@ -34,23 +34,23 @@ Eine Bitmap, die in der Regel von einer SkiaSharp-Anwendung verwendet stammt aus
 - Aus einer Ressource in die ausführbare Datei eingebettet
 - Aus der Fotobibliothek des Benutzers
 
-Es ist auch möglich, für eine Anwendung SkiaSharp, erstellen eine neue Bitmap, und klicken Sie dann darauf zeichnen oder der Bitmap-Bits algorithmisch festgelegt. Diese Techniken werden in den Artikeln erläutert **[erstellen und Zeichnen auf SkiaSharp Bitmaps](drawing.md)** und **[Bitmap-Pixel für den Zugriff auf SkiaSharp](pixel-bits.md)** .
+Es ist auch möglich, für eine Anwendung SkiaSharp, erstellen eine neue Bitmap, und klicken Sie dann darauf zeichnen oder der Bitmap-Bits algorithmisch festgelegt. Diese Techniken werden in den Artikeln **[Erstellen und Zeichnen von skiasharp-Bitmaps](drawing.md)** und **[zugreifen auf skiasharp-Bitmap-Pixel](pixel-bits.md)** erläutert.
 
-In den folgenden drei Codebeispielen, laden Sie eine Bitmap, die Klasse wird davon ausgegangen, dass ein Feld des Typs enthalten `SKBitmap`:
+In den folgenden drei Codebeispielen für das Laden einer Bitmap wird angenommen, dass die-Klasse ein Feld vom Typ "`SKBitmap`" enthält:
 
 ```csharp
 SKBitmap bitmap;
 ```
 
-Wie der Artikel **[Bitmap-Grundlagen in SkiaSharp](../basics/bitmaps.md)** erwähnt, ist die beste Möglichkeit zum Laden einer Bitmaps über das Internet mit dem [ `HttpClient` ](xref:System.Net.Http.HttpClient) Klasse. Eine einzelne Instanz der Klasse kann als Feld definiert werden:
+Da der Artikel **[Bitmap-Grundlagen in skiasharp](../basics/bitmaps.md)** besagt, ist die beste Möglichkeit, eine Bitmap über das Internet zu laden, mit der [`HttpClient`](xref:System.Net.Http.HttpClient) -Klasse. Eine einzelne Instanz der Klasse kann als Feld definiert werden:
 
 ```csharp
 HttpClient httpClient = new HttpClient();
 ```
 
-Bei Verwendung `HttpClient` mit iOS und Android-Anwendungen, sollten Sie Projekteigenschaften festlegen, wie beschrieben in den Dokumenten auf  **[Transport Layer Security (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** .
+Wenn Sie `HttpClient` mit IOS-und Android-Anwendungen verwenden, möchten Sie die Projekteigenschaften wie in den Dokumenten auf **[Transport Layer Security (TLS) 1,2](~/cross-platform/app-fundamentals/transport-layer-security.md)** beschrieben festlegen.
 
-Code, der verwendet `HttpClient` beinhaltet häufig die `await` Operator, sodass es im befinden muss ein `async` Methode:
+Code, der `HttpClient` verwendet, umfasst häufig den `await`-Operator, sodass er sich in einer `async`-Methode befinden muss:
 
 ```csharp
 try
@@ -71,13 +71,13 @@ catch
 }
 ```
 
-Beachten Sie, dass die `Stream` -Objekts vom `GetStreamAsync` in kopiert eine `MemoryStream`. Android lässt nicht zu den `Stream` aus `HttpClient` durch den Hauptthread in asynchronen Methoden außer verarbeitet werden. 
+Beachten Sie, dass das `Stream` Objekt, das von `GetStreamAsync` abgerufen wird, in eine `MemoryStream`kopiert wird. Android lässt nicht zu, dass die `Stream` von `HttpClient` vom Haupt Thread verarbeitet werden, außer in asynchronen Methoden. 
 
-Der [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) erledigt viele Aufgaben: Das `Stream` an das Objekt über gegebene Objekt verweist auf einen Speicherblock, der eine vollständige Bitmap in einem der allgemeinen Bitmapdateiformate (im allgemeinen JPEG, PNG oder GIF) enthält. Die `Decode` Methode bestimmen Sie das Format muss, und die Bitmapdatei klicken Sie dann in SkiaSharps-interne Bitmap-Format zu decodieren.
+Der [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) führt viel Arbeit aus: das an ihn über gegebene `Stream` Objekt verweist auf einen Speicherblock, der eine vollständige Bitmap in einem der allgemeinen Bitmapdateiformate (im allgemeinen JPEG, PNG oder GIF) enthält. Die `Decode`-Methode muss das Format bestimmen und dann die Bitmapdatei in das interne Bitmap-Format von skiasharp decodieren.
 
-Nach dem der Code ruft `SKBitmap.Decode`, es werden möglicherweise ungültig. die `CanvasView` , damit die `PaintSurface` Handler kann anzeigen, die neu geladene Bitmap.
+Nachdem der Code `SKBitmap.Decode`aufgerufen hat, wird er wahrscheinlich die `CanvasView` ungültig machen, damit der `PaintSurface`-Handler die neu geladene Bitmap anzeigen kann.
 
-Die zweite Möglichkeit zum Laden einer Bitmaps wird durch die einzelnen Plattformprojekte dazu die Bitmap als eingebettete Ressource in der .NET Standard-Bibliothek verwiesen. Eine Ressource, die ID wird an die [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) Methode. Diese Ressourcen-ID besteht aus den Assemblynamen, Ordnernamen und Dateinamen der Ressource durch Punkte getrennt sind:
+Die zweite Möglichkeit zum Laden einer Bitmaps wird durch die einzelnen Plattformprojekte dazu die Bitmap als eingebettete Ressource in der .NET Standard-Bibliothek verwiesen. Eine Ressourcen-ID wird an die [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) -Methode übermittelt. Diese Ressourcen-ID besteht aus den Assemblynamen, Ordnernamen und Dateinamen der Ressource durch Punkte getrennt sind:
 
 ```csharp
 string resourceID = "assemblyName.folderName.fileName";
@@ -92,7 +92,7 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 Bitmap-Dateien können auch als Ressourcen im plattformprojekt einzelne für iOS, Android und die universelle Windows-Plattform (UWP) gespeichert werden. Laden diese Bitmaps erfordert jedoch Code, der im plattformprojekt befindet.
 
-Ein dritter Ansatz beim Abrufen einer Bitmaps wird von der Bildbibliothek des Benutzers. Der folgende Code verwendet einen Abhängigkeitsdienst, der in enthalten ist das **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** Anwendung. Die **SkiaSharpFormsDemo** .NET Standard-Bibliothek enthält die `IPhotoLibrary` Schnittstelle, während jede der Plattformprojekte enthält eine `PhotoLibrary` -Klasse, die diese Schnittstelle implementiert.
+Ein dritter Ansatz beim Abrufen einer Bitmaps wird von der Bildbibliothek des Benutzers. Im folgenden Code wird ein Abhängigkeits Dienst verwendet, der in der **[skiasharpformsdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** -Anwendung enthalten ist. Die **skiasharpformsdemo** -.NET Standard Bibliothek umfasst die `IPhotoLibrary` Schnittstelle, während jedes der Platt Form Projekte eine `PhotoLibrary` Klasse enthält, die diese Schnittstelle implementiert.
 
 ```csharp
 IPhotoicturePicker picturePicker = DependencyService.Get<IPhotoLibrary>();
@@ -107,18 +107,18 @@ using (Stream stream = await picturePicker.GetImageStreamAsync())
 }
 ```
 
-In der Regel solchen Code auch erklärt die `CanvasView` , damit die `PaintSurface` Handler kann die neue Bitmap angezeigt.
+Im Allgemeinen wird der `CanvasView` durch solchen Code ebenfalls für ungültig erklärt, sodass der `PaintSurface` Handler die neue Bitmap anzeigen kann.
 
-Die `SKBitmap` -Klasse definiert einige nützliche Eigenschaften, einschließlich [ `Width` ](xref:SkiaSharp.SKBitmap.Width) und [ `Height` ](xref:SkiaSharp.SKBitmap.Height), der die Pixeldimensionen der Bitmap als auch viele Methoden, einschließlich anzeigen Methoden zum Erstellen von Bitmaps, um sie zu kopieren, und um Pixelbits verfügbar zu machen. 
+Die `SKBitmap`-Klasse definiert mehrere nützliche Eigenschaften, einschließlich [`Width`](xref:SkiaSharp.SKBitmap.Width) und [`Height`](xref:SkiaSharp.SKBitmap.Height), die die Pixel Dimensionen der Bitmap sowie viele Methoden, einschließlich der Methoden zum Erstellen von Bitmaps, zum Kopieren und zum verfügbar machen der Pixel Bits, enthalten. 
 
 ## <a name="displaying-in-pixel-dimensions"></a>Anzeigen von in die Pixeldimensionen
 
-Die SkiaSharp [ `Canvas` ](xref:SkiaSharp.SKCanvas) Klasse definiert vier `DrawBitmap` Methoden. Diese Methoden ermöglichen die Bitmaps auf zwei grundlegend verschiedene Arten angezeigt werden: 
+Die skiasharp- [`Canvas`](xref:SkiaSharp.SKCanvas) -Klasse definiert vier `DrawBitmap`-Methoden. Diese Methoden ermöglichen die Bitmaps auf zwei grundlegend verschiedene Arten angezeigt werden: 
 
-- Angeben einer `SKPoint` Wert (oder separate `x` und `y` Werte) werden Sie in die Pixeldimensionen die Bitmap angezeigt. Die Pixel der Bitmap werden direkt in Pixel der Videoanzeige zugeordnet.
+- Wenn Sie einen `SKPoint` Wert angeben (oder separate Werte für `x` und `y`), wird die Bitmap in ihren Pixel Dimensionen angezeigt. Die Pixel der Bitmap werden direkt in Pixel der Videoanzeige zugeordnet.
 - Angeben eines Rechtecks bewirkt, dass die Bitmap, auf die Größe und Form des Rechtecks gestreckt wird. 
 
-Anzeigen eine Bitmap in die Pixeldimensionen mit [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint)) mit einer `SKPoint` Parameter oder [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint)) mit separaten `x` und `y` Parameter:
+Sie zeigen eine Bitmap in ihren Pixel Dimensionen an, indem Sie [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint)) mit einem `SKPoint`-Parameter oder [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint)) mit separaten `x`-und `y`-Parametern verwenden:
 
 ```csharp
 DrawBitmap(SKBitmap bitmap, SKPoint pt, SKPaint paint = null)
@@ -128,7 +128,7 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 Diese beiden Methoden sind funktional identisch. Der angegebene Punkt gibt den Speicherort der oberen linken Ecke der Bitmap relativ zur Leinwand an. Da die Pixel-Auflösung von mobilen Geräten so hoch ist, werden kleinere Bitmaps in der Regel ziemlich winzig auf diesen Geräten angezeigt.
 
-Der optionale `SKPaint` Parameter können Sie die Bitmap Transparenz mit anzuzeigen. Zu diesem Zweck erstellen Sie eine `SKPaint` Objekt, und legen die `Color` -Eigenschaft auf eine `SKColor` Wert mit einem Alpha-Kanal kleiner als 1. Zum Beispiel:
+Mit dem optionalen `SKPaint`-Parameter können Sie die Bitmap mithilfe von Transparenz anzeigen. Erstellen Sie zu diesem Zweck ein `SKPaint` Objekt, und legen Sie die `Color`-Eigenschaft auf einen beliebigen `SKColor` Wert mit einem Alphakanal unter 1 fest. Beispiel:
 
 ```csharp
 paint.Color = new SKColor(0, 0, 0, 0x80);
@@ -140,11 +140,11 @@ Der 0 x 80, der als letztes Argument übergeben, gibt die Transparenz von 50 % a
 paint.Color = SKColors.Red.WithAlpha(0x80);
 ```
 
-Die Farbe an sich ist jedoch nicht relevant. Nur der Alphakanal wird untersucht, bei der Verwendung der `SKPaint` -Objekt in ein `DrawBitmap` aufrufen.
+Die Farbe an sich ist jedoch nicht relevant. Nur der Alphakanal wird untersucht, wenn Sie das `SKPaint`-Objekt in einem `DrawBitmap`-Befehl verwenden.
 
-Die `SKPaint` Objekt spielt ebenfalls eine Rolle beim Anzeigen von Bitmaps mit Füllmethoden oder Auswirkungen zu filtern. Diese werden in den Artikeln veranschaulicht [SkiaSharp-Zusammensetzung und Blend-Modi](../effects/blend-modes/index.md) und [SkiaSharp Bildfilter](../effects/image-filters.md).
+Das `SKPaint`-Objekt spielt außerdem eine Rolle, wenn Bitmaps mithilfe von Blend-Modi oder Filtereffekten angezeigt werden. Diese werden in den Artikeln [skiasharp Zusammensetzung und Blend-Modi](../effects/blend-modes/index.md) und [skiasharp-Bild Filtern](../effects/image-filters.md)veranschaulicht.
 
-Die **Pixeldimensionen** auf der Seite die **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** Beispielprogramm zeigt eine Bitmapressource, die 320 Pixel breit und 240 Pixel hoch ist:
+Die Seite **Pixel Dimensionen** im Beispielprogramm **[skiasharpformsdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** zeigt eine Bitmap-Ressource an, die 320 Pixel breit und 240 Pixel hoch ist:
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -186,15 +186,15 @@ public class PixelDimensionsPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler Rechenzentren die Bitmap durch das berechnen `x` und `y` Werte basierend auf die Pixeldimensionen der Anzeigeoberfläche und die Pixeldimensionen der Bitmap:
+Der `PaintSurface` Handler zentriert die Bitmap, indem `x` und `y` Werte basierend auf den Pixel Dimensionen der Anzeige Oberfläche und den Pixel Dimensionen der Bitmap berechnet werden:
 
-[![Pixeldimensionen](displaying-images/PixelDimensions.png "Pixeldimensionen")](displaying-images/PixelDimensions-Large.png#lightbox)
+[![Pixel Dimensionen](displaying-images/PixelDimensions.png "Pixel Dimensionen")](displaying-images/PixelDimensions-Large.png#lightbox)
 
 Wenn möchte, dass die Anwendung in der oberen linken Ecke der Bitmap anzuzeigen, übergeben sie einfach Koordinaten (0, 0). 
 
 ## <a name="a-method-for-loading-resource-bitmaps"></a>Eine Methode zum Laden von Bitmaps für Ressource
 
-Viele der Beispiele an, Bitmapressourcen geladen werden müssen. Die statische `BitmapExtensions` -Klasse in der **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** Lösung enthält eine Methode, die helfen:
+Viele der Beispiele an, Bitmapressourcen geladen werden müssen. Die statische `BitmapExtensions`-Klasse in der **[skiasharpformsdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** -Projekt Mappe enthält eine Methode, um Folgendes zu unterstützen:
 
 ```csharp
 static class BitmapExtensions
@@ -212,13 +212,13 @@ static class BitmapExtensions
 }
 ```
 
-Beachten Sie, dass die `Type` Parameter. Dies kann sein, die `Type` Objekt beliebigen Typs in der Assembly, die die Bitmapressource speichert zugeordnet.
+Beachten Sie den `Type`-Parameter. Dabei kann es sich um das `Type` Objekt handeln, das einem beliebigen Typ in der Assembly zugeordnet ist, die die Bitmapressource speichert.
 
-Dies `LoadBitmapResource` Methode in alle folgenden Samplings, die Bitmapressourcen erfordern, verwendet werden.
+Diese `LoadBitmapResource` Methode wird in allen nachfolgenden Beispielen verwendet, die Bitmapressourcen erfordern.
 
 ## <a name="stretching-to-fill-a-rectangle"></a>Strecken, um ein Rechteck zu füllen.
 
-Die `SKCanvas` -Klasse definiert außerdem eine [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode, die Bitmap um ein Rechteck und ein anderes rendert [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode, eine rechteckige Teilmenge der Bitmap auf rendert, eine Rechteck:
+Die `SKCanvas`-Klasse definiert außerdem eine [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint)) Methode, die die Bitmap in ein Rechteck rendert, und eine weitere [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode, die eine rechteckige Teilmenge der Bitmap in einem Rechteck rendert:
 
 ```
 DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
@@ -226,9 +226,9 @@ DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 DrawBitmap(SKBitmap bitmap, SKRect source, SKRect dest, SKPaint paint = null)
 ```
 
-In beiden Fällen-Bitmap wird gestreckt, um das Rechteck mit dem Namen füllen `dest`. Bei der zweiten Methode die `source` Rechteck ermöglicht die Auswahl eine Teilmenge der Bitmap. Die `dest` Rechteck ist relativ zum Ausgabegerät; die `source` Rechteck ist relativ zum der Bitmap.
+In beiden Fällen wird die Bitmap gestreckt, um das Rechteck mit dem Namen `dest`auszufüllen. In der zweiten Methode können Sie mithilfe des `source` Rechtecks eine Teilmenge der Bitmap auswählen. Das `dest` Rechteck ist relativ zum Ausgabegerät. Das `source` Rechteck ist relativ zur Bitmap.
 
-Die **füllen Rechteck** Seite zeigt die erste dieser beiden Methoden mit der gleichen Bitmap verwendet im vorangehenden Beispiel in einem Rechteck die gleiche Größe des Zeichenbereichs: 
+Die Seite **Füll Rechteck** zeigt die ersten dieser beiden Methoden an, indem die gleiche Bitmap angezeigt wird, die im vorherigen Beispiel in einem Rechteck mit derselben Größe wie der Canvas verwendet wurde: 
 
 ```csharp
 public class FillRectanglePage : ContentPage
@@ -258,15 +258,15 @@ public class FillRectanglePage : ContentPage
 }
 ```
 
-Beachten Sie die Verwendung der neuen `BitmapExtensions.LoadBitmapResource` Methode zum Festlegen der `SKBitmap` Feld. Das Zielrechteck aus einer der [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect) Eigenschaft `SKImageInfo`, beschreibt die Größe der Anzeigeoberfläche:
+Beachten Sie die Verwendung der neuen `BitmapExtensions.LoadBitmapResource`-Methode, um das `SKBitmap` Feld festzulegen. Das Ziel Rechteck wird aus der [`Rect`](xref:SkiaSharp.SKImageInfo.Rect) -Eigenschaft von `SKImageInfo`abgerufen, die die Größe der Anzeige Oberfläche einschränkt:
 
-[![Ausfüllen des Rechtecks](displaying-images/FillRectangle.png "Ausfüllen des Rechtecks")](displaying-images/FillRectangle-Large.png#lightbox)
+[![Füll Rechteck](displaying-images/FillRectangle.png "Füll Rechteck")](displaying-images/FillRectangle-Large.png#lightbox)
 
-Dies ist normalerweise _nicht_ erwünscht. Durch anders in horizontaler und vertikaler Richtung gestreckt wird, wird das Bild verzerrt. Wenn Sie eine Bitmap in einen anderen Wert als die Größe in Pixel anzeigen zu können, möchten in der Regel die Bitmap Originalseitenverhältnis beibehalten.
+Dies ist in der Regel _nicht_ das gewünschte. Durch anders in horizontaler und vertikaler Richtung gestreckt wird, wird das Bild verzerrt. Wenn Sie eine Bitmap in einen anderen Wert als die Größe in Pixel anzeigen zu können, möchten in der Regel die Bitmap Originalseitenverhältnis beibehalten.
 
 ## <a name="stretching-while-preserving-the-aspect-ratio"></a>Dehnen von Beibehaltung des Seitenverhältnisses
 
-Auch bekannt als stretching einer Bitmaps beim unter Beibehaltung des Seitenverhältnisses ist ein Prozess _einheitliche Skalierung_. Dieser Begriff Lösungsansätze algorithmische. Eine mögliche Lösung wird angezeigt, der **einheitliche Skalierung** Seite:
+Das Strecken einer Bitmap unter Beibehaltung des Seitenverhältnisses ist ein Prozess, der auch als _einheitliche Skalierung_bezeichnet wird. Dieser Begriff Lösungsansätze algorithmische. Eine mögliche Lösung wird auf der Seite " **einheitliche Skalierung** " angezeigt:
 
 ```csharp
 public class UniformScalingPage : ContentPage
@@ -303,25 +303,25 @@ public class UniformScalingPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Ereignishandler berechnet eine `scale` Faktor, der die mindestens das Verhältnis zwischen der Anzeigebreite und Höhe der Bitmap-Breite und Höhe entspricht. Die `x` und `y` Werte können dann für zentrieren skalierte Bitmap in der Anzeigebreite und Höhe berechnet werden. Das Zielrechteck verfügt über einen oberen linken Ecke des `x` und `y` und einer unteren rechten Ecke der diese Werte sowie die skalierte Breite und Höhe der Bitmap:
+Der `PaintSurface`-Handler berechnet einen `scale` Faktor, bei dem es sich um das minimale Verhältnis der Anzeigebreite und Höhe zur bitmapbreite und-Höhe handelt. Die Werte für `x` und `y` können dann für das Zentrieren der skalierten Bitmap innerhalb der Anzeigebreite und-Höhe berechnet werden. Das Ziel Rechteck hat eine linke obere Ecke von `x` und `y` sowie eine untere rechte Ecke dieser Werte zuzüglich der skalierten Breite und Höhe der Bitmap:
 
-[![Einheitliche Skalierung](displaying-images/UniformScaling.png "einheitliche Skalierung")](displaying-images/UniformScaling-Large.png#lightbox)
+[![Einheitliche Skalierung](displaying-images/UniformScaling.png "Einheitliche Skalierung")](displaying-images/UniformScaling-Large.png#lightbox)
 
 Aktivieren Sie das Telefon seitwärts drehen, um die Bitmap gestreckt, um Sie zu diesem Bereich finden Sie unter:
 
-[![Skalieren von Daten im Querformat mit einheitlicher](displaying-images/UniformScaling-Landscape.png "einheitliche Skalierung Querformat")](displaying-images/UniformScaling-Landscape-Large.png#lightbox)
+[![Einheitliche Skalierungs Landschaft](displaying-images/UniformScaling-Landscape.png "Einheitliche Skalierungs Landschaft")](displaying-images/UniformScaling-Landscape-Large.png#lightbox)
 
-Der Vorteil der Verwendung dieser `scale` Faktor ist offensichtlich, wenn Sie einen etwas anderen Algorithmus implementieren möchten. Angenommen Sie, Sie möchten die Bitmap-Seitenverhältnis beibehalten, aber auch das Zielrechteck auszufüllen. Die einzige Möglichkeit, dies möglich ist, ist Teil des Bilds zuschneiden, aber Sie können diesen Algorithmus implementieren, durch einfaches ändern `Math.Min` zu `Math.Max` im obigen Code. Hier ist das Ergebnis: 
+Der Vorteil der Verwendung dieses `scale` Faktors wird offensichtlich, wenn Sie einen etwas anderen Algorithmus implementieren möchten. Angenommen Sie, Sie möchten die Bitmap-Seitenverhältnis beibehalten, aber auch das Zielrechteck auszufüllen. Dies ist nur möglich, indem Sie einen Teil des Bilds zuschneiden, aber Sie können diesen Algorithmus einfach implementieren, indem Sie `Math.Max` `Math.Min` im obigen Code ändern. Das Ergebnis lautet wie folgt: 
 
-[![Einheitliche Skalierung Alternative](displaying-images/UniformScaling-Alternative.png "Alternative einheitliche Skalierung")](displaying-images/UniformScaling-Alternative-Large.png#lightbox)
+[![Einheitliche Skalierungs Alternative](displaying-images/UniformScaling-Alternative.png "Einheitliche Skalierungs Alternative")](displaying-images/UniformScaling-Alternative-Large.png#lightbox)
 
 Die Bitmap-Seitenverhältnis wird beibehalten, jedoch Bereiche, links und rechts neben die Bitmap zugeschnitten sind.
 
 ## <a name="a-versatile-bitmap-display-function"></a>Eine vielseitige Bitmap-Anzeige-Funktion
 
-XAML-basierte programmierumgebungen (z. B. UWP- und Xamarin.Forms) haben eine Funktion zum Erweitern oder verkleinern, Bitmaps und gleichzeitig ihre Seitenverhältnisse. Obwohl dieses Feature von SkiaSharp nicht enthalten ist, können Sie es selbst implementieren. Die `BitmapExtensions` Klasse enthalten, die der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Anwendung zeigt wie. Die Klasse definiert zwei neue `DrawBitmap` Methoden, die die Seitenverhältnis Berechnung ausführen. Diese neuen Methoden sind Erweiterungsmethoden `SKCanvas`.
+XAML-basierte programmierumgebungen (z. B. UWP- und Xamarin.Forms) haben eine Funktion zum Erweitern oder verkleinern, Bitmaps und gleichzeitig ihre Seitenverhältnisse. Obwohl dieses Feature von SkiaSharp nicht enthalten ist, können Sie es selbst implementieren. Die `BitmapExtensions`-Klasse, die in der [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Anwendung enthalten ist, zeigt, wie. Die-Klasse definiert zwei neue `DrawBitmap` Methoden, die die Berechnung des Seitenverhältnisses ausführen. Diese neuen Methoden sind Erweiterungs Methoden von `SKCanvas`.
 
-Die neue `DrawBitmap` Methoden enthalten einen Parameter vom Typ `BitmapStretch`, eine Enumeration, die definiert, der **BitmapExtensions.cs** Datei:
+Die neuen `DrawBitmap` Methoden enthalten einen Parameter vom Typ "`BitmapStretch`", eine in der **BitmapExtensions.cs** -Datei definierte Enumeration:
 
 ```csharp
 public enum BitmapStretch
@@ -335,9 +335,9 @@ public enum BitmapStretch
 }
 ```
 
-Die `None`, `Fill`, `Uniform`, und `UniformToFill` Mitglieder sind identisch mit denen auf der UWP [ `Stretch` ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) Enumeration. Der ähnlich wie Xamarin.Forms [ `Aspect` ](xref:Xamarin.Forms.Aspect) Enumeration definiert Member `Fill`, `AspectFit`, und `AspectFill`.
+Die `None`-, `Fill`-, `Uniform`-und `UniformToFill`-Member sind identisch mit denen in der UWP- [`Stretch`](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) -Enumeration. Die ähnliche xamarin. Forms- [`Aspect`](xref:Xamarin.Forms.Aspect) -Enumeration definiert Member `Fill`, `AspectFit`und `AspectFill`.
 
-Die **einheitliche Skalierung** Seite oben zentriert die Bitmap innerhalb des Rechtecks, aber Sie sollten die anderen Optionen, z. B. die Bitmap auf der linken oder rechten Seite des Rechtecks oder oben oder unten positionieren. Dies ist der Zweck der `BitmapAlignment` Enumeration:
+Die oben gezeigte **einheitliche Skalierungs** Seite zentriert die Bitmap innerhalb des Rechtecks, aber Sie möchten möglicherweise andere Optionen, z. b. das Positionieren der Bitmap auf der linken oder rechten Seite des Rechtecks oder das obere oder untere Ende. Dies ist der Zweck der `BitmapAlignment`-Enumeration:
 
 ```csharp
 public enum BitmapAlignment
@@ -348,9 +348,9 @@ public enum BitmapAlignment
 }
 ```
 
-Ausrichtungseinstellungen wirken sich nicht bei der Verwendung mit `BitmapStretch.Fill`.
+Ausrichtungs Einstellungen haben keine Auswirkungen, wenn Sie mit `BitmapStretch.Fill`verwendet werden.
 
-Die erste `DrawBitmap` Erweiterungsfunktion enthält, ein Zielrechteck, aber keine Quellrechtecks. Standardwerte definiert wurden, sodass, wenn die Bitmap zentriert werden soll, Sie nur angeben, müssen eine `BitmapStretch` Member:
+Die erste `DrawBitmap` Erweiterungs Funktion enthält ein Ziel Rechteck, aber kein Quell Rechteck. Standardwerte werden definiert, sodass Sie, wenn Sie die Bitmap zentriert haben möchten, nur einen `BitmapStretch` Member angeben müssen:
 
 ```csharp
 static class BitmapExtensions
@@ -394,7 +394,7 @@ static class BitmapExtensions
 }
 ```
 
-Der Hauptzweck dieser Methode wird zum Berechnen von eines Skalierungsfaktor, der mit dem Namen `scale` , wird dann auf die Bitmap-Breite und Höhe angewendet, beim Aufrufen der `CalculateDisplayRect` Methode. Dies ist die Methode, die ein Rechteck für die Anzeige der Bitmap, die basierend auf der horizontalen und vertikalen Ausrichtung berechnet:
+Der Hauptzweck dieser Methode besteht darin, einen Skalierungsfaktor namens `scale` zu berechnen, der dann beim Aufrufen der `CalculateDisplayRect`-Methode auf die Breite und Höhe der Bitmap angewendet wird. Dies ist die Methode, die ein Rechteck für die Anzeige der Bitmap, die basierend auf der horizontalen und vertikalen Ausrichtung berechnet:
 
 ```csharp
 static class BitmapExtensions
@@ -442,7 +442,7 @@ static class BitmapExtensions
 }
 ```
 
-Die `BitmapExtensions` -Klasse enthält eine zusätzliche `DrawBitmap` Methode mit einem Quellrechteck für eine Teilmenge der Bitmap angibt. Diese Methode ist ähnlich wie bei der ersten, mit der Ausnahme, dass der Skalierungsfaktor auf Grundlage berechnet wird den `source` Rechteck, und dann auf die `source` Rechteck im Aufruf von `CalculateDisplayRect`:
+Die `BitmapExtensions`-Klasse enthält eine zusätzliche `DrawBitmap`-Methode mit einem Quell Rechteck zum Angeben einer Teilmenge der Bitmap. Diese Methode ähnelt der ersten, mit der Ausnahme, dass der Skalierungsfaktor auf der Grundlage des `source` Rechtecks berechnet und dann auf das `source` Rechteck im `CalculateDisplayRect`aufgerufen wird:
 
 ```csharp
 static class BitmapExtensions
@@ -486,7 +486,7 @@ static class BitmapExtensions
 }
 ```
 
-Die erste dieser beiden neuen `DrawBitmap` Methoden wird veranschaulicht, der **Skalierung Modi** Seite. Die XAML-Datei enthält drei `Picker` Elemente, mit denen Sie auswählen, Mitglied der `BitmapStretch` und `BitmapAlignment` Enumerationen:
+Die erste dieser zwei neuen `DrawBitmap` Methoden wird auf der Seite **Skalierungs Modi** veranschaulicht. Die XAML-Datei enthält drei `Picker` Elemente, mit denen Sie Member der `BitmapStretch` und `BitmapAlignment` Enumerationen auswählen können:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -578,7 +578,7 @@ Die erste dieser beiden neuen `DrawBitmap` Methoden wird veranschaulicht, der **
 </ContentPage>
 ```
 
-Die Code-Behind-Datei einfach erklärt die `CanvasView` Wenn ein `Picker` Element geändert wurde. Die `PaintSurface` Handler greift auf die drei `Picker` Ansichten für den Aufruf der `DrawBitmap` Erweiterungsmethode:
+Die Code-Behind-Datei macht die `CanvasView` einfach ungültig, wenn sich ein `Picker` Element geändert hat. Der `PaintSurface` Handler greift auf die drei `Picker` Ansichten zum Aufrufen der `DrawBitmap`-Erweiterungsmethode zu:
 
 ```csharp
 public partial class ScalingModesPage : ContentPage
@@ -617,9 +617,9 @@ public partial class ScalingModesPage : ContentPage
 
 Hier sind einige Kombinationen von Optionen aus:
 
-[![Skalieren von Modi](displaying-images/ScalingModes.png "Modi Skalierung")](displaying-images/ScalingModes-Large.png#lightbox)
+[![Skalierungs Modi](displaying-images/ScalingModes.png "Skalierungs Modi")](displaying-images/ScalingModes-Large.png#lightbox)
 
-Die **Rechteck Teilmenge** Seite enthält praktisch die gleiche XAML-Datei als **Skalierung Modi**, aber die Code-Behind-Datei definiert eine rechteckige Teilmenge der Bitmap, die vom der `SOURCE` Feld: 
+Die **untergeordnete Seite des Rechtecks** enthält praktisch die gleiche XAML-Datei wie die **Skalierungs Modi**, aber die Code-Behind-Datei definiert eine rechteckige Teilmenge der Bitmap, die vom `SOURCE` Feld angegeben wird: 
 
 ```csharp
 public partial class ScalingModesPage : ContentPage
@@ -665,5 +665,5 @@ Diese Quelle Rechteck isoliert Head für das Monkey-Objekt, wie im folgenden Scr
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

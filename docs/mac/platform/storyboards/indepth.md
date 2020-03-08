@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 06774d13cf053b661dd0b2d24b7df0c0b767b4db
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026413"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918937"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Arbeiten mit Storyboards in xamarin. Mac
 
@@ -82,7 +82,7 @@ Daher sind Sie miteinander verknüpft, um Ereignisse wie Ausschneiden, kopieren 
 
 <a name="Containment" />
 
-### <a name="containment"></a>Kapselung
+### <a name="containment"></a>Containment
 
 In Storyboards können Ansichts Controller (z. b. der Split View Controller und der Registerkarten Ansichts Controller) nun die Kapselung _implementieren,_ sodass Sie andere Sub-View-Controller enthalten können:
 
