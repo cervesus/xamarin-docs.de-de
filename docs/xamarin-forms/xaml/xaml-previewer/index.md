@@ -9,11 +9,11 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68757273"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918047"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>XAML-Vorschau für xamarin. Forms
 
@@ -27,7 +27,7 @@ Der XAML-Previewer zeigt Ihnen, wie Ihre xamarin. Forms-XAML-Seite unter IOS und
 
 ::: zone pivot="windows"
 
-### <a name="visual-studio-2019"></a>Visual Studio 2019
+### <a name="visual-studio-2019"></a>Visual Studio 2019
 
 Sie können den XAML-Previewer öffnen, indem Sie im Bereich geteilte Ansicht auf die Pfeile klicken. Wenn Sie das Standardverhalten der Split-Ansicht ändern möchten, verwenden Sie das Dialogfeld **Tools > Optionen > xamarin > Forms Previewer** . In diesem Dialogfeld können Sie die Standarddokument Ansicht und die geteilte Ausrichtung auswählen.
 
@@ -52,7 +52,7 @@ Sie können ändern, ob der Bildschirm vertikal oder horizontal aufgeteilt wird,
 
 Die Schaltfläche **Vorschau** wird im Editor angezeigt, wenn Sie eine XAML-Seite öffnen. Zeigen Sie die Vorschau an oder blenden Sie Sie aus, indem Sie die Schaltflächen " **Vorschau** " oder " **Teilen** " unten links in jedem XAML-Dokument Fenster drücken:
 
-[![Xamarin. Forms Previewer aktiviert mit der Schaltfläche "Vorschau" oder "teilen"](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+[![xamarin. Forms-Previewer aktiviert mit der Schaltfläche "Vorschau" oder "teilen"](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
 
 > [!NOTE]
 > In älteren Versionen von Visual Studio für Mac befand sich die Schaltfläche **Vorschau** in der oberen rechten Ecke des Fensters.
@@ -98,7 +98,7 @@ Diese Eigenschaft ist nützlich, wenn Sie eine Bibliothek in Ihrem Seitenkonstru
 * Stellen Sie sicher, dass die `App`-Klasse über einen Parameter losen Konstruktor verfügt.
 * Überprüfen Sie die xamarin. Forms-Version. Sie muss mindestens xamarin. Forms 3,6 sein. Sie können ein Update auf die neueste Version von xamarin. Forms über nuget ausführen.
 * Überprüfen der JDK-Installation: Android erfordert mindestens [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-* Versuchen Sie, alle initialisierten Klassen im C# Code Behind der Seite in `if (!DesignMode.IsDesignModeEnabled)` zu umwickeln.
+* Versuchen Sie, alle initialisierten Klassen im C# Code Behind der Seite in `if (!DesignMode.IsDesignModeEnabled)`zu umwickeln.
 
 ### <a name="custom-controls-arent-rendering"></a>Benutzerdefinierte Steuerelemente nicht Rendering
 
