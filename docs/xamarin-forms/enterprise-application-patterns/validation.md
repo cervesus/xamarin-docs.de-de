@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: de5728710a408b8e0c7c68dc89c7e6484cbcc3ce
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70760165"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915237"
 ---
 # <a name="validation-in-enterprise-apps"></a>Validierung in Unternehmens-apps
 
@@ -248,7 +248,7 @@ Das [`Entry`](xref:Xamarin.Forms.Entry) -Steuerelement verwendet einen explizite
 </Style>
 ```
 
-Dieser Stil legt die `ApplyLineColor` und `LineColor` angefügten Eigenschaften des `LineColorBehavior` angehängten Verhaltens auf dem [`Entry`](xref:Xamarin.Forms.Entry) Steuerelement fest. Weitere Informationen zu Formatvorlagen finden Sie unter [Styles (Formatvorlagen)](~/xamarin-forms/user-interface/styles/index.md).
+Dieser Stil legt die `ApplyLineColor` und `LineColor` angefügten Eigenschaften des `LineColorBehavior` angehängten Verhaltens auf dem [`Entry`](xref:Xamarin.Forms.Entry) Steuerelement fest. Weitere Informationen zu Stilen finden Sie unter [Stile](~/xamarin-forms/user-interface/styles/index.md).
 
 Wenn der Wert der angefügten-Eigenschaft `ApplyLineColor` festgelegt oder geändert wird, führt das `LineColorBehavior` angefügte Verhalten die `OnApplyLineColorChanged`-Methode aus, die im folgenden Codebeispiel gezeigt wird:
 
@@ -382,7 +382,7 @@ Wenn im [`Entry`](xref:Xamarin.Forms.Entry) Steuerelement gültige Daten eingege
 
 **Abbildung 6-3**: Schwarze Zeile, die keinen Validierungs Fehler anzeigt.
 
-Das [`Entry`](xref:Xamarin.Forms.Entry) -Steuerelement verfügt auch über eine [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) der [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers) Auflistung hinzugefügte. Das folgende Codebeispiel zeigt die `DataTrigger`:
+Das [`Entry`](xref:Xamarin.Forms.Entry) -Steuerelement verfügt auch über eine[`DataTrigger`](xref:Xamarin.Forms.DataTrigger)der [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers) Auflistung hinzugefügte . Das folgende Codebeispiel zeigt die `DataTrigger`:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
