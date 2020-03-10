@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/02/2017
 ms.openlocfilehash: cd427d13bb79fd31e1e814726aaaf61788ae10ec
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030076"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917565"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>macOS-APIs für xamarin. Mac-Entwickler
 
@@ -36,7 +36,7 @@ Die Deklaration kann von links nach rechts gelesen werden:
 - `(NSIndexSet *)rowIndexes` ist der erste Parameter und mit dem Typ. Der erste Parameter weist das folgende Format auf: `(Type) pararmName`
 - `atPoint:(NSPoint)mouseDownPoint` ist der zweite Parameter und sein Typ. Jeder Parameter nach dem ersten ist das folgende Format: `selectorPart:(Type) pararmName`
 - Der vollständige Name dieses Nachrichtenselektor lautet: `canDragRowsWithIndexes:atPoint:`. Beachten Sie den `:` am Ende, was wichtig ist.
-- Die tatsächliche xamarin. Mac C# -Bindung lautet:`bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
+- Die tatsächliche xamarin. Mac C# -Bindung lautet: `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
 Dieser Auswahl Aufruf kann auf die gleiche Weise gelesen werden:
 
@@ -45,7 +45,7 @@ Dieser Auswahl Aufruf kann auf die gleiche Weise gelesen werden:
 ```
 
 - Bei der Instanz `v` wird die `canDragRowsWithIndexes:atPoint` Auswahl mit zwei Parametern aufgerufen, `set` und `point`.
-- In C#sieht der Methodenaufruf wie folgt aus:`x.CanDragRows (set, point);`
+- In C#sieht der Methodenaufruf wie folgt aus: `x.CanDragRows (set, point);`
 
 <a name="finding_selector" />
 

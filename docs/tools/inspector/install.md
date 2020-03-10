@@ -1,5 +1,5 @@
 ---
-title: Installation und Anforderungen des Inspektors
+title: 'Inspector: Installation und Vorraussetzungen'
 description: In diesem Dokument wird beschrieben, wie Sie die Xamarin Inspector installieren und die unterstützten Betriebssysteme, IDES und App-Plattformen erörtert werden.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
@@ -7,23 +7,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029696"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917600"
 ---
-# <a name="inspector-installation-and-requirements"></a>Installation und Anforderungen des Inspektors
+# <a name="inspector-installation-and-requirements"></a>Inspector: Installation und Vorraussetzungen
 
 ## <a name="download-and-installation"></a>Herunterladen und installieren
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. Laden Sie [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) herunter, und installieren Sie die **Mobile-Entwicklung mit .net** -Arbeitsauslastung.
 1. [Melden](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) Sie sich an, um Ihr Unternehmens Abonnement zu aktivieren.
 1. Über [prüfen](~/tools/inspector/inspect.md) Sie Ihre eigene APP!
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/)herunterladen und installieren.
 1. [Melden](https://docs.microsoft.com/visualstudio/mac/activation) Sie sich an, um Ihr Unternehmens Abonnement zu aktivieren.
@@ -31,7 +31,7 @@ ms.locfileid: "73029696"
 
 -----
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="supported-operating-systems"></a>Unterstützte Betriebssysteme
 
@@ -43,53 +43,53 @@ ms.locfileid: "73029696"
 - Visual Studio für Mac
 - Visual Studio 2017 mit **Mobile-Entwicklung mit .net** -Arbeitsauslastung
 
-Die Live-App-Prüfung ist für Unternehmenskunden verfügbar.
+Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
 
 <a name="supported-platforms" />
 
 ### <a name="supported-app-platforms"></a>Unterstützte Anwendungsplattformen
 
-|App-Plattform|IDE-Unterstützung|Hinweise|
+|App-Plattform|IDE-Unterstützung|Notizen|
 |--- |--- |--- |
 |Mac|Wird nur in Visual Studio für Mac unterstützt.|
-|iOS|In Visual Studio 2017 und Visual Studio für Mac unterstützt| Das Linker-Verhalten muss auf " **nicht verknüpfen** " festgelegt werden (unter **IOS** -buildprojektoptionen) |
-|Android|In Visual Studio 2017 und Visual Studio für Mac unterstützt|Muss auf Android > = 4.0.3 mit aktiviertem **fastdev** abzielen.<br />Muss Google-, Visual Studio-oder xamarin Android-Emulatoren verwenden. Android 7-Emulatoren können zu diesem Zeitpunkt keine Überprüfung zulassen.|
+|iOS|Unterstützt in Visual Studio 2017 und Visual Studio für Mac| Das Linker-Verhalten muss auf " **nicht verknüpfen** " festgelegt werden (unter **IOS** -buildprojektoptionen) |
+|Android|Unterstützt in Visual Studio 2017 und Visual Studio für Mac|Muss auf Android > = 4.0.3 mit aktiviertem **fastdev** abzielen.<br />Google-, Visual Studio- oder Xamarin Android-Emulatoren müssen verwendet werden. In Android 7-Emulatoren sind Überprüfungen derzeit womöglich nicht zulässig.|
 |WPF|Wird nur in Visual Studio 2017 unterstützt.|
 
 <a name="reporting-bugs" />
 
 ## <a name="reporting-bugs"></a>Melden von Fehlern
 
-Fehler sollten direkt über Visual Studio gemeldet werden:
+Fehler müssen direkt über Visual Studio gemeldet werden:
 
 - **Hilfe > Senden von Feedback > Melden eines Problems**
 
-Fügen Sie alle folgenden Informationen ein:
+Geben Sie auch alle der folgenden Informationen an:
 
 ### <a name="platform-version-information"></a>Informationen zur Platt Form Version
 
-Diese Informationen sind von entscheidender Bedeutung.
+Geben Sie die folgenden Informationen unbedingt an:
 
 Visual Studio für Mac
 
 - **Visual Studio-> zu Visual Studio > Details > Kopier Informationen anzeigen**
-- In Fehlerbericht einfügen
+- Einfügen in den Fehlerbericht
 
 Visual Studio
 
 - **Hilfe > zu Visual Studio > Kopieren von Informationen**
-- Informieren Sie uns über die Betriebs System Version und darüber, ob Sie 32-Bit-oder 64-Bit-Windows ausführen.
+- Geben Sie Ihre Betriebssystemversion an und ob Sie die Windows 32-Bit-Version oder die Windows 64-Bit-Version ausführen.
 
 ### <a name="log-files"></a>Protokolldateien
 
-Fügen Sie immer IDE-und Inspektor-Client Protokolldateien an.
+Fügen Sie immer die IDE und die Protokolldateien des Inspector-Clients an.
 
-Inspektor-Client
+Inspector-Client
 
 - Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-1.4. x bietet auch die Möglichkeit, die Protokolldatei im Finder (macOS) oder Explorer (Windows) direkt über das Hauptmenü auszuwählen:
+Version 1.4.x bietet außerdem die Möglichkeit, die Protokolldatei im Finder (macOS) oder im Explorer (Windows) direkt über das Hauptmenü auszuwählen.
 
 - **Hilfe > Anzeigen der Protokolldatei**
 
@@ -102,21 +102,21 @@ Visual Studio
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
 - Der Inhalt des **Ausgabe** Bereichs von Visual Studio kann auch informativ sein.
 
-### <a name="project-settings"></a>Projekteinstellungen
+### <a name="project-settings"></a>„Project Settings“ (Projekteinstellungen)
 
-Wenn Sie die **csproj** -Datei für das Projekt anfügen können, das Sie überprüfen möchten, wäre es äußerst hilfreich. Dies ist einfacher als die Frage nach einzelnen Einstellungen.
+Wenn Sie die **csproj** -Datei für das Projekt anfügen können, das Sie überprüfen möchten, wäre es äußerst hilfreich. Dies ist einfacher, als Ihnen Fragen zu individuellen Einstellungen zu stellen.
 
-Vergewissern Sie sich außerdem, dass Sie sich in der Debugkonfiguration befinden.
+Bestätigen Sie außerdem, dass die Debugkonfiguration ausgewählt ist.
 
 ### <a name="selected-devices"></a>Ausgewählte Geräte
 
-Für Android und IOS ist es wichtig, dass Sie wissen, auf welchem Gerät Sie Debuggen, wenn Sie es überprüfen möchten. Wir müssen Folgendes wissen:
+Für Android und iOS ist es wichtig, dass wir wissen, welches Gerät Sie zum Debuggen ausgewählt haben: Wir müssen Folgendes wissen:
 
-- Der Name des Geräts, wie in der IDE angezeigt.
+- Name des in der IDE dargestellten Geräts
 - Betriebssystemversion Ihres Geräts
-- Android: Überprüfen Sie, ob Sie einen x86-Emulator verwenden
-- Android: Welche Emulatorplattform verwenden Sie? Google-Emulator? Visual Studio-Android-Emulator? Xamarin Android Player?
-- Wird die APP, die Sie Debuggen, ordnungsgemäß angezeigt und funktioniert im Gerät?
+- Android: Stellen Sie sicher, dass Sie den x86-Emulator verwenden.
+- Android: welche Emulatorplattform verwenden Sie? Google-Emulatoren? Visual Studio-Emulator für Android? Xamarin Android Player?
+- Funktioniert die App, die Sie debuggen wollen, ordnungsgemäßauf dem Gerät?
 - Hat das Gerät Netzwerk Konnektivität (überprüfen Sie den Webbrowser)?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

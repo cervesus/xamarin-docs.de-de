@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016289"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914775"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Ziel-C-Bibliotheken
 
@@ -34,14 +34,14 @@ Sie können das Beispiel Projekt für [IOS](https://github.com/xamarin/monotouch
 
 ## <a name="getting-started"></a>Erste Schritte
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Die einfachste Möglichkeit zum Erstellen einer Bindung besteht darin, ein xamarin. IOS-Bindungs Projekt zu erstellen.
 Hierzu können Sie Visual Studio für Mac den Projekttyp, die **IOS-> Bibliothek > Bindungs Bibliothek**auswählen:
 
 [![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Die einfachste Möglichkeit zum Erstellen einer Bindung besteht darin, ein xamarin. IOS-Bindungs Projekt zu erstellen.
 Sie können dies in Visual Studio unter Windows durchführen, indem Sie den Projekttyp,  **C# Visual > IOS > Bindungs Bibliothek (IOS)** auswählen:
@@ -779,7 +779,7 @@ interface MyUIViewExtension {
 }
 ```
 
-Im obigen Beispiel wird eine `MyUIViewExtension` eine-Klasse erstellt, die die `MakeBackgroundRed`-Erweiterungsmethode enthält.  Dies bedeutet, dass Sie jetzt "makebackgroundred" für jede `UIView` Unterklasse aufgerufen werden können, sodass Sie die gleiche Funktionalität erhalten, die Sie für "Ziel-C" erhalten. In einigen anderen Fällen werden Kategorien nicht verwendet, um eine System Klasse zu erweitern, sondern um die Funktionalität zu organisieren.  Und zwar so:
+Im obigen Beispiel wird eine `MyUIViewExtension` eine-Klasse erstellt, die die `MakeBackgroundRed`-Erweiterungsmethode enthält.  Dies bedeutet, dass Sie jetzt "makebackgroundred" für jede `UIView` Unterklasse aufgerufen werden können, sodass Sie die gleiche Funktionalität erhalten, die Sie für "Ziel-C" erhalten. In einigen anderen Fällen werden Kategorien nicht verwendet, um eine System Klasse zu erweitern, sondern um die Funktionalität zu organisieren.  Dies sieht folgendermaßen aus:
 
 ```csharp
 @interface SocialNetworking (Twitter)

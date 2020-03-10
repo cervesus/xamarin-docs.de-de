@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 2d56af364d63ff78bafbdd7d8043ae4d75d97959
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010696"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915755"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>Aktualisieren einer xamarin. IOS-App im Hintergrund
 
@@ -79,7 +79,7 @@ Anwendungen, die im Hintergrund abrufen, können Aufrufe ausführen, um die Benu
 > [!IMPORTANT]
 > Nachdem `PerformFetch` aufgerufen wurde, hat die Anwendung ungefähr 30 Sekunden Zeit, den Download neuer Inhalte zu starten und den Vervollständigungs Handlerblock aufzurufen. Wenn dies zu lange dauert, wird die APP beendet. Verwenden Sie beim Herunterladen von Medien oder anderen großen Dateien das Abrufen von Hintergrunddaten mit dem _Hintergrund Übertragungs Dienst_ .
 
-### <a name="backgroundfetchinterval"></a>Backgroundfetchinterval
+### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
 Im obigen Beispielcode wird das Betriebssystem entscheiden, wie oft neue Inhalte abgerufen werden sollen, indem das minimale Abruf Intervall auf `BackgroundFetchIntervalMinimum`festgelegt wird. IOS bietet drei Optionen für das Abruf Intervall:
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2020
 ms.openlocfilehash: 5751983bf4a818e8ee91af98b0c05658efaca8b2
-ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76550227"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915660"
 ---
 # <a name="xamarinforms-supported-platforms"></a>Von Xamarin.Forms unterstütze Plattformen
 
@@ -46,13 +46,13 @@ Auf Ihren Geräten sollten die neuesten Android SDK Tools und die entsprechende 
 
 Außerdem **muss** die Ziel-/Kompilierversion für Android-Projekte auf *Zuletzt installierte Plattform verwenden* festgelegt werden. Die Mindestversion kann jedoch auf API 19 festgelegt werden, damit die Unterstützung von Geräten mit Android 4.4 und höher weiterhin möglich ist. Diese Werte werden in den **Projektoptionen** festgelegt:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 **Projektoptionen > Anwendung > Anwendungseigenschaften**
 
 ![Buildoptionen für Android in Visual Studio](requirements-images/options-android-vs-sml.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 **Erstellen > Allgemein**
 

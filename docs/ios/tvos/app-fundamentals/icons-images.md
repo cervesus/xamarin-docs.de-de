@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030856"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915798"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit tvos-Symbolen und-Bildern in xamarin
 
@@ -135,7 +135,7 @@ Jede APP muss sowohl eine kleine als auch eine große Version des App-Symbols be
 
 |Kleines Symbol||Großes Symbol||
 |---|---|---|---|
-|Tatsächliche Größe|400x240 px|Größe|1280x768px|
+|Tatsächliche Größe|400x240 px|Size|1280x768px|
 |Größe der sicheren Zone|370x222px|||
 |Größe ohne Fokus|300 x 180px|||
 |Fokus Größe|370x222px|||
@@ -281,11 +281,11 @@ Wenn Ihre xamarin. tvos-App ein Spiel ist und Sie Game Center Support eingeschlo
 
 ||Symbol "Erfolge"|Dashboard-Grafik|Leaderboard-Grafik|
 |---|---|---|---|
-|Sichtbare Größe|200x200px|923x150px|n/v|
-|Tatsächliche Größe|320x320 px|n/v|659x371px|
-|Größe der sicheren Zone|n/v|n/v|618x348px|
-|Größe ohne Fokus|n/v|n/v|548x309px|
-|Fokus Größe|n/v|n/v|618x348px|
+|Sichtbare Größe|200x200px|923x150px|–|
+|Tatsächliche Größe|320x320 px|–|659x371px|
+|Größe der sicheren Zone|–|–|618x348px|
+|Größe ohne Fokus|–|–|548x309px|
+|Fokus Größe|–|–|618x348px|
 
 Weitere Informationen zum Arbeiten mit Game Center finden Sie im [Game Center-Programmier Handbuch](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)von Apple.
 
@@ -301,7 +301,7 @@ Da tvos 9 eine Teilmenge von IOS 9 ist, funktionieren die gleichen Techniken zum
 
 Wie bereits erwähnt, erfordern alle tvos-apps ein [Start Image](#Launch-Image)und ein [App-Symbol](#App-Icons). In diesem Abschnitt wird beschrieben, wie Sie das Symbol Start Bild und App für Ihr xamarin. tvos-App-Projekt auswählen, nachdem Sie in einem Ressourcen Katalog festgelegt wurden.
 
-Führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor:
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Info.plist`, um Sie zur Bearbeitung zu öffnen: 
 
