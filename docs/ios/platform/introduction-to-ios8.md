@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
 ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489205"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910824"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
@@ -26,7 +26,7 @@ In diesem Handbuch werden die neuen APIs für xamarin. IOS-Entwickler vorgestell
 
 Es gibt auch einige APIs, die in ios 8 als veraltet eingestuft wurden, die am Ende dieses Dokuments ausführlich erläutert werden.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Zum Erstellen von IOS 8-Apps in Visual Studio für Mac sind die folgenden Schritte erforderlich:
 
@@ -44,7 +44,7 @@ Das Steuern ihrer Geräte über Ihr iPhone ist keine neue Technologie Anwendung.
 
 Mit homekit können Drittanbieter-apps und Siri Zubehör erkennen und ihrer eigenen Konfigurations Datenbank für die privat Datenbank hinzufügen, diese Daten bearbeiten und bearbeiten und mit Zubehör und Ihren Diensten kommunizieren, um eine Aktion auszuführen.
 
-### <a name="configuration"></a>-Konfiguration
+### <a name="configuration"></a>Konfiguration
 
 Das folgende Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör:
 
@@ -83,7 +83,7 @@ Das Dialogfeld "Neues Projekt" enthält sieben neue Projektvorlagen zum Erstelle
 
 Weitere Informationen zur Verwendung von App-Erweiterungen in xamarin finden Sie im Handbuch [Introduction to App Extensions](~/ios/platform/extensions.md) .
 
-### <a name="touch-id"></a>Touch-ID
+### <a name="touch-id"></a>Touch ID
 
 Die Fingereingabe-ID wurde in ios 7 als Mittel zum Authentifizieren des Benutzers eingeführt – ähnlich wie bei einer Kennung. Dies war jedoch auf das Entsperren des Geräts, die Verwendung des App Store, die Verwendung von iTunes und das Authentifizieren der icloud-Keychain beschränkt. 
 
@@ -161,10 +161,10 @@ Mit allen in ios 8 vorgenommenen Verbesserungen sind einige APIs veraltet. Einig
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – dies wurde durch uisearchcontroller in iOS8 ersetzt.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 In diesem Artikel wurden einige der neuen Features behandelt, die von Apple in ios 8 eingeführt wurden.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Uikitenhancements (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-uikitenhancements)
 - [Einführung in App-Erweiterungen](~/ios/platform/extensions.md)

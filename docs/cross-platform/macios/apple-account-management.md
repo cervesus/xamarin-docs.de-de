@@ -5,90 +5,71 @@ ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: davidortinau
 ms.author: daortin
-ms.date: 05/06/2018
-ms.openlocfilehash: 81f161442b33eee94f32c506947ed029fd40aadb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 03/05/2020
+ms.openlocfilehash: 17607e09a141fd29cd81cde93d812b20e62a9af8
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016345"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946253"
 ---
 # <a name="apple-account-management"></a>Apple-Kontoverwaltung
 
-Die Apple-Konto Verwaltungsschnittstelle bietet eine Möglichkeit, alle Entwicklungsteams anzuzeigen, die einer Apple-ID zugeordnet sind. Außerdem können Sie weitere Details zu den einzelnen Teams anzeigen, indem Sie eine Liste der _Signierungs Identitäten_ und _Bereitstellungs profile_ anzeigen, die auf Ihrem Computer installiert sind.
+Die Apple-Kontoverwaltungs-Schnittstelle in Visual Studio bietet eine Möglichkeit, Informationen für Entwicklungsteams anzuzeigen, die einer Apple-ID zugeordnet sind. Sie können folgende Aktionen ausführen:
 
-Die Authentifizierung Ihrer Apple-ID erfolgt in der Befehlszeile mit [Fastlane](https://fastlane.tools/). FastLane muss auf Ihrem Computer installiert sein, damit Sie erfolgreich authentifiziert werden können. Weitere Informationen zu Fastlane und zur Installation finden Sie in den [Fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) -Handbüchern.
+- **Hinzufügen von Apple-Entwickler Konten**
+- **Anzeigen von Signatur Zertifikaten und Bereitstellungs Profilen**
+- **Neue Signatur Zertifikate erstellen**
+- **Vorhandene Bereitstellungs profile herunterladen**
 
-Im Dialogfeld Apple-Konto können Sie folgende Aufgaben ausführen:
-
-- **Erstellen und Verwalten von Zertifikaten**
-- **Erstellen und Verwalten von Bereitstellungs Profilen**
-
-Informationen zur Vorgehensweise finden Sie in diesem Handbuch.
-
-> [!NOTE]
+> [!IMPORTANT]
 > Mit den Tools für die Apple-Kontoverwaltung von xamarin werden nur Informationen zu kostenpflichtigen Apple-Entwickler Konten angezeigt. Weitere Informationen zum Testen einer APP auf einem Gerät ohne kostenpflichtiges Apple-Entwicklerkonto finden Sie im Handbuch zur [kostenlosen Bereitstellung für xamarin. IOS-apps](~/ios/get-started/installation/device-provisioning/free-provisioning.md) .
 
-Sie können auch die automatischen IOS-Bereitstellungs Tools verwenden, um Ihre Signierungs Identitäten, App-IDs und Bereitstellungs Profile automatisch zu erstellen und zu verwalten. Weitere Informationen zur Verwendung dieser Features finden Sie im Handbuch zur [Geräte Bereitstellung](~/ios/get-started/installation/device-provisioning/index.md) .
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-## <a name="requirements"></a>Anforderungen
+Die Apple-Kontoverwaltung ist auf Visual Studio für Mac, Visual Studio 2019 und Visual Studio 2017 (Version 15,7 und höher) verfügbar. Sie müssen auch über ein kostenpflichtiges Apple-Entwicklerkonto verfügen, um dieses Feature zu verwenden. Weitere Informationen zu Apple-Entwickler Konten finden Sie im Handbuch zur [Geräte Bereitstellung](~/ios/get-started/installation/device-provisioning/index.md) .
 
-Die Apple-Kontoverwaltung ist auf Visual Studio für Mac, Visual Studio 2019 und Visual Studio 2017 (Version 15,7 und höher) verfügbar.
+> [!NOTE]
+> Bevor Sie beginnen, müssen Sie zunächst alle Benutzer Lizenzverträge im [Apple Developer Portal](https://developer.apple.com/account/)akzeptieren.
 
-Sie müssen über ein Apple-Entwicklerkonto verfügen, um diese Funktion verwenden zu können. Weitere Informationen zu Apple-Entwickler Konten finden Sie im Handbuch zur [Geräte Bereitstellung](~/ios/get-started/installation/device-provisioning/index.md) .
+## <a name="add-an-apple-developer-account"></a>Hinzufügen eines Apple-Entwickler Kontos
 
-- Stellen Sie sicher, dass Sie mit dem Internet verbunden sind. Der Grund hierfür ist, dass Fastlane direkt mit dem Apple Developer Portal kommuniziert.
-- Stellen Sie sicher, dass [Fastlane-Tools installiert](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)sind.
-- Stellen Sie sicher, dass Sie über [https://download.fastlane.tools](https://download.fastlane.tools)die neuesten Fastlane-Tools verfügen.
-- Bevor Sie beginnen, stellen Sie sicher, dass Sie alle Benutzer Lizenzverträge im [Entwickler Portal](https://developer.apple.com/account/)akzeptieren.
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="adding-an-apple-developer-account"></a>Hinzufügen eines Apple-Entwickler Kontos
+1. Wechseln Sie zu **Visual Studio > Einstellungen > Apple Developer Account** , und klicken Sie auf die Schaltfläche **+** , um das Anmelde Dialogfeld zu öffnen:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+    ![Askreershot der Seite mit den Apple-Entwickler Konten in Visual Studio für Mac Einstellungen.](apple-account-management-images/add-account-vsm.png)
 
-1. Wechseln Sie zum Öffnen des Dialog Felds "Kontoverwaltung" zu **Visual Studio > Einstellungen > Apple-Entwicklerkonto**:
+2. Geben **Sie Ihre**Apple-ID und Ihr Kennwort ein Dadurch werden Ihre Anmelde Informationen in der sicheren Schlüsselkette auf diesem Computer gespeichert.
 
-    ![Apple Developer-Konto Optionen](apple-account-management-images/image1.png)
-
-2. Klicken Sie auf die Schaltfläche **+** , um das Anmelde Dialogfeld anzuzeigen, wie unten dargestellt: 
-
-    ![FastLane-Dialogfeld.](apple-account-management-images/image2.png)
-
-3. Geben Sie Ihre Apple ID und Ihr Kennwort ein, und klicken Sie auf die Schaltfläche **Anmelden** Dadurch werden Ihre Anmelde Informationen in der sicheren Schlüsselkette auf diesem Computer gespeichert. [Fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) wird zur sicheren Verarbeitung Ihrer Anmelde Informationen verwendet und übergibt sie an das Apple-Entwickler Portal.
-
-4. Wählen Sie im Warnungs Dialogfeld **immer zulassen** aus, damit Visual Studio Ihre Anmelde Informationen verwenden kann:
+3. Wählen Sie im Warnungs Dialogfeld **immer zulassen** aus, damit Visual Studio Ihre Anmelde Informationen verwenden kann:
 
     ![Dialogfeld "Warnung immer zulassen"](apple-account-management-images/image4.png)
 
-5. Nachdem Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie Ihre Apple-ID und alle Teams, zu denen Ihre Apple-ID gehört.
+4. Nachdem Ihr Konto erfolgreich hinzugefügt wurde, werden Ihre Apple-ID und alle Teams angezeigt, zu denen Ihre Apple-ID gehört:
 
     ![Dialogfeld "Apple Developer Account" mit hinzugefügten Konten](apple-account-management-images/image5.png)
 
-6. Wählen Sie ein beliebiges Team aus, und klicken Sie **auf Details anzeigen.** Schaltfläche. Dadurch wird eine Liste aller Signierungs Identitäten und Bereitstellungs Profile angezeigt, die auf Ihrem Computer installiert sind:
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-    ![Anzeige der Detail Anzeige der Signierungs Identitäten und Bereitstellungs Profile auf Ihrem Computer](apple-account-management-images/image6.png)
+> [!NOTE]
+> Wenn Sie Visual Studio 2017 oder Visual Studio 2019 (Version 16,4 und älter) verwenden, müssen Sie [mit einem Mac-buildhost gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md) werden, bevor Sie fortfahren.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+1. Wechseln Sie zu Extras **> Optionen > xamarin > Apple-Konten** , und klicken Sie auf **Hinzufügen**:
 
-1. Bevor Sie mit dem Hinzufügen Ihrer Apple-ID zu Visual Studio 2019 beginnen, sollten Sie sicherstellen, dass Ihre Entwicklungsumgebung [mit einem Mac-buildhost gekoppelt](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ist.
+    ![Screenshot der Seite mit den Apple-Konten in den Visual Studio-Optionen.](apple-account-management-images/add-account-vsw.png)
 
-1. Um das Fenster "Kontoverwaltung" zu öffnen, navigieren Sie zu Extras **> Optionen > xamarin > Apple-Konten**:
+2. Geben Sie Ihre Apple-ID und Ihr Kennwort ein, **und klicken Sie**
 
-    ![Dialogfeld "Optionen" für Apple](apple-account-management-images/prov1.png)
+3. Nachdem Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie Ihre Apple-ID und alle Teams, zu denen Ihre Apple-ID gehört:
 
-1. Wählen Sie die Schaltfläche **Hinzufügen** aus, und geben Sie Ihre Apple-ID und Ihr
-
-    ![Benutzername und Kennwort](apple-account-management-images/prov1a.png)
-
-1. Nachdem Ihr Konto erfolgreich hinzugefügt wurde, sehen Sie Ihre Apple-ID und alle Teams, zu denen Ihre Apple-ID gehört.
-
-1. Wählen Sie ein beliebiges Team aus, und klicken Sie **auf Details anzeigen.** Schaltfläche. Dadurch wird eine Liste aller Signierungs Identitäten und Bereitstellungs Profile angezeigt, die auf Ihrem Computer installiert sind:
-
-    ![Benutzername und Kennwort](apple-account-management-images/prov2.png)
+    ![Screenshot der Seite "Entwicklerkonto" mit hinzugefügten Konten](apple-account-management-images/accounts-vsw.png)
 
 -----
 
-## <a name="managing-signing-identities-and-provisioning-profiles"></a>Verwalten von Signierungs Identitäten und Bereitstellungs Profilen
+## <a name="view-signing-certificates-and-provisioning-profiles"></a>Anzeigen von Signatur Zertifikaten und Bereitstellungs Profilen
+
+Wählen Sie ein Team aus, und klicken Sie auf **Details anzeigen...** zum Öffnen eines Dialog Felds, in dem eine Liste der Signierungs Identitäten und Bereitstellungs Profile angezeigt wird, die auf Ihrem Computer installiert sind.
 
 Im Dialogfeld "Team Details" wird eine Liste der Signierungs Identitäten nach Typ angeordnet angezeigt. In der Spalte **Status** werden Sie darüber informiert, ob das Zertifikat: 
 
@@ -102,60 +83,26 @@ Im Dialogfeld "Team Details" wird eine Liste der Signierungs Identitäten nach T
 
   ![Team Details-Dialog Informationen](apple-account-management-images/image7.png)
 
-## <a name="create-a-signing-identities"></a>Erstellen von Signierungs Identitäten
+## <a name="create-a-signing-certificate"></a>Erstellen eines Signatur Zertifikats
 
-Wählen Sie zum Erstellen einer neuen Signierungs Identität die Dropdown Schaltfläche **Zertifikat erstellen** aus, und wählen Sie den gewünschten Typ aus. Wenn Sie über die richtigen Berechtigungen verfügen, wird eine neue Signierungs Identität nach einigen Sekunden angezeigt.
+Um eine neue Signierungs Identität zu erstellen, klicken Sie auf **Zertifikat erstellen** , um das Dropdown Menü zu öffnen, und wählen Sie den [Zertifikattyp](https://help.apple.com/xcode/mac/current/#/dev80c6204ec) aus, den Sie erstellen möchten. Wenn Sie über die richtigen Berechtigungen verfügen, wird eine neue Signierungs Identität nach einigen Sekunden angezeigt.
 
 Wenn eine Option in der Dropdown-Dropdown-Datei abgeblendet und deaktiviert ist, bedeutet dies, dass Sie nicht über die richtigen Team Berechtigungen verfügen, um diese Art von Zertifikat zu erstellen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
-
-![Erstellen von Zertifikat Optionen](apple-account-management-images/image8.png)
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-![Erstellen von Zertifikat Optionen](apple-account-management-images/prov3.png)
-
------
-
 ## <a name="download-provisioning-profiles"></a>Herunterladen von Bereitstellungs Profilen
 
-Im Dialogfeld "Team Details" wird auch eine Liste aller Bereitstellungs Profile angezeigt, die mit Ihrem Entwicklerkonto verbunden sind. Sie können alle Bereitstellungs Profile auf Ihren lokalen Computer herunterladen, indem Sie die Schaltfläche **alle Profile herunterladen** drücken.
+Im Dialogfeld "Team Details" wird auch eine Liste aller Bereitstellungs Profile angezeigt, die mit Ihrem Entwicklerkonto verbunden sind. Sie können alle Bereitstellungs Profile auf Ihren lokalen Computer herunterladen, indem Sie auf **alle Profile herunterladen**klicken.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
 
-![Abschnitt "Bereitstellungs profile herunterladen"](apple-account-management-images/image9.png)
+## <a name="troubleshoot"></a>Problembehandlung
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+- Es kann mehrere Stunden dauern, bis ein neues Apple-Entwicklerkonto genehmigt wird. Sie können die automatische Bereitstellung erst aktivieren, wenn das Konto genehmigt wurde.
 
-![Abschnitt "Bereitstellungs profile herunterladen"](apple-account-management-images/prov4.png)
+- Wenn das Hinzufügen eines Apple-Entwickler Kontos mit der Meldung `Authentication Error: Xcode 7.3 or later is required to continue developing with your Apple ID.`fehlschlägt, stellen Sie sicher, dass die von Ihnen verwendete Apple-ID über eine aktive, kostenpflichtige Mitgliedschaft beim Apple Developer Program verfügt. Wenn Sie ein kostenpflichtiges Apple-Entwicklerkonto verwenden möchten, lesen Sie den Leitfaden zur [kostenlosen Bereitstellung für xamarin. IOS-apps](~/ios/get-started/installation/device-provisioning/free-provisioning.md) .
 
------
+- Wenn der Versuch, ein neues Signaturzertifikat zu erstellen, mit dem Fehler `You have reached the limit for certificates of this type`fehlschlägt, wurde die maximal zulässige Anzahl zulässiger Zertifikate generiert. Um dieses Problem zu beheben, navigieren Sie zum [Apple Developer Center](https://developer.apple.com/account/ios/certificate/distribution) , und widerrufen Sie eines der Produktions Zertifikate.
 
-## <a name="ios-bundle-signing"></a>IOS-Bündel Signierung
-
-Informationen zum Bereitstellen der APP auf einem Gerät finden Sie im Handbuch zur [Geräte Bereitstellung](~/ios/get-started/installation/device-provisioning/index.md) .
-
-## <a name="troubleshooting"></a>Problembehandlung
-
-### <a name="view-details-dialog-is-empty"></a>Dialogfeld ' Details anzeigen ' ist leer
-
-Dies ist zurzeit ein bekanntes Problem im Zusammenhang mit Fehler [#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906). Stellen Sie sicher, dass Sie die neueste stabile Version von verwenden Visual Studio für Mac
-
-### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>Wenn bei der Protokollierung Ihres Kontos Probleme auftreten, versuchen Sie Folgendes:
-
-- Öffnen Sie die Anwendung keychain, und wählen Sie Unterkategorie die Option Kenn *Wörter* Suchen Sie nach `deliver.`, und löschen Sie alle Einträge.
-
-### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"Fehler beim Hinzufügen des Kontos. Melden Sie sich mit einem App-spezifischen Kennwort an.
-
-Dies liegt daran, dass die zweistufige Authentifizierung für Ihr Konto aktiviert ist. Stellen Sie sicher, dass Sie die neueste stabile Version von verwenden Visual Studio für Mac
-
-### <a name="failed-to-create-new-certificate"></a>Fehler beim Erstellen des neuen Zertifikats.
-"Sie haben das Limit für Zertifikate dieses Typs erreicht"
-
-![Dialogfeld "Zertifikat Limit](apple-account-management-images/image10.png)
-
-Die maximal zulässige Anzahl zulässiger Zertifikate wurde generiert. Um dieses Problem zu beheben, navigieren Sie zum [Apple Developer Center](https://developer.apple.com/account/ios/certificate/distribution) , und widerrufen Sie eines der Produktions Zertifikate.
+- Wenn bei der Protokollierung Ihres Kontos auf Visual Studio für Mac Probleme auftreten, besteht die Möglichkeit, die Keychain-Anwendung zu öffnen, und wählen Sie unter **Kategorie** die Option Kenn **Wörter**aus. Suchen Sie nach `deliver.`, und löschen Sie alle gefundenen Einträge.
 
 ## <a name="known-issues"></a>Bekannte Probleme
 

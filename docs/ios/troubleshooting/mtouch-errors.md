@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: a26c83565e4cfa64272549e12a35206dff6ec3c0
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940962"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911557"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. IOS-Fehler
 
@@ -971,14 +971,14 @@ Entfernen Sie das Verzeichnis `NOTICE` aus dem Projekt.
 
 ### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019: Ihre Anwendung verfügt über Berechtigungen, die von Ihrem aktuellen Bereitstellungs Profil nicht unterstützt werden und auf dem Gerät "*" nicht installiert werden konnten. Überprüfen Sie das IOS-Geräte Protokoll auf ausführlichere Informationen (Fehler: 0xe8008016).
 
-Dies kann bei folgenden Aktionen vorkommen:
+Möglich sind folgende Ursachen:
 
 - Ihre Anwendung verfügt über Berechtigungen, die das aktuelle Bereitstellungs Profil nicht unterstützt.
-  Folgende Lösungen sind möglich:
+  Lösungsvorschläge:
   - Geben Sie ein anderes Bereitstellungs Profil an, das die von Ihrer Anwendung benötigten Berechtigungen unterstützt.
   - Entfernen Sie die Berechtigungen, die im aktuellen Bereitstellungs Profil nicht unterstützt werden.
 - Das Gerät, das Sie bereitstellen möchten, ist nicht im Bereitstellungs Profil enthalten, das Sie verwenden.
-  Folgende Lösungen sind möglich:
+  Lösungsvorschläge:
   - Erstellen Sie eine neue APP aus einer Vorlage in Xcode, wählen Sie das gleiche Bereitstellungs Profil aus, und stellen Sie es auf demselben Gerät bereit. Manchmal kann Xcode Bereitstellungs Profile automatisch mit neuen Geräten aktualisieren (in anderen Fällen werden Sie von Xcode gefragt, was zu tun ist).
   : Wechseln Sie zum IOS dev Center, aktualisieren Sie das Bereitstellungs Profil mit dem neuen Gerät, und laden Sie dann das aktualisierte Bereitstellungs Profil auf Ihren Computer herunter.
 
@@ -1010,7 +1010,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 
 <a name="MT1024" />
@@ -1031,7 +1031,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1045,7 +1045,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1325,7 +1325,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1339,7 +1339,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1353,7 +1353,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1367,7 +1367,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1381,7 +1381,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1395,7 +1395,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1409,7 +1409,7 @@ Dinge, die Sie zu lösen versuchen:
 
 - Löschen Sie die Anwendung vom Gerät, und wiederholen Sie den Vorgang.
 - Trennen Sie das Gerät, und verbinden Sie es erneut.
-- Starten Sie das Gerät neu.
+- Startet das Gerät neu.
 - Starten Sie den Mac neu.
 - Synchronisieren Sie das Gerät mit iTunes (Dadurch werden alle Absturzberichte vom Gerät entfernt).
 
@@ -1609,7 +1609,7 @@ Die letzte Ziffer `x` lautet:
 
 Unerwarteter Fehler beim Versuch, Benutzerressourcen zu entfernen. Die Assembly, die das Problem verursacht, wird in der Fehlermeldung benannt. Um dieses Problem zu beheben, muss die Assembly in einem neuen Problem auf [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) zusammen mit einem vollständigen Buildprotokoll mit aktivierter Ausführlichkeit (d. h. `-v -v -v -v` in den **zusätzlichen maddress-Argumenten**) bereitgestellt werden.
 
-Benutzerressourcen sind Dateien, die in Assemblys (als Ressourcen) enthalten sind, die zur Buildzeit extrahiert werden müssen, um das Anwendungspaket zu erstellen. Dies umfasst Folgendes:
+Benutzerressourcen sind Dateien, die in Assemblys (als Ressourcen) enthalten sind, die zur Buildzeit extrahiert werden müssen, um das Anwendungspaket zu erstellen. Dies schließt Folgendes ein:
 
 - `__monotouch_content_*` und `__monotouch_pages_*` Ressourcen; immer
 - Native Bibliotheken, die in eine bindungsassembly eingebettet sind.
@@ -1709,7 +1709,7 @@ Manchmal ist es möglich, dieses Problem zu umgehen, indem inkrementelle Builds 
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: AOT-Einschränkung: die ' * '-Methode muss statisch sein, da Sie mit [' monopinvokecallback] ' versehen ist. Siehe [Developer.xamarin.com/Guides/IOS/advanced_topics/Limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacks"></a>MT3002: AOT-Einschränkung: die ' * '-Methode muss statisch sein, da Sie mit [' monopinvokecallback] ' versehen ist. Siehe [Developer.xamarin.com/Guides/IOS/advanced_topics/Limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 Diese Fehlermeldung stammt vom AOT-Compiler.
 
@@ -1789,7 +1789,7 @@ Wenn Sie der Meinung sind, dass xamarin. IOS den fraglichen Typ unterstützen so
 
 <a name="MT4102" />
 
-### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102: die Registrierungsstelle hat einen ungültigen Typ `*` in der Signatur für die Methode `*`gefunden. Verwenden Sie stattdessen `*` .
+### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102: die Registrierungsstelle hat einen ungültigen Typ `*` in der Signatur für die Methode `*`gefunden. Verwenden Sie stattdessen `*`.
 
 Dies geschieht zurzeit nur mit einem der folgenden Typen: System. DateTime. Verwenden Sie stattdessen die entsprechende Ziel-C-Entsprechung (nsdate).
 
@@ -1855,7 +1855,7 @@ Dies ist immer ein Fehler in xamarin. IOS. Bitte melden Sie ein neues Problem au
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112: die Registrierungsstelle hat einen ungültigen Typ `*`gefunden. Das Registrieren von generischen Typen mit dem Ziel-C wird nicht unterstützt und kann zu zufälligem Verhalten und/oder Abstürzen führen (aus Gründen der Abwärtskompatibilität mit älteren Versionen von xamarin. IOS ist es möglich, diesen Fehler zu ignorieren, indem `--unsupported--enable-generics-in-registrar` als zusätzliches mberührungs Argument auf der Seite IOS-Buildoptionen des Projekts übergeben wird. Weitere Informationen finden Sie unter [Developer.xamarin.com/Guides/IOS/advanced_topics/Registrar](~/ios/internals/registrar.md) ).
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrar-for-more-information"></a>MT4112: die Registrierungsstelle hat einen ungültigen Typ `*`gefunden. Das Registrieren von generischen Typen mit dem Ziel-C wird nicht unterstützt und kann zu zufälligem Verhalten und/oder Abstürzen führen (aus Gründen der Abwärtskompatibilität mit älteren Versionen von xamarin. IOS ist es möglich, diesen Fehler zu ignorieren, indem `--unsupported--enable-generics-in-registrar` als zusätzliches mberührungs Argument auf der Seite IOS-Buildoptionen des Projekts übergeben wird. Weitere Informationen finden Sie unter [Developer.xamarin.com/Guides/IOS/advanced_topics/Registrar](~/ios/internals/registrar.md) ).
 
 <a name="MT4113" />
 
@@ -2396,7 +2396,7 @@ Es gibt einige mögliche Quellen für solche dynamischen Symbole:
 - Feldverweise auf Speicherorte in statisch verknüpften Bibliotheken aus Bindungs Projekten (`[Field]` Attribute).
 - Ziel-C-Klassen, auf die in statisch verknüpften Bibliotheken aus Bindungs Projekten verwiesen wird (bei Verwendung von inkrementellen Builds oder bei Verwendung der statischen Registrierungsstelle).
 
-Folgende Lösungen sind möglich:
+Lösungsvorschläge:
 
 - Aktivieren Sie den verwalteten Linker (falls möglich, für alle Assemblys anstelle von SDK-Assemblys). Dadurch werden möglicherweise genug Quellen für dynamische Symbole entfernt, damit die Befehlszeile des Linkers den maximalen Wert nicht überschreitet.
 - Reduzieren Sie die Anzahl von P/aufruft-, Field References-und/oder Ziel-C-Klassen.
@@ -2776,13 +2776,13 @@ In einigen Fällen handelt es sich um ein Problem mit dem lokalen Netzwerk, das 
 Dabei kann * lauten:
 
 - string
-- -Array
+- array
 - dict
 - bool
-- Reelle
-- Ganze Zahl
+- real
+- integer
 - date
-- -Daten
+- data
 
 <a name="MT7046" />
 

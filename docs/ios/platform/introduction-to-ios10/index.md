@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032228"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910867"
 ---
 # <a name="introduction-to-ios-10"></a>Einführung in iOS 10
 
@@ -52,7 +52,7 @@ Außerdem haben Erweiterungen von Drittanbieter-Tastatur-Apps die folgenden Erwe
 - Die neue `DocumentInputMode`-Eigenschaft der `UITextDocumentProxy`-Klasse kann die Eingabe Sprache eines Dokuments bestimmen und die Ausrichtung der Tastatur Erweiterung an dieser Sprache ermöglichen.
 - Die neue `HandleInputModeList`-Methode ermöglicht der Tastatur Erweiterung, das Tastaturauswahl Menü des Systems als Reaktion auf die getippt Kugel Taste anzuzeigen.
 
-Weitere Informationen finden Sie in unserer [Einführung in Extensions](~/ios/platform/extensions.md), [Message App Integration](~/ios/platform/message-app-integration/index.md), [Introduction to proaktive Vorschläge](~/ios/platform/search/proactive-suggestions.md), [Introduction to Sirikit](~/ios/platform/sirikit/index.md), [Introduction to User Benachrichtigungen](~/ios/platform/user-notifications/index.md) und Apple [ Programmier Handbuch](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)für die APP-Erweiterung.
+Weitere Informationen finden Sie in unserer [Einführung in Extensions](~/ios/platform/extensions.md), [Message App Integration](~/ios/platform/message-app-integration/index.md), [Introduction to proaktive Vorschläge](~/ios/platform/search/proactive-suggestions.md), [Introduction to Sirikit](~/ios/platform/sirikit/index.md), [Introduction to User Benachrichtigungen](~/ios/platform/user-notifications/index.md) und Apple es [App Extension Programming Guide](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214).
 
 ## <a name="app-search-enhancements"></a>Verbesserungen bei der App-Suche
 
@@ -168,7 +168,7 @@ Weitere Informationen finden Sie im Leitfaden [Einführung in den Sirikit](~/ios
 
 IOS 10 enthält eine neue Sprach-API, die es der App ermöglicht, fortlaufende sprach Erkennungs-und transkrinungs Sprache (aus Live-oder aufgezeichneten Audiodatenströmen) in Text zu unterstützen.
 
-Da die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf den Servern von Apple erfordert, _muss_ die APP die Berechtigung des Benutzers zum Durchführen der Erkennung anfordern, indem der `NSSpeechRecognitionUsageDescription` Schlüssel in seine `Info.plist` Datei eingeschlossen und die `SFSpeechRecognizer.RequestAutorization` aufgerufen wird. anzuwenden.
+Da die Spracherkennung die Übertragung und temporäre Speicherung von Daten auf den Servern von Apple erfordert, _muss_ die APP die Berechtigung des Benutzers zum Durchführen der Erkennung anfordern, indem der `NSSpeechRecognitionUsageDescription` Schlüssel in seine `Info.plist` Datei eingeschlossen und die `SFSpeechRecognizer.RequestAutorization`-Methode aufgerufen wird.
 
 Weitere Informationen finden Sie in unserem Leitfaden [Einführung in die Spracherkennung](~/ios/platform/speech.md) .
 
