@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0071fcc72844e4816e707c5828464859e09db68c
+ms.sourcegitcommit: 2503da076966d12a8bdbf7af209662b74913a15c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751919"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261617"
 ---
 # <a name="contributing"></a>Beitragen
 
@@ -64,6 +64,10 @@ Das Xamarin-Team überprüft Ihren PR und teilt Ihnen (über Feedback zum PR) mi
 Nachdem das Feedback angewendet und die Änderung als in Ordnung eingestuft wurde, führen die Verwalter Ihren PR ein.
 
 Alle Commits werden in einem bestimmten Rhythmus per Push aus dem Masterbranch an die Livewebsite übertragen. Dann können Sie Ihren Beitrag auf https://docs.microsoft.com/xamarin/ sehen.
+
+### <a name="contributing-to-international-content"></a>Beitragen zu internationalen Inhalten
+
+Beiträge zu maschinell übersetzten Inhalten (MT) werden derzeit nicht akzeptiert. Um die Qualität von MT-Inhalten zu verbessern, haben wir auf eine neuronale MT-Engine umgestellt. Wir akzeptieren und begrüßen Beiträge zu von Menschen übersetzten Inhalten (Human Translated Content – HT-Inhalte), die zum Trainieren der neuronalen MT-Engine verwendet werden. Im Laufe der Zeit werden Beiträge zum HT-Inhalt somit die Qualität von HT und MT verbessern. Bei MT-Themen wird ein Haftungsausschluss angezeigt, der besagt, dass ein Teil des Themas möglicherweise maschinell übersetzt wurde. Ferner wird die Schaltfläche **Bearbeiten** nicht angezeigt, da sie deaktiviert ist.
 
 ## <a name="dos-and-donts"></a>Verhaltensregeln
 

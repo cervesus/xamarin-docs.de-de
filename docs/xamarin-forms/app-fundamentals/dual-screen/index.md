@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: 41a7ef4e447bb71582264b4e73629566d3ffd4e7
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.openlocfilehash: 344b6293090ffa4281ea6351f7f176a5be37e5bd
+ms.sourcegitcommit: 0e35d3eafad833d3f19768b001bd804ddda8b69b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480512"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78165552"
 ---
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms-Features für Dual-Screen-Geräte
 
@@ -20,18 +20,22 @@ ms.locfileid: "77480512"
 
 Mit Surface Duo (Android) und Surface Neo (Windows 10X) werden neue Muster für Touch-Anwendungen eingeführt. In Xamarin.Forms sind die Klassen `TwoPaneView` und `DualScreenInfo` enthalten, sodass Sie Apps für diese Geräte entwickeln können.
 
-## <a name="dual-screen-patterns"></a>[Muster für zwei Bildschirme](design-patterns.md)
+## <a name="dual-screen-design-patterns"></a>[Dual-Screen-Entwurfsmuster](design-patterns.md)
 
 Wenn Sie überlegen, wie Sie die Möglichkeiten von zwei Bildschirmen auf Dual-Screen-Geräten am besten ausnutzen, können Sie den Artikel zu Entwurfsmustern lesen. Dort finden Sie Informationen zur besten Lösung für die Benutzeroberfläche Ihrer Anwendung.
 
-## <a name="twopaneview"></a>[TwoPaneView](twopaneview.md)
+## <a name="dual-screen-layout"></a>[Layout für zwei Bildschirme](twopaneview.md)
 
 Mit der `TwoPaneView`-Klasse von Xamarin.Forms, die vom gleichnamigen UWP-Steuerelement inspiriert ist, wird ein Layout eingeführt, das plattformübergreifend für Dual-Screen-Geräte optimiert ist.
 
-## <a name="dualscreeninfo"></a>[DualScreenInfo](dual-screen-info.md)
+## <a name="dual-screen-device-capabilities"></a>[Funktionen für Dual-Screen-Geräte](dual-screen-info.md)
 
 Mithilfe der `DualScreenInfo`-Klasse können Sie z. B. bestimmen, in welchem Bereich Ihre Ansicht angezeigt wird, wie groß sie ist, welche Ausrichtung das Gerät hat und welchen Öffnungsgrad das Scharnier aufweist.
 
-## <a name="dualscreenhelper"></a>[DualScreenHelper](dual-screen-helper.md)
+## <a name="dual-screen-platform-helpers"></a>[Plattformhilfsprogramme für zwei Bildschirme](dual-screen-helper.md)
 
 Mit der `DualScreenHelper`-Klasse können Sie überprüfen, ob die Plattform das Öffnen eines neuen Fensters als Bild im Bild unterstützt. Auf einem Surface Neo-Gerät im Modus „Verfassen“ bedeutet dies, dass Sie ein neues Fenster mit der „WonderBar“ genannten Eingabezeile öffnen können.
+
+## <a name="dual-screen-triggers"></a>[Trigger für zwei Bildschirme](triggers.md)
+
+Der [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen)-Namespace enthält zwei Zustandstrigger, die eine [`VisualState`](xref:Xamarin.Forms.VisualState)-Änderung auslösen, wenn sich der Ansichtsmodus des angefügten Layouts oder Fensters ändert.

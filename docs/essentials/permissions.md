@@ -5,12 +5,12 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 2b1413c6bce7fc4ce43a190cd25494c69dbadedb
-ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
+ms.openlocfilehash: 21f2079ace4adae6fd84d89426e5d66692af2a0a
+ms.sourcegitcommit: ddf0369573b738896efaa601fa6ef5dbc68d9cf1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77555688"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289804"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials: Berechtigungen
 
@@ -90,7 +90,7 @@ Symbole und ihre Bedeutung:
 | StorageRead | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS nicht](~/media/shared/no.png "Unterstützt iOS nicht") | ![Unterstützt UWP nicht](~/media/shared/no.png "Unterstützt UWP nicht") | ![Unterstützt watchOS nicht](~/media/shared/no.png "Unterstützt watchOS nicht") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen nicht](~/media/shared/no.png "Unterstützt Tizen nicht") |
 | StorageWrite | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS nicht](~/media/shared/no.png "Unterstützt iOS nicht") | ![Unterstützt UWP nicht](~/media/shared/no.png "Unterstützt UWP nicht") | ![Unterstützt watchOS nicht](~/media/shared/no.png "Unterstützt watchOS nicht") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen nicht](~/media/shared/no.png "Unterstützt Tizen nicht") |
 
-Falls eine Berechtigung mit einem ❌ markiert ist, wird immer `Granted` zurückgegeben, wenn sie geprüft oder angefordert wird.
+Falls eine Berechtigung als ![nicht unterstützt](~/media/shared/no.png "wird nicht unterstützt") markiert ist, wird stets `Granted` zurückgegeben, wenn sie geprüft oder angefordert wird.
 
 ## <a name="general-usage"></a>Allgemeine Verwendung
 Es folgt ein allgemeines Nutzungsmuster zum Umgang mit Berechtigungen.

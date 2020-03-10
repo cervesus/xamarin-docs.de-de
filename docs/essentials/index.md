@@ -4,13 +4,13 @@ description: Dieses Dokument verweist auf verschiedene Anleitungen für Xamarin.
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 08/27/2019
-ms.openlocfilehash: 2101d2e3948cb917e62725731c4895cc57282b3b
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.date: 02/26/2020
+ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
+ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065127"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155265"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -18,7 +18,7 @@ Xamarin.Essentials stellt Entwicklern plattformübergreifende APIs für ihre mob
 
 Android, iOS und UWP (universelle Windows-Plattform) bieten einzigartige Betriebssystem- und Plattform-APIs, auf die Entwickler zugreifen können, wenn sie Xamarin mit C# verwenden. Xamarin.Essentials stellt eine einzelne plattformübergreifende API bereit, die mit jeder Xamarin.Forms-, iOS-, Android- und UWP-Anwendung kompatibel ist, auf die über freigegebenen Code zugegriffen werden kann, unabhängig davon, wie die Benutzeroberfläche erstellt wird.
 
-## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Erste Schritte mit Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentials"></a>[Erste Schritte mit Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
 Befolgen Sie die Anleitung [Erste Schritte](get-started.md), um das **Xamarin.Essentials**-NuGet-Paket in vorhandenen oder neuen Xamarin.Forms-, Android-, iOS- oder UWP-Projekten zu installieren.
 
@@ -49,6 +49,7 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 * [Karten](maps.md?content=xamarin/xamarin-forms): Öffnen der Kartenanwendung für einen bestimmten Standort
 * [Browser öffnen](open-browser.md?context=xamarin/xamarin-forms): Schnelles Öffnen des Browsers für eine bestimmte Website
 * [Ausrichtungssensor](orientation-sensor.md?context=xamarin/xamarin-forms): Abrufen der Geräteausrichtung im dreidimensionalen Raum
+* [Berechtigungen](permissions.md?context=xamarin/xamarin-forms): Überprüfen und Anfordern von Berechtigungen von Benutzern
 * [Wählhilfe](phone-dialer.md?context=xamarin/xamarin-forms): Öffnen der Wählhilfe
 * [Plattformerweiterungen:](platform-extensions.md?context=xamarin/xamarin-forms) Hilfsmethoden zum Konvertieren der Parameter „Rect“, „Size“ und „Point“
 * [Einstellungen](preferences.md?context=xamarin/xamarin-forms): Schnelles Hinzufügen persistenter Einstellungen
@@ -60,14 +61,14 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 * [Versionsnachverfolgung](version-tracking.md?context=xamarin/xamarin-forms): Nachverfolgung der Anwendungs- Buildnummerversion
 * [Vibration](vibrate.md?context=xamarin/xamarin-forms): Vibration des Geräts
 
-## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[Problembehandlung](troubleshooting.md?context=xamarin/xamarin-forms)
+## <a name="troubleshooting"></a>[Problembehandlung](troubleshooting.md?context=xamarin/xamarin-forms)
 
 Nutzen Sie die verfügbaren Ressourcen, wenn Probleme auftreten.
 
-## <a name="release-noteshttpsdocsmicrosoftcomxamarinessentialsrelease-notes"></a>[Anmerkungen zu dieser Version](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+## <a name="release-notes"></a>[Anmerkungen zu dieser Version](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 
 Sehen Sie sich die vollständigen Versionshinweise zu jedem Xamarin.Essentials-Release an.
 
-## <a name="api-documentationxrefxamarinessentials"></a>[API-Dokumentation](xref:Xamarin.Essentials)
+## <a name="api-documentation"></a>[API-Dokumentation](xref:Xamarin.Essentials)
 
 In der API-Dokumentation finden Sie weitere Informationen zu allen Funktionen von Xamarin.Essentials.

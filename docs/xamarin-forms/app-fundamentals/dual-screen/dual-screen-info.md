@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Forms: DualScreenInfo'
+title: Xamarin.Forms-Funktionen für Dual-Screen-Geräte
 description: In diesem Artikel wird erläutert, wie Sie mit der DualScreenInfo-Klasse in Xamarin.Forms die Benutzeroberfläche Ihrer App für Dual-Screen-Geräte wie Surface Duo und Surface Neo optimieren.
 ms.prod: xamarin
 ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: e9a01ed3720f1501423eb1c0746d311918af82fb
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.openlocfilehash: 8dda1960fceaf7738c44d58b10149b8c20fa543f
+ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480581"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160599"
 ---
-# <a name="xamarinforms-dualscreeninfo"></a>Xamarin.Forms: DualScreenInfo
+# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms-Funktionen für Dual-Screen-Geräte
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+![](~/media/shared/preview.png "This API is currently pre-release")
+
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 
 Mithilfe der `DualScreenInfo`-Klasse können Sie z. B. bestimmen, in welchem Bereich Ihre Ansicht angezeigt wird, wie groß sie ist, welche Ausrichtung das Gerät hat und welchen Öffnungsgrad das Scharnier aufweist.
 
@@ -212,4 +214,4 @@ Der folgende Screenshot zeigt das Layout, das sich ergibt:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [DualScreen (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+- [DualScreen (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
