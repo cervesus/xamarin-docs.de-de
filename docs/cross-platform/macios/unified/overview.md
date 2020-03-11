@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 8402a48602dd94578e688faeb038aec69684e7d4
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940725"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917562"
 ---
 # <a name="unified-api-overview"></a>Übersicht über Unified API
 
@@ -33,7 +33,7 @@ Befolgen Sie die entsprechenden Anweisungen für Ihre Plattform:
 - [Aktualisieren von vorhandenen Xamarin.Forms-Apps](updating-xamarin-forms-apps.md)
 - [Migrieren einer Bindung zu Unified API](update-binding.md)
 
-## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[Tipps zum Aktualisieren von Code für Unified API](updating-tips.md)
+## <a name="tips-for-updating-code-to-the-unified-api"></a>[Tipps zum Aktualisieren von Code für Unified API](updating-tips.md)
 
 Unabhängig davon, welche Anwendungen migriert werden, sehen Sie sich [diese Tipps](updating-tips.md) an, um Sie bei der erfolgreichen Aktualisierung des Unified API zu unterstützen.
 
@@ -246,7 +246,7 @@ Da einige Fehler sehr häufig auftreten und der Rückgabewert nicht nützlich wa
 
 In einigen Fällen mussten einige Konstanten von `string` in `NSString`geändert werden, z. b. `UITableViewCell`
 
-**Ern**
+**Klassisch**
 
 ```csharp
 public virtual string ReuseIdentifier { get; }
@@ -268,7 +268,7 @@ Der ursprüngliche MonoTouch hat keine vollständige Unterstützung für ObjC-Pr
 
 Diese Einschränkungen wurden in den vereinheitlichten APIs entfernt und bereinigt. Die meisten Änderungen sehen wie folgt aus:
 
-**Ern**
+**Klassisch**
 
 ```csharp
 public virtual AVAssetResourceLoaderDelegate Delegate { get; }
@@ -284,7 +284,7 @@ Das `I`-Präfix bedeutet, dass **Unified** eine Schnittstelle anstelle eines bes
 
 Außerdem war es möglich, eine API präziser und benutzerfreundlicher zu verwenden, z. b.:
 
-**Ern**
+**Klassisch**
 
 ```csharp
 public virtual void SelectionDidChange (NSObject uiTextInput);
@@ -312,7 +312,7 @@ Geringe Auswirkung: in den meisten Fällen wirkt sich diese Änderung nicht auf 
 Weitere Änderungen, die Sie beachten sollten, sind in den [Tipps zum Aktualisieren von apps auf die Unified API](~/cross-platform/macios/unified/updating-tips.md)aufgeführt.
 
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Aktualisieren von IOS-apps](updating-ios-apps.md)
 - [Aktualisieren von Mac-apps](updating-mac-apps.md)

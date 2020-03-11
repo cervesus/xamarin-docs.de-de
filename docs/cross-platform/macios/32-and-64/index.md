@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016329"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910778"
 ---
 # <a name="3264-bit-platform-considerations"></a>Überlegungen zu 32/64-Bit-Plattformen
 
@@ -36,7 +36,7 @@ Für Mobile xamarin. IOS-Anwendungen, die in die Unified API konvertiert wurden,
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie im **Lösungspad**auf das Projekt der APP, um das Fenster **Projektoptionen** zu öffnen.
 2. Wählen Sie **IOS-Build**aus.
@@ -49,9 +49,9 @@ Für Mobile xamarin. IOS-Anwendungen, die in die Unified API konvertiert wurden,
    [![Festlegen unterstützter Architekturen auf eine der ARM64-Kombinationen](Images/Image02.png "Festlegen unterstützter Architekturen auf eine der ARM64-Kombinationen")](Images/Image02-large.png#lightbox)
 
 5. Klicken Sie auf **OK**.
-6. Führt einen sauberen Build aus.
+6. Erstellen Sie einen bereinigten Build.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt der APP, und wählen Sie **Eigenschaften**aus.
 2. Wählen Sie **IOS-Build**aus.
@@ -64,7 +64,7 @@ Für Mobile xamarin. IOS-Anwendungen, die in die Unified API konvertiert wurden,
    [![Festlegen unterstützter Architekturen auf eine der ARM64-Kombinationen](Images/VS01.png "Festlegen unterstützter Architekturen auf eine der ARM64-Kombinationen")](Images/VS01-large.png#lightbox)
 
 5. Speichern Sie die Änderungen.
-6. Führt einen sauberen Build aus.
+6. Erstellen Sie einen bereinigten Build.
 
 -----
 

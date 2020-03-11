@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: 3c754acc3502d7aa2c47264e734187ffe060c029
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030838"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915806"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Arbeiten mit der tvos-Navigation und dem Fokus in xamarin
 
@@ -48,7 +48,7 @@ Apple empfiehlt Folgendes, wenn Sie die Navigation für Ihre tvos-App entwerfen:
 - **Bereitstellen der rückwärts Navigation über die Menü Schaltfläche** : um eine einfache und vertraute Benutzerfunktion zu erstellen, können Benutzer mithilfe der **Menü** Schaltfläche der Siri-Remote Navigation rückwärts navigieren. Wenn Sie die **Menü** Schaltfläche drücken, müssen Sie immer zum vorherigen Bildschirm zurückkehren oder zum Hauptmenü der APP zurückkehren. Auf der obersten Ebene der APP sollte durch Drücken der **Menü** Schaltfläche zum Apple TV-Startbildschirm zurückzukehren.
 - **Vermeiden Sie die Anzeige der Schaltfläche "zurück** ", da durch Drücken der **Menü** Schaltfläche auf der Siri-Remote Seite der Bildschirm Stapel rückwärts navigiert wird. vermeiden Sie ein zusätzliches Steuerelement, das dieses Verhalten dupliziert. Eine Ausnahme von dieser Regel ist das erwerben von Bildschirmen oder Bildschirmen mit destruktiven Aktionen (z. b. das Löschen von Inhalt), wenn auch eine Schaltfläche **Abbrechen** angezeigt werden soll.
 - Zeigen Sie große Auflistungen **auf einem einzelnen Bildschirm anstelle von vielen** an. die Siri-Remote wurde so entworfen, dass Sie eine umfangreiche Sammlung von Inhalten schnell und einfach mithilfe von Gesten durchläuft. Wenn Ihre APP mit einer großen Auflistung von Fokus verwendbaren Elementen funktioniert, sollten Sie Sie auf einem einzelnen Bildschirm aufbewahren, anstatt Sie in viele Bildschirme zu unterteilen, die eine größere Navigation im Benutzer Teil erfordern.
-- **Verwenden Sie Standard Steuerelemente für die Navigation** . verwenden Sie zum Erstellen einer einfachen und vertrauten Benutzer Darstellung, soweit möglich, integrierte `UIKit` Steuerelemente wie z. b. Seiten Steuerelemente, Registerkarten, segmentierte Steuerelemente, Tabellen Sichten, Sammlungs Ansichten und geteilte Ansichten für Ihre die Navigation in der app. Da Benutzer bereits mit diesen Elementen vertraut sind, können Sie intuitiv durch Ihre APP navigieren.
+- **Verwenden Sie Standard Steuerelemente für die Navigation** . verwenden Sie zum Erstellen einer einfachen und vertrauten Benutzer Darstellung, soweit möglich, integrierte `UIKit` Steuerelemente wie z. b. Seiten Steuerelemente, Registerkarten, segmentierte Steuerelemente, Tabellen Sichten, Sammlungs Ansichten und geteilte Ansichten für die Navigation Ihrer APP. Da Benutzer bereits mit diesen Elementen vertraut sind, können Sie intuitiv durch Ihre APP navigieren.
 - **Bevorzugen der horizontalen Inhalts Navigation** : aufgrund der Art von Apple TV ist das Schwenken von links nach rechts auf der Siri-Remote Seite natürlicher als nach oben und unten. Beachten Sie diese Option, wenn Sie Inhalts Layouts für Ihre APP entwerfen.
 
 <a name="Focus-and-Selection" />
@@ -164,7 +164,7 @@ public override void ViewDidLoad ()
 
 Zuerst wird eine neue `UIFocusGuide` erstellt und mithilfe der `AddLayoutGuide`-Methode der layoutführungsauflistung der Ansicht hinzugefügt.
 
-Im nächsten Schritt werden die Anker der oberen, linken, breiten und Höhen der Vordergrund Linie relativ zu den Schaltflächen " **Weitere Informationen** " und " **kaufen** " angepasst, um Sie zwischen Ihnen zu positionieren. Thema
+Im nächsten Schritt werden die Anker der oberen, linken, breiten und Höhen der Vordergrund Linie relativ zu den Schaltflächen " **Weitere Informationen** " und " **kaufen** " angepasst, um Sie zwischen Ihnen zu positionieren. Siehe:
 
 [![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
 

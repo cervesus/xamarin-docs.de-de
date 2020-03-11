@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
-ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
+ms.openlocfilehash: 2dea16633181d6b1120a5f9a90da685df66e5451
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980427"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031017"
 ---
 # <a name="advanced-manual-real-world-example"></a>Erweitertes (Manuelles) Beispiel
 
@@ -124,7 +124,10 @@ Done.
 
 Sie werden feststellen, dass wir ein `-scope build/Headers` Argument an target Sharpie übermittelt haben. Da C-und Target-C-Bibliotheken andere Header Dateien `#import` oder `#include` müssen, bei denen es sich um Implementierungsdetails der Bibliothek handelt, nicht um die API, die Sie binden möchten, weist das `-scope`-Argument an, dass alle APIs ignoriert werden, die in einer Datei irgendwo innerhalb des `-scope` Verzeichnisses nicht definiert sind.
 
-Sie werden feststellen, dass das `-scope`-Argument häufig für ordnungsgemäß implementierte Bibliotheken optional ist, aber es gibt keine Beschädigung bei der expliziten Bereitstellung.
+Sie werden feststellen, dass das `-scope`-Argument häufig für ordnungsgemäß implementierte Bibliotheken optional ist, aber es gibt keine Beschädigung bei der expliziten Bereitstellung. 
+
+> [!TIP]
+> Wenn die Header der Bibliothek beliebige IOS-SDK-Header importieren, z. b. `#import <Foundation.h>`, müssen Sie den Bereich festlegen, da das Sharpie-Ergebnis für den importierten IOS SDK-Header die Bindungs Definitionen generiert. Dies führt zu einer großen Bindung, die beim Kompilieren des Bindungs Projekts wahrscheinlich Fehler generiert. 
 
 Außerdem haben wir `-c -Ibuild/headers`angegeben. Erstens weist das `-c`-Argument das Ziel Sharpie an, das Interpretieren von Befehlszeilen Argumenten zu verhindern und nachfolgende Argumente _direkt an den clang-Compiler zu_übergeben. Daher ist `-Ibuild/Headers` ein clang-compilerargument, das clang anweist, unter `build/Headers`nach includes zu suchen, wo sich die Pop-Header befinden. Ohne dieses Argument weiß clang nicht, wo die Dateien zu finden sind, die `POP.h` `#import`. _Fast alle "Probleme" mit der Verwendung von "Ziel-Sharpie", um herauszufinden, was an clang übergeben werden soll_.
 
