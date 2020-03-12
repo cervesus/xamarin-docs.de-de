@@ -6,12 +6,12 @@ ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e1fa76faf0313a21061af585052a3b137243db55
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: c8b4dcbfbf65bc4059125404b0d20ed35fa31f29
+ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488646"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79088925"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>Teil 4: Umgang mit mehreren Plattformen
 
@@ -158,10 +158,12 @@ Jede API-Version definiert auch eine neue Compilerdirektive, sodass Sie mit dies
 
 #### <a name="mac"></a>Mac
 
-Derzeit gibt es kein integriertes Symbol für xamarin. Mac, Sie können jedoch in den Projektoptionen für Mac-apps **> Build > Compiler** im Feld **Symbole definieren** hinzufügen oder die **csproj** -Datei bearbeiten und dort hinzufügen (z. b. `__MAC__`).
+Xamarin. Mac definiert `__MACOS__`, die Sie zum Kompilieren nur für macOS verwenden können:
 
-```xml
-<PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
+```csharp
+#if __MACOS__
+// macOS-specific code
+#endif
 ```
 
 #### <a name="universal-windows-platform-uwp"></a>Universelle Windows-Plattform (UWP)

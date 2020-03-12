@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
 ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032086"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79088970"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Visuelle Entwurfs Updates in ios 11
 

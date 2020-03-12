@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 4731be58c1fadae0bba6768570ecfd181b071dd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031866"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79088958"
 ---
 # <a name="ios-7-user-interface-overview"></a>Übersicht über die iOS 7-Benutzeroberfläche
 
@@ -36,7 +36,7 @@ Schaltflächen, die aus der `UIButton`-Klasse erstellt wurden, sind jetzt grenze
 
 Der `UIButtonType.RoundedRect` Stil ist veraltet. Bei Verwendung in ios 7 führt `UIButtonType.RoundedRect` zu `UIButtonType.System` verwendet werden, der den Standard Schaltflächenstil ohne Hintergrund oder sichtbare Ränder erstellt, wie oben gezeigt.
 
-### <a name="uibarbuttonitem"></a>Uibarbuttonitem
+### <a name="uibarbuttonitem"></a>UIBarButtonItem
 
 Ähnlich wie bei `UIButton`sind leisten Schaltflächen auch grenzenlos, wobei der neue `UIBarButtonItemStyle.Plain` Stil standardmäßig angezeigt wird:
 
@@ -72,7 +72,7 @@ Dies erzeugt eine Standard Warnungs Ansicht, in der die unter Ansicht ignoriert 
 
  Hinweis: UIAlertView wurde in ios 8 als veraltet markiert. Anzeigen des Warnungs [Controllers](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller) für die Verwendung einer Warnungs Ansicht in ios 8 und höher.
 
-### <a name="uisegmentedcontrol"></a>Uisegmentedcontrol
+### <a name="uisegmentedcontrol"></a>UISegmentedControl
 
 Segmentierte Steuerelemente in ios 7 sind transparent und unterstützen Tönungs-Farben. Die Tönungs-Farbe wird für den Text und die Rahmenfarbe verwendet. Wenn ein Segment ausgewählt wird, wird die Farbe zwischen dem Hintergrund und dem Text ausgetauscht. dabei wird die Tönungs-Farbe verwendet, um das ausgewählte Segment hervorzuheben, wie unten dargestellt:
 
@@ -104,7 +104,7 @@ Der gruppierte Stil wurde aktualisiert, und der Inhalt wird nun auf die Ränder 
 
  ![](ios7-ui-images/table1.png "Sample Grouped Table Style")
 
-#### <a name="separatorinset"></a>Separatorinset
+#### <a name="separatorinset"></a>SeparatorInset
 
 Zeilen Trennzeichen können nun eingerückt werden, indem die `UITableVIewCell.SeparatorInset`-Eigenschaft festgelegt wird. Der folgende Code wird z. b. verwendet, um die Zellen des linken Rands abzuleiten:
 
@@ -175,7 +175,7 @@ Der Verschiebungs Wert wird dynamisch generiert, nachdem die Ansicht der Hierarc
 > [!IMPORTANT]
 > `TopLayoutGuide` und `BottomLayoutGuide` werden in ios 11 zugunsten des neuen sicheren Bereichs Layouts eingestellt. Apple hat angegeben, dass die Verwendung des sicheren Bereichs mit der IOS-Version vor IOS 11 kompatibel ist. Weitere Informationen finden Sie im Handbuch [Aktualisieren Ihrer APP für IOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) .
 
-#### <a name="edgesforextendedlayout"></a>Edgesforextendedlayout
+#### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
 Diese API gibt an, welche Ränder einer Ansicht auf den Vollbildmodus erweitert werden sollen, unabhängig von der Strich Durchlässigkeit. In ios 7 werden Navigationsleisten und Symbolleisten oberhalb der Ansicht des Controllers oberhalb der Ansicht des Controllers angezeigt, anders als in früheren IOS-Versionen, in denen Sie nicht denselben Platz belegen. Die IOS 7 Fotos-Anwendung veranschaulicht den Standard `UIViewController.EdgesForExtendedLayout` Wert `UIRectEdge.All`. Diese Einstellung füllt alle vier Ränder in der Ansicht mit Inhalt aus, wodurch die Überlappung und der voll Bildschirm wirksam werden:
 
@@ -201,7 +201,7 @@ In unserer APP wird angezeigt, dass die Ansicht erneut positioniert wird, sodass
 
  [![](ios7-ui-images/good.png "Example with whole image visible")](ios7-ui-images/good.png#lightbox)
 
-Beachten Sie, dass die Auswirkungen der `TopLayoutGuide/BottomLayoutGuide`-und `EdgesForExtendedLayout`-APIs ähnlich sind, dass Sie unterschiedliche Ziele erfüllen sollen. Wenn Sie die `EdgesForExtendedLayout` Einstellung von der Standardeinstellung ändern, werden die ausgeschnittenen Sichten in Anwendungen, die für IOS 6 entwickelt wurden, möglicherweise behoben, aber ein guter IOS 7-Entwurf sollte die Vollbild-Ästhetik berücksichtigen und eine voll Bild Anzeige bieten, wobei `TopLayoutGuide` und `BottomLayoutGuide` ordnungsgemäß Positionieren Sie Inhalte, die für den Benutzer an einem bequemen Ort bearbeitet werden sollen.
+Beachten Sie, dass die Auswirkungen der `TopLayoutGuide/BottomLayoutGuide`-und `EdgesForExtendedLayout`-APIs ähnlich sind, dass Sie unterschiedliche Ziele erfüllen sollen. Wenn Sie die `EdgesForExtendedLayout` Einstellung von der Standardeinstellung ändern, werden die abgeschnittenen Sichten in Anwendungen, die für IOS 6 entwickelt wurden, möglicherweise behoben, aber ein guter IOS 7-Entwurf sollte die Vollbild-Ästhetik berücksichtigen und eine voll Bild Anzeige bieten, die auf `TopLayoutGuide` und `BottomLayoutGuide` basiert, um Inhalte ordnungsgemäß zu positionieren, die für den Benutzer an einem geeigneten Ort manipuliert werden sollen.
 
 Ein funktionierendes Beispiel finden Sie unter [imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) .
 
