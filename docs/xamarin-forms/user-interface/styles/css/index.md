@@ -1,5 +1,5 @@
 ---
-title: Formatieren von Xamarin.Forms-Apps, die mithilfe von Cascading Stylesheets (CSS)
+title: Formatieren von Xamarin.Forms-Apps mithilfe von Cascading Stylesheets (CSS)
 description: Xamarin.Forms unterstützt visuelle Stile-Elemente mithilfe von Cascading Stylesheets (CSS).
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 726ebd55b38460ee966113e4ee487327cd42b03d
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724193"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305600"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von Xamarin.Forms-apps, die mithilfe von Cascading Stylesheets (CSS)
 

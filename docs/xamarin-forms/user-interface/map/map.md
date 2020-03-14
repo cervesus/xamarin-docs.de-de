@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/29/2019
 ms.openlocfilehash: 1cfda90360557af1160d421f18807f8b534967a8
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426348"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306506"
 ---
 # <a name="xamarinforms-map-control"></a>Xamarin. Forms-Kartensteuerelement
 
@@ -20,7 +20,7 @@ ms.locfileid: "73426348"
 
 Das [`Map`](xref:Xamarin.Forms.Maps.Map) -Steuerelement ist eine plattformübergreifende Ansicht zum Anzeigen und kommentieren von Zuordnungen. Es verwendet das Native Karten Steuerelement für jede Plattform und bietet Benutzern eine schnelle und vertraute Zuordnungs Darstellung:
 
-[![Screenshot der Karten Steuerung unter IOS und Android](map-images/map-default.png "Karten Steuerelement")](map-images/map-default-large.png#lightbox "Karten Steuerelement")
+[![Screenshot der Karten Steuerung unter IOS und Android](map-images/map-default.png "Kartensteuerelement")](map-images/map-default-large.png#lightbox "Kartensteuerelement")
 
 Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert die folgenden Eigenschaften, die die Darstellung und das Verhalten von Karten Steuern:
 
@@ -106,15 +106,15 @@ Map map = new Map
 
 Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft auf `Street`festgelegt ist:
 
-[![Screenshot der Karten Steuerung mit dem Straßen Kartentyp unter IOS und Android](map-images/maptype-street.png "Karten Steuerelement mit dem "Straße" der Straße")](map-images/maptype-street-large.png#lightbox "Map control with the street map type")
+[![Screenshot der Karten Steuerung mit dem Straßen Kartentyp unter IOS und Android](map-images/maptype-street.png "Karten Steuerelement mit dem "Straße" der Straße")](map-images/maptype-street-large.png#lightbox "Karten Steuerelement mit dem Typ "Street Map"")
 
 Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft auf `Satellite`festgelegt ist:
 
-[![Screenshot der Karten Steuerung mit dem Satellitentyp unter IOS und Android](map-images/maptype-satellite.png "Karten Steuerelement mit dem satellitenmaptype")](map-images/maptype-satellite-large.png#lightbox "Map control with the satellite map type")
+[![Screenshot der Karten Steuerung mit dem Satellitentyp unter IOS und Android](map-images/maptype-satellite.png "Karten Steuerelement mit dem satellitenmaptype")](map-images/maptype-satellite-large.png#lightbox "Karten Steuerelement mit dem satellitenkartentyp")
 
 Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft auf `Hybrid`festgelegt ist:
 
-[![Screenshot der Karten Steuerung mit dem Hybriden Kartentyp unter IOS und Android](map-images/maptype-hybrid.png "Karten Steuerelement mit dem Hybriden maptype")](map-images/maptype-hybrid-large.png#lightbox "Map control with the hybrid map type")
+[![Screenshot der Karten Steuerung mit dem Hybriden Kartentyp unter IOS und Android](map-images/maptype-hybrid.png "Karten Steuerelement mit dem Hybriden maptype")](map-images/maptype-hybrid-large.png#lightbox "Karten Steuerelement mit dem Hybrid Kartentyp")
 
 ## <a name="display-a-specific-location-on-a-map"></a>Anzeigen einer bestimmten Position auf einer Karte
 
@@ -264,7 +264,7 @@ Map map = new Map
 
 ### <a name="maintain-map-region-on-layout-change"></a>Kartenbereich bei Layoutänderung beibehalten
 
-Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert eine `MoveToLastRegionOnLayoutChange` Eigenschaft vom Typ `bool`. Standardmäßig ist diese Eigenschaft `true`. Dies bedeutet, dass der angezeigte Kartenbereich von seinem aktuellen Bereich in den zuvor festgelegten Bereich wechselt, wenn eine Layoutänderung auftritt, z. b. bei der Geräte Rotation. Wenn diese Eigenschaft auf `false` festgelegt ist, bleibt der angezeigte Kartenbereich zentriert, wenn eine Layoutänderung auftritt. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
+Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert eine `MoveToLastRegionOnLayoutChange` Eigenschaft vom Typ `bool`. Standardmäßig ist diese Eigenschaft `true`. Dies bedeutet, dass der angezeigte Kartenbereich von seinem aktuellen Bereich in den zuvor festgelegten Bereich wechselt, wenn eine Layoutänderung auftritt, z. b. bei der Geräte Rotation. Wenn diese Eigenschaft auf `false`festgelegt ist, bleibt der angezeigte Kartenbereich zentriert, wenn eine Layoutänderung auftritt. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
 
 ```xaml
 <maps:Map MoveToLastRegionOnLayoutChange="false" />

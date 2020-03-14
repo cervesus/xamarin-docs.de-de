@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
 ms.openlocfilehash: b58e7b1fffed3253d9765401d52f16b751db134d
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910835"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306104"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Vision Framework in xamarin. IOS
 
@@ -104,7 +104,7 @@ Die Rechteck Erkennung ist oft nur der erste Schritt in einer Kette von Vorgäng
 
 <a name="faces" />
 
-## <a name="face-detection"></a>Gesichtserkennung
+## <a name="face-detection"></a>Gesichtserfassung
 
 Das [Beispiel "visiongesichter](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces) " funktioniert ähnlich wie das Beispiel " **visionrechgles** " unter Verwendung einer anderen Vision Request-Klasse.
 
@@ -175,7 +175,7 @@ Sehen Sie sich die Quelle des Beispiels für die exakte CoreGraphics [-](https:/
 
 Das Vision-Framework bietet zusätzliche Funktionen zum Erkennen von Gesichtsmerkmalen, wie z. b. Augen und Mund. Verwenden Sie den `VNDetectFaceLandmarksRequest` Typ, der `VNFaceObservation` Ergebnisse zurückgibt, wie in Schritt 3 oben, jedoch mit zusätzlichen `VNFaceLandmark` Daten.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Vision Rechtecke (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)
 - [Vision Gesichter (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)

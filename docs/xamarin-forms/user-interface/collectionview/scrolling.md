@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/17/2019
 ms.openlocfilehash: 7aef14cbb854d89a2088a450353b943402f76a86
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697217"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305750"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin. Forms CollectionView-Bildlauf
 
@@ -20,7 +20,7 @@ ms.locfileid: "72697217"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert zwei [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden, die Elemente in der Ansicht scrollen. Eine der-über Ladungen führt einen Bildlauf für das Element am angegebenen Index durch, während der andere das angegebene Element in die Ansicht verschiebt. Beide über Ladungen verfügen über zusätzliche Argumente, die angegeben werden können, um die Gruppe anzugeben, zu der das Element gehört, die genaue Position des Elements, nachdem der Bildlauf abgeschlossen ist, und ob der Bild Lauf animiert werden soll.
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert ein [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) Ereignis, das ausgelöst wird, wenn eine der [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden aufgerufen wird. Das [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) Objekt, das das `ScrollToRequested` Ereignis begleitet, verfügt über viele Eigenschaften, einschließlich `IsAnimated`, `Index`, `Item` und `ScrollToPosition`. Diese Eigenschaften werden von den Argumenten festgelegt, die in den `ScrollTo` Methoden aufrufen angegeben werden.
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert ein [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) Ereignis, das ausgelöst wird, wenn eine der [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden aufgerufen wird. Das [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) Objekt, das das `ScrollToRequested` Ereignis begleitet, verfügt über viele Eigenschaften, einschließlich `IsAnimated`, `Index`, `Item`und `ScrollToPosition`. Diese Eigenschaften werden von den Argumenten festgelegt, die in den `ScrollTo` Methoden aufrufen angegeben werden.
 
 Außerdem definiert [`CollectionView`](xref:Xamarin.Forms.CollectionView) ein `Scrolled` Ereignis, das ausgelöst wird, um anzugeben, dass der Bildlauf ausgeführt wurde. Das `ItemsViewScrolledEventArgs` Objekt, das das `Scrolled` Ereignis begleitet, verfügt über zahlreiche Eigenschaften. Weitere Informationen finden Sie unter [Erkennen von scrollläufen](#detect-scrolling).
 
@@ -69,7 +69,7 @@ In diesem Beispiel gibt der `OnCollectionViewScrolled` Ereignishandler die Werte
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>Scrollen eines Elements an einem Index in der Ansicht
 
-Die erste [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) -Methoden Überladung führt einen Bildlauf für das Element am angegebenen Index durch. Im folgenden Beispiel wird ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) Objekt mit dem Namen `collectionView` dargestellt, das zeigt, wie das Element am Index 12 in der Ansicht angezeigt wird:
+Die erste [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) -Methoden Überladung führt einen Bildlauf für das Element am angegebenen Index durch. Im folgenden Beispiel wird ein [`CollectionView`](xref:Xamarin.Forms.CollectionView) Objekt mit dem Namen `collectionView`dargestellt, das zeigt, wie das Element am Index 12 in der Ansicht angezeigt wird:
 
 ```csharp
 collectionView.ScrollTo(12);
@@ -109,7 +109,7 @@ collectionView.ScrollTo(monkey, group);
 
 ## <a name="disable-scroll-animation"></a>Scrollanimation deaktivieren
 
-Eine Bild Lauf Animation wird angezeigt, wenn Sie ein Element in die Ansicht scrollen. Diese Animation kann jedoch deaktiviert werden, indem das `animate`-Argument der `ScrollTo`-Methode auf `false` festgelegt wird:
+Eine Bild Lauf Animation wird angezeigt, wenn Sie ein Element in die Ansicht scrollen. Diese Animation kann jedoch deaktiviert werden, indem das `animate`-Argument der `ScrollTo`-Methode auf `false`festgelegt wird:
 
 ```csharp
 collectionView.ScrollTo(monkey, animate: false);
@@ -134,7 +134,7 @@ Dieser Beispielcode führt zu einem minimalen Bildlauf, der erforderlich ist, um
 > [!NOTE]
 > Der [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) Member wird standardmäßig verwendet, wenn das `position`-Argument beim Aufrufen der `ScrollTo`-Methode nicht angegeben wird.
 
-### <a name="start"></a>Starten
+### <a name="start"></a>Start
 
 Der [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) Member gibt an, dass für das Element ein Rollup zum Anfang der Ansicht ausgeführt werden soll:
 
@@ -146,7 +146,7 @@ Dieser Beispielcode führt dazu, dass das Element zum Anfang der Ansicht gescrol
 
 [![Screenshot einer vertikalen CollectionView-Liste mit einem Element, das in der Ansicht unter IOS und Android angezeigt wird](scrolling-images/scrolltoposition-start.png "Vertikale Auflistung von CollectionView mit Rollup-Element")](scrolling-images/scrolltoposition-start-large.png#lightbox "Vertikale Auflistung von CollectionView mit Rollup-Element")
 
-### <a name="center"></a>Center
+### <a name="center"></a>Zentrum
 
 Der [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition) Member gibt an, dass das Element in den Mittelpunkt der Ansicht gescrollt werden soll:
 
@@ -178,7 +178,7 @@ Dieser Beispielcode führt dazu, dass das Element zum Ende der Ansicht gescrollt
 - `KeepScrollOffset` behält den scrolloffset relativ zum Anfang der Liste bei, wenn neue Elemente hinzugefügt werden.
 - `KeepLastItemInView` passt den scrolloffset an, damit das letzte Element sichtbar bleibt, wenn neue Elemente hinzugefügt werden.
 
-Der Standardwert der `ItemsUpdatingScrollMode`-Eigenschaft ist `KeepItemsInView`. Wenn also neue Elemente zu einem hinzugefügt werden [`CollectionView`](xref:Xamarin.Forms.CollectionView) wird das erste sichtbare Element in der Liste angezeigt. Um sicherzustellen, dass neu hinzugefügte Elemente immer am Ende der Liste sichtbar sind, sollte die `ItemsUpdatingScrollMode`-Eigenschaft auf `KeepLastItemInView` festgelegt werden:
+Der Standardwert der `ItemsUpdatingScrollMode`-Eigenschaft ist `KeepItemsInView`. Wenn also neue Elemente zu einem hinzugefügt werden [`CollectionView`](xref:Xamarin.Forms.CollectionView) wird das erste sichtbare Element in der Liste angezeigt. Um sicherzustellen, dass neu hinzugefügte Elemente immer am Ende der Liste sichtbar sind, sollte die `ItemsUpdatingScrollMode`-Eigenschaft auf `KeepLastItemInView`festgelegt werden:
 
 ```xaml
 <CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -221,9 +221,9 @@ Die [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) -Enumeration definiert
 
 - `None` gibt an, dass der Bildlauf nicht an Elemente andostet.
 - `Mandatory` gibt an, dass der Inhalt immer an den nächstgelegenen Punkt ausgerichtet wird, an dem der Bildlauf auf natürliche Weise an der Richtung der Trägheit angehalten wird.
-- `MandatorySingle` gibt das gleiche Verhalten wie `Mandatory` an, führt jedoch nur ein Element gleichzeitig aus.
+- `MandatorySingle` gibt das gleiche Verhalten wie `Mandatory`an, führt jedoch nur ein Element gleichzeitig aus.
 
-Standardmäßig wird die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) -Eigenschaft auf `SnapPointsType.None` festgelegt, wodurch sichergestellt wird, dass Elemente nicht durch Scrollen wie in den folgenden Screenshots angezeigt werden:
+Standardmäßig wird die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) -Eigenschaft auf `SnapPointsType.None`festgelegt, wodurch sichergestellt wird, dass Elemente nicht durch Scrollen wie in den folgenden Screenshots angezeigt werden:
 
 [![Screenshot einer Auflistungs Ansicht (vertikal) ohne Andockpunkte unter IOS und Android](scrolling-images/snappoints-none.png "Auflistungs Ansicht (vertikal) ohne Andockpunkte")](scrolling-images/snappoints-none-large.png#lightbox "Auflistungs Ansicht (vertikal) ohne Andockpunkte")
 
@@ -232,13 +232,13 @@ Standardmäßig wird die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapP
 Die [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) -Enumeration definiert `Start`-, `Center`-und `End`-Member.
 
 > [!IMPORTANT]
-> Der Wert der [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) -Eigenschaft wird nur berücksichtigt, wenn die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) -Eigenschaft auf `Mandatory` oder `MandatorySingle` festgelegt ist.
+> Der Wert der [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) -Eigenschaft wird nur berücksichtigt, wenn die [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) -Eigenschaft auf `Mandatory`oder `MandatorySingle`festgelegt ist.
 
-#### <a name="start"></a>Starten
+#### <a name="start"></a>Start
 
 Der `SnapPointsAlignment.Start` Member gibt an, dass die Ausrichtungs Punkte am führenden Rand von Elementen ausgerichtet sind.
 
-Standardmäßig wird die [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) -Eigenschaft auf `SnapPointsAlignment.Start` festgelegt. Aus Gründen der Vollständigkeit wird jedoch im folgenden XAML-Beispiel gezeigt, wie dieser Enumerationsmember festgelegt wird:
+Standardmäßig wird die [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) -Eigenschaft auf `SnapPointsAlignment.Start`festgelegt. Aus Gründen der Vollständigkeit wird jedoch im folgenden XAML-Beispiel gezeigt, wie dieser Enumerationsmember festgelegt wird:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -269,7 +269,7 @@ Wenn ein Benutzer einen Bildlauf initiiert, wird das oberste Element am oberen R
 
 [![Screenshot einer vertikalen CollectionView-Liste mit Start-Snap Points unter IOS und Android](scrolling-images/snappoints-start.png "Vertikale CollectionView-Liste mit Start-Snap Points")](scrolling-images/snappoints-start-large.png#lightbox "Vertikale CollectionView-Liste mit Start-Snap Points")
 
-#### <a name="center"></a>Center
+#### <a name="center"></a>Zentrum
 
 Der `SnapPointsAlignment.Center` Member gibt an, dass die Punkt Punkte an der Mitte der Elemente ausgerichtet sind. Das folgende XAML-Beispiel zeigt, wie dieser Enumerationsmember festgelegt wird:
 

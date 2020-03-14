@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 26fbe6af639c67a94408605ba456bb3a100d2355
-ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155252"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305888"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms-WebView
 
@@ -330,7 +330,7 @@ Das ist alles!
 
 ![WebView-Navigations Schaltflächen](webview-images/in-app-browser.png)
 
-## <a name="events"></a>Ereignisse
+## <a name="events"></a>Events
 
 WebView löst die folgenden Ereignisse ein, damit Sie auf statusänderungen reagieren können:
 
@@ -563,7 +563,7 @@ Sie können das Fenster mit dem neuen Flag in diesem Screenshot sehen:
 
 Wenn Sie nun einen neuen (Release) Build erstellen und an den App Store senden, sollten keine Warnungen zu der veralteten API vorliegen.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Arbeiten mit WebView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 - [WebView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)

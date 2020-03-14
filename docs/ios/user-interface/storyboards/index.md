@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 13f5c594543934e14295615517e3de01a98a69a5
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 3d9531bbaa38a0a0a9bb42d22c79a63fda75c449
+ms.sourcegitcommit: 926f9a44065b41c7d74794a94bee66b61e903bf2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940996"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79134027"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in xamarin. IOS
 
@@ -22,7 +22,7 @@ Bevor das Storyboard-Dateiformat von Apple als visuelle Darstellung der Benutzer
 
 Ein Storyboard kann mit dem xamarin IOS-Designer erstellt, geöffnet und bearbeitet werden. In dieser Anleitung wird auch erläutert, wie Sie den Designer verwenden, um Ihre Storyboards zu C# erstellen, während Sie zum Programmieren der Navigation verwenden.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Storyboards können mit Xcode, dem IOS-Designer in Visual Studio für Mac und Visual Studio 2019 mit installierter xamarin-Workloads verwendet werden.
 
@@ -69,7 +69,7 @@ Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer 
 - **Anzeigen/pushen** – ein Push-Ziel fügt dem Navigations Stapel den Ansichts Controller hinzu. Dabei wird davon ausgegangen, dass der Ansichts Controller, von dem der Push stammt, Teil desselben Navigations Controllers wie der Ansichts Controller ist, der dem Stapel hinzugefügt wird. Dies erfolgt genauso wie `pushViewController`, und wird im Allgemeinen verwendet, wenn zwischen den Daten auf den Bildschirmen eine Beziehung besteht. Die Verwendung von Push-abgue bietet Ihnen den Luxus, eine Navigationsleiste mit einer Schaltfläche "zurück" und einem Titel zu jeder Ansicht auf dem Stapel hinzuzufügen, sodass drilldownnavigation durch die Ansichts Hierarchie ermöglicht wird.
 - **Modal** – ein modaler segue erstellt eine Beziehung zwischen zwei beliebigen Ansichts Controllern in Ihrem Projekt, wobei die Option eines animierten Übergangs angezeigt wird. Der untergeordnete Ansichts Controller verwirft den übergeordneten Ansichts Controller in der Ansicht vollständig. Im Gegensatz zu einem Push-abgue, der eine Schaltfläche "zurück" für uns hinzufügt. bei der Verwendung eines modalen seegue-`DismissViewController` muss verwendet werden, um zum vorherigen Ansichts Controller zurückzukehren.
 - **Benutzer** definiert – alle benutzerdefinierten Klassen können als eine Unterklasse von `UIStoryboardSegue`erstellt werden.
-- Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
+- Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
 - **Sourbstbston** – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
 
     [![](images/sourcelesssegue.png "A sourceless segue")](images/sourcelesssegue.png#lightbox)
@@ -82,9 +82,9 @@ Jede Anwendung, die Größenklassen verwendet, verwendet auch die neuen [*adapti
 
 [![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
 
-|Segue|Beschreibung|
+|Segue|BESCHREIBUNG|
 |--- |--- |
-|Anzeigen|Dies ähnelt einem Push-Vorgang, aber der Inhalt des Bildschirms wird berücksichtigt.|
+|Show (Anzeigen)|Dies ähnelt einem Push-Vorgang, aber der Inhalt des Bildschirms wird berücksichtigt.|
 |Details anzeigen|Wenn die APP eine Master-und Detailansicht anzeigt (z. b. in einem Split View Controller auf einem iPad), ersetzt der Inhalt die Detailansicht. Wenn die app nur den Master oder das Detail anzeigt, ersetzt der Inhalt den Anfang des Ansichts Controller Stapels.|
 |Präsentation|Dies ähnelt dem modalen segue und ermöglicht die Auswahl von Präsentations-und Übergangs Stilen.|
 |Popover-Präsentation|Dies stellt Inhalte als popover dar.|
@@ -128,7 +128,7 @@ Sobald der Übergang abgeschlossen ist, wird dem Benutzer die `CallHistoryContro
 
 Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Storyboard-Datei hinzufügen. Wenn Sie dies in Visual Studio für Mac ausführen, können Sie die folgenden Schritte ausführen:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Erstellen Sie eine neue Storyboard-Datei, indem Sie zu **Datei > neue Datei > IOS > Storyboard**navigieren, wie unten dargestellt:
 
@@ -149,7 +149,7 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
     }
     ```
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Erstellen Sie eine neue Storyboard-Datei, indem Sie mit der rechten Maustaste auf das Projekt klicken, um **> neue Datei > IOS > leeres Storyboard hinzuzufügen**, wie unten dargestellt:
 
@@ -187,6 +187,10 @@ Der folgende Screenshot zeigt zwei Ansichts Controller auf unserer Entwurfs Ober
     [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
 
 2. Klicken Sie mit der rechten Maustaste auf die storyboarddatei, und wählen Sie **Öffnen mit > Xcode Interface Builder** aus, um Sie in Xcode zu öffnen
+
+    *Wenn Sie den Xcode Interface Builder standardmäßig verwenden möchten, können Sie ihn in den Visual Studio für Mac Einstellungen unter **Projekte > IOS**auswählen:*
+
+![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
 
 3. Öffnen Sie in Xcode die Bibliothek (über **Ansicht > Bibliothek anzeigen** oder *Umschalt + Befehl + L*), um eine Liste von Objekten anzuzeigen, die dem Storyboard hinzugefügt werden können. Fügen Sie dem Storyboard eine `Navigation Controller` hinzu, indem Sie das Objekt aus der Liste auf das Storyboard ziehen. Standardmäßig werden die `Navigation Controller` zwei Bildschirme bereitstellen: der Bildschirm auf der rechten Seite ist eine `TableViewController` die wir durch eine einfachere Ansicht ersetzen werden, sodass Sie durch Klicken auf die Ansicht und drücken der ENTF-Taste entfernt werden kann.
 
@@ -472,11 +476,11 @@ Gehen Sie folgendermaßen vor, um einem Storyboard einen Verweis auf eine bestim
 
 Wenn die app ausgeführt wird und der Benutzer auf das Benutzeroberflächen Element klickt, das Sie aus erstellt haben, wird die Szene mit der angegebenen **Storyboard-ID** im gleichen Storyboard angezeigt, das in der storyboardreferenz angegeben ist.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wird das Konzept von Storyboards vorgestellt und erläutert, wie Sie bei der Entwicklung von IOS-Anwendungen von Nutzen sein können. Darin werden Szenen, Ansichts Controller, Ansichten und Sicht Hierarchien erläutert, und es wird erläutert, wie Szenen mit unterschiedlichen Arten von Enumerationstypen verknüpft werden  Außerdem wird beschrieben, wie Sie Ansichts Controller manuell aus einem Storyboard instanziieren und bedingte Listen erstellen.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Manuelles Storyboard (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualstoryboard/)
 - [Einführung in den IOS-Designer](~/ios/user-interface/designer/introduction.md)

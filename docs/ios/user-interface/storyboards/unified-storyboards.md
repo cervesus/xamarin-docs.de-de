@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
 ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915176"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306254"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in xamarin. IOS
 

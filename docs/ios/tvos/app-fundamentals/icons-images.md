@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915798"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305858"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit tvos-Symbolen und-Bildern in xamarin
 
@@ -291,7 +291,7 @@ Weitere Informationen zum Arbeiten mit Game Center finden Sie im [Game Center-Pr
 
 <a name="Working-with-Images" />
 
-## <a name="working-with-images"></a>Working with Images (Arbeiten mit Bildern)
+## <a name="working-with-images"></a>Arbeiten mit Images
 
 Da tvos 9 eine Teilmenge von IOS 9 ist, funktionieren die gleichen Techniken zum einschließen und Anzeigen von Bildern in einer xamarin. IOS-APP auch für eine xamarin. tvos-app. Weitere Informationen finden Sie in unserer [Bild](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Dokumentation.
 

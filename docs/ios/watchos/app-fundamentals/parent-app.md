@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487762"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306248"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Arbeiten mit dem WatchOS übergeordnete Anwendung in Xamarin
 
@@ -20,7 +20,7 @@ Es gibt verschiedene Möglichkeiten für die Kommunikation zwischen der Watch-ap
 
 - Watch-Apps können auf dem iPhone Code auf der übergeordneten APP [Ausführen](#run-code) .
 
-- Sehen Sie sich Erweiterungen können [freigeben einen Speicherort](#shared-storage) mit der übergeordneten iPhone-app.
+- Überwachungs Erweiterungen können [einen Speicherort](#shared-storage) für die übergeordnete iPhone-App freigeben.
 
 - Übergeben Sie mithilfe von Übergabe Daten aus einer Benachrichtigung an die Watch-APP, und senden Sie den Benutzer an einen bestimmten Schnittstellen Controller in der app.
 
@@ -35,11 +35,11 @@ Diese beiden Beispiele veranschaulichen, wie `WCSession` verwendet wird, um Code
 
 ## <a name="shared-storage"></a>Freigegebener Speicher
 
-Wenn Sie konfigurieren eine [app-Gruppe](~/ios/watchos/app-fundamentals/app-groups.md) und iOS 8-Erweiterungen (einschließlich der Watch-Erweiterungen) Daten mit der übergeordneten Anwendung gemeinsam nutzen können.
+Wenn Sie eine [App-Gruppe](~/ios/watchos/app-fundamentals/app-groups.md) konfigurieren, können IOS 8-Erweiterungen (einschließlich der Überwachungs Erweiterungen) Daten für die übergeordnete App freigeben.
 
 ### <a name="nsuserdefaults"></a>NSUserDefaults
 
-Der folgende Code kann in der Watch-app-Erweiterung und der übergeordneten iPhone-app geschrieben werden, sodass sie einen gemeinsamen Satz von verweisen können `NSUserDefaults`:
+Der folgende Code kann in der Watch-App-Erweiterung und der übergeordneten iPhone-App geschrieben werden, sodass Sie auf einen allgemeinen Satz von `NSUserDefaults`verweisen können:
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -70,11 +70,11 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-Hinweis: Wenn der Pfad ist `null` überprüfen Sie dann die [app-Gruppenkonfiguration](~/ios/watchos/app-fundamentals/app-groups.md) sicherstellen, dass die bereitstellungsprofile richtig konfiguriert wurden und auf dem Entwicklungscomputer heruntergeladen und installiert wurden.
+Hinweis: Wenn der Pfad `null` ist, überprüfen Sie die [Konfiguration der APP-Gruppe](~/ios/watchos/app-fundamentals/app-groups.md) , um sicherzustellen, dass die Bereitstellungs profile ordnungsgemäß konfiguriert wurden und auf dem Entwicklungs Computer heruntergeladen bzw. installiert wurden.
 
-Weitere Informationen finden Sie unter den [App-Gruppen-Funktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) Dokumentation.
+Weitere Informationen finden Sie in der Dokumentation zu [App-Gruppenfunktionen](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [Apple WKInterfaceController Verweis](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
-- [Apple Freigeben von Daten mit Ihrer App mit](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Wkinterfakecontroller-Referenz für Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
+- [Apple-Freigabe von Daten für Ihre enthaltende App](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
