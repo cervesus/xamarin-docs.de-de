@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
 ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
-ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79088970"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306110"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Visuelle Entwurfs Updates in ios 11
 
@@ -55,7 +55,7 @@ NavigationItem.SearchController = searchController;
 
 Abhängig von der Funktionalität Ihrer APP möchten Sie möglicherweise, dass die Suchleiste ausgeblendet wird, wenn ein Benutzer einen Bildlauf durch eine Liste durchführt. Sie können dies mithilfe der `HidesSearchBarWhenScrolling`-Eigenschaft anpassen.
 
-## <a name="margins"></a>Seitenränder
+## <a name="margins"></a>Ränder
 
 Apple hat eine neue Eigenschaft – `directionalLayoutMargins` – erstellt, die verwendet werden kann, um den Raum zwischen Sichten und unter Ansichten festzulegen. Verwenden Sie `directionalLayoutMargins` mit `leading` oder `trailing` insets. Unabhängig davon, ob es sich bei dem System um eine Sprache von links nach rechts oder von rechts nach Links handelt, wird der Abstand in der APP von IOS entsprechend festgelegt.
 
@@ -78,7 +78,7 @@ Der sichere Bereich ist eine neue Möglichkeit, den sichtbaren Raum Ihrer Anwend
 
 [![sicherer Bereich im Vergleich zum oberen und unteren layouthandbuch](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
-Wenn Sie zuvor eine Ansicht hinzugefügt haben und möchten, dass Sie im grünen Bereich angezeigt wird, würden Sie Sie am _unteren Rand_ des `TopLayoutGuide` und am _oberen_ Rand des `BottomLayoutGuide`einschränken. In ios 11 würden Sie Sie stattdessen auf den _oberen_ und _unteren Rand_ des sicheren Bereichs beschränken. Beispiel:
+Wenn Sie zuvor eine Ansicht hinzugefügt haben und möchten, dass Sie im grünen Bereich angezeigt wird, würden Sie Sie am _unteren Rand_ des `TopLayoutGuide` und am _oberen_ Rand des `BottomLayoutGuide`einschränken. In ios 11 würden Sie Sie stattdessen auf den _oberen_ und _unteren Rand_ des sicheren Bereichs beschränken. Ein Beispiel folgt:
 
 ```csharp
 var safeGuide = View.SafeAreaLayoutGuide;
