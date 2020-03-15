@@ -1,6 +1,6 @@
 ---
-title: Zusammenfassung der Kapitel 10. XAML-Markuperweiterungen
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung der Kapitel 10. XAML-Markuperweiterungen'
+title: Zusammenfassung von Kapitel 10. XAML-Markuperweiterungen
+description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 10. XAML-Markuperweiterungen'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
@@ -8,93 +8,93 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 076e9f5155492e5a69d906c587b24495fe39d3f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "61334329"
 ---
-# <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Zusammenfassung der Kapitel 10. XAML-Markuperweiterungen
+# <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Zusammenfassung von Kapitel 10. XAML-Markuperweiterungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
 
-In der Regel der XAML-Parser eine beliebige Zeichenfolge als Attributwert festgelegt, um den Typ der Eigenschaft, die basierend auf standardkonvertierungen für die grundlegende .NET Datentypen konvertiert oder [ `TypeConverter` ](xref:Xamarin.Forms.TypeConverter) Ableitung angefügt, um die Eigenschaft oder den Typ mit einer [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute).
+Normalerweise konvertiert der XAML-Parser alle als Attributwert festgelegten Zeichenfolgen in den Typ der Eigenschaft, basierend auf Standardkonversionen für die grundlegenden .NET-Datentypen, oder eine [`TypeConverter`](xref:Xamarin.Forms.TypeConverter)-Ableitung, die an die Eigenschaft angefügt ist, oder deren Typ mit einem [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute).
 
-Aber manchmal ist es sinnvoll, ein Attribut aus einer anderen Quelle, z. B. ein Element in einem Wörterbuch oder der Wert von einer statischen Eigenschaft oder Feld oder eine Berechnung irgendeiner Art festgelegt.
+Manchmal ist es jedoch praktisch, ein Attribut aus einer anderen Quelle festzulegen, z. B. einem Element in einem Wörterbuch, dem Wert einer statischen Eigenschaft oder eines statischen Felds oder aus einer Berechnung.
 
-Dies ist die Aufgabe von einer *XAML-Markuperweiterung*. Trotz des Namens XAML-Markuperweiterungen sind *nicht* eine Erweiterung in XML. XAML ist immer gültige XML-Daten.
+Dies ist die Aufgabe einer *XAML-Markuperweiterung*. Trotz des Namens sind XAML-Markuperweiterungen *keine* Erweiterung von XML. XAML ist immer gültiger XML-Code.
 
-## <a name="the-code-infrastructure"></a>Der Code-Infrastruktur
+## <a name="the-code-infrastructure"></a>Die Codeinfrastruktur
 
-Eine XAML-Markuperweiterung ist eine Klasse, implementiert die [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) Schnittstelle. Eine solche Klasse verfügt oft über das Wort `Extension` am Ende des Namens aber normalerweise wird in XAML ohne dieses Suffix.
+Ein XAML-Markuperweiterung ist eine Klasse, die die [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension)-Schnittstelle implementiert. Bei einer solchen Klasse tritt häufig das Wort `Extension` am Ende ihres Namens auf, doch normalerweise kommt es in XAML ohne dieses Suffix vor.
 
-Der folgenden XAML-Markuperweiterungen werden von allen Implementierungen von XAML unterstützt:
+Die folgenden XAML-Markuperweiterungen werden von allen Implementierungen von XAML unterstützt:
 
-- `x:Static` unterstützt von [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension)
-- `x:Reference` unterstützt von [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)
-- `x:Type` unterstützt von [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension)
-- `x:Null` unterstützt von [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension)
-- `x:Array` unterstützt von [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension)
+- `x:Static` unterstützt von [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension).
+- `x:Reference` unterstützt von [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension).
+- `x:Type` unterstützt von [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension).
+- `x:Null` unterstützt von [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension).
+- `x:Array` unterstützt von [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension).
 
-Diese vier XAML-Markuperweiterungen werden von vielen Implementierungen von XAML, einschließlich Xamarin.Forms unterstützt:
+Diese vier XAML-Markuperweiterungen werden von vielen Implementierungen von XAML unterstützt, einschließlich Xamarin.Forms:
 
-- `StaticResource` unterstützt von [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
-- `DynamicResource` unterstützt von [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
-- `Binding` unterstützt von [ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension) &mdash;ausführlicher [Kapitel 16. Datenbindung](chapter16.md)
-- `TemplateBinding` unterstützt von [ `TemplateBindingExtension` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) &mdash;nicht im Buch behandelt.
+- `StaticResource` unterstützt von [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension).
+- `DynamicResource` unterstützt von [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension).
+- `Binding` unterstützt von [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) – besprochen in [Kapitel 16, Datenbindung](chapter16.md)
+- `TemplateBinding` unterstützt von [`TemplateBindingExtension`](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) – nicht behandelt in diesem Buch.
 
-Eine zusätzliche Erweiterung des XAML-Markup befindet sich in Xamarin.Forms in Verbindung mit [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout):
+Eine zusätzliche XAML-Markuperweiterung ist in Xamarin.Forms enthalten in Verbindung mit [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout):
 
-- [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)&mdash;nicht behandelt im Buch.
+- [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) – nicht behandelt in diesem Buch.
 
-## <a name="accessing-static-members"></a>Zugriff auf statische Member
+## <a name="accessing-static-members"></a>Zugreifen auf statische Member
 
-Verwenden der [ `x:Static` ](xref:Xamarin.Forms.Xaml.StaticExtension) -Elements ein Attribut auf den Wert eines öffentlichen, statischen Eigenschaft, Feld oder eines Enumerationswerts Members. Legen Sie die [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) Eigenschaft, um den statischen Member. Es ist in der Regel einfacher an `x:Static` und den Namen des Members in geschweiften Klammern. Der Name des der `Member` Eigenschaft muss nicht eingeschlossen ist, werden nur das Element selbst. Diese allgemeine Syntax wird angezeigt, der [ **SharedStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SharedStatics) Beispiel. Die statische Felder selbst sind definiert, der [ `AppConstants` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter10/SharedStatics/SharedStatics/SharedStatics/AppConstants.cs) Klasse. Dieses Verfahren können Sie über ein Programm verwendete Konstanten herzustellen.
+Verwenden Sie das [`x:Static`](xref:Xamarin.Forms.Xaml.StaticExtension)-Element, um ein Attribut auf den Wert einer/s öffentlichen, statischen Eigenschaft, Felds oder Enumerationsmembers festzulegen. Legen Sie die Eigenschaft [`Member`](xref:Xamarin.Forms.Xaml.StaticExtension.Member) auf den statischen Member fest. Normalerweise ist es einfacher, `x:Static` und den Membernamen in geschweiften Klammern anzugeben. Der Name der `Member`-Eigenschaft muss nicht eingeschlossen werden, nur der Member selbst. Diese gängige Syntax wird im [**SharedStatics**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SharedStatics)-Beispiel gezeigt. Die statischen Felder selbst werden in der [`AppConstants`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter10/SharedStatics/SharedStatics/SharedStatics/AppConstants.cs)-Klasse definiert. Diese Methode gestattet es Ihnen, von einem Programm verwendete Konstanten einzurichten.
 
-Mit zusätzlichen XML-Namespacedeklaration, Sie können auf verweisen öffentliche statische Eigenschaften, Felder oder Enumerationsmember, die in .NET Framework definierten wie in der [ **SystemStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SystemStatics) Beispiel .
+Mit einer zusätzlichen XML-Namespacedeklaration können Sie auf öffentliche, statische Eigenschaften, Felder oder Enumerationsmember im .NET Framework verweisen, wie im [**SystemStatics**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SystemStatics)-Beispiel veranschaulicht.
 
 ## <a name="resource-dictionaries"></a>Ressourcenverzeichnis
 
-Die `VisualElement` -Klasse definiert eine Eigenschaft namens [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) , die Sie festlegen können, um ein Objekt des Typs [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). In XAML, können Sie Elemente in diesem Wörterbuch speichern und identifizieren sie mit der `x:Key` Attribut. Die Elemente, die im Ressourcenverzeichnis gespeichert werden für alle Verweise auf das Element freigegeben.
+Die `VisualElement`-Klasse definiert eine Eigenschaft namens [`Resources`](xref:Xamarin.Forms.VisualElement.Resources), die Sie auf ein Objekt vom Typ [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) festlegen können. Innerhalb von XAML können Sie Elemente in diesem Verzeichnis speichern und sie mit dem `x:Key`-Attribut identifizieren. Die im Ressourcenverzeichnis gespeicherten Elemente werden von allen Verweisen auf das Element gemeinsam genutzt.
 
 ### <a name="staticresource-for-most-purposes"></a>StaticResource für die meisten Zwecke
 
-In den meisten Fällen verwenden Sie die [ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension) Markuperweiterung für ein Element aus dem Ressourcenverzeichnis zu verweisen, wie die [ **ResourceSharing** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing) Beispiel . Sie können eine `StaticResourceExtension` Element oder `StaticResource` in geschweiften Klammern:
+In den meisten Fällen verwenden Sie die [`StaticResource`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)-Markuperweiterung, um auf ein Element aus dem Ressourcenverzeichnis zu verweisen, wie im [**ResourceSharing**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing)-Beispiel gezeigt. Sie können ein `StaticResourceExtension`-Element oder `StaticResource` in geschweiften Klammern verwenden:
 
-[![Dreifacher Screenshot der gemeinsamen ressourcennutzung](images/ch10fg03-small.png "Ressourcenfreigabe")](images/ch10fg03-large.png#lightbox "gemeinsame Nutzung von Ressourcen")
+[![Dreifacher Screenshot der gemeinsamen Nutzung von Ressourcen](images/ch10fg03-small.png "Gemeinsame Nutzung von Ressourcen")](images/ch10fg03-large.png#lightbox "Gemeinsame Nutzung von Ressourcen")
 
-Verwechseln Sie nicht die `x:Static` Markuperweiterung und `StaticResource` Markuperweiterung.
+Verwechseln Sie die `x:Static`-Markuperweiterung nicht mit der `StaticResource`-Markuperweiterung.
 
-### <a name="a-tree-of-dictionaries"></a>Eine Struktur von Wörterbüchern
+### <a name="a-tree-of-dictionaries"></a>Struktur von Datenwörterbüchern
 
-Wenn der XAML-Parser erkennt eine `StaticResource`, es beginnt die Suche, die die visuelle Struktur nach einem übereinstimmenden Schlüssel, und sucht dann in der `ResourceDictionary` in der Anwendung `App` Klasse. Dadurch können Elemente in einem Ressourcenverzeichnis tiefer in der visuellen Struktur ein Ressourcenverzeichnisses, die weiter oben in der visuellen Struktur zu überschreiben. Dies wird veranschaulicht, der [ **ResourceTrees** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceTrees) Beispiel.
+Wenn der XAML-Parser eine `StaticResource` findet, beginnt er damit, die visuelle Struktur aufwärts nach einem übereinstimmenden Schlüssel zu durchsuchen, und schlägt dann im `ResourceDictionary` in der `App`-Klasse der Anwendung nach. Hierdurch können Elemente, die sich in einem Ressourcenverzeichnis tiefer in der visuellen Struktur befinden, eine Ressource überschreiben, die sich weiter oben in der visuellen Struktur befindet. Dies wird im [**ResourceTrees**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceTrees)-Beispiel demonstriert.
 
-### <a name="dynamicresource-for-special-purposes"></a>DynamicResource für besondere Zwecke
+### <a name="dynamicresource-for-special-purposes"></a>DynamicResource für spezielle Zwecke
 
-Die `StaticResource` Markuperweiterung bewirkt, dass ein Element aus dem Wörterbuch abgerufen werden soll, wenn eine visuelle Struktur, während erstellt wird die `InitializeComponent` aufrufen. Eine Alternative zum `StaticResource` ist [ `DynamicResource` ](xref:Xamarin.Forms.Xaml.DynamicResourceExtension), die einen Link zu der Wörterbuchschlüssel verwaltet und aktualisiert das Ziel aus, wenn das Element durch die wichtigsten Änderungen auf die verwiesen wird.
+Die `StaticResource`-Markuperweiterung veranlasst das Abrufen eines Elements aus dem Verzeichnis, wenn eine visuelle Struktur während des `InitializeComponent`-Aufrufs erstellt wird. Eine Alternative zu `StaticResource` ist [`DynamicResource`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension), das eine Verknüpfung mit dem Verzeichnisschlüssel bewahrt und das Ziel aktualisiert, wenn das von dem Schlüssel referenzierte Element sich ändert.
 
-Der Unterschied zwischen `StaticResource` und `DynamicResource` wird veranschaulicht, der [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) Beispiel.
+Der Unterschied zwischen `StaticResource` und `DynamicResource` wird im [**DynamicVsStatic**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic)-Beispiel veranschaulicht.
 
-Eine Eigenschaft festlegen, indem `DynamicResource` muss durch eine bindbare Eigenschaft unterstützt werden, wie unter [Kapitel 11, die bindbare Infrastruktur](chapter11.md).
+Eine von `DynamicResource` festgelegte Eigenschaft muss, wie in [Kapitel 11, „Die bindbare Infrastruktur“](chapter11.md), besprochen, von einer bindbaren Eigenschaft unterstützt werden.
 
-## <a name="lesser-used-markup-extensions"></a>Wenig genutzte Markuperweiterungen
+## <a name="lesser-used-markup-extensions"></a>Seltener verwendete Markuperweiterungen
 
-Verwenden der [ `x:Null` ](xref:Xamarin.Forms.Xaml.NullExtension) Markuperweiterung, eine Eigenschaft festzulegen, um `null`.
+Verwenden Sie die [`x:Null`](xref:Xamarin.Forms.Xaml.NullExtension)-Markuperweiterung, um eine Eigenschaft auf `null` festzulegen.
 
-Verwenden der [ `x:Type` ](xref:Xamarin.Forms.Xaml.TypeExtension) Markuperweiterung zum Festlegen einer Eigenschaft in ein .NET `Type` Objekt.
+Verwenden Sie die [`x:Type`](xref:Xamarin.Forms.Xaml.TypeExtension)-Markuperweiterung, um eine Eigenschaft auf ein `Type`-Objekt von .NET festzulegen.
 
-Verwendung [ `x:Array` ](xref:Xamarin.Forms.Xaml.ArrayExtension) um ein Array zu definieren. Geben Sie den Typ der Arraymember durch Festlegen der [`Type`]-Eigenschaft auf eine `x:Type` Markuperweiterung.
+Verwenden Sie [`x:Array`](xref:Xamarin.Forms.Xaml.ArrayExtension), um ein Array zu definieren. Geben Sie den Typ der Arraymember an, indem Sie die Eigenschaft [`Type`] auf eine `x:Type`-Markuperweiterung festlegen.
 
 ## <a name="a-custom-markup-extension"></a>Eine benutzerdefinierte Markuperweiterung
 
-Sie können Ihre eigenen XAML-Markuperweiterungen erstellen, indem Sie eine Klasse, die implementiert schreiben die [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) eine Verbindung mit einem [ `ProvideValue` ](xref:Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(System.IServiceProvider)) Methode.
+Sie können Ihre eigene XAML-Markuperweiterung erstellen, indem Sie eine Klasse schreiben, die die [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension)-Schnittstelle mit einer [`ProvideValue`](xref:Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(System.IServiceProvider))-Methode implementiert.
 
-Die [ `HslColorExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) Klasse erfüllt diese Anforderung. Erstellt einen Wert vom Typ `Color` basierend auf den Werten der Eigenschaften, die mit dem Namen `H`, `S`, `L`, und `A`. Diese Klasse ist das erste Element in einer Xamarin.Forms-Bibliothek, die mit dem Namen [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) , die Sie erstellt und im Laufe dieses Buchs verwendet.
+Die [`HslColorExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs)-Klasse erfüllt diese Anforderung. Sie erstellt einen Wert vom Typ `Color`, basierend auf Werten der Eigenschaften namens `H`, `S`, `L` und `A`. Diese Klasse ist das erste Element in einer Xamarin.Forms-Bibliothek namens [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit), die im Verlauf dieses Buchs aufgebaut und verwendet wird.
 
-Die [ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) Beispiel veranschaulicht, wie diese Bibliothek verweisen, und verwenden die benutzerdefinierte Markuperweiterung.
+Das [**CustomExtensionDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo)-Beispiel veranschaulicht, wie Sie auf diese Bibliothek verweisen und die benutzerdefinierte Markuperweiterung verwenden.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Kapitel 10 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
-- [Kapitel 10-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+- [Kapitel 10 – vollständiger Text (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
+- [Kapitel 10 – Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/index.md)
