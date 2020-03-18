@@ -8,61 +8,61 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/16/2017
 ms.openlocfilehash: 8685be4bb1cc45ff04dc8d9f7d8e64e7b1483b60
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027023"
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>Wo kann ich meine Android SDK-Speicherorte festlegen?
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Navigieren Sie in Visual Studio zu Extras **> Optionen > xamarin > Android-Einstellungen** , um den Android SDK Speicherort anzuzeigen und festzulegen:
+Navigieren Sie in Visual Studio zu **Extras > Optionen > Xamarin > Android-Einstellungen**, um den Speicherort des Android SDK anzuzeigen und festzulegen:
 
-[![Registerkarte "Speicherorte" in den Einstellungen](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
+[![Beispiel für Registerkarte „Speicherorte“ in den Einstellungen](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
 
-Der Standard Speicherort für jeden Pfad lautet wie folgt:
+Der Standardspeicherort für die einzelnen Pfade lautet wie folgt:
 
-- Java Development Kit-Speicherort: 
+- Speicherort für das Java Development Kit: 
 
-    **C:\\-Programmdateien\\Java\\JDK 1.8.0 _131**
+    **C:\\Programme\\Java\\jdk1.8.0_131**
 
-- Android SDK Speicherort: 
+- Speicherort für das Android SDK: 
 
     **C:\\Programme (x86)\\Android\\android-sdk**
 
-- Android NDK-Speicherort: 
+- Speicherort für das Android NDK: 
 
-    **C:\\ProgramData\\Microsoft\\AndroidNDK64\\Android-NDK-r13b**
+    **C:\\Programme\\Microsoft\\AndroidNDK64\\android-ndk-r13b**
 
-Beachten Sie, dass die Versionsnummer des NDK variieren kann. Anstelle von **Android-NDK-r13b**könnte es beispielsweise eine frühere Version sein, z. b. **Android-NDK-r10e**.
+Beachten Sie, dass die Versionsnummer des NDK abweichen kann. Beispielsweise könnte es sich statt um **android-ndk-r13b** um eine frühere Version wie **android-ndk-r10e** handeln.
 
-Um den Android SDK Speicherort festzulegen, geben Sie den vollständigen Pfad des Android SDK Verzeichnisses in das Feld **Android SDK Speicherort** ein. Sie können zum Android SDK Speicherort im Datei-Explorer navigieren, den Pfad aus der Adressleiste kopieren und diesen Pfad in das Feld **Android SDK Speicherort** einfügen.
-Wenn Ihr Android SDK Speicherort z. b. " **C:\\Benutzer\\username\\APPDATA\\local\\Android\\SDK**lautet, löschen Sie den alten Pfad im Feld **Android SDK Speicherort** , und fügen Sie den Pfad ein. , und klicken Sie auf **OK**.
+Um den Speicherort für das Android SDK festzulegen, geben Sie im Feld **Android SDK-Speicherort** den vollständigen Pfad des Android SDK-Verzeichnisses ein. Sie können im Datei-Explorer zum Speicherort des Android SDK navigieren, den Pfad aus der Adressleiste kopieren und diesen Pfad in das Feld **Android SDK-Speicherort** einfügen.
+Wenn Ihr Android SDK beispielsweise unter **C:\\Benutzer\\Benutzername\\AppData\\Local\\Android\\Sdk** gespeichert ist, löschen Sie den bisherigen Pfad im Feld **Android SDK-Speicherort**, fügen Sie den neuen Pfad ein, und klicken Sie auf **OK**.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Navigieren Sie in Visual Studio für Mac zu **Einstellungen > Projekten > SDK-Speicherorte > Android**. Klicken Sie auf der Seite **Android** auf die Registerkarte Speicher **Orte** , um den SDK-Speicherort anzuzeigen und festzulegen:
+Navigieren Sie in Visual Studio für Mac zu **Einstellungen > Projekte > SDK-Speicherorte > Android**. Klicken Sie auf der Seite **Android** auf die Registerkarte **Speicherorte**, und legen Sie den Speicherort für das SDK fest:
 
-[![Registerkarte "Speicherorte" in den Einstellungen](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
+[![Beispiel für Registerkarte „Speicherorte“ in den Einstellungen](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
-Der Standard Speicherort für jeden Pfad lautet wie folgt:
+Der Standardspeicherort für die einzelnen Pfade lautet wie folgt:
 
-- Android SDK Speicherort: 
+- Speicherort für das Android SDK: 
 
-    **~/Library/Developer/Xamarin/Android-SDK-MacOSX**
+    **~/Library/Developer/Xamarin/android-sdk-macosx**
 
-- Android NDK-Speicherort: 
+- Speicherort für das Android NDK: 
 
-    **~/Library/Developer/Xamarin/Android-NDK/Android-NDK-r14b**
+    **~/Library/Developer/Xamarin/android-ndk/android-ndk-r14b**
 
-- Java SDK (JDK)-Speicherort: 
+- Speicherort für das Java SDK (JDK): 
 
     **/usr**
 
-Beachten Sie, dass die Versionsnummer des NDK variieren kann. Anstelle von **Android-NDK-r14b**könnte es beispielsweise eine frühere Version sein, z. b. **Android-NDK-r10e**.
+Beachten Sie, dass die Versionsnummer des NDK abweichen kann. Beispielsweise könnte es sich statt um **android-ndk-r14b** um eine frühere Version wie **android-ndk-r10e** handeln.
 
-Um den Android SDK Speicherort festzulegen, geben Sie den vollständigen Pfad des Android SDK Verzeichnisses in das Feld **Android SDK Speicherort** ein. Sie können den Ordner Android SDK im Finder auswählen, **&#8984;STRG + + I** zum Anzeigen der Ordner Informationen drücken, auf den Pfad klicken und den Pfad rechts von **Where:** kopieren und dann auf der Registerkarte Speicher **Orte** in das Feld **Android SDK Speicherort** einfügen. Wenn Ihr Android SDK Speicherort z. b. den Wert **~/Library/Developer/Android/SDK**hat, löschen Sie den alten Pfad im Feld **Android SDK Speicherort** , fügen Sie diesen Pfad ein, und klicken Sie auf **OK**.
+Um den Speicherort für das Android SDK festzulegen, geben Sie im Feld **Android SDK-Speicherort** den vollständigen Pfad des Android SDK-Verzeichnisses ein. Sie können den Android SDK-Ordner im Finder auswählen, zum Anzeigen von Ordnerinformationen **CTRL+&#8984;+I** drücken, auf den Pfad klicken und ihn rechts neben **Wo:** ziehen, den Pfad kopieren und ihn dann in das Feld **Android SDK-Speicherort** auf der Registerkarte **Speicherorte** einfügen. Wenn Ihr Android SDK beispielsweise unter **~/Library/Developer/Android/Sdk** gespeichert ist, löschen Sie den bisherigen Pfad im Feld **Android SDK-Speicherort**, fügen Sie den neuen Pfad ein, und klicken Sie auf **OK**.
 
 -----

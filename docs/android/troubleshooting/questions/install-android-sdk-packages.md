@@ -8,43 +8,43 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
 ms.openlocfilehash: 24c70c2e869f59091a1519af6d1165dbea9cc467
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "76725060"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>Welche Android SDK-Pakete sollte ich installieren?
 
-Die Installation des Android SDK umfasst nicht automatisch alle Pakete, die für die Entwicklung erforderlich sind. Die folgenden Pakete sind in der Regel für die Entwicklung mit xamarin. Android erforderlich, während die einzelnen Entwickler benötigt werden:
+Bei der Installation des Android SDK werden nicht automatisch alle Pakete installiert, die für die Entwicklung mindestens erforderlich sind. Wenngleich die Anforderungen der verschiedenen Entwickler variieren, werden in der Regel die folgenden Pakete für die Entwicklung mit Xamarin.Android benötigt:
 
 ## <a name="tools"></a>Tools
 
-Installieren Sie die neuesten Tools aus dem Ordner Tools im SDK-Manager:
+Installieren Sie die neuesten Tools aus dem Ordner „Tools“ im SDK-Manager:
 
 - Android SDK Tools
-- Android SDK Platform-Tools
-- Android SDK Build-Tools
+- Android SDK – Plattformtools
+- Android SDK – Buildtools
 
-## <a name="android-platforms"></a>Android-Plattform (en)
+## <a name="android-platforms"></a>Android-Plattform(en)
 
-Installieren Sie die "SDK-Plattform" für die Android-Versionen, die Sie als minimal & Ziel festgelegt haben.
+Installieren Sie die SDK-Plattform für die Android-Versionen, die Sie als Mindest- und als Zielversionen festgelegt haben.
 
 Beispiele:
 
-- Ziel-API 23
-- Minimale API 23
+- Ziel-API: 23
+- Mindest-API: 23
 
-Nur die SDK-Plattform für API 23 muss installiert werden.
+Sie müssen nur die SDK-Plattform für API 23 installieren.
 
-- Ziel-API 23
-- Minimale API 15
+- Ziel-API: 23
+- Mindest-API: 15
 
-SDK-Plattformen für API 15 und 23 müssen installiert werden. Beachten Sie, dass Sie die API-Ebenen nicht zwischen dem minimal-und dem Ziel installieren müssen (selbst wenn Sie eine backportierung auf diese API-Ebenen durchführen).
+Sie müssen die SDK-Plattformen für die API 15 und 23 installieren. Beachten Sie, dass Sie keine API-Ebenen zwischen der Mindest- und der Zielversion installieren müssen (selbst wenn Sie zu diesen API-Ebenen zurückportieren).
 
-## <a name="system-images"></a>System Abbilder
+## <a name="system-images"></a>Systemimages
 
-Diese sind nur erforderlich, wenn Sie die Standard-Android-Emulatoren von Google verwenden möchten. Weitere Informationen finden Sie unter [Android-Emulator Setup](~/android/get-started/installation/android-emulator/index.md) .
+Diese sind nur erforderlich, wenn Sie die Android-Standardemulatoren von Google verwenden möchten. Weitere Informationen finden Sie unter [Setup von Android-Emulator](~/android/get-started/installation/android-emulator/index.md).
 
 ## <a name="extras"></a>Extras
-Die Android SDK Extras sind in der Regel nicht erforderlich. Es ist jedoch hilfreich, diese zu beachten, da Sie abhängig von Ihrem Anwendungsfall möglicherweise erforderlich sind.
+Die Android SDK-Extras werden in der Regel nicht benötigt; je nach Anwendungsfall können sie jedoch erforderlich sein.
