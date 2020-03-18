@@ -1,93 +1,93 @@
 ---
-title: Androidx
-description: Erfahren Sie mehr über das Entwickeln von apps mit androidx mithilfe von xamarin. Android.
+title: AndroidX
+description: Erfahren Sie, wie Sie Xamarin.Android verwenden, um Apps mit AndroidX zu entwickeln.
 ms.assetid: CC21BD28-EF67-4132-8C0D-CF25B78BA78B
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
 ms.openlocfilehash: ad6ea2f68fc01183f7ed42e85094f6be5fb3d9f9
-ms.sourcegitcommit: 2836f2003a5b745b042ee6003a3d6a11b9139e44
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "77618911"
 ---
-# <a name="androidx-with-xamarin"></a>Androidx mit xamarin
+# <a name="androidx-with-xamarin"></a>AndroidX mit Xamarin
 
-_Erfahren Sie mehr über das Entwickeln von apps mit androidx mithilfe von xamarin. Android._
+_Erfahren Sie, wie Sie Xamarin.Android verwenden, um Apps mit AndroidX zu entwickeln._
 
-Androidx ist eine wesentliche Verbesserung der ursprünglichen Android-Unterstützungs Bibliothek, die nicht mehr verwaltet wird. **Androidx** -Pakete ersetzen die Android-Unterstützungs Bibliothek vollständig durch Bereitstellen von Featureparität und neuen Bibliotheken, die Sie in ihren Android-Anwendungen verwenden können.
+Bei AndroidX handelt es sich um eine wesentliche Verbesserung der ursprünglichen Android-Unterstützungsbibliothek, die nicht mehr gepflegt und verwaltet wird. Mit **AndroidX**-Paketen wird die Android-Unterstützungsbibliothek vollständig ersetzt, indem Featureparität und neue Bibliotheken bereitgestellt werden, die Sie in Ihren Android-Anwendungen nutzen können.
 
-Androidx umfasst die folgenden Features:
+AndroidX beinhaltet die folgenden Features:
 
-- Alle Pakete innerhalb von androidx verfügen jetzt über einen konsistenten Namespace, der mit `androidx`beginnt. Dies bedeutet, dass alle Pakete der Android-Unterstützungs Bibliothek einem entsprechenden `androidx.*` Paket zugeordnet sind.
-- `androidx` Pakete werden separat verwaltet und aktualisiert. Dies bedeutet, dass Sie androidx-Bibliotheken unabhängig voneinander aktualisieren können.
-- Ab V28 der Android-Unterstützungs Bibliothek gibt es keine weiteren Versionen mehr. Die gesamte Entwicklung wird stattdessen in `androidx` eingeschlossen.
+- Alle Pakete innerhalb von AndroidX verfügen jetzt über einen einheitlichen Namespace, der mit `androidx` beginnt. Dies bedeutet, dass alle Pakete der Android-Unterstützungsbibliothek einem entsprechenden `androidx.*`-Paket zugeordnet sind.
+- `androidx`-Pakete werden separat verwaltet und aktualisiert. AndroidX-Bibliotheken können also unabhängig voneinander aktualisiert werden.
+- Nach v28 der Android-Unterstützungsbibliothek gibt es keine weiteren Releases mehr. Die gesamte Entwicklung ist stattdessen in `androidx` enthalten.
 
-![Androidx-Logo](~/android/platform/androidx-images/AndroidXLogo.png)
+![AndroidX-Logo](~/android/platform/androidx-images/AndroidXLogo.png)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-Die folgende Liste ist erforderlich, um androidx-Features in xamarin-basierten apps zu verwenden:
+Um AndroidX-Features in Xamarin-basierten Apps zu verwenden, müssen folgende Voraussetzungen erfüllt sein:
 
-- **Visual Studio** : Windows Update auf Visual Studio 2019, Version 16,4 oder höher. Aktualisieren Sie unter macOS auf Visual Studio 2019 für Mac, Version 8,4 oder höher.
-- **Xamarin. Android** -xamarin. Android 10,0 oder höher muss mit Visual Studio installiert werden (xamarin. Android wird automatisch als Teil der Mobile- **Entwicklung mit .net** -Arbeitsauslastung unter Windows installiert und als Teil des **Visual Studio für Mac Installer**installiert).
-- **Java Developer Kit** : die Entwicklung von xamarin. Android 10,0 erfordert JDK 8. Die Microsoft-Distribution von openjdk wird automatisch als Teil von Visual Studio installiert.
-- **Android SDK** Android SDK API 28 oder höher muss über den Android SDK Manager installiert werden.
+- **Visual Studio** – Führen Sie unter Windows ein Update auf Visual Studio 2019, Version 16.4 oder höher, durch. Führen Sie unter macOS ein Update auf Visual Studio 2019 für Mac, Version 8.4 oder höher, durch.
+- **Xamarin.Android** – Mit Visual Studio muss Xamarin.Android 10.0 oder höher installiert werden (Xamarin.Android wird unter Windows automatisch als Teil der **Mobile Entwicklung mit .NET**-Workload und als Teil des **Visual Studio für Mac-Installationsprogramms** installiert).
+- **Java Developer Kit** – Für die Entwicklung mit Xamarin.Android 10.0 ist JDK 8 erforderlich. Die Microsoft-Distribution von OpenJDK wird automatisch als Teil von Visual Studio installiert.
+- **Android SDK** – Android SDK API 28 oder höher muss über den Android-SDK-Manager installiert werden.
 
 ## <a name="get-started"></a>Erste Schritte
 
-Sie können mit androidx beginnen, indem Sie ein beliebiges [androidx-nuget-Paket](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22) in Ihr Android-Projekt einschließen. Weitere Informationen zum Installieren und Verwenden eines Pakets in [Visual Studio](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) oder [Visual Studio für Mac](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
+Beginnen Sie Ihre Arbeit mit AndroidX, indem Sie ein beliebiges [AndroidX-NuGet-Paket](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22) zu Ihrem Android-Projekt hinzufügen. Weitere Informationen zur Installation und Verwendung von Paketen in [Visual Studio](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) oder [Visual Studio für Mac](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 
 ## <a name="behavior-changes"></a>Verhaltensänderungen
 
-Da androidx eine Umgestaltung der Android-Unterstützungs Bibliothek ist, umfasst es Migrations Schritte, die sich auf Android-Anwendungen auswirken, die mit der Android-Unterstützungs Bibliothek erstellt wurden.
+Da AndroidX eine überarbeitete Version der Android-Unterstützungsbibliothek ist, müssen Änderungen und Migrationsschritte berücksichtigt werden, die sich auf Android-Anwendungen auswirken, die mit der Android-Unterstützungsbibliothek erstellt wurden.
 
-### <a name="package-name-change"></a>Änderung des Paket namens
-Die Paketnamen wurden zwischen dem alten und dem neuen Paket geändert. Im folgenden finden Sie ein Beispiel für diese Änderungen:
+### <a name="package-name-change"></a>Änderungen bei Paketnamen
+Die Paketnamen wurden überarbeitet und geändert. Im Folgenden finden Sie Beispiele für diese Änderungen:
 
 | Alt                    | Neu                    |
 | ---------------------- | ---------------------- |
-| Android. Support. * *     | androidx. @             |
-| Android. Design. * *      | com. Google. Android. Material. @ |
-| Android. Support. Test. * * | androidx. Test. @       |
-| Android. Arch. * *        | androidx. @             |
-| Android. Arch. Persistenz. room. * * | androidx. room. @ |
-| Android. Arch. Persistenz. * * | androidx. sqlite. @ |
+| android.support.**     | androidx.@             |
+| android.design.**      | com.google.android.material.@ |
+| android.support.test.** | androidx.test.@       |
+| android.arch.**        | androidx.@             |
+| android.arch.persistence.room.** | androidx.room.@ |
+| android.arch.persistence.** | androidx.sqlite.@ |
 
-Weitere Informationen zur Benennung von Paketen finden Sie in [der folgenden Dokumentation](https://developer.android.com/jetpack/androidx/migrate#artifact_mappings).
+Weitere Informationen zu Paketnamen finden Sie in dieser [Dokumentation](https://developer.android.com/jetpack/androidx/migrate#artifact_mappings).
 
 ## <a name="migration-tooling"></a>Migrationstools
 
-Es gibt drei Migrations Schritte, die Sie für Ihre Anwendung kennen sollten.
+Es gibt drei wichtige Migrationsschritte für Ihre Anwendung, mit denen Sie vertraut sein sollten.
 
-1. Wenn Ihre Anwendung **Android-Unterstützungs Bibliotheks-Namespaces enthält und Sie Sie zu androidx-Namespaces migrieren**möchten, können Sie die meisten Namespace Szenarien mithilfe unserer **Migrieren zu androidx** -IDE-Tools übernehmen. 
+1. Wenn Ihre Anwendung **Namespaces der Android-Unterstützungsbibliothek umfasst und Sie diese Namespaces zu AndroidX-Namespaces migrieren möchten**, können Sie in den meisten Szenarien unser IDE-Tool **Zu AndroidX migrieren** verwenden. 
 
-Aktivieren Sie den **androidx-migrierer** über **Tools > Optionen > xamarin > Android-Einstellungen** in Visual Studio 2019 (Sie können diesen Schritt auf Visual Studio für Mac überspringen).
+Aktivieren Sie den **AndroidX-Migrator** in Visual Studio 2019 über die Optionen **Tools > Optionen > Xamarin > Android-Einstellungen** (in Visual Studio für Mac können Sie diesen Schritt überspringen).
 
-![Androidx-migrierer aktivieren](~/android/platform/androidx-images/EnableAndroidXMigrator.png)
+![Aktivieren des AndroidX-Migrators](~/android/platform/androidx-images/EnableAndroidXMigrator.png)
 
-Klicken Sie mit der rechten Maustaste auf das Projekt **, und migrieren Sie zu androidx**
+Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **Zu AndroidX migrieren** aus.
 
-![Migrieren zu androidx](~/android/platform/androidx-images/MigrateToAndroidX.png)
+![Migration zu AndroidX](~/android/platform/androidx-images/MigrateToAndroidX.png)
 
 > [!NOTE] 
-> Sie müssen einige manuelle Namespace Änderungen für Szenarios vornehmen, die vom Tool nicht abgedeckt werden. Während wir das richtige Paket für Sie zuordnen, wird empfohlen, dass Sie sich die offiziellen [artefaktzuordnungen](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) und [Klassen](https://developer.android.com/jetpack/androidx/migrate/class-mappings) Zuordnungen ansehen, um Ihre Projekt Migration zu unterstützen.
+> In Szenarien, die nicht von diesem Tool abgedeckt werden, müssen Sie manuell einige Änderungen an den Namespaces vornehmen. Wenngleich wir Pakete korrekt zuordnen, sollten Sie sich für die Migration Ihrer Projekte die offiziellen [Artefaktzuordnungen](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) und [Klassenzuordnungen](https://developer.android.com/jetpack/androidx/migrate/class-mappings) ansehen.
 
-2. Wenn Ihre Anwendung Abhängigkeiten enthält, die **nicht zum androidx-Namespace migriert**wurden, müssen Sie die [Android-Unterstützungs Bibliothek für das androidx-Migrationspaket verwenden.](https://www.nuget.org/packages/Xamarin.AndroidX.Migration)
-3. Wenn Ihre Anwendung keine **Abhängigkeiten enthält, die eine androidx-Namespace Migration erfordern**, können Sie die [androidx-Bibliotheken auf nuget noch heute](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22)verwenden.
+2. Wenn Ihre Anwendung **Abhängigkeiten umfasst, die nicht zum AndroidX-Namespace migriert wurden**, müssen Sie das Paket für die [Migration der Android-Unterstützungsbibliothek zu AndroidX](https://www.nuget.org/packages/Xamarin.AndroidX.Migration) verwenden.
+3. Wenn Ihre Anwendung **keine Abhängigkeiten umfasst, die eine Migration zu AndroidX-Namespaces erfordern**, können Sie sofort die [AndroidX-Bibliotheken in NuGet](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22) verwenden.
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-- Bestimmte Architektur Pakete in androidx verursachen einen Konflikt mit den Support Bibliotheksversionen. Um dieses Problem zu beheben, verwenden Sie die androidx-Version dieser Pakete, und entfernen Sie die Version der Unterstützungs Bibliothek. Wenn Sie z. b. auf `Xamarin.Android.Arch.Work.Runtime` im Projekt verweisen, tritt ein Konflikt mit den Typen des neu hinzugefügten `AndroidX.Work` Pakets auf.
+- Bestimmte Architekturpakete in AndroidX führen zu Konflikten mit der Unterstützungsbibliothek. Um dieses Problem zu beheben, sollten Sie die AndroidX-Version dieser Pakete verwenden und die Unterstützungsbibliothek entfernen. Wenn Sie in Ihrem Projekt z.B. auf `Xamarin.Android.Arch.Work.Runtime` verweisen, führt dies zu einem Konflikt mit den Typen des neu hinzugefügten `AndroidX.Work`-Pakets.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde androidx vorgestellt und erläutert, wie die neuesten Tools und Pakete für die xamarin. Android-Entwicklung mit androidx installiert und konfiguriert werden. Es wurde eine Übersicht über das, was androidx ist, bereitgestellt. Es enthält Links zu API-Dokumentation und Android-Entwickler Themen, die Ihnen den Einstieg in die Erstellung von apps mit androidx erleichtern. Außerdem wurden die wichtigsten androidx-Verhaltensänderungen und Problem Behandlungs Themen hervorgehoben, die sich auf vorhandene apps auswirken können.
+In diesem Artikel wurde AndroidX vorgestellt und erläutert, wie die neuesten Tools und Pakete für die Xamarin.Android-Entwicklung mit AndroidX installiert und konfiguriert werden. Sie haben erfahren, was genau AndroidX ist. Darüber hinaus enthält dieser Artikel Links zur API-Dokumentation und zu relevanten Themen für Android-Entwickler, die Ihnen den Einstieg in die App-Entwicklung mit AndroidX erleichtern. Außerdem wurden die wichtigsten Unterschiede von AndroidX im Vergleich zur Unterstützungsbibliothek beschrieben, und es wurde auf Probleme hingewiesen, die sich auf vorhandene Apps auswirken können.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einführung in androidx | Die xamarin-Show](https://www.youtube.com/watch?v=M_l3RjTev5A)
-- [Androidx](https://developer.android.com/jetpack/androidx)
-- [GitHub-Repository "xamarin androidx"](https://github.com/xamarin/AndroidX)
-- [Xamarin androidx-Migrations GitHub-Repository](https://github.com/xamarin/XamarinAndroidXMigration)
+- [Einführung in AndroidX | The Xamarin Show](https://www.youtube.com/watch?v=M_l3RjTev5A)
+- [AndroidX](https://developer.android.com/jetpack/androidx)
+- [Xamarin/AndroidX im GitHub-Repository](https://github.com/xamarin/AndroidX)
+- [XamarinAndroidXMigration im GitHub-Repository](https://github.com/xamarin/XamarinAndroidXMigration)
