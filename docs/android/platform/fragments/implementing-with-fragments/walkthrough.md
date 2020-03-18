@@ -1,5 +1,5 @@
 ---
-title: 'Exemplarische Vorgehensweise zu xamarin. Android-Fragmenten: Teil 1'
+title: 'Exemplarische Vorgehensweise zu Xamarin.Android-Fragmenten: Teil 1'
 ms.prod: xamarin
 ms.topic: tutorial
 ms.assetid: ED368FA9-A34E-DC39-D535-5C34C32B9761
@@ -8,50 +8,50 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
 ms.openlocfilehash: 043ad02f9ca9148910364ac82917551ee58d72ba
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027405"
 ---
-# <a name="fragments-walkthrough-ndash-phone"></a>Fragmente Exemplarische Vorgehensweise &ndash; Telefon
+# <a name="fragments-walkthrough-ndash-phone"></a>Exemplarische Vorgehensweise zu Fragmenten &ndash; Smartphone
 
-Dies ist der erste Teil einer exemplarischen Vorgehensweise, in der eine xamarin. Android-App erstellt wird, die ein Android-Gerät in Hochformat als Ziel verwendet. In dieser exemplarischen Vorgehensweise wird erläutert, wie Fragmente in xamarin. Android erstellt werden und wie Sie zu einem Beispiel hinzugefügt werden.
+Dies ist der erste Teil einer exemplarischen Vorgehensweise, in der eine Xamarin.Android-App erstellt wird, die ein Android-Gerät in Hochformat als Ziel verwendet. In dieser exemplarischen Vorgehensweise wird erläutert, wie Fragmente in Xamarin.Android erstellt werden und wie diese einem Beispiel hinzugefügt werden.
 
 [![](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-Die folgenden Klassen werden für diese APP erstellt:
+Die folgenden Klassen werden für diese App erstellt:
 
-1. `PlayQuoteFragment` &nbsp; diesem Fragment wird ein Anführungszeichen von William Shakespeare angezeigt. Sie wird von `PlayQuoteActivity`gehostet.
-1. `Shakespeare` &nbsp; diese Klasse zwei hart codierte Arrays als Eigenschaften enthalten.
-1. `TitlesFragment` &nbsp; dieses Fragment eine Liste mit Titeln von spielen anzeigt, die von William Shakespeare geschrieben wurden. Sie wird von `MainActivity`gehostet.
-1. `PlayQuoteActivity` &nbsp; `TitlesFragment` startet das `PlayQuoteActivity` als Reaktion darauf, dass der Benutzer eine Wiedergabe in `TitlesFragment`auswählt.
+1. `PlayQuoteFragment` &nbsp; Dieses Fragment zeigt ein Zitat aus einem Stück von William Shakespeare an. Es wird von `PlayQuoteActivity` gehostet.
+1. `Shakespeare` &nbsp; Diese Klasse enthält zwei hartcodierte Arrays als Eigenschaften.
+1. `TitlesFragment` &nbsp; Dieses Fragment zeigt eine Liste mit Titeln von Stücken an, die von William Shakespeare geschrieben wurden. Es wird von `MainActivity` gehostet.
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` startet die `PlayQuoteActivity` als Reaktion auf den Benutzer, der ein Werk in `TitlesFragment` auswählt.
 
-## <a name="1-create-the-android-project"></a>1. Erstellen Sie das Android-Projekt.
+## <a name="1-create-the-android-project"></a>1. Erstellen des Android-Projekts
 
-Erstellen Sie ein neues xamarin. Android-Projekt mit dem Namen " **fragmentsample**".
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+Erstellen Sie ein neues Xamarin.Android-Projekt mit dem Namen **FragmentSample**.
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![erstellen Sie ein neues xamarin. Android-Projekt.](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
+[![Erstellen eines neuen Xamarin.Android-Projekts](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Erstellen eines neuen xamarin. Android-Projekts](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
+[![Erstellen eines neuen Xamarin.Android-Projekts](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
 
-Es wird empfohlen, für diese exemplarische Vorgehensweise die **moderne Entwicklung** auszuwählen.
+Es wird empfohlen, für diese exemplarische Vorgehensweise **Moderne Entwicklung** auszuwählen.
 
-Benennen Sie nach dem Erstellen des Projekts die Datei " **Layout/Main. axml** " in " **Layout/activity_main. axml**" um.
+Nachdem Sie das Projekt erstellt haben, benennen Sie die Datei **layout/Main.axml** in **layout/activity_main.axml** um.
 
 -----
 
 ## <a name="2-add-the-data"></a>2. Hinzufügen der Daten
 
-Die Daten für diese Anwendung werden in zwei hart codierten Zeichen folgen Arrays gespeichert, die Eigenschaften eines Klassen namens `Shakespeare`sind:
+Die Daten für diese Anwendung werden in zwei hartcodierten Zeichenfolgenarrays gespeichert, die Eigenschaften einer Klasse namens `Shakespeare` sind:
 
-* `Shakespeare.Titles` &nbsp; dieses Array eine Liste von Spielen von William Shakespeare enthält. Dies ist die Datenquelle für die `TitlesFragment`.
-* `Shakespeare.Dialogue` &nbsp; dieses Array eine Liste mit Anführungszeichen von einem der in `Shakespeare.Titles`enthaltenen Spiele enthält. Dies ist die Datenquelle für die `PlayQuoteFragment`.
+* `Shakespeare.Titles` &nbsp; Dieses Array enthält eine Liste der Stücke von William Shakespeare. Dies ist die Datenquelle für das `TitlesFragment`.
+* `Shakespeare.Dialogue` &nbsp; Dieses Array enthält eine Liste mit Zitaten aus einem der in `Shakespeare.Titles` enthaltenen Stücke. Dies ist die Datenquelle für das `PlayQuoteFragment`.
 
-Fügen Sie dem C# **fragmentsample** -Projekt eine neue Klasse hinzu, und nennen Sie Sie **Shakespeare.cs**. Erstellen Sie in dieser Datei eine neue C# Klasse mit dem Namen`Shakespeare`mit folgendem Inhalt.
+Fügen Sie dem **FragmentSample**-Projekt eine neue C#-Klasse hinzu, und nennen Sie sie **Shakespeare.cs**. Erstellen Sie in dieser Datei eine neue C#-Klasse mit dem Namen `Shakespeare` und dem folgenden Inhalt.
 
 ```csharp
 class Shakespeare
@@ -80,21 +80,21 @@ class Shakespeare
 }
 ```
 
-## <a name="3-create-the-playquotefragment"></a>3. Erstellen Sie das playquotefragment
+## <a name="3-create-the-playquotefragment"></a>3. Erstellen von PlayQuoteFragment
 
-Bei der `PlayQuoteFragment` handelt es sich um ein Android-Fragment, das ein Anführungszeichen für ein Shakespeare-Spiel anzeigt, das zuvor in der Anwendung vom Benutzer ausgewählt wurde. dieses Fragment verwendet keine Android-Layoutdatei. Stattdessen wird die Benutzeroberfläche dynamisch erstellt. Fügen Sie dem Projekt eine neue `Fragment` Klasse mit dem Namen `PlayQuoteFragment` hinzu:
+Bei `PlayQuoteFragment` handelt es sich um ein Android-Fragment, das ein Zitat aus einem Shakespeare-Stück anzeigt, das zuvor in der Anwendung vom Benutzer ausgewählt wurde. Dieses Fragment verwendet keine Android-Layoutdatei. Stattdessen wird die Benutzeroberfläche dynamisch erstellt. Fügen Sie dem Projekt eine neue `Fragment`-Klasse namens `PlayQuoteFragment` hinzu:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![eine neue C# Klasse hinzufügen](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
+[![Hinzufügen einer neuen C#-Klasse](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![eine neue C# Klasse hinzufügen](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
+[![Hinzufügen einer neuen C#-Klasse](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
 
 -----
 
-Ändern Sie dann den Code für das Fragment so, dass dieser Code Ausschnitt ähnelt:
+Ändern Sie dann den Code für das Fragment so, dass er diesem Codeausschnitt ähnelt:
 
 ```csharp
 public class PlayQuoteFragment : Fragment
@@ -129,24 +129,24 @@ public class PlayQuoteFragment : Fragment
 }
 ```
 
-Es ist ein gängiges Muster in Android-Apps, eine Factorymethode bereitzustellen, mit der ein Fragment instanziiert wird. Dadurch wird sichergestellt, dass das Fragment mit den erforderlichen Parametern für die ordnungsgemäße Funktionsweise erstellt wird. In dieser exemplarischen Vorgehensweise wird erwartet, dass die APP die `PlayQuoteFragment.NewInstance`-Methode verwendet, um jedes Mal, wenn ein Anführungszeichen ausgewählt wird, ein neues Fragment zu erstellen. Die `NewInstance`-Methode nimmt einen einzelnen Parameter &ndash; den Index des anzuzeigenden Angebots an.
+Es ist ein gängiges Muster in Android-Apps, eine Factorymethode bereitzustellen, die ein Fragment instanziiert. Dadurch wird sichergestellt, dass das Fragment mit den erforderlichen Parametern für ein einwandfreies Funktionieren erstellt wird. In dieser exemplarischen Vorgehensweise wird erwartet, dass die App die `PlayQuoteFragment.NewInstance`-Methode verwendet, um bei jeder Auswahl eines Zitats ein neues Fragment zu erstellen. Die Methode `NewInstance` nimmt einen einzelnen Parameter &ndash; an, den Index des anzuzeigenden Zitats.
 
-Die `OnCreateView`-Methode wird von Android aufgerufen, wenn es an der Zeit ist, das Fragment auf dem Bildschirm zu erzeugen. Es wird ein Android-`View` Objekt zurückgegeben, das das Fragment ist. Dieses Fragment verwendet keine Layoutdatei, um eine Ansicht zu erstellen. Stattdessen wird die Ansicht Programm gesteuert erstellt, indem eine **TextView** für das Anführungszeichen instanziiert wird, und dieses Widget wird in einer **ScrollView**angezeigt.
+Die `OnCreateView`-Methode wird von Android aufgerufen, wenn es an der Zeit ist, das Fragment auf dem Bildschirm zu rendern. Sie gibt ein Android-Objekt `View` zurück, das das Fragment ist. Dieses Fragment verwendet keine Layoutdatei, um eine Ansicht zu erstellen. Stattdessen erstellt es die Ansicht programmgesteuert, indem ein **TextView**-Element instanziiert wird, das das Zitat enthält, und es zeigt dieses Widget in einem **ScrollView**-Element an.
 
 > [!NOTE]
-> Fragmentunterklassen müssen über einen öffentlichen Standardkonstruktor verfügen, der über keine Parameter verfügt.
+> Fragmentunterklassen müssen über einen öffentlichen Standardkonstruktor verfügen, der keine Parameter besitzt.
 
-## <a name="4-create-the-playquoteactivity"></a>4. Erstellen Sie die playquoteactivity.
+## <a name="4-create-the-playquoteactivity"></a>4. Erstellen von PlayQuoteActivity
 
-Fragmente müssen innerhalb einer Aktivität gehostet werden. Daher erfordert diese APP eine Aktivität, die die `PlayQuoteFragment`hostet. Die Aktivität fügt dem Layout das Fragment dynamisch zur Laufzeit hinzu. Fügen Sie der Anwendung eine neue Aktivität hinzu, und benennen Sie Sie `PlayQuoteActivity`:
+Fragmente müssen innerhalb einer Aktivität gehostet werden. Daher erfordert diese App eine Aktivität, die `PlayQuoteFragment` hostet. Die Aktivität fügt dem Layout das Fragment dynamisch zur Laufzeit hinzu. Fügen Sie der Anwendung eine neue Aktivität hinzu, und nennen Sie sie `PlayQuoteActivity`:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![Android-Aktivität zu Projekt hinzufügen](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
+[![Hinzufügen einer Android-Aktivität zum Projekt](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Android-Aktivität zu Projekt hinzufügen](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
+[![Hinzufügen einer Android-Aktivität zum Projekt](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
 
 -----
 
@@ -170,21 +170,21 @@ public class PlayQuoteActivity : Activity
 }
 ```
 
-Wenn `PlayQuoteActivity` erstellt wird, wird eine neue `PlayQuoteFragment` instanziiert und dieses Fragment in der Stamm Ansicht im Kontext eines `FragmentTransaction`geladen. Beachten Sie, dass diese Aktivität keine Android-Layoutdatei für Ihre Benutzeroberfläche lädt. Stattdessen wird eine neue `PlayQuoteFragment` der Stamm Ansicht der Anwendung hinzugefügt. Der Ressourcen Bezeichner `Android.Resource.Id.Content` wird verwendet, um auf die Stamm Ansicht einer Aktivität zu verweisen, ohne ihren spezifischen Bezeichner zu kennen.
+Wenn `PlayQuoteActivity` erstellt wird, wird ein neues `PlayQuoteFragment` instanziiert und dieses Fragment in der Stammansicht im Kontext einer `FragmentTransaction` geladen. Beachten Sie, dass diese Aktivität keine Android-Layoutdatei für ihre Benutzeroberfläche lädt. Stattdessen wird ein neues `PlayQuoteFragment` zur Stammansicht der Anwendung hinzugefügt. Der Ressourcenbezeichner `Android.Resource.Id.Content` wird verwendet, um auf die Stammansicht einer Aktivität zu verweisen, ohne deren spezifischen Bezeichner zu kennen.
 
-## <a name="5-create-titlesfragment"></a>5. Erstellen von titlesfragment
+## <a name="5-create-titlesfragment"></a>5. Erstellen von TitlesFragment
 
-Die `TitlesFragment` Unterklasse ein spezielles Fragment, das als `ListFragment` bezeichnet wird, das die Logik zum Anzeigen eines `ListView` in einem Fragment kapselt. Ein-`ListFragment` macht eine `ListAdapter`-Eigenschaft (die vom `ListView` zum Anzeigen seines Inhalts verwendet wird) und einen Ereignishandler mit dem Namen `OnListItemClick` verfügbar. Dadurch kann das Fragment auf Klicks in einer Zeile reagieren, die durch den `ListView`angezeigt wird.
+`TitlesFragment` erstellt eine Unterklasse für ein spezialisiertes Fragment (als `ListFragment` bezeichnet), das die Logik für die Anzeige einer `ListView` in einem Fragment kapselt. `ListFragment` stellt eine `ListAdapter`-Eigenschaft (die von `ListView` zum Anzeigen des Inhalts verwendet wird) und einen Ereignishandler mit dem Namen `OnListItemClick` bereit, wodurch das Fragment auf Mausklicks auf eine Zeile reagieren kann, die durch `ListView` angezeigt wird.
 
-Fügen Sie zunächst ein neues Fragment zum Projekt hinzu, und nennen Sie es **titlesfragment**:
+Um zu beginnen, fügen Sie dem Projekt ein neues Fragment hinzu und nennen es **TitlesFragment**:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![Android-Fragment zum Projekt hinzufügen](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
+[![Hinzufügen eines Android-Fragments zum Projekt](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Android-Fragment zum Projekt hinzufügen](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
+[![Hinzufügen eines Android-Fragments zum Projekt](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
 
 -----
 
@@ -231,13 +231,13 @@ public class TitlesFragment : ListFragment
 }
 ```
 
-Wenn die Aktivität erstellt wird, ruft Android die `OnActivityCreated`-Methode des Fragments auf. an dieser Stelle wird der Listen Adapter für den `ListView` erstellt.  Die `ShowQuoteFromPlay`-Methode startet eine Instanz des `PlayQuoteActivity`, um das Anführungszeichen für die ausgewählte Wiedergabe anzuzeigen.
+Wenn die Aktivität erstellt wird, ruft Android die `OnActivityCreated`-Methode des Fragments auf. An dieser Stelle wird der Listenadapter für `ListView` erstellt.  Die `ShowQuoteFromPlay`-Methode startet eine Instanz von `PlayQuoteActivity`, um das Zitat für das ausgewählte Stück anzuzeigen.
 
-## <a name="display-titlesfragment-in-mainactivity"></a>Titlesfragment in mainactivity anzeigen
+## <a name="display-titlesfragment-in-mainactivity"></a>Anzeigen von TitlesFragment in MainActivity
 
-Der letzte Schritt besteht darin, `TitlesFragment` in `MainActivity`anzuzeigen. Die-Aktivität lädt das Fragment nicht dynamisch. Stattdessen wird das Fragment statisch geladen, indem es in der Layoutdatei der Aktivität mithilfe eines `fragment`-Elements deklariert wird. Das zu ladende Fragment wird durch Festlegen des `android:name` Attributs auf die Klasse Fragment (einschließlich des Namespace des Typs) identifiziert. Wenn Sie z. b. die `TitlesFragment`verwenden möchten, wird `android:name` auf `FragmentSample.TitlesFragment`festgelegt.
+Der letzte Schritt besteht darin, `TitlesFragment` in `MainActivity` anzuzeigen. Die Aktivität lädt das Fragment nicht dynamisch. Stattdessen wird das Fragment statisch geladen, indem es in der Layoutdatei der Aktivität mithilfe eines `fragment`-Elements deklariert wird. Das zu ladende Fragment wird durch Festlegen des `android:name`-Attributs auf die Fragmentklasse (einschließlich des Namespace des Typs) identifiziert. Wenn Sie z. B. `TitlesFragment` verwendet werden soll, wird `android:name` auf `FragmentSample.TitlesFragment`festgelegt.
 
-Bearbeiten Sie die Layoutdatei **activity_main. axml**, und ersetzen Sie dabei den vorhandenen XML-Code durch Folgendes:
+Bearbeiten Sie die Layoutdatei **activity_main.axml**, und ersetzen Sie dabei den vorhandenen XML-Code durch Folgendes:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -256,9 +256,9 @@ Bearbeiten Sie die Layoutdatei **activity_main. axml**, und ersetzen Sie dabei d
 ```
 
 > [!NOTE]
-> Das `class`-Attribut ist ein gültiger Ersatz für `android:name`. Es gibt keine formale Anleitung, welches Formular bevorzugt wird, es gibt viele Beispiele für Codebasen, die `class` austauschbar mit `android:name`verwenden werden.
+> Das `class`-Attribut ist ein gültiger Ersatz für `android:name`. Es gibt keine formale Empfehlung, welche Form bevorzugt wird. Es gibt viele Beispiele für Codebasen, die `class` austauschbar mit `android:name` verwenden.
 
-Für mainactivity sind keine Codeänderungen erforderlich. Der Code in dieser Klasse sollte dem folgenden Code Ausschnitt sehr ähnlich sein:
+Für MainActivity sind keine Codeänderungen erforderlich. Der Code in dieser Klasse sollte dem folgenden Codeausschnitt sehr ähnlich sein:
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
@@ -274,8 +274,8 @@ public class MainActivity : Activity
 
 ## <a name="run-the-app"></a>Ausführen der App
 
-Nachdem der Code nun fertig ist, führen Sie die APP auf einem Gerät aus, um Sie in Aktion zu sehen.
+Nachdem der Code nun vollständig ist, führen Sie die App auf einem Gerät aus, um sie in Aktion zu sehen.
 
-[![Screenshots der Anwendung, die auf einem Telefon ausgeführt wird.](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
+[![Screenshots der Anwendung, die auf einem Smartphone ausgeführt wird.](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
 
-In [Teil 2 dieser](./walkthrough-landscape.md) exemplarischen Vorgehensweise wird diese Anwendung für Geräte optimiert, die im Querformat ausgeführt werden.
+[Teil 2 dieser exemplarischen Vorgehensweise](./walkthrough-landscape.md) optimiert diese Anwendung für Geräte, die im Querformat ausgeführt werden.

@@ -7,13 +7,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 02/04/2019
-ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/16/2020
+ms.openlocfilehash: 465783c0771b666a276d18f47cf5d3d458d52933
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306422"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423927"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>XAML-Vorschau für xamarin. Forms
 
@@ -27,13 +27,13 @@ Der XAML-Previewer zeigt Ihnen, wie Ihre xamarin. Forms-XAML-Seite unter IOS und
 
 ::: zone pivot="windows"
 
-### <a name="visual-studio-2019"></a>Visual Studio 2019
+### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-Sie können den XAML-Previewer öffnen, indem Sie im Bereich geteilte Ansicht auf die Pfeile klicken. Wenn Sie das Standardverhalten der Split-Ansicht ändern möchten, verwenden Sie das Dialogfeld **Tools > Optionen > xamarin > Forms Previewer** . In diesem Dialogfeld können Sie die Standarddokument Ansicht und die geteilte Ausrichtung auswählen.
+Sie können den XAML-Previewer öffnen, indem Sie im Bereich geteilte Ansicht auf die Pfeile klicken. Wenn Sie das Standardverhalten der Split-Ansicht ändern möchten, verwenden Sie die **Tools > Optionen > xamarin > xamarin. Forms XAML Previewer** Dialog. In diesem Dialogfeld können Sie die Standarddokument Ansicht und die geteilte Ausrichtung auswählen.
 
 [![Xamarin. Forms-Previewer-Optionen in Visual Studio](xaml-previewer-images/xamlp-options-vs-sm.png "Xamarin. Forms-Previewer-Optionen in Visual Studio")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
-Wenn Sie eine XAML-Datei öffnen, wird der Editor entweder in voller Größe oder neben dem Previewer geöffnet, basierend auf den Einstellungen, die im Dialogfeld **Tools > Optionen > xamarin > Forms Previewer** ausgewählt sind. Die Aufteilung kann jedoch für jede Datei im Editor Fenster geändert werden.
+Wenn Sie eine XAML-Datei öffnen, wird der Editor entweder in voller Größe oder neben dem Previewer geöffnet, basierend auf den Einstellungen, die im Dialogfeld **Tools > Optionen > xamarin > xamarin. Forms XAML Previewer** ausgewählt sind. Die Aufteilung kann jedoch für jede Datei im Editor Fenster geändert werden.
 
 #### <a name="xaml-preview-controls"></a>XAML-Vorschau Steuerelemente
 
@@ -44,6 +44,10 @@ Wählen Sie aus, ob Sie Ihren Code, die XAML-Vorschau oder beides anzeigen möch
 Sie können ändern, ob der Bildschirm vertikal oder horizontal aufgeteilt wird, oder einen Bereich vollständig reduzieren:
 
 [![Ausrichtung von Steuerelementen im xamarin. Forms-Vorschaubereich in Visual Studio](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Ausrichtung von Steuerelementen im xamarin. Forms-Vorschaubereich in Visual Studio")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>Aktivieren oder Deaktivieren der XAML-Vorschau
+
+Sie können den XAML-Previewer in den **Tools > Optionen > xamarin > xamarin. Forms XAML Previewer** Dialog aktivieren, indem Sie den **Standard-XML-Editor** als standardmäßigen **XAML-Editor**auswählen. Dies deaktiviert auch die Dokument Gliederung, den Eigenschaften Bereich und die XAML-Toolbox. Wenn Sie den XAML-Previewer und diese Tools wieder aktivieren möchten, ändern Sie den **standardmäßigen XAML-Editor** in **xamarin. Forms Previewer**.
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -56,6 +60,10 @@ Die Schaltfläche **Vorschau** wird im Editor angezeigt, wenn Sie eine XAML-Seit
 
 > [!NOTE]
 > In älteren Versionen von Visual Studio für Mac befand sich die Schaltfläche **Vorschau** in der oberen rechten Ecke des Fensters.
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>Aktivieren oder Deaktivieren der XAML-Vorschau
+
+Sie können den XAML-Previewer in den **Visual Studio-> Einstellungen > Text-Editor > XAML** -Dialogfeld deaktivieren, indem Sie als Standard- **XML** -Editor als **Standard-XAML-Editor**auswählen. Dies deaktiviert auch die Dokument Gliederung, den Eigenschaften Bereich und die XAML-Toolbox. Wenn Sie den XAML-Previewer und diese Tools wieder aktivieren möchten, ändern Sie den **standardmäßigen XAML-Editor** in **xamarin. Forms Previewer**.
 
 ::: zone-end
 

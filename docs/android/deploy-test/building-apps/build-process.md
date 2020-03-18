@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
-ms.date: 03/22/2019
-ms.openlocfilehash: 59f7ce953d7cf957529f5b22b2dfb549c0105f4a
-ms.sourcegitcommit: eea5b096ace7551ba64a470d0b78ccc56b6ef418
+ms.date: 03/06/2020
+ms.openlocfilehash: bce2b6f29129894ed446100c87b5e92d3572ed2f
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279911"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946276"
 ---
 # <a name="build-process"></a>Buildprozess
 
@@ -61,13 +61,45 @@ Die folgenden Buildziele sind für Xamarin.Android-Projekte definiert:
 
 - **Build** &ndash; erstellt das Paket.
 
+- **BuildAndStartAotProfiling** &ndash; erstellt die App mit einem eingebetteten AOT-Profiler, legt den TCP-Port für den Profiler auf `$(AndroidAotProfilerPort)` fest und startet die Standardaktivität.
+
+  Der standardmäßige TCP-Port ist `9999`.
+
+  Ab Xamarin.Android 10.2 verfügbar.
+
 - **Clean** &ndash; entfernt alle Dateien, die vom Buildprozess generiert wurden.
+
+- **FinishAotProfiling** &ndash; sammelt die Daten des AOT-Profilers vom Gerät oder Emulator über den TCP-Port `$(AndroidAotProfilerPort)` und schreibt sie in `$(AndroidAotCustomProfilePath)`.
+
+  Die Standardwerte für Port und benutzerdefiniertes Profil sind `9999` und `custom.aprof`.
+
+  Um weitere Optionen an `aprofutil` zu übergeben, legen Sie diese in der `$(AProfUtilExtraOptions)`-Eigenschaft fest.
+
+  Das entspricht:
+
+  ```
+  aprofutil $(AProfUtilExtraOptions) -s -v -f -p $(AndroidAotProfilerPort) -o "$(AndroidAotCustomProfilePath)"
+  ```
+
+  Ab Xamarin.Android 10.2 verfügbar.
 
 - **Install** &ndash; installiert das Paket auf dem Standardgerät oder virtuellen Gerät.
 
-- **Uninstall** &ndash; deinstalliert das Paket vom Standardgerät oder virtuellen Gerät.
-
 - **SignAndroidPackage** &ndash; erstellt und signiert das Paket (`.apk`). Verwenden Sie diese Option mit `/p:Configuration=Release`, um eigenständige „Releasepakete“ zu generieren.
+
+- **StartAndroidActivity** &ndash; startet die Standardaktivität auf dem Gerät oder dem verwendeten Emulator. Um eine andere Aktivität zu starten, legen Sie die `$(AndroidLaunchActivity)`-Eigenschaft auf den Namen der Aktivität fest.
+
+  Dieser entspricht `adb shell am start @PACKAGE_NAME@/$(AndroidLaunchActivity)`.
+
+  Ab Xamarin.Android 10.2 verfügbar.
+
+- **StopAndroidPackage** &ndash; beendet das Anwendungspaket auf dem Gerät oder dem verwendeten Emulator vollständig.
+
+  Dieser entspricht `adb shell am force-stop @PACKAGE_NAME@`.
+
+  Ab Xamarin.Android 10.2 verfügbar.
+
+- **Uninstall** &ndash; deinstalliert das Paket vom Standardgerät oder virtuellen Gerät.
 
 - **UpdateAndroidResources**&ndash; aktualisiert die `Resource.designer.cs`-Datei. Dieses Ziel wird normalerweise von der IDE aufgerufen, wenn dem Projekt neue Ressourcen hinzugefügt werden.
 
@@ -133,9 +165,13 @@ Installationseigenschaften steuern das Verhalten der `Install`- und `Uninstall`-
 Paketeigenschaften steuern die Erstellung des Android-Pakets und werden von den `Install`- und `SignAndroidPackage`-Zielen verwendet.
 Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von Releaseanwendungen relevant.
 
+- **AndroidAotProfiles** &ndash; eine Zeichenfolgeneigenschaft, die es dem Entwickler ermöglicht, AOT-Profile über die Befehlszeile hinzuzufügen. Dabei handelt es sich um eine durch Semikolons oder Kommas getrennte Liste absoluter Pfade.
+
+  Ab Xamarin.Android 10.1 verfügbar.
+
 - **AndroidApkDigestAlgorithm** &ndash; Ein Zeichenfolgenwert, der den mit `jarsigner -digestalg` zu verwendenden Digest-Algorithmus angibt.
 
-  Der Standardwert ist `SHA1` für APKs und `SHA-256` für App-Bundles.
+  Der Standardwert ist `SHA-256`. In Xamarin.Android 10.0 und früher war der Standardwert `SHA1`.
 
   Ab Xamarin.Android, Version 9.4 verfügbar.
 
@@ -145,7 +181,7 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
 - **AndroidApkSigningAlgorithm** &ndash; Ein Zeichenfolgenwert, der den mit `jarsigner -sigalg` zu verwendenden Signaturalgorithmus angibt.
 
-  Der Standardwert ist `md5withRSA` für APKs und `SHA256withRSA` für App-Bundles.
+  Der Standardwert ist `SHA256withRSA`. In Xamarin.Android 10.0 und früher war der Standardwert `md5withRSA`.
 
   Hinzugefügt in Xamarin.Android 8.2.
 
@@ -159,11 +195,45 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
   In Xamarin.Android 6.1 hinzugefügt.
 
+- **AndroidBinUtilsPath** &ndash; ein Pfad zu einem Verzeichnis, das die [binutils][binutils] von Android enthält, z. B. `ld`, den nativen Linker, und `as`, den nativen Assembler. Diese Tools sind Bestandteil des Android-NDK und auch in der Xamarin.Android-Installation enthalten.
+
+  Der Standardwert ist `$(MonoAndroidBinDirectory)\ndk\`.
+
+  Ab Xamarin.Android 10.0 verfügbar.
+
+  [binutils]: https://android.googlesource.com/toolchain/binutils/
+
+- **AndroidBoundExceptionType** &ndash; einen Zeichenfolgenwert, der angibt, wie Ausnahmen weitergegeben werden sollen, wenn ein von Xamarin.Android bereitgestellter Typ einen .NET-Typ oder eine .NET-Schnittstelle mit Java-Typen implementiert, z. B. `Android.Runtime.InputStreamInvoker` und `System.IO.Stream` oder `Android.Runtime.JavaDictionary` und `System.Collections.IDictionary`.
+
+  - `Java`: Der ursprüngliche Java-Ausnahmetyp wird unverändert weitergegeben.
+
+    Dies bedeutet beispielsweise, dass `InputStreamInvoker` die `System.IO.Stream`-API nicht ordnungsgemäß implementiert, da `Java.IO.IOException` von `Stream.Read()` anstelle von `System.IO.IOException` ausgelöst werden kann.
+
+    Dies ist das Weitergabeverhalten für Ausnahmen in allen Versionen von Xamarin.Android vor 10.2.
+
+    Dies ist der Standardwert in Xamarin.Android 10.2.
+
+  - `System`: Der ursprüngliche Java-Ausnahmetyp wird abgefangen und in einem entsprechenden .NET-Ausnahmetyp umschlossen.
+
+    Dies bedeutet beispielsweise, dass `InputStreamInvoker` ordnungsgemäß `System.IO.Stream` implementiert, und `Stream.Read()` *nicht* `Java.IO.IOException`-Instanzen auslöst.  (Stattdessen kann `System.IO.IOException` mit `Java.IO.IOException` als `Exception.InnerException`-Wert ausgelöst werden.)
+
+    Dies wird der Standardwert in Xamarin.Android 11.0.
+
+  Ab Xamarin.Android 10.2 verfügbar.
+
 - **AndroidBuildApplicationPackage** &ndash; Ein boolescher Wert, der angibt, ob das Paket erstellt und signiert werden soll (APK-Datei). Wenn Sie diesen Wert auf `True` festlegen, entspricht dies der Verwendung des [SignAndroidPackage](#Build_Targets)-Buildziels.
 
   Unterstützung für diese Eigenschaft wurde nach Xamarin.Android 7.1 hinzugefügt.
 
   Standardmäßig ist diese Eigenschaft `False`.
+
+- **AndroidBundleConfigurationFile** &ndash; gibt einen Dateinamen an, der als [Konfigurationsdatei][bundle-config-format] für `bundletool` verwendet werden soll, wenn ein Android App Bundle erstellt wird. Diese Datei steuert einige Aspekte für die Generierung von APKs aus dem Bundle, z. B. in welche Dimensionen das Bundle aufgeteilt wird, um APKs zu erzeugen. Beachten Sie, dass Xamarin.Android einige dieser Einstellungen automatisch konfiguriert, z. B. die Liste der Dateierweiterungen, die unkomprimiert bleiben sollen.
+
+  Diese Eigenschaft ist nur relevant, wenn `$(AndroidPackageFormat)` auf `aab` festgelegt ist.
+
+  Ab Xamarin.Android 10.3 verfügbar.
+
+  [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 
 - **AndroidDexTool** &ndash; Eine Eigenschaft im Enumerationsstil mit gültigen Werten von `dx` oder `d8`. Gibt an, welcher Android-[Dex][dex]-Compiler im Xamarin.Android-Buildprozess verwendet wird.
   Derzeit wird standardmäßig `dx` verwendet. Weitere Informationen finden Sie in unserer Dokumentation zu [D8 und R8][d8-r8].
@@ -231,6 +301,14 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
   Unterstützung für diese Eigenschaft wurde in Xamarin.Android 8.1 hinzugefügt.
 
   Standardmäßig ist diese Eigenschaft `True`.
+
+- **AndroidExtraAotOptions** &ndash; eine Zeichenfolgeneigenschaft, die die Übergabe zusätzlicher Optionen an den Mono-Compiler im Rahmen der `Aot`-Aufgabe für Projekte ermöglicht, für die `$(AndroidEnableProfiledAot)` oder `$(AotAssemblies)` auf `true` festgelegt ist. Der Zeichenfolgenwert der-Eigenschaft wird zur Antwortdatei hinzugefügt, wenn der Mono-Cross-Compiler aufgerufen wird.
+
+  Diese Eigenschaft sollte im Allgemeinen leer bleiben, bietet aber in bestimmten speziellen Szenarios möglicherweise eine nützliche Flexibilität.
+
+  Beachten Sie, dass sich diese Eigenschaft von der verwandten `$(AndroidAotAdditionalArguments)`-Eigenschaft unterscheidet. Diese Eigenschaft fügt durch Trennzeichen getrennte Argumente in die `--aot`-Option des Mono-Compilers ein. `$(AndroidExtraAotOptions)` übergibt stattdessen vollkommen eigenständige, durch Leerzeichen getrennte Optionen wie `--verbose` oder `--debug` an den Compiler.
+
+  Ab Xamarin.Android 10.2 verfügbar.
 
 - **AndroidFastDeploymentType** &ndash; Eine durch Doppelpunkte (`:`) getrennte Liste von Werten zum Steuern, welche Typen im [Verzeichnis für schnelle Bereitstellung](#Fast_Deployment) auf dem Zielgerät bereitgestellt werden können, wenn die MSBuild-Eigenschaft `$(EmbedAssembliesIntoApk)` den Wert `False` aufweist. Wenn eine Ressource schnell bereitgestellt wird, ist sie *nicht* in die generierte `.apk`-Datei eingebettet, was die Bereitstellungszeiten beschleunigen kann. (Je mehr schneller bereitgestellt wird, desto seltener muss die `.apk`-Datei neu erstellt werden, und der Installationsprozess kann schneller ablaufen.) Gültige Werte sind:
 
@@ -349,6 +427,16 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
   Während des Builds werden alle anderen notwendigen Werte gemergt, um die eigentliche Datei `AndroidManifest.xml` zu generieren.
   `$(AndroidManifest)` muss den Paketnamen im `/manifest/@package`-Attribut enthalten.
 
+- **AndroidManifestMerger** &ndash; gibt die Implementierung für die Zusammenführung von *AndroidManifest.xml*-Dateien an. Hierbei handelt es sich um eine Enumerationseigenschaft, bei der `legacy` die ursprüngliche C#-Implementierung und `manifestmerger.jar` die Java-Implementierung von Google auswählt.
+
+  Der derzeitige Standardwert ist `legacy`. Dieser wird in einer zukünftigen Version in `manifestmerger.jar`, um das Verhalten an Android Studio auszugleichen.
+
+  Der Merger von Google ermöglicht die Unterstützung für `xmlns:tools="http://schemas.android.com/tools"` (siehe Beschreibung in der [Android-Dokumentation][manifest-merger]).
+
+  Neu in Xamarin.Android 10.2
+
+  [manifest-merger]: https://developer.android.com/studio/build/manifest-merge
+
 - **AndroidMultiDexClassListExtraArgs** &ndash; Eine Zeichenfolgeneigenschaft, die es Entwicklern ermöglicht, zusätzliche Argumente an `com.android.multidex.MainDexListBuilder` zu übergeben, wenn die `multidex.keep`-Datei generiert wird.
 
   Ein spezieller Fall ist, wenn bei der `dx`-Kompilierung der folgende Fehler angezeigt wird.
@@ -379,6 +467,14 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
   [apk]: https://en.wikipedia.org/wiki/Android_application_package
   [bundle]: https://developer.android.com/platform/technology/app-bundle
 
+- **AndroidPackageNamingPolicy** &ndash; eine Enumerationseigenschaft zum Angeben der Java-Paketnamen des generierten Java-Quellcodes.
+
+  In Xamarin.Android 10.2 und höher ist `LowercaseCrc64` der einzige unterstützte Wert.
+
+  In Xamarin.Android 10.1 war auch der Übergangswert `LowercaseMD5` verfügbar, der einen Wechsel zurück zum ursprünglichen Java-Paketnamenformat ermöglichte, das in Xamarin.Android 10.0 und früher verwendet wurde. Diese Option wurde in Xamarin.Android 10.2 entfernt, um die Kompatibilität mit Buildumgebungen zu verbessern, in denen FIPS-Konformität erzwungen wird.
+
+  Ab Xamarin.Android 10.1 verfügbar.
+
 - **AndroidR8JarPath** &ndash; Der Pfad zu `r8.jar` zur Verwendung mit dem r8 dex-Compiler und -Shrinker. Ist standardmäßig ein Pfad in der Xamarin.Android-Installation. Weitere Informationen finden Sie in unserer Dokumentation zu [D8 und R8][d8-r8].
 
 - **AndroidSdkBuildToolsVersion** &ndash; Das build-tools-Paket des Android SDK enthält unter anderem die Tools **aapt** und **zipalign**. Mehrere verschiedene Versionen des build-tools-Pakets können gleichzeitig installiert werden. Das build-tools-Paket, das für die Paketerstellung ausgewählt wird, wird durch Überprüfen und Verwenden einer „bevorzugten“ build-tools-Version ermittelt, wenn diese vorhanden ist. Wenn die „bevorzugte“ Version *nicht* vorhanden ist, wird das Paket mit der höchsten installierten build-tools-Version verwendet.
@@ -408,9 +504,11 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 
     Dies entspricht der Einstellung **Native TLS 1.2+** auf den Eigenschaftenseiten von Visual Studio.
 
-  - `legacy`: Die verwaltete Legacy-SSL-Implementierung wird für die Netzwerkinteraktion verwendet. Dies unterstützt TLS 1.2 *nicht*.
+  - `legacy`: Verwendet die historisch verwaltete SSL-Implementierung für die Netzwerkinteraktion in Xamarin.Android 10.1 und früher. Dies unterstützt TLS 1.2 *nicht*.
 
     Dies entspricht der Einstellung **Verwaltete TLS 1.0** auf den Eigenschaftenseiten von Visual Studio.
+
+    In Xamarin.Android 10.2 und höher wird dieser Wert ignoriert und die `btls`-Einstellung verwendet.
 
   - `default`: Dieser Wert wird in Xamarin.Android-Projekten in der Regel nicht verwendet. Es wird empfohlen, stattdessen die leere Zeichenfolge zu verwenden, die der Einstellung **Standard** auf den Eigenschaftenseiten von Visual Studio entspricht.
 
@@ -423,6 +521,12 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
 - **AndroidUseApkSigner** &ndash; Eine boolesche Eigenschaft, die es dem Entwickler ermöglicht, anstelle von `jarsigner` das `apksigner`-Tool zu verwenden.
 
     Hinzugefügt in Xamarin.Android 8.2.
+
+- **AndroidUseDefaultAotProfile** &ndash; eine boolesche Eigenschaft, die es dem Entwickler ermöglicht, die Verwendung der standardmäßigen AOT-Profile zu unterdrücken.
+
+  Zum Unterdrücken der standardmäßigen AOT-Profile wird die-Eigenschaft auf `false`festgelegt.
+
+  Ab Xamarin.Android 10.1 verfügbar.
 
 - **AndroidUseLegacyVersionCode** &ndash; Eine boolesche Eigenschaft, die es dem Entwickler ermöglicht, die versionCode-Berechnung auf das frühere Verhalten vor Xamarin.Android 8.2 zurückzusetzen. Dies sollte NUR für Entwickler verwendet werden, die an im Google Play Store vorhandenen Anwendungen arbeiten. Es wird dringend empfohlen, die neue `$(AndroidVersionCodePattern)`-Eigenschaft zu verwenden.
 
@@ -482,6 +586,8 @@ Die [Signatureigenschaften](#Signing_Properties) sind auch für die Pakete von R
   Wenn diese Eigenschaft `False` ist, steuert die MSBuild-Eigenschaft `$(AndroidFastDeploymentType)` auch, was in die `.apk`-Datei eingebettet wird. Dies wirkt sich auf die Bereitstellungszeit und die Zeit für erneute Buildprozesse aus.
 
 - **EnableLLVM** &ndash; Eine boolesche Eigenschaft, die bestimmt, ob LLVM verwendet wird, wenn Assemblys vorab in nativen Code kompiliert werden.
+
+  Zum Erstellen eines Projekts, für das diese Eigenschaft aktiviert ist, muss das Android-NDK installiert sein.
 
   Unterstützung für diese Eigenschaft wurde in Xamarin.Android 5.1 hinzugefügt.
 
@@ -632,15 +738,83 @@ Standardmäßig generiert das Signaturziel bei Bedarf einen neuen Debugsignaturs
 
 - **AndroidDebugKeyValidity** &ndash; Gibt den Standardwert für die Gültigkeit an, die für den `debug.keystore` verwendet werden soll. Die Eigenschaft wird standardmäßig auf `10950` oder `30 * 365` oder `30 years` festgelegt.
 
+- **AndroidDebugStoreType** &ndash; gibt das Dateiformat für den Schlüsselspeicher an, das für `debug.keystore` verwendet werden soll. Sie wird standardmäßig auf `pkcs12` festgelegt.
+
+  Ab Xamarin.Android 10.2 verfügbar.
+
 - **AndroidKeyStore** &ndash; Ein boolescher Wert, der angibt, ob benutzerdefinierte Signaturinformationen verwendet werden sollen. Der Standardwert ist `False`. Dies bedeutet, dass der Debugsignatur-Standardschlüssel verwendet wird, um Pakete zu signieren.
 
 - **AndroidSigningKeyAlias** &ndash; Gibt den Alias für den Schlüssel im Keystore an. Dies ist der Wert **keytool -alias**, der beim Erstellen des Keystore verwendet wird.
 
 - **AndroidSigningKeyPass** &ndash; Gibt das Kennwort des Schlüssels in der Keystoredatei an. Dies ist der Wert, der eingegeben wird, wenn `keytool` die folgende Aufforderung ausgibt: **Enter key password for $(AndroidSigningKeyAlias)** .
 
+  In Xamarin.Android 10.0 und früher unterstützt diese Eigenschaft nur Klartextkennwörter.
+
+  In Xamarin.Android 10.1 und höher unterstützt diese Eigenschaft auch die Präfixe `env:` und `file:`, mit denen eine Umgebungsvariable oder Datei angegeben werden kann, die das Kennwort enthält. Diese Optionen bieten eine Möglichkeit, zu verhindern, dass das Kennwort in Buildprotokollen auftaucht.
+
+  So wird beispielsweise eine Umgebungsvariable mit dem Namen *AndroidSigningPassword* verwendet:
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>env:AndroidSigningPassword</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  So verwenden Sie die Datei `C:\Users\user1\AndroidSigningPassword.txt`:
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > Das Präfix `env:` wird nicht unterstützt, wenn `$(AndroidPackageFormat)` auf `aab` festgelegt ist.
+
 - **AndroidSigningKeyStore** &ndash; Gibt den Dateinamen der von `keytool` erstellten Keystoredatei an. Dies entspricht dem Wert, der der Option **keytool -keystore** zur Verfügung gestellt wird.
 
 - **AndroidSigningStorePass** &ndash; Gibt das Kennwort für `$(AndroidSigningKeyStore)` an. Dies ist der Wert, der `keytool` beim Erstellen der Keystoredatei zur Verfügung gestellt wird, wenn die folgende Aufforderung ausgegeben wird: **Enter keystore password:** .
+
+  In Xamarin.Android 10.0 und früher unterstützt diese Eigenschaft nur Klartextkennwörter.
+
+  In Xamarin.Android 10.1 und höher unterstützt diese Eigenschaft auch die Präfixe `env:` und `file:`, mit denen eine Umgebungsvariable oder Datei angegeben werden kann, die das Kennwort enthält. Diese Optionen bieten eine Möglichkeit, zu verhindern, dass das Kennwort in Buildprotokollen auftaucht.
+
+  So wird beispielsweise eine Umgebungsvariable mit dem Namen *AndroidSigningPassword* verwendet:
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>env:AndroidSigningPassword</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  So verwenden Sie die Datei `C:\Users\user1\AndroidSigningPassword.txt`:
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > Das Präfix `env:` wird nicht unterstützt, wenn `$(AndroidPackageFormat)` auf `aab` festgelegt ist.
+
+- **JarsignerTimestampAuthorityCertificateAlias** &ndash; diese Eigenschaft bietet die Möglichkeit, einen Alias im Keystore für eine Zeitstempelautorität anzugeben.
+  Weitere Informationen finden Sie in der Java Dokumentation zur [Zeitstempelunterstützung für Signaturen](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html).
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityCertificateAlias>Alias</JarsignerTimestampAuthorityCertificateAlias>
+  </PropertyGroup>
+  ```
+
+- **JarsignerTimestampAuthorityUrl** &ndash; diese Eigenschaft bietet die Möglichkeit, eine URL zu einem Zeitstempelautoritätsdienst anzugeben. Diese kann verwendet werden, um sicherzustellen, dass die `.apk`-Signatur einen Zeitstempel enthält.
+  Weitere Informationen finden Sie in der Java Dokumentation zur [Zeitstempelunterstützung für Signaturen](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html).
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityUrl>http://example.tsa.url</JarsignerTimestampAuthorityUrl>
+  </PropertyGroup>
+  ```
 
 Betrachten Sie zum Beispiel den folgenden `keytool`-Aufruf:
 
@@ -775,6 +949,14 @@ Fortgeschrittene Benutzer wünschen sich vielleicht, dass verschiedene Ressource
   </AndroidResource>
 </ItemGroup>
 ```
+
+### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
+
+Die Buildaktion `AndroidResourceAnalysisConfig` markiert eine Datei als Schweregradkonfigurationsdatei für das Xamarin Android Designer-Layoutdiagnosetool. Diese wird derzeit nur im Layout-Editor und nicht in Buildmeldungen verwendet.
+
+Weitere Informationen finden Sie in der [Dokumentation zur Android-Ressourcenanalyse](https://aka.ms/androidresourceanalysis).
+
+Ab Xamarin.Android 10.2 verfügbar.
 
 ### <a name="content"></a>Inhalt
 

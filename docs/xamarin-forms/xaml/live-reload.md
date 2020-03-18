@@ -8,21 +8,24 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e6c8e7b84ba8e3d0f6e6247798bb9164a3bc994d
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728342"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423901"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Neuladen (Vorschau)
 
 > [!NOTE]
-> Die Vorschauversion von xamarin Live Neuladen wurde beendet, und wir möchten für alle Ihre Meinung und Ihre Kommentare danken. Lesen Sie unsere [Roadmap](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap) für Visual Studio 2019, um weitere Informationen zu neuen Produktivitäts Features zu erhalten, an denen wir für xamarin. Forms arbeiten. Diese Extension bleibt für Visual Studio 2017 verfügbar, empfängt aber keine zukünftigen Updates.
+> Die Vorschauversion von xamarin Live Neuladen wurde beendet, und wir möchten für alle Ihre Meinung und Ihre Kommentare danken. 
+>
+> Wenn Sie XAML bearbeiten möchten, während Ihre APP ausgeführt wird, verwenden Sie [XAML Hot Neuladen für xamarin. Forms](~/xamarin-forms/xaml/hot-reload.md).
+>
 
 Mit xamarin Live Neuladen können Sie **Änderungen an Ihrem XAML-Code vornehmen und diese wiedergeben, ohne dass eine andere Kompilierung und Bereitstellung erforderlich ist**. Alle Änderungen, die an Ihrem XAML-Code vorgenommen wurden, werden bei der Speicherung erneut bereitgestellt und auf dem Bereitstellungs Ziel reflektiert.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
 * [Visual Studio 2017 Version 15,7 oder höher](https://visualstudio.microsoft.com/vs/) mit der Arbeitsauslastung für die **Mobile-Entwicklung mit .net** .
 * [Xamarin. Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/).
@@ -105,7 +108,7 @@ Wenn Sie einen Android-Emulator oder einen IOS-Simulator Debuggen, verwendet Liv
 
 ### <a name="does-it-require-debugging-the-app"></a>Muss die APP debuggt werden? 
 
-No. Tatsächlich können Sie sogar alle Ihre unterstützten Anwendungs Ziele (Android, IOS und UWP) auf einer beliebigen Anzahl von Geräten oder Simulatoren bzw. Emulatoren starten und alle Updates gleichzeitig durch sehen. 
+Nein. Tatsächlich können Sie sogar alle Ihre unterstützten Anwendungs Ziele (Android, IOS und UWP) auf einer beliebigen Anzahl von Geräten oder Simulatoren bzw. Emulatoren starten und alle Updates gleichzeitig durch sehen. 
 
 ## <a name="limitations"></a>Einschränkungen
 
