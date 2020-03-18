@@ -1,6 +1,6 @@
 ---
 title: Binden einer JAR-Datei
-description: Diese exemplarische Vorgehensweise enthält Schritt-für-Schritt-Anleitungen zum Erstellen einer xamarin. Android-Java-Bindungs Bibliothek von einem Android. JAR-Datei.
+description: Diese exemplarische Vorgehensweise enthält ausführliche Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek aus einem Android-JAR-Datei.
 ms.prod: xamarin
 ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
@@ -8,46 +8,46 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
 ms.openlocfilehash: 59969abae739db1d9035ec31738c39a3912f47ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027773"
 ---
 # <a name="binding-a-jar"></a>Binden einer JAR-Datei
 
-_Diese exemplarische Vorgehensweise enthält Schritt-für-Schritt-Anleitungen zum Erstellen einer xamarin. Android-Java-Bindungs Bibliothek von einem Android. JAR-Datei._
+_Diese exemplarische Vorgehensweise enthält ausführliche Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek aus einem Android-JAR-Datei._
 
 ## <a name="overview"></a>Übersicht
 
-Die Android-Community bietet viele Java-Bibliotheken, die Sie möglicherweise in Ihrer APP verwenden möchten. Diese Java-Bibliotheken werden häufig in verpackt. JAR-Format (Java Archive), Sie können jedoch ein verpacken. JAR-Datei in einer *Java-Bindungs Bibliothek* , damit ihre Funktionalität für xamarin. Android-Apps verfügbar ist. Der Zweck der Bibliothek für Java-Bindungen besteht darin, die APIs in zu erstellen. JAR-Datei, C# die durch automatisch generierte Codewrapper für Code verfügbar ist.
+Die Android-Community hat viele Java-Bibliotheken veröffentlicht, die Sie für Ihre App verwenden können. Diese Java-Bibliotheken werden häufig im JAR-Format (Java Archive) gepackt. Sie können eine JAR-Datei jedoch in eine *Bibliothek für Java-Bindungen* packen, sodass deren Funktionen von Xamarin.Android-Apps genutzt werden können. Der Zweck der Bibliothek für Java-Bindungen besteht darin, die in der JAR-Datei enthaltenen APIs über automatisch generierte Codewrapper dem C#-Code zur Verfügung zu stellen.
 
-Xamarin-Tools können eine Bindungs Bibliothek aus mindestens einer Eingabe generieren. JAR-Dateien. Die Bindungs Bibliothek (. DLL-Assembly) enthält Folgendes: 
+Xamarin-Tools können eine Bindungsbibliothek aus mindestens einer JAR-Eingabedatei generieren. Die Bindungsbibliothek (DLL-Assembly) enthält Folgendes: 
 
-- Der Inhalt der ursprünglichen. JAR-Datei (en).
+- den Inhalt der ursprünglichen JAR-Datei(en)
 
-- Von verwalteten Callable Wrapper (MCW), bei denen C# es sich um Typen handelt, die entsprechende Java-Typen in einschließen. JAR-Datei (en).
+- verwaltete Aufrufwrapper (Managed Callable Wrappers, MCW), bei denen es sich um C#-Typen handelt, die entsprechende Java-Typen in den JAR-Datei(en) umschließen
 
-Der generierte MCW-Code verwendet jni (Native Java-Schnittstelle), um Ihre API-Aufrufe an den zugrunde liegenden weiterzuleiten. JAR-Datei. Sie können Bindungs Bibliotheken für beliebige erstellen. JAR-Datei, die ursprünglich für die Verwendung mit Android konzipiert war (Beachten Sie, dass xamarin-Tools die Bindung von nicht-Android-Java-Bibliotheken derzeit nicht unterstützen). Sie können auch festlegen, dass die Bindungs Bibliothek erstellt werden soll, ohne den Inhalt von einzubeziehen. JAR-Datei, sodass die DLL eine Abhängigkeit von aufweist. JAR zur Laufzeit.
+Der generierte MCW-Code verwendet JNI (Java Native Interface), um Ihre API-Aufrufe an die zugrunde liegende JAR-Datei weiterzuleiten. Sie können Bindungsbibliotheken für eine beliebige JAR-Datei erstellen, die ursprünglich für die Verwendung mit Android konzipiert war. Beachten Sie jedoch, dass Xamarin-Tools die Bindung von Nicht-Android-Java-Bibliotheken derzeit nicht unterstützen. Sie können auch festlegen, dass die Bindungsbibliothek erstellt werden soll, ohne den Inhalt der JAR-Datei einzubeziehen, sodass die DLL zur Laufzeit eine Abhängigkeit zur JAR-Datei aufweist.
 
-In dieser Anleitung werden die Grundlagen der Erstellung einer Bindungs Bibliothek für einen einzelnen Schritt erläutert. JAR-Datei. Wir veranschaulichen mit einem Beispiel, bei dem alles richtig verläuft &ndash; d. h., es sind keine Anpassungen oder Debuggen von Bindungen erforderlich. 
-Das [Erstellen von Bindungen mithilfe von Metadaten](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md) bietet ein Beispiel für ein erweitertes Szenario, bei dem der Bindungsprozess nicht vollständig automatisch erfolgt und ein gewisser manueller Eingriff erforderlich ist. Eine Übersicht über die Java-Bibliotheks Bindung im allgemeinen (mit einem einfachen Codebeispiel) finden Sie unter [Binden einer Java-Bibliothek](~/android/platform/binding-java-library/index.md). 
+In dieser Anleitung werden die Grundlagen der Erstellung einer Bindungsbibliothek für eine einzelne JAR-Datei ausführlich erläutert. Das wird mit einem Beispiel veranschaulicht, bei dem alles wie beabsichtigt abläuft. Das bedeutet, dass bei diesem keine Anpassung und kein Debugging der Bindungen erforderlich ist. 
+[Das Erstellen von Bindungen mithilfe von Metadaten](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md) ist ein Beispiel für ein erweitertes Szenario, bei dem der Bindungsprozess nicht vollständig automatisch erfolgt und ein gewisser manueller Eingriff erforderlich ist. Eine allgemeine Übersicht über die Java-Bibliotheksbindung (mit einem einfachen Codebeispiel) finden Sie unter [Binden einer Java-Bibliothek](~/android/platform/binding-java-library/index.md). 
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
-In der folgenden exemplarischen Vorgehensweise erstellen wir eine Bindungs Bibliothek für [Picasso](https://square.github.io/picasso/), eine beliebte Android. JAR, das Funktionen zum Laden und Zwischenspeichern von Bildern bereitstellt. Wir verwenden die folgenden Schritte, um **Picasso-2. x. x. jar** zu binden, um eine neue .NET-Assembly zu erstellen, die wir in einem xamarin. Android-Projekt verwenden können: 
+In der folgenden exemplarischen Vorgehensweise erstellen Sie eine Bindungsbibliothek für [Picasso](https://square.github.io/picasso/), eine beliebte Android-JAR-Datei, die Funktionen zum Laden und Zwischenspeichern von Bildern bereitstellt. Führen Sie die folgenden Schritte aus, um **picasso-2.x.x.jar** zu binden und somit eine neue .NET-Assembly zu erstellen, die Sie in einem Xamarin.Android-Projekt verwenden können: 
 
-1. Erstellen Sie ein neues Java-Bindungs Bibliotheksprojekt.
+1. Erstellen Sie ein neues Java-Bindungsbibliotheksprojekt.
 
-2. Fügen Sie hinzu. JAR-Datei für das Projekt.
+2. Fügen Sie die JAR-Datei zum Projekt hinzu.
 
-3. Legen Sie die entsprechende Buildaktion für das fest. JAR-Datei.
+3. Legen Sie die entsprechende Buildaktion für die JAR-Datei fest.
 
-4. Wählen Sie das Ziel Framework aus. JAR unterstützt.
+4. Wählen Sie das Zielframework aus, das die JAR-Datei unterstützt.
 
-5. Erstellen Sie die Bindungs Bibliothek.
+5. Erstellen Sie die Bindungsbibliothek.
 
-Nachdem wir die Bindungs Bibliothek erstellt haben, entwickeln wir eine kleine Android-App, die die Fähigkeit zum Abrufen von APIs in der Bindungs Bibliothek veranschaulicht. In diesem Beispiel möchten wir auf Methoden von **Picasso-2. x. x. jar**zugreifen:
+Nachdem Sie die Bindungsbibliothek erstellt haben, entwickeln Sie eine einfache Android-App, die das Abrufen von APIs in der Bindungsbibliothek veranschaulicht. In diesem Beispiel möchten Sie auf Methoden von **picasso-2.x.x.jar** zugreifen:
 
 ```java
 package com.squareup.picasso
@@ -62,7 +62,7 @@ public class Picasso
 }
 ```
 
-Nachdem wir eine Bindungs Bibliothek für **Picasso-2. x. x. jar**generiert haben, können wir diese Methoden von C#abrufen. Beispiel:
+Nachdem Sie eine Bindungsbibliothek für **picasso-2.x.x.jar** generiert haben, können Sie diese Methoden von C# abrufen. Zum Beispiel:
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -73,73 +73,73 @@ Picasso.With (this)
 
 ```
 
-### <a name="creating-the-bindings-library"></a>Erstellen der Bindungs Bibliothek
+### <a name="creating-the-bindings-library"></a>Erstellen der Bindungbibliothek
 
-Bevor Sie mit den folgenden Schritten beginnen, müssen Sie [Picasso-2. x. x. jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)herunterladen.
+Bevor Sie mit den folgenden Schritten beginnen, müssen Sie [picasso-2.x.x.jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar) herunterladen.
 
-Erstellen Sie zunächst ein neues Bindungs Bibliotheksprojekt. Erstellen Sie in Visual Studio für Mac oder Visual Studio eine neue Projekt Mappe, und wählen Sie die Vorlage *Android-Bindungs Bibliothek* aus. (Die Screenshots in dieser exemplarischen Vorgehensweise verwenden Visual Studio, aber Visual Studio für Mac ist sehr ähnlich.) Nennen Sie die Projekt Mappe **jarbinding**: 
+Erstellen Sie zunächst ein neues Bindungsbibliotheksprojekt. Erstellen Sie in Visual Studio für Mac oder Visual Studio eine neue Projektmappe, und wählen Sie die Vorlage *Android-Bindungsbibliothek* aus. (Die Screenshots in dieser exemplarischen Vorgehensweise stammen aus Visual Studio, aber Visual Studio für Mac ist sehr ähnlich.) Nennen Sie die Projektmappe **JarBinding**: 
 
-[![jarbinding-Bibliotheksprojekt erstellen](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
+[![JarBinding-Bibliotheksprojekt erstellen](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
-Die Vorlage **enthält einen jar** -Ordner, in dem Sie Ihre hinzufügen. JAR (s) zum Bindungs Bibliotheksprojekt. Klicken Sie mit der rechten Maustaste auf den Ordner **Jars** , und wählen Sie dann **> vorhandenes Element** 
+Die Vorlage enthält den Ordner **Jars**, in dem Sie Ihre JAR-Datei(en) zum Bindungsbibliotheksprojekt hinzufügen können. Klicken Sie mit der rechten Maustaste auf den Ordner **Jars**, und wählen Sie **Hinzufügen > Vorhandenes Element** aus: 
 
 [![Vorhandenes Element hinzufügen](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
-Navigieren Sie zur zuvor heruntergeladenen Datei **Picasso-2. x. x. jar** , wählen Sie Sie aus, und klicken Sie auf **Hinzufügen**: 
+Navigieren Sie zur zuvor heruntergeladenen Datei **picasso-2.x.x.jar**, wählen Sie sie aus, und klicken Sie auf **Hinzufügen**: 
 
-[![JAR-Datei auswählen und auf Hinzufügen klicken.](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
+[![JAR-Datei auswählen und auf „Hinzufügen“ klicken](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
-Überprüfen Sie, ob die Datei **Picasso-2. x. x. jar** dem Projekt erfolgreich hinzugefügt wurde: 
+Vergewissern Sie sich, dass die Datei **picasso-2.x.x.jar** dem Projekt erfolgreich hinzugefügt wurde: 
 
-[dem Projekt hinzugefügte![jar](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
+[![JAR-Datei wurde dem Projekt hinzugefügt](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
-Wenn Sie ein Java-Bindungs Bibliotheksprojekt erstellen, müssen Sie angeben, ob. JAR muss in die Bindungs Bibliothek eingebettet oder separat verpackt werden. Zu diesem Zweck geben Sie eine der folgenden *Buildaktionen*an: 
+Wenn Sie ein Java-Bindungsbibliotheksprojekt erstellen, müssen Sie angeben, ob die JAR-Datei in die Bindungsbibliothek eingebettet oder separat gepackt ist. Zu diesem Zweck geben Sie eine der folgenden *Buildaktionen* an: 
 
-- **Embeddebug** &ndash;. JAR wird in die Bindungs Bibliothek eingebettet.
+- **EmbeddedJar:** Die JAR-Datei wird in die Bindungsbibliothek eingebettet.
 
-- **Inputjar** &ndash;. JAR wird von der Bindungs Bibliothek getrennt aufbewahrt.
+- **InputJar:** Die JAR-Datei wird von der Bindungsbibliothek getrennt gespeichert.
 
-In der Regel verwenden Sie die **embeddedjar** -Buildaktion, damit das. JAR wird automatisch in die Bindungs Bibliothek gepackt. Dies ist die einfachste Option &ndash; Java-Bytecode in. JAR wird in den DEX-Bytecode konvertiert und ist (zusammen mit den verwalteten Callable Wrappern) in Ihr APK eingebettet. , Wenn die beibehalten werden soll. JAR getrennt von der Bindungs Bibliothek können Sie die **inputjar** -Option verwenden. Sie müssen jedoch sicherstellen, dass die. Die JAR-Datei ist auf dem Gerät verfügbar, auf dem die app ausgeführt wird. 
+In der Regel verwenden Sie die Buildaktion **EmbeddedJar**, damit die JAR-Datei automatisch in die Bindungsbibliothek gepackt wird. Dabei handelt es sich um die einfachste Option, da Java-Bytecode in der JAR-Datei in DEX-Bytecode konvertiert und (zusammen mit den verwalteten Aufrufwrappern) in Ihr Android-Anwendungspaket eingebettet wird. Wenn die JAR-Datei getrennt von der Bindungsbibliothek gespeichert werden soll, können Sie die Option **InputJar** verwenden. Sie müssen jedoch sicherstellen, dass die JAR-Datei auf dem Gerät verfügbar ist, auf dem die App ausgeführt wird. 
 
-Legen Sie die Buildaktion auf **embeddedjar**fest: 
+Legen Sie die Buildaktion auf **EmbeddedJar** fest: 
 
-[![embeddedjar-Buildaktion auswählen](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
+[![EmbeddedJar-Buildaktion auswählen](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
 
-Öffnen Sie als nächstes die Projekteigenschaften, um das *Ziel Framework*zu konfigurieren. , Wenn die. JAR verwendet alle Android-APIs, legen Sie das Ziel Framework auf die API-Ebene fest, auf der das. JAR erwartet. In der Regel ist dies der Entwickler von. In der JAR-Datei wird angegeben, auf welcher API-Ebene (oder welchen Ebenen) das. JAR ist mit kompatibel. (Weitere Informationen zur Ziel Framework-Einstellung und den Android-API-Ebenen im Allgemeinen finden Sie Untergrund Legendes zu [Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).)
+Öffnen Sie als Nächstes die Projekteigenschaften, um das *Zielframework* zu konfigurieren. Wenn die JAR-Datei Android-APIs verwendet, sollten Sie das Zielframework auf die API-Ebene festlegen, die die JAR-Datei erwartet. In der Regel gibt der Entwickler der JAR-Datei an, mit welchen API-Ebenen die JAR-Datei kompatibel ist. Weitere Informationen zur Einstellung des Zielframeworks und den Android-API-Ebenen im Allgemeinen finden Sie unter [Grundlegendes zu Android-API-Ebenen](~/android/app-fundamentals/android-api-levels.md).
 
-Legen Sie die Ziel-API-Ebene für Ihre Bindungs Bibliothek fest (in diesem Beispiel verwenden wir API-Ebene 19): 
+Legen Sie die API-Zielebene für Ihre Bindungsbibliothek fest (in diesem Beispiel wird API-Ebene 19 verwendet): 
 
-[![Ziel-API-Ebene auf API 19 festgelegt](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
+[![API-Zielebene auf API 19 festgelegt](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
-Erstellen Sie abschließend die Bindungs Bibliothek. Obwohl einige Warnmeldungen angezeigt werden können, sollte das Projekt der Bindungs Bibliothek erfolgreich erstellt und eine Ausgabe erstellt werden. DLL an folgendem Speicherort: **jarbinding/bin/debug/jarbinding. dll**
+Erstellen Sie abschließend die Bindungsbibliothek. Obwohl möglicherweise einige Warnmeldungen angezeigt werden, sollte das Projekt für die Bindungsbibliothek erfolgreich erstellt und eine Ausgabe-DLL an folgendem Speicherort erzeugt werden: **JarBinding/bin/Debug/JarBinding.dll**
 
-### <a name="using-the-bindings-library"></a>Verwenden der Bindungs Bibliothek
+### <a name="using-the-bindings-library"></a>Verwenden der Bindungsbibliothek
 
-, Um dieses zu verwenden. Führen Sie in der xamarin. Android-App die folgenden Schritte aus:
+Sie können die DLL folgendermaßen in Ihrer Xamarin.Android-App nutzen:
 
-1. Fügen Sie einen Verweis auf die Bindungs Bibliothek hinzu.
+1. Fügen Sie einen Verweis auf die Bindungsbibliothek hinzu.
 
-2. Nehmen Sie Aufrufe an. JAR durch die verwalteten Callable Wrapper. 
+2. Führen Sie über die verwalteten Aufrufwrapper Aufrufe der JAR-Datei durch. 
 
-In den folgenden Schritten erstellen wir eine minimale APP, die die Bindungs Bibliothek zum herunterladen und Anzeigen eines Bilds in einem `ImageView`verwendet. die "hohe Arbeit" wird durch den Code in der erreicht. JAR-Datei. 
+In den folgenden Schritten erstellen Sie eine einfache App, die die Bindungsbibliothek zum Herunterladen und Anzeigen eines Bilds in einem `ImageView`-Element verwendet. Die meiste Arbeit verrichtet dabei der Code in der JAR-Datei. 
 
-Erstellen Sie zunächst eine neue xamarin. Android-App, die die Bindungs Bibliothek nutzt. Klicken Sie mit der rechten Maustaste auf die Projekt Mappe, und wählen Sie **Neues Projekt** nennen Sie das neue Projekt **bindingtest**. Diese APP wird in derselben Projekt Mappe wie die Bindungs Bibliothek erstellt, um diese exemplarische Vorgehensweise zu vereinfachen. Allerdings kann sich die APP, die die Bindungs Bibliothek verwendet, stattdessen in einer anderen Projekt Mappe befinden: 
+Erstellen Sie zunächst eine neue Xamarin.Android-App, die die Bindungsbibliothek nutzt. Klicken Sie mit der rechten Maustaste auf die Projektmappe, wählen Sie **Neues Projekt hinzufügen** aus, und benennen Sie das neue Projekt **BindingTest**. Diese App wird in derselben Projektmappe wie die Bindungsbibliothek erstellt, um diese exemplarische Vorgehensweise zu vereinfachen. Allerdings kann sich die App, die die Bindungsbibliothek verwendet, auch in einer anderen Projektmappe befinden: 
 
-[![neues bindingtest-Projekt hinzufügen](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
+[![Neues BindingTest-Projekt hinzufügen](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
-Klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** des Projekts **bindingtest** , und wählen Sie **Verweis hinzufügen...** aus:
+Klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** des **BindingTest**-Projekts, und wählen Sie **Verweis hinzufügen...** aus:
 
-[![rechts Verweis hinzufügen](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
+[![Rechtsklick > Verweis hinzufügen](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
 
-Überprüfen Sie das zuvor erstellte Projekt **jarbinding** , und klicken Sie auf **OK**:
+Wählen Sie das zuvor erstellte Projekt **JarBinding** aus, und klicken Sie auf **OK**:
 
-[![jarbinding-Projekt auswählen](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
+[![JarBinding-Projekt auswählen](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
 
-Öffnen Sie den Knoten **Verweise** des **bindingtest** -Projekts, und überprüfen Sie, ob der **jarbinding** -Verweis vorhanden ist: 
+Öffnen Sie den Knoten **Verweise** des **BindingTest**-Projekts, und vergewissern Sie sich, dass der Verweis auf **JarBinding** vorhanden ist: 
 
-[![jarbinding wird unter "Verweise" angezeigt.](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
+[![JarBinding wird unter „Verweise“ aufgeführt](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
 
-Ändern Sie das **bindingtest** -Layout (**Main. axml**) so, dass es ein einzelnes `ImageView`hat:
+Ändern Sie das Layout von **BindingTest** (**Main.axml**), sodass nur ein `ImageView`-Element vorhanden ist:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -156,13 +156,13 @@ Klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** des Projekts *
 </LinearLayout>
 ```
 
-Fügen Sie die folgende `using`-Anweisung zu **MainActivity.cs** hinzu &ndash; dadurch ist es möglich, auf einfache Weise auf die Methoden der Java-basierten `Picasso`-Klasse zuzugreifen, die sich in der Bindungs Bibliothek befindet:
+Fügen Sie in **MainActivity.cs&ndash;** die folgende `using`-Anweisung hinzu, um den Zugriff auf die Methoden der Java-basierten `Picasso`-Klasse zu ermöglichen, die sich in der Bindungsbibliothek befindet:
 
 ```csharp
 using Com.Squareup.Picasso;
 ```
 
-Ändern Sie die `OnCreate`-Methode so, dass Sie die `Picasso`-Klasse verwendet, um ein Bild aus einer URL zu laden und im `ImageView`anzuzeigen: 
+Ändern Sie die `OnCreate`-Methode so, dass sie die `Picasso`-Klasse verwendet, um ein Bild aus einer URL zu laden und in `ImageView` anzuzeigen: 
 
 ```csharp
 public class MainActivity : Activity
@@ -181,17 +181,17 @@ public class MainActivity : Activity
 }
 ```
 
-Kompilieren Sie das Projekt **bindingtest** , und führen Sie es aus. Die APP wird gestartet, und nach einer kurzen Verzögerung (abhängig von den Netzwerkbedingungen) sollte ein Bild heruntergeladen und angezeigt werden, das dem folgenden Screenshot ähnelt:
+Kompilieren Sie das Projekt **BindingTest**, und führen Sie es aus. Die App wird gestartet, und nach einer kurzen Verzögerung (abhängig von den Netzwerkbedingungen) sollte ähnlich wie auf dem folgenden Screenshot ein Bild heruntergeladen und angezeigt werden:
 
-[Screenshot der Ausführung von "bindingtest"![](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
+[![Screenshot der Ausführung von BindingTest](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
-Herzlichen Glückwunsch! Sie haben erfolgreich eine Java-Bibliothek gebunden. JAR und in ihrer xamarin. Android-App verwendet.
+Herzlichen Glückwunsch! Sie haben erfolgreich eine JAR-Datei für eine Java-Bibliothek gebunden und in Ihrer Xamarin.Android-App eingesetzt.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser exemplarischen Vorgehensweise haben wir eine Bindungs Bibliothek für einen Drittanbieter erstellt. JAR-Datei, Hinzufügen der Bindungs Bibliothek zu einer minimalen Test-App und anschließendes durchlaufen der APP C# , um zu überprüfen, ob der Code Java-Code in der-Datei abrufen kann. JAR-Datei. 
+In dieser exemplarischen Vorgehensweise haben Sie eine Bindungsbibliothek für eine JAR-Datei eines Drittanbieters erstellt, die Bindungsbibliothek zu einer einfachen Test-App hinzugefügt und die App ausgeführt, um sich davon zu überzeugen, dass der C#-Code den Java-Code in der JAR-Datei aufrufen kann. 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Aufbauen einer Java-Bindungs Bibliothek (Video)](https://university.xamarin.com/classes#10090)
+- [Erstellen einer Java-Bindungsbibliothek (Video)](https://university.xamarin.com/classes#10090)
 - [Binden einer Java-Bibliothek](~/android/platform/binding-java-library/index.md)

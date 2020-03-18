@@ -8,28 +8,28 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: e688bd27d1116b2a77a12ccd6da29ea582053581
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75728108"
 ---
 # <a name="androidsupportv7appcompat---no-resource-found-that-matches-the-given-name-attr-androidactionmodesharedrawable"></a>Android.Support.v7.AppCompat: Keine Ressource gefunden, die mit dem angegebenen Namen übereinstimmt: attr 'android:actionModeShareDrawable'
 
-1. Stellen Sie sicher, dass Sie die neuesten Extras und das Android 5,0 (API 21) SDK über den Android SDK-Manager herunterladen.
+1. Laden Sie die neuesten Extras sowie das Android SDK Version 5.0 (API 21) über den Android-SDK-Manager herunter.
 
-2. Stellen Sie sicher, dass Sie die Anwendung kompilieren, bei der compilesdkversion auf 21 festgelegt ist. Optional können Sie auch targetdkversion auf 21 festlegen.
+2. Stellen Sie sicher, dass Sie Ihre Anwendung mit compileSdkVersion (festgelegt auf 21) kompilieren. Sie können optional die targetSdkVersion auch auf 21 festlegen.
 
-3. Wenn Sie eine frühere Version wie API 19 benötigen, laden Sie die entsprechende Version auf der nuget-Seite herunter:
+3. Wenn Sie eine frühere Version benötigen, zum Beispiel API 19, laden Sie die entsprechende Version über die NuGet-Seite herunter.
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 
 > [!NOTE]
-> Wenn Sie diese manuell über die Paket-Manager-Konsole installieren, stellen Sie sicher, dass Sie auch dieselbe Version von xamarin. Android. Support. v4 installieren.
+> Wenn Sie diese über die Paket-Manager-Konsole installieren, installieren Sie unbedingt auch die gleiche Version von Xamarin.Android.Support.v4.
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v4/](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
 
-Stack Overflow Verweis: [https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro](https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro)
+Stack Overflow-Referenz: [https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro](https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro)
 
 ## <a name="see-also"></a>Siehe auch
 

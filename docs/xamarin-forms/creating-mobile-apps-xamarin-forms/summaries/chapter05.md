@@ -1,6 +1,6 @@
 ---
-title: Zusammenfassung der Kapitel 5. Umgang mit Größen
-description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 5. Umgang mit Größen'
+title: 'Zusammenfassung von Kapitel 5: Umgang mit Größen'
+description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 5: Umgang mit Größen'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
@@ -8,88 +8,88 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: c082bdb10732e42b37511cf050e50f46990a5b5b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70771142"
 ---
-# <a name="summary-of-chapter-5-dealing-with-sizes"></a>Zusammenfassung der Kapitel 5. Umgang mit Größen
+# <a name="summary-of-chapter-5-dealing-with-sizes"></a>Zusammenfassung von Kapitel 5: Umgang mit Größen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
-
-> [!NOTE]
-> Anmerkungen zu dieser Version auf dieser Seite Geben Sie Bereiche, in denen Xamarin.Forms aus den Informationen im Buch abweichend hat, an.
-
-Mehrere Größen in Xamarin.Forms haben bisher gefunden wurde:
-
-- Die Höhe der Statusleiste iOS ist 20
-- Die `BoxView` einer standardmäßigen Breite und Höhe von 40
-- Der Standardwert `Padding` in einem `Frame` ist 20.
-- Der Standardwert `Spacing` auf die `StackLayout` ist 6
-- Die `Device.GetNamedSize` Methode gibt einen numerischen Schriftgrad zurück.
-
-Diese Größen sind nicht Pixel. Stattdessen sind sie geräteunabhängige Einheiten, die unabhängig von jeder Plattform erkannt werden.
-
-## <a name="pixels-points-dps-dips-and-dius"></a>Pixel, Punkte, Dps, DIPs und DIUs
-
-Arbeitete frühzeitig in den Verlauf von Apple Mac- und Microsoft Windows Programmierer in Pixel. Allerdings erforderlich, die Einführung von höherer Auflösung zeigt einen virtualisierten und abstrakten Ansatz in Bildschirmkoordinaten. Der Mac-Welt gearbeitet Programmierer in Einheiten von *Punkte*, normalerweise 1/72 Zoll, bei der Windows-Entwickler, die *geräteunabhängige Einheiten* (DIUs) auf der Grundlage von 1/96 Zoll.
-
-Mobile Geräte, allerdings werden in der Regel wesentlich näher an das Gesicht aufrechterhalten und haben eine höhere Auflösung als Desktop-Bildschirm an, das bedeutet, dass eine größere Pixeldichte toleriert werden kann.
-
-Programmierer, die für Apple iPhone und iPad-Geräte funktioniert weiterhin in Einheiten von *Punkte*, aber es 160 dieser Punkte pro Zoll gibt. Je nach dem Gerät kann 1, 2 oder 3 Pixel auf den Zeitpunkt vorhanden sein.
-
-Android ist ähnlich. Programmierer, die in der Einheit arbeiten *Dichte unabhängigen Pixeln* (Dps), und die Beziehung zwischen den Dps und Pixel basieren auf 160 DP pro Zoll.
-
-Windows-Telefone und-Mobilgeräte haben auch die Skalierungsfaktoren eingerichtet, die sehr nahe kommen 160 geräteunabhängige Einheiten pro Zoll implizieren.
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
 
 > [!NOTE]
-> Xamarin.Forms werden Windows-basierten Telefon- oder mobile Geräte nicht mehr unterstützt.
+> In den Anmerkungen auf dieser Seite wird erläutert, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
-Zusammengefasst kann ein Xamarin.Forms-Programmierer, die für Smartphones und Tablets davon ausgehen, dass alle Maßeinheiten in der folgenden Kriterien basieren:
+Sie haben bereits verschiedene Größen in Xamarin.Forms kennengelernt:
 
-- 160 Einheiten pro Zoll, entspricht
-- 64-Einheiten, um die Zentimeter
+- Die Höhe der iOS-Statusleiste ist 20.
+- `BoxView` hat eine Standardbreite und -höhe von 40.
+- Der Standardwert für `Padding` in einem `Frame` ist 20.
+- Der Standardwert für `Spacing` bei `StackLayout` ist 6.
+- Die Methode `Device.GetNamedSize` gibt einen numerischen Schriftgrad zurück.
 
-Die schreibgeschützte [ `Width` ](xref:Xamarin.Forms.VisualElement.Width) und [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) definierten Eigenschaften `VisualElement` standardmäßige "Werte modellieren" &ndash;1. Nur, wenn ein Element wurde die Größe und Layout untergebracht werden diese Eigenschaften die tatsächliche Größe des Elements in geräteunabhängigen Einheiten entsprechen. Diese Größe enthält alle `Padding` legen Sie für das Element aber nicht die `Margin`.
+Bei diesen Größen handelt es sich nicht um Pixel. Es handelt sich dabei vielmehr um geräteunabhängige Einheiten, die von jeder Plattform unabhängig erkannt werden.
 
-Wird ausgelöst, ein visuelles Element die [ `SizeChanged` ](xref:Xamarin.Forms.VisualElement.SizeChanged) Ereignis bei der `Width` oder `Height` hat sich geändert. Die [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) Beispiel wird dieses Ereignis verwendet, um die Größe des Programms Bildschirm anzuzeigen.
+## <a name="pixels-points-dps-dips-and-dius"></a>Pixel, Punkte, dp, DIP und geräteunabhängige Einheiten
+
+In den Anfängen von Apple Mac und Microsoft Windows arbeiteten Programmierer mit Pixeln als Einheit. Als Displays mit höherer Auflösung auf den Markt kamen, wurde allerdings eine virtualisiertere und abstraktere Herangehensweise für Bildschirmkoordinaten erforderlich. In der Mac-Welt arbeiteten Programmierer mit *Punkten* als Einheit, die traditionell 1/72 Zoll entsprach, während Windows-Entwickler *geräteunabhängige Einheiten* verwendeten, die auf 1/96 Zoll basierten.
+
+Mobile Geräte werden allerdings allgemein deutlich näher an das Gesicht gehalten und haben eine höhere Auflösung als Desktopbildschirme, womit einhergeht, dass eine höhere Pixeldichte möglich ist.
+
+Programmierer, die für die Geräte Apple iPhone und iPad programmieren, arbeiten weiterhin mit *Punkten* als Einheit. Allerdings entsprechen nun 160 dieser Punkte einem Zoll. Je nach Gerät kann ein Punkt 1, 2 oder 3 Pixeln entsprechen.
+
+Bei Android verhält es sich ähnlich. Programmierer arbeiten mit *dichteunabhängigen Pixeln* (dp, density-independent pixels) als Einheit, wobei das Verhältnis von dp zu Pixeln auf einem Verhältnis von 160 dp pro Zoll basiert.
+
+Für Windows Phones und mobile Windows-Geräte haben sich ebenfalls Skalierungsfaktoren etabliert, die ca. 160 geräteunabhängigen Einheiten pro Zoll entsprechen.
+
+> [!NOTE]
+> Xamarin.Forms unterstützt keine Windows-basierten Smartphones und mobilen Geräte mehr.
+
+Kurz gesagt, Xamarin.Forms-Programmierer, die für Smartphones und Tablets programmieren, können davon ausgehen, dass alle Maßeinheiten auf dem folgenden Kriterium basieren:
+
+- 160 Einheiten pro Zoll, entspricht
+- 64 Einheiten pro Zentimeter
+
+Die von `VisualElement` definierten schreibgeschützten Eigenschaften [`Width`](xref:Xamarin.Forms.VisualElement.Width) und [`Height`](xref:Xamarin.Forms.VisualElement.Height) haben standardmäßige „Pseudowerte“ von &ndash; 1. Nur wenn ein Element im Layout berücksichtigt und dessen Größe dort festgelegt ist, spiegeln diese Eigenschaften die tatsächliche Größe des Elements in geräteunabhängigen Einheiten wider. Diese Größe beinhaltet Werte für `Padding`, die für das Element festgelegt wurden, aber nicht den Wert für `Margin`.
+
+Ein visuelles Objekt löst das [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)-Ereignis aus, wenn sein Wert für `Width` oder `Height` sich geändert hat. Im Beispiel [**WhatSize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) wird mit diesem Ereignis die Größe der Anzeige des Programms angezeigt.
 
 ## <a name="metrical-sizes"></a>Metrische Größen
 
-Die [ **MetricalBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView) verwendet [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) und [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) zum Anzeigen einer `BoxView` Zolls hoch und eine Zentimeter breit.
+[**MetricalBoxView**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView) verwendet [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) und [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest), um eine `BoxView` mit einer Höhe von einem Zoll und einer Breite von einem Zentimeter anzuzeigen.
 
-## <a name="estimated-font-sizes"></a>Geschätzte Schriftgrade Ihren Bedürfnissen entsprechend
+## <a name="estimated-font-sizes"></a>Geschätzte Schriftgrade
 
-Die [ **Schriftgrade** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes) Beispiel veranschaulicht, wie die 160-Einheiten-um-die-Zoll-Regel Schriftgrade Ihren Bedürfnissen entsprechend Punkte als Maßeinheit an. Der visuelle Konsistenz zwischen den Plattformen, die mithilfe dieser Technik ist besser als `Device.GetNamedSize`.
+Im Beispiel [**FontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes) wird gezeigt, wie Sie die 160-Einheiten-pro-Zoll-Regel verwenden, um Schriftgrade in Punkten anzugeben. Bei Plattformen, die diese Technik verwenden, ist die visuelle Konsistenz besser als mit `Device.GetNamedSize`.
 
-## <a name="fitting-text-to-available-size"></a>Text, verfügbare Größe anpassen
+## <a name="fitting-text-to-available-size"></a>Textgröße an den verfügbaren Platz anpassen
 
-Es ist möglich, passen einen Textblock in einem bestimmten Rechteck durch das Berechnen einer `FontSize` von der `Label` anhand der folgenden Kriterien:
+Ein Textblock kann innerhalb eines bestimmten Rechtecks angepasst werden, indem der Wert für `FontSize` für das `Label` anhand der folgenden Kriterien berechnet wird:
 
-- Zeilenabstand ist 120 Prozent des Schriftgrads (130 % auf den Windows-Plattformen).
-- Durchschnittliche Zeichenbreite ist 50 % des Schriftgrads.
+- Der Zeilenabstand entspricht 120 % des Schriftgrads (130 % auf Windows-Plattformen).
+- Die durchschnittliche Zeichenbreite ist 50 % des Schriftgrads.
 
-Die [ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) Beispiel wird diese Technik veranschaulicht. Dieses Programm wurde geschrieben, bevor Sie die [ `Margin` ](xref:Xamarin.Forms.View.Margin) Eigenschaft war verfügbar ist, verwendet eine [ `ContentView` ](xref:Xamarin.Forms.ContentView) mit einer [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Einstellung aus, um zu simulieren einer Rand.
+Im Beispiel [**EstimatedFontSize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) wird diese Technik gezeigt. Dieses Programm wurde geschrieben, bevor die Eigenschaft [`Margin`](xref:Xamarin.Forms.View.Margin) verfügbar war. Daher wird darin [`ContentView`](xref:Xamarin.Forms.ContentView) mit der Einstellung [`Padding`](xref:Xamarin.Forms.Layout.Padding) verwendet, um einen Rand zu simulieren.
 
-[![Dreifacher Screenshot der geschätzten Schriftgrad](images/ch05fg07-small.png "Text angepasst wird, um die verfügbare Größe")](images/ch05fg07-large.png#lightbox "Text, die an die verfügbare Größe anpassen")
+[![Dreifacher Screenshot mit geschätztem Schriftgrad](images/ch05fg07-small.png "An den verfügbaren Platz angepasster Text")](images/ch05fg07-large.png#lightbox "An den verfügbaren Platz angepasster Text")
 
-## <a name="a-fit-to-size-clock"></a>Eine Uhr für Anpassung-zu-size
+## <a name="a-fit-to-size-clock"></a>Uhr mit angepasster Größe
 
-Die [ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock) Beispiel zeigt die Verwendung [ `Device.StartTimer` ](xref:Xamarin.Forms.Device.StartTimer(System.TimeSpan,System.Func{System.Boolean})) einen Zeitgeber gestartet, die in regelmäßigen Abständen die Anwendung benachrichtigt, wenn es Zeit, um die Uhr aktualisiert ist. Der Schriftgrad ist ein Sechstel Seitenbreite fest, um die Anzeige so groß wie möglich zu machen.
+Im Beispiel [**FitToSizeClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock) wird gezeigt, wie mit [`Device.StartTimer`](xref:Xamarin.Forms.Device.StartTimer(System.TimeSpan,System.Func{System.Boolean})) ein Timer gestartet wird, der die Anwendung in regelmäßigen Abständen darüber informiert, dass die Uhr aktualisiert werden muss. Als Schriftgrad ist ein Sechstel der Seitenbreite festgelegt, um die Anzeige so groß wie möglich zu machen.
 
-## <a name="accessibility-issues"></a>Probleme mit der Barrierefreiheit
+## <a name="accessibility-issues"></a>Barrierefreiheitsprobleme
 
-Das **estimatedfontsize** -Programm und das **fitdesizeclock** -Programm enthalten beide einen geringfügigen Fehler: Wenn der Benutzer die Barrierefreiheits Einstellungen für Android oder Windows 10 Mobile des Telefons ändert, kann das Programm nicht mehr schätzen, wie groß der Text basierend auf dem Schrift Grad gerendert wird. Die [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) Beispiel veranschaulicht das Problem.
+Die Programme **EstimatedFontSize** und **FitToSizeClock** enthalten beide einen kleinen Mangel: Wenn der Benutzer auf seinem Smartphone unter Android oder Windows 10 Mobile die Einstellungen für die Barrierefreiheit ändert, kann das Programm nicht mehr auf Grundlage des Schriftgrads schätzen, wie groß der Text gerendert wird. Im Beispiel [**AccessibilityTest**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) wird dieses Problem demonstriert.
 
-## <a name="empirically-fitting-text"></a>Empirisch Einpassen von text
+## <a name="empirically-fitting-text"></a>Empirisches Anpassen der Textgröße
 
-Eine weitere Möglichkeit zum Anpassen von Text, der ein Rechteck ist empirisch berechnet die Größe der gerenderten Text und nach oben oder unten anpassen. Das Programm in den Aufrufen Buch [ `GetSizeRequest` ](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) auf ein visuelles Element auf die gewünschte Größe des Elements zu erhalten. Methode ist veraltet und Programme sollten stattdessen Aufrufen [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)).
+Eine andere Möglichkeit, Text an ein Rechteck anzupassen, ist die empirische Berechnung der gerenderten Textgröße und entsprechende Anpassung nach oben oder unten. Das Programm im Buch ruft [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) für ein visuelles Objekt auf, um die gewünschte Größe für das Element zu erhalten. Diese Methode ist veraltet, und Programme sollten stattdessen [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) aufrufen.
 
-Für eine `Label`, das erste Argument muss die Breite des Containers (damit können Wrapping), während das zweite Argument sollte festgelegt werden, `Double.PositiveInfinity` , wenn die Höhe uneingeschränkt festgelegt. Die [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) Beispiel wird diese Technik veranschaulicht.
+Bei einem `Label` sollte das erste Argument die Breite des Containers sein (um ein Umbrechen zu ermöglichen), während für das zweite Argument `Double.PositiveInfinity` festgelegt werden sollte, um die Höhe nicht zu beschränken. Diese Technik wird im Beispiel [**EmpiricalFontSize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) gezeigt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Kapitel 5 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf)
-- [Kapitel 5-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
-- [Kapitel 5 F# Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)
+- [Kapitel 5: vollständiger Text (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf)
+- [Kapitel 5: Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
+- [Kapitel 5: F#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)

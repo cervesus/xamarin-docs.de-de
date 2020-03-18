@@ -1,6 +1,6 @@
 ---
-title: Zusammenfassung der Kapitel 17. Optimieren des Rasters
-description: 'Erstellen von Mobile Apps mit xamarin. Forms: Zusammenfassung der Kapitel 17. Optimieren des Rasters'
+title: 'Zusammenfassung von Kapitel 17: Arbeiten mit dem Raster'
+description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 17: Arbeiten mit dem Raster'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
@@ -8,102 +8,102 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70760624"
 ---
-# <a name="summary-of-chapter-17-mastering-the-grid"></a>Zusammenfassung der Kapitel 17. Optimieren des Rasters
+# <a name="summary-of-chapter-17-mastering-the-grid"></a>Zusammenfassung von Kapitel 17: Arbeiten mit dem Raster
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
-Die [ `Grid` ](xref:Xamarin.Forms.Grid) ist ein leistungsstarke Layout-Mechanismus, der ordnet seine untergeordneten Elemente in Zeilen und Spalten von Zellen. Im Gegensatz zu HTML-Code ähnlich `table` -Element, das `Grid` ist ausschließlich für Zwecke der Präsentation, anstatt Layout.
+Das Raster ([`Grid`](xref:Xamarin.Forms.Grid)) ist ein leistungsstarker Layoutmechanismus, dessen untergeordnete Elemente in Zeilen und Spalten aus Zellen angeordnet sind. Im Gegensatz zu dem ähnlichen HTML-Element `table` ist das `Grid` ausschließlich für Layout- und nicht für Präsentationszwecke gedacht.
 
-## <a name="the-basic-grid"></a>Einfaches Raster
+## <a name="the-basic-grid"></a>Das grundlegende Raster
 
-`Grid` leitet sich von [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1), definiert ein [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) Eigenschaft, die `Grid` erbt. Sie können diese Sammlung in XAML oder Code eingeben.
+`Grid` wird aus [`Layout<View>`](xref:Xamarin.Forms.Layout`1) abgeleitet, welches eine [`Children`](xref:Xamarin.Forms.Layout`1.Children)-Eigenschaft definiert, die `Grid` erbt. Sie können diese Sammlung mit XAML oder Code auffüllen.
 
 ### <a name="the-grid-in-xaml"></a>Das Raster in XAML
 
-Die Definition von einer `Grid` in XAML beginnt gewöhnlich mit füllen die [ `RowDefinitions` ](xref:Xamarin.Forms.Grid.RowDefinitions) und [ `ColumnDefinitions` ](xref:Xamarin.Forms.Grid.ColumnDefinitions) Sammlungen von der `Grid` mit [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) und [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition) Objekte. Dies ist, wie Sie die Anzahl der Zeilen und Spalten des Einrichten der `Grid`, und deren Eigenschaften.
+Das Definieren von `Grid` in XAML beginnt üblicherweise mit dem Auffüllen der Sammlungen [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) und [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) von `Grid` mit [`RowDefinition`](xref:Xamarin.Forms.RowDefinition)- und [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition)-Objekten. Auf diese Weise legen Sie die Anzahl von Zeilen und Spalten von `Grid` sowie deren Eigenschaften fest.
 
-`RowDefinition` verfügt über eine [ `Height` ](xref:Xamarin.Forms.RowDefinition.Height) Eigenschaft und `ColumnDefinition` verfügt über eine [ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width) -Eigenschaft, beide vom Typ [ `GridLength` ](xref:Xamarin.Forms.GridLength), eine Struktur.
+`RowDefinition` verfügt über die Eigenschaft [`Height`](xref:Xamarin.Forms.RowDefinition.Height) und `ColumnDefinition` über die Eigenschaft [`Width`](xref:Xamarin.Forms.ColumnDefinition.Width), beide vom Typ [`GridLength`](xref:Xamarin.Forms.GridLength), eine Struktur.
 
-In XAML die [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter) konvertiert einfache Textzeichenfolgen in `GridLength` Werte. Hinter den Kulissen der [ `GridLength` Konstruktor](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType)) erstellt die `GridLength` -Wert auf Grundlage einer Zahl und ein Wert vom Typ [ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType), eine Enumeration mit drei Elementen:
+In XAML konvertiert [`GridLengthTypeConverter`](xref:Xamarin.Forms.GridLengthTypeConverter) einfache Textzeichenfolgen in `GridLength`-Werte. Dabei erstellt der [`GridLength`-Konstruktor](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType)) im Hintergrund den Wert für `GridLength` auf Grundlage einer Zahl und eines Werts für den Typ [`GridUnitType`](xref:Xamarin.Forms.GridUnitType), eine Enumeration mit drei Elementen:
 
-- [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; die Breite oder Höhe wird in geräteunabhängigen Einheiten (eine Zahl in XAML) angegeben.
-- [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; die Höhe oder Breite ist automatisch angepasst, die basierend auf den Inhalt der Zelle (in XAML "Auto")
-- [`Star`](xref:Xamarin.Forms.GridUnitType.Star) &mdash; übrig gebliebene Höhe oder Breite proportional zugewiesen ist (eine Zahl mit "\*" namens *Stern*, in XAML)
+- [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute): Die Breite oder Höhe wird in geräteunabhängigen Einheiten (eine Zahl in XAML) angegeben.
+- [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto): Die Höhe oder Breite wird abhängig vom Zelleninhalt automatisch angepasst („Auto“ in XAML).
+- [`Star`](xref:Xamarin.Forms.GridUnitType.Star): Überschüssige Höhe oder Breite wird proportional verteilt (eine Zahl mit „\*“ (als *Sternvariable* bezeichnet) in XAML).
 
-Jedes untergeordnete Element von der `Grid` muss auch zugewiesen werden einer Zeile und Spalte (entweder explizit oder implizit). Umfasst Zeile und Spalte Span-Elemente sind optional. Diese werden alle mit angegeben angefügte bindbare Eigenschaften &mdash; von definierten Eigenschaften der `Grid` jedoch festgelegt, auf die untergeordneten Elemente des der `Grid`. `Grid` definiert vier statische angefügte bindbare Eigenschaften an:
+Allen untergeordneten Elementen von `Grid` muss außerdem eine Zeile und Spalte zugeordnet werden (entweder explizit oder implizit). Zeilen- und Spaltenweite sind optional. Diese werden alle mit angefügten bindbaren Eigenschaften festgelegt – Eigenschaften, die von `Grid` definiert, aber für untergeordnete Elemente von `Grid` festgelegt werden. `Grid` definiert vier statische angefügte bindbare Eigenschaften:
 
-- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; Der nullbasierte Zeile. Der Standardwert ist 0
-- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; Der nullbasierte Spalte aus. Der Standardwert ist 0
-- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; die Anzahl der Zeilen der untergeordneten umfasst; Der Standardwert ist 1
-- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; die Anzahl der Spalten das untergeordnete Element erstreckt; Der Standardwert ist 1
+- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty): die nullbasierte Zeile; der Standardwert ist 0
+- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty): die nullbasierte Spalte; der Standardwert ist 0
+- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty): die Anzahl der Zeilen, die das untergeordnete Element umfasst; der Standardwert ist 1
+- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty): die Anzahl der Spalten, die das untergeordnete Element umfasst; der Standardwert ist 1
 
-Im Code kann ein Programm acht statische Methoden zum Festlegen und Abrufen dieser Werte verwenden:
+Im Code kann ein Programm die folgenden acht statischen Methoden verwenden, um diese Werte festzulegen und abzurufen:
 
 - [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) und [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
 - [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) und [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
 - [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) und [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
 - [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) und [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
 
-In XAML verwenden Sie die folgenden Attribute zum Festlegen dieser Werte an:
+In XAML werden diese Werte mit den folgenden Attributen festgelegt:
 
 - `Grid.Row`
 - `Grid.Column`
 - `Grid.RowSpan`
 - `Grid.ColumnSpan`
 
-Die [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo) Beispiel veranschaulicht das Erstellen und initialisieren eine `Grid` in XAML.
+Im Beispiel [**SimpleGridDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo) wird gezeigt, wie ein `Grid` in XAML erstellt und initialisiert wird.
 
-Die `Grid` erbt die [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Eigenschaft `Layout` und definiert zwei weitere Eigenschaften, die Abstände zwischen den Zeilen und Spalten zu ermöglichen:
+Das `Grid` erbt die Eigenschaft [`Padding`](xref:Xamarin.Forms.Layout.Padding) von `Layout` und definiert zwei zusätzliche Eigenschaften für Abstand zwischen den Zeilen und Spalten:
 
-- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) hat den Standardwert von 6
-- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) hat den Standardwert von 6
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) hat einen Standardwert von 6.
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) hat einen Standardwert von 6.
 
-Die `RowDefinitions` und `ColumnDefinitions` Auflistungen sind nicht unbedingt erforderlich. Falls nicht vorhanden, die `Grid` erstellt, Zeilen und Spalten für die `Grid` untergeordnete Elemente und gibt alle den Standardwert `GridLength` von "\*" (star).
+Die Sammlungen `RowDefinitions` und `ColumnDefinitions` sind nicht zwingend erforderlich. Wenn sie nicht vorhanden sind, erstellt `Grid` Zeilen und Spalten für die untergeordneten Elemente von `Grid` und legt für alle diese Elemente als Standardwert für `GridLength` „\*“ (Sternvariable) fest.
 
-### <a name="the-grid-in-code"></a>Das Raster im code
+### <a name="the-grid-in-code"></a>Das Raster in Code
 
-Die [ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo) Beispiel veranschaulicht, wie zum Erstellen und Auffüllen einer `Grid` im Code. Sie können die angefügten Eigenschaften festlegen, für jedes untergeordnete Element direkt oder indirekt durch Aufrufen von zusätzlichen `Add` Methoden, z. B. [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) von definiert die [Grid.IGridList<T> ](xref:Xamarin.Forms.Grid.IGridList`1) -Schnittstelle.
+Im Beispiel [**GridCodeDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo) wird gezeigt, wie ein `Grid` in Code erstellt und aufgefüllt wird. Sie können die angefügten Eigenschaften für jedes untergeordnete Element direkt oder indirekt durch Aufrufen zusätzlicher `Add`-Methoden festlegen, z. B. [`Add`](xref:Xamarin.Forms.Grid.IGridList`1.Add*), wie durch die [Grid.IGridList<T>](xref:Xamarin.Forms.Grid.IGridList`1)-Schnittstelle definiert.
 
 ### <a name="the-grid-bar-chart"></a>Das Raster-Balkendiagramm
 
-Die [ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart) Beispiel zeigt, wie mehrere hinzuzufügende `BoxView` Elementen, die eine `Grid` mit der massenbearbeitungsfunktion [ `AddHorizontal` ](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) Methode. Standardmäßig diese `BoxView` Elemente haben dieselbe Breite. Die Höhe der einzelnen `BoxView` kann dann gesteuert werden, um ein Balkendiagramm zu entsprechen.
+Im Beispiel [**GridBarChart**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart) wird gezeigt, wie Sie mehrere `BoxView`-Elemente zu einem `Grid` hinzufügen, indem Sie die Massenmethode [`AddHorizontal`](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) verwenden. Standardmäßig sind diese `BoxView`-Elemente gleich breit. Die Höhe jedes `BoxView`-Elements kann dann so gesteuert werden, dass das Raster einem Balkendiagramm ähnelt.
 
-Die `Grid` in die **GridBarChart** Freigaben Beispiel einer `AbsoluteLayout` übergeordnetes Element mit einem anfänglich unsichtbar `Frame`. Legt auch fest, das Programm eine `TapGestureRecognizer` auf jedem `BoxView` verwenden die `Frame` Informationen zu der diese Leiste angezeigt.
+Das `Grid` im Beispiel **GridBarChart** verfügt zusammen mit einem ursprünglich unsichtbaren `Frame` über ein gemeinsames übergeordnetes Element `AbsoluteLayout`. Das Programm legt außerdem einen `TapGestureRecognizer` für jede `BoxView` fest, um den `Frame` zum Anzeigen von Informationen über die angetippte Leiste zu verwenden.
 
 ### <a name="alignment-in-the-grid"></a>Ausrichtung im Raster
 
-Die [ **GridAlignment** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridAlignment) Beispiel veranschaulicht, wie die `VerticalOptions` und `HorizontalOptions` Eigenschaften an das untergeordnete Elemente in einem `Grid` Zelle.
+Im Beispiel [**GridAlignment**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridAlignment) wird gezeigt, wie Sie mit den Eigenschaften `VerticalOptions` und `HorizontalOptions` untergeordnete Elemente in einer `Grid`-Zelle ausrichten.
 
-Die [ **SpacingButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SpacingButtons) Beispiel gleichermaßen Leerzeichen `Button` Elemente, der zentriert in `Grid` Zellen.
+Im Beispiel [**SpacingButtons**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SpacingButtons) werden gleichmäßige Abstände zwischen in `Grid`-Zellen zentrierte `Button`-Elemente gesetzt.
 
-### <a name="cell-dividers-and-borders"></a>Zelle Zeilenunterteiler und Rahmen
+### <a name="cell-dividers-and-borders"></a>Trennlinien zwischen Zellen und Rahmen
 
-Die `Grid` schließt sich nicht auf eine Funktion, die Zelle Zeilenunterteiler oder Rahmen zeichnet. Allerdings können Sie Ihre eigenen vornehmen.
+Das `Grid` verfügt über kein Feature für Trennlinien zwischen Zellen und Rahmen. Sie können diese allerdings selbst erstellen.
 
-Die [ **GridCellDividers** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellDividers) wird veranschaulicht, wie zusätzliche Zeilen und Spalten speziell für die schlanke definieren `BoxView` Elementen, die Trennlinien zu imitieren.
+In [**GridCellDividers**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellDividers) wird gezeigt, wie Sie zusätzliche Zeilen und Spalten speziell für dünne `BoxView`-Elemente definieren, um Trennlinien zu imitieren.
 
-Die [ **GridCellBorders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellBorders) Programm keine zusätzlichen Zellen erstellt, sondern stattdessen richtet `BoxView` Elemente in jeder Zelle, um einen Zellenrahmen zu imitieren.
+Das Programm [**GridCellBorders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellBorders) erstellt keine zusätzlichen Zellen, sondern richtet `BoxView`-Elemente in jeder Zelle aus, um einen Zellenrahmen zu imitieren.
 
-## <a name="almost-real-life-grid-examples"></a>Fast realen Grid-Beispiele
+## <a name="almost-real-life-grid-examples"></a>Fast aus dem Leben gegriffene Beispiele für Raster
 
-Die [ **KeypadGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/KeypadGrid) -Beispiel verwendet einen `Grid` eine Zehnertastatur angezeigt:
+Im Beispiel [**KeypadGrid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/KeypadGrid) wird ein `Grid` verwendet, um eine Zehnertastatur anzuzeigen:
 
-[![Dreifacher Screenshot der Zehnertastatur Raster](images/ch17fg12-small.png "Zehnertastatur Raster")](images/ch17fg12-large.png#lightbox "Zehnertastatur Raster")
+[![Dreifacher Screenshot eines Rasters mit einer Zehnertastatur](images/ch17fg12-small.png "Raster mit einer Zehnertastatur")](images/ch17fg12-large.png#lightbox "Raster mit einer Zehnertastatur")
 
-### <a name="responding-to-orientation-changes"></a>Reagieren auf Änderungen der bildschirmausrichtung
+### <a name="responding-to-orientation-changes"></a>Reagieren auf Änderung der Ausrichtung
 
-Die `Grid` können die Struktur eines Programms auf Richtungswechsel reagiert. Die [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders) Beispiel wird veranschaulicht, eine Technik, die eine zweite Zeile eines Telefons Hochformat und die zweite Spalte oder einem Telefon Querformat ein Element bewegt.
+Mit dem `Grid` kann ein Programm so strukturiert werden, dass es auf eine Änderung der Ausrichtung reagiert. Im Beispiel [**GridRgbSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders) wird eine Technik gezeigt, mit der ein Element von der zweiten Zeile bei einem Telefon im Hochformat in die zweite Spalte bei einem Telefon im Querformat verschoben wird und umgekehrt.
 
-Initialisiert das Programm `Slider` Elemente auf einen Bereich von 0 bis 255 und datenbindungen verwendet, um den Wert der Schieberegler im Hexadezimalformat anzuzeigen. Da die `Slider` Werte sind Gleitkomma-, und der Formatierungszeichenfolge für hexadezimale nur mit ganzen Zahlen funktioniert, .NET eine [ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs) -Klasse in der [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Bibliothek bietet.
+Das Programm initialisiert `Slider`-Elemente mit einer Spanne von 0 bis 255 und verwendet Datenbindungen, um den Wert der Schieberegler als Hexadezimalzahl anzuzeigen. Da es sich bei den `Slider`-Werten um Gleitkommazahlen handelt und die .NET-Formatierungszeichenfolge für Hexadezimalzahlen nur mit Zahlen vom Typ Integer funktioniert, wird eine [`DoubleToIntConvert`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)-Klasse aus der [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)-Bibliothek verwendet.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Kapitel 17 Volltext (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
-- [Kapitel 17-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+- [Kapitel 17: vollständiger Text (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
+- [Kapitel 17: Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 - [Raster](~/xamarin-forms/user-interface/layouts/grid.md)

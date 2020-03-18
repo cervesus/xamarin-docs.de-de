@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: jimmgarrido
 ms.author: jigarrid
 ms.date: 01/14/2020
-ms.openlocfilehash: 2cf925a96e952e6b760da9ca5416e124a3e3716b
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.openlocfilehash: 1f87fffe99656cdc0d0bf0f0178413740a20aa75
+ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071152"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78337284"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (Preview)
 
@@ -20,19 +20,22 @@ ms.locfileid: "77071152"
 
 Mit Xamarin Hot Restart können Sie Änderungen an Ihrer App während der Entwicklung, der Bearbeitung von Code in mehreren Dateien, Ressourcen und Verweisen schnell testen. Die neuen Änderungen am bestehenden App-Bundle werden an das Debugziel gepusht, wodurch ein wesentlich schnellerer Entwicklungs- und Bereitstellungszyklus ermöglicht wird.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Xamarin Hot Restart ist derzeit in Visual Studio 2019 Version 16.5 Preview verfügbar und unterstützt iOS-Apps mit Xamarin.Forms. Die Unterstützung für Visual Studio für Mac und anderen Apps als Xamarin.Forms befindet sich in Planung.
 
 ## <a name="requirements"></a>Anforderungen
 
-- Visual Studio 2019 Version 16.5 Preview 2 oder neuer
+- Visual Studio 2019, Version 16.5, Vorschauversion 3
 - iTunes (64 Bit)
 - Apple Developer-Konto
 
 
 ## <a name="initial-setup"></a>Erste Einrichtung
 
-1. Stellen Sie sicher, dass das iOS-Projekt als Startupprojekt festgelegt und die Buildkonfiguration auf **Debug|iPhone** (Debuggen |iPhone) festgelegt wird.
+> [!NOTE]
+> Xamarin Hot Restart ist in der Vorschauversion standardmäßig deaktiviert. Sie können die Funktion unter **Tools > Optionen... > Umgebung > Vorschaufeatures > Xamarin Hot Restart aktivieren** aktivieren.
+
+1. Stellen Sie sicher, dass das iOS-Projekt als Startupprojekt festgelegt und die Buildkonfiguration auf **Debug|iPhone** (Debuggen |iPhone) festgelegt ist.
 
    1. Wenn es sich um ein bestehendes Projekt handelt, navigieren Sie zu **Erstellen > Konfigurations-Manager...** , und stellen Sie sicher, dass **Bereitstellen** für das iOS-Projekt aktiviert ist.
 
@@ -58,15 +61,18 @@ Sie können während des Debuggens Änderungen an Ihren Codedateien vornehmen un
 
 [![](hot-restart-images/restart.png "Screenshot of the debug toolbar with the restart button highlighted.")](hot-restart-images/toolbar.png)
 
+Sie können auch das Präprozessorsymbol `HOTRESTART` verwenden, um die Ausführung von bestimmtem Code beim Debuggen mit Xamarin Hot Restart zu verhindern.
+
 ## <a name="limitations"></a>Einschränkungen
 - Nur iOS-Apps, die mit Xamarin.Forms und iOS-Geräten erstellt wurden, werden derzeit unterstützt.
-- Storyboard- und XIB-Dateien werden nicht unterstützt, und die Anwendung kann abstürzen, wenn sie versucht, diese zur Laufzeit zu laden. Wenn Sie diese in Ihrer App verwenden, teilen Sie uns dies bitte mit, da wir daran interessiert sind, dieses Szenario in Zukunft zu unterstützen.
-- Statische iOS-Bibliotheken und -Frameworks werden nicht unterstützt. Es kann zu Laufzeitfehlern oder Abstürzen kommen, wenn Ihre App versucht, diese zu laden. Dynamische iOS-Bibliotheken werden jedoch unterstützt.
+- Storyboard- und XIB-Dateien werden nicht unterstützt, und die Anwendung kann abstürzen, wenn sie versucht, diese zur Laufzeit zu laden. Verwenden Sie das Präprozessorsymbol `HOTRESTART`, um die Ausführung dieses Codes zu verhindern.
+- Statische iOS-Bibliotheken und -Frameworks werden nicht unterstützt. Es kann zu Laufzeitfehlern oder Abstürzen kommen, wenn Ihre App versucht, diese zu laden. Verwenden Sie das Präprozessorsymbol `HOTRESTART`, um die Ausführung dieses Codes zu verhindern. Dynamische iOS-Bibliotheken werden unterstützt.
 - Sie können Xamarin Hot Restart nicht verwenden, um App-Bundles für die Veröffentlichung zu erstellen. Sie benötigen weiterhin einen Mac, um eine vollständige Kompilierung, Signierung und Bereitstellung Ihrer Anwendung für die Produktion durchzuführen.
 
 ## <a name="troubleshoot"></a>Problembehandlung
 - Der Setup-Assistent erkennt iTunes nicht, wenn es über den Microsoft Store installiert wurde. Sie müssen diese Version zuerst deinstallieren und dann den [Installer von Apple](https://go.microsoft.com/fwlink/?linkid=2101014) herunterladen.
 - Es gibt ein bekanntes Problem, bei dem durch aktivierte gerätespezifische Builds verhindert wird, dass die App in den Debugmodus wechselt. Problemumgehung: Deaktivieren Sie aktivierte gerätespezifische Builds unter **Properties > iOS Build** (Eigenschaften > iOS-Build), und versuchen Sie noch einmal, den Debugmodus zu starten. Dieses Problem wird in einem kommenden Release behoben.
 - Wenn die App bereits auf dem Gerät vorhanden ist, kann der Versuch der Bereitstellung mit Hot Restart mit einem `AMDeviceStartHouseArrestService`-Fehler fehlschlagen. Das Problem kann umgangen werden, indem die App auf dem Gerät deinstalliert wird und dann noch mal bereitgestellt wird.
+- Die Eingabe einer Apple-ID, die nicht Teil des Apple-Entwicklerprogramms ist, führt zu folgendem Fehler: `Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`. Sie benötigen ein gültiges Apple Developer-Konto, um Xamarin Hot Restart auf iOS-Geräten verwenden zu können. 
 
 Verwenden Sie bitte das Feedbacktool unter [Hilfe > Feedback senden > Ein Problem melden](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem), um zusätzliche Probleme zu melden.

@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
-ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155265"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910731"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -28,6 +28,7 @@ Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anw
 
 * [Beschleunigungsmesser](accelerometer.md?context=xamarin/xamarin-forms): Abrufen von Gerätedaten zur Beschleunigung im dreidimensionalen Raum
 * [App-Informationen](app-information.md?context=xamarin/xamarin-forms): Informationen zur Anwendung
+* [App-Design](app-theme.md?context=xamarin/xamarin-forms): Erkennen des aktuellen Designs, das für die Anwendung angefordert wurde.
 * [Barometer](barometer.md?context=xamarin/xamarin-forms): Überwachung des Barometers auf Druckveränderungen
 * [Akku](battery.md?context=xamarin/xamarin-forms): Einfache Erkennung von Akkustand, -quelle und -status
 * [Zwischenablage](clipboard.md?context=xamarin/xamarin-forms): Schnelles und einfaches Festlegen oder Lesen von Text in der Zwischenablage

@@ -1,6 +1,6 @@
 ---
-title: Verwenden von Google Maps und Location mit xamarin. Android
-description: In diesem Artikel wird erläutert, wie Maps und Location mit xamarin. Android verwendet werden. Dabei wird alles von der Verwendung der integrierten Maps-Anwendung zur direkten Verwendung der Google Maps Android-API v2 behandelt.
+title: Verwenden von Google Maps und dem Standort mit Xamarin.Android
+description: In diesem Artikel wird erläutert, wie Sie Karten und Standortinformationen mit Xamarin.Android verwenden. Es werden verschiedene Aspekte behandelt – von der Nutzung der integrierten Kartenanwendung bis hin zur direkten Verwendung der Android-API-V2 von Google Maps.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
@@ -8,31 +8,31 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
 ms.openlocfilehash: d877f415bb96024bb41edc2be9aec108ae248e88
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020032"
 ---
-# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Verwenden von Google Maps und Location mit xamarin. Android
+# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Verwenden von Google Maps und dem Standort mit Xamarin.Android
 
-_In diesem Artikel wird erläutert, wie Maps und Location mit xamarin. Android verwendet werden. Dabei wird alles von der Verwendung der integrierten Maps-Anwendung zur direkten Verwendung der Google Maps Android-API v2 behandelt._
+_In diesem Artikel wird erläutert, wie Sie Karten und Standortinformationen mit Xamarin.Android verwenden. Es werden verschiedene Aspekte behandelt – von der Nutzung der integrierten Kartenanwendung bis hin zur direkten Verwendung der Android-API-V2 von Google Maps._
 
-## <a name="maps-overview"></a>Übersicht über Maps
+## <a name="maps-overview"></a>Übersicht über Karten
 
-Mapping-Technologien sind eine universelle Ergänzung für mobile Geräte. Desktop Computer und Laptops sind nicht in der Lage, die Standortinformationen integriert zu haben. Auf der anderen Seite verwenden mobile Geräte solche Anwendungen, um Geräte zu suchen und sich ändernde Standortinformationen anzuzeigen. Android verfügt über eine leistungsstarke, integrierte Technologie, die Standortdaten in Maps mithilfe von Standort Hardware anzeigt, die auf dem Gerät verfügbar sein kann. In diesem Artikel wird ein Spektrum der Zuordnungen von Anwendungen unter xamarin. Android behandelt, einschließlich: 
+Kartentechnologien sind eine universelle Ergänzung für mobile Geräte. In Desktopcomputern und Laptops ist normalerweise keine Standortermittlung integriert. Mobile Geräte verwenden jedoch solche Anwendungen, um Geräte zu suchen und sich ändernde Standortinformationen anzuzeigen. Android verfügt über eine leistungsstarke integrierte Technologie, die Standortdaten auf Karten mithilfe einer Standortsoftware anzeigt, die auf dem Gerät verfügbar sein kann. Dieser Artikel behandelt eine ganzes Spektrum an Möglichkeiten, die Kartenanwendungen unter Xamarin.Android bieten können, einschließlich der folgenden: 
 
-- Mithilfe der integrierten Maps-Anwendung können Sie schnell Zuordnungs Funktionen hinzufügen.
-- Arbeiten mit der Maps-API, um die Anzeige einer Karte zu steuern.
-- Verwenden verschiedener Techniken zum Hinzufügen grafischer Überlagerungen.
+- Verwenden integrierter Kartenanwendungen zum schnellen Hinzufügen von Kartenfunktionen
+- Arbeiten mit der Karten-API, um die Anzeige einer Karte zu steuern
+- Verwenden verschiedener Techniken zum Hinzufügen grafischer Überlagerungen
 
-Die Themen in diesem Abschnitt behandeln eine Vielzahl von Karten Features.
-Zuerst wird erläutert, wie die integrierte Maps-Anwendung von Android genutzt wird und wie eine Panoramaansicht eines Orts angezeigt wird. Anschließend wird erläutert, wie Sie mit der Maps-API Zuordnungs Features direkt in eine Anwendung integrieren. Außerdem wird erläutert, wie Sie die Position und Anzeige einer Karte Steuern und grafische Überlagerungen hinzufügen.
+Die Themen in diesem Abschnitt behandeln eine Vielzahl von Kartenfeatures.
+Zunächst wird erläutert, wie die in Android integrierte Kartenanwendung genutzt wird und wie eine Panoramaansicht eines Orts angezeigt wird. Anschließend wird thematisiert, wie die Karten-API verwendet wird, um Kartenfeatures direkt in einer Anwendung zu integrieren, was sowohl die Steuerung der Position als auch die Kartenansicht abdeckt und auch, wie grafische Überlagerungen hinzugefügt werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [MapsAndLocationDemo_v3 (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
 - [Aktivitätslebenszyklus](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Abrufen eines API-Schlüssels für Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Intents-Liste: Aufrufen von Google-Anwendungen auf Android-Geräten](https://developer.android.com/guide/appendix/g-app-intents.html)
-- [Speicherort und Zuordnungen](https://developer.android.com/guide/topics/location/index.html)
+- [Liste der Absichten: Aufrufen von Google-Anwendungen auf Android-Geräten](https://developer.android.com/guide/appendix/g-app-intents.html)
+- [Position und Karten](https://developer.android.com/guide/topics/location/index.html)

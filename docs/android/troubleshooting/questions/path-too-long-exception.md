@@ -1,6 +1,6 @@
 ---
-title: Gewusst wie Auflösen eines PathTooLongException-Fehlers?
-description: In diesem Artikel wird erläutert, wie Sie eine PathTooLongException auflösen, die beim Entwickeln einer APP auftreten kann.
+title: Wie behebe ich den Fehler PathTooLongException?
+description: In diesem Artikel wird erläutert, wie die Ausnahme PathTooLongException behoben wird, die beim Kompilieren einer App auftreten kann.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 60EE1C8D-BE44-4612-B3B5-70316D71B1EA
@@ -9,31 +9,31 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
 ms.openlocfilehash: ffe88546ff58387865d71268bd64ec05c8aec3c5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026788"
 ---
-# <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>Gewusst wie Auflösen eines PathTooLongException-Fehlers?
+# <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>Wie behebe ich den Fehler PathTooLongException?
 
 ## <a name="cause"></a>Ursache
 
-Generierte Pfadnamen in einem xamarin. Android-Projekt können recht lang sein.
-Beispielsweise könnte während eines Builds ein Pfad wie der folgende generiert werden:
+Die generierten Pfadnamen in einem Xamarin.Android-Projekt können ziemlich lang sein.
+Beispielsweise kann während eines Builds ein Pfad wie der folgende generiert werden:
 
-**C:\\einige\\Verzeichnis\\Lösung\\Project\\obj\\Debug\\__library_projects__\\xamarin. Forms. Platform. Android\\library_project_imports\\Assets**
+**C:\\Some\\Directory\\Solution\\Project\\obj\\Debug\\__library_projects__\\Xamarin.Forms.Platform.Android\\library_project_imports\\assets**
 
-Unter Windows (wobei die maximale Länge für einen Pfad [260 Zeichen](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx)beträgt), kann eine **PathTooLongException** generiert werden, während das Projekt erstellt wird, wenn ein generierter Pfad die maximale Länge überschreitet. 
+Unter Windows (maximale Länge eines Pfads: [260 Zeichen](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx)) kann beim Kompilieren des Projekts **PathTooLongException** ausgelöst werden, wenn ein generierter Pfad die maximale Länge überschreitet. 
 
 ## <a name="fix"></a>Korrektur
 
-Die `UseShortFileNames` MSBuild-Eigenschaft ist auf `True` festgelegt, um diesen Fehler standardmäßig zu umgehen. Wenn diese Eigenschaft auf `True`festgelegt wird, verwendet der Buildprozess kürzere Pfadnamen, um die Wahrscheinlichkeit zu verringern, dass eine **PathTooLongException**erzeugt wird.
-Wenn `UseShortFileNames` z. b. auf `True`festgelegt ist, wird der obige Pfad zu einem Pfad gekürzt, der dem folgenden ähnelt:
+Die MSBuild-Eigenschaft `UseShortFileNames` ist standardmäßig auf `True` festgelegt, um diesen Fehler zu vermeiden. Wenn diese Eigenschaft auf `True` festgelegt ist, verwendet der Buildprozess kürzere Pfadnamen, um die Wahrscheinlichkeit zu verringern, dass **PathTooLongException** ausgelöst wird.
+Wenn `UseShortFileNames` beispielsweise auf `True` festgelegt ist, wird der obige Pfad zu einem Pfad verkürzt, der dem folgenden ähnelt:
 
-**C:\\einige\\Verzeichnis\\Lösung\\Project\\obj\\\\\\\\\\**
+**C:\\Some\\Directory\\Solution\\Project\\obj\\Debug\\lp\\1\\jl\\assets**
 
-Um diese Eigenschaft manuell festzulegen, fügen Sie die folgende MSBuild-Eigenschaft zur Project **. csproj** -Datei hinzu:
+Um diese Eigenschaft manuell festzulegen, fügen Sie der Datei **.csproj** des Projekts die folgende MSBuild-Eigenschaft hinzu:
 
 ```xml
 <PropertyGroup>
@@ -41,7 +41,7 @@ Um diese Eigenschaft manuell festzulegen, fügen Sie die folgende MSBuild-Eigens
 </PropertyGroup>
 ```
 
-Wenn durch Festlegen dieses Flags der **PathTooLongException** -Fehler nicht behoben wird, besteht ein anderer Ansatz darin, einen [gemeinsamen zwischen Ausgabe Stamm](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/) für Projekte in der Projekt Mappe anzugeben, indem `IntermediateOutputPath` in der Datei Project **. csproj** festgelegt wird. Versuchen Sie, einen relativ kurzen Pfad zu verwenden. Beispiel:
+Wenn das Festlegen dieses Flags den Fehler **PathTooLongException** nicht behebt, besteht eine andere Möglichkeit darin, einen [gemeinsamen Zwischenausgabestamm](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/) für Projekte in Ihrer Projektmappe anzugeben, indem `IntermediateOutputPath` in der Datei **.csproj** des Projekts festgelegt wird. Versuchen Sie, einen relativ kurzen Pfad zu verwenden. Zum Beispiel:
 
 ```xml
 <PropertyGroup>

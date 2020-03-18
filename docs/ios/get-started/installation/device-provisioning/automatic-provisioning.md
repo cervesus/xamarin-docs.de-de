@@ -7,58 +7,37 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.custom: video
-ms.date: 01/22/2019
-ms.openlocfilehash: bdc8366e75455755cbb2f533b6707f72e33436e2
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.date: 03/05/2020
+ms.openlocfilehash: f0612ca53bc54cf4b15982b7743c64b1997a4455
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425584"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031081"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Automatische Bereitstellung für Xamarin.iOS
 
-_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. Dieses Handbuch beschreibt die Verwendung der Option „Automatische Signatur“, um Entwicklungszertifikate und -profile anzufordern._
+_Sobald Xamarin.iOS erfolgreich installiert wurde, ist der nächste Schritt in der iOS-Entwicklung das Bereitstellen des iOS-Geräts. In diesem Leitfaden wird die Verwendung der automatischen Bereitstellung zum Anfordern von Entwicklungszertifikaten und -profilen erläutert._
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+Die automatische Bereitstellung steht in Visual Studio für Mac, Visual Studio 2019 und Visual Studio 2017 (Version 15.7 und höher) zur Verfügung. 
 
-- Visual Studio für Mac 7.3 oder höher
-- Xcode 9 oder höher
+Sie müssen außerdem über ein kostenpflichtiges Apple Developer-Konto verfügen, um dieses Feature nutzen zu können. Weitere Informationen zu Apple Developer-Konten finden Sie im Leitfaden [Gerätebereitstellung](~/ios/get-started/installation/device-provisioning/index.md).
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+> [!NOTE]
+> Bevor Sie beginnen, müssen Sie zunächst alle Lizenzvereinbarungen im [Apple Developer Portal](https://developer.apple.com/account/) oder in [App Store Connect](https://appstoreconnect.apple.com/) akzeptieren.
 
-- Visual Studio 2019
-- Visual Studio 2017 Version 15.7 (oder höher)
 
-Sie müssen außerdem mit einem Mac-Buildhost gekoppelt sein, der über folgende Eigenschaften verfügt:
+## <a name="enable-automatic-provisioning"></a>Aktivieren der automatischen Bereitstellung
 
-- Xcode 10 oder höher
+Vergewissern Sie sich vor dem Start des Prozesses zum automatischen Signieren, dass Sie gemäß Anweisungen im Leitfaden [Apple-Kontoverwaltung](~/cross-platform/macios/apple-account-management.md) eine Apple-ID in Visual Studio hinzugefügt haben. 
 
------
-
-## <a name="enabling-automatic-signing"></a>Aktivieren von „Automatische Signatur“
-
-Bevor Sie den automatischen Signierprozess starten, vergewissern Sie sich, dass Sie, wie im Leitfaden [Apple Account Management](~/cross-platform/macios/apple-account-management.md) beschrieben, in Visual Studio eine Apple-ID hinzugefügt haben. Nachdem Sie eine Apple-ID hinzugefügt haben, können Sie alle zugeordneten _Teams_ nutzen. So lassen sich Zertifikate, Profile und andere IDs dem Team zuzuordnen. Die Team-ID wird auch verwendet, um ein Präfix für eine App-ID zu erstellen, die in das Bereitstellungsprofil aufgenommen wird. Dies erlaubt Apple sicherzustellen, dass Sie sind, wer Sie vorgeben zu sein.
-
-> [!IMPORTANT]
-> Melden Sie sich zunächst entweder bei [iTunes Connect](https://itunesconnect.apple.com/) oder bei [appleid.apple.com](https://appleid.apple.com) an, um sicherzustellen, dass Sie die aktuellen Apple-Kontorichtlinien akzeptiert haben. Führen Sie bei Aufforderung die erforderlichen Schritte zum Akzeptieren neuer Kontovereinbarungen von Apple aus. Wenn Sie die Datenschutzbestimmungen von Mai 2018 nicht akzeptieren, wird beim Versuch der Gerätebereitstellung die folgende Warnung angezeigt:
->
-> ```
-> Unexpected authentication failure. Reason: {
-> "authType" : "sa"
-> }
-> ```
->
-> oder
->
-> ```
-> Authentication Service Is Unavailable
-> ```
+Nachdem Sie eine Apple-ID hinzugefügt haben, können Sie alle zugeordneten _Teams_ nutzen. So lassen sich Zertifikate, Profile und andere IDs dem Team zuzuordnen. Die Team-ID wird auch verwendet, um ein Präfix für eine App-ID zu erstellen, die in das Bereitstellungsprofil aufgenommen wird. Dies erlaubt Apple sicherzustellen, dass Sie sind, wer Sie vorgeben zu sein.
 
 Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf einem iOS-Gerät zu signieren:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Öffnen Sie in Visual Studio für Mac ein iOS-Projekt.
 
@@ -76,32 +55,29 @@ Gehen Sie wie folgt vor, um Ihre App automatisch für die Bereitstellung auf ein
 
     Wenn das automatische Signieren fehlschlägt, wird im Abschnitt **Automatische Signatur** die Ursache des Fehlers angezeigt.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Koppeln Sie Visual Studio 2019 mit einem Mac, wie im Leitfaden [Durchführen einer Kopplung mit einem Mac für die Xamarin.iOS-Entwicklung](~/ios/get-started/installation/windows/connecting-to-mac/index.md) erläutert.
+> [!NOTE]
+> Wenn Sie Visual Studio 2017 oder Visual Studio 2019 (Version 16.4 und früher) verwenden, muss eine [Kopplung mit einem Mac-Buildhost](~/ios/get-started/installation/windows/connecting-to-mac/index.md) durchgeführt werden, bevor Sie den Vorgang fortsetzen.
 
-2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Eigenschaften** aus. Navigieren Sie zur Registerkarte **iOS-Bundlesignierung**.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den iOS-Projektnamen, und wählen Sie **Eigenschaften** aus. Navigieren Sie zur Registerkarte **iOS-Bundlesignierung**:
 
-3. Wählen Sie das Schema **Automatische Bereitstellung** aus:
+    ![Screenshot der Seite zur Bundlesignierung in den iOS-Eigenschaften](automatic-provisioning-images/bundle-signing-win.png)
 
-    ![Auswahl des Schemas „Automatisch“](automatic-provisioning-images/prov4.png)
+2. Wählen Sie das Schema **Automatische Bereitstellung** aus.
 
-4. Wählen Sie Ihr Team im Kombinationsfeld **Team** aus, um das automatische Signieren zu starten.
+3. Wählen Sie Ihr im Dropdownmenü **Team** Ihr Team aus, um das automatische Signieren zu starten. Visual Studio zeigt an, ob der Prozess erfolgreich abgeschlossen wurde:
 
-    ![Auswahl des Teams](automatic-provisioning-images/prov3.png)
-
-5. Dadurch wird der automatische Signierprozess gestartet. Visual Studio versucht anschließend, eine App-ID, ein Bereitstellungsprofil und eine Signaturidentität zu generieren, um diese Artefakte für die Signatur zu verwenden. Sie können den Generierungsvorgang in der Buildausgabe sehen:
-
-    ![Buildausgabe, die die Generierung von Artefakten zeigt](automatic-provisioning-images/prov5.png)
+    ![Screenshot der Seite zur Bundlesignierung mit Hervorhebung der Meldung „Die automatische Bereitstellung wurde erfolgreich abgeschlossen“](automatic-provisioning-images/signing-success-win.png)
 
 -----
 
-## <a name="triggering-automatic-provisioning"></a>Auslösen der automatischen Bereitstellung
+## <a name="run-automatic-provisioning"></a>Ausführen der automatischen Bereitstellung
 
-Wenn das automatische Signieren aktiviert wurde, aktualisiert Visual Studio für Mac diese Artefakte bei Bedarf, sobald eines der folgenden Ereignisse eintritt:
+Wenn die automatische Bereitstellung aktiviert ist, führt Visual Studio den Prozess bei Bedarf erneut aus, wenn einer der folgenden Fälle eintritt:
 
 - Ein iOS-Gerät wird an Ihren Mac angeschlossen
-  - Hierbei wird automatisch geprüft, ob das Gerät im Apple Developer Portal registriert ist. Falls nicht, wird es hinzugefügt. Außerdem wird ein neues Bereitstellungsprofil generiert, das es enthält.
+  - Hierbei wird automatisch geprüft, ob das Gerät im Apple Developer Portal registriert ist. Liegt keine Registrierung vor, wird das Gerät hinzugefügt. Außerdem wird ein neues Bereitstellungsprofil generiert, das das Gerät enthält.
 - Die Bündel-ID der App wird geändert.
   - Dadurch wird die App-ID aktualisiert. Ein neues Bereitstellungsprofil wird erstellt, das diese App-ID enthält.
 - Eine unterstützte Funktion wird in der Datei „Entitlements.plist“ aktiviert.
@@ -110,7 +86,7 @@ Wenn das automatische Signieren aktiviert wurde, aktualisiert Visual Studio für
 
 ## <a name="wildcard-app-ids"></a>Platzhalter-App-IDs
 
-Ab Visual Studio für Mac 7.6 wird bei der automatischen Bereitstellung standardmäßig versucht, eine Platzhalter-App-ID und Bereitstellungsprofile zu erstellen und zu verwenden, anstatt eine explizite App-ID basierend auf dem in der Datei **Info.plist** angegebenen **Bundlebezeichner** zu erstellen. Platzhalter-App-IDs verringern die Anzahl der Profile und IDs, die im Apple Developer Portal verwaltet werden müssen.
+In Visual Studio für Mac und Visual Studio 2019 (Version 16.5 oder höher) wird bei der automatischen Bereitstellung standardmäßig versucht, eine Platzhalter-App-ID und Bereitstellungsprofile zu erstellen und zu verwenden, anstatt eine explizite App-ID basierend auf dem in der Datei **Info.plist** angegebenen **Bundlebezeichner** zu erstellen. Platzhalter-App-IDs verringern die Anzahl der Profile und IDs, die im Apple Developer Portal verwaltet werden müssen.
 
 In einigen Fällen erfordern die Berechtigungen einer App eine explizite App-ID. Die folgenden Berechtigungen unterstützen keine Platzhalter-App-IDs:
 
@@ -128,10 +104,13 @@ In einigen Fällen erfordern die Berechtigungen einer App eine explizite App-ID.
 - Pushbenachrichtigungen
 - Konfiguration für drahtloses Zubehör
 
-Wenn Ihre App eine dieser Berechtigungen verwendet, versucht Visual Studio für Mac, eine explizite App-ID (anstelle einer Platzhalter-App-ID) zu erstellen.
+Wenn Ihre App eine dieser Berechtigungen verwendet, versucht Visual Studio, eine explizite App-ID (anstelle einer Platzhalter-App-ID) zu erstellen.
 
-> [!NOTE]
-> Die automatische Bereitstellung mit Platzhalter-App-IDs ist derzeit nur in Visual Studio für Mac verfügbar.
+## <a name="troubleshoot"></a>Problembehandlung 
+
+- Es kann mehrere Stunden dauern, bis ein neues Apple Developer-Konto genehmigt wird. Sie können die automatische Bereitstellung erst aktivieren, nachdem Ihr Konto genehmigt wurde.
+- Wenn die automatische Bereitstellung nicht erfolgreich ist und die Fehlermeldung `Authentication Service Is Unavailable` angezeigt wird, melden Sie sich entweder bei [App Store Connect](https://appstoreconnect.apple.com/) oder [appleid.apple.com](https://appleid.apple.com) an, um zu überprüfen, ob Sie die neuesten Dienstvereinbarungen akzeptiert haben.
+- Falls die Fehlermeldung `Authentication Error: Xcode 7.3 or later is required to continue developing with your Apple ID.` angezeigt wird, müssen Sie sicherstellen, dass das ausgewählte Team über eine aktive kostenpflichtige Mitgliedschaft beim Apple Developer Program verfügt. Informationen zur Verwendung eines kostenpflichtigen Apple Developer-Kontos finden Sie im Leitfaden [Kostenlose Bereitstellung für Xamarin.iOS-Apps](~/ios/get-started/installation/device-provisioning/free-provisioning.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
@@ -139,9 +118,3 @@ Wenn Ihre App eine dieser Berechtigungen verwendet, versucht Visual Studio für 
 - [App-Verteilung](~/ios/deploy-test/app-distribution/index.md)
 - [Problembehandlung](~/ios/deploy-test/troubleshooting.md)
 - [Apple: Leitfaden zur App-Verteilung](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-
-## <a name="related-video"></a>Zugehörige Videos
-
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-Simplified-iOS-Provisioning-in-Visual-Studio-with-fastlane/player]
-
-[!include[](~/essentials/includes/xamarin-show-essentials.md)]

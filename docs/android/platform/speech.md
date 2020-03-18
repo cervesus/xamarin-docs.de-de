@@ -1,6 +1,6 @@
 ---
-title: Android-Sprache
-description: In diesem Artikel werden die Grundlagen der Verwendung des sehr leistungsfähigen Android. Speech-Namespace behandelt. Seit seiner Einführung ist Android in der Lage, die Sprache zu erkennen und als Text auszugeben. Es handelt sich um einen relativ einfachen Vorgang. Für Text-zu-Sprache ist der Prozess jedoch eher beteiligt, da nicht nur die Sprach-Engine berücksichtigt werden muss, sondern auch die Sprachen, die verfügbar sind und aus dem "Text-to-Speech"-System (TTS) installiert werden.
+title: Android Speech
+description: In diesem Artikel werden die Grundlagen der Verwendung des sehr leistungsfähigen Android.Speech-Namespace behandelt. Seit seiner Einführung war Android in der Lage, Sprache zu erkennen und als Text auszugeben. Dies ist ein relativ einfacher Prozess. Für Sprachsynthese (Text-zu-Sprache) ist der Prozess jedoch aufwändiger, da nicht nur die Sprach-Engine, sondern auch die Sprachen berücksichtigt werden müssen, die für das TTS-System (Text To Speech, Text-zu-Sprache) installiert und verfügbar sind.
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
@@ -8,50 +8,50 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/02/2018
 ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019769"
 ---
-# <a name="android-speech"></a>Android-Sprache
+# <a name="android-speech"></a>Android Speech
 
-_In diesem Artikel werden die Grundlagen der Verwendung des sehr leistungsfähigen Android. Speech-Namespace behandelt. Seit seiner Einführung ist Android in der Lage, die Sprache zu erkennen und als Text auszugeben. Es handelt sich um einen relativ einfachen Vorgang. Für Text-zu-Sprache ist der Prozess jedoch eher beteiligt, da nicht nur die Sprach-Engine berücksichtigt werden muss, sondern auch die Sprachen, die verfügbar sind und aus dem "Text-to-Speech"-System (TTS) installiert werden._
+_In diesem Artikel werden die Grundlagen der Verwendung des sehr leistungsfähigen Android.Speech-Namespace behandelt. Seit seiner Einführung war Android in der Lage, Sprache zu erkennen und als Text auszugeben. Dies ist ein relativ einfacher Prozess. Für Sprachsynthese (Text-zu-Sprache) ist der Prozess jedoch aufwändiger, da nicht nur die Sprach-Engine, sondern auch die Sprachen berücksichtigt werden müssen, die für das TTS-System (Text To Speech, Text-zu-Sprache) installiert und verfügbar sind._
 
-## <a name="speech-overview"></a>Sprach Übersicht
+## <a name="speech-overview"></a>Übersicht zu Speech
 
-Ein System, das die Menschen Sprache versteht und eingibt, was typisiert wird – Sprache und Text-to-Speech – ist ein ständig wachsender Bereich in der mobilen Entwicklung, da die Nachfrage nach natürlicher Kommunikation mit unseren Geräten steigt. Es gibt viele Instanzen, bei denen eine Funktion, mit der Text in Sprache konvertiert wird, oder umgekehrt, ein sehr nützliches Tool ist, das in Ihre Android-Anwendung integriert werden kann.
+Der Wunsch nach einem System, das die menschliche Sprache „versteht“ und ausspricht, was getippt wurde – Spracherkennung Sprachsynthese – ist ein ständig wachsender Bereich innerhalb der mobilen Entwicklung, da die Nachfrage nach natürlicher Kommunikation mit unseren Geräten steigt. Es gibt viele Fälle, in denen eine Funktion, die Text in Sprache oder umgekehrt umwandelt, ein sehr nützliches Werkzeug ist, um es in Ihre Android-Anwendung zu integrieren.
 
-Beispielsweise können Benutzer mit der unter Verwendung der Mobil Telefonverwendung während des Fahrens eine Hand freie Methode zum Betrieb Ihrer Geräte wünschen. Die Vielzahl von verschiedenen Android-Formfaktoren – wie z. b. Android Wear – und die immer erweiternde Einbindung von Geräten, die Android-Geräte (z. b. Tablets und Notizzettel) verwenden können, haben einen größeren Fokus auf großartige TTS-Anwendungen geschaffen.
+Wegen der beschränkten Nutzung von Mobiltelefonen während der Fahrt möchten Benutzer ihre Geräte beispielsweise ohne Einsatz der Hände bedienen können. Die Vielzahl verschiedener Android-Formfaktoren – etwa Android Wear – und die sich immer weiter ausdehnende Gruppe von Personen, die Android-Geräte (etwa Tablets und Notepads) verwenden können, hat zu einem größeren Fokus auf großartige TTS-Anwendungen geführt.
 
-Google stellt dem Entwickler einen umfangreichen Satz von APIs im Android. Speech-Namespace zur Verfügung, um die meisten Instanzen der Spracherkennung durch das Gerät (z. b. Software, die für Blind konzipiert ist) abzudecken.  Der-Namespace enthält die Möglichkeit, Text über `Android.Speech.Tts`in Sprache zu übersetzen, die Kontrolle über die Engine, die zum Durchführen der Übersetzung verwendet wird, sowie eine Reihe von `RecognizerIntent`en, die die Umwandlung von Sprache in Text ermöglichen.
+Google stellt Entwicklern eine nützliche Menge von APIs im Android.Speech-Namespace zur Verfügung, um die meisten Fälle abzudecken, in denen ein Gerät „sprachbewusst“ gemacht werden soll (z. B. Software, die für Blinde konzipiert ist).  Der Namespace bietet die Möglichkeit, Text über `Android.Speech.Tts` in Sprache zu übersetzen und die Engine zu steuern, die zum Ausführen der Übersetzung verwendet wird, und umfasst eine Reihe von `RecognizerIntent`s, die das Umwandeln von Sprache in Text ermöglichen.
 
-Obwohl die Funktionen für die Spracherkennung verfügbar sind, gibt es Beschränkungen, die auf der verwendeten Hardware beruhen. Es ist unwahrscheinlich, dass das Gerät alle darin gesprochenen Elemente in jeder verfügbaren Sprache erfolgreich interpretiert.
+Obwohl die Funktionen für Spracherkennung vorhanden sind, gibt es Beschränkungen, die sich aus der verwendeten Hardware ergeben. Es ist unwahrscheinlich, dass das Gerät in der Lage ist, alle in es gesprochene Wörter in jeder verfügbaren Sprache erfolgreich zu interpretieren.
 
 ## <a name="requirements"></a>Anforderungen
 
-Es gibt keine besonderen Anforderungen für dieses Handbuch, außer wenn Ihr Gerät über ein Mikrofon und einen Redner verfügt.
+Es gibt keine besonderen Anforderungen für diesen Leitfaden. Es ist lediglich erforderlich, dass Ihr Gerät ein Mikrofon und einen Lautsprecher hat.
 
-Der Kern einer sprach Interpretation von Android-Geräten ist die Verwendung einer `Intent` mit einer entsprechenden `OnActivityResult`.
-Es ist jedoch wichtig zu erkennen, dass die Sprache nicht verstanden wird – aber als Text interpretiert wird. Der Unterschied ist wichtig.
+Der Kern für ein Android-Gerät, das Sprache interpretiert, ist die Verwendung eines `Intent`-Objekts (Absicht) mit einem entsprechenden `OnActivityResult`.
+Es ist jedoch wichtig, sich klarzumachen, dass die Sprache nicht verstanden, sondern als Text interpretiert wird. Dieser Unterschied ist wichtig.
 
-### <a name="the-difference-between-understanding-and-interpreting"></a>Der Unterschied zwischen verstehen und interpretieren
+### <a name="the-difference-between-understanding-and-interpreting"></a>Der Unterschied zwischen Verstehen und Interpretieren
 
-Eine einfache Definition des Verständnisses besteht darin, dass Sie nach Ton und Kontext ermitteln können, welche Bedeutung der Bedeutung hat. Die Interpretation der Wörter und die Ausgabe in einer anderen Form.
+Eine einfache Definition für Verstehen ist, dass Sie in der Lage sind, anhand von Tonfall und Kontext die wirkliche Bedeutung des Gesagten zu erfassen. Interpretieren bedeutet nur, dass die Wörter übernommen und in einer anderen Form ausgegeben werden.
 
-Sehen Sie sich das folgende einfache Beispiel an, das in täglicher Konversation verwendet wird:
+Betrachten Sie das folgende einfache Beispiel, das in einer alltäglichen Unterhaltung vorkommt:
 
-<kbd>Guten Tag, wie geht es dir?</kbd>
+<kbd>Hallo, wie geht es dir?</kbd>
 
-Ohne Wende (Betonung auf bestimmte Wörter oder Teile von Wörtern) ist es eine einfache Frage. Wenn jedoch eine langsame Geschwindigkeit auf die Linie angewendet wird, erkennt die Person, die lauscht, dass der Fragende nicht zu zufrieden ist und möglicherweise Aufrufer oder dass der Fragende nicht gut ist. Wenn der Schwerpunkt auf "are" gesetzt wird, ist die Person, die in Frage kommt, in der Regel eher interessiert an der Antwort.
+Ohne Tonfall (Betonung, die auf bestimmte Wörter oder Teile von Wörtern gelegt wird) ist dies eine einfache Frage. Wenn die Zeile jedoch langsam gesprochen wird, erkennt die zuhörende Person, dass die fragende Person nicht besonders zufrieden ist und Aufmunterung benötigt oder dass sie sich unwohl fühlt. Wenn die Betonung auf „Wie“ gelegt wurde, ist die fragende Person in der Regel eher an der Antwort interessiert.
 
-Ohne eine relativ leistungsstarke Audioverarbeitung, um die Anwendung und einen gewissen Grad an künstlicher Intelligenz (KI) zum Verständnis des Kontexts zu verwenden, kann die Software nicht einmal anfangen, zu verstehen, was gesagt wurde – das beste ist ein einfaches Telefon, das die Sprache in Text konvertieren kann.
+Ohne eine ziemlich leistungsfähige Audioverarbeitung, um den Tonfall zu nutzen, und ohne ein bestimmtes Maß an künstlicher Intelligenz (KI), um den Kontext zu verstehen, kann die Software nicht einmal ansatzweise verstehen, was gesagt wurde – das Beste, was ein einfaches Telefon erledigen kann, ist die Umwandlung der Sprache in Text.
 
 ## <a name="setting-up"></a>Einrichtung
 
-Vor der Verwendung des Sprachsystems ist es immer ratsam, sicherzustellen, dass das Gerät über ein Mikrofon verfügt. Es wäre kaum sinnvoll, die APP auf einem Kindle-oder Google-Notizzettel auszuführen, ohne dass ein Mikrofon installiert ist.
+Vor der Nutzung des Sprachsystems ist es immer ratsam, sich zu vergewissern, dass das Gerät ein Mikrofon hat. Es würde wenig Sinn machen, Ihre App auf einem Kindle- oder Google-E-Book-Reader ohne eingebautes Mikrofon auszuführen.
 
-Das folgende Codebeispiel veranschaulicht die Abfrage, ob ein Mikrofon verfügbar ist, und falls nicht, um eine Warnung zu erstellen. Wenn an dieser Stelle kein Mikrofon verfügbar ist, beenden Sie entweder die Aktivität, oder deaktivieren Sie die Möglichkeit, die Sprache aufzuzeichnen.
+Im folgenden Codebeispiel ist die Abfrage veranschaulicht, ob ein Mikrofon verfügbar ist, und falls nicht, wie eine Warnung erstellt wird. Ist an diesem Punkt kein Mikrofon verfügbar, würden Sie so vorgehen, dass entweder die Aktivität beendet oder die Möglichkeit, Sprache aufzuzeichnen, deaktiviert wird.
 
 ```csharp
 string rec = Android.Content.PM.PackageManager.FeatureMicrophone;
@@ -67,9 +67,9 @@ if (rec != "android.hardware.microphone")
 }
 ```
 
-### <a name="creating-the-intent"></a>Erstellen der Absicht
+### <a name="creating-the-intent"></a>Erstellen des Intent-Objekts (Absicht)
 
-Die Absicht für das Sprachsystem verwendet eine bestimmte Art von Absicht, die als `RecognizerIntent`bezeichnet wird. Diese Absicht steuert eine große Anzahl von Parametern, einschließlich der Dauer, die mit dem Ruhezustand gewartet werden muss, bis die Aufzeichnung berücksichtigt wird, weitere Sprachen erkannt und ausgegeben werden können, sowie Text, der als Anweisung in das modale Dialogfeld der `Intent`eingeschlossen werden soll. In diesem Code Ausschnitt ist `VOICE` ein `readonly int`, der für die Erkennung in `OnActivityResult`verwendet wird.
+In der Absicht für das Sprachsystem wird eine bestimmte Art von Absicht verwendet, die als `RecognizerIntent` bezeichnet wird. Diese Absicht steuert eine große Anzahl von Parametern, darunter die Dauer, wie lange bei Schweigen gewartet werden soll, bis die Aufnahme als beendet betrachtet wird, alle weiteren Sprachen, die erkannt und ausgegeben werden sollen, und jeglicher Text, der als Anweisung in den modalen Dialog von `Intent` aufgenommen werden soll. In diesem Codeausschnitt ist `VOICE` eine schreibgeschützte Absicht (`readonly int`), die für die Erkennung in `OnActivityResult` verwendet wird.
 
 ```csharp
 var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
@@ -83,13 +83,13 @@ voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
 StartActivityForResult(voiceIntent, VOICE);
 ```
 
-### <a name="conversion-of-the-speech"></a>Konvertierung der Sprache
+### <a name="conversion-of-the-speech"></a>Konvertieren der Sprache
 
-Der Text, der aus der Sprache interpretiert wird, wird im `Intent`übermittelt, der zurückgegeben wird, wenn die Aktivität abgeschlossen wurde und über `GetStringArrayListExtra(RecognizerIntent.ExtraResults)`auf Sie zugegriffen wird. Dadurch wird eine `IList<string>`zurückgegeben, von der der Index verwendet und angezeigt werden kann, abhängig von der Anzahl der Sprachen, die in der Anforderung des Aufrufers angefordert (und im `RecognizerIntent.ExtraMaxResults`angegeben) werden. Wie bei jeder Liste ist es jedoch sinnvoll, sicherzustellen, dass Daten angezeigt werden.
+Der Text, der aus der Sprache interpretiert wird, wird im `Intent`-Objekt übermittelt, das zurückgegeben wird, wenn die Aktivität abgeschlossen wurde und über `GetStringArrayListExtra(RecognizerIntent.ExtraResults)` auf sie zugegriffen wird. Dadurch wird eine `IList<string>`-Zeichenfolge zurückgegeben, von der der Index verwendet und angezeigt werden kann, je nach der Anzahl der Sprachen, die in der Absicht des Aufrufers angefordert wurden (und für `RecognizerIntent.ExtraMaxResults` angegeben sind). Wie bei jeder Liste lohnt es sich jedoch, zu prüfen, ob Daten vorhanden sind, die angezeigt werden sollen.
 
-Beim lauschen auf den Rückgabewert eines `StartActivityForResult`muss die `OnActivityResult`-Methode bereitgestellt werden.
+Wird auf den Rückgabewert einer `StartActivityForResult`-Methode gelauscht, muss die `OnActivityResult`-Methode bereitgestellt werden.
 
-Im folgenden Beispiel ist `textBox` ein `TextBox`, der verwendet wird, um das, was vorgegeben wurde, auszumachen. Es könnte auch verwendet werden, um den Text an eine Form des interpreters zu übergeben. von dort aus kann die Anwendung den Text vergleichen und mit einem anderen Teil der Anwendung verzweigen.
+Im folgenden Beispiel ist `textBox` ein `TextBox`-Objekt, das zur Ausgabe des Texts verwendet wird, der diktiert wurde. Es könnte ebenso verwendet werden, den Text an eine Form von Interpreter zu übergeben, und von dort aus kann die Anwendung den Text vergleichen und zu einem anderen Teil der Anwendung verzweigen.
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultVal, Intent data)
@@ -123,21 +123,21 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 }
 ```
 
-## <a name="text-to-speech"></a>Text-to-Speech
+## <a name="text-to-speech"></a>Text-zu-Sprache
 
-Text-zu-Sprache ist nicht das Gegenteil von Sprache zu Text und basiert auf zwei Hauptkomponenten: eine Text-zu-Sprache-Engine, die auf dem Gerät installiert wird, und eine installierte Sprache.
+Sprachsynthese (Text-zu-Sprache, Text to Speech) ist nicht ganz das Gegenteil von Spracherkennung und beruht auf zwei Schlüsselkomponenten: einer Sprachsynthese-Engine, die auf dem Gerät installiert wird, und einer Sprache, die installiert wird.
 
-Größtenteils sind auf Android-Geräten der standardmäßige Google TTS-Dienst und mindestens eine Sprache installiert. Dies wird bei der Ersteinrichtung des Geräts eingerichtet und basiert auf dem Zeitpunkt, an dem sich das Gerät befindet (z. b. Wenn ein in Deutschland eingelegtes Telefon in Deutschland die deutschsprachige Sprache installiert).
+Auf den meisten Android-Geräten sind zunächst der standardmäßige Google-TTS-Dienst und mindestens eine Sprache installiert. Dies wird bei der Ersteinrichtung des Geräts eingerichtet und ergibt sich daraus, wo sich das Gerät zu diesem Zeitpunkt befindet (bei einem in Deutschland eingerichteten Smartphone wird z. B. Deutsch, bei einem Smartphone in Amerika wird dagegen amerikanisches Englisch installiert).
 
-### <a name="step-1---instantiating-texttospeech"></a>Schritt 1: Instanziieren von textpospeech
+### <a name="step-1---instantiating-texttospeech"></a>Schritt 1: Instanziieren von „TextToSpeech“
 
-`TextToSpeech` kann bis zu drei Parameter annehmen, die ersten beiden sind erforderlich, damit das dritte optional ist (`AppContext`, `IOnInitListener`, `engine`). Der Listener wird zum Binden an den Dienst und zum Testen des Fehlers verwendet, wenn die Engine eine beliebige Anzahl von verfügbaren Android-Text für Sprach-Engines hat. Das Gerät hat mindestens das eigene Modul von Google.
+`TextToSpeech` kann bis zu drei Parameter haben, wobei die ersten beiden erforderlich sind und der dritte optional ist (`AppContext`, `IOnInitListener`, `engine`). Der Listener wird dazu verwendet, die Bindung zum Dienst herzustellen und auf Fehler zu testen, wobei „engine“ eine beliebige Anzahl verfügbarer Android-Sprachsynthese-Engines sein kann. Auf dem Gerät ist mindestens die Google-eigene Engine vorhanden.
 
-### <a name="step-2---finding-the-languages-available"></a>Schritt 2: Suchen der verfügbaren Sprachen
+### <a name="step-2---finding-the-languages-available"></a>Schritt 2: Suchen nach den verfügbaren Sprachen
 
-Die `Java.Util.Locale`-Klasse enthält eine hilfreiche Methode namens `GetAvailableLocales()`. Diese Liste der Sprachen, die von der Sprach-Engine unterstützt werden, kann dann anhand der installierten Sprachen getestet werden.
+Die `Java.Util.Locale`-Klasse enthält die nützliche Methode `GetAvailableLocales()`. Diese Liste der Sprachen, die von der Sprach-Engine unterstützt werden, kann dann gegen die installierten Sprachen getestet werden.
 
-Es ist sehr wichtig, die Liste der "verstanden"-Sprachen zu generieren. Es gibt immer eine Standardsprache (die Sprache, die der Benutzer beim ersten festlegen seines Geräts festgelegt hat). in diesem Beispiel hat die `List<string>` "Default" als ersten Parameter, der Rest der Liste wird abhängig vom Ergebnis der `textToSpeech.IsLanguageAvailable(locale)`ausgefüllt.
+Es ist eine triviale Angelegenheit, die Liste der „verstandenen“ Sprachen zu generieren. Es gibt immer eine Standardsprache (die Sprache, die der Benutzer beim ersten Einrichten seines Geräts festgelegt hat). In diesem Beispiel hat die `List<string>`-Zeichenfolge daher „Default“ als ersten Parameter, und der Rest der Liste wird abhängig vom Ergebnis der `textToSpeech.IsLanguageAvailable(locale)`-Methode ausgefüllt.
 
 ```csharp
 var langAvailable = new List<string>{ "Default" };
@@ -161,20 +161,20 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
-Mit diesem Code wird [textdespeech. islanguageavailable](xref:Android.Speech.Tts.TextToSpeech.IsLanguageAvailable*) aufgerufen, um zu testen, ob das Sprachpaket für ein bestimmtes Gebiets Schema bereits auf dem Gerät vorhanden ist.
-Diese Methode gibt einen [languageavailableresult](xref:Android.Speech.Tts.LanguageAvailableResult)zurück, der angibt, ob die Sprache für das übergebene Gebiets Schema verfügbar ist. Wenn `LanguageAvailableResult` angibt, dass die Sprache `NotSupported`ist, ist für diese Sprache kein Sprachpaket verfügbar (selbst beim Herunterladen). Wenn `LanguageAvailableResult` auf `MissingData`festgelegt ist, ist es möglich, ein neues Sprachpaket herunterzuladen, wie unten in Schritt 4 erläutert.
+In diesem Code wird [TextToSpeech.IsLanguageAvailable](xref:Android.Speech.Tts.TextToSpeech.IsLanguageAvailable*) aufgerufen, um zu testen, ob das Sprachpaket für ein bestimmtes Gebietsschema bereits auf dem Gerät vorhanden ist.
+Diese Methode gibt eine [LanguageAvailableResult](xref:Android.Speech.Tts.LanguageAvailableResult)-Aufzählung zurück, die angibt, ob die Sprache für das übergebene Gebietsschema verfügbar ist. Wenn `LanguageAvailableResult` angibt, dass die Sprache nicht unterstützt wird (`NotSupported`), ist für diese Sprache kein Sprachpaket verfügbar (und kann auch keines heruntergeladen werden). Wenn `LanguageAvailableResult` auf `MissingData` festgelegt ist, kann ein neues Sprachpaket heruntergeladen werden, wie dies weiter unten in Schritt 4 erläutert ist.
 
 ### <a name="step-3---setting-the-speed-and-pitch"></a>Schritt 3: Festlegen der Geschwindigkeit und der Tonhöhe
 
-Android ermöglicht dem Benutzer, den Ton der Sprache zu ändern, indem er die `SpeechRate` und `Pitch` (die Geschwindigkeit und den Ton der Sprache) ändert. Dies geht zwischen 0 und 1, wobei "normale" Sprache 1 für beides ist.
+Android ermöglicht es dem Benutzer, den Klang der Sprache zu ändern, indem er das Sprechtempo (`SpeechRate`) und die Tonhöhe (`Pitch`) der Sprache ändert. Dies erstreckt sich von „0“ bis „1“, wobei für „normale“ Sprache beide Parameter gleich „1“ sind.
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>Schritt 4: Testen und Laden neuer Sprachen
 
-Das Herunterladen einer neuen Sprache erfolgt mithilfe eines `Intent`. Das Ergebnis dieser Absicht bewirkt, dass die [onactivityresult](xref:Android.App.Activity.OnActivityResult*) -Methode aufgerufen wird. Im Gegensatz zum sprach-zu-Text-Beispiel (in dem die [Erkennungs Absicht](xref:Android.Speech.RecognizerIntent) als `PutExtra` Parameter für die `Intent`verwendet wurde) werden die Test-und lade `Intent`s `Action`basiert:
+Das Herunterladen einer neuen Sprache erfolgt über ein`Intent`-Objekt. Das Ergebnis dieses Intent-Objekts bewirkt, dass die [OnActivityResult](xref:Android.App.Activity.OnActivityResult*)-Methode aufgerufen wird. Im Gegensatz zum Spracherkennungsbeispiel (in dem das [RecognizerIntent](xref:Android.Speech.RecognizerIntent)-Objekt als `PutExtra`Parameter für das `Intent`-Objekt verwendet wird) sind die `Intent`-Objekte für Testen und Laden `Action`-basiert:
 
-- Mit dem [textdespeech. Engine. aktioncheckttsdata](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData) -&ndash; wird eine Aktivität der Plattform `TextToSpeech`-Engine gestartet, um die ordnungsgemäße Installation und Verfügbarkeit von Sprachressourcen auf dem Gerät zu überprüfen.
+- [TextToSpeech.Engine.ActionCheckTtsData](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData) &ndash; Startet eine Aktivität von der `TextToSpeech`-Engine der Plattform, um auf ordnungsgemäße Installation und Verfügbarkeit von Sprachressourcen auf dem Gerät zu prüfen.
 
-- [Textdespeech. Engine. aktioninstallttsdata](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionInstallTtsData) &ndash; startet eine Aktivität, die den Benutzer auffordert, die erforderlichen Sprachen herunterzuladen.
+- [TextToSpeech.Engine.ActionInstallTtsData](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionInstallTtsData) &ndash; Startet eine Aktivität, in der der Benutzer aufgefordert wird, die erforderlichen Sprachen herunterzuladen.
 
 Im folgenden Codebeispiel wird veranschaulicht, wie diese Aktionen verwendet werden, um auf Sprachressourcen zu testen und eine neue Sprache herunterzuladen:
 
@@ -194,24 +194,24 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 }
 ```
 
-`TextToSpeech.Engine.ActionCheckTtsData` testet auf die Verfügbarkeit von Sprachressourcen. `OnActivityResult` wird aufgerufen, wenn dieser Test abgeschlossen ist. Wenn Sprachressourcen heruntergeladen werden müssen, `OnActivityResult` die `TextToSpeech.Engine.ActionInstallTtsData` Aktion auslösen, um eine Aktivität zu starten, mit der der Benutzer die erforderlichen Sprachen herunterladen kann. Beachten Sie, dass diese `OnActivityResult` Implementierung den `Result` Code nicht überprüft, da in diesem vereinfachten Beispiel bereits feststellt, dass das Sprachpaket heruntergeladen werden muss.
+`TextToSpeech.Engine.ActionCheckTtsData` testet auf die Verfügbarkeit von Sprachressourcen. `OnActivityResult` wird aufgerufen, wenn dieser Test abgeschlossen ist. Wenn Sprachressourcen heruntergeladen werden müssen, löst `OnActivityResult` die `TextToSpeech.Engine.ActionInstallTtsData`-Aktion aus, um eine Aktivität zu starten, in der der Benutzer die erforderlichen Sprachen herunterladen kann. Beachten Sie, dass in dieser `OnActivityResult`-Implementierung der `Result`-Code nicht überprüft wird, da in diesem vereinfachten Beispiel bereits festgestellt wurde, dass das Sprachpaket heruntergeladen werden muss.
 
-Durch die `TextToSpeech.Engine.ActionInstallTtsData` Aktion wird dem Benutzer die **Google TTS Voice-Daten** Aktivität zum Auswählen von Sprachen zum Herunterladen angezeigt:
+In der `TextToSpeech.Engine.ActionInstallTtsData`-Aktion wird veranlasst, dass die **Google TTS-Sprachdaten**-Aktivität angezeigt wird, sodass der Benutzer die herunterzuladenden Sprachen auswählen kann:
 
-![Google TTS-Sprach Daten Aktivität](speech-images/01-google-tts-voice-data.png)
+![Google TTS-Sprachdaten-Aktivität](speech-images/01-google-tts-voice-data.png)
 
-Beispielsweise kann der Benutzer Französisch auswählen und auf das Download Symbol klicken, um französische Sprach Daten herunterzuladen:
+Als Beispiel kann der Benutzer „Französisch“ auswählen und auf das Downloadsymbol tippen, um die französischen Sprachdaten herunterzuladen:
 
-![Beispiel für das Herunterladen von französischer Sprache](speech-images/02-selecting-french.png)
+![Beispiel für das Herunterladen der Sprache Französisch](speech-images/02-selecting-french.png)
 
 Die Installation dieser Daten erfolgt automatisch, nachdem der Download abgeschlossen wurde.
 
-### <a name="step-5---the-ioninitlistener"></a>Schritt 5: der ioninitlistener
+### <a name="step-5---the-ioninitlistener"></a>Schritt 5: der „IOnInitListener“
 
-Damit eine Aktivität den Text in Sprache konvertieren kann, muss die Schnittstellen Methode `OnInit` implementiert werden (Dies ist der zweite Parameter, der für die Instanziierung der `TextToSpeech`-Klasse angegeben wird). Dadurch wird der Listener initialisiert und das Ergebnis getestet.
+Damit eine Aktivität den Text in Sprache konvertieren kann, muss die Schnittstellenmethode `OnInit` implementiert werden (dies ist der zweite Parameter, der für die Instanziierung der `TextToSpeech`-Klasse angegeben ist). Dadurch wird der Listener initialisiert und das Ergebnis getestet.
 
-Der Listener sollte mindestens auf `OperationResult.Success` und `OperationResult.Failure` getestet werden.
-Das folgende Beispiel zeigt genau Folgendes:
+Im Listener sollte mindestens auf `OperationResult.Success` und `OperationResult.Failure` getestet werden.
+Das folgende Beispiel zeigt genau das:
 
 ```csharp
 void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
@@ -227,12 +227,12 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Anleitung haben wir uns mit den Grundlagen der Umwandlung von Text in Sprache und Sprache in Text sowie mit möglichen Methoden zum Einschließen von Text in Ihre eigenen apps beschäftigt. Obwohl Sie nicht jeden bestimmten Fall abdecken, sollten Sie nun ein grundlegendes Verständnis der Interpretation von Sprache, der Installation neuer Sprachen und der Erhöhung der Inklusivität Ihrer apps haben.
+In diesem Leitfaden ging es um die Grundlagen der Konvertierung von Text in Sprache und Sprache in Text sowie um mögliche Methoden, wie diese Konvertierungen in eigene Apps eingebunden werden können. Obwohl nicht jeder spezielle Fall abgedeckt ist, sollten Sie nun ein grundlegendes Verständnis dazu haben, wie Sprache interpretiert wird, wie neue Sprachen installiert werden und wie die Inklusivität Ihrer Apps erhöht wird.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin. Forms dependencyservice](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
-- [Text-to-Speech (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
-- [Sprache für Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
-- [Android. Speech-Namespace](xref:Android.Speech)
-- [Android. Speech. TTS-Namespace](xref:Android.Speech.Tts)
+- [Xamarin.Forms-DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
+- [Text to Speech (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
+- [Speech to Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
+- [Android.Speech-Namespace](xref:Android.Speech)
+- [Android.Speech.Tts-Namespace](xref:Android.Speech.Tts)
