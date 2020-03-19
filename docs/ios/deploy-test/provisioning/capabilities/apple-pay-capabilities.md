@@ -1,6 +1,6 @@
 ---
 title: Apple Pay-Funktionen in Xamarin.iOS
-description: Das Hinzufügen von Funktionen zu einer Anwendung erfordert häufig zusätzliche Konfigurationsschritte für die Bereitstellung. In diesem Leitfaden werden die erforderlichen Einstellungen für die Apple Pay-Funktionen erläutert.
+description: Um Funktionen zu einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für die Apple Pay-Funktionen erläutert.
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
 ms.openlocfilehash: 54fcc3bb683f6ca4515d807da5c3345cf71a2df3
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
-ms.translationtype: MT
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78917735"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303708"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Apple Pay-Funktionen in Xamarin.iOS
 
-_Zum Hinzufügen von Funktionen zu einer Anwendung ist häufig eine zusätzliche Einrichtung der Bereitstellung erforderlich. In diesem Handbuch wird die für Apple Pay Funktionen erforderliche Einrichtung erläutert._
+_Um Funktionen einer Anwendung hinzuzufügen, ist oft eine zusätzliche Bereitstellungseinrichtung erforderlich. In diesem Leitfaden werden die erforderlichen Einstellungen für die Apple Pay-Funktionen erläutert._
 
 Apple Pay ermöglicht Benutzern das Bezahlen physischer Güter über das iOS-Gerät. Dieser Abschnitt beschreibt, wie alle erforderlichen Komponenten für Apple Pay in Apple Developer Center erstellt werden.
 
@@ -34,7 +34,7 @@ Die folgenden Schritte führen Sie durch die Erstellung der oben genannten Eleme
 
 Eine Händler-ID wird verwendet, um Apple Pay wissen zu lassen, dass Sie Zahlungen akzeptieren können. Sie wird an PassKits `PaymentRequest`-Methode übergeben und in der Apple Pay-Berechtigung verwendet:
 
-1. Navigieren Sie zum [Apple Developer Center](https://developer.apple.com/account/) und dann zum Abschnitt „Certificates, Identifier, and Profiles“ (Zertifikate, Bezeichner und Profile):
+1. Navigieren Sie in das [Apple Developer Center](https://developer.apple.com/account/), und navigieren Sie zum Abschnitt „Zertifikate“, „Bezeichner“ und „Profile“:
 
     ![Auswahl der Händler-ID im Developer Center](apple-pay-capabilities-images/image57.png)
 
@@ -56,7 +56,7 @@ Eine Händler-ID wird verwendet, um Apple Pay wissen zu lassen, dass Sie Zahlung
 
     ![Auswählen der App-ID im Developer Center](apple-pay-capabilities-images/image6.png)
 
-2. Klicken Sie zum Hinzufügen einer neuen App-ID auf die Schaltfläche **+** :
+2. Wählen Sie die **+** -Schaltfläche zum Hinzufügen einer neuen App-ID aus:
 
     ![Hinzufügen einer neuen App-ID-Schaltfläche](apple-pay-capabilities-images/image27.png)
 
@@ -68,7 +68,7 @@ Eine Händler-ID wird verwendet, um Apple Pay wissen zu lassen, dass Sie Zahlung
 
     ![App-Dienste Apple Pay](apple-pay-capabilities-images/image36.png)
 
-5. Klicken Sie auf **Continue** (Weiter) und dann auf **Registrieren**. Beachten Sie, dass Apple Pay auf dem Bestätigungsbildschirm als konfigurierbar aktiviert ist und ein gelbes Symbol angezeigt wird:
+5. Wählen Sie **Continue** (Weiter) und dann **Register** (Registrieren) aus. Beachten Sie, dass Apple Pay auf dem Bestätigungsbildschirm als konfigurierbar aktiviert ist und ein gelbes Symbol angezeigt wird:
 
     ![Bestätigungsbildschirm für Apple Pay](apple-pay-capabilities-images/image37.png)
 
@@ -154,6 +154,6 @@ In der folgenden Liste werden mögliche weitere Schritte aufgeführt:
 
 * Verwenden des Framework-Namespaces in Ihrer App
 * Hinzufügen der erforderlichen Berechtigungen zu Ihrer App Informationen zu den erforderlichen Berechtigungen und wie sie hinzugefügt werden finden Sie im Leitfaden [Arbeiten mit Berechtigungen](~/ios/deploy-test/provisioning/entitlements.md).
-* Stellen Sie im Bereich  **iOS-Bundle-Signierung** der App sicher, dass  **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Dabei handelt es sich  _nicht_ um die Standardeinstellung für Debug-und IOS-simulatorbuilds.
+* Stellen Sie im Bereich  **iOS-Bundle-Signierung** der App sicher, dass  **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich  _nicht_  um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
 
 Wenn Probleme mit App-Diensten auftreten, konsultieren Sie den Abschnitt [Problembehandlung](~/ios/deploy-test/provisioning/capabilities/index.md) in der Hauptanleitung.

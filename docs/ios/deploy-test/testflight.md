@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028486"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303594"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
 
@@ -22,14 +22,14 @@ Das Durchführen von Beta-Tests ist ein wesentlicher Bestandteil des Softwareent
 
 TestFlight ist der Beta-Test-Dienst für iOS-Apps von Apple, auf den nur über [iTunes Connect](https://itunesconnect.apple.com/) zugegriffen werden kann. Es ist derzeit für iOS 8.0 Apps und höher verfügbar. TestFlight ermöglicht das Durchführen von Beta-Tests mit internen und externen Benutzern, und aufgrund einer Beta-App-Prüfung für die letztgenannte Aufgabe, wird sichergestellt, dass der endgültige Prüfungsprozess bei der Veröffentlichung im App Store wesentlich vereinfacht wird
 
-Zuvor wurde die Binärdatei in Visual Studio für Mac generiert und zur Verteilung an Tester auf die TestFlightApp-Website hochgeladen. Der neue Prozess umfasst eine ganze Reihe von Verbesserungen, die Ihnen eine hohe Qualität der Apps und gut getestete Apps im App Store bringen. Beispiel:
+Zuvor wurde die Binärdatei in Visual Studio für Mac generiert und zur Verteilung an Tester auf die TestFlightApp-Website hochgeladen. Der neue Prozess umfasst eine ganze Reihe von Verbesserungen, die Ihnen eine hohe Qualität der Apps und gut getestete Apps im App Store bringen. Zum Beispiel:
 
 - Die Beta-App-Prüfung, die für externe Tests benötigt wird, gewährleistet eine höhere Erfolgswahrscheinlichkeit für Ihre endgültige App Store-Prüfung, da beide die Einhaltung der Apple Richtlinien erfordern.
 - Vor dem Hochladen muss die App in iTunes Connect registriert werden. Dadurch wird sichergestellt, dass es keine Konflikte zwischen den Bereitstellungsprofilen, Namen und Zertifikaten gibt.
 - Die TestFlight-App ist jetzt eine echte iOS-App, sodass sie schneller ausgeführt wird.
 - Ist die Beta-Testphase einmal abgeschlossen, ist der Verschiebungsprozess der App zur Prüfung schnell und effizient; ein Klick auf die Schaltfläche genügt.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Nur Apps mit iOS 8.0 oder höher können über TestFlight getestet werden.
 
@@ -93,7 +93,7 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ### <a name="create-an-archive"></a>Erstellen eines Archivs
 
@@ -120,7 +120,7 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
  Lesen Sie den Abschnitt [Submitting your App to Apple (Übermitteln der App an Apple)](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md), um weitere Informationen zu diesen Schritten zu erhalten.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="building-your-final-distributable"></a>Endgültig verteilbaren Code erstellen
  Da das Xamarin-Plug-In für Visual Studio die Archivierung von Xamarin.iOS-Apps zur Veröffentlichung im App Store nicht unterstützt, gibt es zwei Optionen für die Veröffentlichung einer iOS-Anwendung von Visual Studio. Diese lauten wie folgt:

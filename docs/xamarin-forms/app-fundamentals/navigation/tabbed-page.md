@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
 ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
-ms.translationtype: MT
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910719"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303804"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms: TabbedPage
 
@@ -39,7 +39,7 @@ Auf der universellen Windows-Plattform (UWP) wird die Liste der Registerkarten a
 Es gibt zwei Ansätze zum Erstellen einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse:
 
 - Füllen Sie die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse mit einer Sammlung von untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten auf, z. B. einer Sammlung von [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekten. Weitere Informationen finden Sie unter [Populate a TabbedPage with a Page Collection](#populate-a-tabbedpage-with-a-page-collection) (Füllen einer TabbedPage mit einer Seitensammlung).
-- Weisen Sie der [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft eine Sammlung und der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Eigenschaft eine [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) zu, um Seiten für Objekte in der Sammlung zurückzugeben. Weitere Informationen finden Sie unter [Populate a TabbedPage with a template](#populate-a-tabbedpage-with-a-template) (Füllen einer TabbedPage mithilfe einer Vorlage).
+- Weisen Sie der [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft eine Sammlung und der [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)-Eigenschaft eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) zu, um Seiten für Objekte in der Sammlung zurückzugeben. Weitere Informationen finden Sie unter [Populate a TabbedPage with a template](#populate-a-tabbedpage-with-a-template) (Füllen einer TabbedPage mithilfe einer Vorlage).
 
 Durch beide Ansätze zeigt die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse die entsprechende Seite an, wenn der Benutzer eine Registerkarte auswählt.
 
@@ -60,7 +60,7 @@ Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.Bi
 
 ## <a name="populate-a-tabbedpage-with-a-page-collection"></a>Auffüllen einer TabbedPage mit einer Seitensammlung
 
-Sie können eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) mit einer Sammlung von untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten auffüllen, z. B. einer Sammlung von [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekten. Dies wird erreicht, indem der `Page`[`TabbedPage.Children`-Sammlung die ](xref:Xamarin.Forms.MultiPage`1.Children*)-Objekte hinzugefügt werden. Dies kann in XAML folgendermaßen durchgeführt werden:
+Sie können eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) mit einer Sammlung von untergeordneten [`Page`](xref:Xamarin.Forms.Page)-Objekten auffüllen, z. B. einer Sammlung von [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekten. Dies wird erreicht, indem der [`TabbedPage.Children`](xref:Xamarin.Forms.MultiPage`1.Children*)-Sammlung die `Page`-Objekte hinzugefügt werden. Dies kann in XAML folgendermaßen durchgeführt werden:
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -127,7 +127,7 @@ Weitere Informationen zur Navigation mithilfe der [`NavigationPage`](xref:Xamari
 
 ## <a name="populate-a-tabbedpage-with-a-template"></a>Auffüllen einer TabbedPage mithilfe einer Vorlage
 
-Eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) kann mit Seiten aufgefüllt werden, indem der [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft eine Sammlung von Daten zugewiesen wird. Dazu wird der [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Eigenschaft eine [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) zugewiesen, die als Vorlage der Daten in Form von [`Page`](xref:Xamarin.Forms.Page)-Objekten fungiert. Dies kann in XAML folgendermaßen durchgeführt werden:
+Eine [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) kann mit Seiten aufgefüllt werden, indem der [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)-Eigenschaft eine Sammlung von Daten zugewiesen wird. Dazu wird der [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)-Eigenschaft eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) zugewiesen, die als Vorlage der Daten in Form von [`Page`](xref:Xamarin.Forms.Page)-Objekten fungiert. Dies kann in XAML folgendermaßen durchgeführt werden:
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"

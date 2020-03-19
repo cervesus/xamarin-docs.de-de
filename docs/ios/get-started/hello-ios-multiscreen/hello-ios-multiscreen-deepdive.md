@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
-ms.translationtype: MT
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918086"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303696"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
@@ -52,7 +52,7 @@ In einigen Fällen kann die Modellkomponente von MVC auch leer sein. Sie können
 > [!NOTE]
 > In manchen Dokumentationen bezieht sich die Modellkomponente des MVC-Musters auf das gesamte Back-End der Anwendung und nicht nur auf die auf der Benutzeroberfläche angezeigten Daten. In diesem Leitfaden wird allerdings eine moderne Interpretation des Ausdrucks Modell verwendet. Die Unterscheidung ist jedoch nicht von großer Bedeutung.
 
-### <a name="view"></a>Sicht
+### <a name="view"></a>Ansicht
 
 Die Ansicht ist die für das Rendern der Benutzeroberfläche zuständige Komponente. Auf nahezu allen Plattformen, die das MVC-Muster verwenden, besteht die Benutzeroberfläche aus einer Hierarchie von Ansichten. Die Ansicht in MVC entspricht einer Ansichtshierarchie mit einer einzigen Ansicht an der Spitze der Hierarchie (der Stammansicht) und einer beliebigen Anzahl von untergeordneten Ansichten (den Unteransichten). In iOS entspricht die Hierarchie der Inhaltsansicht des Bildschirms der Ansichtskomponente in MVC.
 
@@ -187,7 +187,7 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Zusätzliche in Phoneword eingeführte Konzepte
 
-Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Leitfaden behandelt werden. Diese Konzepte umfassen:
+Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Leitfaden behandelt werden. Dies sind z.B. folgende Konzepte:
 
 - **Automatisches Erstellen des Ansichtscontrollers**: Wenn Sie im **Eigenschaftenpad** einen Klassennamen für den Ansichtscontroller eingeben, wird vom iOS-Designer überprüft, ob diese Klasse vorhanden ist, und anschließend die Sicherungsklasse des Ansichtscontrollers generiert. Weitere Informationen zu dieser und anderen iOS-Designer-Funktionen finden Sie im Leitfaden [Introduction to the iOS Designer](~/ios/user-interface/designer/introduction.md) (Einführung in den iOS-Designer).
 - **Tabellenansichtscontroller**: Der `CallHistoryController` ist ein Tabellenansichtscontroller. Ein Tabellenansichtscontroller enthält eine Tabellenansicht, das häufigste Tool zum Anzeigen von Layout und Daten in iOS. Tabellen sind jedoch nicht Teil dieses Leitfadens. Weitere Informationen zu Tabellenansichtscontrollern finden Sie im Leitfaden [Arbeiten mit Tabellen und Zellen](~/ios/user-interface/controls/tables/index.md).

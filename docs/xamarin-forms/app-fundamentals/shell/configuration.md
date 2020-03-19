@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2020
-ms.openlocfilehash: dfa452addd7cfb838091afdfb350484998d0cc9d
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 411c87c25701521bf27fbb863b02a90f8e523574
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77636086"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303786"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms-Shell-Seitenkonfiguration
 
@@ -112,7 +112,7 @@ In diesem Beispiel wird die [`ContentPage`](xref:Xamarin.Forms.ContentPage) so f
 
 ## <a name="enable-navigation-bar-shadow"></a>Aktivieren des Navigationsleistenschattens
 
-Die `Shell`-Klasse definiert die angefügte Eigenschaft `NavBarHasShadow` vom Typ `bool`, die steuert, ob die Navigationsleiste einen Schatten hat. Der Standardwert der Eigenschaft lautet `false`.
+Die `Shell`-Klasse definiert die angefügte Eigenschaft `NavBarHasShadow` vom Typ `bool`, die steuert, ob die Navigationsleiste einen Schatten hat. Standardmäßig lautet der Wert der Eigenschaft `false` unter iOS und `true` unter Android.
 
 Diese Eigenschaft kann zwar auf einem `Shell`-Objekt mit Unterklassen festgelegt werden, kann aber auch auf allen Seiten festgelegt werden, die den Schatten der Navigationsleiste aktivieren möchten. Im folgenden XAML-Code wird zum Beispiel das Aktivieren des Navigationsleistenschattens durch eine [`ContentPage`](xref:Xamarin.Forms.ContentPage) gezeigt:
 

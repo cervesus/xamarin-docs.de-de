@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
 ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558667"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303648"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
@@ -22,7 +22,7 @@ Die Klasse **Geolocation** stellt APIs zum Abrufen der Koordinaten des aktuellen
 
 Der Zugriff auf die **Geolocation**-Funktionalität setzt die folgende plattformspezifische Einrichtung voraus:
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Die Berechtigungen „Access Coarse Location“ (Standortzugriff (grob)) und „Access Fine Location“ (Standortzugriff (fein)) sind erforderlich und müssen im Android-Projekt konfiguriert werden. Außerdem müssen Sie, wenn Ihre App auf Android 5.0 (API-Ebene 21) oder höher ausgerichtet ist, deklarieren, dass Ihre App die Hardware-Features in der Manifestdatei verwendet. Das Hinzufügen erfolgt folgendermaßen:
 
@@ -50,7 +50,7 @@ Alternativ können Sie das Android-Manifest aktualisieren:
 
 Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie im **Android-Manifest** nach dem Bereich **Erforderliche Berechtigungen:** , und aktivieren Sie die Berechtigung **ACCESS_COARSE_LOCATION** (Standortzugriff (grob)) und **ACCESS_FINE_LOCATION** (Standortzugriff (fein)). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Die Datei **Info.plist** Ihrer App muss den `NSLocationWhenInUseUsageDescription`-Schlüssel enthalten, damit Sie auf den Gerätestandort zugreifen können.
 
@@ -63,7 +63,7 @@ Oder bearbeiten Sie die Datei manuell. Fügen Sie Folgendes hinzu, und aktualisi
 <string>Fill in a reason why your app needs access to location.</string>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Sie müssen die Berechtigung `Location` für die Anwendung festlegen. Öffnen Sie dazu das Dokument **Package.appxmanifest**, wählen Sie die Registerkarte **Funktionen** aus, und aktivieren Sie **Standort**.
 

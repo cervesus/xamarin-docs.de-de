@@ -10,11 +10,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "71679984"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303630"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Erstellen einer Single-Page-Anwendung mit Xamarin.Forms
 
@@ -144,7 +144,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
     }
     ```
 
-    Dieser Code definiert ein `_fileName`-Feld, das auf eine Datei namens `notes.txt` verweist, die Notes-Daten im lokalen Anwendungsdatenordner der Anwendung speichert. Wenn der Seitenkonstruktor ausgeführt wird, wird die Datei gelesen, falls sie vorhanden, und im [`Editor`](xref:Xamarin.Forms.Editor) angezeigt. Wenn auf das [`Button`](xref:Xamarin.Forms.Button)-Element **Speichern** geklickt wird, wird der `OnSaveButtonClicked`-Ereignishandler ausgeführt, der den Inhalt des `Editor` in der Datei speichert. Wenn Sie auf das `Button`-Element **Löschen** klicken, wird der `OnDeleteButtonClicked`-Ereignishandler ausgeführt, der die Datei löscht, wenn sie vorhanden ist, und jeglichen Text aus dem `Editor` entfernt. Weitere Informationen zur Benutzerinteraktion finden Sie unter [Reagieren auf eine Benutzerinteraktion](deepdive.md#responding-to-user-interaction) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
+    Dieser Code definiert ein `_fileName`-Feld, das auf eine Datei namens `notes.txt` verweist, die Notes-Daten im lokalen Anwendungsdatenordner der Anwendung speichert. Wenn der Seitenkonstruktor ausgeführt wird, wird die Datei gelesen, falls sie vorhanden, und im [`Editor`](xref:Xamarin.Forms.Editor) angezeigt. Wenn auf die [`Button`](xref:Xamarin.Forms.Button) **Speichern** geklickt wird, wird der `OnSaveButtonClicked`-Ereignishandler ausgeführt, der den Inhalt des `Editor` in der Datei speichert. Wenn Sie auf die `Button` **Löschen** klicken, wird der `OnDeleteButtonClicked`-Ereignishandler ausgeführt, der die Datei löscht, wenn sie vorhanden ist, und jeglichen Text aus dem `Editor` entfernt. Weitere Informationen zur Benutzerinteraktion finden Sie unter [Reagieren auf eine Benutzerinteraktion](deepdive.md#responding-to-user-interaction) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
     Speichern Sie die Änderungen an **MainPage.xaml.cs**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
@@ -196,7 +196,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
 
 ## <a name="get-started-with-visual-studio-2017"></a>Erste Schritte mit Visual Studio 2017
 
-1. Starten Sie Visual Studio 2017, und klicken Sie auf der Startseite auf **Neues Projekt erstellen...** , um ein neues Projekt zu erstellen:
+1. Starten Sie Visual Studio für Mac 2017, und klicken Sie auf der Startseite auf **Neues Projekt erstellen...** , um ein neues Projekt zu erstellen:
 
     ![](single-page-images/vs/new-solution.png "New Project")
 
@@ -294,7 +294,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
     }
     ```
 
-    Dieser Code definiert ein `_fileName`-Feld, das auf eine Datei namens `notes.txt` verweist, die Notes-Daten im lokalen Anwendungsdatenordner der Anwendung speichert. Wenn der Seitenkonstruktor ausgeführt wird, wird die Datei gelesen, falls sie vorhanden, und im [`Editor`](xref:Xamarin.Forms.Editor) angezeigt. Wenn auf das [`Button`](xref:Xamarin.Forms.Button)-Element **Speichern** geklickt wird, wird der `OnSaveButtonClicked`-Ereignishandler ausgeführt, der den Inhalt des `Editor` in der Datei speichert. Wenn Sie auf das `Button`-Element **Löschen** klicken, wird der `OnDeleteButtonClicked`-Ereignishandler ausgeführt, der die Datei löscht, wenn sie vorhanden ist, und jeglichen Text aus dem `Editor` entfernt. Weitere Informationen zur Benutzerinteraktion finden Sie unter [Reagieren auf eine Benutzerinteraktion](deepdive.md#responding-to-user-interaction) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
+    Dieser Code definiert ein `_fileName`-Feld, das auf eine Datei namens `notes.txt` verweist, die Notes-Daten im lokalen Anwendungsdatenordner der Anwendung speichert. Wenn der Seitenkonstruktor ausgeführt wird, wird die Datei gelesen, falls sie vorhanden, und im [`Editor`](xref:Xamarin.Forms.Editor) angezeigt. Wenn auf die [`Button`](xref:Xamarin.Forms.Button) **Speichern** geklickt wird, wird der `OnSaveButtonClicked`-Ereignishandler ausgeführt, der den Inhalt des `Editor` in der Datei speichert. Wenn Sie auf die `Button` **Löschen** klicken, wird der `OnDeleteButtonClicked`-Ereignishandler ausgeführt, der die Datei löscht, wenn sie vorhanden ist, und jeglichen Text aus dem `Editor` entfernt. Weitere Informationen zur Benutzerinteraktion finden Sie unter [Reagieren auf eine Benutzerinteraktion](deepdive.md#responding-to-user-interaction) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
     Speichern Sie die Änderungen an **MainPage.xaml.cs**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
@@ -448,7 +448,7 @@ Weitere Informationen zu diesen Voraussetzungen finden Sie unter [Installieren v
     }
     ```
 
-    Dieser Code definiert ein `_fileName`-Feld, das auf eine Datei namens `notes.txt` verweist, die Notes-Daten im lokalen Anwendungsdatenordner der Anwendung speichert. Wenn der Seitenkonstruktor ausgeführt wird, wird die Datei gelesen, falls sie vorhanden, und im [`Editor`](xref:Xamarin.Forms.Editor) angezeigt. Wenn auf das [`Button`](xref:Xamarin.Forms.Button)-Element **Speichern** geklickt wird, wird der `OnSaveButtonClicked`-Ereignishandler ausgeführt, der den Inhalt des `Editor` in der Datei speichert. Wenn Sie auf das `Button`-Element **Löschen** klicken, wird der `OnDeleteButtonClicked`-Ereignishandler ausgeführt, der die Datei löscht, wenn sie vorhanden ist, und jeglichen Text aus dem `Editor` entfernt. Weitere Informationen zur Benutzerinteraktion finden Sie unter [Reagieren auf eine Benutzerinteraktion](deepdive.md#responding-to-user-interaction) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
+    Dieser Code definiert ein `_fileName`-Feld, das auf eine Datei namens `notes.txt` verweist, die Notes-Daten im lokalen Anwendungsdatenordner der Anwendung speichert. Wenn der Seitenkonstruktor ausgeführt wird, wird die Datei gelesen, falls sie vorhanden, und im [`Editor`](xref:Xamarin.Forms.Editor) angezeigt. Wenn auf die [`Button`](xref:Xamarin.Forms.Button) **Speichern** geklickt wird, wird der `OnSaveButtonClicked`-Ereignishandler ausgeführt, der den Inhalt des `Editor` in der Datei speichert. Wenn Sie auf die `Button` **Löschen** klicken, wird der `OnDeleteButtonClicked`-Ereignishandler ausgeführt, der die Datei löscht, wenn sie vorhanden ist, und jeglichen Text aus dem `Editor` entfernt. Weitere Informationen zur Benutzerinteraktion finden Sie unter [Reagieren auf eine Benutzerinteraktion](deepdive.md#responding-to-user-interaction) in den [ausführlichen Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md).
 
     Speichern Sie die Änderungen an **MainPage.xaml.cs**, indem Sie auf **Datei > Speichern** klicken (oder indem Sie **&#8984;+S** drücken), und schließen Sie die Datei.
 
