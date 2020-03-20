@@ -1,6 +1,6 @@
 ---
-title: Dateizugriff mit xamarin. Android
-description: In dieser Anleitung wird der Dateizugriff in xamarin. Android erläutert.
+title: Dateizugriff mit Xamarin.Android
+description: Der vorliegende Leitfaden erläutert den Dateizugriff in Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: FC1CFC58-B799-4DD6-8ED1-DE36B0E56856
 ms.technology: xamarin-android
@@ -8,78 +8,78 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
 ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
-ms.translationtype: MT
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914226"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303666"
 ---
-# <a name="file-storage-and-access-with-xamarinandroid"></a>File Storage und Zugriff mit xamarin. Android
+# <a name="file-storage-and-access-with-xamarinandroid"></a>Dateispeicherung und Dateizugriff mit Xamarin.Android
 
-Eine häufige Voraussetzung für Android-Apps ist das Bearbeiten von Dateien &ndash; das Speichern von Bildern, das Herunterladen von Dokumenten oder das Exportieren von Daten für die Freigabe mit anderen Programmen Android (basiert auf Linux) unterstützt dies durch die Bereitstellung von Speicherplatz für den Dateispeicher. Android gruppiert das Dateisystem in zwei verschiedene Speichertypen:
+Eine häufige Anforderung an Android-Apps ist die Bearbeitung von Dateien – das Speichern von Bildern, das Herunterladen von Dokumenten oder das Exportieren von Daten zur gemeinsamen Nutzung mit anderen Programmen. Das (auf Linux basierende) Android unterstützt diese Funktionalität durch die Bereitstellung von Speicherplatz für den Dateispeicher. Android unterteilt das Dateisystem in zwei Arten von Speicher:
 
-* **Interner Speicher** &ndash; Dies ist ein Teil des Dateisystems, auf den nur von der Anwendung oder dem Betriebssystem zugegriffen werden kann.
-* **Externer Speicher** &ndash; Dies ist eine Partition für die Speicherung von Dateien, auf die von allen apps, dem Benutzer und möglicherweise anderen Geräten zugegriffen werden kann. Auf einigen Geräten kann der externe Speicher wechselseitig erfolgen (z. b. eine SD-Karte).
+* **Interner Speicher** – ein Bestandteil des Dateisystems, auf den nur die Anwendung oder das Betriebssystem zugreifen kann.
+* **Externer Speicher** – eine Partition für die Speicherung von Dateien, auf die sämtliche Apps, der Benutzer und möglicherweise auch andere Geräte zugreifen können. Auf einigen Geräten kann es sich bei dem externen Speicher um einen Wechseldatenträger handeln (z. B. eine SD-Karte).
 
-Diese Gruppierungen sind nur konzeptionell und verweisen nicht notwendigerweise auf eine einzelne Partition oder ein einzelnes Verzeichnis auf dem Gerät. Ein Android-Gerät stellt immer eine Partition für den internen und externen Speicher bereit. Möglicherweise haben bestimmte Geräte mehrere Partitionen, die als externer Speicher betrachtet werden. Unabhängig von der Partition sind die APIs zum Lesen, schreiben oder Erstellen von Dateien identisch. Es gibt zwei Sätze von APIs, die eine xamarin. Android-Anwendung für den Dateizugriff verwenden kann:
+Dies ist eine konzeptionelle Unterteilung, sie bezieht sich nicht unbedingt auf eine einzelne Partition oder ein einzelnes Verzeichnis auf dem Gerät. Ein Android-Gerät stellt immer eine Partition für den internen und den externen Speicher bereit. Es ist möglich, dass bestimmte Geräte über mehrere Partitionen verfügen, die als externer Speicher betrachtet werden. Unabhängig von der Partition sind die APIs zum Lesen, Schreiben oder Erstellen von Dateien dieselben. Es gibt zwei API-Sätze, die eine Xamarin.Android-Anwendung für den Dateizugriff nutzen kann:
 
-1. **Die .NET-APIs (von Mono bereitgestellt und von xamarin. Android umschließt)** &ndash; diese enthalten die von [xamarin. Essentials](~/essentials/index.md?context=xamarin/android)bereitgestellten [Dateisystem](~/essentials/file-system-helpers.md?context=xamarin/android) Hilfsprogramme. Die .NET-APIs bieten die beste plattformübergreifende Kompatibilität, und der Schwerpunkt dieses Handbuchs liegt auf diesen APIs.
-1. **Die nativen Java-Datei Zugriffs-APIs (von Java bereitgestellt und von xamarin. Android umgeschrieben)** &ndash; Java bietet eigene APIs zum Lesen und Schreiben von Dateien. Dabei handelt es sich um eine vollständig akzeptable Alternative zu den .NET-APIs, die für Android spezifisch sind und für apps, die plattformübergreifend sein sollen, nicht geeignet sind.
+1. **.NET-APIs (bereitgestellt von Mono und eingeschlossen in Xamarin.Android)** –  dies schließt die von [Xamarin.Essentials](~/essentials/index.md?context=xamarin/android) bereitgestellten [Dateisystemhilfsprogramme](~/essentials/file-system-helpers.md?context=xamarin/android) ein. Die .NET-APIs bieten die beste plattformübergreifende Kompatibilität und stehen in diesem Leitfaden deshalb im Vordergrund.
+1. **Native Java-APIs für den Dateizugriff (bereitgestellt von Java und eingeschlossen in Xamarin.Android)** – Java stellt eigene APIs zum Lesen und Schreiben von Dateien bereit. Diese APIs sind eine akzeptable Alternative zu den .NET-APIs, jedoch spezifisch für Android und nicht für Anwendungen geeignet, die plattformübergreifend eingesetzt werden sollen.
 
-Das Lesen und Schreiben in Dateien ist nahezu identisch mit xamarin. Android, wie es bei jeder anderen .NET-Anwendung der Fall ist. Die xamarin. Android-App bestimmt den Pfad zu der Datei, die bearbeitet wird, und verwendet dann die standardmäßige .net-Ausdrücke für den Dateizugriff. Da sich die tatsächlichen Pfade zum internen und externen Speicher von Gerät zu Gerät oder von Android-Version zu Android-Version unterscheiden können, empfiehlt es sich nicht, den Pfad zu den Dateien hart zu codieren. Verwenden Sie stattdessen die xamarin. Android-APIs, um den Pfad zu den Dateien zu ermitteln. Auf diese Weise werden in den .NET-APIs zum Lesen und Schreiben von Dateien die systemeigenen Android-APIs zur Verfügung gestellt, die bei der Ermittlung des Pfads zu Dateien im internen und externen Speicher helfen.
+Lese- und Schreibvorgänge für Dateien erfolgen in Xamarin.Android in nahezu gleicher Weise wie in jeder anderen .NET-Anwendung. Die Xamarin.Android-App bestimmt den Pfad zur Datei, die bearbeitet werden soll, und verwendet anschließend .NET-Standardausdrücke für den Dateizugriff. Da sich die tatsächlichen Pfade zum externen und internen Speicher je nach Gerät oder Android-Version unterscheiden können, wird von einer Hartcodierung der Dateipfade abgeraten. Verwenden Sie stattdessen die Xamarin.Android-APIs, um den Pfad zu den Dateien zu ermitteln. Hierbei machen die .NET-APIs zum Lesen und Schreiben von Dateien die nativen Android-APIs verfügbar, um den Pfad zu Dateien im internen oder externen Speicher zu bestimmen.
 
-Vor der Erörterung der mit dem Dateizugriff verbundenen APIs ist es wichtig, einige Details zu dem internen und externen Speicher zu verstehen. Dies wird im nächsten Abschnitt erläutert.
+Vor einer Erläuterung der APIs für den Dateizugriff ist es wichtig, einige Details im Zusammenhang mit dem internen und externen Speicher zu verstehen. Diese werden im nächsten Abschnitt erläutert.
 
-## <a name="internal-vs-external-storage"></a>Interner und externer Speicher
+## <a name="internal-vs-external-storage"></a>Interner und externer Speicher im Vergleich
 
-Konzeptionell sind interner Speicher und externer Speicher sehr ähnlich &ndash; Sie sind beide Orte, an denen eine xamarin. Android-App möglicherweise Dateien speichert. Diese Ähnlichkeit kann für Entwickler verwirrend sein, die nicht mit Android vertraut sind, da es nicht klar ist, wann eine APP internen Speicher und externen Speicher verwenden soll.
+Vom Konzept her sind sich interner Speicher und externer Speicher sehr ähnlich. In beiden Fällen handelt es sich um Orte, an denen eine Xamarin.Android-App Dateien speichern kann. Diese Ähnlichkeit kann für Entwickler, die mit Android nicht vertraut sind, verwirrend sein, da möglicherweise unklar ist, wann eine Anwendung internen und wann externen Speicher verwenden sollte.
 
-Der interne Speicher bezieht sich auf den nicht flüchtigen Speicher, der von Android dem Betriebssystem, den API und den einzelnen apps zugewiesen wird. Auf diesen Speicherplatz kann außer dem Betriebssystem oder den apps nicht zugegriffen werden. Android weist der internen Speicher Partition für jede APP ein Verzeichnis zu. Wenn die APP deinstalliert wird, werden alle Dateien, die im internen Speicher in diesem Verzeichnis aufbewahrt werden, ebenfalls gelöscht. Interner Speicher eignet sich am besten für Dateien, die nur für die APP zugänglich sind und nicht für andere apps freigegeben werden oder nur sehr wenig Wert haben, wenn die APP deinstalliert wird. Unter Android 6,0 oder höher werden Dateien im internen Speicher möglicherweise automatisch von Google mithilfe des Features " [Automatische Sicherung" in Android 6,0](https://developer.android.com/guide/topics/data/autobackup)gesichert. Interner Speicher hat folgende Nachteile:
+Als interner Speicher wird der permanente Speicher bezeichnet, den Android dem Betriebssystem, APKs und einzelnen Apps zuweist. Auf diesen Speicher kann nur durch das Betriebssystem oder Apps zugegriffen werden. Android weist jeder App ein Verzeichnis in der Partition des internen Speichers zu. Wird die App deinstalliert, werden alle im internen Speicher enthaltenen Dateien in diesem Verzeichnis ebenfalls gelöscht. Der interne Speicher eignet sich besonders für Dateien, auf die nur von der App zugegriffen werden kann und die nicht für andere Apps freigegeben werden oder nach dem Deinstallieren der App nicht mehr relevant sind. Unter Android 6.0 oder höher können Dateien im internen Speicher von Google mithilfe der [Funktion zur automatischen Sicherung in Android 6.0](https://developer.android.com/guide/topics/data/autobackup) automatisch gesichert werden. Der interne Speicher hat folgende Nachteile:
 
 * Dateien können nicht freigegeben werden.
-* Dateien werden gelöscht, wenn die APP deinstalliert wird.
-* Der verfügbare Speicherplatz auf dem internen Speicher ist möglicherweise eingeschränkt.
+* Dateien werden gelöscht, wenn die App deinstalliert wird.
+* Der im internen Speicher verfügbare Speicherplatz ist möglicherweise begrenzt.
 
-Externer Speicher bezieht sich auf Dateispeicher, bei dem es sich nicht um einen internen Speicher handelt, und auf den nicht exklusiv für eine APP Der primäre Zweck von externem Speicher ist die Bereitstellung von Dateien, die für die gemeinsame Nutzung von apps verwendet werden sollen oder die zu groß für den internen Speicher sind. Der Vorteil externer Speicherung besteht darin, dass Sie in der Regel viel mehr Speicherplatz für Dateien als für den internen Speicher hat. Es ist jedoch nicht immer gewährleistet, dass externer Speicher auf einem Gerät vorhanden ist, und erfordert möglicherweise spezielle Berechtigungen für den Benutzer, um darauf zuzugreifen.
+Als externer Speicher wird der Dateispeicher bezeichnet, bei dem es sich nicht um internen Speicher handelt und der nicht ausschließlich für eine App zugänglich ist. Der Hauptzweck von externem Speicher besteht darin, einen Aufbewahrungsort für Dateien bereitzustellen, die gemeinsam von verschiedenen Apps verwendet werden sollen oder zu groß für den internen Speicher sind. Der Vorteil des externen Speichers besteht darin, dass er üblicherweise sehr viel mehr Platz für Dateien bietet als der interne Speicher. Es ist jedoch nicht immer garantiert, dass ein externer Speicher auf einem Gerät vorhanden ist, und möglicherweise werden für den Zugriff auf den externen Speicher spezielle Benutzerberechtigungen benötigt.
 
 > [!NOTE]
-> Bei Geräten, die mehrere Benutzer unterstützen, stellt Android jedem Benutzer ein eigenes Verzeichnis im internen und externen Speicher zur Verfügung. Auf dieses Verzeichnis kann von anderen Benutzern auf dem Gerät nicht zugegriffen werden. Diese Trennung ist für apps unsichtbar, solange Sie keine Pfade zu Dateien im internen oder externen Speicher hart codieren.
+> Bei Geräten, die mehrere Benutzer unterstützen, stellt Android jedem Benutzer ein eigenes Verzeichnis im internen und im externen Speicher zur Verfügung. Dieses Verzeichnis ist für andere Benutzer auf dem Gerät nicht zugänglich. Diese Trennung ist für Apps nicht sichtbar, solange keine hartcodierten Pfade zu Dateien im internen oder externen Speicher verwendet werden.
 
-Als Faustregel gilt, dass xamarin. Android-Apps Ihre Dateien im internen Speicher speichern sollten, wenn dies angemessen ist, und sich auf externen Speicher verlassen müssen, wenn Dateien für andere apps freigegeben werden müssen, sehr groß sind oder beibehalten werden sollten, auch wenn die APP deinstalliert wird. Eine Konfigurationsdatei eignet sich z. b. am besten für einen internen Speicher, da Sie keine Wichtigkeit hat, außer der APP, die Sie erstellt.  Im Gegensatz dazu sind Fotos ein guter Kandidat für die externe Speicherung. Sie können sehr groß sein, und in vielen Fällen kann der Benutzer Sie freigeben oder darauf zugreifen, auch wenn die APP deinstalliert wird.
+Als Faustregel gilt: Dateien von Xamarin.Android-Anwendungen sollten vorzugsweise im internen Speicher abgelegt werden, wenn dies sinnvoll ist. Auf den externen Speicher sollte zurückgegriffen werden, wenn Dateien für andere Apps freigegeben werden müssen, die Dateien sehr groß sind oder auch dann beibehalten werden sollten, wenn die App deinstalliert wird. Beispielsweise ist eine Konfigurationsdatei am besten für einen internen Speicher geeignet, da sie nur für die App wichtig ist, über die sie erstellt wird.  Fotos dagegen sind ein guter Kandidat für einen externen Speicher. Sie können sehr groß sein, und in vielen Fällen möchte der Benutzer sie teilen oder weiter darauf zugreifen, auch wenn die App deinstalliert wurde.
 
-Dieser Leitfaden konzentriert sich auf den internen Speicher. Ausführliche Informationen zur Verwendung von externem Speicher in einer xamarin. Android-Anwendung finden Sie im Handbuch für [externe Speicherung](~/android/platform/files/external-storage.md) .
+Dieser Leitfaden konzentriert sich auf den internen Speicher. Ausführliche Informationen zur Verwendung von externem Speicher in einer Xamarin.Android-Anwendung finden Sie im Leitfaden [Externer Speicher](~/android/platform/files/external-storage.md).
 
 ## <a name="working-with-internal-storage"></a>Arbeiten mit internem Speicher
 
-Das interne Speicher Verzeichnis für eine Anwendung wird vom Betriebssystem bestimmt und für Android-Apps durch die `Android.Content.Context.FilesDir`-Eigenschaft verfügbar gemacht. Dadurch wird ein `Java.IO.File` Objekt zurückgegeben, das das Verzeichnis darstellt, das Android ausschließlich für die APP dediziert hat.  Beispielsweise kann eine APP mit dem Paketnamen **com. CompanyName** das interne Speicher Verzeichnis sein:
+Das interner Speicherverzeichnis für eine Anwendung wird durch das Betriebssystem bestimmt und durch die `Android.Content.Context.FilesDir`-Eigenschaft für Android-Apps verfügbar gemacht. So wird ein `Java.IO.File`-Objekt zurückgegeben, das das Verzeichnis repräsentiert, das Android exklusiv für die App reserviert hat.  Beispielsweise kann das interne Speicherverzeichnis für eine App mit dem Paketnamen **com.companyname** so lauten:
 
 ```bash
 /data/user/0/com.companyname/files
 ```
 
-In diesem Dokument wird das interne Speicher Verzeichnis als _interner\_Speicher_bezeichnet.
+Im vorliegenden Dokument wird auf das interne Speicherverzeichnis als _INTERNER\_SPEICHER_ verwiesen.
 
 > [!IMPORTANT]
-> Der genaue Pfad zum internen Speicher Verzeichnis kann von Gerät zu Gerät und zwischen Android-Versionen variieren. Aus diesem Grund dürfen apps den Pfad zum Speicher Verzeichnis der internen Dateien nicht hart codieren und stattdessen die xamarin. Android-APIs verwenden, wie z. b. `System.Environment.GetFolderPath()`.
+> Der genaue Pfad zum internen Speicherverzeichnis kann je nach Gerät und Android-Version abweichen. Aus diesem Grund dürfen Apps den Pfad zu diesem Verzeichnis nicht hartcodieren und müssen stattdessen die Xamarin.Android-APIs verwenden, wie z. B. `System.Environment.GetFolderPath()`.
 
-Um die Code Freigabe zu maximieren, sollten xamarin. Android-Apps (oder xamarin. Forms-Apps für xamarin. Android) die [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*) -Methode verwenden. In xamarin. Android gibt diese Methode eine Zeichenfolge für ein Verzeichnis zurück, das den gleichen Speicherort wie `Android.Content.Context.FilesDir`hat. Diese Methode verwendet eine Enumeration, `System.Environment.SpecialFolder`, die verwendet wird, um einen Satz von enumerierten Konstanten zu identifizieren, die die Pfade spezieller Ordner darstellen, die vom Betriebssystem verwendet werden. Nicht alle `System.Environment.SpecialFolder` Werte werden einem gültigen Verzeichnis in xamarin. Android zugeordnet. In der folgenden Tabelle wird beschrieben, welchen Pfad Sie für einen bestimmten Wert von `System.Environment.SpecialFolder`erwarten können:
+Um die gemeinsame Nutzung von Code zu maximieren, sollten Xamarin.Android-Apps (oder auf Xamarin.Android ausgerichtete Xamarin.Forms-Apps) die [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*)-Methode verwenden. In Xamarin.Android gibt diese Methode eine Zeichenfolge für ein Verzeichnis zurück, das sich am selben Speicherort befindet wie `Android.Content.Context.FilesDir`. Diese Methode erwartet eine Enumeration (`System.Environment.SpecialFolder`). Mit dieser wird ein Satz von Enumerationskonstanten identifiziert, die die Pfade zu speziellen, vom Betriebssystem verwendeten Ordnern darstellen. Nicht alle `System.Environment.SpecialFolder`-Werte werden einem gültigen Verzeichnis in Xamarin.Android zugeordnet. Die folgende Tabelle beschreibt, welcher Pfad für einen vorhandenen Wert von `System.Environment.SpecialFolder` erwartet werden kann:
 
-| System.Environment.SpecialFolder | `Path`  |
+| System.Environment.SpecialFolder | Pfad  |
 |----------------------|---|
-| `ApplicationData` | **_Interner\_Speicher_/.config** |
-| `Desktop` | **_Interner\_Speicher_/Desktop** |
-| `LocalApplicationData` | **_Interner\_Speicher_/.local/share** |
-| `MyDocuments` | **_Interner\_Speicher_** |
-| `MyMusic` | **_Interner\_Speicher_/Music** |
-| `MyPictures` | **_Interner\_Speicher_/Pictures** |
-| `MyVideos` | **_Interner\_Speicher_/Videos** |
-| `Personal` | **_Interner\_Speicher_** |
+| `ApplicationData` | **_INTERNER\_SPEICHER_/.config** |
+| `Desktop` | **_INTERNER\_SPEICHER_/Desktop** |
+| `LocalApplicationData` | **_INTERNER\_SPEICHER_/.local/share** |
+| `MyDocuments` | **_INTERNER\_SPEICHER_** |
+| `MyMusic` | **_INTERNER\_SPEICHER_/Music** |
+| `MyPictures` | **_INTERNER\_SPEICHER_/Pictures** |
+| `MyVideos` | **_INTERNER\_SPEICHER_/Videos** |
+| `Personal` | **_INTERNER\_SPEICHER_** |
 
-### <a name="reading-or-writing-to-files-on-internal-storage"></a>Lesen oder schreiben in Dateien im internen Speicher
+### <a name="reading-or-writing-to-files-on-internal-storage"></a>Lesen oder Schreiben von Dateien in den internen Speicher
 
-Jede der [ C# APIs zum Schreiben](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) in eine Datei ist ausreichend. der Pfad zu der Datei, die sich in dem Verzeichnis befindet, das der Anwendung zugeordnet ist, muss lediglich angezeigt werden. Es wird dringend empfohlen, dass die asynchronen Versionen der .NET-APIs verwendet werden, um Probleme zu minimieren, die möglicherweise mit dem Dateizugriff verknüpft sind, der den Haupt Thread blockiert.
+Jede der [C#-APIs für Schreibvorgänge](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) in eine Datei ist ausreichend. Es muss lediglich der Pfad zur Datei ermittelt werden, die sich in dem der Anwendung zugewiesenen Verzeichnis befindet. Es wird dringend empfohlen, die asynchronen Versionen der .NET-APIs zu verwenden, um Probleme zu minimieren, die durch eine Blockierung des Hauptthreads durch den Dateizugriff entstehen könnten.
 
-Dieser Code Ausschnitt ist ein Beispiel für das Schreiben einer Ganzzahl in eine UTF-8-Textdatei in das interne Speicher Verzeichnis einer Anwendung:
+Dieser Codeausschnitt ist ein Beispiel zum Schreiben einer ganzen Zahl in eine UTF-8-Textdatei im internen Speicherverzeichnis einer Anwendung:
 
 ```csharp
 public async Task SaveCountAsync(int count)
@@ -92,7 +92,7 @@ public async Task SaveCountAsync(int count)
 }
 ```
 
-Der nächste Code Ausschnitt bietet eine Möglichkeit, einen ganzzahligen Wert zu lesen, der in einer Textdatei gespeichert wurde:
+Der nächste Codeausschnitt bietet eine Möglichkeit, einen ganzzahligen Wert zu lesen, der in einer Textdatei gespeichert wurde:
 
 ```csharp
 public async Task<int> ReadCountAsync()
@@ -121,9 +121,9 @@ public async Task<int> ReadCountAsync()
 }
 ```
 
-## <a name="using--xamarinessentials-ndash-file-system-helpers"></a>Verwenden von xamarin. Essentials &ndash; File System-Hilfsprogramme
+## <a name="using--xamarinessentials-ndash-file-system-helpers"></a>Verwenden von Xamarin.Essentials: Dateisystemhilfsprogramme
 
-[Xamarin. Essentials](~/essentials/file-system-helpers.md?context=xamarin/android) ist ein Satz von APIs zum Schreiben von plattformübergreifendes kompatiblem Code. Die [Datei System](~/essentials/file-system-helpers.md?context=xamarin/android) -Hilfsprogramme sind eine-Klasse, die eine Reihe von Hilfsprogrammen enthält, um die Suche nach dem Cache und den Daten Verzeichnissen der Anwendung zu vereinfachen. Dieser Code Ausschnitt enthält ein Beispiel für die Suche nach dem internen Speicher Verzeichnis und dem Cache Verzeichnis für eine APP:
+[Xamarin.Essentials](~/essentials/file-system-helpers.md?context=xamarin/android) ist ein Satz mit APIs zum Schreiben von plattformübergreifendem, kompatiblem Code. Bei den [Dateisystemhilfsprogrammen](~/essentials/file-system-helpers.md?context=xamarin/android) handelt es sich um eine Klasse mit verschiedenen Hilfsprogrammen zum einfacheren Auffinden der Cache- und Datenverzeichnisse einer Anwendung. Dieser Codeausschnitt bietet ein Beispiel für die Ermittlung des internen Speicherverzeichnisses und des Cacheverzeichnisses für eine App:
 
 ```csharp
 // Get the path to a file on internal storage
@@ -133,18 +133,18 @@ var backingFile = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "
 var cacheFile = Path.Combine(Xamarin.Essentials.FileSystem.CacheDirectory, "count.txt");
 ```
 
-## <a name="hiding-files-from-the-mediastore"></a>Ausblenden von Dateien aus der `MediaStore`
+## <a name="hiding-files-from-the-mediastore"></a>Ausblenden von Dateien im `MediaStore`
 
-Der `MediaStore` ist eine Android-Komponente, die Metadaten zu Mediendateien (Videos, Musik, Bilder) auf einem Android-Gerät sammelt. Der Zweck besteht darin, die Freigabe dieser Dateien für alle Android-Apps auf dem Gerät zu vereinfachen.
+Der `MediaStore` ist eine Android-Komponente, in der Metadaten zu den Mediendateien (Videos, Musik, Bilder) auf einem Android-Gerät erfasst werden. Der Zweck dieses Speichers besteht darin, die Freigabe dieser Dateien für alle Android-Apps auf dem Gerät zu vereinfachen.
 
-Private Dateien werden nicht als Share Bare Medien angezeigt. Wenn eine APP beispielsweise ein Bild in Ihrem privaten externen Speicher speichert, wird diese Datei nicht vom Medien Scanner (`MediaStore`) übernommen.
+Private Dateien werden nicht als Medien angezeigt, die freigegeben werden können. Wenn eine App beispielsweise ein Bild im privaten externen Speicher der App ablegt, wird diese Datei nicht von der Medienerkennung erfasst (`MediaStore`).
 
-Öffentliche Dateien werden von `MediaStore`abgerufen. Verzeichnisse mit einem Dateinamen, der 0 (null) ist **. Nomedia** wird nicht von `MediaStore`gescannt.
+Öffentliche Dateien werden vom `MediaStore` erfasst. Verzeichnisse, die eine 0-Byte-Datei namens **.NOMEDIA** aufweisen, werden von `MediaStore` nicht erfasst.
 
 ## <a name="related-links"></a>Verwandte Links
 
 * [Externer Speicher](~/android/platform/files/external-storage.md)
-* [Speichern von Dateien auf dem Gerätespeicher](https://developer.android.com/training/data-storage/files)
-* [Xamarin. Essentials-Datei System Hilfsprogramme](~/essentials/file-system-helpers.md?context=xamarin/android)
-* [Sichern von Benutzerdaten mit automatischer Sicherung](https://developer.android.com/guide/topics/data/autobackup)
-* [Adoptable-Speicher](https://source.android.com/devices/storage/adoptable)
+* [Speichern von Dateien im Gerätespeicher](https://developer.android.com/training/data-storage/files)
+* [Xamarin.Essentials: Dateisystemhilfsprogramme](~/essentials/file-system-helpers.md?context=xamarin/android)
+* [Sichern von Benutzerdaten mit der automatischen Sicherung](https://developer.android.com/guide/topics/data/autobackup)
+* [Anpassbarer Speicher](https://source.android.com/devices/storage/adoptable)
