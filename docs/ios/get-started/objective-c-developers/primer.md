@@ -85,7 +85,7 @@ Da Objective-C eine Obermenge von C ist, verwendet Objective-C Header für öffe
 Beispielsweise enthält der folgende Code den Namespace `UIKit`, wodurch jede Klasse in diesem Namespace der Implementierung zur Verfügung steht:
 
 ```csharp
-using UIKit
+using UIKit;
 namespace MyAppNamespace
 {
     // implementation of classes
