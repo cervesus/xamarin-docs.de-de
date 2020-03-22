@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: a9dce962c35e5f9cfdcd674da9ad71cf8935e7d4
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306170"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070314"
 ---
 # <a name="web-views-in-xamarinios"></a>Webansichten in xamarin. IOS
 
@@ -89,31 +89,71 @@ App-Transport Sicherheit oder *ATS* wurde von Apple in ios 9 eingeführt, um sic
 
 Weitere Informationen zu den Vorgängen, einschließlich der Implementierung in der APP, finden Sie im Leitfaden zur [App-Transport Sicherheit](~/ios/app-fundamentals/ats.md) .
 
-## <a name="uiwebview-deprecated"></a>UIWebView (veraltet)
-
-> [!IMPORTANT]
-> `UIWebView` ist veraltet. Apps, die dieses Steuerelement verwenden [, werden vom April 2020 nicht in den App Store übernommen, und vorhandene apps müssen es bis zum 2020. Dezember entfernen](https://developer.apple.com/news/?id=12232019b).
->
-> In [der `UIWebView` Dokumentation von Apple](https://developer.apple.com/documentation/uikit/uiwebview) wird vorgeschlagen, dass apps stattdessen [`WKWebView`](#wkwebview) verwenden sollten.
-
-> [!IMPORTANT]
-> Wenn Sie Xamarin.Forms verwenden und nach Ressourcen zur `UIWebView`-Veraltungswarnung (ITMS-90809) suchen, finden Sie weitere Informationen in der [Dokumentation zu Xamarin.Forms-WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809).
+## <a name="uiwebview-deprecation"></a>UIWebView-Veraltung
 
 `UIWebView` ist die ältere Methode von Apple, Webinhalte in Ihrer APP bereitzustellen. Sie wurde in ios 2,0 veröffentlicht und ist seit 8,0 als veraltet markiert.
 
-Um ihrer xamarin. IOS-App eine UIWebView hinzuzufügen, verwenden Sie den folgenden Code:
+> [!IMPORTANT]
+> `UIWebView` ist veraltet. Neue apps, die dieses Steuerelement verwenden [, werden vom April 2020 nicht in den App Store übernommen, und apps, die dieses Steuerelement verwenden, werden bis zum 2020. Dezember nicht akzeptiert](https://developer.apple.com/news/?id=12232019b).
+>
+> In [der `UIWebView` Dokumentation von Apple](https://developer.apple.com/documentation/uikit/uiwebview) wird vorgeschlagen, dass apps stattdessen [`WKWebView`](#wkwebview) verwenden sollten.
+>
+> Wenn Sie Xamarin.Forms verwenden und nach Ressourcen zur `UIWebView`-Veraltungswarnung (ITMS-90809) suchen, finden Sie weitere Informationen in der [Dokumentation zu Xamarin.Forms-WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809).
 
-```csharp
-webView = new UIWebView (View.Bounds);
-View.AddSubview(webView);
+Entwickler, die IOS-Anwendungen in den letzten sechs Monaten (oder so) übermittelt haben, haben möglicherweise eine Warnung aus dem App-Store erhalten, wenn `UIWebView` veraltet ist.
 
-var url = "https://docs.microsoft.com"; // NOTE: https secure request
-webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
-```
+Die APIs sind häufig veraltet. Xamarin. IOS verwendet benutzerdefinierte Attribute zum signalisieren dieser APIs (und zum vorschlagen von Ersetzungen, falls verfügbar) an die Entwickler. Das unterscheidet sich diesmal und ist weitaus weniger häufig, besteht darin, dass die Veraltung vom App Store von Apple zum Zeitpunkt der Übermittlung **erzwungen wird** .
 
-Dadurch wird die folgende Webansicht erzeugt:
+Leider ist das Entfernen des `UIWebView` Typs aus `Xamarin.iOS.dll` eine [binäre Breaking Change](https://docs.microsoft.com/dotnet/core/compatibility/categories#binary-compatibility). Durch diese Änderung werden vorhandene Bibliotheken von Drittanbietern getrennt, einschließlich einiger, die möglicherweise nicht mehr unterstützt oder sogar erneut kompiliert werden können (z. b. geschlossene Quelle). Dadurch werden nur weitere Probleme für Entwickler entstehen. Daher wird der Typ *noch*nicht entfernt.
 
-[![der Auswirkung von scalespagestofit](webview-images/webview.png)](webview-images/webview.png#lightbox)
+Ab [xamarin. IOS 13,16](https://docs.microsoft.com/xamarin/ios/release-notes/13/13.16) sind neue Erkennungen und Tools verfügbar, um Sie bei der Migration von `UIWebView`zu unterstützen.
+
+### <a name="detection"></a>Erkennung
+
+Wenn Sie vor kurzem eine IOS-Anwendung an den Apple App Store übermittelt haben, Fragen Sie sich vielleicht, ob diese Situation auf Ihre Anwendung (en) zutrifft.
+
+Um dies zu ermitteln, können Sie den **zusätzlichen mberührungs-Argumenten** Ihres Projekts `--warn-on-type-ref=UIKit.UIWebView` hinzufügen. Dadurch wird **ein beliebiger** Verweis auf den veralteten `UIWebView` in der Anwendung (und alle zugehörigen Abhängigkeiten) gewarnt. **Vor** und **nach** der Ausführung des verwalteten Linker werden verschiedene Warnungen verwendet, um Typen zu melden.
+
+Die Warnungen, wie andere, können mithilfe von `-warnaserror:`in Fehler umgewandelt werden. Dies kann hilfreich sein, wenn Sie sicherstellen möchten, dass nach Ihren Überprüfungen eine neue Abhängigkeit zu `UIWebView` nicht hinzugefügt wird. Beispiel:
+
+* `-warnaserror:1502` meldet Fehler, wenn Verweise in vorverknüpften Assemblys gefunden werden.
+* `-warnaserror:1503` meldet Fehler, wenn Verweise in nach Links verknüpften Assemblys gefunden werden.
+
+Sie können die Warnungen auch dann über Schweigen, wenn die Prä-/postverknüpfungs Ergebnisse nicht hilfreich sind. Beispiel:
+
+* `-nowarn:1502` meldet **keine** Warnungen, wenn Verweise in vorverknüpften Assemblys gefunden werden.
+* `-nowarn:1503` meldet **keine** Warnungen, wenn Verweise in nach Links verknüpften Assemblys gefunden werden.
+
+### <a name="removal"></a>Entfernen
+
+Jede Anwendung ist eindeutig. Wenn Sie `UIWebView` aus der Anwendung entfernen, können je nachdem, wie und wo Sie verwendet werden, unterschiedliche Schritte erforderlich sein. Die häufigsten Szenarien lauten wie folgt:
+
+- In Ihrer Anwendung werden keine `UIWebView` verwendet. Alles ist in Ordnung. Beim Senden an den AppStore sollten **keine** Warnungen vorliegen. Es ist nichts anderes erforderlich.
+- Direkte Verwendung von `UIWebView` durch Ihre Anwendung. Beginnen Sie, indem Sie die Verwendung von `UIWebView`entfernen, z. b. durch die neueren `WKWebView` (IOS 8) oder `SFSafariViewController` (IOS 9)-Typen ersetzen. Nachdem dieser Vorgang abgeschlossen ist, sollte der verwaltete Linker keinen Verweis auf `UIWebView` sehen, und die endgültige App-Binärdatei hat keine Ablauf Verfolgung.
+- Indirekte Verwendung. `UIWebView` können in einigen Drittanbieterbibliotheken vorhanden sein, die von der Anwendung verwaltet oder System eigen verwendet werden. Beginnen Sie, indem Sie Ihre externen Abhängigkeiten auf ihre neuesten Versionen aktualisieren, da diese Situation möglicherweise bereits in einer neueren Version gelöst wurde. Wenn dies nicht der gibt, wenden Sie sich an den Maintainer (e) der Bibliotheken, und Fragen Sie nach den Update Plänen.
+
+Alternativ können Sie die folgenden Ansätze ausprobieren:
+
+1. Wenn Sie **xamarin. Forms**verwenden, lesen Sie diesen [Blogbeitrag](https://devblogs.microsoft.com/xamarin/uiwebview-deprecation-xamarin-forms/).
+1. Aktivieren Sie den verwalteten Linker (für das gesamte Projekt oder zumindest für die Abhängigkeit mit `UIWebView`), damit er *möglicherweise* entfernt wird, wenn er nicht referenziert wird. Dadurch wird das Problem gelöst, aber möglicherweise sind zusätzliche Schritte erforderlich, um den Code Linker sicher zu machen.
+1. Wenn Sie die Einstellungen für verwaltete Linker nicht ändern können, finden Sie weitere Informationen in den folgenden Sonderfällen.
+
+#### <a name="applications-cannot-use-the-linker-or-change-its-settings"></a>Anwendungen können den Linker nicht verwenden (oder seine Einstellungen ändern)
+
+Wenn Sie den verwalteten Linker aus irgendeinem Grund **nicht** verwenden (z. b. **nicht verknüpfen), verbleibt**das `UIWebView` Symbol in der binären APP, die Sie an Apple senden, und es wird möglicherweise abgelehnt.
+
+Eine *energische* Lösung besteht darin, den **zusätzlichen mberührungs-Argumenten**Ihres Projekts `--optimization=force-rejected-types-removal` hinzuzufügen. Hierdurch werden Ablauf Verfolgungen `UIWebView` aus der Anwendung entfernt. Jeglicher Code, der auf den Typ verweist, funktioniert jedoch **nicht** ordnungsgemäß (Ausnahmen oder Abstürze werden erwartet). Diese Vorgehensweise sollte nur verwendet werden, wenn Sie sicher sind, dass der Code zur Laufzeit nicht erreichbar ist (auch wenn er über die statische Analyse erreichbar war).
+
+#### <a name="support-for-ios-7x-or-earlier"></a>Unterstützung für IOS 7. x (oder früher)
+
+`UIWebView` ist seit v 2.0 Teil von IOS. Die häufigsten Ersetzungen sind `WKWebView` (IOS 8) und `SFSafariViewController` (IOS 9). Wenn Ihre Anwendung weiterhin ältere IOS-Versionen unterstützt, sollten Sie die folgenden Optionen berücksichtigen:
+
+* Legen Sie IOS 8 als minimale Zielversion (Buildzeit-Entscheidung) ab.
+* Verwenden Sie nur `WKWebView`, wenn die APP unter IOS 8 + (eine Lauf Zeit Entscheidung) ausgeführt wird.
+
+#### <a name="applications-not-submitted-to-apple"></a>Nicht an Apple gesendete Anwendungen
+
+Wenn Ihre Anwendung nicht an Apple übermittelt wird, sollten Sie planen, von der veralteten API zu wechseln, da Sie in zukünftigen IOS-Releases entfernt werden kann. Allerdings können Sie diese Umstellung mithilfe Ihres eigenen Zeitplans durchführen.
 
 ## <a name="related-links"></a>Verwandte Links
 

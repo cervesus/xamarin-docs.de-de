@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/16/2020
-ms.openlocfilehash: c321884039674d3abb1a4b510ddfe2c062c28211
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 55fda0be2e260c5aa4a34ab2dcc1ac3cac33b92a
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77646731"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070294"
 ---
 # <a name="tabbedpage-translucent-tab-bar-on-ios"></a>Tabbedpage-Schiebe leisten-Registerkarten Leiste unter IOS
 
@@ -41,7 +41,7 @@ On<iOS>().SetTranslucencyMode(TranslucencyMode.Opaque);
 Die `TabbedPage.On<iOS>`-Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die `TabbedPage.SetTranslucencyMode`-Methode im [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um den Transaktionsmodus der Registerkarten Leiste auf einem [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) festzulegen, indem Sie einen der folgenden `TranslucencyMode` Enumerationswerte angeben:
 
 - `Default`, mit dem die Registerkarten Leiste auf den standardmäßigen Modus für die Transaktions Anzeige festgelegt wird. Dies ist der Standardwert der `TabbedPage.TranslucencyMode`-Eigenschaft.
-- `Transparent`, mit dem die Registerkarten Leiste auf eine durchscheinend festgelegt wird.
+- `Translucent`, mit dem die Registerkarten Leiste auf eine durchscheinend festgelegt wird.
 - `Opaque`, wodurch die Registerkarten Leiste als nicht transparent festgelegt wird.
 
 Außerdem kann die `GetTranslucencyMode`-Methode verwendet werden, um den aktuellen Wert der `TranslucencyMode` Enumeration abzurufen, die auf die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)angewendet wird.
