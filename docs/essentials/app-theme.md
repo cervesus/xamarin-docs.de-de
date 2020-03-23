@@ -5,16 +5,16 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 39f650a73f03888e50c6259c1052e24dbea0a4f5
-ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
+ms.openlocfilehash: e31cae6ff639dbe261599a7cf78ae31fc09318b3
+ms.sourcegitcommit: c83b55f60ece20e9163b3e587130250fdf113a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77555668"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79190313"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials: App-Design
 
-Die **RequestedTheme**-API ist Teil der [AppInfo](/app-information.md)-Klasse und liefert Informationen darüber, welches Design für Ihre ausgeführte Anwendung vom System angefordert wird.
+Die **RequestedTheme**-API ist Teil der [`AppInfo`](app-information.md)-Klasse und liefert Informationen darüber, welches Design vom System für Ihre ausgeführte Anwendung angefordert wird.
 
 ## <a name="get-started"></a>Erste Schritte
 

@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
 ms.openlocfilehash: 11ad1fb18d1263eb77ef037350a3633510934c42
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
-ms.translationtype: MT
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915679"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303822"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
-_Die navigationpage-Klasse bietet eine hierarchische Navigation, bei der der Benutzer nach Belieben durch Seiten navigieren kann. Die-Klasse implementiert die Navigation als Last-in-First-Out (LIFO)-Stapel von Seiten Objekten. In diesem Artikel wird veranschaulicht, wie die navigationpage-Klasse verwendet wird, um die Navigation in einem Stapel von Seiten auszuführen._
+_Die NavigationPage-Klasse stellt eine hierarchische Navigation bereit, bei welcher der Benutzer wie gewünscht in der Vorwärts- und in der Rückwärtsrichtung durch Seiten navigieren kann. Die Klasse implementiert die Navigation als LIFO-Stapel (Last-In-First-out) von Page-Objekten. In diesem Artikel wird gezeigt, wie die NavigationPage-Klasse verwendet werden kann, um die Navigation in einem Stapel von Seiten auszuführen._
 
 Für den Wechsel von einer auf die andere Seite überträgt eine Anwendung, wie im folgenden Diagramm dargestellt, eine neue Seite mithilfe von Push in den Navigationsstapel, wo sie dann zur aktiven Seite wird:
 
@@ -60,7 +60,7 @@ public App ()
 }
 ```
 
-Dies bewirkt, dass die `Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage) -Instanz auf den Navigations Stapel verschoben wird, wo Sie zur aktiven Seite und zur Stamm Seite der Anwendung wird. Dies wird im folgenden Screenshot veranschaulicht:
+Dies bewirkt, dass die [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Instanz `Page1Xaml` per Push auf den Navigationsstapel übertragen wird, wodurch sie zur aktiven Seite und zur Stammseite der Anwendung wird. Dies wird im folgenden Screenshot veranschaulicht:
 
 ![](hierarchical-images/mainpage.png "Root Page of Navigation Stack")
 
@@ -114,7 +114,7 @@ Dadurch wird die `Page2Xaml`-Instanz von dem Navigationsstapel entfernt, und die
 
 Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
-Die Eigenschaft [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) jeder Seite stellt zusätzlich zu den [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync)- und [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)-Methoden eine [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync)-Methode bereit, wie im folgenden Codebeispiel dargestellt:
+Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) jeder Seite stellt zusätzlich zu den [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)- und [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync)-Methoden eine [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync)-Methode bereit, wie im folgenden Codebeispiel dargestellt:
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -339,7 +339,7 @@ public class TitleViewPage : ContentPage
 
 Dies führt dazu, dass eine [`Slider`](xref:Xamarin.Forms.Slider)-Klasse in der Navigationsleiste auf der [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) angezeigt wird:
 
-[![Schieberegler-TitleView](hierarchical-images/titleview-small.png "Schieberegler-TitleView")](hierarchical-images/titleview-large.png#lightbox "Schieberegler-TitleView")
+[![TitleView für Slider](hierarchical-images/titleview-small.png "TitleView für Slider")](hierarchical-images/titleview-large.png#lightbox "TitleView für Slider")
 
 > [!IMPORTANT]
 > Viele Ansichten werden nicht in der Navigationsleiste angezeigt, es sei denn, die Größe der Ansicht wird mit den Eigenschaften [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) und [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) angegeben. Alternativ kann die Ansicht auch in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse umschlossen werden, wobei die Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) auf die entsprechenden Werte festgelegt sind.

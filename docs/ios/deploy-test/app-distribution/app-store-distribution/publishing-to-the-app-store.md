@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 3803d7e14b161a7c166bcae37e3d9f46b7637984
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 822f2ae57241cd51f9e9c4eb2b63c75d30867d83
+ms.sourcegitcommit: c83b55f60ece20e9163b3e587130250fdf113a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026635"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79190332"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Veröffentlichen von Xamarin.iOS-Apps im App Store
 
@@ -91,13 +91,13 @@ Eine ausführliche Anleitung finden Sie unter [Manuelle Bereitstellung für Xama
 
 Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debuggen** und **Release** ein. Führen Sie die folgenden Schritte durch, um einen **Releasebuild** zu konfigurieren:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Öffnen Sie **Info.plist** über den **Lösungspad**. Klicken Sie auf **Manuelle Bereitstellung**. Speichern und schließen Sie die Datei.
 2. Klicken Sie mit der rechten Maustaste auf den **Projektnamen** im **Lösungspad**, wählen Sie **Optionen** aus, und navigieren Sie dann zur Registerkarte **iOS-Build**.
 3. Legen Sie **Konfiguration** auf **Release** und **Plattform** auf **iPhone** fest.
 4. Wählen Sie ein SDK aus der **SDK-Versionsliste** aus, um den Build mit einem spezifischen iOS-SDK durchzuführen. Behalten Sie andernfalls den **Standardwert** bei.
-5. Durch Verknüpfungen können Sie die Gesamtgröße Ihrer Anwendung senken, da nicht verwendeter Code ausgeschlossen wird. In den meisten Fällen sollte das **Linkerverhalten** auf den Standardwert **Nur Framework-SDKs verknüpfen** festgelegt werden. In einigen Situationen, z.B. beim Verwenden von Drittanbieterbibliotheken, kann es erforderlich sein, diesen Wert auf **Don‘t link** (Nicht verknüpfen) festzulegen, um zu verhindern, dass notwendiger Code entfernt wird. Weitere Informationen finden Sie im Leitfaden zum [Verknüpfen von Xamarin.iOS-Apps](~/ios/deploy-test/linker.md).
+5. Durch Verknüpfungen können Sie die Gesamtgröße Ihrer Anwendung senken, da nicht verwendeter Code ausgeschlossen wird. In den meisten Fällen sollte das **Linkerverhalten** auf den Standardwert **Nur Framework-SDKs verknüpfen** festgelegt werden. Wenn Sie die Option **Keine Verknüpfung** verwenden, lehnt Apple möglicherweise die App aufgrund des Vorhandenseins nicht öffentlicher iOS-APIs in Xamarin.iOS ab, die mit der Option **Nur Framework SDKs verknüpfen** verknüpft sind. Die Option **Alle verknüpfen** sollten Sie mit Bedacht wählen, da damit Code aus allen Assemblys im Projekt, einschließlich Drittanbieterbibliotheken, entfernt wird. Es kann auch Code entfernt werden, der von der Drittanbieterbibliothek nur über Reflexion verwendet werden kann, die vom Linker nicht erkannt wird. Dieser führt statische Codeanalyse aus, um zu bestimmen, welcher Bibliothekscode verwendet wird. Verwenden Sie die Option **Alle verknüpfen** umsichtig, da Sie möglicherweise einige Klassen und/oder Methoden usw. manuell beibehalten müssen, um Laufzeitfehler durch fehlenden Code zu vermeiden. Weitere Informationen finden Sie im Leitfaden zum [Verknüpfen von Xamarin.iOS-Apps](~/ios/deploy-test/linker.md).
 6. Aktivieren Sie **PNG-Bilder optimieren**, um die Größe Ihrer Anwendung weiter zu senken.
 7. Das Debuggen sollte _nicht_ aktiviert sein, um den Build nicht unnötig zu vergrößern.
 8. Wählen Sie für iOS 11 eine Gerätearchitektur aus, die **ARM64** unterstützt. Weitere Informationen zu Builds auf 64-Bit-iOS-Geräten finden Sie im Abschnitt **Enabling 64 Bit Builds of Xamarin.iOS Apps (64-Bit-Builds in Xamarin.iOS-Apps aktiveren)** der Dokumentation [32/64 bit Platform Considerations (Überlegungen zu 32-/64-Bit-Plattformen)](~/cross-platform/macios/32-and-64/index.md).
@@ -121,13 +121,13 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
 15. Klicken Sie auf **OK**, um die Änderungen an den Projekteigenschaften zu speichern.
 
-# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 1. Stellen Sie sicher, dass Visual Studio 2019 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen**, und wählen Sie **Eigenschaften**.
 3. Navigieren Sie zur Registerkarte **iOS-Build**, und legen Sie **Konfiguration** auf **Release** und **Plattform** auf **iPhone** fest.
 4. Wählen Sie ein SDK aus der **SDK-Versionsliste** aus, um den Build mit einem spezifischen iOS-SDK durchzuführen. Behalten Sie andernfalls den **Standardwert** bei.
-5. Durch Verknüpfungen können Sie die Gesamtgröße Ihrer Anwendung senken, da nicht verwendeter Code ausgeschlossen wird. In den meisten Fällen sollte das **Linkerverhalten** auf den Standardwert **Nur Framework-SDKs verknüpfen** festgelegt werden. In einigen Situationen, z.B. beim Verwenden von Drittanbieterbibliotheken, kann es erforderlich sein, diesen Wert auf **Don‘t link** (Nicht verknüpfen) festzulegen, um zu verhindern, dass notwendiger Code entfernt wird. Weitere Informationen finden Sie im Leitfaden zum [Verknüpfen von Xamarin.iOS-Apps](~/ios/deploy-test/linker.md).
+5. Durch Verknüpfungen können Sie die Gesamtgröße Ihrer Anwendung senken, da nicht verwendeter Code ausgeschlossen wird. In den meisten Fällen sollte das **Linkerverhalten** auf den Standardwert **Nur Framework-SDKs verknüpfen** festgelegt werden. Wenn Sie die Option **Keine Verknüpfung** verwenden, lehnt Apple möglicherweise die App aufgrund des Vorhandenseins nicht öffentlicher iOS-APIs in Xamarin.iOS ab, die mit der Option **Nur Framework SDKs verknüpfen** verknüpft sind. Die Option **Alle verknüpfen** sollten Sie mit Bedacht wählen, da damit Code aus allen Assemblys im Projekt, einschließlich Drittanbieterbibliotheken, entfernt wird. Es kann auch Code entfernt werden, der von der Drittanbieterbibliothek nur über Reflexion verwendet werden kann, die vom Linker nicht erkennt wird. Dieser führt statische Codeanalyse aus, um zu bestimmen, welcher Bibliothekscode verwendet wird. Verwenden Sie die Option **Alle verknüpfen** umsichtig, da Sie möglicherweise einige Klassen und/oder Methoden usw. manuell beibehalten müssen, um Laufzeitfehler durch fehlenden Code zu vermeiden. Weitere Informationen finden Sie im Leitfaden zum [Verknüpfen von Xamarin.iOS-Apps](~/ios/deploy-test/linker.md).
 6. Aktivieren Sie **PNG-Bilder optimieren**, um die Größe Ihrer Anwendung weiter zu senken.
 7. Das Debuggen sollte nicht aktiviert sein, um den Build nicht unnötig zu vergrößern.
 8. Wählen Sie für iOS 11 eine Gerätearchitektur aus, die **ARM64** unterstützt. Weitere Informationen zu Builds auf 64-Bit-iOS-Geräten finden Sie im Abschnitt **Enabling 64 Bit Builds of Xamarin.iOS Apps (64-Bit-Builds in Xamarin.iOS-Apps aktiveren)** der Dokumentation [32/64 bit Platform Considerations (Überlegungen zu 32-/64-Bit-Plattformen)](~/cross-platform/macios/32-and-64/index.md).
@@ -150,13 +150,13 @@ Neue Xamarin.iOS-Projekte richten automatisch die _Buildkonfigurationen_ **Debug
 
 14. Speichern Sie die Buildkonfiguration, und schließen Sie sie.
 
-# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+# <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 1. Stellen Sie sicher, dass Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen**, und wählen Sie **Eigenschaften**.
 3. Navigieren Sie zur Registerkarte **iOS-Build**, und legen Sie **Konfiguration** auf **Release** und **Plattform** auf **iPhone** fest.
 4. Wählen Sie ein SDK aus der **SDK-Versionsliste** aus, um den Build mit einem spezifischen iOS-SDK durchzuführen. Behalten Sie andernfalls den **Standardwert** bei.
-5. Durch Verknüpfungen können Sie die Gesamtgröße Ihrer Anwendung senken, da nicht verwendeter Code ausgeschlossen wird. In den meisten Fällen sollte das **Linkerverhalten** auf den Standardwert **Nur Framework-SDKs verknüpfen** festgelegt werden. In einigen Situationen, z.B. beim Verwenden von Drittanbieterbibliotheken, kann es erforderlich sein, diesen Wert auf **Don‘t link** (Nicht verknüpfen) festzulegen, um zu verhindern, dass notwendiger Code entfernt wird. Weitere Informationen finden Sie im Leitfaden zum [Verknüpfen von Xamarin.iOS-Apps](~/ios/deploy-test/linker.md).
+5. Durch Verknüpfungen können Sie die Gesamtgröße Ihrer Anwendung senken, da nicht verwendeter Code ausgeschlossen wird. In den meisten Fällen sollte das **Linkerverhalten** auf den Standardwert **Nur Framework-SDKs verknüpfen** festgelegt werden. Wenn Sie die Option **Keine Verknüpfung** verwenden, lehnt Apple möglicherweise die App aufgrund des Vorhandenseins nicht öffentlicher iOS-APIs in Xamarin.iOS ab, die mit der Option **Nur Framework SDKs verknüpfen** verknüpft sind. Die Option **Alle verknüpfen** sollten Sie mit Bedacht wählen, da damit Code aus allen Assemblys im Projekt, einschließlich Drittanbieterbibliotheken, entfernt wird. Es kann auch Code entfernt werden, der von der Drittanbieterbibliothek nur über Reflexion verwendet werden kann, die vom Linker nicht erkennt wird. Dieser führt statische Codeanalyse aus, um zu bestimmen, welcher Bibliothekscode verwendet wird. Verwenden Sie die Option **Alle verknüpfen** umsichtig, da Sie möglicherweise einige Klassen und/oder Methoden usw. manuell beibehalten müssen, um Laufzeitfehler durch fehlenden Code zu vermeiden. Weitere Informationen finden Sie im Leitfaden zum [Verknüpfen von Xamarin.iOS-Apps](~/ios/deploy-test/linker.md).
 6. Aktivieren Sie **PNG-Bilder optimieren**, um die Größe Ihrer Anwendung weiter zu senken.
 7. Das Debuggen sollte nicht aktiviert sein, um den Build nicht unnötig zu vergrößern.
 8. Wählen Sie für iOS 11 eine Gerätearchitektur aus, die **ARM64** unterstützt. Weitere Informationen zu Builds auf 64-Bit-iOS-Geräten finden Sie im Abschnitt **Enabling 64 Bit Builds of Xamarin.iOS Apps (64-Bit-Builds in Xamarin.iOS-Apps aktiveren)** der Dokumentation [32/64 bit Platform Considerations (Überlegungen zu 32-/64-Bit-Plattformen)](~/cross-platform/macios/32-and-64/index.md).
@@ -202,7 +202,7 @@ Im Leitfaden [Konfigurieren einer App in iTunes Connect](~/ios/deploy-test/app-d
 
 Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes Connect auf Ihre Übermittlung wartet, können Sie Ihre App erstellen und an Apple übermitteln.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Wählen Sie in Visual Studio für Mac die Buildkonfiguration **Release** und ein Gerät (keinen Simulator) aus, für das Sie den Build durchführen möchten.
 
@@ -237,7 +237,7 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
     >
     > In [diesem Post auf Xamarin Forums](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) wird beschrieben, wie Sie diesen Fehler umgehen können.
 
-# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 > [!NOTE]
 > Das Veröffentlichen im App Store wird in Visual Studio 2019 Version 16.3 und höher unterstützt.
@@ -263,7 +263,7 @@ Sobald Sie alle erforderlichen Buildeinstellungen vorgenommen haben und iTunes C
 
     ![Screenshot: Popupfenster zur Eingabe Ihrer Apple-ID und Ihres App-spezifischen Kennworts](publishing-to-the-app-store-images/connectInfo-win.png "Screenshot: Popupfenster zur Eingabe Ihrer Apple-ID und Ihres App-spezifischen Kennworts")
 
-# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+# <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 > [!NOTE]
 > Visual Studio 2017 unterstützt den Workflow für die vollständige Veröffentlichung in Visual Studio für Mac und Visual Studio 2019 nicht.

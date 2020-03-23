@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: c7d4e4f7ea27e150752b222e3ea4ce2c4256a43a
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
+ms.sourcegitcommit: 98fdc3b4a7ef10d5b45167315dbffe94853af71a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295403"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79497042"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
@@ -44,7 +44,7 @@ var myValue = Preferences.Get("my_key", "default_value");
 So überprüfen Sie, ob ein bestimmter _Schlüssel_ in den Einstellungen vorhanden ist:
 
 ```csharp
-bool hasKey = Preferences.HasKey("my_key");
+bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
 So entfernen Sie den _Schlüssel_ aus den Einstellungen:
@@ -72,6 +72,15 @@ Die folgenden Datentypen werden in der Klasse **Preferences** unterstützt:
 - **long**
 - **string**
 - **DateTime**
+
+## <a name="integrate-with-system-settings"></a>Integrieren mit Systemeinstellungen
+
+Da Einstellungen nativ gespeichert werden, können Sie Ihre Einstellungen in die nativen Systemeinstellungen integrieren. Führen Sie die in der Dokumentation und den Beispielen der jeweiligen Plattform angegebenen Schritte aus, um die Einstellungen mit der Plattform zu integrieren:
+
+* Apple: [Implementieren eines iOS-Einstellungsbündels](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
+* [Beispiel für iOS-Anwendungseinstellungen](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [watchOS-Einstellungen](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
+* Android: [Erste Schritte mit den Einstellungen für Bildschirme](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>Implementierungsdetails
 

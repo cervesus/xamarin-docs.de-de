@@ -956,6 +956,8 @@
           href: internals/class-hierarchy.md
         - name: Abhängigkeitsauflösung
           href: internals/dependency-resolution.md
+        - name: Experimentelle Flags
+          href: internals/experimental-flags.md
         - name: Schnelle Renderer
           href: internals/fast-renderers.md
         - name: SourceLink

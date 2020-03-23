@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 3ad3661ff50ad7f4be95421de57dc5017392a59f
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 38052eee1b71ace9795f5c16bdf714f9538e353d
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "77495672"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303475"
 ---
 # <a name="platform-features"></a>Plattformfeatures
 
@@ -41,6 +41,10 @@ In Android 3.0 wurden Fragmente eingeführt, die zeigen, wie sich flexiblere En
 ## <a name="app-linking"></a>[App-Linking](~/android/platform/app-linking.md)
 
 In diesem Leitfaden wird erläutert, wie Android 6.0 _App-Linking_ unterstützt. Dies ist eine Technik, mit der mobile Apps auf URLs auf Websites reagieren können. Es wird erklärt, wie Sie App-Linking in einer Android 6.0-Anwendung implementieren, und wie Sie eine Website so konfigurieren, dass die mobile App Berechtigungen zum Behandeln von App-Links für die Domäne erhält.
+
+## <a name="androidx"></a>[AndroidX](~/android/platform/androidx.md)
+
+Dieser Artikel bietet einen Überblick über die Verwendung von AndroidX in Ihren Xamarin.Android-Projekten sowie Links zur Dokumentation für die Migration Ihrer Anwendung aus der Android-Unterstützungsbibliothek zu AndroidX.
 
 ## <a name="android-10"></a>[Android 10](~/android/platform/android-10.md)
 
