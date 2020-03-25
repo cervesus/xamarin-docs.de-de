@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/14/2020
-ms.openlocfilehash: 225b7dc7dc639031b3198a8fb9e7fe9fb9d7ee7f
-ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
+ms.openlocfilehash: a6cb5a0e3573ebf998bb2f81c08ff63c81678b54
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423875"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159807"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms"></a>XAML-Hot-Upload für xamarin. Forms
 
@@ -27,7 +27,7 @@ XAML Hot Upload wird in Ihren vorhandenen Workflow integriert, um Ihre Produktiv
 
 | IDE/Framework | Erforderliche Version |
 |------|------------------|
-|Visual Studio 2019 | 16,4 oder höher
+|Visual Studio 2019 | 16,4 oder höher
 Visual Studio 2019 für Mac | 8,4 oder höher
 Xamarin.Forms | 4,1 oder höher
 
@@ -59,7 +59,7 @@ XAML Hot Neuladen unterstützt das gleichzeitige Debuggen in Visual Studio und V
 
 ## <a name="known-limitations"></a>Bekannte Einschränkungen
 
-* Andere xamarin. Forms-Ziele, z. b. UWP und MacOS, werden noch *nicht* unterstützt. Sie können den Fortschritt der UWP-Unterstützung [hier](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)verfolgen.
+* Andere xamarin. Forms-Ziele, z. b. UWP und macOS, werden noch *nicht* unterstützt. Sie können den Fortschritt der UWP-Unterstützung [hier](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)verfolgen.
 * Sie können während einer XAML-Sitzung zum aktiven erneuten Laden keine Dateien oder nuget-Pakete hinzufügen, entfernen oder umbenennen. Wenn Sie eine Datei oder ein nuget-Paket hinzufügen oder entfernen, erstellen Sie Ihre APP erneut, und stellen Sie Sie erneut bereit.
 * Legen Sie fest, dass der Linker **nicht verknüpft** oder **verknüpft** werden soll, um eine optimale Leistung zu erzielen Die Einstellung **Link SDK only** funktioniert meistens, kann jedoch in bestimmten Fällen fehlschlagen. Die Linker-Einstellungen finden Sie in ihren Android-und IOS-Buildoptionen.
 * Das Debuggen auf einem physischen iPhone erfordert, dass der Interpreter XAML-Hot-Neuladen verwendet. Öffnen Sie hierzu die Projekteinstellungen, wählen Sie die Registerkarte IOS-Build aus, und vergewissern Sie sich, dass **die Einstellung Mono-Interpreter aktivieren** aktiviert ist. Möglicherweise müssen Sie die **Platt Form** Option oben auf der Eigenschaften Seite in **iPhone**ändern.
