@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: eb4d3d80fa416f7bb94f3137a0925a9a9807cb10
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.openlocfilehash: d8a57ac8688a0113ef267ea25fb54cbaaf562957
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480613"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070382"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms-Entwurfsmuster für Dual-Screen-Geräte
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 
 In diesem Artikel lernen Sie die empfohlenen Entwurfsmuster für Dual-Screen-Geräte kennen. Dazu werden Code und Beispiele für Schnittstellen bereitgestellt, mit denen sich attraktive und hilfreiche Benutzeroberflächen erstellen lassen.
 
@@ -270,5 +270,5 @@ Beim Begleitmuster können Sie im zweiten Bildschirm sekundären Inhalt anzeigen
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Dual-Screen-Beispiele (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+- [Dual-Screen-Beispiele (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 - [Xamarin.Forms-Features für Dual-Screen-Geräte](index.md)

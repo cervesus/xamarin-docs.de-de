@@ -6,13 +6,13 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/27/2019
-ms.openlocfilehash: fa92409b33717e528c3cfb83a24148c698836594
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 03/23/2020
+ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697147"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247599"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms-Datenbindung
 
@@ -28,7 +28,7 @@ Dazu muss das Programm über Änderungen der Ansichten und der zugrunde liegende
 
 ## <a name="the-data-binding-solution"></a>Die Lösung: Datenbindung
 
-Die Datenbindung automatisiert diesen Prozess und macht Ereignishandler überflüssig. (Ereignisse sind jedoch immer noch erforderlich, da sie von der Datenbindungsinfrastruktur verwendet werden.) Datenbindungen können entweder in Code oder in XAML implementiert werden. Sie werden häufiger in XAML verwendet, wo sie die Größe der CodeBehind-Datei deutlich verringern. Durch das Ersetzen prozeduralen Codes in Ereignishandlern durch deklarativen Code oder Markup wird die Anwendung vereinfacht und eindeutiger.
+Die Datenbindung automatisiert diesen Prozess und macht Ereignishandler überflüssig. Datenbindungen können entweder in Code oder in XAML implementiert werden. Sie werden häufiger in XAML verwendet, wo sie die Größe der CodeBehind-Datei deutlich verringern. Durch das Ersetzen prozeduralen Codes in Ereignishandlern durch deklarativen Code oder Markup wird die Anwendung vereinfacht und eindeutiger.
 
 Eines der beiden Objekte, das an einer Datenbindung beteiligt ist, ist immer ein von `View` abgeleitetes Element und ist Teil der visuellen Oberfläche einer Seite. Das andere Objekt ist eines der folgenden:
 
@@ -39,39 +39,39 @@ In Beispielprogrammen wie dem [**DataBindingDemos**](https://docs.microsoft.com/
 
 In den folgenden Artikeln wird ausführlicher auf Datenbindungen eingegangen:
 
-## <a name="basic-bindingsbasic-bindingsmd"></a>[Grundlegende Bindungen](basic-bindings.md)
+## <a name="basic-bindings"></a>[Grundlegende Bindungen](basic-bindings.md)
 
 Erfahren Sie, was ein Datenbindungsziel und eine Datenbindungsquelle von einander unterscheidet, und lernen Sie einfache Datenbindungen in Code und XAML kennen.
 
-## <a name="binding-modebinding-modemd"></a>[Bindungsmodus](binding-mode.md)
+## <a name="binding-mode"></a>[Bindungsmodus](binding-mode.md)
 
 Erfahren Sie, wie der Bindungsmodus des Datenfluss zwischen zwei Objekten bestimmen kann.
 
-## <a name="string-formattingstring-formattingmd"></a>[Formatierung von Zeichenfolgen](string-formatting.md)
+## <a name="string-formatting"></a>[Formatierung von Zeichenfolgen](string-formatting.md)
 
 Verwenden Sie eine Datenbindung, um Objekte als Zeichenfolgen zu formatieren und anzuzeigen.
 
-## <a name="binding-pathbinding-pathmd"></a>[Bindungspfad](binding-path.md)
+## <a name="binding-path"></a>[Bindungspfad](binding-path.md)
 
 Beschäftigen Sie sich ausführlicher mit der `Path`-Eigenschaft der Datenbindung, und erfahren Sie, wie Sie auf untergeordnete Eigenschaften und Collectionmembers zugreifen.
 
-## <a name="binding-value-convertersconvertersmd"></a>[Binden von Wertkonvertern](converters.md)
+## <a name="binding-value-converters"></a>[Binden von Wertkonvertern](converters.md)
 
 Verwenden Sie Bindungswertkonverter, um Werte in der Datenbindung anzupassen.
 
-## <a name="relative-bindingsrelative-bindingsmd"></a>[Relative Bindungen](relative-bindings.md)
+## <a name="relative-bindings"></a>[Relative Bindungen](relative-bindings.md)
 
 Verwenden Sie relative Bindungen, um die Bindungsquelle relativ zur Position des Bindungsziels festzulegen.
 
-## <a name="binding-fallbacksbinding-fallbacksmd"></a>[Bindungsfallbacks](binding-fallbacks.md)
+## <a name="binding-fallbacks"></a>[Bindungsfallbacks](binding-fallbacks.md)
 
 Gestalten Sie Datenbindungen widerstandfähiger, indem Sie Fallbackwerte definieren, die verwendet werden, wenn die Bindung fehlschlägt.
 
-## <a name="the-command-interfacecommandingmd"></a>[Die Befehlsschnittstelle](commanding.md)
+## <a name="the-command-interface"></a>[Die Befehlsschnittstelle](commanding.md)
 
 Implementieren Sie die `Command`-Eigenschaft mit Datenbindungen.
 
-## <a name="compiled-bindingscompiled-bindingsmd"></a>[Kompilierte Bindungen](compiled-bindings.md)
+## <a name="compiled-bindings"></a>[Kompilierte Bindungen](compiled-bindings.md)
 
 Verwenden Sie kompilierte Datenbindungen, um die Leistung von Datenbindungen zu verbessern.
 
