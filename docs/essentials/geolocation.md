@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303648"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070356"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
@@ -217,6 +217,24 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 ```
 
 Der `Location`-Konstruktor verfügt über Argumente für Breiten- und Längengrad in dieser Reihenfolge. Positive Breitengradwerte befinden sich nördlich vom Äquator und positive Längengradwerte östlich vom Nullmeridian. Verwenden Sie das letzte Argument für `CalculateDistance`, um Meilen oder Kilometer anzugeben. Die Klasse `UnitConverters` definiert außerdem die Methoden `KilometersToMiles` und `MilesToKilometers` zum Konvertieren der beiden Einheiten.
+
+## <a name="platform-differences"></a>Plattformunterschiede
+
+Die Höhe wird auf jeder Plattform anders berechnet.
+
+# <a name="android"></a>[Android](#tab/android)
+
+Unter Android wird die [Höhe](https://developer.android.com/reference/android/location/Location#getAltitude()), sofern verfügbar, in Metern über dem Referenzellipsoid WGS 84 angegeben. Wenn für diesen Standort keine Höhe angegeben ist, wird der Wert „0,0“ zurückgegeben.
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+Unter iOS wird die [Höhe](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude) in Metern gemessen. Positive Werte geben die Höhe oberhalb des Meeresspiegels an, und negative Werte stehen für die Höhe unterhalb des Meeresspiegels.
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+Bei der UWP wird die Höhe in Metern zurückgegeben. Weitere Informationen finden Sie in der Dokumentation zu [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem).
+
+-----
 
 ## <a name="api"></a>API
 
