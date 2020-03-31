@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
+ms.sourcegitcommit: 7fd88ada5b44a62390fe1a73ef08014e4d236a2d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303522"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261309"
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -27,7 +27,7 @@ Führen Sie die folgenden Schritte aus, um die App zur Veröffentlichung zu erst
 
 - **[Schützen der Anwendung](#protect_app)** : Hindern Sie Benutzer oder Angreifer daran, die Anwendung zu debuggen, zu manipulieren oder zurückzuentwickeln, indem Sie Debugging deaktivieren, den verwalteten Code verbergen, Anti-Debug- und Anti-Manipulationsmaßnahmen hinzufügen und native Kompilierung verwenden.
 
-- **[Festlegen von Paketeigenschaften](#Set_Packaging_Properties)** : Mit Paketeigenschaften wird die Erstellung des Android-Anwendungspakets (APK) gesteuert. Dieser Schritt optimiert das APK, schützt dessen Objekte und modularisiert das Paket nach Bedarf.
+- **[Festlegen von Paketeigenschaften](#Set_Packaging_Properties)** : Mit Paketeigenschaften wird die Erstellung des Android-Anwendungspakets (APK) gesteuert. Dieser Schritt optimiert das APK, schützt dessen Objekte und modularisiert das Paket nach Bedarf. Zusätzlich können Sie ein Android-App Bundle für Ihre Benutzer bereitstellen, das für deren Geräte optimiert ist.
 
 - **[Kompilieren](#Compile)** : In diesem Schritt werden Code und Ressourcen kompiliert, um das Erstellen im Releasemodus sicherzustellen.
 
@@ -268,6 +268,16 @@ Wenn die Option **Multi-Dex aktivieren** aktiviert ist, werden die Android SDK T
 Es ist möglich, dass eine App nicht jede Methode in jeder Bibliothek verwendet, auf die verwiesen wird. Daher ist es möglich, dass ein Tool wie ProGuard (siehe oben) die nicht verwendeten Methoden aus dem Code entfernen kann. Die bewährte Methode ist, die Option **Multi-Dex aktivieren** nur zu aktivieren, wenn dies unbedingt notwendig ist. D.h., dass die App selbst nach der Verwendung von ProGuard noch auf mehr als 65K Java-Methoden verweist.
 
 Weitere Informationen zu Multi-Dex finden Sie unter [Configure Apps with Over 64K Methods (Konfigurieren von Apps, die mehr als 65535 Methoden enthalten)](https://developer.android.com/tools/building/multidex.html).
+
+### <a name="android-app-bundles"></a>Android-App Bundles
+
+App Bundles unterscheiden sich von Android-Anwendungspaketen (APKs), da sie nicht direkt auf einem Gerät bereitgestellt werden können. Stattdessen handelt es sich eher um ein Format, das mit Ihrem gesamten kompilierten Code und Ihren Ressourcen hochgeladen werden soll. Nachdem Sie das signierte App Bundle hochgeladen haben, steht für Google Play alles zur Verfügung, was benötigt wird, um die APKs Ihrer Anwendung zu erstellen und zu signieren und sie Ihren Benutzern über dynamische Bereitstellung zur Verfügung zu stellen.
+
+Wenn Sie möchten, dass Android-App Bundles unterstützt werden, müssen Sie in den Optionen Ihres Android-Projekts die **Android Package Format**-Eigenschaft auf den Wert `bundle` festlegen. Sorgen Sie zuvor dafür, dass Sie Ihr Projekt in eine `Release`-Konfiguration ändern, da App Bundles nur für Releasepakete vorgesehen sind.
+
+Sie können nun ein App Bundle erstellen, indem Sie den [Archivierungsflow](#archive) befolgen. Dadurch wird ein App Bundle für Ihre Anwendung erstellt.
+
+Weitere Informationen zu Android-App Bundles finden Sie unter [Informationen zu Android-App Bundles](https://developer.android.com/guide/app-bundle/).
 
 <a name="Compile" />
 

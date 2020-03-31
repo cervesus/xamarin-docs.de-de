@@ -6,13 +6,13 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2019
-ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 03/23/2020
+ms.openlocfilehash: 712ca4f8f3441e0d3c2aede1b2510b07ca89f829
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487008"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247612"
 ---
 # <a name="customizing-a-webview"></a>Anpassen eines WebView-Elements
 
@@ -268,6 +268,15 @@ namespace CustomRenderer.iOS
         {
             ((HybridWebView)Element).InvokeAction(message.Body.ToString());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -282,8 +291,8 @@ Diese Funktionalität erreichen sie folgendermaßen:
 - Der Rendererkonstruktor ruft die [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String))-Methode auf, um einen Skriptmeldungshandler namens `invokeAction` zum [`WKUserContentController`](xref:WebKit.WKUserContentController)-Objekt hinzuzufügen, wodurch die JavaScript-Funktion `window.webkit.messageHandlers.invokeAction.postMessage(data)` in allen `WebView`-Instanzen in allen Frames definiert wird, die das `WKUserContentController`-Objekt verwenden.
 - Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird, werden die folgenden Vorgänge durchgeführt:
   - Die [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest))-Methode lädt die HTML-Datei, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird. Der Code gibt an, dass die Datei im `Content`-Ordner des Projekts gespeichert wird. Wenn die Webseite angezeigt wird, wird die JavaScript-Funktion `invokeCSharpAction` auf dieser eingefügt.
-- Wenn sich das Element ändert, an das der Renderer angefügt ist, geschieht Folgendes:
-  - Ressourcen werden freigegeben.
+- Ressourcen werden freigegeben, wenn das Element geändert wird, an das der Renderer angefügt ist.
+- Das Xamarin.Forms-Element wird bereinigt, wenn der Renderer entfernt wird.
 
 > [!NOTE]
 > Die `WKWebView`-Klasse wird nur unter iOS 8 oder höher unterstützt.
@@ -332,6 +341,15 @@ namespace CustomRenderer.Droid
                 Control.LoadUrl($"file:///android_asset/Content/{((HybridWebView)Element).Uri}");
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -363,8 +381,8 @@ Wenn der Benutzer seinen Namen eingibt und auf das HTML-`button`-Element klickt,
   - Die [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*)-Methode fügt eine neue `JSBridge`-Instanz im Hauptframe des JavaScript-Kontexts des WebView-Objekts hinzu und nennt diese `jsBridge`. So kann auf Methoden in der `JSBridge`-Klasse über JavaScript zugegriffen werden.
   - Die [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*)-Methode lädt die HTML-Datei, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird. Der Code gibt an, dass die Datei im `Content`-Ordner des Projekts gespeichert wird.
   - In der `JavascriptWebViewClient`-Klasse wird die JavaScript-Funktion `invokeCSharpAction` auf der Webseite eingefügt, sobald die Seite vollständig geladen wurde.
-- Wenn sich das Element ändert, an das der Renderer angefügt ist, geschieht Folgendes:
-  - Ressourcen werden freigegeben.
+- Ressourcen werden freigegeben, wenn das Element geändert wird, an das der Renderer angefügt ist.
+- Das Xamarin.Forms-Element wird bereinigt, wenn der Renderer entfernt wird.
 
 Wenn die JavaScript-Funktion `invokeCSharpAction` ausgeführt wird, ruft diese wiederum die `JSBridge.InvokeAction`-Methode auf. Dies wird in folgendem Codebeispiel veranschaulicht:
 
@@ -441,6 +459,15 @@ namespace CustomRenderer.UWP
         {
             ((HybridWebView)Element).InvokeAction(e.Value);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -452,8 +479,8 @@ Diese Funktionalität erreichen sie folgendermaßen:
 - Wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird, werden die folgenden Vorgänge durchgeführt:
   - Ereignishandler für die Ereignisse `NavigationCompleted` und `ScriptNotify` werden registriert. Das Ereignis `NavigationCompleted` wird ausgelöst, wenn das native `WebView`-Steuerelement den aktuellen Inhalt vollständig geladen hat oder wenn es beim Navigieren einen Fehler gab. Das Ereignis `ScriptNotify` wird ausgelöst, wenn der Inhalt des nativen `WebView`-Steuerelements JavaScript verwendet, um eine Zeichenfolge an die Anwendung zu übergeben. Die Webseite löst das Ereignis `ScriptNotify` aus, indem sie `window.external.notify` aufruft, während sie einen `string`-Parameter übergibt.
   - Die `WebView.Source`-Eigenschaft wird auf den URI der HTML-Datei festgelegt, die von der `HybridWebView.Uri`-Eigenschaft angegeben wird. Der Code geht davon aus, dass die Datei im `Content`-Ordner des Projekts gespeichert wird. Wenn die Webseite angezeigt wird, wird das Ereignis `NavigationCompleted` ausgelöst und die `OnWebViewNavigationCompleted`-Methode aufgerufen. Die JavaScript-Funktion `invokeCSharpAction` wird dann mit der `WebView.InvokeScriptAsync`-Methode auf der Webseite eingefügt, wenn die Navigation erfolgreich abgeschlossen wurde.
-- Wenn sich das Element ändert, an das der Renderer angefügt ist, geschieht Folgendes:
-  - Ereignisabonnements werden aufgehoben.
+- Das Abonnement des Ereignisses wird nur gekündigt, wenn das Element geändert wird, an das der Renderer angefügt ist.
+- Das Xamarin.Forms-Element wird bereinigt, wenn der Renderer entfernt wird.
 
 ## <a name="related-links"></a>Verwandte Links
 
