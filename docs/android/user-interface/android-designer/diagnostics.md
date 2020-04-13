@@ -1,67 +1,67 @@
 ---
-title: Android-layoutdiagnose
-description: Erläutert die Android-layoutdiagnose und den Einstieg
+title: Android Layout-Diagnose
+description: Erläutert die Android-Layoutdiagnose und den Einstieg
 ms.prod: xamarin
 ms.assetid: BD252EA7-7E69-4DB4-96AB-D52CC0510C8F
 ms.technology: xamarin-android
 author: decriptor
 ms.author: stepsha
 ms.date: 03/24/2020
-ms.openlocfilehash: 5c29a1a80d8c1f599f0bbc750d22d8334ddb3494
-ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
+ms.openlocfilehash: 746f74e68fa4816f1f7979980af9506dc0173542
+ms.sourcegitcommit: 765b69ed451a0f48625ea597c3f39de95f3ae693
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80247815"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987581"
 ---
-# <a name="android-layout-diagnostics"></a>Android-layoutdiagnose
+# <a name="android-layout-diagnostics"></a>Android-Layout-Diagnose
 
-Die Android-layoutdiagnose wurde entwickelt, um die Qualität von Android-Layoutdateien zu verbessern, indem allgemeine Qualitätsprobleme und hilfreiche Optimierungen hervorgehoben werden. Diese Funktion ist sowohl für Visual Studio 16.5 + als auch für Visual Studio für Mac 8.5 + verfügbar.
+Android-Layout-Diagnose wurde entwickelt, um die Qualität von Android-Layout-Dateien zu verbessern, indem allgemeine Qualitätsprobleme und hilfreiche Optimierungen hervorgehoben werden. Diese Funktion ist sowohl für Visual Studio 16.5+ als auch für Visual Studio für Mac 8.5+ verfügbar.
 
-Ein Standardsatz von Analyzern wird für eine Vielzahl von Problemen bereitgestellt, die jeweils angepasst werden können, um die spezifischen Anforderungen eines Projekts abzudecken. Die Analysen basieren auf dem Android-linting-System locker.
+Für eine Vielzahl von Problemen wird ein Standardsatz von Analysatoren bereitgestellt, der an die spezifischen Anforderungen eines Projekts angepasst werden kann. Die Analysatoren basieren lose auf dem Android-Linting-System.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-## <a name="enable-android-layout-diagnostics-on-visual-studio-2019"></a>Aktivieren der Android-layoutdiagnose in Visual Studio 2019
+## <a name="enable-android-layout-diagnostics-on-visual-studio-2019"></a>Android-Layoutdiagnose in Visual Studio 2019 aktivieren
 
-Stellen Sie sicher, dass die layoutdiagnose-Einstellung **layoutdiagnose aktivieren**aktiviert ist. Um auf diese Optionsseite zuzugreifen, wählen Sie Extras > **Optionen**aus, und **Wählen Sie dann** **Text-Editor** > **Android-XML** - > **erweitert**:
+Stellen Sie sicher, dass die Einstellung für die Layoutdiagnose aktiviert ist, **Layoutdiagnose aktivieren.** Um auf diese Optionsseite zuzugreifen, wählen Sie > **Extraoptionen**aus, und wählen Sie dann **Texteditor** > **Android XML** >  **Tools****Advanced**:
 
-![Dialogfeld "Optionen" zum Aktivieren der Diagnose Option](diagnostics-images/AndroidDiagnosticsEnableOption.png)
+![Dialogmitenfeld Optionen zum Aktivieren der Diagnoseoption](diagnostics-images/AndroidDiagnosticsEnableOption.png)
 
-Nach der Aktivierung zeigt der Android-Layouteditor Probleme an:
+Sobald der Android-Layout-Editor aktiviert ist, werden folgende Probleme angezeigt:
 
-![Aktivieren der Android-Diagnose in Visual Studio 2019](diagnostics-images/AndroidDiagnosticsEnabled.png)
+![Android-Diagnose in Visual Studio 2019 aktiviert](diagnostics-images/AndroidDiagnosticsEnabled.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-## <a name="enable-android-layout-diagnostics-on-visual-studio-for-mac"></a>Android-layoutdiagnose auf Visual Studio für Mac aktivieren
+## <a name="enable-android-layout-diagnostics-on-visual-studio-for-mac"></a>Android-Layoutdiagnose auf Visual Studio für Mac aktivieren
 
-Stellen Sie sicher, dass die layoutdiagnose-Einstellung **layoutdiagnose aktivieren**aktiviert ist. Um auf diese Optionsseite zuzugreifen, wählen Sie **Visual Studio** > **Einstellungen...** , und wählen Sie dann **Text-Editor** > **Android-XML**aus:
+Stellen Sie sicher, dass die Einstellung für die Layoutdiagnose aktiviert ist, **Layoutdiagnose aktivieren.** Um auf diese Optionsseite zuzugreifen, wählen Sie Visual > **Studio-Einstellungen...** aus, und wählen Sie dann **Texteditor** > **Android XML**: **Visual Studio**
 
-![Dialogfeld "Einstellungen" mit dem Aktivieren der Diagnose Option](diagnostics-images/AndroidDiagnosticsEnableOptionVSmac.png)
+![Dialog mit den Einstellungen, in dem die Diagnoseoption aktiviert wird](diagnostics-images/AndroidDiagnosticsEnableOptionVSmac.png)
 
-Nach der Aktivierung zeigt der Android-Layouteditor Probleme an:
+Sobald der Android-Layout-Editor aktiviert ist, werden folgende Probleme angezeigt:
 
-![Android-Diagnose auf Visual Studio für Mac aktiviert](diagnostics-images/AndroidDiagnosticsEnabledVSmac.png)
+![Android-Diagnose in Visual Studio für Mac aktiviert](diagnostics-images/AndroidDiagnosticsEnabledVSmac.png)
 
 -----
 
 ## <a name="features"></a>Features
 
-In den folgenden Abschnitten werden die verfügbaren Funktionen in der Android-layoutdiagnose erläutert.
+In den folgenden Abschnitten werden die verfügbaren Funktionen in der Android-Layoutdiagnose beschrieben.
 
-### <a name="analyzers"></a>Analysemodule
+### <a name="analyzers"></a>Analyzer
 
-Analyzers werden verwendet, um Probleme in Layoutdateien zu erkennen. Einige Möglichkeiten sind das reduzieren hart codierter Werte, das Verbessern der Leistung und das Kennzeichnen von Fehlern.
+Analyzer werden verwendet, um Probleme in Layoutdateien zu erkennen, hartcodierte Werte zu reduzieren, die Leistung zu verbessern und Fehler zu kennzeichnen. Eine Liste der Analysatoren finden Sie unter [Android Designer-Diagnoseanalysatoren](diagnostic-analyzers.md)
 
-### <a name="diagnostic-configuration"></a>Diagnose Konfiguration
+### <a name="diagnostic-configuration"></a>Diagnosekonfiguration
 
-Analyzers können mithilfe einer XML-Datei konfiguriert werden, die es Ihnen ermöglicht, den Standard Schweregrad zu ändern, bestimmte Dateien zu ignorieren und Variablen zu übergeben.
+Analyzer können mithilfe einer XML-Datei konfiguriert werden, sodass Sie den Standardschweregrad ändern, bestimmte Dateien ignorieren und Variablen übergeben können.
 
-Sie können eine Baselineversion verwenden, wenn Sie über eine Reihe von Konfigurationen verfügen, die Sie für mehrere Android-Apps freigeben möchten. Um dieses Feature zu verwenden, erstellen Sie eine neue Konfigurationsdatei, und fügen Sie `-baseline` an den Dateinamen an. Zuerst werden die Basis Linien Konfigurationen und dann die restlichen Konfigurationsdateien angewendet.
+Sie können eine Basisdatei verwenden, wenn Sie über eine Reihe von Konfigurationen verfügen, die Sie für mehrere Android-Apps freigeben möchten. Um diese Funktion zu verwenden, erstellen `-baseline` Sie eine neue Konfigurationsdatei und fügen Sie den Dateinamen an. Die Basiskonfigurationen werden zuerst und dann die verbleibenden Konfigurationsdateien angewendet.
 
 > [!TIP]
-> Dies kann hilfreich sein, wenn Sie eine Reihe von Problemen in einer neuen oder vorhandenen Android-App ignorieren möchten.
+> Dies kann nützlich sein, wenn Sie eine Reihe von Problemen in einer neuen oder vorhandenen Android-App ignorieren möchten.
 
 Das Format lautet:
 
@@ -85,7 +85,7 @@ Das Format lautet:
 ```
 
 > [!NOTE]
-> Zurzeit sind die einzigen Variablen `MAX_VIEW_COUNT` (Standard: 80) und `MAX_DEPTH` (Standardwert: 10) für `TooManyViews` und `TooDeepLayout`.
+> Derzeit `MAX_VIEW_COUNT` sind die einzigen Variablen (Standard: 80) `MAX_DEPTH` und `TooManyViews` `TooDeepLayout` (Standard: 10) für bzw..
 
 Die Schweregrade lauten:
 
@@ -97,49 +97,49 @@ Die Schweregrade lauten:
 
 ### <a name="add-a-configuration-file"></a>Hinzufügen einer Konfigurationsdatei
 
-Erstellen Sie eine neue XML-Datei im Stammverzeichnis eines Android-App-Projekts. Der Name der Datei ist nicht wichtig, aber in diesem Beispiel wird `AndroidLayoutDiagnostics.xml`verwendet:
+Erstellen Sie eine neue XML-Datei im Stammverzeichnis eines Android-App-Projekts. Der Name der Datei ist nicht wichtig, `AndroidLayoutDiagnostics.xml`aber in diesem Beispiel wird verwendet:
 
 ![Neues Element hinzufügen](diagnostics-images/AndroidDiagnosticsNewFileDialog.png)
 
-Nachdem die neue XML-Datei hinzugefügt wurde, sollte Sie in der Android-App-Projektstruktur angezeigt werden:
+Sobald die neue XML-Datei hinzugefügt wurde, sollte sie in der Android-App-Projektstruktur angezeigt werden:
 
-![Android-App-Projektstruktur](diagnostics-images/AndroidDiagnosticsFileAddToTree.png)
+![Android App Projektbaum](diagnostics-images/AndroidDiagnosticsFileAddToTree.png)
 
-Stellen Sie sicher, dass die Buildaktion im Eigenschaften Panel auf **androidresourceanalysisconfig** festgelegt ist.
-Die einfachste Möglichkeit zum Abrufen des Eigenschaften Panels für die neue Datei besteht darin, mit der rechten Maustaste auf die Datei zu klicken und Eigenschaften auszuwählen. Nachdem der Eigenschaften Bereich angezeigt wird, müssen Sie die **Buildaktion** in **androidresourceanalysisconfig**ändern:
+Stellen Sie sicher, dass die Buildaktion im Eigenschaftenbedienfeld auf **AndroidResourceAnalysisConfig** festgelegt ist.
+Die einfachste Möglichkeit, das Eigenschaftenfenster für die neue Datei hochzuziehen, besteht darin, mit der rechten Maustaste auf die Datei zu klicken und Eigenschaften auszuwählen. Sobald das Eigenschaftenbedienfeld angezeigt wird, sollten Sie die **Buildaktion** in **AndroidResourceAnalysisConfig**ändern:
 
-![Buildaktion in Element Eigenschaften festlegen](diagnostics-images/AndroidDiagnosticsSetBuildAction.png)
+![Festlegen der Buildaktion in Elementeigenschaften](diagnostics-images/AndroidDiagnosticsSetBuildAction.png)
 
-Nachdem Sie nun über eine leere XML-Datei verfügen, müssen Sie das `<configuration>` root-Element hinzufügen. An diesem Punkt können Sie das Standardverhalten aller unterstützten Probleme anpassen.
-Wenn Sie sicherstellen möchten, dass hart codierte Zeichen folgen als Fehler behandelt werden, fügen Sie Folgendes hinzu:
+Nachdem Sie nun über eine leere XML-Datei verfügen, müssen Sie das `<configuration>` Stammelement hinzufügen. An diesem Punkt können Sie das Standardverhalten aller unterstützten Probleme anpassen.
+Wenn Sie sicherstellen möchten, dass hartcodierte Zeichenfolgen als Fehler behandelt werden, fügen Sie hinzu:
 
 ```xml
 <issue="HardcodedText" severity="error">
 </issue>
 ```
 
-![Diagnose Konfigurationsdatei](diagnostics-images/AndroidDiagnosticsConfigurationFileExample.png)
+![Diagnosekonfigurationsdatei](diagnostics-images/AndroidDiagnosticsConfigurationFileExample.png)
 
-Da der hart codierte Text nun als Fehler betrachtet wird, wird er nun mit einer roten Wellenlinie im Layout-Editor gekennzeichnet:
+Da hartcodierter Text als Fehler betrachtet wird, wird er nun im Layout-Editor mit einem roten Wellenschalter gekennzeichnet:
 
-![Layout mithilfe der Diagnose Konfiguration](diagnostics-images/AndroidDiagnosticsUsingConfiguration.png)
+![Layout mit Diagnosekonfiguration](diagnostics-images/AndroidDiagnosticsUsingConfiguration.png)
 
 > [!NOTE]
-> Damit neue Änderungen an der Konfigurationsdatei wirksam werden, müssen alle momentan geöffneten Layoutdateien erneut geöffnet werden.
+> Damit neue Konfigurationsdateiänderungen wirksam werden, müssen alle derzeit geöffneten Layoutdateien erneut geöffnet werden.
 >
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Im folgenden finden Sie einige mögliche häufige Probleme.
+Hier sind einige mögliche häufige Probleme.
 
-- Stellen Sie sicher, dass kein XML-Format Fehler vorliegt.
-- Die Buildaktion ist auf " **androidresourceanalysisconfig**" ordnungsgemäß festgelegt.
+- Stellen Sie sicher, dass kein XML-Formatfehler vorliegt.
+- Die Buildaktion ist korrekt auf **AndroidResourceAnalysisConfig**festgelegt.
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-- Das fehlerpad wird erst aufgefüllt, wenn die Datei zum ersten Mal geändert wird.
+- Das Fehlerfeld wird erst aufgefüllt, nachdem die Datei zum ersten Mal geändert wurde.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Android-lint-Prüfungen](http://tools.android.com/tips/lint-checks)
-- [Verbessern Sie Ihren Code mit lint-Überprüfungen](https://developer.android.com/studio/write/lint)
+- [Android Lint-Prüfungen](http://tools.android.com/tips/lint-checks)
+- [Verbessern Sie Ihren Code mit Lint-Checks](https://developer.android.com/studio/write/lint)

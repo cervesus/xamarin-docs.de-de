@@ -1,57 +1,57 @@
 ---
-title: Erkennen des dunklen Modus in xamarin. Forms-Anwendungen
-description: Der dunkle Modus kann in jeder xamarin. Forms-Anwendung unterstützt werden, die eine Kombination aus resourcewörterbüchern, dynamikresources und Platt Form Kenntnissen verwendet.
+title: Erkennen des dunklen Modus in Xamarin.Forms-Anwendungen
+description: Der dunkle Modus kann in jeder Xamarin.Forms-Anwendung mithilfe einer Kombination aus ResourceDictionaries, DynamicResources und Plattformwissen unterstützt werden.
 ms.prod: xamarin
 ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
 ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2020
-ms.openlocfilehash: 104237155797ca90c52ad385e8349480f9666c4c
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 7fe1a98e6a497a5791f26df2fc96d41781b71ef6
+ms.sourcegitcommit: b93754b220fca3d6e3d131341e3cfbe233d10f84
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303501"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80628316"
 ---
-# <a name="detect-dark-mode-in-xamarinforms-applications"></a>Erkennen des dunklen Modus in xamarin. Forms-Anwendungen
+# <a name="detect-dark-mode-in-xamarinforms-applications"></a>Erkennen des dunklen Modus in Xamarin.Forms-Anwendungen
 
-Xamarin. Forms-Anwendungen können auf Änderungen des Betriebssystem Designs reagieren, indem Sie die gleiche Strategie verwenden, die es Ihnen ermöglicht, Designs [zu unterstützen](theming.md). Der Hauptunterschied besteht darin, wie die Änderung des Designs ausgelöst wird. Der dunkle Modus bezieht sich auf einen umfassenderen Satz von Darstellungs Einstellungen, die auf Betriebssystemebene festgelegt werden können, und auf welche Anwendungen sofort geachtet werden soll.
+Xamarin.Forms-Anwendungen können auf Änderungen des Betriebssystemdesigns reagieren, indem sie dieselbe Strategie verwenden, mit der Sie [die Themenbildung](theming.md)unterstützen können. Der Hauptunterschied besteht darin, wie der Themenwechsel ausgelöst wird. Der dunkle Modus bezieht sich auf einen breiteren Satz von Darstellungseinstellungen, die auf Betriebssystemebene festgelegt werden können und von denen erwartet wird, dass sie diese sofort respektieren und darauf reagieren.
 
-Die Mindestanforderungen für die Verwendung des dunklen Modus in ihren xamarin. Forms-Anwendungen lauten:
+Die Mindestanforderungen für die Verwendung des dunklen Modus in Ihren Xamarin.Forms-Anwendungen sind:
 
-- IOS 13 oder höher.
-- Android 9 oder höher (Android 9 unterstützt Darstellungsmodi, die Sie Abfragen können).
-- Android 10 oder höher (Android 10 benachrichtigt Apps über Änderungen im Modus).
-- UWP v 10.0.10240.0 oder höher.
-- Xamarin. Forms (beliebige Version).
+- iOS 13 oder höher.
+- Android 9 oder höher (Android 9 unterstützt Darstellungsmodi, die Sie abfragen können).
+- Android 10 oder höher (Android 10 benachrichtigt Apps über Modusänderungen).
+- UWP v10.0.10240.0 oder höher.
+- Xamarin.Forms (jede Version).
 
-Der Prozess der Unterstützung von Darstellungsmodi, einschließlich hell und dunkel, sieht wie folgt aus:
+Der Prozess der Unterstützung der Darstellungsmodi, einschließlich hell und dunkel, ist wie folgt:
 
-1. Definieren von Ressourcen, die von der gesamten Anwendung in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)freigegeben werden.
-2. Definieren Sie ein Ressourcenverzeichnis Design für jeden Darstellungs Modus, der außer Kraft setzungen für jedes Format bereitstellt, das Sie ändern möchten.
-3. Legen Sie in der Datei **app. XAML** der Anwendung das standardmäßige Darstellungs Modus-Design fest.
-4. Formatieren Sie Ihre Anwendung mit der `DynamicResource` Markup Erweiterung, in der Stile bei Änderung der Darstellungsmodi reagieren sollen.
-5. Fügen Sie Code hinzu, um auf Betriebssystem-Designänderungen zu lauschen, und laden Sie das entsprechende Design Ihrer Anwendung.
+1. Definieren Sie Ressourcen, die [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)von der gesamten Anwendung in einer freigegeben werden.
+2. Definieren Sie für jeden Darstellungsmodus ein Ressourcenwörterbuchdesign, das über schrieben, welche Überschreibungen für jeden Stil, den Sie ändern möchten, spezifisch sind.
+3. Legen Sie das Standardmäßige Darstellungsmodus-Design in der **App.xaml-Datei** Ihrer Anwendung fest.
+4. Stylen Sie `DynamicResource` Ihre Anwendung mit der Markuperweiterung, in der Stile reagieren sollen, wenn sich die Darstellungsmodi ändern.
+5. Fügen Sie Code hinzu, um auf Änderungen des Betriebssystemdesigns zu warten, und laden Sie das entsprechende Design Ihrer Anwendung.
 
-Die folgenden Screenshots zeigen Design Seiten für den hellen und den dunklen Modus:
+Die folgenden Screenshots zeigen Themenseiten für den hellen und dunklen Modus:
 
-[![Screenshot der Hauptseite einer Designs-app unter IOS und Android](theming-images/main-page-both-themes.png "Hauptseite der App Thema")](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der App Thema")
-[ ![Screenshot der Detailseite einer Designs-app unter IOS und Android](theming-images/detail-page-both-themes.png "Detail Seite der APP mit Design")](theming-images/detail-page-both-themes-large.png#lightbox "Detail Seite der APP mit Design")
+[![Screenshot der Hauptseite einer Themen-App, auf iOS und Android](theming-images/main-page-both-themes.png "Hauptseite der Themen-App")](theming-images/main-page-both-themes-large.png#lightbox "Hauptseite der Themen-App")
+[![Screenshot der Detailseite einer Thematischen App, auf iOS und Android](theming-images/detail-page-both-themes.png "Detailseite der Themen-App")](theming-images/detail-page-both-themes-large.png#lightbox "Detailseite der Themen-App")
 
-## <a name="define-themes"></a>Definieren von Designs
+## <a name="define-themes"></a>Definieren von Themen
 
-Befolgen Sie das Design [Handbuch](theming.md) , um ausführliche Informationen zum Erstellen von dunklen und hellen Designs zu erhalten. 
+Folgen Sie der [Themenanleitung](theming.md) für Schritt für Schritt Details über das Erstellen von dunklen und hellen Themen.
 
-Sie können ein neues Design für Ihre Anwendung ganz einfach an der entsprechenden Stelle des Platt Form Codes festlegen. Zum Laden eines neuen Designs ersetzen Sie einfach das aktuelle Ressourcen Wörterbuch der Anwendung durch ein Ressourcen Wörterbuch mit einem Design Ihrer Wahl:
+Sie können ganz einfach ein neues Design für Ihre Anwendung am entsprechenden Speicherort Ihres Plattformcodes festlegen. Um ein neues Design zu laden, ersetzen Sie einfach das aktuelle Ressourcenwörterbuch der Anwendung durch ein thematisches Ressourcenwörterbuch Ihrer Wahl:
 
 ```csharp
 App.Current.Resources = new YourDarkTheme();
 ```
 
-## <a name="detect-and-apply-theme"></a>Design erkennen und anwenden
+## <a name="detect-and-apply-theme"></a>Erkennen und Anwenden von Thema
 
-Das aktuelle Design kann mithilfe des [`RequestedTheme`](~/essentials/app-theme.md) Features von [xamarin. Essentials](~/essentials/index.md) (Version 1.4.0 oder neuer) erkannt werden. Anschließend können Sie eine Hilfsmethode in einer neuen Klasse oder in der `App`-Klasse erstellen, um das Design zu konfigurieren:
+Die Erkennung des aktuell ausgeführten Themas [`RequestedTheme`](~/essentials/app-theme.md) kann mit der Funktion [von Xamarin.Essentials](~/essentials/index.md) (Version 1.4.0 oder neuer) erreicht werden. Anschließend können Sie eine Hilfsmethode in einer `App` neuen Klasse oder in der Klasse erstellen, um das Design zu konfigurieren:
 
 ```csharp
 public partial class App : Application
@@ -60,37 +60,37 @@ public partial class App : Application
     {
         if (AppInfo.RequestedTheme == AppTheme.Dark)
         {
-            // change to light theme
-            // e.g. App.Current.Resources = new YourLightTheme();
+            // Change to dark theme
+            // e.g. App.Current.Resources = new YourDarkTheme();
         }
         else
         {
-            // change to dark theme
-            // e.g. App.Current.Resources = new YourDarkTheme();
+            // Change to light theme
+            // e.g. App.Current.Resources = new YourLightTheme();
         }
     }
 }
 ```
 
-## <a name="react-to-appearance-mode-changes"></a>Reagieren auf Änderungen im Darstellungs Modus
+## <a name="react-to-appearance-mode-changes"></a>Reagieren auf Änderungen des Darstellungsmodus
 
-Der Darstellungs Modus auf einem Gerät kann sich aus verschiedenen Gründen ändern, je nachdem, wie der Benutzer seine Einstellungen konfiguriert hat, einschließlich der expliziten Auswahl eines Modus, der Tageszeit oder der Umgebungsfaktoren (z. b. niedriger Beleuchtung). Sie müssen Platt Form Code hinzufügen, um sicherzustellen, dass Ihre Anwendung auf diese Änderungen reagieren kann. in den folgenden Abschnitten wird dies ausführlicher erläutert.
+Der Darstellungsmodus auf einem Gerät kann sich aus einer Vielzahl von Gründen ändern, je nachdem, wie der Benutzer seine Einstellungen konfiguriert hat, einschließlich der expliziten Auswahl eines Modus, einer Tageszeit oder Umgebungsfaktoren wie Lichtmangel. Sie müssen Plattformcode hinzufügen, um sicherzustellen, dass Ihre Anwendung auf diese Änderungen reagieren kann, und in den folgenden Abschnitten wird dies ausführlicher erläutert.
 
 ### <a name="android"></a>Android
 
-Um den dunklen Modus in Ihrer APP zu unterstützen, müssen Sie das Design Ihrer APP aktualisieren, das in `Resources/values/styles.xml`gefunden werden kann, um von einem `DayNight` Design zu erben:
+Um den dunklen Modus in Ihrer App zu unterstützen, müssen Sie `Resources/values/styles.xml`das Design Ihrer `DayNight` App aktualisieren, das in zu finden ist, um von einem Design zu erben:
 
 ```xml
 <style name="MainTheme.Base" parent="Theme.AppCompat.DayNight">
 ```
 
-Wenn Sie ein Upgrade auf die [Material Komponenten](https://www.nuget.org/packages/Xamarin.Google.Android.Material/) von androidx (1.1.0-rc2) oder neuer durchgeführt haben, können Sie Folgendes verwenden:
+Wenn Sie ein Upgrade auf die [Materialkomponenten](https://www.nuget.org/packages/Xamarin.Google.Android.Material/) von AndroidX (1.1.0-rc2) oder neuer durchgeführt haben, können Sie:
 
 ```xml
 <style name="MainTheme.Base" parent="Theme.MaterialComponents.DayNight">
 ```
 
-Fügen Sie in der **MainActivity.cs** -Datei Ihrer Anwendung der Eigenschaft `ConfigurationChanges` im `Activity`-Attribut das `ConfigChanges.UiMode`-Feld hinzu, damit Ihre APP über Änderungen im Benutzeroberflächen Modus benachrichtigt wird:
+Fügen Sie das **MainActivity.cs** `ConfigChanges.UiMode` Feld in der MainActivity.cs `ConfigurationChanges` Datei `Activity` Ihrer Anwendung der Eigenschaft im Attribut hinzu, damit Ihre App über Änderungen im UI-Modus benachrichtigt wird:
 
 ```csharp
 [Activity(
@@ -98,7 +98,7 @@ Fügen Sie in der **MainActivity.cs** -Datei Ihrer Anwendung der Eigenschaft `Co
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode)]
 ```
 
-Überschreiben Sie in derselben Datei **MainActivity.cs** die `OnConfigurationChanged`-Methode:
+Überschreiben **MainActivity.cs** Sie in derselben `OnConfigurationChanged` MainActivity.cs Datei die Methode:
 
 ```csharp
 public override void OnConfigurationChanged(Configuration newConfig)
@@ -110,7 +110,7 @@ public override void OnConfigurationChanged(Configuration newConfig)
 
 ### <a name="ios"></a>iOS
 
-Unter IOS werden Änderungen im Darstellungs Modus über den UIViewController benachrichtigt, der in xamarin. Forms das `ContentPage`ist. Um diese Methode zu überschreiben, erstellen Sie im IOS-Projekt einen benutzerdefinierten Renderer namens `PageRenderer.cs`:
+Unter iOS werden Änderungen des Darstellungsmodus auf dem UIViewController benachrichtigt, der in Xamarin.Forms die `ContentPage`ist. Um diese Methode zu überschreiben, erstellen Sie in Ihrem `PageRenderer.cs`iOS-Projekt einen benutzerdefinierten Renderer namens:
 
 ```csharp
 using System;
@@ -152,11 +152,11 @@ namespace YourApp.iOS.Renderers
 }
 ```
 
-Wenn Sie die `TraitCollectionDidChange`-Methode überschreiben, können Sie auf eine `UserInterfaceStyle` Änderung reagieren.
+Durch das `TraitCollectionDidChange` Überschreiben der Methode `UserInterfaceStyle` können Sie auf eine Änderung reagieren.
 
 ### <a name="uwp"></a>UWP
 
-Fügen Sie auf der UWP der **MainPage.XAML.cs** -Datei Ihrer Anwendung den folgenden Code hinzu:
+Fügen Sie in UWP den folgenden Code zur **MainPage.xaml.cs** Datei Ihrer Anwendung hinzu:
 
 ```csharp
 public sealed partial class MainPage
@@ -185,7 +185,7 @@ public sealed partial class MainPage
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Design (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+- [Theming (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Dynamische Stile in xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
+- [Dynamische Stile in Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
 - [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

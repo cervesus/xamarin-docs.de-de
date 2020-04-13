@@ -1,36 +1,36 @@
 ---
 title: Schriftarten in Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie Schriftartinformationen für Steuerelemente angeben, in denen Text in Xamarin.Forms-Anwendungen angezeigt wird.
+description: In diesem Artikel wird erläutert, wie Sie Schriftartinformationen zu Steuerelementen angeben, die Text in Xamarin.Forms-Anwendungen anzeigen.
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/20/2020
-ms.openlocfilehash: 3798e3612547d36905dd62e6314f158958782874
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 04/01/2020
+ms.openlocfilehash: 4f14d66e5321a0fb19078be4d97ae4df69f688c9
+ms.sourcegitcommit: 6f3281a32017cfcebadde8a2d6e10651a277828f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305678"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80587425"
 ---
 # <a name="fonts-in-xamarinforms"></a>Schriftarten in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
+[![Beispiel](~/media/shared/download.png) herunterladen Download des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-Dieser Artikel beschreibt wie mit Xamarin.Forms können Sie die Schriftartattribute (einschließlich Gewichtung und Größe) angeben, für Steuerelemente, die Text anzeigen. Schriftart Informationen können [im Code](#Setting_Font_in_Code) oder [in XAML](#Setting_Font_in_Xaml)angegeben werden. Es ist auch möglich, eine [benutzerdefinierte Schriftart](#Using_a_Custom_Font)zu verwenden und [Schriftart Symbole anzuzeigen](#display-font-icons).
+In diesem Artikel wird beschrieben, wie Sie mit Xamarin.Forms Schriftartattribute (einschließlich Gewicht ungegängen und größe) für Steuerelemente angeben können, die Text anzeigen. Schriftartinformationen können [im Code oder](#Setting_Font_in_Code) in [XAML angegeben](#Setting_Font_in_Xaml)werden. Es ist auch möglich, eine [benutzerdefinierte Schriftart](#Using_a_Custom_Font)zu verwenden und [Schriftsymbole anzuzeigen.](#display-font-icons)
 
 <a name="Setting_Font_in_Code" />
 
 ## <a name="set-the-font-in-code"></a>Festlegen der Schriftart im Code
 
-Verwenden Sie die drei schriftartbezogene Eigenschaften aller Steuerelemente, die Text anzeigen:
+Verwenden Sie die drei schriftartbezogenen Eigenschaften aller Steuerelemente, die Text anzeigen:
 
-- **FontFamily** &ndash; der `string` Schriftart Name.
-- **FontSize** &ndash; die Schriftgröße als `double`.
-- **Fontattributes** &ndash; eine Zeichenfolge, die Stil Informationen wie *kursiv* und **Fett** (mithilfe der `FontAttributes` Enumeration in C#) angibt.
+- **FontFamily** &ndash; `string` den Schriftnamen.
+- **FontSize** &ndash; die Schriftgröße `double`als .
+- **FontAttributes** &ndash; eine Zeichenfolge, die Stilinformationen wie *Italic* und **Bold** angibt (unter Verwendung der `FontAttributes` Enumeration in C').
 
-Dieser Code zeigt, wie erstellen Sie eine Bezeichnung, und geben Sie den Schriftgrad und die Gewichtung angezeigt wird:
+Dieser Code zeigt, wie Sie eine Beschriftung erstellen und die anzuzeigende Schriftgröße und -gewicht angeben:
 
 ```csharp
 var about = new Label
@@ -45,35 +45,35 @@ var about = new Label
 
 ### <a name="font-size"></a>Schriftgrad
 
-Die `FontSize`-Eigenschaft kann auf einen doppelten Wert festgelegt werden, z. a.:
+Die `FontSize` Eigenschaft kann auf einen doppelten Wert festgelegt werden, z. B.:
 
 ```csharp
 label.FontSize = 24;
 ```
 
-Der Größen Wert wird in geräteunabhängigen Einheiten gemessen. Weitere Informationen finden Sie unter [Maßeinheiten](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
+Der Größenwert wird in geräteunabhängigen Einheiten gemessen. Weitere Informationen finden Sie unter [Maßeinheiten](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
 
-Xamarin. Forms definiert auch Felder in der [`NamedSize`](xref:Xamarin.Forms.NamedSize) -Enumeration, die bestimmte Schriftgrößen darstellen. Weitere Informationen zu benannten Schriftgrößen finden Sie unter [benannte Schriftgrößen](#named-font-sizes).
+Xamarin.Forms definiert auch Felder [`NamedSize`](xref:Xamarin.Forms.NamedSize) in der Enumeration, die bestimmte Schriftgrößen darstellen. Weitere Informationen zu benannten Schriftgrößen finden Sie unter [Benannte Schriftgrößen](#named-font-sizes).
 
 <a name="FontAttributes" />
 
-### <a name="font-attributes"></a>Schriftart Attribute
+### <a name="font-attributes"></a>Schriftartattribute
 
-Schriftarten wie **Fett** und *kursiv* können für die `FontAttributes`-Eigenschaft festgelegt werden. Die folgenden Werte werden zurzeit unterstützt:
+Schriftarten wie **Fett** und *Kursiv* können `FontAttributes` auf der Eigenschaft festgelegt werden. Die folgenden Werte werden derzeit unterstützt:
 
 - **None**
-- **Fett**
-- **Kursiv**
+- **kühn**
+- **Italic**
 
-Die `FontAttribute`-Enumeration kann wie folgt verwendet werden (Sie können ein einzelnes Attribut angeben oder Sie `OR`):
+Die `FontAttribute` Enumeration kann wie folgt verwendet werden (Sie können ein einzelnes Attribut oder `OR` diese zusammen angeben):
 
 ```csharp
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="set-font-info-per-platform"></a>Schriftart Informationen pro Plattform festlegen
+### <a name="set-font-info-per-platform"></a>Festlegen von Schriftinformationen pro Plattform
 
-Alternativ kann die `Device.RuntimePlatform`-Eigenschaft verwendet werden, um unterschiedliche Schriftart Namen auf jeder Plattform festzulegen, wie in diesem Code veranschaulicht:
+Alternativ kann `Device.RuntimePlatform` die Eigenschaft verwendet werden, um verschiedene Schriftartennamen auf jeder Plattform festzulegen, wie in diesem Code gezeigt:
 
 ```csharp
 label.FontFamily = Device.RuntimePlatform == Device.iOS ? "MarkerFelt-Thin" :
@@ -82,20 +82,20 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
    Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : Device.GetNamedSize(NamedSize.Large, label);
 ```
 
-Eine gute Quelle für Schriftart Informationen für IOS ist [iosfonts.com](http://iosfonts.com).
+Eine gute Quelle für Schriftartinformationen für iOS ist [iosfonts.com](http://iosfonts.com).
 
 <a name="Setting_Font_in_Xaml" />
 
 ## <a name="set-the-font-in-xaml"></a>Festlegen der Schriftart in XAML
 
-Xamarin. Forms-Steuerelemente, die Text anzeigen, verfügen über eine `FontSize`-Eigenschaft, die in XAML festgelegt werden kann. Die einfachste Möglichkeit zum Festlegen der Schriftart in XAML ist die Verwendung der benannten Größe-Enumerationswerte fest, wie im folgenden Beispiel gezeigt:
+Xamarin.Forms-Steuerelemente, die `FontSize` Text anzeigen, verfügen alle über eine Eigenschaft, die in XAML festgelegt werden kann. Die einfachste Möglichkeit, die Schriftart in XAML festzulegen, besteht darin, die benannten Größenaufzählungswerte zu verwenden, wie in diesem Beispiel gezeigt:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Es gibt einen integrierten Konverter für die `FontSize`-Eigenschaft, mit der alle Schriftart Einstellungen als Zeichen folgen Wert in XAML ausgedrückt werden können. Außerdem kann die `FontAttributes`-Eigenschaft zum Angeben von Schriftart Attributen verwendet werden:
+Es gibt einen integrierten Konverter `FontSize` für die Eigenschaft, mit dem alle Schriftarteinstellungen als Zeichenfolgenwert in XAML ausgedrückt werden können. Darüber hinaus `FontAttributes` kann die Eigenschaft verwendet werden, um Schriftartattribute anzugeben:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -103,7 +103,7 @@ Es gibt einen integrierten Konverter für die `FontSize`-Eigenschaft, mit der al
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-Die [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) -Eigenschaft kann auch in XAML verwendet werden, um eine andere Schriftart auf jeder Plattform zu erzeugen. Im folgenden Beispiel werden auf jeder Plattform verschiedene Schriftarten verwendet:
+Die [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) Eigenschaft kann auch in XAML verwendet werden, um eine andere Schriftart auf jeder Plattform zu rendern. Im folgenden Beispiel werden auf jeder Plattform unterschiedliche Schriftarten verwendet:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -117,16 +117,16 @@ Die [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-plat
 </Label>
 ```
 
-## <a name="named-font-sizes"></a>Benannte Schriftgrößen
+## <a name="named-font-sizes"></a>Benannte Schriftgrade
 
-Xamarin. Forms definiert Felder in der [`NamedSize`](xref:Xamarin.Forms.NamedSize) Enumeration, die bestimmte Schriftgrößen darstellen. In der folgenden Tabelle werden die `NamedSize` Mitglieder und ihre Standardgrößen für IOS, Android und die universelle Windows-Plattform (UWP) angezeigt:
+Xamarin.Forms definiert Felder [`NamedSize`](xref:Xamarin.Forms.NamedSize) in der Enumeration, die bestimmte Schriftgrößen darstellen. Die folgende Tabelle `NamedSize` zeigt die Mitglieder und ihre Standardgrößen auf iOS, Android und der universellen Windows-Plattform (UWP):
 
 | Member | iOS | Android | UWP |
 | --- | --- | --- | --- |
 | `Default` | 16 | 14 | 14 |
-| `Micro` | 11 | 10 | 15,667 |
-| `Small` | 13 | 14 | 18,667 |
-| `Medium` | 16 | 17 | 22,667 |
+| `Micro` | 11 | 10 | 15.667 |
+| `Small` | 13 | 14 | 18.667 |
+| `Medium` | 16 | 17 | 22.667 |
 | `Large` | 20 | 22 | 32 |
 | `Body` | 17 | 16 | 14 |
 | `Header` | 17 | 96 | 46 |
@@ -134,35 +134,35 @@ Xamarin. Forms definiert Felder in der [`NamedSize`](xref:Xamarin.Forms.NamedSiz
 | `Subtitle` | 22 | 16 | 20 |
 | `Caption` | 12 | 12 | 12 |
 
-Die Größen Werte werden in geräteunabhängigen Einheiten gemessen. Weitere Informationen finden Sie unter [Maßeinheiten](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
+Die Größenwerte werden in geräteunabhängigen Einheiten gemessen. Weitere Informationen finden Sie unter [Maßeinheiten](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
 
-Benannte Schriftgrößen können sowohl über XAML als auch über Code festgelegt werden. Außerdem kann die `Device.GetNamedSize`-Methode aufgerufen werden, um eine `double` zurückzugeben, die den benannten Schrift Grad darstellt:
+Benannte Schriftgrößen können sowohl über XAML als auch über Code festgelegt werden. Darüber hinaus `Device.GetNamedSize` kann die Methode aufgerufen `double` werden, um eine zurückzugeben, die die benannte Schriftgröße darstellt:
 
 ```csharp
 label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 ```
 
 > [!NOTE]
-> Unter IOS und Android werden benannte Schriftgrößen basierend auf den Barrierefreiheits Optionen des Betriebssystems automatisch skaliert. Dieses Verhalten kann unter IOS mit einem plattformspezifischen deaktiviert werden. Weitere Informationen finden Sie unter [Barrierefreiheits Skalierung für benannte Schriftgrößen unter IOS](~/xamarin-forms/platform/ios/named-font-size-scaling.md).
+> Unter iOS und Android werden benannte Schriftgrößen basierend auf den Eingabehilfen des Betriebssystems automatisch skaliert. Dieses Verhalten kann unter iOS mit einem plattformspezifischen deaktiviert werden. Weitere Informationen finden Sie unter [Barrierefreiheitsskalierung für benannte Schriftgrößen unter iOS](~/xamarin-forms/platform/ios/named-font-size-scaling.md).
 
 <a name="Using_a_Custom_Font" />
 
-## <a name="use-a-custom-font"></a>Benutzerdefinierte Schriftart verwenden
+## <a name="use-a-custom-font"></a>Verwenden einer benutzerdefinierten Schriftart
 
-Mit einer Schriftart außer den integrierten Schriftarten erfordert einige plattformspezifische codieren. Dieser Screenshot zeigt den benutzerdefinierten Schriftart **Hummer** aus den [Open Source-Schriftarten von Google](https://www.google.com/fonts) , die mit xamarin. Forms gerendert werden.
+Die Verwendung einer anderen Schriftart als der integrierten Schriftarten erfordert eine plattformspezifische Codierung. Dieser Screenshot zeigt die benutzerdefinierte Schriftart **Lobster** aus [Googles Open-Source-Schriftarten,](https://www.google.com/fonts) die mit Xamarin.Forms gerendert werden.
 
- [![Benutzerdefinierte Schriftart unter IOS und Android](fonts-images/custom-sml.png "Beispiel für benutzerdefinierte Schriftart")](fonts-images/custom.png#lightbox "Beispiel für benutzerdefinierte Schriftart")
+ [![Benutzerdefinierte Schriftart auf iOS und Android](fonts-images/custom-sml.png "Beispiel für benutzerdefinierte Schriftarten")](fonts-images/custom.png#lightbox "Beispiel für benutzerdefinierte Schriftarten")
 
-Die für jede Plattform erforderlichen Schritte werden unten beschrieben. Wenn Sie benutzerdefinierte Schriftart-Dateien mit einer Anwendung einschließen, achten Sie darauf, dass Sie sicherstellen, dass die Schriftart-Lizenz für die Verteilung ermöglicht.
+Die für jede Plattform erforderlichen Schritte sind unten beschrieben. Wenn Sie benutzerdefinierte Schriftartdateien in eine Anwendung einschließen, stellen Sie sicher, dass die Lizenz der Schriftart die Verteilung zulässt.
 
 ### <a name="ios"></a>iOS
 
-Es ist möglich, eine benutzerdefinierte Schriftart anzuzeigen, indem Sie zunächst sicherstellen, dass Sie geladen ist, und dann mithilfe der xamarin. Forms-`Font` Methoden über den Namen darauf verweisen.
-Befolgen Sie die Anweisungen in [diesem Blogbeitrag](https://devblogs.microsoft.com/xamarin/custom-fonts-in-ios/):
+Es ist möglich, eine benutzerdefinierte Schriftart anzuzeigen, indem Sie zuerst sicherstellen, dass `Font` sie geladen wird, und dann mit den Xamarin.Forms-Methoden namentlich darauf verweisen.
+Folgen Sie den Anweisungen in [diesem Blog-Beitrag](https://devblogs.microsoft.com/xamarin/custom-fonts-in-ios/):
 
-1. Fügen Sie die Schriftart Datei mit der **Buildaktion: bundleresource**hinzu.
-2. Aktualisieren Sie die Datei " **Info. plist** " (**Schriftarten, die von der Anwendung bereitgestellt**werden, oder `UIAppFonts`, Key).
-3. Verweisen sie anhand des Namens, wenn Sie eine Schriftart in Xamarin.Forms definieren.
+1. Fügen Sie die Schriftartdatei mit **Build Action: BundleResource**hinzu, und
+2. Aktualisieren Sie die **Info.plist-Datei** ( `UIAppFonts`**Schriftarten,** die von der Anwendung bereitgestellt werden, oder , Schlüssel),
+3. Lesen Sie es nach Namen, wo immer Sie eine Schriftart in Xamarin.Forms definieren!
 
 ```csharp
 new Label
@@ -174,7 +174,7 @@ new Label
 
 ### <a name="android"></a>Android
 
-Xamarin.Forms für Android kann es sich um eine benutzerdefinierte Schriftart verweisen, die durch einen bestimmten Benennungsstandard folgen dem Projekt hinzugefügt wurde. Fügen Sie zunächst die Schriftart Datei zum Ordner " **Assets** " im Anwendungsprojekt hinzu, und legen Sie *Buildaktion: androidasset*fest. Verwenden Sie dann den vollständigen Pfad und den *Schriftart Namen* getrennt durch einen Hash (#) als Schriftart Namen in xamarin. Forms, wie im folgenden Code Ausschnitt veranschaulicht:
+Xamarin.Forms für Android kann auf eine benutzerdefinierte Schriftart verweisen, die dem Projekt hinzugefügt wurde, indem ein bestimmter Namensstandard befolgt wird. Fügen Sie zuerst die Schriftartdatei zum **Ordner Assets** im Anwendungsprojekt hinzu, und legen Sie *Build Action: AndroidAsset*fest. Verwenden Sie dann den vollständigen Pfad und *den Schriftnamen,* der durch einen Hash () als Schriftartnamen in Xamarin.Forms getrennt ist, wie der Codeausschnitt unten zeigt:
 
 ```csharp
 new Label
@@ -186,7 +186,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Xamarin.Forms für Windows-Plattformen kann es sich um eine benutzerdefinierte Schriftart verweisen, die durch einen bestimmten Benennungsstandard folgen dem Projekt hinzugefügt wurde. Fügen Sie zunächst die Schriftart Datei dem Ordner **/Assets/Fonts/** im Anwendungsprojekt hinzu, und legen Sie die **Buildaktion: Content**fest. Verwenden Sie dann den vollständigen Pfad und den Dateinamen, gefolgt von einem Hash (#) und dem **Schriftart Namen**, wie im folgenden Code Ausschnitt veranschaulicht:
+Xamarin.Forms für Windows-Plattformen kann auf eine benutzerdefinierte Schriftart verweisen, die dem Projekt hinzugefügt wurde, indem sie einem bestimmten Namensstandard folgen. Fügen Sie zuerst die Schriftartdatei zum Ordner **/Assets/Fonts/** im Anwendungsprojekt hinzu, und legen Sie build **Action:Content**fest. Verwenden Sie dann den vollständigen Pfad- und Schriftnamen, gefolgt von einem Hash und dem **Schriftnamen**, wie der Codeausschnitt unten zeigt:
 
 ```csharp
 new Label
@@ -197,11 +197,11 @@ new Label
 ```
 
 > [!NOTE]
-> Beachten Sie, dass die Schriftart, Namen und den Namen der Datei kann unterschiedlich sein. Um den Schriftart Namen unter Windows zu ermitteln, klicken Sie mit der rechten Maustaste auf die Datei. ttf, und wählen Sie **Vorschau**aus. Der Name der Schriftart kann dann aus dem Fenster "Vorschau" ermittelt werden.
+> Beachten Sie, dass der Name der Schriftartdatei und der Schriftartname unterschiedlich sein können. Um den Schriftnamen unter Windows zu ermitteln, klicken Sie mit der rechten Maustaste auf die TTF-Datei, und wählen Sie **Vorschau**aus. Der Schriftartname kann dann aus dem Vorschaufenster ermittelt werden.
 
 ### <a name="xaml"></a>XAML
 
-Sie können auch [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads) in XAML verwenden, um eine benutzerdefinierte Schriftart zu erstellen:
+Sie können [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads) auch in XAML eine benutzerdefinierte Schriftart rendern:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -215,60 +215,80 @@ Sie können auch [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#i
 </Label>
 ```
 
-## <a name="use-a-custom-font-preview"></a>Benutzerdefinierte Schriftart verwenden (Vorschau)
+## <a name="use-a-custom-font-preview"></a>Verwenden einer benutzerdefinierten Schriftart (PREVIEW)
 
-Benutzerdefinierte Schriftarten können dem freigegebenen xamarin. Forms-Projekt hinzugefügt und von Platt Form Projekten ohne zusätzliche Arbeit genutzt werden. Die Vorgehensweise hierfür ist wie folgt:
+Benutzerdefinierte Schriftarten können Ihrem freigegebenen Xamarin.Forms-Projekt hinzugefügt und von Plattformprojekten ohne zusätzliche Arbeit genutzt werden. Die Vorgehensweise hierfür ist wie folgt:
 
-1. Fügen Sie die Schriftart dem freigegebenen xamarin. Forms-Projekt als eingebettete Ressource (**Buildaktion: EmbeddedResource**) hinzu.
-1. Registrieren Sie die Schriftart Datei bei der Assembly in einer Datei, z. b. **AssemblyInfo.cs**, mithilfe des `ExportFont`-Attributs.
+1. Fügen Sie die Schriftart Ihrem freigegebenen Xamarin.Forms-Projekt als eingebettete Ressource hinzu (**Build Action: EmbeddedResource**).
+1. Registrieren Sie die Schriftartdatei mit dem **AssemblyInfo.cs** `ExportFont` Attribut in einer Datei wie AssemblyInfo.cs . Ein optionaler Alias kann ebenfalls angegeben werden.
 
-Das folgende Beispiel zeigt, wie die für die Assembly registrierte Hummer reguläre Schriftart angezeigt wird:
+> [!NOTE]
+> Eingebettete Schriftarten erfordern die Verwendung von Xamarin.Forms 4.5.0.530 oder höher.
+
+Das folgende Beispiel zeigt die Lobster-Regular-Schriftart, die bei der Assembly registriert ist, zusammen mit einem Alias:
 
 ```csharp
 using Xamarin.Forms;
 
-[assembly: ExportFont("Lobster-Regular.ttf")]
+[assembly: ExportFont("Lobster-Regular.ttf", Alias = "Lobster")]
 ```
 
 > [!NOTE]
-> Die Schriftart kann sich in einem beliebigen Ordner im freigegebenen Projekt befinden, ohne den Ordnernamen beim Registrieren der Schriftart bei der Assembly angeben zu müssen.
+> Die Schriftart kann sich in einem beliebigen Ordner im freigegebenen Projekt befinden, ohne den Ordnernamen angeben zu müssen, wenn die Schriftart bei der Assembly registriert wird.
 
-Die Schriftart kann dann auf jeder Plattform verwendet werden, indem auf Ihren Namen ohne die Dateierweiterung verwiesen wird:
+Die Schriftart kann dann auf jeder Plattform verwendet werden, indem sie auf ihren Namen verweist, ohne die Dateierweiterung:
 
 ```xaml
+<!-- Use font name -->
 <Label Text="Hello Xamarin.Forms"
        FontFamily="Lobster-Regular" />
+```
+
+Alternativ kann es auf jeder Plattform verbraucht werden, indem auf seinen Alias verwiesen wird:
+
+```xaml
+<!-- Use font alias -->
+<Label Text="Hello Xamarin.Forms"
+       FontFamily="Lobster" />
 ```
 
 Der entsprechende C#-Code lautet:
 
 ```csharp
-Label label = new Label
+// Use font name
+Label label1 = new Label
 {
     Text = "Hello Xamarin.Forms!",
     FontFamily = "Lobster-Regular"
+};
+
+// Use font alias
+Label label2 = new Label
+{
+    Text = "Hello Xamarin.Forms!",
+    FontFamily = "Lobster"
 };
 ```
 
 Die folgenden Screenshots zeigen die benutzerdefinierte Schriftart:
 
-[![Benutzerdefinierte Schriftart unter IOS und Android](fonts-images/custom-sml.png "Beispiel für benutzerdefinierte Schriftart")](fonts-images/custom.png#lightbox "Beispiel für benutzerdefinierte Schriftart")
+[![Benutzerdefinierte Schriftart auf iOS und Android](fonts-images/custom-sml.png "Beispiel für benutzerdefinierte Schriftarten")](fonts-images/custom.png#lightbox "Beispiel für benutzerdefinierte Schriftarten")
 
-## <a name="display-font-icons"></a>Schriftart Symbole anzeigen
+## <a name="display-font-icons"></a>Anzeigen von Schriftartsymbolen
 
-Schriftart Symbole können von xamarin. Forms-Anwendungen angezeigt werden, indem die Schriftart Symbol Daten in einem `FontImageSource` Objekt angegeben werden. Diese Klasse, die von der [`ImageSource`](xref:Xamarin.Forms.ImageSource) -Klasse abgeleitet wird, verfügt über die folgenden Eigenschaften:
+Schriftartsymbole können von Xamarin.Forms-Anwendungen angezeigt werden, `FontImageSource` indem die Schriftsymboldaten in einem Objekt angegeben werden. Diese Klasse, die von [`ImageSource`](xref:Xamarin.Forms.ImageSource) der Klasse abstammt, hat die folgenden Eigenschaften:
 
-- `Glyph` – der Unicode-Zeichen Wert des Schriftart Symbols, der als `string`angegeben wird.
-- `Size` – ein `double` Wert, der die Größe des gerenderten Schriftart Symbols in geräteunabhängigen Einheiten angibt. Der Standardwert ist 30. Außerdem kann diese Eigenschaft auf eine benannte Schriftgröße festgelegt werden.
-- `FontFamily` – eine `string`, die die Schriftfamilie darstellt, zu der das Schriftart Symbol gehört.
-- `Color` – ein optionaler [`Color`](xref:Xamarin.Forms.Color) Wert, der bei der Anzeige des Schriftart Symbols verwendet werden soll.
+- `Glyph`– der Unicode-Zeichenwert des Schriftartsymbols, der als `string`angegeben wird.
+- `Size`– `double` ein Wert, der die Größe des gerenderten Schriftzeichens in geräteunabhängigen Einheiten angibt. Der Standardwert ist 30. Darüber hinaus kann diese Eigenschaft auf eine benannte Schriftgröße festgelegt werden.
+- `FontFamily`– `string` eine Darstellung der Schriftfamilie, zu der das Schriftsymbol gehört.
+- `Color`– ein [`Color`](xref:Xamarin.Forms.Color) optionaler Wert, der beim Anzeigen des Schriftartsymbols verwendet werden soll.
 
-Diese Daten werden verwendet, um eine PNG-Datei zu erstellen, die von jeder Ansicht angezeigt werden kann, in der eine `ImageSource`angezeigt werden kann. Bei diesem Ansatz können Schriftart Symbole, wie z. b. Emojis, von mehreren Ansichten angezeigt werden, anstatt die Anzeige der Schriftart Symbole auf eine Ansicht zu beschränken, wie z. b. eine [`Label`](xref:Xamarin.Forms.Label).
+Diese Daten werden verwendet, um ein PNG zu erstellen, `ImageSource`das von jeder Ansicht angezeigt werden kann, die eine anzeigen kann. Dieser Ansatz ermöglicht die Anzeige von Schriftartensymbolen, z. B. Emojis, durch mehrere Ansichten, [`Label`](xref:Xamarin.Forms.Label)anstatt die Anzeige des Schriftzeichens auf eine einzelne Textdarstellungsansicht zu beschränken, z. B. eine .
 
 > [!IMPORTANT]
-> Schriftart Symbole können derzeit nur durch ihre Unicode-Zeichen Darstellung angegeben werden.
+> Schriftartsymbole können derzeit nur durch ihre Unicode-Zeichendarstellung angegeben werden.
 
-Das folgende XAML-Beispiel zeigt ein einzelnes Schriftart Symbol, das von einer [`Image`](xref:Xamarin.Forms.Image) Ansicht angezeigt wird:
+Im folgenden XAML-Beispiel wird ein einzelnes Schriftartsymbol von einer [`Image`](xref:Xamarin.Forms.Image) Ansicht angezeigt:
 
 ```xaml
 <Image BackgroundColor="#D1D1D1">
@@ -280,7 +300,7 @@ Das folgende XAML-Beispiel zeigt ein einzelnes Schriftart Symbol, das von einer 
 </Image>
 ```
 
-Dieser Code zeigt ein Xbox-Symbol von der ionicons-Schriftfamilie in einer [`Image`](xref:Xamarin.Forms.Image) Ansicht an. Beachten Sie Folgendes: Obwohl das Unicode-Zeichen für dieses Symbol `\uf30c`ist, muss es in XAML mit Escapezeichen versehen werden und wird daher `&#xf30c;`. Der entsprechende C#-Code lautet:
+Dieser Code zeigt in einer [`Image`](xref:Xamarin.Forms.Image) Ansicht ein XBox-Symbol aus der Schriftfamilie Ionicons an. Beachten Sie, dass das Unicode-Zeichen für dieses Symbol `\uf30c`zwar ein `&#xf30c;`Escapezeichen in XAML verwendet werden muss und daher zu wird. Der entsprechende C#-Code lautet:
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };
@@ -292,13 +312,13 @@ image.Source = new FontImageSource
 };
 ```
 
-Die folgenden Screenshots aus dem Beispiel für [bindbare Layouts](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts) zeigen, dass mehrere Schriftart Symbole von einem bindbaren Layout angezeigt werden:
+Die folgenden Screenshots aus dem Beispiel [bindbare Layouts](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts) zeigen mehrere Schriftsymbole, die durch ein bindbares Layout angezeigt werden:
 
-![Screenshot der angezeigten Schriftart Symbole unter IOS und Android](fonts-images/font-image-source.png "In einer Bildansicht angezeigte Schriftart Symbole")
+![Screenshot der angezeigten Schriftsymbole unter iOS und Android](fonts-images/font-image-source.png "Schriftsymbole, die in einer Bildansicht angezeigt werden")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Fontssample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
+- [FontsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 - [Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Bindbare Layouts (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [Bindbare Layouts](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
