@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 5a464196c08220158432219d96bf82578789d8e5
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: a7c2aa15521b89e4930746dc5421ce67fa26b2b9
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67559997"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Ändern Sie in **MainPage.xaml** die Deklaration [`StackLayout`](xref:Xamarin.Forms.StackLayout), sodass diese ihre untergeordneten Elemente horizontal und nicht vertikal ausrichtet:
 
@@ -27,7 +27,7 @@ ms.locfileid: "67559997"
 
     Wie Sie sehen können, sind die [`Label`](xref:Xamarin.Forms.Label)-Instanzen in der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse jetzt horizontal anstatt vertikal ausgerichtet.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Ändern Sie in **MainPage.xaml** die Deklaration [`StackLayout`](xref:Xamarin.Forms.StackLayout), sodass diese ihre untergeordneten Elemente horizontal und nicht vertikal ausrichtet:
 
@@ -47,8 +47,3 @@ ms.locfileid: "67559997"
     [![Screenshot: horizontal ausgerichtete untergeordnete Ansichten in StackLayout unter iOS und Android](../images/orientation.png "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")](../images/orientation-large.png#lightbox "StackLayout mit horizontal ausgerichteten Bezeichnungsinstanzen")
 
     Wie Sie sehen können, sind die [`Label`](xref:Xamarin.Forms.Label)-Instanzen in der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse jetzt horizontal anstatt vertikal ausgerichtet.
-
------
-
-> [!div class="nextstepaction"]
-> [Es ist ein Problem aufgetreten](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+2+Feedback&template=tutorial_template.md)

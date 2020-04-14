@@ -1,15 +1,15 @@
 ---
 ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "66193826"
 ---
 
 Xamarin.Forms verfügt über ein modales Popupelement – auch bekannt als Aktionsblatt –, das dazu verwendet werden kann, Benutzer durch eine Aufgabe zu führen. In dieser Übung verwenden Sie die [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)-Methode aus der [`Page`](xref:Xamarin.Forms.Page)-Klasse, um ein Aktionsblatt anzuzeigen, das Benutzer durch eine Aufgabe führt.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Fügen Sie in der Datei **MainPage.xaml** eine neue [`Button`](xref:Xamarin.Forms.Button)-Deklaration hinzu, die ein Aktionsblatt anzeigt:
 
@@ -43,7 +43,7 @@ Xamarin.Forms verfügt über ein modales Popupelement – auch bekannt als Aktio
 
     Weitere Informationen zum Anzeigen von Aktionsblättern finden Sie unter [Führen von Benutzern durch Aufgaben](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks) im Leitfaden [Anzeigen von Popupelementen](~/xamarin-forms/user-interface/pop-ups.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Fügen Sie in der Datei **MainPage.xaml** eine neue [`Button`](xref:Xamarin.Forms.Button)-Deklaration hinzu, die ein Aktionsblatt anzeigt:
 

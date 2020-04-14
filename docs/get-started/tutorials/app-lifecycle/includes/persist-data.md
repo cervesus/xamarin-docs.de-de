@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5d9d5e4eb757d6afd1c13cb4851edd23feaa6e65
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135071"
 ---
 Die Unterklasse [`Application`](xref:Xamarin.Forms.Application) enthält ein statisches [`Properties`](xref:Xamarin.Forms.Application.Properties)-Wörterbuch, das zum Speichern von Daten bei Zustandsänderungen des Lebenszyklus verwendet werden kann. Das Wörterbuch verwendet einen `string`-Schlüssel und speichert einen `object`-Wert. Das Wörterbuch wird automatisch auf dem Gerät gespeichert und wird bei Neustart der Anwendung erneut aufgefüllt.
@@ -13,7 +13,7 @@ Die Unterklasse [`Application`](xref:Xamarin.Forms.Application) enthält ein sta
 
 In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:Xamarin.Forms.Entry)-Klasse im Hintergrund beizubehalten und den Text für die `Entry`-Klasse wiederherzustellen, wenn die Anwendung erneut gestartet wird.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Erweitern Sie **App.xaml** im **Projektmappen-Explorer** im Projekt **AppLifecycleTutorial**, und doppelklicken Sie dann auf die Datei **App.xaml.cs**, um sie zu öffnen. Entfernen Sie anschließend in **App.xaml.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -117,7 +117,7 @@ In dieser Übung passen Sie die Anwendung an, um den Text einer [`Entry`](xref:X
 
     Weitere Informationen zum Beibehalten von Daten im Eigenschaftenwörterbuch finden Sie unter [Eigenschaftenwörterbuch](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary) im Leitfaden zur [Xamarin.Forms-App-Klasse](~/xamarin-forms/app-fundamentals/application-class.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Erweitern Sie **App.xaml** im **Lösungspad** im Projekt **AppLifecycleTutorial**, und doppelklicken Sie dann auf die Datei **App.xaml.cs**, um sie zu öffnen. Entfernen Sie anschließend in **App.xaml.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
