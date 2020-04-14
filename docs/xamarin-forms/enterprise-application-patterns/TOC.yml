@@ -16,9 +16,9 @@
       href: communicating-between-loosely-coupled-components.md
     - name: Navigation
       href: navigation.md
-    - name: Validierung
+    - name: Überprüfen
       href: validation.md
-    - name: Konfigurationsmanagement (Configuration Management)
+    - name: Konfigurationsverwaltung
       href: configuration-management.md
     - name: Containermicroservices
       href: containerized-microservices.md
@@ -26,5 +26,5 @@
       href: authentication-and-authorization.md
     - name: Zugreifen auf Remotedaten
       href: accessing-remote-data.md
-    - name: Unittests
+    - name: Komponententests
       href: unit-testing.md

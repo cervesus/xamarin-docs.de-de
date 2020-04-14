@@ -1,4 +1,4 @@
-- name: Neues
+- name: Neuerungen
   href: index.yml
   expanded: true
   items:
@@ -12,7 +12,7 @@
       items:
         - name: Dezember
           href: 2019-12.md
-        - name: Oktober
+        - name: October
           href: 2019-10.md
         - name: August
           href: 2019-08.md
@@ -20,5 +20,5 @@
           href: 2019-07.md
         - name: June
           href: 2019-06.md
-        - name: März
+        - name: March
           href: 2019-03.md

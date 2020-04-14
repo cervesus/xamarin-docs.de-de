@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61372938"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Ändern Sie in **MainPage.xaml** die [`Button`](xref:Xamarin.Forms.Button)-Deklaration, sodass ein Handler für das [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis festgelegt wird:
 
@@ -37,7 +37,7 @@ ms.locfileid: "61372938"
 
     Weitere Informationen zum Behandeln von Schaltflächenklicks finden Sie im Leitfaden [Xamarin.Forms Button (Xamarin.Forms-Schaltfläche)](~/xamarin-forms/user-interface/button.md#handling-button-clicks) unter [Handling button clicks (Behandlung von Schaltflächenklicks)](~/xamarin-forms/user-interface/button.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Ändern Sie in **MainPage.xaml** die [`Button`](xref:Xamarin.Forms.Button)-Deklaration, sodass ein Handler für das [`Clicked`](xref:Xamarin.Forms.Button.Clicked)-Ereignis festgelegt wird:
 

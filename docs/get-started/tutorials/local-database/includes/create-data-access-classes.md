@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: b11a5972c2aabace8a6991a82f5719f34450297d
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67841399"
 ---
 In dieser Übung fügen Sie dem Projekt **LocalDatabaseTutorial** Datenzugriffsklassen hinzu, mit denen Personendaten in der Datenbank gespeichert werden.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Fügen Sie im **Projektmappen-Explorer** dem Projekt **LocalDatabaseTutorial** eine neue Klasse mit dem Namen `Person` hinzu. Entfernen Sie anschließend in **Person.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -120,7 +120,7 @@ In dieser Übung fügen Sie dem Projekt **LocalDatabaseTutorial** Datenzugriffsk
 
 1. Erstellen Sie die Projektmappe, um sich zu vergewissern, dass keine Fehler vorliegen.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Fügen Sie im **Lösungspad** dem Projekt **LocalDatabaseTutorial** eine neue Klasse mit dem Namen `Person` hinzu. Entfernen Sie anschließend in **Person.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 

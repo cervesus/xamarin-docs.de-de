@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 85404d5aceb525a77c98bf2d86ebc4b464f5796f
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71107240"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -11,7 +11,7 @@ Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolg
 - Den Schnellstart [Erstellen Ihrer ersten Xamarin.Forms-App](~/get-started/first-app/index.md)
 - Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
 
-In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
+In diesem Tutorial lernen Sie Folgendes:
 
 > [!div class="checklist"]
 >

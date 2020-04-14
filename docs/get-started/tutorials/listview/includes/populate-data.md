@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "69541470"
 ---
 Eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse wird unter Verwendung der Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource), die vom Typ `IEnumerable` ist, mit Daten aufgefüllt. Im vorherigen Schritt wurde die `ListView`-Klasse in XAML mit einem Zeichenfolgenarray aufgefüllt. Eine `ListView`-Klasse wird jedoch üblicherweise mit Daten aus einer Sammlung aufgefüllt, die im CodeBehind definiert ist, der `IEnumerable` implementiert.
 
 In dieser Übung ändern Sie das Projekt **ListViewTutorial** so, dass die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse mit Daten aus einer Sammlung von Objekten aufgefüllt wird, die in einer `List`-Klasse gespeichert ist.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Fügen Sie im **Projektmappen-Explorer** im Projekt **ListViewTutorial** eine Klasse mit dem Namen `Monkey` hinzu, die den folgenden Code enthält:
 
@@ -191,7 +191,7 @@ In dieser Übung ändern Sie das Projekt **ListViewTutorial** so, dass die [`Lis
 
     Die Klasse [`ListView`](xref:Xamarin.Forms.ListView) zeigt die Eigenschaft `Name` für jedes `Monkey`-Objekt in der `Monkeys`-Sammlung an. Dies liegt daran, dass in der Standardeinstellung die `ListView`-Klasse die `ToString`-Methode aufruft, wenn sie die Objekte aus einer Sammlung anzeigt (dies wurde in der `Monkey`-Klasse überschrieben, um den Eigenschaftswert `Name` zurückzugeben).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Fügen Sie im **Lösungspad** im Projekt **ListViewTutorial** eine Klasse mit dem Namen `Monkey` hinzu, die den folgenden Code enthält:
 

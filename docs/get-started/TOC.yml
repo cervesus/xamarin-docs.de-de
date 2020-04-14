@@ -37,11 +37,11 @@
           href: quickstarts/multi-page.md
         - name: Datenbank
           href: quickstarts/database.md
-        - name: Format
+        - name: Gestaltung
           href: quickstarts/styling.md
         - name: Vertiefung
           href: quickstarts/deepdive.md
-    - name: Tutorials
+    - name: Lernprogramme
       href: tutorials/index.yml
       expanded: true
       items:
@@ -49,7 +49,7 @@
           href: tutorials/stacklayout/index.yml
         - name: Bezeichnung
           href: tutorials/label/index.yml
-        - name: Schaltfläche
+        - name: Taste
           href: tutorials/button/index.yml
         - name: Texteintrag
           href: tutorials/entry/index.yml
@@ -67,7 +67,7 @@
           href: tutorials/app-lifecycle/index.yml
         - name: Lokale Datenbank
           href: tutorials/local-database/index.yml
-        - name: Webdienste
+        - name: WEB SERVICES
           href: tutorials/web-service/index.yml
     - name: Informationen zu Xamarin
       expanded: true

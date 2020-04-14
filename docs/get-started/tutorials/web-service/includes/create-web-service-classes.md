@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "68669659"
 ---
 REST-Anforderungen erfolgen über HTTP mit den gleichen HTTP-Verben, mit denen Webbrowser Seiten abrufen und Daten an Server senden. In dieser Übung erstellen Sie eine Klasse, die mit dem GET-Verb Daten aus der Web-API [OpenWeatherMap](https://openweathermap.org/) abruft. Diese Web-API kann zum Abrufen von Wettervorhersagedaten für einen bestimmten Standort verwendet werden. Diese Web-API erfordert, dass Sie sich für einen API-Schlüssel registrieren.
@@ -11,7 +11,7 @@ REST-Anforderungen erfolgen über HTTP mit den gleichen HTTP-Verben, mit denen W
 > [!div class="nextstepaction"]
 > [Für einen API-Schlüssel registrieren](https://home.openweathermap.org/users/sign_up)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Fügen Sie im **Projektmappen-Explorer** dem Projekt **WebServiceTutorial** eine neue Klasse mit dem Namen `Constants` hinzu. Entfernen Sie dann in **Constants.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -131,7 +131,7 @@ REST-Anforderungen erfolgen über HTTP mit den gleichen HTTP-Verben, mit denen W
 
 1. Erstellen Sie die Projektmappe, um sich zu vergewissern, dass keine Fehler vorliegen.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Fügen Sie im **Lösungspad** dem Projekt **WebServiceTutorial** eine neue Klasse mit dem Namen `Constants` hinzu. Entfernen Sie dann in **Constants.cs** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 

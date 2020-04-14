@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: d8f9445a0fc45c2700e8d9a901cfce9bd6307d2b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "75490642"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Bearbeiten Sie in **MainPage.xaml** die [`Image`](xref:Xamarin.Forms.Image)-Deklaration, um die Darstellung anzupassen:
 
@@ -28,7 +28,7 @@ ms.locfileid: "75490642"
 
     [![Screenshot eines Bilds, das unter iOS und Android unterschiedlich groß angezeigt wird](../images/customize-appearance.png "Bildanpassung abhängig von der Plattform")](../images/customize-appearance-large.png#lightbox "Bildanpassung abhängig von der Plattform")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Bearbeiten Sie in **MainPage.xaml** die [`Image`](xref:Xamarin.Forms.Image)-Deklaration, um die Darstellung anzupassen:
 

@@ -7,7 +7,7 @@
       items:
         - name: Bereitstellen im iOS-Simulator
           href: ios-simulator/deploy.md
-        - name: Anmerkungen zu diesem Release
+        - name: Versionshinweise
           href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
     - name: Inspector
       href: inspector/index.md
@@ -16,7 +16,7 @@
           href: inspector/install.md
         - name: Überprüfen von Live-Anwendungen
           href: inspector/inspect.md
-        - name: Anmerkungen zu diesem Release
+        - name: Versionshinweise
           href: /xamarin/tools/inspector/release-notes/
     - name: Live Player
       items:
@@ -33,7 +33,7 @@
       items:
         - name: Problembehandlung
           href: profiler/troubleshooting.md
-        - name: Anmerkungen zu diesem Release
+        - name: Versionshinweise
           href: /xamarin/tools/profiler/release-notes/
     - name: Arbeitsmappen
       href: workbooks/index.md
@@ -54,7 +54,7 @@
         - name: Integrations-SDK
           href: workbooks/sdk/index.md
           items:
-            - name: Architekturübersicht
+            - name: Übersicht über die Architektur
               href: workbooks/sdk/architecture.md
             - name: Erweiterte Integrationsthemen
               href: workbooks/sdk/integrations.md
@@ -64,7 +64,7 @@
               href: workbooks/sdk/debugging.md
             - name: Beispielintegrationen
               href: workbooks/sdk/samples.md
-        - name: Anmerkungen zu diesem Release
+        - name: Versionshinweise
           href: /xamarin/tools/inspector/release-notes/
     - name: Einbetten von .NET
       href: dotnet-embedding/index.md
@@ -102,7 +102,7 @@
               href: dotnet-embedding/objective-c/platforms.md
         - name: Einschränkungen
           href: dotnet-embedding/limitations.md
-        - name: Anmerkungen zu diesem Release
+        - name: Versionshinweise
           href: /xamarin/tools/dotnet-embedding/release-notes/
     - name: Continuous Integration
       href: ci/index.md

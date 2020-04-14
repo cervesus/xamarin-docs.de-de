@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: caee3eeda90a560f032c17657072ae5ba5023a69
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135095"
 ---
 In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten Datenzugriffsklassen zu verwenden.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **LocalDatabaseTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -78,7 +78,7 @@ In dieser Übung erstellen Sie eine Benutzeroberfläche, um die zuvor erstellten
 
     Weitere Informationen zu lokalen Datenbanken in Xamarin.Forms finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio für Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
 1. Doppelklicken Sie im **Lösungspad** im Projekt **LocalDatabaseTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 

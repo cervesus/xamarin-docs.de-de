@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19276826e1996e68fd27107d23e0def76a1025a5
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71059671"
 ---
 Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolgreich abgeschlossen haben:
@@ -12,7 +12,7 @@ Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolg
 - Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
 - Das Tutorial zu [Button](~/get-started/tutorials/button/index.yml).
 
-In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
+In diesem Tutorial lernen Sie Folgendes:
 
 > [!div class="checklist"]
 >
@@ -21,4 +21,4 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 Sie verwenden Visual Studio 2019 oder Visual Studio für Mac, um eine einfache Anwendung zu erstellen, die zeigt, wie Sie Popups in Xamarin.Forms anzeigen können. Die folgenden Screenshots zeigen die finale Anwendung:
 
-[![Screenshot eines Aktionsblatts unter iOS und Android](../images/actionsheet-reduced.png "Aktionsblatt, das Benutzer durch eine Aufgabe führt")](../images/actionsheet-large.png#lightbox "Aktionsblatt, das Benutzer durch eine Aufgabe führt")
+[![Screenshot: Aktionsblatt unter iOS und Android](../images/actionsheet-reduced.png "Aktionsblatt, das Benutzer durch eine Aufgabe führt")](../images/actionsheet-large.png#lightbox "Aktionsblatt, das Benutzer durch eine Aufgabe führt")
