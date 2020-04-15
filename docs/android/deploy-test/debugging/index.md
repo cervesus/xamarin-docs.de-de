@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 3b3fa14ec81bd4f06322197b7140654f9086ce73
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75556482"
 ---
 # <a name="debug-xamarinandroid-apps"></a>Debuggen von Xamarin.Android-Apps
@@ -22,14 +22,14 @@ In diesem Abschnitt wird beschrieben, wie das Debuggen einer Xamarin.Android-App
 
 Die Entwicklung von Android-Anwendungen erfordert das Ausführen der Anwendung, entweder auf physischer Hardware oder in einem Emulator. Die beste, aber nicht immer zweckmäßigste, Herangehensweise ist die Verwendung von Hardware. In vielen Fällen kann es einfacher und kostengünstiger sein, Android-Hardware mithilfe einer der unten beschriebenen Emulatoren zu simulieren/emulieren.
 
-### <a name="debugging-on-the-android-emulatorandroiddeploy-testdebuggingdebug-on-emulatormd"></a>[Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md)
+### <a name="debugging-on-the-android-emulator"></a>[Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md)
 
 In diesem Artikel wird erläutert, wie Sie den Android-Emulator in Visual Studio starten und die App auf einem virtuellen Gerät ausführen.
 
-### <a name="debugging-on-a-deviceandroiddeploy-testdebuggingdebug-on-devicemd"></a>[Debuggen auf einem Gerät](~/android/deploy-test/debugging/debug-on-device.md)
+### <a name="debugging-on-a-device"></a>[Debuggen auf einem Gerät](~/android/deploy-test/debugging/debug-on-device.md)
 
 In diesem Artikel wird dargestellt, wie Sie ein physisches Android-Gerät so konfigurieren, dass die Xamarin.Android-Anwendung über Visual Studio oder Visual Studio für Mac direkt auf dem Gerät bereitgestellt werden kann.
 
-### <a name="android-debug-logandroiddeploy-testdebuggingandroid-debug-logmd"></a>[Android-Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md)
+### <a name="android-debug-log"></a>[Android-Debugprotokoll](~/android/deploy-test/debugging/android-debug-log.md)
 
 Ein sehr gängiger Trick, den Entwickler verwenden, um ihre Anwendungen zu debuggen, ist die Verwendung von `Console.WriteLine`. Auf einer mobilen Plattform wie Android steht jedoch keine Konsole zur Verfügung. Android-Geräte stellen ein Protokoll bereit, das Sie beim Schreiben von Apps wahrscheinlich verwenden müssen. Dies wird aufgrund der abrufenden Befehle manchmal als **Logcat** bezeichnet. Dieser Artikel beschreibt die Verwendung von **Logcat**.

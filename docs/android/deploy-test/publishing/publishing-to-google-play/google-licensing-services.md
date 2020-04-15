@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/20/2017
 ms.openlocfilehash: 4cc7f3b36c43d9c9bb611b7d669f8304aab05820
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021269"
 ---
 # <a name="google-licensing-services"></a>Google-Lizenzierungsdienste
@@ -36,7 +36,7 @@ In dem obenstehenden Diagramm wird der folgende Workflow dargestellt:
 
 Die Google-Lizenzierungsdienste sind ebenfalls Kernkomponenten von APK-Erweiterungsdateien (auf die an späterer Stelle in diesem Dokument eingegangen wird). APK-Erweiterungsdateien verwenden Google-Lizenzierungsdienste, um die URL der Dateien, die heruntergeladen werden sollen, abzurufen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Anwendungen, die nicht über Google Play erworben werden, profitieren nicht von den Google-Lizenzierungsdiensten. Wenn Google Play nicht auf einem Gerät installiert ist, werden die Anwendungen, die Lizenzierungsdienste verwenden, weiterhin wie gewohnt auf dem Gerät ausgeführt.
 

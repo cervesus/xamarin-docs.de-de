@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: aefd649fe1859306e5499addc1c08f4e42b2b424
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026683"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurieren einer App in iTunes Connect
@@ -136,7 +136,7 @@ Apple empfiehlt Folgendes bei der Auswahl eines App-Namens:
 - Er soll der Funktionalität der Anwendung entsprechen.
 - Geben Sie für ausländische Märkte gegebenenfalls einen lokalisierten Namen an.
 
-### <a name="description"></a>BESCHREIBUNG
+### <a name="description"></a>Beschreibung
 
 Schreiben Sie eine klare, präzise und informative Beschreibung zur Anwendung und ihren Funktionen. Die ersten Zeilen sind die wichtigsten und bieten Ihnen die Möglichkeit, einen guten ersten Eindruck zu hinterlassen und das Interesse des Benutzers zu wecken. Beschrieben Sie also das Besondere an Ihrer Anwendung gegenüber ähnlichen Apps.
 
@@ -348,7 +348,7 @@ Weitere Informationen zu In-App-Käufen in einer Xamarin.iOS-Anwendung finden Si
 
 ## <a name="viewing-application-reviews"></a>Anzeigen von Benutzerbewertungen
 
-Sobald die Anwendung im App Store veröffentlicht wurde, können Benutzer, die die Anwendung kaufen oder kostenlos herunterladen, die App schriftlich bewerten und Sterne dafür vergeben. In diesem Abschnitt können Sie diese Bewertungen anzeigen lassen. Beispiel:
+Sobald die Anwendung im App Store veröffentlicht wurde, können Benutzer, die die Anwendung kaufen oder kostenlos herunterladen, die App schriftlich bewerten und Sterne dafür vergeben. In diesem Abschnitt können Sie diese Bewertungen anzeigen lassen. Zum Beispiel:
 
 [![](itunesconnect-images/reviews01.png "Viewing Application Reviews")](itunesconnect-images/reviews01.png#lightbox)
 

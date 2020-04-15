@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66354107"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geocodierung
@@ -23,15 +23,15 @@ Die Klasse **Geocoding** stellt APIs bereit, um sowohl eine Ortsmarkierung (Plac
 
 Für den Zugriff auf die **Geocodierungsfunktion** ist die folgende plattformspezifische Einrichtung erforderlich.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Es ist kein zusätzliches Setup erforderlich.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Es ist kein zusätzliches Setup erforderlich.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Ein API-Schlüssel von Bing Maps ist erforderlich, um die Geocodierungsfunktion zu nutzen. Registrieren Sie sich für ein kostenloses [Bing Maps](https://www.bingmapsportal.com/)-Konto. Erstellen Sie unter **Mein Konto > Meine Schlüssel** einen neuen Schlüssel, und füllen Sie die Informationen basierend auf Ihrem Anwendungstyp aus (sollte **Public Windows App (UWP, 8.x und früher)** für UWP-Apps sein).
 

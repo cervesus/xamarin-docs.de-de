@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 66d832f624bdd942f53c5f6d890457958969b1b7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028423"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Erstellen von Xamarin.iOS-Anwendungsprofilen mit Instruments
@@ -19,7 +19,7 @@ ms.locfileid: "73028423"
 Xcode **Instruments** ist ein Tool, das zur Erstellung von Xamarin.iOS-App-Profilen auf einem Gerät oder im Simulator verwendet werden kann. Mono verwendet das Just-in-Time-Modell zum Kompilieren von Code und analysiert die anfallenden Daten nicht, was auch für Instruments gilt. Es kann daher schwierig sein, die Ergebnisse von auf Simulatoren basierenden Anwendungen, die Instruments nutzen, zu verwerten.
 Aufgrund dieses Problems wird in dieser Anleitung darauf eingegangen, wie die Entwickler-App zum Analysieren von Instruments-Ausgaben verwendet werden kann, die in diesem Dokument dargestellt werden.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Xcode Instruments kann nur auf einem Mac ausgeführt werden.
 

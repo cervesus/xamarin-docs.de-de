@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030429"
 ---
 # <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
@@ -54,7 +54,7 @@ Sehen Sie sich die Dokumentation zu [iTunes-Grafik](~/ios/app-fundamentals/image
 
 ## <a name="creating-an-ipa"></a>Erstellen einer IPA-Datei
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Das Erstellen einer IPA-Datei ist nun in den neuen Veröffentlichungsworkflow integriert. Folgen Sie dazu den unten stehenden Anweisungen, um Ihre App zu archivieren, sie zu signieren und Ihre IPA-Datei zu speichern.
 
@@ -133,7 +133,7 @@ In einigen Fällen, wie z.B. in einer CI-Umgebung, ist es möglicherweise notwen
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Sobald das Bereitstellungsprofil erstellt und ausgewählt und die optionale **iTunesMetadata.plist**-Datei erstellt und die iTunes-Grafik in Visual Studio festgelegt wurde, können Sie eine IPA-Datei für die Verteilung erstellen. Als Nächstes müssen Sie Ihr Projekt konfigurieren. Führen Sie folgende Schritte aus:
 
@@ -207,7 +207,7 @@ Für eine Ausgabe der **IPA**-Datei in das frühere Standardverzeichnis (wie in 
     </PropertyGroup>
     ```
 
-Eine alternative Methode für **msbuild**- oder **xbuild**-Befehlszeilenbuilds ist das Hinzufügen eines `/p:`-Arguments, um die `IpaPackageDir`-Eigenschaft festzulegen. Beachten Sie, dass **msbuild** in diesem Fall `$()`-Ausdrücke nicht erweitert, die in der Befehlszeile übergeben werden. Daher kann die `$(OutputPath)`-Syntax nicht verwendet werden. Geben Sie stattdessen einen vollständigen Pfadnamen an. Obwohl der Mono-Befehl **xbuild** `$()`-Ausdrücke erweitert, sollten Sie dennoch einen vollständigen Pfadnamen verwenden, da **xbuild** als veraltet gekennzeichnet wurde und von der [plattformübergreifenden **msbuild**](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild)-Version abgelöst wurde.
+Eine alternative Methode für **msbuild**- oder **xbuild**-Befehlszeilenbuilds ist das Hinzufügen eines `/p:`-Arguments, um die `IpaPackageDir`-Eigenschaft festzulegen. Beachten Sie, dass **msbuild** in diesem Fall `$()`-Ausdrücke nicht erweitert, die in der Befehlszeile übergeben werden. Daher kann die `$(OutputPath)`-Syntax nicht verwendet werden. Geben Sie stattdessen einen vollständigen Pfadnamen an. Obwohl der Mono-Befehl **xbuild**`$()`-Ausdrücke erweitert, sollten Sie dennoch einen vollständigen Pfadnamen verwenden, da **xbuild** als veraltet gekennzeichnet wurde und von der [plattformübergreifenden **msbuild**](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild)-Version abgelöst wurde.
 
 Ein vollständiges Beispiel mit dieser Methode könnte unter Windows etwa folgendermaßen aussehen:
 
@@ -229,11 +229,11 @@ Das entstehende IPA-Paket kann Ihren Testbenutzern zur Installation auf deren iO
 
 Die neue iOS-Anwendung wird im Bereich **Meine Apps** angezeigt. Dort können Sie auf sie rechtsklicken und so weitere Informationen enthalten.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
 ms.openlocfilehash: 6e80daf2be1b672dc7d0de3e303dfb9261c10472
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940913"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Einrichten des Android SDK für Xamarin.Android
@@ -27,7 +27,7 @@ In diesem Handbuch wird erklärt, wie Sie den Xamarin Android SDK-Manager in Vis
 
 Der Xamarin Android SDK-Manager (der als Teil der Workload **Mobile-Entwicklung mit.NET** installiert wird) unterstützt Sie beim Herunterladen der aktuellsten Komponenten, die Sie für die Entwicklung Ihrer Xamarin.Android-App benötigen. Er ersetzt den eigenständigen SDK-Manager von Google, der als veraltet markiert wurde.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -123,7 +123,7 @@ Wenn das Google-Repository ausgewählt wird, werden möglicherweise weitere Pake
 
 Wenn Sie wieder das unterstützte Repository der Plattformen und Tools aktivieren möchten, klicken Sie auf **Microsoft (empfohlen)** . Dadurch wird die Standardliste mit den Paketen und Tools wiederhergestellt.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="requirements"></a>Anforderungen
 

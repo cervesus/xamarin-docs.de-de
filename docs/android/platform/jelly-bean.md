@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: a638ccf7810c737faaeded7fcc98fcf657c85288
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027208"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean-Features
@@ -81,7 +81,7 @@ Für komplexere Szenarios gibt es neue Methoden in der Activity-Klasse, mit dene
 - `FinishAffinity` – Durch den Aufruf dieser Methode werden die aktuelle Aktivität und alle untergeordneten Aktivitäten in der aktuellen Task beendet, die die gleiche Taskaffinität aufweisen.
 - `OnCreateNavigateUpTaskStack` – Diese Methode wird außer Kraft gesetzt, wenn die vollständige Kontrolle über die Erstellung des synthetischen Stapels erforderlich ist.
 
-### <a name="camera"></a>Kamera
+### <a name="camera"></a>Camera
 
 Es gibt eine neue Schnittstelle, `Camera.IAutoFocusMoveCallback`, mit der erkannt werden kann, wann der Autofokus gestartet oder gestoppt wurde. Ein Beispiel für diese neue Schnittstelle finden Sie im folgenden Codeausschnitt:
 

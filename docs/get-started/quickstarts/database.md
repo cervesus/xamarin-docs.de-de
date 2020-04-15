@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71249683"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Speichern von Daten in einer lokalen SQLite.NET-Datenbank
@@ -32,7 +32,7 @@ In diesem Schnellstart erfahren Sie, wie Sie Daten in einer lokalen SQLite.NET-D
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschlossen haben, bevor Sie diesen Schnellstart versuchen. Alternativ können Sie das [vorherige Schnellstartbeispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/) herunterladen und als Startpunkt für diesen Schnellstart verwenden.
+Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschlossen haben, bevor Sie mit diesem Schnellstart beginnen. Alternativ können Sie auch das [letzte Schnellstartbeispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/) herunterladen und als Startpunkt für diesen Schnellstart verwenden.
 
 ::: zone pivot="windows"
 
@@ -246,7 +246,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
 11. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie dieses aus. Weitere Informationen finden Sie unter [Erstellen des Schnellstarts](single-page.md#building-the-quickstart).
 
-    Drücken Sie unter **NotesPage** auf die Schaltfläche **+** , um zur **NoteEntryPage**-Seite zu navigieren und eine Notiz einzugeben. Nach dem Speichern der Notiz navigiert die Anwendung zurück zu **NotesPage**.
+    Klicken Sie auf der **NotesPage**-Eigenschaft auf die Schaltfläche **+** , um zur Eigenschaft **NoteEntryPage** zu navigieren und eine Notiz einzugeben. Nach dem Speichern der Notiz navigiert die Anwendung zurück zur Eigenschaft **NotesPage**.
 
     Geben Sie eine Anzahl von Notizen unterschiedlicher Länge ein, um das Verhalten der Anwendung zu beobachten.
 
@@ -463,7 +463,7 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
 11. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie dieses aus. Weitere Informationen finden Sie unter [Erstellen des Schnellstarts](single-page.md#building-the-quickstart).
 
-    Drücken Sie unter **NotesPage** auf die Schaltfläche **+** , um zur **NoteEntryPage**-Seite zu navigieren und eine Notiz einzugeben. Nach dem Speichern der Notiz navigiert die Anwendung zurück zu **NotesPage**.
+    Klicken Sie auf der **NotesPage**-Eigenschaft auf die Schaltfläche **+** , um zur Eigenschaft **NoteEntryPage** zu navigieren und eine Notiz einzugeben. Nach dem Speichern der Notiz navigiert die Anwendung zurück zur Eigenschaft **NotesPage**.
 
     Geben Sie eine Anzahl von Notizen unterschiedlicher Länge ein, um das Verhalten der Anwendung zu beobachten.
 
@@ -484,4 +484,4 @@ Fahren Sie mit dem nächsten Schnellstart fort, um die Anwendung mit XAML-Format
 ## <a name="related-links"></a>Verwandte Links
 
 - [Notes (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
-- [Xamarin.Forms Schnellstart Deep Dive](deepdive.md)
+- [Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart](deepdive.md)

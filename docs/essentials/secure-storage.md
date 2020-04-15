@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488490"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
@@ -23,7 +23,7 @@ Mit der Klasse **SecureStorage** können Sie einfache Schlüssel/Wertpaare siche
 
 Der Zugriff auf die **SecureStorage**-Funktionalität erfordert das folgende plattformspezifische Setup:
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
 > Die [Automatische Sicherung für Apps](https://developer.android.com/guide/topics/data/autobackup) ist eine Funktion von Android 6.0 (API-Ebene 23) und höher, die die App-Daten von Benutzern sichert (freigegebene Einstellungen, Dateien im internen App-Speicher und andere spezifische Dateien). Die Daten werden wiederhergestellt, wenn eine App neu installiert oder auf einem neuen Gerät installiert wird. Dies kann sich auf die `SecureStorage`-Klasse auswirken, die Freigabeeinstellungen verwendet, die gesichert werden und nicht beim Wiederherstellen entschlüsselt werden können. Xamarin.Essentials verarbeitet diesen Fall automatisch durch Entfernen des Schlüssels, um das Zurücksetzen zu ermöglichen, aber Sie können die automatische Sicherung auch manuell deaktivieren.
@@ -61,7 +61,7 @@ Die automatische Sicherung lässt sich konfigurieren, um bestimmte Inhalte davon
     </full-backup-content>
     ```
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Aktivieren Sie beim Entwickeln mit dem **iOS-Simulator** die Berechtigung **Keychain**, und fügen Sie eine Keychain-Zugriffsgruppe für die Bündel-ID der Anwendung hinzu. 
 
@@ -72,7 +72,7 @@ Legen Sie in den Projekteigenschaften unter **iOS-Bündelsignierung** **Benutzer
 > [!TIP]
 > Beim Bereitstellen auf iOS-Geräten ist diese Berechtigung nicht erforderlich und sollte entfernt werden.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Es ist kein zusätzliches Setup erforderlich.
 
@@ -129,7 +129,7 @@ SecureStorage.RemoveAll();
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Der [Android-KeyStore](https://developer.android.com/training/articles/keystore.html) wird verwendet, um den Chiffrierschlüssel zu speichern, mit dem der Wert verschlüsselt wurde, bevor er in einer [freigegebenen Einstellung](https://developer.android.com/training/data-storage/shared-preferences.html) mit einem Dateinamen von **[YOUR-APP-PACKAGE-ID].xamarinessentials** gespeichert wird.  Der in der freigegebenen Einstellungsdatei verwendete Schlüssel (kein kryptografischer Schlüssel, sondern der _Schlüssel_ für den _Wert_) ist ein _MD5-Hash_ des Schlüssels, der an die `SecureStorage`-APIs übergeben wird.
 
@@ -143,13 +143,13 @@ Auf älteren API-Ebenen unterstützt der Android-KeyStore nur das Speichern von 
 
 **SecureStorage** verwendet die [Einstellungen](preferences.md)-API und berücksichtigt die in der Dokumentation [Einstellungen](preferences.md#persistence) beschriebene Datenpersistenz. Wenn ein Gerät von API-Ebene 22 oder niedriger auf API-Ebene 23 oder höher aktualisiert wird, wird diese Art der Verschlüsselung weiterhin verwendet, es sei denn, die App wird deinstalliert oder **RemoveAll** aufgerufen.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 [KeyChain](xref:Security.SecKeyChain) wird verwendet, um Werte sicher auf iOS-Geräten zu speichern.  Das zum Speichern des Werts verwendete `SecRecord`-Element hat einen `Service`-Wert, der auf **[YOUR-APP-BUNDLE-ID].xamarinessentials** festgelegt ist.
 
 In einigen Fällen werden KeyChain-Daten mit iCloud synchronisiert, und bei der Deinstallation der Anwendung werden die sicheren Werte möglicherweise nicht aus iCloud und anderen Geräten des Benutzers entfernt.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) wird zur sicheren Verschlüsselung von Werten auf UWP-Geräten verwendet.
 

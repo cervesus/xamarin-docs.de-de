@@ -10,10 +10,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: c89a3616bfa239ba919ae9750082bcef48c9f890
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73023372"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Schnellstart: Hallo, iOS Multiscreen
@@ -24,7 +24,7 @@ In diesem Teil des Tutorials wird der Phoneword-Anwendung eine zweite Anzeige hi
 
 In den [entsprechenden ausführlichen Erläuterungen](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md) wird die erstellte Anwendung überprüft sowie die Architektur, Navigation und weitere neue iOS-Konzepte erläutert, denen Sie noch begegnen werden.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Dieser Leitfaden macht an der Stelle weiter, an der das Dokument „Hallo, iOS“ aufgehört hat. Zuvor müssen Sie den [Schnellstart: Hallo, iOS](~/ios/get-started/hello-ios/index.md) abgeschlossen haben. Die vollständige Version der Phoneword-App kann auf der Seite [Beispiel: Hallo, iOS](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) heruntergeladen werden.
 

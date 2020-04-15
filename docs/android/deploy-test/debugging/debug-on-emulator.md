@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75556521"
 ---
 # <a name="debug-on-the-android-emulator"></a>Debuggen auf dem Android-Emulator
@@ -22,7 +22,7 @@ Der Android-Emulator wird zusammen mit der Workload **Mobile-Entwicklung mit .NE
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Verwenden eines vorkonfigurierten virtuellen Geräts
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Visual Studio enthält vorkonfigurierte virtuelle Geräte, die im Dropdownmenü „Gerät“ angezeigt werden. Im folgenden Screenshot aus Visual Studio 2017 sind beispielsweise mehrere vorkonfigurierte virtuelle Geräte verfügbar:
 
@@ -45,7 +45,7 @@ Wenn Ihr Xamarin.Android-Projekt eine Zielframeworkebene verwendet, die mit den 
 Sie können auf **Android-Mindestziel wird geändert** klicken, um die mindestens erforderliche Android-Version des Projekts zu ändern, damit sie mit der API-Ebene der verfügbaren virtuellen Geräte übereinstimmt. Alternativ können Sie den [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) verwenden, um neue virtuelle Geräte zu erstellen, die Ihre API-Zielebene unterstützen.
 Bevor Sie virtuelle Geräte für eine neue API-Ebene konfigurieren können, müssen Sie zunächst die entsprechenden Systemimages für diese API-Ebene installieren (siehe [Einrichten des Android SDK für Xamarin.Android](~/android/get-started/installation/android-sdk.md)).
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Visual Studio für Mac enthält vorkonfigurierte virtuelle Geräte, die im Dropdownmenü „Gerät“ angezeigt werden. Im folgenden Screenshot sind beispielsweise zwei vorkonfigurierte virtuelle Geräte verfügbar:
 
@@ -69,11 +69,11 @@ Sie müssen [Android Device Manager](~/android/get-started/installation/android-
 
 Im oberen Bereich von Visual Studio ist ein Dropdownmenü, mit dem der Modus **Debuggen** oder **Release** ausgewählt werden kann. Durch Auswählen von **Debuggen** wird der Debugger an den Anwendungsprozess angefügt, der innerhalb des Emulators ausgeführt wird, nachdem die App gestartet wurde. Die Auswahl des Modus **Release** deaktiviert den Debugger (Sie können die App jedoch weiterhin ausführen und Protokollanweisungen zum Debuggen verwenden). Nachdem Sie ein virtuelles Gerät aus dem Geräte-Dropdownmenü ausgewählt haben, wählen Sie entweder den Modus **Debuggen** oder **Release** aus, und klicken Sie anschließend auf die Schaltfläche „Wiedergeben“, um die Anwendung auszuführen:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![Modi „Debuggen“ und „Release“; Schaltfläche „Wiedergeben“](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 [![Modi „Debuggen“ und „Release“; Schaltfläche „Wiedergeben“](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 

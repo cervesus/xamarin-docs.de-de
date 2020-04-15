@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026368"
 ---
 # <a name="ios-build-mechanics"></a>Abläufe beim Erstellen von iOS-Builds
@@ -26,7 +26,7 @@ Das Tempo von Xamarin-Builds kann auch durch verschiedene Kapazitäten und Fähi
 
 ## <a name="timing-apps"></a>Zeitsteuerung-Apps
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio für Mac
 
@@ -38,7 +38,7 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio für Mac
 6. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
 7. Zeigen Sie die Diagnoseausgabe im Bereich „Fehler“ (Ansicht > Bereiche > Fehler) an, indem Sie auf die Schaltfläche „Buildausgabe“ klicken.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio
 
@@ -53,7 +53,7 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio
 
 ## <a name="timing-mtouch"></a>Zeitliche Steuerung von mtouch
 
-Um spezifische Informationen zum mtouch-Buildprozess anzuzeigen, übergeben Sie in Ihren **Projektoptionen** `--time --time` an die mtouch-Argumente. Die Ergebnisse finden Sie in der Buildausgabe, indem Sie den Task `MTouch` suchen:
+Um spezifische Informationen zum mtouch-Buildprozess anzuzeigen, übergeben Sie in Ihren **Projektoptionen**`--time --time` an die mtouch-Argumente. Die Ergebnisse finden Sie in der Buildausgabe, indem Sie den Task `MTouch` suchen:
 
 ```csharp
 Setup: 36 ms

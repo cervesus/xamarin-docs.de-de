@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870104"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61075578"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Taschenlampe
 
@@ -22,7 +22,7 @@ Mit der Klasse **Flashlight** können Sie das Blitzlicht der Gerätekamera aktiv
 
 Für den Zugriff auf die **Taschenlampen**-Funktion ist die folgende plattformspezifische Einrichtung erforderlich.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Die Berechtigungen „Flashlight“ und „Camera“ sind erforderlich und müssen im Android-Projekt konfiguriert werden. Das Hinzufügen erfolgt folgendermaßen:
 
@@ -42,7 +42,7 @@ Alternativ können Sie das Android-Manifest aktualisieren:
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie unter **Android-Manifest** den Bereich **Erforderliche Berechtigungen:**, und aktivieren Sie die Berechtigungen **FLASHLIGHT** (Taschenlampe) und **CAMERA** (Kamera). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
+Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie unter **Android-Manifest** den Bereich **Erforderliche Berechtigungen:** , und aktivieren Sie die Berechtigungen **FLASHLIGHT** (Taschenlampe) und **CAMERA** (Kamera). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
 
 Durch das Hinzufügen dieser Berechtigungen [filtert Google Play automatisch die Geräte heraus](https://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features), die keine spezifische Hardware aufweisen. Sie können dies umgehen, indem Sie Folgendes der Datei „AssemblyInfo.cs“ in Ihrem Android-Projekt hinzufügen:
 
@@ -51,11 +51,11 @@ Durch das Hinzufügen dieser Berechtigungen [filtert Google Play automatisch die
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Es ist kein zusätzliches Setup erforderlich.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Es ist kein zusätzliches Setup erforderlich.
 
@@ -96,7 +96,7 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
-### <a name="androidtabandroid"></a>[Android](#tab/android)
+### <a name="android"></a>[Android](#tab/android)
 
 Die Klasse „Flashlight“ wurde auf Basis des Betriebssystems des Geräts optimiert.
 
@@ -108,11 +108,11 @@ Auf neueren API-Ebenen wird der [TorchMode](https://developer.android.com/refere
 
 Zum Aktivieren oder Deaktivieren des `FlashMode` (Blitzlichtmodus) der Kameraeinheit wird eine Kameraoberflächentextur erstellt. 
 
-### <a name="iostabios"></a>[iOS](#tab/ios)
+### <a name="ios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](xref:AVFoundation.AVCaptureDevice) wird verwendet, um den Taschenlampen- und Blitzlichtmodus des Geräts zu aktivieren bzw. zu deaktivieren.
 
-### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+### <a name="uwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) wird verwendet, um die erste Lampe auf der Rückseite des Geräts zu erkennen und zu aktivieren bzw. zu deaktivieren.
 

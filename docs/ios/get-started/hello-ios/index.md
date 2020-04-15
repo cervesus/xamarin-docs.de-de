@@ -9,19 +9,19 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: af0b9b4a73a82afbaef314384b10d6b9465a4b29
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022820"
 ---
 # <a name="sample-app-hello-ios"></a>Beispiel-App: Hello, iOS
 
-## <a name="part-1-quickstartiosget-startedhello-ioshello-ios-quickstartmd"></a>[Teil 1: Schnellstart](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
+## <a name="part-1-quickstart"></a>[Teil 1: Schnellstart](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
 
 Im ersten Teil dieses Leitfadens wird erläutert, wie Sie eine Anwendung erstellen, die eine vom Benutzer eingegebene alphanumerische Telefonnummer in eine numerische Telefonnummer umwandelt und diese Nummer anschließend anruft.
 
-## <a name="part-2-deep-diveiosget-startedhello-ioshello-ios-deepdivemd"></a>[Teil 2: Ausführliche Erläuterungen](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
+## <a name="part-2-deep-dive"></a>[Teil 2: Ausführliche Erläuterungen](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
 
 Im zweiten Teil dieses Leitfadens wird die erstellte Anwendung noch einmal betrachtet. Des Weiteren werden grundlegende Kenntnisse über die Funktionsweise von iOS-Anwendungen vermittelt.
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2018
 ms.openlocfilehash: adcfb1457742d343f87a602885566107cf327e2d
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027154"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>Verwenden der Google Maps-API in Ihrer Anwendung
@@ -36,11 +36,11 @@ Damit Sie die Maps-API verwenden können, müssen mehrere Schritte ausgeführt w
 - [Angeben der erforderlichen Berechtigungen](#declare-permissions)
 - [Erstellen eines Emulators mit den Google-APIs (optional)](#create-emulator-with-google-api)
 
-### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Abrufen eines Google Maps-API-Schlüssels
+### <a name="obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Abrufen eines Google Maps-API-Schlüssels
 
 Der erste Schritt besteht darin, einen Google Maps-API-Schlüssel anzufordern. (Sie können einen Schlüssel der alten Google Maps v1-API nicht verwenden.) Informationen zum Abrufen und Verwenden des API-Schlüssels mit Xamarin.Android finden Sie unter [Abrufen eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Installieren des Google Play Services SDK
+### <a name="install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Installieren des Google Play Services SDK
 
 Google Play Services ist eine Technologie von Google, mit der Android-Anwendungen verschiedene Google-Features wie Google+, In-App-Abrechnung und Maps nutzen können. Diese Features sind auf Android-Geräten als Hintergrunddienste verfügbar, die im [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en) enthalten sind.
 
@@ -56,7 +56,7 @@ Damit eine Xamarin.Android-Anwendung die Maps-API verwenden kann, muss das Googl
 > [!NOTE]
 > Das Google Play Services APK ist ein lizenziertes Produkt, das möglicherweise nicht auf allen Geräten vorhanden ist. Wenn es nicht installiert ist, funktioniert Google Maps nicht auf dem Gerät.
 
-### <a name="a-nameinstall-gpsmaps-nuget--install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" /> Installieren des Xamarin.GooglePlayServices.Maps-Pakets von NuGet
+### <a name="install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" /> Installieren des Xamarin.GooglePlayServices.Maps-Pakets von NuGet
 
 Das [Xamarin.GooglePlayServices.Maps-Paket](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Maps) enthält die Xamarin.Android-Bindungen für die Google Play Services Maps-API.
 Klicken Sie mit der rechten Maustaste auf den Ordner **Verweise** Ihres Projekts im Projektmappen-Explorer, um das Google Play Services Maps-Paket hinzuzufügen, und klicken Sie auf **NuGet -Pakete verwalten...** .
@@ -73,7 +73,7 @@ Beachten Sie, dass die folgenden Abhängigkeitspakete ebenfalls installiert werd
 - **Xamarin.GooglePlayServices.Basement**
 - **Xamarin.GooglePlayServices.Tasks**
 
-### <a name="a-namedeclare-permissions--specify-the-required-permissions"></a><a name="declare-permissions" /> Angeben der erforderlichen Berechtigungen
+### <a name="specify-the-required-permissions"></a><a name="declare-permissions" /> Angeben der erforderlichen Berechtigungen
 
 Apps müssen die Hardware- und Berechtigungsanforderungen erfüllen, damit die Google Maps-API verwendet werden kann.  Einige Berechtigungen werden automatisch durch das Google Play Services SDK erteilt, sodass ein Entwickler diese nicht explizit zu **AndroidManifest.XML** hinzufügen muss:
 
@@ -142,7 +142,7 @@ Der folgende Codeausschnitt ist ein Beispiel für die Einstellungen, die zu **An
 
 Zusätzlich zum Anfordern der Berechtigungen in **AndroidManifest.XML** muss eine App auch Laufzeitberechtigungsprüfungen für die Berechtigungen `ACCESS_COARSE_LOCATION` und `ACCESS_FINE_LOCATION` ausführen. Weitere Informationen zum Ausführen von Laufzeitberechtigungsprüfungen finden Sie in der Anleitung zu [Xamarin.Android-Berechtigungen](~/android/app-fundamentals/permissions.md).
 
-### <a name="a-namecreate-emulator-with-google-api-create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />Erstellen eines Emulators mit Google-APIs
+### <a name="create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />Erstellen eines Emulators mit Google-APIs
 
 Falls kein physisches Android-Gerät mit Google Play-Diensten installiert ist, können Sie ein Emulatorimage für die Entwicklung erstellen. Weitere Informationen finden Sie unter [Geräte-Manager](~/android/get-started/installation/android-emulator/device-manager.md).
 
@@ -250,7 +250,7 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-### <a name="a-namegooglemap_object-googlemap-properties"></a><a name="googlemap_object" />GoogleMap-Eigenschaften
+### <a name="googlemap-properties"></a><a name="googlemap_object" />GoogleMap-Eigenschaften
 
 `GoogleMap` definiert mehrere Eigenschaften, die die Funktionalität und Darstellung der Karte steuern können. Eine Möglichkeit, den Anfangszustand einer `GoogleMap` zu konfigurieren, besteht darin, beim Erstellen von `MapFragment` ein [GoogleMapOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions)-Objekt zu übergeben. Der folgende Codeausschnitt ist ein Beispiel für die Verwendung eines `GoogleMapOptions`-Objekts beim Erstellen von `MapFragment`:
 

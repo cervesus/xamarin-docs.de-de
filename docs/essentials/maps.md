@@ -7,11 +7,11 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: c0875534d88ea5b66b3072c35b9d38894fe98934
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870026"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61354574"
 ---
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials: Zuordnung
 
@@ -103,15 +103,15 @@ public class MapTest
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 - `NavigationMode` unterstützt Radfahren, Fahren und Gehen.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - `NavigationMode` unterstützt Fahren, öffentliche Verkehrsmittel und Gehen.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - `NavigationMode` unterstützt Fahren, öffentliche Verkehrsmittel und Gehen.
 
@@ -119,15 +119,15 @@ public class MapTest
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Android verwendet das URI-Schema `geo:`, um die Kartenanwendung auf dem Gerät zu starten. Möglicherweise wird der Benutzer aufgefordert, eine vorhandene App auszuwählen, die dieses URI-Schema unterstützt.  Xamarin.Essentials wurde mit Google Maps getestet, das dieses Schema unterstützt.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Keine plattformspezifischen Implementierungsangaben.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Keine plattformspezifischen Implementierungsangaben.
 

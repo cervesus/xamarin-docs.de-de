@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
 ms.openlocfilehash: 96b0d6a00c7825939b1f89ed63e3e5559ca4ef59
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020479"
 ---
 # <a name="external-storage"></a>Externer Speicher
@@ -22,7 +22,7 @@ In der Vergangenheit bezog sich „externer Speicher“ auf eine Datenträgerpar
 
 Auf Geräten mit mehreren Benutzern erhält jeder Benutzer ein dediziertes Verzeichnis auf der primären externen Speicherpartition für den eigenen externen Speicher. Apps, die mit einem Benutzerkonto ausgeführt werden, haben keinen Zugriff auf Dateien eines anderen Benutzers auf dem Gerät. Dateien für alle Benutzer sind trotzdem global lesbar und schreibbar, jedoch schirmt Android jedes Benutzerprofil mithilfe einer Sandbox von den anderen ab.
 
-Das Lesen aus und Schreiben in Dateien erfolgt in Xamarin.Android nahezu identisch wie in jeder anderen .NET-Anwendung. Die Xamarin.Android-App bestimmt den Pfad zu der zu ändernden Datei und verwendet anschließend .NET-Standardausdrücke für den Dateizugriff. Da sich die tatsächlichen Pfade zu externem und internem Speicher von Gerät zu Gerät oder von Android-Version zu Android-Version unterscheiden können, empfiehlt es sich nicht, die Dateipfade hart zu codieren. Stattdessen macht Xamarin.Android die nativen Android-APIs verfügbar, die die Bestimmung des Pfads zu Dateien in internem und externem Speicher unterstützen.
+Das Lesen aus und Schreiben in Dateien erfolgt in Xamarin.Android nahezu identisch wie in jeder anderen .NET-Anwendung. Die Xamarin.Android-App bestimmt den Pfad zur Datei, die bearbeitet werden soll, und verwendet anschließend .NET-Standardausdrücke für den Dateizugriff. Da sich die tatsächlichen Pfade zu externem und internem Speicher von Gerät zu Gerät oder von Android-Version zu Android-Version unterscheiden können, empfiehlt es sich nicht, die Dateipfade hart zu codieren. Stattdessen macht Xamarin.Android die nativen Android-APIs verfügbar, die die Bestimmung des Pfads zu Dateien in internem und externem Speicher unterstützen.
 
 In diesem Leitfaden werden die Konzepte und APIs in Android erläutert, die für externen Speicher spezifisch sind.
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
 ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028567"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
@@ -72,7 +72,7 @@ In diesem Abschnitt wird erläutert, wie Sie die automatische Bereitstellung von
 
 ## <a name="using-the-ide"></a>Verwenden von IDE
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hinzugefügt. Um Funktionen hinzuzufügen, führen Sie die folgenden Schritte aus:
 
@@ -92,7 +92,7 @@ Funktionen werden der Datei **Entitlements.plist** in Visual Studio für Mac hin
 
     ![Hinzufügen von Funktionen zur Datei „entitlements.plist“](images/image18.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Wenn Sie Funktionen in Visual Studio 2019 hinzufügen möchten, führen Sie die folgenden Schritte aus:
 

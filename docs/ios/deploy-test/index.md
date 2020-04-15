@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: f3f5e27e97b7b62ade66ea2dc50a79ac03d51f90
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026459"
 ---
 # <a name="deploying-and-testing-xamarinios-apps"></a>Bereitstellen und Testen von Xamarin.iOS-Apps
 
 Dieser Abschnitt enthält Informationen zum Testen und Verteilen einer Anwendung. In den hier aufgeführten Themen werden z.B. Tools zum Debuggen, die Bereitstellung für Tester sowie das Veröffentlichen einer Anwendung auf Google Play erläutert.
 
-## <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[App-Verteilung](~/ios/deploy-test/app-distribution/index.md)
+## <a name="app-distribution"></a>[App-Verteilung](~/ios/deploy-test/app-distribution/index.md)
 
 In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung mit unterschiedlichen Mitteln für die Verteilung konfigurieren, erstellen und veröffentlichen. Hierbei stehen Ihnen z.B. folgende Möglichkeiten zur Verfügung:
 
@@ -26,51 +26,51 @@ In diesem Artikel wird beschrieben, wie Sie eine Xamarin.iOS-Anwendung mit unter
 - [Interne Verteilung (Enterprise-Verteilung)](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [Ad-hoc-Verteilung](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 
-## <a name="ipa-deploymentiosdeploy-testapp-distributionipa-supportmd"></a>[Bereitstellung mit IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
+## <a name="ipa-deployment"></a>[Bereitstellung mit IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
 
 Ad-hoc- und Enterprise-Bereitstellungen ermöglichen Entwicklern das Erstellen von Paketen, die zu Testzwecken oder an interne Unternehmensbenutzer verteilt werden können. In diesem Leitfaden wird erläutert, wie Sie eine IPA-Datei erstellen, die mit einem iOS-Gerät über iTunes synchronisiert werden kann.
 
-## <a name="provisioningprovisioningindexmd"></a>[Bereitstellung](provisioning/index.md)
+## <a name="provisioning"></a>[Bereitstellung](provisioning/index.md)
 
 Diese Reihe von Handbüchern behandelt Grundlagen zu Signatur und Bereitstellung, beispielsweise die Arbeit mit Eigenschaftenlisten und das Bereitstellen Ihrer App für Anwendungsdienste. 
 
-## <a name="wireless-deploymentwireless-deploymentmd"></a>[Drahtlose Bereitstellung](wireless-deployment.md)
+## <a name="wireless-deployment"></a>[Drahtlose Bereitstellung](wireless-deployment.md)
 
  In Xcode 9 wurde die Option zur Bereitstellung für ein iOS-Gerät oder Apple TV über ein Netzwerk eingeführt, sodass Sie die Geräte nicht mehr per Kabel anschließen müssen, wenn Sie Ihre App bereitstellen und debuggen möchten. Dieses Feature befindet sich derzeit in der Vorschau.
 
-## <a name="testflightiosdeploy-testtestflightmd"></a>[TestFlight](~/ios/deploy-test/testflight.md)
+## <a name="testflight"></a>[TestFlight](~/ios/deploy-test/testflight.md)
 
 TestFlight ist jetzt im Besitz von Apple und die wichtigste Methode zum Betatesten Ihrer Xamarin.iOS-Apps. Dieser Artikel führt Sie durch alle Schritte des TestFlight-Prozesses, vom Hochladen Ihrer App bis hin zum Arbeiten mit iTunes Connect.
 
-## <a name="debugging-in-xamariniosiosdeploy-testdebugging-in-xamarin-iosmd"></a>[Debuggen in Xamarin.iOS](~/ios/deploy-test/debugging-in-xamarin-ios.md)
+## <a name="debugging-in-xamarinios"></a>[Debuggen in Xamarin.iOS](~/ios/deploy-test/debugging-in-xamarin-ios.md)
 
 Die integrierten Entwicklungsumgebungen Visual Studio und Visual Studio für Mac unterstützen das Debuggen von Xamarin.iOS-Anwendungen sowohl im iOS-Simulator als auch auf iOS-Geräten. In diesem Artikel wird beschrieben, wie Sie den Debugger verwenden und verschiedene Optionen konfigurieren, die von diesem unterstützt werden.
 
-## <a name="touchunitiosdeploy-testtouchunitmd"></a>[Touch.Unit](~/ios/deploy-test/touch.unit.md)
+## <a name="touchunit"></a>[Touch.Unit](~/ios/deploy-test/touch.unit.md)
 
 Dieses Dokument beschreibt, wie Sie Komponententests für Ihre Xamarin.iOS-Projekte erstellen.
 Komponententests mit Xamarin.iOS werden mithilfe des Touch.Unit-Frameworks durchgeführt, das sowohl einen iOS Test Runner als auch eine geänderte Version des [NUnitLite](http://www.nunitlite.com/)-Frameworks enthält, das eine Reihe vertrauter APIs zum Schreiben von Komponententests bietet.
 
-## <a name="using-instruments-to-detect-native-leaks-using-markheapiosdeploy-testusing-instruments-to-detect-native-leaks-using-markheapmd"></a>[Verwenden von Instruments zum Erkennen von nativen Speicherverlusten mit MarkHeap](~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md)
+## <a name="using-instruments-to-detect-native-leaks-using-markheap"></a>[Verwenden von Instruments zum Erkennen von nativen Speicherverlusten mit MarkHeap](~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md)
 
 In diesem Artikel wird beschrieben, wie Sie Instruments für ein iOS-Gerät und eine Xamarin.iOS-Anwendung verwenden. Des Weiteren wird das Profilen von Anwendungen im Simulator erläutert.
 
-## <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[Verwenden des Apple-Tools Instruments – Erste Schritte](~/ios/deploy-test/walkthrough-apples-instrument.md)
+## <a name="walkthrough---using-apples-instrument-tool"></a>[Verwenden des Apple-Tools Instruments – Erste Schritte](~/ios/deploy-test/walkthrough-apples-instrument.md)
 
 Dieser Artikel erläutert die Verwendung des Apple-Tools Instruments, um Speicherprobleme in einer iOS-Anwendung zu diagnostizieren, die mit Xamarin erstellt wurde. Es wird gezeigt, wie Instruments gestartet wird, wie Heap-Momentaufnahmen erfasst werden und wie der Anstieg des benötigten Speichers analysiert wird. Ebenfalls wird beschrieben, wie Instruments dafür verwendet wird, die genaue Codezeile zu ermitteln und anzuzeigen, die das Speicherproblem verursacht.
 
-## <a name="linking-on-ioslinkermd"></a>[Verknüpfung unter iOS](linker.md)
+## <a name="linking-on-ios"></a>[Verknüpfung unter iOS](linker.md)
 
 Erklärt, wie der Linker arbeitet, um das kleinstmögliche Anwendungspaket sicherzustellen, und wie dessen Einstellungen und Verbrauch angepasst werden.
 
-## <a name="xamarinios-performanceperformancemd"></a>[Xamarin.iOS-Leistung](performance.md)
+## <a name="xamarinios-performance"></a>[Xamarin.iOS-Leistung](performance.md)
 
 Es gibt viele Techniken zum Verbessern der Leistung von Anwendungen, die mit Xamarin.iOS erstellt wurden. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren.
 
-## <a name="mtouchmtouchmd"></a>[mtouch](mtouch.md)
+## <a name="mtouch"></a>[mtouch](mtouch.md)
 
 Gibt Hinweise und Informationen zu „mtouch.exe“, dem Befehlszeilentool, das Ihr Projekt in eine von iOS nutzbare Anwendung kompiliert.
 
-## <a name="ios-build-mechanicsios-build-mechanicsmd"></a>[iOS Build Mechanics (Abläufe beim Erstellen von iOS-Builds)](ios-build-mechanics.md)
+## <a name="ios-build-mechanics"></a>[iOS Build Mechanics (Abläufe beim Erstellen von iOS-Builds)](ios-build-mechanics.md)
 
 In diesem Leitfaden erfahren Sie, wie Sie Ihre Anwendungen zeitlich steuern und wie Sie für alle Buildkonfigurationen Methoden für schnellere Builds verwenden können.

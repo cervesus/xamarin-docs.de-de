@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75607918"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad-Hoc-Verteilung für Xamarin.iOS-Apps
@@ -109,11 +109,11 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 6. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Möglicherweise müssen Sie Visual Studio für Mac beenden und die Liste der verfügbaren Signierungsidentitäten und Bereitstellungsprofile in Xcode aktualisieren (anhand der Anweisungen im Abschnitt [Herunterladen von Profilen und Zertifikaten in Xcode](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio für Mac verfügbar ist.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac des Buildhosts) die Listen der verfügbaren Signierungsidentitäten und Bereitstellungsprofile aktualisieren (anhand der Anweisungen im Abschnitt [Downloading Profiles and Certificates in Xcode (Herunterladen von Profilen und Zertifikaten in Xcode)](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio verfügbar ist.
 
@@ -125,7 +125,7 @@ Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac d
 
 Wenn Sie den endgültigen Build einer Xamarin.iOS-Anwendung erstellen möchten, wählen Sie das zuvor erstellte Verteilungsprofil aus.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
  Gehen Sie in Visual Studio für Mac folgendermaßen vor:
 
@@ -141,7 +141,7 @@ Wenn Sie den endgültigen Build einer Xamarin.iOS-Anwendung erstellen möchten, 
     ![Auswählen der Signieridentität und des Verteilungsprofils](ad-hoc-distribution-images/releasexs03.png)
 5. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
  Führen Sie in Visual Studio folgende Schritte aus:
 
 1. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Projektnamen, und wählen Sie **Eigenschaften** aus, um das Projekt für die Bearbeitung zu öffnen.

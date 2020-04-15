@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 28f48766dc62ac31fc357410eac27c33c9cae6d8
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940691"
 ---
 # <a name="proguard"></a>ProGuard
@@ -316,11 +316,11 @@ Dieses Problem tritt in der Regel unter Windows auf, da die `.cfg`-Datei über d
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Um dieses Problem zu verhindern, bearbeiten Sie die benutzerdefinierte Konfigurationsdatei aus einem Text-Editor, der Ihnen das Speichern der Datei ohne die BOM ermöglicht. Um dieses Problem zu beheben, stellen Sie sicher, dass Ihr Text-Editor die Codierung auf `UTF-8` festgelegt hat. Der Text-Editor [Notepad++](https://notepad-plus-plus.org/) kann beispielsweise Dateien ohne BOM speichern, indem Sie **Codierung &gt; In UTF-8 ohne BOM codieren** beim Speichern der Datei auswählen. 
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Um dieses Problem zu verhindern, speichern Sie die benutzerdefinierte Konfigurationsdatei aus einem Text-Editor, der Ihnen ermöglicht, die BOM wegzulassen. 
 

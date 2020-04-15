@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: 148afe5354d7995f15dc19c6257ed2a1567162ec
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027956"
 ---
 # <a name="android-emulator-setup"></a>Setup von Android-Emulator
@@ -26,19 +26,19 @@ In den folgenden Abschnitten wird beschrieben, wie sich der Android-Emulator fü
 
 ## <a name="sections"></a>Abschnitte
 
-### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Hardwarebeschleunigung für verbesserte Leistung des Emulators](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
+### <a name="hardware-acceleration-for-emulator-performance"></a>[Hardwarebeschleunigung für verbesserte Leistung des Emulators](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
 In diesem Artikel wird beschrieben, wie Sie Ihren Computer für höchstmögliche Leistung des Android-Emulators mithilfe von entweder Hyper-V- oder HAXM-Virtualisierungstechnologie vorbereiten. Da der Android-Emulator ohne Hardwarebeschleunigung sehr langsam sein kann, wird empfohlen, dass Sie die Hardwarebeschleunigung auf Ihrem Computer aktivieren, bevor Sie den Emulator verwenden.
 
-### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[Verwalten virtueller Geräte mit Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)
+### <a name="managing-virtual-devices-with-the-android-device-manager"></a>[Verwalten virtueller Geräte mit Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)
 
 In diesem Artikel wird beschrieben, wie Sie Android Device Manager zum Erstellen und Anpassen von virtuellen Geräten verwenden.
 
-### <a name="editing-android-virtual-device-propertiesandroidget-startedinstallationandroid-emulatordevice-propertiesmd"></a>[Bearbeiten der Eigenschaften von virtuellen Android-Geräten](~/android/get-started/installation/android-emulator/device-properties.md)
+### <a name="editing-android-virtual-device-properties"></a>[Bearbeiten der Eigenschaften von virtuellen Android-Geräten](~/android/get-started/installation/android-emulator/device-properties.md)
 
 In diesem Artikel wird beschrieben, wie Sie den Android Device Manager zum Bearbeiten der Profileigenschaften eines virtuellen Geräts verwenden.
 
-### <a name="android-emulator-troubleshootingandroidget-startedinstallationandroid-emulatortroubleshootingmd"></a>[Android Emulator Troubleshooting (Android-Emulator-Problembehandlung](~/android/get-started/installation/android-emulator/troubleshooting.md)
+### <a name="android-emulator-troubleshooting"></a>[Android Emulator Troubleshooting (Android-Emulator-Problembehandlung](~/android/get-started/installation/android-emulator/troubleshooting.md)
 
 In diesem Artikel werden die gängigsten Warnmeldungen und Probleme beschrieben, die beim Ausführen des Android-Emulators auftreten können. Außerdem finden Sie dort Tipps und Hinweise zum Umgehen dieser Probleme.
 

@@ -9,19 +9,19 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 871a94d06048f893cf06b00de46d66dd59b3703e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73023216"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS Multiscreen
 
-## <a name="part-1-quickstartiosget-startedhello-ios-multiscreenhello-ios-multiscreen-quickstartmd"></a>[Teil 1: Schnellstart](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md)
+## <a name="part-1-quickstart"></a>[Teil 1: Schnellstart](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md)
 
 Im ersten Teil dieses Leitfadens wird ein zweiter Bildschirm zur Phoneword-Anwendung hinzugefügt, um den Verlauf der eingegebenen Nummern nachzuverfolgen.
 
-## <a name="part-2-deep-diveiosget-startedhello-ios-multiscreenhello-ios-multiscreen-deepdivemd"></a>[Teil 2: Ausführliche Erläuterungen](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
+## <a name="part-2-deep-dive"></a>[Teil 2: Ausführliche Erläuterungen](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
 
 Im zweiten Teil dieses Dokuments wird das Erstellte überprüft sowie die Architektur, Navigation und weitere neue iOS-Konzepte erläutert, denen Sie noch begegnen werden.
 

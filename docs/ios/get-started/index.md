@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
 ms.openlocfilehash: b335533bfddf78e5fe2770356d29e27dbdccd0f2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022766"
 ---
 # <a name="get-started-with-xamarinios"></a>Erste Schritte mit Xamarin.iOS
@@ -36,19 +36,19 @@ Die aktuelle Version von Xcode kann vom [iOS Developer Center](https://developer
 
 ## <a name="getting-started-series"></a>Reihe mit den ersten Schritten
 
-### <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[Setup und Installation](~/ios/get-started/installation/index.md)
+### <a name="setup-and-installation"></a>[Setup und Installation](~/ios/get-started/installation/index.md)
 
 Richten Sie Xamarin.iOS für die Ausführung in Visual Studio für Mac oder Visual Studio ein. Dieser Abschnitt behandelt z.B. das Herunterladen, das Installieren mithilfe des Xamarin-Installers, das Signieren mit Ihrem Microsoft-Konto, allgemeine Elemente zur Problembehandlung und die Gerätebereitstellung.
 
-### <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
+### <a name="hello-ios"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
 
 Dieser zweiteilige Leitfaden vermittelt Ihnen, wie Sie Ihre erste Xamarin.iOS-Anwendung mit Visual Studio für Mac oder Visual Studio erstellen. Außerdem werden die Grundlagen der Entwicklung von iOS-Anwendungen mit Xamarin behandelt. Darin werden ebenfalls die Tools, Konzepte und Schritte eingeführt, die zum Erstellen und Bereitstellen einer Xamarin.iOS-Anwendung erforderlich sind.
 
-### <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md)
+### <a name="hello-ios-multiscreen"></a>[Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md)
 
 In diesem zweiteiligen Leitfaden wird die Anwendung erweitert, die Sie im Leitfaden „Hallo, iOS“ erstellt haben, um einen zweiten Bildschirm behandeln zu können. Außerdem werden Konzepte wie das Model-View-Controller-Entwurfsmuster und die Implementierung der iOS-Navigation eingeführt, und die Struktur sowie die Funktionen von iOS-Anwendungen werden ausführlich beschrieben.
 
-## <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[Xamarin für Objective-C-Entwickler](objective-c-developers/index.md)
+## <a name="xamarin-for-objective-c-developers"></a>[Xamarin für Objective-C-Entwickler](objective-c-developers/index.md)
 
 Gibt Informationen für Objective-C-Entwickler an, die zur Xamarin-Plattform wechseln.
 

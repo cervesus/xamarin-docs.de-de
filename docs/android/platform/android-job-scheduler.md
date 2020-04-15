@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
 ms.openlocfilehash: 10d2ae6ac35f02d75ef6e04a0531ec3f5dafd668
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940820"
 ---
 # <a name="android-job-scheduler"></a>Android-Auftragsplaner
@@ -24,15 +24,15 @@ Eine der besten Möglichkeiten, die Reaktionsfähigkeit einer Android-Anwendung 
 
 Eine Hintergrundaufgabe könnte beispielsweise alle drei oder vier Minuten eine Website abfragen, um auf Änderungen an einem bestimmten Dataset zu prüfen. Dies scheint harmlos zu sein, würde jedoch eine katastrophale Auswirkung auf die Akkulaufzeit haben. Die Anwendung wird das Gerät wiederholt reaktivieren, die CPU auf einen höheren Energiezustand bringen, die Sendegeräte einschalten, die Netzwerkanforderungen vornehmen und dann die Ergebnisse verarbeiten. Es wird noch schlimmer, da das Gerät nicht sofort ausgeschaltet und in den stromsparenden Leerlaufzustand zurückversetzt wird. Eine schlecht geplante Hintergrundarbeit kann unbeabsichtigterweise bewirken, dass das Gerät in einem Zustand mit unnötigem und übermäßigem Energiebedarf verbleibt. Diese scheinbar unschuldige Aktivität (das zyklische Abrufen einer Website) führt dazu, dass das Gerät in relativ kurzer Zeit unbrauchbar wird.
 
-Android stellt die folgenden APIs bereit, die beim Ausführen von Arbeit im Hintergrund unterstützen, aber diese allein reichen nicht für eine intelligente Auftragsplanung aus. 
+Android stellt die folgenden APIs bereit, die das Ausführen von Arbeit im Hintergrund unterstützen, aber diese allein reichen nicht für eine intelligente Auftragsplanung aus. 
 
 - **[Intent-Dienste](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash; Intent-Dienste eignen sich hervorragend zum Ausführen der Arbeit, aber sie bieten keine Möglichkeit, die Arbeit zu planen.
-- **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)** &ndash; Diese APIs ermöglichen nur das Planen von Arbeit, bieten aber keine Möglichkeit, die Arbeit tatsächlich auszuführen. Außerdem unterstützt AlarmManager nur zeitbasierte Einschränkungen, was bedeutet, dass ein Alarm zu einem bestimmten Zeitpunkt oder nach Ablauf einer bestimmten Zeitspanne ausgelöst wird. 
+- **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)** &ndash; diese APIs ermöglichen nur das Planen von Arbeit, bieten aber keine Möglichkeit, die Arbeit tatsächlich auszuführen. Außerdem unterstützt AlarmManager nur zeitbasierte Einschränkungen, was bedeutet, dass ein Alarm zu einem bestimmten Zeitpunkt oder nach Ablauf einer bestimmten Zeitspanne ausgelöst wird. 
 - **[Broadcast Receiver](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Über eine Android-App können Broadcast Receiver so eingerichtet werden, dass sie Arbeit als Reaktion auf systemweite Ereignisse oder Intent-Objekte ausführen. Mit Broadcast Receivern kann jedoch nicht gesteuert werden, wann der jeweilige Auftrag ausgeführt werden soll. Änderungen im Android-Betriebssystem beschränken außerdem, wann Broadcast Receiver funktionieren oder auf welche Arten von Arbeit sie reagieren können. 
 
 Es gibt zwei Hauptaspekte für ein effizientes Ausführen von Hintergrundarbeit (manchmal auch als _Hintergrundauftrag_ oder _Auftrag_ bezeichnet):
 
-1. **Intelligentes Planen der Arbeit** &ndash; Es ist unbedingt zu beachten, dass eine Anwendung, wenn sie Arbeit im Hintergrund ausführt, dies möglichst unauffällig tut. Im Idealfall sollte die Anwendung das Ausführen eines Auftrags nicht anfordern. Stattdessen sollte die Anwendung Bedingungen angeben, die erfüllt sein müssen, damit der Auftrag ausgeführt werden kann, und dann diesen Auftrag mit dem Betriebssystem abstimmen, das die Arbeit ausführt, wenn die Bedingungen erfüllt sind. Dadurch kann Android den Auftrag so ausführen, dass eine maximale Effizienz auf dem Gerät sichergestellt ist. Beispielsweise können Netzwerkanforderungen in einem Batch zusammengefasst werden, damit alle gleichzeitig ausgeführt werden und so der netzwerkbedingte Mehraufwand (Overhead) minimiert wird.
+1. **Intelligentes Planen der Arbeit** &ndash; beachten Sie unbedingt, dass eine Anwendung Arbeit im Hintergrund möglichst reibungslos ausführt. Im Idealfall sollte die Anwendung das Ausführen eines Auftrags nicht anfordern. Stattdessen sollte die Anwendung Bedingungen angeben, die erfüllt sein müssen, damit der Auftrag ausgeführt werden kann, und dann diesen Auftrag mit dem Betriebssystem abstimmen, das die Arbeit ausführt, wenn die Bedingungen erfüllt sind. Dadurch kann Android den Auftrag so ausführen, dass eine maximale Effizienz auf dem Gerät sichergestellt ist. Beispielsweise können Netzwerkanforderungen in einem Batch zusammengefasst werden, damit alle gleichzeitig ausgeführt werden und so der netzwerkbedingte Mehraufwand (Overhead) minimiert wird.
 2. **Kapseln der Arbeit** &ndash; Der Code zum Ausführen der Hintergrundarbeit sollte in einer diskreten Komponente gekapselt sein, die unabhängig von der Benutzeroberfläche ausgeführt werden kann und relativ einfach neu zu planen ist, wenn die Arbeit aus irgendeinem Grund nicht vollständig ausgeführt werden kann.
 
 Der Android-Auftragsplaner (Job Scheduler) ist ein Framework, das in das Android-Betriebssystem integriert ist und eine flexible API bereitstellt, um das Planen von Hintergrundarbeit zu vereinfachen.  Der Android-Auftragsplaner besteht aus den folgenden Typen:

@@ -9,21 +9,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
 ms.openlocfilehash: 199b9de670e424bdc21a05966cfdd73c7e2cbb42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020906"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen)
 
 _In diesem zweiteiligen Leitfaden wird die Phoneword-Anwendung, die Sie im Leitfaden „Hello, Android“ (Hallo, Android) erstellt haben, um die Behandlung eines zweiten Bildschirms erweitert. Der Leitfaden enthält eine Einführung in die grundlegenden Android-Anwendungsbausteine und detaillierte Informationen zur Android-Architektur, bei der Sie ein besseres Verständnis der Struktur und Funktionalität der Android-Anwendung entwickeln._
 
-## <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[Teil 1: Schnellstart](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
+## <a name="part-1-quickstart"></a>[Teil 1: Schnellstart](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
 Im ersten Teil dieses Leitfadens fügen Sie einen zweiten Bildschirm zur Phoneword-Anwendung hinzu, um mithilfe der App den Verlauf der aufgerufenen Nummern nachzuverfolgen. Die endgültige App zeigt einen zweiten Bildschirm an, auf dem der Anrufverlauf aufgelistet wird.
 
-## <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[Teil 2: Ausführliche Erläuterungen](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
+## <a name="part-2-deep-dive"></a>[Teil 2: Ausführliche Erläuterungen](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
 Im zweiten Teil dieses Dokuments können Sie das Erstellte überprüfen. Zudem werden die Architektur, Navigation und weitere neue Android-Konzepte erläutert, denen Sie noch begegnen werden.
 

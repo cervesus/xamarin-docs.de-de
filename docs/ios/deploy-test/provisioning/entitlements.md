@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/13/2018
 ms.openlocfilehash: f6a38aea1e46e1165bb36d83e75e24769de0a1e2
-ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75655347"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Arbeiten mit Berechtigungen in Xamarin.iOS
@@ -37,7 +37,7 @@ Allerdings müssen einige zusätzliche Bereitstellungen getätigt werden, um sic
 
 Beim Definieren Ihrer App-ID müssen Sie zusätzlich zur Auswahl und Konfiguration der erforderlichen Anwendungsdienste die Berechtigungen im Xamarin.iOS-Projekt konfigurieren, indem Sie sowohl die **info.plist**- als auch die **entitlements.plist**-Datei konfigurieren.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Um die Berechtigungen in Visual Studio für Mac zu konfigurieren, gehen Sie folgendermaßen vor:
 
@@ -54,7 +54,7 @@ Um die Berechtigungen in Visual Studio für Mac zu konfigurieren, gehen Sie folg
 5. Die Berechtigungen für Ihre Xamarin.iOS-Anwendung müssen so ausgewählt und konfiguriert werden, dass sie mit den Einstellungen übereinstimmen, die Sie beim Erstellen der App-ID festgelegt haben.
 6. Speichern Sie die Änderungen an der **entitlements.plist**-Datei.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Um die Berechtigung in Visual Studio zu konfigurieren, führen Sie Folgendes aus:
 
