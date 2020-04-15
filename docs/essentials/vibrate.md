@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70120112"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Vibration
@@ -22,7 +22,7 @@ Mit der Klasse **Vibration** können Sie die Vibrationsfunktion für eine gewün
 
 Für den Zugriff auf die **Vibrationsfunktion** ist die folgende plattformspezifische Einrichtung erforderlich.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Die Berechtigung „Vibrate“ (Vibrieren) ist obligatorisch und muss im Android-Projekt konfiguriert werden. Das Hinzufügen erfolgt folgendermaßen:
 
@@ -42,11 +42,11 @@ Alternativ können Sie das Android-Manifest aktualisieren:
 
 Alternativ können Sie mit der rechten Maustaste auf das Android-Projekt klicken und die Eigenschaften des Projekts öffnen. Suchen Sie unter **Android-Manifest** den Bereich **Erforderliche Berechtigungen:** , und aktivieren Sie die Berechtigung **VIBRATE** (Vibrieren). Dadurch wird die Datei **AndroidManifest.xml** automatisch aktualisiert.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Es ist kein zusätzliches Setup erforderlich.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Keine Plattformunterschiede.
 
@@ -101,17 +101,17 @@ catch (Exception ex)
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Keine Plattformunterschiede.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - Vibriert nur, wenn das Gerät auf „Beim Klingeln vibrieren“ eingestellt ist.
 - Vibriert immer für 500 Millisekunden.
 - Es ist nicht möglich, die Vibration abzubrechen.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Keine Plattformunterschiede.
 

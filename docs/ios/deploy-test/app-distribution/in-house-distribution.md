@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026551"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
@@ -54,7 +54,7 @@ Es ist wichtig, zu beachten, dass abgelaufene Zertifikate nicht erneuert werden 
 1. Navigieren Sie zum Abschnitt *Certificates, Identifiers & Profiles* (Zertifikate, Bezeichner & Profile) im Developer Member Center von Apple.
 2. Wählen Sie unter *Certificates* (Zertifikate) die Option **Production** (Produktion) aus.
 3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
-4. Wählen Sie unter der Überschrift *Produktion* **Intern und Ad-hoc** aus:
+4. Wählen Sie unter der Überschrift *Produktion***Intern und Ad-hoc** aus:
 
    [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
@@ -124,11 +124,11 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 6. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
  Möglicherweise müssen Sie Visual Studio für Mac beenden und die Liste der verfügbaren Signierungsidentitäten und Bereitstellungsprofile in Xcode aktualisieren (anhand der Anweisungen im Abschnitt [Anfordern von Signierungsidentitäten](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio für Mac verfügbar ist.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac des Buildhosts) die Listen der verfügbaren Signierungsidentitäten und Bereitstellungsprofile aktualisieren (anhand der Anweisungen im Abschnitt [Anfordern von Signierungsidentitäten](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), bevor ein neues Verteilungsprofil in Visual Studio verfügbar wird.
 

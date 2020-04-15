@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 01/29/2019
 ms.custom: video
 ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70756996"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: App-Informationen
@@ -60,7 +60,7 @@ Diese Seite mit den Einstellungen ermöglicht dem Benutzer, Anwendungsberechtigu
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Für die folgenden Felder werden App-Informationen aus der Datei `AndroidManifest.xml` abgerufen:
 
@@ -69,7 +69,7 @@ Für die folgenden Felder werden App-Informationen aus der Datei `AndroidManifes
 - **PackageName**: `package` im `manifest`-Knoten
 - **VersionString**: `android:versionName` im `application`-Knoten
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Für die folgenden Felder werden App-Informationen aus der Datei `Info.plist` abgerufen:
 
@@ -78,7 +78,7 @@ Für die folgenden Felder werden App-Informationen aus der Datei `Info.plist` ab
 - **PackageName**: `CFBundleIdentifier`
 - **VersionString**: `CFBundleShortVersionString`
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Für die folgenden Felder werden App-Informationen aus der Datei `Package.appxmanifest` abgerufen:
 

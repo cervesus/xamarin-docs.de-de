@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
 ms.openlocfilehash: 280fe11f935db0a364f3342b22bb9544cdda1e6d
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020244"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase Job Dispatcher
@@ -20,7 +20,7 @@ _In diesem Leitfaden wird erläutert, wie Sie Hintergrundarbeit mit der Firebase
 
 ## <a name="overview"></a>Übersicht
 
-Eine der besten Möglichkeiten, die Reaktionsfähigkeit einer Android-Anwendung für einen Benutzer aufrechtzuerhalten, besteht darin, komplexe oder lange dauernde Arbeit im Hintergrund auszuführen. Allerdings ist es wichtig, dass sich Hintergrundarbeit nicht negativ auf die Erfahrung auswirkt, die der Benutzer mit dem Gerät macht. 
+Eine der besten Möglichkeiten, die Reaktionsfähigkeit einer Android-Anwendung für einen Benutzer aufrechtzuerhalten, besteht darin, komplexe oder zeitintensive Arbeit im Hintergrund auszuführen. Allerdings ist es wichtig, dass sich Hintergrundarbeit nicht negativ auf die Erfahrung auswirkt, die der Benutzer mit dem Gerät macht. 
 
 Eine Hintergrundaufgabe könnte beispielsweise alle drei oder vier Minuten eine Website abfragen, um auf Änderungen an einem bestimmten Dataset zu prüfen. Dies scheint harmlos zu sein, würde jedoch eine katastrophale Auswirkung auf die Akkulaufzeit haben. Die Anwendung wird das Gerät wiederholt reaktivieren, die CPU auf einen höheren Energiezustand bringen, die Sendegeräte einschalten, die Netzwerkanforderungen vornehmen und dann die Ergebnisse verarbeiten. Es wird noch schlimmer, da das Gerät nicht sofort ausgeschaltet und in den stromsparenden Leerlaufzustand zurückversetzt wird. Eine schlecht geplante Hintergrundarbeit kann unbeabsichtigterweise bewirken, dass das Gerät in einem Zustand mit unnötigem und übermäßigem Energiebedarf verbleibt. Diese scheinbar unschuldige Aktivität (das zyklische Abrufen einer Website) führt dazu, dass das Gerät in relativ kurzer Zeit unbrauchbar wird.
 

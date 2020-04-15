@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488516"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Startprogramm
@@ -56,11 +56,11 @@ public class LauncherTest
 
 ### <a name="additional-platform-setup"></a>Einrichtung zusätzlicher Plattformen
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Kein zusätzliches Setup.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 In iOS 9 und höher erzwingt Apple, welche Schemas eine Anwendung abfragen kann. Um anzugeben, welche Schemas Sie verwenden möchten, müssen Sie `LSApplicationQueriesSchemes` in Ihrer `Info.plist`-Datei angeben.
 
@@ -72,7 +72,7 @@ In iOS 9 und höher erzwingt Apple, welche Schemas eine Anwendung abfragen kann.
 </array>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Kein zusätzliches Setup.
 
@@ -97,11 +97,11 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 ## <a name="platform-differences"></a>Plattformunterschiede
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Die von `CanOpenAsync` zurückgegebene Aufgabe wird sofort abgeschlossen.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Wenn die Zielanwendung auf diesem Gerät noch nie von `OpenAsync` aus Ihrer Anwendung geöffnet wurde, fordert iOS den Benutzer einmal auf, Ihrer Anwendung das Öffnen zu erlauben.
 
@@ -109,7 +109,7 @@ Die von `CanOpenAsync` zurückgegebene Aufgabe wird sofort abgeschlossen.
 
 Weitere Informationen zur iOS-Implementierung [finden Sie hier](xref:UIKit.UIApplication.CanOpenUrl*).
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Keine Plattformunterschiede.
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: e961dc537d8b793feb3587ec89b69c53ab821088
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.openlocfilehash: 44f7701adbe742828d8ec33dec21c316d11bf93e
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160576"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628288"
 ---
 # <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms-Layout für Dual-Screen-Geräte
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 Die `TwoPaneView`-Klasse stellt einen Container mit zwei Ansichten dar, die den Inhalt dem verfügbaren Platz entsprechend nebeneinander oder übereinander positionieren und in der Größe anpassen. `TwoPaneView` erbt von `Grid`. Diese Eigenschaften funktionieren also so, als würden sie auf ein Raster angewendet werden.
 
@@ -73,4 +73,4 @@ Die folgenden Eigenschaften werden angewendet, wenn `TwoPaneView` auf einem einz
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [DualScreen (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+- [DualScreen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)

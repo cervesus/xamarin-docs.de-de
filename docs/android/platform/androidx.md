@@ -6,10 +6,10 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
 ms.openlocfilehash: ad6ea2f68fc01183f7ed42e85094f6be5fb3d9f9
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77618911"
 ---
 # <a name="androidx-with-xamarin"></a>AndroidX mit Xamarin
@@ -32,7 +32,7 @@ Um AndroidX-Features in Xamarin-basierten Apps zu verwenden, müssen folgende Vo
 
 - **Visual Studio** – Führen Sie unter Windows ein Update auf Visual Studio 2019, Version 16.4 oder höher, durch. Führen Sie unter macOS ein Update auf Visual Studio 2019 für Mac, Version 8.4 oder höher, durch.
 - **Xamarin.Android** – Mit Visual Studio muss Xamarin.Android 10.0 oder höher installiert werden (Xamarin.Android wird unter Windows automatisch als Teil der **Mobile Entwicklung mit .NET**-Workload und als Teil des **Visual Studio für Mac-Installationsprogramms** installiert).
-- **Java Developer Kit** – Für die Entwicklung mit Xamarin.Android 10.0 ist JDK 8 erforderlich. Die Microsoft-Distribution von OpenJDK wird automatisch als Teil von Visual Studio installiert.
+- **Java Developer Kit**: Für die Entwicklung mit Xamarin.Android 10.0 ist JDK 8 erforderlich. Die Microsoft-Distribution von OpenJDK wird automatisch als Teil von Visual Studio installiert.
 - **Android SDK** – Android SDK API 28 oder höher muss über den Android-SDK-Manager installiert werden.
 
 ## <a name="get-started"></a>Erste Schritte
