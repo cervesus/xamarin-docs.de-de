@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c864f5d97e72a58e4b3c28fdeb97b7cfaea75992
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67277248"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389962"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -15,7 +15,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **ListViewTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **ListViewTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen: Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -42,7 +42,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`ListView`](xref:Xamarin.Forms.Image)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft legt fest, welche Elemente angezeigt werden sollen. Die Elemente werden wiederum über ein Array aus Zeichenfolgen definiert.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`ListView`](xref:Xamarin.Forms.ListView)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft legt fest, welche Elemente angezeigt werden sollen. Die Elemente werden wiederum über ein Array aus Zeichenfolgen definiert.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
@@ -57,7 +57,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **ListViewTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Doppelklicken Sie im **Lösungspad** im Projekt **ListViewTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen: Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -84,8 +84,8 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     </ContentPage>
     ```
 
-    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`ListView`](xref:Xamarin.Forms.Image)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft legt fest, welche Elemente angezeigt werden sollen. Die Elemente werden wiederum über ein Array aus Zeichenfolgen definiert.
+    In diesem Codeausschnitt wird die Benutzeroberfläche deklarativ für die Seite definiert, die ein [`ListView`](xref:Xamarin.Forms.ListView)-Element in einem [`StackLayout`](xref:Xamarin.Forms.StackLayout) enthält. Die [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft legt fest, welche Elemente angezeigt werden sollen. Die Elemente werden wiederum über ein Array aus Zeichenfolgen definiert.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
     [![Screenshot: Listenansicht unter iOS und Android](../images/create-listview.png "Listenansicht mit Daten")](../images/create-listview-large.png#lightbox "Listenansicht mit Daten")
