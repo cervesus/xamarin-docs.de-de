@@ -8,10 +8,10 @@ author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
 ms.openlocfilehash: cbd7c796cd13aa45dc107bddf06ca44d6adbdf9d
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77519674"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>Exemplarische Vorgehensweise: Binden einer Android-Kotlin-Bibliothek
@@ -173,7 +173,7 @@ Die Metadaten verwenden  [XPath](https://www.w3.org/TR/xpath/) -Syntax und wer
 
     Im BubblePicker-Beispiel gibt es keine Member, die vorzeichenlose Typen verwenden, sodass keine weiteren Änderungen erforderlich sind.
 
-- Kotlin-Member mit generischen Parametern werden standardmäßig in Parameter des Typs „Java.`Lang.Object` “ umgewandelt. Eine Kotlin-Methode weist beispielsweise einen generischen Parameter \<T> auf:
+- Kotlin-Member mit generischen Parametern werden standardmäßig in Parameter des Typs „Java.`Lang.Object`“ umgewandelt. Eine Kotlin-Methode weist beispielsweise einen generischen Parameter \<T> auf:
 
     ```Kotlin
     public open fun <T>fooGenericMethod(value: T) : String {

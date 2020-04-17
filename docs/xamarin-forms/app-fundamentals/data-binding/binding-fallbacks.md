@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
 ms.openlocfilehash: 67fd8070ae36bdc1a90b8a33b25f13369d8d995d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650210"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Fallbacks für Xamarin.Forms-Bindungen
@@ -48,7 +48,7 @@ Anstatt [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)-Eigensch
 
 Dies ist das Programm, das ausgeführt wird:
 
-![FallbackValue Binding](binding-fallbacks-images/bindingunavailable-detail-cropped.png "Fallbackwert-Bindung")
+![FallbackValue-Bindung](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue-Bindung")
 
 Wenn die `FallbackValue`-Eigenschaft nicht in einem Bindungsausdruck festgelegt ist, und der Bindungspfad oder Teil des Pfads nicht gelöst wurde, wird [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) auf das Ziel festgelegt. Wenn die `FallbackValue`-Eigenschaft jedoch festgesetzt wird und der Bindungspfad oder Teil des Pfads nicht gelöst wurde, wird der Wert der `FallbackValue`-Werteigenschaft auf das Ziel festgelegt. Deshalb wird auf der Seite **MonkeyDetail (Affe Details)** vom [`Label`](xref:Xamarin.Forms.Label) „Population size unknown“ (Populationsgröße unbekannt) angezeigt, weil dem gebundenen Objekt eine `Population`-Eigenschaft fehlt.
 
@@ -97,7 +97,7 @@ Anstatt [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)-Eige
 
 Dies ist das Programm, das ausgeführt wird:
 
-[![TargetNullValue Binding](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue Binding")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue Binding")
+[![TargetNullValue-Bindung](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue-Bindung")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue-Bindung")
 
 Wenn die `TargetNullValue`-Eigenschaft nicht in einem Bindungsausdruck festgelegt ist, wird ein Quellwert von `null` konvertiert, falls ein Wertkonverter definiert ist, und formatiert, falls ein `StringFormat` definiert ist. Das Ergebnis wird dann auf das Ziel festgelegt. Wenn die `TargetNullValue`-Eigenschaft festgelegt ist, wird ein Quellwert von `null` konvertiert, falls ein Wertkonverter definiert ist, und wenn dieser nach der Konvertierung immer noch `null` ist, wird der Wert der `TargetNullValue`-Eigenschaft auf das Ziel festgelegt.
 

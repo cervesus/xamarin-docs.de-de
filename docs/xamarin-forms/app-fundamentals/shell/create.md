@@ -1,6 +1,5 @@
 ---
-title: >
-  Erstellen einer Xamarin.Forms-Shell-Anwendung
+title: Erstellen einer Xamarin.Forms-Shell-Anwendung
 description: Das Vorgehen zum Erstellen einer Xamarin.Forms-Shell-Anwendung besteht darin, eine XAML-Datei zu erstellen, die die Shell-Klasse untergliedert, die MainPage-Eigenschaft der App-Klasse der Anwendung auf das in Unterklassen untergliederte Shell-Objekt festzulegen und dann die visuelle Hierarchie der Anwendung in der in Unterklassen untergliederten Shell-Klasse zu beschreiben.
 ms.prod: xamarin
 ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
@@ -9,14 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
 ms.openlocfilehash: eec20ff6ceb4aee7e8fde59992576899690616c3
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68739310"
 ---
 # <a name="create-a-xamarinforms-shell-application"></a>Erstellen einer Xamarin.Forms-Shell-Anwendung
-
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -90,7 +88,6 @@ Der letzte Schritt bei der Erstellung einer Xamarin.Forms-Shell-Anwendung ist di
 
 Keines dieser Objekte repräsentiert eine Benutzeroberfläche, sondern die Organisation der visuellen Struktur der Hierarchie. Die Shell wird diese Objekte übernehmen und die Benutzeroberfläche für die Navigation der Inhalte erstellen.
 
-
 Die folgende XAML zeigt ein Beispiel für eine `Shell`-Klasse mit Unterklassen:
 
 ```xaml
@@ -135,7 +132,7 @@ Wird dieses Beispiel ausgeführt, zeigt der XAML-Code das `CatsPage`-Objekt an, 
 
 Wird auf das Hamburger-Symbol gedrückt oder von links gewischt, wird das Flyout angezeigt:
 
-[![Screenshot eines Shell-Flyouts, unter iOS und Android](create-images/flyout-reduced.png "Shell-Flyout")](create-images/flyout-reduced-large.png#lightbox "Shell-Flyout")
+[![Screenshot eines Shell-Flyouts unter iOS und Android](create-images/flyout-reduced.png "Shell-Flyout")](create-images/flyout-reduced-large.png#lightbox "Shell-Flyout")
 
 > [!IMPORTANT]
 > In einer Shell-Anwendung wird jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt, das ein untergeordnetes Element eines `ShellContent`-Objekts ist, während des Anwendungsstarts erstellt. Hinzufügen weiterer `ShellContent`-Objekte mit diesem Ansatz führt dazu, dass zusätzliche Seiten während des Anwendungsstarts erstellt werden, was zu einer schlechten Starterfahrung führen kann. Mit der Shell können Seiten jedoch auch nach Bedarf als Reaktion auf die Navigation erstellt werden. Weitere Informationen finden Sie unter [Effizientes Laden von Seiten](tabs.md#efficient-page-loading) im Handbuch über die [Registerkarten der Xamarin.Forms-Shell](tabs.md).

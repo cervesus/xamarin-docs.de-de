@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
 ms.openlocfilehash: c07848b808d023439c88117924e69c336984630b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771510"
 ---
 # <a name="creating-an-effect"></a>Erstellen eines Effekts
@@ -35,12 +35,12 @@ Der Effekt kann dann verwendet werden, indem er an das entsprechende Steuereleme
 
 Die Beispielanwendung zeigt eine `FocusEffect`-Klasse, die die Hintergrundfarbe eines Steuerelements ändert, wenn sie ausgewählt wird. Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](creating-images/focus-effect.png "Projektverantwortlichkeiten des Fokuseffekts")
+![](creating-images/focus-effect.png "Focus Effect Project Responsibilities")
 
 Ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement im `HomePage`-Element wird in jedem plattformspezifischen Projekt der `FocusEffect`-Klasse angepasst. Jede `FocusEffect`-Klasse wird von der `PlatformEffect`-Klasse für jede Plattform abgeleitet. Dies führt dazu, dass das `Entry`-Steuerelement mit einer plattformspezifischen Hintergrundfarbe gerendert wird, die sich ändert, wenn das Steuerelement ausgewählt wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](creating-images/screenshots-1.png "Fokuseffekt auf jeder Plattform")
-![](creating-images/screenshots-2.png "Fokuseffekt auf jeder Plattform")
+![](creating-images/screenshots-1.png "Focus Effect on each Platform")
+![](creating-images/screenshots-2.png "Focus Effect on each Platform")
 
 ## <a name="creating-the-effect-on-each-platform"></a>Erstellen von Effect-Klassen auf verschiedenen Plattformen
 

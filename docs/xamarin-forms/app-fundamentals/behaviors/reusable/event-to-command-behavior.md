@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
 ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650913"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Wiederverwendbare EventToCommandBehavior-Klasse
@@ -198,7 +198,7 @@ Die `Command`-Eigenschaft des Verhaltens wird an die `OutputAgeCommand`-Eigensch
 
 Bei der Ausführung reagiert das Verhalten auf die Interaktion mit dem Steuerelement. Wenn ein Element in der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse ausgewählt wird, wird das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis ausgelöst, wodurch der `OutputAgeCommand`-Befehl der ViewModel-Klasse ausgeführt wird. Dadurch wird wiederum die `SelectedItemText`-Eigenschaft der ViewModel-Klasse aktualisiert, sodass [`Label`](xref:Xamarin.Forms.Label) wie in den folgenden Screenshots gezeigt angebunden wird:
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Beispielanwendung mit EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
+[![](event-to-command-behavior-images/screenshots-sml.png "Sample Application with EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
 
 Dieses Verhalten zum Ausführen eines Befehls zu verwenden, wenn ein Ereignis ausgelöst wird, hat den Vorteil, dass Befehle mit Steuerelementen verknüpft werden können, die nicht für die Interaktion mit Befehlen konzipiert wurden. Darüber hinaus werden die Codebausteine für die Ereignisverarbeitung aus CodeBehind-Dateien entfernt.
 
@@ -209,5 +209,5 @@ In diesem Artikel wurde die Verwendung eines Xamarin.Forms-Verhaltens zum Aufruf
 ## <a name="related-links"></a>Verwandte Links
 
 - [EventToCommand Behavior (EventToCommand-Verhalten (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
-- [Behavior-Klasse](xref:Xamarin.Forms.Behavior)
+- [Behavior class (Behavior-Klasse)](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt; class (Behavior<T>-Klasse)](xref:Xamarin.Forms.Behavior`1)

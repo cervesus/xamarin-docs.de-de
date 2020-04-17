@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/16/2018
 ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022753"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Kostenlose Bereitstellung für Xamarin.iOS-Apps
@@ -27,7 +27,7 @@ So verwenden Sie die kostenlose Bereitstellung zum Bereitstellen einer App auf e
 > [!IMPORTANT]
 > Durch die [automatische Bereitstellung](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) kann Visual Studio für Mac oder Visual Studio 2019 automatisch ein Gerät zum Testen für den Entwickler einrichten. Die automatische Bereitstellung ist bei der kostenlosen Bereitstellung nicht möglich. Um die automatische Bereitstellung nutzen zu können, müssen Sie über ein kostenpflichtiges Apple Developer Program-Konto verfügen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 So stellen Sie Ihre Xamarin.iOS-Anwendungen auf einem Gerät mit kostenloser Bereitstellung bereit:
 
@@ -87,7 +87,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 
 ### <a name="deploy-your-xamarinios-app"></a>Bereitstellen Ihrer Xamarin.iOS-App
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Verbinden Sie Ihr iOS-Gerät via USB oder [drahtlos](~/ios/deploy-test/wireless-deployment.md) mit dem Mac-Buildhost.
 2. Doppelklicken Sie im **Lösungspad** von Visual Studio für Mac auf **Info.plist**.
@@ -106,7 +106,7 @@ Führen Sie die untenstehenden Schritte durch, um Ihre Xamarin.iOS-App mit koste
 9. Klicken Sie auf **OK**, um die **Projektoptionen** zu speichern und zu schließen.
 10. Wählen Sie Ihr iOS-Gerät, und führen Sie die App aus.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Stellen Sie sicher, dass Visual Studio 2019 oder Visual Studio 2017 [mit einem Mac-Buildhost gekoppelt wurde](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Verbinden Sie Ihr iOS-Gerät via USB oder [drahtlos](~/ios/deploy-test/wireless-deployment.md) mit dem Mac-Buildhost.

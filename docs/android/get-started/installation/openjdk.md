@@ -8,11 +8,11 @@ author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
 ms.openlocfilehash: a24edbc10d529878092b474df7f186d14049d5e0
-ms.sourcegitcommit: f8e22a3b0642179bf44a312e9a2fac0fbad8683c
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57239112"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60955081"
 ---
 # <a name="microsofts-mobile-openjdk-distribution"></a>OpenJDK-Distribution von Microsoft für die mobile Entwicklung
 
@@ -46,16 +46,16 @@ Wenn Probleme mit dem Setup unter Mac oder Windows auftreten, können Sie die fo
 
 Überprüfen Sie, ob OpenJDK am richtigen Speicherort des Computers installiert ist:
 
-- **Mac** &ndash; **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.x**
-- **Windows** &ndash; **C:\\Programme\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.x**
+- **Mac**: **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.x**
+- **Windows**: **C:\\Programme\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.x**
 
 Ordnen Sie die IDE dem neuen JDK zu:
 
-- **Mac** &ndash; Klicken Sie auf **Tools > SDK Manager > Speicherorte**, und ändern Sie den Speicherort von **Java SDK (JDK)** in den vollständigen Pfad der OpenJDK-Installation. Im folgenden Beispiel ist dieser Pfad auf **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9** festgelegt. Möglicherweise verfügen Sie aber über eine neuere Version.
+- **Mac**: Klicken Sie auf **Tools > SDK Manager > Speicherorte**, und ändern Sie den Speicherort von **Java SDK (JDK)** in den vollständigen Pfad der OpenJDK-Installation. Im folgenden Beispiel ist dieser Pfad auf **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9** festgelegt. Möglicherweise verfügen Sie aber über eine neuere Version.
 
 ![Festlegen des JDK-Pfads für die Microsoft Mobile OpenJDK-Verteilung für Mac](openjdk-images/vsm.png)
 
-- **Windows** &ndash; Klicken Sie auf **Werkzeuge > Optionen > Xamarin > Android-Einstellungen**, und ändern Sie den **Java Development Kit-Speicherort** in den vollständigen Pfad der OpenJDK-Installation. Im folgenden Beispiel ist dieser Pfad auf **C:\\Programmdateien\\Android\\Jdk\\microsoft_dist_openjdk_1.8.0.9** festgelegt. Möglicherweise verfügen Sie aber über eine neuere Version:
+- **Windows**: Klicken Sie auf **Extras > Optionen > Xamarin > Android-Einstellungen**, und ändern Sie den **Java Development Kit-Speicherort** in den vollständigen Pfad der OpenJDK-Installation. Im folgenden Beispiel ist dieser Pfad auf **C:\\Programmdateien\\Android\\Jdk\\microsoft_dist_openjdk_1.8.0.9** festgelegt. Möglicherweise verfügen Sie aber über eine neuere Version:
 
 ![Festlegen des JDK-Pfads für die Microsoft Mobile OpenJDK-Verteilung für Windows](openjdk-images/vs.png)
 

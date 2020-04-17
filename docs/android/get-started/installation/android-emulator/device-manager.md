@@ -10,10 +10,10 @@ ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021153"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Verwalten virtueller Geräte mit Android Device Manager
@@ -179,7 +179,7 @@ Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 
   [![Ergebnis beim Klicken auf „Im Explorer anzeigen“](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
 
-- **Auf Werkseinstellungen zurücksetzen:** Setzt das ausgewählte Gerät auf die Standardeinstellungen zurück. Dabei werden alle Benutzeränderungen am internen Zustand des Geräts, die während der Ausführung vorgenommen wurden, gelöscht. Dabei wird die aktuelle [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)-Momentaufnahme gelöscht (falls vorhanden). Dies wirkt sich nicht auf Änderungen aus, die während der Erstellung und Bearbeitung des virtuellen Geräts vorgenommen werden. Es wird ein Dialogfeld mit der Erinnerung angezeigt, dass das Zurücksetzen nicht rückgängig gemacht werden kann. Klicken Sie auf **Auf Werkseinstellungen zurücksetzen**, um die Zurücksetzung zu bestätigen:
+- **Auf Werkseinstellungen zurücksetzen:** Setzt das ausgewählte Gerät auf die Standardeinstellungen zurück. Dabei werden alle Benutzeränderungen am internen Zustand des Geräts, die während der Ausführung vorgenommen wurden, gelöscht. (Es wird auch die aktuelle [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)-Momentaufnahme (falls vorhanden) gelöscht.) Dies wirkt sich nicht auf Änderungen aus, die während der Erstellung und Bearbeitung des virtuellen Geräts vorgenommen werden. Es wird ein Dialogfeld mit der Erinnerung angezeigt, dass das Zurücksetzen nicht rückgängig gemacht werden kann. Klicken Sie auf **Auf Werkseinstellungen zurücksetzen**, um die Zurücksetzung zu bestätigen:
 
   ![Dialogfeld „Auf Werkseinstellungen zurücksetzen“](device-manager-images/win/27-factory-reset.png)
 
@@ -347,7 +347,7 @@ Das Menü „Zusätzliche Optionen“ enthält folgende Elemente:
 
   [![Ergebnis vom Klicken auf „Im Finder anzeigen“](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
 
-- **Auf Werkseinstellungen zurücksetzen:** Setzt das ausgewählte Gerät auf die Standardeinstellungen zurück. Dabei werden alle Benutzeränderungen am internen Zustand des Geräts, die während der Ausführung vorgenommen wurden, gelöscht. Dabei wird die aktuelle [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)-Momentaufnahme gelöscht (falls vorhanden). Dies wirkt sich nicht auf Änderungen aus, die während der Erstellung und Bearbeitung des virtuellen Geräts vorgenommen werden. Es wird ein Dialogfeld mit der Erinnerung angezeigt, dass das Zurücksetzen nicht rückgängig gemacht werden kann. Klicken Sie auf **Auf Werkseinstellungen zurücksetzen**, um die Zurücksetzung zu bestätigen.
+- **Auf Werkseinstellungen zurücksetzen:** Setzt das ausgewählte Gerät auf die Standardeinstellungen zurück. Dabei werden alle Benutzeränderungen am internen Zustand des Geräts, die während der Ausführung vorgenommen wurden, gelöscht. (Es wird auch die aktuelle [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)-Momentaufnahme (falls vorhanden) gelöscht.) Dies wirkt sich nicht auf Änderungen aus, die während der Erstellung und Bearbeitung des virtuellen Geräts vorgenommen werden. Es wird ein Dialogfeld mit der Erinnerung angezeigt, dass das Zurücksetzen nicht rückgängig gemacht werden kann. Klicken Sie auf **Auf Werkseinstellungen zurücksetzen**, um die Zurücksetzung zu bestätigen.
 
   ![Dialogfeld „Auf Werkseinstellungen zurücksetzen“](device-manager-images/mac/27-factory-reset-m76.png)
 
@@ -365,7 +365,7 @@ In den folgenden Abschnitten wird erläutert, wie Sie Probleme diagnostizieren u
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="android-sdk-in-non-standard-location"></a>Speicherort von Android SDK weicht vom Standard ab
 
@@ -383,7 +383,7 @@ Führen Sie die folgenden Schritte aus, um dieses Problem zu umgehen:
 
    ![Speicherort der Protokolldatei von Android Device Manager](device-manager-images/win/30-log-files.png)
 
-2. Doppelklicken Sie auf eine der Protokolldateien, um diese zu öffnen und den **Konfigurationsdateipfad** zu suchen. Beispiel:
+2. Doppelklicken Sie auf eine der Protokolldateien, um diese zu öffnen und den **Konfigurationsdateipfad** zu suchen. Zum Beispiel:
 
    [![Konfigurationsdateipfad in der Protokolldatei](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -429,7 +429,7 @@ Sie können Folgendes tun, um dieses Problem zu umgehen:
 
 Nach diesen Veränderungen startet das virtuelle Android-Gerät neu in einem Zustand, in dem das WLAN wieder funktioniert.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ### <a name="wrong-version-of-android-sdk-tools"></a>Falsche Version von Android SDK Tools
 
@@ -467,13 +467,13 @@ Nach diesen Veränderungen startet das virtuelle Android-Gerät neu in einem Zus
 
 ### <a name="generating-a-bug-report"></a>Erstellen eines Fehlerberichts
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Wenn Sie mit dem Android Device Manager auf einen Fehler stoßen, der mit den oben genannten Tipps zur Problembehandlung nicht gelöst werden kann, erstellen Sie bitte einen Fehlerbericht, indem Sie einen Rechtsklick auf die Titelleiste ausführen und dann auf **Fehlerbericht erstellen** klicken:
 
 [![Ort des Menüelements zum Erstellen eines Fehlerberichts](device-manager-images/win/34-bug-report-sml.png)](device-manager-images/win/34-bug-report.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Wenn Sie mit dem Android Device Manager auf einen Fehler stoßen, der mit den oben genannten Tipps zur Problembehandlung nicht gelöst werden kann, erstellen Sie bitte einen Fehlerbericht, indem Sie auf **Hilfe > Problem melden** klicken:
 

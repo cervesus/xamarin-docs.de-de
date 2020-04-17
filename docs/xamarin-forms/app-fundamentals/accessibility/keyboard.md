@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
 ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71997111"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Barrierefreiheit der Tastatur in Xamarin.Forms
@@ -53,7 +53,7 @@ Standardmäßig entspricht die Aktivierreihenfolge von Steuerelementen der gleic
 
 Der folgende Screenshot zeigt die Standardaktivierreihenfolge für dieses Codebeispiel:
 
-![](keyboard-images/default-tab-order.png "Default Row-based Tab Order (zeilenbasierte Standardaktivierreihenfolge)")
+![](keyboard-images/default-tab-order.png "Default Row-based Tab Order")
 
 Die hier gezeigte Aktivierreihenfolge basiert auf Zeilen und entspricht der Reihenfolge, in der die Steuerelemente in XMAL aufgelistet sind. Aus diesem Grund wird durch Drücken der Tab-Taste zuerst durch [`Entry`](xref:Xamarin.Forms.Entry)-Instanzen für „Vorname“ navigiert, anschließend durch `Entry`-Instanzen für „Nachname“. Es wäre jedoch deutlich intuitiver, eine „Spalte zuerst“-Navigation zu verwenden, bei der durch Drücken der Tab-Taste durch „Vorname-Nachname“-Paare navigiert wird. Dies kann durch Angabe der Aktivierreihenfolge der Steuerelemente erreicht werden.
 
@@ -110,7 +110,7 @@ Das folgende XAML-Beispiel zeigt die `TabIndex`-Eigenschaft, die auf Eingabesteu
 
 Der folgende Screenshot zeigt die Aktivierreihenfolge für dieses Codebeispiel:
 
-![](keyboard-images/correct-tab-order.png "Spaltenbasierte Aktivierreihenfolge")
+![](keyboard-images/correct-tab-order.png "Column-based Tab Order")
 
 Die Aktivierreihenfolge hier ist spaltenbasiert. Deshalb wird durch Drücken der Tab-Taste durch „Vorname-Nachname“-[`Entry`](xref:Xamarin.Forms.Entry)-Paare navigiert.
 

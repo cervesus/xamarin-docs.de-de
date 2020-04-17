@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: dee49d556173ec0b9544820f129eef8a9cce404f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021323"
 ---
 # <a name="publishing-independently"></a>Unabhängiges Veröffentlichen
@@ -21,11 +21,11 @@ Sie können eine Anwendung veröffentlichen, ohne einen vorhandenen Android Mark
 
 Eine Reihe von Lizenzen steht für die Entwicklung, Bereitstellung und Verteilung von Xamarin.Android-Apps zur Verfügung:
 
-- **Visual Studio Community** &ndash; für Studenten, kleine Teams und OSS-Entwickler, die Windows verwenden.
+- **Visual Studio Community** &ndash; für Schüler und Studenten, kleine Teams und OSS-Entwickler, die Windows verwenden.
 
-- **Visual Studio Professional**: für einzelne Entwickler oder kleine Teams (nur Windows). Diese Lizenz bietet Standard- oder Cloudabonnements ohne Nutzungseinschränkungen.
+- **Visual Studio Professional** &ndash; für einzelne Entwickler oder kleine Teams (nur Windows). Diese Lizenz bietet Standard- oder Cloudabonnements ohne Nutzungseinschränkungen.
 
-- **Visual Studio Enterprise**: für Teams beliebiger Größe (nur Windows). Diese Lizenz umfasst Unternehmensfunktionen, ein Standard- oder Cloud-Abonnement.
+- **Visual Studio Enterprise** &ndash; für Teams beliebiger Größe (nur Windows). Diese Lizenz umfasst Unternehmensfunktionen, ein Standard- oder Cloud-Abonnement.
 
 Besuchen Sie [visualstudio.com](https://visualstudio.microsoft.com/xamarin/), um sich die Community-Edition herunterzuladen oder mehr über den Erwerb der Professional- und Enterprise-Editionen zu erfahren.
 

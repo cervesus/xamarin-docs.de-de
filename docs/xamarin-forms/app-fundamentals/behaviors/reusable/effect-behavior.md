@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: ca03dce3bd39664a07b7bf56d22d7c2e000e931f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771995"
 ---
 # <a name="reusable-effectbehavior"></a>Wiederverwendbare EffectBehavior-Klasse
@@ -155,9 +155,9 @@ label.Behaviors.Add (new EffectBehavior {
 
 Die `Group`- und `Name`-Eigenschaften des Verhaltens werden für die Effekt-Klasse in jedem plattformspezifischen Projekt auf die Werte der Attribute [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) und [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) festgelegt.
 
-Zur Laufzeit, wenn das Verhalten dem [`Label`](xref:Xamarin.Forms.Label)-Steuerelement angefügt wird, wird die `Xamarin.LabelShadowEffect`-Klasse der [`Effects`](xref:Xamarin.Forms.Element.Effects)-Sammlung des Steuerelements hinzugefügt. Dadurch wird, wie in den folgenden Screenshots zu sehen ist, ein Schatten zu dem Text hinzugefügt, der vom `Label`-Steuerelement angezeigt wird:
+Zur Laufzeit, wenn das Verhalten dem [`Label`](xref:Xamarin.Forms.Label)-Steuerelement angefügt wird, wird die `Xamarin.LabelShadowEffect`-Klasse der [`Effects`](xref:Xamarin.Forms.Element.Effects)-Sammlung des Steuerelements hinzugefügt. Dadurch wird wie in den folgenden Screenshots dargestellt ein Schatten zu dem Text hinzugefügt, der vom `Label`-Steuerelement angezeigt wird:
 
-![](effect-behavior-images/screenshots.png "Beispielanwendung mit EffectsBehavior")
+![](effect-behavior-images/screenshots.png "Sample Application with EffectsBehavior")
 
 Der Vorteil dieses Verhaltens zum Hinzufügen und Entfernen von Effekten bei Steuerelementen besteht darin, dass Sie Standardcode zum Verarbeiten von Effekten aus CodeBehind-Dateien entfernen können.
 

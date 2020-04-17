@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2019
 ms.openlocfilehash: 531d9719eb4bf5c23001ebe4260254e13f9989eb
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72697161"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Kompilierte Xamarin.Forms-Bindungen
@@ -128,7 +128,7 @@ Beachten Sie, dass [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) den Typ `Na
 
 Wenn die Anwendung zum ersten Mal ausgeführt wird, wird die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse mit `NamedColor`-Instanzen aufgefüllt. Wenn ein Element in der `ListView`-Klasse ausgewählt wird, wird die Farbe des ausgewählten Elements für die [`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color)-Eigenschaft in der `ListView`-Klasse festgelegt:
 
-[![Kompilierte Farbliste](compiled-bindings-images/compiledcolorlist-small.png "Kompilierte Farbliste]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Compiled Color List")
+[![Kompilierte Farbliste](compiled-bindings-images/compiledcolorlist-small.png "Kompilierte Farbliste]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Kompilierte Farbliste")
 
 Wenn andere Elemente in der [`ListView`](xref:Xamarin.Forms.BoxView)-Klasse ausgewählt werden, wird die Farbe der [`BoxView`](xref:Xamarin.Forms.BoxView)-Klasse aktualisiert.
 

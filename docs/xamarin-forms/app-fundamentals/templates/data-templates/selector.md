@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: e9a17bff9bd0a23d59faf7602544b25c7ec05a86
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771254"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Erstellen einer Xamarin.Forms-DataTemplateSelector-Klasse
@@ -91,7 +91,7 @@ Zur Laufzeit ruft die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse die `Pers
 
 Die folgenden Screenshots zeigen das Ergebnis der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse bei Anwendung des `PersonDataTemplateSelector`-Klasse auf jedes Objekt in der zugrunde liegenden Sammlung:
 
-![](selector-images/data-template-selector.png "ListView-Klasse mit einer Datenvorlagenauswahl")
+![](selector-images/data-template-selector.png "ListView with a Data Template Selector")
 
 Jedes `Person`-Objekt, das einen `DateOfBirth`-Eigenschaftswert größer oder gleich 1980 aufweist, wird in grün angezeigt, alle übrigen Objekte werden in rot angezeigt.
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771611"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Bindungswertkonverter für Xamarin.Forms
@@ -51,7 +51,7 @@ Die `ConvertBack`-Methode wird aufgerufen, wenn Daten vom Ziel zur Quelle in `Tw
 
 Wenn in der Datenbindung auch eine `StringFormat`-Einstellung enthalten ist, wird der Wertkonverter aufgerufen, bevor das Ergebnis als Zeichenfolge formatiert wird.
 
-Die Seite **Enable Buttons** (Aktivieren von Schaltflächen) im Beispiel [**Data Binding Demos (Demos für die Datenbindung)**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) veranschaulicht, wie dieser Wertkonverter in einer Datenbindung verwendet wird. Der Konstruktor `IntToBoolConverter` wird im Ressourcenverzeichnis der Seite instanziiert. Anschließend wird mit einer `StaticResource`-Markuperweiterung auf diesen verwiesen, um die Eigenschaft `Converter` in zwei Datenbindungen festzulegen. Es ist üblich, dass Datenkonverter zwischen mehreren Datenbindungen auf der Seite gemeinsam genutzt werden:
+Die Seite **Enable Buttons** (Aktivieren von Schaltflächen) im Beispiel [**Data Binding Demos (Demos für die Datenbindung)** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) veranschaulicht, wie dieser Wertkonverter in einer Datenbindung verwendet wird. Der Konstruktor `IntToBoolConverter` wird im Ressourcenverzeichnis der Seite instanziiert. Anschließend wird mit einer `StaticResource`-Markuperweiterung auf diesen verwiesen, um die Eigenschaft `Converter` in zwei Datenbindungen festzulegen. Es ist üblich, dass Datenkonverter zwischen mehreren Datenbindungen auf der Seite gemeinsam genutzt werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -97,7 +97,7 @@ Wenn ein Wertkonverter auf mehreren Seiten Ihrer Anwendung verwendet wird, könn
 
 Auf der Seite **Enable Buttons** (Aktivieren von Schaltflächen) ist eine allgemeine Anforderung dargestellt, wenn eine Schaltfläche (`Button`) einen Vorgang ausführt, die auf dem vom Benutzer in eine `Entry`-Ansicht eingegebenen Text basiert. Wenn nichts in die `Entry`-Ansicht eingegeben wurde, sollte die Schaltfläche (`Button`) deaktiviert werden. Jede `Button`-Klasse enthält eine Datenbindung für ihre `IsEnabled`-Eigenschaft. Die Quelle der Datenbindung ist die `Length`-Eigenschaft der `Text`-Eigenschaft der entsprechenden `Entry`-Ansicht. Wenn diese `Length`-Eigenschaft nicht 0 (null) ist, gibt der Wertkonverter `true` zurück, und die Schaltfläche (`Button`) wird aktiviert:
 
-[![Schaltflächen aktivieren](converters-images/enablebuttons-small.png "Schaltflächen aktivieren")](converters-images/enablebuttons-large.png#lightbox "Schaltflächen aktivieren")
+[![Aktivieren von Schaltflächen](converters-images/enablebuttons-small.png "Aktivieren von Schaltflächen")](converters-images/enablebuttons-large.png#lightbox "Aktivieren von Schaltflächen")
 
 Beachten Sie, dass die `Text`-Eigenschaft in jeder `Entry` mit einer leeren Zeichenfolge initialisiert wird. Die `Text`-Eigenschaft ist standardmäßig `null`, aber die Datenbindung funktioniert in diesem Fall nicht.
 

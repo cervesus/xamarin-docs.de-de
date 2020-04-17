@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c2a49af1a2d55011ef3579ddfe994e5455fed303
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60857444"
+---
 # <a name="xamarin-documentation"></a>Xamarin-Dokumentation
 
 Die Dokumentation in diesem Repository wird unter [**docs.microsoft.com/xamarin**](https://docs.microsoft.com/xamarin) gehostet.
@@ -15,11 +23,11 @@ Wenn Sie einen Pull Request (PR) übermitteln, überprüft ein CLA-Bot automatis
 
 Erfahren Sie mehr über den [**Prozess zum Mitwirken**](CONTRIBUTING.md), und ermitteln Sie, welches der folgenden Szenarios auf Ihre Situation zutrifft:
 
-* **Community – kleine Änderungen:** Wenn Sie kleine Änderungen vornehmen möchten, können Sie den jeweiligen Artikel in diesem Repository oder auf [https://docs.microsoft.com/xamarin](https://docs.microsoft.com/xamarin) finden und im Artikel auf **Bearbeiten** klicken, was Sie zur GitHub-Quelle weiterleitet. Verwenden Sie dann einfach die GitHub-Website, um Ihre Änderungen vorzunehmen. Alternativ können Sie [das Repository forken](CONTRIBUTING.md) und Änderungen aus Ihrem Fork übermitteln.
+* **Community – kleine Änderungen:** Wenn Sie kleine Änderungen vornehmen möchten, können Sie den jeweiligen Artikel in diesem Repository oder auf [https://docs.microsoft.com/xamarin](https://docs.microsoft.com/xamarin) finden. Klicken Sie im Artikel auf **Bearbeiten**, um zur GitHub-Quelle zu gelangen. Verwenden Sie dann einfach die GitHub-Website, um Ihre Änderungen vorzunehmen. Alternativ können Sie [das Repository forken](CONTRIBUTING.md) und Änderungen aus Ihrem Fork übermitteln.
 
-* **Community – neue Artikel:** Wenn Sie ein Mitglied der Xamarin-Community sind und einen neuen Artikel erstellen möchten, müssen Sie mit einem Mitarbeiter zusammenarbeiten, um den neuen Inhalten in öffentlichen und privaten Repository zu erstellen und zu veröffentlichen. Beginnen Sie, indem Sie einen [GitHub-Issue](https://github.com/MicrosoftDocs/xamarin-docs/issues) in diesem Repository eröffnen, in dem Sie Ihren vorgeschlagenen Inhalt beschreiben.
+* **Community – neue Artikel:** Wenn Sie ein Mitglied der Xamarin-Community sind und einen neuen Artikel erstellen möchten, müssen Sie mit einem Mitarbeiter zusammenarbeiten, um den neuen Inhalt durch kombiniertes Arbeiten im öffentlichen und privaten Repository zu erstellen und zu veröffentlichen. Beginnen Sie, indem Sie einen [GitHub-Issue](https://github.com/MicrosoftDocs/xamarin-docs/issues) in diesem Repository eröffnen, in dem Sie Ihren vorgeschlagenen Inhalt beschreiben.
 
-* **Mitarbeiter:** Wenn Sie technischer Redakteur, Programmmanager oder Entwickler des Produktteams für ein Xamarin-Produkt sind und es Ihre Aufgabe ist, an technischen Artikeln mitzuwirken oder sie zu schreiben, sollten Sie das private Repository (https://github.com/MicrosoftDocs/xamarin-docs-pr)) verwenden. Wenn Sie größere Änderungen an einem vorhandenen Artikel vornehmen, Bilder hinzufügen/ändern oder einen neuen Artikel verfassen, müssen Sie dieses Repository forken, den Markdown-Editor Git installieren und einige Git-Befehle lernen. Weitere Informationen finden Sie im [internen Handbuch für Mitwirkende](https://review.docs.microsoft.com/help/contribute/?branch=master).
+* **Mitarbeiter:** Wenn Sie technischer Redakteur, Programmmanager oder Entwickler des Produktteams für ein Xamarin-Produkt sind und es Ihre Aufgabe ist, an technischen Artikeln mitzuwirken oder sie zu schreiben, sollten Sie das private Repository (https://github.com/MicrosoftDocs/xamarin-docs-pr) ) verwenden. Wenn Sie größere Änderungen an einem vorhandenen Artikel vornehmen, Bilder hinzufügen/ändern oder einen neuen Artikel verfassen, müssen Sie dieses Repository forken, den Markdown-Editor Git installieren und einige Git-Befehle lernen. Weitere Informationen finden Sie im [internen Handbuch für Mitwirkende](https://review.docs.microsoft.com/help/contribute/?branch=master).
 
 ## <a name="legal-notices"></a>Rechtliche Hinweise
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 702ec35bca051f7255c5c9d67d2dc68d4f89ca52
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68645959"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Die Klasse MasterDetailPage von Xamarin.Forms
@@ -24,7 +24,7 @@ _Die MasterDetailPage-Klasse ist eine Xamarin.Forms-Seite, die zwei verwandte Se
 
 In der Regel zeigt eine Masterseite wie in den folgenden Screenshots gezeigt eine Liste von Elementen an:
 
-[![](master-detail-page-images/masterpage-components.png "Komponenten der Masterseite")](master-detail-page-images/masterpage-components-large.png#lightbox "Komponenten der Masterseite")
+[![](master-detail-page-images/masterpage-components.png "Master Page Components")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page Components")
 
 Der Speicherort für die Liste der Elemente ist auf jeder Plattform identisch. Wenn Sie eines der Elemente auswählen, wird zur entsprechenden Detailseite navigiert. Darüber hinaus verfügt die Masterseite auch über eine Navigationsleiste, die eine Schaltfläche enthält, mit der Sie zur aktiven Detailseite navigieren können:
 
@@ -34,7 +34,7 @@ Der Speicherort für die Liste der Elemente ist auf jeder Plattform identisch. W
 
 Auf einer Detailseite werden Daten angezeigt, die dem auf der Masterseite ausgewählten Element entsprechen. In den folgenden Screenshots sehen Sie die Hauptkomponenten der Detailseite:
 
-![](master-detail-page-images/detailpage-components.png "Komponenten der Detailseite")
+![](master-detail-page-images/detailpage-components.png "Detail Page Components")
 
 Die Detailseite enthält eine Navigationsleiste, deren Inhalt von der jeweiligen Plattform abhängen:
 
@@ -210,7 +210,7 @@ public class MasterPageCS : ContentPage
 
 In den folgenden Screenshots wird die Masterseite auf den jeweiligen Plattformen veranschaulicht:
 
-![](master-detail-page-images/masterpage.png "Beispiel für die Masterseite")
+![](master-detail-page-images/masterpage.png "Master Page Example")
 
 ### <a name="creating-and-displaying-the-detail-page"></a>Erstellen und Anzeigen der Detailseite
 
@@ -245,7 +245,7 @@ Die `OnItemSelected`-Methode führt die folgenden Aktionen aus:
 
 In den folgenden Screenshots wird die Detailseite `ContactPage` gezeigt, die angezeigt wird, wenn sie auf der Masterseite ausgewählt wurde:
 
-![](master-detail-page-images/detailpage.png "Detailseitenbeispiel")
+![](master-detail-page-images/detailpage.png "Detail Page Example")
 
 <a name="Controlling_the_Detail_Page_Display_Behavior" />
 

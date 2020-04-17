@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70760824"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms-modale Seiten
@@ -29,11 +29,11 @@ In diesem Artikel werden die folgenden Themen behandelt:
 
 Eine modale Seite kann jeder von Xamarin.Forms unterstützte [Seiten](~/xamarin-forms/user-interface/controls/pages.md)-Typ sein. Wenn eine modale Seite angezeigt werden soll, überträgt die Anwendung diese Seite per Push in den modalen Stapel, wo sie dann zur aktiven Seite wird. Dieser Vorgang wird im folgenden Diagramm veranschaulicht:
 
-![](modal-images/pushing.png "Übertragen von Seiten auf den modalen Stapel")
+![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
 
 Um zu vorherigen Seite zurückzukehren, entfernt die Anwendung die aktuelle Seite per Pop vom modalen Stapel, und die neue oberste Seite wird zur aktiven Seite. Dieser Vorgang wird im folgenden Diagramm veranschaulicht:
 
-![](modal-images/popping.png "Entfernen von Seiten per Pop aus dem modalen Stapel")
+![](modal-images/popping.png "Popping a Page from the Modal Stack")
 
 <a name="Performing_Navigation" />
 
@@ -65,7 +65,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 Dies bewirkt, dass die `ModalPage`-Instanz per Push an den modalen Stapel übertragen wird, wo sie zur aktiven Seite wird, wenn in den [`ListView`](xref:Xamarin.Forms.ListView) ein Element auf der `MainPage`-Instanz ausgewählt wurde. Die `ModalPage`-Instanz wird in den folgenden Screenshots dargestellt:
 
-![](modal-images/modalpage.png "Modale Seite – Beispiel")
+![](modal-images/modalpage.png "Modal Page Example")
 
 Wenn [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) aufgerufen wird, treten die folgenden Ereignisse auf:
 

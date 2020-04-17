@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 4acbfe810abefd9a25721ddf59c9f4f197afdf28
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020977"
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android Multiscreen (Hallo, Android-Multiscreen): Ausführliche Erläuterungen
@@ -33,16 +33,16 @@ Eine Android-Anwendung besteht aus einer Auflistung von speziellen Android-Klass
 
 Anwendungsblöcke bilden das Rückgrat von Android-Anwendungen, da mit ihnen Aktionen ausgeführt werden können, die Sie normalerweise mit einer normalen Klasse nicht bewältigen könnten. Die beiden wichtigsten sind _Aktivitäten_ und _Dienste_:
 
-- **Aktivität** &ndash; Eine Aktivität entspricht einem Bildschirm mit einer Benutzeroberfläche und gleicht konzeptionell einer Webseite in einer Webanwendung. Beispielsweise wäre der Anmeldebildschirm in einer Newsfeedanwendung die erste Aktivität, die scrollbare Liste der Nachrichtenelemente wäre eine andere Aktivität und die Detailseite für jedes Element wäre eine dritte. Weitere Informationen zu Aktivitäten finden Sie im Handbuch [Activity Lifecycle (Aktivitätslebenszyklus)](~/android/app-fundamentals/activity-lifecycle/index.md).
+- **Aktivität:** Eine Aktivität entspricht einem Bildschirm mit einer Benutzeroberfläche und gleicht konzeptionell einer Webseite in einer Webanwendung. Beispielsweise wäre der Anmeldebildschirm in einer Newsfeedanwendung die erste Aktivität, die scrollbare Liste der Nachrichtenelemente wäre eine andere Aktivität und die Detailseite für jedes Element wäre eine dritte. Weitere Informationen zu Aktivitäten finden Sie im Handbuch [Activity Lifecycle (Aktivitätslebenszyklus)](~/android/app-fundamentals/activity-lifecycle/index.md).
 
-- **Dienst** &ndash; Android-Dienste unterstützen die Aktivitäten, indem sie Aufgaben mit langer Laufzeit übernehmen und diese im Hintergrund ausführen. Dienste verfügen nicht über eine Benutzeroberfläche und werden verwendet, um Aufgaben zu behandeln, die nicht an Bildschirme gekoppelt sind &ndash; z.B. die Wiedergabe eines Musiktitels im Hintergrund oder das Hochladen von Fotos auf einen Server. Weitere Informationen zu Diensten finden Sie in den Handbüchern [Creating Services (Erstellen von Diensten)](~/android/app-fundamentals/services/index.md) und [Android Services (Android-Dienste)](~/android/app-fundamentals/services/index.md).
+- **Dienst:** Android-Dienste unterstützen die Aktivitäten, indem sie Aufgaben mit langer Laufzeit übernehmen und diese im Hintergrund ausführen. Dienste verfügen nicht über eine Benutzeroberfläche und werden verwendet, um Aufgaben zu behandeln, die nicht an Bildschirme gekoppelt sind &ndash; z.B. die Wiedergabe eines Musiktitels im Hintergrund oder das Hochladen von Fotos auf einen Server. Weitere Informationen zu Diensten finden Sie in den Handbüchern [Creating Services (Erstellen von Diensten)](~/android/app-fundamentals/services/index.md) und [Android Services (Android-Dienste)](~/android/app-fundamentals/services/index.md).
 
 Eine Android-Anwendung verwendet möglicherweise nicht alle Typen von Bausteinen und verfügt oft über mehrere Bausteine eines bestimmten Typs. Die Phoneword-Anwendung aus dem [Hallo, Android-Schnellstart](~/android/get-started/hello-android/hello-android-quickstart.md) besteht beispielsweise aus nur einer Aktivität (Bildschirm) und einigen Ressourcendateien. Eine einfache Musik-Player-App verfügt möglicherweise über mehrere Aktivitäten und einen Dienst für die Wiedergabe von Musik, wenn die App im Hintergrund ausgeführt wird.
 
 ### <a name="intents"></a>Intents
 
 Ein anderes grundlegendes Konzept in Android-Anwendungen nennt sich *Intent*.
-Android basiert auf dem *Prinzip der minimalen Rechtegewährung* &ndash; Anwendungen haben nur Zugriff auf die Bausteine, die sie zur Arbeit benötigen, und beschränkten Zugriff auf die Blöcke, die Teil des Betriebssystems oder anderer Anwendungen sind. Bausteine sind auf ähnliche Weise *lose verbunden* &ndash; sie sind dafür entwickelt, nur wenig über andere Bausteine zu wissen und eingeschränkten Zugriff auf sie zu haben (auch Bausteine, die Teil derselben Anwendung sind).
+Android basiert auf dem *Prinzip der geringsten Rechte*: Anwendungen haben nur Zugriff auf die Bausteine, die sie zur Arbeit benötigen, und beschränkten Zugriff auf die Blöcke, die Teil des Betriebssystems oder anderer Anwendungen sind. Bausteine sind auf ähnliche Weise *lose verbunden* und dafür entwickelt, nur wenig über andere Bausteine zu wissen und eingeschränkten Zugriff auf sie zu haben (auch Bausteine, die Teil derselben Anwendung sind).
 
 Anwendungsbausteine senden zur Kommunikation asynchrone Nachrichten, so genannte *Intents*, hin und her. Intents enthalten Informationen zum empfangenden Block und manchmal einige Daten. Ein Intent, der von einer App-Komponente gesendet wird, führt dazu, das etwas in einer anderen App-Komponente geschieht, wodurch die beiden Komponenten der App verbunden werden, und es ihnen ermöglicht wird, zu kommunizieren. Durch das Hin-und-her-Senden von Intents können Bausteine komplexe Aktionen koordinieren. Dazu gehören beispielsweise der Start der Kamera-App zum Erstellen und Speichern, die Erfassung von Speicherortinformationen oder die Navigation von einem Bildschirm zum nächsten.
 
@@ -81,7 +81,7 @@ translationHistoryButton.Click += (sender, e) =>
 
 Die Phoneword-Anwendung enthält weitere Konzepte, die jedoch nicht in diesem Leitfaden behandelt werden. Dies sind z.B. folgende Konzepte:
 
-**Zeichenfolgenressourcen**: In der Phoneword-Anwendung wurde der `TranslationHistoryButton`-Text auf `"@string/translationHistory"` festgelegt. Die `@string`-Syntax bedeutet, dass der Wert der Zeichenfolge, in der _Zeichenfolgenressourcendatei_ **Strings.xml** gespeichert ist. Der folgende Wert für die `translationHistory`-Zeichenfolge wurde zu **Strings.xml** hinzugefügt:
+**Zeichenfolgenressourcen**: In der Phoneword-Anwendung wurde der `TranslationHistoryButton`-Text auf `"@string/translationHistory"` festgelegt. Die `@string`-Syntax bedeutet, dass der Wert der Zeichenfolge, in der _Zeichenfolgenressourcendatei_**Strings.xml** gespeichert ist. Der folgende Wert für die `translationHistory`-Zeichenfolge wurde zu **Strings.xml** hinzugefügt:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

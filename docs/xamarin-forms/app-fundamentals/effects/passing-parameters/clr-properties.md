@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
 ms.openlocfilehash: 04d96dad455cbcf8360f12ee97a0540e7e746d62
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771473"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Übergeben von Effect-Parametern als Eigenschaften der Common Language Runtime
@@ -30,11 +30,11 @@ Parameter können anschließend an den Effekt übergeben werden, indem bei der I
 
 Die Beispielanwendung veranschaulicht eine `ShadowEffect`-Klasse, die einen Schatten zu dem Text hinzufügt, der vom [`Label`](xref:Xamarin.Forms.Label)-Steuerelement angezeigt wird. Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](clr-properties-images/shadow-effect.png "Projektzuständigkeiten des Schatteneffekts")
+![](clr-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
 
 Ein [`Label`](xref:Xamarin.Forms.Label)-Steuerelement im `HomePage`-Element wird in jedem plattformspezifischen Projekt von `LabelShadowEffect` angepasst. Parameter werden über Eigenschaften in der `ShadowEffect`-Klasse an jeden `LabelShadowEffect` übergeben. Jede `LabelShadowEffect`-Klasse wird von der `PlatformEffect`-Klasse für jede Plattform abgeleitet. Dadurch wird wie in den folgenden Screenshots dargestellt ein Schatten zu dem Text hinzugefügt, der vom `Label`-Steuerelement angezeigt wird:
 
-![](clr-properties-images/screenshots.png "Schatteneffekt auf den verschiedenen Plattformen")
+![](clr-properties-images/screenshots.png "Shadow Effect on each Platform")
 
 ## <a name="creating-effect-parameters"></a>Erstellen von Effect-Parametern
 

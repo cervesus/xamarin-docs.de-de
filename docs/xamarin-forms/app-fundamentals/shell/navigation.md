@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71674567"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation in der Xamarin.Forms-Shell
@@ -156,7 +156,7 @@ In diesem Beispiel erfolgt die Navigation zur Seite für die `monkeydetails`-Rou
 
 Darüber hinaus werden die folgenden relativen Routenformate unterstützt:
 
-| Format | BESCHREIBUNG |
+| Format | Beschreibung |
 | --- | --- |
 | //*route* | In der Routenhierarchie wird die angegebene Route von der aktuell angezeigten Route nach oben gesucht. |
 | ///*route* | In der Routenhierarchie wird die angegebene Route von der aktuell angezeigten Route nach unten gesucht. |
@@ -211,7 +211,7 @@ Die `Tab`-Klasse definiert eine `Stack`-Eigenschaft vom Typ `IReadOnlyList<Page>
 
 Die `Shell`-Klasse definiert ein `Navigating`-Ereignis, das ausgelöst wird, kurz bevor die Navigation entweder aufgrund von programmgesteuerter Navigation oder Benutzerinteraktion erfolgt. Das `ShellNavigatingEventArgs`-Objekt, das das `Navigating`-Ereignis begleitet, stellt die folgenden Eigenschaften bereit:
 
-| Eigenschaft | Typ | BESCHREIBUNG |
+| Eigenschaft | Typ | Beschreibung |
 |---|---|---|
 | `Current` | `ShellNavigationState` | Der URI der aktuellen Seite. |
 | `Source` | `ShellNavigationSource` | Der Typ der erfolgten Navigation. |
@@ -226,7 +226,7 @@ Darüber hinaus stellt die `ShellNavigatingEventArgs`-Klasse eine `Cancel`-Metho
 
 Die `Shell`-Klasse definiert außerdem ein `Navigated`-Ereignis, das ausgelöst wird, wenn die Navigation abgeschlossen ist. Das `ShellNavigatedEventArgs`-Objekt, das das `Navigating`-Ereignis begleitet, stellt die folgenden Eigenschaften bereit:
 
-| Eigenschaft | Typ | BESCHREIBUNG |
+| Eigenschaft | Typ | Beschreibung |
 |---|---|---|
 | `Current` | `ShellNavigationState` | Der URI der aktuellen Seite. |
 | `Previous`| `ShellNavigationState` | Der URI der vorherigen Seite. |
@@ -303,7 +303,7 @@ Die `BackButtonBehavior`-Klasse definiert die folgenden Eigenschaften, die die D
 - `Command` vom Typ `ICommand`: Wird ausgeführt, wenn die Zurück-Schaltfläche gedrückt wird.
 - `CommandParameter` vom Typ `object`: der Parameter, der an `Command` übergeben wird.
 - `IconOverride` vom Typ [`ImageSource`](xref:Xamarin.Forms.ImageSource): das Symbol für die Zurück-Schaltfläche.
-- `IsEnabled` vom Typ `boolean`: Gibt an, ob die Zurück-Schaltfläche aktiviert ist. Der Standardwert ist `true`sein.
+- `IsEnabled` vom Typ `boolean`: Gibt an, ob die Zurück-Schaltfläche aktiviert ist. Der Standardwert ist `true`.
 - `TextOverride` vom Typ `string`: der Text für die Zurück-Schaltfläche.
 
 Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Datenverbindungen sein können.

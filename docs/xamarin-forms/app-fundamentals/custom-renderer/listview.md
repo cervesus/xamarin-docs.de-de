@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771932"
 ---
 # <a name="customizing-a-listview"></a>Anpassen einer ListView
@@ -24,7 +24,7 @@ Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jed
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](listview-images/listview-classes.png "Beziehungen zwischen dem ListView-Steuerelement und den nativen Steuerelementen, die dieses implementieren")
+![](listview-images/listview-classes.png "Relationship Between the ListView Control and the Implementing Native Controls")
 
 Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
@@ -155,11 +155,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](listview-images/solution-structure.png "Projektzuständigkeiten beim benutzerdefinierten Steuerelement NativeListView")
+![](listview-images/solution-structure.png "NativeListView Custom Renderer Project Responsibilities")
 
 Das benutzerdefinierte Steuerelement `NativeListView` wird von plattformspezifischen Rendererklassen gerendert, die alle von der `ListViewRenderer`-Klasse für jede Plattform abgeleitet werden. Das führt dazu, dass jedes benutzerdefinierte `NativeListView`-Steuerelement mit plattformspezifischen Listensteuerelementen und nativen Zellenlayouts gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](listview-images/screenshots.png "NativeListView auf jeder Plattform")
+![](listview-images/screenshots.png "NativeListView on each Platform")
 
 Die `ListViewRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung des benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `NativeListView`-Instanz.
 

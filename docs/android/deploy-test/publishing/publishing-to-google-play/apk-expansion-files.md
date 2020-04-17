@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 712322435614966348fc5c10cabf724870c307e4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021292"
 ---
 # <a name="apk-expansion-files"></a>APK-Erweiterungsdateien
@@ -57,7 +57,7 @@ Wenn die Erweiterungsdateien heruntergeladen werden, wird Google Play das folgen
 
 Die drei Komponenten dieses Schemas sind:
 
-- `main` oder `patch`: Dies gibt an, ob es sich um die Main- oder die Patch-Erweiterungsdatei handelt . Es kann nur jeweils eine geben.
+- `main` oder `patch`: Dies gibt an, ob es sich um die Main- oder die Patch-Erweiterungsdatei handelt. Es kann nur jeweils eine geben.
 - `<expansion-version>`: Dies ist eine ganze Zahl, die dem `versionCode` des APK entspricht, dem die Datei zuerst zugeordnet wurde.
 - `<package-name>`: Dies ist der Paketname der Anwendung im Java-Stil.
 
@@ -71,7 +71,7 @@ Wenn eine Anwendung über Google Play installiert wird, sollten die Erweiterungs
 
 Wenn eine Anwendung gestartet wird, sollte überprüft werden, ob die entsprechenden Erweiterungsdateien auf dem aktuellen Gerät vorhanden sind. Wenn dies nicht der Fall ist, muss die Anwendung eine Anforderung der [Anwendungslizenzierung](https://developer.android.com/google/play/licensing/index.html) von Google Play stellen. Diese Überprüfung erfolgt mithilfe der *License Verification Library (LVL)* , und sie muss für kostenlose und lizenzierte Anwendungen erfolgen. Die LVL wird hauptsächlich von kostenpflichtigen Anwendungen verwendet, um Lizenzbeschränkungen zu erzwingen. Google hat die LVL jedoch erweitert, sodass sie ebenfalls mit den Erweiterungsbibliotheken verwendet werden kann. Kostenlose Anwendungen müssen die LVL-Überprüfung ausführen, können aber die Lizenzeinschränkungen ignorieren. Die Anforderung der LVL ist verantwortlich für die Bereitstellung der folgenden Informationen zu den Erweiterungsdateien, die die Anwendung erfordert: 
 
-- **Dateigröße**: Die Größe der Erweiterungsdateien dienen als Teil der Überprüfung, die bestimmt, ob die richtigen Erweiterungsdateien bereits heruntergeladen wurden oder nicht.
+- **Dateigröße**: Die Größe der Erweiterungsdateien dient als Teil der Überprüfung, mit der bestimmt wird, ob die richtigen Erweiterungsdateien bereits heruntergeladen wurden oder nicht.
 - **Dateinamen**: Dies ist der Dateiname (auf dem aktuellen Gerät), in dem die Erweiterungspakete gespeichert werden müssen.
 - **URL für den Download**: Die URL, die zum Herunterladen der Erweiterungspakete verwendet werden soll. Diese ist für jeden Download eindeutig und läuft kurz nach der Bereitstellung ab.
 

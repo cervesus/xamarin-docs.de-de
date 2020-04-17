@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
 ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771733"
 ---
 # <a name="implementing-a-view"></a>Implementieren einer Ansicht
@@ -24,7 +24,7 @@ Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jed
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`View`](xref:Xamarin.Forms.View)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](view-images/view-classes.png "Beziehungen zwischen der View-Klasse und den nativen Klassen, die diese implementieren")
+![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
 
 Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`View`](xref:Xamarin.Forms.View)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Der Prozess dafür sieht wie folgt aus:
 
@@ -121,11 +121,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](view-images/solution-structure.png "Projektzuständigkeiten beim benutzerdefinierten Steuerelement CameraPreview")
+![](view-images/solution-structure.png "CameraPreview Custom Renderer Project Responsibilities")
 
 Das benutzerdefinierte Steuerelement `CameraPreview` wird von plattformspezifischen Rendererklassen gerendert, die alle von der `ViewRenderer`-Klasse für jede Plattform abgeleitet werden. Das führt dazu, dass jedes benutzerdefinierte `CameraPreview`-Steuerelement mit plattformspezifischen Steuerelementen gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](view-images/screenshots.png "CameraPreview auf jeder Plattform")
+![](view-images/screenshots.png "CameraPreview on each Platform")
 
 Die `ViewRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung des benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung weist die `OldElement`-Eigenschaft den Wert `null` auf, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CameraPreview`-Instanz.
 
@@ -152,7 +152,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control` `null` lautet. Ein Steuerelement sollte außerdem nur dann erstellt, konfiguriert und vom Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein leistungsstarker benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
+Ein neues natives Steuerelement sollte nur einmal instanziiert werden, wenn der Wert der Eigenschaft `Control``null` lautet. Ein Steuerelement sollte außerdem nur dann erstellt, konfiguriert und vom Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein leistungsstarker benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
 
 > [!IMPORTANT]
 > Die `SetNativeControl`-Methode sollte nur aufgerufen werden, wenn `e.NewElement` nicht `null` ist.
