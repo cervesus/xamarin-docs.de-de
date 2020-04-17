@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
 ms.openlocfilehash: 1438c012608b367c21ebcc401c058b186b917f53
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027805"
 ---
 # <a name="working-with-the-android-manifest"></a>Arbeiten mit dem Android-Manifest
@@ -163,10 +163,10 @@ In der Releasebuildversion des Manifests (unter **obj/Debug/android/AndroidManif
 
 ### <a name="intent-actions-and-features"></a>Intent-Aktionen und -Funktionen
 
-Das Android-Manifest bietet Ihnen einen Weg, die Möglichkeiten Ihrer Aktivität zu beschreiben. Dies erfolgt über [Intents](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) und das benutzerdefinierte Attribut [`[IntentFilter]`](xref:Android.App.IntentFilterAttribute)
-. Die für Ihre Aktivität geeigneten Aktionen können Sie mit dem [`IntentFilter`](xref:Android.App.IntentFilterAttribute#ctor*)-Konstruktor
+Das Android-Manifest bietet Ihnen einen Weg, die Möglichkeiten Ihrer Aktivität zu beschreiben. Dies erfolgt über [Intents](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) und das
+benutzerdefinierte Attribut . Die für Ihre Aktivität geeigneten Aktionen können Sie mit dem [`IntentFilter`](xref:Android.App.IntentFilterAttribute#ctor*)-Konstruktor
 und die geeigneten Kategorien können Sie mit der [`Categories`](xref:Android.App.IntentFilterAttribute.Categories)-Eigenschaft
-angeben. Mindestens eine Aktivität muss bereitgestellt werden (aus diesem Grund werden Aktivitäten im Konstruktor bereitgestellt). `[IntentFilter]` kann mehrmals bereitgestellt werden, und jede Verwendung führt zu einem separaten `<intent-filter/>`-Element innerhalb der `<activity/>`. Zum Beispiel:
+-Eigenschaft veranschaulicht. Mindestens eine Aktivität muss bereitgestellt werden (aus diesem Grund werden Aktivitäten im Konstruktor bereitgestellt). `[IntentFilter]` kann mehrmals bereitgestellt werden, und jede Verwendung führt zu einem separaten `<intent-filter/>`-Element innerhalb der `<activity/>`. Zum Beispiel:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
