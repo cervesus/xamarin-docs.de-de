@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1eeece93d5da3092f1bd46c82c98e2304d25139
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "69541470"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389995"
 ---
 Eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse wird unter Verwendung der Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource), die vom Typ `IEnumerable` ist, mit Daten aufgefüllt. Im vorherigen Schritt wurde die `ListView`-Klasse in XAML mit einem Zeichenfolgenarray aufgefüllt. Eine `ListView`-Klasse wird jedoch üblicherweise mit Daten aus einer Sammlung aufgefüllt, die im CodeBehind definiert ist, der `IEnumerable` implementiert.
 
@@ -177,7 +177,7 @@ In dieser Übung ändern Sie das Projekt **ListViewTutorial** so, dass die [`Lis
     > [!IMPORTANT]
     > Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) wird über die visuelle Struktur vererbt. Da sie auf das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt festgelegt wurde, erben deshalb untergeordnete Objekte von `ContentPage` ihren Wert, darunter auch die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse.
 
-1. Ändern Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.Image)-Deklaration, um die Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) auf die Sammlung `Monkeys` festzulegen:
+1. Ändern Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.ListView)-Deklaration, um die Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) auf die Sammlung `Monkeys` festzulegen:
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -358,7 +358,7 @@ In dieser Übung ändern Sie das Projekt **ListViewTutorial** so, dass die [`Lis
     > [!IMPORTANT]
     > Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) wird über die visuelle Struktur vererbt. Da sie auf das [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt festgelegt wurde, erben deshalb untergeordnete Objekte von `ContentPage` ihren Wert, darunter auch die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse.
 
-1. Ändern Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.Image)-Deklaration, um die Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) auf die Sammlung `Monkeys` festzulegen:
+1. Ändern Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.ListView)-Deklaration, um die Eigenschaft [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) auf die Sammlung `Monkeys` festzulegen:
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />

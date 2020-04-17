@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d2a244482c92a615c3eec2130cec1df8aaaf1f
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61037630"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389926"
 ---
 Zuvor wurde die [`ListView`](xref:Xamarin.Forms.ListView) mithilfe von Datenbindung mit Daten gefüllt. Trotz Datenbindung zu einer Auflistung, in der jedes Objekt der Auflistung mehrere Datenelemente definiert hat, wurde nur ein Datenelement pro Objekt angezeigt (die `Name`-Eigenschaft des `Monkey`-Objekts).
 
@@ -12,7 +12,7 @@ In dieser Übung ändern Sie das **ListViewTutorial**-Projekt, damit die [`ListV
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. Bearbeiten Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.Image)-Deklaration, um die Darstellung jeder Zeile anzupassen:
+1. Bearbeiten Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.ListView)-Deklaration, um die Darstellung jeder Zeile anzupassen:
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"
@@ -62,7 +62,7 @@ In dieser Übung ändern Sie das **ListViewTutorial**-Projekt, damit die [`ListV
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
-1. Bearbeiten Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.Image)-Deklaration, um die Darstellung jeder Zeile anzupassen:
+1. Bearbeiten Sie in **MainPage.xaml** die [`ListView`](xref:Xamarin.Forms.ListView)-Deklaration, um die Darstellung jeder Zeile anzupassen:
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4fc6c50b5aa2ce502b4157ca2b15f0d33a68ecd1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2b524c657a95035773d18fb17bb86308a78ce37c
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "60896685"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389914"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -19,7 +19,7 @@ ms.locfileid: "60896685"
            HorizontalOptions="Center" />
     ```
 
-    Dieser Code legt Eigenschaften fest, die die visuelle Darstellung von [`Label`](xref:Xamarin.Forms.Label) ändern. Die [`TextColor`](xref:Xamarin.Forms.Label.TextColor)-Eigenschaft legt die Farbe des `Button`-Textes fest. Die [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes)-Eigenschaft setzt die Schriftart für die Bezeichnung auf „Kursiv“, und die [`FontSize`](xref:Xamarin.Forms.Label.FontSize)-Eigenschaft legt den Schriftgrad fest. Zudem wird das `Label`-Element unterstrichen, indem dessen [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations)-Eigenschaft festgelegt wird, und es wird horizontal zentriert, indem die [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft auf [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) festgelegt wird.
+    Dieser Code legt Eigenschaften fest, die die visuelle Darstellung von [`Label`](xref:Xamarin.Forms.Label) ändern. Die [`TextColor`](xref:Xamarin.Forms.Label.TextColor)-Eigenschaft legt die Farbe des `Label`-Textes fest. Die [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes)-Eigenschaft setzt die Schriftart für die Bezeichnung auf „Kursiv“, und die [`FontSize`](xref:Xamarin.Forms.Label.FontSize)-Eigenschaft legt den Schriftgrad fest. Zudem wird das `Label`-Element unterstrichen, indem dessen [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations)-Eigenschaft festgelegt wird, und es wird horizontal zentriert, indem die [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft auf [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) festgelegt wird.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten: Beachten Sie, wie sich die Darstellung von [`Label`](xref:Xamarin.Forms.Label) geändert hat:
 
@@ -40,7 +40,7 @@ ms.locfileid: "60896685"
            HorizontalOptions="Center" />
     ```
 
-    Dieser Code legt Eigenschaften fest, die die visuelle Darstellung von [`Label`](xref:Xamarin.Forms.Label) ändern. Die [`TextColor`](xref:Xamarin.Forms.Label.TextColor)-Eigenschaft legt die Farbe des `Button`-Textes fest. Die [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes)-Eigenschaft setzt die Schriftart für die Bezeichnung auf „Kursiv“, und die [`FontSize`](xref:Xamarin.Forms.Label.FontSize)-Eigenschaft legt den Schriftgrad fest. Zudem wird das `Label`-Element unterstrichen, indem dessen [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations)-Eigenschaft festgelegt wird, und es wird horizontal zentriert, indem die [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft auf [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) festgelegt wird.
+    Dieser Code legt Eigenschaften fest, die die visuelle Darstellung von [`Label`](xref:Xamarin.Forms.Label) ändern. Die [`TextColor`](xref:Xamarin.Forms.Label.TextColor)-Eigenschaft legt die Farbe des `Label`-Textes fest. Die [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes)-Eigenschaft setzt die Schriftart für die Bezeichnung auf „Kursiv“, und die [`FontSize`](xref:Xamarin.Forms.Label.FontSize)-Eigenschaft legt den Schriftgrad fest. Zudem wird das `Label`-Element unterstrichen, indem dessen [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations)-Eigenschaft festgelegt wird, und es wird horizontal zentriert, indem die [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft auf [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) festgelegt wird.
 
 1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten: Beachten Sie, wie sich die Darstellung von [`Label`](xref:Xamarin.Forms.Label) geändert hat:
 
