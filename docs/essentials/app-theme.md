@@ -5,12 +5,12 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: e31cae6ff639dbe261599a7cf78ae31fc09318b3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f322855f26d7a57acc06e97e0c97ab201c3fa586
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79190313"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047399"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials: App-Design
 
@@ -62,7 +62,7 @@ Bei iOS-Versionen vor 13.0 wird stets „Nicht angegeben“ zurückgegeben.
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-Standardmäßig wird Ihre App mit dem vom Benutzer in den Windows-Einstellungen festgelegten Design ausgeführt (**Einstellungen > Personalisierung > Farben > Standard-App-Modus auswählen**). Sie können die RequestedTheme-Eigenschaft der App so festlegen, dass der Benutzerstandard überschrieben wird, und angeben, welches Design verwendet wird.
+UWP-Anwendungen beachten ihre Einstellung in der UWP-Datei „App.xaml“ unter **RequestedTheme**. Wenn die Option auf ein bestimmtes Design festgelegt ist, gibt Xamarin.Essentials immer diese Einstellung zurück. Um das dynamische Design des Betriebssystems zu verwenden, entfernen Sie diesen Knoten aus Ihrer Anwendung, und Ihre App gibt dann, wenn sie ausgeführt wird, das vom Benutzer in den Windows-Einstellungen (**Einstellungen > Personalisierung > Farben > Standard-App-Modus auswählen**) festgelegte Design zurück.
 
 Weitere In finden Sie in der [UWP-Dokumentation zum angeforderten Design](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme).
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 7278fd624bb3147c2e1a1a1a79adde68813a9888
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ef2f8e0375786ba7b627fdf75545cbb48318c1aa
+ms.sourcegitcommit: 854798de42566750d9c70b6d0539b7ee73ff6ddc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020151"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646602"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Android Callable Wrapper für Xamarin.Android
 
@@ -74,7 +74,7 @@ MD5SUM-basierte ACW-Namen wurden in Xamarin.Android 5.0 eingeführt. Weitere In
 
 Bisweilen müssen Sie möglicherweise eine Android-Schnittstelle implementieren, z. B. [Android.Content.IComponentCallbacks](xref:Android.Content.IComponentCallbacks). Da alle Android-Klassen und -Schnittstellen die [Android.Runtime.IJavaObject](xref:Android.Runtime.IJavaObject)-Schnittstelle erweitern, stellt sich die Frage, wie `IJavaObject` implementiert wird. 
 
-Die Frage wurde oben beantwortet: der Grund dafür, dass alle Android-Typen `IJavaObject` implementieren müssen, ist, dass Xamarin.Android einen Android Callable Wrapper für Android bereitstellt, d. h. einen Java-Proxy für den angegebenen Typ. Da **monodroid.exe** nur nach `Java.Lang.Object`-Unterklassen sucht und `IJavaObject,` von `Java.Lang.Object` implementiert wird, ist die Antwort offensichtlich: die `Java.Lang.Object`-Unterklasse: 
+Die Frage wurde oben beantwortet: der Grund dafür, dass alle Android-Typen `IJavaObject` implementieren müssen, ist, dass Xamarin.Android einen Android Callable Wrapper für Android bereitstellt, d. h. einen Java-Proxy für den angegebenen Typ. Da **monodroid.exe** nur nach `Java.Lang.Object`-Unterklassen sucht und `IJavaObject` von `Java.Lang.Object` implementiert wird, ist die Antwort offensichtlich: die `Java.Lang.Object`-Unterklasse: 
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {

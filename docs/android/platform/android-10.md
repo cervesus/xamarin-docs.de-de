@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b26d99c131e9759da3077a767476de38712bcb18
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73612268"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047572"
 ---
 # <a name="android-10-with-xamarin"></a>Android 10 mit Xamarin
 
@@ -78,7 +78,7 @@ Wenn Sie ein Android-Projekt erstellen, müssen Sie die Versionseinstellungen f�
 
 ### <a name="configure-a-device-or-emulator"></a>Konfigurieren eines Geräts oder Emulators
 
-Wenn Sie ein physisches Gerät, z. B. ein Pixel, verwenden, können Sie das Android 10-Update herunterladen, indem Sie in den Einstellungen Ihres Smartphones zu `System` > `System update` > `Check for update` navigieren. Wenn Sie Ihr Gerät flashen möchten, lesen Sie die Anweisungen, wie ein [Factory-Image](https://developers.google.com/android/images) oder [OTA-Image](https://developers.google.com/android/ota) auf Ihrem Gerät geflasht wird.
+Wenn Sie ein physisches Gerät, z. B. ein Pixel, verwenden, können Sie das Android 10-Update herunterladen, indem Sie in den Einstellungen Ihres Smartphones zu „System“ > „Systemupdate“ > „Nach Update suchen“ wechseln. Wenn Sie Ihr Gerät flashen möchten, lesen Sie die Anweisungen, wie ein [Factory-Image](https://developers.google.com/android/images) oder [OTA-Image](https://developers.google.com/android/ota) auf Ihrem Gerät geflasht wird.
 
 Wenn Sie einen Emulator verwenden, erstellen Sie ein virtuelles Gerät für API-Ebene 29, und wählen Sie ein x86-basiertes Image aus. Informationen zur Verwendung des Android-Geräte-Managers zum Erstellen und Verwalten virtueller Geräte finden Sie unter [Verwalten virtueller Geräte mit dem Android-Geräte-Manager](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager). Informationen zum Verwenden des Android-Emulators zum Testen und Debuggen finden Sie unter [Debuggen auf dem Android-Emulator](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator).
 
