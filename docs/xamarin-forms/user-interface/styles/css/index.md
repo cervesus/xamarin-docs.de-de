@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/04/2019
-ms.openlocfilehash: 6813b29718d26b592631dd43b8fbd03fe479101e
-ms.sourcegitcommit: 1fb87ff74560d4d7c89f80018cc010c07646461c
+ms.date: 04/17/2020
+ms.openlocfilehash: 182bd088ba169dad6bdbbb4315a033925964f64e
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82139056"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517564"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von xamarin. Forms-apps mit Cascading Stylesheets (CSS)
 
@@ -92,6 +92,9 @@ Der Prozess zum Hinzufügen eines Stylesheets zu einer Projekt Mappe lautet wie 
 ### <a name="loading-a-style-sheet"></a>Laden eines Stylesheets
 
 Es gibt eine Reihe von Ansätzen, die verwendet werden können, um ein Stylesheet zu laden.
+
+> [!NOTE]
+> Es ist derzeit nicht möglich, ein Stylesheet zur Laufzeit zu ändern, und das neue Stylesheet muss angewendet werden.
 
 ### <a name="xaml"></a>XAML
 
@@ -322,7 +325,7 @@ Dieser Selektor identifiziert [`Image`](xref:Xamarin.Forms.Image) alle Elemente,
 
 Die folgenden CSS-Selektoren werden von xamarin. Forms unterstützt:
 
-|Auswahl|Beispiel|Beschreibung|
+|Auswahl|Beispiel|BESCHREIBUNG|
 |---|---|---|
 |`.class`|`.header`|Wählt alle-Elemente mit `StyleClass` der-Eigenschaft aus, die ' Header ' enthält. Beachten Sie, dass bei dieser Auswahl zwischen Groß-und klein|
 |`#id`|`#email`|Wählt alle-Elemente `StyleId` aus, `email`deren auf festgelegt ist. Wenn `StyleId` nicht festgelegt ist, Fall Back `x:Name`auf. Bei Verwendung von XAML `x:Name` wird von bevorzugt `StyleId`. Beachten Sie, dass bei dieser Auswahl zwischen Groß-und klein|
@@ -353,55 +356,55 @@ Die folgenden Selektoren werden zurzeit nicht unterstützt:
 
 Die folgenden CSS-Eigenschaften werden von xamarin. Forms unterstützt (in der **Values** -Spalte sind die Typen _kursiv_formatiert, `gray`während Zeichen folgen Literale sind):
 
-|Eigenschaft|Gilt für|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
-|`background-color`|`VisualElement`|_color_ \| `initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_string_ \| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`, `Frame`, `ImageButton`|_color_ \| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
-|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_color_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
+|`background-color`|`VisualElement`|_Farbe_ \|`initial` |`background-color: springgreen;`|
+|`background-image`|`Page`|_Zeichenfolge_ \|`initial` |`background-image: bg.png;`|
+|`border-color`|`Button`, `Frame`, `ImageButton`|_Farbe_ \|`initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_Double_ \|`initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_Double_ \|`initial` |`border-width: .5;`|
+|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_Farbe_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`column-gap`|`Grid`|_Double_ \|`initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \| float `auto` . \| `initial` Außerdem kann ein Prozentsatz im Bereich von 0% bis 100% mit dem `%` Vorzeichen angegeben werden.|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_float_ \| `initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_float_ \| `initial`|`flex-shrink: 1;`|
+|`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_string_ \| `initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \|`initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Double_ \| _namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_Double_ \|`initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
-|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_Double_ \|`initial`|`letter-spacing: 2.5;`|
+|`line-height`|`Label`, `Span`|_Double_ \|`initial` |`line-height: 1.8;`|
 |`margin`|`View`|_Stärke_ \|`initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_Stärke_ \|`initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_Stärke_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_Stärke_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_Stärke_ \|`initial` |`margin-bottom: 6;`|
-|`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
-|`min-height`|`VisualElement`|_double_ \| `initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
-|`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
+|`max-lines`|`Label`|_int_ \|`initial`|`max-lines: 2;`|
+|`min-height`|`VisualElement`|_Double_ \|`initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_Double_ \|`initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_Double_ \|`initial` |`opacity: .3;`|
+|`order`|`VisualElement`|_int_ \|`initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_Stärke_ \|`initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_Double_ \|`initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \|`initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \|`initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \|`initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
-|`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
+|`row-gap`|`Grid`| _Double_ \|`initial`|`row-gap: 12;`|
 |`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left`und `right` sollten in Umgebungen mit von rechts nach links vermieden werden.| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _Double_, _Double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
-|`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_Double_ \|`initial`|`min-width: 320;`|
 
 > [!NOTE]
 > `initial`ist ein gültiger Wert für alle Eigenschaften. Der Wert (wird auf den Standardwert zurückgesetzt), der aus einem anderen Format festgelegt wurde, wird gelöscht.
@@ -420,40 +423,40 @@ Ziel `Span` Elemente haben ein bekanntes Problem, das verhindert, dass spannen d
 
 Die folgenden xamarin. Forms-spezifischen CSS-Eigenschaften werden ebenfalls unterstützt (in der **Values** -Spalte sind die Typen _kursiv_formatiert `gray`, während Zeichenfolgenliterale sind):
 
-|Eigenschaft|Gilt für|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_Farbe_ \|`initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_Farbe_ \|`initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
-|`-xf-max-track-color`|`Slider`|_color_ \| `initial` |`-xf-max-track-color: red;`|
-|`-xf-min-track-color`|`Slider`|_color_ \| `initial` |`-xf-min-track-color: yellow;`|
+|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \|`initial` |`-xf-max-length: 20;`|
+|`-xf-max-track-color`|`Slider`|_Farbe_ \|`initial` |`-xf-max-track-color: red;`|
+|`-xf-min-track-color`|`Slider`|_Farbe_ \|`initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`wird nur für einen `ScrollView`unterstützt. |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_Text_ \| in Anführungszeichen`initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_color_ \| `initial` |`-xf-placeholder-color: green;`|
-|`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`, `Switch`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_Farbe_ \|`initial` |`-xf-placeholder-color: green;`|
+|`-xf-spacing`|`StackLayout`|_Double_ \|`initial` |`-xf-spacing: 8;`|
+|`-xf-thumb-color`|`Slider`, `Switch`|_Farbe_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_string_ \| `initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_Zeichenfolge_ \|`initial` |`-xf-visual: material;`|
 
 ### <a name="xamarinforms-shell-specific-properties"></a>Spezifische Eigenschaften der Xamarin.Forms-Shell
 
 Die folgenden xamarin. Forms-shellspezifischen CSS-Eigenschaften werden ebenfalls unterstützt (in der **Values** -Spalte sind die Typen _kursiv_formatiert `gray`, während Zeichen folgen Literale sind):
 
-|Eigenschaft|Gilt für|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
-|`-xf-flyout-background`|`Shell`|_color_ \| `initial` |`-xf-flyout-background: red;`|
-|`-xf-shell-background`|`Element`|_color_ \| `initial` |`-xf-shell-background: green;`|
-|`-xf-shell-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-disabled: blue;`|
-|`-xf-shell-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-foreground: yellow;`|
-|`-xf-shell-tabbar-background`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-background: white;`|
-|`-xf-shell-tabbar-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
-|`-xf-shell-tabbar-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
-|`-xf-shell-tabbar-title`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
-|`-xf-shell-tabbar-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
-|`-xf-shell-title`|`Element`|_color_ \| `initial` |`-xf-shell-title: teal;`|
-|`-xf-shell-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-unselected: limegreen;`|
+|`-xf-flyout-background`|`Shell`|_Farbe_ \|`initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_Farbe_ \|`initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_Farbe_ \|`initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_Farbe_ \|`initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_Farbe_ \|`initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_Farbe_ \|`initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_Farbe_ \|`initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_Farbe_ \|`initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_Farbe_ \|`initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_Farbe_ \|`initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_Farbe_ \|`initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>Color
 

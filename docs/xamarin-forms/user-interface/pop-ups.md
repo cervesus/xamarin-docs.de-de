@@ -6,23 +6,23 @@ ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/17/2020
-ms.openlocfilehash: c71153cdaa94a7983b89968abc828011a648f2b1
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/10/2020
+ms.openlocfilehash: 87348d5821c2c9e2e46a777f212bd5f69d1a54d0
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306626"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517578"
 ---
 # <a name="display-pop-ups"></a>Popup anzeigen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-Wenn Sie eine Warnung anzeigen, einen Benutzer auffordern, eine Auswahl zu treffen oder eine Eingabeaufforderung anzuzeigen, ist dies eine gängige UI-Aufgabe. Xamarin. Forms verfügt über drei Methoden für die [`Page`](xref:Xamarin.Forms.Page) -Klasse für die Interaktion mit dem Benutzer über ein Popup Fenster: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*), [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)und `DisplayPromptAsync`. Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
+Wenn Sie eine Warnung anzeigen, einen Benutzer auffordern, eine Auswahl zu treffen oder eine Eingabeaufforderung anzuzeigen, ist dies eine gängige UI-Aufgabe. Xamarin. Forms verfügt über drei Methoden für [`Page`](xref:Xamarin.Forms.Page) die-Klasse für die Interaktion mit dem Benutzer über ein Popup [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)Fenster [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*):, `DisplayPromptAsync`und. Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
 
 ## <a name="display-an-alert"></a>Anzeigen einer Warnung
 
-Alle von Xamarin.Forms unterstützten Plattformen verfügen über ein modales Popupelement, um dem Benutzer eine Warnung anzuzeigen oder einfache Fragen zu stellen. Verwenden Sie die Methode [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) auf einem beliebigen [`Page`](xref:Xamarin.Forms.Page)-Element, um solche Warnungen in Xamarin.Forms anzuzeigen. Mit der folgenden Codezeile wird dem Benutzer eine einfache Meldung angezeigt:
+Alle von Xamarin.Forms unterstützten Plattformen verfügen über ein modales Popupelement, um dem Benutzer eine Warnung anzuzeigen oder einfache Fragen zu stellen. Um diese Warnungen in xamarin. Forms anzuzeigen, verwenden Sie [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) die-Methode [`Page`](xref:Xamarin.Forms.Page)für alle. Mit der folgenden Codezeile wird dem Benutzer eine einfache Meldung angezeigt:
 
 ```csharp
 await DisplayAlert ("Alert", "You have been alerted", "OK");
@@ -32,7 +32,7 @@ await DisplayAlert ("Alert", "You have been alerted", "OK");
 
 In diesem Beispiel werden keine Informationen des Benutzers erfasst. Die Warnung wird modal angezeigt und geschlossen, sobald der Benutzer erneut mit der Anwendung interagiert.
 
-Mithilfe der [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)-Methode kann die Antwort des Benutzers erfasst werden, indem zwei Schaltflächen angezeigt werden und ein `boolean`-Wert zurückgegeben wird. Geben Sie Text für beide Schaltflächen und `await` für die Methode an, um eine Antwort von einer Warnung zu erhalten. Wenn der Benutzer eine der Optionen auswählt, wird die Antwort an Ihren Code zurückgegeben. Beachten Sie die Schlüsselwörter `async` und `await` im folgenden Beispielcode:
+Die [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) -Methode kann auch verwendet werden, um die Antwort eines Benutzers zu erfassen, indem zwei Schalt `boolean`Flächen und zurückgegeben werden. Geben Sie Text für beide Schaltflächen und `await` für die Methode an, um eine Antwort von einer Warnung zu erhalten. Wenn der Benutzer eine der Optionen auswählt, wird die Antwort an Ihren Code zurückgegeben. Beachten Sie die Schlüsselwörter `async` und `await` im folgenden Beispielcode:
 
 ```csharp
 async void OnAlertYesNoClicked (object sender, EventArgs e)
@@ -46,9 +46,9 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 ## <a name="guide-users-through-tasks"></a>Benutzer durch Aufgaben leiten
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) ist ein allgemeines Benutzeroberflächenelement unter iOS. Mithilfe der [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)-Methode von Xamarin.Forms können Sie dieses Steuerelement in plattformübergreifende Apps einfügen, um native Alternativen unter Android und auf der UWP zu rendern.
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) ist ein allgemeines Benutzeroberflächenelement unter iOS. Mit der xamarin. [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) Forms-Methode können Sie dieses Steuerelement in plattformübergreifende apps einschließen und Native Alternativen in Android und UWP rendern.
 
-Zum Anzeigen eines Aktions Blatts `await` [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) in einem beliebigen [`Page`](xref:Xamarin.Forms.Page), indem Sie die Nachrichten-und Schaltflächen Bezeichnungen als Zeichen folgen übergeben. Die Methode gibt die Bezeichnung der Zeichenfolge für die Schaltfläche zurück, auf die der Benutzer getippt hat. Hier ist ein einfaches Beispiel:
+Mit `await` [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) in einem beliebigen [`Page`](xref:Xamarin.Forms.Page)-Element werden die Bezeichnungen für die Nachricht und die Schaltfläche als Zeichenfolge übergeben, um ein Aktionsblatt anzuzeigen. Die Methode gibt die Bezeichnung der Zeichenfolge für die Schaltfläche zurück, auf die der Benutzer getippt hat. Hier ist ein einfaches Beispiel:
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -74,7 +74,7 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 
 ## <a name="display-a-prompt"></a>Anzeigen einer Eingabeaufforderung
 
-Um eine Aufforderung anzuzeigen, müssen Sie die `DisplayPromptAsync` in einem beliebigen [`Page`](xref:Xamarin.Forms.Page)aufrufen und dabei einen Titel und eine Nachricht als `string` Argumente übergeben:
+Um eine Aufforderung anzuzeigen, müssen Sie `DisplayPromptAsync` den in [`Page`](xref:Xamarin.Forms.Page)any aufrufen und einen Titel und eine `string` Nachricht als Argumente übergeben:
 
 ```csharp
 string result = await DisplayPromptAsync("Question 1", "What's your name?");
@@ -84,18 +84,18 @@ Die Eingabeaufforderung wird modisch angezeigt:
 
 [![Screenshot einer modalen Eingabeaufforderung unter IOS und Android](pop-ups-images/simple-prompt.png "Modale Eingabeaufforderung")](pop-ups-images/simple-prompt-large.png#lightbox "Modale Eingabeaufforderung")
 
-Wenn die Schaltfläche OK abgetippt wird, wird die eingegebene Antwort als `string`zurückgegeben. Wenn die Schaltfläche Abbrechen angetippt wird, wird `null` zurückgegeben.
+Wenn die Schaltfläche OK abgetippt wird, wird die eingegebene Antwort `string`als zurückgegeben. Wenn die Schaltfläche Abbrechen angetippt `null` wird, wird zurückgegeben.
 
-Die vollständige Argumentliste für die `DisplayPromptAsync`-Methode lautet:
+Die vollständige Argumentliste für `DisplayPromptAsync` die Methode ist:
 
-- `title`vom Typ `string`ist der Titel, der in der Eingabeaufforderung angezeigt werden soll.
-- `message`vom Typ `string`ist die Meldung, die in der Eingabeaufforderung angezeigt werden soll.
-- `accept`vom Typ `string`ist der Text für die Accept-Schaltfläche. Dies ist ein optionales Argument, dessen Standardwert OK ist.
-- `cancel`vom Typ "`string`" ist der Text für die Schaltfläche "Abbrechen". Dies ist ein optionales Argument, dessen Standardwert "Cancel" lautet.
-- `placeholder`vom Typ `string`ist der Platzhalter Text, der in der Eingabeaufforderung angezeigt werden soll. Dies ist ein optionales Argument, dessen Standardwert `null`ist.
-- `maxLength`vom Typ `int`ist die maximale Länge der Benutzer Antwort. Dies ist ein optionales Argument, dessen Standardwert-1 ist.
-- `keyboard`vom Typ `Keyboard`ist der Tastatur Typ, der für die Benutzer Antwort verwendet werden soll. Dies ist ein optionales Argument, dessen Standardwert `Keyboard.Default`ist.
-- `initialValue`vom Typ `string`ist eine vordefinierte Antwort, die angezeigt wird und bearbeitet werden kann. Dies ist ein optionales Argument, dessen Standardwert eine leere `string`ist.
+- `title`, vom Typ `string`, ist der Titel, der in der Eingabeaufforderung angezeigt werden soll.
+- `message`, vom Typ `string`, ist die Meldung, die in der Eingabeaufforderung angezeigt werden soll.
+- `accept`ist vom Typ `string`, der Text für die Accept-Schaltfläche. Dies ist ein optionales Argument, dessen Standardwert OK ist.
+- `cancel`ist vom Typ `string`, ist der Text für die Schaltfläche Abbrechen. Dies ist ein optionales Argument, dessen Standardwert "Cancel" lautet.
+- `placeholder`ist vom Typ `string`, der Platzhalter Text, der in der Eingabeaufforderung angezeigt werden soll. Dies ist ein optionales Argument, dessen Standardwert `null`ist.
+- `maxLength`, vom Typ `int`, ist die maximale Länge der Benutzer Antwort. Dies ist ein optionales Argument, dessen Standardwert-1 ist.
+- `keyboard`ist vom Typ `Keyboard`, der für die Benutzer Antwort zu verwendende Tastatur-Typ. Dies ist ein optionales Argument, dessen Standardwert `Keyboard.Default`ist.
+- `initialValue`ist vom Typ `string`eine vordefinierte Antwort, die angezeigt wird und bearbeitet werden kann. Dies ist ein optionales Argument, dessen Standardwert leer `string`ist.
 
 Das folgende Beispiel zeigt das Festlegen einiger optionaler Argumente:
 
@@ -106,9 +106,6 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 Dieser Code zeigt eine vordefinierte Antwort von 10 an, schränkt die Anzahl der Zeichen ein, die in 2 eingegeben werden können, und zeigt die numerische Tastatur für die Benutzereingabe an:
 
 [![Screenshot einer modalen Eingabeaufforderung unter IOS und Android](pop-ups-images/keyboard-prompt.png "Modale Eingabeaufforderung")](pop-ups-images/keyboard-prompt-large.png#lightbox "Modale Eingabeaufforderung")
-
-> [!NOTE]
-> Die `DisplayPromptAsync`-Methode ist derzeit nur unter IOS und Android implementiert.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,46 +1,51 @@
 ---
-title: Xamarin. Forms-Karten Polygone und Polylines
-description: In diesem Artikel wird erläutert, wie Polygone und Polylinien in einer xamarin. Forms-Karten Instanz erstellt werden.
+title: Xamarin. Forms Karten Polygone, Polylines und Kreise
+description: In diesem Artikel wird erläutert, wie Polygone, Polylines und Kreise in einer xamarin. Forms-Karten Instanz erstellt werden.
 ms.prod: xamarin
 ms.assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D
 ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/20/2019
-ms.openlocfilehash: 42c00a060e0477aff4ea02f6213fa751b2adf4dd
-ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
+ms.openlocfilehash: e1edbc4d7376023c9d3051b0518c8dc7368e63a7
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810493"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517341"
 ---
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin. Forms-Karten Polygone und Polylines
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[!["Polygon-und polyliniendemo unter IOS und Android"](polygons-images/polygon-app-cropped.png)](polygons-images/polygon-app.png#lightbox)
+`Polygon`die `Polyline`Elemente, `Circle` und ermöglichen es Ihnen, bestimmte Bereiche auf einer Karte hervorzuheben. Eine `Polygon` ist eine vollständig eingeschlossene Form, die einen Strich und eine Füllfarbe aufweisen kann. Ein `Polyline` ist eine Zeile, die einen Bereich nicht vollständig umschließt. Ein `Circle` hebt einen kreisförmigen Bereich der Karte hervor:
 
-die Elemente `Polygon` und `Polyline` ermöglichen es Ihnen, bestimmte Bereiche auf einer Karte hervorzuheben. Ein `Polygon` ist eine vollständig eingeschlossene Form, die einen Strich und eine Füllfarbe aufweisen kann. Ein `Polyline` ist eine Zeile, die einen Bereich nicht vollständig umschließt.
+[!["Screenshot eines Karten Polygons und Polylinien unter IOS und Android"](polygons-images/polygon-polyline.png "Polygon und Polylinie in einer Karte")](polygons-images/polygon-polyline-large.png#lightbox "Polygon und Polylinie in einer Karte")
+"[![Screenshot eines Karten Kreises unter IOS und Android"](polygons-images/circle.png "Kreis auf einer Karte")](polygons-images/circle-large.png#lightbox "Kreis auf einer Karte")
+
+Die `Polygon`Klassen `Polyline`, und `Circle` werden von der `MapElement` -Klasse abgeleitet, die die folgenden bindbaren Eigenschaften verfügbar macht:
+
+- `StrokeColor`ist ein `Color` -Objekt, das die Linien Farbe bestimmt.
+- `StrokeWidth`ist ein `float` -Objekt, das die Linienbreite bestimmt.
+
+Die `Polygon` -Klasse definiert eine zusätzliche bindbare Eigenschaft:
+
+- `FillColor`ist ein `Color` -Objekt, das die Hintergrundfarbe des Polygons bestimmt.
+
+Außerdem definieren sowohl die `Polygon` - `Polyline` Klasse als auch die `GeoPath` -Klasse eine-Eigenschaft, die [`Position`](xref:Xamarin.Forms.Maps.Position) eine Liste von-Objekten ist, die die Punkte der Form angeben.
+
+Die `Circle` -Klasse definiert die folgenden bindbaren Eigenschaften:
+
+- `Center`ist ein [`Position`](xref:Xamarin.Forms.Maps.Position) -Objekt, das den Mittelpunkt des Kreises in breiten-und Längengrad definiert.
+- `Radius`ist ein [`Distance`](xref:Xamarin.Forms.Maps.Distance) -Objekt, das den Radius des Kreises in Meter, Kilometern oder km definiert.
+- `FillColor`eine `Color` Eigenschaft, die die Farbe innerhalb des Kreis Umkreises bestimmt.
 
 > [!NOTE]
-> Beispiele für `Polygon` und `Polyline` finden Sie unter dem **polygonspage** im Beispiel Projekt.
-
-Die Klassen `Polygon` und `Polyline` werden von `MapElement` abgeleitet, das die folgenden [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Eigenschaften verfügbar macht:
-
-- `StrokeColor` ist eine `Color` Eigenschaft, die die Linien Farbe bestimmt.
-- `StrokeWidth` ist eine `float` Eigenschaft, die die Linienbreite bestimmt.
-- `Geopath` wird sowohl für `Polygon` als auch für `Polyline` definiert, und ist eine Liste von [`Position`](xref:Xamarin.Forms.Maps.Position) Objekten, die die Punkte der Form angeben.
-
-Die `Polygon`-Klasse definiert eine zusätzliche Eigenschaft:
-
-- `FillColor` ist eine `Color` Eigenschaft, die die Hintergrundfarbe des Polygons bestimmt.
-
-> [!NOTE]
-> Wenn die `StrokeColor`-Eigenschaft nicht angegeben ist, wird der Strich standardmäßig auf schwarz festgelegt. Wenn die `FillColor`-Eigenschaft nicht angegeben ist, wird für die Füllung standardmäßig transparent verwendet. Wenn keine Eigenschaft angegeben wird, hat die Form eine schwarze Kontur ohne Füllung.
+> Wenn die `StrokeColor` Eigenschaft nicht angegeben wird, wird der Strich standardmäßig auf schwarz festgelegt. Wenn die `FillColor` -Eigenschaft nicht angegeben ist, wird die Füllung standardmäßig auf transparent festgelegt. Wenn keine Eigenschaft angegeben wird, hat die Form eine schwarze Kontur ohne Füllung.
 
 ## <a name="create-a-polygon"></a>Erstellen eines Polygons
 
-Ein `Polygon`-Objekt kann einer Zuordnung hinzugefügt werden, indem es instanziiert und der `MapElements` Auflistung der Karte hinzugefügt wird. Dies kann in XAML folgendermaßen erfüllt werden:
+Ein `Polygon` -Objekt kann einer Zuordnung hinzugefügt werden, indem es instanziiert und der Auflistung der `MapElements` Zuordnung hinzugefügt wird. Dies kann in XAML folgendermaßen erfüllt werden:
 
 ```xaml
 <ContentPage ...
@@ -99,14 +104,14 @@ Polygon polygon = new Polygon
 map.MapElements.Add(polygon);
 ```
 
-Die Eigenschaften `StrokeColor` und `StrokeWidth` werden angegeben, um die Gliederung des Polygons anzupassen. Der `FillColor`-Eigenschafts Wert entspricht dem `StrokeColor`-Eigenschafts Wert, hat aber einen Alpha-Wert angegeben, um ihn transparent zu machen, sodass die zugrunde liegende Karte durch die Form sichtbar ist. Die `GeoPath`-Eigenschaft enthält eine Liste von `Position` Objekten, die die geografischen Koordinaten der Polygon Punkte definieren. Ein `Polygon`-Objekt wird in der Zuordnung gerendert, nachdem es der `MapElements` Auflistung der `Map` hinzugefügt wurde.
+Die `StrokeColor` - `StrokeWidth` Eigenschaft und die-Eigenschaft werden angegeben, um die Kontur des Polygons anzupassen. Der `FillColor` Eigenschafts Wert stimmt `StrokeColor` mit dem Eigenschafts Wert überein, verfügt jedoch über einen angegebenen Alpha Wert, um ihn transparent zu machen, sodass die zugrunde liegende Karte durch die Form sichtbar ist. Die `GeoPath` -Eigenschaft enthält eine Liste `Position` von-Objekten, die die geografischen Koordinaten der Polygon Punkte definieren. Ein `Polygon` -Objekt wird in der Zuordnung gerendert, sobald es der `MapElements` -Auflistung von `Map`hinzugefügt wurde.
 
 > [!NOTE]
 > Eine `Polygon` ist eine vollständig eingeschlossene Form. Der erste und der letzte Punkt werden automatisch verbunden, wenn keine Entsprechung gefunden wird.
 
 ## <a name="create-a-polyline"></a>Erstellen einer Polylinie
 
-Ein `Polyline`-Objekt kann einer Zuordnung hinzugefügt werden, indem es instanziiert und der `MapElements` Auflistung der Karte hinzugefügt wird. Dies kann in XAML folgendermaßen erfüllt werden:
+Ein `Polyline` -Objekt kann einer Zuordnung hinzugefügt werden, indem es instanziiert und der Auflistung der `MapElements` Zuordnung hinzugefügt wird. Dies kann in XAML folgendermaßen erfüllt werden:
 
 ```xaml
 <ContentPage ...
@@ -161,7 +166,67 @@ Polyline polyline = new Polyline
 map.MapElements.Add(polyline);
 ```
 
-Die Eigenschaften `StrokeColor` und `StrokeWidth` werden angegeben, um die Zeile anzupassen. Die `GeoPath`-Eigenschaft enthält eine Liste von `Position` Objekten, die die geografischen Koordinaten der polyzeiligen Punkte definieren. Ein `Polyline`-Objekt wird in der Zuordnung gerendert, nachdem es der `MapElements` Auflistung der `Map` hinzugefügt wurde.
+Die `StrokeColor` - `StrokeWidth` Eigenschaft und die-Eigenschaft werden angegeben, um die Zeile anzupassen. Die `GeoPath` -Eigenschaft enthält eine Liste `Position` von-Objekten, die die geografischen Koordinaten der polyzeiligen Punkte definieren. Ein `Polyline` -Objekt wird in der Zuordnung gerendert, sobald es der `MapElements` -Auflistung von `Map`hinzugefügt wurde.
+
+## <a name="create-a-circle"></a>Erstellen eines Kreises
+
+Ein `Circle` -Objekt kann einer Zuordnung hinzugefügt werden, indem es instanziiert und der Auflistung der `MapElements` Zuordnung hinzugefügt wird. Dies kann in XAML folgendermaßen erfüllt werden:
+
+```xaml
+<ContentPage ...
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+      <maps:Map>
+          <maps:Map.MapElements>
+              <maps:Circle StrokeColor="#88FF0000"
+                           StrokeWidth="8"
+                           FillColor="#88FFC0CB">
+                  <maps:Circle.Center>
+                      <maps:Position>
+                          <x:Arguments>
+                              <x:Double>37.79752</x:Double>
+                              <x:Double>-122.40183</x:Double>
+                          </x:Arguments>
+                      </maps:Position>
+                  </maps:Circle.Center>
+                  <maps:Circle.Radius>
+                      <maps:Distance>
+                          <x:Arguments>
+                              <x:Double>250</x:Double>
+                          </x:Arguments>
+                      </maps:Distance>
+                  </maps:Circle.Radius>
+              </maps:Circle>             
+          </maps:Map.MapElements>
+          ...
+      </maps:Map>
+</ContentPage>
+```
+
+Der entsprechende C#-Code lautet:
+
+```csharp
+using Xamarin.Forms.Maps;
+// ...
+Map map = new Map();
+
+// Instantiate a Circle
+Circle circle = new Circle
+{
+    Center = new Position(37.79752, -122.40183);,
+    Radius = new Distance(250),
+    StrokeColor = Color.FromHex("#88FF0000"),
+    StrokeWidth = 8,
+    FillColor = Color.FromHex("#88FFC0CB")
+};
+
+// Add the Circle to the map's MapElements collection
+map.MapElements.Add(circle);
+```
+
+Der Speicherort der `Circle` auf der Karte wird durch den Wert der `Center` -Eigenschaft und `Radius` der-Eigenschaft bestimmt. Die `Center` -Eigenschaft definiert den Mittelpunkt des Kreises in breiten-und Längengrad, während `Radius` die-Eigenschaft den Radius des Kreises in Meter definiert. Die `StrokeColor` - `StrokeWidth` Eigenschaft und die-Eigenschaft werden angegeben, um die Kontur des Kreises anzupassen. Der `FillColor` -Eigenschafts Wert gibt die Farbe innerhalb des Kreis Umkreises an. Beide Farbwerte geben einen Alphakanal an, sodass die zugrunde liegende Karte über den Kreis sichtbar ist. Das `Circle` -Objekt wird in der Zuordnung gerendert, nachdem es der `MapElements` -Auflistung von `Map`hinzugefügt wurde.
+
+> [!NOTE]
+> Die `GeographyUtils` -Klasse verfügt `ToCircumferencePositions` über eine-Erweiterungsmethode `Circle` , die ein- `Center` Objekt `Radius` (das die-Eigenschaftswerte `Position` definiert) in eine Liste von-Objekten konvertiert, die die breiten-und Längenkoordinaten des Kreis Umkreises bilden.
 
 ## <a name="related-links"></a>Verwandte Links
 

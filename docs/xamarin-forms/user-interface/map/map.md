@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/29/2019
-ms.openlocfilehash: 1cfda90360557af1160d421f18807f8b534967a8
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 3861200446ea9c0e368aa251f3e7ec3f992c7152
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306506"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517521"
 ---
 # <a name="xamarinforms-map-control"></a>Xamarin. Forms-Kartensteuerelement
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 Das [`Map`](xref:Xamarin.Forms.Maps.Map) -Steuerelement ist eine plattformübergreifende Ansicht zum Anzeigen und kommentieren von Zuordnungen. Es verwendet das Native Karten Steuerelement für jede Plattform und bietet Benutzern eine schnelle und vertraute Zuordnungs Darstellung:
 
@@ -24,27 +24,27 @@ Das [`Map`](xref:Xamarin.Forms.Maps.Map) -Steuerelement ist eine plattformüberg
 
 Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert die folgenden Eigenschaften, die die Darstellung und das Verhalten von Karten Steuern:
 
-- [`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser)vom Typ `bool`gibt an, ob die Karte den aktuellen Speicherort des Benutzers anzeigt.
-- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)vom Typ `IEnumerable`, der die Auflistung der `IEnumerable` Elemente angibt, die angezeigt werden sollen.
-- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), der die [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) angibt, die auf jedes Element in der Auflistung der angezeigten Elemente angewendet werden sollen.
-- `ItemTemplateSelector`vom Typ [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector), der die [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) angibt, die zum Auswählen einer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) für ein Element zur Laufzeit verwendet wird.
-- [`HasScrollEnabled`](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled)vom Typ `bool`bestimmt, ob für die Zuordnung ein Bildlauf zulässig ist.
-- [`HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled)vom Typ `bool`bestimmt, ob die Zuordnung vergrößert werden darf.
-- `MapElements`vom Typ `IList<MapElement>`stellt die Liste der Elemente in der Karte dar, z. b. Polygone und Polylines.
-- [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)vom Typ [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)gibt den Anzeige Stil der Karte an.
-- `MoveToLastRegionOnLayoutChange`vom Typ `bool`steuert, ob der angezeigte Kartenbereich von seinem aktuellen Bereich in den zuvor festgelegten Bereich verschoben wird, wenn eine Layoutänderung auftritt.
-- [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)vom Typ `IList<Pin>`stellt die Liste der Pins in der Karte dar.
-- [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)vom Typ [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)gibt den aktuell angezeigten Bereich der Karte zurück.
+- [`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser)gibt mit dem `bool`Typ an, ob die Karte den aktuellen Speicherort des Benutzers anzeigt.
+- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)vom Typ, `IEnumerable`der die Auflistung der `IEnumerable` anzuzeigenden Elemente angibt.
+- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), der das angibt, [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) das auf jedes Element in der Auflistung der angezeigten Elemente angewendet werden soll.
+- `ItemTemplateSelector`vom Typ [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector), der die [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) angibt, die zum Auswählen eines [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) für ein Element zur Laufzeit verwendet wird.
+- [`HasScrollEnabled`](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled)bestimmt, ob `bool`für die Zuordnung ein Bildlauf zulässig ist, vom Typ.
+- [`HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled)bestimmt vom Typ `bool`, ob die Zuordnung vergrößert werden darf.
+- `MapElements`stellt vom Typ `IList<MapElement>`die Liste der Elemente in der Zuordnung dar, z. b. Polygone und Polylines.
+- [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)Gibt den Anzeige [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)Stil der Karte an.
+- `MoveToLastRegionOnLayoutChange`, vom Typ `bool`, steuert, ob der angezeigte Kartenbereich von seinem aktuellen Bereich in den zuvor festgelegten Bereich verschoben wird, wenn eine Layoutänderung auftritt.
+- [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)stellt vom Typ `IList<Pin>`die Liste der Pins in der Karte dar.
+- [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)Gibt den aktuell [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)angezeigten Bereich der Zuordnung vom Typ zurück.
 
-Diese Eigenschaften werden mit Ausnahme der Eigenschaften `MapElements`, `Pins`und `VisibleRegion` von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten unterstützt. Dies bedeutet, dass Sie Ziele von Daten Bindungen sein können.
+Diese Eigenschaften, mit Ausnahme der `MapElements`Eigenschaften, `Pins`und, werden `VisibleRegion` von [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. Dies bedeutet, dass Sie Ziele von Daten Bindungen sein können.
 
-Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert auch ein `MapClicked` Ereignis, das ausgelöst wird, wenn die Zuordnung abgetippt wird. Das `MapClickedEventArgs` Objekt, das das Ereignis begleitet, verfügt über eine einzelne Eigenschaft mit dem Namen `Position`vom Typ [`Position`](xref:Xamarin.Forms.Maps.Position). Wenn das Ereignis ausgelöst wird, wird die `Position`-Eigenschaft auf den Zuordnungs Speicherort festgelegt, der abgetippt wurde. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md).
+Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert auch `MapClicked` ein-Ereignis, das ausgelöst wird, wenn die Zuordnung abgetippt wird. Das `MapClickedEventArgs` Objekt, das das Ereignis begleitet, verfügt über eine `Position`einzelne Eigenschaft namens [`Position`](xref:Xamarin.Forms.Maps.Position)vom Typ. Wenn das-Ereignis ausgelöst wird, `Position` wird die-Eigenschaft auf den Zuordnungs Speicherort festgelegt, der abgetippt wurde. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md).
 
-Informationen zu den Eigenschaften [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource), [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)und `ItemTemplateSelector` finden Sie unter [Anzeigen einer PIN](pins.md#display-a-pin-collection)-Auflistung.
+Informationen zu den [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)Eigenschaften, [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)und finden `ItemTemplateSelector` Sie unter [Anzeigen einer PIN](pins.md#display-a-pin-collection)-Auflistung.
 
 ## <a name="display-a-map"></a>Karte anzeigen
 
-Eine [`Map`](xref:Xamarin.Forms.Maps.Map) kann angezeigt werden, indem Sie zu einem Layout oder einer Seite hinzugefügt wird:
+Ein [`Map`](xref:Xamarin.Forms.Maps.Map) kann angezeigt werden, indem es einem Layout oder einer Seite hinzugefügt wird:
 
 ```xaml
 <ContentPage ...
@@ -54,7 +54,7 @@ Eine [`Map`](xref:Xamarin.Forms.Maps.Map) kann angezeigt werden, indem Sie zu ei
 ```
 
 > [!NOTE]
-> Eine zusätzliche `xmlns`-Namespace Definition ist erforderlich, um auf die xamarin. Forms. Maps-Steuerelemente zu verweisen. Im vorherigen Beispiel wird auf den `Xamarin.Forms.Maps` Namespace über das `maps`-Schlüsselwort verwiesen.
+> Eine zusätzliche `xmlns` Namespace Definition ist erforderlich, um auf die xamarin. Forms. Maps-Steuerelemente zu verweisen. Im vorherigen Beispiel wird auf `Xamarin.Forms.Maps` den Namespace über das `maps` -Schlüsselwort verwiesen.
 
 Der entsprechende C#-Code lautet:
 
@@ -75,21 +75,21 @@ namespace WorkingWithMaps
 }
 ```
 
-In diesem Beispiel wird der Standardkonstruktor [`Map`](xref:Xamarin.Forms.Maps.Map) aufgerufen, der die Karte in Rom zentriert:
+In diesem Beispiel wird der [`Map`](xref:Xamarin.Forms.Maps.Map) Standardkonstruktor aufgerufen, der die Karte in Rom zentriert:
 
 [![Screenshot der Karten Steuerung mit dem Standard Speicherort unter IOS und Android](map-images/map-default.png "Karten Steuerelement mit Standard Speicherort")](map-images/map-default-large.png#lightbox "Karten Steuerelement mit Standard Speicherort")
 
-Alternativ kann ein [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) Argument an einen [`Map`](xref:Xamarin.Forms.Maps.Map) -Konstruktor übergeben werden, um den Mittelpunkt und die Zoomstufe der Karte beim Laden festzulegen. Weitere Informationen finden Sie unter [Anzeigen eines bestimmten Speicher Orts in einer Karte](#display-a-specific-location-on-a-map).
+Alternativ kann ein [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Argument an einen [`Map`](xref:Xamarin.Forms.Maps.Map) -Konstruktor übergeben werden, um den Mittelpunkt und die Zoomstufe der Karte beim Laden festzulegen. Weitere Informationen finden Sie unter [Anzeigen eines bestimmten Speicher Orts in einer Karte](#display-a-specific-location-on-a-map).
 
 ## <a name="map-types"></a>Kartentypen
 
-Die [`Map.MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft kann auf einen [`MapType`](xref:Xamarin.Forms.Maps.MapType) Enumerationsmember festgelegt werden, um den Anzeige Stil der Karte zu definieren. Die `MapType`-Enumeration definiert die folgenden Member:
+Die [`Map.MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft kann auf einen [`MapType`](xref:Xamarin.Forms.Maps.MapType) -Enumerationsmember festgelegt werden, um den Anzeige Stil der Karte zu definieren. Die `MapType`-Enumeration definiert die folgenden Member:
 
-- `Street` gibt an, dass eine Straßenkarte angezeigt wird.
-- `Satellite` gibt an, dass eine Karte angezeigt wird, die Satellitenbilder enthält.
-- `Hybrid` gibt an, dass eine Karte angezeigt wird, die Straßen-und Satellitendaten kombiniert.
+- `Street`Gibt an, dass eine Straßenkarte angezeigt wird.
+- `Satellite`Gibt an, dass eine Karte angezeigt wird, die Satellitenbilder enthält.
+- `Hybrid`Gibt an, dass eine Karte angezeigt wird, die Straßen-und Satellitendaten kombiniert.
 
-Standardmäßig wird in einem [`Map`](xref:Xamarin.Forms.Maps.Map) eine Straßenkarte angezeigt, wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft nicht definiert ist. Alternativ kann die `MapType`-Eigenschaft auf einen der [`MapType`](xref:Xamarin.Forms.Maps.MapType) Enumerationsmember festgelegt werden:
+Standardmäßig [`Map`](xref:Xamarin.Forms.Maps.Map) wird eine Straßenkarte angezeigt, wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft nicht definiert ist. Alternativ kann die `MapType` -Eigenschaft auf einen der- [`MapType`](xref:Xamarin.Forms.Maps.MapType) Enumerationsmember festgelegt werden:
 
 ```xaml
 <maps:Map MapType="Satellite" />
@@ -104,21 +104,21 @@ Map map = new Map
 };
 ```
 
-Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft auf `Street`festgelegt ist:
+Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) die-Eigenschaft auf `Street`festgelegt ist:
 
 [![Screenshot der Karten Steuerung mit dem Straßen Kartentyp unter IOS und Android](map-images/maptype-street.png "Karten Steuerelement mit dem "Straße" der Straße")](map-images/maptype-street-large.png#lightbox "Karten Steuerelement mit dem Typ "Street Map"")
 
-Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft auf `Satellite`festgelegt ist:
+Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) die-Eigenschaft auf `Satellite`festgelegt ist:
 
 [![Screenshot der Karten Steuerung mit dem Satellitentyp unter IOS und Android](map-images/maptype-satellite.png "Karten Steuerelement mit dem satellitenmaptype")](map-images/maptype-satellite-large.png#lightbox "Karten Steuerelement mit dem satellitenkartentyp")
 
-Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn die [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) -Eigenschaft auf `Hybrid`festgelegt ist:
+Die folgenden Screenshots zeigen eine [`Map`](xref:Xamarin.Forms.Maps.Map) , wenn [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) die-Eigenschaft auf `Hybrid`festgelegt ist:
 
 [![Screenshot der Karten Steuerung mit dem Hybriden Kartentyp unter IOS und Android](map-images/maptype-hybrid.png "Karten Steuerelement mit dem Hybriden maptype")](map-images/maptype-hybrid-large.png#lightbox "Karten Steuerelement mit dem Hybrid Kartentyp")
 
 ## <a name="display-a-specific-location-on-a-map"></a>Anzeigen einer bestimmten Position auf einer Karte
 
-Der Bereich einer Karte, die beim Laden einer Karte angezeigt werden soll, kann durch Übergeben eines [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) Arguments an den [`Map`](xref:Xamarin.Forms.Maps.Map) -Konstruktor festgelegt werden:
+Der Bereich einer Karte, die beim Laden einer Karte angezeigt werden soll, kann durch Übergeben eines [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Arguments an [`Map`](xref:Xamarin.Forms.Maps.Map) den-Konstruktor festgelegt werden:
 
 ```xaml
 <maps:Map>
@@ -147,7 +147,7 @@ MapSpan mapSpan = new MapSpan(position, 0.01, 0.01);
 Map map = new Map(mapSpan);
 ```
 
-In diesem Beispiel wird ein [`Map`](xref:Xamarin.Forms.Maps.Map) Objekt erstellt, das den Bereich anzeigt, der durch das [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Objekt angegeben wird. Das `MapSpan` Objekt wird auf dem breiten-und Längengrad zentriert, der durch ein [`Position`](xref:Xamarin.Forms.Maps.Position) Objekt dargestellt wird, und umfasst 0,01 breiten-und 0,01 Längengrad. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md). Weitere Informationen zum Übergeben von Argumenten in XAML finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
+In diesem Beispiel wird [`Map`](xref:Xamarin.Forms.Maps.Map) ein-Objekt erstellt, das den Bereich anzeigt, [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) der durch das-Objekt angegeben wird. Das `MapSpan` -Objekt wird auf den breiten-und Längengrad zentriert, [`Position`](xref:Xamarin.Forms.Maps.Position) der durch ein-Objekt dargestellt wird, und erstreckt sich über 0,01 Breitengrad und 0,01 Längengrad. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md). Weitere Informationen zum Übergeben von Argumenten in XAML finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
 
 Das Ergebnis ist, dass beim Anzeigen der Zuordnung eine bestimmte Position zentriert ist und eine bestimmte Anzahl von breiten-und Längengraden umfasst:
 
@@ -155,26 +155,26 @@ Das Ergebnis ist, dass beim Anzeigen der Zuordnung eine bestimmte Position zentr
 
 ## <a name="create-a-mapspan-object"></a>Erstellen eines mapspan-Objekts
 
-Es gibt eine Reihe von Vorgehensweisen zum Erstellen von [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) Objekten. Ein gängiger Ansatz besteht darin, die erforderlichen Argumente für den `MapSpan`-Konstruktor bereitzustellen. Dabei handelt es sich um einen breiten-und Längengrad, der durch ein [`Position`](xref:Xamarin.Forms.Maps.Position) Objekt dargestellt wird, sowie `double` Werte, die den Grad des breiten-und Längen Grads darstellen, die vom `MapSpan`überspannt werden. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md).
+Es gibt eine Reihe von Ansätzen zum Erstellen [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) von-Objekten. Ein gängiger Ansatz besteht darin, die erforderlichen Argumente `MapSpan` für den Konstruktor bereitzustellen. Dabei handelt es sich um einen breiten-und Längen [`Position`](xref:Xamarin.Forms.Maps.Position) Grad, der `double` durch ein-Objekt dargestellt wird, und um-Werte, die den Grad des `MapSpan`breiten-und Längen Grads darstellen. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md).
 
 Alternativ gibt es drei Methoden in der [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Klasse, die neue `MapSpan` Objekte zurückgeben:
 
-1. [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude*) gibt eine `MapSpan` zurück, die dieselbe `LongitudeDegrees` wie die Klasseninstanz der Methode und einen durch ihre `north` und `south` Argumente definierten Radius hat.
-1. [`FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius*) gibt ein `MapSpan` zurück, das durch seine [`Position`](xref:Xamarin.Forms.Maps.Position) und [`Distance`](xref:Xamarin.Forms.Maps.Distance) Argumente definiert wird.
-1. [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*) gibt eine `MapSpan` mit derselben Mitte wie die Klasseninstanz der Methode zurück, wobei jedoch ein RADIUS mit dem `double` Argument multipliziert ist.
+1. [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude*)Gibt einen `MapSpan` mit dem gleichen `LongitudeDegrees` Wert wie die-Klasseninstanz der Methode und einen durch das `north` -Argument `south` und das-Argument definierten Radius zurück.
+1. [`FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius*)Gibt einen `MapSpan` zurück, der durch seine [`Position`](xref:Xamarin.Forms.Maps.Position) - [`Distance`](xref:Xamarin.Forms.Maps.Distance) und-Argumente definiert wird.
+1. [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*)gibt eine `MapSpan` mit derselben Mitte wie die Klasseninstanz der Methode zurück, wobei jedoch ein RADIUS mit dem `double` Argument multipliziert ist.
 
 Weitere Informationen zur [`Distance`](xref:Xamarin.Forms.Maps.Distance) Struktur finden Sie unter [map Position und Distance](position-distance.md).
 
 Nachdem ein [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) erstellt wurde, können Sie auf die folgenden Eigenschaften zugreifen, um Daten darüber abzurufen:
 
-- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center), das die [`Position`](xref:Xamarin.Forms.Maps.Position) im geografischen Zentrum der `MapSpan`darstellt.
-- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees), das die Breitengrade darstellt, die vom `MapSpan`überspannt werden.
-- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees), der den Grad der Länge darstellt, der durch die `MapSpan`überspannt wird.
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center), der die [`Position`](xref:Xamarin.Forms.Maps.Position) im geografischen Zentrum der darstellt `MapSpan`.
+- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees), der den Grad des breiten Grads darstellt, der von der `MapSpan`überspannt wird.
+- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees), der den Grad der Länge darstellt, der von der `MapSpan`überspannt wird.
 - [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius), der den `MapSpan` Radius darstellt.
 
 ## <a name="move-the-map"></a>Verschieben der Karte
 
-Die [`Map.MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode kann aufgerufen werden, um die Position und die Zoomstufe einer Karte zu ändern. Diese Methode akzeptiert ein [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) Argument, das den Bereich der anzuzeigenden Karte und deren Zoomstufe definiert.
+Die [`Map.MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode kann aufgerufen werden, um die Position und die Zoomstufe einer Karte zu ändern. Diese Methode akzeptiert ein [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Argument, das den Bereich der anzuzeigenden Karte und deren Zoomstufe definiert.
 
 Der folgende Code zeigt ein Beispiel für das Verschieben des angezeigten Bereichs auf einer Karte:
 
@@ -183,9 +183,9 @@ MapSpan mapSpan = MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(
 map.MoveToRegion(mapSpan);
 ```
 
-## <a name="zoom-the-map"></a>Vergrößern der Karte
+## <a name="zoom-the-map"></a>Zoomen der Karte
 
-Der Zoomfaktor einer [`Map`](xref:Xamarin.Forms.Maps.Map) kann geändert werden, ohne den Speicherort zu ändern. Dies kann mithilfe der kartenbenutzer Oberfläche oder Programm gesteuert durch Aufrufen der [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode mit einem [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Argument erreicht werden, das den aktuellen Speicherort als [`Position`](xref:Xamarin.Forms.Maps.Position) Argument verwendet:
+Der Zoomfaktor eines [`Map`](xref:Xamarin.Forms.Maps.Map) kann geändert werden, ohne den Speicherort zu ändern. Dies kann mithilfe der kartenbenutzer Oberfläche oder Programm gesteuert durch Aufrufen der [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode mit einem [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Argument erreicht werden, das den aktuellen Speicherort als [`Position`](xref:Xamarin.Forms.Maps.Position) Argument verwendet:
 
 ```csharp
 double zoomLevel = 0.5;
@@ -196,21 +196,21 @@ if (map.VisibleRegion != null)
 }
 ```
 
-In diesem Beispiel wird die [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode mit einem [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Argument aufgerufen, das den aktuellen Speicherort der Karte, über die [`Map.VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion) -Eigenschaft und die Zoomstufe als Grad an breiten-und Längengrad angibt. Das Gesamtergebnis ist, dass die Zoomstufe der Karte geändert wird, der Speicherort jedoch nicht. Ein alternativer Ansatz für die Implementierung von Zoom auf einer Karte ist die Verwendung der [`MapSpan.WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*) -Methode, um den Zoomfaktor zu steuern.
+In diesem Beispiel wird die [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) -Methode mit einem [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) -Argument aufgerufen, das den aktuellen Speicherort der Karte, über [`Map.VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion) die-Eigenschaft und die Zoomstufe als Grad an breiten-und Längengrad angibt. Das Gesamtergebnis ist, dass die Zoomstufe der Karte geändert wird, der Speicherort jedoch nicht. Ein alternativer Ansatz für die Implementierung von Zoom auf einer Karte ist die [`MapSpan.WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*) Verwendung der-Methode, um den Zoomfaktor zu steuern.
 
 > [!IMPORTANT]
-> Wenn Sie eine Zuordnung Zoomen, ob über die kartenbenutzer Oberfläche oder Programm gesteuert, ist es erforderlich, dass die [`Map.HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) -Eigenschaft `true`ist. Weitere Informationen zu dieser Eigenschaft finden Sie unter [Zoom deaktivieren](#disable-zoom).
+> Wenn Sie eine Zuordnung Zoomen, ob über die kartenbenutzer Oberfläche oder Programm gesteuert, ist [`Map.HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) es erforderlich `true`, dass die-Eigenschaft ist. Weitere Informationen zu dieser Eigenschaft finden Sie unter [Zoom deaktivieren](#disable-zoom).
 
 ## <a name="customize-map-behavior"></a>Anpassen des Zuordnungs Verhaltens
 
-Das Verhalten einer [`Map`](xref:Xamarin.Forms.Maps.Map) kann angepasst werden, indem einige der zugehörigen Eigenschaften festgelegt werden und das `MapClicked` Ereignis verarbeitet wird.
+Das Verhalten eines [`Map`](xref:Xamarin.Forms.Maps.Map) kann angepasst werden, indem einige seiner Eigenschaften festgelegt werden und das `MapClicked` -Ereignis behandelt wird.
 
 > [!NOTE]
-> Ein zusätzliches Zuordnungs Verhalten kann durch Erstellen eines benutzerdefinierten Renderers für Zuordnungen erreicht werden. Weitere Informationen finden Sie unter [Anpassen einer xamarin. Forms-Karte](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
+> Weitere Anpassungs Verhalten können durch Erstellen eines benutzerdefinierten Renderers für Zuordnungen erreicht werden. Weitere Informationen finden Sie unter [Anpassen einer xamarin. Forms-Karte](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md).
 
 ### <a name="disable-scroll"></a>Scrollvorgang deaktivieren
 
-Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert eine [`HasScrollEnabled`](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled) Eigenschaft vom Typ `bool`. Standardmäßig ist diese Eigenschaft `true`, was darauf hinweist, dass der Zuordnung ein Bildlauf zulässig ist. Wenn diese Eigenschaft auf `false`festgelegt ist, wird die Zuordnung nicht durchlaufen. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
+Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert [`HasScrollEnabled`](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled) eine Eigenschaft vom `bool`Typ. Standardmäßig ist `true`diese Eigenschaft, was angibt, dass die Zuordnung zum Scrollen zugelassen ist. Wenn diese Eigenschaft auf `false`festgelegt ist, wird die Zuordnung nicht durchlaufen. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
 
 ```xaml
 <maps:Map HasScrollEnabled="false" />
@@ -227,7 +227,7 @@ Map map = new Map
 
 ### <a name="disable-zoom"></a>Zoom deaktivieren
 
-Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert eine [`HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) Eigenschaft vom Typ `bool`. Standardmäßig ist diese Eigenschaft `true`, was darauf hinweist, dass Zoom auf der Karte ausgeführt werden kann. Wenn diese Eigenschaft auf `false`festgelegt ist, kann die Zuordnung nicht vergrößert werden. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
+Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert [`HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) eine Eigenschaft vom `bool`Typ. Standardmäßig ist `true`diese Eigenschaft, wodurch angegeben wird, dass Zoom auf der Karte ausgeführt werden kann. Wenn diese Eigenschaft auf `false`festgelegt ist, kann die Zuordnung nicht vergrößert werden. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
 
 ```xaml
 <maps:Map HasZoomEnabled="false" />
@@ -244,7 +244,7 @@ Map map = new Map
 
 ### <a name="show-the-users-location"></a>Speicherort des Benutzers anzeigen
 
-Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert eine [`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Eigenschaft vom Typ `bool`. Standardmäßig ist diese Eigenschaft `false`. Dies bedeutet, dass die Zuordnung nicht den aktuellen Speicherort des Benutzers anzeigt. Wenn diese Eigenschaft auf `true`festgelegt ist, zeigt die Karte den aktuellen Speicherort des Benutzers an. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
+Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert [`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser) eine Eigenschaft vom `bool`Typ. Standardmäßig ist `false`diese Eigenschaft. Dies bedeutet, dass die Zuordnung nicht den aktuellen Speicherort des Benutzers anzeigt. Wenn diese Eigenschaft auf festgelegt `true`ist, zeigt die Karte den aktuellen Speicherort des Benutzers an. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
 
 ```xaml
 <maps:Map IsShowingUser="true" />
@@ -264,7 +264,7 @@ Map map = new Map
 
 ### <a name="maintain-map-region-on-layout-change"></a>Kartenbereich bei Layoutänderung beibehalten
 
-Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert eine `MoveToLastRegionOnLayoutChange` Eigenschaft vom Typ `bool`. Standardmäßig ist diese Eigenschaft `true`. Dies bedeutet, dass der angezeigte Kartenbereich von seinem aktuellen Bereich in den zuvor festgelegten Bereich wechselt, wenn eine Layoutänderung auftritt, z. b. bei der Geräte Rotation. Wenn diese Eigenschaft auf `false`festgelegt ist, bleibt der angezeigte Kartenbereich zentriert, wenn eine Layoutänderung auftritt. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
+Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert `MoveToLastRegionOnLayoutChange` eine Eigenschaft vom `bool`Typ. Standardmäßig ist `true`diese Eigenschaft. Dies bedeutet, dass der angezeigte Zuordnungs Bereich beim Auftreten einer Layoutänderung von seinem aktuellen Bereich in den zuvor festgelegten Bereich wechselt, z. b. bei der Geräte Rotation. Wenn diese Eigenschaft auf `false`festgelegt ist, bleibt der angezeigte Kartenbereich zentriert, wenn eine Layoutänderung auftritt. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
 
 ```xaml
 <maps:Map MoveToLastRegionOnLayoutChange="false" />
@@ -281,9 +281,9 @@ Map map = new Map
 
 ### <a name="map-clicks"></a>Karten Klicks
 
-Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert ein `MapClicked` Ereignis, das ausgelöst wird, wenn die Karte abgetippt wird. Das `MapClickedEventArgs` Objekt, das das Ereignis begleitet, verfügt über eine einzelne Eigenschaft mit dem Namen `Position`vom Typ [`Position`](xref:Xamarin.Forms.Maps.Position). Wenn das Ereignis ausgelöst wird, wird die `Position`-Eigenschaft auf den Zuordnungs Speicherort festgelegt, der abgetippt wurde. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md).
+Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert `MapClicked` ein-Ereignis, das ausgelöst wird, wenn die Karte abgetippt wird. Das `MapClickedEventArgs` Objekt, das das Ereignis begleitet, verfügt über eine `Position`einzelne Eigenschaft namens [`Position`](xref:Xamarin.Forms.Maps.Position)vom Typ. Wenn das-Ereignis ausgelöst wird, `Position` wird die-Eigenschaft auf den Zuordnungs Speicherort festgelegt, der abgetippt wurde. Weitere Informationen zur [`Position`](xref:Xamarin.Forms.Maps.Position) Struktur finden Sie unter [map Position und Distance](position-distance.md).
 
-Das folgende Codebeispiel zeigt einen Ereignishandler für das `MapClicked`-Ereignis:
+Das folgende Codebeispiel zeigt einen Ereignishandler für das `MapClicked` -Ereignis:
 
 ```csharp
 void OnMapClicked(object sender, MapClickedEventArgs e)
@@ -292,7 +292,7 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 }
 ```
 
-In diesem Beispiel gibt der `OnMapClicked`-Ereignishandler den breiten-und Längengrad aus, der den gezapften Zuordnungs Speicherort darstellt. Der Ereignishandler kann wie folgt beim `MapClicked`-Ereignis registriert werden:
+In diesem Beispiel gibt der `OnMapClicked` -Ereignishandler die breiten-und Längengrade aus, die den angegeppten Zuordnungs Speicherort darstellen. Der Ereignishandler kann wie folgt mit dem `MapClicked` -Ereignis registriert werden:
 
 ```xaml
 <maps:Map MapClicked="OnMapClicked" />
@@ -309,5 +309,5 @@ map.MapClicked += OnMapClicked;
 
 - [Maps-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Karten Position und-Entfernung](position-distance.md)
-- [Anpassen einer xamarin. Forms-Karte](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [Anpassen von Xamarin.Forms-Karten](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [Übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md)
