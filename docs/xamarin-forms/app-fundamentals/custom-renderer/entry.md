@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 86714c2041edcd98c2bdd7b740a897dab8069752
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70772004"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516465"
 ---
 # <a name="customizing-an-entry"></a>Anpassen eines Eintrags
 
@@ -35,7 +35,7 @@ Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu
 Im Folgenden wird auf jeden dieser Punkte ausführlicher eingegangen, um zu veranschaulichen, wie Sie ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement implementieren können, das auf jeder Plattform eine andere Hintergrundfarbe aufweist.
 
 > [!IMPORTANT]
-> In diesem Artikel wird erläutert, wie Sie einen einfachen benutzerdefinierten Renderer erstellen. Es ist jedoch nicht erforderlich, einen benutzerdefinierten Renderer zu erstellen, um ein `Entry`-Steuerelement zu implementieren, das auf jeder Plattform eine andere Hintergrundfarbe aufweist. Dies erreichen Sie einfacher, indem Sie mithilfe der [`Device`](xref:Xamarin.Forms.Device)-Klasse oder der `OnPlatform`-Markuperweiterung plattformspezifische Werte angeben. Weitere Informationen finden Sie unter [Providing Platform-Specific Values (Angeben plattformspezifischer Werte)](~/xamarin-forms/platform/device.md#providing-platform-specific-values) und [OnPlatform Markup Extension (OnPlatform-Markuperweiterung)](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
+> In diesem Artikel wird erläutert, wie Sie einen einfachen benutzerdefinierten Renderer erstellen. Es ist jedoch nicht erforderlich, einen benutzerdefinierten Renderer zu erstellen, um ein `Entry`-Steuerelement zu implementieren, das auf jeder Plattform eine andere Hintergrundfarbe aufweist. Dies erreichen Sie einfacher, indem Sie mithilfe der [`Device`](xref:Xamarin.Forms.Device)-Klasse oder der `OnPlatform`-Markuperweiterung plattformspezifische Werte angeben. Weitere Informationen finden Sie unter [Providing Platform-Specific Values (Angeben plattformspezifischer Werte)](~/xamarin-forms/platform/device.md#provide-platform-specific-values) und [OnPlatform Markup Extension (OnPlatform-Markuperweiterung)](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
 
 <a name="Creating_the_Custom_Entry_Control" />
 
