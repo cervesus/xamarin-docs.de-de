@@ -6,13 +6,13 @@ ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/21/2020
-ms.openlocfilehash: bf9c06dae0df7da1cc69a85d8436376494039959
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/17/2020
+ms.openlocfilehash: b4eeb776cafa131f13eb70aca5bd20df6eafa07f
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303834"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516730"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -341,7 +341,7 @@ Weitere Informationen zu visuellen Zuständen finden Sie unter [Xamarin.Forms: V
 
 Die Klasse [`StateTrigger`](xref:Xamarin.Forms.StateTrigger), die von der Klasse [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) abgeleitet ist, hat die bindbare Eigenschaft [`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive). Ein `StateTrigger` löst eine [`VisualState`](xref:Xamarin.Forms.VisualState)-Änderung aus, wenn die `IsActive`-Eigenschaft ihren Wert ändert.
 
-Die Klasse [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase), die die Basisklasse für alle Zustandstrigger ist, hat die Eigenschaft [`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) und das Ereignis [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged). Dieses Ereignis wird immer dann ausgelöst, wenn eine [`VisualState`](xref:Xamarin.Forms.VisualState)-Änderung eintritt.
+Die Klasse [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase), die die Basisklasse für alle Zustandstrigger ist, hat die Eigenschaft [`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) und das Ereignis [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged). Dieses Ereignis wird immer dann ausgelöst, wenn eine [`VisualState`](xref:Xamarin.Forms.VisualState)-Änderung eintritt. Außerdem enthält die `StateTriggerBase`-Klasse überschreibbare `OnAttached`- und `OnDetached`-Methoden.
 
 > [!IMPORTANT]
 > Die bindbare Eigenschaft [`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) blendet die geerbte Eigenschaft [`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) aus.
@@ -405,7 +405,7 @@ Unchecked state active: True
 ```
 
 > [!NOTE]
-> Benutzerdefinierte Zustandstrigger können durch Ableitung von der [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)-Klasse erstellt werden.
+> Benutzerdefinierte Zustandstrigger können erstellt werden, indem von der [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)-Klasse abgeleitet wird und die `OnAttached`- und `OnDetached`-Methoden überschrieben werden, damit alle erforderlichen Registrierungen und Bereinigungen angewendet werden.
 
 ### <a name="adaptive-trigger"></a>Adaptive Trigger
 

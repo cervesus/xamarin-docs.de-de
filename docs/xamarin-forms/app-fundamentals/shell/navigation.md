@@ -6,13 +6,13 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/02/2020
+ms.openlocfilehash: a40a2dc01c37773539089287d561f4c52ef7f6de
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71674567"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516515"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation in der Xamarin.Forms-Shell
 
@@ -173,6 +173,36 @@ bears
 ```
 
 Wenn die registrierte Seite für die `monkeys`-Route angezeigt wird, wird durch die Navigation zur `details`-Route die registrierte Seite für die `monkeys/details`-Route angezeigt. Wenn die registrierte Seite für die `bears`-Route angezeigt wird, wird durch die Navigation zur `details`-Route entsprechend die registrierte Seite für die `bears/details`-Route angezeigt. Informationen zum Registrieren der Routen in diesem Beispiel finden Sie unter [Registrieren von Seitenrouten](#register-page-routes).
+
+### <a name="backwards-navigation"></a>Rückwärtsnavigation
+
+Die Rückwärtsnavigation kann erfolgen, indem Sie ".." als Argument zur `GotoAsync`-Methode hinzufügen.
+
+```csharp
+await Shell.Current.GoToAsync("..");
+```
+
+Die Rückwärtsnavigation mit ".." kann auch folgendermaßen mit einer Route kombiniert werden:
+
+```csharp
+await Shell.Current.GoToAsync("../route");
+```
+
+In diesem Beispiel besteht der Gesamteffekt darin, rückwärts und dann zur angegebenen Route zu navigieren.
+
+> [!IMPORTANT]
+> Die Rückwärtsnavigation und die Navigation zu einer angegebenen Route sind nur möglich, wenn die Rückwärtsnavigation Sie zur aktuellen Position in der Routenhierarchie bringt, damit Sie zur angegebenen Route navigieren können.
+
+Ebenso ist es möglich, mehrmals rückwärts und dann zu einer bestimmten Route zu navigieren:
+
+```csharp
+await Shell.Current.GoToAsync("../../route");
+```
+
+In diesem Beispiel besteht der Gesamteffekt darin, zweimal rückwärts und dann zur angegebenen Route zu navigieren.
+
+> [!NOTE]
+> Bei der Navigation mit ".." können auch Daten übergeben werden. Weitere Informationen finden Sie unter [Übergeben von Daten](#pass-data).
 
 ### <a name="invalid-routes"></a>Ungültige Routen
 

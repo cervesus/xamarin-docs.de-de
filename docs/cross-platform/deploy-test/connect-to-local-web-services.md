@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/16/2019
-ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/29/2020
+ms.openlocfilehash: 3dc1a2cb99c5ef018807a8ac81139a6cace3c66f
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74135279"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516501"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Herstellen einer Verbindung mit lokalen Webdiensten aus iOS-Simulatoren und Android-Emulatoren
 
@@ -60,9 +60,7 @@ Xamarin-Anwendungen, die unter iOS und Android ausgeführt werden, können angeb
 
 ### <a name="ios"></a>iOS
 
-Xamarin-Anwendungen, die unter iOS ausgeführt werden, können den verwalteten Netzwerkstapel verwenden oder die nativen Netzwerkstapel `CFNetwork` oder `NSUrlSession`. Standardmäßig verwenden neue iOS-Plattformprojekte den Netzwerkstapel `NSUrlSession`, um TLS 1.2 zu unterstützen, und verwenden native APIs für eine bessere Leistung und eine kleinere ausführbare Datei.
-
-Wenn jedoch eine Anwendung für Entwicklertests eine Verbindung mit einem sicheren Webdienst herstellen muss, der lokal ausgeführt wird, ist es einfacher, den verwalteten Netzwerkstapel zu verwenden. Aus diesem Grund wird empfohlen, Simulatorbuildprofile zum Debuggen so festzulegen,dass sie den verwalteten Netzwerkstapel verwenden, und Releasebuildprofile so, dass sie den Netzwerkstapel `NSUrlSession` verwenden. Jeder Netzwerkstapel kann programmgesteuert oder durch einen Selektor in den Projektoptionen festgelegt werden. Weitere Informationen finden Sie unter [HttpClient- und SSL/TLS-Implementierungsselektor für iOS/macOS](~/cross-platform/macios/http-stack.md).
+Xamarin-Anwendungen, die unter iOS ausgeführt werden, können den verwalteten Netzwerkstapel verwenden oder die nativen Netzwerkstapel `CFNetwork` oder `NSUrlSession`. Standardmäßig verwenden neue iOS-Plattformprojekte den Netzwerkstapel `NSUrlSession`, um TLS 1.2 zu unterstützen, und verwenden native APIs für eine bessere Leistung und eine kleinere ausführbare Datei. Weitere Informationen finden Sie unter [HttpClient- und SSL/TLS-Implementierungsselektor für iOS/macOS](~/cross-platform/macios/http-stack.md).
 
 ### <a name="android"></a>Android
 
@@ -97,38 +95,14 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 ## <a name="bypass-the-certificate-security-check"></a>Umgehen der Zertifikatsicherheitsüberprüfung
 
-Der Versuch, einen lokalen, sicheren Webdienst aus einer Anwendung aufzurufen, die im iOS-Simulator oder Android-Emulator ausgeführt wird, führt dazu,dass eine `HttpRequestException`-Ausnahme ausgelöst wird, selbst wenn auf jeder Plattform der verwaltete Netzwerkstapel verwendet wird. Der Grund hierfür ist, dass das lokale HTTPS-Entwicklungszertifikat selbstsigniert ist und selbstsignierte Zertifikate in iOS und Android nicht vertrauenswürdig sind.
-
-Aus diesem Grund ist es erforderlich, SSL-Fehler zu ignorieren, wenn eine Anwendung einen lokalen, sicheren Webdienst nutzt. Der erforderliche Mechanismus, um dies zu erreichen, ist zurzeit unter iOS und Android unterschiedlich.
-
-### <a name="ios"></a>iOS
-
-SSL-Fehler können Sie bei Verwendung des verwalteten Netzwerkstapels unter iOS für lokale sichere Webdienste ignorieren, indem Sie die Eigenschaft `ServicePointManager.ServerCertificateValidationCallback` auf einen Rückruf festlegen, der das Ergebnis der Zertifikatsicherheitsüberprüfung für das lokale HTTPS-Entwicklungszertifikat ignoriert:
+Der Versuch, einen lokalen, sicheren Webdienst aus einer Anwendung aufzurufen, die im iOS-Simulator oder Android-Emulator ausgeführt wird, führt dazu,dass eine `HttpRequestException`-Ausnahme ausgelöst wird, selbst wenn auf jeder Plattform der verwaltete Netzwerkstapel verwendet wird. Der Grund hierfür ist, dass das lokale HTTPS-Entwicklungszertifikat selbstsigniert ist und selbstsignierte Zertifikate in iOS und Android nicht vertrauenswürdig sind. Aus diesem Grund ist es erforderlich, SSL-Fehler zu ignorieren, wenn eine Anwendung einen lokalen, sicheren Webdienst nutzt. Hierfür können Sie die verwalteten oder nativen Netzwerkstapel unter iOS und Android verwenden, indem Sie die Eigenschaft `ServerCertificateCustomValidationCallback` in einem `HttpClientHandler`-Objekt auf einen Rückruf festlegen, der das Ergebnis der Zertifikatsicherheitsüberprüfung für das lokale HTTPS-Entwicklungszertifikat ignoriert:
 
 ```csharp
-#if DEBUG
-    System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) =>
-    {
-        if (certificate.Issuer.Equals("CN=localhost"))
-            return true;
-        return sslPolicyErrors == System.Net.Security.SslPolicyErrors.None;
-    };
-#endif
-```
-
-In diesem Codebeispiel wird das Ergebnis der Serverzertifikatvalidierung zurückgegeben, wenn das Zertifikat, das validiert wurde, kein `localhost`-Zertifikat ist. Für dieses Zertifikat wird das Ergebnis der Validierung ignoriert, und `true` wird zurückgegeben, was anzeigt, dass das Zertifikat gültig ist. Dieser Code sollte der `AppDelegate.FinishedLaunching`-Methode unter iOS vor dem Aufruf der `LoadApplication(new App())`-Methode hinzugefügt werden.
-
-> [!NOTE]
-> Die nativen Netzwerkstapel unter iOS klinken sich nicht in den `ServerCertificateValidationCallback` ein.
-
-### <a name="android"></a>Android
-
-SSL-Fehler können Sie bei Verwendung sowohl des verwalteten als auch nativen `AndroidClientHandler`-Netzwerkstapels unter Android für lokale sichere Webdienste ignorieren, indem Sie die Eigenschaft `ServerCertificateCustomValidationCallback` auf einem `HttpClientHandler`-Objekt auf einen Rückruf festlegen, der das Ergebnis der Zertifikatsicherheitsüberprüfung für das lokale HTTPS-Entwicklungszertifikat ignoriert:
-
-```csharp
+// This method must be in a class in a platform project, even if
+// the HttpClient object is constructed in a shared project.
 public HttpClientHandler GetInsecureHandler()
 {
-    var handler = new HttpClientHandler();
+    HttpClientHandler handler = new HttpClientHandler();
     handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
     {
         if (cert.Issuer.Equals("CN=localhost"))

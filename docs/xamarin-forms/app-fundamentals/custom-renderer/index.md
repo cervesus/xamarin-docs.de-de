@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/03/2019
-ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d40aa4cafe663113957d31bdb8a6463ba58ba5
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74824246"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516455"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Renderer
 
@@ -34,7 +34,7 @@ Durch das Xamarin.Forms-Steuerelement [`Entry`](xref:Xamarin.Forms.Entry) kann e
 
 Ein [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Element ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die `ContentPage`-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können.
 
-## <a name="customizing-a-map"></a>[Anpassen einer Karte](map/index.md)
+## <a name="customizing-a-map-pin"></a>[Anpassen einer Kartennadel](map-pin.md)
 
 Xamarin.Forms-Karten bieten eine plattformübergreifende Abstraktion zum Anzeigen von Karten, die die native Karten-API auf jeder Plattform verwenden, sodass Benutzer Karten schnell und auf bekannte Weise nutzen können. In diesem Artikel wird veranschaulicht, wie Sie benutzerdefinierte Renderer für das `Map`-Steuerelement erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können.
 

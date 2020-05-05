@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5f0b72772a386aa71d4ceec25b88546930b06f4f
+ms.sourcegitcommit: 51006a4eed7bf99b563df6fc1cea9074d0218448
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80261309"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166338"
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -212,11 +212,11 @@ Nach der Konfiguration schützt Dotfuscator CE automatisch jeden erstellten Buil
 
 ### <a name="bundle-assemblies-into-native-code"></a>Bündeln von Assemblys in nativem Code
 
-Wenn diese Option aktiviert ist, werden Assemblys in einer nativen freigegebenen Bibliothek gebündelt. Durch diese Option bleibt der Code sicher. Sie schützt verwaltete Assemblys, indem sie diese in native Binärdateien einbettet.
+Wenn diese Option aktiviert ist, werden Assemblys in einer nativen freigegebenen Bibliothek gebündelt. Dadurch können Assemblys komprimiert werden, sodass sie kleinere `.apk`-Dateien zulassen. Die Assemblykomprimierung überträgt außerdem eine *minimale* Form der Obfuskation, auf die Sie sich nicht verlassen sollten.
 
 Diese Option erfordert eine Unternehmenslizenz und ist nur verfügbar, wenn **Fast Deployment verwenden** deaktiviert ist. **Assemblys in nativem Code bündeln** ist standardmäßig deaktiviert.
 
-Beachten Sie, dass die Option **Assemblys in nativem Code bündeln***nicht* bedeutet, dass die Assemblys in nativen Code kompiliert werden. Es ist nicht möglich, die [**AOT-Kompilierung**](#aot) zu verwenden, um Assemblys in nativen Code zu kompilieren (derzeit nur eine experimentelle Funktion und nicht für die Verwendung in der Produktion geeignet).
+Beachten Sie, dass die Option **Assemblys in nativem Code bündeln***nicht* bedeutet, dass die Assemblys in nativen Code kompiliert werden. Es ist nicht möglich, die [**AOT-Kompilierung**](#aot) zum Kompilieren von Assemblys in nativen Code zu verwenden.
 
 <a name="aot" />
 

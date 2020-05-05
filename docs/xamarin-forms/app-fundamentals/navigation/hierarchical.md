@@ -6,13 +6,13 @@ ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/14/2018
-ms.openlocfilehash: 11ad1fb18d1263eb77ef037350a3633510934c42
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 03/10/2020
+ms.openlocfilehash: 984f54698ccdee54c0b8670a50cb1f4432327977
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303822"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517278"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -44,7 +44,7 @@ Das Layout einer [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Klasse is
 - Unter Android finden Sie die Navigationsleiste ebenfalls am oberen Rand der Seite, wo ein Titel sowie ein Symbol zu sehen. Dort befindet sich auch eine Schaltfläche *Zurück*, mit der zurück zur vorherigen Seite navigiert werden kann. Das Symbol wird im `[Activity]`-Attribut definiert, das die `MainActivity`-Klasse im plattformspezifischen Android-Projekt ergänzt.
 - Auf der Universellen Windows-Plattform wird auf der Navigationsleiste ganz oben auf der Seite ein Titel angezeigt.
 
-Auf allen Plattformen wird der Wert der [`Page.Title`](xref:Xamarin.Forms.Page.Title)-Eigenschaft als Seitentitel angezeigt.
+Auf allen Plattformen wird der Wert der [`Page.Title`](xref:Xamarin.Forms.Page.Title)-Eigenschaft als Seitentitel angezeigt. Außerdem kann die `IconColor`-Eigenschaft auf eine [`Color`](xref:Xamarin.Forms.Color)-Eigenschaft festgelegt werden, die auf das Symbol in der Navigationsleiste angewendet wird.
 
 > [!NOTE]
 > Es wird empfohlen, die `NavigationPage`-Klasse nur mit `ContentPage`-Instanzen aufzufüllen.
