@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/26/2020
-ms.openlocfilehash: da6dbe63b7151ef0f9a1defca66fbb3abb25ad1d
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 992e4dd1a2b2a1d1a4f0b76dadf4704241486415
+ms.sourcegitcommit: 520ea9d52266f745d2c09642bac21f64a56f8c31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517550"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859112"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin. Forms swipeer View
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
 Der `SwipeView` ist ein Container Steuerelement, das ein Element des Inhalts umschließt und Kontextmenü Elemente bereitstellt, die durch eine Schwenkbewegung angezeigt werden:
 
@@ -330,10 +330,10 @@ In diesem `SwipeItemView` Beispiel besteht aus [`StackLayout`](xref:Xamarin.Form
 
 Die `Open` -Methode erfordert `OpenSwipeItem` ein-Argument, um die Richtung `SwipeView` anzugeben, von der aus geöffnet wird. Die `OpenSwipeItem` -Enumeration hat vier Member:
 
-- `LeftItems`Gibt an, dass das `SwipeView` -Element von Links aus geöffnet wird, um die Elemente in der `LeftItems` Auflistung anzuzeigen.
-- `TopItems`Gibt an, dass das `SwipeView` -Element von oben aus geöffnet wird, um die Elemente in der `TopItems` Auflistung anzuzeigen.
-- `RightItems`Gibt an, dass das `SwipeView` -Element von der rechten Seite aus geöffnet wird, um die Schwenk Elemente in der `RightItems` Auflistung anzuzeigen.
-- `BottomItems`Gibt an, dass das `SwipeView` -Element von unten aus geöffnet wird, um die in der `BottomItems` Auflistung gerichteten Elemente anzuzeigen.
+- `LeftItems`Gibt an, dass das `SwipeView` -Element von Links aus geöffnet wird, um die wischen-Elemente in `LeftItems` der Auflistung anzuzeigen.
+- `TopItems`Gibt an, dass das `SwipeView` -Element von oben aus geöffnet wird, um die Schwenk Elemente in der `TopItems` Auflistung anzuzeigen.
+- `RightItems`Gibt an, dass das `SwipeView` -Element von der rechten Seite aus geöffnet wird, um die wischen- `RightItems` Elemente in der Auflistung anzuzeigen.
+- `BottomItems`Gibt an, dass das `SwipeView` -Element von der unteren Seite aus geöffnet wird, um die Schwenk Elemente in `BottomItems` der Auflistung anzuzeigen.
 
 `SwipeView` Im folgenden Beispiel `swipeView`wird gezeigt, wie ein `SwipeView` geöffnet wird, um die wischen-Elemente in der `LeftItems` Auflistung anzuzeigen:
 

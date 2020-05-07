@@ -6,17 +6,17 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/11/2020
-ms.openlocfilehash: 7a2671c47a6d2fceaf2b444cfa8988b4bb8c249c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.date: 05/06/2020
+ms.openlocfilehash: 31b705a51e405285cc5eaae391dd0794bfacfd9c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517262"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852491"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin. Forms-WebView
 
-[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView)ist eine Ansicht für die Anzeige von Web-und HTML-Inhalt in Ihrer APP:
 
@@ -554,11 +554,13 @@ Eine Vorschauversion des Linkers ist verfügbar, um dieses Problem zu beheben. U
 
 Hierfür müssen folgende Voraussetzungen erfüllt sein:
 
-- **Xamarin. Forms 4,5 oder höher** &ndash; vorab Versionen von xamarin. Forms 4,5 können verwendet werden.
-- **Xamarin. IOS 13.10.0.17 oder höher** &ndash; überprüfen Sie Ihre xamarin. IOS-Version [in Visual Studio](~/cross-platform/troubleshooting/questions/version-logs.md#version-information). Diese Version von xamarin. IOS ist in Visual Studio für Mac 8.4.1 und Visual Studio 16.4.3 enthalten.
-- **Entfernen Sie Verweise `UIWebView` auf** &ndash; den Code sollten keine Verweise auf `UIWebView` oder Klassen aufweisen, die verwenden. `UIWebView`
+- **Xamarin. Forms 4,5 oder höher**. Xamarin. Forms 4,6 (oder höher) ist erforderlich, wenn Ihre APP Material Visualisierung verwendet.
+- **Xamarin. IOS 13.10.0.17 oder höher**. Überprüfen Sie die xamarin. IOS-Version [in Visual Studio](~/cross-platform/troubleshooting/questions/version-logs.md#version-information). Diese Version von xamarin. IOS ist in Visual Studio für Mac 8.4.1 und Visual Studio 16.4.3 enthalten.
+- **Entfernen Sie Verweise `UIWebView`auf **. Der `UIWebView` `UIWebView`Code darf keine Verweise auf oder Klassen aufweisen, die verwenden.
 
-### <a name="configure-the-linker-preview"></a>Konfigurieren der Linker-Vorschau
+Weitere Informationen zum erkennen und entfernen `UIWebView` von Verweisen finden Sie unter " [UIWebView depreation](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)".
+
+### <a name="configure-the-linker"></a>Konfigurieren des Linkers
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -575,7 +577,7 @@ Sie können das Fenster mit dem neuen Flag in diesem Screenshot sehen:
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Führen Sie die folgenden Schritte aus, damit `UIWebView` der Linker Verweise entfernen können.
+Führen Sie die folgenden Schritte aus, damit `UIWebView` der Linker Verweise entfernen muss:
 
 1. Klicken Sie mit &ndash; **der rechten Maustaste auf das IOS-** Projekt, und wählen Sie **Optionen**aus.
 1. Navigieren Sie &ndash; **zum Abschnitt IOS-Build, und** wählen Sie den Abschnitt **IOS-Build** aus.
@@ -594,3 +596,4 @@ Wenn Sie nun einen neuen (Release) Build erstellen und an den App Store senden, 
 
 - [Arbeiten mit WebView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 - [WebView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [UIWebView-Veraltung](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2020
-ms.openlocfilehash: f47dc08d11a97598966ba7af620cfc81e5fe284f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: b1e573a6070a637ef2fdfa65bb0fc1375522fc3c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532886"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852496"
 ---
 # <a name="xamarinforms-expander"></a>Xamarin. Forms-Expander
 
-[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 
 Das xamarin. Forms `Expander` -Steuerelement stellt einen erweiterbaren Container zum Hosten beliebiger Inhalte bereit. Das Steuerelement verfügt über einen Header und Inhalt, und der Inhalt wird durch Tippen auf den `Expander` Header angezeigt oder ausgeblendet. Wenn nur der `Expander` -Header angezeigt wird, `Expander` wird der *reduziert.* Wenn der `Expander` Inhalt sichtbar ist, `Expander` wird *erweitert*.
 
@@ -26,6 +26,8 @@ Die folgenden Screenshots zeigen eine `Expander` in den reduzierten und erweiter
 
 > [!IMPORTANT]
 > `Expander`ist zurzeit experimentell und kann nur verwendet werden, indem `Expander_Experimental` das-Flag festgelegt wird. Weitere Informationen finden Sie unter [experimentelle Flags](~/xamarin-forms/internals/experimental-flags.md).
+>
+> Außerdem ist das `Expander` Steuerelement vollständig im- `Xamarin.Forms` Namespace implementiert. Daher ist Sie auf allen Plattformen verfügbar, die von xamarin. Forms unterstützt werden.
 
 Das `Expander` -Steuerelement definiert die folgenden Eigenschaften:
 
