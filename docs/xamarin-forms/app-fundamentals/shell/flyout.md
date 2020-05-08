@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2020
-ms.openlocfilehash: cd5ee471385761cad9f99c4b78103b9773415ddb
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517087"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852471"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms-Shell-Flyout
 
@@ -480,7 +480,13 @@ Die `Shell`-Klasse verfügt über eine bindbare Eigenschaft mit dem Namen `Curre
 
 Dieser Code legt das `ShellContent`-Objekt namens `aboutItem` als `CurrentItem`-Eigenschaft fest, wodurch es angezeigt wird. In diesem Beispiel wird eine implizite Konvertierung zum Umschließen des `ShellContent`-Objekts in ein `Tab`-Objekt verwendet, das in ein `FlyoutItem`-Objekt umschlossen ist.
 
-Der entsprechende C#-Code lautet:
+Wenn ein `ShellContent`-Objekt mit dem Namen `aboutItem` vorhanden ist, lautet der äquivalente C#-Code:
+
+```csharp
+CurrentItem = aboutItem;
+```
+
+In diesem Beispiel wird die `CurrentItem`-Eigenschaft in der untergeordneten `Shell`-Klasse festgelegt. Alternativ kann die `CurrentItem`-Eigenschaft in jeder Klasse über die statische `Shell.Current`-Eigenschaft festgelegt werden:
 
 ```csharp
 Shell.Current.CurrentItem = aboutItem;

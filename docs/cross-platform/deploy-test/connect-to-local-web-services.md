@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/29/2020
-ms.openlocfilehash: 3dc1a2cb99c5ef018807a8ac81139a6cace3c66f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 29875b3f6c747d5dc2f45eb876a269d2bc7e85c6
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516501"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852460"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Herstellen einer Verbindung mit lokalen Webdiensten aus iOS-Simulatoren und Android-Emulatoren
 
@@ -113,7 +113,16 @@ public HttpClientHandler GetInsecureHandler()
 }
 ```
 
-In diesem Codebeispiel wird das Ergebnis der Serverzertifikatvalidierung zurückgegeben, wenn das Zertifikat, das validiert wurde, kein `localhost`-Zertifikat ist. Für dieses Zertifikat wird das Ergebnis der Validierung ignoriert, und `true` wird zurückgegeben, was anzeigt, dass das Zertifikat gültig ist. Das resultierende `HttpClientHandler`-Objekt sollte als Argument an den `HttpClient`-Konstruktor übergeben werden.
+In diesem Codebeispiel wird das Ergebnis der Serverzertifikatvalidierung zurückgegeben, wenn das Zertifikat, das validiert wurde, kein `localhost`-Zertifikat ist. Für dieses Zertifikat wird das Ergebnis der Validierung ignoriert, und `true` wird zurückgegeben, was anzeigt, dass das Zertifikat gültig ist. Das resultierende `HttpClientHandler`-Objekt sollte als Argument an den `HttpClient`-Konstruktor für Debugbuilds übergeben werden:
+
+```csharp
+#if DEBUG
+    HttpClientHandler insecureHandler = GetInsecureHandler();
+    HttpClient client = new HttpClient(insecureHandler);
+#else
+    HttpClient client = new HttpClient();
+#endif
+```
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
+ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016525"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82738795"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
@@ -264,6 +264,8 @@ SGen nutzt einen dieser drei Heaps, um Objekten Speicher zuzuweisen:
 - **Large Object Space**: Hier werden Objekte aufbewahrt, die mehr als 8.000 Byte erfordern. Große Objekte werden von Anfang an diesem Heap zugewiesen, nicht der Nursery.
 
 Einer der Vorteile von SGen ist, dass sich der Zeitaufwand für eine kleinere Garbage Collection proportional zur Anzahl der neuen Liveobjekte verhält, die seit der letzten kleineren Garbage Collection erstellt wurden. Dies verringert die Auswirkungen der Garbage Collection auf die Anwendungsleistung, da kleinere Garbage Collections weniger Zeit in Anspruch nehmen als längere. Größere Garbage Collections finden weiterhin statt, jedoch seltener.
+
+Der Garbage Collector von SGen wird in Xamarin.iOS 9.2.1 und höher standardmäßig und automatisch verwendet. Beachten Sie, dass Sie den Garbage Collector in neueren Versionen von Visual Studio nicht mehr ändern können. Weitere Informationen finden Sie unter [Neues System für die Referenzzählung](~/ios/internals/newrefcount.md).
 
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>Verringern der Auslastung des Garbage Collectors
 
