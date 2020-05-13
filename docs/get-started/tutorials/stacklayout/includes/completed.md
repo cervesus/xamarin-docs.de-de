@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ae5962de05190ad914c86ceb0a9b52edb72232dc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: cb03ad89c4fa7a8bed876a7210add68be06cf4a3
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107249"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83343392"
 ---
 Glückwunsch, Sie haben das Tutorial erfolgreich abgeschlossen und Folgendes gelernt:
 
@@ -24,7 +24,7 @@ Wenn Sie mehr über die Grundlagen bei der Erstellung mobiler Apps mit Xamarin.F
 ## <a name="related-links"></a>Verwandte Links
 
 - [StackLayoutTutorial (sample) (Tutorial zu StackLayout (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-stacklayouttutorial/)
-- [Xamarin.Forms StackLayout (guide) (Tutorial zu StackLayout in Xamarin.Forms (Leitfaden))](~/xamarin-forms/user-interface/layouts/stack-layout.md)
+- [Xamarin.Forms StackLayout (guide) (Tutorial zu StackLayout in Xamarin.Forms (Leitfaden))](~/xamarin-forms/user-interface/layouts/stacklayout.md)
 - [Ränder und Abstände (Leitfaden)](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)
 - [Layout Options in Xamarin.Forms (guide) (Layoutoptionen in Xamarin.Forms (Leitfaden))](~/xamarin-forms/user-interface/layouts/layout-options.md)
 - [StackLayout-API](xref:Xamarin.Forms.StackLayout)
