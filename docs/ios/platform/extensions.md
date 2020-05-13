@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
-ms.date: 03/22/2017
-ms.openlocfilehash: 0cf44a05f8b40a07dcc099d5789171f4a234a0c2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 05/12/2020
+ms.openlocfilehash: 6f2f1a908a43d81b2aabf5cb2db2f7a230356fa4
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032570"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149931"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>IOS-Erweiterungen in xamarin. IOS
 
@@ -21,26 +21,26 @@ ms.locfileid: "73032570"
 
 **Erstellen von Erweiterungen in ios-Videos**
 
-Erweiterungen, die in ios 8 eingeführt werden, sind spezialisierte `UIViewControllers`, die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert werden, um spezialisierte Eingaben oder andere Kontexte wie Bearbeiten eines Fotos, bei dem die Erweiterung spezielle Effektfilter bereitstellen kann.
+Erweiterungen, wie in ios 8 eingeführt, sind spezialisiert, `UIViewControllers` die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert werden, um spezialisierte Eingaben oder andere Kontexte auszuführen, wie z. b. die Bearbeitung eines Fotos, bei dem die Erweiterung spezielle Effektfilter
 
 Alle Erweiterungen werden zusammen mit einer Container-App installiert (wobei beide Elemente mithilfe der vereinheitlichten 64-Bit-APIs geschrieben werden) und werden von einem bestimmten Erweiterungs Punkt in einer Host-App aktiviert. Und da Sie als Ergänzung zu vorhandenen Systemfunktionen verwendet werden, müssen Sie leistungsstark, schlank und robust sein. 
 
 ## <a name="extension-points"></a>Erweiterungs Punkte
 
-|Typ|Beschreibung|Erweiterungs Punkt|Host-App|
+|type|Beschreibung|Erweiterungs Punkt|Host-App|
 |--- |--- |--- |--- |
-|Aktion|Spezieller Editor oder Viewer für einen bestimmten Medientyp|`com.apple.ui-services`|Beliebig|
+|Aktion|Spezieller Editor oder Viewer für einen bestimmten Medientyp|`com.apple.ui-services`|Any|
 |Dokument Anbieter|Ermöglicht es der APP, einen Remote Dokument Speicher zu verwenden.|`com.apple.fileprovider-ui`|Apps, die einen [uidocumentpickerviewcontroller](xref:UIKit.UIDocumentPickerViewController) verwenden|
-|Tastatur|Alternative Tastaturen|`com.apple.keyboard-service`|Beliebig|
+|Tastatur|Alternative Tastaturen|`com.apple.keyboard-service`|Any|
 |Fotobearbeitung|Bearbeitung und Bearbeitung von Fotos|`com.apple.photo-editing`|Editor für Fotos. app|
-|Freigeben|Gibt Daten für soziale Netzwerke, Messaging Dienste usw. frei.|`com.apple.share-services`|Beliebig|
+|Freigeben|Gibt Daten für soziale Netzwerke, Messaging Dienste usw. frei.|`com.apple.share-services`|Any|
 |Heute|"Widgets", die auf dem Bildschirm "heute" oder im Notification Center angezeigt werden|`com.apple.widget-extensions`|Heute und Benachrichtigungs Center|
 
-[Zusätzliche Erweiterungs Punkte](~/ios/platform/introduction-to-ios10/index.md#app-extensions) wurden in ios 10 hinzugefügt.
+Zusätzliche Erweiterungs Punkte wurden in [IOS 10](~/ios/platform/introduction-to-ios10/index.md#app-extensions) und [IOS 12](~/ios/platform/introduction-to-ios12/index.md#notification-improvements)hinzugefügt. Die vollständige Tabelle aller unterstützten Typen finden Sie im [Programmier Handbuch](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW2)für die IOS-App-Erweiterung.
 
 ## <a name="limitations"></a>Einschränkungen
 
-Erweiterungen weisen eine Reihe von Einschränkungen auf, von denen einige für alle Typen universell sind (z. bWeise, dass kein Erweiterungstyp auf die Kameras oder das Mikrofon zugreifen kann), während andere Erweiterungs Typen bestimmte Einschränkungen hinsichtlich ihrer Verwendung aufweisen können (z. BGF. benutzerdefinierte Tastaturen). kann nicht für sichere Dateneingabefelder wie z. b. für Kenn Wörter verwendet werden). 
+Erweiterungen weisen eine Reihe von Einschränkungen auf, von denen einige für alle Typen universell sind (z. b. Wenn kein Erweiterungstyp auf die Kameras oder das Mikrofon zugreifen kann), während andere Erweiterungs Typen bestimmte Einschränkungen hinsichtlich ihrer Verwendung aufweisen können (beispielsweise können benutzerdefinierte Tastaturen nicht für Felder mit sicheren Dateneingaben wie z. b. für Kenn Wörter verwendet werden). 
 
 Universelle Einschränkungen:
 
@@ -49,9 +49,9 @@ Universelle Einschränkungen:
 - Erweiterungen können nicht auf die Kameras oder das Mikrofon des Geräts zugreifen (obwohl Sie auf vorhandene Mediendateien zugreifen können).
 - Erweiterungen können keine Air-Drop-Daten empfangen (obwohl Sie Daten über die luftablage übertragen können).
 - [Uiaktionsheet](xref:UIKit.UIActionSheet) und [UIAlertView](xref:UIKit.UIAlertView) sind nicht verfügbar. Erweiterungen müssen [uialertcontroller](xref:UIKit.UIAlertController) verwenden
-- Mehrere Mitglieder von [UIApplication](xref:UIKit.UIApplication) sind nicht verfügbar: [UIApplication. sharedapplikation](xref:UIKit.UIApplication.SharedApplication), [UIApplication. OpenURL](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl)), [UIApplication. beginignoringinteraktionevents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) und [UIApplication. endignoringinteraktionevents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
+- Mehrere Mitglieder von [UIApplication](xref:UIKit.UIApplication) sind nicht verfügbar: [UIApplication. sharedapplikation](xref:UIKit.UIApplication.SharedApplication), [UIApplication. OpenURL](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl)), [UIApplication. beginignoringinteraktionevents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) und [UIApplication. endignoringinteraktionevents.](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - IOS erzwingt eine Speicher Auslastungs Beschränkung von 16 MB für heutige Erweiterungen.
-- Standardmäßig haben Tastatur Erweiterungen keinen Zugriff auf das Netzwerk. Dies wirkt sich auf das Debuggen auf dem Gerät aus (die Einschränkung wird im Simulator nicht erzwungen), da xamarin. IOS zum Funktionieren des Debuggens Netzwerk Zugriff benötigt. Sie können den Netzwerk Zugriff anfordern, indem Sie den `Requests Open Access` Wert in der Info. plist-Datei des Projekts auf `Yes`festlegen. Weitere Informationen zu Einschränkungen bei der Tastatur Erweiterung finden Sie im [benutzerdefinierten Tastatur Handbuch](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) von Apple.
+- Standardmäßig haben Tastatur Erweiterungen keinen Zugriff auf das Netzwerk. Dies wirkt sich auf das Debuggen auf dem Gerät aus (die Einschränkung wird im Simulator nicht erzwungen), da xamarin. IOS zum Funktionieren des Debuggens Netzwerk Zugriff benötigt. Es ist möglich, den Netzwerk Zugriff anzufordern, indem Sie den `Requests Open Access` Wert in der Info. plist-Datei des Projekts auf festlegen `Yes` . Weitere Informationen zu Einschränkungen bei der Tastatur Erweiterung finden Sie im [benutzerdefinierten Tastatur Handbuch](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) von Apple.
 
 Informationen zu den einzelnen Einschränkungen finden Sie im [Programmier Handbuch zur APP-Erweiterung](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)von Apple.
 
@@ -63,11 +63,21 @@ Die APP, in der die Erweiterung verwendet wird (in der der Benutzer auf den Erwe
 
 In der Regel beschreibt die Container-APP die Erweiterung und führt den Benutzer durch den Prozess der Aktivierung.
 
+## <a name="debug-and-release-versions-of-extensions"></a>Debug-und Releaseversionen von Erweiterungen
+
+Arbeitsspeicher Limits für das Ausführen von App-Erweiterungen sind deutlich niedriger als die auf eine Vordergrund-App angewendeten Speicher Limits. Simulatoren, auf denen IOS ausgeführt wird, weisen weniger Einschränkungen auf, die auf Erweiterungen angewendet werden, und Sie können Ihre Erweiterung ohne Probleme ausführen. Wenn Sie jedoch dieselbe Erweiterung auf einem Gerät ausführen, kann dies zu unerwarteten Ergebnissen führen, z. a. wenn die Erweiterung abstürzen oder vom System aggressiv beendet wird. Stellen Sie daher sicher, dass Sie die Erweiterung auf einem Gerät erstellen und testen, bevor Sie es versenden. 
+
+Stellen Sie sicher, dass die folgenden Einstellungen auf das Container Projekt und alle referenzierten Erweiterungen angewendet werden:
+
+1. Erstellen Sie ein Anwendungspaket in der **Releasekonfiguration** .
+1. Legen Sie in den Einstellungen für das **IOS** -Buildprojekt die Option **Linker Verhalten** auf **nur Framework-sdker verknüpfen** oder **alle verknüpfen**fest.
+1. Deaktivieren Sie in den **IOS-debugprojekteinstellungen** die Option **Debugging aktivieren** und **Profilerstellung aktivieren** .
+
 ## <a name="extension-lifecycle"></a>Erweiterungs Lebenszyklus
 
 Eine Erweiterung kann so einfach wie ein einzelner [UIViewController](xref:UIKit.UIViewController) oder komplexere Erweiterungen sein, die mehrere Bildschirme der Benutzeroberfläche darstellen. Wenn der Benutzer auf _Erweiterungs Punkte_ stößt (z. b. bei der Freigabe eines Bilds), kann er aus den für diesen Erweiterungs Punkt registrierten Erweiterungen auswählen. 
 
-Wenn Sie eine der Erweiterungen ihrer App auswählen, werden die `UIViewController` instanziiert und beginnen den normalen Lebenszyklus des Ansichts Controllers. Anders als bei einer normalen APP, die angehalten, aber nicht im allgemeinen beendet wird, wenn der Benutzer die Interaktion mit Ihnen beendet, werden die Erweiterungen geladen, ausgeführt und dann wiederholt beendet.
+Wenn Sie eine der Erweiterungen ihrer App auswählen, wird Ihre `UIViewController` instanziiert und startet den normalen Lebenszyklus des Ansichts Controllers. Anders als bei einer normalen APP, die angehalten, aber nicht im allgemeinen beendet wird, wenn der Benutzer die Interaktion mit Ihnen beendet, werden die Erweiterungen geladen, ausgeführt und dann wiederholt beendet.
 
 Erweiterungen können über ein [nsextensioncontext](xref:Foundation.NSExtensionContext) -Objekt mit Ihren Host-apps kommunizieren. Einige Erweiterungen verfügen über Vorgänge, die asynchrone Rückrufe mit den Ergebnissen empfangen. Diese Rückrufe werden für Hintergrundthreads ausgeführt, und die Erweiterung muss dies berücksichtigen. Verwenden Sie beispielsweise [NSObject. invokeonmainthread](xref:Foundation.NSObject.InvokeOnMainThread*) , wenn Sie die Benutzeroberfläche aktualisieren möchten. Weitere Informationen finden Sie weiter unten im Abschnitt [kommunizieren mit der Host-App](#communicating-with-the-host-app) .
 
@@ -89,13 +99,13 @@ Die Container-APP, die zum Installieren der Erweiterung verwendet wird, muss die
 
 Außerdem gelten für das Projekt der Erweiterung die folgenden Anforderungen:
 
-- Sie muss über eine Bündel-ID verfügen, die mit der Bündel-ID Ihrer Container-App beginnt. Wenn die Container-App beispielsweise einen Bündel Bezeichner `com.myCompany.ContainerApp`hat, kann der Bezeichner der Erweiterung `com.myCompany.ContainerApp.MyExtension`werden: 
+- Sie muss über eine Bündel-ID verfügen, die mit der Bündel-ID Ihrer Container-App beginnt. Wenn die Container-App beispielsweise über eine Bündel-ID von verfügt `com.myCompany.ContainerApp` , kann der Bezeichner der Erweiterung wie folgt lauten `com.myCompany.ContainerApp.MyExtension` : 
 
   ![](extensions-images/bundleidentifiers.png) 
-- Er muss den Schlüssel `NSExtensionPointIdentifier`mit einem entsprechenden Wert (z. b. `com.apple.widget-extension` **für ein Aktuelles** Benachrichtigungs Center-Widget) in seiner `Info.plist` Datei definieren.
+- Er muss den Schlüssel `NSExtensionPointIdentifier` mit einem entsprechenden Wert (z. b. `com.apple.widget-extension` für ein **Today** Aktuelles Benachrichtigungs Center-Widget) in seiner `Info.plist` Datei definieren.
 - Außerdem muss *entweder* der `NSExtensionMainStoryboard` Schlüssel oder der `NSExtensionPrincipalClass` Schlüssel in der `Info.plist` Datei mit einem geeigneten Wert definiert werden:
-  - Verwenden Sie den `NSExtensionMainStoryboard` Schlüssel, um den Namen des Storyboards anzugeben, das die Hauptbenutzer Oberfläche für die Erweiterung darstellt (minus `.storyboard`). Beispielsweise `Main` für die `Main.storyboard` Datei.
-  - Verwenden Sie den `NSExtensionPrincipalClass` Schlüssel, um die Klasse anzugeben, die beim Start der Erweiterung initialisiert wird. Der Wert muss mit dem **Registrierungs** Wert ihrer `UIViewController`identisch sein: 
+  - Verwenden `NSExtensionMainStoryboard` Sie den Schlüssel, um den Namen des Storyboards anzugeben, das die Hauptbenutzer Oberfläche für die Erweiterung (minus `.storyboard` ) darstellt. Beispielsweise `Main` für die `Main.storyboard` Datei.
+  - Verwenden `NSExtensionPrincipalClass` Sie den Schlüssel, um die Klasse anzugeben, die beim Start der Erweiterung initialisiert wird. Der Wert muss dem **Registrierungs** Wert ihrer entsprechen `UIViewController` : 
 
   ![](extensions-images/registerandprincipalclass.png)
 
@@ -117,16 +127,16 @@ Gehen Sie folgendermaßen vor, um die erforderliche Lösung zu erstellen:
 1. Erstellen Sie zunächst ein neues IOS-App-Projekt mit einer **einzelnen Ansicht** , und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](extensions-images/today01.png "First, create a new iOS, Single View App project and click the Next button")](extensions-images/today01.png#lightbox)
-2. Nennen Sie das Projekt `TodayContainer`, und klicken Sie auf die Schaltfläche **weiter** : 
+2. Nennen Sie das Projekt, `TodayContainer` und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](extensions-images/today02.png "Call the project TodayContainer and click the Next button")](extensions-images/today02.png#lightbox)
-3. Überprüfen Sie den **Projektnamen** und den Projektmappennamen, und klicken Sie auf die Schaltfläche **Erstellen** , um die Lösung 
+3. Überprüfen Sie den **Projektnamen** und den Projektmappennamen, und klicken Sie auf die Schaltfläche **Erstellen** , um die Lösung **SolutionName** 
 
     [![](extensions-images/today03.png "Verify the Project Name and SolutionName and click the Create button to create the solution")](extensions-images/today03.png#lightbox)
 4. Klicken Sie anschließend im **Projektmappen-Explorer**mit der rechten Maustaste auf die Projekt Mappe, und fügen Sie ein neues **IOS-Erweiterungs** Projekt aus der Vorlage für die **heutige Erweiterung** hinzu: 
 
     [![](extensions-images/today04.png "Next, in the Solution Explorer, right-click on the Solution and add a new iOS Extension project from the Today Extension template")](extensions-images/today04.png#lightbox)
-5. Nennen Sie das Projekt `DaysRemaining`, und klicken Sie auf die Schaltfläche **weiter** : 
+5. Nennen Sie das Projekt, `DaysRemaining` und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](extensions-images/today05.png "Call the project DaysRemaining and click the Next button")](extensions-images/today05.png#lightbox)
 6. Überprüfen Sie das Projekt, und klicken Sie zum Erstellen auf die Schaltfläche **Erstellen** 
@@ -145,10 +155,10 @@ Als nächstes müssen Sie die Schnittstelle für Ihr **heute** -Widget entwerfen
 
 Gehen Sie folgendermaßen vor, um die Benutzeroberfläche mit einem Storyboard zu erstellen:
 
-1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei des Erweiterungsprojekts, um Sie für die Bearbeitung zu öffnen: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**auf die Datei des Erweiterungsprojekts, `Main.storyboard` um Sie für die Bearbeitung zu öffnen: 
 
     [![](extensions-images/today08.png "Double-click the Extension projects Main.storyboard file to open it for editing")](extensions-images/today08.png#lightbox)
-2. Wählen Sie die Bezeichnung aus, die der Benutzeroberfläche automatisch über die Vorlage hinzugefügt wurde, und **benennen** Sie Sie im **Eigenschaften-Explorer**auf der Registerkarte " **Widget** " `TodayMessage`: 
+2. Wählen Sie die Bezeichnung aus, die der Benutzeroberfläche automatisch über die Vorlage hinzugefügt wurde, und **benennen** Sie Sie `TodayMessage` im **Eigenschaften-Explorer**auf der Registerkarte **Widget** : 
 
     [![](extensions-images/today09.png "Select the Label that was automatically added to the UI by template and give it the Name TodayMessage in the Widget tab of the Properties Explorer")](extensions-images/today09.png#lightbox)
 3. Speichern Sie die Änderungen am Storyboard.
@@ -157,21 +167,21 @@ Gehen Sie folgendermaßen vor, um die Benutzeroberfläche mit einem Storyboard z
 
 Gehen Sie folgendermaßen vor, um die Benutzeroberfläche im Code zu erstellen: 
 
-1. Wählen Sie im **Projektmappen-Explorer**das **daysrestprojekt** aus, fügen Sie eine neue Klasse hinzu, und nennen Sie Sie `CodeBasedViewController`: 
+1. Wählen Sie im **Projektmappen-Explorer**das Projekt **daysrestwert** aus, fügen Sie eine neue Klasse hinzu, und nennen Sie Sie `CodeBasedViewController` : 
 
     [![](extensions-images/code01.png "Aelect the DaysRemaining project, add a new class and call it CodeBasedViewController")](extensions-images/code01.png#lightbox)
-2. Doppelklicken Sie in der **Projektmappen-Explorer**auf Erweiterung `Info.plist` Datei, um Sie für die Bearbeitung zu öffnen: 
+2. Doppelklicken Sie in der **Projektmappen-Explorer**auf die Dateierweiterung, `Info.plist` um Sie für die Bearbeitung zu öffnen: 
 
     [![](extensions-images/code02.png "Double-click Extensions Info.plist file to open it for editing")](extensions-images/code02.png#lightbox)
 3. Wählen Sie die **Quell Ansicht** (unten auf dem Bildschirm) aus, und öffnen Sie den `NSExtension` Knoten: 
 
     [![](extensions-images/code03.png "Select the Source View from the bottom of the screen and open the NSExtension node")](extensions-images/code03.png#lightbox)
-4. Entfernen Sie die `NSExtensionMainStoryboard` Key, und fügen Sie eine `NSExtensionPrincipalClass` mit dem Wert `CodeBasedViewController`hinzu: 
+4. Entfernen `NSExtensionMainStoryboard` Sie den Schlüssel, und fügen Sie einen `NSExtensionPrincipalClass` mit dem Wert hinzu `CodeBasedViewController` : 
 
     [![](extensions-images/code04.png "Remove the NSExtensionMainStoryboard key and add a NSExtensionPrincipalClass with the value CodeBasedViewController")](extensions-images/code04.png#lightbox)
 5. Speichern Sie die Änderungen.
 
-Bearbeiten Sie als nächstes die Datei `CodeBasedViewController.cs`, und führen Sie Sie wie folgt aus:
+Bearbeiten Sie anschließend die `CodeBasedViewController.cs` Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -207,11 +217,11 @@ namespace DaysRemaining
 }
 ```
 
-Beachten Sie, dass die `[Register("CodeBasedViewController")]` mit dem Wert übereinstimmt, den Sie für die oben angegebene `NSExtensionPrincipalClass` angegeben haben.
+Beachten Sie, dass mit `[Register("CodeBasedViewController")]` dem Wert übereinstimmt, den Sie für den obigen Wert angegeben haben `NSExtensionPrincipalClass` .
 
 ### <a name="coding-the-extension"></a>Codieren der Erweiterung
 
-Öffnen Sie bei der Erstellung der Benutzeroberfläche entweder die `TodayViewController.cs` oder die `CodeBasedViewController.cs` Datei (basierend auf der Methode, die zum Erstellen der Benutzeroberfläche verwendet wurde), ändern Sie die **viewDidLoad** -Methode, und legen Sie Sie wie folgt vor:
+Nachdem die Benutzeroberfläche erstellt wurde, öffnen Sie entweder die- `TodayViewController.cs` oder die- `CodeBasedViewController.cs` Datei (basierend auf der-Methode, die zum Erstellen der Benutzeroberfläche verwendet wurde), ändern Sie die **viewDidLoad** -Methode, und machen Sie Sie wie folgt:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -232,13 +242,13 @@ public override void ViewDidLoad ()
 }
 ```
 
-Ersetzen Sie bei Verwendung der Code basierten Benutzerschnittstellen Methode den `// Insert code to power extension here...` Kommentar durch den oben aufgeführten neuen Code. Nachdem Sie die Basis Implementierung aufgerufen (und eine Bezeichnung für die Code basierte Version eingefügt haben), führt dieser Code eine einfache Berechnung durch, um den Tag des Jahres und die Anzahl der verbleibenden Tage zu erhalten. Anschließend wird die Meldung in der Bezeichnung (`TodayMessage`) angezeigt, die Sie im Benutzeroberflächen Entwurf erstellt haben.
+Wenn Sie die Code basierte Benutzerschnittstellen Methode verwenden, ersetzen Sie den `// Insert code to power extension here...` Kommentar durch den oben aufgeführten neuen Code. Nachdem Sie die Basis Implementierung aufgerufen (und eine Bezeichnung für die Code basierte Version eingefügt haben), führt dieser Code eine einfache Berechnung durch, um den Tag des Jahres und die Anzahl der verbleibenden Tage zu erhalten. Anschließend wird die Meldung in der Bezeichnung ( `TodayMessage` ) angezeigt, die Sie im Benutzeroberflächen Design erstellt haben.
 
-Beachten Sie, dass dieser Prozess dem normalen Prozess zum Schreiben einer App ähnelt. Die `UIViewController` einer Erweiterung hat denselben Lebenszyklus wie ein Ansichts Controller in einer APP, mit dem Unterschied, dass Erweiterungen nicht über hintergrundmodi verfügen und nicht angehalten werden, wenn der Benutzer Sie nicht mehr verwendet. Stattdessen werden Erweiterungen wiederholt initialisiert, und die Zuordnung wird bei Bedarf aufgehoben.
+Beachten Sie, dass dieser Prozess dem normalen Prozess zum Schreiben einer App ähnelt. `UIViewController`Der Lebenszyklus einer Erweiterung hat denselben Lebenszyklus wie ein Ansichts Controller in einer APP, mit dem Unterschied, dass Erweiterungen nicht über hintergrundmodi verfügen und nicht angehalten werden, wenn der Benutzer Sie nicht mehr verwendet. Stattdessen werden Erweiterungen wiederholt initialisiert, und die Zuordnung wird bei Bedarf aufgehoben.
 
 ### <a name="creating-the-container-app-user-interface"></a>Erstellen der Benutzeroberfläche der Container-App
 
-In dieser exemplarischen Vorgehensweise wird die Container-App einfach als Methode zum Versenden und Installieren der Erweiterung verwendet und bietet keine eigenen Funktionen. Bearbeiten Sie die Datei "-`Main.storyboard`" von "-", und fügen Sie Text hinzu, der die Funktion der Erweiterung definiert, und wie Sie installiert werden
+In dieser exemplarischen Vorgehensweise wird die Container-App einfach als Methode zum Versenden und Installieren der Erweiterung verwendet und bietet keine eigenen Funktionen. Bearbeiten Sie die Datei "- `Main.storyboard` Dateityp", und fügen Sie Text hinzu, der die Funktion der Erweiterung definiert, und wie Sie Sie installieren:
 
 [![](extensions-images/today10.png "Edit the TodayContainers Main.storyboard file and add some text defining the Extensions function and how to install it")](extensions-images/today10.png#lightbox)
 
@@ -264,11 +274,11 @@ Das neue Widget wird der Ansicht **heute** hinzugefügt, und die Ergebnisse werd
 
 ## <a name="communicating-with-the-host-app"></a>Kommunizieren mit der Host-App
 
-Die oben erstellte Beispiel Erweiterung kommuniziert nicht mit der zugehörigen Host-app (dem Bildschirm **heute** ). Wenn dies der Fall ist, wird die [extensioncontext](xref:Foundation.NSExtensionContext) -Eigenschaft der Klassen `TodayViewController` oder `CodeBasedViewController` verwendet. 
+Die oben erstellte Beispiel Erweiterung kommuniziert nicht mit der zugehörigen Host-app (dem Bildschirm **heute** ). Wenn dies der Fall wäre, würde die [extensioncontext](xref:Foundation.NSExtensionContext) -Eigenschaft der-Klasse oder der-Klasse verwendet werden `TodayViewController` `CodeBasedViewController` . 
 
-Bei Erweiterungen, die Daten von Ihren Host-apps empfangen, werden die Daten in Form eines Arrays von [nsextensionitem](xref:Foundation.NSExtensionItem) -Objekten verwendet, die in der [inputitems](xref:Foundation.NSExtensionContext.InputItems) -Eigenschaft des [extensioncontext](xref:Foundation.NSExtensionContext) der `UIViewController`der Erweiterung gespeichert sind.
+Bei Erweiterungen, die Daten von Ihren Host-apps empfangen, werden die Daten in Form eines Arrays von [nsextensionitem](xref:Foundation.NSExtensionItem) -Objekten verwendet, die in der [inputitems](xref:Foundation.NSExtensionContext.InputItems) -Eigenschaft des [extensioncontext](xref:Foundation.NSExtensionContext) der der Erweiterung gespeichert sind `UIViewController` .
 
-Andere Erweiterungen, wie z. b. die Erweiterungen für die Fotobearbeitung, unterscheiden sich möglicherweise zwischen dem Benutzer, der die Nutzung Dies wird über die [CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*) -Methode und die [CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*) -Methode der [extensioncontext](xref:Foundation.NSExtensionContext) -Eigenschaft an die Host-app zurück signalisiert.
+Andere Erweiterungen, wie z. b. die Erweiterungen zur Fotobearbeitung, unterscheiden sich möglicherweise zwischen dem Benutzer, der die Nutzung abschließt Dies wird über die [CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*) -Methode und die [CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*) -Methode der [extensioncontext](xref:Foundation.NSExtensionContext) -Eigenschaft an die Host-app zurück signalisiert.
 
 Weitere Informationen finden Sie im [Programmier Handbuch zur APP-Erweiterung](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1)von Apple.
 
@@ -286,7 +296,7 @@ Weitere Informationen finden Sie im Abschnitt [App-Gruppen](~/ios/deploy-test/pr
 
 Verwenden Sie beim Arbeiten mit Erweiterungen einen URI (Uniform Type Identifier), um Daten zu erstellen und zu bearbeiten, die zwischen der APP, anderen apps und/oder Diensten ausgetauscht werden.
 
-Die statische `MobileCoreServices.UTType` static-Klasse definiert die folgenden Hilfseigenschaften, die sich auf die `kUTType...` Definitionen von Apple beziehen:
+Die `MobileCoreServices.UTType` statische Klasse definiert die folgenden Hilfseigenschaften, die sich auf die Definitionen von Apple beziehen `kUTType...` :
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`
@@ -432,7 +442,7 @@ Die statische `MobileCoreServices.UTType` static-Klasse definiert die folgenden 
 - `kUTTypeXPCService` - `XPCService`
 - `kUTTypeZipArchive` - `ZipArchive`
 
-Weitere Informationen finden Sie im folgenden Beispiel:
+Sehen Sie sich folgendes Beispiel an:
 
 ```csharp
 using MobileCoreServices;
@@ -464,3 +474,4 @@ In diesem Dokument wurden die Erweiterungen, die Art der Erweiterungs Punkte und
 
 - [Containerapp (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/intro-to-extensions)
 - [Erstellen von Erweiterungen in xamarin. IOS (Video)](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)
+- [Optimieren der Effizienz und Leistung einer IOS-App-Erweiterung](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW7)
