@@ -3,14 +3,15 @@ title: 'Xamarin.Essentials: Geräteinformationen'
 description: In diesem Dokument wird die Klasse „DeviceInfo“ in Xamarin.Essentials beschrieben, die Informationen zu dem Gerät bereitstellt, auf dem die Anwendung ausgeführt wird.
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 1cab4ea8ea3f98def4830e101783db1554efa69c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1790e950dfccddcca84adf97bcff64f905ee59f6
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78295416"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150088"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Geräteinformationen
 
@@ -89,3 +90,9 @@ iOS macht für Entwickler keine API verfügbar, um das Modell des konkreten iOS-
 
 - [DeviceInfo-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
 - [DeviceInfo-API-Dokumentation](xref:Xamarin.Essentials.DeviceInfo)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Device-Information-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

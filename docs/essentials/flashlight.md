@@ -3,14 +3,15 @@ title: 'Xamarin.Essentials: Taschenlampe'
 description: In diesem Dokument wird die Klasse „Flashlight“ in Xamarin.Essentials beschrieben, mit der Sie das Blitzlicht der Gerätekamera aktivieren bzw. deaktivieren, um es als Taschenlampe einzusetzen.
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1a8601860afaf033c9bdb62c187fe228d2e83435
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61075578"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149958"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Taschenlampe
 
@@ -50,6 +51,8 @@ Durch das Hinzufügen dieser Berechtigungen [filtert Google Play automatisch die
 [assembly: UsesFeature("android.hardware.camera", Required = false)]
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -122,3 +125,9 @@ Zum Aktivieren oder Deaktivieren des `FlashMode` (Blitzlichtmodus) der Kameraein
 
 - [Flashlight-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
 - [Flashlight-API-Dokumentation](xref:Xamarin.Essentials.Flashlight)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Flashlight-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

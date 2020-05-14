@@ -7,12 +7,12 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bda9d5cb323524981bed9c3bb55998513dd69aab
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5313dd34839d6a5d21432161b9fd3a0ffce6e816
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73032877"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83149937"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Zusammenfassung von Kapitel 4. Scrollen im Stapel
 
@@ -116,6 +116,6 @@ Im **BlackCat**-Beispiel wird außerdem veranschaulicht, wie Sie Programmressour
 - [Kapitel 4 – vollständiger Text (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf)
 - [Kapitel 4 – Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 - [Kapitel 4 – F#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
-- [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
+- [StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)

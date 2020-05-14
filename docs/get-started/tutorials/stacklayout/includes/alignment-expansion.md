@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 97e52d593e2b59d127da324d8ad74ad7b2096cdd
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67559998"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83343418"
 ---
 Die Größe und Position untergeordneter Ansichten innerhalb einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse hängen von den Werten der Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) der untergeordneten Ansichten ab sowie den Werten der Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
 
@@ -107,7 +107,7 @@ Die Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOption
     > [!NOTE]
     > Der Standardwert der Eigenschaften [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) und [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) einer Ansicht lautet [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
     [![Screenshot: untergeordnete Ansichten in StackLayout mit Ausrichtung und Erweiterung unter iOS und Android](../images/alignment-expansion.png "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")](../images/alignment-expansion-large.png#lightbox "StackLayout mit Bezeichnungsinstanzen; Ausrichtung und Erweiterung festgelegt")
 
