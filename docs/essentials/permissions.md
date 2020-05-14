@@ -4,13 +4,14 @@ description: In diesem Dokument wird die Permissions-Klasse in Xamarin.Essential
 ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
+ms.custom: video
 ms.date: 01/06/2020
-ms.openlocfilehash: 3d61267ae78a4b84907a2bcf6e944eb286b113dd
-ms.sourcegitcommit: 8b94b2af2ac69e4a60e210ddc764f4d276c8d88d
+ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605445"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150069"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials: Berechtigungen
 
@@ -19,6 +20,8 @@ Die **Permissions**-Klasse bietet die Möglichkeit, Laufzeitberechtigungen zu pr
 ## <a name="get-started"></a>Erste Schritte
 
 [!include[](~/essentials/includes/get-started.md)]
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 ## <a name="using-permissions"></a>Verwenden von Berechtigungen
 
@@ -42,19 +45,19 @@ Sie sollten den Status der Berechtigung vor der Anforderung zu überprüfen. Jed
 
 ## <a name="requesting-permissions"></a>Anfordern von Berechtigungen
 
-Um eine Berechtigung von den Benutzern anzufordern, verwenden Sie die `RequestAsync`-Methode zusammen mit der spezifischen anzufordernden Berechtigung. Wenn der Benutzer zuvor eine Berechtigung erteilt und diese nicht widerrufen hat, gibt diese Methode sofort `Granted` zurück, ohne ein Dialogfeld einzublenden. 
+Um eine Berechtigung von den Benutzern anzufordern, verwenden Sie die `RequestAsync`-Methode zusammen mit der spezifischen anzufordernden Berechtigung. Wenn der Benutzer zuvor eine Berechtigung erteilt und diese nicht widerrufen hat, gibt diese Methode sofort `Granted` zurück, ohne ein Dialogfeld einzublenden.
 
 ```csharp
 var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 ```
 
-Eine `PermissionException` wird ausgelöst, wenn die erforderliche Berechtigung nicht deklariert ist. 
+Eine `PermissionException` wird ausgelöst, wenn die erforderliche Berechtigung nicht deklariert ist.
 
 Beachten Sie, dass auf einigen Plattformen eine Berechtigungsanforderung nur einmalig aktiviert werden kann. Weitere Aufforderungen müssen vom Entwickler behandelt werden, um zu prüfen, ob sich eine Berechtigung den Status `Denied` hat, und den Benutzer aufzufordern, sie manuell zu aktivieren.
 
 ## <a name="permission-status"></a>Berechtigungsstatus
 
-Bei Verwenden von `CheckStatusAsync` oder `RequestAsync` wird ein `PermissionStatus` zurückgegeben, der zur Festlegung der nächsten Schritte verwendet wird.
+Bei Verwenden von `CheckStatusAsync` oder `RequestAsync` wird ein `PermissionStatus` zurückgegeben, der zur Festlegung der nächsten Schritte verwendet werden kann:
 
 * Unbekannt: Die Berechtigung hat einen unbekannten Status.
 * Verweigert: Der Benutzer hat die Berechtigungsanforderung verweigert.
@@ -64,7 +67,7 @@ Bei Verwenden von `CheckStatusAsync` oder `RequestAsync` wird ein `PermissionSta
 
 ## <a name="available-permissions"></a>Verfügbare Berechtigungen
 
-Xamarin.Essentials versucht, so viele Berechtigungen wie möglich zu abstrahieren, jedoch hat jedes Betriebssystem eine andere Gruppe von Laufzeitberechtigungen. Darüber hinaus gibt es Unterschiede hinsichtlich der Möglichkeit, für einige Berechtigungen eine einzelne API bereitzustellen. Es folgt eine Übersicht über die derzeit verfügbaren Berechtigungen:
+Xamarin.Essentials versucht, so viele Berechtigungen wie möglich zu abstrahieren. Jedoch hat jedes Betriebssystem eine andere Gruppe von Laufzeitberechtigungen. Darüber hinaus gibt es Unterschiede, wenn eine einzelne API für einige Berechtigungen bereitgestellt wird. Es folgt eine Übersicht über die derzeit verfügbaren Berechtigungen:
 
 Symbole und ihre Bedeutung:
 
@@ -72,7 +75,7 @@ Symbole und ihre Bedeutung:
 * ![Nicht unterstützt](~/media/shared/no.png "Nicht unterstützt oder erforderlich"): nicht unterstützt/erforderlich
 
 | Berechtigung | Android | iOS | UWP | watchOS | tvOS | Tizen |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | CalendarRead   | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP nicht](~/media/shared/no.png "Unterstützt UWP nicht") | ![Unterstützt watchOS](~/media/shared/yes.png "Unterstützt watchOS") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen nicht](~/media/shared/no.png "Unterstützt Tizen nicht") |
 | CalendarWrite | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP nicht](~/media/shared/no.png "Unterstützt UWP nicht") | ![Unterstützt watchOS](~/media/shared/yes.png "Unterstützt watchOS") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen nicht](~/media/shared/no.png "Unterstützt Tizen nicht") |
 | Camera | ![Unterstützt Android](~/media/shared/yes.png "Unterstützt Android") | ![Unterstützt iOS](~/media/shared/yes.png "Unterstützt iOS") | ![Unterstützt UWP nicht](~/media/shared/no.png "Unterstützt UWP nicht") | ![Unterstützt watchOS nicht](~/media/shared/no.png "Unterstützt watchOS nicht") | ![Unterstützt tvOS nicht](~/media/shared/no.png "Unterstützt tvOS nicht") | ![Unterstützt Tizen](~/media/shared/yes.png "Unterstützt Tizen") |
@@ -142,7 +145,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>Erweitern von Berechtigungen
 
-Die Permissions-API wurde mit Blick auf Flexibilität und Erweiterbarkeit für Anwendungen erstellt, die eine zusätzliche Überprüfung oder Berechtigungen erfordern, die nicht in Xamarin.Essentials enthalten sind. Erstellen Sie eine neue Klasse, die von `BasePermission` erbt, und implementieren Sie die erforderlichen abstrakten Methoden. Then 
+Die Permissions-API wurde mit Blick auf Flexibilität und Erweiterbarkeit für Anwendungen erstellt, die eine zusätzliche Überprüfung oder Berechtigungen erfordern, die nicht in Xamarin.Essentials enthalten sind. Erstellen Sie eine neue Klasse, die von `BasePermission` erbt, und implementieren Sie die erforderlichen abstrakten Methoden. Then
 
 ```csharp
 public class MyPermission : BasePermission
@@ -167,7 +170,35 @@ public class MyPermission : BasePermission
 }
 ```
 
-Bei Implementierung einer Berechtigung auf einer bestimmten Plattform kann die `BasePlatformPermission`-Klasse von dieser geerbt werden. Dies ermöglicht zusätzliche Plattformhilfsmethoden zur automatischen Überprüfung der Deklarationen.
+Bei Implementierung einer Berechtigung auf einer bestimmten Plattform kann die `BasePlatformPermission`-Klasse von dieser geerbt werden. Dies ermöglicht zusätzliche Plattformhilfsmethoden zur automatischen Überprüfung der Deklarationen. Dies kann beim Erstellen benutzerdefinierter Berechtigungen zum Vornehmen einer Gruppierung hilfreich sein. Beispielsweise können Sie mit der folgenden benutzerdefinierten Berechtigung Lese- und Schreibzugriff auf Speicher unter Android anfordern.
+
+Erstellen Sie in Ihrem Projekt eine neue Berechtigung, von der Sie Berechtigungen aufrufen.
+
+```csharp
+public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+
+}
+```
+
+Erweitern Sie in Ihrem Android-Projekt die Berechtigung mit den Berechtigungen, die Sie anfordern möchten.
+
+```csharp
+public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+Anschließend können Sie Ihre neue Berechtigung von der freigegebenen Logik abrufen.
+
+```csharp
+await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung
 
@@ -179,7 +210,7 @@ Weitere Informationen finden Sie in der Dokumentation zu [Berechtigungen in Xama
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Berechtigungen müssen in der Datei `Info.plist` über eine übereinstimmende Zeichenfolge verfügen. Nachdem eine Berechtigung angefordert und verweigert wurde, wird kein Popupfenster mehr eingeblendet, wenn Sie die Berechtigung ein zweites Mal anfordern. Sie müssen Benutzer auffordern, die Einstellung auf dem Bildschirm mit den Anwendungseinstellungen unter iOS manuell anzupassen.
+Berechtigungen müssen in der Datei `Info.plist` über eine übereinstimmende Zeichenfolge verfügen. Nachdem eine Berechtigung angefordert und verweigert wurde, wird kein Popupfenster mehr angezeigt, wenn Sie die Berechtigung ein zweites Mal anfordern. Sie müssen Benutzer auffordern, die Einstellung auf dem Bildschirm mit den Anwendungseinstellungen unter iOS manuell anzupassen.
 
 Weitere Informationen finden Sie in der Dokumentation [Sicherheits- und Datenschutzfunktionen für iOS](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy).
 
@@ -196,3 +227,9 @@ Weitere Informationen finden Sie in der Dokumentation zur [Deklaration von App-F
 - [Quellcode für Berechtigungen](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Permissions)
 - [Dokumentation zur Permissions-API](xref:Xamarin.Essentials.Permissions)
 
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Permissions-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

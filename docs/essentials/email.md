@@ -3,14 +3,15 @@ title: 'Xamarin.Essentials: E-Mail'
 description: Die Klasse „Email“ in Xamarin.Essentials ermöglicht einer Anwendung das Öffnen der E-Mail-Standardanwendung mit speziellen Informationen, einschließlich Betreff, Nachrichtentext und Empfänger (to, cc, bcc).
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 77fcadf3ec58a38acac5eca14b43d937414a4a60
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70060097"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150097"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: E-Mail
 
@@ -106,3 +107,9 @@ Nicht alle E-Mail-Clients unterstützen das Senden von Anhängen. Weitere Inform
 
 - [Email-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
 - [Email-API-Dokumentation](xref:Xamarin.Essentials.Email)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Email-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

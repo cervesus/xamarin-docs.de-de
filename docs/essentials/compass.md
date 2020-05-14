@@ -3,14 +3,15 @@ title: 'Xamarin.Essentials: Kompass'
 description: In diesem Dokument wird die Klasse „Compass“ in Xamarin.Essentials beschrieben, mit der Sie die Ausrichtung des Geräts auf den magnetischen Norden überwachen können.
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 54ce725a319e0222179945ece558338c8a152653
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61356876"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150129"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Kompass
 
@@ -80,7 +81,7 @@ Android bietet keine API zum Abrufen der Kompassausrichtung. Zum Berechnen der m
 
 In seltenen Fällen werden möglicherweise inkonsistente Ergebnisse angezeigt, weil die Sensoren kalibriert werden müssen. Dafür müssen Sie u.a. mit Ihrem Gerät eine Acht formen. Am besten öffnen Sie dazu Google Maps, tippen Sie auf den Punkt für Ihren Standort, und wählen Sie **Kompass kalibrieren** aus.
 
-Denken Sie daran, dass sich das gleichzeitige Ausführen mehrerer Sensoren von Ihrer App auf die Geschwindigkeit des Sensors auswirken kann.
+Das gleichzeitige Ausführen mehrerer Sensoren von Ihrer App kann sich auf die Geschwindigkeit des Sensors auswirken.
 
 ## <a name="low-pass-filter"></a>Tiefpassfilter
 
@@ -98,3 +99,9 @@ Dies wird nur auf der Android-Plattform angewendet, und der Parameter wird auf i
 
 - [Compass-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
 - [Compass-API-Dokumentation](xref:Xamarin.Essentials.Compass)
+
+## <a name="related-video"></a>Zugehörige Videos
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Compass-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

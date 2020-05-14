@@ -5,13 +5,13 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 07/10/2019
-ms.openlocfilehash: 251c1b8102327093fcb142ca056743f00618f81b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 05/11/2020
+ms.openlocfilehash: 944b01d67fb09f9a21a19fb2ede9eb217d89732a
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78214972"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149987"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Erste Schritte mit Xamarin.Essentials
 
@@ -51,9 +51,11 @@ Xamarin.Essentials ist als NuGet-Paket verfügbar und in jedem neuen Projekt in 
 
     # <a name="android"></a>[Android](#tab/android)
 
-    Xamarin.Essentials unterstützt die Android-Mindestversion 4.4, d.h. API-Ebene 19, doch die Android-Zielversion für die Kompilierung muss 9.0 entsprechen, d.h. API-Ebene 28. In Visual Studio werden diese beiden Versionen auf der Registerkarte „Android-Manifest“ im Dialogfeld „Projekteigenschaften“ für das Android-Projekt festgelegt. In Visual Studio für Mac werden sie auf der Registerkarte „Android-Anwendung“ im Dialogfeld „Projektoptionen“ für das Android-Projekt eingerichtet.
+    Xamarin.Essentials unterstützt die Android-Mindestversion 4.4, d. h. API-Ebene 19, doch die Android-Zielversion für die Kompilierung muss 9.0 oder 10.0 entsprechen, d. h. API-Ebene 28 und 29. In Visual Studio werden diese beiden Versionen auf der Registerkarte „Android-Manifest“ im Dialogfeld „Projekteigenschaften“ für das Android-Projekt festgelegt. In Visual Studio für Mac werden sie auf der Registerkarte „Android-Anwendung“ im Dialogfeld „Projektoptionen“ für das Android-Projekt eingerichtet.
 
-    Xamarin.Essentials installiert die benötigte Version 28.0.0.3 der Xamarin.Android.Support-Bibliotheken. Alle anderen Xamarin.Android.Support-Bibliotheken, die Ihre Anwendung benötigt, sollten ebenfalls mit dem NuGet-Paket-Manager auf Version 28.0.0.3 aktualisiert werden. Alle von Ihrer Anwendung verwendeten Xamarin.Android.Support-Bibliotheken sollten gleich sein und mindestens die Version 28.0.0.3 haben. Wenn Sie Probleme beim Hinzufügen des Xamarin.Essentials-NuGets oder beim Aktualisieren von NuGet-Paketen in Ihrer Projektmappe haben, lesen Sie [Problembehandlung](troubleshooting.md).
+    Während der Kompilierung für Android 9.0 installiert Xamarin.Essentials die benötigte Version 28.0.0.3 der Xamarin.Android.Support-Bibliotheken. Alle anderen Xamarin.Android.Support-Bibliotheken, die Ihre Anwendung benötigt, sollten ebenfalls mit dem NuGet-Paket-Manager auf Version 28.0.0.3 aktualisiert werden. Alle von Ihrer Anwendung verwendeten Xamarin.Android.Support-Bibliotheken sollten gleich sein und mindestens die Version 28.0.0.3 haben. Wenn Sie Probleme beim Hinzufügen des Xamarin.Essentials-NuGets oder beim Aktualisieren von NuGet-Paketen in Ihrer Projektmappe haben, lesen Sie [Problembehandlung](troubleshooting.md).
+
+    Ab Version 1.5.0 installiert Xamarin.Essentials bei der Kompilierung für Android 10.0 die erforderlichen AndroidX-Unterstützungsbibliotheken. Lesen Sie die [AndroidX-Dokumentation](https://docs.microsoft.com/xamarin/android/platform/androidx), wenn Sie den Übergang noch nicht durchgeführt haben.
 
     Im `MainLauncher`-Element oder in einem beliebigen `Activity`-Element des Android-Projekts, das gestartet wird, muss Xamarin.Essentials in der `OnCreate`-Methode initialisiert werden:
 
