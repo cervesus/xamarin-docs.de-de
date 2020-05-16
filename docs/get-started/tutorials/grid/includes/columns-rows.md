@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e1705e9311d4875a5b866ac5acb7d20aa107a2bb
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61375387"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83435423"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -42,7 +42,7 @@ ms.locfileid: "61375387"
     Die Position jeder [`Label`](xref:Xamarin.Forms.Label)-Klasse in der [`Grid`](xref:Xamarin.Forms.Grid)-Klasse wird durch die angefügten Eigenschaften [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) und [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) angegeben. Hierbei wird ein nullbasierter Index verwendet. Deshalb ist die erste Spalte die Spalte 0, und die erste Zeile die Zeile 0. Die erste `Label`-Klasse verfügt nicht über diese angefügten Eigenschaften, da sämtliche Ansichten untergeordneter Elemente, die diese nicht festlegen, automatisch in Spalte 0, Zeile 0 gerendert werden.
 
     > [!NOTE]
-    > Der Abstand zwischen Spalten und Zeilen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse wird mithilfe der Eigenschaften [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) und [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) festgelegt. Weitere Informationen hierzu finden Sie unter [Spacing (Abstände)](~/xamarin-forms/user-interface/layouts/grid.md#spacing) in [Xamarin.Forms Grid (Xamarin.Forms-Raster)](~/xamarin-forms/user-interface/layouts/grid.md).
+    > Der Abstand zwischen Spalten und Zeilen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse wird mithilfe der Eigenschaften [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) und [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) festgelegt. Weitere Informationen hierzu finden Sie unter [Spacing (Abstände)](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns) in [Xamarin.Forms Grid (Xamarin.Forms-Raster)](~/xamarin-forms/user-interface/layouts/grid.md).
 
 1. Klicken Sie in der Symbolleiste von Visual Studio auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Remotesimulator oder Android-Emulator zu starten:
 
@@ -84,7 +84,7 @@ ms.locfileid: "61375387"
     Die Position jeder [`Label`](xref:Xamarin.Forms.Label)-Klasse in der [`Grid`](xref:Xamarin.Forms.Grid)-Klasse wird durch die angefügten Eigenschaften [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) und [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) angegeben. Hierbei wird ein nullbasierter Index verwendet. Deshalb ist die erste Spalte die Spalte 0, und die erste Zeile die Zeile 0. Die erste `Label`-Klasse verfügt nicht über diese angefügten Eigenschaften, da sämtliche Ansichten untergeordneter Elemente, die diese nicht festlegen, automatisch in Spalte 0, Zeile 0 gerendert werden.
 
     > [!NOTE]
-    > Der Abstand zwischen Spalten und Zeilen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse wird mithilfe der Eigenschaften [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) und [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) festgelegt. Weitere Informationen hierzu finden Sie unter [Spacing (Abstände)](~/xamarin-forms/user-interface/layouts/grid.md#spacing) in [Xamarin.Forms Grid (Xamarin.Forms-Raster)](~/xamarin-forms/user-interface/layouts/grid.md).
+    > Der Abstand zwischen Spalten und Zeilen in einer [`Grid`](xref:Xamarin.Forms.Grid)-Klasse wird mithilfe der Eigenschaften [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) und [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) festgelegt. Weitere Informationen hierzu finden Sie unter [Spacing (Abstände)](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns) in [Xamarin.Forms Grid (Xamarin.Forms-Raster)](~/xamarin-forms/user-interface/layouts/grid.md).
 
 1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
