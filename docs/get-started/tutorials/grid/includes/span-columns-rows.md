@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c826ee87c006b05322af8c9312bdf3120df8b357
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: fa88f6e7844899926a194e9d0cdd455a497c2b31
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61375360"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83435389"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -35,7 +35,7 @@ ms.locfileid: "61375360"
 
     [![Screenshot: Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt, unter iOS und Android](../images/span-columns-rows.png "Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt")](../images/span-columns-rows-large.png#lightbox "Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt")
 
-    Weitere Informationen zum Umfassen von Spalten und Zeilen finden Sie unter [Span-Eigenschaften](~/xamarin-forms/user-interface/layouts/grid.md#spans) im Leitfaden zu [Xamarin.Forms-Rastern](~/xamarin-forms/user-interface/layouts/grid.md).
+    Weitere Informationen zum Überspannen von Zeilen und Spalten finden Sie unter [Zeilen und Spalten](~/xamarin-forms/user-interface/layouts/grid.md#rows-and-columns) im Leitfaden zu [Xamarin.Forms-Rastern](~/xamarin-forms/user-interface/layouts/grid.md).
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/vsmac)
 
@@ -66,4 +66,4 @@ ms.locfileid: "61375360"
 
     [![Screenshot: Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt, unter iOS und Android](../images/span-columns-rows.png "Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt")](../images/span-columns-rows-large.png#lightbox "Raster mit Inhalt, der sich über mehrere Spalten und Zeilen erstreckt")
 
-    Weitere Informationen zum Umfassen von Spalten und Zeilen finden Sie unter [Span-Eigenschaften](~/xamarin-forms/user-interface/layouts/grid.md#spans) im Leitfaden zu [Xamarin.Forms-Rastern](~/xamarin-forms/user-interface/layouts/grid.md).
+    Weitere Informationen zum Überspannen von Zeilen und Spalten finden Sie unter [Zeilen und Spalten](~/xamarin-forms/user-interface/layouts/grid.md#rows-and-columns) im Leitfaden zu [Xamarin.Forms-Rastern](~/xamarin-forms/user-interface/layouts/grid.md).
