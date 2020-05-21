@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/11/2020
-ms.openlocfilehash: 56da2b137475ef258d780fba0a7cdec3c91323b8
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: 2535a92814181c5039256ea1e42b06419ed427aa
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83152330"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426035"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin. Forms Stacklayout
 
@@ -240,12 +240,12 @@ In diesem Beispiel werden Ausrichtungs Einstellungen für die-Objekte festgelegt
 
 [![Screenshot eines Stacklayout mit fest gelegbarer Ausrichtungsoptionen](stacklayout-images/alignment.png "Stacklayout mit Ausrichtungsoptionen")](stacklayout-images/alignment-large.png#lightbox "Stacklayout mit Ausrichtungsoptionen")
 
-Eine [`StackLayout`](xref:Xamarin.Forms.StackLayout) respektiert nur die Ausrichtungs Einstellungen für untergeordnete Sichten, die sich in umgekehrter Richtung zur `StackLayout` Ausrichtung befinden. Daher legen die untergeordneten [`Label`](xref:Xamarin.Forms.Label) Sichten innerhalb des vertikal ausgerichteten `StackLayout` deren [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Eigenschaften auf eines der Ausrichtungs Felder fest:
+Eine [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse respektiert ausschließlich die Ausrichtungseinstellungen für Ansichten untergeordneter Elemente, die sich in entgegengesetzter Richtung zur `StackLayout`-Ausrichtung befinden. Deshalb legen die Ansichten der untergeordneten [`Label`](xref:Xamarin.Forms.Label)-Klasse innerhalb einer vertikal ausgerichteten `StackLayout`-Klasse ihre [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaften auf eines der Ausrichtungsfelder fest:
 
 - [`Start`](xref:Xamarin.Forms.LayoutOptions.Start), die den [`Label`](xref:Xamarin.Forms.Label) auf der linken Seite des positioniert [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
-- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center), der den [`Label`](xref:Xamarin.Forms.Label) in der zentriert [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
+- Feld [`Center`](xref:Xamarin.Forms.LayoutOptions.Center), das die [`Label`](xref:Xamarin.Forms.Label)-Klasse in der Mitte der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse positioniert
 - [`End`](xref:Xamarin.Forms.LayoutOptions.End), die den [`Label`](xref:Xamarin.Forms.Label) auf der rechten Seite des positioniert [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
-- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill), wodurch sichergestellt wird, dass die [`Label`](xref:Xamarin.Forms.Label) Breite des füllt [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
+- Feld [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill), das sicherstellt, dass die [`Label`](xref:Xamarin.Forms.Label)-Klasse die gesamte Breite der [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse ausfüllt
 
 Der entsprechende C#-Code lautet:
 
@@ -310,7 +310,7 @@ In diesem Beispiel werden Erweiterungs Einstellungen für die-Objekte festgelegt
 
 [![Screenshot eines Stacklayout mit fest gelegbarer Erweiterungsoptionen](stacklayout-images/expansion.png "Stacklayout mit Erweiterungsoptionen")](stacklayout-images/expansion-large.png#lightbox "Stacklayout mit Erweiterungsoptionen")
 
-Eine [`StackLayout`](xref:Xamarin.Forms.StackLayout) kann nur untergeordnete Sichten in Richtung ihrer Ausrichtung erweitern. Daher kann die vertikale Ausrichtung untergeordnete `StackLayout` [`Label`](xref:Xamarin.Forms.Label) Ansichten erweitern, deren [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaften auf eines der Erweiterungs Felder festgelegt werden. Das bedeutet, dass jede `Label`-Klasse für die vertikale Ausrichtung den gleichen Platz innerhalb der `StackLayout`-Klasse belegt. Allerdings hat nur das Finale `Label` , das seine- [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaft auf festlegt, [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) eine andere Größe.
+Eine [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse kann Ansichten untergeordneter Elemente nur in die Orientierungsrichtung erweitern. Deshalb kann die vertikal ausgerichtete `StackLayout`-Klasse die Ansichten untergeordneter [`Label`](xref:Xamarin.Forms.Label)-Klassen erweitern, die ihre [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions)-Eigenschaften auf eines der Erweiterungsfelder festgelegt haben. Das bedeutet, dass jede `Label`-Klasse für die vertikale Ausrichtung den gleichen Platz innerhalb der `StackLayout`-Klasse belegt. Allerdings hat nur die letzte `Label`-Klasse, die ihre [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions)-Eigenschaft auf [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) festlegt, eine andere Größe.
 
 > [!TIP]
 > Wenn Sie einen verwenden [`StackLayout`](xref:Xamarin.Forms.StackLayout) , stellen Sie sicher, dass nur eine untergeordnete Ansicht auf festgelegt ist [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) . Mit dieser Eigenschaft wird sichergestellt, dass das angegebene untergeordnete Element den größten Bereich belegt, der im `StackLayout` verfügbar ist. Zudem ist es Vergeudung, diese Berechnungen mehrmals durchzuführen.
@@ -341,7 +341,7 @@ public ExpansionPageCS()
 ```
 
 > [!IMPORTANT]
-> Wenn der gesamte Speicherplatz in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout) verwendet wird, haben Erweiterungs Einstellungen keine Auswirkungen.
+> Wenn der gesamte Platz in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout)-Klasse belegt ist, haben Einstellungen für die Erweiterung keine Auswirkungen.
 
 Weitere Informationen zur Ausrichtung und Erweiterung finden Sie unter [Layoutoptionen in Xamarin.Forms](layout-options.md).
 
@@ -398,7 +398,7 @@ In diesem Beispiel enthält das übergeordnete Objekt geschachtelte Objekte in- 
 [![Screenshot der in der Struktur abgebildeten Stacklayout-Objekte](stacklayout-images/combined.png "Netsted stacklayouts")](stacklayout-images/combined-large.png#lightbox "Netsted stacklayouts")
 
 > [!IMPORTANT]
-> Das Schachteln von zu vielen `StackLayout` Objekten kann aufgrund der Menge der erforderlichen Layoutberechnungen zu einer nicht leistungsfähigen Seite führen. Weitere Informationen finden Sie unter [auswählen des richtigen Layouts](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout).
+> Wenn Sie [`StackLayout`](xref:Xamarin.Forms.StackLayout) Objekte und andere Layouts verschachteln, desto stärker wirkt sich das geschachtelte Layout auf die Leistung aus. Weitere Informationen finden Sie unter [auswählen des richtigen Layouts](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout).
 
 Der entsprechende C#-Code lautet:
 
