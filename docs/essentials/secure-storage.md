@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
+ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488490"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550899"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
 
@@ -133,11 +133,11 @@ SecureStorage.RemoveAll();
 
 Der [Android-KeyStore](https://developer.android.com/training/articles/keystore.html) wird verwendet, um den Chiffrierschlüssel zu speichern, mit dem der Wert verschlüsselt wurde, bevor er in einer [freigegebenen Einstellung](https://developer.android.com/training/data-storage/shared-preferences.html) mit einem Dateinamen von **[YOUR-APP-PACKAGE-ID].xamarinessentials** gespeichert wird.  Der in der freigegebenen Einstellungsdatei verwendete Schlüssel (kein kryptografischer Schlüssel, sondern der _Schlüssel_ für den _Wert_) ist ein _MD5-Hash_ des Schlüssels, der an die `SecureStorage`-APIs übergeben wird.
 
-## <a name="api-level-23-and-higher"></a>API-Ebene 23 und höher
+**API-Ebene 23 und höher**
 
 Auf neueren API-Ebenen wird ein **AES**-Schlüssel im Android-KeyStore abgerufen und mit einer **AES/GCM/NoPadding**-Verschlüsselung verwendet, um den Wert zu verschlüsseln, bevor er in der freigegebenen Einstellungsdatei gespeichert wird.
 
-## <a name="api-level-22-and-lower"></a>API-Ebene 22 und niedriger
+**API-Ebene 22 und niedriger**
 
 Auf älteren API-Ebenen unterstützt der Android-KeyStore nur das Speichern von **RSA**-Schlüsseln, die mit einer **RSA/ECB/PKCS1Padding**-Verschlüsselung verwendet werden, um einen **AES**-Schlüssel zu verschlüsseln (zufällig zur Laufzeit erzeugt), und in der freigegebenen Einstellungsdatei unter dem Schlüssel _SecureStorageKey_ gespeichert werden, wenn noch keiner generiert wurde.
 
