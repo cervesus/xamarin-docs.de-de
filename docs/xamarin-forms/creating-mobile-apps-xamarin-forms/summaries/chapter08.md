@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 8. Verknüpfung von Code und XAML
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 8. Verknüpfung von Code und XAML'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 75f153499edb6d979f9a0269a1439eaf8ca53878
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 8. Code and XAML in harmony''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 90db8b4f11095a2a56c82c3f563844efbcf7e2b1
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334247"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136824"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Zusammenfassung von Kapitel 8. Verknüpfung von Code und XAML
 

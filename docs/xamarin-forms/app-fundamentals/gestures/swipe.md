@@ -1,18 +1,21 @@
 ---
-title: Hinzufügen einer Gestenerkennung für Wischbewegungen
-description: In diesem Artikel wird erläutert, wie eine Wischbewegung auf einer Ansicht erkannt werden kann.
-ms.prod: xamarin
-ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/14/2018
-ms.openlocfilehash: ae9b5eb5b768b50ddcbc199040074de855f220de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 03663803313c870a3361c6e1ffc85cf1f8999068
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68649458"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137884"
 ---
 # <a name="adding-a-swipe-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Wischbewegungen
 
