@@ -1,24 +1,27 @@
 ---
-title: 'Xamarin.Forms: SearchBar'
-description: Die Suchleiste von xamarin. Forms ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das Searchbar-Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Ausführung und Abbruch. In diesem Artikel wird erläutert, wie Sie eine Suchleiste in XAML und Code verwenden.
-ms.prod: xamarin
-ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 11/04/2019
-ms.openlocfilehash: 9162e89768aefe761111a02b80932231a6fe759f
-ms.sourcegitcommit: da15fb3b593a3e01ced9f8a1df572348d01d42ea
+title: Xamarin.FormsSuchleiste
+description: Die Xamarin.Forms Suchleiste ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das Searchbar-Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Ausführung und Abbruch. In diesem Artikel wird erläutert, wie Sie eine Suchleiste in XAML und Code verwenden.
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83844191"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127542"
 ---
-# <a name="xamarinforms-searchbar"></a>Xamarin.Forms: SearchBar
+# <a name="xamarinforms-searchbar"></a>Xamarin.FormsSuchleiste
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
-Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das verwendet wird, um eine Suche zu initiieren. Das- `SearchBar` Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit Ergebnissen, die in einer angezeigt werden `ListView` :
+Der Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das- `SearchBar` Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Such Ausführung und Abbruch. Der folgende Screenshot zeigt eine `SearchBar` Abfrage mit Ergebnissen, die in einer angezeigt werden `ListView` :
 
 [![Bildschirm Abbildung von Searchbar unter IOS und Android](searchbar-images/device-searchbars-cropped.png "Searchbar unter IOS und Android")](searchbar-images/device-searchbars.png#lightbox "Searchbar unter IOS und Android")
 
@@ -38,7 +41,7 @@ Die- `SearchBar` Klasse definiert die folgenden Eigenschaften:
 * [`Text`](xref:Xamarin.Forms.InputView.Text)ist eine, `string` die den Abfragetext in der enthält `SearchBar` .
 * [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)ist eine `Color` , die die Farbe für den Abfragetext definiert.
 
-Diese Eigenschaften werden von- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten unterstützt. das bedeutet, `SearchBar` dass angepasst werden kann und das Ziel von Daten Bindungen ist. Das Angeben von Schriftart Eigenschaften in entspricht der `SearchBar` Anpassung von Text in anderen [xamarin. Forms-Text Steuerelementen](~/xamarin-forms/user-interface/text/index.md). Weitere Informationen finden Sie unter [Schriftarten in xamarin. Forms](~/xamarin-forms/user-interface/text/fonts.md).
+Diese Eigenschaften werden von- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten unterstützt. das bedeutet, `SearchBar` dass angepasst werden kann und das Ziel von Daten Bindungen ist. Das Angeben von Schriftart Eigenschaften in entspricht der `SearchBar` Anpassung von Text in anderen [ Xamarin.Forms Text Steuerelementen](~/xamarin-forms/user-interface/text/index.md). Weitere Informationen finden Sie unter [Schriftarten Xamarin.Forms in ](~/xamarin-forms/user-interface/text/fonts.md).
 
 ## <a name="create-a-searchbar"></a>Erstellen einer Suchleiste
 
@@ -87,7 +90,7 @@ Der folgende Screenshot zeigt das resultierende `SearchBar` Steuerelement:
 [![Screenshot der angepassten Suchleiste unter IOS und Android](searchbar-images/device-searchbars-styled-cropped.png "Angepasste Suchleiste unter IOS und Android")](searchbar-images/device-searchbars-styled.png#lightbox "Angepasste Suchleiste unter IOS und Android")
 
 > [!NOTE]
-> Unter IOS enthält die- `SearchBarRenderer` Klasse eine über schreibbare `UpdateCancelButton` Methode. Diese Methode steuert, wann die Schaltfläche Abbrechen angezeigt wird, und kann in einem benutzerdefinierten Renderer überschrieben werden. Weitere Informationen zu benutzerdefinierten Renderer finden Sie unter [xamarin. Forms Custom Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+> Unter IOS enthält die- `SearchBarRenderer` Klasse eine über schreibbare `UpdateCancelButton` Methode. Diese Methode steuert, wann die Schaltfläche Abbrechen angezeigt wird, und kann in einem benutzerdefinierten Renderer überschrieben werden. Weitere Informationen zu benutzerdefinierten renderatoren finden Sie unter [ Xamarin.Forms benutzerdefinierte Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
 ## <a name="perform-a-search-with-event-handlers"></a>Ausführen einer Suche mit Ereignis Handlern
 
@@ -185,11 +188,11 @@ Der folgende XAML-Code zeigt, wie ein `SearchBar` an das ViewModel-Beispiel gebu
 
 In diesem Beispiel `BindingContext` wird als eine Instanz der-Klasse festgelegt `SearchViewModel` . Sie bindet die `SearchCommand` -Eigenschaft an das `PerformSearch` `ICommand` -Objekt im ViewModel und bindet die-Eigenschaft `SearchBar` `Text` an die- `SearchCommandParameter` Eigenschaft. Die- `ListView.ItemsSource` Eigenschaft ist an die- `SearchResults` Eigenschaft von ViewModel gebunden.
 
-Weitere Informationen zur `ICommand` -Schnittstelle und-Bindungen finden Sie unter [xamarin. Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md) und [die ICommand-Schnittstelle](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
+Weitere Informationen zur `ICommand` -Schnittstelle und-Bindungen finden Sie unter [ Xamarin.Forms Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md) und [die ICommand-Schnittstelle](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
 * [Searchbar-Demos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
-* [Xamarin. Forms-Text Steuerelemente](~/xamarin-forms/user-interface/text/index.md)
-* [Schriftarten in xamarin. Forms](~/xamarin-forms/user-interface/text/fonts.md)
-* [Xamarin. Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+* [Xamarin.FormsText Steuerelemente](~/xamarin-forms/user-interface/text/index.md)
+* [Schriftarten inXamarin.Forms](~/xamarin-forms/user-interface/text/fonts.md)
+* [Xamarin.FormsDatenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)

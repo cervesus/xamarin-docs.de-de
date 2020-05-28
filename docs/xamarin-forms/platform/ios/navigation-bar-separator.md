@@ -1,24 +1,27 @@
 ---
-title: Trennzeichen für Navigations Seitenleiste unter IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Datei nutzen, die die Trennlinie und den Schatten im unteren Bereich der Navigationsleiste auf einer navigationpage verbirgt.
-ms.prod: xamarin
-ms.assetid: 5A45748A-6779-4441-82F2-415BD68473B9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: e33b25a9eb97009ca0a260662d492560114fd692
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 39d203cf0fb7fff026106d98cfb512aad42f83d2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655469"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128244"
 ---
 # <a name="navigationpage-bar-separator-on-ios"></a>Trennzeichen für Navigations Seitenleiste unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese IOS-plattformspezifische verbirgt die Trennlinie und den Schatten, der sich am unteren Rand der Navigationsleiste [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)eines befindet. Es ist in XAML verwendet, durch Festlegen der [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) bindbare Eigenschaft `false`:
+Diese IOS-plattformspezifische verbirgt die Trennlinie und den Schatten, der sich am unteren Rand der Navigationsleiste eines befindet [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) . Sie wird in XAML verwendet, indem die [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) bindbare Eigenschaft auf festgelegt wird `false` :
 
 ```xaml
 <NavigationPage ...
@@ -28,7 +31,7 @@ Diese IOS-plattformspezifische verbirgt die Trennlinie und den Schatten, der sic
 </NavigationPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,14 +46,14 @@ public class iOSTitleViewNavigationPageCS : Xamarin.Forms.NavigationPage
 }
 ```
 
-Die `NavigationPage.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die [ `NavigationPage.SetHideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetHideNavigationBarSeparator(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um Kontrolle, ob die Navigation-Trennzeichens ausgeblendet ist. Darüber hinaus die [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparator(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) Methode kann verwendet werden, um zurück, ob die Navigation-Trennzeichens ausgeblendet ist.
+Die- `NavigationPage.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. [ `NavigationPage.SetHideNavigationBarSeparator` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. navigationpage. * thidenavigationbarseparator ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Navigationpage}, System. Boolean))-Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird verwendet, um zu steuern, ob das Navigationsleisten Trennzeichen ausgeblendet ist. Außerdem ist [ `NavigationPage.HideNavigationBarSeparator` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. navigationpage. hidenavigationbarseparator ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Navigationpage}))-Methode kann verwendet werden, um zurückzugeben, ob das Navigationsleisten Trennzeichen ausgeblendet ist.
 
-Das Ergebnis ist,-Trennzeichens. die Navigation auf einer [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) können ausgeblendet werden:
+Das Ergebnis ist, dass das Navigationsleisten Trennzeichen auf einem [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ausgeblendet werden kann:
 
-![](navigation-bar-separator-images/navigationpage-hideseparatorbar.png "\"NavigationPage\" Navigationsleiste ausgeblendet")
+![](navigation-bar-separator-images/navigationpage-hideseparatorbar.png "NavigationPage navigation bar hidden")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

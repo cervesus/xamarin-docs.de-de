@@ -1,29 +1,32 @@
 ---
-title: Xamarin. Forms-DataPages
-description: In diesem Artikel werden xamarin. Forms-DataPages vorgestellt, die eine API bereitstellen, mit der eine Datenquelle schnell und einfach an vordefinierte Sichten gebunden werden kann.
-ms.prod: xamarin
-ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: Xamarin.FormsDataPages
+description: In diesem Artikel Xamarin.Forms werden DataPages vorgestellt, die eine API bereitstellen, mit der eine Datenquelle schnell und einfach an vorgefertigte Sichten gebunden werden kann.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "75727939"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134315"
 ---
-# <a name="xamarinforms-datapages"></a>Xamarin. Forms-DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> Für DataPages ist ein xamarin. Forms-Design Verweis zum Rendering erforderlich. Dies umfasst das Installieren des [xamarin. Forms. Theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) -nuget-Pakets in Ihrem Projekt, gefolgt von den nuget-Paketen [xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
+> DataPages erfordert einen Design Xamarin.Forms Verweis zum Rendering. Dies umfasst die Installation von [ Xamarin.Forms . Design. basieren](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) Sie auf das nuget-Paket in Ihrem Projekt, gefolgt von dem [ Xamarin.Forms . Design. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [ Xamarin.Forms . Design. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) nuget-Pakete.
 
-Xamarin. Forms-Datentypen wurden bei Weiterentwicklung 2016 angekündigt und stehen als Vorschau für Kunden zur Verfügung, um uns Feedback zu senden.
+Xamarin.FormsDataPages wurden bei Weiterentwicklung 2016 angekündigt und stehen als Vorschau für Kunden zur Verfügung, um uns Feedback zu senden.
 
-DataPages Geben Sie eine API, um schnell und einfach zu eine Datenquelle mit vordefinierten Ansichten binden. Listenelemente und Detailseiten werden die Daten automatisch Rendering und können mithilfe von Designs angepasst werden.
+DataPages bieten eine API, mit der eine Datenquelle schnell und einfach an vorgefertigte Sichten gebunden werden können. Listenelemente und Detailseiten werden die Daten automatisch Rendering und können mithilfe von Designs angepasst werden.
 
 Sehen Sie sich die [Anleitung](get-started.md)für die ersten Schritte an.
 
@@ -33,9 +36,9 @@ Sehen Sie sich die [Anleitung](get-started.md)für die ersten Schritte an.
 
 Mithilfe von Datenquellen und den zugehörigen Datenseiten können Entwickler schnell und einfach eine unterstützte Datenquelle nutzen und diese mithilfe des integrierten UI-Gerüsts, das mit Designs angepasst werden kann, wiedergeben.
 
-DataPages werden einer xamarin. Forms-Anwendung hinzugefügt, indem das nuget-Paket **xamarin. Forms. Pages** eingeschlossen wird.
+DataPages werden zu einer-Anwendung hinzugefügt, indem das hinzugefügt wird Xamarin.Forms ** Xamarin.Forms . **Das nuget-Paket für Seiten.
 
-### <a name="data-sources"></a>Projektmappen-Explorer
+### <a name="data-sources"></a>Datenquellen
 
 Die Vorschau bietet einige vorgefertigte Datenquellen, die für die Verwendung zur Verfügung stehen:
 
@@ -43,7 +46,7 @@ Die Vorschau bietet einige vorgefertigte Datenquellen, die für die Verwendung z
 * **Azuredatasource** (separates nuget)
 * **Azureeasytabledatasource** (separates nuget)
 
-Ein Beispiel für die Verwendung eines `JsonDataSource`finden Sie im [Leitfaden zu](get-started.md) den ersten Schritten.
+Ein Beispiel für die Verwendung von finden Sie im [Leitfaden zu](get-started.md) den ersten Schritten `JsonDataSource` .
 
 ### <a name="pages--controls"></a>Seiten & Steuerelementen
 
@@ -61,13 +64,13 @@ Beispiele finden Sie in der [Referenz zu DataPages](controls.md) -Steuerelemente
 
 ### <a name="under-the-hood"></a>Im Hintergrund
 
-Eine xamarin. Forms-Datenquelle entspricht der `IDataSource`-Schnittstelle.
+Eine Xamarin.Forms Datenquelle entspricht der- `IDataSource` Schnittstelle.
 
-Die xamarin. Forms-Infrastruktur interagiert mit einer Datenquelle über die folgenden Eigenschaften:
+Die Xamarin.Forms Infrastruktur interagiert mit einer Datenquelle über die folgenden Eigenschaften:
 
-* `Data` – eine schreibgeschützte Liste von Datenelementen, die angezeigt werden können.
-* `IsLoading` – ein boolescher Wert, der angibt, ob die Daten geladen und zum Rendern verfügbar sind.
-* `[key]` – ein Indexer zum Abrufen von Elementen.
+* `Data`– eine schreibgeschützte Liste von Datenelementen, die angezeigt werden können.
+* `IsLoading`– ein boolescher Wert, der angibt, ob die Daten geladen und zum Rendern verfügbar sind.
+* `[key]`– ein Indexer zum Abrufen von Elementen.
 
-Es gibt zwei Methoden `MaskKey` und `UnmaskKey`, die verwendet werden können, um Datenelement Eigenschaften auszublenden (oder anzuzeigen). verhindern, dass Sie gerendert werden.)
+Es gibt zwei Methoden `MaskKey` `UnmaskKey` , die verwendet werden können, um Datenelement Eigenschaften auszublenden (oder anzuzeigen). verhindern, dass Sie gerendert werden.)
 Der Schlüssel entspricht der benannten Eigenschaft für das Datenelement Objekt.

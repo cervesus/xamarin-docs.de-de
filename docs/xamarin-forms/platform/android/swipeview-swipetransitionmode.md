@@ -1,24 +1,27 @@
 ---
-title: Swipeer View-Swipe-Übergangsmodus unter Android
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Element verwenden, das den Übergang steuert, der beim Öffnen einer swipeer View verwendet wird.
-ms.prod: xamarin
-ms.assetid: 6B1F8213-9D62-4C40-9F04-881F1371B5AA
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: 077d4a8a9530bf074fde710dd08c1fbea49668ef
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c420fe65b020067169230dd06dbcd5ce65c036ab
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490475"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128621"
 ---
 # <a name="swipeview-swipe-transition-mode-on-android"></a>Swipeer View-Swipe-Übergangsmodus unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese Android-plattformspezifische steuert den Übergang, der beim Öffnen einer `SwipeView`verwendet wird. Sie wird in XAML verwendet, indem die `SwipeView.SwipeTransitionMode` bindbare-Eigenschaft auf einen Wert der `SwipeTransitionMode`-Enumeration festgelegt wird:
+Diese Android-plattformspezifische steuert den Übergang, der beim Öffnen eines verwendet wird `SwipeView` . Sie wird in XAML verwendet, indem die `SwipeView.SwipeTransitionMode` bindbare Eigenschaft auf einen Wert der- `SwipeTransitionMode` Enumeration festgelegt wird:
 
 ```xaml
 <ContentPage ...
@@ -39,7 +42,7 @@ Diese Android-plattformspezifische steuert den Übergang, der beim Öffnen einer
 </ContentPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -51,19 +54,19 @@ swipeView.On<Android>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 // ...
 ```
 
-Die `SwipeView.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die `SwipeView.SetSwipeTransitionMode`-Methode im [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um den Übergang zu steuern, der beim Öffnen einer `SwipeView`verwendet wird. Die `SwipeTransitionMode`-Enumeration bietet zwei mögliche Werte:
+Die- `SwipeView.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die `SwipeView.SetSwipeTransitionMode` -Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird verwendet, um den Übergang zu steuern, der beim Öffnen eines verwendet wird `SwipeView` . Die- `SwipeTransitionMode` Enumeration bietet zwei mögliche Werte:
 
-- `Reveal` gibt an, dass die schwenkbaren Elemente angezeigt werden, wenn der `SwipeView` Inhalt über läuft, und ist der Standardwert der `SwipeView.SwipeTransitionMode`-Eigenschaft.
-- `Drag` gibt an, dass die gezogenen Elemente in die Ansicht gezogen werden, wenn der `SwipeView` Inhalt gedrillt wird.
+- `Reveal`Gibt an, dass die schwingenden Elemente beim Schwenken des `SwipeView` Inhalts angezeigt werden, und ist der Standardwert der `SwipeView.SwipeTransitionMode` Eigenschaft.
+- `Drag`Gibt an, dass die gezogenen Elemente in die Ansicht gezogen werden, wenn der Inhalt gedrillt `SwipeView` wird.
 
-Außerdem kann die `SwipeView.GetSwipeTransitionMode`-Methode verwendet werden, um die `SwipeTransitionMode` zurückzugeben, die auf die `SwipeView`angewendet wird.
+Außerdem `SwipeView.GetSwipeTransitionMode` kann die-Methode verwendet werden, um den zurückzugeben `SwipeTransitionMode` , der auf den angewendet wird `SwipeView` .
 
-Das Ergebnis ist, dass ein angegebener `SwipeTransitionMode` Wert auf den `SwipeView`angewendet wird, der den Übergang steuert, der beim Öffnen des `SwipeView`verwendet wird:
+Das Ergebnis ist, dass ein `SwipeTransitionMode` angegebener Wert auf den angewendet wird `SwipeView` , der den Übergang steuert, der beim Öffnen von verwendet wird `SwipeView` :
 
 [![Screenshot von swipeer View swipeer transitionmodes unter Android](swipeview-swipetransitionmode-images/swipetransitionmode.png "Swipeer transitionmodes unter Android")](swipeview-swipetransitionmode-images/swipetransitionmode-large.png#lightbox "Swipeer transitionmodes unter Android")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [Androidspecific-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)

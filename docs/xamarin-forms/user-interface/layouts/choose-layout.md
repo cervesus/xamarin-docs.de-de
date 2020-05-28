@@ -1,28 +1,31 @@
 ---
-title: Auswählen eines xamarin. Forms-Layouts
-description: Mit xamarin. Forms-layoutklassen können Sie UI-Steuerelemente in Ihrer Anwendung anordnen und gruppieren.
-ms.prod: xamarin
-ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/21/2018
-ms.openlocfilehash: 14e48d04696bb758a2010bd1d56ecaa125bbd30a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Layout auswählen Xamarin.Forms
+description: Xamarin.Formsmit layoutklassen können Sie UI-Steuerelemente in Ihrer Anwendung anordnen und gruppieren.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83150011"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138501"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>Auswählen eines xamarin. Forms-Layouts
+# <a name="choose-a-xamarinforms-layout"></a>Layout auswählen Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-Mit xamarin. Forms-layoutklassen können Sie UI-Steuerelemente in Ihrer Anwendung anordnen und gruppieren. Wenn Sie eine Layoutklasse auswählen, müssen Sie wissen, wie das Layout seine untergeordneten Elemente positioniert und wie das Layout seine untergeordneten Elemente ändert. Außerdem kann es erforderlich sein, Layouts zu schachteln, um das gewünschte Layout zu erstellen.
+Xamarin.Formsmit layoutklassen können Sie UI-Steuerelemente in Ihrer Anwendung anordnen und gruppieren. Wenn Sie eine Layoutklasse auswählen, müssen Sie wissen, wie das Layout seine untergeordneten Elemente positioniert und wie das Layout seine untergeordneten Elemente ändert. Außerdem kann es erforderlich sein, Layouts zu schachteln, um das gewünschte Layout zu erstellen.
 
-Die folgende Abbildung zeigt typische Layouts, die mit den xamarin. Forms-Haupt layoutklassen erreicht werden können:
+Die folgende Abbildung zeigt typische Layouts, die mit den Haupt Xamarin.Forms layoutklassen erreicht werden können:
 
-[![Die hauptlayoutklassen in xamarin. Forms](images/layouts.png "Xamarin. Forms-layoutklassen")](images/layouts-large.png#lightbox "Xamarin. Forms-layoutklassen")
+[![Die hauptlayoutklassen inXamarin.Forms](images/layouts.png "[! Schel. No-Loc (xamarin. Forms)]-layoutklassen")](images/layouts-large.png#lightbox "[! Schel. No-Loc (xamarin. Forms)]-layoutklassen")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -73,7 +76,7 @@ Dies ist Vergeudung, da unnötige Layoutberechnungen durchgeführt werden. Statt
 > [!TIP]
 > Wenn Sie einen verwenden [`StackLayout`](xref:Xamarin.Forms.StackLayout) , stellen Sie sicher, dass nur ein untergeordnetes Element auf festgelegt ist [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) . Mit dieser Eigenschaft wird sichergestellt, dass das angegebene untergeordnete Element den größten Bereich belegt, der im `StackLayout` verfügbar ist. Zudem ist es Vergeudung, diese Berechnungen mehrmals durchzuführen.
 
-Weitere Informationen finden Sie unter [xamarin. Forms Stacklayout](stacklayout.md).
+Weitere Informationen finden Sie unter [ Xamarin.Forms Stacklayout](stacklayout.md).
 
 ## <a name="grid"></a>Raster
 
@@ -118,7 +121,7 @@ Der Speicherplatz kann in einer Spalte oder Zeile mithilfe der automatischen Gr�
 > [!CAUTION]
 > Stellen Sie sicher, dass so wenige Zeilen und Spalten wie möglich auf Größe festgelegt sind [`Auto`](xref:Xamarin.Forms.GridLength.Auto) . Durch jede Zeile oder Spalte, deren Größe automatisch angepasst wird, wird verursacht, dass die Layout-Engine zusätzliche Layoutberechnungen durchführt. Verwenden Sie stattdessen wenn möglich Zeilen und Spalten mit festen Größen. Alternativ können Sie Zeilen und Spalten festlegen, um eine proportionale Menge an Speicherplatz mit dem- [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) Enumerationswert zu belegen.
 
-Weitere Informationen finden Sie unter [xamarin. Forms Grid](grid.md).
+Weitere Informationen finden Sie unter [ Xamarin.Forms Grid](grid.md).
 
 ## <a name="flexlayout"></a>FlexLayout
 
@@ -142,7 +145,7 @@ In diesem Beispiel funktioniert das Layout wie folgt:
 - Die- [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems) Eigenschaft ist auf festgelegt `Center` , was bewirkt, dass jedes Element horizontal zentriert wird.
 - Die- [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent) Eigenschaft ist auf festgelegt. Dadurch wird der `SpaceEvenly` gesamte restliche vertikale Leerraum gleichmäßig zwischen allen Elementen und oberhalb des ersten Elements und unterhalb des letzten Elements zugeordnet.
 
-Weitere Informationen finden Sie unter [xamarin. Forms flexlayout](flex-layout.md).
+Weitere Informationen finden Sie unter " [ Xamarin.Forms flexlayout](flex-layout.md)".
 
 ## <a name="relativelayout"></a>RelativeLayout
 
@@ -191,7 +194,7 @@ In diesem Beispiel funktioniert das Layout wie folgt:
 > [!WARNING]
 > Vermeiden Sie möglichst die Verwendung eines `RelativeLayout`. Dies führt dazu, dass die CPU erheblich mehr Arbeit übernehmen muss.
 
-Weitere Informationen finden Sie unter [xamarin. Forms relativelayout](relative-layout.md).
+Weitere Informationen finden Sie unter [ Xamarin.Forms relativelayout](relative-layout.md).
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -231,7 +234,7 @@ In diesem Beispiel funktioniert das Layout wie folgt:
 > [!CAUTION]
 > Vermeiden Sie die Verwendung der- [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) Eigenschaft, wenn dies möglich ist, da die Layout-Engine weitere Layoutberechnungen durchführt.
 
-Weitere Informationen finden Sie unter [xamarin. Forms AbsoluteLayout](absolute-layout.md).
+Weitere Informationen finden Sie unter [ Xamarin.Forms AbsoluteLayout](absolute-layout.md).
 
 ## <a name="input-transparency"></a>Eingabe Transparenz
 
@@ -248,11 +251,11 @@ Außerdem kann die Seiten Rendering-Leistung mithilfe der layoutkomprimierung ve
 ## <a name="related-links"></a>Verwandte Links
 
 - [Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin. Forms-Layouts (Video)](https://youtu.be/4HlLjTZQzjM)
-- [Xamarin. Forms Stacklayout](stacklayout.md)
-- [Xamarin. Forms-Raster](grid.md)
-- [Xamarin. Forms-flexlayout](flex-layout.md)
-- [Xamarin. Forms AbsoluteLayout](absolute-layout.md)
-- [Xamarin. Forms relativelayout](relative-layout.md)
+- [Xamarin.FormsLayouts (Video)](https://youtu.be/4HlLjTZQzjM)
+- [Xamarin.FormsStackLayout](stacklayout.md)
+- [Xamarin.FormsNetz](grid.md)
+- [Xamarin.FormsFlexlayout](flex-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [Optimieren der layoutleistung](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [Layoutkomprimierung](layout-compression.md)

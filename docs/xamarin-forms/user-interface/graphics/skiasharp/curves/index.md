@@ -1,58 +1,61 @@
 ---
-title: SkiaSharp-Kurven und-Pfade
-description: In diesem Artikel erläutert, wie SkiaSharp zum Zeichnen von Kurven und Pfad-Features in Xamarin.Forms-Anwendungen verwenden, und dies mit Beispielcode veranschaulicht.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/24/2017
-ms.openlocfilehash: 49888dd32ee1cbfed6f9c9268c8dc7a106bec83e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: In diesem Artikel wird erläutert, wie Sie mit skiasharp Kurven zeichnen und Pfad Features in Xamarin.Forms -Anwendungen verwenden. Dies wird mit Beispielcode veranschaulicht.
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d5a4fc818cef77671b6cabddc56de8234cb858d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770579"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127802"
 ---
-# <a name="skiasharp-curves-and-paths"></a>SkiaSharp-Kurven und-Pfade
+# <a name="skiasharp-curves-and-paths"></a>SkiaSharp-Kurven und -Pfade
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Informationen Sie zum Verwenden von SkiaSharp Kurven zeichnen, und verwenden die Pfad-Funktionen_
+_Erfahren Sie, wie Sie skiasharp zum Zeichnen von Kurven und zum Verwenden von Pfad Features verwenden._
 
-Die Auswertung der [ `SKPath` ](xref:SkiaSharp.SKPath) Methoden und Eigenschaften in begann die [ **SkiaSharp-Linien und-Pfade** ](../paths/index.md) Artikel. Die Artikel hier weiterhin mit Methoden, die Kurven, zum Hinzufügen einer `SKPath` Objekt aus, und andere leistungsstarke Pfad-Funktionen nutzen. Sie sehen, wie Sie einen vollständigen Pfad in einer präzisen Textzeichenfolge angeben können, wie pfadeffekte verwendet und wie Sie die Pfad-Interna sprengen.
+Die Untersuchung von [`SKPath`](xref:SkiaSharp.SKPath) Methoden und Eigenschaften begann im Artikel [**skiasharp-Zeilen und-Pfade**](../paths/index.md) . In den hier aufgeführten Artikeln werden Methoden zum Hinzufügen von Kurven zu einem `SKPath` Objekt und zum ausnutzen anderer leistungsfähiger Pfad Funktionen fortgesetzt. Sie werden erfahren, wie Sie einen vollständigen Pfad in einer präzisen Text Zeichenfolge angeben, wie Sie Pfad Effekte verwenden können und wie Sie in Pfad internale untersuchen können.
 
-Die Beispielprogramme in diesem Abschnitt finden Sie in der **SkiaSharp-Kurven und-Pfade** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm, und klicken Sie in der [  **Kurven** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves) Ordner der Projektmappe.
+Alle Beispiel Programme in diesem Abschnitt finden Sie auf der Seite **skiasharp-Kurven und-Pfade** des Programms [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) und im Ordner [**Kurven**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves) der Projekt Mappe.
 
-## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Drei Möglichkeiten, einen Bogen zu zeichnen](arcs.md)
+## <a name="three-ways-to-draw-an-arc"></a>[Drei Möglichkeiten, einen Bogen zu zeichnen](arcs.md)
 
-Erfahren Sie, wie SkiaSharp verwenden, um Bögen auf drei verschiedene Arten zu definieren.
+Erfahren Sie, wie Sie mit skiasharp Bögen auf drei verschiedene Arten definieren.
 
-## <a name="three-types-of-bzier-curvesbeziersmd"></a>[Drei Typen von Bézier-Kurven](beziers.md)
+## <a name="three-types-of-bzier-curves"></a>[Drei Typen von Bézier-Kurven](beziers.md)
 
-Erfahren Sie, wie SkiaSharp, die zum Rendern von kubische, quadratischen und konischen Bézierkurven verwenden
+Erfahren Sie, wie Sie skiasharp zum Rendering von kubischen, quadratischen und Konstanten Bézier-Kurven verwenden können.
 
-## <a name="svg-path-datapath-datamd"></a>[SVG-Pfaddaten](path-data.md)
+## <a name="svg-path-data"></a>[SVG-Pfaddaten](path-data.md)
 
-Definieren Sie Pfade, die Verwendung von Zeichenfolgen im Format Scalable Vector Graphics
+Definieren von Pfaden mit Text Zeichenfolgen im Format der skalierbaren Vektorgrafiken
 
-## <a name="clipping-with-paths-and-regionsclippingmd"></a>[Schneiden mit Pfaden und Regionen](clipping.md)
+## <a name="clipping-with-paths-and-regions"></a>[Schneiden mit Pfaden und Regionen](clipping.md)
 
-Verwenden Sie die Pfade zu Clip Grafiken auf bestimmte Bereiche und Regionen erstellen.
+Verwenden Sie Pfade zum Ausschneiden von Grafiken an bestimmte Bereiche und zum Erstellen von Regionen.
 
-## <a name="path-effectseffectsmd"></a>[Pfadeffekte](effects.md)
+## <a name="path-effects"></a>[Pfadeffekte](effects.md)
 
-Entdecken Sie die verschiedenen pfadeffekte, mit die Pfade für die Kontur zuweisen, und füllen Sie verwendet werden können.
+Entdecken Sie die verschiedenen Pfad Effekte, die die Verwendung von Pfaden zum übernehmen und Auffüllen ermöglichen.
 
-## <a name="paths-and-texttext-pathsmd"></a>[Pfade und Text](text-paths.md)
+## <a name="paths-and-text"></a>[Pfade und Text](text-paths.md)
 
-Untersuchen Sie die Schnittmenge der Pfade und text
+Untersuchen der Schnittmenge von Pfaden und Text
 
-## <a name="path-information-and-enumerationinformationmd"></a>[Pfadinformationen und -enumeration](information.md)
+## <a name="path-information-and-enumeration"></a>[Pfadinformationen und -enumeration](information.md)
 
-Abrufen von Informationen zu Pfaden und den Inhalt auflisten
+Informationen zu Pfaden und zum Aufzählen der Inhalte
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

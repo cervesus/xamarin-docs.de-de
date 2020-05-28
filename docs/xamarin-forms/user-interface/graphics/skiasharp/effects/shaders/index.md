@@ -1,42 +1,45 @@
 ---
-title: SkiaSharp-Shader
-description: Verwenden Sie zum Erstellen von Farbverläufen, Bitmap-Kacheln und Perlin-Noise von Shadern.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 272B1BEB-0CBC-4E81-A3B9-A9C69AEE3722
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 90022ddd59f56e0d70e5b8efd57d97713df5e969
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f4ef3a583a7f9078f62c899d3b2abfc0848cc79
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654913"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135433"
 ---
-# <a name="skiasharp-shaders"></a>SkiaSharp-Shader
+# <a name="skiasharp-shaders"></a>Skiasharp-Shader
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Sie können festlegen, die [ `Shader` ](xref:SkiaSharp.SKPaint.Shader) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKShader` ](xref:SkiaSharp.SKShader) mehrere Typen von Farbverläufen, unterteilten Bitmapmuster oder Perlin-Noise erstellen.
+Sie können die- [`Shader`](xref:SkiaSharp.SKPaint.Shader) Eigenschaft von `SKPaint` auf ein Objekt vom Typ festlegen, [`SKShader`](xref:SkiaSharp.SKShader) um verschiedene Typen von Farbverläufen, ein gekacheltes Bitmap-Muster oder Perlin-Rauschen zu erstellen.
 
-## <a name="the-skiasharp-linear-gradientlinear-gradientmd"></a>[SkiaSharp linearen Farbverlaufs](linear-gradient.md)
+## <a name="the-skiasharp-linear-gradient"></a>[Der lineare skiasharp-Farbverlauf](linear-gradient.md)
 
-Erfahren Sie, wie Zeichnen von Linien oder Bereiche mit Farbverläufen, bestehend aus schrittweise eine Mischung aus zwei Farben füllen.
+Erfahren Sie, wie Sie Linien oder Bereiche mit Farbverläufen, die aus einer schrittweisen Mischung aus zwei Farben bestehen, zeichnen oder Bereiche Auffüllen
 
-## <a name="skiasharp-circular-gradientscircular-gradientsmd"></a>[SkiaSharp zirkuläre Farbverläufe](circular-gradients.md)
+## <a name="skiasharp-circular-gradients"></a>[Skiasharp-zirkuläre Farbverläufe](circular-gradients.md)
 
-Erfahren Sie mehr über die verschiedenen Typen von Farbverläufen, die basierend auf der Kreise, und verwenden Sie diese für Masken oder Glanzlichter.
+Erfahren Sie mehr über die verschiedenen Typen von Farbverläufen auf der Grundlage von Kreisen, und verwenden Sie Sie für Masken oder Glanzlichter.
 
-## <a name="skiasharp-bitmap-tilingbitmap-tilingmd"></a>[SkiaSharp-Bitmap-Kacheln](bitmap-tiling.md)
+## <a name="skiasharp-bitmap-tiling"></a>[Skiasharp-Bitmap-tiult](bitmap-tiling.md)
 
-Kachel einen Bereich mithilfe von Bitmaps vertikal und horizontal wiederholt.
+Kacheln Sie einen Bereich mithilfe der horizontal und vertikal wiederholten Bitmaps.
 
-## <a name="skiasharp-noise-and-composingnoisemd"></a>[SkiaSharp-Rauschen und zusammenstellen](noise.md)
+## <a name="skiasharp-noise-and-composing"></a>[Skiasharp-Rauschen und Komposition](noise.md)
 
-Perlin-Noise-Shader generieren und mit anderen Shaders kombinieren.
+Generieren von Perlin-Rausch-Shadern und kombinieren mit anderen Shadern.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,33 +1,36 @@
 ---
-title: Xamarin.Formulare und Webdienste
-description: In diesem Handbuch wird erläutert, wie Sie mit verschiedenen Webdiensten kommunizieren, um CRUD-Funktionen (Create, Read, Update, Delete) für eine Xamarin.Forms-Anwendung bereitzustellen. Zu den behandelten Themen gehören die Kommunikation mit ASMX-Diensten, WCF-Dienste und REST-Dienste.
-ms.prod: xamarin
-ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/27/2019
-ms.openlocfilehash: 799a0a97f7c1a212b10dc62f8b3e7bd2cf2060c8
-ms.sourcegitcommit: bf3b5925018e1bd6a00505e9f37500761b66809d
+title: Xamarin.Formsund Webdienste
+description: In diesem Handbuch wird erläutert, wie Sie mit verschiedenen Webdiensten kommunizieren, um eine Funktion zum Erstellen, lesen, aktualisieren und löschen (CRUD) für eine-Anwendung bereitzustellen Xamarin.Forms . Die behandelten Themen umfassen die Kommunikation mit ASMX-Diensten, WCF-Diensten und Rest-Diensten.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5b2613b94d2c347d9bc6a94086f869b07ab8a55b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395458"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131884"
 ---
-# <a name="xamarinforms-and-web-services"></a>Xamarin.Formulare und Webdienste
+# <a name="xamarinforms-and-web-services"></a>Xamarin.Formsund Webdienste
 
 ## <a name="introduction"></a>[Einführung](introduction.md)
 
-Dieser Artikel enthält eine exemplarische Vorgehensweise der Xamarin.Forms-Beispielanwendung, die veranschaulicht, wie sie mit verschiedenen Webdiensten kommunizieren. Zu den behandelten Themen gehören die Anatomie der Anwendung, die Seiten, das Datenmodell und das Aufrufen von Webdienstvorgängen.
+Dieser Artikel enthält eine exemplarische Vorgehensweise für die Xamarin.Forms Beispielanwendung, die die Kommunikation mit verschiedenen Webdiensten veranschaulicht. Zu den behandelten Themen gehören die Anatomie der Anwendung, die Seiten, das Datenmodell und das Aufrufen von Webdienst Vorgängen.
 
 ## <a name="consume-an-aspnet-web-service-asmx"></a>[Verwenden eines ASP.NET-Webdiensts (ASMX)](~/xamarin-forms/data-cloud/web-services/asmx.md)
 
-ASP.NET Web Services (ASMX) bieten die Möglichkeit, Webdienste zu erstellen, die Nachrichten über HTTP mit Simple Object Access Protocol (SOAP) senden. SOAP ist ein plattformunabhängiges und sprachunabhängiges Protokoll zum Erstellen und Zugreifen auf Webdienste. Benutzer eines ASMX-Dienstes müssen nichts über die Plattform, das Objektmodell oder die Programmiersprache wissen, die zum Implementieren des Dienstes verwendet wird. Sie müssen nur verstehen, wie SOAP-Nachrichten gesendet und empfangen werden. In diesem Artikel wird veranschaulicht, wie Sie einen ASMX-Webdienst aus einer Xamarin.Forms-Anwendung nutzen.
+ASP.net Web Services (ASMX) bieten die Möglichkeit, Webdienste zu erstellen, die Nachrichten über HTTP mithilfe von SOAP (Simple Object Access Protocol) senden. SOAP ist ein plattformunabhängiges und sprachunabhängiges Protokoll zum entwickeln und Zugreifen auf Webdienste. Consumer eines ASMX-Dienstanbieter müssen nichts über die Plattform, das Objektmodell oder die Programmiersprache wissen, die zur Implementierung des Dienstanbieter verwendet werden. Sie müssen nur wissen, wie SOAP-Nachrichten gesendet und empfangen werden. In diesem Artikel wird veranschaulicht, wie Sie einen ASMX-Webdienst aus einer- Xamarin.Forms Anwendung nutzen.
 
-## <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>[Verwenden eines Windows Communication Foundation (WCF)-Webdienstes](~/xamarin-forms/data-cloud/web-services/wcf.md)
+## <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>[Verwenden eines Windows Communication Foundation (WCF)-Webdiensts](~/xamarin-forms/data-cloud/web-services/wcf.md)
 
-WCF ist Microsofts einheitliches Framework zum Erstellen serviceorientierter Anwendungen. Es ermöglicht Entwicklern, sichere, zuverlässige, transacted und interoperable verteilte Anwendungen zu erstellen. Es gibt Unterschiede zwischen ASP.NET Web Services (ASMX) und WCF, aber es ist wichtig zu verstehen, dass WCF dieselben Funktionen unterstützt, die ASMX bietet – SOAP-Nachrichten über HTTP. In diesem Artikel wird veranschaulicht, wie Sie einen WCF SOAP-Dienst aus einer Xamarin.Forms-Anwendung verwenden.
+WCF ist das vereinheitlichte Framework von Microsoft zum entwickeln Dienst orientierter Anwendungen. Es ermöglicht Entwicklern das Erstellen sicherer, zuverlässiger, transaktiver und interoperable verteilter Anwendungen. Es gibt Unterschiede zwischen ASP.NET-Webdiensten (ASMX) und WCF, aber es ist wichtig zu verstehen, dass WCF dieselben Funktionen unterstützt, die ASMX – SOAP-Nachrichten über HTTP bereitstellt. In diesem Artikel wird veranschaulicht, wie ein WCF-SOAP-Dienst aus einer-Anwendung verwendet wird Xamarin.Forms .
 
-## <a name="consume-a-restful-web-service"></a>[Verwenden eines RESTful-Webdienstes](~/xamarin-forms/data-cloud/web-services/rest.md)
+## <a name="consume-a-restful-web-service"></a>[Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
 
-Representational State Transfer (REST) ist ein architekturaler Stil zum Erstellen von Webdiensten. REST-Anforderungen werden über HTTP mit denselben HTTP-Verben gestellt, die Webbrowser zum Abrufen von Webseiten und zum Senden von Daten an Server verwenden. In diesem Artikel wird veranschaulicht, wie Sie einen RESTful-Webdienst aus einer Xamarin.Forms-Anwendung verwenden.
+Der Representational State Transfer (Rest) ist ein Architekturstil zum Entwickeln von Webdiensten. Rest-Anforderungen werden über HTTP mit denselben HTTP-Verben hergestellt, die Webbrowser zum Abrufen von Webseiten und zum Senden von Daten an Server verwenden. In diesem Artikel wird veranschaulicht, wie Sie einen Rest-Webdienst aus einer- Xamarin.Forms Anwendung nutzen.

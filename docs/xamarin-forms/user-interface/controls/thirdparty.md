@@ -1,22 +1,25 @@
 ---
-title: Xamarin. Forms-Steuerelemente von Drittanbietern
-description: Weitere Steuerelemente für die xamarin. Forms-Entwicklung sind für Unternehmen wie z. b. Telerik, Syncfusion, DevExpress, Infragistics, ComponentOne und Steema verfügbar.
-ms.prod: xamarin
-ms.assetid: C33A4848-3FC8-4A20-8275-387039F541AD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/08/2019
-ms.openlocfilehash: 2054fb8dbd3f0c2ebacc771eeb11c6805224d453
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+title: Xamarin.FormsSteuerelemente von Drittanbietern
+description: Weitere Steuerelemente für Xamarin.Forms die Entwicklung sind für Unternehmen verfügbar, wie z. b. Telerik, Syncfusion, DevExpress, Infragistics, ComponentOne und steema.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e0881296664ec20eeefe02c9db57a2fd76cd999b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68876239"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132417"
 ---
-# <a name="xamarinforms-third-party-controls"></a>Xamarin. Forms-Steuerelemente von Drittanbietern
+# <a name="xamarinforms-third-party-controls"></a>Xamarin.FormsSteuerelemente von Drittanbietern
 
-Zusätzlich zu den Steuerelementen, die mit xamarin. Forms bereitgestellt werden, stehen die Steuerelemente von Drittanbietern in den folgenden Unternehmen zur Verfügung:
+Zusätzlich zu den Steuerelementen, die mit bereitgestellt Xamarin.Forms werden, stehen die Steuerelemente von Drittanbietern in den folgenden Unternehmen zur Verfügung:
 
 - [Telerik](https://www.telerik.com/xamarin-ui)
 - [SyncFusion](https://www.syncfusion.com/xamarin-ui-controls)
@@ -25,4 +28,4 @@ Zusätzlich zu den Steuerelementen, die mit xamarin. Forms bereitgestellt werden
 - [ComponentOne](https://www.grapecity.com/componentone-xamarin/)
 - [Steema](https://www.steema.com/product/forms)
 
-Diese Steuerelemente bieten zusätzliche Unterstützung für xamarin. Forms-Entwickler, indem die Standard Steuerelemente mit benutzerdefinierten Steuerelementen und Diensten erweitert werden.
+Diese Steuerelemente bieten zusätzliche Unterstützung für Xamarin.Forms Entwickler, indem die Standard Steuerelemente durch benutzerdefinierte Steuerelemente und Dienste erweitert werden.

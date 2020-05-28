@@ -1,18 +1,21 @@
 ---
-title: Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
-description: In diesem Artikel wird erläutert, wie Entwurfszeit Daten verwendet werden, um datenintensive Layouts in der XAML-Vorschau anzuzeigen, ohne Ihre APP ausführen zu müssen.
-ms.prod: xamarin
-ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/27/2019
-ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72303244"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127358"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
 
@@ -28,7 +31,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-Nachdem Sie die Namespaces hinzugefügt haben, können Sie `d:` vor allen Attributen oder Steuerelementen ablegen, um Sie im XAML-Previewer anzuzeigen. Elemente mit `d:` werden zur Laufzeit nicht angezeigt.
+Nachdem Sie die Namespaces hinzugefügt haben, können Sie `d:` ein beliebiges Attribut oder Steuerelement einfügen, um es im XAML-Previewer anzuzeigen. Elemente mit werden `d:` zur Laufzeit nicht angezeigt.
 
 Beispielsweise können Sie Text zu einer Bezeichnung hinzufügen, die normalerweise an Sie gebunden ist.
 
@@ -38,9 +41,9 @@ Beispielsweise können Sie Text zu einer Bezeichnung hinzufügen, die normalerwe
 
 [![Entwerfen von Zeit Daten mit Text in einer Bezeichnung](xaml-previewer-images/designtimedata-label-sm.png "Entwerfen von Zeit Daten mit Text Bezeichnung")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-In diesem Beispiel zeigt der XAML-Previewer ohne `d:Text` nichts für die Bezeichnung an. Stattdessen wird "Name!" angezeigt. Dabei enthält die Bezeichnung echte Daten zur Laufzeit.
+In diesem Beispiel `d:Text` zeigt der XAML-Previewer keine für die Bezeichnung an. Stattdessen wird "Name!" angezeigt. Dabei enthält die Bezeichnung echte Daten zur Laufzeit.
 
-Sie können `d:` mit jedem beliebigen Attribut für ein xamarin. Forms-Steuerelement verwenden, wie z. b. Farben, Schriftgrößen und Abstände. Sie können Sie sogar dem Steuerelement selbst hinzufügen:
+Sie können `d:` mit jedem-Attribut für ein Xamarin.Forms -Steuerelement verwenden, wie z. b. Farben, Schriftgrößen und Abstände. Sie können Sie sogar dem Steuerelement selbst hinzufügen:
 
 ```xaml
 <d:Button Text="Design Time Button" />
@@ -86,7 +89,7 @@ ListViews sind eine beliebte Methode zum Anzeigen von Daten in einem Mobile App.
 
 [![Entwerfen von Zeit Daten mit einer ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "Entwerfen von Zeit Daten mit einer ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-In diesem Beispiel wird eine ListView mit drei textcells in der XAML-Vorschau angezeigt. Sie können `x:String` in ein vorhandenes Datenmodell in Ihrem Projekt ändern.
+In diesem Beispiel wird eine ListView mit drei textcells in der XAML-Vorschau angezeigt. Sie können `x:String` zu einem vorhandenen Datenmodell in Ihrem Projekt wechseln.
 
 Sie können auch ein Array von Datenobjekten erstellen. Beispielsweise können öffentliche Eigenschaften eines `Monkey` Datenobjekts als Entwurfszeit Daten erstellt werden:
 
@@ -137,7 +140,7 @@ Wenn Sie keine Entwurfszeit Daten zu einzelnen Steuerelementen hinzufügen möch
 
 ### <a name="requirements"></a>Anforderungen
 
-Entwurfszeit Daten erfordern mindestens eine Version von xamarin. Forms 3,6.
+Entwurfszeit Daten erfordern mindestens eine Version von Xamarin.Forms 3,6.
 
 ### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense zeigt Wellenlinien unter meine Entwurfszeit Daten an
 

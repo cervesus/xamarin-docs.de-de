@@ -1,18 +1,21 @@
 ---
-title: Pfadinformationen und -enumeration
-description: In diesem Artikel erläutert das Abrufen von Informationen zu SkiaSharp-Pfade und den Inhalt auflisten, und dies mit Beispielcode veranschaulicht.
-ms.prod: xamarin
-ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/12/2017
-ms.openlocfilehash: 6f4f4e6253c14d86e2057f13d6232a07a83b4d26
-ms.sourcegitcommit: ae5557c5024d4b7bd52b2f33cb96114ce2b8e086
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77045079"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131923"
 ---
 # <a name="path-information-and-enumeration"></a>Pfadinformationen und -enumeration
 
@@ -20,21 +23,21 @@ ms.locfileid: "77045079"
 
 _Informationen zu Pfaden und zum Aufzählen der Inhalte_
 
-Die [`SKPath`](xref:SkiaSharp.SKPath) -Klasse definiert verschiedene Eigenschaften und Methoden, mit denen Sie Informationen zum Pfad abrufen können. Die Eigenschaften " [`Bounds`](xref:SkiaSharp.SKPath.Bounds) " und " [`TightBounds`](xref:SkiaSharp.SKPath.TightBounds) " (und verwandte Methoden) erhalten die metrischen Dimensionen eines Pfads. Mit der [`Contains`](xref:SkiaSharp.SKPath.Contains(System.Single,System.Single)) -Methode können Sie feststellen, ob sich ein bestimmter Punkt innerhalb eines Pfads befindet.
+Die [`SKPath`](xref:SkiaSharp.SKPath) -Klasse definiert verschiedene Eigenschaften und Methoden, mit denen Sie Informationen zum Pfad abrufen können. Die-Eigenschaft und die-Eigenschaft [`Bounds`](xref:SkiaSharp.SKPath.Bounds) [`TightBounds`](xref:SkiaSharp.SKPath.TightBounds) (und verwandte Methoden) erhalten die metrischen Dimensionen eines Pfads. Mit der- [`Contains`](xref:SkiaSharp.SKPath.Contains(System.Single,System.Single)) Methode können Sie feststellen, ob sich ein bestimmter Punkt innerhalb eines Pfads befindet.
 
-Manchmal ist es sinnvoll, um zu bestimmen, die gesamte Länge aller Linien und Kurven, die einen Pfad zu bilden. Das Berechnen dieser Länge ist keine algorithmisch einfache Aufgabe, sodass eine ganze Klasse mit dem Namen " [`PathMeasure`](xref:SkiaSharp.SKPathMeasure) " dafür verwendet wird.
+Es ist manchmal hilfreich, die Gesamtlänge aller Linien und Kurven zu ermitteln, die einen Pfad bilden. Wenn Sie diese Länge berechnen, handelt es sich nicht um eine algorithmisch einfache Aufgabe. Daher wird ihr eine ganze Klasse [`PathMeasure`](xref:SkiaSharp.SKPathMeasure) mit dem Namen hinzu.
 
-Außerdem ist es manchmal sinnvoll, erhalten alle zeichnen-Vorgänge und Punkte, die einen Pfad zu bilden. Zunächst diese Funktion mag unnötig: Wenn Ihr Programm den Pfad erstellt hat, weiß das Programm bereits den Inhalt. Sie haben jedoch gesehen, dass Pfade auch durch [Pfad Effekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) und durch die Umstellung von Text Zeichenfolgen [in Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)erstellt werden können. Sie erhalten auch alle zeichnen-Vorgänge und Punkte, die diese Pfade bilden. Eine Möglichkeit besteht darin, auf die Punkte, z. B. eine algorithmische Transformation anwenden, um den Textfluss um eine Hemisphäre:
+Manchmal ist es auch sinnvoll, alle Zeichnungsvorgänge und Punkte zu erhalten, aus denen ein Pfad besteht. Diese Anlage mag zunächst unnötig erscheinen: Wenn das Programm den Pfad erstellt hat, weiß das Programm den Inhalt bereits. Sie haben jedoch gesehen, dass Pfade auch durch [Pfad Effekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) und durch die Umstellung von Text Zeichenfolgen [in Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)erstellt werden können. Sie können auch alle Zeichnungsvorgänge und Punkte abrufen, die diese Pfade bilden. Eine Möglichkeit besteht darin, eine algorithmische Transformation auf alle Punkte anzuwenden, um z. b. Text um eine Hemisphäre zu umschließen:
 
 ![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
 
-## <a name="getting-the-path-length"></a>Die Länge des Pfads abrufen
+## <a name="getting-the-path-length"></a>Die Pfadlänge wird erhalten.
 
-Im Artikel [**Pfade und Text**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) haben Sie erfahren, wie Sie die [`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) -Methode verwenden, um eine Text Zeichenfolge zu zeichnen, deren Baseline dem Pfad folgt. Aber was geschieht, wenn Sie den Text, damit er den Pfad genau passt die Größe möchten? Zeichnen von Text auf ein Kreis ist einfach, da der Umfang eines Kreises einfach zu berechnen ist. Der Umfang einer Ellipse oder die Länge des eine Bézierkurve ist jedoch nicht so einfach.
+In den Artikeln [**Pfaden und Text**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) haben Sie erfahren, wie Sie die- [`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) Methode verwenden, um eine Text Zeichenfolge zu zeichnen, deren Baseline dem Pfad folgt. Aber was ist, wenn Sie den Text so anpassen möchten, dass er genau dem Pfad entspricht? Das Zeichnen von Text um einen Kreis ist einfach, da der Umfang eines Kreises einfach zu berechnen ist. Der Umfang einer Ellipse oder die Länge einer Bézier-Kurve ist jedoch nicht so einfach.
 
-Die [`SKPathMeasure`](xref:SkiaSharp.SKPathMeasure) -Klasse kann helfen. Der [Konstruktor](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single)) akzeptiert ein `SKPath` Argument, und die [`Length`](xref:SkiaSharp.SKPathMeasure.Length) -Eigenschaft zeigt seine Länge an.
+Die- [`SKPathMeasure`](xref:SkiaSharp.SKPathMeasure) Klasse kann dabei helfen. Der- [Konstruktor](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single)) akzeptiert ein `SKPath` -Argument, und die- [`Length`](xref:SkiaSharp.SKPathMeasure.Length) Eigenschaft zeigt seine Länge an.
 
-Diese Klasse wird im Beispiel " **path length** " veranschaulicht, das auf der **Bezier-Kurven** Seite basiert. Die Datei " [**pathverlängert Page. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) " wird von `InteractivePage` abgeleitet und enthält eine Berührungs Schnittstelle:
+Diese Klasse wird im Beispiel " **path length** " veranschaulicht, das auf der **Bezier-Kurven** Seite basiert. Die Datei [**pathlängen Page. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) wird von abgeleitet `InteractivePage` und enthält eine Berührungs Schnittstelle:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -110,15 +113,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die `Length`-Eigenschaft des neu erstellten `SKPathMeasure`-Objekts erhält die Länge des Pfads. Die Pfadlänge wird durch den `baseTextWidth` Wert dividiert (d. h. die Breite des Texts auf der Grundlage einer Textgröße von 10) und dann mit der Basis Textgröße von 10 multipliziert. Das Ergebnis ist eine neue Textgröße für die Anzeige von Text an, dass der Pfad:
+Die- `Length` Eigenschaft des neu erstellten- `SKPathMeasure` Objekts erhält die Länge des Pfads. Die Pfadlänge wird durch den-Wert (d. h. `baseTextWidth` die Breite des Texts auf der Grundlage einer Textgröße von 10) dividiert und dann mit der Basis Textgröße von 10 multipliziert. Das Ergebnis ist eine neue Textgröße zum Anzeigen des Texts entlang dieses Pfads:
 
 [![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
 
-Da die Bézierkurve länger oder kürzer wird, sehen Sie die Textgröße ändern.
+Wenn die Bézier-Kurve länger oder kürzer wird, können Sie die Änderung der Textgröße sehen.
 
-## <a name="traversing-the-path"></a>Durchlaufen den Pfad
+## <a name="traversing-the-path"></a>Durchlaufen des Pfads
 
-`SKPathMeasure` können mehr tun als nur die Länge des Pfads zu messen. Für einen beliebigen Wert zwischen 0 (null) und der Pfadlänge kann ein `SKPathMeasure` Objekt die Position auf dem Pfad und den Tangens der Pfad Kurve an diesem Punkt abrufen. Der Tangens ist als Vektor in Form eines `SKPoint` Objekts oder als Drehung verfügbar, die in einem `SKMatrix` Objekt gekapselt ist. Im folgenden finden Sie die Methoden von `SKPathMeasure`, die diese Informationen auf verschiedene und flexible Weise abrufen:
+`SKPathMeasure`kann mehr als nur die Länge des Pfads messen. Für einen beliebigen Wert zwischen 0 (null) und der Pfadlänge `SKPathMeasure` kann ein Objekt die Position auf dem Pfad und den Tangens der Pfad Kurve an diesem Punkt abrufen. Der Tangens ist als Vektor in Form eines `SKPoint` Objekts oder als in einem-Objekt gekapselt Drehung verfügbar `SKMatrix` . Im folgenden finden Sie die Methoden von `SKPathMeasure` , die diese Informationen auf verschiedene und flexible Weise erhalten:
 
 ```csharp
 Boolean GetPosition (Single distance, out SKPoint position)
@@ -130,7 +133,7 @@ Boolean GetPositionAndTangent (Single distance, out SKPoint position, out SKPoin
 Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlags flag)
 ```
 
-Die Member der [`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatrixFlags) -Enumeration lauten wie folgt:
+Die Member der- [`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatrixFlags) Enumeration lauten:
 
 - `GetPosition`
 - `GetTangent`
@@ -140,7 +143,7 @@ Die Seite " **Unicycle-halbpipe** " animiert eine Stift Figur in einem Unicycle,
 
 [![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
 
-Das `SKPaint`-Objekt, das für das Durchsuchen der Hälfte Pipe und des Unicycle verwendet wird, wird als Feld in der `UnicycleHalfPipePage` Klasse definiert. Außerdem ist das `SKPath` Objekt für den Unicycle definiert:
+Das `SKPaint` -Objekt, das zum Durchsuchen der Hälfte Pipe und des Unicycle verwendet wird, wird als ein Feld in der- `UnicycleHalfPipePage` Klasse definiert. Außerdem ist das- `SKPath` Objekt für den Unicycle definiert:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -165,7 +168,7 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-Die-Klasse enthält die Standard Überschreibungen der `OnAppearing` und `OnDisappearing` Methoden für Animation. Der `PaintSurface` Handler erstellt den Pfad für die halbpipe und zeichnet ihn anschließend. Ein `SKPathMeasure`-Objekt wird dann basierend auf diesem Pfad erstellt:
+Die-Klasse enthält die Standard Überschreibungen der `OnAppearing` -Methode und der- `OnDisappearing` Methode für die Animation. Der `PaintSurface` Handler erstellt den Pfad für die halbpipe und zeichnet ihn anschließend. Ein `SKPathMeasure` Objekt wird dann basierend auf diesem Pfad erstellt:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -211,15 +214,15 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-Der `PaintSurface`-Handler berechnet den Wert `t`, der alle fünf Sekunden zwischen 0 und 1 liegt. Anschließend wird die `Math.Cos`-Funktion verwendet, um diese in einen Wert von `t` zu konvertieren, der zwischen 0 und 1 liegt, und zurück auf 0 (null), wobei 0 dem Unicycle am Anfang Links entspricht, während 1 dem Unicycle oben rechts entspricht. Die Kosinusfunktion bewirkt, dass die Geschwindigkeit der langsamste am oberen Rand der Pipe und schnellsten am unteren Rand werden.
+Der- `PaintSurface` Handler berechnet einen Wert von `t` , der alle fünf Sekunden zwischen 0 und 1 liegt. Anschließend wird die- `Math.Cos` Funktion verwendet, um diese in einen-Wert zu konvertieren, der `t` zwischen 0 und 1 liegt, und zurück auf 0, wobei 0 dem Unicycle am Anfang Links entspricht, während 1 dem Unicycle oben rechts entspricht. Die Cosinus-Funktion bewirkt, dass die Geschwindigkeit am oberen Rand der Pipe am oberen Rand und am unteren Rand am unteren Rand liegt.
 
-Beachten Sie, dass dieser Wert `t` mit der Pfadlänge für das erste Argument `GetMatrix`multipliziert werden muss. Die Matrix wird dann auf das `SKCanvas` Objekt zum Zeichnen des Unicycle-Pfads angewendet.
+Beachten Sie, dass dieser Wert von `t` mit der Pfadlänge für das erste Argument für multipliziert werden muss `GetMatrix` . Die Matrix wird dann auf das- `SKCanvas` Objekt angewendet, um den Unicycle-Pfad zu zeichnen.
 
-## <a name="enumerating-the-path"></a>Den Pfad auflisten
+## <a name="enumerating-the-path"></a>Auflisten des Pfads
 
-Zwei eingebettete Klassen von `SKPath` es Ihnen ermöglichen, den Inhalt von Path aufzuzählen. Diese Klassen sind [`SKPath.Iterator`](xref:SkiaSharp.SKPath.Iterator) und [`SKPath.RawIterator`](xref:SkiaSharp.SKPath.RawIterator). Die beiden Klassen sind sehr ähnlich, aber `SKPath.Iterator` können Elemente im Pfad mit einer Länge von 0 (null) oder bis zu einer Länge von 0 (null) eliminieren. Im folgenden Beispiel wird der `RawIterator` verwendet.
+Zwei eingebettete Klassen von `SKPath` ermöglichen es Ihnen, den Inhalt von Path aufzuzählen. Diese Klassen sind [`SKPath.Iterator`](xref:SkiaSharp.SKPath.Iterator) und [`SKPath.RawIterator`](xref:SkiaSharp.SKPath.RawIterator) . Die beiden Klassen sind sehr ähnlich, `SKPath.Iterator` können jedoch Elemente im Pfad mit einer Länge von 0 (null) oder bis zu einer Länge von 0 (null) eliminieren. Die `RawIterator` wird im folgenden Beispiel verwendet.
 
-Sie können ein Objekt vom Typ `SKPath.RawIterator` abrufen, indem Sie die [`CreateRawIterator`](xref:SkiaSharp.SKPath.CreateRawIterator) -Methode von `SKPath`aufrufen. Das Auflisten durch den Pfad erfolgt durch wiederholtes Aufrufen der [`Next`](xref:SkiaSharp.SKPath.RawIterator.Next*) -Methode. Übergeben Sie ein Array aus vier `SKPoint` Werten:
+Sie können ein Objekt vom Typ abrufen, `SKPath.RawIterator` indem Sie die- [`CreateRawIterator`](xref:SkiaSharp.SKPath.CreateRawIterator) Methode von Aufrufen `SKPath` . Das Auflisten durch den Pfad erfolgt durch wiederholtes Aufrufen der- [`Next`](xref:SkiaSharp.SKPath.RawIterator.Next*) Methode. Übergeben Sie ein Array aus vier `SKPoint` Werten:
 
 ```csharp
 SKPoint[] points = new SKPoint[4];
@@ -227,35 +230,35 @@ SKPoint[] points = new SKPoint[4];
 SKPathVerb pathVerb = rawIterator.Next(points);
 ```
 
-Die `Next`-Methode gibt einen Member des [`SKPathVerb`](xref:SkiaSharp.SKPathVerb) Enumerationstyps zurück. Diese Werte geben einen bestimmten Zeichnen-Befehl im Pfad. Die Anzahl der gültigen Punkte im Array eingefügt, hängt von dieses Verb ab:
+Die- `Next` Methode gibt einen Member des- [`SKPathVerb`](xref:SkiaSharp.SKPathVerb) Enumerationstyps zurück. Diese Werte geben den jeweiligen Zeichnungs Befehl im Pfad an. Die Anzahl der gültigen Punkte, die in das Array eingefügt werden, hängt von diesem Verb ab:
 
-- `Move` mit einem einzigen Punkt
-- `Line` mit zwei Punkten
-- `Cubic` mit vier Punkten
-- `Quad` mit drei Punkten
-- `Conic` mit drei Punkten (und auch die [`ConicWeight`](xref:SkiaSharp.SKPath.RawIterator.ConicWeight*) -Methode für die Gewichtung)
-- `Close` mit einem Punkt
+- `Move`mit einem einzigen Punkt
+- `Line`mit zwei Punkten
+- `Cubic`mit vier Punkten
+- `Quad`mit drei Punkten
+- `Conic`mit drei Punkten (und auch die- [`ConicWeight`](xref:SkiaSharp.SKPath.RawIterator.ConicWeight*) Methode für das Gewicht aufzurufen)
+- `Close`mit einem Punkt
 - `Done`
 
 Das `Done` Verb gibt an, dass die pfadenumeration beendet ist.
 
-Beachten Sie, dass keine `Arc` Verben vorhanden sind. Dies gibt an, dass alle Bögen Bézierkurven umgerechnet, bei dem Pfad hinzugefügt.
+Beachten Sie, dass keine `Arc` Verben vorhanden sind. Dies gibt an, dass alle Bögen in Bézier-Kurven konvertiert werden, wenn Sie dem Pfad hinzugefügt werden.
 
-Einige der Informationen im `SKPoint` Array sind redundant. Wenn z. b. auf ein `Move` Verb ein `Line` Verb folgt, ist der erste der beiden Punkte, die die `Line` begleiten, mit dem `Move` Punkt identisch. In der Praxis ist diese Redundanz sehr hilfreich. Wenn Sie ein `Cubic` Verb erhalten, werden alle vier Punkte begleitet, die die kubische Bézier-Kurve definieren. Sie müssen nicht die aktuelle Position hergestellt, indem das vorherige Verb beibehalten.
+Einige der Informationen im `SKPoint` Array sind redundant. Wenn z. b. auf ein `Move` Verb ein `Line` Verb folgt, ist der erste der beiden Punkte, die mit dem einhergehen, mit dem `Line` `Move` Punkt identisch. In der Praxis ist diese Redundanz sehr hilfreich. Wenn Sie ein `Cubic` Verb erhalten, werden alle vier Punkte begleitet, die die kubische Bézier-Kurve definieren. Sie müssen die aktuelle Position nicht beibehalten, die durch das vorherige Verb festgelegt wurde.
 
-Das problematische Verb ist jedoch `Close`. Dieser Befehl zeichnet eine gerade Linie von der aktuellen Position bis zum Anfang der Kontur, die zuvor durch den `Move`-Befehl festgelegt wurde. Im Idealfall sollte das `Close` Verb diese beiden Punkte anstelle eines Punkts bereitstellen. Schlimmer noch: der Punkt, der das `Close` Verb begleitet, ist immer (0,0). Wenn Sie einen Pfad auflisten, müssen Sie wahrscheinlich den `Move` Punkt und die aktuelle Position beibehalten.
+Das problematische Verb ist jedoch `Close` . Dieser Befehl zeichnet eine gerade Linie von der aktuellen Position bis zum Anfang der Kontur, die zuvor durch den Befehl festgelegt wurde `Move` . Im Idealfall `Close` sollte das Verb diese beiden Punkte anstelle eines Punkts bereitstellen. Schlimmer noch ist, dass der Punkt, der das Verb begleitet, `Close` immer (0,0) ist. Wenn Sie einen Pfad auflisten, müssen Sie den `Move` Punkt und die aktuelle Position wahrscheinlich beibehalten.
 
-## <a name="enumerating-flattening-and-malforming"></a>Auflisten von vereinfachen und Malforming
+## <a name="enumerating-flattening-and-malforming"></a>Auflisten, vereinfachen und Fehlbildung
 
-Manchmal ist es wünschenswert sein, eine algorithmische anwenden transformiert einen Pfad zu Malform in irgendeiner Weise:
+Es ist manchmal wünschenswert, eine algorithmische Transformation auf einen Pfad anzuwenden, um ihn auf irgendeine Weise zu malformen:
 
 ![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
 
-Die meisten dieser Buchstaben bestehen aus geraden, aber diese geraden haben offensichtlich in Kurven Verdrehte wurde. Wie ist dies möglich?
+Die meisten dieser Buchstaben bestehen aus geraden Linien, aber diese geraden Linien wurden anscheinend in Kurven gedreht. Wie ist das möglich?
 
-Der Schlüssel ist, dass die ursprünglichen geraden Linien in eine Reihe von kleineren geraden beeinträchtigt werden. Diese einzelnen geraden Linien an kleinere können klicken Sie dann auf unterschiedliche Weisen für die form einer Kurve bearbeitet werden.
+Der Schlüssel besteht darin, dass die ursprünglichen geraden Linien in eine Reihe von kleineren geraden Zeilen unterteilt werden. Diese einzelnen kleineren geraden Linien können dann auf unterschiedliche Weise bearbeitet werden, um eine Kurve zu bilden.
 
-Um dieses Verfahren zu unterstützen, enthält das [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel eine statische [`PathExtensions`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) -Klasse mit einer `Interpolate`-Methode, die eine gerade Linie in zahlreiche kurze Zeilen unterteilt, die nur eine Einheit haben. Darüber hinaus enthält die Klasse mehrere Methoden, die die drei Typen von Bézierkurven in eine Reihe von kleinen gerade Linien konvertieren, die die Kurve annähern. (Die parametrischen Formeln wurden im Artikel [**drei Typen von Bézier-Kurven**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)dargestellt.) Dieser Vorgang wird als _vereinfachende_ Kurve bezeichnet:
+Zur Unterstützung dieses Prozesses enthält das [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel eine statische- [`PathExtensions`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) Klasse mit einer- `Interpolate` Methode, die eine gerade Linie in zahlreiche kurze Zeilen unterteilt, die nur eine Einheit in der Länge haben. Darüber hinaus enthält die-Klasse mehrere Methoden, die die drei Typen der Bézier-Kurven in eine Reihe von kleinen geraden Linien konvertieren, die der Kurve annähernd entsprechen. (Die parametrischen Formeln wurden im Artikel [**drei Typen von Bézier-Kurven**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)dargestellt.) Dieser Vorgang wird als _vereinfachende_ Kurve bezeichnet:
 
 ```csharp
 static class PathExtensions
@@ -341,9 +344,9 @@ static class PathExtensions
 }
 ```
 
-Auf alle diese Methoden wird von der Erweiterungsmethode verwiesen `CloneWithTransform` die auch in dieser Klasse enthalten und unten dargestellt ist. Diese Methode wird einen Pfad durch Aufzählen der Path-Befehle aus, und erstellen einen neuen Pfad basierend auf den Daten geklont. Der neue Pfad besteht jedoch nur aus `MoveTo`-und `LineTo` aufrufen. Alle Kurven und gerade Linien werden auf einer Reihe von kleinen Zeilen reduziert.
+Auf alle diese Methoden wird von der Erweiterungsmethode verwiesen, die `CloneWithTransform` auch in dieser Klasse enthalten ist, und unten dargestellt. Mit dieser Methode wird ein Pfad geklont, indem die Pfad Befehle aufgelistet und ein neuer Pfad auf der Grundlage der Daten erstellt wird. Der neue Pfad besteht jedoch nur aus `MoveTo` -und- `LineTo` aufrufen. Alle Kurven und geraden Linien werden auf eine Reihe von kleinen Linien reduziert.
 
-Wenn Sie `CloneWithTransform`aufrufen, übergeben Sie an die-Methode eine `Func<SKPoint, SKPoint>`, bei der es sich um eine Funktion mit einem `SKPaint`-Parameter handelt, der einen `SKPoint` Wert zurückgibt. Diese Funktion wird für jede, zeigen Sie auf eine benutzerdefinierte algorithmische Transformation anwenden aufgerufen:
+Wenn `CloneWithTransform` Sie aufrufen, übergeben Sie an die-Methode `Func<SKPoint, SKPoint>` , die eine Funktion mit einem-Parameter ist, der `SKPaint` einen-Wert zurückgibt `SKPoint` . Diese Funktion wird für jeden Punkt aufgerufen, um eine benutzerdefinierte algorithmische Transformation anzuwenden:
 
 ```csharp
 static class PathExtensions
@@ -432,15 +435,15 @@ static class PathExtensions
 }
 ```
 
-Da der geklonte Pfad auf kleinen geraden reduziert wird, verfügt über die Transform-Funktion auf die Funktion gerade Linien, Kurven konvertieren.
+Da der geklonte Pfad zu kleinen geraden Zeilen reduziert wird, kann die Transform-Funktion gerade Linien in Kurven umwandeln.
 
-Beachten Sie, dass die-Methode den ersten Punkt jeder Kontur in der Variablen mit dem Namen `firstPoint` und die aktuelle Position nach jedem Zeichnungs Befehl in der Variablen `lastPoint`beibehält. Diese Variablen sind erforderlich, um die abschließende schließende Zeile zu erstellen, wenn ein `Close` Verb gefunden wird.
+Beachten Sie, dass die-Methode den ersten Punkt jeder Kontur in der Variablen mit dem Namen `firstPoint` und die aktuelle Position nach jedem Zeichnungs Befehl in der Variablen beibehält `lastPoint` . Diese Variablen sind erforderlich, um die abschließende schließende Zeile zu erstellen, wenn ein `Close` Verb gefunden wird.
 
 Das **globulartext** -Beispiel verwendet diese Erweiterungsmethode, um Text mit einer Hemisphäre in einem 3D-Effekt scheinbar zu umschließen:
 
 [![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
 
-Der [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) -Klassenkonstruktor führt diese Transformation aus. Er erstellt ein `SKPaint`-Objekt für den Text und ruft dann ein `SKPath` Objekt aus der `GetTextPath`-Methode ab. Dies ist der Pfad, der der `CloneWithTransform`-Erweiterungsmethode zusammen mit einer Transformations Funktion weitergegeben wird:
+Der [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Klassenkonstruktor führt diese Transformation aus. Er erstellt ein `SKPaint` -Objekt für den Text und ruft dann ein- `SKPath` Objekt aus der- `GetTextPath` Methode ab. Dies ist der Pfad, der der `CloneWithTransform` Erweiterungsmethode zusammen mit einer Transformations Funktion weitergegeben wird:
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -487,7 +490,7 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-Die Transformations Funktion berechnet zuerst zwei Werte mit dem Namen `longitude` und `latitude`, die von –./2 am oberen und linken Rand des Texts liegen, bis auf den Text am rechten und unteren Rand des Texts. Der Wertebereich nicht visuell zufriedenstellenden, damit sie durch Multiplizieren mit 0,75 reduziert werden. (Verwenden Sie den Code ohne die Anpassungen aus. Der Text wird auf der Nord-und der Südpol zu unbeschädigt und auf der Seite zu dünn.) Diese dreidimensionalen kugelförmigen Koordinaten werden in zweidimensionale `x` und `y` Koordinaten nach Standardformeln konvertiert.
+Die Transform-Funktion berechnet zuerst zwei Werte mit dem Namen `longitude` und den `latitude` Bereich von –./2 am oberen und linken Rand des Texts bis zum Wert von "" auf "". Der Bereich dieser Werte ist nicht visuell zufriedenstellend, sodass Sie durch Multiplikation um 0,75 reduziert werden. (Testen Sie den Code ohne diese Anpassungen. Der Text wird auf der Nord-und der Südpol zu unbeschädigt und auf der Seite zu dünn.) Diese dreidimensionalen kugelförmigen Koordinaten werden `x` von Standardformeln in zweidimensionale-und- `y` Koordinaten konvertiert.
 
 Der neue Pfad wird als Feld gespeichert. Der `PaintSurface` Handler muss dann lediglich den Pfad zentrieren und skalieren, um ihn auf dem Bildschirm anzuzeigen:
 
@@ -519,7 +522,7 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-Dies ist eine sehr vielseitige Technik. Wenn das Array von Pfad Effekten, das im Artikel " [**path Effects**](effects.md) " beschrieben wird, nicht ganz so eingeschlossen ist, dass Sie es einschließen müssen, ist dies eine Möglichkeit, die Lücken zu füllen.
+Dies ist eine sehr vielseitige Methode. Wenn das Array von Pfad Effekten, das im Artikel " [**path Effects**](effects.md) " beschrieben wird, nicht ganz so eingeschlossen ist, dass Sie es einschließen müssen, ist dies eine Möglichkeit, die Lücken zu füllen.
 
 ## <a name="related-links"></a>Verwandte Links
 

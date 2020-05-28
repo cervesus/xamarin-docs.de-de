@@ -1,71 +1,74 @@
 ---
-title: XAML-Namespaces in Xamarin.Forms
-description: XAML verwendet das XML-Xmlns-Attribut für Namespacedeklarationen. In diesem Artikel stellt die Syntax des XAML-Namespace, und es wird veranschaulicht, wie einen XAML-Namespace auf einen Typ deklariert.
-ms.prod: xamarin
-ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/21/2018
-ms.openlocfilehash: d307c128826775e6d4f7129c79e17522e7e05d6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+title: XAML-Namespaces inXamarin.Forms
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7f35342134767ccdadfab086bfa14f6b610b325d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61176520"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130376"
 ---
-# <a name="xaml-namespaces-in-xamarinforms"></a>XAML-Namespaces in Xamarin.Forms
+# <a name="xaml-namespaces-in-xamarinforms"></a>XAML-Namespaces inXamarin.Forms
 
-_XAML verwendet das XML-Xmlns-Attribut für Namespacedeklarationen. In diesem Artikel stellt die Syntax des XAML-Namespace, und es wird veranschaulicht, wie einen XAML-Namespace auf einen Typ deklariert._
+_XAML verwendet das xmlns-XML-Attribut für Namespace Deklarationen. In diesem Artikel wird die XAML-Namespace Syntax vorgestellt, und es wird veranschaulicht, wie ein XAML-Namespace für den Zugriff auf einen Typ deklariert wird._
 
 ## <a name="overview"></a>Übersicht
 
-Es gibt zwei XAML-Namespace-Deklarationen, die immer in das Stammelement einer XAML-Datei enthalten sind. Der erste definiert den Standardnamespace, wie in den folgenden XAML-Codebeispiel gezeigt:
+Es gibt zwei XAML-Namespace Deklarationen, die sich immer innerhalb des Stamm Elements einer XAML-Datei befinden. Der erste definiert den Standard Namespace, wie im folgenden XAML-Codebeispiel gezeigt:
 
-```csharp
+```xaml
 xmlns="http://xamarin.com/schemas/2014/forms"
 ```
 
-Der Standardnamespace gibt an, dass Elemente, die in der XAML-Datei ohne Präfix definiert auf Xamarin.Forms-Klassen, z. B. finden Sie unter [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
+Der Standard Namespace gibt an, dass Elemente, die in der XAML-Datei ohne Präfix definiert Xamarin.Forms sind, auf Klassen wie verweisen [`ContentPage`](xref:Xamarin.Forms.ContentPage) .
 
-Die zweite Namespacedeklaration verwendet die `x` Präfix, wie in den folgenden XAML-Codebeispiel gezeigt:
+Die zweite Namespace Deklaration verwendet das `x` Präfix, wie im folgenden XAML-Codebeispiel gezeigt:
 
-```csharp
+```xaml
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-XAML verwendet Präfixe nicht dem Standard-Namespaces, mit dem Präfix, das verwendet wird, verweisen auf Datentypen innerhalb des Namespaces zu deklarieren. Die `x` Namespace-Deklaration gibt an, dass die Elemente innerhalb der XAML mit dem Präfix definiert `x` werden verwendet, für Elemente und Attribute, die für XAML (insbesondere die 2009 XAML-Spezifikation) systemintern sind.
+XAML verwendet Präfixe, um nicht standardmäßige Namespaces zu deklarieren, wobei das Präfix beim Verweisen auf Typen innerhalb des Namespace verwendet wird. Die `x` Namespace Deklaration gibt an, dass Elemente, die innerhalb des XAML mit einem Präfix von definiert sind, `x` für Elemente und Attribute verwendet werden, die in XAML intrinsisch sind (insbesondere die 2009 XAML-Spezifikation).
 
-Der folgenden Tabelle werden die `x` Namespaceattribute von Xamarin.Forms unterstützt:
+In der folgenden Tabelle sind die `x` von unterstützten Namespace Attribute aufgeführt Xamarin.Forms :
 
 |Konstrukt|Beschreibung|
 |--- |--- |
-|`x:Arguments`|Gibt die Konstruktorargumente für einen nicht standardmäßigen Konstruktor oder einer Factory Methodendeklaration-Objekt.|
-|`x:Class`|Gibt den Namespace und den Namen für eine Klasse, die in XAML definiert. Der Klassenname muss der Klassenname des Code-Behind-Datei übereinstimmen. Beachten Sie, dass dieses Konstrukt im Stammelement einer XAML-Datei kann nur verwendet werden.|
-|`x:DataType`|Gibt den Typ des Objekts, das XAML-Element und dessen untergeordnete Elemente, die gebunden werden.|
-|`x:FactoryMethod`|Gibt eine Factorymethode, die zum Initialisieren eines Objekts verwendet werden kann.|
-|`x:FieldModifier`|Gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente.|
-|`x:Key`|Gibt einen eindeutigen benutzerdefinierten Schlüssel für jede Ressource in einem `ResourceDictionary`. Der Wert des Schlüssels wird verwendet, um die XAML-Ressource abzurufen, und wird normalerweise verwendet, als Argument für die `StaticResource` Markuperweiterung.|
-|`x:Name`|Gibt einen Common Language Runtime-Objekt an, für das XAML-Element. Festlegen von `x:Name` ähnelt der Deklaration einer Variablen im Code.|
-|`x:TypeArguments`|Gibt die generischen Typargumente an den Konstruktor eines generischen Typs an.|
+|`x:Arguments`|Gibt Konstruktorargumente für einen nicht Standardkonstruktor oder für eine Factorymethoden-Objekt Deklaration an.|
+|`x:Class`|Gibt den Namespace und den Klassennamen für eine Klasse an, die in XAML definiert ist. Der Klassenname muss mit dem Klassennamen der Code Behind-Datei identisch sein. Beachten Sie, dass dieses Konstrukt nur im Root-Element einer XAML-Datei angezeigt werden kann.|
+|`x:DataType`|Gibt den Typ des Objekts an, an das das XAML-Element und seine untergeordneten Elemente gebunden werden.|
+|`x:FactoryMethod`|Gibt eine Factorymethode an, die zum Initialisieren eines Objekts verwendet werden kann.|
+|`x:FieldModifier`|Gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente an.|
+|`x:Key`|Gibt einen eindeutigen benutzerdefinierten Schlüssel für jede Ressource in einem an `ResourceDictionary` . Der Wert des Schlüssels wird zum Abrufen der XAML-Ressource verwendet und in der Regel als Argument für die `StaticResource` Markup Erweiterung verwendet.|
+|`x:Name`|Gibt einen Laufzeitobjekt Namen für das XAML-Element an. `x:Name`Die Einstellung ähnelt der Deklaration einer Variablen im Code.|
+|`x:TypeArguments`|Gibt die generischen Typargumente für den Konstruktor eines generischen Typs an.|
 
-Weitere Informationen zu den `x:DataType` Attribut, finden Sie unter [kompiliert Bindungen](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md). Weitere Informationen zu den `x:FieldModifier` Attribut, finden Sie unter [Feldmodifizierern](~/xamarin-forms/xaml/field-modifiers.md). Weitere Informationen zu den `x:Arguments`, `x:FactoryMethod`, und `x:TypeArguments` Attribute finden Sie unter [übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md).
+Weitere Informationen zum- `x:DataType` Attribut finden Sie unter [kompilierte Bindungen](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md). Weitere Informationen zum- `x:FieldModifier` Attribut finden Sie unter [Feldmodifizierer](~/xamarin-forms/xaml/field-modifiers.md). Weitere Informationen über das `x:Arguments` -Attribut und das- `x:FactoryMethod` Attribut finden Sie unter Übergeben von [Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md). Weitere Informationen zum- `x:TypeArguments` Attribut finden Sie unter [Generika in XAML mit Xamarin.Forms ](generics.md).
 
 > [!NOTE]
-> Neben den oben aufgeführten Namespaceattributen, Xamarin.Forms enthält auch Markuperweiterungen, die über genutzt werden, können die `x` Namespacepräfix. Weitere Informationen finden Sie unter [Nutzen von XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/consuming.md).
+> Zusätzlich zu den oben aufgeführten Namespace Attributen Xamarin.Forms enthält auch Markup Erweiterungen, die über das `x` Namespace Präfix genutzt werden können. Weitere Informationen finden Sie unter [Verwenden von XAML-Markup Erweiterungen](~/xamarin-forms/xaml/markup-extensions/consuming.md).
 
-In XAML erben Namespacedeklarationen vom übergeordneten Element an untergeordnete Element ein. Aus diesem Grund, erben alle Elemente innerhalb dieser Datei bei der Definition eines Namespaces in das Stammelement einer XAML-Datei die Namespacedeklaration.
+In XAML erben Namespace Deklarationen von einem übergeordneten Element zu einem untergeordneten Element. Wenn Sie einen Namespace im Stamm Element einer XAML-Datei definieren, erben daher alle Elemente in dieser Datei die Namespace Deklaration.
 
 ## <a name="declaring-namespaces-for-types"></a>Deklarieren von Namespaces für Typen
 
-In XAML können Typen verwiesen werden, durch die Deklaration eines XAML-Namespaces mit einem Präfix, mit der Namespacedeklaration, die den Namespacenamen des Common Language Runtime (CLR) und optional einen Assemblynamen angeben. Dies wird erreicht, indem Sie Werte für die folgenden Schlüsselwörter in der Namespacedeklaration definieren:
+Auf Typen kann in XAML verwiesen werden, indem ein XAML-Namespace mit einem Präfix deklariert wird, wobei die Namespace Deklaration den CLR-Namespace Namen (Common Language Runtime) und optional einen Assemblynamen angibt. Dies wird erreicht, indem Werte für die folgenden Schlüsselwörter innerhalb der Namespace Deklaration definiert werden:
 
-- **Clr-Namespace:** oder **verwenden:** : der CLR-Namespace deklariert wird, in die Assembly, die als XAML-Elemente verfügbar gemachten Typen enthält. Dieses Schlüsselwort ist erforderlich.
-- **Assembly =** – die Assembly mit CLR-Namespace auf die verwiesen wird. Dieser Wert ist der Name der Assembly ohne Dateierweiterung. Der Pfad zur Assembly sollte als Referenz in der Projektdatei hergestellt werden, die die XAML-Datei enthält, die auf die Assembly verweist. Dieses Schlüsselwort ausgelassen werden, wenn die **Clr-Namespace** Wert ist innerhalb der gleichen Assembly wie der Code der Anwendung, die die Typen verweist.
+- **CLR-Namespace:** oder **using:** – der in der Assembly deklarierte CLR-Namespace, der die Typen enthält, die als XAML-Elemente verfügbar gemacht werden sollen. Dieses Schlüsselwort ist erforderlich.
+- **Assembly =** – die Assembly, die den CLR-Namespace enthält, auf den verwiesen wird. Dieser Wert ist der Name der Assembly ohne die Dateierweiterung. Der Pfad zur Assembly sollte als Verweis in der Projektdatei eingerichtet werden, die die XAML-Datei enthält, die auf die Assembly verweist. Dieses Schlüsselwort kann weggelassen werden, wenn der **CLR-Namespace-** Wert sich innerhalb derselben Assembly befindet wie der Anwendungscode, der auf die Typen verweist.
 
-Beachten Sie, dass als Trennzeichen zwischen den `clr-namespace` oder `using` -Token von seinem Wert ist eine aus ein Doppelpunkt, während getrennt die `assembly` -Token von seinem Wert wird ein Gleichheitszeichen. Das zu zwischen beiden Token zu verwendende Zeichen ist ein Semikolon.
+Beachten Sie, dass das Zeichen, das das Token `clr-namespace` oder `using` von seinem Wert trennt, ein Doppelpunkt ist, während das Zeichen, das das `assembly` Token von seinem Wert trennt, ein Gleichheitszeichen ist. Das Zeichen, das zwischen den beiden Token verwendet werden soll, ist ein Semikolon.
 
-Das folgende Codebeispiel zeigt eine XAML-Namespace-Deklaration:
+Das folgende Codebeispiel zeigt eine XAML-Namespace Deklaration:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:HelloWorld" ...>
@@ -73,7 +76,7 @@ Das folgende Codebeispiel zeigt eine XAML-Namespace-Deklaration:
 </ContentPage>
 ```
 
-Alternativ kann dies folgendermaßen geschrieben werden:
+Alternativ kann dies wie folgt geschrieben werden:
 
 ```xaml
 <ContentPage ... xmlns:local="using:HelloWorld" ...>
@@ -81,7 +84,7 @@ Alternativ kann dies folgendermaßen geschrieben werden:
 </ContentPage>
 ```
 
-Die `local` Präfix ist eine Konvention verwendet, um anzugeben, dass die Typen im Namespace für die Anwendung lokal sind. Auch wenn die Typen in einer anderen Assembly sind, sollte der Name der Assembly auch in der Deklaration des Namespaces definiert werden wie in den folgenden XAML-Codebeispiel veranschaulicht:
+Das `local` Präfix ist eine Konvention, mit der angegeben wird, dass die Typen im Namespace für die Anwendung lokal sind. Wenn sich die Typen in einer anderen Assembly befinden, sollte der AssemblyName auch in der Namespace Deklaration definiert werden, wie im folgenden XAML-Codebeispiel gezeigt:
 
 ```xaml
 <ContentPage ... xmlns:behaviors="clr-namespace:Behaviors;assembly=BehaviorsLibrary" ...>
@@ -89,7 +92,7 @@ Die `local` Präfix ist eine Konvention verwendet, um anzugeben, dass die Typen 
 </ContentPage>
 ```
 
-Der Namespace-Präfix wird dann angegeben, beim Deklarieren einer Instanz eines Typs aus einem importierten Namespace, als in den folgenden XAML-Codebeispiel veranschaulicht:
+Das Namespace Präfix wird dann angegeben, wenn eine Instanz eines Typs aus einem importierten Namespace deklariert wird, wie im folgenden XAML-Codebeispiel gezeigt:
 
 ```xaml
 <ListView ...>
@@ -99,12 +102,13 @@ Der Namespace-Präfix wird dann angegeben, beim Deklarieren einer Instanz eines 
 </ListView>
 ```
 
-Informationen zum Definieren eines benutzerdefinierten Namespaces-Schemas finden Sie unter [benutzerdefinierte XAML-Namespace-Schemas](custom-namespace-schemas.md).
+Weitere Informationen zum Definieren eines benutzerdefinierten Namespace Schemas finden Sie unter [XAML Custom Namespace Schemas](custom-namespace-schemas.md).
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel die Syntax des XAML-Namespace eingeführt und wurde veranschaulicht, wie einen XAML-Namespace auf einen Typ deklariert. XAML verwendet das `xmlns` XML-Attribut für Namespace-Deklarationen und Typen kann in XAML verwiesen werden, indem eine XAML-Namespace mit einem Präfix deklariert.
+In diesem Artikel wurde die XAML-Namespace Syntax vorgestellt und gezeigt, wie ein XAML-Namespace für den Zugriff auf einen Typ deklariert wird. XAML verwendet das `xmlns` XML-Attribut für Namespace Deklarationen, und in XAML kann auf Typen verwiesen werden, indem ein XAML-Namespace mit einem Präfix deklariert wird.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Übergeben von Argumenten in XAML](~/xamarin-forms/xaml/passing-arguments.md)
+- [Generika in XAML mitXamarin.Forms](generics.md)

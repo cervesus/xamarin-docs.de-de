@@ -1,24 +1,27 @@
 ---
-title: Große Seitentitel unter IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die den Seitentitel in der Navigationsleiste einer navigationpage als großen Titel anzeigt.
-ms.prod: xamarin
-ms.assetid: 45FD9145-8319-452C-9AE6-624431A4D43C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: ab9becf2f7363674346abf004c1748cb06eb0d31
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655425"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128042"
 ---
 # <a name="large-page-titles-on-ios"></a>Große Seitentitel unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese IOS-plattformspezifische wird verwendet, um den Seitentitel als großen Titel auf der Navigationsleiste [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)eines für Geräte mit IOS 11 oder höher anzuzeigen. Ein große Titel wird links ausgerichtet und wird von einer größeren Schrift und geht in einen standard-Titel, wie der Benutzer beginnt, Scrollen von Inhalt, sodass Bildschirmfläche effizient verwendet wird. Allerdings wird im Querformat, der Titel in der Mitte des der Navigationsleiste Inhaltslayout optimieren zurück. Es ist in XAML verwendet, durch Festlegen der `NavigationPage.PrefersLargeTitles` angefügten Eigenschaft, um eine `boolean` Wert:
+Diese IOS-plattformspezifische wird verwendet, um den Seitentitel als großen Titel auf der Navigationsleiste eines [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) für Geräte mit IOS 11 oder höher anzuzeigen. Ein großer Titel wird linksbündig ausgerichtet und verwendet eine größere Schriftart und wechselt zu einem Standard Titel, wenn der Benutzer mit dem Scrollen von Inhalten beginnt, sodass der Bildschirm tatsächlich verwendet wird. Bei der quer Ausrichtung wird der Titel jedoch in den Mittelpunkt der Navigationsleiste zurückkehren, um das Inhalts Layout zu optimieren. Sie wird in XAML verwendet, indem die `NavigationPage.PrefersLargeTitles` angefügte-Eigenschaft auf einen Wert festgelegt wird `boolean` :
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -30,7 +33,7 @@ Diese IOS-plattformspezifische wird verwendet, um den Seitentitel als großen Ti
 </NavigationPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -41,9 +44,9 @@ var navigationPage = new Xamarin.Forms.NavigationPage(new iOSLargeTitlePageCS())
 navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 ```
 
-Die `NavigationPage.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `NavigationPage.SetPrefersLargeTitle` Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace steuert, ob große Titel aktiviert sind.
+Die- `NavigationPage.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Mit der- `NavigationPage.SetPrefersLargeTitle` Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird gesteuert, ob große Titel aktiviert sind.
 
-Vorausgesetzt, dass große Titel aktiviert sind, auf die [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), alle Seiten im Navigationsstapel werden große Titel angezeigt. Dieses Verhalten kann auf Seiten überschrieben werden, durch Festlegen der `Page.LargeTitleDisplay` angefügte Eigenschaft auf den Wert der `LargeTitleDisplayMode` Enumeration:
+Wenn große Titel im aktiviert sind [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) , werden auf allen Seiten des Navigations Stapels große Titel angezeigt. Dieses Verhalten kann auf Seiten überschrieben werden, indem die `Page.LargeTitleDisplay` angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird `LargeTitleDisplayMode` :
 
 ```xaml
 <ContentPage ...
@@ -54,7 +57,7 @@ Vorausgesetzt, dass große Titel aktiviert sind, auf die [ `NavigationPage` ](xr
 </ContentPage>
 ```
 
-Alternativ kann das Seitenverhalten in C# mithilfe der fluent-API überschrieben werden:
+Alternativ kann das Seiten Verhalten aus c# mithilfe der flüssigen API überschrieben werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -72,13 +75,13 @@ public class iOSLargeTitlePageCS : ContentPage
 }
 ```
 
-Die `Page.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `Page.SetLargeTitleDisplay` Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace, steuert das Verhalten der große Titel auf der [ `Page` ](xref:Xamarin.Forms.Page), mit der `LargeTitleDisplayMode` Enumeration, die Bereitstellung von drei möglichen Werte:
+Die- `Page.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die- `Page.SetLargeTitleDisplay` Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace steuert das Verhalten des großen Titels auf dem [`Page`](xref:Xamarin.Forms.Page) , wobei die- `LargeTitleDisplayMode` Enumeration drei mögliche Werte bereitstellt:
 
-- `Always` – erzwingen, dass die Navigationsleiste und die Schriftart Größe der große-Format verwendet.
-- `Automatic` – Verwenden Sie das gleiche Format (Groß oder klein) als das vorherige Element im Navigationsstapel.
-- `Never` – wird die Verwendung der regulären, kleine Format Navigationsleiste erzwungen.
+- `Always`– erzwingen, dass die Navigationsleiste und der Schrift Grad das große Format verwenden.
+- `Automatic`– Verwenden Sie denselben Stil (groß oder klein) wie das vorherige Element im Navigations Stapel.
+- `Never`– erzwingen Sie die Verwendung der regulären Navigationsleiste mit kleinem Format.
 
-Darüber hinaus die `SetLargeTitleDisplay` Methode kann verwendet werden, zum Umschalten der Enumerationswerte durch Aufrufen der `LargeTitleDisplay` Methode, die die aktuelle zurückgibt `LargeTitleDisplayMode`:
+Außerdem kann die- `SetLargeTitleDisplay` Methode zum Umschalten der Enumerationswerte verwendet werden, indem die- `LargeTitleDisplay` Methode aufgerufen wird, die den aktuellen zurückgibt `LargeTitleDisplayMode` :
 
 ```csharp
 switch (On<iOS>().LargeTitleDisplay())
@@ -95,12 +98,12 @@ switch (On<iOS>().LargeTitleDisplay())
 }
 ```
 
-Das Ergebnis ist, die einem angegebenen `LargeTitleDisplayMode` gilt, an die [ `Page` ](xref:Xamarin.Forms.Page), welche Steuerelemente das große Titel Verhalten:
+Das Ergebnis ist, dass ein `LargeTitleDisplayMode` angegebenes auf das angewendet wird [`Page`](xref:Xamarin.Forms.Page) , das das Verhalten des großen Titels steuert:
 
-![](page-large-title-images/large-title.png "Blur-Effekt plattformspezifische")
+![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

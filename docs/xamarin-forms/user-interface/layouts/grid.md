@@ -1,24 +1,27 @@
 ---
-title: Xamarin. Forms-Raster
-description: Das xamarin. Forms-Raster ist ein Layout, das seine untergeordneten Elemente in Zeilen und Spalten von Zellen organisiert.
-ms.prod: xamarin
-ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4f1d9d0f2d597018b9832d918bbec3f0b2594773
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsNetz
+description: Das Xamarin.Forms Raster ist ein Layout, das seine untergeordneten Elemente in Zeilen und Spalten von Zellen organisiert.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425924"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138072"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin. Forms-Raster
+# <a name="xamarinforms-grid"></a>Xamarin.FormsNetz
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Xamarin. Forms-Raster](grid-images/layouts.png "Xamarin. Forms-Raster")](grid-images/layouts-large.png#lightbox "Xamarin. Forms-Raster")
+[![Xamarin.FormsNetz](grid-images/layouts.png "[! Schel. Raster "NO-LOC (xamarin. Forms)]"")](grid-images/layouts-large.png#lightbox "[! Schel. Raster "NO-LOC (xamarin. Forms)]"")
 
 Bei [`Grid`](xref:Xamarin.Forms.Grid) handelt es sich um ein Layout, das seine untergeordneten Elemente in Zeilen und Spalten organisiert, die eine proportionale oder absolute Größe aufweisen können. Standardmäßig enthält eine `Grid` Zeile und eine Spalte. Außerdem `Grid` kann ein als übergeordnetes Layout verwendet werden, das andere untergeordnete Layouts enthält.
 
@@ -735,6 +738,6 @@ public class ColorSlidersGridPageCS : ContentPage
 ## <a name="related-links"></a>Verwandte Links
 
 - [Raster Demos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [Layoutoptionen in xamarin. Forms](layout-options.md)
-- [Auswählen eines xamarin. Forms-Layouts](choose-layout.md)
-- [Verbessern der Leistung von Xamarin.Forms-Apps](~/xamarin-forms/deploy-test/performance.md)
+- [Layoutoptionen inXamarin.Forms](layout-options.md)
+- [Layout auswählen Xamarin.Forms](choose-layout.md)
+- [Optimieren der Xamarin.Forms App-Leistung](~/xamarin-forms/deploy-test/performance.md)

@@ -1,43 +1,46 @@
 ---
-title: SkiaSharp linearen Farbverlaufs
-description: Erfahren Sie, wie Zeichnen von Linien oder Bereiche mit Farbverläufen, bestehend aus schrittweise eine Mischung aus zwei Farben füllen.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 290e533e54b2ee150b94d9fb6b0f5119324f9cf0
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306500"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132222"
 ---
-# <a name="the-skiasharp-linear-gradient"></a>SkiaSharp linearen Farbverlaufs
+# <a name="the-skiasharp-linear-gradient"></a>Der lineare skiasharp-Farbverlauf
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Die [`SKPaint`](xref:SkiaSharp.SKPaint) -Klasse definiert eine [`Color`](xref:SkiaSharp.SKPaint.Color) Eigenschaft, die verwendet wird, um Linien zu zeichnen oder Bereiche mit einer voll Tonfarbe auszufüllen. Sie können auch Linien oder Bereiche mit _Farbverläufen_, bei denen es sich um schrittweise Farben Farben handelt, in einem Strich zeichnen:
+Die- [`SKPaint`](xref:SkiaSharp.SKPaint) Klasse definiert eine- [`Color`](xref:SkiaSharp.SKPaint.Color) Eigenschaft, die zum Zeichnen von Linien oder Ausfüllen von Bereichen mit einer voll Tonfarbe verwendet wird. Sie können auch Linien oder Bereiche mit _Farbverläufen_, bei denen es sich um schrittweise Farben Farben handelt, in einem Strich zeichnen:
 
 ![Beispiel für linearen Farbverlauf](linear-gradient-images/LinearGradientSample.png "Beispiel für linearen Farbverlauf")
 
-Die grundlegendste Art des Farbverlaufs ist ein _linearer_ Farbverlauf. Die Blend der Farben tritt in einer Zeile (die als _Farbverlaufslinie_bezeichnet wird) von einem Punkt zu einem anderen auf. Zeilen, die senkrecht zur der Farbverlaufslinie sind aufweisen die gleiche Farbe. Sie erstellen einen linearen Farbverlauf mit einer der beiden statischen [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) Methoden. Der Unterschied zwischen den zwei Überladungen ist, dass eine eine Matrixtransformation enthält und das andere nicht. 
+Die grundlegendste Art des Farbverlaufs ist ein _linearer_ Farbverlauf. Die Blend der Farben tritt in einer Zeile (die als _Farbverlaufslinie_bezeichnet wird) von einem Punkt zu einem anderen auf. Zeilen, die auf der Farbverlaufslinie senkrecht sind, haben die gleiche Farbe. Sie erstellen einen linearen Farbverlauf mit einer der beiden statischen [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) Methoden. Der Unterschied zwischen den zwei über Ladungen besteht darin, dass eine Matrix Transformation enthält und die andere nicht. 
 
-Diese Methoden geben ein Objekt vom Typ [`SKShader`](xref:SkiaSharp.SKShader) zurück, das Sie auf die [`Shader`](xref:SkiaSharp.SKPaint.Shader) -Eigenschaft von `SKPaint`festgelegt haben. Wenn die `Shader`-Eigenschaft nicht NULL ist, überschreibt Sie die `Color`-Eigenschaft. Jede Zeile, die mit Strichen ist, oder ein beliebiger Bereich, der mit diesem `SKPaint` Objekt gefüllt wird, basiert auf dem Farbverlauf und nicht auf der voll Tonfarbe.
+Diese Methoden geben ein Objekt vom Typ zurück [`SKShader`](xref:SkiaSharp.SKShader) , das Sie auf die-Eigenschaft von festgelegt haben [`Shader`](xref:SkiaSharp.SKPaint.Shader) `SKPaint` . Wenn die `Shader` Eigenschaft nicht NULL ist, wird die-Eigenschaft überschrieben `Color` . Jede Zeile, die mit Strichen ist, oder ein beliebiger Bereich, der mit diesem Objekt gefüllt wird, `SKPaint` basiert auf dem Farbverlauf und nicht auf der voll Tonfarbe.
 
 > [!NOTE]
-> Die `Shader`-Eigenschaft wird ignoriert, wenn Sie ein `SKPaint` Objekt in einen `DrawBitmap`-Befehl einschließen. Mit der `Color`-Eigenschaft von `SKPaint` können Sie eine Transparenz Ebene für die Anzeige einer Bitmap festlegen (wie im Artikel [Anzeigen von skiasharp-Bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)beschrieben), aber Sie können die `Shader`-Eigenschaft nicht verwenden, um eine Bitmap mit einer Farbverlaufs Transparenz anzuzeigen. Es stehen andere Techniken zum Anzeigen von Bitmaps mit Verlaufs Übersichten zur Verfügung: Diese werden in den Artikeln [skiasharp-zirkuläre Farbverläufe](circular-gradients.md#radial-gradients-for-masking) und [skiasharp Zusammensetzung-und Blend-Modi](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)beschrieben.
+> Die- `Shader` Eigenschaft wird ignoriert, wenn Sie ein `SKPaint` Objekt in einen- `DrawBitmap` Rückruf einschließen. Mithilfe der- `Color` Eigenschaft von können Sie `SKPaint` eine Transparenz Ebene für die Anzeige einer Bitmap festlegen (wie im Artikel [Anzeigen von skiasharp-Bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)beschrieben), aber Sie können die-Eigenschaft nicht verwenden, `Shader` um eine Bitmap mit einer Farbverlaufs Transparenz anzuzeigen. Es stehen andere Techniken zum Anzeigen von Bitmaps mit Verlaufs Übersichten zur Verfügung: Diese werden in den Artikeln [skiasharp-zirkuläre Farbverläufe](circular-gradients.md#radial-gradients-for-masking) und [skiasharp Zusammensetzung-und Blend-Modi](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)beschrieben.
 
-## <a name="corner-to-corner-gradients"></a>Ecke-zu-Ecke Farbverläufe
+## <a name="corner-to-corner-gradients"></a>Ecken-zu-Ecke-Farbverläufe
 
-Erstreckt sich häufig ein linearer Farbverlauf von einer Ecke eines Rechtecks zu einem anderen. Wenn Sie der Startpunkt auf der linken oberen Ecke des Rechtecks ist, kann Farbverlaufs erweitern:
+Häufig wird ein linearer Farbverlauf von einer Ecke eines Rechtecks zu einem anderen erweitert. Wenn der Startpunkt die linke obere Ecke des Rechtecks ist, kann der Farbverlauf Folgendes erweitern:
 
-- vertikal auf der linken unteren Ecke.
-- horizontal auf der oberen rechten Ecke
-- auf der unteren rechten Ecke diagonal
+- vertikal in der unteren linken Ecke
+- horizontal zur oberen rechten Ecke
+- Diagonal in der unteren rechten Ecke
 
-Der lineare lineare Farbverlauf wird auf der ersten Seite im Abschnitt **skiasharp-Shader und andere Effekte** des [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiels veranschaulicht. Die Seite " **Corner-to-Corner-Farbverlauf** " erstellt eine `SKCanvasView` im Konstruktor. Der `PaintSurface` Handler erstellt ein `SKPaint`-Objekt in einer `using`-Anweisung und definiert dann ein in der Canvas zentriertes 300-Pixel-quadratisches Rechteck:
+Der lineare lineare Farbverlauf wird auf der ersten Seite im Abschnitt **skiasharp-Shader und andere Effekte** des [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiels veranschaulicht. Auf der Seite " **Corner-to-Corner-Farbverlauf** " wird ein-Element `SKCanvasView` im Konstruktor erstellt. Der `PaintSurface` Handler erstellt `SKPaint` in einer `using` -Anweisung ein-Objekt und definiert dann ein quadratisches 300-Pixel-Rechteck, das sich in der Canvas zentriert:
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -84,33 +87,33 @@ public class CornerToCornerGradientPage : ContentPage
 }
 ```
 
-Der `Shader`-Eigenschaft von `SKPaint` wird der `SKShader` Rückgabewert aus der statischen `SKShader.CreateLinearGradient`-Methode zugewiesen. Die fünf Argumente sind wie folgt aus:
+Der- `Shader` Eigenschaft von `SKPaint` wird der `SKShader` Rückgabewert der statischen- `SKShader.CreateLinearGradient` Methode zugewiesen. Die fünf Argumente lauten wie folgt:
 
-- Der Ausgangspunkt des Farbverlaufs entspricht, hier auf der linken oberen Ecke des Rechtecks festgelegt.
-- Der Endpunkt des Farbverlaufs entspricht, hier auf der unteren rechten Ecke des Rechtecks festgelegt.
-- Ein Array von zwei oder mehr Farben, die bei der Farbverlauf beitragen
-- Ein Array von `float` Werten, das die relative Position der Farben in der Farbverlaufslinie angibt.
-- Ein Member der [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) Enumeration, die angibt, wie sich der Farbverlauf über die Enden der Farbverlaufslinie hinaus verhält.
+- Der Startpunkt des Farbverlaufs, hier auf die obere linke Ecke des Rechtecks festgelegt.
+- Der Endpunkt des Farbverlaufs, hier auf die untere rechte Ecke des Rechtecks festgelegt.
+- Ein Array aus mindestens zwei Farben, die zum Farbverlauf beitragen.
+- Ein Array von- `float` Werten, das die relative Position der Farben in der Farbverlaufslinie angibt.
+- Ein Member der- [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) Enumeration, der angibt, wie sich der Farbverlauf hinter den Enden der Farbverlaufslinie verhält.
 
-Nachdem das Gradient-Objekt erstellt wurde, zeichnet die `DrawRect`-Methode das quadratische Rechteck 300 Pixel mithilfe des `SKPaint` Objekts, das den Shader einschließt. Hier wird die Anwendung unter iOS, Android und die universelle Windows-Plattform (UWP) ausgeführt:
+Nachdem das Gradient-Objekt erstellt wurde, `DrawRect` zeichnet die Methode das quadratische Rechteck 300 Pixel mithilfe des `SKPaint` Objekts, das den Shader einschließt. Hier wird Sie unter IOS, Android und der universelle Windows-Plattform (UWP) ausgeführt:
 
 [![Farbverlauf (Ecke und Ecke)](linear-gradient-images/CornerToCornerGradient.png "Farbverlauf (Ecke und Ecke)")](linear-gradient-images/CornerToCornerGradient-Large.png#lightbox)
 
-Der Farbverlaufslinie wird durch die beiden Punkte, die als die ersten beiden Argumente definiert. Beachten Sie, dass diese Punkte _relativ zum Zeichenbereich und_ _nicht_ zum grafischen Objekt sind, das mit dem Farbverlauf angezeigt wird. Entlang der Farbverlaufslinie wechselt die Farbe allmählich von Rot in der oberen linken Ecke unter der unteren rechten Ecke Blau. Jede Zeile, die senkrecht zur der Farbverlaufslinie hat es sich um eine Konstante Farbe.
+Die Farbverlaufslinie wird von den beiden Punkten definiert, die als die ersten beiden Argumente angegeben sind. Beachten Sie, dass diese Punkte _relativ zum Zeichenbereich und_ _nicht_ zum grafischen Objekt sind, das mit dem Farbverlauf angezeigt wird. Entlang der Farbverlaufslinie wechselt die Farbe allmählich von rot oben links zu blau unten rechts. Jede Zeile, die in der Farbverlaufslinie senkrecht ist, weist eine Konstante Farbe auf.
 
-Das Array der `float` Werte, die als viertes Argument angegeben sind, hat eine eins-zu-eins-Entsprechung mit dem Array von Farben. Die Werte geben die relative Position entlang der Farbverlaufslinie, in denen diese Farben auftreten. Der Wert 0 bedeutet, dass `Red` am Anfang der Farbverlaufslinie auftritt, und 1 bedeutet, dass `Blue` am Ende der Zeile auftritt. Die Zahlen müssen aufsteigend sein und müssen im Bereich von 0 bis 1. Wenn sie in diesem Bereich nicht sind, werden sie in diesem Bereich werden angepasst.
+Das Array von `float` Werten, die als viertes Argument angegeben sind, hat eine eins-zu-eins-Entsprechung mit dem Array von Farben. Die Werte geben die relative Position entlang der Farbverlaufslinie an, in der diese Farben vorkommen. Hier bedeutet das 0, dass `Red` am Anfang der Farbverlaufslinie auftritt, und 1 bedeutet, dass `Blue` am Ende der Zeile auftritt. Die Zahlen müssen aufsteigend sein und müssen im Bereich zwischen 0 und 1 liegen. Wenn Sie sich nicht in diesem Bereich befinden, werden Sie so angepasst, dass Sie in diesem Bereich liegen.
 
-Die beiden Werte im Array können auf einen anderen Wert als 0 und 1 festgelegt werden. Versuchen Sie Folgendes:
+Die beiden Werte im-Array können auf einen anderen Wert als 0 und 1 festgelegt werden. Testen Sie Folgendes:
 
 ```csharp
 new float[] { 0.25f, 0.75f }
 ```
 
-Jetzt ist die gesamte erste Quartal der Farbverlaufslinie reines Rot, und das letzte Quartal ist reine Blau. Die Kombination von Red Team und Blue ist auf der zentrale Teil der Farbverlaufslinie beschränkt.
+Nun ist das gesamte erste Quartal der Farbverlaufslinie rein rot, und das letzte Quartal ist rein blau. Die Mischung aus rot und blau ist auf die zentrale Hälfte der Farbverlaufslinie beschränkt.
 
-Im Allgemeinen sollten Sie diese Positionswerte gleichermaßen von 0 auf 1 Leerzeichen. Wenn dies der Fall ist, können Sie einfach `null` als viertes Argument bereitstellen, um `CreateLinearGradient`.
+Im Allgemeinen sollten Sie diese Positionswerte gleichmäßig zwischen 0 und 1 platzieren. Wenn dies der Fall ist, können Sie einfach `null` als viertes Argument für angeben `CreateLinearGradient` .
 
-Obwohl diese Farbverlauf zwischen beiden Ecken des Rechtecks quadratischen 300 Pixel definiert ist, ist es nicht auf dieses Rechteck ausfüllen beschränkt. Die **Farbverlaufs Seite "Corner-to-Corner** " enthält zusätzlichen Code, der auf tippen oder Mausklicks auf der Seite antwortet. Das `drawBackground` Feld wird zwischen `true` und `false` bei jedem tippen ein-und ausgeschaltet. Wenn der Wert `true`ist, verwendet der `PaintSurface` Handler dasselbe `SKPaint` Objekt, um den gesamten Zeichenbereich auszufüllen, und zeichnet dann ein schwarzes Rechteck, das das kleinere Rechteck angibt: 
+Obwohl dieser Farbverlauf zwischen zwei Ecken des quadratischen Rechtecks 300 Pixel definiert ist, ist es nicht darauf beschränkt, dieses Rechteck zu füllen. Die **Farbverlaufs Seite "Corner-to-Corner** " enthält zusätzlichen Code, der auf tippen oder Mausklicks auf der Seite antwortet. Das `drawBackground` Feld wird zwischen `true` und mit jedem tippen ein-und ausgeschaltet `false` . Wenn der Wert ist `true` , verwendet der `PaintSurface` Handler das gleiche `SKPaint` -Objekt, um den gesamten Zeichenbereich auszufüllen, und zeichnet dann ein schwarzes Rechteck, das das kleinere Rechteck angibt: 
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -151,19 +154,19 @@ public class CornerToCornerGradientPage : ContentPage
 }
 ```
 
-Hier ist, was Sie sehen werden, nach dem Tippen auf dem Bildschirm:
+Nach dem Tippen auf den Bildschirm sehen Sie Folgendes:
 
 [![Farbverlauf von Ecke zu Ecke voll](linear-gradient-images/CornerToCornerGradientFull.png "Farbverlauf von Ecke zu Ecke voll")](linear-gradient-images/CornerToCornerGradientFull-Large.png#lightbox)
 
-Beachten Sie, dass der Farbverlauf in dem gleichen Muster über die Punkte, die Definition der Farbverlaufslinie wiederholt. Diese Wiederholung tritt auf, weil das letzte Argument für `CreateLinearGradient` `SKShaderTileMode.Repeat`ist. (Sie müssen die anderen Optionen in Kürze sehen.)
+Beachten Sie, dass sich der Farbverlauf im gleichen Muster wiederholt, als die Punkte, die die Verlaufs Linie definieren. Diese Wiederholung tritt auf, weil das letzte Argument für `CreateLinearGradient` ist `SKShaderTileMode.Repeat` . (In Kürze werden die anderen Optionen angezeigt.)
 
-Beachten Sie außerdem, dass die Punkte, die Sie mithilfe der Farbverlaufslinie angeben nicht eindeutig sind. Zeilen, die senkrecht zur der Farbverlaufslinie sind haben die gleiche Farbe, daher gibt es eine unendliche Anzahl von Farbverlauf Zeilen, die Sie für die gleiche Auswirkung angeben können. Beispielsweise können bei der ein Rechteck mit einem horizontalen Farbverlauf zu füllen, Sie angeben der oberen linken und rechten oberen Ecken oder den unteren linken und rechten unteren Ecken oder beliebigen zwei Punkten, die selbst und parallel zur diese Zeilen sind.
+Beachten Sie auch, dass die Punkte, mit denen Sie die Farbverlaufslinie angeben, nicht eindeutig sind. Zeilen, die in der Farbverlaufslinie senkrecht sind, haben die gleiche Farbe, daher gibt es eine unendliche Anzahl von Farbverlaufs Linien, die Sie für denselben Effekt angeben können. Wenn Sie z. b. ein Rechteck mit einem horizontalen Farbverlauf füllen, können Sie die oberen linken und oberen rechten Ecken oder die unteren linken und unteren rechten Ecken oder alle zwei Punkte angeben, die auch mit und parallel zu diesen Zeilen sind.
 
-## <a name="interactively-experiment"></a>Interaktives experimentieren.
+## <a name="interactively-experiment"></a>Interaktiv experimentieren
 
-Sie können interaktiv mit linearen Farbverläufen mit der interaktiven Seite für den **linearen Farbverlauf** experimentieren. Auf dieser Seite wird die `InteractivePage`-Klasse verwendet, die im Artikel [**drei Methoden zum Zeichnen eines Bogens**](../../curves/arcs.md)vorgestellt wurde. `InteractivePage` behandelt [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) Ereignisse, um eine Sammlung von `TouchPoint` Objekten zu verwalten, die Sie mit den Fingern oder der Maus bewegen können.
+Sie können interaktiv mit linearen Farbverläufen mit der interaktiven Seite für den **linearen Farbverlauf** experimentieren. Diese Seite verwendet die-Klasse, die `InteractivePage` im Artikel [**drei Methoden zum Zeichnen eines Bogens**](../../curves/arcs.md)vorgestellt wurde. `InteractivePage` behandelt [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) Ereignisse, um eine Auflistung von Objekten zu verwalten `TouchPoint` , die Sie mit den Fingern oder der Maus bewegen können.
 
-Die XAML-Datei fügt die `TouchEffect` an ein übergeordnetes Element des `SKCanvasView` an und enthält außerdem eine `Picker`, die Ihnen ermöglicht, eines der drei Member der [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) -Enumeration auszuwählen:
+Die XAML-Datei fügt das `TouchEffect` an ein übergeordnetes Element von an `SKCanvasView` und enthält außerdem eine, mit der `Picker` Sie eines der drei Member der- [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) Enumeration auswählen können:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -211,7 +214,7 @@ Die XAML-Datei fügt die `TouchEffect` an ein übergeordnetes Element des `SKCan
 </local:InteractivePage>
 ```
 
-Der Konstruktor in der Code-Behind-Datei erstellt zwei `TouchPoint`-Objekten für die Start-und Endpunkte des linearen Farbverlaufs. Der `PaintSurface`-Handler definiert ein Array aus drei Farben (für einen Farbverlauf von rot zu grün bis blau) und ruft die aktuelle `SKShaderTileMode` aus dem `Picker`ab:
+Der Konstruktor in der Code-Behind-Datei erstellt zwei `TouchPoint` -Objekte für den Start-und Endpunkt des linearen Farbverlaufs. Der `PaintSurface` Handler definiert ein Array aus drei Farben (für einen Farbverlauf von rot zu grün bis blau) und ruft den aktuellen `SKShaderTileMode` von der ab `Picker` :
 
 ```csharp
 public partial class InteractiveLinearGradientPage : InteractivePage
@@ -266,9 +269,9 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 }
 ```
 
-Der `PaintSurface` Handler erstellt das `SKShader`-Objekt aus allen diesen Informationen und verwendet es, um den gesamten Zeichenbereich zu färben. Das Array von `float` Werten ist auf `null`festgelegt. Drei Farben gleich sein soll, würden Sie andernfalls diesen Parameter in ein Array mit den Werten 0, 0,5 und 1 festlegen.
+Der `PaintSurface` Handler erstellt das `SKShader` Objekt aus allen diesen Informationen und verwendet es, um den gesamten Zeichenbereich zu färben. Das Array von- `float` Werten wird auf festgelegt `null` . Wenn Sie andernfalls drei Farben gleichzeitig angeben möchten, legen Sie diesen Parameter auf ein Array mit den Werten 0, 0,5 und 1 fest.
 
-Der Großteil des `PaintSurface` Handlers ist für das Anzeigen von mehreren Objekten vorgesehen: die Berührungspunkte als Gliederungs Kreise, die Farbverlaufslinie und die Linien, die senkrecht zu den Farbverlaufs Linien an den Berührungspunkten stehen:
+Der Großteil des `PaintSurface` Handlers ist für das Anzeigen mehrerer Objekte vorgesehen: die Berührungspunkte als Gliederungs Kreise, die Farbverlaufslinie und die Linien, die senkrecht zu den Farbverlaufs Linien an den Berührungspunkten stehen:
 
 ```csharp
 public partial class InteractiveLinearGradientPage : InteractivePage
@@ -322,23 +325,23 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 }
 ```
 
-Das Herstellen einer Verbindung der beiden Touchpoints Farbverlaufslinie ist einfach zu zeichnen, aber die senkrecht Zeilen benötigen einige weitere Aufgaben. Der Farbverlaufslinie wird konvertiert in einen Vektor normalisiert, um eine Länge von einer Einheit haben und dann um 90 Grad gedreht. Diesem Vektor erhält anschließend eine Länge von 200 Pixel. Es wird zum Zeichnen von vier Zeilen, die aus der Touch-Punkte senkrecht zur der Farbverlaufslinie sein.
+Die Farbverlaufslinie, die die beiden Touchpoints verbindet, ist leicht zu zeichnen, aber die senkrechten Linien erfordern etwas mehr Arbeit. Die Farbverlaufslinie wird in einen Vektor konvertiert, normalisiert, um eine Länge von einer Einheit zu haben, und wird dann um 90 Grad gedreht. Dieser Vektor erhält dann eine Länge von 200 Pixeln. Es wird verwendet, um vier Linien zu zeichnen, die sich von den Berührungspunkten bis zu der Farbverlaufslinie erstrecken.
 
-Die senkrecht Zeilen übereinstimmen, mit dem Anfang und Ende des Farbverlaufs. Was über diese Zeilen hinausgeht, hängt von der Einstellung der `SKShaderTileMode`-Enumeration ab:
+Die senkrechten Zeilen stimmen mit dem Anfang und dem Ende des Farbverlaufs überein. Was über diese Zeilen hinausgeht, hängt von der Einstellung der- `SKShaderTileMode` Enumeration ab:
 
 [![Interaktiver linearer Farbverlauf](linear-gradient-images/InteractiveLinearGradient.png "Interaktiver linearer Farbverlauf")](linear-gradient-images/InteractiveLinearGradient-Large.png#lightbox)
 
-Die drei Screenshots zeigen die Ergebnisse der drei verschiedenen Werte [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode). Der IOS-Screenshot zeigt `SKShaderTileMode.Clamp`an, der nur die Farben auf den Rand des Farbverlaufs erweitert. Die Option `SKShaderTileMode.Repeat` im Android-Bildschirmfoto zeigt, wie das Farbverlaufs Muster wiederholt wird. Die Option `SKShaderTileMode.Mirror` im UWP-Screenshot wiederholt auch das Muster. das Muster wird jedoch jedes Mal umgekehrt, was zu keinen Farb Diskontinuitäten führt.
+Die drei Screenshots zeigen die Ergebnisse der drei verschiedenen Werte von [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) . Der IOS-Screenshot zeigt `SKShaderTileMode.Clamp` , dass nur die Farben am Rand des Farbverlaufs erweitert werden. Die- `SKShaderTileMode.Repeat` Option im Android-Bildschirmfoto zeigt, wie das Farbverlaufs Muster wiederholt wird. Die- `SKShaderTileMode.Mirror` Option im UWP-Screenshot wiederholt auch das-Muster, das Muster wird jedoch jedes Mal umgekehrt, was zu keinen Farb Diskontinuitäten führt.
 
 ## <a name="gradients-on-gradients"></a>Farbverläufe in Farbverläufen
 
-Die `SKShader`-Klasse definiert keine öffentlichen Eigenschaften oder Methoden mit Ausnahme von `Dispose`. Die `SKShader` Objekte, die von den statischen Methoden erstellt wurden, sind daher unveränderlich. Auch wenn Sie den gleichen Farbverlauf für zwei verschiedene Objekte verwenden, ist es wahrscheinlich ist, Sie sollten den Farbverlauf weichen geringfügig ab. Zu diesem Zweck müssen Sie ein neues `SKShader` Objekt erstellen.
+Die- `SKShader` Klasse definiert keine öffentlichen Eigenschaften oder Methoden mit Ausnahme von `Dispose` . Die `SKShader` Objekte, die von den statischen Methoden erstellt wurden, sind daher unveränderlich. Auch wenn Sie den gleichen Farbverlauf für zwei verschiedene Objekte verwenden, ist es wahrscheinlich, dass Sie den Farbverlauf leicht verändern möchten. Zu diesem Zweck müssen Sie ein neues- `SKShader` Objekt erstellen.
 
 Auf der **Textseite Farbverlauf** werden Text und ein Hintergrund angezeigt, die beide mit ähnlichen Farbverläufen gefärbt sind:
 
 [![Farbverlaufs Text](linear-gradient-images/GradientText.png "Farbverlaufs Text")](linear-gradient-images/GradientText-Large.png#lightbox)
 
-Der einzige Unterschied in der Farbverläufe sind die Start- und Endpunkt. Zum Anzeigen von Text verwendeten Farbverlaufs basiert auf zwei Punkten auf die Ecken des umschließenden Rechtecks für den Text. Für den Hintergrund basiert die beiden Punkte auf den gesamten Zeichenbereich. Der Code lautet wie folgt:
+Die einzigen Unterschiede in den Farbverläufen sind Start-und Endpunkte. Der zum Anzeigen von Text verwendete Farbverlauf basiert auf zwei Punkten in den Ecken des umgebenden Rechtecks für den Text. Für den Hintergrund basieren die beiden Punkte auf dem gesamten Zeichenbereich. Der Code lautet wie folgt:
 
 ```csharp
 public class GradientTextPage : ContentPage
@@ -409,25 +412,25 @@ public class GradientTextPage : ContentPage
 }
 ```
 
-Die `Shader`-Eigenschaft des `SKPaint` Objekts wird zuerst festgelegt, um einen Farbverlauf zum Abdecken des Hintergrunds anzuzeigen. Die Farbverlauf-Punkte werden auf der oberen linken und rechten unteren Ecken der Leinwand festgelegt.
+Die- `Shader` Eigenschaft des- `SKPaint` Objekts wird zuerst festgelegt, um einen Farbverlauf zum Abdecken des Hintergrunds anzuzeigen. Die Farbverlaufs Punkte werden auf die oberen linken und unteren rechten Ecke des Zeichen Bereichs festgelegt.
 
-Im Code wird die `TextSize`-Eigenschaft des `SKPaint`-Objekts festgelegt, sodass der Text bei 90% der Breite des Zeichen Bereichs angezeigt wird. Die Text Begrenzungen werden verwendet, um `xText` und `yText` Werte zu berechnen, die an die `DrawText`-Methode übergeben werden, um den Text zu zentrieren.
+Der Code legt die- `TextSize` Eigenschaft des- `SKPaint` Objekts fest, sodass der Text bei 90% der Breite des Zeichen Bereichs angezeigt wird. Die Text Begrenzungen werden verwendet, um Werte und Werte zu berechnen, die an `xText` `yText` die Methode übergeben werden, `DrawText` um den Text zu zentrieren.
 
-Die Farbverlaufs Punkte für den zweiten `CreateLinearGradient`-Aufrufwert müssen jedoch in der oberen linken und unteren rechten Ecke des Texts relativ zum Zeichenbereich liegen, wenn er angezeigt wird. Dies wird erreicht, indem das `textBounds` Rechteck um denselben `xText` und `yText` Werte verschoben wird:
+Die Farbverlaufs Punkte für den zweiten `CreateLinearGradient` -Befehl müssen jedoch auf die linke obere und untere rechte Ecke des Texts relativ zum Zeichenbereich verweisen, wenn er angezeigt wird. Dies wird erreicht, indem das `textBounds` Rechteck um denselben `xText` -Wert und einen-Wert verschoben wird `yText` :
 
 ```csharp
 textBounds.Offset(xText, yText);
 ```
 
-Nachdem der oberen linken und rechten unteren Ecken des Rechtecks zum Festlegen der Start- und Endpunkt des Farbverlaufs verwendet werden können.
+Nun können die oberen linken und unteren rechten Ecke des Rechtecks verwendet werden, um die Anfangs-und Endpunkte des Farbverlaufs festzulegen.
 
 ## <a name="animating-a-gradient"></a>Animieren eines Farbverlaufs
 
-Es gibt mehrere Möglichkeiten, die einen Farbverlauf zu animieren. Ein Ansatz darin, die Start- und Endpunkt zu animieren. Die Seite für die **Verlaufs Animation** verschiebt die zwei Punkte in einem Kreis, der auf den Zeichenbereich zentriert ist. Der Radius der diesen Vertrauenskreis aufgenommen wird, die Hälfte der Breite oder Höhe des Zeichenbereichs, welcher Wert kleiner ist. Die Start-und Endpunkte sind in diesem Kreis gegenseitig zueinander, und der Farbverlauf wechselt von weiß zu schwarz mit einem `Mirror` Kachel Modus:
+Es gibt mehrere Möglichkeiten, einen Farbverlauf zu animieren. Ein Ansatz besteht darin, die Start-und Endpunkte zu animieren. Die Seite für die **Verlaufs Animation** verschiebt die zwei Punkte in einem Kreis, der auf den Zeichenbereich zentriert ist. Der RADIUS dieses Kreises entspricht der Hälfte der Breite oder Höhe des Canvas, je nachdem, welcher Wert kleiner ist. Die Start-und Endpunkte sind in diesem Kreis gegenseitig zueinander, und der Farbverlauf wechselt von weiß zu schwarz mit einem `Mirror` Kachel Modus:
 
 [![Farbverlaufs Animation](linear-gradient-images/GradientAnimation.png "Farbverlaufs Animation")](linear-gradient-images/GradientAnimation-Large.png#lightbox)
 
-Der-Konstruktor erstellt die `SKCanvasView`. Die Methoden `OnAppearing` und `OnDisappearing` behandeln die Animations Logik:
+Der-Konstruktor erstellt `SKCanvasView` . Die `OnAppearing` - `OnDisappearing` Methode und die-Methode behandeln die Animations Logik:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -475,9 +478,9 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-Mit der `OnTimerTick`-Methode wird ein `angle` Wert berechnet, der alle drei Sekunden zwischen 0 und 2 (null) animiert wird. 
+Die- `OnTimerTick` Methode berechnet einen- `angle` Wert, der alle drei Sekunden zwischen 0 und 2 Zeichen animiert wird. 
 
-Hier ist eine Möglichkeit, um den Farbverlauf zwei Punkten zu berechnen. Ein `SKPoint` Wert mit dem Namen `vector` wird so berechnet, dass er von der Mitte des Zeichen Bereichs auf einen Punkt auf dem Radius des Kreises erweitert wird. Die Richtung dieses Vektors basiert auf den Werten Sinus und Cosinus des Winkels. Die beiden umgekehrter Farbverlauf Punkte werden dann berechnet: ein Punkt wird berechnet, indem Sie diesem Vektor vom Mittelpunkt subtrahiert und weiterer Punkt wird berechnet, indem Sie den Mittelpunkt den Vektor hinzugefügt:
+Hier ist eine Möglichkeit, die zwei Farbverlaufs Punkte zu berechnen. Ein- `SKPoint` Wert `vector` mit dem Namen wird so berechnet, dass er von der Mitte des Zeichen Bereichs bis zu einem Punkt auf dem Radius des Kreises erweitert wird. Die Richtung dieses Vektors basiert auf dem Sinus-und Kosinus-Wert des Winkels. Anschließend werden die beiden umgekehrten Farbverlaufs Punkte berechnet: ein Punkt wird berechnet, indem der Vektor vom Mittelpunkt subtrahieren wird, und ein anderer Punkt wird berechnet, indem der Vektor dem Mittelpunkt hinzugefügt wird:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -511,7 +514,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-Ein etwas anderer Ansatz ist weniger Code erforderlich. Bei diesem Ansatz wird die [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladungs Methode mit einer Matrix Transformation als letztes Argument verwendet. Diese Vorgehensweise ist die Version im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel:
+Ein etwas anderer Ansatz erfordert weniger Code. Bei diesem Ansatz wird die [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladungs Methode mit einer Matrix Transformation als letztes Argument verwendet. Diese Vorgehensweise ist die Version im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -542,13 +545,13 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-Wenn die Breite des Zeichen Bereichs kleiner ist als die Höhe, werden die zwei Farbverlaufs Punkte auf (0,0) und (`info.Width`, 0) festgelegt. Die Drehung der Drehung, die als letztes Argument an `CreateLinearGradient` übertragen wird, dreht diese beiden Punkte praktisch um den Mittelpunkt des Bildschirms.
+Wenn die Breite des Zeichen Bereichs kleiner ist als die Höhe, werden die zwei Farbverlaufs Punkte auf (0,0) und ( `info.Width` , 0) festgelegt. Die Drehungs Transformation, die als letztes Argument übertragen wird, um `CreateLinearGradient` diese beiden Punkte in der Mitte des Bildschirms zu drehen.
 
-Beachten Sie, dass, wenn der Winkel 0 ist, es keine Drehung gibt, und die zwei Farbverlauf der oberen linken und rechten oberen Ecken des Zeichenbereichs. Diese Punkte sind nicht die gleichen gradientenpunkte, die berechnet wurden, wie im vorherigen `CreateLinearGradient`-Aufrufe gezeigt. Diese Punkte sind jedoch _parallel_ zur horizontalen Farbverlaufslinie, die den Mittelpunkt der Canvas schneidet, und führen zu einem identischen Farbverlauf.
+Beachten Sie Folgendes: Wenn der Winkel 0 ist, gibt es keine Drehung, und die zwei Farbverlaufs Punkte sind die oberen linken und oberen rechten Ecke der Canvas. Diese Punkte sind nicht die gleichen Farbverlaufs Punkte, wie im vorherigen-Befehl gezeigt `CreateLinearGradient` . Diese Punkte sind jedoch _parallel_ zur horizontalen Farbverlaufslinie, die den Mittelpunkt der Canvas schneidet, und führen zu einem identischen Farbverlauf.
 
 **Regenbogen Verlauf**
 
-Die Seite " **Regenbogen Verlauf** " zeichnet einen Regenbogen Bereich von der oberen linken Ecke des Zeichen Bereichs in der unteren rechten Ecke. Aber diese Rainbow Farbverlauf nicht wie eine echte Rainbow. Direkt, anstatt gekrümmt ist, aber sie basiert auf acht HSL (Farbton-Sättigung-Helligkeit)-Farben, die durch Durchlaufen der Hue-Werte zwischen 0 und 360 bestimmt werden:
+Die Seite " **Regenbogen Verlauf** " zeichnet einen Regenbogen Bereich von der oberen linken Ecke des Zeichen Bereichs in der unteren rechten Ecke. Dieser Regenbogen Farbverlauf ist jedoch nicht mit einem echten Regenbogen Verlauf vergleichbar. Es ist nicht gekrümmte, sondern basiert auf acht Farben (Hue-Sättigung-luminosity), die durch das Durchlaufen der Hue-Werte zwischen 0 und 360 bestimmt werden:
 
 ```csharp
 SKColor[] colors = new SKColor[8];
@@ -559,7 +562,7 @@ for (int i = 0; i < colors.Length; i++)
 }
 ```
 
-Dieser Code ist Teil des unten gezeigten `PaintSurface` Handlers. Der Handler beginnt mit dem Erstellen eines Pfads, das ein Polygon sechsseitiger definiert, die an der unteren rechten Ecke aus der linken oberen Ecke des Zeichenbereichs erweitert:
+Dieser Code ist Teil des `PaintSurface` unten gezeigten Handlers. Der Handler erstellt zunächst einen Pfad, der ein sechsseitiges Polygon definiert, das sich von der oberen linken Ecke des Zeichen Bereichs bis zur unteren rechten Ecke erstreckt:
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -617,13 +620,13 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Die zwei Farbverlaufs Punkte in der `CreateLinearGradient`-Methode basieren auf zwei der Punkte, die diesen Pfad definieren: beide Punkte befinden sich in der Nähe der oberen linken Ecke. Die erste ist, auf den oberen Rand des Zeichenbereichs, und die zweite ist am linken Rand des Zeichenbereichs. Das Ergebnis lautet wie folgt:
+Die zwei Farbverlaufs Punkte in der `CreateLinearGradient` Methode basieren auf zwei der Punkte, die diesen Pfad definieren: beide Punkte befinden sich in der Nähe der oberen linken Ecke. Der erste befindet sich am oberen Rand des Zeichen Bereichs, und der zweite befindet sich am linken Rand der Canvas. Das Ergebnis lautet wie folgt:
 
 [![Fehler beim Regenbogen Verlauf](linear-gradient-images/RainbowGradientFaulty.png "Fehler beim Regenbogen Verlauf")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 
-Dies ist eine interessante Image, aber es ist nicht sehr von der Absicht. Das Problem ist, dass bei einen linearen Farbverlauf zu erstellen, die Zeilen der Konstante Farbe senkrecht zur der Farbverlaufslinie sind. Der Farbverlaufslinie basiert auf dem, in dem in der Abbildung berührt die oberen und linken Rand, und diese Zeile in der Regel nicht senkrecht an den Rändern des in der Abbildung, die auf der unteren rechten Ecke erweitern. Dieser Ansatz funktioniert nur, wenn im Zeichenbereich quadratischen wurden.
+Dabei handelt es sich um ein interessantes Bild, aber es ist nicht wirklich beabsichtigt. Das Problem besteht darin, dass beim Erstellen eines linearen Farbverlaufs die Linien der Konstanten Farbe senkrecht zur Farbverlaufslinie sind. Die Farbverlaufslinie basiert auf den Punkten, an denen die Figur die obere und linke Seite berührt, und diese Linie ist im Allgemeinen nicht senkrecht zu den Rändern der Abbildung, die sich auf die untere rechte Ecke ausdehnen. Dieser Ansatz funktioniert nur, wenn die Canvas quadratisch war.
 
-Um eine ordnungsgemäße Rainbow Farbverlauf zu erstellen, muss der Farbverlaufslinie senkrecht an den Rand des den Regenbogen hervorgebracht. Dies ist eine komplexere Berechnung. Ein Vektor muss definiert werden, die parallel zu der langen Seite des in der Abbildung ist. Der Vektor ist um 90 Grad gedreht, sodass es senkrecht an dieser Seite ist. Anschließend wird die Breite der Abbildung durch Multiplizieren mit `rainbowWidth`verlängert. Die beiden Farbverlauf Punkte auf einen Punkt im Zweifelsfall in der Abbildung werden berechnet, und, sowie den Vektor verweisen. Dies ist der Code, der auf der Seite " **Regenbogen Verlauf** " im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel angezeigt wird:
+Um einen korrekten Regenbogen Farbverlauf zu erstellen, muss die Farbverlaufslinie senkrecht zum Rand des Regenbogen Bereichs liegen. Dabei handelt es sich um eine detailliertere Berechnung. Es muss ein Vektor definiert werden, der parallel zur langen Seite der Abbildung ist. Der Vektor wird um 90 Grad gedreht, sodass er senkrecht zu dieser Seite ist. Anschließend wird Sie durch Multiplizieren von mit der Breite der Abbildung verlängert `rainbowWidth` . Die zwei Farbverlaufs Punkte werden basierend auf einem Punkt auf der Seite der Abbildung und diesem Punkt plus dem Vektor berechnet. Dies ist der Code, der auf der Seite " **Regenbogen Verlauf** " im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel angezeigt wird:
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -672,15 +675,15 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Jetzt sind die Rainbow Farben in der Abbildung ausgerichtet:
+Nun werden die Regenbogenfarben an der Abbildung ausgerichtet:
 
 [![Regenbogen Verlauf](linear-gradient-images/RainbowGradient.png "Regenbogen Verlauf")](linear-gradient-images/RainbowGradient-Large.png#lightbox)
 
 **Unendlich Farben**
 
-Ein Regenbogen Farbverlauf wird auch auf der Seite **unendlich Farben** verwendet. Diese Seite zeichnet ein Unendlichkeitszeichen mithilfe eines Pfad Objekts, das im Artikel [**drei Typen von Bézier-Kurven**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs)beschrieben wird. Das Bild wird dann mit einem Farbverlauf animierte Rainbow gefärbt, der kontinuierlich auf das Bild führt ein Sweep.
+Ein Regenbogen Farbverlauf wird auch auf der Seite **unendlich Farben** verwendet. Diese Seite zeichnet ein Unendlichkeitszeichen mithilfe eines Pfad Objekts, das im Artikel [**drei Typen von Bézier-Kurven**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs)beschrieben wird. Das Bild wird dann mit einem animierten Regenbogen Farbverlauf gefärbt, der fortlaufend über das Bild läuft.
 
-Der-Konstruktor erstellt das `SKPath`-Objekt, das das Unendlichkeitszeichen beschreibt. Nachdem der Pfad erstellt wurde, kann der Konstruktor auch die rechteckigen Grenzen des Pfads abrufen. Anschließend wird ein Wert mit dem Namen `gradientCycleLength`berechnet. Wenn ein Farbverlauf auf der oberen linken und der unteren rechten Ecke des `pathBounds` Rechtecks basiert, ist dieser `gradientCycleLength` Wert die horizontale Gesamtbreite des Farbverlaufs Musters:
+Der-Konstruktor erstellt das-Objekt, das `SKPath` das Unendlichkeitszeichen beschreibt. Nachdem der Pfad erstellt wurde, kann der Konstruktor auch die rechteckigen Begrenzungen des Pfads abrufen. Anschließend wird ein Wert mit dem Namen berechnet `gradientCycleLength` . Wenn ein Farbverlauf auf der oberen linken und unteren rechten Ecke des `pathBounds` Rechtecks basiert, ist dieser `gradientCycleLength` Wert die horizontale Gesamtbreite des Farbverlaufs Musters:
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -733,9 +736,9 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-Der Konstruktor erstellt auch das `colors` Array für den Regenbogen Wert und das `SKCanvasView`-Objekt.
+Der Konstruktor erstellt auch das `colors` Array für den Regenbogen und das- `SKCanvasView` Objekt.
 
-Durch außer Kraft setzungen der Methoden `OnAppearing` und `OnDisappearing` wird der Aufwand für die Animation verursacht. Mit der `OnTimerTick`-Methode wird das `offset` Feld von 0 bis `gradientCycleLength` alle zwei Sekunden animiert:
+Über schreibungen der `OnAppearing` -Methode und der- `OnDisappearing` Methode führen den Aufwand für die Animation aus. Die- `OnTimerTick` Methode animiert das `offset` Feld von 0 bis `gradientCycleLength` alle zwei Sekunden:
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -777,9 +780,9 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-Zum Schluss rendert der `PaintSurface` Handler das Unendlichkeitszeichen. Da der Pfad negative und positive Koordinaten im Zusammenhang mit einem Mittelpunkt von (0,0) enthält, wird eine `Translate` Transformation im Zeichenbereich verwendet, um Sie in den Mittelpunkt zu verschieben. Auf die Transform-Transformation folgt eine `Scale` Transformation, die einen Skalierungsfaktor anwendet, der das Unendlichkeitszeichen so groß wie möglich macht, während gleichzeitig innerhalb von 95% der Breite und Höhe der Canvas bleibt. 
+Zum Schluss `PaintSurface` rendert der Handler das Unendlichkeitszeichen. Da der Pfad negative und positive Koordinaten für einen Mittelpunkt von (0,0) enthält, `Translate` wird eine Transformation auf der Canvas verwendet, um Sie in den Mittelpunkt zu verschieben. Auf die Transform-Transformation folgt eine `Scale` Transformation, die einen Skalierungsfaktor anwendet, der das Unendlichkeitszeichen so groß wie möglich macht, während gleichzeitig innerhalb von 95% der Breite und Höhe der Canvas bleibt. 
 
-Beachten Sie, dass die `STROKE_WIDTH` Konstante der Breite und Höhe des umgebenden Rechtecks für den Pfad hinzugefügt wird. Der Pfad wird Strichen gezeichnet werden mit einer Zeile mit diese Breite, damit die Größe des gerenderten unendlich, durch die halbe Breite auf allen vier Seiten erhöht wird:
+Beachten Sie, dass die `STROKE_WIDTH` Konstante der Breite und Höhe des umgebenden Rechtecks für den Pfad hinzugefügt wird. Der Pfad wird mit einer Zeile dieser Breite gezeichnet, sodass die Größe der gerenderten unendlich Größe um die Hälfte der Breite auf allen vier Seiten angehoben wird:
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -818,25 +821,25 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-Sehen Sie sich die Punkte an, die als die ersten beiden Argumente von `SKShader.CreateLinearGradient`werden. Diese Punkte basieren auf den ursprünglichen Pfad umschließenden Rechtecks. Der erste Punkt ist (&ndash;250, &ndash;100) und der zweite Punkt (250, 100). Interne SkiaSharp, werden diese Punkte für die aktuelle Canvas-Transformation unterzogen, damit sie richtig mit den angezeigten unendlich auszurichten.
+Sehen Sie sich die Punkte an, die als die ersten beiden Argumente von vergangen sind `SKShader.CreateLinearGradient` . Diese Punkte basieren auf dem ursprünglichen Pfad des umgebenden Rechtecks. Der erste Punkt ist ( &ndash; 250, &ndash; 100), und der zweite ist (250, 100). Intern in skiasharp, werden diese Punkte der aktuellen Canvas-Transformation unterzogen, sodass Sie ordnungsgemäß mit dem angezeigten unendlichen Zeichen übereinstimmen.
 
-Ohne das letzte Argument für `CreateLinearGradient`wird ein Regenbogen Farbverlauf angezeigt, der von der linken oberen Ecke des unendlichen Zeichens nach unten rechts reicht. (Tatsächlich erweitert der Farbverlauf von der oberen linken Ecke auf der unteren rechten Ecke des umschließenden Rechtecks. Das gerenderte Unendlichkeitszeichen ist größer als das umgebende Rechteck um die Hälfte des `STROKE_WIDTH` Werts auf allen Seiten. Da der Farbverlauf am Anfang und am Ende rot ist und der Farbverlauf mit `SKShaderTileMode.Repeat`erstellt wird, ist der Unterschied nicht erkennbar.)
+Ohne das letzte Argument für `CreateLinearGradient` sehen Sie einen Regenbogen Farbverlauf, der von der linken oberen Ecke des unendlichen Zeichens nach unten rechts reicht. (Tatsächlich erstreckt sich der Farbverlauf von der oberen linken Ecke bis zur unteren rechten Ecke des umgebenden Rechtecks. Das gerenderte Unendlichkeitszeichen ist größer als das umgebende Rechteck um die Hälfte des `STROKE_WIDTH` Werts auf allen Seiten. Da der Farbverlauf am Anfang und am Ende rot ist und der Farbverlauf mit erstellt wird `SKShaderTileMode.Repeat` , ist der Unterschied nicht erkennbar.)
 
-Mit dem letzten Argument für `CreateLinearGradient`wird das Farbverlaufs Muster fortlaufend über das Bild hinweg durchgängig:
+Mit dem letzten Argument für `CreateLinearGradient` durch geht das Farbverlaufs Muster fortlaufend über das Bild:
 
 [![Unendlich Farben](linear-gradient-images/InfinityColors.png "Unendlich Farben")](linear-gradient-images/InfinityColors-Large.png#lightbox)
 
-## <a name="transparency-and-gradients"></a>Transparenz und Farbverläufen
+## <a name="transparency-and-gradients"></a>Transparenz und Farbverläufe
 
-Die Farben, die bei einem Farbverlauf beitragen können Transparenz integrieren. Anstatt ein Farbverlauf, der von einer Farbe in eine andere ausgeblendet wird, kann der Farbverlauf aus einer Farbe transparent eingeblendet. 
+Die Farben, die zu einem Farbverlauf beitragen, können Transparenz einschließen. Anstelle eines Farbverlaufs, der von einer Farbe in eine andere ausgeblendet wird, kann der Farbverlauf von einer Farbe in eine transparente Farbe einblenden. 
 
-Sie können dieses Verfahren für einige interessante Effekte verwenden. Eines der klassische Beispiele zeigt eine graphische Objekt mit der Reflektion:
+Diese Technik kann für einige interessante Effekte verwendet werden. Eines der klassischen Beispiele zeigt ein grafisches Objekt mit der Reflektion:
 
 [![Reflektionstyp](linear-gradient-images/ReflectionGradient.png "Reflektionstyp")](linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-Der Text, nach unten zeigende wird mit einem Farbverlauf Farbe gefüllt, die 50 % nach oben, um am unteren Rand vollständig transparent transparent ist. Diese Ebenen der Transparenz werden alpha-Werte von 0 x 80 und 0 zugeordnet.
+Der Text, der sich auf der Vorderseite befindet, wird mit einem Farbverlauf gefärbt, der im oberen Bereich 50% transparent ist, um unten vollständig transparent zu sein. Diese Transparenz Ebene ist mit den Alpha Werten 0x80 und 0 verknüpft.
 
-Der `PaintSurface` Handler auf der Seite **Reflektionstyp** skaliert die Größe des Texts auf 90% der Breite des Zeichen Bereichs. Anschließend werden `xText`-und `yText` Werte berechnet, um den Text horizontal zentriert zu positionieren, aber auf einer Baseline zu positionieren, die der vertikalen Mitte der Seite entspricht:
+Der `PaintSurface` Handler auf der Seite **reflektiongradienten** skaliert die Größe des Texts auf 90% der Breite des Zeichen Bereichs. Anschließend `xText` `yText` werden die Werte und berechnet, um den Text horizontal zentriert zu positionieren, aber auf einer Baseline, die der vertikalen Mitte der Seite entspricht:
 
 ```csharp
 public class ReflectionGradientPage : ContentPage
@@ -904,15 +907,15 @@ public class ReflectionGradientPage : ContentPage
 }
 ```
 
-Diese `xText` und `yText` Werte sind die gleichen Werte, die verwendet werden, um den reflektierten Text im `DrawText`-aufrufen am unteren Rand des `PaintSurface` Handlers anzuzeigen. Direkt vor diesem Code sehen Sie jedoch einen aufzurufenden `Scale` Methode `SKCanvas`. Diese `Scale` Methode wird horizontal um 1 skaliert (was nichts bewirkt), aber vertikal durch &ndash;1, wodurch alle Elemente in der Mitte nach oben gedreht werden. Der Mittelpunkt der Drehung wird auf den Punkt (0, `yText`) festgelegt, wobei `yText` die vertikale Mitte der Canvas ist, die ursprünglich als `info.Height` dividiert durch 2 berechnet wurde.
+Bei diesen Werten `xText` `yText` handelt es sich um dieselben Werte, mit denen der reflektierte Text im-Befehl `DrawText` am Ende des `PaintSurface` Handlers angezeigt wird. Direkt vor diesem Code wird jedoch ein `Scale` aufrufungsmethode von angezeigt `SKCanvas` . Diese `Scale` Methode wird horizontal um 1 skaliert (was nichts bewirkt), aber vertikal durch &ndash; 1 Der Mittelpunkt der Drehung wird auf den Punkt (0, `yText` ) festgelegt, wobei `yText` die vertikale Mitte des Zeichen Bereichs ist, der ursprünglich als `info.Height` dividiert durch 2 berechnet wurde.
 
-Bedenken Sie, dass Skia Farbverlaufs verwendet, um grafische Objekte vor dem Canvas-Transformationen mit Farbe versehen. Nachdem der nicht reflektierte Text gezeichnet wurde, wird das `textBounds` Rechteck so verschoben, dass es dem angezeigten Text entspricht:
+Beachten Sie, dass Skia den Farbverlauf verwendet, um grafische Objekte vor den Canvas-Transformationen zu färben. Nachdem der nicht reflektierte Text gezeichnet wurde, `textBounds` wird das Rechteck so verschoben, dass es dem angezeigten Text entspricht:
 
 ```csharp
 textBounds.Offset(xText, yText);
 ```
 
-Der `CreateLinearGradient`-Befehl definiert einen Farbverlauf vom oberen Rand des Rechtecks bis zum unteren Rand. Der Farbverlauf liegt zwischen einem vollständig transparenten blauen (`paint.Color.WithAlpha(0)`) und einem transparenten (`paint.Color.WithAlpha(0x80)`) 50%-blau (). Die Leinwand Transformation spiegelt den Text verkehrt, damit die 50 % transparente blaue bei der Baseline beginnt und wird am oberen Rand des Texts transparent.
+Der-Befehl `CreateLinearGradient` definiert einen Farbverlauf vom oberen Rand des Rechtecks bis zum unteren Rand. Der Farbverlauf wird von einem vollständig transparenten blau ( `paint.Color.WithAlpha(0)` ) bis zu einem transparenten blauen 50% ()-Wert dargestellt `paint.Color.WithAlpha(0x80)` . Die Canvas-Transformation dreht den Text nach oben, sodass der 50-prozentige transparente blaue Bereich bei der Baseline beginnt und am oberen Rand des Texts transparent wird.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,24 +1,27 @@
 ---
-title: Searchbar-Stil unter IOS
-description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische IOS-Element nutzen, das steuert, ob eine Suchleiste einen Hintergrund hat.
-ms.prod: xamarin
-ms.assetid: 3D512DD6-078E-4BC6-926E-62BA6F4DE640
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/05/2020
-ms.openlocfilehash: 7d95a90e96f868b6d8368054659f978555bc28ac
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e02ef600af761915d05c912b586e409dd6f46b85
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532952"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137084"
 ---
 # <a name="searchbar-style-on-ios"></a>Searchbar-Stil unter IOS
 
-[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Mit diesem IOS-plattformspezifischen Steuer [`SearchBar`](xref:Xamarin.Forms.SearchBar) Element wird gesteuert, ob ein einen Hintergrund hat. Sie wird in XAML verwendet, indem die `SearchBar.SearchBarStyle` bindbare Eigenschaft auf einen Wert der- `UISearchBarStyle` Enumeration festgelegt wird:
+Mit diesem IOS-plattformspezifischen Steuerelement wird gesteuert, ob ein einen [`SearchBar`](xref:Xamarin.Forms.SearchBar) Hintergrund hat. Sie wird in XAML verwendet, indem die `SearchBar.SearchBarStyle` bindbare Eigenschaft auf einen Wert der- `UISearchBarStyle` Enumeration festgelegt wird:
 
 ```xaml
 <ContentPage ...
@@ -42,19 +45,19 @@ SearchBar searchBar = new SearchBar { Placeholder = "Enter search term" };
 searchBar.On<iOS>().SetSearchBarStyle(UISearchBarStyle.Minimal);
 ```
 
-Die `SearchBar.On<iOS>` -Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die `SearchBar.SetSearchBarStyle` -Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird verwendet, um zu steuern, [`SearchBar`](xref:Xamarin.Forms.SearchBar) ob die über einen Hintergrund verfügt. Die `UISearchBarStyle` -Enumeration bietet drei mögliche Werte:
+Die- `SearchBar.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die- `SearchBar.SetSearchBarStyle` Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird verwendet, um zu steuern, ob die [`SearchBar`](xref:Xamarin.Forms.SearchBar) über einen Hintergrund verfügt. Die- `UISearchBarStyle` Enumeration bietet drei mögliche Werte:
 
-- `Default`Gibt an, [`SearchBar`](xref:Xamarin.Forms.SearchBar) dass die den Standardstil hat. Dies ist der Standardwert der `SearchBar.SearchBarStyle` bindbare Eigenschaft.
-- `Prominent`Gibt an, [`SearchBar`](xref:Xamarin.Forms.SearchBar) dass das-Feld über einen durchlässigen Hintergrund verfügt und das Suchfeld nicht transparent ist.
-- `Minimal`Gibt an, [`SearchBar`](xref:Xamarin.Forms.SearchBar) dass das-Feld keinen Hintergrund hat und das Suchfeld durchlässig ist.
+- `Default`Gibt an, dass die [`SearchBar`](xref:Xamarin.Forms.SearchBar) den Standardstil hat. Dies ist der Standardwert der `SearchBar.SearchBarStyle` bindbare Eigenschaft.
+- `Prominent`Gibt an, dass das [`SearchBar`](xref:Xamarin.Forms.SearchBar) -Feld über einen durchlässigen Hintergrund verfügt und das Suchfeld nicht transparent ist.
+- `Minimal`Gibt an, dass das [`SearchBar`](xref:Xamarin.Forms.SearchBar) -Feld keinen Hintergrund hat und das Suchfeld durchlässig ist.
 
-Außerdem kann die `SearchBar.GetSearchBarStyle` -Methode verwendet werden, um den `UISearchBarStyle` zurückzugeben, der auf den `SearchBar`angewendet wird.
+Außerdem `SearchBar.GetSearchBarStyle` kann die-Methode verwendet werden, um den zurückzugeben `UISearchBarStyle` , der auf den angewendet wird `SearchBar` .
 
-Das Ergebnis ist, dass ein `UISearchBarStyle` angegebenes Element auf [`SearchBar`](xref:Xamarin.Forms.SearchBar)einen angewendet wird, der `SearchBar` steuert, ob die über einen Hintergrund verfügt:
+Das Ergebnis ist, dass ein angegebenes Element `UISearchBarStyle` auf einen angewendet wird [`SearchBar`](xref:Xamarin.Forms.SearchBar) , der steuert, ob die `SearchBar` über einen Hintergrund verfügt:
 
 ![Screenshot der Suchleisten Stile unter IOS](searchbar-style-images/searchbar-styles.png "Searchbar-Stile unter IOS")
 
-Die folgenden Screenshots zeigen die `UISearchBarStyle` Elemente, die [`SearchBar`](xref:Xamarin.Forms.SearchBar) auf Objekte angewendet werden `BackgroundColor` , deren-Eigenschaft festgelegt ist:
+Die folgenden Screenshots zeigen die Elemente, die `UISearchBarStyle` auf Objekte angewendet werden [`SearchBar`](xref:Xamarin.Forms.SearchBar) , deren- `BackgroundColor` Eigenschaft festgelegt ist:
 
 ![Screenshot der Searchbar-Stile mit Hintergrundfarbe unter IOS](searchbar-style-images/searchbar-background-styles.png "Searchbar-Stile mit Hintergrundfarbe unter IOS")
 

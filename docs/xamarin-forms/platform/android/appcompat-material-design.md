@@ -1,33 +1,37 @@
 ---
-title: Hinzufügen von AppCompat und Material Design
-description: In diesem Artikel wird erläutert, wie vorhandene xamarin. Forms-Android-Apps für die Verwendung von AppCompat und Material Design konvertiert werden.
-ms.prod: xamarin
-ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/27/2017
-ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+title: ''
+description: In diesem Artikel wird erläutert, wie vorhandene Xamarin.Forms Android-Apps für die Verwendung von AppCompat und Material Design konvertiert werden.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728329"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135706"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Hinzufügen von AppCompat und Material Design
 
-_Gehen Sie folgendermaßen vor, um vorhandene xamarin. Forms Android-Apps für die Verwendung von AppCompat und Material Design zu konvertieren._
+_Gehen Sie folgendermaßen vor, um vorhandene Xamarin.Forms Android-Apps zur Verwendung von AppCompat und Material Design zu konvertieren._
 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
-In diesen Anweisungen wird erläutert, wie Sie Ihre vorhandenen xamarin. Forms Android-Anwendungen aktualisieren, um die AppCompat-Bibliothek zu verwenden und Material Design in der Android-Version Ihrer xamarin. Forms-apps zu aktivieren.
+In diesen Anweisungen wird erläutert, wie Sie Ihre vorhandenen Xamarin.Forms Android-Anwendungen aktualisieren, um die AppCompat-Bibliothek zu verwenden und Material Design in der Android-Version Ihrer apps zu aktivieren Xamarin.Forms .
 
-### <a name="1-update-xamarinforms"></a>1. Aktualisieren von xamarin. Forms
+### <a name="1-update-xamarinforms"></a>1. aktualisierenXamarin.Forms
 
-Stellen Sie sicher, dass die Lösung xamarin. Forms 2,0 oder höher verwendet. Aktualisieren Sie das xamarin. Forms-nuget-Paket bei Bedarf auf 2,0.
+Stellen Sie sicher, dass die Lösung Xamarin.Forms 2,0 oder höher verwendet. Aktualisieren Sie dieXamarin.Forms
+  Nuget-Paket bei Bedarf auf 2,0.
 
 ### <a name="2-check-android-version"></a>2. Überprüfen der Android-Version
 
@@ -82,9 +86,9 @@ Im Ordner **Values-V21** muss ein zusätzlicher Stil enthalten sein, um bestimmt
 
 ### <a name="4-update-androidmanifestxml"></a>4. Aktualisieren von "androidmanifest. xml"
 
-Um sicherzustellen, dass diese neuen Design Informationen verwendet werden, legen Sie "Design" in der Datei " **androidmanifest** " fest, indem Sie `android:theme="@style/MyTheme"` hinzufügen (belassen Sie den restlichen XML-Code unverändert).
+Um sicherzustellen, dass diese neuen Design Informationen verwendet werden, legen Sie Design in der Datei **androidmanifest** fest, indem Sie hinzufügen `android:theme="@style/MyTheme"` (belassen Sie den Rest des XML-Codes unverändert).
 
-**Properties/AndroidManifest.xml**
+**Properties/androidmanifest. XML**
 
 ```xml
 ...
@@ -113,7 +117,7 @@ Erstellen Sie die Dateien " **Tabbar. axml** " und " **Toolbar. axml** " im **Re
     app:tabMode="fixed" />
 ```
 
-Einige Eigenschaften für die Registerkarten wurden festgelegt, einschließlich der Schwerkraft der Registerkarte, um zu `fill` und `fixed`Modus.
+Einige Eigenschaften für die Registerkarten wurden festgelegt, einschließlich der Schwerkraft der Registerkarte auf `fill` und den Modus `fixed` .
 Wenn Sie über eine Vielzahl von Registerkarten verfügen, können Sie diese zu scrollfähig wechseln. Weitere Informationen finden Sie in der Dokumentation zu Android [TabLayout](https://developer.android.com/reference/android/support/design/widget/TabLayout.html) .
 
 **Ressourcen/Layout/Toolbar. axml**
@@ -135,9 +139,9 @@ Wenn Sie über eine Vielzahl von Registerkarten verfügen, können Sie diese zu 
 In diesen Dateien wird ein bestimmtes Design für die Symbolleiste erstellt, das für Ihre Anwendung variieren kann.
 Weitere Informationen finden Sie im Blogbeitrag der [Hello Toolbar](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/) .
 
-### <a name="6-update-the-mainactivity"></a>6. Aktualisieren der `MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. aktualisieren Sie die`MainActivity`
 
-In vorhandenen xamarin. Forms-apps erbt die **MainActivity.cs** -Klasse von `FormsApplicationActivity`. Dies muss durch `FormsAppCompatActivity` ersetzt werden, um die neue Funktionalität zu aktivieren.
+In vorhandenen Xamarin.Forms apps erbt die **MainActivity.cs** -Klasse von `FormsApplicationActivity` . Dies muss durch ersetzt werden `FormsAppCompatActivity` , um die neue Funktionalität zu aktivieren.
 
 **MainActivity.cs**
 
@@ -145,7 +149,7 @@ In vorhandenen xamarin. Forms-apps erbt die **MainActivity.cs** -Klasse von `For
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-Zum Schluss können Sie die neuen Layouts aus Schritt 5 in der `OnCreate`-Methode "verknüpfen", wie hier gezeigt:
+Zum Schluss können Sie die neuen Layouts aus Schritt 5 in der-Methode übertragen `OnCreate` , wie hier gezeigt:
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

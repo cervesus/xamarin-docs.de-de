@@ -1,29 +1,32 @@
 ---
-title: Seiten Lebenszyklus-Ereignisse unter Android
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Anwendung nutzen, die das Verschwinden und die Anzeige von Seiten Ereignissen für die Anwendungs Unterbrechung bzw. Fortsetzung deaktiviert.
-ms.prod: xamarin
-ms.assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 1745f137f2eeb04c0894c57bb0e45e5c43be7d0b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649932"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128725"
 ---
 # <a name="page-lifecycle-events-on-android"></a>Seiten Lebenszyklus-Ereignisse unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese Android-plattformspezifische wird verwendet, um [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) die [`Appearing`](xref:Xamarin.Forms.Page.Appearing) Seiten Ereignisse und für Anwendungen zu deaktivieren, die AppCompat verwenden. Darüber hinaus enthält es die Möglichkeit, um zu steuern, ob die Bildschirmtastatur bei Reaktivierung angezeigt wird, wenn es auf Pause angezeigt wurde, vorausgesetzt, dass der Betriebsmodus, der die Bildschirmtastatur, um festgelegt ist [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
+Diese Android-plattformspezifische wird verwendet, um [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) die [`Appearing`](xref:Xamarin.Forms.Page.Appearing) Seiten Ereignisse und für Anwendungen zu deaktivieren, die AppCompat verwenden. Darüber hinaus bietet Sie die Möglichkeit, zu steuern, ob die weiche Tastatur beim fortsetzen angezeigt wird, wenn Sie beim Anhalten angezeigt wurde, vorausgesetzt, dass der Betriebsmodus der Soft Tastatur auf festgelegt ist [`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) .
 
 > [!NOTE]
-> Beachten Sie, dass diese Ereignisse standardmäßig aktiviert sind, vorhandenes Verhalten für Anwendungen beibehalten, die auf den Ereignissen basieren. Deaktivieren diese Ereignisse kann der AppCompat-Ereigniszyklus der Pre-AppCompat-Ereigniszyklus übereinstimmen.
+> Beachten Sie, dass diese Ereignisse standardmäßig aktiviert sind, um ein vorhandenes Verhalten für Anwendungen beizubehalten, die auf den Ereignissen basieren. Durch das Deaktivieren dieser Ereignisse wird der AppCompat-Ereignis Kreis mit dem Pre-AppCompat-Ereignis Cycle verglichen.
 
-Diese plattformspezifischen kann in XAML verwendet werden, durch Festlegen der [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty), [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty), und [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) angefügte Eigenschaften zu `boolean` Werte:
+Diese plattformspezifische kann in XAML verwendet werden, indem die [`Application.SendDisappearingEventOnPause`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty) [`Application.SendAppearingEventOnResume`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty) [`Application.ShouldPreserveKeyboardOnResume`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) angefügten Eigenschaften, und auf-Werte festgelegt werden `boolean` :
 
 ```xaml
 <Application ...
@@ -36,7 +39,7 @@ Diese plattformspezifischen kann in XAML verwendet werden, durch Festlegen der [
 </Application>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -51,15 +54,15 @@ Xamarin.Forms.Application.Current.On<Android>()
      .ShouldPreserveKeyboardOnResume(true);
 ```
 
-Die `Application.Current.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) -Namespace wird verwendet, aktiviert oder deaktiviert das Auslösen der [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) -Ereignis der Seite, wenn die Anwendung Wechselt in den Hintergrund. Die [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Methode dient zum Aktivieren oder deaktivieren das Auslösen der [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) Seitenereignis, wenn die Anwendung im Hintergrund fortgesetzt wird. Die [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Methode wird verwendet, Kontrolle, ob die Bildschirmtastatur bei Reaktivierung angezeigt wird, wenn es auf Pause angezeigt wurde bereitgestellt, der Betriebsmodus, der die Bildschirmtastatur eingerichtet wird, um [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
+Die- `Application.Current.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. [ `Application.SendDisappearingEventOnPause` ] (Xref: Xamarin.Forms . Platformconfiguration. androidspecific. AppCompat. Application. senddiserscheinung ingeventonpause ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Android, Xamarin.Forms . Application}, System. Boolean))-Methode im- [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) Namespace wird verwendet, um das Auslösen des Seiten Ereignisses zu aktivieren bzw. zu deaktivieren [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) , wenn die Anwendung in den Hintergrund wechselt. [ `Application.SendAppearingEventOnResume` ] (Xref: Xamarin.Forms . Platformconfiguration. androidspecific. AppCompat. Application. sendappearingeventonresume ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Android, Xamarin.Forms . Die Application}, System. Boolean)-Methode wird verwendet, um das Auslösen des Seiten Ereignisses zu aktivieren bzw. zu deaktivieren [`Appearing`](xref:Xamarin.Forms.Page.Appearing) , wenn die Anwendung im Hintergrund fortgesetzt wird. [ `Application.ShouldPreserveKeyboardOnResume` ] (Xref: Xamarin.Forms . Platformconfiguration. androidspecific. AppCompat. Application. schuldpreservekeyboardonresume ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Android, Xamarin.Forms . Application}, System. Boolean))-Methode verwendet, um zu steuern, ob die weiche Tastatur beim fortsetzen angezeigt wird, wenn Sie beim Anhalten angezeigt wurde, vorausgesetzt, dass der Betriebsmodus der Soft Tastatur auf festgelegt ist [`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) .
 
-Das Ergebnis ist, die [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) und [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) Seitenereignisse wird nicht ausgelöst werden, auf die Anwendung anhalten und fortsetzen bzw. und, auch wenn die Bildschirmtastatur wurde angezeigt wird, wenn die Anwendung wurde angehalten, es wird auch angezeigt, wenn die Anwendung fortgesetzt wird:
+Das Ergebnis ist, dass das [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) -Ereignis und das- [`Appearing`](xref:Xamarin.Forms.Page.Appearing) Seiten Ereignis beim Anhalten und Fortsetzen der Anwendung nicht ausgelöst werden. wenn die weiche Tastatur beim Anhalten der Anwendung angezeigt wird, wird Sie auch angezeigt, wenn die Anwendung fortgesetzt wird:
 
-[![](page-lifecycle-events-images/keyboard-on-resume.png "Lebenszyklus Ereignisse Clientplattform-spezifische")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Lebenszyklus Ereignisse Clientplattform-spezifische")
+[![](page-lifecycle-events-images/keyboard-on-resume.png "Lifecycle Events Platform-Specific")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Lifecycle Events Platform-Specific")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [Androidspecific-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [Androidspecific. AppCompat-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

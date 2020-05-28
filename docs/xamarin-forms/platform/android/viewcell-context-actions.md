@@ -1,26 +1,29 @@
 ---
-title: Viewcell-Kontext Aktionen unter Android
-description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Modell verwenden, das viewcell-Kontext Aktionen im Legacy Modus ermöglicht.
-ms.prod: xamarin
-ms.assetid: 8BD71B10-5037-443F-9975-B941CE393E5A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/24/2019
-ms.openlocfilehash: b040c7c5b7f132b0832469efba91dd89d6b2ddbd
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 053697921f1adacc102e9e9bee9dd17f8d44526b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697746"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128556"
 ---
-# <a name="viewcell-context-actions-on-android"></a>Viewcell-Kontext Aktionen unter Android
+# <a name="viewcell-context-actions-on-android"></a>ViewCell-Kontextaktionen unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Wenn eine [`ViewCell`](xref:Xamarin.Forms.ViewCell) in einer Android-Anwendung Kontext Aktionen für jedes Element in einem [`ListView`](xref:Xamarin.Forms.ListView)definiert, wird Standard 4,3 mäßig das Menü Kontext Aktionen aktualisiert, wenn sich das ausgewählte Element im `ListView` ändert. In früheren Versionen von xamarin. Forms wurde das Kontext Aktionsmenü jedoch nicht aktualisiert, und dieses Verhalten wird als `ViewCell` Legacy Modus bezeichnet. Dieser Legacy Modus kann zu einem falschen Verhalten führen, wenn ein `ListView` ein [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) verwendet, um seine `ItemTemplate` von [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Objekten festzulegen, die unterschiedliche Kontext Aktionen definieren.
+Xamarin.FormsWenn ein [`ViewCell`](xref:Xamarin.Forms.ViewCell) in einer Android-Anwendung in einer Android-Anwendung 4,3 standardmäßig Kontext Aktionen für jedes Element in einem definiert [`ListView`](xref:Xamarin.Forms.ListView) , wird standardmäßig das Kontext Aktionsmenü aktualisiert, wenn das ausgewählte Element in `ListView` geändert wird. In früheren Versionen von Xamarin.Forms wurde das Menü Kontext Aktionen jedoch nicht aktualisiert, und dieses Verhalten wird als `ViewCell` Legacy Modus bezeichnet. Dieser Legacy Modus kann zu einem falschen Verhalten führen, wenn ein ein `ListView` verwendet [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) , um seine `ItemTemplate` von Objekten festzulegen [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die unterschiedliche Kontext Aktionen definieren.
 
-Diese Android-plattformspezifische Aktivierung ermöglicht den [`ViewCell`](xref:Xamarin.Forms.ViewCell) Kontext Aktionen-Menü Legacy Modus, aus Gründen der Abwärtskompatibilität, sodass das Kontext Aktionsmenü nicht aktualisiert wird, wenn sich das ausgewählte Element in einer [`ListView`](xref:Xamarin.Forms.ListView) ändert. Sie wird in XAML verwendet, indem die `ViewCell.IsContextActionsLegacyModeEnabled` bindbare Eigenschaft auf `true` festgelegt wird:
+Mit dieser Android-plattformspezifischen Option [`ViewCell`](xref:Xamarin.Forms.ViewCell) wird der Legacy Modus für Kontext Aktionen aus Gründen der Abwärtskompatibilität aktiviert, sodass das Kontextmenü Menü nicht aktualisiert wird, wenn das ausgewählte Element in einer [`ListView`](xref:Xamarin.Forms.ListView) geändert wird. Sie wird in XAML verwendet, indem die `ViewCell.IsContextActionsLegacyModeEnabled` bindbare Eigenschaft auf festgelegt wird `true` :
 
 ```xaml
 <ContentPage ...
@@ -43,7 +46,7 @@ Diese Android-plattformspezifische Aktivierung ermöglicht den [`ViewCell`](xref
 </ContentPage>
 ```
 
-Alternativ kann Sie von C# der Verwendung der flüssigen API genutzt werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -53,15 +56,15 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 viewCell.On<Android>().SetIsContextActionsLegacyModeEnabled(true);
 ```
 
-Die `ViewCell.On<Android>`-Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die `ViewCell.SetIsContextActionsLegacyModeEnabled`-Methode im [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um den [`ViewCell`](xref:Xamarin.Forms.ViewCell) Kontext Aktionen-Menü Legacy Modus zu aktivieren, sodass das Kontextmenü Menü nicht aktualisiert wird, wenn das ausgewählte Element in einem [`ListView`](xref:Xamarin.Forms.ListView) geändert wird. Darüber hinaus kann die `ViewCell.GetIsContextActionsLegacyModeEnabled`-Methode verwendet werden, um zurückzugeben, ob der Legacy Modus für Kontext Aktionen aktiviert ist.
+Die- `ViewCell.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Mit der- `ViewCell.SetIsContextActionsLegacyModeEnabled` Methode im- [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) Namespace wird der [`ViewCell`](xref:Xamarin.Forms.ViewCell) Legacy Modus für Kontext Aktionen aktiviert, sodass das Kontextmenü Menü nicht aktualisiert wird, wenn das ausgewählte Element in einer geändert wird [`ListView`](xref:Xamarin.Forms.ListView) . Außerdem kann die- `ViewCell.GetIsContextActionsLegacyModeEnabled` Methode verwendet werden, um zurückzugeben, ob der Legacy Modus für Kontext Aktionen aktiviert ist.
 
-Die folgenden Screenshots zeigen [`ViewCell`](xref:Xamarin.Forms.ViewCell) Kontext Aktionen im Legacy Modus aktiviert:
+Die folgenden Screenshots zeigen den [`ViewCell`](xref:Xamarin.Forms.ViewCell) Kontext von aktivierten Kontext Aktionen:
 
 ![Screenshot des Legacy Modus "viewcell" unter Android](viewcell-context-actions-images/legacy-mode-enabled.png "Viewcell-Legacy Modus aktiviert")
 
 In diesem Modus sind die angezeigten Kontext Aktionsmenü Elemente für Zelle 1 und Zelle 2 identisch, obwohl verschiedene Kontextmenü Elemente für Zelle 2 definiert sind.
 
-Die folgenden Screenshots zeigen [`ViewCell`](xref:Xamarin.Forms.ViewCell) Kontext Aktionen, die im Legacy Modus deaktiviert sind. Dies ist das Standardverhalten von xamarin. Forms:
+Die folgenden Screenshots zeigen [`ViewCell`](xref:Xamarin.Forms.ViewCell) , dass der Legacy Modus für Kontext Aktionen deaktiviert ist. Dies ist das Standard Xamarin.Forms Verhalten:
 
 ![Screenshot des Legacy Modus "viewcell" deaktiviert unter Android](viewcell-context-actions-images/legacy-mode-disabled.png "Viewcell-Legacy Modus deaktiviert")
 

@@ -1,33 +1,25 @@
 ---
-title: Animation in Xamarin.Forms
-description: Xamarin.Forms umfasst eine eigenen Animation-Infrastruktur, die für das einfache Animationen und gleichzeitig ein vielseitig genug ist, zum Erstellen komplexer Animationen erstellen einfach ist.
-ms.prod: xamarin
-ms.assetid: AC0B4127-ECA3-44DA-8A24-A2B10A275083
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/14/2016
-ms.openlocfilehash: bebb3e32f298a2079069787dba3453e1817cf64f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158592"
+Title: "Animation in Xamarin.Forms " Description: " Xamarin.Forms enthält eine eigene Animations Infrastruktur, die für die Erstellung einfacher Animationen einfach ist, während Sie auch vielseitig genug ist, um komplexe Animationen zu erstellen."
+ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="animation-in-xamarinforms"></a>Animation in Xamarin.Forms
 
-_Xamarin.Forms umfasst eine eigenen Animation-Infrastruktur, die für das einfache Animationen und gleichzeitig ein vielseitig genug ist, zum Erstellen komplexer Animationen erstellen einfach ist._
+# <a name="animation-in-xamarinforms"></a>Animation inXamarin.Forms
 
-Die Xamarin.Forms-Animationsklassen Ziel unterschiedliche Eigenschaften visueller Elemente mit einer typischen Animation ändern progressiv einer Eigenschaft von einem Wert in eine andere über einen Zeitraum an. Beachten Sie, dass keine XAML-Schnittstelle für die Xamarin.Forms-Animation-Klassen. Allerdings können Animationen in gekapselt [Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/index.md) , und klicken Sie dann auf die verwiesen wird aus XAML.
+_Xamarin. Forms enthält eine eigene Animations Infrastruktur, mit der einfache Animationen problemlos erstellt werden können, während Sie auch vielseitig genug ist, um komplexe Animationen zu erstellen._
 
-## <a name="simple-animationssimplemd"></a>[Einfache Animationen](simple.md)
+Die Xamarin.Forms Animations klassenzielen auf verschiedene Eigenschaften von visuellen Elementen ab, wobei eine typische Animation eine Eigenschaft in einem bestimmten Zeitraum progressiv von einem Wert in einen anderen wechselt. Beachten Sie, dass es keine XAML-Schnittstelle für die Xamarin.Forms Animations Klassen gibt. Animationen können jedoch in [Verhalten](~/xamarin-forms/app-fundamentals/behaviors/index.md) gekapselt und dann von XAML referenziert werden.
 
-Die [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) Klasse enthält Erweiterungsmethoden, die verwendet werden können, um einfache Animationen erstellen, die drehen, skalieren, übersetzen und fade [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Instanzen. In diesem Artikel veranschaulicht das Erstellen und Abbrechen von Animationen mit der `ViewExtensions` Klasse.
+## <a name="simple-animations"></a>[Einfache Animationen](simple.md)
 
-## <a name="easing-functionseasingmd"></a>[Beschleunigungsfunktionen](easing.md)
+Die- [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) Klasse stellt Erweiterungs Methoden bereit, die verwendet werden können, um einfache Animationen zu erstellen, mit denen Instanzen gedreht, skaliert, übersetzt und ausgeblendet werden [`VisualElement`](xref:Xamarin.Forms.VisualElement) . In diesem Artikel wird veranschaulicht, wie Animationen mithilfe der-Klasse erstellt und abgebrochen werden `ViewExtensions` .
 
-Xamarin.Forms umfasst einen [ `Easing` ](xref:Xamarin.Forms.Easing) -Klasse, die Ihnen die Möglichkeit zum Angeben einer Übertragungsfunktion, die steuert, wie Animationen beschleunigen oder verlangsamen, wie sie ausgeführt werden. In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfunktionen genutzt, und wie Sie benutzerdefinierte Beschleunigungsfunktionen erstellen.
+## <a name="easing-functions"></a>[Beschleunigungsfunktionen](easing.md)
 
-## <a name="custom-animationscustommd"></a>[Benutzerdefinierte Animationen](custom.md)
+Xamarin.Formsenthält eine- [`Easing`](xref:Xamarin.Forms.Easing) Klasse, die es Ihnen ermöglicht, eine Übertragungsfunktion anzugeben, mit der gesteuert wird, wie Animationen bei der Ausführung beschleunigt oder verlangsamt werden. In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfunktionen verwendet werden und wie benutzerdefinierte Beschleunigungsfunktionen erstellt werden.
 
-Die [ `Animation` ](xref:Xamarin.Forms.Animation) Klasse ist der Baustein von alle Xamarin.Forms-Animationen, mit den Erweiterungsmethoden in den [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) Klasse erstellen eine oder mehrere `Animation` Objekte. In diesem Artikel wird veranschaulicht, wie Sie mit der `Animation` Klasse erstellen und Abbrechen von Animationen, mehrere Animationen zu synchronisieren, und erstellen benutzerdefinierte Animationen, das Animieren von Eigenschaften, die durch die vorhandenen Methoden für die Animation animiert werden nicht.
+## <a name="custom-animations"></a>[Benutzerdefinierte Animationen](custom.md)
+
+Die- [`Animation`](xref:Xamarin.Forms.Animation) Klasse ist der Baustein aller Xamarin.Forms Animationen mit den Erweiterungs Methoden in der-Klasse, die [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) ein oder mehrere- `Animation` Objekte erstellen. In diesem Artikel wird veranschaulicht, wie Sie mit der- `Animation` Klasse Animationen erstellen und Abbrechen, mehrere Animationen synchronisieren und benutzerdefinierte Animationen erstellen, die Eigenschaften animieren, die nicht von den vorhandenen Animations Methoden animiert werden.

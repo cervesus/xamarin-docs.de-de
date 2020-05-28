@@ -1,27 +1,30 @@
 ---
-title: Starten Sie die native Map-App aus xamarin. Forms.
-description: Die native Maps-APP auf jeder Plattform kann von einer xamarin. Forms-Anwendung durch die xamarin. Essentials-Start Programm Klasse gestartet werden.
-ms.prod: xamarin
-ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/30/2019
-ms.openlocfilehash: 54776d28bb75b152a6402e4d531d1baa4f724cba
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+title: Starten Sie die native Karten-app vonXamarin.Forms
+description: Die native Maps-APP auf jeder Plattform kann von einer- Xamarin.Forms Anwendung durch die Start Programm Klasse gestartet werden Xamarin.Essentials .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426324"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129336"
 ---
-# <a name="launch-the-native-map-app-from-xamarinforms"></a>Starten Sie die native Map-App aus xamarin. Forms.
+# <a name="launch-the-native-map-app-from-xamarinforms"></a>Starten Sie die native Karten-app vonXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-Die native Map-App auf jeder Plattform kann von einer xamarin. Forms-Anwendung durch die xamarin. Essentials `Launcher`-Klasse gestartet werden. Diese Klasse ermöglicht es einer Anwendung, eine andere APP über das benutzerdefinierte URI-Schema zu öffnen. Die Start Programmfunktionen können mit der `OpenAsync`-Methode aufgerufen werden. dabei wird ein `string` oder `Uri` Argument übergeben, das das zu öffnende benutzerdefinierte URL-Schema darstellt. Weitere Informationen zu xamarin. Essentials finden Sie unter [xamarin. Essentials](~/essentials/index.md?context=xamarin/xamarin-forms).
+Die native Map-App auf jeder Plattform kann von einer- Xamarin.Forms Anwendung durch die-Klasse gestartet werden Xamarin.Essentials `Launcher` . Diese Klasse ermöglicht es einer Anwendung, eine andere APP über das benutzerdefinierte URI-Schema zu öffnen. Die Start Programmfunktion kann mit der- `OpenAsync` Methode aufgerufen werden, wobei ein-oder-Argument übergeben wird, `string` `Uri` das das zu öffnende benutzerdefinierte URL-Schema darstellt. Weitere Informationen zu Xamarin.Essentials finden Sie unter [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms) .
 
 > [!NOTE]
-> Eine Alternative zur Verwendung der xamarin. Essentials `Launcher`-Klasse ist die Verwendung der `Map`-Klasse. Weitere Informationen finden Sie unter [xamarin. Essentials: Map](~/essentials/maps.md?context=xamarin/xamarin-forms).
+> Eine Alternative zur Verwendung der- Xamarin.Essentials `Launcher` Klasse ist die Verwendung der- `Map` Klasse. Weitere Informationen finden Sie unter [ Xamarin.Essentials : Map](~/essentials/maps.md?context=xamarin/xamarin-forms).
 
 Die Maps-APP auf jeder Plattform verwendet ein eindeutiges benutzerdefiniertes URI-Schema. Weitere Informationen zum Zuordnungs-URI-Schema unter IOS finden Sie unter [Karten Verknüpfungen](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html) auf Developer.Apple.com. Weitere Informationen zum Maps-URI-Schema unter Android finden Sie unter [Maps Developer Guide](https://developer.android.com/guide/components/intents-common.html#Maps) und [Google Maps Intents for Android](https://developers.google.com/maps/documentation/urls/android-intents) on Developers.Android.com. Weitere Informationen zum Maps-URI-Schema für die universelle Windows-Plattform (UWP) finden Sie unter [Starten der Windows Maps-APP](/windows/uwp/launch-resume/launch-maps-app).
 
@@ -82,4 +85,4 @@ Dieser Beispielcode führt dazu, dass die native Map-App auf jeder Plattform ges
 - [Karten Verknüpfungen](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html)
 - [Entwicklerhandbuch zu Maps](https://developer.android.com/guide/components/intents-common.html#Maps)
 - [Google Maps Intents für Android](https://developers.google.com/maps/documentation/)
-- [Starten der Windows Maps-APP](/windows/uwp/launch-resume/launch-maps-app)
+- [Starten der Windows-Karten-App](/windows/uwp/launch-resume/launch-maps-app)

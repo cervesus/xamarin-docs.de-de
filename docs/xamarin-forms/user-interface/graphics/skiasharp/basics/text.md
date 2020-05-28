@@ -1,34 +1,37 @@
 ---
-title: Integrieren von Text und Grafiken
-description: In diesem Artikel wird erläutert, wie zum Bestimmen der Größe von gerenderten Text-Zeichenfolge an die Text mit Grafiken von SkiaSharp in Xamarin.Forms-Anwendungen zu integrieren, und dies mit Beispielcode veranschaulicht.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: d23b4dbb97f4f98ff0361bb056e394bb7cbd941a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: In diesem Artikel wird erläutert, wie Sie die Größe der gerenderten Text Zeichenfolge für die Integration von Text mit skiasharp-Grafiken in Xamarin.Forms Anwendungen ermitteln und dies mit Beispielcode veranschaulichen.
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645644"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137682"
 ---
 # <a name="integrating-text-and-graphics"></a>Integrieren von Text und Grafiken
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Erfahren Sie, wie die Größe der gerenderten Text-Zeichenfolge, die Integration von Text in SkiaSharp-Grafiken zu bestimmen._
+_Siehe Ermitteln der Größe der gerenderten Text Zeichenfolge zum Integrieren von Text in skiasharp-Grafiken_
 
-In diesem Artikel wird veranschaulicht, wie Text zu messen, den Text, der eine bestimmte Größe skalieren und Integrieren von Text in andere Grafik wird:
+In diesem Artikel wird veranschaulicht, wie Sie Text messen, den Text auf eine bestimmte Größe skalieren und Text in andere Grafiken integrieren:
 
-![](text-images/textandgraphicsexample.png "Text, umgeben von Rechtecken")
+![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
 
-Dieses Image enthält auch ein abgerundetes Rechteck. Die SkiaSharp `Canvas` Klasse enthält [ `DrawRect` ](xref:SkiaSharp.SKCanvas.DrawRect*) Methoden zum Zeichnen eines Rechtecks und [ `DrawRoundRect` ](xref:SkiaSharp.SKCanvas.DrawRoundRect*) Methoden zum Zeichnen eines Rechtecks mit abgerundeten Ecken. Diese Methoden ermöglichen das Rechteck definiert werden, als ein `SKRect` Wert oder auf andere Weise.
+Dieses Bild enthält auch ein abgerundetes Rechteck. Die skiasharp `Canvas` -Klasse enthält [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) Methoden zum Zeichnen eines Rechtecks und [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) von Methoden zum Zeichnen eines Rechtecks mit abgerundeten Ecken. Diese Methoden ermöglichen es, das Rechteck als- `SKRect` Wert oder auf andere Weise zu definieren.
 
-Die **Text mit einem Frame versehen** Seite konzentriert sich auf der Seite und umschließt es mit einem Rahmen besteht aus zwei Rechtecke mit abgerundeten eine kurze Textzeichenfolge. Die [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) Klasse zeigt, wie dies funktioniert.
+Auf der Seite mit dem **Text** wird eine kurze Text Zeichenfolge auf der Seite zentriert und mit einem Frame umgeben, der aus einem Paar abgerundeter Rechtecke besteht. Die [`FramedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) -Klasse zeigt, wie Sie ausgeführt wird.
 
-In SkiaSharp, verwenden Sie die `SKPaint` Klasse, um Text und Schriftarten Festlegen von Attributen, aber Sie können es auch die gerenderte Größe des Texts abrufen. Der Anfang des folgenden `PaintSurface` -Ereignishandler ruft zwei verschiedene `MeasureText` Methoden. Die erste [ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String)) Aufruf verfügt über eine einfache `string` Argument und gibt die Breite des Texts in Pixel auf der aktuellen Schriftartattribute Grundlage. Das Programm berechnet dann einen neuen `TextSize` Eigenschaft der `SKPaint` -Objekt auf Grundlage dieser gerenderte Breite der aktuellen `TextSize` -Eigenschaft und die Breite des Anzeigebereichs. Diese Berechnung dient festzulegende `TextSize` , damit der Text die Zeichenfolge, die bei 90 % der Breite des Bildschirms gerendert werden:
+In skiasharp verwenden Sie die `SKPaint` -Klasse, um Text-und Schriftart Attribute festzulegen, Sie können Sie jedoch auch zum Abrufen der gerenderten Textgröße verwenden. Der Anfang des folgenden `PaintSurface` Ereignis Handlers ruft zwei verschiedene `MeasureText` Methoden auf. Der erste [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String)) -Befehl verfügt über ein einfaches `string` Argument und gibt die Pixel Breite des Texts basierend auf den aktuellen Schriftart Attributen zurück. Das Programm berechnet dann `TextSize` `SKPaint` basierend auf der gerenderten Breite, der aktuellen `TextSize` Eigenschaft und der Breite des Anzeige Bereichs eine neue Eigenschaft des-Objekts. Diese Berechnung soll so festgelegt `TextSize` werden, dass die Text Zeichenfolge bei 90% der Bildschirmbreite gerendert wird:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -58,18 +61,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die zweite [ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String,SkiaSharp.SKRect@)) Aufruf hat einen `SKRect` -Argument, sodass sie sowohl eine Breite und Höhe des gerenderten Texts abruft. Die `Height` -Eigenschaft dieses `SKRect` Wert hängt das Vorhandensein von Großbuchstaben Oberlängen und Unterlängen in der Textzeichenfolge. Verschiedene `Height` Werte werden für die Text-Zeichenfolgen "Mom", "Cat" und "Dog", z. B. gemeldet.
+Der zweite [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String,SkiaSharp.SKRect@)) Aufrufs hat ein `SKRect` Argument, sodass er sowohl eine Breite als auch eine Höhe des gerenderten Texts erhält. Die- `Height` Eigenschaft dieses `SKRect` Werts hängt davon ab, ob Großbuchstaben, Vorgänger und Nachfolger in der Text Zeichenfolge vorhanden sind. Für `Height` die Text Zeichenfolgen "MOM", "Cat" und "Dog" werden z. b. unterschiedliche Werte gemeldet.
 
-Die `Left` und `Top` Eigenschaften der `SKRect` Struktur die Koordinaten der oberen linken Ecke des gerenderten Texts anzugeben, wenn der Text angezeigt wird, indem eine `DrawText` rufen Sie mit X und Y-Position 0. Beispielsweise, wenn dieses Programm auf einem iPhone 7-Simulator ausgeführt wird `TextSize` erhält den Wert 90.6254 als Ergebnis der Berechnung, die nach dem ersten Aufruf an `MeasureText`. Die `SKRect` Wert aus der zweite Aufruf von `MeasureText` hat die folgenden Eigenschaftenwerte fest:
+Die `Left` -Eigenschaft und die-Eigenschaft `Top` der- `SKRect` Struktur geben die Koordinaten der linken oberen Ecke des gerenderten Texts an, wenn der Text durch einen `DrawText` -Befehl mit X-und Y-Positionen 0 angezeigt wird. Wenn dieses Programm z. b. auf einem iPhone 7-Simulator ausgeführt wird, `TextSize` wird der Wert 90,6254 als Ergebnis der Berechnung nach dem ersten-Befehl zugewiesen `MeasureText` . Der `SKRect` Wert, der aus dem zweiten-Befehl abgerufen `MeasureText` wurde, verfügt über die folgenden Eigenschaftswerte:
 
-- `Left` = 6
+- `Left`= 6
 - `Top` = &ndash;68
-- `Width` = 664.8214
-- `Height` = 88;
+- `Width`= 664,8214
+- `Height`= 88;
 
-Denken Sie daran, dass die X- und Y Sie koordiniert übergeben die `DrawText` Methode angeben, der linken Seite des Texts an der Baseline. Die `Top` Wert gibt an, dass der Text 68 Pixel oberhalb dieser Baseline und (subtrahieren 68 It von 88) erweitert 20 Pixel unterhalb der Basislinie. Die `Left` Wert 6 angibt, dass der Text, sechs Pixel nach rechts von der X-Wert in beginnt der `DrawText` aufrufen. Dadurch können normale zeichenzwischenraum. Wenn der Text gut verpackt in der oberen linken Ecke der Anzeige angezeigt werden sollen, übergeben Sie diese negativen Ausdruck `Left` und `Top` Werte, wie die X- und Y-Koordinaten `DrawText`, in diesem Beispiel &ndash;6 und 68.
+Beachten Sie, dass die X-und Y-Koordinaten, die Sie an die-Methode übergeben, `DrawText` die linke Seite des Texts an der Baseline angeben. Der `Top` Wert gibt an, dass der Text 68 Pixel oberhalb dieser Baseline und (Subtrahieren von 68 von 88) 20 Pixel unterhalb der Baseline erweitert. Der `Left` Wert 6 gibt an, dass der Text in dem-Befehl sechs Pixel rechts vom X-Wert beginnt `DrawText` . Dies ermöglicht normale Zeichen übergreifende Abstände. Wenn Sie den Text in der oberen linken Ecke der Anzeige bündig anzeigen möchten, übergeben Sie die negativen `Left` `Top` Werte dieser Werte und als X-und Y-Koordinaten von `DrawText` , in diesem Beispiel &ndash; 6 und 68.
 
-Die `SKRect` Struktur definiert verschiedene nützliche Eigenschaften und Methoden, von denen einige werden im weiteren Verlauf verwendet die `PaintSurface` Handler. Die `MidX` und `MidY` Werte geben an, die Koordinaten für den Mittelpunkt des Rechtecks. (Im Beispiel iPhone 7 werden diese Werte 338.4107 und &ndash;24.) Der folgende Code verwendet diese Werte für die Berechnung der Koordinaten der einfachste zentrieren Text auf dem:
+Die `SKRect` -Struktur definiert mehrere praktische Eigenschaften und Methoden, von denen einige im Rest des `PaintSurface` Handlers verwendet werden. Der `MidX` - `MidY` Wert und der-Wert geben die Koordinaten der Mitte des Rechtecks an. (Im iPhone 7-Beispiel lauten diese Werte 338,4107 und &ndash; 24.) Der folgende Code verwendet diese Werte für die einfachste Berechnung von Koordinaten zum Zentrieren von Text auf der Anzeige:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -85,14 +88,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die `SKImageInfo` Info-Struktur definiert auch eine [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect) Eigenschaft vom Typ `SKRect`, sodass Sie auch berechnen können `xText` und `yText` wie folgt aus:
+Die `SKImageInfo` Info-Struktur definiert auch eine [`Rect`](xref:SkiaSharp.SKImageInfo.Rect) Eigenschaft vom Typ `SKRect` , sodass Sie auch diese berechnen können `xText` `yText` :
 
 ```csharp
 float xText = info.Rect.MidX - textBounds.MidX;
 float yText = info.Rect.MidY - textBounds.MidY;
 ```
 
-Die `PaintSurface` Handler wird mit zwei Aufrufe abgeschlossen `DrawRoundRect`, beide Argumente müssen `SKRect`. Dies `SKRect` Wert basiert auf der `SKRect` Wert aus der `MeasureText` -Methode, aber es kann nicht identisch sein. Zuerst müssen sie ein bisschen größer sein, damit die abgerundete Rechteck über Ränder des Texts Zeichnen nicht. Zweitens muss im Bereich verschoben werden, damit die `Left` und `Top` Werte entsprechen dem linken oberen Ecke, in denen das Rechteck ist, positioniert werden soll. Diese zwei Aufträge werden erreicht, indem die [ `Offset` ](xref:SkiaSharp.SKRect.Offset*) und [ `Inflate` ](xref:SkiaSharp.SKRect.Inflate*) definierten Methoden `SKRect`:
+Der- `PaintSurface` Handler schließt mit zwei Aufrufen `DrawRoundRect` von ab, die beide Argumente von erfordern `SKRect` . Dieser `SKRect` Wert basiert auf dem `SKRect` Wert, der von der- `MeasureText` Methode abgerufen wurde, kann jedoch nicht identisch sein. Zuerst muss Sie etwas größer sein, damit das abgerundete Rechteck nicht über Kanten des Texts gezeichnet wird. Zweitens muss Sie in den Raum versetzt werden, damit die `Left` Werte und `Top` der oberen linken Ecke entsprechen, in der das Rechteck positioniert werden soll. Diese beiden Aufträge werden durch die [`Offset`](xref:SkiaSharp.SKRect.Offset*) -und-Methoden durchgeführt, die [`Inflate`](xref:SkiaSharp.SKRect.Inflate*) durch definiert werden `SKRect` :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -121,19 +124,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Danach ist der Rest der Methode einfach. Erstellt einen anderen `SKPaint` Objekt für die Rahmen und ruft `DrawRoundRect` zweimal. Der zweite Aufruf verwendet ein Rechteck vergrößert werden, um einen anderen 10 Pixel. Der erste Aufruf gibt einen Eckradius von 20 Pixel. Die zweite hat einen Eckradius von 30 Pixel, damit sie scheinen parallel verlaufen:
+Danach ist der Rest der Methode geradlinig. Es erstellt ein weiteres `SKPaint` -Objekt für die Rahmen und ruft `DrawRoundRect` zweimal auf. Der zweite-Befehl verwendet ein Rechteck, das durch eine andere 10 Pixel aufgebraucht ist. Der erste-Befehl gibt einen Eckradius von 20 Pixeln an. Die zweite hat einen Eckradius von 30 Pixeln, sodass Sie parallel erscheinen:
 
- [![](text-images/framedtext-small.png "Dreifacher Screenshot der Seite mit einem Frame versehen Text")](text-images/framedtext-large.png#lightbox "dreifachen Screenshot der Seite mit einem Frame versehen von Text")
+ [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
 
-Sie können Ihr Telefon oder den Simulator auf die Seite, um den Text und Rahmen vergrößert werden, finden Sie unter aktivieren.
+Sie können das Telefon oder den Simulator seitwärts drehen, um den Text und die Rahmen Vergrößerung anzuzeigen.
 
-Wenn Sie nur Text auf dem Bildschirm zu zentrieren müssen, können Sie dies tun, etwa, ohne den Text zu messen. Legen Sie stattdessen die [ `TextAlign` ](xref:SkiaSharp.SKPaint.TextAlign) Eigenschaft `SKPaint` in der Enumerationsmember [ `SKTextAlign.Center` ](xref:SkiaSharp.SKTextAlign). Die X-Koordinate, die Sie, in angeben der `DrawText` zeigt dann an, wo die horizontale Mitte des Texts positioniert ist. Wenn Sie den Mittelpunkt des Bildschirms, um übergeben die `DrawText` -Methode, der Text wird horizontal zentriert und *fast* vertikal zentriert werden, da die Baseline vertikal zentriert ausgerichtet werden.
+Wenn Sie nur Text auf dem Bildschirm zentrieren müssen, können Sie diesen Vorgang ungefähr durchführen, ohne den Text zu messen. Legen Sie stattdessen die- [`TextAlign`](xref:SkiaSharp.SKPaint.TextAlign) Eigenschaft von `SKPaint` auf den-Enumerationsmember fest [`SKTextAlign.Center`](xref:SkiaSharp.SKTextAlign) . Die X-Koordinate, die Sie in der-Methode angeben, `DrawText` gibt dann an, wo die horizontale Mitte des Texts positioniert ist. Wenn Sie den Mittelpunkt des Bildschirms an die- `DrawText` Methode übergeben, wird der Text horizontal zentriert und *beinahe* vertikal zentriert, da die Baseline vertikal zentriert wird.
 
-Text kann sehr viel wie jedes andere grafische Objekt behandelt werden. Eine einfache Möglichkeit ist die Gliederung der Textzeichen angezeigt:
+Text kann ähnlich wie jedes andere grafische Objekt behandelt werden. Eine einfache Option besteht darin, die Gliederung der Textzeichen anzuzeigen:
 
-[![](text-images/outlinedtext-small.png "Tripleresolutionimage-Screenshot der Seite Text mit Kontur")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
 
-Dies erfolgt durch einfaches Ändern der normalen `Style` Eigenschaft der `SKPaint` Objekt von seinem Standardwert von `SKPaintStyle.Fill` zu `SKPaintStyle.Stroke`, und geben eine Strichbreite. Die `PaintSurface` Handler, der die **von Text mit Kontur** Seite zeigt, wie dies funktioniert:
+Dies wird einfach durch Ändern der normalen- `Style` Eigenschaft des `SKPaint` -Objekts von der Standardeinstellung `SKPaintStyle.Fill` in `SKPaintStyle.Stroke` und durch Angeben einer Strichbreite erreicht. Der `PaintSurface` Handler der **beschriebenen Textseite** zeigt, wie er ausgeführt wird:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -172,9 +175,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Ein anderes common grafisches Objekt ist die Bitmap. Dies ist ein umfangreiches Thema, das ausführlich im Abschnitt [ **SkiaSharp Bitmaps**](../bitmaps/index.md), aber im nächsten Artikel [ **Bitmap-Grundlagen in SkiaSharp**](bitmaps.md), enthält eine Einführung schneller.
+Ein weiteres gängiges grafisches Objekt ist die Bitmap. Dabei handelt es sich um ein umfangreiches Thema, das ausführlich im Abschnitt [**skiasharp-Bitmaps**](../bitmaps/index.md)behandelt wird, aber der nächste Artikel, [**Bitmap-Grundlagen in skiasharp**](bitmaps.md), bietet eine kurze Einführung.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

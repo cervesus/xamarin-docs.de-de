@@ -1,18 +1,21 @@
 ---
-title: Skiasharp-Blend-Modi
-description: Verwenden Sie Blend-Modi, um zu definieren, was geschieht, wenn grafische Objekte aufeinander gestapelt werden.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 829d764f03dd77c6126c2f4bced750ae570a3bc6
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425696"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131702"
 ---
 # <a name="skiasharp-blend-modes"></a>Skiasharp-Blend-Modi
 
@@ -29,20 +32,60 @@ Die skiasharp-Blend-Modi entsprechen den Funktionen, die in der Spezifikation de
 Die 29 Member der- `SKBlendMode` Enumeration können in drei Kategorien unterteilt werden:
 
 | Porter-Duff | Trennbarer    | Nicht trennbar |
-| ----------- | ------------ | ------------- |
-| `Clear`     | `Modulate`   | `Hue`         |
-| `Src`       | `Screen`     | `Saturation`  |
-| `Dst`       | `Overlay`    | `Color`       |
-| `SrcOver`   | `Darken`     | `Luminosity`  |
-| `DstOver`   | `Lighten`    |               |
-| `SrcIn`     | `ColorDodge` |               |
-| `DstIn`     | `ColorBurn`  |               |
-| `SrcOut`    | `HardLight`  |               |
-| `DstOut`    | `SoftLight`  |               |
-| `SrcATop`   | `Difference` |               |
-| `DstATop`   | `Exclusion`  |               |
-| `Xor`       | `Multiply`   |               |
-| `Plus`      |              |               |
+| ---
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------- | | `Clear`     | `Modulate`   | `Hue`         | | `Src`       | `Screen`     | `Saturation`  | | `Dst`       | `Overlay`    | `Color`       | | `SrcOver`   | `Darken`     | `Luminosity`  | | `DstOver`   | `Lighten`    |               | | `SrcIn`     | `ColorDodge` |               | | `DstIn`     | `ColorBurn`  |               | | `SrcOut`    | `HardLight`  |               | | `DstOut`    | `SoftLight`  |               | | `SrcATop`   | `Difference` |               | | `DstATop`   | `Exclusion`  |               | | `Xor`       | `Multiply`   |               | | `Plus`      |              |               |
 
 Die Namen dieser drei Kategorien sind in den nachfolgenden Diskussionen besser gemeint. Die Reihenfolge, in der die Member aufgeführt sind, entspricht der Definition der- `SKBlendMode` Enumeration. Die 13 Enumerationsmember in der ersten Spalte weisen die ganzzahligen Werte 0 bis 12 auf. Die zweite Spalte sind Enumerationsmember, die den ganzen Zahlen 13 bis 24 entsprechen, und die Elemente in der dritten Spalte haben die Werte 25 bis 28.
 
@@ -62,7 +105,7 @@ canvas.Clear();
 
 Diese Methode ersetzt alle Pixel der Canvas durch transparente schwarze Pixel, `new SKColor(0, 0, 0, 0)` die der Ganzzahl 0x00000000 entsprechen. Alle Bytes aller Pixel werden mit 0 (null) initialisiert.
 
-Die Zeichnungs Oberfläche eines `SKCanvas` , das in einem Handler abgerufen wird `PaintSurface` , scheint einen weißen Hintergrund zu haben, aber das ist nur, da der `SKCanvasView` selbst über einen transparenten Hintergrund verfügt und die Seite einen weißen Hintergrund hat. Sie können diese Tatsache selbst veranschaulichen, indem Sie die xamarin. Forms- `BackgroundColor` Eigenschaft von `SKCanvasView` auf eine xamarin. Forms-Farbe festlegen:
+Die Zeichnungs Oberfläche eines `SKCanvas` , das in einem Handler abgerufen wird `PaintSurface` , scheint einen weißen Hintergrund zu haben, aber das ist nur, da der `SKCanvasView` selbst über einen transparenten Hintergrund verfügt und die Seite einen weißen Hintergrund hat. Sie können diese Tatsache selbst veranschaulichen, indem Sie die- Xamarin.Forms `BackgroundColor` Eigenschaft von `SKCanvasView` auf eine Xamarin.Forms Farbe festlegen:
 
 ```csharp
 canvasView.BackgroundColor = Color.Red;

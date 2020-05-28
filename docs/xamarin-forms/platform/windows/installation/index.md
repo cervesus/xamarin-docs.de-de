@@ -1,30 +1,33 @@
 ---
-title: Einrichten von Windows-Projekten
-description: Ältere xamarin. Forms-Lösungen (oder die unter macOS erstellten) haben keine universelle Windows-Plattform Projekte. Daher wird in diesem Artikel erläutert, wie einer vorhandenen xamarin. Forms-Projekt Mappe ein neues UWP-Projekt hinzugefügt wird.
-ms.prod: xamarin
-ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 5d2d9c8c2104e96f16c3a3ff169f795068605f59
-ms.sourcegitcommit: 7011303ff1868f3dd3858415706f4b5732ee44f1
+title: ''
+description: Ältere Xamarin.Forms Lösungen (oder die unter macOS erstellten) haben keine universelle Windows-Plattform Projekte. Daher wird in diesem Artikel erläutert, wie einer vorhandenen Projekt Mappe ein neues UWP-Projekt hinzugefügt wird Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 87ad78e97046eef7fd6c2e062fa9f84d92c11b38
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83696078"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132209"
 ---
 # <a name="setup-windows-projects"></a>Einrichten von Windows-Projekten
 
-_Hinzufügen neuer Windows-Projekte zu einer vorhandenen xamarin. Forms-Projekt Mappe_
+_Hinzufügen neuer Windows-Projekte zu Xamarin.Forms einer vorhandenen Projekt Mappe_
 
-Ältere xamarin. Forms-Lösungen (oder die unter macOS erstellten) haben keine universelle Windows-Plattform (UWP)-app-Projekte. Daher müssen Sie manuell ein UWP-Projekt hinzufügen, um eine Windows 10-app (UWP) zu erstellen.
+Ältere Xamarin.Forms Lösungen (oder die unter macOS erstellten) haben keine universelle Windows-Plattform (UWP)-app-Projekte. Daher müssen Sie manuell ein UWP-Projekt hinzufügen, um eine Windows 10-app (UWP) zu erstellen.
 
 ## <a name="add-a-universal-windows-platform-app"></a>Hinzufügen einer universelle Windows-Plattform-App
 
 **Visual Studio 2019** unter **Windows 10** wird empfohlen, um UWP-apps zu erstellen. Weitere Informationen zum universelle Windows-Plattform finden Sie unter Einführung [in die universelle Windows-Plattform](/windows/uwp/get-started/universal-application-platform-guide/).
 
-UWP ist in xamarin. Forms 2,1 und höher verfügbar, und xamarin. Forms. Maps wird in xamarin. Forms 2,2 und höher unterstützt.
+UWP ist in Xamarin.Forms 2,1 und höher sowie in verfügbar Xamarin.Forms . Maps wird in 2,2 und höher unterstützt Xamarin.Forms .
 
 Hilfreiche Tipps finden Sie im Abschnitt zur <a href="#troubleshooting">Problem</a> Behandlung.
 
@@ -38,13 +41,13 @@ Befolgen Sie diese Anweisungen, um eine UWP-App hinzuzufügen, die auf Windows 1
 
   ![](universal-images/target-version.png "New Universal Windows Platform Project Dialog")
 
- €. Klicken Sie mit der rechten Maustaste auf das UWP-Projekt, wählen Sie **nuget-Pakete verwalten** aus, und fügen Sie das **xamarin. Forms** -Paket hinzu. Stellen Sie sicher, dass die anderen Projekte in der Projekt Mappe ebenfalls auf dieselbe Version des xamarin. Forms-Pakets aktualisiert werden.
+ €. Klicken Sie mit der rechten Maustaste auf das UWP-Projekt, wählen Sie **nuget-Pakete verwalten** aus, und fügen Sie das Paket hinzu. **Xamarin.Forms** Stellen Sie sicher, dass die anderen Projekte in der Projekt Mappe ebenfalls auf dieselbe Version des Pakets aktualisiert werden Xamarin.Forms .
 
  0:. Stellen Sie sicher, dass das neue UWP-Projekt im Fenster **Build > Configuration Manager** erstellt wird (Dies ist wahrscheinlich nicht standardmäßig der Fall). Aktivieren Sie **die Felder** **Erstellen** und Bereitstellen für das universelle Projekt:
 
   [![](universal-images/configuration-sml.png "Configuration Manager Window")](universal-images/configuration.png#lightbox "Configuration Manager Window")
 
- 5@@. Klicken Sie mit der rechten Maustaste auf das Projekt, wählen Sie **> Verweis hinzufügen** aus, und erstellen Sie einen Verweis auf das xamarin. Forms-Anwendungsprojekt (.NET Standard oder das freigegebene Projekt)
+ 5@@. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **> Verweis hinzufügen** aus, und erstellen Sie einen Verweis auf das Xamarin.Forms Anwendungsprojekt (.NET Standard oder Shared Project).
 
   ![](universal-images/addref-sml.png "Reference Manager Dialog")
 
@@ -81,7 +84,7 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11:. Fügen Sie in **MainPage.XAML.cs**den-Befehl `LoadApplication` im `MainPage` Konstruktor hinzu, um die xamarin. Forms-APP zu starten:
+ 11:. Fügen Sie in **MainPage.XAML.cs**den-Befehl `LoadApplication` im `MainPage` Konstruktor hinzu, um die APP zu starten Xamarin.Forms :
 
 ```csharp
 // below this existing line
@@ -111,7 +114,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
 
 ### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>"Ziel Aufruf Ausnahme" bei Verwendung von "mit .net Native Toolkette kompilieren"
 
-Wenn Ihre UWP-App auf mehrere Assemblys verweist (z. b. Steuerelement Bibliotheken von Drittanbietern oder wenn Ihre APP selbst in mehrere Bibliotheken aufgeteilt ist), kann xamarin. Forms möglicherweise keine Objekte aus diesen Assemblys laden (z. b. benutzerdefinierte Renderer).
+Wenn Ihre UWP-App auf mehrere Assemblys verweist (z. b. Steuerelement Bibliotheken von Drittanbietern oder wenn Ihre APP selbst in mehrere Bibliotheken aufgeteilt ist), Xamarin.Forms kann möglicherweise keine Objekte aus diesen Assemblys laden (z. b. benutzerdefinierte Renderer).
 
 Dies kann der Fall sein, wenn Sie die **Toolkette compile with .net Native** verwenden, die eine Option für UWP-apps im **Eigenschaften > Build > Allgemeines** Fenster für das Projekt ist.
 

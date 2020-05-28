@@ -1,78 +1,81 @@
 ---
-title: Text in Xamarin.Forms
-description: Xamarin.Forms verfügt über drei primäre Ansichten zum Arbeiten mit Text, und in diesem Artikel wird erläutert, wie Sie mit, dass sie eingeben und Anzeigen von Text in Xamarin.Forms-Anwendungen.
-ms.prod: xamarin
-ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/26/2018
-ms.openlocfilehash: 7b7cd9445ec9f28211037608ab04ffc45bec705c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: Text inXamarin.Forms
+description: Xamarin.Formsverfügt über drei primäre Ansichten zum Arbeiten mit Text. in diesem Artikel wird erläutert, wie Sie diese zum eingeben und Anzeigen von Text in- Xamarin.Forms Anwendungen verwenden.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 579ff44e9c58d7eea538d5478e99b4c480d44ac0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227975"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136187"
 ---
-# <a name="text-in-xamarinforms"></a>Text in Xamarin.Forms
+# <a name="text-in-xamarinforms"></a>Text inXamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_Verwenden Xamarin.Forms, um Text eingeben oder anzeigen._
+_Mithilfe Xamarin.Forms von können Sie Text eingeben oder anzeigen._
 
-Xamarin.Forms verfügt über drei primäre Ansichten zum Arbeiten mit Text:
+Xamarin.Formsverfügt über drei primäre Ansichten zum Arbeiten mit Text:
 
-- **[Bezeichnung](#Label)**  &mdash; für einzelne oder mehrere Zeilen Text darstellen. Text mit mehreren Formatierungsoptionen können in der gleichen Zeile angezeigt werden.
-- **[Eintrag](#Entry)**  &mdash; zum Eingeben des Texts, der nur eine Zeile ist. Eintrag verfügt über eine Kennwort-Modus.
-- **[Editor](#Editor)**  &mdash; zum Eingeben des Texts, die mehr als eine Zeile sein könnten.
+- **[Bezeichnung](#Label)** &mdash; zum Darstellen von Text in einem oder mehreren Zeilen. Kann Text mit mehreren Formatierungsoptionen in derselben Zeile anzeigen.
+- **[Eintrag](#Entry)** &mdash; zum Eingeben von Text, der nur eine Zeile ist. Der Eintrag hat einen Kenn Wort Modus.
+- **[Editor](#Editor)** &mdash; zum Eingeben von Text, der mehr als eine Zeile annehmen kann.
 
-Textdarstellung kann geändert werden, mithilfe von integrierten oder benutzerdefinierten [Stile](#Styles) und einige Steuerelemente unterstützen benutzerdefinierte [Schriftarten](#Fonts).
+Die Text Darstellung kann mithilfe integrierter oder benutzerdefinierter [Stile](#Styles) geändert werden, und einige Steuerelemente unterstützen benutzerdefinierte [Schriftarten](#Fonts).
 
 <a name="Label" />
 
-## <a name="labellabelmd"></a>[Bezeichnung](label.md)
+## <a name="label"></a>[Bezeichnung](label.md)
 
-Die `Label` Ansicht zum Anzeigen von Text verwendet wird. Sie können mehrere Zeilen Text oder eine einzelne Textzeile anzeigen. `Label` kann Text mit mehreren Formatierungsoptionen in Inline verwendet darstellen. Die Bezeichnung kann umschließen oder Abschneiden von Text, wenn es nicht in einer Zeile passen.
+Die `Label` Ansicht wird zum Anzeigen von Text verwendet. Es können mehrere Textzeilen oder eine einzelne Textzeile angezeigt werden. `Label`kann Text mit mehreren Formatierungsoptionen darstellen, die in Inline verwendet werden. Die Beschriftungs Ansicht kann Text wrappen oder abschneiden, wenn er nicht in eine Zeile passt.
 
 ![Beispiel für eine Bezeichnung](images/label.png)
 
-Finden Sie unter den [Bezeichnung](label.md) Artikel Weitere Informationen.
+Ausführlichere Informationen finden Sie im Artikel zur [Bezeichnung](label.md) .
 
-Informationen zum Anpassen der Schriftart in eine Bezeichnung verwendet, finden Sie unter [Schriftarten](fonts.md).
+Informationen zum Anpassen der Schriftart, die in einer Bezeichnung verwendet wird, finden Sie unter [Schriftarten](fonts.md).
 
 <a name="Entry" />
 
-## <a name="entryentrymd"></a>[Eingabe](entry.md)
+## <a name="entry"></a>[Eingabe](entry.md)
 
-`Entry` Dient zum einzeiligen Texteingaben akzeptieren. `Entry` Angebote Steuerung Farben und Schriftarten. `Entry` verfügt über eine Kennwortmodus und Platzhaltertext können angezeigt werden, solange Sie Text eingegeben wurde.
+`Entry`wird verwendet, um einzeilige Texteingaben zu akzeptieren. `Entry`bietet Kontrolle über Farben und Schriftarten. `Entry`hat einen Kenn Wort Modus und kann Platzhalter Text anzeigen, bis Text eingegeben wird.
 
 ![Beispiel für den Eintrag](images/entry.png)
 
-Finden Sie unter den [Eintrag](entry.md) Weitere Informationen.
+Weitere Informationen finden Sie im Artikel zum [Eintrag](entry.md) .
 
-Beachten Sie, dass im Gegensatz zu `Label`, `Entry` sind keine Einstellungen für die benutzerdefinierte Schriftart.
+Beachten Sie, dass im Gegensatz zu `Label` `Entry` keine benutzerdefinierten Schriftart Einstellungen aufweisen können.
 
 <a name="Editor" />
 
-## <a name="editoreditormd"></a>[Editor](editor.md)
+## <a name="editor"></a>[Editor](editor.md)
 
-`Editor` wird verwendet, um mehrzeilige Texteingabe zu akzeptieren. `Editor` Angebote Steuerung Farben und Schriftarten.
+`Editor`wird verwendet, um mehrzeilige Texteingaben zu akzeptieren. `Editor`bietet Kontrolle über Farben und Schriftarten.
 
 ![Editor-Beispiel](images/editor.png)
 
-Finden Sie unter den [Editor](editor.md) Weitere Informationen.
+Weitere Informationen finden Sie im [Editor](editor.md) -Artikel.
 
 <a name="Fonts" />
 
-## <a name="fontsfontsmd"></a>[Schriftarten](fonts.md)
+## <a name="fonts"></a>[Fonts](fonts.md)
 
-Viele Steuerelemente unterstützen unterschiedliche Schriftart Einstellungen mithilfe der integrierten Schriftarten auf jeder Plattform oder benutzerdefinierter Schriftarten, die in Ihrer APP enthalten sind. Finden Sie unter den [Schriftarten](fonts.md) Artikel Weitere Informationen.
+Viele Steuerelemente unterstützen unterschiedliche Schriftart Einstellungen mithilfe der integrierten Schriftarten auf jeder Plattform oder benutzerdefinierter Schriftarten, die in Ihrer APP enthalten sind. Ausführlichere Informationen finden Sie im Artikel zu [Schriftarten](fonts.md) .
 
 <a name="Styles" />
 
-## <a name="stylesstylesmd"></a>[Stile](styles.md)
+## <a name="styles"></a>[Stile](styles.md)
 
-Finden Sie unter [arbeiten mit Stilen](~/xamarin-forms/user-interface/styles/index.md) Informationen zum Einrichten der Schriftart [Farbe](~/xamarin-forms/user-interface/colors.md), und andere anzeigen-Eigenschaften, die für mehrere Steuerelemente gelten.
+Informationen zum Einrichten von Schriftart, [Farbe](~/xamarin-forms/user-interface/colors.md)und anderen Anzeigeeigenschaften, die über mehrere Steuerelemente gelten, finden Sie unter [Arbeiten mit Stilen](~/xamarin-forms/user-interface/styles/index.md) .
 
 ## <a name="related-links"></a>Verwandte Links
 

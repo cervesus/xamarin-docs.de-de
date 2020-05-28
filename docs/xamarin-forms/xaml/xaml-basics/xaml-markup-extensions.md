@@ -1,20 +1,23 @@
 ---
-title: 'Teil 3: XAML-Markuperweiterungen'
-description: XAML-Markuperweiterungen bilden eine wichtige Funktion in XAML, mit denen Eigenschaften festgelegt werden, um Objekte oder Werte, die aus anderen Quellen indirekt verwiesen werden.
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/27/2018
-ms.openlocfilehash: 89e2026ff16a9614234d6ee4bfa4df620cf58b56
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305900"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131338"
 ---
-# <a name="part-3-xaml-markup-extensions"></a>Teil 3: XAML-Markuperweiterungen
+# <a name="part-3-xaml-markup-extensions"></a>Teil 3. XAML-Markuperweiterungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
@@ -22,17 +25,17 @@ _XAML-Markup Erweiterungen bilden ein wichtiges Feature in XAML, das es ermögli
 
 ## <a name="xaml-markup-extensions"></a>XAML-Markuperweiterungen
 
-Im Allgemeinen verwenden Sie XAML zum Festlegen der Eigenschaften eines Objekts auf explizite Werte, z. B. eine Zeichenfolge, eine Zahl, einen Enumerationsmember oder eine Zeichenfolge, die auf einen Wert im Hintergrund konvertiert wird.
+Im Allgemeinen verwenden Sie XAML, um die Eigenschaften eines Objekts auf explizite Werte festzulegen, z. b. eine Zeichenfolge, eine Zahl, ein Enumerationsmember oder eine Zeichenfolge, die in einen Wert hinter den Kulissen konvertiert wird.
 
-In einigen Fällen jedoch Eigenschaften müssen stattdessen auf Werte, die andernfalls an einer beliebigen Stelle definiert, oder die möglicherweise einer kleine Verarbeitung von Code zur Laufzeit. Zu diesem Zweck sind XAML- *Markup Erweiterungen* verfügbar.
+Manchmal müssen Eigenschaften jedoch auf Werte verweisen, die an anderer Stelle definiert sind, oder für die möglicherweise ein wenig Code zur Laufzeit verarbeitet werden. Zu diesem Zweck sind XAML- *Markup Erweiterungen* verfügbar.
 
-Diese XAML-Markuperweiterungen sind nicht von XML-Erweiterungen. XAML ist vollständig gültige XML-Daten. Sie werden als "Erweiterungen" bezeichnet, da Sie durch Code in Klassen unterstützt werden, die `IMarkupExtension`implementieren. Sie können Ihre eigenen benutzerdefinierten Markuperweiterungen schreiben.
+Diese XAML-Markup Erweiterungen sind keine XML-Erweiterungen. XAML ist vollständig gültiger XML-Code. Sie werden als "Erweiterungen" bezeichnet, da Sie durch Code in Klassen unterstützt werden, die implementieren `IMarkupExtension` . Sie können eigene benutzerdefinierte Markup Erweiterungen schreiben.
 
-In vielen Fällen XAML-Markuperweiterungen sind sofort erkennbar, die in XAML-Dateien, da sie als attributeinstellungen, die geschweiften Klammern gesetzte angezeigt werden: {und}, aber manchmal Markuperweiterungen werden im Markup als herkömmliche Elemente angezeigt.
+In vielen Fällen sind XAML-Markup Erweiterungen in XAML-Dateien sofort erkennbar, da Sie als durch geschweifte Klammern getrennte Attribut Einstellungen angezeigt werden: {und}, aber manchmal werden Markup Erweiterungen im Markup als konventionelle Elemente angezeigt.
 
-## <a name="shared-resources"></a>Gemeinsam genutzte Ressourcen
+## <a name="shared-resources"></a>Freigegebene Ressourcen
 
-Einige XAML-Seiten enthalten mehrere Ansichten mit Eigenschaften, die auf die gleichen Werte festgelegt. Viele der Eigenschafts Einstellungen für diese `Button` Objekte sind z. b. identisch:
+Einige XAML-Seiten enthalten mehrere Ansichten mit Eigenschaften, die auf dieselben Werte festgelegt sind. Viele der Eigenschafts Einstellungen für diese Objekte sind z. b. `Button` identisch:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -69,11 +72,11 @@ Einige XAML-Seiten enthalten mehrere Ansichten mit Eigenschaften, die auf die gl
 </ContentPage>
 ```
 
-Wenn eine dieser Eigenschaften geändert werden muss, empfiehlt es sich um die Änderung nur einmal statt drei Mal zu machen. Würde dies Code, würden Sie wahrscheinlich Konstanten und statische schreibgeschützte Objekte verwenden, sorgen Sie für solche Werte konsistenten und leicht zu ändern.
+Wenn eine dieser Eigenschaften geändert werden muss, empfiehlt es sich, die Änderung nur einmal statt dreimal vorzunehmen. Wenn dies Code wäre, würden Sie wahrscheinlich Konstanten und statische schreibgeschützte Objekte verwenden, um solche Werte konsistent und leicht zu ändern.
 
-In XAML besteht eine beliebte Lösung darin, solche Werte oder Objekte in einem *Ressourcen Wörterbuch*zu speichern. Die `VisualElement`-Klasse definiert eine Eigenschaft mit dem Namen `Resources` vom Typ `ResourceDictionary`, bei der es sich um ein Wörterbuch mit Schlüsseln vom Typ `string` und Werten vom Typ `object`handelt. Können Sie Objekte in dieses Wörterbuch einfügen und aus allen im XAML-Markup darauf verweisen.
+In XAML besteht eine beliebte Lösung darin, solche Werte oder Objekte in einem *Ressourcen Wörterbuch*zu speichern. Die- `VisualElement` Klasse definiert eine Eigenschaft `Resources` mit dem Namen vom Typ `ResourceDictionary` , bei der es sich um ein Wörterbuch mit Schlüsseln vom Typ `string` und Werten vom Typ handelt `object` . Sie können Objekte in dieses Wörterbuch einfügen und dann in XAML von Markup aus darauf verweisen.
 
-Um ein Ressourcen Wörterbuch auf einer Seite zu verwenden, schließen Sie ein paar von `Resources`-Eigenschaften Tags ein. Es ist am einfachsten, diese am oberen Rand der Seite eingefügt:
+Um ein Ressourcen Wörterbuch auf einer Seite zu verwenden, schließen Sie ein paar von `Resources` Eigenschaften-Element-Tags ein. Es ist am einfachsten, diese oben auf der Seite zu platzieren:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -88,7 +91,7 @@ Um ein Ressourcen Wörterbuch auf einer Seite zu verwenden, schließen Sie ein p
 </ContentPage>
 ```
 
-Es ist auch erforderlich, `ResourceDictionary` Tags explizit einzuschließen:
+Es ist auch erforderlich, Tags explizit einzuschließen `ResourceDictionary` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -105,7 +108,7 @@ Es ist auch erforderlich, `ResourceDictionary` Tags explizit einzuschließen:
 </ContentPage>
 ```
 
-Objekte und Werte verschiedener Typen können nun in das Ressourcenverzeichnis hinzugefügt werden. Diese Typen müssen instanziiert werden können. Abstrakte Klassen, z. B. nicht möglich. Diese Typen müssen auch einen öffentlichen parameterlosen Konstruktor aufweisen. Jedes Element erfordert einen Wörterbuch Schlüssel, der mit dem `x:Key`-Attribut angegeben wird. Beispiel:
+Nun können Objekte und Werte verschiedener Typen dem Ressourcen Wörterbuch hinzugefügt werden. Diese Typen müssen instanziiert werden können. Sie können z. b. keine abstrakten Klassen sein. Diese Typen müssen auch über einen öffentlichen Parameter losen Konstruktor verfügen. Jedes Element erfordert einen Wörterbuch Schlüssel, der mit dem-Attribut angegeben wird `x:Key` . Beispiel:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -127,9 +130,9 @@ Objekte und Werte verschiedener Typen können nun in das Ressourcenverzeichnis h
 </ContentPage>
 ```
 
-Diese beiden Elemente sind Werte vom Strukturtyp `LayoutOptions`, und jede verfügt über einen eindeutigen Schlüssel und eine oder zwei Eigenschaften. In Code und Markup ist es häufig üblich, die statischen Felder von `LayoutOptions`zu verwenden. hier ist es jedoch bequemer, die Eigenschaften festzulegen.
+Diese beiden Elemente sind Werte vom Strukturtyp `LayoutOptions` , und jede verfügt über einen eindeutigen Schlüssel und eine oder zwei Eigenschaften. Im Code und im Markup ist es viel häufiger üblich, die statischen Felder von zu verwenden `LayoutOptions` . hier ist es jedoch bequemer, die Eigenschaften festzulegen.
 
-Nun ist es notwendig, die `HorizontalOptions`-und `VerticalOptions` Eigenschaften dieser Schaltflächen auf diese Ressourcen festzulegen. Dies geschieht mit der `StaticResource` XAML-Markup Erweiterung:
+Nun müssen die-Eigenschaft und die-Eigenschaft dieser `HorizontalOptions` `VerticalOptions` Schaltflächen auf diese Ressourcen festgelegt werden, und das geschieht mit der `StaticResource` XAML-Markup Erweiterung:
 
 ```xaml
 <Button Text="Do this!"
@@ -143,9 +146,9 @@ Nun ist es notwendig, die `HorizontalOptions`-und `VerticalOptions` Eigenschafte
 
 Die `StaticResource` Markup Erweiterung ist immer mit geschweiften Klammern begrenzt und enthält den Wörterbuch Schlüssel.
 
-Der Name `StaticResource` unterscheidet ihn von `DynamicResource`, den xamarin. Forms ebenfalls unterstützt. `DynamicResource` ist für Wörterbuch Schlüssel, die Werten zugeordnet sind, die sich während der Laufzeit ändern können, während `StaticResource` auf Elemente aus dem Wörterbuch nur einmal zugreift, wenn die Elemente auf der Seite erstellt werden.
+Der Name `StaticResource` unterscheidet ihn von `DynamicResource` , der Xamarin.Forms auch unterstützt. `DynamicResource`ist für Wörterbuch Schlüssel, die Werten zugeordnet sind, die sich während der Laufzeit ändern können, während gleichzeitig `StaticResource` auf Elemente aus dem Wörterbuch zugreift, wenn die Elemente auf der Seite erstellt werden.
 
-Für die `BorderWidth`-Eigenschaft ist es erforderlich, einen Double-Wert im Wörterbuch zu speichern. XAML definiert Tags für allgemeine Datentypen wie `x:Double` und `x:Int32`:
+Bei der `BorderWidth` -Eigenschaft ist es erforderlich, einen Double-Wert im Wörterbuch zu speichern. XAML definiert Tags für allgemeine Datentypen wie `x:Double` und `x:Int32` :
 
 ```xaml
 <ContentPage.Resources>
@@ -164,7 +167,7 @@ Für die `BorderWidth`-Eigenschaft ist es erforderlich, einen Double-Wert im Wö
 </ContentPage.Resources>
 ```
 
-Sie müssen sie sich in drei Zeilen eingefügt. Diesen Wörterbucheintrag für diese Drehwinkel für Bezeichnungen dauert nur eine Zeile nach oben:
+Sie müssen Sie nicht in drei Zeilen einfügen. Dieser Wörterbucheintrag für diesen Drehwinkel nimmt nur eine Zeile an:
 
 ```xaml
 <ContentPage.Resources>
@@ -185,7 +188,7 @@ Sie müssen sie sich in drei Zeilen eingefügt. Diesen Wörterbucheintrag für d
 </ContentPage.Resources>
 ```
 
-Auf diese beiden Ressourcen kann auf die gleiche Weise wie die `LayoutOptions` Werte verwiesen werden:
+Auf diese beiden Ressourcen kann auf die gleiche Weise wie die- `LayoutOptions` Werte verwiesen werden:
 
 ```xaml
 <Button Text="Do this!"
@@ -197,13 +200,13 @@ Auf diese beiden Ressourcen kann auf die gleiche Weise wie die `LayoutOptions` W
         FontSize="24" />
 ```
 
-Für Ressourcen vom Typ `Color`können Sie dieselben Zeichen folgen Darstellungen verwenden, die Sie verwenden, wenn Sie Attribute dieser Typen direkt zuweisen. Der Typkonverter werden aufgerufen, wenn die Ressource erstellt wird. Im folgenden finden Sie eine Ressource vom Typ `Color`:
+Für Ressourcen vom Typ `Color` können Sie dieselben Zeichen folgen Darstellungen verwenden, die Sie verwenden, wenn Sie Attribute dieser Typen direkt zuweisen. Die Typkonverter werden aufgerufen, wenn die Ressource erstellt wird. Im folgenden finden Sie eine Ressource des Typs `Color` :
 
 ```xaml
 <Color x:Key="textColor">Red</Color>
 ```
 
-Häufig legen Programme eine `FontSize`-Eigenschaft auf einen Member der `NamedSize` Enumeration fest, z. b. `Large`. Die `FontSizeConverter`-Klasse arbeitet im Hintergrund, um Sie mithilfe der `Device.GetNamedSized`-Methode in einen Platt Form abhängigen Wert zu konvertieren. Wenn Sie jedoch eine Ressource mit Schriftart Größe definieren, ist es sinnvoller, einen numerischen Wert zu verwenden, der hier als `x:Double` Typ dargestellt wird:
+Häufig legen Programme eine `FontSize` Eigenschaft auf einen Member der- `NamedSize` Enumeration fest, z `Large` . b.. Die- `FontSizeConverter` Klasse arbeitet im Hintergrund, um Sie mithilfe der-Methode in einen Platt Form abhängigen Wert zu konvertieren `Device.GetNamedSized` . Wenn Sie jedoch eine Ressource mit Schriftart Größe definieren, ist es sinnvoller, einen numerischen Wert zu verwenden, der hier als `x:Double` Typ dargestellt wird:
 
 ```xaml
 <x:Double x:Key="fontSize">24</x:Double>
@@ -221,7 +224,7 @@ Nun werden alle Eigenschaften außer `Text` durch Ressourcen Einstellungen defin
         FontSize="{StaticResource fontSize}" />
 ```
 
-Es ist auch möglich, `OnPlatform` innerhalb des Ressourcen Wörterbuchs zu verwenden, um unterschiedliche Werte für die Plattformen zu definieren. Im folgenden wird erläutert, wie ein `OnPlatform`-Objekt für verschiedene Textfarben Teil des Ressourcen Wörterbuchs sein kann:
+Es ist auch möglich, `OnPlatform` innerhalb des Ressourcen Wörterbuchs zu verwenden, um unterschiedliche Werte für die Plattformen zu definieren. Im folgenden wird erläutert, wie ein `OnPlatform` Objekt für verschiedene Textfarben Teil des Ressourcen Wörterbuchs sein kann:
 
 ```xaml
 <OnPlatform x:Key="textColor"
@@ -232,9 +235,9 @@ Es ist auch möglich, `OnPlatform` innerhalb des Ressourcen Wörterbuchs zu verw
 </OnPlatform>
 ```
 
-Beachten Sie, dass `OnPlatform` ein `x:Key` Attribut abruft, weil es ein Objekt im Wörterbuch und ein `x:TypeArguments` Attribut ist, weil es sich um eine generische Klasse handelt. Die Attribute `iOS`, `Android`und `UWP` werden in `Color` Werte konvertiert, wenn das Objekt initialisiert wird.
+Beachten Sie, dass ein `OnPlatform` `x:Key` Attribut abruft, da es ein Objekt im Wörterbuch und ein Attribut ist, `x:TypeArguments` weil es sich um eine generische Klasse handelt. Die `iOS` `Android` Attribute, und `UWP` werden in-Werte konvertiert, `Color` Wenn das Objekt initialisiert wird.
 
-So sieht die letzte vollständige XAML-Datei mit drei Schaltflächen, die Zugriff auf sechs gemeinsame Werte aus:
+Hier ist die abschließende vollständige XAML-Datei mit drei Schaltflächen, die auf sechs freigegebene Werte zugreifen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -295,11 +298,11 @@ So sieht die letzte vollständige XAML-Datei mit drei Schaltflächen, die Zugrif
 </ContentPage>
 ```
 
-Die Screenshots überprüfen Sie die einheitliches Aussehen und den Stil der plattformabhängige:
+Die Screenshots überprüfen das konsistente formatieren und das Platt Form abhängige Format:
 
-[![formatierte Steuerelemente](xaml-markup-extensions-images/sharedresources.png)](xaml-markup-extensions-images/sharedresources-large.png#lightbox)
+[![Formatierte Steuerelemente](xaml-markup-extensions-images/sharedresources.png)](xaml-markup-extensions-images/sharedresources-large.png#lightbox)
 
-Obwohl es am häufigsten ist, die `Resources` Auflistung am oberen Rand der Seite zu definieren, beachten Sie, dass die `Resources`-Eigenschaft durch `VisualElement`definiert ist, und Sie können `Resources` Auflistungen für andere Elemente auf der Seite haben. Fügen Sie z. b. einen der `StackLayout` in diesem Beispiel hinzu:
+Obwohl es am häufigsten ist, die Auflistung `Resources` am oberen Rand der Seite zu definieren, beachten Sie, dass die `Resources` -Eigenschaft von definiert wird `VisualElement` , und Sie können Auflistungen `Resources` für andere Elemente auf der Seite haben. Fügen Sie z. b. `StackLayout` in diesem Beispiel einen hinzu:
 
 ```xaml
 <StackLayout>
@@ -312,24 +315,24 @@ Obwohl es am häufigsten ist, die `Resources` Auflistung am oberen Rand der Seit
 </StackLayout>
 ```
 
-Sie werden feststellen, dass die Textfarbe für die Schaltflächen nun blau ist. Wenn der XAML-Parser auf eine `StaticResource` Markup Erweiterung trifft, sucht er im Grunde die visuelle Struktur und verwendet den ersten `ResourceDictionary`, der den Schlüssel enthält.
+Sie werden feststellen, dass die Textfarbe der Schaltflächen jetzt blau ist. Wenn der XAML `StaticResource` -Parser auf eine Markup Erweiterung stößt, wird im Grunde die visuelle Struktur durchsucht, und die erste `ResourceDictionary` stößt mit diesem Schlüssel wird verwendet.
 
-Einer der gängigsten Typen von in Ressourcen Wörterbüchern gespeicherten Objekten ist das xamarin. Forms-`Style`, das eine Auflistung von Eigenschafts Einstellungen definiert. Stile werden in den Artikel [Stilen](~/xamarin-forms/user-interface/styles/index.md)erläutert.
+Einer der gängigsten Typen von Objekten, der in Ressourcen Wörterbüchern gespeichert ist, ist die Xamarin.Forms `Style` , die eine Auflistung von Eigenschafts Einstellungen definiert. Stile werden in den Artikel [Stilen](~/xamarin-forms/user-interface/styles/index.md)erläutert.
 
-Manchmal fragen sich Entwickler, die sich mit XAML vertraut sind, wenn Sie ein visuelles Element wie `Label` oder `Button` in einem `ResourceDictionary`platzieren können. Während es sicherlich möglich ist, macht es viel Sinn. Der Zweck des `ResourceDictionary` ist die Freigabe von Objekten. Ein visuelles Element kann nicht freigegeben werden. Die gleiche Instanz kann nicht zweimal auf einer einzelnen Seite angezeigt.
+Manchmal fragen sich Entwickler, wenn Sie ein visuelles Element wie `Label` oder `Button` in ein einfügen können `ResourceDictionary` . Obwohl es sicherlich möglich ist, ist es nicht sinnvoll. Der Zweck der `ResourceDictionary` besteht darin,-Objekte gemeinsam zu verwenden. Ein visuelles Element kann nicht freigegeben werden. Dieselbe Instanz kann nicht zweimal auf einer einzelnen Seite angezeigt werden.
 
-## <a name="the-xstatic-markup-extension"></a>Die X: Static-Markuperweiterung
+## <a name="the-xstatic-markup-extension"></a>Die x:statische Markup Erweiterung
 
-Trotz der Ähnlichkeit ihrer Namen sind `x:Static` und `StaticResource` sehr unterschiedlich. `StaticResource` gibt ein Objekt aus einem Ressourcen Wörterbuch zurück, während `x:Static` auf eine der folgenden Zugriffen zugreift:
+Trotz der Ähnlichkeit ihrer Namen `x:Static` `StaticResource` sind und sehr verschieden. `StaticResource`Gibt ein-Objekt aus einem Ressourcen Wörterbuch zurück, während `x:Static` auf eine der folgenden zugreift:
 
-- öffentliches statisches Feld
+- ein öffentliches statisches Feld
 - eine öffentliche statische Eigenschaft
-- Ein konstanter öffentliches Feld
+- ein öffentliches Konstantenfeld
 - Ein Enumerationsmember.
 
-Die `StaticResource` Markup Erweiterung wird von XAML-Implementierungen unterstützt, die ein Ressourcen Wörterbuch definieren, während `x:Static` ein System interner Teil von XAML ist, wie das `x`-Präfix zeigt.
+Die `StaticResource` Markup Erweiterung wird von XAML-Implementierungen unterstützt, die ein Ressourcen Wörterbuch definieren, während ein System interner `x:Static` Teil von XAML ist, wie das `x` Präfix zeigt.
 
-Im folgenden finden Sie einige Beispiele, die veranschaulichen, wie `x:Static` explizit auf statische Felder und Enumerationsmember verweisen kann:
+Im folgenden finden Sie einige Beispiele, die veranschaulichen, wie auf `x:Static` statische Felder und Enumerationsmember explizit verwiesen werden kann:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -338,7 +341,7 @@ Im folgenden finden Sie einige Beispiele, die veranschaulichen, wie `x:Static` e
        TextColor="{x:Static Color.Aqua}" />
 ```
 
-Dies ist bisher nicht sehr beeindruckend. Die `x:Static` Markup Erweiterung kann jedoch auch auf statische Felder oder Eigenschaften aus Ihrem eigenen Code verweisen. Hier ist beispielsweise eine `AppConstants`-Klasse, die einige statische Felder enthält, die Sie möglicherweise auf mehreren Seiten in einer Anwendung verwenden möchten:
+Bisher ist das nicht sehr beeindruckend. Die `x:Static` Markup Erweiterung kann jedoch auch auf statische Felder oder Eigenschaften aus Ihrem eigenen Code verweisen. Hier ist beispielsweise eine- `AppConstants` Klasse, die einige statische Felder enthält, die Sie möglicherweise auf mehreren Seiten in einer Anwendung verwenden möchten:
 
 ```csharp
 using System;
@@ -380,32 +383,32 @@ namespace XamlSamples
 }
 ```
 
-Die statischen Felder dieser Klasse in der XAML-Datei verweisen möchten, benötigen Sie eine Möglichkeit, in der XAML-Datei anzugeben, wo sich diese Datei befindet. Hierzu eine XML-Namespacedeklaration.
+Um auf die statischen Felder dieser Klasse in der XAML-Datei zu verweisen, benötigen Sie eine Möglichkeit, in der XAML-Datei anzugeben, in der sich diese Datei befindet. Dies wird mit einer XML-Namespace Deklaration durchzuführen.
 
-Denken Sie daran, dass die XAML-Dateien, die als Teil der standardmäßigen Xamarin.Forms-XAML-Vorlage erstellt zwei XML-Namespacedeklaration enthalten: einen für den Zugriff auf Xamarin.Forms-Klassen und eine andere zum Verweisen auf die Tags und Attribute von XAML systeminterne:
+Beachten Sie, dass die XAML-Dateien, die als Teil der standardmäßigen Xamarin.Forms XAML-Vorlage erstellt wurden, zwei XML-Namespace Deklarationen enthalten: eine für den Zugriff auf Xamarin.Forms Klassen und eine andere für das verweisen auf die in XAML intrinsischen
 
 ```csharp
 xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-Sie benötigen zusätzliche XML-Namespacedeklaration auf andere Klassen zugreifen zu können. Jede zusätzliche XML-Namespacedeklaration definiert ein neues Präfix. Für den Zugriff auf Klassen, die für die freigegebene Anwendung .NET Standard Bibliothek wie `AppConstants`verwendet werden, verwenden XAML-Programmierer häufig das Präfix `local`. Die Namespace Deklaration muss den CLR-Namespace Namen (Common Language Runtime) angeben, der auch als .NET-Namespace Name bezeichnet wird. Dies ist der Name C# , der in einer `namespace` Definition oder in einer `using` Direktive angezeigt wird:
+Für den Zugriff auf andere Klassen benötigen Sie zusätzliche XML-Namespace Deklarationen. Jede zusätzliche XML-Namespace Deklaration definiert ein neues Präfix. Für den Zugriff auf Klassen, die für die freigegebene Anwendung .NET Standard Bibliothek wie z. b. `AppConstants` verwendet werden, verwenden XAML-Programmierer häufig das Präfix `local` Die Namespace Deklaration muss den CLR-Namespace Namen (Common Language Runtime) angeben, der auch als .NET-Namespace Name bezeichnet wird. Dies ist der Name, der in einer c#- `namespace` Definition oder in einer- `using` Direktive angezeigt wird:
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Sie können auch XML-Namespacedeklaration für .NET Namespaces definieren, die in einer beliebigen Assembly, die die .NET Standard-Bibliothek verweist. Hier ist beispielsweise ein `sys` Präfix für den standardmäßigen .net `System`-Namespace, der sich in der **netstandard** -Assembly befindet. Da es sich um eine andere Assembly handelt, müssen Sie auch den Assemblynamen angeben, in diesem Fall **netstandard**:
+Sie können auch XML-Namespace Deklarationen für .NET-Namespaces in jeder Assembly definieren, auf die die .NET Standard-Bibliothek verweist. Hier ist beispielsweise ein `sys` Präfix für den .NET-Standard `System` Namespace, der sich in der **netstandard** -Assembly befindet. Da es sich um eine andere Assembly handelt, müssen Sie auch den Assemblynamen angeben, in diesem Fall **netstandard**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"
 ```
 
-Beachten Sie, dass das Schlüsselwort `clr-namespace` von einem Doppelpunkt gefolgt wird, gefolgt von einem Semikolon, dem Schlüsselwort `assembly`, einem Gleichheitszeichen und dem Assemblynamen.
+Beachten Sie, dass auf das Schlüsselwort `clr-namespace` ein Doppelpunkt und dann der .NET-Namespace Name, gefolgt von einem Semikolon, dem Schlüsselwort `assembly` , einem Gleichheitszeichen und dem Assemblynamen folgt.
 
-Ja, ein Doppelpunkt folgt `clr-namespace` aber das Gleichheitszeichen folgt `assembly`. Die Syntax wurde auf diese Weise absichtlich definiert: die meisten XML-Namespace Deklarationen verweisen auf einen URI, der einen URI-Schema Namen startet, z. b. `http`, dem immer ein Doppelpunkt folgt. Der `clr-namespace` Teil dieser Zeichenfolge soll diese Konvention imitieren.
+Ja, ein Doppelpunkt folgt, `clr-namespace` aber das Gleichheitszeichen folgt `assembly` . Die Syntax wurde auf diese Weise absichtlich definiert: die meisten XML-Namespace Deklarationen verweisen auf einen URI, der einen URI-Schema Namen startet `http` , z. b., dem immer ein Doppelpunkt folgt. Der `clr-namespace` Teil dieser Zeichenfolge soll diese Konvention imitieren.
 
-Beide Namespace Deklarationen sind im **staticconstantspage** -Beispiel enthalten. Beachten Sie, dass die `BoxView` Dimensionen auf `Math.PI` und `Math.E`festgelegt sind, aber mit dem Faktor 100 skaliert werden:
+Beide Namespace Deklarationen sind im **staticconstantspage** -Beispiel enthalten. Beachten Sie, dass die `BoxView` Dimensionen auf und festgelegt sind `Math.PI` `Math.E` , aber mit dem Faktor 100 skaliert werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -435,23 +438,23 @@ Beide Namespace Deklarationen sind im **staticconstantspage** -Beispiel enthalte
 
 Die Größe des resultierenden `BoxView` relativ zum Bildschirm ist plattformabhängig:
 
-[![von Steuerelementen mithilfe der x:Static-Markup Erweiterung](xaml-markup-extensions-images/staticconstants.png)](xaml-markup-extensions-images/staticconstants-large.png#lightbox)
+[![Steuerelemente mit x:Static-Markup Erweiterung](xaml-markup-extensions-images/staticconstants.png)](xaml-markup-extensions-images/staticconstants-large.png#lightbox)
 
-## <a name="other-standard-markup-extensions"></a>Andere Standard-Markuperweiterungen
+## <a name="other-standard-markup-extensions"></a>Andere Standard Markup Erweiterungen
 
-Mehrere Markuperweiterungen für XAML systemintern sind und in Xamarin.Forms XAML-Dateien unterstützt. Einige davon nicht sehr häufig verwendet werden, aber sind wichtig, wenn Sie diese benötigen:
+Mehrere Markup Erweiterungen sind in XAML intrinsisch und werden in Xamarin.Forms XAML-Dateien unterstützt. Einige dieser Elemente werden nicht sehr häufig verwendet, sind jedoch für Sie erforderlich:
 
-- Wenn eine Eigenschaft standardmäßig über einen nicht `null` Wert verfügt, Sie jedoch auf `null`festlegen möchten, legen Sie Sie auf die `{x:Null}` Markup Erweiterung fest.
-- Wenn eine Eigenschaft vom Typ `Type`ist, können Sie Sie mithilfe der Markup Erweiterungs `{x:Type someClass}`einem `Type`-Objekt zuweisen.
-- Sie können Arrays in XAML mithilfe der `x:Array` Markup Erweiterung definieren. Diese Markup Erweiterung verfügt über ein erforderliches Attribut mit dem Namen `Type`, das den Typ der Elemente im Array angibt.
+- Wenn eine Eigenschaft standardmäßig einen nicht-- `null` Wert aufweist, Sie jedoch auf festlegen möchten `null` , legen Sie Sie auf die `{x:Null}` Markup Erweiterung fest.
+- Wenn eine Eigenschaft vom Typ ist `Type` , können Sie Sie `Type` mithilfe der Markup Erweiterung einem-Objekt zuweisen `{x:Type someClass}` .
+- Sie können Arrays in XAML mithilfe der `x:Array` Markup Erweiterung definieren. Diese Markup Erweiterung verfügt über ein erforderliches Attribut mit `Type` dem Namen, das den Typ der Elemente im Array angibt.
 - Die `Binding` Markup Erweiterung wird in [Teil 4 erläutert. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 - Die `RelativeSource` Markup Erweiterung wird unter [relative Bindungen](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)erläutert.
 
-## <a name="the-constraintexpression-markup-extension"></a>Die ConstraintExpression-Markuperweiterung
+## <a name="the-constraintexpression-markup-extension"></a>Die Markup Erweiterung "einschränintexpression"
 
-Markuperweiterungen können Eigenschaften verfügen, aber sie sind nicht festgelegt, wie XML-Attribute. In einer Markuperweiterung eigenschafteneinstellungen werden durch Kommas getrennt und ohne Anführungszeichen, die innerhalb der geschweiften Klammern angezeigt werden.
+Markup Erweiterungen können Eigenschaften haben, Sie sind jedoch nicht wie XML-Attribute festgelegt. In einer Markup Erweiterung werden Eigenschafts Einstellungen durch Kommas getrennt, und in den geschweiften Klammern werden keine Anführungszeichen angezeigt.
 
-Dies kann mit der xamarin. Forms-Markup Erweiterung namens "`ConstraintExpression`" veranschaulicht werden, die mit der `RelativeLayout`-Klasse verwendet wird. Sie können die Position und Größe der eine untergeordnete Ansicht als Konstante oder relativ zu einem übergeordneten Element oder andere benannte Ansicht angeben. Die Syntax des `ConstraintExpression` ermöglicht das Festlegen der Position oder Größe einer Ansicht mithilfe einer `Factor`-Mal einer Eigenschaft einer anderen Ansicht sowie eines `Constant`. Etwas komplexeren spielen als erforderlich Code.
+Dies kann mit der Xamarin.Forms Markup Erweiterung namens veranschaulicht werden `ConstraintExpression` , die mit der-Klasse verwendet wird `RelativeLayout` . Sie können den Speicherort oder die Größe einer untergeordneten Sicht als Konstante oder relativ zu einer übergeordneten oder anderen benannten Ansicht angeben. Die Syntax von `ConstraintExpression` ermöglicht es Ihnen, die Position oder Größe einer Ansicht mit einem `Factor` Uhrzeitwert einer Eigenschaft einer anderen Ansicht und einem festzulegen `Constant` . Alles komplexere als das, was Code erfordert.
 
 Hier ist ein Beispiel angegeben:
 
@@ -548,15 +551,15 @@ Hier ist ein Beispiel angegeben:
 </ContentPage>
 ```
 
-Vielleicht die wichtigste Lektion, Sie in diesem Beispiel ergreifen, wird die Syntax der Markuperweiterung: keine Anführungszeichen müssen innerhalb der geschweiften Klammern einer Markuperweiterung angezeigt werden. Wenn Sie die Markuperweiterung in einer XAML-Datei eingeben, ist es natürlich, die Werte der Eigenschaften in Anführungszeichen gesetzt werden soll. Widerstehen Sie der Versuchung!
+Die wichtigste Lektion, die Sie in diesem Beispiel berücksichtigen sollten, ist die Syntax der Markup Erweiterung: Es müssen keine Anführungszeichen innerhalb der geschweiften Klammern einer Markup Erweiterung angezeigt werden. Wenn Sie die Markup Erweiterung in eine XAML-Datei eingeben, empfiehlt es sich, die Werte der Eigenschaften in Anführungszeichen einzuschließen. Widerstehen Sie der Versuchung!
 
-Hier wird das Programm ausgeführt wird:
+Hier ist das Programm, das ausgeführt wird:
 
-[![relativer Layout mithilfe von Einschränkungen](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
+[![Relativer Layout mithilfe von Einschränkungen](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 
-Die hier gezeigten XAML-Markuperweiterungen bieten wichtige Unterstützung für XAML-Dateien. Die wichtigste XAML-Markup Erweiterung ist jedoch `Binding`, die im nächsten Teil dieser Reihe, Teil 4, behandelt wird [. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+Die hier gezeigten XAML-Markup Erweiterungen bieten wichtige Unterstützung für XAML-Dateien. Aber vielleicht ist die nützlichste XAML-Markup Erweiterung `Binding` , die im nächsten Teil dieser Reihe behandelt wird, [Teil 4. Grundlagen der Datenbindung](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

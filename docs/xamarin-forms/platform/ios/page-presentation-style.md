@@ -1,18 +1,21 @@
 ---
-title: Stil der modalen Seitendarstellung unter IOS
-description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die den Präsentationsstil einer modalen Seite festlegt.
-ms.prod: xamarin
-ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: 19175a6d97afb9d2d985d8a1bf8e1ce4c0179242
-ms.sourcegitcommit: 87035b654434c22ca1b0d70ee8d2496dcb63b365
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546505"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128010"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>Stil der modalen Seitendarstellung unter IOS
 
@@ -60,7 +63,7 @@ Das Ergebnis ist, dass der modale Präsentationsstil in einem [`Page`](xref:Xama
 [![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
 
 > [!NOTE]
-> Für Seiten, die diese plattformspezifische zum Festlegen des modalen Präsentations Stils verwenden, muss die modale Navigation verwendet werden. Weitere Informationen finden Sie unter [xamarin. Forms Modal Pages](~/xamarin-forms/app-fundamentals/navigation/modal.md).
+> Für Seiten, die diese plattformspezifische zum Festlegen des modalen Präsentations Stils verwenden, muss die modale Navigation verwendet werden. Weitere Informationen finden Sie unter [ Xamarin.Forms modale Seiten](~/xamarin-forms/app-fundamentals/navigation/modal.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

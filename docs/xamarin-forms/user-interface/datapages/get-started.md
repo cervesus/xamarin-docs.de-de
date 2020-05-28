@@ -1,43 +1,46 @@
 ---
-title: Erste Schritte mit DataPages
-description: In diesem Artikel wird erläutert, wie für den Einstieg in die Erstellung einer einfachen datengesteuerten-Webseite mithilfe von Xamarin.Forms DataPages wird.
-ms.prod: xamarin
-ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 1f7917784ea66c31979b87f43639a7d03756692c
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: In diesem Artikel wird erläutert, wie Sie mit dem Aufbau einer einfachen datengesteuerten Seite mithilfe von Xamarin.Forms DataPages beginnen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 17cc67c7fcc89454ff8dcac9926617b4ed1f4b77
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725595"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134393"
 ---
-# <a name="getting-started-with-datapages"></a>Erste Schritte mit DataPages
+# <a name="getting-started-with-datapages"></a>Ersten Einstieg in DataPages
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> Für DataPages ist ein xamarin. Forms-Design Verweis zum Rendering erforderlich. Dies umfasst das Installieren des [xamarin. Forms. Theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) -nuget-Pakets in Ihrem Projekt, gefolgt von den nuget-Paketen [xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
+> DataPages erfordert einen Design Xamarin.Forms Verweis zum Rendering. Dies umfasst die Installation von [ Xamarin.Forms . Design. basieren](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) Sie auf das nuget-Paket in Ihrem Projekt, gefolgt von dem [ Xamarin.Forms . Design. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [ Xamarin.Forms . Design. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) nuget-Pakete.
 
-Zunächst erstellen eine einfache datengesteuerte-Seite mithilfe der Vorschau DataPages führen Sie die folgenden Schritte aus. Diese Demo verwendet ein hartcodierten-Stil ("Ereignisse") in der Preview-Builds funktioniert nur mit bestimmten JSON-Format im Code.
+Führen Sie die folgenden Schritte aus, um mit dem Aufbau einer einfachen datengesteuerten Seite mithilfe der DataPages-Vorschau zu beginnen. In dieser Demo wird ein hart codierter Stil ("Ereignisse") in den Preview-Builds verwendet, der nur mit dem spezifischen JSON-Format im Code funktioniert.
 
 [![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
 
 ## <a name="1-add-nuget-packages"></a>1. Hinzufügen von nuget-Paketen
 
-Fügen Sie die folgenden nuget-Pakete zu xamarin. Forms-.NET Standard Bibliothek-und Anwendungsprojekten hinzu:
+Fügen Sie diese nuget-Pakete zu Ihrer Xamarin.Forms .NET Standard Bibliothek und ihren Anwendungsprojekten hinzu:
 
-- Xamarin.Forms.Pages
-- Xamarin.Forms.Theme.Base
-- Eine nuget-Design Implementierung (z. b. Xamarin. Forms. Theme. Light)
+- Xamarin.Forms. Seiten
+- Xamarin.Forms. Design. Base
+- Eine nuget-Design Implementierung (z. b. Xamarin.Forms. Design. Light)
 
 ## <a name="2-add-theme-reference"></a>2. Design Verweis hinzufügen
 
-Fügen Sie in der Datei **app. XAML** eine benutzerdefinierte `xmlns:mytheme` für das Design hinzu, und stellen Sie sicher, dass das Design mit dem Ressourcen Wörterbuch der Anwendung zusammengeführt wird:
+Fügen Sie in der Datei **app. XAML** eine benutzerdefinierte für das Design hinzu, `xmlns:mytheme` und stellen Sie sicher, dass das Design in das Ressourcen Wörterbuch der Anwendung zusammengeführt wird:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -51,13 +54,13 @@ Fügen Sie in der Datei **app. XAML** eine benutzerdefinierte `xmlns:mytheme` f�
 ```
 
 > [!IMPORTANT]
-> Sie sollten auch die Schritte zum Laden von Design-Assemblys [(unten)](#loadtheme) ausführen, indem Sie dem IOS-`AppDelegate` und Android-`MainActivity`Code hinzufügen. Dies wird in einer kommenden Vorschau-Version verbessert werden.
+> Sie sollten auch die Schritte zum Laden von Design-Assemblys [(unten)](#loadtheme) ausführen, indem Sie dem IOS `AppDelegate` -und Android-Code Code hinzufügen `MainActivity` . Dies wird in einer zukünftigen Vorschauversion verbessert.
 
 ## <a name="3-add-a-xaml-page"></a>3. Hinzufügen einer XAML-Seite
 
-Fügen Sie der xamarin. Forms-Anwendung eine neue XAML-Seite hinzu, und *Ändern Sie die Basisklasse* von `ContentPage` in `Xamarin.Forms.Pages.ListDataPage`. Dies hat in der C#- und die XAML durchgeführt werden:
+Fügen Sie der Anwendung eine neue XAML Xamarin.Forms -Seite hinzu, und *Ändern Sie die Basisklasse* von `ContentPage` in `Xamarin.Forms.Pages.ListDataPage` . Dies muss sowohl in c# als auch in XAML erfolgen:
 
-**C#Datei**
+**C#-Datei**
 
 ```csharp
 public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was ContentPage
@@ -71,7 +74,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **XAML-Datei**
 
-Zusätzlich zum Ändern des Stamm Elements in `<p:ListDataPage>` der benutzerdefinierte Namespace für `xmlns:p` ebenfalls hinzugefügt werden:
+Zusätzlich zum Ändern des Stamm Elements in `<p:ListDataPage>` den benutzerdefinierten Namespace für `xmlns:p` muss auch hinzugefügt werden:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -87,7 +90,7 @@ Zusätzlich zum Ändern des Stamm Elements in `<p:ListDataPage>` der benutzerdef
 
 **Anwendungs Unterklasse**
 
-Ändern Sie den `App` Klassenkonstruktor, sodass der `MainPage` auf eine `NavigationPage` festgelegt ist, die die neue `SessionDataPage`enthält. Eine Navigationsseite *muss* verwendet werden.
+Ändern `App` Sie den Klassenkonstruktor, sodass `MainPage` auf einen `NavigationPage` mit dem neuen festgelegt ist `SessionDataPage` . Eine Navigationsseite *muss* verwendet werden.
 
 ```csharp
 MainPage = new NavigationPage (new SessionDataPage ());
@@ -95,10 +98,10 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 ## <a name="3-add-the-datasource"></a>3. Fügen Sie die Datenquelle hinzu.
 
-Löschen Sie das `Content`-Element, und ersetzen Sie es durch ein `p:ListDataPage.DataSource`, um die Seite mit Daten aufzufüllen. Im Beispiel unten eine remote-Json ist-Datendatei aus einer URL geladen wird.
+Löschen `Content` Sie das-Element, und ersetzen Sie es durch ein-Element `p:ListDataPage.DataSource` , um die Seite mit Daten aufzufüllen. Im folgenden Beispiel wird eine JSON-Remote Datendatei aus einer URL geladen.
 
 > [!NOTE]
-> Die Vorschau *erfordert* ein `StyleClass` Attribut, um Renderinghinweise für die Datenquelle bereitzustellen. Der `StyleClass="Events"` verweist auf ein Layout, das in der Vorschau vordefiniert ist, und enthält Stile, die für die Verwendung der verwendeten JSON-Datenquelle *hart codiert* sind.
+> Die Vorschau *erfordert* ein- `StyleClass` Attribut, um Renderinghinweise für die Datenquelle bereitzustellen. Der `StyleClass="Events"` verweist auf ein Layout, das in der Vorschau vordefiniert ist, und enthält Stile, die für die Verwendung der verwendeten JSON-Datenquelle *hart codiert* sind.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,17 +138,17 @@ Ein Beispiel für die JSON-Daten aus der Demo Quelle finden Sie unten:
 
 ## <a name="4-run"></a>4. führen Sie aus.
 
-Die oben genannten Schritte sollten dazu führen, dass eine Datenseite arbeiten:
+Die oben aufgeführten Schritte sollten zu einer Arbeitsdaten Seite führen:
 
 [![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
 
-Dies funktioniert, weil der vorgefertigte Stil **"Ereignisse"** im Design "lighttheme" im Design "Light" vorhanden ist und Stile definiert sind, die mit der Datenquelle (z. b. "Title", "Image", "Presenter").
+Dies funktioniert, weil der vorgefertigte Stil **"Ereignisse"** im Design "lighttheme" im Design "Light" vorhanden ist und Stile definiert sind, die mit der Datenquelle (z. b. "Title", "Bild", "Presenter").
 
-Der `StyleClass` "Ereignisse" wird erstellt, um das `ListDataPage`-Steuerelement mit einem benutzerdefinierten `CardView`-Steuerelement anzuzeigen, das in xamarin. Forms. Pages definiert ist. Das `CardView`-Steuerelement verfügt über drei Eigenschaften: `ImageSource`, `Text`und `Detail`. Das Design ist hartcodiert, um das DataSource Element drei Felder (aus der JSON-Datei) auf diese Eigenschaften für die Anzeige zu binden.
+Die "Ereignisse" `StyleClass` wird erstellt, um das `ListDataPage` Steuerelement mit einem benutzerdefinierten Steuerelement anzuzeigen `CardView` , das in definiert ist Xamarin.Forms . Seiten. Das `CardView` -Steuerelement verfügt über drei Eigenschaften: `ImageSource` , `Text` und `Detail` . Das Design ist hart codiert, um die drei Felder der DataSource (aus der JSON-Datei) für die Anzeige an diese Eigenschaften zu binden.
 
 ## <a name="5-customize"></a>5. anpassen
 
-Das geerbte Format kann durch Angabe einer Vorlage aus, und Verwenden von datenquellenbindungen überschrieben werden. Der folgende XAML-Code deklariert eine benutzerdefinierte Vorlage für jede Zeile mithilfe der neuen `ListItemControl` und `{p:DataSourceBinding}` Syntax, die im **xamarin. Forms. Pages** -nuget enthalten ist:
+Der geerbte Stil kann überschrieben werden, indem eine Vorlage angegeben und Datenquellen Bindungen verwendet werden. Der folgende XAML-Code deklariert eine benutzerdefinierte Vorlage für jede Zeile mithilfe der neuen `ListItemControl` -und- `{p:DataSourceBinding}` Syntax, die in enthalten ist ** Xamarin.Forms . **Nuget-Seiten:
 
 ```xaml
 <p:ListDataPage.DefaultItemTemplate>
@@ -164,11 +167,11 @@ Das geerbte Format kann durch Angabe einer Vorlage aus, und Verwenden von datenq
 </p:ListDataPage.DefaultItemTemplate>
 ```
 
-Durch Bereitstellen eines `DataTemplate` dieser Code die `StyleClass` überschreibt und stattdessen das Standardlayout für eine `ListItemControl`verwendet.
+Durch Bereitstellen von `DataTemplate` überschreibt dieser Code den `StyleClass` und verwendet stattdessen das Standardlayout für einen `ListItemControl` .
 
 [![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
 
-Entwickler, die C# XAML bevorzugen, können auch Datenquellen Bindungen erstellen (Beachten Sie, dass Sie eine `using Xamarin.Forms.Pages;`-Anweisung einschließen):
+Entwickler, die c# in XAML bevorzugen, können auch Datenquellen Bindungen erstellen (Beachten Sie, dass Sie eine- `using Xamarin.Forms.Pages;` Anweisung einschließen):
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
@@ -180,13 +183,13 @@ Es ist ein wenig mehr Arbeit, Designs von Grund auf neu zu erstellen, aber zukü
 
 <a name="loadtheme" />
 
-## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Datei oder Assembly 'Xamarin.Forms.Theme.Light' oder eine ihrer Abhängigkeiten konnte nicht geladen werden
+## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Die Datei oder Assembly konnte nicht geladen werden Xamarin.Forms . Theme. Light ' oder eine seiner Abhängigkeiten
 
-In der Vorschauversion von Designs zur Laufzeit laden können möglicherweise nicht. Fügen Sie den folgenden Code in den relevanten Projekten, die diesen Fehler zu beheben.
+In der Vorschauversion können Designs möglicherweise zur Laufzeit nicht geladen werden. Fügen Sie den unten gezeigten Code den relevanten Projekten hinzu, um diesen Fehler zu beheben.
 
 **iOS**
 
-Fügen Sie in **AppDelegate.cs** nach `LoadApplication` die folgenden Zeilen hinzu.
+Fügen Sie in **AppDelegate.cs** die folgenden Zeilen hinzu.`LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -196,7 +199,7 @@ x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 
 **Android**
 
-Fügen Sie in **MainActivity.cs** nach `LoadApplication` die folgenden Zeilen hinzu.
+Fügen Sie in **MainActivity.cs** die folgenden Zeilen hinzu.`LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

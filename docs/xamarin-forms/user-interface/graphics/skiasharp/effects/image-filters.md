@@ -1,34 +1,37 @@
 ---
-title: SkiaSharp-Bildfilter
-description: Erfahren Sie, wie Sie mit der Image-Filter zu erstellen Weichzeichner Schlagschatten.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/27/2018
-ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770542"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136343"
 ---
-# <a name="skiasharp-image-filters"></a>SkiaSharp-Bildfilter
+# <a name="skiasharp-image-filters"></a>Skiasharp-Bild Filter
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Bildfilter sind, die Auswirkungen, die ausgeführt werden auf alle Bits Farbe der Pixel, die sich ein Bild zusammensetzt. Sie sind flexibler als Maske-Filter, mit denen nur auf den alpha-Kanal ausgeführt werden, wie in diesem Artikel beschrieben [ **SkiaSharp Maske Filter**](mask-filters.md). Um ein Image-Filter verwenden, legen die [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) , dass Sie durch einen Aufruf der statischen Methoden der Klasse erstellt haben.
+Bild Filter sind Effekte, die auf alle Farbbits von Pixeln angewendet werden, die ein Bild bilden. Sie sind vielseitiger als maskenfilter, die nur auf dem Alphakanal ausgeführt werden, wie im Artikel [**skiasharp Mask Filters**](mask-filters.md)beschrieben. Um einen Bild Filter zu verwenden, legen [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) Sie die-Eigenschaft von `SKPaint` auf ein Objekt des Typs fest, den [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) Sie durch Aufrufen einer der statischen Methoden der Klasse erstellt haben.
 
-Die beste Möglichkeit, mit der Maske Filter vertraut ist durch Experimentieren mit diesen statischen Methoden. Sie können einen Filter für die Maske verwenden, eine gesamte Bitmap Weichzeichnen:
+Die beste Möglichkeit, sich mit Masken Filtern vertraut zu machen, besteht darin, mit diesen statischen Methoden zu experimentieren. Sie können einen maskenfilter verwenden, um eine gesamte Bitmap zu verwischen:
 
-![Blur-Beispiel](image-filters-images/ImageFilterExample.png "Blur-Beispiel")
+![Beispiel für weich](image-filters-images/ImageFilterExample.png "Beispiel für weich")
 
-Dieser Artikel veranschaulicht auch, einen Image-Filter verwenden, um einen Schatten, und für Prägen und Eingravieren Effekte zu erstellen.
+In diesem Artikel wird auch veranschaulicht, wie Sie einen Bild Filter zum Erstellen eines Schlag Schattens und für die Prägung und Gravur verwenden.
 
-## <a name="blurring-vector-graphics-and-bitmaps"></a>Weichzeichner Vektorgrafiken und bitmaps
+## <a name="blurring-vector-graphics-and-bitmaps"></a>Verwischen von Vektorgrafiken und Bitmaps
 
-Der von der [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) statischen-Methode erstellte Weichzeichnereffekt hat gegenüber den weichzeichnermethoden [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) in der-Klasse einen erheblichen Vorteil: Der Bild Filter kann eine ganze Bitmap verwischen. Die Methode hat die folgende Syntax:
+Der von der statischen-Methode erstellte weichzeicheneffekt [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) hat gegenüber den weichgrafiemethoden in der-Klasse einen erheblichen Vorteil [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) : der Bild Filter kann eine ganze Bitmap verwischen. Die-Methode weist die folgende Syntax auf:
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -36,9 +39,9 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
-Die Methode verfügt über zwei Sigma Werte &mdash; die erste für den Wertebereich Blur in horizontaler Richtung und die zweite für den vertikaler Richtung. Sie können Bildfilter zu Kaskadieren von einem anderen Image-Filter angeben, wie das optionale dritte Argument. Ein zuschnittrechteck kann auch angegeben werden.
+Die-Methode verfügt über zwei Sigma-Werte, &mdash; die erste für den weichzeichnerbereich in der horizontalen Richtung und der zweite für die vertikale Richtung. Sie können Bild Filter kaskadieren, indem Sie einen anderen Bild Filter als optionales drittes Argument angeben. Außerdem kann ein zuschneigsrechteck angegeben werden.
 
-Die **Image experimentieren Blur-** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) enthält zwei `Slider` Ansichten, mit denen Sie experimentieren mit unterschiedlicher Blur festlegen:
+Die **Experiment Seite Bild** [**Maske in skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) enthält zwei `Slider` Ansichten, mit denen Sie experimentieren können, indem Sie verschiedene Ebenen der weich Zeichnung festlegen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +78,7 @@ Die **Image experimentieren Blur-** auf der Seite die [ **SkiaSharpFormsDemos** 
 </ContentPage>
 ```
 
-Die Code-Behind-Datei verwendet die beiden `Slider` Werte aufrufen `SKImageFilter.CreateBlur` für die `SKPaint` Objekt verwendet, um sowohl Text als auch eine Bitmap anzuzeigen:
+Die Code-Behind-Datei verwendet die beiden `Slider` Werte zum Aufrufen `SKImageFilter.CreateBlur` des `SKPaint` -Objekts, das zum Anzeigen von Text und einer Bitmap verwendet wird:
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage
@@ -135,15 +138,15 @@ public partial class ImageBlurExperimentPage : ContentPage
 }
 ```
 
-Die drei Screenshots zeigen verschiedene Einstellungen für die `sigmaX` und `sigmaY` Einstellungen:
+Die drei Screenshots zeigen verschiedene Einstellungen für die `sigmaX` -und- `sigmaY` Einstellungen:
 
-[![Abbildung Blur-Experiment](image-filters-images/ImageBlurExperiment.png "Image Blur-Experiment")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
+[![Bild weich Experiment](image-filters-images/ImageBlurExperiment.png "Bild weich Experiment")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
 
-Um die Unschärfe zwischen verschiedenen Anzeigegrößen und Auflösungen in Einklang zu bringen, legen Sie `sigmaX` und `sigmaY` auf Werte, die proportional zur Pixelgröße des Bilds gerenderten sind, die die Unschärfe auf angewendet wird.
+Legen Sie `sigmaX` und auf Werte fest, die `sigmaY` proportional zur gerenderten Pixelgröße des Bilds sind, auf das der Weichzeichner angewendet wird, um die weich Schrift bei verschiedenen Anzeige Größen und Auflösungen konsistent zu halten.
 
 ## <a name="drop-shadow"></a>Schlagschatten
 
-Die [ `SKImageFilter.CreateDropShadow` ](xref:SkiaSharp.SKImageFilter.CreateDropShadow*) statische Methode erstellt eine `SKImageFilter` -Objekt für einen Schlagschatten:
+Die [`SKImageFilter.CreateDropShadow`](xref:SkiaSharp.SKImageFilter.CreateDropShadow*) statische-Methode erstellt ein- `SKImageFilter` Objekt für einen Ablage Schatten:
 
 ```csharp
 public static SKImageFilter CreateDropShadow (float dx, float dy,
@@ -154,17 +157,17 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
-Legen Sie dieses Objekt auf der `ImageFilter` Eigenschaft eine `SKPaint` Objekt und alles, was Sie mit diesem Objekt zeichnen einen Schlagschatten zugrunde liegende haben.
+Legen Sie dieses Objekt auf die `ImageFilter` -Eigenschaft eines `SKPaint` Objekts fest, und alle Elemente, die Sie mit diesem Objekt zeichnen, haben einen Schlag Schatten dahinter.
 
-Die `dx` und `dy` Parameter geben die horizontalen und vertikalen Offsets des Schattens in Pixel des grafischen Objekts an. Die Konvention bei 2D-Grafiken ist davon aus einer Lichtquelle, die von oben links das bedeutet, dass beide dieser Argumente zum Positionieren des Schattens nach unten und rechts des grafischen Objekts positive werden soll.
+Der `dx` -Parameter und der- `dy` Parameter geben die horizontale und vertikale Offsets des Schattens in Pixel aus dem grafischen Objekt an. Die Konvention in 2D-Grafiken besteht darin, eine helle Quelle von oben links zu übernehmen. Dies impliziert, dass beide Argumente positiv sein sollten, um den Schatten unterhalb und rechts vom grafischen Objekt zu positionieren.
 
-Die `sigmaX` und `sigmaY` Parameter verschwimmen Faktoren für das Rendern des Schlagschattens.
+Der `sigmaX` -Parameter und der- `sigmaY` Parameter sind verschwommen-Faktoren für den Schlag Schatten.
 
-Die `color` -Parameter ist die Farbe des Schlagschattens. Dies `SKColor` Wert kann Transparenz enthalten. Eine Möglichkeit besteht darin, den Farbwert `SKColors.Black.WithAlpha(0x80)` auf eine Farbe im Hintergrund laufende abgedunkelt werden soll.
+Der- `color` Parameter ist die Farbe des Schlag Schattens. Dieser `SKColor` Wert kann Transparenz einschließen. Eine Möglichkeit ist der Farbwert `SKColors.Black.WithAlpha(0x80)` , mit dem ein beliebiger Hintergrund angezeigt wird.
 
-Die letzten beiden Parameter sind optional.
+Die beiden letzten Parameter sind optional.
 
-Die **löschen Schatten experimentieren** programmieren können, die Sie mit den Werten experimentieren `dx`, `dy`, `sigmaX`, und `sigmaY` eine Textzeichenfolge mit einem Schlagschatteneffekt angezeigt. Die XAML-Datei instanziiert vier `Slider` Ansichten, um diese Werte festgelegt:
+Mit dem **Drop Shadow Experiment** -Programm können Sie mit Werten von `dx` ,, und experimentieren, `dy` `sigmaX` `sigmaY` um eine Text Zeichenfolge mit einem Schlag Schatten anzuzeigen. Die XAML-Datei instanziiert vier `Slider` Sichten, um diese Werte festzulegen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,7 +227,7 @@ Die **löschen Schatten experimentieren** programmieren können, die Sie mit den
 </ContentPage>
 ```
 
-Die Code-Behind-Datei verwendet diese Werte, um einen roten Schlagschatten auf einer blauen Text-Zeichenfolge zu erstellen:
+Die Code-Behind-Datei verwendet diese Werte zum Erstellen eines roten Schlag Schattens in einer blauen Text Zeichenfolge:
 
 ```csharp
 public partial class DropShadowExperimentPage : ContentPage
@@ -281,15 +284,15 @@ public partial class DropShadowExperimentPage : ContentPage
 }
 ```
 
-Hier wird das Programm ausgeführt wird:
+Dies ist das Programm, das ausgeführt wird:
 
-[![Drop-Shadow Experiment](image-filters-images/DropShadowExperiment.png "Schatten Experiment löschen")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
+[![Schlag Schatten Experiment](image-filters-images/DropShadowExperiment.png "Schlag Schatten Experiment")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
-Die negativen Offset-Werte im Screenshot ganz rechts auf die universelle Windows-Plattform dazu führen, dass den Schatten oben und links neben dem Text angezeigt werden. Dies deutet darauf hin, einer Lichtquelle in der unteren rechten Ecke, die nicht die Konvention für Computergrafiken ist. Aber es scheint nicht auf keinerlei Weise falsche vielleicht daran, dass der Schatten auch sehr unscharf gemacht wird und besser als die meisten Schlagschatten waren scheint.
+Die negativen Offset Werte im universelle Windows-Plattform Bildschirm Abbildung ganz rechts bewirken, dass der Schatten oberhalb und links neben dem Text angezeigt wird. Dadurch wird eine Lichtquelle in der unteren rechten Ecke vorgeschlagen, bei der es sich nicht um die Konvention für Computergrafiken handelt. Es scheint aber nicht falsch zu sein, vielleicht, weil der Schatten ebenfalls sehr unscharf ist und mehr ornamental als die meisten Schlag Schatten erscheint.
 
-## <a name="lighting-effects"></a>Beleuchtungseffekten
+## <a name="lighting-effects"></a>Beleuchtungseffekte
 
-Die `SKImageFilter` -Klasse definiert sechs Methoden, die ähnliche Namen und Parameter, die hier in der Reihenfolge zunehmender Komplexität aufgeführt:
+Die- `SKImageFilter` Klasse definiert sechs Methoden mit ähnlichen Namen und Parametern, die in der Reihenfolge der zunehmenden Komplexität aufgeführt werden:
 
 - [`CreateDistantLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateDistantLitDiffuse*)
 - [`CreateDistantLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateDistantLitSpecular*)
@@ -298,13 +301,13 @@ Die `SKImageFilter` -Klasse definiert sechs Methoden, die ähnliche Namen und Pa
 - [`CreateSpotLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateSpotLitDiffuse*)
 - [`CreateSpotLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateSpotLitSpecular*)
 
-Diese Methoden erstellen Bildfilter, die die Auswirkungen der verschiedenen Arten von Licht auf dreidimensionale Oberflächen zu simulieren. Zweidimensionale Objekte werden von der sich ergebende Gesamtbild Filter beleuchtet, als ob sie vorhanden war, im 3D-Raum, wodurch diese Objekte mit erhöhten Rechten oder vertiefte angezeigt werden kann, oder mit Glanzlichter.
+Mit diesen Methoden werden Bild Filter erstellt, die die Auswirkung verschiedener Arten von Licht auf dreidimensionalen Oberflächen imitieren. Der resultierende Bild Filter beleuchtet zweidimensionale Objekte so, als wären Sie im 3D-Raum vorhanden, was dazu führen kann, dass diese Objekte mit erhöhten Rechten oder mit einer Glanz Markierung angezeigt werden.
 
-Die `Distant` einfache Methoden wird davon ausgegangen, dass das Licht von einem äußeren Abstand stammt. Im Rahmen der leuchtenden Objekte wird das Licht angenommen, dass in einer konsistenten Richtung im 3D-Raum, ähnlich wie die Sonne auf einem kleinen Bereich der Erde. Die `Point` einfache Methoden bilden eine Glühbirne, die im 3D-Raum, die Licht in alle Richtungen ausgibt positioniert. Die `Spot` Light besitzt sowohl eine Position und eine Richtung, ähnlich wie eine Taschenlampe.
+Die `Distant` Light-Methoden gehen davon aus, dass das Licht von weitem entfernt wird. Zum Zweck der Beleuchtung von Objekten wird davon ausgegangen, dass das Licht in einer konsistenten Richtung in 3D-Raum steht, ähnlich wie die Sonne in einem kleinen Bereich der Erde. Die `Point` Light-Methoden imitieren eine Glühbirne, die sich in einem 3D-Raum befindet und Licht in alle Richtungen ausgibt. Das `Spot` Licht hat eine Position und eine Richtung, ähnlich wie eine Taschenlampe.
 
-Speicherorte und erfahren Sie, wie im 3D-Raum werden mit den Werten angegeben die [ `SKPoint3` ](xref:SkiaSharp.SKPoint3) -Struktur, die ähnelt `SKPoint` jedoch mit drei Eigenschaften, die mit dem Namen `X`, `Y`, und `Z`.
+Standorte und Richtungen im 3D-Raum werden mit Werten der- [`SKPoint3`](xref:SkiaSharp.SKPoint3) Struktur angegeben, die mit vergleichbar ist, `SKPoint` aber mit drei Eigenschaften namens `X` , `Y` und `Z` .
 
-Die Anzahl und Komplexität der Parameter für diese Methoden stellen Experimentieren mit ihnen schwierig. Zum Einstieg die **entfernten Licht experimentieren** Seite können Sie mit Parametern, um experimentieren die `CreateDistantLightDiffuse` Methode:
+Die Anzahl und Komplexität der Parameter für diese Methoden erschwert das Experimentieren. Um Ihnen den Einstieg zu erleichtern, können Sie mit der Seite " **entferntes Licht Experiment** " mit Parametern für die- `CreateDistantLightDiffuse` Methode experimentieren:
 
 ```csharp
 public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
@@ -315,9 +318,9 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                                                      SKImageFilter.CropRect cropRect = null);
 ```
 
-Die Seite nicht über die letzten zwei optionale Parameter verwenden.
+Die Seite verwendet nicht die letzten beiden optionalen Parameter.
 
-Drei `Slider` Ansichten in der XAML-Datei können Sie auswählen, die `Z` -Koordinate des der `SKPoint3` Wert, der `surfaceScale` Parameter, und die `kd` -Parameter, der in der API-Dokumentation als "diffuse Beleuchtung Konstante" definiert ist:
+`Slider`Mit drei Ansichten in der XAML-Datei können Sie die `Z` Koordinaten des `SKPoint3` Werts, den `surfaceScale` -Parameter und den-Parameter auswählen, der `kd` in der API-Dokumentation als "diffuse Beleuchtungs Konstante" definiert ist:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -368,7 +371,7 @@ Drei `Slider` Ansichten in der XAML-Datei können Sie auswählen, die `Z` -Koord
 </ContentPage>
 ```
 
-Die Code-Behind-Datei diese drei Werte abgerufen und dazu verwendet, erstellen Sie einen Image-Filter, um eine Textzeichenfolge anzuzeigen:
+Die Code-Behind-Datei erhält diese drei Werte und verwendet Sie, um einen Bild Filter zum Anzeigen einer Text Zeichenfolge zu erstellen:
 
 ```csharp
 public partial class DistantLightExperimentPage : ContentPage
@@ -426,21 +429,21 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-Das erste Argument von `SKImageFilter.CreateDistantLitDiffuse` ist die Richtung des Lichts. Die positive X und Y Koordinaten anzugeben, dass das Licht zeigt nach rechts und nach unten. Positive Z-Koordinaten Punkt in die Anzeige. Mit der XAML-Datei können Sie negative Z-Werte auswählen, aber das ist nur so, dass Sie sehen können, was passiert: Konzeptionell bewirken negative Z-Koordinaten, dass das Licht auf den Bildschirm verweist. Andere kleinere negative Werte und funktioniert für alle Elemente die Beleuchtung Auswirkungen mehr.
+Das erste Argument von `SKImageFilter.CreateDistantLitDiffuse` ist die Richtung des Lichts. Die positiven X-und Y-Koordinaten zeigen an, dass das Licht nach rechts und unten gezeigt wird. Positive Z-Koordinaten zeigen auf den Bildschirm. Mit der XAML-Datei können Sie negative z-Werte auswählen, aber das ist nur so, dass Sie sehen, was geschieht: konzeptionell werden negative z-Koordinaten bewirken, dass das Licht auf den Bildschirm verweist. Bei allen anderen dann kleinen negativen Werten wird der Beleuchtungs Effekt nicht mehr funktionieren.
 
-Die `surfaceScale` Argument kann zwischen – 1 und 1 liegen. (Höhere oder niedrigere Werte haben keine weitere Auswirkung.) Dies sind die relativen Werte in der Z-Achse, die angeben, die Verschiebung des grafischen Objekts (in diesem Fall die Textzeichenfolge) aus der Canvas-Oberfläche. Verwenden Sie negative Werte zum Auslösen der Textzeichenfolge oberhalb der Fläche im Zeichenbereich und positive Werte, die sie in den Zeichenbereich drücken.
+Das `surfaceScale` Argument kann zwischen – 1 und 1 liegen. (Höhere oder niedrigere Werte haben keine weiteren Auswirkungen.) Dabei handelt es sich um relative Werte auf der Z-Achse, die die Verschiebung des grafischen Objekts (in diesem Fall die Text Zeichenfolge) von der Canvas-Oberfläche angeben. Verwenden Sie negative Werte, um die Text Zeichenfolge oberhalb der Oberfläche der Canvas aufzurichten, und positive Werte, um Sie in den Zeichenbereich zu drücken.
 
-Die `lightConstant` Wert muss positiv sein. (Das Programm kann negative Werte, damit Sie sehen, dass sie bewirken, die Auswirkungen dass mehr.) Höhere Werte führen intensiver Licht.
+Der `lightConstant` Wert muss positiv sein. (Das Programm lässt negative Werte zu, sodass Sie erkennen können, dass die Wirkung nicht mehr funktioniert.) Höhere Werte führen zu intensiveren Licht.
 
-Diese Faktoren können abgewogen werden, um eine Geprägte erhalten wirksam, wenn `surfaceScale` ist negativ (wie bei den IOS- und Android Screenshots) und eine Gravur wirksam, wenn `surfaceScale` positiv ist, werden als mit der UWP-Screenshot auf der rechten Seite:
+Diese Faktoren können ausgeglichen werden, um einen geprägten Effekt zu erhalten `surfaceScale` , wenn negativ ist (wie bei den IOS-und Android-Screenshots) und ein eingravierende Effekt `surfaceScale` , wenn positiv ist, wie bei dem Bildschirm Abbildung von UWP auf der rechten Seite:
 
-[![Dabei liegt weniger hellen Experiment](image-filters-images/DistantLightExperiment.png "entfernten hell Experiment")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
+[![Entferntes helles Experiment](image-filters-images/DistantLightExperiment.png "Entferntes helles Experiment")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
 
-Der Android-Screenshot verfügt über eine Z-Wert, der 0, was bedeutet, dass das Licht nur nach unten und nach rechts zeigt. Der Hintergrund ist nicht beleuchtet und die Oberfläche der Textzeichenfolge beleuchtet ist nicht beide. Das Licht wirkt sich nur der Rand des Texts für einen kleinen Effekt.
+Der Android-Bildschirmfoto weist einen Z-Wert von 0 auf, was bedeutet, dass das Licht nur nach unten und nach rechts zeigt. Der Hintergrund wird nicht beleuchtet, und die Oberfläche der Text Zeichenfolge wird ebenfalls nicht beleuchtet. Das Licht wirkt sich nur auf den Rand des Texts aus, um eine sehr feine Wirkung zu erzielen.
 
-Ein alternativer Ansatz für die Prägung und den einsetzenden Text wurde im Artikel [Transform Transform](../transforms/translate.md): Die Text Zeichenfolge wird zweimal mit unterschiedlichen Farben angezeigt, die leicht voneinander abgeglichen werden.
+Eine alternative Methode zum darstellen und Einreihen von Text wurde im Artikel [Translation Transform](../transforms/translate.md): die Text Zeichenfolge wird zweimal mit unterschiedlichen Farben angezeigt, die leicht voneinander abweichen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,131 +1,134 @@
 ---
-title: Speichern und Zugreifen auf Daten in Azure Storage aus xamarin. Forms
-description: Azure Storage ist ein skalierbarer Cloud-speicherlösung, die zum Speichern von unstrukturierter und strukturierter Daten verwendet werden kann. In diesem Artikel wird erläutert, wie Sie xamarin. Forms verwenden, um Text-und Binärdaten in Azure Storage zu speichern und wie Sie auf die Daten zugreifen.
-ms.prod: xamarin
-ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/28/2018
-ms.openlocfilehash: 8d773abbca348d09d3359f09cbded22f6521fb7f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: Speichern und Zugreifen auf Daten in Azure Storage vonXamarin.Forms
+description: Azure Storage ist eine skalierbare cloudspeicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann. In diesem Artikel wird erläutert, wie Xamarin.Forms Sie zum Speichern von Text-und Binärdaten in Azure Storage und zum Zugreifen auf die Daten verwenden.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4df14ef4d3eb72b92e4201e57103780801ca2d2f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487320"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131026"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Speichern und Zugreifen auf Daten in Azure Storage aus xamarin. Forms
+# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Speichern und Zugreifen auf Daten in Azure Storage vonXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
-_Azure Storage ist eine skalierbare cloudspeicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann. In diesem Artikel wird veranschaulicht, wie Sie xamarin. Forms verwenden, um Text-und Binärdaten in Azure Storage zu speichern und um auf die Daten zuzugreifen._
+_Azure Storage ist eine skalierbare cloudspeicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms Sie zum Speichern von Text-und Binärdaten in Azure Storage und zum Zugreifen auf die Daten verwenden._
 
-Azure Storage bietet vier Storage-Dienste:
+Azure Storage bietet vier Speicherdienste:
 
-- BLOB-Speicher. Ein Blob kann Daten von Text- oder Binärdaten, z. B. Sicherungen, virtuelle Computer, Dokumente oder Mediendateien sein.
-- Table Storage ist ein NoSQL-Schlüsselattribute-Speicher.
-- Queue Storage ist eine messaging-Dienst für die workflowverarbeitung und Kommunikation zwischen Cloud-Diensten.
-- File Storage bietet freigegebenen Speicher, die über das SMB-Protokoll.
+- Blob Storage. Ein BLOB kann Text-oder Binärdaten sein, z. b. Sicherungen, virtuelle Computer, Mediendateien oder Dokumente.
+- Table Storage ist ein nosql-Schlüssel Attribut Speicher.
+- Queue Storage ist ein Messaging Dienst für die Workflow Verarbeitung und die Kommunikation zwischen Cloud-Diensten.
+- File Storage stellt gemeinsam genutzten Speicher über das SMB-Protokoll bereit.
 
-Es gibt zwei Arten von Speicherkonten:
+Zwei Typen von Speicherkonten stehen zur Verfügung:
 
-- Ein allgemeines Speicherkonto bietet Zugriff auf Azure Storage-Dienste, von einem einzelnen Konto.
-- Blob Storage-Konto ist eine spezielle Speicherkonten zum Speichern von Blobs. Dieser Kontotyp wird empfohlen, wenn Sie nur zum Speichern von Blob-Daten benötigen.
+- Ein allgemeines Speicherkonto ermöglicht den Zugriff auf Azure Storage Dienste von einem einzelnen Konto aus.
+- Ein BLOB Storage-Konto ist ein spezielles Speicherkonto zum Speichern von BLOBs. Dieser Kontotyp wird empfohlen, wenn Sie nur BLOB-Daten speichern müssen.
 
-In diesem Artikel und die zugehörige beispielanwendung veranschaulicht, Hochladen von Bild- und Dateien in Blob Storage, und sie herunterzuladen. Darüber hinaus wird auch eine Liste von Dateien aus Blob Storage abrufen und Löschen von Dateien.
+Dieser Artikel und die begleitende Beispielanwendung veranschaulichen das Hochladen von Bild-und Textdateien in den BLOB-Speicher und das herunterladen. Außerdem wird das Abrufen einer Liste von Dateien aus dem BLOB-Speicher und das Löschen von Dateien veranschaulicht.
 
 Weitere Informationen zu Azure Storage finden Sie unter [Einführung in Storage](https://azure.microsoft.com/documentation/articles/storage-introduction/).
 
 > [!NOTE]
 > Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
-## <a name="introduction-to-blob-storage"></a>Einführung in Blob Storage
+## <a name="introduction-to-blob-storage"></a>Einführung in BLOB Storage
 
-BLOB-Speicher besteht aus drei Komponenten, die in der folgenden Abbildung dargestellt sind:
+BLOB Storage besteht aus drei Komponenten, die im folgenden Diagramm dargestellt sind:
 
 ![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
 
-Alle Zugriffe auf Azure Storage erfolgt über ein Speicherkonto. Ein Speicherkonto kann eine unbegrenzte Anzahl von Containern enthalten, und einem Container kann eine unbegrenzte Anzahl von Blobs, die bis zur speicherkapazitätsgrenze des Speicherkontos gespeichert.
+Der gesamte Zugriff auf Azure Storage erfolgt über ein Speicherkonto. Ein Speicherkonto kann eine unbegrenzte Anzahl von Containern enthalten, und ein Container kann eine unbegrenzte Anzahl von BLOB-Speicher speichern, bis die Kapazitätsgrenze des Speicher Kontos erreicht ist.
 
-Ein Blob ist eine Datei von beliebiger Art und Größe. Azure Storage unterstützt drei verschiedene blobtypen:
+Ein BLOB ist eine Datei von beliebiger Art und Größe. Azure Storage unterstützt drei verschiedene BLOB-Typen:
 
 - Blockblobs sind für das Streamen und Speichern von cloudressourcen optimiert und sind eine gute Wahl für das Speichern von Sicherungen, Mediendateien, Dokumenten usw. Block-BLOBs können bis zu 1 bis 7 GB groß sein.
-- Fügen Sie Blobs ähneln blockblobs sind aber für Anfügevorgänge, z. B. die Protokollierung. Append-Blobs können bis zu 195Gb groß sein.
-- Seitenblobs sind für häufige Lese/Schreibvorgänge optimiert und in der Regel zum Speichern von virtuellen Computern und deren Datenträger verwendet werden. Seiten-Blobs können bis zu 1 Tb groß sein.
+- Anfügeblobs ähneln blockblobs, sind aber für Anfüge Vorgänge optimiert, wie z. b. die Protokollierung. Anfügeblobzeichen können bis zu 1 bis 7 GB groß sein.
+- Seitenblobs sind für Häufige Lese-/Schreibvorgänge optimiert und werden in der Regel zum Speichern virtueller Maschinen und ihrer Datenträger verwendet. Seitenblobs können eine Größe von bis zu 1 TB aufweisen.
 
 > [!NOTE]
-> Beachten Sie, dass die Blob Storage-Konten blockieren und unterstützt append Blobs, jedoch keine Seiten-Blobs.
+> Beachten Sie, dass BLOB Storage-Konten Block-und anfügeblobs unterstützen, aber keine seitenblobs.
 
-Ein Blob ist in Azure Storage hochgeladen und aus Azure Storage heruntergeladen werden, als Datenstrom von Bytes. Aus diesem Grund müssen die Dateien in einen Datenstrom von Bytes vor dem Hochladen und konvertierte zurück in ihre ursprüngliche Darstellung nach dem Download konvertiert werden.
+Ein BLOB wird in Azure Storage hochgeladen und von Azure Storage als Bytestream heruntergeladen. Daher müssen Dateien vor dem Hochladen in einen Bytestream konvertiert und nach dem Download wieder in ihre ursprüngliche Darstellung konvertiert werden.
 
-Jedes Objekt, das in Azure Storage gespeichert ist, hat eine eindeutige URL-Adresse. Der Name des Speicherkontos bildet die Unterdomäne dieser Adresse und die Kombination aus Unterdomäne und Domänenname Namen Formulare ein *Endpunkt* für das Speicherkonto an. Wenn Ihr Speicherkonto mit dem Namen wird z. B. *Mystorageaccount*, der standardmäßigen Blob-Endpunkt für das Speicherkonto ist `https://mystorageaccount.blob.core.windows.net`.
+Jedes Objekt, das in Azure Storage gespeichert ist, verfügt über eine eindeutige URL-Adresse. Der Name des Speicher Kontos bildet die Unterdomäne dieser Adresse, und die Kombination aus Unterdomäne und Domänen Name bildet einen *Endpunkt* für das Speicherkonto. Wenn Ihr Speicherkonto z. b. den Namen *mystorageaccount*hat, lautet der standardmäßige BLOB-Endpunkt für das Speicherkonto `https://mystorageaccount.blob.core.windows.net` .
 
-Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des objektstandorts im Speicherkonto, das an den Endpunkt erstellt. Beispielsweise wird eine blobadresse haben das Format `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`.
+Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Beispielsweise hat eine BLOB-Adresse das Format `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` .
 
-## <a name="setup"></a>Setup
+## <a name="setup"></a>Einrichten
 
-Der Prozess zur Integration von Azure Storage-Konto in einer Xamarin.Forms-Anwendung lautet wie folgt aus:
+Der Prozess für die Integration eines Azure Storage Kontos in eine- Xamarin.Forms Anwendung sieht wie folgt aus:
 
-1. Erstellen Sie ein Speicherkonto. Weitere Informationen finden Sie unter [Erstellen eines Speicherkontos](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account).
-1. Hinzufügen der [Azure Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) der Xamarin.Forms-Anwendung.
-1. Konfigurieren Sie die speicherverbindungszeichenfolge. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure Storage](#connecting).
-1. Hinzufügen `using` Direktiven für die `Microsoft.WindowsAzure.Storage` und `Microsoft.WindowsAzure.Storage.Blob` Namespaces, Klassen, die Azure-Speicher zugegriffen werden.
+1. Erstellen Sie ein Speicherkonto. Weitere Informationen finden Sie unter [Erstellen eines Speicher Kontos](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account).
+1. Fügen Sie der Anwendung die [Azure Storage Client Bibliothek](https://www.nuget.org/packages/WindowsAzure.Storage/) hinzu Xamarin.Forms .
+1. Konfigurieren Sie die Speicher Verbindungs Zeichenfolge. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure Storage](#connecting).
+1. Fügen Sie `using` `Microsoft.WindowsAzure.Storage` `Microsoft.WindowsAzure.Storage.Blob` Klassen, die auf Azure Storage zugreifen, Direktiven für die Namespaces und hinzu.
 
 <a name="connecting" />
 
 ## <a name="connecting-to-azure-storage"></a>Herstellen einer Verbindung mit Azure Storage
 
-Jede Anforderung für Speicherkonto-Ressourcen muss authentifiziert werden. Während es sich bei Blobs um die Unterstützung anonymer Authentifizierungen konfiguriert werden können, gibt es zwei Hauptansätze, mit denen eine Anwendung mit einem Speicherkonto zu authentifizieren:
+Jede Anforderung, die an Speicherkonto Ressourcen gerichtet ist, muss authentifiziert werden. Während BLOB für die Unterstützung der anonymen Authentifizierung konfiguriert werden können, gibt es zwei Hauptansätze, die eine Anwendung verwenden kann, um sich mit einem Speicherkonto zu authentifizieren:
 
-- Gemeinsam verwendeten Schlüssel. Dieser Ansatz verwendet den Azure Storage-Konto und der Schlüssel zum Zugreifen auf Storage-Dienste. Ein Speicherkonto wird mit zwei private Schlüssel bei der Erstellung zugewiesen, die für die Authentifizierung mit gemeinsam verwendetem Schlüssel verwendet werden kann.
-- Shared Access Signatures. Dies ist ein Token, das an eine URL angefügt werden kann, die delegierten Zugriff auf eine Speicherressource ermöglicht, mit den Berechtigungen er gibt an, für die Zeitspanne, die es gültig ist.
+- Gemeinsam verwendeter Schlüssel. Bei diesem Ansatz werden der Name des Azure Storage Kontos und der Kontoschlüssel verwendet, um auf Speicherdienste zuzugreifen. Einem Speicherkonto werden bei der Erstellung zwei private Schlüssel zugewiesen, die für die Authentifizierung mit gemeinsam verwendetem Schlüssel verwendet werden können.
+- Shared Access Signature. Hierbei handelt es sich um ein Token, das an eine URL angefügt werden kann, die den Delegierten Zugriff auf eine Speicher Ressource mit den von ihr festgelegten Berechtigungen für den Gültigkeits Zeitraum ermöglicht.
 
-Verbindungszeichenfolgen können angegeben werden, die die Authentifizierungsinformationen, die auf Azure Storage-Ressourcen aus einer Anwendung erforderlich sind. Darüber hinaus kann eine Verbindungszeichenfolge konfiguriert werden, um die Verbindung mit Azure Storage-Emulator in Visual Studio.
+Es können Verbindungs Zeichenfolgen angegeben werden, die die für den Zugriff auf Azure Storage Ressourcen von einer Anwendung erforderlichen Authentifizierungsinformationen enthalten. Außerdem kann eine Verbindungs Zeichenfolge konfiguriert werden, um von Visual Studio aus eine Verbindung mit dem Azure Storage-Emulator herzustellen.
 
 > [!NOTE]
-> Azure Storage unterstützt HTTP- und HTTPS in einer Verbindungszeichenfolge an. Es wird jedoch empfohlen, diese mithilfe von HTTPS.
+> Azure Storage unterstützt HTTP und HTTPS in einer Verbindungs Zeichenfolge. Die Verwendung von HTTPS wird jedoch empfohlen.
 
-### <a name="connecting-to-the-azure-storage-emulator"></a>Herstellen einer Verbindung mit dem Azure-Speicheremulator
+### <a name="connecting-to-the-azure-storage-emulator"></a>Herstellen einer Verbindung mit dem Azure Storage-Emulator
 
-Der Azure-Speicheremulator bietet eine lokale Umgebung, die die Azure-Blob, Warteschlange und Tabelle-Tabellendienste für Entwicklungszwecke emuliert.
+Der Azure Storage Emulator bietet eine lokale Umgebung, die die Azure-BLOB-, Warteschlangen-und Tabellen Dienste zu Entwicklungszwecken emuliert.
 
-Die folgende Verbindungszeichenfolge sollte verwendet werden, für die Verbindung mit dem Azure-Speicheremulator:
+Die folgende Verbindungs Zeichenfolge sollte verwendet werden, um eine Verbindung mit dem Azure Storage Emulator herzustellen:
 
 ```csharp
 UseDevelopmentStorage=true
 ```
 
-Weitere Informationen zu den Azure-Speicheremulator, finden Sie unter [Verwenden des Azure-Speicheremulators für Entwicklung und Tests](https://azure.microsoft.com/documentation/articles/storage-use-emulator/).
+Weitere Informationen zum Azure Storage Emulator finden Sie unter [Verwenden des Azure Storage Emulators für Entwicklung und Tests](https://azure.microsoft.com/documentation/articles/storage-use-emulator/).
 
-### <a name="connecting-to-azure-storage-using-a-shared-key"></a>Herstellen einer Verbindung mit Azure-Speicher mit einem gemeinsam verwendeten Schlüssel
+### <a name="connecting-to-azure-storage-using-a-shared-key"></a>Herstellen einer Verbindung mit Azure Storage mithilfe eines gemeinsam genutzten Schlüssels
 
-Das folgende Format der Verbindungszeichenfolge sollte mit einem gemeinsam verwendeten Schlüssel eine Verbindung mit Azure Storage verwendet werden:
+Das folgende Format der Verbindungs Zeichenfolge sollte zum Herstellen einer Verbindung mit Azure Storage mit einem gemeinsam genutzten Schlüssel verwendet werden:
 
 ```csharp
 DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 ```
 
-`myAccountName` mit dem Namen Ihres Speicherkontos ersetzt werden sollte und `myAccountKey` mit einer der Zugriffsschlüssel Ihres zwei ersetzt werden soll.
+`myAccountName`muss durch den Namen Ihres Speicher Kontos ersetzt werden und sollte durch `myAccountKey` einen ihrer beiden Konto Zugriffsschlüssel ersetzt werden.
 
 > [!NOTE]
-> Wenn Schlüsselauthentifizierung, Ihren Kontonamen und kontoschlüssel gemeinsam genutzte wird an jede Person verteilt, die Ihre Anwendung verwendet, die vollständige Lese-/Schreibzugriff auf das Speicherkonto erhalten. Aus diesem Grund für die Authentifizierung mit gemeinsam verwendetem Schlüssel nur für Testzwecke verwenden, und Schlüssel für andere Benutzer niemals zu verteilen.
+> Wenn Sie die Authentifizierung mit gemeinsam verwendetem Schlüssel verwenden, werden Ihr Kontoname und der Kontoschlüssel an alle Personen verteilt, die Ihre Anwendung verwenden. Dadurch erhält der vollständige Lese-/Schreibzugriff auf das Speicherkonto. Verwenden Sie daher die Authentifizierung mit gemeinsam verwendetem Schlüssel nur für Testzwecke, und verteilen Sie Schlüssel niemals an andere Benutzer.
 
 ### <a name="connecting-to-azure-storage-using-a-shared-access-signature"></a>Herstellen einer Verbindung mit Azure Storage mithilfe einer Shared Access Signature
 
-Verbindung mit Azure Storage mit einer SAS, sollte das folgende Format der Verbindungszeichenfolge verwendet werden:
+Das folgende Format der Verbindungs Zeichenfolge sollte verwendet werden, um eine Verbindung mit Azure Storage mit einer SAS herzustellen:
 
 `BlobEndpoint=myBlobEndpoint;SharedAccessSignature=mySharedAccessSignature`
 
-`myBlobEndpoint` mit der Endpunkt Ihres Blob-URL ersetzt werden sollte und `mySharedAccessSignature` mit Ihre SAS ersetzt werden soll. Die SAS enthält das Protokoll, den Dienstendpunkt und die Anmeldeinformationen für die Ressource zuzugreifen.
+`myBlobEndpoint`sollte durch die URL Ihres BLOB-Endpunkts ersetzt werden und `mySharedAccessSignature` muss durch ihre SAS ersetzt werden. Die SAS stellt das Protokoll, den Dienst Endpunkt und die Anmelde Informationen für den Zugriff auf die Ressource bereit.
 
 > [!NOTE]
-> SAS-Authentifizierung wird für Produktionsanwendungen empfohlen. In einer produktionsanwendung muss die SAS jedoch aus einer Back-End-Dienst bei Bedarf, anstatt wird zusammen mit der Anwendung abgerufen werden.
+> Die SAS-Authentifizierung wird für Produktionsanwendungen empfohlen. In einer Produktionsanwendung sollte die SAS jedoch bei Bedarf von einem Back-End-Dienst abgerufen werden, anstatt mit der Anwendung gebündelt zu werden.
 
-Weitere Informationen zu Shared Access Signatures finden Sie unter [mithilfe von Shared Access Signatures (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
+Weitere Informationen zu Shared Access Signature finden Sie unter [Verwenden von Shared Access Signature (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
 
 ## <a name="creating-a-container"></a>Erstellen eines Containers
 
-Die `GetContainer` Methode wird verwendet, um einen Verweis auf ein benannter Container, abrufen, die dann zum Abrufen von Blobs aus dem Container oder Hinzufügen von Blobs in den Container verwendet werden kann. Die `GetContainer`-Methode wird in folgendem Codebeispiel veranschaulicht:
+Die- `GetContainer` Methode wird zum Abrufen eines Verweises auf einen benannten Container verwendet, der dann zum Abrufen von blobcontainern aus dem Container oder zum Hinzufügen von blobcontainern zum Container verwendet werden kann. Die `GetContainer`-Methode wird in folgendem Codebeispiel veranschaulicht:
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -136,28 +139,28 @@ static CloudBlobContainer GetContainer(ContainerType containerType)
 }
 ```
 
-Die `CloudStorageAccount.Parse` -Methode analysiert eine Verbindungszeichenfolge und gibt eine `CloudStorageAccount` -Instanz, die Storage-Konto darstellt. Ein `CloudBlobClient` -Instanz, die zum Abrufen von Containern und Blobs verwendet wird, wird dann erstellt, durch die `CreateCloudBlobClient` Methode. Die `GetContainerReference` -Methode ruft ab, dem angegebenen Container ein `CloudBlobContainer` -Instanz, bevor er an die aufrufende Methode zurückgegeben wird. In diesem Beispiel wird der Name des Containers die `ContainerType` Enumerationswert, der in eine Zeichenfolge aus Kleinbuchstaben konvertiert.
+Die `CloudStorageAccount.Parse` -Methode analysiert eine Verbindungs Zeichenfolge und gibt eine- `CloudStorageAccount` Instanz zurück, die das Speicherkonto darstellt. Eine- `CloudBlobClient` Instanz, die zum Abrufen von Containern und blobdaten verwendet wird, wird von der- `CreateCloudBlobClient` Methode erstellt. Die `GetContainerReference` -Methode ruft den angegebenen Container als- `CloudBlobContainer` Instanz ab, bevor er an die aufrufende-Methode zurückgegeben wird. In diesem Beispiel ist der Container Name der- `ContainerType` Enumerationswert, der in eine Zeichenfolge in Kleinbuchstaben konvertiert wird.
 
 > [!NOTE]
-> Containernamen müssen Kleinbuchstaben sein und müssen mit einem Buchstaben oder einer Ziffer beginnen. Darüber hinaus, sie darf nur Buchstaben, Zahlen und Bindestriche enthalten und müssen zwischen 3 und 63 Zeichen lang sein.
+> Container Namen müssen Kleinbuchstaben sein und müssen mit einem Buchstaben oder einer Zahl beginnen. Außerdem können Sie nur Buchstaben, Ziffern und Bindestriche enthalten und müssen zwischen 3 und 63 Zeichen lang sein.
 
-Die `GetContainer` Methode wird aufgerufen, wie folgt:
+Die- `GetContainer` Methode wird wie folgt aufgerufen:
 
 ```csharp
 var container = GetContainer(containerType);
 ```
 
-Die `CloudBlobContainer` Instanz kann dann verwendet, um einen Container zu erstellen, wenn er nicht bereits vorhanden:
+Die `CloudBlobContainer` Instanz kann dann verwendet werden, um einen Container zu erstellen, wenn er nicht bereits vorhanden ist:
 
 ```csharp
 await container.CreateIfNotExistsAsync();
 ```
 
-Standardmäßig ist ein neu erstellter Container privat. Dies bedeutet ein speicherzugriffsschlüssel muss angegeben werden, um Blobs aus dem Container abzurufen. Informationen über die Blobs in einem Container öffentlich machen, finden Sie unter [erstellen Sie einen Container](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container).
+Standardmäßig ist ein neu erstellter Container privat. Dies bedeutet, dass ein Speicherzugriffs Schlüssel angegeben werden muss, um BLOB aus dem Container abzurufen. Weitere Informationen zum Erstellen von blobcontainern in einem Container finden Sie unter [Erstellen eines Containers](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container).
 
-## <a name="uploading-data-to-a-container"></a>Hochladen von Daten in einem Container
+## <a name="uploading-data-to-a-container"></a>Hochladen von Daten in einen Container
 
-Die `UploadFileAsync` Methode wird verwendet, um das Hochladen eines Datenstroms von Bytedaten, blob-Speicher und wird im folgenden Codebeispiel dargestellt:
+Die `UploadFileAsync` -Methode wird verwendet, um einen Stream von Bytedaten in den BLOB-Speicher hochzuladen, und wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public static async Task<string> UploadFileAsync(ContainerType containerType, Stream stream)
@@ -173,20 +176,20 @@ public static async Task<string> UploadFileAsync(ContainerType containerType, St
 }
 ```
 
-Nach dem Abrufen einer Referenz zur Container, erstellt die Methode den Container aus, wenn er nicht bereits vorhanden. Ein neues `Guid` erstellt, um als einen eindeutigen blobnamen zu fungieren und ein Block-Blob-Verweis abgerufen wird, als ein `CloudBlockBlob` Instanz. Der Datenstrom wird dann mit dem Blob hochgeladen der `UploadFromStreamAsync` Methode, die das Blob erstellt, falls es noch nicht vorhanden ist, oder überschreibt ihn, wenn er vorhanden ist.
+Nachdem Sie einen Container Verweis abgerufen haben, erstellt die-Methode den Container, wenn er nicht bereits vorhanden ist. `Guid`Anschließend wird eine neue erstellt, die als eindeutiger BLOB-Name fungiert, und ein BLOB-Block Verweis wird als- `CloudBlockBlob` Instanz abgerufen. Der Datenstrom wird dann mithilfe der-Methode in das BLOB hochgeladen `UploadFromStreamAsync` , wodurch das BLOB erstellt wird, wenn es nicht bereits vorhanden ist, oder überschreibt es, falls es vorhanden ist.
 
-Bevor eine Datei in BLOB Storage, die mit dieser Methode hochgeladen werden kann, müssen sie zuerst in einen Bytestream konvertiert werden. Dies wird im folgenden Codebeispiel veranschaulicht:
+Bevor eine Datei mithilfe dieser Methode in den BLOB-Speicher hochgeladen werden kann, muss Sie zuerst in einen Bytestream konvertiert werden. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 var byteData = Encoding.UTF8.GetBytes(text);
 uploadedFilename = await AzureStorage.UploadFileAsync(ContainerType.Text, new MemoryStream(byteData));
 ```
 
-Die `text` Daten werden in ein Bytearray, das dann als Datenstrom umschlossen wird, die übergeben werden, konvertiert die `UploadFileAsync` Methode.
+Die `text` Daten werden in ein Bytearray konvertiert, das dann als Datenstrom umgeschrieben wird, der an die-Methode weitergegeben wird `UploadFileAsync` .
 
 ## <a name="downloading-data-from-a-container"></a>Herunterladen von Daten aus einem Container
 
-Die `GetFileAsync` Methode wird verwendet, um das Herunterladen von Blob-Daten aus Azure Storage und wird im folgenden Codebeispiel dargestellt:
+Die `GetFileAsync` -Methode wird verwendet, um BLOB-Daten aus Azure Storage herunterzuladen, und wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public static async Task<byte[]> GetFileAsync(ContainerType containerType, string name)
@@ -206,20 +209,20 @@ public static async Task<byte[]> GetFileAsync(ContainerType containerType, strin
 }
 ```
 
-Nach dem Abrufen einer Referenz zur Container, ruft die Methode einen Blob-Verweis für die gespeicherten Daten ab. Wenn das Blob vorhanden ist, werden die Eigenschaften abgerufen, indem die `FetchAttributesAsync` Methode. Ein Bytearray der richtigen Größe wird erstellt, und das Blob wird heruntergeladen, als ein Array von Bytes, die an die aufrufende Methode zurückgegeben wird.
+Nachdem Sie einen Container Verweis abgerufen haben, ruft die-Methode einen BLOB-Verweis für die gespeicherten Daten ab. Wenn das BLOB vorhanden ist, werden seine Eigenschaften von der- `FetchAttributesAsync` Methode abgerufen. Ein Bytearray mit der richtigen Größe wird erstellt, und das BLOB wird als Bytearray heruntergeladen, das an die aufrufende Methode zurückgegeben wird.
 
-Nach dem Herunterladen der Byte-Blob-Daten muss es in die ursprüngliche Darstellung konvertiert werden. Dies wird im folgenden Codebeispiel veranschaulicht:
+Nachdem die BLOB-Byte Daten heruntergeladen wurden, müssen Sie in ihre ursprüngliche Darstellung konvertiert werden. Dies wird im folgenden Codebeispiel veranschaulicht:
 
 ```csharp
 var byteData = await AzureStorage.GetFileAsync(ContainerType.Text, uploadedFilename);
 string text = Encoding.UTF8.GetString(byteData);
 ```
 
-Das Array von Bytes wird abgerufen, aus dem Azure-Speicher von der `GetFileAsync` -Methode, vor der Konvertierung wieder in einer UTF8-codierte Zeichenfolge.
+Das Bytearray wird von der-Methode von Azure Storage abgerufen `GetFileAsync` , bevor es in eine UTF8-codierte Zeichenfolge zurück konvertiert wird.
 
 ## <a name="listing-data-in-a-container"></a>Auflisten von Daten in einem Container
 
-Die `GetFilesListAsync` Methode dient zum Abrufen einer Liste von Blobs in einem Container gespeichert und wird im folgenden Codebeispiel dargestellt:
+Die `GetFilesListAsync` -Methode wird zum Abrufen einer Liste von BLOB-Daten verwendet, die in einem Container gespeichert sind, und wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public static async Task<IList<string>> GetFilesListAsync(ContainerType containerType)
@@ -244,11 +247,11 @@ public static async Task<IList<string>> GetFilesListAsync(ContainerType containe
 }
 ```
 
-Nach dem Abrufen einer Referenz zur Container, verwendet die Methode des Containers `ListBlobsSegmentedAsync` Methode, um Verweise auf die Blobs im Container abzurufen. Die Ergebnisse der `ListBlobsSegmentedAsync` Methode aufgezählt werden während der `BlobContinuationToken` Instanz ist nicht `null`. Jedes Blob wird umgewandelt von dem zurückgegebenen `IListBlobItem` auf eine `CloudBlockBlob` Reihenfolge Zugriff die `Name` Eigenschaft des BLOBs vor dem Wert hinzugefügt wird die `allBlobsList` Auflistung. Nach der `BlobContinuationToken` Instanz `null`, der Nachnamen des Blob zurückgegeben wurde und Ausführung wird die Schleife beendet.
+Nach dem Abrufen eines Container Verweises verwendet die-Methode die-Methode des Containers, `ListBlobsSegmentedAsync` um Verweise auf die blobwerte innerhalb des Containers abzurufen. Die von der-Methode zurückgegebenen Ergebnisse `ListBlobsSegmentedAsync` werden aufgelistet, wenn die- `BlobContinuationToken` Instanz nicht ist `null` . Jedes BLOB wird vom zurückgegebenen `IListBlobItem` in eine umgewandelt `CloudBlockBlob` , um auf die `Name` -Eigenschaft des BLOBs zuzugreifen, bevor der Wert der-Auflistung hinzugefügt wird `allBlobsList` . Sobald die `BlobContinuationToken` Instanz ist `null` , wurde der letzte BLOB-Name zurückgegeben, und die Ausführung wird durch die Ausführung beendet.
 
 ## <a name="deleting-data-from-a-container"></a>Löschen von Daten aus einem Container
 
-Die `DeleteFileAsync` Methode wird verwendet, um das Löschen eines BLOBs aus einem Container und wird im folgenden Codebeispiel dargestellt:
+Die `DeleteFileAsync` -Methode wird verwendet, um ein BLOB aus einem Container zu löschen, und wird im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public static async Task<bool> DeleteFileAsync(ContainerType containerType, string name)
@@ -259,12 +262,12 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 }
 ```
 
-Nach dem Abrufen einer Referenz zur Container, ruft die Methode einen Blob-Verweis für das angegebene Blob ab. Das Blob wird dann gelöscht, mit der `DeleteIfExistsAsync` Methode.
+Nachdem Sie einen Container Verweis abgerufen haben, ruft die-Methode einen BLOB-Verweis für das angegebene BLOB ab. Das BLOB wird dann mit der- `DeleteIfExistsAsync` Methode gelöscht.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [Azure-Speicher (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
-- [Einführung in Storage](https://azure.microsoft.com/documentation/articles/storage-introduction/)
-- [Gewusst wie: Verwenden des Blobspeichers mit Xamarin](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
+- [Azure Storage (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+- [Einführung in den Speicher](https://azure.microsoft.com/documentation/articles/storage-introduction/)
+- [Verwenden des Blobspeichers mit Xamarin](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [Verwenden von Shared Access Signatures (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 - [Windows-Azure Storage (nuget)](https://www.nuget.org/packages/WindowsAzure.Storage/)

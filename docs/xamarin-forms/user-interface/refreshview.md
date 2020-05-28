@@ -1,36 +1,39 @@
 ---
-title: Xamarin. Forms-Ansicht "erfrischend"
-description: Die Aktualisierungs Ansicht von xamarin. Forms ist ein Container Steuerelement, das Pull zum Aktualisieren von Bild lauffähigen Inhalten bereitstellt.
-ms.prod: xamarin
-ms.assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/19/2019
-ms.openlocfilehash: e38987006025dad1c2ff49c3ea8916e2075d61d7
-ms.sourcegitcommit: d1d4700b3b1b417a9d7b7da85ab5d28f8e8e599d
+title: Xamarin.FormsAktuerfrischendes Ansicht
+description: Die Xamarin.Forms Aktualisierungs Ansicht ist ein Container Steuerelement, das Pull zur Aktualisierungs Funktionalität für scrollbaren Inhalt bereitstellt.
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73649298"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127594"
 ---
-# <a name="xamarinforms-refreshview"></a>Xamarin. Forms-Ansicht "erfrischend"
+# <a name="xamarinforms-refreshview"></a>Xamarin.FormsAktuerfrischendes Ansicht
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
-Der `RefreshView` ist ein Container Steuerelement, das Pull zur Aktualisierungs Funktionalität für scrollbaren Inhalt bereitstellt. Daher muss das untergeordnete Element einer `RefreshView` ein scrollbares Steuerelement sein, z. b. [`ScrollView`](xref:Xamarin.Forms.ScrollView), [`CollectionView`](xref:Xamarin.Forms.CollectionView)oder [`ListView`](xref:Xamarin.Forms.ListView).
+Der `RefreshView` ist ein Container Steuerelement, das Pull zur Aktualisierungs Funktionalität für scrollbaren Inhalt bereitstellt. Daher muss das untergeordnete Element von `RefreshView` ein scrollbares Steuerelement sein, z [`ScrollView`](xref:Xamarin.Forms.ScrollView) [`CollectionView`](xref:Xamarin.Forms.CollectionView) . b., oder [`ListView`](xref:Xamarin.Forms.ListView) .
 
 `RefreshView` definiert die folgenden Eigenschaften:
 
-- `Command` vom Typ `ICommand`, der beim Auslösen einer Aktualisierung ausgeführt wird.
+- `Command`vom Typ `ICommand` , der ausgeführt wird, wenn eine Aktualisierung ausgelöst wird.
 - `CommandParameter` vom Typ `object`: der Parameter, der an `Command` übergeben wird.
-- `IsRefreshing` vom Typ `bool`, der den aktuellen Zustand der `RefreshView` angibt.
-- `RefreshColor` vom Typ `Color` die Farbe des Fortschritts Kreises, der während der Aktualisierung angezeigt wird.
+- `IsRefreshing`vom Typ `bool` , der den aktuellen Zustand des angibt `RefreshView` .
+- `RefreshColor`, vom Typ `Color` , die Farbe des Fortschritts Kreises, der während der Aktualisierung angezeigt wird.
 
-Diese Eigenschaften werden [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekten unterstützt. Dies bedeutet, dass Sie Ziele von Daten Bindungen sein können und formatiert sind.
+Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
 > [!NOTE]
-> Auf dem universelle Windows-Plattform kann die Pull-Richtung einer `RefreshView` mit einem plattformspezifischen festgelegt werden. Weitere Informationen finden Sie unter [pullrichtung](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)für den Pullvorgang.
+> Auf dem universelle Windows-Plattform kann die Pull-Richtung eines `RefreshView` mit einem plattformspezifischen festgelegt werden. Weitere Informationen finden Sie unter [pullrichtung](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)für den Pullvorgang.
 
 ## <a name="create-a-refreshview"></a>Erstellen einer aktuerfrischenden Ansicht
 
@@ -50,7 +53,7 @@ Im folgenden Beispiel wird gezeigt, wie ein `RefreshView` in XAML instanziiert w
 </RefreshView>
 ```
 
-Eine `RefreshView` kann auch im Code erstellt werden:
+Ein `RefreshView` kann auch im Code erstellt werden:
 
 ```csharp
 RefreshView refreshView = new RefreshView();
@@ -68,43 +71,43 @@ scrollView.Content = flexLayout;
 refreshView.Content = scrollView;
 ```
 
-In diesem Beispiel stellt der `RefreshView` Pull-to-refresh-Funktionalität für einen [`ScrollView`](xref:Xamarin.Forms.ScrollView) bereit, dessen untergeordnetes Element ein [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)ist. Der `FlexLayout` verwendet ein bindbares Layout, um seinen Inhalt durch Binden an eine Auflistung von Elementen zu generieren, und legt die Darstellung der einzelnen Elemente mit einem [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)fest. Weitere Informationen zu bindbaren Layouts finden Sie unter [bindbare Layouts in xamarin. Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md).
+In diesem Beispiel stellt der `RefreshView` Pull-Vorgang für die Aktualisierungs Funktionalität in bereit, dessen untergeordnetes Element [`ScrollView`](xref:Xamarin.Forms.ScrollView) ein ist [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) . `FlexLayout`Verwendet ein bindbares Layout, um seinen Inhalt durch Binden an eine Auflistung von Elementen zu generieren, und legt die Darstellung der einzelnen Elemente mit einem fest [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) . Weitere Informationen zu bindbaren Layouts finden Sie unter [bindbare Layouts in Xamarin.Forms ](~/xamarin-forms/user-interface/layouts/bindable-layouts.md).
 
-Der Wert der `RefreshView.IsRefreshing`-Eigenschaft gibt den aktuellen Status des `RefreshView` an. Wenn eine Aktualisierung durch den Benutzer ausgelöst wird, wird diese Eigenschaft automatisch zu `true` übergehen. Nachdem die Aktualisierung abgeschlossen ist, sollten Sie die-Eigenschaft auf `false` zurücksetzen.
+Der Wert der- `RefreshView.IsRefreshing` Eigenschaft gibt den aktuellen Zustand des an `RefreshView` . Wenn eine Aktualisierung durch den Benutzer ausgelöst wird, wird diese Eigenschaft automatisch zu migrischt `true` . Nachdem die Aktualisierung abgeschlossen ist, sollten Sie die-Eigenschaft auf Zurücksetzen `false` .
 
-Wenn der Benutzer eine Aktualisierung initiiert, wird die von der `Command`-Eigenschaft definierte `ICommand` ausgeführt, wodurch die angezeigten Elemente aktualisiert werden. Eine Aktualisierungs Visualisierung wird angezeigt, während die Aktualisierung durchgeführt wird, die aus einem animierten Fortschritts Kreis besteht:
+Wenn der Benutzer eine Aktualisierung initiiert, `ICommand` wird der durch die- `Command` Eigenschaft definierte ausgeführt, wodurch die angezeigten Elemente aktualisiert werden. Eine Aktualisierungs Visualisierung wird angezeigt, während die Aktualisierung durchgeführt wird, die aus einem animierten Fortschritts Kreis besteht:
 
 [![Screenshot einer Aktualisierungs Ansicht für das Aktualisieren von Daten unter IOS und Android](refreshview-images/default-progress-circle.png "Aktualisierungs Ansicht zum Aktualisieren von Daten")](refreshview-images/default-progress-circle-large.png#lightbox "Aktualisierungs Ansicht zum Aktualisieren von Daten")
 
 > [!NOTE]
-> Wenn Sie die `IsRefreshing`-Eigenschaft manuell auf `true` festlegen, wird die Aktualisierungs Visualisierung auslöst, und die von der `Command`-Eigenschaft definierte `ICommand` wird ausgeführt.
+> `IsRefreshing`Wenn Sie die-Eigenschaft manuell auf festlegen `true` , wird die Aktualisierungs Visualisierung auslöst, und die `ICommand` von der-Eigenschaft definierte wird ausgeführt `Command` .
 
 ## <a name="refreshview-appearance"></a>Erscheinungsbild der Bild Anzeige
 
-Zusätzlich zu den Eigenschaften, die `RefreshView` von der [`VisualElement`](xref:Xamarin.Forms.VisualElement) -Klasse erbt, definiert `RefreshView` auch die `RefreshColor`-Eigenschaft. Diese Eigenschaft kann festgelegt werden, um die Farbe des Fortschritts Kreises zu definieren, der während der Aktualisierung angezeigt wird:
+Zusätzlich zu den Eigenschaften, die `RefreshView` von der- [`VisualElement`](xref:Xamarin.Forms.VisualElement) Klasse erben, `RefreshView` definiert auch die- `RefreshColor` Eigenschaft. Diese Eigenschaft kann festgelegt werden, um die Farbe des Fortschritts Kreises zu definieren, der während der Aktualisierung angezeigt wird:
 
 ```xaml
 <RefreshView RefreshColor="Teal"
              ... />
 ```
 
-Der folgende Screenshot zeigt eine `RefreshView`, bei der die `RefreshColor`-Eigenschaft festgelegt ist:
+Der folgende Screenshot zeigt ein- `RefreshView` Objekt mit der- `RefreshColor` Eigenschaft:
 
 [![Screenshot einer aktuverlaufs Ansicht mit einem aktiven Status Kreis unter IOS und Android](refreshview-images/teal-progress-circle.png "Aktuverlaufs Ansicht mit einem aktiven Status Kreis")](refreshview-images/teal-progress-circle-large.png#lightbox "Aktuverlaufs Ansicht mit einem aktiven Status Kreis")
 
-Außerdem kann die `BackgroundColor`-Eigenschaft auf einen [`Color`](xref:Xamarin.Forms.Color) festgelegt werden, der die Hintergrundfarbe des Fortschritts Kreises darstellt.
+Außerdem kann die- `BackgroundColor` Eigenschaft auf einen festgelegt werden [`Color`](xref:Xamarin.Forms.Color) , der die Hintergrundfarbe des Fortschritts Kreises darstellt.
 
 > [!NOTE]
-> Unter IOS legt die `BackgroundColor`-Eigenschaft die Hintergrundfarbe des `UIView` fest, der den Status Kreis enthält.
+> Unter IOS legt die- `BackgroundColor` Eigenschaft die Hintergrundfarbe des fest `UIView` , der den Status Kreis enthält.
 
 ## <a name="disable-a-refreshview"></a>Deaktivieren einer aktuaktivierungs Ansicht
 
-Eine Anwendung kann einen Status eingeben, bei dem der Pull-Vorgang zum Aktualisieren kein gültiger Vorgang ist. In solchen Fällen kann die `RefreshView` durch Festlegen der `IsEnabled`-Eigenschaft auf `false` deaktiviert werden. Dadurch wird verhindert, dass Benutzer in der Lage sind, Pull zum Aktualisieren zu initiieren.
+Eine Anwendung kann einen Status eingeben, bei dem der Pull-Vorgang zum Aktualisieren kein gültiger Vorgang ist. In solchen Fällen kann der deaktiviert werden, indem die zugehörige- `RefreshView` Eigenschaft auf festgelegt wird `IsEnabled` `false` . Dadurch wird verhindert, dass Benutzer in der Lage sind, Pull zum Aktualisieren zu initiieren.
 
-Wenn Sie die `Command`-Eigenschaft definieren, können Sie alternativ den `CanExecute` Delegaten der `ICommand` angeben, um den Befehl zu aktivieren oder zu deaktivieren.
+Wenn Sie die-Eigenschaft definieren, kann der-Delegat auch `Command` `CanExecute` `ICommand` zum Aktivieren oder Deaktivieren des Befehls angegeben werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Aktuerfrischendes Ansicht (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
-- [Bindbare Layouts in xamarin. Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
+- [Bindbare Layouts inXamarin.Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
 - [Aktualisierbare Pull Direction-plattformspezifisch](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

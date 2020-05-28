@@ -1,18 +1,21 @@
 ---
-title: Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
-description: Die Gesichtserkennungs-API Gesichtsausdrücke in einem Bild als Eingabe akzeptiert und gibt die Daten, die Vertrauensgrade auf eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit der Gesichtserkennungs-API zur Erkennung von Emotionen, um eine Xamarin.Forms-Anwendung zu bewerten.
-ms.prod: xamarin
-ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: 4dedcb0869c1e965679812239b1de09f07efa875
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: Der Gesichtserkennungs-API nimmt einen Gesichtsausdruck in einem Bild als Eingabe an und gibt Daten zurück, die Vertrauens Ebenen für eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit dem Gesichtserkennungs-API Emotionen erkennen, um eine-Anwendung zu bewerten Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487619"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136057"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
 
@@ -22,20 +25,20 @@ Der Gesichtserkennungs-API kann eine Emotions Erkennung durchführen, um Ärger,
 
 Zusätzlich zum Zurückgeben eines Emotions Ergebnisses für einen Gesichtsausdruck kann die Gesichtserkennungs-API auch ein Begrenzungsfeld für erkannte Gesichter zurückgeben.
 
-Zur Erkennung von Emotionen kann über eine Clientbibliothek und über eine REST-API ausgeführt werden. Dieser Artikel konzentriert sich auf die zur Erkennung von Emotionen über die REST-API ausführen. Weitere Informationen über die REST-API finden Sie unter [Gesichtserkennungs-REST-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+Die Emotions Erkennung kann über eine Client Bibliothek und über eine Rest-API durchgeführt werden. Dieser Artikel konzentriert sich auf die Durchführung der Emotions Erkennung über die Rest-API. Weitere Informationen zur Rest-API finden Sie unter [Face Rest API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
-Der Gesichtserkennungs-API kann auch verwendet werden, den Gesichtsausdruck von Personen im Video zu erkennen, und Sie können eine Übersicht über deren Emotionen zurück. Weitere Informationen finden Sie unter [Vorgehensweise Analysieren von Videos in Echtzeit](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/).
+Der Gesichtserkennungs-API kann auch verwendet werden, um die Gesichtsausdrücke von Personen in Videos zu erkennen, und kann eine Zusammenfassung ihrer Emotionen zurückgeben. Weitere Informationen finden Sie unter [Analysieren von Videos in Echtzeit](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/).
 
 > [!NOTE]
 > Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
-Ein API-Schlüssel muss für die Verwendung des Gesichtserkennungs-API abgerufen werden. Dadurch erhalten Sie unter [Cognitive Services versuchen](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+Ein API-Schlüssel muss für die Verwendung des Gesichtserkennungs-API abgerufen werden. Dies kann bei [try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api)abgerufen werden.
 
-Weitere Informationen zu der Gesichtserkennungs-API, finden Sie unter [Gesichtserkennungs-API](/azure/cognitive-services/face/overview/).
+Weitere Informationen zum Gesichtserkennungs-API finden Sie unter [Gesichtserkennungs-API](/azure/cognitive-services/face/overview/).
 
 ## <a name="authentication"></a>Authentifizierung
 
-Jede Anforderung, der Gesichtserkennungs-API erfordert einen API-Schlüssel, die als Wert angegeben werden, sollte die `Ocp-Apim-Subscription-Key` Header. Im folgenden Codebeispiel wird veranschaulicht, wie den API-Schlüssel zum Hinzufügen der `Ocp-Apim-Subscription-Key` Header einer Anforderung:
+Jede Anforderung, die an den Gesichtserkennungs-API gerichtet ist, erfordert einen API-Schlüssel, der als Wert des-Headers angegeben werden muss `Ocp-Apim-Subscription-Key` . Im folgenden Codebeispiel wird gezeigt, wie der API-Schlüssel dem `Ocp-Apim-Subscription-Key` Header einer Anforderung hinzugefügt wird:
 
 ```csharp
 public FaceRecognitionService()
@@ -45,28 +48,28 @@ public FaceRecognitionService()
 }
 ```
 
-Fehler beim Übergeben eines gültigen API-Schlüssels, der Gesichtserkennungs-API führt zu einem Fehler 401-Antwort.
+Wenn ein gültiger API-Schlüssel nicht an die Gesichtserkennungs-API übergeben wird, führt dies zu einem Fehler der 401-Antwort.
 
 ## <a name="perform-emotion-recognition"></a>Durchführen der Emotions Erkennung
 
-Zur Erkennung von Emotionen wird durchgeführt, indem eine POST-Anforderung mit einem Bild an der `detect` -API zu `https://[location].api.cognitive.microsoft.com/face/v1.0`, wobei `[location]]` ist die Region, die Sie verwendet, um Ihren API-Schlüssel abzurufen. Die mit optionalen Anforderungsparameter sind:
+Die Emotions Erkennung wird durchgeführt, indem eine Post-Anforderung mit einem Bild an die `detect` API unter gesendet `https://[location].api.cognitive.microsoft.com/face/v1.0` wird, wobei `[location]]` die Region ist, die Sie zum Abrufen ihres API-Schlüssels verwendet haben. Die optionalen Anforderungs Parameter lauten wie folgt:
 
-- `returnFaceId` – ob FaceIds von der erkannten Gesichtern zurückgegeben. Der Standardwert ist `true`sein.
-- `returnFaceLandmarks` – ob Orientierungspunkte von der erkannten Gesichtern zurückgegeben. Der Standardwert ist `false`sein.
-- `returnFaceAttributes` – an, ob analysieren und zurückgeben, eine oder mehrere angegebene Attribute stehen. Unterstützte gesichtsmerkmale sind `age`, `gender`, `headPose`, `smile`, `facialHair`, `glasses`, `emotion`, `hair`, `makeup`, `occlusion`, `accessories`, `blur`, `exposure`, und `noise`. Beachten Sie, dass Gesicht Attribut Analysis zusätzliche Kosten für COMPUTE und Zeit.
+- `returnFaceId`– Gibt an, ob fakeids der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `true`.
+- `returnFaceLandmarks`– Gibt an, ob Gesichtspunkte der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `false`.
+- `returnFaceAttributes`– Gibt an, ob ein oder mehrere angegebene Gesichts Attribute analysiert und zurückgegeben werden sollen. Zu den unterstützten Gesichts Attributen zählen `age` , `gender` , `headPose` , `smile` , `facialHair` , `glasses` , `emotion` , `hair` , `makeup` , `occlusion` , `accessories` , `blur` , `exposure` und `noise` . Beachten Sie, dass die Gesichts Attribut Analyse zusätzliche Berechnungs-und Zeit Kosten hat.
 
-Bildinhalt muss im Text der POST-Anforderung als URL oder binäre Daten platziert werden.
+Bildinhalte müssen im Text der Post-Anforderung als URL oder Binärdaten abgelegt werden.
 
 > [!NOTE]
-> Unterstützte Formate für Bilddateien werden JPEG, PNG, GIF und BMP, und die zulässige Dateigröße von 1KB ist, auf 4MB.
+> Unterstützte Bild Dateiformate sind JPEG, PNG, GIF und BMP, und die zulässige Dateigröße liegt zwischen 1 KB und 4 MB.
 
-In der beispielanwendung-Erkennungsprozess Emotionen wird aufgerufen, durch Aufrufen der `DetectAsync` Methode:
+In der Beispielanwendung wird der Emotions Erkennungsprozess aufgerufen, indem die- `DetectAsync` Methode aufgerufen wird:
 
 ```csharp
 Face[] faces = await _faceRecognitionService.DetectAsync(photoStream, true, false, new FaceAttributeType[] { FaceAttributeType.Emotion });
 ```
 
-Dieser Methodenaufruf gibt an, der Stream, enthält die Bilddaten, die FaceIds zurückgegeben werden soll, dass Orientierungspunkte sollte nicht zurückgegeben werden und die Stimmung des Bilds analysiert werden sollen. Es gibt auch an, dass die Ergebnisse als ein Array von zurückgegeben werden, `Face` Objekte. Wiederum die `DetectAsync` Methode ruft die `detect` REST-API, die zur Erkennung von Emotionen ausführt:
+Dieser Methodenaufrufe gibt den Stream mit den Bilddaten an, die faceids zurückgegeben werden sollen, die Gesichtspunkte sollten nicht zurückgegeben werden, und die Emotionen des Bilds sollten analysiert werden. Außerdem wird angegeben, dass die Ergebnisse als Array von-Objekten zurückgegeben werden `Face` . Die- `DetectAsync` Methode ruft wiederum die Rest-API auf, die die `detect` Emotions Erkennung durchführt:
 
 ```csharp
 public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, bool returnFaceLandmarks, IEnumerable<FaceAttributeType> returnFaceAttributes)
@@ -79,14 +82,14 @@ public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, boo
 }
 ```
 
-Diese Methode generiert einen Anforderungs-URI und sendet dann die Anforderung an die `detect` -API über die `SendRequestAsync` Methode.
+Diese Methode generiert einen Anforderungs-URI und sendet die Anforderung dann `detect` über die-Methode an die API `SendRequestAsync` .
 
 > [!NOTE]
-> Sie müssen die gleiche Region in Ihren Gesichtserkennungs-API-aufrufen, als Sie zum Abrufen Ihrer Abonnementschlüssel verwenden. Z. B., wenn Sie Ihre Abonnementschlüssel aus erhalten die `westus` , der Endpunkt der gesichtserkennungs-Erkennung werden `https://westus.api.cognitive.microsoft.com/face/v1.0/detect`.
+> Sie müssen die gleiche Region in ihren Gesichtserkennungs-API aufrufen verwenden, die Sie zum Abrufen Ihrer Abonnement Schlüssel verwendet haben. Wenn Sie Ihre Abonnement Schlüssel z. b. aus der `westus` Region abgerufen haben, ist der Gesichts Erkennungs Endpunkt `https://westus.api.cognitive.microsoft.com/face/v1.0/detect` .
 
 ### <a name="send-the-request"></a>Senden der Anforderung
 
-Die `SendRequestAsync` Methode macht die POST-Anforderung der Gesichtserkennungs-API und gibt das Ergebnis als eine `Face` Array:
+Die `SendRequestAsync` -Methode stellt die Post-Anforderung an den Gesichtserkennungs-API und gibt das Ergebnis als- `Face` Array zurück:
 
 ```csharp
 async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMethod, string requestUrl, TRequest requestBody)
@@ -129,15 +132,15 @@ async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMetho
 }
 ```
 
-Wenn das Image über einen Datenstrom angegeben wird, erstellt die Methode die POST-Anforderung durch das wrapping des Bild-Streams in ein `StreamContent` -Instanz, die Grundlage eines Datenstroms HTTP-Inhalt enthält. Wenn das Image über eine URL angegeben ist, erstellt die Methode die POST-Anforderung auch durch umschließen die URL in eine `StringContent` -Instanz, die HTTP-Inhalt basierend auf einer Zeichenfolge bereitstellt.
+Wenn das Bild über einen Stream bereitgestellt wird, erstellt die-Methode die Post-Anforderung, indem der Bildstream in eine-Instanz umgeschrieben wird `StreamContent` , die HTTP-Inhalt basierend auf einem Stream bereitstellt. Wenn das Bild über eine URL bereitgestellt wird, erstellt die-Methode die Post-Anforderung, indem die URL in eine-Instanz umgebunden wird `StringContent` , die HTTP-Inhalt auf Grundlage einer Zeichenfolge bereitstellt.
 
-Anschließend wird die POST-Anforderung an gesendet `detect` API. Die Antwort wird gelesen, deserialisiert und an die aufrufende Methode zurückgegeben.
+Die Post-Anforderung wird dann an die `detect` API gesendet. Die Antwort wird gelesen, deserialisiert und an die Aufruf Methode zurückgegeben.
 
-Die `detect` API sendet HTTP-Statuscode 200 (OK) in der Antwort angegeben, dass die Anforderung gültig ist, was bedeutet, dass die Anforderung erfolgreich war, und dass die angeforderte Informationen in der Antwort ist. Eine Liste der möglichen Fehlerantworten, finden Sie unter [Gesichtserkennungs-REST-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+Die `detect` API sendet in der Antwort den HTTP-Statuscode 200 (OK), vorausgesetzt, die Anforderung ist gültig, was angibt, dass die Anforderung erfolgreich war und die angeforderten Informationen in der Antwort enthalten sind. Eine Liste möglicher Fehler Antworten finden Sie unter [Face Rest API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
 ### <a name="process-the-response"></a>Verarbeiten der Antwort
 
-Die API-Antwort wird im JSON-Format zurückgegeben. Die folgenden JSON-Daten zeigt eine typische Antwort, die erfolgreich-Nachricht, die die von der beispielanwendung angeforderten Daten bereitstellt:
+Die API-Antwort wird im JSON-Format zurückgegeben. Die folgenden JSON-Daten zeigen eine typische erfolgreiche Antwortnachricht, die die von der Beispielanwendung angeforderten Daten bereitstellt:
 
 ```json
 [  
@@ -165,20 +168,20 @@ Die API-Antwort wird im JSON-Format zurückgegeben. Die folgenden JSON-Daten zei
 ]
 ```
 
-Eine erfolgreiche Antwort-Nachricht besteht aus einem Array von Face-Einträgen, die Rangfolge richtet sich nach Gesicht Rechteck Größe in absteigender Reihenfolge aus, während eine leere Antwort angibt, keine Gesichter erkannt dass. Jede erkannt Gesicht umfasst eine Reihe von optionalen gesichtserkennungs-Attribute, die vom angegebenen die `returnFaceAttributes` Argument für die `DetectAsync` Methode.
+Eine erfolgreiche Antwortnachricht besteht aus einem Array von Gesichts Einträgen, das nach dem Rechteck in absteigender Reihenfolge sortiert wird, während eine leere Antwort darauf hinweist, dass keine Gesichter erkannt werden. Jedes erkannte Gesicht enthält eine Reihe optionaler Gesichts Attribute, die durch das- `returnFaceAttributes` Argument der-Methode angegeben werden `DetectAsync` .
 
-In der beispielanwendung, die JSON-Antwort deserialisiert wird, in ein Array von `Face` Objekte. Beim Interpretieren der Ergebnisse, der Gesichtserkennungs-API, der erkannten Emotionen interpretiert werden soll als die Emotion mit der höchsten Bewertung, wie Werte normalisiert werden Summe auf eine. Aus diesem Grund zeigt die beispielanwendung der erkannten Emotionen mit der höchsten Bewertung für die größten erkannte Gesicht im Bild. Dies erfolgt durch den folgenden Code:
+In der Beispielanwendung wird die JSON-Antwort in ein Array von-Objekten deserialisiert `Face` . Beim Interpretieren der Ergebnisse aus der Gesichtserkennungs-API sollte die erkannte Emotionen als Emotionen mit der höchsten Bewertung interpretiert werden, da die Ergebnisse normalisiert werden, um zu einer Summe zu addieren. Aus diesem Grund zeigt die Beispielanwendung die erkannte Emotionen mit der höchsten Bewertung für das größte erkannte Gesicht im Bild an. Verwenden Sie dafür den folgenden Code:
 
 ```csharp
 emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRankedList().FirstOrDefault().Key;
 ```
 
-Der folgende Screenshot zeigt das Ergebnis des Prozesses Emotionen erkennen, in der beispielanwendung:
+Der folgende Screenshot zeigt das Ergebnis des Emotions Erkennungsprozesses in der Beispielanwendung:
 
 ![](emotion-recognition-images/emotion-recognition.png "Emotion Recognition")
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Gesichtserkennungs-API](/azure/cognitive-services/face/overview/).
-- [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
-- [Gesichtserkennungs-REST-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+- [TODO-Cognitive Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Face-Rest-API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

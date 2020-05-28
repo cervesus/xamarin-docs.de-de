@@ -1,39 +1,42 @@
 ---
-title: Erweiterte xamarin. Forms-Konzepte & Interna
-description: Erfahren Sie mehr über erweiterte Konzepte und die Interna von Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/20/2020
-ms.openlocfilehash: 98e488dbf8446ee151c342c73bf9b0a8d9ff7a56
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+title: Xamarin.FormsErweiterte Konzepte & Interna
+description: Hier finden Sie Informationen zu erweiterten Konzepten und den Internalen von Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 410aadcb885ed66283eb306cb9aa4c5e764fa8ec
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070253"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139034"
 ---
-# <a name="xamarinforms-advanced-concepts--internals"></a>Erweiterte xamarin. Forms-Konzepte & Interna
+# <a name="xamarinforms-advanced-concepts--internals"></a>Xamarin.FormsErweiterte Konzepte & Interna
 
-_Erfahren Sie mehr über erweiterte Konzepte und die internale von xamarin. Forms._
+_Hier finden Sie Informationen zu erweiterten Konzepten und den Internalen von Xamarin.Forms ._
 
-## <a name="controls-class-hierarchy"></a>[Controls-Klassenhierarchie](class-hierarchy.md)
+## <a name="controls-class-hierarchy"></a>[Steuerelementklassenhierarchie](class-hierarchy.md)
 
-Erfahren Sie über die Hierarchie der Typen, mit denen die Benutzeroberfläche einer Xamarin.Forms-Anwendung erstellt wird.
+Erfahren Sie mehr über die Hierarchie von Typen, die zum Erstellen der Benutzeroberfläche einer-Anwendung verwendet werden Xamarin.Forms .
 
 ## <a name="dependency-resolution"></a>[Abhängigkeitsauflösung](dependency-resolution.md)
 
-Erfahren Sie, wie Sie eine Abhängigkeits Auflösungsmethode in xamarin. Forms einfügen, damit eine Anwendung die Erstellung und die Lebensdauer von benutzerdefinierten Renderer-, Wirkungs-und `DependencyService` Implementierungen steuern kann.
+Erfahren Sie, wie Sie eine Abhängigkeits Auflösungsmethode in einfügen Xamarin.Forms , sodass eine Anwendung die Erstellung und die Lebensdauer von benutzerdefinierten Renderer, Effekten und Implementierungen steuern kann `DependencyService` .
 
 ## <a name="experimental-flags"></a>[Experimentelle Flags](experimental-flags.md)
 
-Durch die experimentellen Flags von xamarin. Forms kann das Engineering-Team neue Features schneller an die Benutzer senden, während Sie weiterhin Funktions-APIs ändern können, bevor Sie zu einer stabilen Version wechseln.
+Xamarin.Formsdurch experimentelle Flags kann das Engineering-Team neue Features schneller an die Benutzer senden, während Sie weiterhin Funktions-APIs ändern können, bevor Sie zu einer stabilen Version wechseln.
 
 ## <a name="fast-renderers"></a>[Schnelle Renderer](fast-renderers.md)
 
-Erfahren Sie, wie schnelle Renderer die Inflations- und Renderingkosten von Xamarin.Forms-Steuerelementen in Android reduzieren, indem sie die resultierende native Steuerelementhierarchie vereinfachen.
+Erfahren Sie mehr über schnelle Renderer, die die Inflations-und renderingkosten eines Xamarin.Forms Steuer Elements auf Android verringern, indem Sie die resultierende Native Steuerelement Hierarchie vereinfachen.
 
-## <a name="source-link"></a>[Quelllink](sourcelink.md)
+## <a name="source-link"></a>[SourceLink](sourcelink.md)
 
-Erfahren Sie, wie Sie Ihre Anwendung im Xamarin.Forms-Quellcode debuggen.
+Erfahren Sie, wie Sie Ihre Anwendung in den Quellcode debuggen Xamarin.Forms .

@@ -1,24 +1,27 @@
 ---
-title: ImageButton-Dropdown Schatten unter Android
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Funktion verwenden, die einen Schlag Schatten für eine ImageButton-Funktion aktiviert.
-ms.prod: xamarin
-ms.assetid: D3604D87-9F9F-4FE2-8B10-DF3B143C0734
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 567216171dd289e849ee0164452e4b876953f2a3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e2ad97eb5e7db3b832e8fb4340c86904b766b9a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653586"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139998"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>ImageButton-Dropdown Schatten unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese Android-plattformspezifische dient zum Aktivieren eines Schlag Schattens `ImageButton`für einen. Es ist in XAML verwendet, durch Festlegen der `ImageButton.IsShadowEnabled` bindbare Eigenschaft `true`, sowie eine Reihe von zusätzlichen optional bindbare Eigenschaften, die das Rendern des Schlagschattens steuern:
+Diese Android-plattformspezifische dient zum Aktivieren eines Schlag Schattens für einen `ImageButton` . Sie wird in XAML verwendet, indem die `ImageButton.IsShadowEnabled` bindbare Eigenschaft auf festgelegt `true` wird, sowie eine Reihe zusätzlicher optionaler bindbare Eigenschaften, die den Schlag Schatten Steuern:
 
 ```xaml
 <ContentPage ...
@@ -44,7 +47,7 @@ Diese Android-plattformspezifische dient zum Aktivieren eines Schlag Schattens `
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -60,24 +63,24 @@ imageButton.On<Android>()
 ```
 
 > [!IMPORTANT]
-> Ein Drop-Schatten wird gezeichnet, als Teil der `ImageButton` Hintergrund, und der Hintergrund wird nur gezeichnet, wenn die `BackgroundColor` festgelegt wird. Aus diesem Grund werden ein Schlagschatten wird nicht gezeichnet, wenn die `ImageButton.BackgroundColor` Eigenschaft nicht festgelegt.
+> Ein Schlag Schatten wird als Teil des `ImageButton` Hintergrunds gezeichnet, und der Hintergrund wird nur gezeichnet, wenn die- `BackgroundColor` Eigenschaft festgelegt ist. Daher wird ein Schlag Schatten nicht gezeichnet, wenn die- `ImageButton.BackgroundColor` Eigenschaft nicht festgelegt ist.
 
-Die `ImageButton.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Die `ImageButton.SetIsShadowEnabled` Methode in der [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Namespace wird verwendet, um Kontrolle, ob ein Schlagschatten aktiviert ist, auf die `ImageButton`. Darüber hinaus können die folgenden Methoden aufgerufen werden, zum Rendern des Schlagschattens steuern:
+Die- `ImageButton.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. Die- `ImageButton.SetIsShadowEnabled` Methode im- [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) Namespace wird verwendet, um zu steuern, ob ein Schlag Schatten für aktiviert ist `ImageButton` . Außerdem können die folgenden Methoden aufgerufen werden, um den Schlag Schatten zu steuern:
 
-- `SetShadowColor` – Legt die Farbe des Schlagschattens fest. Die Standardfarbe ist [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
-- `SetShadowOffset` – Legt den Offset des Schlagschattens fest. Der Offset ändert die Richtung der Schattenkopie umgewandelt wird und angegeben wird, als eine [ `Size` ](xref:Xamarin.Forms.Size) Wert. Die `Size` Strukturwerte werden in geräteunabhängigen Einheiten ausgedrückt, mit der erste Wert wird die Entfernung nach links (negativer Wert) oder rechts (positiver Wert) und der zweite Wert wird der Abstand (negativer Wert) oder unterhalb (positiver Wert) . Der Standardwert dieser Eigenschaft ist (0,0, 0,0), was dazu führt, wird der Schatten auf jeder Seite um Umwandeln der `ImageButton`.
-- `SetShadowRadius`– Festlegen des Weichzeichnerradius zum Rendern des Schlagschattens verwendet. Der Radius-Standardwert ist 10,0.
+- `SetShadowColor`– legt die Farbe des Schlag Schattens fest. Die Standardfarbe ist [`Color.Default`](xref:Xamarin.Forms.Color.Default*) .
+- `SetShadowOffset`– Legt den Offset des Schlag Schattens fest. Der Offset ändert die Richtung, in die der Schatten umgewandelt wird, und wird als [`Size`](xref:Xamarin.Forms.Size) Wert angegeben. Die `Size` Struktur Werte werden in geräteunabhängigen Einheiten ausgedrückt, wobei der erste Wert die Distanz nach links (negativer Wert) oder rechts (positiver Wert) und der zweite Wert die Distanz oberhalb (negativer Wert) oder niedriger (positiver Wert) ist. Der Standardwert dieser Eigenschaft ist (0,0, 0,0), was dazu führt, dass der Schatten um jede Seite von umbrochen wird `ImageButton` .
+- `SetShadowRadius`– Legt den zum Rendering des Schlag Schattens verwendeten Weichzeichnerradius fest. Der Standard RADIUS-Wert ist 10,0.
 
 > [!NOTE]
-> Der Status der einen Schlagschatten abgefragt werden kann, durch den Aufruf der `GetIsShadowEnabled`, `GetShadowColor`, `GetShadowOffset`, und `GetShadowRadius` Methoden.
+> Der Zustand eines Ablage Schattens kann durch Aufrufen der `GetIsShadowEnabled` `GetShadowColor` Methoden,, und abgefragt werden `GetShadowOffset` `GetShadowRadius` .
 
-Das Ergebnis ist, die ein Schlagschatten aktiviert werden kann, auf eine `ImageButton`:
+Das Ergebnis ist, dass ein Ablage Schatten für eine aktiviert werden kann `ImageButton` :
 
-![](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png "ImageButton mit Schlagschatten")
+![](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png "ImageButton with drop shadow")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [Androidspecific-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [Androidspecific. AppCompat-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

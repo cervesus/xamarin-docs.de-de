@@ -1,22 +1,25 @@
 ---
-title: Allgemeine Xamarin.Forms-Steuerelementeigenschaften, -methoden und -ereignisse
-description: In diesem Artikel werden allgemeine Eigenschaften, Methoden und Ereignisse beschrieben, die für die visualelement-Klasse definiert sind und häufig in abgeleiteten Klassen verwendet werden.
-ms.prod: xamarin
-ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 08/21/2019
-ms.openlocfilehash: 7d8f5309d14c2a99afff0998a7013a9ebec338c1
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
+description: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425839"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136421"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Allgemeine Xamarin.Forms-Steuerelementeigenschaften, -methoden und -ereignisse
+# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
 
-Die xamarin. Forms- `VisualElement` Klasse ist die Basisklasse für die meisten Steuerelemente, die in einer xamarin. Forms-Anwendung verwendet werden. Die- `VisualElement` Klasse definiert viele [Eigenschaften](#properties), [Methoden](#methods)und [Ereignisse](#events) , die in abgeleiteten Klassen verwendet werden.
+Die- Xamarin.Forms `VisualElement` Klasse ist die Basisklasse für die meisten Steuerelemente, die in einer-Anwendung verwendet werden Xamarin.Forms . Die- `VisualElement` Klasse definiert viele [Eigenschaften](#properties), [Methoden](#methods)und [Ereignisse](#events) , die in abgeleiteten Klassen verwendet werden.
 
 ## <a name="properties"></a>Eigenschaften
 
@@ -36,15 +39,15 @@ Die- `BackgroundColor` Eigenschaft ist eine `Color` , die die Hintergrundfarbe d
 
 ### [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)
 
-Die- `Behaviors` Eigenschaft ist eine `List` von- `Behavior` Objekten. Mithilfe von Verhalten können Sie wiederverwendbare Funktionen an Elemente anfügen, indem Sie Sie der Liste hinzufügen `Behaviors` . Weitere Informationen zur- `Behavior` Klasse finden Sie unter [xamarin. Forms-Verhalten](~/xamarin-forms/app-fundamentals/behaviors/index.md).
+Die- `Behaviors` Eigenschaft ist eine `List` von- `Behavior` Objekten. Mithilfe von Verhalten können Sie wiederverwendbare Funktionen an Elemente anfügen, indem Sie Sie der Liste hinzufügen `Behaviors` . Weitere Informationen zur- `Behavior` Klasse finden Sie unter [ Xamarin.Forms Verhalten](~/xamarin-forms/app-fundamentals/behaviors/index.md).
 
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
-Die- `Bounds` Eigenschaft ist ein Schreib geschütztes- `Rectangle` Objekt, das den vom-Steuerelement belegten Bereich darstellt. Der `Bounds` Eigenschafts Wert wird während des layoutcycle zugewiesen. Die `Rectangle` `struct` enthält nützliche Eigenschaften und Methoden zum Testen der Schnittmenge und Kapselung von Rechtecke. Weitere Informationen finden Sie in der [xamarin. Forms-Rechteck-API](xref:Xamarin.Forms.Rectangle).
+Die- `Bounds` Eigenschaft ist ein Schreib geschütztes- `Rectangle` Objekt, das den vom-Steuerelement belegten Bereich darstellt. Der `Bounds` Eigenschafts Wert wird während des layoutcycle zugewiesen. Die `Rectangle` `struct` enthält nützliche Eigenschaften und Methoden zum Testen der Schnittmenge und Kapselung von Rechtecke. Weitere Informationen finden Sie unter The [ Xamarin.Forms Rechteck API](xref:Xamarin.Forms.Rectangle).
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
-Die- `Effects` Eigenschaft ist eine `List` von- `Effect` Objekten, die von der- `Element` Klasse (Xref: xamarin. Forms. Element) geerbt wird. Mit Effekten können native Steuerelemente angepasst werden, und Sie werden in der Regel für kleine Formatierungs Änderungen verwendet. Weitere Informationen zur- `Effect` Klasse finden Sie unter [xamarin. Forms-Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
+Die- `Effects` Eigenschaft ist eine `List` von- `Effect` Objekten, die von der `Element` (Xref:) geerbt werden Xamarin.Forms . Element)-Klasse. Mit Effekten können native Steuerelemente angepasst werden, und Sie werden in der Regel für kleine Formatierungs Änderungen verwendet. Weitere Informationen zur- `Effect` Klasse finden Sie unter [ Xamarin.Forms Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 ### [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)
 
@@ -130,11 +133,11 @@ Die- `ScaleY` Eigenschaft ist ein `double` Wert, der die Skalierung des Steuer E
 
 ### [`Style`](xref:Xamarin.Forms.NavigableElement.Style)
 
-Die `Style`-Eigenschaft wird von der `NavigableElement`-Klasse geerbt. Diese Eigenschaft ist eine Instanz der- `Style` Klasse. Die- `Style` Klasse enthält Trigger, Setter und Verhalten, die die Darstellung und das Verhalten von visuellen Elementen definieren. Weitere Informationen finden Sie unter [xamarin. Forms-XAML-Stile](~/xamarin-forms/user-interface/styles/xaml/index.md).
+Die `Style`-Eigenschaft wird von der `NavigableElement`-Klasse geerbt. Diese Eigenschaft ist eine Instanz der- `Style` Klasse. Die- `Style` Klasse enthält Trigger, Setter und Verhalten, die die Darstellung und das Verhalten von visuellen Elementen definieren. Weitere Informationen finden Sie unter [ Xamarin.Forms XAML-Stile](~/xamarin-forms/user-interface/styles/xaml/index.md).
 
 ### [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)
 
-Die- `StyleClass` Eigenschaft ist eine Liste von- `string` Objekten, die die Namen von `Style` Klassen darstellen. Diese Eigenschaft wird von der `NavigableElement`-Klasse geerbt. Die- `StyleClass` Eigenschaft ermöglicht das Anwenden mehrerer Stil Attribute auf eine- `VisualElement` Instanz. Weitere Informationen finden Sie unter [xamarin. Forms-Klassen Stil](~/xamarin-forms/user-interface/styles/xaml/style-class.md).
+Die- `StyleClass` Eigenschaft ist eine Liste von- `string` Objekten, die die Namen von `Style` Klassen darstellen. Diese Eigenschaft wird von der `NavigableElement`-Klasse geerbt. Die- `StyleClass` Eigenschaft ermöglicht das Anwenden mehrerer Stil Attribute auf eine- `VisualElement` Instanz. Weitere Informationen finden Sie unter [ Xamarin.Forms Style Classes](~/xamarin-forms/user-interface/styles/xaml/style-class.md).
 
 ### [`TabIndex`](xref:Xamarin.Forms.VisualElement.TabIndex)
 
@@ -144,21 +147,21 @@ Die- `TabIndex` Eigenschaft ist ein- `int` Wert, der die Reihenfolge der Steuere
 
 Die- `TranslationX` Eigenschaft ist ein `double` Wert, der die Delta Übersetzung definiert, die auf die X-Achse angewendet werden soll. Die Übersetzung wird nach dem Layout angewendet und wird in der Regel zum Anwenden von Animationen verwendet. Wenn ein Element außerhalb der Grenzen des übergeordneten Containers übersetzt wird, wird verhindert, dass Eingaben funktionieren.
 
-Weitere Informationen finden Sie unter [Animation in xamarin. Forms](~/xamarin-forms/user-interface/animation/index.md).
+Weitere Informationen finden Sie unter [Animation in Xamarin.Forms ](~/xamarin-forms/user-interface/animation/index.md).
 
 ### [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 
 Die- `TranslationY` Eigenschaft ist ein `double` Wert, der die Delta Übersetzung definiert, die auf die Y-Achse angewendet werden soll. Die Übersetzung wird nach dem Layout angewendet und wird in der Regel zum Anwenden von Animationen verwendet. Wenn ein Element außerhalb der Grenzen des übergeordneten Containers übersetzt wird, wird verhindert, dass Eingaben funktionieren.
 
-Weitere Informationen finden Sie unter [Animation in xamarin. Forms](~/xamarin-forms/user-interface/animation/index.md).
+Weitere Informationen finden Sie unter [Animation in Xamarin.Forms ](~/xamarin-forms/user-interface/animation/index.md).
 
 ### [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers)
 
-Die- `Triggers` Eigenschaft ist eine schreibgeschützte `List` von- `TriggerBase` Objekten. Trigger ermöglichen Anwendungsentwicklern das Ausdrücken von Aktionen in XAML, die die visuelle Darstellung von Steuerelementen als Reaktion auf Ereignis-oder Eigenschafts Änderungen ändern. Weitere Informationen finden Sie unter [xamarin. Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
+Die- `Triggers` Eigenschaft ist eine schreibgeschützte `List` von- `TriggerBase` Objekten. Trigger ermöglichen Anwendungsentwicklern das Ausdrücken von Aktionen in XAML, die die visuelle Darstellung von Steuerelementen als Reaktion auf Ereignis-oder Eigenschafts Änderungen ändern. Weitere Informationen finden Sie unter [ Xamarin.Forms Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
 
 ### [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)
 
-Die- `Visual` Eigenschaft ist eine `IVisual` -Instanz, mit der Renderer erstellt und selektiv auf-Instanzen angewendet werden können `VisualElement` . Die- `Visual` Eigenschaft wird so festgelegt, dass Sie Ihrem übergeordneten Element entspricht. das Definieren eines Renderers für eine Komponente gilt auch für alle untergeordneten Elemente dieser Komponente. Wenn kein benutzerdefinierter Renderer für ein Steuerelement oder seine Vorgänger festgelegt ist, wird der xamarin. Forms-Standard-Renderer verwendet. Weitere Informationen finden Sie unter [xamarin. Forms Visual](~/xamarin-forms/user-interface/visual/index.md).
+Die- `Visual` Eigenschaft ist eine `IVisual` -Instanz, mit der Renderer erstellt und selektiv auf-Instanzen angewendet werden können `VisualElement` . Die- `Visual` Eigenschaft wird so festgelegt, dass Sie Ihrem übergeordneten Element entspricht. das Definieren eines Renderers für eine Komponente gilt auch für alle untergeordneten Elemente dieser Komponente. Wenn kein benutzerdefinierter Renderer für ein Steuerelement oder seine Vorgänger festgelegt ist, Xamarin.Forms wird der Standardrenderer verwendet. Weitere Informationen finden Sie unter [ Xamarin.Forms Visual](~/xamarin-forms/user-interface/visual/index.md).
 
 ### [`Width`](xref:Xamarin.Forms.VisualElement.Width)
 
@@ -210,13 +213,13 @@ public void Unfocus ()
 
 Das-Element muss bereits den Fokus haben, damit diese Methode funktioniert.
 
-## <a name="events"></a>Ereignisse
+## <a name="events"></a>Events
 
-Die folgenden Ereignisse sind für die- `VisualElement` Klasse verfügbar. Eine vollständige Liste finden Sie unter [xamarin. Forms visualelement-Ereignisse](xref:Xamarin.Forms.VisualElement#events).
+Die folgenden Ereignisse sind für die- `VisualElement` Klasse verfügbar. Eine umfassende Liste finden Sie unter [ Xamarin.Forms visualelement-Ereignisse](xref:Xamarin.Forms.VisualElement#events).
 
 ### [`Focused`](xref:Xamarin.Forms.VisualElement.Focused)
 
-Das- `Focused` Ereignis wird immer dann ausgelöst, wenn die `VisualElement` Instanz den Fokus erhält. Dieses Ereignis wird nicht durch den xamarin. Forms-Stapel, sondern direkt vom systemeigenen Steuerelement empfangen. Dieses Ereignis wird vom [`IsFocused`](#isfocused) Eigenschaften Setter ausgegeben.
+Das- `Focused` Ereignis wird immer dann ausgelöst, wenn die `VisualElement` Instanz den Fokus erhält. Dieses Ereignis wird nicht durch den Xamarin.Forms Stapel gestapelt, sondern direkt vom systemeigenen Steuerelement empfangen. Dieses Ereignis wird vom [`IsFocused`](#isfocused) Eigenschaften Setter ausgegeben.
 
 ### [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
@@ -224,11 +227,11 @@ Das- `SizeChanged` Ereignis wird ausgelöst, wenn sich die- `VisualElement` Inst
 
 ### [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)
 
-Das- `Unfocused` Ereignis wird ausgelöst, wenn die- `VisualElement` Instanz den Fokus verliert. Dieses Ereignis wird nicht durch den xamarin. Forms-Stapel, sondern direkt vom systemeigenen Steuerelement empfangen. Dieses Ereignis wird vom [`IsFocused`](#isfocused) Eigenschaften Setter ausgegeben.
+Das- `Unfocused` Ereignis wird ausgelöst, wenn die- `VisualElement` Instanz den Fokus verliert. Dieses Ereignis wird nicht durch den Xamarin.Forms Stapel gestapelt, sondern direkt vom systemeigenen Steuerelement empfangen. Dieses Ereignis wird vom [`IsFocused`](#isfocused) Eigenschaften Setter ausgegeben.
 
 ## <a name="units-of-measurement"></a>Maßeinheiten
 
-Android-, IOS-und UWP-Plattformen verfügen jeweils über unterschiedliche Maßeinheiten, die Geräte übergreifend variieren können. Xamarin. Forms verwendet eine plattformunabhängige Maßeinheit, mit der Einheiten über Geräte und Plattformen hinweg normalisiert werden. In xamarin. Forms sind 160 Einheiten pro Zoll oder 64 Einheiten pro Zentimeter vorhanden.
+Android-, IOS-und UWP-Plattformen verfügen jeweils über unterschiedliche Maßeinheiten, die Geräte übergreifend variieren können. Xamarin.Formsverwendet eine plattformunabhängige Maßeinheit, mit der Einheiten über Geräte und Plattformen hinweg normalisiert werden. Es sind 160 Einheiten pro Zoll oder 64 Einheiten pro Zentimeter in vorhanden Xamarin.Forms .
 
 ## <a name="request-properties"></a>Anforderungseigenschaften
 
@@ -261,7 +264,7 @@ Das Verhalten ist nicht definiert, wenn der minimale Wert größer ist als der a
 
 ### <a name="minimum-properties-within-a-grid"></a>Minimale Eigenschaften innerhalb eines Rasters
 
-`Grid`Layouts verfügen über ein eigenes System für die relative Größenänderung von Zeilen und Spalten. Die `MinimumWidthRequest` Verwendung `MinimumHeightRequest` von oder innerhalb eines `Grid` Layouts hat keinen Effekt. Weitere Informationen finden Sie unter [xamarin. Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
+`Grid`Layouts verfügen über ein eigenes System für die relative Größenänderung von Zeilen und Spalten. Die `MinimumWidthRequest` Verwendung `MinimumHeightRequest` von oder innerhalb eines `Grid` Layouts hat keinen Effekt. Weitere Informationen finden Sie unter [ Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
