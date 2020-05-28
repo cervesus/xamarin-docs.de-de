@@ -216,7 +216,7 @@ Wenn diese Option aktiviert ist, werden Assemblys in einer nativen freigegebenen
 
 Diese Option erfordert eine Unternehmenslizenz und ist nur verfügbar, wenn **Fast Deployment verwenden** deaktiviert ist. **Assemblys in nativem Code bündeln** ist standardmäßig deaktiviert.
 
-Beachten Sie, dass die Option **Assemblys in nativem Code bündeln***nicht* bedeutet, dass die Assemblys in nativen Code kompiliert werden. Es ist nicht möglich, die [**AOT-Kompilierung**](#aot) zum Kompilieren von Assemblys in nativen Code zu verwenden.
+Beachten Sie, dass die Option **Assemblys in nativem Code bündeln** *nicht* bedeutet, dass die Assemblys in nativen Code kompiliert werden. Es ist nicht möglich, die [**AOT-Kompilierung**](#aot) zum Kompilieren von Assemblys in nativen Code zu verwenden.
 
 <a name="aot" />
 
