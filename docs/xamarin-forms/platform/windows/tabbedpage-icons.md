@@ -1,24 +1,27 @@
 ---
-title: Tabbedpage-Symbole unter Windows
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die Windows-plattformspezifische verwenden, mit der Seiten Symbole auf einer tabbedpage-Symbolleiste angezeigt werden können.
-ms.prod: xamarin
-ms.assetid: 7C5031A5-74EE-4469-994E-BEA7BA9D33CB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: a40203e4d01f45ef36ee6988198400a259600aac
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6db5014050ad3f037869120d017e51803a7c48f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198097"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136538"
 ---
 # <a name="tabbedpage-icons-on-windows"></a>Tabbedpage-Symbole unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese universelle Windows-Plattform plattformspezifisch ermöglicht, dass Seiten Symbole auf einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) Symbolleiste angezeigt werden, und bietet die Möglichkeit, optional die Symbolgröße anzugeben. Er wird genutzt, in XAML durch Festlegen der [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) angefügten Eigenschaft, um `true`, optional festlegen und die [ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) angefügten Eigenschaft, um eine [ `Size` ](xref:Xamarin.Forms.Size) Wert:
+Diese universelle Windows-Plattform plattformspezifisch ermöglicht, dass Seiten Symbole auf einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) Symbolleiste angezeigt werden, und bietet die Möglichkeit, optional die Symbolgröße anzugeben. Sie wird in XAML verwendet, indem die [`TabbedPage.HeaderIconsEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) angefügte-Eigenschaft auf festgelegt `true` wird, und indem optional die [`TabbedPage.HeaderIconsSize`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) angefügte-Eigenschaft auf einen Wert festgelegt wird [`Size`](xref:Xamarin.Forms.Size) :
 
 ```xaml
 <TabbedPage ...
@@ -44,7 +47,7 @@ Diese universelle Windows-Plattform plattformspezifisch ermöglicht, dass Seiten
 </TabbedPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -65,16 +68,16 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
 }
 ```
 
-Die `TabbedPage.On<Windows>` Methode gibt an, dass diese plattformspezifischen nur für die universelle Windows-Plattform ausgeführt wird. Die [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) -Namespace wird verwendet, um das Aktivieren oder deaktivieren Sie die Header-Symbole. Die [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size)) Methode gibt optional die Headergröße-Symbol mit einem [ `Size` ](xref:Xamarin.Forms.Size) Wert.
+Die- `TabbedPage.On<Windows>` Methode gibt an, dass diese plattformspezifische nur auf der universelle Windows-Plattform ausgeführt wird. [ `TabbedPage.SetHeaderIconsEnabled` ] (Xref: Xamarin.Forms . Platformconfiguration. windowsspecific. tabbedpage. *-adericonsenabled ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Windows, Xamarin.Forms . Tabbedpage}, System. Boolean))-Methode im- [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) Namespace wird verwendet, um Header Symbole ein-oder auszuschalten. [ `TabbedPage.SetHeaderIconsSize` ] (Xref: Xamarin.Forms . Platformconfiguration. windowsspecific. tabbedpage. Xamarin.Forms ". Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Windows, Xamarin.Forms . Tabbedpage}, Xamarin.Forms . Size))-Methode gibt optional die Header Symbolgröße mit einem [`Size`](xref:Xamarin.Forms.Size) Wert an.
 
-Darüber hinaus die `TabbedPage` -Klasse in der `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` Namespace verfügt auch über eine [ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) Methode, die Header-Symbole, ermöglicht eine [ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) -Methode, die Header-Symbole, deaktiviert und eine [ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) -Methode, die gibt eine `boolean` Wert, der angibt, ob Header Symbole aktiviert sind.
+Außerdem verfügt die- `TabbedPage` Klasse im- `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` Namespace auch über eine- [`EnableHeaderIcons`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) Methode, die Header Symbole aktiviert, eine [`DisableHeaderIcons`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) Methode, die Header Symbole deaktiviert, und eine [`IsHeaderIconsEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) Methode, die einen Wert zurückgibt, `boolean` der angibt, ob Header Symbole aktiviert sind.
 
-Das Ergebnis ist diese Seite, die Symbole angezeigt werden können, auf eine [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Symbolleiste mit der Größe der Symbole wird optional auf eine gewünschte Größe festgelegt werden:
+Das Ergebnis ist, dass Seiten Symbole auf einer Symbolleiste angezeigt werden können [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) , wobei die Symbolgröße optional auf eine gewünschte Größe festgelegt wird:
 
-!["Tabbedpage" Symbole aktiviert plattformspezifische](tabbedpage-icons-images/tabbedpage-icons.png "\"tabbedpage\" Symbole aktiviert plattformspezifische")
+![Tabbedpage-Symbole sind plattformspezifisch aktiviert](tabbedpage-icons-images/tabbedpage-icons.png "Tabbedpage-Symbole sind plattformspezifisch aktiviert")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [Windowsspecific-API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

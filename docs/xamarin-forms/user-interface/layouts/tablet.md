@@ -1,22 +1,25 @@
 ---
-title: Layout für Tablet-und Desktop-Apps
-description: In diesem Artikel wird erläutert, wie Sie xamarin. Forms-Anwendungs Layouts für Tablets anstelle von Smartphones optimieren.
-ms.prod: xamarin
-ms.assetid: D62F472B-4345-4983-8403-659A538B591F
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/01/2016
-ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: In diesem Artikel wird erläutert, wie Sie Xamarin.Forms Anwendungs Layouts für Tablets im Gegensatz zu Smartphones optimieren.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8ce5ba09f89c2bc84b7f6ba722f724ae39c0222e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72273114"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137928"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Layout für Tablet-und Desktop-Apps
 
-Xamarin. Forms unterstützt alle auf den unterstützten Plattformen verfügbaren Gerätetypen. zusätzlich zu den Smartphones können apps auch auf folgenden Plattformen ausgeführt werden:
+Xamarin.Formsin werden alle Gerätetypen unterstützt, die auf den unterstützten Plattformen verfügbar sind. zusätzlich zu den Smartphones können apps auch unter ausgeführt werden:
 
 - iPads
 - Android-Tablets,
@@ -31,11 +34,11 @@ Auf dieser Seite werden kurz erläutert:
 
 ## <a name="device-types"></a>Gerätetypen
 
-Größere Bildschirme sind für alle Plattformen verfügbar, die von xamarin. Forms unterstützt werden.
+Größere Bildschirme sind für alle Plattformen verfügbar, die von unterstützt werden Xamarin.Forms .
 
 ### <a name="ipads-ios"></a>iPads (IOS)
 
-Die xamarin. Forms-Vorlage enthält automatisch iPad-Unterstützung durch Konfigurieren der " **Info. plist"-> Geräte** Einstellung auf " **Universal** " (was bedeutet, dass iPhone und iPad unterstützt werden).
+Die Xamarin.Forms Vorlage enthält automatisch die iPad-Unterstützung durch Konfigurieren der **Info. plist-> Geräte** Einstellung auf **Universal** (was bedeutet, dass iPhone und iPad unterstützt werden).
 
 Um eine angenehme Start Funktion zu gewährleisten und sicherzustellen, dass die voll Bildauflösung auf allen Geräten verwendet wird, sollten Sie sicherstellen, dass ein [iPad-spezifischer Startbildschirm](~/ios/app-fundamentals/images-icons/launch-screens.md) (mit einem Storyboard) bereitgestellt wird. Dadurch wird sichergestellt, dass die APP auf iPad Mini-, iPad-und iPad pro-Geräten korrekt gerendert wird
 
@@ -48,10 +51,10 @@ Die Funktion "Split-Screen" bedeutet, dass Sie Ihre APP so entwerfen müssen, da
 
 ### <a name="android-tablets"></a>Android-Tablets
 
-Das Android-Ökosystem hat unzählige unterstützte Bildschirmgrößen, von kleinen Telefonen bis hin zu großen Tablets. Xamarin. Forms kann alle Bildschirmgrößen unterstützen, aber wie bei den anderen Plattformen möchten Sie möglicherweise die Benutzeroberfläche für größere Geräte anpassen.
+Das Android-Ökosystem hat unzählige unterstützte Bildschirmgrößen, von kleinen Telefonen bis hin zu großen Tablets. Xamarin.Formskann alle Bildschirmgrößen unterstützen, aber wie bei den anderen Plattformen möchten Sie möglicherweise die Benutzeroberfläche für größere Geräte anpassen.
 
 Wenn Sie viele verschiedene Bildschirmauflösungen unterstützen, können Sie Ihre systemeigenen Image Ressourcen in unterschiedlichen Größen bereitstellen, um die Benutzer Leistung zu optimieren.
-Weitere Informationen zum Strukturieren der Ordner und Dateinamen in Ihrem Android-App-Projekt, um optimierte Bild Ressourcen zu integrieren, finden Sie in der Dokumentation zu [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md) (und insbesondere in [Erstellen von Ressourcen für unterschiedliche Bildschirmgrößen](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)). Ihre APP.
+Weitere Informationen zum Strukturieren der Ordner und Dateinamen in Ihrem Android-App-Projekt, um optimierte Bild Ressourcen in Ihre APP einzubeziehen, finden Sie in der Dokumentation zu [Android-Ressourcen](~/android/app-fundamentals/resources-in-android/index.md) (und insbesondere in [Erstellen von Ressourcen für unterschiedliche Bildschirmgrößen](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)).
 
 ### <a name="windows-tablets-and-desktops"></a>Windows-Tablets und-Desktops
 
@@ -65,11 +68,11 @@ Apps, die auf Windows-Tablets und-Desktops ausgeführt werden, können neben dem
 
 ## <a name="optimizing-for-tablet-and-desktop"></a>Optimieren von Tablet und Desktop
 
-Sie können Ihre xamarin. Forms-Benutzeroberfläche anpassen, je nachdem, ob ein Telefon oder Tablet/Desktop-Gerät verwendet wird. Dies bedeutet, dass Sie die Benutzer Funktionen für Geräte mit großen Bildschirmen (z. b. Tablets und Desktop Computern) optimieren können.
+Xamarin.FormsJe nachdem, ob ein Smartphone oder Tablet/Desktop-Gerät verwendet wird, können Sie die Benutzeroberfläche anpassen. Dies bedeutet, dass Sie die Benutzer Funktionen für Geräte mit großen Bildschirmen (z. b. Tablets und Desktop Computern) optimieren können.
 
 ### <a name="deviceidiom"></a>Device. Idiom
 
-Sie können die [`Device`](~/xamarin-forms/platform/device.md) -Klasse verwenden, um das Verhalten Ihrer APP oder Benutzeroberfläche zu ändern. Mithilfe der `Device.Idiom` Enumeration können Sie
+Sie können die- [`Device`](~/xamarin-forms/platform/device.md) Klasse verwenden, um das Verhalten Ihrer APP oder Benutzeroberfläche zu ändern. Mithilfe der- `Device.Idiom` Enumeration können Sie
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -84,9 +87,9 @@ Diese Vorgehensweise kann erweitert werden, um bedeutende Änderungen an den ein
 
 ### <a name="leveraging-masterdetailpage"></a>Nutzen von masterdetailpage
 
-Der [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ist ideal für größere Bildschirme, insbesondere auf dem iPad, auf dem die [`UISplitViewController`](xref:UIKit.UISplitViewController) verwendet wird, um eine native IOS-Darstellung bereitzustellen.
+Der [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) eignet sich ideal für größere Bildschirme, insbesondere auf dem iPad, auf dem es verwendet, [`UISplitViewController`](xref:UIKit.UISplitViewController) um eine native IOS-Darstellung bereitzustellen.
 
-Lesen Sie [diesen xamarin-Blogbeitrag](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) , um zu erfahren, wie Sie Ihre Benutzeroberfläche so anpassen können, dass Telefone ein Layout verwenden und größere Bildschirme einen anderen verwenden können (mit dem `MasterDetailPage`).
+Lesen Sie [diesen xamarin-Blogbeitrag](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) , um zu erfahren, wie Sie Ihre Benutzeroberfläche so anpassen können, dass Telefone ein Layout verwenden und größere Bildschirme andere (mit) verwenden können `MasterDetailPage` .
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,37 +1,29 @@
 ---
-title: Xamarin.Forms ScrollView
-description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms-ScrollView-Klasse verwenden, um Layouts zu präsentieren, die nicht auf einem Bildschirm passt, und welche Inhalte, die für die Tastatur Platz zu machen.
-ms.prod: xamarin
-ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/18/2019
-ms.openlocfilehash: bb10cda7c9899f176861ceee712cc876984c56ef
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488269"
+Title: " Xamarin.Forms ScrollView" Description: "in diesem Artikel wird erläutert, wie Sie mit der Xamarin.Forms ScrollView-Klasse Layouts darstellen, die nicht nur auf einen Bildschirm passen und auf denen Inhalte Platz für die Tastatur machen."
+ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
+
+# <a name="xamarinforms-scrollview"></a>Xamarin.FormsScrollView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) Layouts enthält, und führen Sie einen Bildlauf außerhalb des Bildschirms können sie aus. `ScrollView` wird auch verwendet, können Sie Ansichten automatisch in den sichtbaren Bereich des Bildschirms verschieben, wenn die Tastatur angezeigt wird.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)enthält Layouts und ermöglicht den Bildlauf nach unten. `ScrollView`wird auch verwendet, um zuzulassen, dass Ansichten automatisch in den sichtbaren Teil des Bildschirms verschoben werden, wenn die Tastatur angezeigt wird.
 
 [![](scroll-view-images/layouts-sml.png "Xamarin.Forms Layouts")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 ## <a name="purpose"></a>Zweck
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) kann verwendet werden, um sicherzustellen, dass größere Ansichten auf kleineren Telefonen gut angezeigt werden. Beispielsweise kann ein Layout, das auf einem iPhone 6 s funktioniert auf einem iPhone 4 s abgeschnitten werden. Mit einem `ScrollView` die abgeschnittenen Teile des Layouts auf den kleineren Bildschirm angezeigt werden können.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)kann verwendet werden, um sicherzustellen, dass größere Ansichten auf kleineren Telefonen gut angezeigt werden. Beispielsweise kann ein Layout, das auf einem iPhone 6S funktioniert, auf ein iPhone 4S zugeschnitten werden. Wenn Sie verwenden `ScrollView` , können die ausgeschnittenen Teile des Layouts auf dem kleineren Bildschirm angezeigt werden.
 
-## <a name="usage"></a>Verwendungs-
+## <a name="usage"></a>Verbrauch
 
 > [!NOTE]
-> [`ScrollView`](xref:Xamarin.Forms.ScrollView) Objekte dürfen nicht eingefügt werden. Darüber hinaus `ScrollView`s sollte nicht geschachtelt werden, mit anderen Steuerelementen, die einen Bildlauf, wie z. B. bereitstellen `ListView` und `WebView`.
+> [`ScrollView`](xref:Xamarin.Forms.ScrollView)Objekte sollten nicht in den Netz Körper eingefügt werden. Außerdem `ScrollView` sollten s nicht mit anderen Steuerelementen, die einen Bildlauf wie und bereitstellen, mit einem Bildlauf versehen werden `ListView` `WebView` .
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) macht eine `Content` Eigenschaft verfügbar, die auf eine einzelne Ansicht oder ein Layout festgelegt werden kann. Betrachten Sie dieses Beispiel ein Layout mit einem sehr großen BoxView, gefolgt von einem `Entry`:
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)macht eine- `Content` Eigenschaft verfügbar, die auf eine einzelne Ansicht oder ein Layout festgelegt werden kann. Betrachten Sie dieses Beispiel für ein Layout mit einer sehr großen boxview, gefolgt von einem `Entry` :
 
 ```xaml
 <ContentPage.Content>
@@ -61,33 +53,33 @@ public class ScrollingDemoCode : ContentPage
 }
 ```
 
-Vor dem Bildlauf nach unten, nur die `BoxView` wird angezeigt:
+Bevor der Benutzer einen Bildlauf durchführt, wird nur der angezeigt `BoxView` :
 
 ![](scroll-view-images/scroll-start.png "BoxView in ScrollView")
 
-Beachten Sie, dass, wenn der Benutzer beginnt, geben Sie Text in die `Entry`, die Ansicht einen Bildlauf durchführt, dass es auf dem Bildschirm sichtbar beibehalten:
+Beachten Sie Folgendes: Wenn der Benutzer mit der Eingabe von Text in der beginnt `Entry` , wird die Ansicht mit einem Bildlauf fortgeführt
 
 ![](scroll-view-images/scroll-end.png "Entry in ScrollView")
 
 ## <a name="properties"></a>Eigenschaften
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) definiert die folgenden Eigenschaften:
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)definiert die folgenden Eigenschaften:
 
-- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty) Ruft eine [ `Size` ](xref:Xamarin.Forms.Size) Wert, der die Größe des Inhalts darstellt.
-- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) Ruft ab oder legt einen [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) Enumerationswert, der die hauptscrollrichtung stehenden Richtung darstellt, der `ScrollView`.
-- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty) Ruft eine `double` , das das aktuelle X Bildlaufposition darstellt.
-- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty) Ruft eine `double` , das die aktuelle Y Bildlaufposition darstellt.
-- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty) Ruft ab oder legt einen [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) Wert, der darstellt, wenn die horizontale Schiebeleiste sichtbar ist.
-- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty) Ruft ab oder legt einen [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) Wert, der darstellt, wenn die vertikale Schiebeleiste sichtbar ist.
+- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty)Ruft einen [`Size`](xref:Xamarin.Forms.Size) Wert ab, der die Größe des Inhalts darstellt.
+- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)Ruft einen- [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) Enumerationswert ab, der die Scrollrichtung der darstellt, oder legt diesen fest `ScrollView` .
+- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty)Ruft eine ab `double` , die die aktuelle X-Scrollposition darstellt.
+- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty)Ruft eine ab `double` , die die aktuelle Y-Scrollposition darstellt.
+- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty)Ruft einen Wert ab [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) , der angibt, wann die horizontale Schiebe Leiste sichtbar ist, oder legt diesen fest.
+- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty)Ruft einen Wert ab [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) , der angibt, wann die vertikale Schiebe Leiste sichtbar ist, oder legt diesen fest.
 
 > [!NOTE]
-> Das Scrollen kann deaktiviert werden, indem Sie die [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) -Eigenschaft auf `Neither`festlegen.
+> Das Scrollen kann durch Festlegen der- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) Eigenschaft auf deaktiviert werden `Neither` .
 
 ## <a name="methods"></a>Methoden
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) stellt eine `ScrollToAsync` Methode bereit, die verwendet werden kann, um entweder mithilfe von Koordinaten oder durch Angeben einer bestimmten Sicht, die sichtbar gemacht werden soll, einen Bildlauf der Sicht durchführen zu können
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)stellt eine- `ScrollToAsync` Methode bereit, die verwendet werden kann, um entweder mithilfe von Koordinaten oder durch Angeben einer bestimmten Sicht, die sichtbar gemacht werden soll, einen Bildlauf der Sicht durchführen
 
-Wenn Koordinaten zu verwenden, geben die `x` und `y` Koordinaten, zusammen mit der ein boolescher Wert, der angibt, ob der Bildlauf animiert werden soll:
+Wenn Sie Koordinaten verwenden, geben Sie die `x` `y` Koordinaten und sowie einen booleschen Wert an, der angibt, ob der Bildlauf animiert werden soll:
 
 ```csharp
 scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from the top is visible
@@ -96,20 +88,20 @@ scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the
 ```
 
 > [!IMPORTANT]
-> Die `ScrollToAsync`-Methode führt nicht zu einem Bildlauf, wenn die [`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) -Eigenschaft auf `Neither`festgelegt ist.
+> Die- `ScrollToAsync` Methode führt nicht zu einem Bildlauf, wenn die- [`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) Eigenschaft auf festgelegt ist `Neither` .
 
-Beim Scrollen zu einem bestimmten Element gibt die `ScrollToPosition` Enumeration an, wo in der Ansicht das Element angezeigt wird:
+Beim Scrollen zu einem bestimmten Element gibt die- `ScrollToPosition` Enumeration an, wo in der Ansicht das Element angezeigt wird:
 
-- **Center** &ndash; führt einen Bildlauf durch das Element in der Mitte des sichtbaren Teil der Ansicht.
-- **End** &ndash; führt einen Bildlauf durch das Element am Ende der sichtbare Teil der Ansicht.
-- **MakeVisible** &ndash; führt einen Bildlauf durch das Element, damit es in der Ansicht angezeigt wird.
-- **Starten Sie** &ndash; führt einen Bildlauf durch das Element am Anfang der sichtbare Teil der Ansicht.
+- **Zentrieren** &ndash; führt im-Element einen Bildlauf zur Mitte des sichtbaren Teils der Sicht durch.
+- **Ende** &ndash; führt im-Element einen Bildlauf bis zum Ende des sichtbaren Teils der Ansicht durch.
+- **MakeVisible** &ndash; führt einen Bildlauf durch das-Element durch, sodass es in der Ansicht sichtbar ist.
+- **Starten** &ndash; Sie führt im-Element einen Bildlauf zum Anfang des sichtbaren Teils der Sicht durch.
 
-Die `IsAnimated` Eigenschaft gibt an, wie die Ansicht ein Bildlauf durchgeführt wird. Wenn `true`festgelegt ist, wird eine Smooth Animation verwendet, anstatt den Inhalt sofort in die Ansicht zu verschieben.
+Die-Eigenschaft gibt an, wie ein Rollup `IsAnimated` der Sicht ausgeführt wird. Wenn diese Einstellung auf festgelegt `true` ist, wird eine Smooth Animation verwendet, anstatt den Inhalt sofort in die Ansicht zu verschieben.
 
-## <a name="events"></a>Ereignisse
+## <a name="events"></a>Events
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) definiert nur ein Ereignis `Scrolled`. `Scrolled` wird ausgelöst, wenn die Ansicht einen Bildlauf beendet wurde. Der Ereignishandler für `Scrolled` nimmt `ScrolledEventArgs`, die die `ScrollX` und `ScrollY` Eigenschaften. Das folgende Beispiel zeigt, wie Sie eine Bezeichnung mit der aktuellen Position des aktualisieren eine `ScrollView`:
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)definiert nur ein Ereignis, `Scrolled` . `Scrolled`wird ausgelöst, wenn die Ansicht den Bildlauf abgeschlossen hat. Der Ereignishandler für `Scrolled` nimmt `ScrolledEventArgs` , der die-Eigenschaft und die-Eigenschaft aufweist `ScrollX` `ScrollY` . Im folgenden wird veranschaulicht, wie eine Bezeichnung mit der aktuellen Scrollposition eines aktualisiert wird `ScrollView` :
 
 ```csharp
 Label label = new Label { Text = "Position: " };
@@ -119,9 +111,9 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 };
 ```
 
-Beachten Sie, dass Bildlaufpositionen negativ ist, aufgrund der Bounce-Auswirkung, wenn am Ende einer Liste scrollen können.
+Beachten Sie, dass scrollpositionen aufgrund des Sprung Effekts beim Scrollen am Ende einer Liste negativ sein können.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble-Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [Businesstumm Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

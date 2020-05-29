@@ -1,24 +1,27 @@
 ---
-title: Schaltflächen Auffüll Flächen und Schatten unter Android
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Gerät verwenden, das die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwendet.
-ms.prod: xamarin
-ms.assetid: BD2B60D1-DE6E-4691-A777-8EC5F560A4E9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 07b3ff630154b7a59ab7f3395ad9b813da688c74
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656348"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135563"
 ---
 # <a name="button-padding-and-shadows-on-android"></a>Schaltflächen Auffüll Flächen und Schatten unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese Android-plattformspezifischen steuern, ob xamarin. Forms-Schaltflächen die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwenden. Es ist in XAML verwendet, durch Festlegen der [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) und [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) angefügte Eigenschaften zu `boolean` Werte:
+Mit dieser Android-plattformspezifischen Steuerung wird gesteuert, ob Xamarin.Forms Schaltflächen die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwenden Sie wird in XAML verwendet, indem die [`Button.UseDefaultPadding`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) [`Button.UseDefaultShadow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) angefügten Eigenschaften und auf-Werte festgelegt werden `boolean` :
 
 ```xaml
 <ContentPage ...
@@ -32,7 +35,7 @@ Diese Android-plattformspezifischen steuern, ob xamarin. Forms-Schaltflächen di
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -42,17 +45,17 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
 ```
 
-Die `Button.On<Android>` Methode gibt an, dass diese plattformspezifischen nur unter Android ausgeführt wird. Mit [`Button.SetUseDefaultPadding`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) der [`Button.SetUseDefaultShadow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) -Methode und der [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) -Methode im-Namespace wird gesteuert, ob xamarin. Forms-Schaltflächen die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwenden. Darüber hinaus die [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) und [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) Methoden können verwendet werden, um zurück, ob eine Schaltfläche bzw. padding-Wert und Standardwert Schattenkopien zugewiesen wurde, verwendet.
+Die- `Button.On<Android>` Methode gibt an, dass diese plattformspezifische nur unter Android ausgeführt wird. [ `Button.SetUseDefaultPadding` ] (Xref: Xamarin.Forms . Platformconfiguration. androidspecific. Button. setusedefaultpadding ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Android, Xamarin.Forms . Button}, System. Boolean)) und [ `Button.SetUseDefaultShadow` ] (Xref: Xamarin.Forms . Platformconfiguration. androidspecific. Button. setusedefaultshadow ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Android, Xamarin.Forms . Button}, System. Boolean))-Methoden im- [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) Namespace werden verwendet, um zu steuern, ob Schaltflächen Xamarin.Forms die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwenden. Außerdem ist [ `Button.UseDefaultPadding` ] (Xref: Xamarin.Forms . Platformconfiguration. androidspecific. Button. usedefaultpadding ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Android, Xamarin.Forms . Button})) und [ `Button.UseDefaultShadow` ] (Xref: Xamarin.Forms . Platformconfiguration. androidspecific. Button. usedefaultshadow ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Android, Xamarin.Forms . Button}))-Methoden können verwendet werden, um zurückzugeben, ob eine Schaltfläche den Standard Auffüll Wert bzw. den Standard Schattenwert verwendet.
 
-Das Ergebnis ist, dass Xamarin.Forms-Schaltflächen die standardauffüllung und den Volumeschattenkopie-Werte, der Android-Schaltflächen verwenden können:
+Das Ergebnis ist, dass Xamarin.Forms Schaltflächen die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwenden können:
 
-![](button-padding-shadow-images/button-padding-and-shadow.png "Standard Auffüll-und Schatten Werte für Android-Schaltflächen")
+![](button-padding-shadow-images/button-padding-and-shadow.png "Default Padding and Shadow Values on Android Buttons")
 
-Beachten Sie, dass im Screenshot oben jedes [ `Button` ](xref:Xamarin.Forms.Button) verfügt über identische Definitionen, außer dass die rechten `Button` verwendet die standardauffüllung und den Volumeschattenkopie-Werte, der Android-Schaltflächen.
+Beachten Sie, dass im obigen Screenshot jeweils [`Button`](xref:Xamarin.Forms.Button) identische Definitionen vorliegen, mit dem Unterschied, dass die Rechte Seite `Button` die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwendet.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [Androidspecific-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [Androidspecific. AppCompat-API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

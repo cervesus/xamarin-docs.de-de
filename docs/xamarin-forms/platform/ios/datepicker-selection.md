@@ -1,24 +1,27 @@
 ---
-title: DatePicker-Elementauswahl unter IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung nutzen, die steuert, wann die Elementauswahl in einem DatePicker auftritt.
-ms.prod: xamarin
-ms.assetid: 847E69D1-6AE0-4E82-B9C8-919E009C2014
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/15/2020
-ms.openlocfilehash: df84cf01909cec564edc9c6c8bb55382a2b9dfe3
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c65cac4c777150185524b291adc6e9d1e79958d3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77646689"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138553"
 ---
 # <a name="datepicker-item-selection-on-ios"></a>DatePicker-Elementauswahl unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese IOS-plattformspezifischen Steuerelemente, wenn die Elementauswahl in einer [`DatePicker`](xref:Xamarin.Forms.DatePicker)erfolgt, sodass der Benutzer angeben kann, dass die Elementauswahl beim Durchsuchen von Elementen im Steuerelement oder erst nach dem Drücken der Schaltfläche **done** erfolgt. Sie wird in XAML verwendet, indem die `DatePicker.UpdateMode` angefügte-Eigenschaft auf einen Wert der `UpdateMode`-Enumeration festgelegt wird:
+Diese IOS-plattformspezifischen Steuerelemente, wenn die Elementauswahl in einem Auftritt [`DatePicker`](xref:Xamarin.Forms.DatePicker) , sodass der Benutzer angeben kann, dass die Elementauswahl beim Durchsuchen von Elementen im Steuerelement oder erst nach dem Drücken der Schaltfläche **done** erfolgt. Sie wird in XAML verwendet, indem die `DatePicker.UpdateMode` angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird `UpdateMode` :
 
 ```xaml
 <ContentPage ...
@@ -32,7 +35,7 @@ Diese IOS-plattformspezifischen Steuerelemente, wenn die Elementauswahl in einer
 </ContentPage>
 ```
 
-Alternativ können sie aus c# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -42,12 +45,12 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 datePicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 ```
 
-Die `DatePicker.On<iOS>`-Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die `DatePicker.SetUpdateMode`-Methode im [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um zu steuern, wann die Elementauswahl erfolgt, wobei die `UpdateMode`-Enumeration zwei mögliche Werte bereitstellt:
+Die- `DatePicker.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die- `DatePicker.SetUpdateMode` Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird verwendet, um zu steuern, wann die Elementauswahl stattfindet, wobei die- `UpdateMode` Enumeration zwei mögliche Werte bereitstellt:
 
-- `Immediately` – Elementauswahl tritt auf, wenn der Benutzer Elemente im [`DatePicker`](xref:Xamarin.Forms.DatePicker)durchsucht. Dies ist das Standardverhalten in Xamarin.Forms.
-- `WhenFinished` – Elementauswahl findet nur statt, wenn der Benutzer auf die Schaltfläche **done** in der [`DatePicker`](xref:Xamarin.Forms.DatePicker)geklickt hat.
+- `Immediately`die – Item-Auswahl tritt auf, wenn der Benutzer Elemente in der durchsucht [`DatePicker`](xref:Xamarin.Forms.DatePicker) . Dies ist das Standardverhalten in Xamarin.Forms .
+- `WhenFinished`die Auswahl von – Items erfolgt nur, wenn der Benutzer die Schaltfläche **done** in der gedrückt hat [`DatePicker`](xref:Xamarin.Forms.DatePicker) .
 
-Außerdem kann die `SetUpdateMode`-Methode verwendet werden, um die Enumerationswerte durch Aufrufen der `UpdateMode`-Methode, die die aktuelle `UpdateMode`zurückgibt, zum Umschalten zu wechseln:
+Außerdem kann die- `SetUpdateMode` Methode zum Umschalten der Enumerationswerte verwendet werden, indem die- `UpdateMode` Methode aufgerufen wird, die den aktuellen zurückgibt `UpdateMode` :
 
 ```csharp
 switch (datePicker.On<iOS>().UpdateMode())
@@ -61,7 +64,7 @@ switch (datePicker.On<iOS>().UpdateMode())
 }
 ```
 
-Das Ergebnis ist, dass ein angegebener `UpdateMode` auf den [`DatePicker`](xref:Xamarin.Forms.DatePicker)angewendet wird, der steuert, wann die Elementauswahl erfolgt:
+Das Ergebnis ist, dass eine angegebene `UpdateMode` auf den angewendet wird [`DatePicker`](xref:Xamarin.Forms.DatePicker) , der steuert, wann die Elementauswahl erfolgt:
 
 [![Screenshot der DatePicker-Aktualisierungs Modi](datepicker-selection-images/datepicker-updatemode.png "DatePicker UpdateMode plattformspezifisch")](datepicker-selection-images/datepicker-updatemode-large.png#lightbox "DatePicker UpdateMode plattformspezifisch")
 

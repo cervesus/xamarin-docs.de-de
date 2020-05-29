@@ -1,46 +1,49 @@
 ---
-title: Übersetzung von Text mit der Translator-API
-description: Die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine REST-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie die Microsoft Textübersetzungs-API verwenden, um Text aus einer Sprache in eine andere in einer Xamarin.Forms-Anwendung zu übersetzen.
-ms.prod: xamarin
-ms.assetid: 68330242-92C5-46F1-B1E3-2395D8823B0C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/08/2017
-ms.openlocfilehash: 841b1d4abab5e4c09249174b221da20794771a86
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: Die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine Rest-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text in einer-Anwendung in eine andere Sprache übersetzen Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f0f43f8f2113b6bd0a800ed3e0bd96b641575b1c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725568"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139281"
 ---
-# <a name="text-translation-using-the-translator-api"></a>Übersetzung von Text mit der Translator-API
+# <a name="text-translation-using-the-translator-api"></a>Text Übersetzung mithilfe der Translator-API
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine Rest-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text in einer xamarin. Forms-Anwendung in eine andere Sprache übersetzen._
+_Die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine Rest-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text in einer-Anwendung in eine andere Sprache übersetzen Xamarin.Forms ._
 
 ## <a name="overview"></a>Übersicht
 
-Die Translator-API besteht aus zwei Komponenten:
+Die Translator-API verfügt über zwei Komponenten:
 
-- Eine textübersetzung REST-API zum Text von einer Sprache in Text, der eine andere Sprache übersetzen. Die API erkennt automatisch die Sprache des Texts, die gesendet wurde, bevor Sie übersetzt.
-- Eine sprachübersetzung, Spracherkennung, von einer Sprache in Text einer anderen Sprache zu transkribieren-REST-API. Darüber hinaus integriert die API auch Text-to-Speech-Funktionen, damit der übersetzte Text in Form einer Audioaufnahme zurückübertragen werden kann.
+- Eine textübersetzungs-Rest-API, mit der Text aus einer Sprache in Text einer anderen Sprache übersetzt werden soll. Die API erkennt automatisch die Sprache des Texts, der vor der Übersetzung gesendet wurde.
+- Eine Sprachübersetzung-Rest-API, mit der Sprache aus einer Sprache in Text einer anderen Sprache umgewandelt wird. Darüber hinaus integriert die API auch Text-to-Speech-Funktionen, damit der übersetzte Text in Form einer Audioaufnahme zurückübertragen werden kann.
 
-Dieser Artikel konzentriert sich auf die Übersetzung von einer Sprache in eine andere mithilfe der Textübersetzungs-API.
+Dieser Artikel konzentriert sich auf die Übersetzung von Text von einer Sprache in eine andere Sprache mithilfe der Textübersetzungs-API.
 
 > [!NOTE]
 > Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
-API-Schlüssel muss abgerufen werden, um die Textübersetzungs-API zu verwenden. Informationen hierzu finden Sie unter [registrieren für die Microsoft-Textübersetzungs-API](/azure/cognitive-services/translator/translator-text-how-to-signup/).
+Ein API-Schlüssel muss für die Verwendung des Textübersetzungs-API abgerufen werden. Informationen hierzu finden Sie unter [registrieren für die Microsoft-Textübersetzungs-API](/azure/cognitive-services/translator/translator-text-how-to-signup/).
 
 Weitere Informationen zum Microsoft-Textübersetzungs-API finden Sie in der [Textübersetzungs-API-Dokumentation](/azure/cognitive-services/translator/).
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Authentifizierung
 
-Jede Anforderung, die an den Textübersetzungs-API erfolgt, erfordert ein JSON Web Token (JWT)-Zugriffs Token, das beim `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`vom Cognitive Services-Tokendienst abgerufen werden kann. Ein Token kann abgerufen werden, indem eine Post-Anforderung an den Tokendienst gesendet wird. dabei wird eine `Ocp-Apim-Subscription-Key` Kopfzeile angegeben, die den API-Schlüssel als Wert enthält.
+Jede Anforderung, die an den Textübersetzungs-API erfolgt, erfordert ein JSON Web Token (JWT)-Zugriffs Token, das vom Cognitive Services-Tokendienst unter abgerufen werden kann `https://api.cognitive.microsoft.com/sts/v1.0/issueToken` . Ein Token kann abgerufen werden, indem eine Post-Anforderung an den Tokendienst gesendet wird. dabei wird ein Header angegeben, `Ocp-Apim-Subscription-Key` der den API-Schlüssel als Wert enthält.
 
-Das folgende Codebeispiel veranschaulicht eine zugriffsanforderung token vom Tokendienst:
+Im folgenden Codebeispiel wird gezeigt, wie Sie ein Zugriffs Token vom Tokendienst anfordern:
 
 ```csharp
 public AuthenticationService(string apiKey)
@@ -59,9 +62,9 @@ async Task<string> FetchTokenAsync(string fetchUri)
 }
 ```
 
-Das zurückgegebene Zugriffstoken, das Base64-Text ist, hat eine Ablaufzeit von 10 Minuten. Aus diesem Grund erneuert die beispielanwendung das Zugriffstoken 9 Minuten.
+Das zurückgegebene Zugriffs Token, bei dem es sich um einen Base64-Text handelt, hat eine Ablaufzeit von 10 Minuten. Aus diesem Grund erneuert die Beispielanwendung alle 9 Minuten das Zugriffs Token.
 
-Das Zugriffs Token muss in jedem Textübersetzungs-API Aufrufen als `Authorization` Header angegeben werden, dem die Zeichenfolge `Bearer`vorangestellt ist, wie im folgenden Codebeispiel gezeigt:
+Das Zugriffs Token muss in jedem Textübersetzungs-API-aufrufsbefehl als Header angegeben werden `Authorization` , dem die Zeichenfolge als Präfix `Bearer` vorangestellt ist, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
@@ -69,9 +72,9 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("
 
 Weitere Informationen zum Cognitive Services-Tokendienst finden Sie unter [Authentifizierung](/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
-## <a name="performing-text-translation"></a>Durchführen der Übersetzung von Texteingabe
+## <a name="performing-text-translation"></a>Ausführen von Text Übersetzung
 
-Die Text Übersetzung kann erreicht werden, indem Sie eine GET-Anforderung an die `translate`-API bei `https://api.microsofttranslator.com/v2/http.svc/translate`senden. In der Beispielanwendung Ruft die `TranslateTextAsync`-Methode den Text Übersetzungsprozess auf:
+Die Text Übersetzung kann durch Ausführen einer GET-Anforderung an die `translate` API bei erreicht werden `https://api.microsofttranslator.com/v2/http.svc/translate` . In der Beispielanwendung Ruft die- `TranslateTextAsync` Methode den Text Übersetzungsprozess auf:
 
 ```csharp
 public async Task<string> TranslateTextAsync(string text)
@@ -85,13 +88,13 @@ public async Task<string> TranslateTextAsync(string text)
 }
 ```
 
-Die `TranslateTextAsync`-Methode generiert einen Anforderungs-URI und ruft ein Zugriffs Token vom Tokendienst ab. Die Text Übersetzungs Anforderung wird dann an die `translate`-API gesendet, die eine XML-Antwort zurückgibt, die das Ergebnis enthält. Die XML-Antwort wird analysiert, und das übersetzungsergebnis an die aufrufende Methode für die Anzeige zurückgegeben.
+Die `TranslateTextAsync` -Methode generiert einen Anforderungs-URI und ruft ein Zugriffs Token vom Tokendienst ab. Die Text Übersetzungs Anforderung wird dann an die `translate` API gesendet, die eine XML-Antwort zurückgibt, die das Ergebnis enthält. Die XML-Antwort wird analysiert, und das Übersetzungsergebnis wird zur Anzeige an die Aufruf Methode zurückgegeben.
 
 Weitere Informationen zu den Rest-APIs für die Text Übersetzung finden Sie unter [Textübersetzungs-API](/azure/cognitive-services/translator/reference/v3-0-reference).
 
-### <a name="configuring-text-translation"></a>Konfigurieren die Übersetzung von Texteingabe
+### <a name="configuring-text-translation"></a>Konfigurieren von Text Übersetzung
 
-Der Übersetzungsprozess Text kann durch Angabe von Abfrageparametern für HTTP konfiguriert werden:
+Der Text Übersetzungsprozess kann durch Angabe von HTTP-Abfrage Parametern konfiguriert werden:
 
 ```csharp
 string GenerateRequestUri(string endpoint, string text, string to)
@@ -103,14 +106,14 @@ string GenerateRequestUri(string endpoint, string text, string to)
 }
 ```
 
-Diese Methode wird der Text übersetzt werden, und die Sprache, die den Text zu übersetzen. Eine Liste der Sprachen, die von Microsoft Translator unterstützt werden, finden Sie [unter Unterstützte Sprachen in der Microsoft-Textübersetzungs-API](/azure/cognitive-services/translator/languages/).
+Diese Methode legt den Text fest, der übersetzt werden soll, und die Sprache, in die der Text übersetzt werden soll. Eine Liste der Sprachen, die von Microsoft Translator unterstützt werden, finden Sie [unter Unterstützte Sprachen in der Microsoft-Textübersetzungs-API](/azure/cognitive-services/translator/languages/).
 
 > [!NOTE]
-> Wenn eine Anwendung wissen muss, in welcher Sprache sich der Text befindet, kann die `Detect`-API aufgerufen werden, um die Sprache der Text Zeichenfolge zu ermitteln.
+> Wenn eine Anwendung wissen muss, in welcher Sprache sich der Text befindet, `Detect` kann die API aufgerufen werden, um die Sprache der Text Zeichenfolge zu erkennen.
 
 ### <a name="sending-the-request"></a>Senden der Anforderung
 
-Die `SendRequestAsync`-Methode führt die Get-Anforderung an die Rest-API der Text Übersetzung aus und gibt die Antwort zurück:
+Die `SendRequestAsync` -Methode sendet die Get-Anforderung an die Rest-API der Text Übersetzung und gibt die Antwort zurück:
 
 ```csharp
 async Task<string> SendRequestAsync(string url, string bearerToken)
@@ -126,29 +129,29 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 }
 ```
 
-Diese Methode erstellt die Get-Anforderung, indem das Zugriffs Token dem `Authorization`-Header hinzugefügt wird, dem die Zeichenfolge `Bearer`vorangestellt ist. Die Get-Anforderung wird dann an die `translate`-API gesendet, wobei die Anforderungs-URL den Text angibt, der übersetzt werden soll, und die Sprache, in die der Text übersetzt werden soll. Die Antwort ist dann gelesen und an die aufrufende Methode zurückgegeben.
+Diese Methode erstellt die Get-Anforderung, indem das Zugriffs Token zum-Header hinzugefügt `Authorization` wird, dem die Zeichenfolge vorangestellt ist `Bearer` . Die Get-Anforderung wird dann an die `translate` API gesendet, wobei die Anforderungs-URL den Text angibt, der übersetzt werden soll, und die Sprache, in die der Text übersetzt werden soll. Die Antwort wird dann gelesen und an die Aufruf Methode zurückgegeben.
 
-Die `translate`-API sendet in der Antwort den HTTP-Statuscode 200 (OK), vorausgesetzt, die Anforderung ist gültig, was angibt, dass die Anforderung erfolgreich war und die angeforderten Informationen in der Antwort enthalten sind. Eine Liste möglicher Fehler Antworten finden Sie unter Response messages at [Get Translation](/azure/cognitive-services/translator/reference/v3-0-translate).
+Die `translate` API sendet in der Antwort den HTTP-Statuscode 200 (OK), vorausgesetzt, die Anforderung ist gültig, was angibt, dass die Anforderung erfolgreich war und die angeforderten Informationen in der Antwort enthalten sind. Eine Liste möglicher Fehler Antworten finden Sie unter Response messages at [Get Translation](/azure/cognitive-services/translator/reference/v3-0-translate).
 
 ### <a name="processing-the-response"></a>Verarbeiten der Antwort
 
-Die API-Antwort wird im XML-Format zurückgegeben. Die folgenden XML-Daten zeigt eine typische erfolgreiche Antwortnachricht:
+Die API-Antwort wird im XML-Format zurückgegeben. Die folgenden XML-Daten zeigen eine typische erfolgreiche Antwortnachricht:
 
 ```xml
 <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Morgen kaufen gehen ein</string>
 ```
 
-In der Beispielanwendung wird die XML-Antwort in eine `XDocument`-Instanz analysiert, wobei der XML-Stamm Wert an die aufrufende Methode für die Anzeige zurückgegeben wird, wie in den folgenden Screenshots gezeigt:
+In der Beispielanwendung wird die XML-Antwort in eine- `XDocument` Instanz analysiert, wobei der XML-Stamm Wert an die aufrufende Methode für die Anzeige zurückgegeben wird, wie in den folgenden Screenshots gezeigt:
 
 ![](text-translation-images/text-translation.png "Text Translation to German")
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie die Microsoft Textübersetzungs-API verwenden, um Text aus einer Sprache in Text von einer anderen Sprache in einer Xamarin.Forms-Anwendung zu übersetzen. Text zu übersetzen, kann die Microsoft Translator-API auch Sprache von einer Sprache in Text einer anderen Sprache transkribieren.
+In diesem Artikel wurde erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text von einer Sprache in Text einer anderen Sprache in einer-Anwendung übersetzen Xamarin.Forms . Zusätzlich zur Übersetzung von Text kann die Microsoft Translator-API auch Sprache aus einer Sprache in Text einer anderen Sprache umwandeln.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Dokumentation zu Textübersetzungs-API](/azure/cognitive-services/translator/)
+- [Dokumentation zur Textübersetzungs-API](/azure/cognitive-services/translator/)
 - [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [TODO-Cognitive Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Textübersetzungs-API](/azure/cognitive-services/translator/reference/v3-0-reference)

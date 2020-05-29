@@ -1,24 +1,27 @@
 ---
-title: WebView-JavaScript-Warnungen unter Windows
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie das Windows-plattformspezifische verwenden, das es WebView ermöglicht, JavaScript-Warnungen in einem UWP-Meldungs Dialogfeld anzuzeigen
-ms.prod: xamarin
-ms.assetid: 95A153A1-72A0-4C0B-A452-ACE966BB12CB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 2bddf8ad314c49d8865863f6e67fc90a2bf80eb7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b7d039d26895b50f937392941e42a92a6e51f322
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656824"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137487"
 ---
 # <a name="webview-javascript-alerts-on-windows"></a>WebView-JavaScript-Warnungen unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese plattformspezifischen ermöglicht eine [ `WebView` ](xref:Xamarin.Forms.WebView) zum Anzeigen von JavaScript-Warnungen in einem Meldungsdialogfeld UWP. Es ist in XAML verwendet, durch Festlegen der [ `WebView.IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty) angefügten Eigenschaft, um eine `boolean` Wert:
+Diese plattformspezifische ermöglicht einem das [`WebView`](xref:Xamarin.Forms.WebView) Anzeigen von JavaScript-Warnungen in einem UWP-Meldungs Dialogfeld. Sie wird in XAML verwendet, indem die [`WebView.IsJavaScriptAlertEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty) angefügte-Eigenschaft auf einen Wert festgelegt wird `boolean` :
 
 ```xaml
 <ContentPage ...
@@ -30,7 +33,7 @@ Diese plattformspezifischen ermöglicht eine [ `WebView` ](xref:Xamarin.Forms.We
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -47,18 +50,18 @@ var webView = new Xamarin.Forms.WebView
 webView.On<Windows>().SetIsJavaScriptAlertEnabled(true);
 ```
 
-Die `WebView.On<Windows>` Methode gibt an, dass diese plattformspezifischen nur für die universelle Windows-Plattform ausgeführt wird. Die [ `WebView.SetIsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.SetIsJavaScriptAlertEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.WebView},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) -Namespace wird verwendet, um Kontrolle, ob JavaScript-Warnungen aktiviert sind. Darüber hinaus die `WebView.SetIsJavaScriptAlertEnabled` Methode kann verwendet werden, zum Umschalten der JavaScript-Warnungen durch Aufrufen der [ `IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) Methode zurückgeben soll, ob sie aktiviert sind:
+Die- `WebView.On<Windows>` Methode gibt an, dass diese plattformspezifische nur auf der universelle Windows-Plattform ausgeführt wird. [ `WebView.SetIsJavaScriptAlertEnabled` ] (Xref: Xamarin.Forms . Platformconfiguration. windowsspecific. WebView. *-javascriptalertenabled ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Windows, Xamarin.Forms . Die Methode WebView}, System. Boolean)) im- [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) Namespace wird verwendet, um zu steuern, ob JavaScript-Warnungen aktiviert sind. Außerdem kann die- `WebView.SetIsJavaScriptAlertEnabled` Methode zum Umschalten von JavaScript-Warnungen verwendet werden, indem die-Methode aufgerufen wird [`IsJavaScriptAlertEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) , um zurückzugeben, ob Sie aktiviert sind:
 
 ```csharp
 _webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJavaScriptAlertEnabled());
 ```
 
-Das Ergebnis ist, dass JavaScript-Warnungen in einem UWP-Meldungsdialogfeld angezeigt werden können:
+Das Ergebnis ist, dass JavaScript-Warnungen in einem UWP-Meldungs Dialogfeld angezeigt werden können:
 
-![WebView-JavaScript-Warnung plattformspezifische](webview-javascript-alert-images/webview-javascript-alert.png "WebView-JavaScript-Warnung plattformspezifische")
+![WebView JavaScript-Benachrichtigungs plattformspezifisch](webview-javascript-alert-images/webview-javascript-alert.png "WebView JavaScript-Benachrichtigungs plattformspezifisch")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [Windowsspecific-API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

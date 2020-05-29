@@ -1,40 +1,43 @@
 ---
-title: Zuschneiden von SkiaSharp-bitmaps
-description: Erfahren Sie, wie SkiaSharp verwenden, um eine Benutzeroberfläche für interaktive unterteilt ein zuschnittrechteck zu entwerfen.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: e9ba34dfcbdf041cb9bce7f277da3987acf9fec8
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6c5e340818b702d79a1157f29c1ecec19bf1db76
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228234"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139944"
 ---
-# <a name="cropping-skiasharp-bitmaps"></a>Zuschneiden von SkiaSharp-bitmaps
+# <a name="cropping-skiasharp-bitmaps"></a>Zuschneiden von skiasharp-Bitmaps
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Die [ **erstellen und zeichnen SkiaSharp Bitmaps** ](drawing.md) Artikel beschrieben, wie ein `SKBitmap` Objekt übergeben werden, um eine `SKCanvas` Konstruktor. Jeder zeichnen-Methode wird aufgerufen, auf die Grafiken, Canvas bewirkt, dass auf die Bitmap gerendert werden soll. Einzubeziehen Zeichnungsmethoden `DrawBitmap`, was bedeutet, dass diese Technik ermöglicht das Übertragen von teilweise oder vollständig eine Bitmap in einem anderen Bitmap, vielleicht mit Transformationen angewendet.
+Im Artikel [**Erstellen und Zeichnen von skiasharp-Bitmaps**](drawing.md) wird beschrieben, wie ein `SKBitmap` Objekt an einen Konstruktor übergeben werden kann `SKCanvas` . Jede Zeichnungs Methode, die auf dieser Canvas aufgerufen wird, bewirkt, dass Grafiken auf der Bitmap gerendert werden. Diese Zeichnungs Methoden enthalten `DrawBitmap` , was bedeutet, dass diese Technik das übertragen eines Teils oder aller einer Bitmap auf eine andere Bitmap ermöglicht, möglicherweise mit angewendeten Transformationen.
 
-Können Sie diese Methode für das Abschneiden einer Bitmaps durch Aufrufen der [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode mit der Quelle und Ziel Rechtecke:
+Sie können diese Technik zum Zuschneiden einer Bitmap verwenden, indem Sie die [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode mit Quell-und Ziel Rechtecke aufrufen:
 
 ```csharp
 canvas.DrawBitmap(bitmap, sourceRect, destRect);
 ```
 
-Anwendungen, die implementieren oft zuschneiden, bieten jedoch eine Schnittstelle für den Benutzer auf das zuschnittrechteck interaktiv auszuwählen:
+Anwendungen, die das Zuschneiden implementieren, bieten jedoch häufig eine Schnittstelle für den Benutzer, um das zuschnittrechteck interaktiv auszuwählen:
 
-![Zuschneiden Beispiel](cropping-images/CroppingSample.png "Beispiel Zuschneiden")
+![Beispiel für das Zuschneiden](cropping-images/CroppingSample.png "Beispiel für das Zuschneiden")
 
-Dieser Artikel konzentriert sich auf dieser Schnittstelle.
+Dieser Artikel konzentriert sich auf diese Schnittstelle.
 
-## <a name="encapsulating-the-cropping-rectangle"></a>Kapselt das zuschnittrechteck
+## <a name="encapsulating-the-cropping-rectangle"></a>Kapseln des zuschneigsrechtecks
 
-Es ist hilfreich, einen Teil der Zuschneiden Logik in einer Klasse namens isolieren `CroppingRectangle`. Parameter des Konstruktors enthalten eine maximale Rechteck, das in der Regel wird die Größe der Bitmap zugeschnitten wird, und eine optionale Seitenverhältnis beibehalten. Der Konstruktor definiert zuerst eine anfängliche zuschnittrechteck, dadurch wird es öffentlich, in der `Rect` Eigenschaft vom Typ `SKRect`. Dieser anfängliche zuschnittrechteck ist 80 % der Breite und Höhe des Rechtecks Bitmap, aber es wird dann angepasst, wenn ein Seitenverhältnis angegeben wird:
+Es ist hilfreich, einen Teil der Zustellungs Logik in einer Klasse mit dem Namen zu isolieren `CroppingRectangle` . Die Konstruktorparameter enthalten ein maximales Rechteck, bei dem es sich in der Regel um die Größe der zugeschnittenen Bitmap handelt, sowie um ein optionales Seitenverhältnis. Der Konstruktor definiert zuerst ein anfängliches zuschneigsrechteck, das in der- `Rect` Eigenschaft des-Typs öffentlich ist `SKRect` . Dieses anfängliche Zuordnungs Rechteck ist 80% der Breite und Höhe des bitmaprechtecks, wird jedoch angepasst, wenn ein Seitenverhältnis angegeben wird:
 
 ```csharp
 class CroppingRectangle
@@ -82,7 +85,7 @@ class CroppingRectangle
 }
 ```
 
-Eine nützliche Information, `CroppingRectangle` verfügbar gemacht ist auch ein Array von `SKPoint` Werte, die den vier Ecken des das zuschnittrechteck in der Reihenfolge, die linke obere, rechts, rechts und unten links:
+Ein nützliches Informationselement, das `CroppingRectangle` auch verfügbar gemacht wird, ist ein Array von `SKPoint` Werten, die den vier Ecken des zuschnittrechtecks in der linken oberen linken, oberen rechten, unteren rechten und unteren linken Seite entsprechen:
 
 ```csharp
 class CroppingRectangle
@@ -105,7 +108,7 @@ class CroppingRectangle
 }
 ```
 
-Dieses Array wird in der folgenden Methode, die aufgerufen wird, verwendet `HitTest`. Die `SKPoint` -Parameter ist ein Punkt, eine Fingereingabe Finger entspricht, oder klicken mit der Maus. Die Methode gibt einen Index (0, 1, 2 oder 3) zurück in die Ecke, die der Finger oder der Maus Zeiger bearbeitet wird, innerhalb einer Entfernung vom entsprechenden die `radius` Parameter: 
+Dieses Array wird in der folgenden Methode verwendet, die aufgerufen wird `HitTest` . Der- `SKPoint` Parameter ist ein Punkt, der einem Finger Touch oder einem Mausklick entspricht. Die-Methode gibt einen Index (0, 1, 2 oder 3) zurück, der der Ecke entspricht, die der Finger oder Mauszeiger berührt hat, innerhalb eines vom-Parameter angegebenen Abstands `radius` : 
 
 ```csharp
 class CroppingRectangle
@@ -131,9 +134,9 @@ class CroppingRectangle
 }
 ```
 
-Wenn der Punkt oder nicht in `radius` Einheiten von einer beliebigen Ecke der Methodenrückgabe &ndash;1.
+Wenn sich der Fingerabdruck oder der Mauszeiger nicht innerhalb `radius` der Einheiten einer beliebigen Ecke befand, gibt die Methode &ndash; 1 zurück.
 
-Die letzte Methode in `CroppingRectangle` heißt `MoveCorner`, die aufgerufen wird, als Reaktion auf berühren oder mit der Maus verschieben. Die zwei Parameter geben den Index der Ecke verschoben werden und die neue Position der dieser Ecke. Die erste Hälfte der Methode passt das zuschnittrechteck basierend auf den neuen Speicherort der Ecke, aber immer innerhalb der Grenzen des `maxRect`, d.h. die Größe der Bitmap. Diese Logik auch berücksichtigt die `MINIMUM` Feld, um zu vermeiden, reduzieren das zuschnittrechteck in "nothing":
+Die letzte Methode in `CroppingRectangle` wird aufgerufen `MoveCorner` , die als Reaktion auf die Berührungs-oder Mausbewegung aufgerufen wird. Die beiden Parameter geben den Index der zu verschogenden Ecke und den neuen Speicherort dieser Ecke an. Die erste Hälfte der Methode passt das zuschneigsrechteck basierend auf der neuen Position der Ecke an, aber immer innerhalb der Grenzen von `maxRect` , d. h. der Größe der Bitmap. Diese Logik berücksichtigt auch das `MINIMUM` Feld, um zu vermeiden, dass das umschließende Rechteck in nichts reduziert wird:
 
 ```csharp
 class CroppingRectangle
@@ -203,15 +206,15 @@ class CroppingRectangle
 }
 ```
 
-Die zweite Hälfte der Methode passt für das optionale Seitenverhältnis wird beibehalten.
+In der zweiten Hälfte der Methode wird das optionale Seitenverhältnis angepasst.
 
-Bedenken Sie, die alles, was in dieser Klasse in Pixel.
+Beachten Sie, dass alles in dieser Klasse in Pixel Einheiten liegt.
 
-## <a name="a-canvas-view-just-for-cropping"></a>Eine Canvas-Ansicht nur für das Zuschneiden
+## <a name="a-canvas-view-just-for-cropping"></a>Eine Canvas-Ansicht nur zum Zuschneiden
 
-Die `CroppingRectangle` Klasse, die Sie haben gerade gesehen wird verwendet, durch die `PhotoCropperCanvasView` -Klasse, die abgeleitet `SKCanvasView`. Diese Klasse dient zum Anzeigen von Bitmap und das zuschnittrechteck sowie behandeln oder Ereignisse für das zuschnittrechteck ändern.
+Die `CroppingRectangle` Klasse, die Sie gerade gesehen haben, wird von der- `PhotoCropperCanvasView` Klasse verwendet, die von abgeleitet wird `SKCanvasView` . Diese Klasse ist verantwortlich für die Anzeige der Bitmap und des Zuordnungs Rechtecks sowie für die Behandlung von Berührungs-oder Mausereignissen zum Ändern des zuschneigsrechtecks.
 
-Die `PhotoCropperCanvasView` -Konstruktor erfordert eine Bitmap. Ein Seitenverhältnis ist optional. Der Konstruktor instanziiert ein Objekt des Typs `CroppingRectangle` basierend auf dieser Bitmap und das Originalseitenverhältnis beibehalten, und speichert es als ein Feld:
+Der `PhotoCropperCanvasView` Konstruktor erfordert eine Bitmap. Ein Seitenverhältnis ist optional. Der-Konstruktor instanziiert ein Objekt vom Typ `CroppingRectangle` auf der Grundlage dieses Bitmap-und Seitenverhältnisses und speichert es als Feld:
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -232,7 +235,7 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-Da von dieser Klasse abgeleitet wird `SKCanvasView`, sie muss nicht installieren einen Handler für die `PaintSurface` Ereignis. Sie können stattdessen außer Kraft setzen die `OnPaintSurface` Methode. Die Methode wird in der Bitmap und verwendet eine Reihe von `SKPaint` Objekte als Felder, die zum Zeichnen der aktuellen zuschnittrechteck gespeichert:
+Da diese Klasse von abgeleitet `SKCanvasView` wird, muss kein Handler für das-Ereignis installiert werden `PaintSurface` . Sie kann stattdessen die- `OnPaintSurface` Methode überschreiben. Die-Methode zeigt die Bitmap an und verwendet einige `SKPaint` Objekte, die als Felder zum Zeichnen des aktuellen zuschnittsrechtecks gespeichert werden:
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -312,11 +315,11 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-Der Code in die `CroppingRectangle` Klasse verwendet als Basis für das zuschnittrechteck Größe in Pixel der Bitmap. Jedoch die Anzeige der Bitmap für die von der `PhotoCropperCanvasView` Klasse auf der Größe des Anzeigebereichs basierend skaliert wird. Die `bitmapScaleMatrix` berechnete in die `OnPaintSurface` ordnet die Pixel auf die Größe und Position der Bitmap zu überschreiben, wie er angezeigt wird. Die Matrix wird dann zum das zuschnittrechteck zu verwandeln, sodass es Bezug auf die Bitmap angezeigt werden kann.
+Der Code in der- `CroppingRectangle` Klasse basiert auf dem zuschneigsrechteck auf der Pixelgröße der Bitmap. Die Anzeige der Bitmap durch die- `PhotoCropperCanvasView` Klasse wird jedoch auf Grundlage der Größe des Anzeige Bereichs skaliert. Der `bitmapScaleMatrix` , der in der Überschreibung berechnet `OnPaintSurface` wird, wird von den bitmappixeln der Größe und Position der Bitmap angezeigt, wenn Sie angezeigt wird. Diese Matrix wird dann verwendet, um das zuschneigsrechteck so zu transformieren, dass es relativ zur Bitmap angezeigt werden kann.
 
-Die letzte Zeile des der `OnPaintSurface` Überschreibung verwendet die Umkehrung der der `bitmapScaleMatrix` und speichert sie als die `inverseBitmapMatrix` Feld. Dies wird für die Touch-Verarbeitung verwendet.
+Die letzte Zeile der `OnPaintSurface` außer Kraft Setzung nimmt die Umkehrung von `bitmapScaleMatrix` und speichert Sie als- `inverseBitmapMatrix` Feld. Diese wird für die Berührungs Verarbeitung verwendet.
 
-Ein `TouchEffect` Objekt als Feld instanziiert wird, und der Konstruktor fügt einen Handler, der die `TouchAction` -Ereignis, aber die `TouchEffect` muss hinzugefügt werden die `Effects` Auflistung von der _übergeordneten_ von der `SKCanvasView`Ableitung, sodass erfolgt ist, der `OnParentSet` außer Kraft setzen:
+Ein `TouchEffect` -Objekt wird als-Feld instanziiert, und der-Konstruktor fügt einen Handler an das- `TouchAction` Ereignis an, muss jedoch der `TouchEffect` -Auflistung des übergeordneten Elements der Ableitung hinzugefügt werden `Effects` _parent_ `SKCanvasView` , sodass dies in der Überschreibung erfolgt `OnParentSet` :
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -405,13 +408,13 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-Die touchereignisse verarbeitet, durch die `TouchAction` Ereignishandler befinden sich in geräteunabhängigen Einheiten. Diese zunächst in Pixel mit konvertiert werden die `ConvertToPixel` Methode am unteren Rand der Klasse, und klicken Sie dann in `CroppingRectangle` Einheiten mithilfe von `inverseBitmapMatrix`.
+Die vom Handler verarbeiteten Berührungs Ereignisse `TouchAction` sind geräteunabhängige Einheiten. Diese müssen zunächst mithilfe der `ConvertToPixel` -Methode am Ende der-Klasse in Pixel konvertiert und dann mithilfe von in Einheiten konvertiert werden `CroppingRectangle` `inverseBitmapMatrix` .
 
-Für `Pressed` Ereignisse, die `TouchAction` Ereignishandler ruft die `HitTest` -Methode der `CroppingRectangle`. Wenn einen Index zurückgegeben wird als &ndash;1, klicken Sie dann eine der Ecken des Rechtecks Zuschneiden ist, das manipuliert wird. Dass der Index und einem Offset von der tatsächlichen Touch-Punkt in der Ecke befindet sich in einem `TouchPoint` Objekt hinzugefügt, und wählen Sie die `touchPoints` Wörterbuch.
+Für- `Pressed` Ereignisse `TouchAction` ruft der Handler die- `HitTest` Methode von auf `CroppingRectangle` . Wenn ein anderer Index als 1 zurückgegeben wird &ndash; , wird einer der Ecken des zuschneigsrechtecks bearbeitet. Dieser Index und ein Offset des eigentlichen Berührungs Punkts aus der Ecke werden in einem `TouchPoint` -Objekt gespeichert und dem `touchPoints` Wörterbuch hinzugefügt.
 
-Für die `Moved` -Ereignis, das `MoveCorner` -Methode der `CroppingRectangle` wird aufgerufen, um die Ecke, mit möglichen Anpassungen für das Seitenverhältnis zu verschieben.
+Für das- `Moved` Ereignis wird die- `MoveCorner` Methode von `CroppingRectangle` aufgerufen, um die Ecke mit möglichen Anpassungen für das Seitenverhältnis zu verschieben.
 
-Jederzeit eine Anwendung mit `PhotoCropperCanvasView` stehen die `CroppedBitmap` Eigenschaft. Diese Eigenschaft verwendet die `Rect` Eigenschaft der `CroppingRectangle` um eine neue Bitmap der zugeschnittenen Größe zu erstellen. Die Version des `DrawBitmap` mit Ziel- und Rechtecke klicken Sie dann eine Teilmenge der ursprünglichen Bitmap extrahiert:
+Ein Programm, das verwendet, kann jederzeit auf `PhotoCropperCanvasView` die- `CroppedBitmap` Eigenschaft zugreifen. Diese Eigenschaft verwendet die- `Rect` Eigenschaft des `CroppingRectangle` , um eine neue Bitmap der zugeschnittenen Größe zu erstellen. Die Version von `DrawBitmap` mit Ziel-und Quell Rechtecke extrahiert dann eine Teilmenge der ursprünglichen Bitmap:
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -443,9 +446,9 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-## <a name="hosting-the-photo-cropper-canvas-view"></a>Hosten die Foto Cropper Canvas-Ansicht
+## <a name="hosting-the-photo-cropper-canvas-view"></a>Hosting der Canvas-Ansicht des Foto-croppers
 
-Mit diesen zwei Klassen, die das Zuschneiden Anwendungslogik die **Fotos Zuschneiden** auf der Seite die **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** Anwendung befindet sich nur sehr wenig. Die XAML-Datei instanziiert ein `Grid` auf Host der `PhotoCropperCanvasView` und **Fertig** Schaltfläche:
+Mit diesen beiden Klassen, die die Zustellungs Logik verarbeiten, hat die Seite zum Zuschneiden von **Fotos** in der **[skiasharpformsdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** -Anwendung nur wenig Arbeit. Die XAML-Datei instanziiert eine `Grid` zum Hosten von `PhotoCropperCanvasView` und eine **done** -Schaltfläche:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -472,9 +475,9 @@ Mit diesen zwei Klassen, die das Zuschneiden Anwendungslogik die **Fotos Zuschne
 </ContentPage>
 ```
 
-Die `PhotoCropperCanvasView` kann nicht in der XAML-Datei instanziiert werden, da es sich um einen Parameter vom Typ erfordert `SKBitmap`.
+Die `PhotoCropperCanvasView` kann nicht in der XAML-Datei instanziiert werden, da Sie einen Parameter vom Typ erfordert `SKBitmap` .
 
-Stattdessen die `PhotoCropperCanvasView` im Konstruktor der CodeBehind-Datei mit dem eine der Bitmaps Ressource instanziiert wird:
+Stattdessen wird der `PhotoCropperCanvasView` im Konstruktor der Code Behind-Datei mit einer der Ressourcen Bitmaps instanziiert:
 
 ```csharp
 public partial class PhotoCroppingPage : ContentPage
@@ -514,31 +517,31 @@ public partial class PhotoCroppingPage : ContentPage
 }
 ```
 
-Anschließend kann der Benutzer das zuschnittrechteck bearbeitet werden:
+Der Benutzer kann dann das zuschnittrechteck bearbeiten:
 
-[![Foto Cropper 1](cropping-images/PhotoCropping1.png "Foto Cropper 1")](cropping-images/PhotoCropping1-Large.png#lightbox)
+[![Fotocropper1](cropping-images/PhotoCropping1.png "Fotocropper1")](cropping-images/PhotoCropping1-Large.png#lightbox)
 
-Wenn ein guter zuschnittrechteck definiert wurde, klicken Sie auf die **Fertig** Schaltfläche. Die `Clicked` Handler Ruft das zugeschnittene Bitmap aus der `CroppedBitmap` Eigenschaft `PhotoCropperCanvasView`, und ersetzt alle Inhalte der Seite mit einem neuen `SKCanvasView` -Objekt, das diese zugeschnittene Bitmap anzeigt:
+Wenn ein gutes zuschnittrechteck definiert wurde, klicken Sie auf die Schaltfläche **done** . Der `Clicked` Handler Ruft die abgeschnittene Bitmap aus der `CroppedBitmap` -Eigenschaft von ab `PhotoCropperCanvasView` und ersetzt den gesamten Inhalt der Seite durch ein neues- `SKCanvasView` Objekt, das diese abgeschnittene Bitmap anzeigt:
 
-[![Foto Cropper 2](cropping-images/PhotoCropping2.png "Foto Cropper 2")](cropping-images/PhotoCropping2-Large.png#lightbox)
+[![Photo cropper2](cropping-images/PhotoCropping2.png "Photo cropper2")](cropping-images/PhotoCropping2-Large.png#lightbox)
 
-Legen Sie das zweite Argument der `PhotoCropperCanvasView` zu 1.78f (z. B.):
+Versuchen Sie, das zweite Argument von `PhotoCropperCanvasView` auf 1,78 f festzulegen (z. b.):
 
 ```csharp
 photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 ```
 
-Sie sehen, dass das zuschnittrechteck auf ein 16-zu-9-Seitenverhältnis von High Definition Television beschränkt.
+Sie sehen, dass das zuschneigsrechteck auf ein 16-bis 9-Seitenverhältnis Merkmal von High-Definition-TV beschränkt ist.
 
 <a name="tile-division" />
 
-## <a name="dividing-a-bitmap-into-tiles"></a>Eine Bitmap unterteilen in Kacheln
+## <a name="dividing-a-bitmap-into-tiles"></a>Aufteilen einer Bitmap in Kacheln
 
-Eine Xamarin.Forms-Version der berühmtheiten gelangen 14-15-Rätsel angezeigt, in Kapitel 22 des Buchs [ _Erstellen mobiler Apps mit Xamarin.Forms_ ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) heruntergeladen werden können, als [  **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle). Das Rätsel wird jedoch mehr Spaß (und häufig schwieriger) Wenn sie auf ein Image aus Ihrer eigenen Fotobibliothek basiert.
+Xamarin.FormsIn Kapitel 22 des Buchs, das [_Mobile Apps mit xamarin. Forms erstellt_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) und als [**xamagonxuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)heruntergeladen werden kann, ist eine Version des berühmten 14-15-Rätsels aufgetreten. Das Rätsel wird jedoch mehr Spaß (und oft auch schwieriger), wenn es auf einem Image aus ihrer eigenen Fotobibliothek basiert.
 
-Diese Version des Rätsels 14-15 ist Teil der **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** -Anwendung und besteht aus einer Reihe von Seiten, die mit dem Titel **Foto Rätsel**.
+Diese Version des 14-15-Puzzles ist Teil der Anwendung **[skiasharpformsdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** und besteht aus einer Reihe von Seiten mit dem Titel **Photo Puzzle**.
 
-Die **PhotoPuzzlePage1.xaml** -Datei besteht aus einem `Button`:
+Die Datei **PhotoPuzzlePage1. XAML** besteht aus einem `Button` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -554,7 +557,7 @@ Die **PhotoPuzzlePage1.xaml** -Datei besteht aus einem `Button`:
 </ContentPage>
 ```
 
-Die CodeBehind-Datei implementiert eine `Clicked` Ereignishandler, der mithilfe der `IPhotoLibrary` Abhängigkeitsdienst ermöglichen den Benutzer ein Foto aus der Fotobibliothek auswählen:
+Die Code-Behind-Datei implementiert einen `Clicked` Handler, der den `IPhotoLibrary` Abhängigkeits Dienst verwendet, um dem Benutzer das Auswählen eines Fotos aus der Fotobibliothek zu ermöglichen:
 
 ```csharp
 public partial class PhotoPuzzlePage1 : ContentPage
@@ -580,11 +583,11 @@ public partial class PhotoPuzzlePage1 : ContentPage
 }
 ```
 
-Die Methode navigiert dann zu `PhotoPuzzlePage2`, und übergeben Sie an den Konstruktor der ausgewählten Bitmap.
+Die Methode navigiert dann zu `PhotoPuzzlePage2` und übergibt an den konstuktor der ausgewählten Bitmap.
 
-Es ist möglich, dass das Foto, das aus der Bibliothek ausgewählt, soweit es ist in der Fotobibliothek aufgetreten ist, gedreht oder nach unten zeigende nicht ausgerichtet ist. (Dies ist besonders dann ein Problem mit iOS-Geräten). Aus diesem Grund `PhotoPuzzlePage2` können Sie das Image in die gewünschte Ausrichtung zu rotieren. Die XAML-Datei enthält drei Schaltflächen, die mit der Bezeichnung **90&#x00B0; rechts** (d. h. im Uhrzeigersinn), **90&#x00B0; Links** (gegen den Uhrzeigersinn) und **Fertig**.
+Es ist möglich, dass das aus der Bibliothek ausgewählte Foto nicht so ausgerichtet ist, wie es in der Fotobibliothek enthalten ist, aber gedreht oder nach unten gedreht wird. (Dies ist insbesondere ein Problem mit IOS-Geräten.) Aus diesem Grund `PhotoPuzzlePage2` können Sie das Bild in eine gewünschte Ausrichtung drehen. Die XAML-Datei enthält drei Schaltflächen mit der Bezeichnung **90&#x00B0; rechts** (d.h. im Uhrzeigersinn), **90&#x00B0; Left** (gegen den Uhrzeigersinn) und **done**.
 
-Die Code-Behind-Datei implementiert die Bitmap für die Rotation-Logik, die in diesem Artikel gezeigten  **[erstellen und Zeichnen auf SkiaSharp Bitmaps](drawing.md#rotating-bitmaps)** . Der Benutzer kann dem Bild um 90 Grad im Uhrzeigersinn oder gegen den Uhrzeigersinn oft drehen: 
+Die Code-Behind-Datei implementiert die Logik der Bitmap-Rotation, die im Artikel **[Erstellen und Zeichnen von skiasharp-Bitmaps](drawing.md#rotating-bitmaps)** gezeigt wird. Der Benutzer kann das Bild um 90 Grad im Uhrzeigersinn oder gegen den Uhrzeigersinn beliebig oft drehen: 
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -647,11 +650,11 @@ public partial class PhotoPuzzlePage2 : ContentPage
 }
 ```
 
-Klickt der Benutzer die **Fertig** Schaltfläche der `Clicked` Handler navigiert zur `PhotoPuzzlePage3`, übergeben die endgültige gedreht Bitmap im Konstruktor der Seite.
+Wenn der Benutzer auf die Schaltfläche " **done** " klickt, `Clicked` navigiert der Handler zu `PhotoPuzzlePage3` und übergibt die abschließende gedrehte Bitmap im Konstruktor der Seite.
 
-`PhotoPuzzlePage3` ermöglicht das Foto zugeschnitten wird. Das Programm erfordert eine quadratische Bitmap in einem 4 x 4-Raster von Kacheln unterteilen.
+`PhotoPuzzlePage3`ermöglicht das Abschneiden des Fotos. Für das Programm ist eine quadratische Bitmap erforderlich, um Sie in ein 4 x 4-Raster von Kacheln aufzuteilen.
 
-Die **PhotoPuzzlePage3.xaml** -Datei enthält eine `Label`, `Grid` auf Host der `PhotoCropperCanvasView`, und ein weiteres **Fertig** Schaltfläche:
+Die Datei **PhotoPuzzlePage3. XAML** enthält eine `Label` , eine `Grid` zum Hosten von `PhotoCropperCanvasView` und eine weitere Schaltfläche " **done** ":
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -685,7 +688,7 @@ Die **PhotoPuzzlePage3.xaml** -Datei enthält eine `Label`, `Grid` auf Host der 
 </ContentPage>
 ```
 
-Die Code-Behind-Datei instanziiert den `PhotoCropperCanvasView` mit der Bitmap, die an den Konstruktor übergeben. Beachten Sie, das eine 1, als das zweite Argument für übergeben wird `PhotoCropperCanvasView`. Dieses Verhältnis 1 erzwingt das zuschnittrechteck ein Quadrat sein:
+Die Code-Behind-Datei instanziiert den `PhotoCropperCanvasView` mit der Bitmap, die an seinen Konstruktor übergeben wird. Beachten Sie, dass 1 als zweites Argument an die Übergabe von lautet `PhotoCropperCanvasView` . Dieses Seitenverhältnis von 1 erzwingt, dass das zuschnittrechteck ein Quadrat ist:
 
 ```csharp
 public partial class PhotoPuzzlePage3 : ContentPage
@@ -736,33 +739,33 @@ public partial class PhotoPuzzlePage3 : ContentPage
 }
 ```
 
-Die **Fertig** Schaltflächenhandler, ruft die Breite und Höhe der Bitmap für die zugeschnittenen (diese beiden Werte sollten identisch sein), und teilt diese dann in 15 separate Bitmaps, von denen jeder die 1/4 ist die Breite und Höhe des Originals. (Das letzte mögliche 16 Bitmaps wird nicht erstellt.) Die `DrawBitmap` -Methode mit der Quelle und Ziel-Rechteck ermöglicht eine Bitmap, die basierend auf den Teil einer größeren Bitmap erstellt werden.
+Der Handler für die **done** -Schaltfläche erhält die Breite und Höhe der zugeschnittenen Bitmap (diese beiden Werte sollten identisch sein) und teilt Sie dann in 15 separate Bitmaps auf, von denen jeder 1/4 die Breite und Höhe des Originals ist. (Die letzte der möglichen 16 Bitmaps wird nicht erstellt.) Die- `DrawBitmap` Methode mit Quell-und Ziel Rechteck ermöglicht das Erstellen einer Bitmap basierend auf einer Teilmenge einer größeren Bitmap.
 
-## <a name="converting-to-xamarinforms-bitmaps"></a>Konvertieren in Xamarin.Forms-bitmaps
+## <a name="converting-to-xamarinforms-bitmaps"></a>Wandeln in Xamarin.Forms Bitmaps
 
-In der `OnDoneButtonClicked` -Methode, das für die 15 Bitmaps erstellte Array ist, vom Typ [ `ImageSource` ](xref:Xamarin.Forms.ImageSource):
+In der- `OnDoneButtonClicked` Methode hat das für die 15 Bitmaps erstellte Array den folgenden Typ [`ImageSource`](xref:Xamarin.Forms.ImageSource) :
 
 ```csharp
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` ist der Basistyp für Xamarin.Forms, der eine Bitmap kapselt. Glücklicherweise kann SkiaSharp, Konvertieren von Bitmaps von SkiaSharp in Xamarin.Forms-Bitmaps. Die **SkiaSharp.Views.Forms** Assembly definiert eine [ `SKBitmapImageSource` ](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) abgeleitete Klasse `ImageSource` können jedoch erstellt werden basierend auf einer SkiaSharp `SKBitmap` Objekt. `SKBitmapImageSource` definiert auch Konvertierungen zwischen `SKBitmapImageSource` und `SKBitmap`, und das ist wie `SKBitmap` Objekte werden in einem Array als Xamarin.Forms Bitmaps gespeichert:
+`ImageSource`der Xamarin.Forms Basistyp, der eine Bitmap kapselt. Glücklicherweise ermöglicht skiasharp das Umstellen von skiasharp-Bitmaps in Xamarin.Forms Bitmaps. Die **skiasharp. views. Forms** -Assembly definiert eine [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) Klasse, die von abgeleitet `ImageSource` ist, aber auf der Grundlage eines skiasharp-Objekts erstellt werden kann `SKBitmap` . `SKBitmapImageSource`definiert sogar Konvertierungen zwischen `SKBitmapImageSource` und. `SKBitmap` auf diese Weise `SKBitmap` werden Objekte als Bitmaps in einem Array gespeichert Xamarin.Forms :
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 ```
 
-Dieses Array von Bitmaps als einen Konstruktor zu übergeben wird `PhotoPuzzlePage4`. Diese Seite ist eine vollständig Xamarin.Forms und keine SkiaSharp. Es ist sehr ähnlich [ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle), daher wird nicht hier beschrieben werden, es wird jedoch Ihre ausgewählten Fotos in 15 quadratische Kacheln unterteilt:
+Dieses Array von Bitmaps wird als Konstruktor an übergeben `PhotoPuzzlePage4` . Diese Seite ist vollständig Xamarin.Forms und verwendet keine skiasharp. Sie ähnelt [**xamagonxuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)und wird daher hier nicht beschrieben, aber Ihr ausgewähltes Foto wird in 15 Quadrat Kacheln unterteilt:
 
 [![Foto Rätsel 1](cropping-images/PhotoPuzzle1.png "Foto Rätsel 1")](cropping-images/PhotoPuzzle1-Large.png#lightbox)
 
-Drücken Sie die **Randomize** Schaltfläche kombiniert, um alle Kacheln:
+Durch Drücken der Schaltfläche **Randomize** werden alle Kacheln gemischt:
 
 [![Foto Rätsel 2](cropping-images/PhotoPuzzle2.png "Foto Rätsel 2")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
 
-Jetzt können Sie sie in der richtigen Reihenfolge wieder platzieren. Alle Kacheln in der gleichen Zeile oder Spalte als das leere Quadrat können getippt werden, um sie in das leere Quadrat zu verschieben. 
+Nun können Sie Sie wieder in der richtigen Reihenfolge ablegen. Alle Kacheln in derselben Zeile oder Spalte wie das leere Quadrat können abgetippt werden, um Sie in das leere Quadrat zu verschieben. 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

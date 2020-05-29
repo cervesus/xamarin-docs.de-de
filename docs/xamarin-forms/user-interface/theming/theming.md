@@ -1,26 +1,29 @@
 ---
-title: Design einer xamarin. Forms-Anwendung
-description: Design kann in xamarin. Forms-Anwendungen implementiert werden, indem für jedes Design ein ResourceDictionary erstellt und anschließend die Ressourcen mit der DynamicResource-Markup Erweiterung geladen werden.
-ms.prod: xamarin
-ms.assetId: B7B17F66-4E37-4B50-9A57-351B62BE4FED
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2019
-ms.openlocfilehash: 2f751549bdbd54b920a99b04d0068ab726600336
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Design einer- Xamarin.Forms Anwendung
+description: Design kann in Anwendungen implementiert werden Xamarin.Forms , indem für jedes Design ein ResourceDictionary erstellt und dann die Ressourcen mit der DynamicResource-Markup Erweiterung geladen werden.
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425794"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138202"
 ---
-# <a name="theme-a-xamarinforms-application"></a>Design einer xamarin. Forms-Anwendung
+# <a name="theme-a-xamarinforms-application"></a>Design einer- Xamarin.Forms Anwendung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
-Xamarin. Forms-Anwendungen können mithilfe der Markup Erweiterung dynamisch zur Laufzeit auf Stiländerungen reagieren `DynamicResource` . Diese Markup Erweiterung ähnelt der `StaticResource` Markup Erweiterung, da beide eine Wörterbuch Taste verwenden, um einen Wert aus einer abzurufen [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Obwohl die `StaticResource` Markup Erweiterung eine einzelne Wörterbuchsuche ausführt, `DynamicResource` behält die Markup Erweiterung einen Link zum Wörterbuch Schlüssel bei. Wenn der Wert, der dem Schlüssel zugeordnet ist, ersetzt wird, wird die Änderung daher auf das angewendet [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Dies ermöglicht die Implementierung von Lauf Zeit Designs in xamarin. Forms-Anwendungen.
+Xamarin.FormsAnwendungen können mithilfe der Markup Erweiterung dynamisch auf Formatänderungen zur Laufzeit reagieren `DynamicResource` . Diese Markup Erweiterung ähnelt der `StaticResource` Markup Erweiterung, da beide eine Wörterbuch Taste verwenden, um einen Wert aus einer abzurufen [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Obwohl die `StaticResource` Markup Erweiterung eine einzelne Wörterbuchsuche ausführt, `DynamicResource` behält die Markup Erweiterung einen Link zum Wörterbuch Schlüssel bei. Wenn der Wert, der dem Schlüssel zugeordnet ist, ersetzt wird, wird die Änderung daher auf das angewendet [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Dies ermöglicht die Implementierung von Lauf Zeit Designs in Xamarin.Forms Anwendungen.
 
-Der Prozess zum Implementieren von Lauf Zeit Designs in einer xamarin. Forms-Anwendung lautet wie folgt:
+Der Prozess zum Implementieren von Lauf Zeit Designs in einer- Xamarin.Forms Anwendung lautet wie folgt:
 
 1. Definieren Sie die Ressourcen für jedes Design in einer [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) .
 1. Nutzen Sie Design Ressourcen in der Anwendung mit der `DynamicResource` Markup Erweiterung.
@@ -182,7 +185,7 @@ Diese Stile werden dann von Seiten genutzt:
 
 Wenn eine Design Ressource direkt genutzt wird, sollte Sie mit der `DynamicResource` Markup Erweiterung genutzt werden. Wenn jedoch ein Stil verwendet wird, der die `DynamicResource` Markup Erweiterung verwendet, sollte er mit der `StaticResource` Markup Erweiterung verwendet werden.
 
-Weitere Informationen zum Formatieren finden Sie unter Formatieren von [xamarin. Forms-Apps mithilfe von XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md). Weitere Informationen zur `DynamicResource` Markup Erweiterung finden Sie unter [dynamische Stile in xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md).
+Weitere Informationen zum Formatieren finden Sie unter Formatieren von [ Xamarin.Forms apps mit XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md). Weitere Informationen zur `DynamicResource` Markup Erweiterung finden Sie unter [dynamische Stile in Xamarin.Forms ](~/xamarin-forms/user-interface/styles/xaml/dynamic.md).
 
 ## <a name="load-a-theme-at-runtime"></a>Ein Design zur Laufzeit laden
 
@@ -225,5 +228,5 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 - [Design (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [Reagieren auf Systemdesignänderungen](system-theme-changes.md)
 - [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Dynamische Stile in xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Dynamische Stile inXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
+- [Formatieren von Xamarin.Forms apps mit XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md)

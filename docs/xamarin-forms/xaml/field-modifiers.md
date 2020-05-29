@@ -1,20 +1,23 @@
 ---
-title: XAML-Feldmodifizierer in xamarin. Forms
-description: Das Namespace-Attribut "x:FieldModifier" gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente an.
-ms.prod: xamarin
-ms.assetid: 12357CE0-3C11-4B62-947F-72DB6DFC23A2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/02/2019
-ms.openlocfilehash: 0f6050de943ca9878cf41b448d44bf222689be56
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+title: XAML-Feldmodifizierer inXamarin.Forms
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: db00f522b71a8993ef0f7f6cf5070813ce07396a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739451"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138124"
 ---
-# <a name="xaml-field-modifiers-in-xamarinforms"></a>XAML-Feldmodifizierer in xamarin. Forms
+# <a name="xaml-field-modifiers-in-xamarinforms"></a>XAML-Feldmodifizierer inXamarin.Forms
 
 Das `x:FieldModifier` Namespace-Attribut gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente an. Gültige Werte für das-Attribut sind:
 
@@ -24,15 +27,15 @@ Das `x:FieldModifier` Namespace-Attribut gibt die Zugriffsebene für generierte 
 - `internal`– Gibt an, dass auf das generierte Feld für das XAML-Element nur innerhalb von Typen in derselben Assembly zugegriffen werden kann.
 - `notpublic`– Gibt an, dass auf das generierte Feld für das XAML-Element nur innerhalb von Typen in derselben Assembly zugegriffen werden kann.
 
-Wenn der Wert des-Attributs nicht festgelegt ist, ist das generierte Feld für das-Element `private`standardmäßig.
+Wenn der Wert des-Attributs nicht festgelegt ist, ist das generierte Feld für das-Element standardmäßig `private` .
 
 > [!NOTE]
-> Der Wert des-Attributs kann jede beliebige Schreibweise verwenden, da er von xamarin. Forms in Kleinbuchstaben konvertiert wird.
+> Der Wert des-Attributs kann jede beliebige Schreibweise verwenden, da Sie von in Kleinbuchstaben konvertiert wird Xamarin.Forms .
 
-Die folgenden Bedingungen müssen erfüllt sein, damit `x:FieldModifier` ein Attribut verarbeitet werden muss:
+Die folgenden Bedingungen müssen erfüllt sein, damit ein `x:FieldModifier` Attribut verarbeitet werden muss:
 
-- Das XAML-Element der obersten Ebene muss gültig `x:Class`sein.
-- Das aktuelle XAML-Element verfügt `x:Name` über einen angegebenen.
+- Das XAML-Element der obersten Ebene muss gültig sein `x:Class` .
+- Das aktuelle XAML-Element verfügt über einen `x:Name` angegebenen.
 
 Der folgende XAML-Code zeigt Beispiele für das Festlegen des-Attributs:
 
@@ -43,4 +46,4 @@ Der folgende XAML-Code zeigt Beispiele für das Festlegen des-Attributs:
 ```
 
 > [!IMPORTANT]
-> Das `x:FieldModifier` -Attribut kann nicht verwendet werden, um die Zugriffsebene einer XAML-Klasse anzugeben.
+> Das- `x:FieldModifier` Attribut kann nicht verwendet werden, um die Zugriffsebene einer XAML-Klasse anzugeben.

@@ -1,48 +1,51 @@
 ---
-title: Polylinien und parametrische Formeln
-description: In diesem Artikel wird erläutert, wie zum Verwenden von SkiaSharp zum Rendern einer Zeile, mit parametrische Formeln definieren können, und dies mit Beispielcode wird veranschaulicht.
-ms.prod: xamarin
-ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: f635e6e20a4cec9b8cc735bc733b678263cd024a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759180"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140217"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Verwenden von SkiaSharp zum Rendern jeder Zeile, die Sie, mit parametrische Formeln definieren können_
+_Verwenden Sie skiasharp zum Rendering beliebiger Zeilen, die mit parametrischen Gleichungen definiert werden können._
 
-In der [ **SkiaSharp-Kurven und-Pfade** ](../curves/index.md) Abschnitt dieses Handbuchs, sehen Sie die verschiedenen Methoden, die [ `SKPath` ](xref:SkiaSharp.SKPath) definiert werden, um bestimmte Arten von Kurven zu rendern. Allerdings ist es manchmal notwendig, einen Typ der Kurve zu zeichnen, die direkt von nicht unterstützt wird `SKPath`. In diesem Fall können Sie jede Kurve zu zeichnen, die Sie, mathematisch definieren können eine Polylinie (eine Sammlung von miteinander verbundenen Linien) verwenden. Wenn Sie die Zeilen klein und zahlreiche reicht das Ergebnis wie eine Kurve sieht. Diese Spirale ist tatsächlich 3.600 wenig Zeilen:
+Im Abschnitt [**skiasharp-Kurven und-Pfade**](../curves/index.md) dieses Handbuchs sehen Sie die verschiedenen Methoden, die [`SKPath`](xref:SkiaSharp.SKPath) definieren, um bestimmte Arten von Kurven zu erzeugen. Es ist jedoch manchmal notwendig, eine Art von Kurve zu zeichnen, die nicht direkt von unterstützt wird `SKPath` . In einem solchen Fall können Sie eine Polylinie (eine Auflistung verbundener Linien) verwenden, um eine beliebige Kurve zu zeichnen, die Sie mathematisch definieren können. Wenn Sie die Zeilen klein genug und zahlreich genug machen, sieht das Ergebnis wie eine Kurve aus. Diese Spirale ist eigentlich 3.600 kleine Zeilen:
 
-![](polylines-images/spiralexample.png "Eine Spirale")
+![](polylines-images/spiralexample.png "A spiral")
 
-Im Allgemeinen empfiehlt es sich um eine Kurve in Bezug auf ein Paar von parametrische Formeln zu definieren. Hierbei handelt es sich um Gleichungen, für die X- und Y, die koordiniert eine dritte Variable bezeichnet hängen `t` Zeit. Die folgenden parametrischen Formeln definieren z. B. einen Kreis mit einem Radius von 1, zentriert am Punkt (0, 0) für *t* von 0 bis 1:
+Im Allgemeinen ist es am besten, eine Kurve in Bezug auf ein paar parametrischer Gleichungen zu definieren. Dabei handelt es sich um Gleichungen für X-und Y-Koordinaten, die von einer dritten Variablen abhängig sind `t` . Die folgenden parametrischen Gleichungen definieren z. b. einen Kreis mit einem Radius von 1, der am Punkt (0, 0) zentriert ist, für *t* zwischen 0 und 1:
 
 `x = cos(2πt)`
 
 `y = sin(2πt)`
 
- Wenn Sie einen Radius verwenden möchten, die größer als 1, können Sie einfach den Sinus und Cosinus Werte Multiplizieren mit, Radius und wenn Sie die Mitte an einen anderen Speicherort verschieben möchten, fügen diese Werte:
+ Wenn Sie einen RADIUS benötigen, der größer als 1 ist, können Sie einfach den Sinus-und Kosinus-Wert mit diesem RADIUS multiplizieren. Wenn Sie den Mittelpunkt an einen anderen Speicherort verschieben möchten, fügen Sie die folgenden Werte hinzu:
 
 `x = xCenter + radius·cos(2πt)`
 
 `y = yCenter + radius·sin(2πt)`
 
-Für eine Ellipse mit der horizontalen und vertikalen Achsen Parallel sind zwei Radien beteiligt:
+Für eine Ellipse, die die Achsen parallel zur horizontalen und vertikalen Achse hat, sind zwei Radien beteiligt:
 
 `x = xCenter + xRadius·cos(2πt)`
 
 `y = yCenter + yRadius·sin(2πt)`
 
-Sie können dann den entsprechenden SkiaSharp-Code in einer Schleife einfügen, die die verschiedenen Punkte berechnet, und fügt diese in einen Pfad. Der folgende SkiaSharp-Code erstellt ein `SKPath` -Objekt für eine Ellipse, die die Anzeigeoberfläche ausfüllt. Die Schleife durchläuft die 360 Grad direkt aus. Das Center ist die Hälfte der Breite und Höhe der Anzeigeoberfläche und deshalb die zwei Radien:
+Anschließend können Sie den entsprechenden skiasharp-Code in einer Schleife platzieren, die die verschiedenen Punkte berechnet und diese einem Pfad hinzufügt. Der folgende skiasharp-Code erstellt ein- `SKPath` Objekt für eine Ellipse, die die Anzeige Oberfläche füllt. Die Schleife durchläuft die 360 Grad direkt. Der Mittelpunkt liegt in der Hälfte der Breite und Höhe der Anzeige Oberfläche, und die beiden Radii lauten wie folgt:
 
 ```csharp
 SKPath path = new SKPath();
@@ -65,11 +68,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-Dies führt zu einer Ellipse, die durch 360 kleine Linien definiert. Wenn er gerendert wurde, wird es smooth angezeigt.
+Dies führt zu einer Ellipse, die durch 360 kleine Zeilen definiert ist. Wenn es gerendert wird, wird es glatt angezeigt.
 
-Natürlich, Sie müssen nicht erstellen Sie eine Ellipse mit einem Polyline-Objekt, da `SKPath` enthält ein `AddOval` -Methode, die es für Sie übernimmt. Jedoch empfiehlt es sich um ein visuelles Objekt zu zeichnen, die nicht zur Verfügung `SKPath`.
+Natürlich müssen Sie keine Ellipse mithilfe einer Polylinie erstellen, da `SKPath` eine `AddOval` Methode enthält, die dies für Sie erledigt. Möglicherweise möchten Sie jedoch ein visuelles Objekt zeichnen, das nicht von bereitgestellt wird `SKPath` .
 
-Die **Archimedean Spirale** verfügt über Code, ähnlich wie der Ellipse-Code, aber mit einem bedeutsamen Unterschied. Es führt eine Schleife der 360 Grad des Kreises 10-Mal fortlaufend Anpassen des Radius:
+Die **archimedische Spiral** Seite verfügt über Code, der mit dem Ellipse-Code vergleichbar ist, aber mit einem entscheidenden Unterschied. Dabei werden die 360 Grad des Kreises 10 mal durchlaufen, und der RADIUS wird fortlaufend angepasst:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -115,13 +118,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Das Ergebnis ist die Abkürzung ein *arithmetische Spirale* , da die Abweichung zwischen dem foreach-Schleife konstant ist:
+Das Ergebnis wird auch als *arithmetische Spirale* bezeichnet, da der Offset zwischen den einzelnen Schleifen konstant ist:
 
-[![](polylines-images/archimedeanspiral-small.png "Dreifacher Screenshot der Seite Archimedean Spirale")](polylines-images/archimedeanspiral-large.png#lightbox "dreifachen Screenshot der Seite Archimedean Spirale")
+[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
 
-Beachten Sie, dass die `SKPath` wird erstellt, einem `using` Block. Dies `SKPath` belegt mehr Arbeitsspeicher als die `SKPath` Objekte in der vorherigen Programme, die deutet auf eine `using` Block ist besser geeignet ist, nicht verwalteten Ressourcen freizugeben.
+Beachten Sie, dass `SKPath` in einem- `using` Block erstellt wird. Dies beansprucht `SKPath` mehr Arbeitsspeicher als die `SKPath` Objekte in den vorherigen Programmen. Dies deutet darauf hin, dass ein `using` Block besser geeignet ist, um alle nicht verwalteten Ressourcen freizugeben.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

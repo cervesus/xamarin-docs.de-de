@@ -1,29 +1,32 @@
 ---
-title: Xamarin. Forms-flexlayout
-description: Verwenden Sie das flexlayout zum Stapeln oder Umpacken einer Auflistung untergeordneter Ansichten.
-ms.prod: xamarin
-ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: 507f78bf887d8d11e93a5a6a1f7d074c55e69360
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Das Xamarin.Forms flexlayout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 031a846b7546c204d45c7437acd829d6cb49bfbb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149971"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137209"
 ---
-# <a name="the-xamarinforms-flexlayout"></a>Xamarin. Forms-flexlayout
+# <a name="the-xamarinforms-flexlayout"></a>Das Xamarin.Forms flexlayout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
 
 _Verwenden Sie das flexlayout zum Stapeln oder Umpacken einer Auflistung untergeordneter Ansichten._
 
-Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) ist neu in xamarin. Forms Version 3,0. Es basiert auf dem flexiblen CSS- [Box-Layoutmodul](https://www.w3.org/TR/css-flexbox-1/), das auch als " _flexlayout_ " oder " _Flex-Box_" bezeichnet wird, da es viele flexible Optionen zum Anordnen von untergeordneten Elementen im Layout enthält.
+Der Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) ist neu in Xamarin.Forms Version 3,0. Es basiert auf dem flexiblen CSS- [Box-Layoutmodul](https://www.w3.org/TR/css-flexbox-1/), das auch als " _flexlayout_ " oder " _Flex-Box_" bezeichnet wird, da es viele flexible Optionen zum Anordnen von untergeordneten Elementen im Layout enthält.
 
-`FlexLayout`ähnelt xamarin. Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) darin, dass es die untergeordneten Elemente horizontal und vertikal in einem Stapel anordnen kann. Der kann jedoch `FlexLayout` auch seine untergeordneten Elemente umwickeln, wenn zu viele für eine einzelne Zeile oder Spalte vorhanden sind, und verfügt außerdem über viele Optionen für Ausrichtung, Ausrichtung und Anpassung an verschiedene Bildschirmgrößen.
+`FlexLayout`ähnelt der Xamarin.Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) in, dass Sie die untergeordneten Elemente horizontal und vertikal in einem Stapel anordnen kann. Der kann jedoch `FlexLayout` auch seine untergeordneten Elemente umwickeln, wenn zu viele für eine einzelne Zeile oder Spalte vorhanden sind, und verfügt außerdem über viele Optionen für Ausrichtung, Ausrichtung und Anpassung an verschiedene Bildschirmgrößen.
 
 `FlexLayout`wird von abgeleitet [`Layout<View>`](xref:Xamarin.Forms.Layout`1) und erbt eine [`Children`](xref:Xamarin.Forms.Layout`1.Children) Eigenschaft vom Typ `IList<View>` .
 
@@ -68,7 +71,7 @@ Dies ist die Seite, die unter IOS, Android und der universelle Windows-Plattform
 
 `FlexLayout`In der **simplestackpage. XAML** -Datei werden drei Eigenschaften von angezeigt:
 
-- Die- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) Eigenschaft wird auf einen Wert der- [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) Enumeration festgelegt. Der Standardwert ist `Row`. Das Festlegen der-Eigenschaft auf `Column` bewirkt, dass die unter `FlexLayout` geordneten Elemente von in einer einzelnen Spalte von Elementen angeordnet werden.
+- Die- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) Eigenschaft wird auf einen Wert der- [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) Enumeration festgelegt. Der Standardwert lautet `Row`. Das Festlegen der-Eigenschaft auf `Column` bewirkt, dass die unter `FlexLayout` geordneten Elemente von in einer einzelnen Spalte von Elementen angeordnet werden.
 
     Wenn Elemente in einem `FlexLayout` in einer Spalte angeordnet sind, `FlexLayout` wird eine vertikale _Hauptachse_ und eine horizontale _Kreuz Achse_bezeichnet.
 
@@ -609,11 +612,11 @@ Sie können den `Grow` -Wert und den- `Shrink` Wert auf Situationen festlegen, i
 
 ## <a name="css-styling-with-flexlayout"></a>CSS-Formatierung mit flexlayout
 
-Sie können die [CSS](~/xamarin-forms/user-interface/styles/css/index.md) -Formatierungsfunktion verwenden, die mit xamarin. Forms 3,0 in Verbindung mit eingeführt wurde `FlexLayout` . Die Seite **CSS-Katalog Elemente** des Beispiels " **[flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** " dupliziert das Layout der Seite " **Katalog Elemente** ", aber mit einem CSS-Stylesheet für viele der Stile:
+Sie können die [CSS](~/xamarin-forms/user-interface/styles/css/index.md) -Formatierungsfunktion verwenden, die mit Xamarin.Forms 3,0 in Verbindung mit eingeführt wurde `FlexLayout` . Die Seite **CSS-Katalog Elemente** des Beispiels " **[flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** " dupliziert das Layout der Seite " **Katalog Elemente** ", aber mit einem CSS-Stylesheet für viele der Stile:
 
 [![Die Seite CSS-Katalog Elemente](flex-layout-images/CssCatalogItems.png "Die Seite CSS-Katalog Elemente")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-Die ursprüngliche **catalogitemspage. XAML** -Datei enthält fünf `Style` Definitionen in Ihrem `Resources` Abschnitt mit 15 `Setter` Objekten. In der **csscatalogitemspage. XAML** -Datei, die auf zwei `Style` Definitionen mit nur vier Objekten reduziert wurde `Setter` . Diese Stile ergänzen das CSS-Stylesheet für Eigenschaften, die von der xamarin. Forms-CSS-Formatierungsfunktion derzeit nicht unterstützt werden:
+Die ursprüngliche **catalogitemspage. XAML** -Datei enthält fünf `Style` Definitionen in Ihrem `Resources` Abschnitt mit 15 `Setter` Objekten. In der **csscatalogitemspage. XAML** -Datei, die auf zwei `Style` Definitionen mit nur vier Objekten reduziert wurde `Setter` . Diese Stile ergänzen das CSS-Stylesheet für Eigenschaften, die von der CSS-Formatierungs Xamarin.Forms Funktion derzeit nicht unterstützt werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -738,7 +741,7 @@ Sie haben gesehen, dass Sie Eigenschaften direkt auf festlegen können, `FlexLay
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin. Forms 3,0-flexlayoutvideo**
+**Xamarin.Forms3,0-flexlayoutvideo**
 
 ## <a name="related-links"></a>Verwandte Links
 

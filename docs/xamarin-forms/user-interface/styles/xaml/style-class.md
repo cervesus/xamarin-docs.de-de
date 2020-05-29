@@ -1,33 +1,36 @@
 ---
-title: Klassen im xamarin. Forms-Stil
-description: Xamarin. Forms-Klassen Klassen ermöglichen das Anwenden mehrerer Stile auf ein Steuerelement, ohne dass auf eine Formatierungs Vererbung zurückgegriffen wird.
-ms.prod: xamarin
-ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/30/2019
-ms.openlocfilehash: 4a353d64f0e7e29da6c64f93b8554c3661f4d389
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: Xamarin.FormsStil Klassen
+description: Xamarin.FormsStil Klassen ermöglichen das Anwenden mehrerer Stile auf ein Steuerelement, ohne dass auf eine Format Vererbung zurückgegriffen wird.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228130"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138761"
 ---
-# <a name="xamarinforms-style-classes"></a>Klassen im xamarin. Forms-Stil
+# <a name="xamarinforms-style-classes"></a>Xamarin.FormsStil Klassen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Xamarin. Forms-Klassen Klassen ermöglichen das Anwenden mehrerer Stile auf ein Steuerelement, ohne dass auf eine Formatierungs Vererbung zurückgegriffen wird._
 
 ## <a name="create-style-classes"></a>Erstellen von Stil Klassen
 
-Eine Style-Klasse kann erstellt werden, indem [`Class`](xref:Xamarin.Forms.Style.Class) die-Eigenschaft [`Style`](xref:Xamarin.Forms.Style) eines auf `string` einen festgelegt wird, der den Klassennamen darstellt. Der Vorteil, den diese bietet, wenn Sie einen expliziten `x:Key` Stil mithilfe des-Attributs definieren, besteht darin, dass [`VisualElement`](xref:Xamarin.Forms.VisualElement)mehrere Formatklassen auf einen angewendet werden können.
+Eine Style-Klasse kann erstellt werden, indem die-Eigenschaft eines auf einen festgelegt wird [`Class`](xref:Xamarin.Forms.Style.Class) [`Style`](xref:Xamarin.Forms.Style) `string` , der den Klassennamen darstellt. Der Vorteil, den diese bietet, wenn Sie einen expliziten Stil mithilfe des- `x:Key` Attributs definieren, besteht darin, dass mehrere Formatklassen auf einen angewendet werden können [`VisualElement`](xref:Xamarin.Forms.VisualElement) .
 
 > [!IMPORTANT]
 > Mehrere Stile können denselben Klassennamen verwenden, sofern Sie unterschiedliche Typen als Ziel haben. Dies ermöglicht es, dass mehrere Formatklassen, die identisch benannt sind, verschiedene Typen als Ziel haben.
 
-Das folgende Beispiel zeigt drei [`BoxView`](xref:Xamarin.Forms.BoxView) Stil Klassen und eine [`VisualElement`](xref:Xamarin.Forms.VisualElement) Formatklasse:
+Das folgende Beispiel zeigt drei [`BoxView`](xref:Xamarin.Forms.BoxView) Stil Klassen und eine Format [`VisualElement`](xref:Xamarin.Forms.VisualElement) Klasse:
 
 ```xaml
 <ContentPage ...>
@@ -74,11 +77,11 @@ Das folgende Beispiel zeigt drei [`BoxView`](xref:Xamarin.Forms.BoxView) Stil Kl
 </ContentPage>
 ```
 
-Die `Separator`Stil `Rounded`Klassen, `Circle` und legen jeweils Eigenschaften [`BoxView`](xref:Xamarin.Forms.BoxView) auf bestimmte Werte fest.
+Die `Separator` `Rounded` `Circle` Stil Klassen, und legen jeweils [`BoxView`](xref:Xamarin.Forms.BoxView) Eigenschaften auf bestimmte Werte fest.
 
-Die `Rotated` Style-Klasse verfügt [`TargetType`](xref:Xamarin.Forms.Style.TargetType) über [`VisualElement`](xref:Xamarin.Forms.VisualElement)eine von, was bedeutet, dass Sie nur `VisualElement` auf-Instanzen angewendet werden kann. Die- `true` `VisualElement`Eigenschaft ist jedoch auf festgelegt, wodurch sichergestellt wird, dass Sie auf alle Steuerelemente angewendet werden kann, [`BoxView`](xref:Xamarin.Forms.BoxView)die von abgeleitet werden, z. b. [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) Weitere Informationen zum Anwenden eines Stils auf einen abgeleiteten Typ finden Sie unter [Anwenden eines Stils auf abgeleitete Typen](implicit.md#apply-a-style-to-derived-types).
+Die `Rotated` Style-Klasse verfügt über eine [`TargetType`](xref:Xamarin.Forms.Style.TargetType) von [`VisualElement`](xref:Xamarin.Forms.VisualElement) , was bedeutet, dass Sie nur auf-Instanzen angewendet werden kann `VisualElement` . Die- [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) Eigenschaft ist jedoch auf festgelegt `true` , wodurch sichergestellt wird, dass Sie auf alle Steuerelemente angewendet werden kann, die von abgeleitet werden `VisualElement` , z [`BoxView`](xref:Xamarin.Forms.BoxView) . b.. Weitere Informationen zum Anwenden eines Stils auf einen abgeleiteten Typ finden Sie unter [Anwenden eines Stils auf abgeleitete Typen](implicit.md#apply-a-style-to-derived-types).
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 var separatorBoxViewStyle = new Style(typeof(BoxView))
@@ -180,9 +183,9 @@ Resources = new ResourceDictionary
 
 ## <a name="consume-style-classes"></a>Stil Klassen verwenden
 
-Stil Klassen können verwendet werden, indem die [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) -Eigenschaft des-Steuer Elements, die vom `IList<string>`Typ ist, auf eine Liste von Formatklassen Namen festgelegt wird. Die Formatklassen werden angewendet, vorausgesetzt, dass der Typ des Steuer Elements mit [`TargetType`](xref:Xamarin.Forms.Style.TargetType) dem der Stil Klassen übereinstimmt.
+Stil Klassen können verwendet werden, indem die- [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) Eigenschaft des-Steuer Elements, die vom Typ ist `IList<string>` , auf eine Liste von Formatklassen Namen festgelegt wird. Die Formatklassen werden angewendet, vorausgesetzt, dass der Typ des Steuer Elements [`TargetType`](xref:Xamarin.Forms.Style.TargetType) mit dem der Stil Klassen übereinstimmt.
 
-Im folgenden Beispiel werden drei [`BoxView`](xref:Xamarin.Forms.BoxView) -Instanzen gezeigt, die jeweils auf verschiedene Formatklassen festgelegt sind:
+Im folgenden Beispiel werden drei- [`BoxView`](xref:Xamarin.Forms.BoxView) Instanzen gezeigt, die jeweils auf verschiedene Formatklassen festgelegt sind:
 
 ```xaml
 <ContentPage ...>
@@ -206,9 +209,9 @@ In diesem Beispiel wird das erste [`BoxView`](xref:Xamarin.Forms.BoxView) als Ze
 ![Boxviews mit Stil Klassen formatieren](style-class-images/boxviews.png)
 
 > [!IMPORTANT]
-> Mehrere Formatklassen können auf ein-Steuerelement angewendet werden [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) , da die- `IList<string>`Eigenschaft vom Typ ist. Wenn dies auftritt, werden Stil Klassen in aufsteigender Listen Reihenfolge angewendet. Wenn also mehrere Formatklassen identische Eigenschaften festlegen, hat die Eigenschaft in der Style-Klasse, die sich in der höchsten Listenposition befindet, Vorrang.
+> Mehrere Formatklassen können auf ein-Steuerelement angewendet werden, da die- [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) Eigenschaft vom Typ ist `IList<string>` . Wenn dies auftritt, werden Stil Klassen in aufsteigender Listen Reihenfolge angewendet. Wenn also mehrere Formatklassen identische Eigenschaften festlegen, hat die Eigenschaft in der Style-Klasse, die sich in der höchsten Listenposition befindet, Vorrang.
 
-Der entsprechende C#-Code ist:
+Der entsprechende C#-Code lautet:
 
 ```csharp
 ...
@@ -225,4 +228,4 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Einfache Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [Grundlegende Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

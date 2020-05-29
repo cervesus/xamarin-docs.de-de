@@ -1,39 +1,42 @@
 ---
-title: Zeichnen eines einfachen Kreises in SkiaSharp
-description: Dieser Artikel erläutert die Grundlagen von SkiaSharp-Zeichnung, einschließlich Leinwände und Paint-Objekte in Xamarin.Forms-Anwendungen, und dies mit Beispielcode wird veranschaulicht.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: a0ab6a965c2507c01f5b7ebdc3670e6661ca481e
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+title: ''
+description: In diesem Artikel werden die Grundlagen der skiasharp-Zeichnung erläutert, einschließlich der canvasen und der Paint-Objekte in Xamarin.Forms Anwendungen, und es wird ein Beispielcode veranschaulicht.
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545633"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137721"
 ---
-# <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in SkiaSharp
+# <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Erlernen der Grundlagen von SkiaSharp-Zeichnungen, einschließlich Leinwände, und Zeichnen von Objekten_
+_Erlernen Sie die Grundlagen der skiasharp-Zeichnung, einschließlich der canvasen und der Paint-Objekte_
 
-In diesem Artikel erläutert die Konzepte der Zeichnen von Grafiken in Xamarin.Forms mithilfe von SkiaSharp, einschließlich der Erstellung einer `SKCanvasView` Objekt zum Hosten der Grafik, Verarbeitung der `PaintSurface` -Ereignis, und Verwenden einer `SKPaint` Objekt, das Angeben von Farbe und andere Funktionen zum Zeichnen Attribute.
+In diesem Artikel werden die Konzepte des Zeichnens von Grafiken in Xamarin.Forms mithilfe von skiasharp vorgestellt. dazu gehören das Erstellen eines `SKCanvasView` Objekts zum Hosten der Grafiken, das Behandeln des `PaintSurface` Ereignisses und das Verwenden eines- `SKPaint` Objekts zum Angeben von Farben und anderen Zeichnungs Attributen.
 
-Die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Programm enthält den Beispielcode für diese Reihe von SkiaSharp-Artikeln. Die erste Seite berechtigt ist **einfachen Kreises** und ruft die Seitenklasse [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Dieser Code zeigt, wie Sie das Zeichnen eines Kreises in der Mitte der Seite mit einem Radius von 100 Pixel. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist Blau.
+Das [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Programm enthält den gesamten Beispielcode für diese Reihe von skiasharp-Artikeln. Auf der ersten Seite wird der **einfache Kreis** aufgerufen und die Page-Klasse aufgerufen [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) . Dieser Code zeigt, wie ein Kreis in der Mitte der Seite mit einem Radius von 100 Pixeln gezeichnet wird. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist blau.
 
 ![](circle-images/circleexample.png "A blue circle outlined in red")
 
-Die [ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page-Klasse leitet sich von `ContentPage` und enthält zwei `using` Direktiven für die SkiaSharp-Namespaces:
+Die [`SimpleCircle`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page-Klasse wird von abgeleitet `ContentPage` und enthält zwei `using` Direktiven für die skiasharp-Namespaces:
 
 ```csharp
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 ```
 
-Der folgende Konstruktor der Klasse erstellt eine [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView) Objekt, fügt einen Handler für die [ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface) Ereignis und legt die `SKCanvasView` Objekt als Inhalt der Seite:
+Der folgende Konstruktor der-Klasse erstellt ein [`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView) -Objekt, fügt einen Handler für das [`PaintSurface`](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface) -Ereignis an und legt das- `SKCanvasView` Objekt als Inhalt der Seite fest:
 
 ```csharp
 public SimpleCirclePage()
@@ -46,9 +49,9 @@ public SimpleCirclePage()
 }
 ```
 
-Die `SKCanvasView` belegt den gesamten Bereich der Seite Inhalt. Sie können auch kombinieren, einem `SKCanvasView` mit anderen Xamarin.Forms `View` ableitungen, wie Sie sehen in anderen Beispielen.
+Der `SKCanvasView` belegt den gesamten Inhalts Bereich der Seite. Alternativ können Sie eine `SKCanvasView` mit anderen Xamarin.Forms `View` Ableitungen kombinieren, wie Sie in anderen Beispielen sehen werden.
 
-Die `PaintSurface` -Ereignishandler ist, in dem sich alle Ihre Zeichnung sollen. Diese Methode kann mehrmals aufgerufen, während das Programm ausgeführt wird, damit sie alle Informationen zum neu erstellen verwalten soll der Grafiken anzeigen:
+Der `PaintSurface` Ereignishandler ist der Ort, an dem Sie Ihre Zeichnung durchführen. Diese Methode kann mehrmals aufgerufen werden, während das Programm ausgeführt wird. Daher sollten Sie alle Informationen erhalten, die zum erneuten Erstellen der Grafik Anzeige erforderlich sind:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -58,16 +61,16 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Die [ `SKPaintSurfaceEventArgs` ](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs) -Objekt, das das Ereignis verfügt über zwei Eigenschaften:
+Das [`SKPaintSurfaceEventArgs`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs) Objekt, das das Ereignis begleitet, verfügt über zwei Eigenschaften:
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) vom Typ [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) vom Typ [`SKSurface`](xref:SkiaSharp.SKSurface)
+- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)vom Typ[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
+- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)vom Typ[`SKSurface`](xref:SkiaSharp.SKSurface)
 
-Die `SKImageInfo` Struktur enthält Informationen über die Zeichenoberfläche, vor allem die Breite und Höhe in Pixel. Die `SKSurface` Objekt darstellt, die Zeichenoberfläche selbst. In diesem Programm ist die Zeichenoberfläche ein video anzeigen, aber in anderen Programmen eine `SKSurface` Objekt kann auch repräsentieren eine Bitmap, mit denen Sie SkiaSharp gezeichnet werden soll.
+Die `SKImageInfo` Struktur enthält Informationen über die Zeichen Oberfläche, vor allem deren Breite und Höhe in Pixel. Das- `SKSurface` Objekt stellt die Zeichen Oberfläche selbst dar. In diesem Programm ist die Zeichen Oberfläche eine Videoanzeige, aber in anderen Programmen kann ein `SKSurface` Objekt auch eine Bitmap darstellen, die Sie zum Zeichnen von skiasharp verwenden.
 
-Die wichtigste Eigenschaft von `SKSurface` ist [ `Canvas` ](xref:SkiaSharp.SKSurface.Canvas) des Typs [ `SKCanvas` ](xref:SkiaSharp.SKCanvas). Diese Klasse ist eine Grafik Zeichnungskontext, die Sie verwenden, um die eigentlichen Zeichenvorgang führen. Die `SKCanvas` -Objekt kapselt einen Grafikzustand, einschließlich grafiktransformationen und Clipping.
+Die wichtigste Eigenschaft von `SKSurface` ist [`Canvas`](xref:SkiaSharp.SKSurface.Canvas) vom Typ [`SKCanvas`](xref:SkiaSharp.SKCanvas) . Diese Klasse ist ein Grafik Zeichnungs Kontext, den Sie verwenden, um die eigentliche Zeichnung auszuführen. Das `SKCanvas` -Objekt kapselt einen Grafik Zustand, der Grafik Transformationen und Clipping umfasst.
 
-Hier ist eine typische Anfang eine `PaintSurface` -Ereignishandler:
+Hier ist ein typischer Start eines- `PaintSurface` Ereignis Handlers:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -82,9 +85,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Die [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear) Methode löscht den Zeichenbereich durch eine transparente Farbe. Eine Überladung können Sie eine Hintergrundfarbe für die Canvas angegeben.
+Die- [`Clear`](xref:SkiaSharp.SKCanvas.Clear) Methode löscht den Zeichenbereich mit einer transparenten Farbe. Mit einer Überladung können Sie eine Hintergrundfarbe für den Zeichenbereich angeben.
 
-Das Ziel hierbei ist einen roten Kreis mit blau gefüllt zu zeichnen. Da dieser bestimmten Grafik zwei unterschiedliche Farben enthält, muss der Auftrag in zwei Schritten erfolgen. Der erste Schritt ist die Gliederung des Kreises zu zeichnen. Um die Farbe und andere Merkmal der Zeile anzugeben, erstellt und initialisiert ein [ `SKPaint` ](xref:SkiaSharp.SKPaint) Objekt:
+Das Ziel hierbei ist das Zeichnen eines roten Kreises, der blau gefüllt ist. Da dieses Grafik Bild zwei verschiedene Farben enthält, muss der Auftrag in zwei Schritten ausgeführt werden. Der erste Schritt besteht darin, die Kontur des Kreises zu zeichnen. Um die Farbe und andere Merkmale der Zeile anzugeben, erstellen und initialisieren Sie ein [`SKPaint`](xref:SkiaSharp.SKPaint) Objekt:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -100,19 +103,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die [ `Style` ](xref:SkiaSharp.SKPaint.Style) Eigenschaft gibt an, dass Sie möchten *Stroke* einer Zeile (in diesem Fall die Gliederung des Kreises) statt *Füllung* inneren. Die drei Elemente von der [ `SKPaintStyle` ](xref:SkiaSharp.SKPaintStyle) Enumeration lauten wie folgt:
+Die- [`Style`](xref:SkiaSharp.SKPaint.Style) Eigenschaft gibt an, dass Sie eine Linie (in diesem Fall die Gliederung des Kreises) als *Strich* zeichnen möchten, anstatt das innere *auszufüllen* . Die drei Member der- [`SKPaintStyle`](xref:SkiaSharp.SKPaintStyle) Enumeration lauten wie folgt:
 
 - [`Fill`](xref:SkiaSharp.SKPaintStyle.Fill)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-Die Standardeinstellung ist `Fill`. Verwenden Sie die dritte Option, um die Linie zu zeichnen, und füllen das innere mit der gleichen Farbe.
+Der Standardwert lautet `Fill`. Verwenden Sie die dritte Option, um die Zeile zu zeichnen, und füllen Sie das Innere mit der gleichen Farbe aus.
 
-Legen Sie die [ `Color` ](xref:SkiaSharp.SKPaint.Color) Eigenschaft auf einen Wert vom Typ [ `SKColor` ](xref:SkiaSharp.SKColor). Eine Möglichkeit zum Abrufen einer `SKColor` Wert ist das Konvertieren einer Xamarin.Forms `Color` -Wert in ein `SKColor` Wert mithilfe der Erweiterungsmethode [ `ToSKColor` ](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*). Die [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions) -Klasse in der `SkiaSharp.Views.Forms` Namespace enthält andere Methoden, die zwischen der Xamarin.Forms-Werte und SkiaSharp-Werte zu konvertieren.
+Legen Sie die- [`Color`](xref:SkiaSharp.SKPaint.Color) Eigenschaft auf einen Wert vom Typ fest [`SKColor`](xref:SkiaSharp.SKColor) . Eine Möglichkeit, einen-Wert zu erhalten, `SKColor` besteht darin, einen Xamarin.Forms `Color` Wert `SKColor` mithilfe der-Erweiterungsmethode in einen-Wert umzuwandeln [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) . Die- [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions) Klasse im- `SkiaSharp.Views.Forms` Namespace enthält andere Methoden, die zwischen Xamarin.Forms Werten und skiasharp-Werten konvertieren.
 
-Die [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft gibt die Stärke der Linie an. Hier wird es auf 25 Pixel festgelegt.
+Die- [`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth) Eigenschaft gibt die Stärke der Linie an. Hier ist der Wert auf 25 Pixel festgelegt.
 
-Sie verwenden, die `SKPaint` Objekt, das den Kreis gezeichnet werden soll:
+Sie verwenden dieses `SKPaint` Objekt, um den Kreis zu zeichnen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -123,11 +126,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Koordinaten werden relativ zur linken oberen Ecke der Anzeigeoberfläche angegeben. X-Koordinaten Erhöhung auf der rechten Seite und Y-Koordinaten Erhöhung ausfällt. In der Diskussion über Grafiken häufig die mathematische Notation (X, y) verwendet, um einen Punkt anzugeben. Der Punkt (0, 0) der oberen linken Ecke der Anzeigeoberfläche und häufig aufgerufen wird die *Ursprung*.
+Koordinaten werden relativ zur oberen linken Ecke der Anzeige Oberfläche angegeben. X-Koordinaten erhöhen den rechten und Y-Koordinaten erhöhen das Herunterfahren. Im Erörterung von Grafiken wird häufig die Mathematische Notation (x, y) verwendet, um einen Punkt anzugeben. Der Punkt (0, 0) ist die linke obere Ecke der Anzeige Oberfläche und wird häufig als *Ursprung*bezeichnet.
 
-Die ersten beiden Argumente der `DrawCircle` die X- und Y-Koordinaten für den Mittelpunkt des Kreises anzuzeigen. Diese werden auf die Hälfte der Breite und Höhe der Anzeigeoberfläche platzieren den Mittelpunkt des Kreises in der Mitte der Anzeigeoberfläche zugewiesen. Das dritte Argument gibt den Radius des Kreises, und das letzte Argument ist der `SKPaint` Objekt.
+Die ersten beiden Argumente von `DrawCircle` geben die X-und Y-Koordinaten der Mitte des Kreises an. Diese werden der Hälfte der Breite und Höhe der Anzeige Oberfläche zugewiesen, um die Mitte des Kreises in der Mitte der Anzeige Oberfläche zu platzieren. Das dritte Argument gibt den Radius des Kreises an, und das letzte Argument ist das- `SKPaint` Objekt.
 
-Um das Innere des Kreises zu füllen, können Sie zwei Eigenschaften des Ändern der `SKPaint` Objekt, und rufen `DrawCircle` erneut aus. Dieser Code zeigt außerdem eine alternative Möglichkeit zum Abrufen einer `SKColor` Wert eines der vielen Felder von der [ `SKColors` ](xref:SkiaSharp.SKColors) Struktur:
+Um das Innere des Kreises auszufüllen, können Sie zwei Eigenschaften des `SKPaint` Objekts ändern und erneut aufzurufen `DrawCircle` . Dieser Code zeigt auch eine alternative Methode, um einen `SKColor` Wert aus einem der vielen Felder der Struktur zu erhalten [`SKColors`](xref:SkiaSharp.SKColors) :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -139,26 +142,26 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Dieses Mal die `DrawCircle` Aufruf füllt den Kreis, der mithilfe der neuen Eigenschaften der `SKPaint` Objekt.
+Dieses Mal füllt der `DrawCircle` Aufruf den Kreis mithilfe der neuen Eigenschaften des- `SKPaint` Objekts.
 
 Hier ist das Programm, das unter IOS und Android ausgeführt wird:
 
 [![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
 
-Wenn das Programm selbst ausführen, können Sie aktivieren das Telefon oder den Simulator auf die Seite, um festzustellen, wie die Abbildung neu gezeichnet wird. Jedes Mal neu gezeichnet wird, die Grafik muss die `PaintSurface` -Ereignishandler erneut aufgerufen wird.
+Wenn Sie das Programm selbst ausführen, können Sie das Telefon oder den Simulator seitwärts schalten, um zu sehen, wie die Grafik neu gezeichnet wird. Jedes Mal, wenn die Grafik neu gezeichnet werden muss, `PaintSurface` wird der Ereignishandler erneut aufgerufen.
 
-Es ist auch möglich, grafische Objekte mit Farbverläufen oder Bitmap Kacheln mit Farbe versehen. Diese Optionen werden im Abschnitt erläutert, auf [ **SkiaSharp-Shader**](../effects/shaders/index.md).
+Es ist auch möglich, grafische Objekte mit Farbverläufen oder bitmapkacheln zu färben. Diese Optionen werden im Abschnitt über [**skiasharp-Shader**](../effects/shaders/index.md)erläutert.
 
-Ein `SKPaint` Objekt ist nicht viel mehr als eine Auflistung von Grafiken, die Eigenschaften zu zeichnen. Diese Objekte sind einfach. Sie können wiederverwenden `SKPaint` Objekte wie dieses Programm ist, oder Sie können mehrere erstellen `SKPaint` Objekte für verschiedene Kombinationen von Eigenschaften zu zeichnen. Sie erstellen und initialisieren Sie diese Objekte außerhalb des dem `PaintSurface` -Ereignishandler, und Sie können sie speichern als Felder in der Page-Klasse.
+Bei einem `SKPaint` Objekt handelt es sich nur um eine Auflistung von Grafik Zeichnungs Eigenschaften. Diese Objekte sind einfach. Sie können `SKPaint` Objekte wie dieses Programm wieder verwenden, oder Sie können mehrere `SKPaint` Objekte für verschiedene Kombinationen von Zeichnungs Eigenschaften erstellen. Sie können diese Objekte außerhalb des Ereignis Handlers erstellen und initialisieren `PaintSurface` , und Sie können Sie als Felder in der Page-Klasse speichern.
 
 > [!NOTE]
-> Die `SKPaint` -Klasse definiert ein [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) in das Rendern von Grafiken Antialiasing zu aktivieren. Anti-Aliasing im Allgemeinen führt visuell weichere Kanten, sollten Sie wahrscheinlich zum Festlegen dieser Eigenschaft auf `true` in den meisten Ihrer `SKPaint` Objekte. Der Einfachheit halber, diese Eigenschaft ist _nicht_ in den meisten die Beispielseiten festgelegt.
+> Die- `SKPaint` Klasse definiert ein [`IsAntialias`](xref:SkiaSharp.SKPaint.IsAntialias) , um das Antialiasing beim Rendering Ihrer Grafiken zu aktivieren. Antialiasing führt in der Regel zu optisch reibungslosen Kanten, sodass Sie diese Eigenschaft wahrscheinlich `true` in den meisten ihrer Objekte auf festlegen möchten `SKPaint` . Aus Gründen der Einfachheit wird diese Eigenschaft _nicht_ in den meisten Beispielseiten festgelegt.
 
-Obwohl die Breite der Umriss des Kreises als 25 Pixeln angegeben wird &mdash; oder ein Viertel der den Radius des Kreises &mdash; anscheinend schlankere werden, und es gibt ein guter Grund dafür: halbe Breite der Zeile durch den blauen Kreis verdeckt ist. Die Argumente für die `DrawCircle` Methode der abstrakten geometrischen Koordinaten eines Kreises zu definieren. Das blaue innere ist auf diese Dimension auf den nächsten Pixel groß, aber die Gliederung 25 Pixel breiten überspannt geometrische Kreises &mdash; Hälfte auf der Innenseite und die andere Hälfte außerhalb.
+Obwohl die Breite des Kreis Gliederung als 25 Pixel &mdash; oder ein Viertel des Radius des Kreises festgelegt ist &mdash; , scheint es dünner zu sein, und es gibt einen guten Grund dafür: die Hälfte der Breite der Linie wird durch den blauen Kreis verdeckt. Die Argumente für die `DrawCircle` Methode definieren die abstrakten geometrischen Koordinaten eines Kreises. Das blaue Innere ist für diese Dimension auf das nächste Pixel dimensioniert, aber die 25 Pixel weite Gliederung verspannt die geometrische Kreis &mdash; Hälfte auf der inneren und der Hälfte der Außenseite.
 
-Im folgenden Beispiel in der [Integrieren von Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) Artikel veranschaulicht dies visuell.
+Das nächste Beispiel im Artikel " [Integration Xamarin.Forms in](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) " veranschaulicht dies visuell.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

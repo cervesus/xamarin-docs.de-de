@@ -1,26 +1,29 @@
 ---
-title: ListView SelectionMode unter Windows
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die Windows-plattformspezifische verwenden, die steuert, ob Elemente in einer ListView auf Tap-Gesten reagieren können.
-ms.prod: xamarin
-ms.assetid: 57EF3A7F-1407-4B31-AE21-D149293D4228
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: f6a90a8a0397db99a245f706450e7dc83097a45e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6c73f46d2845be7bb54e24cd02ec22f3c2cd386d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656898"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137245"
 ---
 # <a name="listview-selectionmode-on-windows"></a>ListView SelectionMode unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Für die universelle Windows-Plattform, standardmäßig die Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) verwendet die systemeigenen `ItemClick` Ereignis, um auf die Interaktion, anstatt das systemeigene reagieren `Tapped` Ereignis. Dadurch wird die Barrierefreiheitsfunktionen, sodass die Windows-Sprachausgabe und Tastatur interagieren können die `ListView`. Allerdings rendert es auch alle Bewegungen Tippen Sie in der `ListView` nicht mehr funktionsfähig.
+Auf dem universelle Windows-Plattform verwendet standardmäßig Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) das Native- `ItemClick` Ereignis, um auf die Interaktion statt auf das Native Ereignis zu reagieren `Tapped` . Dies bietet Barrierefreiheits Funktionen, sodass die Windows-Sprachausgabe und die Tastatur mit dem interagieren können `ListView` . Allerdings rendert Sie auch beliebige Tap-Gesten innerhalb der nicht `ListView` operable.
 
-Dies universelle Windows-Plattform plattformspezifische Steuerelemente, ob Elemente [`ListView`](xref:Xamarin.Forms.ListView) in einer auf Tap-Gesten reagieren können und ob das `ListView` Native- `ItemClick` Ereignis `Tapped` das-Ereignis oder das-Ereignis auslöst. Es ist in XAML verwendet, durch Festlegen der [ `ListView.SelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SelectionModeProperty) angefügte Eigenschaft auf den Wert der [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) Enumeration:
+Dies universelle Windows-Plattform plattformspezifische Steuerelemente, ob Elemente in einer [`ListView`](xref:Xamarin.Forms.ListView) auf Tap-Gesten reagieren können und ob das Native- `ListView` Ereignis das- `ItemClick` Ereignis oder das-Ereignis auslöst `Tapped` . Sie wird in XAML verwendet, indem die [`ListView.SelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SelectionModeProperty) angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) :
 
 ```xaml
 <ContentPage ...
@@ -33,7 +36,7 @@ Dies universelle Windows-Plattform plattformspezifische Steuerelemente, ob Eleme
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,20 +46,20 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 ```
 
-Die `ListView.On<Windows>` Methode gibt an, dass diese plattformspezifischen nur für die universelle Windows-Plattform ausgeführt wird. Die [ `ListView.SetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) -Namespace wird verwendet, um Steuerelement gibt an, ob Elemente in einer [ `ListView` ](xref:Xamarin.Forms.ListView) tippen von Bewegungen mit reagieren können die [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) Enumeration, die Bereitstellung von zwei möglicher Werten:
+Die- `ListView.On<Windows>` Methode gibt an, dass diese plattformspezifische nur auf der universelle Windows-Plattform ausgeführt wird. [ `ListView.SetSelectionMode` ] (Xref: Xamarin.Forms . Platformconfiguration. windowsspecific. ListView. setSelectionMode ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Windows, Xamarin.Forms . ListView}, Xamarin.Forms . Platformconfiguration. windowsspecific. listviewselectionmode))-Methode im- [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) Namespace wird verwendet, um zu steuern, ob Elemente in einer [`ListView`](xref:Xamarin.Forms.ListView) auf Tap-Gesten reagieren können, wobei die- [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) Enumeration zwei mögliche Werte bereitstellt:
 
-- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible) – Gibt an, dass die `ListView` wird ausgelöst, die Native `ItemClick` Ereignis behandeln Interaktion, und geben Sie daher die Barrierefreiheitsfunktionen. Aus diesem Grund die Windows-Sprachausgabe und Tastatur interagieren die `ListView`. Jedoch Elemente in der `ListView` Gesten tippen kann nicht reagieren. Dies ist das Standardverhalten für `ListView` Instanzen für die universelle Windows-Plattform.
-- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible) – Gibt an, dass die `ListView` wird ausgelöst, die Native `Tapped` zu Interaktion zu behandelnden Ereignisses. Aus diesem Grund Elemente in der `ListView` Gesten tippen reagieren können. Allerdings sind keine Barrierefreiheitsfunktionen vorhanden und somit die Windows-Sprachausgabe und die Tastatur können nicht interagieren mit der `ListView`.
+- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible)– Gibt an, dass das `ListView` native `ItemClick` Ereignis auslöst, um die Interaktion zu verarbeiten, und somit Barrierefreiheits Funktionen bereitstellen. Daher können die Windows-Sprachausgabe und die Tastatur mit interagieren `ListView` . Allerdings können Elemente in der `ListView` nicht auf Tap-Gesten reagieren. Dies ist das Standardverhalten für- `ListView` Instanzen auf dem universelle Windows-Plattform.
+- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible)– Gibt an, dass das `ListView` native `Tapped` Ereignis auslöst, um die Interaktion zu verarbeiten. Daher können Elemente in `ListView` auf Tap-Gesten reagieren. Allerdings gibt es keine Barrierefreiheits Funktionen, weshalb die Windows-Sprachausgabe und die Tastatur nicht mit dem interagieren können `ListView` .
 
 > [!NOTE]
-> Die `Accessible` und `Inaccessible` die Modi schließen sich gegenseitig aus, und Sie müssen eine zugängliche Wahlmöglichkeiten [ `ListView` ](xref:Xamarin.Forms.ListView) oder `ListView` , die auf Gesten tippen reagieren können.
+> Die `Accessible` `Inaccessible` Auswahl Modi und schließen sich gegenseitig aus, und Sie müssen zwischen einem zugänglichen [`ListView`](xref:Xamarin.Forms.ListView) oder einem wählen, `ListView` das auf Tap-Gesten reagieren kann.
 
-Darüber hinaus die [ `GetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.GetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView})) Methode kann verwendet werden, um das aktuelle [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode).
+Außerdem ist [ `GetSelectionMode` ] (Xref: Xamarin.Forms . Platformconfiguration. windowsspecific. ListView. getSelectionMode ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. Windows, Xamarin.Forms . ListView}))-Methode kann verwendet werden, um die aktuelle-Methode zurückzugeben [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) .
 
-Das Ergebnis ist, die einem angegebenen [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) gilt, an die [ `ListView` ](xref:Xamarin.Forms.ListView), steuert, ob Elemente in der `ListView` Gesten, tippen Sie auf reagieren können und somit, ob das systemeigene `ListView` löst die `ItemClick` oder `Tapped` Ereignis.
+Das Ergebnis ist, dass ein [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) angegebenes auf den angewendet wird [`ListView`](xref:Xamarin.Forms.ListView) , der steuert, ob Elemente im `ListView` auf Tap-Gesten reagieren können, und ob der Native `ListView` das- `ItemClick` Ereignis oder das-Ereignis auslöst `Tapped` .
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [Windowsspecific-API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

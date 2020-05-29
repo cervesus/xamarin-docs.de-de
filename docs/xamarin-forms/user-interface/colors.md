@@ -1,39 +1,42 @@
 ---
-title: Farben in xamarin. Forms
-description: Xamarin. Forms stellt eine flexible, plattformübergreifende farbklasse bereit. In diesem Artikel werden die Funktionen erläutert, die von der Color-Klasse bereitgestellt werden, und wie Sie verwendet wird.
-ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: 42b532b8565d2d8e0289b8fd446e1dd7762a09ac
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Farben inXamarin.Forms
+description: Xamarin.Formsstellt eine flexible, plattformübergreifende farbklasse bereit. In diesem Artikel werden die Funktionen erläutert, die von der Color-Klasse bereitgestellt werden, und wie Sie verwendet wird.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517030"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137344"
 ---
-# <a name="colors-in-xamarinforms"></a>Farben in xamarin. Forms
+# <a name="colors-in-xamarinforms"></a>Farben inXamarin.Forms
 
-[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
 _Xamarin. Forms stellt eine flexible, plattformübergreifende farbklasse bereit._
 
-In diesem Artikel werden die verschiedenen Möglichkeiten [`Color`](xref:Xamarin.Forms.Color) vorgestellt, mit denen die-Klasse in xamarin. Forms verwendet werden kann.
+In diesem Artikel werden die verschiedenen Möglichkeiten vorgestellt, [`Color`](xref:Xamarin.Forms.Color) mit denen die-Klasse in verwendet werden kann Xamarin.Forms .
 
-Die [`Color`](xref:Xamarin.Forms.Color) -Klasse stellt eine Reihe von Methoden zum Erstellen `Color` einer-Instanz bereit:
+Die- [`Color`](xref:Xamarin.Forms.Color) Klasse stellt eine Reihe von Methoden zum Erstellen einer- `Color` Instanz bereit:
 
-- **Benannte Farben** : eine Auflistung allgemeiner benannter Farben, einschließlich `Red`, `Green`und `Blue`.
+- **Benannte Farben** : eine Auflistung allgemeiner benannter Farben, einschließlich `Red` , `Green` und `Blue` .
 - `FromHex`-Zeichen folgen Wert, der der in HTML verwendeten Syntax ähnelt, z. b. "00FF00". Alpha kann optional als erstes Zeichenpaar ("CC00FF00") angegeben werden.
 - `FromHsla`-Hue, Sättigung und Helligkeits `double` Werte mit optionalem Alpha-Wert (0,0-1.0).
 - `FromHsv`-Hue, Sättigung und Wert `int` oder `double` Werte.
 - `FromHsva`-Hue, Sättigung und Wert `int` oder `double` Werte.
-- `FromRgb`-Rot, grün und blau `int` -Werte (0-255).
+- `FromRgb`-Rot, grün und blau- `int` Werte (0-255).
 - `FromRgba`-Rot, grün, blau und Alpha `int` Werte (0-255).
-- `FromUint`-Legen Sie einen `double` einzelnen Wert fest, der **ARGB**darstellt.
+- `FromUint`-Legen Sie einen einzelnen Wert fest, der `double` **ARGB**darstellt.
 
-Hier sind einige Beispiel Farben, die den `BackgroundColor` einiger Bezeichnungen zugewiesen sind, die unterschiedliche Variationen der zulässigen Syntax verwenden:
+Hier sind einige Beispiel Farben, die den einiger Bezeichnungen zugewiesen sind, die `BackgroundColor` unterschiedliche Variationen der zulässigen Syntax verwenden:
 
 ```csharp
 var red    = new Label { Text = "Red",   BackgroundColor = Color.Red };
@@ -49,7 +52,7 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-Diese Farben werden auf jeder Plattform unten angezeigt. Beachten Sie die endgültige Farbe `Accent` , die eine blaue Farbe für IOS und Android ist. Dieser Wert wird von xamarin. Forms definiert.
+Diese Farben werden auf jeder Plattform unten angezeigt. Beachten Sie die endgültige Farbe `Accent` , die eine blaue Farbe für IOS und Android ist. dieser Wert wird von definiert Xamarin.Forms .
 
  [![Farb Demo](colors-images/colors-sml.png "Farb Demo")](colors-images/colors.png#lightbox "Farb Demo")
 
@@ -57,7 +60,7 @@ Diese Farben werden auf jeder Plattform unten angezeigt. Beachten Sie die endgü
 
 Verwenden `Default` Sie, um einen Farbwert auf den Platt Form Standardwert zurückzusetzen (oder neu festzulegen) (das Verständnis dafür, dass dies eine andere zugrunde liegende Farbe auf jeder Plattform für jede Eigenschaft darstellt).
 
-Entwickler können diesen Wert verwenden, um eine `Color` Eigenschaft festzulegen, sollten diese Instanz jedoch **nicht** nach den RGB-Werten der Komponente Abfragen (Sie sind alle auf "-1" festgelegt).
+Entwickler können diesen Wert verwenden, um eine Eigenschaft festzulegen, `Color` sollten diese Instanz jedoch **nicht** nach den RGB-Werten der Komponente Abfragen (Sie sind alle auf "-1" festgelegt).
 
 ## <a name="colortransparent"></a>Color. transparent
 
@@ -71,16 +74,16 @@ Unter IOS und Android wird diese Instanz auf eine Kontrastfarbe festgelegt, die 
 
 [`Color`](xref:Xamarin.Forms.Color)-Instanzen enthalten die folgenden zusätzlichen Methoden:
 
-- `AddLuminosity`-Gibt einen `Color` zurück, indem die Helligkeit um das angegebene Delta geändert wird.
-- `MultiplyAlpha`-Gibt einen `Color` zurück, indem das Alpha geändert und mit dem angegebenen Alpha-Wert multipliziert wird.
-- `ToHex`-gibt eine hexadezimale `string` Darstellung eines `Color`zurück.
-- `WithHue`-Gibt einen `Color`zurück, der den Farbton durch den angegebenen Wert ersetzt.
-- `WithLuminosity`-Gibt einen `Color`zurück, der die Leuchtkraft durch den angegebenen Wert ersetzt.
-- `WithSaturation`-Gibt einen `Color`zurück, der die Sättigung durch den angegebenen Wert ersetzt.
+- `AddLuminosity`-Gibt einen zurück, `Color` indem die Helligkeit um das angegebene Delta geändert wird.
+- `MultiplyAlpha`-Gibt einen zurück `Color` , indem das Alpha geändert und mit dem angegebenen Alpha-Wert multipliziert wird.
+- `ToHex`-gibt eine hexadezimale Darstellung eines zurück `string` `Color` .
+- `WithHue`-Gibt einen zurück `Color` , der den Farbton durch den angegebenen Wert ersetzt.
+- `WithLuminosity`-Gibt einen zurück `Color` , der die Leuchtkraft durch den angegebenen Wert ersetzt.
+- `WithSaturation`-Gibt einen zurück `Color` , der die Sättigung durch den angegebenen Wert ersetzt.
 
 ## <a name="implicit-conversions"></a>Implizite Konvertierungen
 
-Die implizite Konvertierung zwischen `Xamarin.Forms.Color` dem `System.Drawing.Color` -Typ und dem-Typ kann ausgeführt werden:
+Die implizite Konvertierung zwischen dem `Xamarin.Forms.Color` -Typ und dem- `System.Drawing.Color` Typ kann ausgeführt werden:
 
 ```csharp
 Xamarin.Forms.Color xfColor = Xamarin.Forms.Color.FromRgb(0, 72, 255);
@@ -95,7 +98,7 @@ Xamarin.Forms.Color xfColor2 = sdColor;
 
 ## <a name="deviceruntimeplatform"></a>Device. runtimeplatform
 
-In diesem Code Ausschnitt wird die `Device.RuntimePlatform` -Eigenschaft verwendet, um die Farbe eines `ActivityIndicator`selektiv festzulegen:
+In diesem Code Ausschnitt wird die- `Device.RuntimePlatform` Eigenschaft verwendet, um die Farbe eines selektiv festzulegen `ActivityIndicator` :
 
 ```csharp
 ActivityIndicator activityIndicator = new ActivityIndicator

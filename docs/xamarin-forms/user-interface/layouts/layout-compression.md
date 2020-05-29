@@ -1,41 +1,44 @@
 ---
-title: Layoutkomprimierung
-description: Layoutkomprimierung werden bestimmte Layouts aus der visuellen Struktur Versuch zur Verbesserung der Leistung beim Rendern der Seite entfernt. In diesem Artikel erläutert das Aktivieren der layoutkomprimierung und die Vorteile, die sie bieten kann.
-ms.prod: xamarin
-ms.assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/13/2017
-ms.openlocfilehash: 453da8c1b943591c331950ecb433bf0055faf85d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770362"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138024"
 ---
 # <a name="layout-compression"></a>Layoutkomprimierung
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
-_Layoutkomprimierung werden bestimmte Layouts aus der visuellen Struktur Versuch zur Verbesserung der Leistung beim Rendern der Seite entfernt. In diesem Artikel erläutert das Aktivieren der layoutkomprimierung und die Vorteile, die sie bieten kann._
+_Bei der layoutkomprimierung werden angegebene Layouts aus der visuellen Struktur entfernt, um die Seiten Rendering-Leistung zu verbessern. In diesem Artikel wird erläutert, wie Sie die layoutkomprimierung und die damit verbundenen Vorteile aktivieren können._
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms führt Layout mithilfe von zwei Reihen von rekursiven-Methodenaufrufen:
+Xamarin.Formsführt das Layout mit zwei Reihen von rekursiven Methoden aufrufen aus:
 
-- Layout beginnt am oberen Rand der visuellen Struktur mit einer Seite, und es durchläuft alle Verzweigungen der visuellen Struktur so, dass jedes visuelle Element auf einer Seite eingeschlossen. Elemente, die übergeordneten Elemente für andere Elemente sind für die größenanpassung und Positionierung von deren untergeordnete Elemente relativ zu sich selbst verantwortlich.
-- Aufhebung der Gültigkeit wird mit dem eine Änderung in einem Element auf einer Seite ein neues Layoutzyklus auslöst. Elemente werden als ungültig betrachtet, wenn sie nicht mehr die richtige Größe oder Position verfügen. Jedes Element in der visuellen Struktur, die über untergeordnete Elemente verfügt wird gewarnt, wenn eines der untergeordneten Größe ändert. Aus diesem Grund kann eine Änderung der Größe eines Elements in der visuellen Struktur Änderungen verursachen, die der Struktur aufwärts ripple.
+- Layout beginnt am oberen Rand der visuellen Struktur mit einer Seite und durchläuft alle Verzweigungen der visuellen Struktur, um alle visuellen Elemente auf einer Seite zu umfassen. Elemente, die übergeordnete Elemente anderer Elemente sind, sind für die Größenanpassung und Positionierung ihrer untergeordneten Elemente in Bezug auf sich verantwortlich.
+- Die Invalidierung ist der Prozess, durch den eine Änderung in einem Element auf einer Seite einen neuen layoutcycle auslöst. Elemente werden als ungültig betrachtet, wenn Sie nicht mehr über die richtige Größe oder Position verfügen. Jedes Element in der visuellen Struktur mit untergeordneten Elementen wird immer dann benachrichtigt, wenn eines der untergeordneten Elemente seine Größe ändert. Daher kann eine Änderung der Größe eines Elements in der visuellen Strukturänderungen verursachen, die die Struktur aufschlagen.
 
-Weitere Informationen dazu, wie Xamarin.Forms Layouts ausführt, finden Sie unter [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md).
+Weitere Informationen zur Funktionsweise von Xamarin.Forms Layout finden Sie unter [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md).
 
-Das Ergebnis im Layoutprozess ist eine Hierarchie von systemeigenen Steuerelementen. Diese Hierarchie enthält jedoch zusätzlichen Container-Renderer und der Wrapper für die Plattform Renderern jedoch weiter die Hierarchie von Inhaltsansichten schachteln. Je tiefer die Ebene der Schachtelung, desto größer der Umfang der Arbeit, die Xamarin.Forms ausführen, um eine Seite angezeigt. Für komplexe Layouts kann die Hierarchie von Inhaltsansichten Tiefe und Breite, mit mehreren Schachtelungsebenen sein.
+Das Ergebnis des Layoutprozesses ist eine Hierarchie von systemeigenen Steuerelementen. Diese Hierarchie enthält jedoch zusätzliche Container-Renderer und Wrapper für Platt Form Renderer, die das Schachteln der Ansichts Hierarchie weiter erhöhen. Umso tiefer die Schachtelungs Ebene, desto größer ist der Arbeitsaufwand, der Xamarin.Forms zum Anzeigen einer Seite ausgeführt werden muss. Bei komplexen Layouts kann die Ansichts Hierarchie tief und breit sein und über mehrere Schachtelungs Ebenen verfügen.
 
-Betrachten Sie beispielsweise die folgende Schaltfläche aus der beispielanwendung für die Anmeldung bei Facebook aus:
+Sehen Sie sich beispielsweise die folgende Schaltfläche aus der Beispielanwendung für die Anmeldung bei Facebook an:
 
-![](layout-compression-images/facebook-button.png "Schaltfläche \"Facebook\"")
+![](layout-compression-images/facebook-button.png "Facebook Button")
 
-Diese Schaltfläche wird als ein benutzerdefiniertes Steuerelement mit der folgenden XAML-Ansicht-Hierarchie angegeben:
+Diese Schaltfläche wird als benutzerdefiniertes Steuerelement mit der folgenden XAML-Ansichts Hierarchie angegeben:
 
 ```xaml
 <ContentView ...>
@@ -55,18 +58,18 @@ Diese Schaltfläche wird als ein benutzerdefiniertes Steuerelement mit der folge
 </ContentView>
 ```
 
-Die resultierende Hierarchie für eine geschachtelte Ansicht mit untersucht werden kann, [Xamarin Inspector](~/tools/inspector/index.md). Unter Android wird enthält die Hierarchie, eine geschachtelte Ansicht 17 Ansichten:
+Die resultierende Struktur der Hierarchie-Sicht kann mit [Xamarin Inspector](~/tools/inspector/index.md)untersucht werden. Unter Android enthält die Hierarchie der Hierarchie der Hierarchie 17 Ansichten:
 
-![](layout-compression-images/no-compression.png "Hierarchie von Inhaltsansichten für Facebook-Schaltfläche")
+![](layout-compression-images/no-compression.png "View Hierarchy for Facebook Button")
 
-Layoutkomprimierung, die für Xamarin.Forms-Anwendungen auf IOS- und Android-Plattformen verfügbar ist, zielt darauf ab, so vereinfachen Sie die Ansicht schachteln, die durch das Entfernen des angegebenen Layouts aus der visuellen Struktur, die Seite-Rendering-Leistung verbessern kann. Der Leistungsvorteil, der bereitgestellt wird, variiert abhängig von der Komplexität einer Seite, die Version des Betriebssystems verwendet wird und das Gerät, auf dem die Anwendung ausgeführt wird. Die größten Leistungssteigerungen werden jedoch bei älteren Geräten zu verzeichnen sein.
+Die layoutkomprimierung, die für Xamarin.Forms Anwendungen auf den IOS-und Android-Plattformen verfügbar ist, zielt darauf ab, die Schachtelung der Ansicht zu vereinfachen, indem angegebene Layouts aus der visuellen Struktur entfernt werden, wodurch die Seiten Rendering verbessert werden kann Der Leistungsvorteil hängt von der Komplexität einer Seite, der Version des verwendeten Betriebssystems und dem Gerät ab, auf dem die Anwendung ausgeführt wird. Die größten Leistungssteigerungen werden jedoch bei älteren Geräten zu verzeichnen sein.
 
 > [!NOTE]
-> Während in diesem Artikel auf die Ergebnisse der Anwendung layoutkomprimierung unter Android ausgerichtet ist, ist es gleichermaßen anwendbar für iOS.
+> Obwohl sich dieser Artikel auf die Ergebnisse der Anwendung der layoutkomprimierung unter Android konzentriert, ist er gleichermaßen auf IOS anwendbar.
 
 ## <a name="layout-compression"></a>Layoutkomprimierung
 
-In XAML, layoutkomprimierung aktiviert werden kann, indem die `CompressedLayout.IsHeadless` angefügte Eigenschaft zu `true` für eine Layoutklasse:
+In XAML kann die layoutkomprimierung aktiviert werden, indem die `CompressedLayout.IsHeadless` angefügte-Eigenschaft für `true` eine Layoutklasse auf festgelegt wird:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -74,16 +77,16 @@ In XAML, layoutkomprimierung aktiviert werden kann, indem die `CompressedLayout.
 </StackLayout>   
 ```
 
-Alternativ kann diese in C# -Code aktiviert werden, durch die Angabe der Layout-Instanz als das erste Argument für die `CompressedLayout.SetIsHeadless` Methode:
+Alternativ kann Sie in c# aktiviert werden, indem die layoutanstanz als erstes Argument der-Methode angegeben wird `CompressedLayout.SetIsHeadless` :
 
 ```csharp
 CompressedLayout.SetIsHeadless(stackLayout, true);
 ```
 
 > [!IMPORTANT]
-> Da layoutkomprimierung ein Layout aus der visuellen Struktur entfernt, ist es nicht geeignet für Layouts, die eine visuelle Darstellung aufweisen, oder, die Touch-Punkts erhalten. Aus diesem Grund, die Layouts festgelegt [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Eigenschaften (z. B. [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor), [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible), [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation), [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale), [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) und [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) oder die Gesten akzeptieren, sind keine Kandidaten für Layout Komprimierung. Allerdings führt Aktivieren der layoutkomprimierung auf ein Layout, visuelle Darstellungseigenschaften festlegt, oder, Bewegungen akzeptiert, nicht zu einem Build- oder Fehler. Stattdessen layoutkomprimierung werden angewendet, und visuelle Darstellung von Eigenschaften und gestenerkennung, im Hintergrund fehl.
+> Da bei der layoutkomprimierung ein Layout aus der visuellen Struktur entfernt wird, eignet es sich nicht für Layouts, die eine visuelle Darstellung haben oder die Berührungs Eingaben erhalten. Daher sind Layouts, die [`VisualElement`](xref:Xamarin.Forms.VisualElement) Eigenschaften festlegen (z [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) . b., [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) , [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) , [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) , [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) und [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) oder, die Gesten akzeptieren, keine Kandidaten für die layoutkomprimierung. Das Aktivieren der layoutkomprimierung für ein Layout, das Eigenschaften visueller Darstellungen festlegt, oder die Gesten akzeptiert, führt jedoch nicht zu einem Build-oder Laufzeitfehler. Stattdessen wird die layoutkomprimierung angewendet, und die Eigenschaften der visuellen Darstellung und die Gestenerkennung schlagen im Hintergrund fehl.
 
-Für die Facebook-Schaltfläche kann die layoutkomprimierung für die drei Layout Klassen aktiviert werden:
+Für die Facebook-Schaltfläche kann die layoutkomprimierung in den drei layoutklassen aktiviert werden:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -96,30 +99,30 @@ Für die Facebook-Schaltfläche kann die layoutkomprimierung für die drei Layou
 </StackLayout>  
 ```
 
-Unter Android führt dies in einer Hierarchie eine geschachtelte Ansicht von 14 Ansichten:
+Unter Android führt dies zu einer Hierarchie der Hierarchie mit einer Hierarchie von 14 Ansichten:
 
-![](layout-compression-images/layout-compression.png "Hierarchie von Inhaltsansichten für Facebook-Schaltfläche mit Layoutkomprimierung")
+![](layout-compression-images/layout-compression.png "View Hierarchy for Facebook Button with Layout Compression")
 
-Im Vergleich zu der ursprünglichen eine geschachtelte Ansichtshierarchie 17 Ansichten, stellt dies eine Reduzierung der Anzahl von Ansichten der 17 % dar. Und diese Reduzierung unbedeutend erscheinen, kann die Verringerung der Ansicht über eine gesamte Seite noch folgenreicher sein.
+Im Vergleich zur ursprünglichen Hierarchie der Hierarchie mit der ursprünglichen Struktur von 17 Sichten stellt dies eine Reduzierung der Anzahl von Sichten von 17% dar. Diese Reduzierung mag unbedeutend erscheinen, aber die Sicht Reduzierung auf eine gesamte Seite kann signifikanter sein.
 
 ### <a name="fast-renderers"></a>Schnelle Renderer
 
-Schnelle Renderer reduzieren die Inflations- und renderingkosten von Xamarin.Forms-Steuerelementen in Android, indem Sie die resultierende native Hierarchie vereinfachen. Dies verbessert die Leistung weiter durch das Erstellen von weniger Objekte, was wiederum in einer weniger komplexen visuellen Struktur und weniger speicherauslastung führt. Weitere Informationen zu schnellen Renderern finden Sie unter [schnelle Renderer](~/xamarin-forms/internals/fast-renderers.md).
+Schnelle Renderer verringern die Inflations-und renderingkosten von Steuer Xamarin.Forms Elementen auf Android, indem die resultierende Native Ansichts Hierarchie vereinfacht wird. Dies verbessert die Leistung, indem weniger Objekte erstellt werden, was wiederum zu einer weniger komplexen visuellen Struktur und weniger Arbeitsspeicher Auslastung führt. Weitere Informationen zu schnellen rendererarbeitern finden Sie unter [schnelle Renderer](~/xamarin-forms/internals/fast-renderers.md).
 
-Für die Facebook-Schaltfläche in der beispielanwendung erzeugt das Kombinieren von layoutkomprimierung und schnelle Renderer eine Hierarchie eine geschachtelte Ansicht von 8 wechseln:
+Für die Facebook-Schaltfläche in der Beispielanwendung erzeugt die Kombination der layoutkomprimierung und der schnellen Renderer eine Schaltfläche für die Hierarchie von 8 Ansichten:
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "Hierarchie von Inhaltsansichten für Facebook-Schaltfläche mit Layoutkomprimierung und schnelle Renderer")
+![](layout-compression-images/layout-compression-with-fast-renderers.png "View Hierarchy for Facebook Button with Layout Compression and Fast Renderers")
 
-Im Vergleich zu der ursprünglichen eine geschachtelte Ansichtshierarchie 17 Ansichten, stellt dies eine Reduzierung der 52 % dar.
+Im Vergleich zur ursprünglichen Hierarchie der Hierarchie mit der ursprünglichen Struktur von 17 Sichten stellt dies eine Reduzierung von 52% dar.
 
-Die beispielanwendung enthält eine Seite aus einer echten Anwendung extrahiert. Ohne layoutkomprimierung und schnelle Renderer erzeugt die Seite eine Hierarchie eine geschachtelte Ansicht von 130 Ansichten unter Android. Aktivieren von schnellen Renderern und layoutkomprimierung auf richtige Layout Klassen wird die geschachtelte Hierarchie zu 70 Ansichten, eine Verringerung der 46 % reduziert.
+Die Beispielanwendung enthält eine Seite, die aus einer realen Anwendung extrahiert wurde. Ohne layoutkomprimierung und schnelle Renderer erzeugt die Seite eine Hierarchie der Hierarchie mit einer Hierarchie von 130 in Android. Durch die Aktivierung schneller Renderer und layoutkomprimierung für geeignete layoutklassen wird die Hierarchie der geschachtelte View auf 70 Sichten reduziert, was zu einer Verringerung von 46% führt.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Layoutkomprimierung werden bestimmte Layouts aus der visuellen Struktur Versuch zur Verbesserung der Leistung beim Rendern der Seite entfernt. Der daraus resultierende Leistungsvorteil variiert je nach Komplexität einer Seite, der Version des verwendeten Betriebssystems und des Geräts, auf dem die Anwendung ausgeführt wird. Die größten Leistungssteigerungen werden jedoch bei älteren Geräten zu verzeichnen sein.
+Bei der layoutkomprimierung werden angegebene Layouts aus der visuellen Struktur entfernt, um die Seiten Rendering-Leistung zu verbessern. Der daraus resultierende Leistungsvorteil variiert je nach Komplexität einer Seite, der Version des verwendeten Betriebssystems und des Geräts, auf dem die Anwendung ausgeführt wird. Die größten Leistungssteigerungen werden jedoch bei älteren Geräten zu verzeichnen sein.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Erstellen eines benutzerdefinierten Layouts](~/xamarin-forms/user-interface/layouts/custom.md)
 - [Schnelle Renderer](~/xamarin-forms/internals/fast-renderers.md)
-- [LayoutCompression (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+- [Layoutcompression (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)

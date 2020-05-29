@@ -1,24 +1,27 @@
 ---
-title: Haupt-Thread Steuerungs Updates unter IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die das Ausführen von Steuerelement Layout und Renderingupdates im Haupt Thread ermöglicht.
-ms.prod: xamarin
-ms.assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: d55ef4a97d5d4f320bf152ba05c86aff82eb2f1e
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 005e8216b887b694b33916179ca276cf8091e006
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200119"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135979"
 ---
 # <a name="main-thread-control-updates-on-ios"></a>Haupt-Thread Steuerungs Updates unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese IOS-plattformspezifische ermöglicht die Ausführung von Steuerelement Layout und Renderingupdates im Haupt Thread, anstatt in einem Hintergrund Thread ausgeführt zu werden. Es sollten nur selten erforderlich sein, aber in einigen Fällen kann verhindern, dass abstürzen. Die verwendeten in XAML durch Festlegen der `Application.HandleControlUpdatesOnMainThread` bindbare Eigenschaft `true`:
+Diese IOS-plattformspezifische ermöglicht die Ausführung von Steuerelement Layout und Renderingupdates im Haupt Thread, anstatt in einem Hintergrund Thread ausgeführt zu werden. Er sollte nur selten benötigt werden, aber in einigen Fällen können Abstürze verhindert werden. Die in XAML verbraucht ist, indem die `Application.HandleControlUpdatesOnMainThread` bindbare Eigenschaft auf festgelegt wird `true` :
 
 ```xaml
 <Application ...
@@ -28,7 +31,7 @@ Diese IOS-plattformspezifische ermöglicht die Ausführung von Steuerelement Lay
 </Application>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -38,10 +41,10 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(true);
 ```
 
-Die `Application.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die `Application.SetHandleControlUpdatesOnMainThread` Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet um zu steuern, ob das Steuerelementlayout und Rendern von Updates ausgeführt werden, auf dem Hauptthread statt in einem Hintergrundthread ausgeführt wird. Darüber hinaus die `Application.GetHandleControlUpdatesOnMainThread` Methode kann verwendet werden, um zurück, ob das Steuerelementlayout und Rendern von Updates für den Hauptthread ausgeführt werden.
+Die- `Application.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die `Application.SetHandleControlUpdatesOnMainThread` -Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird verwendet, um zu steuern, ob Steuerelement Layout-und renderingaktualisierungen im Haupt Thread ausgeführt werden, anstatt in einem Hintergrund Thread ausgeführt zu werden. Außerdem `Application.GetHandleControlUpdatesOnMainThread` kann die-Methode verwendet werden, um zurückzugeben, ob Steuerelement Layout-und renderingaktualisierungen im Haupt Thread ausgeführt werden.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

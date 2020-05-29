@@ -1,18 +1,21 @@
 ---
-title: Einführung in die Entwicklung von Unternehmensanwendungen
-description: Dieses Kapitel bietet eine Einführung in die Entwicklung von Unternehmens-apps und führt die Mobile App eshoponcontainers ein.
-ms.prod: xamarin
-ms.assetid: cbce0659-fa03-447a-86ec-140438143230
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12582c567a439cf4e0236724bd373c3508f18748
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70760227"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139355"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmensanwendungen
 
@@ -36,16 +39,16 @@ Eine effektive Lösung für diese Herausforderungen besteht darin, eine app in d
 
 Es gibt jedoch viele Probleme, die gelöst werden müssen, wenn eine app in diskrete, locker gekoppelte Komponenten partitioniert wird. Dazu gehören:
 
-- Die Entscheidung, wie Sie eine saubere Trennung von Anliegen zwischen den Steuerelementen der Benutzeroberfläche und ihrer Logik bereitstellen. Eine der wichtigsten Entscheidungen bei der Erstellung einer xamarin. Forms Enterprise-App besteht darin, ob Geschäftslogik in Code Behind-Dateien platziert werden soll oder ob eine saubere Trennung der Aspekte zwischen den Steuerelementen der Benutzeroberfläche und ihrer Logik geschaffen werden soll, um die APP zu verbessern. wart Bar und Test fähig. Weitere Informationen finden Sie unter [Model-View-ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
+- Die Entscheidung, wie Sie eine saubere Trennung von Anliegen zwischen den Steuerelementen der Benutzeroberfläche und ihrer Logik bereitstellen. Eine der wichtigsten Entscheidungen bei der Erstellung einer Xamarin.Forms Unternehmens-App besteht darin, ob Sie Geschäftslogik in Code Behind-Dateien platzieren oder ob Sie eine saubere Trennung der Belange zwischen den Steuerelementen der Benutzeroberfläche und der Logik erstellen möchten, damit die APP besser verwaltbar und testbar ist. Weitere Informationen finden Sie unter [Model-View-ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
 - Bestimmen, ob ein Abhängigkeits Injektions Container verwendet werden soll. Abhängigkeits einschleusungs Container reduzieren die Abhängigkeits Kopplung zwischen Objekten, indem eine Möglichkeit bereitgestellt wird, Klassen Instanzen mit ihren Abhängigkeiten zu erstellen und ihre Lebensdauer basierend auf der Konfiguration des Containers zu verwalten. Weitere Informationen finden Sie unter [Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 - Die Auswahl zwischen der Plattform stellt eine ereignisbasierte und lose gekoppelte Nachrichten basierte Kommunikation zwischen Komponenten bereit, die für die Verknüpfung durch Objekt-und Typverweise ungeeignet sind. Weitere Informationen finden Sie unter Einführung in die [Kommunikation zwischen lose gekoppelten Komponenten](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md).
 - Entscheiden, wie zwischen Seiten navigiert werden soll, einschließlich des Aufrufs der Navigation und der Position, an der sich Navigations Logik befinden sollte. Weitere Informationen finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md).
 - Festlegen, wie Benutzereingaben auf Richtigkeit überprüft werden. Die Entscheidung muss einschließen, wie Benutzereingaben überprüft werden, und wie der Benutzer über Validierungs Fehler benachrichtigt wird. Weitere Informationen finden Sie unter [Validierung](~/xamarin-forms/enterprise-application-patterns/validation.md).
 - Entscheiden, wie die Authentifizierung durchgeführt werden soll und wie Ressourcen mit Autorisierung geschützt werden. Weitere Informationen finden Sie unter [Authentifizierung und Autorisierung](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md).
 - Festlegen des Zugriffs auf Remote Daten von Webdiensten, einschließlich des zuverlässigen abzurufenden von Daten und Zwischenspeichern von Daten. Weitere Informationen finden Sie unter [zugreifen auf Remote Daten](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md).
-- Entscheiden, wie die APP getestet werden soll. Weitere Informationen finden Sie unter Komponenten [Tests](~/xamarin-forms/enterprise-application-patterns/unit-testing.md).
+- Entscheiden, wie die APP getestet werden soll. Weitere Informationen finden Sie unter [Komponententests](~/xamarin-forms/enterprise-application-patterns/unit-testing.md).
 
-Dieses Handbuch enthält Anleitungen zu diesen Problemen und konzentriert sich auf die Kern Muster und-Architektur zum Entwickeln einer plattformübergreifenden Enterprise-App mithilfe von xamarin. Forms. Die Anleitung soll Ihnen helfen, anpassbaren, verwaltbaren und testbaren Code zu entwickeln, indem Sie gängige xamarin. Forms Enterprise-App-Entwicklungsszenarien adressieren und die Aspekte der Präsentation, Präsentationslogik und Entitäten durch Unterstützung für die Model-View-ViewModel (MVVM)-Muster.
+Dieses Handbuch enthält Anleitungen zu diesen Problemen und konzentriert sich auf die Kern Muster und-Architektur zum Entwickeln einer plattformübergreifenden Unternehmens-App mit Xamarin.Forms . Die Anleitung soll dabei helfen, anpassbaren, verwaltbaren und testbaren Code zu schaffen, indem allgemeine Xamarin.Forms Szenarien für die Entwicklung von Unternehmensanwendungen behandelt werden, und durch die Unterstützung für das Model-View-ViewModel (MVVM)-Muster unterstützt wird.
 
 ## <a name="sample-application"></a>Beispielanwendung
 
@@ -70,7 +73,7 @@ Die Beispielanwendung wird mit drei Client-apps ausgeliefert:
 
 - Eine mit ASP.net Core entwickelte MVC-Anwendung.
 - Eine Single-Page-Anwendung (Spa), die mit Angular 2 und typescript entwickelt wurde. Bei diesem Ansatz für Webanwendungen wird vermieden, dass ein Roundtrip zum Server mit jedem Vorgang durchgeführt wird.
-- Eine Mobile App mit xamarin. Forms entwickelt, die IOS, Android und die universelle Windows-Plattform (UWP) unterstützt.
+- Eine Mobile App mit entwickelt Xamarin.Forms , die IOS, Android und die universelle Windows-Plattform (UWP) unterstützt.
 
 Weitere Informationen zu den Webanwendungen finden Sie unter Entwerfen [und entwickeln moderner Webanwendungen mit ASP.net Core und Microsoft Azure](https://aka.ms/WebAppEbook).
 
@@ -87,7 +90,7 @@ Weitere Informationen zur Implementierung der Back-End-Dienste finden Sie unter 
 
 ### <a name="mobile-app"></a>Mobile App
 
-Dieser Leitfaden konzentriert sich auf das entwickeln plattformübergreifender Unternehmens-apps mit xamarin. Forms und verwendet die Mobile App eshoponcontainers als Beispiel. Abbildung 1-2 zeigt die Seiten aus den eshoponcontainers-Mobile App, die die zuvor beschriebenen Funktionen bereitstellen.
+Dieser Leitfaden konzentriert sich auf das entwickeln plattformübergreifender Unternehmens-Apps mithilfe von Xamarin.Forms und verwendet die Mobile App "eshoponcontainers" als Beispiel. Abbildung 1-2 zeigt die Seiten aus den eshoponcontainers-Mobile App, die die zuvor beschriebenen Funktionen bereitstellen.
 
 [![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
 
@@ -95,23 +98,23 @@ Dieser Leitfaden konzentriert sich auf das entwickeln plattformübergreifender U
 
 Der Mobile App nutzt die Back-End-Dienste, die von der eshoponcontainers-Referenz Anwendung bereitgestellt werden Sie kann jedoch so konfiguriert werden, dass Sie Daten von mockdiensten für diejenigen nutzt, die die Bereitstellung der Back-End-Dienste vermeiden möchten.
 
-Die eshoponcontainers-Mobile App führt die folgenden xamarin. Forms-Funktionen aus:
+Die eshoponcontainers-Mobile App führt die folgenden Xamarin.Forms Funktionen aus:
 
 - XAML
 - Steuerelemente
 - Bindungen
 - Konver
 - Stile
-- Animations
+- Animationen
 - Befehle
 - Verhalten
-- Trigger
+- Auslöser
 - Effekte
 - Benutzerdefinierte Renderer
 - MessagingCenter
 - Benutzerdefinierte Steuerelemente
 
-Weitere Informationen zu dieser Funktion finden Sie in der [xamarin. Forms-Dokumentation](~/xamarin-forms/index.yml)und im Thema zum [Erstellen von Mobile Apps mit xamarin. Forms](https://aka.ms/xamebook).
+Weitere Informationen zu dieser Funktion finden Sie in der [ Xamarin.Forms Dokumentation](~/xamarin-forms/index.yml)und im Thema zum [Erstellen Xamarin.Forms von Mobile Apps mit ](https://aka.ms/xamebook).
 
 Außerdem werden Komponententests für einige der Klassen in den eshoponcontainers-Mobile App bereitgestellt.
 
@@ -119,7 +122,7 @@ Außerdem werden Komponententests für einige der Klassen in den eshoponcontaine
 
 Die eshoponcontainers-Mobile App Lösung organisiert den Quellcode und andere Ressourcen in-Projekten. Alle Projekte verwenden Ordner, um den Quellcode und andere Ressourcen in Kategorien zu organisieren. In der folgenden Tabelle werden die Projekte beschrieben, aus denen sich die eshoponcontainers-Mobile App zusammenführen:
 
-|Projekt|Beschreibung|
+|Project|Beschreibung|
 |--- |--- |
 |eshoponcontainers. Core|Dieses Projekt ist das Projekt der portablen Klassenbibliothek (Portable Class Library, PCL), das den freigegebenen und den freigegebenen Benutzeroberflächen|
 |eshoponcontainers. Droid|Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für die Android-App.|
@@ -130,7 +133,7 @@ Die eshoponcontainers-Mobile App Lösung organisiert den Quellcode und andere Re
 |eshoponcontainers. testrauunner. Windows|Dieses Projekt ist der universelle Windows-Plattform Test Runner für das Projekt eshoponcontainers. Unittests.|
 |eshoponcontainers. Unittests|Dieses Projekt enthält Komponententests für das Projekt eshoponcontainers. Core.|
 
-Die Klassen aus dem eshoponcontainers-Mobile App können in jeder xamarin. Forms-App mit geringfügigen oder gar keinen Änderungen wieder verwendet werden.
+Die Klassen aus dem eshoponcontainers-Mobile App können in jeder Xamarin.Forms App mit geringfügigen oder ohne Änderungen wieder verwendet werden.
 
 ##### <a name="eshoponcontainerscore-project"></a>eshoponcontainers. Core-Projekt
 
@@ -138,21 +141,21 @@ Das PCL-Projekt "eshoponcontainers. Core" enthält die folgenden Ordner:
 
 |Ordner|Beschreibung|
 |--- |--- |
-|Animations|Enthält Klassen, die die Verwendung von Animationen in XAML ermöglichen.|
+|Animationen|Enthält Klassen, die die Verwendung von Animationen in XAML ermöglichen.|
 |Verhalten|Enthält Verhalten, die für Ansichts Klassen verfügbar gemacht werden.|
 |Steuerelemente|Enthält von der APP verwendete benutzerdefinierte Steuerelemente.|
 |Konver|Enthält Wert Konverter, die benutzerdefinierte Logik auf eine Bindung anwenden.|
-|Effekte|Enthält die `EntryLineColorEffect` Klasse, die verwendet wird, um die Rahmenfarbe bestimmter `Entry` Steuerelemente zu ändern.|
-|Ausnahmen|Enthält die benutzerdefinierten `ServiceAuthenticationException`.|
-|Erweiterungen|Enthält Erweiterungs Methoden für die Klassen `VisualElement` und `IEnumerable`.|
-|Hospiz|Enthält Hilfsklassen für die app.|
+|Effekte|Enthält die- `EntryLineColorEffect` Klasse, die verwendet wird, um die Rahmenfarbe bestimmter Steuerelemente zu ändern `Entry` .|
+|Ausnahmen|Enthält die benutzerdefinierten `ServiceAuthenticationException` .|
+|Erweiterungen|Enthält Erweiterungs Methoden für die `VisualElement` -Klasse und die- `IEnumerable` Klasse.|
+|Hilfsmethoden|Enthält Hilfsklassen für die app.|
 |Modelle|Enthält die Modellklassen für die app.|
-|Eigenschaften|Enthält `AssemblyInfo.cs`, eine .net-assemblymetadatendatei.|
+|Eigenschaften|Enthält `AssemblyInfo.cs` , eine .net-assemblymetadatendatei.|
 |Dienste|Enthält Schnittstellen und Klassen, mit denen Dienste implementiert werden, die für die APP bereitgestellt werden.|
-|Trigger|Enthält den `BeginAnimation`-auslösen, der verwendet wird, um eine Animation in XAML aufzurufen.|
-|Validierungen|Enthält Klassen, die zum Validieren von Dateneingaben beteiligt sind.|
+|Auslöser|Enthält den- `BeginAnimation` Aufruf, mit dem eine Animation in XAML aufgerufen wird.|
+|Überprüfungen|Enthält Klassen, die zum Validieren von Dateneingaben beteiligt sind.|
 |ViewModels|Enthält die Anwendungslogik, die für Seiten verfügbar gemacht wird.|
-|Ansichten|Enthält die Seiten für die app.|
+|Sichten|Enthält die Seiten für die app.|
 
 ##### <a name="platform-projects"></a>Platt Form Projekte
 
@@ -160,7 +163,7 @@ Die Platt Form Projekte enthalten Effekt Implementierungen, benutzerdefinierte r
 
 ## <a name="summary"></a>Zusammenfassung
 
-Die plattformübergreifenden Mobile App Entwicklungs Tools und-Plattformen von xamarin bieten eine umfassende Lösung für Mobile B2E-, B2B-und B2C-Client-apps, die die Möglichkeit bieten, Code auf allen Zielplattformen (Ios, Android und Windows) gemeinsam zu nutzen und zu helfen, die Gesamtbetriebskosten. Apps können Ihre Benutzeroberfläche und ihren App-Logik Code freigeben und gleichzeitig das Aussehen und Gefühl der nativen Plattform beibehalten.
+Die plattformübergreifenden Mobile App Entwicklungs Tools und-Plattformen von xamarin bieten eine umfassende Lösung für Mobile B2E-, B2B-und B2C-Client-apps, die die Möglichkeit bieten, Code auf allen Zielplattformen (Ios, Android und Windows) gemeinsam zu nutzen und die Gesamtbetriebskosten zu senken. Apps können Ihre Benutzeroberfläche und ihren App-Logik Code freigeben und gleichzeitig das Aussehen und Gefühl der nativen Plattform beibehalten.
 
 Entwickler von Unternehmens-apps stellen verschiedene Herausforderungen dar, die die Architektur der APP während der Entwicklung ändern können. Daher ist es wichtig, eine APP zu erstellen, damit Sie im Laufe der Zeit geändert oder erweitert werden kann. Der Entwurf für diese Anpassbarkeit kann schwierig sein, aber es umfasst in der Regel die Partitionierung einer APP in diskrete, lose gekoppelte Komponenten, die problemlos in eine APP integriert werden können.
 

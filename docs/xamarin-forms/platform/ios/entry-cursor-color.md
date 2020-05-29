@@ -1,24 +1,27 @@
 ---
-title: Eingabe Cursor Farbe unter IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die die Cursor Farbe eines Eintrags festlegt.
-ms.prod: xamarin
-ms.assetid: 867D70BA-53F9-4434-8094-85D71DCECC2D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 8bd282002ec85350d7a0c413225d35754991e460
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4d934fd2155a6a088dd543658555bf104b38f302
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197936"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138540"
 ---
 # <a name="entry-cursor-color-on-ios"></a>Eingabe Cursor Farbe unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-[`Entry`](xref:Xamarin.Forms.Entry) Mit diesem IOS-plattformspezifischen wird die Cursor Farbe eines auf eine angegebene Farbe festgelegt. Es ist in XAML verwendet, durch Festlegen der [ `Entry.CursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty) bindbare Eigenschaft eine [ `Color` ](xref:Xamarin.Forms.Color):
+Mit diesem IOS-plattformspezifischen wird die Cursor Farbe eines [`Entry`](xref:Xamarin.Forms.Entry) auf eine angegebene Farbe festgelegt. Sie wird in XAML verwendet, indem die [`Entry.CursorColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty) bindbare Eigenschaft auf festgelegt wird [`Color`](xref:Xamarin.Forms.Color) :
 
 ```xaml
 <ContentPage ...
@@ -29,7 +32,7 @@ ms.locfileid: "70197936"
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -40,14 +43,14 @@ var entry = new Xamarin.Forms.Entry();
 entry.On<iOS>().SetCursorColor(Color.LimeGreen);
 ```
 
-Die `Entry.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die [ `Entry.SetCursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetCursorColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry},Xamarin.Forms.Color)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace, legt die cursorfarbe mit einem angegebenen [ `Color` ](xref:Xamarin.Forms.Color). Darüber hinaus die [ `Entry.GetCursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.GetCursorColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry})) Methode kann verwendet werden, um die aktuelle cursorfarbe abzurufen.
+Die- `Entry.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. [ `Entry.SetCursorColor` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. entry. setcurrsorcolor ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Eintrag}, Xamarin.Forms . Color))-Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace legt die Cursor Farbe auf eine angegebene fest [`Color`](xref:Xamarin.Forms.Color) . Außerdem ist [ `Entry.GetCursorColor` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. entry. getcurrsorcolor ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Entry}))-Methode kann verwendet werden, um die aktuelle Cursor Farbe abzurufen.
 
-Das Ergebnis ist, die die cursorfarbe in einem [ `Entry` ](xref:Xamarin.Forms.Entry) kann festgelegt werden, zu einem bestimmten [ `Color` ](xref:Xamarin.Forms.Color):
+Das Ergebnis ist, dass die Cursor Farbe in einem [`Entry`](xref:Xamarin.Forms.Entry) auf einen bestimmten festgelegt werden kann [`Color`](xref:Xamarin.Forms.Color) :
 
-![](entry-cursor-color-images/entry-cursorcolor.png "Cursorfarbe Eintrag")
+![](entry-cursor-color-images/entry-cursorcolor.png "Entry Cursor Color")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

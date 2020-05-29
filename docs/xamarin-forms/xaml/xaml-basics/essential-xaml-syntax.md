@@ -1,28 +1,31 @@
 ---
-title: 'Teil 2: Grundlegende XAML-Syntax'
-description: In diesem Artikel wird erläutert, die wesentlichen Funktionen der XAML-Syntax von Eigenschaftenelementen und angefügte Eigenschaften.
-ms.prod: xamarin
-ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/25/2017
-ms.openlocfilehash: f79a07a04eddeea1441f7938fdef210a37fb920a
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 788df5f27066d0d8d1f672d82e94a06ddf5e0916
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306572"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139814"
 ---
-# <a name="part-2-essential-xaml-syntax"></a>Teil 2: Grundlegende XAML-Syntax
+# <a name="part-2-essential-xaml-syntax"></a>Teil 2. Grundlegende XAML-Syntax
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML ist größtenteils zum Instanziieren und Initialisieren von Objekten konzipiert. Häufig müssen Eigenschaften jedoch auf komplexe Objekte festgelegt werden, die nicht einfach als XML-Zeichen folgen dargestellt werden können. manchmal müssen Eigenschaften, die von einer Klasse definiert werden, für eine untergeordnete Klasse festgelegt werden. Diese beiden Anforderungen erfordern die wesentlichen XAML-Syntax Funktionen von Eigenschafts Elementen und angefügten Eigenschaften._
 
-## <a name="property-elements"></a>Property-Elemente
+## <a name="property-elements"></a>Eigenschaften Elemente
 
-In XAML werden die Eigenschaften von Klassen normalerweise als XML-Attribute festgelegt:
+In XAML werden Eigenschaften von Klassen normalerweise als XML-Attribute festgelegt:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -32,7 +35,7 @@ In XAML werden die Eigenschaften von Klassen normalerweise als XML-Attribute fes
        TextColor="Aqua" />
 ```
 
-Es ist jedoch eine alternative Möglichkeit zum Festlegen einer Eigenschaft in XAML. Um diese Alternative mit `TextColor`zu testen, löschen Sie zuerst die vorhandene `TextColor` Einstellung:
+Es gibt jedoch eine alternative Möglichkeit, eine Eigenschaft in XAML festzulegen. Wenn Sie diese Alternative mit testen möchten `TextColor` , löschen Sie zuerst die vorhandene `TextColor` Einstellung:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -41,7 +44,7 @@ Es ist jedoch eine alternative Möglichkeit zum Festlegen einer Eigenschaft in X
        FontSize="Large" />
 ```
 
-Öffnen Sie das leere Element `Label` Tag, indem Sie es in Start-und Endtags aufteilen:
+Öffnen Sie das Tag "Empty-Element", `Label` indem Sie es in Start-und Endtags aufteilen:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -52,7 +55,7 @@ Es ist jedoch eine alternative Möglichkeit zum Festlegen einer Eigenschaft in X
 </Label>
 ```
 
-Fügen Sie innerhalb dieser Tags Start- und Endtags, die den Klassennamen und einen Eigenschaftsnamen, die durch einen Punkt getrennt bestehen:
+Fügen Sie innerhalb dieser Tags Start-und Endtags hinzu, die aus dem Klassennamen und einem Eigenschaftsnamen bestehen, getrennt durch einen Zeitraum:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -65,7 +68,7 @@ Fügen Sie innerhalb dieser Tags Start- und Endtags, die den Klassennamen und ei
 </Label>
 ```
 
-Legen Sie den Wert der Eigenschaft als Inhalt von diesen neuen Tags wie folgt an:
+Legen Sie den Eigenschafts Wert als Inhalt dieser neuen Tags fest, wie folgt:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -78,19 +81,19 @@ Legen Sie den Wert der Eigenschaft als Inhalt von diesen neuen Tags wie folgt an
 </Label>
 ```
 
-Diese beiden Methoden zum Angeben der `TextColor`-Eigenschaft sind funktional äquivalent, verwenden jedoch nicht die zwei Methoden für die gleiche Eigenschaft, da dadurch die-Eigenschaft tatsächlich zweimal festgelegt werden kann und möglicherweise mehrdeutig ist.
+Diese zwei Möglichkeiten, die `TextColor` Eigenschaft anzugeben, sind funktional äquivalent, verwenden jedoch nicht die zwei Methoden für die gleiche Eigenschaft, da dadurch die Eigenschaft effektiv zweimal festgelegt werden kann und möglicherweise mehrdeutig ist.
 
-Mit dieser neuen Syntax ist kann einige praktische Terminologie eingeführt werden:
+Mit dieser neuen Syntax können einige praktische Terminologie eingeführt werden:
 
-- `Label` ist ein *Objekt Element*. Es ist ein Xamarin.Forms-Objekt, das als ein XML-Element.
-- `Text`, `VerticalOptions`, `FontAttributes` und `FontSize` sind *Eigenschafts Attribute*. Xamarin.Forms-Eigenschaften, die als XML-Attribute angegeben werden.
-- In diesem abschließenden Ausschnitt wurde `TextColor` zu einem *Eigenschaften Element*. Es ist eine Xamarin.Forms-Eigenschaft, aber es ist jetzt ein XML-Element.
+- `Label`ist ein *Objekt Element*. Es ist ein-Objekt, das Xamarin.Forms als XML-Element ausgedrückt wird.
+- `Text`, `VerticalOptions` `FontAttributes` und `FontSize` sind *Eigenschafts Attribute*. Sie sind Xamarin.Forms Eigenschaften, die als XML-Attribute ausgedrückt werden.
+- In diesem abschließenden Code Ausschnitt `TextColor` wurde zu einem *Eigenschafts Element*. Dabei handelt es sich um eine Xamarin.Forms Eigenschaft, aber es handelt sich um ein XML-Element.
 
-Die Definition der Eigenschaft, die Elemente am möglicherweise zuerst anscheinend zu einer Verletzung der XML-Syntax, aber es ist nicht. Der Zeitraum hat keine besondere Bedeutung in XML-Datei. An einen XML-Decoder ist `Label.TextColor` einfach ein normales untergeordnetes Element.
+Die Definition von Eigenschafts Elementen scheint zunächst eine Verletzung der XML-Syntax zu sein, aber das ist nicht der Fall. Der Zeitraum hat keine besondere Bedeutung in XML. Bei einem XML-Decoder `Label.TextColor` ist einfach ein normales untergeordnetes Element.
 
-In XAML ist diese Syntax jedoch sehr spezielle. Eine der Regeln für Eigenschafts Elemente besteht darin, dass im `Label.TextColor`-Tag nichts anderes vorkommen darf. Der Wert der Eigenschaft wird immer als Inhalt zwischen dem Eigenschaftenelement Start- und Endtags definiert.
+In XAML ist diese Syntax jedoch sehr speziell. Eine der Regeln für Eigenschafts Elemente besteht darin, dass im Tag nichts anderes vorkommen darf `Label.TextColor` . Der Wert der Eigenschaft wird immer als Inhalt zwischen den Start-und Endtags des Eigenschaften Elements definiert.
 
-Sie können auf mehr als eine Eigenschaft Eigenschaftenelement Syntax verwenden:
+Sie können die Eigenschafts Element Syntax für mehr als eine Eigenschaft verwenden:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -107,7 +110,7 @@ Sie können auf mehr als eine Eigenschaft Eigenschaftenelement Syntax verwenden:
 </Label>
 ```
 
-Sie können auch Eigenschaftenelement Syntax für alle Eigenschaften:
+Oder Sie können die Eigenschafts Element-Syntax für alle Eigenschaften verwenden:
 
 ```xaml
 <Label>
@@ -129,9 +132,9 @@ Sie können auch Eigenschaftenelement Syntax für alle Eigenschaften:
 </Label>
 ```
 
-Auf den ersten Eigenschaftenelementsyntax mag eine unnötige langwieriger Ersatz für eine vergleichsweise einfach, und in diesen Beispielen ist sicherlich der Fall.
+Zuerst könnte die Syntax der Eigenschaften Elemente für etwas, das vergleichsweise relativ einfach ist, ein nicht benötigter, langer Windowstext sein, und in diesen Beispielen ist dies sicherlich der Fall.
 
-Eigenschaftenelement Syntax wird jedoch wichtig, wenn der Wert einer Eigenschaft zu komplex ist, als einfache Zeichenfolge ausgedrückt werden. Innerhalb der Property-Element Tags können Sie ein anderes Objekt zu instanziieren und seine Eigenschaften festlegen. Beispielsweise können Sie eine Eigenschaft wie z. b. `VerticalOptions` mit einem `LayoutOptions` Wert mit Eigenschafts Einstellungen explizit festlegen:
+Die Syntax von Eigenschafts Elementen ist jedoch unverzichtbar, wenn der Wert einer Eigenschaft zu komplex ist, um als einfache Zeichenfolge ausgedrückt zu werden. Innerhalb der Eigenschaften-Element-Tags können Sie ein anderes Objekt instanziieren und seine Eigenschaften festlegen. Beispielsweise können Sie eine Eigenschaft wie z. b. explizit `VerticalOptions` auf einen `LayoutOptions` Wert mit Eigenschafts Einstellungen festlegen:
 
 ```xaml
 <Label>
@@ -142,9 +145,9 @@ Eigenschaftenelement Syntax wird jedoch wichtig, wenn der Wert einer Eigenschaft
 </Label>
 ```
 
-Ein weiteres Beispiel: der `Grid` verfügt über zwei Eigenschaften mit dem Namen `RowDefinitions` und `ColumnDefinitions`. Diese beiden Eigenschaften sind vom Typ `RowDefinitionCollection` und `ColumnDefinitionCollection`, bei denen es sich um Auflistungen von `RowDefinition`-und `ColumnDefinition` Objekten handelt. In diesem Fall müssen Sie eine Eigenschaftenelement-Syntax zu verwenden, um diese Sammlungen festzulegen.
+Ein weiteres Beispiel: der `Grid` verfügt über zwei Eigenschaften mit dem Namen `RowDefinitions` und `ColumnDefinitions` . Diese beiden Eigenschaften sind vom Typ `RowDefinitionCollection` und `ColumnDefinitionCollection` . dabei handelt es sich um Auflistungen von `RowDefinition` -und- `ColumnDefinition` Objekten. Sie müssen die Eigenschafts Element Syntax verwenden, um diese Auflistungen festzulegen.
 
-Dies ist der Anfang der XAML-Datei für eine `GridDemoPage`-Klasse, die die Eigenschaften Element Tags für die `RowDefinitions`-und `ColumnDefinitions`-Auflistungen anzeigt:
+Im folgenden finden Sie den Anfang der XAML-Datei für eine `GridDemoPage` Klasse, in der die Eigenschaften Element Tags für die-Auflistung und die-Auflistung angezeigt werden `RowDefinitions` `ColumnDefinitions` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -167,25 +170,25 @@ Dies ist der Anfang der XAML-Datei für eine `GridDemoPage`-Klasse, die die Eige
 </ContentPage>
 ```
 
-Beachten Sie, dass die abgekürzte Syntax zum Definieren von automatischer Größenänderung von Zellen, Zellen Pixel Breiten und Höhen und star-Einstellungen.
+Beachten Sie die abgekürzte Syntax zum Definieren von Zellen mit automatischer Größe, Zellen mit Pixel breiten und Höhen sowie Stern Einstellungen.
 
 ## <a name="attached-properties"></a>Angefügte Eigenschaften
 
-Sie haben gerade gesehen, dass die `Grid` Eigenschafts Elemente für die `RowDefinitions`-und `ColumnDefinitions` Auflistungen erfordert, um die Zeilen und Spalten zu definieren. Es muss jedoch auch eine Möglichkeit für den Programmierer geben, die Zeile und die Spalte anzugeben, in denen sich jedes untergeordnete Element des `Grid` befindet.
+Sie haben gerade gesehen, dass `Grid` für die-Auflistung und die-Auflistung Eigenschaften Elemente erforderlich sind `RowDefinitions` `ColumnDefinitions` , um die Zeilen und Spalten zu definieren. Es muss jedoch auch eine Möglichkeit für den Programmierer geben, die Zeile und die Spalte anzugeben, in denen sich die einzelnen untergeordneten Elemente des befinden `Grid` .
 
-Innerhalb des-Tags für jedes untergeordnete Element des-`Grid` Sie die Zeile und die Spalte dieses untergeordneten Elements mithilfe der folgenden Attribute angeben:
+Innerhalb des-Tags für jedes untergeordnete Element von `Grid` Geben Sie die Zeile und die Spalte dieses untergeordneten Elements mithilfe der folgenden Attribute an:
 
 - `Grid.Row`
 - `Grid.Column`
 
-Die Standardwerte dieser Attribute sind 0. Sie können auch angeben, wenn ein untergeordnetes Element über mehr als eine Zeile oder Spalte mit diesen Attributen umfasst:
+Die Standardwerte dieser Attribute sind 0. Sie können auch angeben, ob ein untergeordnetes Element mehr als eine Zeile oder Spalte mit diesen Attributen umfasst:
 
 - `Grid.RowSpan`
 - `Grid.ColumnSpan`
 
-Diese beiden Attribute haben Standardwerte 1.
+Diese beiden Attribute verfügen über die Standardwerte 1.
 
-Hier ist die vollständige GridDemoPage.xaml-Datei ein:
+Hier ist die vollständige Datei "griddemopage. XAML":
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -250,21 +253,21 @@ Hier ist die vollständige GridDemoPage.xaml-Datei ein:
 </ContentPage>
 ```
 
-Die `Grid.Row`-und `Grid.Column` Einstellungen von 0 sind nicht erforderlich, werden jedoch im Allgemeinen aus Gründen der Übersichtlichkeit berücksichtigt.
+Die `Grid.Row` -Einstellung und die- `Grid.Column` Einstellung 0 sind nicht erforderlich, werden jedoch im Allgemeinen aus Gründen der Übersichtlichkeit berücksichtigt.
 
-Hier ist, wie es aussieht:
+Dies sieht wie folgt aus:
 
-[![Raster Layout](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
+[![Rasterlayout](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
-Wenn Sie nur die Syntax beurteilen, werden diese `Grid.Row`-, `Grid.Column`-, `Grid.RowSpan`-und `Grid.ColumnSpan` Attribute als statische Felder oder Eigenschaften `Grid`angezeigt, aber interessanterweise definiert `Grid` nichts mit dem Namen `Row`, `Column`, `RowSpan`oder `ColumnSpan`.
+Wenn Sie nur die-Syntax beurteilen `Grid.Row` , `Grid.Column` werden diese Attribute,, `Grid.RowSpan` und als `Grid.ColumnSpan` statische Felder oder Eigenschaften von angezeigt `Grid` , aber interessanterweise `Grid` definiert nichts namens `Row` , `Column` , `RowSpan` oder `ColumnSpan` .
 
-Stattdessen definiert `Grid` vier bindbare Eigenschaften mit dem Namen `RowProperty`, `ColumnProperty`, `RowSpanProperty`und `ColumnSpanProperty`. Dies sind spezielle Typen von bindbaren Eigenschaften, die als *angefügte Eigenschaften*bezeichnet werden. Sie werden durch die `Grid`-Klasse definiert, aber auf untergeordnete Elemente der `Grid`festgelegt.
+Stattdessen `Grid` definiert vier bindbare Eigenschaften mit den Namen `RowProperty` , `ColumnProperty` , `RowSpanProperty` und `ColumnSpanProperty` . Dies sind spezielle Typen von bindbaren Eigenschaften, die als *angefügte Eigenschaften*bezeichnet werden. Sie werden von der-Klasse definiert, aber auf untergeordnete Elemente `Grid` von festgelegt `Grid` .
 
-Wenn Sie diese angefügten Eigenschaften im Code verwenden möchten, stellt die `Grid`-Klasse statische Methoden mit dem Namen "`SetRow`", "`GetColumn`" usw. bereit. In XAML werden diese angefügten Eigenschaften jedoch als Attribute in den untergeordneten Elementen des `Grid` mit einfachen Eigenschaften Namen festgelegt.
+Wenn Sie diese angefügten Eigenschaften im Code verwenden möchten, `Grid` stellt die-Klasse statische Methoden mit dem Namen `SetRow` , `GetColumn` usw. bereit. In XAML werden diese angefügten Eigenschaften jedoch als Attribute in den untergeordneten Elementen von `Grid` mit einfachen Eigenschaften Namen festgelegt.
 
-Angefügte Eigenschaften sind immer erkennbar in XAML-Dateien als Attribute, die mit einer Klasse und einen Eigenschaftsnamen, die durch einen Punkt getrennt. Sie werden als *angefügte Eigenschaften* bezeichnet, da Sie von einer Klasse definiert werden (in diesem Fall `Grid`), aber an andere Objekte angefügt sind (in diesem Fall untergeordnete Elemente des `Grid`). Beim Layout können die `Grid` die Werte dieser angefügten Eigenschaften Abfragen, um zu ermitteln, wo die einzelnen untergeordneten Elemente platziert werden sollen.
+Angefügte Eigenschaften können in XAML-Dateien immer als Attribute erkannt werden, die eine Klasse und einen Eigenschaftsnamen enthalten, die durch einen bestimmten Zeitraum getrennt sind. Sie werden als *angefügte Eigenschaften* bezeichnet, da Sie von einer Klasse definiert werden (in diesem Fall `Grid` ), aber an andere Objekte angefügt sind (in diesem Fall untergeordnete Elemente von `Grid` ). Während des Layouts `Grid` kann die Werte dieser angefügten Eigenschaften Abfragen, um zu ermitteln, wo die einzelnen untergeordneten Elemente platziert werden.
 
-Die `AbsoluteLayout`-Klasse definiert zwei angefügte Eigenschaften mit dem Namen `LayoutBounds` und `LayoutFlags`. Im folgenden finden Sie ein checkboard-Muster, das mithilfe der Features für die proportionale Positionierung und Größenanpassung von `AbsoluteLayout`realisiert
+Die `AbsoluteLayout` -Klasse definiert zwei angefügte Eigenschaften mit dem Namen `LayoutBounds` und `LayoutFlags` . Im folgenden finden Sie ein checkboard-Muster, das mithilfe der proportionalen Positions-und Größen Anpassungs `AbsoluteLayout` Funktionen von realisiert wird
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -309,19 +312,19 @@ Die `AbsoluteLayout`-Klasse definiert zwei angefügte Eigenschaften mit dem Name
 </ContentPage>
 ```
 
-Und hier ist:
+Und hier ist es:
 
-[![absolutes Layout](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
+[![Absolutes Layout](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
 
-Für einen solchen können Sie das Wissen der Verwendung von XAML Frage. Sicherlich deutet die Wiederholung und die Regelmäßigkeit des `LayoutBounds` Rechtecks darauf hin, dass Sie möglicherweise besser im Code realisiert werden.
+In etwa so können Sie die Verwendung von XAML hinterfragen. Sicherlich deutet die Wiederholung und die Regelmäßigkeit des `LayoutBounds` Rechtecks darauf hin, dass es im Code besser realisiert werden kann.
 
-Das ist sicherlich eine legitime Sorge, und besteht kein Problem für den Lastenausgleich der Verwendung von Code und Markup, wenn Sie Ihren Benutzeroberflächen zu definieren. Es ist einfach, einige der Visualisierungen in XAML zu definieren, und klicken Sie dann den Konstruktor der CodeBehind-Datei verwenden, um einige weitere visuelle Elemente hinzuzufügen, die besser in Schleifen ausgegeben werden.
+Das ist sicherlich ein legitimer Anliegen, und es gibt kein Problem mit dem Ausgleich der Verwendung von Code und Markup beim Definieren der Benutzeroberflächen. Es ist einfach, einige der visuellen Elemente in XAML zu definieren und dann den Konstruktor der Code Behind-Datei zu verwenden, um weitere visuelle Elemente hinzuzufügen, die möglicherweise besser in Schleifen generiert werden.
 
 ## <a name="content-properties"></a>Content-Eigenschaften
 
-In den vorherigen Beispielen werden die Objekte `StackLayout`, `Grid`und `AbsoluteLayout` auf die `Content`-Eigenschaft des `ContentPage`festgelegt, und die untergeordneten Elemente dieser Layouts sind tatsächlich Elemente in der `Children` Auflistung. Diese `Content` und `Children` Eigenschaften befinden sich jedoch nicht in der XAML-Datei.
+In den vorherigen Beispielen werden die `StackLayout` `Grid` Objekte, und `AbsoluteLayout` auf die `Content` -Eigenschaft von festgelegt `ContentPage` , und die untergeordneten Elemente dieser Layouts sind tatsächlich Elemente in der `Children` -Auflistung. Diese `Content` -und- `Children` Eigenschaften sind jedoch nicht in der XAML-Datei gespeichert.
 
-Sie können die Eigenschaften "`Content`" und "`Children`" als Eigenschafts Elemente einschließen, wie z. b. im **xamlpluscode** -Beispiel:
+Sie können die `Content` -Eigenschaft und die- `Children` Eigenschaft als Eigenschaften Elemente einschließen, wie z. b. im **xamlpluscode** -Beispiel:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -352,29 +355,29 @@ Sie können die Eigenschaften "`Content`" und "`Children`" als Eigenschafts Elem
 
 Die eigentliche Frage ist: Warum sind diese Eigenschafts Elemente in der XAML-Datei *nicht* erforderlich?
 
-Elemente, die in xamarin. Forms für die Verwendung in XAML definiert sind, dürfen eine Eigenschaft aufweisen, die im `ContentProperty`-Attribut der Klasse gekennzeichnet ist. Wenn Sie die `ContentPage`-Klasse in der Online Dokumentation zu xamarin. Forms nachschlagen, wird dieses Attribut angezeigt:
+Xamarin.FormsFür Elemente, die in für die Verwendung in XAML definiert sind, darf eine Eigenschaft im-Attribut der-Klasse gekennzeichnet werden `ContentProperty` . Wenn Sie die `ContentPage` -Klasse in der Online Dokumentation nachschlagen Xamarin.Forms , wird dieses Attribut angezeigt:
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Content")]
 public class ContentPage : TemplatedPage
 ```
 
-Dies bedeutet, dass die `Content`-Eigenschaften-Element-Tags nicht erforderlich sind. Alle XML-Inhalte, die zwischen dem Start-und dem End`ContentPage` Tags angezeigt werden, werden davon ausgegangen, dass Sie der `Content` Eigenschaft zugewiesen werden.
+Dies bedeutet, dass die `Content` Eigenschaften Element Tags nicht erforderlich sind. Jeder XML-Inhalt, der zwischen den Start-und `ContentPage` Endtags angezeigt wird, wird davon ausgegangen, dass er der-Eigenschaft zugewiesen wird `Content` .
 
- `StackLayout`, `Grid`, `AbsoluteLayout`und `RelativeLayout` werden von `Layout<View>`abgeleitet, und wenn Sie in der xamarin. Forms-Dokumentation `Layout<T>` suchen, wird ein weiteres `ContentProperty` Attribut angezeigt:
+ `StackLayout`, `Grid` , `AbsoluteLayout` und `RelativeLayout` werden von abgeleitet `Layout<View>` , und wenn Sie `Layout<T>` in der Dokumentation nachschlagen Xamarin.Forms , wird ein weiteres Attribut angezeigt `ContentProperty` :
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Children")]
 public abstract class Layout<T> : Layout ...
 ```
 
-Dadurch kann der Inhalt des Layouts automatisch der `Children` Auflistung ohne explizite `Children` Eigenschaften Element Tags hinzugefügt werden.
+, Mit dem Inhalt des Layouts automatisch der Auflistung `Children` ohne explizite Eigenschaften Element Tags hinzugefügt werden kann `Children` .
 
-Andere Klassen verfügen auch über `ContentProperty` Attribut Definitionen. Beispielsweise ist die Content-Eigenschaft von `Label` `Text`. Überprüfen Sie die API-Dokumentation für andere Benutzer.
+Andere Klassen verfügen auch über `ContentProperty` Attribut Definitionen. Die Content-Eigenschaft von lautet z `Label` `Text` . b.. Weitere Informationen finden Sie in der API-Dokumentation.
 
-## <a name="platform-differences-with-onplatform"></a>Plattformunterschiede mit OnPlatform
+## <a name="platform-differences-with-onplatform"></a>Platt Form Unterschiede mit onplatform
 
-In Single-Page-Anwendungen ist es üblich, die `Padding`-Eigenschaft auf der Seite festzulegen, um das Überschreiben der IOS-Statusleiste zu vermeiden. Im Code können Sie die `Device.RuntimePlatform`-Eigenschaft für diesen Zweck verwenden:
+In Single-Page-Anwendungen ist es üblich, die- `Padding` Eigenschaft auf der Seite festzulegen, um das Überschreiben der IOS-Statusleiste zu vermeiden. Im Code können Sie die- `Device.RuntimePlatform` Eigenschaft für diesen Zweck verwenden:
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS)
@@ -383,7 +386,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-Sie können in XAML auch einen ähnlichen Vorgang ausführen, indem Sie die Klassen [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) und [`On`](xref:Xamarin.Forms.On) verwenden. Fügen Sie zunächst Eigenschaften Elemente für die `Padding`-Eigenschaft am oberen Rand der Seite ein:
+Mit der [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) -Klasse und der-Klasse können Sie auch in XAML ähnliche Aktionen ausführen [`On`](xref:Xamarin.Forms.On) . Fügen Sie zunächst Eigenschaften Elemente für die `Padding` Eigenschaft am oberen Rand der Seite ein:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -397,7 +400,7 @@ Sie können in XAML auch einen ähnlichen Vorgang ausführen, indem Sie die Klas
 </ContentPage>
 ```
 
-Fügen Sie innerhalb dieser Tags ein `OnPlatform`-Tag ein. `OnPlatform` ist eine generische Klasse. Sie müssen das generische Typargument angeben, in diesem Fall `Thickness`, das den Typ der `Padding` Eigenschaft ist. Glücklicherweise gibt es ein XAML-Attribut speziell zum Definieren von generischen Argumenten namens "`x:TypeArguments`". Dies sollte dem Typ der Eigenschaft entsprechen, die Sie festlegen können:
+Fügen Sie innerhalb dieser Tags ein- `OnPlatform` Tag ein. `OnPlatform`ist eine generische Klasse. Sie müssen das generische Typargument angeben. in diesem Fall ist dies `Thickness` der Typ der `Padding` Eigenschaft. Glücklicherweise gibt es ein XAML-Attribut speziell zum Definieren von generischen Argumenten mit dem Namen `x:TypeArguments` . Dies sollte dem Typ der Eigenschaft entsprechen, die Sie festlegen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -413,7 +416,7 @@ Fügen Sie innerhalb dieser Tags ein `OnPlatform`-Tag ein. `OnPlatform` ist eine
 </ContentPage>
 ```
 
-`OnPlatform` verfügt über eine Eigenschaft mit dem Namen `Platforms`, die eine `IList` von `On` Objekten ist. Verwenden Sie Eigenschaftenelement-Tags für diese Eigenschaft:
+`OnPlatform`verfügt über eine Eigenschaft `Platforms` mit dem Namen, die eine `IList` von-Objekten ist `On` . Eigenschaften Element Tags für diese Eigenschaft verwenden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,7 +434,7 @@ Fügen Sie innerhalb dieser Tags ein `OnPlatform`-Tag ein. `OnPlatform` ist eine
 </ContentPage>
 ```
 
-Fügen Sie nun `On` Elemente hinzu. Legen Sie für jeden die `Platform`-Eigenschaft und die `Value`-Eigenschaft auf Markup für die `Thickness`-Eigenschaft fest:
+Fügen Sie jetzt `On` Elemente hinzu. Legen Sie für jede Eigenschaft die `Platform` -Eigenschaft und die- `Value` Eigenschaft auf Markup für die- `Thickness` Eigenschaft fest:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -451,7 +454,7 @@ Fügen Sie nun `On` Elemente hinzu. Legen Sie für jeden die `Platform`-Eigensch
 </ContentPage>
 ```
 
-Dieses Markup kann vereinfacht werden. Die Content-Eigenschaft von `OnPlatform` ist `Platforms`, sodass diese Eigenschaften Element Tags entfernt werden können:
+Dieses Markup kann vereinfacht werden. Die Content-Eigenschaft von `OnPlatform` ist `Platforms` , sodass diese Eigenschaften-Element-Tags entfernt werden können:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -469,7 +472,7 @@ Dieses Markup kann vereinfacht werden. Die Content-Eigenschaft von `OnPlatform` 
 </ContentPage>
 ```
 
-Die `Platform`-Eigenschaft von `On` ist vom Typ `IList<string>`. Sie können also mehrere Plattformen einschließen, wenn die Werte identisch sind:
+Die- `Platform` Eigenschaft von `On` ist vom Typ. `IList<string>` Sie können also mehrere Plattformen einschließen, wenn die Werte identisch sind:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -486,7 +489,7 @@ Die `Platform`-Eigenschaft von `On` ist vom Typ `IList<string>`. Sie können als
 </ContentPage>
 ```
 
-Da für Android und UWP der Standardwert `Padding`festgelegt ist, kann das Tag entfernt werden:
+Da für Android und UWP der Standardwert festgelegt `Padding` ist, kann dieses Tag entfernt werden:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -502,7 +505,7 @@ Da für Android und UWP der Standardwert `Padding`festgelegt ist, kann das Tag e
 </ContentPage>
 ```
 
-Dies ist die Standardmethode zum Festlegen einer Platt Form abhängigen `Padding`-Eigenschaft in XAML. Wenn die `Value` Einstellung nicht durch eine einzelne Zeichenfolge dargestellt werden kann, können Sie Eigenschafts Elemente dafür definieren:
+Dies ist die Standardmethode zum Festlegen einer Platt Form abhängigen `Padding` Eigenschaft in XAML. Wenn die `Value` Einstellung nicht durch eine einzelne Zeichenfolge dargestellt werden kann, können Sie Eigenschafts Elemente dafür definieren:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,11 +526,11 @@ Dies ist die Standardmethode zum Festlegen einer Platt Form abhängigen `Padding
 ```
 
 > [!NOTE]
-> Die `OnPlatform` Markup Erweiterung kann auch in XAML verwendet werden, um die Darstellung der Benutzeroberfläche plattformspezifisch anzupassen. Sie bietet die gleiche Funktionalität wie die `OnPlatform`-und `On` Klassen, bietet jedoch eine präzisere Darstellung. Weitere Informationen finden Sie unter [onplatform-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
+> Die `OnPlatform` Markup Erweiterung kann auch in XAML verwendet werden, um die Darstellung der Benutzeroberfläche plattformspezifisch anzupassen. Sie bietet die gleiche Funktionalität wie die `OnPlatform` -Klasse und die- `On` Klasse, jedoch mit einer präziseren Darstellung. Weitere Informationen finden Sie unter [onplatform-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
 
 ## <a name="summary"></a>Zusammenfassung
 
-Property-Elemente und angefügte Eigenschaften wurde ein Großteil der grundlegenden XAML-Syntax hergestellt. Allerdings müssen gelegentlich zum Festlegen von Eigenschaften zu Objekten auf indirekte Weise, z. B. aus einem Ressourcenverzeichnis. Diese Vorgehensweise wird im nächsten Teil, Teil 3, behandelt [. XAML-Markup Erweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
+Bei Eigenschafts Elementen und angefügten Eigenschaften wurde ein Großteil der grundlegenden XAML-Syntax erstellt. Manchmal müssen Sie jedoch Eigenschaften auf indirekte Weise auf Objekte festlegen, z. b. aus einem Ressourcen Wörterbuch. Diese Vorgehensweise wird im nächsten Teil, Teil 3, behandelt [. XAML-Markup Erweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

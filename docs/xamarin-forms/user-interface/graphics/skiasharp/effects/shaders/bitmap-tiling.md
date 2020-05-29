@@ -1,48 +1,51 @@
 ---
-title: SkiaSharp-Bitmap-Kacheln
-description: Kachel einen Bereich mithilfe von Bitmaps vertikal und horizontal wiederholt.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: f019b6e031774d7bcdf593015394d0c73c96949b
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198650"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137422"
 ---
-# <a name="skiasharp-bitmap-tiling"></a>SkiaSharp-Bitmap-Kacheln
+# <a name="skiasharp-bitmap-tiling"></a>Skiasharp-Bitmap-tiult
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
-Wie Sie in den zwei vorherigen Artikel gesehen haben die [ `SKShader` ](xref:SkiaSharp.SKShader) -Klasse lineare oder zirkuläre Farbverläufe erstellt werden können. Dieser Artikel konzentriert sich auf die `SKShader` -Objekt, das eine Bitmap wird ein Bereich verwendet. Die Bitmap horizontal und vertikal wiederholt werden kann entweder in der ursprünglichen Ausrichtung oder alternativ gekippt horizontal und vertikal. Die kippen vermeidet Diskontinuitäten zwischen den Kacheln:
+Wie Sie in den beiden vorherigen Artikeln gesehen haben, kann die- [`SKShader`](xref:SkiaSharp.SKShader) Klasse lineare oder zirkuläre Farbverläufe erstellen. Dieser Artikel konzentriert sich auf das- `SKShader` Objekt, das eine Bitmap verwendet, um einen Bereich zu Kacheln. Die Bitmap kann horizontal und vertikal wiederholt werden, entweder in der ursprünglichen Ausrichtung oder alternativ horizontal und vertikal. Beim Kippen werden Diskontinuitäten zwischen den Kacheln vermieden:
 
-![Bitmapbeispiel Tiling](bitmap-tiling-images/BitmapTilingSample.png "Tiling Bitmapbeispiel")
+![Beispiel für Bitmap-tiult](bitmap-tiling-images/BitmapTilingSample.png "Beispiel für Bitmap-tiult")
 
-Die statische [ `SKShader.CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode)) Methode, die diesen Shader erstellt hat eine `SKBitmap` Parameter und zwei Member der [ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode) Enumeration:
+Die statische [`SKShader.CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode)) Methode, die diesen Shader erstellt, verfügt über einen `SKBitmap` -Parameter und zwei Member der- [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) Enumeration:
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy)
 ```
 
-Die zwei Parameter geben die Modi für die horizontale Unterteilung und vertikalen Tiling verwendet. Dies ist das gleiche `SKShaderTileMode` -Enumeration, die auch mit den Farbverlauf-Methoden verwendet wird.
+Die beiden Parameter geben die Modi an, die für horizontales und vertikales ticken verwendet werden. Dabei handelt es sich um dieselbe `SKShaderTileMode` Enumeration, die auch mit den Farbverlaufs Methoden verwendet wird.
 
-Ein [ `CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladung umfasst ein `SKMatrix` Argument an eine Transformation auf die unterteilten Bitmaps ausführen:
+Eine [`CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladung enthält ein `SKMatrix` Argument zum Ausführen einer Transformation für die gekachelten Bitmaps:
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy, SKMatrix localMatrix)
 ```
 
-Dieser Artikel enthält einige Beispiele für angeordnete Bitmaps mit dieser Matrixtransformation.
+Dieser Artikel enthält mehrere Beispiele für die Verwendung dieser Matrix Transformation mit gekachelten Bitmaps.
 
-## <a name="exploring-the-tile-modes"></a>Untersuchen die Kachel "-Modi
+## <a name="exploring-the-tile-modes"></a>Untersuchen der Kachel Modi
 
-Das erste Programm in der **Bitmap Tiling** Teil der **Shader und andere Effekte** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel veranschaulicht die Auswirkungen der beiden `SKShaderTileMode` Argumente. Die **Bitmap Kachelmodi kippen** XAML-Datei instanziiert ein `SKCanvasView` und zwei `Picker` Ansichten, mit denen Sie auswählen, können eine `SKShaderTilerMode` Wert für die horizontale und vertikale Tiling. Beachten Sie, dass ein Array von der `SKShaderTileMode` Member definiert ist, der `Resources` Abschnitt:
+Das erste Programm im Abschnitt **Bitmap-tiult** der Seite **Shader und andere Effekte** im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel veranschaulicht die Auswirkungen der beiden `SKShaderTileMode` Argumente. Die XAML-Datei der **bitmapkachel-Flip-Modi** instanziiert eine `SKCanvasView` und zwei `Picker` Sichten, die es Ihnen ermöglichen, einen `SKShaderTilerMode` Wert für horizontales und vertikales ticken auszuwählen. Beachten Sie, dass ein Array der Member `SKShaderTileMode` im-Abschnitt definiert ist `Resources` :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -85,7 +88,7 @@ Das erste Programm in der **Bitmap Tiling** Teil der **Shader und andere Effekte
 </ContentPage>
 ```
 
-Der Konstruktor der CodeBehind-Datei lädt, in der Bitmapressource, die eine ungenutzte Monkey anzeigt. Es zuerst schneidet das Bild mithilfe der [ `ExtractSubset` ](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI)) -Methode der `SKBitmap` so, dass die Kopf und Fuß die Ränder der Bitmap berührt werden. Dann verwendet der Konstruktor der [ `Resize` ](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod)) Methode, um einen anderen Bitmap der Hälfte der Größe zu erstellen. Diese Änderungen stellen die Bitmap für Kacheln etwas besser geeignet:
+Der Konstruktor der Code Behind-Datei wird in der Bitmap-Ressource geladen, die eine affensitzung anzeigt. Zuerst wird das Bild mithilfe der- [`ExtractSubset`](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI)) Methode von `SKBitmap` , sodass die Kopfzeile und die Fußzeile die Ränder der Bitmap berühren. Der Konstruktor verwendet dann die- [`Resize`](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod)) Methode, um eine weitere Bitmap der Hälfte der Größe zu erstellen. Diese Änderungen machen die Bitmap etwas passender für das Ticken:
 
 ```csharp
 public partial class BitmapTileFlipModesPage : ContentPage
@@ -141,21 +144,21 @@ public partial class BitmapTileFlipModesPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler Ruft die `SKShaderTileMode` Einstellungen aus den beiden `Picker` Ansichten und erstellt eine `SKShader` -Objekt auf Grundlage der Bitmap und diese beiden Werte. Dieser Shader verwendet wird, auf den Zeichenbereich ausfüllen:
+Der `PaintSurface` Handler Ruft die `SKShaderTileMode` Einstellungen aus den beiden `Picker` Ansichten ab und erstellt ein `SKShader` Objekt auf der Grundlage der Bitmap und dieser beiden Werte. Dieser Shader wird verwendet, um den Zeichenbereich auszufüllen:
 
-[![Bitmap-Flip Tile-Modi](bitmap-tiling-images/BitmapTileFlipModes.png "Bitmap-Flip Tile-Modi")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
+[![Flip-Modi der Bitmap-Kachel](bitmap-tiling-images/BitmapTileFlipModes.png "Flip-Modi der Bitmap-Kachel")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
 
-IOS-Bildschirms auf der linken Seite zeigt die Auswirkungen der die Standardwerte der `SKShaderTileMode.Clamp`. Die Bitmap befindet sich in der oberen linken Ecke. Klicken Sie unten die Bitmap wird die untersten Zeile der Pixel, ganz nach unten wiederholt. Rechts neben der Bitmap wird die Spalte ganz rechts Pixeln ganz über wiederholt. Der Rest des Zeichenbereichs wird in der Bitmap in der unteren rechten Ecke das dunkle braunen Pixel gefärbt. Es sollte klar sein, die die `Clamp` Option fast nie zusammen mit Bitmap Tiling!
+Der IOS-Bildschirm links zeigt die Auswirkung der Standardwerte von `SKShaderTileMode.Clamp` . Die Bitmap befindet sich in der oberen linken Ecke. Unterhalb der Bitmap wird die untere Zeile der Pixel wiederholt. Rechts von der Bitmap wird die Spalte ganz rechts von Pixel wiederholt. Der Rest der Canvas wird durch das dunkle braune Pixel in der unteren rechten Ecke der Bitmap gefärbt. Es sollte offensichtlich sein, dass die `Clamp` Option fast nie mit Bitmap-tiches verwendet wird.
 
-Die Android-Bildschirm in der Mitte, zeigt das Ergebnis der `SKShaderTileMode.Repeat` für beide Argumente. Die Kachel wird horizontal und vertikal wiederholt. Die universelle Windows-Plattform Bildschirm zeigt `SKShaderTileMode.Mirror`. Die Kacheln werden wiederholt, aber Alternativ gekippt horizontal und vertikal. Der Vorteil dieser Option ist, dass keine Diskontinuitäten zwischen den Kacheln.
+Der Android-Bildschirm in der Mitte zeigt das Ergebnis von `SKShaderTileMode.Repeat` für beide Argumente. Die Kachel wird horizontal und vertikal wiederholt. Der Bildschirm universelle Windows-Plattform wird angezeigt `SKShaderTileMode.Mirror` . Die Kacheln werden wiederholt, aber abwechselnd horizontal und vertikal gekippt. Der Vorteil dieser Option besteht darin, dass es keine Diskontinuitäten zwischen den Kacheln gibt.
 
-Bedenken Sie, dass Sie verschiedene Optionen für die horizontale und vertikale Wiederholung verwenden können. Sie können angeben, `SKShaderTileMode.Mirror` als das zweite Argument für `CreateBitmap` aber `SKShaderTileMode.Repeat` als drittes Argument. Für jede Zeile sind die Affen weiterhin wechseln Sie zwischen den normalen Image und die Spiegelung, aber keines der Affen Kopf.
+Denken Sie daran, dass Sie für die horizontale und vertikale Wiederholung verschiedene Optionen verwenden können. Sie können `SKShaderTileMode.Mirror` als zweites Argument für angeben, `CreateBitmap` jedoch `SKShaderTileMode.Repeat` als drittes Argument. In jeder Zeile wechseln die Affen weiterhin zwischen dem normalen Bild und dem Spiegelbild, aber keine der Affen ist von oben nach unten.
 
-## <a name="patterned-backgrounds"></a>Gemusterten Hintergründen
+## <a name="patterned-backgrounds"></a>Gemusterte Hintergründe
 
-Bitmap-Tiling wird häufig verwendet, um einen gemusterten Hintergrund aus einer relativ kleinen Bitmap zu erstellen. Das klassische Beispiel ist eine Durchbruch.
+Bitmap-tiult wird häufig verwendet, um einen gemusterten Hintergrund aus einer relativ kleinen Bitmap zu erstellen. Das klassische Beispiel ist eine Brick-Wand.
 
-Die **algorithmische Durchbruch** -Seite erstellt eine kleine Bitmap, die eine gesamte Brick und beiden Hälften eines Bricks, getrennt durch Internetshop ähnelt. Da dieses Brick in auch im nächsten Beispiel verwendet wird, ist es von einem statischen Konstruktor erstellt und mit einer statischen Eigenschaft öffentlich gemacht:
+Auf der Seite **algorithmische Brick Wall** wird eine kleine Bitmap erstellt, die einem ganzen Brick und zwei Hälften eines Bricks durch Mörtel getrennt ähnelt. Da dieses Brick auch im nächsten Beispiel verwendet wird, wird es von einem statischen Konstruktor erstellt und mit einer statischen Eigenschaft öffentlich gemacht:
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -208,9 +211,9 @@ public class AlgorithmicBrickWallPage : ContentPage
 
 Die resultierende Bitmap ist 70 Pixel breit und 60 Pixel hoch:
 
-![Algorithmische Brick Wall Kachel](bitmap-tiling-images/AlgorithmicBrickWallTile.png "algorithmische Brick Wall-Kachel")
+![Algorithmische Brick Wall-Kachel](bitmap-tiling-images/AlgorithmicBrickWallTile.png "Algorithmische Brick Wall-Kachel")
 
-Die restlichen den **algorithmische Durchbruch** -Seite erstellt eine `SKShader` -Objekt, das dieses Bild horizontal und vertikal wiederholt:
+Im restlichen Abschnitt der **algorithmischen Brick Wall** -Seite wird ein `SKShader` Objekt erstellt, das dieses Bild horizontal und vertikal wiederholt:
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -247,15 +250,15 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-Hier ist das Ergebnis:
+Das Ergebnis lautet wie folgt:
 
-[![Algorithmische Durchbruch](bitmap-tiling-images/AlgorithmicBrickWall.png "algorithmische Durchbruch")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
+[![Algorithmische Ziegelwand](bitmap-tiling-images/AlgorithmicBrickWall.png "Algorithmische Ziegelwand")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
 
-Möglicherweise ein etwas realistischeres bevorzugen. In diesem Fall können Sie ein Foto des eine tatsächliche Durchbruch dauern und es zuschneiden. Diese Bitmap ist 300 Pixel breit und 150 Pixel hoch:
+Möglicherweise bevorzugen Sie etwas realistischeres. In diesem Fall können Sie ein Foto einer eigentlichen Brick-Wand erstellen und diese dann zuschneiden. Diese Bitmap ist 300 Pixel breit und 150 Pixel hoch:
 
-![Brick Wall Kachel](bitmap-tiling-images/BrickWallTile.jpg "Brick Wall-Kachel")
+![Ziegelwand Kachel](bitmap-tiling-images/BrickWallTile.jpg "Ziegelwand Kachel")
 
-Diese Bitmap wird verwendet, der **Photographic Durchbruch** Seite:
+Diese Bitmap wird auf der Seite für die **Foto Ziegel Wall** verwendet:
 
 ```csharp
 public class PhotographicBrickWallPage : ContentPage
@@ -294,17 +297,17 @@ public class PhotographicBrickWallPage : ContentPage
 }
 ```
 
-Beachten Sie, dass die `SKShaderTileMode` Argumente `CreateBitmap` sind beide `Mirror`. Diese Option ist in der Regel erforderlich, bei der Verwendung von Kacheln, die aus realen Images erstellt wurden. Die Kacheln Spiegelung vermeidet Diskontinuitäten:
+Beachten Sie, dass die `SKShaderTileMode` Argumente für `CreateBitmap` beide sind `Mirror` . Diese Option ist normalerweise erforderlich, wenn Sie Kacheln verwenden, die aus realen Bildern erstellt wurden. Die Spiegelung der Kacheln vermeidet Diskontinuitäten:
 
-[![Photographic Durchbruch](bitmap-tiling-images/PhotographicBrickWall.png "Photographic Durchbruch")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
+[![Foto Ziegelwand](bitmap-tiling-images/PhotographicBrickWall.png "Foto Ziegelwand")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
 
-Einige Aufgaben ist erforderlich, um eine geeignete Bitmap für die Kachel zu erhalten. Dieser funktioniert nicht sehr gut, da die dunkleren Brick sich hebt zuviel. Es wird regelmäßig innerhalb der wiederholten Bilder, die Offenlegung durch die Tatsache, dass diese Durchbruch aus keine kleinere Bitmap erstellt wurde.
+Einige Arbeiten sind erforderlich, um eine passende Bitmap für die Kachel zu erhalten. Diese Funktion funktioniert nicht sehr gut, da das dunklere Brick zu viel hervorsticht. Sie wird regelmäßig innerhalb der wiederholten Bilder angezeigt und zeigt die Tatsache an, dass diese Brick-Wand aus einer kleineren Bitmap erstellt wurde.
 
-Die **Media** Ordner die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel umfasst auch dieses Bild einer Stone Wand:
+Der **Medien** Ordner des [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiels enthält auch das Bild einer Stein Wand:
 
-![Stein Wall Kachel](bitmap-tiling-images/StoneWallTile.jpg "Stein Wall-Kachel")
+![Kachel "Stein Wand"](bitmap-tiling-images/StoneWallTile.jpg "Kachel "Stein Wand"")
 
-Die ursprüngliche Bitmap ist jedoch ein wenig zu groß für eine Kachel. Sie können die geändert werden, aber die `SKShader.CreateBitmap` Methode kann auch durch Anwenden einer Transformation, Größe der Kachel. Diese Option wird veranschaulicht, der **Stein Wand** Seite:
+Die ursprüngliche Bitmap ist jedoch für eine Kachel etwas zu groß. Die Größe kann geändert werden, aber die- `SKShader.CreateBitmap` Methode kann auch die Größe der Kachel ändern, indem Sie eine Transformation anwendet. Diese Option wird auf der Seite " **Stein Wand** " veranschaulicht:
 
 ```csharp
 public class StoneWallPage : ContentPage
@@ -347,42 +350,42 @@ public class StoneWallPage : ContentPage
 }
 ```
 
-Ein `SKMatrix` Wert erstellt, um das Bild, um die Hälfte der ursprünglichen Größe zu skalieren:
+Ein- `SKMatrix` Wert wird erstellt, um das Bild auf die Hälfte seiner ursprünglichen Größe zu skalieren:
 
-[![Minimale Wand](bitmap-tiling-images/StoneWall.png "minimale Wand")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
+[![Stein Wand](bitmap-tiling-images/StoneWall.png "Stein Wand")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
 
-Kann die Transformation ausgeführt werden, auf der ursprünglichen Bitmap in verwendet die `CreateBitmap` Methode? Oder das resultierende Array der Kacheln transformieren? 
+Arbeitet die Transformation mit der ursprünglichen Bitmap, die in der-Methode verwendet wird `CreateBitmap` ? Oder wandelt er das resultierende Array von Kacheln um? 
 
-Eine einfache Möglichkeit zur Beantwortung dieser Frage ist eine Drehung im Rahmen der Transformation eingeschlossen:
+Eine einfache Möglichkeit, diese Frage zu beantworten, besteht darin, eine Drehung als Teil der Transformation einzuschließen:
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeScale(0.5f, 0.5f);
 SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 ```
 
-Wenn die Transformation auf die einzelnen Kachel angewendet wird, klicken Sie dann jedes wiederholtes Bild der Kachel gedreht werden soll, und das Ergebnis würde viele Diskontinuitäten enthalten. Aber es ergibt sich aus dieser Screenshot zeigt, dass das kombinierte Array der Kacheln transformiert wird:
+Wenn die Transformation auf die einzelne Kachel angewendet wird, sollte jedes wiederholte Bild der Kachel gedreht werden, und das Ergebnis würde viele Diskontinuitäten enthalten. In diesem Screenshot ist jedoch ersichtlich, dass das zusammengesetzte Array von Kacheln transformiert wird:
 
-[![Minimale Wand gedreht](bitmap-tiling-images/StoneWallRotated.png "minimale Wand gedreht")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
+[![Stein Wand gedreht](bitmap-tiling-images/StoneWallRotated.png "Stein Wand gedreht")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
 
-Im Abschnitt [ **Kachel Ausrichtung**](#tile-alignment), sehen Sie ein Beispiel für TranslateTransform an den Shader angewendet.
+Im Abschnitt [**Kachel Ausrichtung**](#tile-alignment)sehen Sie ein Beispiel für eine Translation-Transformation, die auf den Shader angewendet wird.
 
-Die eigenständige [ **Cat Uhr** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock) Beispiel (nicht Teil der **SkiaSharpFormsDemos**) simuliert einen Bitmap-Kacheln, die auf der Grundlage dieser quadratischen 240 Pixel-Bitmap mit Holz differenziertere-Hintergrund:
+Das Beispiel für die eigenständige [**Cat-Uhr**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock) (nicht Teil von **skiasharpformsdemos**) simuliert einen Hintergrund mit der Bitmap, die auf dieser 240-Pixel-quadratischen Bitmap basiert:
 
-![Aggregationsintervall Holz](bitmap-tiling-images/WoodGrain.png "Holz Granularität")
+![Holzkorn](bitmap-tiling-images/WoodGrain.png "Holzkorn")
 
-Dies ist ein Foto des Holz Untergrenze. Die `SKShaderTileMode.Mirror` Option können sie als einen viel größeren Bereich des Holz angezeigt werden:
+Das ist ein Foto eines Holzbodens. Die `SKShaderTileMode.Mirror` Option ermöglicht es, in einem viel größeren Bereich von Holz zu erscheinen:
 
-[![CAT Uhr](bitmap-tiling-images/CatClock.png "Cat Uhr")](bitmap-tiling-images/CatClock-Large.png#lightbox)
+[![Cat-Uhr](bitmap-tiling-images/CatClock.png "Cat-Uhr")](bitmap-tiling-images/CatClock-Large.png#lightbox)
 
-## <a name="tile-alignment"></a>Kachel-Ausrichtung
+## <a name="tile-alignment"></a>Kachel Ausrichtung
 
-Alle Beispiele, die bisher gezeigten hätte den Shader erstellt `SKShader.CreateBitmap` behandeln den gesamten Zeichenbereich. In den meisten Fällen verwenden Sie Bitmap-Kacheln für die Archivierung kleinere Bereiche, oder (selten mehr) für das füllen das Innere der thick-Zeilen. Hier ist die Kachel "photographic Durchbruch" für ein kleineres Rechteck verwendet:
+Alle bisher gezeigten Beispiele haben den Shader verwendet, der von erstellt wurde `SKShader.CreateBitmap` , um den gesamten Zeichenbereich abzudecken. In den meisten Fällen verwenden Sie Bitmap-tiult zum Ablegen kleinerer Bereiche oder (seltener) zum Auffüllen des Inneren von Thick Lines. Hier sehen Sie die Kachel "Photo Brick-Wall", die für ein kleineres Rechteck verwendet wird:
 
 [![Kachel Ausrichtung](bitmap-tiling-images/TileAlignment.png "Kachel Ausrichtung")](bitmap-tiling-images/TileAlignment-Large.png#lightbox)
 
-Dies kann in Ordnung, oder vielleicht auch nicht vorkommen. Vielleicht sind Sie nicht gestört, dass das Kachelmuster nicht mit einer vollständigen Bricks in der oberen linken Ecke des Rechtecks beginnt. Der Grund Shader ausgerichtet sind, mit der Leinwand und nicht das grafisches Objekt, das sie Verzieren ist.
+Dies kann für Sie gut oder nicht möglich sein. Vielleicht sind Sie beunruhigt, dass das Tick Muster nicht mit einem vollständigen Brick in der oberen linken Ecke des Rechtecks beginnt. Das liegt daran, dass Shader an der Canvas und nicht an dem grafischen Objekt ausgerichtet sind, das Sie schmücken.
 
-Die Lösung ist einfach. Erstellen Sie eine `SKMatrix` -Wert auf Grundlage einer Übersetzung-Transformation. Die Transformation wird effektiv der Kachelmuster verlagert, zu dem Punkt der oberen linken Ecke der Kachel ausgerichtet werden sollen. Dieser Ansatz wird veranschaulicht, der **Kachel Ausrichtung** Seite, die das Image der oben gezeigten nicht ausgerichteten Kacheln erstellt:
+Die Problembehebung ist einfach. Erstellen Sie einen- `SKMatrix` Wert, der auf einer Übersetzungs Transformation basiert. Die Transformation verschiebt das Kachel Muster effektiv an den Punkt, an dem die obere linke Ecke der Kachel ausgerichtet werden soll. Diese Vorgehensweise wird auf der Seite **Kachel Ausrichtung** veranschaulicht, die das Bild der oben gezeigten nicht ausgerichteten Kacheln erstellt hat:
 
 ```csharp
 public class TileAlignmentPage : ContentPage
@@ -450,11 +453,11 @@ public class TileAlignmentPage : ContentPage
 }
 ```
 
-Die **Kachel Ausrichtung** Seite enthält eine `TapGestureRecognizer`. Tippen oder klicken Sie auf dem Bildschirm und das Programm wechselt zu den `SKShader.CreateBitmap` -Methode mit einem `SKMatrix` Argument. Diese Transformation verschiebt das Muster, damit die oberen linken Ecke eines vollständigen Bricks enthält:
+Die Seite **Kachel Ausrichtung** enthält eine `TapGestureRecognizer` . Tippen oder klicken Sie auf den Bildschirm, und das Programm wechselt zur `SKShader.CreateBitmap` Methode mit einem `SKMatrix` Argument. Diese Transformation verschiebt das Muster so, dass die obere linke Ecke ein vollständiges Brick enthält:
 
-[![Kachel getippt Ausrichtung](bitmap-tiling-images/TileAlignmentTapped.png "Kachel getippt Ausrichtung")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
+[![Kachel Ausrichtung getippt](bitmap-tiling-images/TileAlignmentTapped.png "Kachel Ausrichtung getippt")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
 
-Sie können dieses Verfahren auch verwenden, um sicherzustellen, dass der gekachelten Bitmapmuster innerhalb des Bereichs, zentriert wird, die sie zeichnet. In der **zentriert Kacheln** Seite die `PaintSurface` Handler berechnet zuerst Koordinaten, als ob es geht, um die einzelnen Bitmap in der Mitte des Zeichenbereichs angezeigt. Er verwendet dann diese Koordinaten zum Erstellen von TranslateTransform für `SKShader.CreateBitmap`. Diese Transformation verschiebt das gesamte Muster, damit eine Kachel zentriert ist:
+Sie können dieses Verfahren auch verwenden, um sicherzustellen, dass das gekachelte Bitmap-Muster in dem Bereich zentriert ist, den es zeichnet. Auf der Seite " **zentrierte Kacheln** " `PaintSurface` berechnet der Handler zuerst die Koordinaten so, als ob er die einzelne Bitmap in der Mitte der Canvas anzeigen soll. Anschließend werden diese Koordinaten verwendet, um eine Translation-Transformation für zu erstellen `SKShader.CreateBitmap` . Diese Transformation verlagert das gesamte Muster, sodass eine Kachel zentriert ist:
 
 ```csharp
 public class CenteredTilesPage : ContentPage
@@ -502,35 +505,35 @@ public class CenteredTilesPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler wird abgeschlossen, indem das Zeichnen eines Kreises in der Mitte der Canvas. Natürlich eine der Kacheln wird genau in der Mitte des Kreises, und die anderen werden in einem Muster eines symmetrischen angeordnet:
+Der `PaintSurface` Handler schließt das Zeichnen eines Kreises in der Mitte der Canvas. Und die anderen Kacheln sind genau in der Mitte des Kreises und die anderen in einem symmetrischen Muster angeordnet:
 
-[![Zentriert Kacheln](bitmap-tiling-images/CenteredTiles.png "zentriert Kacheln")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
+[![Zentrierte Kacheln](bitmap-tiling-images/CenteredTiles.png "Zentrierte Kacheln")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
 
-Ein anderer zentrieren Ansatz ist tatsächlich etwas einfacher. Anstatt TranslateTransform zu erstellen, die eine Kachel in der Mitte setzt, können Sie eine Ecke des der Kachelmuster zentrieren. In der `SKMatrix.MakeTranslation` aufzurufen, verwenden Sie die Argumente für die Mitte der Canvas:
+Ein weiterer zentrieren-Ansatz ist wirklich etwas einfacher. Anstatt eine Translation-Transformation zu erstellen, die eine Kachel in der Mitte einfügt, können Sie eine Ecke des gekachelten Musters zentrieren. Verwenden Sie im-Befehl `SKMatrix.MakeTranslation` Argumente für den Mittelpunkt der Canvas:
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeTranslation(info.Rect.MidX, info.Rect.MidY);
 ```
 
-Das Muster ist weiterhin zentriert und symmetrisch, aber keine Kachel ist in der Mitte:
+Das Muster ist weiterhin zentriert und symmetrisch, aber es ist keine Kachel in der Mitte:
 
-[![Zentriert Kacheln alternative](bitmap-tiling-images/CenteredTilesAlternate.png "Kacheln alternative zentriert")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
+[![Alternative zentrierte Kacheln](bitmap-tiling-images/CenteredTilesAlternate.png "Alternative zentrierte Kacheln")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
 
 ## <a name="simplification-through-rotation"></a>Vereinfachung durch Drehung
 
-Verwenden manchmal eine Rotationstransformation in die `SKShader.CreateBitmap` Methode kann die Kachel "Bitmap" vereinfachen. Dies wird deutlich, bei dem Versuch, eine Kachel für einen Fence Kette-Link zu definieren. Die **ChainLinkTile.cs** -Datei erstellt, die Kachel, die hier gezeigten (mit einem rosa Hintergrund zur Veranschaulichung):
+Manchmal kann die Bitmap-Kachel durch die Verwendung einer Transformation zum Drehen in der- `SKShader.CreateBitmap` Methode vereinfacht werden. Dies wird offensichtlich, wenn versucht wird, eine Kachel für einen Ketten Link-Fence zu definieren. Die Datei **ChainLinkTile.cs** erstellt die hier gezeigte Kachel (mit einem rosa Hintergrund zum Zweck der Übersichtlichkeit):
 
-![Kette die hardlink-Kachel](bitmap-tiling-images/HardChainLinkTile.png "Kette die hardlink-Kachel")
+![Kachel "hardchain-Link"](bitmap-tiling-images/HardChainLinkTile.png "Kachel "hardchain-Link"")
 
-Die Kachel "muss zwei Links enthalten, damit der Code die Kachel in vier Quadranten unterteilt. Die linke obere und der unteren rechten Quadranten sind identisch, aber sie sind nicht vollständig. Die Drähten haben wenig Stufen, die verarbeitet werden müssen, mit einigen zusätzlichen Zeichnen in der oberen rechten und linken unteren Quadranten. Die Datei, die all diese Arbeit ist 174 Zeilen lang.
+Die Kachel muss zwei Links enthalten, sodass der Code die Kachel in vier Quadranten dividiert. Die oberen linken und unteren rechten Quadranten sind identisch, aber Sie sind nicht fertig. Die Drähte haben nur wenige Zeichen, die mit einigen zusätzlichen Zeichen in den Quadranten oben rechts und Links unten behandelt werden müssen. Die Datei, die alle diese Aufgaben erledigt, ist 174 Zeilen lang.
 
-Es stellt sich heraus, viel einfacher, diese Kachel erstellt werden:
+Es ist viel einfacher, diese Kachel zu erstellen:
 
-![Kachel "einfacher Kette-Link"](bitmap-tiling-images/EasierChainLinkTile.png "einfacher Kette-Link-Kachel")
+![Einfachere Ketten Link Kachel](bitmap-tiling-images/EasierChainLinkTile.png "Einfachere Ketten Link Kachel")
 
-Wenn die Bitmap-Kachel-Shader um 90 Grad gedreht wird, ist die visuellen Elemente nahezu identisch.
+Wenn der Bitmap-Kachel-Shader um 90 Grad gedreht wird, sind die visuellen Elemente beinahe identisch.
 
-Der Code zum Erstellen der Kachel "einfacheren Kette-Link" ist Teil der **Kette-Link-Kachel** Seite. Der Konstruktor bestimmt eine Größe basierend auf den Typ des Geräts, das das Programm ausgeführt wird, und ruft dann `CreateChainLinkTile`, die zeichnet auf der Bitmap mit Zeilen, Pfade und Farbverlauf-Shader:
+Der Code zum Erstellen der einfacheren Ketten Link Kachel ist Teil der Seite " **Ketten Link Kachel** ". Der Konstruktor bestimmt eine Kachel Größe basierend auf dem Gerätetyp, auf dem das Programm ausgeführt wird, und ruft dann `CreateChainLinkTile` auf, das die Bitmap mithilfe von Linien, Pfaden und Gradient-Shadern zeichnet:
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -618,7 +621,7 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-Mit Ausnahme der verbindet ist die Kachel transparent, was bedeutet, dass Sie ihn auf etwas anderes anzeigen können. Das Programm in eine Bitmap-Ressource lädt, zeigt an, um den Zeichenbereich ausfüllen und zeichnet dann oben auf den Shader:
+Mit Ausnahme der Drähte ist die Kachel transparent, was bedeutet, dass Sie Sie auf einer anderen Stelle anzeigen können. Das Programm wird in eine der Bitmapressourcen geladen, zeigt es an, um den Zeichenbereich auszufüllen, und zeichnet dann den Shader auf der obersten Ebene:
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -650,17 +653,17 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-Beachten Sie, dass der Shader den Wert um 45 Grad gedreht, damit es wie einen echten Kette-Link-Fence ausgerichtet ist:
+Beachten Sie, dass der Shader 45 Grad gedreht wird, sodass er wie ein echter Ketten Link-Fence ausgerichtet ist:
 
-[![Kette-Link-Fence](bitmap-tiling-images/ChainLinkFence.png "Kette-Link-Umgrenzung")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
+[![Ketten Link-Fence](bitmap-tiling-images/ChainLinkFence.png "Ketten Link-Fence")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
 
-## <a name="animating-bitmap-tiles"></a>Die Animation von Bitmap-Kacheln
+## <a name="animating-bitmap-tiles"></a>Animieren von Bitmap-Kacheln
 
-Sie können eine Muster für die gesamte Bitmap-Kachel der Matrixtransformation Animation animieren. Vielleicht möchten Sie das entsprechende Muster, die horizontal oder vertikal zu verschieben oder beides. Sie können dazu erstellen eine Übersetzung-Transformation, die basierend auf den wechselnden Koordinaten.
+Sie können ein vollständiges Bitmap-Kachel Muster animieren, indem Sie die Matrix Transformation animieren. Vielleicht möchten Sie, dass das Muster horizontal oder vertikal oder beides verläuft. Dies können Sie erreichen, indem Sie eine Übersetzungs Transformation auf der Grundlage der verschiebenden Koordinaten erstellen.
 
-Es ist auch möglich, um auf eine kleine Bitmap zeichnen oder zum Bearbeiten von Pixelbits für die Bitmap mit einer Rate von 60-Mal pro Sekunde. Diese Bitmap kann für Kacheln verwendet werden, und die gesamte Kachelmuster kann scheinen animiert werden. 
+Es ist auch möglich, auf eine kleine Bitmap zu zeichnen oder die Pixel Bits der Bitmap mit der Rate von 60 mal pro Sekunde zu bearbeiten. Diese Bitmap kann dann für das Ticken verwendet werden, und das gesamte Kachel Muster kann als animiert erscheinen. 
 
-Die **Kachel "Bitmap" animiert** Seite veranschaulicht diesen Ansatz. Eine Bitmap wird als ein Feld für die 64-Pixel im Quadrat werden instanziiert. Der Konstruktor ruft `DrawBitmap` um er einen anfänglichen aussehen zu verleihen. Wenn die `angle` Feld ist NULL (wie beim ersten der Methode Aufruf), dann das Bitmuster zwei Zeilen, die ein "X" überschritten enthält. Die Zeilen erfolgen lang genug, um immer an den Rand der Bitmap unabhängig von erreichen die `angle` Wert: 
+Auf der Seite **animierte Bitmap-Kachel** wird dieser Ansatz veranschaulicht. Eine Bitmap wird als Feld mit dem Quadrat 64-Pixel instanziiert. Der Konstruktor ruft `DrawBitmap` auf, um ihm eine anfängliche Darstellung zu verschaffen. Wenn das `angle` Feld 0 (null) ist (wie beim ersten Aufruf der-Methode), enthält die Bitmap zwei Zeilen, die als X überschritten werden. Die Zeilen werden so lange so gestaltet, dass Sie unabhängig vom Wert immer an den Rand der Bitmap gelangen `angle` : 
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -705,7 +708,7 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-Der Aufwand für die Animation tritt auf, der `OnAppearing` und `OnDisappearing` überschreibt. Die `OnTimerTick` Methode erstellt eine Animation die `angle` -Wert von 0 Grad und 360 Grad alle 10 Sekunden in der Abbildung X innerhalb der Bitmap drehen:
+Der Aufwand für die Animation erfolgt in den `OnAppearing` über schreibungen und `OnDisappearing` . Die- `OnTimerTick` Methode animiert den `angle` Wert von 0 Grad bis 360 Grad alle 10 Sekunden, um die X-Abbildung innerhalb der Bitmap zu drehen:
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -746,9 +749,9 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-Aufgrund der die Symmetrie der Abbildung X, dies entspricht dem Drehen der `angle` Wert von 0 Grad bis 90 Grad 2,5 Sekunden.
+Aufgrund der Symmetrie der X-Abbildung entspricht dies dem Drehen des `angle` Werts von 0 Grad auf 90 Grad alle 2,5 Sekunden.
 
-Die `PaintSurface` Handler erstellt einen Shader aus der Bitmap und verwendet die Paint-Objekt, um die Farbe, die des gesamten Zeichenbereichs:
+Der `PaintSurface` Handler erstellt einen Shader aus der Bitmap und verwendet das Paint-Objekt, um den gesamten Zeichenbereich zu färben:
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -773,12 +776,12 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-Die `SKShaderTileMode.Mirror` Optionen stellen Sie sicher, dass die Arme, der das X in jede Bitmap, mit dem X in die angrenzende Bitmaps einbinden, um ein allgemeines animiertes Muster zu erstellen, die viel scheint komplexer als einfache Animation hinweist:
+Mit den- `SKShaderTileMode.Mirror` Optionen wird sichergestellt, dass die Arme der x-Datei in jeder Bitmap mit dem x in den angrenzenden Bitmaps verknüpft werden, um ein umfassendes animiertes Muster zu erstellen, das weitaus komplexer erscheint als die einfache Animation:
 
-[![Kachel "Bitmap" animiert](bitmap-tiling-images/AnimatedBitmapTile.png "animiert Bitmap-Kachel")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
+[![Animierte Bitmap-Kachel](bitmap-tiling-images/AnimatedBitmapTile.png "Animierte Bitmap-Kachel")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [CatClock (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Catcher (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)

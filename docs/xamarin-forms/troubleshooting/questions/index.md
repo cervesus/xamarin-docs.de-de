@@ -1,29 +1,32 @@
 ---
-title: Häufig gestellte Fragen zu Xamarin.Forms
-ms.topic: troubleshooting
-ms.prod: xamarin
-ms.assetid: 89364175-53BA-4A09-B3E2-44AC67DD971C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/25/2017
-ms.openlocfilehash: 24e2ae456e478585f30aa704917f66bb0bf11da9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+title: Xamarin.FormsHäufig gestellte Fragen
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: edd6cfefe18ff3d5cc97ec58f3bce867f11df7c8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61247789"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135875"
 ---
-# <a name="xamarinforms-frequently-asked-questions"></a>Häufig gestellte Fragen zu Xamarin.Forms
+# <a name="xamarinforms-frequently-asked-questions"></a>Xamarin.FormsHäufig gestellte Fragen
 
-## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Kann ich die Xamarin.Forms-Standardvorlage auf ein neueres NuGet-Paket aktualisieren?](update-forms-template.md)
-Dieser Anleitung wird die Vorlage für Xamarin.Forms .NET Standard-Bibliothek als Beispiel verwendet, aber die gleiche allgemeine Methode funktioniert auch für die Vorlage für freigegebene Xamarin.Forms-Projekt.
+## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Kann ich die Xamarin.Forms Standardvorlage auf ein neueres nuget-Paket aktualisieren?](update-forms-template.md)
+In dieser Anleitung Xamarin.Forms wird die Vorlage für die .NET Standard-Bibliothek als Beispiel verwendet, aber dieselbe allgemeine Methode funktioniert auch für die Vorlage für frei Xamarin.Forms gegebene Projekte.
 
-## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Warum funktioniert der Visual Studio-XAML-Designer nicht für Xamarin.Forms-XAML-Dateien?](forms-xaml-designer.md)
-Xamarin.Forms unterstützt derzeit keine visuelle Designer für XAML-Dateien.
+## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Warum funktioniert der Visual Studio-XAML-Designer nicht für Xamarin.Forms XAML-Dateien?](forms-xaml-designer.md)
+Xamarin.Formsunterstützt derzeit keine visuellen Designer für XAML-Dateien.
 
-## <a name="android-build-error-the-linkassemblies-task-failed-unexpectedlyandroid-linkassemblies-errormd"></a>[Android-Buildfehler: Unerwarteter Fehler beim Task „LinkAssemblies“](android-linkassemblies-error.md)
-Sie können eine Fehlermeldung angezeigt `The "LinkAssemblies" task failed unexpectedly` Forms Wenn ein Xamarin.Android-Projekt erstellen, die verwendet wird. Dies geschieht, wenn der Linker aktiv ist (in der Regel auf ein *Version* Build zum Verringern der Größe des app-Pakets), und es tritt auf, da der Android-Ziele, die neueste Framework nicht aktualisiert werden. 
+## <a name="android-build-error-the-linkassemblies-task-failed-unexpectedly"></a>[Android-Buildfehler: Unerwarteter Fehler beim Task "linkassemblys".](android-linkassemblies-error.md)
+Möglicherweise wird eine Fehlermeldung angezeigt `The "LinkAssemblies" task failed unexpectedly` , wenn Sie ein xamarin. Android-Projekt mit Formularen verwenden. Dies geschieht, wenn der Linker aktiv ist (in der Regel auf einem *Releasebuild* , um die Größe des App-Pakets zu verringern). Dies liegt daran, dass die Android-Ziele nicht auf das neueste Framework aktualisiert werden. 
 
-## <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik--unexpected-top-level-errormaps-compiletodalvik-errormd"></a>["Warum schlägt mein Xamarin.Forms.Maps-Android-Projekt fehl mit COMPILETODALVIK: UNERWARTETER AUF OBERSTER EBENE FEHLER?"](maps-compiletodalvik-error.md)
-Dieser Fehler kann in der Fehlerbereich von Visual Studio für Mac oder im Fenster "Buildausgabe" von Visual Studio angezeigt werden; in der Android-Projekte mit Xamarin.Forms.Maps. Es wird am häufigsten behoben, durch das Erhöhen der Java-Heapgröße für Xamarin.Android-Projekt.
+## <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik--unexpected-top-level-errormaps-compiletodalvik-errormd"></a>["Warum geht's Xamarin.Forms . Das Android-Projekt von Maps schlägt fehl mit compilejedalvik: Unerwarteter Fehler auf oberster Ebene? "](maps-compiletodalvik-error.md)
+Dieser Fehler wird möglicherweise im Fehler Fenster von Visual Studio für Mac oder im Fenster "Buildausgabe" von Visual Studio angezeigt. in Android-Projekten, die verwenden Xamarin.Forms . Maps. Dies wird am häufigsten durch Erhöhen der Java-Heapgröße für Ihr xamarin. Android-Projekt gelöst.

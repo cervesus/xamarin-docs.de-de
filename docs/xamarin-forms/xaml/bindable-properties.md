@@ -1,20 +1,23 @@
 ---
-title: Bindbare xamarin. Forms-Eigenschaften
-description: Dieser Artikel bietet eine Einführung in bindbare Eigenschaften und zeigt, wie Sie erstellt und genutzt werden.
-ms.prod: xamarin
-ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/16/2020
-ms.openlocfilehash: 4151ac6f8cd9d860251ce1f27c7b342e0caa465c
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsBindbare Eigenschaften
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425772"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138176"
 ---
-# <a name="xamarinforms-bindable-properties"></a>Bindbare xamarin. Forms-Eigenschaften
+# <a name="xamarinforms-bindable-properties"></a>Xamarin.FormsBindbare Eigenschaften
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
@@ -28,7 +31,7 @@ Eigenschaften sollten als bindbare Eigenschaften implementiert werden, um eine o
 - Validieren des Werts der-Eigenschaft.
 - Überwachen von Eigenschafts Änderungen.
 
-Beispiele für die bindbaren Eigenschaften von xamarin. Forms sind [`Label.Text`](xref:Xamarin.Forms.Label.Text) , [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) und [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) . Jede bindbare Eigenschaft verfügt über ein entsprechendes `public static readonly` Feld vom Typ [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , das für die gleiche Klasse verfügbar gemacht wird und der Bezeichner der bindbaren Eigenschaft ist. Beispielsweise ist der entsprechende bindbare Eigenschaften Bezeichner für die- `Label.Text` Eigenschaft [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty) .
+Beispiele für Xamarin.Forms bindbare Eigenschaften sind [`Label.Text`](xref:Xamarin.Forms.Label.Text) , [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) und [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) . Jede bindbare Eigenschaft verfügt über ein entsprechendes `public static readonly` Feld vom Typ [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , das für die gleiche Klasse verfügbar gemacht wird und der Bezeichner der bindbaren Eigenschaft ist. Beispielsweise ist der entsprechende bindbare Eigenschaften Bezeichner für die- `Label.Text` Eigenschaft [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty) .
 
 ## <a name="create-a-bindable-property"></a>Erstellen einer bindbaren Eigenschaft
 
@@ -43,14 +46,14 @@ Alle [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanzen müssen
 
 Zum Erstellen einer- `BindableProperty` Instanz muss die enthaltende Klasse von der-Klasse abgeleitet werden [`BindableObject`](xref:Xamarin.Forms.BindableObject) . Die `BindableObject` Klasse ist jedoch in der Klassenhierarchie hoch, sodass die Mehrzahl der Klassen, die für die Funktionalität der Benutzeroberfläche verwendet werden, bindbare Eigenschaften unterstützen.
 
-Eine bindbare Eigenschaft kann erstellt werden, indem eine `public static readonly` Eigenschaft vom Typ deklariert wird [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Die bindbare Eigenschaft sollte auf den zurückgegebenen Wert einer der [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) Methoden Überladungen festgelegt werden. Die Deklaration sollte sich innerhalb des Texts der [`BindableObject`](xref:Xamarin.Forms.BindableObject) abgeleiteten Klasse befinden, jedoch außerhalb von Element Definitionen.
+Eine bindbare Eigenschaft kann erstellt werden, indem eine `public static readonly` Eigenschaft vom Typ deklariert wird [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Die bindbare Eigenschaft sollte auf den zurückgegebenen Wert von einem der [ `BindableProperty.Create` ] (Xref:) festgelegt werden Xamarin.Forms . Bindableproperty. Create (System. String, System. Type, System. Type, System. Object, Xamarin.Forms . BindingMode, Xamarin.Forms . Bindableproperty. validatevaluedelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangeddelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangingdelegat, Xamarin.Forms . Bindableproperty. coercevaluedelegat, Xamarin.Forms . Bindableproperty. kreatedefaultvaluedelegat)-Methoden Überladungen. Die Deklaration sollte sich innerhalb des Texts der [`BindableObject`](xref:Xamarin.Forms.BindableObject) abgeleiteten Klasse befinden, jedoch außerhalb von Element Definitionen.
 
 Es muss mindestens ein Bezeichner angegeben werden, wenn ein erstellt wird [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , zusammen mit den folgenden Parametern:
 
 - Der Name des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) .
 - Der Typ der Eigenschaft.
 - Der Typ des besitzenden Objekts.
-- Der Standardwert für die Eigenschaft. Dadurch wird sichergestellt, dass die-Eigenschaft immer einen bestimmten Standardwert zurückgibt, wenn Sie nicht festgelegt ist, und Sie kann sich vom Standardwert für den Typ der Eigenschaft unterscheiden. Der Standardwert wird wieder hergestellt, wenn die- [`ClearValue`](xref:Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindableProperty)) Methode für die bindbare Eigenschaft aufgerufen wird.
+- Der Standardwert für die Eigenschaft. Dadurch wird sichergestellt, dass die-Eigenschaft immer einen bestimmten Standardwert zurückgibt, wenn Sie nicht festgelegt ist, und Sie kann sich vom Standardwert für den Typ der Eigenschaft unterscheiden. Der Standardwert wird wieder hergestellt, wenn [ `ClearValue` ] (Xref: Xamarin.Forms . Bindableobject. ClearValue ( Xamarin.Forms . Bindableproperty))-Methode wird für die bindbare Eigenschaft aufgerufen.
 
 Der folgende Code zeigt ein Beispiel für eine bindbare Eigenschaft mit einem Bezeichner und Werten für die vier erforderlichen Parameter:
 
@@ -72,7 +75,7 @@ Wenn Sie eine- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanz
 
 ### <a name="create-accessors"></a>Erstellen von Accessoren
 
-Eigenschaftenaccessoren sind erforderlich, um die Eigenschaften Syntax für den Zugriff auf eine bindbare Eigenschaft zu verwenden. Der `Get` -Accessor sollte den Wert zurückgeben, der in der entsprechenden bindbare-Eigenschaft enthalten ist. Dies kann erreicht werden, indem die-Methode aufgerufen wird [`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) , wobei der bindbare Eigenschafts Bezeichner übergeben wird, für den der Wert abzurufen ist, und das Ergebnis dann in den erforderlichen Typ umgewandelt wird. Der- `Set` Accessor sollte den Wert der entsprechenden bindbaren Eigenschaft festlegen. Dies kann erreicht werden, indem die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) -Methode aufgerufen wird, wobei der bindbare Eigenschaften Bezeichner, für den der Wert festgelegt werden soll, und der festzulegende Wert übergeben werden.
+Eigenschaftenaccessoren sind erforderlich, um die Eigenschaften Syntax für den Zugriff auf eine bindbare Eigenschaft zu verwenden. Der `Get` -Accessor sollte den Wert zurückgeben, der in der entsprechenden bindbare-Eigenschaft enthalten ist. Dies kann durch Aufrufen von [ `GetValue` ] (Xref:) erreicht werden Xamarin.Forms . Bindableobject. GetValue ( Xamarin.Forms . Bindableproperty))-Methode. übergeben Sie den bindbaren Eigenschafts Bezeichner, für den der Wert ausgegeben werden soll, und wandeln Sie das Ergebnis dann in den erforderlichen Typ um. Der- `Set` Accessor sollte den Wert der entsprechenden bindbaren Eigenschaft festlegen. Dies kann durch Aufrufen von [ `SetValue` ] (Xref:) erreicht werden Xamarin.Forms . Bindableobject. SetValue ( Xamarin.Forms . Bindableproperty, System. Object))-Methode, wobei der bindbare Eigenschafts Bezeichner übergeben wird, für den der Wert festgelegt werden soll, und der festzulegende Wert.
 
 Das folgende Codebeispiel zeigt Accessoren für die `EventName` bindbare Eigenschaft:
 
@@ -123,7 +126,7 @@ Wenn Sie eine- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanz
 
 ### <a name="detect-property-changes"></a>Erkennen von Eigenschafts Änderungen
 
-Eine `static` Eigenschaften geänderte Rückruf Methode kann mit einer bindbaren Eigenschaft registriert werden, indem der- `propertyChanged` Parameter für die-Methode angegeben wird [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . Die angegebene Rückruf Methode wird aufgerufen, wenn der Wert der bindbaren Eigenschaft geändert wird.
+Eine `static` Eigenschaften geänderte Rückruf Methode kann mit einer bindbaren Eigenschaft registriert werden, indem der- `propertyChanged` Parameter für [ `BindableProperty.Create` ] (Xref:) angegeben wird Xamarin.Forms . Bindableproperty. Create (System. String, System. Type, System. Type, System. Object, Xamarin.Forms . BindingMode, Xamarin.Forms . Bindableproperty. validatevaluedelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangeddelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangingdelegat, Xamarin.Forms . Bindableproperty. coercevaluedelegat, Xamarin.Forms . Bindableproperty. kreatedefaultvaluedelegat)-Methode. Die angegebene Rückruf Methode wird aufgerufen, wenn der Wert der bindbaren Eigenschaft geändert wird.
 
 Im folgenden Codebeispiel wird veranschaulicht, wie die `EventName` bindbare Eigenschaft die- `OnEventNameChanged` Methode als Rückruf Methode für die Eigenschaften Änderung registriert:
 
@@ -143,7 +146,7 @@ In der Rückruf Methode für die Eigenschaften Änderung wird der- [`BindableObj
 
 ### <a name="validation-callbacks"></a>Validierungs Rückrufe
 
-Eine `static` Validierungs Rückruf Methode kann mit einer bindbaren Eigenschaft registriert werden, indem der- `validateValue` Parameter für die-Methode angegeben wird [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . Die angegebene Rückruf Methode wird aufgerufen, wenn der Wert der bindbaren Eigenschaft festgelegt wird.
+Eine `static` Validierungs Rückruf Methode kann mit einer bindbaren Eigenschaft registriert werden, indem der- `validateValue` Parameter für [ `BindableProperty.Create` ] (Xref:) angegeben wird Xamarin.Forms . Bindableproperty. Create (System. String, System. Type, System. Type, System. Object, Xamarin.Forms . BindingMode, Xamarin.Forms . Bindableproperty. validatevaluedelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangeddelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangingdelegat, Xamarin.Forms . Bindableproperty. coercevaluedelegat, Xamarin.Forms . Bindableproperty. kreatedefaultvaluedelegat)-Methode. Die angegebene Rückruf Methode wird aufgerufen, wenn der Wert der bindbaren Eigenschaft festgelegt wird.
 
 Das folgende Codebeispiel zeigt, wie die `Angle` bindbare Eigenschaft die `IsValidValue` Methode als Validierungs Rückruf Methode registriert:
 
@@ -164,7 +167,7 @@ Validierungs Rückrufe werden mit einem-Wert bereitgestellt und sollten zurückg
 
 ### <a name="coerce-value-callbacks"></a>Coerce-Wert Rückrufe
 
-Eine `static` coerce-Wert Rückruf Methode kann mit einer bindbaren Eigenschaft registriert werden, indem der- `coerceValue` Parameter für die-Methode angegeben wird [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . Die angegebene Rückruf Methode wird aufgerufen, wenn der Wert der bindbaren Eigenschaft geändert wird.
+Eine `static` coerce-Wert Rückruf Methode kann mit einer bindbaren Eigenschaft registriert werden, indem der- `coerceValue` Parameter für [ `BindableProperty.Create` ] (Xref:) angegeben wird Xamarin.Forms . Bindableproperty. Create (System. String, System. Type, System. Type, System. Object, Xamarin.Forms . BindingMode, Xamarin.Forms . Bindableproperty. validatevaluedelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangeddelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangingdelegat, Xamarin.Forms . Bindableproperty. coercevaluedelegat, Xamarin.Forms . Bindableproperty. kreatedefaultvaluedelegat)-Methode. Die angegebene Rückruf Methode wird aufgerufen, wenn der Wert der bindbaren Eigenschaft geändert wird.
 
 > [!IMPORTANT]
 > Der- `BindableObject` Typ verfügt über eine- `CoerceValue` Methode, die aufgerufen werden kann, um eine erneute Auswertung des Werts seines Arguments zu erzwingen `BindableProperty` , indem der recoerce-Wert Rückruf aufgerufen wird.
@@ -210,7 +213,7 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-Der- `defaultValueCreator` Parameter wird auf einen festgelegt `Func` , der die-Methode aufruft, [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) um einen zurückzugeben `double` , der die benannte Größe für die Schriftart darstellt, die auf einem [`Label`](xref:Xamarin.Forms.Label) auf der nativen Plattform verwendet wird.
+Der- `defaultValueCreator` Parameter wird auf einen festgelegt `Func` , der [ `Device.GetNamedSize` ] (Xref:) aufruft Xamarin.Forms . Device. getnamedsize ( Xamarin.Forms . Namedsize, System. Type))-Methode, um einen zurückzugeben `double` , der die benannte Größe für die Schriftart darstellt, die auf einem [`Label`](xref:Xamarin.Forms.Label) auf der nativen Plattform verwendet wird.
 
 ## <a name="related-links"></a>Verwandte Links
 

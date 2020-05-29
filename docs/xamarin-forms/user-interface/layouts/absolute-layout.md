@@ -1,94 +1,97 @@
 ---
-title: Xamarin.Forms von "AbsoluteLayout"
-description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms von "AbsoluteLayout"-Klasse, um einer präzisen Benutzeroberflächen zu erstellen. Diese Klasse passt Position und Größe von untergeordneten Elementen, die proportional zu seiner eigenen Größe und Position oder Absolute Werte.
-ms.prod: xamarin
-ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/25/2015
-ms.openlocfilehash: 0389587b2abffa751349a66eedc4a3800aa2a99d
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+title: Xamarin.FormsAbsoluteLayout
+description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Klasse "AbsoluteLayout" verwenden, um Pixel perfekte Benutzeroberflächen zu erstellen. Diese Klasse positioniert und untergeordnet untergeordnete Elemente proportional zu ihrer eigenen Größe und Position oder mit absoluten Werten.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d81a80e1f1190cbdffd578024cf9c6db1e7737e1
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888528"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139242"
 ---
-# <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms von "AbsoluteLayout"
+# <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) passt Position und Größe der untergeordneten Elemente, die proportional zu seiner eigenen Größe und Position oder Absolute Werte. Untergeordnete Ansichten können und Größe mit proportional oder statische Werte, und ein proportional und statische Werte können kombiniert werden.
+[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)Positionen und Größen untergeordnete Elemente sind proportional zu ihrer eigenen Größe und Position oder mit absoluten Werten. Untergeordnete Ansichten können mithilfe von proportionalen Werten oder statischen Werten positioniert und vergrößert werden, und proportionale und statische Werte können gemischt werden.
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms-Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms-Layouts")
+[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
-Dieser Artikel behandelt:
+In diesem Artikel wird Folgendes behandelt:
 
-- **[Zweck](#Purpose)**  &ndash; Allgemeine Verwendungsmöglichkeiten für `AbsoluteLayout`.
-- **[Nutzung](#Usage)**  &ndash; mit `AbsoluteLayout` Erreichen des gewünschten Entwurfs.
-  - **[Proportionale Layouts](#Proportional_Layouts)**  &ndash; verstehen, wie proportional Werte funktionieren in einer `AbsoluteLayout`.
-  - **[Angeben von Werten](#Specifying_Values)**  &ndash; zu verstehen, wie die proportionale und absoluten Werten angegeben werden.
-  - **[Proportionale Werte](#Proportional_Values)**  &ndash; verstehen, wie proportionale Werten arbeiten.
-    - **[Absolute Werte](#Absolute_Values)**  &ndash; Arbeitsweise Absolute Werte.
+- **[Zweck](#Purpose)** &ndash; Allgemeine Verwendungsmöglichkeiten für `AbsoluteLayout` .
+- **[Verwendung](#Usage)** &ndash; wie Sie verwenden `AbsoluteLayout` , um den gewünschten Entwurf zu erzielen.
+  - **[Proportionale Layouts](#Proportional_Layouts)** &ndash; verstehen, wie proportionale Werte in einem funktionieren `AbsoluteLayout` .
+  - **[Angeben von Werten](#Specifying_Values)** &ndash; verstehen, wie proportionale und absolute Werte angegeben werden.
+  - **[Proportionale Werte](#Proportional_Values)** &ndash; verstehen, wie proportionale Werte funktionieren.
+    - **[Absolute Werte](#Absolute_Values)** &ndash; verstehen, wie absolute Werte funktionieren.
 
 <a name="Purpose" />
 
 ## <a name="purpose"></a>Zweck
 
-Aufgrund der Positionierung-Objektmodell `AbsoluteLayout`, das Layout ist es relativ einfach, um Elemente zu positionieren, sodass sie jede Seite des Layouts ausgerichtet oder zentriert ausgerichtet sind. Mit proportional Größen und Positionen, Elemente in einem `AbsoluteLayout` können auf eine beliebige Ansichtsgröße automatisch skalieren. Für Elemente, in dem nur die Position, aber nicht die Größe skaliert werden soll, können die absoluten und proportional Werte gemischt werden.
+Aufgrund des Positionierungs Modells von `AbsoluteLayout` ist das Layout relativ einfach, Elemente so zu positionieren, dass Sie mit einer beliebigen Seite des Layouts oder zentriert sind. Bei proportionalen Größen und Positionen können Elemente in einem `AbsoluteLayout` automatisch auf jede beliebige Ansichts Größe skaliert werden. Bei Elementen, bei denen nur die Position, aber nicht die Größe skaliert werden soll, können absolute und proportionale Werte gemischt werden.
 
-`AbsoluteLayout` kann überall dort verwendet werden Elemente müssen innerhalb einer Ansicht positioniert werden soll, und ist besonders nützlich, wenn es sich bei Elementen, die Kanten ausrichten.
+`AbsoluteLayout`kann überall dort verwendet werden, wo Elemente in einer Ansicht positioniert werden müssen, und ist besonders nützlich, wenn Elemente an Kanten ausgerichtet werden.
 
 <a name="Usage" />
 
-## <a name="usage"></a>Verwendung
+## <a name="usage"></a>Verbrauch
 
 <a name="Proportional_Layouts" />
 
 ### <a name="proportional-layouts"></a>Proportionale Layouts
 
-`AbsoluteLayout` verfügt über ein eindeutiges Anker-Modell, bei dem die Verankerung des Elements relativ zu seinem Element positioniert wird, wie das Element relativ zu das Layout positioniert wird, wenn proportional Positionierung verwendet wird. Wenn absolute Positionierung verwendet wird, wird der Anker bei (0,0), in der Ansicht. Dies hat zwei wichtige Konsequenzen:
+`AbsoluteLayout`verfügt über ein eindeutiges Anker Modell, bei dem der Anker des Elements relativ zu seinem Element positioniert ist, da das Element relativ zum Layout positioniert wird, wenn eine proportionale Positionierung verwendet wird. Wenn absolute Positionierung verwendet wird, befindet sich der Anker in der Ansicht an (0,0). Dies hat zwei wichtige Konsequenzen:
 
-- Elemente können nicht aus dem Sie proportional Werte positioniert werden.
-- Elemente können zuverlässig auf jeder Seite des Layouts oder in der Mitte, unabhängig von der Größe des Layouts oder Geräts positioniert werden.
+- Elemente können nicht mithilfe von proportionalen Werten auf dem Bildschirm positioniert werden.
+- Elemente können unabhängig von der Größe des Layouts oder Geräts zuverlässig entlang einer beliebigen Seite des Layouts oder in der Mitte positioniert werden.
 
-`AbsoluteLayout`, z. B. `RelativeLayout`, kann sich um Elemente zu positionieren, sodass sie sich überlappen.
+`AbsoluteLayout`, wie `RelativeLayout` , kann Elemente so positionieren, dass Sie sich überlappen.
 
-Notieren Sie sich im folgenden Screenshot ist der Anker des Felds ist ein weißer Punkt. Beachten Sie die Beziehung zwischen dem Anker und das Feld aus, wie sie das Layout durchläuft:
+Beachten Sie im folgenden Screenshot, dass der Anker des Felds ein weißer Punkt ist. Beachten Sie die Beziehung zwischen dem Anker und dem Feld beim Durchlaufen des Layouts:
 
-![](absolute-layout-images/anchor-start.png "Anker zu Beginn")
-![](absolute-layout-images/anchor-center.png "Anker zentriert")
-![](absolute-layout-images/anchor-end.png "Anker am Ende")
+![](absolute-layout-images/anchor-start.png "Anchor at Start")
+![](absolute-layout-images/anchor-center.png "Anchor at Center")
+![](absolute-layout-images/anchor-end.png "Anchor at End")
 
 <a name="Specifying_Values" />
 
 ### <a name="specifying-values"></a>Angeben von Werten
 
-Die Ansichten in einer `AbsoluteLayout` positioniert sind, mithilfe von vier Werten:
+Sichten innerhalb eines `AbsoluteLayout` werden mit vier Werten positioniert:
 
-- **X** &ndash; die (horizontale) X-Position des Ankers mit der Ansicht
-- **Y** &ndash; die (vertikale) y-Position des Ankers mit der Ansicht
-- **Breite** &ndash; die Breite der Sicht
-- **Höhe** &ndash; die Höhe der Ansicht
+- **X** &ndash; die x-Position (horizontal) des Ansichts Ankers.
+- **Y** &ndash; (vertikal) Position des Ansichts Ankers
+- **Breite** &ndash; die Breite der Ansicht.
+- **Höhe** &ndash; die Höhe der Ansicht.
 
-Jeder dieser Werte kann festgelegt werden, als eine [proportional](#Proportional_Values) Wert oder ein [absolute](#Absolute_Values) Wert.
+Jeder dieser Werte kann als [proportionaler](#Proportional_Values) Wert oder als [absoluter](#Absolute_Values) Wert festgelegt werden.
 
-Werte werden als eine Kombination von Grenzen und ein Flag angegeben. `LayoutBounds` ist eine [ `Rectangle` ](xref:Xamarin.Forms.Rectangle) bestehend aus vier Werten: `x`, `y`, `width`, `height`.
+Werte werden als eine Kombination aus Begrenzungen und einem-Flag angegeben. `LayoutBounds`besteht [`Rectangle`](xref:Xamarin.Forms.Rectangle) aus vier Werten: `x` , `y` , `width` , `height` .
 
-### <a name="absolutelayoutflags"></a>AbsoluteLayoutFlags
+### <a name="absolutelayoutflags"></a>Absolutelayoutflags
 
-[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags) Gibt an, wie Werte interpretiert werden, und enthält die folgenden vordefinierten Optionen aus:
+[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags)Gibt an, wie Werte interpretiert werden, und verfügt über die folgenden vordefinierten Optionen:
 
-- **Keine** &ndash; alle Werte als Absolute interpretiert. Dies ist der Standardwert, wenn keine Layout-Flags angegeben werden.
+- **Keine** &ndash; interpretiert alle Werte als absolut. Dies ist der Standardwert, wenn keine LayoutFlags angegeben werden.
 - **Alle** &ndash; interpretiert alle Werte als proportional.
-- **WidthProportional** &ndash; interpretiert die `Width` Proportional und alle anderen Werte als absoluter Wert.
-- **HeightProportional** &ndash; nur Wert für die Höhe als proportionaler und alle anderen absolute Werte interpretiert.
-- **XProportional** &ndash; interpretiert die `X` als proportional und zum Behandeln von allen anderen Werten als absoluter Wert.
-- **YProportional** &ndash; interpretiert die `Y` als proportional und zum Behandeln von allen anderen Werten als absoluter Wert.
-- **PositionProportional** &ndash; interpretiert die `X` und `Y` Werte als proportional ist, während der Größenwerte als Absolute interpretiert werden.
-- **SizeProportional** &ndash; interpretiert die `Width` und `Height` Werte als proportional, während die Positionswerte absolut sind.
+- **Widthproportional** &ndash; interpretiert den `Width` Wert als proportional und alle anderen Werte als absolut.
+- **Heightproportional** &ndash; interpretiert nur den height-Wert als proportional zu allen anderen Werten, die absolut sind.
+- **Xproportional** &ndash; interpretiert den `X` Wert als proportional, während alle anderen Werte als absolut behandelt werden.
+- **Yproportional** &ndash; interpretiert den `Y` Wert als proportional, während alle anderen Werte als absolut behandelt werden.
+- **Positionproportional** &ndash; interpretiert den `X` -Wert und den- `Y` Wert als proportional, während die Größen Werte als absolut interpretiert werden.
+- **Sizeproportional** &ndash; interpretiert den `Width` -Wert und den- `Height` Wert als proportional, während die Positionswerte absolut sind.
 
-In XAML, Grenzen und die Flags werden festgelegt als Teil der Definition der Ansichten in das Layout an, mit der `AbsoluteLayout.LayoutBounds` Eigenschaft. Grenzen werden als eine durch Trennzeichen getrennte Liste von Werten festgelegt `X`, `Y`, `Width`, und `Height`in dieser Reihenfolge. Flags werden ebenfalls angegeben, in der Deklaration von Ansichten in das Layout mithilfe der `AbsoluteLayout.LayoutFlags` Eigenschaft. Beachten Sie, dass die Flags, die in XAML, die mit einer durch Trennzeichen getrennte Liste kombiniert werden können. Betrachten Sie das folgende Beispiel:
+In XAML werden Begrenzungen und Flags als Teil der Definition von Sichten innerhalb des Layouts mithilfe der-Eigenschaft festgelegt `AbsoluteLayout.LayoutBounds` . Grenzen werden als durch Trennzeichen getrennte Liste von Werten, `X` ,, `Y` `Width` und `Height` in dieser Reihenfolge festgelegt. Flags werden auch in der Deklaration von Sichten im Layout mithilfe der- `AbsoluteLayout.LayoutFlags` Eigenschaft angegeben. Beachten Sie, dass Flags in XAML mithilfe einer durch Trennzeichen getrennten Liste kombiniert werden können. Sehen Sie sich das folgende Beispiel an:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -114,15 +117,15 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "Beispiele für die von \"AbsoluteLayout\"")
+![](absolute-layout-images/exploration.png "AbsoluteLayout Examples")
 
 Beachten Sie Folgendes:
 
-- Die Bezeichnung in der Mitte befindet sich unter Verwendung absoluter Werte für Größe und Position. Aus diesem Grund wird er auf iPhone 4 s zentriert und niedriger, aber nicht zentriert auf größeren Geräten angezeigt.
-- Der Text am Ende das Layout befindet sich proportionale Größe und Position Werte verwenden. Es wird immer angezeigt, in der Mitte der Unterseite des Layouts, aber wächst die Größe mit größere Layout.
-- Drei farbig `BoxView`s werden an den oberen, linken und rechten Rändern des Bildschirms mithilfe von proportional Position und Größe von absolut positioniert.
+- Die Bezeichnung in der Mitte wird mit den Werten der absoluten Größe und Position positioniert. Aus diesem Grund wird er auf iPhone 4S und niedriger zentriert, aber nicht auf größeren Geräten zentriert.
+- Der Text am unteren Rand des Layouts wird mithilfe von proportionalen Größen-und Positions Werten positioniert. Sie wird immer unten in der Mitte des Layouts angezeigt, aber ihre Größe vergrößert sich mit größeren layoutgrößen.
+- Dreifarbige `BoxView` e werden am oberen, linken und rechten Rand des Bildschirms mithilfe von proportionaler Position und absoluter Größe positioniert.
 
-Die folgenden erzielt dasselbe Layout in C# geschrieben wird:
+Folgendes erreicht das gleiche Layout in c#:
 
 ```csharp
 public class AbsoluteLayoutExplorationCode : ContentPage
@@ -170,11 +173,11 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 
 ### <a name="proportional-values"></a>Proportionale Werte
 
-Proportionale Werte definieren Sie eine Beziehung zwischen einem Layout und einer Ansicht. Diese Beziehung definiert einer untergeordnete Ansicht der Position oder Skalierungswert als Teile der entsprechende Wert des übergeordneten Layouts. Diese Werte werden als ausgedrückt `double`mit Werten zwischen 0 und 1.
+Proportional Werte definieren eine Beziehung zwischen einem Layout und einer Ansicht. Diese Beziehung definiert die Position oder den Skalierungs Wert einer untergeordneten Ansicht als Anteil des entsprechenden Werts des übergeordneten Layouts. Diese Werte werden als `double` s mit Werten zwischen 0 und 1 ausgedrückt.
 
-Proportionale Werte werden auf die Position und Größe von Ansichten innerhalb des Layouts verwendet. Wenn also eine Ansicht der Breite eines Anteils festgelegt ist, den Wert für die resultierenden Breite ist der Zeitanteil, multipliziert mit der `AbsoluteLayout`der Breite. Z. B. mit einem `AbsoluteLayout` Breite `500` und eine Ansicht, die auf die proportionale Breite der.5, die gerenderte Breite der Sicht festgelegt, werden 250 (500 x.5 zwei
+Proportional Werte werden verwendet, um Sichten innerhalb des Layouts zu positionieren und zu verkleinern. Wenn die Breite einer Sicht als proportional festgelegt wird, ist der resultierende Breitenwert der Anteil multipliziert mit der `AbsoluteLayout` Breite. Beispielsweise ist `AbsoluteLayout` `500` die gerenderte Breite der Ansicht 250 (500 x. 5), wenn die Breite und die Ansicht auf eine proportionale Breite von 0,5 festgelegt sind.
 
-Um proportionale Werte zu verwenden, legen `LayoutBounds` verwenden (X, y) Proportionen und proportionale Größe, und legen Sie dann `LayoutFlags` zu `All`.
+Um proportionale Werte zu verwenden, legen `LayoutBounds` Sie mit (x, y) Proportionen und proportionalen Größen fest, und legen Sie dann `LayoutFlags` auf fest `All` .
 
 In XAML:
 
@@ -195,11 +198,11 @@ AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 
 ### <a name="absolute-values"></a>Absolute Werte
 
-Absolute Werte definieren explizit die, in denen Sichten innerhalb des Layouts positioniert werden soll. Im Gegensatz zu proportional Werte sind Absolute Werte funktionsfähig positionieren und Anpassen der Größe einer Ansicht, die nicht innerhalb der Grenzen des Layouts passen.
+Absolute Werte definieren explizit, wo Sichten innerhalb des Layouts positioniert werden sollen. Im Gegensatz zu proportionalen Werten können absolute Werte eine Ansicht positionieren und anpassen, die nicht innerhalb der Grenzen des Layouts liegt.
 
-Verwenden Absolute Werte für die Positionierung kann gefährlich sein, wenn die Größe des Layouts nicht bekannt ist. Wenn Sie absolute Positionen verwenden zu können, kann ein Element in der Mitte des Bildschirms auf eine Größe bei anderen versetzt werden. Es ist wichtig zum Testen Ihrer app für die verschiedenen Bildschirmgrößen von Ihre unterstützten Geräte.
+Die Verwendung absoluter Werte für die Positionierung kann gefährlich sein, wenn die Größe des Layouts nicht bekannt ist. Wenn absolute Positionen verwendet werden, kann ein Element in der Mitte des Bildschirms auf einer beliebigen anderen Größe versetzt werden. Es ist wichtig, dass Sie Ihre APP über die verschiedenen Bildschirmgrößen der unterstützten Geräte hinweg testen.
 
-Um absolute layoutwerten zu verwenden, legen `LayoutBounds` (X, y) mithilfe von Koordinaten und explizite Größe, und legen Sie dann `LayoutFlags` zu `None`.
+Wenn Sie absolute layoutwerte verwenden möchten, legen `LayoutBounds` Sie using (x, y)-Koordinaten und explizite Größen fest, und legen Sie dann `LayoutFlags` auf fest `None`
 
 In XAML:
 
@@ -215,11 +218,11 @@ var label = new Label {Text = "I'm centered on iPhone 4 but no other device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(115,150,100,100));
 ```
 
-## <a name="exploring-a-complex-layout"></a>Erkunden ein komplexes Layout
+## <a name="exploring-a-complex-layout"></a>Untersuchen eines komplexen Layouts
 
-Jede der Layouts hat Stärken und Schwächen für bestimmte Layouts erstellen. In dieser Artikelreihe Layout eine Beispiel-app mit der gleichen Layout mit drei verschiedenen Layouts implementiert wurde.
+Jedes der Layouts hat Stärken und Schwächen zum Erstellen bestimmter Layouts. In dieser Reihe von layoutartikeln wurde eine Beispiel-App mit dem gleichen Seitenlayout erstellt, das mithilfe von drei verschiedenen Layouts implementiert wurde.
 
-Betrachten Sie das folgende XAML:
+Beachten Sie den folgenden XAML-Code:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -282,15 +285,15 @@ Title="AbsoluteLayout">
 </ContentPage>
 ```
 
-Der obige Code führt das folgende Layout:
+Der obige Code führt zum folgenden Layout:
 
-![](absolute-layout-images/abs.png "Komplexe von \"AbsoluteLayout\"")
+![](absolute-layout-images/abs.png "Complex AbsoluteLayout")
 
-Beachten Sie, dass `AbsoluteLayout`s geschachtelt sind, da in einigen Fällen Schachteln von Layouts einfacher als die Darstellung aller Elemente innerhalb des gleichen Layouts sein kann.
+Beachten Sie, dass `AbsoluteLayout` s geschachtelt sind, da in einigen Fällen die Schachtelung von Layouts einfacher sein kann, als alle Elemente innerhalb desselben Layouts darzustellen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Erstellen von mobilen Apps mit Xamarin.Forms Kapitel 14](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
+- [Erstellen von Mobile Apps mit Xamarin.Forms , Kapitel 14](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
 - [AbsoluteLayout](xref:Xamarin.Forms.AbsoluteLayout)
 - [Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble-Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [Businesstumm Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

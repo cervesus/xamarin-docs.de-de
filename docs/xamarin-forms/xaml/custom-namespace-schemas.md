@@ -1,22 +1,25 @@
 ---
-title: Benutzerdefinierte XAML-Namespace Schemas in xamarin. Forms
-description: Ein benutzerdefiniertes XAML-Namespace Schema kann mit der XmlnsDefinitionAttribute-Klasse definiert werden, die eine Zuordnung zwischen einer benutzerdefinierten URL und einem oder mehreren CLR-Namespaces angibt. Das benutzerdefinierte Namespace Schema kann dann in XAML-Namespace Deklarationen verwendet werden.
-ms.prod: xamarin
-ms.assetid: FDF201A1-8C35-4569-A728-F9B0A0C5B31A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/21/2018
-ms.openlocfilehash: 98da98c6ef7058264fac12f8271b3bc1848fdbe0
-ms.sourcegitcommit: 1fb87ff74560d4d7c89f80018cc010c07646461c
+title: Benutzerdefinierte XAML-Namespace Schemas inXamarin.Forms
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 41a95b1a82ab8aa1f6938e5a2bcdebcef368e72d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82139043"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138163"
 ---
-# <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>Benutzerdefinierte XAML-Namespace Schemas in xamarin. Forms
+# <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>Benutzerdefinierte XAML-Namespace Schemas inXamarin.Forms
 
-[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
 Auf Typen in einer Bibliothek kann in XAML verwiesen werden, indem ein XAML-Namespace für die Bibliothek deklariert wird, wobei die Namespace Deklaration den CLR-Namespace Namen (Common Language Runtime) und einen Assemblynamen angibt:
 
@@ -29,13 +32,13 @@ Auf Typen in einer Bibliothek kann in XAML verwiesen werden, indem ein XAML-Name
 
 Das Angeben eines CLR-Namespace und eines Assemblynamens in einer `xmlns` Definition kann jedoch umständlich und fehleranfällig sein. Außerdem sind möglicherweise mehrere XAML-Namespace Deklarationen erforderlich, wenn die Bibliothek Typen in mehreren Namespaces enthält.
 
-Eine alternative Vorgehensweise besteht darin, ein benutzerdefiniertes Namespace Schema `http://mycompany.com/schemas/controls`(z. b.) zu definieren, das einem oder mehreren CLR-Namespaces zugeordnet ist. Dies ermöglicht es einer einzelnen XAML-Namespace Deklaration, auf alle Typen in einer Assembly zu verweisen, auch wenn Sie sich in unterschiedlichen Namespaces befinden. Außerdem ermöglicht es einer einzelnen XAML-Namespace Deklaration, auf Typen in mehreren Assemblys zu verweisen.
+Eine alternative Vorgehensweise besteht darin, ein benutzerdefiniertes Namespace Schema (z. b.) zu definieren, `http://mycompany.com/schemas/controls` das einem oder mehreren CLR-Namespaces zugeordnet ist. Dies ermöglicht es einer einzelnen XAML-Namespace Deklaration, auf alle Typen in einer Assembly zu verweisen, auch wenn Sie sich in unterschiedlichen Namespaces befinden. Außerdem ermöglicht es einer einzelnen XAML-Namespace Deklaration, auf Typen in mehreren Assemblys zu verweisen.
 
-Weitere Informationen zu XAML-Namespaces finden Sie unter [XAML-Namespaces in xamarin. Forms](namespaces.md).
+Weitere Informationen zu XAML-Namespaces finden Sie [unter XAML-Namespaces in Xamarin.Forms ](namespaces.md).
 
 ## <a name="defining-a-custom-namespace-schema"></a>Definieren eines benutzerdefinierten Namespace Schemas
 
-Die Beispielanwendung enthält eine Bibliothek, die einige einfache Steuerelemente verfügbar macht `CircleButton`, z. b.:
+Die Beispielanwendung enthält eine Bibliothek, die einige einfache Steuerelemente verfügbar macht, z. b. `CircleButton` :
 
 ```csharp
 using Xamarin.Forms;
@@ -49,14 +52,14 @@ namespace MyCompany.Controls
 }
 ```
 
-Alle-Steuerelemente in der Bibliothek befinden sich `MyCompany.Controls` im-Namespace. Diese Steuerelemente können über ein benutzerdefiniertes Namespace Schema für eine aufrufende Assembly verfügbar gemacht werden.
+Alle-Steuerelemente in der Bibliothek befinden sich im- `MyCompany.Controls` Namespace. Diese Steuerelemente können über ein benutzerdefiniertes Namespace Schema für eine aufrufende Assembly verfügbar gemacht werden.
 
-Ein benutzerdefiniertes Namespace Schema wird mit `XmlnsDefinitionAttribute` der-Klasse definiert, die die Zuordnung zwischen einem XAML-Namespace und einem oder mehreren CLR-Namespaces angibt. `XmlnsDefinitionAttribute` Erfordert zwei Argumente: den Namen des XAML-Namespace und den Namen des CLR-Namespace. Der Name des XAML-Namespace wird in `XmlnsDefinitionAttribute.XmlNamespace` der-Eigenschaft gespeichert, und der CLR-Namespace Name `XmlnsDefinitionAttribute.ClrNamespace` wird in der-Eigenschaft gespeichert.
+Ein benutzerdefiniertes Namespace Schema wird mit der- `XmlnsDefinitionAttribute` Klasse definiert, die die Zuordnung zwischen einem XAML-Namespace und einem oder mehreren CLR-Namespaces angibt. `XmlnsDefinitionAttribute`Erfordert zwei Argumente: den Namen des XAML-Namespace und den Namen des CLR-Namespace. Der Name des XAML-Namespace wird in der `XmlnsDefinitionAttribute.XmlNamespace` -Eigenschaft gespeichert, und der CLR-Namespace Name wird in der- `XmlnsDefinitionAttribute.ClrNamespace` Eigenschaft gespeichert.
 
 > [!NOTE]
-> Die `XmlnsDefinitionAttribute` -Klasse verfügt auch über eine `AssemblyName`-Eigenschaft mit dem Namen, die optional auf den Namen der Assembly festgelegt werden kann. Dies ist nur erforderlich, wenn `XmlnsDefinitionAttribute` sich ein CLR-Namespace, auf den von verwiesen wird, in einer externen Assembly befindet.
+> Die- `XmlnsDefinitionAttribute` Klasse verfügt auch über eine-Eigenschaft mit dem Namen `AssemblyName` , die optional auf den Namen der Assembly festgelegt werden kann. Dies ist nur erforderlich, wenn sich ein CLR-Namespace, auf den von verwiesen `XmlnsDefinitionAttribute` wird, in einer externen Assembly befindet.
 
-`XmlnsDefinitionAttribute` Muss auf Assemblyebene in dem Projekt definiert werden, das die CLR-Namespaces enthält, die im benutzerdefinierten Namespace Schema zugeordnet werden. Das folgende Beispiel zeigt die **AssemblyInfo.cs** -Datei aus der Beispielanwendung:
+`XmlnsDefinitionAttribute`Muss auf Assemblyebene in dem Projekt definiert werden, das die CLR-Namespaces enthält, die im benutzerdefinierten Namespace Schema zugeordnet werden. Das folgende Beispiel zeigt die **AssemblyInfo.cs** -Datei aus der Beispielanwendung:
 
 ```csharp
 using Xamarin.Forms;
@@ -66,10 +69,10 @@ using MyCompany.Controls;
 [assembly: XmlnsDefinition("http://mycompany.com/schemas/controls", "MyCompany.Controls")]
 ```
 
-Dieser Code erstellt ein benutzerdefiniertes Namespace Schema, `http://mycompany.com/schemas/controls` das die URL `MyCompany.Controls` dem CLR-Namespace zuordnet. Außerdem wird das `Preserve` -Attribut für die Assembly angegeben, um sicherzustellen, dass der Linker alle Typen in der Assembly beibehält.
+Dieser Code erstellt ein benutzerdefiniertes Namespace Schema, das die `http://mycompany.com/schemas/controls` URL dem `MyCompany.Controls` CLR-Namespace zuordnet. Außerdem wird das- `Preserve` Attribut für die Assembly angegeben, um sicherzustellen, dass der Linker alle Typen in der Assembly beibehält.
 
 > [!IMPORTANT]
-> Das `Preserve` -Attribut sollte auf Klassen in der Assembly angewendet werden, die über das benutzerdefinierte Namespace Schema zugeordnet werden oder auf die gesamte Assembly angewendet werden.
+> Das- `Preserve` Attribut sollte auf Klassen in der Assembly angewendet werden, die über das benutzerdefinierte Namespace Schema zugeordnet werden oder auf die gesamte Assembly angewendet werden.
 
 Das benutzerdefinierte Namespace Schema kann dann für die Typauflösung in XAML-Dateien verwendet werden.
 
@@ -89,7 +92,7 @@ namespace MyCompany.Controls
 }
 ```
 
-Die `Init` -Methode kann dann von der Assembly aufgerufen werden, die Typen aus dem benutzerdefinierten Namespace Schema verwendet:
+Die- `Init` Methode kann dann von der Assembly aufgerufen werden, die Typen aus dem benutzerdefinierten Namespace Schema verwendet:
 
 ```csharp
 using Xamarin.Forms;
@@ -111,7 +114,7 @@ namespace CustomNamespaceSchemaDemo
 > [!WARNING]
 > Wenn ein solcher Code Verweis nicht einbezogen wird, kann der XAML-Compiler die Assembly, die die benutzerdefinierten Namespace Schema Typen enthält, nicht finden.
 
-Um das `CircleButton` -Steuerelement zu verwenden, wird ein XAML-Namespace deklariert, wobei die Namespace Deklaration die Schema-URL des benutzerdefinierten Namespaces angibt:
+Um das- `CircleButton` Steuerelement zu verwenden, wird ein XAML-Namespace deklariert, wobei die Namespace Deklaration die Schema-URL des benutzerdefinierten Namespaces angibt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,16 +136,16 @@ Um das `CircleButton` -Steuerelement zu verwenden, wird ein XAML-Namespace dekla
 </ContentPage>
 ```
 
-`CircleButton`-Instanzen können dann hinzugefügt werden [`ContentPage`](xref:Xamarin.Forms.ContentPage) , indem Sie mit dem `controls` -Namespace Präfix deklariert werden.
+`CircleButton`-Instanzen können dann hinzugefügt werden, [`ContentPage`](xref:Xamarin.Forms.ContentPage) indem Sie mit dem- `controls` Namespace Präfix deklariert werden.
 
-Um die Schema Typen der benutzerdefinierten Namespaces zu finden, durchsucht xamarin. `XmlnsDefinitionAttribute` Forms referenzierte Assemblys nach Instanzen. Wenn das `xmlns` -Attribut für ein Element in einer XAML-Datei `XmlNamespace` mit dem Eigenschafts `XmlnsDefinitionAttribute`Wert in einem übereinstimmt, versucht xamarin. `XmlnsDefinitionAttribute.ClrNamespace` Forms, den Eigenschafts Wert für die Auflösung des Typs zu verwenden. Wenn die Typauflösung fehlschlägt, versucht xamarin. Forms weiterhin, eine Typauflösung basierend auf allen `XmlnsDefinitionAttribute` zusätzlichen übereinstimmenden Instanzen durchzuführen.
+Um die benutzerdefinierten Namespace-Schema Typen zu finden, sucht referenzierte Assemblys nach- Xamarin.Forms `XmlnsDefinitionAttribute` Instanzen. Wenn das- `xmlns` Attribut für ein Element in einer XAML-Datei mit dem `XmlNamespace` Eigenschafts Wert in einem übereinstimmt `XmlnsDefinitionAttribute` , Xamarin.Forms versucht, den `XmlnsDefinitionAttribute.ClrNamespace` Eigenschafts Wert für die Auflösung des Typs zu verwenden. Wenn die Typauflösung fehlschlägt, Xamarin.Forms versucht weiterhin, die Typauflösung basierend auf allen zusätzlichen übereinstimmenden Instanzen durchzuführen `XmlnsDefinitionAttribute` .
 
-Das Ergebnis ist, dass `CircleButton` zwei Instanzen angezeigt werden:
+Das Ergebnis ist, dass zwei `CircleButton` Instanzen angezeigt werden:
 
 ![Kreis Schaltflächen](custom-namespace-schemas-images/circle-buttons.png "Kreis Schaltflächen")
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Benutzerdefinierte Namespace Schemas (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
-- [Empfohlene Präfixe für XAML-Namespaces](custom-prefix.md)
-- [XAML-Namespaces in xamarin. Forms](namespaces.md)
+- [Empfohlene Präfixe für den XAML-Namespace](custom-prefix.md)
+- [XAML-Namespaces inXamarin.Forms](namespaces.md)

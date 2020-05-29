@@ -1,38 +1,41 @@
 ---
-title: Empfohlene Präfixe in Xamarin.Forms XAML-Namespace
-description: Die XmlnsPrefixAttribute-Klasse kann von Autoren von Steuerelementen verwendet werden, an der ein empfohlenes Präfix, einen XAML-Namespace, für die XAML-Verwendung zugeordnet werden soll.
-ms.prod: xamarin
-ms.assetid: 7B315BEC-7A35-48F4-A9C7-EF40255E95FF
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/28/2019
-ms.openlocfilehash: 33f18b3f9c9ddb6ab31ca92e2f192ffad783ec0c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+title: Empfohlene Präfixe für den XAML-Namespace inXamarin.Forms
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71ae523f40f3f7529c12f853778404e224fbae30
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075093"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138137"
 ---
-# <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>Empfohlene Präfixe in Xamarin.Forms XAML-Namespace
+# <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>Empfohlene Präfixe für den XAML-Namespace inXamarin.Forms
 
-Die `XmlnsPrefixAttribute` Klasse kann von Autoren von Steuerelementen verwendet werden, an der ein empfohlenes Präfix, einen XAML-Namespace, für die XAML-Verwendung zugeordnet werden soll. Das Präfix ist nützlich, wenn Objekt Struktur-Serialisierung in XAML unterstützt, oder mit einer entwurfsumgebung interagiert, die XAML-Bearbeitungsfunktionen hat. Zum Beispiel:
+Die- `XmlnsPrefixAttribute` Klasse kann von Steuerelement Autoren verwendet werden, um ein empfohlenes Präfix anzugeben, das einem XAML-Namespace für die XAML-Verwendung zugeordnet werden soll. Das Präfix ist nützlich, wenn die objektstrukturserialisierung in XAML unterstützt wird, oder wenn mit einer Entwurfs Umgebung interagiert wird, die XAML-Bearbeitungsfunktionen hat. Beispiel:
 
-- XAML-Text-Editoren können die `XmlnsPrefixAttribute` als Hinweis für einen anfänglichen XAML-Namespace `xmlns` Zuordnung.
-- XAML-entwurfsumgebungen können die `XmlnsPrefixAttribute` so Zuordnungen der XAML hinzu, wenn Objekte aus einer Toolbox, und klicken Sie auf eine visuelle Entwurfsoberfläche ziehen.
+- XAML-Text-Editoren können `XmlnsPrefixAttribute` als Hinweis für eine anfängliche XAML-Namespace `xmlns` Zuordnung verwenden.
+- XAML-Entwurfs Umgebungen können verwenden `XmlnsPrefixAttribute` , um dem XAML Zuordnungen hinzuzufügen, wenn Objekte aus einer Toolbox auf eine visuelle Entwurfs Oberfläche gezogen werden.
 
-Empfohlene Namespacepräfixe sollte definiert werden, auf der Assemblyebene mit der `XmlnsPrefixAttribute` -Konstruktor, der zwei Argumente akzeptiert: eine Zeichenfolge, die den Bezeichner für einen XAML-Namespace angibt, und eine Zeichenfolge, die ein empfohlenes Präfix angibt:
+Empfohlene Namespace Präfixe sollten auf Assemblyebene mit dem `XmlnsPrefixAttribute` Konstruktor definiert werden, der zwei Argumente annimmt: eine Zeichenfolge, die den Bezeichner eines XAML-Namespace angibt, und eine Zeichenfolge, die ein empfohlenes Präfix angibt:
 
 ```csharp
 [assembly: XmlnsPrefix("http://xamarin.com/schemas/2014/forms", "xf")]
 ```
 
-Präfixe sollten kurze Zeichenfolgen zu verwenden, da das Präfix in der Regel auf alle serialisierten Elemente angewendet wird, die aus dem XAML-Namespace enthalten sind. Aus diesem Grund haben die Präfixlänge der Zeichenfolge eine spürbare Auswirkung auf die Größe der serialisierten XAML-Ausgabe.
+Präfixe sollten kurze Zeichen folgen verwenden, da das Präfix in der Regel auf alle serialisierten Elemente angewendet wird, die aus dem XAML-Namespace stammen. Daher kann die Länge der Präfix Zeichenfolge eine spürbare Auswirkung auf die Größe der serialisierten XAML-Ausgabe haben.
 
 > [!NOTE]
-> Mehr als eine `XmlnsPrefixAttribute` kann auf eine Assembly angewendet werden. Wenn Sie eine Assembly, die Typen für mehr als eine XAML-Namespace definiert verfügen, können Sie z. B. unterschiedliche Werte für jeden XAML-Namespace definieren.
+> Es können mehrere `XmlnsPrefixAttribute` auf eine Assembly angewendet werden. Wenn Sie z. b. über eine Assembly verfügen, die Typen für mehr als einen XAML-Namespace definiert, können Sie für jeden XAML-Namespace unterschiedliche Präfix Werte definieren.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Schemas für den benutzerdefinierten XAML-Namespace](custom-namespace-schemas.md)
-- [XAML-Namespaces in Xamarin.Forms](namespaces.md)
+- [XAML-Namespaces inXamarin.Forms](namespaces.md)

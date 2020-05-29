@@ -1,30 +1,33 @@
 ---
-title: Native Ansichten in xamarin. Forms
-description: Native Ansichten von IOS, Android und der universelle Windows-Plattform (UWP) können direkt von xamarin. Forms referenziert werden, und Sie können mit xamarin. Forms-Ansichten interagieren.
-ms.prod: xamarin
-ms.assetid: 2294a023-d763-41de-a9da-c2bfc239a132
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/24/2016
-ms.openlocfilehash: c49d6633e3fb78aa026cbd16cb2c6092a1c463f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: Native Sichten inXamarin.Forms
+description: Auf native Ansichten von IOS, Android und universelle Windows-Plattform (UWP) kann direkt von verwiesen werden, Xamarin.Forms und Sie können mit Xamarin.Forms Ansichten interagieren.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b622d19675694f4d4c7816a81f969b93cdfb5828
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760000"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139567"
 ---
-# <a name="native-views-in-xamarinforms"></a>Native Ansichten in xamarin. Forms
+# <a name="native-views-in-xamarinforms"></a>Native Sichten inXamarin.Forms
 
-_Native Ansichten von IOS, Android und der universelle Windows-Plattform (UWP) können direkt von xamarin. Forms referenziert werden. Eigenschaften und Ereignishandler können für Native Ansichten festgelegt werden, und Sie können mit xamarin. Forms-Sichten interagieren._
+_Auf native Ansichten von IOS, Android und universelle Windows-Plattform (UWP) kann direkt von verwiesen werden Xamarin.Forms . Eigenschaften und Ereignishandler können für Native Ansichten festgelegt werden, und Sie können mit Xamarin.Forms Sichten interagieren._
 
-## <a name="native-views-in-xamlxamlmd"></a>[Native Ansichten in XAML](xaml.md)
+## <a name="native-views-in-xaml"></a>[Native Ansichten in XAML](xaml.md)
 
-Native Ansichten von IOS, Android und UWP können direkt von xamarin. Forms-Seiten referenziert werden, die mit XAML erstellt wurden.
+Native Ansichten von IOS, Android und UWP können direkt von Seiten referenziert werden, die Xamarin.Forms mit XAML erstellt wurden.
 
-## <a name="native-views-in-ccodemd"></a>[Native Ansichten in C#](code.md)
+## <a name="native-views-in-c"></a>[Native Ansichten in C#](code.md)
 
-Native Ansichten von iOS-, Android- und UWP können direkt von Xamarin.Forms-Seiten, die mit c# erstellte verwiesen werden.
+Native Ansichten von IOS, Android und UWP können direkt von Xamarin.Forms mit c# erstellten Seiten referenziert werden.
 
 ## <a name="related-links"></a>Verwandte Links
 

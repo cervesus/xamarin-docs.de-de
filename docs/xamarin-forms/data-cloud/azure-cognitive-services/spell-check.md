@@ -1,42 +1,45 @@
 ---
-title: Rechtschreibprüfung mithilfe der Bing-Rechtschreibprüfungs-API
-description: Bing-Rechtschreibprüfung führt kontextbezogene Rechtschreibprüfung für Text Inline Empfehlungen für falsch geschriebene Wörter. In diesem Artikel wird erläutert, wie Sie mit der Bing-Rechtschreibprüfungs REST-API, korrigieren Sie Rechtschreibfehler in einer Xamarin.Forms-Anwendung.
-ms.prod: xamarin
-ms.assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/08/2017
-ms.openlocfilehash: 924f5403f12250fcfc5f026438d08ed618fb373f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: Bing-Rechtschreibprüfung führt die kontextbezogene Rechtschreibprüfung für Text durch und stellt Inline Vorschläge für falsch geschriebene Wörter bereit. In diesem Artikel wird erläutert, wie Sie die Bing-Rechtschreibprüfung Rest-API verwenden, um Rechtschreibfehler in einer-Anwendung zu korrigieren Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487606"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139294"
 ---
-# <a name="spell-checking-using-the-bing-spell-check-api"></a>Rechtschreibprüfung mithilfe der Bing-Rechtschreibprüfungs-API
+# <a name="spell-checking-using-the-bing-spell-check-api"></a>Rechtschreibprüfung mit der Bing-Rechtschreibprüfung-API
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Bing-Rechtschreibprüfung führt die kontextbezogene Rechtschreibprüfung für Text durch und stellt Inline Vorschläge für falsch geschriebene Wörter bereit. In diesem Artikel wird erläutert, wie Sie die Bing-Rechtschreibprüfung Rest-API verwenden, um Rechtschreibfehler in einer xamarin. Forms-Anwendung zu korrigieren._
+_Bing-Rechtschreibprüfung führt die kontextbezogene Rechtschreibprüfung für Text durch und stellt Inline Vorschläge für falsch geschriebene Wörter bereit. In diesem Artikel wird erläutert, wie Sie die Bing-Rechtschreibprüfung Rest-API verwenden, um Rechtschreibfehler in einer-Anwendung zu korrigieren Xamarin.Forms ._
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
-Die Bing-Rechtschreibprüfungs REST-API verfügt über zwei Betriebsmodi, und ein Modus muss angegeben werden, wenn eine Anforderung an die API vornehmen:
+Die Bing-Rechtschreibprüfung-Rest-API verfügt über zwei Betriebsmodi, und ein Modus muss angegeben werden, wenn Sie eine Anforderung an die API senden:
 
-- `Spell` kurzen Text (bis zu 9 Wörter) ohne Änderungen zur Groß-und Kleinschreibung wird automatisch behoben.
-- `Proof` langen Text korrigiert, bietet Schreibweise Korrekturen und grundlegende Zeichensetzung und unterdrückt die aggressive Korrekturen.
+- `Spell`korrigiert kurzen Text (bis zu 9 Wörter) ohne Änderungen der Groß-/Kleinschreibung.
+- `Proof`korrigiert langen Text, bietet Korrekturen der Groß-und Kleinschreibung und unterdrückt aggressive Korrekturen.
 
 > [!NOTE]
 > Wenn Sie kein [Azure-Abonnement](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) besitzen, erstellen Sie ein [kostenloses Konto](https://aka.ms/azfree-docs-mobileapps), bevor Sie beginnen.
 
-API-Schlüssel muss abgerufen werden, um die Bing-Rechtschreibprüfungs-API zu verwenden. Dadurch erhalten Sie unter [Cognitive Services testen](https://azure.microsoft.com/try/cognitive-services/)
+Ein API-Schlüssel muss abgerufen werden, um die Bing-Rechtschreibprüfung-API zu verwenden. Dies kann beim Versuch abgerufen werden [Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 
-Eine Liste der von der Bing-Rechtschreibprüfungs-API unterstützten Sprachen, finden Sie unter [unterstützte Sprachen](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/). Weitere Informationen zu den Bing-Rechtschreibprüfungs-API, finden Sie unter [Rechtschreibung prüfen Dokumentation zur Bing](/azure/cognitive-services/bing-spell-check/).
+Eine Liste der Sprachen, die von der Bing-Rechtschreibprüfung-API unterstützt werden, finden Sie [unter Unterstützte Sprachen](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/). Weitere Informationen zur Bing-Rechtschreibprüfung-API finden Sie in der [Bing-Rechtschreibprüfung-Dokumentation](/azure/cognitive-services/bing-spell-check/).
 
 ## <a name="authentication"></a>Authentifizierung
 
-Jeder Anforderung an die Bing-Rechtschreibprüfungs-API erfordert einen API-Schlüssel, die als Wert angegeben werden, sollte die `Ocp-Apim-Subscription-Key` Header. Im folgenden Codebeispiel wird veranschaulicht, wie den API-Schlüssel zum Hinzufügen der `Ocp-Apim-Subscription-Key` Header einer Anforderung:
+Jede Anforderung, die an die Bing-Rechtschreibprüfung-API gerichtet ist, erfordert einen API-Schlüssel, der als Wert für den-Header angegeben werden muss `Ocp-Apim-Subscription-Key` . Im folgenden Codebeispiel wird gezeigt, wie der API-Schlüssel dem `Ocp-Apim-Subscription-Key` Header einer Anforderung hinzugefügt wird:
 
 ```csharp
 public BingSpellCheckService()
@@ -46,13 +49,13 @@ public BingSpellCheckService()
 }
 ```
 
-Fehler beim Übergeben eines gültigen API-Schlüssels an die Bing-Rechtschreibprüfungs-API führt zu einem Fehler 401-Antwort.
+Wenn ein gültiger API-Schlüssel nicht an die Bing-Rechtschreibprüfung-API übergeben wird, führt dies zu einem Fehler der 401-Antwort.
 
-## <a name="performing-spell-checking"></a>Ausführen der Rechtschreibprüfung
+## <a name="performing-spell-checking"></a>Ausführen von Rechtschreibprüfung
 
-Rechtschreibprüfung erzielt werden, indem eine Get- oder POST-Anforderung, die `SpellCheck` -API zu `https://api.cognitive.microsoft.com/bing/v7.0/SpellCheck`. Wenn Sie eine GET-Anforderung ausführen, wird der Text, der Rechtschreibung geprüft werden als Query-Parameter gesendet. Wenn Sie eine POST-Anforderung ausführen, wird der Text, der Rechtschreibung geprüft werden im Hauptteil Anforderung gesendet. GET-Anforderungen sind Rechtschreibprüfung 1.500 Zeichen umfassen, aufgrund der Abfrage Parameter Zeichenfolge Länge auf. Aus diesem Grund sollten die POST-Anforderungen in der Regel vorgenommen werden, es sei denn, kurze Zeichenfolgen die Rechtschreibung geprüft werden.
+Die Rechtschreibprüfung kann durch Ausführen einer Get-oder Post-Anforderung an die `SpellCheck` API unter erreicht werden `https://api.cognitive.microsoft.com/bing/v7.0/SpellCheck` . Beim Ausführen einer GET-Anforderung wird der Text, der als Rechtschreibprüfung aktiviert werden soll, als Abfrage Parameter gesendet. Wenn eine Post-Anforderung gesendet wird, wird der Text, der als Rechtschreibprüfung markiert werden soll, im Anforderungs Text gesendet. Get-Anforderungen sind aufgrund der Einschränkung der Zeichen folgen Länge von Abfrage Parametern auf die Rechtschreibprüfung 1500 Zeichen beschränkt. Daher sollten Post-Anforderungen normalerweise erfolgen, es sei denn, für kurze Zeichen folgen wird ein Rechtschreibprüfung durchgeführt
 
-In der beispielanwendung die `SpellCheckTextAsync` Methode aufruft, die Rechtschreibprüfung für Prozess:
+In der Beispielanwendung Ruft die- `SpellCheckTextAsync` Methode den Rechtschreib Überprüfungsprozess auf:
 
 ```csharp
 public async Task<SpellCheckResult> SpellCheckTextAsync(string text)
@@ -64,11 +67,11 @@ public async Task<SpellCheckResult> SpellCheckTextAsync(string text)
 }
 ```
 
-Die `SpellCheckTextAsync` Methode generiert einen Anforderungs-URI und sendet dann die Anforderung an die `SpellCheck` -API, die eine JSON-Antwort, die das Ergebnis zurückgibt. Die JSON-Antwort wird deserialisiert, mit dem Ergebnis, das an die aufrufende Methode für die Anzeige zurückgegeben wird.
+Die `SpellCheckTextAsync` -Methode generiert einen Anforderungs-URI und sendet die Anforderung dann an die `SpellCheck` API, die eine JSON-Antwort mit dem Ergebnis zurückgibt. Die JSON-Antwort wird deserialisiert, wobei das Ergebnis zur Anzeige an die aufrufende Methode zurückgegeben wird.
 
 ### <a name="configuring-spell-checking"></a>Konfigurieren der Rechtschreibprüfung
 
-Prozess für die Rechtschreibprüfung kann durch Angabe von Abfrageparametern für HTTP konfiguriert werden:
+Der Rechtschreib Überprüfungsprozess kann durch Angabe von HTTP-Abfrage Parametern konfiguriert werden:
 
 ```csharp
 string GenerateRequestUri(string spellCheckEndpoint, string text, SpellCheckMode mode)
@@ -80,13 +83,13 @@ string GenerateRequestUri(string spellCheckEndpoint, string text, SpellCheckMode
 }
 ```
 
-Diese Methode wird den Text, der Rechtschreibung überprüft und die Rechtschreibprüfungs-Überprüfungsmodus sein.
+Diese Methode legt den Text auf die Rechtschreibprüfung und den Rechtschreib Prüfungs Modus fest.
 
-Weitere Informationen zu den Bing-Rechtschreibprüfungs REST-API, finden Sie unter [Rechtschreibprüfungs-API v7 Verweis](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/).
+Weitere Informationen zur Bing-Rechtschreibprüfung Rest-API finden Sie unter [Rechtschreibprüfungs-API V7-Referenz](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/).
 
 ### <a name="sending-the-request"></a>Senden der Anforderung
 
-Die `SendRequestAsync` Methode stellt die GET-Anforderung an die Bing-Rechtschreibprüfungs REST-API und die Antwort zurückgegeben:
+`SendRequestAsync`Mit der-Methode wird die Get-Anforderung an die Bing-Rechtschreibprüfung Rest-API und die Antwort zurückgegeben:
 
 ```csharp
 async Task<string> SendRequestAsync(string url)
@@ -96,13 +99,13 @@ async Task<string> SendRequestAsync(string url)
 }
 ```
 
-Diese Methode sendet die GET-Anforderung an die `SpellCheck` -API, mit der Anforderungs-URL angeben des Texts übersetzt werden, und die Rechtschreibprüfungs-Überprüfungsmodus. Die Antwort ist dann gelesen und an die aufrufende Methode zurückgegeben.
+Diese Methode sendet die Get-Anforderung an die `SpellCheck` API, wobei die Anforderungs-URL den zu über setzenden Text und den Rechtschreib Prüfungs Modus angibt. Die Antwort wird dann gelesen und an die Aufruf Methode zurückgegeben.
 
-Die `SpellCheck` API sendet HTTP-Statuscode 200 (OK) in der Antwort angegeben, dass die Anforderung gültig ist, was bedeutet, dass die Anforderung erfolgreich war, und dass die angeforderte Informationen in der Antwort ist. Eine Liste der Antwortobjekte, finden Sie unter [Antwortobjekte](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects).
+Die `SpellCheck` API sendet in der Antwort den HTTP-Statuscode 200 (OK), vorausgesetzt, die Anforderung ist gültig, was angibt, dass die Anforderung erfolgreich war und die angeforderten Informationen in der Antwort enthalten sind. Eine Liste der Antwort Objekte finden Sie unter [Response Objects](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects).
 
 ### <a name="processing-the-response"></a>Verarbeiten der Antwort
 
-Die API-Antwort wird im JSON-Format zurückgegeben. Die folgenden JSON-Daten enthalten, die Antwortnachricht für den falsch geschriebenen Text `Go shappin tommorow`:
+Die API-Antwort wird im JSON-Format zurückgegeben. Die folgenden JSON-Daten zeigen die Antwortnachricht für den falsch geschriebenen Text an `Go shappin tommorow` :
 
 ```json
 {  
@@ -135,14 +138,14 @@ Die API-Antwort wird im JSON-Format zurückgegeben. Die folgenden JSON-Daten ent
 }
 ```
 
-Die `flaggedTokens` Array enthält ein Array von Wörtern im Text, die als nicht richtig geschrieben werden oder sind grammatisch falsch gekennzeichnet wurden. Das Array ist, leer, wenn keine Rechtschreib- oder Grammatikfehler gefunden werden. Die Tags innerhalb des Arrays sind:
+Das `flaggedTokens` Array enthält ein Array von Wörtern im Text, die als nicht ordnungsgemäß geschrieben oder falsch geschrieben wurden. Das Array ist leer, wenn keine Rechtschreib-oder Grammatikfehler gefunden werden. Die Tags innerhalb des Arrays lauten:
 
-- `offset` – Ein nullbasierter Offset vom Anfang der Zeichenfolge, die das Wort, das als gekennzeichnet wurde.
-- `token` – das Wort in die Textzeichenfolge, die nicht richtig geschrieben ist, oder grammatisch falsch ist.
-- `type` – Der Typ des Fehlers, der das Wort angezeigt, dass verursacht. Es gibt zwei mögliche Werte: `RepeatedToken` und `UnknownToken`.
-- `suggestions` – ein Array von Worten, die von der Rechtschreibung und Grammatik Fehler korrigiert wird. Das Array besteht aus einer `suggestion` und `score`, womit das Maß an Gewissheit, dass die vorgeschlagene Korrektur richtig ist.
+- `offset`– ein NULL basierter Offset vom Anfang der Text Zeichenfolge bis zu dem Wort, das gekennzeichnet wurde.
+- `token`– das Wort in der Text Zeichenfolge, das nicht richtig geschrieben oder falsch geschrieben ist.
+- `type`– der Typ des Fehlers, der bewirkt hat, dass das Wort gekennzeichnet wurde. Es gibt zwei mögliche Werte – `RepeatedToken` und `UnknownToken` .
+- `suggestions`– ein Array von Wörtern, mit dem der Rechtschreib-oder Grammatikfehler korrigiert wird. Das Array besteht aus einem `suggestion` -und einem- `score` Wert, der den Grad der Gewissheit angibt, dass die vorgeschlagene Korrektur korrekt ist.
 
-In diesem Beispiel, in die JSON-Antwort deserialisiert wird eine `SpellCheckResult` -Instanz, mit das Ergebnis an die aufrufende Methode für die Anzeige zurückgegeben wird. Das folgende Codebeispiel zeigt die `SpellCheckResult` Instanz für die Anzeige verarbeitet wird:
+In der Beispielanwendung wird die JSON-Antwort in eine-Instanz deserialisiert `SpellCheckResult` , wobei das Ergebnis zur Anzeige an die aufrufende Methode zurückgegeben wird. Im folgenden Codebeispiel wird gezeigt, wie die- `SpellCheckResult` Instanz zur Anzeige verarbeitet wird:
 
 ```csharp
 var spellCheckResult = await bingSpellCheckService.SpellCheckTextAsync(TodoItem.Name);
@@ -152,22 +155,22 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 }
 ```
 
-Dieser Code durchläuft die `FlaggedTokens` Auflistung und ersetzt alle falsch geschrieben oder grammatisch falsch geschriebene Wörter im Quelltext mit der erste Vorschlag. Die folgenden Screenshots zeigen vor und nach dem die Rechtschreibung überprüfen:
+Dieser Code durchläuft die `FlaggedTokens` -Auflistung und ersetzt alle falsch geschriebenen oder ungültigen Wörter im Quelltext durch den ersten Vorschlag. Die folgenden Screenshots zeigen vor und nach der Rechtschreibprüfung:
 
 ![](spell-check-images/before-spell-check.png "Before Spell Check")
 
 ![](spell-check-images/after-spell-check.png "After Spell Check")
 
 > [!NOTE]
-> Im obigen Beispiel wird `Replace` aus Gründen der Einfachheit verwendet, aber über eine große Menge an Text kann das falsche Token ersetzt werden. Die API stellt den `offset` Wert bereit, der in Produktions-Apps verwendet werden soll, um die richtige Position im Quelltext zum Ausführen eines Updates zu identifizieren.
+> Im obigen Beispiel `Replace` wird der Einfachheit halber verwendet, aber über eine große Menge an Text kann das falsche Token ersetzt werden. Die API stellt den `offset` Wert bereit, der in Produktions-Apps verwendet werden soll, um die richtige Position im Quelltext zum Ausführen eines Updates zu identifizieren.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde erläutert, wie die Bing-Rechtschreibprüfungs REST-API zu verwenden, um korrigieren Sie Rechtschreibfehler in einer Xamarin.Forms-Anwendung. Bing-Rechtschreibprüfung führt kontextbezogene Rechtschreibprüfung für Text Inline Empfehlungen für falsch geschriebene Wörter.
+In diesem Artikel wurde erläutert, wie Sie die Bing-Rechtschreibprüfung Rest-API verwenden, um Rechtschreibfehler in einer-Anwendung zu korrigieren Xamarin.Forms . Bing-Rechtschreibprüfung führt die kontextbezogene Rechtschreibprüfung für Text durch und stellt Inline Vorschläge für falsch geschriebene Wörter bereit.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [Dokumentation zur Bing-Rechtschreibprüfungs-Überprüfung](/azure/cognitive-services/bing-spell-check/)
+- [Dokumentation zu Bing-Rechtschreibprüfung](/azure/cognitive-services/bing-spell-check/)
 - [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [TODO-Cognitive-Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
-- [Bing-Rechtschreibprüfungs-API v7-Referenz](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)
+- [TODO-Cognitive Services (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Referenz zur Bing-Rechtschreibprüfung-API V7](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

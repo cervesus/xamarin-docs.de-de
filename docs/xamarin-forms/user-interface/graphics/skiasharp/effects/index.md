@@ -1,52 +1,55 @@
 ---
-title: SkiaSharp-Auswirkungen
-description: Erfahren Sie, wie Sie die normale Anzeige von Grafiken mit einem Farbverlauf ändern, bitmap-Kacheln, Füllmethoden, blur- und andere Effekte.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/22/2018
-ms.openlocfilehash: da923a3542a57b6150e536ecb6649140e57c81e1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655360"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136304"
 ---
-# <a name="skiasharp-effects"></a>SkiaSharp-Auswirkungen
+# <a name="skiasharp-effects"></a>Skiasharp-Effekte
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Die SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint) -Klasse definiert sechs Eigenschaften, die unter der allgemeine Begriff der klassifiziert werden können _Effekte_. Dies sind Eigenschaften, die die normale Anzeige von Grafiken in irgendeiner Weise zu ändern. Die Auswirkungen von SkiaSharp fallen in sechs Kategorien:
+Die skiasharp- [`SKPaint`](xref:SkiaSharp.SKPaint) Klasse definiert sechs Eigenschaften, die unter allgemeiner Auswirkung klassifiziert werden können _effects_. Dabei handelt es sich um Eigenschaften, die die normale Anzeige von Grafiken auf irgendeine Weise ändern. Die skiasharp-Effekte fallen in sechs Kategorien:
 
-## <a name="path-effectscurveseffectsmd"></a>[Pfadeffekte](../curves/effects.md)
+## <a name="path-effects"></a>[Pfadeffekte](../curves/effects.md)
 
-Legen Sie die [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect) gestrichelte Linien anzuzeigen, zu zeichnen, oder geben Sie einen Bereich mit einem Muster aus Pfaden erstellt. Die Auswirkungen der Pfad wurde weiter oben in dieser Serie im Artikel behandelten [ **Pfadeffekte in SkiaSharp**](../curves/effects.md).
+Legen Sie die- [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) Eigenschaft von `SKPaint` auf ein Objekt vom Typ fest, [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) um gestrichelte Linien anzuzeigen, oder, um einen Bereich mit einem Muster zu zeichnen oder auszufüllen, das aus Pfaden erstellt wurde. Der Pfad Effekt wurde weiter oben in dieser Reihe in den Artikeln [**Pfad Effekte in skiasharp**](../curves/effects.md)behandelt.
 
-## <a name="shadersshadersindexmd"></a>[Shader](shaders/index.md)
+## <a name="shaders"></a>[Shader](shaders/index.md)
 
-Legen Sie die [ `Shader` ](xref:SkiaSharp.SKPaint.Shader) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKShader` ](xref:SkiaSharp.SKShader) um linearer oder zirkuläre Farbverläufe, unterteilten Bitmaps und Perlin-Noise-Muster anzuzeigen.
+Legen Sie die- [`Shader`](xref:SkiaSharp.SKPaint.Shader) Eigenschaft von `SKPaint` auf ein Objekt vom Typ fest, [`SKShader`](xref:SkiaSharp.SKShader) um lineare oder zirkuläre Farbverläufe, gekachelte Bitmaps und Perlin-Rauschmuster anzuzeigen.
 
-## <a name="blend-modesblend-modesindexmd"></a>[Füllmethoden](blend-modes/index.md)
+## <a name="blend-modes"></a>[Füllmethoden](blend-modes/index.md)
 
-Legen Sie die [ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode) Eigenschaft `SKPaint` auf einen Member der [ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode) Enumeration, die steuern, was geschieht, wenn eine Quellgrafik auf ein Ziel angezeigt wird. SkiaSharp unterstützt alle der CSS-Zusammensetzung und Blend Modi, wie z.B. die Porter-Duff Modi trennbare Füllmethoden einheitlich und nicht trennbare Füllmethoden einheitlich.
+Legen Sie die- [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) Eigenschaft von `SKPaint` auf einen Member der- [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) Enumeration fest, um zu steuern, was geschieht, wenn eine Quell Grafik an einem Ziel angezeigt wird. Skiasharp unterstützt alle CSS-Zusammensetzung-und Blend-Modi, einschließlich der Porter-Duff-Modi, Trenn Bare Blend-Modi und nicht getrennte Blend-Modi.
 
-## <a name="mask-filtersmask-filtersmd"></a>[Mask-Filter](mask-filters.md)
+## <a name="mask-filters"></a>[Maskenfilter](mask-filters.md)
 
-Legen Sie die [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) Weichzeichner und andere Effekte alpha.
+Legen [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) Sie die-Eigenschaft von `SKPaint` auf ein Objekt vom Typ [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) für verwischt und andere Alpha Effekte fest.
 
-## <a name="image-filtersimage-filtersmd"></a>[Images filtern](image-filters.md)
+## <a name="image-filters"></a>[Image-Filter](image-filters.md)
 
-Legen Sie die [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter) Eigenschaft `SKPaint` auf ein Objekt vom Typ [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) Weichzeichner Bitmaps und Erstellen von Schatten ablegen, Prägen, oder Eingravieren Auswirkungen.
+Legen Sie die- [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) Eigenschaft von `SKPaint` auf ein Objekt vom Typ [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) für die Unschärfe von Bitmaps und das Erstellen von Drop Shadows-, Embossing-oder Gravur-Effekten fest.
 
-## <a name="color-filterscolor-filtersmd"></a>[Filter "Farbe"](color-filters.md)
+## <a name="color-filters"></a>[Farbfilter](color-filters.md)
 
-Legen Sie die [ `ColorFilter` ](xref:SkiaSharp.SKPaint.ColorFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKColorFilter` ](xref:SkiaSharp.SKColorFilter) , zu ändern, Farben mithilfe von Tabellen oder Matrix transformiert.
+Legen Sie die- [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) Eigenschaft von `SKPaint` auf ein Objekt vom Typ fest [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) , um Farben mithilfe von Tabellen oder Matrix Transformationen zu ändern.
 
-Alle der Beispielcode für diese Artikel enthalten, in der [ **SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos). Wählen Sie auf der Startseite des **SkiaSharp-Effekte**.
+Der gesamte Beispielcode für diese Artikel ist in [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)zu finden. Wählen Sie auf der Startseite die Option **skiasharp-Effekte**aus.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

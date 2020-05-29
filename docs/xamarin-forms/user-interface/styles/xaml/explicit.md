@@ -1,30 +1,33 @@
 ---
-title: Explizite Stile in Xamarin.Forms
-description: Expliziter Stil ist eine, die selektiv auf Steuerelemente angewendet wird, indem die Stileigenschaften. In diesem Artikel wird erläutert, wie explizite Stile in einer Xamarin.Forms-Anwendung genutzt wird.
-ms.prod: xamarin
-ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: Explizite Stile inXamarin.Forms
+description: Ein explizites Format ist ein Element, das selektiv durch Festlegen der Stileigenschaften auf Steuerelemente angewendet wird. In diesem Artikel wird erläutert, wie explizite Stile in einer-Anwendung verwendet werden Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227993"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136265"
 ---
-# <a name="explicit-styles-in-xamarinforms"></a>Explizite Stile in Xamarin.Forms
+# <a name="explicit-styles-in-xamarinforms"></a>Explizite Stile inXamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_Expliziter Stil ist eine, die selektiv auf Steuerelemente angewendet wird, indem die Stileigenschaften._
+_Ein explizites Format ist ein Element, das selektiv durch Festlegen der Stileigenschaften auf Steuerelemente angewendet wird._
 
 ## <a name="create-an-explicit-style-in-xaml"></a>Erstellen eines expliziten Stils in XAML
 
-Deklariert eine [ `Style` ](xref:Xamarin.Forms.Style) auf Seitenebene, eine [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) muss hinzugefügt werden, um die Seite, und klicken Sie dann eine oder mehrere `Style` Deklarationen enthalten sein können, der `ResourceDictionary`. Ein `Style` erfolgt *explizite* erteilen Sie der Deklaration einer `x:Key` -Attribut, das sie einen beschreibenden Schlüssel, in erhalten der `ResourceDictionary`. *Explizite* Stile müssen dann an bestimmte visuelle Elemente angewendet werden, durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften.
+Um einen [`Style`](xref:Xamarin.Forms.Style) auf Seitenebene zu deklarieren, [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) muss der Seite ein hinzugefügt werden, und anschließend kann eine oder mehrere `Style` Deklarationen in den eingefügt werden `ResourceDictionary` . Ein `Style` wird *explizit* durch die Deklaration eines `x:Key` Attributs erstellt, das ihm einen beschreibenden Schlüssel in der übergibt `ResourceDictionary` . *Explizite* Stile müssen dann durch Festlegen ihrer Eigenschaften auf bestimmte visuelle Elemente angewendet werden [`Style`](xref:Xamarin.Forms.NavigableElement.Style) .
 
-Das folgende Codebeispiel zeigt *explizite* Stile, die in XAML in einer Seite deklarierten `ResourceDictionary` , und klicken Sie auf der Seite angewendet [ `Label` ](xref:Xamarin.Forms.Label) Instanzen:
+Das folgende Codebeispiel zeigt *explizite* Stile, die in XAML in einer Seite deklariert `ResourceDictionary` und auf die Instanzen der Seite angewendet werden [`Label`](xref:Xamarin.Forms.Label) :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -64,15 +67,15 @@ Das folgende Codebeispiel zeigt *explizite* Stile, die in XAML in einer Seite de
 </ContentPage>
 ```
 
-Die [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) definiert drei *explizite* Stile, die auf der Seite angewendet werden [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Jede `Style` dient zum Anzeigen von Text in eine andere Farbe, beim Festlegen von Schriftart auch Optionen für Größe und horizontalen und vertikalen Layout. Jede `Style` wird angewendet auf einen anderen `Label` durch Festlegen seiner [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften mithilfe der `StaticResource` Markuperweiterung. Dadurch wird die Darstellung, die in den folgenden Screenshots gezeigt:
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)Definiert drei *explizite* Stile, die auf die Instanzen der Seite angewendet werden [`Label`](xref:Xamarin.Forms.Label) . Jede `Style` wird zum Anzeigen von Text in einer anderen Farbe verwendet, während gleichzeitig die Optionen Schriftart Größe und horizontal und vertikal Layout festgelegt werden. Jeder `Style` wird auf einen anderen angewendet, `Label` indem seine [`Style`](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften mithilfe der `StaticResource` Markup Erweiterung festgelegt werden. Dies ergibt die in den folgenden Screenshots gezeigte Darstellung:
 
 [![Beispiel für explizite Stile](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
-Darüber hinaus die endgültige [ `Label` ](xref:Xamarin.Forms.Label) verfügt über eine [ `Style` ](xref:Xamarin.Forms.Style) angewendet wird, aber überschreibt auch die [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) Eigenschaft, um einen anderen `Color`Wert.
+Außerdem wird auf das endgültige [`Label`](xref:Xamarin.Forms.Label) eine [`Style`](xref:Xamarin.Forms.Style) angewendet, aber auch die- [`TextColor`](xref:Xamarin.Forms.Label.TextColor) Eigenschaft auf einen anderen Wert überschrieben `Color` .
 
 ### <a name="create-an-explicit-style-at-the-control-level"></a>Erstellen eines expliziten Stils auf der Steuerelement Ebene
 
-Zusätzlich zur Erstellung *explizite* Formatvorlagen auf Seitenebene, sie können auch erstellt werden auf der Steuerelementebene wie im folgenden Codebeispiel gezeigt:
+Zusätzlich zum Erstellen *expliziter* Stile auf Seitenebene können Sie auch auf der Steuerelement Ebene erstellt werden, wie im folgenden Codebeispiel gezeigt:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -93,13 +96,13 @@ Zusätzlich zur Erstellung *explizite* Formatvorlagen auf Seitenebene, sie könn
 </ContentPage>
 ```
 
-In diesem Beispiel die *explizite* [ `Style` ](xref:Xamarin.Forms.Style) Instanzen werden zugewiesen, um die [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung von der [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Steuerelement. Die Stile können Sie dann auf das Steuerelement und seine untergeordneten Elemente angewendet werden.
+In diesem Beispiel werden die *expliziten* - [`Style`](xref:Xamarin.Forms.Style) Instanzen der-Auflistung des-Steuer Elements zugewiesen [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) [`StackLayout`](xref:Xamarin.Forms.StackLayout) . Die Stile können dann auf das Steuerelement und seine untergeordneten Elemente angewendet werden.
 
-Informationen zum Erstellen von Stilen in einer Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), finden Sie unter [globale Stile](~/xamarin-forms/user-interface/styles/application.md).
+Weitere Informationen zum Erstellen von Stilen in einer Anwendung [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) finden Sie unter [globale Stile](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="create-an-explicit-style-in-c35"></a>Erstellen eines expliziten Stils in C&#35;
+## <a name="create-an-explicit-style-in-c35"></a>Erstellen eines expliziten Stils in C-&#35;
 
-[`Style`](xref:Xamarin.Forms.Style) Instanzen können einer Seite hinzugefügt werden [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Auflistung in C# durch Erstellen eines neuen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), und klicken Sie dann durch Hinzufügen der `Style` auf Instanzen der `ResourceDictionary`Siehe die folgende Codebeispiel:
+[`Style`](xref:Xamarin.Forms.Style)der Auflistung einer Seite in c# können-Instanzen hinzugefügt werden [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) , indem ein neuer erstellt [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) und dann die-Instanzen hinzugefügt werden `Style` `ResourceDictionary` , wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -147,9 +150,9 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-Der Konstruktor definiert drei *explizite* Stile, die auf der Seite angewendet werden [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Jedes *explizite* [ `Style` ](xref:Xamarin.Forms.Style) hinzugefügt wird die [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) mithilfe der [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) -Methode angeben einer `key` Zeichenfolge zum Verweisen auf die `Style` Instanz. Jede `Style` wird angewendet auf einen anderen `Label` durch Festlegen ihrer [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften.
+Der-Konstruktor definiert drei *explizite* Stile, die auf die-Instanzen der Seite angewendet werden [`Label`](xref:Xamarin.Forms.Label) . Jeder *explizit* [`Style`](xref:Xamarin.Forms.Style) wird [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) mithilfe der-Methode hinzugefügt [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) , wobei eine `key` Zeichenfolge angegeben wird, die auf die `Style` Instanz verweist. Jede `Style` wird `Label` durch Festlegen ihrer Eigenschaften auf ein anderes angewendet [`Style`](xref:Xamarin.Forms.NavigableElement.Style) .
 
-Es ist jedoch kein Vorteil der Verwendung einer [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) hier. Stattdessen [ `Style` ](xref:Xamarin.Forms.Style) Instanzen direkt zugewiesen werden können die [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften der erforderlichen visuellen Elemente, und die `ResourceDictionary` entfernt werden kann, wie im folgenden dargestellt Codebeispiel:
+Es gibt jedoch keinen Vorteil bei der Verwendung von [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Stattdessen [`Style`](xref:Xamarin.Forms.Style) können-Instanzen direkt den [`Style`](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften der erforderlichen visuellen Elemente zugewiesen werden, und Sie `ResourceDictionary` können entfernt werden, wie im folgenden Codebeispiel gezeigt:
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -179,13 +182,13 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-Der Konstruktor definiert drei *explizite* Stile, die auf der Seite angewendet werden [ `Label` ](xref:Xamarin.Forms.Label) Instanzen. Jede `Style` dient zum Anzeigen von Text in eine andere Farbe, beim Festlegen von Schriftart auch Optionen für Größe und horizontalen und vertikalen Layout. Jede `Style` wird angewendet auf einen anderen `Label` durch Festlegen seiner [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften. Darüber hinaus die endgültige `Label` verfügt über eine `Style` angewendet wird, aber überschreibt auch die `TextColor` Eigenschaft auf einen anderen `Color` Wert.
+Der-Konstruktor definiert drei *explizite* Stile, die auf die-Instanzen der Seite angewendet werden [`Label`](xref:Xamarin.Forms.Label) . Jede `Style` wird zum Anzeigen von Text in einer anderen Farbe verwendet, während gleichzeitig die Optionen Schriftart Größe und horizontal und vertikal Layout festgelegt werden. Jeder `Style` wird `Label` durch Festlegen seiner Eigenschaften auf einen anderen angewendet [`Style`](xref:Xamarin.Forms.NavigableElement.Style) . Außerdem wird auf das endgültige `Label` eine `Style` angewendet, aber auch die- `TextColor` Eigenschaft auf einen anderen Wert überschrieben `Color` .
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [XAML-Markuperweiterungen](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Einfache Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [Grundlegende Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [Arbeiten mit Stilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Stil](xref:Xamarin.Forms.Style)
-- [Set-Methode](xref:Xamarin.Forms.Setter)
+- [Trend](xref:Xamarin.Forms.Setter)

@@ -1,24 +1,27 @@
 ---
-title: Zellen Hintergrundfarbe unter IOS
-description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die die Standard Hintergrundfarbe von Zellen unter IOS festlegt.
-ms.prod: xamarin
-ms.assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 24276dce97e4935ba41d7012cf6a9aa8fa2658a8
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 90282262926fef663183be247e37d64dd1be9124
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68651375"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138566"
 ---
 # <a name="cell-background-color-on-ios"></a>Zellen Hintergrundfarbe unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Mit diesem IOS-plattformspezifischen wird die Standard Hintergrundfarbe [`Cell`](xref:Xamarin.Forms.Cell) Instanzen festgelegt. Sie wird in XAML verwendet, indem die `Cell.DefaultBackgroundColor` bindbare Eigenschaft auf einen [`Color`](xref:Xamarin.Forms.Color)festgelegt wird:
+Mit diesem IOS-plattformspezifischen wird die Standard Hintergrundfarbe der-Instanzen festgelegt [`Cell`](xref:Xamarin.Forms.Cell) . Sie wird in XAML verwendet, indem die `Cell.DefaultBackgroundColor` bindbare Eigenschaft auf festgelegt wird [`Color`](xref:Xamarin.Forms.Color) :
 
 ```xaml
 <ContentPage ...
@@ -41,7 +44,7 @@ Mit diesem IOS-plattformspezifischen wird die Standard Hintergrundfarbe [`Cell`]
 </ContentPage>
 ```
 
-Alternativ kann Sie von C# der Verwendung der flüssigen API genutzt werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -52,11 +55,11 @@ var viewCell = new ViewCell { View = ... };
 viewCell.On<iOS>().SetDefaultBackgroundColor(Color.Teal);
 ```
 
-Die `ListView.On<iOS>`-Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die `Cell.SetDefaultBackgroundColor`-Methode im [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace legt die Hintergrundfarbe der Zelle auf eine angegebene [`Color`](xref:Xamarin.Forms.Color)fest. Außerdem kann die `Cell.DefaultBackgroundColor`-Methode verwendet werden, um die aktuelle Zellen Hintergrundfarbe abzurufen.
+Die- `ListView.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. Die- `Cell.SetDefaultBackgroundColor` Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace legt die Hintergrundfarbe der Zelle auf eine angegebene fest [`Color`](xref:Xamarin.Forms.Color) . Außerdem kann die- `Cell.DefaultBackgroundColor` Methode zum Abrufen der aktuellen Zellen Hintergrundfarbe verwendet werden.
 
-Das Ergebnis ist, dass die Hintergrundfarbe in einer [`Cell`](xref:Xamarin.Forms.Cell) auf eine bestimmte [`Color`](xref:Xamarin.Forms.Color)festgelegt werden kann:
+Das Ergebnis ist, dass die Hintergrundfarbe in einem [`Cell`](xref:Xamarin.Forms.Cell) auf einen bestimmten festgelegt werden kann [`Color`](xref:Xamarin.Forms.Color) :
 
-[![ListView mit Header Zellen der Gruppe Blaugrün](cell-background-color-images/group-header-cell-color.png "ListView mit Header Zellen der Gruppe Blaugrün")](cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Header Zellen der Gruppe Blaugrün")
+[![Screenshot der Header Zellen der Teal-Gruppe unter IOS](cell-background-color-images/group-header-cell-color.png "ListView mit Header Zellen der Gruppe "Blaugrün"")](cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView mit Header Zellen der Gruppe "Blaugrün"")
 
 ## <a name="related-links"></a>Verwandte Links
 

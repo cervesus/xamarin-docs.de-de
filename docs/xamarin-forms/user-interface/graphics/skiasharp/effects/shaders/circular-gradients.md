@@ -1,44 +1,47 @@
 ---
-title: Die zirkuläre SkiaSharp-Farbverläufe
-description: Erfahren Sie mehr über die verschiedenen Typen von Farbverläufen, die basierend auf der Kreise.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: d56cc499112a937cd1a22664adeedd54c4397341
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305744"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135641"
 ---
-# <a name="the-skiasharp-circular-gradients"></a>Die zirkuläre SkiaSharp-Farbverläufe
+# <a name="the-skiasharp-circular-gradients"></a>Die kreisförmigen Farbverläufe skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Die [`SKShader`](xref:SkiaSharp.SKShader) -Klasse definiert statische Methoden zum Erstellen von vier verschiedenen Typen von Farbverläufen. Der [**lineare skiasharp-Artikel zum linearen Farbverlauf**](linear-gradient.md) erläutert die [`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) -Methode. Dieser Artikel behandelt die anderen drei Typen von Farbverläufen an, die auf Kreise basieren.
+Die- [`SKShader`](xref:SkiaSharp.SKShader) Klasse definiert statische Methoden zum Erstellen von vier verschiedenen Typen von Farbverläufen. Der [**lineare skiasharp-Verlaufs**](linear-gradient.md) Artikel erläutert die- [`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) Methode. In diesem Artikel werden die anderen drei Typen von Farbverläufen behandelt, die alle auf Kreise basieren.
 
-Die [`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient*) -Methode erstellt einen Farbverlauf, der von der Mitte eines Kreises ausgeht:
+Die- [`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient*) Methode erstellt einen Farbverlauf, der von der Mitte eines Kreises ausgeht:
 
-![Beispiel für radialen Farbverlauf](circular-gradients-images/RadialGradientSample.png)
+![Beispiel Radialer Farbverlauf](circular-gradients-images/RadialGradientSample.png)
 
-Die [`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient*) -Methode erstellt einen Farbverlauf, der um den Mittelpunkt eines Kreises herum zieht:
+Die- [`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient*) Methode erstellt einen Farbverlauf, der um den Mittelpunkt eines Kreises herum zieht:
 
-![Sweep-Farbverlauf-Beispiel](circular-gradients-images/SweepGradientSample.png)
+![Beispiel für Sweep Gradient](circular-gradients-images/SweepGradientSample.png)
 
-Der dritte Typ des Farbverlaufs ist sehr ungewöhnlich. Sie wird als zwei-Punkt-konischen Farbverlauf bezeichnet und wird durch die [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient*) -Methode definiert. Der Gradient, die in eine andere aus einem einzelnen Kreis erweitert werden:
+Der dritte Typ des Farbverlaufs ist ziemlich ungewöhnlich. Sie wird als zwei-Punkt-kegelförmiger Farbverlauf bezeichnet und wird durch die- [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient*) Methode definiert. Der Farbverlauf reicht von einem Kreis zu einem anderen:
 
-![Beispiel für konische Farbverlauf](circular-gradients-images/ConicalGradientSample.png)
+![Beispiel für ein "Kegel](circular-gradients-images/ConicalGradientSample.png)
 
-Wenn die beiden Kreise unterschiedlicher Größe sind, wird der Gradient der Form eines Kegels.
+Wenn es sich bei den beiden Kreisen um unterschiedliche Größen handelt, hat der Farbverlauf die Form eines Kegel.
 
-In diesem Artikel untersucht diese Farbverläufe im Detail.
+In diesem Artikel werden diese Farbverläufe ausführlicher erläutert.
 
-## <a name="the-radial-gradient"></a>Radialen Farbverlauf
+## <a name="the-radial-gradient"></a>Der radiale Farbverlauf
 
-Die [`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode)) -Methode weist die folgende Syntax auf:
+Die- [`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode)) Methode weist die folgende Syntax auf:
 
 ```csharp
 public static SKShader CreateRadialGradient (SKPoint center, 
@@ -48,13 +51,13 @@ public static SKShader CreateRadialGradient (SKPoint center,
                                              SKShaderTileMode mode)
 ```
 
-Eine [`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladung enthält auch einen Transform Matrix-Parameter.
+Eine-Überladung [`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) enthält auch einen Transform Matrix-Parameter.
 
-Die ersten beiden Argumente geben Sie den Mittelpunkt eines Kreises und dem Radius. Der Farbverlauf beginnt bei diesem Mittelpunkt und wird für `radius` Pixel nach außen erweitert. Was über `radius` hinausgeht, hängt vom [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) -Argument ab. Der `colors`-Parameter ist ein Array aus mindestens zwei Farben (genau wie in den linearen Farbverlaufs Methoden), und `colorPos` ist ein Array von ganzen Zahlen im Bereich von 0 bis 1. Diese ganzzahligen Werte geben die relativen Positionen der Farben entlang der `radius` Zeile an. Sie können dieses Argument auf `null` festlegen, um die Farben gleichmäßig zu leer zu lassen.
+Die ersten beiden Argumente geben den Mittelpunkt eines Kreises und einen Radius an. Der Farbverlauf beginnt an diesem Mittelpunkt und wird für Pixel nach außen erweitert `radius` . Darüber hinaus `radius` hängt von dem [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) Argument ab. Der `colors` -Parameter ist ein Array aus mindestens zwei Farben (genau wie in den linearen Farbverlaufs Methoden) und `colorPos` ist ein Array von ganzen Zahlen im Bereich von 0 bis 1. Diese ganzzahligen Werte geben die relativen Positionen der Farben entlang dieser `radius` Zeile an. Sie können dieses Argument auf festlegen, `null` um die Farben gleichmäßig zu leer zu lassen.
 
-Wenn Sie `CreateRadialGradient` zum Auffüllen eines Kreises verwenden, können Sie den Mittelpunkt des Farbverlaufs auf den Mittelpunkt des Kreises und den Radius des Farbverlaufs auf den Radius des Kreises festlegen. In diesem Fall hat das `SKShaderTileMode`-Argument keine Auswirkung auf das Rendering des Farbverlaufs. Wenn jedoch der Bereich, der durch den Farbverlauf gefüllt ist, größer als der durch den Farbverlauf definierte Kreis ist, hat das `SKShaderTileMode`-Argument eine Tiefe Auswirkung auf das, was außerhalb des Kreises passiert.
+Wenn Sie verwenden, `CreateRadialGradient` um einen Kreis zu füllen, können Sie den Mittelpunkt des Farbverlaufs auf den Mittelpunkt des Kreises und den Radius des Farbverlaufs auf den Radius des Kreises festlegen. In diesem Fall hat das- `SKShaderTileMode` Argument keine Auswirkung auf das Rendering des Farbverlaufs. Wenn jedoch der Bereich, der durch den Farbverlauf gefüllt ist, größer als der durch den Farbverlauf definierte Kreis ist, `SKShaderTileMode` hat das Argument eine Tiefe Auswirkung darauf, was außerhalb des Kreises passiert.
 
-Die Auswirkung von `SKShaderMode` wird im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel auf der **radialen Farbverlaufs** Seite veranschaulicht. Die XAML-Datei für diese Seite instanziiert eine `Picker`, die es Ihnen ermöglicht, eines der drei Member der `SKShaderTileMode`-Enumeration auszuwählen:
+Die Auswirkung von `SKShaderMode` wird im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel auf der **radialen Farbverlaufs** Seite veranschaulicht. Die XAML-Datei für diese Seite instanziiert ein-Element, mit dem `Picker` Sie eines der drei Member der- `SKShaderTileMode` Enumeration auswählen können:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -94,7 +97,7 @@ Die Auswirkung von `SKShaderMode` wird im [**skiasharpformsdemos**](https://docs
 </ContentPage>
 ```
 
-Die Code-Behind-Datei Farben den gesamten Zeichenbereich mit einem radialen Farbverlauf. Die Mitte des Farbverlaufs in der Mitte des die Leinwand festgelegt ist, und der Radius auf 100 Pixel festgelegt ist. Der Gradient besteht aus zwei Farben, Schwarz oder weiß:
+Die Code-Behind-Datei färbt den gesamten Zeichenbereich mit einem radialen Farbverlauf ab. Die Mitte des Farbverlaufs wird auf den Mittelpunkt des Zeichen Bereichs festgelegt, und der RADIUS wird auf 100 Pixel festgelegt. Der Farbverlauf besteht aus nur zwei Farben: schwarz und weiß:
 
 ```csharp
 public partial class RadialGradientPage : ContentPage
@@ -136,15 +139,15 @@ public partial class RadialGradientPage : ContentPage
 }
 ```
 
-Dieser Code erstellt einen Farbverlauf mit Schwarz, zentriert, um 100 Pixel aus dem Center weiß allmählich eingeblendet. Was über diesen RADIUS hinausgeht, hängt vom `SKShaderTileMode` Argument ab:
+Mit diesem Code wird ein Farbverlauf im Mittelpunkt mit schwarz und in den weißen 100 Pixeln aus dem Mittelpunkt erstellt. Was über diesen RADIUS hinausgeht, hängt von dem `SKShaderTileMode` Argument ab:
 
 [![Radialer Farbverlauf](circular-gradients-images/RadialGradient.png "Radialer Farbverlauf")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-In allen drei Fällen füllt der Farbverlauf für den Zeichenbereich. Der Farbverlauf außerhalb der Radius wird auf dem Bildschirm "iOS" auf der linken Seite die letzte Farbe an, die weiß ist fortgesetzt. Dies ist das Ergebnis `SKShaderTileMode.Clamp`. Der Android-Bildschirm zeigt die Auswirkung von `SKShaderTileMode.Repeat`: bei 100 Pixel von der Mitte beginnt der Farbverlauf erneut mit der ersten Farbe, die schwarz ist. Der Farbverlauf wird jeder 100 Pixel von Radius wiederholt. 
+In allen drei Fällen füllt der Farbverlauf den Zeichenbereich. Auf dem IOS-Bildschirm auf der linken Seite wird der Farbverlauf über den RADIUS hinaus mit der letzten Farbe, die weiß ist, fortgesetzt. Das ist das Ergebnis von `SKShaderTileMode.Clamp` . Der Android-Bildschirm zeigt die Auswirkung von `SKShaderTileMode.Repeat` : bei 100 Pixel von der Mitte beginnt der Farbverlauf erneut mit der ersten Farbe, die schwarz ist. Der Farbverlauf wird alle 100 Pixel des RADIUS wiederholt. 
 
-Der Bildschirm universelle Windows-Plattform auf der rechten Seite zeigt, wie `SKShaderTileMode.Mirror` die Farbverläufe in eine Alternative Richtung auslöst. Der erste Farbverlauf liegt zwischen Schwarz, zentriert und weiß, an einen Radius von 100 Pixel. Das nächste ist von den Radius von 100 Pixel auf Schwarz festgelegt, an einen Radius von 200 Pixel weiß, und weiter Farbverlaufs wieder rückgängig gemacht.
+Der Bildschirm universelle Windows-Plattform auf der rechten Seite zeigt `SKShaderTileMode.Mirror` , wie die Farbverläufe in Alternative Richtungen bewirkt. Der erste Farbverlauf ist von schwarz an der Mitte (weiß) mit einem Radius von 100 Pixeln. Das nächste ist weiß vom 100-Pixel-Radius zu schwarz bei einem Radius von 200 Pixel, und der nächste Farbverlauf wird wieder umgekehrt.
 
-Sie können mehr als zwei Farben in einem radialen Farbverlauf. Mit dem Beispiel für den **Regenbogen Bogen Verlauf** wird ein Array mit acht Farben erstellt, das den Farben des Regenbogen Werts entspricht und mit rot endet, sowie ein Array von acht Positions Werten:
+Sie können in einem radialen Farbverlauf mehr als zwei Farben verwenden. Mit dem Beispiel für den **Regenbogen Bogen Verlauf** wird ein Array mit acht Farben erstellt, das den Farben des Regenbogen Werts entspricht und mit rot endet, sowie ein Array von acht Positions Werten:
 
 ```csharp
 public class RainbowArcGradientPage : ContentPage
@@ -204,17 +207,17 @@ public class RainbowArcGradientPage : ContentPage
 }
 ```
 
-Angenommen, das minimale Breite und die Höhe der Canvas beträgt 1000, was bedeutet, dass der `rainbowWidth` Wert 250 ist. Die Werte für `outerRadius` und `innerRadius` werden auf 1000 bzw. 750 festgelegt. Diese Werte werden zum Berechnen des `positions` Arrays verwendet. die acht Werte liegen zwischen 0,75 f und 1. Der `radius`-Wert wird zum Durchsuchen des Kreises verwendet. Der Wert 875 bedeutet, dass die Strichbreite 250 Pixel zwischen den Radius der 750 Pixel und den Radius der 1000 Pixel erweitert:
+Angenommen, das minimale Breite und die Höhe der Canvas beträgt 1000, was bedeutet, dass der `rainbowWidth` Wert 250 ist. Der `outerRadius` -Wert und der- `innerRadius` Wert werden auf 1000 bzw. 750 festgelegt. Diese Werte werden zum Berechnen des `positions` Arrays verwendet; die acht Werte liegen zwischen 0,75 f und 1. Der- `radius` Wert wird zum Durchsuchen des Kreises verwendet. Der Wert 875 bedeutet, dass die Breite des 250-Pixel-Strichs zwischen dem Radius von 750 Pixel und dem Radius von 1000 Pixel liegt:
 
 [![Verlauf des Regenbogen Bogens](circular-gradients-images/RainbowArcGradient.png "Verlauf des Regenbogen Bogens")](circular-gradients-images/RainbowArcGradient-Large.png#lightbox)
 
-Wenn Sie mit diesem Verlauf die gesamte Canvas ausgefüllt haben, sehen Sie sich, dass es innerhalb des inneren Radius Rot ist. Dies liegt daran, dass das `positions` Array nicht mit 0 beginnt. Die erste Farbe wird für die Offsets von 0 bis das erste Arraywert verwendet. Der Gradient ist auch über den Radius des äußeren Rot. Das ist das Ergebnis des `Clamp` Kachel Modus. Da der Gradient für die Kontur zuweisen eine starke Linie verwendet wird, sind diese roten Bereiche nicht sichtbar.
+Wenn Sie den gesamten Zeichenbereich mit diesem Farbverlauf ausgefüllt haben, sehen Sie, dass er im inneren Radius rot ist. Dies liegt daran, dass das `positions` Array nicht mit 0 beginnt. Die erste Farbe wird für Offsets von 0 bis zum ersten Array Wert verwendet. Der Farbverlauf wird auch über den äußeren Radius hinaus rot angezeigt. Das ist das Ergebnis des `Clamp` Kachel Modus. Da der Farbverlauf zum Durchsuchen einer dicken Linie verwendet wird, sind diese roten Bereiche nicht sichtbar.
 
-## <a name="radial-gradients-for-masking"></a>Radiale Farbverläufe für die Maskierung
+## <a name="radial-gradients-for-masking"></a>Radiale Farbverläufe für Maskierung
 
-Wie linearen Farbverläufen können radiale Farbverläufen transparente oder teilweise transparente Farben integrieren. Diese Funktion ist nützlich für einen Prozess namens _Maskierung_, der einen Teil eines Bilds verbirgt, um einen anderen Teil des Bilds hervorzuheben.
+Wie bei linearen Farbverläufen können radiale Farbverläufe transparente oder teilweise transparente Farben enthalten. Diese Funktion ist nützlich für einen Prozess namens _Maskierung_, der einen Teil eines Bilds verbirgt, um einen anderen Teil des Bilds hervorzuheben.
 
-Die Seite **radiale Farbverlaufs Maske** zeigt ein Beispiel an. Das Programm lädt eine der Bitmaps Ressource. Die Felder `CENTER` und `RADIUS` wurden von einer Untersuchung der Bitmap bestimmt und verweisen auf einen Bereich, der hervorgehoben werden soll. Der `PaintSurface` Handler beginnt mit dem Berechnen eines Rechtecks, um die Bitmap anzuzeigen, und zeigt Sie dann in diesem Rechteck an:
+Die Seite **radiale Farbverlaufs Maske** zeigt ein Beispiel an. Das Programm lädt eine der Ressourcen Bitmaps. Die `CENTER` `RADIUS` Felder und wurden von einer Untersuchung der Bitmap bestimmt und verweisen auf einen Bereich, der hervorgehoben werden soll. Der `PaintSurface` Handler beginnt mit dem Berechnen eines Rechtecks, um die Bitmap anzuzeigen, und zeigt Sie dann in diesem Rechteck an:
 
 ```csharp
 public class RadialGradientMaskPage : ContentPage
@@ -278,19 +281,19 @@ public class RadialGradientMaskPage : ContentPage
 }
 ```
 
-Nach dem Zeichnen der Bitmap konvertiert ein einfacher Code `CENTER` und `RADIUS` in `center` und `radius`, die auf den markierten Bereich in der Bitmap verweisen, der zum Anzeigen skaliert und verschoben wurde. Diese Werte werden verwendet, zum Erstellen von eines radialen Farbverlaufs mit diesem Mittelpunkt und dem Radius. Die zwei Farben beginnen bei in der Mitte und für die ersten 60 % des Radius transparent. Der Farbverlauf wird dann weiß:
+Nach dem Zeichnen der Bitmap werden einige einfache Codes `CENTER` und `RADIUS` in `center` und konvertiert `radius` , die auf den markierten Bereich in der Bitmap verweisen, der zum Anzeigen skaliert und verschoben wurde. Diese Werte werden verwendet, um einen radialen Farbverlauf mit diesem Mittelpunkt und RADIUS zu erstellen. Die beiden Farben beginnen bei transparent in der Mitte und für die ersten 60% des RADIUS. Der Farbverlauf wird dann weiß angezeigt:
 
 [![Radiale Verlaufs Maske](circular-gradients-images/RadialGradientMask.png "Radiale Verlaufs Maske")](circular-gradients-images/RadialGradientMask-Large.png#lightbox)
 
-Dieser Ansatz ist nicht die beste Möglichkeit, eine Bitmap zu maskieren. Das Problem ist, dass die Maske größtenteils eine Farbe Weiß, das den Hintergrund des Zeichenbereichs entsprechend ausgewählt wurde. Wenn der Hintergrund eine andere Farbe &mdash; oder vielleicht ein Farbverlauf &mdash;, stimmt er nicht mit. Ein besserer Ansatz für die Maskierung ist im Artikel [skiasharp Porter-Duff Blend-Modi](../blend-modes/porter-duff.md)dargestellt.
+Diese Vorgehensweise ist nicht die beste Methode, um eine Bitmap zu maskieren. Das Problem besteht darin, dass die Maske größtenteils eine Farbe weiß hat, die für den Hintergrund der Canvas ausgewählt wurde. Wenn der Hintergrund eine andere Farbe &mdash; oder vielleicht ein Farbverlauf ist, &mdash; entspricht er nicht. Ein besserer Ansatz für die Maskierung ist im Artikel [skiasharp Porter-Duff Blend-Modi](../blend-modes/porter-duff.md)dargestellt.
 
 ## <a name="radial-gradients-for-specular-highlights"></a>Radiale Farbverläufe für Glanzlichter
 
-Wenn Sie ein Licht eine abgerundete Oberfläche eintritt, es Licht in viele Richtungen widerspiegelt, aber einige der Lichtquelle direkt in des anzeigenden Benutzers Auge springt. Dies führt häufig dazu, dass ein fuzzyweißer Bereich auf der Oberfläche, _der als Glanz_Lichter bezeichnet wird, dargestellt wird.
+Wenn ein Licht auf eine abgerundete Oberfläche trifft, spiegelt es das Licht in vielerlei Richtung wider, aber einige der hellen springen direkt in den Blick des Viewers. Dies führt häufig dazu, dass ein fuzzyweißer Bereich auf der Oberfläche, _der als Glanz_Lichter bezeichnet wird, dargestellt wird.
 
-Dreidimensionale Grafiken führen Glanzlichter häufig von den Algorithmen verwendet, um die light-Pfade und Schattierung zu bestimmen. In zweidimensionalen Grafiken werden Glanzlichter manchmal hinzugefügt, um die Darstellung einer 3D-Oberfläche vorzuschlagen. Eine Lichtreflexe kann einen flachen roten Kreis in eine rote Kugel umwandeln.
+In dreidimensionalen Grafiken resultieren Glanzlichter häufig aus den Algorithmen, die zur Ermittlung von hellen Pfaden und Schattierung verwendet werden. In zweidimensionalen Grafiken werden manchmal Glanzlichter hinzugefügt, um die Darstellung einer 3D-Oberfläche vorzuschlagen. Eine Glanz Markierung kann einen flachen roten Kreis in eine Runde rote Kugel umwandeln.
 
-Die **radiale Glanz hervor** gehobene Seite verwendet einen radialen Farbverlauf, um genau das zu erledigen. Die `PaintSurface` handlerwesen durch Berechnen eines RADIUS für den Kreis und zwei `SKPoint` Werte &mdash; ein `center` und eine `offCenter`, die sich in der Mitte zwischen dem Mittelpunkt und dem oberen linken Rand des Kreises befindet:
+Die **radiale Glanz hervor** gehobene Seite verwendet einen radialen Farbverlauf, um genau das zu erledigen. Die `PaintSurface` Handlerfunktionen durch Berechnen eines RADIUS für den Kreis und zwei `SKPoint` Werte &mdash; a `center` und eine `offCenter` , die sich in der Mitte zwischen dem Mittelpunkt und dem oberen linken Rand des Kreises befindet:
 
 ```csharp
 public class RadialSpecularHighlightPage : ContentPage
@@ -331,13 +334,13 @@ public class RadialSpecularHighlightPage : ContentPage
 }
 ```
 
-Der `CreateRadialGradient`-Befehl erstellt einen Farbverlauf, der bei diesem `offCenter` Punkt mit weiß beginnt und mit rot in einem Abstand von der Hälfte des RADIUS endet. Und so sieht es aus:
+Der-Befehl `CreateRadialGradient` erstellt einen Farbverlauf, der an diesem `offCenter` Punkt mit weiß beginnt und mit rot in einem Abstand von der Hälfte des RADIUS endet. Hier sehen Sie, wie es aussieht:
 
 [![Radiale Glanz Markierung](circular-gradients-images/RadialSpecularHighlight.png "Radiale Glanz Markierung")](circular-gradients-images/RadialSpecularHighlight-Large.png#lightbox)
 
-Wenn Sie diesen Farbverlauf genauer betrachten, könnten Sie, dass er fehlerhaft ist. Farbverlaufs basiert auf einem bestimmten Zeitpunkt aus, und Sie möchten möglicherweise, er wäre etwas weniger symmetrische entsprechend die abgerundete Oberfläche. In diesem Fall bevorzugen Sie möglicherweise die unten gezeigte Glanz Markierung im Abschnitt " [**kegelförmige Farbverläufe" für Glanzlichter**](#conical-gradients-for-specular-highlights).
+Wenn Sie diesen Farbverlauf genau betrachten, können Sie sich entscheiden, dass er fehlerhaft ist. Der Farbverlauf wird um einen bestimmten Punkt zentriert, und Sie möchten vielleicht etwas weniger symmetrisch sein, um die abgerundete Oberfläche widerzuspiegeln. In diesem Fall bevorzugen Sie möglicherweise die unten gezeigte Glanz Markierung im Abschnitt " [**kegelförmige Farbverläufe" für Glanzlichter**](#conical-gradients-for-specular-highlights).
 
-## <a name="the-sweep-gradient"></a>Die geleerte Farbverlauf
+## <a name="the-sweep-gradient"></a>Der Sweep-Farbverlauf
 
 Die [`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[])) -Methode verfügt über die einfachste Syntax aller Methoden zur Farbverlauf Erstellung:
 
@@ -347,15 +350,15 @@ public static SKShader CreateSweepGradient (SKPoint center,
                                             Single[] colorPos)
 ```
 
-Es ist nur in einem Rechenzentrum, ein Array von Farben und die Positionen der Farbe. Den Farbverlauf auf der rechten Seite des Mittelpunkts beginnt und zieht 360 Grad im Uhrzeigersinn um den Mittelpunkt. Beachten Sie, dass es keine `SKShaderTileMode` Parameter gibt.
+Es ist nur ein Mittelpunkt, ein Array mit Farben und die Farb Positionen. Der Farbverlauf beginnt auf der rechten Seite des Mittelpunkts und durchlaufen 360 Grad im Uhrzeigersinn um den Mittelpunkt. Beachten Sie, dass es keinen `SKShaderTileMode` Parameter gibt.
 
-Außerdem ist eine [`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKMatrix)) Überladung mit einem Matrix Transformationsparameter verfügbar. Sie können einen drehungsübergang, ändern Sie den Anfangspunkt, an den Farbverlauf anwenden. Sie können auch eine Skalierungstransformation, um die Richtung aus im Uhrzeigersinn um gegen den Uhrzeigersinn ändern anwenden.
+[`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKMatrix))Es ist auch eine Überladung mit einem Matrix Transformationsparameter verfügbar. Sie können eine Rotations Transformation auf den Farbverlauf anwenden, um den Startpunkt zu ändern. Sie können auch eine Skalierungs Transformation anwenden, um die Richtung von Uhrzeigersinn in gegen den Uhrzeigersinn zu ändern.
 
 Die Seite " **Sweep Gradient** " verwendet einen Sweep-Farbverlauf, um einen Kreis mit einer Strichbreite von 50 Pixeln zu färben:
 
 [![Sweep-Farbverlauf](circular-gradients-images/SweepGradient.png "Sweep-Farbverlauf")](circular-gradients-images/SweepGradient-Large.png#lightbox)
 
-Die `SweepGradientPage`-Klasse definiert ein Array mit acht Farben mit unterschiedlichen Farbton Werten. Beachten Sie, dass das Array beginnt und endet mit roten (eine Hue-Wert von 0 oder 360), die ganz rechts in den Screenshots angezeigt wird:
+Die- `SweepGradientPage` Klasse definiert ein Array aus acht Farben mit unterschiedlichen Farbton Werten. Beachten Sie, dass das Array beginnt und mit rot (einem Hue-Wert von 0 oder 360) endet, der in den Screenshots ganz rechts angezeigt wird:
 
 ```csharp
 public class SweepGradientPage : ContentPage
@@ -421,15 +424,15 @@ public class SweepGradientPage : ContentPage
 }
 ```
 
-Das Programm implementiert auch eine `TapGestureRecognizer`, die Code am Ende des `PaintSurface` Handlers ermöglicht. Dieser Code verwendet den gleichen Farbverlauf auf den Zeichenbereich ausfüllen:
+Das Programm implementiert auch einen `TapGestureRecognizer` , der Code am Ende des `PaintSurface` Handlers ermöglicht. Dieser Code verwendet denselben Farbverlauf, um den Zeichenbereich auszufüllen:
 
 [![Sweep-Farbverlauf voll](circular-gradients-images/SweepGradientFull.png "Sweep-Farbverlauf voll")](circular-gradients-images/SweepGradientFull-Large.png#lightbox)
 
-Diese Screenshots zeigen, dass das graduelle Füllungen unabhängig von dem Bereich von ihm gefärbt ist. Wenn der Farbverlauf nicht beginnen und mit der gleichen Farbe enden, wird eine Diskontinuität auf der rechten Seite des Mittelpunkts vorhanden sein.
+Diese Screenshots veranschaulichen, dass der Farbverlauf den von ihm farbigen Bereich füllt. Wenn der Farbverlauf nicht mit derselben Farbe beginnt und endet, gibt es eine Diskontinuität rechts neben dem Mittelpunkt.
 
-## <a name="the-two-point-conical-gradient"></a>Zwei-zackiger konische Farbverlaufs
+## <a name="the-two-point-conical-gradient"></a>Der zweistufige kegelförmige Farbverlauf
 
-Die [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode)) -Methode weist die folgende Syntax auf:
+Die- [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode)) Methode weist die folgende Syntax auf:
 
 ```csharp
 public static SKShader CreateTwoPointConicalGradient (SKPoint startCenter, 
@@ -441,11 +444,11 @@ public static SKShader CreateTwoPointConicalGradient (SKPoint startCenter,
                                                       SKShaderTileMode mode)
 ```
 
-Die Parameter beginnen mit Mittelpunkten und Radien für zwei Kreise, die als _Start_ Kreis und _Endkreis_ bezeichnet werden. Die verbleibenden drei Parameter sind identisch mit denen für `CreateLinearGradient` und `CreateRadialGradient`. Eine [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) Überladung enthält eine Matrix Transformation.
+Die Parameter beginnen mit Mittelpunkten und Radien für zwei Kreise, die als _Start_ Kreis und _Endkreis_ bezeichnet werden. Die verbleibenden drei Parameter sind identisch mit denen für `CreateLinearGradient` und `CreateRadialGradient` . Eine Überladung [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) schließt eine Matrix Transformation ein.
 
-Des Farbverlaufs an den Kreis Start beginnt und endet mit der End-Kreis. Der `SKShaderTileMode`-Parameter bestimmt, was über die beiden Kreise hinausgeht. Zwei-zackiger konische Farbverlaufs ist nur Farbverlaufs, der nicht vollständig über einen Bereich ausfüllt. Wenn die beiden Kreise identischem Radius verfügen, ist der Gradient auf ein Rechteck mit einer Breite, die der Durchmesser der Kreise identisch ist beschränkt. Wenn die beiden Kreise verschiedene Radien verfügen, bildet der Gradient ein Kegels.
+Der Farbverlauf beginnt am startkreis und endet am Endkreis. Der- `SKShaderTileMode` Parameter bestimmt, was über die beiden Kreise hinausgeht. Der zweistufige kegelförmige Farbverlauf ist der einzige Farbverlauf, der einen Bereich nicht vollständig ausfüllt. Wenn die beiden Kreise denselben RADIUS aufweisen, ist der Farbverlauf auf ein Rechteck mit einer Breite beschränkt, die mit dem Durchmesser der Kreise identisch ist. Wenn die beiden Kreise über unterschiedliche Radii verfügen, bildet der Farbverlauf einen Kegel.
 
-Es ist wahrscheinlich, dass Sie mit dem zweistufigen kegelförmigen Farbverlauf experimentieren möchten, sodass die Seite " **kegelförmige Farbverlauf** " von `InteractivePage` abgeleitet wird, damit zwei Berührungspunkte für die beiden kreisförmigen Radii bewegt werden können:
+Es ist wahrscheinlich, dass Sie mit dem zweistufigen kegelförmigen Farbverlauf experimentieren möchten, sodass die Seite " **kegelförmige Farbverlauf** " von abgeleitet ist, damit `InteractivePage` zwei Berührungspunkte für die beiden kreisförmigen Radii bewegt werden können:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -493,7 +496,7 @@ Es ist wahrscheinlich, dass Sie mit dem zweistufigen kegelförmigen Farbverlauf 
 </local:InteractivePage>
 ```
 
-Die Code-Behind-Datei definiert die beiden `TouchPoint`-Objekte mit dem festgelegten bogenwert 50 und 100:
+Die Code-Behind-Datei definiert die beiden `TouchPoint` Objekte mit einem festgelegtem Radien von 50 und 100:
 
 ```csharp
 public partial class ConicalGradientPage : InteractivePage
@@ -569,25 +572,25 @@ public partial class ConicalGradientPage : InteractivePage
 
 Das `colors` Array ist rot, grün und blau. Der Code im unteren Bereich des `PaintSurface` Handlers zeichnet die beiden Berührungspunkte als schwarze Kreise, sodass Sie den Farbverlauf nicht behindern.
 
-Beachten Sie, dass `DrawRect`-Aufrufe den Farbverlauf verwendet, um den gesamten Zeichenbereich zu Farben Im Allgemeinen bleibt ein Großteil der Leinwand jedoch nicht durch den Verlauf farbigen. Hier ist das Programm zeigt drei mögliche Konfigurationen:
+Beachten Sie, dass der-Befehl den Farb `DrawRect` Verlauf verwendet, um den gesamten Zeichenbereich zu Im allgemeinen Fall bleibt jedoch ein Großteil des Canvas durch den Farbverlauf unfarbig. Hier ist das Programm, das drei mögliche Konfigurationen anzeigt:
 
 [![Kegelförmiger Farbverlauf](circular-gradients-images/ConicalGradient.png "Kegelförmiger Farbverlauf")](circular-gradients-images/ConicalGradient-Large.png#lightbox)
 
-Der IOS-Bildschirm auf der linken Seite zeigt die Auswirkung der `SKShaderTileMode` Einstellung von `Clamp`an. Der Gradient beginnt mit Rot in den Rand des Kreises kleinere, das Gegenstück der Seite auf den zweiten Kreis am nächsten ist. Der `Clamp` Wert bewirkt auch, dass der rote-Wert auch an den Punkt des Kegel weiter geht. Der Gradient endet mit blauen am äußeren Rand des Kreises größer, die auf den ersten Kreis am nächsten ist, aber weiterhin mit Blau innerhalb dieser Kreises und darüber hinaus.
+Auf der linken Seite des IOS-Bildschirms wird die Auswirkung der `SKShaderTileMode` Einstellung von angezeigt `Clamp` . Der Farbverlauf beginnt mit rot innerhalb des Randes kleiner Kreises, der der Seite am nächsten liegt, die dem zweiten Kreis am nächsten ist. Der `Clamp` Wert bewirkt auch, dass Rot an den Punkt des Kegel weiter geht. Der Farbverlauf endet mit blau am äußeren Rand des größeren Kreises, der dem ersten Kreis am nächsten ist, aber mit blau innerhalb dieses Kreises und darüber hinaus fortgesetzt wird.
 
-Der Android-Bildschirm ist ähnlich, aber mit einer `SKShaderTileMode` `Repeat`. Jetzt ist es klarer, dass den Farbverlauf innerhalb des Kreises erste beginnt und endet, die außerhalb der zweiten Kreis. Die `Repeat` Einstellung bewirkt, dass der Farbverlauf erneut mit rot innerhalb des größeren Kreises wiederholt wird.
+Der Android-Bildschirm ist ähnlich, aber mit `SKShaderTileMode` der von `Repeat` . Nun ist es klarer, dass der Farbverlauf innerhalb des ersten Kreises beginnt und außerhalb des zweiten Kreises endet. Die- `Repeat` Einstellung bewirkt, dass der Farbverlauf erneut mit rot innerhalb des größeren Kreises wiederholt wird.
 
-Der UWP-Bildschirm zeigt an, was geschieht, wenn es sich bei der kleinere Kreis vollständig innerhalb der größeren Kreis bewegt wird. Der Gradient beendet, der einen Kegel und stattdessen füllt den gesamten Bereich. Die Auswirkungen sind vergleichbar mit der radialen Farbverlauf, aber es asymmetrisch ist, wenn es sich bei der kleinere Kreis nicht genau innerhalb der größeren Kreis zentriert ist.
+Der UWP-Bildschirm zeigt, was geschieht, wenn der kleinere Kreis vollständig innerhalb des größeren Kreises bewegt wird. Der Farbverlauf hält als Kegel an und füllt stattdessen den gesamten Bereich. Der Effekt ähnelt dem radialen Farbverlauf, ist aber asymmetrisch, wenn der kleinere Kreis nicht genau innerhalb des größeren Kreises zentriert ist.
 
-Sie können den praktischen Nutzen des Farbverlaufs entspricht bei einem einzelnen Kreis in einer anderen geschachtelt ist, aber es empfiehlt sich für eine Lichtreflexe bezweifle.
+Möglicherweise Zweifeln Sie die praktische Nützlichkeit des Farbverlaufs, wenn ein Kreis in einem anderen Kreis eingebettet ist, aber er eignet sich ideal für eine Glanz Hervorhebung.
 
-## <a name="conical-gradients-for-specular-highlights"></a>Konische Gradienten für Glanzlichter
+## <a name="conical-gradients-for-specular-highlights"></a>Kegelförmige Farbverläufe für Glanzlichter
 
-In diesem Artikel wurde erläutert, wie einen radialen Farbverlauf zu verwenden, um eine Lichtreflexe zu erstellen. Sie können auch zwei Punkt konische Farbverlaufs zu diesem Zweck verwenden, und möglicherweise bevorzugen Sie aussehen:
+Weiter oben in diesem Artikel haben Sie erfahren, wie Sie mit einem radialen Farbverlauf eine Glanz Markierung erstellen. Für diesen Zweck können Sie auch den zweistufigen Kegel-Farbverlauf verwenden, und Sie können die Vorgehensweise bevorzugen:
 
 [![Kegelförmige Hervorhebung](circular-gradients-images/ConicalSpecularHighlight.png "Kegelförmige Hervorhebung")](circular-gradients-images/ConicalSpecularHighlight-Large.png#lightbox)
 
-Die asymmetrische Darstellung schlägt besser vor der abgerundeten Oberfläche des Objekts. 
+Die asymmetrische Darstellung deutet besser auf die abgerundete Oberfläche des Objekts hin. 
 
 Der Zeichnungs Code auf der Seite " **kegelförmige Hervorhebung** " ist mit Ausnahme des Shaders identisch mit der **radialen** Glanz Seite:
 
@@ -615,7 +618,7 @@ public class ConicalSpecularHighlightPage : ContentPage
 }
 ```
 
-Die beiden Kreise haben Mittel aus `offCenter` und `center`. Der in `center` zentrierte Kreis ist einem RADIUS zugeordnet, der die gesamte Kugel umfasst, aber der Kreis, der sich auf `offCenter` zentriert befindet, verfügt über einen Radius von nur einem Pixel. Der Gradient ist effektiv an diesem Punkt beginnt und endet am Rand des Balls.
+Die beiden Kreise haben die Zentren von `offCenter` und `center` . Der mit zentrierte Kreis `center` ist einem RADIUS zugeordnet, der die gesamte Kugel umfasst, aber der Kreis, auf dem zentriert ist, `offCenter` verfügt über einen Radius von nur einem Pixel. Der Farbverlauf beginnt an diesem Punkt und endet am Rand der Kugel.
 
 ## <a name="related-links"></a>Verwandte Links
 

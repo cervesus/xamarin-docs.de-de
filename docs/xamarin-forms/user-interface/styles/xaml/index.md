@@ -1,49 +1,52 @@
 ---
-title: Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen
-description: Dieses Handbuch wird erläutert, wie die Darstellung einer Xamarin.Forms-Anwendung mithilfe von XAML-Stile anpassen.
-ms.prod: xamarin
-ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/30/2019
-ms.openlocfilehash: adafcb85f4e3d3bd93f7b2afe69c0ca0bb37f3d0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+title: Formatieren von Xamarin.Forms apps mit XAML-Stilen
+description: In diesem Handbuch wird erläutert, wie die Darstellung einer- Xamarin.Forms Anwendung mithilfe von XAML-Stilen angepasst wird.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72effe15d3456b5a48cbf5d09e889600134ac686
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926608"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138800"
 ---
-# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen
+# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Formatieren von Xamarin.Forms apps mit XAML-Stilen
 
-## <a name="introductionintroductionmd"></a>[Introduction (Einführung)](introduction.md)
+## <a name="introduction"></a>[Einführung](introduction.md)
 
-Xamarin.Forms-Anwendungen enthalten häufig mehrere Steuerelemente, die eine identische Darstellung. Die Darstellung der einzelnen Steuerelemente festlegen kann sein, sich wiederholende und fehleranfällig. Stattdessen können Stile erstellt werden, die steuerelementdarstellung anpassen, indem gruppieren und Festlegen von Eigenschaften zur Verfügung stehen für den Steuerelementtyp ".
+Xamarin.FormsAnwendungen enthalten häufig mehrere Steuerelemente mit identischer Darstellung. Das Festlegen der Darstellung der einzelnen Steuerelemente kann sich wiederholt und fehleranfällig sein. Stattdessen können Stile erstellt werden, die die Darstellung des Steuer Elements anpassen, indem Sie die im Steuerelement-Typ verfügbaren Eigenschaften gruppieren und festlegen.
 
-## <a name="explicit-stylesexplicitmd"></a>[Explizite Stile](explicit.md)
+## <a name="explicit-styles"></a>[Explizite Stile](explicit.md)
 
-Ein *explizite* Stil ist, die selektiv auf Steuerelemente, durch Festlegen angewendet wird ihrer [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaften.
+Eine *explizite* Formatvorlage ist eine, die selektiv auf Steuerelemente angewendet wird, indem ihre Eigenschaften festgelegt werden [`Style`](xref:Xamarin.Forms.NavigableElement.Style) .
 
-## <a name="implicit-stylesimplicitmd"></a>[Implizite Stile](implicit.md)
+## <a name="implicit-styles"></a>[Implizite Stile](implicit.md)
 
-Ein *implizite* Stil ist eine, mit dem alle Steuerelemente des gleichen [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType), ohne jedes Steuerelement auf die Formatvorlage verweisen.
+Ein *impliziter* Stil ist ein Wert, der von allen Steuerelementen desselben verwendet wird [`TargetType`](xref:Xamarin.Forms.Style.TargetType) , ohne dass jedes Steuerelement auf den Stil verweisen muss.
 
-## <a name="global-stylesapplicationmd"></a>[Globale Stile](application.md)
+## <a name="global-styles"></a>[Globale Stile](application.md)
 
-Stile verfügbar gemacht werden global durch Hinzufügen zu der Anwendung [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Dadurch wird die um Duplizierung von Formatvorlagen für Seiten oder Steuerelemente zu vermeiden.
+Stile können global verfügbar gemacht werden, indem Sie dem der Anwendung hinzugefügt werden [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Dadurch wird das Duplizieren von Stilen über mehrere Seiten oder Steuerelemente hinweg vermieden.
 
-## <a name="style-inheritanceinheritancemd"></a>[Stilvererbung](inheritance.md)
+## <a name="style-inheritance"></a>[Stilvererbung](inheritance.md)
 
-Stile können andere Stile Duplizierung zu reduzieren, und aktivieren die Wiederverwendung erben.
+Stile können von anderen Formaten erben, um Duplizierungen zu verringern und die Wiederverwendung zu ermöglichen.
 
-## <a name="dynamic-stylesdynamicmd"></a>[Dynamische Stile](dynamic.md)
+## <a name="dynamic-styles"></a>[Dynamische Stile](dynamic.md)
 
-Stile nicht reagieren auf Änderungen der Eigenschaften, und für die Dauer einer Anwendung unverändert bleiben. Allerdings können Anwendungen mithilfe von dynamischen Ressourcen auf Änderungen an Formatvorlagen dynamisch zur Laufzeit reagieren.
+Stile reagieren nicht auf Eigenschafts Änderungen und bleiben für die Dauer einer Anwendung unverändert. Anwendungen können jedoch zur Laufzeit dynamisch auf Formatänderungen reagieren, indem Sie dynamische Ressourcen verwenden.
 
-## <a name="device-stylesdevicemd"></a>[Gerätestile](device.md)
+## <a name="device-styles"></a>[Gerätestile](device.md)
 
-Xamarin.Forms umfasst sechs *dynamische* Formatvorlagen, bekannt als *Gerät* Stile, in der [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) Klasse. Alle sechs Formatvorlagen können angewendet werden, um [ `Label` ](xref:Xamarin.Forms.Label) nur Instanzen.
+Xamarin.Formsenthält sechs *dynamische* Stile, die als *Geräte* Stile bezeichnet werden, in der- [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) Klasse. Alle sechs Stile können nur auf- [`Label`](xref:Xamarin.Forms.Label) Instanzen angewendet werden.
 
-## <a name="style-classesstyle-classmd"></a>[Formatklassen](style-class.md)
+## <a name="style-classes"></a>[Formatklassen](style-class.md)
 
-Xamarin.Forms-Formatklassen aktivieren mehrere Formate, die an ein Steuerelement angewendet werden, ohne auf stilvererbung zurückzugreifen.
+Xamarin.FormsStil Klassen ermöglichen das Anwenden mehrerer Stile auf ein Steuerelement, ohne dass auf eine Format Vererbung zurückgegriffen wird.

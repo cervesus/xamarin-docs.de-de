@@ -1,48 +1,51 @@
 ---
-title: Xamarin. Forms-Schalter
-description: Der xamarin. Forms-Schalter ist ein Typ von Schaltfläche, der vom Benutzer geändert werden kann, um zwischen den Zuständen ein-und auszuschalten. In diesem Artikel wird erläutert, wie Sie die Switch-Klasse verwenden, um ein umschlendes Benutzeroberflächen Element anzuzeigen.
-ms.prod: xamarin
-ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 07/18/2019
-ms.openlocfilehash: 88655aabdbd32db63aaf3330a18b0ad8105ea26c
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+title: Xamarin.FormsNot
+description: Der- Xamarin.Forms Schalter ist ein Typ von Schaltfläche, der vom Benutzer geändert werden kann, um zwischen den Zuständen "ein" und "aus" zu wechseln. In diesem Artikel wird erläutert, wie Sie die Switch-Klasse verwenden, um ein umschlendes Benutzeroberflächen Element anzuzeigen.
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a5c2583b7632acdfa7d8439dc96b3964fa3cfcab
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506540"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136239"
 ---
-# <a name="xamarinforms-switch"></a>Xamarin. Forms-Schalter
+# <a name="xamarinforms-switch"></a>Xamarin.FormsNot
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-Das xamarin. Forms [`Switch`](xref:Xamarin.Forms.Switch) -Steuerelement ist eine horizontale UMSCHALT Fläche, die vom Benutzer geändert werden kann, um zwischen einem-und einem-Zustand zu wechseln, die durch einen `boolean`-Wert dargestellt werden. Die `Switch`-Klasse erbt von [`View`](xref:Xamarin.Forms.View).
+Das- Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) Steuerelement ist eine horizontale UMSCHALT Fläche, die vom Benutzer geändert werden kann, um zwischen den Zuständen "ein" und "aus" zu wechseln, die durch einen-Wert dargestellt werden `boolean` . Die `Switch` Klasse erbt von [`View`](xref:Xamarin.Forms.View) .
 
-Die folgenden Screenshots zeigen ein `Switch`-Steuerelement in seinen **on** -und **Off** -UMSCHALT Zuständen unter IOS und Android:
+Die folgenden Screenshots zeigen ein `Switch` Steuerelement in seinen **on** -und **Off** -UMSCHALT Zuständen unter IOS und Android:
 
 ![Screenshot von Switches in ein-und Ausschalten in IOS und Android](switch-images/switch-states-default.png "Switches unter IOS und Android")
 
-Das `Switch`-Steuerelement definiert die folgenden Eigenschaften:
+Das- `Switch` Steuerelement definiert die folgenden Eigenschaften:
 
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) ist ein `boolean` Wert, der angibt, ob die `Switch` **auf on**fest liegt.
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) ist eine `Color`, die sich darauf auswirkt, wie die `Switch` im ein **-oder ausgeschaltet**wird.
-* `ThumbColor` ist die `Color` des Zieh Punkts.
+* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)ein `boolean` Wert, der angibt, ob `Switch` **auf on**fest liegt.
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)ist eine `Color` , die sich darauf auswirkt, wie das-Objekt `Switch` im ein- **on**oder ausgeschaltet wird.
+* `ThumbColor`ist der `Color` des Zieh Punkts.
 
-Diese Eigenschaften werden durch ein [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekt gestützt. Dies bedeutet, dass die `Switch` formatiert und das Ziel von Daten Bindungen sein kann.
+Diese Eigenschaften werden durch ein- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekt unterstützt. Dies bedeutet, dass formatiert `Switch` werden kann und das Ziel von Daten Bindungen ist.
 
-Das `Switch`-Steuerelement definiert ein `Toggled` Ereignis, das ausgelöst wird, wenn sich die `IsToggled`-Eigenschaft ändert, entweder durch Benutzer Manipulation oder wenn eine Anwendung die `IsToggled`-Eigenschaft festlegt. Das `ToggledEventArgs` Objekt, das das `Toggled` Ereignis begleitet, verfügt über eine einzelne Eigenschaft mit dem Namen `Value`vom Typ `bool`. Wenn das Ereignis ausgelöst wird, gibt der Wert der `Value`-Eigenschaft den neuen Wert der `IsToggled`-Eigenschaft wieder.
+Das- `Switch` Steuerelement definiert ein- `Toggled` Ereignis, das ausgelöst wird, wenn die- `IsToggled` Eigenschaft geändert wird, entweder über eine Benutzer Bearbeitung oder eine Anwendung die-Eigenschaft festgelegt `IsToggled` . Das `ToggledEventArgs` Objekt, das das `Toggled` Ereignis begleitet, verfügt über eine einzelne Eigenschaft namens `Value` vom Typ `bool` . Wenn das Ereignis ausgelöst wird, gibt der Wert der `Value` Eigenschaft den neuen Wert der Eigenschaft an `IsToggled` .
 
 ## <a name="create-a-switch"></a>Erstellen eines Schalters
 
-Eine `Switch` kann in XAML instanziiert werden. Die `IsToggled`-Eigenschaft kann festgelegt werden, um die `Switch`zu wechseln. Standardmäßig ist die `IsToggled`-Eigenschaft `false`. Im folgenden Beispiel wird gezeigt, wie ein `Switch` in XAML mit dem optionalen `IsToggled` Eigenschaften Satz instanziiert wird:
+Eine `Switch` kann in XAML instanziiert werden. `IsToggled`Die-Eigenschaft kann festgelegt werden, um die zu aktivieren `Switch` . Standardmäßig ist die- `IsToggled` Eigenschaft `false` . Im folgenden Beispiel wird gezeigt, wie ein `Switch` in XAML mit dem optionalen Eigenschaften Satz instanziiert wird `IsToggled` :
 
 ```xaml
 <Switch IsToggled="true"/>
 ```
 
-Eine `Switch` kann auch im Code erstellt werden:
+Ein `Switch` kann auch im Code erstellt werden:
 
 ```csharp
 Switch switchControl = new Switch { IsToggled = true };
@@ -50,32 +53,32 @@ Switch switchControl = new Switch { IsToggled = true };
 
 ## <a name="switch-appearance"></a>Darstellung wechseln
 
-Zusätzlich zu den Eigenschaften, die [`Switch`](xref:Xamarin.Forms.Switch) von der [`View`](xref:Xamarin.Forms.View) -Klasse erbt, definiert `Switch` auch `OnColor`-und `ThumbColor`-Eigenschaften. Die `OnColor`-Eigenschaft kann festgelegt werden, um die `Switch` Farbe zu definieren, wenn Sie in Ihren **on** -Zustand gewechselt wird, und die `ThumbColor`-Eigenschaft kann festgelegt werden, um die `Color` des Zieh Punkts zu definieren. Im folgenden Beispiel wird gezeigt, wie ein `Switch` in XAML instanziiert wird, wobei diese Eigenschaften festgelegt werden:
+Zusätzlich zu den Eigenschaften, die [`Switch`](xref:Xamarin.Forms.Switch) von der- [`View`](xref:Xamarin.Forms.View) Klasse erben, `Switch` definiert auch die `OnColor` -Eigenschaft und die-Eigenschaft `ThumbColor` . Die `OnColor` -Eigenschaft kann festgelegt werden, um die Farbe zu definieren `Switch` , wenn Sie in Ihren **on** -Zustand gewechselt wird, und die- `ThumbColor` Eigenschaft kann festgelegt werden, um den `Color` des Zieh Punkts zu definieren. Im folgenden Beispiel wird gezeigt, wie ein in XAML instanziiert wird, `Switch` wobei diese Eigenschaften festgelegt werden:
 
 ```xaml
 <Switch OnColor="Orange"
         ThumbColor="Green" />
 ```
 
-Die Eigenschaften können auch beim Erstellen einer `Switch` im Code festgelegt werden:
+Die Eigenschaften können auch beim Erstellen einer im Code festgelegt werden `Switch` :
 
 ```csharp
 Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-Der folgende Screenshot zeigt die `Switch` in den **ein-** und **ausschalten** -Status, bei denen die Eigenschaften `OnColor` und `ThumbColor` festgelegt sind:
+Der folgende Screenshot zeigt den `Switch` in seinen **on** -und **Off** -UMSCHALT Zuständen, bei denen die `OnColor` -Eigenschaft und die-Eigenschaft `ThumbColor` festgelegt sind:
 
 ![Screenshot von Switches in ein-und Ausschalten in IOS und Android](switch-images/switch-states-colors.png "Switches unter IOS und Android")
 
 ## <a name="respond-to-a-switch-state-change"></a>Reagieren auf eine Änderung des Wechsel Status
 
-Wenn die `IsToggled`-Eigenschaft geändert wird, entweder durch Benutzer Manipulation oder wenn eine Anwendung die `IsToggled`-Eigenschaft festlegt, wird das `Toggled`-Ereignis ausgelöst. Ein Ereignishandler für dieses Ereignis kann registriert werden, um auf die Änderung zu reagieren:
+Wenn sich die- `IsToggled` Eigenschaft ändert, entweder über die Benutzer Manipulation oder wenn eine Anwendung die- `IsToggled` Eigenschaft festlegt, wird das- `Toggled` Ereignis ausgelöst. Ein Ereignishandler für dieses Ereignis kann registriert werden, um auf die Änderung zu reagieren:
 
 ```xaml
 <Switch Toggled="OnToggled" />
 ```
 
-Die Code-Behind-Datei enthält den Handler für das `Toggled`-Ereignis:
+Die Code-Behind-Datei enthält den Handler für das- `Toggled` Ereignis:
 
 ```csharp
 void OnToggled(object sender, ToggledEventArgs e)
@@ -84,7 +87,7 @@ void OnToggled(object sender, ToggledEventArgs e)
 }
 ```
 
-Das `sender`-Argument im-Ereignishandler ist der `Switch`, der für das Auslösen dieses Ereignisses verantwortlich ist. Sie können die `sender`-Eigenschaft verwenden, um auf das `Switch` Objekt zuzugreifen, oder um zwischen mehreren `Switch` Objekten zu unterscheiden, die denselben `Toggled` Ereignishandler verwenden.
+Das- `sender` Argument im-Ereignishandler ist der `Switch` Verantwortliche für das Auslösen dieses Ereignisses. Sie können die- `sender` Eigenschaft verwenden, um auf das- `Switch` Objekt zuzugreifen, oder um zwischen mehreren Objekten zu unterscheiden, `Switch` die denselben `Toggled` Ereignishandler verwenden.
 
 Der `Toggled` Ereignishandler kann auch im Code zugewiesen werden:
 
@@ -98,7 +101,7 @@ switchControl.Toggled += (sender, e) =>
 
 ## <a name="data-bind-a-switch"></a>Daten binden eines Schalters
 
-Der `Toggled`-Ereignishandler kann mithilfe von Datenbindung und Triggern gelöscht werden, um auf eine `Switch` ändernde UMSCHALT Zustände zu reagieren.
+Der `Toggled` Ereignishandler kann mithilfe von Datenbindung und Triggern gelöscht werden, um auf geänderte Statusänderungen zu reagieren `Switch` .
 
 ```xaml
 <Switch x:Name="styleSwitch" />
@@ -116,15 +119,15 @@ Der `Toggled`-Ereignishandler kann mithilfe von Datenbindung und Triggern gelös
 </Label>
 ```
 
-In diesem Beispiel verwendet die [`Label`](xref:Xamarin.Forms.Label) einen Bindungs Ausdruck in einer `DataTrigger`, um die `IsToggled`-Eigenschaft der `Switch` mit dem Namen `styleSwitch`zu überwachen. Wenn diese Eigenschaft `true`wird, werden die Eigenschaften `FontAttributes` und `FontSize` der `Label` geändert. Wenn die `IsToggled`-Eigenschaft zu `false`zurückkehrt, werden die Eigenschaften `FontAttributes` und `FontSize` der `Label` auf ihren ursprünglichen Zustand zurückgesetzt.
+In diesem Beispiel [`Label`](xref:Xamarin.Forms.Label) verwendet einen Bindungs Ausdruck in einer `DataTrigger` , um die- `IsToggled` Eigenschaft der mit dem Namen zu überwachen `Switch` `styleSwitch` . Wenn diese Eigenschaft wird `true` , `FontAttributes` werden die-Eigenschaft und die-Eigenschaft des-Objekts `FontSize` `Label` geändert. Wenn die `IsToggled` -Eigenschaft zurückkehrt `false` , `FontAttributes` werden die-Eigenschaft und die-Eigenschaft `FontSize` des `Label` auf den ursprünglichen Zustand zurückgesetzt.
 
-Weitere Informationen zu Triggern finden Sie unter [xamarin. Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
+Weitere Informationen zu Triggern finden Sie unter [ Xamarin.Forms Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
 
 ## <a name="disable-a-switch"></a>Deaktivieren eines Schalters
 
-Eine Anwendung kann einen Status eingeben, in dem die `Switch`, die ein-/ausgeschaltet wird, kein gültiger Vorgang ist. In solchen Fällen kann die `Switch` durch Festlegen der `IsEnabled`-Eigenschaft auf `false`deaktiviert werden. Dadurch wird verhindert, dass Benutzer die `Switch`bearbeiten können.
+Eine Anwendung kann einen Status eingeben, in dem ein-/ausgeschaltet `Switch` ist, der kein gültiger Vorgang ist. In solchen Fällen kann der deaktiviert werden, indem die zugehörige- `Switch` Eigenschaft auf festgelegt wird `IsEnabled` `false` . Dadurch wird verhindert, dass Benutzer die bearbeiten können `Switch` .
 
 ## <a name="related-links"></a>Verwandte Links
 
 * [Switchdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin. Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
+* [Xamarin.FormsAuslöst](~/xamarin-forms/app-fundamentals/triggers.md)

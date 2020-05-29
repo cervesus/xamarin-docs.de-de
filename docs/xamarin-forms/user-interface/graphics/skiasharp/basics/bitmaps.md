@@ -1,18 +1,21 @@
 ---
-title: Grundlagen der Bitmap in skiasharp
-description: In diesem Artikel wird erläutert, wie Bitmaps in skiasharp aus verschiedenen Quellen geladen und in xamarin. Forms-Anwendungen angezeigt werden. Dies wird anhand von Beispielcode veranschaulicht.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: 4aa73e1cba3f970396e5a52679372a160f47f7af
-ms.sourcegitcommit: 3bf02ecac9a8855779e07eb1e7e27abb9fc38934
+title: ''
+description: In diesem Artikel wird erläutert, wie Bitmaps in skiasharp aus verschiedenen Quellen geladen und in Xamarin.Forms Anwendungen angezeigt werden. Dies wird mit Beispielcode veranschaulicht.
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/29/2019
-ms.locfileid: "74658267"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137734"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Grundlagen der Bitmap in skiasharp
 
@@ -20,13 +23,13 @@ ms.locfileid: "74658267"
 
 _Laden Sie Bitmaps aus verschiedenen Quellen, und zeigen Sie Sie an._
 
-Die Unterstützung von Bitmaps in skiasharp ist recht umfangreich. In diesem Artikel werden nur die Grundlagen &mdash; das Laden von Bitmaps und deren Anzeige behandelt:
+Die Unterstützung von Bitmaps in skiasharp ist recht umfangreich. In diesem Artikel werden nur die Grundlagen &mdash; zum Laden von Bitmaps und deren Anzeige behandelt:
 
 ![](bitmaps-images/basicbitmaps-small.png "The display of two bitmaps")
 
 Eine weitaus tiefere Untersuchung von Bitmaps finden Sie im Abschnitt [skiasharp-Bitmaps](../bitmaps/index.md).
 
-Eine skiasharp-Bitmap ist ein Objekt vom Typ [`SKBitmap`](xref:SkiaSharp.SKBitmap). Es gibt viele Möglichkeiten, eine Bitmap zu erstellen, aber dieser Artikel beschränkt sich auf die [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) -Methode, die die Bitmap aus einem .net `Stream`-Objekt lädt.
+Eine skiasharp-Bitmap ist ein Objekt vom Typ [`SKBitmap`](xref:SkiaSharp.SKBitmap) . Es gibt viele Möglichkeiten, eine Bitmap zu erstellen, aber dieser Artikel beschränkt sich auf die- [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) Methode, die die Bitmap aus einem .net- `Stream` Objekt lädt.
 
 Die Seite **grundlegende Bitmaps** im **skiasharpformsdemos** -Programm veranschaulicht, wie Bitmaps aus drei verschiedenen Quellen geladen werden:
 
@@ -34,7 +37,7 @@ Die Seite **grundlegende Bitmaps** im **skiasharpformsdemos** -Programm veransch
 - Aus einer Ressource, die in die ausführbare Datei eingebettet ist
 - Aus der Fotobibliothek des Benutzers
 
-Drei `SKBitmap` Objekte für diese drei Quellen sind als Felder in der [`BasicBitmapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) -Klasse definiert:
+Drei `SKBitmap` Objekte für diese drei Quellen sind als Felder in der- [`BasicBitmapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) Klasse definiert:
 
 ```csharp
 public class BasicBitmapsPage : ContentPage
@@ -59,15 +62,15 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>Laden einer Bitmap aus dem Web
 
-Zum Laden einer Bitmap, die auf einer URL basiert, können Sie die [`HttpClient`](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) -Klasse verwenden. Sie sollten nur eine Instanz von `HttpClient` instanziieren und wieder verwenden. speichern Sie Sie daher als Feld:
+Zum Laden einer Bitmap basierend auf einer URL können Sie die- [`HttpClient`](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) Klasse verwenden. Sie sollten nur eine Instanz von instanziieren `HttpClient` und wieder verwenden. speichern Sie Sie daher als Feld:
 
 ```csharp
 HttpClient httpClient = new HttpClient();
 ```
 
-Wenn Sie `HttpClient` mit IOS-und Android-Anwendungen verwenden, möchten Sie die Projekteigenschaften wie in den Dokumenten auf **[Transport Layer Security (TLS) 1,2](~/cross-platform/app-fundamentals/transport-layer-security.md)** beschrieben festlegen.
+Wenn `HttpClient` Sie mit IOS-und Android-Anwendungen verwenden, möchten Sie die Projekteigenschaften festlegen, wie in den Dokumenten auf **[Transport Layer Security (TLS) 1,2](~/cross-platform/app-fundamentals/transport-layer-security.md)** beschrieben.
 
-Da es am einfachsten ist, den `await`-Operator mit `HttpClient`zu verwenden, kann der Code nicht im `BasicBitmapsPage`-Konstruktor ausgeführt werden. Stattdessen ist Sie Teil der `OnAppearing` Überschreibung. Die URL hier verweist auf einen Bereich auf der xamarin-Website mit einigen Beispiel Bitmaps. Ein Paket auf der Website ermöglicht das Anfügen einer Spezifikation zum Ändern der Größe der Bitmap an eine bestimmte Breite:
+Da es am einfachsten ist, den- `await` Operator mit zu verwenden `HttpClient` , kann der Code nicht im `BasicBitmapsPage` Konstruktor ausgeführt werden. Stattdessen ist es Teil der-Überschreibung `OnAppearing` . Die URL hier verweist auf einen Bereich auf der xamarin-Website mit einigen Beispiel Bitmaps. Ein Paket auf der Website ermöglicht das Anfügen einer Spezifikation zum Ändern der Größe der Bitmap an eine bestimmte Breite:
 
 ```csharp
 protected override async void OnAppearing()
@@ -95,15 +98,15 @@ protected override async void OnAppearing()
 }
 ```
 
-Das Android-Betriebssystem löst eine Ausnahme aus, wenn die `Stream`, die von `GetStreamAsync` in der `SKBitmap.Decode`-Methode zurückgegeben wird, verwendet wird, da es einen langwierigen Vorgang für einen Haupt Thread ausführt. Aus diesem Grund wird der Inhalt der Bitmapdatei mithilfe `CopyToAsync`in ein `MemoryStream` Objekt kopiert.
+Das Android-Betriebssystem löst eine Ausnahme aus, wenn die `Stream` von in der-Methode zurückgegebene verwendet, `GetStreamAsync` `SKBitmap.Decode` da es einen langwierigen Vorgang für einen Haupt Thread ausführt. Aus diesem Grund wird der Inhalt der Bitmapdatei mithilfe von in ein- `MemoryStream` Objekt kopiert `CopyToAsync` .
 
-Die statische `SKBitmap.Decode` Methode ist für das Decodieren von Bitmapdateien verantwortlich. Sie funktioniert mit den Bitmapformaten JPEG, PNG und GIF und speichert die Ergebnisse in einem internen skiasharp-Format. An diesem Punkt muss die `SKCanvasView` für ungültig erklärt werden, damit der `PaintSurface` Handler die Anzeige aktualisieren kann.
+Die statische- `SKBitmap.Decode` Methode ist für das Decodieren von Bitmapdateien verantwortlich. Sie funktioniert mit den Bitmapformaten JPEG, PNG und GIF und speichert die Ergebnisse in einem internen skiasharp-Format. An diesem Punkt muss die für `SKCanvasView` ungültig erklärt werden, damit der `PaintSurface` Handler die Anzeige aktualisieren kann.
 
 ## <a name="loading-a-bitmap-resource"></a>Laden einer Bitmap-Ressource
 
 Im Hinblick auf Code ist der einfachste Ansatz zum Laden von Bitmaps, eine Bitmap-Ressource direkt in Ihre Anwendung einzubeziehen. Das **skiasharpformsdemos** -Programm enthält einen Ordner mit dem Namen **Medien** , der mehrere Bitmapdateien enthält, einschließlich einer mit dem Namen " **Monkey. png**". Für Bitmaps, die als Programmressourcen gespeichert werden, müssen Sie das Dialogfeld **Eigenschaften** verwenden, um der Datei eine **Buildaktion** der **eingebetteten Ressource**zu übergeben.
 
-Jede eingebettete Ressource verfügt über eine *Ressourcen-ID* , die aus dem Projektnamen, dem Ordner und dem Dateinamen besteht, die alle durch Zeiträume verbunden sind: **skiasharpformsdemos. Media. Monkey. png**. Sie können auf diese Ressource zugreifen, indem Sie die Ressourcen-ID als Argument für die [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) -Methode der [`Assembly`](xref:System.Reflection.Assembly) -Klasse angeben:
+Jede eingebettete Ressource verfügt über eine *Ressourcen-ID* , die aus dem Projektnamen, dem Ordner und dem Dateinamen besteht, die alle durch Zeiträume verbunden sind: **skiasharpformsdemos. Media. Monkey. png**. Sie können auf diese Ressource zugreifen, indem Sie die Ressourcen-ID als Argument für die- [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) Methode der- [`Assembly`](xref:System.Reflection.Assembly) Klasse angeben:
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -115,15 +118,15 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 }
 ```
 
-Dieses `Stream` Objekt kann direkt an die `SKBitmap.Decode`-Methode übermittelt werden.
+Dieses `Stream` Objekt kann direkt an die-Methode übermittelt werden `SKBitmap.Decode` .
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>Laden einer Bitmap aus der Fotobibliothek
 
-Es ist auch möglich, dass der Benutzer ein Foto aus der Bildbibliothek des Geräts lädt. Diese Funktion wird nicht von xamarin. Forms selbst bereitgestellt. Der Auftrag erfordert einen Abhängigkeits Dienst, z. b. den, der im Artikel [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)beschrieben wird.
+Es ist auch möglich, dass der Benutzer ein Foto aus der Bildbibliothek des Geräts lädt. Diese Funktion wird nicht selbst bereitgestellt Xamarin.Forms . Der Auftrag erfordert einen Abhängigkeits Dienst, z. b. den, der im Artikel [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)beschrieben wird.
 
 Die **IPhotoLibrary.cs** -Datei im **skiasharpformsdemos** -Projekt und die drei **PhotoLibrary.cs** -Dateien in den Platt Form Projekten wurden aus diesem Artikel angepasst. Außerdem wurde die Android-Datei **MainActivity.cs** wie im Artikel beschrieben geändert, und dem IOS-Projekt wurde die Berechtigung zum Zugriff auf die Fotobibliothek mit zwei Zeilen am Ende der Datei **Info. plist** erteilt.
 
-Der `BasicBitmapsPage`-Konstruktor fügt dem `SKCanvasView` eine `TapGestureRecognizer` hinzu, um über TAPS benachrichtigt zu werden. Beim Empfang einer Tap-Methode erhält der `Tapped` Handler Zugriff auf den Abhängigkeits Dienst der Bildauswahl und ruft `PickPhotoAsync`auf. Wenn ein `Stream` Objekt zurückgegeben wird, wird es an die `SKBitmap.Decode`-Methode weitergegeben:
+Der- `BasicBitmapsPage` Konstruktor fügt `TapGestureRecognizer` der einen hinzu `SKCanvasView` , um über TAPS benachrichtigt zu werden. Beim Empfang einer Tap `Tapped` -Methode erhält der Handler Zugriff auf den Abhängigkeits Dienst der Bildauswahl und ruft auf `PickPhotoAsync` . Wenn ein- `Stream` Objekt zurückgegeben wird, wird es an die-Methode weitergegeben `SKBitmap.Decode` :
 
 ```csharp
 // Add tap gesture recognizer
@@ -145,21 +148,21 @@ tapRecognizer.Tapped += async (sender, args) =>
 canvasView.GestureRecognizers.Add(tapRecognizer);
 ```
 
-Beachten Sie, dass der `Tapped` Handler auch die `InvalidateSurface`-Methode des `SKCanvasView`-Objekts aufruft. Dadurch wird ein neuer-aufrufbefehl an den `PaintSurface`-Handler generiert.
+Beachten Sie, dass der `Tapped` Handler auch die- `InvalidateSurface` Methode des- `SKCanvasView` Objekts aufruft. Dadurch wird ein neuer-Befehl für den `PaintSurface` Handler generiert.
 
 ## <a name="displaying-the-bitmaps"></a>Anzeigen der Bitmaps
 
 Der `PaintSurface` Handler muss drei Bitmaps anzeigen. Der Handler geht davon aus, dass sich das Telefon im Hochformat befindet, und teilt den Zeichenbereich vertikal in drei gleiche Teile auf.
 
-Die erste Bitmap wird mit der einfachsten [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint)) -Methode angezeigt. Sie müssen lediglich die X-und Y-Koordinaten angeben, in denen die linke obere Ecke der Bitmap positioniert werden soll:
+Die erste Bitmap wird mit der einfachsten- [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint)) Methode angezeigt. Sie müssen lediglich die X-und Y-Koordinaten angeben, in denen die linke obere Ecke der Bitmap positioniert werden soll:
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, Single x, Single y, SKPaint paint = null)
 ```
 
-Obwohl ein `SKPaint` Parameter definiert ist, verfügt er über den Standardwert `null`, und Sie können ihn ignorieren. Die Pixel der Bitmap werden einfach an die Pixel der Anzeige Oberfläche mit einer eins-zu-Eins-Zuordnung übertragen. Im nächsten Abschnitt über [**skiasharp-Transparenz**](transparency.md)wird eine Anwendung für dieses `SKPaint` Argument angezeigt.
+Obwohl ein- `SKPaint` Parameter definiert ist, verfügt er über den Standardwert, `null` und Sie können ihn ignorieren. Die Pixel der Bitmap werden einfach an die Pixel der Anzeige Oberfläche mit einer eins-zu-Eins-Zuordnung übertragen. `SKPaint`Im nächsten Abschnitt über [**skiasharp-Transparenz**](transparency.md)wird eine Anwendung für dieses Argument angezeigt.
 
-Ein Programm kann die Pixel Dimensionen einer Bitmap mit den Eigenschaften [`Width`](xref:SkiaSharp.SKBitmap.Width) und [`Height`](xref:SkiaSharp.SKBitmap.Height) abrufen. Diese Eigenschaften ermöglichen es dem Programm, Koordinaten zu berechnen, um die Bitmap in der Mitte des oberen dritten Bereichs der Canvas zu positionieren:
+Ein Programm kann die Pixel Dimensionen einer Bitmap mit der-Eigenschaft [`Width`](xref:SkiaSharp.SKBitmap.Width) und der-Eigenschaft abrufen [`Height`](xref:SkiaSharp.SKBitmap.Height) . Diese Eigenschaften ermöglichen es dem Programm, Koordinaten zu berechnen, um die Bitmap in der Mitte des oberen dritten Bereichs der Canvas zu positionieren:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -180,13 +183,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Die anderen beiden Bitmaps werden mit einer Version von [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint)) mit einem `SKRect`-Parameter angezeigt:
+Die anderen beiden Bitmaps werden mit einer Version von [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint)) mit einem- `SKRect` Parameter angezeigt:
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 ```
 
-Eine dritte Version von [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) verfügt über zwei `SKRect` Argumente zum Angeben einer rechteckigen Teilmenge der Bitmap, die angezeigt werden soll. diese Version wird in diesem Artikel jedoch nicht verwendet.
+Eine dritte Version von [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) verfügt über zwei `SKRect` Argumente, um eine rechteckige Teilmenge der anzuzeigenden Bitmap anzugeben. diese Version wird in diesem Artikel jedoch nicht verwendet.
 
 Hier ist der Code zum Anzeigen der Bitmap, die aus einer eingebetteten Ressourcen Bitmap geladen wurde:
 
@@ -207,7 +210,7 @@ Die Bitmap wird auf die Abmessungen des Rechtecks gestreckt, weshalb der Affe ho
 
 [![](bitmaps-images/basicbitmaps-small.png "A triple screenshot of the Basic Bitmaps page")](bitmaps-images/basicbitmaps-large.png#lightbox "A triple screenshot of the Basic Bitmaps page")
 
-Das dritte Bild &mdash; das Sie nur sehen können, wenn Sie das Programm ausführen und ein Foto aus ihrer eigenen Bildbibliothek laden &mdash; wird auch innerhalb eines Rechtecks angezeigt, aber die Position und Größe des Rechtecks werden angepasst, um das Seitenverhältnis der Bitmap beizubehalten. Diese Berechnung ist etwas komplizierter, da Sie einen Skalierungsfaktor basierend auf der Größe der Bitmap und des Ziel Rechtecks berechnen muss und das Rechteck in diesem Bereich zentriert:
+Das dritte Bild, das &mdash; Sie nur sehen können, wenn Sie das Programm ausführen und ein Foto aus ihrer eigenen Bildbibliothek laden &mdash; , wird ebenfalls innerhalb eines Rechtecks angezeigt, aber die Position und Größe des Rechtecks werden angepasst, um das Seitenverhältnis der Bitmap beizubehalten. Diese Berechnung ist etwas komplizierter, da Sie einen Skalierungsfaktor basierend auf der Größe der Bitmap und des Ziel Rechtecks berechnen muss und das Rechteck in diesem Bereich zentriert:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,11 +245,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Wenn noch keine Bitmap aus der Bildbibliothek geladen wurde, wird im `else`-Block ein Text angezeigt, der den Benutzer auffordert, auf den Bildschirm zu tippen.
+Wenn noch keine Bitmap aus der Bildbibliothek geladen wurde, zeigt der- `else` Block einen Text an, der den Benutzer auffordert, auf den Bildschirm zu tippen.
 
 Sie können Bitmaps mit unterschiedlichen Grad an Transparenz anzeigen, und im nächsten Artikel über [**skiasharp-Transparenz**](transparency.md) wird beschrieben, wie.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

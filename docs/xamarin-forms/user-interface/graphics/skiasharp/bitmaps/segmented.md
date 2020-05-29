@@ -1,50 +1,53 @@
 ---
-title: Segmentierte Anzeige der SkiaSharp-bitmaps
-description: Zeigen Sie eine Bitmap SkiaSharp, damit einige Bereich werden gestreckt, und einige Bereiche nicht sind.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: ca6c8fafe4352bac83e5ae60b43627d4c7fdc10f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648668"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138670"
 ---
-# <a name="segmented-display-of-skiasharp-bitmaps"></a>Segmentierte Anzeige der SkiaSharp-bitmaps
+# <a name="segmented-display-of-skiasharp-bitmaps"></a>Segmentierte Anzeige von skiasharp-Bitmaps
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Die SkiaSharp `SKCanvas` Objekt definiert eine Methode namens `DrawBitmapNinePatch` und zwei Methoden, die mit dem Namen `DrawBitmapLattice` , sind sehr ähnlich. Sowohl diese Methoden Rendern einer Bitmap auf die Größe eines Rechtecks Ziel, aber statt Dehnen die Bitmap gleichmäßig, Teile der Bitmap in die Pixeldimensionen anzeigen und andere Teile der Bitmap gestreckt, so, dass sie das Rechteck passt:
+Das skiasharp `SKCanvas` -Objekt definiert eine Methode mit dem Namen `DrawBitmapNinePatch` und zwei Methoden mit dem Namen `DrawBitmapLattice` , die sehr ähnlich sind. Beide Methoden Rendern eine Bitmap in der Größe eines Ziel Rechtecks. statt jedoch die Bitmap gleichmäßig zu Strecken, werden Teile der Bitmap in ihren Pixel Dimensionen angezeigt, und andere Teile der Bitmap werden gestreckt, damit Sie dem Rechteck entspricht:
 
-![Beispiele für segmentierte](segmented-images/SegmentedSample.png "segmentiert-Beispiel")
+![Segmentierte Beispiele](segmented-images/SegmentedSample.png "Segmentiertes Beispiel")
 
-Diese Methoden werden in der Regel für das Rendern von Bitmaps, die Bestandteil der Benutzeroberflächen-Objekte wie z. B. Schaltflächen verwendet. Beim Entwerfen einer Schaltfläche in der Regel sollen die Größe einer Schaltfläche auf den Inhalt der Schaltfläche basieren soll, aber Sie möchten sicherlich der Rahmen der Schaltfläche auf dieselbe Breite unabhängig von den Inhalt der Schaltfläche. Dies ist eine ideale Anwendung `DrawBitmapNinePatch`.
+Diese Methoden werden in der Regel zum Rendern von Bitmaps verwendet, die Teil von Benutzeroberflächen Objekten wie Schaltflächen sind. Beim Entwerfen einer Schaltfläche möchten Sie im Allgemeinen, dass die Größe einer Schaltfläche auf dem Inhalt der Schaltfläche basiert, aber wahrscheinlich möchten Sie, dass der Rahmen der Schaltfläche unabhängig vom Inhalt der Schaltfläche dieselbe Breite hat. Das ist eine ideale Anwendung von `DrawBitmapNinePatch` .
 
-`DrawBitmapNinePatch` ist ein Sonderfall des `DrawBitmapLattice` , aber es ist die einfachere der beiden Methoden zu verwenden und zu verstehen.
+`DrawBitmapNinePatch`ist ein Sonderfall von `DrawBitmapLattice` , aber es ist einfacher, die beiden Methoden zu verwenden und zu verstehen.
 
 ## <a name="the-nine-patch-display"></a>Die neun-Patch-Anzeige 
 
-Im Prinzip [ `DrawBitmapNinePatch` ](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint)) eine Bitmap in neun Rechtecke unterteilt:
+Konzeptionell [`DrawBitmapNinePatch`](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint)) dividiert eine Bitmap in neun Rechtecke:
 
-![Neun Patch](segmented-images/NinePatch.png "neun Patch")
+![9 Patch](segmented-images/NinePatch.png "9 Patch")
 
-Die Rechtecke an den vier Ecken werden in ihre Pixelgrößen angezeigt. Wie Sie die Pfeile zeigen, werden die anderen Bereiche am Rand der Bitmap in den Bereich des Zielrechtecks horizontal oder vertikal gestreckt. Das Rechteck in der Mitte ist horizontal und vertikal gestreckt. 
+Die Rechtecke in den vier Ecken werden in ihren Pixelgrößen angezeigt. Wie die Pfeile zeigen, werden die anderen Bereiche an den Rändern der Bitmap horizontal oder vertikal auf den Bereich des Ziel Rechtecks gestreckt. Das Rechteck in der Mitte wird sowohl horizontal als auch vertikal gestreckt. 
 
-Wenn nicht genügend Speicherplatz in das Zielrechteck noch die vier Ecken die Pixeldimensionen anzuzeigenden vorhanden ist, sie werden nach unten skaliert, um die verfügbare Größe, und nichts, aber die vier Ecken werden angezeigt.
+Wenn nicht genügend Speicherplatz im Ziel Rechteck vorhanden ist, um sogar die vier Ecken in ihren Pixel Dimensionen anzuzeigen, werden Sie auf die verfügbare Größe herab skaliert, und es werden nur die vier Ecken angezeigt.
 
-Um eine Bitmap in diese neun Rechtecke zu unterteilen, ist es nur erforderlich, geben Sie das Rechteck in der Mitte. Dies ist die Syntax der `DrawBitmapNinePatch` Methode:
+Um eine Bitmap in diese neun Rechtecke aufzuteilen, muss nur das Rechteck in der Mitte angegeben werden. Dies ist die Syntax der- `DrawBitmapNinePatch` Methode:
 
 ```csharp
 canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 ```
 
-Das Center-Rechteck ist relativ zu der Bitmap. Es ist ein `SKRectI` Wert (die Integer-Version des `SKRect`) und alle Koordinaten und Größen sind in Pixel. Das Zielrechteck ist relativ zu der Anzeigeoberfläche. Das `paint`-Argument ist optional.
+Das zentrienrechteck ist relativ zur Bitmap. Dabei handelt es sich um einen `SKRectI` -Wert (die ganzzahlige Version von `SKRect` ), und alle Koordinaten und Größen befinden sich in Pixel Einheiten. Das Ziel Rechteck ist relativ zur Anzeige Oberfläche. Das `paint`-Argument ist optional.
 
-Die **neun Patch Anzeige** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel verwendet einen statischen Konstruktor zuerst erstellen Sie eine öffentliche statische Eigenschaft vom Typ `SKBitmap`:
+Die Seite **neun Patch-Anzeige** im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel verwendet zunächst einen statischen Konstruktor, um eine öffentliche statische Eigenschaft des Typs zu erstellen `SKBitmap` :
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -72,11 +75,11 @@ public partial class NinePatchDisplayPage : ContentPage
 }
 ```
 
-Zwei andere Seiten in diesem Artikel verwenden Sie diese gleichen Bitmap. Die Bitmap ist 500 Pixel im Quadrat und besteht aus einem Array von 25 Kreisen dieselben Größe jedes eine 100-Pixel-quadratische Fläche einnimmt:
+Zwei andere Seiten in diesem Artikel verwenden dieselbe Bitmap. Die Bitmap ist 500 Pixel quadratisch und besteht aus einem Array aus 25 Kreisen, das die gleiche Größe hat, wobei jeweils eine 100-Pixel-Quadrat Flächen belegt werden:
 
-![Kreis, Raster](segmented-images/CircleGrid.png "Kreis Raster")
+![Kreis Raster](segmented-images/CircleGrid.png "Kreis Raster")
 
-Instanzenkonstruktor des Programms erstellt eine `SKCanvasView` mit einem `PaintSurface` Handler, der verwendet `DrawBitmapNinePatch` anzuzeigende Bitmap gestreckt, um die gesamte Anzeigeoberfläche zu:
+Der Instanzkonstruktor des Programms erstellt eine `SKCanvasView` mit einem `PaintSurface` Handler, `DrawBitmapNinePatch` der verwendet, um die Bitmap, die auf die gesamte Anzeige Oberfläche gestreckt ist, anzuzeigen:
 
 ```csharp
 public class NinePatchDisplayPage : ContentPage
@@ -105,45 +108,45 @@ public class NinePatchDisplayPage : ContentPage
 }
 ```
 
-Die `centerRect` Rechteck umfasst das zentrale Array von 16 Kreise. Die Kreise in den Ecken werden in die Pixeldimensionen angezeigt, und alles andere wird gestreckt, entsprechend:
+Das `centerRect` Rechteck umfasst das zentrale Array von 16 Kreisen. Die Kreise in den Ecken werden in ihren Pixel Dimensionen angezeigt, und alles andere wird entsprechend gestreckt:
 
-[![Anzeigen von neun-Patch](segmented-images/NinePatchDisplay.png "neun-Patch-Anzeige")](segmented-images/NinePatchDisplay-Large.png#lightbox)
+[![Neun-Patchanzeige](segmented-images/NinePatchDisplay.png "Neun-Patchanzeige")](segmented-images/NinePatchDisplay-Large.png#lightbox)
 
-Die Seite "UWP" 500 Pixel breit ist, und zeigt daher die oberste und unterste Zeile als eine Reihe von Kreisen mit derselben Größe. Andernfalls werden die Kreise aus, die nicht in den Ecken sind auf Formular Ellipsen gestreckt.
+Die UWP-Seite ist 500 Pixel breit und zeigt daher die oberen und unteren Zeilen als eine Reihe von Kreisen derselben Größe an. Andernfalls werden alle Kreise, die sich nicht in den Ecken befinden, gestreckt, um Ellipsen zu bilden.
 
-Für ungewöhnliche Anzeige von Objekten, die aus einer Kombination von Kreisen und Ellipsen versuchen Sie es definieren Rechteck in der Mitte, sodass sie Zeilen und Spalten der Kreise überlappt:
+Für eine seltsame Anzeige von Objekten, die aus einer Kombination aus Kreisen und Ellipsen bestehen, versuchen Sie, das zentrierende Rechteck so zu definieren, dass es Zeilen und Spalten von Kreisen überlappt:
 
 ```csharp
 SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 ```
 
-## <a name="the-lattice-display"></a>Die Anzeige lattice
+## <a name="the-lattice-display"></a>Die Gitter Anzeige
 
-Die beiden `DrawBitmapLattice` Methoden ähneln `DrawBitmapNinePatch`, aber sie sind für eine beliebige Anzahl horizontaler oder vertikaler Unterteilungen generalisiert. Diese Bereiche werden von Arrays mit Ganzzahlen, Pixel entspricht definiert. 
+Die beiden `DrawBitmapLattice` Methoden ähneln `DrawBitmapNinePatch` , Sie sind jedoch für eine beliebige Anzahl horizontaler oder vertikaler Bereiche generalisiert. Diese Bereiche werden durch Arrays ganzer Zahlen definiert, die Pixel entsprechen. 
 
-Die [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint)) Methode mit Parametern für diese Arrays von ganzen Zahlen scheint nicht funktioniert. Die [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint)) Methode mit einem Parameter vom Typ `SKLattice` funktioniert, und das ist die in den unten gezeigten Beispielen verwendet.
+Die [`DrawBitmapLattice`](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint)) Methode mit Parametern für diese Arrays von ganzen Zahlen scheint nicht zu funktionieren. Die [`DrawBitmapLattice`](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint)) -Methode mit einem Parameter vom Typ funktioniert `SKLattice` , und das ist das, das in den unten gezeigten Beispielen verwendet wird.
 
-Die [ `SKLattice` ](xref:SkiaSharp.SKLattice) Struktur definiert vier Eigenschaften:
+Die [`SKLattice`](xref:SkiaSharp.SKLattice) Struktur definiert vier Eigenschaften:
 
-- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs), ein Array von Ganzzahlen
-- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs), ein Array von Ganzzahlen
-- [`Flags`](xref:SkiaSharp.SKLattice.Flags), ein Array von `SKLatticeFlags`, ein Enumerationstyp
-- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) Der Typ `Nullable<SKRectI>` ein optionaler Quellrechteck innerhalb der Bitmap an
+- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs), ein Array aus ganzen Zahlen
+- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs), ein Array aus ganzen Zahlen
+- [`Flags`](xref:SkiaSharp.SKLattice.Flags), ein Array von `SKLatticeFlags` , ein Enumerationstyp
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds)vom Typ `Nullable<SKRectI>` zum Angeben eines optionalen Quell Rechtecks innerhalb der Bitmap
 
-Die `XDivs` Array unterteilt die Breite der Bitmap in vertikalen leisten. Die erste Strip erstreckt sich von 0 Pixel auf der linken Seite auf `XDivs[0]`. Diese entfernen, die in die Breite in Pixel gerendert wird. Die zweite Strip erstreckt sich von `XDivs[0]` zu `XDivs[1]`, und gestreckt wird. Erstreckt sich von der dritten Streifen `XDivs[1]` zu `XDivs[2]` und in die Breite in Pixel gerendert wird. Die letzte Streifen erstreckt sich von dem letzten Element des Arrays an den rechten Rand der Bitmap. Wenn das Array eine gerade Anzahl von Elementen hat, und klicken Sie dann die Breite in Pixel angezeigt wird. Andernfalls wird es gestreckt. Die Gesamtanzahl der vertikalen Streifen ist eine weitere als die Anzahl der Elemente im Array.
+Das `XDivs` Array dividiert die Breite der Bitmap in vertikale Striche. Der erste Strip erstreckt sich von Pixel 0 auf der linken Seite auf `XDivs[0]` . Dieser Strip wird in seiner Pixel Breite gerendert. Der zweite Bereich erstreckt sich von `XDivs[0]` auf `XDivs[1]` , und wird gestreckt. Der dritte Strip erstreckt `XDivs[1]` sich von auf `XDivs[2]` und wird in der Pixel Breite gerendert. Der letzte Bereich erstreckt sich vom letzten Element des Arrays bis zum rechten Rand der Bitmap. Wenn das Array über eine gerade Anzahl von Elementen verfügt, wird es in seiner Pixel Breite angezeigt. Andernfalls wird Sie gestreckt. Die Gesamtanzahl vertikaler Striche ist ein Wert größer als die Anzahl der Elemente im Array.
 
-Die `YDivs` Array entspricht. Die Höhe des Arrays dividiert in horizontale Streifen.
+Das `YDivs` Array ist ähnlich. Sie dividiert die Höhe des Arrays in horizontale Striche.
 
-Zusammen, die `XDivs` und `YDivs` Array die Bitmap in Rechtecke unterteilen. Die Anzahl der Rechtecke ist gleich dem Produkt, der die Anzahl der horizontale Leisten und die Anzahl der vertikalen leisten.
+Das `XDivs` -Array und `YDivs` das-Array teilen die Bitmap in Rechtecke. Die Anzahl der Rechtecke entspricht dem Produkt der Anzahl horizontaler Striche und der Anzahl vertikaler Striche.
 
-Gemäß Skia Dokumentation der `Flags` Array enthält ein Element für jedes Rechtecks, zuerst die oberste Zeile von Rechtecken, und klicken Sie dann der zweiten Zeile und So weiter. Die `Flags` Array ist vom Typ [ `SKLatticeFlags` ](xref:SkiaSharp.SKLatticeFlags), eine Enumeration mit folgenden Membern:
+Gemäß der Skia-Dokumentation `Flags` enthält das Array ein-Element für jedes Rechteck, zuerst die obere Zeile der Rechtecke, dann die zweite Zeile usw. Das `Flags` Array weist den Typ auf [`SKLatticeFlags`](xref:SkiaSharp.SKLatticeFlags) , eine Enumeration mit den folgenden Membern:
 
-- `Default` mit dem Wert 0
-- `Transparent` mit dem Wert 1
+- `Default`mit dem Wert 0
+- `Transparent`mit Wert 1
 
-Allerdings nicht, diese Flags scheint zu funktionieren, wie sie sollen, und es empfohlen wird, die ignoriert werden. Nicht festgelegt, aber die `Flags` Eigenschaft `null`. Legen Sie ihn auf ein Array von `SKLatticeFlags` Werte groß genug, um die Gesamtzahl der Rechtecke umfassen.
+Diese Flags scheinen jedoch anscheinend nicht zu funktionieren, und Sie sollten Sie ignorieren. Legen Sie die- `Flags` Eigenschaft jedoch nicht auf fest `null` . Legen Sie es auf ein Array von `SKLatticeFlags` Werten fest, das groß genug ist, um die Gesamtzahl der Rechtecke zu umfassen
 
-Die **Lattice neun Patch** verwendet `DrawBitmapLattice` nachahmen `DrawBitmapNinePatch`. Wird auf die gleiche Bitmap, die im erstellten `NinePatchDisplayPage`:
+Die Seite für das **Gitter neun Patchen** verwendet `DrawBitmapLattice` zum imitieren `DrawBitmapNinePatch` . Dabei wird die gleiche Bitmap verwendet, die in erstellt wurde `NinePatchDisplayPage` :
 
 ```csharp
 public class LatticeNinePatchPage : ContentPage
@@ -175,13 +178,13 @@ public class LatticeNinePatchPage : ContentPage
 }
 ```
 
-Sowohl die `XDivs` und `YDivs` Eigenschaften werden für Arrays von zwei ganzen Zahlen, unterteilen die Bitmap in drei leisten, horizontal und vertikal festgelegt: vom Pixel 0 Pixel (dargestellt in der Größe in Pixel), 100 vom Pixel 100 Pixel 400 (gedehnt), und vom Pixel 400 Pixel 500 (Größe in Pixel). Zusammen `XDivs` und `YDivs` definieren insgesamt 9 Rechtecke, die die Größe des der `Flags` Array. Erstellen einfach das Array ist ausreichend, um ein Array von erstellen `SKLatticeFlags.Default` Werte.
+Sowohl die `XDivs` -Eigenschaft als auch die-Eigenschaft `YDivs` werden auf Arrays von nur zwei ganzen Zahlen festgelegt, wobei die Bitmap sowohl horizontal als auch vertikal in drei Striche aufgeteilt wird: von Pixel 0 bis Pixel 100 (gerendert in der Pixelgröße), von Pixel 100 auf Pixel 400 (gestreckt) und von Pixel 400 zu Pixel 500 (Pixelgröße). `XDivs`Und `YDivs` definieren insgesamt 9 Rechtecke, d. h. die Größe des `Flags` Arrays. Die einfache Erstellung des Arrays reicht aus, um ein Array mit Werten zu erstellen `SKLatticeFlags.Default` .
 
-Die Anzeige ist identisch mit den oben stehenden Programms:
+Die Anzeige ist mit dem vorherigen Programm identisch:
 
-[![Lattice neun-Patch](segmented-images/LatticeNinePatch.png "Lattice neun-Patch")](segmented-images/LatticeNinePatch-Large.png#lightbox)
+[![Gitter 9-Patch](segmented-images/LatticeNinePatch.png "Gitter 9-Patch")](segmented-images/LatticeNinePatch-Large.png#lightbox)
 
-Die **Lattice Anzeige** Seite verwendet wird, wird die Bitmap in 16 Rechtecke unterteilt:
+Die **Gitter Anzeigeseite** dividiert die Bitmap in 16 Rechtecke:
 
 ```csharp
 public class LatticeDisplayPage : ContentPage
@@ -217,15 +220,15 @@ public class LatticeDisplayPage : ContentPage
 }
 ```
 
-Die `XDivs` und `YDivs` Arrays unterscheiden, verursacht die Anzeige nicht ganz so wie in den vorherigen Beispielen symmetrische sind:
+Die `XDivs` -und- `YDivs` Arrays unterscheiden sich etwas, sodass die Anzeige nicht so symmetrisch wie die vorherigen Beispiele ist:
 
-[![Lattice Anzeige](segmented-images/LatticeDisplay.png "Lattice anzeigen")](segmented-images/LatticeDisplay-Large.png#lightbox)
+[![Gitter Anzeige](segmented-images/LatticeDisplay.png "Gitter Anzeige")](segmented-images/LatticeDisplay-Large.png#lightbox)
 
-In den IOS- und Android-Images auf der linken Seite werden nur die Kreise in ihrer Größe Pixel gerendert. Alles andere wird gestreckt.
+In den IOS-und Android-Images auf der linken Seite werden nur die kleineren Kreise in ihren Pixelgrößen gerendert. Alles andere wird gestreckt.
 
-Die **Lattice Anzeige** Seite generalisiert und dadurch die Erstellung der `Flags` Array, sodass Sie zum Experimentieren mit `XDivs` und `YDivs` leichter. Insbesondere möchten Sie sehen, was geschieht, wenn Sie festlegen, dass das erste Element der `XDivs` oder `YDivs` Array auf 0. 
+Die **Gitter Anzeige** Seite generalisiert die Erstellung des `Flags` Arrays, sodass Sie mit und leichter experimentieren `XDivs` können `YDivs` . Insbesondere möchten Sie sehen, was geschieht, wenn Sie das erste Element des- `XDivs` oder- `YDivs` Arrays auf 0 festlegen. 
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

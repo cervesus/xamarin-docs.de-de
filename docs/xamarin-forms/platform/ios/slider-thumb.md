@@ -1,24 +1,27 @@
 ---
-title: Ziehpunkt für den Schieberegler unter IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die die Eigenschaft "Slider. Value" durch Tippen auf den Schieberegler festlegen kann.
-ms.prod: xamarin
-ms.assetid: D0915D37-9A59-4728-BB6A-FE094A661275
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 573b68097724c976ce73b51e3b7ba21b52f7a776
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 93b4dba3e8543bd2cc2a4f2187f617aae5daff77
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651781"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137071"
 ---
 # <a name="slider-thumb-tap-on-ios"></a>Ziehpunkt für den Schieberegler unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese plattformspezifische IOS-Anwendung [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) ermöglicht die Festlegung der-Eigenschaft, indem Sie auf [`Slider`](xref:Xamarin.Forms.Slider) eine Position auf der Leiste tippt, anstatt den `Slider` Ziehpunkt ziehen zu müssen. Es ist in XAML verwendet, durch Festlegen der [ `Slider.UpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) bindbare Eigenschaft `true`:
+Diese plattformspezifische IOS-Anwendung ermöglicht die [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) Festlegung der-Eigenschaft, indem Sie auf eine Position auf der [`Slider`](xref:Xamarin.Forms.Slider) Leiste tippt, anstatt den Ziehpunkt ziehen zu müssen `Slider` . Sie wird in XAML verwendet, indem die [`Slider.UpdateOnTap`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) bindbare Eigenschaft auf festgelegt wird `true` :
 
 ```xaml
 <ContentPage ...
@@ -30,7 +33,7 @@ Diese plattformspezifische IOS-Anwendung [`Slider.Value`](xref:Xamarin.Forms.Sli
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -41,14 +44,14 @@ var slider = new Xamarin.Forms.Slider();
 slider.On<iOS>().SetUpdateOnTap(true);
 ```
 
-Die `Slider.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die [ `Slider.SetUpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.SetUpdateOnTap(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Slider},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um Kontrolle, ob ein Tippen auf die `Slider` Balken wird festgelegt. die [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) Diese Eigenschaft. Darüber hinaus die [ `Slider.GetUpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.GetUpdateOnTap(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Slider})) Methode kann verwendet werden, um zurück, ob ein Tippen auf die `Slider` Balken wird festgelegt. die `Slider.Value` Eigenschaft.
+Die- `Slider.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. [ `Slider.SetUpdateOnTap` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. Slider. setupdateontap ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Slider}, System. Boolean))-Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace verwendet wird, um zu steuern, ob durch Tippen auf der `Slider` Leiste die-Eigenschaft festgelegt wird [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) . Außerdem ist [ `Slider.GetUpdateOnTap` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. Slider. getupdateontap ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Slider}))-Methode kann verwendet werden, um zurückzugeben, ob durch Tippen auf der `Slider` Leiste die-Eigenschaft festgelegt wird `Slider.Value` .
 
-Das Ergebnis ist, tippen auf die [ `Slider` ](xref:Xamarin.Forms.Slider) Balken verschieben kann die `Slider` Ziehpunkt, und legen Sie die [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) Eigenschaft:
+Das Ergebnis ist, dass durch Tippen auf der [`Slider`](xref:Xamarin.Forms.Slider) Leiste der Ziehpunkt verschoben `Slider` und die-Eigenschaft festgelegt werden kann [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) :
 
-![](slider-thumb-images/slider-updateontap.png "Update der Schieberegler auf Tap aktiviert")
+![](slider-thumb-images/slider-updateontap.png "Slider Update on Tap enabled")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

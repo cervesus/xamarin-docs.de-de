@@ -1,37 +1,29 @@
 ---
-title: Auflösung von Abhängigkeiten in Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie beim Einfügen von einer Abhängigkeit Auflösungsmethode in Xamarin.Forms, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Auswirkungen und DependencyService-Implementierungen kann.
-ms.prod: xamarin
-ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/27/2018
-ms.openlocfilehash: 6df393d59207cea9c316189059f8d0e08a5e5137
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290069"
+Title: "Abhängigkeitsauflösung in Xamarin.Forms " Beschreibung: "in diesem Artikel wird erläutert, wie eine Abhängigkeits Auflösungsmethode in eingefügt Xamarin.Forms wird, damit der Abhängigkeits Injection-Container einer Anwendung die Erstellung und Lebensdauer von benutzerdefinierten Renderers, Effekten und dependencyservice-Implementierungen steuern kann."
+ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="dependency-resolution-in-xamarinforms"></a>Auflösung von Abhängigkeiten in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+# <a name="dependency-resolution-in-xamarinforms"></a>Abhängigkeitsauflösung inXamarin.Forms
 
-_In diesem Artikel wird erläutert, wie beim Einfügen von einer Abhängigkeit Auflösungsmethode in Xamarin.Forms, damit eine Anwendung Dependency Injection-Container Kontrolle über die Erstellung und Lebensdauer von benutzerdefinierten Renderern, Auswirkungen und DependencyService-Implementierungen kann. Die Codebeispiele in diesem Artikel stammen aus der [Abhängigkeitsauflösung mithilfe von Containern](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo) Beispiel._
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
-Im Rahmen einer Xamarin.Forms-Anwendung, die das Model-View-ViewModel (MVVM)-Muster verwendet, kann ein Container für Abhängigkeitsinjektion für das Registrieren und Auflösen von anzeigemodelle, und klicken Sie zum Registrieren von Diensten und sie dann in Ansichtsmodelle einzuschleusen verwendet werden. Während der Modellerstellung anzeigen fügt der Container alle Abhängigkeiten, die erforderlich sind. Wenn diese Abhängigkeiten nicht erstellt wurden, wird der Container erstellt, und löst zuerst die Abhängigkeiten. Weitere Informationen über Abhängigkeitsinjektion, einschließlich Beispiele für die Injektion von Abhängigkeiten in Modelle anzeigen, finden Sie unter [Dependency Injection](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
+_In diesem Artikel wird erläutert, wie eine Abhängigkeits Auflösungsmethode in eingefügt Xamarin.Forms wird, damit der Abhängigkeits Injection-Container einer Anwendung die Erstellung und Lebensdauer von benutzerdefinierten Renderers, Effekten und dependencyservice-Implementierungen steuern kann. Die Codebeispiele in diesem Artikel stammen aus dem Beispiel für die [Abhängigkeitsauflösung mithilfe von Containern](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo) ._
 
-Kontrolle über die Erstellung und Lebensdauer von Typen in Projekten-Plattform erfolgt normalerweise von Xamarin.Forms, mit dem verwendet die `Activator.CreateInstance` Methode zum Erstellen von Instanzen von benutzerdefinierten Renderern, Effekte und [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) Implementierungen. Leider beschränkt entwicklersteuerung für die Erstellung und Lebensdauer von diesen Typen und die Möglichkeit, Abhängigkeiten in diese einzufügen. Dieses Verhalten kann geändert werden, durch eine Abhängigkeit Auflösungsmethode in Xamarin.Forms der steuert, wie Typen erstellt werden – entweder indem Sie der Anwendung Dependency Injection-Container oder Xamarin.Forms einfügt. Beachten Sie jedoch, dass keine Notwendigkeit besteht, eine Abhängigkeit Auflösungsmethode in Xamarin.Forms einzufügen. Xamarin.Forms wird zum Erstellen und Verwalten der Lebensdauer von Typen in Projekten-Plattform, wenn eine Abhängigkeit Auflösungsmethode eingefügt wird nicht fortgesetzt.
+Im Kontext einer-Anwendung, die Xamarin.Forms das Model-View-ViewModel (MVVM)-Muster verwendet, kann ein Abhängigkeits Injektions Container zum Registrieren und Auflösen von Ansichts Modellen und zum Registrieren von Diensten und Einfügen in Ansichts Modelle verwendet werden. Während der Ansichts Modell Erstellung fügt der Container alle erforderlichen Abhängigkeiten ein. Wenn diese Abhängigkeiten nicht erstellt wurden, werden die Abhängigkeiten vom Container zuerst erstellt und aufgelöst. Weitere Informationen zur Abhängigkeitsinjektion, einschließlich Beispielen für das Einfügen von Abhängigkeiten in Ansichts Modelle, finden Sie unter [Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
+
+Die Kontrolle über die Erstellung und die Lebensdauer von Typen in Platt Form Projekten erfolgt in der Regel durch Xamarin.Forms , wobei die-Methode verwendet wird, `Activator.CreateInstance` um Instanzen von benutzerdefinierten Renderer, Effekten und Implementierungen zu erstellen [`DependencyService`](xref:Xamarin.Forms.DependencyService) . Leider schränkt dies die Entwickler Kontrolle über die Erstellung und die Lebensdauer dieser Typen und die Möglichkeit ein, Abhängigkeiten in Sie einzufügen. Dieses Verhalten kann geändert werden, indem eine Abhängigkeits Auflösungsmethode in eingefügt wird Xamarin.Forms , mit der gesteuert wird, wie Typen erstellt werden – entweder durch den Abhängigkeits einschleusungs Container der Anwendung oder durch Xamarin.Forms . Beachten Sie jedoch, dass es nicht erforderlich ist, eine Methode zur Abhängigkeitsauflösung in einzufügen Xamarin.Forms . Xamarin.Formserstellt und verwaltet die Lebensdauer von Typen in Platt Form Projekten weiterhin, wenn eine Abhängigkeits Auflösungsmethode nicht eingefügt wird.
 
 > [!NOTE]
-> Während dieser Artikel konzentriert sich auf das Einfügen von einer Abhängigkeit Auflösungsmethode in Xamarin.Forms, die registrierte Typen mit Dependency Injection-Container aufgelöst wird, ist es auch möglich, eine Abhängigkeit Auflösung-Methode einzufügen, die Factorymethoden verwendet, um aufzulösen registrierten Typen. Weitere Informationen finden Sie unter den [Abhängigkeitsauflösung mithilfe der Factorymethoden](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo) Beispiel.
+> Der Schwerpunkt dieses Artikels liegt auf dem Einfügen einer Methode zur Abhängigkeitsauflösung in Xamarin.Forms , die registrierte Typen mithilfe eines Containers für die Abhängigkeitsinjektion auflöst. es ist auch möglich, eine Abhängigkeits Auflösungsmethode einzufügen, die Factorymethoden zum Auflösen registrierter Typen verwendet. Weitere Informationen finden Sie unter Beispiel für die [Abhängigkeitsauflösung mithilfe](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo) von Factorymethoden.
 
-## <a name="injecting-a-dependency-resolution-method"></a>Einfügen einer Abhängigkeit Auflösung-Methode
+## <a name="injecting-a-dependency-resolution-method"></a>Einfügen einer Methode zur Abhängigkeitsauflösung
 
-Die [ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Klasse bietet die Möglichkeit, eine Abhängigkeit Auflösungsmethode in Xamarin.Forms einfügen mit der [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) Methode. Klicken Sie dann, wenn Xamarin.Forms eine Instanz eines bestimmten Typs benötigt, die Auflösungsmethode Abhängigkeit die Möglichkeit, die Instanz erhält. Wenn die Auflösungsmethode Abhängigkeit zurückgibt `null` für einen angeforderten Typ Xamarin.Forms liegt an der Versuch, den Typ zu erstellen-Instanz mithilfe der `Activator.CreateInstance` Methode.
+Die- [`DependencyResolver`](xref:Xamarin.Forms.Internals.DependencyResolver) Klasse bietet die Möglichkeit, mithilfe der-Methode eine Methode zur Abhängigkeitsauflösung in einzufügen Xamarin.Forms [`ResolveUsing`](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) . Wenn dann Xamarin.Forms eine Instanz eines bestimmten Typs benötigt, erhält die Abhängigkeits Auflösungsmethode die Möglichkeit, die Instanz bereitzustellen. Wenn die Abhängigkeits Auflösungsmethode `null` für einen angeforderten Typ zurückgibt, Xamarin.Forms greift auf den Versuch zurück, die Typinstanz selbst mithilfe der-Methode zu erstellen `Activator.CreateInstance` .
 
-Im folgende Beispiel veranschaulicht die legen Sie der Abhängigkeit Auflösung-Methode, mit der [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) Methode:
+Im folgenden Beispiel wird gezeigt, wie die Methode zur Abhängigkeitsauflösung mit der-Methode festgelegt wird [`ResolveUsing`](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) :
 
 ```csharp
 using Autofac;
@@ -54,19 +46,19 @@ public partial class App : Application
 }
 ```
 
-In diesem Beispiel wird die Auflösungsmethode Abhängigkeit auf einen Lambda-Ausdruck festgelegt, die den Container für Abhängigkeitsinjektion Autofac verwendet wird, um alle Typen aufzulösen, die mit dem Container registriert wurden. Andernfalls `null` zurückgegeben, das führt zu Xamarin.Forms, es wird versucht, den Typ aufzulösen.
+In diesem Beispiel wird die Methode für die Abhängigkeitsauflösung auf einen Lambda-Ausdruck festgelegt, der den Container für die Abhängigkeitsinjektion von autofac verwendet, um alle Typen aufzulösen, die beim Container registriert wurden. Andernfalls `null` wird zurückgegeben, was dazu führt, dass Xamarin.Forms der Typ aufgelöst wird.
 
 > [!NOTE]
-> Von DI-Containern verwendete API ist spezifisch für den Container. Die Codebeispiele in diesem Artikel verwenden Sie Autofac als ein Container für Abhängigkeitsinjektion, bietet der `IContainer` und `ContainerBuilder` Typen. Alternative Dependency Injection-Containern konnte in gleichem Maße verwendet werden, jedoch würden unterschiedliche APIs verwenden, als hier präsentiert werden.
+> Die von einem Container für die Abhängigkeitsinjektion verwendete API ist für den Container spezifisch. Die Codebeispiele in diesem Artikel verwenden autofac als Container für die Abhängigkeitsinjektion, der den `IContainer` -Typ und den-Typ bereitstellt `ContainerBuilder` . Alternative abhängigkeiteneinschleusungs-Container könnten gleichzeitig verwendet werden, verwenden jedoch andere APIs als hier dargestellt werden.
 
-Beachten Sie, dass es nicht erforderlich ist, die Auflösungsmethode Abhängigkeit beim Starten der Anwendung festgelegt. Es kann zu einem beliebigen Zeitpunkt festgelegt werden. Die einzige Einschränkung besteht, dass Xamarin.Forms muss die Auflösungsmethode für die Abhängigkeit der Zeit kennen, die die Anwendung versucht, Typen, die gespeichert werden, in dem Container für Abhängigkeitsinjektion nutzen. Aus diesem Grund sind es Dienste, in dem Container für Abhängigkeitsinjektion, den während des Starts der Anwendung erforderlich sind, müssen die Auflösungsmethode Abhängigkeit zu einem frühen Zeitpunkt in den Lebenszyklus der Anwendung festgelegt werden. Auf ähnliche Weise, wenn der Dependency Injection-Container die Erstellung und Lebensdauer einer bestimmten verwaltet [ `Effect` ](xref:Xamarin.Forms.Effect), Xamarin.Forms müssen die Auflösungsmethode Abhängigkeit kennen, bevor versucht wird, erstellen Sie eine Ansicht, wird verwendet, die `Effect`.
+Beachten Sie, dass es nicht erforderlich ist, beim Starten der Anwendung die Methode zur Abhängigkeitsauflösung festzulegen. Sie kann jederzeit festgelegt werden. Die einzige Einschränkung ist, dass die Xamarin.Forms Methode zur Abhängigkeitsauflösung von der Zeit wissen muss, in der die Anwendung versucht, im Container für die Abhängigkeitsinjektion gespeicherte Typen zu verarbeiten. Wenn im Abhängigkeits Injektions Containerdienste vorhanden sind, die die Anwendung während des Starts benötigt, muss die Abhängigkeits Auflösungsmethode daher früh im Lebenszyklus der Anwendung festgelegt werden. Ebenso muss, wenn der Container für die Abhängigkeitsinjektion die Erstellung und die Lebensdauer eines bestimmten verwaltet [`Effect`](xref:Xamarin.Forms.Effect) , Xamarin.Forms von der Abhängigkeits Auflösungsmethode informiert werden, bevor versucht wird, eine Ansicht zu erstellen, die diese verwendet `Effect` .
 
 > [!WARNING]
-> Registrieren und Auflösen von Typen mit Dependency Injection-Container verfügt über die Leistung aufgrund des Containers mithilfe der Reflektion für jeden Typ erstellen, insbesondere dann, wenn Abhängigkeiten für jede Seitennavigation in der Anwendung wiederhergestellt wird, sind. Wenn viele oder deep-Abhängigkeiten vorhanden sind, kann die Kosten für die Erstellung erheblich erhöhen.
+> Das registrieren und Auflösen von Typen mit einem Container für die Abhängigkeitsinjektion wirkt sich auf die Leistung aus, da die Reflektion des Containers zum Erstellen der einzelnen Typen verwendet wird, insbesondere dann, wenn Abhängigkeiten für jede Seitennavigation in der Anwendung rekonstruiert werden. Wenn zahlreiche oder tiefe Abhängigkeiten vorhanden sind, können die Kosten für die Erstellung erheblich zunehmen.
 
 ## <a name="registering-types"></a>Registrieren von Typen
 
-Typen müssen mit dem Dependency Injection-Container registriert werden, bevor sie sie über die Auflösungsmethode Abhängigkeit auflösen kann. Das folgende Codebeispiel zeigt den Registrierungsmethoden, dass die beispielanwendung in verfügbar macht die `App` -Klasse, für den Autofac-Container:
+Typen müssen mit dem Container für die Abhängigkeitsinjektion registriert werden, bevor Sie Sie über die Methode zur Abhängigkeitsauflösung auflösen können. Das folgende Codebeispiel zeigt die Registrierungsmethoden, die von der Beispielanwendung in der- `App` Klasse für den autofac-Container verfügbar gemacht werden:
 
 ```csharp
 using Autofac;
@@ -121,15 +113,15 @@ public partial class App : Application
 }
 ```
 
-Wenn eine Anwendung eine Abhängigkeit Auflösung-Methode zum Auflösen von Typen aus einem Container verwendet wird, werden die Typ-Registrierungen in der Regel von Plattformprojekte ausgeführt. Dadurch Plattformprojekte Typen für die benutzerdefinierte Renderer, Effekte, registrieren und [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) Implementierungen.
+Wenn eine Anwendung eine Abhängigkeits Auflösungsmethode zum Auflösen von Typen aus einem Container verwendet, werden typregistrierungen normalerweise von Platt Form Projekten ausgeführt. Dies ermöglicht Platt Form Projekten das Registrieren von Typen für benutzerdefinierte Renderer, Effekte und [`DependencyService`](xref:Xamarin.Forms.DependencyService) Implementierungen.
 
-Folgende typregistrierung aus ein Plattform-Projekt, das `IContainer` Objekt muss erstellt werden, die erfolgt durch Aufrufen der `BuildContainer` Methode. Diese Methode ruft die Autofac `Build` Methode für die `ContainerBuilder` -Instanz, die einen neue Dependency Injection-Container erstellt, die die Registrierungen enthält, die vorgenommen wurden.
+Nach der Typregistrierung eines Platt Form Projekts `IContainer` muss das Objekt erstellt werden. Dies wird durch Aufrufen der- `BuildContainer` Methode erreicht. Diese Methode ruft die-Methode von autofac `Build` für die- `ContainerBuilder` Instanz auf, die einen neuen Container für die Abhängigkeitsinjektion erstellt, der die vorgenommenen Registrierungen enthält.
 
-In den folgenden Abschnitten, eine `Logger` Klasse, die implementiert die `ILogger` Schnittstelle in der Klasse, Konstruktoren eingefügt wird. Die `Logger` Klasse implementiert, einfache Protokollierung Funktionen über die `Debug.WriteLine` -Methode und wird verwendet, um zu veranschaulichen, wie Dienste in benutzerdefinierten Renderern Effekte, eingefügt werden können und [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) Implementierungen.
+In den folgenden Abschnitten `Logger` wird eine Klasse, die die- `ILogger` Schnittstelle implementiert, in Klassenkonstruktoren eingefügt. Die `Logger` -Klasse implementiert einfache Protokollierungsfunktionen mithilfe der `Debug.WriteLine` -Methode und wird verwendet, um zu veranschaulichen, wie Dienste in benutzerdefinierte Renderer, Effekte und Implementierungen eingefügt werden können [`DependencyService`](xref:Xamarin.Forms.DependencyService) .
 
-### <a name="registering-custom-renderers"></a>Registrieren benutzerdefinierte Renderer
+### <a name="registering-custom-renderers"></a>Registrieren von benutzerdefinierten Renderer
 
-Die beispielanwendung enthält eine Seite, die Webvideos, spielt, deren XAML-Quelle im folgenden Beispiel gezeigt wird:
+Die Beispielanwendung enthält eine Seite, auf der Web-Videos abgespielt werden, deren XAML-Quelle im folgenden Beispiel gezeigt wird:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,9 +132,9 @@ Die beispielanwendung enthält eine Seite, die Webvideos, spielt, deren XAML-Que
 </ContentPage>
 ```
 
-Die `VideoPlayer` Ansicht wird auf jeder Plattform von implementiert eine `VideoPlayerRenderer` -Klasse, mit den Funktionen für die Wiedergabe des Videos. Weitere Informationen zu diesen benutzerdefinierten Renderer-Klassen finden Sie unter [implementieren einen Videoplayer](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md).
+Die `VideoPlayer` Ansicht wird auf jeder Plattform durch eine `VideoPlayerRenderer` Klasse implementiert, die die Funktionalität zum Abspielen des Videos bereitstellt. Weitere Informationen zu diesen benutzerdefinierten rendererklassen finden Sie unter [Implementieren eines Video Players](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md).
 
-Auf IOS- und die universelle Windows-Plattform (UWP) die `VideoPlayerRenderer` Klassen verfügen über den folgenden Konstruktor erfordert eine `ILogger` Argument:
+Unter IOS und der universelle Windows-Plattform (UWP) verfügen die `VideoPlayerRenderer` Klassen über den folgenden Konstruktor, der ein `ILogger` Argument erfordert:
 
 ```csharp
 public VideoPlayerRenderer(ILogger logger)
@@ -151,7 +143,7 @@ public VideoPlayerRenderer(ILogger logger)
 }
 ```
 
-Für alle Plattformen typregistrierung mit dem Dependency Injection-Container ausgeführt wird, durch die `RegisterTypes` -Methode, die aufgerufen wird, bevor Sie die Plattform laden die Anwendung mit der `LoadApplication(new App())` Methode. Das folgende Beispiel zeigt die `RegisterTypes` Methode für die iOS-Plattform:
+Auf allen Plattformen wird die Typregistrierung mit dem Container für die Abhängigkeitsinjektion durch die- `RegisterTypes` Methode ausgeführt, die vor der Plattform, die die Anwendung mit der-Methode lädt, aufgerufen wird `LoadApplication(new App())` . Das folgende Beispiel zeigt die- `RegisterTypes` Methode auf der IOS-Plattform:
 
 ```csharp
 void RegisterTypes()
@@ -162,9 +154,9 @@ void RegisterTypes()
 }
 ```
 
-In diesem Beispiel die `Logger` konkreter Typ über eine Zuordnung mit der Schnittstellentyp, registriert ist und die `VideoPlayerRenderer` Typ wird direkt ohne eine schnittstellenzuordnung registriert. Wenn der Benutzer navigiert, um die Seite mit der `VideoPlayer` anzeigen, die Auflösungsmethode Abhängigkeit aufgerufen, um das Beheben der `VideoPlayerRenderer` Typ aus dem Dependency Injection-Container, die ebenfalls zu beheben und eingefügt wird die `Logger` Geben Sie in die `VideoPlayerRenderer` Konstruktor.
+In diesem Beispiel wird der `Logger` konkrete Typ über eine Zuordnung für den Schnittstellentyp registriert, und der `VideoPlayerRenderer` Typ wird direkt ohne Schnittstellen Zuordnung registriert. Wenn der Benutzer zu der Seite navigiert, die die `VideoPlayer` Ansicht enthält, wird die Abhängigkeits Auflösungsmethode aufgerufen, um den `VideoPlayerRenderer` Typ aus dem Container für die Abhängigkeitsinjektion aufzulösen, der den Typ auch auflösen und `Logger` in den `VideoPlayerRenderer` Konstruktor einfügen wird.
 
-Die `VideoPlayerRenderer` Konstruktor für die Android-Plattform ist etwas komplizierter, da es erfordert eine `Context` Argument zusätzlich zu den `ILogger` Argument:
+Der `VideoPlayerRenderer` Konstruktor auf der Android-Plattform ist etwas komplizierter, da zusätzlich zum-Argument ein-Argument erforderlich ist `Context` `ILogger` :
 
 ```csharp
 public VideoPlayerRenderer(Context context, ILogger logger) : base(context)
@@ -173,7 +165,7 @@ public VideoPlayerRenderer(Context context, ILogger logger) : base(context)
 }
 ```
 
-Das folgende Beispiel zeigt die `RegisterTypes` Methode für die Android-Plattform:
+Das folgende Beispiel zeigt die- `RegisterTypes` Methode auf der Android-Plattform:
 
 ```csharp
 void RegisterTypes()
@@ -184,11 +176,11 @@ void RegisterTypes()
 }
 ```
 
-In diesem Beispiel die `App.RegisterTypeWithParameters` Methode registriert den `VideoPlayerRenderer` mit dem Dependency Injection-Container. Der Registrierungsmethode wird sichergestellt, dass die `MainActivity` Instanz wird als injiziert die `Context` Argument, und die `Logger` Typ wird als injiziert die `ILogger` Argument.
+In diesem Beispiel wird die- `App.RegisterTypeWithParameters` Methode `VideoPlayerRenderer` mit dem Container für die Abhängigkeitsinjektion registriert. Die Registrierungsmethode stellt sicher, dass die `MainActivity` -Instanz als `Context` -Argument eingefügt wird, und dass der `Logger` Typ als-Argument eingefügt wird `ILogger` .
 
-### <a name="registering-effects"></a>Registrieren von Effekten
+### <a name="registering-effects"></a>Effekte werden registriert
 
-Die beispielanwendung enthält eine Seite, die eine Fingereingabe Auswirkungen nachverfolgung verwendet, ziehen [ `BoxView` ](xref:Xamarin.Forms.BoxView) Instanzen, um die Seite. Die [ `Effect` ](xref:Xamarin.Forms.Effect) wird hinzugefügt, um die `BoxView` mithilfe des folgenden Codes:
+Die Beispielanwendung enthält eine Seite, die einen Fingerabdruck nach Verfolgungs Effekt verwendet, um [`BoxView`](xref:Xamarin.Forms.BoxView) Instanzen um die Seite zu ziehen. Der [`Effect`](xref:Xamarin.Forms.Effect) wird `BoxView` mit dem folgenden Code hinzugefügt:
 
 ```csharp
 var boxView = new BoxView { ... };
@@ -196,9 +188,9 @@ var touchEffect = new TouchEffect();
 boxView.Effects.Add(touchEffect);
 ```
 
-Die `TouchEffect` -Klasse ist eine [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) , die auf jeder Plattform von implementiert wird eine `TouchEffect` -Klasse, hat eine `PlatformEffect`. Die Plattform `TouchEffect` -Klasse enthält die Funktionen für das Ziehen der `BoxView` rund um die Seite. Weitere Informationen zu diesen Auswirkungen-Klassen finden Sie unter [Aufrufen von Ereignissen von Auswirkungen](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
+Die `TouchEffect` -Klasse ist eine [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) , die auf jeder Plattform durch eine `TouchEffect` Klasse implementiert wird, die eine ist `PlatformEffect` . Die Platform- `TouchEffect` Klasse stellt die Funktionalität zum Ziehen der `BoxView` auf der Seite bereit. Weitere Informationen zu diesen Effekt Klassen finden Sie unter [Aufrufen von Ereignissen aus Effekten](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
-Auf allen Plattformen die `TouchEffect` -Klasse verfügt über den folgenden Konstruktor erfordert eine `ILogger` Argument:
+Auf allen Plattformen verfügt die- `TouchEffect` Klasse über den folgenden Konstruktor, für den ein Argument erforderlich ist `ILogger` :
 
 ```csharp
 public TouchEffect(ILogger logger)
@@ -207,7 +199,7 @@ public TouchEffect(ILogger logger)
 }
 ```
 
-Für alle Plattformen typregistrierung mit dem Dependency Injection-Container ausgeführt wird, durch die `RegisterTypes` -Methode, die aufgerufen wird, bevor Sie die Plattform laden die Anwendung mit der `LoadApplication(new App())` Methode. Das folgende Beispiel zeigt die `RegisterTypes` Methode für die Android-Plattform:
+Auf allen Plattformen wird die Typregistrierung mit dem Container für die Abhängigkeitsinjektion durch die- `RegisterTypes` Methode ausgeführt, die vor der Plattform, die die Anwendung mit der-Methode lädt, aufgerufen wird `LoadApplication(new App())` . Das folgende Beispiel zeigt die- `RegisterTypes` Methode auf der Android-Plattform:
 
 ```csharp
 void RegisterTypes()
@@ -218,11 +210,11 @@ void RegisterTypes()
 }
 ```
 
-In diesem Beispiel die `Logger` konkreter Typ über eine Zuordnung mit der Schnittstellentyp, registriert ist und die `TouchEffect` Typ wird direkt ohne eine schnittstellenzuordnung registriert. Wenn der Benutzer navigiert, um die Seite mit einem [ `BoxView` ](xref:Xamarin.Forms.BoxView) Instanz, die die `TouchEffect` angefügt ist, die Auflösungsmethode Abhängigkeit aufgerufen, um die Plattform zu beheben `TouchEffect` Typ aus der Abhängigkeit Container für Abhängigkeitsinjektion, die ebenfalls zu beheben und Einfügen wird das `Logger` Geben Sie in der `TouchEffect` Konstruktor.
+In diesem Beispiel wird der `Logger` konkrete Typ über eine Zuordnung für den Schnittstellentyp registriert, und der `TouchEffect` Typ wird direkt ohne Schnittstellen Zuordnung registriert. Wenn der Benutzer zu der Seite navigiert, die eine-Instanz enthält, an [`BoxView`](xref:Xamarin.Forms.BoxView) die die-Instanz `TouchEffect` angefügt ist, wird die Abhängigkeits Auflösungsmethode aufgerufen, um den Platt `TouchEffect` Formtyp aus dem Container für die Abhängigkeitsinjektion aufzulösen, der den Typ ebenfalls auflöst und `Logger` in den `TouchEffect` Konstruktor eingefügt.
 
-### <a name="registering-dependencyservice-implementations"></a>Registrieren von DependencyService-Implementierungen
+### <a name="registering-dependencyservice-implementations"></a>Registrieren von dependencyservice-Implementierungen
 
-Die beispielanwendung enthält eine Seite, verwendet [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) Implementierungen auf jeder Plattform, die der Benutzer ein Foto-Bildbibliothek des Geräts auswählen kann. Die `IPhotoPicker` Schnittstelle definiert die Funktionalität, die von implementiert ist die `DependencyService` -Implementierungen und wird im folgenden Beispiel angezeigt:
+Die Beispielanwendung enthält eine Seite, die [`DependencyService`](xref:Xamarin.Forms.DependencyService) auf jeder Plattform Implementierungen verwendet, damit der Benutzer ein Foto aus der Bildbibliothek des Geräts auswählen kann. Die `IPhotoPicker` -Schnittstelle definiert die Funktionalität, die von den `DependencyService` -Implementierungen implementiert wird, und wird im folgenden Beispiel gezeigt:
 
 ```csharp
 public interface IPhotoPicker
@@ -231,9 +223,9 @@ public interface IPhotoPicker
 }
 ```
 
-In jedem plattformprojekt die `PhotoPicker` -Klasse implementiert die `IPhotoPicker` Schnittstelle, die Plattform-APIs. Weitere Informationen zu diesen abhängigkeitsdiensten ist, finden Sie unter [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
+In jedem Platt Form Projekt implementiert die- `PhotoPicker` Klasse die- `IPhotoPicker` Schnittstelle mithilfe von Plattform-APIs. Weitere Informationen über diese Abhängigkeits Dienste finden Sie unter [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-Auf IOS- und UWP die `PhotoPicker` Klassen verfügen über den folgenden Konstruktor erfordert eine `ILogger` Argument:
+Unter IOS und UWP verfügen die `PhotoPicker` Klassen über den folgenden Konstruktor, für den ein `ILogger` Argument erforderlich ist:
 
 ```csharp
 public PhotoPicker(ILogger logger)
@@ -242,7 +234,7 @@ public PhotoPicker(ILogger logger)
 }
 ```
 
-Für alle Plattformen typregistrierung mit dem Dependency Injection-Container ausgeführt wird, durch die `RegisterTypes` -Methode, die aufgerufen wird, bevor Sie die Plattform laden die Anwendung mit der `LoadApplication(new App())` Methode. Das folgende Beispiel zeigt die `RegisterTypes` Methode für UWP:
+Auf allen Plattformen wird die Typregistrierung mit dem Container für die Abhängigkeitsinjektion durch die- `RegisterTypes` Methode ausgeführt, die vor der Plattform, die die Anwendung mit der-Methode lädt, aufgerufen wird `LoadApplication(new App())` . Im folgenden Beispiel wird die- `RegisterTypes` Methode für UWP veranschaulicht:
 
 ```csharp
 void RegisterTypes()
@@ -253,9 +245,9 @@ void RegisterTypes()
 }
 ```
 
-In diesem Beispiel die `Logger` konkreter Typ über eine Zuordnung mit der Schnittstellentyp, registriert ist und die `PhotoPicker` Typ wird auch über eine schnittstellenzuordnung registriert.
+In diesem Beispiel wird der `Logger` konkrete Typ über eine Zuordnung für den Schnittstellentyp registriert, und der `PhotoPicker` Typ wird auch über eine Schnittstellen Zuordnung registriert.
 
-Die `PhotoPicker` Konstruktor für die Android-Plattform ist etwas komplizierter, da es erfordert eine `Context` Argument zusätzlich zu den `ILogger` Argument:
+Der `PhotoPicker` Konstruktor auf der Android-Plattform ist etwas komplizierter, da zusätzlich zum-Argument ein-Argument erforderlich ist `Context` `ILogger` :
 
 ```csharp
 public PhotoPicker(Context context, ILogger logger)
@@ -265,7 +257,7 @@ public PhotoPicker(Context context, ILogger logger)
 }
 ```
 
-Das folgende Beispiel zeigt die `RegisterTypes` Methode für die Android-Plattform:
+Das folgende Beispiel zeigt die- `RegisterTypes` Methode auf der Android-Plattform:
 
 ```csharp
 void RegisterTypes()
@@ -276,9 +268,9 @@ void RegisterTypes()
 }
 ```
 
-In diesem Beispiel die `App.RegisterTypeWithParameters` Methode registriert den `PhotoPicker` mit dem Dependency Injection-Container. Der Registrierungsmethode wird sichergestellt, dass die `MainActivity` Instanz wird als injiziert die `Context` Argument, und die `Logger` Typ wird als injiziert die `ILogger` Argument.
+In diesem Beispiel wird die- `App.RegisterTypeWithParameters` Methode `PhotoPicker` mit dem Container für die Abhängigkeitsinjektion registriert. Die Registrierungsmethode stellt sicher, dass die `MainActivity` -Instanz als `Context` -Argument eingefügt wird, und dass der `Logger` Typ als-Argument eingefügt wird `ILogger` .
 
-Wenn der Benutzer zu der Seite der Fotos auswählen navigiert und entscheidet sich für ein Foto, wählen die `OnSelectPhotoButtonClicked` Handler wird ausgeführt:
+Wenn der Benutzer zur fotopickingseite navigiert und ein Foto auswählt, wird der `OnSelectPhotoButtonClicked` Handler ausgeführt:
 
 ```csharp
 async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
@@ -294,15 +286,15 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 }
 ```
 
-Bei der [ `DependencyService.Resolve<T>` ](xref:Xamarin.Forms.DependencyService.Resolve*) -Methode wird aufgerufen, die Auflösungsmethode Abhängigkeit aufgerufen, um das Beheben der `PhotoPicker` Typ aus dem Dependency Injection-Container, die ebenfalls zu beheben und eingefügt wird die `Logger` Typ in der `PhotoPicker` Konstruktor.
+Wenn die- [`DependencyService.Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) Methode aufgerufen wird, wird die Abhängigkeits Auflösungsmethode aufgerufen, um den `PhotoPicker` Typ aus dem Container für die Abhängigkeitsinjektion aufzulösen, der den Typ ebenfalls auflöst und `Logger` in den `PhotoPicker` Konstruktor eingefügt.
 
 > [!NOTE]
-> Die [ `Resolve<T>` ](xref:Xamarin.Forms.DependencyService.Resolve*) Methode muss verwendet werden, beim Auflösen eines Typs aus der Anwendung Dependency Injection-Container über die [ `DependencyService` ](xref:Xamarin.Forms.DependencyService).
+> Die- [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) Methode muss beim Auflösen eines Typs aus dem Abhängigkeits Injektions Container der Anwendung über das verwendet werden [`DependencyService`](xref:Xamarin.Forms.DependencyService) .
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Abhängigkeitsauflösung mit Containern (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
-- [Dependency Injection](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
+- [Abhängigkeitsauflösung mithilfe von Containern (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+- [Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [Implementieren eines Videoplayers](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
-- [Aufrufen von Ereignissen von Auswirkungen](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
-- [Wählen ein Foto aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
+- [Aufrufen von Ereignissen aus Effekten](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
+- [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

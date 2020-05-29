@@ -1,35 +1,38 @@
 ---
-title: Xamarin.Forms ImageButton
-description: ImageButton ein Bild anzeigt und reagiert auf ein tippen oder klicken Sie auf, die eine Anwendung, um eine bestimmte Aufgabe durchzuführen weiterleitet.
-ms.prod: xamarin
-ms.assetid: B5906AB6-3F79-4FCB-8C78-1F0AF18AB39E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/04/2019
-ms.openlocfilehash: 7c6647a0299b5ece3caaaa1d322ec1a0efac3557
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: Xamarin.FormsImage Button
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d81c0ce4dc2a46a840a34cc9084c8f2388a0169
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305714"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137643"
 ---
-# <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
+# <a name="xamarinforms-imagebutton"></a>Xamarin.FormsImage Button
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Die ImageButton-Taste zeigt ein Bild an und antwortet auf eine Tap-oder Klick-Taste, die eine Anwendung anweist, eine bestimmte Aufgabe auszuführen._
 
-In der `ImageButton` Ansicht werden die [`Button`](xref:Xamarin.Forms.Button) Ansicht und [`Image`](xref:Xamarin.Forms.Image) Ansicht kombiniert, um eine Schaltfläche zu erstellen, deren Inhalt ein Bild ist. Der Benutzer drückt den `ImageButton` mit einem Finger oder klickt mit der Maus darauf, um die Anwendung anzuweisen, eine bestimmte Aufgabe auszuführen. Anders als bei der `Button` Ansicht hat die `ImageButton` Ansicht jedoch kein Konzept für Text und Textdarstellung.
+`ImageButton`In der Ansicht werden die [`Button`](xref:Xamarin.Forms.Button) Ansicht und [`Image`](xref:Xamarin.Forms.Image) Ansicht kombiniert, um eine Schaltfläche zu erstellen, deren Inhalt ein Bild ist. Der Benutzer drückt den `ImageButton` mit einem Finger oder klickt mit der Maus darauf, um die Anwendung anzuweisen, eine bestimmte Aufgabe auszuführen. Anders als bei der `Button` Ansicht hat die `ImageButton` Ansicht jedoch kein Konzept für Text und Textdarstellung.
 
 > [!NOTE]
-> Während die [`Button`](xref:Xamarin.Forms.Button) Sicht eine [`Image`](xref:Xamarin.Forms.Button.Image) Eigenschaft definiert, die es Ihnen ermöglicht, ein Bild auf dem `Button`anzuzeigen, sollte diese Eigenschaft verwendet werden, wenn ein kleines Symbol neben dem `Button` Text angezeigt wird.
+> Obwohl die [`Button`](xref:Xamarin.Forms.Button) Sicht eine [`Image`](xref:Xamarin.Forms.Button.Image) Eigenschaft definiert, die es Ihnen ermöglicht, ein Bild auf dem anzuzeigen `Button` , sollte diese Eigenschaft verwendet werden, wenn ein kleines Symbol neben dem Text angezeigt wird `Button` .
 
 Die Codebeispiele in dieser Anleitung stammen aus dem [formsgallery-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery).
 
-## <a name="setting-the-image-source"></a>Die Bildquelle festlegen
+## <a name="setting-the-image-source"></a>Festlegen der Bildquelle
 
-`ImageButton` definiert eine `Source` Eigenschaft, die auf das Bild festgelegt werden soll, das in der Schaltfläche angezeigt werden soll, wobei die Bildquelle entweder eine Datei, ein URI, eine Ressource oder ein Stream ist. Weitere Informationen zum Laden von Bildern aus unterschiedlichen Quellen finden Sie unter [Bilder in xamarin. Forms](images.md).
+`ImageButton`definiert eine `Source` Eigenschaft, die auf das Bild festgelegt werden soll, das in der Schaltfläche angezeigt werden soll, wobei die Bildquelle entweder eine Datei, ein URI, eine Ressource oder ein Stream ist. Weitere Informationen zum Laden von Bildern aus unterschiedlichen Quellen finden Sie unter [Images in Xamarin.Forms ](images.md).
 
 Im folgenden Beispiel wird gezeigt, wie ein `ImageButton` in XAML instanziiert wird:
 
@@ -51,16 +54,16 @@ Im folgenden Beispiel wird gezeigt, wie ein `ImageButton` in XAML instanziiert w
 </ContentPage>
 ```
 
-Die `Source`-Eigenschaft gibt das Bild an, das in der `ImageButton`angezeigt wird. In diesem Beispiel wird es in einer lokalen Datei festgelegt, die von jeder plattformprojekt, was in den folgenden Screenshots geladen werden:
+Die- `Source` Eigenschaft gibt das Bild an, das in der angezeigt wird `ImageButton` . In diesem Beispiel ist es auf eine lokale Datei festgelegt, die aus jedem Platt Form Projekt geladen wird, was zu den folgenden Screenshots führt:
 
 [![Einfaches ImageButton](imagebutton-images/BasicImageButton.png "Einfaches ImageButton")](imagebutton-images/BasicImageButton-Large.png#lightbox "Einfaches ImageButton")
 
-Standardmäßig ist die `ImageButton` rechteckig, aber Sie können mit der `CornerRadius`-Eigenschaft abgerundete Ecken vergeben. Weitere Informationen zur `ImageButton` Darstellung finden Sie unter [ImageButton](#imagebutton-appearance)-Darstellung.
+Standardmäßig ist der `ImageButton` rechteckig, aber Sie können ihm mithilfe der-Eigenschaft abgerundete Ecken übergeben `CornerRadius` . Weitere Informationen zur Darstellung `ImageButton` finden Sie unter [ImageButton](#imagebutton-appearance)-Darstellung.
 
 > [!NOTE]
-> Während ein `ImageButton` ein animiertes GIF laden kann, wird nur der erste Frame der gif angezeigt.
+> Während ein `ImageButton` animiertes GIF laden kann, wird nur der erste Frame der gif angezeigt.
 
-Das folgende Beispiel zeigt, wie Sie eine Seite erstellen, der funktional dem im vorherigen XAML-Beispiel, jedoch vollständig in C#:
+Im folgenden Beispiel wird gezeigt, wie eine Seite erstellt wird, die dem vorherigen XAML-Beispiel funktionell entspricht, jedoch vollständig in c#:
 
 ```csharp
 public class ImageButtonDemoPage : ContentPage
@@ -92,11 +95,11 @@ public class ImageButtonDemoPage : ContentPage
 }
 ```
 
-## <a name="handling-imagebutton-clicks"></a>Behandeln von ImageButton klickt
+## <a name="handling-imagebutton-clicks"></a>Behandeln von ImageButton-Klicks
 
-`ImageButton` definiert ein `Clicked` Ereignis, das ausgelöst wird, wenn der Benutzer mit einem Finger oder Mauszeiger auf die `ImageButton` tippt. Das Ereignis wird ausgelöst, wenn der Finger oder die Maustaste von der Oberfläche des `ImageButton`losgelassen wird. Für den `ImageButton` muss seine `IsEnabled`-Eigenschaft auf `true` festgelegt sein, um auf Abzweigungen zu reagieren.
+`ImageButton`definiert ein- `Clicked` Ereignis, das ausgelöst wird, wenn der Benutzer `ImageButton` mit einem Finger oder Mauszeiger auf das tippt. Das-Ereignis wird ausgelöst, wenn der Finger oder die Maustaste von der-Oberfläche der losgelassen wird `ImageButton` . Die-Eigenschaft muss für die auf `ImageButton` `IsEnabled` tippen festgelegt sein `true` .
 
-Im folgenden Beispiel wird gezeigt, wie ein `ImageButton` in XAML instanziiert und das `Clicked` Ereignis behandelt wird:
+Im folgenden Beispiel wird gezeigt, wie ein `ImageButton` in XAML instanziiert und das zugehörige-Ereignis behandelt wird `Clicked` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -123,7 +126,7 @@ Im folgenden Beispiel wird gezeigt, wie ein `ImageButton` in XAML instanziiert u
 </ContentPage>
 ```
 
-Das `Clicked` Ereignis ist auf einen Ereignishandler mit dem Namen `OnImageButtonClicked` festgelegt, der sich in der Code Behind-Datei befindet:
+Das- `Clicked` Ereignis wird auf einen Ereignishandler mit dem Namen festgelegt `OnImageButtonClicked` , der sich in der Code Behind-Datei befindet:
 
 ```csharp
 public partial class ImageButtonDemoPage : ContentPage
@@ -143,13 +146,13 @@ public partial class ImageButtonDemoPage : ContentPage
 }
 ```
 
-Wenn die `ImageButton` getippt wird, wird die `OnImageButtonClicked`-Methode ausgeführt. Das `sender`-Argument ist der `ImageButton`, der für dieses Ereignis verantwortlich ist. Sie können dies verwenden, um auf das `ImageButton` Objekt zuzugreifen oder um zwischen mehreren `ImageButton` Objekten zu unterscheiden, die dasselbe `Clicked` Ereignis verwenden.
+Wenn die `ImageButton` angetippt wird, wird die `OnImageButtonClicked`-Methode ausgeführt. Das- `sender` Argument ist der `ImageButton` Verantwortliche für dieses Ereignis. Sie können dies verwenden, um auf das `ImageButton` Objekt zuzugreifen, oder um zwischen mehreren Objekten zu unterscheiden, `ImageButton` die dasselbe `Clicked` Ereignis verwenden.
 
-Dieser bestimmte `Clicked` Handler erhöht einen Leistungs Bewert und zeigt den Wert des Zählers in einem [`Label`](xref:Xamarin.Forms.Label)an:
+Dieser bestimmte `Clicked` Handler erhöht einen Leistungs Bewert und zeigt den Wert des Zählers in einem an [`Label`](xref:Xamarin.Forms.Label) :
 
 [![Einfaches ImageButton-Klick](imagebutton-images/ImageButton.png "Einfaches ImageButton-Klick")](imagebutton-images/ImageButton-Large.png#lightbox "Einfaches ImageButton-Klick")
 
-Das folgende Beispiel zeigt, wie Sie eine Seite erstellen, der funktional dem im vorherigen XAML-Beispiel, jedoch vollständig in C#:
+Im folgenden Beispiel wird gezeigt, wie eine Seite erstellt wird, die dem vorherigen XAML-Beispiel funktionell entspricht, jedoch vollständig in c#:
 
 ```csharp
 public class ImageButtonDemoPage : ContentPage
@@ -204,50 +207,50 @@ public class ImageButtonDemoPage : ContentPage
 }
 ```
 
-## <a name="disabling-the-imagebutton"></a>Deaktivieren die ImageButton
+## <a name="disabling-the-imagebutton"></a>Deaktivieren von ImageButton
 
-Manchmal befindet sich eine Anwendung in einem bestimmten Zustand, in dem ein bestimmter `ImageButton` Click kein gültiger Vorgang ist. In diesen Fällen sollte die `ImageButton` durch Festlegen der Eigenschaft `IsEnabled` auf `false`deaktiviert werden.
+Manchmal befindet sich eine Anwendung in einem bestimmten Zustand, in dem ein bestimmter `ImageButton` Klick kein gültiger Vorgang ist. In diesen Fällen sollte der deaktiviert werden, indem die zugehörige- `ImageButton` Eigenschaft auf festgelegt wird `IsEnabled` `false` .
 
-## <a name="using-the-command-interface"></a>Verwenden die Befehlsschnittstelle
+## <a name="using-the-command-interface"></a>Verwenden der Befehlsschnittstelle
 
-Es ist möglich, dass eine Anwendung auf `ImageButton` TAPS antwortet, ohne das `Clicked`-Ereignis zu behandeln. Der `ImageButton` implementiert einen alternativen Benachrichtigungs Mechanismus, der als _Befehl_ _oder Befehls_ Schnittstelle bezeichnet wird. Dies besteht aus zwei Eigenschaften:
+Es ist möglich, dass eine Anwendung auf TAPS reagiert, `ImageButton` ohne das `Clicked` Ereignis zu behandeln. `ImageButton`Implementiert einen alternativen Benachrichtigungs Mechanismus, der als _Befehl_ oder Befehlsschnittstelle bezeichnet wird. _commanding_ Dies umfasst zwei Eigenschaften:
 
-- `Command` vom Typ [`ICommand`](xref:System.Windows.Input.ICommand), eine Schnittstelle, die im [`System.Windows.Input`](xref:System.Windows.Input) Namespace definiert ist.
-- `CommandParameter` Eigenschaft vom Typ [`Object`](xref:System.Object).
+- `Command`vom Typ [`ICommand`](xref:System.Windows.Input.ICommand) , eine im-Namespace definierte-Schnittstelle [`System.Windows.Input`](xref:System.Windows.Input) .
+- `CommandParameter`-Eigenschaft vom Typ [`Object`](xref:System.Object) .
 
-Dieser Ansatz eignet sich im Zusammenhang mit Datenbindung und insbesondere dann, wenn die Model-View-ViewModel (MVVM)-Architektur zu implementieren.
+Diese Vorgehensweise eignet sich für die Verbindung mit der Datenbindung und insbesondere bei der Implementierung der Model-View-ViewModel (MVVM)-Architektur.
 
 Weitere Informationen zum Verwenden der Befehlsschnittstelle finden Sie unter [Verwenden der Befehlsschnittstelle](button.md#using-the-command-interface) im [Schalt](button.md) Flächen Handbuch.
 
-## <a name="pressing-and-releasing-the-imagebutton"></a>Drücken und Loslassen der ImageButton
+## <a name="pressing-and-releasing-the-imagebutton"></a>Drücken und Freigeben von ImageButton
 
-Neben dem `Clicked`-Ereignis definiert `ImageButton` auch `Pressed`-und `Released`-Ereignisse. Das `Pressed` Ereignis tritt auf, wenn ein Finger auf einen `ImageButton`drückt, oder wenn eine Maustaste gedrückt wird, während der Zeiger auf die `ImageButton`positioniert ist. Das `Released` Ereignis tritt auf, wenn der Finger oder die Maustaste losgelassen wird. Im Allgemeinen wird das `Clicked` Ereignis auch zur gleichen Zeit ausgelöst wie das Ereignis `Released`, aber wenn der Finger oder Mauszeiger vor der Freigabe von der Oberfläche des `ImageButton` bewegt wird, tritt das `Clicked` Ereignis möglicherweise nicht auf.
+Neben dem `Clicked`-Ereignis definiert das `ImageButton`-Element auch die Ereignisse `Pressed` und `Released`. Das- `Pressed` Ereignis tritt auf, wenn ein Finger auf ein drückt `ImageButton` , oder wenn eine Maustaste gedrückt wird, während der Zeiger auf dem positioniert ist `ImageButton` . Das `Released` Ereignis tritt auf, wenn der Finger oder die Maustaste losgelassen wird. Im Allgemeinen wird das- `Clicked` Ereignis auch zur gleichen Zeit wie das- `Released` Ereignis ausgelöst, aber wenn sich der Finger oder der Mauszeiger vor der Freigabe von der-Oberfläche von entfernt `ImageButton` , wird das `Clicked` Ereignis möglicherweise nicht angezeigt.
 
 Weitere Informationen zu diesen Ereignissen finden Sie im [Schalt](button.md) Flächen Handbuch unter [drücken und Freigeben der Schaltfläche](button.md#pressing-and-releasing-the-button) .
 
-## <a name="imagebutton-appearance"></a>ImageButton Darstellung
+## <a name="imagebutton-appearance"></a>Darstellung von ImageButton
 
-Zusätzlich zu den Eigenschaften, die `ImageButton` von der [`View`](xref:Xamarin.Forms.View) -Klasse erbt, definiert `ImageButton` auch mehrere Eigenschaften, die sich auf ihre Darstellung auswirken:
+Zusätzlich zu den Eigenschaften, die `ImageButton` von der- [`View`](xref:Xamarin.Forms.View) Klasse erben, werden von `ImageButton` auch mehrere Eigenschaften definiert, die sich auf ihre Darstellung auswirken:
 
-- `Aspect` gibt an, wie das Bild so skaliert wird, dass es in den Anzeigebereich passt.
-- `BorderColor` ist die Farbe eines Bereichs, der die `ImageButton`umgibt.
-- `BorderWidth` ist die Breite des Rahmens.
-- `CornerRadius` ist der Eckradius des `ImageButton`.
+- `Aspect`Gibt an, wie das Bild so skaliert wird, dass es dem Anzeigebereich entspricht.
+- `BorderColor`die Farbe eines Bereichs, der den umgibt `ImageButton` .
+- `BorderWidth`die Breite des Rahmens.
+- `CornerRadius`ist der Eckradius von `ImageButton` .
 
-Die `Aspect`-Eigenschaft kann auf einen der Member der [`Aspect`](xref:Xamarin.Forms.Aspect) -Enumeration festgelegt werden:
+Die- `Aspect` Eigenschaft kann auf einen der Member der-Enumeration festgelegt werden [`Aspect`](xref:Xamarin.Forms.Aspect) :
 
-- das Bild wird [`Fill`](xref:Xamarin.Forms.Aspect.Fill) gestreckt und die `ImageButton`vollständig aufgefüllt. Dies kann in das Bild verzerrt wird führen.
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) schneidet das Bild ab, sodass es die `ImageButton` füllt, während das Seitenverhältnis beibehalten wird.
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -Letterbox das Bild (falls erforderlich), damit das gesamte Bild in den `ImageButton`passt, wobei der obere bzw. untere Rand des Bilds in Abhängigkeit davon, ob das Bild breit oder hoch ist, Leerzeichen hinzugefügt werden. Dies ist der Standardwert der [`Aspect`](xref:Xamarin.Forms.Aspect) -Enumeration.
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill)-streckt das Bild auf vollständig und gefüllt das `ImageButton` . Dies kann dazu führen, dass das Bild verzerrt wird.
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-schneidet das Bild ab, sodass es den füllt, `ImageButton` während das Seitenverhältnis beibehalten wird.
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-Letterbox das Bild (falls erforderlich), sodass das gesamte Bild in das-Feld passt `ImageButton` , wobei der obere bzw. untere Rand des Bilds in Abhängigkeit davon, ob das Bild breit oder hoch ist, Leerzeichen hinzugefügt werden. Dies ist der Standardwert der- [`Aspect`](xref:Xamarin.Forms.Aspect) Enumeration.
 
 > [!NOTE]
-> Die `ImageButton`-Klasse verfügt auch über [`Margin`](xref:Xamarin.Forms.View.Margin) -und `Padding`-Eigenschaften, die das Layoutverhalten der `ImageButton`steuern. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+> Die `ImageButton` -Klasse verfügt auch über [`Margin`](xref:Xamarin.Forms.View.Margin) -und- `Padding` Eigenschaften, die das Layoutverhalten von Steuern `ImageButton` . Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-## <a name="imagebutton-visual-states"></a>Visuelle Zustände ImageButton
+## <a name="imagebutton-visual-states"></a>Visuelle Status von ImageButton
 
-`ImageButton` verfügt über eine `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) , die zum Initiieren einer visuellen Änderung am `ImageButton` verwendet werden kann, wenn der Benutzer darauf klickt, sofern diese aktiviert ist.
+`ImageButton`verfügt über ein `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) -Element, das zum Initiieren einer visuellen Änderung am verwendet werden kann `ImageButton` , wenn es vom Benutzer gedrückt wird, vorausgesetzt, dass es aktiviert ist.
 
-Das folgende XAML-Beispiel zeigt, wie ein visueller Zustand für den `Pressed` Status definiert wird:
+Das folgende XAML-Beispiel zeigt, wie Sie einen visuellen Zustand für den `Pressed` Status definieren:
 
 ```xaml
 <ImageButton Source="XamarinLogo.png"
@@ -273,9 +276,9 @@ Das folgende XAML-Beispiel zeigt, wie ein visueller Zustand für den `Pressed` S
 </ImageButton>
 ```
 
-Die `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) gibt an, dass die [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) Eigenschaft beim Drücken der `ImageButton` von ihrem Standardwert von 1 in 0,8 geändert wird. Die `Normal` `VisualState` gibt an, dass die `Scale` Eigenschaft auf 1 festgelegt wird, wenn sich die `ImageButton` in einem normalen Zustand befindet. Der Gesamteffekt ist, dass die `ImageButton` gedrückt wird, dass Sie etwas kleiner ist, und wenn die `ImageButton` freigegeben wird, wird Sie auf Ihre Standardgröße umgestellt.
+Der `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) gibt an, dass die- `ImageButton` Eigenschaft beim Drücken [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) von von ihrem Standardwert von 1 in 0,8 geändert wird. Der `Normal` `VisualState` gibt an, dass die- `ImageButton` `Scale` Eigenschaft auf 1 festgelegt wird, wenn sich der in einem normalen Zustand befindet. Der Gesamteffekt besteht daher darin, dass beim `ImageButton` drücken von eine etwas geringere Größe erreicht wird, und wenn der freigegeben wird, wird `ImageButton` er auf seine Standardgröße umgestellt.
 
-Weitere Informationen zu visuellen Zuständen finden Sie [unter xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+Weitere Informationen zu visuellen Zuständen finden Sie [unter Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

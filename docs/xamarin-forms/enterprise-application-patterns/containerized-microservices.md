@@ -1,18 +1,21 @@
 ---
-title: Containermicroservices
-description: In diesem Kapitel wird erläutert, wie Sie mithilfe von mikroservices und Containern Agile, skalierbare und zuverlässige, moderne cloudanwendungen erstellen.
-ms.prod: xamarin
-ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306332"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139255"
 ---
 # <a name="containerized-microservices"></a>Containermicroservices
 
@@ -58,7 +61,7 @@ Eine auf einem Dienst basierende Lösung bietet jedoch auch mögliche Nachteile:
 
 ## <a name="containerization"></a>Containerisierung
 
-Containerisierung ist ein Ansatz für die Softwareentwicklung, bei dem eine Anwendung und deren Versions abhängige Abhängigkeiten sowie die Umgebungs Konfiguration, die als Bereitstellungs Manifest-Dateien abstrahiert ist, als Container Image verpackt, als Einheit getestet und auf einem Host Betriebssystem bereitgestellt.
+Containerisierung ist ein Ansatz für die Softwareentwicklung, bei dem eine Anwendung und deren Versions abhängige Abhängigkeiten sowie die Umgebungs Konfiguration, die als Bereitstellungs Manifest-Dateien abstrahiert ist, als Container Image zusammengefasst, als Einheit getestet und auf einem Host Betriebssystem bereitgestellt werden.
 
 Ein Container ist eine isolierte, Ressourcen gesteuerte und tragbare Betriebsumgebung, in der eine Anwendung ausgeführt werden kann, ohne die Ressourcen anderer Container oder den Host zu berühren. Ein Container sieht daher wie ein neu installierter physischer Computer oder eine virtuelle Maschine aus.
 
@@ -78,7 +81,7 @@ Die wichtigsten Konzepte beim Erstellen und arbeiten mit Containern sind:
 - Container Image: ein Bild besteht aus einer Vereinigung von geschichteten Dateisystemen, die aufeinander gestapelt sind, und ist die Grundlage für einen Container. Ein Image weist keinen Status auf und ändert sich nie, wenn es in unterschiedlichen Umgebungen bereitgestellt wird.
 - Container: ein Container ist eine Lauf Zeit Instanz eines Bilds.
 - Containerbetriebssystem-Image: Container werden mithilfe von Images bereitgestellt. Das Betriebssystem Abbild für den Container ist die erste Ebene in potenziell vielen Bildebenen, aus denen ein Container besteht. Ein Container Betriebssystem ist unveränderlich und kann nicht geändert werden.
-- Containerrepository: jedes Mal, wenn ein Container Image erstellt wird, werden das Image und seine Abhängigkeiten in einem lokalen Repository gespeichert. Diese Bilder können oft auf dem Host Container wiederverwendet werden. Die Container Images können auch in einer öffentlichen oder privaten Registrierung, wie z. [b. docker Hub](https://hub.docker.com/), gespeichert werden, damit Sie auf verschiedenen Container Hosts verwendet werden können.
+- Containerrepository: jedes Mal, wenn ein Container Image erstellt wird, werden das Image und seine Abhängigkeiten in einem lokalen Repository gespeichert. Diese Images können auf dem Containerhost mehrfach wiederverwendet werden. Die Container Images können auch in einer öffentlichen oder privaten Registrierung, wie z. [b. docker Hub](https://hub.docker.com/), gespeichert werden, damit Sie auf verschiedenen Container Hosts verwendet werden können.
 
 Unternehmen nehmen bei der Implementierung von auf einem Dienst basierenden Anwendungen immer mehr Container in Betrieb, und docker wurde zur Standardcontainer Implementierung, die von den meisten Softwareplattformen und cloudanbietern übernommen wurde.
 
@@ -146,7 +149,7 @@ Weitere Informationen zur Ereignisbus Implementierung finden Sie unter [.net-mic
 
 ## <a name="summary"></a>Zusammenfassung
 
-Microservices bieten einen Ansatz für die Anwendungsentwicklung und-Bereitstellung, der sich auf die Flexibilität, Skalierbarkeit und Zuverlässigkeit von modernen cloudanwendungen eignet. Einer der Hauptvorteile von-Webdiensten besteht darin, dass Sie unabhängig voneinander horizontal hochskaliert werden können. Dies bedeutet, dass ein spezifischer Funktionsbereich skaliert werden kann, der eine höhere Verarbeitungsleistung oder Netzwerkbandbreite erfordert, um die Nachfrage zu unterstützen, ohne dass Bereiche von die Anwendung, für die kein erhöhter Bedarf auftritt.
+Microservices bieten einen Ansatz für die Anwendungsentwicklung und-Bereitstellung, der sich auf die Flexibilität, Skalierbarkeit und Zuverlässigkeit von modernen cloudanwendungen eignet. Einer der Hauptvorteile von-Funktionen besteht darin, dass Sie unabhängig voneinander horizontal hochskaliert werden können. Dies bedeutet, dass ein bestimmter Funktionsbereich skaliert werden kann, der eine höhere Verarbeitungsleistung oder Netzwerkbandbreite erfordert, um die Nachfrage zu unterstützen, ohne dass Bereiche der Anwendung unnötig skaliert werden, die nicht mehr benötigt werden.
 
 Ein Container ist eine isolierte, Ressourcen gesteuerte und tragbare Betriebsumgebung, in der eine Anwendung ausgeführt werden kann, ohne die Ressourcen anderer Container oder den Host zu berühren. Unternehmen nehmen bei der Implementierung von auf einem Dienst basierenden Anwendungen immer mehr Container in Betrieb, und docker wurde zur Standardcontainer Implementierung, die von den meisten Softwareplattformen und cloudanbietern übernommen wurde.
 

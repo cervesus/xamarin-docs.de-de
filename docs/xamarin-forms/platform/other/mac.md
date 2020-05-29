@@ -1,51 +1,54 @@
 ---
-title: Mac-Plattform-Setup
-description: In diesem Artikel wird erläutert, wie Sie ein Mac-Projekt ein Xamarin.Forms-Projekt hinzufügen, das erzeugt eine app unter MacOS Sierra und MacOS El Capitan ausgeführt werden kann.
-ms.prod: xamarin
-ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/03/2017
-ms.openlocfilehash: 7ed2cb66524ab3380f65d6d0be74a66c7d01226b
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+title: ''
+description: In diesem Artikel wird erläutert, wie ein Mac-Projekt zu einem Projekt hinzugefügt Xamarin.Forms wird, das eine APP erzeugt, die auf macOS Sierra und macOS El Capitan ausgeführt werden kann.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 11897d2d3b8b7ba0a62956f1dbe4d8b873352e7a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978028"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139554"
 ---
-# <a name="mac-platform-setup"></a>Mac-Plattform-Setup
+# <a name="mac-platform-setup"></a>Einrichten der Mac-Plattform
 
 ![Vorschau](~/media/shared/preview.png)
 
-Bevor Sie beginnen, erstellen (oder verwenden Sie ein vorhandenes) Xamarin.Forms-Projekt. Sie können nur mithilfe von Visual Studio für Mac. Mac-apps hinzufügen.
+Bevor Sie beginnen, erstellen Sie ein Projekt (oder verwenden Sie ein vorhandenes) Xamarin.Forms . Sie können Mac-Apps nur mithilfe von Visual Studio für Mac hinzufügen.
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
-**Hinzufügen eines MacOS-Projekts zu Xamarin.Forms-video**
+**Hinzufügen eines macOS-Projekts zu einem Xamarin.Forms Video**
 
-## <a name="adding-a-mac-app"></a>Hinzufügen einer Mac-App
+## <a name="adding-a-mac-app"></a>Hinzufügen einer Mac-app
 
-Um eine Mac-app hinzufügen, die unter MacOS Sierra und MacOS El Capitan ausgeführt wird, gehen Sie wie folgt vor:
+Befolgen Sie diese Anweisungen zum Hinzufügen einer Mac-app, die auf macOS Sierra und macOS El Capitan ausgeführt werden kann:
 
-1. Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf die vorhandenen Xamarin.Forms-Projektmappe, und wählen Sie **hinzufügen > Neues Projekt hinzufügen...**
+1. Klicken Sie in Visual Studio für Mac mit der rechten Maustaste auf die vorhandene Projekt Mappe, Xamarin.Forms und wählen Sie **Hinzufügen > neues Projekt hinzufügen...**
 
-2. In der **neues Projekt** wählen **Mac > App > Cocoa-App** , und drücken Sie **Weiter**.
+2. Wählen Sie im Fenster **Neues Projekt** die Option **Mac > App > Cocoa-App** aus, und klicken Sie auf **weiter**.
 
-3. Typ einer **Anwendungsnamen** (und optional einen anderen Namen für das Dock-Element auswählen), drücken Sie dann die **Weiter**.
+3. Geben Sie einen **APP-Namen** ein (und wählen Sie optional einen anderen Namen für das Dock Element aus), und klicken Sie dann auf **weiter**.
 
-4. Überprüfen Sie die Konfiguration, und drücken Sie **erstellen**. Diese Schritte werden im unten gezeigt:
+4. Überprüfen Sie die Konfiguration, und klicken Sie auf **Erstellen**. Diese Schritte werden im folgenden dargestellt:
 
-    ![Animierte Anweisungen, die zeigt, wie eine Cocoa-app hinzufügen](mac-images/add-macos-proj.gif)
+    ![Animierte Anweisungen zum Hinzufügen einer Cocoa-App](mac-images/add-macos-proj.gif)
 
-5. Die Mac-Projekt mit der Maustaste auf **Pakete > Pakete hinzufügen...**  Hinzufügen der [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) NuGet. Sie sollten auch die anderen Projekte, verwenden Sie die gleiche Version von Xamarin.Forms-NuGet-Paket aktualisieren.
+5. Klicken Sie im Mac-Projekt mit der rechten Maustaste auf **Pakete, > Pakete hinzufügen...** , um nuget hinzuzufügen. [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) Sie sollten auch die anderen Projekte aktualisieren, sodass Sie dieselbe Version des Xamarin.Forms nuget-Pakets verwenden.
 
-6. Die Mac-Projekt mit der Maustaste auf **Verweise** und Hinzufügen eines Verweises auf das Xamarin.Forms-Projekt (freigegebenes Projekt oder .NET Standard Library-Projekt).
+6. Klicken Sie im Mac-Projekt mit der rechten Maustaste auf **Verweise** , und fügen Sie einen Verweis auf das Xamarin.Forms Projekt (entweder frei gegebenes Projekt oder .NET Standard Bibliotheksprojekt) hinzu.
 
-    ![Hinzufügen eines Verweises auf das Xamarin.Forms-Projekt für freigegebenen code](mac-images/references-sml.png)
+    ![Hinzufügen eines Verweises auf das Projekt für frei Xamarin.Forms gegebenen Code](mac-images/references-sml.png)
 
-7. Update **Main.cs** zum Initialisieren der `AppDelegate`:
+7. Aktualisieren Sie **Main.cs** , um zu initialisieren `AppDelegate` :
 
     ```csharp
     static class MainClass
@@ -59,7 +62,7 @@ Um eine Mac-app hinzufügen, die unter MacOS Sierra und MacOS El Capitan ausgef�
     }
     ```
 
-8. Update `AppDelegate` um Xamarin.Forms zu initialisieren, erstellen Sie ein Fenster, und Laden Sie die Xamarin.Forms-Anwendung (Denken Sie daran, legen Sie eine entsprechende `Title`). _Wenn Sie andere Abhängigkeiten, die initialisiert werden müssen verfügen, verwenden Sie hier ebenfalls._
+8. Aktualisieren `AppDelegate` Sie, um zu initialisieren Xamarin.Forms , erstellen Sie ein Fenster, und laden Sie die Xamarin.Forms Anwendung (denken Sie daran, eine geeignete festzulegen `Title` ). _Wenn Sie andere Abhängigkeiten haben, die initialisiert werden müssen, müssen Sie dies auch hier tun._
 
     ```csharp
     using Xamarin.Forms;
@@ -94,21 +97,21 @@ Um eine Mac-app hinzufügen, die unter MacOS Sierra und MacOS El Capitan ausgef�
     }
     ```
 
-9. Doppelklicken Sie auf **"Main.Storyboard"** zur Bearbeitung in Xcode. Wählen Sie die **Fenster** und _deaktivieren_ der **ersten Controller ist** Kontrollkästchen (Dies ist daran, dass der Code oben ein Fenster erstellt):
+9. Doppelklicken Sie auf **Main. Storyboard** , um in Xcode zu bearbeiten. Wählen Sie das **Fenster** aus, und _Deaktivieren Sie_ das Kontrollkästchen **ist ursprünglicher Controller** (Dies liegt daran, dass der obige Code ein Fenster erstellt):
 
-    [![Deaktivieren Sie das Kontrollkästchen der erste Controller wird in Xcode](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
+    [![Deaktivieren Sie das Kontrollkästchen is Initial Controller in Xcode.](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
-    Sie können das Menüsystem, in dem Storyboard So entfernen Sie unerwünschte Elemente bearbeiten.
+    Sie können das Menüsystem im Storyboard bearbeiten, um unerwünschte Elemente zu entfernen.
 
-10. Fügen Sie abschließend alle lokalen Ressourcen (z. b. Bilddateien) aus den vorhandenen Plattform-Projekten, die erforderlich sind.
+10. Fügen Sie schließlich alle lokalen Ressourcen hinzu (z. b. Bilddateien) aus den vorhandenen Platt Form Projekten, die erforderlich sind.
 
-11. Das Mac-Projekt sollte Ihrer Xamarin.Forms-Code jetzt unter MacOS ausgeführt werden.
+11. Das Mac-Projekt sollte nun Ihren Xamarin.Forms Code unter macOS ausführen!
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 ### <a name="styling"></a>Format
 
-Mit der letzten Änderungen an `OnPlatform` können Sie jetzt eine beliebige Anzahl von Plattformen abzielen. Dazu gehören MacOS.
+Mit aktuellen Änderungen an `OnPlatform` können Sie jetzt eine beliebige Anzahl von Plattformen als Ziel haben. Einschließlich macOS.
 
 ```xml
 <Button.TextColor>
@@ -120,11 +123,11 @@ Mit der letzten Änderungen an `OnPlatform` können Sie jetzt eine beliebige Anz
 </Button.TextColor>
 ```
 
-Beachten Sie, Sie können auch verdoppeln Sie auf Plattformen wie folgt: `<On Platform="iOS, macOS" ...>`.
+Beachten Sie, dass Sie sich auch auf Plattformen wie dem folgenden anmelden können: `<On Platform="iOS, macOS" ...>` .
 
 ### <a name="window-size-and-position"></a>Fenstergröße und-Position
 
-Sie können anpassen, die anfängliche Größe und Position des Fensters in der `AppDelegate`:
+Sie können die anfängliche Größe und Position des Fensters in der anpassen `AppDelegate` :
 
 ```csharp
 var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, height
@@ -132,15 +135,15 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-Dies ist eine Vorschau, damit Sie erwarten, dass nicht alles bereit für die Produktion. Im folgenden finden Sie einige Dinge, die möglicherweise auftreten, wenn Sie MacOS zu Ihren Projekten hinzufügen:
+Dies ist eine Vorschauversion, daher sollten Sie davon ausgehen, dass nicht alles in der Produktion bereit ist. Im folgenden finden Sie einige Dinge, die beim Hinzufügen von macOS zu Ihren Projekten auftreten können:
 
-### <a name="not-all-nugets-are-ready-for-macos"></a>Nicht alle NuGet-Pakete sind bereit für macOS
+### <a name="not-all-nugets-are-ready-for-macos"></a>Nicht alle nugets sind für macOS bereit.
 
-Möglicherweise, dass einige Bibliotheken, die Sie verwenden noch nicht über MacOS unterstützen. In diesem Fall müssen Sie zum Senden einer Anforderung an den Maintainer des Projekts, um es hinzuzufügen. Bis sie die Unterstützung verfügen, müssen Sie möglicherweise nach alternativen gesucht werden soll.
+Möglicherweise stellen Sie fest, dass einige der Bibliotheken, die Sie verwenden, macOS noch nicht unterstützen. In diesem Fall müssen Sie eine Anforderung an den Maintainer des Projekts senden, um Sie hinzuzufügen. Bis Sie unterstützt werden, müssen Sie möglicherweise nach Alternativen suchen.
 
-### <a name="missing-xamarinforms-features"></a>Fehlende Xamarin.Forms-Features
+### <a name="missing-xamarinforms-features"></a>Fehlende Xamarin.Forms Features
 
-Nicht alle Xamarin.Forms-Funktionen sind vollständig in dieser Preview-Version. Weitere Informationen finden Sie unter [Plattformunterstützung MacOS Status](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support-macOS-Status) in die [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) GitHub-Repository.
+Nicht alle Xamarin.Forms Funktionen sind in dieser Vorschauversion vollständig. Weitere Informationen finden Sie unter [Platt Form Unterstützung macOS-Status](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support-macOS-Status) im [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) GitHub-Repository.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,24 +1,27 @@
 ---
-title: Aktuativenansichts Richtung unter Windows
-description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die Windows-plattformspezifische verwenden, mit der die Pull-Richtung einer aktualisierbaren Ansicht geändert werden kann.
-ms.prod: xamarin
-ms.assetid: 407A862B-281E-4384-9696-C0655830B84D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: cf2ab38bed7b45a48fcf0b5f86add49c0d4cc21f
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46a1b4d00b9eea276b9a3b3d5bffbdac3d31e0ef
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697650"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136577"
 ---
-# <a name="refreshview-pull-direction-on-windows"></a>Aktuativenansichts Richtung unter Windows
+# <a name="refreshview-pull-direction-on-windows"></a>RefreshView-Pullrichtung unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese universelle Windows-Plattform plattformspezifisch ermöglicht, dass die Pull-Richtung eines `RefreshView` geändert werden kann, um der Ausrichtung des Bild lauffähigen Steuer Elements zu entsprechen, das Daten anzeigt. Sie wird in XAML verwendet, indem die `RefreshView.RefreshPullDirection` bindbare-Eigenschaft auf einen Wert der `RefreshPullDirection`-Enumeration festgelegt wird:
+Diese universelle Windows-Plattform plattformspezifisch ermöglicht, dass die Pull-Richtung einer `RefreshView` geändert werden muss, damit Sie der Ausrichtung des Bild lauffähigen Steuer Elements entspricht, das Daten anzeigt. Sie wird in XAML verwendet, indem die `RefreshView.RefreshPullDirection` bindbare Eigenschaft auf einen Wert der- `RefreshPullDirection` Enumeration festgelegt wird:
 
 ```xaml
 <ContentPage ...
@@ -33,7 +36,7 @@ Diese universelle Windows-Plattform plattformspezifisch ermöglicht, dass die Pu
  </ContentPage>
 ```
 
-Alternativ kann Sie von C# der Verwendung der flüssigen API genutzt werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -42,16 +45,16 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 refreshView.On<Windows>().SetRefreshPullDirection(RefreshPullDirection.LeftToRight);
 ```
 
-Die `RefreshView.On<Windows>`-Methode gibt an, dass diese plattformspezifische nur auf der universelle Windows-Plattform ausgeführt wird. Die `RefreshView.SetRefreshPullDirection`-Methode im [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) -Namespace wird verwendet, um die Pull-Richtung der `RefreshView` festzulegen, wobei die `RefreshPullDirection`-Enumeration vier mögliche Werte bereitstellt:
+Die- `RefreshView.On<Windows>` Methode gibt an, dass diese plattformspezifische nur auf der universelle Windows-Plattform ausgeführt wird. Die- `RefreshView.SetRefreshPullDirection` Methode im- [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) Namespace wird verwendet, um die Pull-Richtung des festzulegen `RefreshView` , wobei die- `RefreshPullDirection` Enumeration vier mögliche Werte bereitstellt:
 
-- `LeftToRight` gibt an, dass ein Pull von links nach rechts eine Aktualisierung initiiert.
-- `TopToBottom` gibt an, dass ein Pull von oben nach unten eine Aktualisierung initiiert und die standardmäßige Pull-Richtung eines `RefreshView` ist.
-- `RightToLeft` gibt an, dass ein Pull von rechts nach links eine Aktualisierung initiiert.
-- `BottomToTop` gibt an, dass ein Pull von unten nach oben eine Aktualisierung initiiert.
+- `LeftToRight`Gibt an, dass ein Pull von links nach rechts eine Aktualisierung initiiert.
+- `TopToBottom`Gibt an, dass ein Pull von oben nach unten eine Aktualisierung initiiert und die standardmäßige Pull-Richtung eines ist `RefreshView` .
+- `RightToLeft`Gibt an, dass ein Pull von rechts nach links eine Aktualisierung initiiert.
+- `BottomToTop`Gibt an, dass ein Pull von unten nach oben eine Aktualisierung initiiert.
 
-Außerdem kann die `GetRefreshPullDirection`-Methode verwendet werden, um die aktuelle `RefreshPullDirection` der `RefreshView` zurückzugeben.
+Außerdem kann die- `GetRefreshPullDirection` Methode verwendet werden, um den aktuellen `RefreshPullDirection` des zurückzugeben `RefreshView` .
 
-Das Ergebnis ist, dass ein angegebenes `RefreshPullDirection` auf den `RefreshView` angewendet wird, um die Pull Direction so festzulegen, dass Sie der Ausrichtung des scrollbaren Steuer Elements entspricht, das Daten anzeigt. Der folgende Screenshot zeigt eine `RefreshView` mit einer `LeftToRight` Pull-Richtung:
+Das Ergebnis ist, dass ein `RefreshPullDirection` angegebenes auf das-Element angewendet wird `RefreshView` , um die Pull Direction so festzulegen, dass Sie mit der Ausrichtung des scrollbaren Steuer Elements, das Daten anzeigt Der folgende Screenshot zeigt eine `RefreshView` mit einer `LeftToRight` Pull-Richtung:
 
 [![Screenshot einer aktuerfrischenden Ansicht mit einer von links nach rechts gerichteten Pull-Richtung auf UWP](refreshview-pulldirection-images/refreshview-pulldirection.png "Aktuativenansicht mit der Richtung von links nach rechts")](refreshview-pulldirection-images/refreshview-pulldirection-large.png#lightbox "Aktuativenansicht mit der Richtung von links nach rechts")
 

@@ -1,57 +1,60 @@
 ---
-title: Xamarin. Forms carouselview-Interaktion
-description: Auf das aktuell angezeigte Element in einer "carouselview" kann über die Eigenschaften "Eigenschaften" und "Position" zugegriffen werden.
-ms.prod: xamarin
-ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/11/2020
-ms.openlocfilehash: 150c358346f90a513e1558dc847ad7eb6dd6e6e2
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: Xamarin.FormsCarouselview-Interaktion
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305960"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137409"
 ---
-# <a name="xamarinforms-carouselview-interaction"></a>Xamarin. Forms carouselview-Interaktion
+# <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselview-Interaktion
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert die folgenden Eigenschaften, die die Benutzerinteraktion steuern:
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)definiert die folgenden Eigenschaften, die die Benutzerinteraktion steuern:
 
-- `CurrentItem`vom Typ `object`das aktuelle Element, das angezeigt wird. Diese Eigenschaft verfügt über einen Standard Bindungs Modus `TwoWay`und verfügt über einen `null` Wert, wenn keine anzuzeigenden Daten vorhanden sind.
-- `CurrentItemChangedCommand`vom Typ `ICommand`, der ausgeführt wird, wenn das aktuelle Element geändert wird.
+- `CurrentItem`, vom Typ `object` , das aktuelle Element, das angezeigt wird. Diese Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` und verfügt über einen `null` Wert, wenn keine anzuzeigenden Daten vorhanden sind.
+- `CurrentItemChangedCommand`vom Typ `ICommand` , der ausgeführt wird, wenn sich das aktuelle Element ändert.
 - `CurrentItemChangedCommandParameter` vom Typ `object`: der Parameter, der an `CurrentItemChangedCommand` übergeben wird.
-- `IsBounceEnabled`vom Typ `bool`, der angibt, ob der `CarouselView` an einer Inhalts Grenze springt. Standardwert: `true`.
-- `IsSwipeEnabled`vom Typ `bool`, der bestimmt, ob das angezeigte Element durch eine Schwenkbewegung geändert wird. Standardwert: `true`.
-- `Position`vom Typ `int`den Index des aktuellen Elements in der zugrunde liegenden Auflistung. Diese Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay`und hat den Wert 0, wenn keine anzuzeigenden Daten vorhanden sind.
-- `PositionChangedCommand`vom Typ `ICommand`, der ausgeführt wird, wenn sich die Position ändert.
+- `IsBounceEnabled`vom Typ `bool` , der angibt, ob das `CarouselView` an einer Inhalts Grenze springt. Standardwert: `true`.
+- `IsSwipeEnabled`vom Typ `bool` , der bestimmt, ob das angezeigte Element durch eine Schwenkbewegung geändert wird. Standardwert: `true`.
+- `Position`, vom Typ `int` , der Index des aktuellen Elements in der zugrunde liegenden Auflistung. Diese Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` und verfügt über einen Wert von 0, wenn keine anzuzeigenden Daten vorhanden sind.
+- `PositionChangedCommand`vom Typ `ICommand` , der ausgeführt wird, wenn sich die Position ändert.
 - `PositionChangedCommandParameter` vom Typ `object`: der Parameter, der an `PositionChangedCommand` übergeben wird.
-- `VisibleViews`vom Typ `ObservableCollection<View>`, bei dem es sich um eine schreibgeschützte Eigenschaft handelt, die die Objekte für die aktuell sichtbaren Elemente enthält.
+- `VisibleViews`vom Typ `ObservableCollection<View>` , bei dem es sich um eine schreibgeschützte Eigenschaft handelt, die die-Objekte für die Elemente enthält, die zurzeit sichtbar sind.
 
 Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften Ziele von Datenverbindungen sein können.
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert ein `CurrentItemChanged` Ereignis, das ausgelöst wird, wenn sich die `CurrentItem`-Eigenschaft ändert, entweder aufgrund eines Benutzer Bildlaufs oder wenn eine Anwendung die-Eigenschaft festlegt. Das `CurrentItemChangedEventArgs` Objekt, das das `CurrentItemChanged` Ereignis begleitet, verfügt über zwei Eigenschaften, beide vom Typ `object`:
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)definiert ein `CurrentItemChanged` -Ereignis, das ausgelöst wird, wenn die- `CurrentItem` Eigenschaft geändert wird, entweder aufgrund eines Benutzer Bildlaufs oder wenn eine Anwendung die-Eigenschaft festlegt. Das `CurrentItemChangedEventArgs` Objekt, das das `CurrentItemChanged` Ereignis begleitet, verfügt über zwei Eigenschaften, beide vom Typ `object` :
 
-- `PreviousItem` – das vorherige Element, nachdem die-Eigenschaft geändert wurde.
-- `CurrentItem` – das aktuelle Element, nachdem die-Eigenschaft geändert wurde.
+- `PreviousItem`– das vorherige Element, nachdem die-Eigenschaft geändert wurde.
+- `CurrentItem`– das aktuelle Element, nachdem die-Eigenschaft geändert wurde.
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert auch ein `PositionChanged` Ereignis, das ausgelöst wird, wenn sich die `Position`-Eigenschaft ändert, entweder aufgrund eines Benutzer Bildlaufs oder wenn eine Anwendung die-Eigenschaft festlegt. Das `PositionChangedEventArgs` Objekt, das das `PositionChanged` Ereignis begleitet, verfügt über zwei Eigenschaften, beide vom Typ `int`:
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)definiert auch ein `PositionChanged` -Ereignis, das ausgelöst wird, wenn die- `Position` Eigenschaft geändert wird, entweder aufgrund eines Benutzer Bildlaufs oder wenn eine Anwendung die-Eigenschaft festlegt. Das `PositionChangedEventArgs` Objekt, das das `PositionChanged` Ereignis begleitet, verfügt über zwei Eigenschaften, beide vom Typ `int` :
 
-- `PreviousPosition` – die vorherige Position, nachdem die-Eigenschaft geändert wurde.
-- `CurrentPosition` – die aktuelle Position nach der Eigenschafts Änderung.
+- `PreviousPosition`– die vorherige Position nach der Eigenschafts Änderung.
+- `CurrentPosition`– die aktuelle Position nach der Eigenschafts Änderung.
 
 ## <a name="respond-to-the-current-item-changing"></a>Reagieren auf das aktuelle Element ändern
 
-Wenn sich das aktuell angezeigte Element ändert, wird die `CurrentItem`-Eigenschaft auf den Wert des Elements festgelegt. Wenn diese Eigenschaft geändert wird, wird die `CurrentItemChangedCommand` mit dem Wert des `CurrentItemChangedCommandParameter` ausgeführt, der an die `ICommand`übergebenen wird. Die `Position`-Eigenschaft wird dann aktualisiert, und das `CurrentItemChanged`-Ereignis wird ausgelöst.
+Wenn sich das aktuell angezeigte Element ändert, wird die- `CurrentItem` Eigenschaft auf den Wert des Elements festgelegt. Wenn diese Eigenschaft geändert wird, `CurrentItemChangedCommand` wird der mit dem Wert von ausgeführt, der an das-Objekt über `CurrentItemChangedCommandParameter` mittelt wird `ICommand` . `Position`Anschließend wird die-Eigenschaft aktualisiert, und das-Ereignis wird ausgelöst `CurrentItemChanged` .
 
 > [!IMPORTANT]
-> Die `Position`-Eigenschaft ändert sich, wenn die `CurrentItem`-Eigenschaft geändert wird. Dies führt dazu, dass die `PositionChangedCommand` ausgeführt wird und das `PositionChanged` Ereignis ausgelöst wird.
+> Die- `Position` Eigenschaft ändert sich, wenn sich die `CurrentItem` Eigenschaft ändert. Dies führt dazu `PositionChangedCommand` , dass der ausgeführt wird und das `PositionChanged` Ereignis ausgelöst wird.
 
 ### <a name="event"></a>Ereignis
 
-Das folgende XAML-Beispiel zeigt eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) , die einen Ereignishandler verwendet, um auf das aktuelle Element zu reagieren, das sich ändert:
+Das folgende XAML-Beispiel zeigt einen [`CarouselView`](xref:Xamarin.Forms.CarouselView) , der einen Ereignishandler verwendet, um auf das aktuelle Element zu reagieren, das sich ändert:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -68,7 +71,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 carouselView.CurrentItemChanged += OnCurrentItemChanged;
 ```
 
-In diesem Beispiel wird der `OnCurrentItemChanged` Ereignishandler ausgeführt, wenn das `CurrentItemChanged`-Ereignis ausgelöst wird:
+In diesem Beispiel wird der `OnCurrentItemChanged` Ereignishandler ausgeführt, wenn das `CurrentItemChanged` Ereignis ausgelöst wird:
 
 ```csharp
 void OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
@@ -84,7 +87,7 @@ In diesem Beispiel macht der `OnCurrentItemChanged` Ereignishandler die vorherig
 
 ### <a name="command"></a>Get-Help
 
-Das folgende XAML-Beispiel zeigt eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) , die einen Befehl verwendet, um auf das aktuelle Element zu reagieren, das sich ändert:
+Das folgende XAML-Beispiel zeigt einen [`CarouselView`](xref:Xamarin.Forms.CarouselView) , der einen Befehl verwendet, um auf das aktuelle Element zu reagieren, das sich ändert:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -103,7 +106,7 @@ carouselView.SetBinding(CarouselView.CurrentItemChangedCommandProperty, "ItemCha
 carouselView.SetBinding(CarouselView.CurrentItemChangedCommandParameterProperty, new Binding("CurrentItem", source: RelativeBindingSource.Self));
 ```
 
-In diesem Beispiel wird die `CurrentItemChangedCommand`-Eigenschaft an die `ItemChangedCommand`-Eigenschaft gebunden, wobei der `CurrentItem`-Eigenschafts Wert als Argument übergeben wird. Der `ItemChangedCommand` kann dann wie erforderlich auf das aktuelle Element reagieren, das geändert wird:
+In diesem Beispiel wird die- `CurrentItemChangedCommand` Eigenschaft an die- `ItemChangedCommand` Eigenschaft gebunden, wobei der `CurrentItem` Eigenschafts Wert als Argument übergeben wird. Der `ItemChangedCommand` kann dann wie erforderlich auf das aktuelle Element reagieren, das geändert wird:
 
 ```csharp
 public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
@@ -113,18 +116,18 @@ public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
 });
 ```
 
-In diesem Beispiel aktualisiert der `ItemChangedCommand` Objekte, die die vorherigen und aktuellen Elemente speichern.
+In diesem Beispiel aktualisiert die `ItemChangedCommand` Objekte, die die vorherigen und aktuellen Elemente speichern.
 
 ## <a name="respond-to-the-position-changing"></a>Reagieren auf die Änderung der Position
 
-Wenn sich das aktuell angezeigte Element ändert, wird die `Position`-Eigenschaft auf den Index des aktuellen Elements in der zugrunde liegenden Auflistung festgelegt. Wenn diese Eigenschaft geändert wird, wird die `PositionChangedCommand` mit dem Wert des `PositionChangedCommandParameter` ausgeführt, der an die `ICommand`übergebenen wird. Das `PositionChanged` Ereignis wird ausgelöst. Wenn die `Position`-Eigenschaft Programm gesteuert geändert wurde, wird der [`CarouselView`](xref:Xamarin.Forms.CarouselView) auf das Element, das dem `Position` Wert entspricht, gescrollt.
+Wenn sich das aktuell angezeigte Element ändert, wird die- `Position` Eigenschaft auf den Index des aktuellen Elements in der zugrunde liegenden Auflistung festgelegt. Wenn diese Eigenschaft geändert wird, `PositionChangedCommand` wird der mit dem Wert von ausgeführt, der an das-Objekt über `PositionChangedCommandParameter` mittelt wird `ICommand` . Das `PositionChanged` Ereignis wird ausgelöst. Wenn die `Position` Eigenschaft Programm gesteuert geändert wurde, wird der [`CarouselView`](xref:Xamarin.Forms.CarouselView) auf das Element gescrollt, das dem Wert entspricht `Position` .
 
 > [!NOTE]
-> Wenn Sie die `Position`-Eigenschaft auf 0 festlegen, wird das erste Element in der zugrunde liegenden Auflistung angezeigt.
+> Wenn Sie die- `Position` Eigenschaft auf 0 festlegen, wird das erste Element in der zugrunde liegenden Auflistung angezeigt.
 
 ### <a name="event"></a>Ereignis
 
-Das folgende XAML-Beispiel zeigt eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) , die einen Ereignishandler verwendet, um auf die `Position` Eigenschaft zu reagieren, die geändert wird:
+Das folgende XAML-Beispiel zeigt einen [`CarouselView`](xref:Xamarin.Forms.CarouselView) , der einen Ereignishandler verwendet, um auf die Eigenschaft zu reagieren, die `Position` geändert wird:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"              
@@ -141,7 +144,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 carouselView.PositionChanged += OnPositionChanged;
 ```
 
-In diesem Beispiel wird der `OnPositionChanged` Ereignishandler ausgeführt, wenn das `PositionChanged`-Ereignis ausgelöst wird:
+In diesem Beispiel wird der `OnPositionChanged` Ereignishandler ausgeführt, wenn das `PositionChanged` Ereignis ausgelöst wird:
 
 ```csharp
 void OnPositionChanged(object sender, PositionChangedEventArgs e)
@@ -151,13 +154,13 @@ void OnPositionChanged(object sender, PositionChangedEventArgs e)
 }
 ```
 
-In diesem Beispiel macht der `OnCurrentItemChanged` Ereignishandler die vorherige und die aktuelle Position verfügbar:
+In diesem Beispiel macht der `OnCurrentItemChanged` Ereignishandler die vorherigen und aktuellen Positionen verfügbar:
 
 [![Screenshot einer carouselview mit früheren und aktuellen Positionen unter IOS und Android](interaction-images/current-position-events.png "Carouselview mit aktuellen und vorherigen Positionen")](interaction-images/current-position-events-large.png#lightbox "Carouselview mit aktuellen und vorherigen Positionen")
 
 ### <a name="command"></a>Get-Help
 
-Das folgende XAML-Beispiel zeigt eine [`CarouselView`](xref:Xamarin.Forms.CarouselView) , die einen Befehl verwendet, um auf die `Position` Eigenschaften Änderung zu reagieren:
+Das folgende XAML-Beispiel zeigt einen [`CarouselView`](xref:Xamarin.Forms.CarouselView) , der einen Befehl verwendet, um auf die Eigenschaft zu reagieren, die `Position` geändert wird:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -176,7 +179,7 @@ carouselView.SetBinding(CarouselView.PositionChangedCommandProperty, "PositionCh
 carouselView.SetBinding(CarouselView.PositionChangedCommandParameterProperty, new Binding("Position", source: RelativeBindingSource.Self));
 ```
 
-In diesem Beispiel wird die `PositionChangedCommand`-Eigenschaft an die `PositionChangedCommand`-Eigenschaft gebunden, wobei der `Position`-Eigenschafts Wert als Argument übergeben wird. Der `PositionChangedCommand` kann dann wie erforderlich auf die ändernde Position reagieren:
+In diesem Beispiel wird die- `PositionChangedCommand` Eigenschaft an die- `PositionChangedCommand` Eigenschaft gebunden, wobei der `Position` Eigenschafts Wert als Argument übergeben wird. Der `PositionChangedCommand` kann dann wie erforderlich auf die ändernde Position reagieren:
 
 ```csharp
 public ICommand PositionChangedCommand => new Command<int>((position) =>
@@ -186,11 +189,11 @@ public ICommand PositionChangedCommand => new Command<int>((position) =>
 });
 ```
 
-In diesem Beispiel aktualisiert der `PositionChangedCommand` Objekte, die die vorherige und die aktuelle Position speichern.
+In diesem Beispiel aktualisiert die `PositionChangedCommand` Objekte, die die vorherige und die aktuelle Position speichern.
 
 ## <a name="preset-the-current-item"></a>Aktuelles Element voreingestellt
 
-Das aktuelle Element in einem [`CarouselView`](xref:Xamarin.Forms.CarouselView) kann Programm gesteuert festgelegt werden, indem die `CurrentItem`-Eigenschaft auf das Element festgelegt wird. Das folgende XAML-Beispiel zeigt eine `CarouselView`, die das aktuelle Element vorab auswählt:
+Das aktuelle Element in einem [`CarouselView`](xref:Xamarin.Forms.CarouselView) kann Programm gesteuert festgelegt werden, indem die- `CurrentItem` Eigenschaft auf das-Element festgelegt wird. Das folgende XAML-Beispiel zeigt einen `CarouselView` , der das aktuelle Element vorab auswählt:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -208,9 +211,9 @@ carouselView.SetBinding(CarouselView.CurrentItemProperty, "CurrentItem");
 ```
 
 > [!NOTE]
-> Die `CurrentItem`-Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay`.
+> Die- `CurrentItem` Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` .
 
-Die `CarouselView.CurrentItem`-Eigenschaften Daten werden an die `CurrentItem`-Eigenschaft des verbundenen Ansichts Modells gebunden, das vom Typ `Monkey`ist. Standardmäßig wird eine `TwoWay` Bindung verwendet. wenn der Benutzer das aktuelle Element ändert, wird der Wert der `CurrentItem`-Eigenschaft standardmäßig auf das aktuelle `Monkey`-Objekt festgelegt. Die `CurrentItem`-Eigenschaft wird in der `MonkeysViewModel`-Klasse definiert:
+Die `CarouselView.CurrentItem` Eigenschaften Daten werden an die- `CurrentItem` Eigenschaft des verbundenen Ansichts Modells gebunden, das vom Typ ist `Monkey` . Standardmäßig wird eine `TwoWay` Bindung verwendet, damit der Wert der- `CurrentItem` Eigenschaft auf das aktuelle-Objekt festgelegt wird, wenn der Benutzer das aktuelle Element ändert `Monkey` . Die- `CurrentItem` Eigenschaft ist in der- `MonkeysViewModel` Klasse definiert:
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -229,13 +232,13 @@ public class MonkeysViewModel : INotifyPropertyChanged
 }
 ```
 
-In diesem Beispiel wird die `CurrentItem`-Eigenschaft auf das vierte Element in der `Monkeys` Auflistung festgelegt:
+In diesem Beispiel wird die- `CurrentItem` Eigenschaft auf das vierte Element in der-Auflistung festgelegt `Monkeys` :
 
 [![Screenshot einer carouselview mit voreingestellten Element unter IOS und Android](interaction-images/preset-item.png "Carouselview mit voreingestellten Element")](interaction-images/preset-item-large.png#lightbox "Carouselview mit voreingestellten Element")
 
 ## <a name="preset-the-position"></a>Position der Voreinstellung
 
-Das angezeigte Element [`CarouselView`](xref:Xamarin.Forms.CarouselView) kann Programm gesteuert festgelegt werden, indem die `Position`-Eigenschaft auf den Index des Elements in der zugrunde liegenden Auflistung festgelegt wird. Das folgende XAML-Beispiel zeigt eine `CarouselView`, mit der das angezeigte Element festgelegt wird:
+Das angezeigte Element [`CarouselView`](xref:Xamarin.Forms.CarouselView) kann Programm gesteuert festgelegt werden, indem die- `Position` Eigenschaft auf den Index des Elements in der zugrunde liegenden Auflistung festgelegt wird. Das folgende XAML-Beispiel zeigt `CarouselView` , wie das angezeigte Element festgelegt wird:
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -253,9 +256,9 @@ carouselView.SetBinding(CarouselView.PositionProperty, "Position");
 ```
 
 > [!NOTE]
-> Die `Position`-Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay`.
+> Die- `Position` Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` .
 
-Die `CarouselView.Position`-Eigenschaften Daten werden an die `Position`-Eigenschaft des verbundenen Ansichts Modells gebunden, das vom Typ `int`ist. Standardmäßig wird eine `TwoWay` Bindung verwendet, sodass der Wert der `Position`-Eigenschaft auf den Index des angezeigten Elements festgelegt wird, wenn der Benutzer einen Bildlauf durch die [`CarouselView`](xref:Xamarin.Forms.CarouselView)durchführt. Die `Position`-Eigenschaft wird in der `MonkeysViewModel`-Klasse definiert:
+Die `CarouselView.Position` Eigenschaften Daten werden an die- `Position` Eigenschaft des verbundenen Ansichts Modells gebunden, das vom Typ ist `int` . Standardmäßig wird eine `TwoWay` Bindung verwendet, damit der [`CarouselView`](xref:Xamarin.Forms.CarouselView) Wert der `Position` Eigenschaft auf den Index des angezeigten Elements festgelegt wird, wenn der Benutzer durch den scrollt. Die- `Position` Eigenschaft ist in der- `MonkeysViewModel` Klasse definiert:
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -272,22 +275,22 @@ public class MonkeysViewModel : INotifyPropertyChanged
 }
 ```
 
-In diesem Beispiel wird die `Position`-Eigenschaft auf das vierte Element in der `Monkeys` Auflistung festgelegt:
+In diesem Beispiel wird die- `Position` Eigenschaft auf das vierte Element in der-Auflistung festgelegt `Monkeys` :
 
 [![Screenshot einer carouselview mit vordefinierter Position unter IOS und Android](interaction-images/preset-position.png "Carouselview mit vordefinierter Position")](interaction-images/preset-position-large.png#lightbox "Carouselview mit vordefinierter Position")
 
 ## <a name="define-visual-states"></a>Definieren von visuellen Zuständen
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) definiert vier visuelle Zustände:
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)definiert vier visuelle Zustände:
 
-- `CurrentItem` das den visuellen Zustand für das aktuell angezeigte Element darstellt.
-- `PreviousItem` das den visuellen Zustand für das zuvor angezeigte Element darstellt.
-- `NextItem` das den visuellen Zustand für das nächste Element darstellt.
-- `DefaultItem` stellt den visuellen Zustand für die restlichen Elemente dar.
+- `CurrentItem`stellt den visuellen Zustand für das aktuell angezeigte Element dar.
+- `PreviousItem`stellt den visuellen Zustand für das zuvor angezeigte Element dar.
+- `NextItem`stellt den visuellen Zustand für das nächste Element dar.
+- `DefaultItem`stellt den visuellen Zustand für die restlichen Elemente dar.
 
-Diese visuellen Zustände können verwendet werden, um visuelle Änderungen an den Elementen zu initiieren, die vom [`CarouselView`](xref:Xamarin.Forms.CarouselView)angezeigt werden.
+Diese visuellen Zustände können verwendet werden, um visuelle Änderungen an den Elementen zu initiieren, die von angezeigt werden [`CarouselView`](xref:Xamarin.Forms.CarouselView) .
 
-Im folgenden XAML-Beispiel wird gezeigt, wie die visuellen Zustände `CurrentItem`, `PreviousItem`, `NextItem`und `DefaultItem` definiert werden:
+Das folgende XAML-Beispiel zeigt, wie die `CurrentItem` `PreviousItem` visuellen Zustände,, und definiert werden `NextItem` `DefaultItem` :
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -334,30 +337,30 @@ Im folgenden XAML-Beispiel wird gezeigt, wie die visuellen Zustände `CurrentIte
 </CarouselView>
 ```
 
-In diesem Beispiel gibt der `CurrentItem` visuellen Zustand an, dass die [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) -Eigenschaft des aktuellen Elements, das vom [`CarouselView`](xref:Xamarin.Forms.CarouselView) angezeigt wird, vom Standardwert 1 in 1,1 geändert wird. Die visuellen Zustände `PreviousItem` und `NextItem` geben an, dass die Elemente, die das aktuelle Element umgeben, mit dem [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) Wert 0,5 angezeigt werden. Der `DefaultItem` visuelle Zustand gibt an, dass die restlichen Elemente, die vom `CarouselView` angezeigt werden, mit dem `Opacity` Wert 0,25 angezeigt werden.
+In diesem Beispiel gibt der `CurrentItem` visuelle Zustand an, dass die-Eigenschaft des aktuellen Elements, das von angezeigt [`CarouselView`](xref:Xamarin.Forms.CarouselView) wird, [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) von seinem Standardwert von 1 in 1,1 geändert wird. Die `PreviousItem` `NextItem` visuellen Zustände und geben an, dass die Elemente, die das aktuelle Element umgeben, mit dem [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) Wert 0,5 angezeigt werden. Der `DefaultItem` visuelle Zustand gibt an, dass die restlichen Elemente, die von angezeigt werden, `CarouselView` mit dem `Opacity` Wert 0,25 angezeigt werden.
 
 > [!NOTE]
-> Alternativ können die visuellen Zustände in einem [`Style`](xref:Xamarin.Forms.Style) definiert werden, das einen [`TargetType`](xref:Xamarin.Forms.Style.TargetType) -Eigenschafts Wert hat, der der Typ des Stamm Elements des [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)ist, das als `ItemTemplate`-Eigenschafts Wert festgelegt wird.
+> Alternativ können die visuellen Zustände in einer definiert werden [`Style`](xref:Xamarin.Forms.Style) , die über einen [`TargetType`](xref:Xamarin.Forms.Style.TargetType) -Eigenschafts Wert verfügt, der der Typ des Stamm Elements von [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ist, das als `ItemTemplate` Eigenschafts Wert festgelegt wird.
 
-Die folgenden Screenshots zeigen die visuellen Zustände `CurrentItem`, `PreviousItem`und `NextItem`:
+Die folgenden Screenshots zeigen die `CurrentItem` `PreviousItem` `NextItem` visuellen Zustände, und:
 
 [![Screenshot einer carouselview mit visuellen Zuständen unter IOS und Android](interaction-images/visual-states.png "Visuelle Zustände von carouselview")](interaction-images/visual-states-large.png#lightbox "Visuelle Zustände von carouselview")
 
-Weitere Informationen zu visuellen Zuständen finden Sie unter [xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+Weitere Informationen zu visuellen Zuständen finden Sie unter [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="clear-the-current-item"></a>Aktuelles Element löschen
 
-Die `CurrentItem`-Eigenschaft kann gelöscht werden, indem Sie Sie oder das Objekt, an das Sie gebunden wird, an `null`festlegen.
+Die- `CurrentItem` Eigenschaft kann gelöscht werden, indem Sie oder das Objekt, an das Sie gebunden wird, auf festgelegt wird `null` .
 
 ## <a name="disable-bounce"></a>Springen deaktivieren
 
-Standardmäßig springt [`CarouselView`](xref:Xamarin.Forms.CarouselView) Elemente an Inhalts Grenzen. Dies kann deaktiviert werden, indem Sie die `IsBounceEnabled`-Eigenschaft auf `false`festlegen.
+Standardmäßig [`CarouselView`](xref:Xamarin.Forms.CarouselView) springt Elemente an Inhalts Grenzen. Dies kann deaktiviert werden, indem die-Eigenschaft auf festgelegt wird `IsBounceEnabled` `false` .
 
 ## <a name="disable-swipe-interaction"></a>Deaktivieren der wischen-Interaktion
 
-Standardmäßig ermöglicht [`CarouselView`](xref:Xamarin.Forms.CarouselView) Benutzern das Navigieren durch Elemente mithilfe einer Schwenkbewegung. Diese wischen-Interaktion kann deaktiviert werden, indem Sie die `IsSwipeEnabled`-Eigenschaft auf `false`festlegen.
+Standardmäßig [`CarouselView`](xref:Xamarin.Forms.CarouselView) ermöglicht es Benutzern, mithilfe einer Schwenkbewegung durch Elemente zu navigieren. Diese Schwenk Interaktion kann deaktiviert werden, indem die- `IsSwipeEnabled` Eigenschaft auf festgelegt wird `false` .
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Carouselview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.FormsVisual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

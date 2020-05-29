@@ -1,24 +1,27 @@
 ---
-title: Visualelement-Ablage Schatten auf IOS
-description: Plattformeigenschaften können Sie Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar ist ohne die Implementierung der benutzerdefinierten Renderern und Effekte. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die einen Schlag Schatten für ein visualelement ermöglicht.
-ms.prod: xamarin
-ms.assetid: 2147FD66-058E-4BE5-840A-369842B26EC4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 9d58576e67e6e8129b15f4935986c494bb093538
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7410386e10f605fdeed452fe37755c1e48e6b9b9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649559"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136993"
 ---
 # <a name="visualelement-drop-shadows-on-ios"></a>Visualelement-Ablage Schatten auf IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Diese IOS-plattformspezifische dient zum Aktivieren eines Schlag Schattens [`VisualElement`](xref:Xamarin.Forms.VisualElement)für einen. Er wird genutzt, in XAML durch Festlegen der [ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) angefügten Eigenschaft, um `true`, sowie einige weitere optionale angefügten Eigenschaften zum Rendern des Schlagschattens steuern:
+Diese IOS-plattformspezifische dient zum Aktivieren eines Schlag Schattens für einen [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Sie wird in XAML verwendet, indem die [`VisualElement.IsShadowEnabled`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) angefügte-Eigenschaft auf festgelegt `true` wird, sowie eine Reihe zusätzlicher optionaler angefügter Eigenschaften, mit denen der Ablage Schatten gesteuert wird:
 
 ```xaml
 <ContentPage ...
@@ -43,7 +46,7 @@ Diese IOS-plattformspezifische dient zum Aktivieren eines Schlag Schattens [`Vis
 </ContentPage>
 ```
 
-Alternativ können sie aus C# mithilfe der fluent-API verwendet werden:
+Alternativ kann Sie mithilfe der flüssigen API von c# genutzt werden:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -59,22 +62,22 @@ boxView.On<iOS>()
        .SetShadowRadius(12);
 ```
 
-Die `VisualElement.On<iOS>` Methode gibt an, dass diese plattformspezifischen nur unter iOS ausgeführt wird. Die [ `VisualElement.SetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Methode in der [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) -Namespace wird verwendet, um Kontrolle, ob ein Schlagschatten aktiviert ist, auf die `VisualElement`. Darüber hinaus können die folgenden Methoden aufgerufen werden, zum Rendern des Schlagschattens steuern:
+Die- `VisualElement.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter IOS ausgeführt wird. [ `VisualElement.SetIsShadowEnabled` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. * tisshadowenabled ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement}, System. Boolean))-Methode im- [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) Namespace wird verwendet, um zu steuern, ob ein Schlag Schatten für aktiviert ist `VisualElement` . Außerdem können die folgenden Methoden aufgerufen werden, um den Schlag Schatten zu steuern:
 
-- [`SetShadowColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Color)) – Legt die Farbe des Schlagschattens fest. Die Standardfarbe ist [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
-- [`SetShadowOffset`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Size)) – Legt den Offset des Schlagschattens fest. Der Offset ändert die Richtung der Schattenkopie umgewandelt wird und angegeben wird, als eine [ `Size` ](xref:Xamarin.Forms.Size) Wert. Die `Size` Strukturwerte werden in geräteunabhängigen Einheiten ausgedrückt, mit der erste Wert wird die Entfernung nach links (negativer Wert) oder rechts (positiver Wert) und der zweite Wert wird der Abstand (negativer Wert) oder unterhalb (positiver Wert) . Der Standardwert dieser Eigenschaft ist (0,0, 0,0), was dazu führt, wird der Schatten auf jeder Seite um Umwandeln der `VisualElement`.
-- [`SetShadowOpacity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – Legt die Durchlässigkeit des Schlagschattens, mit dem Wert wird im Bereich von 0,0 (transparent) auf 1,0 (deckend). Der Standardwert für die Deckkraft ist 0,5.
-- [`SetShadowRadius`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – Festlegen des Weichzeichnerradius zum Rendern des Schlagschattens verwendet. Der Radius-Standardwert ist 10,0.
+- [ `SetShadowColor` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. setShadowColor ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement}, Xamarin.Forms . Color)) – legt die Farbe des Schlag Schattens fest. Die Standardfarbe ist [`Color.Default`](xref:Xamarin.Forms.Color.Default*) .
+- [ `SetShadowOffset` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. setshadowoffset ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement}, Xamarin.Forms . Größe)) – legt den Offset des Schlag Schattens fest. Der Offset ändert die Richtung, in die der Schatten umgewandelt wird, und wird als [`Size`](xref:Xamarin.Forms.Size) Wert angegeben. Die `Size` Struktur Werte werden in geräteunabhängigen Einheiten ausgedrückt, wobei der erste Wert die Distanz nach links (negativer Wert) oder rechts (positiver Wert) und der zweite Wert die Distanz oberhalb (negativer Wert) oder niedriger (positiver Wert) ist. Der Standardwert dieser Eigenschaft ist (0,0, 0,0), was dazu führt, dass der Schatten um jede Seite von umbrochen wird `VisualElement` .
+- [ `SetShadowOpacity` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. setshadowopacity ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement}, System. Double)) – legt die Deckkraft des Schlag Schattens fest. der Wert liegt im Bereich von 0,0 (transparent) bis 1,0 (nicht transparent). Der Standardwert für die Deckkraft ist 0,5.
+- [ `SetShadowRadius` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. setshadowradius ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement}, System. Double)) – legt den weichzeichenradius fest, der zum Rendering des Schlag Schattens verwendet wird. Der Standard RADIUS-Wert ist 10,0.
 
 > [!NOTE]
-> Der Status der einen Schlagschatten abgefragt werden kann, durch den Aufruf der [ `GetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOffset` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOpacity` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), und [ `GetShadowRadius` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) Methoden.
+> Der Zustand eines Ablage Schattens kann durch Aufrufen von [ `GetIsShadowEnabled` ] (Xref:) abgefragt werden Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. getisshadowenabled ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement})), [ `GetShadowColor` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. getShadowColor ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement})), [ `GetShadowOffset` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. getshadowoffset ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement})), [ `GetShadowOpacity` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. getshadowopacity ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement})) und [ `GetShadowRadius` ] (Xref: Xamarin.Forms . Platformconfiguration. iosspecific. visualelement. getshadowradius ( Xamarin.Forms . Iplatformelementconfiguration { Xamarin.Forms . Platformconfiguration. IOS, Xamarin.Forms . Visualelement}))-Methoden.
 
-Das Ergebnis ist, die ein Schlagschatten aktiviert werden kann, auf eine [ `VisualElement` ](xref:Xamarin.Forms.VisualElement):
+Das Ergebnis ist, dass ein Ablage Schatten für eine aktiviert werden kann [`VisualElement`](xref:Xamarin.Forms.VisualElement) :
 
-![](drop-shadow-images/drop-shadow.png "Schlagschatten aktiviert")
+![](drop-shadow-images/drop-shadow.png "Drop shadow enabled")
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [PlatformSpecifics (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [Platformbesonderheiten (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Erstellen von Plattformeigenschaften](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iosspecific-API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

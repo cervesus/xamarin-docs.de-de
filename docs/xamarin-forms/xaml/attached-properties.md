@@ -1,45 +1,48 @@
 ---
-title: Angefügte Eigenschaften
-description: Dieser Artikel bietet eine Einführung in angefügte Eigenschaften und veranschaulicht das Erstellen und deren Nutzung.
-ms.prod: xamarin
-ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/02/2016
-ms.openlocfilehash: 78dd2d3a63cd0e2b6ab1e6876dd82f49f5580f0b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489972"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138189"
 ---
 # <a name="attached-properties"></a>Angefügte Eigenschaften
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 
-Angefügte Eigenschaften aktivieren, ein Objekt zuweisen ein Werts für eine Eigenschaft, die ihre eigene Klasse definieren, nicht an. Z. B. angefügte untergeordnete Elemente zu verwenden, können Eigenschaften, um darüber zu informieren jeweils übergeordneten Elements des wie diese werden in der Benutzeroberfläche angezeigt werden. Die [ `Grid` ](xref:Xamarin.Forms.Grid) Steuerelement ermöglicht es der Zeile und Spalte eines untergeordneten Elements durch Festlegen von angegeben, werden die `Grid.Row` und `Grid.Column` angefügte Eigenschaften. `Grid.Row` und `Grid.Column` angefügte Eigenschaften sind, da sie für Elemente festgelegt werden, die untergeordnete Elemente von einem `Grid`, anstatt auf die `Grid` selbst.
+Angefügte Eigenschaften ermöglichen einem Objekt das Zuweisen eines Werts für eine Eigenschaft, die von der eigenen Klasse nicht definiert wird. Beispielsweise können untergeordnete Elemente angefügte Eigenschaften verwenden, um das übergeordnete Element darüber zu informieren, wie Sie in der Benutzeroberfläche angezeigt werden sollen. Das [`Grid`](xref:Xamarin.Forms.Grid) -Steuerelement ermöglicht das Angeben der Zeile und der Spalte eines untergeordneten Elements durch Festlegen der `Grid.Row` `Grid.Column` angefügten Eigenschaften und. `Grid.Row`und `Grid.Column` sind angefügte Eigenschaften, da Sie auf Elemente festgelegt werden, die untergeordnete Elemente eines sind `Grid` , und nicht auf dem `Grid` selbst.
 
-Bindbare Eigenschaften sollten als angefügte Eigenschaften in den folgenden Szenarien implementiert werden:
+Bindbare Eigenschaften sollten in den folgenden Szenarien als angefügte Eigenschaften implementiert werden:
 
-- Bei einen Einstellung Mechanismus verfügbar für Klassen aufweisen müssen Klasse definieren.
-- Wenn die Klasse einen Dienst darstellt, der leicht in andere Klassen integriert werden muss.
+- Wenn ein Eigenschafts Einstellungs Mechanismus für andere Klassen als die definierende Klasse verfügbar sein muss.
+- Wenn die-Klasse einen Dienst darstellt, der problemlos in andere Klassen integriert werden muss.
 
-Weitere Informationen über bindbare Eigenschaften finden Sie unter [bindbare Eigenschaften](~/xamarin-forms/xaml/bindable-properties.md).
+Weitere Informationen zu bindbaren Eigenschaften finden Sie unter [bindbare Eigenschaften](~/xamarin-forms/xaml/bindable-properties.md).
 
 ## <a name="create-an-attached-property"></a>Erstellen einer angefügten Eigenschaft
 
-Der Prozess zum Erstellen einer angefügten Eigenschaft lautet wie folgt aus:
+Der Prozess zum Erstellen einer angefügten Eigenschaft lautet wie folgt:
 
-1. Erstellen Sie eine [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) Instanz mit einem der [ `CreateAttached` ](xref:Xamarin.Forms.BindableProperty.CreateAttached*) Überladungen der Methode.
-1. Geben Sie `static` `Get` *PropertyName* und `Set` *PropertyName* Methoden als Accessoren für die angefügte Eigenschaft.
+1. Erstellen Sie eine- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanz mit einer der- [`CreateAttached`](xref:Xamarin.Forms.BindableProperty.CreateAttached*) Methoden Überladungen.
+1. Stellen Sie `static` `Get` die Methoden *propertyName* und `Set` *propertyName* als Accessoren für die angefügte-Eigenschaft bereit.
 
 ### <a name="create-a-property"></a>Erstellen einer Eigenschaft
 
-Wenn Sie eine angefügte Eigenschaft für die Verwendung auf anderen Typen zu erstellen, die Klasse, in dem die Eigenschaft wird erstellt, keine abgeleitet [ `BindableObject` ](xref:Xamarin.Forms.BindableObject). Allerdings die *Ziel* Eigenschaft für Accessoren sein sollte, oder abgeleitet, [ `BindableObject` ](xref:Xamarin.Forms.BindableObject).
+Beim Erstellen einer angefügten Eigenschaft für die Verwendung in anderen Typen muss die Klasse, in der die-Eigenschaft erstellt wird, nicht von abgeleitet werden [`BindableObject`](xref:Xamarin.Forms.BindableObject) . Die *Ziel* Eigenschaft für Accessoren sollte jedoch von oder abgeleitet werden [`BindableObject`](xref:Xamarin.Forms.BindableObject) .
 
-Eine angefügte Eigenschaft erstellt werden, indem Sie deklarieren eine `public static readonly` Eigenschaft vom Typ [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty). Die bindbare Eigenschaft muss festgelegt werden, auf den zurückgegebenen Wert eines der [ `BindableProperty.CreateAttached` ](xref:Xamarin.Forms.BindableProperty.CreateAttached(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) Überladungen der Methode. Die Deklaration sollte innerhalb des Texts von der besitzenden Klasse, jedoch außerhalb von Memberdefinitionen sein.
+Eine angefügte Eigenschaft kann erstellt werden, indem eine `public static readonly` Eigenschaft vom Typ deklariert wird [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Die bindbare Eigenschaft sollte auf den zurückgegebenen Wert von einem der [ `BindableProperty.CreateAttached` ] (Xref:) festgelegt werden Xamarin.Forms . Bindableproperty. kreateattached (System. String, System. Type, System. Type, System. Object, Xamarin.Forms . BindingMode, Xamarin.Forms . Bindableproperty. validatevaluedelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangeddelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangingdelegat, Xamarin.Forms . Bindableproperty. coercevaluedelegat, Xamarin.Forms . Bindableproperty. kreatedefaultvaluedelegat)-Methoden Überladungen. Die Deklaration sollte innerhalb des Texts der besitzenden Klasse, aber außerhalb von Element Definitionen liegen.
 
 Der folgende Code zeigt ein Beispiel für eine angefügte Eigenschaft:
 
@@ -48,31 +51,31 @@ public static readonly BindableProperty HasShadowProperty =
   BindableProperty.CreateAttached ("HasShadow", typeof(bool), typeof(ShadowEffect), false);
 ```
 
-Dies erstellt eine angefügte Eigenschaft mit dem Namen `HasShadow`, des Typs `bool`. Die Eigenschaft ist im Besitz der `ShadowEffect` Klasse, und hat den Standardwert des `false`. Die Namenskonvention für angefügte Eigenschaften ist, dass der Bezeichner der angefügten Eigenschaft den Namen der Eigenschaft im angegebenen entsprechen, muss die `CreateAttached` Methode mit "Property" angefügt. Im obigen Beispiel ist der Bezeichner der angefügten Eigenschaft aus diesem Grund `HasShadowProperty`.
+Dadurch wird eine angefügte Eigenschaft `HasShadow` mit dem Namen des Typs erstellt `bool` . Die-Eigenschaft ist im Besitz der `ShadowEffect` -Klasse, und hat den Standardwert `false` . Die Benennungs Konvention für angefügte Eigenschaften besteht darin, dass der Bezeichner der angefügten Eigenschaft mit dem in der Methode angegebenen Eigenschaftsnamen übereinstimmen muss `CreateAttached` , wobei "Property" angehängt wird. Daher ist im obigen Beispiel der Bezeichner der angefügten Eigenschaft `HasShadowProperty` .
 
 Weitere Informationen zum Erstellen von bindbaren Eigenschaften, einschließlich Parametern, die während der Erstellung angegeben werden können, finden Sie unter [Erstellen einer bindbare-Eigenschaft](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property).
 
 ### <a name="create-accessors"></a>Erstellen von Accessoren
 
-Statische `Get` *PropertyName* und `Set` *PropertyName* Methoden als Accessoren für die angefügte Eigenschaft erforderlich sind, andernfalls ist das Eigenschaftensystem kann nicht verwendet das angefügte Eigenschaft. Die `Get` *PropertyName* Accessor sollte die folgende Signatur entsprechen:
+Statische `Get` *propertyName* - `Set` Methode und *propertyName* -Methode sind als Accessoren für die angefügte-Eigenschaft erforderlich. andernfalls kann das Eigenschaften System die angefügte-Eigenschaft nicht verwenden. Der `Get` *propertyName* -Accessor sollte der folgenden Signatur entsprechen:
 
 ```csharp
 public static valueType GetPropertyName(BindableObject target)
 ```
 
-Die `Get` *PropertyName* Accessor sollte der enthaltene Wert zurückgeben, in der entsprechenden `BindableProperty` Feld für die angefügte Eigenschaft. Dies kann erreicht werden, durch den Aufruf der [ `GetValue` ](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) Methode, übergebe die ID für die bindbare Eigenschaft auf dem den Wert abgerufen, und klicken Sie dann umwandeln den resultierenden Wert an den erforderlichen Typ.
+Der `Get` *propertyName* -Accessor sollte den Wert zurückgeben, der im entsprechenden `BindableProperty` Feld für die angefügte Eigenschaft enthalten ist. Dies kann durch Aufrufen von [ `GetValue` ] (Xref:) erreicht werden Xamarin.Forms . Bindableobject. GetValue ( Xamarin.Forms . Bindableproperty))-Methode, wobei der bindbare Eigenschafts Bezeichner übergeben wird, für den der Wert ausgegeben werden soll, und der resultierende Wert dann in den erforderlichen Typ umgewandelt wird.
 
-Die `Set` *PropertyName* Accessor sollte die folgende Signatur entsprechen:
+Der `Set` *propertyName* -Accessor sollte der folgenden Signatur entsprechen:
 
 ```csharp
 public static void SetPropertyName(BindableObject target, valueType value)
 ```
 
-Die `Set` *PropertyName* Accessor sollte legen Sie den Wert des entsprechenden `BindableProperty` Feld für die angefügte Eigenschaft. Dies kann erreicht werden, durch den Aufruf der [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) Methode und übergebe die ID für die bindbare Eigenschaft auf dem der Wert und den festzulegenden Wert festgelegt.
+Der `Set` *propertyName* -Accessor sollte den Wert des entsprechenden `BindableProperty` Felds für die angefügte Eigenschaft festlegen. Dies kann durch Aufrufen von [ `SetValue` ] (Xref:) erreicht werden Xamarin.Forms . Bindableobject. SetValue ( Xamarin.Forms . Bindableproperty, System. Object))-Methode, wobei der bindbare Eigenschafts Bezeichner übergeben wird, für den der Wert festgelegt werden soll, und der festzulegende Wert.
 
-Für beide Accessoren die *Ziel* Objekt sein sollte, oder abgeleitet, [ `BindableObject` ](xref:Xamarin.Forms.BindableObject).
+Bei beiden Accessoren muss das *Ziel* Objekt von oder abgeleitet sein [`BindableObject`](xref:Xamarin.Forms.BindableObject) .
 
-Im folgenden Codebeispiel wird veranschaulicht, Accessoren für die `HasShadow` angefügte Eigenschaft:
+Das folgende Codebeispiel zeigt Accessoren für die `HasShadow` angefügte-Eigenschaft:
 
 ```csharp
 public static bool GetHasShadow (BindableObject view)
@@ -88,9 +91,9 @@ public static void SetHasShadow (BindableObject view, bool value)
 
 ### <a name="consume-an-attached-property"></a>Verwenden einer angefügten Eigenschaft
 
-Sobald eine angefügte Eigenschaft erstellt wurde, können sie XAML oder Code genutzt werden. In XAML erfolgt dies durch einen Namespace mit einem Präfix, mit der Namespacedeklaration, der angibt, der Namespacename des Common Language Runtime (CLR) und optional einen Assemblynamen deklarieren. Weitere Informationen finden Sie unter [XAML-Namespaces](~/xamarin-forms/xaml/namespaces.md).
+Nachdem eine angefügte Eigenschaft erstellt wurde, kann Sie von XAML oder Code verwendet werden. In XAML wird dies erreicht, indem ein Namespace mit einem Präfix deklariert wird, wobei die Namespace Deklaration den CLR-Namespace Namen (Common Language Runtime) und optional einen Assemblynamen angibt. Weitere Informationen finden Sie unter [XAML-Namespaces](~/xamarin-forms/xaml/namespaces.md).
 
-Im folgenden Codebeispiel wird veranschaulicht, einen XAML-Namespace für einen benutzerdefinierten Typ mit einer angefügten Eigenschaft, die in der gleichen Assembly wie der Anwendungscode definiert ist, die auf den benutzerdefinierten Typ verweisen:
+Das folgende Codebeispiel veranschaulicht einen XAML-Namespace für einen benutzerdefinierten Typ, der eine angefügte-Eigenschaft enthält, die in derselben Assembly wie der Anwendungscode definiert ist, der auf den benutzerdefinierten Typ verweist:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:EffectsDemo" ...>
@@ -98,7 +101,7 @@ Im folgenden Codebeispiel wird veranschaulicht, einen XAML-Namespace für einen 
 </ContentPage>
 ```
 
-Die Namespacedeklaration wird verwendet, wenn die angefügte Eigenschaft für ein bestimmtes Steuerelement festlegen, wie in den folgenden XAML-Codebeispiel veranschaulicht:
+Die Namespace Deklaration wird dann verwendet, wenn die angefügte-Eigenschaft für ein bestimmtes Steuerelement festgelegt wird, wie im folgenden XAML-Codebeispiel gezeigt:
 
 ```xaml
 <Label Text="Label Shadow Effect" local:ShadowEffect.HasShadow="true" />
@@ -113,7 +116,7 @@ ShadowEffect.SetHasShadow (label, true);
 
 ### <a name="consume-an-attached-property-with-a-style"></a>Verwenden einer angefügten Eigenschaft mit einem Stil
 
-Angefügte Eigenschaften können auch durch einen Stil auf ein Steuerelement hinzugefügt werden. Das folgende XAML-Code-Beispiel zeigt eine *explizite* Stil, der verwendet die `HasShadow` angefügten Eigenschaft, die auf angewendet werden kann [ `Label` ](xref:Xamarin.Forms.Label) Steuerelemente:
+Angefügte Eigenschaften können auch einem Steuerelement über einen Stil hinzugefügt werden. Das folgende XAML-Codebeispiel zeigt einen *expliziten* Stil, der die `HasShadow` angefügte-Eigenschaft verwendet, die auf Steuerelemente angewendet werden kann [`Label`](xref:Xamarin.Forms.Label) :
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -133,7 +136,7 @@ Weitere Informationen zu Formatvorlagen finden Sie unter [Styles (Formatvorlagen
 
 ## <a name="advanced-scenarios"></a>Erweiterte Szenarios
 
-Wenn Sie eine angefügte Eigenschaft zu erstellen, gibt es eine Reihe von optionalen Parametern, die festgelegt werden können, um erweiterte angefügte Eigenschaft Szenarien zu ermöglichen. Dies schließt das Erkennen von eigenschaftenänderungen, der Eigenschaftswerte Überprüfung und Koersion Eigenschaftswerte. Weitere Informationen finden Sie unter [Advanced Szenarios](~/xamarin-forms/xaml/bindable-properties.md#advanced-scenarios).
+Beim Erstellen einer angefügten Eigenschaft gibt es eine Reihe optionaler Parameter, die festgelegt werden können, um erweiterte angefügte Eigenschafts Szenarios zu aktivieren. Dies umfasst das Erkennen von Eigenschafts Änderungen, das Überprüfen von Eigenschafts Werten und das Umwandeln von Eigenschafts Werten. Weitere Informationen finden Sie unter [Advanced Szenarios](~/xamarin-forms/xaml/bindable-properties.md#advanced-scenarios).
 
 ## <a name="related-links"></a>Verwandte Links
 

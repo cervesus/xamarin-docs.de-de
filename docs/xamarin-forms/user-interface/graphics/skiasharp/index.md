@@ -1,69 +1,72 @@
 ---
-title: SkiaSharp-Grafiken in Xamarin.Forms
-description: SkiaSharp ist ein 2D-Grafiken für .NET und c# unterstützt, die von der Open-Source-Skia-Grafik-Engine, die häufig in Google-Produkten verwendet wird. Dieses Handbuch erklärt, wie SkiaSharp für 2D-Grafiken in Ihrer Xamarin.Forms-Anwendungen verwendet wird.
-ms.prod: xamarin
-ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/11/2017
-ms.openlocfilehash: 6b85cdcd92c4680ced9f75d7b8c5a69c9512d6c4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: Skiasharp-Grafiken inXamarin.Forms
+description: Skiasharp ist ein 2D-Grafiksystem für .net und c#, das von der Open Source-Skia-Grafik-Engine genutzt wird, die in Google-Produkten häufig verwendet wird. In diesem Handbuch wird erläutert, wie Sie skiasharp für 2D-Grafiken in Ihren Xamarin.Forms Anwendungen verwenden.
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 855bd0d357950b019487b3ea05e379915f54b9d4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656147"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127633"
 ---
-# <a name="skiasharp-graphics-in-xamarinforms"></a>SkiaSharp-Grafiken in Xamarin.Forms
+# <a name="skiasharp-graphics-in-xamarinforms"></a>Skiasharp-Grafiken inXamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Verwenden von SkiaSharp für 2D-Grafiken in Ihrer Xamarin.Forms-Anwendungen_
+_Verwenden von skiasharp für 2D-Grafiken in Ihren Xamarin.Forms Anwendungen_
 
-SkiaSharp ist ein 2D-Grafiken für .NET und c# unterstützt, die von der Open-Source-Skia-Grafik-Engine, die häufig in Google-Produkten verwendet wird. Sie können SkiaSharp in Ihrer Xamarin.Forms-Anwendungen verwenden, um 2D-Vektorgrafiken, Bitmaps und Text zu zeichnen. Finden Sie unter den [Direct2D-Zeichnung](~/graphics-games/skiasharp/index.md) Handbuch für weitere allgemeine Informationen über die SkiaSharp-Bibliothek und einige andere Lernprogramme.
+Skiasharp ist ein 2D-Grafiksystem für .net und c#, das von der Open Source-Skia-Grafik-Engine genutzt wird, die in Google-Produkten häufig verwendet wird. Sie können skiasharp in Ihren Xamarin.Forms Anwendungen verwenden, um 2D-Vektorgrafiken, Bitmaps und Text zu zeichnen. Weitere allgemeine Informationen zur skiasharp-Bibliothek und anderen Tutorials finden Sie im [2D-Zeichnungs](~/graphics-games/skiasharp/index.md) Handbuch.
 
-Dieses Handbuch wird davon ausgegangen, dass Sie mit Xamarin.Forms-Programmierung vertraut sind.
+In dieser Anleitung wird davon ausgegangen, dass Sie mit der Programmierung vertraut sind Xamarin.Forms .
 
 > [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-**Bin Skiasharp für xamarin. Forms**
+**Webinar: skiasharp fürXamarin.Forms**
 
-## <a name="skiasharp-preliminaries"></a>SkiaSharp-Vorbereitungen
+## <a name="skiasharp-preliminaries"></a>Skiasharp-Vorbereitungen
 
-SkiaSharp für Xamarin.Forms wird als ein NuGet-Paket verpackt. Nachdem Sie eine Xamarin.Forms-Projektmappe in Visual Studio oder Visual Studio für Mac erstellt haben, können Sie den NuGet-Paket-Manager für die Suche nach der **SkiaSharp.Views.Forms** -Paket, und fügen sie der Projektmappe hinzu. Wenn Sie überprüfen die **Verweise** Abschnitt jedes Projekts nach dem Hinzufügen von SkiaSharp, Sie sehen, dass verschiedene **SkiaSharp** Bibliotheken wurden auf die einzelnen Projekte in der Projektmappe hinzugefügt.
+Skiasharp für Xamarin.Forms ist als nuget-Paket verpackt. Nachdem Sie eine Projekt Mappe Xamarin.Forms in Visual Studio oder Visual Studio für Mac erstellt haben, können Sie den nuget-Paket-Manager verwenden, um nach dem **skiasharp. views. Forms** -Paket zu suchen und es der Projekt Mappe hinzuzufügen. Wenn Sie nach dem Hinzufügen von skiasharp den Abschnitt **Verweise** der einzelnen Projekte überprüfen, können Sie sehen, dass jedem Projekt in der Projekt Mappe verschiedene **skiasharp** -Bibliotheken hinzugefügt wurden.
 
-Wenn Ihre Xamarin.Forms-Anwendung iOS ausgerichtet ist, verwenden Sie Eigenschaftenseite des Projekts, um die mindestbereitstellungsziels auf iOS 8.0 zu ändern.
+Wenn Ihre Xamarin.Forms Anwendung auf IOS ausgerichtet ist, ändern Sie auf der Seite mit den Projekteigenschaften das minimal Bereitstellungs Ziel in ios 8,0.
 
-In jeder C#-Seite, die SkiaSharp verwendet werden sollen eine `using` -Direktive für den [ `SkiaSharp` ](xref:SkiaSharp) -Namespace, der umfasst alle der SkiaSharp-Klassen, Strukturen und Enumerationen, die Sie in Ihren Grafiken verwenden Programmierung. Sollten Sie auch eine `using` -Direktive für den [ `SkiaSharp.Views.Forms` ](xref:SkiaSharp.Views.Forms) Namespace-URI für die Klassen, die spezifisch für Xamarin.Forms. Dies ist eine viel kleinere Namespace, wobei die wichtigste Klasse [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView). Diese Klasse wird von der Xamarin.Forms `View` Klasse und Ihre SkiaSharp-Grafikausgabe hostet.
+Auf jeder c#-Seite, die skiasharp verwendet, sollten Sie eine- `using` Direktive für den- [`SkiaSharp`](xref:SkiaSharp) Namespace einschließen, die alle skiasharp-Klassen,-Strukturen und-Enumerationen umfasst, die Sie in der Grafik Programmierung verwenden. Außerdem benötigen Sie eine- `using` Direktive für den- [`SkiaSharp.Views.Forms`](xref:SkiaSharp.Views.Forms) Namespace für die Klassen, die für spezifisch sind Xamarin.Forms . Dabei handelt es sich um einen viel kleineren Namespace, bei dem es sich um die wichtigste Klasse handelt [`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView) . Diese Klasse wird von der Xamarin.Forms `View` -Klasse abgeleitet und hostet ihre skiasharp-Grafikausgabe.
 
 > [!IMPORTANT]
-> Die `SkiaSharp.Views.Forms` Namespace enthält auch eine `SKGLView` abgeleitete Klasse `View` , aber OpenGL für Rendern von Grafiken verwendet. Zum Zwecke der Einfachheit halber wird in der vorliegenden beschränkt selbst `SKCanvasView`, während mit `SKGLView` stattdessen ist sehr ähnlich.
+> Der- `SkiaSharp.Views.Forms` Namespace enthält auch eine- `SKGLView` Klasse, die von abgeleitet ist, `View` aber zum Rendern von Grafiken OpenGL verwendet. Aus Gründen der Einfachheit beschränkt sich dieses Handbuch auf `SKCanvasView` , aber die Verwendung von `SKGLView` stattdessen ist ziemlich ähnlich.
 
-## <a name="skiasharp-drawing-basicsbasicsindexmd"></a>[Grundlagen von SkiaSharp-Zeichnungen](basics/index.md)
+## <a name="skiasharp-drawing-basics"></a>[Grundlagen von SkiaSharp-Zeichnungen](basics/index.md)
 
-Einige der einfachste Grafiken Abbildungen, die Sie mit SkiaSharp zeichnen können sind Kreise, Ovale und Rechtecke. Bei der Anzeige dieser Zahlen, erfahren Sie mehr über SkiaSharp-Koordinaten, Größen und Farben. Die Anzeige von Text und Bitmaps ist komplexer, aber in diesen Artikeln werden auch diese Techniken eingeführt.
+Einige der einfachsten Grafik Abbildungen, die Sie mit skiasharp zeichnen können, sind Kreise, ovale und Rechtecke. Wenn Sie diese Abbildungen anzeigen, erfahren Sie mehr über skiasharp-Koordinaten,-Größen und-Farben. Die Anzeige von Text und Bitmaps ist komplexer. in diesen Artikeln werden diese Verfahren jedoch ebenfalls vorgestellt.
 
-## <a name="skiasharp-lines-and-pathspathsindexmd"></a>[SkiaSharp-Linien und -Pfade](paths/index.md)
+## <a name="skiasharp-lines-and-paths"></a>[SkiaSharp-Linien und -Pfade](paths/index.md)
 
-Ein Grafikpfad ist eine Reihe verbundener gerader Linien und Kurven. Pfade können gestrichelt, ausgefüllt wird, oder beides. In diesem Artikel umfasst viele Aspekte der einschließlich Linienenden und Joins sowie gestrichelte Linie zeichnen und gepunkteten Linien, aber beendet, ohne die Kurve Geometrien.
+Bei einem Grafik Pfad handelt es sich um eine Reihe verbundener gerader Linien und Kurven. Pfade können mit Strichen, gefüllt oder beides gezeichnet werden. Dieser Artikel umfasst viele Aspekte der Zeilen Zeichnung, einschließlich Strich enden und Joins sowie gestrichelte und gepunktete Linien, hält aber nur wenige Kurven Geometrien an.
 
-## <a name="skiasharp-transformstransformsindexmd"></a>[SkiaSharp-Transformationen](transforms/index.md)
+## <a name="skiasharp-transforms"></a>[SkiaSharp-Transformationen](transforms/index.md)
 
-Transformationen können Grafikobjekte, einheitlich übersetzt, skaliert, gedreht oder verzerrt werden. In diesem Artikel wird auch gezeigt, wie Sie eine standardmäßige 3 x 3-Transformationsmatrix für nicht affine Transformationen zu erstellen und Anwenden von Transformationen auf Pfade verwenden können.
+Mit Transformationen können Grafik Objekte einheitlich übersetzt, skaliert, gedreht oder verzerrt werden. In diesem Artikel wird auch erläutert, wie Sie eine standardmäßige 3-by-3-Transformationsmatrix zum Erstellen von nicht affinen Transformationen und zum Anwenden von Transformationen auf Pfade verwenden können.
 
-## <a name="skiasharp-curves-and-pathscurvesindexmd"></a>[SkiaSharp-Kurven und -Pfade](curves/index.md)
+## <a name="skiasharp-curves-and-paths"></a>[SkiaSharp-Kurven und -Pfade](curves/index.md)
 
-Die Auswertung der Pfade, die mit dem Hinzufügen der Kurven in einer Pfadobjekte und Ausnutzen von anderen leistungsstarken Pfad-Funktionen wird fortgesetzt. Sie sehen, wie Sie einen vollständigen Pfad in einer präzisen Textzeichenfolge angeben können, wie pfadeffekte verwendet und wie Sie die Pfad-Interna sprengen.
+Durch das Durchsuchen von Pfaden wird das Hinzufügen von Kurven zu Pfad Objekten und das ausnutzen anderer leistungsfähiger Pfad Funktionen fortgesetzt. Sie werden erfahren, wie Sie einen vollständigen Pfad in einer präzisen Text Zeichenfolge angeben, wie Sie Pfad Effekte verwenden können und wie Sie in Pfad internale untersuchen können.
 
-## <a name="skiasharp-bitmapsbitmapsindexmd"></a>[SkiaSharp-Bitmaps](bitmaps/index.md)
+## <a name="skiasharp-bitmaps"></a>[SkiaSharp-Bitmaps](bitmaps/index.md)
 
-Bitmaps sind rechteckige Arrays von Bits, die für die Pixel der ein Anzeigegerät. Diese Artikelreihe veranschaulicht laden, speichern, anzeigen, erstellen, gezeichnet werden soll, animieren und Zugriff auf die Bits von SkiaSharp-Bitmaps.
+Bitmaps sind rechteckige Arrays von Bits, die den Pixeln eines Anzeige Geräts entsprechen. Diese Artikel Reihe zeigt, wie die Bits von skiasharp-Bitmaps geladen, gespeichert, angezeigt, erstellt, gezeichnet, animiert und darauf zugegriffen wird.
 
-## <a name="skiasharp-effectseffectsindexmd"></a>[SkiaSharp-Auswirkungen](effects/index.md)
+## <a name="skiasharp-effects"></a>[Skiasharp-Effekte](effects/index.md)
 
-Effekte sind Eigenschaften, die die normale Anzeige von Grafiken, einschließlich der Gradienten für lineare und runde Ausführungen ändern, bitmap-Kacheln, blend-Modi, blur- und andere.
+Effekte sind Eigenschaften, die die normale Darstellung von Grafiken ändern, einschließlich linearer und Zirkel Gradienten, Bitmap-tiult, Blend-Modi, weich Zeichen und anderen.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [SkiaSharp mit Xamarin.Forms Webinar (Video)](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp mit Xamarin.Forms Webinar (Video)](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)

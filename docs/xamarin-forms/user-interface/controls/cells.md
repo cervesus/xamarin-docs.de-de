@@ -1,65 +1,68 @@
 ---
-title: Xamarin.Forms-Zellen
-description: Xamarin.Forms-Zellen können durch ListViews und TableViews hinzugefügt werden. Dieser Artikel beschreibt die Zellen in Xamarin.Forms enthalten.
-ms.prod: xamarin
-ms.assetid: 77DA0C89-35D6-4C09-A072-3ADE53FD56CF
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: e8f3d8af7aab2a7a73787021f114470726d74b72
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: Xamarin.FormsSchlä
+description: Xamarin.FormsZellen können ListViews und tableviews hinzugefügt werden. In diesem Artikel werden die in enthaltenen Zellen aufgeführt Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bd1a2398787fe39c0b4cbd08ccd5c5793775d5cf
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488087"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137279"
 ---
-# <a name="xamarinforms-cells"></a>Xamarin.Forms-Zellen
+# <a name="xamarinforms-cells"></a>Xamarin.FormsSchlä
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
-_Xamarin.Forms-Zellen können durch ListViews und TableViews hinzugefügt werden._
+_Xamarin. Forms-Zellen können ListViews und tableviews hinzugefügt werden._
 
-Ein *Zelle* ist eine spezielle Element für Elemente in einer Tabelle verwendet, und beschreibt, wie jedes Element in einer Liste gerendert werden soll. Die [ `Cell` ](xref:Xamarin.Forms.Cell) Klasse leitet sich von [ `Element` ](xref:Xamarin.Forms.Element), von dem [ `VisualElement` ](xref:Xamarin.Forms.Element) auch abgeleitet wird. Eine Zelle ist nicht selbst ein visuelles Element; Es wird stattdessen eine Vorlage für ein visuelles Element erstellen.
+Eine *Zelle* ist ein spezielles Element, das für Elemente in einer Tabelle verwendet wird, und beschreibt, wie jedes Element in einer Liste gerendert werden soll. Die- [`Cell`](xref:Xamarin.Forms.Cell) Klasse wird von abgeleitet [`Element`](xref:Xamarin.Forms.Element) , von der [`VisualElement`](xref:Xamarin.Forms.Element) ebenfalls abgeleitet ist. Eine Zelle ist nicht selbst ein visuelles Element. Es handelt sich vielmehr um eine Vorlage zum Erstellen eines visuellen Elements.
 
-`Cell` wird verwendet, ausschließlich mit [ `ListView` ](views.md#listview) und [ `TableView` ](views.md#tableview) Steuerelemente. Weitere Informationen zum verwenden und Anpassen von Zellen, finden Sie in der [ `ListView` ](~/xamarin-forms/user-interface/listview/index.md) und [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) Dokumentation.
+`Cell`wird ausschließlich mit [`ListView`](views.md#listview) -und-Steuer [`TableView`](views.md#tableview) Elementen verwendet. Informationen zum verwenden und Anpassen von Zellen finden Sie in der [`ListView`](~/xamarin-forms/user-interface/listview/index.md) Dokumentation zu und [`TableView`](~/xamarin-forms/user-interface/tableview.md) .
 
 ## <a name="cells"></a>Zellen
 
-Xamarin.Forms unterstützt die folgenden Zellentypen:
+Xamarin.Formsunterstützt die folgenden Zelltypen:
 
 <a name="textCell" />
 
-### <a name="textcell"></a>TextCell
+### <a name="textcell"></a>Textcell
 
 |     |     |
 | --- | --- |
-| Ein [ `TextCell` ](xref:Xamarin.Forms.TextCell) zeigt ein oder zwei Textzeichenfolgen. Legen Sie die [ `Text` ](xref:Xamarin.Forms.TextCell.Text) Eigenschaft und optional die [ `Detail` ](xref:Xamarin.Forms.TextCell.Detail) Eigenschaft, um diese Textzeichenfolgen.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.TextCell) / [Handbuch](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell) | [![Textcell-Beispiel](cells-images/TextCell.png "Textcell-Beispiel")](cells-images/TextCell-Large.png#lightbox "Textcell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TextCellDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TextCellDemoPage.xaml) |
+| Eine [`TextCell`](xref:Xamarin.Forms.TextCell) zeigt eine oder zwei Text Zeichenfolgen an. Legen [`Text`](xref:Xamarin.Forms.TextCell.Text) Sie die-Eigenschaft und optional die- [`Detail`](xref:Xamarin.Forms.TextCell.Detail) Eigenschaft auf diese Text Zeichenfolgen fest.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.TextCell)  /  [Leitfaden](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell) | [![Textcell-Beispiel](cells-images/TextCell.png "Textcell-Beispiel")](cells-images/TextCell-Large.png#lightbox "Textcell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TextCellDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TextCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="imagecell"></a>ImageCell
 
 |     |     |
 | --- | --- |
-| Die [ `ImageCell` ](xref:Xamarin.Forms.ImageCell) zeigt dieselbe Informationen wie [ `TextCell` ](#textCell) enthält eine Bitmap, die Sie eingerichtet, aber die [ `Source` ](xref:Xamarin.Forms.Image.Source) Eigenschaft.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ImageCell) / [Handbuch](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell-Beispiel](cells-images/ImageCell.png "ImageCell-Beispiel")](cells-images/ImageCell-Large.png#lightbox "ImageCell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
+| [`ImageCell`](xref:Xamarin.Forms.ImageCell)Zeigt die gleichen Informationen wie [`TextCell`](#textCell) an, enthält jedoch eine Bitmap, die Sie mit der- [`Source`](xref:Xamarin.Forms.Image.Source) Eigenschaft festlegen.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ImageCell)  /  [Leitfaden](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell-Beispiel](cells-images/ImageCell.png "ImageCell-Beispiel")](cells-images/ImageCell-Large.png#lightbox "ImageCell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
 |     |     |
 
-### <a name="switchcell"></a>SwitchCell
-
-|     |     |
-| --- | --- |
-| Der [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) enthält einen Textsatz mit der [`Text`](xref:Xamarin.Forms.SwitchCell.Text) -Eigenschaft und einen on/off-Switch, der anfänglich mit der booleschen [`On`](xref:Xamarin.Forms.SwitchCell.On) -Eigenschaft festgelegt wurde. Behandeln der [ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged) Ereignis, wann die `On` eigenschaftenänderungen.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.SwitchCell) / [Handbuch](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![Switchcell-Beispiel](cells-images/SwitchCell.png "Switchcell-Beispiel")](cells-images/SwitchCell-Large.png#lightbox "Switchcell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
-|     |     |
-
-### <a name="entrycell"></a>EntryCell
+### <a name="switchcell"></a>Switchcell
 
 |     |     |
 | --- | --- |
-| Die [ `EntryCell` ](xref:Xamarin.Forms.EntryCell) definiert eine [ `Label` ](xref:Xamarin.Forms.EntryCell.Label) , die die Zelle und bearbeitbaren Text in eine einzige Zeile identifiziert die [ `Text` ](xref:Xamarin.Forms.EntryCell.Text) Eigenschaft. Behandeln der [ `Completed` ](xref:Xamarin.Forms.EntryCell.Completed) Ereignis benachrichtigt werden, wenn der Benutzer die Texteingabe abgeschlossen hat.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.EntryCell) / [Handbuch](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![Entrycell-Beispiel](cells-images/EntryCell.png "Entrycell-Beispiel")](cells-images/EntryCell-Large.png#lightbox "Entrycell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
+| Der [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) enthält Textsatz mit der [`Text`](xref:Xamarin.Forms.SwitchCell.Text) -Eigenschaft und einem on/off-Switch, der anfänglich mit der booleschen Eigenschaft festgelegt wurde [`On`](xref:Xamarin.Forms.SwitchCell.On) . Behandeln [`OnChanged`](xref:Xamarin.Forms.SwitchCell.OnChanged) Sie das Ereignis, das benachrichtigt werden soll, wenn sich die `On` Eigenschaft ändert.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.SwitchCell)  /  [Leitfaden](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![Switchcell-Beispiel](cells-images/SwitchCell.png "Switchcell-Beispiel")](cells-images/SwitchCell-Large.png#lightbox "Switchcell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
-## <a name="related-links"></a>Verwandte Themen
+### <a name="entrycell"></a>Entrycell
 
-- [Beispiel für Xamarin.Forms FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [Xamarin.Forms-API-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+|     |     |
+| --- | --- |
+| [`EntryCell`](xref:Xamarin.Forms.EntryCell)Definiert eine [`Label`](xref:Xamarin.Forms.EntryCell.Label) Eigenschaft, die die Zelle und eine einzelne Zeile mit bearbeitbaren Text in der- [`Text`](xref:Xamarin.Forms.EntryCell.Text) Eigenschaft bezeichnet. Behandeln [`Completed`](xref:Xamarin.Forms.EntryCell.Completed) Sie das Ereignis, das benachrichtigt werden soll, wenn der Benutzer den Text Eintrag abgeschlossen hat.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.EntryCell)  /  [Leitfaden](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![Entrycell-Beispiel](cells-images/EntryCell.png "Entrycell-Beispiel")](cells-images/EntryCell-Large.png#lightbox "Entrycell-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
+|     |     |
+
+## <a name="related-links"></a>Verwandte Links
+
+- [Xamarin.FormsFormsgallery-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin.FormsStich](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.FormsAPI-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

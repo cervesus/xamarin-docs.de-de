@@ -1,25 +1,28 @@
 ---
-title: Entwerfen einer Xamarin.Forms-Anwendung
-description: Xamarin. Forms-Anwendungen unterstützen Themen, indem Sie für jedes Design ein ResourceDictionary erstellen und dann die Ressourcen mit der DynamicResource-Markup Erweiterung laden.
-ms.prod: xamarin
-ms.assetId: BF92AEDD-EF23-4D08-A972-B089066E75F9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/22/2020
-ms.openlocfilehash: 5988437b40ac875b8b59f9af0f25d4b5c60ded97
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Themen zu einer Xamarin.Forms Anwendung
+description: Xamarin.FormsAnwendungen unterstützen das Design, indem Sie für jedes Design ein ResourceDictionary erstellen und anschließend die Ressourcen mit der DynamicResource-Markup Erweiterung laden.
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80660ae7d3af0fe5948a5ae4ffdb35d2f9c2a40f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517130"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136135"
 ---
-# <a name="theming-a-xamarinforms-application"></a>Design einer xamarin. Forms-Anwendung
+# <a name="theming-a-xamarinforms-application"></a>Themen zu einer Xamarin.Forms Anwendung
 
 ## <a name="theme-an-application"></a>[Design einer Anwendung](theming.md)
 
-Design kann in xamarin. Forms-Anwendungen implementiert werden, indem für [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) jedes Design ein erstellt und dann die Ressourcen mit der `DynamicResource` Markup Erweiterung geladen werden.
+Design kann in Anwendungen implementiert werden Xamarin.Forms , indem für jedes Design ein erstellt [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) und dann die Ressourcen mit der `DynamicResource` Markup Erweiterung geladen werden.
 
-## <a name="respond-to-system-theme-changes"></a>[Reagieren auf Systemdesign Änderungen](system-theme-changes.md)
+## <a name="respond-to-system-theme-changes"></a>[Reagieren auf Systemdesignänderungen](system-theme-changes.md)
 
 Geräte enthalten in der Regel helle und dunkle Designs, die jeweils auf eine Vielzahl von Darstellungs Einstellungen verweisen, die auf Betriebssystemebene festgelegt werden können. Anwendungen sollten diese Systemdesigns berücksichtigen und sofort reagieren, wenn das Systemdesign geändert wird.

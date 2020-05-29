@@ -1,18 +1,21 @@
 ---
-title: Die Fülltypen für Pfade
-description: In diesem Artikel untersucht die verschiedenen Effekte, die mögliche mit SkiaSharp-Fülltypen für Pfade, und dies mit Beispielcode wird veranschaulicht.
-ms.prod: xamarin
-ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76723639"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139047"
 ---
 # <a name="the-path-fill-types"></a>Die Fülltypen für Pfade
 
@@ -20,20 +23,20 @@ ms.locfileid: "76723639"
 
 _Entdecken Sie die verschiedenen Effekte, die mit skiasharp-Pfad Füll Typen möglich sind._
 
-Zwei Konturen in einem Pfad können sich überschneiden, und die Zeilen, aus denen eine einzelne Contour Global besteht, können sich überschneiden. Potenziell kann eingeschlossene Bereich gefüllt werden, aber Sie möchten möglicherweise nicht alle eingeschlossene Bereiche zu füllen. Hier sehen Sie ein Beispiel:
+Zwei Kontur in einem Pfad können sich überlappen, und die Linien, die eine einzelne Kontur bilden, können sich überlappen. Alle eingeschlossenen Bereiche können möglicherweise ausgefüllt werden, Sie möchten jedoch möglicherweise nicht alle eingeschlossenen Bereiche ausfüllen. Hier sehen Sie ein Beispiel:
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-Sie haben ein wenig Kontrolle über diese. Der Füll Algorithmus wird durch die [`SKFillType`](xref:SkiaSharp.SKPath.FillType) -Eigenschaft von `SKPath`gesteuert, die Sie auf einen Member der [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) -Enumeration festlegen:
+Dies haben Sie nur wenig Kontrolle. Der Füllungs Algorithmus wird von der- [`SKFillType`](xref:SkiaSharp.SKPath.FillType) Eigenschaft von gesteuert `SKPath` , die Sie auf einen Member der- [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) Enumeration festlegen:
 
 - `Winding`, der Standardwert
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`
 
-Die wicklungsreihenfolgen und gerade-ungerade Algorithmen bestimmen, ob alle eingeschlossene Bereich gefüllt ist, oder nicht basierend auf einer hypothetischen Linie unendlich von diesem Bereich ausgefüllt. Diese Zeile überschreitet eine oder mehrere Grenzen Zeilen, die den Pfad zu bilden. Mit dem wicklungsreihenfolgen Modus ist die Anzahl der in einer Richtung Ausgleich der die Anzahl der Zeilen, die in die andere Richtung, und klicken Sie dann auf den Bereich gezeichnet gezeichneten Grenzlinien verwendet nicht gefüllt. Andernfalls wird der Bereich gefüllt. Der Algorithmus gerade-ungerade füllt einen Bereich aus, wenn die Anzahl der Zeilen der Grenze ungerade ist.
+Sowohl der Auszieh-als auch der gerade ungerade-Algorithmus bestimmen, ob ein eingeschlossener Bereich auf der Grundlage einer hypothetischen Linie ausgefüllt oder nicht ausgefüllt wird, die von diesem Bereich auf unendlich Diese Zeile überschreitet eine oder mehrere Begrenzungs Linien, die den Pfad bilden. Wenn die Anzahl der in einer Richtung gezeichneten Begrenzungs Linien die Anzahl der in der anderen Richtung gezeichneten Linien ausgeglichen, wird der Bereich nicht ausgefüllt Andernfalls wird der Bereich ausgefüllt. Der gerade ungerade-Algorithmus füllt einen Bereich, wenn die Anzahl der Begrenzungs Linien ungerade ist.
 
-Mit vielen routinemäßige Pfaden füllt der wicklungsreihenfolgen Algorithmus häufig die eingeschlossene Bereiche eines Pfads. Der gerade-ungerade Algorithmus erzeugt in der Regel Weitere interessante Ergebnisse.
+Bei vielen Routine Pfaden füllt der wicklungs Algorithmus häufig alle eingeschlossenen Bereiche eines Pfades aus. Der gerade ungerade-Algorithmus erzeugt in der Regel interessantere Ergebnisse.
 
 Das klassische Beispiel ist ein fünf zeiiger Stern, wie auf der **fünf-Sterne-Stern** Seite gezeigt. Die Datei " [**filevepointedstarpage. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml) " instanziiert zwei `Picker` Sichten, um den Pfad Fülltyp auszuwählen, und gibt an, ob der Pfad gestreichelt oder ausgefüllt ist, und in welcher Reihenfolge:
 
@@ -102,7 +105,7 @@ Das klassische Beispiel ist ein fünf zeiiger Stern, wie auf der **fünf-Sterne-
 </ContentPage>
 ```
 
-Die Code-Behind-Datei verwendet beide `Picker` Werte, um einen fünf-Sterne-Stern zu zeichnen:
+Die Code-Behind-Datei verwendet beide `Picker` Werte, um einen fünf-Spitzen-Stern zu zeichnen:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,18 +171,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Normalerweise sollte der Pfad Fülltyp nur Füll-und keine Striche beeinflussen, die beiden `Inverse` Modi wirken sich jedoch sowohl auf Fill als auch auf Striche aus. Bei Fills füllen die beiden `Inverse` Typen Bereiche gegenseitig aus, sodass der Bereich außerhalb des Sterns ausgefüllt ist. Bei Strichen werden die beiden `Inverse` Typen mit Ausnahme des Strichs vollständig Farben. Die Verwendung dieser Füllungstypen inverse kann einige ungerade Effekte, erzeugt, wie der iOS-Screenshot veranschaulicht:
+Normalerweise sollte sich der Pfad Fülltyp nur auf Füll-und nicht-Striche auswirken, aber die beiden `Inverse` Modi wirken sich sowohl auf Fill als auch auf Striche aus. Für Fill werden die Bereiche durch die beiden Typen gegenseitig `Inverse` ausgefüllt, sodass der Bereich außerhalb des Sterns ausgefüllt ist. Bei Strichen wird durch die beiden `Inverse` Typen alles außer dem Strich Farben angezeigt. Die Verwendung dieser umgekehrten Füll Typen kann zu ungeraden Effekten führen, wie der IOS-Bildschirmfoto veranschaulicht:
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 Der Android-Screenshot zeigt die typischen, geraden und auffüllenden Effekte, aber die Reihenfolge der Striche und der Füllung wirkt sich auch auf die Ergebnisse aus.
 
-Der Algorithmus wicklungsreihenfolgen ist abhängig von die Richtung von Linien gezeichnet werden. In der Regel können Wenn Sie einen Pfad erstellen, Sie die entsprechende Richtung steuern, wie Sie angeben, dass Zeilen, die von einem Punkt in eine andere gezeichnet werden. Die `SKPath`-Klasse definiert jedoch auch Methoden wie `AddRect` und `AddCircle`, die ganze Kontur zeichnen. Um zu steuern, wie diese Objekte gezeichnet werden, enthalten die Methoden einen Parameter vom Typ [`SKPathDirection`](xref:SkiaSharp.SKPathDirection), der zwei Member hat:
+Der wicklungs Algorithmus hängt von der Richtung ab, in der Linien gezeichnet werden. Wenn Sie einen Pfad erstellen, können Sie diese Richtung normalerweise steuern, wenn Sie angeben, dass Linien von einem Punkt zu einem anderen gezeichnet werden. Die `SKPath` -Klasse definiert jedoch auch Methoden wie `AddRect` und `AddCircle` , die ganze Kontur zeichnen. Um die Art und Weise zu steuern, wie diese Objekte gezeichnet werden, enthalten die Methoden einen Parameter vom Typ [`SKPathDirection`](xref:SkiaSharp.SKPathDirection) , der zwei Member hat:
 
 - `Clockwise`
 - `CounterClockwise`
 
-Die Methoden in `SKPath`, die einen `SKPathDirection`-Parameter enthalten, geben dem Standardwert `Clockwise`.
+Die Methoden in `SKPath` , die einen-Parameter enthalten, `SKPathDirection` geben dem Standardwert `Clockwise` .
 
 Auf der Seite über **Lapp Ende Kreise** wird ein Pfad mit vier überlappenden Kreisen mit einem gerade ungeraden Pfad Fülltyp erstellt:
 
@@ -221,7 +224,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Es ist ein interessantes Bild mit einem Minimum an Code erstellt:
+Es handelt sich um ein interessantes Image, das mit mindestens einem Code erstellt wurde:
 
 [![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 

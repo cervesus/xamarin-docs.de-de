@@ -1,44 +1,36 @@
 ---
-title: Xamarin. Forms-Zuordnungs Initialisierung und-Konfiguration
-description: Das xamarin. Forms. Maps-nuget-Paket ist erforderlich, um Maps-Funktionen in einer Anwendung zu verwenden. Außerdem müssen für den Zugriff auf den Speicherort des Benutzers Standort Berechtigungen für die Anwendung erteilt worden sein.
-ms.prod: xamarin
-ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/07/2020
-ms.openlocfilehash: 177359dfe081cba3cc43031d807f669f93a31ee9
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516534"
+Title: " Xamarin.Forms map Initialization and Configuration" Description: "The Xamarin.Forms . Das Karten-nuget-Paket ist erforderlich, um Maps-Funktionen in einer Anwendung zu verwenden. Außerdem müssen für den Zugriff auf den Speicherort des Benutzers Standort Berechtigungen für die Anwendung erteilt worden sein.
+ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. Forms-Zuordnungs Initialisierung und-Konfiguration
 
-[![Beispiel](~/media/shared/download.png) herunterladen herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.FormsZuordnungs Initialisierung und-Konfiguration
 
-Das [`Map`](xref:Xamarin.Forms.Maps.Map) -Steuerelement verwendet das Native Karten Steuerelement auf jeder Plattform. Dies bietet Benutzern eine schnelle, vertraute Kartendarstellung, bedeutet jedoch, dass einige Konfigurationsschritte erforderlich sind, um die API-Anforderungen der einzelnen Plattformen einzuhalten.
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+
+Das- [`Map`](xref:Xamarin.Forms.Maps.Map) Steuerelement verwendet das Native Karten Steuerelement auf jeder Plattform. Dies bietet Benutzern eine schnelle, vertraute Kartendarstellung, bedeutet jedoch, dass einige Konfigurationsschritte erforderlich sind, um die API-Anforderungen der einzelnen Plattformen einzuhalten.
 
 ## <a name="map-initialization"></a>Zuordnungs Initialisierung
 
-Das [`Map`](xref:Xamarin.Forms.Maps.Map) -Steuerelement wird vom [xamarin. Forms. Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) -nuget-Paket bereitgestellt, das jedem Projekt in der Projekt Mappe hinzugefügt werden sollte.
+Das- [`Map`](xref:Xamarin.Forms.Maps.Map) Steuerelement wird von bereitgestellt [ Xamarin.Forms . Ordnet das nuget](https://www.nuget.org/packages/Xamarin.Forms.Maps/) -Paket zu, das jedem Projekt in der Projekt Mappe hinzugefügt werden sollte.
 
-Nachdem Sie das [xamarin. Forms. Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) -nuget-Paket installiert haben, muss es in jedem Platt Form Projekt initialisiert werden.
+Nach der Installation von [ Xamarin.Forms . Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) : das nuget-Paket muss in jedem Platt Form Projekt initialisiert werden.
 
-Unter IOS sollte dies in **AppDelegate.cs** erfolgen, indem die `Xamarin.FormsMaps.Init` -Methode *nach* der `Xamarin.Forms.Forms.Init` -Methode aufgerufen wird:
+Unter IOS sollte dies in **AppDelegate.cs** erfolgen, indem die- `Xamarin.FormsMaps.Init` Methode *nach* der-Methode aufgerufen wird `Xamarin.Forms.Forms.Init` :
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Unter Android sollte dies in **MainActivity.cs** erfolgen, indem die `Xamarin.FormsMaps.Init` -Methode *nach* der `Xamarin.Forms.Forms.Init` -Methode aufgerufen wird:
+Unter Android sollte dies in **MainActivity.cs** erfolgen, indem die- `Xamarin.FormsMaps.Init` Methode *nach* der-Methode aufgerufen wird `Xamarin.Forms.Forms.Init` :
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
 ```
 
-Beim universelle Windows-Plattform (UWP) sollte dies in **MainPage.XAML.cs** erfolgen, indem die `Xamarin.FormsMaps.Init` -Methode aus dem `MainPage` -Konstruktor aufgerufen wird:
+Beim universelle Windows-Plattform (UWP) sollte dies in **MainPage.XAML.cs** erfolgen, indem die- `Xamarin.FormsMaps.Init` Methode aus dem- `MainPage` Konstruktor aufgerufen wird:
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
@@ -46,7 +38,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 Informationen zu dem für UWP erforderlichen Authentifizierungs Token finden Sie unter [universelle Windows-Plattform](#universal-windows-platform).
 
-Nachdem das nuget-Paket hinzugefügt und die Initialisierungs Methode in jeder Anwendung aufgerufen wurde `Xamarin.Forms.Maps` , können APIs im freigegebenen Code Projekt verwendet werden.
+Nachdem das nuget-Paket hinzugefügt und die Initialisierungs Methode in jeder Anwendung aufgerufen wurde, `Xamarin.Forms.Maps` können APIs im freigegebenen Code Projekt verwendet werden.
 
 ## <a name="platform-configuration"></a>Platt Form Konfiguration
 
@@ -63,7 +55,7 @@ Das anzeigen und interagieren mit einer Karte unter IOS erfordert keine zusätzl
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)– für die Verwendung von Location Services, wenn die Anwendung verwendet wird
   - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18)– für die jederzeit Verwendung von Location Services    
 
-Zur Unterstützung von IOS 11 und früher können Sie alle drei Schlüssel einschließen `NSLocationWhenInUseUsageDescription`: `NSLocationAlwaysAndWhenInUseUsageDescription`, und `NSLocationAlwaysUsageDescription`.
+Zur Unterstützung von IOS 11 und früher können Sie alle drei Schlüssel einschließen: `NSLocationWhenInUseUsageDescription` , `NSLocationAlwaysAndWhenInUseUsageDescription` und `NSLocationAlwaysUsageDescription` .
 
 Die XML-Darstellung für diese Schlüssel in " **Info. plist** " ist unten dargestellt. Sie sollten die `string` Werte aktualisieren, um die Verwendung der Standortinformationen durch Ihre Anwendung widerzuspiegeln:
 
@@ -93,7 +85,7 @@ Der Konfigurations Vorgang zum Anzeigen und interagieren mit einer Karte unter A
 1. Geben Sie im Manifest die Anforderung für die Apache HTTP-Legacy Bibliothek an.
 1. optionale Geben Sie die WRITE_EXTERNAL_STORAGE-Berechtigung im Manifest an.
 1. optionale Geben Sie die Speicherort Berechtigungen im Manifest an.
-1. optionale Berechtigungen für Lauf Zeit Speicherort `MainActivity` in der-Klasse anfordern.
+1. optionale Berechtigungen für Lauf Zeit Speicherort in der- `MainActivity` Klasse anfordern.
 
 Ein Beispiel für eine ordnungsgemäß konfigurierte Manifest-Datei finden Sie unter " [androidmanifest. XML](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) " aus der Beispielanwendung.
 
@@ -118,7 +110,7 @@ Damit Ihr APK auf Google Maps zugreifen kann, müssen Sie SHA-1-Fingerabdrücke 
 
 #### <a name="specify-the-google-play-services-version-number"></a>Angeben der Google Play Services-Versionsnummer
 
-Fügen Sie die folgende Deklaration `<application>` im-Element von " **androidmanifest. XML**" hinzu:
+Fügen Sie die folgende Deklaration im- `<application>` Element von " **androidmanifest. XML**" hinzu:
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -128,7 +120,7 @@ Dadurch wird die Version von Google Play Diensten, mit denen die Anwendung kompi
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Angeben der Anforderung für die Apache HTTP-Legacy Bibliothek
 
-Wenn Ihre xamarin. Forms-Anwendung auf API 28 oder höher ausgerichtet ist, müssen Sie die folgende Deklaration im- `<application>` Element von " **androidmanifest. XML**" hinzufügen:
+Wenn Ihre Xamarin.Forms Anwendung auf API 28 oder höher ausgerichtet ist, müssen Sie die folgende Deklaration im- `<application>` Element von " **androidmanifest. XML**" hinzufügen:
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    
@@ -138,7 +130,7 @@ Dadurch wird die Anwendung aufgefordert, die Apache HTTP-Client Bibliothek zu ve
 
 #### <a name="specify-the-write_external_storage-permission"></a>WRITE_EXTERNAL_STORAGE Berechtigung angeben
 
-Wenn Ihre Anwendung auf API 22 oder niedriger ausgerichtet ist, kann es erforderlich sein, `WRITE_EXTERNAL_STORAGE` dem Manifest die Berechtigung als untergeordnetes `<manifest>` Element des-Elements hinzuzufügen:
+Wenn Ihre Anwendung auf API 22 oder niedriger ausgerichtet ist, kann es erforderlich sein, dem `WRITE_EXTERNAL_STORAGE` Manifest die Berechtigung als untergeordnetes Element des- `<manifest>` Elements hinzuzufügen:
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -148,7 +140,7 @@ Dies ist nicht erforderlich, wenn Ihre Anwendung auf API 23 oder höher ausgeric
 
 #### <a name="specify-location-permissions"></a>Speicherort Berechtigungen angeben
 
-Wenn die Anwendung auf den Speicherort des Benutzers zugreifen muss, müssen Sie die Berechtigung anfordern, `ACCESS_COARSE_LOCATION` indem `ACCESS_FINE_LOCATION` Sie dem Manifest (oder beiden) die Berechtigungen oder als untergeordnetes `<manifest>` Element des-Elements hinzufügen:
+Wenn die Anwendung auf den Speicherort des Benutzers zugreifen muss, müssen Sie die Berechtigung anfordern, indem Sie dem `ACCESS_COARSE_LOCATION` `ACCESS_FINE_LOCATION` Manifest (oder beiden) die Berechtigungen oder als untergeordnetes Element des-Elements hinzufügen `<manifest>` :
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.myapp">
@@ -158,7 +150,7 @@ Wenn die Anwendung auf den Speicherort des Benutzers zugreifen muss, müssen Sie
 </manifest>
 ```
 
-Mithilfe `ACCESS_COARSE_LOCATION` der Berechtigung kann die API den Speicherort des Geräts mithilfe von WiFi-oder mobilen Daten (oder beides) bestimmen. Mit `ACCESS_FINE_LOCATION` den Berechtigungen kann die API die GPS (GPS), WiFi oder Mobile Daten verwenden, um einen präzisen Speicherort wie möglich zu bestimmen.
+Mithilfe der `ACCESS_COARSE_LOCATION` Berechtigung kann die API den Speicherort des Geräts mithilfe von WiFi-oder mobilen Daten (oder beides) bestimmen. Mit den `ACCESS_FINE_LOCATION` Berechtigungen kann die API die GPS (GPS), WiFi oder Mobile Daten verwenden, um einen präzisen Speicherort wie möglich zu bestimmen.
 
 Alternativ können diese Berechtigungen aktiviert werden, indem Sie mit dem Manifest-Editor die folgenden Berechtigungen hinzufügen:
 
@@ -173,7 +165,7 @@ Diese werden im folgenden Screenshot gezeigt:
 
 Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Speicherort des Benutzers zugreifen muss, muss Sie überprüfen, ob Sie zur Laufzeit über die erforderliche Berechtigung verfügt, und Sie anfordern, wenn Sie nicht vorhanden ist. Dies kann folgendermaßen erfüllt werden:
 
-1. Fügen Sie `MainActivity` in der-Klasse die folgenden Felder hinzu:
+1. Fügen Sie in der- `MainActivity` Klasse die folgenden Felder hinzu:
 
     ```csharp
     const int RequestLocationId = 0;
@@ -185,7 +177,7 @@ Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Speicherort des B
     };
     ```
 
-1. Fügen Sie `MainActivity` in der-Klasse die `OnStart` folgende außer Kraft Setzung hinzu:
+1. Fügen Sie in der- `MainActivity` Klasse die folgende `OnStart` außer Kraft Setzung hinzu:
 
     ```csharp
     protected override void OnStart()
@@ -206,9 +198,9 @@ Wenn Ihre Anwendung auf API 23 oder höher abzielt und auf den Speicherort des B
     }
     ```
 
-    Vorausgesetzt, dass die Anwendung auf API 23 oder höher ausgerichtet ist, führt dieser Code eine Lauf Zeit `AccessFineLocation` Berechtigungsüberprüfung für die Berechtigung aus. Wenn die Berechtigung nicht erteilt wurde, erfolgt eine Berechtigungs Anforderung durch Aufrufen der `RequestPermissions` -Methode.
+    Vorausgesetzt, dass die Anwendung auf API 23 oder höher ausgerichtet ist, führt dieser Code eine Lauf Zeit Berechtigungsüberprüfung für die `AccessFineLocation` Berechtigung aus. Wenn die Berechtigung nicht erteilt wurde, erfolgt eine Berechtigungs Anforderung durch Aufrufen der- `RequestPermissions` Methode.
 
-1. Fügen Sie `MainActivity` in der-Klasse die `OnRequestPermissionsResult` folgende außer Kraft Setzung hinzu:
+1. Fügen Sie in der- `MainActivity` Klasse die folgende `OnRequestPermissionsResult` außer Kraft Setzung hinzu:
 
     ```csharp
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
@@ -235,10 +227,10 @@ Der Gesamteffekt dieses Codes besteht darin, dass der folgende Dialog angezeigt 
 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
-Bei UWP muss Ihre Anwendung authentifiziert werden, bevor eine Zuordnung angezeigt und Kartendienste genutzt werden können. Um Ihre Anwendung zu authentifizieren, müssen Sie einen Maps-Authentifizierungsschlüssel angeben. Weitere Informationen finden Sie unter [Anfordern eines Zuordnungs Authentifizierungs Schlüssels](/windows/uwp/maps-and-location/authentication-key). Das Authentifizierungs Token sollte dann im- `FormsMaps.Init("AUTHORIZATION_TOKEN")` Methoden-Befehl angegeben werden, um die Anwendung mit dem Namen von "admaps" zu authentifizieren.
+Bei UWP muss Ihre Anwendung authentifiziert werden, bevor eine Zuordnung angezeigt und Kartendienste genutzt werden können. Um Ihre Anwendung zu authentifizieren, müssen Sie einen Maps-Authentifizierungsschlüssel angeben. Weitere Informationen finden Sie unter [Anfordern eines Zuordnungs Authentifizierungs Schlüssels](/windows/uwp/maps-and-location/authentication-key). Das Authentifizierungs Token sollte dann im-Methoden-Befehl angegeben werden `FormsMaps.Init("AUTHORIZATION_TOKEN")` , um die Anwendung mit dem Namen von "admaps" zu authentifizieren.
 
 > [!NOTE]
-> Um Kartendienste wie z. b. die Geocodierung verwenden zu können, müssen Sie `MapService.ServiceToken` die-Eigenschaft auf den Wert des Authentifizierungs Schlüssels festlegen. Dies kann mit der folgenden Codezeile erreicht werden: `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";`.
+> Um Kartendienste wie z. b. die Geocodierung verwenden zu können, müssen Sie die- `MapService.ServiceToken` Eigenschaft auf den Wert des Authentifizierungs Schlüssels festlegen. Dies kann mit der folgenden Codezeile erreicht werden: `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";` .
 
 Außerdem müssen Sie, wenn Ihre Anwendung auf den Speicherort des Benutzers zugreifen muss, die Standort Funktion im Paket Manifest aktivieren. Dies kann folgendermaßen erfüllt werden:
 
@@ -261,14 +253,14 @@ var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).Ge
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 ```
 
-Dieser Code übergibt die Assembly, in der `Xamarin.Forms.Maps.UWP.MapRenderer` sich die-Klasse befindet `Forms.Init` , an die-Methode. Dadurch wird sichergestellt, dass die Assembly durch den .net Native-Kompilierungsprozess nicht aus der ausführbaren Datei verknüpft ist.
+Dieser Code übergibt die Assembly, in der sich die- `Xamarin.Forms.Maps.UWP.MapRenderer` Klasse befindet, an die- `Forms.Init` Methode. Dadurch wird sichergestellt, dass die Assembly durch den .net Native-Kompilierungsprozess nicht aus der ausführbaren Datei verknüpft ist.
 
 > [!IMPORTANT]
-> Wenn dies nicht der Fall ist, wird [`Map`](xref:Xamarin.Forms.Maps.Map) das Steuerelement beim Ausführen eines Releasebuilds nicht angezeigt.
+> Wenn dies nicht der Fall ist, wird das [`Map`](xref:Xamarin.Forms.Maps.Map) Steuerelement beim Ausführen eines Releasebuilds nicht angezeigt.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Maps-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin. Forms. Maps-Pins](~/xamarin-forms/user-interface/map/pins.md).
+- [Xamarin.Forms. Ordnet Pins](~/xamarin-forms/user-interface/map/pins.md)zu.
 - [Karten-API](xref:Xamarin.Forms.Maps)
 - [Zuordnen eines benutzerdefinierten Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)

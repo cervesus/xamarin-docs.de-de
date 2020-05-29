@@ -1,58 +1,61 @@
 ---
-title: SkiaSharp-Zeichnungen-Grundlagen
-description: Dieser Leitfaden erläutert die Grundlagen von SkiaSharp-Graphics-Konzepte und Koordinaten in Xamarin.Forms-Anwendungen.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: 7f4f02c62da1807438cc3f9e81a89b62684a91a2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: In dieser Anleitung werden die Grundlagen der skiasharp-Grafik Konzepte und-Koordinaten in- Xamarin.Forms Anwendungen erläutert.
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fd82f7ffe135c12c9dfc59c3353d7d9f5d73068c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657091"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137708"
 ---
-# <a name="skiasharp-drawing-basics"></a>SkiaSharp-Zeichnungen-Grundlagen
+# <a name="skiasharp-drawing-basics"></a>Grundlagen von SkiaSharp-Zeichnungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Erfahren Sie, die Grundlagen von SkiaSharp-Graphics-Konzepte und Koordinaten_
+_Erlernen Sie die Grundlagen der skiasharp-Grafik Konzepte und-Koordinaten._
 
-Nachdem Sie das SkiaSharp-NuGet-Paket zu Ihrer Xamarin.Forms-Anwendung hinzugefügt haben, können Sie beginnen, verwenden von SkiaSharp-Grafiken. Die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Lösung umfasst zahlreiche Seiten, die SkiaSharp Programmiertechniken in progressiv erweiterte Lektionen zu veranschaulichen.
+Nachdem Sie der Anwendung das skiasharp-nuget-Paket hinzugefügt haben Xamarin.Forms , können Sie mit der Verwendung von skiasharp-Grafiken beginnen. Die Projekt Mappe [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) umfasst zahlreiche Seiten, die skiasharp-Programmiertechniken in progressioteren Lektionen veranschaulichen.
 
-Die Beispielprogramme in diesem Abschnitt angezeigt wird, unter der Überschrift **Grundlagen von SkiaSharp Zeichnung** auf der Startseite des der [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Programm und in der [ **Grundlagen** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics) Ordner der Projektmappe.
+Alle Beispiel Programme in diesem Abschnitt werden unter der Überschrift **skiasharp Drawing Basics** auf der Startseite des [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Programms und im Ordner [**Basics**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics) der Projekt Mappe angezeigt.
 
-## <a name="drawing-a-simple-circlecirclemd"></a>[Zeichnen eines einfachen Kreises](circle.md)
+## <a name="drawing-a-simple-circle"></a>[Zeichnen eines einfachen Kreises](circle.md)
 
-Erlernen der Grundlagen von SkiaSharp-Zeichnungen, einschließlich Leinwände, und Zeichnen von Objekten.
+Erlernen Sie die Grundlagen der skiasharp-Zeichnung, einschließlich der canvasen und der Paint-Objekte.
 
-## <a name="integrating-with-xamarinformsintegrationmd"></a>[Integrieren von Xamarin.Forms](integration.md)
+## <a name="integrating-with-xamarinformsintegrationmd"></a>[Integration inXamarin.Forms](integration.md)
 
-Erstellen Sie interaktive SkiaSharp-Grafiken, indem Sie die touch-Eingabe und die Integration in Xamarin.Forms-Elemente reagieren auf.
+Erstellen Sie interaktive skiasharp-Grafiken, indem Sie auf Berührungs Eingaben reagieren und in Xamarin.Forms Elemente integrieren.
 
-## <a name="pixels-and-device-independent-unitspixelsmd"></a>[Pixel und geräteunabhängige Einheiten](pixels.md)
+## <a name="pixels-and-device-independent-units"></a>[Pixel und geräteunabhängige Einheiten](pixels.md)
 
-Entdecken Sie die Unterschiede zwischen SkiaSharp und Xamarin.Forms-Koordinaten.
+Untersuchen Sie die Unterschiede zwischen skiasharp-Koordinaten und- Xamarin.Forms Koordinaten.
 
-## <a name="basic-animationanimationmd"></a>[Grundlegende Animation](animation.md)
+## <a name="basic-animation"></a>[Grundlegende Animation](animation.md)
 
-Erfahren Sie, wie zum Animieren von SkiaSharp-Grafiken.
+Erfahren Sie, wie Sie Ihre skiasharp-Grafiken animieren.
 
-## <a name="integrating-text-and-graphicstextmd"></a>[Integrieren von Text und Grafiken](text.md)
+## <a name="integrating-text-and-graphics"></a>[Integrieren von Text und Grafiken](text.md)
 
-Informationen Sie zum Bestimmen der Größe von gerenderten Textzeichenfolgen in Text in SkiaSharp-Grafiken zu integrieren.
+Weitere Informationen finden Sie unter Bestimmen der Größe gerenderter Text Zeichenfolgen für die Integration von Text in skiasharp-Grafiken.
 
-## <a name="bitmap-basicsbitmapsmd"></a>[Grundlagen zu Bitmaps](bitmaps.md)
+## <a name="bitmap-basics"></a>[Grundlagen zu Bitmaps](bitmaps.md)
 
-Bitmaps aus verschiedenen Quellen laden und anzeigen.
+Laden Sie Bitmaps aus verschiedenen Quellen, und zeigen Sie Sie an.
 
-## <a name="transparencytransparencymd"></a>[Transparenz](transparency.md)
+## <a name="transparency"></a>[Transparenz](transparency.md)
 
-Verwenden Sie Transparenz, um mehrere Abbilder in einer zusammengesetzten Szene zu kombinieren.
+Verwenden Sie Transparenz, um mehrere Bilder in einer zusammengesetzten Szene zu kombinieren.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

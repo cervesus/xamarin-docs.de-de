@@ -1,49 +1,52 @@
 ---
-title: SkiaSharp-Maske-Filter
-description: Erfahren Sie, wie Sie mithilfe des Filters Maske um Weichzeichner und andere alpha Effekte zu erstellen.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/27/2018
-ms.openlocfilehash: 36a8b5c32261d4f508c82feea1e6127574db6a20
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198244"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136408"
 ---
-# <a name="skiasharp-mask-filters"></a>SkiaSharp-Maske-Filter
+# <a name="skiasharp-mask-filters"></a>Skiasharp-maskenfilter
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Maske Filter sind die Auswirkungen, die die Geometrie und die alpha-Kanal von grafischen Objekten ändern. Legen Sie zum Verwenden eines Filters für die Maske der [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter) Eigenschaft `SKPaint` auf ein Objekt des Typs [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) Sie erstellt haben, durch Aufrufen einer der der `SKMaskFilter` statische Methoden.
+Maskenfilter sind Effekte, die die Geometrie und den Alphakanal grafischer Objekte verändern. Wenn Sie einen maskenfilter verwenden möchten, legen Sie die- [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) Eigenschaft von `SKPaint` auf ein Objekt des Typs fest, den [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) Sie durch Aufrufen einer der statischen-Methoden erstellt haben `SKMaskFilter` .
 
-Die beste Möglichkeit, mit der Maske Filter vertraut ist durch Experimentieren mit diesen statischen Methoden. Die nützlichste Maske Filter wird einen Weichzeichnungseffekt erstellt:
+Die beste Möglichkeit, sich mit Masken Filtern vertraut zu machen, besteht darin, mit diesen statischen Methoden zu experimentieren. Der nützlichste maskenfilter erstellt einen Weichzeichner:
 
-![Blur-Beispiel](mask-filters-images/MaskFilterExample.png "Blur-Beispiel")
+![Beispiel für weich](mask-filters-images/MaskFilterExample.png "Beispiel für weich")
 
-Das ist der einzige Maske-Filterfunktion, die in diesem Artikel beschriebenen. Im nächsten Artikel auf [ **SkiaSharp Bildfilter** ](image-filters.md) beschreibt auch einen Weichzeichnereffekt, die Sie in dieses Objekt lieber. 
+Das ist das einzige maskenfilter Feature, das in diesem Artikel beschrieben wird. Im nächsten Artikel zu [**skiasharp-Bild Filtern**](image-filters.md) wird auch ein Weichzeichnereffekt beschrieben, den Sie möglicherweise bevorzugen. 
 
-Die statische [ `SKMaskFilter.CreateBlur` ](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single)) Methode hat die folgende Syntax:
+Die statische- [`SKMaskFilter.CreateBlur`](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single)) Methode weist die folgende Syntax auf:
 
 ```csharp
 public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 ```
 
--Überladungen ermöglichen das Angeben von Flags für den Algorithmus zum Erstellen des Weichzeichnens und ein Rechteck, vermeiden Sie eine undeutliche in Bereichen, die mit anderen grafischen Objekten behandelt werden.
+Über Ladungen ermöglichen das Angeben von Flags für den Algorithmus, der zum Erstellen des weichmucks verwendet wird, und ein Rechteck, um die verwischt in Bereichen zu vermeiden, die mit anderen grafischen Objekten abgedeckt werden.
 
-[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle) ist eine Enumeration mit folgenden Membern:
+[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle)ist eine Enumeration mit den folgenden Membern:
 
 - `Normal`
 - `Solid`
 - `Outer`
 - `Inner`
 
-Die Auswirkungen dieser Stile sind in den folgenden Beispielen gezeigt. Die `sigma` Parameter gibt den Umfang der des Weichzeichnens. In früheren Versionen von Skia können wurde der Wertebereich des Weichzeichnens mit einem Radiuswert angegeben. Wenn ein Radiuswert für Ihre Anwendung vorzuziehen ist, ist eine statische [ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) -Methode, die von einem zum anderen konvertieren kann. Die Methode 0.57735 Radius multipliziert und 0,5 hinzugefügt.
+Die Auswirkungen dieser Stile sind in den folgenden Beispielen dargestellt. Der- `sigma` Parameter gibt den Umfang des weich Zeichnens an. In älteren Versionen der Skia wurde der Umfang des weichwerts durch einen RADIUS-Wert angegeben. Wenn ein RADIUS-Wert für Ihre Anwendung vorzuziehen ist, gibt es eine statische [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) Methode, die eine Konvertierung von einer in die andere durchsetzen kann. Mit der-Methode wird der Radius um 0,57735 multipliziert und 0,5 hinzugefügt.
 
-Die **Maske Blur experimentieren** auf der Seite die [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) Beispiel ermöglicht Ihnen das Experimentieren mit dem Blur-Stile und Sigma-Werte. Die XAML-Datei instanziiert ein `Picker` mit den vier `SKBlurStyle` Enumerationsmember und `Slider` zum Angeben des Werts Sigma:
+Die Seite **mask mask Experiment** im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Beispiel ermöglicht Ihnen das Experimentieren mit den weichzeichenstilen und Sigma-Werten. Die XAML-Datei instanziiert ein `Picker` -Element mit den vier Enumerationsmembern `SKBlurStyle` und einem `Slider` zum Angeben des Sigma-Werts:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +92,7 @@ Die **Maske Blur experimentieren** auf der Seite die [ **SkiaSharpFormsDemos** ]
 </ContentPage>
 ```
 
-Code-Behind-Datei verwendet diese Werte zum Erstellen einer `SKMaskFilter` Objekt aus, und legen Sie sie auf die `MaskFilter` Eigenschaft eine `SKPaint` Objekt. Dies `SKPaint` Objekt wird verwendet, um sowohl eine Textzeichenfolge und einer Bitmap gezeichnet werden soll:
+Die Code-Behind-Datei verwendet diese Werte, um ein `SKMaskFilter` -Objekt zu erstellen und es auf die- `MaskFilter` Eigenschaft eines-Objekts festzulegen `SKPaint` . Dieses `SKPaint` Objekt wird verwendet, um sowohl eine Text Zeichenfolge als auch eine Bitmap zu zeichnen:
 
 ```csharp
 public partial class MaskBlurExperimentPage : ContentPage
@@ -157,40 +160,40 @@ public partial class MaskBlurExperimentPage : ContentPage
 }
 ```
 
-Hier ist das Programm ausgeführt wird, unter iOS, Android und die universelle Windows-Plattform (UWP) mit der `Normal` blur-Stil und einem erhöhen `sigma` Ebenen:
+Hier ist das Programm, das unter IOS, Android und der universelle Windows-Plattform (UWP) mit dem `Normal` weichzeichnerstil und höheren Stufen ausgeführt wird `sigma` :
 
-[![Maskieren Blur-Experiments: Normal](mask-filters-images/MaskBlurExperiment-Normal.png "Maske Blur-Experiment – Normal")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
+[![Mask mask-Experiment (normal)](mask-filters-images/MaskBlurExperiment-Normal.png "Mask mask-Experiment (normal)")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
 
-Sie werden feststellen, dass nur die Ränder der Bitmap des Weichzeichnens betroffen sind. Die `SKMaskFilter` Klasse ist nicht die richtigen Auswirkungen verwenden, wenn Sie eine gesamte Bitmap-Bild blur möchten. Dafür sollten Sie verwenden die [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) -Klasse wie im nächsten Artikel beschrieben [ **SkiaSharp Bildfilter**](image-filters.md).
+Sie werden bemerken, dass der Weichzeichner nur die Ränder der Bitmap beeinflusst. Die- `SKMaskFilter` Klasse ist nicht der richtige Effekt, wenn Sie ein gesamtes Bitmapbild verwischen möchten. Dafür sollten Sie die-Klasse verwenden, [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) wie im nächsten Artikel über [**skiasharp-Bild Filter**](image-filters.md)beschrieben.
 
-Der Text wird mit ansteigenden Werten von mehr verwischt die `sigma` Argument. Experimentieren mit dem Programm, sehen Sie im, die für einen bestimmten `sigma` Wert, der die Unschärfe ist extremeren auf dem Windows 10-Desktop. Dieser Unterschied tritt auf, da die Pixeldichte weiter unten auf einen Monitor als auf mobilen Geräten und die Texthöhe in Pixel somit niedriger ist. Die `sigma` Wert ist proportional zur einen Blur-Block in Pixel für einen bestimmten `sigma` Wert, der Effekt ist extremeren in niedriger Auflösung angezeigt. In einer produktionsanwendung, Sie sollten zum Berechnen einer `sigma` Wert proportional zur Größe der Grafik. 
+Der Text wird mit den zunehmenden Werten des Arguments nicht mehr verwischt `sigma` . Wenn Sie mit diesem Programm experimentieren, werden Sie feststellen, dass der Weichzeichner für einen bestimmten `sigma` Wert auf dem Windows 10-Desktop eher extrem ist. Dieser Unterschied tritt auf, weil die Pixeldichte auf einem Desktop Monitor niedriger ist als auf mobilen Geräten, sodass die Texthöhe in Pixel geringer ist. Der `sigma` Wert ist proportional zu einem Weichzeichnerwert in Pixel, sodass für einen gegebenen `sigma` Wert der Effekt bei niedrigerer Auflösung genauer angezeigt wird. In einer Produktionsanwendung möchten Sie wahrscheinlich einen Wert berechnen, der `sigma` proportional zur Grafik Größe ist. 
 
-Versuchen Sie mehrere Werte, ehe Sie eine Blur-Ebene, die die am besten für Ihre Anwendung aussieht. Z. B. in der **Maske Blur-Experiment** Seite, und versuchen Sie die Einstellung `sigma` wie folgt aus:
+Probieren Sie mehrere Werte aus, bevor Sie sich auf einer weichungs Ebene befinden, die für Ihre Anwendung am besten geeignet ist Versuchen Sie beispielsweise, auf der Seite **Maske Mask-Experiment** die Einstellung `sigma` wie folgt:
 
 ```csharp
 sigma = paint.TextSize / 18;
 paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 ```
 
-Jetzt die `Slider` wirkt sich nicht, aber das Maß an Blur wird von den Plattformen:
+Der `Slider` hat jetzt keine Auswirkung, aber der Grad der weich Zeichnung ist zwischen den Plattformen konsistent:
 
-[![Maskieren Blur-Experiments: konsistente](mask-filters-images/MaskBlurExperiment-Consistent.png "maskieren Blur-Experiments: konsistent")](mask-filters-images/MaskBlurExperiment-Consistent-Large.png#lightbox)
+[![Masken Maske-Experiment-konsistent](mask-filters-images/MaskBlurExperiment-Consistent.png "Masken Maske-Experiment-konsistent")](mask-filters-images/MaskBlurExperiment-Consistent-Large.png#lightbox)
 
-Alle in den Screenshots bis jetzt wurde gezeigt, Weichzeichnungseffekt erstellt, mit der `SKBlurStyle.Normal` -Enumerationsmember. Die folgenden Screenshots zeigen die Auswirkungen der `Solid`, `Outer`, und `Inner` blur-Formate:
+Alle bisher gezeigten Screenshots haben mit dem-Enumerationsmember eine weichzeichenfolge gezeigt `SKBlurStyle.Normal` . Die folgenden Screenshots zeigen die Auswirkungen der `Solid` Stile, `Outer` und weich `Inner` :
 
-[![Maskieren Blur-Experiment](mask-filters-images/MaskBlurExperiment.png "maskieren Blur-Experiment")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
+[![Mask mask-Experiment](mask-filters-images/MaskBlurExperiment.png "Mask mask-Experiment")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-Der IOS-Screenshot zeigt `Solid` den Stil: Die Textzeichen sind immer noch als solide schwarze Striche vorhanden, und der weich Strich wird der außerhalb dieser Textzeichen hinzugefügt. 
+Der IOS-Screenshot zeigt den `Solid` Stil: die Textzeichen sind immer noch als Solid Black-Striche vorhanden, und der weich Zeichenbereich wird außerhalb dieser Textzeichen hinzugefügt. 
 
-Der Android-Bildschirm Abbildung in der Mitte `Outer` zeigt den Stil: Die Zeichen Striche selbst werden entfernt (wie die Bitmap), und der weich Zeichenbereich umgibt den leeren Bereich, in dem die Textzeichen angezeigt werden. 
+Der Android-Screenshot in der Mitte zeigt den `Outer` Stil: die Zeichen Striche selbst werden entfernt (wie die Bitmap), und der weich Zeichenbereich umgibt den leeren Bereich, in dem die Textzeichen angezeigt werden. 
 
-Die UWP-Screenshot, auf die richtigen zeigt die `Inner` Stil. Die Unschärfe ist auf des Bereichs, der normalerweise durch die Textzeichen beschränkt.
+Der UWP-Bildschirm auf der rechten Seite zeigt den `Inner` Stil. Der Weichzeichner ist auf den Bereich beschränkt, der normalerweise von den Textzeichen besetzt ist.
 
-Die [ **SkiaSharp linearer Farbverlauf** ](shaders/linear-gradient.md#transparency-and-gradients) Artikel beschrieben eine **Reflektion Farbverlauf** Programm, das einen linearen Farbverlauf und eine Transformation verwendet werden, um eine Spiegelung einer Textzeichenfolge zu imitieren:
+Der [**lineare Überlaufs Artikel skiasharp**](shaders/linear-gradient.md#transparency-and-gradients) beschreibt ein **reflektionsgradientenprogramm** , das einen linearen Farbverlauf und eine Transformation verwendet, um eine Reflektion einer Text Zeichenfolge zu imitieren:
 
-[![Reflektion Farbverlauf](shaders/linear-gradient-images/ReflectionGradient.png "Reflektion Farbverlauf")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
+[![Reflektionstyp](shaders/linear-gradient-images/ReflectionGradient.png "Reflektionstyp")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-Die **unscharf Reflektion** Seite fügt einer einzelnen Anweisung für diesen Code hinzu:
+Die Seite " **Blurry Reflection** " fügt dem Code eine einzige-Anweisung hinzu:
 
 ```csharp
 public class BlurryReflectionPage : ContentPage
@@ -261,17 +264,17 @@ public class BlurryReflectionPage : ContentPage
 }
 ```
 
-Die neue Anweisung fügt einem unschärfefilter für den reflektierten Text, der für die Textgröße basiert:
+Die neue Anweisung fügt einen weichzeichenfilter für den reflektierten Text hinzu, der auf der Textgröße basiert:
 
 ```csharp
 paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 36);
 ```
 
-Diese unschärfefilter bewirkt, dass die Reflektion, um die viel realistischer erscheinen:
+Dieser weichzeichnerfilter bewirkt, dass die Reflektion weitaus realistischer erscheint:
 
-[![Unscharf Reflektion](mask-filters-images/BlurryReflection.png "unscharf Reflektion")](mask-filters-images/BlurryReflection-Large.png#lightbox)
+[![Blurry-Reflektion](mask-filters-images/BlurryReflection.png "Blurry-Reflektion")](mask-filters-images/BlurryReflection-Large.png#lightbox)
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

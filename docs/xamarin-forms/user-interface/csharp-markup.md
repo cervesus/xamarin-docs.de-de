@@ -1,37 +1,40 @@
 ---
-title: Xamarin. Forms c#-Markup
-description: C#-Markup ist ein Opt-in-Satz von fließenden Hilfsmethoden und-Klassen zum Vereinfachen des Erstellungs Prozesses von deklarativen xamarin. Forms-Benutzeroberflächen in c#.
-ms.prod: xamarin
-ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4fa8397dafbbdd836f88193081720b4960f1ce5d
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsC#-Markup
+description: C#-Markup ist ein Opt-in-Satz von fließenden Hilfsmethoden und-Klassen, um den Prozess des Ersatzes von deklarativen Xamarin.Forms Benutzeroberflächen in c# zu vereinfachen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425807"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137747"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin. Forms c#-Markup
+# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC#-Markup
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
-C#-Markup ist ein Opt-in-Satz von fließenden Hilfsmethoden und-Klassen zum Vereinfachen des Erstellungs Prozesses von deklarativen xamarin. Forms-Benutzeroberflächen in c#. Die von c#-Markup bereitgestellte fließende API ist im- `Xamarin.Forms.Markup` Namespace verfügbar.
+C#-Markup ist ein Opt-in-Satz von fließenden Hilfsmethoden und-Klassen, um den Prozess des Ersatzes von deklarativen Xamarin.Forms Benutzeroberflächen in c# zu vereinfachen. Die von c#-Markup bereitgestellte fließende API ist im- `Xamarin.Forms.Markup` Namespace verfügbar.
 
 Ebenso wie bei XAML ermöglicht c#-Markup eine saubere Trennung zwischen Benutzeroberflächen Markup und UI-Logik. Dies kann erreicht werden, indem Sie das Benutzeroberflächen Markup und die Benutzeroberflächen Logik in verschiedene partielle Klassendateien aufteilen. Beispielsweise würde sich das UI-Markup für eine Anmeldeseite in einer Datei namens *LoginPage.cs*befinden, während sich die Benutzeroberflächen Logik in einer Datei namens *LoginPage.Logic.cs*befinden würde.
 
-C#-Markup ist in xamarin. Forms 4,6 verfügbar. Es ist jedoch zurzeit experimentell und kann nur verwendet werden, indem der *app.cs* -Datei die folgende Codezeile hinzugefügt wird:
+C#-Markup ist in Xamarin.Forms 4,6 verfügbar. Es ist jedoch zurzeit experimentell und kann nur verwendet werden, indem der *app.cs* -Datei die folgende Codezeile hinzugefügt wird:
 
 ```csharp
 Device.SetFlags(new string[]{ "Markup_Experimental" });
 ```
 
 > [!NOTE]
-> C#-Markup ist auf allen Plattformen verfügbar, die von xamarin. Forms unterstützt werden.
+> C#-Markup ist auf allen Plattformen verfügbar, die von unterstützt werden Xamarin.Forms .
 
 ## <a name="basic-example"></a>Einfaches Beispiel
 
@@ -89,7 +92,7 @@ Dieses Beispiel ist mit dem vorherigen Beispiel identisch, aber die c#-Markup-AP
 
 ## <a name="data-binding"></a>Datenbindung
 
-C#-Markup enthält eine `Bind` -Erweiterungsmethode sowie über Ladungen, die eine Datenbindung zwischen einer Eigenschaft für die binable-Eigenschaft und einer angegebenen Eigenschaft erstellt. Die- `Bind` Methode kennt die standardmäßige bindbare Eigenschaft für die Mehrzahl der Steuerelemente, die in xamarin. Forms enthalten sind. Daher ist es in der Regel nicht notwendig, die Ziel Eigenschaft anzugeben, wenn diese Methode verwendet wird. Sie können jedoch auch die bindbare Standard Eigenschaft für zusätzliche Steuerelemente registrieren:
+C#-Markup enthält eine `Bind` -Erweiterungsmethode sowie über Ladungen, die eine Datenbindung zwischen einer Eigenschaft für die binable-Eigenschaft und einer angegebenen Eigenschaft erstellt. Die- `Bind` Methode kennt die standardmäßige bindbare Eigenschaft für die Mehrzahl der Steuerelemente, die in enthalten sind Xamarin.Forms . Daher ist es in der Regel nicht notwendig, die Ziel Eigenschaft anzugeben, wenn diese Methode verwendet wird. Sie können jedoch auch die bindbare Standard Eigenschaft für zusätzliche Steuerelemente registrieren:
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -232,7 +235,7 @@ Da eine Gestenerkennung eine ist `BindableObject` , können Sie die `Bind` -und-
 
 C#-Markup umfasst eine Reihe von layouterweiterungsmethoden, die das Positionieren von Sichten in Layouts und den Inhalt in Sichten unterstützen:
 
-| Typ | Erweiterungsmethoden |
+| type | Erweiterungsmethoden |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -250,7 +253,7 @@ Um den korrekten Satz von linken und rechten Erweiterungs Methoden verfügbar zu
 
 Für c#-Markup, das sowohl von links nach rechts und von rechts nach links Fluss Richtung unterstützt werden soll, empfiehlt es sich, die Erweiterungs Methoden in der folgenden Tabelle anstelle eines der obigen Namespaces zu verwenden:
 
-| Typ | Erweiterungsmethoden |
+| type | Erweiterungsmethoden |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |
@@ -354,7 +357,7 @@ new Grid
 }
 ```
 
-## <a name="fonts"></a>Schriftarten
+## <a name="fonts"></a>Fonts
 
 Mit den Steuerelementen in der folgenden Liste können `FontSize` die `Bold` `Italic` -,-,-und-Erweiterungs Methoden aufgerufen werden, `Font` um die Darstellung des vom-Steuerelement angezeigten Texts festzulegen:
 

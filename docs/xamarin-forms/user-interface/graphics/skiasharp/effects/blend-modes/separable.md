@@ -1,32 +1,35 @@
 ---
-title: Die trennbare Füllmethoden einheitlich
-description: Verwenden Sie die trennbare Füllmethoden einheitlich, um die Farben rote, grüne und blaue zu ändern.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 621bc872a80cf023bb9428e2d3183e8af611211f
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200390"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139684"
 ---
-# <a name="the-separable-blend-modes"></a>Die trennbare Füllmethoden einheitlich
+# <a name="the-separable-blend-modes"></a>Die trennbaren Blend-Modi
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-In diesem Artikel haben Sie gesehen [ **SkiaSharp Porter-Duff Füllmethoden**](porter-duff.md), die Porter-Duff Blend-Modi werden in der Regel Clipping-Vorgänge ausführen. Die trennbare Füllmethoden einheitlich unterscheiden. Die trennbare Modi geändert werden, die einzelne roten, grünen und blauen Farbkomponenten eines Bilds. Trennbare Füllmethoden einheitlich können mischen Sie Farbe zu zeigen, dass die Kombination von Rot, Grün und Blau in der Tat weiß ist:
+Wie Sie im Artikel [**skiasharp Porter-Duff Blend-Modi**](porter-duff.md)gesehen haben, führen die Porter-Duff-Blend-Modi im allgemeinen Clipping-Vorgänge aus. Die trennbaren Blend-Modi sind unterschiedlich. Die trennbaren Modi ändern die einzelnen roten, grünen und blauen Farbkomponenten eines Bilds. Die trennbaren Blend-Modi können Farben vermischen, um zu veranschaulichen, dass die Kombination von rot, grün und blau tatsächlich weiß ist:
 
 ![Primärfarben](separable-images/SeparableSample.png "Primärfarben")
 
-## <a name="lighten-and-darken-two-ways"></a>Aufhellen und auf zwei Arten Abdunkeln 
+## <a name="lighten-and-darken-two-ways"></a>Zwei Arten von Lighten und Abdunkeln 
 
-Es ist üblich, eine Bitmap zu verwenden, die ein wenig zu dunkel oder zu hell. Sie können trennbare Füllmethoden einheitlich heller oder dunkler der Imabe.  Tatsächlich zwei die trennbare Blend-Modi, in der [ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode) Enumeration heißen `Lighten` und `Darken`. 
+Es kommt häufig vor, dass eine Bitmap etwas zu dunkel oder zu hell ist. Sie können den trennbaren Blend-Modus verwenden, um die Imabe aufzuhellen oder zu verdunkeln.  Tatsächlich werden zwei der trennbaren Blend-Modi in der [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) -Enumeration mit dem Namen `Lighten` und benannt `Darken` . 
 
-Diesen beiden Modi werden veranschaulicht die **heller und dunkler** Seite. Die XAML-Datei instanziiert zwei `SKCanvasView` Objekte und zwei `Slider` Ansichten:
+Diese beiden Modi werden auf der Seite " **Lighten und Darken** " veranschaulicht. In der XAML-Datei werden zwei `SKCanvasView` Objekte und zwei Sichten instanziiert `Slider` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -54,7 +57,7 @@ Diesen beiden Modi werden veranschaulicht die **heller und dunkler** Seite. Die 
 </ContentPage>
 ```
 
-Die erste `SKCanvasView` und `Slider` veranschaulichen `SKBlendMode.Lighten` und veranschaulicht, das zweite Paar `SKBlendMode.Darken`. Die beiden `Slider` Ansichten verwenden dieselbe `ValueChanged` Handler und die beiden `SKCanvasView` verwenden dieselbe `PaintSurface` Handler. Beide Event Handler Check-Objekt, das Ereignis ausgelöst wird:
+Der erste `SKCanvasView` und `Slider` der Veranschaulichung `SKBlendMode.Lighten` und das zweite Paar zeigen `SKBlendMode.Darken` . Die beiden `Slider` Sichten verwenden denselben `ValueChanged` Handler, und beide verwenden `SKCanvasView` denselben `PaintSurface` Handler gemeinsam. Beide Ereignishandler überprüfen, welches Objekt das Ereignis auslöst:
 
 ```csharp
 public partial class LightenAndDarkenPage : ContentPage
@@ -121,67 +124,92 @@ public partial class LightenAndDarkenPage : ContentPage
 }
 ```
 
-Die `PaintSurface` Handler berechnet ein Rechteck, das für die Bitmap geeignet ist. Der Ereignishandler zeigt diese Bitmap und anschließend ein Rechteck über die Bitmap mit einer `SKPaint` Objekt mit der `BlendMode` -Eigenschaftensatz auf `SKBlendMode.Lighten` oder `SKBlendMode.Darken`. Die `Color` -Eigenschaft ist eine grauschattierung basierend auf den `Slider`. Für die `Lighten` Modus, der Farbe reichen von Schwarz in weiß, aber die `Darken` Modus liegt der Bereich von weiß zu Schwarz.
+Der `PaintSurface` Handler berechnet ein Rechteck, das für die Bitmap geeignet ist. Der Handler zeigt diese Bitmap an und zeigt dann mithilfe eines-Objekts, dessen- `SKPaint` `BlendMode` Eigenschaft auf oder festgelegt ist, ein Rechteck über der Bitmap an `SKBlendMode.Lighten` `SKBlendMode.Darken` . Die- `Color` Eigenschaft ist ein grauer Farbton auf der Grundlage von `Slider` . Für den- `Lighten` Modus reicht die Farbe von Schwarz bis weiß aus, aber für den `Darken` Modus reicht sie von weiß bis schwarz aus.
 
-Die Screenshots von links nach rechts zeigen immer größeren `Slider` Werte, wie das oberste Bild heller abgerufen, und das untere Bild dunkler:
+Die Screenshots von links nach rechts zeigen zunehmend größere `Slider` Werte, da das obere Bild heller wird und das untere Bild dunkler wird:
 
-[![Heller und dunkler](separable-images/LightenAndDarken.png "heller und dunkler angezeigt")](separable-images/LightenAndDarken-Large.png#lightbox)
+[![Lighten und Darken](separable-images/LightenAndDarken.png "Lighten und Darken")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-Dieses Programm veranschaulicht die normale Art und Weise, in der die trennbaren Blend-Modi verwendet werden: Das Ziel ist ein Image einiger Art, sehr häufig eine Bitmap. Die Quelle ist ein Rechteck, das angezeigt wird, mit einer `SKPaint` Objekt mit der `BlendMode` -Eigenschaft auf einen trennbare Blend-Modus festgelegt. Das Rechteck kann eine Volltonfarbe werden (wie es hier der Fall ist) oder einem Farbverlauf. Transparenz ist _nicht_ in der Regel mit der trennbare Füllmethoden einheitlich verwendet.
+Dieses Programm veranschaulicht die normale Art und Weise, in der die trennbaren Blend-Modi verwendet werden: das Ziel ist ein Bild einiger Art, häufig eine Bitmap. Die Quelle ist ein Rechteck, das mit einem-Objekt angezeigt wird `SKPaint` , dessen- `BlendMode` Eigenschaft auf einen trennbaren Blend-Modus festgelegt ist. Das Rechteck kann eine voll Tonfarbe (wie hier) oder ein Farbverlauf sein. Transparenz wird in der Regel _nicht_ mit den trennbaren Blend-Modi verwendet.
 
-Beim Experimentieren mit diesem Programm werden Sie feststellen, dass diese zwei Füllmethoden einheitlich nicht aufgehellt werden soll, und das Bild gleichmäßig Abdunkeln. Stattdessen die `Slider` scheint einen Schwellenwert für eine Art festzulegen. Erhöhen Sie zum Beispiel die `Slider` für die `Lighten` -Modus die dunkleren Bereiche des Bilds rufen Licht zuerst während der hellere Bereiche unverändert bleiben.
+Wenn Sie mit diesem Programm experimentieren, werden Sie feststellen, dass diese beiden Blend-Modi das Bild nicht gleichmäßig Abblenden und Abdunkeln. Stattdessen `Slider` scheint einen Schwellenwert festzulegen. Wenn Sie z. b `Slider` . für den- `Lighten` Modus erhöhen, werden die dunkleren Bereiche des Bilds zuerst angezeigt, während die leichteren Bereiche gleich bleiben.
 
-Für die `Lighten` Modus, wenn das Zielpixel den RGB-Farbwert (Dr, GD,-Db), und das Pixel Quelle befindet sich die Farbe (Sr, Sg, Sb), und klicken Sie dann die Ausgabe ist (oder Og, Ob) wie folgt berechnet:
+Wenn das `Lighten` Zielpixel für den-Modus der RGB-Farbwert (Dr, DG, DB) und das Quell Pixel die Farbe (SR, SG, SB) ist, wird die Ausgabe wie folgt berechnet (oder, og, ob):
 
  `Or = max(Dr, Sr)` `Og = max(Dg, Sg)`
  `Ob = max(Db, Sb)`
 
-Für Rot, Grün und Blau ist das Ergebnis, desto größer der Quelle und Ziel. Hierdurch werden die Auswirkungen der Aufhellen zuerst die dunklen Bereiche des Ziels.
+Für Rot, grün und blau separat ist das Ergebnis das größere Ziel und die Quelle. Dies führt dazu, dass die dunklen Bereiche des Ziels zuerst beleuchtet werden.
 
-Die `Darken` Modus ist ähnlich, außer dass das Ergebnis kleiner als das Ziel und Quelle ist:
+Der `Darken` Modus ist ähnlich, mit dem Unterschied, dass das Ergebnis das kleinere Ziel und die Quelle ist:
 
  `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
  `Ob = min(Db, Sb)`
 
-Die Komponenten roten, grünen und blauen sind jeweils separat behandelt diese Modi blend wird als bezeichnet die _trennbare_ Füllmethoden. Aus diesem Grund die Abkürzungen **Dc** und **Sc** kann für das Ziel und die Farben einer Quelle verwendet werden, und es wird davon ausgegangen, dass Berechnungen separat für jede der Komponenten roten, grünen und blauen gelten.
+Die roten, grünen und blauen Komponenten werden einzeln behandelt, weshalb diese Blend-Modi als _Trenn Bare_ Blend-Modi bezeichnet werden. Aus diesem Grund können die Abkürzungen **DC** und **SC** für die Ziel-und Quell Farben verwendet werden, und es ist zu verstehen, dass die Berechnungen für jede der roten, grünen und blauen Komponenten separat gelten.
 
-Die folgende Tabelle zeigt die trennbare Blend-Modi mit kurze erläuterungen zu ihrer Funktion. Die zweite Spalte zeigt die Quellfarbe, die keine Änderung erzeugt:
+In der folgenden Tabelle werden alle trennbaren Blend-Modi mit kurzen Erläuterungen dazu angezeigt, was Sie tun. Die zweite Spalte zeigt die Quellfarbe, die keine Änderung erzeugt:
 
 | Blend-Modus   | Keine Änderung | Vorgang |
-| ------------ | --------- | --------- |
-| `Plus`       | Schwarz     | Lighdutzende durch Hinzufügen von Farben: SC + DC |
-| `Modulate`   | Weiß     | Darkens durch Multiplikation von Farben: SC DC | 
-| `Screen`     | Schwarz     | Ergänzt das Produkt von Ergänzungen: SC + DC &ndash; SC DC |
-| `Overlay`    | Grau      | Quantile `HardLight` |
-| `Darken`     | Weiß     | Mindestanzahl von Farben: min (Sc, Dc) |
-| `Lighten`    | Schwarz     | Maximale von Farben: Max (Sc, Dc) |
-| `ColorDodge` | Schwarz     | Aufgehellt Ziel wird basierend auf Quelle |
-| `ColorBurn`  | Weiß     | Dunkelt Ziel wird basierend auf Quelle | 
-| `HardLight`  | Grau      | Auswirkungen von Spot ähnelt |
-| `SoftLight`  | Grau      | Ähnlich wie bei der Auswirkung der weiche spotlight | 
-| `Difference` | Schwarz     | Subtrahiert die dunkleren vom helleren: Abs (DC &ndash; SC) | 
-| `Exclusion`  | Schwarz     | Ähnlich wie `Difference` jedoch niedrigere Kontrast |
-| `Multiply`   | Weiß     | Darkens durch Multiplikation von Farben: SC DC |
+| ---
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Ausführlichere Algorithmen finden Sie in der W3C [ **zusammensetzt und auf Ebene1 Blending** ](https://www.w3.org/TR/compositing-1/) -Spezifikation und die Skia [ **SkBlendMode Verweis** ](https://skia.org/user/api/SkBlendMode_Reference), obwohl die Schreibweise in diesen beiden Quellen nicht identisch ist. Beachten Sie, dass `Plus` wird häufig als Mischmodus Porter-Duff, betrachtet und `Modulate` ist nicht Teil der W3C-Spezifikation.
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Wenn die Quelle transparent ist, klicken Sie dann für die trennbare Füllmethoden außer `Modulate`, Blend-Modus hat keine Auswirkungen. Wie Sie zuvor gesehen haben die `Modulate` Blend-Modus umfasst den alpha-Kanal in der Multiplikation. Andernfalls `Modulate` hat dieselbe Wirkung wie das `Multiply`. 
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Beachten Sie, dass die beiden Modi, die mit dem Namen `ColorDodge` und `ColorBurn`. Die Wörter _umgehen_ und _brennen_ photographic Dunkelkammer Vorgehensweisen stammt. Ein Enlarger macht einen photographic Druck von Licht fort, über eine Negative. Mit kein Licht ist das Drucken weiß. Drucken ruft dunkler, je mehr Licht auf das Print für einen längeren Zeitraum fällt. Drucken-Entwickler verwendet häufig Hand oder kleinen Teil der Licht von einem bestimmten Teil des drucken vornehmen, die diesem Bereich heller zugeschrieben werden blockiert. Dies bezeichnet man als _abwedeln_. Dagegen nicht transparente Material mit eine Lücke in den (oder blockieren die meisten des Lichts Hände) verwendet werden, um mehr Licht an einer bestimmten Stelle nichtlineare Abdunkeln direkte _brennen_.
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Die **umgehen und Burn** Programm ähnelt **heller und dunkler**. Die XAML-Datei ist die gleichen, jedoch mit anderen Elementnamen, strukturiert und Code-Behind-Datei ist ebenfalls sehr ähnlich, aber die Auswirkungen dieser beiden Füllmethoden einheitlich unterscheidet:
+------ | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-[![Umgehen und Burn](separable-images/DodgeAndBurn.png "umgehen und Burn")](separable-images/DodgeAndBurn-Large.png#lightbox)
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Für kleine `Slider` Werte, die `Lighten` Modus hellt dunkle Bereiche zunächst zwar `ColorDodge` hellt mehr einheitlich.
+----- | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Bildverarbeitung Anwendungsprogramme können häufig abwedeln und Brennen von CDs zu bestimmten Bereichen, genau wie in einem Dunkelkammer begrenzt werden. Dies kann durch Farbverläufe oder durch eine Bitmap mit unterschiedlichen grauschattierungen erfolgen.
+-
+Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-## <a name="exploring-the-separable-blend-modes"></a>Untersuchen die trennbare Füllmethoden einheitlich
+----- | | `Plus`       | Schwarz | Lighdutzende durch Hinzufügen von Farben: SC + DC | | `Modulate`   | Weiß | Darkens durch Multiplikation von Farben: SC DC | | `Screen`     | Schwarz | Ergänzt das Produkt von Ergänzungen: SC + DC &ndash; SC DC | | `Overlay`    | Grau | Inversen von `HardLight` | | `Darken`     | Weiß | Minimum der Farben: min (SC, DC) | | `Lighten`    | Schwarz | Maximum von Farben: Max (SC, DC) | | `ColorDodge` | Schwarz | Ziel basierend auf Quelle aufhellt | | `ColorBurn`  | Weiß | Darkens des Ziels basierend auf der Quelle | | `HardLight`  | Grau | Vergleichbar mit der Auswirkung von hartem Spotlight | | `SoftLight`  | Grau | Vergleichbar mit der Auswirkung von Soft Spotlight | | `Difference` | Schwarz | Subtrahiert den dunkleren von dem helleren: ABS (DC &ndash; SC) | | `Exclusion`  | Schwarz | Vergleichbar mit, `Difference` aber niedrigerer Kontrast | | `Multiply`   | Weiß | Darkens durch Multiplikation von Farben: SC DC |
 
-Die **trennbare Blend-Modi** auf der Seite können Sie alle trennbare Blend-Modi zu untersuchen. Ein Bitmap-Ziel und Quelle über eine der Füllmethoden einheitlich farbiges Rechteck angezeigt. 
+Ausführlichere Algorithmen finden Sie in der Spezifikation der W3C-Zusammensetzung [**und-Blending der Ebene 1**](https://www.w3.org/TR/compositing-1/) und der Skia- [**skblendmode-Referenz**](https://skia.org/user/api/SkBlendMode_Reference), obwohl die Notation in diesen beiden Quellen nicht identisch ist. Beachten Sie, dass in `Plus` der Regel als Porter-Duff-Blend-Modus angesehen wird und `Modulate` nicht Teil der W3C-Spezifikation ist.
 
-Die XAML-Datei definiert eine `Picker` (Auswahl Blend-Modus) und vier Schieberegler. Die ersten drei Schieberegler können Sie die Komponenten roten, grünen und blauen der Quelle festlegen. Der vierte Schieberegler soll diese Werte zu überschreiben, indem Sie eine grauschattierung festlegen. Die einzelnen Schieberegler nicht erkannt, aber Farben kennzeichnen ihrer Funktion:
+Wenn die Quelle transparent ist, hat der Blend-Modus für alle trennbaren Blend-Modi `Modulate` keine Auswirkung. Wie Sie bereits gesehen haben, `Modulate` enthält der Blend-Modus den Alphakanal in der Multiplikation. Andernfalls `Modulate` hat denselben Effekt wie `Multiply` . 
+
+Beachten Sie die beiden Modi `ColorDodge` und `ColorBurn` . Die Wörter " _Dodge_ " und " _Burn_ " entstanden in fotografischem Verfahren. Durch eine größere Zahl wird ein Foto mit einem negativen Licht durch ein negatives Licht gedruckt. Ohne Licht ist der Druck weiß. Der Druck wird dunkler, da mehr Licht für einen längeren Zeitraum auf den Druck fällt. Druckhersteller nutzten häufig ein Hand-oder ein kleines Objekt, um das Licht eines bestimmten Teils des Druckes zu blockieren, sodass der Bereich heller wird. Dies wird als " _Dodging_" bezeichnet. Umgekehrt könnte das nicht transparente Material mit einem Loch darin (oder Hände, das den größten Teil des Lichts blockiert) dazu verwendet werden, mehr Licht an einem bestimmten Punkt anzuweisen, es als _Brennen_zu bezeichnen.
+
+Das Programm " **Dodge and Burn** " ähnelt stark den **Lighten und Darken**. Die XAML-Datei ist so strukturiert, aber mit unterschiedlichen Elementnamen, und die Code-Behind-Datei ist ebenfalls sehr ähnlich, aber die Auswirkung dieser beiden Blend-Modi unterscheidet sich erheblich:
+
+[![Ausweichen und brennen](separable-images/DodgeAndBurn.png "Ausweichen und brennen")](separable-images/DodgeAndBurn-Large.png#lightbox)
+
+Bei kleinen `Slider` Werten werden die `Lighten` dunklen Bereiche im Modus zuerst beleuchtet, während Sie gleich `ColorDodge` mäßiger heller werden.
+
+Bei der Verarbeitung von Anwendungsprogrammen kann das Dodging und brennen häufig auf bestimmte Bereiche beschränkt werden, ebenso wie in einem Dunkelraum. Dies kann durch Farbverläufe oder durch eine Bitmap mit unterschiedlichen Grautönen erreicht werden.
+
+## <a name="exploring-the-separable-blend-modes"></a>Untersuchen der trennbaren Blend-Modi
+
+Auf der Seite **Trenn Bare Blend-Modi** können Sie alle trennbaren Blend-Modi überprüfen. Mit einem der Blend-Modi werden ein bitmapziel und eine farbige Rechteck Quelle angezeigt. 
+
+Die XAML-Datei definiert eine `Picker` (um den Blend-Modus auszuwählen) und vier Schieberegler. Mit den ersten drei Schiebereglern können Sie die roten, grünen und blauen Komponenten der Quelle festlegen. Der vierte Schieberegler soll diese Werte überschreiben, indem ein grauer Farbton festgelegt wird. Die einzelnen Schieberegler werden nicht identifiziert, Farben geben jedoch ihre Funktion an:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -255,7 +283,7 @@ Die XAML-Datei definiert eine `Picker` (Auswahl Blend-Modus) und vier Schiebereg
 </ContentPage>
 ```
 
-Die Code-Behind-Datei lädt eine Bitmap-Ressource und zeichnet es zweimal einmal in der oberen Hälfte des Zeichenbereichs und erneut in der unteren Hälfte des Zeichenbereichs:
+Die Code-Behind-Datei lädt eine der Bitmapressourcen und zeichnet Sie zweimal, einmal in der oberen Hälfte der Canvas und wieder in der unteren Hälfte der Canvas:
 
 ```csharp
 public partial class SeparableBlendModesPage : ContentPage
@@ -325,19 +353,19 @@ public partial class SeparableBlendModesPage : ContentPage
 }
 ```
 
-Gegen Ende der `PaintSurface` Handler, ein Rechteck über die zweite Bitmap mit der ausgewählten Blendingmodus und die ausgewählte Farbe gezeichnet wird. Sie können die geänderte Bitmap unten mit der ursprünglichen Bitmap am oberen vergleichen:
+Im unteren Bereich des `PaintSurface` Handlers wird ein Rechteck über der zweiten Bitmap mit dem ausgewählten Blend-Modus und der ausgewählten Farbe gezeichnet. Sie können die geänderte Bitmap unten mit der ursprünglichen Bitmap im oberen Bereich vergleichen:
 
-[![Trennbare Füllmethoden einheitlich](separable-images/SeparableBlendModes.png "trennbare Füllmethoden einheitlich")](separable-images/SeparableBlendModes-Large.png#lightbox)
+[![Trennbare Füllmethoden](separable-images/SeparableBlendModes.png "Trennbare Füllmethoden")](separable-images/SeparableBlendModes-Large.png#lightbox)
 
-## <a name="additive-and-subtractive-primary-colors"></a>Additiv und Subtraktive Primärfarben
+## <a name="additive-and-subtractive-primary-colors"></a>Additive und subtraktive Primärfarben
 
-Die **Primärfarben** Seite zeichnet die drei überlappende Kreise von Rot, Grün und Blau:
+Die Seite " **primäre Farben** " zeichnet drei überlappende Kreise von rot, grün und blau:
 
-[![Additive Primärfarben](separable-images/PrimaryColors-Additive.png "additiv Primärfarben")](separable-images/PrimaryColors-Additive.png#lightbox)
+[![Additive Primärfarben](separable-images/PrimaryColors-Additive.png "Additive Primärfarben")](separable-images/PrimaryColors-Additive.png#lightbox)
 
-Hierbei handelt es sich um die additive Grundfarben. Kombinationen von zwei erzeugen, Cyan, Magenta und Gelb, und eine Kombination aus allen drei ist weiß.
+Dies sind die Additiven Primärfarben. Kombinationen aus zwei beiden erzeugt Cyan, Magenta und gelb, und eine Kombination aller drei ist weiß.
 
-Diese drei Kreisen gezeichnet werden, mit der `SKBlendMode.Plus` Modus, aber Sie können auch `Screen`, `Lighten`, oder `Difference` für den gleichen Effekt. Hier ist das Programm:
+Diese drei Kreise werden mit dem- `SKBlendMode.Plus` Modus gezeichnet, Sie können jedoch auch `Screen` , `Lighten` oder `Difference` für denselben Effekt verwenden. Hier ist das Programm:
 
 ```csharp
 public class PrimaryColorsPage : ContentPage
@@ -419,13 +447,13 @@ public class PrimaryColorsPage : ContentPage
 }
 ```
 
-Das Programm enthält eine `TabGestureRecognizer`. Wenn Sie tippen oder klicken Sie auf dem Bildschirm, verwendet die Anwendung `SKBlendMode.Multiply` die drei Subtraktive primären Replikate angezeigt:
+Das Programm enthält eine `TabGestureRecognizer` . Wenn Sie auf den Bildschirm tippen oder klicken, verwendet das Programm, `SKBlendMode.Multiply` um die drei subtraktiven primär Punkte anzuzeigen:
 
 [![Subtraktive Primärfarben](separable-images/PrimaryColors-Subtractive.png "Subtraktive Primärfarben")](separable-images/PrimaryColors-Subtractive-Large.png#lightbox)
 
-Die `Darken` Modus funktioniert auch für diesen Effekt.
+Der- `Darken` Modus funktioniert auch für denselben Effekt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [SkiaSharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
