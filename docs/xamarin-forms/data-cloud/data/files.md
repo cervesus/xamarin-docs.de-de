@@ -1,28 +1,17 @@
 ---
-title: Dateiverarbeitung in Xamarin.Forms
-description: Die Dateiverarbeitung mit Xamarin.Forms kann mit Code in einer .NET Standard-Bibliothek oder mithilfe eingebetteter Ressourcen erfolgen.
-ms.prod: xamarin
-ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/21/2018
-ms.openlocfilehash: fb3bbda3caee9fdbd490aaea7e119baf470eedd1
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71997166"
+Title: "Datei Behandlung in Xamarin.Forms " Description: "die Datei Behandlung mit Xamarin.Forms kann mithilfe von Code in einer .NET Standard Bibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden."
+ms. Prod: xamarin ms. assetid: 9987c3f6-5f04-403b-bbb4-ecb024ea6cc8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/21/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung in Xamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+# <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung inXamarin.Forms
 
-_Die Dateiverarbeitung mit Xamarin.Forms kann mit Code in einer .NET Standard-Bibliothek oder mithilfe eingebetteter Ressourcen erfolgen._
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+
+_Die Verarbeitung von Dateien mit Xamarin.Forms kann mithilfe von Code in einer .NET Standard Bibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden._
 
 ## <a name="overview"></a>Übersicht
 
-Xamarin.Forms-Code wird auf mehreren Plattformen ausgeführt, von denen jede ihr eigenes Dateisystem besitzt. Früher wurde das Lesen und Schreiben von Dateien einfach mithilfe der nativen Datei-APIs auf der entsprechenden Plattform durchgeführt. Alternativ stellen eingebettete Ressourcen eine einfachere Lösung für das Verteilen von Datendateien mit einer App dar. Mit .NET Standard 2.0 ist es jedoch möglich, Dateizugriffscode in .NET Standard-Bibliotheken freizugeben.
+Xamarin.Formsder Code wird auf mehreren Plattformen ausgeführt, von denen jede über ein eigenes Dateisystem verfügt. Früher wurde das Lesen und Schreiben von Dateien einfach mithilfe der nativen Datei-APIs auf der entsprechenden Plattform durchgeführt. Alternativ stellen eingebettete Ressourcen eine einfachere Lösung für das Verteilen von Datendateien mit einer App dar. Mit .NET Standard 2.0 ist es jedoch möglich, Dateizugriffscode in .NET Standard-Bibliotheken freizugeben.
 
 Weitere Informationen zum Verarbeiten von Bilddateien finden Sie unter [Working with Images (Arbeiten mit Bildern)](~/xamarin-forms/user-interface/images.md).
 
@@ -50,7 +39,7 @@ Darüber hinaus bestimmt die `File.Exists`-Methode, ob die angegebene Datei vorh
 bool doesExist = File.Exists(fileName);
 ```
 
-Der Pfad der Datei auf jeder Plattform kann über eine .NET Standard-Bibliothek bestimmt werden, indem ein Wert der [`Environment.SpecialFolder`](xref:System.Environment.SpecialFolder)-Enumeration als erstes Argument der `Environment.GetFolderPath`-Methode verwendet wird. Das Ergebnis kann dann mithilfe der `Path.Combine`-Methode mit einem Dateinamen kombiniert werden:
+Der Pfad der Datei auf jeder Plattform kann aus einer .NET Standard Bibliothek ermittelt werden, indem ein Wert der- [`Environment.SpecialFolder`](xref:System.Environment.SpecialFolder) Enumeration als erstes Argument für die-Methode verwendet wird `Environment.GetFolderPath` . Das Ergebnis kann dann mithilfe der `Path.Combine`-Methode mit einem Dateinamen kombiniert werden:
 
 ```csharp
 string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
@@ -58,25 +47,25 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 Diese Vorgänge werden in der Beispiel-App veranschaulicht, die eine Seite enthält, die Text speichert und lädt:
 
-[![Speichern und Laden von Text]speichern und Laden von(files-images/saveandload-sml.png "Dateien in der APP")](files-images/saveandload.png#lightbox "Speichern und Laden von Dateien in der APP")
+[![Speichern und Laden von Text](files-images/saveandload-sml.png "Speichern und Laden von Dateien in der APP")](files-images/saveandload.png#lightbox "Speichern und Laden von Dateien in der APP")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>Laden von als Ressourcen eingebetteten Dateien
 
-Wenn Sie eine Datei in eine **.NET Standard**-Assembly einbetten möchten, müssen Sie eine Datei erstellen oder hinzufügen und sicherstellen, dass für den Buildvorgang **EmbeddedResource** festgelegt ist.
+Wenn Sie eine Datei in eine **.NET Standard**-Assembly einbetten möchten, müssen Sie eine Datei erstellen oder hinzufügen und sicherstellen, dass **Buildaktion** auf „EmbeddedResource“ festgelegt ist.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[Einstellungen für ![eingebettetes ressourcenbuild werden konfiguriert](files-images/vs-embeddedresource-sml.png "EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Festlegen von EmbeddedResource BuildAction")
+[![Konfigurieren von eingebetteten ressourcenbuild-Aktionen](files-images/vs-embeddedresource-sml.png "Festlegen von EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Festlegen von EmbeddedResource BuildAction")
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![Textdatei eingebettet in die .NET-Standardbibliothek, Konfigurieren der eingebetteten ressourcenbuild-Aktions](files-images/xs-embeddedresource-sml.png "Einstellung EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Festlegen von EmbeddedResource BuildAction")
+[![Textdatei eingebettet in die .NET-Standardbibliothek, Konfigurieren der eingebetteten ressourcenbuild-Aktion](files-images/xs-embeddedresource-sml.png "Festlegen von EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Festlegen von EmbeddedResource BuildAction")
 
 -----
 
-`GetManifestResourceStream` wird verwendet, um über die **Ressourcen-ID** auf die eingebettete Datei zuzugreifen. Standardmäßig ist die Ressourcen-ID der Dateiname, dem der Standard Namespace für das Projekt vorangestellt ist, in das Sie eingebettet ist. in diesem Fall ist die Assembly **workingwithfiles** , und der Dateiname ist **libtextresource. txt**, sodass die Ressourcen-ID `WorkingWithFiles.LibTextResource.txt` ist.
+`GetManifestResourceStream` wird verwendet, um über die **Ressourcen-ID** auf die eingebettete Datei zuzugreifen. Standardmäßig ist die Ressourcen-ID der Dateiname, dem der Standard Namespace für das Projekt vorangestellt ist, in das Sie eingebettet ist. in diesem Fall ist die Assembly **workingwithfiles** , und der Dateiname ist **libtextresource. txt**, sodass die Ressourcen-ID lautet `WorkingWithFiles.LibTextResource.txt` .
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -90,7 +79,7 @@ using (var reader = new System.IO.StreamReader (stream))
 
 Die `text`-Variable kann anschließend verwendet werden, um den Text darzustellen. Sie können Sie jedoch auch im Code verwenden. Dieser Screenshot der [Beispiel-App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles) veranschaulicht den Text, der in einem `Label`-Steuerelement gerendert wird.
 
- [![Textdatei eingebettet in]die eingebettete Textdatei der .NET-Standardbibliothek(files-images/pcltext-sml.png "in .NET Standard in der APP angezeigter Bibliothek")](files-images/pcltext.png#lightbox "Eingebettete Textdatei in .NET Standard in der APP angezeigter Bibliothek")
+ [![In der .NET-Standardbibliothek eingebettete Textdatei](files-images/pcltext-sml.png "Eingebettete Textdatei in .NET Standard in der APP angezeigter Bibliothek")](files-images/pcltext.png#lightbox "Eingebettete Textdatei in .NET Standard in der APP angezeigter Bibliothek")
 
 Das Laden und Deserialisieren einer XML-Datei ist genauso einfach. Der folgende Code veranschaulicht, wie eine XML-Datei aus einer Ressource geladen und deserialisiert wird und anschließend an ein `ListView`-Element gebunden wird, um angezeigt zu werden. Die XML-Datei enthält ein Array von `Monkey`-Objekten (die Klasse wird im Beispielcode definiert).
 
@@ -106,7 +95,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [In der ![.NET-Standardbibliothek eingebettete XML-Datei, in ListView](files-images/pclxml-sml.png "Embedded XML file in der in ListView angezeigten .NET-Standardbibliothek") angezeigt.](files-images/pclxml.png#lightbox "In ListView angezeigte eingebettete XML-Datei in der .NET-Standardbibliothek")
+ [![In der .NET-Standardbibliothek eingebettete XML-Datei, in ListView angezeigt](files-images/pclxml-sml.png "In ListView angezeigte eingebettete XML-Datei in der .NET-Standardbibliothek")](files-images/pclxml.png#lightbox "In ListView angezeigte eingebettete XML-Datei in der .NET-Standardbibliothek")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -167,5 +156,5 @@ In diesem Artikel wurden einfache Dateivorgänge für das Speichern und Laden vo
 ## <a name="related-links"></a>Verwandte Links
 
 - [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
-- [Xamarin.Forms Samples (Beispiele für Xamarin.Forms)](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.FormsStich](https://github.com/xamarin/xamarin-forms-samples)
 - [Working with the File System in Xamarin.iOS (Arbeiten mit dem Dateisystem in Xamarin.iOS)](~/ios/app-fundamentals/file-system.md)

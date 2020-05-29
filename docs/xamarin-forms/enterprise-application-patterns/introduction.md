@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 12582c567a439cf4e0236724bd373c3508f18748
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139355"
+Title: "Einführung in die Entwicklung von Unternehmens-Apps" Beschreibung: "dieses Kapitel bietet eine Einführung in die Entwicklung von Unternehmens-apps und führt den Mobile App der eshoponcontainers ein."
+ms. Prod: xamarin ms. assetid: cbce0659-fa03-447a-86ec-140438143230 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmensanwendungen
 
 Unabhängig von der Plattform stehen Entwicklern von Unternehmens-apps verschiedene Herausforderungen zur Seite:
@@ -108,13 +94,13 @@ Die eshoponcontainers-Mobile App führt die folgenden Xamarin.Forms Funktionen a
 - Animationen
 - Befehle
 - Verhalten
-- Auslöser
+- Trigger
 - Effekte
 - Benutzerdefinierte Renderer
 - MessagingCenter
 - Benutzerdefinierte Steuerelemente
 
-Weitere Informationen zu dieser Funktion finden Sie in der [ Xamarin.Forms Dokumentation](~/xamarin-forms/index.yml)und im Thema zum [Erstellen Xamarin.Forms von Mobile Apps mit ](https://aka.ms/xamebook).
+Weitere Informationen zu dieser Funktion finden Sie in der [ Xamarin.Forms Dokumentation](~/xamarin-forms/index.yml)und im Thema zum [Erstellen Xamarin.Forms von Mobile Apps mit ](https://aka.ms/xamformsebook).
 
 Außerdem werden Komponententests für einige der Klassen in den eshoponcontainers-Mobile App bereitgestellt.
 
@@ -122,7 +108,7 @@ Außerdem werden Komponententests für einige der Klassen in den eshoponcontaine
 
 Die eshoponcontainers-Mobile App Lösung organisiert den Quellcode und andere Ressourcen in-Projekten. Alle Projekte verwenden Ordner, um den Quellcode und andere Ressourcen in Kategorien zu organisieren. In der folgenden Tabelle werden die Projekte beschrieben, aus denen sich die eshoponcontainers-Mobile App zusammenführen:
 
-|Project|Beschreibung|
+|Projekt|Beschreibung|
 |--- |--- |
 |eshoponcontainers. Core|Dieses Projekt ist das Projekt der portablen Klassenbibliothek (Portable Class Library, PCL), das den freigegebenen und den freigegebenen Benutzeroberflächen|
 |eshoponcontainers. Droid|Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für die Android-App.|
@@ -152,7 +138,7 @@ Das PCL-Projekt "eshoponcontainers. Core" enthält die folgenden Ordner:
 |Modelle|Enthält die Modellklassen für die app.|
 |Eigenschaften|Enthält `AssemblyInfo.cs` , eine .net-assemblymetadatendatei.|
 |Dienste|Enthält Schnittstellen und Klassen, mit denen Dienste implementiert werden, die für die APP bereitgestellt werden.|
-|Auslöser|Enthält den- `BeginAnimation` Aufruf, mit dem eine Animation in XAML aufgerufen wird.|
+|Trigger|Enthält den- `BeginAnimation` Aufruf, mit dem eine Animation in XAML aufgerufen wird.|
 |Überprüfungen|Enthält Klassen, die zum Validieren von Dateneingaben beteiligt sind.|
 |ViewModels|Enthält die Anwendungslogik, die für Seiten verfügbar gemacht wird.|
 |Sichten|Enthält die Seiten für die app.|

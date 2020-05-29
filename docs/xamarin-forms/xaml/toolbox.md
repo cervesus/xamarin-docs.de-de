@@ -1,50 +1,38 @@
 ---
-title: Bearbeiten von Xamarin.Forms-XAML, die mithilfe der toolbox
-description: Die XAML-Toolbox enthält alle integrierten Layouts und Steuerelemente, die direkt in einer geöffneten XAML-Datei gezogen werden können.
-ms.prod: xamarin
-ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
-ms.technology: xamarin-forms
-author: conceptdev
-ms.author: crdun
-ms.date: 08/29/2018
-ms.openlocfilehash: 4e5f306d45cccaa34df2a3472e9d36f8b0badcd7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61173860"
+Title: "Bearbeiten von Xamarin.Forms XAML mit der Toolbox" Description: "die XAML-Toolbox enthält alle integrierten Layouts und Steuerelemente, die direkt in eine geöffnete XAML-Datei gezogen werden können."
+ms. Prod: xamarin ms. assetid: 513d1247-8ad0-4611-8660-1d277cd369e1 ms. Technology: xamarin-Forms Author: konzeptiontdev ms. Author: crdun ms. Date: 08/29/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-xaml-toolbox"></a>Xamarin.Forms-XAML-Toolbox
+# <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsXAML-Toolbox
 
-Visual Studio 2017, Version 15.8 und Visual Studio für Mac 7.6 verfügen jetzt über eine Toolbox, die während der Bearbeitung von Xamarin.Forms-XAML-Dateien zur Verfügung. Die Toolbox enthält alle integrierten Xamarin.Forms-Steuerelemente und Layouts, die in den XAML-Editor gezogen werden können.
+Visual Studio 2017 Version 15,8 und Visual Studio für Mac 7,6 verfügen nun über eine Toolbox, die beim Bearbeiten von Xamarin.Forms XAML-Dateien verfügbar ist. Die Toolbox enthält alle integrierten Steuer Xamarin.Forms Elemente und Layouts, die in den XAML-Editor gezogen werden können.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Öffnen Sie eine Xamarin.Forms-XAML-Datei zur Bearbeitung in Visual Studio 2017. Die Toolbox angezeigt werden kann, durch Drücken von **STRG + W, X** auf der Tastatur, oder die **Ansicht > Toolbox** Menüelement.
+Öffnen Sie in Visual Studio 2017 eine Xamarin.Forms XAML-Datei, um Sie zu bearbeiten. Die Toolbox kann angezeigt werden, indem Sie **STRG + W, X** auf der Tastatur drücken oder das Menü Element **> Toolbox anzeigen** auswählen.
 
-![Ansicht - Menü "Toolbox"](toolbox-images/win-view-menu.png)
+![Menü "Ansicht" (Toolbox)](toolbox-images/win-view-menu.png)
 
-Die Toolbox ausgeblendet, und wie andere Bereiche in Visual Studio 2017 mithilfe der Symbole in der oberen rechten Ecke oder im Kontextmenü angedockt werden kann. Die Xamarin.Forms-XAML-Toolbox verfügt über benutzerdefinierte Optionen, die geändert werden können, indem Sie mit der rechten Maustaste auf jeden Abschnitt. Umschalten der **Listenansicht** Option aus, um zwischen der Liste und das compact Ansichten wechseln:
+Die Toolbox kann wie andere Bereiche in Visual Studio 2017 ausgeblendet und angedockt werden. verwenden Sie dazu die Symbole in der oberen rechten Ecke oder im Kontextmenü. Die Xamarin.Forms XAML-Toolbox verfügt über benutzerdefinierte Ansichtsoptionen, die durch Rechtsklick auf jeden Abschnitt geändert werden können. Aktivieren Sie die Option **Listenansicht** , um zwischen den Ansichten "Liste" und "Compact" zu wechseln:
 
-[![Toolbox: Listenansicht](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox) ![compact Toolbox-Anzeige](toolbox-images/win-compact-display.png)
+[ ![ Toolbox-Listenansicht](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox) ![ Toolbox Compact Display](toolbox-images/win-compact-display.png)
 
-Wenn eine Xamarin.Forms-XAML-Datei zur Bearbeitung geöffnet ist, ziehen Sie jedes Steuerelement oder Layout aus der Toolbox in die Datei dann nutzen Sie die Vorteile von Intellisense, um die Benutzeroberfläche anpassen.
+Wenn eine Xamarin.Forms XAML-Datei zum Bearbeiten geöffnet ist, ziehen Sie ein beliebiges Steuerelement oder Layout aus der Toolbox in die Datei, und nutzen Sie dann IntelliSense, um die Benutzeroberfläche anzupassen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Wählen Sie in Visual Studio für Mac die **Ansicht > Pads > Toolbox** Menüelement zum Anzeigen der Toolbox:
+Wählen Sie in Visual Studio für Mac das Menü Element **> Pads anzeigen > Toolbox** aus, um die Toolbox anzuzeigen:
 
-![Menü "Ansicht - Pads --Toolbox"](toolbox-images/mac-view-menu.png)
+![Menü "Ansicht-Pads-Toolbox"](toolbox-images/mac-view-menu.png)
 
-Die Toolbox ausgeblendet, und wie andere Bereiche in Visual Studio für Mac, die mithilfe der Symbole in der oberen rechten Ecke Pad angeheftet werden kann. Die Xamarin.Forms-XAML-Toolbox verfügt über benutzerdefinierte Optionen, die mit den Schaltflächen neben dem Suchfeld geändert werden können:
+Die Toolbox kann wie andere Pads in Visual Studio für Mac ausgeblendet und angeheftet werden, wobei die Symbole in der oberen rechten Ecke des Pads verwendet werden. Die Xamarin.Forms XAML-Toolbox verfügt über benutzerdefinierte Ansichtsoptionen, die mit den Schaltflächen neben dem Suchfeld geändert werden können:
 
-- Anzeigen von Kategorien
-- Kompakte Anzeige verwenden
+- Kategorien anzeigen
+- Verwenden der kompakten Anzeige
 
-Die vollständigen und compact-Optionen sind unten aufgeführt:
+Die Optionen "Full" und "Compact" sind unten dargestellt:
 
-[![Toolbox vollständigen Anzeige](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox) ![compact Toolbox-Anzeige](toolbox-images/mac-compact-display.png)
+[ ![ Vollständige Toolbox Anzeige](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox) ![ Toolbox Compact Display](toolbox-images/mac-compact-display.png)
 
-Wenn eine Xamarin.Forms-XAML-Datei zur Bearbeitung geöffnet ist, ziehen Sie jedes Steuerelement oder Layout aus der Toolbox in die Datei dann nutzen Sie die Vorteile von Intellisense, um die Benutzeroberfläche anpassen.
+Wenn eine Xamarin.Forms XAML-Datei zum Bearbeiten geöffnet ist, ziehen Sie ein beliebiges Steuerelement oder Layout aus der Toolbox in die Datei, und nutzen Sie dann IntelliSense, um die Benutzeroberfläche anzupassen.
 
 -----

@@ -1,20 +1,9 @@
 ---
-title: 'Setup Schritte: Anmelden mit Apple für xamarin. Forms'
-description: Die Anmeldung mit dem Apple-Setup hängt von den verschiedenen Plattformen ihrer mobilen Anwendung ab.
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-ms.openlocfilehash: c1f75f4872d787e261ab6bbac3624e31538c6ff0
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206540"
+Title: "Setup Steps-Sign in with Apple for Xamarin.Forms " Description: "Sign in with Apple Setup unterscheidet sich von den verschiedenen Plattformen, auf die Ihre Mobile Anwendung abzielt."
+ms. Prod: xamarin ms. assetid: 8F 712802-395b-469b-b5be-c927ad1a8391 ms. Technology: xamarin-Forms Author: davidortinau ms. Author: daortin ms. Date: 09/10/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Einrichten der Anmeldung mit Apple für xamarin. Forms
+
+# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Setup bei Apple für anmeldenXamarin.Forms
 
 In dieser Anleitung werden die Schritte beschrieben, die zum Einrichten Ihrer plattformübergreifenden Anwendungen erforderlich sind, um die erweiterte Anmeldung mit Apple zu nutzen. Während das Apple-Setup direkt im Apple-Entwickler Portal ausgeführt wird, sind zusätzliche Schritte erforderlich, um eine sichere Beziehung zwischen Android und Apple herzustellen. 
 
@@ -33,14 +22,14 @@ Fügen Sie Ihre Domäne hinzu, und klicken Sie auf **registrieren**.
 ![Domänen Formular registrieren](sign-in-images/readme-signin-domain-more.png)
 
 > [!NOTE]
-> Wenn eine Fehlermeldung angezeigt wird, dass Ihre Domäne nicht SPF-kompatibel ist, müssen Sie Ihrer Domäne einen SPF DNS TXT-Datensatz hinzufügen und warten, bis die Domäne weitergegeben wird, bevor Sie fortfahren: Die SPF txt könnte etwa wie folgt aussehen:`v=spf1 a a:myapp.com -all`
+> Wenn eine Fehlermeldung angezeigt wird, dass Ihre Domäne nicht SPF-kompatibel ist, müssen Sie Ihrer Domäne einen SPF DNS TXT-Datensatz hinzufügen und darauf warten, dass Sie verteilt wird, bevor Sie fortfahren: die SPF txt könnte etwa wie folgt aussehen:`v=spf1 a a:myapp.com -all`
 
 Als nächstes müssen Sie den Besitz der Domäne überprüfen, indem Sie auf **herunterladen** klicken, um die `apple-developer-domain-association.txt` Datei abzurufen, und Sie dann in den `.well-known` Ordner der Website Ihrer Domäne hochladen.
 
 Nachdem die `.well-known/apple-developer-domain-association.txt` Datei hochgeladen und erreichbar ist, können Sie auf " **überprüfen** " klicken, damit Apple Ihren Domänen Besitz überprüft.
 
 > [!NOTE]
-> Apple überprüft den Besitz mit `https://`. Stellen Sie sicher, dass Sie über SSL-Setup verfügen und die Datei über eine sichere URL zugänglich ist.
+> Apple überprüft den Besitz mit `https://` . Stellen Sie sicher, dass Sie über SSL-Setup verfügen und die Datei über eine sichere URL zugänglich ist.
 
 Dieser Vorgang wird erfolgreich abgeschlossen, bevor Sie fortfahren.
 
@@ -62,7 +51,7 @@ Erstellen Sie im Abschnitt [Identifiers](https://developer.apple.com/account/res
 
 ![Erstellen einer neuen Dienst-ID](sign-in-images/readme-serviceid-create.png)
 
-Vergeben Sie eine Beschreibung und einen Bezeichner für Ihre Dienst-ID.  Dabei handelt es sich um `ServerId`den Bezeichner.  Stellen Sie sicher, dass Sie die **Anmeldung mit Apple**aktivieren.
+Vergeben Sie eine Beschreibung und einen Bezeichner für Ihre Dienst-ID.  Dabei handelt es sich um den Bezeichner `ServerId` .  Stellen Sie sicher, dass Sie die **Anmeldung mit Apple**aktivieren.
 
 Bevor Sie fortfahren, klicken Sie neben der von Ihnen aktivierten Option _bei Apple anmelden_ auf **Konfigurieren** .
 
@@ -70,10 +59,10 @@ Stellen Sie im Konfigurations Panel sicher, dass die richtige **primäre APP-ID*
 
 Wählen Sie als nächstes die **Webdomäne** aus, die Sie zuvor konfiguriert haben.
 
-Fügen Sie abschließend mindestens eine **Rückgabe-URL**hinzu.  Alle `redirect_uri` , die Sie später verwenden, müssen hier genauso registriert werden, wie Sie Sie verwenden.  Stellen Sie sicher, dass `http://` Sie `https://` oder in die URL einschließen, wenn Sie Sie eingeben.
+Fügen Sie abschließend mindestens eine **Rückgabe-URL**hinzu.  Alle, die `redirect_uri` Sie später verwenden, müssen hier genauso registriert werden, wie Sie Sie verwenden.  Stellen Sie sicher, dass Sie `http://` oder `https://` in die URL einschließen, wenn Sie Sie eingeben.
 
 > [!NOTE]
-> Zu Testzwecken können Sie nicht oder `127.0.0.1` `localhost`verwenden, aber Sie können auch andere Domänen `local.test`verwenden, z. b.  Wenn Sie sich dafür entscheiden, können Sie die `hosts` Datei Ihres Computers bearbeiten, um diese fiktive Domäne in Ihre lokale IP-Adresse aufzulösen.
+> Zu Testzwecken können Sie nicht `127.0.0.1` oder verwenden `localhost` , aber Sie können auch andere Domänen verwenden, z `local.test` . b..  Wenn Sie sich dafür entscheiden, können Sie die Datei Ihres Computers bearbeiten, `hosts` um diese fiktive Domäne in Ihre lokale IP-Adresse aufzulösen.
 
 ![Konfigurieren Ihrer Apple-Anmeldung](sign-in-images/readme-serviceid-configure.png)
 
@@ -110,11 +99,11 @@ DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 
-Benennen Sie diesen `P8FileContents` Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf. Sie werden Sie verwenden, wenn Sie diesen Dienst in Ihre Mobile Anwendung integrieren.
+Benennen Sie diesen Schlüssel, `P8FileContents` und bewahren Sie ihn an einem sicheren Ort auf. Sie werden Sie verwenden, wenn Sie diesen Dienst in Ihre Mobile Anwendung integrieren.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurden die Schritte beschrieben, die zum Einrichten der Anmeldung bei Apple zur Verwendung in ihren xamarin. Forms-Anwendungen erforderlich sind.
+In diesem Artikel wurden die Schritte beschrieben, die zum Einrichten der Anmeldung bei Apple zur Verwendung in Ihren Anwendungen erforderlich sind Xamarin.Forms .
 
 ## <a name="related-links"></a>Verwandte Links
 

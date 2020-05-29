@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsLokale Datenbanken
-description: Xamarin.Formsunterstützt datenbankgesteuerte Anwendungen mithilfe der SQLite-Datenbank-Engine, die das Laden und Speichern von Objekten in frei gegebenem Code ermöglicht. In diesem Artikel wird beschrieben Xamarin.Forms , wie Anwendungen mithilfe von SQLite.NET Daten in einer lokalen SQLite-Datenbank lesen und schreiben können.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 04d813baae5796da68ea27389df33738af5cde3e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131000"
+Title: " Xamarin.Forms local Database" Description: " Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen, die die SQLite-Datenbank-Engine verwenden. Dadurch können Objekte in frei gegebenem Code geladen und gespeichert werden. In diesem Artikel wird beschrieben Xamarin.Forms , wie Anwendungen mithilfe von SQLite.NET Daten in einer lokalen SQLite-Datenbank lesen und schreiben können. "
+ms. Prod: xamarin ms. assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 12/05/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-local-databases"></a>Xamarin.FormsLokale Datenbanken
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
@@ -39,7 +25,7 @@ Verwenden Sie den nuget-Paket-Manager, um nach **SQLite-net-PCL** zu suchen und 
 
 Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über die folgenden Attribute:
 
-- **Erstellt von:** Frank A. Krueger
+- **Erstellt von:** Frank A. Krueger (praeclarum)
 - **ID:** SQLite-net-PCL
 - **NuGet-Link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 

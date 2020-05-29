@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsLayouts
-description: Xamarin.FormsLayouts werden verwendet, um Benutzeroberflächen-Steuerelemente in visuellen Strukturen zu verfassen. In diesem Artikel werden die in enthaltenen Layouts aufgeführt Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137305"
+Title: " Xamarin.Forms Layouts" Beschreibung: " Xamarin.Forms Layouts werden verwendet, um Benutzeroberflächen-Steuerelemente in visuellen Strukturen zu verfassen. In diesem Artikel werden die in enthaltenen Layouts aufgeführt Xamarin.Forms .
+ms. Prod: xamarin ms. assetid: F4180997-BA21-453a-9958-D1E2940DF050 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/21/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-layouts"></a>Xamarin.FormsLayouts
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -57,7 +43,7 @@ Diese Klassen werden von abgeleitet [`Layout`](xref:Xamarin.Forms.Layout) , wodu
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)kann seinen Inhalt scrollen. Legen Sie die- [`Content`](xref:Xamarin.Forms.ScrollView.Content) Eigenschaft auf eine Ansicht oder ein Layout fest, die für den Bildschirm zu groß ist. (Der Inhalt eines `ScrollView` ist häufig ein [`StackLayout`](#stackLayout) .) Legen Sie die- [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) Eigenschaft fest, um anzugeben, ob das Scrollen vertikal, horizontal oder beides sein soll.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ScrollView)  /  [Leitfaden](~/xamarin-forms/user-interface/layouts/scroll-view.md)  /  [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView-Beispiel](layouts-images/ScrollView.png "ScrollView-Beispiel")](layouts-images/ScrollView-Large.png#lightbox "ScrollView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView)kann seinen Inhalt scrollen. Legen Sie die- [`Content`](xref:Xamarin.Forms.ScrollView.Content) Eigenschaft auf eine Ansicht oder ein Layout fest, die für den Bildschirm zu groß ist. (Der Inhalt eines `ScrollView` ist häufig ein [`StackLayout`](#stackLayout) .) Legen Sie die- [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) Eigenschaft fest, um anzugeben, ob das Scrollen vertikal, horizontal oder beides sein soll.<br /><br />[API-Dokumentation](xref:Xamarin.Forms.ScrollView)  /  [Leitfaden](~/xamarin-forms/user-interface/layouts/scrollview.md)  /  [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView-Beispiel](layouts-images/ScrollView.png "ScrollView-Beispiel")](layouts-images/ScrollView-Large.png#lightbox "ScrollView-Beispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>Templatedview
