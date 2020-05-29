@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/27/2019
-  ms.openlocfilehash: 5eb567466b13b8baaa731bc1b37197336fac99bd
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: eed87cca333da2459e3a03f1bc2da6e10e32c9fd
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75680262"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84127010"
 landingContent:
 - title: Lokaler Datenspeicher
   linkLists:
@@ -33,11 +36,11 @@ landingContent:
       url: azure-services/azure-cosmosdb.md
     - text: Azure-Benachrichtigungshubs
       url: azure-services/azure-notification-hub.md
-    - text: Azure-Speicher
+    - text: Azure Storage
       url: azure-services/azure-storage.md
     - text: Azure Search
       url: azure-services/azure-search.md
-    - text: Azure-Funktionen
+    - text: Azure Functions
       url: azure-services/azure-functions.md
     - text: Azure SignalR-Dienst
       url: azure-services/azure-signalr.md
@@ -55,7 +58,7 @@ landingContent:
       url: azure-cognitive-services/text-translation.md
     - text: Emotionserkennung
       url: azure-cognitive-services/emotion-recognition.md
-- title: WEB SERVICES
+- title: Webdienste
   linkLists:
   - linkListType: concept
     links:
@@ -67,7 +70,7 @@ landingContent:
       url: web-services/wcf.md
     - text: REST
       url: web-services/rest.md
-- title: Authentication
+- title: Authentifizierung
   linkLists:
   - linkListType: concept
     links:

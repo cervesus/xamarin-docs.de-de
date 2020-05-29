@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/23/2019
-  ms.openlocfilehash: 672bf80503c85ac4bdaa903c647144be3819635d
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 7a976d8f711f2a1f940177f0fbe7605f4bfabf94
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "76550080"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84133132"
 landingContent:
 - title: Erste Schritte
   linkLists:
@@ -55,13 +58,13 @@ landingContent:
       url: tutorials/stacklayout/index.yml
     - text: Bezeichnung
       url: tutorials/label/index.yml
-    - text: Taste
+    - text: Schaltfläche
       url: tutorials/button/index.yml
-    - text: Eintrag
+    - text: Eingabe
       url: tutorials/entry/index.yml
     - text: Editor
       url: tutorials/editor/index.yml
-    - text: Image
+    - text: Bild
       url: tutorials/image/index.yml
     - text: Raster
       url: tutorials/grid/index.yml
@@ -77,7 +80,7 @@ landingContent:
       url: tutorials/app-lifecycle/index.yml
     - text: Lokale Datenbank
       url: tutorials/local-database/index.yml
-    - text: WEB SERVICES
+    - text: Webdienste
       url: tutorials/web-service/index.yml
 - title: Informationen zu Xamarin
   linkLists:

@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/23/2019
-  ms.openlocfilehash: fa5fb1d6747650520864371ceacf665a50dc0973
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: f96a1b923354fe5efee3413e30b18909d8428bfc
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75718739"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84138098"
 landingContent:
 - title: Layouts
   linkLists:
@@ -25,19 +28,19 @@ landingContent:
       url: stacklayout/index.yml
     - text: Raster
       url: grid/index.yml
-- title: Kontrollen
+- title: Steuerelemente
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Bezeichnung
       url: label/index.yml
-    - text: Taste
+    - text: Schaltfläche
       url: button/index.yml
-    - text: Eintrag
+    - text: Eingabe
       url: entry/index.yml
     - text: Editor
       url: editor/index.yml
-    - text: Image
+    - text: Bild
       url: image/index.yml
     - text: ListView
       url: listview/index.yml
@@ -51,5 +54,5 @@ landingContent:
       url: app-lifecycle/index.yml
     - text: Lokale Datenbank
       url: local-database/index.yml
-    - text: WEB SERVICES
+    - text: Webdienste
       url: web-service/index.yml
