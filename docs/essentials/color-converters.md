@@ -1,17 +1,20 @@
 ---
-title: 'Xamarin.Essentials: Farbkonverter'
+title: Xamarin.Essentials-Farbkonverter
 description: Die Klasse „ColorConverters“ in Xamarin.Essentials stellt mehrere Hilfs- und Erweiterungsmethoden für System.Drawing.Color bereit.
-ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: 159add7ee83f3c65d791fc49ee3a85ddaaabae1d
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+ms.custom: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150141"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130220"
 ---
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials: Farbkonverter
 
@@ -23,7 +26,7 @@ Die Klasse **ColorConverters** in Xamarin.Essentials stellt mehrere Hilfsmethode
 
 ## <a name="using-color-converters"></a>Verwenden von Farbkonvertern
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;

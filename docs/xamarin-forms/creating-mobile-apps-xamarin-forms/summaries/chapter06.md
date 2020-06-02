@@ -1,18 +1,22 @@
 ---
-title: 'Zusammenfassung von Kapitel 6: Schaltflächenklicks'
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 6: Schaltflächenklicks'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 12c8cdc19f9e6765ca25ade97bcfdbffb7b60381
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 6. Button clicks''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f9bafbf4af2a89acd02d436604e882be87cbde8c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334716"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136837"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>Zusammenfassung von Kapitel 6: Schaltflächenklicks
 
@@ -83,11 +87,11 @@ Zu einem Aufruf von `OnStart` kommt es während des Programmstarts. Sie müssen 
 Die Beispiele [**PersistentKeypad**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) und **SimplestKeypad** ähneln sich sehr. Der einzige Unterschied besteht darin, dass das Programm die Überschreibung durch `OnSleep` dazu verwendet, den aktuellen Tastatureintrag zu speichern sowie den Seitenkonstruktor, um diese Daten wiederherzustellen.
 
 > [!NOTE]
-> Eine weitere Möglichkeit zum Speichern von Programmeinstellungen bietet die Xamarin.Essentials-Klasse [Einstellungen](~/essentials/preferences.md).
+> Eine weitere Möglichkeit zum Speichern von Programmeinstellungen bietet dieXamarin.Essentials -Klasse [Einstellungen](~/essentials/preferences.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Kapitel 6: Vollständiger Text (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [Kapitel 6: Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 - [Kapitel 6: F#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
-- [Xamarin.Forms-Button-Element](~/xamarin-forms/user-interface/button.md)
+- [Xamarin.Forms-Schaltfläche](~/xamarin-forms/user-interface/button.md)

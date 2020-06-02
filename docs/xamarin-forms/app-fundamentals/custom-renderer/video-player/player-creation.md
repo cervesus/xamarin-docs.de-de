@@ -1,18 +1,21 @@
 ---
-title: Erstellen von Plattformen für Videoplayer
+title: ''
 description: In diesem Artikel wird beschrieben, wie Sie mithilfe von RendererXamarin.Forms einen benutzerdefinierten Renderer für Videoplayer auf Plattformen implementieren.
-ms.prod: xamarin
-ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 007c027772701e424aad5995c0ec025c3589171c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725090"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133743"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer
 
@@ -73,7 +76,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-In der Regel werden Renderer, die ein Plattformsteuerelement festlegen, von der [`ViewRenderer<View, NativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs)-Klasse abgeleitet, wobei die `View` eine Ableitung der iOS-`View` (hier `VideoPlayer`) und die `NativeView` eine Ableitung der iOS-`UIView` für die Rendererklasse ist. Für diesen Renderer ist dieses generische Argument nur auf die `UIView` festgelegt. Ihnen sollte bald klar werden, warum dies der Fall ist.
+In der Regel werden Renderer, die ein Plattformsteuerelement festlegen, von der [`ViewRenderer<View, NativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs)-Klasse abgeleitet, wobei die `View` eine Ableitung der Xamarin.Forms-`View`(hier `VideoPlayer`) und die `NativeView` eine Ableitung der iOS-`UIView` für die Rendererklasse ist. Für diesen Renderer ist dieses generische Argument nur auf die `UIView` festgelegt. Ihnen sollte bald klar werden, warum dies der Fall ist.
 
 Wenn ein Renderer auf einer Ableitung eines `UIViewController` basiert (wie dies hier der Fall ist), sollte die Klasse die `ViewController`-Eigenschaft überschreiben und den Ansichtscontroller zurückgeben, in diesem Fall `AVPlayerViewController`. Das `_playerViewController`-Feld hat den folgenden Zweck:
 
@@ -120,7 +123,7 @@ In der Regel bezieht sich dann die `Control`-Eigenschaft der Rendererklasse auf 
 
 ### <a name="the-android-video-view"></a>Die Videoansicht unter Android
 
-Der Android-Renderer für `VideoPlayer` basiert auf der Android-Klasse [`VideoView`](xref:Android.Widget.VideoView). Wenn allerdings `VideoView` alleine verwendet wird, um ein Video in einer Xamarin.Forms-Anwendung abzuspielen, füllt das Video den Bereich aus, der dem `VideoPlayer` zugewiesen ist und behält dabei nicht das richtige Seitenverhältnis bei. Aus diesem Grund (wie gleich deutlich werden sollte) ist die `VideoView` ein untergeordnetes Element des Android-`RelativeLayout`. Eine `using`-Direktive definiert das `ARelativeLayout`, um dieses von der `RelativeLayout` für Xamarin.Forms zu unterscheiden. Dies stellt das zweite generische Argument im `ViewRenderer` dar:
+Der Android-Renderer für `VideoPlayer` basiert auf der Android-Klasse [`VideoView`](xref:Android.Widget.VideoView). Wenn allerdings `VideoView` alleine verwendet wird, um ein Video in einer Xamarin.Forms-Anwendung abzuspielen, füllt das Video den Bereich aus, der dem `VideoPlayer` zugewiesen ist und behält dabei nicht das richtige Seitenverhältnis bei. Aus diesem Grund (wie gleich deutlich werden sollte) ist die `VideoView` ein untergeordnetes Element des Android-`RelativeLayout`. Eine `using`-Direktive definiert das `ARelativeLayout`, um dieses von der Xamarin.Forms für `RelativeLayout` zu unterscheiden. Dies stellt das zweite generische Argument im `ViewRenderer` dar:
 
 ```csharp
 using System;

@@ -31,7 +31,7 @@ ms.locfileid: "84127191"
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>Verbrauch
+## <a name="usage"></a>Verwendung
 
 ### <a name="understanding-constraints"></a>Grundlegendes zu Einschränkungen
 
@@ -43,7 +43,7 @@ Positionierung und Größe einer Ansicht in einem werden `RelativeLayout` mit Ei
 - **Konstante** &ndash; der Wert, der als Offset des Werts verwendet werden soll.
 - **ElementName** &ndash; der Name der Ansicht, zu der die Einschränkung relativ ist.
 
-In XAML werden Einschränkungen als s ausgedrückt `ConstraintExpression` . Sehen Sie sich das folgende Beispiel an:
+In XAML werden Einschränkungen als s ausgedrückt `ConstraintExpression` . Betrachten Sie das folgende Beispiel:
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"

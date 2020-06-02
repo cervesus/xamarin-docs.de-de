@@ -1,20 +1,12 @@
 ---
-title: Erstellen einer Xamarin.Forms-Shell-Anwendung
-description: Das Vorgehen zum Erstellen einer Xamarin.Forms-Shell-Anwendung besteht darin, eine XAML-Datei zu erstellen, die die Shell-Klasse untergliedert, die MainPage-Eigenschaft der App-Klasse der Anwendung auf das in Unterklassen untergliederte Shell-Objekt festzulegen und dann die visuelle Hierarchie der Anwendung in der in Unterklassen untergliederten Shell-Klasse zu beschreiben.
-ms.prod: xamarin
-ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: eec20ff6ceb4aee7e8fde59992576899690616c3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68739310"
+title: Beschreibung „Erstellen einer Xamarin.Forms-Shellanwendung“: „Das Vorgehen zum Erstellen einer Xamarin.Forms-Shell-Anwendung besteht darin, eine XAML-Datei zu erstellen, die die Shell-Klasse untergliedert, die MainPage-Eigenschaft der App-Klasse der Anwendung auf das in Unterklassen untergliederte Shell-Objekt festzulegen und dann die visuelle Hierarchie der Anwendung in der in Unterklassen untergliederten Shell-Klasse zu beschreiben.“
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="create-a-xamarinforms-shell-application"></a>Erstellen einer Xamarin.Forms-Shell-Anwendung
+
+# <a name="create-a-xamarinforms-shell-application"></a>Erstellen einer Xamarin.Forms-Shellanwendung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -27,7 +19,7 @@ So erstellen Sie eine Xamarin.Forms-Shell-Anwendung:
 
 ## <a name="subclass-the-shell-class"></a>Erstellen von Unterklassen für die Shell-Klasse
 
-Der erste Schritt bei der Erstellung einer Xamarin.Forms Shell-Anwendung besteht darin, eine XAML-Datei zum Projekt mit freigegebenem Code hinzuzufügen, das die `Shell`-Klasse untergliedert. Diese Datei kann beliebig benannt werden, aber **AppShell** wird empfohlen. Das folgende Code-Beispiel zeigt eine neu erstellte **AppShell.xaml**-Datei:
+Der erste Schritt bei der Erstellung einer Xamarin.Forms-Anwendung besteht darin, eine XAML-Datei zum Projekt mit freigegebenem Code hinzuzufügen, das die `Shell`-Klasse untergliedert. Diese Datei kann beliebig benannt werden, aber **AppShell** wird empfohlen. Das folgende Code-Beispiel zeigt eine neu erstellte **AppShell.xaml**-Datei:
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"

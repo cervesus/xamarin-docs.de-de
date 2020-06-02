@@ -1,18 +1,21 @@
 ---
-title: Lokale Benachrichtigungen von Xamarin.Forms
+title: Lokale Xamarin.Forms-Benachrichtigungen
 description: In diesem Artikel wird das Senden und Empfangen lokaler Benachrichtigungen in Xamarin.Forms erläutert.
-ms.prod: xamarin
-ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 10/10/2019
-ms.openlocfilehash: ef2ef004378212fac593179d7aa38b3688fa82c3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72371538"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137591"
 ---
 # <a name="local-notifications-in-xamarinforms"></a>Lokale Benachrichtigungen in Xamarin.Forms
 
@@ -111,7 +114,7 @@ public partial class MainPage : ContentPage
 
 Der `MainPage`-Klassenkonstruktor verwendet den Xamarin.Forms-`DependencyService`, um eine plattformspezifische Instanz des `INotificationManager` abzurufen. Die `OnScheduleClicked`-Methode verwendet die `INotificationManager`-Instanz, um eine neue Benachrichtigung zu planen. Die `ShowNotification`-Methode wird vom Ereignishandler aufgerufen, der an das `NotificationReceived`-Ereignis angefügt ist, und fügt ein neues `Label` in die Seite ein, wenn das Ereignis aufgerufen wird.
 
-Weitere Informationen zum Xamarin.Forms-`DependencyService` finden Sie unter [Xamarin.Forms Dependency.Service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md).
+Weitere Informationen über den Xamarin.Forms-`DependencyService` finden Sie unter [Xamarin.Forms-DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md).
 
 ## <a name="create-the-android-interface-implementation"></a>Erstellen der Android-Schnittstellenimplementierung
 
@@ -400,4 +403,4 @@ Unter iOS werden eingehende Benachrichtigungen automatisch von der Anwendung emp
 - [Beispielprojekt](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 - [Benachrichtigungen in Xamarin.Android](~/android/app-fundamentals/notifications/index.md)
 - [Benachrichtigungen in Xamarin.iOS](~/ios/platform/user-notifications/index.md)
-- [Xamarin.Forms Dependency.Service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)
+- [Xamarin.Forms-Dependency.Service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)

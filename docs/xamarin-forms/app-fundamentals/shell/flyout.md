@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms-Shell-Flyout
-description: Das Flyout ist das Hauptmenü für eine Shell-Anwendung, und der Zugriff erfolgt über ein Symbol oder durch Wischen von einer Seite des Bildschirms. Das Flyout besteht aus einem optionalen Header, Flyout-Elementen und optionalen Menüelementen.
-ms.prod: xamarin
-ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/22/2020
-ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
-ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
+title: Xamarin.Forms Shell-Flyout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b336a594fa7525000e119333b56284368a23cc03
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82852471"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134952"
 ---
-# <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms-Shell-Flyout
+# <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell-Flyout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -648,4 +651,4 @@ Darüber hinaus können benutzerdefinierte Formatklassen definiert und auf `Flyo
 
 - [Xaminals (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms-Formatklassen](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
-- [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms-Manager für den Visualzustand](~/xamarin-forms/user-interface/visual-state-manager.md)
