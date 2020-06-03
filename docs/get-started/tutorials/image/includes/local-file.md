@@ -56,7 +56,7 @@ In dieser Übung passen Sie die Projektmappe **ImageTutorial** so an, dass anste
     > [!NOTE]
     > Für PNG-Bilder kann unter iOS die **PNG**-Erweiterung im Dateinamen weggelassen werden, der in der [`Source`](xref:Xamarin.Forms.Image.Source)-Eigenschaft festgelegt wird. Für andere Bildformate ist die Erweiterung erforderlich.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
     [![Screenshot: Bildansicht mit einem lokalen Bild unter iOS und Android](../images/local-file.png "Bildansicht mit einem lokalen Bild")](../images/local-file-large.png#lightbox "Bildansicht mit einem lokalen Bild")
 
@@ -102,7 +102,7 @@ In dieser Übung passen Sie die Projektmappe **ImageTutorial** so an, dass anste
     > [!NOTE]
     > Für PNG-Bilder kann unter iOS die **PNG**-Erweiterung im Dateinamen weggelassen werden, der in der [`Source`](xref:Xamarin.Forms.Image.Source)-Eigenschaft festgelegt wird. Für andere Bildformate ist die Erweiterung erforderlich.
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
     [![Screenshot: Bildansicht mit einem lokalen Bild unter iOS und Android](../images/local-file.png "Bildansicht mit einem lokalen Bild")](../images/local-file-large.png#lightbox "Bildansicht mit einem lokalen Bild")
 

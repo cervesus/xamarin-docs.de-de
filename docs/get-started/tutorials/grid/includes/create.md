@@ -15,7 +15,7 @@ Für dieses Tutorial benötigen Sie das neueste Release von Visual Studio 2019 u
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **GridTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** im Projekt **GridTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -50,7 +50,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!IMPORTANT]
     > Für die C#- und XAML-Codeausschnitte in diesem Tutorial ist es erforderlich, dass die Projektmappe **GridTutorial** genannt wird. Die Verwendung eines anderen Namens führt zu Buildfehlern, wenn Sie Code aus diesem Tutorial in die Projektmappe kopieren.
 
-    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Anatomy of a Xamarin.Forms application (Aufbau einer Xamarin.Forms-Anwendung)](~/get-started/first-app/index.md) im Artikel [Xamarin.Forms Quickstart Deep Dive (Weitere Details zum Xamarin.Forms-Schnellstart)](~/get-started/first-app/index.md).
+    Weitere Informationen zur .NET Standard-Bibliothek, die erstellt wird, finden Sie unter [Aufbau einer Xamarin.Forms-Anwendung](~/get-started/first-app/index.md) im Artikel [Ausführliche Erläuterungen zum Xamarin.Forms-Schnellstart](~/get-started/first-app/index.md).
 
 1. Doppelklicken Sie im **Lösungspad** im Projekt **GridTutorial** auf die Datei **MainPage.xaml**, um sie zu öffnen. Entfernen Sie dann in **MainPage.xaml** den gesamten Vorlagencode, und ersetzen Sie ihn durch den folgenden:
 
@@ -70,7 +70,7 @@ Für dieses Tutorial benötigen Sie Visual Studio für Mac (neuestes Release) mi
     > [!NOTE]
     > Neben der [`Margin`](xref:Xamarin.Forms.View.Margin)-Eigenschaft kann die [`Padding`](xref:Xamarin.Forms.Layout.Padding)-Eigenschaft auch auf eine [`Grid`](xref:Xamarin.Forms.Grid)-Klasse festgelegt werden. Der Eigenschaftswert [`Padding`](xref:Xamarin.Forms.Layout.Padding) legt den Abstand zwischen den Ansichten im `Grid`-Element fest. Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten:
+1. Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche zum **Starten** (die dreieckige Schaltfläche, die einer Wiedergabetaste ähnelt), um die Anwendung im ausgewählten iOS-Simulator oder Android-Emulator zu starten.
 
     [![Screenshot einer Bezeichnung in einem Raster unter iOS und Android](../images/create-grid.png "Raster mit einer Bezeichnung")](../images/create-grid-large.png#lightbox "Raster mit einer Bezeichnung")
 

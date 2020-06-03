@@ -11,7 +11,7 @@ Bevor Sie mit diesem Tutorial fortfahren, sollten Sie zunächst Folgendes erfolg
 - Den Schnellstart [Erstellen Ihrer ersten Xamarin.Forms-App](~/get-started/first-app/index.md)
 - Das Tutorial zu [StackLayout](~/get-started/tutorials/stacklayout/index.yml)
 
-In diesem Tutorial lernen Sie Folgendes:
+In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 > [!div class="checklist"]
 >
