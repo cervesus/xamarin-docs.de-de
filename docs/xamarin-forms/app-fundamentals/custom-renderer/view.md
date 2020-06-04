@@ -1,32 +1,35 @@
 ---
-title: Implementieren einer Ansicht
-description: In diesem Artikel wird erläutert, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen können, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können.
-ms.prod: xamarin
-ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771733"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133561"
 ---
 # <a name="implementing-a-view"></a>Implementieren einer Ansicht
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
-_Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der View-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen können, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können._
+_Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der View-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können._
 
-Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`View`](xref:Xamarin.Forms.View)-Objekts durch eine Xamarin.Forms-Anwendung wird in iOS die `ViewRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UIView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ViewRenderer`-Klasse ein natives `View`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ViewRenderer`-Klasse ein natives `FrameworkElement`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`View`](xref:Xamarin.Forms.View)-Objekts durch eine Xamarin.Forms-App in iOS wird die `ViewRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UIView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ViewRenderer`-Klasse ein natives `View`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ViewRenderer`-Klasse ein natives `FrameworkElement`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Rendererbasisklassen und native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`View`](xref:Xamarin.Forms.View)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
 ![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
 
-Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`View`](xref:Xamarin.Forms.View)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Der Prozess dafür sieht wie folgt aus:
+Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`View`](xref:Xamarin.Forms.View)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
 1. [Erstellen](#Creating_the_Custom_Control) Sie ein benutzerdefiniertes Xamarin.Forms-Steuerelement.
 1. [Nutzen](#Consuming_the_Custom_Control) Sie das benutzerdefinierte Steuerelement über Xamarin.Forms.
@@ -127,9 +130,9 @@ Das benutzerdefinierte Steuerelement `CameraPreview` wird von plattformspezifisc
 
 ![](view-images/screenshots.png "CameraPreview on each Platform")
 
-Die `ViewRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung des benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung weist die `OldElement`-Eigenschaft den Wert `null` auf, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CameraPreview`-Instanz.
+Die `ViewRenderer`-Klasse stellt die `OnElementChanged`-Methode zur Verfügung, die bei der Erstellung des benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CameraPreview`-Instanz.
 
-Das native Steuerelement sollte bei der überschriebenen Version der `OnElementChanged`-Methode in jeder plattformspezifischen Rendererklasse instanziiert und angepasst werden. Mit der `SetNativeControl`-Methode sollte das native Steuerelement instanziiert und die Steuerelementreferenz der Eigenschaft `Control` zugewiesen werden. Zusätzlich kann ein Verweis auf das zu rendernde Xamarin.Forms-Steuerelement über die `Element`-Eigenschaft abgerufen werden.
+Das native Steuerelement sollte bei der überschriebenen Version der `OnElementChanged`-Methode in jeder plattformspezifischen Rendererklasse instanziiert und angepasst werden. Mit der `SetNativeControl`-Methode sollte das native Steuerelement instanziiert und die Steuerelementreferenz der Eigenschaft `Control` zugewiesen werden. Zusätzlich kann ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird, über die `Element`-Eigenschaft abgerufen werden.
 
 In einigen Fällen kann die `OnElementChanged`-Methode mehrmals aufgerufen werden. Daher müssen Sie bei der Instanziierung eines nativen Steuerelements sorgfältig vorgehen, um Arbeitsspeicherverluste zu vermeiden. Im folgenden Codebeispiel ist der Ansatz zu sehen, der beim Instanziieren eines neuen nativen Steuerelements in einem benutzerdefinierten Renderer verwendet werden soll:
 
@@ -265,7 +268,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Sofern die `Control`-Eigenschaft den Wert `null` aufweist, wird die `SetNativeControl`-Methode aufgerufen, um ein neues `CameraPreview`-Steuerelement zu instanziieren und der `Control`-Eigenschaft einen Verweis auf dieses Steuerelement zuzuweisen. Das `CameraPreview`-Steuerelement ist ein plattformspezifisches, benutzerdefiniertes Steuerelement, das die `Camera`-API nutzt, um den Vorschauvideostream der Kamera bereitzustellen. Das `CameraPreview`-Steuerelement wird dann konfiguriert, vorausgesetzt der benutzerdefinierte Renderer wird an ein neues Xamarin.Forms-Element angefügt. Zu dieser Konfiguration gehört das Erstellen eines neuen nativen `Camera`-Objekts, um auf eine bestimmte Hardwarekamera zuzugreifen, und das Registrieren eines Ereignishandlers, um das `Click`-Ereignis zu verarbeiten. Dieser Handler stoppt und startet die Videovorschau wiederum, wenn darauf getippt wird. Das Abonnement des `Click`-Ereignisses wird gekündigt, wenn das Xamarin.Forms-Element, dem der Renderer angefügt ist, geändert wird.
+Sofern die `Control`-Eigenschaft den Wert `null` aufweist, wird die `SetNativeControl`-Methode aufgerufen, um ein neues `CameraPreview`-Steuerelement zu instanziieren und der `Control`-Eigenschaft einen Verweis auf dieses Steuerelement zuzuweisen. Das `CameraPreview`-Steuerelement ist ein plattformspezifisches, benutzerdefiniertes Steuerelement, das die `Camera`-API nutzt, um den Vorschauvideostream der Kamera bereitzustellen. Das `CameraPreview`-Steuerelement wird dann konfiguriert, vorausgesetzt der benutzerdefinierte Renderer wird an ein neues Xamarin.Forms-Element angefügt. Zu dieser Konfiguration gehört das Erstellen eines neuen nativen `Camera`-Objekts, um auf eine bestimmte Hardwarekamera zuzugreifen, und das Registrieren eines Ereignishandlers, um das `Click`-Ereignis zu verarbeiten. Dieser Handler stoppt und startet die Videovorschau wiederum, wenn darauf getippt wird. Das Abonnement des `Click`-Ereignisses wird gekündigt, wenn das Xamarin.Forms-Element, an das der Renderer angefügt ist, geändert wird.
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>Erstellen des benutzerdefinierten Renderers auf der UWP
 
@@ -330,7 +333,7 @@ Sofern die `Control`-Eigenschaft den Wert `null` aufweist, wird eine neue `Captu
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen können, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können. Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der [`View`](xref:Xamarin.Forms.View)-Klasse abgeleitet werden, die verwendet wird, um Layout und Steuerelemente einer Anzeige hinzuzufügen.
+In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen, mit dem Sie eine Vorschau eines Videostreams von der Kamera des Geräts anzeigen können. Benutzerdefinierte Xamarin.Forms-Benutzeroberflächen-Steuerelemente sollten von der [`View`](xref:Xamarin.Forms.View)-Klasse abgeleitet werden, die verwendet wird, um einem Bildschirm Layout und Steuerelemente hinzuzufügen.
 
 ## <a name="related-links"></a>Verwandte Links
 

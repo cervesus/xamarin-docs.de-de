@@ -1,25 +1,28 @@
 ---
-title: Lokalisierung von rechts nach links
-description: Durch die Lokalisierung von rechts nach links kann Text in der Leserichtung von rechts nach links in Xamarin.Forms-Anwendungen dargestellt werden.
-ms.prod: xamarin
-ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Durch die Lokalisierung von rechts nach links kann Text in Xamarin.Forms-Anwendungen in der Leserichtung von rechts nach links dargestellt werden.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72678843"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137552"
 ---
 # <a name="right-to-left-localization"></a>Lokalisierung von rechts nach links
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
-_Durch die Lokalisierung von rechts nach links kann Text in der Leserichtung von rechts nach links in Xamarin.Forms-Anwendungen dargestellt werden._
+_Durch die Lokalisierung von rechts nach links kann Text in Xamarin.Forms-Anwendungen in der Leserichtung von rechts nach links dargestellt werden._
 
 > [!NOTE]
 > Für die Lokalisierung von rechts nach links ist iOS 9 oder höher bzw. unter Android API 17 oder höher erforderlich.

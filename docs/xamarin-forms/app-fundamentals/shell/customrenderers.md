@@ -1,22 +1,14 @@
 ---
-title: Benutzerdefinierte Xamarin.Forms-Shell-Renderer
-description: Xamarin.Forms-Shell-Anwendungen sind über die von den verschiedenen Shell-Klassen bereitgestellten Eigenschaften und Methoden äußerst anpassbar. Allerdings ist es auch möglich, einen benutzerdefinierten Shell-Renderer zu erstellen, wenn komplexere plattformspezifische Anpassungen erforderlich sind.
-ms.prod: xamarin
-ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: ecb68d662c64b65346ffd04f0d3d3cd525533151
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66178035"
+title: 'Benutzerdefinierte Xamarin.Forms- Shell-Renderer' description: 'Xamarin.Forms Shell-Anwendungen sind über die von den verschiedenen Shell-Klassen bereitgestellten Eigenschaften und Methoden äußerst anpassbar. Allerdings ist es auch möglich, einen benutzerdefinierten Shell-Renderer zu erstellen, wenn komplexere plattformspezifische Anpassungen erforderlich sind.'
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinforms-shell-custom-renderers"></a>Benutzerdefinierte Xamarin.Forms-Shell-Renderer
 
-Einer der Vorteile von Xamarin.Forms-Shell-Anwendungen besteht darin, dass ihr Aussehen und ihr Verhalten über die von den verschiedenen Shell-Klassen bereitgestellten Eigenschaften und Methoden äußerst anpassbar ist. Allerdings ist es auch möglich, einen benutzerdefinierten Shell-Renderer zu erstellen, wenn komplexere plattformspezifische Anpassungen erforderlich sind. Wie bei anderen benutzerdefinierten Renderern können Sie einen benutzerdefinierten Shell-Renderer zu nur einem Plattformprojekt hinzufügen, um Aussehen und Verhalten anzupassen, während auf der anderen Plattform das Standardverhalten möglich ist. Oder Sie fügen zu jedem Plattformprojekt einen anderen benutzerdefinierten Shell-Renderer hinzu, um Aussehen und Verhalten unter iOS und Android anzupassen.
+Ein Vorteil von Xamarin.Forms-Shell-Anwendungen besteht darin, dass ihr Aussehen und Verhalten über die von den verschiedenen Shell-Klassen bereitgestellten Eigenschaften und Methoden stark angepasst werden kann. Allerdings ist es auch möglich, einen benutzerdefinierten Shell-Renderer zu erstellen, wenn komplexere plattformspezifische Anpassungen erforderlich sind. Wie bei anderen benutzerdefinierten Renderern können Sie einen benutzerdefinierten Shell-Renderer zu nur einem Plattformprojekt hinzufügen, um Aussehen und Verhalten anzupassen, während auf der anderen Plattform das Standardverhalten möglich ist. Oder Sie fügen zu jedem Plattformprojekt einen anderen benutzerdefinierten Shell-Renderer hinzu, um Aussehen und Verhalten unter iOS und Android anzupassen.
 
 Shell-Anwendungen werden mit der `ShellRenderer`-Klasse unter iOS und Android gerendert. Unter iOS finden Sie die `ShellRenderer`-Klasse im `Xamarin.Forms.Platform.iOS`-Namespace. Unter Android finden Sie die `ShellRenderer`-Klasse im `Xamarin.Forms.Platform.Android`-Namespace.
 

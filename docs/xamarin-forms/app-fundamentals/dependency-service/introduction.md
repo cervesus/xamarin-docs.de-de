@@ -1,30 +1,33 @@
 ---
 title: Einführung in Xamarin.Forms-DependencyService
-description: In diesem Artikel wird die Funktionsweise der DependencyService-Klasse von Xamarin.Forms für den Aufruf der nativen Plattformfunktionalität erläutert.
-ms.prod: xamarin
-ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/12/2019
-ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: In diesem Artikel wird die Funktionsweise der DependencyService-Klasse von Xamarin.Forms für den Aufruf der nativen Plattformfunktionalität beschrieben.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f4d43a0c9c4878733d65b170c27e744b397aa4d0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71198515"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138358"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Einführung in Xamarin.Forms-DependencyService
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
-Die [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse ist ein Dienst-Locator, der es Xamarin.Forms-Anwendungen ermöglicht, native Plattformfunktionen aus freigegebenem Code aufzurufen.
+Die [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse ist ein Dienstlocator, der es Xamarin.Forms-Anwendungen ermöglicht, native Plattformfunktionen aus freigegebenem Code aufzurufen.
 
 Zum Aufrufen der nativen Plattformfunktionalität wird [`DependencyService`](xref:Xamarin.Forms.DependencyService) wie folgt verwendet:
 
 1. Erstellen Sie eine Schnittstelle für die native Plattformfunktionalität in freigegebenem Code. Weitere Informationen finden Sie unter [Erstellen einer Schnittstelle](#create-an-interface).
 1. Implementieren Sie die Schnittstelle in den erforderlichen Plattformprojekten. Weitere Informationen finden Sie unter [Implementieren der Schnittstelle in den einzelnen Plattformen](#implement-the-interface-on-each-platform).
-1. Registrieren Sie die Plattformimplementierungen mit der [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse. Dadurch können die Plattformimplementierungen zur Laufzeit in Xamarin.Forms gefunden werden. Weitere Informationen finden Sie unter [Registrieren der Plattformimplementierungen](#register-the-platform-implementations).
+1. Registrieren Sie die Plattformimplementierungen mit der [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse. Hierdurch können die Plattformimplementierungen zur Laufzeit in Xamarin.Forms gefunden werden. Weitere Informationen finden Sie unter [Registrieren der Plattformimplementierungen](#register-the-platform-implementations).
 1. Lösen Sie die Plattformimplementierungen aus freigegebenem Code auf, und rufen Sie diese auf. Weitere Informationen finden Sie unter [Auflösen der Plattformimplementierungen](#resolve-the-platform-implementations).
 
 Im folgenden Diagramm wird gezeigt, wie die nativen Plattformfunktionen in einer Xamarin.Forms-Anwendung aufgerufen werden:
@@ -152,7 +155,7 @@ Alternativ kann dieser Code auf eine einzige Zeile verkürzt werden:
 DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>().GetOrientation();
 ```
 
-Weitere Informationen zum Auflösen von Plattformimplementierungen bei der [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse finden Sie unter [DependencyService-Registrierung und -Auflösung in Xamarin.Forms](registration-and-resolution.md).
+Weitere Informationen zum Auflösen von Plattformimplementierungen mit der [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse finden Sie unter [DependencyService-Registrierung und -Auflösung in Xamarin.Forms](registration-and-resolution.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

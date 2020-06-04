@@ -1,19 +1,11 @@
 ---
-title: Zugreifen auf die Videobibliothek des Geräts
-description: In diesem Artikel wird erläutert, wie mithilfe von Xamarin.Forms in einer Videoplayeranwendung auf die Videobibliothek des Geräts zugegriffen werden kann.
-ms.prod: xamarin
-ms.assetid: 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771854"
+title: description: 'In diesem Artikel wird beschrieben, wie mithilfe von Xamarin.Forms in einer Videoplayeranwendung auf die Videobibliothek des Geräts zugegriffen werden kann.'
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="accessing-the-devices-video-library"></a>Zugreifen auf die Videobibliothek des Geräts
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
@@ -40,7 +32,7 @@ Alle Plattformen enthalten eine Klasse mit dem Namen `VideoPicker`, die diese Sc
 
 ### <a name="the-ios-video-picker"></a>Die iOS-Videoauswahl
 
-Die iOS-`VideoPicker`-Klasse verwendet die iOS-[`UIImagePickerController`](xref:UIKit.UIImagePickerController)-Klasse, um auf die Bildbibliothek zuzugreifen, wobei angegeben wird, dass der Zugriff auf Videos (bezeichnet als „Filme“) in der iOS-`MediaType`-Eigenschaft begrenzt sein sollte. Beachten Sie, dass die `VideoPicker`-Klasse explizit die `IVideoPicker`-Schnittstelle implementiert. Beachten Sie außerdem das `Dependency`-Attribut, das diese Klasse als einen Abhängigkeitsdienst identifiziert. Dies sind die beiden Anforderungen, damit Xamarin.Forms den Abhängigkeitsdienst im Plattformprojekt ermitteln kann:
+Die iOS-`VideoPicker`-Klasse verwendet die iOS-[`UIImagePickerController`](xref:UIKit.UIImagePickerController)-Klasse, um auf die Bildbibliothek zuzugreifen, wobei angegeben wird, dass der Zugriff auf Videos (bezeichnet als „Filme“) in der iOS-`MediaType`-Eigenschaft begrenzt sein sollte. Beachten Sie, dass die `VideoPicker`-Klasse explizit die `IVideoPicker`-Schnittstelle implementiert. Beachten Sie außerdem das `Dependency`-Attribut, das diese Klasse als einen Abhängigkeitsdienst identifiziert. Dies sind die beiden Anforderungen, die erfüllt sein müssen, damit Xamarin.Forms den Abhängigkeitsdienst im Plattformprojekt ermitteln kann:
 
 ```csharp
 using System;

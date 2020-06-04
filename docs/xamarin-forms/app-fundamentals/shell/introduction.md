@@ -1,24 +1,27 @@
 ---
 title: Einführung in die Xamarin.Forms-Shell
-description: Die Xamarin.Forms-Shell stellt die wichtigsten Features bereit, die von den meisten Anwendungen benötigt werden, beispielsweise eine gemeinsame Benutzeroberfläche für die Navigation, ein URI-basiertes Navigationsschema und einen integrierten Suchhandler.
-ms.prod: xamarin
-ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: cb2ae3afe9db86d4db603d499ef0e75e7cbbf552
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Die Xamarin.Forms-Shell verfügt über die wichtigsten Features, die von den meisten Anwendungen benötigt werden, z. B. eine gemeinsame Benutzeroberfläche für die Navigation, ein URI-basiertes Navigationsschema und einen integrierten Suchhandler.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940405"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138735"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Einführung in die Xamarin.Forms-Shell
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Die Xamarin.Forms-Shell reduziert die Komplexität der Entwicklung mobiler Anwendungen, indem es die grundlegenden Features bereitstellt, die die meisten mobilen Anwendungen benötigen, einschließlich:
+Die Xamarin.Forms-Shell reduziert die Komplexität der Entwicklung mobiler Anwendungen, indem die grundlegenden Features bereitgestellt werden, die von den meisten mobilen Anwendungen benötigt werden, z. B.:
 
 - Einer zentralen Stelle zur Beschreibung der visuellen Hierarchie einer Anwendung.
 - Eine gemeinsame Benutzeroberfläche für die Navigation.
@@ -32,7 +35,7 @@ Darüber hinaus profitieren Shell-Anwendungen von einer höheren Renderinggeschw
 
 ## <a name="platform-support"></a>Plattformunterstützung
 
-Xamarin.Forms-Shell ist unter iOS und Android vollständig verfügbar, auf der universellen Windows-Plattform (UWP) jedoch nur teilweise verfügbar. Dort ist die Shell derzeit nur als experimentelle Funktion vorhanden. Wenn Sie die Shell auf der UWP verwenden möchten, fügen Sie vor dem Aufruf von `Forms.Init` die folgende Codezeile in der `App`-Klasse Ihres UWP-Projekts hinzu:
+Die Xamarin.Forms-Shell ist unter iOS und Android vollständig verfügbar, aber auf der universellen Windows-Plattform (UWP) nur teilweise. Dort ist die Shell derzeit nur als experimentelle Funktion vorhanden. Wenn Sie die Shell auf der UWP verwenden möchten, fügen Sie vor dem Aufruf von `Forms.Init` die folgende Codezeile in der `App`-Klasse Ihres UWP-Projekts hinzu:
 
 ```csharp
 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");

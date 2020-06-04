@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 15. Die interaktive Benutzeroberfläche
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 15. Die interaktive Benutzeroberfläche'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 5f96d2f4b619bbb10bb58e9b1b5dc7007c1ce888
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 15. The interactive interface''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131100"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136746"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Zusammenfassung von Kapitel 15. Die interaktive Benutzeroberfläche
 
@@ -22,7 +26,7 @@ In diesem Kapitel werden acht `View`-Ableitungen besprochen, die eine Interaktio
 
 ## <a name="view-overview"></a>„View“ (Ansicht) – Übersicht
 
-Xamarin.Forms enthält 20 instanziierbare Klassen, die von `View`, aber nicht von `Layout` abgeleitet werden. Sechs davon wurden in den vorherigen Kapiteln behandelt:
+Xamarin.Forms enthält 20 instanziierbare Klassen, die von `View` abgeleitet werden, aber nicht von `Layout`. Sechs davon wurden in den vorherigen Kapiteln behandelt:
 
 - `Label`: [**Kapitel 2, „Aufbau einer App“** ](chapter02.md)
 - `BoxView`: [**Kapitel 3, „Scrollen im Stapel“** ](chapter03.md)
@@ -150,7 +154,7 @@ Die [`InputView`](xref:Xamarin.Forms.InputView)-Klasse, von der `Entry` und `Edi
 
 Diese zeigt den Typ der Tastatur an, die angezeigt wird. Manche Tastaturen sind für URIs oder Zahlen optimiert.
 
-Mit der `Keyboard`-Klasse können Sie eine Tastatur mit einer statischen [`Keyboard.Create`](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags))-Methode mit einem Argument vom Typ [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) definieren, einer Enumeration mit den folgenden Bitflags:
+Mit der `Keyboard`-Klasse können Sie eine Tastatur mit einer statischen [`Keyboard.Create`](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags))-Methode mit einem Argument vom Typ [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) definieren. Dies ist eine Enumeration mit den folgenden Bitflags:
 
 - `None`, auf 0 festgelegt.
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence), auf 1 festgelegt.

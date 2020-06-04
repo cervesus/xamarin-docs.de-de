@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 2. Aufbau einer App
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 2. Aufbau einer App'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: f900cb1532ba4415127c95b07e777881e1d74994
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 2. Anatomy of an app''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724994"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136915"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Zusammenfassung von Kapitel 2. Aufbau einer App
 
@@ -46,7 +50,7 @@ Dieses Beispiel veranschaulicht eine Xamarin.Forms-Projektmappe, die ohne Änder
 - [**Hello.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP), ein Anwendungsprojekt für die universelle Windows-Plattform (Windows 10 und Windows 10 Mobile).
 
 > [!NOTE]
-> Xamarin.Forms bietet keine Unterstützung mehr für Windows 8.1, Windows Phone 8.1 oder Windows 10 Mobile, aber Xamarin.Forms-Anwendungen können auf Windows 10 Desktop ausgeführt werden.
+> Xamarin.Forms bietet keine Unterstützung mehr für Windows 8.1, Windows Phone 8.1 oder Windows 10 Mobile, aber Xamarin.Forms-Anwendungen können unter Windows 10 Desktop ausgeführt werden.
 
 Sie können jedes dieser Anwendungsprojekte als Startprojekt festlegen und dann das Programm auf einem Gerät oder Simulator erstellen und ausführen.
 
@@ -57,7 +61,7 @@ In vielen Ihrer Xamarin.Forms-Programme werden Sie die Anwendungsprojekte nicht 
 Die visuellen Elemente, die vom **Hello**-Programm angezeigt werden, werden im Konstruktor der [`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs)-Klasse definiert. `App` wird von der Xamarin.Forms-Klasse [`Application`](xref:Xamarin.Forms.Application) abgeleitet.
 
 > [!NOTE]
-> Die Visual Studio-Projektmappenvorlagen für Xamarin.Forms erstellen eine Seite mit einer XAML-Datei. XAML wird in diesem Buch erst in [Kapitel 7](chapter07.md) behandelt.
+> Mit den Visual Studio-Projektmappenvorlagen für Xamarin.Forms wird eine Seite mit einer XAML-Datei erstellt. XAML wird in diesem Buch erst in [Kapitel 7](chapter07.md) behandelt.
 
 Der Abschnitt **Verweise** des **Hello**-PCL-Projekts enthält die folgenden Xamarin.Forms-Assemblys:
 
@@ -75,7 +79,7 @@ Die **Verweise**-Abschnitte der fünf Anwendungsprojekte enthalten zusätzliche 
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
 > [!NOTE]
-> In den **Verweise**-Abschnitten dieser Projekte werden die Assemblys nicht mehr aufgeführt. Stattdessen enthält die Projektdatei **PackageReference**-Tags, die auf das Xamarin.Forms-NuGet-Paket verweisen. Im Abschnitt **Verweise** in Visual Studio wird das **Xamarin.Forms**-Paket aufgeführt anstelle der Xamarin.Forms-Assemblys.
+> In den **Verweise**-Abschnitten dieser Projekte werden die Assemblys nicht mehr aufgeführt. Stattdessen enthält die Projektdatei **PackageReference**-Tags, die auf das Xamarin.Forms-NuGet-Paket verweisen. Im Abschnitt **Verweise** in Visual Studio wird das **Xamarin.Forms** -Paket anstelle der Xamarin.Forms-Assemblys aufgeführt.
 
 Jedes der Anwendungsprojekte enthält einen Aufruf der statischen `Forms.Init`-Methode im `Xamarin.Forms`-Namespace. Dadurch wird die Xamarin.Forms-Bibliothek initialisiert. Für jede Plattform wird eine andere Version von `Forms.Init` definiert. Die Aufrufe dieser Methode finden Sie in den folgenden Klassen:
 
@@ -93,7 +97,7 @@ Andernfalls handelt es sich bei diesen Anwendungsprojekten um normale „Do Noth
 
 ## <a name="pcl-or-sap"></a>PCL oder SAP?
 
-Es ist möglich, eine Xamarin.Forms-Projektmappe mit dem allgemeinen Code entweder in einer portablen Klassenbibliothek (Portable Class Library, PCL) oder in einem Projekt mit freigegebenen Anlagen (Shared Asset Project, SAP) zu erstellen. Wählen Sie zum Erstellen einer SAP-Projektmappe in Visual Studio die Option „Freigegeben“ aus. Die [**HelloSap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap)-Projektmappe veranschaulicht die SAP-Vorlage ohne Änderungen.
+Es ist möglich, eine Xamarin.Forms-Projektmappe mit dem allgemeinen Code entweder in einer portierbaren Klassenbibliothek (Portable Class Library, PCL) oder in einem Projekt mit freigegebenen Anlagen (Shared Asset Project, SAP) zu erstellen. Wählen Sie zum Erstellen einer SAP-Projektmappe in Visual Studio die Option „Freigegeben“ aus. Die [**HelloSap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap)-Projektmappe veranschaulicht die SAP-Vorlage ohne Änderungen.
 
 > [!NOTE]
 > Portable Klassenbibliotheken wurden durch .NET Standard-Bibliotheken ersetzt. Der gesamte Beispielcode innerhalb des Buchs wurde aktualisiert und verwendet jetzt die .NET Standard-Bibliotheken. Andernfalls sind sich die PCL- und .NET Standard-Bibliotheken konzeptionell sehr ähnlich.
@@ -183,7 +187,7 @@ Im Allgemeinen werden diese Eigenschaften nicht direkt verwendet. Stattdessen we
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`HorizontalOptions` und `VerticalOptions` sind die wichtigsten Eigenschaften im Xamarin.Forms-Layout und werden ausführlicher in [**Kapitel 4, „Scrollen im Stapel“** ](chapter04.md), behandelt.
+`HorizontalOptions` und `VerticalOptions` sind die wichtigsten Eigenschaften im Xamarin.Forms-Layout und werden ausführlicher in [**Kapitel 4: „Scrollen im Stapel“** ](chapter04.md), behandelt.
 
 Im Folgenden sehen Sie das Ergebnis, wenn die Eigenschaften `HorizontalOptions` und `VerticalOptions` von `Label` beide auf `LayoutOptions.Center`festgelegt sind:
 

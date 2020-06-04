@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 18. MVVM
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 18. MVVM'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 32c16409f30d6b6d502b7cc074eafb182898594a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 18. MVVM''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f180173a42654c54c5686e423ba20d9586271ea
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771072"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136707"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>Zusammenfassung von Kapitel 18. MVVM
 
@@ -36,7 +40,7 @@ In vielen kleineren Programmen (und sogar größeren) fehlt häufig das Modell, 
 
 ## <a name="viewmodels-and-data-binding"></a>ViewModels und Datenbindung
 
-Zur Verwendung von Datenbindungen muss ein ViewModel in der Lage sein, die Ansicht zu benachrichtigen, wenn sich eine Eigenschaft des ViewModels geändert hat. Das ViewModel erreicht dies durch Implementierung der [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)-Schnittstelle in den `System.ComponentModel`-Namespace. Dieser ist eher Bestandteil von .NET als von Xamarin.Forms. (In der Regel versuchen ViewModels, die Plattformunabhängigkeit aufrechtzuerhalten.)
+Zur Verwendung von Datenbindungen muss ein ViewModel in der Lage sein, die Ansicht zu benachrichtigen, wenn sich eine Eigenschaft des ViewModels geändert hat. Das ViewModel erreicht dies durch Implementierung der [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)-Schnittstelle in den `System.ComponentModel`-Namespace. Dies ist nicht Teil von Xamarin.Forms, sondern von .NET. (In der Regel versuchen ViewModels, die Plattformunabhängigkeit aufrechtzuerhalten.)
 
 Die `INotifyPropertyChanged`-Schnittstelle deklariert ein einzelnes Ereignis namens [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged), das die geänderte Eigenschaft angibt.
 
@@ -62,7 +66,7 @@ Der Code in ViewModels kann optimiert werden, indem eine `OnPropertyChanged`-Met
 
 ## <a name="the-command-interface"></a>Die Befehlsschnittstelle
 
-MVVM arbeitet mit Datenbindungen, und Datenbindungen arbeiten mit Eigenschaften, sodass MVVM bei der Behandlung eines `Clicked`-Ereignisses eines `Button` oder eines `Tapped`-Ereignisses eines `TapGestureRecognizer` unzureichend erscheint. Damit ViewModels solche Ereignisse verarbeiten können, unterstützt Xamarin.Forms die *Befehlsschnittstelle*.
+MVVM arbeitet mit Datenbindungen, und Datenbindungen arbeiten mit Eigenschaften, sodass MVVM bei der Behandlung eines `Clicked`-Ereignisses eines `Button` oder eines `Tapped`-Ereignisses eines `TapGestureRecognizer` unzureichend erscheint. Damit Ereignisse dieser Art mit ViewModels verarbeitet werden können, unterstützt Xamarin.Forms die *Befehlsschnittstelle*.
 
 Die Befehlsschnittstelle manifestiert sich im `Button` mit zwei öffentlichen Eigenschaften:
 
@@ -77,7 +81,7 @@ Um die Befehlsschnittstelle zu unterstützen, muss ein ViewModel eine Eigenschaf
 
 Intern legt ein ViewModel jede Eigenschaft vom Typ `ICommand` auf eine Instanz einer Klasse fest, die die `ICommand`-Schnittstelle implementiert. Durch die Datenbindung ruft der `Button` anfänglich die `CanExecute`-Methode auf und deaktiviert sich selbst, wenn die Methode `false` zurückgibt. Außerdem wird ein Handler für das `CanExecuteChanged`-Ereignis festgelegt und immer `CanExecute` aufgerufen, wenn dieses Ereignis ausgelöst wird. Wenn `Button` aktiviert ist, ruft er immer die `Execute`-Methode auf, wenn auf `Button` geklickt wird.
 
-Möglicherweise verfügen Sie über ViewModels, die älter als Xamarin.Forms sind und möglicherweise bereits die Befehlsschnittstelle unterstützen. Bei neuen ViewModels, die nur für die Verwendung mit Xamarin.Forms gedacht sind, stellt Xamarin.Forms eine [`Command`](xref:Xamarin.Forms.Command)-Klasse und eine [`Command<T>`](xref:Xamarin.Forms.Command`1)-Klasse bereit, die die `ICommand`-Schnittstelle implementieren. Der generische Typ ist der Typ des Arguments für die Methoden `Execute` und `CanExecute`.
+Es kann sein, dass Sie über einige ViewModels verfügen, die älter als Xamarin.Forms sind und die Befehlsschnittstelle ggf. bereits unterstützen. Bei neuen ViewModels, die nur für die Verwendung mit Xamarin.Forms gedacht sind, stellt Xamarin.Forms eine [`Command`](xref:Xamarin.Forms.Command)-Klasse und eine [`Command<T>`](xref:Xamarin.Forms.Command`1)-Klasse bereit, die die `ICommand`-Schnittstelle implementieren. Der generische Typ ist der Typ des Arguments für die Methoden `Execute` und `CanExecute`.
 
 ### <a name="simple-method-executions"></a>Einfache Methodenausführungen
 

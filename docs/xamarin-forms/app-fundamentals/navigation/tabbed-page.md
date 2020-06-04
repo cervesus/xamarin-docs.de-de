@@ -1,24 +1,27 @@
 ---
 title: 'Xamarin.Forms: TabbedPage'
-description: Die TabbedPage-Klasse von Xamarin.Forms besteht aus einer Liste von Registerkarten und aus einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können.
-ms.prod: xamarin
-ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2019
-ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Die „TabbedPage“-Klasse von Xamarin.Forms besteht aus einer Liste mit Registerkarten und einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303804"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137513"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms: TabbedPage
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse von Xamarin.Forms besteht aus einer Liste von Registerkarten sowie einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. Die folgenden Screenshots zeigen eine `TabbedPage` unter iOS und Android:
+Die [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)-Klasse von Xamarin.Forms besteht aus einer Liste mit Registerkarten sowie einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. Die folgenden Screenshots zeigen eine `TabbedPage` unter iOS und Android:
 
 [![Screenshot einer TabbedPage mit drei Registerkarten unter iOS und Android](tabbed-page-images/tabbedpage-today.png "TabbedPage mit drei Registerkarten")](tabbed-page-images/tabbedpage-today-large.png#lightbox "TabbedPage mit drei Registerkarten")
 
@@ -56,7 +59,7 @@ Darüber hinaus definiert [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) die folg
 Alle diese Eigenschaften werden durch [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)-Objekte gestützt, was bedeutet, dass die Eigenschaften formatiert werden können und die Ziele von Datenverbindungen sein können.
 
 > [!WARNING]
-> In einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) wird jedes [`Page`](xref:Xamarin.Forms.Page)-Objekt bei der Erstellung von `TabbedPage` erstellt. Dies kann insbesondere dann das Benutzererlebnis beeinträchtigen, wenn die `TabbedPage` die Stammseite der Anwendung ist. Die Xamarin.Forms-Shell ermöglicht jedoch, dass Seiten, auf die über eine Registerkartenleiste zugegriffen wird, bei Bedarf als Reaktion auf die Navigation erstellt werden. Weitere Informationen finden Sie unter [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+> In einer [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) wird jedes [`Page`](xref:Xamarin.Forms.Page)-Objekt bei der Erstellung von `TabbedPage` erstellt. Dies kann insbesondere dann das Benutzererlebnis beeinträchtigen, wenn die `TabbedPage` die Stammseite der Anwendung ist. Die Xamarin.Forms-Shell ermöglicht es aber, dass Seiten, auf die über eine Registerkartenleiste zugegriffen wird, bei Bedarf als Reaktion auf die Navigation erstellt werden. Weitere Informationen finden Sie unter [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
 
 ## <a name="populate-a-tabbedpage-with-a-page-collection"></a>Auffüllen einer TabbedPage mit einer Seitensammlung
 

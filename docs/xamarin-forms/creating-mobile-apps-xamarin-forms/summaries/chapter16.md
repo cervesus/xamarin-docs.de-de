@@ -1,29 +1,33 @@
 ---
-title: Zusammenfassung von Kapitel 16. Datenbindung
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 16. Datenbindung'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 16. Data binding''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ece93730100001e8339a5f50cdb7ac437d96fa62
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771102"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136733"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Zusammenfassung von Kapitel 16. Datenbindung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 
 > [!NOTE] 
-> In den Anmerkungen auf dieser Seite wird erläutert, inwiefern Angaben im Buch heute nicht mehr für Xamarin.Forms gelten.
+> In den Anmerkungen auf dieser Seite wird beschrieben, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
 Programmierer müssen oft Ereignishandler schreiben, die erkennen, wenn sich eine Eigenschaft eines Objekts geändert hat, und dies nutzen, um den Wert einer Eigenschaft in einem anderen Objekt zu ändern. Dieser Prozess kann mithilfe einer *Datenbindung* genannten Technik automatisiert werden. Datenbindungen werden in der Regel in XAML definiert und Teil der Definition der Benutzeroberfläche.
 
-Sehr oft verbinden diese Datenbindungen Benutzeroberflächenobjekte mit zugrunde liegenden Daten. Dies ist eine Technik, die in [**Kapitel 18. MVVM**](chapter18.md) näher erkundet wird. Datenbindungen können jedoch auch zwei oder mehr Benutzeroberflächenelemente verbinden. In den meisten der frühen Beispiele für Datenbindung in diesem Kapitel wird diese Technik veranschaulicht.
+Sehr oft verbinden diese Datenbindungen Benutzeroberflächenobjekte mit zugrunde liegenden Daten. Dies ist ein Verfahren, das in [**Kapitel 18: MVVM**](chapter18.md) näher beschrieben ist. Datenbindungen können jedoch auch zwei oder mehr Benutzeroberflächenelemente verbinden. In den meisten der frühen Beispiele für Datenbindung in diesem Kapitel wird diese Technik veranschaulicht.
 
 ## <a name="binding-basics"></a>Grundlagen der Datenbindung
 
@@ -31,7 +35,7 @@ An der Datenbindung sind mehrere Eigenschaften, Methoden und Klassen beteiligt:
 
 - Die Klasse [`Binding`](xref:Xamarin.Forms.Binding) leitet sich von [`BindingBase`](xref:Xamarin.Forms.BindingBase) ab und kapselt viele Merkmale einer Datenbindung.
 - Die Eigenschaft [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) wird von der Klasse [`BindableObject`](xref:Xamarin.Forms.BindableObject) definiert.
-- Die Methode [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) wird auch von der Klasse [`BindableObject`](xref:Xamarin.Forms.BindableObject) definiert.
+- Die [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))-Methode wird auch von der [`BindableObject`](xref:Xamarin.Forms.BindableObject)-Klasse definiert.
 - Die Klasse [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) definiert drei weitere `SetBinding`-Methoden.
 
 Die beiden folgenden Klassen unterstützen XAML-Markuperweiterungen für Bindungen:
@@ -66,7 +70,7 @@ Wenn Sie das `Slider`-Objekt bearbeiten, wird das `Label`-Objekt aus der Ansicht
 
 ## <a name="source-and-bindingcontext"></a>Quelle und BindingContext
 
-Das Beispiel [**BindingSourceCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) zeigt einen alternativen Ansatz im Code. Ein `Binding`-Objekt wird erstellt, indem die [`Source`](xref:Xamarin.Forms.Binding.Source)-Eigenschaft auf das `Slider`-Objekt und die [`Path`](xref:Xamarin.Forms.Binding.Path)-Eigenschaft auf „Wert“ festgelegt wird. Die [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))-Methode von `BindableObject` wird dann für das `Label`-Objekt aufgerufen.
+Das Beispiel [**BindingSourceCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) zeigt einen alternativen Ansatz im Code. Ein `Binding`-Objekt wird erstellt, indem die [`Source`](xref:Xamarin.Forms.Binding.Source)-Eigenschaft auf das `Slider`-Objekt und die [`Path`](xref:Xamarin.Forms.Binding.Path)-Eigenschaft auf „Wert“ festgelegt wird. Die [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))-Methode von`BindableObject` wird dann für das `Label`-Objekt aufgerufen.
 
 Der [`Binding`-Konstruktor](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object)) kann auch zum Definieren des `Binding`-Objekts verwendet werden.
 

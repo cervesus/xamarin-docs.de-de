@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 10. XAML-Markuperweiterungen
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 10. XAML-Markuperweiterungen'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 076e9f5155492e5a69d906c587b24495fe39d3f1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 10. XAML markup extensions''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f23034df684e778677e4f2e480e1c41807536fb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334329"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136811"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Zusammenfassung von Kapitel 10. XAML-Markuperweiterungen
 
@@ -36,14 +40,14 @@ Die folgenden XAML-Markuperweiterungen werden von allen Implementierungen von XA
 - `x:Null` unterstützt von [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension).
 - `x:Array` unterstützt von [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension).
 
-Diese vier XAML-Markuperweiterungen werden von vielen Implementierungen von XAML unterstützt, einschließlich Xamarin.Forms:
+Diese vier XAML-Markuperweiterungen werden von vielen Implementierungen von XAML unterstützt, z. B. Xamarin.Forms:
 
 - `StaticResource` unterstützt von [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension).
 - `DynamicResource` unterstützt von [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension).
 - `Binding` unterstützt von [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) – besprochen in [Kapitel 16, Datenbindung](chapter16.md)
 - `TemplateBinding` unterstützt von [`TemplateBindingExtension`](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) – nicht behandelt in diesem Buch.
 
-Eine zusätzliche XAML-Markuperweiterung ist in Xamarin.Forms enthalten in Verbindung mit [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout):
+Eine zusätzliche XAML-Markuperweiterung ist in Xamarin.Forms in Verbindung mit [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) enthalten:
 
 - [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) – nicht behandelt in diesem Buch.
 
@@ -89,7 +93,7 @@ Verwenden Sie [`x:Array`](xref:Xamarin.Forms.Xaml.ArrayExtension), um ein Array 
 
 Sie können Ihre eigene XAML-Markuperweiterung erstellen, indem Sie eine Klasse schreiben, die die [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension)-Schnittstelle mit einer [`ProvideValue`](xref:Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(System.IServiceProvider))-Methode implementiert.
 
-Die [`HslColorExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs)-Klasse erfüllt diese Anforderung. Sie erstellt einen Wert vom Typ `Color`, basierend auf Werten der Eigenschaften namens `H`, `S`, `L` und `A`. Diese Klasse ist das erste Element in einer Xamarin.Forms-Bibliothek namens [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit), die im Verlauf dieses Buchs aufgebaut und verwendet wird.
+Die [`HslColorExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs)-Klasse erfüllt diese Anforderung. Sie erstellt einen Wert vom Typ `Color`, basierend auf Werten der Eigenschaften namens `H`, `S`, `L` und `A`. Diese Klasse ist das erste Element in einer Xamarin.Forms-Bibliothek mit dem Namen [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit), die im Verlauf dieses Buchs aufgebaut und verwendet wird.
 
 Das [**CustomExtensionDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo)-Beispiel veranschaulicht, wie Sie auf diese Bibliothek verweisen und die benutzerdefinierte Markuperweiterung verwenden.
 

@@ -1,24 +1,28 @@
 ---
-title: 'Zusammenfassung für Kapitel 21: Transformationen'
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung für Kapitel 21: Transformationen'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 40c091d0c5042d172108709f89774e41e9339d4b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 21. Transforms''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 32393108f84ea3a57079c86b6a9a8e628ceca03a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760580"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136668"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Zusammenfassung für Kapitel 21: Transformationen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
 
-Eine Xamarin.Forms-Ansicht wird auf dem Bildschirm an einer Position und in einer Größe angezeigt, die durch das übergeordnete Element bestimmt wird, bei dem es sich in der Regel um eine Ableitung von `Layout` oder `Layout<View>` handelt. Die *Transformation* ist ein Xamarin.Forms-Feature, mit dem die Position, die Größe oder sogar die Ausrichtung geändert werden kann.
+Eine Xamarin.Forms-Ansicht wird auf dem Bildschirm an einer Position und in einer Größe angezeigt, die durch das übergeordnete Element bestimmt wird. Hierbei handelt es sich in der Regel um eine Ableitung von `Layout` oder `Layout<View>`. Die *Transformation* ist ein Xamarin.Forms-Feature, mit dem die Position, die Größe oder sogar die Ausrichtung geändert werden kann.
 
 Xamarin.Forms unterstützt drei grundlegende Transformationsarten:
 
@@ -26,7 +30,7 @@ Xamarin.Forms unterstützt drei grundlegende Transformationsarten:
 - *Skalierung:* Die Größe eines Elements wird geändert.
 - *Drehung:* Ein Element wird um einen Punkt oder eine Achse herum gedreht.
 
-In Xamarin.Forms ist die Skalierung isotrop, also wirkt sich gleichmäßig auf die Breite und auf die Höhe aus. Die Drehung wird sowohl auf der zweidimensionalen Bildschirmoberfläche als auch im 3D-Raum unterstützt. Es gibt keine geneigte Transformation und keine generalisierte Matrixtransformation.
+In Xamarin.Forms ist die Skalierung isotrop. Sie wirkt sich also gleichmäßig auf die Breite und auf die Höhe aus. Die Drehung wird sowohl auf der zweidimensionalen Bildschirmoberfläche als auch im 3D-Raum unterstützt. Es gibt keine geneigte Transformation und keine generalisierte Matrixtransformation.
 
 Transformationen werden mit acht Eigenschaften vom Typ `double` unterstützt, die von der `VisualElement`-Klasse definiert werden:
 
@@ -39,7 +43,7 @@ Transformationen werden mit acht Eigenschaften vom Typ `double` unterstützt, di
 - [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 - [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-Alle diese Eigenschaften werden durch bindbare Eigenschaften unterstützt. Diese können formatiert und Ziele der Datenbindung sein. In [**Kapitel 22: Animation**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md) wird veranschaulicht, wie diese Eigenschaften animiert werden können. Einige Beispiele in diesem Kapitel zeigen jedoch auch, wie Sie diese Eigenschaften mit dem [Timer](~/xamarin-forms/platform/device.md#devicestarttimer) von Xamarin.Forms animieren können.
+Alle diese Eigenschaften werden durch bindbare Eigenschaften unterstützt. Diese können formatiert und Ziele der Datenbindung sein. In [**Kapitel 22: Animation**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md) wird veranschaulicht, wie diese Eigenschaften animiert werden können. Einige Beispiele in diesem Kapitel verdeutlichen aber auch, wie Sie diese Eigenschaften mit dem [Timer](~/xamarin-forms/platform/device.md#devicestarttimer) von Xamarin.Forms animieren können.
 
 Transformationseigenschaften beeinflussen nur, wie das Element gerendert wird, und *nicht*, wie das Element im Layout wahrgenommen wird.
 

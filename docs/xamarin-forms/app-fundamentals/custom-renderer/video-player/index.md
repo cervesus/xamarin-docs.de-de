@@ -1,26 +1,29 @@
 ---
-title: Implementieren eines Videoplayers
-description: In diesem Artikel wird erläutert, wie eine Videoplayeranwendung mithilfe von Xamarin.Forms implementiert wird.
-ms.prod: xamarin
-ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 28e424f4946d05798b9ba309891845d9eab998b1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: In diesem Artikel wird beschrieben, wie eine Videoplayeranwendung mit Xamarin.Forms implementiert wird.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08bfb86f040bfbce834df5a5d98231afae92e78d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771809"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133758"
 ---
 # <a name="implementing-a-video-player"></a>Implementieren eines Videoplayers
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-Manchmal ist es erwünscht, dass Videodateien in einer Xamarin.Forms-Anwendung wiedergegeben werden. In dieser Artikelreihe wird erläutert, wie benutzerdefinierte Renderer für iOS, Android und die universelle Windows-Plattform (UWP) für eine Xamarin.Forms-Klasse namens `VideoPlayer` geschrieben werden.
+Manchmal ist es erwünscht, dass Videodateien in einer Xamarin.Forms-Anwendung wiedergegeben werden. In dieser Artikelreihe wird beschrieben, wie benutzerdefinierte Renderer für iOS, Android und die universelle Windows-Plattform (UWP) für eine Xamarin.Forms-Klasse mit dem Namen `VideoPlayer` geschrieben werden.
 
-Im [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)-Beispiel befinden sich alle Dateien, die `VideoPlayer` implementieren und unterstützen, in Ordnern mit der Bezeichnung `FormsVideoLibrary`. Sie werden zudem mit dem Namespace `FormsVideoLibrary` oder Namespaces, die mit `FormsVideoLibrary` beginnen, identifiziert. Diese Organisation und Benennung sollte es einfach machen, die Videoplayerdateien in Ihre eigene Xamarin.Forms-Projektmappe zu kopieren.
+Im [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)-Beispiel befinden sich alle Dateien, die `VideoPlayer` implementieren und unterstützen, in Ordnern mit der Bezeichnung `FormsVideoLibrary`. Sie werden zudem mit dem Namespace `FormsVideoLibrary` oder Namespaces, die mit `FormsVideoLibrary` beginnen, identifiziert. Diese Art der Organisation und Benennung sollte es erleichtern, die Videoplayerdateien in Ihre eigene Xamarin.Forms-Projektmappe zu kopieren.
 
 `VideoPlayer` kann Videodateien von drei Quelltypen abspielen:
 

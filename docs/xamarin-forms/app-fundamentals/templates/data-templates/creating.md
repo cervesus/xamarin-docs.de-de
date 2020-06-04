@@ -1,24 +1,27 @@
 ---
 title: Erstellen eines Xamarin.Forms-DataTemplate-Objekts
-description: Datenvorlagen können inline erstellt werden, z.B. in einem ResourceDictionary-Objekt oder über einen benutzerdefinierten Typ oder geeigneten Xamarin.Forms-Zellentyp. In diesem Artikel werden alle Methoden erläutert.
-ms.prod: xamarin
-ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/11/2017
-ms.openlocfilehash: 399f411acd497b9d55ca81f670556430fe5f5503
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Datenvorlagen können inline erstellt werden, z. B. in einem ResourceDictionary-Objekt oder über einen benutzerdefinierten Typ oder geeigneten Xamarin.Forms-Zellentyp. In diesem Artikel werden alle Methoden erläutert.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3e91d6f091870fe9203e67eda1454b8062383deb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771289"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139931"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Erstellen eines Xamarin.Forms-DataTemplate-Objekts
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Datenvorlagen können inline erstellt werden, z.B. in einem ResourceDictionary-Objekt oder über einen benutzerdefinierten Typ oder geeigneten Xamarin.Forms-Zellentyp. In diesem Artikel werden alle Methoden erläutert._
+_Datenvorlagen können inline erstellt werden, z. B. in einem ResourceDictionary-Objekt oder über einen benutzerdefinierten Typ oder geeigneten Xamarin.Forms-Zellentyp. In diesem Artikel werden alle Methoden erläutert._
 
 Ein gängiges Verwendungsszenario für eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ist das Anzeigen von Daten aus einer Objektsammlung in einer [`ListView`](xref:Xamarin.Forms.ListView). Das Aussehen der Daten in jeder Zelle in der [`ListView`](xref:Xamarin.Forms.ListView) kann durch das Festlegen der [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)-Eigenschaft auf [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) definiert werden. Dafür gibt es mehrere Möglichkeiten:
 

@@ -1,18 +1,21 @@
 ---
-title: Benutzerdefinierte Videopositionierung
-description: In diesem Artikel wird erläutert, wie eine benutzerdefinierte Fortschrittsleiste mithilfe von Xamarin.Forms in eine Videoplayeranwendung implementiert wird.
-ms.prod: xamarin
-ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: In diesem Artikel wird beschrieben, wie eine benutzerdefinierte Fortschrittsleiste mit Xamarin.Forms in eine Videoplayeranwendung implementiert wird.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 97d32a03ee10e2f3b0a7442d1d70dab9236059b4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650642"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135082"
 ---
 # <a name="custom-video-positioning"></a>Benutzerdefinierte Videopositionierung
 
@@ -342,7 +345,7 @@ Die `SetTimeToEnd`-Methode wird von den durch die geänderte Eigenschaft ausgel�
 
 ## <a name="a-custom-slider-for-video"></a>Benutzerdefinierte Schieberegler für Videos
 
-Sie können ein benutzerdefiniertes Steuerelement für eine Fortschrittsleiste schreiben oder die `Slider`-Klasse von Xamarin.Forms bzw. eine von `Slider` abgeleitete Klasse verwenden, z.B. die folgende `PositionSlider`-Klasse. Die Klasse definiert zwei neue Eigenschaften vom Typ `TimeSpan` namens `Duration` und `Position`, die für die Datenbindung an die zwei Eigenschaften mit dem gleichen Namen im `VideoPlayer`-Steuerelement konzipiert sind. Beachten Sie, dass der Standardbindungsmodus der `Position`-Eigenschaft bidirektional ist:
+Sie können ein benutzerdefiniertes Steuerelement für eine Fortschrittsleiste schreiben oder die `Slider`-Klasse von Xamarin.Forms bzw. eine von `Slider` abgeleitete Klasse verwenden (z. B. die folgende `PositionSlider`-Klasse). Die Klasse definiert zwei neue Eigenschaften vom Typ `TimeSpan` namens `Duration` und `Position`, die für die Datenbindung an die zwei Eigenschaften mit dem gleichen Namen im `VideoPlayer`-Steuerelement konzipiert sind. Beachten Sie, dass der Standardbindungsmodus der `Position`-Eigenschaft bidirektional ist:
 
 ```csharp
 namespace FormsVideoLibrary

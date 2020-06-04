@@ -1,19 +1,22 @@
 ---
 title: Zeichenfolgen- und Bildlokalisierung in Xamarin.Forms
-description: Xamarin.Forms-Apps können mithilfe von .NET-Ressourcendateien lokalisiert werden.
-zone_pivot_groups: platform
-ms.prod: xamarin
-ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 11/01/2019
-ms.openlocfilehash: bf99873d88a69a715cdf7969ad94afd66372b5e3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Xamarin.Forms-Apps können mit .NET-Ressourcendateien lokalisiert werden.
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74135332"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137601"
 ---
 # <a name="xamarinforms-string-and-image-localization"></a>Zeichenfolgen- und Bildlokalisierung für Xamarin.Forms
 
@@ -25,11 +28,11 @@ Lokalisierung ist der Prozess, bei dem eine Anwendung an die jeweilige Sprache o
 
 .NET Framework enthält einen integrierten Mechanismus zum Lokalisieren von Anwendungen mithilfe von [RESX-Ressourcendateien](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps). Eine Ressourcendatei speichert Text und andere Inhalte als Name/Wert-Paare, mit denen die Anwendung Inhalte für einen bereitgestellten Schlüssel abrufen kann. Mithilfe von Ressourcendateien können lokalisierte Inhalte vom Anwendungscode getrennt werden.
 
-Zum Lokalisieren von Xamarin.Forms-Anwendungen mithilfe von Ressourcendateien müssen Sie die folgenden Schritte ausführen:
+Zum Lokalisieren von Xamarin.Forms-Anwendungen mit Ressourcendateien müssen Sie die folgenden Schritte ausführen:
 
-1. [Erstellen der RESX-Dateien](#create-resx-files) mit übersetzten Text
+1. [Erstellen der RESX-Dateien](#create-resx-files) mit übersetztem Text
 1. [Angeben der Standardkultur](#specify-the-default-culture) im freigegebenen Projekt
-1. [Lokalisieren des Texts in Xamarin.Forms](#localize-text-in-xamarinforms)
+1. [Lokalisieren von Text in Xamarin.Forms](#localize-text-in-xamarinforms).
 1. [Lokalisieren von Bildern](#localize-images) basierend auf Kultureinstellungen für jede Plattform
 1. [Lokalisieren des Anwendungsnamens](#localize-the-application-name) auf jeder Plattform
 1. [Testen der Lokalisierung](#test-localization) auf jeder Plattform
@@ -148,7 +151,7 @@ Weitere Informationen zu Ressourcendateien finden Sie unter [Erstellen von Resso
 
 ## <a name="localize-text-in-xamarinforms"></a>Lokalisieren von Text in Xamarin.Forms
 
-Text wird mithilfe der generierten `AppResources`-Klasse in Xamarin.Forms lokalisiert. Diese Klasse wird basierend auf dem Namen der Standardressourcendatei benannt. Da die Ressourcendatei des Beispielprojekts **AppResources.cs** heißt, generiert Visual Studio eine passende Klasse mit dem Namen `AppResources`. Statische Eigenschaften werden in der `AppResources`-Klasse für jede Zeile in der Ressourcendatei generiert. Die folgenden statischen Eigenschaften werden in der `AppResources`-Klasse der Beispielanwendung generiert:
+Text wird in Xamarin.Forms lokalisiert, indem die generierte `AppResources`-Klasse verwendet wird. Diese Klasse wird basierend auf dem Namen der Standardressourcendatei benannt. Da die Ressourcendatei des Beispielprojekts **AppResources.cs** heißt, generiert Visual Studio eine passende Klasse mit dem Namen `AppResources`. Statische Eigenschaften werden in der `AppResources`-Klasse für jede Zeile in der Ressourcendatei generiert. Die folgenden statischen Eigenschaften werden in der `AppResources`-Klasse der Beispielanwendung generiert:
 
 - AddButton
 - NotesLabel

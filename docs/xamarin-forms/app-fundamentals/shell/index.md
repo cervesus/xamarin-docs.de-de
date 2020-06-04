@@ -1,26 +1,29 @@
 ---
 title: Xamarin.Forms-Shell
-description: Dieser Leitfaden erklärt, wie die Xamarin.Forms-Shell verwendet wird, und wie sich die Komplexität von Xamarin.Forms-Anwendungen reduzieren lässt, indem sie die grundlegenden Funktionen bereitstellt, die die meisten Anwendungen benötigen.
-ms.prod: xamarin
-ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/28/2019
-ms.openlocfilehash: 20ac6ad748e7056f7f8037a73a95de66b9eae3b6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Dieser Leitfaden erklärt, wie die Xamarin.Forms-Shell verwendet wird und wie sich die Komplexität von Xamarin.Forms-Anwendungen reduzieren lässt, indem sie die grundlegenden Funktionen bereitstellt, die die meisten Anwendungen benötigen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69888918"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138748"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms-Shell
 
 ## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
 
-Die Xamarin.Forms-Shell reduziert die Komplexität der Entwicklung mobiler Anwendungen, indem es die grundlegenden Features bereitstellt, die die meisten mobilen Anwendungen benötigen. Dazu gehören eine gemeinsame Navigationsbenutzerumgebung, ein URI-basiertes Navigationsschema und ein integrierter Suchhandler.
+Die Xamarin.Forms-Shell reduziert die Komplexität der Entwicklung mobiler Anwendungen, indem die grundlegenden Features bereitgestellt werden, die von den meisten mobilen Anwendungen benötigt werden. Dazu gehören eine gemeinsame Navigationsbenutzerumgebung, ein URI-basiertes Navigationsschema und ein integrierter Suchhandler.
 
-## <a name="create-a-xamarinforms-shell-application"></a>[Erstellt eine Xamarin.Forms-Shell-Anwendung](create.md)
+## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[Erstellen einer Xamarin.Forms-Shellanwendung](create.md)
 
 Das Vorgehen zum Erstellen einer Xamarin.Forms-Shell-Anwendung besteht darin, eine XAML-Datei zu erstellen, die die `Shell`-Klasse untergliedert, die `MainPage`-Eigenschaft der `App`-Klasse der Anwendung auf das über Unterklassen verfügende `Shell`-Objekt festzulegen und dann die visuelle Hierarchie der Anwendung in der über Unterklassen verfügenden `Shell`-Klasse zu beschreiben.
 
@@ -46,7 +49,7 @@ Shell-Anwendungen können integrierte Suchfunktionalität über ein Suchfeld nut
 
 ## <a name="lifecycle"></a>[Lebenszyklus](lifecycle.md)
 
-Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein `Appearing`-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein `Disappearing`-Ereignis wird ausgelöst, wenn eine Seite im Begriff ist, nicht mehr auf dem Bildschirm angezeigt zu werden.
+Für Shell-Anwendungen gilt der Xamarin.Forms-Lebenszyklus. Deswegen wird beim Aufrufen einer Seite für die bevorstehende Bildschirmanzeige ein `Appearing`-Ereignis und beim bevorstehenden Entfernen der Seite vom Bildschirm ein `Disappearing`-Ereignis ausgelöst.
 
 ## <a name="custom-renderers"></a>[Benutzerdefinierte Renderer](customrenderers.md)
 

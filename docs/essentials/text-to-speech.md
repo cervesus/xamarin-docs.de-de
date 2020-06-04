@@ -1,18 +1,11 @@
 ---
-title: 'Xamarin.Essentials: Text-zu-Sprache'
-description: Mit der TextToSpeech-Klasse in Xamarin.Essentials kann eine Anwendung die integrierten Text-to-Speech-Engines verwenden, um Text auf dem Gerät wiederzugeben und verfügbare Sprachen abzufragen, die die Engine unterstützt.
-ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: abe591d67ea749de4ae9a2f8dadf4df07712691a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149726"
+title: ''Xamarin.Essentials: Text-to-Speech'' description: 'Mit der Klasse „TextToSpeech“ in Xamarin.Essentials kann eine Anwendung die integrierten Text-to-Speech-Engines verwenden, um Text auf dem Gerät wiederzugeben und verfügbare Sprachen abzufragen, die die Engine unterstützt.'
+ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Text-zu-Sprache
 
 Mit der Klasse **TextToSpeech** kann eine Anwendung die integrierten Text-to-Speech-Engines verwenden, um Text auf dem Gerät wiederzugeben und verfügbare Sprachen abzufragen, die die Engine unterstützt.
@@ -23,7 +16,7 @@ Mit der Klasse **TextToSpeech** kann eine Anwendung die integrierten Text-to-Spe
 
 ## <a name="using-text-to-speech"></a>Verwenden von Text-to-Speech
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -121,7 +114,7 @@ Die folgenden Werte werden für diese Parameter unterstützt:
 
 ### <a name="speech-locales"></a>Gebietsschema der Sprache
 
-Jede Plattform unterstützt verschiedene Gebietsschemas, um Text in verschiedenen Sprachen und Akzenten wiederzugeben. Plattformen verfügen über unterschiedliche Codes und Möglichkeiten zur Angabe des Gebietsschemas. Deshalb stellt Xamarin.Essentials eine plattformübergreifende `Locale`-Klasse bereit und die Abfrageoption mit `GetLocalesAsync`.
+Jede Plattform unterstützt verschiedene Gebietsschemas, um Text in verschiedenen Sprachen und Akzenten wiederzugeben. Plattformen verfügen über unterschiedliche Codes und Möglichkeiten zur Angabe des Gebietsschemas. Deshalb werden in Xamarin.Essentials eine plattformübergreifende `Locale`-Klasse und die Abfrageoption mit `GetLocalesAsync` bereitgestellt.
 
 ```csharp
 public async Task SpeakNow()

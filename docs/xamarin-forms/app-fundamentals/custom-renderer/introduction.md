@@ -1,24 +1,27 @@
 ---
-title: Einführung in benutzerdefinierte Renderer
-description: In diesem Artikel werden benutzerdefinierte Renderer vorgestellt, und Sie erfahren, wie Sie einen benutzerdefinierten Renderer erstellen können.
-ms.prod: xamarin
-ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/19/2016
-ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771885"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135320"
 ---
 # <a name="introduction-to-custom-renderers"></a>Einführung in benutzerdefinierte Renderer
 
 _Benutzerdefinierte Renderer sind eine praktische Methode zum Anpassen der Darstellung und des Verhaltens von Xamarin.Forms-Steuerelementen. Sie können für geringfügige Formatierungsänderungen oder für umfangreiche, plattformspezifische Anpassungen des Layouts und Verhaltens verwendet werden. In diesem Artikel werden benutzerdefinierte Renderer vorgestellt, und Sie erfahren, wie Sie einen benutzerdefinierten Renderer erstellen können._
 
-Die [Pages, Layouts and Controls (Seiten, Layouts und Steuerelemente)](~/xamarin-forms/user-interface/controls/index.md) von Xamarin.Forms stellen eine allgemeine API dar, mit der plattformübergreifende mobile Benutzeroberflächen beschrieben werden können. Die einzelnen Seiten, Layouts und Steuerelemente werden auf jeder Plattform auf unterschiedliche Weise über eine `Renderer`-Klasse gerendert. Diese erstellt ein natives Steuerelement (entsprechend der Xamarin.Forms-Darstellung), ordnet dieses auf dem Bildschirm an und fügt das im freigegebenen Code angegebene Verhalten hinzu.
+Die [Seiten, Layouts und Steuerelemente](~/xamarin-forms/user-interface/controls/index.md) (Pages, Layouts und Controls) von Xamarin.Forms stellen eine allgemeine API dar, mit der plattformübergreifende mobile Benutzeroberflächen beschrieben werden können. Die einzelnen Seiten, Layouts und Steuerelemente werden auf jeder Plattform auf unterschiedliche Weise über eine `Renderer`-Klasse gerendert. Diese erstellt ein natives Steuerelement (entsprechend der Xamarin.Forms-Darstellung), ordnet dieses auf dem Bildschirm an und fügt das im freigegebenen Code angegebene Verhalten hinzu.
 
 Entwickler können ihre eigenen benutzerdefinierten `Renderer`-Klassen implementieren, um die Darstellung und/oder das Verhalten eines Steuerelements anzupassen. Benutzerdefinierte Renderer für einen bestimmten Typ können einem Anwendungsprojekt hinzugefügt werden, um das Steuerelement an einer Stelle anzupassen, während auf anderen Plattformen das Standardverhalten zugelassen wird. Alternativ können jedem Anwendungsprojekt unterschiedliche benutzerdefinierte Renderer hinzugefügt werden, um ein unterschiedliches Erscheinungsbild unter iOS, Android und auf der Universellen Windows-Plattform (UWP) zu schaffen. Das Implementieren einer benutzerdefinierten Rendererklasse zum Ausführen einer einfachen Anpassung eines Steuerelements ist jedoch oft eine komplizierte Antwort. Die Auswirkungen vereinfachen diesen Prozess und werden in der Regel für geringfügige Formatierungsänderungen verwendet. Weitere Informationen finden Sie unter [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
 
@@ -75,7 +78,7 @@ Die Themen in dieser Reihe bieten Demos und Erklärungen dieses Prozesses für v
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Wenn ein benutzerdefiniertes Steuerelement in einem .NET Standard-Bibliotheksprojekt enthalten ist, das der Projektmappe hinzugefügt wurde (d.h. nicht die .NET Standard-Bibliothek, die von der Visual Studio für Mac/Visual Studio-Xamarin.Forms-App-Projektvorlage erstellt wurde). Eine Ausnahme kann unter iOS auftreten, wenn versucht wird, auf das benutzerdefinierte Steuerelement zuzugreifen. Wenn dieses Problem auftritt, kann es durch Erstellen eines Verweises auf das benutzerdefinierte Steuerelement aus der Klasse `AppDelegate` gelöst werden:
+Wenn ein benutzerdefiniertes Steuerelement in einem .NET Standard-Bibliotheksprojekt enthalten ist, das der Projektmappe hinzugefügt wurde (d. h. nicht die .NET Standard-Bibliothek, die von der Xamarin.Forms-App-Projektvorlage in Visual Studio für Mac/Visual Studio erstellt wurde). Eine Ausnahme kann unter iOS auftreten, wenn versucht wird, auf das benutzerdefinierte Steuerelement zuzugreifen. Wenn dieses Problem auftritt, kann es durch Erstellen eines Verweises auf das benutzerdefinierte Steuerelement aus der Klasse `AppDelegate` gelöst werden:
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere

@@ -1,24 +1,27 @@
 ---
-title: Barrierefreiheit der Tastatur
-description: Anstatt die Standardreihenfolge der Registerkarten zu verwenden, ist es manchmal notwendig, die Barrierefreiheit Ihrer Benutzeroberfläche zu optimieren, indem Sie die Reihenfolge der Registerkarten mit einer Kombination aus den Eigenschaften TabIndex und IsTabStop angeben.
-ms.prod: xamarin
-ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/09/2019
-ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1590d0a4f9716541f18bc4f50a2c480c5e4478a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71997111"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129778"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Barrierefreiheit der Tastatur in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
-Benutzer, die Sprachausgaben verwenden oder Mobilitätseinschränkungen haben, können bei der Nutzung von Anwendungen Probleme haben, bei denen die Verwendung passender Zugriffstasten nicht möglich ist. Für Xamarin.Forms-Anwendungen kann eine erwartete Aktivierreihenfolge angegeben sein, um die Nutzbarkeit und Barrierefreiheit zu optimieren. Durch das Festlegen einer Aktivierreihenfolge für Steuerelemente wird die Tastaturnavigation aktiviert, und Anwendungsseiten werden entsprechend eingerichtet, Eingaben in einer bestimmten Abfolge zu empfangen. Zudem kann die Sprachausgabe dem Benutzer fokussierbare Elemente vorlesen.
+Benutzer, die Sprachausgaben verwenden oder Mobilitätseinschränkungen haben, können bei der Nutzung von Anwendungen Probleme haben, bei denen die Verwendung passender Zugriffstasten nicht möglich ist. Für Xamarin.Forms-Anwendungen kann eine erwartete Aktivierreihenfolge angegeben werden, um die Benutzerfreundlichkeit und Barrierefreiheit zu optimieren. Durch das Festlegen einer Aktivierreihenfolge für Steuerelemente wird die Tastaturnavigation aktiviert, und Anwendungsseiten werden entsprechend eingerichtet, Eingaben in einer bestimmten Abfolge zu empfangen. Zudem kann die Sprachausgabe dem Benutzer fokussierbare Elemente vorlesen.
 
 Standardmäßig entspricht die Aktivierreihenfolge von Steuerelementen der gleichen Reihenfolge, in der sie in XAML aufgelistet sind, oder in der sie programmgesteuert einer untergeordneten Sammlung hinzugefügt wurden. In dieser Reihenfolge wird mit der Tastatur durch Steuerelemente navigiert, und diese werden von der Sprachausgabe gelesen. Diese Standardreihenfolge ist meist die beste Lösung. Die Standardreihenfolge entspricht jedoch nicht immer der erwarteten Reihenfolge, wie im folgenden XAML-Codebeispiel zu sehen ist:
 

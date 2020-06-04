@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 3. Details zum Text
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 3. Details zum Text'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 69415b59bbd376330454302981e3216c236a16bb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 3. Deeper into text''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5423a9f716f384eca107003bdeca69615f8b459f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72980921"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136902"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Zusammenfassung von Kapitel 3. Details zum Text
 
@@ -119,7 +123,7 @@ Legen Sie die [`FontFamily`](xref:Xamarin.Forms.Label.FontFamily)-Eigenschaft vo
 
 Legen Sie die [`FontSize`](xref:Xamarin.Forms.Label.FontSize)-Eigenschaft von `Label` auf einen `double`-Wert fest, um die ungefähre Höhe der Schriftart anzugeben. Weitere Informationen zur intelligenten Auswahl von Schriftgraden finden Sie in [Kapitel 5, „Umgang mit Größen“](chapter05.md).
 
-Alternativ können Sie einen von mehreren voreingestellten plattformabhängigen Schriftgraden abrufen. Die statische [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type))-Methode und [Überladung](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element)) geben beide einen für die Plattform geeigneten `double`-Wert für den Schriftgrad zurück, basierend auf den Membern der [`NamedSize`](xref:Xamarin.Forms.NamedSize)-Enumeration ([`Default`](xref:Xamarin.Forms.NamedSize.Default), [`Micro`](xref:Xamarin.Forms.NamedSize.Micro), [`Small`](xref:Xamarin.Forms.NamedSize.Small), [`Medium`](xref:Xamarin.Forms.NamedSize.Medium) und [`Large`](xref:Xamarin.Forms.NamedSize.Large)). Der vom `Medium`-Member zurückgegebene Wert ist nicht notwendigerweise identisch mit `Default`. Im [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)-Beispiel wird Text mit diesen benannten Größen angezeigt.
+Alternativ können Sie einen von mehreren voreingestellten plattformabhängigen Schriftgraden abrufen. Für die statische [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type))-Methode und die [Überladung](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element)) wird jeweils ein für die Plattform geeigneter `double`-Wert für den Schriftgrad zurückgegeben. Dies erfolgt basierend auf den Membern der Enumeration [`NamedSize`](xref:Xamarin.Forms.NamedSize) ([`Default`](xref:Xamarin.Forms.NamedSize.Default), [`Micro`](xref:Xamarin.Forms.NamedSize.Micro), [`Small`](xref:Xamarin.Forms.NamedSize.Small), [`Medium`](xref:Xamarin.Forms.NamedSize.Medium) und [`Large`](xref:Xamarin.Forms.NamedSize.Large)). Der vom `Medium`-Member zurückgegebene Wert ist nicht notwendigerweise identisch mit `Default`. Im [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)-Beispiel wird Text mit diesen benannten Größen angezeigt.
 
 Legen Sie die [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes)-Eigenschaft von `Label` auf einen Member dieser [`FontAttributes`](xref:Xamarin.Forms.FontAttributes)-Enumeration fest, [`Bold`](xref:Xamarin.Forms.FontAttributes.Bold), [`Italic`](xref:Xamarin.Forms.FontAttributes.Italic) oder [`None`](xref:Xamarin.Forms.FontAttributes.None). Sie können die Member `Bold` und `Italic` mit dem bitweisen OR-Operator von C# kombinieren.
 

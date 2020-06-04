@@ -1,24 +1,27 @@
 ---
 title: Xamarin.Forms-Steuerelementvorlagen
-description: Xamarin.Forms-Steuerelementvorlagen definieren die visuelle Struktur von ContentView abgeleiteter benutzerdefinierter Steuerelemente und von ContentPage abgeleiteter Seiten.
-ms.prod: xamarin
-ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/13/2020
-ms.openlocfilehash: a73123b89cba932f2e2cb907645f6fe858cf6176
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Xamarin.Forms-Steuerelementvorlagen definieren die visuelle Struktur für von ContentView abgeleitete benutzerdefinierte Steuerelemente und von ContentPage abgeleitete Seiten.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303840"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132547"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms-Steuerelementvorlagen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
-Mit Xamarin.Forms-Steuerelementvorlagen können Sie die visuelle Struktur von [`ContentView`](xref:Xamarin.Forms.ContentView) abgeleiteter benutzerdefinierter Steuerelemente und von [`ContentPage`](xref:Xamarin.Forms.ContentPage) abgeleiteter Seiten definieren. Steuerelementvorlagen trennen die Benutzeroberfläche (UI) für ein benutzerdefiniertes Steuerelement oder eine Seite von der Logik, die das Steuerelement oder die Seite implementiert. Zusätzliche Inhalte können auch an einer vordefinierten Stelle in benutzerdefinierten Steuerelementen mit Vorlagen oder Seiten mit Vorlagen eingefügt werden.
+Mit Xamarin.Forms-Steuerelementvorlagen können Sie die visuelle Struktur der von [`ContentView`](xref:Xamarin.Forms.ContentView) abgeleiteten benutzerdefinierten Steuerelemente und der von [`ContentPage`](xref:Xamarin.Forms.ContentPage) abgeleiteten Seiten definieren. Steuerelementvorlagen trennen die Benutzeroberfläche (UI) für ein benutzerdefiniertes Steuerelement oder eine Seite von der Logik, die das Steuerelement oder die Seite implementiert. Zusätzliche Inhalte können auch an einer vordefinierten Stelle in benutzerdefinierten Steuerelementen mit Vorlagen oder Seiten mit Vorlagen eingefügt werden.
 
 Beispielsweise können Sie eine Steuerelementvorlage erstellen, die die Benutzeroberfläche eines benutzerdefinierten Steuerelements neu definiert. Die Steuerelementvorlage kann anschließend von der erforderlichen Instanz des benutzerdefinierten Steuerelements genutzt werden. Alternativ können Sie eine benutzerdefinierte Steuerelementvorlage erstellen, die eine allgemeine Benutzeroberfläche definiert, die für mehrere Seiten einer Anwendung verwendet wird. Die Steuerelementvorlage kann anschließend von mehreren Seiten genutzt werden, wobei jede Seite ihren eindeutigen Inhalt anzeigt.
 
@@ -48,11 +51,11 @@ public class CardView : ContentView
 }
 ```
 
-Die `CardView`-Klasse, die von der [`ContentView`](xref:Xamarin.Forms.ContentView)-Klasse abgeleitet wird, stellt ein benutzerdefiniertes Steuerelement dar, das Daten in einem Karten ähnlichen Layout anzeigt. Die Klasse enthält Eigenschaften, die von bindbaren Eigenschaften unterstützt werden, für die angezeigten Daten. Die `CardView`-Klasse definiert jedoch keine Benutzeroberfläche. Stattdessen wird die Benutzeroberfläche mithilfe einer Steuerelementvorlage definiert. Weitere Informationen zum Erstellen von `ContentView` abgeleiteter benutzerdefinierter Steuerelemente finden Sie unter [Xamarin.Forms-ContentView](~/xamarin-forms/user-interface/layouts/contentview.md).
+Die `CardView`-Klasse, die von der [`ContentView`](xref:Xamarin.Forms.ContentView)-Klasse abgeleitet wird, stellt ein benutzerdefiniertes Steuerelement dar, das Daten in einem Karten ähnlichen Layout anzeigt. Die Klasse enthält Eigenschaften, die von bindbaren Eigenschaften unterstützt werden, für die angezeigten Daten. Die `CardView`-Klasse definiert jedoch keine Benutzeroberfläche. Stattdessen wird die Benutzeroberfläche mithilfe einer Steuerelementvorlage definiert. Weitere Informationen zum Erstellen der von `ContentView` abgeleiteten benutzerdefinierten Steuerelemente finden Sie unter [Xamarin.Forms-ContentView](~/xamarin-forms/user-interface/layouts/contentview.md).
 
 Eine Steuerelementvorlage wird mit dem Typ [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) erstellt. Wenn Sie eine `ControlTemplate`-Klasse erstellen, kombinieren Sie [`View`](xref:Xamarin.Forms.View)-Objekte, um die Benutzeroberfläche für ein benutzerdefiniertes Steuerelement oder eine Seite zu erstellen. Eine `ControlTemplate`-Klasse darf nur ein `View` als Stammelement aufweisen. In der Regel enthält das Stammelement jedoch andere `View`-Objekte. Die visuelle Struktur wird durch die Kombination dieser Objekte bestimmt.
 
-Zwar kann eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse inline definiert werden, jedoch besteht der übliche Ansatz zum Deklarieren einer [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse darin, sie als Ressource in einem Ressourcenverzeichnis zu deklarieren. Da es sich bei Steuerelementvorlagen um Ressourcen handelt, unterliegen sie denselben Bereichsregeln, die für alle Ressourcen gelten. Wenn Sie beispielsweise eine Steuerelementvorlage im Stammelement der XAML-Anwendungsdefinitionsdatei deklarieren, kann die Vorlage überall in Ihrer Anwendung verwendet werden. Wenn Sie die Vorlage in einer Seite definieren, kann die Steuerelementvorlage nur auf dieser Seite verwendet werden. Weitere Informationen zu Ressourcen finden Sie unter [Xamarin.Forms-Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md).
+Zwar kann eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse inline definiert werden, jedoch besteht der übliche Ansatz zum Deklarieren einer [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse darin, sie als Ressource in einem Ressourcenverzeichnis zu deklarieren. Da es sich bei Steuerelementvorlagen um Ressourcen handelt, unterliegen sie denselben Bereichsregeln, die für alle Ressourcen gelten. Wenn Sie beispielsweise eine Steuerelementvorlage im Stammelement der XAML-Anwendungsdefinitionsdatei deklarieren, kann die Vorlage überall in Ihrer Anwendung verwendet werden. Wenn Sie die Vorlage in einer Seite definieren, kann die Steuerelementvorlage nur auf dieser Seite verwendet werden. Weitere Informationen zu Ressourcen finden Sie unter [Ressourcenverzeichnisse in Xamarin.Forms](~/xamarin-forms/xaml/resource-dictionaries.md).
 
 Im folgenden XAML-Beispiel eine [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)-Klasse für `CardView`-Objekte veranschaulicht:
 

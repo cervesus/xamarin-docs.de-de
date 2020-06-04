@@ -1,18 +1,21 @@
 ---
-title: Hierarchische Navigation
-description: In diesem Artikel wird gezeigt, wie die NavigationPage-Klasse verwendet werden kann, um die Navigation in einem Stapel von LIFO-Seiten (Last In, First Out) auszuführen.
-ms.prod: xamarin
-ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2020
-ms.openlocfilehash: 984f54698ccdee54c0b8670a50cb1f4432327977
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517278"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137869"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -88,7 +91,7 @@ Wenn die Methode [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) auf
 - Bei der Seite, zu der navigiert wird, wird die Überschreibung von [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) aufgerufen.
 - Aufgabe `PushAsync` wird abgeschlossen.
 
-Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
+Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
 > [!NOTE]
 > Aufrufe von Überschreibungen von [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) und [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) können nicht als garantierte Anzeichen für eine Seitennavigation behandelt werden. Unter iOS beispielsweise wird die Überschreibung von `OnDisappearing` auf der aktiven Seite aufgerufen, wenn die Anwendung beendet wird.
@@ -112,7 +115,7 @@ Dadurch wird die `Page2Xaml`-Instanz von dem Navigationsstapel entfernt, und die
 - Für die Seite, die zurückgegeben wird, wird die Überschreibung von [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) aufgerufen.
 - Die `PopAsync`-Aufgabe wird zurückgegeben.
 
-Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
+Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
 Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) jeder Seite stellt zusätzlich zu den [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)- und [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync)-Methoden eine [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync)-Methode bereit, wie im folgenden Codebeispiel dargestellt:
 
@@ -276,7 +279,7 @@ Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/
 
 ## <a name="manipulating-the-navigation-stack"></a>Bearbeiten des Navigationsstapels
 
-Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) macht die Eigenschaft [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) verfügbar, über welche die Seiten im Navigationsstapel abgerufen werden können. Während Xamarin.Forms den Zugriff auf den Navigationsstapel verwaltet, stellt die `Navigation`-Eigenschaft die [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*)- und [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*)-Methoden zum Bearbeiten des Stapels bereit, indem Seiten eingefügt oder entfernt werden.
+Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) macht die Eigenschaft [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) verfügbar, über welche die Seiten im Navigationsstapel abgerufen werden können. Während Xamarin.Forms den Zugriff auf den Navigationsstapel verwaltet, stellt die `Navigation`-Eigenschaft die Methoden [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) und [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) zum Bearbeiten des Stapels bereit, indem Seiten eingefügt oder entfernt werden.
 
 Die Methode [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) fügt eine angegebene Seite noch vor einer vorhandenen angegebenen Seite in den Navigationsstapel ein, so wie in diesem Diagramm gezeigt:
 
@@ -366,5 +369,5 @@ Es gibt mehrere Einschränkungen, die Sie beachten sollten, wenn Sie eine [`View
 - [PassingData (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
 - [LoginFlow (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
 - [TitleView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)
-- [Video zum Erstellen eines Anmeldebildschirmflows in Xamarin.Forms](https://www.youtube.com/watch?v=qKQ7pyyG1fo)
+- [Video zum Erstellen eines Anmeldebildschirmablaufs in Xamarin.Forms](https://www.youtube.com/watch?v=qKQ7pyyG1fo)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

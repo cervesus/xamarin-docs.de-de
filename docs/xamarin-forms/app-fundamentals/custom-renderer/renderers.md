@@ -1,18 +1,21 @@
 ---
-title: Rendererbasisklassen und native Steuerelemente
+title: ''
 description: Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. In diesem Artikel werden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren.
-ms.prod: xamarin
-ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: 986b1f7dce05451b96a78e4b39b0091309d93973
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a56f05f8ff4eb8ece43a9f4f38a669cfdc85c4be
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517477"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135186"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>Rendererbasisklassen und native Steuerelemente
 
@@ -20,16 +23,16 @@ _Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer 
 
 Mit Ausnahme der `MapRenderer`-Klasse finden Sie die plattformspezifischen Renderer in den folgenden Namespaces:
 
-- **iOS:** Xamarin.Forms.Platform.iOS
-- **Android:** Xamarin.Forms.Platform.Android
-- **Android (AppCompat):** Xamarin.Forms.Platform.Android.AppCompat
-- **Universelle Windows-Plattform (UWP):** Xamarin.Forms.Platform.UWP
+- **iOS**: Xamarin.Forms.Platform.iOS
+- **Android**: Xamarin.Forms.Platform.Android
+- **Android (AppCompat)** : Xamarin.Forms.Platform.Android.AppCompat
+- **Universelle Windows-Plattform (UWP)** : Xamarin.Forms.Platform.UWP
 
 Die `MapRenderer`-Klasse finden Sie in den folgenden Namespaces:
 
-- **iOS:** Xamarin.Forms.Maps.iOS
-- **Android:** Xamarin.Forms.Maps.Android
-- **Universelle Windows-Plattform (UWP):** Xamarin.Forms.Maps.UWP
+- **iOS**: Xamarin.Forms.Maps.iOS
+- **Android**: Xamarin.Forms.Maps.Android
+- **Universelle Windows-Plattform (UWP)** : Xamarin.Forms.Maps.UWP
 
 > [!NOTE]
 > Weitere Informationen zum Erstellen von benutzerdefinierten Renderern für Shell-Anwendungen finden Sie unter [Benutzerdefinierte Xamarin.Forms-Shell-Renderer](~/xamarin-forms/app-fundamentals/shell/customrenderers.md).

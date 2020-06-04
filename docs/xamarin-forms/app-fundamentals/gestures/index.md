@@ -1,22 +1,25 @@
 ---
 title: Xamarin.Forms-Gesten
-description: In diesem Leitfaden wird erläutert, wie die Gestenerkennungsfunktionen in Xamarin.Forms verwendet werden können, um Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung zu erkennen.
-ms.prod: xamarin
-ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/25/2018
-ms.openlocfilehash: 33968fb935e8b69736ac338bfa0479e4f278e64a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: In diesem Leitfaden wird beschrieben, wie Gestenerkennungsfunktionen von Xamarin.Forms verwendet werden können, um Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung zu erkennen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61184570"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137876"
 ---
 # <a name="xamarinforms-gestures"></a>Xamarin.Forms-Gesten
 
-_Gestenerkennungsfunktionen können in Xamarin.Forms verwendet werden, um Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung zu erkennen._
+_Gestenerkennungsfunktionen können verwendet werden, um Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung zu erkennen._
 
 Die Xamarin.Forms-Klasse [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) unterstützt Tipp-, Zusammendrück-, Schwenk- und Wischbewegungen auf [`View`](xref:Xamarin.Forms.View)-Instanzen.
 

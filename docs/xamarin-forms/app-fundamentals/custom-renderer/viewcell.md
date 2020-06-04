@@ -1,26 +1,18 @@
 ---
-title: Anpassen einer ViewCell
-description: Eine Xamarin.Forms-ViewCell ist eine Zelle, die einer ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine ViewCell erstellen können, die in einem Xamarin.Forms-ListView-Steuerelement gehostet wird.
-ms.prod: xamarin
-ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/07/2016
-ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70998047"
+title: description: „Das Xamarin.Forms-Element „ViewCell“ ist eine Zelle, die ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein ViewCell-Element erstellen, das in einem Xamarin.Forms-ListView-Steuerelement gehostet wird.“
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
-_Eine Xamarin.Forms-ViewCell ist eine Zelle, die einer ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine ViewCell erstellen können, die in einem Xamarin.Forms-ListView-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in ListView aufgerufen werden._
+_Das Xamarin.Forms-Element „ViewCell“ ist eine Zelle, die ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein ViewCell-Element erstellen können, das in einem Xamarin.Forms-ListView-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in ListView aufgerufen werden._
 
-Jede Xamarin.Forms-Zelle verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Objekts durch eine Xamarin.Forms-App wird in iOS die `ViewCellRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UITableViewCell`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ViewCellRenderer`-Klasse ein natives `View`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ViewCellRenderer`-Klasse eine native `DataTemplate`-Klasse. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Xamarin.Forms-Zelle verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Objekts durch eine Xamarin.Forms-App wird in iOS die `ViewCellRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UITableViewCell`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ViewCellRenderer`-Klasse ein natives `View`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ViewCellRenderer`-Klasse eine native `DataTemplate`-Klasse. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Rendererbasisklassen und native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
@@ -29,7 +21,7 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ViewCell`](
 Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
 1. [Erstellen](#Creating_the_Custom_Cell) Sie eine benutzerdefinierte Xamarin.Forms-Zelle.
-1. [Nutzen](#Consuming_the_Custom_Cell) Sie die benutzerdefinierte Xamarin.Forms-Zelle.
+1. [Nutzen](#Consuming_the_Custom_Cell) Sie die benutzerdefinierte Zelle über Xamarin.Forms.
 1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie den benutzerdefinierten Renderer für die Zelle auf jeder Plattform.
 
 Jedes dieser Elemente wird nachfolgend noch genauer für die Implementierung eines `NativeCell`-Renderers erläutert, der ein plattformspezifisches Layout für jede Zelle verwendet, die in einem Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in `ListView` aufgerufen werden.
@@ -146,7 +138,7 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Ein [`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement von Xamarin.Forms wird zum Anzeigen einer Liste der Daten verwendet, die über die [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft aufgefüllt wird. Die [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)-Zwischenspeicherstrategie versucht, den `ListView`-Speicherbedarf sowie die Ausführungsgeschwindigkeit durch die Wiederverwendung von Listenzellen zu minimieren. Weitere Informationen finden Sie unter [Zwischenspeicherstrategie](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy).
+Ein Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement wird zum Anzeigen Datenliste verwendet, die über die [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)-Eigenschaft aufgefüllt wird. Die [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)-Zwischenspeicherstrategie versucht, den `ListView`-Speicherbedarf sowie die Ausführungsgeschwindigkeit durch die Wiederverwendung von Listenzellen zu minimieren. Weitere Informationen finden Sie unter [Zwischenspeicherstrategie](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy).
 
 Jede Zeile in der Liste enthält drei Datenelemente: einen Namen, eine Kategorie und einen Dateinamen für ein Bild. Das Layout jeder Zeile in der Liste wird durch eine `DataTemplate` definiert, auf die über die bindbare [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)-Eigenschaft verwiesen wird. Die `DataTemplate` definiert, dass jede Datenzeile in der Liste eine `NativeCell` sein wird, die die Eigenschaften `Name`, `Category` und `ImageFilename` über eine Datenbindung darstellt. Weitere Informationen zum `ListView`-Steuerelement finden Sie unter [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
@@ -572,7 +564,7 @@ Die `DataTemplate` gibt die zum Anzeigen der Zelleninhalte verwendeten Steuerele
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für eine [`ViewCell`](xref:Xamarin.Forms.ViewCell) erstellen können, die in einem Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in `ListView` aufgerufen werden.
+In diesem Artikel wurde veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Element erstellen, das in einem Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in `ListView` aufgerufen werden.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -1,27 +1,31 @@
 ---
-title: 'Zusammenfassung von Kapitel 5: Umgang mit Größen'
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 5: Umgang mit Größen'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: c082bdb10732e42b37511cf050e50f46990a5b5b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 5. Dealing with sizes''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 37403cfe9f37972c20fb074db5e30cc54b60fea9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771142"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136876"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Zusammenfassung von Kapitel 5: Umgang mit Größen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
 
 > [!NOTE]
-> In den Anmerkungen auf dieser Seite wird erläutert, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
+> In den Anmerkungen auf dieser Seite wird beschrieben, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
-Sie haben bereits verschiedene Größen in Xamarin.Forms kennengelernt:
+In Xamarin.Forms wurden bisher mehrere Größen verwendet:
 
 - Die Höhe der iOS-Statusleiste ist 20.
 - `BoxView` hat eine Standardbreite und -höhe von 40.
@@ -46,7 +50,7 @@ Für Windows Phones und mobile Windows-Geräte haben sich ebenfalls Skalierungsf
 > [!NOTE]
 > Xamarin.Forms unterstützt keine Windows-basierten Smartphones und mobilen Geräte mehr.
 
-Kurz gesagt, Xamarin.Forms-Programmierer, die für Smartphones und Tablets programmieren, können davon ausgehen, dass alle Maßeinheiten auf dem folgenden Kriterium basieren:
+Kurz gesagt: Xamarin.Forms-Programmierer, die für Smartphones und Tablets programmieren, können davon ausgehen, dass alle Maßeinheiten auf dem folgenden Kriterium basieren:
 
 - 160 Einheiten pro Zoll, entspricht
 - 64 Einheiten pro Zentimeter
@@ -84,7 +88,7 @@ Die Programme **EstimatedFontSize** und **FitToSizeClock** enthalten beide einen
 
 ## <a name="empirically-fitting-text"></a>Empirisches Anpassen der Textgröße
 
-Eine andere Möglichkeit, Text an ein Rechteck anzupassen, ist die empirische Berechnung der gerenderten Textgröße und entsprechende Anpassung nach oben oder unten. Das Programm im Buch ruft [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) für ein visuelles Objekt auf, um die gewünschte Größe für das Element zu erhalten. Diese Methode ist veraltet, und Programme sollten stattdessen [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) aufrufen.
+Eine andere Möglichkeit, Text an ein Rechteck anzupassen, ist die empirische Berechnung der gerenderten Textgröße und entsprechende Anpassung nach oben oder unten. Das Programm im Buch ruft [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) für ein visuelles Objekt auf, um die gewünschte Größe für das Element zu erhalten. Diese Methode ist veraltet, und in Programmen sollte stattdessen [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) aufgerufen werden.
 
 Bei einem `Label` sollte das erste Argument die Breite des Containers sein (um ein Umbrechen zu ermöglichen), während für das zweite Argument `Double.PositiveInfinity` festgelegt werden sollte, um die Höhe nicht zu beschränken. Diese Technik wird im Beispiel [**EmpiricalFontSize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) gezeigt.
 

@@ -1,25 +1,28 @@
 ---
 title: Einfache Xamarin.Forms-Bindungen
-description: In diesem Artikel wird beschrieben, wie Sie Xamarin.Forms-Datenbindungen verwenden können. Diese verknüpften ein Eigenschaftenpaar zwischen zwei Objekten, von denen mindestens eines ein Benutzeroberflächenobjekt ist. Diese beiden Objekte sind das Ziel und die Quelle.
-ms.prod: xamarin
-ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/22/2019
-ms.custom: video
-ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: In diesem Artikel wird beschrieben, wie Sie Xamarin.Forms-Datenbindungen verwenden können. Hierbei wird ein Eigenschaftenpaar zwischen zwei Objekten verknüpft, von denen mindestens eines ein Benutzeroberflächenobjekt ist. Diese beiden Objekte sind das Ziel und die Quelle.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: ''
+ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303780"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133535"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Einfache Xamarin.Forms-Bindungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Eine Xamarin.Forms-Datenbindung verknüpft ein Eigenschaftenpaar zwischen zwei Objekten, von denen mindestens eines ein Benutzeroberflächenobjekt ist. Diese beiden Objekte sind das *Ziel* und die *Quelle*:
+Bei einer Xamarin.Forms-Datenbindung wird ein Eigenschaftenpaar zwischen zwei Objekten verknüpft, von denen mindestens eines ein Benutzeroberflächenobjekt ist. Diese beiden Objekte sind das *Ziel* und die *Quelle*:
 
 - Das *Ziel* ist das Objekt (und die Eigenschaft), auf dem die Datenbindung festgelegt wird.
 - Die *Quelle* ist das Objekt (und die Eigenschaft), auf die von der Datenbindung verwiesen wird.
@@ -56,7 +59,7 @@ Ohne Datenbindungen würden Sie das `ValueChanged`-Ereignis des `Slider` auf ein
 Sie können eine Bindung auf einer Instanz einer beliebigen Klasse festlegen, die von [`BindableObject`](xref:Xamarin.Forms.BindableObject) abgeleitet wurde. Dazu zählen `Element`-, `VisualElement`-, `View`- und `View`-Derivate.  Die Bindung wird immer auf dem Zielobjekt festgelegt. Die Bindung verweist auf das Quellobjekt. Verwenden Sie die beiden folgenden Member der Zielklasse, um die Datenbindung herzustellen:
 
 - Die [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft gibt das Quellobjekt an.
-- Die [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))-Methode gibt die Ziel- und Quelleigenschaft an.
+- Mit der [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))-Methode wird die Ziel- und die Quelleigenschaft angegeben.
 
 In diesem Beispiel ist das `Label` das Bindungsziel, und der `Slider` ist die Bindungsquelle. Änderungen der `Slider`-Quelle wirken sich auf die Drehung des `Label`-Ziels aus. Daten fließen von der Quelle zum Ziel.
 
@@ -126,7 +129,7 @@ Die Datenbindung wird genau wie im Code auf dem Zielobjekt festgelegt, in diesem
 - Die Markuperweiterung `x:Reference` ist erforderlich, um auf das Quellobjekt zu verweisen, auf den `Slider` mit dem Namen `slider`.
 - Die Markuperweiterung `Binding` verknüpft die `Rotation`-Eigenschaft des `Label` mit der `Value`-Eigenschaft des `Slider`.
 
-Weitere Informationen zu XAML-Markuperweiterungen finden Sie unter [XAML Markup Extensions (XAML-Markuperweiterungen)](~/xamarin-forms/xaml/markup-extensions/index.md). Die Markuperweiterung `x:Reference` wird von der [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)-Klasse unterstützt. `Binding` wird von der [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension)-Klasse unterstützt. Wie von den XML-Namespacepräfixen angegeben ist `x:Reference` Teil der XAML 2009-Spezifikation, und `Binding` ist Teil von Xamarin.Forms. Beachten Sie, dass innerhalb der geschweiften Klammern keine Anführungszeichen verwendet wurden.
+Weitere Informationen zu XAML-Markuperweiterungen finden Sie unter [XAML Markup Extensions (XAML-Markuperweiterungen)](~/xamarin-forms/xaml/markup-extensions/index.md). Die Markuperweiterung `x:Reference` wird von der [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)-Klasse unterstützt. `Binding` wird von der [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension)-Klasse unterstützt. Wie in den XML-Namespacepräfixen angegeben, ist `x:Reference` Teil der XAML 2009-Spezifikation, und `Binding` ist Teil von Xamarin.Forms. Beachten Sie, dass innerhalb der geschweiften Klammern keine Anführungszeichen verwendet wurden.
 
 Beim Festlegen des `x:Reference`-Objekts vergisst man schnell die Markuperweiterung `BindingContext`. Die Eigenschaft wird häufig fälschlicherweise direkt wie folgt auf den Namen der Bindungsquelle festgelegt:
 

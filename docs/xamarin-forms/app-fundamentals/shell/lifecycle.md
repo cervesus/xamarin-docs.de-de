@@ -1,35 +1,38 @@
 ---
 title: Lebenszyklus der Xamarin.Forms-Shell
-description: Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein Appearing-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein Disappearing-Ereignis wird ausgelöst, wenn eine Seite im Begriff ist, nicht mehr auf dem Bildschirm angezeigt zu werden.
-ms.prod: xamarin
-ms.assetid: 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/25/2019
-ms.openlocfilehash: 2ed51763b5866c15e91d88a6a1a58c7285fb5973
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein „Appearing“-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein „Disappearing“-Ereignis wird ausgelöst, wenn eine Seite in Kürze nicht mehr auf dem Bildschirm angezeigt werden soll.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3a7a46187d861098b61f638a3fb460d890b081dd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72749769"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138722"
 ---
 # <a name="xamarinforms-shell-lifecycle"></a>Lebenszyklus der Xamarin.Forms-Shell
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Für Shellanwendungen gilt der Xamarin.Forms-Lebenszyklus. Deswegen wird beim Aufrufen einer Seite für die Bildschirmanzeige ein `Appearing`-Ereignis und beim Entfernen der Seite vom Bildschirm ein `Disappearing`-Ereignis aufgerufen. Diese Ereignisse werden an Seiten weitergegeben und können durch Überschreiben der [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)- oder [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing)-Methoden auf der Seite verarbeitet werden.
+Für Shell-Anwendungen gilt der Xamarin.Forms-Lebenszyklus. Deswegen wird beim Aufrufen einer Seite für die bevorstehende Bildschirmanzeige ein `Appearing`-Ereignis und beim bevorstehenden Entfernen der Seite vom Bildschirm ein `Disappearing`-Ereignis ausgelöst. Diese Ereignisse werden an Seiten weitergegeben und können durch Überschreiben der [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)- oder [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing)-Methoden auf der Seite verarbeitet werden.
 
 > [!NOTE]
 > In einer Shellanwendung werden die `Appearing`- und `Disappearing`-Ereignisse durch plattformübergreifenden Code ausgelöst, bevor der Plattformcode eine Seite sichtbar macht oder eine Seite vom Bildschirm entfernt.
 
-Weitere Informationen zum Lebenszyklus der Xamarin.Forms-App finden Sie unter [Lebenszyklus der Xamarin.Forms-App](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
+Weitere Informationen zum Lebenszyklus von Xamarin.Forms-Apps finden Sie unter [Lebenszyklus der Xamarin.Forms-App](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
 
 ## <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
 In einer Shellanwendung führt das Pushen einer Seite auf den Navigationsstapel dazu, dass das aktuell sichtbare `ShellContent`-Objekt und der zugehörige Seiteninhalt das `Disappearing`-Ereignis auslösen. Analog dazu führt das Entfernen der letzten Seite vom Navigationsstapel dazu, dass das neu sichtbare `ShellContent`-Objekt und der zugehörige Seiteninhalt das Ereignis `Appearing` auslösen.
 
-Weitere Informationen zur hierarchischen Navigation finden Sie unter [Hierarchische Xamarin.Forms-Navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
+Weitere Informationen zur hierarchischen Navigation finden Sie unter [Xamarin.Forms: Hierarchische Navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
 ## <a name="modal-navigation"></a>Modale Navigation
 

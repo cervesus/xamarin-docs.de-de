@@ -1,20 +1,23 @@
 ---
-title: Navigieren in einer Xamarin.Forms-App mit mehreren Seiten
-description: In diesem Artikel wird erläutert, wie Sie die Single-Page-Anwendung, die nur eine einzige Notiz speichern kann, in eine Multi-Page-Anwendung umwandeln können, in der mehrere Notizen gespeichert werden können.
-zone_pivot_groups: platform
-ms.topic: quickstart
-ms.prod: xamarin
-ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/01/2019
-ms.openlocfilehash: 9ce02b4c6412eab1f4b1003b262573c59940286c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Navigieren in einer Xamarin.Forms-Multi-Page-Anwendung
+description: ''
+zone_pivot_groups: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68653797"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127880"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Navigieren in einer Xamarin.Forms-Multi-Page-Anwendung
 
@@ -22,7 +25,7 @@ ms.locfileid: "68653797"
 
 In diesem Schnellstart lernen Sie Folgendes:
 
-- Hinzufügen zusätzlicher Seiten in einer Xamarin.Forms-Lösung
+- Hinzufügen weiterer Seiten zu einer Xamarin.Forms-Projektmappe
 - Navigieren zwischen Seiten
 - Verwenden von Datenbindungen zum Synchronisieren von Daten zwischen Benutzeroberflächenelementen und ihren Datenquellen
 
@@ -81,7 +84,7 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
     Speichern Sie die Änderungen an **Note.cs**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
-7. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Notizen**, und klicken Sie auf **Hinzufügen > Neues Element**: Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C#-Elemente > Xamarin.Forms > Inhaltsseite**, nennen Sie die neue Datei **NoteEntryPage**, und klicken Sie auf die Schaltfläche **Hinzufügen**:
+7. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Notizen**, und klicken Sie auf **Hinzufügen > Neues Element**: Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C#-Elemente > Xamarin.Forms > Inhaltsseite**, nennen Sie die neue Datei **NoteEntryPage**, und klicken Sie auf die Schaltfläche **Hinzufügen**:
 
     ![](multi-page-images/vs/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
 
@@ -176,7 +179,7 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
       > [!WARNING]
       > Der Versuch, die Anwendung an diesem Punkt zu erstellen, führt zu Fehlern, die in weiteren Schritten behoben werden.
 
-10. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Notizen**, und klicken Sie auf **Hinzufügen > Neues Element**: Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C#-Elemente > Xamarin.Forms > Inhaltsseite**, nennen Sie die neue Datei **NotesPage**, und klicken Sie auf die Schaltfläche **Hinzufügen**.
+10. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Notizen**, und klicken Sie auf **Hinzufügen > Neues Element**: Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C#-Elemente > Xamarin.Forms > Inhaltsseite**, nennen Sie die neue Datei **NotesPage**, und klicken Sie auf die Schaltfläche **Hinzufügen**.
 
       Dadurch wird im Stammordner des Projekts eine Seite namens **NotesPage** hinzugefügt. Diese Seite ist die Stammseite der Anwendung.
 
@@ -606,7 +609,7 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
 In diesem Schnellstart haben Sie Folgendes gelernt:
 
-- Hinzufügen zusätzlicher Seiten in einer Xamarin.Forms-Lösung
+- Hinzufügen weiterer Seiten zu einer Xamarin.Forms-Projektmappe
 - Navigieren zwischen Seiten
 - Verwenden von Datenbindungen zum Synchronisieren von Daten zwischen Benutzeroberflächenelementen und ihren Datenquellen
 

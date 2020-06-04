@@ -1,27 +1,30 @@
 ---
-title: Xamarin.Forms-Karussellseite
+title: Xamarin.Forms-CarouselPage
 description: Die Xamarin.Forms-CarouselPage ist eine Seite, die Benutzer hin und her wischen können, um durch Inhaltsseiten wie durch einen Katalog zu navigieren. In diesem Artikel wird gezeigt, wie Sie mit einer CarouselPage durch eine Sammlung von Seiten navigieren können.
-ms.prod: xamarin
-ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 5cfaeb8589514972dfcccd11009a02c00f95bfac
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4d0cebe98b66f3596e72624efed90e965b942bfc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72696440"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137526"
 ---
-# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms-Karussellseite
+# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms-CarouselPage
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
-_Die Xamarin.Forms-CarouselPage ist eine Seite, auf der Benutzer hin und her wischen können, um durch Inhaltsseiten wie durch einen Katalog zu navigieren. In diesem Artikel wird gezeigt, wie Sie mit einer CarouselPage durch eine Sammlung von Seiten navigieren können._
+_Die Xamarin.Forms-CarouselPage ist eine Seite, die Benutzer hin und her wischen können, um durch Inhaltsseiten wie durch einen Katalog zu navigieren. In diesem Artikel wird gezeigt, wie Sie mit einer CarouselPage durch eine Sammlung von Seiten navigieren können._
 
 > [!IMPORTANT]
-> Die [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse wurde durch die [`CarouselView`](xref:Xamarin.Forms.CarouselView)-Klasse ersetzt. Diese bietet ein scrollbares Layout, bei dem Benutzer durch Wischen durch eine Auflistung von Elementen navigieren können. Weitere Informationen zur `CarouselView`-Klasse finden Sie unter [Xamarin.Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md).
+> Die [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse wurde durch die [`CarouselView`](xref:Xamarin.Forms.CarouselView)-Klasse ersetzt. Diese bietet ein scrollbares Layout, bei dem Benutzer durch Wischen durch eine Auflistung von Elementen navigieren können. Weitere Informationen zu `CarouselView` finden Sie unter [Xamarin.Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md).
 
 Die folgenden Screenshots zeigen eine [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse auf jeder Plattform:
 
@@ -42,7 +45,7 @@ Durch erneutes Wischen von rechts nach links gelangen Sie zur dritten Seite, dur
 
 Wenn eine [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse in die [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)-Seite einer [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)-Klasse eingebettet ist, sollte die [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty)-Eigenschaft auf `false` festgelegt werden, um Gestenkonflikte zwischen `CarouselPage` und `MasterDetailPage` zu vermeiden.
 
-Weitere Informationen zur [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse finden Sie in [Kapitel 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) im Xamarin.Forms-Buch von Charles Petzold.
+Weitere Informationen zur [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse finden Sie in [Kapitel 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
 ## <a name="create-a-carouselpage"></a>Erstellen einer CarouselPage
 

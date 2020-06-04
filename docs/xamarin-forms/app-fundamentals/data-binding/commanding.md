@@ -1,20 +1,23 @@
 ---
-title: Die Befehlsschnittstelle in Xamarin.Forms
-description: In diesem Artikel wird das Implementieren der Command-Eigenschaft mit Xamarin.Forms-Datenbindungen erläutert. Über die Befehlsschnittstelle kann jedoch ein alternativer Ansatz für das Implementieren von Befehlen verwendet werden, der für die MVVM-Architektur besser geeignet ist.
-ms.prod: xamarin
-ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 185aebf48b24a6abbdd8f56dbbfc32f6e99f6e63
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Befehlsschnittstelle in Xamarin.Forms
+description: In diesem Artikel wird das Implementieren der „Command“-Eigenschaft mit Xamarin.Forms-Datenbindungen beschrieben. Über die Befehlsschnittstelle kann jedoch ein alternativer Ansatz für das Implementieren von Befehlen verwendet werden, der für die MVVM-Architektur besser geeignet ist.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75545594"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139723"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Die Befehlsschnittstelle in Xamarin.Forms
+# <a name="the-xamarinforms-command-interface"></a>Befehlsschnittstelle in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -41,7 +44,7 @@ Diese Befehle können innerhalb einer ViewModel-Klasse auf eine Weise verarbeite
 
 ## <a name="the-icommand-interface"></a>Die ICommand-Schnittstelle
 
-Die [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)-Schnittstelle ist nicht in Xamarin.Forms enthalten. Sie wird stattdessen im Namespace [System.Windows.Input](xref:System.Windows.Input) definiert und besteht aus zwei Methoden und einem Ereignis:
+Die [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)-Schnittstelle ist nicht Teil von Xamarin.Forms. Sie wird stattdessen im Namespace [System.Windows.Input](xref:System.Windows.Input) definiert und besteht aus zwei Methoden und einem Ereignis:
 
 ```csharp
 public interface ICommand
@@ -82,7 +85,7 @@ Wenn Ihre ViewModel-Klasse eine Eigenschaft vom Typ `ICommand` definiert, muss d
 
 Sie können diese Klasse selbst schreiben oder eine Klasse verwenden, die von einer anderen Person erstellt wurde. Da die `ICommand`-Schnittstelle in Microsoft Windows enthalten ist, wird sie seit Jahren mit MVVM-Anwendungen für Windows verwendet. Wenn Sie eine Windows-Klasse verwenden, die `ICommand` implementiert, können Sie Ihre ViewModel-Klassen für Windows- und Xamarin.Forms-Anwendungen freigeben.
 
-Wenn das Freigeben von ViewModel-Klassen zwischen Windows und Xamarin.Forms für Sie nicht relevant ist, können Sie die [`Command`](xref:Xamarin.Forms.Command)- oder [`Command<T>`](xref:Xamarin.Forms.Command`1)-Klasse verwenden, die in Xamarin.Forms enthalten ist, um die `ICommand`-Schnittstelle zu implementieren. Durch diese Klassen können Sie den Text der `Execute`- und `CanExecute`-Methoden in den Konstruktoren der Klassen festlegen. Verwenden Sie `Command<T>`, wenn Sie die `CommandParameter`-Eigenschaft verwenden, um zwischen mehreren Ansichten zu unterscheiden, die an die gleiche `ICommand`-Eigenschaft gebunden sind. Verwenden Sie die einfachere `Command`-Klasse, wenn dies nicht erforderlich ist.
+Wenn das Freigeben von ViewModel-Klassen zwischen Windows und Xamarin.Forms für Sie nicht relevant ist, können Sie die [`Command`](xref:Xamarin.Forms.Command)- oder [`Command<T>`](xref:Xamarin.Forms.Command`1)-Klasse von Xamarin.Forms verwenden, um die `ICommand`-Schnittstelle zu implementieren. Durch diese Klassen können Sie den Text der `Execute`- und `CanExecute`-Methoden in den Konstruktoren der Klassen festlegen. Verwenden Sie `Command<T>`, wenn Sie die `CommandParameter`-Eigenschaft verwenden, um zwischen mehreren Ansichten zu unterscheiden, die an die gleiche `ICommand`-Eigenschaft gebunden sind. Verwenden Sie die einfachere `Command`-Klasse, wenn dies nicht erforderlich ist.
 
 ## <a name="basic-commanding"></a>Grundlegende Befehle
 
@@ -688,7 +691,7 @@ Alle `execute`-Methoden rufen die `RefreshCanExecutes`-Methode auf, die dann `Ch
 
 ## <a name="adding-commands-to-existing-views"></a>Hinzufügen von Befehlen zu vorhandenen Ansichten
 
-Wenn Sie die Befehlsschnittstelle für Ansichten verwenden möchten, die diese nicht unterstützen, können Sie ein Xamarin.Forms-Verhalten verwenden, das ein Ereignis in einen Befehl konvertiert. Dieser Vorgang wird im Artikel [**Reusable EventToCommandBehavior (Wiederverwendbare EventToCommandBehavior-Klasse)** ](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md) erläutert.
+Wenn Sie die Befehlsschnittstelle für Ansichten nutzen möchten, von denen diese nicht unterstützt wird, können Sie ein Xamarin.Forms-Verhalten verwenden, das ein Ereignis in einen Befehl konvertiert. Dieser Vorgang wird im Artikel [**Reusable EventToCommandBehavior (Wiederverwendbare EventToCommandBehavior-Klasse)** ](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md) erläutert.
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>Asynchrone Befehle für Navigationsmenüs
 

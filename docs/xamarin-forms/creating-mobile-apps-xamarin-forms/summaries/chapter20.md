@@ -1,25 +1,29 @@
 ---
-title: 'Zusammenfassung von Kapitel 20: Asynchrone Verarbeitung und Datei-E/A'
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 20: Asynchrone Verarbeitung und Datei-E/A'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 283273e6ee28cc5cd1a61169f38bfcd1dd1726d8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 20. Async and file I/O''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ad71dc5f5389f1676698a761a138b3f76ffa9fa0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771036"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136681"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Zusammenfassung von Kapitel 20: Asynchrone Verarbeitung und Datei-E/A
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
 
 > [!NOTE] 
-> In den Anmerkungen auf dieser Seite wird erläutert, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
+> In den Anmerkungen auf dieser Seite wird beschrieben, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
  Eine grafische Benutzeroberfläche muss sequenziell auf Benutzereingabeereignisse reagieren. Dies impliziert, dass die gesamte Verarbeitung von Benutzereingabeereignissen in einem einzigen Thread erfolgen muss, der häufig als *Hauptthread* oder *UI-Thread* bezeichnet wird.
 
@@ -28,7 +32,7 @@ Benutzer erwarten von grafischen Benutzeroberflächen eine kurze Reaktionszeit. 
 In verschiedenen Beispielprogrammen in diesem Buch wurde die [`WebRequest`](xref:System.Net.WebRequest)-Klasse verwendet. In dieser Klasse startet die [`BeginGetResponse`](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))-Methode einen Arbeitsthread, der nach seinem Abschluss eine Rückruffunktion aufruft. Diese Rückruffunktion wird jedoch im Arbeitsthread ausgeführt, sodass das Programm die [`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))-Methode aufrufen muss, um auf die Benutzerschnittstelle zuzugreifen.
 
 > [!NOTE]
-> Xamarin.Forms-Programme sollten eher [`HttpClient`](xref:System.Net.Http.HttpClient) anstelle von [`WebRequest`](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet verwenden. `HttpClient` unterstützt asynchrone Vorgänge.
+> Für Xamarin.Forms-Programme sollte [`HttpClient`](xref:System.Net.Http.HttpClient) anstelle von [`WebRequest`](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet verwendet werden. `HttpClient` unterstützt asynchrone Vorgänge.
 
 Ein moderner Ansatz für die asynchrone Verarbeitung steht in .NET und C# zur Verfügung. Dies schließt die Klassen [`Task`](xref:System.Threading.Tasks.Task) und [`Task<TResult>`](xref:System.Threading.Tasks.Task`1), weitere Typen in den Namespaces [`System.Threading`](xref:System.Threading) und [`System.Threading.Tasks`](xref:System.Threading.Tasks) sowie die C# 5.0-Schlüsselwörter `async` und `await` ein. Darauf konzentriert sich dieses Kapitel.
 
@@ -74,11 +78,11 @@ Traditionell war der .NET-Namespace [`System.IO`](xref:System.IO) die Quelle zur
 
 ### <a name="good-news-and-bad-news"></a>Gute und schlechte Nachrichten
 
-Alle von Xamarin.Forms unterstützten Plattformen bieten Unterstützung für den lokalen Speicher der Anwendung, also Speicher, der als privat für die Anwendung festgelegt ist.
+Alle von Xamarin.Forms unterstützten Plattformen bieten Unterstützung für den lokalen Speicher der Anwendung – also Speicher, der für die Anwendung als privater Speicher festgelegt ist.
 
 Die Xamarin.iOS- und Xamarin.Android-Bibliotheken umfassen eine Version von .NET, die Xamarin explizit auf diese zwei Plattformen zugeschnitten hat. Sie enthalten Klassen von `System.IO`, die Sie zum Ausführen von Datei-E/A-Vorgängen mit dem lokalen Anwendungsspeicher in diesen zwei Plattformen nutzen können.
 
-Wenn Sie jedoch in einer Xamarin.Forms-PCL nach diesen `System.IO`-Klassen suchen, werden Sie sie nicht finden. Das Problem ist, dass Microsoft die Datei-E/A für die Windows-Runtime-API komplett überarbeitet hat. Programme, die auf Windows 8.1, Windows Phone 8.1 und die universelle Windows-Plattform abzielen, verwenden `System.IO` nicht für Datei-E/A.
+Wenn Sie aber in einer Xamarin.Forms-PCL nach diesen `System.IO`-Klassen suchen, werden Sie sie nicht finden. Das Problem ist, dass Microsoft die Datei-E/A für die Windows-Runtime-API komplett überarbeitet hat. Programme, die auf Windows 8.1, Windows Phone 8.1 und die universelle Windows-Plattform abzielen, verwenden `System.IO` nicht für Datei-E/A.
 
 Dies bedeutet, dass Sie zur Implementierung der Datei-E/A weiterhin den [`DependencyService`](xref:Xamarin.Forms.DependencyService) verwenden müssen (erstmals erörtert in [**Kapitel 9: Plattformspezifische API-Aufrufe**](chapter09.md)).
 
@@ -109,7 +113,7 @@ Die Projektmappe [**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xam
 
 Alle Plattformprojekte (mit Ausnahme von **Xamarin.FormsBook.Platform.WinRT**) enthalten Verweise auf **Xamarin.FormsBook.Platform**. Die drei Windows-Projekte enthalten einen Verweis auf **Xamarin.FormsBook.Platform.WinRT**.
 
-Alle Projekte enthalten eine statische `Toolkit.Init`-Methode, um sicherzustellen, dass die Bibliothek geladen ist, wenn sie nicht direkt durch ein Projekt in einer Xamarin.Forms-Anwendungsprojektmappe referenziert wird.
+Alle Projekte enthalten eine statische `Toolkit.Init`-Methode, um sicherzustellen, dass die Bibliothek geladen wird, wenn von einem Projekt in einer Xamarin.Forms-Anwendungsprojektmappe nicht direkt darauf verwiesen wird.
 
 Das Projekt **Xamarin.FormsBook.Platform** enthält die neue [`IFileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/IFileHelper.cs)-Schnittstelle. Alle Methoden weisen jetzt Namen mit `Async`-Suffixen auf und geben `Task`-Objekte zurück.
 
@@ -141,7 +145,7 @@ Die verschiedenen `Task.Run`-Muster werden nachfolgend diskutiert.
 
 ### <a name="the-basic-mandelbrot-set"></a>Die grundlegende Mandelbrot-Menge
 
-Um die Mandelbrot-Menge in Echtzeit zu zeichnen, umfasst die [**Xamarin.Forms.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)-Bibliothek eine [`Complex`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs)-Struktur, die der im Namespace `System.Numerics` ähnlich ist.
+Um die Mandelbrot-Menge in Echtzeit zu zeichnen, umfasst die [ **Xamarin.Forms.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)-Bibliothek eine [`Complex`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs)-Struktur, die der im Namespace `System.Numerics` ähnelt.
 
 Das [**MandelbrotSet**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotSet)-Beispiel enthält eine `CalculateMandeblotAsync`-Methode in der zugehörigen CodeBehind-Datei, die die grundlegende Schwarz-Weiß-Mandelbrot-Menge berechnet und [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) zu deren Platzierung auf einer Bitmap verwendet.
 

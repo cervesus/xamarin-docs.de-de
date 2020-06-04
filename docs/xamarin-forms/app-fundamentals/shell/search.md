@@ -1,19 +1,11 @@
 ---
-title: Suche in der Xamarin.Forms-Shell
-description: Xamarin.Forms-Shell-Anwendungen können integrierte Suchfunktionalität über ein Suchfeld nutzen, das oben auf jeder Seite hinzugefügt werden kann.
-ms.prod: xamarin
-ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/18/2019
-ms.openlocfilehash: 9bd4fe5f1a35e2a6f36540cbee13838841b36d92
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75490063"
+title: 'Suche in der Xamarin.Forms- Shell' description: 'Xamarin.Forms Shell-Anwendungen können integrierte Suchfunktionalität über ein Suchfeld nutzen, das oben auf jeder Seite hinzugefügt werden kann.'
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinforms-shell-search"></a>Suche in der Xamarin.Forms-Shell
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
@@ -63,7 +55,7 @@ public class MonkeySearchHandler : SearchHandler
 
 Die `OnQueryChanged`-Überschreibung verfügt über zwei Argumente: `oldValue` (für die vorherige Suchanfrage) und `newValue` (für die aktuelle Suchanfrage). Der Bereich der Suchvorschläge kann aktualisiert werden, indem die Eigenschaft `SearchHandler.ItemsSource` auf eine `IEnumerable`-Sammlung festgelegt wird, die Elemente enthält, die mit der aktuellen Suchanfrage übereinstimmen.
 
-Wenn der Benutzer ein Suchergebnis auswählt, wird die `OnItemSelected`-Überschreibung ausgeführt und die Eigenschaft `SelectedItem` festgelegt. In diesem Beispiel navigiert die Methode zu einer anderen Seite, die Daten über das ausgewählte `Animal`-Objekt anzeigt. Weitere Informationen zur Navigation finden Sie unter [Navigation in der Xamarin.Forms Shell](navigation.md).
+Wenn der Benutzer ein Suchergebnis auswählt, wird die `OnItemSelected`-Überschreibung ausgeführt und die Eigenschaft `SelectedItem` festgelegt. In diesem Beispiel navigiert die Methode zu einer anderen Seite, die Daten über das ausgewählte `Animal`-Objekt anzeigt. Weitere Informationen zur Navigation finden Sie unter [Navigation in der Xamarin.Forms-Shell](navigation.md).
 
 > [!NOTE]
 > Zusätzliche `SearchHandler`-Eigenschaften können festgelegt werden, um die Darstellung des Suchfelds zu steuern.

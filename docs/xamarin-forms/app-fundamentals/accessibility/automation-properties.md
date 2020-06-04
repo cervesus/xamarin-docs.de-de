@@ -1,18 +1,21 @@
 ---
-title: Automatisierungseigenschaften
-description: In diesem Artikel wird erläutert, wie Sie die AutomationProperties-Klasse in einer Xamarin.Forms-Anwendung verwenden, sodass eine Sprachausgabe über die Elemente auf der Seite sprechen kann.
-ms.prod: xamarin
-ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/18/2018
-ms.openlocfilehash: 12c6229c1922f0bd4a4d25ca796bcb46141a326c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: In diesem Artikel wird beschrieben, wie Sie die AutomationProperties-Klasse in einer Xamarin.Forms-Anwendung verwenden, damit eine Sprachausgabe über die Elemente auf der Seite sprechen kann.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ad6d315ccc5be0a7709164d40685c842b61b90b4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131136"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129960"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Automatisierungseigenschaften in Xamarin.Forms
 
@@ -66,7 +69,7 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 ```
 
 > [!NOTE]
-> Beachten Sie, dass auch die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode verwendet werden kann, um die angefügte Eigenschaft `AutomationProperties.IsInAccessibleTree` festzulegen – `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`.
+> Beachten Sie, dass die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode auch zum Festlegen der angefügten Eigenschaft `AutomationProperties.IsInAccessibleTree` verwendet werden kann: `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`.
 
 <a name="name" />
 
@@ -88,7 +91,7 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 ```
 
 > [!NOTE]
-> Beachten Sie, dass auch die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode verwendet werden kann, um die angefügte Eigenschaft `AutomationProperties.Name` festzulegen – `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`.
+> Beachten Sie, dass die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode auch zum Festlegen der angefügten Eigenschaft `AutomationProperties.Name` verwendet werden kann: `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`.
 
 <a name="helptext" />
 
@@ -111,7 +114,7 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 ```
 
 > [!NOTE]
-> Beachten Sie, dass auch die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode verwendet werden kann, um die angefügte Eigenschaft `AutomationProperties.HelpText` festzulegen – `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`.
+> Beachten Sie, dass die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode auch zum Festlegen der angefügten Eigenschaft `AutomationProperties.HelpText` verwendet werden kann: `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`.
 
 Auf manchen Plattformen kann für Bearbeitungssteuerelemente wie [`Entry`](xref:Xamarin.Forms.Entry) die `HelpText`-Eigenschaft in einigen Fällen weggelassen und durch Platzhaltertext ersetzt werden. Zum Beispiel ist „Geben Sie hier Ihren Namen ein“ eine gute Variante für die [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)-Eigenschaft, die vor der tatsächlichen Eingabe durch den Benutzer den Text in das Steuerelement platziert.
 
@@ -137,7 +140,7 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 ```
 
 > [!NOTE]
-> Beachten Sie, dass auch die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode verwendet werden kann, um die angefügte Eigenschaft `AutomationProperties.IsInAccessibleTree` festzulegen – `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`.
+> Beachten Sie, dass die [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))-Methode auch zum Festlegen der angefügten Eigenschaft `AutomationProperties.IsInAccessibleTree` verwendet werden kann: `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`.
 
 ## <a name="accessibility-intricacies"></a>Schwierigkeiten beim Zugriff
 

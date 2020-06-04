@@ -1,18 +1,11 @@
 ---
-title: 'Xamarin.Essentials: Erkennen einer Schüttelbewegung'
-description: Mit der Klasse „Accelerometer“ von Xamarin.Essentials können Sie ermitteln, wenn das Gerät geschüttelt wird.
-ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: d2aef2c32b3fe2815f1176779a8c28ae8d421ed1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67832600"
+title: ''Xamarin.Essentials: Erkennen einer Schüttelbewegung'' description: 'Mit der Klasse „Accelerometer“ von Xamarin.Essentials können Sie ermitteln, wenn das Gerät geschüttelt wird.'
+ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Erkennen einer Schüttelbewegung
 
 Mit der **[Accelerometer](accelerometer.md)** -Klasse können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt. Außerdem können Sie Ereignisse einrichten, die ausgelöst werden, wenn der Benutzer das Gerät schüttelt.
@@ -23,7 +16,7 @@ Mit der **[Accelerometer](accelerometer.md)** -Klasse können Sie den Sensor fü
 
 ## <a name="using-detect-shake"></a>Verwenden der Erkennung von Schüttelbewegungen
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;

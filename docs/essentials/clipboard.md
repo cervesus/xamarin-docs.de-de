@@ -1,18 +1,11 @@
 ---
-title: 'Xamarin.Essentials: Zwischenablage'
-description: In diesem Dokument wird die Klasse „Clipboard“ in Xamarin.Essentials beschrieben, mit der Sie Text in die Zwischenablage kopieren und anwendungsübergreifend einfügen können.
-ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: 0b5eaf3feb608a352f8f9c97bdddac55c89d4f94
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545179"
+title: ''Xamarin.Essentials: Zwischenablage'' description: 'In diesem Dokument wird die Klasse „Clipboard“ in Xamarin.Essentials beschrieben, mit der Sie Text in die Zwischenablage kopieren und anwendungsübergreifend einfügen können.'
+ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: Zwischenablage
 
 Mit der Klasse **Clipboard** können Sie Text in die Zwischenablage kopieren und anwendungsübergreifend einfügen.
@@ -23,7 +16,7 @@ Mit der Klasse **Clipboard** können Sie Text in die Zwischenablage kopieren und
 
 ## <a name="using-clipboard"></a>Verwenden der Zwischenablage
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;

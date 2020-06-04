@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 14. Absolutes Layout
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 14. Absolutes Layout'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: c489bf244396cf180ed8e1272308048a14b67300
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 14. Absolute layout''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72ee9c4a481388e69aeeb52dbd5b8eeaabb164f6
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771132"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136759"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Zusammenfassung von Kapitel 14. Absolutes Layout
 
@@ -28,7 +32,7 @@ In diesem Kapitel wird außerdem die wichtige Funktion der *angefügten bindbare
 
 Sie können der `Children`-Sammlung eines `AbsoluteLayout` mithilfe der [`Add`](xref:System.Collections.Generic.ICollection`1.Add*)-Standardmethode ein untergeordnetes Element hinzufügen, doch `AbsoluteLayout` bietet auch eine erweiterte [`Add`](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)-Methode, mit der Sie ein [`Rectangle`](xref:Xamarin.Forms.Rectangle) angeben können. Eine andere [`Add`](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)-Methode erfordert nur einen [`Point`](xref:Xamarin.Forms.Point), wobei dann das untergeordnete Element uneingeschränkt ist und seine Größe selber anpasst.
 
-Sie können einen `Rectangle`-Wert mit einem [Konstruktor](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double)) erstellen, der vier Werte erfordert, wobei die ersten beiden die Position der oberen linken Ecke des untergeordneten Elements relativ zu seinem übergeordneten Element anzeigen und die andern zwei die Größe des untergeordneten Elements. Oder Sie können einen [Konstruktor](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size)) verwenden, der einen `Point` und einen [`Size`](xref:Xamarin.Forms.Size)-Wert erfordert.
+Sie können einen `Rectangle`-Wert mit einem [Konstruktor](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double)) erstellen, der vier Werte erfordert, wobei die ersten beiden die Position der oberen linken Ecke des untergeordneten Elements relativ zu seinem übergeordneten Element anzeigen und die andern zwei die Größe des untergeordneten Elements. Alternativ können Sie auch einen [Konstruktor](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size)) verwenden, für den ein Wert für `Point` und für [`Size`](xref:Xamarin.Forms.Size) benötigt wird.
 
 Diese `Add`-Methoden werden im [**AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo)-Beispiel veranschaulicht, in dem `BoxView`-Elemente mithilfe von `Rectangle`-Werten und ein `Label`-Element mithilfe nur eines `Point`-Werts positioniert werden.
 
@@ -36,15 +40,15 @@ Im [**ChessboardFixed**](https://github.com/xamarin/xamarin-forms-book-samples/t
 
 ## <a name="attached-bindable-properties"></a>Angefügte bindbare Eigenschaften
 
-Es ist auch möglich, die Position und optional die Größe eines untergeordneten Elements eines `AbsoluteLayout` festzulegen, nachdem es der `Children`-Sammlung hinzugefügt wurde, mithilfe der statischen Methode [`AbsoluteLayout.SetLayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.SetLayoutBounds(Xamarin.Forms.BindableObject,Xamarin.Forms.Rectangle)). Das erste Argument ist das untergeordnete Element, das zweite ist ein `Rectangle`-Objekt. Sie können angeben, dass das untergeordnete Element seine Größe horizontal und/oder vertikal selbst anpasst, indem Sie die Breiten- und Höhenwerte auf die Konstante [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) festlegen.
+Es ist auch möglich, die Position und optional die Größe eines untergeordneten Elements von `AbsoluteLayout` festzulegen, nachdem es der `Children`-Auflistung hinzugefügt wurde. Hierfür wird die statische Methode [`AbsoluteLayout.SetLayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.SetLayoutBounds(Xamarin.Forms.BindableObject,Xamarin.Forms.Rectangle)) verwendet. Das erste Argument ist das untergeordnete Element, das zweite ist ein `Rectangle`-Objekt. Sie können angeben, dass das untergeordnete Element seine Größe horizontal und/oder vertikal selbst anpasst, indem Sie die Breiten- und Höhenwerte auf die Konstante [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) festlegen.
 
 Im [**ChessboardDynamic**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardDynamic)-Beispiel wird das `AbsoluteLayout` in einer `ContentView` mit einem `SizeChanged`-Handler zum Aufrufen von `AbsoluteLayout.SetLayoutBounds` für alle untergeordneten Elemente positioniert, um sie so groß wie möglich zu machen.  
 
-Die angefügte bindbare Eigenschaft, die von `AbsoluteLayout` definiert wird, ist das statische, schreibgeschützte Feld vom Typ `BindableProperty` namens [`AbsoluteLayout.LayoutBoundsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty). Die statische `AbsoluteLayout.SetLayoutBounds`-Methode wird durch Aufrufen von `SetValue` für das untergeordnete Element mit der `AbsoluteLayout.LayoutBoundsProperty` implementiert. Das untergeordnete Element enthält ein Verzeichnis, in dem die angefügte bindbare Eigenschaft mit ihrem Wert gespeichert ist. Während des Layouts kann das `AbsoluteLayout` diesen Wert durch Aufrufen von [`AbsoluteLayout.GetLayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutBounds(Xamarin.Forms.BindableObject)) abrufen, das mit einem `GetValue`-Aufruf implementiert wird.
+Die angefügte bindbare Eigenschaft, die von `AbsoluteLayout` definiert wird, ist das statische, schreibgeschützte Feld vom Typ `BindableProperty` namens [`AbsoluteLayout.LayoutBoundsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty). Die statische `AbsoluteLayout.SetLayoutBounds`-Methode wird durch Aufrufen von `SetValue` für das untergeordnete Element mit der `AbsoluteLayout.LayoutBoundsProperty` implementiert. Das untergeordnete Element enthält ein Verzeichnis, in dem die angefügte bindbare Eigenschaft mit ihrem Wert gespeichert ist. Beim Erstellen des Layouts kann mit `AbsoluteLayout` der Wert abgerufen werden, indem [`AbsoluteLayout.GetLayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutBounds(Xamarin.Forms.BindableObject)) aufgerufen wird. Dies wird per `GetValue`-Aufruf implementiert.
 
 ## <a name="proportional-sizing-and-positioning"></a>Proportionale Anpassung der Größe und Positionierung
 
-`AbsoluteLayout` implementiert außerdem eine Funktion für proportionale Größenanpassung und Positionierung. Die Klasse definiert eine zweite, angefügte bindbare Eigenschaft, [`LayoutFlagsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty), mit den verwandten statischen Methoden [`AbsoluteLayout.SetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.SetLayoutFlags(Xamarin.Forms.BindableObject,Xamarin.Forms.AbsoluteLayoutFlags)) und [`AbsoluteLayout.GetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutFlags(Xamarin.Forms.BindableObject)).
+`AbsoluteLayout` implementiert außerdem eine Funktion für proportionale Größenanpassung und Positionierung. Die Klasse definiert eine zweite angefügte bindbare Eigenschaft [`LayoutFlagsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) mit den zugehörigen statischen Methoden [`AbsoluteLayout.SetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.SetLayoutFlags(Xamarin.Forms.BindableObject,Xamarin.Forms.AbsoluteLayoutFlags)) und [`AbsoluteLayout.GetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutFlags(Xamarin.Forms.BindableObject)).
 
 Das Argument für `AbsoluteLayout.SetLayoutFlags` und der Rückgabewert von `AbsoluteLayout.GetLayoutFlags` sind Werte vom Typ [`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags), eine Enumeration mit den folgenden Membern:
 

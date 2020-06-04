@@ -1,18 +1,21 @@
 ---
-title: Aufrufen von Ereignissen über Effekte
-description: Effekte können Ereignisse definieren und auslösen, die Änderungen in der zugrunde liegenden nativen Ansicht signalisieren. In diesem Artikel wird beschrieben, wie Sie eine umfassende Multitouchverfolgung implementieren und Ereignisse generieren, die eine Touchaktivität signalisieren.
-ms.prod: xamarin
-ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/14/2018
-ms.openlocfilehash: cf5a97bca7c827101db951a440863839539c7e48
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725259"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136980"
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen über Effekte
 
@@ -115,7 +118,7 @@ public class TouchActionEventArgs : EventArgs
 
 Die Anwendung kann mithilfe der `Id`-Eigenschaft einzelne Finger nachverfolgen. Beachten Sie die `IsInContact`-Eigenschaft. Diese ist für `Pressed`-Ereignisse immer auf `true` und für `Released`-Ereignisse immer auf `false` festgelegt. Genauso sind `Moved`-Ereignisse unter iOS und Android immer auf `true` festgelegt. Die `IsInContact`-Eigenschaft wird möglicherweise für `Moved`-Ereignisse auf der Universellen Windows-Plattform auf `false` festgelegt, wenn das Programm auf dem Desktop ausgeführt wird und sich der Mauszeiger bewegt, aber keine Taste gedrückt wird.
 
-Sie können die `TouchEffect`-Klasse in Ihren eigenen Anwendungen verwenden, indem Sie die Datei zum .NET Standard-Bibliotheksprojekt in der Projektmappe hinzufügen und der `Effects`-Collection eines beliebigen Xamarin.Forms-Elements eine Instanz hinzufügen. Fügen Sie einen Handler an das `TouchAction`-Ereignis an, um die Touchereignisse abzurufen.
+Sie können die `TouchEffect`-Klasse in Ihren eigenen Anwendungen verwenden, indem Sie die Datei in das .NET Standard-Bibliotheksprojekt in der Projektmappe einfügen und der `Effects`-Collection eines beliebigen Xamarin.Forms-Elements eine Instanz hinzufügen. Fügen Sie einen Handler an das `TouchAction`-Ereignis an, um die Touchereignisse abzurufen.
 
 Damit Sie den `TouchEffect` in Ihrer eigenen Anwendung verwenden können, benötigen Sie die Plattformimplementierungen, die in der Projektmappe **TouchTrackingEffectDemos** enthalten sind.
 
@@ -518,7 +521,7 @@ Für die nächsten beiden Demos benötigen Sie Grafiken. Dafür wird hier SkiaSh
 
 [![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
 
-Wenn Sie eine der Ellipsen berühren, können Sie sie an einen anderen Ort ziehen. Diese Technik wird als „hit-testing“ (Treffertest) bezeichnet und umfasst die Suche nach einem grafischen Objekt an einem bestimmten Punkt. Es handelt sich bei den SkiaSharp-Ellipsen nicht um Xamarin.Forms-Elemente, weshalb sie nicht selbstständig den `TouchEffect` verarbeiten können. Der `TouchEffect` muss für das gesamte `SKCanvasView`-Objekt gelten.
+Wenn Sie eine der Ellipsen berühren, können Sie sie an einen anderen Ort ziehen. Diese Technik wird als „hit-testing“ (Treffertest) bezeichnet und umfasst die Suche nach einem grafischen Objekt an einem bestimmten Punkt. Da es sich bei den SkiaSharp-Ellipsen nicht um Xamarin.Forms-Elemente handelt, können diese den `TouchEffect` nicht selbst verarbeiten. Der `TouchEffect` muss für das gesamte `SKCanvasView`-Objekt gelten.
 
 Die [EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/EllipseDrawingPage.xaml)-Datei instanziiert die `SKCanvasView` in einem `Grid` mit einer Zelle. Das `TouchEffect`-Objekt wird an dieses `Grid` angefügt:
 

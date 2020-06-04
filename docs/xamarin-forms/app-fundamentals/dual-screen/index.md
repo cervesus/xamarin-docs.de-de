@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms-Features für Dual-Screen-Geräte
-description: In diesem Artikel wird erklärt, wie sich für Dual-Screen-Geräte optimierte Apps mit Xamarin.Forms erstellen lassen.
-ms.prod: xamarin
-ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 02/08/2020
-ms.openlocfilehash: 344b6293090ffa4281ea6351f7f176a5be37e5bd
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: In diesem Leitfaden wird beschrieben, wie Sie Xamarin.Forms-Apps für Dual-Screen-Geräte erstellen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aeaaeb732adaea45446d6baf833027801abf4d2a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78165552"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138904"
 ---
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms-Features für Dual-Screen-Geräte
 
@@ -26,7 +29,7 @@ Wenn Sie überlegen, wie Sie die Möglichkeiten von zwei Bildschirmen auf Dual-S
 
 ## <a name="dual-screen-layout"></a>[Layout für zwei Bildschirme](twopaneview.md)
 
-Mit der `TwoPaneView`-Klasse von Xamarin.Forms, die vom gleichnamigen UWP-Steuerelement inspiriert ist, wird ein Layout eingeführt, das plattformübergreifend für Dual-Screen-Geräte optimiert ist.
+Mit der `TwoPaneView`-Klasse von Xamarin.Forms, die vom gleichnamigen UWP-Steuerelement inspiriert ist, wird ein plattformübergreifendes Layout eingeführt, das für Dual-Screen-Geräte optimiert ist.
 
 ## <a name="dual-screen-device-capabilities"></a>[Funktionen für Dual-Screen-Geräte](dual-screen-info.md)
 

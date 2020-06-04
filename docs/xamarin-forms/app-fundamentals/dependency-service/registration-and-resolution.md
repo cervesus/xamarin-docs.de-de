@@ -1,18 +1,21 @@
 ---
 title: DependencyService-Registrierung und -Auflösung in Xamarin.Forms
-description: In diesem Artikel wird die Funktionsweise der DependencyService-Klasse von Xamarin.Forms für den Aufruf der nativen Plattformfunktionalität erläutert.
-ms.prod: xamarin
-ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/05/2019
-ms.openlocfilehash: 6e666c16c9b1afc3478f524cae2f84d6704319c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: In diesem Artikel wird die Funktionsweise der DependencyService-Klasse von Xamarin.Forms für den Aufruf der nativen Plattformfunktionalität beschrieben.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70199226"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138774"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>DependencyService-Registrierung und -Auflösung in Xamarin.Forms
 
@@ -95,7 +98,7 @@ Gleichermaßen können die Implementierungen der `IDeviceOrientationService`-Sch
 
 Plattformimplementierungen müssen zunächst aufgelöst werden, bevor sie aufgerufen werden. Dies erfolgt in der Regel im freigegebenen Code mithilfe der [`DependencyService.Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode. Aber auch mit der [`DependencyService.Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)-Methode kann dies erreicht werden.
 
-Standardmäßig löst [`DependencyService`](xref:Xamarin.Forms.DependencyService) nur Plattformimplementierungen auf, die parameterlose Konstruktoren besitzen. In Xamarin.Forms kann jedoch eine Methode für die Auflösung von Abhängigkeiten eingefügt werden, die für die Auflösung von Plattformimplementierungen einen Container für die Dependency Injection oder Factorymethoden verwendet. Dieser Ansatz kann zur Auflösung von Plattformimplementierungen verwendet werden, die über Konstruktoren mit Parametern verfügen. Weitere Informationen finden Sie unter [Auflösung von Abhängigkeiten in Xamarin.Forms](~/xamarin-forms/internals/dependency-resolution.md).
+Standardmäßig löst [`DependencyService`](xref:Xamarin.Forms.DependencyService) nur Plattformimplementierungen auf, die parameterlose Konstruktoren besitzen. In Xamarin.Forms kann jedoch eine Methode für die Auflösung von Abhängigkeiten eingefügt werden, die für die Auflösung von Plattformimplementierungen einen Dependency Injection-Container oder Factorymethoden verwendet. Dieser Ansatz kann zur Auflösung von Plattformimplementierungen verwendet werden, die über Konstruktoren mit Parametern verfügen. Weitere Informationen finden Sie unter [Auflösung von Abhängigkeiten in Xamarin.Forms](~/xamarin-forms/internals/dependency-resolution.md).
 
 > [!IMPORTANT]
 > Wenn eine Plattformimplementierung, die nicht mit [`DependencyService`](xref:Xamarin.Forms.DependencyService) registriert wurde, aufgerufen wird, tritt eine `NullReferenceException` auf.

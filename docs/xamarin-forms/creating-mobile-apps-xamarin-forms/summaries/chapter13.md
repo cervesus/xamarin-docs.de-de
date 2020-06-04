@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 13. Bitmaps
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 13. Bitmaps'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: e4746ed94a008d382ce15bb9cd7c52365d9ba574
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 13. Bitmaps''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43caf088ad6cb816f049e7862a287c17839c2170
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725528"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136772"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Zusammenfassung von Kapitel 13. Bitmaps
 
@@ -21,7 +25,7 @@ ms.locfileid: "76725528"
 > [!NOTE]
 > In den Anmerkungen auf dieser Seite wird erläutert, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
-Das Xamarin.Forms-Element [`Image`](xref:Xamarin.Forms.Image) zeigt eine Bitmap an. Alle Xamarin.Forms-Plattformen unterstützen die Dateiformate JPEG, PNG, GIF und BMP.
+Vom Xamarin.Forms-[`Image`](xref:Xamarin.Forms.Image)-Element wird eine Bitmap angezeigt. Alle Xamarin.Forms-Plattformen unterstützen die Dateiformate JPEG, PNG, GIF und BMP.
 
 Bitmaps in Xamarin.Forms stammen aus vier Quellen:
 
@@ -93,7 +97,7 @@ Das Beispiel [**MadTeaParty**](https://github.com/xamarin/xamarin-forms-book-sam
 Das [**ImageBrowser**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)-Beispiel gestattet dem Benutzer das Durchsuchen von Archivbildern, die auf der Xamarin-Website gespeichert sind. Es verwendet die [`WebRequest`](xref:System.Net.WebRequest)-Klasse von .NET zum Herunterladen einer JSON-Datei mit der Liste der Bitmaps.
 
 > [!NOTE]
-> Xamarin.Forms-Programme sollten eher [`HttpClient`](xref:System.Net.Http.HttpClient) anstelle von [`WebRequest`](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet verwenden.
+> Für Xamarin.Forms-Programme sollte [`HttpClient`](xref:System.Net.Http.HttpClient) anstelle von [`WebRequest`](xref:System.Net.WebRequest) für den Zugriff auf Dateien über das Internet verwendet werden.
 
 Das Programm verwendet einen [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator), um anzuzeigen, das etwas durchgeführt wird. Bei jedem Laden einer Bitmap hat die schreibgeschützte Eigenschaft [`IsLoading`](xref:Xamarin.Forms.Image.IsLoading) von `Image` den Wert `true`. Die `IsLoading`-Eigenschaft wird von einer bindbaren Eigenschaft unterstützt, sodass ein `PropertyChanged`-Ereignis ausgelöst wird, wenn sich diese Eigenschaft ändert. Das Programm fügt einen Handler an dieses Ereignis an und verwendet die aktuelle Einstellung von `IsLoaded`, um die [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)-Eigenschaft des `ActivityIndicator` festzulegen.
 
@@ -107,7 +111,7 @@ Das [**BitmapStreams**](https://github.com/xamarin/xamarin-forms-book-samples/tr
 
 ### <a name="generating-bitmaps-at-run-time"></a>Generieren von Bitmaps zur Laufzeit
 
-Alle Xamarin.Forms-Plattformen unterstützen das unkomprimierte BMP-Dateiformat, das sich in Code einfach erstellen und dann in einem `MemoryStream` speichern lässt. Diese Methode ermöglicht das algorithmische Erstellen von Bitmaps zur Laufzeit, wie in der [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs)-Klasse in der **Xamrin.FormsBook.Toolkit**-Bibliothek implementiert.
+Alle Xamarin.Forms-Plattformen unterstützen das unkomprimierte BMP-Dateiformat, das sich in Code einfach erstellen und dann in `MemoryStream` speichern lässt. Diese Methode ermöglicht das algorithmische Erstellen von Bitmaps zur Laufzeit, wie in der [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs)-Klasse in der **Xamrin.FormsBook.Toolkit**-Bibliothek implementiert.
 
 Das „Do-it-yourself“-Beispiel [**DiyGradientBitmap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap) veranschaulicht die Verwendung von `BmpMaker` zum Erstellen einer Bitmap mit einem Farbverlaufsbild.
 
@@ -193,7 +197,7 @@ Die Anzahl der `Primary`-Elemente sollte auf drei oder vier beschränkt werden. 
 
 Das `ToolbarItem` löst ein [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked)-Ereignis aus, wenn darauf getippt wird, ganz ähnlich wie eine `Button`. `ToolbarItem` unterstützt auch die Eigenschaften [`Command`](xref:Xamarin.Forms.MenuItem.Command) und [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter), die häufig in Verbindung mit MVVM verwendet werden. (Siehe [Kapitel 18, „MVVM“](chapter18.md).)
 
-Sowohl iOS als auch Android erfordern, dass eine Seite, auf der eine Symbolleiste angezeigt wird, eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ist oder eine Seite, auf die man von einer `NavigationPage` weitergeleitet wurde. Das [**ToolbarDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)-Programm legt die `MainPage`-Eigenschaft seiner `App`-Klasse auf den [`NavigationPage`-Konstruktor ](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page)) mit einem `ContentPage`-Argument fest und veranschaulicht den Konstruktions- und Ereignishandler einer Symbolleiste.
+Sowohl iOS als auch Android erfordern, dass eine Seite, auf der eine Symbolleiste angezeigt wird, eine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ist oder eine Seite, auf die man von einer `NavigationPage` weitergeleitet wurde. Das [**ToolbarDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)-Programm legt die `MainPage`-Eigenschaft seiner `App`-Klasse auf den [`NavigationPage`-Konstructor](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page)) mit einem `ContentPage`-Argument fest und veranschaulicht den Konstruktions- und Ereignishandler einer Symbolleiste.
 
 ### <a name="button-images"></a>Schaltflächenbilder
 

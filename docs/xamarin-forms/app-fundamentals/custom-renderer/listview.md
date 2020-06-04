@@ -1,26 +1,29 @@
 ---
-title: Anpassen einer ListView
-description: Eine Xamarin.Forms-ListView ist eine Ansicht, die eine Sammlung von Daten als vertikale Liste anzeigt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer erstellen, der plattformspezifische Listensteuerelemente und natives Zellenlayout kapselt, sodass die Kontrolle über die Leistung nativer Listensteuerelemente erhöht wird.
-ms.prod: xamarin
-ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Beim Xamarin.Forms-Element „ListView“ handelt es sich um eine Ansicht, in der eine Sammlung von Daten als vertikale Liste angezeigt wird. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer erstellen, der plattformspezifische Listensteuerelemente und natives Zellenlayout kapselt, sodass die Kontrolle über die Leistung nativer Listensteuerelemente erhöht wird.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3403948c2853289610a73bb36073f09c0c86137d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771932"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135303"
 ---
 # <a name="customizing-a-listview"></a>Anpassen einer ListView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
 
-_Eine Xamarin.Forms-ListView ist eine Ansicht, die eine Sammlung von Daten als vertikale Liste anzeigt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer erstellen, der plattformspezifische Listensteuerelemente und natives Zellenlayout kapselt, sodass die Kontrolle über die Leistung nativer Listensteuerelemente erhöht wird._
+_Beim Xamarin.Forms-Element „ListView“ handelt es sich um eine Ansicht, in der eine Sammlung von Daten als vertikale Liste angezeigt wird. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer erstellen, der plattformspezifische Listensteuerelemente und natives Zellenlayout kapselt, sodass die Kontrolle über die Leistung nativer Listensteuerelemente erhöht wird._
 
-Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ListView`](xref:Xamarin.Forms.ListView)-Objekts durch eine Xamarin.Forms-App wird in iOS die `ListViewRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UITableView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ListViewRenderer`-Klasse ein natives `ListView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ListViewRenderer`-Klasse ein natives `ListView`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ListView`](xref:Xamarin.Forms.ListView)-Objekts durch eine Xamarin.Forms-App wird in iOS die `ListViewRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UITableView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `ListViewRenderer`-Klasse ein natives `ListView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `ListViewRenderer`-Klasse ein natives `ListView`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Rendererbasisklassen und native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
@@ -147,7 +150,7 @@ Ein benutzerdefinierter Renderer kann nun zu jedem Anwendungsprojekt hinzugefüg
 Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Renderer zu erstellen:
 
 1. Erstellen Sie eine Unterklasse der `ListViewRenderer`-Klasse, die das benutzerdefinierte Steuerelement rendert.
-1. Überschreiben Sie die `OnElementChanged`-Methode, die das benutzerdefinierte Steuerelement rendert, und schreiben Sie Logik, um dieses anzupassen. Diese Methode wird aufgerufen, wenn die entsprechende Xamarin.Forms-Klasse [`ListView`](xref:Xamarin.Forms.ListView) erstellt wird.
+1. Überschreiben Sie die `OnElementChanged`-Methode, die das benutzerdefinierte Steuerelement rendert, und schreiben Sie Logik, um dieses anzupassen. Diese Methode wird aufgerufen, wenn das entsprechende Xamarin.Forms-Steuerelement [`ListView`](xref:Xamarin.Forms.ListView) erstellt wird.
 1. Fügen Sie der Klasse des benutzerdefinierten Renderers ein `ExportRenderer`-Attribut hinzu, um anzugeben, dass sie zum Rendern des benutzerdefinierten Xamarin.Forms-Steuerelements verwendet werden soll. Dieses Attribut wird verwendet, um den benutzerdefinierten Renderer bei Xamarin.Forms zu registrieren.
 
 > [!NOTE]
@@ -161,7 +164,7 @@ Das benutzerdefinierte Steuerelement `NativeListView` wird von plattformspezifis
 
 ![](listview-images/screenshots.png "NativeListView on each Platform")
 
-Die `ListViewRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung des benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `NativeListView`-Instanz.
+Die `ListViewRenderer`-Klasse stellt die `OnElementChanged`-Methode zur Verfügung, die bei der Erstellung des benutzerdefinierten Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `NativeListView`-Instanz.
 
 Das native Steuerelement sollte in der überschriebenen Version der `OnElementChanged`-Methode in jeder plattformspezifischen Rendererklasse angepasst werden. Über die `Control`-Eigenschaft können Sie auf einen typisierten Verweis auf das native Steuerelement zugreifen, das auf der Plattform verwendet wird. Zusätzlich kann ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird, über die `Element`-Eigenschaft abgerufen werden.
 
@@ -182,9 +185,9 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-Das native Steuerelement sollte nur dann konfiguriert und für Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
+Das native Steuerelement sollte nur dann konfiguriert und Ereignishandler sollten nur dann abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
 
-Auf Änderungen am benutzerdefinierten Xamarin.Forms-Steuerelement in bindbaren Eigenschaften muss in einer überschriebenen Version der Methode `OnElementPropertyChanged` in den einzelnen plattformspezifischen Rendererklassen reagiert werden. Eine geänderte Eigenschaft sollte immer überprüft werden, da die Möglichkeit besteht, dass diese Überschreibung häufig aufgerufen wird.
+Auf Änderungen am benutzerdefinierten `OnElementPropertyChanged`-Steuerelement in bindbaren Eigenschaften muss in einer überschriebenen Version der Methode Xamarin.Forms in den einzelnen plattformspezifischen Rendererklassen reagiert werden. Eine geänderte Eigenschaft sollte immer überprüft werden, da die Möglichkeit besteht, dass diese Überschreibung häufig aufgerufen wird.
 
 Jede benutzerdefinierte Rendererklasse ist mit einem `ExportRenderer`-Attribut versehen, das den Renderer bei Xamarin.Forms registriert. Das Attribut benötigt zwei Parameter: den Typnamen des zu rendernden benutzerdefinierten Xamarin.Forms-Steuerelements und den Typnamen des benutzerdefinierten Renderers. Das Präfix `assembly` für das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
 
@@ -360,7 +363,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Das native `ListView`-Steuerelement wird konfiguriert, vorausgesetzt, der benutzerdefinierte Renderer wird an ein neues Xamarin.Forms-Element angefügt. Die Konfiguration umfasst das Erstellen einer Instanz der `NativeAndroidListViewAdapter`-Klasse, die Daten für das native `ListView`-Steuerelement bereitstellt, sowie das Registrieren eines Ereignishandlers zum Verarbeiten des `ItemClick`-Ereignisses. Im Gegenzug ruft der Handler das vom benutzerdefinierten `NativeListView`-Steuerelement bereitgestellte `ItemSelected`-Ereignis auf. Das Abonnement des `ItemClick`-Ereignisses wird gekündigt, wenn das Xamarin.Forms-Element, dem der Renderer angefügt ist, geändert wird.
+Das native `ListView`-Steuerelement wird konfiguriert, vorausgesetzt der benutzerdefinierte Renderer wird an ein neues Xamarin.Forms-Element angefügt. Die Konfiguration umfasst das Erstellen einer Instanz der `NativeAndroidListViewAdapter`-Klasse, die Daten für das native `ListView`-Steuerelement bereitstellt, sowie das Registrieren eines Ereignishandlers zum Verarbeiten des `ItemClick`-Ereignisses. Im Gegenzug ruft der Handler das vom benutzerdefinierten `NativeListView`-Steuerelement bereitgestellte `ItemSelected`-Ereignis auf. Das Abonnement des `ItemClick`-Ereignisses wird gekündigt, wenn das Xamarin.Forms-Element, an das der Renderer angefügt ist, geändert wird.
 
 Die `NativeAndroidListViewAdapter`-Klasse leitet sich von der `BaseAdapter`-Klasse ab und macht eine `Items`-Eigenschaft verfügbar, die die Liste der anzuzeigenden Daten enthält, und überschreibt die Methoden `Count`, `GetView`, `GetItemId` und `this[int]`. Weitere Informationen zu diesen Methodenüberschreibungen finden Sie unter [Implementing a ListAdapter (Implementieren einer ListAdapter-Eigenschaft)](~/android/user-interface/layouts/list-view/populating.md). Die `GetView`-Methode gibt eine Ansicht für jede Zeile zurück, die mit Daten aufgefüllt wird und die im folgenden Codebeispiel dargestellt wird:
 
@@ -513,7 +516,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Das native `ListView`-Steuerelement wird konfiguriert, vorausgesetzt, der benutzerdefinierte Renderer wird an ein neues Xamarin.Forms-Element angefügt. Bei dieser Konfiguration muss festgelegt werden, wie das native `ListView`-Steuerelement auf Elemente reagiert, die ausgewählt werden. Zudem müssen die vom Steuerelement angezeigten Daten aufgefüllt werden, die Darstellung und Inhalte jeder Zelle definiert und ein Ereignishandler zum Verarbeiten des `SelectionChanged`-Ereignisses registriert werden. Im Gegenzug ruft der Handler das vom benutzerdefinierten `NativeListView`-Steuerelement bereitgestellte `ItemSelected`-Ereignis auf. Das Abonnement des `SelectionChanged`-Ereignisses wird gekündigt, wenn das Xamarin.Forms-Element, dem der Renderer angefügt ist, geändert wird.
+Das native `ListView`-Steuerelement wird konfiguriert, vorausgesetzt der benutzerdefinierte Renderer wird an ein neues Xamarin.Forms-Element angefügt. Bei dieser Konfiguration muss festgelegt werden, wie das native `ListView`-Steuerelement auf Elemente reagiert, die ausgewählt werden. Zudem müssen die vom Steuerelement angezeigten Daten aufgefüllt werden, die Darstellung und Inhalte jeder Zelle definiert und ein Ereignishandler zum Verarbeiten des `SelectionChanged`-Ereignisses registriert werden. Im Gegenzug ruft der Handler das vom benutzerdefinierten `NativeListView`-Steuerelement bereitgestellte `ItemSelected`-Ereignis auf. Das Abonnement des `SelectionChanged`-Ereignisses wird gekündigt, wenn das Xamarin.Forms-Element, an das der Renderer angefügt ist, geändert wird.
 
 Die Darstellung und Inhalte jeder nativen `ListView`-Zelle werden von einer `DataTemplate`-Klasse mit der Bezeichnung `ListViewItemTemplate` definiert. Die `DataTemplate` wird im Ressourcenverzeichnis auf Anwendungsebene gespeichert und ist im folgenden Codebeispiel dargestellt:
 

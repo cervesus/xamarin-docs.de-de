@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms-Datenbindung
-description: Bei der Datenbindung werden die Eigenschaften von zwei Objekten verknüpft. Dadurch werden Änderungen an einer Eigenschaft automatisch in der anderen widergespiegelt. Die Datenbindung ist ein integraler Teil der „Model View ViewModel“-Anwendungsarchitektur (MVVM).
-ms.prod: xamarin
-ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/23/2020
-ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80247599"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139697"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms-Datenbindung
 
@@ -22,7 +25,7 @@ _Bei der Datenbindung werden die Eigenschaften von zwei Objekten verknüpft. Dad
 
 ## <a name="the-data-linking-problem"></a>Das Problem: Verknüpfung von Daten
 
-Eine Xamarin.Forms-Anwendung besteht aus mindestens einer Seite, die wiederum mehrere Benutzeroberflächenobjekte, sogenannte *Ansichten*, enthält. Eine der Hauptaufgaben des Programms ist es, diese Ansichten zu synchronisieren und die unterschiedlichen Werte und Auswahlvorgänge nachzuverfolgen, für die diese stehen. Häufig stehen die Ansichten für Werte einer zugrunde liegenden Datenquelle, und der Benutzer passt die Ansichten an, um die Daten zu verändern. Wenn die Ansicht verändert wird, müssen die zugrunde liegenden Daten diese Änderung widerzuspiegeln. Ebenso muss die Ansicht Änderungen der Daten widerzuspiegeln.
+Eine Xamarin.Forms-Anwendung besteht aus mindestens einer Seite, die wiederum mehrere Benutzeroberflächenobjekte, so genannte *Ansichten*, enthält. Eine der Hauptaufgaben des Programms ist es, diese Ansichten zu synchronisieren und die unterschiedlichen Werte und Auswahlvorgänge nachzuverfolgen, für die diese stehen. Häufig stehen die Ansichten für Werte einer zugrunde liegenden Datenquelle, und der Benutzer passt die Ansichten an, um die Daten zu verändern. Wenn die Ansicht verändert wird, müssen die zugrunde liegenden Daten diese Änderung widerzuspiegeln. Ebenso muss die Ansicht Änderungen der Daten widerzuspiegeln.
 
 Dazu muss das Programm über Änderungen der Ansichten und der zugrunde liegenden Daten informiert werden. Dies kann durch das definieren von Ereignissen erreicht werden, die angeben, wenn eine Änderung vorgenommen wurde. Dann kann ein Ereignishandler installiert werden, der über die Änderungen informiert wird. Er reagiert, indem er Daten von einem Objekt zu einem anderen überträgt. Wenn es jedoch viele Ansichten gibt, muss es dementsprechend auch viele Ereignishandler geben. Dazu ist viel Code erforderlich.
 

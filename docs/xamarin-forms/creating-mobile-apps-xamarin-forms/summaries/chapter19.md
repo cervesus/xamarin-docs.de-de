@@ -1,25 +1,29 @@
 ---
-title: Zusammenfassung von Kapitel 19. Auflistungsansichten
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 19. Auflistungsansichten'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: bffbd2dec4a8494723597ba6e0f0af69e57f3718
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 19. Collection views''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eafdeffb6783a0ed54fdf23e6d10de24e2b4c6f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73032864"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136694"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Zusammenfassung von Kapitel 19. Auflistungsansichten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 
 > [!NOTE] 
-> In den Anmerkungen auf dieser Seite wird erläutert, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
+> In den Anmerkungen auf dieser Seite wird beschrieben, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
 In Xamarin.Forms sind drei Ansichten definiert, mit denen Auflistungen verwaltet und die zugehörigen Elemente angezeigt werden:
 
@@ -97,7 +101,7 @@ Im Beispiel [**NaiveNamedColorList**](https://github.com/xamarin/xamarin-forms-b
 - [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) &mdash; umfasst einen `Switch` mit einem `Label`
 - [`ViewCell`](xref:Xamarin.Forms.ViewCell) &mdash; kann eine beliebige `View` sein (wahrscheinlich mit untergeordneten Elementen)
 
-Rufen Sie dann [`SetValue`](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) und [`SetBinding`](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) für das `DataTemplate`-Objekt auf, um den `Cell`-Eigenschaften Werte zuzuordnen oder um Datenbindungen für die `Cell`-Eigenschaften festzulegen, die auf andere Eigenschaften der Objekte in der `ItemsSource`-Auflistung verweisen. Dies wird im Beispiel [**TextCellListCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) veranschaulicht.
+Rufen Sie anschließend [`SetValue`](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) und [`SetBinding`](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) für das Objekt `DataTemplate` auf, um Werte den `Cell`-Eigenschaften zuzuordnen oder Datenbindungen für die `Cell`-Eigenschaften festzulegen, indem auf Eigenschaften der Elemente in der Auflistung `ItemsSource` verwiesen wird. Dies wird im Beispiel [**TextCellListCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) veranschaulicht.
 
 Wenn `ListView` alle Elemente anzeigt, wird anhand der Vorlage eine kleine visuelle Struktur erstellt. Außerdem werden zwischen dem Element und den Eigenschaften der Elemente in dieser visuellen Struktur Datenbindungen erstellt. Um sich mit diesem Vorgang vertraut zu machen, können Sie Handler für die [`ItemAppearing`](xref:Xamarin.Forms.ListView.ItemAppearing)- und [`ItemDisappearing`](xref:Xamarin.Forms.ListView.ItemDisappearing)-Ereignisse von `ListView` installieren. Eine weitere Möglichkeit besteht darin, einen alternativen [`DataTemplate`-Konstruktor](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object})) zu einzusetzen, der eine Funktion verwendet, die jedes Mal aufgerufen wird, wenn die visuelle Struktur eines Elements erstellt werden muss.
 

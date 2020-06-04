@@ -1,27 +1,31 @@
 ---
-title: Zusammenfassung von Kapitel 28. Standort und Karten
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 28. Standort und Karten'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 5dcd84536cc6d80deb753fc6fe57f9090f6b2dad
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 28. Location and maps''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72697078"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133405"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Zusammenfassung von Kapitel 28. Standort und Karten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
-> In den Anmerkungen auf dieser Seite wird erläutert, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
+> In den Anmerkungen auf dieser Seite wird beschrieben, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
-Xamarin.Forms unterstützt ein [`Map`](xref:Xamarin.Forms.Maps.Map)-Element, das von `View` abgeleitet wird. Aufgrund der speziellen Plattformanforderungen, die bei der Verwendung von Karten zum Tragen kommen, sind sie in einer gesonderten Assembly implementiert, **Xamarin.Forms.Maps**, und verwenden einen anderen Namespace: `Xamarin.Forms.Maps`.
+Xamarin.Forms unterstützt ein [`Map`](xref:Xamarin.Forms.Maps.Map)-Element, das von `View` abgeleitet wird. Aufgrund der speziellen Plattformanforderungen, die bei der Verwendung von Karten zum Tragen kommen, sind sie in einer gesonderten Assembly ( **Xamarin.Forms.Maps**) und verwenden einen anderen Namespace: `Xamarin.Forms.Maps`.
 
 ## <a name="the-geographic-coordinate-system"></a>Das geografische Koordinatensystem
 
@@ -51,7 +55,7 @@ Kartendienste verwenden eine Variation der Mercator-Projektion namens `Web Merca
 
 ## <a name="getting-the-users-location"></a>Abrufen des Standorts des Benutzers
 
-Die `Map`-Klassen von Xamarin.Forms umfassen keine Möglichkeit zum Abrufen des geografischen Standorts des Benutzers, was aber häufig wünschenswert ist, wenn mit Karten gearbeitet wird, sodass dies von einem Abhängigkeitsdienst erledigt werden muss.
+Die Xamarin.Forms-Klassen von `Map` umfassen keine Möglichkeit zum Abrufen des geografischen Standorts des Benutzers, was aber häufig wünschenswert ist, wenn mit Karten gearbeitet wird, sodass dies von einem Abhängigkeitsdienst erledigt werden muss.
 
 > [!NOTE]
 > Xamarin.Forms-Anwendungen können stattdessen die in Xamarin.Essentials enthaltene [`Geolocation`](~/essentials/geolocation.md)-Klasse verwenden.
@@ -100,7 +104,7 @@ Bei der Verwendung der `Map`-Klasse gibt es mehrere Anforderungen.
 
 ### <a name="the-nuget-package"></a>Das NuGet-Paket
 
-Die NuGet-Bibliothek **Xamarin.Forms.Maps** muss der Anwendungsprojektmappe hinzugefügt werden. Die Versionsnummer sollte mit der des derzeit installierten **Xamarin.Forms**-Pakets identisch sein.
+Die NuGet-Bibliothek **Xamarin.Forms.Maps** muss der Anwendungsprojektmappe hinzugefügt werden. Die Versionsnummer sollte mit der des derzeit installierten **Xamarin.Forms** -Pakets identisch sein.
 
 ### <a name="initializing-the-maps-package"></a>Initialisieren des Maps-Pakets
 
@@ -179,8 +183,8 @@ Eine neue Bibliothek für dieses Buch namens [**Xamarin.FormsBook.Toolkit.Maps**
 
 Sie können die [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan))-Methode von `Map` aufrufen, um einen Standort und Zoomfaktor programmgesteuert auf der Karte festzulegen. Das Argument ist vom Typ `MapSpan`. Sie können auf eine der folgenden Weisen ein `MapSpan`-Objekt erstellen:
 
-- [`MapSpan`-Konstruktor](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double)) mit einer `Position` sowie einem Breiten- und Längengradbereich.
-- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) mit einer `Position` und einem Radius.
+- [`MapSpan`-Konstruktor](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double)) mit einem `Position`-Element sowie einem Breiten- und Längengradbereich
+- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) mit einem `Position`-Element sowie einem Radius
 
 Es ist auch möglich, eine neue `MapSpan` aus einer vorhandenen zu erstellen, indem Sie die Methoden [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double)) oder [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double)) verwenden.
 
@@ -231,7 +235,7 @@ Das Programm veranschaulicht außerdem, wie die Anzahl der Stecknadeln auf Grund
 
 ## <a name="geocoding-and-back-again"></a>Geocodierung und wieder zurück
 
-Die [**Xamarin.Forms.Maps**](xref:Xamarin.Forms.Maps)-Assembly enthält außerdem eine [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)-Klasse mit einer [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))-Methode, die eine Textadresse in null oder mehr mögliche geografische Positionen konvertiert, sowie eine weitere Methode namens [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)), die in die andere Richtung konvertiert.
+Die [ **Xamarin.Forms.Maps**](xref:Xamarin.Forms.Maps)-Assembly enthält außerdem eine [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)-Klasse mit einer [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))-Methode, die eine Textadresse in null oder mehr mögliche geografische Positionen konvertiert, sowie eine weitere Methode namens [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)), die in die andere Richtung konvertiert.
 
 Diese Funktion wird in der Datei [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml) und der CodeBehind-Datei [GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs) veranschaulicht.
 
@@ -239,4 +243,4 @@ Diese Funktion wird in der Datei [GeocoderRoundTrip.xaml](https://github.com/xam
 
 - [Kapitel 28 – vollständiger Text (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)
 - [Kapitel 28 – Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
-- [Xamarin.Forms Map](~/xamarin-forms/user-interface/map/index.md)
+- [Xamarin.Forms-Karte](~/xamarin-forms/user-interface/map/index.md)

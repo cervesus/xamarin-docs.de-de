@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms-modale Seiten
-description: Xamarin.Forms bietet Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. In diesem Artikel wird das Navigieren zu modalen Seiten veranschaulicht.
-ms.prod: xamarin
-ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Modale Xamarin.Forms-Seiten
+description: Xamarin.Forms verfügt über Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. In diesem Artikel wird das Navigieren zu modalen Seiten veranschaulicht.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4f6547049f2801e5d15115c0ae80af9a07034731
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760824"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137825"
 ---
-# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms-modale Seiten
+# <a name="xamarinforms-modal-pages"></a>Modale Xamarin.Forms-Seiten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
@@ -27,7 +30,7 @@ In diesem Artikel werden die folgenden Themen behandelt:
 
 ## <a name="overview"></a>Übersicht
 
-Eine modale Seite kann jeder von Xamarin.Forms unterstützte [Seiten](~/xamarin-forms/user-interface/controls/pages.md)-Typ sein. Wenn eine modale Seite angezeigt werden soll, überträgt die Anwendung diese Seite per Push in den modalen Stapel, wo sie dann zur aktiven Seite wird. Dieser Vorgang wird im folgenden Diagramm veranschaulicht:
+Eine modale Seite kann jeder von Xamarin.Forms unterstützte Typ von [Seite](~/xamarin-forms/user-interface/controls/pages.md) sein. Wenn eine modale Seite angezeigt werden soll, überträgt die Anwendung diese Seite per Push in den modalen Stapel, wo sie dann zur aktiven Seite wird. Dieser Vorgang wird im folgenden Diagramm veranschaulicht:
 
 ![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
 
@@ -73,7 +76,7 @@ Wenn [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) aufgeruf
 - Bei der Seite, zu der navigiert wird, wird die Überschreibung von [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) aufgerufen.
 - Aufgabe `PushAsync` wird abgeschlossen.
 
-Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
+Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
 > [!NOTE]
 > Aufrufe von Überschreibungen von [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) und [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) können nicht als garantierte Anzeichen für eine Seitennavigation behandelt werden. Unter iOS beispielsweise wird die Überschreibung von `OnDisappearing` auf der aktiven Seite aufgerufen, wenn die Anwendung beendet wird.
@@ -99,11 +102,11 @@ Dadurch wird die `ModalPage`-Instanz aus dem modalen Stapel entfernt, und die ne
 - Bei der Seite, an die zurückgegeben werden soll, wird [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) überschrieben, wenn nicht Android als Plattform zugrunde liegt.
 - Die `PopModalAsync`-Aufgabe wird zurückgegeben.
 
-Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
+Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattformabhängig. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
 ### <a name="disabling-the-back-button"></a>Deaktivieren der Schaltfläche „Zurück“
 
-Unter Android kann der Benutzer jederzeit zur vorherigen Seite zurückkehren, indem er die Standardschaltfläche *Zurück* auf dem Gerät drückt. Wenn der Benutzer von der modalen Seite dazu aufgefordert wird, vor dem Verlassen der Seite eine eigenständige Aufgabe abzuschließen, muss die Anwendung die Schaltfläche *Zurück* deaktivieren. Dies kann durch die Überschreibung der [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed)-Methode auf der modalen Seite erreicht werden. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
+Unter Android kann der Benutzer jederzeit zur vorherigen Seite zurückkehren, indem er die Standardschaltfläche *Zurück* auf dem Gerät drückt. Wenn der Benutzer von der modalen Seite dazu aufgefordert wird, vor dem Verlassen der Seite eine eigenständige Aufgabe abzuschließen, muss die Anwendung die Schaltfläche *Zurück* deaktivieren. Dies kann durch die Überschreibung der [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed)-Methode auf der modalen Seite erreicht werden. Weitere Informationen hierzu finden Sie in [Kapitel 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) im Xamarin.Forms-Buch von Charles Petzold.
 
 ### <a name="animating-page-transitions"></a>Animieren von Seitenübergängen
 

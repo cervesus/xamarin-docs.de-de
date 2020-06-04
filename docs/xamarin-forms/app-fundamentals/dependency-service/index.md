@@ -1,24 +1,27 @@
 ---
 title: Xamarin.Forms-DependencyService
-description: Die Xamarin.Forms DependencyService-Klasse ist ein Dienst-Locator, der es Xamarin.Forms-Anwendungen ermöglicht, native Plattformfunktionen aus freigegebenem Code aufzurufen.
-ms.prod: xamarin
-ms.assetid: 403479F2-6751-41F2-ADCE-3AF595062FE4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/05/2019
-ms.openlocfilehash: ea259d1ee9dc4a94322c38b3e96bee654197bb87
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Die „DependencyService“-Klasse von Xamarin.Forms ist ein Dienstlocator, der es Xamarin.Forms-Anwendungen ermöglicht, native Plattformfunktionen aus freigegebenem Code aufzurufen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 126e2d2373bad923fe1d66fe355ad811c15fbe4f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67650453"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138371"
 ---
 # <a name="xamarinforms-dependencyservice"></a>Xamarin.Forms-DependencyService
 
 ## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
 
-Die [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse ist ein Dienst-Locator, der es Xamarin.Forms-Anwendungen ermöglicht, native Plattformfunktionen aus freigegebenem Code aufzurufen.
+Die [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse ist ein Dienstlocator, der es Xamarin.Forms-Anwendungen ermöglicht, native Plattformfunktionen aus freigegebenem Code aufzurufen.
 
 ## <a name="registration-and-resolution"></a>[Registrierung und Lösung](registration-and-resolution.md)
 

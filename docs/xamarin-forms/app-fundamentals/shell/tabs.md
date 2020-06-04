@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms-Shell-Layout
-description: Nach einem Flyout ist die nächste Navigationsebene in einer Shell-Anwendung die untere Registerkartenleiste. Alternativ kann das Navigationsmuster für eine Anwendung mit unteren Registerkarten beginnen und auf die Verwendung eines Flyouts verzichten. Wenn eine untere Registerkarte mehrere Seiten enthält, sind die Seiten in beiden Fällen über Register am oberen Rand navigierbar.
-ms.prod: xamarin
-ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 0ffcbe99ef9696c5fde501809bea5ddcc7a793a7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303846"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139957"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms-Shell-Registerkarten
 
@@ -27,7 +30,7 @@ Alternativ kann das Navigationsmuster für eine Anwendung mit unteren Registerka
 
 Jedes `FlyoutItem`- oder `TabBar`-Objekt kann ein oder mehrere `Tab`-Objekte enthalten, wobei jedes `Tab`-Objekt eine Registerkarte auf der unteren Registerkartenleiste darstellt. Jedes `Tab`-Objekt kann ein oder mehrere `ShellContent`-Objekte enthalten, und jedes `ShellContent`-Objekt zeigt ein einzelnes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt an. Wenn mehr als ein `ShellContent`-Objekt in einem `Tab`-Objekt vorhanden ist, sind die `ContentPage`-Objekte über obere Registerkarten navigierbar.
 
-Innerhalb jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts kann zu zusätzlichen `ContentPage`-Objekten navigiert werden. Weitere Informationen zur Navigation finden Sie unter [Navigation in der Xamarin.Forms Shell](navigation.md).
+Innerhalb jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts kann zu zusätzlichen `ContentPage`-Objekten navigiert werden. Weitere Informationen zur Navigation finden Sie unter [Navigation in der Xamarin.Forms-Shell](navigation.md).
 
 ## <a name="single-page-application"></a>Single-Page-Webanwendung
 
@@ -166,7 +169,7 @@ Das untergeordnete Element jedes `Tab`-Objekts ist ein `ShellContent`-Objekt, de
 </Shell>
 ```
 
-Innerhalb jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts kann zu zusätzlichen `ContentPage`-Objekten navigiert werden. Weitere Informationen zur Navigation finden Sie unter [Navigation in der Xamarin.Forms Shell](navigation.md).
+Innerhalb jedes [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts kann zu zusätzlichen `ContentPage`-Objekten navigiert werden. Weitere Informationen zur Navigation finden Sie unter [Navigation in der Xamarin.Forms-Shell](navigation.md).
 
 > [!NOTE]
 > Der [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) jedes `ShellContent`-Objekts wird vom übergeordneten `Tab`-Objekt geerbt.

@@ -1,18 +1,21 @@
 ---
-title: Anpassen einer ContentPage
-description: Eine ContentPage ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die ContentPage-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können.
-ms.prod: xamarin
-ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 50e28291d72550264e3806c0911f59a57c6d8bf0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70772022"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136330"
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage
 
@@ -20,7 +23,7 @@ ms.locfileid: "70772022"
 
 _Eine ContentPage ist ein visuelles Element, das eine Ansicht anzeigt, die den Großteil des Bildschirms einnimmt. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für die ContentPage-Seite erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können._
 
-Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts durch eine Xamarin.Forms-Anwendung wird in iOS die `PageRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UIViewController`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `PageRenderer`-Klasse ein `ViewGroup`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `PageRenderer`-Klasse ein `FrameworkElement`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekts durch eine Xamarin.Forms-App wird in iOS die `PageRenderer`-Klasse instanziiert, wodurch wiederum ein natives `UIViewController`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `PageRenderer`-Klasse ein `ViewGroup`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `PageRenderer`-Klasse ein `FrameworkElement`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Rendererbasisklassen und native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
@@ -29,7 +32,7 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ContentPage
 Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
 1. [Erstellen](#Creating_the_Xamarin.Forms_Page) Sie eine Xamarin.Forms-Seite.
-1. [Nutzen](#Consuming_the_Xamarin.Forms_Page) Sie die Seite von Xamarin.Forms.
+1. [Nutzen](#Consuming_the_Xamarin.Forms_Page) Sie die Seite über Xamarin.Forms.
 1. [Erstellen](#Creating_the_Page_Renderer_on_each_Platform) Sie einen benutzerdefinierten Renderer für die Seite auf jeder Plattform.
 
 Jedes Element wird nun nacheinander besprochen, um ein `CameraPage`-Element zu implementieren, das ein Livekamerafeed und die Möglichkeit zur Aufnahme eines Fotos bietet.
@@ -77,7 +80,7 @@ Eine Instanz vom `CameraPage`-Element wird verwendet, um den Livekamerafeed auf 
 
 <a name="Consuming_the_Xamarin.Forms_Page" />
 
-## <a name="consuming-the-xamarinforms-page"></a>Nutzen der Xamarin.Forms-Seite
+## <a name="consuming-the-xamarinforms-page"></a>Nutzung der Xamarin.Forms-Seite
 
 Das leere `CameraPage`-Element muss von der Xamarin.Forms-Anwendung angezeigt werden. Dies geschieht, wenn Sie auf eine Schaltfläche der `MainPage`-Instanz tippen, die wiederum die `OnTakePhotoButtonClicked`-Methode ausführt, wie im folgenden Codebeispiel gezeigt:
 
@@ -111,7 +114,7 @@ Die `CameraPage`-Instanz wird von plattformspezifischen `CameraPageRenderer`-Kla
 
 ![](contentpage-images/screenshots.png "CameraPage on each Platform")
 
-Die `PageRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung der Xamarin.Forms-Seite aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CameraPage`-Instanz.
+Die `PageRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung der Xamarin.Forms-Seite aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CameraPage`-Instanz.
 
 Die native Seitenanpassung kann in einer überschriebenen Version der `OnElementChanged`-Methode in der `CameraPageRenderer`-Klasse ausgeführt werden. Ein Verweis auf die zu rendernde Instanz der Xamarin.Forms-Seite kann über die `Element`-Eigenschaft bezogen werden.
 

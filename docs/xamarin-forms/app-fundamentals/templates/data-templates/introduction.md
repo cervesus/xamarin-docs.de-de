@@ -1,18 +1,21 @@
 ---
 title: Einführung in Xamarin.Forms-Datenvorlagen
-description: Mit Xamarin.Forms-Datenvorlagen können Sie die Darstellung von Daten in unterstützten Steuerelementen definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind.
-ms.prod: xamarin
-ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/11/2017
-ms.openlocfilehash: 10bba38de1dc8908ad853d5e4ca2bb845b4ac8c6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Datenvorlagen von Xamarin.Forms bieten die Möglichkeit, die Darstellung von Daten für unterstützte Steuerelemente zu definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771283"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136109"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Einführung in Xamarin.Forms-Datenvorlagen
 

@@ -1,28 +1,31 @@
 ---
-title: Wiederverwendbare EffectBehavior-Klasse
-description: Verhalten sind ein nützlicher Ansatz, um Effekte zu einem Steuerelement hinzuzufügen. Dadurch wird standardmäßig genutzter Effektbehandlungscode von Codebehind-Dateien verwendet. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens dargestellt, um einem Steuerelement einen Effekt hinzuzufügen.
-ms.prod: xamarin
-ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: ca03dce3bd39664a07b7bf56d22d7c2e000e931f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Verhalten sind ein nützlicher Ansatz, um Effekte zu einem Steuerelement hinzuzufügen. Dadurch wird standardmäßig genutzter Effektbehandlungscode von Codebehind-Dateien verwendet. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens veranschaulicht, um einem Steuerelement einen Effekt hinzuzufügen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771995"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135784"
 ---
 # <a name="reusable-effectbehavior"></a>Wiederverwendbare EffectBehavior-Klasse
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 
-_Verhalten sind ein nützlicher Ansatz, um Effekte zu einem Steuerelement hinzuzufügen. Dadurch wird standardmäßig genutzter Effektbehandlungscode von Codebehind-Dateien verwendet. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens dargestellt, um einem Steuerelement einen Effekt hinzuzufügen._
+_Verhalten sind ein nützlicher Ansatz, um Effekte zu einem Steuerelement hinzuzufügen. Dadurch wird standardmäßig genutzter Effektbehandlungscode von Codebehind-Dateien verwendet. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens veranschaulicht, um einem Steuerelement einen Effekt hinzuzufügen._
 
 ## <a name="overview"></a>Übersicht
 
-Die `EffectBehavior`-Klasse ist ein wiederverwendbares benutzerdefiniertes Xamarin.Forms-Verhalten, das einem Steuerelement eine [`Effect`](xref:Xamarin.Forms.Effect)-Instanz anfügt, wenn das Verhalten dem Steuerelement angefügt wird, und sie entfernt die `Effect`-Klasse, wenn das Verhalten vom Steuerelement abgetrennt wird.
+Die `EffectBehavior`-Klasse ist ein wiederverwendbares benutzerdefiniertes Xamarin.Forms-Verhalten, das einem Steuerelement eine [`Effect`](xref:Xamarin.Forms.Effect)-Instanz hinzufügt, wenn das Verhalten an das Steuerelement angefügt wird. Die `Effect`-Instanz wird entfernt, wenn das Verhalten vom Steuerelement abgetrennt wird.
 
 Die folgenden Verhaltenseigenschaften müssen für die Verwendung des Verhaltens festgelegt werden:
 
@@ -32,11 +35,11 @@ Die folgenden Verhaltenseigenschaften müssen für die Verwendung des Verhaltens
 Weitere Informationen zu Effekten finden Sie unter [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 > [!NOTE]
-> `EffectBehavior` ist eine benutzerdefinierte Klasse, die in [Effect Behavior sample (Effekt-Verhaltensbeispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior) gefunden werden kann. Allerdings ist sie nicht Teil von Xamarin.Forms.
+> `EffectBehavior` ist eine benutzerdefinierte Klasse, die im [Effekt-Verhaltensbeispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior) enthalten ist. Sie ist allerdings nicht Teil von Xamarin.Forms.
 
 ## <a name="creating-the-behavior"></a>Erstellen des Verhaltens
 
-Die `EffectBehavior`-Klasse wird von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse abgeleitet, bei der `T` einer [`View`](xref:Xamarin.Forms.View)-Klasse entspricht. Dies bedeutet, dass die `EffectBehavior`-Klasse jedem beliebigen Xamarin.Forms-Steuerelement anfügt werden kann.
+Die `EffectBehavior`-Klasse wird von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse abgeleitet, bei der `T` einer [`View`](xref:Xamarin.Forms.View)-Klasse entspricht. Dies bedeutet, dass die `EffectBehavior`-Klasse an jedes beliebige Xamarin.Forms-Steuerelement anfügt werden kann.
 
 ### <a name="implementing-bindable-properties"></a>Implementieren von bindbaren Eigenschaften
 
@@ -67,7 +70,7 @@ Wenn die `EffectBehavior`-Klasse genutzt wird, sollte die `Group`-Eigenschaft au
 
 ### <a name="implementing-the-overrides"></a>Implementieren der Überschreibungen
 
-Die `EffectBehavior`-Klasse überschreibt, wie im folgenden Codebeispiel zu sehen ist, die Methoden [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) und [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse:
+Die `EffectBehavior`-Klasse setzt die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) and [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methoden der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse außer Kraft. Dies ist im folgenden Codebeispiel dargestellt:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -88,7 +91,7 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode führt das Setup aus, indem sie die `AddEffect`-Methode aufruft, wobei das angefügte Steuerelement als Parameter übergeben wird. Die [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode führt den Cleanup aus, indem sie die `RemoveEffect`-Methode aufruft, wobei das angefügte Steuerelement als Parameter übergeben wird.
+Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `AddEffect` method, passing in the attached control as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode führt die Bereinigung durch, indem die `RemoveEffect`-Methode aufgerufen und das angefügte Steuerelement als Parameter übergeben wird.
 
 ### <a name="implementing-the-behavior-functionality"></a>Implementieren der Verhaltensfunktionalität
 
@@ -163,7 +166,7 @@ Der Vorteil dieses Verhaltens zum Hinzufügen und Entfernen von Effekten bei Ste
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde veranschaulicht, wie einem Steuerelement mithilfe eines Verhaltens ein Effekt hinzugefügt werden kann. Die `EffectBehavior`-Klasse ist ein wiederverwendbares benutzerdefiniertes Xamarin.Forms-Verhalten, das einem Steuerelement eine [`Effect`](xref:Xamarin.Forms.Effect)-Instanz anfügt, wenn das Verhalten dem Steuerelement angefügt wird, und sie entfernt die `Effect`-Klasse, wenn das Verhalten vom Steuerelement abgetrennt wird.
+In diesem Artikel wurde veranschaulicht, wie einem Steuerelement mithilfe eines Verhaltens ein Effekt hinzugefügt werden kann. Die `EffectBehavior`-Klasse ist ein wiederverwendbares benutzerdefiniertes Xamarin.Forms-Verhalten, das einem Steuerelement eine [`Effect`](xref:Xamarin.Forms.Effect)-Instanz hinzufügt, wenn das Verhalten an das Steuerelement angefügt wird. Die `Effect`-Instanz wird entfernt, wenn das Verhalten vom Steuerelement abgetrennt wird.
 
 ## <a name="related-links"></a>Verwandte Links
 

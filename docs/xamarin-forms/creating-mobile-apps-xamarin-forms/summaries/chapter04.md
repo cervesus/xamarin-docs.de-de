@@ -1,29 +1,33 @@
 ---
-title: Zusammenfassung von Kapitel 4. Scrollen im Stapel
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 4. Scrollen im Stapel'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 5313dd34839d6a5d21432161b9fd3a0ffce6e816
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 4. Scrolling the stack''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9890ecdf286ee33d7af28fd20847788b063df8f5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149937"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136889"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Zusammenfassung von Kapitel 4. Scrollen im Stapel
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
-In diesem Kapitel wird in erster Linie das Konzept des *Layouts* eingeführt, wobei es sich um den allgemeinen Begriff für die Klassen und Methoden handelt, die Xamarin.Forms zum Organisieren der visuellen Darstellung mehrerer Ansichten auf der Seite verwendet.
+In diesem Kapitel wird in erster Linie das Konzept des *Layouts* eingeführt, wobei es sich um den allgemeinen Begriff für die Klassen und Methoden handelt, die von Xamarin.Forms zum Organisieren der visuellen Darstellung mehrerer Ansichten auf der Seite verwendet werden.
 
 Layout umfasst mehrere Klassen, die von [`Layout`](xref:Xamarin.Forms.Layout) und [`Layout<T>`](xref:Xamarin.Forms.Layout`1) abgeleitet werden. Dieses Kapitel konzentriert sich auf [`StackLayout`](xref:Xamarin.Forms.StackLayout).
 
 > [!NOTE]
-> Das [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md), das in Xamarin.Forms 3.0 eingeführt wurde, kann auf ähnliche Weisen wie `StackLayout` verwendet werden, jedoch mit größerer Flexibilität.
+> Das in Xamarin.Forms 3.0 eingeführte [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md)-Element kann auf ähnliche Weise wie `StackLayout` verwendet werden, aber es ist flexibler.
 
 In diesem Kapitel werden außerdem die Klassen [`ScrollView`](xref:Xamarin.Forms.ScrollView), [`Frame`](xref:Xamarin.Forms.Frame) und [`BoxView`](xref:Xamarin.Forms.BoxView) eingeführt.
 

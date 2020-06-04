@@ -1,24 +1,27 @@
 ---
 title: Navigation in der Xamarin.Forms-Shell
-description: Xamarin.Forms-Shell-Anwendungen können eine URI-basierte Navigationsumgebung verwenden, die die Navigation zu einer beliebigen Seite in der Anwendung ermöglicht, ohne einer festen Navigationshierarchie folgen zu müssen.
-ms.prod: xamarin
-ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: a40a2dc01c37773539089287d561f4c52ef7f6de
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+description: Für Xamarin.Forms-Shell-Anwendungen kann eine URI-basierte Navigationsumgebung verwendet werden, die die Navigation zu einer beliebigen Seite in der Anwendung ermöglicht, ohne einer festen Navigationshierarchie folgen zu müssen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516515"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132391"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation in der Xamarin.Forms-Shell
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Xamarin.Forms-Shell enthält eine URI-basierte Navigationsumgebung, die Routen verwendet, um zu einer beliebigen Seite in der Anwendung zu navigieren, ohne einer festen Navigationshierarchie folgen zu müssen. Darüber hinaus bietet es auch die Möglichkeit, rückwärts zu navigieren, ohne alle Seiten des Navigationsstapels aufrufen zu müssen.
+Die Xamarin.Forms-Shell enthält eine URI-basierte Navigationsumgebung, die Routen verwendet, um zu einer beliebigen Seite in der Anwendung zu navigieren, ohne einer festen Navigationshierarchie folgen zu müssen. Darüber hinaus bietet es auch die Möglichkeit, rückwärts zu navigieren, ohne alle Seiten des Navigationsstapels aufrufen zu müssen.
 
 `Shell` definiert die folgenden navigationsbezogenen Eigenschaften:
 
@@ -32,7 +35,7 @@ Die Eigenschaften `BackButtonBehavior`, `CurrentItem` und `CurrentState` werden 
 Navigation erfolgt durch Aufrufen der `GoToAsync`-Methode aus der `Shell`-Klasse. Kurz bevor die Navigation erfolgt, wird ein `Navigating`-Ereignis ausgelöst, und ein `Navigated`-Ereignis wird ausgelöst, wenn die Navigation abgeschlossen ist.
 
 > [!NOTE]
-> Die Navigation kann in einer Xamarin.Forms Shell-Anwendung weiterhin unter Verwendung der Eigenschaft [Navigation](xref:Xamarin.Forms.NavigableElement.Navigation) durchgeführt werden. Weitere Informationen finden Sie unter [Hierarchische Navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
+> Die Navigation kann in einer Xamarin.Forms-Shell-Anwendung unter Verwendung der Eigenschaft [Navigation](xref:Xamarin.Forms.NavigableElement.Navigation) weiterhin durchgeführt werden. Weitere Informationen finden Sie unter [Hierarchische Navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
 ## <a name="routes"></a>Routen
 

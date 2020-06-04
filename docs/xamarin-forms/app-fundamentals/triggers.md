@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms-Trigger
-description: In diesem Artikel wird erläutert, wie Xamarin.Forms-Trigger verwendet werden, um auf Änderungen der Benutzeroberfläche mit XAML zu reagieren. Mit Triggern können Sie Aktionen deklarativ in XAML ausdrücken, die die Darstellung von Steuerelementen basierend auf Ereignissen oder Eigenschaftenänderungen ändern.
-ms.prod: xamarin
-ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: b4eeb776cafa131f13eb70aca5bd20df6eafa07f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+description: In diesem Artikel wird beschrieben, wie Xamarin.Forms-Trigger verwendet werden, um auf Änderungen der Benutzeroberfläche mit XAML zu reagieren. Mit Triggern können Sie Aktionen deklarativ in XAML ausdrücken, die die Darstellung von Steuerelementen basierend auf Ereignissen oder Eigenschaftenänderungen ändern.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516730"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136954"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -324,7 +327,7 @@ Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 
 Zustandstrigger werden der Sammlung [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) eines [`VisualState`](xref:Xamarin.Forms.VisualState) hinzugefügt. Diese Sammlung kann Trigger mit einem oder mehreren Zustandstriggern enthalten. Ein [`VisualState`](xref:Xamarin.Forms.VisualState) wird angewendet, wenn alle Zustandstrigger in der Sammlung aktiv sind.
 
-Bei Verwendung von Zustandstriggern zur Steuerung visueller Zustände befolgt Xamarin.Forms die folgenden Prioritätsregeln, um zu bestimmen, welcher Trigger (und entsprechende [`VisualState`](xref:Xamarin.Forms.VisualState)) aktiv ist:
+Bei Verwendung von Zustandstriggern zur Steuerung visueller Zustände befolgt Xamarin.Forms die folgenden Prioritätsregeln, um zu bestimmen, welcher Trigger (und welches entsprechende [`VisualState`](xref:Xamarin.Forms.VisualState)-Element) aktiv ist:
 
 1. Alle von [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) abgeleiteten Trigger.
 1. Ein [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger), der aktiviert wird, da die Bedingung [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth) erfüllt ist.

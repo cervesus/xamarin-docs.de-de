@@ -1,21 +1,24 @@
 ---
 title: 'Xamarin.Essentials: Einheitenkonverter'
 description: Die Klasse „UnitConverters“ in Xamarin.Essentials stellt mehrere Einheitenkonverter bereit, die Entwickler mit Xamarin.Essentials nutzen können.
-ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 866842cbed9f97dc957e3631c037fa8d27d20076
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.assetid: ''
+author: ''
+ms.custom: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deff6997ff921e6048ccb2497a0747c770501a04
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149775"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137136"
 ---
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials: Einheitenkonverter
 
-Die Klasse **UnitConverters** in Xamarin.Essentials stellt mehrere Einheitenkonverter bereit, die Entwickler mit Xamarin.Essentials nutzen können.
+Die Klasse **UnitConverters** stellt mehrere Einheitenkonverter bereit, die Entwickler mit Xamarin.Essentials nutzen können.
 
 ## <a name="get-started"></a>Erste Schritte
 
@@ -23,7 +26,7 @@ Die Klasse **UnitConverters** in Xamarin.Essentials stellt mehrere Einheitenkonv
 
 ## <a name="using-unit-converters"></a>Verwenden von Einheitenkonvertern
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;

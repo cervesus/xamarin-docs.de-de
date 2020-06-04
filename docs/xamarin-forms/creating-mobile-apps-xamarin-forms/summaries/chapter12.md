@@ -1,24 +1,28 @@
 ---
-title: Zusammenfassung von Kapitel 12. Stile
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 12. Stile'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 408f171a3c7c690b700f7be21a3dcaff503467d9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 12. Styles''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 22f7272751c30bed350fe7aada8d5dacf0acc809
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "65926909"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136785"
 ---
 # <a name="summary-of-chapter-12-styles"></a>Zusammenfassung von Kapitel 12. Stile
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)
 
-In Xamarin.Forms ermöglichen Stile die gemeinsame Nutzung einer Sammlung von Eigenschaftseinstellungen durch mehrere Ansichten. Dadurch wird Markup verringert und die Aufrechterhaltung konsistenter visueller Designs ermöglicht.
+In Xamarin.Forms ermöglichen Stile die gemeinsame Nutzung einer Sammlung mit Eigenschaftseinstellungen durch mehrere Ansichten. Dadurch wird Markup verringert und die Aufrechterhaltung konsistenter visueller Designs ermöglicht.
 
 Stile werden fast immer im Markup definiert und verbraucht. Ein Objekt vom Typ [`Style`](xref:Xamarin.Forms.Style) wird in einem Ressourcenverzeichnis instanziiert und dann mithilfe einer `StaticResource`- oder `DynamicResource`-Markuperweiterung auf die [`Style`](xref:Xamarin.Forms.NavigableElement.Style)-Eigenschaft eines visuellen Elements festgelegt.
 

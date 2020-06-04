@@ -1,31 +1,34 @@
 ---
-title: Anwendungsindizierung und Deep Linking
-description: In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen können.
-ms.prod: xamarin
-ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/28/2018
-ms.openlocfilehash: fcd8333a0623058fceb486183ddb995e85eaf18a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940328"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135732"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Anwendungsindizierung und Deep Linking
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
-_Mit der Anwendungsindizierung können Anwendungen, die andernfalls nach einigem Gebrauch vergessen würden, relevant bleiben, indem sie in den Suchergebnissen angezeigt werden. Mit Deep Linking können Anwendungen auf ein Suchergebnis reagieren, das Anwendungsdaten enthält, in der Regel durch die Navigation zu einer Seite, auf die über einen Deep-Link verwiesen wird. In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen können._
+_Mit der Anwendungsindizierung können Anwendungen, die andernfalls nach einigem Gebrauch vergessen würden, relevant bleiben, indem sie in den Suchergebnissen angezeigt werden. Mit Deep Linking können Anwendungen auf ein Suchergebnis reagieren, das Anwendungsdaten enthält, in der Regel durch die Navigation zu einer Seite, auf die über einen Deep-Link verwiesen wird. In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen._
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
 **Video zu Deep Linking mit Xamarin.Forms und Azure**
 
-Die Funktion „Anwendungsindizierung und Deep Linking“ von Xamarin.Forms stellen eine API für die Veröffentlichung von Metadaten für die Anwendungsindizierung bereit, wenn Benutzer durch Anwendungen navigieren. In der Spotlight-Suche, der Google-Suche oder in einer Websuche kann dann nach indizierten Inhalten gesucht werden. Durch das Tippen auf ein Suchergebnis, das einen Deep-Link enthält, wird ein Ereignis ausgelöst, das von einer Anwendung verarbeitet werden kann und in der Regel zum Navigieren zu der Seite verwendet wird, auf welche der Deep-Link verweist.
+Anwendungsindizierung und Deep Linking von Xamarin.Forms stellen eine API für die Veröffentlichung von Metadaten für die Anwendungsindizierung bereit, wenn Benutzer durch Anwendungen navigieren. In der Spotlight-Suche, der Google-Suche oder in einer Websuche kann dann nach indizierten Inhalten gesucht werden. Durch das Tippen auf ein Suchergebnis, das einen Deep-Link enthält, wird ein Ereignis ausgelöst, das von einer Anwendung verarbeitet werden kann und in der Regel zum Navigieren zu der Seite verwendet wird, auf welche der Deep-Link verweist.
 
 In dieser Beispielanwendung wird eine Anwendung mit Aufgabenlisten (ToDoList) veranschaulicht, bei der die Daten in einer lokalen SQLite-Datenbank gespeichert sind, wie aus den folgenden Screenshots hervorgeht:
 
@@ -36,7 +39,7 @@ Jede vom Benutzer erstellte `TodoItem`-Instanz wird indiziert. Anschließend kan
 Weitere Informationen zur Verwendung einer SQLite-Datenbank finden Sie unter [Lokale Datenbanken von Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).
 
 > [!NOTE]
-> Die Funktion „Anwendungsindizierung und Deep Linking“ von Xamarin.Forms ist nur auf iOS- und Android-Plattformen verfügbar und setzt mindestens iOS 9 bzw. API 23 voraus.
+> Die Funktion für Anwendungsindizierung und Deep Linking von Xamarin.Forms ist nur auf iOS- und Android-Plattformen verfügbar und setzt mindestens iOS 9 bzw. API 23 voraus.
 
 ## <a name="setup"></a>Setup
 
@@ -83,7 +86,7 @@ Wenn die Datei **google-services.json** dem Projekt hinzugefügt wird (und der B
 > [!NOTE]
 > In diesem Artikel werden die Begriffe Anwendungslinks und Deep-Links oft synonym verwendet. Unter Android haben diese Begriffe jedoch jeweils eine andere Bedeutung. Unter Android ist ein Deep-Link ein Intent-Filter, der es Benutzern ermöglicht, eine bestimmte Aktivität in der App direkt einzugeben. Wenn Sie auf einen Deep-Link klicken, wird ggf. ein Dialogfeld mit mehrere Apps zur Auswahl angezeigt, aus der der Benutzer die auswählen kann, die die URL verarbeiten können. Ein Android-App-Link ist ein Deep-Link, der auf Ihrer Website-URL basiert, und dessen Zugehörigkeit zu Ihrer Website überprüft wurde. Wenn Sie auf einen App-Link klicken, wird die App geöffnet, wenn sie installiert ist, ohne dass ein Dialogfeld mit Auswahlmöglichkeiten anzeigt wird.
 
-Weitere Informationen finden Sie unter [Deep Link Content with Xamarin.Forms URL Navigation](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) (Deep Linking von Inhalten mit der URL-Navigation von Xamarin.Forms) im Xamarin-Blog.
+Weitere Informationen finden Sie im Xamarin-Blog unter [Deep Linking von Inhalten mit der URL-Navigation von Xamarin.Forms](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/).
 
 ## <a name="indexing-a-page"></a>Indizierung einer Seite
 
@@ -187,7 +190,7 @@ public class App : Application
 }
 ```
 
-Die [`OnAppLinkRequestReceived`](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri))-Methode überprüft, ob der empfangene `Uri` für die Anwendung bestimmt ist. Erst dann analysiert sie die Seite, zu der mit dem `Uri` navigiert werden soll, und den Parameter, welcher der Seite übergeben werden soll. Es wird eine Instanz der Seite erstellt, zu der navigiert werden soll, und die vom Seitenparameter dargestellte `TodoItem`-Instanz wird abgerufen. [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) wird auf der Seite, zu der navigiert werden soll, auf `TodoItem` gesetzt. So wird sichergestellt, dass bei der Anzeige von `TodoItemPage` mit der [`PushAsync`](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page))-Methode die `TodoItem`-Instanz angezeigt wird, deren `ID` sich im Deep-Link befindet.
+Die [`OnAppLinkRequestReceived`](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri))-Methode überprüft, ob der empfangene `Uri` für die Anwendung bestimmt ist. Erst dann analysiert sie die Seite, zu der mit dem `Uri` navigiert werden soll, und den Parameter, welcher der Seite übergeben werden soll. Es wird eine Instanz der Seite erstellt, zu der navigiert werden soll, und die vom Seitenparameter dargestellte `TodoItem`-Instanz wird abgerufen. [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) wird auf der Seite, zu der navigiert werden soll, auf `TodoItem` gesetzt. So wird sichergestellt, dass bei der Anzeige von `TodoItemPage` mit der [`PushAsync`](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page))-Methode die `TodoItem`-Instanz angezeigt wird, deren `ID`-Element sich im Deep-Link befindet.
 
 ## <a name="making-content-available-for-search-indexing"></a>Bereitstellen von Inhalt für die Suchindizierung
 
@@ -246,7 +249,7 @@ Weitere Informationen zum Handoff finden Sie unter [Handoff in Xamarin.iOS](~/io
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen können. Mit der Anwendungsindizierung können Anwendungen, die andernfalls nach einigem Gebrauch vergessen würden, relevant bleiben, indem sie in den Suchergebnissen angezeigt werden.
+In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen. Mit der Anwendungsindizierung können Anwendungen, die andernfalls nach einigem Gebrauch vergessen würden, relevant bleiben, indem sie in den Suchergebnissen angezeigt werden.
 
 ## <a name="related-links"></a>Verwandte Links
 

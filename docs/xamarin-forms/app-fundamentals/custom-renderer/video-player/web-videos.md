@@ -1,18 +1,21 @@
 ---
-title: Wiedergeben eines Webvideos
-description: In diesem Artikel wird erläutert, wie Webvideos in einer Videoplayeranwendung mithilfe von Xamarin.Forms wiedergegeben werden.
-ms.prod: xamarin
-ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 107b2a970041c70bb021b03dd98f8c91eaea8d34
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: In diesem Artikel wird beschrieben, wie Webvideos in einer Videoplayeranwendung mithilfe von Xamarin.Forms wiedergegeben werden.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b4269b768d6dd9a0eadbbe557f701f8a43b74c99
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771761"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133678"
 ---
 # <a name="playing-a-web-video"></a>Wiedergeben eines Webvideos
 
@@ -54,7 +57,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-Die `Source`-Eigenschaft weist den Typ `VideoSource`, der der abstrakten Xamarin.Forms-Klasse [`ImageSource`](xref:Xamarin.Forms.ImageSource) nachempfunden ist, sowie dessen Derivate [`UriImageSource`](xref:Xamarin.Forms.UriImageSource), [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) und [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) auf. Für `VideoPlayer` ist jedoch keine Streamingoption verfügbar, da iOS und Android die Wiedergabe von Videos aus einem Stream nicht unterstützen.
+Die `Source`-Eigenschaft weist den Typ `VideoSource` auf, der der abstrakten Xamarin.Forms-Klasse [`ImageSource`](xref:Xamarin.Forms.ImageSource) sowie dessen Derivaten [`UriImageSource`](xref:Xamarin.Forms.UriImageSource), [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) und [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) nachempfunden ist. Für `VideoPlayer` ist jedoch keine Streamingoption verfügbar, da iOS und Android die Wiedergabe von Videos aus einem Stream nicht unterstützen.
 
 ## <a name="video-sources"></a>Videoquellen
 
@@ -190,7 +193,7 @@ Jegliche weitere Logik bezüglich Videoquellen wird in den individuellen Rendern
 
 ### <a name="the-ios-video-source"></a>Die iOS-Videoquelle
 
-Zwei Abschnitte von `VideoPlayerRenderer` sind für das Festlegen der Videoquelle des Videoplayers relevant. Wenn Xamarin.Forms zuerst ein Objekt vom Typ `VideoPlayer` erstellt, wird die Methode `OnElementChanged` mit der auf `VideoPlayer` festgelegten Eigenschaft `NewElement` des Objekts des Arguments aufgerufen. Die `OnElementChanged`-Methode ruft `SetSource` auf:
+Zwei Abschnitte von `VideoPlayerRenderer` sind für das Festlegen der Videoquelle des Videoplayers relevant. Wenn Xamarin.Forms zuerst ein Objekt vom Typ `VideoPlayer` erstellt, wird die Methode `OnElementChanged` mit der auf `NewElement` festgelegten Eigenschaft `VideoPlayer` des Objekts des Arguments aufgerufen. Die `OnElementChanged`-Methode ruft `SetSource` auf:
 
 ```csharp
 namespace FormsVideoLibrary.iOS

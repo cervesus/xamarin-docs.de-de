@@ -1,18 +1,21 @@
 ---
-title: Anpassen einer Kartenstecknadel
-description: In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Map-Steuerelement erstellen, der eine native Karte mit einer benutzerdefinierten Stecknadel und einer benutzerdefinierten Ansicht der Stecknadeldaten auf jeder Plattform anzeigt.
-ms.prod: xamarin
-ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 513ba16f0cb74e330cc3b681e0880b685f0c226c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 30fcc8304d32d8ebdef38df8550bcd8c26514701
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532596"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135329"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartenstecknadel
 
@@ -20,7 +23,7 @@ ms.locfileid: "82532596"
 
 _In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Map-Steuerelement erstellen, der eine native Karte mit einer benutzerdefinierten Stecknadel und einer benutzerdefinierten Ansicht der Stecknadeldaten auf jeder Plattform anzeigt._
 
-Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`Map`](xref:Xamarin.Forms.Maps.Map)-Objekts durch eine Xamarin.Forms-Anwendung wird in iOS die `MapRenderer`-Klasse instanziiert, wodurch wiederum ein natives `MKMapView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `MapRenderer`-Klasse ein natives `MapView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `MapRenderer`-Klasse eine native `MapControl`-Klasse. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`Map`](xref:Xamarin.Forms.Maps.Map)-Objekts durch eine Xamarin.Forms-App in iOS wird die `MapRenderer`-Klasse instanziiert, wodurch wiederum ein natives `MKMapView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `MapRenderer`-Klasse ein natives `MapView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `MapRenderer`-Klasse eine native `MapControl`-Klasse. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Rendererbasisklassen und native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`Map`](xref:Xamarin.Forms.Maps.Map)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
@@ -144,7 +147,7 @@ Das Steuerelement `CustomMap` wird von plattformspezifischen Rendererklassen ger
 
 ![](map-pin-images/screenshots.png "CustomMap on each Platform")
 
-Die `MapRenderer`-Klasse stellt die `OnElementChanged`-Methode zur Verfügung, die bei der Erstellung der benutzerdefinierten Xamarin.Forms-Karte aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CustomMap`-Instanz.
+Die `MapRenderer`-Klasse stellt die `OnElementChanged`-Methode zur Verfügung, die bei der Erstellung der benutzerdefinierten Xamarin.Forms-Karte aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CustomMap`-Instanz.
 
 Das native Steuerelement sollte in der überschriebenen Version der `OnElementChanged`-Methode in jeder plattformspezifischen Rendererklasse angepasst werden. Über die `Control`-Eigenschaft können Sie auf einen typisierten Verweis auf das native Steuerelement zugreifen, das auf der Plattform verwendet wird. Zusätzlich kann ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird, über die `Element`-Eigenschaft abgerufen werden.
 
@@ -167,7 +170,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-Das native Steuerelement sollte nur dann konfiguriert und für Ereignishandler abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
+Das native Steuerelement sollte nur dann konfiguriert und Ereignishandler sollten nur dann abonniert werden, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird. Gleichermaßen sollte das Abonnement für Ereignishandler nur dann gekündigt werden, wenn sich das Element ändert, an das der Renderer angefügt wurde. Mit diesem Ansatz kann ein benutzerdefinierter Renderer erstellt werden, der nicht durch Speicherverluste beeinträchtigt wird.
 
 Jede benutzerdefinierte Rendererklasse ist mit einem `ExportRenderer`-Attribut versehen, das den Renderer bei Xamarin.Forms registriert. Das Attribut benötigt zwei Parameter: den Typnamen des zu rendernden benutzerdefinierten Xamarin.Forms-Steuerelements und den Typnamen des benutzerdefinierten Renderers. Das Präfix `assembly` für das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
 
@@ -226,7 +229,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Die `OnElementChanged`-Methode führt die folgende Konfiguration der [`MKMapView`](xref:MapKit.MKMapView)-Instanz durch, wenn der benutzerdefinierte Renderer einem neuen Xamarin.Forms-Element angefügt wurde:
+Mit der `OnElementChanged`-Methode wird die folgende Konfiguration der [`MKMapView`](xref:MapKit.MKMapView)-Instanz vorgenommen, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird:
 
 - Die [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*)-Eigenschaft wird auf die `GetViewForAnnotation`-Methode festgelegt. Diese Methode wird aufgerufen, wenn die [Position der Anmerkung auf der Karte angezeigt wird](#Displaying_the_Annotation). Sie wird dann verwendet, um die Anmerkung anzupassen, bevor sie angezeigt wird.
 - Ereignishandler für die Ereignisse `CalloutAccessoryControlTapped`, `DidSelectAnnotationView` und `DidDeselectAnnotationView` werden registriert. Diese Ereignisse werden ausgelöst, wenn der Benutzer auf das [rechte zusätzliche Element in der Legende tippt](#Tapping_on_the_Right_Callout_Accessory_View) und wenn der Benutzer die Anmerkung [auswählt](#Selecting_the_Annotation) bzw. die [Auswahl aufhebt](#Deselecting_the_Annotation). Das Abonnement der Ereignisse werden nur gekündigt, wenn das Element, dem der Renderer angefügt ist, geändert wird.
@@ -404,7 +407,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Die `OnElementChanged`-Methode ruft die Liste benutzerdefinierter Stecknadeln vom Steuerelement ab, sofern der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt ist. Sobald die `GoogleMap`-Instanz verfügbar ist, wird die `OnMapReady`-Überschreibung aufgerufen. Diese Methode registriert einen Ereignishandler für das `InfoWindowClick`-Ereignis, das ausgelöst wird, wenn [auf das Infofenster geklickt wird](#Clicking_on_the_Info_Window). Das Abonnement für das Ereignis wird nur gekündigt, wenn das Element, dem der Renderer angefügt ist, sich ändert. Die `OnMapReady`-Überschreibung ruft außerdem die `SetInfoWindowAdapter`-Methode auf, um festzulegen, dass die `CustomMapRenderer`-Klasseninstanz die Methoden bereitstellt, die zur Anpassung des Infofensters erforderlich sind.
+Die Xamarin.Forms-Methode ruft die Liste benutzerdefinierter Stecknadeln vom Steuerelement ab, sofern der benutzerdefinierte Renderer an ein neues `OnElementChanged`-Element angefügt wird. Sobald die `GoogleMap`-Instanz verfügbar ist, wird die `OnMapReady`-Überschreibung aufgerufen. Diese Methode registriert einen Ereignishandler für das `InfoWindowClick`-Ereignis, das ausgelöst wird, wenn [auf das Infofenster geklickt wird](#Clicking_on_the_Info_Window). Das Abonnement für das Ereignis wird nur gekündigt, wenn das Element, dem der Renderer angefügt ist, sich ändert. Die `OnMapReady`-Überschreibung ruft außerdem die `SetInfoWindowAdapter`-Methode auf, um festzulegen, dass die `CustomMapRenderer`-Klasseninstanz die Methoden bereitstellt, die zur Anpassung des Infofensters erforderlich sind.
 
 Die `CustomMapRenderer`-Klasse implementiert die `GoogleMap.IInfoWindowAdapter`-Schnittstelle, um [das Infofenster anzupassen](#Customizing_the_Info_Window). Diese Schnittstelle gibt an, dass folgende Methoden implementiert werden müssen:
 
@@ -583,7 +586,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Die `OnElementChanged`-Methode führt die folgenden Vorgänge durch, vorausgesetzt der benutzerdefinierte Renderer wurde an ein neues Xamarin.Forms-Element angefügt:
+Die `OnElementChanged`-Methode führt die folgenden Vorgänge aus, wenn der benutzerdefinierte Renderer an ein neues Xamarin.Forms-Element angefügt wird:
 
 - Dadurch wird die `MapControl.Children`-Collection gelöscht, um alle vorhandenen Benutzeroberflächenelemente von der Karte zu löschen, bevor ein Ereignishandler für das `MapElementClick`-Ereignis registriert wird. Dieses Ereignis wird ausgelöst, wenn der Benutzer auf `MapElement` in `MapControl` tippt oder klickt, und das Abonnement für das Ereignis wird nur gekündigt, wenn das Element, dem der Renderer angefügt ist, sich ändert.
 - Jede Stecknadel in der `customPins`-Collection wird folgendermaßen als der richtige geografische Standort auf der Karte angezeigt:
