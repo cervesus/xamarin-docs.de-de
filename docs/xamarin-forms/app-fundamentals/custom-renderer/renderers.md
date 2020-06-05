@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. In diesem Artikel werden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a56f05f8ff4eb8ece43a9f4f38a669cfdc85c4be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135186"
+title: "Rendererbasisklassen und native Steuerelemente" description: "Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. In diesem Artikel werden die Klassen für Renderer und native Steuerelemente aufgelistet, die Xamarin.Forms-Seiten, -Layouts, -Ansichten und -Zellen implementieren."
+ms.prod: xamarin ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/17/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="renderer-base-classes-and-native-controls"></a>Rendererbasisklassen und native Steuerelemente
 
 _Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt. In diesem Artikel werden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren._
@@ -26,7 +12,10 @@ Mit Ausnahme der `MapRenderer`-Klasse finden Sie die plattformspezifischen Rende
 - **iOS**: Xamarin.Forms.Platform.iOS
 - **Android**: Xamarin.Forms.Platform.Android
 - **Android (AppCompat)** : Xamarin.Forms.Platform.Android.AppCompat
+- **Android (FastRenderers)**  - Xamarin.Forms.Platform.Android.FastRenderers
 - **Universelle Windows-Plattform (UWP)** : Xamarin.Forms.Platform.UWP
+
+Weitere Informationen zu schnellen Renderern finden Sie unter [Xamarin.FormsSchnelle Renderer](~/xamarin-forms/internals/fast-renderers.md).
 
 Die `MapRenderer`-Klasse finden Sie in den folgenden Namespaces:
 
@@ -54,18 +43,18 @@ In der folgenden Tabelle werden die Klassen für Renderer und native Steuereleme
 
 In der folgenden Tabelle werden die Klassen für Renderer und native Steuerelemente aufgelistet, die jeden [Layout](~/xamarin-forms/user-interface/controls/layouts.md)-Typ von Xamarin.Forms implementieren.
 
-|Layout|Renderer|iOS|Android|UWP|
+|Layout|Renderer|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
-|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|Ansicht|FrameworkElement|
-|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|Ansicht|FrameworkElement|
-|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|Ansicht|FrameworkElement|
-|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|Rahmen|
-|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
-|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|Ansicht|FrameworkElement|
-|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|Ansicht|FrameworkElement|
-|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|Ansicht|FrameworkElement|
-|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|Ansicht|FrameworkElement|
-|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|Ansicht|FrameworkElement|
+|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
+|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
+|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
+|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|CardView|Rahmen|
+|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollView|ScrollViewer|
+|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
+|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
+|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
+|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
+|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|Ansicht|Ansicht|FrameworkElement|
 
 ## <a name="views"></a>Ansichten
 
@@ -117,6 +106,7 @@ In der folgenden Tabelle werden die Klassen für Renderer und native Steuereleme
 |[`ImageCell`](xref:Xamarin.Forms.ImageCell)|ImageCellRenderer|UITableViewCell mit UIImage|LinearLayout mit zwei TextViews und einem ImageView|DataTemplate mit einem Raster, das ein Image und zwei TextBlocks enthält|
 |[`ViewCell`](xref:Xamarin.Forms.ViewCell)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|Ansicht|DataTemplate mit ContentPresenter|
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="related-links"></a>Verwandte Links
 
-In diesem Artikel wurden die Klassen für Renderer und native Steuerelemente aufgelistet, die eine Xamarin.Forms-Seite, ein Xamarin.Forms-Layout, eine Xamarin.Forms-Ansicht und eine Xamarin.Forms-Zelle implementieren. Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer für jede Plattform, die eine Instanz eines nativen Steuerelements erstellt.
+- [Xamarin.FormsSchnelle Renderer](~/xamarin-forms/internals/fast-renderers.md)
+- [Xamarin.FormsBenutzerdefinierte Shell-Renderer](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)
