@@ -1,9 +1,6 @@
 ---
-Title: Description: "Platform-Besonderheiten" ermöglicht Ihnen die Nutzung von Funktionen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Version verwenden, die den Xamarin.Forms Legacy Farb Modus deaktiviert.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+Title: "visualelement Legacy Color Mode on Android" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Version verwenden, mit der der Xamarin.Forms Legacy Farb Modus deaktiviert wird. "
+ms. Prod: xamarin ms. assetid: 37d95a2d-74AC-488a-B903-2bdd799eaa5c ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="visualelement-legacy-color-mode-on-android"></a>Visualelement-Legacy Farben Modus unter Android

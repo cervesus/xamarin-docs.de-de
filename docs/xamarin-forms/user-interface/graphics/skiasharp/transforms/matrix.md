@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133301"
+Title: "Matrix Transformationen in skiasharp" Description: "dieser Artikel geht tiefer in skiasharp-Transformationen mit der vielseitigen Transformations Matrix ein und veranschaulicht dies mit Beispielcode."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 9eded6a0-F0BF-4471-A9EF-E0D6C5954AE4 Author: davidbritch ms. Author: dabritch ms. Date: 04/12/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="matrix-transforms-in-skiasharp"></a>Matrix Transformationen in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

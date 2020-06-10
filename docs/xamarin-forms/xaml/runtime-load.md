@@ -1,22 +1,8 @@
 ---
-title: Laden von XAML zur Laufzeit inXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139372"
+Title: "Laden von XAML zur Laufzeit in Xamarin.Forms " Beschreibung: "XAML kann mit den loadfromxaml-Erweiterungs Methoden zur Laufzeit geladen und analysiert werden."
+ms. Prod: xamarin ms. assetid: 25F 73bbf -2dd3-468e-a2d8-0897414f 0F 4a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/12/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="loading-xaml-at-runtime-in-xamarinforms"></a>Laden von XAML zur Laufzeit inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

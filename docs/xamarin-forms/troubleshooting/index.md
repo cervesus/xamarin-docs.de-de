@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135914"
+Title: "Problembehandlung" Beschreibung: "häufige Fehlerbedingungen und deren Behebung" MS. Topic: Problembehandlung ms. Prod: xamarin ms. assetid: 63291951-7375-4cbf-bcc3-2e4ad157a2c8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="troubleshooting"></a>Problembehandlung
 
 _Häufige Fehlerbedingungen und deren Behebung_

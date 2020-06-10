@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMedia Element
-description: In diesem Artikel wird erläutert, wie Media Element verwendet wird, um Videos und Audiodaten in einer-Anwendung wiederzugeben Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1dfa51177bba3ebf1e3e29208cc926c77567a048
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134237"
+Title: " Xamarin.Forms Media Element" Description: "in diesem Artikel wird erläutert, wie Sie mit Media Element Videos und Audiodaten in einer- Xamarin.Forms Anwendung abspielen."
+ms. Prod: xamarin ms. assetid: e65f1e56-a80d-46c7-9ff4-7ae6650a3165 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/18/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMedia Element
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -542,7 +528,7 @@ Weitere Informationen zur Verwendung von " [`Slider`](xref:Xamarin.Forms.Slider)
 
 - [Mediaelementdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 - [URI-Schemas](/windows/uwp/app-resources/uri-schemes)
-- [Xamarin.FormsAuslöst](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.FormsKeits](~/xamarin-forms/user-interface/slider.md)
 - [Android: Unterstützte Medienformate](https://developer.android.com/guide/topics/media/media-formats)
 - [UWP: unterstützte Codecs](/windows/uwp/audio-video-camera/supported-codecs)

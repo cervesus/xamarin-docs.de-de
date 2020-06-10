@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139853"
+Title: "Teil 4. Grundlagen der Datenbindung "Beschreibung:" Daten Bindungen erlauben, dass Eigenschaften von zwei Objekten verknüpft werden, sodass eine Änderung in einer Änderung eine Änderung in der anderen bewirkt. "
+ms. Prod: xamarin ms. Technology: xamarin-Forms ms. assetid: 342288c3-BB4C-4924-B178-72e112d777ba Author: davidbritch ms. Author: dabritch ms. Date: 10/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="part-4-data-binding-basics"></a>Teil 4. Grundlagen der Datenbindung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

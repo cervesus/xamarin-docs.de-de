@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDataPages
-description: In diesem Artikel Xamarin.Forms werden DataPages vorgestellt, die eine API bereitstellen, mit der eine Datenquelle schnell und einfach an vorgefertigte Sichten gebunden werden kann.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134315"
+Title: " Xamarin.Forms DataPages" Description: "in diesem Artikel Xamarin.Forms werden DataPages vorgestellt, die eine API bereitstellen, mit der eine Datenquelle schnell und einfach an vorgefertigte Sichten gebunden werden kann."
+ms. Prod: xamarin ms. assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/01/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -38,7 +24,7 @@ Mithilfe von Datenquellen und den zugehörigen Datenseiten können Entwickler sc
 
 DataPages werden zu einer-Anwendung hinzugefügt, indem das hinzugefügt wird Xamarin.Forms ** Xamarin.Forms . **Das nuget-Paket für Seiten.
 
-### <a name="data-sources"></a>Datenquellen
+### <a name="data-sources"></a>Projektmappen-Explorer
 
 Die Vorschau bietet einige vorgefertigte Datenquellen, die für die Verwendung zur Verfügung stehen:
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136421"
+Title: " Xamarin.Forms Allgemeine Steuerungseigenschaften, Methoden und Ereignisse" Beschreibung: "in diesem Artikel werden allgemeine Eigenschaften, Methoden und Ereignisse beschrieben, die für die visualelement-Klasse definiert sind und häufig in abgeleiteten Klassen verwendet werden."
+ms. Prod: xamarin ms. assetid: 85a0ccf5-c1d8-40bb-927f-a4d944e5534d ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 08/21/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
 
 Die- Xamarin.Forms `VisualElement` Klasse ist die Basisklasse für die meisten Steuerelemente, die in einer-Anwendung verwendet werden Xamarin.Forms . Die- `VisualElement` Klasse definiert viele [Eigenschaften](#properties), [Methoden](#methods)und [Ereignisse](#events) , die in abgeleiteten Klassen verwendet werden.
@@ -67,7 +53,7 @@ Die- `InputTransparent` Eigenschaft ist eine `bool` , die bestimmt, ob das Steue
 
 ### [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)
 
-Die- `IsEnabled` Eigenschaft ist ein `bool` Wert, der bestimmt, ob das Steuerelement auf Benutzereingaben reagiert. Standardwert: `true`. Wenn diese Eigenschaft auf false festgelegt wird, wird verhindert, dass das Steuerelement Benutzereingaben akzeptiert.
+Die- `IsEnabled` Eigenschaft ist ein `bool` Wert, der bestimmt, ob das Steuerelement auf Benutzereingaben reagiert. Der Standardwert ist `true`. Wenn diese Eigenschaft auf false festgelegt wird, wird verhindert, dass das Steuerelement Benutzereingaben akzeptiert.
 
 ### [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)
 
@@ -213,7 +199,7 @@ public void Unfocus ()
 
 Das-Element muss bereits den Fokus haben, damit diese Methode funktioniert.
 
-## <a name="events"></a>Events
+## <a name="events"></a>Ereignisse
 
 Die folgenden Ereignisse sind für die- `VisualElement` Klasse verfügbar. Eine umfassende Liste finden Sie unter [ Xamarin.Forms visualelement-Ereignisse](xref:Xamarin.Forms.VisualElement#events).
 

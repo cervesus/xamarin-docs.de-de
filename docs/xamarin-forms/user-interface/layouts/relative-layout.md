@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsRelativeLayout
-description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms relativelayout-Klasse verwenden, um Benutzeroberflächen zu erstellen, die an jede Bildschirmgröße angepasst werden können.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127191"
+Title: " Xamarin.Forms relativelayout" Description: "in diesem Artikel wird erläutert, wie die Xamarin.Forms relativelayout-Klasse verwendet wird, um Benutzeroberflächen zu erstellen, die an jede Bildschirmgröße angepasst werden können."
+ms. Prod: xamarin ms. assetid: 2530bcb8-01b8-4c4b-BF 14-ca53659f 1B5A ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 11/25/2015 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -43,7 +29,7 @@ Positionierung und Größe einer Ansicht in einem werden `RelativeLayout` mit Ei
 - **Konstante** &ndash; der Wert, der als Offset des Werts verwendet werden soll.
 - **ElementName** &ndash; der Name der Ansicht, zu der die Einschränkung relativ ist.
 
-In XAML werden Einschränkungen als s ausgedrückt `ConstraintExpression` . Betrachten Sie das folgende Beispiel:
+In XAML werden Einschränkungen als s ausgedrückt `ConstraintExpression` . Betrachten Sie das folgenden Beispiel:
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"

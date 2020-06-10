@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139684"
+Title: "die trennbaren Blend-Modi" Description: "verwenden Sie die trennbaren Blend-Modi, um die Farben rot, grün und blau zu ändern."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 66d1a537-A247-484e-b5b9-fbcb7838fbe9 Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-separable-blend-modes"></a>Die trennbaren Blend-Modi
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -151,45 +137,20 @@ Die roten, grünen und blauen Komponenten werden einzeln behandelt, weshalb dies
 In der folgenden Tabelle werden alle trennbaren Blend-Modi mit kurzen Erläuterungen dazu angezeigt, was Sie tun. Die zweite Spalte zeigt die Quellfarbe, die keine Änderung erzeugt:
 
 | Blend-Modus   | Keine Änderung | Vorgang |
-| ---
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | | `Plus`       | Schwarz | Lighdutzende durch Hinzufügen von Farben: SC + DC | | `Modulate`   | Weiß | Darkens durch Multiplikation von Farben: SC DC | | `Screen`     | Schwarz | Ergänzt das Produkt von Ergänzungen: SC + DC &ndash; SC DC | | `Overlay`    | Grau | Inversen von `HardLight` | | `Darken`     | Weiß | Minimum der Farben: min (SC, DC) | | `Lighten`    | Schwarz | Maximum von Farben: Max (SC, DC) | | `ColorDodge` | Schwarz | Ziel basierend auf Quelle aufhellt | | `ColorBurn`  | Weiß | Darkens des Ziels basierend auf der Quelle | | `HardLight`  | Grau | Vergleichbar mit der Auswirkung von hartem Spotlight | | `SoftLight`  | Grau | Vergleichbar mit der Auswirkung von Soft Spotlight | | `Difference` | Schwarz | Subtrahiert den dunkleren von dem helleren: ABS (DC &ndash; SC) | | `Exclusion`  | Schwarz | Vergleichbar mit, `Difference` aber niedrigerer Kontrast | | `Multiply`   | Weiß | Darkens durch Multiplikation von Farben: SC DC |
+| ------------ | --------- | --------- |
+| `Plus`       | Schwarz     | Lighdutzende durch Hinzufügen von Farben: SC + DC |
+| `Modulate`   | White     | Darkens durch Multiplikation von Farben: SC DC | 
+| `Screen`     | Schwarz     | Ergänzt das Produkt von Ergänzungen: SC + DC &ndash; SC DC |
+| `Overlay`    | Grau      | Inversen von`HardLight` |
+| `Darken`     | White     | Minimum der Farben: min (SC, DC) |
+| `Lighten`    | Schwarz     | Maximum von Farben: Max (SC, DC) |
+| `ColorDodge` | Schwarz     | Ziel basierend auf Quelle aufhellt |
+| `ColorBurn`  | White     | Darkens des Ziels basierend auf der Quelle | 
+| `HardLight`  | Grau      | Vergleichbar mit der Auswirkung von hartem Spotlight |
+| `SoftLight`  | Grau      | Vergleichbar mit der Auswirkung von Soft Spotlight | 
+| `Difference` | Schwarz     | Subtrahiert den dunkleren von dem helleren: ABS (DC &ndash; SC) | 
+| `Exclusion`  | Schwarz     | Vergleichbar mit, `Difference` aber niedrigerer Kontrast |
+| `Multiply`   | White     | Darkens durch Multiplikation von Farben: SC DC |
 
 Ausführlichere Algorithmen finden Sie in der Spezifikation der W3C-Zusammensetzung [**und-Blending der Ebene 1**](https://www.w3.org/TR/compositing-1/) und der Skia- [**skblendmode-Referenz**](https://skia.org/user/api/SkBlendMode_Reference), obwohl die Notation in diesen beiden Quellen nicht identisch ist. Beachten Sie, dass in `Plus` der Regel als Porter-Duff-Blend-Modus angesehen wird und `Modulate` nicht Teil der W3C-Spezifikation ist.
 

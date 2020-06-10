@@ -1,22 +1,8 @@
 ---
-title: Erstellen eines Xamarin.Forms visuellen Renderers
-description: Erstellen Xamarin.Forms Sie Visualisierungen, die selektiv auf visualelement-Objekte angewendet werden, ohne dass untergeordnete Sichten vorhanden sein müssen Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127139"
+Title: "Erstellen eines Xamarin.Forms visuellen Renderers" Description: "erstellen Sie Xamarin.Forms Visualisierungen, die selektiv auf visualelement-Objekte angewendet werden sollen, ohne dass untergeordnete Sichten vorhanden sein müssen Xamarin.Forms ."
+ms. Prod: xamarin ms. assetid: 80bf 9c72-ac28-4aaf-9ddd-b60cbdd1cd59 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/12/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="create-a-xamarinforms-visual-renderer"></a>Erstellen eines Xamarin.Forms visuellen Renderers
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
@@ -176,5 +162,5 @@ Der `IVisual` Typ kann dann über den registrierten Namen genutzt werden:
 ## <a name="related-links"></a>Verwandte Links
 
 - [Visuelles Material (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
-- [Xamarin.FormsMaterial Visualisierung](material-visual.md)
+- [Xamarin.Forms Material Visual](material-visual.md)
 - [Benutzerdefinierte Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

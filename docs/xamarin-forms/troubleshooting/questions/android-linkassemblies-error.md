@@ -1,22 +1,7 @@
 ---
-title: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9c0403203345ed78fae9f30c623c3e501f24ea0e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135901"
+Title: "Android-Buildfehler – unerwarteter Fehler bei der linkassemblyaufgabe" MS. Topic: Problembehandlung bei MS. Prod: xamarin ms. assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/07/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android-Buildfehler – unerwarteter Fehler der linkassemblyaufgabe
 
 Möglicherweise wird eine Fehlermeldung angezeigt `The "LinkAssemblies" task failed unexpectedly` , wenn Sie ein xamarin. Android-Projekt mit Formularen verwenden. Dies geschieht, wenn der Linker aktiv ist (in der Regel auf einem *Releasebuild* , um die Größe des App-Pakets zu verringern). Dies liegt daran, dass die Android-Ziele nicht auf das neueste Framework aktualisiert werden. (Weitere Informationen: [ Xamarin.Forms Unterstützte Plattformen](~/get-started/supported-platforms.md#android-platform-support))

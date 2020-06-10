@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsAktuerfrischendes Ansicht
-description: Die Xamarin.Forms Aktualisierungs Ansicht ist ein Container Steuerelement, das Pull zur Aktualisierungs Funktionalität für scrollbaren Inhalt bereitstellt.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127594"
+Title: "Refresh Xamarin.Forms View" Description: "Refresh View Xamarin.Forms ist ein Container Steuerelement, das Pull zum Aktualisieren von Bild lauffähigen Inhalten bereitstellt."
+ms. Prod: xamarin ms. assetid: 58dbd23b-adb9-40DA-B331-4ddb6e698990 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/19/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-refreshview"></a>Xamarin.FormsAktuerfrischendes Ansicht
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)

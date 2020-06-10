@@ -1,9 +1,6 @@
 ---
-Title: Beschreibung: "in diesem Artikel wird die Unterstützung der Windows-Plattform erläutert, die in verfügbar ist Xamarin.Forms ."
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+Title: "Windows-Platt Form Features" Beschreibung: "in diesem Artikel wird die Unterstützung der Windows-Plattform erläutert, die in verfügbar ist Xamarin.Forms ."
+ms. Prod: xamarin ms. assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/16/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="windows-platform-features"></a>Features der Windows-Plattform

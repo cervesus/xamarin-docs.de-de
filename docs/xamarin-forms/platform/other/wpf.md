@@ -1,23 +1,7 @@
 ---
-title: ''
-description: Xamarin.Formsbietet jetzt eine Vorschau Unterstützung für die WPF-Plattform.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bbb9ea950c9f1daa1b5ee4762527d689f3cdd483
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139528"
+Title: "WPF Platform Setup" Description: " Xamarin.Forms now has Preview Support for the WPF Platform" MS. Prod: xamarin ms. assetid: 650723f2-4279-4b7b-b0a1-d7f8ff26bf1e ms. Technology: xamarin-Forms ms. Custom: xamu-Video Author: davidbritch ms. Author: dabritch ms. Date: 04/09/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="wpf-platform-setup"></a>Einrichten der WPF-Plattform
 
 ![Vorschau](~/media/shared/preview.png)

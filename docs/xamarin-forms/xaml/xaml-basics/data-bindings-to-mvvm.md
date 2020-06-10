@@ -1,23 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.custom: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127529"
+Title: "Teil 5. Von Daten Bindungen zu MVVM "Description:" das MVVM-Muster erzwingt eine Trennung zwischen drei Software Ebenen – der XAML-Benutzeroberfläche, die als Ansicht bezeichnet wird. die zugrunde liegenden Daten, die als Modell bezeichnet werden. und ein Vermittler zwischen der Ansicht und dem Modell, die als ViewModel bezeichnet wird. "
+ms. Prod: xamarin ms. Custom: Video ms. assetid: 48b37d44-4b383b2-9a5e-6d041b b A5E d b b ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/25/2017 No-loc Xamarin.Forms : [ Xamarin.Essentials
 ---
+
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Von Datenbindungen zu MVVM
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

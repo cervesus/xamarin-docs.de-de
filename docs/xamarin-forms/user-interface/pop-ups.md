@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Xamarin.Formsbietet drei Popup ähnliche Benutzeroberflächen Elemente – eine Warnung, ein Aktions Blatt und eine Eingabeaufforderung. In diesem Artikel wird die Verwendung von Warnungen, Aktions Blättern und Eingabe Aufforderungs-APIs zum Anzeigen von Dialogfeldern veranschaulicht, die Benutzer zu einfachen Fragen auffordern, Benutzer durch Aufgaben leiten und Eingabe Aufforderungen anzeigen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a7ddd9134b7214b84a883e171d7b0cadaba3390b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136317"
+Title: "Popups anzeigen" Beschreibung: " Xamarin.Forms stellt drei Popup ähnliche Benutzeroberflächen Elemente bereit – eine Warnung, ein Aktions Blatt und eine Eingabeaufforderung. In diesem Artikel wird die Verwendung von Warnungen, Aktions Blättern und Eingabe Aufforderungs-APIs zum Anzeigen von Dialogfeldern veranschaulicht, die Benutzer zu einfachen Fragen auffordern, Benutzer durch Aufgaben leiten und Eingabe Aufforderungen anzeigen. "
+ms. Prod: xamarin ms. assetid: 46ab0d5e-0025-4a8a-9d00-3e66c3d0ba2e ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="display-pop-ups"></a>Popup anzeigen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

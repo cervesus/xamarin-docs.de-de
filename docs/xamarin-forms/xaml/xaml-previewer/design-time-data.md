@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127358"
+Title: "Verwenden von Entwurfszeit Daten mit der XAML-Vorschau" Beschreibung: "in diesem Artikel wird erläutert, wie Entwurfszeit Daten verwendet werden, um datenintensive Layouts in der XAML-Vorschau anzuzeigen, ohne Ihre APP ausführen zu müssen."
+ms. Prod: xamarin ms. assetid: 0F 608019-5951-4be6-80e0-9eee1733d642 ms. Technology: xamarin-Forms Author: maddyleger1 ms. Author: maleger ms. Date: 03/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
 
 _Einige Layouts sind schwierig zu visualisieren, ohne dass Daten vorliegen. Verwenden Sie diese Tipps, um die Vorschau der datenintensiven Seiten im XAML-Previewer optimal zu nutzen._
@@ -138,7 +124,7 @@ Wenn Sie keine Entwurfszeit Daten zu einzelnen Steuerelementen hinzufügen möch
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Entwurfszeit Daten erfordern mindestens eine Version von Xamarin.Forms 3,6.
 

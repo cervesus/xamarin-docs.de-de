@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMarkieren
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136473"
+Title: " Xamarin.Forms CheckBox" Description: "das Xamarin.Forms Kontrollkästchen ist ein Typ von Schaltfläche, der entweder aktiviert oder leer sein kann. Wenn ein Kontrollkästchen aktiviert ist, gilt es als aktiviert. Wenn ein Kontrollkästchen leer ist, wird es als deaktiviert angesehen. "
+ms. Prod: xamarin ms. assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/11/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-checkbox"></a>Xamarin.FormsMarkieren
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
@@ -161,10 +147,10 @@ Das folgende XAML-Beispiel zeigt, wie Sie einen visuellen Zustand für den `IsCh
 
 In diesem Beispiel gibt das an, dass die-Eigenschaft bei aktivierter- `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) `CheckBox` `Color` Eigenschaft auf grün festgelegt wird. Der `Normal` `VisualState` gibt an, dass die- `CheckBox` `Color` Eigenschaft auf "rot" festgelegt wird, wenn sich der in einem normalen Zustand befindet. Der Gesamteffekt besteht daher darin, dass das `CheckBox` rot ist, wenn es leer ist, und grün, wenn es aktiviert ist.
 
-Weitere Informationen zu visuellen Zuständen finden Sie unter [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+Weitere Informationen zu visuellen Zuständen finden Sie unter [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [CheckBox-Demos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
-- [Xamarin.FormsAuslöst](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.FormsVisual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 207b16f062a5c2137ac5fc3c21775d2486fda57d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135862"
+Title: "die Schiefe Transformation" Beschreibung: "in diesem Artikel wird erläutert, wie die Schiefe Transformation in skiasharp gekippte grafische Objekte erstellen kann, und veranschaulicht dies mit Beispielcode."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616 Author: davidbritch ms. Author: dabritch ms. Date: 03/20/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-skew-transform"></a>Die Scherungstransformation
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

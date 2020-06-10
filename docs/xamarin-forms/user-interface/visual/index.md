@@ -1,25 +1,11 @@
 ---
-title: Xamarin.FormsStörungen
-description: Xamarin.FormsVisual ermöglicht, dass Renderer selektiv auf visualelement-Objekte angewendet werden können, ohne dass untergeordnete Sichten vorhanden sein müssen Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5c0afcaa75029288d527fac2a2b21bcd614fd4dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127126"
+Title: " Xamarin.Forms Visual" Description: " Xamarin.Forms Visual ermöglicht das selektive Anwenden von Renderer auf visualelement-Objekte, ohne dass untergeordnete Sichten vorhanden sein müssen Xamarin.Forms ."
+ms. Prod: xamarin ms. assetid: 69228a9c-39c4-46AE-a803-c38eed6f b965 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/05/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-visual"></a>Xamarin.FormsStörungen
 
-## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.FormsMaterial Visualisierung](material-visual.md)
+## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms Material Visual](material-visual.md)
 
 Xamarin.FormsDas visuelle Material kann verwendet werden, um Anwendungen zu erstellen, Xamarin.Forms die in IOS und Android identisch oder größtenteils identisch aussehen.
 

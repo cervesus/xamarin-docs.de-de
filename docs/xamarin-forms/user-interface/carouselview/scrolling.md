@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselview-Bildlauf
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136494"
+Title: " Xamarin.Forms carouselview Scroll" Description: "Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Scrollvorgangs gesteuert werden, sodass Elemente vollständig angezeigt werden. Außerdem definiert carouselview zwei ScrollTo-Methoden, die Elemente Programm gesteuert in die Ansicht scrollen. "
+ms. Prod: xamarin ms. assetid: 92 d7b618-07fa-4343-9d0f -212525e92c39 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/28/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselview-Bildlauf
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -27,7 +13,7 @@ ms.locfileid: "84136494"
 
 - `HorizontalScrollBarVisibility`vom Typ `ScrollBarVisibility` , der angibt, wann die horizontale Schiebe Leiste sichtbar ist.
 - `IsDragging`vom Typ `bool` , der angibt, ob der Bildlauf durch `CarouselView` führt. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert ist `false` .
-- `IsScrollAnimated`vom Typ `bool` , der angibt, ob beim Scrollen von eine Animation ausgeführt wird `CarouselView` . Standardwert: `true`.
+- `IsScrollAnimated`vom Typ `bool` , der angibt, ob beim Scrollen von eine Animation ausgeführt wird `CarouselView` . Der Standardwert ist `true`.
 - `ItemsUpdatingScrollMode`vom Typ `ItemsUpdatingScrollMode` , der das Scrollverhalten von darstellt, `CarouselView` Wenn diesem neue Elemente hinzugefügt werden.
 - `VerticalScrollBarVisibility`vom Typ `ScrollBarVisibility` , der angibt, wann die vertikale Schiebe Leiste sichtbar ist.
 

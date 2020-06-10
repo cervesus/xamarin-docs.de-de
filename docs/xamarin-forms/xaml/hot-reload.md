@@ -1,9 +1,6 @@
 ---
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+Title: "XAML Hot Upload for Xamarin.Forms " Description: "die Änderungen an der XAML-Datei werden sofort in der laufenden Anwendung neu geladen, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen."
+ms. Prod: xamarin ms. assetid: E220F054-32EE-424C-A7E5-6156BE271519 ms. Technology: xamarin-Forms Author: maddyleger1 ms. Author: maleger ms. Date: 03/14/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xaml-hot-reload-for-xamarinforms"></a>XAML-Hot-Upload fürXamarin.Forms
@@ -18,54 +15,10 @@ XAML Hot Upload wird in Ihren vorhandenen Workflow integriert, um Ihre Produktiv
 ## <a name="system-requirements"></a>Systemanforderungen
 
 | IDE/Framework | Erforderliche Version |
-|---
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---Titel: "XAML Hot Reload for Xamarin.Forms ' Description: ' lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen."
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: "XAML Hot Upload for Xamarin.Forms ' Description:" lädt die Änderungen an der XAML-Datei umgehend in der laufenden Anwendung neu, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----------| | Visual Studio 2019 | 16,4 oder höher Visual Studio 2019 für Mac | 8,4 oder höher Xamarin.Forms | 4,1 oder höher
+|------|------------------|
+|Visual Studio 2019 | 16,4 oder höher
+Visual Studio 2019 für Mac | 8,4 oder höher
+Xamarin.Forms | 4,1 oder höher
 
 ## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>XAML-Hot-Upload aktivieren fürXamarin.Forms
 

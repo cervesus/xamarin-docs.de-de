@@ -1,9 +1,6 @@
 ---
-Title: " Xamarin.Forms map Initialization and Configuration" Description: "The Xamarin.Forms . Das Karten-nuget-Paket ist erforderlich, um Maps-Funktionen in einer Anwendung zu verwenden. Außerdem müssen für den Zugriff auf den Speicherort des Benutzers Standort Berechtigungen für die Anwendung erteilt worden sein.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+Title: " Xamarin.Forms map Initialization and Configuration" Description: "The Xamarin.Forms . Das Karten-nuget-Paket ist erforderlich, um Maps-Funktionen in einer Anwendung zu verwenden. Außerdem müssen für den Zugriff auf den Speicherort des Benutzers Standort Berechtigungen für die Anwendung erteilt worden sein. "
+ms. Prod: xamarin ms. assetid: 59cd1344-8248-406c-9144-0c8a67141e5b ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/07/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.FormsZuordnungs Initialisierung und-Konfiguration
@@ -87,13 +84,13 @@ Der Konfigurations Vorgang zum Anzeigen und interagieren mit einer Karte unter A
 1. optionale Geben Sie die Speicherort Berechtigungen im Manifest an.
 1. optionale Berechtigungen für Lauf Zeit Speicherort in der- `MainActivity` Klasse anfordern.
 
-Ein Beispiel für eine ordnungsgemäß konfigurierte Manifest-Datei finden Sie unter " [androidmanifest. XML](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) " aus der Beispielanwendung.
+Ein Beispiel für eine ordnungsgemäß konfigurierte Manifest-Datei finden Sie unter [AndroidManifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) aus der Beispielanwendung.
 
 #### <a name="get-a-google-maps-api-key"></a>Einen Google Maps-API-Schlüssel erhalten
 
 Um die [Google Maps-API](https://developers.google.com/maps/documentation/android/) unter Android verwenden zu können, müssen Sie einen API-Schlüssel generieren. Befolgen Sie hierzu die Anweisungen unter Abrufen [eines Google Maps-API-Schlüssels](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-Nachdem Sie einen API-Schlüssel abgerufen haben, muss er innerhalb des `<application>` -Elements der Datei " **Properties/androidmanifest. XML** " hinzugefügt werden:
+Nachdem Sie einen API-Schlüssel abgerufen haben, muss er im `<application>` -Element der **Properties/#b0-** Datei hinzugefügt werden:
 
 ```xml
 <application ...>
@@ -110,7 +107,7 @@ Damit Ihr APK auf Google Maps zugreifen kann, müssen Sie SHA-1-Fingerabdrücke 
 
 #### <a name="specify-the-google-play-services-version-number"></a>Angeben der Google Play Services-Versionsnummer
 
-Fügen Sie die folgende Deklaration im- `<application>` Element von " **androidmanifest. XML**" hinzu:
+Fügen Sie die folgende Deklaration im- `<application>` Element von **AndroidManifest.xml**hinzu:
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -120,7 +117,7 @@ Dadurch wird die Version von Google Play Diensten, mit denen die Anwendung kompi
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Angeben der Anforderung für die Apache HTTP-Legacy Bibliothek
 
-Wenn Ihre Xamarin.Forms Anwendung auf API 28 oder höher ausgerichtet ist, müssen Sie die folgende Deklaration im- `<application>` Element von " **androidmanifest. XML**" hinzufügen:
+Wenn Ihre Xamarin.Forms Anwendung auf API 28 oder höher ausgerichtet ist, müssen Sie die folgende Deklaration im- `<application>` Element von **AndroidManifest.xml**hinzufügen:
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    

@@ -1,22 +1,8 @@
 ---
-title: Anmelden mit Apple inXamarin.Forms
-description: Die Anmeldung mit Apple bietet Identitätsschutz für Benutzer und kann für plattformübergreifende Mobile Szenarien in implementiert werden Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 84c7fdef5d12dfe6fca6294b3125e90761349002
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139450"
+Title: "Anmelden mit Apple in Xamarin.Forms " Beschreibung: "mit Apple anmelden" bietet Identitätsschutz für Benutzer und kann für plattformübergreifende Mobile Szenarien in implementiert werden Xamarin.Forms .
+ms. Prod: xamarin ms. assetid: 414465f 8-0cc8-4078-b3d1-f 36983069658 ms. Technology: xamarin-Forms Author: davidortinau ms. Author: daortin ms. Date: 09/10/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="sign-in-with-apple-in-xamarinforms"></a>Anmelden mit Apple inXamarin.Forms
 
 Bei der Anmeldung mit Apple wird ein neuer Dienst eingeführt, der Identitätsschutz für Benutzer bereitstellt. Ab IOS 13 erfordert Apple, dass apps, die Authentifizierungs Anbieter von Drittanbietern verwenden, auch eine Anmeldung mit Apple anbieten. Weitere Informationen zur Verwendung dieser Funktion mit xamarin. IOS finden [Sie hier](~/ios/platform/ios13/sign-in.md).

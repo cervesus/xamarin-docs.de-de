@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Der Gesichtserkennungs-API nimmt einen Gesichtsausdruck in einem Bild als Eingabe an und gibt Daten zurück, die Vertrauens Ebenen für eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit dem Gesichtserkennungs-API Emotionen erkennen, um eine-Anwendung zu bewerten Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136057"
+Title: "wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API" Beschreibung: "der Gesichtserkennungs-API verwendet einen Gesichtsausdruck in einem Bild als Eingabe und gibt Daten zurück, die Vertrauens Ebenen für eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit dem Gesichtserkennungs-API Emotionen erkennen, um eine-Anwendung zu bewerten Xamarin.Forms .
+ms. Prod: xamarin ms. assetid: 19d36a7c-e8d8-43d1-be80-48de6c02879a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
@@ -54,8 +40,8 @@ Wenn ein gültiger API-Schlüssel nicht an die Gesichtserkennungs-API übergeben
 
 Die Emotions Erkennung wird durchgeführt, indem eine Post-Anforderung mit einem Bild an die `detect` API unter gesendet `https://[location].api.cognitive.microsoft.com/face/v1.0` wird, wobei `[location]]` die Region ist, die Sie zum Abrufen ihres API-Schlüssels verwendet haben. Die optionalen Anforderungs Parameter lauten wie folgt:
 
-- `returnFaceId`– Gibt an, ob fakeids der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `true`.
-- `returnFaceLandmarks`– Gibt an, ob Gesichtspunkte der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `false`.
+- `returnFaceId`– Gibt an, ob fakeids der erkannten Gesichter zurückgegeben werden sollen. Der Standardwert ist `true`.
+- `returnFaceLandmarks`– Gibt an, ob Gesichtspunkte der erkannten Gesichter zurückgegeben werden sollen. Der Standardwert ist `false`.
 - `returnFaceAttributes`– Gibt an, ob ein oder mehrere angegebene Gesichts Attribute analysiert und zurückgegeben werden sollen. Zu den unterstützten Gesichts Attributen zählen `age` , `gender` , `headPose` , `smile` , `facialHair` , `glasses` , `emotion` , `hair` , `makeup` , `occlusion` , `accessories` , `blur` , `exposure` und `noise` . Beachten Sie, dass die Gesichts Attribut Analyse zusätzliche Berechnungs-und Zeit Kosten hat.
 
 Bildinhalte müssen im Text der Post-Anforderung als URL oder Binärdaten abgelegt werden.

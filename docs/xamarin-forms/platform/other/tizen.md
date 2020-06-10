@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 873e243be3b90023ac8f58c2a29df89806b22658
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139515"
+Title: "tizen .net" Description: "tizen .NET ermöglicht Ihnen die Entwicklung von Anwendungen für das tizen-Betriebssystem, das auf Samsung-Geräten ausgeführt wird, einschließlich Fernsehgeräten, Wearables, mobilen Geräten und anderen IOT-Geräten."
+ms. Prod: xamarin ms. assetid: 5a22a354-a4dd-480d-a1bb-6d0c38592e55 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/26/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="tizen-net"></a>Tizen .net
 
 _Mit tizen .net können Sie tizen-Anwendungen entwickeln, die auf Samsung-Geräten ausgeführt werden, einschließlich Fernsehgeräten, Wearables, mobilen Geräten und anderen IOT-Geräten._

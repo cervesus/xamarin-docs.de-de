@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Der Artikel erläutert, wie Xamarin.Forms XAML-Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu erweitern, indem Element Attribute aus anderen Quellen als Literalzeichenfolgen festgelegt werden können.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 568cffc335f28b1a47f3278ad061d851ebef84b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130389"
+Title: "XAML-Markup Erweiterungen" Description: "der Artikel erläutert, wie Xamarin.Forms XAML-Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu erweitern, indem Element Attribute aus anderen Quellen als Literalzeichenfolgen festgelegt werden können."
+ms. Prod: xamarin ms. assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/05/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-markup-extensions"></a>XAML-Markuperweiterungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -63,6 +49,6 @@ Schreiben Sie Ihre eigenen benutzerdefinierten XAML-Markup Erweiterungen.
 
 - [Markup Erweiterungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Kapitel zu XAML-Markup Erweiterungen aus Xamarin.Forms Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)

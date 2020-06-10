@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136408"
+Title: "skiasharp Mask Filters" Description: "erfahren Sie, wie Sie den maskenfilter zum Erstellen von verwischt und anderen Alpha Effekten verwenden."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 940422a1-8bc0-4039-8ad7-26c61320f858 Author: davidbritch ms. Author: dabritch ms. Date: 08/27/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-mask-filters"></a>Skiasharp-maskenfilter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

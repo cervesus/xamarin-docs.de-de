@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsStänder
-description: Der Xamarin.Forms Stepper ermöglicht einem Benutzer, einen numerischen Wert aus einem Wertebereich auszuwählen. Er besteht aus zwei Schaltflächen mit minus-und Pluszeichen. Beim Bearbeiten der beiden Schaltflächen wird der ausgewählte Wert inkrementell geändert.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4f071530fb17de44d8ede786ca1b42f5e11f4f7c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130545"
+Title: " Xamarin.Forms Stepper" Description: "der Xamarin.Forms Stepper ermöglicht einem Benutzer, einen numerischen Wert aus einem Wertebereich auszuwählen. Er besteht aus zwei Schaltflächen mit minus-und Pluszeichen. Durch die Bearbeitung der beiden Schaltflächen wird der ausgewählte Wert inkrementell geändert. "
+ms. Prod: xamarin ms. assetid: 62571b3e-D84 b-4f 52-9fc7-c105d6733b16 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/17/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-stepper"></a>Xamarin.FormsStänder
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)

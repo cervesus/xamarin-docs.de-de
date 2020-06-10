@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135719"
+Title: "Authentifizieren eines Rest-Webdiensts" Beschreibung: "die Standard Authentifizierung ermöglicht nur Clients, die über die richtigen Anmelde Informationen verfügen, Zugriff auf Ressourcen. In diesem Artikel wird erläutert, wie die Standard Authentifizierung verwendet wird, um den Zugriff auf Rest-Webdienst Ressourcen zu schützen.
+ms. Prod: xamarin ms. assetid: 7b5ffdc4-f2aa-4b12-a30a-1dacc7fecbf1 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/22/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-a-restful-web-service"></a>Authentifizieren eines Rest-Webdiensts
 
 _HTTP unterstützt die Verwendung mehrerer Authentifizierungsmechanismen, um den Zugriff auf Ressourcen zu steuern. Die Standard Authentifizierung ermöglicht nur Clients, die über die richtigen Anmelde Informationen verfügen, Zugriff auf Ressourcen. In diesem Artikel wird veranschaulicht, wie die Standard Authentifizierung verwendet wird, um den Zugriff auf Rest-Webdienst Ressourcen zu schützen_
@@ -80,7 +66,7 @@ Wenn eine Anforderung an einen Webdienst Vorgang durchgeführt wird, wird die An
 
 ## <a name="processing-the-authorization-header-server-side"></a>Verarbeiten der Server Seite des Autorisierungs Headers
 
-Der Rest-Dienst muss jede Aktion mit dem- `[BasicAuthentication]` Attribut ergänzen. Dieses Attribut wird verwendet, um den Header zu analysieren `Authorization` und zu bestimmen, ob die Base64-codierten Anmelde Informationen gültig sind, indem Sie mit den in " *Web. config*" gespeicherten Werten verglichen werden Obwohl dieser Ansatz für einen Beispiel Dienst geeignet ist, ist eine Erweiterung für einen öffentlich ausgerichteten Webdienst erforderlich.
+Der Rest-Dienst muss jede Aktion mit dem- `[BasicAuthentication]` Attribut ergänzen. Dieses Attribut wird verwendet, um den `Authorization` -Header zu analysieren und zu bestimmen, ob die Base64-codierten Anmelde Informationen gültig sind, indem Sie mit in *Web.config*gespeicherten Werten verglichen werden. Obwohl dieser Ansatz für einen Beispiel Dienst geeignet ist, ist eine Erweiterung für einen öffentlich ausgerichteten Webdienst erforderlich.
 
 Im Standard Authentifizierungs Modul, das von IIS verwendet wird, werden die Benutzer mit Ihren Windows-Anmelde Informationen authentifiziert. Daher müssen Benutzer über Konten in der Domäne des Servers verfügen. Das Standard Authentifizierungs Modell kann jedoch so konfiguriert werden, dass eine benutzerdefinierte Authentifizierung zulässig ist, bei der Benutzerkonten für eine externe Quelle (z. b. eine Datenbank) authentifiziert werden. Weitere Informationen finden Sie unter Standard [Authentifizierung in ASP.net-Web-API](https://www.asp.net/web-api/overview/security/basic-authentication) auf der ASP.NET-Website.
 

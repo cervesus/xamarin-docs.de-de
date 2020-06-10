@@ -1,21 +1,8 @@
 ---
-title: Skiasharp-Grafiken inXamarin.Forms
-description: Skiasharp ist ein 2D-Grafiksystem für .net und c#, das von der Open Source-Skia-Grafik-Engine genutzt wird, die in Google-Produkten häufig verwendet wird. In diesem Handbuch wird erläutert, wie Sie skiasharp für 2D-Grafiken in Ihren Xamarin.Forms Anwendungen verwenden.
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 855bd0d357950b019487b3ea05e379915f54b9d4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127633"
+Title: "skiasharp-Grafiken in Xamarin.Forms " Description: "skiasharp ist ein 2D-Grafiksystem für .net und c#, das von der Open Source-Skia-Grafik-Engine unter Verwendung von Google-Produkten genutzt wird. In diesem Handbuch wird erläutert, wie skiasharp für 2D-Grafiken in Ihren Anwendungen verwendet wird Xamarin.Forms . "
+ms. Prod: xamarin ms. assetid: 2c348bea-81df-4794-8857-EB1DFF5E11DB Author: davidbritch ms. Author: dabritch ms. Date: 09/11/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-graphics-in-xamarinforms"></a>Skiasharp-Grafiken inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,25 +1,11 @@
 ---
-title: Xamarin.FormsCollectionView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a2c9fd9e6e48192bc2237d6b451b533fcee6e6ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136447"
+Title: " Xamarin.Forms CollectionView" Description: "die CollectionView ist eine flexible und leistungsfähige Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen layoutspezifikationen."
+ms. Prod: xamarin ms. assetid: 2bc9b223-2d5c-4b09-849c-b9d578954557 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/24/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-collectionview"></a>Xamarin.FormsCollectionView
 
-## <a name="introduction"></a>[Einführung](introduction.md)
+# <a name="xamarinforms-collectionview"></a>Xamarin.Forms: CollectionView
+
+## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
 
 Der [`CollectionView`](xref:Xamarin.Forms.CollectionView) ist eine flexible und leistungsfähige Ansicht für die Darstellung von Listen mit Daten mit unterschiedlichen layoutspezifikationen.
 
@@ -39,7 +25,7 @@ Die [`CollectionView`](xref:Xamarin.Forms.CollectionView) Auswahl ist standardm�
 
 In [`CollectionView`](xref:Xamarin.Forms.CollectionView) kann eine leere Ansicht angegeben werden, die dem Benutzer Feedback bietet, wenn keine Daten zur Anzeige verfügbar sind. Die leere Ansicht kann eine Zeichenfolge, eine Ansicht oder mehrere Ansichten sein.
 
-## <a name="scrolling"></a>[Bildlauf](scrolling.md)
+## <a name="scrolling"></a>[Scrollen](scrolling.md)
 
 Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Bildlaufs gesteuert werden, sodass Elemente vollständig angezeigt werden. Außerdem [`CollectionView`](xref:Xamarin.Forms.CollectionView) definiert zwei [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) Methoden, die Elemente Programm gesteuert in die Ansicht scrollen. Eine der-über Ladungen führt einen Bildlauf für das Element am angegebenen Index durch, während der andere das angegebene Element in die Ansicht verschiebt.
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139632"
+Title: "Hinzufügen von Daten zur Items-Auflistung einer Auswahl" Beschreibung: "die Auswahl Ansicht ist ein Steuerelement zum Auswählen eines Text Elements aus einer Datenliste. In diesem Artikel wird erläutert, wie Sie eine Auswahl mit Daten auffüllen, indem Sie Sie der Items-Auflistung hinzufügen und wie Sie auf die Elementauswahl durch den Benutzer reagieren. "
+ms. Prod: xamarin ms. assetid: 3c840f 64-A430-457d-a4b2-3 d7af46f-DBE ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/26/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-data-to-a-pickers-items-collection"></a>Hinzufügen von Daten zur Elementsammlung einer Auswahl
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)

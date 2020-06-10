@@ -1,27 +1,13 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127763"
+Title: "skiasharp Rauschen and Komposition" Description: "Generieren von Perlin-Rauschen-Shadern und kombinieren mit anderen Shadern".
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 90c2d00a-2876-43ea-A836-538c3318cf93 Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-noise-and-composing"></a>Skiasharp-Rauschen und Komposition
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Einfache Vektorgrafiken sehen tendenziell unnatürlich aus. Die geraden Linien, weichen Kurven und voll Tonfarben ähneln nicht den Unzulänglichkeiten von realen Objekten. Beim Arbeiten an den computergenerierten Grafiken für das 1982 Movie _Tron_begann der Computer Analyst Ken Perlin mit der Entwicklung von Algorithmen, die zufällige Prozesse verwendet haben, um diese Bilder realistischer Texturen zuzuweisen. In 1997 hat Ken Perlin eine Academy-Auszeichnung für technische Leistungen gewonnen. Seine Arbeit wurde als Perlin-Rauschen bezeichnet und wird in skiasharp unterstützt. Hier sehen Sie ein Beispiel:
+Einfache Vektorgrafiken sehen tendenziell unnatürlich aus. Die geraden Linien, weichen Kurven und voll Tonfarben ähneln nicht den Unzulänglichkeiten von realen Objekten. Beim Arbeiten an den computergenerierten Grafiken für das 1982 Movie _Tron_begann der Computer Analyst Ken Perlin mit der Entwicklung von Algorithmen, die zufällige Prozesse verwendet haben, um diese Bilder realistischer Texturen zuzuweisen. In 1997 hat Ken Perlin eine Academy-Auszeichnung für technische Leistungen gewonnen. Seine Arbeit wurde als Perlin-Rauschen bezeichnet und wird in skiasharp unterstützt. Im Folgenden ein Beispiel:
 
 ![Perlin-Rausch Beispiel](noise-images/NoiseSample.png "Perlin-Rausch Beispiel")
 

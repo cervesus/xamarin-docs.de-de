@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0fecac02c44e3ba721dd4625e7bee264c6869d0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134757"
+Title: "Anzeigen von skiasharp-Bitmaps" Beschreibung: "erfahren Sie, wie Sie skiasharp-Bitmaps in Pixelgrößen anzeigen und so erweitert werden, dass Sie Rechtecke auffüllen, während das Seitenverhältnis beibehalten wird."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 8e074f8d-4715-4146-8cc0-fd7a8290ede9 Author: davidbritch ms. Author: dabritch ms. Date: 07/17/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="displaying-skiasharp-bitmaps"></a>Anzeigen von skiasharp-Bitmaps
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -314,7 +300,7 @@ Schalten Sie das Telefon, um die Bitmap auf diesen Bereich zu sehen:
 
 [![Einheitliche Skalierungs Landschaft](displaying-images/UniformScaling-Landscape.png "Einheitliche Skalierungs Landschaft")](displaying-images/UniformScaling-Landscape-Large.png#lightbox)
 
-Der Vorteil der Verwendung dieses `scale` Faktors wird offensichtlich, wenn Sie einen etwas anderen Algorithmus implementieren möchten. Angenommen, Sie möchten das Seitenverhältnis der Bitmap beibehalten, aber auch das Ziel Rechteck ausfüllen. Dies ist nur möglich, indem Sie einen Teil des Bilds zuschneiden, aber Sie können diesen Algorithmus einfach implementieren, indem `Math.Min` Sie `Math.Max` in den obigen Code ändern. Das Ergebnis lautet wie folgt: 
+Der Vorteil der Verwendung dieses `scale` Faktors wird offensichtlich, wenn Sie einen etwas anderen Algorithmus implementieren möchten. Angenommen, Sie möchten das Seitenverhältnis der Bitmap beibehalten, aber auch das Ziel Rechteck ausfüllen. Dies ist nur möglich, indem Sie einen Teil des Bilds zuschneiden, aber Sie können diesen Algorithmus einfach implementieren, indem `Math.Min` Sie `Math.Max` in den obigen Code ändern. So sieht das Ergebnis aus: 
 
 [![Einheitliche Skalierungs Alternative](displaying-images/UniformScaling-Alternative.png "Einheitliche Skalierungs Alternative")](displaying-images/UniformScaling-Alternative-Large.png#lightbox)
 

@@ -1,22 +1,8 @@
 ---
-title: IOS-Plattformfunktionen inXamarin.Forms
-description: Hinzufügen von IOS-spezifischer Funktionalität zu Xamarin.Forms Anwendungen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1008eab6e56be7a235498e01ffd3ea1b27d2bbae
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130168"
+Title: "IOS-Platt Form Features in Xamarin.Forms " Beschreibung: "Hinzufügen von IOS-spezifischer Funktionalität zu Xamarin.Forms Anwendungen".
+ms. Prod: xamarin ms. assetid: 634ab62e-68c8-454c-838b-f 1cc4e4e21bc ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/05/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="ios-platform-features-in-xamarinforms"></a>IOS-Plattformfunktionen inXamarin.Forms
 
 Xamarin.FormsZum Entwickeln von Anwendungen für IOS ist Visual Studio erforderlich. Die [Seite "Unterstützte Plattformen](~/get-started/supported-platforms.md) " enthält weitere Informationen zu den Voraussetzungen.

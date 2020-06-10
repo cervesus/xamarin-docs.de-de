@@ -1,25 +1,11 @@
 ---
-title: Xamarin.Formsund Azure Cognitive Services
-description: Fügen Sie mithilfe Xamarin.Forms von Azure Cognitive Services Intelligence-Funktionen hinzu, einschließlich Spracherkennung, Rechtschreibprüfung, Textübersetzung und Emotionen Erkennung.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 64f5dce9337444a1e910a11a69426964a09ac05a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136018"
+Title: " Xamarin.Forms und Azure Cognitive Services" Beschreibung: "Hinzufügen von Informationen zu Xamarin.Forms Anwendungen mit Azure Cognitive Services, einschließlich Spracherkennung, Rechtschreibprüfung, Textübersetzung und Emotions Erkennung".
+ms. Prod: xamarin ms. assetid: 64386a65-bd31-4a1b-A769-91495e57345a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin.Formsund Azure Cognitive Services
 
-## <a name="introduction"></a>[Einführung](introduction.md)
+## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
 
 Microsoft Cognitive Services sind ein Satz von APIs, sdert und Diensten, die Entwicklern zur Verfügung stehen, um Ihre Anwendungen intelligenter zu gestalten, indem Sie Features wie Gesichtserkennung, Spracherkennung und Sprachverständnis hinzufügen. Dieser Artikel bietet eine Einführung in die Beispielanwendung, die veranschaulicht, wie Sie einige der Microsoft Cognitive Service-APIs von Anwendungen aus aufrufen Xamarin.Forms .
 

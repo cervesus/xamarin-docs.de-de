@@ -1,23 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-robots: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134211"
+Title: "xamarin Live Reload (Vorschau)" Beschreibung: "die Änderungen an der XAML reflektiert Live, ohne dass eine andere Kompilierung und Bereitstellung erforderlich ist".
+ms. Prod: xamarin ms. assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d ms. Technology: xamarin-Forms Author: pierceboggan ms. Author: piboggan robots: noindex ms. Date: 10/26/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Neuladen (Vorschau)
 
 > [!NOTE]
@@ -28,7 +13,7 @@ ms.locfileid: "84134211"
 
 Mit xamarin Live Neuladen können Sie **Änderungen an Ihrem XAML-Code vornehmen und diese wiedergeben, ohne dass eine andere Kompilierung und Bereitstellung erforderlich ist**. Alle Änderungen, die an Ihrem XAML-Code vorgenommen wurden, werden bei der Speicherung erneut bereitgestellt und auf dem Bereitstellungs Ziel reflektiert.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 * [Visual Studio 2017 Version 15,7 oder höher](https://visualstudio.microsoft.com/vs/) mit der Arbeitsauslastung für die **Mobile-Entwicklung mit .net** .
 * [ Xamarin.Forms 3.0.0 oder höher](https://www.nuget.org/packages/Xamarin.Forms/).
