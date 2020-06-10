@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms Samples (Beispiele für Xamarin.Forms)
+title: Xamarin.Forms-Beispiele
 description: Xamarin.Forms-Beispiel-Apps und -Code-Demos, die Ihnen beim Einstieg und beim Verstehen der Konzepte in Xamarin.Forms helfen sollen.
-ms.prod: xamarin
-ms.assetid: AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 12/27/2019
-ms.openlocfilehash: 3cd7979a3e244866b190c9534c472ea44b9f9c30
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 896b5880b92cecc7bd9eb360306d902ff0f876c5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75502996"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135940"
 ---
-# <a name="xamarinforms-samples"></a>Xamarin.Forms Samples (Beispiele für Xamarin.Forms)
+# <a name="xamarinforms-samples"></a>Xamarin.Forms-Beispiele
 
 Xamarin.Forms-Beispiel-Apps und -Code-Demos, die Ihnen beim Einstieg und beim Verstehen der Konzepte in Xamarin.Forms helfen sollen.
 
@@ -70,4 +73,4 @@ Dieses Spiel ist eine Variation des klassischen 14-15 Puzzle, das Sie durch Vers
 
 ## <a name="all-samples"></a>Alle Beispiele
 
-Sie finden alle Xamarin.Forms-Beispiel-Apps und -Code-Demos unter [Alle Xamarin.Forms-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms).
+Alle Xamarin.Forms-Beispiel-Apps und -Codedemos finden Sie unter [Alle Xamarin.Forms-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms).

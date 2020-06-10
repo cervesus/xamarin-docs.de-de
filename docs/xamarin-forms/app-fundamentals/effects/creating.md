@@ -1,18 +1,21 @@
 ---
-title: Erstellen eines Effekts
-description: Durch Effekte können Steuerelemente mühelos angepasst werden. In diesem Artikel wird veranschaulicht, wie Sie einen Effekt erstellen können, der die Hintergrundfarbe des Entry-Steuerelements verändert, wenn das Steuerelement ausgewählt wird.
-ms.prod: xamarin
-ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2016
-ms.openlocfilehash: c07848b808d023439c88117924e69c336984630b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771510"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139385"
 ---
 # <a name="creating-an-effect"></a>Erstellen eines Effekts
 
@@ -26,7 +29,7 @@ Der Prozess zum Erstellen eines Effekts in jedem plattformspezifischen Projekt u
 1. Überschreiben Sie die `OnAttached`-Methode, und schreiben Sie Logik, um das Steuerelement anzupassen.
 1. Überschreiben Sie die `OnDetached`-Methode, und schreiben Sie Logik, um die Anpassung des Steuerelements zu bereinigen, falls erforderlich.
 1. Fügen Sie der Effect-Klasse ein [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)-Attribut hinzu. Dieses Attribut legt einen unternehmensweiten Namespace für Effekte fest und verhindert dadurch Konflikte mit anderen Effekten mit dem gleichen Namen. Beachten Sie, dass dieses Attribut nur einmal pro Projekt angewendet werden kann.
-1. Fügen Sie der Effect-Klasse ein [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)-Attribut hinzu. Dieses Attribut registriert den Effekt mit einer eindeutigen ID, die von Xamarin.Forms verwendet wird, und dem Gruppennamen. Dadurch wird nach dem Effekt gesucht, bevor er auf ein Steuerelement angewendet wird. Das Attribut akzeptiert zwei Parameter: den Typnamen des Effekts und eine eindeutige Zeichenfolge, die für die Suche nach dem Effekt vor dessen Anwendung auf ein Steuerelement verwendet wird.
+1. Fügen Sie der Effect-Klasse ein [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)-Attribut hinzu. Dieses Attribut registriert den Effekt mit einer eindeutigen ID, die von Xamarin.Forms verwendet wird, und den Gruppennamen, damit nach dem Effekt gesucht wird, bevor er auf ein Steuerelement angewendet wird. Das Attribut akzeptiert zwei Parameter: den Typnamen des Effekts und eine eindeutige Zeichenfolge, die für die Suche nach dem Effekt vor dessen Anwendung auf ein Steuerelement verwendet wird.
 
 Der Effekt kann dann verwendet werden, indem er an das entsprechende Steuerelement angefügt wird.
 
@@ -202,7 +205,7 @@ Die `OnAttached`-Methode legt die `Background`-Eigenschaft des Steuerelements au
 
 ## <a name="consuming-the-effect"></a>Nutzen des Effekts
 
-Der Prozess zur Nutzung eines Effekts aus einer Xamarin.Forms-.NET Standard-Bibliothek oder einem freigegebenen Bibliotheksprojekt umfasst folgende Schritte:
+Die Verarbeitung eines Effekts aus einer Xamarin.Forms-.NET Standard-Bibliothek oder einem freigegebenen Bibliotheksprojekt umfasst folgende Schritte:
 
 1. Deklarieren Sie ein Steuerelement, das durch den Effekt angepasst wird.
 1. Fügen Sie den Effekt an das Steuerelement an, indem Sie ihn zur [`Effects`](xref:Xamarin.Forms.Element.Effects)-Collection des Steuerelements hinzufügen.

@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 24. Seitennavigation
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 24. Seitennavigation'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: fd8e4fc77917fcba9bc61e59ced714ac1cd6fbe9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 24. Page navigation''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77130837"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136642"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Zusammenfassung von Kapitel 24. Seitennavigation
 
@@ -64,10 +68,10 @@ Die Standardmethoden für die Seitennavigation enthalten die Animation jedoch st
 
 `NavigationPage` umfasst außerdem vier angefügte bindbare Eigenschaften, die sich auf die spezifische Seite auswirken, für die sie festgelegt wurden:
 
-- [`SetHasBackButton`](xref:Xamarin.Forms.NavigationPage.SetHasBackButton(Xamarin.Forms.Page,System.Boolean)) und [`GetHasBackButton`](xref:Xamarin.Forms.NavigationPage.GetHasBackButton(Xamarin.Forms.Page))
-- [`SetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.SetHasNavigationBar(Xamarin.Forms.BindableObject,System.Boolean)) und [`GetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.GetHasNavigationBar(Xamarin.Forms.BindableObject))
-- [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String)) und [`GetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject)) funktionieren nur unter iOS.
-- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.FileImageSource)) und [`GetTitleIcon`](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject)) funktionieren nur unter iOS und Android.
+- [`SetHasBackButton`](xref:Xamarin.Forms.NavigationPage.SetHasBackButton(Xamarin.Forms.Page,System.Boolean)) and [`GetHasBackButton`](xref:Xamarin.Forms.NavigationPage.GetHasBackButton(Xamarin.Forms.Page))
+- [`SetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.SetHasNavigationBar(Xamarin.Forms.BindableObject,System.Boolean)) and [`GetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.GetHasNavigationBar(Xamarin.Forms.BindableObject))
+- [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String)) and [`GetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject)) work on iOS only
+- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.FileImageSource)) and [`GetTitleIcon`](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject)) work on iOS and Android only
 
 ### <a name="exploring-the-mechanics"></a>Untersuchen der Mechanismen
 
@@ -135,7 +139,7 @@ Die *Start*seite kann problemlos auf öffentliche Methoden und Eigenschaften auf
 
 ### <a name="messagingcenter"></a>MessagingCenter
 
-Die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Klasse von Xamarin.Forms bietet zwei Seiten eine andere Möglichkeit, miteinander zu kommunizieren. Nachrichten werden durch eine Textzeichenfolge identifiziert und können von einem beliebigen Objekt begleitet werden.
+Die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Klasse von Xamarin.Forms bietet eine andere Möglichkeit, wie zwei Seiten miteinander zu kommunizieren können. Nachrichten werden durch eine Textzeichenfolge identifiziert und können von einem beliebigen Objekt begleitet werden.
 
 Ein Programm, das Nachrichten eines bestimmten Typs empfangen möchte, muss sie mithilfe von [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) abonnieren und eine Rückruffunktion angeben. Später kann es das Abonnement durch Aufrufen von [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) kündigen. Die Rückruffunktion empfängt alle gesendeten Nachrichten des angegebenen Typs mit dem angegebenen Namen, die über die [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Methode gesendet werden.
 

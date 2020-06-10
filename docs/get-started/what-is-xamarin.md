@@ -1,18 +1,21 @@
 ---
-title: Was ist Xamarin?
-description: In diesem Artikel werden die integrierte Entwicklungsumgebung Xamarin sowie verbundene Bibliotheken eingeführt.
-ms.prod: xamarin
-ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
-ms.custom: video
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/16/2019
-ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607879"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139216"
 ---
 # <a name="what-is-xamarin"></a>Was ist Xamarin?
 
@@ -53,7 +56,7 @@ Xamarin kombiniert alle Vorteile der nativen Plattformen und ergänzt diese um e
 1. **Moderne Sprachkonstrukte:** Xamarin-Anwendungen werden in C# geschrieben, einer modernen Sprache, die gegenüber Objective-C und Java bedeutende Verbesserungen beinhaltet, z. B. dynamische Sprachfeatures, funktionale Konstrukte wie Lambdas und LINQ, Funktionen für die parallele Programmierung und Generics.
 1. **Solide Basisklassenbibliothek (Base Class Library, BCL):** Xamarin-Anwendungen verwenden die .NET-BCL, eine große Sammlung von Klassen mit umfassenden und optimierten Features, z B. Unterstützung für leistungsstarkes XML, Datenbanken, Serialisierung, E/A, Zeichenfolgen und Netzwerke. Vorhandener C#-Code kann zur Verwendung in einer App kompiliert werden. So erhalten Sie Zugriff auf Tausende Bibliotheken, die Ihnen zusätzlich zur BCL Funktionen bieten.
 1. **Moderne integrierte Entwicklungsumgebung (Integrated Development Environment, IDE):** Xamarin verwendet Visual Studio, eine moderne IDE, die Features beinhaltet wie die automatische Codevervollständigung, ein durchdachtes Projekt- und Projektmappenverwaltungssystem, eine umfassende Projektvorlagenbibliothek und integrierte Quellcodeverwaltung.
-1. **Unterstützung für plattformübergreifende Entwicklung von mobilen Anwendungen:** Xamarin bietet hochmoderne, plattformübergreifende Unterstützung für die drei wichtigsten Plattformen: iOS, Android und Windows. Anwendungen lassen sich so schreiben, dass bis zu 90 Prozent des Codes freigegeben werden können, und in Xamarin.Essentials steht eine vereinheitlichte API zur Verfügung, mit der auf allen drei Plattformen auf häufig verwendete Ressourcen zugegriffen werden kann. Freigegebener Code kann sowohl die Kosten für die Entwicklung als auch die Zeit bis zur Markteinführung für Entwickler mobiler Anwendungen reduzieren.
+1. **Unterstützung für plattformübergreifende Entwicklung von mobilen Anwendungen:** Xamarin bietet hochmoderne, plattformübergreifende Unterstützung für die drei wichtigsten Plattformen: iOS, Android und Windows. Anwendungen lassen sich so schreiben, dass bis zu 90 % des Codes freigegeben werden können. In Xamarin.Essentials steht außerdem eine vereinheitlichte API zur Verfügung, mit der auf allen drei Plattformen auf häufig verwendete Ressourcen zugegriffen werden kann. Freigegebener Code kann sowohl die Kosten für die Entwicklung als auch die Zeit bis zur Markteinführung für Entwickler mobiler Anwendungen reduzieren.
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
@@ -71,9 +74,9 @@ Xamarin.iOS-Anwendungen werden vollständig von C# zu nativem ARM-Assemblycode *
 
 Weitere Informationen finden Sie unter [Xamarin.iOS-Architektur](~/ios/internals/architecture.md).
 
-### <a name="xamarinessentials"></a>Xamarin.Essentials
+### Xamarin.Essentials
 
-Bei Xamarin.Essentials handelt es sich um eine Bibliothek, die plattformübergreifende APIs für native Gerätefeatures bietet. Wie Xamarin selbst ist Xamarin.Essentials eine Abstraktion, die den Zugriffsprozess auf native Funktionen vereinfacht. Zu den von Xamarin.Essentials zur Verfügung gestellten Funktionen gehören die folgenden:
+Bei Xamarin.Essentials handelt es sich um eine Bibliothek, die plattformübergreifende APIs für native Gerätefeatures bietet. Wie Xamarin selbst ist Xamarin.Essentials eine Abstraktion, die den Zugriff auf die native Funktionalität vereinfacht. Zu den von Xamarin.Essentials zur Verfügung gestellten Funktionen gehören die folgenden:
 
 - Geräteinformationen
 - Dateisystem
@@ -84,9 +87,9 @@ Bei Xamarin.Essentials handelt es sich um eine Bibliothek, die plattformübergre
 
 Weitere Informationen finden Sie unter [Xamarin.Essentials](~/essentials/index.md).
 
-### <a name="xamarinforms"></a>Xamarin.Forms
+### Xamarin.Forms
 
-Bei Xamarin.Forms handelt es sich um ein Open-Source-Benutzeroberflächenframework. Mithilfe von Xamarin.Forms können Entwickler iOS-, Android- und Windows-Anwendungen aus einer einzigen freigegebenen CodeBase erstellen. Mithilfe von Xamarin.Forms können Entwickler Benutzeroberflächen in XAML mit CodeBehind in C# erstellen. Diese Benutzeroberflächen werden als leistungsfähige native Steuerelemente für jede Plattform gerendert. Zu den von Xamarin.Forms zur Verfügung gestellten Features gehören die folgenden:
+Bei Xamarin.Forms handelt es sich um ein Open-Source-Benutzeroberflächenframework. Mithilfe von Xamarin.Forms können Entwickler iOS-, Android- und Windows-Anwendungen aus einer einzigen gemeinsamen Codebasis erstellen. Xamarin.Forms ermöglicht Entwicklern die Erstellung von Benutzeroberflächen in XAML mit CodeBehind in C#. Diese Benutzeroberflächen werden als leistungsfähige native Steuerelemente für jede Plattform gerendert. Zu den von Xamarin.Forms zur Verfügung gestellten Features gehören die folgenden:
 
 - XAML als Programmiersprache für Benutzeroberflächen
 - Datenbindung
@@ -94,13 +97,13 @@ Bei Xamarin.Forms handelt es sich um ein Open-Source-Benutzeroberflächenframewo
 - Effekte
 - Format
 
-Weitere Informationen finden Sie auf der Seite [Xamarin.Forms-Dokumentation](~/xamarin-forms/index.yml).
+Weitere Informationen finden Sie unter [Xamarin.Forms](~/xamarin-forms/index.yml).
 
 ## <a name="get-started"></a>Erste Schritte
 
 Die folgenden Anleitungen unterstützen Sie bei der Erstellung Ihrer ersten App mithilfe von Xamarin:
 
-- [Xamarin.Forms-Dokumentation](~/xamarin-forms/index.yml)
+- [Erste Schritte mit Xamarin.Forms](~/xamarin-forms/index.yml)
 - [Xamarin.Android](~/android/index.yml)
 - [Xamarin.iOS](~/ios/index.yml)
 - [Xamarin.Mac](~/mac/index.yml)

@@ -1,32 +1,35 @@
 ---
 title: Erstellen von Xamarin.Forms-Verhalten
-description: Xamarin.Forms-Verhalten werden von den Klassen „Behavior“ und „Behavior<T>“ abgeleitet. In diesem Artikel wird veranschaulicht, wie Sie Xamarin.Forms-Verhalten erstellen und verwenden können.
-ms.prod: xamarin
-ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Xamarin.Forms-Verhalten werden durch Erstellung von den Klassen „Behavior“ und „Behavior<T>“ erstellt. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131095"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135823"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Erstellen von Xamarin.Forms-Verhalten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-_Xamarin.Forms-Verhalten werden von der Klasse „Behavior“ oder „Behavior&lt;T&gt; abgeleitet. In diesem Artikel wird veranschaulicht, wie Sie Xamarin.Forms-Verhalten erstellen und verwenden können._
+_Xamarin.Forms-Verhalten werden von der Klasse „Behavior“ oder „Behavior&lt;T&gt; abgeleitet. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden._
 
 ## <a name="overview"></a>Übersicht
 
 So erstellen Sie ein Xamarin.Forms-Verhalten:
 
 1. Erstellen Sie eine Klasse, die von der [`Behavior`](xref:Xamarin.Forms.Behavior)- oder der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse erbt. `T` beschreibt den Typ des Steuerelements, für das das Verhalten gelten soll.
-1. Überschreiben Sie die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode, um gegebenenfalls erforderliches Setup durchzuführen.
-1. Überschreiben Sie die [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode, um gegebenenfalls erforderliche Bereinigung durchzuführen.
+1. Überschreiben Sie die Methode [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)), um das erforderliche Setup auszuführen.
+1. Überschreiben Sie die Methode [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)), um die erforderliche Bereinigung auszuführen.
 1. Implementieren Sie die Kernfunktionalität des Verhaltens.
 
 Dies resultiert in der Struktur, die im folgenden Codebeispiel gezeigt wird:
@@ -50,9 +53,9 @@ public class CustomBehavior : Behavior<View>
 }
 ```
 
-Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode wird sofort nach dem Anfügen des Verhaltens an ein Steuerelement ausgeführt. Diese Methode empfängt einen Verweis auf das Steuerelement, dem sie angefügt ist, und kann dazu verwendet werden, die Ereignishandler zu registrieren oder andere Setupschritte durchzuführen, die zur Unterstützung der Verhaltensfunktionalität erforderlich sind. Sie können beispielsweise ein Ereignis mit einem Steuerelement verknüpfen. Die Verhaltensfunktionalität würde dann in den Ereignishandler für das Ereignis implementiert werden.
+Die Methode [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) wird sofort nach dem Anfügen des Verhaltens an ein Steuerelement ausgeführt. Diese Methode empfängt einen Verweis auf das Steuerelement, dem sie angefügt ist, und kann dazu verwendet werden, die Ereignishandler zu registrieren oder andere Setupschritte durchzuführen, die zur Unterstützung der Verhaltensfunktionalität erforderlich sind. Sie können beispielsweise ein Ereignis mit einem Steuerelement verknüpfen. Die Verhaltensfunktionalität würde dann in den Ereignishandler für das Ereignis implementiert werden.
 
-Die [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode wird ausgelöst, wenn das Verhalten aus dem Steuerelement entfernt wird. Diese Methode empfängt einen Verweis auf das Steuerelement, dem sie angefügt ist, und wird dazu verwendet, gegebenenfalls erforderliche Bereinigungen durchzuführen. Sie könnten ein Ereignis beispielsweise von einem Steuerelement lösen, um Arbeitsspeicherverluste zu verhindern.
+Die Methode [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) wird sofort nach dem Entfernen des Verhaltens von einem Steuerelement ausgeführt. Diese Methode empfängt einen Verweis auf das Steuerelement, dem sie angefügt ist, und wird dazu verwendet, gegebenenfalls erforderliche Bereinigungen durchzuführen. Sie könnten ein Ereignis beispielsweise von einem Steuerelement lösen, um Arbeitsspeicherverluste zu verhindern.
 
 Das Verhalten kann dann verwendet werden, indem es an die [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)-Sammlung des entsprechenden Steuerelements angefügt wird.
 
@@ -84,12 +87,12 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-Das `NumericValidationBehavior`-Verhalten wird von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse abgeleitet, bei der `T` einem [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement entspricht. Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode registriert einen Ereignishandler für das [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)-Ereignis mit der [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode, die die Registrierung des `TextChanged`-Ereignisses aufhebt, um Arbeitsspeicherverluste zu verhindern. Die Kernfunktionalität des Verhaltens wird von der `OnEntryTextChanged`-Methode bereitgestellt, die den vom Benutzer in `Entry` eingegebenen Wert analysiert und die [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)-Eigenschaft auf rot festlegt, wenn es sich nicht um einen `double`-Wert handelt.
+Das `NumericValidationBehavior`-Verhalten wird von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse abgeleitet, bei der `T` einem [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement entspricht. Die Methode [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method registers an event handler for the [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) event, with the [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) hebt die Registrierung des Ereignisses `TextChanged` auf, um Arbeitsspeicherverluste vorzubeugen. Die Kernfunktionalität des Verhaltens wird von der `OnEntryTextChanged`-Methode bereitgestellt, die den vom Benutzer in `Entry` eingegebenen Wert analysiert und die [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)-Eigenschaft auf rot festlegt, wenn es sich nicht um einen `double`-Wert handelt.
 
 > [!NOTE]
-> Xamarin.Forms legt nicht die `BindingContext`-Eigenschaft von Verhalten fest, da Verhalten mit Formatvorlagen freigegeben und auf mehrere Steuerelemente angewendet werden können.
+> Xamarin.Forms legt nicht die Eigenschaft `BindingContext` von Verhalten fest, da Verhalten mit Formatvorlagen freigegeben und auf mehrere Steuerelemente angewendet werden können.
 
-## <a name="consuming-a-xamarinforms-behavior"></a>Nutzen eines Xamarin.Forms-Verhaltens
+## <a name="consuming-a-xamarinforms-behavior"></a>Verarbeiten eines Xamarin.Forms-Verhaltens
 
 Jedes Xamarin.Forms-Steuerelement verfügt über eine [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)-Sammlung, der wie im folgenden XAML-Codebeispiel veranschaulicht mindestens ein Verhalten hinzugefügt werden kann:
 
@@ -187,7 +190,7 @@ Weitere Informationen zu Formatvorlagen finden Sie unter [Styles (Formatvorlagen
 
 ### <a name="removing-a-behavior-from-a-control"></a>Entfernen eines Verhaltens aus einem Steuerelement
 
-Die [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode wird ausgelöst, wenn ein Verhalten aus einem Steuerelement entfernt wird. Sie wird dazu verwendet, gegebenenfalls erforderliche Bereinigungen wie das Lösen von einem Ereignis durchzuführen, um Arbeitsspeicherverluste zu verhindern. Allerdings werden Verhalten nicht implizit aus Steuerelementen entfernt, es sei denn, die [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)-Sammlung des Steuerelements wird von einer `Remove`- oder `Clear`-Methode geändert. Im folgenden Codebeispiel wird das Entfernen eines spezifischen Verhaltens aus der `Behaviors`-Sammlung eines Steuerelements veranschaulicht:
+Die Sammlung [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method is fired when a behavior is removed from a control, and is used to perform any required cleanup such as unsubscribing from an event to prevent a memory leak. However, behaviors are not implicitly removed from controls unless the control's [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) collection is modified by a `Remove` or `Clear` method. The following code example demonstrates removing a specific behavior from a control's `Behaviors`:
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -206,11 +209,11 @@ Beachten Sie außerdem, dass die Verhalten nicht implizit aus Steuerelementen en
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde veranschaulicht, wie Sie Xamarin.Forms-Verhalten erstellen und verwenden können. Xamarin.Forms-Verhalten werden von der Klasse [`Behavior`](xref:Xamarin.Forms.Behavior) oder [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) abgeleitet.
+In diesem Artikel wurde veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden. Xamarin.Forms-Verhalten werden durch Ableitung von der Klasse [`Behavior`](xref:Xamarin.Forms.Behavior) oder [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) erstellt.
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Xamarin.Forms Behavior (sample) (Xamarin.Forms-Verhalten (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
-- [Xamarin.Forms Behavior applied with a Style (sample) (Xamarin.Forms-Verhalten mit angewendeter Formatvorlage (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
+- [Xamarin.Forms: NumericValidation-Verhalten](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+- [Xamarin.Forms: Verhalten zur numerischen Validierung mit angewendeter Formatvorlage](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [Behavior class (Behavior-Klasse)](xref:Xamarin.Forms.Behavior)
-- [Behavior\<T>](xref:Xamarin.Forms.Behavior`1)
+- [Behavior<T>-Klasse\<T>](xref:Xamarin.Forms.Behavior`1)

@@ -1,18 +1,22 @@
 ---
-title: Zusammenfassung von Kapitel 23. Trigger und Verhalten
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 23. Trigger und Verhalten'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 8a1274a8447f49ce39f9c92703bbaec9e875b9e9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 23. Triggers and behaviors''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9a0206354254f79756e29f834c85837240736eca
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760592"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136655"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Zusammenfassung von Kapitel 23. Trigger und Verhalten
 
@@ -156,7 +160,7 @@ Das [**FormattedTextToggle**](https://github.com/xamarin/xamarin-forms-book-samp
 
 Die [`ToggleBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs)-Klasse in der Bibliothek **Xamarin.FormsBook.Toolkit** wird von `ContentView` abgeleitet, definiert eine `IsToggled`-Eigenschaft und enthält ein `ToggleBehavior` für die Umschaltlogik. Dies erleichtert das Definieren der Umschaltfläche in XAML, wie im [**TraditionalCheckBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox)-Beispiel veranschaulicht.
 
-Das [**SwitchCloneDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo)-Beispiel enthält eine [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs)-Klasse, die von `ToggleBase` abgeleitet wird und eine [`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs)-Klasse verwendet, um eine Umschaltfläche zu erstellen, die dem `Switch` von Xamarin.Forms ähnelt.
+Das [**SwitchCloneDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo)-Beispiel enthält eine [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs)-Klasse, die von `ToggleBase` abgeleitet wird und eine [`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs)-Klasse verwendet, um eine Umschaltfläche zu erstellen, die dem `Switch`-Objekt von Xamarin.Forms ähnelt.
 
 Eine [`RotateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RotateAction.cs) in der Bibliothek **Xamarin.FormsBook.Toolkit** stellt eine Animation bereit, die verwendet wird, um einen animierten Hebel im [**LeverToggle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/LeverToggle)-Beispiel zu erstellen.
 
@@ -189,4 +193,4 @@ Das Programm reagiert auch auf Änderungen der Ausrichtung zwischen Hochformat u
 - [Kapitel 23 – vollständiger Text (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf)
 - [Kapitel 23 – Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 - [Arbeiten mit Triggern](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms-Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/creating.md)
+- [Erstellen von Xamarin.Forms-Verhalten](~/xamarin-forms/app-fundamentals/behaviors/creating.md)

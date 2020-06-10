@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms-Bindungspfad
-description: In diesem Artikel wird erläutert, wie über Xamarin.Forms-Datenbindungen mit der Path-Eigenschaft der Bindungsklasse auf untergeordnete Eigenschaften und Collectionmember zugegriffen werden kann.
-ms.prod: xamarin
-ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: In diesem Artikel wird erläutert, wie über Xamarin.Forms-Datenbindungen mit der Path-Eigenschaft der Klasse „Binding“ auf untergeordnete Eigenschaften und Sammlungsmember zugegriffen werden kann.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940346"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139739"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
 
@@ -157,7 +160,7 @@ Hier wird der Typ der Bindungsquelle oder `DataBindingDemos.PathVariationsPage` 
                       StringFormat='{0}'}" />
 ```
 
-Als Typ der `Content`-Eigenschaft wird jetzt `Xamarin.Forms.StackLayout` angezeigt. Wenn Sie die `Children`-Eigenschaft zur Eigenschaft `Path` hinzufügen, lautet der Typ `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`. Dies ist eine interne Klasse von Xamarin.Forms, aber natürlich dennoch ein Collectiontyp. Wenn Sie einen Index hinzufügen, lautet der Typ `Xamarin.Forms.Label`. Fahren Sie auf diese Weise fort.
+Als Typ der `Content`-Eigenschaft wird jetzt `Xamarin.Forms.StackLayout` angezeigt. Wenn Sie die Eigenschaft `Children` zur Eigenschaft `Path` hinzufügen, lautet der Typ `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`. Dies ist eine interne Klasse von Xamarin.Forms, aber natürlich auch ein Sammlungstyp. Wenn Sie einen Index hinzufügen, lautet der Typ `Xamarin.Forms.Label`. Fahren Sie auf diese Weise fort.
 
 Während Xamarin.Forms den Bindungspfad verarbeitet, wird für jedes Objekt im Pfad ein `PropertyChanged`-Handler installiert, der die Schnittstelle `INotifyPropertyChanged` implementiert. Beispiel: Die endgültige Bindung reagiert auf eine Änderung im ersten `Label`-Element, da sich die Eigenschaft `Text` ändert.
 
@@ -166,4 +169,4 @@ Wenn eine Eigenschaft im Bindungspfad `INotifyPropertyChanged` nicht implementie
 ## <a name="related-links"></a>Verwandte Links
 
 - [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Zusammenfassung von Kapitel 16.: Datenbindung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

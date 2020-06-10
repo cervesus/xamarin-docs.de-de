@@ -1,18 +1,21 @@
 ---
 title: Relative Bindungen in Xamarin.Forms
-description: In diesem Artikel wird beschrieben, wie Sie mithilfe der RelativeSource-Markuperweiterung relative Bindungen erstellen, um die Bindungsquelle relativ zur Position des Bindungsziels festzulegen.
-ms.prod: xamarin
-ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/04/2019
-ms.openlocfilehash: 63ce27fc871da12eabb1baad568af167c860926f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8d4e2696e6027f07b7b8e638cd1e0f1d65a5503d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75955813"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139710"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Relative Bindungen in Xamarin.Forms
 
@@ -38,7 +41,7 @@ Die `Mode`-Eigenschaft sollte auf einen der Member der Enumeration `RelativeBind
 
 Die `Mode`-Eigenschaft stellt die Inhaltseigenschaft der Klasse `RelativeSourceExtension` dar. Daher können Sie bei XAML-Markupausdrücken (die mit geschweiften Klammern ausgedrückt werden) den `Mode=`-Teil des Ausdrucks entfernen.
 
-Weitere Informationen zu Xamarin.Forms-Markuperweiterungen finden Sie unter [XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/index.md).
+Weitere Informationen über Xamarin.Forms-Markuperweiterungen finden Sie unter [XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/index.md).
 
 ## <a name="bind-to-self"></a>An sich selbst binden
 

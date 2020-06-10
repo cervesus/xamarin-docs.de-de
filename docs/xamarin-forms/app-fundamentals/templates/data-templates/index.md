@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms-Datenvorlagen
-description: Ein DataTemplate wird verwendet, um die Darstellung von Daten auf unterstützten Steuerelementen anzugeben. In der Regel wird DataTemplate an die anzuzeigenden Daten gebunden.
-ms.prod: xamarin
-ms.assetid: 838F4BDB-B719-457F-8633-27E9B267A2A0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/11/2017
-ms.openlocfilehash: 5d130a6644af4e5831263c6de137513c021e0b6a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e0961fad18ccd961a5b84b2a5535bca70781dd8d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760800"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136122"
 ---
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms-Datenvorlagen
 
@@ -22,11 +25,11 @@ _Ein DataTemplate wird verwendet, um die Darstellung von Daten auf unterstützte
 
 ## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
 
-Mit Xamarin.Forms-Datenvorlagen können Sie die Darstellung von Daten in unterstützten Steuerelementen definieren. Dieser Artikel bietet eine Einführung in Datenvorlagen und die Erläuterung, warum diese nötig sind.
+Xamarin.Forms-Datenvorlagen bieten die Möglichkeit, die Darstellung von Daten für unterstützte Steuerelemente zu definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind.
 
 ## <a name="creating-a-datatemplate"></a>[Erstellen einer DataTemplate-Klasse](creating.md)
 
-Datenvorlagen können inline erstellt werden, z.B. in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)-Element oder über einen benutzerdefinierten Typ oder entsprechenden Xamarin.Forms-Zellentyp. Eine Inlinevorlage sollte verwendet werden, wenn keine Notwendigkeit besteht, die Datenvorlage woanders erneut zu verwenden. Alternativ kann eine Datenvorlage erneut verwendet werden, indem sie als benutzerdefinierter Typ oder als Ressource auf Steuerelementebene, Seitenebene oder Anwendungsebene definiert wird.
+Datenvorlagen können inline erstellt werden, z. B. in einem [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)-Element oder über einen benutzerdefinierten Typ oder entsprechenden Xamarin.Forms-Zellentyp. Eine Inlinevorlage sollte verwendet werden, wenn keine Notwendigkeit besteht, die Datenvorlage woanders erneut zu verwenden. Alternativ kann eine Datenvorlage erneut verwendet werden, indem sie als benutzerdefinierter Typ oder als Ressource auf Steuerelementebene, Seitenebene oder Anwendungsebene definiert wird.
 
 ## <a name="creating-a-datatemplateselector"></a>[Erstellen einer DataTemplateSelector-Klasse](selector.md)
 

@@ -1,18 +1,11 @@
 ---
-title: 'Xamarin.Essentials: Beschleunigungsmesser'
-description: Mit der Accelerometer-Klasse in Xamarin.Essentials können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt.
-ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70765043"
+title: ''Xamarin.Essentials: Accelerometer'' description: ''Mit der Accelerometer-Klasse in Xamarin.Essentialskönnen Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt.''
+ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Beschleunigungsmesser
 
 Mit der **Accelerometer**-Klasse können Sie den Sensor für die Beschleunigungsmessung des Geräts überwachen, der die Beschleunigung des Geräts im dreidimensionalen Raum angibt.
@@ -23,7 +16,7 @@ Mit der **Accelerometer**-Klasse können Sie den Sensor für die Beschleunigungs
 
 ## <a name="using-accelerometer"></a>Verwenden der Accelerometer-Klasse
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;

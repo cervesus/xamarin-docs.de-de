@@ -1,18 +1,21 @@
 ---
-title: Angefügte Verhaltensweisen
-description: Angefügte Verhaltensweisen sind statische Klassen mit mindestens einer angefügten Eigenschaft. In diesem Artikel wird veranschaulicht, wie Sie angefügte Verhaltensweisen erstellen und verwenden können.
-ms.prod: xamarin
-ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131117"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139424"
 ---
 # <a name="attached-behaviors"></a>Angefügte Verhaltensweisen
 
@@ -29,7 +32,7 @@ Eine angefügte Eigenschaft kann einen `propertyChanged`-Delegaten definieren, d
 1. Der `propertyChanged`-Delegat wandelt den Steuerelementverweis, der als [`BindableObject`](xref:Xamarin.Forms.BindableObject) empfangen wird, in den Steuerelementtyp um, der von dem entsprechend entworfenen Verhalten verbessert wird.
 1. Der `propertyChanged`-Delegat ändert Eigenschaften des Steuerelements, ruft Methoden des Steuerelements auf oder erfasst Ereignishandler für Ereignisse, die vom Steuerelement verfügbar gemacht wurden, um das Verhalten der Kernfunktionen zu implementieren.
 
-Ein Problem bei angefügten Verhalten besteht darin, dass sie in der `static`-Klasse mit `static`-Eigenschaften und -Methoden definiert werden. Dadurch wird das Erstellen angefügter Verhalten erschwert, die einen Zustand aufweisen. Darüber hinaus ersetzen Xamarin.Forms-Verhalten angefügte Verhalten als bevorzugten Ansatz zur Erstellung von Verhalten. Weitere Informationen über Xamarin.Forms-Verhaltensweisen finden Sie unter [Xamarin.Forms Behaviors (Xamarin.Forms-Verhaltensweisen)](~/xamarin-forms/app-fundamentals/behaviors/creating.md) und [Reusable Behaviors (Wiederverwendbare Verhaltensweisen)](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+Ein Problem bei angefügten Verhalten besteht darin, dass sie in der `static`-Klasse mit `static`-Eigenschaften und -Methoden definiert werden. Dadurch wird das Erstellen angefügter Verhalten erschwert, die einen Zustand aufweisen. Darüber hinaus ersetzen Xamarin.Forms-Verhalten angefügte Verhalten als bevorzugten Ansatz zur Erstellung von Verhalten. Weitere Informationen über Xamarin.Forms-Verhaltensweisen finden Sie unter Erstellen von [Xamarin.Forms-Verhalten](~/xamarin-forms/app-fundamentals/behaviors/creating.md) und [Wiederverwendbare Verhaltensweisen](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
 
 ## <a name="creating-an-attached-behavior"></a>Erstellen eines angefügten Verhaltens
 

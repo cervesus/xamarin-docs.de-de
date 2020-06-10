@@ -1,18 +1,21 @@
 ---
-title: Xamarin Hot Restart
-description: In diesem Dokument wird die Einrichtung und Verwendung von Xamarin Hot Restart zum Debuggen einer iOS-App beschrieben.
-ms.prod: xamarin
-ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/16/2020
-ms.openlocfilehash: cc5efffd4c3646fbff9cdb1ad1a30ec614cb4921
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79429566"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139138"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (Preview)
 
@@ -21,7 +24,7 @@ ms.locfileid: "79429566"
 Mit Xamarin Hot Restart können Sie Änderungen an Ihrer App während der Entwicklung, der Bearbeitung von Code in mehreren Dateien, Ressourcen und Verweisen schnell testen. Die neuen Änderungen am bestehenden App-Bundle werden an das Debugziel gepusht, wodurch ein wesentlich schnellerer Entwicklungs- und Bereitstellungszyklus ermöglicht wird.
 
 > [!IMPORTANT]
-> Xamarin Hot Restart ist derzeit in Visual Studio 2019 Version 16.5 (stabil) verfügbar und unterstützt iOS-Apps mit Xamarin.Forms. Die Unterstützung für Visual Studio für Mac und anderen Apps als Xamarin.Forms befindet sich in Planung.
+> Xamarin Hot Restart ist derzeit in Visual Studio 2019 Version 16.5 (stabil) verfügbar und unterstützt iOS-Apps mit Xamarin.Forms. Die Unterstützung für Visual Studio für Mac und Nicht-Xamarin.Forms-Apps befindet sich in Planung.
 
 ## <a name="requirements"></a>Anforderungen
 

@@ -1,25 +1,29 @@
 ---
-title: Zusammenfassung von Kapitel 27. Benutzerdefinierte Renderer
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 27. Benutzerdefinierte Renderer'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: fd4014fa4db4e90596c100d454cf0467512240a4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 27. Custom renderers''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b0a3e14126dc8c92a1d1b60db7dbb2afd8e8c12
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760506"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136590"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Zusammenfassung von Kapitel 27. Benutzerdefinierte Renderer
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
 
 > [!NOTE] 
-> In den Anmerkungen auf dieser Seite wird erläutert, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
+> In den Anmerkungen auf dieser Seite wird beschrieben, inwiefern die Angaben innerhalb des Buchs heute nicht mehr für Xamarin.Forms gelten.
 
 Ein Xamarin.Forms-Element wie ein `Button` wird mit einer plattformspezifischen Schaltfläche gerendert, die in eine Klasse namens `ButtonRenderer` gekapselt ist.  Hier finden Sie die [iOS-Version von `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs), die [Android-Version von `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs) und die [UWP-Version von `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs).
 
@@ -30,10 +34,10 @@ In diesem Kapitel wird erläutert, wie Sie eigene Renderer schreiben können, um
 Es gibt vier Assemblys, die den plattformspezifischen Code für Xamarin.Forms enthalten.
 Sie können sich die Quelle auf GitHub mithilfe dieser Links ansehen:
 
-- [**Xamarin.Forms.Platform**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform) (sehr klein)
-- [**Xamarin.Forms.Platform.iOS**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.iOS)
-- [**Xamarin.Forms.Platform.Android**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.Android)
-- [**Xamarin.Forms.Platform.UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
+- [ **Xamarin.Forms.Platform**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform) (sehr klein)
+- [ **Xamarin.Forms.Platform.iOS**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.iOS)
+- [ **Xamarin.Forms.Platform.Android**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.Android)
+- [ **Xamarin.Forms.Platform.UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
 
 > [!NOTE]
 > Die in diesem Buch erwähnten `WinRT`-Assemblys sind nicht mehr Teil dieser Projektmappe. 
@@ -83,7 +87,7 @@ Die [`EllipseView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/m
 
 Die Renderer können Eigenschaftswerte übertragen, die für eine `View` auf das native Objekt festgelegt sind, indem die `OnElementPropertyChanged`-Methode im Renderer außer Kraft gesetzt wird. Innerhalb dieser Methode (und innerhalb der meisten Renderer) sind zwei Eigenschaften verfügbar:
 
-- `Element`, das Xamarin.Forms-Element.
+- `Element`, das Xamarin.Forms-Element
 - `Control`, das native Ansichts-, Widget- oder Steuerelementobjekt.
 
 Die Typen dieser Eigenschaften werden von den generischen Parametern von `ViewRenderer` bestimmt. In diesem Beispiel ist `Element` vom Typ `EllipseView`.

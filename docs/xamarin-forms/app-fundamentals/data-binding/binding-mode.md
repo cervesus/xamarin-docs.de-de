@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms-Bindungsmodus
-description: In diesem Artikel wird erläutert, wie Sie den Informationsfluss zwischen Quelle und Ziel mit einem Bindungsmodus steuern können, der mit einem Member der BindingMode-Enumeration angegeben wird. Jede bindbare Eigenschaft verfügt über einen Standardbindungsmodus, der den geltenden Modus angibt, wenn diese Eigenschaft das Ziel einer Datenbindung ist.
-ms.prod: xamarin
-ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/01/2018
-ms.openlocfilehash: 3bf1ab647faa4b6c4735585ddfeaeb704d7d3f41
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Bindungsmodus in Xamarin.Forms
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303762"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139775"
 ---
-# <a name="xamarinforms-binding-mode"></a>Xamarin.Forms-Bindungsmodus
+# <a name="xamarinforms-binding-mode"></a>Bindungsmodus in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -61,7 +64,7 @@ Der Bindungsmodus wird mit einem Member der [`BindingMode`](xref:Xamarin.Forms.B
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay): Daten fließen zwischen Quelle und Ziel in beide Richtungen
 - [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay): Daten fließen von der Quelle zum Ziel
 - [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource): Daten fließen vom Ziel zur Quelle
-- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource): Daten fließen nur dann von der Quelle zum Ziel, wenn sich `BindingContext` ändert (neu in Xamarin.Forms 3.0)
+- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource): Daten fließen nur dann von der Quelle zum Ziel, wenn sich `BindingContext` ändert (neu in Xamarin.Forms 3.0).
 
 Jede bindbare Eigenschaft hat einen Standardbindungsmodus, der beim Erstellen der Eigenschaft festgelegt wird und der über die [`DefaultBindingMode`](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode)-Eigenschaft des `BindableProperty`-Objekts verfügbar ist. Dieser Standardbindungsmodus gibt den geltenden Modus an, wenn diese Eigenschaft das Ziel einer Datenbindung ist.
 
@@ -411,13 +414,13 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-Jede Anwendungseinstellung ist eine Eigenschaft, die im Xamarin.Forms-Eigenschaftenverzeichnis in einer Methode mit dem Namen `SaveState` gespeichert ist und im Konstruktor aus diesem Verzeichnis geladen wird. Gegen Ende der Klasse gibt es zwei Methoden, die ViewModel-Klassen optimieren und weniger fehleranfällig machen. Die `OnPropertyChanged`-Methode weist einen optionalen Parameter auf, der auf die aufrufende Eigenschaft festgelegt ist. Dadurch können Sie Tippfehler vermeiden, wenn Sie den Namen der Eigenschaft als Zeichenfolge angeben.
+Jede Anwendungseinstellung ist eine Eigenschaft, die im Xamarin.Forms-Eigenschaftenwörterbuch in einer Methode namens `SaveState` gespeichert ist und im Konstruktor aus diesem Wörterbuch geladen wird. Gegen Ende der Klasse gibt es zwei Methoden, die ViewModel-Klassen optimieren und weniger fehleranfällig machen. Die `OnPropertyChanged`-Methode weist einen optionalen Parameter auf, der auf die aufrufende Eigenschaft festgelegt ist. Dadurch können Sie Tippfehler vermeiden, wenn Sie den Namen der Eigenschaft als Zeichenfolge angeben.
 
 Die `SetProperty`-Methode in der Klasse macht noch mehr: Sie vergleicht den Wert, auf den die Eigenschaft festgelegt wird, mit dem Wert, der als Feld gespeichert wurde, und ruft `OnPropertyChanged` nur dann auf, wenn die Werte nicht übereinstimmen.
 
 Die `SampleSettingsViewModel`-Klasse definiert zwei Eigenschaften für die Hintergrundfarbe: Die `BackgroundNamedColor`-Eigenschaft weist den Typ `NamedColor` auf. Dies ist eine Klasse, die auch im Beispiel **Data Binding Demos** (Demos zur Datenbindung) enthalten ist. Die `BackgroundColor`-Eigenschaft weist den Typ `Color` auf und kann von der `Color`-Eigenschaft des `NamedColor`-Objekts abgerufen werden.
 
-Die `NamedColor`-Klasse nutzt die .NET-Reflektion, um alle statischen öffentlichen Felder in der Xamarin.Forms-`Color`-Struktur aufzuführen und sie mitsamt ihrer Namen in einer Collection zu speichern, auf die über die statische Eigenschaft `All` zugegriffen werden kann:
+Die Klasse `NamedColor` nutzt die .NET-Reflexion, um alle statischen öffentlichen Felder in der `Color`-Struktur von Xamarin.Forms aufzuführen und sie mitsamt ihrer Namen in einer Sammlung zu speichern, auf die über die statische Eigenschaft `All` zugegriffen werden kann:
 
 ```csharp
 public class NamedColor : IEquatable<NamedColor>, IComparable<NamedColor>
@@ -684,4 +687,4 @@ Im nächsten Artikel erfahren Sie, wie Sie die [**Zeichenfolgenformatierung**](s
 ## <a name="related-links"></a>Verwandte Links
 
 - [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Zusammenfassung von Kapitel 16.: Datenbindung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

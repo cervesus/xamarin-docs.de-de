@@ -1,20 +1,23 @@
 ---
-title: Zeichenfolgenformatierung in Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie Sie Objekte mithilfe von Xamarin.Forms-Datenbindungen als Zeichenfolgen formatieren und anzeigen. Legen Sie das StringFormat der Bindung dazu auf eine .NET-Standard-Formatierungszeichenfolge mit einem Platzhalter fest.
-ms.prod: xamarin
-ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms Zeichenfolgenformatierung
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940381"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135758"
 ---
-# <a name="xamarinforms-string-formatting"></a>Zeichenfolgenformatierung in Xamarin.Forms
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms Zeichenfolgenformatierung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 

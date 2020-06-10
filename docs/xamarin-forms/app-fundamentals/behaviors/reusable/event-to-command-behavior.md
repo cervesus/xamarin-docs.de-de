@@ -1,24 +1,27 @@
 ---
-title: Wiederverwendbare EventToCommandBehavior-Klasse
-description: Verhalten können zum Zuordnen von Befehlen zu Steuerelementen verwendet werden, die nicht dazu konzipiert sind, mit Befehlen zu interagieren. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens dargestellt, um einen Befehl aufzurufen, wenn ein Ereignis ausgelöst wird.
-ms.prod: xamarin
-ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/09/2018
-ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Verhalten können zum Zuordnen von Befehlen zu Steuerelementen verwendet werden, die nicht dazu konzipiert sind, mit Befehlen zu interagieren. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens veranschaulicht, um einen Befehl aufzurufen, wenn ein Ereignis ausgelöst wird.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650913"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135797"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Wiederverwendbare EventToCommandBehavior-Klasse
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
-_Verhalten können zum Zuordnen von Befehlen zu Steuerelementen verwendet werden, die nicht dazu konzipiert sind, mit Befehlen zu interagieren. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens dargestellt, um einen Befehl aufzurufen, wenn ein Ereignis ausgelöst wird._
+_Verhalten können zum Zuordnen von Befehlen zu Steuerelementen verwendet werden, die nicht dazu konzipiert sind, mit Befehlen zu interagieren. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens veranschaulicht, um einen Befehl aufzurufen, wenn ein Ereignis ausgelöst wird._
 
 ## <a name="overview"></a>Übersicht
 
@@ -41,7 +44,7 @@ Die folgenden optionalen Verhaltenseigenschaften können ebenfalls festgelegt we
 
 Die `EventToCommandBehavior`-Klasse leitet von der `BehaviorBase<T>`-Klasse ab, die sich wiederum von der [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)-Klasse ableitet. Der Zweck der `BehaviorBase<T>`-Klasse ist es, eine Basisklasse für Xamarin.Forms-Verhalten bereitzustellen, für die die [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft des Verhaltens auf das angefügte Steuerelement festgelegt sein muss. Hiermit wird sichergestellt, dass das Verhalten an die von der `Command`-Eigenschaft angegebene `ICommand`-Schnittstelle angebunden und sie ausführen kann, wenn das Verhalten genutzt wird.
 
-Die `BehaviorBase<T>`-Klasse stellt eine überschreibbare [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode bereit, die die [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)-Eigenschaft des Verhaltens festlegt, sowie eine überschreibbare [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode, die die `BindingContext`-Eigenschaft bereinigt, bereit. Darüber hinaus speichert die Klasse einen Verweis auf das angefügte Steuerelement in der `AssociatedObject`-Eigenschaft.
+Die `BehaviorBase<T>`-Klasse stellt eine überschreibbare Methode bereit, [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method that sets the [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) of the behavior and an overridable [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)), die `BindingContext` bereinigt. Darüber hinaus speichert die Klasse einen Verweis auf das angefügte Steuerelement in der `AssociatedObject`-Eigenschaft.
 
 ### <a name="implementing-bindable-properties"></a>Implementieren von bindbaren Eigenschaften
 
@@ -73,7 +76,7 @@ Die Ereignisargumente für das Ereignis werden standardmäßig an den Befehl üb
 
 ### <a name="implementing-the-overrides"></a>Implementieren der Überschreibungen
 
-Die `EventToCommandBehavior`-Klasse überschreibt wie im folgenden Codebeispiel gezeigt die Methoden [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) und [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) der `BehaviorBase<T>`-Klasse:
+Die `EventToCommandBehavior`-Klasse setzt die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) and [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methoden der `BehaviorBase<T>`-Klasse außer Kraft. Dies ist im folgenden Codebeispiel dargestellt:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -94,7 +97,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))-Methode führt das Setup aus, indem sie die `RegisterEvent`-Methode aufruft, wobei der Wert der `EventName`-Eigenschaft als Parameter übergeben wird. Die [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode führt die Bereinigung aus, indem sie die `DeregisterEvent`-Methode aufruft, wobei der Wert der `EventName`-Eigenschaft als Parameter übergeben wird.
+Die [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `RegisterEvent` method, passing in the value of the `EventName` property as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode führt die Bereinigung durch, indem die `DeregisterEvent`-Methode aufgerufen und den Wert der `EventName`-Eigenschaft als Parameter übergeben wird.
 
 ### <a name="implementing-the-behavior-functionality"></a>Implementieren der Verhaltensfunktionalität
 
@@ -152,7 +155,7 @@ Die `OnEvent`-Methode wird als Reaktion auf die Auslösung des Ereignisses ausge
 
 Die datengebundene `ICommand`-Schnittstelle wird dann ausgeführt, wobei der Parameter an den Befehl übergeben wird, sofern die [`CanExecute`](xref:Xamarin.Forms.Command.CanExecute(System.Object))-Methode `true` zurückgibt.
 
-Hier wird nicht gezeigt, dass `EventToCommandBehavior` auch eine `DeregisterEvent`-Methode enthält, die von der [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))-Methode ausgeführt wird. Die `DeregisterEvent`-Methode wird verwendet, um das in der `EventName`-Eigenschaft definierte Ereignis zu finden und die Registrierung aufzuheben, um potenzielle Arbeitsspeicherverluste zu bereinigen.
+Die `EventToCommandBehavior`-Klasse enthält auch eine `DeregisterEvent`-Methode (hier nicht dargestellt), die von der Eigenschaft [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method. The `DeregisterEvent` method is used to locate and deregister the event defined in the `EventName` ausgeführt wird, um möglichen Arbeitsspeicherverlust zu bereinigen.
 
 ## <a name="consuming-the-behavior"></a>Nutzen des Verhaltens
 

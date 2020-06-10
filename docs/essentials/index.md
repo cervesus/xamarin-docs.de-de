@@ -1,30 +1,33 @@
 ---
 title: Xamarin.Essentials
 description: Dieses Dokument verweist auf verschiedene Anleitungen für Xamarin.Essentials, womit Entwicklern plattformübergreifende APIs für ihre mobilen Anwendungen bereitgestellt werden.
-ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 02/26/2020
-ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80387204"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139463"
 ---
-# <a name="xamarinessentials"></a>Xamarin.Essentials
+# Xamarin.Essentials
 
 Xamarin.Essentials stellt Entwicklern plattformübergreifende APIs für ihre mobilen Anwendungen bereit.
 
-Android, iOS und UWP (universelle Windows-Plattform) bieten einzigartige Betriebssystem- und Plattform-APIs, auf die Entwickler zugreifen können, wenn sie Xamarin mit C# verwenden. Xamarin.Essentials stellt eine einzelne plattformübergreifende API bereit, die mit jeder Xamarin.Forms-, iOS-, Android- und UWP-Anwendung kompatibel ist, auf die über freigegebenen Code zugegriffen werden kann, unabhängig davon, wie die Benutzeroberfläche erstellt wird.
+Android, iOS und UWP (universelle Windows-Plattform) bieten einzigartige Betriebssystem- und Plattform-APIs, auf die Entwickler zugreifen können, wenn sie Xamarin mit C# verwenden. Xamarin.Essentials stellt eine einzelne plattformübergreifende API bereit, die mit jeder Xamarin.Forms-, Android-, iOS- und UWP-Anwendung kompatibel ist, auf die über gemeinsamen Code zugegriffen werden kann, unabhängig davon, wie die Benutzeroberfläche erstellt wird.
 
-## <a name="get-started-with-xamarinessentials"></a>[Erste Schritte mit Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Erste Schritte mit Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
-Befolgen Sie die Anleitung [Erste Schritte](get-started.md), um das **Xamarin.Essentials**-NuGet-Paket in vorhandenen oder neuen Xamarin.Forms-, Android-, iOS- oder UWP-Projekten zu installieren.
+Befolgen Sie die Anleitung unter [Erste Schritte mit Xamarin.Essentials](get-started.md), um das **Xamarin.Essentials** -NuGet-Paket in vorhandenen oder neuen Xamarin.Forms-, Android-, iOS- oder UWP-Projekten zu installieren.
 
 ## <a name="feature-guides"></a>Anleitungen für Funktionen
 
-Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Funktionen in Ihre Anwendungen zu integrieren:
+Befolgen Sie die Anleitungen, um diese Xamarin.Essentials-Features in Ihre Anwendungen zu integrieren:
 
 * [Beschleunigungsmesser](accelerometer.md?context=xamarin/xamarin-forms): Abrufen von Gerätedaten zur Beschleunigung im dreidimensionalen Raum
 * [App-Informationen](app-information.md?context=xamarin/xamarin-forms): Informationen zur Anwendung
@@ -73,4 +76,4 @@ Sehen Sie sich die vollständigen Versionshinweise zu jedem Xamarin.Essentials-R
 
 ## <a name="api-documentation"></a>[API-Dokumentation](xref:Xamarin.Essentials)
 
-In der API-Dokumentation finden Sie weitere Informationen zu allen Funktionen von Xamarin.Essentials.
+In der API-Dokumentation finden Sie weitere Informationen zu allen Features von Xamarin.Essentials.

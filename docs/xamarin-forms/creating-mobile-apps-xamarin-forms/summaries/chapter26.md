@@ -1,18 +1,22 @@
 ---
-title: 'Zusammenfassung für Kapitel 26: Benutzerdefinierte Layouts'
-description: 'Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung für Kapitel 26: Benutzerdefinierte Layouts'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 1eb5153f8ab295696e373f4fdb65a4f8820a05bc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 26. Custom layouts''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb46d1a70e7c707c998be8669b4af3b8e8d7ead
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70770943"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136603"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Zusammenfassung für Kapitel 26: Benutzerdefinierte Layouts
 
@@ -29,7 +33,7 @@ In diesem Kapitel wird beschrieben, wie Sie eigene Klassen erstellen, die von `L
 
 ## <a name="an-overview-of-layout"></a>Das Layout im Überblick
 
-Es gibt kein zentralisiertes System zur Verarbeitung des Xamarin.Form-Layouts. Jedes Element bestimmt die eigene Größe selbst und ermittelt, wie es innerhalb eines bestimmten Bereichs gerendert wird.
+Es gibt kein zentralisiertes System zur Verarbeitung des Xamarin.Forms-Layouts. Jedes Element bestimmt die eigene Größe selbst und ermittelt, wie es innerhalb eines bestimmten Bereichs gerendert wird.
 
 ### <a name="parents-and-children"></a>Über- und untergeordnete Elemente
 
@@ -37,7 +41,7 @@ Jedes Element, das über untergeordnete Elemente verfügt, ist für die Position
 
 ### <a name="sizing-and-positioning"></a>Festlegung der Größe und Positionierung
 
-Für das Layout wird im oberen Bereich der visuellen Struktur mit der Seite begonnen, auf die alle Branches folgen. Die wichtigste öffentliche Methode innerhalb des Layouts ist [`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)), die durch `VisualElement` definiert wird. Jedes übergeordnete Element ruft für jedes seiner untergeordneten Elemente `Layout` auf, um die Größe des Elements festzulegen und seine Position zu bestimmen (relativ zum übergeordneten Element). Zu diesem Zweck wird ein [`Rectangle`](xref:Xamarin.Forms.Rectangle)-Wert angegeben. Diese Aufrufe von `Layout` werden innerhalb der visuellen Struktur propagiert.
+Für das Layout wird im oberen Bereich der visuellen Struktur mit der Seite begonnen, auf die alle Branches folgen. Die wichtigste öffentliche Methode im Layout ist [`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)), die von `VisualElement` definiert wird. Jedes übergeordnete Element ruft für jedes seiner untergeordneten Elemente `Layout` auf, um die Größe des Elements festzulegen und seine Position zu bestimmen (relativ zum übergeordneten Element). Zu diesem Zweck wird ein [`Rectangle`](xref:Xamarin.Forms.Rectangle)-Wert angegeben. Diese Aufrufe von `Layout` werden innerhalb der visuellen Struktur propagiert.
 
 Damit ein Element auf dem Bildschirm angezeigt wird, muss `Layout` aufgerufen werden. Dadurch werden die folgenden schreibgeschützten Eigenschaften festgelegt. Diese Eigenschaften stimmen mit dem `Rectangle`-Wert überein, der an die Methode übergeben wird:
 
@@ -58,7 +62,7 @@ Schließlich wird das folgende Ereignis ausgelöst:
 
 - [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
-Die Methode `OnSizeAllocated` wird durch `Page` und `Layout` außer Kraft gesetzt, den einzigen beiden Klassen in Xamarin.Forms, die über untergeordnete Elemente verfügen können. Die außer Kraft gesetzten Methodenaufrufe
+Die Methode `OnSizeAllocated` wird durch `Page` und `Layout` überschrieben, den einzigen beiden Klassen in Xamarin.Forms, die über untergeordnete Elemente verfügen können. Die außer Kraft gesetzten Methodenaufrufe
 
 - [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout) für `Page`-Ableitungen und [`UpdateChildrenLayout`](xref:Xamarin.Forms.Layout.UpdateChildrenLayout) für `Layout`-Ableitungen. Dadurch wird folgender Aufruf ausgelöst:
 - [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) für `Page`-Ableitungen und [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) für `Layout`-Ableitungen.
@@ -116,7 +120,7 @@ Unbegrenzte Constraints geben an, dass die angeforderte Größe der natürlichen
 
 [**ExploreChildSize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) zeigt Informationen zu Constraints und Größenanforderungen für ein einfaches Layout.
 
-## <a name="deriving-from-layoutview"></a>Ableitung von Layout\<View>
+## <a name="deriving-from-layoutview"></a>Ableiten von Layout\<View>
 
 Eine benutzerdefinierte Layoutklasse wird von `Layout<View>` abgeleitet. Sie hat zwei Aufgaben:
 
@@ -171,8 +175,8 @@ Bei einer `Layout<T>`-Ableitung ist eine Überlappung von untergeordneten Elemen
 
 Die Klasse `Layout` definiert zwei Methoden, mit denen Sie ein untergeordnetes Element innerhalb der Auflistung verschieben können:
 
-- [`LowerChild`](xref:Xamarin.Forms.Layout.LowerChild(Xamarin.Forms.View)), um ein untergeordnetes Element an den Anfang der Auflistung zu verschieben
-- [`RaiseChild`](xref:Xamarin.Forms.Layout.RaiseChild(Xamarin.Forms.View)), um ein untergeordnetes Element ans Ende der Auflistung zu verschieben
+- [`LowerChild`](xref:Xamarin.Forms.Layout.LowerChild(Xamarin.Forms.View)), um ein untergeordnetes Element an den Anfang der Sammlung zu verschieben
+- [`RaiseChild`](xref:Xamarin.Forms.Layout.RaiseChild(Xamarin.Forms.View)), um ein untergeordnetes Element an das Ende der Sammlung zu verschieben
 
 Bei überlappenden untergeordneten Elementen werden untergeordnete Elemente am Ende der Auflistung oberhalb von untergeordneten Elementen am Anfang der Auflistung angezeigt.
 

@@ -1,24 +1,27 @@
 ---
-title: Kompilierte Xamarin.Forms-Bindungen
+title: Kompilierte Bindungen in Xamarin.Forms
 description: In diesem Artikel wird erläutert, wie Sie kompilierte Bindungen verwenden können, um die Leistung der Datenbindung in Xamarin.Forms-Anwendungen zu verbessern.
-ms.prod: xamarin
-ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/18/2019
-ms.openlocfilehash: 531d9719eb4bf5c23001ebe4260254e13f9989eb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f811de95009900016bb8b442265a9a079e0f612
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72697161"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139748"
 ---
-# <a name="xamarinforms-compiled-bindings"></a>Kompilierte Xamarin.Forms-Bindungen
+# <a name="xamarinforms-compiled-bindings"></a>Kompilierte Bindungen in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-_Kompilierte Bindungen werden schneller gelöst als klassische Bindungen, wodurch die Leistung der Datenbindung in Xamarin.Forms-Anwendungen verbessert wird._
+_Kompilierte Bindungen werden schneller aufgelöst als klassische, wodurch die Leistung der Datenbindung in Xamarin.Forms-Anwendungen verbessert wird._
 
 Datenbindungen weisen zwei Hauptprobleme auf:
 
@@ -42,7 +45,7 @@ Wenn Sie kompilierte Bindungen verwenden möchten, muss das Attribut `x:DataType
 
 ## <a name="use-compiled-bindings"></a>Verwenden kompilierter Bindungen
 
-Die Seite **Kompilierte Farbauswahl** veranschaulicht die Verwendung von kompilierten Bindungen zwischen Xamarin.Forms-Ansichten und ViewModel-Eigenschaften:
+Die Seite **Compiled Color Selector** (Kompilierte Farbauswahl) veranschaulicht die Verwendung von kompilierten Bindungen zwischen Xamarin.Forms-Ansichten und ViewModel-Eigenschaften:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

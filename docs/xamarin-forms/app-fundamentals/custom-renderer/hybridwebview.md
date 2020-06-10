@@ -1,26 +1,29 @@
 ---
-title: Anpassen eines WebView-Elements
-description: Das Xamarin.Forms-WebView-Element ist eine Ansicht, die Web- und HTML-Inhalte in Ihrer App anzeigt. In diesem Artikel wird erläutert, wie Sie einen benutzerdefinierten Renderer erstellen, der WebView erweitert, um das Aufrufen von C#-Code über JavaScript zuzulassen.
-ms.prod: xamarin
-ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/31/2020
-ms.openlocfilehash: c736c083d4a8c424d3e017dae3cc30e35ad4fa3b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Das WebView-Element in Xamarin.Forms ist eine Ansicht, die Web- und HTML-Inhalte in Ihrer App anzeigt. In diesem Artikel wird erläutert, wie Sie einen benutzerdefinierten Renderer erstellen, der WebView erweitert, um das Aufrufen von C#-Code über JavaScript zuzulassen.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80419069"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138969"
 ---
 # <a name="customizing-a-webview"></a>Anpassen eines WebView-Elements
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
-Das _Xamarin.Forms-`WebView`-Element ist eine Ansicht, die Web- und HTML-Inhalte in Ihrer App anzeigt. In diesem Artikel wird erläutert, wie Sie einen benutzerdefinierten Renderer erstellen, der `WebView` erweitert, um das Aufrufen von C#-Code über JavaScript zuzulassen._
+_Das `WebView`-Element in Xamarin.Forms ist eine Ansicht, die Web- und HTML-Inhalte in Ihrer App anzeigt. In diesem Artikel wird erläutert, wie Sie einen benutzerdefinierten Renderer erstellen, der `WebView` erweitert, um das Aufrufen von C#-Code über JavaScript zuzulassen._
 
-Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Beim Rendern eines [`WebView`](xref:Xamarin.Forms.WebView)-Objekts durch eine Xamarin.Forms-App wird unter iOS die `WkWebViewRenderer`-Klasse instanziiert, wodurch wiederum ein natives `WkWebView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `WebViewRenderer`-Klasse ein natives `WebView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `WebViewRenderer`-Klasse ein natives `WebView`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Renderer Base Classes and Native Controls (Rendererbasisklassen und native Steuerelemente)](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jede Plattform, der eine Instanz eines nativen Steuerelements erstellt. Wenn ein [`WebView`](xref:Xamarin.Forms.WebView)-Objekt durch eine Xamarin.Forms-App unter iOS gerendert wird, wird die Klasse `WkWebViewRenderer` instanziiert, wodurch wiederum ein natives `WkWebView`-Steuerelement instanziiert wird. Auf der Android-Plattform instanziiert die `WebViewRenderer`-Klasse ein natives `WebView`-Steuerelement. Auf der Universellen Windows-Plattform (UWP) instanziiert die `WebViewRenderer`-Klasse ein natives `WebView`-Steuerelement. Weitere Informationen zu den Renderern und Klassen nativer Steuerelemente, auf die Xamarin.Forms-Steuerelemente verweisen, finden Sie unter [Rendererbasisklassen und native Steuerelemente](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`View`](xref:Xamarin.Forms.View)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
@@ -29,10 +32,10 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`View`](xref
 Der Renderingprozess kann genutzt werden, um Anpassungen für die Plattform zu implementieren, indem für eine [`WebView`](xref:Xamarin.Forms.WebView)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
 1. [Erstellen](#create-the-hybridwebview) Sie das benutzerdefinierte Steuerelement `HybridWebView`.
-1. [Nutzen](#consume-the-hybridwebview) Sie das `HybridWebView`-Objekt von Xamarin.Forms.
+1. [Verarbeiten](#consume-the-hybridwebview) Sie das `HybridWebView`-Element in Xamarin.Forms.
 1. [Erstellen](#create-the-custom-renderer-on-each-platform) Sie einen benutzerdefinierten Renderer für das `HybridWebView`-Objekt auf jeder Plattform.
 
-Im Folgenden werden alle Elemente zum Implementieren eines `HybridWebView`-Renderers behandelt, der das Xamarin.Forms-[`WebView`](xref:Xamarin.Forms.WebView)-Element erweitert, um das Aufrufen von C#-Code über JavaScript zuzulassen. Die `HybridWebView`-Instanz wird verwendet, um eine HTML-Seite anzuzeigen, die den Benutzer auffordert, seinen Namen einzugeben. Wenn der Benutzer auf die HTML-Schaltfläche klickt, ruft eine JavaScript-Funktion ein C#-`Action`-Objekt auf, das den Benutzernamen enthält.
+Im Folgenden werden alle Elemente zum Implementieren eines `HybridWebView`-Renderers behandelt, der das Xamarin.Forms-[`WebView`](xref:Xamarin.Forms.WebView)-Element erweitert, damit C#-Code über JavaScript aufgerufen werden kann. Die `HybridWebView`-Instanz wird verwendet, um eine HTML-Seite anzuzeigen, die den Benutzer auffordert, seinen Namen einzugeben. Wenn der Benutzer auf die HTML-Schaltfläche klickt, ruft eine JavaScript-Funktion ein C#-`Action`-Objekt auf, das den Benutzernamen enthält.
 
 Weitere Informationen zum Aufrufen von C#-Code über JavaScript finden Sie unter [Aufrufen von C#-Code über JavaScript](#invoke-c-from-javascript). Weitere Informationen über HTML-Seiten finden Sie unter [Erstellen der Webseite](#create-the-web-page).
 
@@ -158,9 +161,9 @@ Das benutzerdefinierte Steuerelement `HybridWebView` wird von Plattformrendererk
 
 ![](hybridwebview-images/screenshots.png "HybridWebView on each Platform")
 
-Die Klassen `WkWebViewRenderer` und `WebViewRenderer` stellen die `OnElementChanged`-Methode zur Verfügung, die aufgerufen wird, wenn das benutzerdefinierte Xamarin.Forms-Steuerelement erstellt wird, um das entsprechende native Websteuerelement zu rendern. Diese Methode akzeptiert einen `VisualElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element dar, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `HybridWebView`-Instanz.
+Die Klassen `WkWebViewRenderer` und `WebViewRenderer` machen die Methode `OnElementChanged` verfügbar, die aufgerufen wird, wenn das benutzerdefinierte Xamarin.Forms-Steuerelement erstellt wird, um das entsprechende native Websteuerelement zu rendern. Diese Methode akzeptiert einen `VisualElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `HybridWebView`-Instanz.
 
-In allen Plattformrendererklassen dient eine überschriebene Version der `OnElementChanged`-Methode zur Anpassung nativer Websteuerelemente. Ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird, kann über die `Element`-Eigenschaft abgerufen werden.
+In allen Plattformrendererklassen dient eine überschriebene Version der `OnElementChanged`-Methode zur Anpassung nativer Websteuerelemente. Ein Verweis auf das Xamarin.Forms-Steuerelement, das gerendert wird, kann über die Eigenschaft `Element` abgerufen werden.
 
 Jede benutzerdefinierte Rendererklasse ist mit einem `ExportRenderer`-Attribut versehen, das den Renderer bei Xamarin.Forms registriert. Das Attribut benötigt zwei Parameter: den Typnamen des zu rendernden benutzerdefinierten Xamarin.Forms-Steuerelements und den Typnamen des benutzerdefinierten Renderers. Das Präfix `assembly` für das Attribut gibt an, dass das Attribut für die gesamte Assembly gilt.
 
