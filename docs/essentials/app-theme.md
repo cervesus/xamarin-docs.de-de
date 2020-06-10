@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: App-Design'
-description: In diesem Dokument wird die RequestedTheme-API in Xamarin.Essentials beschrieben, die Informationen dazu enthält, welcher Designstil für die ausgeführte App angefordert wird.
-ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 84c246eb60f4ee561bbf2bcfee6eb587ce601a4a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150149"
+title: "Xamarin.Essentials: App-Design" description: "In diesem Dokument wird die RequestedTheme-API in Xamarin.Essentials beschrieben, die Informationen dazu enthält, welcher Designstil für die ausgeführte App angefordert wird."
+ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials: App-Design
 
 Die **RequestedTheme**-API ist Teil der [`AppInfo`](app-information.md)-Klasse und liefert Informationen darüber, welches Design vom System für Ihre ausgeführte Anwendung angefordert wird.
@@ -23,7 +13,7 @@ Die **RequestedTheme**-API ist Teil der [`AppInfo`](app-information.md)-Klasse u
 
 ## <a name="using-requestedtheme"></a>Verwenden von RequestedTheme
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -58,7 +48,7 @@ Weitere Informationen finden Sie in der offiziellen [Android-Dokumentation zum d
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Bei iOS-Versionen vor 13.0 wird stets „Nicht angegeben“ zurückgegeben. 
+Bei iOS-Versionen vor 13.0 wird stets „Nicht angegeben“ zurückgegeben.
 
 
 # <a name="uwp"></a>[UWP](#tab/uwp)

@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Berechtigungen'
-description: In diesem Dokument wird die Permissions-Klasse in Xamarin.Essentials beschrieben, die die Möglichkeit bietet, Laufzeitberechtigungen zu prüfen und anzufordern.
-ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
-author: jamesmontemagno
-ms.author: jamont
-ms.custom: video
-ms.date: 01/06/2020
-ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150069"
+title: "Xamarin.Essentials: Permissions" description: "In diesem Dokument wird die Permissions-Klasse in Xamarin.Essentials beschrieben, die die Möglichkeit bietet, Laufzeitberechtigungen zu prüfen und anzufordern."
+ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57 author: jamesmontemagno ms.author: jamont ms.custom: video ms.date: 01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials: Berechtigungen
 
 Die **Permissions**-Klasse bietet die Möglichkeit, Laufzeitberechtigungen zu prüfen und anzufordern.
@@ -25,7 +15,7 @@ Die **Permissions**-Klasse bietet die Möglichkeit, Laufzeitberechtigungen zu pr
 
 ## <a name="using-permissions"></a>Verwenden von Berechtigungen
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -145,7 +135,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>Erweitern von Berechtigungen
 
-Die Permissions-API wurde mit Blick auf Flexibilität und Erweiterbarkeit für Anwendungen erstellt, die eine zusätzliche Überprüfung oder Berechtigungen erfordern, die nicht in Xamarin.Essentials enthalten sind. Erstellen Sie eine neue Klasse, die von `BasePermission` erbt, und implementieren Sie die erforderlichen abstrakten Methoden. Then
+Die Permissions-API wurde mit Blick auf Flexibilität und Erweiterbarkeit für Anwendungen entwickelt, die eine zusätzliche Überprüfung oder Berechtigungen erfordern, die nicht in Xamarin.Essentials enthalten sind. Erstellen Sie eine neue Klasse, die von `BasePermission` erbt, und implementieren Sie die erforderlichen abstrakten Methoden. Then
 
 ```csharp
 public class MyPermission : BasePermission

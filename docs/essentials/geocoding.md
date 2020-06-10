@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Geocodierung'
-description: Die Klasse „Geocoding“ in Xamarin.Essentials stellt APIs bereit, um sowohl eine Ortsmarkierung (Placemark) mit Positionskoordinaten zu geocodieren als auch Geocode-Koordinaten in eine Ortsmarkierung umzuwandeln.
-ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66354107"
+title: "Xamarin.Essentials: Geocoding" description: "Die Geocoding-Klasse in Xamarin.Essentials stellt APIs bereit, um sowohl eine Ortsmarkierung (Placemark) mit Positionskoordinaten zu geocodieren als auch Geocode-Koordinaten in eine Ortsmarkierung umzuwandeln."
+ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90 author: jamesmontemagno ms.author: jamont ms.date: 05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geocodierung
 
 Die Klasse **Geocoding** stellt APIs bereit, um sowohl eine Ortsmarkierung (Placemark) mit Positionskoordinaten zu geocodieren als auch Geocode-Koordinaten in eine Ortsmarkierung umzuwandeln.
@@ -45,7 +35,7 @@ Platform.MapServiceToken = "YOUR-KEY-HERE";
 
 ## <a name="using-geocoding"></a>Verwenden der Geocodierung
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -119,7 +109,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>Abstand zwischen zwei Standorten
 
-Die Klassen [`Location`](xref:Xamarin.Essentials.Location) und [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) definieren Methoden, mit denen Sie den Abstand zwischen zwei Standorten berechnen können. Ein Beispiel finden Sie im Artikel [**Xamarin.Essentials: GeoLocation**](geolocation.md#calculate-distance).
+Die Klassen [`Location`](xref:Xamarin.Essentials.Location) und [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) definieren Methoden, mit denen Sie den Abstand zwischen zwei Standorten berechnen können. Ein Beispiel finden Sie im Artikel [ **Xamarin.Essentials: GeoLocation**](geolocation.md#calculate-distance).
 
 ## <a name="api"></a>API
 

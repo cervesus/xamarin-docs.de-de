@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Startprogramm'
-description: Mit der Launcher-Klasse in Xamarin.Essentials kann eine Anwendung einen URI über das System öffnen.
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: f84d3bf379562c8ddd96a32dfb9f15b03b0a6827
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149789"
+title: "Xamarin.Essentials Launcher" description: "Mit der Launcher-Klasse in Xamarin.Essentials kann eine Anwendung einen URI über das System öffnen."
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 08/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Startprogramm
 
 Mit der **Launcher**-Klasse kann eine Anwendung einen URI durch das System öffnen. Das wird häufig für Deep Linking für benutzerdefinierte URI-Schemas einer andere Anwendung verwendet. Wenn Sie im Browser eine Website öffnen möchten, verweisen Sie auf die **[Browser](open-browser.md)** API.
@@ -23,7 +13,7 @@ Mit der **Launcher**-Klasse kann eine Anwendung einen URI durch das System öffn
 
 ## <a name="using-launcher"></a>Verwenden des Startprogramms
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;

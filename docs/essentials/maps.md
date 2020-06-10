@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Map'
-description: Mit der Map-Klasse in Xamarin.Essentials kann eine Anwendung die installierte Kartenanwendung für einen bestimmten Standort oder eine bestimmte Ortsmarkierung öffnen.
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/26/2020
-ms.custom: video
-ms.openlocfilehash: 16f4a69e2d9216bb2e03fbcb663403d198b42c98
-ms.sourcegitcommit: 6a6cbb62bcf149f9515ee8868679a8a07ce17956
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862715"
+title: "Xamarin.Essentials Map" description: "Mit der Map-Klasse in Xamarin.Essentials kann eine Anwendung die installierte Kartenanwendung für einen bestimmten Standort oder eine bestimmte Ortsmarkierung (Placemark) öffnen."
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date: 05/26/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials: Zuordnung
 
 Mit der **Map**-Klasse kann eine Anwendung die installierte Kartenanwendung für einen bestimmten Standort oder eine bestimmte Ortsmarkierung öffnen.
@@ -23,7 +13,7 @@ Mit der **Map**-Klasse kann eine Anwendung die installierte Kartenanwendung für
 
 ## <a name="using-map"></a>Verwenden von Map
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -142,7 +132,7 @@ public class MapTest
 
 # <a name="android"></a>[Android](#tab/android)
 
-Android verwendet das URI-Schema `geo:`, um die Kartenanwendung auf dem Gerät zu starten. Möglicherweise wird der Benutzer aufgefordert, eine vorhandene App auszuwählen, die dieses URI-Schema unterstützt.  Xamarin.Essentials wurde mit Google Maps getestet, das dieses Schema unterstützt.
+Android verwendet das URI-Schema `geo:`, um die Kartenanwendung auf dem Gerät zu starten. Möglicherweise wird der Benutzer aufgefordert, eine vorhandene App auszuwählen, die dieses URI-Schema unterstützt.  Xamarin.Essentials wurde mit Google Maps getestet, da dieser Dienst das Schema unterstützt.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 

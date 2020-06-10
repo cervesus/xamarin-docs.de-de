@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Sicherer Speicher'
-description: Dieses Dokument beschreibt die SecureStorage-Klasse in Xamarin.Essentials, mit der einfache Schlüssel/Wertpaare sicher gespeichert werden können. Hier erfahren Sie das Wichtigste über die Verwendung der Klasse, die Besonderheiten der Plattformimplementierung und die Einschränkungen.
-ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
-ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550899"
+title: "Xamarin.Essentials: SecureStorage" description: "In diesem Dokument wird die SecureStorage-Klasse in Xamarin.Essentials beschrieben, mit der einfache Schlüssel-Wert-Paare sicher gespeichert werden können. Hier erfahren Sie das Wichtigste über die Verwendung der Klasse, die Besonderheiten der Plattformimplementierung und geltende Einschränkungen."
+ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64 author: jamesmontemagno ms.author: jamont ms.date: 04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
 
 Mit der Klasse **SecureStorage** können Sie einfache Schlüssel/Wertpaare sicher speichern.
@@ -26,7 +16,7 @@ Der Zugriff auf die **SecureStorage**-Funktionalität erfordert das folgende pla
 # <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
-> Die [Automatische Sicherung für Apps](https://developer.android.com/guide/topics/data/autobackup) ist eine Funktion von Android 6.0 (API-Ebene 23) und höher, die die App-Daten von Benutzern sichert (freigegebene Einstellungen, Dateien im internen App-Speicher und andere spezifische Dateien). Die Daten werden wiederhergestellt, wenn eine App neu installiert oder auf einem neuen Gerät installiert wird. Dies kann sich auf die `SecureStorage`-Klasse auswirken, die Freigabeeinstellungen verwendet, die gesichert werden und nicht beim Wiederherstellen entschlüsselt werden können. Xamarin.Essentials verarbeitet diesen Fall automatisch durch Entfernen des Schlüssels, um das Zurücksetzen zu ermöglichen, aber Sie können die automatische Sicherung auch manuell deaktivieren.
+> Die [Automatische Sicherung für Apps](https://developer.android.com/guide/topics/data/autobackup) ist eine Funktion von Android 6.0 (API-Ebene 23) und höher, die die App-Daten von Benutzern sichert (freigegebene Einstellungen, Dateien im internen App-Speicher und andere spezifische Dateien). Die Daten werden wiederhergestellt, wenn eine App neu installiert oder auf einem neuen Gerät installiert wird. Dies kann sich auf die `SecureStorage`-Klasse auswirken, die Freigabeeinstellungen verwendet, die gesichert werden und nicht beim Wiederherstellen entschlüsselt werden können. Xamarin.Essentials verarbeitet diesen Fall automatisch durch Entfernen des Schlüssels, um das Zurücksetzen zu ermöglichen. Sie können die automatische Sicherung jedoch auch manuell deaktivieren.
 
 ### <a name="enable-or-disable-backup"></a>Aktivieren und Deaktivieren der Sicherung
 Sie können die automatische Sicherung für Ihre gesamte Anwendung deaktivieren, indem Sie die Einstellung `android:allowBackup` in der Datei `AndroidManifest.xml` auf FALSE festlegen. Dieser Ansatz wird nur empfohlen, wenn Sie Daten auf eine andere Weise wiederherstellen möchten.
@@ -63,7 +53,7 @@ Die automatische Sicherung lässt sich konfigurieren, um bestimmte Inhalte davon
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Aktivieren Sie beim Entwickeln mit dem **iOS-Simulator** die Berechtigung **Keychain**, und fügen Sie eine Keychain-Zugriffsgruppe für die Bündel-ID der Anwendung hinzu. 
+Aktivieren Sie beim Entwickeln mit dem **iOS-Simulator** die Berechtigung **Keychain**, und fügen Sie eine Keychain-Zugriffsgruppe für die Bündel-ID der Anwendung hinzu.
 
 Öffnen Sie die Datei **Entitlements.plist** im iOS-Projekt, suchen Sie die Berechtigung **Keychain**, und aktivieren Sie sie. Dadurch wird der Bezeichner der Anwendung automatisch als Gruppe hinzugefügt.
 
@@ -80,7 +70,7 @@ Es ist kein zusätzliches Setup erforderlich.
 
 ## <a name="using-secure-storage"></a>Verwenden des sicheren Speichers
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -161,7 +151,7 @@ Verschlüsselte Werte werden in `ApplicationData.Current.LocalSettings` gespeich
 
 ## <a name="limitations"></a>Einschränkungen
 
-Diese API wurde zum Speichern kleiner Textmengen konzipiert.  Die Leistung ist ggf. langsam, wenn Sie versuchen, damit große Textmengen zu speichern. 
+Diese API wurde zum Speichern kleiner Textmengen konzipiert.  Die Leistung ist ggf. langsam, wenn Sie versuchen, damit große Textmengen zu speichern.
 
 ## <a name="api"></a>API
 

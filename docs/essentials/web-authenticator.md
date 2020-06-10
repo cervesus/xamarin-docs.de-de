@@ -1,17 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Web Authenticator'
-description: In diesem Dokument wird die WebAuthenticator-Klasse in Xamarin.Essentials beschrieben, mit der Sie browserbasierte Authentifizierungsflows starten können, die auf einen Rückruf an die App lauschen.
-ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
-author: redth
-ms.author: jodick
-ms.date: 03/26/2020
-ms.openlocfilehash: b090ea8491afccb7078de8333a44a4888819a46a
-ms.sourcegitcommit: ddd2cb3a102df339bb269380cb2c0617dbb1acb7
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81688267"
+title: "Xamarin.Essentials: WebAuthenticator" description: "In diesem Dokument wird die WebAuthenticator-Klasse in Xamarin.Essentials beschrieben, mit der Sie browserbasierte Authentifizierungsflows starten können, die auf einen Rückruf an die App lauschen."
+ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1 author: redth ms.author: jodick ms.date: 03/26/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
 Mit der **WebAuthenticator**-Klasse können Sie browserbasierte Flows initiieren, die auf einen Rückruf an eine bestimmte URL lauschen, die für die App registriert ist.
@@ -106,7 +97,7 @@ Für UWP müssen Sie den Rückruf-URI in der Datei `Package.appxmanifest` deklar
 
 ## <a name="using-webauthenticator"></a>Verwenden von WebAuthenticator
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;

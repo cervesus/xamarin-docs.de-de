@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Geolocation'
-description: In diesem Dokument wird die Klasse „Geolocation“ in Xamarin.Essentials beschrieben, die APIs zum Abrufen der Koordinaten des aktuellen geografischen Standorts des Geräts bereitstellt.
-ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: 99b439e70038d27ed8bffcf20b908c52a10ede82
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149742"
+title: "Xamarin.Essentials: Geolocation" description: "In diesem Dokument wird die Geolocation-Klasse in Xamarin.Essentials beschrieben, die APIs zum Abrufen der Koordinaten des aktuellen geografischen Standorts des Geräts bereitstellt."
+ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 03/13/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
 Die Klasse **Geolocation** stellt APIs zum Abrufen der Koordinaten des aktuellen geografischen Standorts des Geräts bereit.
@@ -74,7 +64,7 @@ Sie müssen die Berechtigung `Location` für die Anwendung festlegen. Öffnen Si
 
 ## <a name="using-geolocation"></a>Verwenden der Geolocation
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -112,7 +102,7 @@ catch (Exception ex)
 }
 ```
 
-Die Höhe ist nicht immer verfügbar. Wenn sie nicht verfügbar ist, ist die Eigenschaft `Altitude` möglicherweise `null`, oder der Wert ist 0 (null). Ist die Höhe verfügbar, ist der Wert in Metern über Normalhöhennull angegeben. 
+Die Höhe ist nicht immer verfügbar. Wenn sie nicht verfügbar ist, ist die Eigenschaft `Altitude` möglicherweise `null`, oder der Wert ist 0 (null). Ist die Höhe verfügbar, ist der Wert in Metern über Normalhöhennull angegeben.
 
 Mit `GetLocationAsync` können Sie die Koordinaten des aktuellen [Standorts](xref:Xamarin.Essentials.Location) des Geräts abrufen. Es wird empfohlen, `GeolocationRequest` und `CancellationToken` vollständig zu übergeben, da es möglicherweise einige Zeit dauert, den Standort des Geräts abzurufen.
 

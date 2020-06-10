@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Akku'
-description: In diesem Dokument wird die Klasse „Battery“ in Xamarin.Essentials beschrieben, mit der Sie die Akkuinformationen des Geräts überprüfen und auf Änderungen überwachen können.
-ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/22/2019
-ms.custom: video
-ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756920"
+title: "Xamarin.Essentials: Battery" description: "In diesem Dokument wird die Battery-Klasse in Xamarin.Essentials beschrieben, mit der Sie die Akkuinformationen des Geräts überprüfen und auf Änderungen überwachen können."
+ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43 author: jamesmontemagno ms.author: jamont ms.date: 01/22/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Akku
 
 Mit der **Battery**-Klasse können Sie Informationen über den Akkustand und über Änderungen des Geräts sowie den Energiesparstatus des Geräts überwachen. Dieser gibt an, ob sich das Gerät im Energiesparmodus befindet. Anwendungen sollten Hintergrundverarbeitung vermeiden, wenn der Energiesparmodus des Geräts aktiviert ist.
@@ -55,7 +45,7 @@ Es ist kein zusätzliches Setup erforderlich.
 
 ## <a name="using-battery"></a>Verwenden der Akku-Funktion
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -170,7 +160,7 @@ Keine Plattformunterschiede.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-- Gerät muss zum Testen von APIs verwendet werden. 
+- Gerät muss zum Testen von APIs verwendet werden.
 - Gibt nur `AC` oder `Battery` für `PowerSource` zurück.
 
 # <a name="uwp"></a>[UWP](#tab/uwp)

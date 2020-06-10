@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Einstellungen'
-description: In diesem Dokument wird die Klasse „Preferences“ in Xamarin.Essentials beschrieben, die Anwendungseinstellungen in einem Schlüsselwertspeicher speichert. Behandelt werden die Verwendung der Klasse und die Datentypen, die gespeichert werden können.
-ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/15/2019
-ms.custom: video
-ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79497042"
+title: "Xamarin.Essentials: Preferences" description: "In diesem Dokument wird die Preferences-Klasse in Xamarin.Essentials beschrieben, die Anwendungseinstellungen in einem Schlüsselwertspeicher speichert. Es werden die Verwendung der Klasse und die Datentypen erklärt, die gespeichert werden können."
+ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF author: jamesmontemagno ms.author: jamont ms.date: 01/15/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
 Die Klasse **Preferences** unterstützt das Speichern von Anwendungseinstellungen in einem Schlüsselwertspeicher.
@@ -23,7 +13,7 @@ Die Klasse **Preferences** unterstützt das Speichern von Anwendungseinstellunge
 
 ## <a name="using-preferences"></a>Verwenden von Einstellungen
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -98,7 +88,7 @@ Alle Daten werden in [freigegebenen Einstellungen](https://developer.android.com
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) wird zum Speichern von Werten auf dem Gerät verwendet. Wenn kein `sharedName` angegeben ist, werden die `LocalSettings` verwendet. Andernfalls wird der Name zum Erstellen eines neuen Containers innerhalb von `LocalSettings` verwendet. 
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) wird zum Speichern von Werten auf dem Gerät verwendet. Wenn kein `sharedName` angegeben ist, werden die `LocalSettings` verwendet. Andernfalls wird der Name zum Erstellen eines neuen Containers innerhalb von `LocalSettings` verwendet.
 
 `LocalSettings` weist außerdem die folgende Einschränkung auf, dass der Name jeder einzelnen Einstellung höchstens 255 Zeichen lang sein darf. Jede Einstellung kann bis zu 8 KB groß sein, und jede zusammengesetzte Einstellung kann bis zu 64 KB groß sein.
 

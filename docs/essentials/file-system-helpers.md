@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Dateisystemhilfsprogramme'
-description: Die Klasse „FileSystem“ in Xamarin.Essentials enthält eine Reihe von Hilfsprogrammen, um den Cache und die Datenverzeichnisse der Anwendung zu finden und Dateien im App-Paket zu öffnen.
-ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: e42cb3764e993ecd6063aab6f38b1cdf5e870a58
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149989"
+title: "Xamarin.Essentials: FileSystem-Hilfsprogramme" description: "Die FileSystem-Klasse in Xamarin.Essentials enthält einige Hilfsprogramme, um den Cache und die Datenverzeichnisse der Anwendung zu suchen und Dateien im App-Paket zu öffnen."
+ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Dateisystemhilfsprogramme
 
 Die Klasse **FileSystem** enthält eine Reihe von Hilfsprogrammen, um den Cache und die Datenverzeichnisse der Anwendung zu finden und Dateien im App-Paket zu öffnen.
@@ -23,7 +13,7 @@ Die Klasse **FileSystem** enthält eine Reihe von Hilfsprogrammen, um den Cache 
 
 ## <a name="using-file-system-helpers"></a>Verwenden der Dateisystemhilfsprogramme
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;

@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: Taschenlampe'
-description: In diesem Dokument wird die Klasse „Flashlight“ in Xamarin.Essentials beschrieben, mit der Sie das Blitzlicht der Gerätekamera aktivieren bzw. deaktivieren, um es als Taschenlampe einzusetzen.
-ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1a8601860afaf033c9bdb62c187fe228d2e83435
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149958"
+title: "Xamarin.Essentials: Flashlight" description: "In diesem Dokument wird die Flashlight-Klasse in Xamarin.Essentials beschrieben, mit der Sie das Blitzlicht der Gerätekamera aktivieren bzw. deaktivieren, um das Gerät als Taschenlampe einzusetzen."
+ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Taschenlampe
 
 Mit der Klasse **Flashlight** können Sie das Blitzlicht der Gerätekamera aktivieren bzw. deaktivieren, um es als Taschenlampe einzusetzen.
@@ -66,7 +56,7 @@ Es ist kein zusätzliches Setup erforderlich.
 
 ## <a name="using-flashlight"></a>Verwenden der Taschenlampe
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -109,7 +99,7 @@ Auf neueren API-Ebenen wird der [TorchMode](https://developer.android.com/refere
 
 #### <a name="api-level-22-and-lower"></a>API-Ebene 22 und niedriger
 
-Zum Aktivieren oder Deaktivieren des `FlashMode` (Blitzlichtmodus) der Kameraeinheit wird eine Kameraoberflächentextur erstellt. 
+Zum Aktivieren oder Deaktivieren des `FlashMode` (Blitzlichtmodus) der Kameraeinheit wird eine Kameraoberflächentextur erstellt.
 
 ### <a name="ios"></a>[iOS](#tab/ios)
 

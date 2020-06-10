@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 4. Scrolling the stack''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9890ecdf286ee33d7af28fd20847788b063df8f5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136889"
+title: "Zusammenfassung von Kapitel 4: Scrollen im Stapel" description: "Erstellen von mobilen Apps mit Xamarin.Forms: Zusammenfassung von Kapitel 4. Scrollen im Stapel" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44 author: davidbritch ms.author: dabritch ms.date: 07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Zusammenfassung von Kapitel 4. Scrollen im Stapel
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
@@ -121,5 +105,5 @@ Im **BlackCat**-Beispiel wird außerdem veranschaulicht, wie Sie Programmressour
 - [Kapitel 4 – Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 - [Kapitel 4 – F#-Beispiele](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)
-- [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [ScrollView](~/xamarin-forms/user-interface/layouts/scrollview.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)
