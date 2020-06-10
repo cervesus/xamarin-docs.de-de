@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: e42912add9dd94b9cce16d725a456b1b4da30e35
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 98cedb1cf02f9688581946fa21a2cb40379f606f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022207"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566174"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Arbeiten mit tvos Split View Controllers in xamarin
 
@@ -20,7 +20,7 @@ Ein Split View Controller stellt einen Master-und Detail Ansichts Controller neb
 
 [![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
 
-<a name="About-Split-View-Controllers" />
+<a name="About-Split-View-Controllers"></a>
 
 ## <a name="about-split-view-controllers"></a>Informationen zu geteilten Ansichts Controllern
 
@@ -40,13 +40,13 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Split View Controllers:
 - Beibehalten **der Hauptauswahl** : während der Inhalt in der Detail Ansicht geändert werden kann, ist die Antwort auf die Auswahl eines Benutzers in der Master Ansicht. der Inhalt der Master Ansicht sollte korrigiert werden. Außerdem sollte das aktuell ausgewählte Element in der Master Ansicht eindeutig angezeigt werden.
 - **Verwenden Sie einen einzelnen, einheitlichen Titel** . in der Regel sollten Sie anstelle eines Titels sowohl in der Detailansicht als auch in der Master Ansicht einen einzelnen, zentrierten Titel in der Detailansicht verwenden.
 
-<a name="Split-View-Controllers-and-Storyboards" />
+<a name="Split-View-Controllers-and-Storyboards"></a>
 
 ## <a name="split-view-controllers-and-storyboards"></a>Geteilte Ansichts Controller und Storyboards
 
 Die einfachste Möglichkeit, mit Split View-Controllern in einer xamarin. tvos-APP zu arbeiten, besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie einen **geteilten Ansichts Controller** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 
@@ -63,10 +63,10 @@ Die einfachste Möglichkeit, mit Split View-Controllern in einer xamarin. tvos-A
 1. Entwerfen Sie den Inhalt Ihrer Master-und Detail Ansichten: 
 
     [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
-1. Weisen Sie **Namen** auf der **Registerkarte widget** des **Eigenschaftenpad** zu, um mit ihren UI C# -Steuerelementen im Code zu arbeiten.
+1. Weisen Sie **Namen** auf der **Registerkarte widget** des **Eigenschaftenpad** zu, um mit den UI-Steuerelementen in c#-Code zu arbeiten.
 1. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie einen **geteilten Ansichts Controller** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 
@@ -83,24 +83,24 @@ Die einfachste Möglichkeit, mit Split View-Controllern in einer xamarin. tvos-A
 1. Entwerfen Sie den Inhalt Ihrer Master-und Detail Ansichten: 
 
     [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
-1. Weisen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** **Namen** zu, um mit Ihren C# UI-Steuerelementen im Code zu arbeiten.
+1. Weisen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** **Namen** zu, um mit den UI-Steuerelementen in c#-Code zu arbeiten.
 1. Speichern Sie die Änderungen.
 
 -----
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
-<a name="Working-with-Split-View-Controllers" />
+<a name="Working-with-Split-View-Controllers"></a>
 
 ## <a name="working-with-split-view-controllers"></a>Arbeiten mit Split View-Controllern
 
 Wie bereits erwähnt, wird ein Split View Controller häufig in Situationen verwendet, in denen dem Benutzer gefilterte Inhalt angezeigt wird. Die Hauptkategorien werden auf der linken Seite in der Master Ansicht angezeigt, und die gefilterten Ergebnisse werden auf der rechten Seite in der Detail Ansicht basierend auf der Auswahl des Benutzers angezeigt.
 
-<a name="Accessing-Master-and-Detail" />
+<a name="Accessing-Master-and-Detail"></a>
 
 ### <a name="accessing-master-and-detail"></a>Zugreifen auf Master und Details
 
-Wenn Sie Programm gesteuert auf die Master-und die Detail Ansicht-Controller zugreifen müssen, verwenden Sie die `ViewControllers`-Eigenschaft des Split View-Controllers. Beispiel:
+Wenn Sie Programm gesteuert auf die Master-und die Detail Ansicht-Controller zugreifen müssen, verwenden Sie die- `ViewControllers` Eigenschaft des Split View-Controllers. Beispiel:
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -110,7 +110,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 
 Sie wird als Array dargestellt, wobei das erste Element (0) im Master Ansichts Controller und das zweite Element (1) die Details darstellen.
 
-<a name="Accessing-Detail-from-Master" />
+<a name="Accessing-Detail-from-Master"></a>
 
 ### <a name="accessing-detail-from-master"></a>Zugreifen auf Details von Master
 
@@ -122,7 +122,7 @@ Die einfachste Möglichkeit hierfür ist das verfügbar machen einer Eigenschaft
 public DetailViewController DetailController { get; set;}
 ```
 
-Überschreiben Sie im Split View Controller die `ViewDidLoad`-Methode, und verknüpfen Sie die beiden Ansichten miteinander. Beispiel:
+Überschreiben Sie im Split View Controller die `ViewDidLoad` -Methode, und verknüpfen Sie die beiden Ansichten miteinander. Beispiel:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -142,11 +142,11 @@ public override void ViewDidLoad ()
 
 Sie können Eigenschaften und Methoden auf dem Detail Ansichts Controller verfügbar machen, die der Master verwenden kann, um nach Bedarf neue Daten darzustellen.
 
-<a name="Showing-and-Hiding-Master" />
+<a name="Showing-and-Hiding-Master"></a>
 
 ### <a name="showing-and-hiding-master"></a>Ein-und Ausblenden des Masters
 
-Optional können Sie den Master Ansichts Controller mit der `PreferredDisplayMode`-Eigenschaft des Split View-Controllers anzeigen und ausblenden. Beispiel:
+Optional können Sie den Master Ansichts Controller mithilfe der- `PreferredDisplayMode` Eigenschaft des Split View-Controllers anzeigen und ausblenden. Beispiel:
 
 ```csharp
 // Show hide split view
@@ -157,16 +157,16 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 }
 ```
 
-Die `UISplitViewControllerDisplayMode`-Aufzählung definiert, wie der Master Ansichts Controller wie folgt dargestellt wird:
+Die- `UISplitViewControllerDisplayMode` Enumeration definiert, wie der Master Ansichts Controller als eines der folgenden Werte dargestellt wird:
 
 - **Automatic** -tvos steuert die Darstellung der Master-und Detail Ansichten.
 - **Primaryhidden** : Dadurch wird der Master Ansichts Controller ausgeblendet.
 - **Allvisible** : zeigt die Master-und die Detail Ansichts Controller nebeneinander an. Dies ist die übliche Standard Präsentation.
 - **Primaryoverlay** -der Detail Ansichts Controller erweitert sich unter und wird vom Master abgedeckt.
 
-Um den aktuellen Präsentations Zustand zu erhalten, verwenden Sie die `DisplayMode`-Eigenschaft des Split View-Controllers.
+Um den aktuellen Präsentations Zustand zu erhalten, verwenden Sie die- `DisplayMode` Eigenschaft des Split View-Controllers.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

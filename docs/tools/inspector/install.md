@@ -1,19 +1,19 @@
 ---
-title: 'Inspector: Installation und Vorraussetzungen'
+title: Installation und Anforderungen des Inspektors
 description: In diesem Dokument wird beschrieben, wie Sie die Xamarin Inspector installieren und die unterstützten Betriebssysteme, IDES und App-Plattformen erörtert werden.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306302"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573416"
 ---
-# <a name="inspector-installation-and-requirements"></a>Inspector: Installation und Vorraussetzungen
+# <a name="inspector-installation-and-requirements"></a>Installation und Anforderungen des Inspektors
 
 ## <a name="download-and-installation"></a>Herunterladen und installieren
 
@@ -43,55 +43,55 @@ ms.locfileid: "79306302"
 - Visual Studio für Mac
 - Visual Studio 2017 mit **Mobile-Entwicklung mit .net** -Arbeitsauslastung
 
-Die Überprüfung von Live-Apps steht für Enterprise-Kunden zur Verfügung.
+Die Live-App-Prüfung ist für Unternehmenskunden verfügbar.
 
-<a name="supported-platforms" />
+<a name="supported-platforms"></a>
 
 ### <a name="supported-app-platforms"></a>Unterstützte Anwendungsplattformen
 
 |App-Plattform|IDE-Unterstützung|Notizen|
 |--- |--- |--- |
 |Mac|Wird nur in Visual Studio für Mac unterstützt.|
-|iOS|Unterstützt in Visual Studio 2017 und Visual Studio für Mac| Das Linker-Verhalten muss auf " **nicht verknüpfen** " festgelegt werden (unter **IOS** -buildprojektoptionen) |
-|Android|Unterstützt in Visual Studio 2017 und Visual Studio für Mac|Muss auf Android > = 4.0.3 mit aktiviertem **fastdev** abzielen.<br />Google-, Visual Studio- oder Xamarin Android-Emulatoren müssen verwendet werden. In Android 7-Emulatoren sind Überprüfungen derzeit womöglich nicht zulässig.|
+|iOS|In Visual Studio 2017 und Visual Studio für Mac unterstützt| Das Linker-Verhalten muss auf " **nicht verknüpfen** " festgelegt werden (unter **IOS** -buildprojektoptionen) |
+|Android|In Visual Studio 2017 und Visual Studio für Mac unterstützt|Muss auf Android >= 4.0.3 mit aktiviertem **fastdev** abzielen.<br />Muss Google-, Visual Studio-oder xamarin Android-Emulatoren verwenden. Android 7-Emulatoren können zu diesem Zeitpunkt keine Überprüfung zulassen.|
 |WPF|Wird nur in Visual Studio 2017 unterstützt.|
 
-<a name="reporting-bugs" />
+<a name="reporting-bugs"></a>
 
 ## <a name="reporting-bugs"></a>Melden von Fehlern
 
-Fehler müssen direkt über Visual Studio gemeldet werden:
+Fehler sollten direkt über Visual Studio gemeldet werden:
 
 - **Hilfe > Senden von Feedback > Melden eines Problems**
 
-Geben Sie auch alle der folgenden Informationen an:
+Fügen Sie alle folgenden Informationen ein:
 
 ### <a name="platform-version-information"></a>Informationen zur Platt Form Version
 
-Geben Sie die folgenden Informationen unbedingt an:
+Diese Informationen sind von entscheidender Bedeutung.
 
 Visual Studio für Mac
 
 - **Visual Studio-> zu Visual Studio > Details > Kopier Informationen anzeigen**
-- Einfügen in den Fehlerbericht
+- In Fehlerbericht einfügen
 
 Visual Studio
 
-- **Hilfe > zu Visual Studio > Kopieren von Informationen**
-- Geben Sie Ihre Betriebssystemversion an und ob Sie die Windows 32-Bit-Version oder die Windows 64-Bit-Version ausführen.
+- **Hilfe > zu Visual Studio > kopieren von Informationen**
+- Informieren Sie uns über die Betriebs System Version und darüber, ob Sie 32-Bit-oder 64-Bit-Windows ausführen.
 
 ### <a name="log-files"></a>Protokolldateien
 
-Fügen Sie immer die IDE und die Protokolldateien des Inspector-Clients an.
+Fügen Sie immer IDE-und Inspektor-Client Protokolldateien an.
 
-Inspector-Client
+Inspektor-Client
 
 - Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-Version 1.4.x bietet außerdem die Möglichkeit, die Protokolldatei im Finder (macOS) oder im Explorer (Windows) direkt über das Hauptmenü auszuwählen.
+1.4. x bietet auch die Möglichkeit, die Protokolldatei im Finder (macOS) oder Explorer (Windows) direkt über das Hauptmenü auszuwählen:
 
-- **Hilfe > Anzeigen der Protokolldatei**
+- **Hilfe > anzeigen der Protokolldatei**
 
 Visual Studio für Mac
 
@@ -104,19 +104,19 @@ Visual Studio
 
 ### <a name="project-settings"></a>„Project Settings“ (Projekteinstellungen)
 
-Wenn Sie die **csproj** -Datei für das Projekt anfügen können, das Sie überprüfen möchten, wäre es äußerst hilfreich. Dies ist einfacher, als Ihnen Fragen zu individuellen Einstellungen zu stellen.
+Wenn Sie die **csproj** -Datei für das Projekt anfügen können, das Sie überprüfen möchten, wäre es äußerst hilfreich. Dies ist einfacher als die Frage nach einzelnen Einstellungen.
 
-Bestätigen Sie außerdem, dass die Debugkonfiguration ausgewählt ist.
+Vergewissern Sie sich außerdem, dass Sie sich in der Debugkonfiguration befinden.
 
 ### <a name="selected-devices"></a>Ausgewählte Geräte
 
-Für Android und iOS ist es wichtig, dass wir wissen, welches Gerät Sie zum Debuggen ausgewählt haben: Wir müssen Folgendes wissen:
+Für Android und IOS ist es wichtig, dass Sie wissen, auf welchem Gerät Sie Debuggen, wenn Sie es überprüfen möchten. Wir müssen Folgendes wissen:
 
-- Name des in der IDE dargestellten Geräts
+- Der Name des Geräts, wie in der IDE angezeigt.
 - Betriebssystemversion Ihres Geräts
-- Android: Stellen Sie sicher, dass Sie den x86-Emulator verwenden.
-- Android: welche Emulatorplattform verwenden Sie? Google-Emulatoren? Visual Studio-Emulator für Android? Xamarin Android Player?
-- Funktioniert die App, die Sie debuggen wollen, ordnungsgemäßauf dem Gerät?
+- Android: Überprüfen Sie, ob Sie einen x86-Emulator verwenden.
+- Android: welche Emulatorplattform verwenden Sie? Google-Emulator? Visual Studio-Android-Emulator? Xamarin Android Player?
+- Wird die APP, die Sie Debuggen, ordnungsgemäß angezeigt und funktioniert im Gerät?
 - Hat das Gerät Netzwerk Konnektivität (überprüfen Sie den Webbrowser)?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

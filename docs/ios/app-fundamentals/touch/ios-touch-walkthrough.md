@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 16e35d67f8fce33c8a0b21ddcd07df14fedf179b
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: ca1acd58ba9b5c598e19424f46cc0bcb838315aa
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725203"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571778"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von "berühren" in xamarin. IOS
 
@@ -26,7 +26,7 @@ Jeder Abschnitt enthält Anweisungen, um den Code von Grund auf neu zu schreiben
 
 Befolgen Sie die nachfolgenden Anweisungen, um dem Storyboard Code hinzuzufügen, und erfahren Sie mehr über die verschiedenen Typen von Berührungs Ereignissen, die in ios verfügbar sind. Öffnen Sie alternativ das [fertige Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final) , um alles zu sehen, was funktioniert.
 
-<a name="Touch_Samples"/>
+<a name="Touch_Samples"></a>
 
 ## <a name="touch-samples"></a>Berührungs Beispiele
 
@@ -36,7 +36,7 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
 
     [![](ios-touch-walkthrough-images/image4.png "Sample app run with non-working buttons")](ios-touch-walkthrough-images/image4.png#lightbox)
 
-1. Bearbeiten Sie die Datei **TouchViewController.cs** , und fügen Sie die folgenden beiden Instanzvariablen der-Klasse `TouchViewController`hinzu:
+1. Bearbeiten Sie die Datei **TouchViewController.cs** , und fügen Sie der-Klasse die folgenden beiden Instanzvariablen hinzu `TouchViewController` :
 
     ```csharp
     #region Private Variables
@@ -45,7 +45,7 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
     #endregion
     ```
 
-1. Implementieren Sie die `TouchesBegan`-Methode, wie im folgenden Code gezeigt:
+1. Implementieren Sie die- `TouchesBegan` Methode, wie im folgenden Code gezeigt:
 
     ```csharp
     public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -88,13 +88,13 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
     }
     ```
 
-    Diese Methode prüft, ob ein `UITouch` Objekt vorhanden ist. ist dies der Fall, führen Sie eine Aktion aus, die auf dem Speicherort der Fingereingabe basiert:
+    Diese Methode überprüft `UITouch` , ob ein-Objekt vorhanden ist. ist dies der Fall, führen Sie eine Aktion aus, die auf dem Speicherort der Fingereingabe basiert:
 
     - In _touchimage_ – zeigen Sie den Text `Touches Began` in einer Bezeichnung an, und ändern Sie das Bild.
     - _In doubletouchimage_ – ändern Sie das Bild, das angezeigt wird, wenn es sich um eine doppelte Abzweigung handelt.
-    - Legen Sie _in DragImage_ – ein Flag fest, das angibt, dass der Fingerabdruck gestartet wurde. Die-Methode `TouchesMoved` verwendet dieses Flag, um zu bestimmen, ob `DragImage` auf dem Bildschirm verschoben werden soll, wie im nächsten Schritt zu sehen ist.
+    - Legen Sie _in DragImage_ – ein Flag fest, das angibt, dass der Fingerabdruck gestartet wurde. Die-Methode `TouchesMoved` verwendet dieses Flag, um zu bestimmen, ob auf `DragImage` dem Bildschirm verschoben werden soll oder nicht, wie im nächsten Schritt zu sehen ist.
 
-    Der obige Code befasst sich nur mit einzelnen Berührungen, es gibt immer noch kein Verhalten, wenn der Benutzer seinen Finger auf dem Bildschirm verschiebt. Implementieren Sie `TouchesMoved` wie im folgenden Code gezeigt, um auf eine Bewegung zu reagieren:
+    Der obige Code befasst sich nur mit einzelnen Berührungen, es gibt immer noch kein Verhalten, wenn der Benutzer seinen Finger auf dem Bildschirm verschiebt. Um auf Bewegung zu reagieren, implementieren Sie, `TouchesMoved` wie im folgenden Code gezeigt:
 
     ```csharp
     public override void TouchesMoved(NSSet touches, UIEvent evt)
@@ -123,11 +123,11 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
     }
     ```
 
-    Diese Methode ruft ein `UITouch` Objekt ab und überprüft dann, ob die Fingereingabe aufgetreten ist. Wenn die Fingereingabe in `TouchImage`aufgetreten ist, wird der Text berührt verschoben auf dem Bildschirm angezeigt.
+    Mit dieser Methode wird ein `UITouch` -Objekt abgerufen und dann überprüft, ob die Fingereingabe aufgetreten ist. Wenn die Fingereingabe in aufgetreten `TouchImage` ist, wird der Text berührt verschoben auf dem Bildschirm angezeigt.
 
-    Wenn `touchStartedInside` true ist, wissen wir, dass der Benutzer seinen Finger auf `DragImage` hat und ihn bewegt. Der Code wird `DragImage` verschoben, wenn der Benutzer den Finger auf den Bildschirm verschiebt.
+    Wenn `touchStartedInside` true ist, wissen wir, dass der Benutzer über seinen Finger verfügt `DragImage` und ihn bewegt. Der Code wird verschoben, `DragImage` Wenn der Benutzer den Finger um den Bildschirm bewegt.
 
-1. Wir müssen die Groß-/Kleinschreibung behandeln, wenn der Benutzer seinen Finger vom Bildschirm abhebt oder das Touch-Ereignis von IOS abgebrochen wird. Hierfür implementieren wir `TouchesEnded` und `TouchesCancelled`, wie unten dargestellt:
+1. Wir müssen die Groß-/Kleinschreibung behandeln, wenn der Benutzer seinen Finger vom Bildschirm abhebt oder das Touch-Ereignis von IOS abgebrochen wird. Hierfür werden `TouchesEnded` und `TouchesCancelled` wie unten dargestellt implementiert:
 
     ```csharp
     public override void TouchesCancelled(NSSet touches, UIEvent evt)
@@ -159,7 +159,7 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
     }
     ```
 
-    Bei beiden Methoden wird das `touchStartedInside`-Flag auf false zurückgesetzt. `TouchesEnded` wird auch `TouchesEnded` auf dem Bildschirm angezeigt.
+    Beide Methoden setzen das `touchStartedInside` Flag auf false zurück. `TouchesEnded`wird auch `TouchesEnded` auf dem Bildschirm angezeigt.
 
 1. An diesem Punkt ist der Bildschirm mit den touchbeispielen fertiggestellt. Beachten Sie, wie sich der Bildschirm ändert, während Sie mit jedem der Bilder interagieren, wie im folgenden Screenshot zu sehen:
 
@@ -167,7 +167,7 @@ In diesem Beispiel veranschaulichen wir einige der Berührungs-APIs. Führen Sie
 
     [![](ios-touch-walkthrough-images/image5.png "The screen after the user drags a button")](ios-touch-walkthrough-images/image5.png#lightbox)
 
-<a name="Gesture_Recognizer_Samples" />
+<a name="Gesture_Recognizer_Samples"></a>
 
 ## <a name="gesture-recognizer-samples"></a>Gesten Erkennungs Beispiele
 
@@ -175,7 +175,7 @@ Im [vorherigen Abschnitt](#Touch_Samples) wurde gezeigt, wie Sie ein Objekt mith
 In diesem Abschnitt werden die Berührungs Ereignisse beseitigt und gezeigt, wie die folgenden Gesten Erkennungs Tools verwendet werden:
 
 - Der `UIPanGestureRecognizer` zum Ziehen eines Bilds auf dem Bildschirm.
-- Der `UITapGestureRecognizer`, um auf doppelte Abzweigungen auf dem Bildschirm zu antworten.
+- Der, der auf `UITapGestureRecognizer` doppelte Seiten auf dem Bildschirm antwortet.
 
 Führen Sie die folgenden Schritte aus, um Gesten Erkennungs Tools zu implementieren:
 
@@ -189,7 +189,7 @@ Führen Sie die folgenden Schritte aus, um Gesten Erkennungs Tools zu implementi
     ```
 
     Wir benötigen diese Instanzvariable, um den vorherigen Speicherort des Bilds nachzuverfolgen.
-Die Pan-Gestenerkennung verwendet den `originalImageFrame` Wert, um den Offset zu berechnen, der zum Neuzeichnen des Bilds auf dem Bildschirm erforderlich ist.
+Die Pan-Gestenerkennung verwendet den- `originalImageFrame` Wert, um den Offset zu berechnen, der zum Neuzeichnen des Bilds auf dem Bildschirm erforderlich ist.
 
 1. Fügen Sie dem Controller die folgende Methode hinzu:
 
@@ -207,8 +207,8 @@ Die Pan-Gestenerkennung verwendet den `originalImageFrame` Wert, um den Offset z
     }
     ```
 
-    Dieser Code instanziiert eine `UIPanGestureRecognizer`-Instanz und fügt Sie einer Ansicht hinzu.
-Beachten Sie, dass wir der Geste in Form der Methode `HandleDrag` ein Ziel zuweisen – diese Methode wird im nächsten Schritt bereitgestellt.
+    Dieser Code instanziiert eine `UIPanGestureRecognizer` -Instanz und fügt Sie einer Ansicht hinzu.
+Beachten Sie, dass wir der Geste in Form der Methode ein Ziel zuweisen `HandleDrag` – Diese Methode wird im nächsten Schritt bereitgestellt.
 
 1. Fügen Sie zum Implementieren von "dragdrag" dem Controller den folgenden Code hinzu:
 
@@ -236,7 +236,7 @@ Beachten Sie, dass wir der Geste in Form der Methode `HandleDrag` ein Ziel zuwei
 
     Der obige Code überprüft zuerst den Status der Gestenerkennung und verschiebt dann das Bild um den Bildschirm. Wenn dieser Code vorhanden ist, kann der Controller jetzt das Ziehen eines Bilds auf dem Bildschirm unterstützen.
 
-1. Fügen Sie eine `UITapGestureRecognizer` hinzu, mit der das in doubletouchimage angezeigte Bild geändert wird. Fügen Sie dem `GestureViewController` Controller die folgende Methode hinzu:
+1. Fügen Sie einen hinzu `UITapGestureRecognizer` , der das Bild ändert, das in doubletouchimage angezeigt wird. Fügen Sie dem Controller die folgende Methode hinzu `GestureViewController` :
 
     ```csharp
     private void WireUpTapGestureRecognizer()
@@ -270,9 +270,9 @@ Beachten Sie, dass wir der Geste in Form der Methode `HandleDrag` ein Ziel zuwei
     }
     ```
 
-    Dieser Code ähnelt dem Code für den `UIPanGestureRecognizer`, aber anstelle eines Delegaten für ein Ziel verwenden wir eine `Action`.
+    Dieser Code ähnelt dem Code für das, aber anstelle eines Delegaten `UIPanGestureRecognizer` für ein Ziel, das wir verwenden `Action` .
 
-1. Als letztes müssen Sie `ViewDidLoad` ändern, sodass die soeben hinzugefügten Methoden aufgerufen werden. Ändern Sie viewDidLoad so, dass es dem folgenden Code ähnelt:
+1. Als letztes müssen wir ändern `ViewDidLoad` , sodass die soeben hinzugefügten Methoden aufgerufen werden. Ändern Sie viewDidLoad so, dass es dem folgenden Code ähnelt:
 
     ```csharp
     public override void ViewDidLoad()
@@ -289,24 +289,24 @@ Beachten Sie, dass wir der Geste in Form der Methode `HandleDrag` ein Ziel zuwei
     }
     ```
 
-    Beachten Sie auch, dass wir den Wert `originalImageFrame`initialisieren.
+    Beachten Sie auch, dass der Wert von initialisiert wird `originalImageFrame` .
 
 1. Führen Sie die Anwendung aus, und interagieren Sie mit den beiden Bildern.
 Der folgende Screenshot zeigt ein Beispiel für diese Interaktionen:
 
     [![](ios-touch-walkthrough-images/image7.png "This screenshot shows a drag interaction")](ios-touch-walkthrough-images/image7.png#lightbox)
 
-<a name="Custom_Gesture_Recognizer"/>
+<a name="Custom_Gesture_Recognizer"></a>
 
 ## <a name="custom-gesture-recognizer"></a>Benutzerdefinierte Gestenerkennung
 
-In diesem Abschnitt werden die Konzepte aus den vorherigen Abschnitten zum Erstellen einer benutzerdefinierten Gestenerkennung angewendet. Die benutzerdefinierte Gestenerkennung führt `UIGestureRecognizer`Unterklassen aus und erkennt, wenn der Benutzer ein "V" auf dem Bildschirm zeichnet, und schaltet eine Bitmap um. Der folgende Screenshot zeigt ein Beispiel für diesen Bildschirm:
+In diesem Abschnitt werden die Konzepte aus den vorherigen Abschnitten zum Erstellen einer benutzerdefinierten Gestenerkennung angewendet. Die benutzerdefinierte Gestenerkennung führt Unterklassen `UIGestureRecognizer` aus und erkennt, wenn der Benutzer ein "V" auf dem Bildschirm zeichnet, und schaltet eine Bitmap um. Der folgende Screenshot zeigt ein Beispiel für diesen Bildschirm:
 
  [![](ios-touch-walkthrough-images/image8.png "The app will recognize when the user draws a `V` on the screen")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Führen Sie die folgenden Schritte aus, um eine benutzerdefinierte Gestenerkennung zu erstellen:
 
-1. Fügen Sie dem Projekt eine neue Klasse mit dem Namen `CheckmarkGestureRecognizer`hinzu, und machen Sie Sie wie im folgenden Code aussehen:
+1. Fügen Sie dem Projekt eine neue Klasse mit dem Namen hinzu `CheckmarkGestureRecognizer` , und sehen Sie, wie der folgende Code aussieht:
 
     ```csharp
     using System;
@@ -421,10 +421,10 @@ Führen Sie die folgenden Schritte aus, um eine benutzerdefinierte Gestenerkennu
     }
     ```
 
-    Die Reset-Methode wird aufgerufen, wenn die `State`-Eigenschaft entweder in `Recognized` oder `Ended`geändert wird. Dies ist der Zeitpunkt, an dem alle internen Status in der benutzerdefinierten Gestenerkennung zurückgesetzt werden.
+    Die Reset-Methode wird aufgerufen, wenn die- `State` Eigenschaft entweder in oder geändert wird `Recognized` `Ended` . Dies ist der Zeitpunkt, an dem alle internen Status in der benutzerdefinierten Gestenerkennung zurückgesetzt werden.
 Nun kann die Klasse bei der nächsten Interaktion des Benutzers mit der Anwendung neu gestartet werden, und Sie können versuchen, die Geste zu erkennen.
 
-1. Nachdem Sie nun eine benutzerdefinierte Gestenerkennung (`CheckmarkGestureRecognizer`) definiert haben, bearbeiten Sie die Datei **CustomGestureViewController.cs** , und fügen Sie die folgenden beiden Instanzvariablen hinzu:
+1. Nachdem Sie nun eine benutzerdefinierte Gestenerkennung () definiert haben, `CheckmarkGestureRecognizer` Bearbeiten Sie die Datei **CustomGestureViewController.cs** , und fügen Sie die folgenden beiden Instanzvariablen hinzu:
 
     ```csharp
     #region Private Variables
@@ -462,7 +462,7 @@ Nun kann die Klasse bei der nächsten Interaktion des Benutzers mit der Anwendun
     }
     ```
 
-1. Bearbeiten Sie `ViewDidLoad`, sodass `WireUpCheckmarkGestureRecognizer`aufgerufen wird, wie im folgenden Code Ausschnitt gezeigt:
+1. Bearbeiten `ViewDidLoad` Sie, sodass aufgerufen `WireUpCheckmarkGestureRecognizer` wird, wie im folgenden Code Ausschnitt gezeigt:
 
     ```csharp
     public override void ViewDidLoad()

@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7dabb420aa094e67fae689f47b3b64a8fe1a6ed4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e63e6470a7dac0f9148147a0303d35cf33adb1b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016705"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571145"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Erstellen einer neuen Bibliothek für mehrere Plattformen für nuget
 
@@ -36,9 +36,9 @@ Wenn Sie später plattformspezifische Funktionen benötigen, [können Sie plattf
 
    [![](single-codebase-images/single-configure-sml.png "Configure multi-platform library for a single code base")](single-codebase-images/single-configure.png#lightbox)
 
-4. Durchlaufen Sie den Assistenten. In der Projekt Mappe wird ein einzelnes Bibliotheksprojekt erstellt.
+4. Schließen Sie den Assistenten ab. In der Projekt Mappe wird ein einzelnes Bibliotheksprojekt erstellt.
 
-5. Klicken Sie mit der rechten Maustaste auf das neue Bibliotheksprojekt, und wählen Sie dann **Optionen**aus. Der Abschnitt **Build > Allgemein** ermöglicht das Festlegen des **Ziel Frameworks** – auswählen eines portablen .net-PCL-Profils oder einer .NET Standard Version:
+5. Klicken Sie mit der rechten Maustaste auf das neue Bibliotheksprojekt, und wählen Sie dann **Optionen**aus. Der Abschnitt **Build > allgemein** ermöglicht das Festlegen des **Ziel Frameworks** – auswählen eines portablen .net-PCL-Profils oder einer .NET Standard Version:
 
    [![](single-codebase-images/single-choose-type-sml.png "Choose PCL or .NET Standard for library type")](single-codebase-images/single-choose-type.png#lightbox)
 
@@ -58,7 +58,7 @@ Dieser Screenshot zeigt den Inhalt eines PCL-basierten nuget-– es ist nur eine
 
 ![](single-codebase-images/nuget-output.png "Files contained in the NuGet package")
 
-<a name="add-platforms" />
+<a name="add-platforms"></a>
 
 ## <a name="adding-platform-specific-code"></a>Hinzufügen von Platt Form spezifischem Code
 
@@ -72,9 +72,9 @@ Ein oder mehrere Platt Form Projekte können der Projekt Mappe hinzugefügt werd
 
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
-Nachdem Sie in ein frei gegebenes Projekt umgerechnet haben, besuchen Sie den [Abschnitt](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) **Projektoptionen > nuget-Paket >** Verweisassemblys
-, und stellen Sie sicher, dass alle erforderlichen Profile ausgewählt sind (damit das nuget weiterhin mit Projekten kompatibel ist, die zuvor in verwendet wurden).
+Nachdem Sie in ein frei gegebenes Projekt umgerechnet haben, besuchen Sie den Abschnitt **Projektoptionen > nuget-Paket >** Verweisassemblys, 
+ [section](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) und stellen Sie sicher, dass alle erforderlichen Profile ausgewählt sind (damit das nuget weiterhin mit Projekten kompatibel ist, die zuvor in verwendet wurden).
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
-- [Leitfaden zu Metadaten](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [Metadatenhandbuch](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

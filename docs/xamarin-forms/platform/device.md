@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsGeräteklasse
-description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Geräteklasse verwenden, um die Funktionalität und Layouts auf Platt Form Ebene genauer zu steuern.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7ee7b2f1bb9d34b0c0e8bdc4ae606d98423c64a9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138592"
+Title: " Xamarin.Forms Geräteklasse" Beschreibung: "in diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Geräteklasse verwenden, um die Funktionalität und Layouts auf Platt Form Ebene genauer steuern zu können."
+ms. Prod: xamarin ms. assetid: 2F 304aec-8612-4833-81e5-b2f 3F 469b2df ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/17/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-device-class"></a>Xamarin.FormsGeräteklasse
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
@@ -68,7 +54,7 @@ Die- [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) Klasse ist eine generische 
 > [!IMPORTANT]
 > Die Angabe eines falschen `Platform` Attribut Werts in der `On` Klasse führt nicht zu einem Fehler. Stattdessen wird der Code ausgeführt, ohne dass der plattformspezifische Wert angewendet wird.
 
-Alternativ kann die `OnPlatform` Markup Erweiterung in XAML verwendet werden, um die Darstellung der Benutzeroberfläche plattformspezifisch anzupassen. Weitere Informationen finden Sie unter [onplatform-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
+Alternativ kann die `OnPlatform` Markup Erweiterung in XAML verwendet werden, um die Darstellung der Benutzeroberfläche plattformspezifisch anzupassen. Weitere Informationen finden Sie unter [onplatform-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
 
 ## <a name="deviceidiom"></a>Device. Idiom
 
@@ -110,7 +96,7 @@ Die- [`OnIdiom`](xref:Xamarin.Forms.OnIdiom`1) Klasse bietet die gleiche Funktio
 
 Die- [`OnIdiom`](xref:Xamarin.Forms.OnPlatform`1) Klasse ist eine generische Klasse, die mit einem Attribut instanziiert werden muss, das mit `x:TypeArguments` dem Zieltyp übereinstimmt.
 
-Alternativ kann die `OnIdiom` Markup Erweiterung in XAML verwendet werden, um die Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts anzupassen, auf dem die Anwendung ausgeführt wird. Weitere Informationen finden Sie unter [onidiom-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom).
+Alternativ kann die `OnIdiom` Markup Erweiterung in XAML verwendet werden, um die Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts anzupassen, auf dem die Anwendung ausgeführt wird. Weitere Informationen finden Sie unter [onidiom-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom-markup-extension).
 
 ## <a name="deviceflowdirection"></a>Device. FlowDirection
 
@@ -228,7 +214,7 @@ Anwendungen verwenden manchmal Hintergrundthreads, um potenziell lange ausgefüh
 
 Die- `Device` Klasse enthält die folgenden `static` Methoden, die für die Interaktion mit Benutzeroberflächen Elementen aus Hintergrundthreads verwendet werden können:
 
-| Methode | Argumente | Gibt zurück | Zweck |
+| Methode | Argumente | Rückgabe | Zweck |
 |---|---|---|---|
 | `BeginInvokeOnMainThread` | `Action` | `void` | Ruft eine `Action` im Haupt Thread auf und wartet nicht darauf, dass Sie beendet wird. |
 | `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Ruft `Func<T>` auf dem Hauptthread auf, und wartet auf den Abschluss |

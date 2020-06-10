@@ -1,22 +1,8 @@
 ---
-title: Erstellen eines benutzerdefinierten Layouts inXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2beb00e0587a0e47a29d6f5628a5d6623514eade
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137331"
+Title: "Erstellen eines benutzerdefinierten Layouts in Xamarin.Forms " Description: "in diesem Artikel wird erläutert, wie eine benutzerdefinierte Layoutklasse geschrieben wird. Außerdem wird eine Orientierungs abhängige wraplayout-Klasse veranschaulicht, die die untergeordneten Elemente horizontal auf der Seite anordnet und dann die Anzeige der nachfolgenden untergeordneten Elemente in zusätzliche Zeilen umschließt.
+ms. Prod: xamarin ms. assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/29/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Erstellen eines benutzerdefinierten Layouts inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
@@ -66,29 +52,27 @@ Allerdings `Layout` versucht die-Klasse, die Auswirkungen einer Änderung in der
 
 Die- [`Layout`](xref:Xamarin.Forms.Layout) Klasse definiert auch eine- [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) Methode, die einen ähnlichen Zweck hat wie die- [`InvalidateMeasure`](xref:Xamarin.Forms.VisualElement.InvalidateMeasure) Methode. Die- `InvalidateLayout` Methode sollte immer dann aufgerufen werden, wenn eine Änderung vorgenommen wird, die sich darauf auswirkt, wie das Layout seine untergeordneten Elemente positioniert. Beispielsweise ruft die- `Layout` Klasse die- `InvalidateLayout` Methode auf, wenn ein untergeordnetes Element einem Layout hinzugefügt oder daraus entfernt wird.
 
-[`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout)Kann überschrieben werden, um einen Cache zu implementieren, um wiederkehrende Aufrufe von [ `Measure` ] (Xref:) zu minimieren Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . Accessreflags)) Methoden der untergeordneten Elemente des Layouts. Durch das Überschreiben der- `InvalidateLayout` Methode wird eine Benachrichtigung darüber bereitgestellt, wann dem Layout untergeordnete Elemente hinzugefügt oder daraus entfernt werden. Auf ähnliche Weise [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) kann die-Methode überschrieben werden, um eine Benachrichtigung bereitzustellen, wenn sich eines der untergeordneten Layoutelemente ändert. Bei beiden Methoden Überschreibungen sollte ein benutzerdefiniertes Layout reagieren, indem der Cache gelöscht wird. Weitere Informationen finden Sie unter [berechnen und Zwischenspeichern von Daten](#caching).
+[`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout)Kann überschrieben werden, um einen Cache zu implementieren, um wiederkehrende Aufrufe von [ `Measure` ] (Xref:) zu minimieren Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . Accessreflags)) Methoden der untergeordneten Elemente des Layouts. Durch das Überschreiben der- `InvalidateLayout` Methode wird eine Benachrichtigung darüber bereitgestellt, wann dem Layout untergeordnete Elemente hinzugefügt oder daraus entfernt werden. Auf ähnliche Weise [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) kann die-Methode überschrieben werden, um eine Benachrichtigung bereitzustellen, wenn sich eines der untergeordneten Layoutelemente ändert. Bei beiden Methoden Überschreibungen sollte ein benutzerdefiniertes Layout reagieren, indem der Cache gelöscht wird. Weitere Informationen finden Sie unter [berechnen und Zwischenspeichern von Layoutdaten](#calculate-and-cache-layout-data).
 
 ## <a name="create-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
 
 Der Vorgang zum Erstellen eines benutzerdefinierten Layouts lautet wie folgt:
 
-1. Erstellen Sie eine von der `Layout<View>`-Klasse abgeleitete Klasse. Weitere Informationen finden Sie unter [Erstellen eines wraplayout](#creating).
-1. [*optional*] Fügen Sie für alle Parameter, die für die Layoutklasse festgelegt werden sollen, Eigenschaften hinzu, die von bindbaren Eigenschaften unterstützt werden. Weitere Informationen finden Sie unter [Hinzufügen von Eigenschaften, die von bindbaren Eigenschaften unterstützt](#adding_properties)werden.
-1. Überschreiben [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) Sie die-Methode, um [ `Measure` ] (Xref:) aufzurufen Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . "Messreflags")-Methode für alle untergeordneten Layoutelemente und gibt eine angeforderte Größe für das Layout zurück. Weitere Informationen finden Sie unter Überschreiben [der onmeasure-Methode](#onmeasure).
-1. Überschreiben [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Sie die-Methode, um [ `Layout` ] (Xref:) aufzurufen Xamarin.Forms . Visualelement. Layout ( Xamarin.Forms . Rechteck))-Methode für alle untergeordneten Elemente des Layouts. Fehler beim Aufrufen von [ `Layout` ] (Xref: Xamarin.Forms . Visualelement. Layout ( Xamarin.Forms . Rechteck)) die Methode für jedes untergeordnete Element in einem Layout führt dazu, dass das untergeordnete Element niemals eine korrekte Größe oder Position erhält, sodass das untergeordnete Element auf der Seite nicht sichtbar wird. Weitere Informationen finden Sie unter Überschreiben [der layoutchildren-Methode](#layoutchildren).
+1. Erstellen Sie eine von der `Layout<View>`-Klasse abgeleitete Klasse. Weitere Informationen finden Sie unter [Erstellen eines wraplayout](#create-a-wraplayout).
+1. [*optional*] Fügen Sie für alle Parameter, die für die Layoutklasse festgelegt werden sollen, Eigenschaften hinzu, die von bindbaren Eigenschaften unterstützt werden. Weitere Informationen finden Sie unter [Hinzufügen von Eigenschaften, die von bindbaren Eigenschaften unterstützt](#add-properties-backed-by-bindable-properties)werden.
+1. Überschreiben [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) Sie die-Methode, um [ `Measure` ] (Xref:) aufzurufen Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . "Messreflags")-Methode für alle untergeordneten Layoutelemente und gibt eine angeforderte Größe für das Layout zurück. Weitere Informationen finden Sie unter über [Schreiben der onmeasure-Methode](#override-the-onmeasure-method).
+1. Überschreiben [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Sie die-Methode, um [ `Layout` ] (Xref:) aufzurufen Xamarin.Forms . Visualelement. Layout ( Xamarin.Forms . Rechteck))-Methode für alle untergeordneten Elemente des Layouts. Fehler beim Aufrufen von [ `Layout` ] (Xref: Xamarin.Forms . Visualelement. Layout ( Xamarin.Forms . Rechteck)) die Methode für jedes untergeordnete Element in einem Layout führt dazu, dass das untergeordnete Element niemals eine korrekte Größe oder Position erhält, sodass das untergeordnete Element auf der Seite nicht sichtbar wird. Weitere Informationen finden Sie unter über [Schreiben der layoutchildren-Methode](#override-the-layoutchildren-method).
 
     > [!NOTE]
     > Wenn Sie untergeordnete Elemente in der [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) -und der- [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Überschreibung aufzählen, überspringen Sie alle untergeordneten Elemente, deren- [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) Eigenschaft auf `false` Dadurch wird sichergestellt, dass das benutzerdefinierte Layout keinen Platz für unsichtbare untergeordnete Elemente hinterlässt.
 
-1. [*optional*] Überschreiben [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) Sie die Methode, die benachrichtigt werden soll, wenn dem Layout untergeordnete Elemente hinzugefügt oder daraus entfernt werden. Weitere Informationen finden Sie unter Überschreiben [der invalidatelayout-Methode](#invalidatelayout).
-1. [*optional*] Überschreiben [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) Sie die Methode, die benachrichtigt werden soll, wenn eine der untergeordneten Layoutelemente die Größe ändert. Weitere Informationen finden Sie unter über [Schreiben der onchildmessreinvaliveralteten-Methode](#onchildmeasureinvalidated).
+1. [*optional*] Überschreiben [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) Sie die Methode, die benachrichtigt werden soll, wenn dem Layout untergeordnete Elemente hinzugefügt oder daraus entfernt werden. Weitere Informationen finden Sie unter [außer Kraft setzen der invalidatelayout-Methode](#override-the-invalidatelayout-method).
+1. [*optional*] Überschreiben [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) Sie die Methode, die benachrichtigt werden soll, wenn eine der untergeordneten Layoutelemente die Größe ändert. Weitere Informationen finden Sie unter über [Schreiben der onchildmessreinvaliveralteten-Methode](#override-the-onchildmeasureinvalidated-method).
 
 > [!NOTE]
-> Beachten Sie, dass die [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) außer Kraft Setzung nicht aufgerufen wird, wenn die Größe des Layouts durch das übergeordnete Element und nicht durch seine untergeordneten Elemente geregelt wird. Die außer Kraft setzung wird jedoch aufgerufen, wenn eine oder beide der Einschränkungen unendlich sind oder wenn die Layoutklasse nicht standardmäßige- [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) oder- [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaftswerte aufweist. Aus diesem Grund kann die [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Überschreibung nicht auf untergeordnete Größen beruhen, die während des [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) Methoden Aufrufes abgerufen wurden. Stattdessen `LayoutChildren` muss das [ `Measure` ] (Xref:) aufrufen Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . Accessreflags))-Methode für die untergeordneten Elemente des Layouts vor dem Aufrufen von [ `Layout` ] (Xref: Xamarin.Forms . Visualelement. Layout ( Xamarin.Forms . Rechteck))-Methode. Alternativ kann die Größe der untergeordneten Elemente, die in der Überschreibung abgerufen `OnMeasure` werden, zwischengespeichert werden, um spätere Aufrufe in der Überschreibung zu vermeiden `Measure` `LayoutChildren` . die Layoutklasse muss jedoch wissen, wann die Größen wieder abgerufen werden müssen. Weitere Informationen finden Sie unter [berechnen und Zwischenspeichern von Layoutdaten](#caching).
+> Beachten Sie, dass die [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) außer Kraft Setzung nicht aufgerufen wird, wenn die Größe des Layouts durch das übergeordnete Element und nicht durch seine untergeordneten Elemente geregelt wird. Die außer Kraft setzung wird jedoch aufgerufen, wenn eine oder beide der Einschränkungen unendlich sind oder wenn die Layoutklasse nicht standardmäßige- [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) oder- [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Eigenschaftswerte aufweist. Aus diesem Grund kann die [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Überschreibung nicht auf untergeordnete Größen beruhen, die während des [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) Methoden Aufrufes abgerufen wurden. Stattdessen `LayoutChildren` muss das [ `Measure` ] (Xref:) aufrufen Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . Accessreflags))-Methode für die untergeordneten Elemente des Layouts vor dem Aufrufen von [ `Layout` ] (Xref: Xamarin.Forms . Visualelement. Layout ( Xamarin.Forms . Rechteck))-Methode. Alternativ kann die Größe der untergeordneten Elemente, die in der Überschreibung abgerufen `OnMeasure` werden, zwischengespeichert werden, um spätere Aufrufe in der Überschreibung zu vermeiden `Measure` `LayoutChildren` . die Layoutklasse muss jedoch wissen, wann die Größen wieder abgerufen werden müssen. Weitere Informationen finden Sie unter [berechnen und Zwischenspeichern von Layoutdaten](#calculate-and-cache-layout-data).
 
-Die Layoutklasse kann dann verwendet werden, indem Sie zu einem hinzugefügt wird [`Page`](xref:Xamarin.Forms.Page) , und indem dem Layout untergeordnete Elemente hinzugefügt werden. Weitere Informationen finden Sie unter Verwenden von [wraplayout](#consuming).
-
-<a name="creating" />
+Die Layoutklasse kann dann verwendet werden, indem Sie zu einem hinzugefügt wird [`Page`](xref:Xamarin.Forms.Page) , und indem dem Layout untergeordnete Elemente hinzugefügt werden. Weitere Informationen finden Sie unter Verwenden von [wraplayout](#consume-the-wraplayout).
 
 ### <a name="create-a-wraplayout"></a>Erstellen eines wraplayout
 
@@ -105,8 +89,6 @@ public class WrapLayout : Layout<View>
   ...
 }
 ```
-
-<a name="caching" />
 
 #### <a name="calculate-and-cache-layout-data"></a>Berechnen und Zwischenspeichern von Layoutdaten
 
@@ -199,8 +181,6 @@ Die- `GetLayoutData` Methode führt die folgenden Vorgänge aus:
 - Wenn mindestens ein untergeordnetes Element vorhanden ist, wird die Anzahl der erforderlichen Zeilen und Spalten berechnet und dann basierend auf den Dimensionen von eine Zellgröße für die untergeordneten Elemente berechnet `WrapLayout` . Beachten Sie, dass die Zellen Größe in der Regel etwas breiter ist als die maximale untergeordnete Größe, aber Sie kann auch kleiner sein, wenn der für das größte untergeordnete Element `WrapLayout` nicht breit genug ist oder für das höchste untergeordnete Element hoch genug ist.
 - Der neue Wert wird `LayoutData` im Cache gespeichert.
 
-<a name="adding_properties" />
-
 #### <a name="add-properties-backed-by-bindable-properties"></a>Hinzufügen von Eigenschaften, die von bindbaren Eigenschaften gestützt werden
 
 Die `WrapLayout` -Klasse definiert die `ColumnSpacing` -Eigenschaft und die-Eigenschaft `RowSpacing` , deren Werte zum Trennen der Zeilen und Spalten im Layout verwendet werden und die durch bindbare Eigenschaften gestützt werden. Die bindbaren Eigenschaften werden im folgenden Codebeispiel gezeigt:
@@ -227,9 +207,7 @@ public static readonly BindableProperty RowSpacingProperty = BindableProperty.Cr
   });
 ```
 
-Der von der Eigenschaft geänderte Handler jeder bindbaren Eigenschaft ruft die `InvalidateLayout` Methoden Überschreibung auf, um eine neue layoutdurchführung auf dem zu initiieren `WrapLayout` . Weitere Informationen finden Sie unter Überschreiben [der invalidatelayout-Methode](#invalidatelayout) und über [Schreiben der onchildmessreinvaliveralteten-Methode](#onchildmeasureinvalidated).
-
-<a name="onmeasure" />
+Der von der Eigenschaft geänderte Handler jeder bindbaren Eigenschaft ruft die `InvalidateLayout` Methoden Überschreibung auf, um eine neue layoutdurchführung auf dem zu initiieren `WrapLayout` . Weitere Informationen finden Sie unter [außer Kraft setzen der invalidatelayout-Methode](#override-the-invalidatelayout-method) und über [Schreiben der onchildmessreinvaliveralteten-Methode](#override-the-onchildmeasureinvalidated-method).
 
 #### <a name="override-the-onmeasure-method"></a>Überschreiben der onmeasure-Methode
 
@@ -250,12 +228,10 @@ protected override SizeRequest OnMeasure(double widthConstraint, double heightCo
 }
 ```
 
-Die-Überschreibung ruft die- `GetLayoutData` Methode auf und erstellt ein- `SizeRequest` Objekt aus den zurückgegebenen Daten, während die `RowSpacing` -und- `ColumnSpacing` Eigenschaftswerte berücksichtigt werden. Weitere Informationen zur `GetLayoutData` -Methode finden Sie unter [berechnen und Zwischenspeichern von Daten](#caching).
+Die-Überschreibung ruft die- `GetLayoutData` Methode auf und erstellt ein- `SizeRequest` Objekt aus den zurückgegebenen Daten, während die `RowSpacing` -und- `ColumnSpacing` Eigenschaftswerte berücksichtigt werden. Weitere Informationen zur `GetLayoutData` -Methode finden Sie unter [berechnen und Zwischenspeichern von Layoutdaten](#calculate-and-cache-layout-data).
 
 > [!IMPORTANT]
 > [ `Measure` ] (Xref: Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . "Messreflags") und [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) Methoden sollten nie eine unendliche Dimension anfordern, indem [`SizeRequest`](xref:Xamarin.Forms.SizeRequest) Sie einen Wert zurückgeben, dessen-Eigenschaft auf festgelegt ist `Double.PositiveInfinity` . Allerdings kann mindestens eines der Einschränkungs Argumente `OnMeasure` sein `Double.PositiveInfinity` .
-
-<a name="layoutchildren" />
 
 #### <a name="override-the-layoutchildren-method"></a>Überschreiben der layoutchildren-Methode
 
@@ -304,11 +280,9 @@ Die außer Kraft Setzung beginnt mit einem aufzurufenden- `GetLayoutData` Method
 > [!NOTE]
 > Beachten Sie, dass das an die-Methode über gegebene Rechteck `LayoutChildIntoBoundingRegion` den gesamten Bereich enthält, in dem sich das untergeordnete Element befinden kann.
 
-Weitere Informationen zur `GetLayoutData` -Methode finden Sie unter [berechnen und Zwischenspeichern von Daten](#caching).
+Weitere Informationen zur `GetLayoutData` -Methode finden Sie unter [berechnen und Zwischenspeichern von Layoutdaten](#calculate-and-cache-layout-data).
 
-<a name="invalidatelayout" />
-
-#### <a name="overridethe-invalidatelayout-method"></a>Overridethe invalidatelayout-Methode
+#### <a name="override-the-invalidatelayout-method"></a>Überschreiben der invalidatelayout-Methode
 
 Die [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) außer Kraft setzung wird aufgerufen, wenn untergeordnete Elemente dem Layout hinzugefügt oder daraus entfernt werden oder wenn eine der `WrapLayout` Eigenschaften den Wert ändert, wie im folgenden Codebeispiel gezeigt:
 
@@ -325,8 +299,6 @@ Die außer Kraft Setzung macht das Layout ungültig und verwirft alle zwischenge
 > [!NOTE]
 > Um zu verhindern, dass die-Klasse die- [`Layout`](xref:Xamarin.Forms.Layout) [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) Methode aufruft, wenn ein untergeordnetes Element hinzugefügt oder aus einem Layout entfernt wird, überschreiben Sie [ `ShouldInvalidateOnChildAdded` ] (Xref: Xamarin.Forms . Layout. schulendvalidateonchildadded ( Xamarin.Forms . View)) und [ `ShouldInvalidateOnChildRemoved` ] (Xref: Xamarin.Forms . Layout. Schulter-validateonchildreverschohe ( Xamarin.Forms . View))-Methoden und geben zurück `false` . Die Layoutklasse kann dann einen benutzerdefinierten Prozess implementieren, wenn untergeordnete Elemente hinzugefügt oder entfernt werden.
 
-<a name="onchildmeasureinvalidated" />
-
 #### <a name="override-the-onchildmeasureinvalidated-method"></a>Überschreiben der onchildmessreinvaliveralteten-Methode
 
 Die [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) außer Kraft setzung wird aufgerufen, wenn eine der untergeordneten Layoutelemente die Größe ändert, und wird im folgenden Codebeispiel gezeigt:
@@ -340,8 +312,6 @@ protected override void OnChildMeasureInvalidated()
 ```
 
 Die Überschreibung macht das untergeordnete Layout ungültig und verwirft alle zwischengespeicherten Layoutinformationen.
-
-<a name="consuming" />
 
 ### <a name="consume-the-wraplayout"></a>Verwenden des wraplayout
 

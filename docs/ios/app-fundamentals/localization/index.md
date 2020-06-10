@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: fc67c7f683b6c55d3b4f552c2f8c113ee721be61
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c42b41f9b853fba58ef70b8bd2f8ab20a3369647
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009804"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569242"
 ---
 # <a name="localization-in-xamarinios"></a>Lokalisierung in xamarin. IOS
 
@@ -28,18 +28,18 @@ In diesem Abschnitt werden einige der Lokalisierungs Features in ios beschrieben
 
 Benutzer wählen Ihre Sprache in der App " **Einstellungen** " aus. Diese Einstellung wirkt sich auf die sprach Zeichenfolgen und Bilder aus, die vom Betriebssystem und in apps angezeigt werden.
 
-Um die Sprache zu bestimmen, die in einer App verwendet wird, erhalten Sie das erste Element `NSBundle.MainBundle.PreferredLocalizations`:
+Um die Sprache zu bestimmen, die in einer App verwendet wird, erhalten Sie das erste Element von `NSBundle.MainBundle.PreferredLocalizations` :
 
 ```csharp
 var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 ```
 
-Dieser Wert ist ein Sprachcode, z. b. `en` für Englisch, `es` für Spanisch, `ja` für Japanisch usw. Der zurückgegebene Wert ist auf eine der von der Anwendung unterstützten Lokationen beschränkt (mithilfe von Fall Back-Regeln, um die beste Entsprechung zu bestimmen).
+Bei diesem Wert handelt es sich um einen Sprachcode `en` , z. b. für Englisch, für `es` Spanisch, `ja` für Japanisch usw. Der zurückgegebene Wert ist auf eine der von der Anwendung unterstützten Lokationen beschränkt (mithilfe von Fall Back-Regeln, um die beste Entsprechung zu bestimmen).
 
 Der Anwendungscode muss nicht immer nach diesem Wert suchen – xamarin und IOS stellen Funktionen bereit, mit denen die richtige Zeichenfolge oder Ressource für die Sprache des Benutzers automatisch bereitgestellt werden kann. Diese Features werden im weiteren Verlauf dieses Dokuments beschrieben.
 
 > [!NOTE]
-> Verwenden Sie `NSLocale.PreferredLanguages`, um die Spracheinstellungen des Benutzers zu bestimmen, unabhängig von den von der APP unterstützten Lokalisierungs Vorfassungen. Die von dieser Methode zurückgegebenen Werte wurden in ios 9 geändert. Weitere Informationen finden [Sie unter Technical Note TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) .
+> Verwenden `NSLocale.PreferredLanguages` Sie, um die Spracheinstellungen des Benutzers zu bestimmen, unabhängig von den von der APP unterstützten Lokalisierungs Vorfassungen. Die von dieser Methode zurückgegebenen Werte wurden in ios 9 geändert. Weitere Informationen finden [Sie unter Technical Note TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) .
 
 ### <a name="locale"></a>Gebietsschema
 
@@ -47,7 +47,7 @@ Benutzer wählen Ihr Gebiets Schema in der App " **Einstellungen** " aus. Diese 
 
 Dadurch können Benutzer wählen, ob Sie 12-Stunden-oder 24-Stunden-Zeitformate sehen, ob das Dezimaltrennzeichen ein Komma oder ein Punkt ist und wie die Reihenfolge von Tag, Monat und Jahr in der Datumsanzeige liegt.
 
-Mit xamarin haben Sie sowohl Zugriff auf die IOS-Klassen von Apple (`NSNumberFormatter`) als auch auf die .NET-Klassen in System. Globalization. Entwickler sollten auswerten, welche für Ihre Anforderungen besser geeignet ist, da jeweils verschiedene Features verfügbar sind. Insbesondere wenn Sie in-App-Kaufpreise mit storekit abrufen und anzeigen, sollten Sie die Formatierungs Klassen von Apple für die zurückgegebenen Preisinformationen verwenden.
+Mit xamarin können Sie sowohl auf die IOS-Klassen von Apple ( `NSNumberFormatter` ) als auch auf die .NET-Klassen in System. Globalization zugreifen. Entwickler sollten auswerten, welche für Ihre Anforderungen besser geeignet ist, da jeweils verschiedene Features verfügbar sind. Insbesondere wenn Sie in-App-Kaufpreise mit storekit abrufen und anzeigen, sollten Sie die Formatierungs Klassen von Apple für die zurückgegebenen Preisinformationen verwenden.
 
 Das aktuelle Gebiets Schema kann auf zweierlei Weise abgefragt werden:
 
@@ -64,11 +64,11 @@ Der erste Wert kann vom Betriebssystem zwischengespeichert werden und kann daher
 > - `CurrentThread.CurrentUICulture`: en-US (Mono-API)
 > - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple-API)
 >
-> Da Mono `CurrentThread.CurrentUICulture` zum Auswählen von Ressourcen und `CurrentThread.CurrentCulture` verwendet, um Datumsangaben und Währungen zu formatieren, werden bei der Mono-basierten Lokalisierung (z. b. mit RESX-Dateien) möglicherweise nicht die erwarteten Ergebnisse für diese sprach/Regions-Kombinationen erzielt. In diesen Fällen müssen Sie die Apple-APIs für die Lokalisierung nach Bedarf nutzen.
+> Da Mono `CurrentThread.CurrentUICulture` zum Auswählen von Ressourcen und `CurrentThread.CurrentCulture` zum Formatieren von Datums-und Währungswerten verwendet, liefert Mono-basierte Lokalisierung (z. b. mit RESX-Dateien) möglicherweise nicht die erwarteten Ergebnisse für diese Kombinationen von Sprache und Region. In diesen Fällen müssen Sie die Apple-APIs für die Lokalisierung nach Bedarf nutzen.
 
 ### <a name="nscurrentlocaledidchangenotification"></a>Nscurrentlocaledidchangenotifizierung
 
-IOS generiert eine `NSCurrentLocaleDidChangeNotification`, wenn der Benutzer sein Gebiets Schema aktualisiert. Anwendungen können diese Benachrichtigung während der Ausführung überwachen und entsprechende Änderungen an der Benutzeroberfläche vornehmen.
+IOS generiert eine, `NSCurrentLocaleDidChangeNotification` Wenn der Benutzer sein Gebiets Schema aktualisiert. Anwendungen können diese Benachrichtigung während der Ausführung überwachen und entsprechende Änderungen an der Benutzeroberfläche vornehmen.
 
 ## <a name="localization-basics-in-ios"></a>Grundlagen der Lokalisierung in ios
 
@@ -76,23 +76,23 @@ Die folgenden Funktionen von IOS können problemlos in xamarin genutzt werden, u
 
 ### <a name="specifying-default-and-supported-languages-in-infoplist"></a>Angeben von standardmäßigen und unterstützten Sprachen in "Info. plist"
 
-In [Technical Q & A QA1828: wie IOS die Sprache für Ihre APP bestimmt](https://developer.apple.com/library/content/qa/qa1828/_index.html), beschreibt Apple, wie IOS eine Sprache für die Verwendung in einer App auswählt. Die folgenden Faktoren wirken sich auf die angezeigte Sprache aus:
+In [Technical Q&A QA1828: wie IOS die Sprache für Ihre APP bestimmt](https://developer.apple.com/library/content/qa/qa1828/_index.html), beschreibt Apple, wie IOS eine Sprache für die Verwendung in einer App auswählt. Die folgenden Faktoren wirken sich auf die angezeigte Sprache aus:
 
 - Die bevorzugten Sprachen des Benutzers (in der App " **Einstellungen** " gefunden)
 - Die mit der APP (lproj-Ordner) gebündelten Lokalisierungs-
-- `CFBundleDevelopmentRegion` ("**Info. plist** "-Wert, der die Standardsprache für die APP angibt)
-- `CFBundleLocalizations` (**Info. plist** -Array, das alle unterstützten Lokationen angibt)
+- `CFBundleDevelopmentRegion`(**Info. plist** -Wert, der die Standardsprache für die APP angibt)
+- `CFBundleLocalizations`(**Info. plist** -Array, das alle unterstützten Lokationen angibt)
 
-Wie im technischen Q-& A angegeben, stellt `CFBundleDevelopmentRegion` die Standard Region und die Sprache einer APP dar. Wenn die APP die bevorzugten Sprachen eines Benutzers nicht explizit unterstützt, wird die in diesem Feld angegebene Sprache verwendet.
+Wie im technischen Q-&A angegeben, `CFBundleDevelopmentRegion` stellt die Standard Region und die Sprache einer APP dar. Wenn die APP die bevorzugten Sprachen eines Benutzers nicht explizit unterstützt, wird die in diesem Feld angegebene Sprache verwendet.
 
 > [!IMPORTANT]
-> IOS 11 wendet diesen Sprachauswahl Mechanismus strenger an als frühere Versionen des Betriebssystems. Aus diesem Grund wird für jede IOS 11-APP, die ihre unterstützten Lokationen nicht explizit deklariert – entweder durch Einschließen von lproj-Ordnern oder durch Festlegen eines Werts für `CFBundleLocalizations` –, möglicherweise eine andere Sprache in ios 11 angezeigt als in ios 10.
+> IOS 11 wendet diesen Sprachauswahl Mechanismus strenger an als frühere Versionen des Betriebssystems. Aus diesem Grund wird für jede IOS 11-APP, die ihre unterstützten Lokationen nicht explizit deklariert – entweder durch Einschließen von lproj-Ordnern oder durch Festlegen eines Werts für –, unter `CFBundleLocalizations` Umständen eine andere Sprache als IOS 10 angezeigt.
 
-Wenn `CFBundleDevelopmentRegion` in der Datei " **Info. plist** " nicht angegeben wurde, verwenden die xamarin. IOS-Buildtools aktuell den Standardwert `en_US`. Dies kann sich in einer zukünftigen Version ändern, bedeutet aber, dass die Standardsprache Englisch ist.
+Wenn `CFBundleDevelopmentRegion` nicht in der **Info. plist** -Datei angegeben wurde, verwenden die xamarin. IOS-Buildtools aktuell den Standardwert `en_US` . Dies kann sich in einer zukünftigen Version ändern, bedeutet aber, dass die Standardsprache Englisch ist.
 
 Führen Sie die folgenden Schritte aus, um sicherzustellen, dass Ihre APP eine erwartete Sprache auswählt:
 
-- Geben Sie eine Standardsprache an. Öffnen Sie " **Info. plist** ", und verwenden Sie die **Quell** Ansicht, um einen Wert für den `CFBundleDevelopmentRegion` Schlüssel festzulegen. in XML sollte Sie in etwa wie folgt aussehen:
+- Geben Sie eine Standardsprache an. Öffnen Sie " **Info. plist** ", und verwenden Sie die **Quell** Ansicht, um einen Wert für den Schlüssel festzulegen. `CFBundleDevelopmentRegion` in XML sollte Sie in etwa wie folgt aussehen:
 
 ```xml
 <key>CFBundleDevelopmentRegion</key>
@@ -101,7 +101,7 @@ Führen Sie die folgenden Schritte aus, um sicherzustellen, dass Ihre APP eine e
 
 In diesem Beispiel wird "es" verwendet, um anzugeben, dass, wenn keine der bevorzugten Sprachen eines Benutzers unterstützt wird, der Standardwert Spanisch ist.
 
-- Deklarieren Sie alle unterstützten Lokalisierungs-. Verwenden Sie in der Datei " **Info. plist**" die **Quell** Ansicht, um ein Array für den `CFBundleLocalizations` Schlüssel festzulegen. in XML sollte Sie in etwa wie folgt aussehen:
+- Deklarieren Sie alle unterstützten Lokalisierungs-. Verwenden Sie in der Datei " **Info. plist**" die **Quell** Ansicht, um ein Array für den Schlüssel festzulegen. `CFBundleLocalizations` in XML sollte es in etwa wie folgt aussehen:
 
 ```xml
 <key>CFBundleLocalizations</key>
@@ -118,19 +118,19 @@ Weitere Informationen zu diesen **Info. plist** -Schlüsseln finden Sie in der A
 
 ### <a name="getlocalizedstring-method"></a>GetLocalizedString-Methode
 
-Die `NSBundle.MainBundle.GetLocalizedString`-Methode sucht nach lokalisiertem Text, der in **Strings** -Dateien im Projekt gespeichert wurde. Diese Dateien sind nach Sprache organisiert, in speziell benannten Verzeichnissen mit einem **lproj** -Suffix (Beachten Sie, dass der erste Buchstabe der Erweiterung ein Kleinbuchstabe "L" ist).
+Die- `NSBundle.MainBundle.GetLocalizedString` Methode sucht nach lokalisiertem Text, der in **Strings** -Dateien im Projekt gespeichert wurde. Diese Dateien sind nach Sprache organisiert, in speziell benannten Verzeichnissen mit einem **lproj** -Suffix (Beachten Sie, dass der erste Buchstabe der Erweiterung ein Kleinbuchstabe "L" ist).
 
 #### <a name="strings-file-locations"></a>Speicherorte für. Strings-Dateien
 
 - **Base. lproj** ist das Verzeichnis, das Ressourcen für die Standardsprache enthält.
   Sie befindet sich häufig im Stammverzeichnis des Projekts (kann aber auch im Ordner " **Resources** " abgelegt werden).
-- **&lt;Sprache&gt;. lproj** -Verzeichnisse werden für jede unterstützte Sprache erstellt, in der Regel im Ordner " **Resources** ".
+- ** &lt; Language &gt; . lproj** -Verzeichnisse werden für jede unterstützte Sprache erstellt, in der Regel im Ordner " **Resources** ".
 
 In jedem Sprachverzeichnis können mehrere verschiedene **Strings** -Dateien vorhanden sein:
 
 - **Lokalisier** bare Zeichen folgen – die Hauptliste lokalisierter Text.
 - **Infoplist. Strings** – bestimmte spezifische Schlüssel sind in dieser Datei zulässig, um Dinge wie den Anwendungsnamen zu übersetzen.
-- **\<Storyboard-Name >. Strings** – optionale Datei, die Übersetzungen für Elemente der Benutzeroberfläche in einem Storyboard enthält.
+- ** \<storyboard-name> . Strings** – optionale Datei, die Übersetzungen für Elemente der Benutzeroberfläche in einem Storyboard enthält.
 
 Die **Buildaktion** für diese Dateien sollte eine **Bundle-Ressource**sein.
 
@@ -145,9 +145,9 @@ Die Syntax für lokalisierte Zeichen folgen Werte lautet:
 
 Sie sollten die folgenden Zeichen in Zeichen folgen mit Escapezeichen versehen:
 
-- `\"` Anführungszeichen
-- umgekehrter Schrägstrich `\\`
-- `\n` Zeilen-Zeilen
+- `\"`ATS
+- `\\`umgekehrten Schrägstrich
+- `\n`Zeilenumbruch
 
 Dies ist ein Beispiel für **es/lokalisierbare. Strings** (d.h. Spanisch) aus dem Beispiel:
 
@@ -201,14 +201,14 @@ Wenn Sie eine **infoplist. Strings** -Datei in einem **lproj** -Verzeichnis plat
 Weitere Schlüssel zum [Lokalisieren von anwendungsspezifischen](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW21) Zeichen folgen sind:
 
 - Cfbundlename
-- Cfbundleshortversionstring
+- CFBundleShortVersionString
 - Nshumanumablecopyright
 
-### <a name="dates-and-times"></a>Datumsangaben und Uhrzeiten
+### <a name="dates-and-times"></a>Datums- und Zeitangaben
 
-Obwohl es möglich ist, die integrierten .net-Datums-und Uhrzeit Funktionen (zusammen mit dem aktuellen `CultureInfo`) zu verwenden, um Datumsangaben und Uhrzeiten für ein Gebiets Schema zu formatieren, werden dadurch Gebiets Schema spezifische Benutzereinstellungen ignoriert (die separat von der Sprache festgelegt werden können).
+Obwohl es möglich ist, die integrierten .net-Datums-und Uhrzeit Funktionen (zusammen mit dem aktuellen `CultureInfo` ) zu verwenden, um Datumsangaben und Uhrzeiten für ein Gebiets Schema zu formatieren, werden dadurch Gebiets Schema spezifische Benutzereinstellungen ignoriert (die separat von der Sprache festgelegt werden können).
 
-Verwenden Sie das IOS-`NSDateFormatter`, um eine Ausgabe zu liefern, die der Gebiets Schema Einstellung des Benutzers entspricht. Der folgende Beispielcode veranschaulicht die grundlegenden Formatierungsoptionen für Datum und Uhrzeit:
+Verwenden Sie IOS `NSDateFormatter` , um eine Ausgabe zu erhalten, die der Gebiets Schema Einstellung des Benutzers entspricht. Der folgende Beispielcode veranschaulicht die grundlegenden Formatierungsoptionen für Datum und Uhrzeit:
 
 ```csharp
 var date = NSDate.Now;
@@ -242,16 +242,16 @@ Medium,None: 7/8/2015
 
 Weitere Informationen finden Sie in der Dokumentation zu den Apple [Date Formatters](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html) . Beim Testen der Gebiets Schema bezogenen Datums-und Uhrzeit Formatierung überprüfen Sie die Einstellungen der **iPhone-Sprache** und- **Region** .
 
-<a name="rtl" />
+<a name="rtl"></a>
 
 ### <a name="right-to-left-rtl-layout"></a>Layout von rechts nach links (RTL)
 
 IOS bietet eine Reihe von Features zur Unterstützung beim Entwickeln von apps, die auf RTL-Unterstützung aufbauen:
 
-- Verwenden Sie die `leading`-und `trailing` Attribute des automatischen Layouts für die Ausrichtung des Steuer Elements (was der linken und rechten für Englisch entspricht, aber für RTL-Sprachen umgekehrt ist).
-  Das [`UIStackView`](~/ios/user-interface/controls/uistackview.md) -Steuerelement ist besonders nützlich, wenn Sie Steuerelemente für die RTL-Unterstützung festlegen.
+- Verwenden Sie das-Attribut und das-Attribut des automatischen Layouts `leading` für die Ausrichtung des Steuer Elements `trailing` (das von Links und rechts für Englisch entspricht, jedoch für RTL-Sprachen umgekehrt).
+  Das- [`UIStackView`](~/ios/user-interface/controls/uistackview.md) Steuerelement ist besonders nützlich zum Anordnen von Steuerelementen, die von RTL unterstützt werden.
 - Verwenden Sie `TextAlignment = UITextAlignment.Natural` für die Textausrichtung (die für die meisten Sprachen, aber Recht für RTL belassen wird).
-- `UINavigationController` automatisch die Schaltfläche "zurück" zurück und kehrt die Richtung um.
+- `UINavigationController`kehrt die Schaltfläche "zurück" automatisch um und kehrt die Richtung um.
 
 Die folgenden Screenshots zeigen das [lokalisierte Tasky-Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Arabisch und Hebräisch an (Obwohl Englisch in den Feldern eingegeben wurde):
 
@@ -259,10 +259,10 @@ Die folgenden Screenshots zeigen das [lokalisierte Tasky-Beispiel](https://githu
 
 [![](images/rtl-he-sml.png "Localization in Hebrew")](images/rtl-he.png#lightbox "Hebrew")
 
-IOS kehrt die `UINavigationController`automatisch um, und die anderen Steuerelemente werden in `UIStackView` platziert oder mit automatischem Layout ausgerichtet.
+IOS kehrt automatisch zurück `UINavigationController` , und die anderen Steuerelemente werden in das `UIStackView` automatische Layout eingefügt oder darauf ausgerichtet.
 Der RTL-Text wird mithilfe von **. Strings** -Dateien auf dieselbe Weise wie der Ltr-Text lokalisiert.
 
-<a name="code"/>
+<a name="code"></a>
 
 ## <a name="localizing-the-ui-in-code"></a>Lokalisieren der Benutzeroberfläche in Code
 
@@ -292,14 +292,14 @@ Die Spanisch (**es**)-Lokationen für das Beispiel sind unten dargestellt:
 
 ### <a name="performing-the-localization"></a>Durchführen der Lokalisierung
 
-Wenn im Anwendungscode der Anzeige Text einer Benutzeroberfläche festgelegt ist (unabhängig davon, ob es sich um einen Bezeichnungs Text oder einen Platzhalter der Eingabe handelt usw.), verwendet der Code die IOS-`GetLocalizedString`-Funktion, um die richtige Übersetzung zum Anzeigen abzurufen:
+Wenn im Anwendungscode der Anzeige Text einer Benutzeroberfläche festgelegt ist (unabhängig davon, ob es sich um einen Bezeichnungs Text oder einen Platzhalter der Eingabe handelt usw.), verwendet der Code die IOS- `GetLocalizedString` Funktion, um die richtige Übersetzung zum Anzeigen abzurufen:
 
 ```csharp
 var localizedString = NSBundle.MainBundle.GetLocalizedString ("key", "optional");
 someControl.Text = localizedString;
 ```
 
-<a name="storyboard"/>
+<a name="storyboard"></a>
 
 ## <a name="localizing-storyboard-uis"></a>Lokalisieren von Storyboard-UIs
 
@@ -330,9 +330,9 @@ Dieser Wert wird in der **Strings** -Datei verwendet, um jedem Steuerelement aut
 
 ### <a name="mainstoryboardstrings"></a>Mainstoryboard. Strings
 
-Das Format der Storyboard-Übersetzungsdatei ähnelt der **lokalisierbaren Strings** -Datei, mit der Ausnahme, dass der Schlüssel (der Wert auf der linken Seite) Nichtbenutzer definiert sein kann, sondern ein sehr spezifisches Format aufweisen muss: `ObjectID.property`.
+Das Format der Storyboard-Übersetzungsdatei ähnelt der **lokalisierbaren Strings** -Datei, mit der Ausnahme, dass der Schlüssel (der Wert auf der linken Seite) Nichtbenutzer definiert sein kann, sondern ein sehr spezifisches Format aufweisen muss: `ObjectID.property` .
 
-Im Beispiel **mainstoryboard. Strings** unten sehen Sie, `UITextField`s über eine `placeholder` Text-Eigenschaft verfügen, die lokalisiert werden kann. `UILabel`s haben eine `text`-Eigenschaft. der Standardtext `UIButton`s wird mit `normalTitle`festgelegt:
+Im Beispiel **mainstoryboard. Strings** unten sehen Sie `UITextField` , dass s über eine `placeholder` Text Eigenschaft verfügen, die lokalisiert `UILabel` werden kann. s weisen eine `text` -Eigenschaft auf, und `UIButton` s-Standardtext wird mithilfe von festgelegt `normalTitle` :
 
 ```console
 "SXg-TT-IwM.placeholder" = "nombre de la tarea";
@@ -349,7 +349,7 @@ Im Beispiel **mainstoryboard. Strings** unten sehen Sie, `UITextField`s über ei
 >
 > ![](images/xs-dup-strings.png "Strings files")
 
-<a name="appstore" />
+<a name="appstore"></a>
 
 ## <a name="app-store-listing"></a>App Store-Auflistung
 
@@ -367,5 +367,5 @@ Weitere Informationen zu i18n und l10n für IOS-, Android-und plattformübergrei
 - [Tasky (lokalisiertes Storyboard) (Beispiel)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)
 - [Leitfaden zur Apple-Lokalisierung](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [Übersicht über die plattformübergreifende Lokalisierung](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin. Forms-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
+- [Xamarin.Forms-Lokalisierung](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [Android Localization (Android-Lokalisierung)](~/android/app-fundamentals/localization.md)

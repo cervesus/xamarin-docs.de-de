@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 60bab56440fc7227e14d31875a8b6108cd1a86f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 74d6dfb2b6a722e5af4dc97cdf23b84aa4bd95d0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032479"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565043"
 ---
 # <a name="core-animation-in-xamarinios"></a>Core-Animation in xamarin. IOS
 
@@ -23,7 +23,7 @@ Alle extrem Smooth Animationen in Ios, wie z. b. das Scrollen von Tabellen und d
 
 Die Kern Animationen und Kern Grafik-Frameworks können zusammenarbeiten, um schöne, animierte 2D-Grafiken zu erstellen. In der Tat kann die Kern Animation sogar 2D-Grafiken in 3D-Raum umwandeln und so beeindruckende, filmische Erfahrung schaffen. Wenn Sie jedoch echte 3D-Grafiken erstellen möchten, müssten Sie etwas wie "OpenGL es es" verwenden, oder für Spiele müssen Sie eine API wie monogame verwenden, obwohl 3D den Rahmen dieses Artikels sprengen würde.
 
-<a name="Using_Core_Animation" />
+<a name="Using_Core_Animation"></a>
 
 ## <a name="core-animation"></a>Core Animation
 
@@ -32,7 +32,7 @@ IOS verwendet das Core Animation Framework zum Erstellen von Animationseffekten,
 - [Über UIKit](#Using_UIKit_Animation), das Anzeige basierte Animationen sowie animierte Übergänge zwischen Controllern umfasst.
 - [Über die Core-Animation](#Using_Core_Animation), die eine direkte Schicht bietet, die eine präzisere Steuerung ermöglicht.
 
-<a name="Using_UIKit_Animation" />
+<a name="Using_UIKit_Animation"></a>
 
 ## <a name="using-uikit-animation"></a>Verwenden der UIKit-Animation
 
@@ -46,9 +46,9 @@ In diesem Abschnitt werden UIKit-Animations Features erläutert, einschließlich
 
 ### <a name="view-controller-transitions"></a>Übergänge von Ansichtscontrollern
 
- `UIViewController` bietet integrierte Unterstützung für den Übergang zwischen Sicht Controllern über die `PresentViewController`-Methode. Wenn Sie `PresentViewController`verwenden, kann der Übergang zum zweiten Controller optional animiert werden.
+ `UIViewController`bietet integrierte Unterstützung für den Übergang zwischen Sicht Controllern über die- `PresentViewController` Methode. Wenn Sie verwenden `PresentViewController` , kann der Übergang zum zweiten Controller optional animiert werden.
 
-Stellen Sie sich beispielsweise eine Anwendung mit zwei Controllern vor, in der eine Schaltfläche im ersten Controller aufgerufen wird, `PresentViewController`, um einen zweiten Controller anzuzeigen. Um zu steuern, welche Übergangs Animation verwendet wird, um den zweiten Controller anzuzeigen, legen Sie einfach die [`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle) -Eigenschaft fest, wie unten dargestellt:
+Angenommen, eine Anwendung mit zwei Controllern zeigt eine Schaltfläche in den ersten Controller aufrufen, `PresentViewController` um einen zweiten Controller anzuzeigen. Um zu steuern, welche Übergangs Animation verwendet wird, um den zweiten Controller anzuzeigen, legen Sie einfach die-Eigenschaft fest, [`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle) wie unten dargestellt:
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -56,13 +56,13 @@ SecondViewController vc2 = new SecondViewController {
 };
 ```
 
-In diesem Fall wird eine `PartialCurl` Animation verwendet, auch wenn mehrere andere verfügbar sind, darunter:
+In diesem Fall `PartialCurl` wird eine Animation verwendet, obwohl mehrere andere verfügbar sind, einschließlich:
 
-- `CoverVertical` – wird vom unteren Bildschirmrand nach oben verschoben.
-- `CrossDissolve` – die alte Ansicht wird ausgeblendet, & die neue Ansicht ausgeblendet wird
-- `FlipHorizontal`-ein horizontaler, von rechts nach links kippen. Bei einer Kündigung wird der Übergang von links nach rechts zurück geflippt.
+- `CoverVertical`– Wird vom unteren Bildschirmrand nach oben verschoben.
+- `CrossDissolve`– Die alte Ansicht wird ausgeblendet, & die neue Ansicht ausgeblendet wird.
+- `FlipHorizontal`-Ein horizontaler, von rechts nach links. Bei einer Kündigung wird der Übergang von links nach rechts zurück geflippt.
 
-Übergeben Sie zum Animieren des Übergangs `true` als zweites Argument an `PresentViewController`:
+Um den Übergang zu animieren, übergeben Sie `true` als zweites Argument an `PresentViewController` :
 
 ```csharp
 PresentViewController (vc2, true, null);
@@ -76,7 +76,7 @@ Der folgende Screenshot zeigt, wie der Übergang für den `PartialCurl` Fall aus
 
 Zusätzlich zu den Übergängen zwischen Controllern unterstützt UIKit auch das Animieren von Übergängen zwischen Sichten, um eine Ansicht für eine andere auszutauschen.
 
-Angenommen, Sie haben einen Controller mit `UIImageView`, bei dem das Tippen auf das Bild ein zweites `UIImageView`anzeigen soll. Um die übergeordnete Ansicht der Bildansicht so zu animieren, dass Sie in die zweite Bildansicht übergeht, ist das Aufrufen von `UIView.Transition`ganz einfach, indem Sie die `toView` und `fromView` übergibt, wie unten dargestellt:
+Angenommen, Sie haben einen Controller mit `UIImageView` , wobei auf das Bild ein zweites angezeigt werden soll `UIImageView` . Um die übergeordnete Ansicht der Bildansicht so zu animieren, dass Sie in die zweite Bildansicht übergeht, ist der Aufruf von so einfach wie das Aufrufen von `UIView.Transition` `toView` und `fromView` wie unten dargestellt:
 
 ```csharp
 UIView.Transition (
@@ -88,7 +88,7 @@ UIView.Transition (
   completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` nimmt auch einen `duration` Parameter an, der steuert, wie lange die Animation ausgeführt wird, und [`options`](xref:UIKit.UIViewAnimationOptions) , um Dinge anzugeben, wie z. b. die zu verwendende Animation und die Beschleunigungs Funktion. Darüber hinaus können Sie einen Abschluss Handler angeben, der nach Abschluss der Animation aufgerufen wird.
+`UIView.Transition`nimmt auch einen `duration` Parameter an, der steuert, wie lange die Animation ausgeführt wird, [`options`](xref:UIKit.UIViewAnimationOptions) und wie die zu verwendende Animation und die Beschleunigungs Funktion angegeben werden. Darüber hinaus können Sie einen Abschluss Handler angeben, der nach Abschluss der Animation aufgerufen wird.
 
 Der folgende Screenshot zeigt den animierten Übergang zwischen den Bildansichten, wenn `TransitionFlipFromTop` verwendet wird:
 
@@ -96,16 +96,16 @@ Der folgende Screenshot zeigt den animierten Übergang zwischen den Bildansichte
 
 ### <a name="view-property-animations"></a>Anzeigen von Eigenschafts Animationen
 
-UIKit unterstützt eine Vielzahl von Eigenschaften für die `UIView`-Klasse kostenlos, einschließlich:
+UIKit unterstützt eine Vielzahl von Eigenschaften für die- `UIView` Klasse kostenlos, einschließlich:
 
 - Frame
-- Fugen
-- Center
+- Begrenzungen
+- Zentrum
 - Alpha
-- Transformation
-- Farbe
+- Transformieren
+- Color
 
-Diese Animationen erfolgen implizit, indem Eigenschafts Änderungen in einem `NSAction` Delegaten angegeben werden, der an die statische `UIView.Animate` Methode übermittelt wird. Mit dem folgenden Code wird beispielsweise der Mittelpunkt eines `UIImageView`animiert:
+Diese Animationen werden implizit durch Angeben von Eigenschafts Änderungen in einem an `NSAction` die statische Methode übergebenen Delegaten ausgeführt `UIView.Animate` . Mit dem folgenden Code wird beispielsweise der Mittelpunkt eines animiert `UIImageView` :
 
 ```csharp
 pt = imgView.Center;
@@ -127,25 +127,25 @@ Dies führt dazu, dass ein Bild über den oberen Bildschirmrand hin und her anim
 
  ![](core-animation-images/08-animate-center.png "An image animating back and forth across the top of the screen as the output")
 
-Wie bei der `Transition`-Methode ermöglicht `Animate` die Festlegung der Dauer zusammen mit der Beschleunigungs Funktion. In diesem Beispiel wurde auch die `UIViewAnimationOptions.Autoreverse`-Option verwendet, die bewirkt, dass die Animation von dem Wert zurück zum ersten wird. Der Code legt jedoch auch die `Center` in einem Abschluss Handler auf den ursprünglichen Wert zurück. Während eine Animation Eigenschaftswerte im Laufe der Zeit interpolieren kann, ist der tatsächliche Modell Wert der Eigenschaft immer der endgültige Wert, der festgelegt wurde. In diesem Beispiel ist der Wert ein Punkt in der Nähe der rechten Seite der übergeordneten Ansicht. Ohne die `Center` auf den Anfangspunkt festzulegen, an dem die Animation abgeschlossen ist, weil die `Autoreverse` festgelegt wird, wird das Bild nach Abschluss der Animation wieder nach rechts ausgerichtet, wie unten dargestellt:
+Wie bei der- `Transition` Methode `Animate` ermöglicht die Festlegung der Dauer zusammen mit der Beschleunigungs Funktion. In diesem Beispiel wurde auch die- `UIViewAnimationOptions.Autoreverse` Option verwendet, die bewirkt, dass die Animation von dem Wert zurück zum ersten wird. Der Code legt jedoch auch die `Center` auf den Anfangswert in einem Abschluss Handler zurück. Während eine Animation Eigenschaftswerte im Laufe der Zeit interpolieren kann, ist der tatsächliche Modell Wert der Eigenschaft immer der endgültige Wert, der festgelegt wurde. In diesem Beispiel ist der Wert ein Punkt in der Nähe der rechten Seite der übergeordneten Ansicht. Wenn `Center` Sie nicht auf den Anfangspunkt festlegen, an dem die Animation abgeschlossen ist, weil `Autoreverse` Sie festgelegt wird, wird das Bild nach Abschluss der Animation wieder nach rechts ausgerichtet, wie unten dargestellt:
 
  ![](core-animation-images/09-animation-complete.png "Without setting the Center to the initial point, the image would snap back to the right side after the animation completes")
 
 ## <a name="using-core-animation"></a>Verwenden der Core-Animation
 
- `UIView` Animationen bieten viele Funktionen und sollten nach Möglichkeit aufgrund der einfachen Implementierung verwendet werden. Wie bereits erwähnt, verwenden UIView-Animationen das Core Animation Framework. Allerdings können einige Dinge nicht mit `UIView` Animationen durchgeführt werden, wie z. b. das Animieren zusätzlicher Eigenschaften, die nicht mit einer Ansicht animiert werden können, oder das interpolieren an einem nichtlinearen Pfad. In solchen Fällen, in denen Sie eine präzisere Steuerung benötigen, kann die Kern Animation auch direkt verwendet werden.
+ `UIView`Animationen ermöglichen viele Funktionen und sollten nach Möglichkeit aufgrund der einfachen Implementierung verwendet werden. Wie bereits erwähnt, verwenden UIView-Animationen das Core Animation Framework. Allerdings können einige Dinge nicht mit Animationen durchgeführt werden `UIView` , wie z. b. das Animieren zusätzlicher Eigenschaften, die nicht mit einer Ansicht animiert werden können, oder das interpolieren an einem nichtlinearen Pfad. In solchen Fällen, in denen Sie eine präzisere Steuerung benötigen, kann die Kern Animation auch direkt verwendet werden.
 
-### <a name="layers"></a>Maurer
+### <a name="layers"></a>Ebenen
 
-Beim Arbeiten mit der Kern Animation erfolgt die Animation über *Ebenen*, die vom Typ "`CALayer`" sind. Eine Ebene ähnelt konzeptionell einer Ansicht darin, dass es eine Ebenenhierarchie gibt, ähnlich wie eine Ansichts Hierarchie. Tatsächlich werden Ansichten zurückgenommen, und die Ansicht fügt Unterstützung für die Benutzerinteraktion hinzu. Sie können über die `Layer`-Eigenschaft der Sicht auf die Ebene einer beliebigen Ansicht zugreifen. Tatsächlich wird der Kontext, der in `Draw` Methode von `UIView` verwendet wird, tatsächlich aus der Ebene erstellt. Intern ist der Delegat der Ebene, die eine `UIView` sichert, auf die Ansicht selbst festgelegt, was `Draw`aufruft. Wenn Sie also zu einem `UIView`zeichnen, zeichnen Sie tatsächlich auf seine Ebene.
+Beim Arbeiten mit der Kern Animation erfolgt die Animation über *Ebenen*, die vom Typ sind `CALayer` . Eine Ebene ähnelt konzeptionell einer Ansicht darin, dass es eine Ebenenhierarchie gibt, ähnlich wie eine Ansichts Hierarchie. Tatsächlich werden Ansichten zurückgenommen, und die Ansicht fügt Unterstützung für die Benutzerinteraktion hinzu. Sie können über die-Eigenschaft der Sicht auf die Ebene einer beliebigen Ansicht zugreifen `Layer` . Tatsächlich wird der Kontext, der in der-Methode von verwendet wird, `Draw` `UIView` tatsächlich aus der-Ebene erstellt. Intern hat der Delegat, der ein-Element unterstützt, `UIView` auf die Ansicht selbst festgelegt, was wiederum aufruft `Draw` . Wenn Sie also auf einen zeichnen `UIView` , zeichnen Sie tatsächlich auf seine Ebene.
 
 Ebenenanimationen können entweder implizit oder explizit sein. Implizite Animationen sind deklarativ. Sie deklarieren einfach, welche Ebeneneigenschaften geändert werden sollen, und die Animation funktioniert einfach. Explizite Animationen werden hingegen über eine Animations Klasse erstellt, die einer Ebene hinzugefügt wird. Explizite Animationen ermöglichen eine zusätzliche Kontrolle über die Erstellung einer Animation. In den folgenden Abschnitten werden implizite und explizite Animationen ausführlicher beschrieben.
 
 ### <a name="implicit-animations"></a>Implizite Animationen
 
-Eine Möglichkeit, die Eigenschaften einer Ebene zu animieren, ist eine implizite Animation. `UIView` Animationen erstellen implizite Animationen. Sie können jedoch auch implizite Animationen direkt für eine Ebene erstellen.
+Eine Möglichkeit, die Eigenschaften einer Ebene zu animieren, ist eine implizite Animation. `UIView`Animationen erstellen implizite Animationen. Sie können jedoch auch implizite Animationen direkt für eine Ebene erstellen.
 
-Der folgende Code legt z. b. den `Contents` einer Ebene von einem Bild fest, legt eine Rahmenbreite und-Farbe fest und fügt die Ebene als Unterebene der Ebene der Ansicht hinzu:
+Der folgende Code legt z. b. eine Ebene `Contents` von einem Bild fest, legt eine Rahmenbreite und-Farbe fest und fügt die Ebene als Unterebene der Ebene der Ansicht hinzu:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -164,7 +164,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Um eine implizite Animation für die Ebene hinzuzufügen, können Sie Eigenschafts Änderungen einfach in eine `CATransaction`umschließen. Dies ermöglicht das Animieren von Eigenschaften, die nicht mit einer Ansichts Animation animiert werden können, wie z. b. die `BorderWidth` und `BorderColor`, wie unten dargestellt:
+Um eine implizite Animation für die Ebene hinzuzufügen, können Sie Eigenschafts Änderungen einfach in einem umschließen `CATransaction` . Dies ermöglicht das Animieren von Eigenschaften, die nicht mit einer Ansichts Animation, wie z. b. `BorderWidth` und, `BorderColor` wie unten dargestellt animiert werden können:
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -180,21 +180,21 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-Mit diesem Code wird auch die `Position`der Ebene animiert, bei der es sich um die Position des Anker Punkts der Ebene handelt, die von der oberen linken Ecke der Koordinaten der Oberschicht gemessen wird. Der Ankerpunkt einer Ebene ist ein normalisierter Punkt innerhalb des Koordinatensystems der Ebene.
+Mit diesem Code werden auch die Ebenen der Ebene animiert, bei der es sich `Position` um die Position des Anker Punkts der Ebene handelt, die von der oberen linken Ecke der Koordinaten der oberebenenebene gemessen wird. Der Ankerpunkt einer Ebene ist ein normalisierter Punkt innerhalb des Koordinatensystems der Ebene.
 
 Die folgende Abbildung zeigt die Position und den Ankerpunkt:
 
  ![](core-animation-images/10-postion-anchorpt.png "This figure shows the position and anchor point")
 
-Wenn das Beispiel ausgeführt wird, wird der `Position``BorderWidth` und `BorderColor` animieren, wie in den folgenden Screenshots gezeigt:
+Wenn das Beispiel ausgeführt wird, werden `Position` die `BorderWidth` -und `BorderColor` animiert, wie in den folgenden Screenshots gezeigt:
 
  ![](core-animation-images/11-implicit-animation.png "When the example is run, the Position, BorderWidth and BorderColor animate as shown")
 
 ### <a name="explicit-animations"></a>Explizite Animationen
 
-Neben impliziten Animationen umfasst die Core-Animation eine Reihe von Klassen, die von `CAAnimation` erben, mit denen Sie Animationen kapseln können, die dann explizit zu einer Ebene hinzugefügt werden. Diese ermöglichen eine präzisere Steuerung von Animationen, z. b. das Ändern des Startwerts einer Animation, das Gruppieren von Animationen und das Angeben von Keyframes, um nichtlineare Pfade zuzulassen.
+Neben impliziten Animationen umfasst die Core-Animation eine Reihe von Klassen, die von erben, mit `CAAnimation` denen Sie Animationen kapseln können, die dann explizit zu einer Ebene hinzugefügt werden. Diese ermöglichen eine präzisere Steuerung von Animationen, z. b. das Ändern des Startwerts einer Animation, das Gruppieren von Animationen und das Angeben von Keyframes, um nichtlineare Pfade zuzulassen.
 
-Der folgende Code zeigt ein Beispiel für eine explizite Animation mithilfe eines `CAKeyframeAnimation` für die zuvor gezeigte Schicht (im Abschnitt implizite Animation):
+Der folgende Code zeigt ein Beispiel für eine explizite Animation mit einem `CAKeyframeAnimation` für die zuvor gezeigte Ebene (im Abschnitt implizite Animation):
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -225,7 +225,7 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-Dieser Code ändert die `Position` der Ebene, indem ein Pfad erstellt wird, der dann zum Definieren einer Keyframe-Animation verwendet wird. Beachten Sie, dass die `Position` der Ebene auf den endgültigen Wert des `Position` aus der Animation festgelegt ist. Ohne diesen Wert würde die Ebene plötzlich zu ihrer `Position` vor der Animation zurückkehren, da die Animation nur den Präsentations Wert und nicht den tatsächlichen Modell Wert ändert. Wenn Sie den Modell Wert auf den endgültigen Wert aus der Animation festlegen, bleibt die Ebene am Ende der Animation bestehen.
+Dieser Code ändert den `Position` der Ebene durch Erstellen eines Pfads, der dann zum Definieren einer Keyframe-Animation verwendet wird. Beachten Sie, dass der der Ebene `Position` auf den endgültigen Wert von `Position` aus der Animation festgelegt ist. Ohne diesen Wert würde die Ebene plötzlich zu Ihrer `Position` vor der Animation zurückkehren, da die Animation nur den Präsentations Wert und nicht den tatsächlichen Modell Wert ändert. Wenn Sie den Modell Wert auf den endgültigen Wert aus der Animation festlegen, bleibt die Ebene am Ende der Animation bestehen.
 
 Die folgenden Screenshots zeigen die Ebene mit dem Bild, das die Animation durch den angegebenen Pfad enthält:
 

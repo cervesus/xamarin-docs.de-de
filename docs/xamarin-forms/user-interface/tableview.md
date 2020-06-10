@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsTableView
-description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms TableView-Klasse verwenden, um Scrollmenüs, Einstellungen und Eingabeformulare in-Anwendungen darzustellen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8f3fd8d84906844b578e71cb0774932561e0d507
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136226"
+Title: " Xamarin.Forms TableView" Description: "in diesem Artikel wird erläutert, wie Sie die Xamarin.Forms TableView-Klasse verwenden, um Scrollmenüs, Einstellungen und Eingabeformulare in-Anwendungen darzustellen."
+ms. Prod: xamarin ms. assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/25/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
@@ -24,8 +10,6 @@ ms.locfileid: "84136226"
 [`TableView`](xref:Xamarin.Forms.TableView)ist eine Ansicht für die Anzeige von Bild lauffähigen Listen mit Daten oder Optionen, bei denen Zeilen vorhanden sind, die nicht dieselbe Vorlage verwenden. Im Gegensatz zu [ListView](~/xamarin-forms/user-interface/listview/index.md)hat `TableView` nicht das Konzept von `ItemsSource` , sodass Elemente manuell als untergeordnete Elemente hinzugefügt werden müssen.
 
 ![TableView-Beispiel](tableview-images/tableview-all-sml.png)
-
-<a name="Use_Cases" />
 
 ## <a name="use-cases"></a>Anwendungsfälle
 
@@ -36,8 +20,6 @@ ms.locfileid: "84136226"
 - Anzeige von Daten, die von Zeile zu Zeile (z. b. Zahlen, Prozentsätze und Bilder) unterschiedlich dargestellt werden.
 
 [`TableView`](xref:Xamarin.Forms.TableView)behandelt das Scrollen und das Anordnen von Zeilen in attraktiven Abschnitten, eine häufige Anforderung für die oben genannten Szenarien. Das `TableView` Steuerelement verwendet die zugrunde liegende äquivalente Ansicht jeder Plattform, sofern verfügbar, und erstellt eine native Betrachtung für jede Plattform.
-
-<a name="TableView_Structure" />
 
 ## <a name="structure"></a>Struktur
 
@@ -72,8 +54,6 @@ Content = new TableView
 };
 ```
 
-<a name="TableView_Appearance" />
-
 ## <a name="appearance"></a>Darstellung
 
 [`TableView`](xref:Xamarin.Forms.TableView)macht die- [`Intent`](xref:Xamarin.Forms.TableView.Intent) Eigenschaft verfügbar, die auf einen der Enumerationsmember festgelegt werden kann [`TableIntent`](xref:Xamarin.Forms.TableIntent) :
@@ -87,15 +67,11 @@ Der [`TableIntent`](xref:Xamarin.Forms.TableIntent) von Ihnen gewählte Wert kan
 
 Außerdem kann die Farbe des jeweils angezeigten Texts [`TableSection`](xref:Xamarin.Forms.TableSection) geändert werden, indem die-Eigenschaft auf festgelegt wird `TextColor` [`Color`](xref:Xamarin.Forms.Color) .
 
-<a name="Built-In_Cells" />
-
 ## <a name="built-in-cells"></a>Integrierte Zellen
 
 Xamarin.Formsenthält integrierte Zellen zum Erfassen und Anzeigen von Informationen. Obwohl [`ListView`](xref:Xamarin.Forms.ListView) und [`TableView`](xref:Xamarin.Forms.TableView) die gleichen Zellen verwenden können, [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) [`EntryCell`](xref:Xamarin.Forms.EntryCell) sind und für ein Szenario am relevantesten `TableView` .
 
 Eine ausführliche Beschreibung von [textcell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell) und [ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell)finden Sie unter [ListView Cell Appearance](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md) .
-
-<a name="switchcell" />
 
 ### <a name="switchcell"></a>Switchcell
 
@@ -110,8 +86,6 @@ Alle diese Eigenschaften sind bindbar.
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)macht auch das- `OnChanged` Ereignis verfügbar, sodass Sie auf Änderungen im Zustand der Zelle reagieren können.
 
 ![Switchcell-Beispiel](tableview-images/switch-cell.png)
-
-<a name="entrycell" />
 
 ### <a name="entrycell"></a>Entrycell
 
@@ -128,8 +102,6 @@ Alle diese Eigenschaften sind bindbar.
 [`EntryCell`](xref:Xamarin.Forms.EntryCell)macht auch das- `Completed` Ereignis verfügbar, das ausgelöst wird, wenn der Benutzer beim Bearbeiten von Text auf die Schaltfläche "Done" auf der Tastatur trifft.
 
 ![Entrycell-Beispiel](tableview-images/entry-cell.png)
-
-<a name="Custom_Cells" />
 
 ## <a name="custom-cells"></a>Benutzerdefinierte Zellen
 

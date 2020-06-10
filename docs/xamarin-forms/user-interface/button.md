@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsGedrückt
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f7309794768c01d4978aa369cd1950d4986938db
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137461"
+Title: " Xamarin.Forms Button" Description: "die Schaltfläche antwortet auf eine Tap-oder Klick-Taste, die eine Anwendung anweist, eine bestimmte Aufgabe auszuführen."
+ms. Prod: xamarin ms. assetid: 62caeb63-0800-44f 4-9b8c-ee632138c2f 5 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/04/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-button"></a>Xamarin.FormsGedrückt
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
@@ -414,8 +400,6 @@ Das Ergebnis ist, dass `Label` nur rotiert, wenn sich ein Finger in der Kontakta
 
 Diese Art von Verhalten hat Anwendungen für Spiele: ein Finger, der auf einem-Objekt gehalten wird, `Button` kann dazu führen, dass ein Objekt auf dem Bildschirm in eine bestimmte Richtung verschoben
 
-<a name="button-appearance" />
-
 ## <a name="button-appearance"></a>Darstellung der Schaltfläche
 
 Das `Button` erbt oder definiert mehrere Eigenschaften, die sich auf seine Darstellung auswirken:
@@ -433,7 +417,7 @@ Das `Button` erbt oder definiert mehrere Eigenschaften, die sich auf seine Darst
 > [!NOTE]
 > Die `Button` -Klasse verfügt auch über [`Margin`](xref:Xamarin.Forms.View.Margin) -und- [`Padding`](xref:Xamarin.Forms.Button.Padding) Eigenschaften, die das Layoutverhalten von Steuern `Button` . Weitere Informationen finden Sie unter [Ränder und Abstände](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-Die Auswirkungen von sechs dieser Eigenschaften (ausgenommen `FontFamily` und `FontAttributes` ) werden auf der Seite "Darstellung der **Schaltfläche** " veranschaulicht. Eine weitere Eigenschaft, [`Image`](xref:Xamarin.Forms.Button.ImageSource) , wird im Abschnitt [**Verwenden von Bitmaps mit Schaltfläche**](#image-button)erläutert.
+Die Auswirkungen von sechs dieser Eigenschaften (ausgenommen `FontFamily` und `FontAttributes` ) werden auf der Seite "Darstellung der **Schaltfläche** " veranschaulicht. Eine weitere Eigenschaft, [`Image`](xref:Xamarin.Forms.Button.ImageSource) , wird im Abschnitt [**Verwenden von Bitmaps mit Schaltfläche**](#using-bitmaps-with-buttons)erläutert.
 
 Alle Ansichten und Daten Bindungen auf der Seite "Darstellung der **Schaltfläche** " werden in der XAML-Datei definiert:
 
@@ -747,8 +731,6 @@ public partial class ToggleButtonDemoPage : ContentPage
 Hier ist das Programm, das unter IOS, Android und UWP ausgeführt wird:
 
 [![Demo zum Umschalten der Schaltfläche](button-images/ToggleButtonDemo.png "Demo zum Umschalten der Schaltfläche")](button-images/ToggleButtonDemo-Large.png#lightbox)
-
-<a name="image-button" />
 
 ## <a name="using-bitmaps-with-buttons"></a>Verwenden von Bitmaps mit Schaltflächen
 

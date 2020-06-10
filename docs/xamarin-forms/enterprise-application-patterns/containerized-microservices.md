@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139255"
+Title: "containerisierte Microservices" Beschreibung: "in diesem Kapitel wird erläutert, wie Sie Microservices und Container verwenden, um Agile, skalierbare und zuverlässige moderne cloudanwendungen zu erstellen."
+ms. Prod: xamarin ms. assetid: 5872ad92-04e0-4f 1a-9691-79d5602f 5683 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="containerized-microservices"></a>Containermicroservices
 
 Die Entwicklung von Client-Server-Anwendungen führte zu einem Schwerpunkt auf der Erstellung mehrstufiger Anwendungen, die bestimmte Technologien in den einzelnen Ebenen verwenden. Solche Anwendungen werden häufig als *monolithische* Anwendungen bezeichnet und sind auf Hardware verpackt, die für Spitzenlasten vorab skaliert ist. Die Haupt Nachteile dieses Entwicklungsansatzes sind die enge Kopplung zwischen den Komponenten innerhalb der einzelnen Ebenen, dass einzelne Komponenten nicht problemlos skaliert werden können und die Kosten für Tests. Ein einfaches Update kann auf den Rest der Ebene unvorhergesehene Auswirkungen haben. Daher muss für eine Änderung an einer Anwendungs Komponente die gesamte Ebene erneut getestet und erneut bereitgestellt werden.
@@ -93,11 +79,9 @@ Die eshoponcontainers-Referenz Anwendung verwendet docker zum Hosten von vier co
 
 Die Architektur der Back-End-Dienste in der Referenz Anwendung wird in mehrere autonome Subsysteme in Form von zusammengesetzten microservices und Containern zerlegt. Jeder microservice stellt einen einzelnen Funktionsbereich bereit: einen Identitäts Dienst, einen Katalog Dienst, einen Bestell Dienst und einen waren Korb Dienst.
 
-Jeder-mikrodienst verfügt über eine eigene Datenbank, sodass er vollständig von den anderen-Diensten entkoppelt werden kann. Bei Bedarf wird die Konsistenz zwischen Datenbanken aus unterschiedlichen-Diensten mithilfe von Ereignissen auf Anwendungsebene erreicht. Weitere Informationen finden Sie unter [Kommunikation zwischen-Diensten](#communication_between_microservices).
+Jeder-mikrodienst verfügt über eine eigene Datenbank, sodass er vollständig von den anderen-Diensten entkoppelt werden kann. Bei Bedarf wird die Konsistenz zwischen Datenbanken aus unterschiedlichen-Diensten mithilfe von Ereignissen auf Anwendungsebene erreicht. Weitere Informationen finden Sie unter [Kommunikation zwischen-Diensten](#communication-between-microservices).
 
 Weitere Informationen zur Referenz Anwendung finden Sie unter [.net-microservices: Architektur für .NET-Container Anwendungen](https://aka.ms/microservicesebook).
-
-<a name="communication_between_client_and_microservices" />
 
 ## <a name="communication-between-client-and-microservices"></a>Kommunikation zwischen Client und-Dienst
 
@@ -111,8 +95,6 @@ Bei der direkten Kommunikation zwischen Client und verwaltdienst stellt die Mobi
 
 > [!TIP]
 > Verwenden Sie die API-gatewaykommunikation. Die direkte Kommunikation zwischen Client und verwaltedienst kann bei der Erstellung einer großen und komplexen, auf einem Dienst basierenden Anwendung Nachteile haben, ist aber für eine kleine Anwendung mehr als ausreichend. Wenn Sie eine umfangreiche auf einem-Dienst basierende Anwendung mit Dutzenden von-Diensten entwickeln, empfiehlt es sich, die API-gatewaykommunikation Weitere Informationen finden Sie unter [.net-microservices: Architektur für .NET-Container Anwendungen](https://aka.ms/microservicesebook).
-
-<a name="communication_between_microservices" />
 
 ## <a name="communication-between-microservices"></a>Kommunikation zwischen den-Diensten
 

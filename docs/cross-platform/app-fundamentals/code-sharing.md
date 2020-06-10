@@ -6,12 +6,12 @@ ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: davidortinau
 ms.author: daortin
 ms.date: 08/06/2018
-ms.openlocfilehash: 78b849434a087cf7951fe36345688251885ea00b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5edfd8216892eb28a2b1ad14d3ccee1668b21a43
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016896"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571219"
 ---
 # <a name="sharing-code-overview"></a>Übersicht über gemeinsame Code
 
@@ -19,9 +19,9 @@ _In diesem Dokument werden die verschiedenen Methoden der Freigabe von Code zwis
 
 Es gibt drei Methoden für die gemeinsame Nutzung von Code zwischen plattformübergreifenden Anwendungen:
 
-- [ **.NET Standard Bibliotheken**](#Net_Standard) – .NET Standard Projekte können Code implementieren, der auf mehreren Plattformen freigegeben werden kann, und auf eine große Anzahl von .NET-APIs (abhängig von der Version) zugreifen können. .NET Standard 1,0-1,6 implementieren progressiver größere APIs, während .NET Standard 2,0 die beste Abdeckung der .net-BCL bietet (einschließlich der .NET-APIs, die in xamarin-apps verfügbar sind).
-- Frei [**gegebene Projekte**](#Shared_Projects) – verwenden Sie den Projekttyp "freigegeben", um den Quellcode zu organisieren, und verwenden Sie `#if` Compilerdirektiven, um plattformspezifische Anforderungen zu verwalten.
-- [**Portable Klassenbibliotheken**](#Portable_Class_Libraries) (veraltet) – Portable Klassenbibliotheken (Portable Class Libraries, pcls) können auf mehrere Plattformen mit einer gemeinsamen API-Oberfläche abzielen und mithilfe von Schnittstellen plattformspezifische Funktionen bereitstellen. Pcls sind in den neuesten Versionen von Visual Studio veraltet &ndash; verwenden Sie stattdessen .NET Standard.
+- [**.NET Standard Bibliotheken**](#Net_Standard) – .NET Standard Projekte können Code implementieren, der auf mehreren Plattformen freigegeben werden kann, und auf eine große Anzahl von .NET-APIs (abhängig von der Version) zugreifen können. .NET Standard 1,0-1,6 implementieren progressiver größere APIs, während .NET Standard 2,0 die beste Abdeckung der .net-BCL bietet (einschließlich der .NET-APIs, die in xamarin-apps verfügbar sind).
+- Frei [**gegebene Projekte**](#Shared_Projects) – verwenden Sie den Projekttyp "freigegeben", um den Quellcode zu organisieren, und verwenden Sie zum `#if` Verwalten von plattformspezifischen Anforderungen Compilerdirektiven.
+- [**Portable Klassenbibliotheken**](#Portable_Class_Libraries) (veraltet) – Portable Klassenbibliotheken (Portable Class Libraries, pcls) können auf mehrere Plattformen mit einer gemeinsamen API-Oberfläche abzielen und mithilfe von Schnittstellen plattformspezifische Funktionen bereitstellen. Pcls sind in den neuesten Versionen von Visual Studio veraltet &ndash; . verwenden Sie stattdessen .NET Standard.
 
 Das Ziel einer Strategie für die Code Freigabe besteht darin, die in diesem Diagramm gezeigte Architektur zu unterstützen, in der eine einzelne Codebasis von mehreren Plattformen verwendet werden kann.
 
@@ -29,7 +29,7 @@ Das Ziel einer Strategie für die Code Freigabe besteht darin, die in diesem Dia
 
 In diesem Artikel werden die verfügbaren Methoden verglichen, damit Sie den richtigen Projekttyp für Ihre Anwendungen auswählen können.
 
-<a name="Net_Standard" />
+<a name="Net_Standard"></a>
 
 ## <a name="net-standard-libraries"></a>.NET Standard-Bibliotheken
 
@@ -45,19 +45,19 @@ In diesem Artikel werden die verfügbaren Methoden verglichen, damit Sie den ric
 
 ### <a name="disadvantages"></a>Nachteile
 
-- Compilerdirektiven können nicht wie `#if __IOS__`verwendet werden.
+- Compilerdirektiven können nicht wie verwendet werden `#if __IOS__` .
 
 ### <a name="remarks"></a>Hinweise
 
 .NET Standard [ähnelt PCL](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries), aber mit einem einfacheren Modell für Platt Form Unterstützung und einer größeren Anzahl von Klassen aus der BCL.
 
-<a name="Shared_Projects" />
+<a name="Shared_Projects"></a>
 
 ## <a name="shared-projects"></a>Freigegebene Projekte
 
 Frei [gegebene Projekte](~/cross-platform/app-fundamentals/shared-projects.md) enthalten Code Dateien und Assets, die in jedem Projekt enthalten sind, das auf Sie verweist. Freigabe Projekte führen nicht selbst zu einer kompilierten Ausgabe.
 
-Dieser Screenshot zeigt eine Projektmappendatei mit drei Anwendungsprojekten (für Android, IOS und Windows) mit einem frei **gegebenen** Projekt, das C# gemeinsame Quell Code Dateien enthält:
+Dieser Screenshot zeigt eine Projektmappendatei mit drei Anwendungsprojekten (für Android, IOS und Windows) mit einem frei **gegebenen** Projekt, das allgemeine c#-Quell Code Dateien enthält:
 
 ![Projekt Mappe freigegeben](code-sharing-images/sharedsolution.png "Projekt Mappe freigegeben")
 
@@ -76,26 +76,26 @@ Eine Beispiellösung würde die folgenden Ordner und Projekte enthalten (Projekt
 - **Appios** – xamarin. IOS-Anwendungsprojekt.
 - **Appwindows** – Windows-Anwendungsprojekt.
 
-Auf diese Weise teilen sich die drei Anwendungsprojekte denselben Quellcode (die C# Dateien werden gemeinsam genutzt). Alle Änderungen am freigegebenen Code werden in allen drei Projekten gemeinsam genutzt.
+Auf diese Weise verwenden die drei Anwendungsprojekte denselben Quellcode (die c#-Dateien in "Shared"). Alle Änderungen am freigegebenen Code werden in allen drei Projekten gemeinsam genutzt.
 
 ### <a name="benefits"></a>Vorteile
 
 - Ermöglicht die gemeinsame Nutzung von Code in mehreren Projekten.
-- Frei gegebener Code kann basierend auf der Plattform mithilfe von Compilerdirektiven verzweigt werden (z. b. Verwenden von `#if __ANDROID__`, wie im Dokument zum Entwickeln von [plattformübergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) erläutert.
-- Anwendungsprojekte können plattformspezifische Verweise enthalten, die vom freigegebenen Code verwendet werden können (z. b. das Verwenden von `Community.CsharpSqlite.WP7` im Tasky-Beispiel für Windows Phone).
+- Frei gegebener Code kann basierend auf der Plattform mithilfe von Compilerdirektiven verzweigt werden (z. b. Verwenden von `#if __ANDROID__` , wie im Dokument zum Entwickeln von Platt [Form übergreifenden Anwendungen](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) erläutert.
+- Anwendungsprojekte können plattformspezifische Verweise enthalten, die vom freigegebenen Code verwendet werden können (z `Community.CsharpSqlite.WP7` . b. die Verwendung von im Tasky-Beispiel für Windows Phone).
 
 ### <a name="disadvantages"></a>Nachteile
 
 - Refacktoren, die Code in inaktiven Compilerdirektiven beeinflussen, aktualisieren den Code in diesen Anweisungen nicht.
 - Im Gegensatz zu den meisten anderen Projekttypen hat ein frei gegebenes Projekt keine "Output"-Assembly. Während der Kompilierung werden die Dateien als Teil des verweisenden Projekts behandelt und in diese Assembly kompiliert. Wenn Sie Ihren Code als Assembly freigeben möchten, sind .NET Standard oder portablen Klassenbibliotheken eine bessere Lösung.
 
-<a name="Shared_Remarks" />
+<a name="Shared_Remarks"></a>
 
 ### <a name="remarks"></a>Hinweise
 
 Eine gute Lösung für Anwendungsentwickler, die Code schreiben, der nur für die Freigabe in Ihrer APP vorgesehen ist (und nicht an andere Entwickler verteilt werden soll).
 
-<a name="Portable_Class_Libraries" />
+<a name="Portable_Class_Libraries"></a>
 
 ## <a name="portable-class-libraries"></a>Portable Klassenbibliotheken
 
@@ -134,7 +134,7 @@ Obwohl PCL-Projekte weiterhin in Visual Studio unterstützt werden, wird .NET St
 - [Entwickeln von plattformübergreifenden Anwendungen (Hauptdokument)](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 - [Portable Klassenbibliotheken](~/cross-platform/app-fundamentals/pcl.md)
 - [Freigegebene Projekte](~/cross-platform/app-fundamentals/shared-projects.md)
-- [.NET-Standard](~/cross-platform/app-fundamentals/net-standard.md)
+- [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 - [Fallstudie: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky-Beispiel (GitHub)](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
 - [Tasky-Beispiel mit PCL (GitHub)](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)

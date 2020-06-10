@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2aee2a8dc37d6a1a73569322a97cdd0aebfbfa1c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032136"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574209"
 ---
 # <a name="app-store-changes-in-ios-11"></a>App Store-Änderungen in ios 11
 
@@ -50,7 +50,7 @@ Um Ihre in-App-Käufe zur herauf Stufung verfügbar zu machen, öffnen Sie Ihre 
 
 ![App Store-herauf Stufung im Abschnitt "iTune Connect"](app-store-changes-images/image4.png)
 
-Außerdem müssen Sie die `ShouldAddStorePayment`-Methode dem `SKPaymentTransactionObserver`-Protokoll in Ihrer APP hinzufügen.
+Außerdem müssen Sie die- `ShouldAddStorePayment` Methode dem `SKPaymentTransactionObserver` Protokoll in Ihrer APP hinzufügen.
 
 Weitere Informationen zu in-App-Kaufaktionen finden Sie unter Apple [promoten in-App-Käufe](https://developer.apple.com/app-store/promoting-in-app-purchases/) .
 
@@ -84,7 +84,7 @@ Beim Antworten auf die Benutzer sind einige Punkte zu beachten:
 
 Weitere Informationen finden Sie auf der Seite [Antworten auf Reviews](https://developer.apple.com/app-store/responding-to-reviews/) von Apple.
 
-<a name="Phased_Release"/>
+<a name="Phased_Release"></a>
 
 ## <a name="phased-release"></a>Release in Phasen
 

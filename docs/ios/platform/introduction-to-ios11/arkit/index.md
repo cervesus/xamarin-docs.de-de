@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032245"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571674"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Einführung in Arkit in xamarin. IOS
 
 _Erweiterte Realität für IOS 11_
 
-Arkit ermöglicht eine Vielzahl von erweiterten Reality-Anwendungen und-spielen. In diesem Abschnitt werden die folgenden Themen behandelt:
+Arkit ermöglicht eine Vielzahl von erweiterten Reality-Anwendungen und-spielen. Dieser Abschnitt enthält die folgenden Themen:
 
 - [Einstieg in Arkit](#gettingstarted)
 - [Verwenden von Arkit mit urhusharp](urhosharp.md)
 
-<a name="gettingstarted" />
+<a name="gettingstarted"></a>
 
 ## <a name="getting-started-with-arkit"></a>Einstieg in Arkit
 
@@ -39,7 +39,7 @@ Assets sollten mit der **scenekitasset** -Buildaktion dem Projekt hinzugefügt w
 
 ### <a name="2-configure-the-view"></a>2. Konfigurieren der Ansicht
 
-Laden Sie in der `ViewDidLoad`-Methode des Ansichts Controllers das Szene Objekt, und legen Sie die `Scene`-Eigenschaft für die Ansicht fest:
+Laden Sie in der-Methode des Ansichts Controllers `ViewDidLoad` das Szene Objekt, und legen Sie die- `Scene` Eigenschaft für die Ansicht fest:
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -66,7 +66,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-Weisen Sie den Delegaten in der `ViewDidLoad`-Methode zu:
+Weisen Sie den Delegaten in der- `ViewDidLoad` Methode zu:
 
 ```csharp
 // Track changes to the session
@@ -75,7 +75,7 @@ SceneView.Session.Delegate = new SessionDelegate();
 
 ### <a name="4-position-the-3d-model-in-the-world"></a>4. Positionieren Sie das 3D-Modell weltweit.
 
-In `ViewWillAppear`wird mit dem folgenden Code eine Arkit-Sitzung eingerichtet und die Position des 3D-Modells im Verhältnis zur Kamera des Geräts festgelegt:
+In `ViewWillAppear` wird mit dem folgenden Code eine Arkit-Sitzung eingerichtet und die Position des 3D-Modells in Bezug auf die Kamera des Geräts festgelegt:
 
 ```csharp
 // Create a session configuration
@@ -97,7 +97,7 @@ Jedes Mal, wenn die Anwendung ausgeführt wird oder fortgesetzt wird, wird das 3
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. Anhalten der Sitzung für die erweiterte Realität
 
-Es empfiehlt sich, die Arkit-Sitzung anzuhalten, wenn der Ansichts Controller nicht sichtbar ist (in der `ViewWillDisappear`-Methode:
+Es empfiehlt sich, die Arkit-Sitzung anzuhalten, wenn der Ansichts Controller nicht sichtbar ist (in der- `ViewWillDisappear` Methode:
 
 ```csharp
 SceneView.Session.Pause();
@@ -105,7 +105,7 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>Zusammenfassung
 
-Der obige Code ergibt eine einfache Arkit-Anwendung. Komplexere Beispiele erwarten, dass der Ansichts Controller, der die erweiterte Reality-Sitzung gehostet, `IARSCNViewDelegate`implementiert, und es werden zusätzliche Methoden implementiert.
+Der obige Code ergibt eine einfache Arkit-Anwendung. Komplexere Beispiele erwarten, dass der Ansichts Controller, der die erweiterte Reality-Sitzung gehostet `IARSCNViewDelegate` , implementieren und zusätzliche Methoden implementiert werden.
 
 Arkit bietet viele anspruchsvollere Features, wie z. b. Oberflächen Überwachung und Benutzerinteraktion. Ein Beispiel für die Kombination der Arkit-Überwachung mit urhusharp finden Sie in der [urhusharp-Demo](urhosharp.md) .
 

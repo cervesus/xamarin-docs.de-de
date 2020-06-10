@@ -15,8 +15,6 @@ Xamarin.Formsder Code wird auf mehreren Plattformen ausgeführt, von denen jede 
 
 Weitere Informationen zum Verarbeiten von Bilddateien finden Sie unter [Working with Images (Arbeiten mit Bildern)](~/xamarin-forms/user-interface/images.md).
 
-<a name="Loading_and_Saving_Files" />
-
 ## <a name="saving-and-loading-files"></a>Speichern und Laden von Dateien
 
 Die `System.IO`-Klassen können verwendet werden, um auf das Dateisystem jeder Plattform zuzugreifen. Mithilfe der `File`-Klasse können Sie Dateien erstellen, löschen und lesen, und mit der `Directory`-Klasse können Sie den Inhalt der Verzeichnisse erstellen, löschen oder auflisten. Sie können ebenfalls die `Stream`-Unterklassen verwenden, mit denen Sie Dateivorgänge (z.B. die Komprimierung oder die Positionssuche innerhalb einer Datei) besser steuern können.
@@ -48,8 +46,6 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 Diese Vorgänge werden in der Beispiel-App veranschaulicht, die eine Seite enthält, die Text speichert und lädt:
 
 [![Speichern und Laden von Text](files-images/saveandload-sml.png "Speichern und Laden von Dateien in der APP")](files-images/saveandload.png#lightbox "Speichern und Laden von Dateien in der APP")
-
-<a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>Laden von als Ressourcen eingebetteten Dateien
 
@@ -97,8 +93,6 @@ listView.ItemsSource = monkeys;
 
  [![In der .NET-Standardbibliothek eingebettete XML-Datei, in ListView angezeigt](files-images/pclxml-sml.png "In ListView angezeigte eingebettete XML-Datei in der .NET-Standardbibliothek")](files-images/pclxml.png#lightbox "In ListView angezeigte eingebettete XML-Datei in der .NET-Standardbibliothek")
 
-<a name="Embedding_in_Shared_Projects" />
-
 ## <a name="embedding-in-shared-projects"></a>Einbetten in freigegebene Projekte
 
 Freigegebene Projekte können ebenfalls Dateien als eingebettete Ressourcen enthalten. Da der Inhalt eines freigegebenen Projekts jedoch im verweisenden Projekt kompiliert wird, kann das Präfix variieren, das für die Ressourcen-IDs von eingebetteten Dateien verwendet wird. Das bedeutet, dass die Ressourcen-ID für eingebettete Dateien sich je nach Plattform unterscheiden kann.
@@ -125,15 +119,11 @@ Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
 
-<a name="Organizing_Resources" />
-
 ### <a name="organizing-resources"></a>Organisieren von Ressourcen
 
 In den oben genannten Beispielen wird davon ausgegangen, dass die Datei in das Stammverzeichnis des Projekts für die .NET Standard-Bibliothek eingebettet ist. In diesem Fall weist die Ressourcen-ID die Form **Namespace.Dateiname.Erweiterung** auf, z.B. `WorkingWithFiles.LibTextResource.txt` oder `WorkingWithFiles.iOS.SharedTextResource.txt`.
 
 Es ist möglich, eingebettete Ressourcen in Ordnern zu organisieren. Wenn eine eingebettete Ressource in einem Ordner gespeichert wird, wird der Ordnername Teil der Ressourcen-ID (durch Punkte getrennt). Das Format der Ressourcen-ID entspricht dann **Namespace.Ordner.Dateiname.Erweiterung**. Wenn Sie die Dateien, die in der Beispiel-App verwendet werden, im Ordner **MyFolder** speichern würden, wären `WorkingWithFiles.MyFolder.LibTextResource.txt` und `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt` die entsprechenden Ressourcen-IDs.
-
-<a name="Debugging_Embedded_Resources" />
 
 ### <a name="debugging-embedded-resources"></a>Debuggen von eingebetteten Ressourcen
 
@@ -156,5 +146,5 @@ In diesem Artikel wurden einfache Dateivorgänge für das Speichern und Laden vo
 ## <a name="related-links"></a>Verwandte Links
 
 - [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
-- [Xamarin.FormsStich](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms-Beispiele](https://github.com/xamarin/xamarin-forms-samples)
 - [Working with the File System in Xamarin.iOS (Arbeiten mit dem Dateisystem in Xamarin.iOS)](~/ios/app-fundamentals/file-system.md)

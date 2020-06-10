@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsTextstile
-description: Dieser Artikel erläutert das Formatieren von Text in- Xamarin.Forms Anwendungen. Stile können einmalig definiert und von vielen Ansichten verwendet werden, aber ein Stil kann nur mit Ansichten eines Typs verwendet werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 79a86fd7a2c0f5b82ca4b3e22b3ecedf42c5a0ba
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136148"
+Title: " Xamarin.Forms Text Stile" Description: "in diesem Artikel wird das Formatieren von Text in Xamarin.Forms Anwendungen erläutert. Stile können einmalig definiert und von vielen Ansichten verwendet werden, aber ein Stil kann nur mit Ansichten eines Typs verwendet werden. "
+ms. Prod: xamarin ms. assetid: 57c0cfd6-A568-46b8-ada1-bf25681893cf ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/22/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-text-styles"></a>Xamarin.FormsTextstile
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -25,8 +11,6 @@ _Formatieren von Text in xamarin. Forms_
 
 Stile können verwendet werden, um die Darstellung von Bezeichnungen, Einträgen und Editoren anzupassen. Stile können einmalig definiert und von vielen Ansichten verwendet werden, aber ein Stil kann nur mit Ansichten eines Typs verwendet werden.
 Stile können zugewiesen `Key` und selektiv mithilfe der-Eigenschaft eines bestimmten Steuer Elements angewendet werden `Style` .
-
-<a name="Built-In_Styles" />
 
 ## <a name="built-in-styles"></a>Integrierte Stile
 
@@ -52,8 +36,6 @@ label.Style = Device.Styles.TitleStyle;
 ```
 
 ![Beispiel für Geräte Stile](styles-images/builtinstyles.png)
-
-<a name="Custom_Styles" />
 
 ## <a name="custom-styles"></a>Benutzerdefinierte Stile
 
@@ -95,8 +77,6 @@ Beachten Sie, dass Ressourcen (einschließlich aller Stile) in definiert sind `C
 
 ![Beispiel für benutzerdefinierte Stile](styles-images/customstyle.png)
 
-<a name="Applying_Styles" />
-
 ## <a name="applying-styles"></a>Anwenden von Stilen
 
 Nachdem ein Stil erstellt wurde, kann er auf jede beliebige Ansicht angewendet werden, die mit übereinstimmt `TargetType` .
@@ -132,7 +112,7 @@ In c# werden integrierte Stile ausgewählt aus `Device.Styles` :
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>Barrierefreiheit
+## <a name="accessibility"></a>Zugriff
 
 Die integrierten Stile sind vorhanden, damit Barrierefreiheits Einstellungen leichter zu beachten sind. Wenn Sie eines der integrierten Stile verwenden, werden die Schriftgrößen automatisch vergrößert, wenn ein Benutzer seine Barrierefreiheits Einstellungen entsprechend festlegt.
 
@@ -153,4 +133,4 @@ Stellen Sie sicher, dass integrierte Stile als Grundlage für Text bezogene Stil
 - [Erstellen von Mobile Apps mit Xamarin.Forms , Kapitel 12](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [Stile](~/xamarin-forms/user-interface/styles/index.md)
 - [Text (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [Stil](xref:Xamarin.Forms.Style)
+- [style](xref:Xamarin.Forms.Style)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsETI
-description: In diesem Artikel wird beschrieben, wie Sie die Xamarin.Forms Label-Klasse verwenden, um Text in-Anwendungen mit einfacher und mehrzeiligen Text anzuzeigen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46ea0afd3df0490837eb00b837158a26c1e4e479
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136162"
+Title: "Bezeichnung Xamarin.Forms " Description: "in diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Label-Klasse verwenden, um einen Text in einer einzelnen und mehreren Zeilen in Anwendungen anzuzeigen."
+ms. Prod: xamarin ms. assetid: 02e6c553-5670-49a0-8ee9-5153ed21ea91 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/09/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-label"></a>Xamarin.FormsETI
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -54,7 +40,7 @@ Die folgenden Screenshots zeigen die `TextDecorations` auf-Instanzen angewendete
 ![Bezeichnungen mit Text Dekorationen](label-images/label-textdecorations.png)
 
 > [!NOTE]
-> Text Dekorationen können auch auf-Instanzen angewendet werden [`Span`](xref:Xamarin.Forms.Span) . Weitere Informationen zur- `Span` Klasse finden Sie unter [formatierten Text](#Formatted_Text).
+> Text Dekorationen können auch auf-Instanzen angewendet werden [`Span`](xref:Xamarin.Forms.Span) . Weitere Informationen zur- `Span` Klasse finden Sie unter [formatierten Text](#formatted-text).
 
 ## <a name="character-spacing"></a>Zeichenabstand
 
@@ -143,11 +129,9 @@ Die folgenden Screenshots zeigen das Ergebnis der Einstellung der- `TextColor` E
 
 Weitere Informationen zu Farben finden Sie unter [Farben](~/xamarin-forms/user-interface/colors.md).
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Schriftarten
 
 Weitere Informationen zum Angeben von Schriftarten auf einem `Label` finden Sie unter [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md).
-
-<a name="Truncation_and_Wrapping" />
 
 ## <a name="truncation-and-wrapping"></a>Abschneiden und umwickeln
 
@@ -235,8 +219,6 @@ Die folgenden Screenshots zeigen, wie [`Label`](xref:Xamarin.Forms.Label) HTML a
 
 > [!IMPORTANT]
 > Das Anzeigen von HTML in einer [`Label`](xref:Xamarin.Forms.Label) ist auf die HTML-Tags beschränkt, die von der zugrunde liegenden Plattform unterstützt werden.
-
-<a name="Formatted_Text" />
 
 ## <a name="formatted-text"></a>Formatierter Text
 

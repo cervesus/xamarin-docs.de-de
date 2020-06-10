@@ -1,9 +1,6 @@
 ---
 Title: "Beschleunigungsfunktionen in Xamarin.Forms " Description: " Xamarin.Forms enthält eine Beschleunigungs Klasse, die es Ihnen ermöglicht, eine Übertragungsfunktion anzugeben, mit der gesteuert wird, wie Animationen bei der Ausführung beschleunigt oder verlangsamt werden. In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfunktionen verwendet werden und wie benutzerdefinierte Beschleunigungsfunktionen erstellt werden.
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+ms. Prod: xamarin ms. assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/14/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="easing-functions-in-xamarinforms"></a>Beschleunigungsfunktionen inXamarin.Forms
@@ -28,7 +25,7 @@ Die- [`Easing`](xref:Xamarin.Forms.Easing) Klasse definiert eine Reihe von Besch
 
 Die `In` `Out` Suffixe und geben an, ob die von der Beschleunigungs Funktion bereitgestellte Auswirkung am Anfang der Animation, am Ende oder an beiden fest erkennbar ist.
 
-Außerdem können benutzerdefinierte Beschleunigungsfunktionen erstellt werden. Weitere Informationen finden Sie unter [benutzerdefinierte Beschleunigungsfunktionen](#customeasing).
+Außerdem können benutzerdefinierte Beschleunigungsfunktionen erstellt werden. Weitere Informationen finden Sie unter [benutzerdefinierte Beschleunigungsfunktionen](#custom-easing-functions).
 
 ## <a name="consuming-an-easing-function"></a>Nutzen einer Beschleunigungs Funktion
 
@@ -45,8 +42,6 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 Durch Angeben einer Beschleunigungs Funktion für eine Animation wird die Animationsgeschwindigkeit nicht linear und erzeugt die von der Beschleunigungs Funktion bereitgestellten Auswirkungen. Wenn beim Erstellen einer Animation eine Beschleunigungs Funktion weggelassen wird, verwendet die Animation die Standard Beschleunigungs [`Linear`](xref:Xamarin.Forms.Easing.Linear) Funktion, die eine lineare Geschwindigkeit erzeugt.
 
 Weitere Informationen zum Verwenden der Animations Erweiterungs Methoden in der- [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) Klasse finden Sie unter [einfache Animationen](~/xamarin-forms/user-interface/animation/simple.md). Beschleunigungsfunktionen können auch von der-Klasse genutzt werden [`Animation`](xref:Xamarin.Forms.Animation) . Weitere Informationen finden Sie unter [benutzerdefinierte Animationen](~/xamarin-forms/user-interface/animation/custom.md).
-
-<a name="customeasing" />
 
 ## <a name="custom-easing-functions"></a>Benutzerdefinierte Beschleunigungsfunktionen
 

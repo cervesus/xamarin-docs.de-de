@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: e12bac1f65981776a7bd650cbc840cc0cdf72892
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 429b15b8e0f2b66b8a0edcdf386ef7778cf4a9ca
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725158"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574118"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9-Kompatibilität
 
@@ -44,9 +44,9 @@ Es wird empfohlen, explizit zu überprüfen, ob Visual Studio auf die neueste st
 Sie müssen **nicht** auf neue Versionen von Komponenten oder nugets warten, die Sie verwenden, um die beiden oben genannten Probleme zu beheben.
 Diese Probleme wurden einfach behoben, indem Sie Ihre APP mit der neuesten stabilen Version von xamarin. IOS neu erstellen.
 
-Ebenso sind Komponenten Anbieter und nuget-Autoren **nicht** verpflichtet, neue Builds zu übermitteln, um die beiden oben genannten Probleme zu beheben. Wenn eine Komponente oder nuget jedoch `UICollectionView`-oder Auslastungs Ansichten aus **XIb** -Dateien verwendet, ist *möglicherweise* ein Update erforderlich, um die unten erwähnten Kompatibilitätsprobleme mit IOS 9 zu beheben.
+Ebenso sind Komponenten Anbieter und nuget-Autoren **nicht** verpflichtet, neue Builds zu übermitteln, um die beiden oben genannten Probleme zu beheben. Wenn jedoch eine Komponente oder nuget `UICollectionView` Ansichten aus **XIb** -Dateien verwendet oder lädt, ist *möglicherweise* ein Update erforderlich, um die unten erwähnten Kompatibilitätsprobleme mit IOS 9 zu beheben.
 
-<a name="compat" />
+<a name="compat"></a>
 
 ## <a name="improving-compatibility-in-your-code"></a>Verbessern der Kompatibilität in Ihrem Code
 
@@ -54,9 +54,9 @@ Es gibt einige Fälle von Code Mustern, die *verwendet werden* , um in älteren 
 
 ### <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>Uicollectionviewcell. contentview ist in Konstruktoren NULL.
 
-**Grund:** In ios 9 ist der `initWithFrame:`-Konstruktor jetzt aufgrund von Verhaltensänderungen in ios 9 in den [uicollectionview-Dokumentations Zuständen](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)erforderlich. Wenn Sie eine Klasse für den angegebenen Bezeichner registriert haben und eine neue Zelle erstellt werden muss, wird die Zelle nun durch Aufrufen der `initWithFrame:` Methode initialisiert.
+**Grund:** In ios 9 `initWithFrame:` ist der Konstruktor jetzt aufgrund von Verhaltensänderungen in ios 9 wie in den [uicollectionview-Dokumentations Zuständen](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)erforderlich. Wenn Sie eine Klasse für den angegebenen Bezeichner registriert haben und eine neue Zelle erstellt werden muss, wird die Zelle nun durch Aufrufen der zugehörigen-Methode initialisiert `initWithFrame:` .
 
-**Behebung:** Fügen Sie den `initWithFrame:`-Konstruktor wie folgt hinzu:
+**Behebung:** Fügen Sie den `initWithFrame:` Konstruktor wie folgt hinzu:
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -70,9 +70,9 @@ Verwandte Beispiele: " [mutiongraph](https://github.com/xamarin/monotouch-sample
 
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView kann beim Laden einer Ansicht aus einem XIb/NIB nicht mit dem Programmierer Initialisierung
 
-**Grund:** Der `initWithCoder:`-Konstruktor ist der, der beim Laden einer Ansicht aus einer Interface Builder XIb-Datei aufgerufen wird. Wenn dieser Konstruktor nicht exportiert wird, kann nicht verwalteter Code unsere verwaltete Version von ihm nicht abrufen. Früher (z. b. in ios 8) der `IntPtr`-Konstruktor wurde aufgerufen, um die Ansicht zu initialisieren.
+**Grund:** Der `initWithCoder:` Konstruktor wird aufgerufen, wenn eine Ansicht aus einer Interface Builder XIb-Datei geladen wird. Wenn dieser Konstruktor nicht exportiert wird, kann nicht verwalteter Code unsere verwaltete Version von ihm nicht abrufen. Früher (z. b. in ios 8) `IntPtr` wurde der Konstruktor aufgerufen, um die Ansicht zu initialisieren.
 
-**Behebung:** Erstellen und exportieren Sie den `initWithCoder:`-Konstruktor wie folgt:
+**Behebung:** Erstellen und exportieren Sie den `initWithCoder:` Konstruktor wie folgt:
 
 ```csharp
 [Export ("initWithCoder:")]

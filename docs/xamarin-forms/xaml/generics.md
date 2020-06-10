@@ -1,22 +1,8 @@
 ---
-title: Generika in Xamarin.Forms XAML
-description: Xamarin.FormsXAML bietet Unterstützung für die Verwendung generischer CLR-Typen durch Angeben der generischen Einschränkungen als Typargumente.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 814e622a822e2eb1cf07f71bfb1da1d6eac5631f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138111"
+Title: "Generika in Xamarin.Forms XAML" Description: " Xamarin.Forms XAML bietet Unterstützung für die Verwendung generischer CLR-Typen, indem die generischen Einschränkungen als Typargumente angegeben werden."
+ms. Prod: xamarin ms. assetid: 97b73048-4f 90-41ad-AB48-8eb804c4998b ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/28/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="generics-in-xamarinforms-xaml"></a>Generika in Xamarin.Forms XAML
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
@@ -31,7 +17,7 @@ Typargumente werden als Zeichenfolge angegeben und sind normalerweise als Präfi
 Mehrere Typargumente können mithilfe eines Komma Trennzeichens angegeben werden. Wenn eine generische Einschränkung generische Typen verwendet, sollten außerdem die geschachtelten Einschränkungs Typargumente in Klammern eingeschlossen werden.
 
 > [!NOTE]
-> Die `x:Type` Markup Erweiterung stellt einen CLR-Typverweis für einen generischen Typ bereit und verfügt über eine ähnliche Funktion wie der `typeof` Operator in c#. Weitere Informationen finden Sie unter [x:Type Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#type).
+> Die `x:Type` Markup Erweiterung stellt einen CLR-Typverweis für einen generischen Typ bereit und verfügt über eine ähnliche Funktion wie der `typeof` Operator in c#. Weitere Informationen finden Sie unter [x:Type Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension).
 
 ## <a name="single-primitive-type-argument"></a>Einzelnes Primitives Typargument
 
@@ -208,11 +194,11 @@ Mehrere Typargumente können als Präfix-Zeichen folgen Argumente, getrennt durc
 </ContentPage    
 ```
 
-In diesem Beispiel `GenericsDemo.Models` ist als `models` XAML-Namespace definiert, und `System.Collections.Generic` wird als `scg` XAML-Namespace definiert. Die `CollectionView.ItemsSource` -Eigenschaft wird auf einen festgelegt, der `List<T>` mit einer `KeyValuePair<TKey, TValue>` -Einschränkung mit den inneren Einschränkungs Typargumenten und instanziiert wird `string` `Monkey` . Die Auflistung `List<KeyValuePair<string,Monkey>>` wird mit mehreren Elementen initialisiert `KeyValuePair` , wobei der nicht Standardkonstruktor verwendet wird `KeyValuePair` , und ein [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , der die Darstellung der einzelnen-Objekte definiert, `Monkey` wird als der des festgelegt `ItemTemplate` [`CollectionView`](xref:Xamarin.Forms.CollectionView) . Informationen zum Übergeben von Argumenten an einen nicht Standardkonstruktor finden Sie unter [übergeben von Konstruktorargumenten](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments).
+In diesem Beispiel `GenericsDemo.Models` ist als `models` XAML-Namespace definiert, und `System.Collections.Generic` wird als `scg` XAML-Namespace definiert. Die `CollectionView.ItemsSource` -Eigenschaft wird auf einen festgelegt, der `List<T>` mit einer `KeyValuePair<TKey, TValue>` -Einschränkung mit den inneren Einschränkungs Typargumenten und instanziiert wird `string` `Monkey` . Die Auflistung `List<KeyValuePair<string,Monkey>>` wird mit mehreren Elementen initialisiert `KeyValuePair` , wobei der nicht Standardkonstruktor verwendet wird `KeyValuePair` , und ein [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , der die Darstellung der einzelnen-Objekte definiert, `Monkey` wird als der des festgelegt `ItemTemplate` [`CollectionView`](xref:Xamarin.Forms.CollectionView) . Informationen zum Übergeben von Argumenten an einen nicht Standardkonstruktor finden Sie unter [übergeben von Konstruktorargumenten](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments).
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Generika in XAML (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 - [XAML 2009-Sprachprimitive](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)
-- [x:Type-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)
-- [Übergeben von Konstruktorargumenten](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)
+- [x:Type-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)
+- [Übergeben von Konstruktorargumenten](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)

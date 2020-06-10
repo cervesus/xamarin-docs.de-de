@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 943148a642a1dec7e84f74ae96983c21f30319ab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139268"
+Title: "Konfigurations Verwaltung" Beschreibung: "in diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App die Konfigurations Verwaltung implementiert, um App-Einstellungen und Benutzereinstellungen bereitzustellen."
+ms. Prod: xamarin ms. assetid: 50d6e780-E768-47F 8-9361-3af11e56b87b ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="configuration-management"></a>Konfigurationsverwaltung
 
 Einstellungen ermöglichen die Trennung von Daten, die das Verhalten einer App aus dem Code konfigurieren, sodass das Verhalten geändert werden kann, ohne die APP neu zu erstellen. Es gibt zwei Arten von Einstellungen: App-Einstellungen und Benutzereinstellungen.
@@ -25,7 +11,7 @@ App-Einstellungen sind Daten, die von einer App erstellt und verwaltet werden. E
 
 Benutzereinstellungen sind die anpassbaren Einstellungen einer APP, die sich auf das Verhalten der APP auswirken und keine häufige erneute Anpassung erfordern. Beispielsweise kann eine APP den Benutzer angeben, wo Daten abgerufen werden sollen und wie Sie auf dem Bildschirm angezeigt werden soll.
 
-Xamarin.Formsschließt ein dauerhaftes Wörterbuch ein, das zum Speichern von Einstellungsdaten verwendet werden kann. Auf dieses Wörterbuch kann mithilfe der [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) -Eigenschaft zugegriffen werden, und alle darin enthaltenen Daten werden gespeichert, wenn die app in den Standbymodus wechselt, und werden wieder hergestellt, wenn die APP fortgesetzt oder neu gestartet wird. Außerdem verfügt die- [`Application`](xref:Xamarin.Forms.Application) Klasse auch über eine- [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) Methode, die es einer App ermöglicht, Ihre Einstellungen bei Bedarf zu speichern. Weitere Informationen zu diesem Wörterbuch finden Sie unter [Eigenschaften Wörterbuch](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary).
+Xamarin.Formsschließt ein dauerhaftes Wörterbuch ein, das zum Speichern von Einstellungsdaten verwendet werden kann. Auf dieses Wörterbuch kann mithilfe der [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) -Eigenschaft zugegriffen werden, und alle darin enthaltenen Daten werden gespeichert, wenn die app in den Standbymodus wechselt, und werden wieder hergestellt, wenn die APP fortgesetzt oder neu gestartet wird. Außerdem verfügt die- [`Application`](xref:Xamarin.Forms.Application) Klasse auch über eine- [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) Methode, die es einer App ermöglicht, Ihre Einstellungen bei Bedarf zu speichern. Weitere Informationen zu diesem Wörterbuch finden Sie unter [Eigenschaften Wörterbuch](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary).
 
 Ein Nachteil beim Speichern von Daten mit dem Xamarin.Forms persistenten Wörterbuch ist, dass es nicht einfach an Daten gebunden ist. Daher verwendet das eshoponcontainers-Mobile App die XAM. Plugins. Settings-Bibliothek, die über [nuget](https://www.nuget.org/packages/Xam.Plugins.Settings/)verfügbar ist. Diese Bibliothek bietet eine konsistente, typsichere und plattformübergreifende Methode zum beibehalten und Abrufen von App-und Benutzereinstellungen, während die von den einzelnen Plattformen bereitgestellte Native Einstellungs Verwaltung verwendet wird. Außerdem ist es einfach, die Datenbindung zu verwenden, um auf Einstellungsdaten zuzugreifen, die von der Bibliothek verfügbar gemacht werden.
 
@@ -128,7 +114,7 @@ Im Mobile App eshoponcontainers werden von `SettingsView` zwei Benutzereinstellu
 
 **Abbildung 7-1**: Benutzereinstellungen, die von der eshoponcontainers-Mobile App verfügbar gemacht werden
 
-Die Datenbindung kann zum Abrufen und Festlegen von Einstellungen verwendet werden, die von der-Klasse verfügbar gemacht werden `Settings` . Dies wird durch Steuerelemente auf der Ansichts Bindung erreicht, um Modell Eigenschaften anzuzeigen, die wiederum auf Eigenschaften in der- `Settings` Klasse zugreifen, und das Aufrufen einer Benachrichtigung über geänderte Eigenschaften, wenn sich der Einstellungs Wert geändert hat. Informationen dazu, wie die eshoponcontainers-Mobile App Ansichts Modelle erstellt und diese Ansichten zuordnet, finden Sie unter [Automatisches Erstellen eines Ansichts Modells mit einem Ansichts Modell-Locator](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
+Die Datenbindung kann zum Abrufen und Festlegen von Einstellungen verwendet werden, die von der-Klasse verfügbar gemacht werden `Settings` . Dies wird durch Steuerelemente auf der Ansichts Bindung erreicht, um Modell Eigenschaften anzuzeigen, die wiederum auf Eigenschaften in der- `Settings` Klasse zugreifen, und das Aufrufen einer Benachrichtigung über geänderte Eigenschaften, wenn sich der Einstellungs Wert geändert hat. Informationen dazu, wie die eshoponcontainers-Mobile App Ansichts Modelle erstellt und diese Ansichten zuordnet, finden Sie unter [Automatisches Erstellen eines Ansichts Modells mit einem Ansichts Modell-Locator](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator).
 
 Das folgende Codebeispiel zeigt das- [`Entry`](xref:Xamarin.Forms.Entry) Steuer `SettingsView` Element aus, das es dem Benutzer ermöglicht, eine Basis-Endpunkt-URL für die containerisierten microservices einzugeben:
 
@@ -178,7 +164,7 @@ public override Task InitializeAsync(object navigationData)
 }
 ```
 
-Mit der-Methode wird die- `Endpoint` Eigenschaft auf den Wert der- `UrlBase` Eigenschaft in der-Klasse festgelegt `Settings` . Der Zugriff `UrlBase` auf die-Eigenschaft bewirkt, dass die XAM. Plugins. Settings-Bibliothek den Einstellungs Wert aus dem plattformspezifischen Speicher abruft. Informationen dazu, wie die- `InitializeAsync` Methode aufgerufen wird, finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
+Mit der-Methode wird die- `Endpoint` Eigenschaft auf den Wert der- `UrlBase` Eigenschaft in der-Klasse festgelegt `Settings` . Der Zugriff `UrlBase` auf die-Eigenschaft bewirkt, dass die XAM. Plugins. Settings-Bibliothek den Einstellungs Wert aus dem plattformspezifischen Speicher abruft. Informationen dazu, wie die- `InitializeAsync` Methode aufgerufen wird, finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation).
 
 Mit diesem Mechanismus wird sichergestellt, dass Benutzereinstellungen immer dann, wenn ein Benutzer zur einstellungenansicht navigiert, aus dem plattformspezifischen Speicher abgerufen und über die Datenbindung angezeigt werden. Wenn der Benutzer dann die Einstellungs Werte ändert, stellt die Datenbindung sicher, dass Sie sofort im plattformspezifischen Speicher beibehalten werden.
 

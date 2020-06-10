@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 4833d8a03649341cb5c6d9f2692410b89e6cea4c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9f4e88cdc04431660376b885faef0a855e14efc2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021823"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572116"
 ---
 # <a name="text-input-in-xamarinios"></a>Text Eingabe in xamarin. IOS
 
@@ -24,9 +24,9 @@ Die folgenden Screenshots zeigen die Symbole für diese Steuerelemente, die sich
 
  [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
-Nachdem Sie das Outlet benannt und die storyboarddatei gespeichert haben, wird Visual Studio für Mac die `.designer.cs` partielle Klasse aktualisieren, und Sie C# können Code hinzufügen, der auf das Steuerelement verweist, auf die Klassendatei. Jedes Steuerelement verfügt über eigene eindeutige Eigenschaften und Ereignisse, auf die im C# Code zugegriffen werden kann.
+Nachdem Sie das Outlet benannt und die storyboarddatei gespeichert haben, wird Visual Studio für Mac die `.designer.cs` partielle Klasse aktualisieren, und Sie können c#-Code hinzufügen, der auf das Steuerelement verweist, auf die Klassendatei. Jedes Steuerelement verfügt über eigene eindeutige Eigenschaften und Ereignisse, auf die in Ihrem c#-Code zugegriffen werden kann.
 
- <a name="UITextField" />
+ <a name="UITextField"></a>
 
 ## <a name="uitextfield"></a>UITextField
 
@@ -46,7 +46,7 @@ Diese Steuerelemente werden im folgenden erläutert:
 - **Return Key** – ändern Sie die Bezeichnung in der Rückgabetaste, um besser widerzuspiegeln, welche Aktion durchgeführt wird. Zu den unterstützten Werten zählen go, Join, Next, Route, done und Search.
 - **Secure** – gibt an, ob die Eingabe maskiert wird (z. b. für eine Kenn Wort Eingabe).
 
-Wenn ein UITextField mit dem Namen `textfield1` einem Bildschirm mit dem Designer hinzugefügt wurde, können Sie seine Eigenschaften in C# wie folgt festlegen oder ändern:
+Wenn ein UITextField `textfield1` mit dem Namen einem Bildschirm mit dem Designer hinzugefügt wurde, können Sie seine Eigenschaften in c# wie folgt festlegen oder ändern:
 
 ```csharp
 textfield1.Placeholder = "type email here...";
@@ -56,11 +56,11 @@ textfield1.MinimumFontSize = 17f;
 textfield1.AdjustsFontSizeToFitWidth = true;
 ```
 
-Xamarin. IOS bietet gegebenenfalls Enumerationen, um die Auswahl der gewünschten Einstellungen zu vereinfachen, z. b. die `UIKeyboardType` und `UIReturnKeyType` im obigen Code Ausschnitt.
+Xamarin. IOS bietet ggf. Enumerationen, um die Auswahl der gewünschten Einstellungen zu erleichtern, z. b `UIKeyboardType` `UIReturnKeyType` . und im obigen Code Ausschnitt.
 
 ### <a name="display-text-programmatically"></a>Programm gesteuertes Anzeigen von Text
 
-Wenn Sie den Bildschirm nicht mit dem Designer entwerfen möchten oder wenn Sie zur Laufzeit dynamisch Text hinzufügen möchten, können Sie ein UITextField in der `ViewDidLoad`-Methode eines Ansichts Controllers wie folgt Programm gesteuert erstellen und anzeigen:
+Wenn Sie den Bildschirm nicht mit dem Designer entwerfen möchten oder wenn Sie zur Laufzeit dynamisch Text hinzufügen möchten, können Sie ein UITextField in der- `ViewDidLoad` Methode eines Ansichts Controllers wie folgt Programm gesteuert erstellen und anzeigen:
 
 ```csharp
 var frame = new CGRect(10, 10, 300, 40);
@@ -68,11 +68,11 @@ textfield1 = new UITextField(frame);
 View.Add(textfield1);
 ```
 
- <a name="UITextView" />
+ <a name="UITextView"></a>
 
 ## <a name="uitextview"></a>UITextView
 
-Das `UITextView` Steuerelement kann verwendet werden, um schreibgeschützten Text anzuzeigen oder mehrzeilige Texteingaben zu akzeptieren. Sie verfügt über viele der gleichen Optionen wie die `UITextField` (z. b. Groß-/Kleinschreibung, Korrektur usw.).
+Das- `UITextView` Steuerelement kann verwendet werden, um schreibgeschützten Text anzuzeigen oder mehrzeilige Texteingaben zu akzeptieren. Es verfügt über viele der gleichen Optionen wie die (z. b. Groß-/Kleinschreibung `UITextField` , Korrektur usw.).
 
  [![](text-input-images/image16a.png "UITextView Properties")](text-input-images/image16a.png#lightbox)
 

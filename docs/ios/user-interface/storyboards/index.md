@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 3d9531bbaa38a0a0a9bb42d22c79a63fda75c449
-ms.sourcegitcommit: 926f9a44065b41c7d74794a94bee66b61e903bf2
+ms.openlocfilehash: 0eead476fe7842ac326b61771776a83c7a35461c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79134027"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567384"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in xamarin. IOS
 
@@ -20,7 +20,7 @@ In diesem Handbuch wird erläutert, worum es sich bei einem Storyboard handelt, 
 
 Bevor das Storyboard-Dateiformat von Apple als visuelle Darstellung der Benutzeroberfläche einer IOS-Anwendung eingeführt wurde, haben Entwickler XIb-Dateien für jeden Ansichts Controller erstellt und die Navigation zwischen den einzelnen Ansichten manuell programmiert.  Mithilfe eines Storyboards können Entwickler sowohl Ansichts Controller als auch die Navigation zwischen Ihnen auf einer Entwurfs Oberfläche definieren und die WYSIWYG-Bearbeitung der Benutzeroberfläche der Anwendung ermöglichen.
 
-Ein Storyboard kann mit dem xamarin IOS-Designer erstellt, geöffnet und bearbeitet werden. In dieser Anleitung wird auch erläutert, wie Sie den Designer verwenden, um Ihre Storyboards zu C# erstellen, während Sie zum Programmieren der Navigation verwenden.
+Ein Storyboard kann mit dem xamarin IOS-Designer erstellt, geöffnet und bearbeitet werden. In dieser Anleitung wird auch erläutert, wie Sie den Designer verwenden, um Storyboards zu erstellen, während Sie c# verwenden, um die Navigation zu programmieren.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -39,7 +39,7 @@ Dies bedeutet, dass Sie vor dem entwickeln oder Bereitstellen Ihrer Anwendung da
 
 Ereignisse können mit Storyboards besser verwaltet werden, insbesondere bei Verwendung des IOS-Designers. Die meisten Steuerelemente der Benutzeroberfläche verfügen über eine Liste möglicher Ereignisse in der Eigenschaftenpad. Der Ereignishandler kann hier hinzugefügt und in einer partiellen Methode in der Ansichts Controller Klasse abgeschlossen werden.
 
-Der Inhalt eines Storyboards wird als XML-Datei gespeichert. Zum Zeitpunkt der Erstellung werden alle `.storyboard` Dateien in Binärdateien kompiliert, die als NISB bezeichnet werden. Zur Laufzeit werden diese NISB initialisiert und instanziiert, um neue Sichten zu erstellen.
+Der Inhalt eines Storyboards wird als XML-Datei gespeichert. Zum Zeitpunkt der Erstellung `.storyboard` werden alle Dateien in Binärdateien kompiliert, die als NISB bezeichnet werden. Zur Laufzeit werden diese NISB initialisiert und instanziiert, um neue Sichten zu erstellen.
 
 ## <a name="segues"></a>Segues
 
@@ -58,7 +58,7 @@ Bei einem Mausklick wird ein Menü angezeigt, in dem wir die Aktion für den seg
 [![](images/16new.png "The Action Segue dropdown with Size Classes")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
-> Wenn Sie VMware für Ihren virtuellen Windows-Computer verwenden, wird der Strg-Klick standardmäßig mit der _rechten Maustaste_ angezeigt. Um einen segue zu erstellen, bearbeiten Sie Ihre Tastatur Einstellungen über **Einstellungen** > **Tastatur & Maus** - > **Maus** Verknüpfungen, und ordnen Sie die **sekundäre Schaltfläche** neu zu, wie unten dargestellt:
+> Wenn Sie VMware für Ihren virtuellen Windows-Computer verwenden, wird der Strg-Klick standardmäßig mit der _rechten Maustaste_ angezeigt. Um einen segue zu erstellen, bearbeiten Sie Ihre Tastatur Einstellungen über die **Einstellungen**  >  **Tastatur & Maus**  >  **Zeiger** Verknüpfungen, und ordnen Sie die **sekundäre Schaltfläche** neu zu, wie unten dargestellt:
 >
 > [![](images/image22.png "Keyboard and Mouse preference settings")](images/image22.png#lightbox)
 >
@@ -66,9 +66,9 @@ Bei einem Mausklick wird ein Menü angezeigt, in dem wir die Aktion für den seg
 
 Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer Ansichts Controller dem Benutzer präsentiert wird und wie er mit anderen Ansichts Controllern im Storyboard interagiert. Diese werden unten erläutert. Es ist auch möglich, ein segue-Objekt zu unterteilen, um einen benutzerdefinierten Übergang zu implementieren:
 
-- **Anzeigen/pushen** – ein Push-Ziel fügt dem Navigations Stapel den Ansichts Controller hinzu. Dabei wird davon ausgegangen, dass der Ansichts Controller, von dem der Push stammt, Teil desselben Navigations Controllers wie der Ansichts Controller ist, der dem Stapel hinzugefügt wird. Dies erfolgt genauso wie `pushViewController`, und wird im Allgemeinen verwendet, wenn zwischen den Daten auf den Bildschirmen eine Beziehung besteht. Die Verwendung von Push-abgue bietet Ihnen den Luxus, eine Navigationsleiste mit einer Schaltfläche "zurück" und einem Titel zu jeder Ansicht auf dem Stapel hinzuzufügen, sodass drilldownnavigation durch die Ansichts Hierarchie ermöglicht wird.
-- **Modal** – ein modaler segue erstellt eine Beziehung zwischen zwei beliebigen Ansichts Controllern in Ihrem Projekt, wobei die Option eines animierten Übergangs angezeigt wird. Der untergeordnete Ansichts Controller verwirft den übergeordneten Ansichts Controller in der Ansicht vollständig. Im Gegensatz zu einem Push-abgue, der eine Schaltfläche "zurück" für uns hinzufügt. bei der Verwendung eines modalen seegue-`DismissViewController` muss verwendet werden, um zum vorherigen Ansichts Controller zurückzukehren.
-- **Benutzer** definiert – alle benutzerdefinierten Klassen können als eine Unterklasse von `UIStoryboardSegue`erstellt werden.
+- **Anzeigen/pushen** – ein Push-Ziel fügt dem Navigations Stapel den Ansichts Controller hinzu. Dabei wird davon ausgegangen, dass der Ansichts Controller, von dem der Push stammt, Teil desselben Navigations Controllers wie der Ansichts Controller ist, der dem Stapel hinzugefügt wird. Dies geschieht genauso wie `pushViewController` , und wird im Allgemeinen verwendet, wenn zwischen den Daten auf den Bildschirmen eine Beziehung besteht. Die Verwendung von Push-abgue bietet Ihnen den Luxus, eine Navigationsleiste mit einer Schaltfläche "zurück" und einem Titel zu jeder Ansicht auf dem Stapel hinzuzufügen, sodass drilldownnavigation durch die Ansichts Hierarchie ermöglicht wird.
+- **Modal** – ein modaler segue erstellt eine Beziehung zwischen zwei beliebigen Ansichts Controllern in Ihrem Projekt, wobei die Option eines animierten Übergangs angezeigt wird. Der untergeordnete Ansichts Controller verwirft den übergeordneten Ansichts Controller in der Ansicht vollständig. Im Gegensatz zu einem Push-abgue, der eine Schaltfläche "zurück" für uns hinzufügt. Wenn die Verwendung eines modalen seegue `DismissViewController` verwendet werden muss, um zum vorherigen Ansichts Controller zurückzukehren.
+- **Benutzer** definiert – alle benutzerdefinierten Klassen können als Unterklasse von erstellt werden `UIStoryboardSegue` .
 - Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
 - **Sourbstbston** – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
 
@@ -82,7 +82,7 @@ Jede Anwendung, die Größenklassen verwendet, verwendet auch die neuen [*adapti
 
 [![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
 
-|Segue|BESCHREIBUNG|
+|Segue|Beschreibung|
 |--- |--- |
 |Show (Anzeigen)|Dies ähnelt einem Push-Vorgang, aber der Inhalt des Bildschirms wird berücksichtigt.|
 |Details anzeigen|Wenn die APP eine Master-und Detailansicht anzeigt (z. b. in einem Split View Controller auf einem iPad), ersetzt der Inhalt die Detailansicht. Wenn die app nur den Master oder das Detail anzeigt, ersetzt der Inhalt den Anfang des Ansichts Controller Stapels.|
@@ -91,7 +91,7 @@ Jede Anwendung, die Größenklassen verwendet, verwendet auch die neuen [*adapti
 
 ### <a name="transferring-data-with-segues"></a>Übertragen von Daten mit einem anderen
 
-Die Vorteile einer-Tabelle enden nicht mit Übergängen. Sie können auch verwendet werden, um die Übertragung von Daten zwischen Ansichts Controllern zu verwalten. Dies wird erreicht, indem die `PrepareForSegue`-Methode auf dem anfänglichen Ansichts Controller überschrieben und die Daten selbst verarbeitet werden. Wenn der segue ausgelöst wird – z. b. durch Drücken der Schaltfläche –, ruft die Anwendung diese Methode auf und bietet die Möglichkeit, den neuen Ansichts Controller *vor* der Navigation vorzubereiten. Der folgende Code aus dem [phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) -Beispiel veranschaulicht dies:
+Die Vorteile einer-Tabelle enden nicht mit Übergängen. Sie können auch verwendet werden, um die Übertragung von Daten zwischen Ansichts Controllern zu verwalten. Dies wird erreicht, indem die `PrepareForSegue` -Methode auf dem anfänglichen Ansichts Controller überschrieben und die Daten selbst verarbeitet werden. Wenn der segue ausgelöst wird – z. b. durch Drücken der Schaltfläche –, ruft die Anwendung diese Methode auf und bietet die Möglichkeit, den neuen Ansichts Controller *vor* der Navigation vorzubereiten. Der folgende Code aus dem [phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) -Beispiel veranschaulicht dies:
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue,
@@ -108,13 +108,13 @@ NSObject sender)
 }
 ```
 
-In diesem Beispiel wird die `PrepareForSegue`-Methode aufgerufen, wenn die-Methode vom Benutzer ausgelöst wird. Zuerst müssen wir eine Instanz des "empfangenden" Ansichts Controllers erstellen und diese als Ziel Ansichts Controller des segue festlegen. Dies erfolgt mithilfe der folgenden Codezeile:
+In diesem Beispiel wird die- `PrepareForSegue` Methode aufgerufen, wenn die-Methode vom Benutzer ausgelöst wird. Zuerst müssen wir eine Instanz des "empfangenden" Ansichts Controllers erstellen und diese als Ziel Ansichts Controller des segue festlegen. Dies erfolgt mithilfe der folgenden Codezeile:
 
 ```csharp
 var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
-Die-Methode verfügt jetzt über die Möglichkeit, Eigenschaften für die `DestinationViewController`festzulegen. In diesem Beispiel haben wir dies genutzt, indem wir eine Liste mit dem Namen `PhoneNumbers` an die `CallHistoryController` übergeben und Sie einem Objekt mit demselben Namen zuweisen:
+Die-Methode verfügt jetzt über die Möglichkeit, Eigenschaften für festzulegen `DestinationViewController` . In diesem Beispiel haben wir dies genutzt, indem wir eine Liste mit `PhoneNumbers` `CallHistoryController` dem Namen an übergeben und Sie einem Objekt mit demselben Namen zuweisen:
 
 ```csharp
 if (callHistoryController != null) {
@@ -122,7 +122,7 @@ if (callHistoryController != null) {
     }
 ```
 
-Sobald der Übergang abgeschlossen ist, wird dem Benutzer die `CallHistoryController` mit der Liste aufgefüllt angezeigt.
+Sobald der Übergang abgeschlossen ist, wird der Benutzer `CallHistoryController` mit der Liste aufgefüllt angezeigt.
 
 ## <a name="adding-a-storyboard-to-a-non-storyboard-project"></a>Hinzufügen eines Storyboards zu einem nicht-Storyboard-Projekt
 
@@ -138,9 +138,9 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
 
     [![](images/infoplist.png "The Info.plist editor")](images/infoplist.png#lightbox)
 
-    Dies entspricht der Instanziierung des anfänglichen Ansichts Controllers in der `FinishedLaunching`-Methode innerhalb des App-Delegaten. Wenn diese Option festgelegt ist, instanziiert die Anwendung ein Fenster (siehe unten), lädt das Haupt-Storyboard und weist eine Instanz des anfänglichen Ansichts Controllers des Storyboards (der neben dem sourloads-segue) als `RootViewController`-Eigenschaft des Fensters auf. Anschließend wird das Fenster auf dem Bildschirm sichtbar.
+    Dies entspricht der Instanziierung des anfänglichen Ansichts Controllers in der- `FinishedLaunching` Methode innerhalb des App-Delegaten. Wenn diese Option festgelegt ist, instanziiert die Anwendung ein Fenster (siehe unten), lädt das Haupt Storyboard und weist eine Instanz des anfänglichen Ansichts Controllers des Storyboards (der neben dem sourloads-segue) als `RootViewController` Eigenschaft des Fensters zu. Anschließend wird das Fenster auf dem Bildschirm angezeigt.
 
-3. Überschreiben Sie im `AppDelegate`die standardmäßige `Window`-Methode mit folgendem Code, um die Window-Eigenschaft zu implementieren:
+3. Überschreiben Sie in die- `AppDelegate` Standard `Window` Methode mit dem folgenden Code, um die Window-Eigenschaft zu implementieren:
 
     ```csharp
     public override UIWindow Window {
@@ -159,9 +159,9 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
 
     [![](images/ios-app.png "The Info.plist editor")](images/ios-app.png#lightbox)
 
-    Dies entspricht der Instanziierung des anfänglichen Ansichts Controllers in der `FinishedLaunching`-Methode innerhalb des App-Delegaten. Wenn diese Option festgelegt ist, instanziiert die Anwendung ein Fenster (siehe unten), lädt das Haupt-Storyboard und weist eine Instanz des anfänglichen Ansichts Controllers des Storyboards (der neben dem sourloads-segue) als `RootViewController`-Eigenschaft des Fensters auf. Anschließend wird das Fenster auf dem Bildschirm sichtbar.
+    Dies entspricht der Instanziierung des anfänglichen Ansichts Controllers in der- `FinishedLaunching` Methode innerhalb des App-Delegaten. Wenn diese Option festgelegt ist, instanziiert die Anwendung ein Fenster (siehe unten), lädt das Haupt Storyboard und weist eine Instanz des anfänglichen Ansichts Controllers des Storyboards (der neben dem sourloads-segue) als `RootViewController` Eigenschaft des Fensters zu. Anschließend wird das Fenster auf dem Bildschirm angezeigt.
 
-3. Überschreiben Sie im `AppDelegate`die standardmäßige `Window`-Methode mit folgendem Code, um die Window-Eigenschaft zu implementieren:
+3. Überschreiben Sie in die- `AppDelegate` Standard `Window` Methode mit dem folgenden Code, um die Window-Eigenschaft zu implementieren:
 
     ```csharp
     public override UIWindow Window {
@@ -176,7 +176,7 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
 
 Ein Storyboard kann mithilfe von Xcode erstellt und geändert werden, um Sie in ihren IOS-apps zu verwenden, die mit Visual Studio für Mac entwickelt wurden.
 
-Storyboards ersetzen vollständig einzelne XIb-Dateien in Ihrem Projekt, jedoch können einzelne Ansichts Controller in einem Storyboard weiterhin mithilfe von `Storyboard.InstantiateViewController`instanziiert werden.
+Storyboards ersetzen vollständig einzelne XIb-Dateien in Ihrem Projekt, jedoch können einzelne Ansichts Controller in einem Storyboard weiterhin mithilfe von instanziiert werden `Storyboard.InstantiateViewController` .
 
 Manchmal haben Anwendungen besondere Anforderungen, die nicht mit den integrierten Storyboard-Übergängen, die vom Designer bereitgestellt werden, verarbeitet werden können. Wenn Sie z. b. eine Anwendung erstellen, die unterschiedliche Bildschirme von derselben Schaltfläche aus aufruft, empfiehlt es sich, die Ansichts Controller in Abhängigkeit vom aktuellen Status einer Anwendung manuell zu instanziieren und den Übergang selbst zu programmieren.
 
@@ -192,11 +192,11 @@ Der folgende Screenshot zeigt zwei Ansichts Controller auf unserer Entwurfs Ober
 
 ![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
 
-3. Öffnen Sie in Xcode die Bibliothek (über **Ansicht > Bibliothek anzeigen** oder *Umschalt + Befehl + L*), um eine Liste von Objekten anzuzeigen, die dem Storyboard hinzugefügt werden können. Fügen Sie dem Storyboard eine `Navigation Controller` hinzu, indem Sie das Objekt aus der Liste auf das Storyboard ziehen. Standardmäßig werden die `Navigation Controller` zwei Bildschirme bereitstellen: der Bildschirm auf der rechten Seite ist eine `TableViewController` die wir durch eine einfachere Ansicht ersetzen werden, sodass Sie durch Klicken auf die Ansicht und drücken der ENTF-Taste entfernt werden kann.
+3. Öffnen Sie in Xcode die Bibliothek (über **Ansicht > Bibliothek anzeigen** oder *Umschalt + Befehl + L*), um eine Liste von Objekten anzuzeigen, die dem Storyboard hinzugefügt werden können. Fügen Sie dem `Navigation Controller` Storyboard ein hinzu, indem Sie das Objekt aus der Liste auf das Storyboard ziehen. Standardmäßig werden von `Navigation Controller` zwei Bildschirme bereitgestellt. der Bildschirm auf der rechten Seite ist ein, den `TableViewController` wir durch eine einfachere Ansicht ersetzen, sodass er entfernt werden kann, indem ich auf die Ansicht klicke und die ENTF-Taste drückt.
 
     [![](images/add-navigation-controller.png "Adding a NavigationController from the Library")](images/add-navigation-controller.png#lightbox)
 
-4. Dieser Ansichts Controller verfügt über eine eigene benutzerdefinierte Klasse und benötigt auch eine eigene Storyboard-ID. Wenn Sie auf das Kontrollkästchen oberhalb dieser neu hinzugefügten Ansicht klicken, werden drei Symbole angezeigt, von denen der linke Teil den Ansichts Controller für die Ansicht darstellt. Wenn Sie dieses Symbol auswählen, können Sie die Klassen-und ID-Werte auf der Registerkarte Identität des rechten Bereichs festlegen. Legen Sie diese Werte auf `MainViewController` fest, und stellen Sie sicher, dass Sie `Use Storyboard ID`überprüfen.
+4. Dieser Ansichts Controller verfügt über eine eigene benutzerdefinierte Klasse und benötigt auch eine eigene Storyboard-ID. Wenn Sie auf das Kontrollkästchen oberhalb dieser neu hinzugefügten Ansicht klicken, werden drei Symbole angezeigt, von denen der linke Teil den Ansichts Controller für die Ansicht darstellt. Wenn Sie dieses Symbol auswählen, können Sie die Klassen-und ID-Werte auf der Registerkarte Identität des rechten Bereichs festlegen. Legen Sie diese Werte auf fest, `MainViewController` und stellen Sie sicher, dass Sie überprüfen `Use Storyboard ID` .
 
     [![](images/identity-panel.png "Setting the MainViewController in the identity panel")](images/identity-panel.png#lightbox)
 
@@ -204,15 +204,15 @@ Der folgende Screenshot zeigt zwei Ansichts Controller auf unserer Entwurfs Ober
 
     [![](images/add-view-controller.png "Adding a NavigationController from the Library and setting the MainViewController as a Root View Controller")](images/add-view-controller.png#lightbox)
 
-6. Diese APP wird zu einer anderen Ansicht navigiert. Fügen Sie dem Storyboard also genau wie zuvor eine weitere Ansicht hinzu. Dies wird als `PinkViewController`bezeichnet, und diese Werte können auf die gleiche Weise wie bei der `MainViewController`festgelegt werden.
+6. Diese APP wird zu einer anderen Ansicht navigiert. Fügen Sie dem Storyboard also genau wie zuvor eine weitere Ansicht hinzu. Dies wird als bezeichnet `PinkViewController` , und diese Werte können auf die gleiche Weise wie mit dem festgelegt werden `MainViewController` .
 
     [![](images/add-additional-view-controller.png "Adding an additional View Controller")](images/add-additional-view-controller.png#lightbox)
 
-7. Da der Ansichts Controller einen rosa Hintergrund hat, kann diese Eigenschaft mithilfe der Dropdown Liste neben `Background`im Bereich Attribute festgelegt werden.
+7. Da der Ansichts Controller einen rosa Hintergrund hat, kann diese Eigenschaft im Attribute-Panel mithilfe der Dropdown Liste neben festgelegt werden `Background` .
 
     [![](images/set-pink-background.png "Adding an additional View Controller")](images/set-pink-background.png#lightbox)
 
-8. Da das `MainViewController` zum `PinkViewController`navigieren soll, benötigt das erste eine Schaltfläche für die Interaktion mit. Mithilfe der Bibliothek können wir dem `MainViewController`eine Schaltfläche hinzufügen.
+8. Der `MainViewController` `PinkViewController` erste benötigt eine Schaltfläche für die Interaktion mit, um zum zu navigieren. Mithilfe der-Bibliothek können Sie eine Schaltfläche Hinzufügen `MainViewController` .
 
     [![](images/add-button.png "Adding a Button to the MainViewController")](images/add-button.png#lightbox)
 
@@ -239,9 +239,9 @@ public partial class AppDelegate : UIApplicationDelegate
 }
 ```
 
-Das ist viel Code, aber nur ein paar Zeilen sind nicht vertraut. Zuerst registrieren wir unser Storyboard beim **appdelegaten** , indem wir den Namen des Storyboards, **mainstoryboard**, übergeben. Als Nächstes weisen Sie der Anwendung an, einen anfänglichen Ansichts Controller aus dem Storyboard zu instanziieren, indem Sie `InstantiateInitialViewController` im Storyboard aufrufen und diesen Ansichts Controller als root View Controller der Anwendung festlegen. Diese Methode bestimmt den ersten Bildschirm, den der Benutzer sieht, und erstellt eine neue Instanz dieses Ansichts Controllers.
+Das ist viel Code, aber nur ein paar Zeilen sind nicht vertraut. Zuerst registrieren wir unser Storyboard beim **appdelegaten** , indem wir den Namen des Storyboards, **mainstoryboard**, übergeben. Als Nächstes weisen Sie der Anwendung an, einen anfänglichen Ansichts Controller aus dem Storyboard zu instanziieren, indem Sie `InstantiateInitialViewController` in unserem Storyboard aufrufen und diesen Ansichts Controller als root View Controller der Anwendung festlegen. Diese Methode bestimmt den ersten Bildschirm, den der Benutzer sieht, und erstellt eine neue Instanz dieses Ansichts Controllers.
 
-Beachten Sie im Lösungs Bereich, dass die IDE eine `MainViewcontroller.cs` Klasse erstellt hat, und ihre `corresponding designer.cs`, als wir dem Eigenschaftenpad in Schritt 4 den Klassennamen hinzugefügt haben. Wir können sehen, dass diese Klasse einen speziellen Konstruktor erstellt hat, der eine Basisklasse enthält:
+Beachten Sie im projektmappenbereich, dass die IDE eine `MainViewcontroller.cs` -Klasse erstellt hat, und ihre, `corresponding designer.cs` als wir den Klassennamen dem Eigenschaftenpad in Schritt 4 hinzugefügt haben. Wir können sehen, dass diese Klasse einen speziellen Konstruktor erstellt hat, der eine Basisklasse enthält:
 
 ```csharp
 public MainViewController (IntPtr handle) : base (handle)
@@ -249,7 +249,7 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-Wenn Sie ein Storyboard mithilfe von Xcode erstellen, fügt die IDE automatisch das Attribut [[Register]](xref:Foundation.RegisterAttribute) am Anfang der `designer.cs` Klasse hinzu und übergibt einen Zeichen folgen Bezeichner, der mit der im vorherigen Schritt angegebenen Storyboard-ID identisch ist. Dadurch wird der C# mit der relevanten Szene im Storyboard verknüpft.
+Wenn Sie ein Storyboard mithilfe von Xcode erstellen, fügt die IDE automatisch das Attribut [[Register]](xref:Foundation.RegisterAttribute) am Anfang der `designer.cs` Klasse hinzu und übergibt einen Zeichen folgen Bezeichner, der mit der im vorherigen Schritt angegebenen Storyboard-ID identisch ist. Dadurch wird c# mit der relevanten Szene im Storyboard verknüpft.
 
 ```csharp
 [Register ("MainViewController")]
@@ -264,7 +264,7 @@ public partial class MainViewController : UIViewController
 
 Weitere Informationen zum Registrieren von Klassen und Methoden finden Sie in der Dokumentation zur [typregistrierungs](https://docs.microsoft.com/xamarin/ios/internals/registrar) Stelle.
 
-Der letzte Schritt in dieser Klasse besteht darin, die Schaltfläche und den Übergang zum Rosa Ansichts Controller zu übertragen. Wir werden die `PinkViewController` aus dem Storyboard instanziieren. Anschließend wird ein Push-segue mit `PushViewController`programmiert, wie im folgenden Beispielcode veranschaulicht:
+Der letzte Schritt in dieser Klasse besteht darin, die Schaltfläche und den Übergang zum Rosa Ansichts Controller zu übertragen. Wir instanziieren den `PinkViewController` aus dem Storyboard. anschließend programmieren wir ein Push-segue mit `PushViewController` , wie im folgenden Beispielcode veranschaulicht:
 
 ```csharp
 public partial class MainViewController : UIViewController
@@ -312,14 +312,14 @@ Im nächsten Beispiel fügen wir dem obigen Beispiel ein Kenn Wortfeld hinzu. De
 
 Bevor wir beginnen, befolgen Sie die obigen Schritte 1 – 8. In den folgenden Schritten erstellen wir unser Storyboard, erstellen die Benutzeroberfläche und teilen dem App-Delegaten mit, welcher Controller als rootviewcontroller verwendet werden soll.
 
-1. Nun erstellen wir unsere Benutzeroberfläche und fügen die zusätzlichen Ansichten hinzu, die dem `MainViewController` aufgelistet werden, damit Sie wie im folgenden Screenshot aussehen:
+1. Nun erstellen wir unsere Benutzeroberfläche und fügen die zusätzlichen Ansichten hinzu, die in aufgelistet werden, damit `MainViewController` Sie wie im folgenden Screenshot aussehen:
 
     - UITextField
         - Name: passwordtextfield
         - Platzhalter: "geben Sie das geheime Kennwort ein"
     - UILabel
         - Text: "Error: falsches Kennwort. Sie dürfen! ' nicht übergeben.
-        - Farbe: rot
+        - Farbe: Rot
         - Ausrichtung: zentrieren
         - Zeilen: 2
         - Kontrollkästchen ' ausgeblendet ' aktiviert    
@@ -328,11 +328,11 @@ Bevor wir beginnen, befolgen Sie die obigen Schritte 1 – 8. In den folgenden S
 
 2. Erstellen Sie einen segue zwischen der Schaltfläche Gehe zu Rosa und dem Ansichts Controller, indem Sie von der *PinkButton-Taste* auf den *pinkviewcontroller*ziehen und bei der Maus auf **Push drücken** .
 
-3. Klicken Sie auf die Datei "*", und legen Sie Ihr den *Bezeichner* `SegueToPink`:
+3. Klicken Sie auf den Namen, und legen Sie ihm den *Bezeichner* `SegueToPink` :
 
     [![](images/namesegue.png "Click on the Segue and give it the Identifier SegueToPink")](images/namesegue.png#lightbox)  
 
-4. Fügen Sie schließlich der `MainViewController`-Klasse die folgende "dendperformabgue"-Methode hinzu:
+4. Fügen Sie schließlich der-Klasse die folgende "dendperformabgue"-Methode hinzu `MainViewController` :
 
     ```csharp
     public override bool ShouldPerformSegue (string segueIdentifier, NSObject sender)
@@ -352,13 +352,13 @@ Bevor wir beginnen, befolgen Sie die obigen Schritte 1 – 8. In den folgenden S
     }
     ```
 
-In diesem Code haben wir den segueidentifier mit unserem `SegueToPink` segue abgeglichen, damit wir eine Bedingung testen können. ein gültiges Kennwort in diesem Fall. Wenn unsere Bedingung `true`zurückgibt, wird der-Vorgang durchgeführt, und der `PinkViewController`wird angezeigt. Wenn `false`, wird der neue Ansichts Controller nicht angezeigt.
+In diesem Code haben wir "segueidentifier" mit unserem `SegueToPink` segue abgeglichen, damit wir eine Bedingung testen können. in diesem Fall ist dies ein gültiges Kennwort. Wenn unsere Bedingung zurückgegeben wird `true` , führt der-Vorgang aus und stellt den dar `PinkViewController` . Gibt an `false` , dass der neue Ansichts Controller nicht angezeigt wird.
 
-Wir können diesen Ansatz auf jeden beliebigen Eintrag auf diesem Ansichts Controller anwenden, indem wir das Argument "sgueidentifier" auf die Methode "verweidperformtengue" überprüfen. In diesem Fall verfügen wir nur über einen "–"--`SegueToPink`.
+Wir können diesen Ansatz auf jeden beliebigen Eintrag auf diesem Ansichts Controller anwenden, indem wir das Argument "sgueidentifier" auf die Methode "verweidperformtengue" überprüfen. In diesem Fall verfügen wir nur über einen "sgue"-Bezeichner – `SegueToPink` .
 
 Ein funktionierendes Beispiel finden Sie in der Projekt Mappe "Storyboards. Conditional" im [Beispiel "manuelle Storyboards](https://docs.microsoft.com/samples/xamarin/ios-samples/manualstoryboard) ".
 
-<a name="Using-Storyboard-References" />
+<a name="Using-Storyboard-References"></a>
 
 ## <a name="using-storyboard-references"></a>Verwenden von Storyboard-verweisen
 
@@ -366,13 +366,13 @@ Mithilfe eines storyboardverweises können Sie einen großen, komplexen Storyboa
 
 Außerdem kann eine storyboardreferenz einen _Anker_ für eine andere Szene innerhalb desselben Storyboards oder eine bestimmte Szene auf einer anderen Szene bereitstellen.
 
-<a name="Referencing-an-External-Storyboard" />
+<a name="Referencing-an-External-Storyboard"></a>
 
 ### <a name="referencing-an-external-storyboard"></a>Verweisen auf ein externes Storyboard
 
 Gehen Sie folgendermaßen vor, um einen Verweis auf ein externes Storyboard hinzuzufügen:
 
-1. Klicken Sie **im Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie > **neue Datei** **Hinzufügen** ... > **IOS** > **Storyboard**aus. Geben Sie einen **Namen** für das neue Storyboard ein, und klicken Sie auf die Schaltfläche **neu** :
+1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie neue Datei **Hinzufügen**  >  **...**  >  aus. **IOS**  >  **Storyboard**. Geben Sie einen **Namen** für das neue Storyboard ein, und klicken Sie auf die Schaltfläche **neu** :
 
     [![](images/ref01.png "The New File Dialog")](images/ref01.png#lightbox)
 
@@ -402,7 +402,7 @@ Gehen Sie folgendermaßen vor, um einen Verweis auf ein externes Storyboard hinz
 
 Wenn die app ausgeführt wird und der Benutzer auf das Benutzeroberflächen Element klickt, das Sie aus dem-Element erstellt haben, wird der anfängliche Ansichts Controller aus dem externen Storyboard angezeigt, das in der storyboardreferenz angegeben ist.
 
-<a name="Referencing-a-Specific-Scene-in-an-External-Storyboard" />
+<a name="Referencing-a-Specific-Scene-in-an-External-Storyboard"></a>
 
 ### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Verweisen auf eine bestimmte Szene in einem externen Storyboard
 
@@ -440,7 +440,7 @@ Gehen Sie folgendermaßen vor, um einen Verweis auf eine bestimmte Szene zu eine
 
 Wenn die app ausgeführt wird und der Benutzer auf das Benutzeroberflächen Element klickt, das Sie in erstellt haben, wird die Szene mit der angegebenen **Storyboard-ID** aus dem externen Storyboard angezeigt, das in der storyboardreferenz angegeben ist.
 
-<a name="Referencing-a-Specific-Scene-in-the-Same-Storyboard" />
+<a name="Referencing-a-Specific-Scene-in-the-Same-Storyboard"></a>
 
 ### <a name="referencing-a-specific-scene-in-the-same-storyboard"></a>Verweisen auf eine bestimmte Szene im gleichen Storyboard
 

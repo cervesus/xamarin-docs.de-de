@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 786afa6967731fb1bd508fa3c835b980639eb282
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 45b7c1081571b52bb8760b4207e3a05a4ffa77ae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032381"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572311"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Grundlagen und Konfiguration von in-App-Käufen in xamarin. IOS
 
@@ -79,7 +79,7 @@ Geben Sie einen geeigneten Namen für die *Beschreibung*ein, damit Sie diese APP
 
 #### <a name="bundle-identifierapp-id-suffix-format"></a>Bundle Identifier/APP-ID-Suffix-Format
 
-Sie können eine beliebige Zeichenfolge für die **Bündel** -ID verwenden (sofern Sie in Ihrem Konto eindeutig ist), aber Apple empfiehlt, dass Sie das Reverse-DNS-Format befolgen, anstatt eine beliebige Zeichenfolge zu verwenden. Die Beispielanwendung, die diesen Artikel begleitet, verwendet com. xamarin. storekit. testing für die Bündel-ID. allerdings wäre es gleichermaßen zulässig, einen Bezeichner wie my_store_example zu verwenden (auch wenn dies von Apple nicht empfohlen wird).
+Sie können eine beliebige Zeichenfolge für die **Bündel** -ID verwenden (sofern Sie in Ihrem Konto eindeutig ist), aber Apple empfiehlt, dass Sie das Reverse-DNS-Format befolgen, anstatt eine beliebige Zeichenfolge zu verwenden. Die Beispielanwendung, die diesen Artikel begleitet, verwendet com. xamarin. storekit. testing für die Bündel-ID, es wäre aber gleichermaßen zulässig, einen Bezeichner wie my_store_example zu verwenden (obwohl dies von Apple nicht empfohlen wird).
 
 > [!IMPORTANT]
 > Außerdem ermöglicht Apple das Hinzufügen eines Platzhalter Sternchens zum Ende eines **Bündel Bezeichners** , damit eine einzelne APP-ID für mehrere Anwendungen verwendet werden kann, jedoch keine Platzhalter _-App-IDs für in-apppurchase verwendet werden_können. Ein Beispiel für eine Platzhalter-Bundle-ID ist com. xamarin. *
@@ -146,7 +146,7 @@ Es gibt fünf Arten von in-App-Kauf Produkten, die Sie anbieten können:
 
  *In diesem Dokument werden zurzeit nur die ersten beiden Produkttypen (verwendbar und nicht verwendbar) behandelt.*
 
- <a name="Price_Tiers" />
+ <a name="Price_Tiers"></a>
 
 ### <a name="price-tiers"></a>Preisstufen
 
@@ -156,7 +156,7 @@ Apple stellt eine Preis Matrix bereit, mit der Sie den richtigen Tarif für die 
 
  [![](in-app-purchase-basics-and-configuration-images/image10.png "An excerpt of the price matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-Zum Zeitpunkt des Schreibens (Juni 2013) gibt es 87 Tarife von USD 0,99 bis USD 999,99. Die Preis Matrix zeigt den Preis, den Ihre Kunden bezahlen werden, und auch den Betrag, den Sie von Apple erhalten werden – dies ist weniger als 30-prozentige Kosten und auch alle lokalen Steuern, die Sie sammeln müssen. , während australische Verkäufer nur 63c erhalten, weil "waren &amp; Services Tax" den Verkaufspreis erhoben).
+Zum Zeitpunkt des Schreibens (Juni 2013) gibt es 87 Tarife von USD 0,99 bis USD 999,99. Die Preis Matrix zeigt den Preis, den Ihre Kunden bezahlen werden, sowie die Menge, die Sie von Apple erhalten werden – dies ist weniger als 30-prozentige Kosten und auch alle lokalen Steuern, die für die Erfassung erforderlich sind (Beachten Sie, dass in dem Beispiel US-und kanadische Verkäufer 70c für ein 99-c-Produkt erhalten, während australische Verkäufer nur 63c erhalten, weil &amp; der Verkaufspreis
 
 Die Preise Ihres Produkts können jederzeit aktualisiert werden, einschließlich geplanter Preisänderungen, die für ein zukünftiges Datum wirksam werden. In diesem Screenshot wird gezeigt, wie eine in der Zukunft abzurufende Preisänderung hinzugefügt wird – der Preis wird vorübergehend für den Monat September von Ebene 1 in Ebene 3 geändert:
 

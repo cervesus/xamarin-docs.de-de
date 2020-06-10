@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 788df5f27066d0d8d1f672d82e94a06ddf5e0916
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139814"
+Title: "Teil 2. Wichtige XAML-Syntax "Description:" in diesem Artikel werden die wesentlichen XAML-Syntax Funktionen von Eigenschafts Elementen und angefügten Eigenschaften erläutert. "
+ms. Prod: xamarin ms. assetid: 4022f 1 DC-3802-4635-A553-688abd3f 0d5a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Grundlegende XAML-Syntax
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -526,7 +512,7 @@ Dies ist die Standardmethode zum Festlegen einer Platt Form abhängigen `Padding
 ```
 
 > [!NOTE]
-> Die `OnPlatform` Markup Erweiterung kann auch in XAML verwendet werden, um die Darstellung der Benutzeroberfläche plattformspezifisch anzupassen. Sie bietet die gleiche Funktionalität wie die `OnPlatform` -Klasse und die- `On` Klasse, jedoch mit einer präziseren Darstellung. Weitere Informationen finden Sie unter [onplatform-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
+> Die `OnPlatform` Markup Erweiterung kann auch in XAML verwendet werden, um die Darstellung der Benutzeroberfläche plattformspezifisch anzupassen. Sie bietet die gleiche Funktionalität wie die `OnPlatform` -Klasse und die- `On` Klasse, jedoch mit einer präziseren Darstellung. Weitere Informationen finden Sie unter [onplatform-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
 
 ## <a name="summary"></a>Zusammenfassung
 

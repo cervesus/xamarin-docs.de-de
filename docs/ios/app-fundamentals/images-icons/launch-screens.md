@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ef1a97df5648d0f120b58f6206f18f74a6f50f92
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: a2f15c8385b7df7afc3f04e033a085cb00bc9005
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940981"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573858"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Startbildschirme für xamarin. IOS-apps
 
@@ -22,13 +22,13 @@ Vor IOS 8 erforderte das Erstellen eines Startbildschirms für eine IOS-APP, das
 
 In dieser kurzen exemplarischen Vorgehensweise wird beschrieben, wie ein Startbildschirm entweder mit einem in einem neuen Projekt standardmäßig bereitgestellten Storyboard oder mit einem manuell hinzugefügten Storyboard in einem vorhandenen Projekt erstellt wird. Anschließend wird veranschaulicht, wie der IOS-Designer verwendet wird, um dem Storyboard eine Bildansicht und eine Bezeichnung hinzuzufügen, um Einschränkungen für diese Ansichten festzulegen und um zu überprüfen, ob das Storyboard für verschiedene Geräte und Ausrichtungen korrekt aussieht.
 
-<a name="storyboard" />
+<a name="storyboard"></a>
 
 ## <a name="managing-launch-screens-with-storyboards"></a>Verwalten von Start Bildschirmen mit Storyboards
 
 In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboard erstellen, um den Startbildschirm anstelle eines oder mehrerer statischer Start Images bereitzustellen. Wenn Sie ein Launch-Storyboard im IOS-Designer erstellen, verwenden Sie Größenklassen und automatisches Layout, um verschiedene Layouts für verschiedene Anzeige Umgebungen zu definieren. Mithilfe von Größenklassen und automatischem Layout kann der Entwickler einen einzelnen Startbildschirm erstellen, der auf allen Geräten und Anzeige Umgebungen gut aussieht.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Erstellen Sie in Visual Studio für Mac ein neues Projekt, indem Sie **Datei > neue Projekt Mappe** und dann **Einzelansicht-App**auswählen: 
 
@@ -95,9 +95,9 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
 
 13. Speichern Sie die Änderungen am Storyboard. Führen Sie die APP auf einem Simulator oder Gerät aus, und der Startbildschirm wird angezeigt, wenn die APP gestartet wird.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Erstellen Sie ein neues Projekt. Wählen Sie in Visual Studio **Datei > Neues > Projekt > Visual C# > iPhone & iPad > IOS-app (xamarin)** aus:
+1. Erstellen Sie ein neues Projekt. Wählen Sie in Visual Studio **Datei > neues > Projekt > Visual c# > iPhone & iPad > IOS-app (xamarin)** aus:
 
     ![Das Fenster "Neues Projekt" mit ausgewählter IOS-app (xamarin)](launch-screens-images/launch01.w157.png)
 
@@ -107,7 +107,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
 
 2. Wenn **Ressourcen > launchscreen. XIb** im **Projektmappen-Explorer**vorhanden sind, löschen Sie Sie, indem Sie mit der rechten Maustaste auf die Datei klicken und **Löschen**auswählen. Diese Datei wird im nächsten Schritt durch ein Storyboard ersetzt.
 
-3. Erstellen Sie ein Storyboard, das als Startbildschirm verwendet werden soll. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **> Neues Element hinzufügen...** gefolgt von **leerem Storyboard**. Benennen Sie das Storyboard **launchscreen. Storyboard** , und klicken Sie auf **Hinzufügen**:
+3. Erstellen Sie ein Storyboard, das als Startbildschirm verwendet werden soll. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **> neues Element hinzufügen...** gefolgt von **leerem Storyboard**. Benennen Sie das Storyboard **launchscreen. Storyboard** , und klicken Sie auf **Hinzufügen**:
 
     ![Fenster "Neues Element hinzufügen", bei dem leeres Storyboard ausgewählt ist](launch-screens-images/launch03.w157.png)
 
@@ -124,7 +124,7 @@ In ios 8 (und höher) kann der Entwickler ein spezielles einheitliches Storyboar
 
     ![Fenster "Neues Element hinzufügen" mit ausgewähltem Asset Catalog](launch-screens-images/launch05.w157.png)
 
-    - Fügen Sie dem Asset-Katalog **Assets** neue Bilder hinzu. Informationen hierzu finden Sie im Abschnitt [Hinzufügen von Bildern zu Bildern des Asset-Katalogs](~/ios/app-fundamentals/images-icons/displaying-an-image.md) des Leifadens [Anzeigen eines Bilds](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+    - Fügen [Sie dem](~/ios/app-fundamentals/images-icons/displaying-an-image.md) **Assets** -Asset-Katalog ein neues Abbild hinzu, wie im Abschnitt [Hinzufügen von Bildern zu einem Asset Catalog-Image festgelegt](~/ios/app-fundamentals/images-icons/displaying-an-image.md) .
 
 6. Öffnen Sie **launchscreen. Storyboard** zur Bearbeitung, indem Sie in der **Projektmappen-Explorer**auf die Datei doppelklicken.
 
@@ -187,13 +187,13 @@ Weitere Informationen zum Erstellen eines Startbildschirms mit einem einheitlich
 
 ## <a name="migrating-to-launch-screen-storyboards"></a>Migrieren zu Startbildschirm-Storyboards
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Wenn Sie eine vorhandene App für die Verwendung von Storyboards für die Startbildschirme aktualisieren, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen** , und wählen Sie > **neue Datei** **Hinzufügen** ... aus. Wählen Sie **IOS** > **Startbildschirm** , und klicken Sie auf die Schaltfläche **neu** :
+Wenn Sie eine vorhandene App für die Verwendung von Storyboards für die Startbildschirme aktualisieren, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen** , und wählen Sie **Add**  >  **neue Datei**hinzufügen aus. Wählen Sie **IOS**  >  -**Startbildschirm** aus, und klicken Sie auf **neu** :
 
 ![](launch-screens-images/storyboard02.png "Select an iOS Launch Screen")
 
-Doppelklicken Sie dann im **Projektmappen-Explorer** auf die `Info.plist`-Datei, um Sie für die Bearbeitung zu öffnen. Wählen Sie unter **Startbildschirm**die neue storyboarddatei aus, die oben erstellt wurde.
+Doppelklicken Sie dann auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie zur Bearbeitung zu öffnen. Wählen Sie unter **Startbildschirm**die neue storyboarddatei aus, die oben erstellt wurde.
 
 ![](launch-screens-images/storyboard09.png "Select the new Storyboard file created above")
 
@@ -204,9 +204,9 @@ Gehen Sie folgendermaßen vor, um das neue Storyboard als Startbildschirm zu ver
 
     ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie > **neue Datei** **Hinzufügen** ... aus: 
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie neue Datei **Hinzufügen**  >  **...** aus: 
 
     ![](launch-screens-images/image012.png "Add new file")
 2. Geben Sie einen Namen für den Startbildschirm ein, und klicken Sie auf **Hinzufügen** : 
@@ -216,14 +216,14 @@ Gehen Sie folgendermaßen vor, um das neue Storyboard als Startbildschirm zu ver
 4. Stellen Sie sicher, dass die **size-Klasse** auf **any** festgelegt ist und die **Sicht** **generisch**ist: 
 
     ![](launch-screens-images/image016.png "Ensure that the Size Class is set to any:any and the View As is Generic")
-5. Assembly der Startbildschirm von Größenklassen, einfache Benutzeroberflächen Elemente (z. b. `UIImageView`) und Bilder, die Sie im Paket der Anwendung enthalten haben: 
+5. Assembly der Startbildschirm von Größenklassen, einfache Benutzeroberflächen Elemente (z. b. `UIImageView` ) und Bilder, die Sie im Paket der Anwendung enthalten haben: 
 
     ![](launch-screens-images/image017.png "Assembly the launch screen in the iOS Designer")
 6. Speichern Sie die Änderungen am Storyboard.
 
 -----
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Dynamische Startbildschirme (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [Einheitliche Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md)

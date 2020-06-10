@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: d03cb6ec6bc364aa63578cd6e2fbb78dbc7fedda
-ms.sourcegitcommit: 05ba8ffb8b34ec881b89e442323f3edd8de18f2e
+ms.openlocfilehash: 9acdde897a3a700d0138cb67db6735a8cce07120
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546010"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570829"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Auffüllen einer Tabelle mit Daten in xamarin. IOS
 
@@ -25,7 +25,7 @@ In dieser Anleitung wird Folgendes behandelt:
 - Hinzufügen eines Indexes
 - Hinzufügen von Kopf-und Fußzeilen
 
-<a name="Subclassing_UITableViewSource" />
+<a name="Subclassing_UITableViewSource"></a>
 
 ## <a name="subclassing-uitableviewsource"></a>Subclassinguitableviewsource
 
@@ -214,7 +214,7 @@ public class MyCell : UITableViewCell
 
 Hier finden Sie Beispiele für die oben erläuterten Themen im **basierbaren** Beispiel, das mit diesem Artikel verknüpft ist.
 
-<a name="Adding_an_Index" />
+<a name="Adding_an_Index"></a>
 
 ## <a name="adding-an-index"></a>Hinzufügen eines Indexes
 
@@ -261,7 +261,7 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 Indizes werden im Allgemeinen nur mit dem einfachen Tabellen Stil verwendet.
 
-<a name="Adding_Headers_and_Footers" />
+<a name="Adding_Headers_and_Footers"></a>
 
 ## <a name="adding-headers-and-footers"></a>Hinzufügen von Kopf-und Fußzeilen
 

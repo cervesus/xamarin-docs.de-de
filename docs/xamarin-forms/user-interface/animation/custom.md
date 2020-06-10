@@ -1,29 +1,15 @@
 ---
-title: Benutzerdefinierte Animationen inXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4fb9c94c39823e4ce6d60be6b9dbef1294321a63
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137227"
+Title: "benutzerdefinierte Animationen in Xamarin.Forms " Beschreibung: "in diesem Artikel wird veranschaulicht, wie Sie mit der Animations Klasse von xamarin. FOrms Animationen erstellen und Abbrechen, mehrere Animationen synchronisieren und benutzerdefinierte Animationen zum Animieren von Eigenschaften erstellen, die nicht von den vorhandenen Animations Methoden animiert werden."
+ms. Prod: xamarin ms. assetid: 03b2e3fc-E720-4D45-b9a0-711081fc1907 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/10/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="custom-animations-in-xamarinforms"></a>Benutzerdefinierte Animationen inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _Die Animations Klasse ist der Baustein aller Xamarin.Forms Animationen, wobei die Erweiterungs Methoden in der viewextensions-Klasse ein oder mehrere Animations Objekte erstellen. In diesem Artikel wird veranschaulicht, wie Sie mit der Animations Klasse Animationen erstellen und Abbrechen, mehrere Animationen synchronisieren und benutzerdefinierte Animationen erstellen, die Eigenschaften animieren, die nicht von den vorhandenen Animations Methoden animiert werden._
 
-Beim Erstellen eines Objekts muss eine Reihe von Parametern angegeben werden `Animation` , einschließlich Start-und Endwert der zu animierenden Eigenschaft sowie eines Rückrufs, der den Wert der-Eigenschaft ändert. Ein `Animation` Objekt kann auch eine Auflistung von untergeordneten Animationen verwalten, die ausgeführt und synchronisiert werden können. Weitere Informationen finden Sie unter untergeordnete [Animationen](#child).
+Beim Erstellen eines Objekts muss eine Reihe von Parametern angegeben werden `Animation` , einschließlich Start-und Endwert der zu animierenden Eigenschaft sowie eines Rückrufs, der den Wert der-Eigenschaft ändert. Ein `Animation` Objekt kann auch eine Auflistung von untergeordneten Animationen verwalten, die ausgeführt und synchronisiert werden können. Weitere Informationen finden Sie unter untergeordnete [Animationen](#child-animations).
 
 Das Ausführen einer mit der- [`Animation`](xref:Xamarin.Forms.Animation) Klasse erstellten Animation, die untergeordnete Animationen einschließen kann, wird durch Aufrufen von [ `Commit` ] (Xref: Xamarin.Forms . Animation. Commit () erreicht Xamarin.Forms . Ianimabel, System. String, System. UInt32, System. UInt32, Xamarin.Forms . Beschleunigungs Methode, System. Action {System. Double, System. Boolean}, System. Func {System. Boolean})-Methode. Diese Methode gibt die Dauer der Animation und unter anderen Elementen einen Rückruf an, der steuert, ob die Animation wiederholt werden soll.
 
@@ -61,8 +47,6 @@ Der Gesamteffekt besteht darin, eine Animation zu erstellen, die die- [`Scale`](
 
 > [!NOTE]
 > Gleichzeitige Animationen, die unabhängig voneinander ausgeführt werden, können erstellt werden, indem ein `Animation` -Objekt für jede Animation erstellt und dann die- `Commit` Methode für jede Animation aufgerufen wird.
-
-<a name="child" />
 
 ### <a name="child-animations"></a>Untergeordnete Animationen
 

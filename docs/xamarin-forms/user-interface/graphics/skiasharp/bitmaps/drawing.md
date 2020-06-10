@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 593d6a8b30d5ed0e143d1c013849d2bef571f6dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140295"
+Title: "erstellen und Zeichnen von skiasharp-Bitmaps" Beschreibung: "erfahren Sie, wie Sie skiasharp-Bitmaps erstellen und dann auf diese Bitmaps zeichnen, indem Sie eine Canvas erstellen."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 79bd3266-D457-4e50bddf-33450035fa0f Author: davidbritch ms. Author: dabritch ms. Date: 07/17/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Erstellen und Zeichnen von skiasharp-Bitmaps
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -341,8 +327,6 @@ Der Konstruktor wird beendet, indem ein erstellt wird `SKCanvasView` , um das Er
 
 [![Bild "pixelize"](drawing-images/PixelizeImage.png "Bild "pixelize"")](drawing-images/PixelizeImage-Large.png#lightbox)
 
-<a name="rotating-bitmaps" />
-
 ## <a name="rotating-bitmaps"></a>Drehen von Bitmaps
 
 Eine weitere häufige Aufgabe ist das Drehen von Bitmaps. Dies ist besonders nützlich, wenn Bitmaps aus einer iPhone-oder iPad-Fotobibliothek abgerufen werden. Wenn das Gerät bei der Erstellung des Fotos nicht in einer bestimmten Ausrichtung gehalten wurde, ist das Bild wahrscheinlich in der Mitte oder auf der anderen Seite.
@@ -388,7 +372,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-Diese beiden Methoden werden in den **Foto Rätsel** Seiten verwendet, die im Artikel zum [**Zuschneiden von skiasharp-Bitmaps**](cropping.md#tile-division)beschrieben werden.
+Diese beiden Methoden werden in den **Foto Rätsel** Seiten verwendet, die im Artikel zum [**Zuschneiden von skiasharp-Bitmaps**](cropping.md#cropping-skiasharp-bitmaps)beschrieben werden.
 
 Ein Programm, das es dem Benutzer ermöglicht, eine Bitmap in 90-Grad-Schritten zu drehen, erfordert nur eine Funktion für die Rotation um 90 Grad. Der Benutzer kann dann in jedem Inkrement von 90 Grad drehen, indem er die wiederholte Ausführung dieser eine Funktion wiederholt.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 12fe9645ab832db1db37e36b0342664bbd2fe9f8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9a45e87165101a8e8afcfc51d15d085982b6499e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030404"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569932"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit tvos-Seiten Steuerelementen in xamarin
 
@@ -27,13 +27,13 @@ Apple hat folgende Vorschläge, wenn Sie ein Seiten Steuerelement verwenden:
 - **Nur für vollständige Sammlungen verwenden** : Seiten Steuerelemente funktionieren am besten in einer voll Bildumgebung, um mehrere Seiten anzuzeigen, die in einer einzelnen Auflistung vorhanden sind.
 - **Begrenzen Sie die Anzahl der Seiten, die** Seiten Steuerelemente für zehn (10) oder weniger Seiten und maximal 20 (20) Seiten am besten funktionieren. Bei mehr als 20 Seiten sollten Sie die Verwendung einer [Sammlungsansicht](~/ios/tvos/user-interface/collection-views.md) und die Anzeige der Seiten in einem Raster in Erwägung gezogen.
 
-<a name="Page-Controls-and-Storyboards" />
+<a name="Page-Controls-and-Storyboards"></a>
 
 ## <a name="page-controls-and-storyboards"></a>Seiten Steuerelemente und Storyboards
 
 Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xamarin. tvos-App besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
@@ -43,12 +43,12 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 
     [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
-1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel:
+1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie in c#-Code darauf reagieren können. Beispiel:
 
     [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
@@ -58,7 +58,7 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 
     [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
-1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie im C# Code darauf reagieren können. Beispiel:
+1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie in c#-Code darauf reagieren können. Beispiel:
 
     [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
@@ -66,9 +66,9 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 -----
 
 > [!IMPORTANT]
-> Obwohl es möglich ist, Ereignisse wie z. b. `TouchUpInside` einem Benutzeroberflächen Element (z. b. "UIButton") im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten beim Erstellen von Ereignis Handlern für tvos-Benutzeroberflächen Elemente immer das `Primary Action`-Ereignis verwenden.
+> Obwohl es möglich ist, Ereignisse wie z. b. einem Benutzeroberflächen Element (z. b. " `TouchUpInside` UIButton") im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten das-Ereignis immer verwenden, `Primary Action` Wenn Sie Ereignishandler für tvos-Benutzeroberflächen Elemente erstellen.
 
-Bearbeiten Sie die Datei des Ansichts Controllers (z. b. `ViewController.cs`), und fügen Sie den Code zum Verarbeiten der geänderten Seiten hinzu. Beispiel:
+Bearbeiten Sie die Ansichts Controller `ViewController.cs` Datei (Beispieldatei), und fügen Sie den Code hinzu, der die geänderten Seiten behandelt. Beispiel:
 
 ```csharp
 using System;
@@ -154,11 +154,11 @@ Verwenden Sie den folgenden Code, um die aktuelle Seitenzahl zu ändern:
 PageView.CurrentPage = PageNumber;
 ```
 
-Die `CurrentPage`-Eigenschaft ist auf NULL (0) basiert, sodass die erste Seite 0 (null) und der letzte eine minus der maximalen Anzahl von Seiten ist.
+Die `CurrentPage` -Eigenschaft ist auf NULL (0) basiert, sodass die erste Seite 0 (null) und der letzte eine minus der maximalen Anzahl von Seiten sein wird.
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

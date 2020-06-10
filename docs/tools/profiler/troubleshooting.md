@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: davidortinau
 ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: 915f7df80e3ae29ab3c598ea95fabbc054e916dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b4b4bdf85ec79a46a4e4c06504eb8b9b85af329
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019215"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566956"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler Problembehandlung
 
@@ -25,21 +25,21 @@ Das xamarin-Team kann Ihnen helfen, Probleme zu verfolgen, wenn Sie Informatione
 
 ### <a name="getting-log-outputs"></a>Erhalten von Protokoll Ausgaben
 
-Unter Mac werden Protokolle in `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`gespeichert.
+Unter Mac werden Protokolle in gespeichert `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log` .
 
-Unter Windows werden diese in `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` gespeichert, wenn Sie ein Problem melden.
+Unter Windows werden diese gespeichert, damit Sie `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` immer das aktuellste Protokoll einschließen, wenn Sie ein Problem einreichen.
 
 Wir fügen nun weitere Protokollierung hinzu, sodass diese Ausgabe größer werden und sich im Laufe der Zeit noch nützlicher machen sollte.
 
-<a name="gen_mlpd" />
+<a name="gen_mlpd"></a>
 
 ### <a name="generating-mlpd-files"></a>Erstellen von MLPD-Dateien
 
 Eine **. MLPD** -Datei ist die komprimierte Ausgabe des Mono-Lauf Zeit Profilers. Die Xamarin Profiler GUI liest die Daten aus einer **. MLPD** und zeigt Sie für den Benutzer an. **MLPD** -Dateien sind nützliche Debuggingtools für xamarin, da Sie unseren Technikern helfen, Probleme zu diagnostizieren, die der Profiler möglicherweise mit Ihren Daten hat.
 
-Die **. MLPD** für die aktuelle Sitzung wird automatisch in Ihrem Mac-`/tmp` Verzeichnis gespeichert und kann durch den Zeitstempel identifiziert werden. Wenn Sie die Protokollierung aktivieren, ist die erste Ausgabe der Pfad zur **. MLPD** -Datei. Die **MLPD** -Datei wird normalerweise in dem Verzeichnis gespeichert, beginnend ~/var/Folders...
+Die **. MLPD** für die aktuelle Sitzung wird automatisch in Ihrem Mac- `/tmp` Verzeichnis gespeichert und kann durch den Zeitstempel identifiziert werden. Wenn Sie die Protokollierung aktivieren, ist die erste Ausgabe der Pfad zur **. MLPD** -Datei. Die **MLPD** -Datei wird normalerweise in dem Verzeichnis gespeichert, beginnend ~/var/Folders...
 
-Die **. MLPD** -Datei für eine aktuelle Sitzung kann auch durch Auswählen von **Datei > Speichern unter..** . im Menü des Profilers:
+Die **. MLPD** -Datei für eine aktuelle Sitzung kann auch durch Auswählen von **Datei > speichern unter..** . im Menü des Profilers:
 
 **Visual Studio für Mac**:
 
@@ -79,7 +79,7 @@ Dies ist normalerweise darauf zurückzuführen, dass der Simulator/Emulator nich
 
 #### <a name="to-watch-a-specific-thread"></a>So beobachten Sie einen bestimmten Thread
 
-Wenn Sie über einen Thread verfügen, der speziell überwacht werden soll, wäre es ideal, den Thread ganz am Anfang seiner Erstellung zu benennen, um `ThreadName` statt `0x0`zu erhalten. Wenn Sie z. b. den Thread Namen als `UI`festlegen möchten, können Sie den folgenden Code verwenden:
+Wenn Sie über einen Thread verfügen, der speziell überwacht werden soll, wäre es ideal, den Thread ganz am Anfang seiner Erstellung zu benennen, um `ThreadName` anstelle von zu gelangen `0x0` . Wenn Sie z. b. den Thread Namen als festlegen möchten `UI` , können Sie den folgenden Code verwenden:
 
 ```csharp
 RunOnUiThread (() => {
@@ -91,4 +91,4 @@ RunOnUiThread (() => {
 
 - [Exemplarische Vorgehensweise: Verwenden des Xamarin Profiler](~/tools/profiler/index.md)
 - [Bewährte Methoden für Arbeitsspeicher und Leistung](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [Anmerkungen zu dieser Version](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/profiler/preview/index.md)
+- [Versionsanmerkungen](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/profiler/preview/index.md)

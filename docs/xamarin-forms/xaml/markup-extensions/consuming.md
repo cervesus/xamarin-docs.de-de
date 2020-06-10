@@ -1,35 +1,21 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie Xamarin.Forms XAML-Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Element Attribute aus einer Vielzahl von Quellen festgelegt werden können.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7cd3a9d275919240fcaa7315d5043854df5529bb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127314"
+Title: "Verwenden von XAML-Markup Erweiterungen" Beschreibung: "in diesem Artikel wird erläutert, wie XAML Xamarin.Forms -Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Element Attribute aus einer Vielzahl von Quellen festgelegt werden können."
+ms. Prod: xamarin ms. assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/21/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML-Markup Erweiterungen helfen, die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem die Festlegung von Element Attributen aus einer Vielzahl von Quellen ermöglicht wird. Mehrere XAML-Markup Erweiterungen sind Teil der XAML 2009-Spezifikation. Diese werden in XAML-Dateien mit dem entsprechenden `x` Namespace Präfix angezeigt und werden häufig mit diesem Präfix bezeichnet. In diesem Artikel werden die folgenden Markup Erweiterungen erläutert:
 
-- [`x:Static`](#static)– verweisen auf statische Eigenschaften, Felder oder Enumerationsmember.
-- [`x:Reference`](#reference)– verweist auf benannte Elemente auf der Seite.
-- [`x:Type`](#type)– Legen Sie ein Attribut auf ein- `System.Type` Objekt fest.
-- [`x:Array`](#array)– Erstellen Sie ein Array von Objekten eines bestimmten Typs.
-- [`x:Null`](#null)– Legen Sie ein Attribut auf einen `null` Wert fest.
-- [`OnPlatform`](#onplatform)– passen Sie die Darstellung der Benutzeroberfläche plattformspezifisch an.
-- [`OnIdiom`](#onidiom)– Anpassen der Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts, auf dem die Anwendung ausgeführt wird.
+- [`x:Static`](#xstatic-markup-extension)– verweisen auf statische Eigenschaften, Felder oder Enumerationsmember.
+- [`x:Reference`](#xreference-markup-extension)– verweist auf benannte Elemente auf der Seite.
+- [`x:Type`](#xtype-markup-extension)– Legen Sie ein Attribut auf ein- `System.Type` Objekt fest.
+- [`x:Array`](#xarray-markup-extension)– Erstellen Sie ein Array von Objekten eines bestimmten Typs.
+- [`x:Null`](#xnull-markup-extension)– Legen Sie ein Attribut auf einen `null` Wert fest.
+- [`OnPlatform`](#onplatform-markup-extension)– passen Sie die Darstellung der Benutzeroberfläche plattformspezifisch an.
+- [`OnIdiom`](#onidiom-markup-extension)– Anpassen der Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts, auf dem die Anwendung ausgeführt wird.
 - [`DataTemplate`](#datatemplate-markup-extension)– Konvertiert einen-Typ in einen-Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
 - [`FontImage`](#fontimage-markup-extension)– zeigt ein Schriftart Symbol in einer beliebigen Ansicht an, in der ein angezeigt werden kann `ImageSource` .
 - [`OnAppTheme`](#onapptheme-markup-extension)– verwendet eine Ressource basierend auf dem aktuellen Systemdesign.
@@ -43,8 +29,6 @@ Weitere XAML-Markup Erweiterungen wurden in der Vergangenheit von anderen XAML-I
 - `RelativeSource`: legt die Bindungs Quelle relativ zur Position des Bindungs Ziels fest, wie im Artikel [relative Bindungen](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)erläutert.
 
 Das [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) Layout verwendet die benutzerdefinierte Markup Erweiterung [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) . Diese Markup Erweiterung wird im Artikel [**relativelayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)beschrieben.
-
-<a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static-Markuperweiterung
 
@@ -150,8 +134,6 @@ Hier ist das Beispiel, das ausgeführt wird:
 
 [![x:statische Demo](consuming-images/staticdemo-small.png "x:statische Demo")](consuming-images/staticdemo-large.png#lightbox "x:statische Demo")
 
-<a name="reference" />
-
 ## <a name="xreference-markup-extension"></a>x:Reference-Markuperweiterung
 
 Die `x:Reference` Markup Erweiterung wird von der- [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) Klasse unterstützt. Die-Klasse verfügt über eine einzelne-Eigenschaft mit dem Namen [`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) vom Typ `string` , die Sie auf den Namen eines Elements auf der Seite festlegen, dem ein Name zugewiesen wurde `x:Name` . Diese `Name` Eigenschaft ist die Content-Eigenschaft von `ReferenceExtension` und `Name=` ist daher nicht erforderlich, wenn `x:Reference` in geschweiften Klammern angezeigt wird.
@@ -194,15 +176,13 @@ Beide `x:Reference` Ausdrücke verwenden die abgekürzte Version des `ReferenceE
 
 [![x:verweisdemo](consuming-images/referencedemo-small.png "x:verweisdemo")](consuming-images/referencedemo-large.png#lightbox "x:verweisdemo")
 
-<a name="type" />
-
 ## <a name="xtype-markup-extension"></a>x:Type-Markuperweiterung
 
 Die `x:Type` Markup Erweiterung ist die XAML-Entsprechung des c#- [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) Schlüssel Worts. Sie wird von der- [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) Klasse unterstützt, die eine Eigenschaft [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) mit dem Namen des Typs definiert, `string` die auf einen Klassen-oder Struktur Namen festgelegt ist. Die `x:Type` Markup Erweiterung gibt das- [`System.Type`](xref:System.Type) Objekt dieser Klasse oder Struktur zurück. `TypeName`ist die Content-Eigenschaft von `TypeExtension` `TypeName=` . Dies ist daher nicht erforderlich, wenn `x:Type` mit geschweiften Klammern angezeigt wird.
 
-In Xamarin.Forms gibt es mehrere Eigenschaften, die über Argumente des Typs verfügen `Type` . Beispiele hierfür sind die [`TargetType`](xref:Xamarin.Forms.Style.TargetType) -Eigenschaft von `Style` und das [x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) -Attribut, mit dem Argumente in generischen Klassen angegeben werden. Der XAML-Parser führt den `typeof` Vorgang jedoch automatisch aus, und die `x:Type` Markup Erweiterung wird in diesen Fällen nicht verwendet.
+In Xamarin.Forms gibt es mehrere Eigenschaften, die über Argumente des Typs verfügen `Type` . Beispiele hierfür sind die [`TargetType`](xref:Xamarin.Forms.Style.TargetType) -Eigenschaft von `Style` und das [x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument) -Attribut, mit dem Argumente in generischen Klassen angegeben werden. Der XAML-Parser führt den `typeof` Vorgang jedoch automatisch aus, und die `x:Type` Markup Erweiterung wird in diesen Fällen nicht verwendet.
 
-Eine Stelle, an der `x:Type` *is* erforderlich ist, ist die `x:Array` Markup Erweiterung, die im [nächsten Abschnitt](#array)beschrieben wird.
+Eine Stelle, an der `x:Type` *is* erforderlich ist, ist die `x:Array` Markup Erweiterung, die im [nächsten Abschnitt](#xarray-markup-extension)beschrieben wird.
 
 Die `x:Type` Markup Erweiterung ist auch nützlich, wenn ein Menü erstellt wird, in dem jedes Menü Element einem Objekt eines bestimmten Typs entspricht. Sie können `Type` jedem Menü Element ein-Objekt zuordnen und dann das-Objekt instanziieren, wenn das Menü Element ausgewählt wird.
 
@@ -332,8 +312,6 @@ Die Methode, die ausgeführt wird, wenn ein `Button` gedrückt wird, erstellt ei
 
 [![x:TypDEMO](consuming-images/typedemo-small.png "x:TypDEMO")](consuming-images/typedemo-large.png#lightbox "x:TypDEMO")
 
-<a name="array" />
-
 ## <a name="xarray-markup-extension"></a>x:Array-Markuperweiterung
 
 Die `x:Array` Markup Erweiterung ermöglicht es Ihnen, ein Array im Markup zu definieren. Sie wird von der- [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) Klasse unterstützt, die zwei Eigenschaften definiert:
@@ -407,9 +385,7 @@ Am Ende dieses Artikels wird eine benutzerdefinierte XAML-Markup Erweiterung ang
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-Wenn Sie Arrays allgemeiner Typen wie Zeichen folgen oder Zahlen definieren, verwenden Sie die im Artikel [**übergeben von Konstruktorargumenten**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) aufgeführten Tags, um die Werte zu begrenzen.
-
-<a name="null" />
+Wenn Sie Arrays allgemeiner Typen wie Zeichen folgen oder Zahlen definieren, verwenden Sie die im Artikel [**übergeben von Konstruktorargumenten**](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments) aufgeführten Tags, um die Werte zu begrenzen.
 
 ## <a name="xnull-markup-extension"></a>x:Null-Markuperweiterung
 
@@ -464,8 +440,6 @@ Dies ist das Programm, das ausgeführt wird:
 
 Beachten Sie, dass vier der- `Label` Elemente über eine "Serif"-Schriftart verfügen, das Center jedoch `Label` die standardmäßige Sans-Serif-Schriftart hat.
 
-<a name="onplatform" />
-
 ## <a name="onplatform-markup-extension"></a>Onplatform-Markup Erweiterung
 
 Die Markuperweiterung `OnPlatform` ermöglicht Ihnen das plattformspezifische Anpassen der Benutzeroberfläche. Sie bietet die gleiche Funktionalität wie die [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) -Klasse und die- [`On`](xref:Xamarin.Forms.On) Klasse, jedoch mit einer präziseren Darstellung.
@@ -505,8 +479,6 @@ In diesem Beispiel verwenden alle drei `OnPlatform` Ausdrücke die abgekürzte V
 Dies ist das Programm, das ausgeführt wird:
 
 [![Onplatform-Demo](consuming-images/onplatformdemo-small.png "Onplatform-Demo")](consuming-images/onplatformdemo-large.png#lightbox "Onplatform-Demo")
-
-<a name="onidiom" />
 
 ## <a name="onidiom-markup-extension"></a>Onidiom-Markup Erweiterung
 
@@ -657,7 +629,7 @@ Wenn Sie eine XAML-Markup Erweiterung gefunden haben, die in nicht verfügbar is
 
 - [Markup Erweiterungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Kapitel zu XAML-Markup Erweiterungen aus Xamarin.Forms Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.FormsSchel](~/xamarin-forms/app-fundamentals/shell/index.md)

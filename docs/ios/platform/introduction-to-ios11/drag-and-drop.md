@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/05/2017
-ms.openlocfilehash: 928936815c89dd74d0ad3775f59ea210702c8857
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 2a59040efde59210152ca20b44df2a097904c9f9
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306164"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573754"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>Drag & Drop in xamarin. IOS
 
@@ -35,20 +35,20 @@ Wenn Sie Drag & Drop-Unterstützung für Ihre apps hinzufügen, können Sie unte
 
 ## <a name="drag-and-drop-with-text-controls"></a>Drag & Drop mit Text Steuerelementen
 
-`UITextView` und `UITextField` unterstützen automatisch das Ziehen von ausgewähltem Text und das Ablegen von Text Inhalt in.
+`UITextView`und `UITextField` unterstützen automatisch das Ziehen von ausgewähltem Text und das Ablegen von Text Inhalt in.
 
-<a name="uitableview" />
+<a name="uitableview"></a>
 
 ## <a name="drag-and-drop-with-uitableview"></a>Drag & Drop mit uitableview
 
-`UITableView` verfügt über eine integrierte Behandlung von Drag & Drop-Interaktionen mit Tabellenzeilen, die nur wenige Methoden zum Aktivieren des Standard Verhaltens erfordert.
+`UITableView`verfügt über eine integrierte Behandlung von Drag & Drop-Interaktionen mit Tabellenzeilen, die nur wenige Methoden zum Aktivieren des Standard Verhaltens erfordert.
 
 Es sind zwei Schnittstellen beteiligt:
 
-- `IUITableViewDragDelegate` – Paketinformationen, wenn ein Drag-Vorgang in der Tabellenansicht initiiert wird.
-- `IUITableViewDropDelegate` – verarbeitet Informationen, wenn ein Löschvorgang versucht und abgeschlossen wird.
+- `IUITableViewDragDelegate`– Verpackt Informationen, wenn ein Drag-Vorgang in der Tabellenansicht initiiert wird.
+- `IUITableViewDropDelegate`– Verarbeitet Informationen, wenn ein Löschvorgang versucht und abgeschlossen wird.
 
-Im [draganddroptableview-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview) werden diese beiden Schnittstellen zusammen mit dem Delegaten und der Datenquelle auf der `UITableViewController`-Klasse implementiert. Sie werden in der `ViewDidLoad`-Methode zugewiesen:
+Im [draganddroptableview-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview) werden diese beiden Schnittstellen `UITableViewController` zusammen mit dem Delegaten und der Datenquelle für die-Klasse implementiert. Sie werden in der- `ViewDidLoad` Methode zugewiesen:
 
 ```csharp
 this.TableView.DragDelegate = this;
@@ -59,9 +59,9 @@ Der minimal erforderliche Code für diese beiden Schnittstellen wird weiter unte
 
 ### <a name="table-view-drag-delegate"></a>Tabellenansicht, Drag-Delegat
 
-Die einzige Methode, die zum unterstützen der Durchführung einer Zeile aus einer Tabellenansicht _erforderlich_ ist, ist `GetItemsForBeginningDragSession`. Wenn der Benutzer mit dem Ziehen einer Zeile beginnt, wird diese Methode aufgerufen.
+Die einzige Methode, die zum unterstützen der Durchführung einer Zeile aus einer Tabellenansicht _erforderlich_ ist, ist `GetItemsForBeginningDragSession` . Wenn der Benutzer mit dem Ziehen einer Zeile beginnt, wird diese Methode aufgerufen.
 
-Eine-Implementierung ist unten dargestellt. Er ruft die der gezogenen Zeile zugeordneten Daten ab, codiert Sie und konfiguriert eine `NSItemProvider`, die bestimmt, wie Anwendungen den "Drop"-Teil des Vorgangs behandeln (z. b. ob Sie den Datentyp `PlainText`im Beispiel verarbeiten können):
+Eine-Implementierung ist unten dargestellt. Er ruft die der gezogenen Zeile zugeordneten Daten ab, codiert Sie und konfiguriert einen, `NSItemProvider` der bestimmt, wie Anwendungen den "Drop"-Teil des Vorgangs behandeln (z. b. ob Sie den Datentyp verarbeiten können, `PlainText` im Beispiel):
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-Es gibt viele optionale Methoden für den Drag-Delegaten, die implementiert werden können, um das Zieh Verhalten anzupassen, z. b. das Bereitstellen mehrerer Daten Darstellungen, die in Ziel-apps genutzt werden können (z. b. formatierten Text und nur-Text oder ein Vektor und). Bitmap-Versionen einer Zeichnung). Sie können auch benutzerdefinierte Daten Darstellungen bereitstellen, die beim Ziehen und ablegen innerhalb derselben App verwendet werden.
+Es gibt viele optionale Methoden für den Drag-Delegaten, die implementiert werden können, um das Zieh Verhalten anzupassen, z. b. das Bereitstellen mehrerer Daten Darstellungen, die in Ziel-apps genutzt werden können (z. b. formatierten Text und nur-Text oder eine Vektor-und Bitmapversion einer Zeichnung). Sie können auch benutzerdefinierte Daten Darstellungen bereitstellen, die beim Ziehen und ablegen innerhalb derselben App verwendet werden.
 
 ### <a name="table-view-drop-delegate"></a>Tabellen Sicht-Drop-Delegat
 
 Die Methoden auf dem Drop-Delegaten werden aufgerufen, wenn ein Zieh Vorgang über eine Tabellen Sicht erfolgt oder über diesem Vorgang abgeschlossen wird. Die erforderlichen Methoden bestimmen, ob die Daten gelöscht werden dürfen und welche Aktionen durchgeführt werden, wenn der Löschvorgang abgeschlossen ist:
 
-- `CanHandleDropSession` –, während ein Drag-Vorgang ausgeführt wird und möglicherweise in der Anwendung gelöscht wird, bestimmt diese Methode, ob die gezogenen Daten gelöscht werden können.
-- `DropSessionDidUpdate` –, während der Zieh Vorgang ausgeführt wird, wird diese Methode aufgerufen, um zu bestimmen, welche Aktion beabsichtigt ist. Informationen aus der über gezogenen Tabellenansicht, der Zieh Sitzung und dem möglichen Indexpfad können verwendet werden, um das Verhalten und das visuelle Feedback zu ermitteln, die dem Benutzer bereitgestellt werden.
-- `PerformDrop` – wenn der Benutzer den Löschvorgang abschließt (durch das Heben des Fingers), extrahiert diese Methode die gezogenen Daten und ändert die Tabellenansicht, um die Daten in einer neuen Zeile (oder Zeilen) hinzuzufügen.
+- `CanHandleDropSession`– Während ein Drag-Vorgang ausgeführt wird und möglicherweise auf der Anwendung gelöscht wird, bestimmt diese Methode, ob die gezogenen Daten gelöscht werden können.
+- `DropSessionDidUpdate`– Während der Zieh Vorgang wird diese Methode aufgerufen, um zu bestimmen, welche Aktion beabsichtigt ist. Informationen aus der über gezogenen Tabellenansicht, der Zieh Sitzung und dem möglichen Indexpfad können verwendet werden, um das Verhalten und das visuelle Feedback zu ermitteln, die dem Benutzer bereitgestellt werden.
+- `PerformDrop`– Wenn der Benutzer den Löschvorgang abschließt (durch das Heben des Fingers), extrahiert diese Methode die gezogenen Daten und ändert die Tabellenansicht, um die Daten in einer neuen Zeile (oder Zeilen) hinzuzufügen.
 
-#### <a name="canhandledropsession"></a>CanHandleDropSession
+#### <a name="canhandledropsession"></a>Canlenker dropsession
 
-`CanHandleDropSession` gibt an, ob die Tabellen Sicht die gezogenen Daten akzeptieren kann. In diesem Code Ausschnitt wird `CanLoadObjects` verwendet, um zu bestätigen, dass diese Tabellenansicht Zeichen folgen Daten akzeptieren kann.
+`CanHandleDropSession`Gibt an, ob die Tabellen Sicht die gezogenen Daten akzeptieren kann. In diesem Code Ausschnitt `CanLoadObjects` wird verwendet, um zu bestätigen, dass diese Tabellenansicht Zeichen folgen Daten akzeptieren kann.
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -106,11 +106,11 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 }
 ```
 
-#### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
+#### <a name="dropsessiondidupdate"></a>Dropsessiondidupdate
 
-Die `DropSessionDidUpdate`-Methode wird wiederholt aufgerufen, während der Zieh Vorgang ausgeführt wird, um dem Benutzer visuelle Hinweise bereitzustellen.
+Die- `DropSessionDidUpdate` Methode wird wiederholt aufgerufen, während der Zieh Vorgang ausgeführt wird, um dem Benutzer visuelle Hinweise bereitzustellen.
 
-Im folgenden Code wird `HasActiveDrag` verwendet, um zu bestimmen, ob der Vorgang aus der aktuellen Tabellenansicht stammt. Wenn dies der Fall ist, dürfen nur einzelne Zeilen verschoben werden.
+Im folgenden Code `HasActiveDrag` wird verwendet, um zu bestimmen, ob der Vorgang aus der aktuellen Tabellenansicht stammt. Wenn dies der Fall ist, dürfen nur einzelne Zeilen verschoben werden.
 Wenn der Zieh Vorgang aus einer anderen Quelle erfolgt, wird ein Kopiervorgang angezeigt:
 
 ```csharp
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Der Drop-Vorgang kann eine der `Cancel`, `Move`oder `Copy`sein.
+Der Drop-Vorgang kann `Cancel` , oder sein `Move` `Copy` .
 
 Die Lösch Absicht kann das Einfügen einer neuen Zeile oder das Hinzufügen/Anfügen von Daten zu einer vorhandenen Zeile sein.
 
 #### <a name="performdrop"></a>Performdrop
 
-Die `PerformDrop`-Methode wird aufgerufen, wenn der Benutzer den Vorgang abschließt, und ändert die Tabellenansicht und die Datenquelle, um die gelöschten Daten widerzuspiegeln.
+Die `PerformDrop` -Methode wird aufgerufen, wenn der Benutzer den Vorgang abschließt, und ändert die Tabellenansicht und die Datenquelle, um die gelöschten Daten widerzuspiegeln.
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)

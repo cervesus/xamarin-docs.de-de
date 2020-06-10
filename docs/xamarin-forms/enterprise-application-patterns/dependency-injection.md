@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32beda28cb4db961abcbe74c26d38c70c8188a45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139229"
+Title: "Abhängigkeitsinjektion" Beschreibung: "in diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App eine Abhängigkeitsinjektion verwendet, um konkrete Typen aus dem Code, der von diesen Typen abhängt, zu entkoppeln."
+ms. Prod: xamarin ms. assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 11/04/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="dependency-injection"></a>Dependency Injection
 
 In der Regel wird ein Klassenkonstruktor aufgerufen, wenn ein Objekt instanziiert wird. alle Werte, die das Objekt benötigt, werden als Argumente an den Konstruktor übergeben. Dies ist ein Beispiel für eine Abhängigkeitsinjektion, insbesondere als *Konstruktorinjektion*bezeichnet. Die Abhängigkeiten, die das Objekt benötigt, werden in den Konstruktor eingefügt.
@@ -24,8 +10,6 @@ In der Regel wird ein Klassenkonstruktor aufgerufen, wenn ein Objekt instanziier
 Durch die Angabe von Abhängigkeiten als Schnittstellentypen ermöglicht die Abhängigkeitsinjektion das Entkoppeln der konkreten Typen aus dem Code, der von diesen Typen abhängig ist. Im Allgemeinen wird ein Container verwendet, der eine Liste von Registrierungen und Zuordnungen Zwischenschnitt stellen und abstrakten Typen sowie die konkreten Typen enthält, die diese Typen implementieren oder erweitern.
 
 Es gibt auch andere Arten von Abhängigkeitsinjektion, wie z. b. *Einschleusung von Eigenschaften*und *Methodenaufrufe*, aber Sie sind seltener sichtbar. Daher konzentriert sich dieses Kapitel ausschließlich auf die Durchführung der Konstruktorinjektion mit einem Abhängigkeits Injection-Container.
-
-<a name="introduction_to_dependency_injection" />
 
 ## <a name="introduction-to-dependency-injection"></a>Einführung in die Abhängigkeitsinjektion
 
@@ -118,8 +102,6 @@ _container.Register<ProfileViewModel>();
 
 Standardmäßig ist jede konkrete Klassen Registrierung als mehrere Instanzen konfiguriert, sodass jedes abhängige Objekt eine neue-Instanz empfängt. Wenn `ProfileViewModel` aufgelöst wird, wird eine neue-Instanz erstellt, und der Container fügt die erforderlichen Abhängigkeiten ein.
 
-<a name="resolution" />
-
 ## <a name="resolution"></a>Lösung
 
 Nachdem ein Typ registriert wurde, kann er aufgelöst oder als Abhängigkeit eingefügt werden. Wenn ein Typ aufgelöst wird und der Container eine neue Instanz erstellen muss, fügt er alle Abhängigkeiten in die Instanz ein.
@@ -136,7 +118,7 @@ Das folgende Codebeispiel zeigt, wie der `RequestProvider` Typ, der zuvor bei ti
 var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-In diesem Beispiel wird tinyioc aufgefordert, den konkreten Typ für den `IRequestProvider` Typ zusammen mit allen Abhängigkeiten aufzulösen. In der Regel `Resolve` wird die-Methode aufgerufen, wenn eine Instanz eines bestimmten Typs erforderlich ist. Informationen zum Steuern der Lebensdauer von aufgelösten Objekten finden Sie unter [Verwalten der Lebensdauer von aufgelösten Objekten](#managing_the_lifetime_of_resolved_objects).
+In diesem Beispiel wird tinyioc aufgefordert, den konkreten Typ für den `IRequestProvider` Typ zusammen mit allen Abhängigkeiten aufzulösen. In der Regel `Resolve` wird die-Methode aufgerufen, wenn eine Instanz eines bestimmten Typs erforderlich ist. Informationen zum Steuern der Lebensdauer von aufgelösten Objekten finden Sie unter [Verwalten der Lebensdauer von aufgelösten Objekten](#managing-the-lifetime-of-resolved-objects).
 
 Das folgende Codebeispiel zeigt, wie der eshoponcontainers-Mobile App Ansichts Modelltypen und deren Abhängigkeiten instanziiert:
 
@@ -144,12 +126,10 @@ Das folgende Codebeispiel zeigt, wie der eshoponcontainers-Mobile App Ansichts M
 var viewModel = _container.Resolve(viewModelType);
 ```
 
-In diesem Beispiel wird tinyioc aufgefordert, den Ansichts Modelltyp für ein angefordertes Ansichts Modell aufzulösen. Außerdem werden alle Abhängigkeiten vom Container aufgelöst. Beim Auflösen des `ProfileViewModel` Typs sind die aufzulösenden Abhängigkeiten ein `ISettingsService` -Objekt und ein- `IOrderService` Objekt. Da beim Registrieren der-Klasse und der-Klasse-Schnittstellen Registrierungen verwendet wurden `SettingsService` `OrderService` , gibt tinyioc Singleton-Instanzen für die-Klasse und die- `SettingsService` Klasse zurück `OrderService` und übergibt sie an den Konstruktor der- `ProfileViewModel` Klasse. Weitere Informationen darüber, wie die eshoponcontainers-Mobile App Ansichts Modelle erstellt und diese Ansichten zuordnet, finden Sie unter [Automatisches Erstellen eines Ansichts Modells mit einem Ansichts Modell-Locator](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
+In diesem Beispiel wird tinyioc aufgefordert, den Ansichts Modelltyp für ein angefordertes Ansichts Modell aufzulösen. Außerdem werden alle Abhängigkeiten vom Container aufgelöst. Beim Auflösen des `ProfileViewModel` Typs sind die aufzulösenden Abhängigkeiten ein `ISettingsService` -Objekt und ein- `IOrderService` Objekt. Da beim Registrieren der-Klasse und der-Klasse-Schnittstellen Registrierungen verwendet wurden `SettingsService` `OrderService` , gibt tinyioc Singleton-Instanzen für die-Klasse und die- `SettingsService` Klasse zurück `OrderService` und übergibt sie an den Konstruktor der- `ProfileViewModel` Klasse. Weitere Informationen darüber, wie die eshoponcontainers-Mobile App Ansichts Modelle erstellt und diese Ansichten zuordnet, finden Sie unter [Automatisches Erstellen eines Ansichts Modells mit einem Ansichts Modell-Locator](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator).
 
 > [!NOTE]
 > Das Registrieren und Auflösen von Typen mit einem Container wirkt sich negativ auf die Leistung aus, da der Container Reflektion zum Erstellen der einzelnen Typen verwendet, insbesondere dann, wenn Abhängigkeiten für jede Seitennavigation in der App rekonstruiert werden müssen. Wenn zahlreiche oder tiefe Abhängigkeiten vorhanden sind, können die Kosten für die Erstellung erheblich zunehmen.
-
-<a name="managing_the_lifetime_of_resolved_objects" />
 
 ## <a name="managing-the-lifetime-of-resolved-objects"></a>Verwalten der Lebensdauer von aufgelösten Objekten
 

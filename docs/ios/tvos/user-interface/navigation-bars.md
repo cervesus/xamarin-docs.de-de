@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: aa376385b000b83a41fdcdc7a4d3c8bf1553f0a7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0d5ec4bc10747a287def3fd9a83a703d2ec4b2a2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030476"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572376"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Arbeiten mit tvos-Navigationsleisten in xamarin
 
@@ -20,18 +20,18 @@ Navigationsleisten können am oberen Rand der Ansichten hinzugefügt werden, um 
 
 [![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
 
-Neben dem Titel (der in der Mitte angezeigt wird) können Navigationsleisten auf der linken und rechten Seite der Leiste eine oder mehrere Navigationsleisten Schaltflächen (`UIBarButtonItem`) enthalten.
+Neben dem Titel (der in der Mitte angezeigt wird) können Navigationsleisten `UIBarButtonItem` auf der linken und rechten Seite der Leiste eine oder mehrere Navigationsleisten Schaltflächen () enthalten.
 
 > [!IMPORTANT]
 > Navigationsleisten sind standardmäßig vollständig transparent. Um sicherzustellen, dass der Inhalt der Navigationsleiste über den darin befindlichen Inhalt lesbar bleibt, sollten Sie sorgfältig vorgehen. Wenn beispielsweise Inhalt in einer Tabellenansicht oder Auflistung darunter einen Bildlauf durchführt.
 
-<a name="Navigation-Bars-and-Storyboards" />
+<a name="Navigation-Bars-and-Storyboards"></a>
 
 ## <a name="navigation-bars-and-storyboards"></a>Navigationsleisten und Storyboards
 
 Die einfachste Möglichkeit, mit Navigationsleisten in einer xamarin. tvos-APP zu arbeiten, besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Doppelklicken Sie im **Lösungspad**auf `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab:
@@ -48,7 +48,7 @@ Die einfachste Möglichkeit, mit Navigationsleisten in einer xamarin. tvos-APP z
     [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
 1. Speichern Sie die Änderungen.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab:
@@ -68,9 +68,9 @@ Die einfachste Möglichkeit, mit Navigationsleisten in einer xamarin. tvos-APP z
 -----
 
 > [!IMPORTANT]
-> Obwohl es möglich ist, Ereignisse wie z. b. `TouchUpInside` einem Benutzeroberflächen Element (z. b. "UIButton") im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten beim Erstellen von Ereignis Handlern für tvos-Benutzeroberflächen Elemente immer das `Primary Action`-Ereignis verwenden.
+> Obwohl es möglich ist, Ereignisse wie z. b. einem Benutzeroberflächen Element (z. b. " `TouchUpInside` UIButton") im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten das-Ereignis immer verwenden, `Primary Action` Wenn Sie Ereignishandler für tvos-Benutzeroberflächen Elemente erstellen.
 
-Der folgende Code enthält ein Beispiel für Ereignishandler für drei verschiedene barbuttonitems: `ShowFirstHotel`, `ShowSecondHotel`und `ShowThirdHotel`. Wenn auf jedes Element geklickt wird, wird das Hintergrundbild `HotelImage` geändert. Dies wird in der Ansichts Controller Datei (Beispiel `ViewController.cs`) bearbeitet:
+Der folgende Code enthält ein Beispiel für Ereignishandler für drei verschiedene barbuttonitems: `ShowFirstHotel` , `ShowSecondHotel` und `ShowThirdHotel` . Wenn auf jedes Element geklickt wird, wird das Hintergrundbild `HotelImage` geändert. Dies wird in der Ansichts Controller Datei (Beispiel `ViewController.cs` Datei) bearbeitet:
 
 ```csharp
 using System;
@@ -121,11 +121,11 @@ namespace MySingleView
 }
 ```
 
-Solange die `Enabled`-Eigenschaft einer Schaltfläche `true` ist und Sie nicht von einem anderen Steuerelement oder einer anderen Ansicht abgedeckt wird, kann Sie mithilfe von Siri Remote als Element im Fokus erstellt werden.
+Solange die-Eigenschaft einer Schaltfläche `Enabled` ist `true` und Sie nicht von einem anderen Steuerelement oder einer anderen Ansicht abgedeckt wird, kann Sie mithilfe von Siri Remote als Element im Fokus erstellt werden.
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md).
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

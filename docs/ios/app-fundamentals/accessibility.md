@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011301"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574157"
 ---
 # <a name="accessibility-on-ios"></a>Barrierefreiheit unter IOS
 
@@ -21,11 +21,11 @@ Weitere Plattform-APIs finden Sie auf der Seite zu den Barrierefreiheits Seiten 
 
 ## <a name="describing-ui-elements"></a>Beschreiben von UI-Elementen
 
-IOS stellt die `AccessibilityLabel`-und `AccessibilityHint` Eigenschaften für Entwickler bereit, um beschreibenden Text hinzuzufügen, der von VoiceOver-Bildschirmlesern verwendet werden kann, um den Zugriff auf die Steuerelemente zu erleichtern. Steuerelemente können auch mit einem oder mehreren Merkmalen gekennzeichnet werden, die zusätzlichen Kontext in zugänglichen Modi bereitstellen.
+IOS stellt die `AccessibilityLabel` -und- `AccessibilityHint` Eigenschaften für Entwickler bereit, um beschreibenden Text hinzuzufügen, der vom VoiceOver-Bildschirm Reader verwendet werden kann, um den Zugriff auf die Steuerelemente zu erleichtern Steuerelemente können auch mit einem oder mehreren Merkmalen gekennzeichnet werden, die zusätzlichen Kontext in zugänglichen Modi bereitstellen.
 
 Einige Steuerelemente müssen möglicherweise nicht zugänglich sein (z. b. eine Bezeichnung in einer Texteingabe oder ein Bild, das rein dekorativ ist) – das `IsAccessibilityElement` wird bereitgestellt, um die Barrierefreiheit in diesen Fällen zu deaktivieren.
 
-**UI-Designer**
+**Benutzeroberflächen-Designer**
 
 Die **Eigenschaftenpad** enthält einen Abschnitt zur Barrierefreiheit, mit dem diese Einstellungen bearbeitet werden können, wenn ein Steuerelement im IOS-Benutzeroberflächen-Designer ausgewählt wird:
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>Was ist accessibilityidentifier?
 
-Der `AccessibilityIdentifier` wird zum Festlegen eines eindeutigen Schlüssels verwendet, der verwendet werden kann, um über die UIAutomation-API auf Benutzeroberflächen Elemente zu verweisen.
+`AccessibilityIdentifier`Wird verwendet, um einen eindeutigen Schlüssel festzulegen, der zum Verweisen auf Benutzeroberflächen Elemente über die UIAutomation-API verwendet werden kann.
 
 Der Wert von `AccessibilityIdentifier` wird niemals gesprochen oder für den Benutzer angezeigt.
 
-<a name="postnotification" />
+<a name="postnotification"></a>
 
 ## <a name="postnotification"></a>Postnotification
 
-Mit der `UIAccessibility.PostNotification`-Methode können Ereignisse außerhalb der direkten Interaktion an den Benutzer ausgelöst werden (z. b. bei der Interaktion mit einem bestimmten Steuerelement).
+Mit der- `UIAccessibility.PostNotification` Methode können Ereignisse außerhalb der direkten Interaktion an den Benutzer ausgelöst werden (z. b. Wenn Sie mit einem bestimmten Steuerelement interagieren).
 
 ### <a name="announcement"></a>Ankündigung
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>Layoutchanged
 
-Die `LayoutChanged` Ankündigung wird verwendet, wenn das Bildschirmlayout verwendet wird:
+Die `LayoutChanged` Ankündigung wird verwendet, wenn das Bildschirmlayout:
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -80,7 +80,7 @@ Barrierefreiheits Eigenschaften wie die Bezeichnung und der Hinweis können gena
 
 **Mainstoryboard. Strings**
 
-Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Übersetzungen für Barrierefreiheits Eigenschaften auf die gleiche Weise wie andere Eigenschaften bereitstellen. Im folgenden Beispiel verfügt ein `UITextField` über eine **Lokalisierungs-ID** `Pqa-aa-ury` und zwei Barrierefreiheits Eigenschaften, die auf Spanisch festgelegt werden:
+Wenn die Benutzeroberfläche in einem Storyboard angeordnet ist, können Sie Übersetzungen für Barrierefreiheits Eigenschaften auf die gleiche Weise wie andere Eigenschaften bereitstellen. Im folgenden Beispiel `UITextField` verfügt ein über eine **Lokalisierungs-ID** von `Pqa-aa-ury` und zwei Barrierefreiheits Eigenschaften, die auf Spanisch festgelegt werden:
 
 ```csharp
 /* Accessibility */
@@ -100,7 +100,7 @@ Alternativ können die Übersetzungen der **lokalisierbaren Strings** -Datei im 
 "Provide more information" = "escriba más información";
 ```
 
-Diese Übersetzungen können in C# über die `LocalizedString`-Methode verwendet werden:
+Diese Übersetzungen können in c# über die- `LocalizedString` Methode verwendet werden:
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -109,7 +109,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 Weitere Informationen zum Lokalisieren von Inhalten finden Sie im [IOS-Lokalisierungs Handbuch](~/ios/app-fundamentals/localization/index.md) .
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-accessibility"></a>Testen der Barrierefreiheit
 

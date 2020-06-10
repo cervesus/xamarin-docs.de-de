@@ -1,34 +1,18 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie Sie eine IOS-spezifische Darstellung ohne einen Xamarin.Forms benutzerdefinierten Renderer festlegen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: eb44b7d756fee4fa4f452b79292effb45ab98154
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138514"
+Title: "Hinzufügen von IOS-spezifischer Formatierung" Beschreibung: "in diesem Artikel wird erläutert, wie Sie eine IOS-spezifische Darstellung ohne einen Xamarin.Forms benutzerdefinierten Renderer festlegen."
+ms. Prod: xamarin ms. assetid: CE50E207-D092-4D88-8439-1B51F178E7ED ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/29/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-ios-specific-formatting"></a>Hinzufügen einer IOS-spezifischen Formatierung
 
 Eine Möglichkeit zum Festlegen einer IOS-spezifischen Formatierung besteht darin, einen [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) für ein Steuerelement zu erstellen und plattformspezifische Stile und Farben für jede Plattform festzulegen.
 
 Weitere Optionen zum Steuern der Darstellung Ihrer Xamarin.Forms IOS-APP sind:
 
-- Konfigurieren von Anzeigeoptionen in " [ **Info. plist** "](#info-plist)
-- Festlegen von Steuerelement Stilen über die [ `UIAppearance` API](#uiappearance)
+- Konfigurieren von Anzeigeoptionen in " [ **Info. plist** "](#customizing-infoplist)
+- Festlegen von Steuerelement Stilen über die [ `UIAppearance` API](#uiappearance-api)
 
 Diese Alternativen werden im folgenden erläutert.
-
-<a name="info-plist"/>
 
 ## <a name="customizing-infoplist"></a>Anpassen von "Info. plist"
 
@@ -62,8 +46,6 @@ oder bearbeiten Sie die entsprechende Datei " **Info. plist** " direkt, um Folge
 Wenn die App nun ausgeführt wird, ist die Navigationsleiste grün, und der Text ist weiß (aufgrund der Xamarin.Forms Formatierung), *und* der Status leisten Text ist dank der IOS-spezifischen Konfiguration ebenfalls weiß:
 
 ![](theme-images/status-white-sml.png "iOS Theming")
-
-<a name="uiappearance"/>
 
 ## <a name="uiappearance-api"></a>Uiappearance-API
 

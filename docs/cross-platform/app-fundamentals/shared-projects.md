@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016693"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571095"
 ---
 # <a name="shared-projects-code-sharing"></a>Freigegebene Projekte Code Freigabe
 
@@ -35,7 +35,7 @@ Ein frei gegebenes Projekt wird nicht selbst kompiliert, sondern ist ausschließ
 
 Beachten Sie, dass Android-Anwendungsprojekte nicht auf andere Android-Anwendungsprojekte verweisen können. beispielsweise kann ein Android-Komponenten Testprojekt nicht auf ein Android-Anwendungsprojekt verweisen. Weitere Informationen zu dieser Einschränkung finden Sie in dieser [Forumsdiskussion](https://forums.xamarin.com/discussion/comment/98092/).
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Exemplarische Vorgehensweise für Visual Studio für Mac
 
@@ -43,7 +43,7 @@ In diesem Abschnitt werden die Schritte zum Erstellen und Verwenden eines freige
 
 ## <a name="creating-a-shared-project"></a>Erstellen eines freigegebenen Projekts
 
-Navigieren Sie zum Erstellen eines neuen freigegebenen Projekts zu **Datei > neue Projekt Mappe...** (oder klicken Sie mit der rechten Maustaste auf eine vorhandene Projekt Mappe, und wählen Sie **Hinzufügen > Neues Projekt hinzufügen**aus.
+Navigieren Sie zum Erstellen eines neuen freigegebenen Projekts zu **Datei > neue Projekt Mappe...** (oder klicken Sie mit der rechten Maustaste auf eine vorhandene Projekt Mappe, und wählen Sie **Hinzufügen > neues Projekt hinzufügen**aus.
 
 [![Neues frei gegebenes Projekt](shared-projects-images/xs-newsolution-sml.png "Neue Projektmappe")](shared-projects-images/xs-newsolution.png#lightbox)
 
@@ -69,7 +69,7 @@ Der Bildschirm **Optionen** wird unten angezeigt: der Projekt **Name** und der *
 
 ![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio: Exemplarische Vorgehensweise
 
@@ -77,7 +77,7 @@ In diesem Abschnitt wird erläutert, wie Sie ein frei gegebenes Projekt mithilfe
 
 ### <a name="creating-a-shared-project"></a>Erstellen eines freigegebenen Projekts
 
-Um ein neues frei gegebenes Projekt zu erstellen, navigieren Sie zu **Datei**  > **Neues**  > **Projekt**.
+Um ein neues frei gegebenes Projekt zu erstellen, navigieren Sie zu **Datei**  >  **Neues**  >  **Projekt**.
 
 Geben Sie in Visual Studio 2019 im Suchfeld auf der Seite **Neues Projekt erstellen** den Wert frei **gegeben** ein. Wählen Sie die Vorlage für frei **gegebene Projekte** und dann **weiter**aus. Geben Sie einen Namen für das Projekt ein, und wählen Sie dann **Erstellen**aus.
 
@@ -85,7 +85,7 @@ Wählen Sie in Visual Studio 2017 die Vorlage für das frei **gegebene Projekt**
 
 ![Vorlage für freigegebene Projekte in Visual Studio 2017](shared-projects-images/vs-newsolution.png)
 
-Sie können einer vorhandenen Projekt Mappe auch ein neues frei gegebenes Projekt hinzufügen, indem Sie mit der rechten Maustaste auf die Projektmappendatei klicken und **> Neues Projekt hinzufügen**auswählen Ein neues frei gegebenes Projekt sieht wie unten dargestellt aus (nachdem eine Klassendatei hinzugefügt wurde). Beachten Sie, dass es keine Verweise oder Komponenten Knoten gibt. Diese werden für freigegebene Projekte nicht unterstützt.
+Sie können einer vorhandenen Projekt Mappe auch ein neues frei gegebenes Projekt hinzufügen, indem Sie mit der rechten Maustaste auf die Projektmappendatei klicken und **> neues Projekt hinzufügen**auswählen Ein neues frei gegebenes Projekt sieht wie unten dargestellt aus (nachdem eine Klassendatei hinzugefügt wurde). Beachten Sie, dass es keine Verweise oder Komponenten Knoten gibt. Diese werden für freigegebene Projekte nicht unterstützt.
 
 ![](shared-projects-images/vs-empty.png "Empty Shared Project")
 
@@ -107,19 +107,19 @@ Der **Eigenschaften** Bereich wird unten angezeigt. der Stamm **Namespace** ist 
 
 -----
 
-<a name="Shared_Project_Example"/>
+<a name="Shared_Project_Example"></a>
 
 ## <a name="shared-project-example"></a>Beispiel für einen gemeinsam genutzten
 
-Das [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) -Beispiel verwendet ein frei gegebenes Projekt, das sowohl von der IOS-, Android-als auch der Windows Phone-Anwendung verwendet wird. Sowohl der `SQLite.cs` als auch `TaskRepository.cs` Quell Code Dateien verwenden Compilerdirektiven (z. b. `#if __ANDROID__`), um für jede der Anwendungen, die auf Sie verweisen, eine andere Ausgabe zu liefern.
+Das [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) -Beispiel verwendet ein frei gegebenes Projekt, das sowohl von der IOS-, Android-als auch der Windows Phone-Anwendung verwendet wird. Sowohl die `SQLite.cs` -als auch die- `TaskRepository.cs` Quell Code Dateien nutzen Compilerdirektiven (z.b. `#if __ANDROID__`), um für jede der Anwendungen, die auf Sie verweisen, eine andere Ausgabe zu liefern.
 
 Die gesamte Projektmappenstruktur ist unten dargestellt (in Visual Studio für Mac bzw. in Visual Studio):
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 ![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
 

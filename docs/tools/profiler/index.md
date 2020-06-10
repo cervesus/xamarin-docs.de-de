@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: cb109055b476fee6d34041940c682187074f4e7d
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: b8b3ca4892e849f9bf08ca2910798c4b2d0f9f6f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295442"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573473"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -55,15 +55,15 @@ Der Xamarin Profiler stellt Entwicklern eine Möglichkeit zum Erstellen von Prof
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Derzeit können die Xamarin Profiler verwendet werden, um xamarin. IOS-, xamarin. Android-und xamarin. Mac-Anwendungen auf dem Mac (über Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE und kann daher nicht nur über Visual Studio für Mac gestartet werden, sondern kann als eigenständige Anwendung verwendet werden, um exe-und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
+Derzeit können die Xamarin Profiler verwendet werden, um xamarin. IOS-, xamarin. Android-und xamarin. Mac-Anwendungen auf dem Mac (über Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE und kann daher nicht nur über Visual Studio für Mac gestartet werden, sondern kann als eigenständige Anwendung verwendet werden, um exe-Dateien und Dateien zu überprüfen, `.mlpd` die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Derzeit kann der Xamarin Profiler verwendet werden, um xamarin. Android-Apps unter Windows (über Visual Studio und Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE. Daher kann er zusätzlich zum Starten von Visual Studio als eigenständige Anwendung verwendet werden, um exe-und `.mlpd` Dateien zu überprüfen, die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
+Derzeit kann der Xamarin Profiler verwendet werden, um xamarin. Android-Apps unter Windows (über Visual Studio und Visual Studio für Mac) zu testen. Der Profiler ist ein separater Prozess von der IDE. Daher kann er zusätzlich zum Starten von Visual Studio als eigenständige Anwendung verwendet werden, um exe-Dateien und Dateien zu überprüfen, `.mlpd` die aus dem [Mono Log Profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)erstellt wurden.
 
 -----
 
-<a name="Profiler_Support" />
+<a name="Profiler_Support"></a>
 
 ## <a name="profiler-support"></a>Profiler-Unterstützung
 
@@ -100,7 +100,7 @@ Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerst
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-  **Erstellen > IOS-debug> Aktivieren der Profilerstellung**
+  **Erstellen > IOS-Debug> aktivieren der Profilerstellung**
 
   ![Dialog Feld für IOS-Optionen in Visual Studio für Mac](images/ios-options-mac.png)
 
@@ -116,13 +116,13 @@ Bevor Sie ein Profil für Ihre APP erstellen können, müssen Sie die Profilerst
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-  **Erstellen > Android debug-> Entwickler Instrumentation aktivieren**
+  **Erstellen > Android Debug-> Entwickler Instrumentation aktivieren**
 
   ![Dialog Feld für Android-Optionen in Visual Studio für Mac](images/android-project-options.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  **Erstellen > Android debug-> Entwickler Instrumentation aktivieren**
+  **Erstellen > Android Debug-> Entwickler Instrumentation aktivieren**
 
   ![Dialog Feld für Android-Optionen in Visual Studio für Mac](images/android-project-options-vs-sml.png)
 
@@ -146,7 +146,7 @@ Der Xamarin Profiler kann von Ihrer IDE aus gestartet werden, wenn Sie die Profi
 #### <a name="launching-from-visual-studio"></a>Starten von Visual Studio aus
 
 1. Stellen Sie zunächst sicher, dass die Anwendung in Visual Studio geladen ist, und wählen Sie die (standardmäßige) Debugkonfiguration aus, wie oben angegeben.
-2. Navigieren Sie zum **analysieren > Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie in der folgenden Abbildung veranschaulicht:
+2. Navigieren Sie zum **Analysieren > Xamarin Profiler** in Visual Studio, um den Profiler zu öffnen, wie in der folgenden Abbildung veranschaulicht:
 
 ![Starten des Profilers aus Visual Studio](images/start-profiling-vs.png)
 
@@ -160,7 +160,7 @@ Der Profiler kann verwendet werden, um den Arbeitsspeicher und die Leistung zu m
 
 #### <a name="saving-and-loading-profiler-sessions"></a>Speichern und Laden von Profiler-Sitzungen
 
-Um eine Profil Erstellungs Sitzung zu einem beliebigen Zeitpunkt zu speichern, wählen Sie in der Profiler-Menüleiste **Datei > Speichern unter...** aus. Dadurch wird die Datei im _MLPD_ -Format gespeichert, ein spezielles, stark komprimiertes Format für die Profilerstellung von Daten.
+Um eine Profil Erstellungs Sitzung zu einem beliebigen Zeitpunkt zu speichern, wählen Sie in der Profiler-Menüleiste **Datei > speichern unter...** aus. Dadurch wird die Datei im _MLPD_ -Format gespeichert, ein spezielles, stark komprimiertes Format für die Profilerstellung von Daten.
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -222,11 +222,11 @@ Es gibt unterschiedliche Datenansichten im Zuordnungs Instrument, mit denen Entw
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-  [Registerkarte ![Belegungen](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [![Registerkarte "Zuweisungen](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [Registerkarte ![Belegungen](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [![Registerkarte "Zuweisungen](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -238,11 +238,11 @@ Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-  [Registerkarte "![Registerkarte"](images/allocations2.png)](images/allocations2.png#lightbox) 
+  [![Registerkarte "Callcenter"](images/allocations2.png)](images/allocations2.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [Registerkarte "![Registerkarte"](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
+  [![Registerkarte "Callcenter"](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -250,11 +250,11 @@ Die inspektoransicht für Zuordnungen bietet Optionen zum Filtern und Gruppieren
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-  [Registerkarte "!["](images/allocations4.png)](images/allocations4.png#lightbox) 
+  [![Momentaufnahmen](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [Registerkarte "!["](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
+  [![Momentaufnahmen](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -268,13 +268,13 @@ Das Zeichnungs Diagramm zeigt, wie im folgenden Screenshot gezeigt, die Anzahl d
 
 [![Zeit-profilerinstrument](images/time1.png)](images/time1.png#lightbox) 
 
-[![Time Profiler Instrumentation – Samples List](images/time3.png)](images/time3.png#lightbox) 
+[![Zeit Profil Erstellungs Instrument – Beispielliste](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![Zeit-profilerinstrument](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Time Profiler Instrumentation – Samples List](images/time3-vs.png)](images/time3-vs.png#lightbox) 
+[![Zeit Profil Erstellungs Instrument – Beispielliste](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -282,17 +282,17 @@ Das Zeichnungs Diagramm zeigt, wie im folgenden Screenshot gezeigt, die Anzahl d
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-  [![Zeit-Profiler-Instrumentations Instrument – Aufruf Struktur](images/time2.png)](images/time2.png#lightbox) 
+  [![Zeit Profil Erstellungs Instrument – Aufruf Struktur](images/time2.png)](images/time2.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![Zeit-Profiler-Instrumentations Instrument – Aufruf Struktur](images/time2-vs.png)](images/time2-vs.png#lightbox) 
+  [![Zeit Profil Erstellungs Instrument – Aufruf Struktur](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
 -----
 
 ### <a name="cycles"></a>Cycles
 
-Durch die Verwendung von C# und F# verwaltetem Code kann es ziemlich üblich sein, und leider ist es recht einfach, Verweise auf Objekte zu erstellen, die nie verworfen werden. Mit diesem Instrument können Sie diese Objekte lokalisieren und die Zyklen anzeigen, auf die in der Anwendung verwiesen wird.
+Durch die Verwendung von verwaltetem Code in c# und F # kann es recht häufig vorkommen, und leider ist es recht einfach, Verweise auf Objekte zu erstellen, die nie verworfen werden. Mit diesem Instrument können Sie diese Objekte lokalisieren und die Zyklen anzeigen, auf die in der Anwendung verwiesen wird.
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -312,11 +312,11 @@ Wenn Sie ein Profil für eine APP mit einer anderen Konfiguration erstellen, wir
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[Dialog Feld "Fehler beim ![](images/image001.png)](images/image001.png#lightbox) 
+[![Profil Erstellungs Fehler](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[Dialog Feld "Fehler beim ![](images/image1vs.png)](images/image1vs.png#lightbox) 
+[![Profil Erstellungs Fehler](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 

@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0957220ace9facee590a76953de6dd52be438582
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022019"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570842"
 ---
 # <a name="labels-in-xamarinios"></a>Bezeichnungen in xamarin. IOS
 
-Das `UILabel`-Steuerelement wird zum Anzeigen von Schreib geschütztem und Schreib geschütztem Text verwendet.
+Das `UILabel` -Steuerelement wird zum Anzeigen von einzeiligen und mehrzeiligen schreibgeschützten Text verwendet.
 
 ## <a name="implementing-a-label"></a>Implementieren einer Bezeichnung
 
-Eine neue Bezeichnung wird erstellt, indem ein [`UILabel`](xref:UIKit.UILabel)instanziiert wird:
+Eine neue Bezeichnung wird erstellt, indem eine instanziiert wird [`UILabel`](xref:UIKit.UILabel) :
 
 ```csharp
 UILabel label = new UILabel();
@@ -50,7 +50,7 @@ Die folgenden Eigenschaften können im eigenschaftenpad angepasst werden:
 
 Informationen zum Verwenden der Zeilenumbrüche in ios finden Sie in der Anleitung zum [kürzen und](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) umschließen von Text.
 
-<a name="Formatting_Text_and_Label"/>
+<a name="Formatting_Text_and_Label"></a>
 
 ## <a name="formatting-text-and-label"></a>Formatieren von Text und Bezeichnung
 
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Weitere Informationen zum Formatieren von Text mithilfe `NSAttributedString` finden Sie in der [Style-Text](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) -Anleitung.
+Weitere Informationen zum Formatieren von Text mithilfe von `NSAttributedString` finden Sie im [Stil Text](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) Rezept.
 
-Standardmäßig ist für Bezeichnungen der `Enabled` auf true festgelegt, aber es ist möglich, ihn auf "deaktiviert" festzulegen, damit der Benutzer einen Hinweis erhält, dass ein bestimmtes Steuerelement deaktiviert ist:
+Standardmäßig ist für Bezeichnungen der Wert `Enabled` true festgelegt, aber es ist möglich, ihn auf deaktiviert festzulegen, um dem Benutzer einen Hinweis zu bieten, dass ein bestimmtes Steuerelement deaktiviert ist:
 
 ```csharp
 label.Enabled = false;

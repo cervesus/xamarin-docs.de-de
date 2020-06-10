@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: 6b02a0f8476cf47ca6df279653095fe0845b36c9
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e5cbbc10f189abb6d0d0b2ef99b50ae53d1103c2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306062"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572285"
 ---
 # <a name="ios-designer-basics"></a>IOS Designer-Grundlagen
 
@@ -26,7 +26,7 @@ Der IOS-Designer ist in Visual Studio für Mac und Visual Studio 2017 und höher
 
 In diesem Leitfaden wird davon ausgegangen, dass Sie sich mit den Inhalten vertraut machen, die in den [Leitfäden zu](~/ios/get-started/index.md)
 
-<a name="how-it-works" />
+<a name="how-it-works"></a>
 
 ## <a name="how-the-ios-designer-works"></a>Funktionsweise des IOS-Designers
 
@@ -34,7 +34,7 @@ In diesem Abschnitt wird beschrieben, wie der IOS-Designer das Erstellen einer B
 
 Der IOS-Designer ermöglicht es Entwicklern, die Benutzeroberfläche einer Anwendung visuell zu entwerfen. Wie im Leitfaden [Introduction to Storyboards (Einführung in Storyboards](~/ios/user-interface/storyboards/index.md) ) erläutert, beschreibt ein Storyboard die Bildschirme (Ansichts Controller), aus denen eine APP besteht, die Schnittstellen Elemente (Ansichten), die auf diesen Ansichts Controllern platziert werden, und den gesamten Navigations Fluss der app. 
 
-Ein Ansichts Controller besteht aus zwei Teilen: einer visuellen Darstellung im IOS-Designer und C# einer zugeordneten Klasse:
+Ein Ansichts Controller besteht aus zwei Teilen: einer visuellen Darstellung im IOS-Designer und einer zugeordneten c#-Klasse:
 
 <!-- markdownlint-disable MD001 -->
 
@@ -84,21 +84,21 @@ Nachdem die Schaltfläche nun über einen Namen verfügt, können Sie im Code da
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Im **Lösungspad**wird durch Navigieren zu **ViewController.cs** und durch Klicken auf den Offenlegungs Indikator angezeigt, dass die `ViewController` Klassendefinition des Ansichts Controllers zwei Dateien umfasst, die jeweils eine [partielle Klassen](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition enthalten:
+Im **Lösungspad**wird durch Navigieren zu **ViewController.cs** und durch Klicken auf den Offenlegungs Indikator angezeigt, dass die Klassendefinition des Ansichts Controllers `ViewController` zwei Dateien umfasst, die jeweils eine [partielle Klassen](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition enthalten:
 
 [![Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Im **Projektmappen-Explorer**wird durch Navigieren zu **ViewController.cs** und durch Klicken auf den Offenlegungs Indikator angezeigt, dass die `ViewController` Klassendefinition des Ansichts Controllers zwei Dateien umfasst, die jeweils eine [partielle Klassen](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition enthalten:
+Im **Projektmappen-Explorer**wird durch Navigieren zu **ViewController.cs** und durch Klicken auf den Offenlegungs Indikator angezeigt, dass die Klassendefinition des Ansichts Controllers `ViewController` zwei Dateien umfasst, die jeweils eine [partielle Klassen](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) Definition enthalten:
 
 [![Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "Die beiden Dateien, die die ViewController-Klasse bilden: ViewController.cs und ViewController.Designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
-- **ViewController.cs** sollte mit benutzerdefiniertem Code aufgefüllt werden, der mit der `ViewController`-Klasse verknüpft ist. In dieser Datei kann die `ViewController`-Klasse auf verschiedene IOS-Ansichts Controller-Lebenszyklus Methoden reagieren, die Benutzeroberfläche anpassen und auf Benutzereingaben, wie z. b. Schaltflächen tippen, reagieren.
+- **ViewController.cs** sollte mit benutzerdefiniertem Code aufgefüllt werden, der mit der-Klasse verknüpft ist `ViewController` . In dieser Datei kann die `ViewController` Klasse auf verschiedene IOS-Ansichts Controller-Lebenszyklus Methoden reagieren, die Benutzeroberfläche anpassen und auf Benutzereingaben, wie z. b. Schaltflächen tippen, reagieren.
 
-- **ViewController.Designer.cs** ist eine generierte Datei, die vom IOS-Designer erstellt wurde, um die visuell erstellte Schnittstelle dem Code zuzuordnen. Da Änderungen an dieser Datei überschrieben werden, sollte Sie nicht geändert werden. Eigenschafts Deklarationen in dieser Datei ermöglichen es dem Code in der `ViewController`-Klasse **, über die**im IOS-Designer eingerichteten Steuerelemente auf die Steuerelemente zuzugreifen. Öffnen **ViewController.Designer.cs** zeigt den folgenden Code:
+- **ViewController.Designer.cs** ist eine generierte Datei, die vom IOS-Designer erstellt wurde, um die visuell erstellte Schnittstelle dem Code zuzuordnen. Da Änderungen an dieser Datei überschrieben werden, sollte Sie nicht geändert werden. Mithilfe von Eigenschafts Deklarationen in dieser Datei kann der Code in der- `ViewController` Klasse auf **Name**die im IOS-Designer eingerichteten Steuerelemente zugreifen. Öffnen **ViewController.Designer.cs** zeigt den folgenden Code:
 
 ```csharp
 namespace Designer
@@ -121,7 +121,7 @@ namespace Designer
 }
 ```
 
-Die `SubmitButton`-Eigenschafts Deklaration verbindet die gesamte `ViewController`-Klasse, nicht nur die **ViewController.Designer.cs** -Datei – mit der im Storyboard definierten Schaltfläche. Da **ViewController.cs** einen Teil der `ViewController`-Klasse definiert, hat er Zugriff auf `SubmitButton`.
+Die `SubmitButton` Eigenschaften Deklaration verbindet die gesamte `ViewController` Klasse, nicht nur die **ViewController.Designer.cs** -Datei – mit der im Storyboard definierten Schaltfläche. Da **ViewController.cs** einen Teil der `ViewController` Klasse definiert, hat Sie Zugriff auf `SubmitButton` .
 
 Der folgende Screenshot zeigt, dass IntelliSense jetzt den `SubmitButton` Verweis in **ViewController.cs**erkennt:
 
@@ -159,7 +159,7 @@ Die meisten xamarin. IOS-Projekte, die mit Visual Studio erstellt wurden, enthal
 
 -----
 
-<a name="iOS_Designer_features"/>
+<a name="iOS_Designer_features"></a>
 
 ### <a name="ios-designer-features"></a>IOS-Designer-Funktionen
 
@@ -241,11 +241,11 @@ In früheren Versionen des IOS-Designers wurde durch Klicken auf eine bereits au
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vsmac.png "Schaltfläche Frame Bearbeitungsmodus")
+![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vsmac.png "Schaltfläche "Frame Bearbeitungsmodus"")
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vs.png "Schaltfläche Frame Bearbeitungsmodus")
+![Schaltfläche "Frame Bearbeitungsmodus"](introduction-images/12a-frameeditingmode-vs.png "Schaltfläche "Frame Bearbeitungsmodus"")
 
 -----
 
@@ -300,8 +300,8 @@ Beachten Sie, dass beim Auswählen eines Geräts und einer Ausrichtung nur die V
 
 Wenn [Größenklassen](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) [aktiviert](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)sind, wird die Schaltfläche zum **Bearbeiten von Merkmalen** in der erweiterten unteren Symbolleiste angezeigt.  Wenn Sie auf die Schaltfläche " **Merkmale bearbeiten** " klicken, werden Optionen zum Erstellen einer Schnittstellen Variation basierend auf der Größenklasse angezeigt, die vom ausgewählten Gerät und der ausgewählten Ausrichtung Betrachten Sie die folgenden Beispiele:
 
-- Wenn **iPhone SE** / Hochformat ausgewählt **ist, stellt**das popover Optionen zum Erstellen einer Schnittstellen Variation für die Klasse Compact Width, Regular Height size bereit. 
-- Wenn **iPad pro 9,7 "**  / **Landscape** / **Vollbild** ausgewählt ist, stellt das popover Optionen zum Erstellen einer Schnittstellen Variation für die reguläre Breite, reguläre Height size-Klasse bereit.
+- Wenn **iPhone SE**-  /  **Portrait**Hochformat ausgewählt ist, stellt das popover Optionen zum Erstellen einer Schnittstellen Variation für die Klasse Compact Width, Regular Height size bereit. 
+- Wenn **iPad pro 9,7 "**  /  **Landscape**  /  **Full Screen** " ausgewählt ist, stellt das popover Optionen zum Erstellen einer Schnittstellen Variation für die reguläre Breite, reguläre Height size-Klasse bereit.
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
@@ -406,13 +406,13 @@ Viele Eigenschaften im **Eigenschaften Fenster** zeigen keinen Wert oder einen S
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Zum Angeben von benutzerdefinierten Ereignis Handlern für verschiedene Ereignisse verwenden Sie die Registerkarte **Ereignisse** der **Eigenschaftenpad**. Im folgenden Screenshot behandelt eine `HandleClick` Methode z. b. den Fingerabdruck der Schaltfläche **innerhalb** des Ereignisses:
+Zum Angeben von benutzerdefinierten Ereignis Handlern für verschiedene Ereignisse verwenden Sie die Registerkarte **Ereignisse** der **Eigenschaftenpad**. Im folgenden Screenshot behandelt eine Methode z. b. den Fingerabdruck `HandleClick` der Schaltfläche **innerhalb** des Ereignisses:
 
 [![Der Eigenschaftenpad, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.](introduction-images/19-buttonpropertiespadevents-vsmac.png "Der Eigenschaftenpad, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Zum Angeben von benutzerdefinierten Ereignis Handlern für verschiedene Ereignisse verwenden Sie die Registerkarte **Ereignisse** des **Fensters Eigenschaften**. Im folgenden Screenshot behandelt eine `HandleClick` Methode z. b. den Fingerabdruck der Schaltfläche **innerhalb** des Ereignisses:
+Zum Angeben von benutzerdefinierten Ereignis Handlern für verschiedene Ereignisse verwenden Sie die Registerkarte **Ereignisse** des **Fensters Eigenschaften**. Im folgenden Screenshot behandelt eine Methode z. b. den Fingerabdruck `HandleClick` der Schaltfläche **innerhalb** des Ereignisses:
 
 [![Das Eigenschaften Fenster, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.](introduction-images/19-buttonpropertieswindowevents-vs.png "Das Eigenschaften Fenster, bei dem ein Ereignishandler für eine Schaltfläche festgelegt ist.")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 

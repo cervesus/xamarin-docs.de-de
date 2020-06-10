@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 522f90c21c46eaf75a730108cc46fc64769795d7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 015f0732e4d8cdf771af3e1d0b3cc3e31b6e806c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032664"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572258"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchos-Tabellen Steuerelemente in xamarin
 
-Das watchos `WKInterfaceTable`-Steuerelement ist viel einfacher als das zugehörige IOS-Pendant, führt jedoch eine ähnliche Rolle aus. Er erstellt eine scrollliste mit Zeilen, die benutzerdefinierte Layouts aufweisen können und auf Berührungs Ereignisse reagieren.
+Das watchos- `WKInterfaceTable` Steuerelement ist viel einfacher als das zugehörige IOS-Gegenstück, führt jedoch eine ähnliche Rolle aus. Er erstellt eine scrollliste mit Zeilen, die benutzerdefinierte Layouts aufweisen können und auf Berührungs Ereignisse reagieren.
 
 ![](table-images/table-list-sml.png "Liste der Überwachungs Tabellen") ![](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
@@ -37,11 +37,11 @@ Um die- **Klasse** für den Zeilen Controller festzulegen, wählen Sie die Zeile
 
 [![](table-images/add-row-controller-sml.png "Entering a class name in the Properties pad")](table-images/add-row-controller.png#lightbox)
 
-Nachdem die-Klasse für den Controller der Zeile festgelegt wurde, erstellt die IDE eine C# entsprechende-Datei im Projekt. Ziehen Sie Steuerelemente (z. b. Bezeichnungen) auf die Zeile, und geben Sie Ihnen Namen, damit Sie im Code auf Sie verweisen können.
+Nachdem die-Klasse für den Controller der Zeile festgelegt wurde, erstellt die IDE eine entsprechende c#-Datei im Projekt. Ziehen Sie Steuerelemente (z. b. Bezeichnungen) auf die Zeile, und geben Sie Ihnen Namen, damit Sie im Code auf Sie verweisen können.
 
 ## <a name="create-and-populate-rows"></a>Erstellen und Auffüllen von Zeilen
 
-`SetNumberOfRows` erstellt die Zeilen Controller Klassen für jede Zeile, wobei die `Identifier` verwendet wird, um die richtige auszuwählen. Wenn Sie dem Zeilen Controller eine benutzerdefinierte `Identifier` gegeben haben, ändern Sie den **Standard** Wert im Code Ausschnitt unten in den Bezeichner, den Sie verwendet haben. Die `RowController` *für jede Zeile* wird erstellt, wenn `SetNumberOfRows` aufgerufen wird und die Tabelle angezeigt wird.
+`SetNumberOfRows`erstellt die Zeilen Controller Klassen für jede Zeile unter Verwendung von, `Identifier` um die richtige auszuwählen. Wenn Sie Ihren Zeilen Controller als Benutzer definiert angegeben `Identifier` haben, ändern Sie den **Standard** Wert im Code Ausschnitt unten in den Bezeichner, den Sie verwendet haben. Die `RowController` *für jede Zeile* wird erstellt, wenn `SetNumberOfRows` aufgerufen wird und die Tabelle angezeigt wird.
 
 ```csharp
 myTable.SetNumberOfRows ((nint)rows.Count, "default");
@@ -51,7 +51,7 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 > [!IMPORTANT]
 > Tabellenzeilen werden nicht wie in ios virtualisiert. Versuchen Sie, die Anzahl der Zeilen einzuschränken (Apple empfiehlt weniger als 20).
 
-Nachdem die Zeilen erstellt wurden, müssen Sie jede Zelle Auffüllen (wie `GetCell` in IOS). Dieser Code Ausschnitt aus dem [watchtables-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) aktualisiert die Bezeichnung in jeder Zeile.
+Nachdem die Zeilen erstellt wurden, müssen Sie jede Zelle Auffüllen (wie z. b `GetCell` . in IOS). Dieser Code Ausschnitt aus dem [watchtables-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) aktualisiert die Bezeichnung in jeder Zeile.
 
 ```csharp
 for (var i = 0; i < rows.Count; i++) {
@@ -61,18 +61,18 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> Die Verwendung von `SetNumberOfRows` und das anschließende durchlaufen der Verwendung `GetRowController` bewirkt, dass die gesamte Tabelle an die Überwachung gesendet wird. Wenn Sie für nachfolgende Sichten der Tabelle bestimmte Zeilen hinzufügen oder entfernen müssen, verwenden Sie `InsertRowsAt` und `RemoveRowsAt`, um die Leistung zu verbessern.
+> `SetNumberOfRows`Durch die Verwendung von und anschließendes durchlaufen von `GetRowController` wird die gesamte Tabelle an die Überwachung gesendet. Wenn Sie in nachfolgenden Sichten der Tabelle bestimmte Zeilen hinzufügen oder entfernen müssen, verwenden Sie `InsertRowsAt` und, `RemoveRowsAt` um die Leistung zu verbessern.
 
 ## <a name="respond-to-taps"></a>Auf tippen reagieren
 
 Sie können auf zwei verschiedene Arten auf die Zeilenauswahl reagieren:
 
-- Implementieren Sie die `DidSelectRow`-Methode für den Schnittstellen Controller, oder
-- Erstellen Sie auf dem Storyboard einen "sgue", und implementieren Sie `GetContextForSegue`, wenn Sie möchten, dass die Zeilenauswahl eine andere Szene öffnet.
+- Implementieren Sie die- `DidSelectRow` Methode für den Schnittstellen Controller, oder
+- Erstellen Sie auf dem Storyboard einen-Abschnitt, und implementieren `GetContextForSegue` Sie, wenn Sie möchten, dass die Zeilenauswahl eine andere Szene öffnet.
 
 ### <a name="didselectrow"></a>Didselectrow
 
-Implementieren Sie die `DidSelectRow`-Methode, um die Zeilenauswahl Programm gesteuert zu verarbeiten. Um eine neue Szene zu öffnen, verwenden Sie `PushController`, und übergeben Sie den Bezeichner der Szene und den Datenkontext für die Verwendung:
+Implementieren Sie die-Methode, um die Zeilenauswahl Programm gesteuert zu verarbeiten `DidSelectRow` . Zum Öffnen einer neuen Szene verwenden Sie, `PushController` und übergeben Sie den Bezeichner der Szene und den zu verwendenden Datenkontext:
 
 ```csharp
 public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
@@ -87,9 +87,9 @@ public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
 ### <a name="getcontextforsegue"></a>Getcontextforcgue
 
 Ziehen Sie einen Bild-auf dem Storyboard aus der Tabellenzeile in eine andere Szene (halten **Sie die STRG** -Taste gedrückt).
-Stellen Sie sicher, dass Sie den-Typ auswählen, und geben Sie ihm einen Bezeichner im eigenschaftenpad (z. b. `secondLevel` im folgenden Beispiel).
+Stellen Sie sicher, dass Sie den-Typ auswählen, und geben Sie **Properties** ihm einen Bezeichner im eigenschaftenpad (z `secondLevel` . b. im folgenden Beispiel).
 
-Implementieren Sie im Interface Controller die `GetContextForSegue`-Methode, und geben Sie den Datenkontext zurück, der für die Szene bereitgestellt werden soll, die von der-Methode dargestellt wird.
+Implementieren Sie im Interface Controller die `GetContextForSegue` -Methode, und geben Sie den Datenkontext zurück, der für die Szene bereitgestellt werden soll, die von der-Methode dargestellt wird.
 
 ```csharp
 public override NSObject GetContextForSegue (string segueIdentifier, WKInterfaceTable table, nint rowIndex)
@@ -101,7 +101,7 @@ public override NSObject GetContextForSegue (string segueIdentifier, WKInterface
 }
 ```
 
-Diese Daten werden in der `Awake`-Methode an die Storyboard-Ziel Szene übermittelt.
+Diese Daten werden in der-Methode an die Ziel Storyboard-Szene übermittelt `Awake` .
 
 ## <a name="multiple-row-types"></a>Mehrere Zeilen Typen
 
@@ -113,7 +113,7 @@ Wenn Sie die **Rows** -Eigenschaft auf **3** festlegen, werden zusätzliche Zeil
 
 ![](table-images/prototype-rows2.png "The prototype rows in the designer")
 
-Um eine Tabelle mit verschiedenen Zeilen Typen aufzufüllen, verwenden Sie die `SetRowTypes`-Methode, um den für jede Zeile in der Tabelle zu verwendenden Zeilen Controllertyp anzugeben. Verwenden Sie die Bezeichner der Zeile, um anzugeben, welcher Zeilen Controller für jede Zeile verwendet werden soll.
+Zum Auffüllen einer Tabelle mit unterschiedlichen Zeilen Typen verwenden Sie die- `SetRowTypes` Methode, um den für jede Zeile in der Tabelle zu verwendenden Zeilen Controllertyp anzugeben. Verwenden Sie die Bezeichner der Zeile, um anzugeben, welcher Zeilen Controller für jede Zeile verwendet werden soll.
 
 Die Anzahl der Elemente in diesem Array sollte der Anzahl der Zeilen entsprechen, die in der Tabelle erwartet werden:
 
@@ -147,13 +147,13 @@ watchos 3 hat ein neues Feature für Tabellen eingeführt: die Möglichkeit, ein
 > [!IMPORTANT]
 > Diese Funktion ist zurzeit nur verfügbar, wenn das Storyboard in Xcode-Interface Builder bearbeitet wird.
 
-Um dieses Feature zu aktivieren, wählen Sie die `WKInterfaceTable` auf der Entwurfs Oberfläche aus, und wählen Sie die Option für die **vertikale Detail Auslagerung** aus:
+Um dieses Feature zu aktivieren, wählen Sie `WKInterfaceTable` auf der Entwurfs Oberfläche aus, und wählen Sie die Option für die **vertikale Detail Auslagerung** aus:
 
 ![](table-images/vertical-detail-paging-sml.png "Selecting the Vertical Detail Paging option")
 
-Wie [von Apple erläutert](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023) , muss die Tabellennavigation für das Paging-Feature für die Paging-Funktion einen anderen Aspekt verwenden. Schreiben Sie ggf. vorhandenen Code, der `PushController` verwendet, um Segues zu verwenden.
+Wie [von Apple erläutert](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023) , muss die Tabellennavigation für das Paging-Feature für die Paging-Funktion einen anderen Aspekt verwenden. Schreiben Sie ggf. vorhandenen Code, der verwendet `PushController` , um Segues zu verwenden.
 
-<a name="add_row_controller" />
+<a name="add_row_controller"></a>
 
 ## <a name="appendix-row-controller-code-example"></a>Anhang: Code Beispiel für Zeilen Controller
 
@@ -176,7 +176,7 @@ namespace WatchTablesExtension
 }
 ```
 
-Die andere **. Designer.cs** -Datei ist eine partielle Klassendefinition, die die Outlets und Aktionen enthält, die auf der Designer Oberfläche erstellt werden, z. b. dieses Beispiel mit einem `WKInterfaceLabel`-Steuerelement:
+Die andere **. Designer.cs** -Datei ist eine partielle Klassendefinition, die die Outlets und Aktionen enthält, die auf der Designer Oberfläche erstellt werden, z. b. in diesem Beispiel mit einem `WKInterfaceLabel` Steuerelement:
 
 ```csharp
 using Foundation;

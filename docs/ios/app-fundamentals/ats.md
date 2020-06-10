@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: 84d235bb7c6874255ea025ff5897e150bd6f023b
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: a7534ec706633a856e5e095369e29f5fdef5f6a7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724683"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574222"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>App-Transport Sicherheit in xamarin. IOS
 
@@ -22,9 +22,9 @@ In diesem Artikel werden die Sicherheitsänderungen vorgestellt, die von der APP
 
 ## <a name="about-app-transport-security"></a>Informationen zur APP-Transport Sicherheit
 
-Wie bereits erwähnt, stellt ATS sicher, dass die gesamte Internetkommunikation in ios 9 und OS X El Capitan den bewährten Methoden der sicheren Verbindung entspricht. Dadurch wird die versehentliche Offenlegung vertraulicher Informationen entweder direkt über Ihre APP oder eine Bibliothek verhindert, Gste.
+Wie bereits erwähnt, stellt ATS sicher, dass die gesamte Internetkommunikation in ios 9 und OS X El Capitan den bewährten Methoden der sicheren Verbindung entspricht. Dadurch wird die versehentliche Offenlegung vertraulicher Informationen entweder direkt über Ihre APP oder eine von ihr verwendete Bibliothek verhindert.
 
-Implementieren Sie für vorhandene apps das `HTTPS` Protokoll, wann immer dies möglich ist. Bei neuen xamarin. IOS-apps sollten Sie `HTTPS` exklusiv bei der Kommunikation mit Internetressourcen verwenden. Darüber hinaus muss die API-Kommunikation auf hoher Ebene mit der TLS-Version 1,2 mit vorwärts Geheimnis verschlüsselt werden.
+Implementieren Sie für vorhandene apps das `HTTPS` Protokoll, wann immer dies möglich ist. Bei neuen xamarin. IOS-apps sollten Sie exklusiv verwenden, `HTTPS` Wenn Sie mit Internetressourcen kommunizieren. Darüber hinaus muss die API-Kommunikation auf hoher Ebene mit der TLS-Version 1,2 mit vorwärts Geheimnis verschlüsselt werden.
 
 Alle Verbindungen, die mit " [NSURLConnection](xref:Foundation.NSUrlConnection)", " [cfurl](xref:CoreFoundation.CFUrl) " oder " [nsurlsession](xref:Foundation.NSUrlSession) " hergestellt wurden, verwenden standardmäßig in apps, die für IOS 9 und OS X 10,11 (El Capitan) erstellt wurden.
 
@@ -42,7 +42,7 @@ ATS erzwingt die folgenden Anforderungen für alle Internetverbindungen:
 
 Da ATS standardmäßig in ios 9 aktiviert ist, wird bei jedem Versuch, eine Verbindung herzustellen, die diese Anforderungen nicht erfüllt, eine Ausnahme ausgelöst.
 
-<a name="ATS-Compatible-Ciphers" />
+<a name="ATS-Compatible-Ciphers"></a>
 
 ### <a name="ats-compatible-ciphers"></a>Mit ATS kompatible Chiffren
 
@@ -62,21 +62,21 @@ Der folgende Forward-Geheimnis Chiffre wird von der von ATS gesicherten Internet
 
 Weitere Informationen zum Arbeiten mit IOS-Internet Kommunikations Klassen finden Sie in der Referenz zur [NSURLConnection-Klasse](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/doc/uid/TP40003755)von Apple, in der [cfurl-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFURLRef/index.html#//apple_ref/doc/uid/20001206) oder in der [nsurlsession-Klassenreferenz](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/doc/uid/TP40013435).
 
-<a name="xamarinsupport" />
+<a name="xamarinsupport"></a>
 
 ## <a name="supporting-ats-in-xamarinios"></a>Unterstützung von ATS in xamarin. IOS
 
 Da ATS in ios 9 und OS X El Capitan standardmäßig aktiviert ist, müssen Sie, wenn Ihre xamarin. IOS-APP oder eine beliebige Bibliothek oder einen beliebigen Dienst eine Verbindung mit dem Internet herstellt, eine bestimmte Aktion durchführen. andernfalls wird eine Ausnahme ausgelöst.
 
-Für eine vorhandene App schlägt Apple vor, das `HTTPS`-Protokoll so bald wie möglich zu unterstützen. Wenn Sie eine Verbindung mit einem Drittanbieter-Webdienst herstellen, der `HTTPS` nicht unterstützt, oder wenn Sie `HTTPS` nicht unterstützen würden, können Sie sich gegen Sie entscheiden. Weitere Informationen finden Sie weiter unten im Abschnitt " [Opt-out of ATS](#optout) ".
+Für eine vorhandene App schlägt Apple vor, das `HTTPS` Protokoll so bald wie möglich zu unterstützen. Wenn Sie dies nicht tun können, weil Sie eine Verbindung mit einem Drittanbieter-Webdienst herstellen, der nicht unterstützt `HTTPS` , oder wenn die Unterstützung nicht praktikabel `HTTPS` wäre, können Sie sich gegen Sie entscheiden. Weitere Informationen finden Sie weiter unten im Abschnitt " [Opt-out of ATS](#optout) ".
 
-Bei einer neuen xamarin. IOS-App sollten Sie `HTTPS` exklusiv bei der Kommunikation mit Internetressourcen verwenden. Auch hier gibt es möglicherweise Situationen (z. b. die Verwendung eines Drittanbieter-Webdiensts), in denen dies nicht möglich ist, und Sie müssen sich gegen Sie entscheiden.
+Für eine neue xamarin. IOS-App sollten Sie exklusiv verwenden, `HTTPS` Wenn Sie mit Internetressourcen kommunizieren. Auch hier gibt es möglicherweise Situationen (z. b. die Verwendung eines Drittanbieter-Webdiensts), in denen dies nicht möglich ist, und Sie müssen sich gegen Sie entscheiden.
 
 Darüber hinaus erzwingt ATS eine allgemeine API-Kommunikation, die mit der TLS-Version 1,2 mit vorwärts Geheimnis verschlüsselt werden soll. Weitere Informationen finden Sie in den Abschnitten zu den in den [Anforderungen zu Verbindungsanforderungen](#ats-connection-requirements) und mit [ATS kompatiblen Chiffren](#ats-compatible-ciphers) .
 
 Obwohl Sie ggf. nicht mit TLS ([Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security)) vertraut sind, handelt es sich um den Nachfolger von SSL ([Secure Socket Layer](https://en.wikipedia.org/wiki/Transport_Layer_Security)) und stellt eine Sammlung kryptografischer Protokolle bereit, um die Sicherheit von Netzwerkverbindungen zu erzwingen.
 
-Die TLS-Ebene wird vom verwendeten Webdienst gesteuert und ist daher außerhalb der APP-Kontrolle. Sowohl der `HttpClient` als auch der `ModernHttpClient` sollten automatisch die höchste Ebene der TLS-Verschlüsselung verwenden, die vom Server unterstützt wird.
+Die TLS-Ebene wird vom verwendeten Webdienst gesteuert und ist daher außerhalb der APP-Kontrolle. Sowohl `HttpClient` als auch `ModernHttpClient` sollten automatisch die höchste Ebene der TLS-Verschlüsselung verwenden, die vom Server unterstützt wird.
 
 Abhängig von dem Server, mit dem Sie kommunizieren (insbesondere wenn es sich um einen Drittanbieter Dienst handelt), müssen Sie möglicherweise das vorwärts Geheimnis deaktivieren oder eine niedrigere TLS-Ebene auswählen. Weitere Informationen finden Sie unten im Abschnitt [Konfigurieren von ATS-Optionen](#configuring-ats-options) .
 
@@ -105,7 +105,7 @@ Nachteile:
 
 #### <a name="cfnetwork-handler"></a>CFNetwork-Handler
 
-Der CFNetwork-basierte Handler basiert auf dem systemeigenen `CFNetwork`-Framework.
+Der CFNetwork-basierte Handler basiert auf dem systemeigenen `CFNetwork` Framework.
 
 Vorteile:
 
@@ -120,7 +120,7 @@ Nachteile:
 
 #### <a name="nsurlsession-handler"></a>Nsurlsession-Handler
 
-Der nsurlsession-basierte Handler basiert auf der systemeigenen `NSUrlSession`-API.
+Der nsurlsession-basierte Handler basiert auf der systemeigenen `NSUrlSession` API.
 
 Vorteile:
 
@@ -136,15 +136,15 @@ Nachteile:
 
 Wenn Sie versuchen, eine Verbindung mit dem Internet (entweder direkt oder über eine Webansicht in ios 9) herzustellen, erhalten Sie möglicherweise eine Fehlermeldung in der Form:
 
-> Die APP-Transport Sicherheit hat eine Klartext http (`http://www.-the-blocked-domain.com`)-Ressourcen Last blockiert, da Sie unsicher ist. Temporäre Ausnahmen können über die Datei "Info. plist" ihrer App konfiguriert werden.
+> Die APP-Transport Sicherheit hat eine Klartext- `http://www.-the-blocked-domain.com` Ressourcen Last (http) blockiert, da Sie unsicher ist. Temporäre Ausnahmen können über die Datei "Info. plist" ihrer App konfiguriert werden.
 
-In iOS9 erzwingt App-Transport Sicherheit (app Transport Security, ATS) sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und ihrer app. Darüber hinaus erfordert die Kommunikation mit dem `HTTPS`-Protokoll und der übergeordneten API-Kommunikation, um mit der TLS-Version 1,2 mit vorwärts Geheimnisse verschlüsselt zu werden.
+In iOS9 erzwingt App-Transport Sicherheit (app Transport Security, ATS) sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und ihrer app. Darüber hinaus erfordert die Kommunikation mit dem `HTTPS` Protokoll und der übergeordneten API-Kommunikation, um mit der TLS-Version 1,2 mit vorwärts Geheimnisse verschlüsselt zu werden.
 
-Da ATS in apps, die für IOS 9 und OS X 10,11 (El Capitan) erstellt werden, standardmäßig aktiviert ist, gelten für alle Verbindungen, die `NSURLConnection`, `CFURL` oder `NSURLSession` verwenden, die Sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, schlagen Sie mit einer Ausnahme fehl.
+Da ATS in apps, die für IOS 9 und OS X 10,11 (El Capitan) erstellt werden, standardmäßig aktiviert ist, gelten für alle Verbindungen `NSURLConnection` , die verwenden, `CFURL` oder `NSURLSession` die Sicherheitsanforderungen. Wenn Ihre Verbindungen diese Anforderung nicht erfüllen, schlagen Sie mit einer Ausnahme fehl.
 
-Apple stellt außerdem die [tlstool-Beispiel-App](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2) bereit, die kompiliert (oder optional in xamarin und C#transcodiert) und zur Diagnose von ATS/TLS-Problemen verwendet werden kann. Informationen zum Beheben dieses Problems finden Sie unten im Abschnitt " [Opt-out of ATS](#optout) ".
+Apple stellt außerdem die [tlstool-Beispiel-App](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2) bereit, die kompiliert (oder optional in xamarin und c# transcodiert) und zur Diagnose von ATS/TLS-Problemen verwendet werden kann. Informationen zum Beheben dieses Problems finden Sie unten im Abschnitt " [Opt-out of ATS](#optout) ".
 
-<a name="config" />
+<a name="config"></a>
 
 ## <a name="configuring-ats-options"></a>Konfigurieren von ATS-Optionen
 
@@ -168,25 +168,25 @@ NSAppTransportSecurity
 
 Jeder Schlüssel hat den folgenden Typ und Bedeutung:
 
-- **Nsapptransportsecurity** (`Dictionary`): enthält alle Einstellungs Schlüssel und-Werte für ATS.
-- **Nsallowsarbitraryloads** (`Boolean`): Wenn `YES` ATS für jede Domäne deaktiviert werden, die in `NSExceptionDomains`**nicht** aufgeführt ist. Bei aufgelisteten Domänen werden die angegebenen Sicherheitseinstellungen verwendet.
-- **Nsallowsarbitraryloadsinwebcontent** (`Boolean`): Wenn `YES` das ordnungsgemäße Laden von Webseiten ermöglicht, während der Apple-Transport Sicherheitsschutz (ATS) weiterhin für den Rest der App aktiviert ist.
-- **Nsexceptiondomains** (`Dictionary`): eine Auflistung von Domänen und die Sicherheitseinstellungen, die von ATS für eine bestimmte Domäne verwendet werden sollen.
-- **\<Domain-Name-for-Exception-As-String >** (`Dictionary`): eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`).
-- **Nsexceptionminimumtlsversion** (`String`): die minimale TLS-Version ist entweder `TLSv1.0`, `TLSv1.1` oder `TLSv1.2` (Standardeinstellung).
-- **Nsexceptionrequirements sforwardgeheimnis** (`Boolean`): Wenn `NO` die Domäne keine Chiffre mit vorwärts Sicherheit verwenden muss. Standardwert: `YES`.
-- **Nsexceptionallowsinsecurehttploads** (`Boolean`): Wenn `NO` (Standardeinstellung), muss die gesamte Kommunikation mit dieser Domäne im `HTTPS` Protokoll vorliegen.
-- **Nsrequirements scertificatetransparenz** (`Boolean`): Wenn `YES` der Secure Sockets Layer der Domäne (SSL) gültige Transparenz Daten enthalten muss. Standardwert: `NO`.
-- **Nsincludessubdomains** (`Boolean`): Wenn `YES` diese Einstellungen alle Unterdomänen dieser Domäne überschreiben. Standardwert: `NO`.
-- **Nsthirdpartyexceptionminimumtlsversion** (`String`): die TLS-Version, die verwendet wird, wenn es sich bei der Domäne um einen Drittanbieter Dienst außerhalb der Kontrolle des Entwicklers handelt.
-- **Nsthirdpartyexceptionrequirements sforwardgeheimnis** (`Boolean`): Wenn `YES` einer Drittanbieter Domäne eine Weiterleitung von Bedingungen erfordert.
-- **Nsthirdpartyexceptionallowsinsecurehttploads** (`Boolean`): Wenn `YES` werden die ATS eine nicht sichere Kommunikation mit Domänen von Drittanbietern zulassen.
+- **Nsapptransportsecurity** ( `Dictionary` ): enthält alle Einstellungs Schlüssel und-Werte für ATS.
+- **Nsallowsarbitraryloads** ( `Boolean` ): Wenn `YES` ATS für eine Domäne deaktiviert wird, die **nicht** in aufgeführt ist `NSExceptionDomains` . Bei aufgelisteten Domänen werden die angegebenen Sicherheitseinstellungen verwendet.
+- **Nsallowsarbitraryloadsinwebcontent** ( `Boolean` ): gibt `YES` an, ob Webseiten ordnungsgemäß geladen werden können, während der Apple Transport Security (ATS)-Schutz weiterhin für den Rest der App aktiviert ist.
+- **Nsexceptiondomains** ( `Dictionary` ): eine Auflistung von Domänen, die von den Sicherheitseinstellungen für eine bestimmte Domäne verwendet werden sollen.
+- **\<domain-name-for-exception-as-string>**( `Dictionary` ): Eine Auflistung von Ausnahmen für eine bestimmte Domäne (z. b. `www.xamarin.com`).
+- **Nsexceptionminimumtlsversion** ( `String` ): die minimale TLS-Version als `TLSv1.0` `TLSv1.1` oder `TLSv1.2` (Dies ist die Standardeinstellung).
+- **Nsexceptionrequirements sforwardgeheimnis** ( `Boolean` ): Wenn `NO` die Domäne keine Chiffre mit vorwärts Sicherheit verwenden muss. Der Standardwert ist `YES`.
+- **Nsexceptionallowsinsecurehttploads** ( `Boolean` ): Wenn `NO` (Standardeinstellung), muss die gesamte Kommunikation mit dieser Domäne im `HTTPS` Protokoll vorliegen.
+- **Nsrequirements scertificatetransparenz** ( `Boolean` ): Wenn `YES` die Secure Sockets Layer der Domäne gültige Transparenz Daten einschließen muss. Der Standardwert ist `NO`.
+- **Nsincludessubdomains** ( `Boolean` ): Wenn `YES` diese Einstellungen alle Unterdomänen dieser Domäne überschreiben. Der Standardwert ist `NO`.
+- **Nsthirdpartyexceptionminimumtlsversion** ( `String` ): die TLS-Version, die verwendet wird, wenn es sich bei der Domäne um einen Drittanbieter Dienst außerhalb der Kontrolle des Entwicklers handelt.
+- **Nsthirdpartyexceptionrequirements sforwardgeheimnis** ( `Boolean` ): Wenn für `YES` eine Drittanbieter Domäne ein vorwärts Geheimnis erforderlich ist.
+- **Nsthirdpartyexceptionallowsinsecurehttploads** ( `Boolean` ): Wenn `YES` die ATS eine nicht sichere Kommunikation mit Domänen von Drittanbietern zulassen.
 
-<a name="optout" />
+<a name="optout"></a>
 
 ### <a name="opting-out-of-ats"></a>Deaktivieren von ATS
 
-Apple hat dringend die Verwendung des `HTTPS` Protokolls und die sichere Kommunikation mit internetbasierten Informationen vorgeschlagen, aber es kann vorkommen, dass dies nicht immer möglich ist. Beispielsweise bei der Kommunikation mit einem Drittanbieter-Webdienst oder bei Verwendung von über das Internet übermittelten anzeigen in Ihrer APP.
+Apple empfiehlt zwar dringend die Verwendung des `HTTPS` Protokolls und die sichere Kommunikation mit internetbasierten Informationen, es kann jedoch vorkommen, dass dies nicht immer möglich ist. Beispielsweise bei der Kommunikation mit einem Drittanbieter-Webdienst oder bei Verwendung von über das Internet übermittelten anzeigen in Ihrer APP.
 
 Wenn Ihre xamarin. IOS-App eine Anforderung an eine unsichere Domäne richten muss, deaktivieren die folgenden Änderungen an der Datei " **Info. plist** " der APP die Sicherheitsstandards, die von ATS für eine bestimmte Domäne erzwungen werden:
 
@@ -239,11 +239,11 @@ Doppelklicken Sie in Visual Studio für Mac auf die `Info.plist` Datei im **Proj
 [![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> Wenn Ihre Anwendung eine Verbindung mit einer unsicheren Website erfordert, sollten Sie die Domäne **immer** als Ausnahme mithilfe von `NSExceptionDomains` eingeben, anstatt sie vollständig mithilfe `NSAllowsArbitraryLoads`zu deaktivieren. `NSAllowsArbitraryLoads` sollten nur in extrem Notfällen verwendet werden.
+> Wenn Ihre Anwendung eine Verbindung mit einer unsicheren Website erfordert, sollten Sie die Domäne **immer** als Ausnahme mit eingeben, `NSExceptionDomains` anstatt sie vollständig mithilfe von zu deaktivieren `NSAllowsArbitraryLoads` . `NSAllowsArbitraryLoads`sollte nur in extrem Notfällen verwendet werden.
 
 Die Deaktivierung von ATS sollte _nur_ als letztes Mittel verwendet werden, wenn der Wechsel zu sicheren Verbindungen entweder nicht verfügbar oder nicht praktikabel ist.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

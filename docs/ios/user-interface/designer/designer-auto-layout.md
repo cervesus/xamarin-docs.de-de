@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306056"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569828"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin Designer für IOS
 
@@ -30,7 +30,7 @@ In diesem Leitfaden wird davon ausgegangen, dass die Komponenten des Designers v
 
 Eine Einschränkung ist eine mathematische Darstellung der Beziehung zwischen zwei Elementen auf dem Bildschirm. Das darstellen der Position eines Benutzeroberflächen Elements als mathematische Beziehung löst verschiedene Probleme, die mit der hart Codierung der Position eines Benutzeroberflächen Elements einhergehen. Wenn Sie z. b. eine Schaltfläche 20px vom unteren Bildschirmrand im Hochformat platzieren, befindet sich die Position der Schaltfläche im Querformat außerhalb des Bildschirms. Um dies zu vermeiden, können wir eine Einschränkung festlegen, die den unteren Rand der Schaltfläche 20px vom unteren Rand der Ansicht platziert. Die Position für den Schaltflächen Rand wird dann als *Button. Bottom = View. Bottom-20px*berechnet, wodurch die Schaltfläche 20px vom unteren Rand der Ansicht im hoch-und Querformat platziert wird. Die Möglichkeit, die Platzierung auf der Grundlage einer mathematischen Beziehung zu berechnen, ist das, was Einschränkungen für den Entwurf der Benutzeroberfläche ermöglicht.
 
-Wenn eine Einschränkung festgelegt wird, wird ein `NSLayoutConstraint` Objekt erstellt, das die zu Beschränkungs enden Objekte und die Eigenschaften oder *Attribute*, auf die die Einschränkung reagieren soll, als Argumente annimmt. Im IOS-Designer enthalten Attribute z. b. den *linken*, *rechten*, *oberen*und *unteren Rand* eines Elements. Dazu zählen auch Größen Attribute wie *height* und *Width*sowie die Mittelpunkt Position, *CenterX* und *CenterY*. Wenn Sie z. b. eine Einschränkung an der Position der linken Begrenzung von zwei Schaltflächen hinzufügen, erzeugt der Designer den folgenden Code im Bereich:
+Wenn wir eine Einschränkung festlegen, wird ein Objekt erstellt, `NSLayoutConstraint` das die zu Beschränkungs enden Objekte und die Eigenschaften bzw. *Attribute*, auf die die Einschränkung reagieren soll, als Argumente annimmt. Im IOS-Designer enthalten Attribute z. b. den *linken*, *rechten*, *oberen*und *unteren Rand* eines Elements. Dazu zählen auch Größen Attribute wie *height* und *Width*sowie die Mittelpunkt Position, *CenterX* und *CenterY*. Wenn Sie z. b. eine Einschränkung an der Position der linken Begrenzung von zwei Schaltflächen hinzufügen, erzeugt der Designer den folgenden Code im Bereich:
 
 ```csharp
 View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, NSLayoutRelation.Equal, Button2, NSLayoutAttribute.Left, 1, 10));
@@ -67,7 +67,7 @@ Die Einschränkungs Symbolleiste wurde aktualisiert und besteht nun aus zwei Hau
 
 Mit dem Editor für Einschränkungs-Editor können Sie mehrere Einschränkungen gleichzeitig für eine ausgewählte Ansicht hinzufügen und aktualisieren. Wir können mehrere Abstände, Seitenverhältnis und Ausrichtungs Einschränkungen erstellen, wie z. b. das Ausrichten einer Ansicht an den linken Rand zweier Ansichten.
 
-Zum Bearbeiten von Einschränkungen für die ausgewählte Ansicht klicken Sie auf das Auslassungs Zeichen, um die popover-![Einschränkungen für die Einschränkungen anzuzeigen](designer-auto-layout-images/constraints-popup.png)
+Zum Bearbeiten von Einschränkungen für die ausgewählte Ansicht klicken Sie auf das Auslassungs Zeichen, um das popover "popover: ![ Einschränkungs Bearbeitung" anzuzeigen.](designer-auto-layout-images/constraints-popup.png)
 
 Beim Öffnen des popover "Einschränkungen" werden alle vordefinierten Einschränkungen für die Sicht angezeigt. Wir können alle Abstands Einschränkungen festlegen, indem wir **alle Seiten** aus dem Kombinations Feld in der oberen rechten Ecke auswählen und **Alle löschen** auswählen, um Sie zu entfernen.
 
@@ -170,7 +170,7 @@ Wählen Sie zum Auflösen von Frame-Fehler behebe Fehlern auf der Symbolleiste E
 
 Dadurch wird der Element Rahmen automatisch so angepasst, dass er den von den Steuerelementen definierten Positionen entspricht.
 
-<a name="modifying-in-code" />
+<a name="modifying-in-code"></a>
 
 ## <a name="modifying-constraints-in-code"></a>Ändern von Einschränkungen in Code
 
@@ -201,12 +201,12 @@ Mit der folgenden Einstellung für die Einschränkung im IOS-Designer:
 
 Anstatt die angefügte Ansicht als Reaktion auf Einschränkungs Änderungen zu aktualisieren, plant das Modul für automatisches Layout in naher Zukunft eine _verzögerte layoutdurchführung_ . Bei diesem verzögerten Durchlauf wird nicht nur die Einschränkung der angegebenen Ansicht aktualisiert, sondern die Einschränkungen für jede Ansicht in der Hierarchie werden neu berechnet und aktualisiert, um das neue Layout anzupassen.
 
-Sie können zu jedem Zeitpunkt ihren eigenen verzögerten Layoutdurchlauf planen, indem Sie die Methoden `SetNeedsLayout` oder `SetNeedsUpdateConstraints` der übergeordneten Ansicht aufrufen.
+Sie können jederzeit ihren eigenen verzögerten Layoutdurchlauf planen, indem Sie die- `SetNeedsLayout` Methode oder die- `SetNeedsUpdateConstraints` Methode der übergeordneten Ansicht aufrufen.
 
 Der verzögerte Layoutdurchlauf besteht aus zwei eindeutigen Durchläufen der Ansichts Hierarchie:
 
-- **Der Update Pass** : in diesem Durchlauf durchsucht das Modul für automatisches Layout die Ansichts Hierarchie und ruft die `UpdateViewConstraints`-Methode für alle Ansichts Controller und die `UpdateConstraints`-Methode für alle Ansichten auf.
-- **Das Layout** wird erneut ausgeführt, die Auto Layout-Engine durchläuft die Ansichts Hierarchie, aber dieses Mal Ruft die `ViewWillLayoutSubviews`-Methode für alle Ansichts Controller und die `LayoutSubviews`-Methode für alle Ansichten auf. Die `LayoutSubviews`-Methode aktualisiert die `Frame`-Eigenschaft jeder unter Ansicht mit dem Rechteck, das von der Auto Layout-Engine berechnet wird.
+- **Der Update Pass** : in diesem Durchlauf durchsucht das Modul für automatisches Layout die Ansichts Hierarchie und ruft die `UpdateViewConstraints` -Methode für alle Ansichts Controller und die- `UpdateConstraints` Methode für alle Ansichten auf.
+- **Das Layout** wird erneut ausgeführt, das automatische Layoutmodul durchläuft die Ansichts Hierarchie, aber dieses Mal Ruft die `ViewWillLayoutSubviews` -Methode für alle Ansichts Controller und die- `LayoutSubviews` Methode für alle Ansichten auf. Die- `LayoutSubviews` Methode aktualisiert die- `Frame` Eigenschaft jeder unter Ansicht mit dem Rechteck, das von der Auto Layout-Engine berechnet wird.
 
 ### <a name="animating-constraint-changes"></a>Animieren von Einschränkungs Änderungen
 
@@ -222,7 +222,7 @@ View.LayoutIfNeeded();
 UIView.CommitAnimations();
 ```
 
-Der Schlüssel hier ist das Aufrufen der `LayoutIfNeeded`-Methode der übergeordneten Sicht innerhalb des Animations Blocks. Dadurch wird die Ansicht aufgefordert, jeden "Frame" der animierten Position oder Größenänderung zu zeichnen. Ohne diese Zeile würde die Ansicht einfach an die endgültige Version andocken, ohne eine Animation durchlaufen zu müssen.
+Der Schlüssel hier ist das Aufrufen der- `LayoutIfNeeded` Methode der übergeordneten Ansicht innerhalb des Animations Blocks. Dadurch wird die Ansicht aufgefordert, jeden "Frame" der animierten Position oder Größenänderung zu zeichnen. Ohne diese Zeile würde die Ansicht einfach an die endgültige Version andocken, ohne eine Animation durchlaufen zu müssen.
 
 ## <a name="summary"></a>Zusammenfassung
 

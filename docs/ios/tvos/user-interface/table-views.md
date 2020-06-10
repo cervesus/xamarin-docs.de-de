@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: db2e692993b7d452b81024ba1d50788e82b7ab86
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5c73f046f349598c9f0b0e8d7c7d6438c150c05c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022192"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566343"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit tvos-Tabellen Ansichten in xamarin
 
@@ -24,11 +24,11 @@ Tabellen Sichten werden in der Regel auf einer Seite einer [geteilten Ansicht](~
 
 [![](table-views-images/intro01.png "Sample table view")](table-views-images/intro01.png#lightbox)
 
-<a name="About-Table-Views" />
+<a name="About-Table-Views"></a>
 
 ## <a name="about-table-views"></a>Informationen zu Tabellen Sichten
 
-In einem `UITableView` wird eine einzelne Spalte mit Bild lauffähigen Zeilen als hierarchische Liste mit Informationen angezeigt, die optional in Gruppen oder Abschnitte organisiert werden können: 
+Eine `UITableView` zeigt eine einzelne Spalte mit scrollbaren Zeilen als hierarchische Liste von Informationen an, die optional in Gruppen oder Abschnitte organisiert werden können: 
 
 [![](table-views-images/table01.png "A selected item")](table-views-images/table01.png#lightbox)
 
@@ -38,11 +38,11 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Tabellen:
 - **Schnelles Anzeigen von Tabellen Inhalten** : bei großen Daten Listen lädt der Inhalt verzögert und zeigt Informationen an, sobald die Tabelle dem Benutzer angezeigt wird. Wenn die Tabelle lange benötigt, um geladen zu werden, kann der Benutzer Ihr Interesse an Ihrer APP verlieren oder denken, dass er gesperrt ist.
 - **Benutzer über lange Inhalts Belastungen informieren** : Wenn eine lange Tabellen Ladezeit unvermeidlich ist, stellen Sie eine [Statusanzeige oder einen Aktivitätsindikator](~/ios/tvos/user-interface/progress-indicators.md) dar, damit Sie wissen, dass die APP nicht gesperrt ist.
 
-<a name="Table-Cell-Types" />
+<a name="Table-Cell-Types"></a>
 
 ## <a name="table-view-cell-types"></a>Tabellen Sicht-Zelltypen
 
-Ein `UITableViewCell` wird verwendet, um die einzelnen Daten Zeilen in der Tabellenansicht darzustellen. Apple hat mehrere standardmäßige Tabellenzellen Typen definiert:
+Eine `UITableViewCell` wird verwendet, um die einzelnen Daten Zeilen in der Tabellenansicht darzustellen. Apple hat mehrere standardmäßige Tabellenzellen Typen definiert:
 
 - **Standard** : dieser Typ zeigt ein Options Bild auf der linken Seite der Zelle und den linksbündig ausgerichteten Titel auf der rechten Seite an. 
 - Unter **Titel** : dieser Typ zeigt einen linksbündig ausgerichteten Titel in der ersten Zeile und einen kleineren linksbündig ausgerichteten Untertitel in der nächsten Zeile an.
@@ -58,9 +58,9 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Tabellen Ansichts Zellen:
 - **Vermeiden von Text Clipping** : halten Sie die einzelnen Textzeilen kurz, damit Sie nicht abgeschnitten werden. Abgeschnittene Wörter oder Ausdrücke sind schwer für den Benutzer, der über den Raum hinweg analysiert werden muss.
 - **Sehen Sie sich den Status der fokussierten Zeile** an: da eine Zeile größer wird, und wenn Sie sich im Fokus befinden, müssen Sie die Darstellung ihrer Zelle in allen Zuständen testen. Bilder oder Text können abgeschnitten werden oder im Fokus Zustand falsch aussehen.
 - **Verwenden bearbeitbarer Tabellen** , wenn Tabellenzeilen sparsam verschoben oder gelöscht werden, ist für tvos mehr zeitaufwändig als IOS. Sie müssen sorgfältig entscheiden, ob diese Funktion Ihre tvos-App hinzufügt oder von ihr ablenkt.
-- Erstellen Sie ggf. **benutzerdefinierte Zelltypen** , während die integrierten Tabellenansicht-Zelltypen in vielen Situationen hervorragend sind. Erstellen Sie ggf. benutzerdefinierte Zelltypen für nicht standardmäßige Informationen, um eine bessere Kontrolle zu bieten und die Informationen für die Bedienungs.
+- Erstellen Sie ggf. **benutzerdefinierte Zelltypen** , während die integrierten Tabellenansicht-Zelltypen in vielen Situationen hervorragend sind. Erstellen Sie ggf. benutzerdefinierte Zelltypen für nicht standardmäßige Informationen, um eine bessere Kontrolle zu erhalten und die Informationen dem Benutzer besser zur Verfügung zu stellen.
 
-<a name="Working-With-Table-Views" />
+<a name="Working-With-Table-Views"></a>
 
 ## <a name="working-with-table-views"></a>Arbeiten mit Tabellen Sichten
 
@@ -68,15 +68,15 @@ Die einfachste Möglichkeit zum Arbeiten mit Tabellen Sichten in einer xamarin. 
 
 Um zu beginnen, machen Sie Folgendes:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Starten Sie in Visual Studio für Mac ein neues tvos-App-Projekt, und wählen Sie **tvos** > **App** > **Single View App** aus, und klicken Sie auf die Schaltfläche **weiter** : 
+1. Starten Sie in Visual Studio für Mac ein neues tvos-App-Projekt, wählen Sie **tvos**  >  **App**  >  **Single View App** aus, und klicken Sie auf die Schaltfläche **weiter** : 
 
     [![](table-views-images/table02.png "Select Single View App")](table-views-images/table02.png#lightbox)
 1. Geben Sie einen **Namen** für die APP ein, und klicken Sie auf **weiter**: 
 
     [![](table-views-images/table03.png "Enter a Name for the app")](table-views-images/table03.png#lightbox)
-1. Passen Sie entweder den **Projektnamen** und den Projektmappennamen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **Erstellen** , um 
+1. Passen Sie entweder den **Projektnamen** und den Projektmappennamen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **Erstellen** , um **Solution Name** 
 
     [![](table-views-images/table04.png "The Project Name and Solution Name")](table-views-images/table04.png#lightbox)
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, um Sie im IOS-Designer zu öffnen: 
@@ -89,7 +89,7 @@ Um zu beginnen, machen Sie Folgendes:
 1. Standardmäßig erhalten Sie eine [geteilte Ansicht](~/ios/tvos/user-interface/split-views.md) mit einem **Navigations Ansichts Controller** und einem **Tabellen Ansichts** Controller auf der linken Seite und einen **Ansichts Controller** auf der rechten Seite. Dies ist die empfohlene Verwendung einer Tabellenansicht in tvos in Apple: 
 
     [![](table-views-images/table08.png "Add a Split View")](table-views-images/table08.png#lightbox)
-1. Sie müssen jeden Teil der Tabellenansicht auswählen und diesem im **Eigenschaften-Explorer** auf der Registerkarte C# " **Widget** " einen benutzerdefinierten **Klassennamen** zuweisen, damit Sie später im Code darauf zugreifen können. Beispielsweise kann der **Tabellen Ansichts Controller**Folgendes: 
+1. Sie müssen jeden Teil der Tabellenansicht auswählen und diesem im **Eigenschaften-Explorer** auf der Registerkarte " **Widget** " einen benutzerdefinierten **Klassennamen** zuweisen, damit Sie später in c#-Code darauf zugreifen können. Beispielsweise kann der **Tabellen Ansichts Controller**Folgendes: 
 
     [![](table-views-images/table09.png "Assign a class name")](table-views-images/table09.png#lightbox)
 1. Stellen Sie sicher, dass Sie eine benutzerdefinierte Klasse für den **Tabellen Ansichts Controller**, die **Tabellenansicht** und beliebige **prototypzellen**erstellen. Visual Studio für Mac werden die benutzerdefinierten Klassen der Projektstruktur hinzugefügt, wenn Sie erstellt werden: 
@@ -98,24 +98,24 @@ Um zu beginnen, machen Sie Folgendes:
 1. Wählen Sie als nächstes die Tabellenansicht in der Designoberfläche aus, und passen Sie die Eigenschaften nach Bedarf an. Z. b. die Anzahl der **prototypzellen** und der **Stil** (einfach oder gruppiert): 
 
     [![](table-views-images/table11.png "The widget tab")](table-views-images/table11.png#lightbox)
-1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
+1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel: `AttrCell`: 
 
     [![](table-views-images/table12.png "The Widget Tab")](table-views-images/table12.png#lightbox)
 1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden **soll, oder** Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
     [![](table-views-images/table13.png "The cell layout")](table-views-images/table13.png#lightbox)
-1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später C# im Code darauf zugreifen können: 
+1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später in c#-Code darauf zugreifen können: 
 
     [![](table-views-images/table14.png "Assign a name")](table-views-images/table14.png#lightbox)
 1. Wiederholen Sie den obigen Schritt für alle prototypzellen in der Tabellenansicht.
-1. Weisen Sie anschließend dem restlichen Benutzeroberflächen Entwurf benutzerdefinierte Klassen zu, ordnen Sie die Detailansicht an, und weisen Sie jedem Benutzeroberflächen Element in der Detailansicht eindeutige **Namen** zu, sodass C# Sie auch in auf Sie zugreifen können. Beispiel: 
+1. Weisen Sie anschließend dem restlichen Benutzeroberflächen Entwurf benutzerdefinierte Klassen zu, ordnen Sie die Detailansicht an, und weisen Sie jedem Benutzeroberflächen Element in der Detailansicht eindeutige **Namen** zu, sodass Sie auch in c# darauf zugreifen können. Beispiel: 
 
     [![](table-views-images/table15.png "The UI layout")](table-views-images/table15.png#lightbox)
 1. Speichern Sie die Änderungen am Storyboard.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos** > **Einzelansicht-App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie **auf die Schalt** Fläche OK, um eine neue Lösung zu erstellen: 
+1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos**  >  **Single View App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie **auf die Schalt** Fläche OK, um eine neue Lösung zu erstellen: 
 
     [![](table-views-images/table02-vs.png "Select Single View App")](table-views-images/table02-vs.png#lightbox)
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, um Sie im IOS-Designer zu öffnen: 
@@ -130,7 +130,7 @@ Um zu beginnen, machen Sie Folgendes:
 1. Standardmäßig erhalten Sie eine [geteilte Ansicht](~/ios/tvos/user-interface/split-views.md) mit einem **Navigations Ansichts Controller** und einem **Tabellen Ansichts** Controller auf der linken Seite und einen **Ansichts Controller** auf der rechten Seite. Dies ist die empfohlene Verwendung einer Tabellenansicht in tvos in Apple: 
 
     [![](table-views-images/table08-vs.png "Layout the UI")](table-views-images/table08-vs.png#lightbox)
-1. Sie müssen jeden Teil der Tabellenansicht auswählen und diesem im **Eigenschaften-Explorer** auf der Registerkarte C# " **Widget** " einen benutzerdefinierten **Klassennamen** zuweisen, damit Sie später im Code darauf zugreifen können. Beispielsweise kann der **Tabellen Ansichts Controller**Folgendes: 
+1. Sie müssen jeden Teil der Tabellenansicht auswählen und diesem im **Eigenschaften-Explorer** auf der Registerkarte " **Widget** " einen benutzerdefinierten **Klassennamen** zuweisen, damit Sie später in c#-Code darauf zugreifen können. Beispielsweise kann der **Tabellen Ansichts Controller**Folgendes: 
 
     [![](table-views-images/table09-vs.png "The Widget Tab")](table-views-images/table09-vs.png#lightbox)
 1. Stellen Sie sicher, dass Sie eine benutzerdefinierte Klasse für den **Tabellen Ansichts Controller**, die **Tabellenansicht** und beliebige **prototypzellen**erstellen. Visual Studio für Mac werden die benutzerdefinierten Klassen der Projektstruktur hinzugefügt, wenn Sie erstellt werden: 
@@ -139,46 +139,46 @@ Um zu beginnen, machen Sie Folgendes:
 1. Wählen Sie als nächstes die Tabellenansicht in der Designoberfläche aus, und passen Sie die Eigenschaften nach Bedarf an. Z. b. die Anzahl der **prototypzellen** und der **Stil** (einfach oder gruppiert): 
 
     [![](table-views-images/table11-vs.png "The Widget Tab")](table-views-images/table11-vs.png#lightbox)
-1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel `AttrCell`: 
+1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel: `AttrCell`: 
 
     [![](table-views-images/table12-vs.png "Assign an Identifier")](table-views-images/table12-vs.png#lightbox)
 1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden **soll, oder** Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
     [![](table-views-images/table13-vs.png "The Style dropdown")](table-views-images/table13-vs.png#lightbox)
-1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später C# im Code darauf zugreifen können: 
+1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später in c#-Code darauf zugreifen können: 
 
     [![](table-views-images/table14-vs.png "The Widget Tab")](table-views-images/table14-vs.png#lightbox)
 1. Wiederholen Sie den obigen Schritt für alle prototypzellen in der Tabellenansicht.
-1. Weisen Sie anschließend dem restlichen Benutzeroberflächen Entwurf benutzerdefinierte Klassen zu, ordnen Sie die Detailansicht an, und weisen Sie jedem Benutzeroberflächen Element in der Detailansicht eindeutige **Namen** zu, sodass C# Sie auch in auf Sie zugreifen können. Beispiel: 
+1. Weisen Sie anschließend dem restlichen Benutzeroberflächen Entwurf benutzerdefinierte Klassen zu, ordnen Sie die Detailansicht an, und weisen Sie jedem Benutzeroberflächen Element in der Detailansicht eindeutige **Namen** zu, sodass Sie auch in c# darauf zugreifen können. Beispiel: 
 
     [![](table-views-images/table15.png "The UI Layout")](table-views-images/table15.png#lightbox)
 1. Speichern Sie die Änderungen am Storyboard.
 
 -----
 
-<a name="Designing-a-Data-Model" />
+<a name="Designing-a-Data-Model"></a>
 
 ## <a name="designing-a-data-model"></a>Entwerfen eines Datenmodells
 
-Erstellen Sie eine benutzerdefinierte Klasse oder Klassen, die als Datenmodell für die dargestellten Informationen fungieren, um die Arbeit mit den Informationen zu vereinfachen, die in der Tabellenansicht einfacher angezeigt werden, und um die Darstellung detaillierter Informationen (beim auswählen oder hervorheben von Zeilen in der Tabellenansicht) zu vereinfachen. .
+Erstellen Sie eine benutzerdefinierte Klasse oder Klassen, die als Datenmodell für die dargestellten Informationen fungieren, um die Arbeit mit den Informationen zu vereinfachen, die in der Tabellenansicht einfacher angezeigt werden, und um ausführliche Informationen zu präsentieren (wenn der Benutzer Zeilen in der Tabellenansicht auswählt oder markiert).
 
 Sehen Sie sich das Beispiel für eine Reise Reservierungs-APP an, die eine Liste von **Städten**enthält, die jeweils eine eindeutige Liste von **Attraktionen** enthält, die der Benutzer auswählen kann. Der Benutzer ist in der Lage, eine Attraktion als *Favorit*zu markieren, die *Richtung* zu einer Attraktion zu bringen und *einen Flug* an eine bestimmte Stadt zu buchen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Lösungspad** mit der rechten Maustaste auf den Projektnamen, und wählen Sie > **neue Datei** **Hinzufügen** ... aus. Geben Sie `AttractionInformation` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
+Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Lösungspad** mit der rechten Maustaste auf den Projektnamen, und wählen Sie neue Datei **Hinzufügen**  >  **...** aus. Geben Sie `AttractionInformation` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
 
 [![](table-views-images/data01.png "Enter AttractionInformation for the Name")](table-views-images/data01.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie > **Neues Element** **Hinzufügen** ... aus. Wählen Sie **Klasse** aus, geben Sie `AttractionInformation` für den **Namen** ein, und klicken Sie auf **die Schaltfläche** 
+Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie neues Element **Hinzufügen**  >  **...** aus. Wählen Sie **Klasse** aus, geben Sie `AttractionInformation` für den **Namen** ein, und klicken Sie auf die Schaltfläche **Add** 
 
 [![](table-views-images/data01-vs.png "Select Class and enter AttractionInformation for the Name")](table-views-images/data01-vs.png#lightbox)
 
 -----
 
-Bearbeiten Sie die Datei `AttractionInformation.cs`, und führen Sie Sie wie folgt aus:
+Bearbeiten `AttractionInformation.cs` Sie die Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -212,21 +212,21 @@ namespace tvTable
 
 Diese Klasse stellt die Eigenschaften zum Speichern der Informationen über eine bestimmte **Attraktion**bereit.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-Klicken Sie dann erneut mit der rechten Maustaste auf den Projektnamen im **Lösungspad** , und wählen Sie > **neue Datei** **Hinzufügen** ... aus. Geben Sie `CityInformation` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
+Klicken Sie als nächstes mit der rechten Maustaste auf den Projektnamen im **Lösungspad** , und wählen Sie neue Datei **Hinzufügen**  >  **...** aus. Geben Sie `CityInformation` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
 
 [![](table-views-images/data02.png "Enter CityInformation for the Name")](table-views-images/data02.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Klicken Sie dann erneut mit der rechten Maustaste auf den Projektnamen im **Projektmappen-Explorer** , und wählen Sie > **Neues Element** **Hinzufügen** ... aus. Geben Sie `CityInformation` als **Namen** ein, und klicken Sie auf die Schaltfläche **Hinzufügen** 
+Klicken Sie als nächstes mit der rechten Maustaste auf den Projektnamen im **Projektmappen-Explorer** , und wählen Sie neues Element **Hinzufügen**  >  **...** aus. Geben Sie `CityInformation` als **Namen** ein, und klicken Sie auf **Hinzufügen** : 
 
 [![](table-views-images/data02-vs.png "Enter CityInformation for the Name")](table-views-images/data02-vs.png#lightbox)
 
 -----
 
-Bearbeiten Sie die Datei `CityInformation.cs`, und führen Sie Sie wie folgt aus:
+Bearbeiten `CityInformation.cs` Sie die Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -278,15 +278,15 @@ namespace tvTable
 }
 ```
 
-Diese Klasse enthält alle Informationen über eine **Zielstadt**, eine Sammlung von **Attraktionen** für diese Stadt und bietet zwei Hilfsmethoden (`AddAttraction`), um das Hinzufügen von Attraktionen zum Ort zu vereinfachen.
+Diese Klasse enthält alle Informationen über eine **Zielstadt**, eine Sammlung von **Attraktionen** für diese Stadt und bietet zwei Hilfsmethoden (), `AddAttraction` um das Hinzufügen von Attraktionen zum Ort zu vereinfachen.
 
-<a name="The-Table-Data-Source" />
+<a name="The-Table-Data-Source"></a>
 
 ## <a name="the-table-view-data-source"></a>Die Tabellen Ansichts Datenquelle
 
-Jede Tabellen Sicht erfordert eine Datenquelle (`UITableViewDataSource`), um die Daten für die Tabelle bereitzustellen und die erforderlichen Zeilen gemäß der Tabellenansicht zu generieren.
+Jede Tabellen Sicht erfordert eine Datenquelle ( `UITableViewDataSource` ), um die Daten für die Tabelle bereitzustellen und die erforderlichen Zeilen gemäß der Tabellenansicht zu generieren.
 
-Klicken Sie für das oben angegebene Beispiel mit der rechten Maustaste auf den Projektnamen **im Projektmappen-Explorer**, wählen Sie ** > neue Datei** **Hinzufügen** aus, und rufen Sie ihn `AttractionTableDatasource` auf, und klicken Sie auf die Schaltfläche **neu** , um zu erstellen. Bearbeiten Sie als nächstes die Datei `AttractionTableDatasource.cs`, und führen Sie Sie wie folgt aus:
+Klicken Sie im obigen Beispiel mit der rechten Maustaste auf den Projektnamen im **Projektmappen-Explorer**, wählen Sie neue Datei **Hinzufügen**aus,  >  **New File...** und rufen Sie Sie auf, `AttractionTableDatasource` und klicken Sie dann auf die Schaltfläche **neu** , um zu erstellen. Bearbeiten Sie anschließend die `AttractionTableDatasource.cs` Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -403,7 +403,7 @@ public AttractionTableDatasource (AttractionTableViewController controller)
 }
 ```
 
-Zum Beispiel erstellt die `PopulateCities`-Methode einfach Datenmodell Objekte im Arbeitsspeicher, die jedoch problemlos von einer Datenbank oder einem Webdienst in einer echten App gelesen werden können:
+Zum Beispiel erstellt die- `PopulateCities` Methode einfach Datenmodell Objekte im Arbeitsspeicher, die jedoch problemlos von einer Datenbank oder einem Webdienst in einer echten App gelesen werden können:
 
 ```csharp
 public void PopulateCities ()
@@ -418,7 +418,7 @@ public void PopulateCities ()
 }
 ```
 
-Die `NumberOfSections`-Methode gibt die Anzahl der Abschnitte in der Tabelle zurück:
+Die- `NumberOfSections` Methode gibt die Anzahl der Abschnitte in der-Tabelle zurück:
 
 ```csharp
 public override nint NumberOfSections (UITableView tableView)
@@ -430,7 +430,7 @@ public override nint NumberOfSections (UITableView tableView)
 
 Geben Sie für Tabellen Sichten mit **einfacher** Formatierung immer 1 zurück.
 
-Die `RowsInSection`-Methode gibt die Anzahl der Zeilen im aktuellen Abschnitt zurück:
+Die- `RowsInSection` Methode gibt die Anzahl der Zeilen im aktuellen Abschnitt zurück:
 
 ```csharp
 public override nint RowsInSection (UITableView tableView, nint section)
@@ -442,7 +442,7 @@ public override nint RowsInSection (UITableView tableView, nint section)
 
 Bei **einfachen** Tabellen Sichten wird die Gesamtzahl der Elemente in der Datenquelle zurückgegeben.
 
-Die `TitleForHeader`-Methode gibt den Titel für den angegebenen Abschnitt zurück:
+Die- `TitleForHeader` Methode gibt den Titel für den angegebenen Abschnitt zurück:
 
 ```csharp
 public override string TitleForHeader (UITableView tableView, nint section)
@@ -452,9 +452,9 @@ public override string TitleForHeader (UITableView tableView, nint section)
 }
 ```
 
-Lassen Sie für einen **einfachen** Tabellen Ansichtstyp den Titel leer (`""`).
+Lassen Sie für einen **einfachen** Tabellen Ansichtstyp den Titel leer ( `""` ).
 
-Wenn Sie schließlich von der Tabellenansicht angefordert werden, erstellen Sie eine prototypzelle mit der `GetCell`-Methode, und füllen Sie Sie aus: 
+Wenn Sie von der Tabellenansicht angefordert werden, erstellen Sie eine prototypzelle, und füllen Sie Sie mit der- `GetCell` Methode auf: 
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -470,15 +470,15 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 }
 ```
 
-Weitere Informationen zum Arbeiten mit einem `UITableViewDatasource`finden Sie in der Dokumentation zu [uitableviewdatasource](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40006941) von Apple.
+Weitere Informationen zum Arbeiten mit einem finden `UITableViewDatasource` Sie in der Dokumentation zu [uitableviewdatasource](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40006941) von Apple.
 
-<a name="The-Table-View-Delegate" />
+<a name="The-Table-View-Delegate"></a>
 
 ## <a name="the-table-view-delegate"></a>Der Tabellen Ansichts Delegat
 
-Jede Tabellen Sicht erfordert, dass ein Delegat (`UITableViewDelegate`) auf Benutzerinteraktionen oder andere Systemereignisse in der Tabelle antwortet.
+Jede Tabellen Sicht erfordert, dass ein Delegat ( `UITableViewDelegate` ) auf Benutzerinteraktionen oder andere Systemereignisse in der Tabelle antwortet.
 
-Klicken Sie für das oben angegebene Beispiel mit der rechten Maustaste auf den Projektnamen **im Projektmappen-Explorer**, wählen Sie ** > neue Datei** **Hinzufügen** aus, und rufen Sie ihn `AttractionTableDelegate` auf, und klicken Sie auf die Schaltfläche **neu** , um zu erstellen. Bearbeiten Sie als nächstes die Datei `AttractionTableDelegate.cs`, und führen Sie Sie wie folgt aus:
+Klicken Sie im obigen Beispiel mit der rechten Maustaste auf den Projektnamen im **Projektmappen-Explorer**, wählen Sie neue Datei **Hinzufügen**aus,  >  **New File...** und rufen Sie Sie auf, `AttractionTableDelegate` und klicken Sie dann auf die Schaltfläche **neu** , um zu erstellen. Bearbeiten Sie anschließend die `AttractionTableDelegate.cs` Datei, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -582,17 +582,17 @@ internal void RaiseAttractionHighlighted (AttractionInformation attraction)
 }
 ```
 
-Die `CanFocusRow`-Methode wird für jede Zeile aufgerufen, die in der Tabellenansicht den Fokus erhält. Gibt `true` zurück, wenn die Zeile den Fokus erhalten kann, andernfalls wird `false`zurückgegeben. Im Fall dieses Beispiels haben wir ein benutzerdefiniertes `AttractionHighlighted` Ereignis erstellt, das für jede Zeile ausgelöst wird, wenn es den Fokus erhält.
+Die- `CanFocusRow` Methode wird für jede Zeile aufgerufen, die den Fokus in der Tabellenansicht erhält. Gibt zurück `true` , wenn die Zeile den Fokus erhalten kann, andernfalls `false` . Im Fall dieses Beispiels haben wir ein benutzerdefiniertes Ereignis erstellt, `AttractionHighlighted` das für jede Zeile ausgelöst wird, wenn es den Fokus erhält.
 
-Weitere Informationen zum Arbeiten mit einem `UITableViewDelegate`finden Sie in der Dokumentation zu [uitableviewdelegaten](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40006942) von Apple.
+Weitere Informationen zum Arbeiten mit einem `UITableViewDelegate` finden Sie in der Dokumentation zu [uitableviewdelegaten](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40006942) von Apple.
 
-<a name="The-Table-View-Cell" />
+<a name="The-Table-View-Cell"></a>
 
 ## <a name="the-table-view-cell"></a>Die Tabellen Ansichts Zelle
 
-Für jede prototypzelle, die Sie der Tabellenansicht im Schnittstellen-Designer hinzugefügt haben, haben Sie auch eine benutzerdefinierte Instanz der Tabellen Ansichts Zelle (`UITableViewCell`) erstellt, damit Sie die neue Zelle (Zeile) während der Erstellung auffüllen können.
+Für jede prototypzelle, die Sie der Tabellenansicht im Schnittstellen-Designer hinzugefügt haben, haben Sie auch eine benutzerdefinierte Instanz der Tabellen Ansichts Zelle () erstellt, `UITableViewCell` damit Sie die neue Zelle (Zeile) während der Erstellung auffüllen können.
 
-Doppelklicken Sie für die Beispiel-App auf die `AttractionTableCell.cs` Datei, um Sie für die Bearbeitung zu öffnen, und führen Sie Sie wie folgt aus:
+Doppelklicken Sie für die Beispiel-APP `AttractionTableCell.cs` auf die Datei, um Sie zur Bearbeitung zu öffnen, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -640,7 +640,7 @@ namespace tvTable
 }
 ```
 
-Diese Klasse stellt Speicher für das Objekt "Anziehungs Datenmodell" (`AttractionInformation` wie oben definiert) bereit, das in der angegebenen Zeile angezeigt wird:
+Diese Klasse bietet Speicher für das Objekt "Anziehungs Datenmodell" ( `AttractionInformation` wie oben definiert), das in der angegebenen Zeile angezeigt wird:
 
 ```csharp
 private AttractionInformation _attraction = null;
@@ -655,7 +655,7 @@ public AttractionInformation Attraction {
 }
 ```
 
-Die `UpdateUI`-Methode füllt die UI-Widgets (die dem Prototyp der Zelle im Schnittstellen-Designer hinzugefügt wurden) nach Bedarf auf:
+Die- `UpdateUI` Methode füllt die UI-Widgets (die dem Prototyp der Zelle im Schnittstellen-Designer hinzugefügt wurden) nach Bedarf auf:
 
 ```csharp
 private void UpdateUI ()
@@ -671,15 +671,15 @@ private void UpdateUI ()
 }
 ```
 
-Weitere Informationen zum Arbeiten mit einem `UITableViewCell`finden Sie in der Dokumentation zu [uitableviewcell](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/doc/uid/TP40006938) von Apple.
+Weitere Informationen zum Arbeiten mit einem finden `UITableViewCell` Sie in der Dokumentation zu [uitableviewcell](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/doc/uid/TP40006938) von Apple.
 
-<a name="The-Table-View-Controller" />
+<a name="The-Table-View-Controller"></a>
 
 ## <a name="the-table-view-controller"></a>Der Tabellen Ansichts Controller
 
-Ein Tabellen Ansichts Controller (`UITableViewController`) verwaltet eine Tabellenansicht, die einem Storyboard über den Schnittstellen-Designer hinzugefügt wurde.
+Ein Tabellen Ansichts Controller ( `UITableViewController` ) verwaltet eine Tabellenansicht, die einem Storyboard über den Schnittstellen-Designer hinzugefügt wurde.
 
-Doppelklicken Sie für die Beispiel-App auf die `AttractionTableViewController.cs` Datei, um Sie für die Bearbeitung zu öffnen, und führen Sie Sie wie folgt aus:
+Doppelklicken Sie für die Beispiel-APP `AttractionTableViewController.cs` auf die Datei, um Sie zur Bearbeitung zu öffnen, und führen Sie Sie wie folgt aus:
 
 ```csharp
 using System;
@@ -721,13 +721,13 @@ namespace tvTable
 }
 ```
 
-Sehen wir uns diese Klasse genauer an. Zuerst haben wir Verknüpfungen erstellt, um den Zugriff auf die `DataSource` und `TableDelegate`der Tabellenansicht zu vereinfachen. Wir verwenden diese später, um zwischen der Tabellenansicht auf der linken Seite der geteilten Ansicht und der Detailansicht auf der rechten Seite zu kommunizieren.
+Sehen wir uns diese Klasse genauer an. Zuerst haben wir Verknüpfungen erstellt, um den Zugriff auf die Tabellenansicht und zu `DataSource` vereinfachen `TableDelegate` . Wir verwenden diese später, um zwischen der Tabellenansicht auf der linken Seite der geteilten Ansicht und der Detailansicht auf der rechten Seite zu kommunizieren.
 
-Wenn die Tabellen Sicht in den Arbeitsspeicher geladen wird, erstellen wir nun Instanzen der `AttractionTableDatasource` und `AttractionTableDelegate` (beide oben erstellt) und fügen Sie an die Tabellenansicht an.
+Wenn die Tabellen Sicht in den Arbeitsspeicher geladen wird, erstellen wir nun Instanzen der `AttractionTableDatasource` und `AttractionTableDelegate` (beide oben erstellt) und fügen diese an die Tabellenansicht an.
 
-Weitere Informationen zum Arbeiten mit einem `UITableViewController`finden Sie in der Dokumentation zu [uitableviewcontroller](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523) von Apple.
+Weitere Informationen zum Arbeiten mit einem finden `UITableViewController` Sie in der Dokumentation zu [uitableviewcontroller](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523) von Apple.
 
-<a name="Pulling-it-All-Together" />
+<a name="Pulling-it-All-Together"></a>
 
 ## <a name="pulling-it-all-together"></a>Alles abrufen
 
@@ -737,11 +737,11 @@ Wie am Anfang dieses Dokuments angegeben, werden Tabellen Sichten in der Regel a
 
 Da es sich hierbei um ein Standardmuster in tvos handelt, betrachten wir die abschließenden Schritte, um alles zusammenzuführen, und lassen Sie die linke und die Rechte Seite der geteilten Ansicht miteinander interagieren.
 
-<a name="The-Detail-View" />
+<a name="The-Detail-View"></a>
 
 ### <a name="the-detail-view"></a>Die Detail Ansicht
 
-Für das Beispiel der oben dargestellten Reise-app wird eine benutzerdefinierte Klasse (`AttractionViewController`) für den Standard Ansichts Controller definiert, der auf der rechten Seite der geteilten Ansicht als Detail Ansicht dargestellt wird:
+Für das Beispiel der oben dargestellten Reise-app wird eine benutzerdefinierte Klasse ( `AttractionViewController` ) für den Standard Ansichts Controller definiert, der auf der rechten Seite der geteilten Ansicht als Detail Ansicht dargestellt wird:
 
 ```csharp
 using System;
@@ -844,17 +844,17 @@ namespace tvTable
 }
 ```
 
-Hier haben wir die angezeigte **Attraktion** (`AttractionInformation`) als Eigenschaft angegeben und eine `UpdateUI` Methode erstellt, die die Benutzeroberflächen-Widgets auffüllt, die der Ansicht im Schnittstellen-Designer hinzugefügt wurden.
+Hier haben wir die " **Attraction** " ( `AttractionInformation` ) als Eigenschaft angezeigt und eine `UpdateUI` Methode erstellt, die die Benutzeroberflächen-Widgets auffüllt, die der Ansicht im Schnittstellen-Designer hinzugefügt wurden.
 
-Wir haben auch eine Verknüpfung mit dem Split View Controller (`SplitView`) definiert, mit dem wir Änderungen an der Tabellenansicht (`AcctractionTableView`) zurückgibt.
+Wir haben auch eine Verknüpfung mit dem Split View Controller () definiert `SplitView` , mit dem wir Änderungen an der Tabellenansicht () zurückgibt `AcctractionTableView` .
 
-Schließlich wurden den drei `UIButton` Instanzen, die im Schnittstellen-Designer erstellt wurden, benutzerdefinierte Aktionen (Ereignisse) hinzugefügt, die es dem Benutzer ermöglichen, eine Attraktion als _Favorit_zu markieren, eine _Attraktion an eine Attraktion zu bringen und_ _einen Flug_ an eine bestimmte Stadt zu buchen.
+Zum Schluss wurden benutzerdefinierte Aktionen (Ereignisse) zu den drei `UIButton` Instanzen hinzugefügt, die im Schnittstellen-Designer erstellt wurden, sodass der Benutzer eine Attraktion als _Favorit_markieren, eine Attraktion zu einer Attraktion erhalten und _einen Flug_ an eine bestimmte Stadt übertragen kann. _Directions_
 
-<a name="The-Navigation-View-Controller" />
+<a name="The-Navigation-View-Controller"></a>
 
 ### <a name="the-navigation-view-controller"></a>Navigations Ansichts Controller
 
-Da der Tabellen Ansichts Controller in einem Navigations Ansichts Controller auf der linken Seite der geteilten Ansicht eingefügt ist, wurde dem Navigations Ansichts Controller eine benutzerdefinierte Klasse (`MasterNavigationController`) im Schnittstellen-Designer zugewiesen und wie folgt definiert:
+Da der Tabellen Ansichts Controller in einem Navigations Ansichts Controller auf der linken Seite der geteilten Ansicht eingefügt ist, wurde dem Navigations Ansichts Controller eine benutzerdefinierte Klasse ( `MasterNavigationController` ) im Schnittstellen-Designer zugewiesen und wie folgt definiert:
 
 ```csharp
 using System;
@@ -883,14 +883,14 @@ namespace tvTable
 
 Diese Klasse definiert nur einige Verknüpfungen, um die Kommunikation über die beiden Seiten des Split View Controller zu vereinfachen:
 
-- `SplitView`: ein Link zum Split View Controller (`MainSpiltViewController`), zu dem der Navigations Ansichts Controller gehört.
-- `TableController`: Ruft den Tabellen Ansichts Controller (`AttractionTableViewController`) ab, der im Navigations Ansichts Controller als obere Ansicht dargestellt wird.
+- `SplitView`-Ist ein Link zum Split View Controller ( `MainSpiltViewController` ), zu dem der Navigations Ansichts Controller gehört.
+- `TableController`-Ruft den Tabellen Ansichts Controller ( `AttractionTableViewController` ) ab, der im Navigations Ansichts Controller als obere Ansicht dargestellt wird.
 
-<a name="The-Split-View-Controller" />
+<a name="The-Split-View-Controller"></a>
 
 ### <a name="the-split-view-controller"></a>Der geteilte Ansichts Controller
 
-Da der Split View Controller die Basis unserer Anwendung ist, haben wir eine benutzerdefinierte Klasse (`MasterSplitViewController`) dafür im Schnittstellen-Designer erstellt und wie folgt definiert:
+Da der Split View Controller die Basis unserer Anwendung ist, haben wir eine benutzerdefinierte Klasse ( `MasterSplitViewController` ) für Sie im Schnittstellen-Designer erstellt und wie folgt definiert:
 
 ```csharp
 using System;
@@ -937,9 +937,9 @@ namespace tvTable
 }
 ```
 
-Zuerst erstellen wir Verknüpfungen zur **Detail** Seite der geteilten Ansicht (`AttractionViewController`) und zur **Master** Seite (`MasterNavigationController`). Dadurch wird die Kommunikation zwischen den beiden Seiten später vereinfacht.
+Zuerst erstellen wir Verknüpfungen zur **Detail** Seite der geteilten Ansicht ( `AttractionViewController` ) und zur **Master** Seite ( `MasterNavigationController` ). Dadurch wird die Kommunikation zwischen den beiden Seiten später vereinfacht.
 
-Wenn die geteilte Ansicht in den Arbeitsspeicher geladen wird, fügen wir den Split View Controller an beide Seiten der geteilten Ansicht an und reagieren darauf, dass der Benutzer eine Attraktion in der Tabellenansicht (`AttractionHighlighted`) hervorhebt, indem er die neue Attraktion auf der **Detail** Seite des Geteilte Ansicht.
+Wenn die geteilte Ansicht in den Arbeitsspeicher geladen wird, fügen wir den Split View Controller an beide Seiten der geteilten Ansicht an und reagieren darauf, dass der Benutzer eine Attraktion in der Tabellenansicht () markiert, `AttractionHighlighted` indem er die neue Attraktion auf der **Detail** Seite der geteilten Ansicht anzeigt.
 
 Eine vollständige Implementierung von Tabellen Sichten in einer geteilten Ansicht finden Sie in der Beispiel-app " [tvtables](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvtable) ".
 
@@ -947,7 +947,7 @@ Eine vollständige Implementierung von Tabellen Sichten in einer geteilten Ansic
 
 Da tvos auf IOS basiert, sind Tabellen Sichten und Tabellen Ansichts Controller so konzipiert und Verhalten sich ähnlich. Ausführlichere Informationen zum Arbeiten mit der Tabellenansicht in einer xamarin-App finden Sie in der Dokumentation [Arbeiten mit Tabellen und Zellen](~/ios/user-interface/controls/tables/index.md) in ios.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

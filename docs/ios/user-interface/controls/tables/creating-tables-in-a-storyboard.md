@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 7eff434c21b5e2330d320f2eb85174dc6fe65b34
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 57347336bb91757c9c54f7279f386f15e07c9cd7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021938"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573627"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Arbeiten mit Tabellen im iOS-Designer
 
@@ -20,19 +20,19 @@ Storyboards sind eine WYSIWYG-Methode zum Erstellen von IOS-Anwendungen, die in 
 
 Beim Konfigurieren der Eigenschaften einer Tabellenansicht im IOS-Designer stehen zwei Arten von Zell Inhalten zur Auswahl: **dynamischer** oder **statischer** prototypinhalt.
 
-<a name="Prototype_Content" />
+<a name="Prototype_Content"></a>
 
 ## <a name="dynamic-prototype-content"></a>Inhalt des dynamischen Prototyps
 
-Eine `UITableView` mit prototypinhalten soll normalerweise eine Liste von Daten anzeigen, bei denen die prototypenzelle (oder Zellen, wie Sie mehr als eins definieren können) für jedes Element in der Liste wieder verwendet wird. Die Zellen müssen nicht instanziiert werden, Sie werden in der `GetView`-Methode abgerufen, indem die `DequeueReusableCell`-Methode der `UITableViewSource`aufgerufen wird.
+Ein `UITableView` mit prototypinhalt dient in der Regel zur Anzeige einer Liste von Daten, in denen die prototypenzelle (oder Zellen, wie Sie mehr als eins definieren können) für jedes Element in der Liste wieder verwendet wird. Die Zellen müssen nicht instanziiert werden, Sie werden in der- `GetView` Methode durch Aufrufen der- `DequeueReusableCell` Methode von der-Methode abgerufen `UITableViewSource` .
 
- <a name="Static_Content" />
+ <a name="Static_Content"></a>
 
 ## <a name="static-content"></a>Statischer Inhalt
 
-durch `UITableView`s mit statischem Inhalt können Tabellen direkt auf der Entwurfs Oberfläche entworfen werden. Zellen können in die Tabelle gezogen und angepasst werden, indem Eigenschaften geändert und Steuerelemente hinzugefügt werden.
+`UITableView`bei s mit statischem Inhalt können Tabellen direkt auf der Entwurfs Oberfläche entworfen werden. Zellen können in die Tabelle gezogen und angepasst werden, indem Eigenschaften geändert und Steuerelemente hinzugefügt werden.
 
- <a name="Creating_a_Storyboard-driven_app" />
+ <a name="Creating_a_Storyboard-driven_app"></a>
 
 ## <a name="creating-a-storyboard-driven-app"></a>Erstellen einer Storyboard-gesteuerten App
 
@@ -44,13 +44,13 @@ Die Benutzeroberfläche wird mit einem Storyboard erstellt, und für beide Bilds
 
 ## <a name="walkthrough"></a>Exemplarische Vorgehensweise
 
-Erstellen Sie eine neue Projekt Mappe in Visual Studio mithilfe von **(erstellen) neues Projekt... > Einzelansicht-APPC#()** , und nennen Sie Sie " _storyboardtables_".
+Erstellen Sie eine neue Projekt Mappe in Visual Studio mithilfe von **(Create) New Project... > Single View app (c#)**, und nennen Sie es _storyboardtables_.
 
- [![Dialogfeld "Neues Projekt erstellen"](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
+ [![Dialogfeld „Neues Projekt erstellen“](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
-Die Lösung wird mit einigen C# Dateien geöffnet, und eine`Main.storyboard`Datei wird bereits erstellt. Doppelklicken Sie auf die Datei `Main.storyboard`, um Sie im IOS-Designer zu öffnen.
+Die Lösung wird mit einigen c#-Dateien geöffnet, und es wird `Main.storyboard` bereits eine Datei erstellt. Doppelklicken Sie `Main.storyboard` auf die Datei, um Sie im IOS-Designer zu öffnen.
 
-<a name="Modifying_the_Storyboard" />
+<a name="Modifying_the_Storyboard"></a>
 
 ## <a name="modifying-the-storyboard"></a>Ändern des Storyboards
 
@@ -62,17 +62,17 @@ Das Storyboard wird in drei Schritten bearbeitet:
 
 Nachdem das Storyboard vollständig ist, kann Code hinzugefügt werden, damit alles funktioniert.
 
-<a name="Layout_The_View_Controllers" />
+<a name="Layout_The_View_Controllers"></a>
 
 ### <a name="layout-the-view-controllers"></a>Layout der Ansichts Controller
 
-Die erste Änderung am Storyboard besteht darin, die vorhandene Detail Ansicht zu löschen und durch einen uitableviewcontroller zu ersetzen. Führen Sie folgende Schritte aus:
+Die erste Änderung am Storyboard besteht darin, die vorhandene Detail Ansicht zu löschen und durch einen uitableviewcontroller zu ersetzen. Folgen Sie diesen Schritten:
 
 1. Wählen Sie die Leiste am unteren Rand des Ansichts Controllers aus, und löschen Sie Sie.
 2. Ziehen Sie einen **Navigations Controller** und einen **Tabellen Ansichts Controller** aus der Toolbox auf das Storyboard. 
 3. Erstellen Sie einen segue vom Root View Controller zum zweiten Tabellen Ansichts Controller, der soeben hinzugefügt wurde. Zum Erstellen des-Steuer Elements + Drag & amp; Drop *aus der Detail Zelle* auf den neu hinzugefügten uitableviewcontroller. Wählen Sie die Option unter **Auswahl** **anzeigen** aus. 
-4. Wählen Sie den neuen segue aus, den Sie erstellt haben, und weisen Sie ihm einen Bezeichner zu Klicken Sie auf den-Typ, und geben Sie `TaskSegue` für den **Bezeichner** in der **Eigenschaftenpad**ein:    
-  [Benennungs-![im Eigenschaften Panel](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
+4. Wählen Sie den neuen segue aus, den Sie erstellt haben, und weisen Sie ihm einen Bezeichner zu Klicken Sie auf die Tabelle, und geben Sie `TaskSegue` für den **Bezeichner** in der **Eigenschaftenpad**wie folgt ein:    
+  [![Benennen von "*" im Eigenschaften Panel](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. Konfigurieren Sie als nächstes die beiden Tabellen Sichten, indem Sie Sie auswählen und die Eigenschaftenpad verwenden. Stellen Sie sicher, dass Sie "View" und "Not View Controller" auswählen – Sie können die Dokument Gliederung zur Auswahl verwenden.
 
@@ -82,17 +82,17 @@ Die erste Änderung am Storyboard besteht darin, die vorhandene Detail Ansicht z
 
 7. Ändern Sie den neuen **uitableviewcontroller** in " **Content: static Cells**". 
 
-8. Für den neuen uitableviewcontroller müssen der Klassenname und der Bezeichner festgelegt sein. Wählen Sie den Ansichts Controller aus, und geben Sie _taskdetailviewcontroller_ für die **Klasse** im **Eigenschaftenpad** ein – Hierdurch wird eine neue `TaskDetailViewController.cs` Datei in der Lösungspad erstellt. Geben Sie die **storyboardid** wie im folgenden Beispiel gezeigt als _Detail_ein. Diese wird später verwendet, um diese Ansicht in C# Code zu laden:  
+8. Für den neuen uitableviewcontroller müssen der Klassenname und der Bezeichner festgelegt sein. Wählen Sie den Ansichts Controller aus, und geben Sie _taskdetailviewcontroller_ für die- **Klasse** im **Eigenschaftenpad** ein – Hierdurch wird eine neue `TaskDetailViewController.cs` Datei in der Lösungspad erstellt. Geben Sie die **storyboardid** wie im folgenden Beispiel gezeigt als _Detail_ein. Diese wird später verwendet, um diese Sicht in c#-Code zu laden:  
 
     [![Festlegen der Storyboard-ID](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. Die Storyboard-Entwurfs Oberfläche sollte nun wie folgt aussehen (der Titel des Navigations Elements des root View Controller wurde in "Chore Board" geändert):
 
-    [![Entwurfs Oberfläche](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
+    [![Entwurfsoberfläche](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
-<a name="Create_the_UI" />
+<a name="Create_the_UI"></a>
 
-### <a name="create-the-ui"></a>Benutzeroberfläche erstellen
+### <a name="create-the-ui"></a>Erstellen der Benutzeroberfläche
 
 Nachdem die Ansichten und die-Elemente konfiguriert wurden, müssen die Benutzeroberflächen Elemente hinzugefügt werden.
 
@@ -104,19 +104,19 @@ Wählen Sie zunächst die prototypenzelle im Master Ansichts Controller aus, und
 
 Als nächstes müssen Sie eine Schaltfläche erstellen, mit der neue Aufgaben hinzugefügt werden, wie unten dargestellt:
 
-[Schaltflächen Element![Leiste in der Navigationsleiste](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
+[![leisten-Schaltflächen Element in der Navigationsleiste](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
-Führen Sie folgende Schritte aus: 
+Gehen Sie folgendermaßen vor: 
 
 - Ziehen Sie ein **Balken-Schaltflächen Element** aus der Toolbox auf die Rechte Seite _der Navigationsleiste_.
-- Wählen Sie in der **Eigenschaftenpad**unter leisten **Schaltfläche** die Option **Bezeichner: Hinzufügen** (um die Schaltfläche *+* Plus). 
+- Wählen Sie in der **Eigenschaftenpad**unter leisten **Schaltfläche** die Option **Bezeichner: Hinzufügen** (um eine *+* Plus-Schaltfläche zu erstellen) aus. 
 - Geben Sie einen Namen ein, damit er zu einem späteren Zeitpunkt im Code identifiziert werden kann. Beachten Sie, dass Sie dem stammansichts Controller einen Klassennamen (z. b. **itemviewcontroller**) geben müssen, damit Sie den Namen des leisten-Schaltflächen Elements festlegen können.
 
 #### <a name="taskdetail-view-controller"></a>Taskdetail-Ansichts Controller
 
 Die Detail Ansicht erfordert viel mehr Arbeit. Tabellen Ansichts Zellen müssen auf die Ansicht gezogen und dann mit Bezeichnungen, Text Ansichten und Schaltflächen aufgefüllt werden. Der folgende Screenshot zeigt die fertige Benutzeroberfläche mit zwei Abschnitten. Ein Abschnitt enthält drei Zellen, drei Bezeichnungen, zwei Textfelder und einen Switch, während der zweite Abschnitt eine Zelle mit zwei Schaltflächen aufweist:
 
- [Layout der![Detailansicht](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
+ [![Layout der Detailansicht](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 Führen Sie die folgenden Schritte aus, um das komplette Layout zu erstellen:
 
@@ -157,15 +157,15 @@ Beim Erstellen des Storyboards sind einige abschließende Schritte erforderlich.
 - **UIButton löschen** : _DeleteButton_
 - **UIButton speichern** : _SaveButton_
 
-<a name="Adding_Code" />
+<a name="Adding_Code"></a>
 
 ## <a name="adding-code"></a>Hinzufügen von Code
 
-Der Rest der Arbeit erfolgt in Visual Studio unter Mac oder Windows mit C#. Beachten Sie, dass die im Code verwendeten Eigenschaften Namen die in der obigen exemplarischen Vorgehensweise festgelegten Eigenschaften Namen widerspiegeln
+Der Rest der Arbeit erfolgt in Visual Studio unter Mac oder Windows mit c#. Beachten Sie, dass die im Code verwendeten Eigenschaften Namen die in der obigen exemplarischen Vorgehensweise festgelegten Eigenschaften Namen widerspiegeln
 
-Zuerst möchten wir eine `Chores` Klasse erstellen, die eine Möglichkeit bietet, den Wert von ID, Name, Notizen und den fertigen booleschen Wert zu erhalten und festzulegen, damit wir diese Werte in der gesamten Anwendung verwenden können.
+Zuerst möchten wir eine Klasse erstellen `Chores` , die eine Möglichkeit bietet, den Wert von ID, Name, Notizen und den fertigen booleschen Wert zu erhalten und festzulegen, damit wir diese Werte in der gesamten Anwendung verwenden können.
 
-Fügen Sie in der `Chores`-Klasse den folgenden Code hinzu:
+`Chores`Fügen Sie in der-Klasse den folgenden Code hinzu:
 
 ```csharp
 public class Chores {
@@ -176,11 +176,11 @@ public class Chores {
   }
 ```
 
-Erstellen Sie als nächstes eine `RootTableSource` Klasse, die von `UITableViewSource`erbt. 
+Erstellen Sie als nächstes eine `RootTableSource` Klasse, die von erbt `UITableViewSource` . 
 
-Der Unterschied zwischen dieser und einer nicht-Storyboard-Tabellenansicht besteht darin, dass die `GetView`-Methode keine Zellen instanziieren muss – `theDequeueReusableCell` Methode immer eine Instanz der prototypzelle zurückgibt (mit übereinstimmenden Bezeichner).
+Der Unterschied zwischen dieser und einer nicht-Storyboard-Tabellenansicht besteht darin, dass die `GetView` Methode keine Zellen instanziieren muss – die `theDequeueReusableCell` Methode gibt immer eine Instanz der prototypzelle (mit übereinstimmenden Bezeichner) zurück.
 
-Der folgende Code wird aus der `RootTableSource.cs` Datei abgeleitet:
+Der folgende Code ist aus der `RootTableSource.cs` Datei:
 
 ```csharp
 public class RootTableSource : UITableViewSource
@@ -217,7 +217,7 @@ public Chores GetItem(int id)
 }
 ```
 
-Um die `RootTableSource`-Klasse zu verwenden, erstellen Sie eine neue-Auflistung im Konstruktor der `ItemViewController`:
+Um die `RootTableSource` -Klasse zu verwenden, erstellen Sie eine neue `ItemViewController` -Auflistung im-Konstruktor:
 
 ```csharp
 chores = new List<Chore> {
@@ -226,7 +226,7 @@ chores = new List<Chore> {
     };
 ```
 
-In `ViewWillAppear` die Auflistung an die Quelle übergeben und der Tabellenansicht zugewiesen:
+Fügen `ViewWillAppear` Sie in die Auflistung an die Quelle übergeben und der Tabellenansicht zuweisen:
 
 ```csharp
 public override void ViewWillAppear(bool animated)
@@ -239,7 +239,7 @@ public override void ViewWillAppear(bool animated)
 
 Wenn Sie die APP jetzt ausführen, wird der Hauptbildschirm nun geladen, und es wird eine Liste mit zwei Tasks angezeigt. Wenn eine Aufgabe berührt wird, führt der durch das Storyboard definierte durch das Storyboard, dass der Detailbildschirm angezeigt wird. es werden jedoch momentan keine Daten angezeigt.
 
-Um einen Parameter in einem segue zu senden, überschreiben Sie die `PrepareForSegue`-Methode, und legen Sie die Eigenschaften für die `DestinationViewController` (die `TaskDetailViewController` in diesem Beispiel) fest. Die Controller Klasse der Ziel Ansicht wurde instanziiert, aber für den Benutzer noch nicht angezeigt – dies bedeutet, dass Sie Eigenschaften für die Klasse festlegen, aber keine UI-Steuerelemente ändern können:
+Um einen Parameter in einem segue zu senden, überschreiben Sie die `PrepareForSegue` -Methode, und legen Sie Eigenschaften für fest `DestinationViewController` ( `TaskDetailViewController` in diesem Beispiel). Die Controller Klasse der Ziel Ansicht wurde instanziiert, aber für den Benutzer noch nicht angezeigt – dies bedeutet, dass Sie Eigenschaften für die Klasse festlegen, aber keine UI-Steuerelemente ändern können:
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -256,7 +256,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
     }
 ```
 
-In `TaskDetailViewController` weist die `SetTask`-Methode ihren Parametern Eigenschaften zu, sodass in viewwillview auf Sie verwiesen werden kann. Die Steuerelement Eigenschaften können nicht in `SetTask` geändert werden, da möglicherweise nicht vorhanden ist, wenn `PrepareForSegue` aufgerufen wird:
+In `TaskDetailViewController` weist die- `SetTask` Methode den Parametern Eigenschaften zu, sodass in viewwillview auf Sie verwiesen werden kann. Die Steuerelement Eigenschaften können in nicht geändert werden, `SetTask` da möglicherweise nicht vorhanden ist, wenn `PrepareForSegue` aufgerufen wird:
 
 ```csharp
 Chore currentTask {get;set;}
@@ -294,7 +294,7 @@ public void DeleteTask(Chores chore)
 }
 ```
 
-Als nächstes müssen Sie den `TouchUpInside` Ereignishandler der Schaltfläche der `ViewDidLoad`-Methode von **TaskDetailViewController.cs**hinzufügen. Der `Delegate`-Eigenschafts Verweis auf die `ItemViewController` wurde speziell erstellt, sodass wir `SaveTask` und `DeleteTask`aufzurufen können, die diese Ansicht im Rahmen des Vorgangs schließen:
+Als nächstes müssen Sie den-Ereignishandler der Schaltfläche der- `TouchUpInside` `ViewDidLoad` Methode von **TaskDetailViewController.cs**hinzufügen. Der `Delegate` Eigenschafts Verweis auf das `ItemViewController` wurde speziell erstellt, sodass wir `SaveTask` und abrufen können `DeleteTask` , die diese Ansicht im Rahmen des Vorgangs schließen:
 
 ```csharp
 SaveButton.TouchUpInside += (sender, e) => {
@@ -307,7 +307,7 @@ SaveButton.TouchUpInside += (sender, e) => {
 DeleteButton.TouchUpInside += (sender, e) => Delegate.DeleteTask(currentTask);
 ```
 
-Die letzte verbleibende Funktionalität, die erstellt werden soll, ist die Erstellung neuer Tasks. Fügen Sie in **ItemViewController.cs** eine Methode hinzu, die neue Aufgaben erstellt und die Detailansicht öffnet. Um eine Sicht aus einem Storyboard zu instanziieren, verwenden Sie die `InstantiateViewController`-Methode mit der `Identifier` für diese Ansicht. in diesem Beispiel wird "Detail" angezeigt:
+Die letzte verbleibende Funktionalität, die erstellt werden soll, ist die Erstellung neuer Tasks. Fügen Sie in **ItemViewController.cs** eine Methode hinzu, die neue Aufgaben erstellt und die Detailansicht öffnet. Um eine Sicht aus einem Storyboard zu instanziieren, verwenden Sie die `InstantiateViewController` -Methode mit `Identifier` für diese Ansicht. in diesem Beispiel wird "Detail" angezeigt:
 
 ```csharp
 public void CreateTask () 
@@ -324,7 +324,7 @@ public void CreateTask ()
     }
 ```
 
-Verknüpfen Sie schließlich die Schaltfläche in der Navigationsleiste in der `ViewDidLoad`-Methode von **ItemViewController.cs**, um Sie aufzurufen:
+Verknüpfen Sie schließlich die Schaltfläche in der Navigationsleiste der **ItemViewController.cs**- `ViewDidLoad` Methode, um Sie aufzurufen:
 
 ```csharp
 AddButton.Clicked += (sender, e) => CreateTask ();
@@ -332,14 +332,14 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 Dadurch wird das Storyboard-Beispiel abgeschlossen – die fertige App sieht wie folgt aus:
 
-[![fertige App](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
+[![Fertig gestellte App](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 Das Beispiel veranschaulicht Folgendes:
 
 - Erstellen einer Tabelle mit prototypinhalten, in denen Zellen zur erneuten Verwendung zum Anzeigen von Listen mit Daten definiert werden. 
 - Erstellen einer Tabelle mit statischem Inhalt zum Erstellen eines Eingabeformulars. Dies umfasste das Ändern des Tabellen Stils und das Hinzufügen von Abschnitten, Zellen und UI-Steuerelementen. 
-- Erstellen eines abgs und Überschreiben der `PrepareForSegue`-Methode, um die Ziel Ansicht aller erforderlichen Parameter zu benachrichtigen. 
-- Die storyboardsichten werden direkt mit der `Storyboard.InstantiateViewController`-Methode geladen.
+- Erstellen eines abgs und Überschreiben der- `PrepareForSegue` Methode, um die Ziel Ansicht aller erforderlichen Parameter zu benachrichtigen. 
+- Die storyboardsichten werden direkt mit der- `Storyboard.InstantiateViewController` Methode geladen.
 
 ## <a name="related-links"></a>Verwandte Links
 

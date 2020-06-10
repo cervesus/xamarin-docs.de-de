@@ -1,24 +1,9 @@
 ---
-title: Xamarin.FormsVisual State Manager
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 13dd0a3f5d665e2232e7e6e12edac7cf117dd0ca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127282"
+Title: " Xamarin.Forms Visual State Manager" Description: "verwenden Sie den visuellen Zustands-Manager, um Änderungen an XAML-Elementen auf der Grundlage von visuellen Zuständen vorzunehmen, die aus dem Code festgelegt wurden."
+ms. Prod: xamarin ms. assetid: 17296f 14-640D-484b-a24c-a4e9b7013e4f ms. Technology: xamarin-Forms ms. Custom: xamu-Video Author: davidbritch ms. Author: dabritch ms. Date: 02/21/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-visual-state-manager"></a>Xamarin.FormsVisual State Manager
+
+# <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms: Visual State-Manager
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
@@ -409,41 +394,13 @@ Nun reagieren alle `Entry` Ansichten auf dieser Seite auf die gleiche Weise wie 
 In der folgenden Tabelle sind die visuellen Zustände aufgeführt, die in definiert sind Xamarin.Forms :
 
 | Klasse | Zustände | Weitere Informationen |
-| ----- | ---
-Title: " Xamarin.Forms Visual State Manager" Description: ms. Prod: ms. assetid: ms. Technology: ms. Custom: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
---- | ---Titel: " Xamarin.Forms Visual State Manager" Description: ms. Prod: ms. assetid: ms. Technology: ms. Custom: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: " Xamarin.Forms Visual State Manager" Description: ms. Prod: ms. assetid: ms. Technology: ms. Custom: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: " Xamarin.Forms Visual State Manager" Description: ms. Prod: ms. assetid: ms. Technology: ms. Custom: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: " Xamarin.Forms Visual State Manager" Description: ms. Prod: ms. assetid: ms. Technology: ms. Custom: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: " Xamarin.Forms Visual State Manager" Description: ms. Prod: ms. assetid: ms. Technology: ms. Custom: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: " Xamarin.Forms Visual State Manager" Description: ms. Prod: ms. assetid: ms. Technology: ms. Custom: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------- | | `Button` | `Pressed` |  [Visuelle Schalt](~/xamarin-forms/user-interface/button.md#button-visual-states) Flächen für Schaltflächen | | `CheckBox` | `IsChecked` |  [Kontrollkästchen für visuelle Zustände](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) | | `CarouselView`  |  `DefaultItem` , `CurrentItem` , `PreviousItem` , `NextItem`  |  [Karouselview visuelle Zustände](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) | | `ImageButton`  |  `Pressed`  |  [Visuelle Zustände von ImageButton](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) | | `RadioButton` | `IsChecked` |  [Visuelle Zustände von RadioButton](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) | | `VisualElement`  |  `Normal` , `Disabled` , `Focused` , `Selected`  |  [Allgemeine Zustände](#common-states) |
+| ----- | ------ | ---------------- |
+| `Button` | `Pressed` | [Visuelle Schaltflächen für Flächen](~/xamarin-forms/user-interface/button.md#button-visual-states) |
+| `CheckBox` | `IsChecked` | [Kontrollkästchen visuelle Zustände](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
+| `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [Visuelle Zustände von carouselview](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
+| `ImageButton` | `Pressed` | [Visuelle Status von ImageButton](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
+| `RadioButton` | `IsChecked` | [Visuelle Zustände von RadioButton](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [Allgemeine Zustände](#common-states) |
 
 Auf jeden dieser Zustände kann über die visuelle Zustands Gruppe mit dem Namen zugegriffen werden `CommonStates` .
 
@@ -626,7 +583,7 @@ Visuelle Zustände unterstützen Zustands Trigger, bei denen es sich um eine spe
 
 Zustandstrigger werden der Sammlung [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) eines [`VisualState`](xref:Xamarin.Forms.VisualState) hinzugefügt. Diese Sammlung kann Trigger mit einem oder mehreren Zustandstriggern enthalten. Ein [`VisualState`](xref:Xamarin.Forms.VisualState) wird angewendet, wenn alle Zustandstrigger in der Sammlung aktiv sind.
 
-Bei der Verwendung von Zustands Triggern zum Steuern von visuellen Zuständen Xamarin.Forms verwendet die folgenden Rang folgen Regeln, um zu bestimmen, welcher Trigger (und entsprechende [`VisualState`](xref:Xamarin.Forms.VisualState) ) aktiv sein wird:
+Bei Verwendung von Zustandstriggern zur Steuerung visueller Zustände befolgt Xamarin.Forms die folgenden Prioritätsregeln, um zu bestimmen, welcher Trigger (und welches entsprechende [`VisualState`](xref:Xamarin.Forms.VisualState)-Element) aktiv ist:
 
 1. Alle von [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) abgeleiteten Trigger.
 1. Ein [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger), der aktiviert wird, da die Bedingung [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth) erfüllt ist.
@@ -634,9 +591,7 @@ Bei der Verwendung von Zustands Triggern zum Steuern von visuellen Zuständen Xa
 
 Wenn mehrere Trigger gleichzeitig aktiv sind (z. B. zwei benutzerdefinierte Trigger), hat der erste im Markup deklarierte Trigger Vorrang.
 
-Weitere Informationen zu Status Triggern finden Sie unter State Triggers ( [Zustands Trigger](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers)).
-
-<a name="adaptive-layout" />
+Weitere Informationen zu Zustandstriggern finden Sie unter [Zustandstrigger](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers).
 
 ## <a name="use-the-visual-state-manager-for-adaptive-layout"></a>Verwenden des visuellen Zustands-Managers für adaptives Layout
 

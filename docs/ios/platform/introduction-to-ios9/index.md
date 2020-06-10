@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488945"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574131"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
@@ -42,7 +42,7 @@ Da ATS in apps, die für IOS 9 und OS X 10,11 (El Capitan) erstellt werden, stan
 
 Weitere Informationen zu ATS finden Sie in unserem Handbuch zur [App-Transport Sicherheit](~/ios/app-fundamentals/ats.md) .
 
-<a name="multitasking" />
+<a name="multitasking"></a>
 
 ## <a name="multitasking-for-ipad"></a>Multitasking für iPad
 
@@ -109,7 +109,7 @@ Weitere Informationen finden [Sie in unserer Einführung in homekit](~/ios/platf
 
 ## <a name="handoff-framework-changes"></a>Übergabe von frameworkänderungen
 
-Die Übergabe (auch als Kontinuität bezeichnet) wurde von Apple in ios 8 und OS X Yosemite (10,10) eingeführt, sodass der Benutzer eine Aktivität auf einem Ihrer Geräte (IOS oder Mac) starten und dieselbe Aktivität auf einem anderen Gerät (wie durch die iclou des Benutzers identifiziert) fortsetzen kann. d-Konto).
+Die Übergabe (auch als Kontinuität bezeichnet) wurde von Apple in ios 8 und OS X Yosemite (10,10) eingeführt, sodass der Benutzer eine Aktivität auf einem Ihrer Geräte (IOS oder Mac) starten und dieselbe Aktivität auf einem anderen Gerät (wie durch das icloud-Konto des Benutzers identifiziert) fortsetzen kann.
 
 Die Übergabe von Handoff wurde in ios 9 erweitert, um auch neue, erweiterte Suchfunktionen zu unterstützen. Weitere Informationen finden Sie in der Dokumentation zu den [Such Erweiterungen](~/ios/platform/search/index.md) . Weitere Informationen zur Verwendung von Handoff finden Sie in unserer [Einführung in die Übergabe](~/ios/platform/handoff.md) Dokumentation.
 
@@ -137,15 +137,15 @@ In ios 9 hat Apple die Keychain erweitert, um einen neuen Verschlüsselungs Schl
 
 - Eine neue Berührungs-ID-Einschränkung, die Keychain-Elemente für ungültig erklärt, wenn die Fingerabdruckdatenbank geändert wird.
 - Neue Einschränkungen, die das Erstellen von Access Control Listeneinträgen mit der Fingereingabe-ID oder Kennung ermöglichen.
-- Ein neuer Authentifizierungs Kontext, mit dem Sie die Authentifizierung unabhängig von `SecItem` aufrufen aufrufen können.
+- Ein neuer Authentifizierungs Kontext, mit dem Sie die Authentifizierung unabhängig von den aufrufen aufrufen können `SecItem` .
 - Access Control Listen Entropie (mit der Option "Anwendungs Kennwort") für die von der APP bereitgestellte Schlüsselbund Element-Verschlüsselung.
-- Unterstützung für das Erstellen und Verwenden von Schlüsseln innerhalb der sicheren Enclave (über das `kSecAttrTokenIDSecureEnclave`-Attribut).
+- Unterstützung für das Erstellen und Verwenden von Schlüsseln innerhalb der sicheren Enclave (über das- `kSecAttrTokenIDSecureEnclave` Attribut).
 
 Weitere Informationen finden Sie unter Fingereingabe [-ID und Face ID in xamarin. IOS](~/ios/platform/touch-id-face-id.md).
 
 ## <a name="right-to-left-language-support"></a>Sprachunterstützung von rechts nach links
 
-In ios 9 hat Apple die Darstellung einer geflickten Benutzeroberfläche einfacher als je zuvor durch Bereitstellen der vollständigen Unterstützung von rechts-nach-links-Sprachen bereitgestellt. Hierzu gehören folgende Elemente:
+In ios 9 hat Apple die Darstellung einer geflickten Benutzeroberfläche einfacher als je zuvor durch Bereitstellen der vollständigen Unterstützung von rechts-nach-links-Sprachen bereitgestellt. Dazu gehören:
 
 - Standard mäßige [UIKit](xref:UIKit) -Steuerelemente werden basierend auf den Gebiets Schema-und Spracheinstellungen der IOS-Geräte automatisch von rechts nach links gekippt.
 - Die [UIView](xref:UIKit.UIView) -Klasse stellt Attribute bereit, mit denen Sie definieren können, wie eine bestimmte Ansicht angezeigt werden soll, wenn Sie von rechts nach links gekippt werden.
@@ -177,8 +177,8 @@ Weitere Informationen finden Sie in unserer zusätzlichen Dokumentation zu [IOS 
 Apple hat die folgenden APIs und Funktionen in ios 9 als veraltet markiert:
 
 - **Adressbuch & Address Book UI** : Diese APIs wurden durch die Benutzeroberflächen-Frameworks Contact und Contact ersetzt. Weitere Informationen finden Sie in unserer Benutzeroberflächen Dokumentation zu [Kontakten und Kontakten](~/ios/platform/contacts.md) .
-- **Cbcentralmanager** : die `RetrievePeripherals`-und `RetrieveConnectedPeripherals` Methoden der `CBCentralManager`-Klasse wurden in ios 9 entfernt. Wenn Sie diese Methoden aufrufen, stürzt eine App ab, wenn ein Zubehör oder ein App-Start paarweise gekoppelt wird.
-- **Fetchallchanges** : der `FetchAllChanges` der `CKFetchRecordChangesOperation` Klasse wurde abgewertet und wird in ios 9 entfernt.
+- **Cbcentralmanager** : die- `RetrievePeripherals` Methode und die- `RetrieveConnectedPeripherals` Methode der- `CBCentralManager` Klasse wurden in ios 9 entfernt. Wenn Sie diese Methoden aufrufen, stürzt eine App ab, wenn ein Zubehör oder ein App-Start paarweise gekoppelt wird.
+- **Fetchallchanges** -der `FetchAllChanges` der `CKFetchRecordChangesOperation` Klasse wurde abgewertet und wird in ios 9 entfernt.
 - **Media Player** -das Media Player Framework ist in ios 9 veraltet. Verwenden Sie stattdessen avkit oder die AV Foundation-APIs.
 
 Eine umfassende Liste der spezifischen API-Abgrenzungen finden Sie in der Dokumentation zu den [IOS 9,0-API-Distributionen](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222) von Apple.
@@ -187,21 +187,21 @@ Eine umfassende Liste der spezifischen API-Abgrenzungen finden Sie in der Dokume
 
 Wir haben einige [IOS 9-spezifische Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9) für den Einstieg:
 
-- [AstroLayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
+- [Astrolayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
-- [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
+- [Metalperformanceshadershelloworld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
 - [Musik Bewegung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
-- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
-- [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
+- [Photoprogress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [Abbild Katalogisierung](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
-- [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
+- ["Stickycorners"](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 Sehen Sie sich auch die IOS-Abschnitte dieser Beispiele an (Begleit Mac OS X Versionen kommen!):
 
-- [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
-- [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
+- [Agentscatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
+- [Metalkitessentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Einführung in 3D-Fingereingabe](~/ios/platform/3d-touch.md)

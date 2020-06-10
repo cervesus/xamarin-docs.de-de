@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728251"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571518"
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualisieren von Komponenten verweisen auf nuget
 
@@ -29,7 +29,7 @@ Eine Liste beliebter xamarin [-Plug-ins und-Bibliotheken](https://github.com/xam
 
 Die Version 15,6 von Visual Studio und 7,4 Release von Visual Studio für Mac unterstützt keine Komponenten mehr in Ihrem Projekt. 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Wenn Sie ein Projekt in Visual Studio laden, wird das folgende Dialogfeld angezeigt, in dem erläutert wird, dass alle Komponenten aus dem Projekt manuell entfernt werden müssen:
 
@@ -41,7 +41,7 @@ So entfernen Sie eine Komponente aus dem Projekt:
 
 2. Klicken Sie erneut mit der rechten Maustaste auf das entladene Projekt, und wählen Sie dann **Bearbeiten {your-Project-Name}. csproj**aus.
 
-3. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Er sollte ähnlich wie im folgenden Beispiel aussehen:
+3. Suchen Sie Verweise in der Datei auf `XamarinComponentReference` . Dies sollte in etwa wie im folgenden Beispiel aussehen:
 
     ```xml
     <ItemGroup>
@@ -60,13 +60,13 @@ So entfernen Sie eine Komponente aus dem Projekt:
     </ItemGroup>
     ```
 
-4. Entfernen Sie die Verweise auf `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher, die gesamte `ItemGroup`zu entfernen.
+4. Entfernen Sie die Verweise auf, `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher, die gesamte zu entfernen `ItemGroup` .
 
 5. Nachdem die Datei gespeichert wurde, klicken Sie mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt erneut laden**aus.
 
 6. Wiederholen Sie die obigen Schritte für jedes Projekt in der Projekt Mappe.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Wenn Sie ein Projekt in Visual Studio für Mac laden, wird das folgende Dialogfeld angezeigt, in dem erläutert wird, dass alle Komponenten aus dem Projekt manuell entfernt werden müssen:
 
@@ -74,9 +74,9 @@ Wenn Sie ein Projekt in Visual Studio für Mac laden, wird das folgende Dialogfe
 
 So entfernen Sie eine Komponente aus dem Projekt:
 
-1. Öffnen Sie die CSPROJ-Datei. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie Extras **> Datei bearbeiten**aus.
+1. Öffnen Sie die Datei .csproj. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie Extras **> Datei bearbeiten**aus.
 
-2. Suchen Sie in der Datei nach verweisen, um `XamarinComponentReference`. Er sollte ähnlich wie im folgenden Beispiel aussehen:
+2. Suchen Sie Verweise in der Datei auf `XamarinComponentReference` . Dies sollte in etwa wie im folgenden Beispiel aussehen:
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ So entfernen Sie eine Komponente aus dem Projekt:
     </ItemGroup>
     ```
 
-3. Entfernen Sie die Verweise auf `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher, die gesamte `ItemGroup`
+3. Entfernen Sie die Verweise auf, `XamarinComponentReference` und speichern Sie die Datei. Im obigen Beispiel ist es sicher, das gesamte`ItemGroup`
 
 4. Wiederholen Sie die obigen Schritte für jedes Projekt in der Projekt Mappe.
 
@@ -113,7 +113,7 @@ In den folgenden Abschnitten wird erläutert, wie Sie vorhandene xamarin-Lösung
 Die meisten Komponenten fallen in eine der oben genannten Kategorien.
 Wenn Sie eine Komponente verwenden, die anscheinend kein entsprechendes nuget-Paket enthält, lesen Sie den Abschnitt [Komponenten ohne nuget-Migrationspfad](#require-update) weiter unten.
 
-<a name="contain" />
+<a name="contain"></a>
 
 ## <a name="components-that-contain-nuget-packages"></a>Komponenten, die nuget-Pakete enthalten
 
@@ -141,7 +141,7 @@ Das nuget-Paket wird weiterhin im Knoten **Pakete** aufgeführt, und Ihre APP wi
 
 ![Nuget-Paket aktualisieren](component-nuget-images/nuget-update-sml.png)
 
-<a name="replace" />
+<a name="replace"></a>
 
 ## <a name="components-with-nuget-replacements"></a>Komponenten mit nuget-Ersetzungen
 
@@ -159,8 +159,8 @@ Um zu bestätigen, dass ein Ersatz-nuget-Paket vorhanden ist, suchen Sie nach [N
 
 Beispielsweise können Sie das beliebte **SQLite-net-PCL-** Paket suchen, indem Sie Folgendes suchen:
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – der Produktname.
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – das Profil des Autors.
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)– der Produktname.
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)– das Profil des Autors.
 
 ### <a name="updating-the-solution"></a>Aktualisieren der Lösung
 
@@ -186,7 +186,7 @@ Hierdurch werden die Komponente und alle Verweise gelöscht. Dadurch wird der Bu
 Das nuget-Paket wird dem Projekt zusammen mit allen Abhängigkeiten hinzugefügt.
 Dadurch sollte der Build behoben werden. Wenn der Buildvorgang weiterhin fehlschlägt, überprüfen Sie jeden Fehler, um festzustellen, ob API-Unterschiede zwischen der Komponente und dem nuget-Paket vorliegen.
 
-<a name="require-update" />
+<a name="require-update"></a>
 
 ## <a name="components-without-a-nuget-migration-path"></a>Komponenten ohne nuget-Migrationspfad
 
@@ -201,7 +201,7 @@ Dies bedeutet, dass die Komponente nicht heruntergeladen und installiert wird, w
 
 Viele Komponentenhersteller arbeiten noch an der Migration zu nuget, und andere (einschließlich kommerziell verfügbarer Produkte) untersuchen möglicherweise Alternative Übermittlungs Optionen.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Liste der gängigen xamarin-Plug-ins und-Bibliotheken](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Installieren und Verwenden eines nuget-Pakets (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)

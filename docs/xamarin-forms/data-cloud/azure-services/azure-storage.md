@@ -1,22 +1,8 @@
 ---
-title: Speichern und Zugreifen auf Daten in Azure Storage vonXamarin.Forms
-description: Azure Storage ist eine skalierbare cloudspeicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann. In diesem Artikel wird erläutert, wie Xamarin.Forms Sie zum Speichern von Text-und Binärdaten in Azure Storage und zum Zugreifen auf die Daten verwenden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4df14ef4d3eb72b92e4201e57103780801ca2d2f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131026"
+Title: "Speichern und Zugreifen auf Daten in Azure Storage von Xamarin.Forms " Description: "Azure Storage ist eine skalierbare cloudspeicherlösung, die zum Speichern von unstrukturierten und strukturierten Daten verwendet werden kann. In diesem Artikel wird erläutert, wie Xamarin.Forms Sie zum Speichern von Text-und Binärdaten in Azure Storage und zum Zugreifen auf die Daten verwenden.
+ms. Prod: xamarin ms. assetid: 5b10d37b-839b-4cd0-9c65-91014a93f 3eb ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/28/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Speichern und Zugreifen auf Daten in Azure Storage vonXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
@@ -71,10 +57,8 @@ Der Prozess für die Integration eines Azure Storage Kontos in eine- Xamarin.For
 
 1. Erstellen Sie ein Speicherkonto. Weitere Informationen finden Sie unter [Erstellen eines Speicher Kontos](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account).
 1. Fügen Sie der Anwendung die [Azure Storage Client Bibliothek](https://www.nuget.org/packages/WindowsAzure.Storage/) hinzu Xamarin.Forms .
-1. Konfigurieren Sie die Speicher Verbindungs Zeichenfolge. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure Storage](#connecting).
+1. Konfigurieren Sie die Speicher Verbindungs Zeichenfolge. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure Storage](#connecting-to-azure-storage).
 1. Fügen Sie `using` `Microsoft.WindowsAzure.Storage` `Microsoft.WindowsAzure.Storage.Blob` Klassen, die auf Azure Storage zugreifen, Direktiven für die Namespaces und hinzu.
-
-<a name="connecting" />
 
 ## <a name="connecting-to-azure-storage"></a>Herstellen einer Verbindung mit Azure Storage
 

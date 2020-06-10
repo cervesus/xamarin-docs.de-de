@@ -9,8 +9,6 @@ ms. Prod: xamarin ms. assetid: 11a1d327-2df3-4 f 3B-810D-6c95b71d27b2 ms. Techno
 
 Es ist wichtig zu verstehen, wie Ihre Anwendung verwendet wird und wie die quer Ausrichtung integriert werden kann, um die Benutzerumgebung zu verbessern. Einzelne Layouts können so entworfen werden, dass Sie mehrere Ausrichtungen abdecken und den verfügbaren Platz optimal nutzen. Auf Anwendungsebene kann die Drehung deaktiviert oder aktiviert werden.
 
-<a name="Controlling_Orientation" />
-
 ## <a name="controlling-orientation"></a>Steuern der Ausrichtung
 
 Wenn Sie verwenden Xamarin.Forms , besteht die unterstützte Methode zum Steuern der Geräte Ausrichtung darin, die Einstellungen für die einzelnen Projekte zu verwenden.
@@ -74,8 +72,6 @@ Beachten Sie, dass die nativen Android-APIs eine große Kontrolle über die Verw
 
 Beim universelle Windows-Plattform (UWP) werden unterstützte Ausrichtungen in der Datei " **Package. appxmanifest** " festgelegt. Wenn Sie das Manifest öffnen, wird ein Konfigurations Panel angezeigt, in dem unterstützte Ausrichtungen ausgewählt werden können.
 
-<a name="Reacting_to_Changes_in_Orientation" />
-
 ## <a name="reacting-to-changes-in-orientation"></a>Reagieren auf Änderungen der Ausrichtung
 
 Xamarin.Formsbietet keine nativen Ereignisse für die Benachrichtigung Ihrer APP mit Ausrichtungs Änderungen in frei gegebenem Code. Enthält jedoch [Xamarin.Essentials](~/essentials/index.md) eine [ `DeviceDisplay` ]-Klasse, die Benachrichtigungen über Orientierungsänderungen bereitstellt.
@@ -120,8 +116,6 @@ und Querformat:
 ![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
 
 Beachten Sie, dass die apps den verfügbaren Speicherplatz nutzen, indem Sie mehr Funktionalität in Landscape hinzufügen.
-
-<a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>Reaktionsfähiges Layout
 

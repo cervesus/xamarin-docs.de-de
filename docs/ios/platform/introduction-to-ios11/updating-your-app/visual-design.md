@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 532a26de422846d81f6ba6dead7dee6341bcee72
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306110"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570894"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Visuelle Entwurfs Updates in ios 11
 
@@ -24,14 +24,14 @@ Weitere Informationen zum Entwerfen von für iPhone x finden Sie im Apple- [Desi
 
 UIKit-Balken wurden in ios 11 angepasst, um Endbenutzern den Zugriff auf die Benutzer zu erleichtern.
 
-Eine solche Änderung ist eine neue HUD-Anzeige, die angezeigt wird, wenn ein Benutzer ein Balken Element lange drückt. Um dies zu ermöglichen, legen Sie die `largeContentSizeImage`-Eigenschaft auf `UIBarItem` fest, und fügen Sie ein größeres Image über einen [Asset-Katalog](~/ios/app-fundamentals/images-icons/displaying-an-image.md)hinzu:
+Eine solche Änderung ist eine neue HUD-Anzeige, die angezeigt wird, wenn ein Benutzer ein Balken Element lange drückt. Um dies zu ermöglichen, legen `largeContentSizeImage` Sie die-Eigenschaft auf fest, `UIBarItem` und fügen Sie ein größeres Bild über einen Ressourcen [Katalog](~/ios/app-fundamentals/images-icons/displaying-an-image.md)hinzu:
 
 ```csharp
 barItem.LargeContentSizeImage = UIImage.FromBundle("AccessibleImage");
 ```
 
 ### <a name="navigation-bar"></a>Navigationsleiste
-in ios 11 wurden neue Funktionen eingeführt, um das Lesen von Navigationsleisten Titeln zu vereinfachen. Apps können diesen größeren Titel anzeigen, indem Sie die `PrefersLargeTitles`-Eigenschaft zu "true" zuweisen:
+in ios 11 wurden neue Funktionen eingeführt, um das Lesen von Navigationsleisten Titeln zu vereinfachen. Apps können diesen größeren Titel anzeigen, indem Sie die- `PrefersLargeTitles` Eigenschaft auf "true" zuweisen:
 
 ```csharp
 NavigationController.NavigationBar.PrefersLargeTitles = true;
@@ -41,25 +41,25 @@ Durch das Festlegen größerer Titel in der App werden _alle_ Titel der Navigati
 
 ![Großer Navigations Titel](visual-design-images/image7.png)
 
-Um zu steuern, wann ein großer Titel auf einer Navigationsleiste angezeigt wird, legen Sie die `LargeTitleDisplayMode` für das Navigationselement auf `Always`, `Never`oder `Automatic`fest.
+Um zu steuern, wann ein großer Titel auf einer Navigationsleiste angezeigt wird, legen `LargeTitleDisplayMode` Sie für das Navigationselement auf `Always` , oder fest `Never` `Automatic` .
 
 ### <a name="search-controller"></a>Controller suchen
 
-IOS 11 vereinfacht das Hinzufügen eines Such Controllers direkt zur Navigationsleiste. Nachdem Sie einen Such Controller erstellt haben, fügen Sie ihn der Navigationsleiste mit der `SearchController`-Eigenschaft hinzu:
+IOS 11 vereinfacht das Hinzufügen eines Such Controllers direkt zur Navigationsleiste. Nachdem Sie einen Such Controller erstellt haben, fügen Sie ihn der Navigationsleiste mit der- `SearchController` Eigenschaft hinzu:
 
 ```csharp
 NavigationItem.SearchController = searchController;
 ```
 
-[![großen Navigations Titel mit Suchleiste](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
+[![Großer Navigations Titel mit Suchleiste](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
-Abhängig von der Funktionalität Ihrer APP möchten Sie möglicherweise, dass die Suchleiste ausgeblendet wird, wenn ein Benutzer einen Bildlauf durch eine Liste durchführt. Sie können dies mithilfe der `HidesSearchBarWhenScrolling`-Eigenschaft anpassen.
+Abhängig von der Funktionalität Ihrer APP möchten Sie möglicherweise, dass die Suchleiste ausgeblendet wird, wenn ein Benutzer einen Bildlauf durch eine Liste durchführt. Sie können dies mithilfe der- `HidesSearchBarWhenScrolling` Eigenschaft anpassen.
 
 ## <a name="margins"></a>Ränder
 
-Apple hat eine neue Eigenschaft – `directionalLayoutMargins` – erstellt, die verwendet werden kann, um den Raum zwischen Sichten und unter Ansichten festzulegen. Verwenden Sie `directionalLayoutMargins` mit `leading` oder `trailing` insets. Unabhängig davon, ob es sich bei dem System um eine Sprache von links nach rechts oder von rechts nach Links handelt, wird der Abstand in der APP von IOS entsprechend festgelegt.
+Apple hat eine neue Eigenschaft – `directionalLayoutMargins` – erstellt, die verwendet werden kann, um den Raum zwischen Sichten und unter Ansichten festzulegen. Verwenden Sie `directionalLayoutMargins` with `leading` oder `trailing` insets. Unabhängig davon, ob es sich bei dem System um eine Sprache von links nach rechts oder von rechts nach Links handelt, wird der Abstand in der APP von IOS entsprechend festgelegt.
 
-In ios 10 und früher verfügten alle Sichten über eine minimale Rand Größe, auf die Sie ausgerichtet wurden. IOS 11 hat die Option zur außer Kraft setzung der Verwendung von `ViewRespectsSystemMinimumLayoutMargins`eingeführt. Wenn Sie diese Eigenschaft beispielsweise auf false festlegen, können Sie die Edge-insets auf NULL festlegen:
+In ios 10 und früher verfügten alle Sichten über eine minimale Rand Größe, auf die Sie ausgerichtet wurden. IOS 11 hat die Option zum Überschreiben der mit eingeführt `ViewRespectsSystemMinimumLayoutMargins` . Wenn Sie diese Eigenschaft beispielsweise auf false festlegen, können Sie die Edge-insets auf NULL festlegen:
 
 ```csharp
 ViewRespectsSystemMinimumLayoutMargins = false;
@@ -68,17 +68,17 @@ View.LayoutMargins = UIEdgeInsets.Zero;
 
 ![Bild, das den Rand mit NULL-Einzug in ios 11 anzeigt](visual-design-images/image9.png)
 
-<a name="fullscreen" />
+<a name="fullscreen"></a>
 
 ## <a name="full-screen-content"></a>Vollbild-Inhalt
 
-IOS 7 [wurde `topLayoutGuide` eingeführt](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen) und `bottomLayoutGuide`, um ihre Ansichten so einzuschränken, dass Sie nicht durch UIKit-Balken ausgeblendet und in einem sichtbaren Bereich des Bildschirms angezeigt werden. Diese wurden in ios 11 zugunsten des _sicheren Bereichs_eingestellt.
+IOS 7 [wurde eingeführt](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen) `topLayoutGuide` und `bottomLayoutGuide` als Möglichkeit, ihre Ansichten so einzuschränken, dass Sie nicht durch UIKit-Balken ausgeblendet werden und sich in einem sichtbaren Bereich des Bildschirms befinden. Diese wurden in ios 11 zugunsten des _sicheren Bereichs_eingestellt.
 
 Der sichere Bereich ist eine neue Möglichkeit, den sichtbaren Raum Ihrer Anwendung zu überprüfen und die Einschränkungen zwischen einer Ansicht und einer Super Ansicht hinzuzufügen. Sehen Sie sich z. b. die folgende Abbildung an:
 
-[![sicherer Bereich im Vergleich zum oberen und unteren layouthandbuch](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
+[![Sicherer Bereich im Vergleich zum oberen und unteren layouthandbuch](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
-Wenn Sie zuvor eine Ansicht hinzugefügt haben und möchten, dass Sie im grünen Bereich angezeigt wird, würden Sie Sie am _unteren Rand_ des `TopLayoutGuide` und am _oberen_ Rand des `BottomLayoutGuide`einschränken. In ios 11 würden Sie Sie stattdessen auf den _oberen_ und _unteren Rand_ des sicheren Bereichs beschränken. Ein Beispiel folgt:
+Wenn Sie zuvor eine Ansicht hinzugefügt haben und möchten, dass Sie im grünen Bereich angezeigt wird, würden Sie Sie am _unteren Rand_ von `TopLayoutGuide` und am _oberen_ Rand von einschränken `BottomLayoutGuide` . In ios 11 würden Sie Sie stattdessen auf den _oberen_ und _unteren Rand_ des sicheren Bereichs beschränken. Ein Beispiel folgt:
 
 ```csharp
 var safeGuide = View.SafeAreaLayoutGuide;
@@ -90,7 +90,7 @@ safeGuide.BottomAnchor.ConstraintEqualTo(imageView.BottomAnchor).Active = true;
 
 Die uitableview hat eine Reihe kleiner, aber signifikanter Änderungen in ios 11.
 
-Standardmäßig werden Kopfzeilen, Fußzeilen und Zellen automatisch auf Grundlage ihres Inhalts vergrößert. Wenn Sie dieses Verhalten für die automatische Größenänderung ablehnen möchten, legen Sie die `EstimatedRowHeight`, `EstimatedSectionHeaderHeight`oder `EstimatedSectionFooterHeight` auf NULL fest.
+Standardmäßig werden Kopfzeilen, Fußzeilen und Zellen automatisch auf Grundlage ihres Inhalts vergrößert. Wenn Sie dieses Verhalten für die automatische Größenänderung ablehnen möchten `EstimatedRowHeight` , legen Sie, `EstimatedSectionHeaderHeight` oder `EstimatedSectionFooterHeight` auf 0 (null) fest.
 
 In einigen Fällen (z. b. beim Hinzufügen von "uitableviewcontroller" im IOS-Designer oder bei Verwendung vorhandener storboards in Interface Builder) müssen Sie die Zellen der selbst Dimensionierung möglicherweise manuell aktivieren. Stellen Sie zu diesem Zweck sicher, dass Sie die folgenden Eigenschaften für die Tabellenansicht für Zellen, Kopfzeilen und Fußzeilen festgelegt haben:
 
@@ -109,7 +109,7 @@ TableView.EstimatedSectionFooterHeight = 40f;
 
 ```
 
-IOS 11 hat die Funktionalität von Zeilen Aktionen erweitert. `UISwipeActionsConfiguration` wurde eingeführt, um einen Satz von Aktionen zu definieren, die durchgeführt werden sollten, wenn der Benutzer in einer der Zeilen in einer Tabellenansicht in beide Richtungen bewegt wird. Dieses Verhalten ähnelt dem der nativen Mail. app. Weitere Informationen finden Sie im [Zeilen Aktions](~/ios/user-interface/controls/tables/row-action.md) Handbuch.
+IOS 11 hat die Funktionalität von Zeilen Aktionen erweitert. `UISwipeActionsConfiguration`wurde eingeführt, um einen Satz von Aktionen zu definieren, die durchgeführt werden sollten, wenn der Benutzer in einer der Zeilen in einer Tabellenansicht in beide Richtungen bewegt wird. Dieses Verhalten ähnelt dem der nativen Mail. app. Weitere Informationen finden Sie im [Zeilen Aktions](~/ios/user-interface/controls/tables/row-action.md) Handbuch.
 
 Tabellen Sichten unterstützen Drag & Drop in ios 11. Weitere Informationen finden Sie im [Drag & Drop-](~/ios/platform/introduction-to-ios11/drag-and-drop.md#uitableview) Handbuch.
 

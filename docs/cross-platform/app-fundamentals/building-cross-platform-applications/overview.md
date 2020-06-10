@@ -1,17 +1,17 @@
 ---
 title: Übersicht über die plattformübergreifenden Anwendungen
-description: Dieses Dokument enthält eine allgemeine Übersicht über das Entwickeln von plattformübergreifenden Anwendungen. Er erläutert den Wert von C#, Entwurfsmuster wie MVC/MVVM und Native Benutzeroberflächen.
+description: Dieses Dokument enthält eine allgemeine Übersicht über das Entwickeln von plattformübergreifenden Anwendungen. Es erläutert den Wert von c#, Entwurfsmuster wie MVC/MVVM und Native Benutzeroberflächen.
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: de8c66e6a89f035b8370a2139361d3e942aa9c09
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016913"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571206"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Übersicht über die plattformübergreifenden Anwendungen
 
@@ -25,9 +25,9 @@ Xamarin ist nicht nur eine "Write-Once, Run Everywhere"-Plattform, denn eine sei
 
 Hier finden Sie eine Zusammenfassung der wichtigsten Punkte zum Erstellen von plattformübergreifenden xamarin-apps:
 
-- **Verwenden C#**  : Schreiben Sie Ihre apps C#in. Vorhandener Code, C# der in geschrieben ist, kann mit xamarin sehr einfach zu IOS und Android portiert werden und wird offensichtlich in Windows-Apps verwendet.
+- **Verwenden Sie c#** : Schreiben Sie Ihre apps in c#. Vorhandener Code, der in c# geschrieben wurde, kann mithilfe von xamarin sehr einfach zu IOS und Android portiert werden und wird offensichtlich in Windows-Apps verwendet.
 - **Verwenden von MVC-oder MVVM-Entwurfsmustern** : entwickeln Sie die Benutzeroberfläche Ihrer Anwendung mit dem mustermodell/Ansicht/Controller. Entwerfen Sie Ihre Anwendung mit einem Modell-/Ansicht-/controlleransatz oder einem Modell-/Ansicht-/viewmodell-Ansatz, bei dem es eine klare Trennung zwischen dem "Modell" und dem Rest gibt. Legen Sie fest, welche Teile der Anwendung Native Benutzeroberflächen Elemente jeder Plattform (Ios, Android, Windows, Mac) verwenden, und verwenden Sie diese als Richtlinie, um Ihre Anwendung in zwei Komponenten aufzuteilen: "Core" und "User-Interface".
-- **Native** Benutzeroberflächen erstellen: jede betriebssystemspezifische Anwendung stellt eine andere Benutzeroberflächen Ebene bereit (Implementiert in C# mit der Unterstützung von nativen UI-Entwurfs Tools):
+- **Native** Benutzeroberflächen erstellen: jede betriebssystemspezifische Anwendung bietet eine andere Benutzeroberflächen Ebene (in c# implementiert und bietet Unterstützung für die nativen UI-Entwurfs Tools):
 
 1. Verwenden Sie unter IOS die UIKit-APIs, um nativ aussehende Anwendungen zu erstellen. verwenden Sie optional den IOS-Designer von xamarin, um die Benutzeroberfläche visuell zu erstellen.
 1. Unter Android können Sie mithilfe von Android. views systemeigene Anwendungen erstellen und den Benutzeroberflächen-Designer von xamarin nutzen.
@@ -47,15 +47,15 @@ Um die Wiederverwendung von Code zu erhöhen, können Sie plattformübergreifend
 
 Einige dieser Komponenten werden in der *Tasky* -Fallstudie implementiert.
 
- <a name="Separate_Reusable_Code_into_a_Core_Library" />
+ <a name="Separate_Reusable_Code_into_a_Core_Library"></a>
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>Trennen von wiederverwendbarem Code in eine Kernbibliothek
 
-Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihrer Anwendungsarchitektur und das anschließende Verschieben von Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Kernbibliothek sind, befolgen, können Sie die Code Freigabe plattformübergreifend maximieren (siehe Abbildung unten). Illustri
+Indem Sie das Prinzip der Trennung von Zuständigkeiten durch die Schichtung ihrer Anwendungsarchitektur und das anschließende Verschieben von Kernfunktionen, die plattformunabhängig in eine wiederverwendbare Kernbibliothek sind, befolgen, können Sie die Code Freigabe plattformübergreifend maximieren, wie in der folgenden Abbildung veranschaulicht:
 
  ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
- <a name="Case_Studies" />
+ <a name="Case_Studies"></a>
 
 ## <a name="case-studies"></a>Fallstudien
 

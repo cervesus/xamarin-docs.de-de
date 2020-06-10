@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d8c9d6fe36b457a000e96d1ad8990debad8ac915
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b311f3121ea6a58975d41b9690e31a44daa0951e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030750"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573702"
 ---
 # <a name="tvos-app-distribution-overview"></a>Übersicht über tvos-App-Verteilung
 
@@ -20,17 +20,17 @@ _Dieses Dokument enthält eine Übersicht über die Verteilungs Techniken, die f
 
 Nachdem Sie Ihre xamarin. tvos-app entwickelt haben, besteht der nächste Schritt im Lebenszyklus der Softwareentwicklung darin, Ihre APP an Benutzer zu verteilen, wie im folgenden hervorgehobenen Abschnitt der Abbildung dargestellt:
 
-[Übersicht über den Lebenszyklus der Softwareentwicklung![](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
+[![Übersicht über den Lebenszyklus der Softwareentwicklung](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 Apple bietet die folgenden Möglichkeiten, um eine tvos-APP zu verteilen, die von xamarin. tvos unterstützt wird:
 
 1. [**App Store-Verteilung**](#Apple-TV-App-Store-Distribution)
-2. [**Interne Verteilung (Enterprise-Verteilung)** ](#In-House-Distribution) 
-3. [**Ad-hoc-Verteilung**](#Ad_Hoc_Distribution) 
+2. [**Intern (Enterprise)**](#In-House-Distribution) 
+3. [**Ad-hoc**](#Ad_Hoc_Distribution) 
 
 Für jedes dieser Szenarios müssen Anwendungen mit dem entsprechenden *Bereitstellungsprofil* bereitgestellt werden. Bereitstellungsprofile sind Dateien, die Informationen zur Codesignierung sowie die Identität der Anwendung und den beabsichtigten Verteilungsmechanismus enthalten. Bei einer Verteilung, die nicht über den App Store erfolgt, enthalten Bereitstellungsprofile auch Informationen darüber, für welche Geräte eine App bereitgestellt werden kann.
 
-<a name="Apple-TV-App-Store-Distribution" />
+<a name="Apple-TV-App-Store-Distribution"></a>
 
 ## <a name="apple-tv-app-store-distribution"></a>Apple TV-App Store-Verteilung
 
@@ -59,15 +59,15 @@ Wenn Sie Probleme beim Einreichen Ihrer xamarin. tvos-APP an den Apple TV App St
 
 Weitere Informationen finden Sie im Leitfaden [Veröffentlichen im Apple TV App Store](~/ios/tvos/deploy-test/app-distribution/app-store-publishing.md) .
 
-<a name="In-House-Distribution" />
+<a name="In-House-Distribution"></a>
 
 ## <a name="in-house-distribution"></a>Interne Verteilung
 
-Durch die interne Verteilung, die auch als *Enterprise-Verteilung* bezeichnet wird, können Mitglieder des **Apple Developer Enterprise Program** Apps an andere Mitglieder innerhalb derselben Organisation verteilen. Die Vorteile der internen Verteilung bestehen darin, dass kein App Store-Review erforderlich ist und keine Beschränkung für die Anzahl der Geräte vorhanden ist, auf denen eine Anwendung installiert werden kann. Beachten Sie aber, dass Mitglieder des **Apple Developer Enterprise Program** **nicht** auf iTunes Connect zugreifen können und daher der Lizenznehmer für die Verteilung der App zuständig ist.
+Durch die interne Verteilung, die auch als *Enterprise-Verteilung* bezeichnet wird, können Mitglieder des **Apple Developer Enterprise Program** Apps an andere Mitglieder innerhalb derselben Organisation verteilen. Die Vorteile der internen Verteilung bestehen darin, dass kein App Store-Review erforderlich ist und keine Beschränkung für die Anzahl der Geräte vorhanden ist, auf denen eine Anwendung installiert werden kann. Beachten Sie aber, dass Mitglieder des **Apple Developer Enterprise Program****nicht** auf iTunes Connect zugreifen können und daher der Lizenznehmer für die Verteilung der App zuständig ist.
 
 Weitere Informationen zum Einrichten der Einrichtung und zur internen Verteilung Ihrer Anwendung finden Sie im [Handbuch zur internen Verteilung](~/ios/deploy-test/app-distribution/in-house-distribution.md). Dieses Dokument ist für IOS spezifisch, aber die gleichen Techniken werden auch für tvos-Apps verwendet.
 
-<a name="Ad_Hoc_Distribution"/>
+<a name="Ad_Hoc_Distribution"></a>
 
 ## <a name="ad-hoc-distribution"></a>Ad-hoc-Verteilung
 
@@ -75,7 +75,7 @@ Xamarin. tvos-Apps können über die Ad-hoc-Verteilung Benutzer getestet werden,
 
 Weitere Informationen zum Einrichten und zur internen Verteilung ihrer App finden Sie im Leitfaden für die [Ad-hoc-Verteilung](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md). Dieses Dokument ist zwar für IOS spezifisch, aber die gleichen Techniken werden auch für tvos-Apps verwendet.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

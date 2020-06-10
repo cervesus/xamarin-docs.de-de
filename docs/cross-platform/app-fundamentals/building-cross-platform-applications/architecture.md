@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: 84a06e23ec7125892701762ab5bad7b86a8faf90
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 315defe5017e3744013d1babd35f06deed255946
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030267"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566330"
 ---
 # <a name="part-2---architecture"></a>Teil 2: Architektur
 
@@ -23,7 +23,7 @@ Ein wichtiger Grund für die Erstellung plattformübergreifender Apps ist das Er
 
 Das natürliche Ergebnis ist eine Anwendung, die nach realen oder abstrakten Entitäten mit separaten logischen Ebenen modelliert wird. Durch die Trennung von Code in Ebenen werden Anwendungen leichter zu verstehen, zu testen und zu warten. Es wird empfohlen, den Code in jeder Schicht physisch voneinander zu trennen (entweder in Verzeichnissen oder sogar separaten Projekten für sehr große Anwendungen) und logisch getrennt (mit Namespaces).
 
- <a name="Typical_Application_Layers" />
+ <a name="Typical_Application_Layers"></a>
 
 ## <a name="typical-application-layers"></a>Typische Anwendungsschichten
 
@@ -38,17 +38,17 @@ In diesem Dokument und den Fallstudien verweisen wir auf die folgenden sechs Anw
 
 Eine Anwendung darf nicht unbedingt alle Ebenen enthalten – beispielsweise ist die Dienst Zugriffs Schicht nicht in einer Anwendung vorhanden, die nicht auf Netzwerkressourcen zugreift. Eine sehr einfache Anwendung kann die Datenschicht und die Datenzugriffs Ebene zusammenführen, da die Vorgänge äußerst einfach sind.
 
- <a name="Common_Mobile_Software_Patterns" />
+ <a name="Common_Mobile_Software_Patterns"></a>
 
 ## <a name="common-mobile-software-patterns"></a>Gängige Mobile Software Muster
 
 Muster sind eine bewährte Methode, um wiederkehrende Lösungen für häufige Probleme zu erfassen. Es gibt einige wichtige Muster, die beim Aufbau verwaltbarer/verständlicher mobiler Anwendungen hilfreich sind.
 
 - **Model, View, ViewModel (MVVM)** – das Model-View-ViewModel-Muster ist beliebt bei Frameworks, die Datenbindung unterstützen, z. b. xamarin. Forms. Sie wurde durch XAML-aktivierte sdche wie Windows Presentation Foundation (WPF) und Silverlight populär. Dabei fungiert ViewModel durch Datenbindung und Befehle als zwischen den Daten (Modell) und Benutzeroberfläche (Ansicht).
-- **Model, View, Controller (MVC)** – ein gängiges und häufig falsch verstandenes Muster, wird MVC am häufigsten beim Aufbau von Benutzeroberflächen verwendet und bietet eine Trennung zwischen der tatsächlichen Definition eines Bildschirm der Benutzeroberfläche (Ansicht), der dahinter liegenden Engine, die die Interaktion verarbeitet ( Controller) und die Daten, die Sie Auffüllen (Modell). Das Modell ist tatsächlich ein vollkommen optionales Element. Daher liegt der Kern des Verständnisses dieses Musters in der Ansicht und dem Controller. MVC ist ein beliebter Ansatz für IOS-Anwendungen.
-- **Business Fassaden** – auch als Manager-Muster bezeichnet, stellt einen vereinfachten Einstiegspunkt für komplexe Aufgaben bereit. Beispielsweise können Sie in einer Aufgaben nach Verfolgungs Anwendung über eine `TaskManager`-Klasse mit Methoden wie `GetAllTasks()`, `GetTask(taskID)`, `SaveTask (task)` usw. verfügen. Die `TaskManager`-Klasse stellt eine Fassade für die innere Abläufe dar, in denen Aufgaben Objekte tatsächlich gespeichert bzw. abgerufen werden.
+- **Model, View, Controller (MVC)** – ein gängiges und häufig falsch debugdetes Muster, wird MVC am häufigsten beim Aufbau von Benutzeroberflächen verwendet und bietet eine Trennung zwischen der tatsächlichen Definition eines Bildschirm der Benutzeroberfläche (Ansicht), der dahinter liegenden Engine, die die Interaktion (Controller) verarbeitet, und der Daten, die Sie (Model) füllen. Das Modell ist tatsächlich ein vollkommen optionales Element. Daher liegt der Kern des Verständnisses dieses Musters in der Ansicht und dem Controller. MVC ist ein beliebter Ansatz für IOS-Anwendungen.
+- **Business Fassaden** – auch als Manager-Muster bezeichnet, stellt einen vereinfachten Einstiegspunkt für komplexe Aufgaben bereit. Beispielsweise können Sie in einer Aufgaben nach Verfolgungs Anwendung über eine- `TaskManager` Klasse mit Methoden wie `GetAllTasks()` , `GetTask(taskID)` , `SaveTask (task)` usw. verfügen. Die- `TaskManager` Klasse stellt eine Fassade für die innere Funktionsweise des eigentlichen Speicherns/Abrufens von Aufgaben Objekten bereit.
 - **Singleton** – das Singleton-Muster stellt eine Methode bereit, mit der nur eine einzelne Instanz eines bestimmten Objekts vorhanden sein kann. Wenn Sie beispielsweise sqlite in mobilen Anwendungen verwenden, benötigen Sie nur eine Instanz der Datenbank. Die Verwendung des Singleton-Musters ist eine einfache Möglichkeit, dies sicherzustellen.
 - **Anbieter** – ein Muster, das von Microsoft (wohl vergleichbar mit der Strategie oder grundlegender Abhängigkeitsinjektion) geprägt ist, um die Wiederverwendung von Code für Silverlight-, WPF-und WinForms-Anwendungen zu fördern. Gemeinsam verwendeter Code kann für eine Schnittstelle oder eine abstrakte Klasse geschrieben werden, und plattformspezifische konkrete Implementierungen werden bei der Verwendung des Codes geschrieben und weitergegeben.
-- **Async** – nicht zu verwechseln mit dem Async-Schlüsselwort, wird das asynchrone Muster verwendet, wenn Arbeitsaufgaben mit langer Laufzeit ausgeführt werden müssen, ohne die Benutzeroberfläche oder die aktuelle Verarbeitung zu halten. In der einfachsten Form beschreibt das Async-Muster einfach, dass Aufgaben mit langer Ausführungszeit in einem anderen Thread (oder einer ähnlichen Thread Abstraktion, z. b. einer Aufgabe) gestartet werden sollen, während der aktuelle Thread weiterhin verarbeitet und auf eine Antwort vom Hintergrundprozess lauscht. , und aktualisiert dann die Benutzeroberfläche, wenn Daten und oder Status zurückgegeben werden.
+- **Async** – nicht zu verwechseln mit dem Async-Schlüsselwort, wird das asynchrone Muster verwendet, wenn Arbeitsaufgaben mit langer Laufzeit ausgeführt werden müssen, ohne die Benutzeroberfläche oder die aktuelle Verarbeitung zu halten. In der einfachsten Form beschreibt das Async-Muster einfach, dass Aufgaben mit langer Ausführungszeit in einem anderen Thread (oder einer ähnlichen Thread Abstraktion, z. b. einer Aufgabe) gestartet werden sollen, während der aktuelle Thread weiterhin verarbeitet und auf eine Antwort vom Hintergrundprozess lauscht. Anschließend wird die Benutzeroberfläche aktualisiert, wenn Daten und oder ein Status zurückgegeben werden.
 
 Jedes der Muster wird ausführlicher untersucht, da die praktische Verwendung in den Fallstudien veranschaulicht wird. Wikipedia bietet ausführlichere Beschreibungen der Muster [MVVM](https://en.wikipedia.org/wiki/Model–view–viewmodel), [MVC](https://en.wikipedia.org/wiki/Model–view–controller), [Fassaden](https://en.wikipedia.org/wiki/Facade_pattern), [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern), [Strategie](https://en.wikipedia.org/wiki/Strategy_pattern) und [Anbieter](https://en.wikipedia.org/wiki/Provider_model) (und in der Regel [Entwurfsmuster](https://en.wikipedia.org/wiki/Design_Patterns) ).

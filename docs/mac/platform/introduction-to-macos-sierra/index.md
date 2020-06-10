@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 31aa4d1fb8b77b88fc6b6790147409ff8ec13145
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4dde8941b09ac7b235b94e73e86dc60167fb6bd4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029841"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574456"
 ---
 # <a name="introduction-to-macos-sierra"></a>Einführung in macOS Sierra
 
@@ -20,13 +20,13 @@ Mit dem neuen macOS Sierra kann der Entwickler neue APIs nutzen, die dem Endbenu
 
 Weitere Informationen zu macOS Sierra finden Sie in der Dokumentation zu [macOS und apps](https://developer.apple.com/macos/) von Apple.
 
-<a name="Whats-New-in-macOS-Sierra" />
+<a name="Whats-New-in-macOS-Sierra"></a>
 
 ## <a name="whats-new-in-macos-sierra"></a>Neues in macOS Sierra
 
 Apple hat mehrere neue APIs und Dienste in macOS Sierra zusammen mit vielen Verbesserungen an vorhandenen Features hinzugefügt, einschließlich:
 
-<a name="Apple-File-System" />
+<a name="Apple-File-System"></a>
 
 ### <a name="apple-file-system"></a>Apple-Datei System
 
@@ -34,7 +34,7 @@ Mit macOS Sierra hat Apple das neue Apple-Dateisystem als modernes Dateisystem f
 
 Weitere Informationen finden Sie im Apple- [Handbuch zum Datei System](https://developer.apple.com/library/prerelease/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40016999)von Apple.
 
-<a name="Apple-Pay-Enhancements" />
+<a name="Apple-Pay-Enhancements"></a>
 
 ### <a name="apple-pay-enhancements"></a>Apple Pay Erweiterungen
 
@@ -46,17 +46,17 @@ macOS Sierra umfasst das neue Apple Pay JavaScript-Framework, mit dem Entwickler
 
 Weitere Informationen finden Sie in der Apple-Referenz zum Apple [Pay js-Framework](https://developer.apple.com/reference/applepayjs) .
 
-<a name="Building-Modern-macOS-Apps" />
+<a name="Building-Modern-macOS-Apps"></a>
 
 ### <a name="building-modern-macos-apps"></a>Erstellen moderner macOS-Apps
 
-Moderne macOS-apps wie z. b. der Safari-Webbrowser von "Pages", "pages Word Processor" und "Numbers Spread Sheet" verwenden viele neue Technologien, um eine einheitliche, kontextabhängige Benutzeroberfläche zu präsentieren, die herkömmliche Benutzeroberflächen Elemente, wie z. b. Gleit Komma Windows.
+Moderne macOS-apps wie z. b. Safari Webbrowser von Microsoft, Pages Word Processor and Numbers Spread Sheet verwenden viele neue Technologien, um eine einheitliche, kontextabhängige Benutzeroberfläche zu präsentieren, die herkömmliche Elemente der Benutzeroberfläche, wie z. b. Gleit Komma Bereiche und mehrere geöffnete Fenster, bietet.
 
-[![ein Beispiel für ein Mac-Fenster im Register Format](images/content08.png)](images/content08.png#lightbox)
+[![Ein Beispiel für ein Mac-Fenster im Register Format](images/content08.png)](images/content08.png#lightbox)
 
 Im Leitfaden [Erstellen moderner MacOS-apps](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md) finden Sie verschiedene Tipps, Features und Techniken, die ein Entwickler zum Erstellen einer modernen macOS-app in xamarin. Mac verwenden kann.
 
-<a name="CloudKit-Data-Sharing" />
+<a name="CloudKit-Data-Sharing"></a>
 
 ### <a name="cloudkit-data-sharing"></a>Cloudkit-Datenfreigabe
 
@@ -69,7 +69,7 @@ Weitere Informationen finden Sie in der Referenz zum [cloudkit-Framework](https:
 > [!IMPORTANT]
 > Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
 
-<a name="Safari-App-Extensions-Support" />
+<a name="Safari-App-Extensions-Support"></a>
 
 ### <a name="safari-app-extensions-support"></a>Unterstützung von Safari App Extensions
 
@@ -77,33 +77,33 @@ Safari-App-Erweiterungen ermöglichen der APP, das Verhalten des Safari-Webbrows
 
 Weitere Informationen finden Sie im [Programmier Handbuch zur Safari-App-Erweiterung](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternetWeb/Conceptual/SafariAppExtension_PG/index.html#//apple_ref/doc/uid/TP40017319)von Apple.
 
-<a name="Security-and-Privacy-Enhancements" />
+<a name="Security-and-Privacy-Enhancements"></a>
 
 ### <a name="security-and-privacy-enhancements"></a>Erweiterungen für Sicherheit und Datenschutz
 
 Apple hat mehrere Verbesserungen hinsichtlich Sicherheit und Datenschutz in macOS Sierra vorgenommen, die der APP dabei helfen, die Sicherheit der APP zu verbessern und den Datenschutz für den Endbenutzer zu gewährleisten, einschließlich der folgenden:
 
-- Der neue `NSAllowsArbitraryLoadsInWebContent` Schlüssel kann der `Info.plist` Datei der app hinzugefügt werden und ermöglicht das ordnungsgemäße Laden von Webseiten, während der Apple Transport Security (ATS)-Schutz für den Rest der APP weiterhin aktiviert ist.
+- Der neue `NSAllowsArbitraryLoadsInWebContent` Schlüssel kann der APP-Datei hinzugefügt werden `Info.plist` und ermöglicht das ordnungsgemäße Laden von Webseiten, während der Apple Transport Security (ATS)-Schutz weiterhin für den Rest der App aktiviert ist.
 - Die API der Common Data Security Architecture (CDSA) wurde als veraltet markiert und sollte durch die API "-API" ersetzt werden, um asymmetrische Schlüssel zu generieren.
 - Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Chiffre jetzt standardmäßig deaktiviert. Außerdem unterstützt die Secure-Transport-API SSLv3 nicht mehr. es wird empfohlen, dass die APP so bald wie möglich die SHA-1-und 3DES-Kryptografie nicht mehr verwendet.
 - Da die neue Zwischenablage in ios 10 und macOS Sierra dem Benutzer das Kopieren und Einfügen zwischen Geräten ermöglicht, wurde die API erweitert, damit eine Zwischenablage auf ein bestimmtes Gerät beschränkt werden kann, und Sie muss mit einem Zeitstempel versehen werden, um an einem bestimmten Punkt automatisch gelöscht zu werden. Außerdem sind benannte pasteboards nicht mehr persistent und sollten durch die freigegebenen Zwischenablage-Container ersetzt werden.
-- Wenn die APP auf geschützte Daten zugreift (z. b. den Kalender des Benutzers), _muss_ Sie diese Absicht mit dem richtigen Schlüsselzeichen-Zeichen folgen Wert in der `Info.plist`-Datei deklarieren (`NSCalendarUsageDescription` im Fall des Kalenders).
+- Wenn die APP auf geschützte Daten zugreift (z. b. den Kalender des Benutzers), _muss_ diese Absicht mit dem richtigen Schlüsselzeichen-Zeichen folgen Wert in der `Info.plist` Datei ( `NSCalendarUsageDescription` im Fall des Kalenders) deklariert werden.
 - Entwickler signierte apps, die nicht über den Mac App Store bereitgestellt werden, können nun cloudkit, icloud keychain, icloud Drive, Remote Push-Benachrichtigungen, MapKit und VPN-Berechtigungen nutzen.
 - macOS Sierra unterstützt nicht mehr die Übermittlung von externem Code oder Daten zusammen mit der Code Signatur Geber-App im ZIP-Archiv oder nicht signierten Datenträger Image, da der Laufzeitpfad vor der Laufzeit nicht bekannt ist.
 
-Darüber hinaus müssen apps, die auf macOS Sierra (oder höher) ausgeführt werden, ihre Absicht, auf bestimmte Features oder Benutzerinformationen zuzugreifen, statisch deklarieren, indem Sie einen oder mehrere Datenschutz spezifische Schlüssel in ihren `Info.plist` Dateien eingeben, die dem Benutzer erklären, warum die APP Zugriff erhalten möchte. .
+Darüber hinaus müssen apps, die auf macOS Sierra (oder höher) ausgeführt werden, ihre Absicht, auf bestimmte Features oder Benutzerinformationen zuzugreifen, statisch deklarieren, indem Sie einen oder mehrere Datenschutz spezifische Schlüssel in Ihren `Info.plist` Dateien eingeben, die dem Benutzer erklären, warum die APP Zugriff erhalten möchte.
 
 Da macOS Sierra diese Änderungen mit IOS 10 gemeinsam nutzt, finden Sie weitere Informationen im Leitfaden zu den [Sicherheits-und Datenschutz Erweiterungen](~/ios/app-fundamentals/security-privacy.md) für IOS 10.
 
-<a name="Smart-Card-Driver-Extension-Support" />
+<a name="Smart-Card-Driver-Extension-Support"></a>
 
 ### <a name="smart-card-driver-extension-support"></a>Unterstützung von Smartcard-Treiber Erweiterungen
 
-Mit macOS Sierra kann die APP `NSExtension` basierte Smartcardtreiber erstellen, die schreibgeschützten Zugriff auf den Inhalt von bestimmten Arten von Smartcards ermöglicht. Diese Informationen werden dann innerhalb des System Keychain dargestellt (durch Ersetzen der veralteten Common Data Security Architecture-Methode).
+Mit macOS Sierra kann die APP `NSExtension` auf Basis von smartcardtreibern erstellen, die schreibgeschützten Zugriff auf den Inhalt von bestimmten Arten von Smartcards ermöglicht. Diese Informationen werden dann innerhalb des System Keychain dargestellt (durch Ersetzen der veralteten Common Data Security Architecture-Methode).
 
 Weitere Informationen finden Sie in der Referenz zum [cryptotokenkit-Framework](https://developer.apple.com/reference/cryptotokenkit)von Apple.
 
-<a name="Unified-Logging" />
+<a name="Unified-Logging"></a>
 
 ### <a name="unified-logging"></a>Einheitliche Protokollierung
 
@@ -117,23 +117,23 @@ Darüber hinaus können Protokollmeldungen mit Befehlszeilen Tools angezeigt und
 
 Weitere Informationen finden Sie in der Apple- [Protokollierungs Referenz](https://developer.apple.com/documentation/os/logging).
 
-<a name="Wide-Color" />
+<a name="Wide-Color"></a>
 
 ### <a name="wide-color"></a>Breite Farbskala
 
 macOS Sierra erweitert die Unterstützung für erweiterte Pixel Formate und große Farbbereiche im gesamten System, einschließlich Frameworks wie Kern Grafiken, Core-Bild, Metal und AVFoundation. Die Unterstützung für Geräte mit breit Farbanzeige wird weiter vereinfacht, indem dieses Verhalten im gesamten Grafik Stapel bereitgestellt wird.
 
-Außerdem wurde `AppKit` so geändert, dass Sie in den neuen erweiterten **sRGB** -colorspace funktioniert, sodass Farben in Wide Color-Gamuts ohne erheblichen Leistungsverlust einfacher gemischt werden können.
+Außerdem wurde `AppKit` geändert, um in den neuen erweiterten **sRGB** -colorspace arbeiten zu können. Dadurch wird es einfacher, Farben in breit Farbgamuts zu kombinieren, ohne dass ein erheblicher Leistungsverlust auftritt.
 
 Apple bietet bei der Arbeit mit breiten Farben die folgenden bewährten Methoden:
 
-- `NSColor` verwendet jetzt den sRGB-Farbraum und gibt keine Werte mehr an die `0.0` an `1.0` Bereich an. Wenn die APP auf dem vorherigen Klammer Verhalten basiert, muss Sie für macOS Sierra geändert werden.
+- `NSColor`verwendet nun den sRGB-Farbraum und gibt keine Werte mehr in den `0.0` Bereich bis an `1.0` . Wenn die APP auf dem vorherigen Klammer Verhalten basiert, muss Sie für macOS Sierra geändert werden.
 - Wenn Sie eine API auf niedriger Ebene, wie z. b. Kern Grafiken oder Metal, zum Bereitstellen der Bildverarbeitung verwenden, sollte die APP einen erweiterten Bereichs Farbraum und ein Pixel Format verwenden, das 16-Bit-Gleit Komma Werte unterstützt. Bei Bedarf muss die APP Farbkomponenten Werte manuell einspannen.
 - Haupt Grafiken, Kern Bild-und Metal-leistungshader bieten neue Methoden zum Wechseln zwischen den beiden Farbräumen.
 
 Weitere Informationen finden Sie im Leitfaden [Einführung in Wide Color](~/ios/platform/wide-color.md) .
 
-<a name="Additional-Framework-Changes" />
+<a name="Additional-Framework-Changes"></a>
 
 ## <a name="additional-framework-changes"></a>Weitere frameworkänderungen
 
@@ -141,7 +141,7 @@ Zusätzlich zu den oben aufgeführten wichtigen frameworkänderungen und Ergänz
 
 Weitere Informationen finden Sie in unserem Handbuch zu [zusätzlichen Framework-Änderungen](~/mac/platform/introduction-to-macos-sierra/additional-framework-changes.md) .
 
-<a name="Deprecated-APIs" />
+<a name="Deprecated-APIs"></a>
 
 ## <a name="deprecated-apis"></a>Nicht mehr unterstützte APIs
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsKeits
-description: Der Xamarin.Forms Schieberegler ist ein horizontaler Balken, der vom Benutzer bearbeitet werden kann, um einen doppelten Wert aus einem kontinuierlichen Bereich auszuwählen. In diesem Artikel wird erläutert, wie Sie mit der Slider-Klasse einen Wert aus einem Bereich von kontinuierlichen Werten auswählen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1cde999e6781f019b6abceee82caf259e1e5a710
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140152"
+Title: " Xamarin.Forms Schieberegler" Beschreibung: "der Xamarin.Forms Schieberegler ist ein horizontaler Strich, der vom Benutzer bearbeitet werden kann, um einen doppelten Wert aus einem kontinuierlichen Bereich auszuwählen. In diesem Artikel wird erläutert, wie Sie mit der Slider-Klasse einen Wert aus einem Bereich von kontinuierlichen Werten auswählen.
+ms. Prod: xamarin ms. assetid: 36b1c645-26e0-4874-B6B6-bdbf 77662878 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-slider"></a>Xamarin.FormsKeits
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
@@ -116,7 +102,7 @@ Hier ist das Programm, das auf IOS-und Android-Geräten ausgeführt wird:
 
 [![Standard Schieberegler-Code](slider-images/BasicSliderCode.png "Standard Schieberegler-Code")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-Die zweite `Label` zeigt den Text "(nicht initialisiert)" `Slider` an, bis der manipuliert wird, was bewirkt, dass das erste `ValueChanged` Ereignis ausgelöst wird. Beachten Sie, dass die Anzahl der angezeigten Dezimalstellen für jede Plattform unterschiedlich ist. Diese Unterschiede beziehen sich auf die Platt Form Implementierungen von `Slider` und werden weiter unten in diesem Artikel im Abschnitt [Unterschiede bei der Platt Form Implementierung](#implementations)erläutert.
+Die zweite `Label` zeigt den Text "(nicht initialisiert)" `Slider` an, bis der manipuliert wird, was bewirkt, dass das erste `ValueChanged` Ereignis ausgelöst wird. Beachten Sie, dass die Anzahl der angezeigten Dezimalstellen für jede Plattform unterschiedlich ist. Diese Unterschiede beziehen sich auf die Platt Form Implementierungen von `Slider` und werden weiter unten in diesem Artikel im Abschnitt [Unterschiede bei der Platt Form Implementierung](#platform-implementation-differences)erläutert.
 
 ### <a name="creating-a-slider-in-xaml"></a>Erstellen eines Schiebereglers in XAML
 
@@ -210,8 +196,6 @@ Die Seite " **grundlegende Schieberegler-Bindungen** " zeigt, wie Sie ein nahezu
 
 Die- `Rotation` Eigenschaft der ersten `Label` ist an die- `Value` Eigenschaft von gebunden `Slider` , wie die- `Text` Eigenschaft der zweiten `Label` mit einer- `StringFormat` Spezifikation. Die Seite mit den **grundlegenden Schieberegler-Bindungen** funktioniert etwas anders als die beiden vorherigen Seiten: Wenn die Seite zum ersten Mal angezeigt wird, zeigt die zweite `Label` die Text Zeichenfolge mit dem Wert an. Dies hat den Vorteil, dass die Datenbindung verwendet wird. Um Text ohne Datenbindung anzuzeigen, müssen Sie die- `Text` Eigenschaft des-Objekts explizit initialisieren `Label` oder ein Auslösen des-Ereignisses simulieren, `ValueChanged` indem Sie den-Ereignishandler aus dem-Klassenkonstruktor aufrufen.
 
-<a name="precautions" />
-
 ## <a name="precautions"></a>Treffen
 
 Der Wert der- `Minimum` Eigenschaft muss stets kleiner sein als der Wert der- `Maximum` Eigenschaft. Der folgende Code Ausschnitt bewirkt, dass `Slider` eine Ausnahme auslöst:
@@ -283,8 +267,6 @@ Wenn ein- `ValueChanged` Ereignishandler zu dem Zeitpunkt angefügt wurde, an de
 ```
 
 Wenn `Minimum` auf 10 festgelegt ist, `Value` wird auch auf 10 festgelegt, und das- `ValueChanged` Ereignis wird ausgelöst. Dies kann vorkommen, bevor der Rest der Seite erstellt wurde, und der Handler versucht möglicherweise, auf andere Elemente auf der Seite zu verweisen, die noch nicht erstellt wurden. Möglicherweise möchten Sie dem Handler Code hinzufügen `ValueChanged` , der `null` auf Werte anderer Elemente auf der Seite prüft. Oder Sie können den `ValueChanged` Ereignishandler festlegen, nachdem die `Slider` Werte initialisiert wurden.
-
-<a name="implementations" />
 
 ## <a name="platform-implementation-differences"></a>Platt Form Implementierungs Unterschiede
 
@@ -508,7 +490,7 @@ Wenn die `Slider` Elemente manipuliert werden, `BoxView` werden das-Element und 
 
 [![HSL-Farb Schieberegler](slider-images/HslColorSliders.png "HSL-Farb Schieberegler")](slider-images/HslColorSliders-Large.png#lightbox)
 
-Die `StringFormat` Komponente der `Binding` Markup Erweiterung wird für das Format "F2" festgelegt, um zwei Dezimalstellen anzuzeigen. (Die Zeichen folgen Formatierung in Daten Bindungen wird im Artikel [Zeichen folgen Formatierung](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)erläutert.) Die UWP-Version des Programms ist jedoch auf die Werte 0, 0,1, 0,2,... 0,9 und 1,0. Dies ist ein direktes Ergebnis der Implementierung der UWP, `Slider` wie oben im Abschnitt [Unterschiede bei der Platt Form Implementierung](#implementations)beschrieben.
+Die `StringFormat` Komponente der `Binding` Markup Erweiterung wird für das Format "F2" festgelegt, um zwei Dezimalstellen anzuzeigen. (Die Zeichen folgen Formatierung in Daten Bindungen wird im Artikel [Zeichen folgen Formatierung](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)erläutert.) Die UWP-Version des Programms ist jedoch auf die Werte 0, 0,1, 0,2,... 0,9 und 1,0. Dies ist ein direktes Ergebnis der Implementierung der UWP, `Slider` wie oben im Abschnitt [Unterschiede bei der Platt Form Implementierung](#platform-implementation-differences)beschrieben.
 
 ## <a name="related-links"></a>Verwandte Links
 

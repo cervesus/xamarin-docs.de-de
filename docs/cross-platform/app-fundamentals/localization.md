@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 418c0da2b8fa0e495ae7e6a605c7fde43b6515cb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f496a831c226e377f62e2a6fab8ed328bf1be0b9
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016795"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571069"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -45,9 +45,9 @@ Beim Entwerfen und entwickeln einer Anwendung sind möglicherweise bereits hart 
 
 Unabhängig davon, auf welchen mobilen Plattformen Ihre APP diese Tipps als Ziel hat, können Sie eine hochwertige Lokalisierte app erstellen.
 
-## <a name="design-considerations"></a>Entwurfsüberlegungen
+## <a name="design-considerations"></a>Entwurfsaspekte
 
-Das Entwerfen einer Anwendung, sodass Ihre Inhalte lokalisiert werden können, wird als Internationalisierung bezeichnet. Die ordnungsgemäße Durchführung von Internationalisierung besteht darin, dass unterschiedliche sprach Zeichenfolgen zur Laufzeit geladen werden können – eine gut entworfene app sollte es Ihnen ermöglichen, alle Ressourcen basierend auf Sprache und Gebiets Schema (einschließlich Bildern, Sounds und Videos) zu ändern. Formatierung und Layout für die Bewältigung unterschiedlicher Zeichen folgen.
+Das Entwerfen einer Anwendung, sodass Ihre Inhalte lokalisiert werden können, wird als Internationalisierung bezeichnet. Die ordnungsgemäße Durchführung der Internationalisierung besteht darin, dass unterschiedliche sprach Zeichenfolgen zur Laufzeit geladen werden können – eine gut entworfene app sollte die Änderung aller Ressourcen basierend auf Sprache und Gebiets Schema (einschließlich Bildern, Sounds und Videos) ermöglichen und die Formatierung und das Layout anpassen, damit Sie mit unterschiedlichen Größen Zeichenfolgen zurechtkommen.
 
 In diesem Abschnitt werden einige Entwurfs Überlegungen erläutert, die beim Erstellen einer internationalisierten Anwendung berücksichtigt werden müssen.
 
@@ -67,7 +67,7 @@ Layouts, bei denen die Anzeige Bezeichnung und das Eingabefeld nebeneinander sin
 
 Als allgemeine Regel gilt: Wenn Sie fixierte Layouts (besonders parallele Elemente) entwickeln, lassen Sie mindestens 50% mehr Breite zu, als die englischen Zeichen folgen für Bezeichnungen und Text benötigen. Dadurch wird nicht jedes Problem gelöst, sondern es wird ein Puffer bereitgestellt, der in vielen Fällen funktioniert.
 
-### <a name="input-validation"></a>Eingabevalidierung
+### <a name="input-validation"></a>Eingabeüberprüfung
 
 Beachten Sie die Annahmen beim Schreiben von Validierungsregeln. Es ist möglicherweise gültig, dass eine Textfeld Eingabe erforderlich ist, um mindestens drei Zeichen in englischer Sprache anzufordern, da ein einzelner Buchstabe sehr selten eine Bedeutung hat. In Chinesisch und Japanisch kann ein einzelnes Zeichen jedoch eine gültige Eingabe sein, und eine Validierungs Meldung "mindestens 3 Zeichen ist erforderlich" ist für diese Sprachen nicht sinnvoll.
 
@@ -110,7 +110,7 @@ double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 
 Weitere Informationen finden Sie in den MSDN-Artikeln zum Auswerten [numerischer](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) Zeichen folgen und zum Auswerten von [Datums-und Uhrzeit](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) Zeichenfolgen.
 
-<a name="rtl" />
+<a name="rtl"></a>
 
 ### <a name="right-to-left-rtl-languages"></a>Rechts-nach-links (RTL)-Sprachen
 
@@ -124,7 +124,7 @@ Anwendungen, die diese Sprachen unterstützen, sollten Bildschirm Entwürfe verw
 
 Sowohl IOS als auch Android unterstützen Layouts von von rechts nach links und Schriftart Rendering mit integrierten Features, mit deren Hilfe Sie die oben beschriebenen Anpassungen vornehmen können. Xamarin. Forms unterstützt derzeit nicht automatisch das RTL-Rendering.
 
-### <a name="sorting"></a>Sortieren
+### <a name="sorting"></a>Sortierung
 
 In verschiedenen Sprachen wird die Sortierreihenfolge ihrer Alphabete anders definiert, auch wenn Sie denselben Zeichensatz verwenden.
 
@@ -151,11 +151,11 @@ Es gibt einige Strategien, die Sie verwenden können, um sicherzustellen, dass I
 - Lokalisierte Anzeige – wenn Sie einen Twitter-oder fotofeed anzeigen, sollten Sie die Metadaten (z. b. die ergriffene Zeit) in der eigenen Sprache anzeigen, auch wenn der Inhalt selbst in der ursprünglichen Sprache verbleibt.
 - Übersetzung – Sie können eine Übersetzungs Option in Ihrer APP erstellen, um eine maschinelle Übersetzung eingehender Daten durchzuführen. Dies kann automatisch oder nach dem Ermessen des Benutzers erfolgen – achten Sie darauf, dass der Benutzer benachrichtigt wird, wenn der Computer Übersetzungen nie perfekt ist.
 
-Dies kann sich auch auf externe Links zu Audiospuren oder Videos auswirken – wenn Sie Ihre Anwendung entwerfen, planen Sie die Beschaffung von übersetzten Inhalten, oder stellen Sie sicher, dass Benutzer von der Benutzeroberfläche ausreichend informiert werden, wenn Inhalte nicht in ihren Kurse.
+Dies kann sich auch auf externe Links zu Audiospuren oder Videos auswirken – wenn Sie Ihre Anwendung entwerfen, planen Sie die Beschaffung von übersetzten Inhalten, oder stellen Sie sicher, dass Benutzer von der Benutzeroberfläche ausreichend informiert werden, wenn Inhalte nicht in Ihrer Sprache angezeigt werden.
 
 ### <a name="dont-over-translate"></a>Nicht übersetzen
 
-Einige Zeichen folgen in Ihrer APP müssen möglicherweise nicht übersetzt werden, oder Sie benötigen zumindest eine besondere Aufmerksamkeit durch den Übersetzer. Beispiele hierfür sind:
+Einige Zeichen folgen in Ihrer APP müssen möglicherweise nicht übersetzt werden, oder Sie benötigen zumindest eine besondere Aufmerksamkeit durch den Übersetzer. Beispiele:
 
 - URLs – Wenn Sie eine URL auflisten, muss Sie möglicherweise nach Sprache angepasst werden. Facebook.com erfordert z. b. keine automatische Übersetzung, wenn die Sprache am Hauptstandort automatisch erkannt wird. Andere Standorte verfügen über Gebiets Schema spezifischen Inhalt, und Sie möchten möglicherweise eine andere URL anbieten, z. b. yahoo.com im Vergleich zu Yahoo.fr oder Yahoo.it.
 - Telefonnummern – insbesondere diejenigen mit unterschiedlichen Ländercodes oder Zahlen für Aufrufer, die eine bestimmte Sprache sprechen.
@@ -166,7 +166,7 @@ Stellen Sie abschließend sicher, dass Sie ausführliche Anweisungen für den Tr
 
 ### <a name="formatted-text"></a>Formatierter Text
 
-In der Regel ein Problem mit Mobile Apps, weil Zeichen folgen in der Regel nicht umfangreich formatiert Wenn jedoch Rich-Text (z. b. Fett Formatierung oder kursiv Formatierung) in Ihrer APP erforderlich ist, stellen Sie sicher, dass der Konvertierer die Formatierung eingibt, die Zeichen folgen Dateien den Wert ordnungsgemäß speichern und ordnungsgemäß formatieren, bevor Sie dem Benutzer angezeigt werden (d. h. nicht versehentlich die Formatierungscodes selbst werden dem Benutzer angezeigt.)
+In der Regel ein Problem mit Mobile Apps, weil Zeichen folgen in der Regel nicht umfangreich formatiert Wenn jedoch Rich-Text (z. b. Fett Formatierung oder kursiv Formatierung) in Ihrer APP erforderlich ist, stellen Sie sicher, dass der Konvertierer weiß, wie die Formatierung eingegeben werden kann, da die Zeichen folgen Dateien ihn korrekt speichern und ordnungsgemäß formatiert werden, bevor Sie dem Benutzer angezeigt werden (d. h. nicht versehentlich die Formatierungscodes Selbstanzeigen).
 
 ## <a name="translation-tips"></a>Übersetzungstipps
 
@@ -218,7 +218,7 @@ und die Token werden als der Konvertierer bestimmt. Stellen Sie sicher, dass die
 
 ### <a name="use-multiple-strings-for-cardinality"></a>Verwenden mehrerer Zeichen folgen für die Kardinalität
 
-Vermeiden Sie Zeichen folgen wie `"You have {0} message/s."` verwenden Sie bestimmte Zeichen folgen für jeden Zustand, um eine bessere Benutzer Leistung zu bieten:
+Vermeiden Sie Zeichen folgen wie `"You have {0} message/s."` die Verwendung bestimmter Zeichen folgen für jeden Zustand, um eine bessere Benutzer Leistung zu bieten:
 
 **Gut**:
 
@@ -235,7 +235,7 @@ Sie müssen Code in ihrer app schreiben, um die angezeigte Zahl auszuwerten und 
 
 In lateinischen Sprachen werden manchmal andere Wörter verwendet, je nach Geschlecht des Subjekts. Wenn Ihre APP über das Geschlecht Bescheid weiß, sollten Sie den übersetzten Zeichen folgen diese Darstellung ermöglichen.
 
-Außerdem gibt es auch in englischer Sprache einen offensichtlicheren Fall, bei dem Zeichen folgen auf eine bestimmte Person oder einen bestimmten Benutzer Ihrer APP verweisen. Beispielsweise zeigen einige Websites Nachrichten wie `"Bob commented on his post"` an, sodass Sie Zeichen folgen sowohl für ein männlich-, weiblich-als auch für ein nicht binäres oder unbekanntes Geschlecht benötigen:
+Außerdem gibt es auch in englischer Sprache einen offensichtlicheren Fall, bei dem Zeichen folgen auf eine bestimmte Person oder einen bestimmten Benutzer Ihrer APP verweisen. Beispielsweise zeigen einige Websites Nachrichten so an, `"Bob commented on his post"` dass Sie Zeichen folgen sowohl für ein männlich-, weiblich-als auch für ein nicht binäres oder unbekanntes Geschlecht benötigen:
 
 **Gut**:
 
@@ -270,7 +270,7 @@ Um Übersetzungsfunktionen in Ihre APP zu erstellen, berücksichtigen Sie die [A
 
 Zu Testzwecken können Sie eine der zahlreichen Online Übersetzungstools verwenden, um während der Entwicklung einen lokalisierten Text in Ihre APP einzubeziehen:
 
-- [Übersetzer](https://www.bing.com/translator/)
+- [Bing-Übersetzer](https://www.bing.com/translator/)
 - [Google Translation](https://translate.google.com/)
 
 Es stehen zahlreiche weitere Möglichkeiten zur Verfügung. Die Qualität der maschinellen Übersetzung wird in der Regel nicht als ausreichend erachtet, um eine Anwendung freizugeben, ohne dass Sie zuerst von professionellen Konvertierungsprogramme oder systemeigenen Referenten geprüft

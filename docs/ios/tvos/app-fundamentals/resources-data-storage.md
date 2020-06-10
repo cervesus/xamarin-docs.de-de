@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d84752afd5579216272895f750522a8f38ece34a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8619fa73a4dbaabe1e161c634b6a794b701d5135
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030802"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570857"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvos-Ressourcen und-Datenspeicherung in xamarin
 
 _In diesem Artikel wird das Arbeiten mit Ressourcen und der persistenten Datenspeicherung in einer xamarin. tvos-App behandelt._
 
-<a name="tvOS-Resource-Limitations" />
+<a name="tvOS-Resource-Limitations"></a>
 
 ## <a name="tvos-resource-limitations"></a>Einschränkungen der tvos-Ressourcen
 
-Anders als bei IOS-Geräten bietet das neue Apple TV einen extrem eingeschränkten permanenten, lokalen Speicher für tvos-Apps oder-Daten. Für sehr kleine Elemente (z. b. Benutzereinstellungen) hat ihre tvos-App weiterhin Zugriff auf `NSUserDefaults` mit einer [Beschränkung von Daten von 500 KB](https://forums.developer.apple.com/message/50696#50696). Wenn Ihre xamarin. tvos-App jedoch größere Mengen von Informationen beibehalten muss, muss Sie diese Daten aus [icloud](#iCloud-Data-Storage)speichern und abrufen.
+Anders als bei IOS-Geräten bietet das neue Apple TV einen extrem eingeschränkten permanenten, lokalen Speicher für tvos-Apps oder-Daten. Für sehr kleine Elemente (z. b. Benutzereinstellungen) hat ihre tvos-App weiterhin Zugriff auf `NSUserDefaults` mit einem [Grenzwert von Daten von 500 KB](https://forums.developer.apple.com/message/50696#50696). Wenn Ihre xamarin. tvos-App jedoch größere Mengen von Informationen beibehalten muss, muss Sie diese Daten aus [icloud](#iCloud-Data-Storage)speichern und abrufen.
 
 Außerdem schränkt tvos die Größe einer Apple TV-App auf 200 MB ein. Wenn Ihre APP Ressourcen erfordert, die diese Größe überschreiten, müssen Sie mit [bedarfsgesteuerten Ressourcen](#On-Demand-Resources) (bis zu zusätzlichen 2 GB) verpackt und geladen werden. Angesichts dieser Einschränkungen ist es wichtig, dass Sie das Herunterladen zusätzlicher Assets ordnungsgemäß durcharbeiten, um den Benutzern Ihrer APP die beste Leistung zu bieten. Weitere Informationen finden Sie [im Handbuch zu on-Demand-Ressourcen von](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)Apple.
 
-<a name="Non-Persistent-Downloads" />
+<a name="Non-Persistent-Downloads"></a>
 
 ## <a name="non-persistent-downloads"></a>Nicht persistente Downloads
 
@@ -37,13 +37,13 @@ Folglich kann Ihre APP nicht darauf zurückgreifen, dass zuvor heruntergeladene 
 > [!IMPORTANT]
 > Obwohl Sie die Möglichkeit haben, andere Ressourcen und Ressourcen nach Bedarf herunterzuladen, warnt Apple davor, den gesamten Speicherplatz im Cache Ihrer APP zu nutzen, da dies zu unvorhersehbaren Ergebnissen führen kann.
 
-<a name="Managing-Resources" />
+<a name="Managing-Resources"></a>
 
 ## <a name="managing-resources"></a>Verwalten von Ressourcen
 
 Wie bereits erwähnt, ist aufgrund der begrenzten, nicht permanenten Speicherung von Informationen, die für tvos-Apps zur Verfügung stehen, eine sorgfältige Planung erforderlich, um eine gute Benutzer Darstellung für Ihre xamarin. tvos-APP zu erstellen.
 
-<a name="iCloud-Data-Storage" />
+<a name="iCloud-Data-Storage"></a>
 
 ### <a name="icloud-data-storage"></a>icloud-Datenspeicher
 
@@ -57,7 +57,7 @@ Folglich muss Ihre xamarin. tvos-App alle Benutzerdaten in einem icloud-Datenspe
 > [!IMPORTANT]
 > Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
 
-<a name="On-Demand-Resources" />
+<a name="On-Demand-Resources"></a>
 
 ### <a name="on-demand-resources"></a>Bedarfs gesteuerte Ressourcen
 
@@ -72,7 +72,7 @@ Sie verwenden Xcode, um Bündel verwandter Inhalte (z. b. alle Assets für Game 
 > [!IMPORTANT]
 > Achten Sie darauf, das richtige Gleichgewicht zwischen der Häufigkeit, mit der die APP Bedarfs gesteuerte Ressourcen herunterladen muss, und der Größe der einzelnen Downloads zu treffen. Der Benutzer kann mit Ihrer APP frustriert werden, wenn das Spiel ständig unterbrochen wird, um neue Inhalte herunterzuladen, oder wenn ein einzelner Download zu viel Zeit in Anspruch nimmt.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

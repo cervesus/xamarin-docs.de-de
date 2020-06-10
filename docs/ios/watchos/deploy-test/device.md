@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028355"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569697"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Testen auf Apple Watch Geräten
 
@@ -22,7 +22,7 @@ Nachdem Sie die [Bereitstellungs Schritte](~/ios/watchos/deploy-test/index.md) z
 - [Erstellen Sie Entwicklungs Bereitstellungs profile](#profiles), und
 - Stellen Sie eine Apple Watch bereit [und testen](#testing) Sie Sie.
 
-<a name="devices" />
+<a name="devices"></a>
 
 ## <a name="devices"></a>Geräte
 
@@ -44,7 +44,7 @@ Nachdem das Überwachungsgerät hinzugefügt wurde, stellen Sie sicher, dass es 
 
 Vergessen Sie nicht, wenn Sie ein vorhandenes Bereitstellungs Profil bearbeiten, um es herunterzuladen und erneut zu installieren.
 
-<a name="profiles" />
+<a name="profiles"></a>
 
 ## <a name="development-provisioning-profiles"></a>Entwicklungs Bereitstellungs profile
 
@@ -58,13 +58,13 @@ Nachdem Sie alle drei Profile erstellt haben, werden Sie in der Liste angezeigt.
 
 ![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
 
-Sie können das Bereitstellungs Profil in den **Projektoptionen** überprüfen, indem Sie den Bildschirm zum **Erstellen > IOS-Bundle-Signierung** auswählen und die iPhone-Konfiguration **Release** oder **Debug** auswählen.
+Sie können das Bereitstellungs Profil in den **Projektoptionen** überprüfen, indem Sie den Bildschirm zum **erstellen > IOS-Bundle-Signierung** auswählen und die iPhone-Konfiguration **Release** oder **Debug** auswählen.
 
 In der Liste der **Bereitstellungs profile** werden alle übereinstimmenden Profile angezeigt. Sie sollten die entsprechenden Profile sehen, die Sie in dieser Dropdown Liste erstellt haben:
 
 ![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-on-a-watch-device"></a>Testen auf einem Überwachungsgerät
 
@@ -120,7 +120,7 @@ Wenn diese Nachrichten *auf dem Bildschirm überwachen* angezeigt werden, nachde
 
 - Für die für den Test verwendeten Entwicklungs Bereitstellungs profile wurde das Überwachungsgerät nicht eingeschlossen. oder nachdem die Überwachung den Bereitstellungs Profilen hinzugefügt wurde, wurden Sie nicht erneut heruntergeladen und erneut installiert. Befolgen Sie die Anweisungen, um [die Bereitstellungs profile ordnungsgemäß zu konfigurieren](#profiles).
 
-- Wenn das **IOS-Geräte Protokoll** `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` enthält, weist die Datei " **Info. plist** " der Watch-App den falschen **minimumosversion** -Wert auf.
+- Wenn das **IOS-Geräte Protokoll** enthält, `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` weist die Datei " **Info. plist** " der Watch-App den falschen **minimumosversion** -Wert auf.
   Dieser Wert sollte **8,2** lauten. Wenn Sie Xcode 6,3 installiert haben, müssen Sie möglicherweise die Quelle manuell bearbeiten, um Sie auf 8,2 festzulegen.
 
 - Die Berechtigung " **Berechtigungen. plist** " der Watch-APP ist fälschlicherweise aktiviert (z. b. app-Gruppen).

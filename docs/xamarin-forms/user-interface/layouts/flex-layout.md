@@ -1,23 +1,8 @@
 ---
-title: Das Xamarin.Forms flexlayout
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 031a846b7546c204d45c7437acd829d6cb49bfbb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137209"
+Title: "The Xamarin.Forms flexlayout" Description: "Verwenden von flexlayout zum Stapeln oder Umpacken einer Auflistung von untergeordneten Ansichten."
+ms. Prod: xamarin ms. assetid: 6a91ea70-268c-462c-AAAf-t8da011403f 8 ms. Technology: xamarin-Forms ms. Custom: xamarin-Video Author: davidbritch ms. Author: dabritch ms. Date: 05/07/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-xamarinforms-flexlayout"></a>Das Xamarin.Forms flexlayout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
@@ -30,9 +15,7 @@ Der Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) ist neu in Xamar
 
 `FlexLayout`wird von abgeleitet [`Layout<View>`](xref:Xamarin.Forms.Layout`1) und erbt eine [`Children`](xref:Xamarin.Forms.Layout`1.Children) Eigenschaft vom Typ `IList<View>` .
 
-`FlexLayout`definiert sechs öffentliche bindbare Eigenschaften und fünf angefügte bindbare Eigenschaften, die sich auf die Größe, die Ausrichtung und die Ausrichtung der untergeordneten Elemente auswirken. (Wenn Sie mit den angefügten bindbaren Eigenschaften nicht vertraut sind, finden Sie weitere Informationen im Artikel **[angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md)**.) Diese Eigenschaften werden in den folgenden Abschnitten ausführlich beschrieben: Details zu **[den bindbaren Eigenschaften](#bindable-properties)** und **[die angefügten bindbaren Eigenschaften im](#attached-properties)** Detail. Dieser Artikel beginnt jedoch mit einem Abschnitt zu einigen **[häufigen Verwendungs Szenarios](#common-scenarios)** von `FlexLayout` , in denen viele dieser Eigenschaften informisch beschrieben werden. Am Ende des Artikels finden Sie Informationen zum kombinieren `FlexLayout` mit [CSS-Stylesheets](~/xamarin-forms/user-interface/styles/css/index.md).
-
-<a name="common-scenarios" />
+`FlexLayout`definiert sechs öffentliche bindbare Eigenschaften und fünf angefügte bindbare Eigenschaften, die sich auf die Größe, die Ausrichtung und die Ausrichtung der untergeordneten Elemente auswirken. (Wenn Sie mit den angefügten bindbaren Eigenschaften nicht vertraut sind, finden Sie weitere Informationen im Artikel **[angefügte Eigenschaften](~/xamarin-forms/xaml/attached-properties.md)**.) Diese Eigenschaften werden in den folgenden Abschnitten ausführlich beschrieben: Details zu **[den bindbaren Eigenschaften](#the-bindable-properties-in-detail)** und **[die angefügten bindbaren Eigenschaften im](#the-attached-bindable-properties-in-detail)** Detail. Dieser Artikel beginnt jedoch mit einem Abschnitt zu einigen **[häufigen Verwendungs Szenarios](#common-usage-scenarios)** von `FlexLayout` , in denen viele dieser Eigenschaften informisch beschrieben werden. Am Ende des Artikels finden Sie Informationen zum kombinieren `FlexLayout` mit [CSS-Stylesheets](~/xamarin-forms/user-interface/styles/css/index.md).
 
 ## <a name="common-usage-scenarios"></a>Allgemeine Verwendungsszenarios
 
@@ -91,7 +74,7 @@ Dies ist die Seite, die unter IOS, Android und der universelle Windows-Plattform
 
     Wenn Sie verwenden `StackLayout` , müssen Sie die- `VerticalOptions` Eigenschaft der einzelnen Elemente zuweisen, `CenterAndExpand` um einen ähnlichen Effekt zu erzielen. Die `CenterAndExpand` Option würde jedoch zweimal so viel Platz zwischen jedem Element als vor dem ersten Element und nach dem letzten Element zuordnen. Sie können die `CenterAndExpand` Option von imitieren `VerticalOptions` , indem Sie die- `JustifyContent` Eigenschaft von `FlexLayout` auf festlegen `SpaceAround` .
 
-Diese `FlexLayout` Eigenschaften werden im Abschnitt " **[bindbare Eigenschaften](#bindable-properties)** " im folgenden Abschnitt ausführlicher erläutert.
+Diese `FlexLayout` Eigenschaften werden im Abschnitt " **[bindbare Eigenschaften](#the-bindable-properties-in-detail)** " im folgenden Abschnitt ausführlicher erläutert.
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>Verwenden von flexlayout zum Umwickeln von Elementen
 
@@ -380,8 +363,6 @@ Die `Order` Einstellung &ndash; 1 bewirkt `Image` , dass das Element in jeder ge
 
 In jeder der drei `FlexLayout` Ansichten ist ein leeres vor `Label` dem `Button` , aber es hat die `Grow` Einstellung 1. Dies bedeutet, dass der gesamte zusätzliche vertikale Leerraum diesem Leerzeichen zugeordnet ist `Label` , wodurch die nach-unten-Taste gedrückt wird `Button` .
 
-<a name="bindable-properties" />
-
 ## <a name="the-bindable-properties-in-detail"></a>Die bindbaren Eigenschaften im Detail
 
 Nachdem Sie nun einige gängige Anwendungen von kennengelernt haben `FlexLayout` , können die Eigenschaften von ausführlicher unter `FlexLayout` sucht werden.
@@ -395,15 +376,13 @@ Wenn das Programm gestartet wird, werden in fünf `Picker` Ansichten die Standar
 
 Jede `Label` Ansicht verfügt über einen grauen Hintergrund, der den Platz anzeigt, der in `Label` der zugeordnet ist `FlexLayout` . Der Hintergrund der `FlexLayout` selbst ist Alice Blue. Es belegt den gesamten unteren Bereich der Seite, mit Ausnahme eines kleinen Randes auf der linken und rechten Seite.
 
-<a name="direction" />
-
 ### <a name="the-direction-property"></a>Die Direction-Eigenschaft
 
 Die- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) Eigenschaft ist vom Typ [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) , eine Enumeration mit vier Membern:
 
 - `Column`
 - `ColumnReverse`(oder "Column-Reverse" in XAML)
-- `Row`, der Standardwert
+- `Row`, der Standardwert.
 - `RowReverse`(oder "Row-Reverse" in XAML)
 
 In XAML können Sie den Wert dieser Eigenschaft mit den Namen der Enumerationsmember in Kleinbuchstaben, Großbuchstaben oder gemischter Groß-/Kleinschreibung angeben, oder Sie können zwei zusätzliche Zeichen folgen verwenden, die in Klammern angezeigt werden, die mit den CSS-Indikatoren identisch sind. (Die "Column-Reverse"-und "Row-Reverse"-Zeichen folgen werden in der Klasse definiert, [`FlexDirectionTypeConverter`](xref:Xamarin.Forms.FlexDirectionTypeConverter) die vom XAML-Parser verwendet wird.)
@@ -414,13 +393,11 @@ Hier ist die **Experiment** Seite (von links nach rechts), `Row` Richtung, `Colu
 
 Beachten Sie, dass `Reverse` die Elemente bei den Optionen ganz rechts oder unten beginnen.
 
-<a name="wrap" />
-
 ### <a name="the-wrap-property"></a>Die Wrap-Eigenschaft
 
 Die- [`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap) Eigenschaft ist vom Typ [`FlexWrap`](xref:Xamarin.Forms.FlexWrap) , eine Enumeration mit drei Elementen:
 
-- `NoWrap`, der Standardwert
+- `NoWrap`, der Standardwert.
 - `Wrap`
 - `Reverse`(oder "Wrap-Reverse" in XAML)
 
@@ -428,9 +405,7 @@ Von links nach rechts zeigen diese Bildschirme die `NoWrap` `Wrap` Optionen, und
 
 [![Die Experiment Seite: Wrap](flex-layout-images/ExperimentWrap.png "Der Experiment Seitenumbruch")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
-Wenn die `Wrap` -Eigenschaft auf festgelegt ist `NoWrap` und die Hauptachse (wie in diesem Programm) eingeschränkt ist, und die Hauptachse nicht breit oder hoch genug ist, um alle untergeordneten Elemente zu erfüllen, `FlexLayout` versucht, die Elemente zu verkleinern, wie der IOS-Bildschirmfoto zeigt. Sie können die Verkleinerung der Elemente mit der [`Shrink`](#shrink) angefügten bindbare-Eigenschaft steuern.
-
-<a name="justify-content" />
+Wenn die `Wrap` -Eigenschaft auf festgelegt ist `NoWrap` und die Hauptachse (wie in diesem Programm) eingeschränkt ist, und die Hauptachse nicht breit oder hoch genug ist, um alle untergeordneten Elemente zu erfüllen, `FlexLayout` versucht, die Elemente zu verkleinern, wie der IOS-Bildschirmfoto zeigt. Sie können die Verkleinerung der Elemente mit der [`Shrink`](#the-shrink-property) angefügten bindbare-Eigenschaft steuern.
 
 ### <a name="the-justifycontent-property"></a>Die Eigenschaft "justifycontent"
 
@@ -449,32 +424,28 @@ Diese Eigenschaft gibt an, wie die Elemente auf der Hauptachse, d. h. die horizo
 
 In allen drei Screenshots wird die- `Wrap` Eigenschaft auf festgelegt `Wrap` . Der `Start` Standardwert wird im vorherigen Android-Bildschirmfoto angezeigt. Der IOS-Bildschirmfoto zeigt die `Center` Option an: alle Elemente werden in den Mittelpunkt verschoben. Die drei weiteren Optionen, die mit dem Wort beginnen, weisen `Space` den zusätzlichen Platz zu, der nicht von den Elementen belegt wird. `SpaceBetween`ordnet den Raum gleichmäßig zwischen den Elementen zu. `SpaceAround`legt den gleichen Leerraum um jedes Element fest, während den `SpaceEvenly` gleichen Raum zwischen den einzelnen Elementen und vor dem ersten Element und hinter dem letzten Element in der Zeile einfügt.
 
-<a name="align-items" />
-
 ### <a name="the-alignitems-property"></a>Die alignitems-Eigenschaft
 
 Die- [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems) Eigenschaft ist vom Typ [`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) , eine Enumeration mit vier Membern:
 
-- `Stretch`, der Standardwert
+- `Stretch`, der Standardwert.
 - `Center`
 - `Start`(oder "Flex-Start" in XAML)
 - `End`(oder "Flex-End" in XAML)
 
-Dies ist eine von zwei Eigenschaften (die andere ist [`AlignContent`](#align-content) ), die angibt, wie untergeordnete Elemente auf der Kreuz Achse ausgerichtet werden. In jeder Zeile werden die untergeordneten Elemente gestreckt (wie im vorherigen Screenshot dargestellt) oder am Anfang, Mittelpunkt oder Ende der einzelnen Elemente ausgerichtet, wie in den folgenden drei Screenshots gezeigt:
+Dies ist eine von zwei Eigenschaften (die andere ist [`AlignContent`](#the-aligncontent-property) ), die angibt, wie untergeordnete Elemente auf der Kreuz Achse ausgerichtet werden. In jeder Zeile werden die untergeordneten Elemente gestreckt (wie im vorherigen Screenshot dargestellt) oder am Anfang, Mittelpunkt oder Ende der einzelnen Elemente ausgerichtet, wie in den folgenden drei Screenshots gezeigt:
 
 [![Die Experiment Seite: Elemente ausrichten](flex-layout-images/ExperimentAlignItems.png "Das Experiment Seiten-Ausrichten von Elementen")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 Im IOS-Screenshot werden die Spitzen aller untergeordneten Elemente ausgerichtet. In den Android-Screenshots werden die Elemente vertikal basierend auf dem höchsten untergeordneten Element zentriert. Im UWP-Bildschirmfoto werden die untersten Elemente aller Elemente ausgerichtet.
 
-Für jedes einzelne Element kann die `AlignItems` Einstellung mit der [`AlignSelf`](#align-self) angefügten bindbaren Eigenschaft überschrieben werden.
-
-<a name="align-content" />
+Für jedes einzelne Element kann die `AlignItems` Einstellung mit der [`AlignSelf`](#the-alignself-property) angefügten bindbaren Eigenschaft überschrieben werden.
 
 ### <a name="the-aligncontent-property"></a>Die aligncontent-Eigenschaft
 
 Die- [`AlignContent`](xref:Xamarin.Forms.FlexLayout.AlignContent) Eigenschaft ist vom Typ [`FlexAlignContent`](xref:Xamarin.Forms.FlexAlignContent) , eine Enumeration mit sieben Membern:
 
-- `Stretch`, der Standardwert
+- `Stretch`, der Standardwert.
 - `Center`
 - `Start`(oder "Flex-Start" in XAML)
 - `End`(oder "Flex-End" in XAML)
@@ -492,25 +463,21 @@ Im IOS-Bildschirmfoto befinden sich beide Zeilen im oberen Bereich. im Android-S
 
 `AlignContent`Hat keine Auswirkung, wenn nur eine Zeile oder Spalte vorhanden ist.
 
-<a name="attached-properties" />
-
 ## <a name="the-attached-bindable-properties-in-detail"></a>Details der angefügten bindbaren Eigenschaften
 
 `FlexLayout`definiert fünf angefügte bindbare Eigenschaften. Diese Eigenschaften werden auf untergeordnete Elemente von festgelegt `FlexLayout` und beziehen sich nur auf das jeweilige untergeordnete Element.
-
-<a name="align-self" />
 
 ### <a name="the-alignself-property"></a>Die alignself-Eigenschaft
 
 Die [`AlignSelf`](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) angefügte bindbare Eigenschaft weist den Typ auf [`FlexAlignSelf`](xref:Xamarin.Forms.FlexAlignContent) , eine Enumeration mit fünf Membern:
 
-- `Auto`, der Standardwert
+- `Auto`, der Standardwert.
 - `Stretch`
 - `Center`
 - `Start`(oder "Flex-Start" in XAML)
 - `End`(oder "Flex-End" in XAML)
 
-Für alle untergeordneten Elemente von `FlexLayout` überschreibt diese Eigenschafts Einstellung die-Eigenschaft, die für [`AlignItems`](#align-items) das selbst festgelegt ist `FlexLayout` . Mit der Standardeinstellung von wird `Auto` die- `AlignItems` Einstellung verwendet.
+Für alle untergeordneten Elemente von `FlexLayout` überschreibt diese Eigenschafts Einstellung die-Eigenschaft, die für [`AlignItems`](#the-alignitems-property) das selbst festgelegt ist `FlexLayout` . Mit der Standardeinstellung von wird `Auto` die- `AlignItems` Einstellung verwendet.
 
 Für ein- `Label` Element `label` mit dem Namen (oder Beispiel) können Sie die- `AlignSelf` Eigenschaft in Code wie dem folgenden festlegen:
 
@@ -593,8 +560,6 @@ Auf der Seite zum **vergrößern** des Experiments `Label` werden fünf Elemente
 Wenn einem untergeordneten Element ein positiver Wert zugewiesen wird `Grow` , nimmt dieses untergeordnete Element den gesamten verbleibenden Platz in Kauf, wie im Android-Bildschirmfoto veranschaulicht. Dieser Speicherplatz kann auch unter zwei oder mehr untergeordneten Elementen zugeordnet werden. Im UWP-Bildschirm Abbildung wird die- `Grow` Eigenschaft der zweiten `Label` auf 0,5 festgelegt, während die- `Grow` Eigenschaft der vierten `Label` 1,5 ist, wodurch das vierte `Label` drei fache des restlichen Speicherplatzes als Sekunde ergibt `Label` .
 
 Wie die untergeordnete Ansicht diesen Bereich verwendet, hängt vom jeweiligen Typ des untergeordneten Elements ab. Bei einem `Label` kann der Text `Label` mit den Eigenschaften und innerhalb des gesamten Speicherplatzes von positioniert werden `HorizontalTextAlignment` `VerticalTextAlignment` .
-
-<a name="shrink" />
 
 ### <a name="the-shrink-property"></a>Die Shrink-Eigenschaft
 

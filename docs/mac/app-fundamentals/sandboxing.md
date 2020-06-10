@@ -7,26 +7,26 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 02059c43d26c2e685abd685231fe5faf3d7a6bfe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: eab0fbb6be313a2ca193b50a484b48d5b34f5fde
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030113"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566060"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing einer xamarin. Mac-app
 
-in diesem Artikel wird beschrieben, wie Sie eine xamarin. Mac-Anwendung im App Store veröffentlichen.  _Sie deckt alle Elemente ab, die in Sandboxing fließen, z. b. Container Verzeichnisse, Berechtigungen, Benutzer seitig festgelegte Berechtigungen, Berechtigungs Trennung und Kernel Erzwingung._
+_In diesem Artikel wird das Sandkasten einer xamarin. Mac-Anwendung für die Veröffentlichung im App Store behandelt. Sie deckt alle Elemente ab, die in Sandboxing fließen, z. b. Container Verzeichnisse, Berechtigungen, Benutzer seitig festgelegte Berechtigungen, Berechtigungs Trennung und Kernel Erzwingung._
 
 ## <a name="overview"></a>Übersicht
 
-Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie die Möglichkeit, eine Anwendung in einem Sandkasten zu verwenden, wie bei der Arbeit mit Ziel-C oder Swift.
+Wenn Sie mit c# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie die Möglichkeit, eine Anwendung in einem Sandkasten zu verwenden, wie bei der Arbeit mit Ziel-C oder Swift.
 
 [![Ein Beispiel für die laufende App](sandboxing-images/intro01.png "Ein Beispiel für die laufende App")](sandboxing-images/intro01-large.png#lightbox)
 
-In diesem Artikel werden die Grundlagen der Arbeit mit Sandbox in einer xamarin. Mac-Anwendung und alle Elemente erläutert, die in Sandkasten einfließen: Container Verzeichnisse, Berechtigungen, Benutzer seitig ermittelte Berechtigungen, Berechtigungs Trennung und Kernel Erzwingung. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , verwenden, da er wichtige Konzepte und Techniken behandelt, die wir in verwenden werden. Dieser Artikel.
+In diesem Artikel werden die Grundlagen der Arbeit mit Sandbox in einer xamarin. Mac-Anwendung und alle Elemente erläutert, die in Sandkasten einfließen: Container Verzeichnisse, Berechtigungen, Benutzer seitig ermittelte Berechtigungen, Berechtigungs Trennung und Kernel Erzwingung. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , durcharbeiten, da er wichtige Konzepte und Techniken behandelt, die wir in diesem Artikel verwenden werden.
 
-Sie können sich auch den Abschnitt verfügbar machen von [ C# Klassen/Methoden zu "Ziel-c](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) " ansehen. darin werden die`Register`und`Export`Attribute erläutert, die zum Verknüpfen der C# Klassen mit "Ziel-c" verwendet werden. Objekte und UI-Elemente.
+Lesen Sie ggf. den Abschnitt verfügbar machen von [c#-Klassen/-Methoden zu "Ziel-c](~/mac/internals/how-it-works.md) " im Dokument " [xamarin. Mac](~/mac/internals/how-it-works.md) ". darin werden die `Register` Attribute und erläutert, die zum Verknüpfen `Export` ihrer c#-Klassen mit Ziel-c-Objekten und Benutzeroberflächen Elementen verwendet werden.
 
 ## <a name="about-the-app-sandbox"></a>Informationen zum App-Sandkasten
 
@@ -46,7 +46,7 @@ Der APP-Sandkasten ist eine in macOS integrierte Zugriffs Steuerungs Technologie
 Die Elemente der APP-Sandbox, die im Artikel ausführlich erläutert werden, lauten wie folgt:
 
 - Container Verzeichnisse
-- Berechtigten
+- Ansprüche
 - Vom Benutzer festgelegte Berechtigungen
 - Berechtigungs Trennung
 - Kernel Erzwingung
@@ -67,11 +67,11 @@ Wir überprüfen, ob die Anwendung tatsächlich in einem Sandkasten ist, und erf
 
 Gehen Sie folgendermaßen vor, um das Beispiel Projekt zu erstellen:
 
-1. Starten Sie Visual Studio für Mac, und klicken Sie auf die neue Projekt Mappe **.** klicken.
-2. Wählen Sie im Dialogfeld **Neues Projekt** die Option **Mac** - > **App** > **Cocoa-App**aus:
+1. Starten Sie Visual Studio für Mac, und klicken Sie auf die neue Projekt Mappe **.** .
+2. Wählen Sie im Dialogfeld **Neues Projekt** die Option **Mac**-  >  **App**  >  **Cocoa-App**aus:
 
     [![Erstellen einer neuen Cocoa-App](sandboxing-images/sample01.png "Erstellen einer neuen Cocoa-App")](sandboxing-images/sample01-large.png#lightbox)
-3. Klicken Sie auf die Schaltfläche **weiter** , geben Sie `MacSandbox` als Projektnamen ein, und klicken Sie auf die Schaltfläche **Erstellen**
+3. Klicken Sie auf **weiter** , geben Sie als `MacSandbox` Projektnamen ein, und klicken Sie auf die Schaltfläche **Erstellen** :
 
     [![Eingeben des App-namens](sandboxing-images/sample02.png "Eingeben des App-namens")](sandboxing-images/sample02-large.png#lightbox)
 4. Doppelklicken Sie im **Lösungspad**auf die Datei **Main. Storyboard** , um Sie zur Bearbeitung in Xcode zu öffnen:
@@ -80,12 +80,12 @@ Gehen Sie folgendermaßen vor, um das Beispiel Projekt zu erstellen:
 5. Ziehen Sie eine **Webansicht** auf das Fenster, geben Sie die Größe des Inhalts Bereichs an, und legen Sie fest, dass Sie mit dem Fenster vergrößert und verkleinert werden soll:
 
     [![Hinzufügen einer Webansicht](sandboxing-images/sample04.png "Hinzufügen einer Webansicht")](sandboxing-images/sample04-large.png#lightbox)
-6. Erstellen Sie ein Outlet für die Webansicht namens `webView`:
+6. Erstellen Sie ein Outlet für die Webansicht mit dem Namen `webView` :
 
     [![Erstellen eines neuen Outlets](sandboxing-images/sample05.png "Erstellen eines neuen Outlets")](sandboxing-images/sample05-large.png#lightbox)
 7. Kehren Sie zu Visual Studio für Mac zurück, und doppelklicken Sie in der **Lösungspad** auf die Datei **ViewController.cs** , um Sie für die Bearbeitung zu öffnen.
-8. Fügen Sie die folgende using-Anweisung hinzu: `using WebKit;`
-9. Führen Sie die `ViewDidLoad`-Methode wie folgt aus:
+8. Fügen Sie die folgende using-Anweisung hinzu:`using WebKit;`
+9. Legen Sie die- `ViewDidLoad` Methode wie folgt an:
 
     ```csharp
     public override void AwakeFromNib ()
@@ -101,7 +101,7 @@ Führen Sie die Anwendung aus, und stellen Sie sicher, dass die Apple-Website wi
 
 [![Zeigt eine Beispiel-App-Run an](sandboxing-images/sample06.png "Zeigt eine Beispiel-App-Run an")](sandboxing-images/sample06-large.png#lightbox)
 
-<a name="Signing_and_Provisioning_the_App" />
+<a name="Signing_and_Provisioning_the_App"></a>
 
 ### <a name="signing-and-provisioning-the-app"></a>Signieren und Bereitstellen der APP
 
@@ -114,7 +114,7 @@ Gehen Sie folgendermaßen vor:
     [![Anmelden beim Apple-Entwickler Portal](sandboxing-images/sign01.png "Anmelden beim Apple-Entwickler Portal")](sandboxing-images/sign01-large.png#lightbox)
 2. Wählen Sie **Zertifikate, Bezeichner & profile**aus:
 
-    [![Auswählen von Zertifikaten, Bezeichner & Profilen](sandboxing-images/sign02.png "Auswählen von Zertifikaten, Bezeichner & Profilen")](sandboxing-images/sign02-large.png#lightbox)
+    [![Auswählen von Zertifikaten, Bezeichnern und Profilen](sandboxing-images/sign02.png "Auswählen von Zertifikaten, Bezeichnern und Profilen")](sandboxing-images/sign02-large.png#lightbox)
 3. **Wählen Sie**unter **Mac-apps**die Option Bezeichner aus:
 
     [![Auswählen von bezeichlern](sandboxing-images/sign03.png "Auswählen von bezeichlern")](sandboxing-images/sign03-large.png#lightbox)
@@ -139,7 +139,7 @@ Gehen Sie folgendermaßen vor:
 10. Benennen Sie das Profil:
 
     [![Benennen eines Namens für das Profil](sandboxing-images/sign10.png "Benennen eines Namens für das Profil")](sandboxing-images/sign10-large.png#lightbox)
-11. Klicken Sie auf die Schaltfläche **done** .
+11. Klicken Sie auf die Schaltfläche **Fertig**.
 
 > [!IMPORTANT]
 > In einigen Fällen müssen Sie das neue Bereitstellungs Profil direkt aus dem Apple-Entwickler Portal herunterladen und darauf doppelklicken, um es zu installieren. Möglicherweise müssen Sie Visual Studio für Mac auch abbrechen und neu starten, bevor Sie auf das neue Profil zugreifen können.
@@ -158,10 +158,10 @@ Als nächstes müssen wir die neue APP-ID und das Profil auf dem Entwicklungs Co
 Als nächstes müssen wir die neue APP-ID und das Bereitstellungs Profil in unserem xamarin. Mac-Projekt auswählen. Führen Sie die folgenden Schritte aus:
 
 1. Doppelklicken Sie im **Lösungspad**auf die Datei **Info. plist** , um Sie zur Bearbeitung zu öffnen.
-2. Stellen Sie sicher, dass der **Bündel Bezeichner** mit der oben erstellten APP-ID übereinstimmt (Beispiel: `com.appracatappra.MacSandbox`):
+2. Stellen Sie sicher, dass der **Bündel Bezeichner** mit der oben erstellten APP-ID übereinstimmt (Beispiel: `com.appracatappra.MacSandbox` ):
 
     [![Bearbeiten der Bündel-ID](sandboxing-images/sign13.png "Bearbeiten der Bündel-ID")](sandboxing-images/sign13-large.png#lightbox)
-3. Doppelklicken Sie dann auf die Datei "Berechtigungsdatei" **. plist** , und stellen Sie sicher, dass der **icloud-Schlüssel-Wert-Speicher** und die **icloud-Container** mit der oben erstellten APP-ID identisch sind (Beispiel: `com.appracatappra.MacSandbox`)
+3. Doppelklicken Sie dann auf die Datei "Berechtigungsdatei" **. plist** , und stellen Sie sicher, dass der **icloud-Schlüssel-Wert-Speicher** und die **icloud-Container** mit der oben erstellten APP-ID identisch sind. ( `com.appracatappra.MacSandbox` Beispiel:
 
     [![Bearbeiten der Datei "Berechtigungen. plist"](sandboxing-images/sign17.png "Bearbeiten der Datei "Berechtigungen. plist"")](sandboxing-images/sign17-large.png#lightbox)
 4. Speichern Sie die Änderungen.
@@ -171,7 +171,7 @@ Als nächstes müssen wir die neue APP-ID und das Bereitstellungs Profil in unse
 6. Wählen Sie **Mac-Signatur**aus, und aktivieren Sie dann **das Anwendungs Bündel Signieren** und **das Installationspaket Signieren**. Wählen Sie unter **Bereitstellungs Profil**das oben erstellte aus:
 
     ![Festlegen des Bereitstellungs Profils](sandboxing-images/sign15.png "Festlegen des Bereitstellungs Profils")
-7. Klicken Sie auf die Schaltfläche **done** .
+7. Klicken Sie auf die Schaltfläche **Fertig**.
 
 > [!IMPORTANT]
 > Möglicherweise müssen Sie Visual Studio für Mac beenden und neu starten, damit die neue APP-ID und das Bereitstellungs Profil erkannt werden, das von Xcode installiert wurde.
@@ -192,7 +192,7 @@ Wenn ein Problem vorliegt, beheben Sie das Problem im Apple Developer Portal, ak
 
 ### <a name="enable-the-app-sandbox"></a>Aktivieren der APP-Sandbox
 
-Sie aktivieren den App-Sandkasten durch Aktivieren eines Kontrollkästchens in den Projektoptionen. Führen Sie folgende Schritte aus:
+Sie aktivieren den App-Sandkasten durch Aktivieren eines Kontrollkästchens in den Projektoptionen. Gehen Sie folgendermaßen vor:
 
 1. Doppelklicken Sie im **Lösungspad**auf die Datei " **Berechtigungen. plist** ", um Sie für die Bearbeitung zu öffnen.
 2. Aktivieren Sie beide **Berechtigungen aktivieren** und **App-Sandboxing aktivieren**:
@@ -208,29 +208,29 @@ An diesem Punkt haben Sie die APP-Sandbox aktiviert, aber Sie haben nicht den er
 
 Abgesehen vom Verhalten beim Blockieren von Ressourcen gibt es drei Hauptmethoden, um zu ermitteln, ob eine xamarin. Mac-Anwendung erfolgreich in einen Sandkasten konvertiert wurde:
 
-1. Überprüfen Sie im Finder den Inhalt des Ordners "`~/Library/Containers/`": Wenn die APP Sandkasten ist, wird ein Ordner mit dem Namen wie die Bündel-ID Ihrer App angezeigt (Beispiel: `com.appracatappra.MacSandbox`):
+1. Überprüfen Sie in Finder den Inhalt des `~/Library/Containers/` Ordners: Wenn es sich um einen Sandkasten der App handelt, wird ein Ordner mit dem Namen wie die Bündel-ID Ihrer App angezeigt (Beispiel: `com.appracatappra.MacSandbox` ):
 
     [![Öffnen des Pakets der APP](sandboxing-images/sample09.png "Öffnen des Pakets der APP")](sandboxing-images/sample09-large.png#lightbox)
 2. Im System sehen Sie, dass die APP im Aktivitäts Monitor als Sandkasten angezeigt wird:
-    - Starten Sie den Aktivitäts Monitor (unter `/Applications/Utilities`).
-    - Wählen Sie > **Spalten** **anzeigen** aus, und stellen Sie sicher, dass das Menü Element **Sandbox** aktiviert ist.
-    - Stellen Sie sicher, dass die Sandbox-Spalte `Yes` für Ihre Anwendung liest:
+    - Starten Sie den Aktivitäts Monitor (unter `/Applications/Utilities` ).
+    - Wählen **View**Sie  >  **Spalten** anzeigen aus, und stellen Sie sicher, dass das Menü Element **Sandbox** aktiviert ist.
+    - Stellen Sie sicher, dass die Sandbox-Spalte `Yes` für Ihre Anwendung lautet:
 
     [![Überprüfen der APP im Aktivitäts Monitor](sandboxing-images/sample10.png "Überprüfen der APP im Aktivitäts Monitor")](sandboxing-images/sample10-large.png#lightbox)
 3. Überprüfen Sie, ob die Binärdatei der APP Sandkasten ist:
     - Starten Sie die Terminal-app.
-    - Navigieren Sie zum `bin` Verzeichnis Anwendungen.
-    - Führen Sie den folgenden Befehl aus: `codesign -dvvv --entitlements :- executable_path` (wobei `executable_path` der Pfad zu Ihrer Anwendung ist):
+    - Navigieren Sie zum Anwendungs `bin` Verzeichnis.
+    - Geben Sie den folgenden Befehl ein: `codesign -dvvv --entitlements :- executable_path` (wobei `executable_path` der Pfad zu Ihrer Anwendung ist):
 
     [![Überprüfen der app in der Befehlszeile](sandboxing-images/sample11.png "Überprüfen der app in der Befehlszeile")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>Debuggen einer Sandbox-App
 
-Der Debugger stellt über TCP eine Verbindung mit xamarin. Mac-apps her. Dies bedeutet, dass beim Aktivieren von Sandboxing standardmäßig keine Verbindung mit der APP hergestellt werden kann. Wenn Sie also versuchen, die APP auszuführen, ohne dass die entsprechenden Berechtigungen aktiviert sind, erhalten Sie die Fehlermeldung *"Es konnte keine Verbindung mit dem Debugger hergestellt werden."* .
+Der Debugger stellt über TCP eine Verbindung mit xamarin. Mac-apps her. Dies bedeutet, dass beim Aktivieren von Sandboxing standardmäßig keine Verbindung mit der APP hergestellt werden kann. Wenn Sie also versuchen, die APP auszuführen, ohne dass die entsprechenden Berechtigungen aktiviert sind, erhalten Sie die Fehlermeldung *"Es konnte keine Verbindung mit dem Debugger*hergestellt werden".
 
 [![Festlegen der erforderlichen Optionen](sandboxing-images/debug01.png "Festlegen der erforderlichen Optionen")](sandboxing-images/debug01-large.png#lightbox)
 
-Die Berechtigung **ausgehende Netzwerkverbindungen zulassen (Client)** ist die Berechtigung, die für den Debugger erforderlich ist. durch Aktivieren dieser Option wird das Debugging normal zugelassen. Da Sie nicht ohne diese Debuggen können, haben wir das `CompileEntitlements` Ziel für `msbuild` aktualisiert, um diese Berechtigung automatisch den Berechtigungen für jede APP hinzuzufügen, die nur für Debugbuilds in einem Sandkasten enthalten ist. Releasebuilds sollten die Berechtigungen unverändert verwenden, die in der Berechtigungsdatei angegeben sind.
+Die Berechtigung **ausgehende Netzwerkverbindungen zulassen (Client)** ist die Berechtigung, die für den Debugger erforderlich ist. durch Aktivieren dieser Option wird das Debugging normal zugelassen. Da Sie nicht ohne diese Debuggen können, haben wir das `CompileEntitlements` Ziel für aktualisiert, `msbuild` um diese Berechtigung automatisch den Berechtigungen für jede APP hinzuzufügen, die nur für Debugbuilds in einem Sandkasten enthalten ist. Releasebuilds sollten die Berechtigungen unverändert verwenden, die in der Berechtigungsdatei angegeben sind.
 
 ### <a name="resolving-an-app-sandbox-violation"></a>Auflösen einer APP Sandbox-Verletzung
 
@@ -242,21 +242,21 @@ Die häufigste Quelle für App-Sandkasten Verletzungen tritt auf, wenn die in Vi
 
 Wenn Sie vermuten, dass in ihrer xamarin. Mac-Anwendung eine Verletzung der APP-Sandbox auftritt, können Sie das Problem am schnellsten mithilfe der **Konsolen** -App ermitteln.
 
-Führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor:
 
 1. Kompilieren Sie die betreffende APP, und führen Sie Sie aus Visual Studio für Mac aus.
-2. Öffnen Sie die **Konsolen** Anwendung (von `/Applications/Utilties/`).
+2. Öffnen Sie die **Konsolen** Anwendung (von `/Applications/Utilties/` ).
 3. Wählen Sie in der Rand Leiste **alle Meldungen** aus, und geben Sie `sandbox` in die Suche ein:
 
     [![Ein Beispiel für ein Sandkasten Problem in der-Konsole](sandboxing-images/resolve01.png "Ein Beispiel für ein Sandkasten Problem in der-Konsole")](sandboxing-images/resolve01-large.png#lightbox)
 
-In der obigen Beispiel-App können Sie sehen, dass die Kernal den `network-outbound`-Datenverkehr aufgrund der APP-Sandbox blockiert, da wir das Recht nicht angefordert haben.
+In der obigen Beispiel-App können Sie sehen, dass das Kernal den `network-outbound` Datenverkehr aufgrund der APP-Sandbox blockiert, da wir das Recht nicht angefordert haben.
 
 #### <a name="fixing-app-sandbox-violations-with-entitlements"></a>Beheben von App-Sandkasten Verstößen mit Berechtigungen
 
 Nachdem Sie nun gesehen haben, wie Sie nach App-Sandkasten Verletzungen suchen, sehen wir uns an, wie Sie durch die Anpassung der Berechtigungen unserer Anwendung gelöst werden können.
 
-Führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor:
 
 1. Doppelklicken Sie im **Lösungspad**auf die Datei " **Berechtigungen. plist** ", um Sie für die Bearbeitung zu öffnen.
 2. Aktivieren Sie im Abschnitt **Berechtigungen** das Kontrollkästchen **ausgehende Netzwerkverbindungen zulassen (Client)** :
@@ -270,7 +270,7 @@ Wenn wir die oben genannten Schritte für unsere Beispiel-App durchführen und S
 
 Die Zugriffs Steuerungsmechanismen, die von der APP-Sandbox bereitgestellt werden, sind nur wenige und leicht verständlich. Die Art und Weise, in der der APP-Sandkasten von jeder App übernommen wird, ist jedoch eindeutig und basiert auf den Anforderungen der app.
 
-Wenn Sie Ihre xamarin. Mac-Anwendung am besten durch schädlichen Code ausnutzen möchten, benötigen Sie nur eine einzige Schwachstelle in der APP (oder einer der Bibliotheken oder Frameworks, die Sie nutzt), um die Kontrolle über die Interaktionen der APP mit dem Anlage.
+Wenn Sie Ihre xamarin. Mac-Anwendung am besten durch schädlichen Code ausnutzen möchten, benötigen Sie nur eine einzige Schwachstelle in der APP (oder einer der Bibliotheken oder Frameworks, die Sie nutzt), um die Kontrolle über die Interaktionen der APP mit dem System zu erhalten.
 
 Der APP-Sandkasten wurde entwickelt, um die Übernahme zu verhindern (oder den Schaden zu begrenzen, der verursacht werden kann), indem Sie die beabsichtigten Interaktionen der Anwendung mit dem System angeben können. Das System gewährt nur Zugriff auf die Ressource, die Ihre Anwendung benötigt, um Ihre Arbeit zu erledigen, und nichts anderes.
 
@@ -293,22 +293,22 @@ Wenn die xamarin. Mac-Anwendung den App-Sandkasten annimmt, hat Sie Zugriff auf 
 - **Das App-Container-Verzeichnis** : bei der ersten Testlauf erstellt das Betriebssystem ein spezielles _Container Verzeichnis_ , in das alle Ressourcen zugreifen, auf das nur zugegriffen werden kann. Die APP erhält vollständigen Lese-/Schreibzugriff auf dieses Verzeichnis.
 - **App-Gruppen Container Verzeichnisse** : Ihrer APP kann der Zugriff auf einen oder mehrere _Gruppen Container_ gewährt werden, die von apps in derselben Gruppe gemeinsam genutzt werden.
 - **Benutzerdefinierte Dateien** : die Anwendung erhält automatisch Zugriff auf Dateien, die vom Benutzer explizit geöffnet oder gezogen und auf der Anwendung abgelegt werden.
-- **Verwandte Elemente** : mit den entsprechenden Berechtigungen kann Ihre Anwendung Zugriff auf eine Datei mit demselben Namen, aber einer anderen Erweiterung haben. Beispielsweise ein Dokument, das sowohl als `.txt` Datei als auch als `.pdf`gespeichert wurde.
+- **Verwandte Elemente** : mit den entsprechenden Berechtigungen kann Ihre Anwendung Zugriff auf eine Datei mit demselben Namen, aber einer anderen Erweiterung haben. Beispielsweise ein Dokument, das sowohl als als auch als Datei gespeichert wurde `.txt` `.pdf` .
 - **Temporäre Verzeichnisse, Befehlszeilen Tool Verzeichnisse und bestimmte weltweit lesbare Speicherorte** : Ihre APP hat unterschiedliche Zugriffsstufen auf Dateien an anderen klar definierten Speicherorten, wie im System angegeben.
 
 #### <a name="the-app-container-directory"></a>Das App-Container Verzeichnis
 
 Das App-Container Verzeichnis einer xamarin. Mac-Anwendung weist die folgenden Eigenschaften auf:
 
-- Sie befindet sich an einem ausgeblendeten Speicherort im Stammverzeichnis des Benutzers (in der Regel `~Library/Containers`), und der Zugriff auf die `NSHomeDirectory`-Funktion (siehe unten) in der Anwendung ist möglich. Da Sie sich im Stammverzeichnis befindet, erhält jeder Benutzer einen eigenen Container für die app.
+- Sie befindet sich an einem ausgeblendeten Speicherort im Basisverzeichnis des Benutzers (in der Regel `~Library/Containers` ) und kann mit der `NSHomeDirectory` Funktion (siehe unten) in der Anwendung aufgerufen werden. Da Sie sich im Stammverzeichnis befindet, erhält jeder Benutzer einen eigenen Container für die app.
 - Die APP hat uneingeschränkten Lese-/Schreibzugriff auf das Container Verzeichnis und alle darin enthaltenen Unterverzeichnisse und Dateien.
-- Die meisten APIs für die Pfad Suche von macOS sind relativ zum Container der app. Der Container verfügt z. b. über eine eigene **Bibliothek** (Zugriff über `NSLibraryDirectory`), Unterverzeichnisse für **Anwendungsunterstützung** und **Einstellungen** .
+- Die meisten APIs für die Pfad Suche von macOS sind relativ zum Container der app. Der Container verfügt z. b. über eine eigene **Bibliothek** (Zugriff über `NSLibraryDirectory` ), Unterverzeichnisse für **Anwendungsunterstützung** und **Einstellungen** .
 - macOS erstellt und erzwingt die Verbindung zwischen der APP und dem zugehörigen Container per Code Signatur. Auch wenn eine andere APP versucht, die App mithilfe Ihres **Bündel Bezeichners**zu spodieren, kann Sie aufgrund der Code Signatur nicht auf den Container zugreifen.
 - Der Container ist nicht für vom benutzergenerierte Dateien. Stattdessen handelt es sich um Dateien, die von der Anwendung verwendet werden, z. b. Datenbanken, Caches oder andere spezifische Datentypen.
 - Für _Shoebox_ -Typen von apps (wie die Foto-APP von Apple) wird der Inhalt des Benutzers in den Container überlaufen.
 
 > [!IMPORTANT]
-> Leider verfügt xamarin. Mac noch nicht über eine 100%-API-Abdeckung (im Gegensatz zu xamarin. IOS), daher wurde die `NSHomeDirectory`-API in der aktuellen Version von xamarin. Mac nicht zugeordnet.
+> Leider verfügt xamarin. Mac noch nicht über eine API-Abdeckung von 100% (im Gegensatz zu xamarin. IOS), daher wurde die `NSHomeDirectory` API nicht in der aktuellen Version von xamarin. Mac zugeordnet.
 
 Als vorübergehende Problem Umgehung können Sie den folgenden Code verwenden:
 
@@ -325,9 +325,9 @@ public static string ContainerDirectory {
 
 #### <a name="the-app-group-container-directory"></a>Das Container Verzeichnis der APP-Gruppe
 
-Ab Mac macOS 10.7.5 (und höher) kann eine Anwendung mit der `com.apple.security.application-groups` Berechtigung auf einen gemeinsam genutzten Container zugreifen, der allen Anwendungen in der Gruppe gemeinsam ist. Sie können diesen freigegebenen Container für Nichtbenutzer seitige Inhalte wie z. b. Datenbanken oder andere Arten von Unterstützungs Dateien (z. b. Caches) verwenden.
+Ab Mac macOS 10.7.5 (und höher) kann eine Anwendung die `com.apple.security.application-groups` Berechtigung für den Zugriff auf einen gemeinsam genutzten Container verwenden, der allen Anwendungen in der Gruppe gemeinsam ist. Sie können diesen freigegebenen Container für Nichtbenutzer seitige Inhalte wie z. b. Datenbanken oder andere Arten von Unterstützungs Dateien (z. b. Caches) verwenden.
 
-Die Gruppen Container werden automatisch dem Sandbox Container jeder app hinzugefügt (wenn Sie Teil einer Gruppe sind) und werden unter `~/Library/Group Containers/<application-group-id>`gespeichert. Die Gruppen-ID _muss_ mit der Entwicklungs Team-ID und einem bestimmten Zeitraum beginnen, z. b.:
+Die Gruppen Container werden automatisch dem Sandbox-Container jeder app hinzugefügt (wenn Sie Teil einer Gruppe sind) und werden unter gespeichert `~/Library/Group Containers/<application-group-id>` . Die Gruppen-ID _muss_ mit der Entwicklungs Team-ID und einem bestimmten Zeitraum beginnen, z. b.:
 
 ```plist
 <team-id>.com.company.<group-name>
@@ -340,10 +340,10 @@ Weitere Informationen finden Sie unter [Hinzufügen einer Anwendung zu einer Anw
 Eine Sandkasten-xamarin. Mac-Anwendung kann auf folgende Weise auf Dateisystem Pfade außerhalb ihres Containers zugreifen:
 
 - In der spezifischen Richtung des Benutzers (über Dialogfelder öffnen und speichern oder andere Methoden wie Drag & Drop).
-- Mithilfe von Berechtigungen für bestimmte Dateisystem Speicherorte (z. b. `/bin` oder `/usr/lib`).
+- Mithilfe von Berechtigungen für bestimmte Dateisystem Speicherorte (z `/bin` `/usr/lib` . b. oder).
 - Wenn sich der Speicherort des Dateisystems in bestimmten Verzeichnissen befindet, die für die Welt lesbar sind (z. b. Freigabe).
 
-_PowerBox_ ist die macOS-Sicherheitstechnologie, die mit dem Benutzer interagiert, um die Dateizugriffsrechte für die Sandbox-xamarin. Mac-app zu erweitern. PowerBox verfügt über keine API, wird jedoch transparent aktiviert, wenn die APP eine `NSOpenPanel` oder `NSSavePanel`aufruft. Der Zugriff auf den PowerBox-Server wird über die Berechtigungen aktiviert, die Sie für Ihre xamarin. Mac-Anwendung festlegen.
+_PowerBox_ ist die macOS-Sicherheitstechnologie, die mit dem Benutzer interagiert, um die Dateizugriffsrechte für die Sandbox-xamarin. Mac-app zu erweitern. PowerBox verfügt über keine API, wird jedoch transparent aktiviert, wenn die APP ein `NSOpenPanel` oder aufruft `NSSavePanel` . Der Zugriff auf den PowerBox-Server wird über die Berechtigungen aktiviert, die Sie für Ihre xamarin. Mac-Anwendung festlegen.
 
 Wenn eine Sandbox-App ein Dialogfeld zum Öffnen oder speichern anzeigt, wird das Fenster von PowerBox (und nicht von AppKit) angezeigt und hat daher Zugriff auf alle Dateien oder Verzeichnisse, auf die der Benutzer Zugriff hat.
 
@@ -354,7 +354,7 @@ Außerdem lässt das System die folgenden Aktionen automatisch für eine Sandbox
 - Verbindung mit einer System Eingabemethode.
 - Ruft die Dienste auf, die vom Benutzer im Menü **Dienste** ausgewählt wurden (nur für Dienste, die vom Dienstanbieter als _sicher für Sandbox-apps_ gekennzeichnet sind).
 - Dateien öffnen wählen Sie im Menü " **zuletzt geöffnet** " den Benutzer aus.
-- Verwenden Sie kopieren & Einfügen zwischen anderen Anwendungen.
+- Verwenden Sie kopieren & einfügen zwischen anderen Anwendungen.
 - Lesen Sie die Dateien aus den folgenden weltweit lesbaren Speicherorten:
   - `/bin`
   - `/sbin`
@@ -363,33 +363,33 @@ Außerdem lässt das System die folgenden Aktionen automatisch für eine Sandbox
   - `/usr/sbin`
   - `/usr/share`
   - `/System`
-- Lesen und Schreiben von Dateien in den Verzeichnissen, die von `NSTemporaryDirectory`erstellt wurden.
+- Lesen und Schreiben von Dateien in den Verzeichnissen, die von erstellt wurden `NSTemporaryDirectory` .
 
 Der Standardwert ist, dass Dateien, die durch eine Sandkasten-xamarin. Mac-app geöffnet oder gespeichert werden, so lange zugänglich sind, bis die APP beendet wird (es sei denn, die Datei war nach wie vor geöffnet). Geöffnete Dateien werden beim nächsten Start der APP automatisch in der Sandbox der APP über das macOS-Feature wieder hergestellt.
 
 Verwenden Sie zum Bereitstellen von Persistenz für Dateien, die sich außerhalb des Containers einer xamarin. Mac-app befinden, die sicherheitsbezogenen Lesezeichen (siehe unten).
 
-#### <a name="related-items"></a>Verknüpfte Elemente
+#### <a name="related-items"></a>Verwandte Elemente
 
-Die APP-Sandbox ermöglicht einer APP den Zugriff auf verwandte Elemente, die den gleichen Dateinamen, aber unterschiedliche Erweiterungen aufweisen. Die Funktion besteht aus zwei Teilen: a) einer Liste verwandter Erweiterungen im `Info.plst` Datei der APP, b), um der Sandbox mitzuteilen, was die APP mit diesen Dateien tun wird.
+Die APP-Sandbox ermöglicht einer APP den Zugriff auf verwandte Elemente, die den gleichen Dateinamen, aber unterschiedliche Erweiterungen aufweisen. Die Funktion besteht aus zwei Teilen: a) einer Liste verwandter Erweiterungen im `Info.plst` Datei Code der APP, b), um der Sandbox mitzuteilen, was die APP mit diesen Dateien tun wird.
 
 Es gibt zwei Szenarien, in denen dies sinnvoll ist:
 
-1. Die APP muss in der Lage sein, eine andere Version der Datei (mit einer neuen Erweiterung) zu speichern. Beispielsweise das Exportieren einer `.txt` Datei in eine `.pdf` Datei. Um diese Situation zu beheben, müssen Sie für den Zugriff auf die Datei eine `NSFileCoordinator` verwenden. Zuerst wird die `WillMove(fromURL, toURL)`-Methode aufgerufen, die Datei wird in die neue Erweiterung verschoben und dann `ItemMoved(fromURL, toURL)`aufgerufen.
-2. Die APP muss eine Hauptdatei mit einer Erweiterung und mehreren unterstützenden Dateien mit unterschiedlichen Erweiterungen öffnen. Beispielsweise ein Film und eine Untertiteldatei. Verwenden Sie eine `NSFilePresenter`, um Zugriff auf die sekundäre Datei zu erhalten. Stellen Sie die Hauptdatei für die `PrimaryPresentedItemURL`-Eigenschaft und die sekundäre Datei für die `PresentedItemURL`-Eigenschaft bereit. Wenn die Hauptdatei geöffnet wird, müssen Sie die `AddFilePresenter`-Methode der `NSFileCoordinator`-Klasse zum Registrieren der sekundären Datei abrufen.
+1. Die APP muss in der Lage sein, eine andere Version der Datei (mit einer neuen Erweiterung) zu speichern. Beispielsweise das Exportieren einer `.txt` Datei in eine `.pdf` Datei. Um diese Situation zu beheben, müssen Sie `NSFileCoordinator` für den Zugriff auf die Datei ein verwenden. Zuerst wird die `WillMove(fromURL, toURL)` -Methode aufgerufen, die Datei wird in die neue Erweiterung verschoben, und dann wird aufgerufen `ItemMoved(fromURL, toURL)` .
+2. Die APP muss eine Hauptdatei mit einer Erweiterung und mehreren unterstützenden Dateien mit unterschiedlichen Erweiterungen öffnen. Beispielsweise ein Film und eine Untertiteldatei. Verwenden `NSFilePresenter` Sie, um auf die sekundäre Datei zuzugreifen. Stellen Sie die Hauptdatei für die `PrimaryPresentedItemURL` -Eigenschaft und die sekundäre Datei für die- `PresentedItemURL` Eigenschaft bereit. Wenn die Hauptdatei geöffnet wird, wird die- `AddFilePresenter` Methode der-Klasse aufgerufen, `NSFileCoordinator` um die sekundäre Datei zu registrieren.
 
-In beiden Szenarien muss die Datei " **Info. plist** " der APP die Dokumenttypen deklarieren, die von der APP geöffnet werden können. Fügen Sie für jeden Dateityp den `NSIsRelatedItemType` (mit dem Wert `YES`) zu seinem Eintrag im `CFBundleDocumentTypes` Array hinzu.
+In beiden Szenarien muss die Datei " **Info. plist** " der APP die Dokumenttypen deklarieren, die von der APP geöffnet werden können. Fügen Sie für einen beliebigen Dateityp den `NSIsRelatedItemType` (mit dem Wert `YES` ) zum Eintrag im- `CFBundleDocumentTypes` Array hinzu.
 
 #### <a name="open-and-save-dialog-behavior-with-sandboxed-apps"></a>Öffnen und Speichern des Dialog Felds Verhalten mit Sandbox-apps
 
-Die folgenden Grenzwerte gelten für die `NSOpenPanel` und `NSSavePanel`, wenn Sie von einer Sandkasten-xamarin. Mac-app aufgerufen werden:
+Die folgenden Grenzwerte gelten für `NSOpenPanel` und, `NSSavePanel` Wenn Sie über eine Sandkasten-xamarin. Mac-app aufgerufen werden:
 
 - Sie können die Schaltfläche **OK** nicht Programm gesteuert aufrufen.
-- Sie können die Auswahl eines Benutzers in einer `NSOpenSavePanelDelegate`nicht Programm gesteuert ändern.
+- Sie können die Auswahl eines Benutzers in einer nicht Programm gesteuert ändern `NSOpenSavePanelDelegate` .
 
 Außerdem sind die folgenden Vererbungs Änderungen vorhanden:
 
-- **Nicht-Sandkasten-App** - `NSOpenPanel` `NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
+- **Nicht-Sandkasten-App**  -  `NSOpenPanel``NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
 
 ### <a name="security-scoped-bookmarks-and-persistent-resource-access"></a>Sicherheitsbezogene Lesezeichen und persistente Ressourcen Zugriff
 
@@ -403,27 +403,27 @@ Beim Arbeiten mit sicherheitsbezogenen Lesezeichen und permanentem Ressourcen Zu
 
 - **Ein Lesezeichen in der App ermöglicht einen permanenten Zugriff auf eine benutzerdefinierte Datei oder einen benutzerdefinierten Ordner.**
 
-    Wenn die Sandbox-Anwendung z. b. die Verwendung von zum Öffnen eines externen Dokuments zur Bearbeitung ermöglicht (mit einem `NSOpenPanel`), kann die APP ein Lesezeichen für eine APP erstellen, damit Sie in Zukunft erneut auf dieselbe Datei zugreifen kann.
+    Wenn z. b. die Sandbox-xamarin. Mac-Anwendung verwendet, um ein externes Dokument zum Bearbeiten zu öffnen (mit einem `NSOpenPanel` ), kann die APP ein Lesezeichen für eine APP erstellen, damit Sie in Zukunft erneut auf dieselbe Datei zugreifen kann.
 - **Ein Lesezeichen mit Dokumentbereich bietet einen permanenten Zugriff auf eine unter Datei in einem bestimmten Dokument.**
 
 Beispielsweise eine Video Bearbeitungs-APP, die eine Projektdatei erstellt, die Zugriff auf die einzelnen Bilder, Videoclips und Audiodateien hat, die später in einem einzelnen Film kombiniert werden.
 
-Wenn der Benutzer eine Ressourcen Datei in das Projekt importiert (über eine `NSOpenPanel`), erstellt die APP ein Dokument mit Dokumentbereich für das Element, das im Projekt gespeichert ist, damit die APP immer auf die Datei zugreifen kann.
+Wenn der Benutzer eine Ressourcen Datei in das Projekt importiert (über einen `NSOpenPanel` ), erstellt die APP ein Dokument mit Dokumentbereich für das Element, das im Projekt gespeichert ist, damit die APP immer auf die Datei zugreifen kann.
 
 Ein Lesezeichen im Dokumentbereich kann von jeder Anwendung aufgelöst werden, die die Lesezeichen Daten und das Dokument selbst öffnen kann. Dies unterstützt die Portabilität und ermöglicht dem Benutzer, die Projektdateien an einen anderen Benutzer zu senden, sodass alle Lesezeichen ebenfalls für Sie funktionieren.
 
 > [!IMPORTANT]
-> Ein Lesezeichen mit Dokumentbereich kann _nur_ auf eine einzelne Datei und nicht auf einen Ordner verweisen, und diese Datei darf sich nicht an einem vom System verwendeten Speicherort befinden (z. b. `/private` oder `/Library`).
+> Ein Lesezeichen mit Dokumentbereich kann _nur_ auf eine einzelne Datei und nicht auf einen Ordner verweisen, und diese Datei darf sich nicht an einem vom System verwendeten Speicherort befinden (z `/private` `/Library` . b. oder).
 
 #### <a name="using-security-scoped-bookmarks"></a>Verwenden von Lesezeichen mit Sicherheitsbereich
 
 Wenn Sie beide Arten von Lesezeichen verwenden, müssen Sie die folgenden Schritte ausführen:
 
-1. **Legen Sie die entsprechenden Berechtigungen in der xamarin. Mac-app fest, die sicherheitsbezogene Lesezeichen verwenden** müssen. Legen Sie für Lesezeichen mit Anwendungsbereich den `com.apple.security.files.bookmarks.app-scope` Berechtigungsschlüssel auf `true`fest. Legen Sie für Lesezeichen im Dokumentbereich den `com.apple.security.files.bookmarks.document-scope` Berechtigungsschlüssel auf `true`fest.
-2. **Erstellen Sie ein Lesezeichen mit Sicherheits** Bereich. Dies geschieht für alle Dateien oder Ordner, auf die der Benutzer Zugriff gewährt hat (z. b. über `NSOpenPanel`), für die die APP permanenten Zugriff benötigt. Verwenden Sie die `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)`-Methode der `NSUrl`-Klasse, um das Lesezeichen zu erstellen.
-3. **Auflösen des sicherheitsbezogenen Lesezeichens** : Wenn die APP erneut auf die Ressource zugreifen muss (z. b. nach einem Neustart), muss das Lesezeichen in eine sicherheitsbezogene URL aufgelöst werden. Verwenden Sie die `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)`-Methode der `NSUrl`-Klasse, um das Lesezeichen aufzulösen.
-4. **Explizites Benachrichtigen des Systems, dass Sie auf die Datei aus der sicherheitsbezogenen URL zugreifen möchten** : dieser Schritt muss unmittelbar nach dem Abrufen der sicherheitsbezogenen URL oberhalb von oder erfolgen, wenn Sie später wieder Zugriff auf die Ressource erhalten möchten, nachdem Sie haben Sie Ihren Zugriff darauf aufgegeben. Aufrufen der `StartAccessingSecurityScopedResource ()`-Methode der `NSUrl`-Klasse, um mit dem Zugriff auf eine sicherheitsbezogene URL zu beginnen.
-5. **Benachrichtigen Sie das System explizit, dass Sie mit der sicherheitsbezogenen URL auf die Datei zugegriffen** haben: so bald wie möglich sollten Sie das System informieren, wenn die APP keinen Zugriff mehr auf die Datei benötigt (z. b. wenn der Benutzer Sie schließt). Aufrufen der `StopAccessingSecurityScopedResource ()`-Methode der `NSUrl`-Klasse, um den Zugriff auf eine sicherheitsbezogene URL zu verhindern.
+1. **Legen Sie die entsprechenden Berechtigungen in der xamarin. Mac-app fest, die sicherheitsbezogene Lesezeichen verwenden** müssen, und legen Sie den `com.apple.security.files.bookmarks.app-scope` Berechtigungsschlüssel auf fest, um Lesezeichen für die APP zu verwenden `true` . Legen Sie für Lesezeichen im Dokumentbereich den `com.apple.security.files.bookmarks.document-scope` Berechtigungsschlüssel auf fest `true` .
+2. **Erstellen Sie ein Lesezeichen mit Sicherheits** Bereich. Dies geschieht für jede Datei oder jeden Ordner, auf die der Benutzer Zugriff gewährt hat ( `NSOpenPanel` z. b. über), für die die APP permanenten Zugriff benötigt. Verwenden Sie die- `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)` Methode der- `NSUrl` Klasse, um das Lesezeichen zu erstellen.
+3. **Auflösen des sicherheitsbezogenen Lesezeichens** : Wenn die APP erneut auf die Ressource zugreifen muss (z. b. nach einem Neustart), muss das Lesezeichen in eine sicherheitsbezogene URL aufgelöst werden. Verwenden Sie die- `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)` Methode der- `NSUrl` Klasse, um das Lesezeichen aufzulösen.
+4. **Explizites Benachrichtigen des Systems, dass Sie auf die Datei aus der sicherheitsbezogenen URL zugreifen möchten** : dieser Schritt muss unmittelbar nach dem Abrufen der sicherheitsbezogenen URL oberhalb von oder erfolgen, wenn Sie später wieder Zugriff auf die Ressource erhalten möchten, nachdem Sie Ihren Zugriff auf die Ressource aufgegeben haben. Aufrufen der- `StartAccessingSecurityScopedResource ()` Methode der- `NSUrl` Klasse, um mit dem Zugriff auf eine sicherheitsbezogene URL zu beginnen.
+5. **Benachrichtigen Sie das System explizit, dass Sie mit der sicherheitsbezogenen URL auf die Datei zugegriffen** haben: so bald wie möglich sollten Sie das System informieren, wenn die APP keinen Zugriff mehr auf die Datei benötigt (z. b. wenn der Benutzer Sie schließt). Aufrufen der- `StopAccessingSecurityScopedResource ()` Methode der- `NSUrl` Klasse, um den Zugriff auf eine sicherheitsbezogene URL zu verhindern.
 
 Nachdem Sie den Zugriff auf eine Ressource aufgegeben haben, müssen Sie erneut zu Schritt 4 zurückkehren, um den Zugriff wiederherzustellen. Wenn die xamarin. Mac-app neu gestartet wird, müssen Sie zu Schritt 3 zurückkehren und das Lesezeichen erneut auflösen.
 
@@ -458,9 +458,9 @@ Weitere Informationen zum Erstellen und Herunterladen der für das Sandkasten er
 
 Gehen Sie folgendermaßen vor, damit die von Apple signierte Version der xamarin. Mac-app ausgeführt werden kann:
 
-1. Öffnen Sie die Terminal-app (in `/Applications/Utilities`).
+1. Öffnen Sie die Terminal-app (in `/Applications/Utilities` ).
 2. Öffnen Sie ein Finder-Fenster mit der von Apple signierten Version der xamarin. Mac-app.
-3. Geben Sie im Terminal Fenster `asctl container acl add -file` ein.
+3. Geben Sie `asctl container acl add -file` im Terminal Fenster ein.
 4. Ziehen Sie das Symbol der xamarin. Mac-app aus dem Fenster Finder, und legen Sie es im Terminal Fenster ab.
 5. Der vollständige Pfad zur Datei wird dem Befehl im Terminal hinzugefügt.
 6. Drücken **Sie die Eingabe** Taste, um den Befehl auszuführen.
@@ -471,11 +471,11 @@ Die ACL des Containers enthält jetzt die festgelegten Code Anforderungen für b
 
 Sie können eine Liste der Code Anforderungen in der ACL eines Containers anzeigen, indem Sie die folgenden Schritte ausführen:
 
-1. Öffnen Sie die Terminal-app (in `/Applications/Utilities`).
-2. Geben Sie `asctl container acl list -bundle <container-name>` ein.
+1. Öffnen Sie die Terminal-app (in `/Applications/Utilities` ).
+2. Geben Sie `asctl container acl list -bundle <container-name>`ein.
 3. Drücken **Sie die Eingabe** Taste, um den Befehl auszuführen.
 
-Der-`<container-name>` ist in der Regel der Bündel Bezeichner für die xamarin. Mac-Anwendung.
+`<container-name>`Ist in der Regel der Bündel Bezeichner für die xamarin. Mac-Anwendung.
 
 ## <a name="designing-a-xamarinmac-app-for-the-app-sandbox"></a>Entwerfen einer xamarin. Mac-app für die APP-Sandbox
 
@@ -501,7 +501,7 @@ Geben Sie im Terminal den folgenden Befehl ein, um eine Liste aller ausführbare
 find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executable"
 ```
 
-Dabei ist `[Your-App-Bundle]` der Name und der Pfad zum Paket der Anwendung.
+Dabei `[Your-App-Bundle]` ist der Name und der Pfad zum Paket der Anwendung.
 
 ### <a name="determine-whether-a-xamarinmac-app-is-suitable-for-sandboxing"></a>Bestimmen, ob eine xamarin. Mac-app für Sandkasten geeignet ist
 
@@ -512,12 +512,12 @@ Wenn Ihre APP eines der folgenden Verhaltensweisen erfordert, ist Sie nicht mit 
 - **Autorisierungs Dienste** : mit dem App-Sandkasten können Sie nicht mit den Funktionen arbeiten, die unter [Autorisierungs Dienste C-Referenz](https://developer.apple.com/library/prerelease/mac/documentation/Security/Reference/authorization_ref/index.html#//apple_ref/doc/uid/TP30000826)beschrieben sind.
 - **Barrierefreiheits-APIs** : Sie können keine unterstützenden apps, wie z. b. Sprachausgabe oder apps, die andere Anwendungen steuern.
 - **Apple-Ereignisse an beliebige apps senden** : Wenn die App Apple-Ereignisse an eine unbekannte, beliebige App senden muss, kann Sie nicht in einem Sandkasten angezeigt werden. Für eine bekannte Liste von apps, die als App bezeichnet werden, kann die APP weiterhin in einem Sandkasten enthalten sein, und die Berechtigungen müssen die aufgerufene App-Liste enthalten.
-- **Senden von Benutzer Informations Wörterbüchern in verteilten Benachrichtigungen an andere Aufgaben** : mit dem App-Sandkasten ist es nicht möglich, ein `userInfo` Wörterbuch zu senden, wenn ein `NSDistributedNotificationCenter`-Objekt für das Senden von anderen Aufgaben
+- **Senden von Benutzer Informations Wörterbüchern in verteilten Benachrichtigungen an andere Aufgaben** : mit dem App-Sandkasten können Sie kein Wörterbuch einschließen, wenn Sie ein `userInfo` `NSDistributedNotificationCenter` Objekt für das Messaging anderer Aufgaben bereitstellen.
 - **Laden von Kernel Erweiterungen** : das Laden von Kernel Erweiterungen ist durch den App-Sandkasten unzulässig.
 - **Simulieren von Benutzereingaben in Dialogfeldern zum Öffnen und speichern** : Programm gesteuertes Bearbeiten von Dialogfeldern zum Öffnen oder speichern zum simulieren oder Ändern von Benutzereingaben ist für die APP-Sandbox unzulässig.
 - Der **Zugriff auf oder das Festlegen von Einstellungen für andere apps** : das Bearbeiten der Einstellungen anderer apps ist durch den App-Sandkasten unzulässig.
 - **Konfigurieren von Netzwerkeinstellungen** : das Manipulieren von Netzwerkeinstellungen ist für die APP-Sandbox unzulässig.
-- **Beenden anderer apps** : die APP-Sandbox untersagt die Verwendung von `NSRunningApplication` zum Beenden anderer apps.
+- **Beenden anderer apps** : die APP-Sandbox untersagt die Verwendung `NSRunningApplication` von zum Beenden anderer apps.
 
 ### <a name="resolving-api-incompatibilities"></a>Auflösen von API-Inkompatibilitäten
 
@@ -525,10 +525,10 @@ Beim Entwerfen einer xamarin. Mac-app für die APP-Sandbox treten möglicherweis
 
 Im folgenden finden Sie einige häufige Probleme, die Sie beheben können, um Sie zu beheben:
 
-- **Öffnen, speichern und Nachverfolgen von Dokumenten** : Wenn Sie Dokumente mit einer anderen Technologie als `NSDocument`verwalten, sollten Sie aufgrund der integrierten Unterstützung für den App-Sandkasten zu dieser wechseln. `NSDocument` wird automatisch mit PowerBox verwendet und bietet Unterstützung für die Aufbewahrung von Dokumenten in ihrer Sandbox, wenn der Benutzer Sie im Finder verschiebt.
+- **Öffnen, speichern und Nachverfolgen von Dokumenten** : Wenn Sie Dokumente mit einer anderen Technologie als verwalten `NSDocument` , sollten Sie aufgrund der integrierten Unterstützung für den App-Sandkasten zu dieser wechseln. `NSDocument`funktioniert automatisch mit PowerBox und bietet Unterstützung für die Aufbewahrung von Dokumenten in ihrer Sandbox, wenn der Benutzer Sie im Finder verschiebt.
 - **Beibehalten des Zugriffs auf Datei System Ressourcen** : Wenn die xamarin. Mac-APP vom permanenten Zugriff auf Ressourcen außerhalb ihres Containers abhängt, verwenden Sie sicherheitsbezogene Lesezeichen, um den Zugriff zu erhalten.
-- **Erstellen eines Anmelde Elements für eine APP** : mit dem App-Sandkasten können Sie kein Anmelde Element mit `LSSharedFileList` erstellen, und Sie können den Status der Start Dienste nicht mithilfe von `LSRegisterURL`bearbeiten. Verwenden Sie die `SMLoginItemSetEnabled`-Funktion, wie in Äpfel [Hinzufügen von Anmelde Elementen mithilfe der Service Management Framework](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1) -Dokumentation beschrieben.
-- **Zugreifen auf Benutzerdaten** : Wenn Sie POSIX-Funktionen verwenden, z. b. `getpwuid`, um das Basisverzeichnis des Benutzers von den Verzeichnisdiensten abzurufen, empfiehlt es sich, Cocoa-oder Core Foundation-Symbole wie `NSHomeDirectory`zu verwenden.
+- **Erstellen eines Anmelde Elements für eine APP** : mit dem App-Sandkasten können Sie kein Anmelde Element mithilfe von erstellen, `LSSharedFileList` und Sie können den Status der Start Dienste auch nicht mithilfe von bearbeiten `LSRegisterURL` . Verwenden Sie die- `SMLoginItemSetEnabled` Funktion, wie in Äpfel [Hinzufügen von Anmelde Elementen mithilfe der Service Management Framework](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1) -Dokumentation beschrieben.
+- **Zugreifen auf Benutzerdaten** : Wenn Sie POSIX-Funktionen wie z `getpwuid` . b. verwenden, um das Basisverzeichnis des Benutzers von den Verzeichnisdiensten abzurufen, empfiehlt es sich, Cocoa-oder Core Foundation-Symbole wie zu verwenden `NSHomeDirectory` .
 - **Zugreifen auf die Einstellungen anderer apps** : da die APP-Sandbox Pfad Suche-APIs an den Container der APP weiterleitet, erfolgt das Ändern von Einstellungen innerhalb dieses Containers, und der Zugriff auf andere App-Einstellungen ist nicht zulässig.
 - **Verwenden von HTML5 Embedded-Videos in Webansichten** : Wenn die xamarin. Mac-app WebKit zur Wiedergabe von eingebetteten HTML5-Videos verwendet, müssen Sie die APP auch mit dem AV Foundation-Framework verknüpfen. Mit dem App-Sandkasten wird verhindert, dass CoreMedia diese Videos wieder gibt.
 
@@ -542,10 +542,10 @@ Gehen Sie folgendermaßen vor, um zu bestimmen, welche Berechtigungen für eine 
 
 1. Aktivieren Sie die APP-Sandbox, und führen Sie die xamarin. Mac-app aus.
 2. Führen Sie die Funktionen der APP aus.
-3. Öffnen Sie die Konsolen-app (in `/Applications/Utilities`verfügbar), und suchen Sie im Protokoll **alle Meldungen** nach `sandboxd` Verletzungen.
-4. Beheben Sie das Problem für jede `sandboxd` Verletzung entweder mithilfe des App-Containers anstelle anderer Dateisystem Speicherorte, oder wenden Sie App-Sandbox-Berechtigungen an, um den Zugriff auf eingeschränkte Betriebssystemfunktionen zu ermöglichen.
+3. Öffnen Sie die Konsolen-app (in verfügbar `/Applications/Utilities` ), und suchen Sie `sandboxd` im Protokoll **alle Meldungen** nach Verletzungen.
+4. `sandboxd`Beheben Sie das Problem für jeden Verstoß entweder mithilfe des App-Containers anstelle anderer Dateisystem Speicherorte, oder wenden Sie App-Sandbox-Berechtigungen an, um den Zugriff auf eingeschränkte Betriebssystemfunktionen zu ermöglichen.
 5. Führen Sie erneut aus, und testen Sie alle xamarin. Mac-App-Features erneut.
-6. Wiederholen Sie diesen Vorgang, bis alle `sandboxd` Verstöße aufgelöst wurden.
+6. Wiederholen Sie den Vorgang, bis alle `sandboxd` Verstöße aufgelöst wurden.
 
 ### <a name="add-privilege-separation-using-xpc"></a>Hinzufügen der Berechtigungs Trennung mithilfe von XPC
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 41272e25570d9346751d7130ee8b52c6056f7f35
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305798"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565225"
 ---
 # <a name="application-icons-in-xamarinios"></a>Anwendungs Symbole in xamarin. IOS
 
@@ -22,7 +22,7 @@ Die folgenden Themen werden im Detail behandelt:
 - [Verwalten von Symbolen mit Asset-Katalogen](#managing) : Verwalten von Anwendungssymbolen mithilfe von Asset-Katalogen
 - [iTunes-Grafik](#itunes) : Bereitstellen der erforderlichen iTunes-Grafik für die Ad-hoc-Methode der Bereitstellung Ihrer Anwendung.
 
-<a name="icon-types" />
+<a name="icon-types"></a>
 
 ## <a name="application-spotlight-and-settings-icons"></a>Symbole für Anwendung, Spotlight und Einstellungen
 
@@ -55,7 +55,7 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
     ||1x|2x|
     |---|---|---|
     |Anwendungssymbol|60 x 60<sup>1</sup>|120x120|
-    |Spotlight|40 x 40<sup>2</sup>|80x80|
+    |Spotlight|40 x 40<sup>2</sup>|80 x 80|
     |Einstellungen|-|-|
 
 - **iPhone: IOS 5 & 6**
@@ -80,15 +80,15 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
 
     ||1x|2x|
     |---|---|---|
-    |Anwendungssymbol|76x76|152x152|
-    |Spotlight|40x40|80x80|
+    |Anwendungssymbol|76x76|152 x 152|
+    |Spotlight|40 x 40|80 x 80|
     |Einstellungen|-|-|
 
 - **iPad: IOS 5 & 6**
 
     ||1x|2x|
     |---|---|---|
-    |Anwendungssymbol|72x72|144 x 144|
+    |Anwendungssymbol|72 x 72|144 x 144|
     |Spotlight|50x50|deren|
     |Einstellungen|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
 
@@ -101,11 +101,11 @@ Die folgenden Image assetgrößen und-Lösungen sind erforderlich, um alle für 
 
  Weitere Informationen zu Symbolen finden Sie in der Dokumentation zu [Symbol-und Bildgrößen](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) von Apple.
 
-<a name="managing" />
+<a name="managing"></a>
 
 ## <a name="managing-icons-with-asset-catalogs"></a>Verwalten von Symbolen mit Asset-Katalogen
 
-Bei Symbolen kann der `Assets.xcassets`-Datei im Projekt der APP ein spezieller `AppIcon` Bild Satz hinzugefügt werden. Alle Versionen des Bilds, die zur Unterstützung aller Auflösungen erforderlich sind, sind im _xcasset_ enthalten und zusammengefasst. Mit einem speziellen Editor in Visual Studio für Mac können Entwickler diese Bilder grafisch einschließen und einrichten.
+Bei Symbolen `AppIcon` kann der `Assets.xcassets` Datei im Projekt der APP ein spezieller Bildsatz hinzugefügt werden. Alle Versionen des Bilds, die zur Unterstützung aller Auflösungen erforderlich sind, sind im _xcasset_ enthalten und zusammengefasst. Mit einem speziellen Editor in Visual Studio für Mac können Entwickler diese Bilder grafisch einschließen und einrichten.
 
 Um einen Asset-Katalog zu verwenden, führen Sie die folgenden Schritte aus:
 
@@ -121,7 +121,7 @@ Um einen Asset-Katalog zu verwenden, führen Sie die folgenden Schritte aus:
 
     ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
 
-5. Wählen Sie aus der Liste der Assets `AppIcon` aus, um die `Icon Editor`anzuzeigen:
+5. Wählen Sie `AppIcon` aus der Liste der Assets aus, um Folgendes anzuzeigen `Icon Editor` :
 
     ![](app-icons-images/asset02.png "The AppIcon editor")
 
@@ -131,7 +131,7 @@ Um einen Asset-Katalog zu verwenden, führen Sie die folgenden Schritte aus:
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie auf die * *-Informationen.  \* * Datei in der **Projektmappen-Explorer**:
+1. Doppelklicken Sie auf die * *-Informationen.  * * Datei in der **Projektmappen-Explorer**:
 
     ![](app-icons-images/icon01w.png "Select Info.plist")
 
@@ -158,7 +158,7 @@ Um einen Asset-Katalog zu verwenden, führen Sie die folgenden Schritte aus:
 
 Dies ist die bevorzugte Methode zum einschließen und Verwalten von bildassets, die verwendet werden, um Symbole für Anwendungen, Spotlight und Einstellungen für eine APP bereitzustellen.
 
-<a name="itunes" />
+<a name="itunes"></a>
 
 ## <a name="itunes-artwork"></a>iTunes-Grafik
 

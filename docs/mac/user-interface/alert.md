@@ -1,24 +1,24 @@
 ---
 title: Warnungen in xamarin. Mac
-description: In diesem Artikel wird das Arbeiten mit Warnungen in einer xamarin. Mac-Anwendung behandelt. Es beschreibt das Erstellen und Anzeigen von C# Warnungen aus dem Code und das reagieren auf Benutzerinteraktionen.
+description: In diesem Artikel wird das Arbeiten mit Warnungen in einer xamarin. Mac-Anwendung behandelt. Es beschreibt das Erstellen und Anzeigen von Warnungen aus c#-Code und das reagieren auf Benutzerinteraktionen.
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
 ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2ef8e81390b5d64971aa3883a05da9fb8795a416
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 044792f37fbba13699a5ab31d815b4f2c5dafe17
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001528"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565485"
 ---
 # <a name="alerts-in-xamarinmac"></a>Warnungen in xamarin. Mac
 
-_In diesem Artikel wird das Arbeiten mit Warnungen in einer xamarin. Mac-Anwendung behandelt. Es beschreibt das Erstellen und Anzeigen von C# Warnungen aus dem Code und das reagieren auf Benutzerinteraktionen._
+_In diesem Artikel wird das Arbeiten mit Warnungen in einer xamarin. Mac-Anwendung behandelt. Es beschreibt das Erstellen und Anzeigen von Warnungen aus c#-Code und das reagieren auf Benutzerinteraktionen._
 
-Wenn Sie mit C# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zugriff auf dieselben Warnungen, die von einem Entwickler in *Ziel-C* und *Xcode* verwendet werden. 
+Wenn Sie mit c# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zugriff auf dieselben Warnungen, die ein Entwickler in *Ziel-C* und *Xcode* verwendet. 
 
 Eine Warnung ist eine besondere Art von Dialogfeld, das angezeigt wird, wenn ein schwerwiegendes Problem auftritt (z. b. ein Fehler) oder eine Warnung (z. b. das Löschen einer Datei). Da es sich bei einer Warnung um ein Dialogfeld handelt, ist auch eine Benutzer Antwort erforderlich, bevor Sie geschlossen werden kann.
 
@@ -26,7 +26,7 @@ Eine Warnung ist eine besondere Art von Dialogfeld, das angezeigt wird, wenn ein
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Warnungen in einer xamarin. Mac-Anwendung behandelt. 
 
-<a name="Introduction_to_Alerts" />
+<a name="Introduction_to_Alerts"></a>
 
 ## <a name="introduction-to-alerts"></a>Einführung in Warnungen
 
@@ -43,11 +43,11 @@ Apple empfiehlt die folgenden Richtlinien:
 
 Weitere Informationen finden Sie im Abschnitt " [Warnungen](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAlerts.html#//apple_ref/doc/uid/20000957-CH44-SW1) " in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) .
 
-<a name="Anatomy_of_an_Alert" />
+<a name="Anatomy_of_an_Alert"></a>
 
 ## <a name="anatomy-of-an-alert"></a>Anatomie einer Warnung
 
-Wie bereits erwähnt, sollten dem Benutzer der Anwendung Warnungen angezeigt werden, wenn ein schwerwiegendes Problem auftritt, oder als Warnung für potenziellen Datenverlust (z. b. das Schließen einer nicht gespeicherten Datei). In xamarin. Mac wird eine Warnung im C# Code erstellt, z. b.:
+Wie bereits erwähnt, sollten dem Benutzer der Anwendung Warnungen angezeigt werden, wenn ein schwerwiegendes Problem auftritt, oder als Warnung für potenziellen Datenverlust (z. b. das Schließen einer nicht gespeicherten Datei). In xamarin. Mac wird eine Warnung in c#-Code erstellt, z. b.:
 
 ```csharp
 var alert = new NSAlert () {
@@ -65,18 +65,18 @@ Der obige Code zeigt eine Warnung an, bei der das Anwendungssymbol auf dem Warnu
 Apple bietet verschiedene Eigenschaften, die verwendet werden können, um eine Warnung anzupassen:
 
 - **AlertStyle** definiert den Typ einer Warnung als eine der folgenden:
-  - **Warnung** : wird verwendet, um den Benutzer zu einem aktuellen oder bevorstehenden Ereignis zu warnen, das nicht kritisch ist. Dies ist der Standardstil.
+  - **Warnung** : wird verwendet, um den Benutzer zu einem aktuellen oder bevorstehenden Ereignis zu warnen, das nicht kritisch ist. Dies ist das Standardformat.
   - **Information** -wird verwendet, um den Benutzer vor einem aktuellen oder bevorstehenden Ereignis zu warnen. Zurzeit gibt es keinen sichtbaren Unterschied zwischen einer **Warnung** und einem **Informations** -
   - **Kritisch** : wird verwendet, um den Benutzer vor schwerwiegenden Konsequenzen eines bevorstehenden Ereignisses (z. b. Löschen einer Datei) zu warnen. Diese Art von Warnung sollte sparsam verwendet werden.
 - **MessageText** : Dies ist die Haupt Nachricht oder der Titel der Warnung und sollte schnell die Situation für den Benutzer definieren.
 - **InformativeText** : Hierbei handelt es sich um den Hauptteil der Warnung, bei der Sie die Situation eindeutig definieren und dem Benutzer die Möglichkeit zur Verfügung stellen müssen.
 - **Symbol** : Hiermit kann ein benutzerdefiniertes Symbol für den Benutzer angezeigt werden.
-- **Helpanchor** & **showshelp** : ermöglicht das Binden der Warnung in das Anwendungs helpbook und das Anzeigen der Hilfe für die Warnung.
+- **Helpanchor**  &  **Showshelp** : ermöglicht die Bindung der Warnung an das Anwendungs helpbook und das Anzeigen der Hilfe für die Warnung.
 - **Schaltflächen: Standard** mäßig hat eine Warnung nur die Schaltfläche **OK** , aber mit der Auflistung **Buttons** können Sie je nach Bedarf weitere Optionen hinzufügen.
-- **Showssuppressionbutton** -wenn `true` ein Kontrollkästchen anzeigt, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde.
-- **Accessoryview** : ermöglicht das Anfügen einer anderen unter Ansicht an die Warnung, um zusätzliche Informationen bereitzustellen, z. b. das Hinzufügen eines **Textfelds** für die Dateneingabe. Wenn Sie eine neue **accessoryview** festlegen oder eine vorhandene ändern, müssen Sie die `Layout()`-Methode aufzurufen, um das sichtbare Layout der Warnung anzupassen.
+- **Showssuppressionbutton** -if `true` zeigt ein Kontrollkästchen an, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde.
+- **Accessoryview** : ermöglicht das Anfügen einer anderen unter Ansicht an die Warnung, um zusätzliche Informationen bereitzustellen, z. b. das Hinzufügen eines **Textfelds** für die Dateneingabe. Wenn Sie eine neue **accessoryview** festlegen oder eine vorhandene ändern, müssen Sie die- `Layout()` Methode zum Anpassen des sichtbaren Layouts der Warnung aufruft.
 
-<a name="Displaying_an_Alert" />
+<a name="Displaying_an_Alert"></a>
 
 ## <a name="displaying-an-alert"></a>Anzeigen einer Warnung
 
@@ -110,7 +110,7 @@ Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
 [![](alert-images/alert03.png "An alert displayed as a sheet")](alert-images/alert03.png#lightbox)
 
-<a name="Working_with_Alert_Buttons" />
+<a name="Working_with_Alert_Buttons"></a>
 
 ## <a name="working-with-alert-buttons"></a>Arbeiten mit Warn Schaltflächen
 
@@ -161,11 +161,11 @@ Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 > [!IMPORTANT]
 > Sie sollten einer Warnung niemals mehr als drei Schaltflächen hinzufügen.
 
-<a name="Showing_the_Suppress_Button" />
+<a name="Showing_the_Suppress_Button"></a>
 
 ## <a name="showing-the-suppress-button"></a>Schaltfläche "unterdrücken"
 
-Wenn die `ShowSuppressButton`-Eigenschaft der Warnung `true`ist, wird in der Warnung ein Kontrollkästchen angezeigt, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde. Im folgenden Code wird eine unverankerte Warnung mit der Schaltfläche unterdrücken angezeigt:
+Wenn die-Eigenschaft der Warnung `ShowSuppressButton` ist `true` , wird in der Warnung ein Kontrollkästchen angezeigt, mit dem der Benutzer die Warnung für nachfolgende Vorkommen des Ereignisses unterdrücken kann, von dem das Ereignis ausgelöst wurde. Im folgenden Code wird eine unverankerte Warnung mit der Schaltfläche unterdrücken angezeigt:
 
 ```csharp
 var alert = new NSAlert () {
@@ -181,7 +181,7 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-Wenn der Wert des `alert.SuppressionButton.State` `NSCellStateValue.On`ist, hat der Benutzer das Kontrollkästchen unterdrücken aktiviert, andernfalls ist dies nicht der Fall.
+Wenn der Wert von `alert.SuppressionButton.State` ist `NSCellStateValue.On` , hat der Benutzer das Kontrollkästchen unterdrücken aktiviert, andernfalls ist dies nicht der Fall.
 
 Wenn der Code ausgeführt wird, wird Folgendes angezeigt:
 
@@ -208,11 +208,11 @@ Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
 [![](alert-images/alert07.png "An alert with a suppress button display as a sheet")](alert-images/alert07.png#lightbox)
 
-<a name="Adding_a_Custom_SubView" />
+<a name="Adding_a_Custom_SubView"></a>
 
 ## <a name="adding-a-custom-subview"></a>Hinzufügen einer benutzerdefinierten unter Ansicht
 
-Warnungen verfügen über eine `AccessoryView`-Eigenschaft, die zum weiteren Anpassen der Warnung und zum Hinzufügen von Elementen wie einem **Textfeld** für die Benutzereingabe verwendet werden kann. Mit dem folgenden Code wird eine unverankerte Warnung mit einem hinzugefügten Texteingabefeld erstellt:
+Warnungen verfügen über eine- `AccessoryView` Eigenschaft, die zum weiteren Anpassen der Warnung und zum Hinzufügen von Elementen wie einem **Textfeld** für Benutzereingaben verwendet werden kann. Mit dem folgenden Code wird eine unverankerte Warnung mit einem hinzugefügten Texteingabefeld erstellt:
 
 ```csharp
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
@@ -232,7 +232,7 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-Die Schlüssel Zeilen hier sind `var input = new NSTextField (new CGRect (0, 0, 300, 20));`, wodurch ein neues **Textfeld** erstellt wird, das wir der Warnung hinzufügen werden. `alert.AccessoryView = input;`, das das **Textfeld** an die Warnung anfügt, und der aufzurufende `Layout()` Methode, die erforderlich ist, um die Größe der Warnung an die neue unter Ansicht anzupassen.
+In den folgenden Schlüssel Zeilen `var input = new NSTextField (new CGRect (0, 0, 300, 20));` wird ein neues **Textfeld** erstellt, in dem die Warnung hinzugefügt wird. `alert.AccessoryView = input;`Dabei wird das **Textfeld** an die Warnung angefügt und der-Befehl an die- `Layout()` Methode übergeben, die für die Größe der Warnung an die neue unter Ansicht angepasst werden muss.
 
 Wenn Sie den Code ausführen, wird Folgendes angezeigt:
 
@@ -263,16 +263,16 @@ Wenn Sie diesen Code ausführen, wird Folgendes angezeigt:
 
 [![](alert-images/alert09.png "An alert with a custom view")](alert-images/alert09.png#lightbox)
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Artikel wurde die Arbeit mit Warnungen in einer xamarin. Mac-Anwendung ausführlich erläutert. Wir haben die verschiedenen Typen und Verwendungsmöglichkeiten von Warnungen, das Erstellen und Anpassen von Warnungen und das Arbeiten mit Warnungen im C# Code gesehen.
+In diesem Artikel wurde die Arbeit mit Warnungen in einer xamarin. Mac-Anwendung ausführlich erläutert. Wir haben die verschiedenen Typen und Verwendungsmöglichkeiten von Warnungen gesehen, das Erstellen und Anpassen von Warnungen und das Arbeiten mit Warnungen in c#-Code.
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Macwindows (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macwindows)
-- [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
+- [Hello, Mac (Hallo Mac)](~/mac/get-started/hello-mac.md)
 - [Arbeiten mit Windows](~/mac/user-interface/window.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

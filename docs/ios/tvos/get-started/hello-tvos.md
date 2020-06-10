@@ -1,5 +1,5 @@
 ---
-title: Hello, tvos Schnellstarthandbuch
+title: Hello, tvOS – Kurzanleitung
 description: Dieser Leitfaden führt Sie durch die Erstellung Ihrer ersten xamarin. tvos-APP und ihrer Entwicklungs Toolkette. Außerdem wird der xamarin-Designer eingeführt, der UI-Steuerelemente für Code verfügbar macht, und es wird veranschaulicht, wie Sie eine xamarin. tvos-Anwendung erstellen, ausführen und testen.
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 35f0bc0668c6f80ee00b1253b16a8ac71770a9be
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7b254d3a7cfc04893b3b240d8d372f8df60c655c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030817"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571758"
 ---
-# <a name="hello-tvos-quick-start-guide"></a>Hello, tvos Schnellstarthandbuch
+# <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS – Kurzanleitung
 
 _Dieser Leitfaden führt Sie durch die Erstellung Ihrer ersten xamarin. tvos-APP und ihrer Entwicklungs Toolkette. Außerdem wird der xamarin-Designer eingeführt, der UI-Steuerelemente für Code verfügbar macht, und es wird veranschaulicht, wie Sie eine xamarin. tvos-Anwendung erstellen, ausführen und testen._
 
@@ -28,9 +28,9 @@ Dieses Handbuch bietet eine Einführung in die Arbeit mit tvos in einer xamarin-
 
 ## <a name="overview"></a>Übersicht
 
-Mit xamarin. tvos können Sie vollständig native Apple TV-apps C# in und .NET entwickeln, indem Sie die gleichen OS X-Bibliotheken und Schnittstellen Steuerelemente verwenden, die bei der Entwicklung von *SWIFT* (oder *Ziel-C*) und *Xcode*verwendet werden.
+Mit xamarin. tvos können Sie vollständig native Apple TV-apps in c# und .NET entwickeln, indem Sie die gleichen OS X-Bibliotheken und Schnittstellen-Steuerelemente verwenden, die bei der Entwicklung von *SWIFT* (oder *Ziel-C*) und *Xcode*verwendet werden.
 
-Da xamarin. tvos-apps in C# und .NET geschrieben werden, kann ein gängiger Back-End-Code mit xamarin. IOS-, xamarin. Android-und xamarin. Mac-apps gemeinsam genutzt werden. die gesamte Plattform bietet eine native Darstellung der einzelnen Plattformen.
+Da xamarin. tvos-apps in c# und .NET geschrieben sind, kann ein gängiger Back-End-Code mit xamarin. IOS-, xamarin. Android-und xamarin. Mac-apps gemeinsam genutzt werden. die gesamte Plattform bietet eine native Darstellung der einzelnen Plattformen.
 
 In diesem Artikel werden die wichtigsten Konzepte vorgestellt, die zum Erstellen einer Apple TV-App mithilfe von xamarin. tvos und Visual Studio erforderlich sind. dabei werden Sie durch den Prozess der Erstellung einer grundlegenden **Hello-, tvos** -APP, die zählt, wie oft auf eine Schaltfläche geklickt wurde:
 
@@ -45,7 +45,7 @@ Wir befassen uns mit den folgenden Konzepten:
 
 ## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>Starten einer neuen xamarin. tvos-app in Visual Studio für Mac
 
-Wie bereits erwähnt, erstellen wir eine Apple TV-App namens "`Hello-tvOS`", mit der dem Hauptbildschirm eine einzelne Schaltfläche und Bezeichnung hinzugefügt wird. Wenn Sie auf die Schaltfläche klicken, zeigt die Beschriftung an, wie oft sie bereits geklickt wurde.
+Wie bereits erwähnt, erstellen wir eine Apple TV-APP `Hello-tvOS` mit dem Namen, die dem Hauptbildschirm eine einzelne Schaltfläche und eine Bezeichnung hinzufügt. Wenn Sie auf die Schaltfläche klicken, zeigt die Beschriftung an, wie oft sie bereits geklickt wurde.
 
 Gehen Sie dazu wie folgt vor:
 
@@ -53,13 +53,13 @@ Gehen Sie dazu wie folgt vor:
 
     [![](hello-tvos-images/setup01.png "Visual Studio for Mac")](hello-tvos-images/setup01.png#lightbox)
 2. Klicken Sie in der oberen linken Ecke des Bildschirms auf den Link neue Projekt Mappe **...** , um das Dialogfeld **Neues Projekt** zu öffnen.
-3. Wählen Sie **tvos** > **App** > **Einzelansicht-App** aus, und klicken Sie auf die Schaltfläche **weiter** :
+3. Wählen Sie **tvos**  >  **App**  >  **Single View App** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
     [![](hello-tvos-images/setup02.png "Select Single View App")](hello-tvos-images/setup02.png#lightbox)
-4. Geben Sie `Hello, tvOS` als **APP-Namen**ein, geben Sie Ihren **Organisations Bezeichner** ein, und klicken Sie **auf die Schalt** Fläche
+4. Geben Sie `Hello, tvOS` als **APP-Namen**ein, geben Sie Ihren **Organisations Bezeichner** ein, und klicken Sie auf die Schaltfläche **Next**
 
     [![](hello-tvos-images/setup04.png "Enter Hello, tvOS")](hello-tvos-images/setup04.png#lightbox)
-5. Geben Sie `Hello_tvOS` für den **Projektnamen** ein, und klicken Sie auf die Schaltfläche **Erstellen** :
+5. Geben Sie `Hello_tvOS` als **Projektnamen** ein, und klicken Sie auf die Schaltfläche **Erstellen** :
 
     [![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png#lightbox)
 
@@ -67,7 +67,7 @@ Visual Studio für Mac erstellt die neue xamarin. tvos-APP und zeigt die Standar
 
  [![](hello-tvos-images/project01.png "The default files view")](hello-tvos-images/project01.png#lightbox)
 
-Visual Studio für Mac verwendet Projektmappen und **Projekte**auf genau dieselbe Weise wie Visual Studio. Eine Projekt Mappe ist ein Container, der ein oder mehrere Projekte enthalten kann. Projekte können Anwendungen, unterstützende Bibliotheken, Testanwendungen usw. enthalten. In diesem Fall hat Visual Studio für Mac sowohl eine Projekt Mappe als auch ein Anwendungsprojekt für Sie erstellt.
+Visual Studio für Mac verwendet **Solutions** Projektmappen und **Projekte**auf genau dieselbe Weise wie Visual Studio. Eine Projekt Mappe ist ein Container, der ein oder mehrere Projekte enthalten kann. Projekte können Anwendungen, unterstützende Bibliotheken, Testanwendungen usw. enthalten. In diesem Fall hat Visual Studio für Mac sowohl eine Projekt Mappe als auch ein Anwendungsprojekt für Sie erstellt.
 
 Wenn Sie möchten, können Sie ein oder mehrere Code Bibliotheks Projekte erstellen, die gemeinsamen, freigegebenen Code enthalten. Diese Bibliotheks Projekte können vom Anwendungsprojekt verwendet oder für andere xamarin. tvos-App-Projekte (oder xamarin. IOS, xamarin. Android und xamarin. Mac basierend auf dem Codetyp) freigegeben werden, genauso wie beim Aufbau einer .net-Standardanwendung.
 
@@ -78,17 +78,17 @@ Wenn Sie mit der IOS-Programmierung vertraut sind, werden Sie hier viele Ähnlic
 Werfen wir einen Blick auf die Dateien im Projekt:
 
 - `Main.cs`: Diese Datei enthält den Haupteinstiegspunkt für die Anwendung. Wenn die App gestartet wird, enthält diese Datei die erste Klasse und Methode, die ausgeführt werden.
-- `AppDelegate.cs` – diese Datei enthält die Haupt Anwendungsklasse, die für das Lauschen auf Ereignisse vom Betriebssystem verantwortlich ist.
-- `Info.plist` – diese Datei enthält Anwendungseigenschaften, z. b. den Anwendungsnamen, Symbole usw.
-- `ViewController.cs` – Dies ist die Klasse, die das Hauptfenster darstellt und den Lebenszyklus der IT steuert.
-- `ViewController.designer.cs` – diese Datei enthält grundlegende Codes, die Ihnen bei der Integration in die Benutzeroberfläche des Hauptbildschirms helfen.
-- `Main.storyboard` – die Benutzeroberfläche für das Hauptfenster. Diese Datei kann vom Xamarin Designer für IOS erstellt und verwaltet werden.
+- `AppDelegate.cs`– Diese Datei enthält die Haupt Anwendungsklasse, die für das Lauschen auf Ereignisse vom Betriebssystem verantwortlich ist.
+- `Info.plist`– Diese Datei enthält Anwendungseigenschaften, z. b. den Anwendungsnamen, Symbole usw.
+- `ViewController.cs`– Dies ist die Klasse, die das Hauptfenster darstellt und den Lebenszyklus der IT steuert.
+- `ViewController.designer.cs`– Diese Datei enthält grundlegende Codes, die Ihnen bei der Integration in die Benutzeroberfläche des Hauptbildschirms helfen.
+- `Main.storyboard`– Die Benutzeroberfläche für das Hauptfenster. Diese Datei kann vom Xamarin Designer für IOS erstellt und verwaltet werden.
 
 In den folgenden Abschnitten werden einige dieser Dateien kurz erläutert. Wir werden Sie später ausführlicher untersuchen, aber es ist ratsam, sich jetzt mit ihren Grundlagen vertraut zu machen.
 
 ### <a name="maincs"></a>Main.cs
 
-Die `Main.cs` Datei enthält eine statische `Main` Methode, mit der eine neue xamarin. tvos-app-Instanz erstellt wird und der Name der Klasse, die Betriebssystem Ereignisse behandelt, in unserem Fall die `AppDelegate`-Klasse, übergibt:
+Die `Main.cs` Datei enthält eine statische `Main` Methode, die eine neue xamarin. tvos-app-Instanz erstellt und den Namen der Klasse übergibt, die Betriebssystem Ereignisse behandelt, in unserem Fall die- `AppDelegate` Klasse:
 
 ```csharp
 using UIKit;
@@ -110,7 +110,7 @@ namespace Hello_tvOS
 
 ### <a name="appdelegatecs"></a>AppDelegate.cs
 
-Die `AppDelegate.cs` Datei enthält unsere `AppDelegate` Klasse, die für das Erstellen des Fensters und das Lauschen auf Betriebssystem Ereignisse verantwortlich ist:
+Die `AppDelegate.cs` Datei enthält die `AppDelegate` -Klasse, die für das Erstellen des Fensters und das Lauschen auf Betriebssystem Ereignisse verantwortlich ist:
 
 ```csharp
 using Foundation;
@@ -184,15 +184,15 @@ public override UIWindow Window {
 
 ```
 
-Die `Window`-Eigenschaft ermöglicht den Zugriff auf das Hauptfenster. tvos verwendet das MVC-Muster ( *Model View Controller* ). Im Allgemeinen gibt es für jedes Fenster, das Sie erstellen (und für viele andere Dinge in Windows), einen Controller, der für den Lebenszyklus des Fensters zuständig ist, z. b. die Anzeige, das Hinzufügen neuer Ansichten (Steuerelemente) usw.
+Die- `Window` Eigenschaft ermöglicht den Zugriff auf das Hauptfenster. tvos verwendet das MVC-Muster ( *Model View Controller* ). Im Allgemeinen gibt es für jedes Fenster, das Sie erstellen (und für viele andere Dinge in Windows), einen Controller, der für den Lebenszyklus des Fensters zuständig ist, z. b. die Anzeige, das Hinzufügen neuer Ansichten (Steuerelemente) usw.
 
-Als nächstes haben wir die `FinishedLaunching`-Methode. Diese Methode wird ausgeführt, nachdem die Anwendung instanziiert wurde, und Sie ist dafür verantwortlich, das Anwendungsfenster tatsächlich zu erstellen und den Prozess der Anzeige der Ansicht darin zu beginnen. Da in der APP ein Storyboard zum Definieren der Benutzeroberfläche verwendet wird, ist hier kein zusätzlicher Code erforderlich.
+Als nächstes haben wir die- `FinishedLaunching` Methode. Diese Methode wird ausgeführt, nachdem die Anwendung instanziiert wurde, und Sie ist dafür verantwortlich, das Anwendungsfenster tatsächlich zu erstellen und den Prozess der Anzeige der Ansicht darin zu beginnen. Da in der APP ein Storyboard zum Definieren der Benutzeroberfläche verwendet wird, ist hier kein zusätzlicher Code erforderlich.
 
-Es gibt viele weitere Methoden, die in der Vorlage bereitgestellt werden, z. b. `DidEnterBackground` und `WillEnterForeground`. Diese können sicher entfernt werden, wenn die Anwendungs Ereignisse nicht in Ihrer APP verwendet werden.
+Es gibt viele andere Methoden, die in der Vorlage bereitgestellt werden, z `DidEnterBackground` `WillEnterForeground` . b. und. Diese können sicher entfernt werden, wenn die Anwendungs Ereignisse nicht in Ihrer APP verwendet werden.
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-Die `ViewController`-Klasse ist der Controller des Hauptfensters. Dies bedeutet, dass Sie für den Lebenszyklus des Hauptfensters verantwortlich ist. Wir untersuchen dies später ausführlich, und jetzt sehen wir uns das kurz an:
+Die `ViewController` -Klasse ist der Controller des Hauptfensters. Dies bedeutet, dass Sie für den Lebenszyklus des Hauptfensters verantwortlich ist. Wir untersuchen dies später ausführlich, und jetzt sehen wir uns das kurz an:
 
 ```csharp
 using System;
@@ -245,13 +245,13 @@ Wir kümmern uns in der Regel nicht um Designer Dateien, da Sie gerade automatis
 
 Nachdem wir nun unsere xamarin. tvos-App erstellt haben und grundlegende Kenntnisse zu den Komponenten haben, sehen wir uns das Erstellen der Benutzeroberfläche an.
 
-<a name="Creating-the-User-Interface" />
+<a name="Creating-the-User-Interface"></a>
 
 ## <a name="creating-the-user-interface"></a>Erstellen der Benutzeroberfläche
 
-Sie müssen Xamarin Designer für IOS nicht verwenden, um die Benutzeroberfläche für die xamarin. tvos-APP zu erstellen. die Benutzeroberfläche kann direkt C# aus dem Code erstellt werden, dies würde jedoch über den Rahmen dieses Artikels hinausgehen. Der Einfachheit halber verwenden wir den IOS-Designer, um die Benutzeroberfläche im gesamten Rest dieses Tutorials zu erstellen.
+Sie müssen Xamarin Designer für IOS nicht verwenden, um die Benutzeroberfläche für die xamarin. tvos-APP zu erstellen. die Benutzeroberfläche kann direkt aus c#-Code erstellt werden, dies würde jedoch über den Rahmen dieses Artikels hinausgehen. Der Einfachheit halber verwenden wir den IOS-Designer, um die Benutzeroberfläche im gesamten Rest dieses Tutorials zu erstellen.
 
-Um mit dem Erstellen der Benutzeroberfläche zu beginnen, doppelklicken Sie auf die `Main.storyboard` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung im IOS-Designer zu öffnen:
+Um mit dem Erstellen der Benutzeroberfläche zu beginnen, doppelklicken Sie auf die `Main.storyboard` Datei im **Projektmappen-Explorer** , um Sie im IOS-Designer zur Bearbeitung zu öffnen:
 
 [![](hello-tvos-images/designer01.png "The Main.storyboard file in the Solution Explorer")](hello-tvos-images/designer01.png#lightbox)
 
@@ -263,7 +263,7 @@ Weitere Informationen über den IOS-Designer und seine Funktionsweise finden Sie
 
 Nun können Sie der Entwurfs Oberfläche der xamarin. tvos-App Steuerelemente hinzufügen.
 
-Führen Sie folgende Schritte aus:
+Gehen Sie folgendermaßen vor:
 
 1. Suchen Sie den **Werkzeugkasten**, der sich rechts von der Entwurfs Oberfläche befinden sollte:
 
@@ -273,7 +273,7 @@ Führen Sie folgende Schritte aus:
 2. Ziehen Sie eine **Bezeichnung** aus der **Toolbox** auf die Entwurfs Oberfläche:
 
     [![](hello-tvos-images/designer04.png "Drag a Label from the Toolbox")](hello-tvos-images/designer04.png#lightbox)
-3. Klicken Sie im **eigenschaftenpad** auf die **Title** -Eigenschaft, und ändern Sie den Titel der Schaltfläche in `Hello, tvOS` und legen Sie den **Schrift** Grad auf 128 fest:
+3. Klicken Sie im **eigenschaftenpad** auf die **Title** -Eigenschaft, und ändern Sie den Titel der Schaltfläche in, `Hello, tvOS` und legen Sie den **Schrift** Grad auf 128 fest:
 
     [![](hello-tvos-images/designer05.png "Set the title to Hello, tvOS and set the Font Size to 128")](hello-tvos-images/designer05.png#lightbox)
 4. Ändern Sie die Größe der Bezeichnung so, dass alle Wörter sichtbar sind, und platzieren Sie Sie zentriert am oberen Rand des Fensters:
@@ -299,7 +299,7 @@ Führen Sie folgende Schritte aus:
 
     [![](hello-tvos-images/designer11.png "Example Constraints")](hello-tvos-images/designer11.png#lightbox)
 10. Ziehen Sie eine **Schaltfläche** aus der **Toolbox** , und platzieren Sie Sie unter der Bezeichnung.
-11. Klicken Sie im **eigenschaftenpad** auf die **Title** -Eigenschaft, und ändern Sie den Titel der Schaltfläche in `Click Me`:
+11. Klicken Sie im **eigenschaftenpad** auf die **Title** -Eigenschaft, und ändern Sie den Titel der Schaltfläche in `Click Me` :
 
     [![](hello-tvos-images/designer12.png "Change the buttons title to Click Me")](hello-tvos-images/designer12.png#lightbox)
 12. Wiederholen Sie die Schritte 5 bis 8 oben, um die Schaltfläche im tvos-Fenster einzuschränken. Anstatt das T-handle jedoch an den oberen Rand des Fensters zu ziehen (wie in Schritt #7), ziehen Sie es an den unteren Rand der Bezeichnung:
@@ -321,7 +321,7 @@ Wenn Sie sich im Abschnitt **Dokument** Gliederung ansehen, sehen Sie, wie das L
 
 Von hier aus können Sie Elemente auswählen, die Sie bearbeiten oder ziehen, um Benutzeroberflächen Elemente bei Bedarf neu anzuordnen. Wenn z. b. ein Benutzeroberflächen Element von einem anderen Element abgedeckt wird, können Sie es an das Ende der Liste ziehen, um es zum obersten Element im Fenster zu machen.
 
-Nachdem wir nun die Benutzeroberfläche erstellt haben, müssen wir die Elemente der Benutzeroberfläche verfügbar machen, damit xamarin. tvos im Code auf C# Sie zugreifen und damit interagieren kann.
+Nachdem wir nun die Benutzeroberfläche erstellt haben, müssen wir die Elemente der Benutzeroberfläche verfügbar machen, damit xamarin. tvos in c#-Code auf Sie zugreifen und damit interagieren kann.
 
 ### <a name="accessing-the-controls-in-the-code-behind"></a>Zugreifen auf die Steuerelemente im Code Behind
 
@@ -330,7 +330,7 @@ Es gibt zwei Hauptmethoden für den Zugriff auf die Steuerelemente, die Sie im I
 - Erstellen eines Ereignis Handlers für ein Steuerelement.
 - Erteilen eines Namens für das Steuerelement, damit wir später darauf verweisen können.
 
-Wenn einer dieser beiden hinzugefügt wird, wird die partielle Klasse innerhalb des `ViewController.designer.cs` aktualisiert, um die Änderungen widerzuspiegeln. Auf diese Weise können Sie auf die Steuerelemente im Ansichts Controller zugreifen.
+Wenn eines der beiden hinzugefügt wird, wird die partielle Klasse in der `ViewController.designer.cs` aktualisiert, um die Änderungen widerzuspiegeln. Auf diese Weise können Sie auf die Steuerelemente im Ansichts Controller zugreifen.
 
 ### <a name="creating-an-event-handler"></a>Erstellen eines Ereignis Handlers
 
@@ -340,7 +340,7 @@ Wenn in dieser Beispielanwendung auf die Schaltfläche geklickt wird, _möchten 
 2. Wählen Sie im eigenschaftenpad die Registerkarte **Ereignisse** aus:
 
     [![](hello-tvos-images/event1.png "The Events tab")](hello-tvos-images/event1.png#lightbox)
-3. Suchen Sie das touchupinside-Ereignis, und legen Sie ihm einen Ereignishandler mit dem Namen `Clicked`:
+3. Suchen Sie das touchupinside-Ereignis, und legen Sie ihm einen Ereignishandler mit dem Namen `Clicked` :
 
     [![](hello-tvos-images/event2.png "The TouchUpInside event")](hello-tvos-images/event2.png#lightbox)
 4. Wenn Sie die **Eingabe**Taste drücken, wird die Datei " **ViewController**. cs" geöffnet, die Speicherorte für den Ereignishandler im Code vorschlägt. Verwenden Sie die Pfeiltasten auf der Tastatur, um den Speicherort festzulegen:
@@ -354,13 +354,13 @@ Nun können wir Code hinzufügen, damit die Schaltfläche funktioniert.
 
 ### <a name="naming-a-control"></a>Benennen eines Steuer Elements
 
-Wenn auf die Schaltfläche geklickt wird, sollte die Bezeichnung basierend auf der Anzahl der Klicks aktualisiert werden. Zu diesem Zweck müssen wir im Code auf die Bezeichnung zugreifen. Dies erfolgt durch Angabe eines Namens. Führen Sie folgende Schritte aus:
+Wenn auf die Schaltfläche geklickt wird, sollte die Bezeichnung basierend auf der Anzahl der Klicks aktualisiert werden. Zu diesem Zweck müssen wir im Code auf die Bezeichnung zugreifen. Dies erfolgt durch Angabe eines Namens. Gehen Sie folgendermaßen vor:
 
 1. Öffnen Sie das Storyboard, und wählen Sie die Bezeichnung unten im Ansichts Controller aus.
 2. Wählen Sie im eigenschaftenpad die Registerkarte **Widget** aus:
 
     [![](hello-tvos-images/name1.png "Select the Widget tab")](hello-tvos-images/name1.png#lightbox)
-3. Fügen Sie unter **Identity > Name den Namen**`ClickedLabel`hinzu:
+3. Fügen Sie unter **Identity > Name**Folgendes hinzu `ClickedLabel` :
 
     [![](hello-tvos-images/name2.png "Set ClickedLabel")](hello-tvos-images/name2.png#lightbox)
 
@@ -368,27 +368,27 @@ Wir können nun mit dem Aktualisieren der Bezeichnung beginnen!
 
 ### <a name="how-controls-are-accessed"></a>Zugreifen auf Steuerelemente
 
-Wenn Sie die `ViewController.designer.cs` in der **Projektmappen-Explorer** auswählen, können Sie sehen, wie die `ClickedLabel` Bezeichnung und der `Clicked` Ereignishandler einem **Outlet** und einer **Aktion** in C#zugeordnet wurden:
+Wenn Sie `ViewController.designer.cs` in der **Projektmappen-Explorer** , können Sie sehen, wie die `ClickedLabel` Bezeichnung und der `Clicked` Ereignishandler einem **Outlet** und einer **Aktion** in c# zugeordnet wurden:
 
 [![](hello-tvos-images/accesscontrol.png "Outlets and Actions")](hello-tvos-images/accesscontrol.png#lightbox)
 
-Sie können auch bemerken, dass `ViewController.designer.cs` eine partielle Klasse ist, sodass Visual Studio für Mac nicht ändern muss `ViewController.cs` was alle Änderungen überschreibt, die wir an der Klasse vorgenommen haben.
+Sie können auch bemerken `ViewController.designer.cs` , dass eine partielle Klasse ist, sodass Visual Studio für Mac nicht ändern muss, `ViewController.cs` wodurch alle Änderungen überschrieben werden, die an der-Klasse vorgenommen wurden.
 
 Wenn Sie die Elemente der Benutzeroberfläche auf diese Weise verfügbar machen, können Sie im Ansichts Controller darauf zugreifen.
 
-Normalerweise müssen Sie den `ViewController.designer.cs` nicht selbst öffnen, sondern nur zu Schulungszwecken.
+Normalerweise müssen Sie das nicht selbst öffnen `ViewController.designer.cs` , sondern nur zu Schulungszwecken.
 
-<a name="Writing-the-Code" />
+<a name="Writing-the-Code"></a>
 
 ## <a name="writing-the-code"></a>Schreiben des Codes
 
 Nachdem die Benutzeroberfläche erstellt und die zugehörigen Benutzeroberflächen Elemente für den Code über **Outlets** und **Aktionen**verfügbar gemacht wurden, sind wir bereit, den Code zu schreiben, um die Programmfunktionalität zu erhalten.
 
-In unserer Anwendung werden wir jedes Mal, wenn auf die erste Schaltfläche geklickt wird, unsere Bezeichnung aktualisieren, um anzuzeigen, wie oft auf die Schaltfläche geklickt wurde. Um dies zu erreichen, müssen Sie die `ViewController.cs` Datei zur Bearbeitung öffnen, indem Sie im **Lösungspad**auf die Datei doppelklicken:
+In unserer Anwendung werden wir jedes Mal, wenn auf die erste Schaltfläche geklickt wird, unsere Bezeichnung aktualisieren, um anzuzeigen, wie oft auf die Schaltfläche geklickt wurde. Um dies zu erreichen, müssen wir die `ViewController.cs` Datei zur Bearbeitung öffnen, indem Sie in der **Lösungspad**auf die Datei doppelklicken:
 
 [![](hello-tvos-images/code01.png "The Solution Pad")](hello-tvos-images/code01.png#lightbox)
 
-Zuerst müssen wir eine Variable auf Klassenebene in unserer `ViewController`-Klasse erstellen, um die Anzahl der aufgetretenen Klicks zu verfolgen. Bearbeiten Sie die Klassendefinition, sodass sie danach folgendermaßen aussieht:
+Zuerst muss in unserer Klasse eine Variable auf Klassenebene erstellt werden, `ViewController` um die Anzahl der aufgetretenen Klicks zu verfolgen. Bearbeiten Sie die Klassendefinition, sodass sie danach folgendermaßen aussieht:
 
 ```csharp
 using System;
@@ -403,7 +403,7 @@ namespace Hello_tvOS
         ...
 ```
 
-Als nächstes müssen wir in derselben Klasse (`ViewController`) die **viewDidLoad** -Methode außer Kraft setzen und Code hinzufügen, um die anfängliche Nachricht für unsere Bezeichnung festzulegen:
+Als nächstes müssen wir in derselben Klasse ( `ViewController` ) die **viewDidLoad** -Methode außer Kraft setzen und Code hinzufügen, um die anfängliche Nachricht für unsere Bezeichnung festzulegen:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Wir müssen `ViewDidLoad`anstelle einer anderen Methode, wie z. b. `Initialize`, verwenden, da `ViewDidLoad` aufgerufen wird, *nachdem* das Betriebssystem die Benutzeroberfläche aus der `.storyboard` Datei geladen und instanziiert hat. Wenn Sie versuchen, auf das Label-Steuerelement zuzugreifen, bevor die `.storyboard`-Datei vollständig geladen und instanziiert wurde, wird ein `NullReferenceException` Fehler angezeigt, da das Label-Steuerelement noch nicht erstellt wurde.
+Wir müssen `ViewDidLoad` anstelle einer anderen Methode, wie z. b., verwenden, `Initialize` da `ViewDidLoad` aufgerufen wird, *nachdem* das Betriebssystem die Benutzeroberfläche aus der Datei geladen und instanziiert hat `.storyboard` . Wenn Sie versuchen, auf das Label-Steuerelement zuzugreifen, bevor die `.storyboard` Datei vollständig geladen und instanziiert wurde, wird ein Fehler ausgegeben, `NullReferenceException` da das Label-Steuerelement noch nicht erstellt wurde.
 
 Als nächstes müssen wir den Code hinzufügen, um darauf zu reagieren, dass der Benutzer auf die Schaltfläche klickt. Fügen Sie der partiellen Klasse, die wir erstellt haben, Folgendes hinzu:
 
@@ -452,13 +452,13 @@ Wenn keine Fehler aufgetreten sind, wird in der Statusleiste Visual Studio für 
 
 Zum Ausführen der Anwendung stehen drei Optionen zur Anwendung:
 
-- Drücken Sie **⌘+EINGABE**.
+- Drücken **Sie ⌘ + Eingabe**Taste.
 - Klicken Sie im Menü **Ausführen** auf **Debug**.
 - Klicken Sie in der Symbolleiste von Visual Studio für Mac auf die Schaltfläche **Wiedergabe** (über dem **Projektmappen-Explorer**).
 
 Die Anwendung wird erstellt (wenn Sie nicht bereits erstellt wurde), starten Sie im Debugmodus. der tvos-Simulator wird gestartet, und die APP wird gestartet und zeigt das Hauptfenster der Benutzeroberfläche an:
 
-[![der Beispiel-App-Startseite](hello-tvos-images/run03.png)](hello-tvos-images/run03.png#lightbox)
+[![Der Beispiel-App-Startbildschirm](hello-tvos-images/run03.png)](hello-tvos-images/run03.png#lightbox)
 
 Wählen Sie im Menü **Hardware** die Option **Apple TV Remote anzeigen** aus, damit Sie den Simulator steuern können.
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 763165f1e09f847745b820987f8dbbae8f834fd7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f7b27c9f1010be313810b4b0f289ef792efd47a3
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021947"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568645"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Schieberegler, Switches und segmentierte Steuerelemente in xamarin. IOS
 
-<a name="Sliders" />
+<a name="Sliders"></a>
 
-## <a name="sliders"></a>Rutscher
+## <a name="sliders"></a>Schieberegler
 
 Das Schieberegler-Steuerelement ermöglicht die einfache Auswahl eines numerischen Werts innerhalb eines Bereichs. Das Steuerelement ist standardmäßig auf einen Wert zwischen 0 und 1 gesetzt, aber diese Limits können angepasst werden.
 
@@ -28,7 +28,7 @@ Der folgende Screenshot zeigt die Eigenschaften, die im Designer bearbeitet werd
 
  [![](slider-switch-segmented-controls-images/image26a.png "Slider Properties")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-Sie können diese Werte wie unten dargestellt im Code festlegen, einschließlich der Verknüpfung eines Handlers, um den aktuell ausgewählten Wert in einem `UILabel` Steuerelement anzuzeigen:
+Sie können diese Werte wie unten dargestellt im Code festlegen, einschließlich der Verknüpfung eines Handlers, um den aktuell ausgewählten Wert in einem-Steuerelement anzuzeigen `UILabel` :
 
 ```csharp
 slider1.MinValue = -1;
@@ -50,17 +50,17 @@ Der angepasste Schieberegler sieht wie folgt aus:
  [![](slider-switch-segmented-controls-images/image27a.png "Custom Slider")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> Zurzeit gibt es einen [Fehler](https://stackoverflow.com/a/19496179) , der dazu führt, dass der `ThumbTint` zur Laufzeit nicht wie erwartet gerrennt wird. Sie können die folgende Codezeile **vor** dem obigen Code als Problem Umgehung hinzufügen. [[Quelle](https://stackoverflow.com/a/21396794)]:
+> Zurzeit gibt es einen [Fehler](https://stackoverflow.com/a/19496179) , der bewirkt, dass der zur `ThumbTint` Laufzeit nicht wie erwartet gerrennt wird. Sie können die folgende Codezeile **vor** dem obigen Code als Problem Umgehung hinzufügen. [[Quelle](https://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
 > Sie können jedes beliebige Bild verwenden, da es überschrieben wird. Stellen Sie jedoch sicher, dass es _in_ das Verzeichnis "Resources" eingefügt wird und im Code aufgerufen wird.
 
-<a name="Switch" />
+<a name="Switch"></a>
 
 ## <a name="switch"></a>Schalter
 
-IOS verwendet die `UISwitch` als boolesche Eingabe, die auf anderen Plattformen durch eine Options Schaltfläche dargestellt werden kann. Der Benutzer kann das Steuerelement ändern, indem er den Ziehpunkt *zwischen den* ein **/aus-** Positionen verschiebt.
+IOS verwendet `UISwitch` als boolesche Eingabe, die auf anderen Plattformen durch eine Options Schaltfläche dargestellt werden kann. Der Benutzer kann das Steuerelement ändern, indem er den Ziehpunkt *zwischen den* ein **/aus-** Positionen verschiebt.
 
  [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
@@ -68,13 +68,13 @@ Die Darstellung des Schalters kann in der **Eigenschaftenpad** des Designers ang
 
  [![](slider-switch-segmented-controls-images/image29a.png "Switch Properties")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
-Die Eigenschaften des Schalters können auch im Code festgelegt werden. der folgende Code zeigt z. b. einen Schalter mit dem Standardwert `On`an:
+Die Eigenschaften des Schalters können auch im Code festgelegt werden. der folgende Code zeigt z. b. einen Schalter mit dem Standardwert `On` :
 
 ```csharp
 switch1.On = true;
 ```
 
- <a name="Segmented_Controls" />
+ <a name="Segmented_Controls"></a>
 
 ## <a name="segmented-controls"></a>Segmentierte Steuerelemente
 

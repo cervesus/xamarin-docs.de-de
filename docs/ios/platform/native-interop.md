@@ -1,24 +1,24 @@
 ---
 title: Verweisen auf Native Bibliotheken in xamarin. IOS
-description: In diesem Dokument wird erläutert, wie Sie native C-Bibliotheken in eine xamarin. IOS-Anwendung verknüpfen. Es wird beschrieben, wie universelle Native Bibliotheken erstellt und von C#auf C-Methoden zugegriffen wird.
+description: In diesem Dokument wird erläutert, wie Sie native C-Bibliotheken in eine xamarin. IOS-Anwendung verknüpfen. Es wird beschrieben, wie universelle Native Bibliotheken erstellt und von c# auf C-Methoden zugegriffen wird.
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/28/2016
-ms.openlocfilehash: c8b882430d5d7d02e444acd00cfdacfc7b29a42b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 014c5074c6dfd9698b0a746e58da50a3f3d9ee03
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031621"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574105"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>Verweisen auf Native Bibliotheken in xamarin. IOS
 
 Xamarin. IOS unterstützt das Verknüpfen mit nativen c-Bibliotheken und Ziel-C-Bibliotheken. In diesem Dokument wird erläutert, wie Sie Ihre nativen C-Bibliotheken mit Ihrem xamarin. IOS-Projekt verknüpfen. Informationen dazu, wie Sie für Ziel-c-Bibliotheken dasselbe tun, finden Sie im Dokument [Binden von Zielen-c-Typen](~/ios/platform/binding-objective-c/index.md) .
 
-<a name="building_native" />
+<a name="building_native"></a>
 
 ## <a name="building-universal-native-libraries-i386-armv7-and-arm64"></a>Entwickeln von universellen nativen Bibliotheken (i386, ARMv7 und ARM64)
 
@@ -30,7 +30,7 @@ Führen Sie den folgenden Befehl über ein Terminal aus, um die i386-Version Ihr
 /Developer/usr/bin/xcodebuild -project MyProject.xcodeproj -target MyLibrary -sdk iphonesimulator -arch i386 -configuration Release clean build
 ```
 
-Dies führt zu einer nativen statischen Bibliothek unter `MyProject.xcodeproj/build/Release-iphonesimulator/`. Kopieren (oder verschieben) Sie die bibliotheksarchiv Datei (libmylibrary. a) zur späteren Verwendung an eine beliebige Stelle, und geben Sie Ihr einen eindeutigen Namen (z. b. **libmylibrary-i386. a**), sodass Sie nicht mit den arm64-und armv7-Versionen der gleichen Bibliothek übereinstimmt, die Sie als Nächstes erstellen werden.
+Dies führt zu einer nativen statischen Bibliothek unter `MyProject.xcodeproj/build/Release-iphonesimulator/` . Kopieren (oder verschieben) Sie die bibliotheksarchiv Datei (libmylibrary. a) zur späteren Verwendung an eine beliebige Stelle, und geben Sie Ihr einen eindeutigen Namen (z. b. **libmylibrary-i386. a**), sodass Sie nicht mit den arm64-und armv7-Versionen der gleichen Bibliothek übereinstimmt, die Sie als Nächstes erstellen werden.
 
 Führen Sie den folgenden Befehl aus, um die ARM64-Version Ihrer nativen Bibliothek zu erstellen:
 
@@ -38,7 +38,7 @@ Führen Sie den folgenden Befehl aus, um die ARM64-Version Ihrer nativen Bibliot
 /Developer/usr/bin/xcodebuild -project MyProject.xcodeproj -target MyLibrary -sdk iphoneos -arch arm64 -configuration Release clean build
 ```
 
-Dieses Mal befindet sich die integrierte native Bibliothek in `MyProject.xcodeproj/build/Release-iphoneos/`. Kopieren Sie diese Datei erneut, oder verschieben Sie Sie an einen sicheren Speicherort, und benennen Sie Sie so um, wie **libmylibrary-arm64. a** , sodass Sie nicht in Konflikt steht.
+Dieses Mal wird die integrierte native Bibliothek in gespeichert `MyProject.xcodeproj/build/Release-iphoneos/` . Kopieren Sie diese Datei erneut, oder verschieben Sie Sie an einen sicheren Speicherort, und benennen Sie Sie so um, wie **libmylibrary-arm64. a** , sodass Sie nicht in Konflikt steht.
 
 Erstellen Sie nun die ARMv7-Version der Bibliothek:
 
@@ -54,11 +54,11 @@ Um eine universelle Binärdatei zu erstellen, können Sie das `lipo` Tool wie fo
 lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a libMyLibrary-armv7.a
 ```
 
-Dadurch wird `libMyLibrary.a` erstellt, bei dem es sich um eine universelle (FAT) Bibliothek handelt, die für alle IOS-Entwicklungsziele geeignet ist.
+Dadurch wird `libMyLibrary.a` eine universelle (FAT) Bibliothek erstellt, die für alle IOS-Entwicklungsziele geeignet ist.
 
 ### <a name="missing-required-architecture-i386"></a>Erforderliche Architektur i386 fehlt.
 
-Wenn Sie beim Versuch, eine Ziel-C-Bibliothek im IOS-Simulator zu verwenden, eine `does not implement methodSignatureForSelector`-oder `does not implement doesNotRecognizeSelector`-Nachricht in der Lauf Zeit Ausgabe erhalten, wurde die Bibliothek wahrscheinlich nicht für die i386-Architektur kompiliert (siehe [Erstellen von universellen nativen Bibliotheken](#building_native) ). oberhalb des Abschnitts).
+Wenn Sie eine `does not implement methodSignatureForSelector` `does not implement doesNotRecognizeSelector` -oder-Nachricht in der Lauf Zeit Ausgabe erhalten, wenn Sie versuchen, eine Ziel-C-Bibliothek im IOS-Simulator zu verwenden, wurde die Bibliothek wahrscheinlich nicht für die i386-Architektur kompiliert (siehe Abschnitt [Erstellen von universellen](#building_native) systemeigenen Bibliotheken weiter oben).
 
 Um die von einer bestimmten Bibliothek unterstützten Architekturen zu überprüfen, verwenden Sie den folgenden Befehl im Terminal:
 
@@ -66,7 +66,7 @@ Um die von einer bestimmten Bibliothek unterstützten Architekturen zu überprü
 lipo -info /full/path/to/libraryname.a
 ```
 
-Dabei ist `/full/path/to/` der vollständige Pfad zur verwendeten Bibliothek und `libraryname.a` der Name der fraglichen Bibliothek.
+`/full/path/to/`Dabei steht für den vollständigen Pfad zur verwendeten Bibliothek und `libraryname.a` für den Namen der betreffenden Bibliothek.
 
 Wenn Sie die Quelle der Bibliothek haben, müssen Sie Sie auch für die i386-Architektur kompilieren und bündeln, wenn Sie Ihre APP im IOS-Simulator testen möchten.
 
@@ -82,7 +82,7 @@ Wenn Sie die Bibliothek "libmylibrary. a", die Sie aus dem Internet erhalten hab
 
 Um **die Bibliothek in das Projekt**zu übertragen, wählen Sie das Projekt aus dem Projektmappen-Explorer aus, und drücken Sie **Command + Option + a**. Navigieren Sie zur Datei libmylibrary. a, und fügen Sie Sie dem Projekt hinzu. Wenn Sie dazu aufgefordert werden, geben Sie Visual Studio für Mac oder Visual Studio an, um Sie in das Projekt zu kopieren. Suchen Sie nach dem Hinzufügen des Projekts die Datei libfoo. a, klicken Sie mit der rechten Maustaste darauf, und legen Sie die **Buildaktion** auf **keine**fest.
 
-Zum **Konfigurieren von xamarin. IOS zum Verknüpfen der Bibliothek**müssen Sie in den Projektoptionen für Ihre endgültige ausführbare Datei (nicht für die Bibliothek selbst, aber das endgültige Programm) das zusätzliche Argument von **IOS-Builds**hinzufügen (diese sind Teil der Projektoptionen), "-gcc_flags". , gefolgt von einer Zeichenfolge in Anführungszeichen, die alle zusätzlichen Bibliotheken enthält, die für das Programm erforderlich sind, z. b.:
+Zum **Konfigurieren von xamarin. IOS zum Verknüpfen der Bibliothek**müssen Sie in den Projektoptionen für Ihre endgültige ausführbare Datei (nicht für die Bibliothek selbst, aber das endgültige Programm) gcc_flags das zusätzliche Argument von **IOS Build**(diese sind Teil der Projektoptionen) hinzufügen, gefolgt von einer Zeichenfolge in Anführungszeichen, die alle zusätzlichen Bibliotheken enthält, die für das Programm erforderlich sind, z.b.:
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load ${ProjectDir}/libMyLibrary.a"
@@ -90,21 +90,21 @@ Zum **Konfigurieren von xamarin. IOS zum Verknüpfen der Bibliothek**müssen Sie
 
 Im obigen Beispiel wird **libmylibrary. a verknüpft.**
 
-Sie können `-gcc_flags` verwenden, um beliebige Befehlszeilenargumente anzugeben, die an den GCC-Compiler übergeben werden, der zum Abschließen der endgültigen Verknüpfung der ausführbaren Datei verwendet wird. Diese Befehlszeile verweist z. b. auch auf das CFNetwork-Framework:
+Sie können verwenden `-gcc_flags` , um einen beliebigen Satz von Befehlszeilen Argumenten anzugeben, die an den GCC-Compiler übergeben werden, der zum Abschließen der endgültigen Verknüpfung der ausführbaren Datei verwendet wird. Diese Befehlszeile verweist z. b. auch auf das CFNetwork-Framework:
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
 ```
 
-Wenn die native Bibliothek Code C++ enthält, müssen Sie auch das Flag "-CXX" in ihren "zusätzlichen Argumenten" übergeben, damit xamarin. IOS weiß, dass der richtige Compiler verwendet wird. C++ Die vorherigen Optionen würden wie folgt aussehen:
+Wenn die native Bibliothek C++-Code enthält, müssen Sie auch das Flag "-CXX" in ihren "zusätzlichen Argumenten" übergeben, damit xamarin. IOS weiß, dass der richtige Compiler verwendet wird. Für C++ würden die vorherigen Optionen wie folgt aussehen:
 
 ```bash
 -cxx -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
 ```
 
-<a name="Accessing_C_Methods_from_C#" />
+<a name="Accessing_C_Methods_from_C#"></a>
 
-## <a name="accessing-c-methods-from-c35"></a>Zugreifen auf c-Methoden von c&#35;
+## <a name="accessing-c-methods-from-c35"></a>Zugreifen auf c-Methoden aus c-&#35;
 
 Es gibt zwei Arten von nativen Bibliotheken, die unter IOS verfügbar sind:
 
@@ -119,7 +119,7 @@ Für den Zugriff auf Methoden, die in einer dieser beiden definiert sind, verwen
 - Bestimmen der Bibliothek, in der Sie sich befindet
 - Schreiben der entsprechenden P/Aufruf-Deklaration
 
-Wenn Sie P/aufrufen verwenden, müssen Sie den Pfad der Bibliothek angeben, mit der Sie eine Verknüpfung herstellen. Wenn Sie freigegebene IOS-Bibliotheken verwenden, können Sie entweder den Pfad hart codieren, oder Sie können die in unserer `Constants`definierten feedkonstanten verwenden. diese Konstanten sollten die freigegebenen IOS-Bibliotheken abdecken.
+Wenn Sie P/aufrufen verwenden, müssen Sie den Pfad der Bibliothek angeben, mit der Sie eine Verknüpfung herstellen. Wenn Sie freigegebene IOS-Bibliotheken verwenden, können Sie entweder den Pfad hart codieren, oder Sie können die in unserer definierten feedkonstanten verwenden `Constants` . diese Konstanten sollten die freigegebenen IOS-Bibliotheken abdecken.
 
 Wenn Sie z. b. die uirectframeusingblendmode-Methode aus der UIKit-Bibliothek von Apple aufrufen möchten, die diese Signatur in C hat:
 
@@ -134,17 +134,17 @@ Ihre P/Aufruf-Deklaration würde wie folgt aussehen:
 public extern static void RectFrameUsingBlendMode (RectangleF rect, CGBlendMode blendMode);
 ```
 
-Die "Konstanten. uikitlibrary" ist lediglich eine Konstante, die als "/System/Library/Frameworks/UIKit.Framework/UIKit" definiert ist, und der Einstiegspunkt ermöglicht es uns, optional den externen Namen (uirectframusingblendmode) C#anzugeben, während ein anderer Name in verfügbar gemacht wird. kürzerer rectframeusingblendmode.
+Die Konstanten. uikitlibrary ist lediglich eine Konstante, die als "/System/Library/Frameworks/UIKit.Framework/UIKit" definiert ist, und der Einstiegspunkt ermöglicht es uns, optional den externen Namen (uirectframusingblendmode) anzugeben, während ein anderer Name in c# verfügbar gemacht wird. Dies ist der kürzere "rectframeusingblendmode".
 
-<a name="Accessing_C_Dylibs" />
+<a name="Accessing_C_Dylibs"></a>
 
 ### <a name="accessing-c-dylibs"></a>Zugreifen auf C-dylisb
 
-Wenn Sie in ihrer xamarin. IOS-Anwendung eine C-dylib verwenden müssen, müssen Sie vor dem Aufrufen des `DllImport`-Attributs etwas zusätzliches Setup durchführen.
+Wenn Sie in ihrer xamarin. IOS-Anwendung eine C-dylib verwenden müssen, müssen Sie vor dem Aufrufen des-Attributs etwas zusätzliches Setup durchführen `DllImport` .
 
-Wenn wir z. b. eine `Animal.dylib` mit einer `Animal_Version` Methode haben, die wir in unserer Anwendung aufrufen, müssen wir xamarin. IOS über den Speicherort der Bibliothek informieren, bevor Sie versuchen, Sie zu nutzen.
+Wenn wir z. b. über eine- `Animal.dylib` Methode mit einer-Methode verfügen, die `Animal_Version` in unserer Anwendung aufgerufen wird, müssen wir xamarin. IOS über den Speicherort der Bibliothek informieren, bevor Sie versuchen, Sie zu nutzen.
 
-Bearbeiten Sie hierzu die Datei `Main.CS`, und führen Sie Sie wie folgt aus:
+Bearbeiten Sie hierzu die Datei, `Main.CS` und führen Sie Sie wie folgt aus:
 
 ```csharp
 static void Main (string[] args)
@@ -157,17 +157,17 @@ static void Main (string[] args)
 }
 ```
 
-Dabei ist `/full/path/to/` der vollständige Pfad zur verwendeten dylib. Wenn dieser Code vorhanden ist, können wir wie folgt eine Verknüpfung mit der `Animal_Version`-Methode herstellen:
+Dabei `/full/path/to/` ist der vollständige Pfad zur verwendeten dylib. Wenn dieser Code vorhanden ist, können wir wie folgt eine Verknüpfung mit der- `Animal_Version` Methode herstellen:
 
 ```csharp
 [DllImport("Animal.dylib", EntryPoint="Animal_Version")]
 public static extern double AnimalLibraryVersion();
 ```
 
-<a name="Static_Libraries" />
+<a name="Static_Libraries"></a>
 
 ### <a name="static-libraries"></a>Statische Bibliotheken
 
-Da Sie nur statische Bibliotheken unter IOS verwenden können, gibt es keine externe freigegebene Bibliothek, mit der eine Verknüpfung hergestellt werden kann. Daher muss der path-Parameter im DllImport-Attribut den besonderen Namen `__Internal` (Beachten Sie die doppelten Unterstriche am Anfang des Namens), im Gegensatz zum Pfadname.
+Da Sie nur statische Bibliotheken unter IOS verwenden können, gibt es keine externe freigegebene Bibliothek, mit der eine Verknüpfung hergestellt werden kann. Daher muss der path-Parameter im DllImport-Attribut den besonderen Namen `__Internal` (Beachten Sie die doppelten Unterstriche am Anfang des Namens) im Gegensatz zum Pfadnamen verwenden.
 
 Dadurch wird DllImport gezwungen, das Symbol der Methode zu suchen, auf die Sie im aktuellen Programm verweisen, anstatt zu versuchen, Sie aus einer freigegebenen Bibliothek zu laden.

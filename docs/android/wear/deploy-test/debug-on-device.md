@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e6be5d5d42abf7d99c5bd305d6e303ef770e5a04
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305966"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567716"
 ---
 # <a name="debug-on-a-wear-device"></a>Debuggen Sie auf einem Wear-Gerät
 
@@ -86,7 +86,7 @@ Führen Sie die folgenden Schritte aus, um das Wear-Gerät mit Ihrem Telefon zu 
     Target: connected
     ```
 
-6. Nachdem Sie die obigen Schritte ausgeführt haben, wird durch das Ausführen von `adb devices` der Status des Telefons und des Android Wear-Geräts angezeigt:
+6. Nachdem Sie die obigen Schritte ausgeführt haben, wird `adb devices` in der Status des Telefons und des Android Wear-Geräts angezeigt:
 
     ```
     List of devices attached
@@ -96,7 +96,7 @@ Führen Sie die folgenden Schritte aus, um das Wear-Gerät mit Ihrem Telefon zu 
 
 An diesem Punkt können Sie Ihre APP auf dem Wear-Gerät bereitstellen.
 
-<a name="screenshots" />
+<a name="screenshots"></a>
 
 ### <a name="taking-screenshots"></a>Bildschirmaufnahmen
 
@@ -126,7 +126,7 @@ Sie können eine APP über das Wear-Gerät deinstallieren, indem Sie den folgend
 adb -s 127.0.0.1:4444 uninstall <package name>
 ```
 
-Wenn Sie die APP beispielsweise mit dem Paketnamen `com.xamarin.weartest`entfernen möchten, geben Sie den folgenden Befehl ein:
+Wenn Sie die APP beispielsweise mit dem Paketnamen entfernen möchten `com.xamarin.weartest` , geben Sie den folgenden Befehl ein:
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest

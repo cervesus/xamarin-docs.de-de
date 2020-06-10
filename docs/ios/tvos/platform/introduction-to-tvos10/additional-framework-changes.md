@@ -7,27 +7,27 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b9dfb354f33f67c73b415f8c109ebdc27dcdb6d
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 410b66e91168ed07da6f102d96b965f9e6a184f7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725386"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571635"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Weitere tvos 10-Frameworks-Änderungen
 
 Zusätzlich zu den wichtigsten Änderungen an tvos hat Apple Änderungen und Verbesserungen an mehreren vorhandenen Frameworks in tvos 10 vorgenommen.
 
-<a name="AV-Foundation-Framework" />
+<a name="AV-Foundation-Framework"></a>
 
 ## <a name="avfoundation-framework-additions"></a>Erweiterungen des AVFoundation-Frameworks
 
 Das AVFoundation-Framework umfasst die folgenden Verbesserungen:
 
-- In tvos 10 implementiert die APP nicht mehr unterschiedliche [avplayeritem](https://developer.apple.com/reference/avfoundation/avplayeritem) -Verhaltensweisen basierend auf dem Inhaltstyp. Legen Sie einfach die `Rate`-Eigenschaft fest, und AVFoundation bestimmt, wann genug Inhalt für die Wiedergabe ohne Stalling verfügbar ist.
-- Die neue `AVPlayerLooper`-Klasse vereinfacht die Schleife eines bestimmten Mediums während der Wiedergabe.
+- In tvos 10 implementiert die APP nicht mehr unterschiedliche [avplayeritem](https://developer.apple.com/reference/avfoundation/avplayeritem) -Verhaltensweisen basierend auf dem Inhaltstyp. Legen Sie einfach die `Rate` -Eigenschaft fest, und AVFoundation bestimmt, wann genug Inhalt für die Wiedergabe verfügbar ist, ohne Sie zu warten.
+- Die neue- `AVPlayerLooper` Klasse vereinfacht die Schleife eines bestimmten Mediums während der Wiedergabe.
 
-<a name="AVKit-Framework-Enhancements" />
+<a name="AVKit-Framework-Enhancements"></a>
 
 ## <a name="avkit-framework-enhancements"></a>Erweiterungen des avkit-Frameworks
 
@@ -35,7 +35,7 @@ Das avkit-Framework umfasst die folgenden Verbesserungen:
 
 - Die APP verfügt jetzt über die Kontrolle über das übersprungen Verhalten von [avplayerviewcontroller](https://developer.apple.com/reference/avkit/avplayerviewcontroller) , sodass eine übersprselungbewegung zum nächsten Element in der Wiedergabeliste wechseln oder innerhalb des aktuellen Elements fortschreiten kann.
 
-<a name="Core-Data-Enhancements" />
+<a name="Core-Data-Enhancements"></a>
 
 ## <a name="core-data-enhancements"></a>Erweiterungen der Kern Daten
 
@@ -44,12 +44,12 @@ tvos 10 umfasst die folgenden Erweiterungen für das Core Data Framework:
 - Stamm- [nsmanagedobjectcontext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) -Objekte unterstützen das gleichzeitige fehlschlagen und Abrufen ohne Serialisierung.
 - Die [nspersistentstorecoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) -Klasse verwaltet einen Pool mit SQLite-Daten speichern.
 - Die [nsmanagedobjectcontext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) -Objekte mit SQLite-Daten speichern im Wal-Journal Modus unterstützen die neue Abfrage Generierungs Funktion, bei der verwaltete Objekt Kontexte (Managed Object Context, MUC) an bestimmte Daten Bank Versionen angeheftet werden können, um zukünftige Abruf-und fehlerverarbeitungs Vorgänge durchzusetzen
-- Verwenden der `NSPersistenceContainer` auf hoher Ebene, um auf die `NSPersistentStoreCoordinator`, [nsmanagedobjectmodel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) und andere Kern Daten Konfigurations Ressourcen zu verweisen.
-- Es wurden mehrere neue Hilfsmethoden hinzugefügt, die `NSManagedObject` die das Ausführen von Abruf Vorgängen und das Erstellen von Unterklassen vereinfachen.
+- Verwenden Sie die allgemeine Ebene, `NSPersistenceContainer` um auf das `NSPersistentStoreCoordinator` , [nsmanagedobjectmodel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) und andere Kern Daten Konfigurations Ressourcen zu verweisen.
+- Es wurden mehrere neue Hilfsmethoden hinzugefügt, um `NSManagedObject` die Ausführung von Abrufe und das Erstellen von Unterklassen zu vereinfachen.
 
 Weitere Informationen finden Sie in der [Core Data Framework-Referenz](https://developer.apple.com/reference/coredata)von Apple.
 
-<a name="Core-Graphics-Enhancements" />
+<a name="Core-Graphics-Enhancements"></a>
 
 ## <a name="core-graphics-enhancements"></a>Erweiterungen der Kern Grafik
 
@@ -57,15 +57,15 @@ tvos 10 umfasst die folgenden Verbesserungen am Kern Grafik Framework:
 
 - Die neue cgcolorconverterref-Klasse kann verwendet werden, um eine Reihe von Farb Konvertierungen auszuführen.
 
-<a name="Core-Image-Enhancements" />
+<a name="Core-Image-Enhancements"></a>
 
 ## <a name="core-image-enhancements"></a>Erweiterungen des Kern Images
 
 tvos 10 nimmt die folgenden Verbesserungen am Core-Image-Framework vor:
 
-- Die `ImageWithExtent`-Methode der [cifilter](https://developer.apple.com/reference/coreimage/cifilter) -Klasse kann verwendet werden, um eine benutzerdefinierte Verarbeitung in den Filter Vorgang einzufügen. Das Core-Image Ruft den gegebenen Rückruf zwischen Filtern auf, wenn ein Bild für die Ausgabe oder Anzeige verarbeitet wird.
+- Die- `ImageWithExtent` Methode der [cifilter](https://developer.apple.com/reference/coreimage/cifilter) -Klasse kann verwendet werden, um eine benutzerdefinierte Verarbeitung in den Filter Vorgang einzufügen. Das Core-Image Ruft den gegebenen Rückruf zwischen Filtern auf, wenn ein Bild für die Ausgabe oder Anzeige verarbeitet wird.
 - Die APP kann jetzt Bilder in einem Farbraum außerhalb des Arbeits Farbraums des Kern Bild Kontexts verarbeiten, indem Sie vor und nach der Verarbeitung in den und aus dem Farbraum in-und auslagern.
-- Es wurden mehrere renderingleistungserweiterungen für das `UIImage` Rendering (bei der Unterstützung durch Core Image Image-Speicher) in `UIImageView` Objekten vorgenommen.
+- Es wurden mehrere renderingleistungserweiterungen für das `UIImage` Rendern von Objekten (bei der Unterstützung durch Image Speicher-Kern Images) `UIImageView`
 - `UIImage`-Objekte, die als Wide-Gamut gekennzeichnet sind, werden in `UIImageView` Objekten auf IOS-Geräten, die Breite Farben unterstützen, als Breite Farbe dargestellt.
 - Kernbild-Kernelcode kann jetzt bestimmte Pixel Ausgabeformate anfordern.
 
@@ -77,7 +77,7 @@ Außerdem wurden die folgenden neuen Kern Bild Filter hinzugefügt:
 - `CIEdgePreserveUpsampleFilter`
 - `CIClamp`
 
-<a name="Foundation-Enhancements" />
+<a name="Foundation-Enhancements"></a>
 
 ## <a name="foundation-enhancements"></a>Foundation-Erweiterungen
 
@@ -89,16 +89,16 @@ Die folgenden Verbesserungen wurden an Foundation Framework für tvos 10 vorgeno
 - Verwenden Sie die neue [NS-](https://developer.apple.com/reference/foundation/nsmeasurementformatter) Klasse, um lokalisierte Messungen zum Anzeigen für den Endbenutzer zu formatieren.
 - Verwenden Sie die neuen [nsunit](https://developer.apple.com/reference/foundation/nsunit) -und [nsdimension](https://developer.apple.com/reference/foundation/nsdimension) -Klassen, um bestimmte UOMS darzustellen.
 
-<a name="GameKit-Enhancements" />
+<a name="GameKit-Enhancements"></a>
 
 ## <a name="gamekit-enhancements"></a>GameKit-Verbesserungen
 
 Die folgenden Verbesserungen wurden an dem GameKit-Framework in tvos 10 vorgenommen:
 
 - Ein neuer icloud-Kontotyp wurde von der [gkcloudplayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) -Klasse implementiert.
-- Die neue Klasse " [gkgamesession](https://developer.apple.com/reference/gamekit/gkgamesession) " stellt eine generalisierte Lösung für die Verwaltung von persistenten Daten speichern auf Game Center bereit. `GKGameSession` verwaltet eine Liste von Playern, und die APP ist dafür verantwortlich, wie und wann das Teilnehmer Datum gespeichert, abgerufen oder zwischen den Playern ausgetauscht wird. In vielen Fällen können Spielsitzungen vorhandene Turn-basierte Übereinstimmungen, Echt Zeit Übereinstimmungen oder persistente Spiel Speichermethoden ersetzen.
+- Die neue Klasse " [gkgamesession](https://developer.apple.com/reference/gamekit/gkgamesession) " stellt eine generalisierte Lösung für die Verwaltung von persistenten Daten speichern auf Game Center bereit. `GKGameSession`verwaltet eine Liste von Playern, und die APP ist dafür verantwortlich, wie und wann das Teilnehmer Datum gespeichert, abgerufen oder zwischen den Playern ausgetauscht wird. In vielen Fällen können Spielsitzungen vorhandene Turn-basierte Übereinstimmungen, Echt Zeit Übereinstimmungen oder persistente Spiel Speichermethoden ersetzen.
 
-<a name="GameplayKit-Enhancements" />
+<a name="GameplayKit-Enhancements"></a>
 
 ## <a name="gameplaykit-enhancements"></a>Gameplaykit-Erweiterungen
 
@@ -112,7 +112,7 @@ Die folgenden Verbesserungen wurden an dem gameplaykit-Framework in tvos 10 vorg
 - Verwenden Sie die neue Klasse " [gkmeshgraph](https://developer.apple.com/reference/gameplaykit/gkmeshgraph) ", um Hochleistungs Pfade mit hoher Leistung bereitzustellen.
 - Die neuen Klassen " [gkscene](https://developer.apple.com/reference/gameplaykit/gkscene) " und " [gksknodecomponent](https://developer.apple.com/reference/gameplaykit/gksknodecomponent) " vereinfachen das Kombinieren von gameplaykit und spritekit.
 
-<a name="Metal-Enhancements" />
+<a name="Metal-Enhancements"></a>
 
 ## <a name="metal-enhancements"></a>Metal-Erweiterungen
 
@@ -124,7 +124,7 @@ Die folgenden Verbesserungen wurden am Metal-Framework in tvos 10 vorgenommen:
 
 Weitere Informationen finden Sie im [Handbuch zur Metal-Programmierung](https://developer.apple.com/library/prerelease/content/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221)von Apple.
 
-<a name="Metal-Performance-Shaders-Enhancements" />
+<a name="Metal-Performance-Shaders-Enhancements"></a>
 
 ## <a name="metal-performance-shaders-enhancements"></a>Verbesserungen der Metal Performance Shaders
 
@@ -132,68 +132,68 @@ Die folgenden Verbesserungen wurden am Metal Performance Shaders-Framework in tv
 
 - Dem Framework "Metal Performance Shaders" wurden viele neue Kernel hinzugefügt, damit die APP hochoptimierte, Daten parallele Berechnungen, wie z. b. Farb Raum Konvertierungen und neuronale Netzwerk Vorgänge, nutzen kann.
 
-<a name="ModelIO-Enhancements" />
+<a name="ModelIO-Enhancements"></a>
 
 ## <a name="modelio-enhancements"></a>Verbesserungen bei der Verbesserung
 
 Die folgenden Verbesserungen wurden am "mudelio"-Framework in tvos 10 vorgenommen:
 
 - Das Dateiformat "USD" wird jetzt unterstützt.
-- Verwenden Sie die neue `MDLMaterialPropertyGraph`-Klasse, um Lauf Zeit Änderungen von Modellen problemlos zu unterstützen.
+- Verwenden Sie die neue- `MDLMaterialPropertyGraph` Klasse, um Lauf Zeit Änderungen von Modellen problemlos zu unterstützen.
 - Die Unterstützung für unterstützte Entfernungs Felder wurde der [mdlvoxelarray](https://developer.apple.com/reference/modelio/mdlvoxelarray) -Klasse hinzugefügt.
-- Verwenden Sie die neue `MDLLightProbeIrradianceDataSource`-Klasse, um die Platzierung von lichttests zu unterstützen.
+- Verwenden Sie die neue- `MDLLightProbeIrradianceDataSource` Klasse, um bei der Platzierung von Licht zu helfen.
 
-<a name="SceneKit-Enhancements" />
+<a name="SceneKit-Enhancements"></a>
 
 ## <a name="scenekit-enhancements"></a>Scenekit-Erweiterungen
 
 Die folgenden Verbesserungen wurden an dem scenekit-Framework in tvos 10 vorgenommen:
 
 - Scenekit enthält jetzt ein neues physisch basiertes Rendering (PBR)-System für realistischere Ergebnisse mit einfacherer Erstellung von Medienobjekten.
-- Verwenden Sie das neue [scnlightingmodelphysicallybased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased) -Schattierungs Modell, um eine breite Palette realistischer Schattierungs Effekte zu erzeugen, während nur drei grundlegende Eigenschaften (`Diffuse`, `Metalness` und `Roughness`) benötigt werden.
-- Da die PBR-Schattierung am besten mit der Umgebungs basierten Beleuchtung funktioniert, verwenden Sie die `LightingEnvironment`-Eigenschaft, um eine Bildbasierte Beleuchtung der gesamten Szene zuzuweisen.
-- Verwenden Sie die `IESProfileURL`-Eigenschaft, um einfache Beleuchtungs Vorrichtungen zu importieren, die Beleuchtungs Basis auf realen Werten, wie Intensität (in Lumens) und Farbtemperatur (in Grad Kelvin) definieren.
+- Verwenden Sie das neue [scnlightingmodelphysicallybased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased) -Schattierungs Modell, um eine breite Palette realistischer Schattierungs Effekte zu erzeugen, während nur drei grundlegende Eigenschaften ( `Diffuse` `Metalness` und) benötigt werden `Roughness` .
+- Da die PBR-Schattierung am besten mit der Umgebungs basierten Beleuchtung funktioniert, verwenden Sie die- `LightingEnvironment` Eigenschaft, um die bildbasierte Beleuchtung der Tan gesamten Szene zuzuweisen.
+- Verwenden Sie die- `IESProfileURL` Eigenschaft, um einfache Beleuchtungsanlagen zu importieren, die Beleuchtungs Basis auf realen Werten wie Intensität (in Lumens) und Farbtemperatur (in Grad Kelvin) definieren.
 - Mit den HDR-Features und-Effekten kann die [scncamera](https://developer.apple.com/reference/scenekit/scncamera) -Klasse einen besseren Realismus bereitstellen. Verwenden Sie Adaptive verfügbar machung, um automatische Effekte zu erstellen, oder verwenden Sie die Werte für die Durchsetzung von Farben, die Farbränder und die farbeinstufung, um dem Spiel filtersche
 - Sowohl PBR-als auch HDR-Kamera Features bieten bessere Ergebnisse als herkömmliche Renderingverfahren. Daher führt scenekit jetzt alle Farb Berechnungen in einem linearen Farbraum durch (mit P3-Farbpalette auf breit farbigen Geräte anzeigen).
 - Scenekit ist nun mit allen Farben übereinstimmen, indem die Farbprofil Informationen gelesen werden.
 - Scenekit interpretiert Farbkomponenten Werte in einem linearen RGB-Farbraum für alle shadertypen.
 - Da scenekit Farbprofil Informationen in Textur Bildern liest und anpasst, verwenden Sie für alle Images Asset-Kataloge, um sicherzustellen, dass diese Informationen bereitgestellt werden.
-- Sowohl lineares Farb Raum Rendering als auch breit Farben können deaktiviert werden, indem die `SCNDisableLinearSpaceRendering` und `SCNDisableWideGamut` Schlüssel im `Info.plist`der APP angegeben werden.
+- Sowohl lineares Farb Raum Rendering als auch breit Farben können deaktiviert werden, indem `SCNDisableLinearSpaceRendering` die `SCNDisableWideGamut` Schlüssel und in der der APP angegeben werden `Info.plist` .
 - Erstellen Sie beliebige Polygon-Prime (entweder aus Dateien geladen oder Programm gesteuert generiert), um die Geometrie mit der neuen [scngeometryprimitivetyetpolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon) -Klasse anzugeben.
 
-<a name="SpriteKit-Enhancements" />
+<a name="SpriteKit-Enhancements"></a>
 
 ## <a name="spritekit-enhancements"></a>Spritekit-Erweiterungen
 
 Die folgenden Verbesserungen wurden am spritekit-Framework in tvos 10 vorgenommen:
 
-- Tilemaps unterstützt jetzt quadratische, hexagonale und isometrische Kachel Formen für 2D-, 2.5 d-und Side-Scroll-Spiele mithilfe der Klassen `SKTileMapMode`, `SKTileGroup`, `SKTileGroupRule` und `SKTileSet`.
-- Verwenden Sie die neue `SKWarpGeometry`-Klasse, um das Rendern von [skspritenode](https://developer.apple.com/reference/spritekit/skspritenode) oder [schrägerectnode](https://developer.apple.com/reference/spritekit/skeffectnode) zu erweitern oder zu verzerren. Die neue [skaction](https://developer.apple.com/reference/spritekit/skaction) -Klasse kann verwendet werden, um Übergänge zwischen Warp-Effekten zu animieren.
-- Benutzerdefinierte Shader können Attribute (`SKAttribute`) bereitstellen, die separat von jedem Knoten konfiguriert werden können, der den Shader verwendet, indem ein Attribut Wert (`SKAttributeValue`) bereitgestellt wird.
+- Tilemaps unterstützt jetzt quadratische, hexagonale und isometrische Kachel Formen für 2D-, 2.5 d-und Side-Scroll-Spiele mithilfe der `SKTileMapMode` `SKTileGroup` `SKTileGroupRule` Klassen, und `SKTileSet` .
+- Verwenden Sie die neue- `SKWarpGeometry` Klasse, um das Rendern von [skspritenode](https://developer.apple.com/reference/spritekit/skspritenode) oder [schrägerectnode](https://developer.apple.com/reference/spritekit/skeffectnode) zu erweitern oder zu verzerren. Die neue [skaction](https://developer.apple.com/reference/spritekit/skaction) -Klasse kann verwendet werden, um Übergänge zwischen Warp-Effekten zu animieren.
+- Benutzerdefinierte Shader können Attribute ( `SKAttribute` ) bereitstellen, die separat von jedem Knoten konfiguriert werden können, der den Shader verwendet, indem ein Attribut Wert () bereitgestellt wird `SKAttributeValue` .
 - Die [skview](https://developer.apple.com/reference/spritekit/skview) -Klasse stellt mehrere neue Methoden bereit, mit denen Sie präzise steuern können, wann und wie eine Szene gerendert wird.
 
-<a name="UIKit-Enhancements" />
+<a name="UIKit-Enhancements"></a>
 
 ## <a name="uikit-enhancements"></a>UIKit-Verbesserungen
 
 Die folgenden Verbesserungen wurden an dem UIKit-Framework in tvos 10 vorgenommen:
 
-- Die Fokus-API wurde erweitert und unterstützt nicht nur die `UIViews`, sondern auch den Fokus des nicht Sicht Elements. Elemente, die den Fokus unterstützen, _müssen_ die `IUIFocusItem` Schnittstelle implementieren.
-- Die neue `UIGraphicsRender`-Klasse stellt eine objektorientierte Methode zum Erstellen von Bitmaps oder PDF-Code aus dem UIKit-Rendering oder Kern Grafiken bereit und ersetzt die veraltete `UIGraphicsBeginImageContext` Methode.
-- Die `UIUserInterfaceStyle`-Klasse wurde hinzugefügt, um zu bestimmen, welches Design der Benutzeroberfläche (dunkel oder hell) derzeit aktiv ist.
+- Die Fokus-API wurde erweitert, um den Fokus des nicht Sicht Elements zusätzlich zu zu unterstützen `UIViews` . Elemente, die den Fokus unterstützen, _müssen_ die `IUIFocusItem` Schnittstelle implementieren.
+- Die neue- `UIGraphicsRender` Klasse stellt eine objektorientierte Methode zum Erstellen von Bitmaps oder PDF-Code aus dem UIKit-Rendering oder Kern Grafiken bereit und ersetzt die veraltete- `UIGraphicsBeginImageContext` Methode.
+- Die- `UIUserInterfaceStyle` Klasse wurde hinzugefügt, um zu bestimmen, welches Design der Benutzeroberfläche (dunkel oder hell) derzeit aktiv ist.
 - Neue, vollständig interaktive, objektbasierte und unter brechbare Animations Unterstützung wurde hinzugefügt, und van ist mit Gesten verknüpft. Weitere Informationen finden Sie in der [uiviewanimating-Protokoll Referenz](https://developer.apple.com/reference/uikit/uiviewanimating)von Apple, der [uiviewpropertyanimator-Klassenreferenz](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), der [uitimingcurrveprovider-Protokoll Referenz](https://developer.apple.com/reference/uikit/uitimingcurveprovider), der [uicubictimingparameters-Klassenreferenz](https://developer.apple.com/reference/uikit/uicubictimingparameters) und der [uispringtimingparameter-Klassenreferenz](https://developer.apple.com/reference/uikit/uispringtimingparameters) .
-- Die neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` ermöglichen der APP, eine benutzerdefinierte Schnittstelle für Peek-und Pop-Vorgänge bereitzustellen.
-- Die neue `UIAccessibilityCustomRotor`-Klasse ermöglicht der APP, benutzerdefinierte kontextspezifische Funktionen für Hilfstechnologien wie Voice over bereitzustellen.
-- Verwenden Sie die Symbole `UIAccessibilityIsAssistiveTouchRunning` und `UIAccessibilityAssistiveTouchStatusDidChangeNotification`, um zu bestimmen, ob assistivetouch aktiviert ist.
-- Verwenden Sie die Symbole `UIAccessibilityHearingDevicePairedEar` und `UIAccessibilityHearingDevicePairedEarDidChangeNotification`, um den Status von gekoppelten MFI-Hörhilfen zu erhalten.
+- Der neue `UIPreviewInteraction` und `UIPreviewInteractionDelegate` ermöglicht der APP, eine benutzerdefinierte Schnittstelle für Peek-und Pop-Vorgänge bereitzustellen.
+- Die neue `UIAccessibilityCustomRotor` Klasse ermöglicht der APP, benutzerdefinierte kontextspezifische Funktionen für Hilfstechnologien wie Voice over bereitzustellen.
+- Verwenden `UIAccessibilityIsAssistiveTouchRunning` Sie die `UIAccessibilityAssistiveTouchStatusDidChangeNotification` Symbole und, um zu bestimmen, ob assistivetouch aktiviert ist.
+- Verwenden Sie `UIAccessibilityHearingDevicePairedEar` die `UIAccessibilityHearingDevicePairedEarDidChangeNotification` Symbole und, um den Status von gekoppelten MFI-Hörhilfen zu erhalten.
 - Die neue [uipasteboard](https://developer.apple.com/reference/uikit/uipasteboard) -API bietet neue Optionen (z. b. Lebensdauer Einschränkungen) und deklariert automatisch kompatible Inhaltstypen für allgemeine Klassentypen.
-- Zur Unterstützung des dynamischen Typs in Bezeichnungen verwenden Textfelder und Textfelder die neue `PreferredFontForTextStyle`-Methode der `UIFont`-Klasse.
-- Um zu entscheiden, ob ein Element seine Schriftart aktualisieren soll, wenn sich die Geräte `UIContentSizeCategory` ändern, verwenden Sie die `AdjustsFontForContentSizeCategory`-Eigenschaft des `UIContentSizeCategoryAdjusting` Delegaten.
+- Zur Unterstützung des dynamischen Typs in Bezeichnungen verwenden Textfelder und Textfelder die neue-Methode der- `PreferredFontForTextStyle` `UIFont` Klasse.
+- Um zu entscheiden, ob ein Element seine Schriftart aktualisieren soll, wenn sich die Geräte `UIContentSizeCategory` ändern, verwenden Sie die-Eigenschaft des-Delegaten `AdjustsFontForContentSizeCategory` `UIContentSizeCategoryAdjusting` .
 - Die APP kann jetzt die Darstellung des Badge für Tabulator Elemente wie Text und Hintergrundfarbe steuern.
-- Das Aktualisierungs Steuerelement in wird jetzt in allen Unterklassen der Bild Lauf Ansicht und der scrollansicht (z. b. `UICollectionView`) unterstützt
-- Die `OpenURL`-Methode der `UIApplication`-Klasse wird asynchron aufgerufen und unterstützt jetzt einen Vervollständigungs Handler, der aufgerufen wird, nachdem der geöffnete Vorgang abgeschlossen wurde.
-- Initiieren Sie die cloudkit-Freigabe, und ändern Sie deren Eigenschaften mithilfe der neuen Klassen `UICloudSharingController` und `UICloudSharingControllerDelegate`.
-- Profitieren Sie von vorab abgerufenen Zellen, um die scrolldarstellung von `UICollectionViews` mit dem neuen `UICollectionViewDataSourcePrefetching` Delegaten zu verbessern.
+- Das Aktualisierungs Steuerelement in wird jetzt in allen Unterklassen der Bild Lauf Ansicht und der scrollansicht (z `UICollectionView` . b.) unterstützt
+- Die- `OpenURL` Methode der- `UIApplication` Klasse wird asynchron aufgerufen und unterstützt jetzt einen Vervollständigungs Handler, der nach Abschluss des öffnenden aufgerufen wird.
+- Initiieren der cloudkit-Freigabe und Ändern der Eigenschaften mithilfe der neuen `UICloudSharingController` -Klasse und der- `UICloudSharingControllerDelegate` Klasse.
+- Profitieren Sie von vorab abgerufenen Zellen, um die scrolldarstellung von mit dem neuen Delegaten zu verbessern `UICollectionViews` `UICollectionViewDataSourcePrefetching` .
 
 ## <a name="related-links"></a>Verwandte Links
 

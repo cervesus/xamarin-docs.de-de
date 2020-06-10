@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 3c754acc3502d7aa2c47264e734187ffe060c029
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 69886a0da53d419a0c40bdf34f91d301c9efe504
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306080"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573715"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Arbeiten mit der tvos-Navigation und dem Fokus in xamarin
 
@@ -26,7 +26,7 @@ Als nächstes sehen wir uns an, wie der [Fokus mit unter](#Focus-and-Parallax) s
 
 Schließlich sehen wir uns die Arbeit mit dem [Fokus](#Working-with-Focus), [Fokus Updates](#Working-with-Focus-Updates), [Fokus](#Working-with-Focus-Guides)Handbücher, den [Fokus auf](#Working-with-Focus-in-Collections) Auflistungen und das Aktivieren von " [Parser](#enabling-parallax) " in der xamarin. tvos-APP an.
 
-<a name="Navigation" />
+<a name="Navigation"></a>
 
 ## <a name="navigation"></a>Navigation
 
@@ -48,10 +48,10 @@ Apple empfiehlt Folgendes, wenn Sie die Navigation für Ihre tvos-App entwerfen:
 - **Bereitstellen der rückwärts Navigation über die Menü Schaltfläche** : um eine einfache und vertraute Benutzerfunktion zu erstellen, können Benutzer mithilfe der **Menü** Schaltfläche der Siri-Remote Navigation rückwärts navigieren. Wenn Sie die **Menü** Schaltfläche drücken, müssen Sie immer zum vorherigen Bildschirm zurückkehren oder zum Hauptmenü der APP zurückkehren. Auf der obersten Ebene der APP sollte durch Drücken der **Menü** Schaltfläche zum Apple TV-Startbildschirm zurückzukehren.
 - **Vermeiden Sie die Anzeige der Schaltfläche "zurück** ", da durch Drücken der **Menü** Schaltfläche auf der Siri-Remote Seite der Bildschirm Stapel rückwärts navigiert wird. vermeiden Sie ein zusätzliches Steuerelement, das dieses Verhalten dupliziert. Eine Ausnahme von dieser Regel ist das erwerben von Bildschirmen oder Bildschirmen mit destruktiven Aktionen (z. b. das Löschen von Inhalt), wenn auch eine Schaltfläche **Abbrechen** angezeigt werden soll.
 - Zeigen Sie große Auflistungen **auf einem einzelnen Bildschirm anstelle von vielen** an. die Siri-Remote wurde so entworfen, dass Sie eine umfangreiche Sammlung von Inhalten schnell und einfach mithilfe von Gesten durchläuft. Wenn Ihre APP mit einer großen Auflistung von Fokus verwendbaren Elementen funktioniert, sollten Sie Sie auf einem einzelnen Bildschirm aufbewahren, anstatt Sie in viele Bildschirme zu unterteilen, die eine größere Navigation im Benutzer Teil erfordern.
-- **Verwenden Sie Standard Steuerelemente für die Navigation** . verwenden Sie zum Erstellen einer einfachen und vertrauten Benutzer Darstellung, soweit möglich, integrierte `UIKit` Steuerelemente wie z. b. Seiten Steuerelemente, Registerkarten, segmentierte Steuerelemente, Tabellen Sichten, Sammlungs Ansichten und geteilte Ansichten für die Navigation Ihrer APP. Da Benutzer bereits mit diesen Elementen vertraut sind, können Sie intuitiv durch Ihre APP navigieren.
+- **Verwenden Sie Standard Steuerelemente für die Navigation** . verwenden Sie zum Erstellen einer einfachen und vertrauten Benutzer Darstellung, soweit möglich, integrierte Steuer `UIKit` Elemente wie z. b. Seiten Steuerelemente, Registerkarten, segmentierte Steuerelemente, Tabellen Sichten, Sammlungs Ansichten und geteilte Ansichten für die Navigation Ihrer APP. Da Benutzer bereits mit diesen Elementen vertraut sind, können Sie intuitiv durch Ihre APP navigieren.
 - **Bevorzugen der horizontalen Inhalts Navigation** : aufgrund der Art von Apple TV ist das Schwenken von links nach rechts auf der Siri-Remote Seite natürlicher als nach oben und unten. Beachten Sie diese Option, wenn Sie Inhalts Layouts für Ihre APP entwerfen.
 
-<a name="Focus-and-Selection" />
+<a name="Focus-and-Selection"></a>
 
 ## <a name="focus-and-selection"></a>Fokus und Auswahl
 
@@ -67,20 +67,20 @@ Als Fokus Änderungen werden die Benutzeroberflächen Elemente, die derzeit den 
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit Fokus und Auswahl:
 
-- **Verwenden integrierter UI-Steuerelemente für Bewegungs Effekte** : indem `UIKit` und die Fokus-API in der Benutzeroberfläche verwendet werden, wendet das Fokus Modell automatisch die Standard Bewegung und die visuellen Effekte auf die Benutzeroberflächen Elemente an. Dies sorgt dafür, dass Ihre APP für die Benutzer der Apple TV-Plattform nativ und vertraut ist und eine flüssige und intuitive Bewegung zwischen Fokus baren Elementen ermöglicht.
+- **Verwenden integrierter UI-Steuerelemente für Bewegungs Effekte** : indem Sie `UIKit` und die Fokus-API in Ihrer Benutzeroberfläche verwenden, wendet das Fokus Modell automatisch die Standard Bewegung und visuelle Effekte auf die Benutzeroberflächen Elemente an. Dies sorgt dafür, dass Ihre APP für die Benutzer der Apple TV-Plattform nativ und vertraut ist und eine flüssige und intuitive Bewegung zwischen Fokus baren Elementen ermöglicht.
 - **Verschieben des Fokus in den erwarteten Richtungen** : in Apple TV verwendet fast jedes Element indirekte Manipulationen. Beispielsweise verwendet der Benutzer die Siri-Remote-, um den Fokus zu verschieben, und das System führt automatisch einen Bildlauf zur Schnittstelle durch, um das aktuell fokussierte Element Wenn Ihre APP diese Art von Interaktion implementiert, stellen Sie sicher, dass sich der Fokus in die Richtung der Benutzer Bewegung verschiebt. Wenn der Benutzer also auf den Siri-Remote Fokus rechts bewegt, sollte er nach rechts verschoben werden (was dazu führen kann, dass der Bildschirm nach links scrollen würde). Die einzige Ausnahme von dieser Regel sind voll Bildelemente, die eine direkte Bearbeitung verwenden (wobei das Element durch Schwenken nach oben verschoben wird).
-- **Stellen Sie sicher, dass das fokussierte Element offensichtlich ist** . da die Benutzer von weitem mit ihren Benutzeroberflächen Elementen interagieren, ist es wichtig, dass das aktuell fokussierte Element angezeigt wird. In der Regel wird dies automatisch durch integrierte `UIKit` Elemente gehandhabt. Verwenden Sie für benutzerdefinierte Steuerelemente Features wie Elementgröße oder Schatten, um den Fokus anzuzeigen.
+- **Stellen Sie sicher, dass das fokussierte Element offensichtlich ist** . da die Benutzer von weitem mit ihren Benutzeroberflächen Elementen interagieren, ist es wichtig, dass das aktuell fokussierte Element angezeigt wird. In der Regel wird dies automatisch durch integrierte Elemente gehandhabt `UIKit` . Verwenden Sie für benutzerdefinierte Steuerelemente Features wie Elementgröße oder Schatten, um den Fokus anzuzeigen.
 - **Verwenden Sie "Parser", um fokussierte Elemente reaktionsfähig zu machen** : kleine, zirkuläre Gesten auf dem Siri-Remote Ergebnis in sanfter echtzeitbewegung des Fokus Elements. Dieser Teil des [Effekts](#Focus-and-Parallax) ist in `UIKit` _geschichtete Bilder_ integriert, um dem Benutzer einen Eindruck von der Verbindung mit dem fokussierten Element zu vermitteln.
 - **Erstellen Sie Fokussier Bare Elemente der entsprechenden Größe** : große Elemente mit ausreichendem Abstand sind einfacher auszuwählen und können als kleinere Elemente navigiert werden.
 - **Design der Benutzeroberfläche, um entweder fokussiert oder nicht fokussiert zu** sein. in der Regel stellt Apple TV das fokussierte Element dar, indem es seine Größe vergrößert. Stellen Sie sicher, dass die Benutzeroberflächen Elemente Ihrer Apps in jeder Präsentations Größe hervorragend aussehen, und stellen Sie, falls erforderlich, Ressourcen für Elemente mit größerer Größe bereit.
 - **Stellen Sie die Fokus Änderungen** in der Animation auf fließende Weise ein, um **zwischen Elementen mit Fokus und** **ohne Fokus** zu wechseln, um die Übergänge von jarringvorgängen zu erhalten.
 - **Cursor nicht anzeigen** : Benutzer erwarten, dass Sie die Benutzeroberfläche Ihrer App mithilfe des Fokus navigieren, und nicht durch Verschieben eines Cursors auf den Bildschirm. Die Benutzeroberfläche sollte immer das Fokus Modell verwenden, um eine konsistente Benutzeroberfläche zu bieten.
 
-<a name="Working-with-Focus" />
+<a name="Working-with-Focus"></a>
 
 ### <a name="working-with-focus"></a>Arbeiten mit dem Fokus
 
-Es kann vorkommen, dass Sie ein benutzerdefiniertes Steuerelement erstellen möchten, das zu einem Fokus verwendbaren Element werden kann. Wenn Sie die `CanBecomeFocused`-Eigenschaft überschreiben und `true`zurückgeben, geben Sie andernfalls `false`zurück. Beispiel:
+Es kann vorkommen, dass Sie ein benutzerdefiniertes Steuerelement erstellen möchten, das zu einem Fokus verwendbaren Element werden kann. Wenn Sie also die `CanBecomeFocused` -Eigenschaft überschreiben und zurückgeben `true` , geben Sie zurück `false` . Beispiel:
 
 ```csharp
 public class myView : UIView
@@ -91,7 +91,7 @@ public class myView : UIView
 }
 ```
 
-Sie können jederzeit die `Focused`-Eigenschaft eines `UIKit` Steuer Elements verwenden, um festzustellen, ob es sich um das aktuelle Element handelt. , Wenn `true` das UI-Element derzeit den Fokus besitzt, andernfalls nicht. Beispiel:
+Sie können die- `Focused` Eigenschaft eines- `UIKit` Steuer Elements jederzeit verwenden, um festzustellen, ob es sich um das aktuelle Element handelt. `true`, Wenn das UI-Element derzeit den Fokus besitzt, andernfalls. Beispiel:
 
 ```csharp
 // Is my view in focus?
@@ -101,30 +101,30 @@ if (myView.Focused) {
 }
 ```
 
-Obwohl Sie den Fokus nicht direkt über Code auf ein anderes UI-Element verschieben können, können Sie angeben, welches UI-Element zuerst den Fokus erhält, wenn ein Bildschirm geladen wird, indem er seine `PreferredFocusedView` Eigenschaft auf `true`festlegt. Beispiel:
+Obwohl Sie den Fokus nicht direkt über Code auf ein anderes UI-Element verschieben können, können Sie angeben, welches UI-Element zuerst den Fokus erhält, wenn ein Bildschirm durch Festlegen der- `PreferredFocusedView` Eigenschaft auf geladen wird `true` . Beispiel:
 
 ```csharp
 // Make the play button the starting focus item
 playButton.PreferredFocusedView = true;
 ```
 
-<a name="Working-with-Focus-Updates" />
+<a name="Working-with-Focus-Updates"></a>
 
 ### <a name="working-with-focus-updates"></a>Arbeiten mit Fokus Updates 
 
 Wenn der Benutzer den Fokus auf die Verschiebung von einem Benutzeroberflächen Element zu einem anderen bewirkt (z. b. als Reaktion auf eine Geste auf der Siri-Remote), wird ein _Fokus Aktualisierungs Ereignis_ an das Element gesendet, das den Fokus verliert, und das Element erhält den Fokus.
 
-Für benutzerdefinierte Elemente, die von `UIView` oder `UIViewController`erben, können Sie mehrere Methoden überschreiben, um mit dem Fokus Aktualisierungs Ereignis zu arbeiten:
+Für benutzerdefinierte Elemente, die von `UIView` oder Erben `UIViewController` , können Sie mehrere Methoden überschreiben, um mit dem Fokus Aktualisierungs Ereignis zu arbeiten:
 
 - **Didupdatefocus** : Diese Methode wird immer dann aufgerufen, wenn die Ansicht den Fokus erhält oder verliert.
 - **Schulter dupdatefocus** : Verwenden Sie diese Methode, um zu definieren, wohin der Fokus verschoben werden darf.
 
-Um anzufordern, dass die Fokus-Engine den Fokus wieder auf das `PreferredFocusedView` UI-Element verschiebt, nennen Sie die `SetNeedsUpdateFocus`-Methode des Ansichts Controllers.
+Um anzufordern, dass die Fokus-Engine den Fokus wieder auf das `PreferredFocusedView` UI-Element verschiebt, nennen Sie die- `SetNeedsUpdateFocus` Methode des Ansichts Controllers.
 
 > [!IMPORTANT]
-> Das Aufrufen von `SetNeedsUpdateFocus` hat nur Auswirkungen, wenn der Ansichts Controller, für den er aufgerufen wird, die Ansicht enthält, die gerade den Fokus besitzt.
+> Der Aufruf von `SetNeedsUpdateFocus` hat nur Auswirkungen, wenn der Ansichts Controller, für den er aufgerufen wird, die Ansicht enthält, die gerade den Fokus besitzt.
 
-<a name="Working-with-Focus-Guides" />
+<a name="Working-with-Focus-Guides"></a>
 
 ### <a name="working-with-focus-guides"></a>Arbeiten mit Fokus Handbüchern
 
@@ -138,7 +138,7 @@ Betrachten Sie das folgende Benutzeroberflächen Layout für ein Beispiel:
 
 Da die Schaltfläche " **Weitere Informationen** " nicht auf ein horizontales und Vertikales Raster mit der Schaltfläche " **kaufen** " fällt, ist der Benutzer nicht darauf zugreifen können. Dies kann jedoch problemlos mithilfe eines _Schwerpunkt Handbuchs_ korrigiert werden, um Bewegungs Hinweise für die Fokus-Engine bereitzustellen. 
 
-Ein Fokus Leit Faden (`UIFocusGuide`) macht einen nicht sichtbaren Bereich der Ansicht verfügbar, der für die Fokus-Engine verfügbar ist, sodass der Fokus auf eine andere Ansicht umgeleitet werden kann.
+Ein Fokus Leit Faden ( `UIFocusGuide` ) macht einen nicht sichtbaren Bereich der Ansicht als fokussierbar für die Fokus-Engine verfügbar, sodass der Fokus in eine andere Ansicht umgeleitet werden kann.
 
 Zum Lösen des oben genannten Beispiels könnte der folgende Code dem Ansichts Controller hinzugefügt werden, um einen Fokus Leit Faden zwischen den Schaltflächen " **Weitere Informationen** " und " **kaufen** " zu erstellen:
 
@@ -162,19 +162,19 @@ public override void ViewDidLoad ()
 }
 ```
 
-Zuerst wird eine neue `UIFocusGuide` erstellt und mithilfe der `AddLayoutGuide`-Methode der layoutführungsauflistung der Ansicht hinzugefügt.
+Zuerst wird ein neuer `UIFocusGuide` erstellt und mithilfe der-Methode der layoutführungsauflistung der Ansicht hinzugefügt `AddLayoutGuide` .
 
-Im nächsten Schritt werden die Anker der oberen, linken, breiten und Höhen der Vordergrund Linie relativ zu den Schaltflächen " **Weitere Informationen** " und " **kaufen** " angepasst, um Sie zwischen Ihnen zu positionieren. Siehe:
+Im nächsten Schritt werden die Anker der oberen, linken, breiten und Höhen der Vordergrund Linie relativ zu den Schaltflächen " **Weitere Informationen** " und " **kaufen** " angepasst, um Sie zwischen Ihnen zu positionieren. Thema
 
 [![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
 
-Es ist auch wichtig zu beachten, dass die neuen Einschränkungen aktiviert werden, wenn Sie erstellt werden, indem Sie Ihre `Active`-Eigenschaft auf `true`festlegen:
+Es ist auch wichtig zu beachten, dass die neuen Einschränkungen durch Festlegen der-Eigenschaft auf aktiviert werden, wenn Sie erstellt werden `Active` `true` :
 
 ```csharp
 FocusGuide.LeftAnchor.ConstraintEqualTo (...).Active = true;
 ```
 
-Wenn das neue Fokus Handbuch eingerichtet und der Ansicht hinzugefügt wurde, kann die `DidUpdateFocus`-Methode des Ansichts Controllers überschrieben werden, und der folgende Code wurde hinzugefügt, um zwischen den Schaltflächen " **Weitere Informationen** " und " **kaufen** " zu wechseln
+Wenn das neue Fokus Handbuch festgelegt und der Ansicht hinzugefügt wurde, kann die-Methode des Ansichts Controllers `DidUpdateFocus` überschrieben werden, und der folgende Code wurde hinzugefügt, um zwischen den Schaltflächen **Weitere Informationen** und **kaufen** zu wechseln:
 
 ```csharp
 public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
@@ -202,27 +202,27 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 }
 ```
 
-Zuerst erhält dieser Code die `NextFocusedView` aus dem `UIFocusUpdateContext`, der (`context`) übermittelt wurde. Wenn diese Ansicht `null`ist, wird keine Verarbeitung benötigt, und die Methode wurde beendet.
+Zuerst wird dieser Code `NextFocusedView` vom aus dem, das `UIFocusUpdateContext` in () übermittelt wurde, angezeigt `context` . Wenn diese Ansicht ist `null` , wird keine Verarbeitung benötigt, und die Methode wurde beendet.
 
-Als nächstes wird der `nextFocusableItem` ausgewertet. Wenn Sie entweder mit den Schaltflächen " **Weitere Informationen** " oder " **kaufen** " übereinstimmt, wird der Fokus mithilfe der `PreferredFocusedView`-Eigenschaft des Fokus Handbuchs an die Schaltfläche "gegen Beispiel:
+Anschließend `nextFocusableItem` wird ausgewertet. Wenn Sie entweder mit den Schaltflächen " **Weitere Informationen** " oder " **kaufen** " übereinstimmt, wird der Fokus mithilfe der-Eigenschaft des Fokus Handbuchs an die Schaltfläche "gegen `PreferredFocusedView` Beispiel:
 
 ```csharp
 // Move from the More Info to Buy button
 FocusGuide.PreferredFocusedView = BuyButton;
 ```
 
-Wenn keine Schaltfläche die Quelle der Fokus Verschiebung ist, wird die `PreferredFocusedView`-Eigenschaft gelöscht:
+Wenn keine Schaltfläche die Quelle der Fokus Verschiebung ist, wird die- `PreferredFocusedView` Eigenschaft gelöscht:
 
 ```csharp
 // No valid move
 FocusGuide.PreferredFocusedView = null;
 ```
 
-<a name="Working-with-Focus-in-Collections" />
+<a name="Working-with-Focus-in-Collections"></a>
 
 ### <a name="working-with-focus-in-collections"></a>Arbeiten mit dem Fokus in Auflistungen
 
-Wenn Sie entscheiden, ob ein einzelnes Element in einem `UICollectionView` oder einem `UITableView`als Fokus verwendet werden kann, überschreiben Sie die Methoden der `UICollectionViewDelegate` bzw. der `UITableViewDelegate`. Beispiel:
+Wenn Sie entscheiden, ob ein einzelnes Element in einem oder einem verwendet werden kann `UICollectionView` `UITableView` , überschreiben Sie die Methoden von `UICollectionViewDelegate` `UITableViewDelegate` bzw.. Beispiel:
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout
@@ -240,11 +240,11 @@ public class CardHandDelegate : UICollectionViewDelegateFlowLayout
 }
 ```
 
-Die `CanFocusItem`-Methode gibt `true` zurück, wenn sich das aktuelle Element im Fokus befinden kann, andernfalls wird `false`zurückgegeben.
+Die `CanFocusItem` Methode gibt zurück `true` , wenn das aktuelle Element im Fokus sein kann, andernfalls wird zurückgegeben `false` .
 
-Wenn Sie möchten, dass ein `UICollectionView` oder eine `UITableView` den Fokus auf das letzte Element speichert und wiederherstellt, wenn es den Fokus verliert und erhält, legen Sie die Eigenschaft `RemembersLastFocusedIndexPath` auf `true`fest.
+Wenn Sie möchten, dass sich ein `UICollectionView` oder ein `UITableView` dem letzten Element merken kann, wenn es den Fokus verliert und wiederherstellt, legen Sie die- `RemembersLastFocusedIndexPath` Eigenschaft auf fest `true` .
 
-<a name="Focus-and-Parallax" />
+<a name="Focus-and-Parallax"></a>
 
 ## <a name="focus-and-parallax"></a>Fokus und Element
 
@@ -260,15 +260,15 @@ Für das Symbol ihrer tvos-APP sind geschichtete Bilder erforderlich und werden 
 
 ### <a name="enabling-parallax"></a>Aktivieren von "Parser"
 
-Das `UIImageView` Steuerelement (oder ein beliebiges Steuerelement, das von `UIImageView`erbt) unterstützt automatisch den-Effekt. Diese Unterstützung ist standardmäßig deaktiviert. verwenden Sie den folgenden Code, um Sie zu aktivieren:
+Das- `UIImageView` Steuerelement (oder ein beliebiges Steuerelement, das von erbt `UIImageView` ) unterstützt automatisch den-Effekt. Diese Unterstützung ist standardmäßig deaktiviert. verwenden Sie den folgenden Code, um Sie zu aktivieren:
 
 ```csharp
 myImageView.AdjustsImageWhenAncestorFocused = true;
 ```
 
-Wenn diese Eigenschaft auf `true`festgelegt ist, erhält die Bildansicht automatisch den Effekt, wenn Sie vom Benutzer ausgewählt und im Fokus angezeigt wird.
+Wenn diese Eigenschaft auf festgelegt `true` ist, erhält die Bildansicht automatisch den Effekt, wenn Sie vom Benutzer ausgewählt und im Fokus angezeigt wird.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

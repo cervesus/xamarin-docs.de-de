@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a6588dee675aee3e2580b70dfdea2920c6235775
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cd04450d1429092453e6d8b65278d87b5d52e45e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030604"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571622"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Problembehandlung bei tvos 10 mit xamarin erstellten apps
 
@@ -26,7 +26,7 @@ In den folgenden Abschnitten werden einige bekannte Probleme aufgelistet, die be
 - [NSUserActivity](#NSUserActivity)
 - [UIKit](#UIKit)
 
-<a name="App-Store" />
+<a name="App-Store"></a>
 
 ## <a name="app-store"></a>App Store
 
@@ -35,54 +35,54 @@ Bekannte Probleme:
 - Wenn Sie in-App-Käufe in der Sandbox Umgebung testen, wird das Authentifizierungs Dialogfeld möglicherweise zweimal angezeigt.
 - Wenn Sie in-App-Käufe mit gehosteten Inhalten in der Sandbox Umgebung testen, wird das Dialogfeld Kennwort jedes Mal angezeigt, wenn die app in den Vordergrund gestellt wird, bis der Download des Inhalts abgeschlossen ist.
 
-<a name="Binary-Compatibility" />
+<a name="Binary-Compatibility"></a>
 
 ## <a name="binary-compatibility"></a>Binäre Kompatibilität
 
 Bekannte Probleme:
 
-- Wenn Sie `NSObject.ValueForKey` `null` Schlüssel aufrufen, wird eine Ausnahme ausgelöst.
-- Wenn Sie beim Aufrufen von `UIFont.WithName` auf eine Schriftart nach Namen verweisen, wird ein Absturz verursacht.
-- Beide `NSURLSession` und `NSURLConnection` während des TLS-Handshakes für `http://`-URLs nicht mehr RC4-Verschlüsselungs Sammlungen.
-- Apps können hängen bleiben, wenn Sie die Geometrie einer Super Ansicht in den `ViewWillLayoutSubviews`-oder `LayoutSubviews`-Methoden ändern.
+- `NSObject.ValueForKey`Wenn Sie einen Schlüssel aufrufen, wird eine Ausnahme ausgelöst `null` .
+- Das verweisen auf eine Schriftart nach Namen beim Aufrufen von `UIFont.WithName` führt zu einem Absturz.
+- `NSURLSession`Und `NSURLConnection` nicht mehr RC4-Verschlüsselungs Sammlungen während des TLS-Handshake für `http://` URLs.
+- Apps können hängen bleiben, wenn Sie die Geometrie einer SuperView in der- `ViewWillLayoutSubviews` Methode oder der- `LayoutSubviews` Methode ändern.
 - Für alle SSL/TLS-Verbindungen ist das symmetrische RC4-Chiffre jetzt standardmäßig deaktiviert. Außerdem unterstützt die Secure-Transport-API SSLv3 nicht mehr. es wird empfohlen, dass die APP so bald wie möglich die SHA-1-und 3DES-Kryptografie nicht mehr verwendet.
 
-<a name="CFNetwork-HTTP-Protocol" />
+<a name="CFNetwork-HTTP-Protocol"></a>
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork-http-Protokoll
 
-Die `HTTPBodyStream`-Eigenschaft der `NSMutableURLRequest`-Klasse muss auf einen nicht geöffneten Stream festgelegt werden, da `NSURLConnection` und `NSURLSession` diese Anforderung jetzt strikt erzwingen.
+Die `HTTPBodyStream` -Eigenschaft der `NSMutableURLRequest` -Klasse muss auf einen nicht geöffneten Stream festgelegt werden, da Sie `NSURLConnection` `NSURLSession` diese Anforderung jetzt strikt erzwingt.
 
-<a name="CloudKit" />
+<a name="CloudKit"></a>
 
 ## <a name="cloudkit"></a>CloudKit
 
-Vorgänge mit langer Ausführungszeit geben eine _"Sie besitzen keine Berechtigung zum Speichern der Datei" zurück._ Zeit.
+Vorgänge mit langer Ausführungszeit geben eine _"Sie besitzen keine Berechtigung zum Speichern der Datei" zurück._ angezeigt.
 
-<a name="CoreImage" />
+<a name="CoreImage"></a>
 
 ## <a name="core-image"></a>Core-Image
 
-Die `CIImageProcessor`-API unterstützt jetzt eine beliebige Eingabe Image Anzahl. `CIImageProcessor` API, die in tvos 10 Beta 1 enthalten war, wird entfernt.
+Die `CIImageProcessor` API unterstützt jetzt eine beliebige Eingabe Image Anzahl. `CIImageProcessor`Die API, die in tvos 10 Beta 1 enthalten war, wird entfernt.
 
-<a name="NSUserActivity" />
+<a name="NSUserActivity"></a>
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-Nach einem Handoff-Vorgang ist die `UserInfo`-Eigenschaft eines `NSUserActivity` Objekts möglicherweise leer. Nennen Sie `BecomeCurrent` nsuseractivity-Objekt explizit als aktuelle Problem Umgehung.
+Nach einem Handoff-Vorgang ist die- `UserInfo` Eigenschaft eines- `NSUserActivity` Objekts möglicherweise leer. Ruft das `BecomeCurrent` nsuseractivity-Objekt explizit als aktuelle Problem Umgehung auf.
 
-<a name="UIKit" />
+<a name="UIKit"></a>
 
 ## <a name="uikit"></a>UIKit
 
 Bekannte Probleme:
 
-- Änderungen an der Hintergrund Darstellung von `UINavigationBar`, `UITabBar` oder `UIToolBar` können zu einem Layoutdurchlauf führen, um die neue Darstellung aufzulösen. Wenn Sie versuchen, diese Vorkommen innerhalb eines `LayoutSubviews`-, `UpdateConstraints`-, `WillLayoutSubviews`-oder `DidUpdateSubviews`-Ereignisses zu ändern, kann dies zu einer endlos layoutschleife führen.
-- In tvos 10 wird durch den Aufruf der `RemoveGestureRecognizer`-Methode eines `UIView` Objekts jede in Bearbeitung befindliche Gestenerkennung explizit abgebrochen.
+- Ändert die Hintergrund `UINavigationBar` `UITabBar` Darstellung von oder `UIToolBar` kann zu einem Layoutdurchlauf führen, um die neue Darstellung aufzulösen. Wenn Sie versuchen, diese Vorkommen innerhalb eines-,-oder-Ereignisses zu ändern `LayoutSubviews` , kann dies zu `UpdateConstraints` `WillLayoutSubviews` `DidUpdateSubviews` einer endlos layoutschleife führen.
+- In tvos 10 werden durch das Aufrufen der- `RemoveGestureRecognizer` Methode eines- `UIView` Objekts explizit alle in Bearbeitung befindlichen Gesten Erkennungsmethoden abgebrochen.
 - Vorgestellte Ansichts Controller können sich nun auf die Darstellung der Statusleiste auswirken.
-- tvos 10 erfordert, dass der Entwickler `base.AwakeFromNib` bei der Unterklassen `UIViewController` aufruft und die `AwakeFromNib`-Methode überschreibt.
-- Apps mit benutzerdefinierten `UIView` Unterklassen, die `LayoutSubviews` und das Layout vor dem Aufrufen von `base.LayoutSubviews` überschreiben, können eine endlos layoutschleife in tvos 10 auslöst.
-- Zuweisungs spezifische oder flippbare Bilder sind bei Zuweisung zu `UIButton` Objekten nicht gekippt.
+- tvos 10 erfordert, dass der Entwickler `base.AwakeFromNib` beim Unterklassen `UIViewController` -und Überschreiben der- `AwakeFromNib` Methode aufruft.
+- Apps mit benutzerdefinierten `UIView` Unterklassen, `LayoutSubviews` die das Layout überschreiben und vor dem Aufrufen von geändert haben, `base.LayoutSubviews` können eine endlos layoutschleife in tvos 10 auslöst.
+- Zuweisungs spezifische oder flippbare Bilder sind bei der Zuweisung zu Objekten nicht gekippt `UIButton` .
 
 ## <a name="related-links"></a>Verwandte Links
 

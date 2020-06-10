@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/09/2018
-ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 003ea31c765bd2610e93e0f85fe995606d55022f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305864"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567397"
 ---
 # <a name="limitations-of-xamarinios"></a>Einschränkungen von xamarin. IOS
 
@@ -20,7 +20,7 @@ Da Anwendungen, die xamarin. IOS verwenden, in statischen Code kompiliert werden
 
 Dies sind die xamarin. IOS-Einschränkungen im Vergleich zu Desktop Mono:
 
- <a name="Limited_Generics_Support" />
+ <a name="Limited_Generics_Support"></a>
 
 ## <a name="limited-generics-support"></a>Eingeschränkte Generika Unterstützung
 
@@ -30,7 +30,7 @@ Die [vollständige AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot
 
 Zu den häufigsten Problemen, die Entwickler ausführen können, gehören:
 
- <a name="Generic_Subclasses_of_NSObjects_are_limited" />
+ <a name="Generic_Subclasses_of_NSObjects_are_limited"></a>
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Generische Unterklassen von NSObjects sind beschränkt.
 
@@ -45,7 +45,7 @@ class Foo<T> : UIView {
 > [!NOTE]
 > Generische Unterklassen von NSObjects sind zwar möglich, es gibt jedoch einige Einschränkungen. Weitere Informationen finden Sie [in den generischen Unterklassen des NSObject](~/ios/internals/api-design/nsobject-generics.md) -Dokuments.
 
- <a name="No_Dynamic_Code_Generation" />
+ <a name="No_Dynamic_Code_Generation"></a>
 
 ## <a name="no-dynamic-code-generation"></a>Keine dynamische Code Generierung
 
@@ -56,7 +56,7 @@ Da der IOS-Kernel verhindert, dass eine Anwendung Code dynamisch generiert, unte
 - Keine Unterstützung für die dynamische Erstellung von Typen ("No Type. GetType" ("MyType ' 1")), obwohl das Nachschlagen vorhandener Typen (Type. GetType ("System. String") beispielsweise problemlos funktioniert).
 - Umgekehrte Rückrufe müssen zur Kompilierzeit bei der Laufzeit registriert werden.
 
- <a name="System.Reflection.Emit" />
+ <a name="System.Reflection.Emit"></a>
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
@@ -73,7 +73,7 @@ Die gesamte Reflection-API, einschließlich Type. GetType ("SomeClass"), Auflist
 
 ### <a name="using-delegates-to-call-native-functions"></a>Verwenden von Delegaten zum Abrufen nativer Funktionen
 
-Um eine native Funktion über einen C# Delegaten aufzurufen, muss die Deklaration des Delegaten mit einem der folgenden Attribute versehen werden:
+Um eine native Funktion über einen c#-Delegaten aufzurufen, muss die Deklaration des Delegaten mit einem der folgenden Attribute versehen werden:
 
 - [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (bevorzugt, da Sie plattformübergreifend und mit .NET Standard 1.1 + kompatibel ist)
 - [Mononativefunctionwrapperattribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
@@ -84,24 +84,24 @@ Wenn Sie eines dieser Attribute nicht bereitstellen, führt dies zu einem Laufze
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
 ```
 
- <a name="Reverse_Callbacks" />
+ <a name="Reverse_Callbacks"></a>
 
 ### <a name="reverse-callbacks"></a>Umgekehrte Rückrufe
 
-In Standard-Mono ist es möglich, C# Delegatinstanzen anstelle eines Funktions Zeigers an nicht verwalteten Code zu übergeben. Die Laufzeit wandelt diese Funktionszeiger in der Regel in einen kleinen Thunk um, der es nicht verwaltetem Code ermöglicht, den verwalteten Code wieder aufzurufen.
+In Standard-Mono ist es möglich, c#-Delegatinstanzen anstelle eines Funktions Zeigers an nicht verwalteten Code zu übergeben. Die Laufzeit wandelt diese Funktionszeiger in der Regel in einen kleinen Thunk um, der es nicht verwaltetem Code ermöglicht, den verwalteten Code wieder aufzurufen.
 
 In Mono werden diese Bridges durch den Just-in-Time-Compiler implementiert. Wenn Sie den für das iPhone erforderlichen Ahead-of-Time-Compiler verwenden, gibt es an dieser Stelle zwei wichtige Einschränkungen:
 
 - Sie müssen alle Rückruf Methoden mit dem " [monopinvokecallbackattribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute) " markieren.
 - Bei den Methoden handelt es sich um statische Methoden, es gibt keine Unterstützung für Instanzmethoden.
 
-<a name="No_Remoting" />
+<a name="No_Remoting"></a>
 
 ## <a name="no-remoting"></a>Kein Remoting
 
 Der Remote Stapel ist in xamarin. IOS nicht verfügbar.
 
- <a name="Runtime_Disabled_Features" />
+ <a name="Runtime_Disabled_Features"></a>
 
 ## <a name="runtime-disabled-features"></a>Funktionen zur Laufzeit deaktiviert
 
@@ -114,7 +114,7 @@ Die folgenden Features wurden in der IOS-Laufzeit von Mono deaktiviert:
 - Die JIT-Engine
 - Metadatenüberprüfung (da keine JIT vorhanden ist)
 
- <a name=".NET_API_Limitations" />
+ <a name=".NET_API_Limitations"></a>
 
 ## <a name="net-api-limitations"></a>Einschränkungen der .NET-API
 

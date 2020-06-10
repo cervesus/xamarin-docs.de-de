@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8d5bf1d7821187924adc58582a5139f81235e6a0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139099"
+Title: "Authentifizierung und Autorisierung" Beschreibung: "in diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App die Authentifizierung und Autorisierung für die containerisierten microservices ausführt."
+ms. Prod: xamarin ms. assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/08/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
 Die Authentifizierung ist der Prozess, bei dem Identifikations Anmelde Informationen wie Name und Kennwort eines Benutzers erhalten und diese Anmelde Informationen anhand einer Autorität überprüft werden. Wenn die Anmelde Informationen gültig sind, wird die Entität, die die Anmelde Informationen übermittelt hat, als authentifizierte Identität angesehen. Nachdem eine Identität authentifiziert wurde, bestimmt ein Autorisierungs Prozess, ob diese Identität Zugriff auf eine bestimmte Ressource hat.
@@ -40,7 +26,7 @@ OpenID Connect ist eine Authentifizierungs Ebene oberhalb des OAuth 2,0-Protokol
 
 Die Kombination von OpenID Connect und OAuth 2,0 kombiniert die beiden grundlegenden Sicherheitsaspekte der Authentifizierung und des API-Zugriffs, und identityserver 4 ist eine Implementierung dieser Protokolle.
 
-In Anwendungen, die die direkte Kommunikation zwischen Client und-Dienst verwenden, z. b. die eshoponcontainers-Referenz Anwendung, kann ein dedizierter authentifizierungsmikrodienst, der als Sicherheitstokendienst (STS) fungiert, zum Authentifizieren von Benutzern verwendet werden, wie in Abbildung 9-1 dargestellt. Weitere Informationen zur direkten Kommunikation zwischen Client und mikroservice finden Sie unter [Kommunikation zwischen Client und-Dienst](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices).
+In Anwendungen, die die direkte Kommunikation zwischen Client und-Dienst verwenden, z. b. die eshoponcontainers-Referenz Anwendung, kann ein dedizierter authentifizierungsmikrodienst, der als Sicherheitstokendienst (STS) fungiert, zum Authentifizieren von Benutzern verwendet werden, wie in Abbildung 9-1 dargestellt. Weitere Informationen zur direkten Kommunikation zwischen Client und mikroservice finden Sie unter [Kommunikation zwischen Client und-Dienst](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices).
 
 ![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
 
@@ -195,7 +181,7 @@ Diese Konfiguration gibt Daten für die folgenden Eigenschaften an:
 
 - `ClientId`: Eine eindeutige ID für den Client.
 - `ClientName`: Der Client Anzeige Name, der für die Protokollierung und den Zustimmungs Bildschirm verwendet wird.
-- `AllowedGrantTypes`: Gibt an, wie ein Client mit identityserver interagieren möchte. Weitere Informationen finden Sie [unter Konfigurieren des Authentifizierungs Flusses](#configuring_the_authentication_flow).
+- `AllowedGrantTypes`: Gibt an, wie ein Client mit identityserver interagieren möchte. Weitere Informationen finden Sie [unter Konfigurieren des Authentifizierungs Flusses](#configuring-the-authentication-flow).
 - `ClientSecrets`: Gibt die geheimen Client Schlüssel Anmelde Informationen an, die beim Anfordern von Token vom tokenendpunkt verwendet werden.
 - `RedirectUris`: Gibt die zulässigen URIs an, an die Token oder Autorisierungscodes zurückgegeben werden sollen.
 - `RequireConsent`: Gibt an, ob ein Zustimmungs Bildschirm erforderlich ist.
@@ -204,8 +190,6 @@ Diese Konfiguration gibt Daten für die folgenden Eigenschaften an:
 - `AllowedCorsOrigins`: Gibt den Ursprung des Clients an, sodass identityserver Ursprungs übergreifende Aufrufe vom Ursprung zulassen kann.
 - `AllowedScopes`: Gibt die Ressourcen an, auf die der Client Zugriff hat. Standardmäßig hat ein Client keinen Zugriff auf Ressourcen.
 - `AllowOfflineAccess`: Gibt an, ob der Client Aktualisierungs Token anfordern kann.
-
-<a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>Konfigurieren des Authentifizierungs Flusses
 
@@ -326,14 +310,14 @@ Diese Methode analysiert die Authentifizierungs Antwort, die im Rückgabe-URI en
 
 Wenn der tokenendpunkt einen gültigen Autorisierungs Code und einen geheimen pkce-Verifizierer erhält, antwortet er mit einem Zugriffs Token, einem Identitäts Token und einem Aktualisierungs Token. Das Zugriffs Token (das den Zugriff auf API-Ressourcen zulässt) und das Identitäts Token werden dann als Anwendungseinstellungen gespeichert, und die Seitennavigation wird durchgeführt. Daher ist der Gesamteffekt in den eshoponcontainers-Mobile App dies: vorausgesetzt, dass sich Benutzer erfolgreich bei identityserver authentifizieren können, werden Sie zu der Seite navigiert `MainView` , in der [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) die `CatalogView` als ausgewählte Registerkarte angezeigt wird.
 
-Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) die Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) die Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
 > Eshoponcontainers ermöglicht außerdem eine Mock-Anmeldung, wenn die APP für die Verwendung von mockdiensten in der konfiguriert ist `SettingsView` . In diesem Modus kommuniziert die APP nicht mit identityserver, sondern ermöglicht es dem Benutzer, sich mit beliebigen Anmelde Informationen anzumelden.
 
 #### <a name="signing-out"></a>Abmelden
 
-Wenn der Benutzer auf die **Abmelde** Schaltfläche in der tippt `ProfileView` , `LogoutCommand` wird die in der- `ProfileViewModel` Klasse ausgeführt, die wiederum die- `LogoutAsync` Methode ausführt. Diese Methode führt die Seitennavigation zur `LoginView` Seite durch und übergibt dabei eine-Instanz, die `LogoutParameter` als Parameter auf festgelegt ist `true` . Weitere Informationen zum Übergeben von Parametern während der Seitennavigation finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
+Wenn der Benutzer auf die **Abmelde** Schaltfläche in der tippt `ProfileView` , `LogoutCommand` wird die in der- `ProfileViewModel` Klasse ausgeführt, die wiederum die- `LogoutAsync` Methode ausführt. Diese Methode führt die Seitennavigation zur `LoginView` Seite durch und übergibt dabei eine-Instanz, die `LogoutParameter` als Parameter auf festgelegt ist `true` . Weitere Informationen zum Übergeben von Parametern während der Seitennavigation finden Sie unter [übergeben von Parametern während der Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation).
 
 Wenn eine Sicht erstellt und dorthin navigiert wird, `InitializeAsync` wird die-Methode des zugeordneten Ansichts Modells der Sicht ausgeführt, das dann die- `Logout` Methode der-Klasse ausführt, die `LoginViewModel` im folgenden Codebeispiel gezeigt wird:
 
@@ -385,12 +369,10 @@ private async Task NavigateAsync(string url)
 
 Diese Methode löscht sowohl das Identitäts Token als auch das Zugriffs Token aus den Anwendungseinstellungen und legt die- `IsLogin` Eigenschaft auf fest `false` [`WebView`](xref:Xamarin.Forms.WebView) . Dadurch wird der auf der `LoginView` Seite unsichtbar. Zum Schluss `LoginUrl` wird die-Eigenschaft auf den URI des [Autorisierungs Endpunkts](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)von identityserver mit den erforderlichen Parametern festgelegt, der für das nächste Mal vorbereitet wird, wenn der Benutzer eine Anmeldung initiiert.
 
-Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) die Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Informationen dazu, wie [`WebView`](xref:Xamarin.Forms.WebView) die Navigation bewirkt, dass eine Ansichts Modell Methode ausgeführt wird, finden [Sie unter Aufrufen der Navigation mithilfe von Verhaltensweisen](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors). Weitere Informationen zu Anwendungseinstellungen finden Sie unter [Konfigurations Verwaltung](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
 > Eshoponcontainers ermöglicht außerdem eine Mock-Abmeldung, wenn die APP für die Verwendung von mockdiensten in der settingsview konfiguriert ist. In diesem Modus kommuniziert die APP nicht mit identityserver und löscht stattdessen alle gespeicherten Token aus den Anwendungseinstellungen.
-
-<a name="authorization" />
 
 ## <a name="authorization"></a>Authorization
 

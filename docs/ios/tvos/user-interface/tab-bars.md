@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a4adc692680c0556a3cfb07b1a9f45963a81d199
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0e6edaccb9e0c163ee46c59ed11769476037aa90
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022128"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573546"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Arbeiten mit tvos-Registerkarten leisten-Controllern in xamarin
 
@@ -22,11 +22,11 @@ Für viele Arten von tvos-apps wird die primäre Navigation als Registerkarte an
 
 Die Registerkarten Leiste ist standardmäßig übersichtlich und wird immer am oberen Rand des Bildschirms angezeigt. Im Fokusbereich deckt eine Registerkarten Leiste die oberen 140 Pixel des Bildschirms ab, wird jedoch schnell verschoben, wenn sich der Fokus auf den folgenden Inhalts Bereich verschiebt.
 
-<a name="Tab-Bars-in-tvOS" />
+<a name="Tab-Bars-in-tvOS"></a>
 
 ## <a name="tab-bars-in-tvos"></a>Registerkarten leisten in tvos
 
-Die `UITabViewController` funktioniert auf ähnliche Weise und hat bei tvos einen ähnlichen Zweck wie in Ios, mit den folgenden wichtigen unterschieden:
+Die `UITabViewController` funktioniert auf ähnliche Weise und hat bei tvos einen ähnlichen Zweck wie in IOS und bietet die folgenden wichtigen Unterschiede:
 
 - Anders als bei der Registerkarten Leiste auf Ios, die unten auf dem Bildschirm angezeigt wird, belegen Registerkarten in tvos die oberen 140 Pixel des Bildschirms und sind standardmäßig übersichtlich.
 - Wenn der Fokus die Registerkarten Leiste für den folgenden Inhalts Bereich verlässt, wird die Registerkarten Leiste schnell vom oberen Bildschirmrand bewegt und ausgeblendet. Der Benutzer kann entweder einmal auf die Menü Schaltfläche tippen oder auf der [Siri-Remote](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote) Taste nach oben klicken, um die Registerkarten Leiste erneut anzuzeigen.
@@ -43,24 +43,24 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Registerkarten:
 - **Begrenzen der Anzahl von Kategorien** : um die Komplexität zu reduzieren und Ihre APP zu verwalten, überladen Sie Ihre Registerkarten Leiste nicht mit Kategorien, und stellen Sie sicher, dass alle Kategorien sichtbar und nicht überfüllt sind. Einfache, kurze Titel funktionieren am besten.
 - **Deaktivieren Sie eine Kategorie** . alle Registerkarten (Kategorien) sollten immer sichtbar und aktiviert sein. Wenn eine bestimmte Registerkarte keinen Inhalt enthält, sollten Sie eine Erläuterung für den Benutzer bereitstellen. Beispielsweise ist die Registerkarte Käufe leer, wenn der Benutzer keine Einkäufe getätigt hat.
 
-<a name="Tab-Bar-Items" />
+<a name="Tab-Bar-Items"></a>
 
 ## <a name="tab-bar-items"></a>Registerkarten Elemente
 
-Jede Kategorie (Registerkarte) in der Registerkarten Leiste wird durch ein Tabstopp leisten Element (`UITabBarItem`) dargestellt. Apple hat die folgenden Vorschläge zum Arbeiten mit Registerkarten Elementen:
+Jede Kategorie (Registerkarte) in der Registerkarten Leiste wird durch ein Tabstopp leisten Element ( `UITabBarItem` ) dargestellt. Apple hat die folgenden Vorschläge zum Arbeiten mit Registerkarten Elementen:
 
 - **Textbasierte Registerkarten verwenden** : während das Element der Registerkarten Leiste als Symbol dargestellt werden kann, schlägt Apple die Verwendung von Text nur vor, da ein präziser Titel leichter zu interpretieren ist als ein Symbol.
 - **Verwenden Sie kurze, sinnvolle Nomen oder Verben** . ein Tabstopp leisten Element sollte den darin enthaltenen Inhalt eindeutig weiterleiten und am besten funktionieren, wenn es sich um ein einfaches Substantiv (z. b. Fotos, Filme oder Musik) oder Verben (z. b. Suchen oder spielen) handelt.
 
-<a name="Tab-Bars-and-Storyboards" />
+<a name="Tab-Bars-and-Storyboards"></a>
 
 ## <a name="tab-bars-and-storyboards"></a>Registerkarten und Storyboards
 
 Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu arbeiten, besteht darin, Sie mithilfe des IOS-Designers zur Benutzeroberfläche der APP hinzuzufügen.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie **tvos** > **App** > Registerkarten- **App**aus: 
+1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos**-App im Registerkarten Format aus  >  **App**  >  **Tabbed App**: 
 
     [![](tab-bars-images/tab02.png "Select Tabbed App")](tab-bars-images/tab02.png#lightbox)
 1. Befolgen Sie alle Aufforderungen, um eine neue xamarin. tvos-Lösung zu erstellen.
@@ -79,13 +79,13 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 
     [![](tab-bars-images/tab05.png "Select Tab")](tab-bars-images/tab05.png#lightbox)
 1. Entwerfen Sie das Layout der Benutzeroberfläche für jeden Inhalt Bereich der einzelnen Kategorien wie üblich, indem Sie Benutzeroberflächen Elemente im IOS-Designer hinzufügen.
-1. Machen Sie alle erforderlichen Ereignisse verfügbar, um mit ihren UI C# -Steuerelementen im Code zu arbeiten.
-1. Benennen Sie alle UI-Steuerelemente, die Sie C# im Code verfügbar machen möchten.
+1. Machen Sie alle erforderlichen Ereignisse verfügbar, um mit ihren UI-Steuerelementen in c#-Code zu arbeiten.
+1. Benennen Sie alle UI-Steuerelemente, die Sie in c#-Code verfügbar machen möchten.
 1. Speichern Sie die Änderungen.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie **tvos** > **App** > Registerkarten- **App**aus: 
+1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos**-App im Registerkarten Format aus  >  **App**  >  **Tabbed App**: 
 
     [![](tab-bars-images/tab02vs.png "Select Tabbed App")](tab-bars-images/tab02vs.png#lightbox)
 1. Befolgen Sie alle Aufforderungen, um eine neue xamarin. tvos-Lösung zu erstellen.
@@ -104,24 +104,24 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 
     [![](tab-bars-images/tab05vs.png "Select Tab")](tab-bars-images/tab05vs.png#lightbox)
 1. Entwerfen Sie das Layout der Benutzeroberfläche für jeden Inhalt Bereich der einzelnen Kategorien wie üblich, indem Sie Benutzeroberflächen Elemente im IOS-Designer hinzufügen.
-1. Machen Sie alle erforderlichen Ereignisse verfügbar, um mit ihren UI C# -Steuerelementen im Code zu arbeiten.
-1. Benennen Sie alle UI-Steuerelemente, die Sie C# im Code verfügbar machen möchten.
+1. Machen Sie alle erforderlichen Ereignisse verfügbar, um mit ihren UI-Steuerelementen in c#-Code zu arbeiten.
+1. Benennen Sie alle UI-Steuerelemente, die Sie in c#-Code verfügbar machen möchten.
 1. Speichern Sie die Änderungen.
 
 -----
 
 > [!IMPORTANT]
-> Obwohl es möglich ist, Ereignisse wie z. b. `TouchUpInside` einem Benutzeroberflächen Element (z. b. einer `UIButton`) im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten beim Erstellen von Ereignis Handlern für tvos-Benutzeroberflächen Elemente immer das `Primary Action`-Ereignis verwenden.
+> Obwohl es möglich ist, Ereignisse wie z. b. einem `TouchUpInside` Benutzeroberflächen Element (z. b. `UIButton` ) im IOS-Designer zuzuweisen, wird es nie aufgerufen, da Apple TV keinen Touchscreen hat oder touchereignisse unterstützt. Sie sollten das-Ereignis immer verwenden, `Primary Action` Wenn Sie Ereignishandler für tvos-Benutzeroberflächen Elemente erstellen.
 
 Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-, tvos-Schnellstarthandbuch](~/ios/tvos/get-started/hello-tvos.md). 
 
-<a name="Working-with-Tab-Bars" />
+<a name="Working-with-Tab-Bars"></a>
 
 ## <a name="working-with-tab-bars"></a>Arbeiten mit Registerkarten
 
-Verwenden Sie die `Items`-Eigenschaft des `UITabBar`, um auf die Auflistung von `UITabBarItems` zuzugreifen, die Sie als NULL (0) indiziertes Array enthält. Die `SelectedItem`-Eigenschaft gibt die aktuell ausgewählte Registerkarte (Kategorie) als `UITabBarItem`zurück.
+Verwenden Sie die- `Items` Eigenschaft des `UITabBar` , um auf die Auflistung der-Objekte zuzugreifen, die `UITabBarItems` als NULL (0) indiziertes Array enthalten sind. Die- `SelectedItem` Eigenschaft gibt die aktuell ausgewählte Registerkarte (Kategorie) als zurück `UITabBarItem` .
 
-<a name="Working-with-Tab-Bar-Items" />
+<a name="Working-with-Tab-Bar-Items"></a>
 
 ## <a name="working-with-tab-bar-items"></a>Arbeiten mit Registerkarten Elementen
 
@@ -136,9 +136,9 @@ Dies führt zu folgenden Ergebnissen, wenn Sie ausgeführt werden:
 
 [![](tab-bars-images/tab06.png "A Tab Bar Item with badge")](tab-bars-images/tab06.png#lightbox)
 
-Verwenden Sie die `Title`-Eigenschaft des `UITabBarItem`, um den Titel und die `Image`-Eigenschaft zu ändern, um das Symbol zu ändern.
+Verwenden `Title` Sie die-Eigenschaft des `UITabBarItem` , um den Titel und die- `Image` Eigenschaft zu ändern, um das Symbol zu ändern.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

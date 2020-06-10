@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel werden die Steuerelemente vorgestellt, die im Xamarin.Forms DataPages-nuget-Paket verfügbar sind.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 093ef4b9b3ae7bde25da276330894bcf4e399145
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134445"
+Title: "DataPages-Steuerelement Verweis" Beschreibung: "in diesem Artikel werden die Steuerelemente vorgestellt, die im Xamarin.Forms DataPages-nuget-Paket verfügbar sind."
+ms. Prod: xamarin ms. assetid: 891615d0-e8bd-4acc-a7f 0-4c3725bcc31 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/01/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="datapages-controls-reference"></a>Verweis auf DataPages-Steuerelemente
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -36,14 +22,12 @@ Um diese Steuerelemente in XAML zu verwenden, stellen Sie sicher, dass der Names
     x:Class="DataPagesDemo.Detail">
 ```
 
-In den folgenden Beispielen sind Verweise enthalten, `DynamicResource` die im Ressourcen Wörterbuch des Projekts vorhanden sein müssen, um funktionieren zu können. Außerdem gibt es ein Beispiel für das Erstellen eines [benutzerdefinierten Steuer](#custom) Elements.
+In den folgenden Beispielen sind Verweise enthalten, `DynamicResource` die im Ressourcen Wörterbuch des Projekts vorhanden sein müssen, um funktionieren zu können. Außerdem gibt es ein Beispiel für das Erstellen eines [benutzerdefinierten Steuer](#custom-control-example)Elements.
 
 ## <a name="built-in-controls"></a>Integrierte Steuerelemente
 
 * [Heroimage](#heroimage)
 * [ListItem](#listitem)
-
-<a name="heroimage" />
 
 ### <a name="heroimage"></a>Heroimage
 
@@ -69,8 +53,6 @@ Das- `HeroImage` Steuerelement verfügt über vier Eigenschaften:
 **iOS**
 
 ![](controls-images/heroimage-light-ios.png "Heroimage-Steuerelement unter IOS") ![](controls-images/heroimage-dark-ios.png "Heroimage-Steuerelement unter IOS")
-
-<a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
@@ -134,19 +116,15 @@ Es sollte wie in den nachfolgenden Screenshots aussehen, indem Farben verwendet 
 
 ![](controls-images/cardview-light-ios.png "Benutzerdefiniertes Kartenansicht-Steuerelement unter IOS") ![](controls-images/cardview-dark-ios.png "Benutzerdefiniertes Kartenansicht-Steuerelement unter IOS")
 
-<a name="custom" />
-
 ### <a name="building-the-custom-cardview"></a>Aufbauen der benutzerdefinierten CardView
 
-1. [DataView-Unterklasse](#1)
-2. [Schriftart, Layout und Ränder definieren](#2)
-3. [Erstellen von Stilen für die untergeordneten Elemente des Steuer Elements](#3)
-4. [Erstellen der Steuerelement Layout-Vorlage](#4)
-5. [Hinzufügen der Design spezifischen Ressourcen](#5)
-6. [Festlegen von "ControlTemplate" für die CardView-Klasse](#6)
-7. [Hinzufügen des Steuer Elements zu einer Seite](#7)
-
-<a name="1" />
+1. [DataView-Unterklasse](#1-dataview-subclass)
+2. [Schriftart, Layout und Ränder definieren](#2-define-font-layout-and-margins)
+3. [Erstellen von Stilen für die untergeordneten Elemente des Steuer Elements](#3-create-styles-for-the-controls-children)
+4. [Erstellen der Steuerelement Layout-Vorlage](#4-create-the-control-layout-template)
+5. [Hinzufügen der Design spezifischen Ressourcen](#5-add-the-theme-specific-resources)
+6. [Festlegen von "ControlTemplate" für die CardView-Klasse](#6-set-the-controltemplate-for-the-cardview-class)
+7. [Hinzufügen des Steuer Elements zu einer Seite](#7-add-the-control-to-a-page)
 
 #### <a name="1-dataview-subclass"></a>1. DataView-Unterklasse
 
@@ -188,13 +166,11 @@ public class CardView : DataView
 }
 ```
 
-<a name="2" />
-
 #### <a name="2-define-font-layout-and-margins"></a>2. Definieren von Schriftart, Layout und Rändern
 
 Der Steuerelement-Designer würde diese Werte als Teil des Benutzeroberflächen Entwurfs für das benutzerdefinierte Steuerelement herausfinden. Wenn plattformspezifische Spezifikationen erforderlich sind, wird das- `OnPlatform` Element verwendet.
 
-Beachten Sie, dass einige Werte auf `StaticResource` s verweisen – diese werden in [Schritt 5](#5)definiert.
+Beachten Sie, dass einige Werte auf `StaticResource` s verweisen – diese werden in [Schritt 5](#5-add-the-theme-specific-resources)definiert.
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -246,8 +222,6 @@ Beachten Sie, dass einige Werte auf `StaticResource` s verweisen – diese werde
 </OnPlatform>
 ```
 
-<a name="3" />
-
 #### <a name="3-create-styles-for-the-controls-children"></a>3. Erstellen Sie Stile für die untergeordneten Elemente des Steuer Elements.
 
 Verweisen auf alle Elemente, die für definiert sind, um die untergeordneten Elemente zu erstellen, die im benutzerdefinierten Steuerelement verwendet werden:
@@ -277,8 +251,6 @@ Verweisen auf alle Elemente, die für definiert sind, um die untergeordneten Ele
     <Setter Property="HeightRequest" Value="165"/>
 </Style>
 ```
-
-<a name="4" />
 
 #### <a name="4-create-the-control-layout-template"></a>4. Erstellen der Steuerelement Layout-Vorlage
 
@@ -321,8 +293,6 @@ Das visuelle Design des benutzerdefinierten Steuer Elements wird mithilfe der ob
 </ControlTemplate>
 ```
 
-<a name="5" />
-
 #### <a name="5-add-the-theme-specific-resources"></a>5. Hinzufügen der Design spezifischen Ressourcen
 
 Da es sich um ein benutzerdefiniertes Steuerelement handelt, fügen Sie die Ressourcen hinzu, die dem verwendeten Design entsprechen:
@@ -354,11 +324,9 @@ Da es sich um ein benutzerdefiniertes Steuerelement handelt, fügen Sie die Ress
             <Color x:Key="iOSCardViewDetailTextColor">#B5B4B9</Color>
 ```
 
-<a name="6" />
-
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Festlegen von "ControlTemplate" für die CardView-Klasse
 
-Stellen Sie schließlich sicher, dass die in [Schritt 1](#1) erstellte c#-Klasse die in [Schritt 4](#4) definierte Steuerelement Vorlage mithilfe eines-Elements verwendet. `Style` `Setter`
+Stellen Sie schließlich sicher, dass die in [Schritt 1](#1-dataview-subclass) erstellte c#-Klasse die in [Schritt 4](#4-create-the-control-layout-template) definierte Steuerelement Vorlage mithilfe eines-Elements verwendet. `Style` `Setter`
 
 ```xml
 <Style TargetType="local:CardView">
@@ -367,8 +335,6 @@ Stellen Sie schließlich sicher, dass die in [Schritt 1](#1) erstellte c#-Klasse
   <Setter Property="BackgroundColor" Value="{ StaticResource CardViewBackgroundColor }" />
 </Style>
 ```
-
-<a name="7" />
 
 #### <a name="7-add-the-control-to-a-page"></a>7. Hinzufügen des Steuer Elements zu einer Seite
 

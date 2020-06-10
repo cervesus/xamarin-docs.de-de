@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 0e8014263d417cef39147b440ed3b38155f226bb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021853"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572129"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Tabellen Teile und-Funktionen in xamarin. IOS
 
@@ -21,7 +21,7 @@ Eine uitableview kann einen "gruppierten" oder "Plain"-Stil aufweisen und besteh
 - [Abschnitts Kopfzeile](#Section_Header)
 - [Zellen](#Cells) (oder Zeilen, wenn Sie möchten)
 - [Abschnitts Fußzeile](#Section_Footer)
-- [Index](#Index)
+- [Sin](#Index)
 - [Bearbeitungsmodus](#Edit_Features) (enthält "Swipe zum Löschen" und Zieh Punkte zum Ändern der Zeilen Reihenfolge) 
 
 Diese Screenshots zeigen, wie Abschnitts Zeilen, Kopfzeilen, Fußzeilen, Bearbeitungs Steuerelemente und der Index angezeigt werden.
@@ -30,32 +30,32 @@ Diese Screenshots zeigen, wie Abschnitts Zeilen, Kopfzeilen, Fußzeilen, Bearbei
 
 Diese Teile werden im folgenden ausführlicher beschrieben:
 
-<a name="Section_Header" />
+<a name="Section_Header"></a>
 
 ## <a name="section-header"></a>Abschnitts Kopfzeile
 
 Zellen können optional in Abschnitte gruppiert werden, mit einem benutzerdefinierten Header versehen und/oder mit einer Fußzeile beschriftet werden. Der Header kann mit einem Zeichen folgen Wert festgelegt werden, oder es kann eine benutzerdefinierte Ansicht bereitgestellt werden, um ein anderes Layout oder Format zu ermöglichen.
 
-<a name="Cells" />
+<a name="Cells"></a>
 
 ## <a name="cells"></a>Zellen
 
 Zellen sind das Hauptbenutzer Oberflächen-Element für eine Tabelle. Wenn die Implementierung ordnungsgemäß implementiert ist, werden Zellen für die Arbeitsspeicher Effizienz wieder verwendet. Es gibt vier integrierte Zell Stile, und Sie können eigene benutzerdefinierte Zellen erstellen – entweder im Code oder im Designer, wenn Storyboards verwendet werden.
 
-<a name="Section_Footer"/>
+<a name="Section_Footer"></a>
 
 ## <a name="section-footer"></a>Abschnitts Fußzeile
 
 Die optionale Abschnitts Fußzeile kann mit einem Zeichen folgen Wert festgelegt werden, oder es kann eine benutzerdefinierte Ansicht bereitgestellt werden, um ein anderes Layout oder Format zu ermöglichen. Abschnitts Kopfzeilen und-Fußzeilen können unabhängig festgelegt werden.
 
-<a name="Index" />
+<a name="Index"></a>
 
 ## <a name="index"></a>Index
 
 Der Index wird als Zeichenbereich am rechten Rand der Tabelle angezeigt.
 Das berühren oder ziehen des Indexes beschleunigt den Bildlauf zu diesem Teil der Tabelle. Ein Index ist optional, wird aber für die Navigation in langen Listen empfohlen. Ein Index wird normalerweise nicht mit dem gruppierten Stil verwendet.
 
-<a name="Edit_Features" />
+<a name="Edit_Features"></a>
 
 ## <a name="editing-mode"></a>Bearbeitungsmodus
 
@@ -77,7 +77,7 @@ Die primären Klassen, die zum Anzeigen von Tabellen Sichten verwendet werden, w
 Der Zweck der einzelnen Klassen wird im folgenden beschrieben:
 
 - **Uitableview** – eine Ansicht, die eine Auflistung von Zellen in einem scrollcontainer enthält. In der Tabellenansicht wird in der Regel der gesamte Bildschirm in einer iPhone-App verwendet, kann jedoch als Teil einer größeren Ansicht auf dem iPad (oder in einem popover) vorhanden sein. 
-- **Uitableviewcell** – eine Ansicht, die eine einzelne Zelle (oder Zeile) in einer Tabellenansicht darstellt. Es gibt vier integrierte Zelltypen, und es ist möglich, benutzerdefinierte Zellen sowohl in C# als auch mit dem IOS-Designer zu erstellen. 
+- **Uitableviewcell** – eine Ansicht, die eine einzelne Zelle (oder Zeile) in einer Tabellenansicht darstellt. Es gibt vier integrierte Zelltypen, und es ist möglich, benutzerdefinierte Zellen sowohl in c# als auch mit dem IOS-Designer zu erstellen. 
 - **Uitableviewsource** – xamarin. IOS-exklusive abstrakte Klasse, die alle Methoden bereitstellt, die zum Anzeigen einer Tabelle erforderlich sind, einschließlich der Zeilen Anzahl, der Rückgabe einer Zellen Ansicht für jede Zeile, der Verarbeitung von Zeilenauswahl und vielen anderen optionalen Features. Sie *müssen* diese Unterklasse aufrufen, um eine uitableview zu erhalten. 
 - **Nsindexpath** – enthält Zeilen-und Abschnitts Eigenschaften, mit denen die Position einer Zelle in einer Tabelle eindeutig identifiziert wird. 
 - **Uitableviewcontroller** – ein sofort verwendende UIViewController-Objekt, das eine "uitableview" als Ansicht hart codiert und über die TableView-Eigenschaft zugänglich ist. 

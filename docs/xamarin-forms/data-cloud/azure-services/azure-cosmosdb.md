@@ -1,23 +1,8 @@
 ---
-title: Verwenden einer Azure Cosmos DB-dokumentdatenbank inXamarin.Forms
-description: In diesem Artikel wird erläutert, wie Sie die Azure Cosmos DB .NET Standard-Client Bibliothek verwenden, um eine Azure Cosmos DB Dokumentendatenbank in eine-Anwendung zu integrieren Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 47b35d394eab339a8e9a1f81880e6de4233f29b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127085"
+Title: "Verwenden einer Azure Cosmos DB-dokumentdatenbank in Xamarin.Forms " Beschreibung: "in diesem Artikel wird erläutert, wie Sie die Azure Cosmos DB .NET Standard-Client Bibliothek verwenden, um eine Azure Cosmos DB dokumentdatenbank in eine-Anwendung zu integrieren Xamarin.Forms ."
+ms. Prod: xamarin ms. assetid: 7c0605d9-9b7f -4002-9b60-2b5daa3ea30c ms. Technology: xamarin-Forms ms. Custom: xamu-Video Author: davidbritch ms. Author: dabritch ms. Date: 06/16/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>Verwenden einer Azure Cosmos DB-dokumentdatenbank inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
@@ -120,8 +105,6 @@ Optional kann die- `CreateDocumentCollectionIfNotExistsAsync` Methode auch ein- 
 > [!IMPORTANT]
 > Beachten Sie, dass die- `CreateDocumentCollectionIfNotExistsAsync` Methode eine neue Sammlung mit reserviertem Durchsatz erstellt. Dies hat Auswirkungen auf die Preisgestaltung.
 
-<a name="document_query" />
-
 ### <a name="retrieving-document-collection-documents"></a>Abrufen von Dokumenten Sammlungs Dokumenten
 
 Der Inhalt einer Dokument Sammlung kann abgerufen werden, indem eine Dokument Abfrage erstellt und ausgeführt wird. Eine Dokument Abfrage wird mit der- `DocumentClient.CreateDocumentQuery` Methode erstellt:
@@ -160,8 +143,6 @@ var query = client.CreateDocumentQuery<TodoItem>(collectionLink)
 
 Diese Abfrage ruft alle Dokumente aus der Auflistung ab, deren- `Done` Eigenschaft gleich ist `false` .
 
-<a name="inserting_document" />
-
 ### <a name="inserting-a-document-into-a-document-collection"></a>Einfügen eines Dokuments in eine Dokument Sammlung
 
 Dokumente sind benutzerdefinierte JSON-Inhalte und können mit der-Methode in eine Dokument Sammlung eingefügt werden `DocumentClient.CreateDocumentAsync` :
@@ -191,8 +172,6 @@ public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
 ```
 
 Die `ReplaceDocumentAsync` -Methode gibt ein `Uri` -Argument an, das das Dokument in der Auflistung darstellt, das ersetzt werden soll, und ein `object` Argument, das die aktualisierten Dokument Daten darstellt.
-
-<a name="deleting_document" />
 
 ### <a name="deleting-a-document-from-a-document-collection"></a>Löschen eines Dokuments aus einer Dokument Sammlung
 

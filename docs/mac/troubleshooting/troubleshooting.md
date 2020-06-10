@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 683915d238f6c8aee10957285ad4438316e1e037
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725440"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567122"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Tipps zur Problembehandlung bei xamarin. Mac
 
@@ -35,7 +35,7 @@ Mit jeder dieser Ressourcen sind einige Vorbereitungsschritte erforderlich, um S
 
 ### <a name="what-to-do-when-your-app-crashes-with-no-output"></a>Vorgehensweisen bei Abstürzen der APP ohne Ausgabe
 
-In den meisten Fällen fängt der Debugger in Visual Studio für Mac Ausnahmen und Abstürze in der Anwendung ab und hilft Ihnen dabei, die Ursache zu ermitteln. Es gibt jedoch einige Fälle, in denen Ihre Anwendung auf dem Dock springt und dann mit wenigen oder gar keinen Ausgaben beendet wird. Folgende Aktionen sind möglich:
+In den meisten Fällen fängt der Debugger in Visual Studio für Mac Ausnahmen und Abstürze in der Anwendung ab und hilft Ihnen dabei, die Ursache zu ermitteln. Es gibt jedoch einige Fälle, in denen Ihre Anwendung auf dem Dock springt und dann mit wenigen oder gar keinen Ausgaben beendet wird. Folgende sind möglich:
 
 - Probleme beim Code signieren.
 - Bestimmte Mono-Laufzeit stürzt ab.
@@ -47,20 +47,20 @@ In den meisten Fällen fängt der Debugger in Visual Studio für Mac Ausnahmen u
 Das Debuggen dieser Programme kann frustrierend sein, da das Auffinden der erforderlichen Informationen schwierig sein kann. Im folgenden finden Sie einige Ansätze, die möglicherweise hilfreich sind:
 
 - Stellen Sie sicher, dass die in der Datei " **Info. plist** " aufgeführte MacOS-Version mit der Version von MacOS übereinstimmt, die derzeit auf dem Computer installiert ist.
-- Überprüfen Sie die Visual Studio für Mac Anwendungs Ausgabe (**anzeigen** -> **Pads** -> **Anwendungs Ausgabe**) für Stapel Überwachungen oder Ausgaben in roter Farbe aus Cocoa, die die Ausgabe beschreiben können.
+- Überprüfen Sie die Visual Studio für Mac Anwendungs Ausgabe (**anzeigen**  ->  der**Pads**-  ->  **Anwendungs Ausgabe**) für Stapel Überwachungen oder Ausgaben in roter Farbe aus Cocoa, die die Ausgabe beschreiben können.
 - Führen Sie die Anwendung über die Befehlszeile aus, und überprüfen Sie die Ausgabe (in der **Terminal** -APP) mithilfe von:
 
-  `MyApp.app/Contents/MacOS/MyApp` (wobei `MyApp` der Name der Anwendung ist)
+  `MyApp.app/Contents/MacOS/MyApp`(wobei `MyApp` der Name der Anwendung ist.)
 - Sie können die Ausgabe vergrößern, indem Sie "MONO_LOG_LEVEL" dem Befehl in der Befehlszeile hinzufügen, z. b.:
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- Sie können einen systemeigenen Debugger (`lldb`) an Ihren Prozess anfügen, um festzustellen, ob dieser weitere Informationen enthält (Dies erfordert eine kostenpflichtige Lizenz). Führen Sie beispielsweise die folgenden Schritte aus:
+- Sie können einen systemeigenen Debugger ( `lldb` ) an Ihren Prozess anfügen, um festzustellen, ob dieser weitere Informationen enthält (Dies erfordert eine kostenpflichtige Lizenz). Führen Sie beispielsweise die folgenden Schritte aus:
 
   1. Geben Sie `lldb MyApp.app/Contents/MacOS/MyApp` im Terminal ein.
   2. Geben Sie `run` im Terminal ein.
   3. Geben Sie `c` im Terminal ein.
   4. Beenden, nachdem das Debugging abgeschlossen wurde.
-- Als letztes Mittel können Sie vor dem Aufrufen von `NSApplication.Init` in ihrer `Main`-Methode (oder an anderen Stellen nach Bedarf) Text in eine Datei an einem bekannten Speicherort schreiben, um zu verfolgen, bei welchem Schritt der Startprobleme auftreten.
+- Als letztes Mittel `NSApplication.Init` können Sie vor dem Aufrufen von in Ihrer- `Main` Methode (oder an anderen Stellen wie erforderlich) Text in eine Datei an einem bekannten Speicherort schreiben, um zu verfolgen, bei welchem Schritt der Startprobleme auftreten.
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
@@ -72,13 +72,13 @@ Der Debugger stellt über TCP eine Verbindung mit xamarin. Mac-apps her. Dies be
 
 [![Bearbeiten der Berechtigungen](troubleshooting-images/debug01.png "Bearbeiten der Berechtigungen")](troubleshooting-images/debug01-large.png#lightbox)
 
-Die Berechtigung **ausgehende Netzwerkverbindungen zulassen (Client)** ist die Berechtigung, die für den Debugger erforderlich ist. durch Aktivieren dieser Option wird das Debugging normal zugelassen. Da Sie nicht ohne diese Debuggen können, haben wir das `CompileEntitlements` Ziel für `msbuild` aktualisiert, um diese Berechtigung automatisch den Berechtigungen für jede APP hinzuzufügen, die nur für Debugbuilds in einem Sandkasten enthalten ist. Releasebuilds sollten die Berechtigungen unverändert verwenden, die in der Berechtigungsdatei angegeben sind.
+Die Berechtigung **ausgehende Netzwerkverbindungen zulassen (Client)** ist die Berechtigung, die für den Debugger erforderlich ist. durch Aktivieren dieser Option wird das Debugging normal zugelassen. Da Sie nicht ohne diese Debuggen können, haben wir das `CompileEntitlements` Ziel für aktualisiert, `msbuild` um diese Berechtigung automatisch den Berechtigungen für jede APP hinzuzufügen, die nur für Debugbuilds in einem Sandkasten enthalten ist. Releasebuilds sollten die Berechtigungen unverändert verwenden, die in der Berechtigungsdatei angegeben sind.
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System. NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar.
 
-Wenn Sie Drittanbieterbibliotheken in Ihre xamarin. Mac-app einschließen, erhalten Sie möglicherweise einen Fehler im Format "System. NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar", wenn Sie versuchen, die APP zu kompilieren und auszuführen. Beispielsweise können Bibliotheken, z. b. `Ionic.Zip.ZipFile`, diese Ausnahme während des Vorgangs auslösen.
+Wenn Sie Drittanbieterbibliotheken in Ihre xamarin. Mac-app einschließen, erhalten Sie möglicherweise einen Fehler im Format "System. NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar", wenn Sie versuchen, die APP zu kompilieren und auszuführen. Beispielsweise können Bibliotheken, z `Ionic.Zip.ZipFile` . b., diese Ausnahme während des Vorgangs auslösen.
 
-Dies kann behoben werden, indem Sie die Optionen für das xamarin. Mac-Projekt öffnen, zu **Mac Build** > **Internationalisierung** wechseln und die **westliche** Internationalisierung überprüfen:
+Dies kann behoben werden, indem Sie die Optionen für das xamarin. Mac-Projekt öffnen, zur **Mac**  >  -**buildinternationalisierung** wechseln und die **westliche** Internationalisierung überprüfen:
 
 [![Bearbeiten der Buildoptionen](troubleshooting-images/issue01.png "Bearbeiten der Buildoptionen")](troubleshooting-images/issue01-large.png#lightbox)
 
@@ -102,7 +102,7 @@ Wenn Sie auf die Datei " **Berechtigungen. plist** " doppelklicken, wird der Ber
 
 [![Bearbeiten der Berechtigungen](troubleshooting-images/entitlements02.png "Bearbeiten der Berechtigungen")](troubleshooting-images/entitlements02-large.png#lightbox)
 
-Für vorhandene xamarin. Mac-Projekte müssen Sie die Datei "Berechtigungs **. plist** " manuell erstellen, indem Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt klicken und > **neue Datei** **Hinzufügen** auswählen. Wählen Sie als nächstes **xamarin. Mac** > **Liste leere Eigenschaften**aus:
+Für vorhandene xamarin. Mac-Projekte müssen Sie die Datei " **Berechtigungen. plist** " manuell erstellen, indem Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt klicken und **Add**  >  **neue Datei**hinzufügen auswählen. Wählen Sie als nächstes **xamarin. Mac**  >  **leere Eigenschaften Liste**aus:
 
 ![Hinzufügen einer neuen Eigenschaften Liste](troubleshooting-images/entitlements03.png "Hinzufügen einer neuen Eigenschaften Liste")
 
@@ -114,7 +114,7 @@ Geben Sie `Entitlements` als Namen ein, und klicken Sie auf die Schaltfläche **
 
 Die Community von Entwicklern, die xamarin-Produkte verwenden, ist erstaunlich, und viele besuchen unsere [xamarin. Mac-Foren](https://forums.xamarin.com/categories/xamarin-mac) , um Erfahrungen und deren Fachkenntnisse zu teilen. Außerdem besuchen xamarin-Techniker in regelmäßigen Abständen das Forum, um Hilfe zu erhalten.
 
-<a name="filing-a-bug"/>
+<a name="filing-a-bug"></a>
 
 ## <a name="filing-a-bug"></a>Einreichen eines Fehlers
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 4e2ff46174d9dbb9171a470c389ffe301f6d0d60
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306212"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569646"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Bereitstellen und Testen von watchos-apps mit xamarin
 
@@ -36,15 +36,15 @@ Unabhängig davon, ob Sie die Bereitstellung für eine Testuhr oder das Hochlade
   - Bereitstellung [für eine Apple Watch zum Testen](~/ios/watchos/deploy-test/device.md)oder
   - [Hochladen in den App Store](~/ios/watchos/deploy-test/appstore.md).
 
-<a name="App_IDs"/>
+<a name="App_IDs"></a>
 
 ## <a name="app-ids"></a>App-IDs
 
 Wie in den [Setup Anweisungen](~/ios/watchos/get-started/installation.md)erläutert, weisen alle drei Projekte in einer Watch-App zugehörige Bündel-IDs auf, wie z. b.:
 
-- Einheitliches xamarin. IOS-Projekt `com.xamarin.WatchKitCatalog`
+- Einheitliches xamarin. IOS-Projekt:`com.xamarin.WatchKitCatalog`
 - Watchkit-Erweiterungsprojekt-`com.xamarin.WatchKitCatalog.watchkitextension`
-- App-Projekt überwachen-`com.xamarin.WatchKitCatalog.watchkitapp`
+- App-Projekt überwachen:`com.xamarin.WatchKitCatalog.watchkitapp`
 
 Alle drei Projekte erfordern ein entsprechendes Verteilungs Bereitstellungs Profil, das entweder explizit App-IDs für jede oder eine Platzhalter-APP-ID verwendet.
 
@@ -60,25 +60,25 @@ Sie müssen ein Verteilungs Bereitstellungs Profil für jede APP-ID erstellen.
 
 ### <a name="wildcard-app-id"></a>Platzhalter APP-ID
 
-Alternativ können Sie eine Platzhalter- **App-ID** erstellen, die allen drei Projekten entspricht, z. b. `com.xamarin.*`.
+Alternativ können Sie eine Platzhalter- **App-ID** erstellen, die allen drei Projekten entspricht, z `com.xamarin.*` . b..
 
 Beachten Sie, dass einige Funktionen nicht mit einer Platzhalter-APP-ID (z. b. Pushbenachrichtigungen) verwendet werden können. Wenn Ihre APP diese Features erfordert, sollten Sie explizite App-IDs erstellen.
 
 Für die Verteilung müssen Sie nur ein Verteilungs Bereitstellungs Profil für die Platzhalter-APP-ID erstellen.
 
-<a name="App_Groups" />
+<a name="App_Groups"></a>
 
-## <a name="app-groups"></a>Gruppen hinzufügen
+## <a name="app-groups"></a>App-Gruppen
 
 Sie können eine APP-Gruppe zum Freigeben von Daten zwischen Ihrer IOS-APP und der Watch-Erweiterung verwenden. Stellen Sie sicher, dass die Lösung über Folgendes verfügt:
 
 - Die **App-Gruppe** wurde im Abschnitt Zertifikate, Bezeichner **& profile** des Apple-Entwickler Portals konfiguriert.
 
-- Aktivierte **App-Gruppen** (und die **App-Gruppen-ID**) in der IOS-APP und der **App-ID** der Überwachungs Erweiterung und der Datei " **Berechtigungen. plist**".
+- Aktivierte **App-Gruppen** (und die **App-Gruppen-ID**) in der IOS-APP und der **App-ID** der Überwachungs Erweiterung und der Datei " *both* **Berechtigungen. plist**".
 
 ### <a name="certificates-identifiers--profiles"></a>Zertifikate, Bezeichner und Profile
 
-Um eine APP-Gruppe zu verwenden, erstellen Sie auf dem Bildschirm **App-Gruppen** einen Eintrag. Im folgenden Beispiel wird die Gruppe mit dem gleichen Reverse-DNS-Stil benannt, der häufig für App-IDs verwendet wird, jedoch mit dem `group.` Präfix (erforderlich):
+Um eine APP-Gruppe zu verwenden, erstellen Sie auf dem Bildschirm **App-Gruppen** einen Eintrag. Im folgenden Beispiel wird die Gruppe mit dem gleichen Reverse-DNS-Stil benannt, der häufig für App-IDs verwendet wird, jedoch mit dem `group.` Präfix (das erforderlich ist):
 
 ![Der Bezeichner](images/appgroups-new-sml.png)
 
@@ -100,7 +100,7 @@ Doppelklicken Sie, um die **Datei "** Berechtigungsdatei" in diesen Projekten zu
 - IOS-App-Projekt
 - Überwachungs Erweiterungsprojekt
 
-erforderlich.![Der Berechtigungen. plist-Editor](images/entitlements-plist-sml.png)
+.![Der Berechtigungen. plist-Editor](images/entitlements-plist-sml.png)
 
 Aktivieren Sie **keine** Berechtigungen im Überwachungs-App-Projekt. Es ist nicht erforderlich, auf der Überwachung selbst aktiviert zu werden.
 

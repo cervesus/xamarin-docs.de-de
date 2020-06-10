@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBoxview
-description: In diesem Artikel wird erläutert, wie Sie ein farbiges Rechteck für die Dekoration, Grafik und Interaktion in einer- Xamarin.Forms Anwendung verwenden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5f915955bff969ef38cdb7a89bf9cecf05401131
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136356"
+Title: " Xamarin.Forms boxview" Description: "in diesem Artikel wird erläutert, wie ein farbiges Rechteck für die Dekoration, Grafik und Interaktion in einer-Anwendung verwendet wird Xamarin.Forms ."
+ms. Prod: xamarin ms. assetid: 4cbf 703d-84a0-4cdf-A433-5926b587782a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/26/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxview
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
@@ -26,17 +12,6 @@ ms.locfileid: "84136356"
 Da Xamarin.Forms nicht über ein integriertes Vektorgrafik System verfügt, hilft bei der `BoxView` Kompensation von. Einige der in diesem Artikel beschriebenen Beispiel Programme verwenden `BoxView` zum Rendern von Grafiken. Die `BoxView` Größe der Größe kann einer Linie mit einer bestimmten Breite und Stärke ähneln und dann mithilfe der-Eigenschaft durch einen beliebigen Winkel gedreht werden `Rotation` .
 
 Obwohl `BoxView` einfache Grafiken imitieren kann, empfiehlt es sich, die [Verwendung von skiasharp Xamarin.Forms in](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) für anspruchsvollere Grafik Anforderungen zu untersuchen.
-
-In diesem Artikel werden die folgenden Themen behandelt:
-
-- **[Festlegen der Farbe und Größe](#colorandsize)** &ndash; von boxview Legen Sie die `BoxView` Eigenschaften fest.
-- **[Rendern von Text Dekorationen](#textdecorations)** &ndash; Verwenden Sie `BoxView` zum Rendern von Zeilen.
-- **[Auflisten von Farben mit boxview](#listingcolors)** &ndash; zeigen Sie alle Systemfarben in einer an `ListView` .
-- **[Spielen des Lebenszyklus nach dem Unterklassen-boxview](#subclassing)** &ndash; Implementieren Sie eine bekannte Mobilfunk-Automatisierung.
-- **[Erstellen einer digitalen Uhr](#digitalclock)** &ndash; simulieren Sie eine Punktmatrix Anzeige.
-- **[Erstellen einer analogen Uhr](#analogclock)** &ndash; Transformieren und Animieren von `BoxView` Elementen.
-
-<a name="colorandsize" />
 
 ## <a name="setting-boxview-color-and-size"></a>Festlegen der Farbe und Größe von boxview
 
@@ -55,7 +30,7 @@ Die `WidthRequest` -Eigenschaft und die-Eigenschaft `HeightRequest` spielen nur 
 
 Die `WidthRequest` -Eigenschaft und die-Eigenschaft `HeightRequest` werden ignoriert `BoxView` , wenn im Layout *eingeschränkt* ist. in diesem Fall erzwingt der Layoutcontainer eine eigene Größe auf dem `BoxView` .
 
-Eine `BoxView` kann in einer Dimension eingeschränkt und in der anderen nicht eingeschränkt werden. Wenn beispielsweise ein untergeordnetes Element `BoxView` eines vertikalen ist `StackLayout` , wird die vertikale Dimension der `BoxView` nicht eingeschränkt und die horizontale Dimension ist im allgemeinen beschränkt. Es gibt jedoch Ausnahmen für diese horizontale Dimension: Wenn die-Eigenschaft der- `BoxView` `HorizontalOptions` Eigenschaft auf einen anderen Wert als festgelegt ist `LayoutOptions.Fill` , wird die horizontale Dimension ebenfalls nicht eingeschränkt. Es ist auch möglich, dass der `StackLayout` selbst über eine nicht eingeschränkte horizontale Dimension verfügt. in diesem Fall `BoxView` wird der auch horizontal uneingeschränkt eingeschränkt.
+Eine `BoxView` kann in einer Dimension eingeschränkt und in einer anderen uneingeschränkt sein. Wenn beispielsweise ein untergeordnetes Element `BoxView` eines vertikalen ist `StackLayout` , wird die vertikale Dimension der `BoxView` nicht eingeschränkt und die horizontale Dimension ist im allgemeinen beschränkt. Es gibt jedoch Ausnahmen für diese horizontale Dimension: Wenn die-Eigenschaft der- `BoxView` `HorizontalOptions` Eigenschaft auf einen anderen Wert als festgelegt ist `LayoutOptions.Fill` , wird die horizontale Dimension ebenfalls nicht eingeschränkt. Es ist auch möglich, dass der `StackLayout` selbst über eine nicht eingeschränkte horizontale Dimension verfügt. in diesem Fall `BoxView` wird der auch horizontal uneingeschränkt eingeschränkt.
 
 Im [**basicboxview**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview) -Beispiel wird ein ein-Zoll-Quadrat `BoxView` in der Mitte der Seite angezeigt:
 
@@ -84,8 +59,6 @@ Wenn die `VerticalOptions` -Eigenschaft und die-Eigenschaft `HorizontalOptions` 
 Ein `BoxView` kann auch ein untergeordnetes Element eines sein `AbsoluteLayout` . In diesem Fall werden sowohl der Speicherort als auch die Größe der `BoxView` mithilfe der `LayoutBounds` angefügten bindbaren Eigenschaft festgelegt. Die `AbsoluteLayout` wird im Artikel " [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)" erläutert.
 
 Beispiele für alle diese Fälle finden Sie in den folgenden Beispielprogrammen.
-
-<a name="textdecorations" />
 
 ## <a name="rendering-text-decorations"></a>Rendern von Text Dekorationen
 
@@ -171,8 +144,6 @@ Schließlich können Sie eine vertikale Linie auf einer Seite eines textabtexts 
     </Label>
 </StackLayout>
 ```
-
-<a name="listingcolors" />
 
 ## <a name="listing-colors-with-boxview"></a>Auflisten von Farben mit boxview
 
@@ -305,8 +276,6 @@ Die visuellen Programmelemente werden in der XAML-Datei beschrieben. Die- `Items
 
 Die- `NamedColor` Objekte werden durch das-Objekt formatiert `ViewCell` , das als Daten Vorlage von festgelegt wird `ListView` . Diese Vorlage enthält eine `BoxView` , deren- `Color` Eigenschaft an die- `Color` Eigenschaft des-Objekts gebunden ist `NamedColor` .
 
-<a name="subclassing" />
-
 ## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Spielen des Lebenszyklus nach dem Unterklassen-boxview
 
 Das Spiel der Lebensdauer ist eine Mobil Funk Automat, die von der Mathematikerin John-Seite erfunden und in den 70er Jahren auf den Seiten von *Scientific American* populär gemacht wurde. Eine gute Einführung finden Sie im Wikipedia-Artikel [-Spiel der Lebensdauer](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
@@ -361,8 +330,6 @@ class LifeCell : BoxView
 Das **gameoolife** -Programm umfasst auch eine `LifeGrid` Klasse, die einen Großteil der Logik des Spiels kapselt, und eine Klasse, die `MainPage` die visuellen Elemente des Programms behandelt. Diese umfassen ein Overlay, das die Regeln des Spiels beschreibt. Hier ist das Programm in Aktion, das ein paar hundert `LifeCell` Objekte auf der Seite anzeigt:
 
 [![Lebenszyklus](boxview-images/gameoflife-small.png "Lebenszyklus")](boxview-images/gameoflife-large.png#lightbox "Lebenszyklus")
-
-<a name="digitalclock" />
 
 ## <a name="creating-a-digital-clock"></a>Erstellen einer digitalen Uhr
 
@@ -599,8 +566,6 @@ public partial class MainPage : ContentPage
 }
 ```
 
-<a name="analogclock" />
-
 ## <a name="creating-an-analog-clock"></a>Erstellen einer analogen Uhr
 
 Eine Punkt-Matrix-Uhr scheint eine offensichtliche Anwendung von zu sein `BoxView` , aber `BoxView` Elemente können auch eine analoge Uhr realisieren:
@@ -782,10 +747,6 @@ public partial class MainPage : ContentPage
 ```
 
 Die zweite Seite wird etwas anders behandelt: eine Animations Beschleunigungs Funktion wird angewendet, um die Bewegung als mechanisch und nicht als glatt zu gestalten. Bei jedem Tick Ruft die zweite Hand ein wenig ab und überschreitet dann das Ziel. Diese Menge an Code erhöht den Realismus der Bewegung.
-
-## <a name="conclusion"></a>Zusammenfassung
-
-Das `BoxView` mag zuerst einfach erscheinen, aber wie Sie gesehen haben, kann es sehr vielseitig sein und kann Visualisierungen, die in der Regel nur mit Vektorgrafiken möglich sind, so gut reproduzieren. Ausführlichere Grafiken finden Sie unter [Verwenden von skiasharp Xamarin.Forms in ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 ## <a name="related-links"></a>Verwandte Links
 

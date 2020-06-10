@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/15/2018
-ms.openlocfilehash: 7a7f0fe9d0dc07d892686e6596f3cc09a2587513
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6366a51f18ae2af8a94cf60a82e31ff413180e2d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003377"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573949"
 ---
 # <a name="appearance-api-in-xamarinios"></a>Darstellungs-API in xamarin. IOS
 
 _mit IOS können Sie visuelle Eigenschafts Einstellungen auf einer statischen Klassenebene anstelle einzelner Objekte anwenden, sodass die Änderung für alle Instanzen dieses Steuer Elements in der Anwendung gilt._
 
-Diese Funktion wird in xamarin. IOS über eine statische `Appearance`-Eigenschaft für alle UIKit-Steuerelemente verfügbar gemacht, die diese Funktion unterstützen. Visuelle Darstellung (Eigenschaften wie z. b. Tönungs-Farbe und Hintergrundbild) können daher problemlos angepasst werden, um der Anwendung ein konsistentes Erscheinungsbild zu geben. Die Darstellungs-API wurde in ios 5 eingeführt, und einige Teile davon wurden in ios 9 als veraltet markiert. es ist immer noch eine gute Möglichkeit, einige Formatierungs-und Design Effekte in xamarin. IOS-apps zu erzielen.
+Diese Funktionalität wird in xamarin. IOS über eine statische `Appearance` Eigenschaft für alle UIKit-Steuerelemente verfügbar gemacht, die diese Funktion unterstützen. Visuelle Darstellung (Eigenschaften wie z. b. Tönungs-Farbe und Hintergrundbild) können daher problemlos angepasst werden, um der Anwendung ein konsistentes Erscheinungsbild zu geben. Die Darstellungs-API wurde in ios 5 eingeführt, und einige Teile davon wurden in ios 9 als veraltet markiert. es ist immer noch eine gute Möglichkeit, einige Formatierungs-und Design Effekte in xamarin. IOS-apps zu erzielen.
 
 ## <a name="overview"></a>Übersicht
 
@@ -35,7 +35,7 @@ Die Beispielanwendung für die Darstellung veranschaulicht alle drei Methoden, w
 [![](introduction-to-the-appearance-api-images/appearance01-sml.png "The Appearance sample application demonstrates all three methods")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 Ab IOS 8 wurde der Darstellungs Proxy auf traitcollections erweitert.
- `AppearanceForTraitCollection` kann verwendet werden, um die Standarddarstellung für eine bestimmte Merkmals Auflistung festzulegen. Weitere Informationen hierzu finden Sie im Handbuch [Introduction to Storyboards (Einführung in Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) ).
+ `AppearanceForTraitCollection`kann verwendet werden, um die Standarddarstellung für eine bestimmte Merkmals Auflistung festzulegen. Weitere Informationen hierzu finden Sie im Handbuch [Introduction to Storyboards (Einführung in Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) ).
 
 ## <a name="setting-appearance-properties"></a>Festlegen von Darstellungs Eigenschaften
 
@@ -54,7 +54,7 @@ UIProgressView.Appearance.ProgressTintColor = UIColor.Yellow;
 UIProgressView.Appearance.TrackTintColor = UIColor.Orange;
 ```
 
-Die grünen Element Stile werden wie folgt festgelegt, in der `ViewDidLoad`-Methode, die die Standardwerte und *die statische* Darstellungs Klasse überschreibt:
+Die grünen Element Stile werden wie folgt festgelegt, in der `ViewDidLoad` -Methode, die die Standardwerte und *Appearance* die statische Darstellungs Klasse überschreibt:
 
 ```csharp
 slider2.ThumbTintColor = UIColor.FromRGB (0,127,70); // dark green
@@ -69,15 +69,15 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>Verwenden von uiappearance in xamarin. Forms
 
-Die Darstellungs-API kann nützlich sein, wenn Sie [die IOS-App](~/xamarin-forms/platform/ios/formatting.md#uiappearance) in xamarin. Forms-Lösungen formatieren. Einige Zeilen in der `AppDelegate`-Klasse können dabei helfen, ein bestimmtes Farbschema zu implementieren, ohne einen [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)erstellen zu müssen.
+Die Darstellungs-API kann nützlich sein, wenn Sie [die IOS-App](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api) in xamarin. Forms-Lösungen formatieren. Einige Zeilen in der- `AppDelegate` Klasse können dabei helfen, ein bestimmtes Farbschema zu implementieren, ohne einen [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)erstellen zu müssen.
 
 ### <a name="custom-themes-and-uiappearance"></a>Benutzerdefinierte Designs und uiappearance
 
-IOS ermöglicht, dass viele visuelle Attribute der Steuerelemente der Benutzeroberfläche mithilfe der *uiappearance* -APIs "thematisiert" werden, um zu erzwingen, dass alle Instanzen eines bestimmten Steuer Elements dieselbe Darstellung aufweisen. Diese wird als Darstellungs Eigenschaft für viele Klassen von Benutzeroberflächen-Steuerelementen verfügbar gemacht, nicht für einzelne Instanzen des Steuer Elements. Das Festlegen einer Anzeige Eigenschaft für die Eigenschaft statischer `Appearance` wirkt sich auf alle Steuerelemente dieses Typs in der Anwendung aus.
+IOS ermöglicht, dass viele visuelle Attribute der Steuerelemente der Benutzeroberfläche mithilfe der *uiappearance* -APIs "thematisiert" werden, um zu erzwingen, dass alle Instanzen eines bestimmten Steuer Elements dieselbe Darstellung aufweisen. Diese wird als Darstellungs Eigenschaft für viele Klassen von Benutzeroberflächen-Steuerelementen verfügbar gemacht, nicht für einzelne Instanzen des Steuer Elements. Das Festlegen einer Anzeige Eigenschaft für die statische `Appearance` Eigenschaft wirkt sich auf alle Steuerelemente dieses Typs in der Anwendung aus.
 
 Um das Konzept besser zu verstehen, sehen Sie sich ein Beispiel an.
 
-Um einen bestimmten `UISegmentedControl` in ein Magenta-tint zu ändern, verweisen wir wie folgt auf das spezifische Steuerelement auf unserem Bildschirm `ViewDidLoad`:
+Um einen bestimmten `UISegmentedControl` so zu ändern, dass er ein Magenta-tint hat, verweisen wir wie folgt auf das spezifische Steuerelement auf unserem Bildschirm `ViewDidLoad` :
 
 ```csharp
 sg1.TintColor = UIColor.Magenta;
@@ -91,7 +91,7 @@ Die folgende Abbildung zeigt, dass das Tönungs nur auf dem Steuerelement mit de
 
 [![](introduction-to-the-appearance-api-images/image53.png "Setting the individual control tint")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
-Um viele Steuerelemente auf diese Weise festzulegen, wäre es vollständig ineffizient, daher können wir stattdessen die statische `Appearance`-Eigenschaft für die Klasse selbst festlegen. Dies wird im folgenden Code gezeigt:
+Um viele Steuerelemente auf diese Weise festzulegen, wäre es vollständig ineffizient, sodass wir stattdessen die statische `Appearance` Eigenschaft für die Klasse selbst festlegen können. Dies wird im folgenden Code gezeigt:
 
 ```csharp
 UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
@@ -101,7 +101,7 @@ Das Bild unten zeigt nun beide segmentierten Steuerelemente, deren Darstellung a
 
 [![](introduction-to-the-appearance-api-images/image54.png "Setting the Appearance control tint")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
-`Appearance` Eigenschaften sollten früh im Anwendungslebenszyklus festgelegt werden, z. b. im `FinishedLaunching` Ereignis des appdelegaten oder in einem ViewController, bevor die betroffenen Steuerelemente angezeigt werden.
+`Appearance`Eigenschaften sollten früh im Anwendungslebenszyklus festgelegt werden, z. b. im Ereignis des appdelegaten `FinishedLaunching` oder in einem ViewController, bevor die betroffenen Steuerelemente angezeigt werden.
 
 Ausführlichere Informationen finden Sie unter [Einführung in die](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) Darstellungs-API.
 
@@ -109,4 +109,4 @@ Ausführlichere Informationen finden Sie unter [Einführung in die](~/ios/user-i
 
 - [Darstellung (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/appearance)
 - [Uiappearance-Protokoll Referenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
-- [Darstellung in xamarin. Forms](~/xamarin-forms/platform/ios/formatting.md#uiappearance)
+- [Darstellung in xamarin. Forms](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api)

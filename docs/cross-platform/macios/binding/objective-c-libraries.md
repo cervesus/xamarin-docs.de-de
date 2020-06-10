@@ -1,21 +1,21 @@
 ---
 title: Binden von Ziel-C-Bibliotheken
-description: Dieses Dokument enthält eine allgemeine Übersicht über das Erstellen C# von Bindungen mit dem Ziel-C-Code, in dem beschrieben wird, wie Ereignisse, Methoden, benutzerdefinierte Steuerelemente und vieles mehr gebunden werden.
+description: Dieses Dokument enthält eine allgemeine Übersicht über das Erstellen von c#-Bindungen mit dem Ziel-C-Code, in dem beschrieben wird, wie Ereignisse, Methoden, benutzerdefinierte Steuerelemente und vieles mehr gebunden werden.
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 67e66d5d8f1023c0e7561791ff29ed2952ac040b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306026"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571011"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Ziel-C-Bibliotheken
 
-Bei der Arbeit mit xamarin. IOS oder xamarin. Mac können Sie Fälle erkennen, in denen Sie eine Ziel-C-Bibliothek eines Drittanbieters verwenden möchten. In diesen Fällen können Sie xamarin-Bindungs Projekte verwenden, um eine C# Bindung mit den nativen Ziel-C-Bibliotheken zu erstellen. Das Projekt verwendet die gleichen Tools, die wir verwenden, um die IOS-und Mac C#-APIs zu verwenden.
+Bei der Arbeit mit xamarin. IOS oder xamarin. Mac können Sie Fälle erkennen, in denen Sie eine Ziel-C-Bibliothek eines Drittanbieters verwenden möchten. In diesen Fällen können Sie xamarin-Bindungs Projekte verwenden, um eine c#-Bindung mit den nativen Ziel-C-Bibliotheken zu erstellen. Das Projekt verwendet die gleichen Tools, mit denen die IOS-und Mac-APIs in c# übertragen werden.
 
 In diesem Dokument wird beschrieben, wie Sie die Ziel-C-APIs binden. Wenn Sie nur C-APIs binden, sollten Sie hierfür den standardmäßigen .net [-](https://www.mono-project.com/docs/advanced/pinvoke/)Mechanismus verwenden.
 Details zur statischen Verknüpfung einer C-Bibliothek finden Sie auf der Seite [Verknüpfungs](~/ios/platform/native-interop.md) systemeigene Bibliotheken.
@@ -30,7 +30,7 @@ Auf dieser Seite wird beschrieben, wie Sie eine IOS-Bindung bearbeiten, aber Mac
 
 Sie können das Beispiel Projekt für [IOS](https://github.com/xamarin/monotouch-samples/tree/master/BindingSample) -Bindungen verwenden, um mit Bindungen zu experimentieren.
 
-<a name="Getting_Started" />
+<a name="Getting_Started"></a>
 
 ## <a name="getting-started"></a>Erste Schritte
 
@@ -44,7 +44,7 @@ Hierzu können Sie Visual Studio für Mac den Projekttyp, die **IOS-> Bibliothek
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Die einfachste Möglichkeit zum Erstellen einer Bindung besteht darin, ein xamarin. IOS-Bindungs Projekt zu erstellen.
-Sie können dies in Visual Studio unter Windows durchführen, indem Sie den Projekttyp,  **C# Visual > IOS > Bindungs Bibliothek (IOS)** auswählen:
+Sie können dies in Visual Studio unter Windows durchführen, indem Sie den **Projekttyp, Visual c# > IOS > Bindungs Bibliothek (IOS)** auswählen:
 
 [![](objective-c-libraries-images/00vs-sml.png "iOS Bindings Library iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -53,17 +53,17 @@ Sie können dies in Visual Studio unter Windows durchführen, indem Sie den Proj
 
 -----
 
-Das generierte Projekt enthält eine kleine Vorlage, die Sie bearbeiten können, die zwei Dateien enthält: `ApiDefinition.cs` und `StructsAndEnums.cs`.
+Das generierte Projekt enthält eine kleine Vorlage, die Sie bearbeiten können, die zwei Dateien enthält: `ApiDefinition.cs` und `StructsAndEnums.cs` .
 
-In der `ApiDefinition.cs` wird der API-Vertrag definiert. Hierbei handelt es sich um die Datei, in der beschrieben wird, wie die zugrundeliegende C#Ziel-C-API in projiziert wird. Die Syntax und der Inhalt dieser Datei sind das Hauptthema der Erörterung dieses Dokuments, und der Inhalt der Datei ist auf C# Schnittstellen C# und Delegatdeklarationen beschränkt. Die `StructsAndEnums.cs`-Datei ist die Datei, in der Sie alle Definitionen eingeben, die von den Schnittstellen und Delegaten benötigt werden. Dies schließt Enumerationswerte und Strukturen ein, die von Ihrem Code verwendet werden können.
+`ApiDefinition.cs`In der wird der API-Vertrag definiert. Hierbei handelt es sich um die Datei, in der beschrieben wird, wie die zugrundeliegende Ziel-C-API in c# projiziert wird. Die Syntax und der Inhalt dieser Datei sind das Hauptthema der Erörterung dieses Dokuments, und der Inhalt der Datei ist auf c#-Schnittstellen und c#-Delegatdeklarationen beschränkt. `StructsAndEnums.cs`Bei der Datei handelt es sich um die Datei, in die Sie alle für die Schnittstellen und Delegaten erforderlichen Definitionen eingeben. Dies schließt Enumerationswerte und Strukturen ein, die von Ihrem Code verwendet werden können.
 
-<a name="Binding_an_API" />
+<a name="Binding_an_API"></a>
 
 ## <a name="binding-an-api"></a>Binden einer API
 
 Um eine umfassende Bindung zu erreichen, sollten Sie die Definition der Ziel-C-API verstehen und sich mit den .NET Framework Entwurfs Richtlinien vertraut machen.
 
-Um die Bibliothek zu binden, beginnen Sie in der Regel mit einer API-Definitionsdatei. Eine API-Definitionsdatei ist lediglich C# eine Quelldatei, C# die Schnittstellen enthält, die mit einer Handvoll von Attributen versehen wurden, die die Bindung steuern.  Diese Datei definiert, was der Vertrag zwischen C# und Ziel-C ist.
+Um die Bibliothek zu binden, beginnen Sie in der Regel mit einer API-Definitionsdatei. Eine API-Definitionsdatei ist lediglich eine c#-Quelldatei, die c#-Schnittstellen enthält, die mit einer Handvoll von Attributen kommentiert wurden, die die Bindung steuern.  Diese Datei definiert, was der Vertrag zwischen c# und Ziel-C ist.
 
 Dies ist z. b. eine triviale API-Datei für eine Bibliothek:
 
@@ -91,15 +91,15 @@ namespace Cocos2D {
 }
 ```
 
-Das obige Beispiel definiert eine Klasse mit dem Namen `Cocos2D.Camera`, die vom `NSObject` Basistyp abgeleitet wird (dieser Typ stammt von `Foundation.NSObject`) und der eine statische Eigenschaft (`ZEye`) definiert, zwei Methoden, die keine Argumente akzeptieren, und eine Methode, die drei Argumente annimmt.
+Im obigen Beispiel wird eine Klasse namens definiert `Cocos2D.Camera` , die vom `NSObject` Basistyp abgeleitet wird (dieser Typ stammt von `Foundation.NSObject` ) und der eine statische Eigenschaft ( `ZEye` ) definiert, zwei Methoden, die keine Argumente akzeptieren, und eine Methode, die drei Argumente annimmt.
 
 Eine ausführliche Erläuterung des Formats der API-Datei und der Attribute, die Sie verwenden können, finden Sie unten im Abschnitt [API-Definitionsdatei](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) .
 
 Zum Herstellen einer kompletten Bindung arbeiten Sie in der Regel mit vier Komponenten:
 
-- Die API-Definitionsdatei (`ApiDefinition.cs` in der Vorlage).
-- Optional: Alle Enumerationstypen, Typen, Strukturen, die von der API-Definitionsdatei (`StructsAndEnums.cs` in der Vorlage) benötigt werden.
-- Optional: zusätzliche Quellen, die die generierte Bindung erweitern können oder eine C# benutzerfreundlichere API (alle C# Dateien, die Sie dem Projekt hinzufügen) bereitstellen.
+- Die API-Definitionsdatei ( `ApiDefinition.cs` in der Vorlage).
+- Optional: Alle Enumerationstypen, Typen, Strukturen, die von der API-Definitionsdatei ( `StructsAndEnums.cs` in der Vorlage) benötigt werden.
+- Optional: zusätzliche Quellen, die die generierte Bindung erweitern können oder eine weitere c#-benutzerfreundliche API (alle c#-Dateien, die Sie dem Projekt hinzufügen) bereitstellen.
 - Die native Bibliothek, die Sie binden.
 
 Dieses Diagramm zeigt die Beziehung zwischen den Dateien:
@@ -108,7 +108,7 @@ Dieses Diagramm zeigt die Beziehung zwischen den Dateien:
 
 Die API-Definitionsdatei enthält nur Namespaces und Schnittstellendefinitionen (mit allen Membern, die eine Schnittstelle enthalten kann) und sollte keine Klassen, Enumerationen, Delegaten oder Strukturen enthalten. Die API-Definitionsdatei ist lediglich der Vertrag, der zum Generieren der API verwendet wird.
 
-Zusätzlicher Code, den Sie wie Enumerationen oder unterstützende Klassen benötigen, sollte in einer separaten Datei gehostet werden, im obigen Beispiel ist "cameramode" ein Enumerationswert, der in der CS-Datei nicht vorhanden ist und in einer separaten Datei gehostet werden soll, z. b. `StructsAndEnums.cs`:
+Zusätzlicher Code, den Sie wie Enumerationen oder unterstützende Klassen benötigen, sollte in einer separaten Datei gehostet werden, im obigen Beispiel ist der "cameramode" ein Enumerationswert, der in der CS-Datei nicht vorhanden ist und in einer separaten Datei gehostet werden soll, z. b. `StructsAndEnums.cs` :
 
 ```csharp
 public enum CameraMode {
@@ -116,9 +116,9 @@ public enum CameraMode {
 }
 ```
 
-Die `APIDefinition.cs`-Datei wird mit der `StructsAndEnum`-Klasse kombiniert und verwendet, um die Kern Bindung der Bibliothek zu generieren. Die resultierende Bibliothek kann unverändert verwendet werden, aber in der Regel sollten Sie die resultierende Bibliothek optimieren, um einige C# Features für die Vorteile Ihrer Benutzer hinzuzufügen. Beispiele hierfür sind das Implementieren einer `ToString()` Methode, C# das Bereitstellen von indexatoren, das Hinzufügen impliziter Konvertierungen zu und aus einigen systemeigenen Typen oder das Bereitstellen stark typisierter Versionen einiger Methoden. Diese Verbesserungen werden in C# zusätzlichen Dateien gespeichert. Fügen Sie dem C# Projekt lediglich die Dateien hinzu, die in diesen Buildprozess eingeschlossen werden.
+Die `APIDefinition.cs` Datei wird mit der `StructsAndEnum` -Klasse kombiniert und verwendet, um die Kern Bindung der Bibliothek zu generieren. Die resultierende Bibliothek kann unverändert verwendet werden, aber in der Regel sollten Sie die resultierende Bibliothek optimieren, um einige c#-Features für den Vorteil ihrer Benutzer hinzuzufügen. Beispiele hierfür sind das Implementieren einer `ToString()` Methode, die Bereitstellung von c#-indexatoren, das Hinzufügen impliziter Konvertierungen zu und aus einigen systemeigenen Typen oder das Bereitstellen stark typisierter Versionen einiger Methoden Diese Verbesserungen werden in zusätzlichen c#-Dateien gespeichert. Fügen Sie dem Projekt lediglich die c#-Dateien hinzu, die in diesen Buildprozess eingeschlossen werden.
 
-Dies zeigt, wie Sie den Code in der `Extra.cs`-Datei implementieren. Beachten Sie, dass Sie partielle Klassen verwenden, da diese die partiellen Klassen erweitern, die aus der Kombination der `ApiDefinition.cs` und der `StructsAndEnums.cs` Core-Bindung generiert werden:
+Dies zeigt, wie Sie den Code in der `Extra.cs` Datei implementieren. Beachten Sie, dass Sie partielle Klassen verwenden, da diese die partiellen Klassen erweitern, die aus der Kombination von `ApiDefinition.cs` und der `StructsAndEnums.cs` Kern Bindung generiert werden:
 
 ```csharp
 public partial class Camera {
@@ -132,8 +132,8 @@ public partial class Camera {
 
 Wenn Sie die Bibliothek aufbauen, wird Ihre Native Bindung erstellt.
 
-Um diese Bindung abzuschließen, sollten Sie die native Bibliothek zum Projekt hinzufügen.  Hierzu können Sie die native Bibliothek zu Ihrem Projekt hinzufügen, indem Sie entweder die native Bibliothek von Finder auf das Projekt im Projektmappen-Explorer ziehen und ablegen, oder indem Sie mit der rechten Maustaste auf das Projekt klicken und **Hinzufügen** > **Dateien hinzufügen** auswählen, um die native Bibliothek auszuwählen.
-Native Bibliotheken nach Konvention beginnen mit dem Wort "lib" und enden mit der Erweiterung ". a". Wenn Sie dies tun, werden Visual Studio für Mac zwei Dateien hinzufügen: die Datei ". a" und C# eine automatisch aufgefüllte Datei, die Informationen darüber enthält, was die native Bibliothek enthält:
+Um diese Bindung abzuschließen, sollten Sie die native Bibliothek zum Projekt hinzufügen.  Hierzu können Sie die native Bibliothek zu Ihrem Projekt hinzufügen, indem Sie die native Bibliothek von Finder auf das Projekt im Projektmappen-Explorer ziehen und ablegen oder indem Sie mit der rechten Maustaste auf das Projekt klicken und hinzufügen Dateien hinzu **fügen**auswählen,  >  **Add Files** um die native Bibliothek auszuwählen.
+Native Bibliotheken nach Konvention beginnen mit dem Wort "lib" und enden mit der Erweiterung ". a". Wenn Sie dies tun, werden Visual Studio für Mac zwei Dateien hinzufügen: die Datei ". a" und eine automatisch aufgefüllte c#-Datei, die Informationen über die Inhalte der nativen Bibliothek enthält:
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
@@ -146,29 +146,29 @@ using ObjCRuntime;
 [assembly: LinkWith ("libMagicChord.a", SmartLink = true, ForceLoad = true)]
 ```
 
-Ausführliche Informationen zur Verwendung des [`[LinkWith]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) 
+Ausführliche Informationen zur Verwendung des[`[LinkWith]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) 
 das Attribut ist im [Referenzhandbuch zu Bindungs Typen](~/cross-platform/macios/binding/binding-types-reference.md)dokumentiert.
 
-Wenn Sie nun das Projekt erstellen, erhalten Sie eine `MagicChords.dll`-Datei, die sowohl die Bindung als auch die native Bibliothek enthält. Sie können dieses Projekt oder die resultierende DLL zur eigenen Verwendung an andere Entwickler verteilen.
+Wenn Sie nun das Projekt erstellen, erhalten Sie eine `MagicChords.dll` Datei, die die Bindung und die native Bibliothek enthält. Sie können dieses Projekt oder die resultierende DLL zur eigenen Verwendung an andere Entwickler verteilen.
 
 Manchmal stellen Sie möglicherweise fest, dass Sie einige Enumerationswerte, Delegatdefinitionen oder andere Typen benötigen. Platzieren Sie diese nicht in der API-Definitionsdatei, da dies lediglich ein Vertrag ist.
 
-<a name="The_API_definition_file" />
+<a name="The_API_definition_file"></a>
 
 ## <a name="the-api-definition-file"></a>Die API-Definitionsdatei
 
-Die API-Definitionsdatei besteht aus einer Reihe von Schnittstellen. Die Schnittstellen in der API-Definition werden in eine Klassen Deklaration umgewandelt, und Sie müssen mit dem [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) -Attribut versehen werden, um die Basisklasse für die Klasse anzugeben.
+Die API-Definitionsdatei besteht aus einer Reihe von Schnittstellen. Die Schnittstellen in der API-Definition werden in eine Klassen Deklaration umgewandelt, und Sie müssen mit dem-Attribut versehen werden [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) , um die Basisklasse für die-Klasse anzugeben.
 
 Sie Fragen sich vielleicht, warum wir keine Klassen anstelle von Schnittstellen für die Vertrags Definition verwendet haben. Wir haben Schnittstellen gewählt, da es uns ermöglichte, den Vertrag für eine Methode zu schreiben, ohne einen Methoden Text in der API-Definitionsdatei bereitstellen zu müssen oder einen Text bereitzustellen, der eine Ausnahme auslösen oder einen sinnvollen Wert zurückgeben musste.
 
 Da wir jedoch die-Schnittstelle als Gerüst zum Generieren einer Klasse verwenden, mussten wir die verschiedenen Teile des Vertrags mit Attributen versehen, um die Bindung zu steuern.
 
-<a name="Binding_Methods" />
+<a name="Binding_Methods"></a>
 
 ### <a name="binding-methods"></a>Bindungsmethoden
 
-Die einfachste Bindung besteht darin, eine Methode zu binden. Deklarieren Sie einfach eine Methode in der Schnitt C# Stelle mit den Benennungs Konventionen, und ergänzen Sie die Methode mit dem [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
--Attribut angezeigt. Das [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Attribut verknüpft Ihren C# Namen mit dem Ziel-C-Namen in der xamarin. IOS-Laufzeit. Der-Parameter der [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+Die einfachste Bindung besteht darin, eine Methode zu binden. Deklarieren Sie einfach eine Methode in der Schnittstelle mit den Benennungs Konventionen für c#, und ergänzen Sie die Methode mit dem[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
+-Attribut angezeigt. Das [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Attribut verknüpft ihren c#-Namen mit dem Ziel-C-Namen in der xamarin. IOS-Laufzeit. Der-Parameter des[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 Attribut ist der Name des Ziels-C-Selektor. Einige Beispiele:
 
 ```csharp
@@ -185,7 +185,7 @@ nint Add (nint a, nint b);
 void Draw (string text, nint column, nint row);
 ```
 
-Die obigen Beispiele veranschaulichen, wie Instanzmethoden gebunden werden können. Wenn Sie statische Methoden binden möchten, müssen Sie das [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) -Attribut wie folgt verwenden:
+Die obigen Beispiele veranschaulichen, wie Instanzmethoden gebunden werden können. Zum Binden statischer Methoden müssen Sie das- [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) Attribut wie folgt verwenden:
 
 ```csharp
 // A static method, that takes no arguments
@@ -193,9 +193,9 @@ Die obigen Beispiele veranschaulichen, wie Instanzmethoden gebunden werden könn
 void Beep ();
 ```
 
-Dies ist erforderlich, da der Vertrag Teil einer Schnittstelle ist und Schnittstellen keine Darstellung statischer vs-instanzdeklarationen aufweisen, sodass es erneut erforderlich ist, auf Attribute zurückzugreifen. Wenn Sie eine bestimmte Methode aus der Bindung ausblenden möchten, können Sie die Methode mit dem [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) -Attribut ergänzen.
+Dies ist erforderlich, da der Vertrag Teil einer Schnittstelle ist und Schnittstellen keine Darstellung statischer vs-instanzdeklarationen aufweisen, sodass es erneut erforderlich ist, auf Attribute zurückzugreifen. Wenn Sie eine bestimmte Methode aus der Bindung ausblenden möchten, können Sie die Methode mit dem- [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) Attribut ergänzen.
 
-Der `btouch-native`-Befehl führt eine Überprüfung auf Verweis Parameter aus, die nicht NULL sind. Wenn Sie NULL-Werte für einen bestimmten Parameter zulassen möchten, verwenden Sie den [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
+Der `btouch-native` Befehl führt eine Überprüfung auf Verweis Parameter aus, die nicht NULL sind. Wenn Sie NULL-Werte für einen bestimmten Parameter zulassen möchten, verwenden Sie das[`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
 -Attribut für den-Parameter wie folgt:
 
 ```csharp
@@ -203,20 +203,20 @@ Der `btouch-native`-Befehl führt eine Überprüfung auf Verweis Parameter aus, 
 string SetText ([NullAllowed] string text);
 ```
 
-Beim Exportieren eines Verweis Typs können Sie mit dem [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Schlüsselwort auch die Zuordnungs Semantik angeben. Dies ist erforderlich, um sicherzustellen, dass keine Daten verloren gehen.
+Beim Exportieren eines Verweis Typs mit dem- [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Schlüsselwort können Sie auch die Zuordnungs Semantik angeben. Dies ist erforderlich, um sicherzustellen, dass keine Daten verloren gehen.
 
-<a name="Binding_Properties" />
+<a name="Binding_Properties"></a>
 
 ### <a name="binding-properties"></a>Bindungseigenschaften
 
-Genau wie Methoden werden die Ziel-C-Eigenschaften mithilfe der [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
--Attribut, und ordnen C# Sie Eigenschaften direkt zu. Ebenso wie Methoden können Eigenschaften mit dem [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)
-und der [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+Genau wie Methoden werden die Ziel-C-Eigenschaften mithilfe der[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
+-Attribut, und ordnen Sie die c#-Eigenschaften direkt zu. Ebenso wie Methoden können Eigenschaften mit dem[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)
+Und die[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 definiert.
 
-Wenn Sie das [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Attribut für eine Eigenschaft im decksatz verwenden, bindet bberührungs-Native tatsächlich zwei Methoden: Getter und Setter. Der Name, den Sie für den Export angeben, ist der **baseName** , und der Setter wird berechnet, indem das Wort "Set" vorangestellt wird. dabei wird der erste Buchstabe des **baseName** in Großbuchstaben umgewandelt, und der Selektor nimmt ein Argument an. Dies bedeutet, dass `[Export ("label")]`, die auf eine Eigenschaft angewendet werden, tatsächlich die Methoden "Label" und "setlabel:" mit Ziel-C bindet.
+Wenn Sie das- [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Attribut für eine Eigenschaft im Untertitel verwenden, bindet bberührungs-Native zwei Methoden: Getter und Setter. Der Name, den Sie für den Export angeben, ist der **baseName** , und der Setter wird berechnet, indem das Wort "Set" vorangestellt wird. dabei wird der erste Buchstabe des **baseName** in Großbuchstaben umgewandelt, und der Selektor nimmt ein Argument an. Dies bedeutet, dass das `[Export ("label")]` anwenden auf eine Eigenschaft tatsächlich die "Label"-und "setlabel:"-Methoden bindet.
 
-Manchmal folgen die Eigenschaften von "Ziel-C" nicht dem oben beschriebenen Muster, und der Name wird manuell überschrieben. In diesen Fällen können Sie steuern, wie die Bindung generiert wird, indem Sie die [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
+Manchmal folgen die Eigenschaften von "Ziel-C" nicht dem oben beschriebenen Muster, und der Name wird manuell überschrieben. In diesen Fällen können Sie steuern, wie die Bindung generiert wird, indem Sie die[`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 -Attribut für den Getter oder Setter, z. b.:
 
 ```csharp
@@ -238,16 +238,16 @@ interface UIView_MyIn
 }
 ```
 
-Dabei sind Getter und Setter explizit als in den `name`-und `setName` Bindungen oben definiert.
+Dabei sind Getter und Setter explizit als in den `name` Bindungen und definiert `setName` .
 
-Zusätzlich zur Unterstützung statischer Eigenschaften mithilfe von [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)können Sie Thread statische Eigenschaften mit [`[IsThreadStatic]`](~/cross-platform/macios/binding/binding-types-reference.md#IsThreadStaticAttribute)ergänzen, z. b.:
+Zusätzlich zur Unterstützung statischer Eigenschaften mithilfe von [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) können Sie Thread statische Eigenschaften mit ergänzen, z. b. [`[IsThreadStatic]`](~/cross-platform/macios/binding/binding-types-reference.md#IsThreadStaticAttribute) :
 
 ```csharp
 [Export ("currentRunLoop")][Static][IsThreadStatic]
 NSRunLoop Current { get; }
 ```
 
-Ebenso wie Methoden es ermöglichen, dass einige Parameter mit [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)gekennzeichnet werden, können Sie [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
+Ebenso wie Methoden das kennzeichnen einiger Parameter mit zulassen [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) , können Sie Folgendes anwenden:[`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
 für eine Eigenschaft, die angibt, dass NULL ein gültiger Wert für die Eigenschaft ist, z. b.:
 
 ```csharp
@@ -255,7 +255,7 @@ für eine Eigenschaft, die angibt, dass NULL ein gültiger Wert für die Eigensc
 string Text { get; set; }
 ```
 
-Der [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) -Parameter kann auch direkt auf dem Setter angegeben werden:
+Der- [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) Parameter kann auch direkt auf dem Setter angegeben werden:
 
 ```csharp
 [Export ("text")]
@@ -266,7 +266,7 @@ string Text { get; [NullAllowed] set; }
 
 Beachten Sie die folgenden Einschränkungen, wenn Sie die Bindung für ein benutzerdefiniertes Steuerelement einrichten:
 
-1. **Bindungseigenschaften müssen statisch sein** : beim Definieren der Bindung von Eigenschaften muss das [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) -Attribut verwendet werden.
+1. **Bindungseigenschaften müssen statisch sein** : beim Definieren der Bindung von Eigenschaften muss das- [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) Attribut verwendet werden.
 2. **Eigenschaftsnamen müssen exakt übereinstimmen** . der Name, der zum Binden der Eigenschaft verwendet wird, muss mit dem Namen der Eigenschaft im benutzerdefinierten Steuerelement exakt übereinstimmen.
 3. **Eigenschafts Typen müssen exakt übereinstimmen** : der Variablentyp, mit dem die Eigenschaft gebunden wird, muss mit dem Typ der Eigenschaft im benutzerdefinierten Steuerelement exakt übereinstimmen.
 4. Halte **Punkte und Getter/Setter** -Breakpoints, die in den Getter-oder Setter-Methoden der Eigenschaft platziert werden, werden nie getroffen.
@@ -274,18 +274,18 @@ Beachten Sie die folgenden Einschränkungen, wenn Sie die Bindung für ein benut
 
 Wenn die oben aufgeführten Einschränkungen nicht beachtet werden, kann die Bindung zur Laufzeit automatisch fehlschlagen.
 
-<a name="MutablePattern" />
+<a name="MutablePattern"></a>
 
 #### <a name="objective-c-mutable-pattern-and-properties"></a>Änderbare-Muster und Eigenschaften von Ziel-C
 
-Ziel-C-Frameworks verwenden eine Ausdrucks Formatierung, bei der einige Klassen mit einer änderbaren Unterklasse unveränderlich sind. `NSString` ist beispielsweise die unveränderliche Version, während `NSMutableString` die Unterklasse ist, die Mutation zulässt.
+Ziel-C-Frameworks verwenden eine Ausdrucks Formatierung, bei der einige Klassen mit einer änderbaren Unterklasse unveränderlich sind. Beispielsweise `NSString` ist die unveränderliche Version, während `NSMutableString` die Unterklasse ist, die Mutation zulässt.
 
-In diesen Klassen ist es üblich, dass die unveränderliche Basisklasse Eigenschaften mit einem Getter, aber ohne Setter enthält. Und für die änderbare Version, um den Setter einzuführen. Da dies mit C#nicht wirklich möglich ist, mussten wir diese Ausdrucksweise einer Ausdrucksweise zuordnen, die mit C#funktioniert.
+In diesen Klassen ist es üblich, dass die unveränderliche Basisklasse Eigenschaften mit einem Getter, aber ohne Setter enthält. Und für die änderbare Version, um den Setter einzuführen. Da dies mit c# nicht wirklich möglich ist, mussten wir diese Ausdrucksweise einer Ausdrucksweise zuordnen, die mit c# funktioniert.
 
-Die Zuordnung zu C# erfolgt durch Hinzufügen von Getter und Setter für die Basisklasse, das Kennzeichnen des Setters mit einem [`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)
+Die Zuordnung zu c# besteht darin, dass sowohl der Getter als auch der Setter für die Basisklasse hinzugefügt werden, aber der Setter mit einem[`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)
 -Attribut angezeigt.
 
-Verwenden Sie dann in der änderbare-Unterklasse die [`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
+Verwenden Sie dann in der änderbare-Unterklasse das[`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
 -Attribut für die-Eigenschaft, um sicherzustellen, dass die-Eigenschaft das übergeordnete Verhalten tatsächlich überschreibt.
 
 Beispiel:
@@ -303,34 +303,34 @@ interface MyMutableTree {
 }
 ```
 
-<a name="Binding_Constructors" />
+<a name="Binding_Constructors"></a>
 
 ### <a name="binding-constructors"></a>Bindungskonstruktoren
 
-Das `btouch-native` Tool generiert automatisch Fours-Konstruktoren in der-Klasse für eine bestimmte Klasse `Foo`, die generiert wird:
+Das `btouch-native` Tool generiert automatisch Fours-Konstruktoren in der Klasse, die für eine bestimmte Klasse `Foo` generiert werden:
 
 - `Foo ()`: der Standardkonstruktor (wird dem "init"-Konstruktor von "Ziel-C" zugeordnet)
 - `Foo (NSCoder)`: der Konstruktor, der während der Deserialisierung von nib-Dateien verwendet wird (entspricht dem "initWithCoder:"-Konstruktor von Ziel-C).
-- `Foo (IntPtr handle)`: der Konstruktor für die auf handle basierende Erstellung, der von der Laufzeit aufgerufen wird, wenn die Laufzeit ein verwaltetes Objekt aus einem nicht verwalteten Objekt verfügbar machen muss.
+- `Foo (IntPtr handle)`: der Konstruktor für die auf dem Handle basierende Erstellung, der von der Laufzeit aufgerufen wird, wenn die Laufzeit ein verwaltetes Objekt aus einem nicht verwalteten Objekt verfügbar machen muss.
 - `Foo (NSEmptyFlag)`: wird von abgeleiteten Klassen verwendet, um eine doppelte Initialisierung zu verhindern.
 
-Für Konstruktoren, die Sie definieren, müssen Sie mit der folgenden Signatur in der Schnittstellen Definition deklariert werden: Sie müssen einen `IntPtr` Wert zurückgeben, und der Name der Methode sollte Konstruktor sein. Um z. b. den `initWithFrame:`-Konstruktor zu binden, verwenden Sie Folgendes:
+Für Konstruktoren, die Sie definieren, müssen Sie mit der folgenden Signatur in der Schnittstellen Definition deklariert werden: Sie müssen einen-Wert zurückgeben, `IntPtr` und der Name der Methode sollte Konstruktor sein. Um z. b. den `initWithFrame:` Konstruktor zu binden, verwenden Sie Folgendes:
 
 ```csharp
 [Export ("initWithFrame:")]
 IntPtr Constructor (CGRect frame);
 ```
 
-<a name="Binding_Protocols" />
+<a name="Binding_Protocols"></a>
 
 ### <a name="binding-protocols"></a>Bindungs Protokolle
 
-Wie im Dokument zum API-Design beschrieben, ordnet xamarin. IOS die Ziele-C-Protokolle im Abschnitt [Erörterung von Modellen und Protokollen](~/ios/internals/api-design/index.md#models)den Klassen zu, die mit dem [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+Wie im Dokument zum API-Design beschrieben, ordnet xamarin. IOS die Ziele-C-Protokolle im Abschnitt [erörtern von Modellen und Protokollen](~/ios/internals/api-design/index.md#models)den Klassen zu, die mit dem[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
 -Attribut angezeigt. Dies wird in der Regel verwendet, wenn Ziel-C-Delegatklassen implementiert werden.
 
 Der große Unterschied zwischen einer regulären gebundenen Klasse und einer Delegatklasse besteht darin, dass die Delegatklasse eine oder mehrere optionale Methoden aufweisen kann.
 
-Nehmen wir beispielsweise an, dass die `UIKit`-Klasse `UIAccelerometerDelegate`, wie Sie in xamarin. IOS gebunden ist:
+Nehmen wir beispielsweise an, dass die- `UIKit` Klasse `UIAccelerometerDelegate` in xamarin. IOS gebunden ist:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -341,12 +341,12 @@ interface UIAccelerometerDelegate {
 }
 ```
 
-Da es sich hierbei um eine optionale Methode in der Definition für handelt `UIAccelerometerDelegate` gibt es nichts anderes zu tun. Wenn jedoch eine erforderliche Methode für das Protokoll vorhanden wäre, sollten Sie den [`[Abstract]`](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute)
+Da dies eine optionale Methode für die Definition ist `UIAccelerometerDelegate` , müssen Sie nichts anderes tun. Wenn jedoch eine erforderliche Methode für das Protokoll vorhanden wäre, sollten Sie das[`[Abstract]`](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute)
 -Attribut zur-Methode. Dadurch wird der Benutzer der-Implementierung gezwungen, tatsächlich einen Text für die-Methode bereitzustellen.
 
 Im Allgemeinen werden Protokolle in Klassen verwendet, die auf Nachrichten reagieren. Dies erfolgt in der Regel in Ziel-C durch Zuweisen der Eigenschaft "Delegat" zu einer Instanz eines Objekts, die auf die Methoden im Protokoll antwortet.
 
-Die Konvention in xamarin. IOS besteht darin, sowohl das lose gekoppelte Ziel-C-Format zu unterstützen, in dem eine beliebige Instanz eines `NSObject` dem Delegaten zugewiesen werden kann, als auch eine stark typisierte Version davon verfügbar zu machen. Aus diesem Grund wird in der Regel sowohl eine `Delegate` Eigenschaft, die stark typisiert ist, als auch eine `WeakDelegate`, die lose typisiert ist, bereitgestellt. In der Regel binden wir die lose typisierte Version mit [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute), und wir verwenden das [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) -Attribut, um die stark typisierte Version bereitzustellen.
+Die Konvention in xamarin. IOS besteht darin, sowohl das lose gekoppelte Ziel-C-Format zu unterstützen, in dem eine beliebige Instanz von dem Delegaten `NSObject` zugewiesen werden kann, und auch eine stark typisierte Version davon verfügbar zu machen. Aus diesem Grund stellen wir in der Regel eine `Delegate` Eigenschaft mit starker Typisierung und eine dar `WeakDelegate` , die lose typisiert ist. In der Regel binden wir die lose typisierte Version mit [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) , und wir verwenden das- [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) Attribut, um die stark typisierte Version bereitzustellen.
 
 Dies zeigt, wie wir die `UIAccelerometer` Klasse gebunden haben:
 
@@ -367,15 +367,15 @@ interface UIAccelerometer {
 }
 ```
 
-<a name="iOS7ProtocolSupport" />
+<a name="iOS7ProtocolSupport"></a>
 
 **Neu in MonoTouch 7,0**
 
 Ab MonoTouch 7,0 wurde eine neue und verbesserte Protokoll Bindungs Funktion integriert.  Diese neue Unterstützung vereinfacht die Verwendung von Ziel-C-Ausdrücke für die Übernahme eines oder mehrerer Protokolle in einer bestimmten Klasse.
 
-Für jede Protokoll Definitions `MyProtocol` in Ziel-C gibt es jetzt eine `IMyProtocol` Schnittstelle, die alle erforderlichen Methoden aus dem Protokoll auflistet, sowie eine Erweiterungs Klasse, die alle optionalen Methoden bereitstellt.  Die oben genannten, in Kombination mit der neuen Unterstützung im-Xamarin Studio-Editor, ermöglichen es Entwicklern, Protokoll Methoden zu implementieren, ohne die separaten Unterklassen der vorherigen abstrakten Modellklassen verwenden zu müssen.
+Für jede Protokoll Definition `MyProtocol` in Ziel-C gibt es jetzt eine `IMyProtocol` Schnittstelle, die alle erforderlichen Methoden aus dem Protokoll auflistet, und eine Erweiterungs Klasse, die alle optionalen Methoden bereitstellt.  Die oben genannten, in Kombination mit der neuen Unterstützung im-Xamarin Studio-Editor, ermöglichen es Entwicklern, Protokoll Methoden zu implementieren, ohne die separaten Unterklassen der vorherigen abstrakten Modellklassen verwenden zu müssen.
 
-Jede Definition, die das [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) -Attribut enthält, generiert tatsächlich drei unterstützende Klassen, die die Vorgehensweise bei der Nutzung von Protokollen erheblich verbessern:
+Jede Definition, die das-Attribut enthält, [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) generiert tatsächlich drei unterstützende Klassen, die die Vorgehensweise bei der Nutzung von Protokollen erheblich verbessern:
 
 ```csharp
 // Full method implementation, contains all methods
@@ -397,11 +397,11 @@ static class IMyProtocol_Extensions {
 }
 ```
 
-Die **Klassen Implementierung** stellt eine vollständige abstrakte Klasse bereit, mit der Sie einzelne Methoden von überschreiben und vollständige Typsicherheit erhalten können.  Da es jedoch C# nicht möglich ist, mehrere Vererbung zu unterstützen, gibt es Szenarios, in denen Sie möglicherweise eine andere Basisklasse haben, aber trotzdem eine Schnittstelle implementieren möchten, wo die
+Die **Klassen Implementierung** stellt eine vollständige abstrakte Klasse bereit, mit der Sie einzelne Methoden von überschreiben und vollständige Typsicherheit erhalten können.  Doch aufgrund der c#-Unterstützung für mehrere Vererbung gibt es Szenarios, in denen Sie möglicherweise eine andere Basisklasse verwenden müssen, aber trotzdem eine Schnittstelle implementieren möchten, wo die
 
 Die generierte **Schnittstellen Definition** kommt ins Spiel.  Es handelt sich um eine Schnittstelle, die über alle erforderlichen Methoden aus dem Protokoll verfügt.  Dadurch können Entwickler, die Ihr Protokoll implementieren möchten, nur die-Schnittstelle implementieren.  Der Typ wird von der Common Language Runtime automatisch bei der Übernahme des Protokolls registriert.
 
-Beachten Sie, dass die-Schnittstelle nur die erforderlichen Methoden auflistet und die optionalen Methoden verfügbar macht.  Dies bedeutet, dass Klassen, die das Protokoll übernehmen, eine vollständige Typüberprüfung für die erforderlichen Methoden erhalten, aber auf eine schwache Typisierung zurückgreifen müssen (Manuelles verwenden [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+Beachten Sie, dass die-Schnittstelle nur die erforderlichen Methoden auflistet und die optionalen Methoden verfügbar macht.  Dies bedeutet, dass Klassen, die das Protokoll übernehmen, eine vollständige Typüberprüfung für die erforderlichen Methoden erhalten, aber auf eine schwache Typisierung zurückgreifen müssen (manuell mithilfe von[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 Attribute und Übereinstimmung der Signatur) für die optionalen Protokoll Methoden.
 
 Um es zu vereinfachen, eine API zu verwenden, die Protokolle verwendet, erzeugt das Bindungs Tool auch eine Klasse der Erweiterungs Methoden, die alle optionalen Methoden verfügbar macht.  Dies bedeutet, dass Sie, solange Sie eine API nutzen, Protokolle als alle Methoden behandeln können.
@@ -431,7 +431,7 @@ interface MyTool {
 }
 ```
 
-Der obige Wert ist erforderlich, da der `IMyProtocol` zum Zeitpunkt der Bindung nicht vorhanden ist. aus diesem Grund müssen Sie eine leere Schnittstelle bereitstellen.
+Der obige Wert ist erforderlich, da der zum Zeitpunkt der Bindung `IMyProtocol` nicht vorhanden ist. aus diesem Grund müssen Sie eine leere Schnittstelle bereitstellen.
 
 #### <a name="adopting-protocol-generated-interfaces"></a>Anwenden von Protokoll generierten Schnittstellen
 
@@ -458,14 +458,14 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 
 Es spielt keine Rolle, ob die Schnittstelle implizit oder explizit implementiert wird.
 
-<a name="Binding_Class_Extensions" />
+<a name="Binding_Class_Extensions"></a>
 
 ### <a name="binding-class-extensions"></a>Bindungs Klassen Erweiterungen
 
-In Ziel-C ist es möglich, Klassen mit neuen Methoden zu C#erweitern, ähnlich wie bei den Erweiterungs Methoden von Spirit. Wenn eine dieser Methoden vorhanden ist, können Sie die [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
+In Ziel-C ist es möglich, Klassen mit neuen Methoden zu erweitern, ähnlich wie bei den Erweiterungs Methoden von c#. Wenn eine dieser Methoden vorhanden ist, können Sie die[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
 Attribut zum Markieren der Methode als Empfänger der Ziel-C-Nachricht.
 
-In xamarin. IOS haben wir z. b. die in `NSString` definierten Erweiterungs Methoden gebunden, wenn `UIKit` als Methoden in der `NSStringDrawingExtensions`importiert wird, wie hier:
+In xamarin. IOS haben wir z. b. die Erweiterungs Methoden gebunden, die für definiert sind `NSString` `UIKit` , wenn als Methoden in der importiert wird. `NSStringDrawingExtensions` Dies geschieht wie folgt:
 
 ```csharp
 [Category, BaseType (typeof (NSString))]
@@ -475,7 +475,7 @@ interface NSStringDrawingExtensions {
 }
 ```
 
-<a name="Binding_Objective-C_Argument_Lists" />
+<a name="Binding_Objective-C_Argument_Lists"></a>
 
 ### <a name="binding-objective-c-argument-lists"></a>Bindungs Ziel-C-Argumentlisten
 
@@ -486,7 +486,7 @@ Ziel-C unterstützt Variadic-Argumente. Beispiel:
   NS_REQUIRES_NIL_TERMINATION ;
 ```
 
-Wenn Sie diese Methode von C# aufrufen möchten, sollten Sie eine Signatur wie die folgende erstellen:
+Um diese Methode aus c# aufzurufen, sollten Sie eine Signatur wie die folgende erstellen:
 
 ```csharp
 [Export ("appendWorkers"), Internal]
@@ -514,7 +514,7 @@ public void AppendWorkers(params Worker[] workers)
 }
 ```
 
-<a name="Binding_Fields" />
+<a name="Binding_Fields"></a>
 
 ### <a name="binding-fields"></a>Bindungs Felder
 
@@ -522,14 +522,14 @@ Manchmal möchten Sie auf öffentliche Felder zugreifen, die in einer Bibliothek
 
 Normalerweise enthalten diese Felder Zeichen folgen oder ganzzahlige Werte, auf die verwiesen werden muss. Sie werden in der Regel als Zeichenfolge verwendet, die eine bestimmte Benachrichtigung und als Schlüssel in Wörterbüchern darstellt.
 
-Fügen Sie der Schnittstellen Definitionsdatei eine-Eigenschaft hinzu, und ergänzen Sie die-Eigenschaft mit dem [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) -Attribut, um ein Feld zu binden. Dieses Attribut übernimmt einen Parameter: den C-Namen des Symbols, das gesucht werden soll. Beispiel:
+Fügen Sie der Schnittstellen Definitionsdatei eine-Eigenschaft hinzu, und ergänzen Sie die-Eigenschaft mit dem-Attribut, um ein Feld zu binden [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) . Dieses Attribut übernimmt einen Parameter: den C-Namen des Symbols, das gesucht werden soll. Beispiel:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
 NSString NSSomeEventNotification { get; }
 ```
 
-Wenn Sie verschiedene Felder in einer statischen Klasse einschließen möchten, die nicht von `NSObject`abgeleitet ist, können Sie die [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class) 
+Wenn Sie verschiedene Felder in einer statischen Klasse einschließen möchten, die nicht von abgeleitet `NSObject` ist, können Sie das[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class) 
 -Attribut für die-Klasse wie folgt:
 
 ```csharp
@@ -540,17 +540,17 @@ interface LonelyClass {
 }
 ```
 
-Im obigen Beispiel wird ein `LonelyClass` generiert, das nicht von `NSObject` abgeleitet ist und eine Bindung an die `NSSomeEventNotification`
-enthält, die als `NSString` verfügbar gemacht wird.`NSString`
+Im obigen Beispiel wird eine generiert `LonelyClass` , die nicht von abgeleitet ist `NSObject` und eine Bindung an die enthält, die als verfügbar gemacht wird `NSSomeEventNotification` 
+ `NSString` `NSString` .
 
-Das [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) -Attribut kann auf die folgenden Datentypen angewendet werden:
+Das- [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) Attribut kann auf die folgenden Datentypen angewendet werden:
 
-- `NSString` Verweise (nur schreibgeschützte Eigenschaften)
-- `NSArray` Verweise (nur schreibgeschützte Eigenschaften)
-- 32-Bit-int (`System.Int32`)
-- 64-Bit-int (`System.Int64`)
-- 32-Bit-Gleit Komma Zahlen (`System.Single`)
-- 64-Bit-Gleit Komma Zahlen (`System.Double`)
+- `NSString`Verweise (nur schreibgeschützte Eigenschaften)
+- `NSArray`Verweise (nur schreibgeschützte Eigenschaften)
+- 32-Bit-int ( `System.Int32` )
+- 64-Bit-int ( `System.Int64` )
+- 32-Bit-Gleit Komma Zahlen ( `System.Single` )
+- 64-Bit-Gleit Komma Zahlen ( `System.Double` )
 - `System.Drawing.SizeF`
 - `CGSize`
 
@@ -564,7 +564,7 @@ interface LonelyClass {
 }
 ```
 
-Wenn Sie statisch verknüpfen, ist keine Bibliothek vorhanden, an die eine Bindung hergestellt werden kann. Daher müssen Sie den `__Internal` Namen verwenden:
+Wenn Sie statisch verknüpfen, ist keine Bibliothek für die Bindung vorhanden. Sie müssen daher den `__Internal` Namen verwenden:
 
 ```csharp
 [Static]
@@ -574,7 +574,7 @@ interface LonelyClass {
 }
 ```
 
-<a name="Binding_Enums" />
+<a name="Binding_Enums"></a>
 
 ### <a name="binding-enums"></a>Bindungs Aufstände
 
@@ -592,7 +592,7 @@ interface MyType {
 }
 ```
 
-Es ist auch möglich, eigene enumerationsenumeraten zu erstellen, um `NSString` Konstanten zu ersetzen. In diesem Fall erstellt der Generator **automatisch** die Methoden zum Konvertieren von Enumerationswerten und NSString-Konstanten für Sie.
+Es ist auch möglich, eigene enumerationsenumeraten zu erstellen, um Konstanten zu ersetzen `NSString` . In diesem Fall erstellt der Generator **automatisch** die Methoden zum Konvertieren von Enumerationswerten und NSString-Konstanten für Sie.
 
 Beispiel:
 
@@ -619,18 +619,18 @@ interface MyType {
 }
 ```
 
-Im obigen Beispiel haben Sie die Möglichkeit, `void Perform (NSString mode);` mit einem [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) Attribut zu ergänzen. Dadurch wird die Konstante basierte API von ihren bindungsconsumers **ausgeblendet** .
+Im obigen Beispiel können Sie sich entscheiden, `void Perform (NSString mode);` mit einem- [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) Attribut zu versehen. Dadurch wird die Konstante basierte API von ihren bindungsconsumers **ausgeblendet** .
 
-Dies würde jedoch die Unterklassen des Typs einschränken, da die schönere API-Alternative ein [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) Attribut verwendet. Diese generierten Methoden sind nicht `virtual`, d. h., Sie können Sie nicht überschreiben, was möglicherweise eine gute Wahl ist.
+Dies würde jedoch die Unterklassen des Typs einschränken, da die schönere API-Alternative ein- [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) Attribut verwendet. Diese generierten Methoden sind nicht `virtual` , d. h., Sie können Sie nicht überschreiben, was möglicherweise eine gute Wahl ist.
 
-Eine Alternative besteht darin, die ursprüngliche, `NSString`basierte Definition als `[Protected]`zu markieren. Dadurch kann die Unterklassen bei Bedarf funktionieren, und die Version von wrapds funktioniert weiterhin, und die overridas-Methode wird aufgerufen.
+Eine Alternative besteht darin, die ursprüngliche, `NSString` -basierte Definition von als zu markieren `[Protected]` . Dadurch kann die Unterklassen bei Bedarf funktionieren, und die Version von wrapds funktioniert weiterhin, und die overridas-Methode wird aufgerufen.
 
-### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Binden von `NSValue`, `NSNumber`und `NSString` an einen besseren Typ
+### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Binden `NSValue` `NSNumber` von, und `NSString` an einen besseren Typ
 
-Das [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) -Attribut ermöglicht das Binden von `NSNumber`, `NSValue` und `NSString`(enumeraten C# ) in genauere Typen. Das-Attribut kann verwendet werden, um eine bessere, präzisere .NET-API über die Native API zu erstellen.
+Das [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) -Attribut ermöglicht das Binden von `NSNumber` `NSValue` und `NSString` (enumeraten) in genauere c#-Typen. Das-Attribut kann verwendet werden, um eine bessere, präzisere .NET-API über die Native API zu erstellen.
 
-Sie können Methoden (bei Rückgabewert), Parameter und Eigenschaften mit [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)ergänzen. Die einzige Einschränkung besteht darin, dass Ihr Member **nicht** innerhalb einer [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
-oder [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) -Schnittstelle.
+Sie können Methoden (bei Rückgabewert), Parameter und Eigenschaften mit ergänzen [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) . Die einzige Einschränkung besteht darin, dass Ihr Member **nicht** innerhalb eines[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
+oder- [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) Schnittstelle.
 
 Beispiel:
 
@@ -647,9 +647,9 @@ Ausgabe:
 bool? ShouldDraw (CGRect rect) { ... }
 ```
 
-Intern werden die `bool?` <-> `NSNumber` und `CGRect` <-> Konvertierungen durchführen.`NSValue`
+Intern werden die `bool?`  <->  `NSNumber` `CGRect`  <->  `NSValue` Konvertierungen und durchführen.
 
-[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) unterstützt auch Arrays von `NSNumber` `NSValue` und `NSString`(Aufstände).
+[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)unterstützt auch Arrays von `NSNumber` `NSValue` und (-Aufständen `NSString` ).
 
 Beispiel:
 
@@ -666,21 +666,21 @@ Ausgabe:
 CAScroll [] SupportedScrollModes { get; set; }
 ```
 
-`CAScroll` eine `NSString` gesicherte Enumeration ist, rufen wir den richtigen `NSString` Wert ab und behandeln die Typkonvertierung.
+`CAScroll`ist eine `NSString` gesicherte Enumeration, rufen wir den richtigen `NSString` Wert ab und behandeln die Typkonvertierung.
 
-Weitere Informationen zu unterstützten Konvertierungs Typen finden Sie in der [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) -Dokumentation.
+Weitere Informationen [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) zu unterstützten Konvertierungs Typen finden Sie in der Dokumentation.
 
-<a name="Binding_Notifications" />
+<a name="Binding_Notifications"></a>
 
 ### <a name="binding-notifications"></a>Bindungs Benachrichtigungen
 
-Benachrichtigungen sind Nachrichten, die an den `NSNotificationCenter.DefaultCenter` gesendet werden und als Mechanismus zum Übertragen von Nachrichten von einem Teil der Anwendung an einen anderen verwendet werden. Entwickler abonnieren Benachrichtigungen in der Regel mithilfe der [addobserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification})) -Methode von [nsnotificationcenter](xref:Foundation.NSNotificationCenter). Wenn eine Anwendung eine Nachricht an das Benachrichtigungs Center sendet, enthält Sie in der Regel eine im [nsnotification. userinfo](xref:Foundation.NSNotification.UserInfo) -Wörterbuch gespeicherte Nutzlast. Dieses Wörterbuch ist schwach typisiert, und das erhalten von Informationen ist fehleranfällig, da Benutzer in der Regel die Dokumentation lesen müssen, welche Schlüssel im Wörterbuch verfügbar sind, und welche Werte im Wörterbuch gespeichert werden können. Das vorhanden sein von Schlüsseln wird manchmal auch als boolescher Wert verwendet.
+Benachrichtigungen sind Nachrichten, die an den gesendet werden `NSNotificationCenter.DefaultCenter` und als Mechanismus zum Übertragen von Nachrichten von einem Teil der Anwendung an einen anderen verwendet werden. Entwickler abonnieren Benachrichtigungen in der Regel mithilfe der [addobserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification})) -Methode von [nsnotificationcenter](xref:Foundation.NSNotificationCenter). Wenn eine Anwendung eine Nachricht an das Benachrichtigungs Center sendet, enthält Sie in der Regel eine im [nsnotification. userinfo](xref:Foundation.NSNotification.UserInfo) -Wörterbuch gespeicherte Nutzlast. Dieses Wörterbuch ist schwach typisiert, und das erhalten von Informationen ist fehleranfällig, da Benutzer in der Regel die Dokumentation lesen müssen, welche Schlüssel im Wörterbuch verfügbar sind, und welche Werte im Wörterbuch gespeichert werden können. Das vorhanden sein von Schlüsseln wird manchmal auch als boolescher Wert verwendet.
 
-Der xamarin. IOS-Bindungs Generator bietet Unterstützung für Entwickler, um Benachrichtigungen zu binden. Legen Sie hierzu die [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
-Attribut für eine Eigenschaft, die auch mit einem- [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) gekennzeichnet wurde
+Der xamarin. IOS-Bindungs Generator bietet Unterstützung für Entwickler, um Benachrichtigungen zu binden. Legen Sie hierzu das[`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
+Attribut für eine Eigenschaft, die auch mit einem gekennzeichnet wurde[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
 Property (kann öffentlich oder privat sein).
 
-Dieses Attribut kann ohne Argumente für Benachrichtigungen verwendet werden, die keine Nutzlast enthalten, oder Sie können eine `System.Type` angeben, die auf eine andere Schnittstelle in der API-Definition verweist, in der Regel mit dem Namen, der mit "EventArgs" endet. Der Generator schaltet die Schnittstelle in eine Klasse um, die Unterklassen `EventArgs`, und schließt alle dort aufgeführten Eigenschaften ein. Das [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) -Attribut sollte in der EventArgs-Klasse verwendet werden, um den Namen des Schlüssels aufzulisten, der verwendet wird, um das Ziel-C-Wörterbuch zu suchen und den Wert abzurufen.
+Dieses Attribut kann ohne Argumente für Benachrichtigungen verwendet werden, die keine Nutzlast enthalten, oder Sie können einen angeben, `System.Type` der auf eine andere Schnittstelle in der API-Definition verweist, in der Regel mit dem Namen, der mit "EventArgs" endet. Der Generator schaltet die Schnittstelle in eine Klasse um, die Unterklassen `EventArgs` enthält, und schließt alle dort aufgeführten Eigenschaften ein. Das- [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Attribut sollte in der EventArgs-Klasse verwendet werden, um den Namen des Schlüssels aufzulisten, der verwendet wird, um das Ziel-C-Wörterbuch zu suchen und den Wert abzurufen.
 
 Beispiel:
 
@@ -692,7 +692,7 @@ interface MyClass {
 }
 ```
 
-Der obige Code generiert eine `MyClass.Notifications` einer mit den folgenden Methoden:
+Der obige Code generiert eine-Klasse `MyClass.Notifications` mit den folgenden Methoden:
 
 ```csharp
 public class MyClass {
@@ -711,13 +711,13 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 });
 ```
 
-Der zurückgegebene Wert aus `ObserveDidStart` kann verwendet werden, um den Empfang von Benachrichtigungen auf einfache Weise zu verhindern, wie hier:
+Der zurückgegebene Wert von `ObserveDidStart` kann verwendet werden, um den Empfang von Benachrichtigungen auf einfache Weise zu verhindern, wie hier:
 
 ```csharp
 token.Dispose ();
 ```
 
-Oder Sie können [nsnotification. defaultcenter. removeobserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject)) und das Token übergeben. Wenn Ihre Benachrichtigung Parameter enthält, sollten Sie wie folgt eine Hilfs`EventArgs` Schnittstelle angeben:
+Oder Sie können [nsnotification. defaultcenter. removeobserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject)) und das Token übergeben. Wenn Ihre Benachrichtigung Parameter enthält, sollten Sie wie folgt eine `EventArgs` Hilfsschnittstelle angeben:
 
 ```csharp
 interface MyClass {
@@ -740,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-Im obigen Beispiel wird eine `MyScreenChangedEventArgs` Klasse mit den Eigenschaften "`ScreenX`" und "`ScreenY`" generiert, die die Daten aus dem " [nsnotification. userinfo](xref:Foundation.NSNotification.UserInfo) "-Wörterbuch mit den Schlüsseln "screenxkey" und "screenykey" abrufen und die richtigen Konvertierungen anwenden. Das `[ProbePresence]`-Attribut wird verwendet, damit der Generator testet, ob der Schlüssel im `UserInfo`festgelegt wird, anstatt zu versuchen, den Wert zu extrahieren. Dies wird für Fälle verwendet, in denen das vorhanden sein des Schlüssels der Wert ist (in der Regel für boolesche Werte).
+Im obigen Beispiel wird eine `MyScreenChangedEventArgs` -Klasse mit den `ScreenX` -und- `ScreenY` Eigenschaften generiert, die die Daten aus dem [nsnotification. userinfo](xref:Foundation.NSNotification.UserInfo) -Wörterbuch mit den Schlüsseln "screenxkey" und "screenykey" abrufen und die richtigen Konvertierungen anwenden. Das- `[ProbePresence]` Attribut wird für den Generator verwendet, um zu überprüfen, ob der Schlüssel in festgelegt wird `UserInfo` , anstatt zu versuchen, den Wert zu extrahieren. Dies wird für Fälle verwendet, in denen das vorhanden sein des Schlüssels der Wert ist (in der Regel für boolesche Werte).
 
 Auf diese Weise können Sie Code wie den folgenden schreiben:
 
@@ -750,11 +750,11 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 });
 ```
 
-<a name="Binding_Categories" />
+<a name="Binding_Categories"></a>
 
 ### <a name="binding-categories"></a>Bindungs Kategorien
 
-Kategorien sind ein Ziel-C-Mechanismus, mit dem der in einer Klasse verfügbare Satz von Methoden und Eigenschaften erweitert wird.   In der Praxis werden Sie verwendet, um die Funktionalität einer Basisklasse (z. b. `NSObject`) zu erweitern, wenn ein bestimmtes Framework in verknüpft ist (z. b. `UIKit`), sodass Ihre Methoden verfügbar sind, jedoch nur, wenn das neue Framework in verknüpft ist.   In einigen anderen Fällen werden Sie verwendet, um Funktionen in einer Klasse nach Funktionalität zu organisieren.   Sie ähneln den C# Erweiterungs Methoden. So sieht eine Kategorie in "Ziel-C" aus:
+Kategorien sind ein Ziel-C-Mechanismus, mit dem der in einer Klasse verfügbare Satz von Methoden und Eigenschaften erweitert wird.   In der Praxis werden Sie verwendet, um die Funktionalität einer Basisklasse zu erweitern (z. b. `NSObject` ), wenn ein bestimmtes Framework in verknüpft ist (z. b `UIKit` .), sodass Ihre Methoden verfügbar sind, jedoch nur, wenn das neue Framework in verknüpft ist.   In einigen anderen Fällen werden Sie verwendet, um Funktionen in einer Klasse nach Funktionalität zu organisieren.   Sie ähneln den c#-Erweiterungs Methoden. So sieht eine Kategorie in "Ziel-C" aus:
 
 ```csharp
 @interface UIView (MyUIViewExtension)
@@ -762,13 +762,13 @@ Kategorien sind ein Ziel-C-Mechanismus, mit dem der in einer Klasse verfügbare 
 @end
 ```
 
-Im obigen Beispiel, wenn es in einer Bibliothek gefunden wird, werden Instanzen von `UIView` mit der-Methode `makeBackgroundRed`erweitert.
+Im obigen Beispiel, wenn es in einer Bibliothek gefunden wird, werden die Instanzen von `UIView` mit der-Methode erweitert `makeBackgroundRed` .
 
-Um diese zu binden, können Sie das [`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) -Attribut für eine Schnittstellen Definition verwenden.  Bei Verwendung der [`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)
-Attribute, die Bedeutung des [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
+Um diese zu binden, können Sie das- [`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) Attribut für eine Schnittstellen Definition verwenden.  Wenn Sie die[`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)
+Attribute, die Bedeutung des[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
 Attribut Änderungen von werden verwendet, um die zu erweiternde Basisklasse anzugeben, als Typ, der erweitert werden soll.
 
-Im folgenden wird gezeigt, wie die `UIView` Erweiterungen gebunden und in C# Erweiterungs Methoden umgewandelt werden:
+Im folgenden wird gezeigt, wie die `UIView` Erweiterungen gebunden und in c#-Erweiterungs Methoden umgewandelt werden:
 
 ```csharp
 [BaseType (typeof (UIView))]
@@ -779,7 +779,7 @@ interface MyUIViewExtension {
 }
 ```
 
-Im obigen Beispiel wird eine `MyUIViewExtension` eine-Klasse erstellt, die die `MakeBackgroundRed`-Erweiterungsmethode enthält.  Dies bedeutet, dass Sie jetzt "makebackgroundred" für jede `UIView` Unterklasse aufgerufen werden können, sodass Sie die gleiche Funktionalität erhalten, die Sie für "Ziel-C" erhalten. In einigen anderen Fällen werden Kategorien nicht verwendet, um eine System Klasse zu erweitern, sondern um die Funktionalität zu organisieren.  Dies sieht folgendermaßen aus:
+Im obigen Beispiel wird eine `MyUIViewExtension` Klasse erstellt, die die `MakeBackgroundRed` Erweiterungsmethode enthält.  Dies bedeutet, dass Sie jetzt "makebackgroundred" für jede `UIView` Unterklasse abrufen können, sodass Sie die gleiche Funktionalität erhalten, die Sie für "Ziel-C" erhalten. In einigen anderen Fällen werden Kategorien nicht verwendet, um eine System Klasse zu erweitern, sondern um die Funktionalität zu organisieren.  Dies sieht folgendermaßen aus:
 
 ```csharp
 @interface SocialNetworking (Twitter)
@@ -792,7 +792,7 @@ picture;
 @end
 ```
 
-Sie können den [`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) verwenden.
+Sie können zwar das[`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)
 das Attribut wird auch für diese Art von Deklarationen von Deklarationen hinzugefügt. Sie können auch alle Elemente der Klassendefinition hinzufügen.  Beide werden gleichzeitig erreicht:
 
 ```csharp
@@ -828,19 +828,19 @@ interface SocialNetworking {
 }
 ```
 
-<a name="Binding_Blocks" />
+<a name="Binding_Blocks"></a>
 
 ### <a name="binding-blocks"></a>Bindungs Blöcke
 
-Blöcke sind ein neues Konstrukt, das von Apple eingeführt wurde, um das C# funktionale Äquivalent anonymer Methoden zu "Ziel-C" zu bringen. Beispielsweise macht die `NSSet`-Klasse jetzt diese Methode verfügbar:
+Blöcke sind ein neues Konstrukt, das von Apple eingeführt wurde, um das funktionale Äquivalent der anonymen c#-Methoden zu "Ziel-C" zu bringen. Beispielsweise macht die- `NSSet` Klasse jetzt diese Methode verfügbar:
 
 ```csharp
 - (void) enumerateObjectsUsingBlock:(void (^)(id obj, BOOL *stop) block
 ```
 
-Die obige Beschreibung deklariert eine Methode namens "`enumerateObjectsUsingBlock:`", die ein Argument mit dem Namen "`block`" annimmt. Dieser Block ähnelt einer C# anonymen Methode darin, dass er Unterstützung für das Erfassen der aktuellen Umgebung ("This"-Zeiger, Zugriff auf lokale Variablen und Parameter) hat. Die obige Methode in `NSSet` Ruft den-Block mit zwei Parametern auf, die eine `NSObject` (der `id obj` Teil) und einen Zeiger auf einen booleschen Teil (den `BOOL *stop`) enthalten.
+Die obige Beschreibung deklariert eine Methode namens `enumerateObjectsUsingBlock:` , die ein Argument mit dem Namen annimmt `block` . Dieser Block ähnelt einer anonymen c#-Methode darin, dass er Unterstützung für das Erfassen der aktuellen Umgebung ("This"-Zeiger, Zugriff auf lokale Variablen und Parameter) hat. Die obige Methode in `NSSet` Ruft den-Block mit zwei Parametern `NSObject` (dem `id obj` -Teil) und einem Zeiger auf einen booleschen `BOOL *stop` Teil (den) ab.
 
-Um diese Art von API mit btouchscreen zu binden, müssen Sie zuerst die Blocktyp Signatur als C# Delegat deklarieren und dann wie folgt von einem API-Einstiegspunkt aus darauf verweisen:
+Um diese Art von API mit btouchscreen zu binden, müssen Sie zuerst die Blocktyp Signatur als c#-Delegat deklarieren und dann wie folgt von einem API-Einstiegspunkt aus darauf verweisen:
 
 ```csharp
 // This declares the callback signature for the block:
@@ -851,7 +851,7 @@ delegate void NSSetEnumerator (NSObject obj, ref bool stop)
 void Enumerate (NSSetEnumerator enum)
 ```
 
-Jetzt kann Ihr Code Ihre Funktion von folgenden Code C#aus abrufen:
+Jetzt kann Ihr Code die Funktion aus c# abrufen:
 
 ```csharp
 var myset = new NSMutableSet ();
@@ -873,14 +873,14 @@ s.Enumerate ((obj, stop) => {
 });
 ```
 
-<a name="GeneratingAsync" />
+<a name="GeneratingAsync"></a>
 
 ### <a name="asynchronous-methods"></a>Asynchrone Methoden
 
-Der Bindungs Generator kann eine bestimmte Klasse von Methoden in Async-freundliche Methoden umwandeln (Methoden, die eine Aufgabe oder Aufgabe&lt;t&gt;) zurückgeben.
+Der Bindungs Generator kann eine bestimmte Klasse von Methoden in Async-freundliche Methoden (Methoden, die eine Aufgabe oder Aufgabe T zurückgeben &lt; &gt; ) umwandeln.
 
-Sie können den [`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
-Attribut für Methoden, die "void" zurückgeben und deren letztes Argument ein Rückruf ist.  Wenn Sie dies auf eine Methode anwenden, generiert der Bindungs Generator eine Version dieser Methode mit dem Suffix `Async`.  Wenn der Rückruf keine Parameter annimmt, ist der Rückgabewert eine `Task`, wenn der Rückruf einen Parameter annimmt, ist das Ergebnis ein `Task<T>`.  Wenn der Rückruf mehrere Parameter erfordert, sollten Sie die `ResultType` oder `ResultTypeName` festlegen, um den gewünschten Namen des generierten Typs anzugeben, der alle Eigenschaften enthält.
+Sie können das[`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
+Attribut für Methoden, die "void" zurückgeben und deren letztes Argument ein Rückruf ist.  Wenn Sie dies auf eine Methode anwenden, generiert der Bindungs Generator eine Version dieser Methode mit dem Suffix `Async` .  Wenn der Rückruf keine Parameter annimmt, ist der Rückgabewert ein `Task` . wenn der Rückruf einen-Parameter annimmt, ist das Ergebnis ein `Task<T>` .  Wenn der Rückruf mehrere Parameter erfordert, sollten Sie den `ResultType` oder den `ResultTypeName` gewünschten Namen des generierten Typs festlegen, der alle Eigenschaften enthält.
 
 Beispiel:
 
@@ -897,7 +897,7 @@ Der obige Code generiert sowohl die LoadFile-Methode als auch die folgenden:
 Task<string> LoadFileAsync (string file);
 ```
 
-<a name="Surfacing_Strong_Types" />
+<a name="Surfacing_Strong_Types"></a>
 
 ### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>Starke Typen für schwache NSDictionary-Parameter
 
@@ -905,7 +905,7 @@ An vielen Stellen in der Ziel-C-API werden Parameter als schwach typisierte `NSD
 
 Die Lösung besteht darin, eine stark typisierte Version bereitzustellen, die die stark typisierte Version der API bereitstellt und hinter den Kulissen die verschiedenen zugrunde liegenden Schlüssel und Werte zuordnet.
 
-Angenommen, die API "Ziel-C" hat beispielsweise eine `NSDictionary` angenommen, und Sie ist so dokumentiert, dass Sie den Schlüssel übernimmt `XyzVolumeKey` der einen `NSNumber` mit einem volumewert von 0,0 bis 1,0 und eine `XyzCaptionKey`, die eine Zeichenfolge akzeptiert, haben sollte:
+Wenn z. b. die Ziel-C-API eine akzeptiert, `NSDictionary` und Sie dokumentiert ist, dass Sie den Schlüssel annimmt, `XyzVolumeKey` der einen `NSNumber` mit einem volumewert von 0,0 zu 1,0 und einen mit `XyzCaptionKey` einer Zeichenfolge annimmt, sollten die Benutzer über eine schöne API verfügen, die wie folgt aussieht:
 
 ```csharp
 public class  XyzOptions {
@@ -914,12 +914,12 @@ public class  XyzOptions {
 }
 ```
 
-Die `Volume`-Eigenschaft wird als float definiert, der NULL-Werte zulässt, da die Konvention in Ziel-C nicht erfordert, dass diese Wörterbücher den Wert haben. Daher gibt es Szenarien, in denen der Wert möglicherweise nicht festgelegt ist.
+Die- `Volume` Eigenschaft wird als float definiert, der NULL-Werte zulässt, da die Konvention in Ziel-C nicht erfordert, dass diese Wörterbücher den Wert aufweisen, sodass es Szenarien gibt, in denen der Wert möglicherweise nicht festgelegt ist.
 
 Zu diesem Zweck müssen Sie einige Aufgaben ausführen:
 
 - Erstellen Sie eine stark typisierte Klasse, die Unterklassen " [didirekarycontainer](xref:Foundation.DictionaryContainer) " ist und die verschiedenen Getter und Setter für jede Eigenschaft bereitstellt.
-- Deklarieren Sie über Ladungen für die Methoden, die `NSDictionary` akzeptieren, um die neue, stark typisierte Version zu verwenden.
+- Deklarieren Sie über Ladungen für die Methoden, die akzeptieren `NSDictionary` , um die neue, stark typisierte Version zu verwenden.
 
 Sie können die stark typisierte Klasse entweder manuell erstellen oder den Generator verwenden, um die Arbeit zu erledigen.  Wir untersuchen zunächst, wie Sie dies manuell durchführen, um zu verstehen, was passiert, und dann die automatische Vorgehensweise.
 
@@ -956,13 +956,13 @@ interface XyzPanel {
 }
 ```
 
-Wenn Ihre API nicht überschrieben werden muss, können Sie die auf NSDictionary basierende API auf sichere Weise ausblenden, indem Sie die [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+Wenn Ihre API nicht überschrieben werden muss, können Sie die auf NSDictionary basierende API auf sichere Weise ausblenden, indem Sie die[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 -Attribut angezeigt.
 
-Wie Sie sehen können, verwenden wir den [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)
--Attribut, um einen neuen API-Einstiegspunkt zu verwenden, und wir verwenden unsere stark typisierte `XyzOptions`-Klasse.  Die Wrapper Methode ermöglicht auch das passieren von NULL.
+Wie Sie sehen können, verwenden wir das[`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)
+-Attribut, um einen neuen API-Einstiegspunkt zu verwenden, und wir verwenden unsere stark typisierte- `XyzOptions` Klasse.  Die Wrapper Methode ermöglicht auch das passieren von NULL.
 
-Nun haben wir nicht erwähnt, dass die `XyzOptionsKeys` Werte stammen.  In der Regel gruppieren Sie die Schlüssel, die eine API in einer statischen Klasse wie z. b. `XyzOptionsKeys`, wie folgt:
+Nun haben wir nicht erwähnt, wo die `XyzOptionsKeys` Werte stammen.  In der Regel gruppieren Sie die Schlüssel, die eine API in einer statischen Klasse wie z. b. wie folgt `XyzOptionsKeys` :
 
 ```csharp
 [Static]
@@ -977,9 +977,9 @@ class XyzOptionKeys {
 
 Sehen wir uns die automatische Unterstützung für die Erstellung dieser stark typisierten Wörterbücher an.  Dadurch wird die Menge der Bausteine vermieden, und Sie können das Wörterbuch direkt in Ihrem API-Vertrag definieren, anstatt eine externe Datei zu verwenden.
 
-Um ein stark typisiertes Wörterbuch zu erstellen, führen Sie eine Schnittstelle in ihrer API ein, und ergänzen Sie Sie mit dem [strongdictionary](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) -Attribut.  Dies weist den Generator an, dass eine Klasse mit dem gleichen Namen wie die Schnittstelle erstellt werden soll, die von `DictionaryContainer` abgeleitet wird, und stellt starke typisierte Accessoren dafür bereit.
+Um ein stark typisiertes Wörterbuch zu erstellen, führen Sie eine Schnittstelle in ihrer API ein, und ergänzen Sie Sie mit dem [strongdictionary](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) -Attribut.  Dies weist den Generator an, dass eine Klasse mit dem gleichen Namen wie die Schnittstelle erstellt werden soll, die von abgeleitet wird, `DictionaryContainer` und stellt starke typisierte Accessoren dafür bereit.
 
-Das [`[StrongDictionary]`](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) -Attribut nimmt einen Parameter an, der den Namen der statischen Klasse enthält, die ihre Wörterbuch Schlüssel enthält.  Anschließend wird jede Eigenschaft der Schnittstelle zu einem stark typisierten Accessor.  Standardmäßig verwendet der Code den Namen der Eigenschaft mit dem Suffix "Key" in der statischen Klasse, um den Accessor zu erstellen.
+Das- [`[StrongDictionary]`](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) Attribut nimmt einen Parameter an, der den Namen der statischen Klasse enthält, die ihre Wörterbuch Schlüssel enthält.  Anschließend wird jede Eigenschaft der Schnittstelle zu einem stark typisierten Accessor.  Standardmäßig verwendet der Code den Namen der Eigenschaft mit dem Suffix "Key" in der statischen Klasse, um den Accessor zu erstellen.
 
 Dies bedeutet, dass für das Erstellen Ihres stark typisierten Accessors keine externe Datei mehr erforderlich ist, und dass Sie für jede Eigenschaft keine Get-und Setter manuell erstellen müssen, und dass Sie die Schlüssel nicht selbst manuell suchen müssen.
 
@@ -1010,16 +1010,16 @@ interface XyzPanel {
 }
 ```
 
-Wenn Sie in den `XyzOption` Membern auf ein anderes Feld verweisen müssen (das nicht der Name der Eigenschaft mit dem Suffix `Key`ist), können Sie die Eigenschaft mit einem [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+Wenn Sie in ihren Membern `XyzOption` ein anderes Feld referenzieren müssen (das nicht der Name der Eigenschaft mit dem Suffix ist `Key` ), können Sie die Eigenschaft mit einem[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 Attribut mit dem Namen, den Sie verwenden möchten.
 
-<a name="Type_mappings" />
+<a name="Type_mappings"></a>
 
 ## <a name="type-mappings"></a>Typzuordnungen
 
-In diesem Abschnitt wird erläutert, C# wie Ziel-C-Typen Typen zugeordnet werden.
+In diesem Abschnitt wird erläutert, wie Ziel-C-Typen c#-Typen zugeordnet werden.
 
-<a name="Simple_Types" />
+<a name="Simple_Types"></a>
 
 ### <a name="simple-types"></a>Einfache Typen
 
@@ -1031,16 +1031,16 @@ In der folgenden Tabelle wird gezeigt, wie Sie der xamarin. IOS-Welt Typen von d
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
-|`NSString` ([Weitere Informationen zur Bindung von NSString](~/ios/internals/api-design/nsstring.md))|`string`|
-|`char *`|`string` (siehe auch: [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
+|`NSString`([Weitere Informationen zur Bindung von NSString](~/ios/internals/api-design/nsstring.md))|`string`|
+|`char *`|`string`(siehe auch: [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring) )|
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
 |`CGFloat`, `GLfloat`|`nfloat`|
-|CoreFoundation-Typen (`CF*`)|`CoreFoundation.CF*`|
+|CoreFoundation-Typen ( `CF*` )|`CoreFoundation.CF*`|
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
-|Foundation Types (`NS*`)|`Foundation.NS*`|
+|Foundation-Typen ( `NS*` )|`Foundation.NS*`|
 |`id`|`Foundation`.`NSObject`|
 |`NSGlyph`|`nint`|
 |`NSSize`|`CGSize`|
@@ -1051,11 +1051,11 @@ In der folgenden Tabelle wird gezeigt, wie Sie der xamarin. IOS-Welt Typen von d
 |`CFIndex`|`nint`|
 |`NSGlyph`|`nuint`|
 
-<a name="Arrays" />
+<a name="Arrays"></a>
 
 ### <a name="arrays"></a>Arrays
 
-Die xamarin. IOS-Laufzeit übernimmt automatisch die Konvertierung C# von Arrays in `NSArrays` und führt die Konvertierung zurück, z. b. die imaginäre Ziel-C-Methode, die eine `NSArray` der `UIViews`zurückgibt:
+Die xamarin. IOS-Laufzeit übernimmt automatisch die Konvertierung von c#-Arrays in `NSArrays` und führt die Konvertierung zurück, z. b. die imaginäre Ziel-C-Methode, die eine von zurückgibt `NSArray` `UIViews` :
 
 ```csharp
 // Get the peer views - untyped
@@ -1075,15 +1075,15 @@ UIView [] GetPeerViews ();
 void SetViews (UIView [] views);
 ```
 
-Die Idee besteht darin, ein stark typisiertes C# Array zu verwenden, da die IDE die ordnungsgemäße Codevervollständigung mit dem tatsächlichen Typ bereitstellen kann, ohne den Benutzer zu erraten, oder die Dokumentation nachschlagen, um den tatsächlichen Typ der im Array enthaltenen Objekte herauszufinden.
+Die Idee besteht darin, ein stark typisiertes c#-Array zu verwenden, da die IDE die ordnungsgemäße Codevervollständigung mit dem tatsächlichen Typ bereitstellen kann, ohne den Benutzer zu erraten, oder die Dokumentation nachschlagen, um den tatsächlichen Typ der im Array enthaltenen Objekte zu ermitteln.
 
 In Fällen, in denen Sie den tatsächlich am meisten abgeleiteten Typ, der im Array enthalten ist, nicht verfolgen können, können Sie `NSObject []` als Rückgabewert verwenden.
 
-<a name="Selectors" />
+<a name="Selectors"></a>
 
 ### <a name="selectors"></a>Selektoren
 
-Selectors werden in der Ziel-C-API als spezieller Typ `SEL`angezeigt. Wenn Sie einen Selektor binden, ordnen Sie den Typ `ObjCRuntime.Selector`zu.  Selektoren werden in der Regel in einer API mit einem Objekt, dem Zielobjekt und einem Selektor verfügbar gemacht, der im Zielobjekt aufgerufen werden soll. Das Bereitstellen beider Elemente entspricht im Grunde C# dem-Delegaten: etwas, das sowohl die aufzurufende Methode als auch das Objekt kapselt, in dem die Methode aufgerufen werden soll.
+Selectors werden in der Ziel-C-API als spezieller Typ angezeigt `SEL` . Wenn Sie einen Selektor binden, ordnen Sie den Typ zu `ObjCRuntime.Selector` .  Selektoren werden in der Regel in einer API mit einem Objekt, dem Zielobjekt und einem Selektor verfügbar gemacht, der im Zielobjekt aufgerufen werden soll. Das Bereitstellen beider Elemente entspricht im Grunde dem c#-Delegaten: etwas, das sowohl die aufzurufende Methode als auch das Objekt kapselt, in dem die Methode aufgerufen werden soll.
 
 Die Bindung sieht wie folgt aus:
 
@@ -1111,7 +1111,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-Um die Bindung für Entwickler zu C# vereinfachen, stellen Sie in der Regel eine Methode bereit, die einen `NSAction`-Parameter C# annimmt, der es ermöglicht, Delegaten und Lambdas anstelle des `Target+Selector`zu verwenden. Zu diesem Zweck würden Sie in der Regel die `SetTarget` Methode ausblenden, indem Sie Sie mit einer [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+Um die Bindung für c#-Entwickler zu vereinfachen, stellen Sie in der Regel eine Methode bereit, die einen- `NSAction` Parameter annimmt, mit dem c#-Delegaten und Lambdas anstelle von verwendet werden können `Target+Selector` . Zu diesem Zweck würden Sie die Methode in der Regel ausblenden, `SetTarget` indem Sie Sie mit einem[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 -Attribut, und dann würden Sie eine neue Hilfsmethode wie die folgende verfügbar machen:
 
 ```csharp
@@ -1150,18 +1150,18 @@ class DialogPrint : UIViewController {
 }
 ```
 
-<a name="Strings" />
+<a name="Strings"></a>
 
 ### <a name="strings"></a>Zeichenfolgen
 
-Wenn Sie eine Methode binden, die eine `NSString`annimmt, können Sie diese durch einen C# Zeichen Folgentyp ersetzen, sowohl bei Rückgabe Typen als auch bei Parametern.
+Wenn Sie eine Methode binden, die einen annimmt `NSString` , können Sie dies durch einen c#-Zeichen foldtyp ersetzen, sowohl bei Rückgabe Typen als auch bei Parametern.
 
-Der einzige Fall, in dem Sie eine `NSString` direkt verwenden möchten, ist, wenn die Zeichenfolge als Token verwendet wird. Weitere Informationen zu Zeichen folgen und `NSString`finden Sie im Dokument " [API-Design für NSString](~/ios/internals/api-design/nsstring.md) ".
+Der einzige Fall, wenn Sie einen direkt verwenden möchten, `NSString` ist, wenn die Zeichenfolge als Token verwendet wird. Weitere Informationen zu Zeichen folgen und `NSString` finden Sie im Dokument " [API-Design für NSString](~/ios/internals/api-design/nsstring.md) ".
 
-In einigen seltenen Fällen kann eine API eine C-ähnliche Zeichenfolge (`char *`) anstelle einer Ziel-C-Zeichenfolge (`NSString *`) verfügbar machen. In diesen Fällen können Sie den Parameter mit dem [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)
+In einigen seltenen Fällen kann eine API eine C-ähnliche Zeichenfolge ( `char *` ) anstelle einer Ziel-C-Zeichenfolge ( `NSString *` ) verfügbar machen. In diesen Fällen können Sie den Parameter mit dem Parameter[`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)
 -Attribut angezeigt.
 
-<a name="outref_parameters" />
+<a name="outref_parameters"></a>
 
 ### <a name="outref-parameters"></a>Out/ref-Parameter
 
@@ -1174,7 +1174,7 @@ In der Regel sieht die Signatur wie folgt aus:
 - (void) someString:(NSObject **)byref
 ```
 
-Im ersten Beispiel wird eine gängige Ziel-C-Ausdrucksweise zum Zurückgeben von Fehlercodes, ein Zeiger auf einen `NSError` Zeiger und bei Rückgabe der Wert festgelegt.   Die zweite Methode zeigt, wie eine Ziel-C-Methode ein Objekt annehmen und seinen Inhalt ändern kann.   Dabei handelt es sich um eine Pass-by-Referenz anstelle eines reinen Ausgabe Werts.
+Im ersten Beispiel wird eine gängige Ziel-C-Ausdrucksweise zum Zurückgeben von Fehlercodes, ein Zeiger auf einen `NSError` Zeiger und bei der Rückgabe der Wert festgelegt.   Die zweite Methode zeigt, wie eine Ziel-C-Methode ein Objekt annehmen und seinen Inhalt ändern kann.   Dabei handelt es sich um eine Pass-by-Referenz anstelle eines reinen Ausgabe Werts.
 
 Ihre Bindung würde wie folgt aussehen:
 
@@ -1185,7 +1185,7 @@ void Something (nint foo, out NSError error);
 void SomeString (ref NSObject byref);
 ```
 
-<a name="Memory_management_attributes" />
+<a name="Memory_management_attributes"></a>
 
 ### <a name="memory-management-attributes"></a>Attribute der Speicherverwaltung
 
@@ -1199,28 +1199,28 @@ Der obige Wert würde den Wert als "beibehalten"-Semantik markieren. Die verfüg
 
 - Zuweisen
 - Kopieren
-- Erhalten
+- Beibehalten
 
-<a name="Style_Guidelines" />
+<a name="Style_Guidelines"></a>
 
 ### <a name="style-guidelines"></a>Stilrichtlinien
 
-<a name="Using_[Internal]" />
+<a name="Using_[Internal]"></a>
 
 #### <a name="using-internal"></a>Using [Internal]
 
-Sie können den [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+Sie können das[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 das Attribut, um eine Methode aus der öffentlichen API auszublenden. Dies empfiehlt sich in Fällen, in denen die verfügbar gemachte API zu niedrig ist und Sie basierend auf dieser Methode eine Implementierung auf hoher Ebene in einer separaten Datei bereitstellen möchten.
 
 Sie können diese Option auch verwenden, wenn Sie Einschränkungen im Bindungs Generator feststellen, z. b. einige erweiterte Szenarios können nicht gebundene Typen verfügbar machen, und Sie möchten diese Typen selbst in eine eigene Weise einbinden.
 
-<a name="Event_Handlers_and_Callbacks" />
+<a name="Event_Handlers_and_Callbacks"></a>
 
 ## <a name="event-handlers-and-callbacks"></a>Ereignishandler und Rückrufe
 
 Ziel-c-Klassen senden in der Regel Benachrichtigungen oder fordern Informationen an, indem eine Nachricht an eine Delegatklasse gesendet wird (Ziel-c-Delegat).
 
-Dieses Modell kann zwar vollständig unterstützt werden und von xamarin. IOS unterstützt werden, ist jedoch manchmal mühsam. Xamarin. IOS macht das C# Ereignis Muster und ein Methoden rückrufsystem für die Klasse verfügbar, das in diesen Situationen verwendet werden kann. Dadurch kann Code wie dieser ausgeführt werden:
+Dieses Modell kann zwar vollständig unterstützt werden und von xamarin. IOS unterstützt werden, ist jedoch manchmal mühsam. Xamarin. IOS macht das c#-Ereignis Muster und ein Methoden rückrufsystem für die-Klasse verfügbar, das in diesen Situationen verwendet werden kann. Dadurch kann Code wie dieser ausgeführt werden:
 
 ```csharp
 button.Clicked += delegate {
@@ -1228,11 +1228,11 @@ button.Clicked += delegate {
 };
 ```
 
-Der Bindungs Generator ist in der Lage, die Menge der Typisierung zu verringern, die erforderlich ist, um C# das Ziel-C-Muster dem Muster zuzuordnen.
+Der Bindungs Generator ist in der Lage, die Menge der Typisierung zu verringern, die erforderlich ist, um das Ziel-C-Muster dem c#-Muster zuzuordnen.
 
-Ab xamarin. IOS 1,4 ist es auch möglich, den Generator anzuweisen, Bindungen für bestimmte Ziel-C-Delegaten zu generieren und den Delegaten C# als Ereignisse und Eigenschaften für den Hosttyp verfügbar zu machen.
+Ab xamarin. IOS 1,4 ist es auch möglich, den Generator anzuweisen, Bindungen für einen bestimmten Ziel-C-Delegaten zu generieren und den Delegaten als c#-Ereignisse und-Eigenschaften für den Hosttyp verfügbar zu machen.
 
-An diesem Prozess sind zwei Klassen beteiligt: die Host Klasse, die derzeit Ereignisse ausgibt und diese an die `Delegate` oder `WeakDelegate` und die tatsächliche Delegatklasse sendet.
+An diesem Prozess sind zwei Klassen beteiligt: die Host Klasse, die derzeit Ereignisse ausgibt und diese an `Delegate` oder `WeakDelegate` und die tatsächliche Delegatklasse sendet.
 
 Berücksichtigen Sie Folgendes:
 
@@ -1255,8 +1255,8 @@ interface MyClassDelegate {
 
 Um die Klasse zu schließen, müssen Sie folgende Schritte ausführen:
 
-- Fügen Sie in der Host Klasse zu Ihrem [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
-   Deklaration der Typ, der als Delegat und der C# von Ihnen verfügbar gemachte Name fungiert. Im obigen Beispiel sind die `typeof (MyClassDelegate)` und die `WeakDelegate`.
+- Fügen Sie in der Host Klasse zu Ihrem[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+   Deklaration der Typ, der als Delegat und der von Ihnen verfügbar gemachte c#-Name fungiert. In unserem obigen Beispiel sind `typeof (MyClassDelegate)` `WeakDelegate` bzw..
 - In ihrer Delegatklasse müssen Sie für jede Methode, die über mehr als zwei Parameter verfügt, den Typ angeben, den Sie für die automatisch generierte EventArgs-Klasse verwenden möchten.
 
 Der Bindungs Generator ist nicht darauf beschränkt, nur ein einzelnes Ereignis Ziel zu umwickeln. es ist möglich, dass einige Ziel-C-Klassen Nachrichten an mehr als einen Delegaten ausgeben, sodass Sie Arrays zur Unterstützung dieses Setups bereitstellen müssen. Die meisten Setups benötigen Sie nicht, aber der Generator ist bereit, diese Fälle zu unterstützen.
@@ -1282,7 +1282,7 @@ interface MyClassDelegate {
 }
 ```
 
-Der `EventArgs` wird verwendet, um den Namen der `EventArgs` Klasse anzugeben, die generiert werden soll. Sie sollten eine pro Signatur verwenden (in diesem Beispiel enthält die `EventArgs` eine `With`-Eigenschaft des Typs NINT).
+`EventArgs`Wird verwendet, um den Namen der `EventArgs` zu generierenden Klasse anzugeben. Sie sollten eine pro Signatur verwenden (in diesem Beispiel enthält die `EventArgs` eine `With` Eigenschaft des Typs NINT).
 
 Mit den oben aufgeführten Definitionen erzeugt der Generator das folgende Ereignis in der generierten MyClass:
 
@@ -1306,38 +1306,38 @@ c.Loaded += delegate (sender, args){
 };
 ```
 
-Rückrufe sind ebenso wie Ereignis Aufrufe, der Unterschied besteht darin, dass anstelle mehrerer potenzieller Abonnenten (z. b. mehrere Methoden in ein `Clicked` Ereignis oder ein `DownloadFinished` Ereignis eingebunden werden können) Rückrufe nur einen einzelnen Abonnenten haben können.
+Rückrufe sind genau wie Ereignis Aufrufe, der Unterschied besteht darin, dass anstelle mehrerer potenzieller Abonnenten (z. b. mehrere Methoden in einem Ereignis oder einem-Ereignis eingebunden werden können) Rückrufe `Clicked` `DownloadFinished` nur einen einzelnen Abonnenten haben können.
 
-Der Prozess ist identisch. der einzige Unterschied besteht darin, dass anstelle des Namens der `EventArgs` Klasse, die generiert werden soll, der EventArgs-Parameter verwendet wird, um C# den resultierenden Delegierten Namen zu benennen.
+Der Prozess ist identisch. der einzige Unterschied besteht darin, dass anstelle des Namens der Klasse, die generiert werden soll `EventArgs` , das EventArgs-Objekt tatsächlich verwendet wird, um den resultierenden c#-Delegatnamen zu benennen.
 
-Wenn die-Methode in der Delegatklasse einen Wert zurückgibt, ordnet der Bindungs Generator dies einer Delegatmethode in der übergeordneten Klasse anstelle eines Ereignisses zu. In diesen Fällen müssen Sie den Standardwert angeben, der von der-Methode zurückgegeben werden soll, wenn der Benutzer nicht an den Delegaten gebunden ist. Hierzu verwenden Sie die [`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)
-oder [`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute) Attribute.
+Wenn die-Methode in der Delegatklasse einen Wert zurückgibt, ordnet der Bindungs Generator dies einer Delegatmethode in der übergeordneten Klasse anstelle eines Ereignisses zu. In diesen Fällen müssen Sie den Standardwert angeben, der von der-Methode zurückgegeben werden soll, wenn der Benutzer nicht an den Delegaten gebunden ist. Verwenden Sie hierzu das[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)
+-oder- [`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute) Attribute.
 
-[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute) wird einen Rückgabewert hart codieren, während [`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)
+[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)wird einen Rückgabewert hart codieren, während[`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)
 wird verwendet, um anzugeben, welches Eingabe Argument zurückgegeben wird.
 
-<a name="Enumerations_and_Base_Types" />
+<a name="Enumerations_and_Base_Types"></a>
 
 ## <a name="enumerations-and-base-types"></a>Enumerationen und Basis Typen
 
 Sie können auch auf Enumerationen oder Basis Typen verweisen, die nicht direkt vom btouchscreen-Schnittstellen definitionssystem unterstützt werden. Fügen Sie zu diesem Zweck ihre Enumerationen und Kern Typen in eine separate Datei ein, und fügen Sie Sie als Teil einer der zusätzlichen Dateien ein, die Sie für bnote bereitstellen.
 
-<a name="Linking_the_Dependencies" />
+<a name="Linking_the_Dependencies"></a>
 
 ## <a name="linking-the-dependencies"></a>Verknüpfen der Abhängigkeiten
 
 Wenn Sie APIs binden, die nicht Teil der Anwendung sind, müssen Sie sicherstellen, dass die ausführbare Datei mit diesen Bibliotheken verknüpft ist.
 
-Sie müssen xamarin. IOS informieren, wie Ihre Bibliotheken verknüpft werden können. dazu können Sie entweder die Buildkonfiguration ändern, um den `mtouch` Befehl mit einigen zusätzlichen buildargumenten aufzurufen, die angeben, wie die neuen Bibliotheken mithilfe der Option "-gcc_flags" verknüpft werden sollen, gefolgt von einer Zeichenfolge in Anführungszeichen, die alle zusätzlichen Bibliotheken enthält, die für das Programm erforderlich sind:
+Sie müssen xamarin. IOS informieren, wie Ihre Bibliotheken verknüpft werden können. Dies kann entweder durch Ändern der Buildkonfiguration geändert werden, um den `mtouch` Befehl mit einigen zusätzlichen buildargumenten aufzurufen, die angeben, wie die neuen Bibliotheken mithilfe der Option "-gcc_flags" verknüpft werden sollen, gefolgt von einer Zeichenfolge in Anführungszeichen, die alle für das Programm erforderlichen zusätzlichen Bibliotheken enthält:
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
 ```
 
-Im obigen Beispiel werden `libMyLibrary.a`, `libSystemLibrary.dylib` und die `CFNetwork` Framework-Bibliothek in die endgültige ausführbare Datei verknüpft.
+Im obigen Beispiel wird eine Verknüpfung mit `libMyLibrary.a` `libSystemLibrary.dylib` der `CFNetwork` frameworkbibliothek mit der endgültigen ausführbaren Datei erstellt.
 
-Oder Sie können den [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)auf Assemblyebene nutzen, den Sie in Ihre Vertrags Dateien einbetten können (z. b. `AssemblyInfo.cs`).
-Wenn Sie die [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)verwenden, müssen Sie die native Bibliothek zum Zeitpunkt der Bindung verfügbar machen, da dadurch die native Bibliothek in Ihre Anwendung eingebettet wird. Beispiel:
+Oder Sie können die auf Assemblyebene nutzen [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) , die Sie in Ihre Vertrags Dateien einbetten können (z `AssemblyInfo.cs` . b.).
+Wenn Sie verwenden [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) , müssen Sie die native Bibliothek zum Zeitpunkt der Bindung verfügbar machen, da dadurch die native Bibliothek in Ihre Anwendung eingebettet wird. Beispiel:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1347,15 +1347,15 @@ Wenn Sie die [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-typ
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-Vielleicht Fragen Sie sich, warum Sie `-force_load` Befehl benötigen, und der Grund ist, dass das-ObjC-Flag, obwohl der Code in kompiliert wird, die für die Unterstützung von Kategorien erforderlichen Metadaten nicht beibehält (die Linker-/compilerfehlerentfernung entfernt), die Sie zur Laufzeit für xamarin. IOS benötigen.
+Sie Fragen sich vielleicht, warum Sie einen `-force_load` Befehl benötigen, und der Grund ist, dass das-ObjC-Flag, obwohl der Code in kompiliert wird, die für die Unterstützung von Kategorien erforderlichen Metadaten nicht beibehält (der Linker/Compiler entfernt den Code entfernt), den Sie zur Laufzeit für xamarin. IOS benötigen.
 
-<a name="Assisted_References" />
+<a name="Assisted_References"></a>
 
 ## <a name="assisted-references"></a>Unterstützte Verweise
 
 Einige vorübergehende Objekte, wie z. b. Aktions Blätter und Warnungs Felder, sind umständlich, damit Entwickler nicht nachverfolgen können, und der Bindungs Generator kann etwas weiter helfen.
 
-Wenn Sie z. b. eine Klasse haben, die eine Meldung anzeigt und dann ein `Done` Ereignis generiert hat, wäre die herkömmliche Vorgehensweise bei der Behandlung der folgenden Vorgehensweise:
+Wenn Sie z. b. eine Klasse haben, die eine Meldung anzeigt und dann ein- `Done` Ereignis generiert hat, ist die herkömmliche Vorgehensweise bei der Behandlung von:
 
 ```csharp
 class Demo {
@@ -1383,7 +1383,7 @@ class Demo {
 
 Beachten Sie, dass es nicht mehr notwendig ist, die Variable in einer Instanz beizubehalten, dass Sie mit einer lokalen Variablen funktioniert und dass es nicht notwendig ist, den Verweis zu löschen, wenn das Objekt ausfällt.
 
-Um dies zu nutzen, sollte für Ihre Klasse in der [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) -Deklaration eine Events-Eigenschaft festgelegt werden. Außerdem sollte die `KeepUntilRef` Variable auf den Namen der Methode festgelegt werden, die aufgerufen wird, wenn das Objekt die Arbeit abgeschlossen hat, wie folgt:
+Um dies zu nutzen, sollte für Ihre Klasse in der-Deklaration eine-Ereignis Eigenschaft festgelegt sein. [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) Außerdem sollte die `KeepUntilRef` Variable auf den Namen der Methode festgelegt werden, die aufgerufen wird, wenn das Objekt die Arbeit abgeschlossen hat, wie folgt:
 
 ```csharp
 [BaseType (typeof (NSObject), KeepUntilRef="Dismiss"), Delegates=new string [] { "WeakDelegate" }, Events=new Type [] { typeof (SomeDelegate) }) ]
@@ -1393,13 +1393,13 @@ class Demo {
 }
 ```
 
-<a name="Inheriting_Protocols" />
+<a name="Inheriting_Protocols"></a>
 
 ## <a name="inheriting-protocols"></a>Erben von Protokollen
 
-Ab xamarin. IOS v 3.2 unterstützen wir die Vererbung von Protokollen, die mit der [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) -Eigenschaft gekennzeichnet wurden. Dies ist in bestimmten API-Mustern nützlich, wie z. b. in `MapKit`, in denen das `MKOverlay` Protokoll vom `MKAnnotation`-Protokoll erbt, und wird von einer Reihe von Klassen übernommen, die von `NSObject`erben.
+Ab xamarin. IOS v 3.2 unterstützen wir die Vererbung von Protokollen, die mit der-Eigenschaft gekennzeichnet wurden [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) . Dies ist in bestimmten API-Mustern nützlich, z. b. in `MapKit` , wenn das `MKOverlay` Protokoll vom `MKAnnotation` Protokoll erbt und von einer Reihe von Klassen übernommen wird, die von Erben `NSObject` .
 
-In der Vergangenheit mussten wir das Protokoll in jede Implementierung kopieren. in diesen Fällen können Sie jedoch die `MKShape` Klasse vom `MKOverlay` Protokoll erben, und alle erforderlichen Methoden werden automatisch generiert.
+In der Vergangenheit mussten wir das Protokoll in jede Implementierung kopieren, aber in diesen Fällen kann die `MKShape` Klasse jetzt vom Protokoll erben, `MKOverlay` und es werden automatisch alle erforderlichen Methoden generiert.
 
 ## <a name="related-links"></a>Verwandte Links
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 156af7a5336ac091c0202e38a3a59a32846e281a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 86c7c726465257d71b6b407686153650dddbcbca
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003344"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574469"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>Bereitstellen von haptischem Feedback in xamarin. IOS
 
-<a name="Overview" />
+<a name="Overview"></a>
 
 ## <a name="overview"></a>Übersicht
 
@@ -29,19 +29,19 @@ Die folgenden Themen werden im Detail behandelt:
 - [Uinotificationfeedbackgenerator](#UINotificationFeedbackGenerator)
 - [Uiselectionfeedbackgenerator](#UISelectionFeedbackGenerator)
 
-<a name="About-Haptic-Feedback" />
+<a name="About-Haptic-Feedback"></a>
 
 ## <a name="about-haptic-feedback"></a>Informationen zu haptischem Feedback
 
-Mehrere integrierte Benutzeroberflächen Elemente bieten bereits haptisches Feedback wie z. b. Picker, Switches und Schieberegler. IOS 10 bietet nun die Möglichkeit, die Haptik mithilfe einer konkreten Unterklasse der `UIFeedbackGenerator` Klasse Programm gesteuert zu initiieren.
+Mehrere integrierte Benutzeroberflächen Elemente bieten bereits haptisches Feedback wie z. b. Picker, Switches und Schieberegler. IOS 10 bietet nun die Möglichkeit, die Haptik mithilfe einer konkreten Unterklasse der-Klasse Programm gesteuert zu initiieren `UIFeedbackGenerator` .
 
 Der Entwickler kann eine der folgenden `UIFeedbackGenerator` Unterklassen verwenden, um haptisches Feedback Programm gesteuert zu initiieren:
 
-- `UIImpactFeedbackGenerator`: Verwenden Sie diesen Feedback Generator, um eine Aktion oder Aufgabe zu ergänzen, z. b. eine "thud" darzustellen, wenn eine Ansicht in den Ort bewegt wird oder zwei aufeinander folgende Objekte miteinander kollidieren.
-- `UINotificationFeedbackGenerator`: Verwenden Sie diesen Feedback Generator für Benachrichtigungen wie z. b. eine Aktion, die einen Fehler verursacht, oder einen anderen Warnungstyp.
-- `UISelectionFeedbackGenerator`: Verwenden Sie diesen Feedback Generator für eine aktive Änderung, z. b. das Auswählen eines Elements aus einer Liste.
+- `UIImpactFeedbackGenerator`-Verwenden Sie diesen Feedback Generator, um eine Aktion oder Aufgabe zu ergänzen, z. b. eine "thud" darzustellen, wenn eine Ansicht in den Ort bewegt wird oder zwei aufeinander folgende Objekte miteinander kollidieren.
+- `UINotificationFeedbackGenerator`-Verwenden Sie diesen Feedback Generator für Benachrichtigungen wie z. b. eine Aktion, die einen Fehler verursacht, oder einen anderen Warnungstyp.
+- `UISelectionFeedbackGenerator`-Verwenden Sie diesen Feedback Generator für eine aktive Änderung, z. b. das Auswählen eines Elements aus einer Liste.
 
-<a name="UIImpactFeedbackGenerator" />
+<a name="UIImpactFeedbackGenerator"></a>
 
 ### <a name="uiimpactfeedbackgenerator"></a>Uiimpactfeedbackgenerator
 
@@ -61,17 +61,17 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-Wenn der Entwickler eine neue Instanz der `UIImpactFeedbackGenerator`-Klasse erstellt, wird eine `UIImpactFeedbackStyle` bereitgestellt, die die Stärke des Feedbacks wie folgt angibt:
+Wenn der Entwickler eine neue Instanz der-Klasse erstellt, `UIImpactFeedbackGenerator` Geben Sie einen `UIImpactFeedbackStyle` an, der die Stärke des Feedbacks wie folgt angibt:
 
 - `Heavy`
 - `Medium`
 - `Light`
 
-Die `Prepare`-Methode des `UIImpactFeedbackGenerator` wird aufgerufen, um das System darüber zu informieren, dass ein willkürlichem Feedback auftritt, damit die Latenz minimiert werden kann.
+Die- `Prepare` Methode des `UIImpactFeedbackGenerator` wird aufgerufen, um das System zu informieren, dass ein willkürlichem Feedback auftritt, um die Latenz zu minimieren.
 
-Die `ImpactOccurred`-Methode löst dann ein haptisches Feedback aus.
+Die- `ImpactOccurred` Methode löst dann haptisches Feedback aus.
 
-<a name="UINotificationFeedbackGenerator" />
+<a name="UINotificationFeedbackGenerator"></a>
 
 ### <a name="uinotificationfeedbackgenerator"></a>Uinotificationfeedbackgenerator
 
@@ -91,15 +91,15 @@ notification.Prepare ();
 notification.NotificationOccurred (UINotificationFeedbackType.Error);
 ```
 
-Es wird eine neue Instanz der `UINotificationFeedbackGenerator`-Klasse erstellt, und ihre `Prepare`-Methode wird aufgerufen, um das System zu informieren, dass ein willkürlichem Feedback auftritt, damit die Latenz minimiert werden kann.
+Es wird eine neue Instanz der `UINotificationFeedbackGenerator` -Klasse erstellt, und die zugehörige- `Prepare` Methode wird aufgerufen, um das System zu informieren, dass ein willkürlichem Feedback auftritt, damit die Latenz minimiert werden kann.
 
-Der `NotificationOccurred` wird aufgerufen, um ein haptisches Feedback mit einem bestimmten `UINotificationFeedbackType` von zu initiieren:
+`NotificationOccurred`Wird aufgerufen, um haptisches Feedback mit einem bestimmten von zu initiieren `UINotificationFeedbackType` :
 
 - `Success`
 - `Warning`
 - `Error`
 
-<a name="UISelectionFeedbackGenerator" />
+<a name="UISelectionFeedbackGenerator"></a>
 
 ### <a name="uiselectionfeedbackgenerator"></a>Uiselectionfeedbackgenerator
 
@@ -119,9 +119,9 @@ selection.Prepare ();
 selection.SelectionChanged ();
 ```
 
-Es wird eine neue Instanz der `UISelectionFeedbackGenerator`-Klasse erstellt, und ihre `Prepare`-Methode wird aufgerufen, um das System zu informieren, dass ein willkürlichem Feedback auftritt, damit die Latenz minimiert werden kann.
+Es wird eine neue Instanz der `UISelectionFeedbackGenerator` -Klasse erstellt, und die zugehörige- `Prepare` Methode wird aufgerufen, um das System zu informieren, dass ein willkürlichem Feedback auftritt, damit die Latenz minimiert werden kann.
 
-Die `SelectionChanged`-Methode löst dann ein haptisches Feedback aus.
+Die- `SelectionChanged` Methode löst dann haptisches Feedback aus.
 
 ## <a name="summary"></a>Zusammenfassung
 

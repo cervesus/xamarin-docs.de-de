@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b27a8d65ebaca6009d8310931b9dac3a4d7e12f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026149"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574389"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Einführung in Storyboards in xamarin. Mac
 
@@ -24,13 +24,13 @@ Storyboards ermöglichen es Ihnen, eine Benutzeroberfläche für die xamarin. Ma
 
 Dieser Artikel bietet eine Einführung in die Verwendung von Storyboards zum Definieren der Benutzeroberfläche einer xamarin. Mac-app.
 
-<a name="What-are-Storyboards" />
+<a name="What-are-Storyboards"></a>
 
 ## <a name="what-are-storyboards"></a>Was sind Storyboards?
 
 Mithilfe von Storyboards kann die gesamte Benutzeroberfläche einer xamarin. Mac-app an einer einzigen Stelle mit sämtlicher Navigation zwischen den einzelnen Elementen und Benutzeroberflächen definiert werden. Storyboards für xamarin. Mac funktionieren ähnlich wie Storyboards für xamarin. IOS. Sie enthalten jedoch aufgrund der unterschiedlichen Schnittstellen Ausdrücke einen anderen Satz von _segue-Typen_ .
 
-<a name="Working-with-Scenes" />
+<a name="Working-with-Scenes"></a>
 
 ### <a name="working-with-scenes"></a>Arbeiten mit Kulissen
 
@@ -44,7 +44,7 @@ Jede Szene stellt ein angegebenes Ansichts-und Ansichts Controller Paar mit eine
 
 Wichtig zu beachten ist, dass jeder-Typ den Datenfluss zwischen dem angegebenen Element der Benutzeroberfläche der APP darstellt.
 
-<a name="Working-with-View-Controllers" />
+<a name="Working-with-View-Controllers"></a>
 
 ### <a name="working-with-view-controllers"></a>Arbeiten mit Ansichts Controllern
 
@@ -54,13 +54,13 @@ Ansichts Controller definieren die Beziehungen zwischen einer bestimmten Ansicht
 
 Auf diese Weise ist jeder Ansichts Controller eine eigenständige, wiederverwendbare Kopplung der visuellen Darstellung der Informationen (Ansicht) und der Logik, um diese Informationen darzustellen und zu steuern.
 
-Innerhalb einer bestimmten Szene können Sie alle Dinge durchführen, die normalerweise von einzelnen `.xib` Dateien behandelt wurden: 
+Innerhalb einer bestimmten Szene können Sie alle Dinge durchführen, die normalerweise von einzelnen Dateien behandelt wurden `.xib` : 
 
 - Platzieren Sie unter Ansichten und Steuerelemente (z. b. Schaltflächen und Textfelder).
 - Definieren von Element Positionen und automatischen Layouteinschränkungen.
 - Verbindungs Aktionen und Outlets zum verfügbar machen von UI-Elementen für Code.
 
-<a name="Working-with-Segues" />
+<a name="Working-with-Segues"></a>
 
 ### <a name="working-with-segues"></a>Arbeiten mit einem anderen
 
@@ -70,9 +70,9 @@ Unter macOS gruppieren die meisten apps ihre Ansichten tendenziell innerhalb des
 
 Bei den Tendenzen von macOS in Bezug auf die _Kapselung_ gibt es Situationen, in denen Präsentationsseiten verwendet werden, wie z. b. modale Fenster, Blatt Ansichten und popovers.
 
-Wenn Sie präsentationsegues verwenden, können Sie die `PrepareForSegue`-Methode des übergeordneten Ansichts Controllers überschreiben, um die Darstellung und Variablen zu initialisieren und alle Daten für den Ansichts Controller bereitzustellen, der angezeigt wird.
+Wenn Sie präsentationsegues verwenden, können Sie die `PrepareForSegue` -Methode des übergeordneten Ansichts Controllers überschreiben, um die Präsentation zu initialisieren und Variablen zu erstellen und dem Ansichts Controller alle Daten bereitzustellen.
 
-<a name="Design-and-Run-Times" />
+<a name="Design-and-Run-Times"></a>
 
 ### <a name="design-and-run-times"></a>Entwurfs-und Laufzeiten
 
@@ -86,19 +86,19 @@ Zur Entwurfszeit (beim Layout der Benutzeroberfläche in Xcode-Interface Builder
 
 Indem jedes Element auf diese Weise definiert wird, ermöglicht es das verzögerte Laden der einzelnen Elemente nur, da es während der Laufzeit benötigt wird. In macOS war der gesamte Prozess so konzipiert, dass der Entwickler komplexe, flexible Benutzeroberflächen erstellen kann, die ein Minimum an sicherem Code erfordern, damit Sie funktionieren und so effizient mit Systemressourcen wie möglich sind.
 
-<a name="Storyboard-Quick-Start" />
+<a name="Storyboard-Quick-Start"></a>
 
 ## <a name="storyboard-quick-start"></a>Storyboard-Schnellstart
 
 Im [Storyboard-Schnellstart](~/mac/platform/storyboards/quickstart.md) Handbuch erstellen wir eine einfache xamarin. Mac-app, die die wichtigsten Konzepte für die Arbeit mit Storyboards zum Erstellen einer Benutzeroberfläche einführt. Die Beispiel-App besteht aus einer Überlauf Ansicht, die einen _Inhalts Bereich_ und einen _Inspektor-Bereich_ enthält, und es wird ein einfaches Einstellungs Dialogfeld angezeigt. Wir verwenden die Elemente, um alle Benutzeroberflächen Elemente miteinander zu verknüpfen.
 
-<a name="Working-with-Storyboards" />
+<a name="Working-with-Storyboards"></a>
 
 ## <a name="working-with-storyboards"></a>Arbeiten mit Storyboards
 
 In diesem Abschnitt werden ausführliche Informationen zum [Arbeiten mit Storyboards](~/mac/platform/storyboards/indepth.md) in einer xamarin. Mac-app behandelt. Wir sehen uns die Kulissen genauer an und wie Sie sich aus Ansichts Controllern und Ansichten zusammensetzen. Dann sehen wir uns an, wie Szenen miteinander verknüpft werden. Und schließlich wird die Arbeit mit benutzerdefinierten Enumerationstypen behandelt. 
 
-<a name="Complex-Storyboard-Example" />
+<a name="Complex-Storyboard-Example"></a>
 
 ## <a name="complex-storyboard-example"></a>Beispiel für ein komplexes Storyboard
 
@@ -106,7 +106,7 @@ Ein Beispiel für ein komplexes Beispiel für das Arbeiten mit Storyboards in ei
 
 Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglich, Links der Schlüsseltechnologien und -methoden zu wichtigen Informationen in den Leitfäden der Xamarin.Mac-Dokumentation bereitgestellt.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -115,7 +115,7 @@ In diesem Artikel wird kurz auf das Arbeiten mit Storyboards in einer xamarin. M
 ## <a name="related-links"></a>Verwandte Links
 
 - [„Hallo, Mac“-Beispiel](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
-- [Hello, Mac (Hallo, Mac)](~/mac/get-started/hello-mac.md)
+- [Hello, Mac (Hallo Mac)](~/mac/get-started/hello-mac.md)
 - [Arbeiten mit Windows](~/mac/user-interface/window.md)
 - [Eingaberichtlinien für OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Einführung in Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

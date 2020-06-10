@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d2e335535b508a6cd5e2f497e2c681152a7e5cda
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130948"
+Title: "Model-View-ViewModel Pattern" Description: "in diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App das MVVM-Muster verwendet, um die Geschäfts-und Präsentationslogik der APP von der Benutzeroberfläche zu trennen."
+ms. Prod: xamarin ms. assetid: dd8c1813-df44-4947-BCEE-1a1ff2334b87 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-model-view-viewmodel-pattern"></a>Model-View-ViewModel-Muster
 
 Die Xamarin.Forms Entwickler Oberfläche umfasst in der Regel das Erstellen einer Benutzeroberfläche in XAML und das anschließende Hinzufügen von Code Behind, der auf der Benutzeroberfläche funktioniert. Wenn apps geändert und die Größe und der Umfang vergrößert werden, können komplexe Wartungsprobleme auftreten. Zu diesen Problemen zählen die enge Kopplung zwischen den UI-Steuerelementen und der Geschäftslogik, wodurch die Kosten für Änderungen an der Benutzeroberfläche erhöht werden, sowie die Schwierigkeit von Komponententests für diesen Code.
@@ -124,8 +110,6 @@ Die programmgesteuerte Erstellung und Zuweisung des Ansichts Modells im Code-Beh
 ### <a name="creating-a-view-defined-as-a-data-template"></a>Erstellen einer Ansicht, die als Daten Vorlage definiert ist
 
 Eine Sicht kann als Daten Vorlage definiert und einem Ansichts Modelltyp zugeordnet werden. Datenvorlagen können als Ressourcen definiert werden, oder Sie können Inline innerhalb des Steuer Elements definiert werden, in dem das Ansichts Modell angezeigt wird. Der Inhalt des Steuer Elements ist die Ansichts Modell Instanz, und die Daten Vorlage wird zur visuellen Darstellung verwendet. Diese Technik ist ein Beispiel für eine Situation, in der zuerst das Ansichts Modell instanziiert wird, gefolgt von der Erstellung der Sicht.
-
-<a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
 ### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>Automatisches Erstellen eines Ansichts Modells mit einem Ansichts Modell-Locator
 
@@ -279,13 +263,11 @@ Im folgenden Codebeispiel wird gezeigt, wie ein [`Grid`](xref:Xamarin.Forms.Grid
 
 Ein Befehlsparameter kann auch optional mithilfe der-Eigenschaft definiert werden [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) . Der Typ des erwarteten Arguments wird in den `Execute` `CanExecute` Ziel Methoden und angegeben. Der Ruft den [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) Ziel Befehl automatisch auf, wenn der Benutzer mit dem angefügten Steuerelement interagiert. Wenn bereitgestellt, wird der Befehlsparameter als Argument an den Delegaten des Befehls übergeben `Execute` .
 
-<a name="implementing_behaviors" />
-
 ### <a name="implementing-behaviors"></a>Implementieren von Verhalten
 
 Das Verhalten ermöglicht das Hinzufügen von Funktionen zu UI-Steuerelementen, ohne diese zu unterbinden. Stattdessen wird die Funktion in einer Verhaltensklasse implementiert und an das Steuerelement angefügt, als wäre sie ein Teil des Steuerelements selbst. Mithilfe von Verhalten können Sie Code implementieren, der normalerweise als Code Behind geschrieben werden muss, da er direkt mit der API des Steuer Elements interagiert, so dass er dem Steuerelement in gewisser Weise an das Steuerelement angefügt werden kann und für die Wiederverwendung über mehrere Ansichten oder apps gepackt ist. Im Kontext von MVVM bilden Verhalten einen nützlichen Ansatz zum Verbinden von Steuerelementen mit Befehlen.
 
-Ein Verhalten, das über angefügte Eigenschaften an ein Steuerelement angefügt wird, wird als *angefügtes Verhalten*bezeichnet. Das Verhalten kann dann die verfügbar gemachte API des Elements, an das es angefügt ist, zum Hinzufügen von Funktionen zu diesem Steuerelement oder anderen Steuerelementen in der visuellen Struktur der Ansicht verwenden. Die eshoponcontainers-Mobile App enthält die- `LineColorBehavior` Klasse, die ein angefügtes Verhalten ist. Weitere Informationen zu diesem Verhalten finden Sie unter [Anzeigen von Validierungs Fehlern](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors).
+Ein Verhalten, das über angefügte Eigenschaften an ein Steuerelement angefügt wird, wird als *angefügtes Verhalten*bezeichnet. Das Verhalten kann dann die verfügbar gemachte API des Elements, an das es angefügt ist, zum Hinzufügen von Funktionen zu diesem Steuerelement oder anderen Steuerelementen in der visuellen Struktur der Ansicht verwenden. Die eshoponcontainers-Mobile App enthält die- `LineColorBehavior` Klasse, die ein angefügtes Verhalten ist. Weitere Informationen zu diesem Verhalten finden Sie unter [Anzeigen von Validierungs Fehlern](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying-validation-errors).
 
 Ein Xamarin.Forms Verhalten ist eine Klasse, die von der-Klasse oder der-Klasse abgeleitet wird [`Behavior`](xref:Xamarin.Forms.Behavior) [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) , wobei `T` der Typ des Steuer Elements ist, auf das das Verhalten angewendet werden soll. Diese Klassen stellen `OnAttachedTo` -und- `OnDetachingFrom` Methoden bereit, die überschrieben werden sollten, um Logik bereitzustellen, die ausgeführt wird, wenn das Verhalten an Steuerelemente angefügt und von diesen getrennt wird.
 

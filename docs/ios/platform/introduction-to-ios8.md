@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306188"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564629"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
@@ -50,7 +50,7 @@ Das folgende Diagramm zeigt die grundlegende Hierarchie der Konfiguration von ho
 
 ![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-Um mit homekit zu beginnen, müssen Entwickler sicherstellen, dass für das Bereitstellungs Profil der homekit-Dienst ausgewählt ist. Apple hat Entwicklern auch ein homekit-Simulator-Add-in für Xcode bereitgestellt. Diese finden Sie im [Apple Developer Center](https://developer.apple.com/downloads/index.action)unter `Hardware IO Tools for Xcode`. 
+Um mit homekit zu beginnen, müssen Entwickler sicherstellen, dass für das Bereitstellungs Profil der homekit-Dienst ausgewählt ist. Apple hat Entwicklern auch ein homekit-Simulator-Add-in für Xcode bereitgestellt. Diese finden Sie im [Apple Developer Center](https://developer.apple.com/downloads/index.action)unter `Hardware IO Tools for Xcode` . 
 
 Weitere Informationen finden Sie in unserem [homekit](~/ios/platform/homekit.md) -Handbuch.
 
@@ -68,7 +68,7 @@ App-Erweiterungen, die zu viel mplify sind, sind eine Möglichkeit für Drittanb
 
 Der erste Schritt beim Erstellen einer APP-Erweiterung besteht darin, den richtigen Erweiterungs Punkt zu definieren – Dies ist wichtig, um das Verhalten und die Verfügbarkeit der richtigen APIs sicherzustellen. Um eine APP-Erweiterung in Visual Studio für Mac zu erstellen, fügen Sie Sie einer vorhandenen Anwendung hinzu, indem Sie der Projekt Mappe ein neues Projekt hinzufügen.
 
-Navigieren Sie im Dialogfeld **Neues Projekt** zu **C#**  > **IOS** - > **Unified API** > **Erweiterungen**, wie im folgenden Screenshot veranschaulicht:
+Navigieren Sie im Dialogfeld **Neues Projekt** zu **c#**  >  **IOS**  >  **Unified API**  >  **Extensions**, wie im folgenden Screenshot veranschaulicht:
 
 ![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
@@ -91,7 +91,7 @@ Es gibt zwei Möglichkeiten, die Berührungs-ID als Authentifizierungsmechanismu
 
 Erstens werden die vorhandenen Keychain-Dienste durch die Verwendung neuer Keychain-Access Control Listen (ACLs) unterstützt. Keychain-Daten können mit der erfolgreichen Authentifizierung eines Benutzer Fingerabdrucks entsperrt werden.
 
-Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten mithilfe von `CanEvaluatePolicy` ermitteln, ob das Gerät die Berührungs-ID akzeptieren kann, und dann `EvaluatePolicy`, um den Authentifizierungs Vorgang zu starten.
+Zweitens bietet localauthentication zwei Methoden, um Ihre Anwendung lokal zu authentifizieren. Entwickler sollten verwenden `CanEvaluatePolicy` , um zu bestimmen, ob das Gerät die Berührungs-ID akzeptieren kann, und dann `EvaluatePolicy` den Authentifizierungs Vorgang zu starten.
 
 Weitere Informationen über die Fingereingabe-ID und Informationen zur Integration in eine xamarin. IOS-Anwendung finden Sie unter Fingereingabe [-ID und Face ID in xamarin. IOS](~/ios/platform/touch-id-face-id.md) Guides.
 
@@ -112,7 +112,7 @@ Weitere Informationen finden Sie in unserem [Handzettel](~/ios/platform/handoff.
 ## <a name="unified-storyboards"></a>Einheitliche Storyboards
 IOS 8 umfasst einen neuen einfacheren Verwendungs Mechanismus zum Erstellen der Benutzeroberfläche – das vereinheitlichte Storyboard. Mit einem einzelnen Storyboard, das alle unterschiedlichen Hardware Bildschirmgrößen abdeckt, können schnelle und reaktionsschnelle Ansichten in einem echten "Design einmal erstellt werden.
 
-Vor iOS8 nutzten Entwickler `UIInterfaceOrientation`, um zwischen hoch-und Querformat zu unterscheiden, und `UIInterfaceIdiom`, um zwischen IOS-Geräten zu unterscheiden. In iOS8 ist es nicht mehr erforderlich, separate Storyboards für iPhone-und iPad-Geräte zu erstellen – Ausrichtung und Gerät werden durch die Verwendung von *Größenklassen*bestimmt.
+Vor iOS8 wurden Entwickler verwendet, `UIInterfaceOrientation` um zwischen hoch-und Querformat zu unterscheiden und `UIInterfaceIdiom` zwischen IOS-Geräten zu unterscheiden. In iOS8 ist es nicht mehr erforderlich, separate Storyboards für iPhone-und iPad-Geräte zu erstellen – Ausrichtung und Gerät werden durch die Verwendung von *Größenklassen*bestimmt.
 
 Jedes Gerät wird in der vertikalen und der horizontalen Achse durch eine Size-Klasse definiert, und es gibt zwei Typen von Größenklassen in ios 8:
 
@@ -132,7 +132,7 @@ Weitere Informationen finden Sie in unserem Leitfaden für [photokit](~/ios/plat
 
 ## <a name="games"></a>Spiele
 
-<a name="scenekit" />
+<a name="scenekit"></a>
 
 ### <a name="scene-kit"></a>Szene-Kit
 
@@ -140,7 +140,7 @@ Das Scene Kit ist eine 3D-Szene-Graph-API, die die Arbeit mit 3D-Grafiken verein
 
 Weitere Informationen finden Sie in unserer [scenekit](~/ios/platform/gaming/scenekit.md) -Dokumentation.
 
-<a name="spritekit" />
+<a name="spritekit"></a>
 
 ### <a name="sprite-kit"></a>Sprite-Kit
 

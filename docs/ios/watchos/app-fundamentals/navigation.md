@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: d3565e359ccbad9f7b779969f4273a8cbae4d438
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1ad4ecad90238436f8d2a02727596186c6205eeb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021750"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572090"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>Arbeiten mit der watchos-Navigation in xamarin
 
@@ -23,11 +23,11 @@ Für Multi-Scene Watch-apps sind zwei Navigations Paradigmen verfügbar:
 - [Hierarchische Navigation](#Hierarchical_Navigation)
 - [Seiten basierte Schnittstellen](#Page-Based_Interfaces)
 
-<a name="modal"/>
+<a name="modal"></a>
 
 ## <a name="modal-interfaces"></a>Modale Schnittstellen
 
-Verwenden Sie die `PresentController`-Methode, um einen Schnittstellen Controller modale zu öffnen. Der Schnittstellen Controller muss bereits in " **Interface. Storyboard**" definiert sein.
+Verwenden Sie die- `PresentController` Methode, um einen Schnittstellen Controller modale zu öffnen. Der Schnittstellen Controller muss bereits in " **Interface. Storyboard**" definiert sein.
 
 ```csharp
 PresentController ("pageController","some context info");
@@ -35,7 +35,7 @@ PresentController ("pageController","some context info");
 
 Modale vorgestellte Controller verwenden den gesamten Bildschirm (der die vorherige Szene abdeckt). Standardmäßig ist der Titel auf **Abbrechen** festgelegt, und beim Tippen wird der Controller geschlossen.
 
-Um den modale dargestellten Controller Programm gesteuert zu schließen, wenden Sie `DismissController`an.
+Um den modale dargestellten Controller Programm gesteuert zu schließen, wird aufgerufen `DismissController` .
 
 ```csharp
 DismissController();
@@ -43,11 +43,11 @@ DismissController();
 
 Modale Bildschirme können entweder eine einzelne Szene sein oder ein Seiten basiertes Layout verwenden.
 
-<a name="Hierarchical_Navigation"/>
+<a name="Hierarchical_Navigation"></a>
 
 ## <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
-Zeigt Szenen wie einen Stapel an, der wieder durch navigiert werden kann, ähnlich wie `UINavigationController` unter IOS funktioniert. Szenen können auf den Navigations Stapel verschoben und ausgeschaltet werden (entweder Programm gesteuert oder durch Benutzer Auswahl).
+Zeigt Szenen wie einen Stapel an, der wieder durch navigiert werden kann, ähnlich wie unter `UINavigationController` IOS. Szenen können auf den Navigations Stapel verschoben und ausgeschaltet werden (entweder Programm gesteuert oder durch Benutzer Auswahl).
 
 ![](navigation-images/hierarchy-1.png "Szenen können auf den Navigations Stapel verschoben werden.") ![](navigation-images/hierarchy-2.png "Szenen können aus dem Navigations Stapel entfernt werden.")
 
@@ -57,19 +57,19 @@ Die Beispiele [watchkitcatalog](https://docs.microsoft.com/samples/xamarin/ios-s
 
 ### <a name="pushing-and-popping-in-code"></a>Pushübertragung und popping in Code
 
-Das Watch Kit erfordert keinen übergreifenden "Navigations Controller", wie es bei IOS der Fall ist. über Push wird ein Controller einfach mithilfe der `PushController`-Methode per Push erstellt, und es wird automatisch ein Navigations Stapel erstellt.
+Das Watch-Kit erfordert keinen übergreifenden "Navigations Controller", wie es bei IOS der Fall ist, sondern einen Controller per Push per Push per Push über die-Methode zu erstellen `PushController` . ein Navigations Stapel wird automatisch erstellt.
 
 ```csharp
 PushController("secondPageController","some context info");
 ```
 
-Der Bildschirm der Überwachung enthält oben links eine Schaltfläche " **zurück** ", aber Sie können eine Szene auch Programm gesteuert aus dem Navigations Stapel entfernen, indem Sie `PopController`verwenden.
+Der Bildschirm der Überwachung enthält oben links eine Schaltfläche " **zurück** ", aber Sie können eine Szene mithilfe von auch Programm gesteuert aus dem Navigations Stapel entfernen `PopController` .
 
 ```csharp
 PopController();
 ```
 
-Wie bei IOS ist es auch möglich, mithilfe von `PopToRootController`zum Stammverzeichnis des Navigations Stapels zurückzukehren.
+Wie bei IOS ist es auch möglich, mithilfe von zum Stammverzeichnis des Navigations Stapels zurückzukehren `PopToRootController` .
 
 ```csharp
 PopToRootController();
@@ -89,13 +89,13 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 }
 ```
 
-<a name="Page-Based_Interfaces"/>
+<a name="Page-Based_Interfaces"></a>
 
 ## <a name="page-based-interfaces"></a>Seiten basierte Schnittstellen
 
-Seiten basierte Schnittstellen Schwenken von links nach rechts, ähnlich wie `UIPageViewController` unter IOS funktioniert. Indikator Punkte werden am unteren Bildschirmrand angezeigt, um anzuzeigen, welche Seite derzeit angezeigt wird.
+Seiten basierte Schnittstellen Schwenken von links nach rechts, ähnlich wie unter `UIPageViewController` IOS. Indikator Punkte werden am unteren Bildschirmrand angezeigt, um anzuzeigen, welche Seite derzeit angezeigt wird.
 
-![](navigation-images/paged-1.png "Erste Beispielseite")![](navigation-images/paged-2.png "Beispiel für eine zweite Seite")![](navigation-images/paged-5.png "Fünfte Beispielseite")
+![](navigation-images/paged-1.png "Erste Beispielseite") ![](navigation-images/paged-2.png "Beispiel für eine zweite Seite") ![](navigation-images/paged-5.png "Fünfte Beispielseite")
 
 Verwenden Sie `ReloadRootControllers` mit einem Array von Schnittstellen Controllern und Kontexten, um eine Seiten basierte Schnittstelle als Hauptbenutzer Oberfläche für Ihre Watch-APP zu erstellen:
 
@@ -105,7 +105,7 @@ var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 ReloadRootControllers (controllerNames, contexts);
 ```
 
-Sie können auch einen seitenbasierten Controller, der nicht das Stammverzeichnis ist, mithilfe `PresentController` aus einem der anderen Szenen in einer APP darstellen.
+Sie können auch einen seitenbasierten Controller, der nicht der Stamm ist, mithilfe `PresentController` eines der anderen Szenen in einer APP darstellen.
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };

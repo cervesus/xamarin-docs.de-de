@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f314f3145b3573184cb8cdf7370394c975c66859
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127074"
+Title: "übergeben von Argumenten in XAML" Description: "in diesem Artikel wird die Verwendung der XAML-Attribute veranschaulicht, die verwendet werden können, um Argumente an nicht standardmäßige Konstruktoren zu übergeben, Factorymethoden aufzurufen und den Typ eines generischen Arguments anzugeben."
+ms. Prod: xamarin ms. assetid: 8F 3b267f -499e-4d79-9193-f-Datei: f 199519 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/25/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="passing-arguments-in-xaml"></a>Übergeben von Argumenten in XAML
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
@@ -27,12 +13,10 @@ _In diesem Artikel wird die Verwendung der XAML-Attribute veranschaulicht, die v
 
 Es ist häufig erforderlich, Objekte mit Konstruktoren zu instanziieren, die Argumente erfordern, oder indem Sie eine statische Erstellungs Methode aufrufen. Dies kann in XAML mit dem `x:Arguments` -Attribut und dem-Attribut erreicht werden `x:FactoryMethod` :
 
-- Das- `x:Arguments` Attribut wird verwendet, um Konstruktorargumente für einen nicht Standardkonstruktor oder für eine Factorymethoden-Objekt Deklaration anzugeben. Weitere Informationen finden Sie unter [übergeben von Konstruktorargumenten](#constructor_arguments).
-- Das- `x:FactoryMethod` Attribut wird verwendet, um eine Factorymethode anzugeben, die zum Initialisieren eines Objekts verwendet werden kann. Weitere Informationen finden Sie unter [Call Factory Methods](#factory_methods).
+- Das- `x:Arguments` Attribut wird verwendet, um Konstruktorargumente für einen nicht Standardkonstruktor oder für eine Factorymethoden-Objekt Deklaration anzugeben. Weitere Informationen finden Sie unter [übergeben von Konstruktorargumenten](#passing-constructor-arguments).
+- Das- `x:FactoryMethod` Attribut wird verwendet, um eine Factorymethode anzugeben, die zum Initialisieren eines Objekts verwendet werden kann. Weitere Informationen finden Sie unter [Call Factory Methods](#calling-factory-methods).
 
-Außerdem kann das- `x:TypeArguments` Attribut verwendet werden, um die generischen Typargumente für den Konstruktor eines generischen Typs anzugeben. Weitere Informationen finden Sie unter [Angeben eines generischen Typarguments](#generic_type_arguments).
-
-<a name="constructor_arguments" />
+Außerdem kann das- `x:TypeArguments` Attribut verwendet werden, um die generischen Typargumente für den Konstruktor eines generischen Typs anzugeben. Weitere Informationen finden Sie unter [Angeben eines generischen Typarguments](#specifying-a-generic-type-argument).
 
 ## <a name="passing-constructor-arguments"></a>Übergeben von Konstruktorargumenten
 
@@ -96,8 +80,6 @@ Die folgenden Screenshots zeigen das Ergebnis des Aufrufs jedes [`Color`](xref:X
 
 ![Boxview. Color mit x:Arguments angegeben](passing-arguments-images/passing-arguments.png)
 
-<a name="factory_methods" />
-
 ## <a name="calling-factory-methods"></a>Aufrufen von Factory-Methoden
 
 Factorymethoden können in XAML aufgerufen werden, indem der Name der Methode mit dem- `x:FactoryMethod` Attribut und den Argumenten mithilfe des- `x:Arguments` Attributs angegeben wird. Eine Factorymethode ist eine `public static` Methode, die Objekte oder Werte desselben Typs zurückgibt wie die Klasse oder Struktur, die die Methoden definiert.
@@ -145,8 +127,6 @@ Die Anzahl der Elemente im `x:Arguments` -Tag und die Typen dieser Elemente müs
 Die folgenden Screenshots zeigen das Ergebnis des Aufrufs jeder [`Color`](xref:Xamarin.Forms.Color) Factorymethode mit den angegebenen Argument Werten:
 
 ![Boxview. Color mit "x:factorymethod" und "x:Arguments" angegeben](passing-arguments-images/factory-methods.png)
-
-<a name="generic_type_arguments" />
 
 ## <a name="specifying-a-generic-type-argument"></a>Angeben eines generischen Typarguments
 
