@@ -1,18 +1,8 @@
 ---
-title: 'Xamarin.Essentials: App-Informationen'
-description: In diesem Dokument wird die Klasse „AppInfo“ in Xamarin.Essentials beschrieben, die Informationen zu Ihrer Anwendung bereitstellt. Sie macht beispielsweise den Namen und die Version der App verfügbar.
-ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/29/2019
-ms.custom: video
-ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756996"
+title: "Xamarin.Essentials: AppInfo" description: "In diesem Dokument wird die AppInfo-Klasse in Xamarin.Essentials beschrieben, die Informationen zu Ihrer Anwendung bereitstellt. Sie enthält beispielsweise den Namen und die Version der App."
+ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA author: jamesmontemagno ms.author: jamont ms.date: 01/29/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: App-Informationen
 
 Die Klasse **AppInfo** stellt Informationen zu Ihrer Anwendung bereit.
@@ -23,7 +13,7 @@ Die Klasse **AppInfo** stellt Informationen zu Ihrer Anwendung bereit.
 
 ## <a name="using-appinfo"></a>Verwenden von App-Informationen
 
-Fügen Sie Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
+Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
 
 ```csharp
 using Xamarin.Essentials;
