@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ab89d6e05b42157ededa3bb01cf22d5cdca130ce
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 729c8918230b7fe28b98357b101d935e1ec752ef
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030676"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573533"
 ---
 # <a name="supported-and-unsupported-frameworks-in-tvos"></a>Unterstützte und nicht unterstützte Frameworks in tvos
 
-<a name="Supported-Frameworks" />
+<a name="Supported-Frameworks"></a>
 
 ## <a name="supported-frameworks"></a>Unterstützte Frameworks
 
@@ -40,7 +40,7 @@ Dies ist eine Liste der Frameworks, die von Apple zur Verwendung in ihren xamari
 - CoreText
 - Corevideo
 - Darwin
-- Neu
+- Foundation
 - Gamecontroller
 - GameKit
 - Gaming
@@ -50,7 +50,7 @@ Dies ist eine Liste der Frameworks, die von Apple zur Verwendung in ihren xamari
 - Mediaaccessibility
 - MediaPlayer
 - Mediatoolbox
-- Metal
+- Metallisch
 - Metalkit
 - Metal Performance haders
 - Mobilecoreservices
@@ -66,17 +66,17 @@ Dies ist eine Liste der Frameworks, die von Apple zur Verwendung in ihren xamari
 - Tvservices (hinzugefügt)
 - UIKit
 
-<a name="Unsupported-Frameworks" />
+<a name="Unsupported-Frameworks"></a>
 
 ## <a name="unsupported-frameworks"></a>Nicht unterstützte Frameworks
 
 Im folgenden finden Sie eine Liste von Frameworks, die von IOS 9 unterstützt werden, aber aus der tvos 9-Unterstützung von Apple entfernt wurden und daher nicht in ihren xamarin. tvos-Apps verwendet werden können:
 
 - Konten
-- AddressBook
+- Adressbuch
 - Addressbookui
 - Asseterbibliothek
-- Kontaktpersonen
+- Kontakte
 - Contactsui
 - Coreaudiokit
 - CoreMIDI
@@ -103,7 +103,7 @@ Im folgenden finden Sie eine Liste von Frameworks, die von IOS 9 unterstützt we
 - Schnellsuche
 - Replaykit
 - Safariservices
-- Soziales Netzwerk
+- Soziale Netzwerke
 - Twitter
 - Videotoolbox
 - Watchconnectivity
