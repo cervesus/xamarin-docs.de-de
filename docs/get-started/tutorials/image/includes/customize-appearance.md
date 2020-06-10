@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a83e3ae4069657df06967b7157809c7dc86ad941
-ms.sourcegitcommit: 99aa05bd9b5e3f66d134066b860f41b54fa2d850
+ms.openlocfilehash: 58ed33adbc25e026431609370075c24c3b6ba690
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82109802"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574677"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -20,7 +20,7 @@ ms.locfileid: "82109802"
 
     Dieser Code legt die Eigenschaft [`Aspect`](xref:Xamarin.Forms.Image.Aspect), die den Skalierungsmodus des Bilds definiert, auf [`Fill`](xref:Xamarin.Forms.Aspect.Fill) fest. Das `Fill`-Element wird in der Enumeration [`Aspect`](xref:Xamarin.Forms.Aspect) definiert und streckt das Bild so, dass es die Ansicht komplett ausfüllt. Dabei wird nicht berücksichtigt, ob das Bild verzerrt wird. Weitere Informationen zur Skalierung von Bildern finden Sie im Abschnitt [Anzeigen von Bildern](~/xamarin-forms/user-interface/images.md#display-images) im Artikel [Bilder in Xamarin.Forms](~/xamarin-forms/user-interface/images.md).
 
-    Die Markuperweiterung `OnPlatform` ermöglicht Ihnen das plattformspezifische Anpassen der Benutzeroberfläche. In diesem Beispiel wird die Markuperweiterung dazu verwendet, die Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) unter iOS auf 300 geräteunabhängige Einheiten und unter Android auf 250 geräteunabhängige Einheiten festzulegen. Weitere Informationen zur Markuperweiterung `OnPlatform` finden Sie im Abschnitt [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform) im Artikel [Verwenden von XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/consuming.md).
+    Die Markuperweiterung `OnPlatform` ermöglicht Ihnen das plattformspezifische Anpassen der Benutzeroberfläche. In diesem Beispiel wird die Markuperweiterung dazu verwendet, die Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) unter iOS auf 300 geräteunabhängige Einheiten und unter Android auf 250 geräteunabhängige Einheiten festzulegen. Weitere Informationen zur Markuperweiterung `OnPlatform` finden Sie im Abschnitt [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension) im Artikel [Verwenden von XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/consuming.md).
 
     Zusätzlich wird mit der [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft angegeben, dass das Bild horizontal und zentriert ausgerichtet werden soll.
 
@@ -42,7 +42,7 @@ ms.locfileid: "82109802"
 
     Dieser Code legt die Eigenschaft [`Aspect`](xref:Xamarin.Forms.Image.Aspect), die den Skalierungsmodus des Bilds definiert, auf [`Fill`](xref:Xamarin.Forms.Aspect.Fill) fest. Das `Fill`-Element wird in der Enumeration [`Aspect`](xref:Xamarin.Forms.Aspect) definiert und streckt das Bild so, dass es die Ansicht komplett ausfüllt. Dabei wird nicht berücksichtigt, ob das Bild verzerrt wird. Weitere Informationen zur Skalierung von Bildern finden Sie im Abschnitt [Anzeigen von Bildern](~/xamarin-forms/user-interface/images.md#display-images) im Artikel [Bilder in Xamarin.Forms](~/xamarin-forms/user-interface/images.md).
 
-    Die Markuperweiterung `OnPlatform` ermöglicht Ihnen das plattformspezifische Anpassen der Benutzeroberfläche. In diesem Beispiel wird die Markuperweiterung dazu verwendet, die Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) unter iOS auf 300 und unter Android auf 250 festzulegen. Weitere Informationen zur Markuperweiterung `OnPlatform` finden Sie im Abschnitt [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform) im Artikel [Verwenden von XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/consuming.md).
+    Die Markuperweiterung `OnPlatform` ermöglicht Ihnen das plattformspezifische Anpassen der Benutzeroberfläche. In diesem Beispiel wird die Markuperweiterung dazu verwendet, die Eigenschaften [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) und [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) unter iOS auf 300 und unter Android auf 250 festzulegen. Weitere Informationen zur Markuperweiterung `OnPlatform` finden Sie im Abschnitt [OnPlatform-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension) im Artikel [Verwenden von XAML-Markuperweiterungen](~/xamarin-forms/xaml/markup-extensions/consuming.md).
 
     Zusätzlich wird mit der [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)-Eigenschaft angegeben, dass das Bild horizontal und zentriert ausgerichtet werden soll.
 
